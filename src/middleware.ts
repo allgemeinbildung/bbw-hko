@@ -1,5 +1,6 @@
 import { createServerClient, parseCookieHeader } from '@supabase/ssr'
 import { defineMiddleware } from 'astro:middleware'
+import ws from 'ws'
 
 export const onRequest = defineMiddleware(async ({ request, cookies, locals }, next) => {
   locals.supabase = createServerClient(
@@ -13,6 +14,7 @@ export const onRequest = defineMiddleware(async ({ request, cookies, locals }, n
             cookies.set(name, value, options as Parameters<typeof cookies.set>[2])
           ),
       },
+      realtime: { transport: ws },
     }
   )
 
