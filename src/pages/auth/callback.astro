@@ -1,0 +1,19 @@
+---
+const code = Astro.url.searchParams.get('code')
+
+if (!code) return Astro.redirect('/login?error=Kein+Autorisierungscode')
+
+const { error } = await Astro.locals.supabase.auth.exchangeCodeForSession(code)
+if (error) return Astro.redirect(`/login?error=${encodeURIComponent(error.message)}`)
+
+const { data: { user } } = await Astro.locals.supabase.auth.getUser()
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+return Astro.redirect(profile?.role === 'kt1' ? '/admin' : '/einreichen')
+---
