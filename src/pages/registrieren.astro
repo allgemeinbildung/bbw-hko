@@ -29,8 +29,14 @@ const success = Astro.url.searchParams.get('success')
           <input id="full_name" name="full_name" type="text" required autocomplete="name" class="input mt-1" placeholder="Vorname Nachname" />
         </div>
         <div>
-          <label class="field-label" for="abteilung">Abteilung</label>
-          <input id="abteilung" name="abteilung" type="text" class="input mt-1" placeholder="z. B. Abt. 3" />
+          <label class="field-label" for="abteilung">Abteilung <span class="text-red-500">*</span></label>
+          <select id="abteilung" name="abteilung" required class="input mt-1">
+            <option value="">— wählen —</option>
+            <option>Bau</option>
+            <option>Maschinenbau</option>
+            <option>Informatik | Naturwissenschaften</option>
+            <option>Technik | Ernährung</option>
+          </select>
         </div>
         <div>
           <label class="field-label" for="email">E-Mail <span class="text-red-500">*</span></label>

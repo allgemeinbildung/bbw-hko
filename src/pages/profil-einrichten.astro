@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro'
+
+if (!Astro.locals.user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role, abteilung')
+  .eq('id', Astro.locals.user.id)
+  .single()
+
+// Already set — skip this page
+if (profile?.abteilung) {
+  return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/einreichen')
+}
+
+const redirectTo = profile?.role === 'kt1' ? '/admin' : '/einreichen'
+---
+<Base title="Abteilung wählen">
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-sm bg-white border border-slate-200 rounded-xl p-8 shadow-sm">
+
+      <div class="flex justify-center mb-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-lg" style="background: var(--brand)">A</div>
+      </div>
+      <h1 class="text-xl font-semibold text-center mb-1">Noch eine Angabe</h1>
+      <p class="text-sm text-slate-500 text-center mb-6">Bitte wähle deine Abteilung. Diese Angabe wird für alle deine Einreichungen vorausgefüllt.</p>
+
+      <div x-data="{ abteilung: '', saving: false, error: '' }">
+        <div class="space-y-4">
+          <div>
+            <label class="field-label" for="abteilung">Abteilung <span class="text-red-500">*</span></label>
+            <select id="abteilung" x-model="abteilung" class="input mt-1">
+              <option value="">— wählen —</option>
+              <option>Bau</option>
+              <option>Maschinenbau</option>
+              <option>Informatik | Naturwissenschaften</option>
+              <option>Technik | Ernährung</option>
+            </select>
+          </div>
+
+          <div x-show="error" class="p-3 bg-red-50 border border-red-200 rounded text-sm text-red-700" x-text="error"></div>
+
+          <button
+            type="button"
+            :disabled="!abteilung || saving"
+            @click="
+              saving = true; error = '';
+              fetch('/api/profile', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ abteilung }),
+              })
+              .then(r => r.ok ? (window.location.href = $el.dataset.redirect) : r.json().then(b => { error = b.error || 'Fehler beim Speichern.'; saving = false }))
+              .catch(() => { error = 'Netzwerkfehler.'; saving = false })
+            "
+            data-redirect={redirectTo}
+            class="w-full py-2.5 rounded-md text-white font-medium text-sm transition hover:opacity-90 disabled:opacity-50"
+            style="background: var(--brand)"
+            x-text="saving ? 'Wird gespeichert…' : 'Weiter'"
+          ></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Base>

@@ -11,9 +11,11 @@ if (!user) return Astro.redirect('/login')
 
 const { data: profile } = await Astro.locals.supabase
   .from('profiles')
-  .select('role')
+  .select('role, abteilung')
   .eq('id', user.id)
   .single()
 
-return Astro.redirect(profile?.role === 'kt1' ? '/admin' : '/einreichen')
+if (!profile?.abteilung) return Astro.redirect('/profil-einrichten')
+
+return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/einreichen')
 ---
