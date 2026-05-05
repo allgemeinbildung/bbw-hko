@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro'
+import { createAdminClient } from '../../../lib/supabase'
 
 export const POST: APIRoute = async ({ locals, request, redirect }) => {
   const form = await request.formData()
@@ -14,7 +15,10 @@ export const POST: APIRoute = async ({ locals, request, redirect }) => {
   }
 
   if (data.user) {
-    const { error: profileError } = await locals.supabase.from('profiles').insert({
+    // The handle_new_user trigger may have already created a minimal profile row.
+    // Use upsert via the admin client to write the full data regardless.
+    const admin = createAdminClient()
+    const { error: profileError } = await admin.from('profiles').upsert({
       id: data.user.id,
       full_name,
       abteilung,
@@ -26,6 +30,6 @@ export const POST: APIRoute = async ({ locals, request, redirect }) => {
   }
 
   return redirect(
-    `/registrieren?success=${encodeURIComponent('Registrierung erfolgreich! Bitte E-Mail-Adresse bestätigen, dann anmelden.')}`
+    `/registrieren?success=${encodeURIComponent('Registrierung erfolgreich! Jetzt anmelden.')}`
   )
 }
