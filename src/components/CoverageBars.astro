@@ -1,0 +1,157 @@
+---
+import type { Nrlp } from '../lib/nrlp'
+
+interface Props {
+  materials: Record<string, any>[]
+  nrlp: Nrlp
+}
+const { materials, nrlp } = Astro.props
+
+function countTagged(field: string, value: string) {
+  return materials.filter(m => (m[field] as string[] || []).includes(value)).length
+}
+
+function countSprachmodus(value: string) {
+  return materials.filter(
+    m => m.sprachmodus_primaer === value || (m.sprachmodi_sekundaer as string[] || []).includes(value)
+  ).length
+}
+
+function countCell(thema: number, lj: number | null) {
+  return materials.filter(
+    m => m.thema_nr === thema && (lj === null || m.lehrjahr === lj)
+  ).length
+}
+
+function barColor(n: number) {
+  if (n === 0) return 'bar-red'
+  if (n <= 2) return 'bar-yellow'
+  return 'bar-green'
+}
+
+function barWidth(n: number) {
+  const max = Math.max(3, materials.length)
+  return Math.min(100, Math.max(6, (n / max) * 100))
+}
+
+function heatColor(n: number) {
+  if (n === 0) return 'bg-slate-100 text-slate-300'
+  if (n <= 2) return 'bg-amber-100 text-amber-800'
+  return 'bg-emerald-100 text-emerald-800'
+}
+---
+
+{materials.length === 0 && (
+  <div class="bg-white border border-slate-200 rounded-lg p-8 text-center text-sm text-slate-500">
+    Noch keine Materialien — das Dashboard wird sichtbar, sobald Materialien eingereicht sind.
+  </div>
+)}
+
+{materials.length > 0 && (
+  <div class="grid grid-cols-3 gap-5">
+
+    <!-- Schlüsselkompetenzen -->
+    <div class="bg-white border border-slate-200 rounded-lg p-5">
+      <h2 class="font-semibold mb-3">Schlüsselkompetenzen-Abdeckung</h2>
+      <div class="space-y-2.5">
+        {nrlp.zirkularitaet.schluesselkompetenzen.map(sk => {
+          const n = countTagged('schluesselkompetenzen', sk.bezeichnung)
+          return (
+            <div>
+              <div class="flex justify-between text-xs mb-0.5">
+                <span class="text-slate-700 truncate pr-2" title={sk.bezeichnung}>{sk.bezeichnung}</span>
+                <span class="font-medium tabular-nums">{n}</span>
+              </div>
+              <div class="bar-track">
+                <div class={`bar-fill ${barColor(n)}`} style={`width: ${barWidth(n)}%`}></div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
+    <!-- Aspekte -->
+    <div class="bg-white border border-slate-200 rounded-lg p-5">
+      <h2 class="font-semibold mb-3">Aspekte-Abdeckung</h2>
+      <div class="space-y-2.5">
+        {nrlp.zirkularitaet.gesellschaftsinhalte.map(a => {
+          const n = countTagged('aspekte', a.bezeichnung)
+          return (
+            <div>
+              <div class="flex justify-between text-xs mb-0.5">
+                <span class="text-slate-700 truncate pr-2" title={a.bezeichnung}>{a.bezeichnung}</span>
+                <span class="font-medium tabular-nums">{n}</span>
+              </div>
+              <div class="bar-track">
+                <div class={`bar-fill ${barColor(n)}`} style={`width: ${barWidth(n)}%`}></div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
+    <!-- Sprachmodi -->
+    <div class="bg-white border border-slate-200 rounded-lg p-5">
+      <h2 class="font-semibold mb-3">Sprachmodi-Abdeckung</h2>
+      <p class="text-xs text-slate-400 mb-2">primär oder sekundär</p>
+      <div class="space-y-2.5">
+        {nrlp.zirkularitaet.sprachmodi.map(sm => {
+          const n = countSprachmodus(sm.bezeichnung)
+          return (
+            <div>
+              <div class="flex justify-between text-xs mb-0.5">
+                <span class="text-slate-700 truncate pr-2">{sm.bezeichnung}</span>
+                <span class="font-medium tabular-nums">{n}</span>
+              </div>
+              <div class="bar-track">
+                <div class={`bar-fill ${barColor(n)}`} style={`width: ${barWidth(n)}%`}></div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
+    <!-- Heatmap Thema × Lehrjahr -->
+    <div class="bg-white border border-slate-200 rounded-lg p-5 col-span-3">
+      <h2 class="font-semibold mb-3">Heatmap Thema × Lehrjahr</h2>
+      <p class="text-xs text-slate-400 mb-3">Rot = 0 Materialien · Gelb = 1–2 · Grün = 3+</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs border-collapse">
+          <thead>
+            <tr class="text-slate-500">
+              <th class="text-left p-2 font-medium">Thema</th>
+              {[1,2,3,4].map(lj => <th class="p-2 font-medium w-20">LJ {lj}</th>)}
+              <th class="p-2 font-medium w-20">Σ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {nrlp.themen.map(t => (
+              <tr class="border-t border-slate-100">
+                <td class="p-2">
+                  <span class="font-medium">T{t.nr}</span> — {t.titel}
+                </td>
+                {[1,2,3,4].map(lj => {
+                  const n = countCell(t.nr, lj)
+                  return (
+                    <td class="p-2 text-center">
+                      <span class={`inline-block w-8 h-7 leading-7 rounded font-medium tabular-nums ${heatColor(n)}`}>
+                        {n || ''}
+                      </span>
+                    </td>
+                  )
+                })}
+                <td class="p-2 text-center font-semibold tabular-nums">
+                  {countCell(t.nr, null)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+)}

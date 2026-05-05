@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro'
+
+if (Astro.locals.user) return Astro.redirect('/')
+
+const error = Astro.url.searchParams.get('error')
+const success = Astro.url.searchParams.get('success')
+---
+<Base title="Registrieren">
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-sm bg-white border border-slate-200 rounded-xl p-8 shadow-sm">
+
+      <div class="flex justify-center mb-6">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-lg" style="background: var(--brand)">A</div>
+      </div>
+      <h1 class="text-xl font-semibold text-center mb-1">Konto erstellen</h1>
+      <p class="text-sm text-slate-500 text-center mb-6">ABU-Materialplattform · BBW</p>
+
+      {error && (
+        <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded text-sm text-red-700">{decodeURIComponent(error)}</div>
+      )}
+      {success && (
+        <div class="mb-4 p-3 bg-emerald-50 border border-emerald-200 rounded text-sm text-emerald-700">{decodeURIComponent(success)}</div>
+      )}
+
+      <form method="POST" action="/api/auth/register" class="space-y-4">
+        <div>
+          <label class="field-label" for="full_name">Name <span class="text-red-500">*</span></label>
+          <input id="full_name" name="full_name" type="text" required autocomplete="name" class="input mt-1" placeholder="Vorname Nachname" />
+        </div>
+        <div>
+          <label class="field-label" for="abteilung">Abteilung</label>
+          <input id="abteilung" name="abteilung" type="text" class="input mt-1" placeholder="z. B. Abt. 3" />
+        </div>
+        <div>
+          <label class="field-label" for="email">E-Mail <span class="text-red-500">*</span></label>
+          <input id="email" name="email" type="email" required autocomplete="email" class="input mt-1" placeholder="vorname.nachname@bbw.ch" />
+        </div>
+        <div>
+          <label class="field-label" for="password">Passwort <span class="text-red-500">*</span></label>
+          <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password" class="input mt-1" />
+          <div class="text-xs text-slate-400 mt-1">Mindestens 8 Zeichen.</div>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-md text-white font-medium text-sm transition hover:opacity-90" style="background: var(--brand)">
+          Registrieren
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-slate-500 mt-5">
+        Bereits angemeldet?
+        <a href="/login" class="text-blue-700 hover:underline font-medium">Anmelden</a>
+      </p>
+    </div>
+  </div>
+</Base>

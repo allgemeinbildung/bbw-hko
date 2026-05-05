@@ -1,0 +1,29 @@
+---
+import LP from '../../layouts/LP.astro'
+import IntakeForm from '../../components/IntakeForm.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role === 'kt1') return Astro.redirect('/admin')
+
+const { id } = Astro.params
+const { data: material } = await Astro.locals.supabase
+  .from('materials')
+  .select('*')
+  .eq('id', id!)
+  .eq('submitted_by', user.id)
+  .single()
+
+if (!material) return Astro.redirect('/meine-materialien')
+if (material.status !== 'eingereicht') return Astro.redirect('/meine-materialien?error=nicht+bearbeitbar')
+---
+<LP title="Material bearbeiten">
+  <IntakeForm materialId={material.id} initialData={material} />
+</LP>

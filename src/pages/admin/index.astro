@@ -1,0 +1,181 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import FilterBar from '../../components/FilterBar.astro'
+import { nrlp } from '../../lib/nrlp'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role !== 'kt1') return Astro.redirect('/einreichen')
+
+const p = Astro.url.searchParams
+const filters = {
+  typ:       p.get('typ')      ?? '',
+  lehrdauer: p.get('lehrdauer') ?? '',
+  lehrjahr:  p.get('lehrjahr')  ?? '',
+  thema_nr:  p.get('thema_nr')  ?? '',
+  sk:        p.get('sk')        ?? '',
+  aspekt:    p.get('aspekt')    ?? '',
+  status:    p.get('status')    ?? '',
+}
+
+let query = Astro.locals.supabase
+  .from('materials')
+  .select('*, submitter:profiles!submitted_by(full_name, abteilung)')
+  .order('created_at', { ascending: false })
+
+if (filters.typ)       query = query.eq('typ', filters.typ)
+if (filters.lehrdauer) query = query.eq('lehrdauer', filters.lehrdauer)
+if (filters.lehrjahr)  query = query.eq('lehrjahr', parseInt(filters.lehrjahr))
+if (filters.thema_nr)  query = query.eq('thema_nr', parseInt(filters.thema_nr))
+if (filters.status)    query = query.eq('status', filters.status)
+if (filters.sk)        query = query.contains('schluesselkompetenzen', [filters.sk])
+if (filters.aspekt)    query = query.contains('aspekte', [filters.aspekt])
+
+const { data: materials } = await query
+const count = materials?.length ?? 0
+---
+<Admin title="Übersicht">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Alle Materialien</h1>
+    <p class="text-sm text-slate-500 mt-1">{count} {count === 1 ? 'Einreichung' : 'Einreichungen'}</p>
+  </div>
+
+  <FilterBar nrlp={nrlp} filters={filters} />
+
+  <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 border-b border-slate-200 text-slate-600">
+        <tr>
+          <th class="text-left p-3 font-medium">Titel</th>
+          <th class="text-left p-3 font-medium">Lehrdauer</th>
+          <th class="text-left p-3 font-medium">Eingereicht von</th>
+          <th class="text-left p-3 font-medium">Datum</th>
+          <th class="text-left p-3 font-medium w-56">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {materials?.map(m => (
+          <tr class="border-b border-slate-100 hover:bg-slate-50/50 transition align-top">
+            <td class="p-3">
+              <div class="font-medium text-slate-900">{m.titel}</div>
+              <div class="text-xs text-slate-500 mt-0.5">T{m.thema_nr} · LJ {m.lehrjahr} · {m.sprachmodus_primaer}</div>
+              <div class="flex flex-wrap gap-1 mt-1">
+                {(m.schluesselkompetenzen as string[]).slice(0,3).map((sk: string) => (
+                  <span class="chip">{sk}</span>
+                ))}
+              </div>
+            </td>
+            <td class="p-3 text-slate-600">{m.lehrdauer}</td>
+            <td class="p-3">
+              <div class="text-slate-700">{(m as any).submitter?.full_name ?? '—'}</div>
+              {(m as any).submitter?.abteilung && (
+                <div class="text-xs text-slate-400">{(m as any).submitter.abteilung}</div>
+              )}
+            </td>
+            <td class="p-3 text-slate-500 text-xs whitespace-nowrap">
+              {new Date(m.created_at).toLocaleDateString('de-CH')}
+            </td>
+            <td class="p-3"
+              x-data={`statusEditor(${JSON.stringify(m.id)}, ${JSON.stringify(m.status)}, ${JSON.stringify(m.kt1_kommentar ?? '')})`}
+            >
+              <select x-model="status" @change="statusChanged()" class="input text-xs py-1">
+                <option value="eingereicht">Eingereicht</option>
+                <option value="gesichtet">Gesichtet</option>
+                <option value="freigegeben">Freigegeben</option>
+                <option value="revision_noetig">Revision nötig</option>
+              </select>
+              <div x-show="status === 'revision_noetig'" x-collapse class="mt-1.5">
+                <textarea
+                  x-model="kommentar"
+                  rows="2"
+                  placeholder="Kommentar für die Lehrperson…"
+                  class="input text-xs resize-none"
+                ></textarea>
+              </div>
+              <div class="mt-1.5 flex items-center gap-2" x-show="dirty">
+                <button
+                  @click="save()"
+                  :disabled="saving"
+                  class="text-xs px-2.5 py-1 rounded text-white font-medium disabled:opacity-60"
+                  style="background: var(--brand)"
+                  x-text="saving ? 'Speichert…' : 'Speichern'"
+                ></button>
+                <button @click="reset()" class="text-xs text-slate-400 hover:text-slate-600 underline">Abbrechen</button>
+              </div>
+              <div x-show="saved" x-transition class="mt-1 text-xs text-emerald-600 font-medium">✓ Gespeichert</div>
+              <div x-show="saveError" x-transition class="mt-1 text-xs text-red-600" x-text="saveError"></div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    {count === 0 && (
+      <div class="p-10 text-center text-slate-500 text-sm">
+        {Object.values(filters).some(Boolean)
+          ? 'Keine Materialien entsprechen den aktuellen Filtern.'
+          : 'Noch keine Materialien eingereicht.'
+        }
+      </div>
+    )}
+  </div>
+</Admin>
+
+<script is:inline>
+function statusEditor(id, initialStatus, initialKommentar) {
+  return {
+    id,
+    status: initialStatus,
+    kommentar: initialKommentar,
+    originalStatus: initialStatus,
+    originalKommentar: initialKommentar,
+    saving: false,
+    saved: false,
+    saveError: '',
+    get dirty() {
+      return this.status !== this.originalStatus || this.kommentar !== this.originalKommentar
+    },
+    statusChanged() {
+      if (this.status !== 'revision_noetig') this.kommentar = ''
+    },
+    reset() {
+      this.status = this.originalStatus
+      this.kommentar = this.originalKommentar
+    },
+    async save() {
+      this.saving = true
+      this.saveError = ''
+      try {
+        const res = await fetch(`/api/materials/${this.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            status: this.status,
+            kt1_kommentar: this.kommentar || null,
+          }),
+        })
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}))
+          this.saveError = body.error || 'Fehler beim Speichern.'
+          return
+        }
+        this.originalStatus = this.status
+        this.originalKommentar = this.kommentar
+        this.saved = true
+        setTimeout(() => { this.saved = false }, 2500)
+      } catch (e) {
+        this.saveError = 'Netzwerkfehler.'
+      } finally {
+        this.saving = false
+      }
+    },
+  }
+}
+</script>

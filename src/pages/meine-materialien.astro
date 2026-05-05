@@ -1,0 +1,102 @@
+---
+import LP from '../layouts/LP.astro'
+import MaterialCard from '../components/MaterialCard.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role === 'kt1') return Astro.redirect('/admin')
+
+const { data: materials } = await Astro.locals.supabase
+  .from('materials')
+  .select('*')
+  .eq('submitted_by', user.id)
+  .order('created_at', { ascending: false })
+
+const count = materials?.length ?? 0
+---
+<LP title="Meine Materialien">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Meine Materialien</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      {count} {count === 1 ? 'Einreichung' : 'Einreichungen'}
+    </p>
+  </div>
+
+  {count === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center">
+      <div class="text-5xl mb-3">📭</div>
+      <div class="text-lg font-medium text-slate-700">Noch keine Materialien</div>
+      <div class="text-sm text-slate-500 mt-1 mb-4">Reiche dein erstes Material ein.</div>
+      <a href="/einreichen" class="inline-block px-5 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition" style="background: var(--brand)">
+        Zum Formular
+      </a>
+    </div>
+  )}
+
+  {count > 0 && (
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="materials-grid">
+      {materials!.map(m => (
+        <div
+          x-data={`materialActions(${JSON.stringify(m.id)})`}
+          x-show="!deleted"
+          class="flex flex-col"
+        >
+          <MaterialCard material={m} />
+          {m.status === 'eingereicht' && (
+            <div class="flex gap-2 mt-2">
+              <a
+                href={`/bearbeiten/${m.id}`}
+                class="flex-1 text-center py-1.5 text-sm border border-slate-300 rounded-md hover:bg-slate-50 text-slate-600 transition"
+              >
+                Bearbeiten
+              </a>
+              <button
+                @click="confirmDelete()"
+                :disabled="deleting"
+                class="flex-1 py-1.5 text-sm border border-red-200 rounded-md hover:bg-red-50 text-red-600 transition disabled:opacity-50"
+                x-text="deleting ? 'Löscht…' : 'Löschen'"
+              ></button>
+            </div>
+          )}
+          <div x-show="deleteError" class="mt-1 text-xs text-red-600 text-center" x-text="deleteError"></div>
+        </div>
+      ))}
+    </div>
+  )}
+</LP>
+
+<script is:inline>
+function materialActions(id) {
+  return {
+    id,
+    deleted: false,
+    deleting: false,
+    deleteError: '',
+    async confirmDelete() {
+      if (!confirm('Material wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.')) return
+      this.deleting = true
+      this.deleteError = ''
+      try {
+        const res = await fetch(`/api/materials/${this.id}`, { method: 'DELETE' })
+        if (res.ok || res.status === 204) {
+          this.deleted = true
+        } else {
+          const body = await res.json().catch(() => ({}))
+          this.deleteError = body.error || 'Fehler beim Löschen.'
+        }
+      } catch {
+        this.deleteError = 'Netzwerkfehler.'
+      } finally {
+        this.deleting = false
+      }
+    },
+  }
+}
+</script>

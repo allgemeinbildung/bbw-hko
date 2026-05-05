@@ -1,0 +1,88 @@
+---
+import type { Nrlp } from '../lib/nrlp'
+
+interface Props {
+  nrlp: Nrlp
+  filters: Record<string, string>
+}
+const { nrlp, filters } = Astro.props
+---
+<div class="bg-white border border-slate-200 rounded-lg p-4 mb-5">
+  <form method="GET" class="space-y-3">
+    <div class="grid grid-cols-4 gap-3">
+      <div>
+        <label class="field-label">Typ</label>
+        <select name="typ" class="input mt-1">
+          <option value="" selected={!filters.typ}>Alle</option>
+          <option value="herausforderung" selected={filters.typ === 'herausforderung'}>Herausforderung</option>
+          <option value="kompetenznachweis" selected={filters.typ === 'kompetenznachweis'}>Kompetenznachweis</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Lehrdauer</label>
+        <select name="lehrdauer" class="input mt-1">
+          <option value="" selected={!filters.lehrdauer}>Alle</option>
+          {['EBA', 'EFZ-3J', 'EFZ-4J'].map(v => (
+            <option value={v} selected={filters.lehrdauer === v}>{v}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Lehrjahr</label>
+        <select name="lehrjahr" class="input mt-1">
+          <option value="" selected={!filters.lehrjahr}>Alle</option>
+          {[1,2,3,4].map(n => (
+            <option value={String(n)} selected={filters.lehrjahr === String(n)}>{n}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Thema</label>
+        <select name="thema_nr" class="input mt-1">
+          <option value="" selected={!filters.thema_nr}>Alle</option>
+          {nrlp.themen.map(t => (
+            <option value={String(t.nr)} selected={filters.thema_nr === String(t.nr)}>T{t.nr} — {t.titel}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div class="grid grid-cols-4 gap-3">
+      <div>
+        <label class="field-label">Schlüsselkompetenz</label>
+        <select name="sk" class="input mt-1">
+          <option value="" selected={!filters.sk}>Alle</option>
+          {nrlp.zirkularitaet.schluesselkompetenzen.map(s => (
+            <option value={s.bezeichnung} selected={filters.sk === s.bezeichnung}>{s.bezeichnung}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Aspekt</label>
+        <select name="aspekt" class="input mt-1">
+          <option value="" selected={!filters.aspekt}>Alle</option>
+          {nrlp.zirkularitaet.gesellschaftsinhalte.map(a => (
+            <option value={a.bezeichnung} selected={filters.aspekt === a.bezeichnung}>{a.bezeichnung}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Status</label>
+        <select name="status" class="input mt-1">
+          <option value="" selected={!filters.status}>Alle</option>
+          {[
+            ['eingereicht', 'Eingereicht'],
+            ['gesichtet', 'Gesichtet'],
+            ['freigegeben', 'Freigegeben'],
+            ['revision_noetig', 'Revision nötig'],
+          ].map(([v, l]) => (
+            <option value={v} selected={filters.status === v}>{l}</option>
+          ))}
+        </select>
+      </div>
+      <div class="flex items-end gap-2">
+        <button type="submit" class="flex-1 py-2 px-3 rounded-md text-white text-sm font-medium" style="background: var(--brand)">Filtern</button>
+        <a href="?" class="py-2 px-3 rounded-md border border-slate-300 text-sm text-slate-600 hover:bg-slate-50">✕</a>
+      </div>
+    </div>
+  </form>
+</div>

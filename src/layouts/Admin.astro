@@ -1,0 +1,59 @@
+---
+import Base from './Base.astro'
+
+interface Props {
+  title?: string
+}
+const { title } = Astro.props
+const user = Astro.locals.user
+const path = Astro.url.pathname
+
+const success = Astro.url.searchParams.get('success')
+const error = Astro.url.searchParams.get('error')
+---
+<Base title={title}>
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded flex items-center justify-center text-white font-bold text-sm" style="background: var(--brand)">A</div>
+          <div>
+            <div class="text-base font-semibold leading-tight">ABU-Materialplattform</div>
+            <div class="text-xs text-slate-500 leading-tight">KT1 · ABU Reform 2030</div>
+          </div>
+        </div>
+        <nav class="flex gap-1 bg-slate-100 p-1 rounded-lg">
+          <a
+            href="/admin"
+            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}
+          >Übersicht</a>
+          <a
+            href="/admin/dashboard"
+            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/dashboard' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}
+          >Lücken-Dashboard</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <span class="text-sm text-slate-500 hidden sm:block">{user?.email}</span>
+          <form method="POST" action="/api/auth/logout">
+            <button type="submit" class="text-sm text-slate-500 hover:text-slate-700 underline">Abmelden</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    {success && (
+      <div class="bg-emerald-50 border-b border-emerald-200 px-6 py-2 text-sm text-emerald-700 text-center">{success}</div>
+    )}
+    {error && (
+      <div class="bg-red-50 border-b border-red-200 px-6 py-2 text-sm text-red-700 text-center">{error}</div>
+    )}
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-6">
+      <slot />
+    </main>
+
+    <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
+      ABU-Materialplattform · KT1 Admin · ABU Reform 2030
+    </footer>
+  </div>
+</Base>

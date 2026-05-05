@@ -1,0 +1,515 @@
+---
+interface Props {
+  materialId?: string
+  initialData?: Record<string, any>
+}
+const { materialId, initialData } = Astro.props
+const isEdit = !!materialId
+---
+
+{initialData && (
+  <script type="application/json" id="intake-initial-data" set:html={JSON.stringify(initialData)} />
+)}
+
+<div x-data={`intakeForm(${JSON.stringify(materialId ?? null)})`} x-init="init()" x-cloak>
+
+  <!-- Loading -->
+  <div x-show="!nrlp" class="flex items-center justify-center py-12 text-slate-500">
+    <span x-show="!loadError">Lade nRLP-Daten…</span>
+    <div x-show="loadError" class="p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm" x-text="loadError"></div>
+  </div>
+
+  <!-- Toast -->
+  <div
+    x-show="toast.show"
+    x-transition
+    class="fixed top-20 right-6 z-30 text-white px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium"
+    :class="toast.error ? 'bg-red-600' : 'bg-emerald-600'"
+    x-text="toast.msg"
+  ></div>
+
+  <div x-show="nrlp">
+    <div class="mb-5">
+      <h1 class="text-2xl font-semibold" x-text={isEdit ? "'Material bearbeiten'" : "'Material einreichen'"}></h1>
+      <p class="text-sm text-slate-500 mt-1">Jede Einreichung enthält eine Herausforderung und den dazugehörigen Kompetenznachweis. Pflichtfelder mit <span class="text-red-500">*</span> markiert.</p>
+    </div>
+
+    <form @submit.prevent="submitMaterial()">
+
+      <!-- ── BLOCK A — Identifikation (shared) ─────────────────────────── -->
+      <div class="bg-white border border-slate-200 rounded-lg p-5 mb-5">
+        <h2 class="font-semibold text-slate-800 mb-4 flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center" style="background: var(--brand)">A</span>
+          Identifikation
+        </h2>
+        <div class="grid grid-cols-3 gap-5">
+
+          <div>
+            <label class="field-label">Lehrdauer <span class="text-red-500">*</span></label>
+            <div class="radio-group mt-2">
+              <template x-for="opt in ['EBA','EFZ-3J','EFZ-4J']" :key="opt">
+                <label class="radio-pill" :class="form.lehrdauer === opt ? 'selected' : ''">
+                  <input type="radio" :value="opt" x-model="form.lehrdauer" class="hidden" @change="adjustLehrjahr()">
+                  <span x-text="opt"></span>
+                </label>
+              </template>
+            </div>
+            <div x-show="errors.lehrdauer" class="text-xs text-red-600 mt-1">Bitte Lehrdauer wählen.</div>
+          </div>
+
+          <div>
+            <label class="field-label">Lehrjahr <span class="text-red-500">*</span></label>
+            <div class="radio-group mt-2">
+              <template x-for="n in maxLehrjahr" :key="n">
+                <label class="radio-pill" :class="form.lehrjahr === n ? 'selected' : ''">
+                  <input type="radio" :value="n" x-model.number="form.lehrjahr" class="hidden">
+                  <span x-text="n"></span>
+                </label>
+              </template>
+              <span x-show="!form.lehrdauer" class="text-xs text-slate-400 italic self-center">erst Lehrdauer wählen</span>
+            </div>
+            <div x-show="errors.lehrjahr" class="text-xs text-red-600 mt-1">Bitte Lehrjahr wählen.</div>
+          </div>
+
+          <div>
+            <label class="field-label">Abteilung</label>
+            <input type="text" x-model="form.abteilung" placeholder="z. B. Abt. 3" class="input mt-2">
+          </div>
+
+          <div class="col-span-2">
+            <label class="field-label">Thema (nRLP) <span class="text-red-500">*</span></label>
+            <select x-model.number="form.thema_nr" @change="syncThemaTitel()" class="input mt-2" :class="errors.thema_nr ? 'invalid' : ''">
+              <option value="">— wählen —</option>
+              <template x-for="t in nrlp.themen" :key="t.nr">
+                <option :value="t.nr" x-text="'T' + t.nr + ' — ' + t.titel"></option>
+              </template>
+            </select>
+            <div x-show="errors.thema_nr" class="text-xs text-red-600 mt-1">Bitte Thema wählen.</div>
+          </div>
+
+          <div>
+            <label class="field-label">Titel des Materials <span class="text-red-500">*</span></label>
+            <input type="text" x-model="form.titel" placeholder="z. B. Lehrvertrag — T1 LJ1" class="input mt-2" :class="errors.titel ? 'invalid' : ''">
+            <div x-show="errors.titel" class="text-xs text-red-600 mt-1">Pflichtfeld.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── BLOCK B — nRLP-Taxonomie (shared) ─────────────────────────── -->
+      <div class="bg-white border border-slate-200 rounded-lg p-5 mb-5">
+        <h2 class="font-semibold text-slate-800 mb-4 flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center" style="background: var(--brand)">B</span>
+          nRLP-Taxonomie
+        </h2>
+        <div class="grid grid-cols-2 gap-5">
+
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label class="field-label">Schlüsselkompetenzen</label>
+              <span class="text-xs" :class="form.schluesselkompetenzen.length >= minRequired ? 'text-emerald-600' : 'text-amber-600'">
+                <span x-text="form.schluesselkompetenzen.length"></span> · Min. <span x-text="minRequired"></span>
+              </span>
+            </div>
+            <div class="check-grid mt-1.5">
+              <template x-for="sk in nrlp.zirkularitaet.schluesselkompetenzen" :key="sk.bezeichnung">
+                <label class="check-item" :class="form.schluesselkompetenzen.includes(sk.bezeichnung) ? 'checked' : ''">
+                  <input type="checkbox" :value="sk.bezeichnung" x-model="form.schluesselkompetenzen">
+                  <span x-text="sk.bezeichnung"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label class="field-label">Aspekte (Gesellschaftsinhalte)</label>
+              <span class="text-xs" :class="form.aspekte.length >= minRequired ? 'text-emerald-600' : 'text-amber-600'">
+                <span x-text="form.aspekte.length"></span> · Min. <span x-text="minRequired"></span>
+              </span>
+            </div>
+            <div class="check-grid mt-1.5">
+              <template x-for="a in nrlp.zirkularitaet.gesellschaftsinhalte" :key="a.bezeichnung">
+                <label class="check-item" :class="form.aspekte.includes(a.bezeichnung) ? 'checked' : ''">
+                  <input type="checkbox" :value="a.bezeichnung" x-model="form.aspekte">
+                  <span x-text="a.bezeichnung"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+          <div>
+            <label class="field-label">Sprachmodus primär <span class="text-red-500">*</span></label>
+            <select x-model="form.sprachmodus_primaer" class="input mt-1.5" :class="errors.sprachmodus_primaer ? 'invalid' : ''">
+              <option value="">— wählen —</option>
+              <template x-for="sm in nrlp.zirkularitaet.sprachmodi" :key="sm.bezeichnung">
+                <option :value="sm.bezeichnung" x-text="sm.bezeichnung"></option>
+              </template>
+            </select>
+          </div>
+
+          <div>
+            <label class="field-label">Sprachmodi sekundär (optional)</label>
+            <div class="check-grid mt-1.5">
+              <template x-for="sm in nrlp.zirkularitaet.sprachmodi.filter(s => s.bezeichnung !== form.sprachmodus_primaer)" :key="sm.bezeichnung">
+                <label class="check-item" :class="form.sprachmodi_sekundaer.includes(sm.bezeichnung) ? 'checked' : ''">
+                  <input type="checkbox" :value="sm.bezeichnung" x-model="form.sprachmodi_sekundaer">
+                  <span x-text="sm.bezeichnung"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── BLOCK C+D — Herausforderung | Kompetenznachweis ───────────── -->
+      <div class="grid grid-cols-2 gap-5 mb-5">
+
+        <!-- LEFT — Herausforderung -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 pb-2 border-b-2" style="border-color: var(--brand)">
+            <span class="w-5 h-5 rounded text-white text-xs flex items-center justify-center font-bold" style="background: var(--brand)">H</span>
+            <h2 class="font-semibold text-slate-800">Herausforderung</h2>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-lg p-4">
+            <p class="text-xs text-slate-500 mb-3">Beschreibe die Situation aus der ICH-Perspektive. Die Lernenden sollen sich damit identifizieren können.</p>
+            <label class="field-label">Herausforderungstext <span class="text-red-500">*</span></label>
+            <textarea
+              x-model="form.herausforderung_text"
+              rows="10"
+              placeholder="z. B. «Ich bin seit 3 Monaten Lernende/r bei der Firma Müller AG. Mein Berufsbildner teilt mir mit, dass mein Lehrvertrag angepasst werden muss — ich verstehe aber nicht warum und was das für mich bedeutet. Ich muss …»"
+              class="input mt-1.5 resize-none"
+              :class="errors.herausforderung_text ? 'invalid' : ''"
+            ></textarea>
+            <div x-show="errors.herausforderung_text" class="text-xs text-red-600 mt-1">Pflichtfeld.</div>
+            <div class="text-xs text-slate-400 mt-1.5" x-text="form.herausforderung_text.length + ' Zeichen'"></div>
+          </div>
+
+          <!-- Checkliste Herausforderung -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-slate-700 mb-1">Checkliste Herausforderung</h3>
+            <p class="text-xs text-slate-400 mb-3">Optional — fehlende Häkchen erscheinen als Warnung.</p>
+            <div class="space-y-2">
+              <label class="check-item" :class="form.selbstcheck.h.ich_perspektive ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.h.ich_perspektive">
+                <div><div class="font-medium">ICH-Perspektive</div><div class="text-xs text-slate-500">Situation aus Sicht der Lernenden formuliert</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.h.k3_oder_hoeher ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.h.k3_oder_hoeher">
+                <div><div class="font-medium">Kognitives Niveau K3+</div><div class="text-xs text-slate-500">Anwenden, Analysieren, Entscheiden</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.h.min_schluesselkompetenzen ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.h.min_schluesselkompetenzen">
+                <div><div class="font-medium">Min. Schlüsselkompetenzen erfüllt</div><div class="text-xs text-slate-500">EBA: 2 · EFZ-3J: 3 · EFZ-4J: 4</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.h.min_aspekte ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.h.min_aspekte">
+                <div><div class="font-medium">Min. Aspekte erfüllt</div><div class="text-xs text-slate-500">EBA: 2 · EFZ-3J: 3 · EFZ-4J: 4</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.h.situation_konkret ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.h.situation_konkret">
+                <div><div class="font-medium">Situation konkret und realistisch</div><div class="text-xs text-slate-500">Bezug zum Berufsalltag erkennbar</div></div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Kompetenznachweis -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 pb-2 border-b-2 border-slate-400">
+            <span class="w-5 h-5 rounded text-white text-xs flex items-center justify-center font-bold bg-slate-500">K</span>
+            <h2 class="font-semibold text-slate-800">Kompetenznachweis</h2>
+          </div>
+
+          <!-- Handlungsprodukt -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-slate-700 mb-3">Handlungsprodukt</h3>
+            <div class="space-y-3">
+              <div>
+                <label class="field-label">Typ <span class="text-red-500">*</span></label>
+                <div class="radio-group mt-1.5">
+                  <template x-for="opt in [['schriftlich','Schriftlich'],['mündlich','Mündlich'],['multimedial','Multimedial'],['mischform','Mischform']]" :key="opt[0]">
+                    <label class="radio-pill" :class="form.handlungsprodukt_typ === opt[0] ? 'selected' : ''">
+                      <input type="radio" :value="opt[0]" x-model="form.handlungsprodukt_typ" class="hidden"><span x-text="opt[1]"></span>
+                    </label>
+                  </template>
+                </div>
+                <div x-show="errors.handlungsprodukt_typ" class="text-xs text-red-600 mt-1">Bitte Typ wählen.</div>
+              </div>
+              <div>
+                <label class="field-label">
+                  Beschreibung <span class="text-red-500">*</span>
+                  <span class="font-normal normal-case text-slate-400" x-text="'(' + form.handlungsprodukt_beschreibung.length + '/300)'"></span>
+                </label>
+                <textarea
+                  x-model="form.handlungsprodukt_beschreibung"
+                  maxlength="300"
+                  rows="5"
+                  placeholder="Was produzieren die Lernenden konkret? Welche Kompetenz wird nachgewiesen?"
+                  class="input mt-1.5 resize-none"
+                  :class="errors.handlungsprodukt_beschreibung ? 'invalid' : ''"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bewertungsraster -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-slate-700 mb-3">Bewertungsraster</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-medium">Bewertungsraster vorhanden</div>
+                  <div class="text-xs text-slate-500">Liegt ein ausgefüllter Raster bei?</div>
+                </div>
+                <div class="toggle" :class="form.beurteilungsraster ? 'on' : ''" @click="form.beurteilungsraster = !form.beurteilungsraster" role="switch" :aria-checked="form.beurteilungsraster"></div>
+              </div>
+              <div x-show="form.beurteilungsraster" x-collapse>
+                <label class="field-label">Datei-Referenz</label>
+                <input type="text" x-model="form.datei_name" placeholder="z. B. bewertungsraster-lehrvertrag-v2.pdf" class="input mt-1.5">
+                <div class="text-xs text-slate-400 mt-1">MVP: Dateiname als Referenz — Upload folgt in Phase 2.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkliste Kompetenznachweis -->
+          <div class="bg-white border border-slate-200 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-slate-700 mb-1">Checkliste Kompetenznachweis</h3>
+            <p class="text-xs text-slate-400 mb-3">Optional — fehlende Häkchen erscheinen als Warnung.</p>
+            <div class="space-y-2">
+              <label class="check-item" :class="form.selbstcheck.kn.kompetenz_formuliert ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.kn.kompetenz_formuliert">
+                <div><div class="font-medium">Kompetenz klar formuliert</div><div class="text-xs text-slate-500">Messbar, beobachtbar, beurteilbar</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.kn.bewertungsraster_vorhanden ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.kn.bewertungsraster_vorhanden">
+                <div><div class="font-medium">Bewertungsraster vorhanden</div><div class="text-xs text-slate-500">Kriterien und Niveaus definiert</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.kn.eigenstaendig_loesbar ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.kn.eigenstaendig_loesbar">
+                <div><div class="font-medium">Eigenständig lösbar</div><div class="text-xs text-slate-500">Ohne externe Hilfe bearbeitbar</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.kn.min_schluesselkompetenzen ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.kn.min_schluesselkompetenzen">
+                <div><div class="font-medium">Min. Schlüsselkompetenzen erfüllt</div><div class="text-xs text-slate-500">EBA: 2 · EFZ-3J: 3 · EFZ-4J: 4</div></div>
+              </label>
+              <label class="check-item" :class="form.selbstcheck.kn.bearbeitungszeit_realistisch ? 'checked' : ''">
+                <input type="checkbox" x-model="form.selbstcheck.kn.bearbeitungszeit_realistisch">
+                <div><div class="font-medium">Bearbeitungszeit realistisch</div><div class="text-xs text-slate-500">Umfang passt zur Unterrichtszeit</div></div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Submit ─────────────────────────────────────────────────────── -->
+      <div class="flex items-center justify-between bg-white border border-slate-200 rounded-lg px-5 py-4">
+        <button type="button" @click="resetForm()" class="text-sm text-slate-500 hover:text-slate-700 underline">
+          Formular zurücksetzen
+        </button>
+        <button
+          type="submit"
+          :disabled="submitting"
+          class="px-6 py-2.5 rounded-md text-white font-medium text-sm shadow-sm hover:opacity-90 transition disabled:opacity-60"
+          style="background: var(--brand)"
+          x-text="submitting ? 'Wird gespeichert…' : (materialId ? 'Änderungen speichern' : 'Material einreichen')"
+        ></button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script is:inline>
+function intakeForm(materialId) {
+  return {
+    materialId,
+    nrlp: null,
+    loadError: null,
+    toast: { show: false, msg: '', error: false },
+    errors: {},
+    submitting: false,
+    form: {},
+
+    async init() {
+      this.form = this.emptyForm()
+
+      // Pre-populate when editing
+      const dataEl = document.getElementById('intake-initial-data')
+      if (dataEl) {
+        try {
+          const d = JSON.parse(dataEl.textContent || '{}')
+          const sc = d.selbstcheck
+          this.form = {
+            ...this.emptyForm(),
+            lehrdauer:                   d.lehrdauer                   || '',
+            lehrjahr:                    d.lehrjahr                    || '',
+            thema_nr:                    d.thema_nr                    || '',
+            thema_titel:                 d.thema_titel                 || '',
+            titel:                       d.titel                       || '',
+            abteilung:                   d.abteilung                   || '',
+            schluesselkompetenzen:       d.schluesselkompetenzen       || [],
+            aspekte:                     d.aspekte                     || [],
+            sprachmodus_primaer:         d.sprachmodus_primaer         || '',
+            sprachmodi_sekundaer:        d.sprachmodi_sekundaer        || [],
+            herausforderung_text:        d.herausforderung_text        || '',
+            handlungsprodukt_typ:        d.handlungsprodukt_typ        || '',
+            handlungsprodukt_beschreibung: d.handlungsprodukt_beschreibung || '',
+            beurteilungsraster:          d.beurteilungsraster          ?? false,
+            datei_name:                  d.datei_name                  || '',
+            selbstcheck: (sc && (sc.h || sc.kn)) ? sc : this.emptyForm().selbstcheck,
+          }
+        } catch {}
+      }
+
+      try {
+        const res = await fetch('/nrlp.json')
+        if (!res.ok) throw new Error('HTTP ' + res.status)
+        this.nrlp = await res.json()
+      } catch (e) {
+        this.loadError = 'nrlp.json konnte nicht geladen werden: ' + e.message
+      }
+    },
+
+    emptyForm() {
+      return {
+        lehrdauer: '',
+        lehrjahr: '',
+        thema_nr: '',
+        thema_titel: '',
+        titel: '',
+        abteilung: '',
+        schluesselkompetenzen: [],
+        aspekte: [],
+        sprachmodus_primaer: '',
+        sprachmodi_sekundaer: [],
+        herausforderung_text: '',
+        handlungsprodukt_typ: '',
+        handlungsprodukt_beschreibung: '',
+        beurteilungsraster: false,
+        datei_name: '',
+        selbstcheck: {
+          h: {
+            ich_perspektive: false,
+            k3_oder_hoeher: false,
+            min_schluesselkompetenzen: false,
+            min_aspekte: false,
+            situation_konkret: false,
+          },
+          kn: {
+            kompetenz_formuliert: false,
+            bewertungsraster_vorhanden: false,
+            eigenstaendig_loesbar: false,
+            min_schluesselkompetenzen: false,
+            bearbeitungszeit_realistisch: false,
+          },
+        },
+      }
+    },
+
+    get maxLehrjahr() {
+      if (this.form.lehrdauer === 'EFZ-4J') return 4
+      if (this.form.lehrdauer === 'EFZ-3J') return 3
+      if (this.form.lehrdauer === 'EBA') return 2
+      return 0
+    },
+
+    get minRequired() {
+      if (this.form.lehrdauer === 'EFZ-4J') return 4
+      if (this.form.lehrdauer === 'EFZ-3J') return 3
+      if (this.form.lehrdauer === 'EBA') return 2
+      return 0
+    },
+
+    adjustLehrjahr() {
+      if (this.form.lehrjahr && this.form.lehrjahr > this.maxLehrjahr) {
+        this.form.lehrjahr = ''
+      }
+    },
+
+    syncThemaTitel() {
+      const t = this.nrlp.themen.find(x => x.nr === this.form.thema_nr)
+      this.form.thema_titel = t ? t.titel : ''
+    },
+
+    validate() {
+      const e = {}
+      if (!this.form.lehrdauer) e.lehrdauer = true
+      if (!this.form.lehrjahr) e.lehrjahr = true
+      if (!this.form.thema_nr) e.thema_nr = true
+      if (!this.form.titel.trim()) e.titel = true
+      if (!this.form.sprachmodus_primaer) e.sprachmodus_primaer = true
+      if (!this.form.herausforderung_text.trim()) e.herausforderung_text = true
+      if (!this.form.handlungsprodukt_typ) e.handlungsprodukt_typ = true
+      if (!this.form.handlungsprodukt_beschreibung.trim()) e.handlungsprodukt_beschreibung = true
+      this.errors = e
+      return Object.keys(e).length === 0
+    },
+
+    async submitMaterial() {
+      if (!this.validate()) {
+        this.showToast('Bitte alle Pflichtfelder ausfüllen.', true)
+        return
+      }
+      this.syncThemaTitel()
+      this.submitting = true
+
+      const url    = this.materialId ? `/api/materials/${this.materialId}` : '/api/materials'
+      const method = this.materialId ? 'PATCH' : 'POST'
+
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            typ: 'kompetenznachweis',
+            lehrdauer: this.form.lehrdauer,
+            lehrjahr: this.form.lehrjahr,
+            thema_nr: this.form.thema_nr,
+            thema_titel: this.form.thema_titel,
+            titel: this.form.titel,
+            abteilung: this.form.abteilung || null,
+            schluesselkompetenzen: this.form.schluesselkompetenzen,
+            aspekte: this.form.aspekte,
+            sprachmodus_primaer: this.form.sprachmodus_primaer,
+            sprachmodi_sekundaer: this.form.sprachmodi_sekundaer,
+            herausforderung_text: this.form.herausforderung_text,
+            handlungsprodukt_typ: this.form.handlungsprodukt_typ,
+            handlungsprodukt_beschreibung: this.form.handlungsprodukt_beschreibung,
+            beurteilungsraster: this.form.beurteilungsraster,
+            datei_name: this.form.datei_name || null,
+            selbstcheck: this.form.selbstcheck,
+          }),
+        })
+
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}))
+          this.showToast(body.error || 'Fehler beim Speichern (' + res.status + ').', true)
+          return
+        }
+
+        if (!this.materialId) this.resetForm()
+        this.showToast(this.materialId ? 'Änderungen gespeichert.' : 'Material erfolgreich eingereicht.')
+        setTimeout(() => { window.location.href = '/meine-materialien' }, 1800)
+      } catch (e) {
+        this.showToast('Netzwerkfehler: ' + e.message, true)
+      } finally {
+        this.submitting = false
+      }
+    },
+
+    resetForm() {
+      this.form = this.emptyForm()
+      this.errors = {}
+    },
+
+    showToast(msg, error = false) {
+      this.toast = { show: true, msg, error }
+      setTimeout(() => { this.toast.show = false }, 3500)
+    },
+  }
+}
+</script>

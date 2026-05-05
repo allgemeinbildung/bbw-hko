@@ -1,0 +1,50 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import CoverageBars from '../../components/CoverageBars.astro'
+import { nrlp } from '../../lib/nrlp'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role !== 'kt1') return Astro.redirect('/einreichen')
+
+// Optional filter by Lehrdauer for the dashboard
+const lehrdauer = Astro.url.searchParams.get('lehrdauer') ?? ''
+
+let query = Astro.locals.supabase
+  .from('materials')
+  .select('schluesselkompetenzen, aspekte, sprachmodus_primaer, sprachmodi_sekundaer, thema_nr, lehrjahr')
+
+if (lehrdauer) query = query.eq('lehrdauer', lehrdauer)
+
+const { data: materials } = await query
+---
+<Admin title="Lücken-Dashboard">
+  <div class="mb-5 flex items-end justify-between">
+    <div>
+      <h1 class="text-2xl font-semibold">Lücken-Dashboard</h1>
+      <p class="text-sm text-slate-500 mt-1">
+        {materials?.length ?? 0} Materialien analysiert
+        {lehrdauer && <span> · Filter: {lehrdauer}</span>}
+      </p>
+    </div>
+    <form method="GET" class="flex items-center gap-2">
+      <label class="field-label">Lehrdauer</label>
+      <select name="lehrdauer" class="input w-auto" onchange="this.form.submit()">
+        <option value="" selected={!lehrdauer}>Alle</option>
+        {['EBA', 'EFZ-3J', 'EFZ-4J'].map(v => (
+          <option value={v} selected={lehrdauer === v}>{v}</option>
+        ))}
+      </select>
+      {lehrdauer && <a href="/admin/dashboard" class="text-sm text-slate-500 hover:text-slate-700 underline">Zurücksetzen</a>}
+    </form>
+  </div>
+
+  <CoverageBars materials={materials ?? []} nrlp={nrlp} />
+</Admin>
