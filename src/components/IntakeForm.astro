@@ -73,7 +73,13 @@ const isEdit = !!materialId
 
           <div>
             <label class="field-label">Abteilung</label>
-            <input type="text" x-model="form.abteilung" placeholder="z. B. Abt. 3" class="input mt-2">
+            <select x-model="form.abteilung" class="input mt-2">
+              <option value="">— wählen —</option>
+              <option>Bau</option>
+              <option>Maschinenbau</option>
+              <option>Informatik | Naturwissenschaften</option>
+              <option>Technik | Ernährung</option>
+            </select>
           </div>
 
           <div class="col-span-2">
@@ -609,6 +615,13 @@ function intakeForm(materialId) {
           return
         }
 
+        if (this.form.abteilung) {
+          fetch('/api/profile', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ abteilung: this.form.abteilung }),
+          }).catch(() => {})
+        }
         if (!this.materialId) this.resetForm()
         this.showToast(this.materialId ? 'Änderungen gespeichert.' : 'Material erfolgreich eingereicht.')
         setTimeout(() => { window.location.href = '/meine-materialien' }, 1800)

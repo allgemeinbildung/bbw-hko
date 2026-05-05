@@ -7,12 +7,12 @@ if (!user) return Astro.redirect('/login')
 
 const { data: profile } = await Astro.locals.supabase
   .from('profiles')
-  .select('role')
+  .select('role, abteilung')
   .eq('id', user.id)
   .single()
 
 if (profile?.role === 'kt1') return Astro.redirect('/admin')
 ---
 <LP title="Einreichen">
-  <IntakeForm />
+  <IntakeForm initialData={{ abteilung: profile?.abteilung ?? '' }} />
 </LP>
