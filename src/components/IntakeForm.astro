@@ -170,7 +170,7 @@ const isEdit = !!materialId
           <div>
             <div class="flex items-baseline justify-between">
               <label class="field-label">Schlüsselkompetenzen</label>
-              <span class="text-xs" :class="form.schluesselkompetenzen.length >= 1 ? 'text-emerald-600' : 'text-amber-600'" x-text="form.schluesselkompetenzen.length + ' gewählt'"></span>
+              <span class="text-xs" :class="form.schluesselkompetenzen.length >= (minRequired || 1) ? 'text-emerald-600' : 'text-amber-600'" x-text="form.schluesselkompetenzen.length + (minRequired ? ' · Empf. ' + minRequired : ' gewählt')"></span>
             </div>
             <div class="check-grid mt-1.5">
               <template x-for="sk in (nrlp?.zirkularitaet?.schluesselkompetenzen ?? [])" :key="sk.bezeichnung">
@@ -185,7 +185,7 @@ const isEdit = !!materialId
           <div>
             <div class="flex items-baseline justify-between">
               <label class="field-label">Aspekte (Gesellschaftsinhalte)</label>
-              <span class="text-xs" :class="form.aspekte.length >= 1 ? 'text-emerald-600' : 'text-amber-600'" x-text="form.aspekte.length + ' gewählt'"></span>
+              <span class="text-xs" :class="form.aspekte.length >= (minRequired || 1) ? 'text-emerald-600' : 'text-amber-600'" x-text="form.aspekte.length + (minRequired ? ' · Empf. ' + minRequired : ' gewählt')"></span>
             </div>
             <div class="check-grid mt-1.5">
               <template x-for="a in (nrlp?.zirkularitaet?.gesellschaftsinhalte ?? [])" :key="a.bezeichnung">
@@ -261,11 +261,11 @@ const isEdit = !!materialId
               </label>
               <label class="check-item" :class="form.selbstcheck.h.min_schluesselkompetenzen ? 'checked' : ''">
                 <input type="checkbox" x-model="form.selbstcheck.h.min_schluesselkompetenzen">
-                <div><div class="font-medium">Min. Schlüsselkompetenzen erfüllt</div><div class="text-xs text-slate-500">Mindestens 1 gewählt</div></div>
+                <div><div class="font-medium">Min. Schlüsselkompetenzen erfüllt</div><div class="text-xs text-slate-500">Empfohlen: EBA 2 · EFZ-3J 3 · EFZ-4J 4</div></div>
               </label>
               <label class="check-item" :class="form.selbstcheck.h.min_aspekte ? 'checked' : ''">
                 <input type="checkbox" x-model="form.selbstcheck.h.min_aspekte">
-                <div><div class="font-medium">Min. Aspekte erfüllt</div><div class="text-xs text-slate-500">Mindestens 1 gewählt</div></div>
+                <div><div class="font-medium">Min. Aspekte erfüllt</div><div class="text-xs text-slate-500">Empfohlen: EBA 2 · EFZ-3J 3 · EFZ-4J 4</div></div>
               </label>
               <label class="check-item" :class="form.selbstcheck.h.situation_konkret ? 'checked' : ''">
                 <input type="checkbox" x-model="form.selbstcheck.h.situation_konkret">
@@ -352,7 +352,7 @@ const isEdit = !!materialId
               </label>
               <label class="check-item" :class="form.selbstcheck.kn.min_schluesselkompetenzen ? 'checked' : ''">
                 <input type="checkbox" x-model="form.selbstcheck.kn.min_schluesselkompetenzen">
-                <div><div class="font-medium">Min. Schlüsselkompetenzen erfüllt</div><div class="text-xs text-slate-500">Mindestens 1 gewählt</div></div>
+                <div><div class="font-medium">Min. Schlüsselkompetenzen erfüllt</div><div class="text-xs text-slate-500">Empfohlen: EBA 2 · EFZ-3J 3 · EFZ-4J 4</div></div>
               </label>
               <label class="check-item" :class="form.selbstcheck.kn.bearbeitungszeit_realistisch ? 'checked' : ''">
                 <input type="checkbox" x-model="form.selbstcheck.kn.bearbeitungszeit_realistisch">
