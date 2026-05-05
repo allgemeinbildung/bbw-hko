@@ -78,7 +78,7 @@ const isEdit = !!materialId
 
           <div class="col-span-2">
             <label class="field-label">Thema (nRLP) <span class="text-red-500">*</span></label>
-            <select x-model.number="form.thema_nr" @change="syncThemaTitel()" class="input mt-2" :class="errors.thema_nr ? 'invalid' : ''">
+            <select x-model.number="form.thema_nr" @change="onThemaChange()" class="input mt-2" :class="errors.thema_nr ? 'invalid' : ''">
               <option value="">— wählen —</option>
               <template x-for="t in nrlp.themen" :key="t.nr">
                 <option :value="t.nr" x-text="'T' + t.nr + ' — ' + t.titel"></option>
@@ -91,6 +91,63 @@ const isEdit = !!materialId
             <label class="field-label">Titel des Materials <span class="text-red-500">*</span></label>
             <input type="text" x-model="form.titel" placeholder="z. B. Lehrvertrag — T1 LJ1" class="input mt-2" :class="errors.titel ? 'invalid' : ''">
             <div x-show="errors.titel" class="text-xs text-red-600 mt-1">Pflichtfeld.</div>
+          </div>
+
+          <!-- Lebensbezug — only when selected Thema has detailed data -->
+          <div class="col-span-3" x-show="currentLebensbezuege.length > 0">
+            <label class="field-label">Lebensbezug <span class="text-red-500">*</span></label>
+            <select x-model="form.lebensbezug_nr" @change="onLebensbezugChange()" class="input mt-2" :class="errors.lebensbezug_nr ? 'invalid' : ''">
+              <option value="">— wählen —</option>
+              <template x-for="lb in currentLebensbezuege" :key="lb.nr">
+                <option :value="lb.nr" x-text="lb.nr + ' — ' + lb.text"></option>
+              </template>
+            </select>
+            <div x-show="errors.lebensbezug_nr" class="text-xs text-red-600 mt-1">Bitte Lebensbezug wählen.</div>
+          </div>
+
+          <!-- Kompetenz — only when a Lebensbezug is selected -->
+          <div class="col-span-3" x-show="form.lebensbezug_nr && currentKompetenzen.length > 0">
+            <label class="field-label">Kompetenz <span class="text-red-500">*</span></label>
+            <select x-model="form.kompetenz_nr" class="input mt-2" :class="errors.kompetenz_nr ? 'invalid' : ''">
+              <option value="">— wählen —</option>
+              <template x-for="kn in currentKompetenzen" :key="kn.nr">
+                <option :value="kn.nr" x-text="kn.nr + ' — ' + kn.text"></option>
+              </template>
+            </select>
+            <div x-show="errors.kompetenz_nr" class="text-xs text-red-600 mt-1">Bitte Kompetenz wählen.</div>
+          </div>
+
+          <!-- Taxonomie-Vorschlag — shown when a Kompetenz is selected -->
+          <div class="col-span-3" x-show="selectedKompetenz">
+            <div class="rounded-lg p-4 border" style="background:#edf3fa; border-color:#b3cce6">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1 min-w-0 space-y-1.5">
+                  <p class="text-sm font-semibold" style="color:var(--brand)">Empfohlene Taxonomie aus diesem Lernziel</p>
+                  <div class="text-xs text-slate-700 space-y-1">
+                    <div x-show="vorschlag.sk.length">
+                      <span class="font-semibold text-slate-800">Schlüsselkompetenzen: </span>
+                      <span x-text="vorschlag.sk.join(' · ')"></span>
+                    </div>
+                    <div x-show="vorschlag.aspekte.length">
+                      <span class="font-semibold text-slate-800">Aspekte: </span>
+                      <span x-text="vorschlag.aspekte.join(' · ')"></span>
+                    </div>
+                    <div x-show="vorschlag.sprachmodi.length">
+                      <span class="font-semibold text-slate-800">Sprachmodi: </span>
+                      <span x-text="vorschlag.sprachmodi.join(' · ')"></span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  @click="applyVorschlag()"
+                  class="shrink-0 px-3 py-1.5 text-xs font-semibold text-white rounded-md hover:opacity-80 transition"
+                  style="background:var(--brand)"
+                >
+                  Taxonomie übernehmen
+                </button>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -349,6 +406,8 @@ function intakeForm(materialId) {
             lehrjahr:                    d.lehrjahr                    || '',
             thema_nr:                    d.thema_nr                    || '',
             thema_titel:                 d.thema_titel                 || '',
+            lebensbezug_nr:              d.lebensbezug_nr              || '',
+            kompetenz_nr:                d.kompetenz_nr                || '',
             titel:                       d.titel                       || '',
             abteilung:                   d.abteilung                   || '',
             schluesselkompetenzen:       d.schluesselkompetenzen       || [],
@@ -380,6 +439,8 @@ function intakeForm(materialId) {
         lehrjahr: '',
         thema_nr: '',
         thema_titel: '',
+        lebensbezug_nr: '',
+        kompetenz_nr: '',
         titel: '',
         abteilung: '',
         schluesselkompetenzen: [],
@@ -430,9 +491,67 @@ function intakeForm(materialId) {
       }
     },
 
-    syncThemaTitel() {
+    get currentLebensbezuege() {
+      if (!this.nrlp || !this.form.thema_nr) return []
+      const t = this.nrlp.themen.find(x => x.nr === this.form.thema_nr)
+      return t?.lebensbezuege || []
+    },
+
+    get currentKompetenzen() {
+      if (!this.form.lebensbezug_nr) return []
+      const lb = this.currentLebensbezuege.find(x => x.nr === this.form.lebensbezug_nr)
+      return lb?.kompetenzen || []
+    },
+
+    get selectedKompetenz() {
+      if (!this.form.kompetenz_nr) return null
+      return this.currentKompetenzen.find(x => x.nr === this.form.kompetenz_nr) || null
+    },
+
+    get vorschlag() {
+      const t = this.nrlp && this.form.thema_nr
+        ? this.nrlp.themen.find(x => x.nr === this.form.thema_nr)
+        : null
+      const kn = this.selectedKompetenz
+      return {
+        sk:        t?.schluesselkompetenzen || [],
+        aspekte:   kn ? kn.gesellschaftliche_inhalte.map(g => g.aspekt) : [],
+        sprachmodi: kn ? kn.sprachmodi.map(s => s.modus) : [],
+      }
+    },
+
+    applyVorschlag() {
+      const v = this.vorschlag
+      v.sk.forEach(sk => {
+        if (!this.form.schluesselkompetenzen.includes(sk)) this.form.schluesselkompetenzen.push(sk)
+      })
+      v.aspekte.forEach(a => {
+        if (!this.form.aspekte.includes(a)) this.form.aspekte.push(a)
+      })
+      if (v.sprachmodi.length) {
+        if (!this.form.sprachmodus_primaer) {
+          this.form.sprachmodus_primaer = v.sprachmodi[0]
+          v.sprachmodi.slice(1).forEach(sm => {
+            if (!this.form.sprachmodi_sekundaer.includes(sm)) this.form.sprachmodi_sekundaer.push(sm)
+          })
+        } else {
+          v.sprachmodi.forEach(sm => {
+            if (sm !== this.form.sprachmodus_primaer && !this.form.sprachmodi_sekundaer.includes(sm))
+              this.form.sprachmodi_sekundaer.push(sm)
+          })
+        }
+      }
+    },
+
+    onThemaChange() {
       const t = this.nrlp.themen.find(x => x.nr === this.form.thema_nr)
       this.form.thema_titel = t ? t.titel : ''
+      this.form.lebensbezug_nr = ''
+      this.form.kompetenz_nr = ''
+    },
+
+    onLebensbezugChange() {
+      this.form.kompetenz_nr = ''
     },
 
     validate() {
@@ -440,6 +559,8 @@ function intakeForm(materialId) {
       if (!this.form.lehrdauer) e.lehrdauer = true
       if (!this.form.lehrjahr) e.lehrjahr = true
       if (!this.form.thema_nr) e.thema_nr = true
+      if (this.currentLebensbezuege.length > 0 && !this.form.lebensbezug_nr) e.lebensbezug_nr = true
+      if (this.form.lebensbezug_nr && this.currentKompetenzen.length > 0 && !this.form.kompetenz_nr) e.kompetenz_nr = true
       if (!this.form.titel.trim()) e.titel = true
       if (!this.form.sprachmodus_primaer) e.sprachmodus_primaer = true
       if (!this.form.herausforderung_text.trim()) e.herausforderung_text = true
@@ -470,6 +591,8 @@ function intakeForm(materialId) {
             lehrjahr: this.form.lehrjahr,
             thema_nr: this.form.thema_nr,
             thema_titel: this.form.thema_titel,
+            lebensbezug_nr: this.form.lebensbezug_nr || null,
+            kompetenz_nr: this.form.kompetenz_nr || null,
             titel: this.form.titel,
             abteilung: this.form.abteilung || null,
             schluesselkompetenzen: this.form.schluesselkompetenzen,
