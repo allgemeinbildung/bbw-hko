@@ -80,7 +80,7 @@ const isEdit = !!materialId
             <label class="field-label">Thema (nRLP) <span class="text-red-500">*</span></label>
             <select x-model.number="form.thema_nr" @change="onThemaChange()" class="input mt-2" :class="errors.thema_nr ? 'invalid' : ''">
               <option value="">— wählen —</option>
-              <template x-for="t in nrlp.themen" :key="t.nr">
+              <template x-for="t in (nrlp?.themen ?? [])" :key="t.nr">
                 <option :value="t.nr" x-text="'T' + t.nr + ' — ' + t.titel"></option>
               </template>
             </select>
@@ -169,7 +169,7 @@ const isEdit = !!materialId
               </span>
             </div>
             <div class="check-grid mt-1.5">
-              <template x-for="sk in nrlp.zirkularitaet.schluesselkompetenzen" :key="sk.bezeichnung">
+              <template x-for="sk in (nrlp?.zirkularitaet?.schluesselkompetenzen ?? [])" :key="sk.bezeichnung">
                 <label class="check-item" :class="form.schluesselkompetenzen.includes(sk.bezeichnung) ? 'checked' : ''">
                   <input type="checkbox" :value="sk.bezeichnung" x-model="form.schluesselkompetenzen">
                   <span x-text="sk.bezeichnung"></span>
@@ -186,7 +186,7 @@ const isEdit = !!materialId
               </span>
             </div>
             <div class="check-grid mt-1.5">
-              <template x-for="a in nrlp.zirkularitaet.gesellschaftsinhalte" :key="a.bezeichnung">
+              <template x-for="a in (nrlp?.zirkularitaet?.gesellschaftsinhalte ?? [])" :key="a.bezeichnung">
                 <label class="check-item" :class="form.aspekte.includes(a.bezeichnung) ? 'checked' : ''">
                   <input type="checkbox" :value="a.bezeichnung" x-model="form.aspekte">
                   <span x-text="a.bezeichnung"></span>
@@ -199,7 +199,7 @@ const isEdit = !!materialId
             <label class="field-label">Sprachmodus primär <span class="text-red-500">*</span></label>
             <select x-model="form.sprachmodus_primaer" class="input mt-1.5" :class="errors.sprachmodus_primaer ? 'invalid' : ''">
               <option value="">— wählen —</option>
-              <template x-for="sm in nrlp.zirkularitaet.sprachmodi" :key="sm.bezeichnung">
+              <template x-for="sm in (nrlp?.zirkularitaet?.sprachmodi ?? [])" :key="sm.bezeichnung">
                 <option :value="sm.bezeichnung" x-text="sm.bezeichnung"></option>
               </template>
             </select>
@@ -208,7 +208,7 @@ const isEdit = !!materialId
           <div>
             <label class="field-label">Sprachmodi sekundär (optional)</label>
             <div class="check-grid mt-1.5">
-              <template x-for="sm in nrlp.zirkularitaet.sprachmodi.filter(s => s.bezeichnung !== form.sprachmodus_primaer)" :key="sm.bezeichnung">
+              <template x-for="sm in (nrlp?.zirkularitaet?.sprachmodi ?? []).filter(s => s.bezeichnung !== form.sprachmodus_primaer)" :key="sm.bezeichnung">
                 <label class="check-item" :class="form.sprachmodi_sekundaer.includes(sm.bezeichnung) ? 'checked' : ''">
                   <input type="checkbox" :value="sm.bezeichnung" x-model="form.sprachmodi_sekundaer">
                   <span x-text="sm.bezeichnung"></span>
@@ -575,7 +575,6 @@ function intakeForm(materialId) {
         this.showToast('Bitte alle Pflichtfelder ausfüllen.', true)
         return
       }
-      this.syncThemaTitel()
       this.submitting = true
 
       const url    = this.materialId ? `/api/materials/${this.materialId}` : '/api/materials'
