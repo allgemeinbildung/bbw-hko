@@ -22,7 +22,6 @@ export const POST: APIRoute = async ({ locals, request, redirect }) => {
       id: data.user.id,
       full_name,
       abteilung,
-      role: 'lp',
     })
     if (profileError) {
       return redirect(`/registrieren?error=${encodeURIComponent('Profil konnte nicht erstellt werden: ' + profileError.message)}`)
