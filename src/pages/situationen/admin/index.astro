@@ -19,14 +19,27 @@ const filterMinTaug = p.get('min_taug') ?? ''
 
 let query = Astro.locals.supabase
   .from('feedbacks')
-  .select('*, lp:profiles!lp_id(full_name, abteilung)')
+  .select('*')
   .order('created_at', { ascending: false })
 
 if (filterStatus) query = query.eq('status', filterStatus)
 if (filterSituation) query = query.eq('situation_id', filterSituation)
 if (filterMinTaug) query = query.gte('tauglichkeit', parseInt(filterMinTaug))
 
-const { data: feedbacks, error } = await query
+const { data: feedbacksRaw, error } = await query
+
+// Separate profile lookup — feedbacks.lp_id references auth.users (not public.profiles),
+// so PostgREST can't auto-embed. Resolve in a second query.
+const lpIds = Array.from(new Set((feedbacksRaw ?? []).map((f: any) => f.lp_id).filter(Boolean)))
+let profilesById = new Map<string, { full_name: string | null; abteilung: string | null }>()
+if (lpIds.length > 0) {
+  const { data: profs } = await Astro.locals.supabase
+    .from('profiles')
+    .select('id, full_name, abteilung')
+    .in('id', lpIds)
+  profilesById = new Map((profs ?? []).map((p: any) => [p.id, { full_name: p.full_name, abteilung: p.abteilung }]))
+}
+const feedbacks = (feedbacksRaw ?? []).map((f: any) => ({ ...f, lp: profilesById.get(f.lp_id) ?? null }))
 
 const titleById = new Map(situationenIndex.map((s) => [s.id, s.titel] as const))
 
