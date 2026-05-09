@@ -1,0 +1,431 @@
+{
+  "id": "2.1_medien_fakenews_sit_C",
+  "modul": "2.1",
+  "modul_titel": "Meinungen bilden und mitgestalten",
+  "situation": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "Nur das, was ich mag",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "medien_filterblase"
+  ],
+  "nrlp": {
+    "nr": "2.1",
+    "nr_primary": [
+      "2.1"
+    ],
+    "lebensbezug": "2.1",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologie und digitale Transformation",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sk": [
+      1,
+      5,
+      6
+    ]
+  },
+  "persona": {
+    "beruf": "Detailhandelsfachfrau/-mann EFZ",
+    "betrieb": "Coop",
+    "ort": "Basel"
+  },
+  "situation_text": "Ich bin Detailhandelsfachfrau im 1. Lehrjahr bei Coop in Basel. Im ABU-Unterricht erklärt die Lehrperson das Konzept der Filterblase, und ich schaue mir danach meinen eigenen TikTok- und Instagram-Feed an. Ich stelle fest, dass mir seit Wochen fast nur Inhalte angezeigt werden, die zu meinen bisherigen Meinungen und Interessen passen — gegenteilige Standpunkte tauchen kaum auf. Im Lehrmittel (Kap. 7.1 und Kap. 20.7) lese ich, dass Algorithmen gezielt Inhalte selektieren, um mich länger auf der Plattform zu halten. Mich überrascht, wie stark mein Bild der Welt dadurch geformt wird, ohne dass ich es bemerkt habe. Wie erkenne ich meine eigene Filterblase — und wie kann ich ihr aktiv entgegenwirken?",
+  "zahlen_tabelle": [
+    {
+      "label": "Ø tägliche Social-Media-Nutzung Jugendliche CH",
+      "wert": "ca. 3–4 Std./Tag"
+    },
+    {
+      "label": "Anteil personalisierter Inhalte (TikTok)",
+      "wert": "ca. 90 % des Feeds"
+    },
+    {
+      "label": "Ziel des Algorithmus",
+      "wert": "maximale Verweildauer auf Plattform"
+    }
+  ],
+  "leitfrage": "Wie erkenne ich meine eigene Filterblase — und wie kann ich ihr aktiv entgegenwirken?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 7.1 und Kap. 20.7 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 7.1 | S. 188",
+      "text": "Erkläre, was eine Filterblase ist und wie Algorithmen auf Plattformen wie TikTok oder Instagram dazu beitragen, dass sie entsteht.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 20.7 | S. 444",
+      "text": "Analysiere deinen eigenen Social-Media-Feed: Welche Themen und Standpunkte tauchen auf? Welche fehlen? Notiere mindestens je drei Beispiele für «innen» (häufig) und «aussen» (kaum sichtbar).",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Du willst dich gezielt aus deiner Filterblase herausarbeiten. Du hast zwei Optionen: (a) Du folgst aktiv drei Accounts, die andere Standpunkte vertreten. (b) Du nutzt eine Suchmaschine ohne Personalisierung (z. B. DuckDuckGo) für politische Themen. Welche Strategie wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 7.1 | S. 188",
+      "text": "Erstelle in Ich-Form eine Kurz-Analyse (mind. 5 Sätze): Welche Filterblase erkennst du bei dir selbst, welche Auswirkungen hat sie auf deine Meinungsbildung — und welche drei konkreten Massnahmen nimmst du vor?",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Filterblase",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Wie Algorithmen funktionieren",
+      "punkte": [
+        "Klickverhalten",
+        "Verweildauer",
+        "Likes und Shares"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Wirkung der Filterblase",
+      "punkte": [
+        "Bestätigung eigener Meinung",
+        "Ausblendung Gegenpositionen",
+        "Verzerrtes Weltbild"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Gegenstrategien",
+      "punkte": [
+        "Andere Accounts folgen",
+        "Suche ohne Personalisierung",
+        "Bewusste Quellenwahl"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Desinformation und Demokratie",
+        "Politische Manipulation",
+        "Vergleich mit Zeitungskonsum"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Analyse-Kurzpräsentation",
+    "titel": "Format: Filterblase-Analyse (3 Min.)",
+    "format_detail": "Mündliche Kurzpräsentation (3 Min.) oder schriftliche Analyse: eigene Filterblase beschreiben, Auswirkungen erläutern und drei Gegenmassnahmen vorstellen",
+    "beschreibung": "Du analysierst deinen eigenen Social-Media-Feed auf Filterblasenmuster und präsentierst Befunde und Gegenstrategie.",
+    "schritte": [
+      {
+        "label": "Feed beobachten",
+        "hint": "Schau dir deinen Feed 10 Minuten lang bewusst an. Notiere Themen und Standpunkte, die regelmässig auftauchen — und welche fehlen."
+      },
+      {
+        "label": "Filterblase beschreiben",
+        "hint": "Fasse in 3–4 Sätzen zusammen: Welches Bild der Welt zeigt mir mein Algorithmus? Was sehe ich zu viel — was zu wenig?"
+      },
+      {
+        "label": "Auswirkung reflektieren",
+        "hint": "Überlege: Hat mein Feed meine Meinung zu einem konkreten Thema beeinflusst? Gib ein Beispiel."
+      },
+      {
+        "label": "Vergleich mit neutraler Suche",
+        "hint": "Suche dasselbe Thema auf SRF News oder mit DuckDuckGo. Was siehst du jetzt anders? Notiere 2–3 Unterschiede."
+      },
+      {
+        "label": "Drei Massnahmen formulieren",
+        "hint": "Schreibe drei konkrete Massnahmen auf, die du ab sofort umsetzt, um deine Informationsdiät bewusster zu gestalten."
+      }
+    ],
+    "schreib_label": "FILTERBLASE-ANALYSE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/medien_filterblase"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du siehst auf YouTube seit Wochen nur Videos über ein einziges Hobby. Handelt es sich dabei auch um eine Filterblase — oder ist das etwas anderes? Begründe.",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn ein Arbeitgeber seinen Lernenden vorschreibt, bestimmte Social-Media-Plattformen nicht mehr zu nutzen, weil sie Filterblasen fördern? Wäre das gerechtfertigt?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Polymechaniker/in EFZ und dein Betrieb nutzt einen firmeninternen News-Feed nur mit Branchenmeldungen. Ist das auch eine Filterblase — und was könnte das bewirken?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "In Kap. 7.1 und 20.7 findest du den Begriff «Filterblase» direkt. Achte darauf: Was macht der Algorithmus genau — und was ist die Folge für dein Weltbild als Coop-Lernende?",
+          "satzanfang": "Eine Filterblase entsteht, wenn Algorithmen auf Plattformen wie TikTok ___, sodass ich als Coop-Lernende immer mehr von ___ sehe und ___ seltener erscheint."
+        },
+        {
+          "nr": 2,
+          "tipp": "Schau konkret in deinen eigenen Feed. Mach zwei Spalten: «Häufig sichtbar» und «Kaum sichtbar». Je drei echte Beispiele genügen — aber sie müssen aus deinem tatsächlichen Feed stammen.",
+          "satzanfang": "In meinem Feed tauchen häufig ___, ___ und ___ auf. Kaum sichtbar sind dagegen ___, ___ und ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Denke an die konkrete Wirkung jeder Option auf deine tägliche Informationsdiät. Kap. 20.7 gibt dir Kriterien, um Strategien zu beurteilen.",
+          "satzanfang": "Ich wähle Option ___, weil sie mir als Coop-Lernende in Basel hilft, ___ — die andere Option wäre weniger wirksam, da ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Deine Analyse braucht drei Teile: (1) Welche Filterblase erkenne ich? (2) Welche Folgen hat sie? (3) Welche drei Massnahmen nehme ich vor? Mindestens 5 Sätze, alle in Ich-Form.",
+          "satzanfang": "Ich erkenne bei mir eine Filterblase im Bereich ___, die dazu führt, dass meine Meinung zu ___ hauptsächlich durch ___ geprägt wird. Konkret werde ich ab heute ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Algorithmus",
+          "definition": "Mathematisches Regelwerk, das entscheidet, welche Inhalte dir angezeigt werden"
+        },
+        {
+          "term": "Filterblase",
+          "definition": "Zustand, in dem du nur noch Inhalte siehst, die deinen bisherigen Meinungen entsprechen"
+        },
+        {
+          "term": "Personalisierung",
+          "definition": "Anpassung von Inhalten an das individuelle Klickverhalten einer Person"
+        },
+        {
+          "term": "Verweildauer",
+          "definition": "Zeit, die du auf einer Plattform verbringst — Plattformen versuchen, diese zu maximieren"
+        },
+        {
+          "term": "Informationsdiät",
+          "definition": "Bewusste Auswahl der Quellen und Inhalte, aus denen man sich informiert"
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Deine Analyse besteht aus drei Teilen: (1) Feed-Beschreibung in 2–3 Sätzen (Was siehst du zu viel / zu wenig?), (2) Auswirkung mit einem konkreten Beispiel in 1–2 Sätzen, (3) Drei Massnahmen in Ich-Form. Für die mündliche Version: das ergibt ca. 3 Minuten.",
+        "beispiel": "Häufig: Fitness-Tipps, Schweizer Rap, Food-Content. Selten: politische Debatten, Wirtschaftsnachrichten. Meine Meinung zur Ernährung ist stark von Fitness-Influencern geprägt. Massnahme 1: Ich folge ab heute einem Konto mit wissenschaftlichen Ernährungsinfos.",
+        "checkfragen": [
+          "Enthält meine Analyse je drei «häufig»- und «kaum»-Beispiele aus meinem echten Feed?",
+          "Habe ich eine konkrete Auswirkung auf meine eigene Meinung benannt?",
+          "Sind alle drei Massnahmen konkret und in Ich-Form formuliert?",
+          "Habe ich einen Vergleich mit SRF News oder DuckDuckGo vorgenommen?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche politischen Risiken entstehen auf gesellschaftlicher Ebene, wenn ein Grossteil der Bevölkerung durch Filterblasen nur noch gegensätzliche Weltbilder sieht — ohne inhaltliche Brücken dazwischen?",
+          "Inwiefern ist die gezielte Nutzung von Filterblasen durch politische Akteure — z.B. durch zielgerichtete Werbung — ein Eingriff in die demokratische Meinungsfreiheit?"
+        ],
+        "recherche_impulse": [
+          "Suche nach «Filterblase Demokratie Studie» mit einer Suchmaschine. Was zeigen Studien über den Einfluss von Filterblasen auf politische Meinungsbildung? Notiere zwei konkrete Befunde."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Stell dir vor, du bist in zwei Jahren Teamleiterin bei Coop und sollst neue Lernende über digitale Informationskompetenz aufklären. Erstelle auf Basis deiner Filterblase-Analyse eine 5-Punkte-Anleitung «Wie du deine Filterblase erkennst und durchbrichst».",
+        "analyse": "Was passiert, wenn ein Detailhandelskonzern wie Coop seinen Social-Media-Auftritt komplett auf personalisierte Werbung ausrichtet — aus Sicht der Konsumentinnen und aus Sicht des Unternehmens?",
+        "recherche": "Suche nach «Digital Services Act Algorithmus Transparenz» mit einer Suchmaschine. Welche neuen Pflichten entstehen für Plattformen wie TikTok bezüglich ihrer Algorithmen? Notiere einen konkreten Punkt.",
+        "praesentation": "Erkläre einer Mitschülerin in 90 Sekunden: Welche Filterblase hast du bei dir selbst entdeckt — und welche konkrete Massnahme empfiehlst du ihr für ihren eigenen Feed?",
+        "wissensknoten_extra": []
+      }
+    }
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "lebensbezug_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "thema_leitidee": "In einer Welt, in der täglich unzählige Informationen und Meinungen auf mich einwirken, wird es für mich immer wichtiger, mir eine eigene, fundierte Haltung zu erarbeiten.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Technologie und digitale Transformation",
+          "detail": "Digitalisierung bei politischer Meinungsbildung",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Politische Ethik und Verantwortung in digitalen Räumen",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Politik",
+          "detail": "Meinungsbildung und Mitgestaltung",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption mündlich",
+          "detail": "Informationen aus Medien kritisch aufnehmen und einordnen"
+        },
+        {
+          "modus": "Produktion mündlich",
+          "detail": "Standpunkte begründet und respektvoll vertreten"
+        },
+        {
+          "modus": "Produktion schriftlich und bildlich",
+          "detail": "Meinungsorientierte Texte und Protokolle verfassen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Zwischen relevanten und irrelevanten Quellen und Inhalten unterscheiden",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie erkenne ich meine eigene Filterblase — und wie kann ich ihr aktiv entgegenwirken?",
+      "argumentieren": "Analysiere deinen eigenen Social-Media-Feed: Welche Themen und Standpunkte tauchen auf? Welche fehlen? Notiere mindestens je drei Beispiele für «innen» (häufig) und «aussen» (kaum sichtbar).",
+      "entscheiden": "Du willst dich gezielt aus deiner Filterblase herausarbeiten. Du hast zwei Optionen: (a) Du folgst aktiv drei Accounts, die andere Standpunkte vertreten. (b) Du nutzt eine Suchmaschine ohne Personalisierung (z. B. DuckDuckGo) für politische Themen. Welche Strategie wählst du — und warum?",
+      "formulieren": "Erstelle in Ich-Form eine Kurz-Analyse (mind. 5 Sätze): Welche Filterblase erkennst du bei dir selbst, welche Auswirkungen hat sie auf deine Meinungsbildung — und welche drei konkreten Massnahmen nimmst du vor?"
+    },
+    "empfohlene_templates": [
+      "ai_ethik_tribunal",
+      "ai_prompt_duell"
+    ],
+    "templates": {
+      "ai_ethik_tribunal": {
+        "score": 105,
+        "grund": "Ethik explizit R2 · Algorithmus-Verantwortung und demokratische Meinungsbildung",
+        "dilemma_frage": "Dürfen Plattformen wie TikTok Inhalte so filtern, dass Nutzerinnen systematisch nur Meinungen sehen, die ihren eigenen entsprechen — wenn das ihre Verweildauer erhöht?",
+        "tribunal_these": "Algorithmen, die Filterblasen erzeugen, greifen in die demokratische Meinungsbildung ein — das ist eine gesellschaftliche Gefahr, die staatlich reguliert werden müsste.",
+        "werte_hinweis": "Die KI wird auf Datenschutz und Plattformfreiheit verweisen. Was sie nicht erfasst: die unterschiedliche Betroffenheit je nach Bildungsstand und digitalem Vorwissen — und dass gerade Lernende im 1. Lehrjahr bei Coop besonders wenig Gegenstrategien kennen."
+      },
+      "ai_prompt_duell": {
+        "score": 90,
+        "grund": "SK1 Quellenkritik · Filterblase mit 3 Prompt-Strategien untersuchen",
+        "duell_frage": "Wie stark beeinflusst ein personalisierter Social-Media-Feed die politischen Überzeugungen von Jugendlichen in der Schweiz?",
+        "prompt_a_beispiel": "«Was ist eine Filterblase auf Social Media?»",
+        "prompt_b_beispiel": "«Ich bin Detailhandelslernende im 1. Lehrjahr bei Coop in Basel und nutze TikTok täglich. Mein Feed zeigt mir fast nur Inhalte, die meiner Meinung entsprechen. Was bedeutet das für meine Meinungsbildung — für eine ABU-Aufgabe?»",
+        "prompt_c_beispiel": "«Du bist Medienwissenschaftlerin, spezialisiert auf Algorithmen und Jugendliche in der Schweiz. Ich bin 16 und frage: Verliere ich durch meinen TikTok-Feed wirklich die Fähigkeit, andere Meinungen zu verstehen? Gib mir eine ehrliche wissenschaftliche Einschätzung.»",
+        "blind_spot": "Die KI beschreibt Filterblasen als technisches Phänomen — sie erfasst aber nicht, wie es sich persönlich anfühlt, wenn man plötzlich merkt, dass die eigene Weltsicht jahrelang durch einen Algorithmus geformt wurde, ohne dass man es bemerkt hat."
+      }
+    }
+  }
+}

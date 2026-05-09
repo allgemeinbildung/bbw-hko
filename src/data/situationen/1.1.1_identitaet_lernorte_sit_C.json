@@ -1,0 +1,432 @@
+{
+  "id": "1.1.1_identitaet_lernorte_sit_C",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "situation": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "ÜK, oder kann ich?",
+  "emotion_tag": "Frustration",
+  "wissensknoten": [
+    "berufsbildung_lernorte",
+    "lehrvertrag"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sk": [
+      2,
+      6,
+      8
+    ]
+  },
+  "persona": {
+    "beruf": "Kauffrau/Kaufmann EFZ",
+    "betrieb": "Helvetia Versicherungen",
+    "ort": "Bern"
+  },
+  "situation_text": "Ich bin Kaufmann im 1. Lehrjahr bei der Helvetia Versicherungen in Bern. Nächsten Monat habe ich drei ÜK-Tage (überbetriebliche Kurse) eingeplant — sie sind Pflicht für alle Lernenden meines Berufs. Mein Teamleiter teilt mir mit, dass ich an einem dieser Tage im Betrieb gebraucht werde: Ein wichtiges Kundenprojekt läuft gerade an. Er sagt beiläufig: «Der ÜK kann warten.» Ich bin unsicher — wer hat in solchen Fällen eigentlich das letzte Wort? Ich möchte weder meine Ausbildung gefährden noch meinen Vorgesetzten vor den Kopf stossen. Was sind meine Rechte — und wer entscheidet?",
+  "zahlen_tabelle": [
+    {
+      "label": "Lehrlingslohn Kauffrau/Kaufmann (1. Lehrjahr)",
+      "wert": "CHF 800.–/Monat (Branche Versicherung)"
+    },
+    {
+      "label": "ÜK-Pflicht",
+      "wert": "Gesetzlich verankert im BBG Art. 23"
+    }
+  ],
+  "leitfrage": "Was sind deine Rechte bei einem Konflikt zwischen ÜK-Pflicht und Betriebsbedarf — und wer entscheidet?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 1.1 und Kap. 1.4 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.1 | S. 15",
+      "text": "Erkläre die Funktion der überbetrieblichen Kurse (ÜK) im Berufsbildungssystem. Warum sind sie gesetzlich vorgeschrieben — und wer ist für ihre Organisation zuständig?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.1 | S. 15",
+      "text": "Welches Vollzugsorgan überwacht die ÜK in deinem Kanton — und welche Konsequenzen kann eine unentschuldigte Absenz für dich als Lernende/r haben?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.1 | S. 15",
+      "text": "Du hast zwei Möglichkeiten: (a) Du sagst dem Teamleiter zu und teilst dem ÜK eine Absenz mit. (b) Du kontaktierst den ÜK-Verantwortlichen, klärst die Rechtslage und informierst deinen Teamleiter. Welche wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 1.1 | S. 15",
+      "text": "Verfasse eine kurze Informationsnotiz (max. 5 Sätze): Wer ist für ÜK-Tage zuständig, was passiert bei einem Konflikt mit dem Betrieb — und welches Vorgehen empfiehlst du Lernenden?",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Zuständigkeiten im Berufsbildungssystem",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Drei Lernorte",
+      "punkte": [
+        "Betrieb: Praxis",
+        "ÜK: Grundfertigkeiten",
+        "Schule: Theorie"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Vollzugsorgane",
+      "punkte": [
+        "Bund: BBG",
+        "Kanton: Berufsbildungsamt",
+        "Berufsverband: ÜK-Träger"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Konfliktfall",
+      "punkte": [
+        "Wer hat Vorrang?",
+        "Meldepflicht",
+        "Eskalationsweg"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Was wenn ÜK unwichtig wirkt?",
+        "Langzeitfolgen Absenz",
+        "Vergleich andere Branchen"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Informationsnotiz",
+    "titel": "Format: Informationsnotiz (max. 1 Seite)",
+    "format_detail": "Kurze schriftliche Notiz: Zuständigkeit bei ÜK-Tagen, Rechtslage, empfohlenes Vorgehen im Konfliktfall",
+    "beschreibung": "Du verfasst eine sachliche Informationsnotiz, die Lernenden erklärt, wer für ÜK-Tage zuständig ist und wie sie bei einem Konflikt mit dem Betrieb vorgehen sollen.",
+    "schritte": [
+      {
+        "label": "Rechtslage recherchieren",
+        "hint": "Wo ist die ÜK-Pflicht geregelt? Stichwort: BBG, Berufsverband, kantonales Berufsbildungsamt"
+      },
+      {
+        "label": "Zuständigkeiten klären",
+        "hint": "Wer organisiert den ÜK? Wer kann eine Absenz genehmigen? Notiere die drei Stellen."
+      },
+      {
+        "label": "Konfliktfall beschreiben",
+        "hint": "Was passiert, wenn Betrieb und ÜK gleichzeitig etwas wollen? Wer hat rechtlich Vorrang?"
+      },
+      {
+        "label": "Empfehlung formulieren",
+        "hint": "Was soll eine Lernende konkret tun? Schreibe zwei Handlungsschritte in Ich-Form."
+      },
+      {
+        "label": "Notiz strukturieren",
+        "hint": "Titel, 3–5 Sätze Inhalt, abschliessende Empfehlung. Keine Meinung, nur Fakten und Vorgehen."
+      }
+    ],
+    "schreib_label": "INFORMATIONSNOTIZ HIER ERARBEITEN",
+    "schreib_note": "-> wissen/berufsbildung_lernorte"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du bist jetzt im 3. Lehrjahr — die ÜK-Tage sind abgeschlossen, aber dein Betrieb möchte, dass du eine betriebsinterne Schulung besuchst, die mit einem Prüfungstag kollidiert. Wie gehst du vor?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn dein Teamleiter nach deiner Rückfrage sagt: «Dann such dir eine andere Stelle»? Welche konkreten Schritte hast du?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Köchin im 1. Lehrjahr hat denselben Konflikt: Betrieb oder ÜK? Welche Informationsnotiz würde ihr helfen — was wäre anders als bei dir?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rolle in der Gesellschaft und in der Arbeitswelt"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+        },
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "System-Design und Lernarchitektur",
+        "Standpunkte begründen und Gegenargumente prüfen",
+        "Entscheiden unter Unsicherheit"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Was sind deine Rechte bei einem Konflikt zwischen ÜK-Pflicht und Betriebsbedarf — und wer entscheidet?",
+      "argumentieren": "Welches Vollzugsorgan überwacht die ÜK in deinem Kanton — und welche Konsequenzen kann eine unentschuldigte Absenz für dich als Lernende/r haben?",
+      "entscheiden": "Du hast zwei Möglichkeiten: (a) Du sagst dem Teamleiter zu und teilst dem ÜK eine Absenz mit. (b) Du kontaktierst den ÜK-Verantwortlichen, klärst die Rechtslage und informierst deinen Teamleiter. Welche wählst du — und warum?",
+      "formulieren": "Verfasse eine kurze Informationsnotiz (max. 5 Sätze): Wer ist für ÜK-Tage zuständig, was passiert bei einem Konflikt mit dem Betrieb — und welches Vorgehen empfiehlst du Lernenden?"
+    },
+    "empfohlene_templates": [
+      "ai_prompt_duell",
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_prompt_duell": {
+        "score": 75,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Identität",
+        "duell_frage": "Wie klärst du den Konflikt zwischen Ük-Pflicht und Projektauftrag bei Helvetia rechtssicher?",
+        "prompt_a_beispiel": "\"Wer entscheidet bei einem Konflikt zwischen Ük-Tag und Einsatz im Betrieb?\"",
+        "prompt_b_beispiel": "\"Ich bin Kauffrau/Kaufmann EFZ im 1. Lehrjahr bei Helvetia Versicherungen in Bern. Mein Teamleiter sagt, ein Ük-Tag könne warten. Welche Schritte soll ich sofort einleiten, damit ich korrekt handle?\"",
+        "prompt_c_beispiel": "\"Du bist kantonale Fachstelle für Berufsbildung. Ich brauche eine klare Reihenfolge für Kommunikation mit Teamleiter, Ük-Verantwortlichen und Betrieb. Formuliere sie für eine Lernende im 1. Lehrjahr.\"",
+        "blind_spot": "Die KI kennt die konkrete Praxis deines Kantons und die internen Abläufe bei Helvetia nicht. Sie liefert Struktur, aber keine verbindliche Zusage einer realen Stelle."
+      },
+      "ai_gegenpositionen": {
+        "score": 80,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Ethik + Recht",
+        "startposition": "Wenn ein wichtiges Kundenprojekt startet, sollte der Betrieb Priorität vor dem Ük haben, weil praktische Arbeit dringender ist.",
+        "gegenargument_rahmen": "Pflichtcharakter der Ük, Zuständigkeit von Vollzugsorganen, Ausbildungsqualität, Folgen unentschuldigter Absenz",
+        "position_frage": "Wer setzt bei Terminkonflikten den verbindlichen Rahmen: Projektleitung im Betrieb oder Ausbildungsrecht?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 80,
+        "grund": "Gesellschaft: Ethik + Recht | SK: Standpunkte begründen",
+        "dilemma_frage": "Ist es legitim, einen Lernenden wegen Projektbedarf vom verpflichtenden Ük fernzuhalten?",
+        "tribunal_these": "Kurzfristiger Projektvorteil darf nicht höher gewichtet werden als der gleichberechtigte Zugang zu verpflichtenden Ausbildungsteilen.",
+        "werte_hinweis": "Die KI bewertet meist formale Pflichten. Sie unterschlägt oft, wie stark Lernende von Hierarchien abhängen und wie schwierig Widerspruch gegen einen Teamleiter ist."
+      }
+    }
+  },
+  "scaffolding": {
+    "_wissensknoten_refs": [
+      "berufsbildung_lernorte",
+      "lehrvertrag"
+    ],
+    "leicht": {
+      "vokabular": [
+        {
+          "term": "überbetriebliche Kurse (Ük)",
+          "definition": "Pflichtkurse ausserhalb des Betriebs, in denen berufliche Grundfertigkeiten einheitlich trainiert werden."
+        },
+        {
+          "term": "Vollzugsorgan",
+          "definition": "Die zuständige kantonale Stelle, die Regeln der Berufsbildung kontrolliert und durchsetzt."
+        },
+        {
+          "term": "unentschuldigte Absenz",
+          "definition": "Ein Fernbleiben ohne gültige Meldung oder anerkannte Begründung."
+        },
+        {
+          "term": "Zuständigkeit",
+          "definition": "Klare Verantwortung dafür, wer in einer Situation entscheiden oder handeln darf."
+        },
+        {
+          "term": "Rechtslage",
+          "definition": "Die geltenden gesetzlichen Regeln, die für den konkreten Fall massgeblich sind."
+        }
+      ],
+      "leitfragen_hilfen": [
+        {
+          "tipp": "Nutze Kap. 1.1, um Zweck, Pflichtcharakter und Zuständigkeiten der Ük klar zu trennen.",
+          "satzanfang": "Ük sind gesetzlich wichtig, weil ___. Für die Organisation zuständig ist ___, während der Betrieb ___ muss.",
+          "nr": 1
+        },
+        {
+          "tipp": "Nenne zuerst das zuständige Vollzugsorgan im Kanton, dann mögliche Folgen einer unentschuldigten Absenz.",
+          "satzanfang": "Im Kanton überwacht ___ die Ük. Wenn ich unentschuldigt fehle, kann das ___ und ___ auslösen.",
+          "nr": 2
+        },
+        {
+          "tipp": "Prüfe Optionen nach dem Prinzip zuerst Rechtslage klären, dann transparent informieren.",
+          "satzanfang": "Ich wähle Option ___, weil ich so zuerst ___ kläre und danach den Teamleiter ___ informieren kann.",
+          "nr": 3
+        },
+        {
+          "tipp": "Struktur für die Notiz: Zuständigkeit, Konfliktfall, empfohlenes Vorgehen.",
+          "satzanfang": "Für Ük-Tage zuständig ist ___. Bei Konflikten mit dem Betrieb gilt ___. Lernenden empfehle ich als erstes ___.",
+          "nr": 4
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Schreibe eine Informationsnotiz mit maximal 5 Sätzen in dieser Reihenfolge: 1) Zweck der Ük, 2) wer zuständig ist, 3) was bei Konflikt mit dem Betrieb gilt, 4) empfohlenes Vorgehen für Lernende, 5) kurzer Schlusssatz.",
+        "beispiel": "Ük sind ein verpflichtender Teil der Ausbildung.\nFür Planung und Durchführung sind die zuständigen Stellen der Berufsbildung verantwortlich.\nBei Terminkonflikten sollen Lernende die Lage früh klären und den Betrieb transparent informieren.\nSo bleiben Ausbildungspflichten und Zusammenarbeit erhalten.",
+        "checkfragen": [
+          "Hat deine Notiz höchstens 5 Sätze?",
+          "Nennst du klar, wer für Ük zuständig ist?",
+          "Beschreibst du ein konkretes Vorgehen bei Konflikt mit dem Betrieb?",
+          "Ist der Text sachlich und für andere Lernende verständlich?"
+        ]
+      }
+    },
+    "stark": {
+      "vertiefung": {
+        "analyse": "Was passiert, wenn Betriebe Ük bei hohem Arbeitsdruck regelmässig relativieren? Analysiere Auswirkungen auf Lernqualität und Chancengerechtigkeit.",
+        "transfer": "Erweitere deine Informationsnotiz für neue Lernende im 2. Lehrjahr mit einem Abschnitt zu Prioritäten bei Projektspitzen im Betrieb.",
+        "praesentation": "Erkläre deine Notiz in 90 Sekunden im Teammeeting. Kriterium: klare Handlungsanweisung für Konfliktfälle.",
+        "recherche": "Prüfe BBG Art. 23 (ÜK-Pflicht) und Art. 15–19 (Ausbildungspflicht): Welche Regelungen gelten verbindlich bei Konflikten zwischen ÜK-Pflicht und Betriebsbedarf? Suche nach «ÜK Berufsbildung Schweiz Pflicht Konflikt» und notiere, wer die letzte Entscheidungskompetenz hat."
+      },
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Wie verändert sich die Chancengerechtigkeit, wenn Lernende wegen Betriebsdruck Ük verpassen?",
+          "Welche langfristigen Folgen hat eine Priorisierung kurzfristiger Projektziele gegenüber Ausbildungspflichten?",
+          "Was wäre ein institutionell fairer Eskalationsweg, wenn Betrieb und Ük-Planung kollidieren?"
+        ],
+        "recherche_impulse": [
+          "Suche nach «ÜK Berufsbildung Kanton Bern Vollzug» mit einer Suchmaschine. Welche Stelle entscheidet bei Konflikten zwischen ÜK-Pflicht und Betriebsbedarf? Notiere den Namen der zuständigen Stelle.",
+          "Prüfe BBG Art. 23 und Art. 15–19: Welche konkreten Pflichten haben Betrieb und Lernende bei der ÜK-Teilnahme?"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+---
+import Situationen from '../../layouts/Situationen.astro'
+import SituationenFilterBar from '../../components/SituationenFilterBar.astro'
+import {
+  applyFilters,
+  emptyFilters,
+  lehrjahrForEntry,
+  situationenIndex,
+  type SituationFilters,
+} from '../../lib/situationen'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+
+const p = Astro.url.searchParams
+const filters: SituationFilters = {
+  ...emptyFilters(),
+  thema_nr: p.get('thema_nr') ?? '',
+  lebensbezug: p.get('lebensbezug') ?? '',
+  kompetenz: p.get('kompetenz') ?? '',
+  lehrjahr: p.get('lehrjahr') ?? '',
+  sk: p.get('sk') ?? '',
+  aspekt: p.get('aspekt') ?? '',
+  sprachmodus: p.get('sprachmodus') ?? '',
+  q: p.get('q') ?? '',
+}
+
+const filtered = applyFilters(situationenIndex, filters)
+
+const sitColors: Record<string, string> = {
+  A: 'bg-rose-100 text-rose-800 border-rose-200',
+  B: 'bg-sky-100 text-sky-800 border-sky-200',
+  C: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+  D: 'bg-amber-100 text-amber-800 border-amber-200',
+  E: 'bg-violet-100 text-violet-800 border-violet-200',
+}
+---
+<Situationen title="Situationen" role={role}>
+  <div class="mb-5 flex items-end justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold">Situationen-Katalog</h1>
+      <p class="text-sm text-slate-500 mt-1">
+        {filtered.length} von {situationenIndex.length} Situationen · gefiltert nach nRLP
+      </p>
+    </div>
+    <p class="text-xs text-slate-500 max-w-md text-right hidden md:block">
+      Wähle eine Situation, teste sie im Unterricht und gib uns Feedback.
+      Eigenes Material zusätzlich? → <a href="/einreichen" class="underline">Einreichen</a>
+    </p>
+  </div>
+
+  <SituationenFilterBar filters={filters} entries={situationenIndex} />
+
+  {filtered.length === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500">
+      Keine Situationen passen zu diesen Filtern.
+    </div>
+  )}
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {filtered.map((e) => {
+      const lj = lehrjahrForEntry(e)
+      const sit = e.sit_letter ?? '?'
+      const colorClass = sitColors[sit] ?? 'bg-slate-100 text-slate-700 border-slate-200'
+      return (
+        <a href={`/situationen/${e.id}`} class="block bg-white border border-slate-200 rounded-lg p-4 hover:border-slate-400 hover:shadow-sm transition">
+          <div class="flex items-start justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class={`inline-flex items-center justify-center w-8 h-8 rounded-md border text-sm font-bold ${colorClass}`}>{sit}</span>
+              <div class="text-xs text-slate-500">
+                <div class="font-mono">{e.kompetenz_nr}</div>
+                {lj && <div>{lj}. Lehrjahr</div>}
+              </div>
+            </div>
+            {e.emotion_tag && (
+              <span class="chip">{e.emotion_tag}</span>
+            )}
+          </div>
+          <h3 class="font-semibold text-slate-900 leading-snug mb-1">{e.titel ?? e.id}</h3>
+          {e.persona && (
+            <p class="text-xs text-slate-500 mb-2">
+              {[e.persona.beruf, e.persona.betrieb, e.persona.ort].filter(Boolean).join(' · ')}
+            </p>
+          )}
+          {e.handlungsprodukt_format && (
+            <p class="text-xs text-slate-700 mb-2">
+              <span class="font-medium">Handlungsprodukt:</span> {e.handlungsprodukt_format}
+            </p>
+          )}
+          <div class="flex flex-wrap gap-1 mt-2">
+            {e.aspekte.map((a) => <span class="chip chip-blue">{a}</span>)}
+            {e.sk.map((n) => <span class="chip chip-green">SK {n}</span>)}
+          </div>
+        </a>
+      )
+    })}
+  </div>
+</Situationen>

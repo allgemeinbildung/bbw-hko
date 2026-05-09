@@ -1,0 +1,400 @@
+{
+  "id": "2.7_sit_C",
+  "modul": "2.7",
+  "modul_titel": "Preisbildung",
+  "situation": "C",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Ferien kosten je nachdem das Doppelte",
+  "emotion_tag": "Frustration",
+  "wissensknoten": [
+    "nachfrage",
+    "angebot"
+  ],
+  "nrlp": {
+    "lebensbezug": "3.2",
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": null
+      }
+    ],
+    "sprachmodi": [],
+    "sk": [
+      9,
+      3
+    ],
+    "themen": [
+      "T3"
+    ]
+  },
+  "persona": {
+    "beruf": "Lernende/r",
+    "betrieb": "Familienhaushalt",
+    "ort": "Zürich"
+  },
+  "situation_text": "Du bist Lernende/r und planst mit deiner Familie die Sommerferien in Spanien. Du schaust auf EasyJet nach Flügen ab Zürich nach Palma — und traust deinen Augen kaum. Derselbe Flug kostet je nach Datum vollkommen unterschiedlich viel. Du fragst dich: Wie legen die Airlines eigentlich denPreisfest? Und wann ist der beste Zeitpunkt zu buchen?",
+  "zahlen_tabelle": [],
+  "leitfrage": "Warum kostet derselbe Flug im Juli fast dreimal mehr als im Oktober — und was hat das mitAngebot,Nachfrageund Bedürfnissen zu tun?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze die Wissensknoten nachfrage und angebot sowie die Darstellungen zur Preisbildung im Lehrmittel. Verbinde dabei Ferienbedürfnis, Nachfrageverhalten und dynamische Preise sauber miteinander.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 74–75",
+      "text": "Erkläre, was das «Gesetz der Nachfrage» bedeutet. Was passiert mit der nachgefragten Menge, wenn der Preis steigt — und umgekehrt? Zeichne dazu eine vereinfachte Nachfragekurve.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 74–77",
+      "text": "Erkläre, warum im Juli mehr Menschen fliegen wollen als im Oktober. Welche Bedürfnis-Stufe nach Maslow treibt sie dazu? Und wie reagiert die Airline auf diese höhere Nachfrage beim Preis?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.7 | S. 73–76",
+      "text": "Deine Familie hat zwei Optionen: (a) Ihr fliegt im Juli (CHF 380/Person) — teuer, aber in den Schulferien. (b) Ihr fliegt im Oktober (CHF 140/Person) — günstig, aber du musst Schule verpassen. Welche Option wählt ihr — und warum? Begründe mit Bedürfnis und Budget.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.7 | S. 74–77",
+      "text": "Formuliere einen Rat in Ich-Form, den du deiner Familie gibst: Wann und warum soll man Flugtickets buchen — und was sollte man über dynamische Preisbildung wissen?",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Dynamische Flugpreise verstehen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Nachfrage",
+      "punkte": [
+        "Juli",
+        "Oktober",
+        "Ferienzeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Angebot",
+      "punkte": [
+        "begrenzte Plätze",
+        "Airline-Kapazität",
+        "Buchungszeitpunkt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Preisbildung",
+      "punkte": [
+        "dynamisch",
+        "Nutzen",
+        "Familienbudget"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Maslow",
+        "bester Buchungszeitpunkt",
+        "eigener Rat"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kurzpräsentation",
+    "titel": "Format: Kurzpräsentation — 3 Punkte",
+    "format_detail": "3-Punkte-Präsentation mit einfacher Nachfragekurve und Empfehlung",
+    "beschreibung": "Du bereitest eine kurze Präsentation für deine Familie vor und erklärst, warum derselbe Flug je nach Zeitpunkt unterschiedlich teuer ist. Das Produkt soll zeigen, dass du Preisbildung alltagsnah und fachlich korrekt vermitteln kannst.",
+    "schritte": [
+      {
+        "label": "Folie 1 — Warum ist es im Juli teurer?",
+        "hint": "Erkläre mit Bedürfnis (Ferien, Maslow) und Nachfrage-Gesetz. Warum wollen im Juli mehr Menschen fliegen?"
+      },
+      {
+        "label": "Folie 2 — Was macht die Airline mit dem Preis?",
+        "hint": "Erkläre dynamische Preisbildung: Je mehr Nachfrage, desto höher der Preis. Zeichne eine vereinfachte Nachfragekurve mit zwei Punkten (Juli / Oktober)."
+      },
+      {
+        "label": "Folie 3 — Mein Rat an die Familie",
+        "hint": "Welche Option empfiehlst du (Juli oder Oktober)? Begründe mit Budget und Bedürfnis. Formuliere deinen Rat in Ich-Form, direkt und klar."
+      },
+      {
+        "label": "Fachbegriffe einbauen",
+        "hint": "Benutze mindestens drei Begriffe aus dem Lehrmittel: z.B. Nachfrage, Angebot, Marktgleichgewicht, Bedürfnis, Nutzen."
+      },
+      {
+        "label": "Überprüfen",
+        "hint": "Erkläre deine Präsentation laut (z.B. einem Mitschüler / einer Mitschülerin). Versteht man den Zusammenhang zwischen Preis und Nachfrage?"
+      }
+    ],
+    "schreib_label": "KURZPRÄSENTATION ZU FLUGPREISEN HIER AUSARBEITEN",
+    "schreib_note": "-> wissen/nachfrage und wissen/angebot als Grundlage nutzen"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument.Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip der Preisbildung steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Stell dir vor, es gibt neu viel mehr Flüge nach Palma — die Airlines erhöhen das Angebot. Was passiert mit dem Ferienpreis im Juli? Erkläre mit Angebots- und Nachfragekurve.",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wäre, wenn der Staat den Flugpreis im Sommer per Gesetz auf CHF 200 begrenzen würde? Was würde das für Angebot und Nachfrage bedeuten? Wer würde profitieren, wer würde verlieren?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Dasselbe Prinzip der dynamischen Preisbildung gilt auch für Hotelzimmer in Zermatt: Im Februar (Skisaison) kosten sie CHF 350/Nacht, im Mai nur CHF 120. Erkläre warum — ohne das Wort «Ferien» zu benutzen.",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe + Verbindungen"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch sichtbar?"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit + Ehrlichkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, Leitfragen LF1-LF2 bearbeiten, Mindmap beginnen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "Leitfragen LF3-LF4 bearbeiten, Handlungsprodukt erarbeiten und verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenaustausch, Reflexion R1-R3 und Vorbereitungsfragen V1-V3 abschliessen",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=2.7_sit_C",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/2.7_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "2.7_sit_C",
+    "aliases": [
+      "sit_C_flugticket_dynamisch"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T3"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.2",
+      "titel": "Dynamische Preisbildung",
+      "kompetenz": "Ich kann Preisschwankungen durch Angebot und Nachfrage (z.B. Hotel, Flüge) im Alltag analysieren."
+    },
+    "ki_leitfragen": {
+      "offen": "Warum zahle ich für denselben Flug im Juli das Doppelte wie im Oktober?",
+      "argumentieren": "Vergleiche Juli und Oktober mit dem Gesetz der Nachfrage (S. 74): Warum ist die Nachfrage im Juli 'starr' (man muss fliegen) und im Oktober flexibler?",
+      "entscheiden": "Du hast zwei Optionen: (a) Im Juli fliegen und das Budget strapazieren. (b) Im Oktober fliegen und Schule verpassen. Welches Risiko wiegt schwerer — und wie begründest du deine Wahl wirtschaftlich?",
+      "formulieren": "Formuliere einen Rat an deine Familie: Was sollte man über dynamische Preisbildung bei Fluggesellschaften wissen, um nicht 'abgezockt' zu werden?"
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_lernassistent",
+      "ai_redaktion"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 70,
+        "grund": "Wirtschaft | SK 5 (Werthaltungen)",
+        "zukunft_frage": "Wird das Konzept 'Schulferien-Reisen' bis 2050 verschwinden, wenn KI-Algorithmen die Preise für Familien unbezahlbar machen?",
+        "wild_card": "Flugpreise werden künftig nach dem 'Einkommens-Prinzip' berechnet: Wer mehr verdient, zahlt für denselben Sitzplatz mehr.",
+        "blind_spot": "Die sozialen Folgen, wenn Reisen zum reinen Privileg für Spitzenverdiener wird."
+      },
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "Identität | SK 3 (Problemlösung)",
+        "lernziel": "Das Prinzip von Angebot und Nachfrage bei Dienstleistungen verstehen und dynamische Preisschwankungen analysieren können.",
+        "system_prompt_vorlage": "Du bist ein Experte für Reisebuchungen. Hilf dem User zu verstehen, wie Airlines 'Dynamic Pricing' einsetzen. Erkläre das Prinzip der Nachfrage-Spitzen in der Ferienzeit.",
+        "testfragen": [
+          "Was passiert mit der Nachfragekurve im Juli?",
+          "Warum sinkt der Preis im Oktober, obwohl das Angebot (Flugzeuge) gleich bleibt?",
+          "Was versteht man unter 'unelastischer Nachfrage' in den Schulferien?"
+        ]
+      },
+      "ai_redaktion": {
+        "score": 25,
+        "grund": "SK 3 (Problemlösung) | Diversität",
+        "textthema": "Die Abzocke im Sommer - Warum unsere Familienferien immer teurer werden.",
+        "stil_auftrag": [
+          "Sachlich-analytisch (Erklärung der Preisbildung)",
+          "Empört-kämpferisch (Fokus auf Gerechtigkeit für Familien)",
+          "Praxisorientiert (Strategien für günstiges Buchen)"
+        ],
+        "textformat_ziel": "E-Mail an die Airline-Kundenberatung oder Blog-Post."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies den Wissensknoten zur Nachfragekurve — achte auf die x-Achse (Menge) und y-Achse (Preis) und die Richtung der Kurve. Das Gesetz lautet: Wenn der Preis steigt, sinkt die Nachfrage.",
+          "satzanfang": "Das Gesetz der Nachfrage besagt: Wenn der Preis steigt, dann ___. Im Juli ist die Nachfrage nach Flügen ___, weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Vergleiche Juli (Schulferien, viele Reisende) mit Oktober (weniger Ferien, weniger Nachfrage) — wie reagiert EasyJet jeweils mit dem Preis? Nutze die konkreten Zahlen CHF 380 und CHF 140.",
+          "satzanfang": "Im Juli steigen die Preise auf CHF ___, weil die Nachfrage ___. EasyJet reagiert darauf, indem ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Erstelle eine Mini-Tabelle mit Vor- und Nachteilen: Juli (teuer, aber Schulferien) vs. Oktober (günstig, aber Schule läuft). Berücksichtige Preis, Schulpflicht und Erlebnis.",
+          "satzanfang": "Ich entscheide mich für ___ (Juli / Oktober), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Erkläre zuerst in einem Satz, was 'dynamische Preisbildung' bedeutet, dann gib konkret einen Rat, wann und wie man am günstigsten buchen sollte.",
+          "satzanfang": "Dynamische Preisbildung bedeutet, dass ___. Mein Rat: ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Nachfragekurve",
+          "definition": "Eine Linie im Diagramm, die zeigt: Je höher der Preis, desto weniger wird von einem Gut nachgefragt."
+        },
+        {
+          "term": "Preismechanismus",
+          "definition": "Der Prozess, durch den Angebot und Nachfrage den Marktpreis bestimmen — ohne dass jemand den Preis festlegt."
+        },
+        {
+          "term": "Hochsaison",
+          "definition": "Ein Zeitraum mit besonders hoher Nachfrage, z.B. Schulferien — Preise steigen dadurch."
+        },
+        {
+          "term": "Niedrigsaison",
+          "definition": "Ein Zeitraum mit geringer Nachfrage, z.B. Herbst ausserhalb der Ferien — Preise sinken dadurch."
+        },
+        {
+          "term": "Dynamische Preisbildung",
+          "definition": "Ein System, bei dem Preise laufend angepasst werden, je nachdem wie gross die aktuelle Nachfrage ist."
+        },
+        {
+          "term": "Preiselastizität",
+          "definition": "Misst, wie stark die Nachfrage reagiert, wenn sich der Preis ändert — z.B. sinkt die Nachfrage nach Ferienflügen kaum, wenn man Schulferien hat."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Deine Kurzpräsentation hat genau 3 Punkte: 1. Erklärung der Nachfragekurve mit einer Skizze. 2. Anwendung auf EasyJet Juli vs. Oktober mit den konkreten Zahlen CHF 380 und CHF 140. 3. Empfehlung für Lernende in Ich-Form. Mache für jeden Punkt eine Folie oder Karteikarte.",
+        "beispiel": "Thema: Konzerttickets. Punkt 1: Die Nachfragekurve fällt von links oben nach rechts unten. Punkt 2: Im Vorverkauf CHF 50, an der Abendkasse CHF 120 — weil kurzfristig viele kommen wollen. Punkt 3: Ich empfehle: früh buchen spart Geld.",
+        "checkfragen": [
+          "□ Hat meine Präsentation genau 3 Punkte?",
+          "□ Habe ich eine Nachfragekurve gezeichnet (mit beschrifteter x-Achse und y-Achse)?",
+          "□ Habe ich konkrete Zahlen (CHF 380 / CHF 140) verwendet?",
+          "□ Habe ich einen klaren Rat für Lernende mit knappem Budget gegeben?",
+          "□ Dauert meine Präsentation nicht länger als 3 Minuten?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Airlines erhöhen Preise in den Schulferien, weil die Nachfrage es erlaubt. Inwiefern ist dynamische Preisbildung aus einer Gerechtigkeitsperspektive problematisch — besonders für Familien mit schulpflichtigen Kindern ohne Wahlfreiheit beim Zeitpunkt?",
+          "Was würde passieren, wenn alle Kantone ihre Schulferien auf denselben Zeitraum legen würden? Wie würde das die Nachfragekurve und die Preise bei Airlines verändern?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Schulferien Schweiz staffeln Tourismus Begründung' mit einer Suchmaschine. Was sind die offiziellen Argumente für gestaffelte Schulferien in der Schweiz? Notiere zwei Argumente.",
+          "Suche nach 'Dynamic Pricing Airlines EU Verbraucherschutz Regulierung' mit einer Suchmaschine. Gibt es europäische Vorschriften zu fairen Ticketpreisen? Notiere eine konkrete Massnahme oder das Fehlen davon."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist Verkehrsministerin der Schweiz und willst Ferienflüge für Familien mit tiefem Einkommen fairer gestalten. Entwickle eine Massnahme in 3 Stichpunkten — und überlege, welche Gegenargumente die Tourismusbranche vorbringen würde.",
+        "analyse": "Was passiert, wenn EasyJet die Oktober-Preise nochmals senkt, weil kaum jemand fliegt? Analysiere aus zwei Perspektiven: Lernende mit knappem Budget vs. EasyJet als Aktiengesellschaft.",
+        "recherche": "Suche nach 'Luftfahrtgesetz Schweiz Passagierrechte Preisänderung' mit einer Suchmaschine. Oder lies EU-Verordnung Nr. 261/2004 Art. 2. Welche Rechte haben Passagiere, wenn sich der Preis nach der Buchung verändert? Notiere die wichtigste Schutzregel.",
+        "praesentation": "Präsentiere deine 3-Punkte-Kurzpräsentation dem Klassenverband in 90 Sekunden. Zeige deine Nachfragekurven-Skizze und erkläre, warum es für Lernende mit kleinem Budget sinnvoller ist, ausserhalb der Hochsaison zu reisen.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

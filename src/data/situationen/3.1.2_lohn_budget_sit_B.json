@@ -1,0 +1,361 @@
+{
+  "id": "3.1.2_lohn_budget_sit_B",
+  "modul": "3.1",
+  "modul_titel": "Lohn und Budget",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Der kaputte Zahn",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "ch_2_2_budget_budgeterstellung",
+    "ch_2_2_budget_fixe_kosten",
+    "ch_2_2_budget_variable_kosten"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Koch EFZ",
+    "betrieb": "Restaurant Kreuz",
+    "ort": "Bern"
+  },
+  "situation_text": "Ich bin Koch EFZ im 2. Lehrjahr beim Restaurant Kreuz in Bern. Mein Nettolohn beträgt CHF 720 pro Monat. Diese Woche habe ich starke Zahnschmerzen – der Zahnarzt schätzt die Kosten auf CHF 380. In meinem bisherigen Monatsbudget gibt es keine Rückstellungen: Meine Fixkosten betragen CHF 230 (Krankenkasse CHF 150, Handy CHF 50, ÖV CHF 30) und meine variablen Kosten CHF 310 (Essen CHF 150, Kleider CHF 80, Freizeit CHF 80). Ich habe zwar einen monatlichen Überschuss von CHF 180 – doch der ist nirgends reserviert. Wie kann ich die Zahnarztrechnung in zwei Monaten begleichen, ohne Schulden zu machen?",
+  "zahlen_tabelle": [
+    {
+      "label": "Nettolohn",
+      "wert": "CHF 720.00"
+    },
+    {
+      "label": "Fixkosten total",
+      "wert": "– CHF 230.00"
+    },
+    {
+      "label": "Variable Kosten total",
+      "wert": "– CHF 310.00"
+    },
+    {
+      "label": "Aktueller Überschuss",
+      "wert": "CHF 180.00"
+    },
+    {
+      "label": "Zahnarztrechnung",
+      "wert": "CHF 380.00"
+    }
+  ],
+  "leitfrage": "Wie kann ich die Zahnarztrechnung von CHF 380 in zwei Monaten begleichen, ohne neue Schulden zu machen?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 2.2 (Seite 48–49) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.2 | S. 48",
+      "text": "Erkläre den Unterschied zwischen fixen und variablen Kosten. Nenne je zwei Beispiele aus meiner Situation und begründe die Einteilung.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Berechne meinen monatlichen Budgetsaldo. Wie viel müsste ich über zwei Monate monatlich zurücklegen, um die Zahnarztrechnung von CHF 380 vollständig zu decken?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Du hast zwei Einsparoptionen: (a) Kleiderbudget für 2 Monate auf CHF 20 kürzen (Ersparnis: CHF 120). (b) Freizeitbudget für 2 Monate auf CHF 30 kürzen (Ersparnis: CHF 100). Welche Option wählst du – und warum? Was fehlt noch, um CHF 380 zu erreichen?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Erstelle einen konkreten Budget-Anpassungsplan für die nächsten zwei Monate. Zeige tabellarisch, welche Posten du anpasst und wie du insgesamt CHF 380 zusammenbringst.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Unerwartete Kosten bewältigen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Mein Budget",
+      "punkte": [
+        "Nettolohn CHF 720",
+        "Fixkosten CHF 230",
+        "Variable Kosten CHF 310"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Rückstellungen",
+      "punkte": [
+        "Zahnarzt",
+        "Optiker / Ferien",
+        "Steuern / Diverses"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Einsparungsmöglichkeiten",
+      "punkte": [
+        "Kleider reduzieren",
+        "Freizeit reduzieren",
+        "Essen optimieren"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Schuldenspirale",
+        "budgetberatung.ch",
+        "schulden.ch"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Budget-Anpassungsplan",
+    "titel": "Format: Budget-Anpassungsplan mit zwei Varianten",
+    "format_detail": "Tabellarischer Budget-Anpassungsplan für zwei Monate, mit Variante A und B und abschliessendem Entscheid",
+    "beschreibung": "Du analysierst dein aktuelles Budget, erkennst die Lücke und erstellst zwei Einsparvarianten, mit denen du die Zahnarztrechnung in zwei Monaten ohne Schulden begleichst.",
+    "schritte": [
+      {
+        "label": "Budget analysieren",
+        "hint": "Trage alle Einnahmen und Ausgaben in eine Budgettabelle nach Kap. 2.2 (Seite 48–49) ein. Berechne den aktuellen Saldo."
+      },
+      {
+        "label": "Fehlbetrag berechnen",
+        "hint": "Wie viel musst du monatlich zusätzlich zurücklegen, damit nach 2 Monaten CHF 380 verfügbar sind?"
+      },
+      {
+        "label": "Variante A erstellen",
+        "hint": "Kürze gezielt eine oder zwei variable Kosten um den benötigten Betrag. Notiere, welche Positionen du wie stark anpasst."
+      },
+      {
+        "label": "Variante B erstellen",
+        "hint": "Erstelle eine zweite Einsparstrategie mit anderen Budgetpositionen. Vergleiche A und B in einer Tabelle."
+      },
+      {
+        "label": "Entscheid begründen",
+        "hint": "Wähle eine Variante und begründe in 2–3 Sätzen, warum du diese Lösung persönlich bevorzugst."
+      }
+    ],
+    "schreib_label": "BUDGET-ANPASSUNGSPLAN VARIANTE A + B HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget_budgeterstellung"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Dein monatlicher Überschuss beträgt nur CHF 60 statt CHF 180, und die Zahnarztrechnung lautet CHF 520. Wie viele Monate brauchst du mindestens zum Abbau – und welche Kosten müsstest du in dieser Zeit streichen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn die Zahnarztrechnung CHF 800 beträgt und innerhalb eines Monats bezahlt werden muss? Reicht dein Budget – oder brauchst du eine andere Lösung als Einsparen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Detailhandelsfachfrau EFZ im 1. Lehrjahr verdient CHF 650 netto. Sie möchte monatlich CHF 50 als Rückstellung «Diverses» einplanen. Prüfe, ob das realistisch ist, wenn ihre Fixkosten CHF 190 und ihre variablen Kosten CHF 300 betragen.",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 2.2 S. 48 zeigt die Unterscheidung: Fix = gleich jeden Monat, Variabel = schwankend. Suche je zwei Posten aus dieser Kochsituation.",
+          "satzanfang": "Als Koch im Restaurant Kreuz sind Fixkosten z. B. ___ und ___, weil sie jeden Monat gleich hoch sind."
+        },
+        {
+          "nr": 2,
+          "tipp": "Rechne: CHF 720 – CHF 230 – CHF 310 = Saldo. Dann: CHF 380 ÷ 2 Monate = monatlich nötiger Sparbetrag.",
+          "satzanfang": "Mein Saldo beträgt CHF ___. Um CHF 380 in 2 Monaten zu decken, muss ich pro Monat CHF ___ zusätzlich zurücklegen."
+        },
+        {
+          "nr": 3,
+          "tipp": "Addiere die Ersparnisse beider Optionen. Was fehlt noch? Welche Kürzung passt besser zu deinem Kochalltag — keine neuen Kleider oder weniger Freizeit?",
+          "satzanfang": "Ich wähle Option ___, weil ___. Den fehlenden Betrag von CHF ___ decke ich durch ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Erstelle eine Tabelle: 3 Spalten (Position / Monat 1 / Monat 2), Variante A und B je als Block. Berechne den Saldo pro Variante.",
+          "satzanfang": "Variante A: Ich kürze ___ (von CHF ___ auf CHF ___). Variante B: Ich kürze stattdessen ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Fixkosten",
+          "definition": "Monatlich gleichbleibende Ausgaben unabhängig vom Konsum, z. B. Krankenkassenbeitrag oder Handy-Abo."
+        },
+        {
+          "term": "Variable Kosten",
+          "definition": "Ausgaben, die je nach Monat schwanken, z. B. Kleider oder Freizeitaktivitäten."
+        },
+        {
+          "term": "Rückstellungen",
+          "definition": "Beträge, die monatlich zurückgelegt werden für unregelmässige Ausgaben wie Zahnarzt oder Ferien."
+        },
+        {
+          "term": "Budgetsaldo",
+          "definition": "Ergebnis aus Einnahmen minus allen Ausgaben — positiv = Überschuss, negativ = Defizit."
+        },
+        {
+          "term": "Einsparvariante",
+          "definition": "Ein konkreter Plan, bei welchen Ausgabenposten und um wie viel Geld gespart werden soll."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle zwei Budgetvarianten als Tabellen (je 3–4 Zeilen). Zeige bei Variante A und B welche Ausgabenposten du anpasst und wie viel du jeweils einsparst. Berechne: 2 Monate × Einsparung = Total. Reicht das für CHF 380?",
+        "beispiel": "Variante A: Kleider CHF 20 statt CHF 80 | Ersparnis CHF 60/Mt. | In 2 Monaten: CHF 120",
+        "checkfragen": [
+          "□ Hast du zwei verschiedene Varianten mit unterschiedlichen Anpassungen?",
+          "□ Kommen bei beiden Varianten über 2 Monate zusammen mindestens CHF 190 heraus?",
+          "□ Hast du deinen Entscheid mit einem persönlichen Argument begründet?",
+          "□ Beziehst du dich konkret auf deinen Kochalltag im Restaurant Kreuz?",
+          "□ Ist der Saldo nach beiden Monaten mindestens CHF 380?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Wenn du ab heute monatlich CHF 30 als Rückstellung 'Diverses' einplanst — wann hättest du die CHF 380 bereits angespart gehabt? Was hätte sich damit verändert?",
+          "Zwei Kollegen im Betrieb verdienen gleich viel, aber einer hat nach einem Jahr CHF 800 gespart und der andere CHF 0. Welche konkreten Entscheidungsunterschiede erklären diesen Unterschied?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Schuldenspirale Jugendliche Schweiz' mit einer Suchmaschine. Welche typischen Einstiegsfaktoren werden genannt — und welche davon erkennst du in dieser Situation? Notiere zwei konkrete Punkte."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Stelle dir vor, du bist nach der Lehre ausgelernt und verdienst CHF 3 500 netto. Du hast die gleiche Situation: Zahnarztrechnung CHF 800. Übertrage deine Varianten-Logik auf diese neue Situation — welche neuen Posten (Steuern, BVG-Beiträge) kommen jetzt hinzu?",
+        "analyse": "Was passiert gesellschaftlich, wenn immer mehr Lernende keine Rückstellungen bilden und bei unerwarteten Kosten Konsumkredite aufnehmen? Beschreibe die Konsequenzen aus Sicht der betroffenen Person und aus Sicht des Sozialwesens.",
+        "recherche": "Suche nach 'Zerobase Budgeting Methode' mit einer Suchmaschine. Wie unterscheidet sich diese Methode vom klassischen Monatsbudget in Kap. 2.2? Notiere einen Vorteil und einen Nachteil.",
+        "praesentation": "Erkläre deinen Budget-Anpassungsplan einer Person aus der Klasse in 90 Sekunden: Nenne das Problem, deine gewählte Variante und das stärkste Argument für deinen Entscheid.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

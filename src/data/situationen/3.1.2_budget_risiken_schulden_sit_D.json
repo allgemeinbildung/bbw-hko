@@ -1,0 +1,365 @@
+{
+  "id": "3.1.2_budget_risiken_schulden_sit_D",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln",
+  "situation": "D",
+  "sit_farbe": "#A04000",
+  "sit_farbe_light": "#FAE5D3",
+  "sit_farbe_mid": "#E67E22",
+  "titel": "Ausgehen oder sparen?",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "ch_2_2_budget",
+    "ch_2_2_budget_moegliche_budgetpositionen_fuer_lernende"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Detailhandelsfachfrau EFZ",
+    "betrieb": "Coop",
+    "ort": "Luzern"
+  },
+  "situation_text": "Ich bin Detailhandelsfachfrau-Lernende im 1. Lehrjahr bei der Coop in Luzern und verdiene CHF 700 netto pro Monat. Ich gehe regelmässig mit Freundinnen aus — im Durchschnitt gebe ich CHF 160 pro Monat für Clubs und Konzerte aus. Im März hatte ich nach drei Wochen kein Geld mehr und musste mir CHF 80 von meiner Mutter ausleihen. Meine Berufsschullehrerin hat mir erklärt, dass genau solche kleinen, wiederholten Ausgaben typische Schuldenfallen sind — langsam, aber sicher. Welche konkreten Anpassungen muss ich in meinem Budget vornehmen, damit ich am Monatsende immer noch Geld übrig habe?",
+  "zahlen_tabelle": [
+    {
+      "label": "Monatslohn netto (1. Lehrjahr DHF)",
+      "wert": "CHF 700"
+    },
+    {
+      "label": "Ausgang pro Monat (Clubs, Konzerte)",
+      "wert": "CHF 160"
+    },
+    {
+      "label": "Ausgang pro Jahr (× 12)",
+      "wert": "CHF 1'920"
+    },
+    {
+      "label": "Anteil am Jahreslohn (CHF 8'400)",
+      "wert": "ca. 23%"
+    },
+    {
+      "label": "Geliehenes Geld (März)",
+      "wert": "CHF 80"
+    }
+  ],
+  "leitfrage": "Welche konkreten Budget-Anpassungen muss ich vornehmen, damit ich am Monatsende immer noch Geld habe?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 8.2 (Seite 199) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Nenne drei typische Schuldenfallen, in die Jugendliche laut Lehrmittel tappen. Welche davon erkennst du in deiner eigenen Situation — und warum sind sie so schwer zu vermeiden?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Du gibst CHF 160 pro Monat für Ausgang aus. Berechne: (a) Jahreskosten (× 12). (b) Prozentualer Anteil am Jahreslohn CHF 8'400. Was schlussfolgert du daraus für dein Budget?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Zwei Optionen: (a) Du streichst Ausgang komplett für 3 Monate und sparst CHF 480. (b) Du reduzierst auf Parties bei Freunden (CHF 40/Monat) und sparst CHF 360 in 3 Monaten. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Erstelle in Ich-Form ein realistisches Monatsbudget für den nächsten Monat: Einnahmen, alle Ausgaben, Sparbetrag — und formuliere drei konkrete Sparregeln für deinen Alltag.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein realistisches Budget",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Schuldenfallen",
+      "punkte": [
+        "Ausgang & Clubs",
+        "Kleider auf Kredit",
+        "Geld leihen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Einnahmen",
+      "punkte": [
+        "Lohn CHF 700",
+        "Evtl. Elternbeitrag",
+        "Kein Schuldenaufbau"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Ausgaben ordnen",
+      "punkte": [
+        "Fixkosten (Handy, Fahrabo)",
+        "Variable (Ausgang, Kleider)",
+        "Sparbetrag einplanen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Wenig Bargeld mitnehmen",
+        "Party bei Freunden statt Club",
+        "Karte nie überzogen"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Monatsbudget",
+    "titel": "Format: Realistisches Monatsbudget + 3 Sparregeln",
+    "format_detail": "Tabelle: Einnahmen / Ausgaben / Saldo + drei persönliche Sparregeln in Ich-Form",
+    "beschreibung": "Du erstellst ein realistisches Monatsbudget für den nächsten Monat und formulierst drei konkrete Sparregeln, die du tatsächlich einhalten kannst.",
+    "schritte": [
+      {
+        "label": "Einnahmen eintragen",
+        "hint": "Notiere Lohn (CHF 700) und weitere Einnahmen — sei ehrlich, auch Elternbeitrag oder Trinkgeld"
+      },
+      {
+        "label": "Fixkosten auflisten",
+        "hint": "Was zahlst du jeden Monat sicher: Handy, Fahrabo, Mittagessen Betrieb, Schulden?"
+      },
+      {
+        "label": "Variable Kosten schätzen",
+        "hint": "Was schwankt: Ausgang, Kleider, Spontankäufe, Geschenke? Sei realistisch!"
+      },
+      {
+        "label": "Sparbetrag festlegen",
+        "hint": "Was bleibt übrig? Plane bewusst mindestens CHF 50 als Sparbetrag ein — auch wenn es schwierig ist"
+      },
+      {
+        "label": "3 Sparregeln formulieren",
+        "hint": "Formuliere in Ich-Form: «Ich verzichte ab jetzt auf... / Ich reduziere... auf CHF ... / Ich spare monatlich...»"
+      }
+    ],
+    "schreib_label": "MONATSBUDGET + SPARREGELN HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Im Dezember gibt es Weihnachtsessen, Geschenke und Ausgehen. Wie passt du dein Budget an — und welche Sparregel musst du temporär anpassen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn deine Mutter sagt: Sie zahlt Handy und Fahrabo für dich — aber dafür erwartet sie CHF 100 Kostenbeitrag zu Hause. Wie ändert sich dein Budget?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du bist Koch-Lernender im 1. Lehrjahr in Bern. Deine grösste Ausgabenposition ist nicht Ausgang, sondern der öffentliche Verkehr. Welche Sparregel passt du an — und welche bleibt gleich?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies Kap. 8.2 S. 199 — suche die Auflistung der typischen Schuldenfallen. Vergleiche dann: Welche davon passt genau zu deiner Situation als Lernende bei Coop in Luzern?",
+          "satzanfang": "Die drei typischen Schuldenfallen laut Lehrmittel sind: ___, ___ und ___. In meiner Situation erkenne ich ___, weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Rechne Schritt für Schritt: (a) CHF 160 × 12 = CHF ___. (b) CHF ___ ÷ CHF 8'400 × 100 = ___%. Das Ergebnis zeigt, wie viel vom Jahreslohn für Ausgang draufgeht.",
+          "satzanfang": "(a) Jahreskosten Ausgang: CHF 160 × 12 = CHF ___. (b) Das sind ___ % meines Jahreslohns CHF 8'400. Meine Schlussfolgerung: ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Überlege: Welche Option ist langfristig realistischer? Kein Ausgang für 3 Monate klingt gut, ist aber schwer einzuhalten. CHF 40/Mt für Partys bei Freunden ist günstiger und trotzdem sozial.",
+          "satzanfang": "Ich wähle Option ___ (a: Ausgang komplett streichen / b: auf CHF 40/Mt reduzieren), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Erstelle eine Tabelle: Einnahmen (CHF 700), alle Ausgaben aufgelistet, Saldo am Schluss. Dann formuliere 3 Sparregeln: Was verzichtest du auf? Was reduzierst du? Wie viel sparst du monatlich?",
+          "satzanfang": "Budget-Tabelle: Einnahmen CHF 700 | Ausgaben: ___ | Saldo: CHF ___. Sparregel 1: 'Ich verzichte auf ___.' Sparregel 2: 'Ich reduziere ___ auf CHF ___.' Sparregel 3: 'Ich spare monatlich CHF ___.' "
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Schuldenfalle",
+          "definition": "Ausgaben oder Verhaltensweisen, die schleichend zur Verschuldung führen — z.B. regelmässiger Ausgang, Geld leihen oder Kleider auf Kredit."
+        },
+        {
+          "term": "Monatsbudget",
+          "definition": "Eine Übersicht über alle Einnahmen und Ausgaben eines Monats — zeigt, ob am Ende Geld übrig bleibt oder ein Defizit entsteht."
+        },
+        {
+          "term": "Fixkosten",
+          "definition": "Ausgaben, die jeden Monat gleich bleiben, unabhängig vom Verhalten — z.B. Handy-Abo oder Fahrabo."
+        },
+        {
+          "term": "Variable Kosten",
+          "definition": "Ausgaben, die je nach Monat unterschiedlich sind — z.B. Ausgang, Kleider, Spontankäufe."
+        },
+        {
+          "term": "Sparbetrag",
+          "definition": "Der Betrag, den man bewusst jeden Monat zur Seite legt — am besten am Zahltag sofort auf das Sparkonto überweisen."
+        },
+        {
+          "term": "Saldo",
+          "definition": "Das Ergebnis des Budgets: Einnahmen minus alle Ausgaben. Positiv = Geld übrig; negativ = man gibt mehr aus als man hat."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein Budget hat 3 Abschnitte: 1. Einnahmen (CHF 700 Lohn, evtl. Elternbeitrag). 2. Ausgaben in 2 Kategorien: Fixkosten (Handy, Fahrabo — konstant) und variable Kosten (Ausgang, Kleider — schwankend). 3. Saldo (Einnahmen − alle Ausgaben) und dein geplanter Sparbetrag.",
+        "beispiel": "Ähnliche Person. Einnahmen: CHF 700. Fixkosten: Handy CHF 39, ÖV-Abo CHF 45. Variable: Ausgang CHF 120, Kleider CHF 40. Saldo: CHF 456. Sparbetrag: CHF 60. Sparregel: 'Ich reduziere Ausgang auf CHF 80' und 'Ich kaufe Kleider nur noch second-hand'.",
+        "checkfragen": [
+          "□ Habe ich alle grossen Ausgabenpositionen erfasst?",
+          "□ Ist der Saldo positiv — bleibt etwas übrig nach allen Ausgaben?",
+          "□ Habe ich 3 Sparregeln in Ich-Form formuliert?",
+          "□ Sind meine Sparregeln realistisch — kann ich sie einen Monat lang einhalten?",
+          "□ Plane ich mindestens CHF 50 als Sparbetrag ein?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Inwiefern ist Ausgang für Lernende nicht nur ein Konsum-Problem, sondern auch ein soziales Bedürfnis — und wie können günstigere soziale Alternativen die Gleichung von Spass und Budget lösen?",
+          "Was sagt die Zahl 23% des Jahreslohns für Ausgang über strukturelle Einkommensungleichheiten für Lernende im Vergleich zu Vollzeit-Arbeitnehmenden mit ähnlichen Freizeitausgaben aus?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Lehrlingslohn Detailhandel Schweiz 2024 1. Lehrjahr Durchschnitt' mit einer Suchmaschine. Was verdient eine Detailhandelsfachfrau EFZ im 1. Lehrjahr durchschnittlich — und wie vergleicht sich das mit dem Branchendurchschnittslohn nach Abschluss? Notiere zwei Zahlen.",
+          "Suche nach 'Budgetberatung Schweiz Jugendliche Schuldenfallen kostenlos Tipps' mit einer Suchmaschine. Welche kostenlosen Budgettipps oder Angebote gibt es für Lernende? Notiere eine Anlaufstelle."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist im 3. Lehrjahr und verdienst CHF 950. Überarbeite dein Monatsbudget: Was kannst du dir jetzt leisten, was vorher nicht möglich war — und welche Sparregel behältst du trotzdem bei?",
+        "analyse": "Was passiert gesellschaftlich, wenn viele junge Frauen im Detailhandel systematisch mehr für Ausgang und Kleider ausgeben, als ihr Budget zulässt? Analysiere aus zwei Perspektiven: Einzelperson (Schuldenfalle) und Detailhandel (Konsumverhalten junger Frauen).",
+        "recherche": "Suche nach 'Durchschnittslohn Schweiz Detailhandel nach LAP Lohnsteigerung' mit einer Suchmaschine. Wie stark steigt der Lohn nach dem Lehrabschluss — und was bedeutet das für die finanzielle Freiheit? Notiere eine konkrete Zahl.",
+        "praesentation": "Erkläre dein Monatsbudget in 90 Sekunden einem Kollegen, der auch zu viel für Ausgang ausgibt. Zeige die Tabelle und erkläre, wie du mit 3 Sparregeln in 3 Monaten CHF ___ ansparen wirst.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

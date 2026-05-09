@@ -1,0 +1,422 @@
+{
+  "id": "6.1_sit_A",
+  "modul": "6.1",
+  "modul_titel": "Steuern",
+  "situation": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Plötzlich 18 — und steuerpflichtig",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "steuererklaerung",
+    "steuern"
+  ],
+  "nrlp": {
+    "lebensbezug": "6.1",
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Recht",
+        "iteration": "R4"
+      }
+    ],
+    "sprachmodi": [
+      {
+        "modus": "Rezeption schriftlich und bildlich",
+        "iteration": "R1"
+      }
+    ],
+    "sk": [
+      8,
+      3
+    ],
+    "themen": [
+      "T6",
+      "T5"
+    ]
+  },
+  "persona": {
+    "beruf": "Kaufmann/Kauffrau EFZ",
+    "betrieb": "ZKB",
+    "ort": "Zürich"
+  },
+  "situation_text": "Du bist Kaufmann-Lernende/r im 2. Lehrjahr bei der Zürcher Kantonalbank (ZKB) in Zürich. Am 15. Oktober wirst du 18 Jahre alt. Dein Berufsbildner zeigt dir einen Brief des Steueramts: «Ab jetzt bist du steuerpflichtig — deine erste Steuererklärung muss bis spätestens 31. März eingereicht werden.» Du verdienst Fr. 950.– pro Monat brutto, hast ein Sparkonto mit Fr. 2'400.– und zahlst Fr. 87.– monatlich für dein ZVV-Abo. Dein Freund sagt: «Lass das einfach — bei dem Lohn zahlst du sowieso keine Steuern.» Du bist dir nicht sicher — und willst es genau wissen.",
+  "zahlen_tabelle": [
+    {
+      "label": "Lehrlingslohn (Monat)",
+      "wert": "Fr. 950.–"
+    },
+    {
+      "label": "Jahreseinkommen (×12)",
+      "wert": "Fr. 11'400.–"
+    },
+    {
+      "label": "Sparkonto (31. Dezember)",
+      "wert": "Fr. 2'400.–"
+    },
+    {
+      "label": "ZVV-Abo Berufsauslage (Monat)",
+      "wert": "Fr. 87.–"
+    }
+  ],
+  "leitfrage": "Was musst du bis zum 31. März tun — und welche Unterlagen brauchst du für deine erste Steuererklärung?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 10.1 (Seite 249) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 249",
+      "text": "Was bedeutet «steuerbares Einkommen»? Erkläre in eigenen Worten, welche Einnahmen angegeben werden müssen — und was man davon abziehen darf.",
+      "feld_hoehe_mm": 13
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 249",
+      "text": "Du zahlst monatlich Fr. 87.– für dein ZVV-Abo (Weg zur Arbeit). Darf das als Berufsauslage abgezogen werden? Berechne: Wie verändert das dein steuerbares Einkommen im Vergleich zu Fr. 11'400.– Jahreseinkommen?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 10.1 | S. 249",
+      "text": "Dein Freund rät: «Reiche die Steuererklärung einfach nicht ein — du verdienst so wenig.» Du hast zwei Optionen: (a) Du folgst dem Rat und wartest ab. (b) Du reichst die Erklärung fristgerecht ein. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 17
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 10.1 | S. 249",
+      "text": "Erstelle eine persönliche Checkliste: Welche 4 Unterlagen brauchst du zwingend für deine Steuererklärung? Schreibe jeden Punkt in Ich-Form («Ich brauche …»).",
+      "feld_hoehe_mm": 13
+    }
+  ],
+  "mindmap_zentrum": "Erste Steuererklärung",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 — Steuerpflicht",
+      "punkte": [
+        "Ab wann?",
+        "Wer muss?",
+        "Was angeben?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 — Abzüge",
+      "punkte": [
+        "Berufsauslagen",
+        "Versicherungsbeiträge",
+        "Sozialabzüge"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 — Ablauf",
+      "punkte": [
+        "Frist 31. März",
+        "Unterlagen",
+        "Konsequenzen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 — Optional",
+      "punkte": [
+        "Was überrascht mich?",
+        "Was nehme ich mit?"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Aktionsplan",
+    "titel": "Aktionsplan «Meine erste Steuererklärung»",
+    "format_detail": "Tabelle (5 Schritte) + 6–8 Sätze Erklärtext",
+    "beschreibung": "Erstelle einen persönlichen Aktionsplan für deine erste Steuererklärung. Der Plan richtet sich an dich selbst — und soll so konkret sein, dass du ihn direkt umsetzen kannst. Halte jeden Schritt kurz und klar in Ich-Form fest.",
+    "schritte": [
+      {
+        "label": "Unterlagen sammeln",
+        "hint": "Lohnausweis, Bankauszug vom 31. Dezember, ZVV-Abo-Belege — alles in einer Mappe zusammenstellen."
+      },
+      {
+        "label": "Abzüge prüfen",
+        "hint": "Berufsauslage ZVV-Abo (Fr. 87.– × 12 = Fr. 1'044.– / Jahr) sowie allfällige Versicherungsbeiträge identifizieren."
+      },
+      {
+        "label": "Steuerbares Einkommen schätzen",
+        "hint": "Jahreseinkommen minus Abzüge = steuerbares Einkommen. Sparkonto als Vermögen separat angeben."
+      },
+      {
+        "label": "Formular ausfüllen (eTax ZH)",
+        "hint": "Auf zh.ch das eTax-Tool nutzen. Seite 1: Personalien. Seite 2: Einkommen + Abzüge. Seite 4: Vermögen."
+      },
+      {
+        "label": "Fristgerecht einreichen",
+        "hint": "Kanton Zürich: 31. März. Fristerstreckung möglich bis 31. Dezember — rechtzeitig beantragen."
+      }
+    ],
+    "schreib_label": "HIER AKTIONSPLAN SCHREIBEN / TABELLE ERSTELLEN",
+    "schreib_note": "Weitere Blätter können als Anhang abgegeben werden"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument.",
+      "sub": "Was ich von den anderen gehört habe:",
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Was passiert, wenn du bis zum 31. März keine Steuererklärung eingereicht hast — und auch keine Fristerstreckung beantragt wurde?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du im nächsten Jahr neben deiner Lehre einen Nebenjob annimmst und Fr. 300.– pro Monat dazuverdienst? Wie verändert das deine Steuerpflicht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Dein Kollege macht eine Lehre als Koch in Luzern. Gilt für ihn dieselbe Frist wie für dich in Zürich — und was könnte kantonal anders sein?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe + Verbindungen"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Gruppenaustausch sichtbar?"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit + Ehrlichkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 — 45 min",
+      "text": "Leitfragen + Mindmap → Einreichen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 — 45 min",
+      "text": "Aktionsplan fertigstellen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenaustausch + Reflexion → Abgabe",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=6.1_sit_A",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/6.1_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "6.1_sit_A",
+    "aliases": [
+      "sit_A_ploetzlich_18"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T6",
+      "T5"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.4",
+      "titel": "Einkommen und Vermögen (Steuern)",
+      "kompetenz": "Ich kann die Grundlagen der Steuerpflicht erklären und eine einfache Steuererklärung ausfüllen."
+    },
+    "ki_leitfragen": {
+      "offen": "Was musst du bis zum 31. März tun — und welche Unterlagen brauchst du für deine erste Steuererklärung?",
+      "argumentieren": "Darf das ZVV-Abo (Fr. 87.–/Mt.) als Berufsauslage abgezogen werden? Berechne: Wie stark sinkt dein steuerbares Einkommen dadurch pro Jahr?",
+      "entscheiden": "Dein Freund rät, die Steuererklärung bei Fr. 950.– Lohn einfach zu ignorieren. Welche rechtlichen Risiken (Busse, Schätzung) gehst du damit ein — und warum ist Einreichen klüger?",
+      "formulieren": "Erstelle eine Checkliste in Ich-Form: Welche vier Dokumente (Lohnausweis, Kontosauszug etc.) lege ich bereit, um die Steuererklärung effizient auszufüllen?"
+    },
+    "empfohlene_templates": [
+      "ai_lernassistent",
+      "ai_entscheidungscoach",
+      "ai_zeitkapsel"
+    ],
+    "templates": {
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "Identität | SK 3 (Problemlösung)",
+        "lernziel": "Den Prozess der ersten Steuererklärung verstehen und die Relevanz von Abzügen für die Steuerlast erkennen.",
+        "system_prompt_vorlage": "Du bist ein Steuerberater für junge Erwachsene. Hilf dem User, seine erste Steuererklärung vorzubereiten. Erkläre Begriffe wie 'steuerbares Einkommen' und 'Lohnausweis' anhand der ZKB-Lohnzahlen (950.-/Mt).",
+        "testfragen": [
+          "Warum muss man auch bei einem niedrigen Lehrlingslohn eine Steuererklärung einreichen?",
+          "Welche Kosten darf man als 'Berufsauslagen' vom Bruttolohn abziehen?",
+          "Was passiert mit den Zinsen auf dem Sparkonto in der Steuererklärung?"
+        ]
+      },
+      "ai_entscheidungscoach": {
+        "score": 55,
+        "grund": "Recht | SK 8 (Rechtlich handeln)",
+        "entscheid_situation": "Du hast die Frist (31. März) verpasst und noch gar nicht angefangen. Du fühlst dich überfordert vom eTax-Tool.",
+        "optionen": [
+          "Weiter aufschieben (Risiko von Mahngebühren und späterer Busse)",
+          "Sofort eine Fristerstreckung online beantragen oder Hilfe bei den Eltern/Lehrbetrieb suchen"
+        ],
+        "entscheid_kontext": "Überlege dir, welche Konsequenzen eine 'amtliche Einschätzung' hat, wenn das Steueramt dein Einkommen einfach schätzt (meist zu deinem Nachteil)."
+      },
+      "ai_zeitkapsel": {
+        "score": 75,
+        "grund": "Wirtschaft/Politik | SK 5 (Werthaltungen)",
+        "zukunft_frage": "Wird die Steuererklärung im Jahr 2040 durch eine KI-Vollautomatisierung ersetzt sein, die Steuern in Echtzeit bei jeder Lohnzahlung und jedem Kauf direkt abrechnet?",
+        "wild_card": "Der Staat führt eine 'Daten-Steuer' ein: Wer viele persönliche Daten im Netz preisgibt, zahlt weniger Steuern, da der Staat diese Daten wirtschaftlich nutzt.",
+        "blind_spot": "Der vollständige Verlust der finanziellen Privatsphäre, wenn der Staat jede Transaktion digital und in Echtzeit überwacht."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 10.1 S. 249 erklärt 'steuerbares Einkommen': Es ist dein Jahreseinkommen minus erlaubte Abzüge. Zu den Einnahmen zählt alles — auch Zinsen auf dem Sparkonto. Abzüge sind z. B. Berufsauslagen.",
+          "satzanfang": "Steuerbares Einkommen bedeutet: ___ minus ___. Als Kaufmann/Kauffrau-Lernende/r bei der ZKB muss ich ___ angeben. Abziehen darf ich zum Beispiel ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Berufsauslage = Kosten direkt für den Weg zur Arbeit. Das ZVV-Abo gilt. Rechnung: CHF 87 × 12 Monate = CHF 1'044 Jahresausgabe. Das zieht man vom Jahreseinkommen von CHF 11'400 ab — das Ergebnis ist das neue steuerbare Einkommen.",
+          "satzanfang": "Ja, das ZVV-Abo darf als Berufsauslage abgezogen werden, weil ___. Berechnung: CHF ___ × 12 = CHF ___. Statt CHF 11'400 beträgt mein steuerbares Einkommen ca. CHF ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option (a) ist riskant: Das Steueramt schätzt dann dein Einkommen selbst — oft höher als es ist — und du kannst keine Abzüge geltend machen. Ausserdem drohen Mahngebühren und Bussen. Option (b) schützt dich rechtlich.",
+          "satzanfang": "Ich wähle Option ___, weil ___. Das Risiko von Option (a) wäre: Das Steueramt schätzt meinen Lohn und ich kann ___ nicht abziehen. Ausserdem droht ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Vier typische Unterlagen: (1) Lohnausweis von der ZKB, (2) Kontoauszug per 31. Dezember (Sparkonto), (3) ZVV-Abo-Beleg oder Jahresrechnung, (4) Personalausweis. Beginne jeden Punkt mit 'Ich brauche ...'.",
+          "satzanfang": "Ich brauche: (1) ___, um ___. (2) ___, damit das Steueramt mein Sparkonto sieht. (3) ___. (4) ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Steuerpflicht",
+          "definition": "Gesetzliche Pflicht, Steuern zu zahlen und eine Steuererklärung einzureichen — in der Schweiz ab 18 Jahren oder ab bestimmtem Einkommen."
+        },
+        {
+          "term": "Steuerbares Einkommen",
+          "definition": "Jahreseinkommen minus erlaubte Abzüge — nur auf diesen Betrag werden Steuern berechnet."
+        },
+        {
+          "term": "Berufsauslage",
+          "definition": "Ausgaben, die direkt mit der Arbeit zusammenhängen (z. B. Abo für den Weg zur Arbeit) und vom Einkommen abgezogen werden dürfen."
+        },
+        {
+          "term": "Lohnausweis",
+          "definition": "Offizielles Dokument des Arbeitgebers, das Bruttolohn, Abzüge und Nettolohn des Jahres dokumentiert — Pflichtbeilage zur Steuererklärung."
+        },
+        {
+          "term": "Steuererklärung",
+          "definition": "Formular, in dem Steuerpflichtige ihr Einkommen und Vermögen deklarieren — Frist in Zürich: 31. März."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle eine Tabelle mit 5 Zeilen und 3 Spalten: Spalte 1 = Schritt (z. B. 'Unterlagen sammeln'), Spalte 2 = Konkret was (welche Dokumente), Spalte 3 = Wann / Wo (Frist, eTax ZH). Schreibe danach 6–8 Sätze in Ich-Form, warum du die Steuererklärung trotz niedrigem Lehrlingslohn fristgerecht einreichst.",
+        "beispiel": "Schritt 1 | Was: Lohnausweis ZKB, Kontoauszug 31.12., ZVV-Jahresrechnung | Wann: Anfang Januar\nSchritt 4 | Was: eTax ZH ausfüllen — Seite 1: Personalien | Seite 2: Einkommen | Wann: vor dem 31. März\nFazit (2 Sätze): 'Ich reiche meine Steuererklärung ein, weil ich mein ZVV-Abo abziehen kann — das spart mir CHF 1'044 steuerbares Einkommen.'",
+        "checkfragen": [
+          "□ Enthält meine Tabelle alle 5 Schritte (Unterlagen, Abzüge, Einkommen schätzen, Formular, Einreichen)?",
+          "□ Schreibe ich in Ich-Form (Ich brauche / Ich prüfe / Ich berechne)?",
+          "□ Erwähne ich das ZVV-Abo mit dem Jahresbetrag (CHF 1'044)?",
+          "□ Erkläre ich im Fazit, warum Einreichen trotz niedrigem Lohn sinnvoll ist?",
+          "□ Gebe ich die Frist 31. März an?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Warum verlangt der Kanton, dass auch Menschen mit sehr niedrigem Einkommen eine Steuererklärung einreichen müssen, obwohl sie oft gar keine Steuern zahlen? Denke an Vermögen, Zinserträge und staatliche Planungssicherheit.",
+          "Dein Freund rät, die Steuererklärung zu ignorieren. Welche konkreten rechtlichen Konsequenzen kann das haben — und wie nennt sich das Verfahren, wenn das Steueramt das Einkommen selbst schätzt?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Steuerpflicht Schweiz Lernende 18 Jahre Frist Kanton' mit einer Suchmaschine. Ab welchem Alter und welchem Mindestbetrag wird man in Zürich steuerpflichtig? Notiere den genauen Betrag.",
+          "Suche nach 'eTax Zürich Berufsauslagen Lernende Abzüge' mit einer Suchmaschine. Welche Auslagen dürfen Lernende in Zürich konkret geltend machen? Notiere zwei Abzüge mit Betragslimite."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist in 3 Jahren ausgebildete/r Kaufmann/Kauffrau bei der ZKB mit CHF 5'000 Bruttolohn. Erstelle eine neue Aktionsplan-Tabelle für deine erste Steuererklärung als Fachkraft — und zeige, welche Abzüge jetzt neu hinzukommen (z. B. Weiterbildung, Berufskleider).",
+        "analyse": "Was würde passieren, wenn die Schweiz die Steuerpflicht erst ab CHF 20'000 Jahreseinkommen einführen würde? Betrachte die Folgen für den Bundeshaushalt und für das Steuerbewusstsein junger Erwachsener.",
+        "recherche": "Suche nach 'Steueroptimierung Berufsauslagen Schweiz Lernende Berufseinsteiger' mit einer Suchmaschine. Welche weniger bekannten Abzüge werden für Berufseinsteiger empfohlen? Notiere zwei konkrete Möglichkeiten.",
+        "praesentation": "Erkläre deinem Freund in 90 Sekunden, warum er die Steuererklärung einreichen sollte — auch bei CHF 950 Lehrlingslohn. Kriterium: Er kennt danach einen konkreten rechtlichen Nachteil des Ignorierens und einen Vorteil des Einreichens.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

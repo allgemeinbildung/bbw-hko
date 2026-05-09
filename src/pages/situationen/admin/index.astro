@@ -1,0 +1,210 @@
+---
+import Situationen from '../../../layouts/Situationen.astro'
+import { situationenIndex } from '../../../lib/situationen'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+if (profile?.role !== 'kt1') return Astro.redirect('/situationen')
+
+const p = Astro.url.searchParams
+const filterStatus = p.get('status') ?? ''
+const filterSituation = p.get('situation_id') ?? ''
+const filterMinTaug = p.get('min_taug') ?? ''
+
+let query = Astro.locals.supabase
+  .from('feedbacks')
+  .select('*, lp:profiles!lp_id(full_name, abteilung)')
+  .order('created_at', { ascending: false })
+
+if (filterStatus) query = query.eq('status', filterStatus)
+if (filterSituation) query = query.eq('situation_id', filterSituation)
+if (filterMinTaug) query = query.gte('tauglichkeit', parseInt(filterMinTaug))
+
+const { data: feedbacks, error } = await query
+
+const titleById = new Map(situationenIndex.map((s) => [s.id, s.titel] as const))
+
+function avg(arr: (number | null | undefined)[]): string {
+  const xs = arr.filter((v): v is number => typeof v === 'number')
+  if (!xs.length) return '—'
+  return (xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(1)
+}
+
+const stats = {
+  total: feedbacks?.length ?? 0,
+  eingereicht: feedbacks?.filter((f) => f.status === 'eingereicht').length ?? 0,
+  gesichtet: feedbacks?.filter((f) => f.status === 'gesichtet').length ?? 0,
+  weiter: feedbacks?.filter((f) => f.status === 'weitergeleitet_kt2').length ?? 0,
+  avgTaug: avg((feedbacks ?? []).map((f) => f.tauglichkeit)),
+  avgQual: avg((feedbacks ?? []).map((f) => f.qualitaet)),
+}
+
+const statusBadge: Record<string, string> = {
+  entwurf: 'bg-slate-100 text-slate-700',
+  eingereicht: 'bg-amber-100 text-amber-800',
+  gesichtet: 'bg-sky-100 text-sky-800',
+  weitergeleitet_kt2: 'bg-emerald-100 text-emerald-800',
+}
+---
+<Situationen title="KT1 · Feedbacks" role="kt1">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Feedbacks zu Situationen</h1>
+    <p class="text-sm text-slate-500 mt-1">Erfahrungsberichte der LPs · Sichtung &amp; Weiterleitung an KT2</p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-5">
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">Total</div>
+      <div class="text-2xl font-semibold">{stats.total}</div>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">Eingereicht</div>
+      <div class="text-2xl font-semibold text-amber-700">{stats.eingereicht}</div>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">Gesichtet</div>
+      <div class="text-2xl font-semibold text-sky-700">{stats.gesichtet}</div>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">An KT2</div>
+      <div class="text-2xl font-semibold text-emerald-700">{stats.weiter}</div>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">Ø Tauglichkeit</div>
+      <div class="text-2xl font-semibold">{stats.avgTaug}</div>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">Ø Qualität</div>
+      <div class="text-2xl font-semibold">{stats.avgQual}</div>
+    </div>
+  </div>
+
+  <form method="GET" class="bg-white border border-slate-200 rounded-lg p-4 mb-5">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+      <div>
+        <label class="field-label">Status</label>
+        <select name="status" class="input mt-1">
+          <option value="" selected={!filterStatus}>Alle</option>
+          {[
+            ['entwurf', 'Entwurf'],
+            ['eingereicht', 'Eingereicht'],
+            ['gesichtet', 'Gesichtet'],
+            ['weitergeleitet_kt2', 'Weitergeleitet (KT2)'],
+          ].map(([v, l]) => (
+            <option value={v} selected={filterStatus === v}>{l}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Situation</label>
+        <select name="situation_id" class="input mt-1">
+          <option value="" selected={!filterSituation}>Alle</option>
+          {situationenIndex.map((s) => (
+            <option value={s.id} selected={filterSituation === s.id}>
+              {s.kompetenz_nr} · {s.sit_letter} — {s.titel}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Min. Tauglichkeit</label>
+        <select name="min_taug" class="input mt-1">
+          <option value="" selected={!filterMinTaug}>—</option>
+          {[1, 2, 3, 4, 5].map((n) => (
+            <option value={String(n)} selected={filterMinTaug === String(n)}>≥ {n}</option>
+          ))}
+        </select>
+      </div>
+      <div class="flex items-end gap-2">
+        <button type="submit" class="flex-1 py-2 px-3 rounded-md text-white text-sm font-medium" style="background: var(--brand)">Filtern</button>
+        <a href="?" class="py-2 px-3 rounded-md border border-slate-300 text-sm text-slate-600 hover:bg-slate-50">✕</a>
+      </div>
+    </div>
+  </form>
+
+  {error && <div class="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md mb-4 text-sm">Fehler: {error.message}</div>}
+
+  {(feedbacks?.length ?? 0) === 0 ? (
+    <div class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500">
+      Noch keine Feedbacks vorhanden.
+    </div>
+  ) : (
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden" x-data>
+      <table class="w-full text-sm">
+        <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
+          <tr>
+            <th class="text-left p-3">Datum</th>
+            <th class="text-left p-3">Lehrperson</th>
+            <th class="text-left p-3">Situation</th>
+            <th class="text-center p-3">Taug.</th>
+            <th class="text-center p-3">Qual.</th>
+            <th class="text-center p-3">Empf.</th>
+            <th class="text-left p-3">Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {feedbacks?.map((f: any) => {
+            const created = f.created_at ? new Date(f.created_at).toLocaleDateString('de-CH') : ''
+            return (
+              <tr class="border-t border-slate-100 align-top">
+                <td class="p-3 text-slate-500 text-xs whitespace-nowrap">{created}</td>
+                <td class="p-3">
+                  <div class="font-medium">{f.lp?.full_name ?? '—'}</div>
+                  <div class="text-xs text-slate-500">{f.lp?.abteilung ?? ''} · {f.klasse ?? ''}</div>
+                </td>
+                <td class="p-3">
+                  <a href={`/situationen/${f.situation_id}`} class="font-medium hover:underline">{titleById.get(f.situation_id) ?? f.situation_id}</a>
+                  <div class="text-xs text-slate-500 font-mono">{f.situation_id}</div>
+                </td>
+                <td class="p-3 text-center font-semibold">{f.tauglichkeit ?? '—'}</td>
+                <td class="p-3 text-center font-semibold">{f.qualitaet ?? '—'}</td>
+                <td class="p-3 text-center">{f.weiterempfehlung == null ? '—' : (f.weiterempfehlung ? '✓' : '✕')}</td>
+                <td class="p-3">
+                  <select
+                    class={`input text-xs ${statusBadge[f.status] ?? ''}`}
+                    data-id={f.id}
+                    onchange={`fetch('/api/feedbacks/' + this.dataset.id, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: this.value }) }).then(r => r.ok ? location.reload() : alert('Fehler beim Speichern.'))`}
+                  >
+                    {['entwurf', 'eingereicht', 'gesichtet', 'weitergeleitet_kt2'].map((s) => (
+                      <option value={s} selected={f.status === s}>{s}</option>
+                    ))}
+                  </select>
+                </td>
+                <td class="p-3 text-right">
+                  <button type="button" class="text-xs text-slate-500 hover:text-slate-900 underline" onclick={`document.getElementById('detail-${f.id}').classList.toggle('hidden')`}>
+                    Details
+                  </button>
+                </td>
+              </tr>
+            )
+          })}
+          {feedbacks?.map((f: any) => (
+            <tr id={`detail-${f.id}`} class="hidden bg-slate-50 border-t border-slate-100">
+              <td colspan="8" class="p-4 space-y-2 text-xs text-slate-700">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div><span class="text-slate-500">Lehrjahr:</span> {f.lehrjahr ?? '—'}</div>
+                  <div><span class="text-slate-500">Getestet:</span> {f.getestet_am ?? '—'}</div>
+                  <div><span class="text-slate-500">Dauer:</span> {f.dauer_lektionen ?? '—'} Lekt.</div>
+                  <div><span class="text-slate-500">Schwierigkeit / Motivation:</span> {f.schwierigkeit ?? '—'} / {f.motivation ?? '—'}</div>
+                </div>
+                {f.was_funktionierte && <div><span class="text-slate-500 font-medium">Funktionierte:</span> {f.was_funktionierte}</div>}
+                {f.was_nicht_funktionierte && <div><span class="text-slate-500 font-medium">Nicht funktioniert:</span> {f.was_nicht_funktionierte}</div>}
+                {f.aenderungsvorschlaege && <div><span class="text-slate-500 font-medium">Vorschläge:</span> {f.aenderungsvorschlaege}</div>}
+                {f.eigene_anpassungen && <div><span class="text-slate-500 font-medium">Anpassungen:</span> {f.eigene_anpassungen}</div>}
+                {f.anmerkungen && <div><span class="text-slate-500 font-medium">Anmerkungen:</span> {f.anmerkungen}</div>}
+                {f.kt1_kommentar && <div class="pt-2 border-t border-slate-200"><span class="text-slate-500 font-medium">KT1-Kommentar:</span> {f.kt1_kommentar}</div>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</Situationen>

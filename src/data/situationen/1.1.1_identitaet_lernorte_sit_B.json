@@ -1,0 +1,432 @@
+{
+  "id": "1.1.1_identitaet_lernorte_sit_B",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Der Lehrvertrag als Schutzschild",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "lehrvertrag",
+    "berufsbildung_lernorte"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sk": [
+      2,
+      6,
+      8
+    ]
+  },
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Stahlbau Müller AG",
+    "ort": "Zürich"
+  },
+  "situation_text": "Ich bin Polymechaniker im 1. Lehrjahr bei der Stahlbau Müller AG in Zürich. Mein Lehrlingslohn beträgt CHF 700.– pro Monat. An einem Dienstagnachmittag bittet mich mein Vorgesetzter, bis 20 Uhr zu bleiben und eine dringende Maschinenreparatur abzuschliessen — obwohl ich laut Arbeitsplan ab 17 Uhr frei habe. Dazu wäre ich für zwei Stunden allein in der Werkstatt ohne Aufsicht. Ich erinnere mich, dass im Lehrvertrag etwas über Arbeitszeit und Aufsichtspflicht steht — doch ich kenne den genauen Wortlaut nicht. Ich möchte weder den Betrieb verärgern noch meine Rechte aufgeben. Wie reagiere ich — sachlich, respektvoll und rechtlich korrekt?",
+  "zahlen_tabelle": [
+    {
+      "label": "Lehrlingslohn (1. Lehrjahr)",
+      "wert": "CHF 700.–/Monat"
+    },
+    {
+      "label": "Überstunden: gesetzliche Regelung (bis 18 J.)",
+      "wert": "Max. 9 h/Tag, keine Nachtarbeit"
+    }
+  ],
+  "leitfrage": "Wie reagierst du auf die Bitte deines Vorgesetzten — sachlich, respektvoll und rechtlich korrekt?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 1.1 und Kap. 1.4 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.1 | S. 15",
+      "text": "Was regelt der Lehrvertrag bezüglich Arbeitszeit und Aufsichtspflicht bei Lernenden? Nenne zwei konkrete Regelungen mit je einem Satz Erklärung.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.1 | S. 15",
+      "text": "Dein Vorgesetzter sagt: «Das ist eine Ausnahme, einmal geht das.» Welche zwei Argumente aus dem Lehrvertrag könntest du sachlich einbringen — ohne den Betrieb zu verärgern?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Du hast zwei Optionen: (a) Du bleibst und sagst nichts, um den Betriebsfrieden zu wahren. (b) Du sprichst die Regelung ruhig an und bittest um eine gemeinsame Lösung. Welche wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Formuliere in Ich-Form drei Sätze für das Gespräch mit deinem Vorgesetzten: klar, sachlich, respektvoll. Der erste Satz bestätigt die Anfrage, der zweite nennt die Regelung, der dritte schlägt eine Alternative vor.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Meine Rechte und Pflichten",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Lehrvertrag",
+      "punkte": [
+        "Arbeitszeit",
+        "Aufsichtspflicht",
+        "Kündigungsrecht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Vollzugsorgane",
+      "punkte": [
+        "Kanton / Berufsbildungsamt",
+        "Berufsverband",
+        "Lehrbetrieb"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Kommunikation",
+      "punkte": [
+        "Sachlich bleiben",
+        "Alternativen anbieten",
+        "Respekt wahren"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Was wenn ich zu jung bin?",
+        "OR-Artikel",
+        "Konflikteskalation vermeiden"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Gesprächsvorbereitung",
+    "titel": "Format: Gesprächsvorbereitung (3 Sätze in Ich-Form)",
+    "format_detail": "Drei präzise Sätze für das Gespräch mit dem Vorgesetzten: Bestätigung — Regelung nennen — Alternative vorschlagen",
+    "beschreibung": "Du bereitest ein kurzes, respektvolles Gespräch mit deinem Vorgesetzten vor, das deine Rechte schützt und gleichzeitig eine Lösung anbietet.",
+    "schritte": [
+      {
+        "label": "Rechtslage klären",
+        "hint": "Was sagt der Lehrvertrag genau? Schreibe den relevanten Punkt in eigenen Worten auf."
+      },
+      {
+        "label": "Eigene Position formulieren",
+        "hint": "Was möchtest du sagen? Schreibe deinen Standpunkt in einem Satz."
+      },
+      {
+        "label": "Ton und Form wählen",
+        "hint": "Wie sagst du es? Sachlich, nicht vorwurfsvoll — du suchst eine Lösung, keine Konfrontation."
+      },
+      {
+        "label": "Alternative entwickeln",
+        "hint": "Was könntest du stattdessen anbieten? Z.B. früher kommen, Hilfe holen, nächsten Tag einspringen."
+      },
+      {
+        "label": "Drei Sätze aufschreiben",
+        "hint": "Satz 1: Bestätigung der Anfrage. Satz 2: Regelung sachlich nennen. Satz 3: Konkrete Alternative vorschlagen."
+      }
+    ],
+    "schreib_label": "GESPRÄCHSVORBEREITUNG HIER ERARBEITEN",
+    "schreib_note": "-> wissen/lehrvertrag"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Dein Vorgesetzter fragt dich dasselbe im 2. Lehrjahr — du bist jetzt 17-jährig. Was ändert sich rechtlich — und was bleibt gleich?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn dein Vorgesetzter nach deinem Gespräch sagt: «Wenn du nicht bleibst, gefährdet das deine Lehrstelle»? Wie reagierst du — und an wen wendest du dich?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Kauffrau im 1. Lehrjahr bei einer Bank hat eine ähnliche Situation: Der Chef bittet sie, samstags ohne Überstundenzuschlag zu arbeiten. Welche Argumente hätte sie?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rolle in der Gesellschaft und in der Arbeitswelt"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+        },
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "System-Design und Lernarchitektur",
+        "Standpunkte begründen und Gegenargumente prüfen",
+        "Entscheiden unter Unsicherheit"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie reagierst du auf die Bitte deines Vorgesetzten — sachlich, respektvoll und rechtlich korrekt?",
+      "argumentieren": "Dein Vorgesetzter sagt: «Das ist eine Ausnahme, einmal geht das.» Welche zwei Argumente aus dem Lehrvertrag könntest du sachlich einbringen — ohne den Betrieb zu verärgern?",
+      "entscheiden": "Du hast zwei Optionen: (a) Du bleibst und sagst nichts, um den Betriebsfrieden zu wahren. (b) Du sprichst die Regelung ruhig an und bittest um eine gemeinsame Lösung. Welche wählst du — und warum?",
+      "formulieren": "Formuliere in Ich-Form drei Sätze für das Gespräch mit deinem Vorgesetzten: klar, sachlich, respektvoll. Der erste Satz bestätigt die Anfrage, der zweite nennt die Regelung, der dritte schlägt eine Alternative vor."
+    },
+    "empfohlene_templates": [
+      "ai_prompt_duell",
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_prompt_duell": {
+        "score": 75,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Identität",
+        "duell_frage": "Wie sagst du bei Stahlbau Müller AG respektvoll Nein zu einem rechtswidrigen Späteinsatz?",
+        "prompt_a_beispiel": "\"Was sagt der Lehrvertrag zu Überstunden und Aufsicht bei Lernenden?\"",
+        "prompt_b_beispiel": "\"Ich bin Polymechaniker/in EFZ im 1. Lehrjahr bei Stahlbau Müller AG in Zürich. Mein Vorgesetzter will, dass ich bis 20 Uhr ohne Aufsicht bleibe. Formuliere drei sachliche Sätze für ein respektvolles Gespräch.\"",
+        "prompt_c_beispiel": "\"Du bist Arbeitsrechtsexperte für Berufsbildung in der Schweiz. Ich möchte den Betriebsfrieden wahren und trotzdem meine Rechte schützen. Gib mir eine Gesprächsstrategie mit Formulierungsbeispielen.\"",
+        "blind_spot": "Die KI kann nicht abschätzen, wie konfliktbereit dein Vorgesetzter tatsächlich ist. Sie ersetzt nicht dein Timing, deine Stimme und die Beziehung im Werkstattalltag."
+      },
+      "ai_gegenpositionen": {
+        "score": 80,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Ethik + Recht",
+        "startposition": "Wenn der Betrieb einen Notfall hat, sollte ich als Lernender auch ohne Aufsicht länger bleiben, damit das Team nicht blockiert wird.",
+        "gegenargument_rahmen": "Jugendarbeitsschutz, Aufsichtspflicht, Haftungsfragen in der Werkstatt, Teamloyalität vs. Rechtskonformität",
+        "position_frage": "Wann endet Teamloyalität und beginnt die Pflicht, rechtliche Grenzen klar anzusprechen?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 80,
+        "grund": "Gesellschaft: Ethik + Recht | SK: Standpunkte begründen",
+        "dilemma_frage": "Darf ein Vorgesetzter einen Lernenden im 1. Lehrjahr abends allein in der Werkstatt arbeiten lassen?",
+        "tribunal_these": "Betriebliche Dringlichkeit rechtfertigt keine Situation, in der Schutzregeln für Lernende faktisch ausser Kraft gesetzt werden.",
+        "werte_hinweis": "Die KI sieht die Situation oft als abstrakten Regelkonflikt. Sie erfasst kaum den Druck, als \"unkooperativ\" zu gelten, wenn man Grenzen im Betrieb anspricht."
+      }
+    }
+  },
+  "scaffolding": {
+    "_wissensknoten_refs": [
+      "lehrvertrag",
+      "berufsbildung_lernorte"
+    ],
+    "leicht": {
+      "vokabular": [
+        {
+          "term": "Lehrvertrag",
+          "definition": "Der verbindliche Vertrag, der Rechte und Pflichten von Lernenden und Betrieb regelt."
+        },
+        {
+          "term": "Aufsichtspflicht",
+          "definition": "Die Pflicht des Betriebs, Lernende bei riskanten oder anspruchsvollen Arbeiten nicht sich selbst zu überlassen."
+        },
+        {
+          "term": "Arbeitszeitregelung",
+          "definition": "Vorgaben, wann und wie lange Lernende arbeiten dürfen."
+        },
+        {
+          "term": "Betriebsfrieden",
+          "definition": "Ein respektvolles Arbeitsklima, in dem Konflikte sachlich und ohne Eskalation gelöst werden."
+        },
+        {
+          "term": "Gesprächsstrategie",
+          "definition": "Eine geplante Reihenfolge von Aussagen, damit ein schwieriges Gespräch klar und ruhig bleibt."
+        }
+      ],
+      "leitfragen_hilfen": [
+        {
+          "tipp": "In Kap. 1.1 stehen die Leitplanken zu Arbeitszeit und Schutz von Lernenden; formuliere sie in Alltagssprache für die Werkstatt.",
+          "satzanfang": "Im Lehrvertrag ist zur Arbeitszeit geregelt, dass ___. Zur Aufsichtspflicht bedeutet das für meinen Einsatz am Abend ___.",
+          "nr": 1
+        },
+        {
+          "tipp": "Suche zwei sachliche Vertragsargumente und verbinde sie mit einer lösungsorientierten Haltung gegenüber dem Vorgesetzten.",
+          "satzanfang": "Ich verstehe den Zeitdruck, gleichzeitig steht im Lehrvertrag, dass ___. Zusätzlich ist wichtig, dass ___, damit wir rechtlich korrekt bleiben.",
+          "nr": 2
+        },
+        {
+          "tipp": "Entscheide mit Wenn-Dann-Logik: Betriebsfrieden ist wichtig, aber Rechte sollen respektvoll eingebracht werden.",
+          "satzanfang": "Ich entscheide mich für Option ___, weil sie sowohl ___ als auch ___ berücksichtigt.",
+          "nr": 3
+        },
+        {
+          "tipp": "Baue die drei Sätze in dieser Reihenfolge: Verständnis zeigen, Regel nennen, Alternative vorschlagen.",
+          "satzanfang": "Ich verstehe, dass die Reparatur dringend ist. Gemäss Lehrvertrag gilt für mich ___. Als Lösung schlage ich ___ vor.",
+          "nr": 4
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Baue deine Gesprächsvorbereitung in genau 3 Ich-Sätzen auf: 1) Anfrage anerkennen, 2) Regel aus Lehrvertrag nennen, 3) konkrete Alternative vorschlagen. Bleibe sachlich und respektvoll, bezogen auf die Situation in der Werkstatt.",
+        "beispiel": "Ich verstehe, dass die Reparatur heute dringend ist.\nIch habe gelernt, dass ich bei solchen Einsätzen nicht ohne Aufsicht arbeiten soll.\nIch schlage vor, dass wir die Aufgabe gemeinsam morgen früh abschliessen.",
+        "checkfragen": [
+          "Hast du genau 3 Sätze in der richtigen Reihenfolge geschrieben?",
+          "Ist mindestens ein Satz klar auf Lehrvertrag/Regel bezogen?",
+          "Ist der Ton respektvoll gegenüber dem Vorgesetzten?",
+          "Enthält der dritte Satz eine konkrete, machbare Alternative?"
+        ]
+      }
+    },
+    "stark": {
+      "vertiefung": {
+        "analyse": "Was passiert, wenn Ausnahmen bei Arbeitszeit und Aufsicht zur Gewohnheit werden? Beurteile Folgen für Lernende und Betrieb.",
+        "transfer": "Übertrage deine Gesprächsvorbereitung auf eine künftige Situation als ausgelernte Fachkraft mit Verantwortung für Lernende. Wie würdest du dann fair führen?",
+        "praesentation": "Präsentiere deine 3-Satz-Strategie in 90 Sekunden an Berufsbildnerin oder Berufsbildner. Kriterium: respektvoller Ton plus klare Rechtsbezug-Argumentation.",
+        "recherche": "Prüfe BBG Art. 12–14 (Ausbildungspflicht) und OR Art. 328 (Fürsorgepflicht): Welche konkreten Schutzpflichten hat der Betrieb gegenüber Lernenden — und was folgt daraus für Überstunden ohne Aufsicht?"
+      },
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche Risiken für Lernschutz und Qualität entstehen, wenn Ausnahmen bei Arbeitszeit und Aufsicht im Betrieb normal werden?",
+          "Wie könnte ein Betrieb Produktivitätsdruck steuern, ohne rechtliche Schutzregeln für Lernende zu unterlaufen?",
+          "Welche Signale sendet es an das Team, wenn Lernende ihre Rechte sachlich ansprechen?"
+        ],
+        "recherche_impulse": [
+          "Prüfe BBG Art. 12–14 und OR Art. 328: Welche Schutz- und Ausbildungspflichten gelten für den Betrieb — notiere 2 anwendbare Argumente für das Gespräch.",
+          "Suche nach «Muster-Lehrvertrag Kanton Zürich» oder «BBG Lernende Rechte»: Welche Formulierungen helfen, eigene Rechte klar und kooperativ einzubringen?"
+        ]
+      }
+    }
+  }
+}

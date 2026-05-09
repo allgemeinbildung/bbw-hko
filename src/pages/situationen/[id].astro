@@ -1,0 +1,215 @@
+---
+import Situationen from '../../layouts/Situationen.astro'
+import { situationenIndex, loadFullSituation, lehrjahrForEntry } from '../../lib/situationen'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+
+const id = Astro.params.id as string
+const entry = situationenIndex.find((e) => e.id === id)
+if (!entry) return Astro.redirect('/situationen?error=Situation%20nicht%20gefunden')
+
+const full = await loadFullSituation(id)
+
+const { data: myFeedback } = await Astro.locals.supabase
+  .from('feedbacks')
+  .select('id, status, getestet_am, tauglichkeit, qualitaet, weiterempfehlung')
+  .eq('situation_id', id)
+  .eq('lp_id', user.id)
+  .order('created_at', { ascending: false })
+  .limit(1)
+  .maybeSingle()
+
+const lj = lehrjahrForEntry(entry)
+const sit = entry.sit_letter ?? '?'
+const sitColors: Record<string, string> = {
+  A: 'bg-rose-100 text-rose-800 border-rose-200',
+  B: 'bg-sky-100 text-sky-800 border-sky-200',
+  C: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+  D: 'bg-amber-100 text-amber-800 border-amber-200',
+  E: 'bg-violet-100 text-violet-800 border-violet-200',
+}
+const colorClass = sitColors[sit] ?? 'bg-slate-100 text-slate-700 border-slate-200'
+
+const handlungsprodukt = full?.handlungsprodukt
+const leitfragen = full?.leitfragen ?? []
+const bewertungsraster = full?.bewertungsraster ?? []
+---
+<Situationen title={entry.titel ?? entry.id} role={role}>
+  <a href="/situationen" class="text-sm text-slate-500 hover:text-slate-800 inline-flex items-center gap-1 mb-4">← Zurück zum Katalog</a>
+
+  <div class="bg-white border border-slate-200 rounded-lg p-6 mb-5">
+    <div class="flex items-start justify-between gap-4 mb-4">
+      <div class="flex items-start gap-3">
+        <span class={`inline-flex items-center justify-center w-12 h-12 rounded-md border text-xl font-bold ${colorClass}`}>{sit}</span>
+        <div>
+          <h1 class="text-2xl font-semibold leading-tight">{entry.titel ?? entry.id}</h1>
+          <div class="text-sm text-slate-500 mt-1 flex flex-wrap gap-x-3 gap-y-1">
+            <span class="font-mono">{entry.kompetenz_nr}</span>
+            <span>·</span>
+            {lj && <span>{lj}. Lehrjahr</span>}
+            {entry.modul_titel && <><span>·</span><span>Modul {entry.modul} — {entry.modul_titel}</span></>}
+            {entry.emotion_tag && <><span>·</span><span class="chip">{entry.emotion_tag}</span></>}
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-end gap-2 shrink-0">
+        <a href={`/situationen/${entry.id}/feedback`} class="py-2 px-4 rounded-md text-white text-sm font-medium" style="background: var(--brand)">
+          {myFeedback ? 'Feedback bearbeiten' : 'Feedback geben'}
+        </a>
+        {myFeedback && (
+          <span class="text-xs text-slate-500">Status: {myFeedback.status}</span>
+        )}
+      </div>
+    </div>
+
+    {entry.persona && (
+      <div class="text-sm text-slate-600 mb-4 pb-4 border-b border-slate-100">
+        <span class="font-medium">Persona:</span>
+        {' '}{[entry.persona.beruf, entry.persona.betrieb, entry.persona.ort].filter(Boolean).join(' · ')}
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2 space-y-5">
+        {full?.situation_text && (
+          <section>
+            <h2 class="text-lg font-semibold mb-2">Situation</h2>
+            <p class="text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">{full.situation_text}</p>
+          </section>
+        )}
+
+        {full?.leitfrage && (
+          <section>
+            <h2 class="text-lg font-semibold mb-2">Leitfrage</h2>
+            <p class="text-sm text-slate-700 italic">«{full.leitfrage}»</p>
+          </section>
+        )}
+
+        {handlungsprodukt && (
+          <section>
+            <h2 class="text-lg font-semibold mb-2">Handlungsprodukt</h2>
+            <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
+              <p class="text-sm font-medium text-slate-900">{handlungsprodukt.format}</p>
+              {handlungsprodukt.format_detail && (
+                <p class="text-xs text-slate-500 mt-1">{handlungsprodukt.format_detail}</p>
+              )}
+              {handlungsprodukt.beschreibung && (
+                <p class="text-sm text-slate-700 mt-2">{handlungsprodukt.beschreibung}</p>
+              )}
+              {Array.isArray(handlungsprodukt.schritte) && handlungsprodukt.schritte.length > 0 && (
+                <ol class="text-sm text-slate-700 mt-3 space-y-1.5 list-decimal pl-5">
+                  {handlungsprodukt.schritte.map((s: any) => (
+                    <li>
+                      <span class="font-medium">{s.label}</span>
+                      {s.hint && <span class="text-slate-500"> — {s.hint}</span>}
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          </section>
+        )}
+
+        {leitfragen.length > 0 && (
+          <section>
+            <h2 class="text-lg font-semibold mb-2">Leitfragen ({leitfragen.length})</h2>
+            <ol class="text-sm text-slate-700 space-y-2 list-decimal pl-5">
+              {leitfragen.map((q: any) => (
+                <li>
+                  <span class="text-xs uppercase tracking-wide text-slate-400 mr-2">{q.bloom}</span>
+                  {q.text}
+                  {q.knoten_ref && <div class="text-xs text-slate-400 mt-0.5">→ {q.knoten_ref}</div>}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {bewertungsraster.length > 0 && (
+          <section>
+            <h2 class="text-lg font-semibold mb-2">Bewertungsraster</h2>
+            <table class="w-full text-sm border border-slate-200 rounded-md overflow-hidden">
+              <thead class="bg-slate-50 text-slate-600 text-xs uppercase tracking-wide">
+                <tr>
+                  <th class="text-left p-2">Produkt</th>
+                  <th class="text-left p-2">Abgabe</th>
+                  <th class="text-left p-2">Kriterium</th>
+                  <th class="text-right p-2">Gewicht</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bewertungsraster.map((r: any) => (
+                  <tr class="border-t border-slate-100">
+                    <td class="p-2 font-medium">{r.produkt}</td>
+                    <td class="p-2 text-slate-600">{r.abgabe}</td>
+                    <td class="p-2 text-slate-600">{r.kriterium}</td>
+                    <td class="p-2 text-right">{r.gewicht}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        )}
+
+        <div class="pt-3 border-t border-slate-100">
+          <a href={entry.quelle_html} target="_blank" rel="noopener" class="text-sm text-slate-600 hover:text-slate-900 underline">
+            Vollständige Mission auf abu-hko.ch öffnen ↗
+          </a>
+        </div>
+      </div>
+
+      <aside class="space-y-3">
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Thema</div>
+          <div class="text-sm">T{entry.thema_nr} — {full?.ki_vertiefung?.nrlp_anker?.thema_leitidee?.split('.')[0] ?? ''}</div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Lebensbezug</div>
+          <div class="text-sm font-mono">{entry.lebensbezug_nr}</div>
+          {full?.ki_vertiefung?.nrlp_anker?.lebensbezug_text && (
+            <div class="text-xs text-slate-600 mt-1">{full.ki_vertiefung.nrlp_anker.lebensbezug_text}</div>
+          )}
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Kompetenz</div>
+          <div class="text-sm font-mono">{entry.kompetenz_nr}</div>
+          {full?.ki_vertiefung?.nrlp_anker?.kompetenz_text && (
+            <div class="text-xs text-slate-600 mt-1">{full.ki_vertiefung.nrlp_anker.kompetenz_text}</div>
+          )}
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Aspekte</div>
+          <div class="flex flex-wrap gap-1">
+            {entry.aspekte.map((a) => <span class="chip chip-blue">{a}</span>)}
+          </div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Sprachmodi</div>
+          <ul class="text-xs text-slate-700 space-y-0.5">
+            {entry.sprachmodi.map((m) => <li>· {m}</li>)}
+          </ul>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Schlüsselkompetenzen</div>
+          <div class="flex flex-wrap gap-1">
+            {entry.sk.map((n) => <span class="chip chip-green">SK {n}</span>)}
+          </div>
+        </div>
+        {entry.wochen && (
+          <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+            <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Dauer</div>
+            <div class="text-sm">{entry.wochen} Wochen</div>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+</Situationen>

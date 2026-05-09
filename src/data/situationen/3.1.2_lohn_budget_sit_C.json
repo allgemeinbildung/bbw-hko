@@ -1,0 +1,376 @@
+{
+  "id": "3.1.2_lohn_budget_sit_C",
+  "modul": "3.1",
+  "modul_titel": "Lohn und Budget",
+  "situation": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "Bald 18 – neue Abzüge",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "ch_2_1_lohnbestandteile_bruttolohn_nettolohn",
+    "ch_2_1_lohnbestandteile_lohnabzuege",
+    "ch_2_2_budget_budgeterstellung"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Elektroinstallateur EFZ",
+    "betrieb": "Alpiq",
+    "ort": "Zürich"
+  },
+  "situation_text": "Ich bin Elektroinstallateur EFZ im 2. Lehrjahr bei Alpiq in Zürich. In drei Monaten werde ich 18 Jahre alt. Im Lehrmittel (Kap. 2.1) lese ich, dass ab dem 1. Januar des Jahres, in dem Lernende 18 werden, Sozialversicherungsbeiträge abgezogen werden: AHV (4.35%), IV (0.70%), EO (0.25%) und ALV (1.10%) – insgesamt 6.40% des Bruttolohns zusätzlich zur bisherigen NBU-Prämie (1.45%). Mein Bruttolohn beträgt CHF 1 050. Bisher wurde nur die NBU-Prämie abgezogen, ich erhalte also deutlich mehr als nach dem Geburtstag. Wie viel Nettolohn bleibt mir ab 18 noch – und wie muss ich mein Budget anpassen?",
+  "zahlen_tabelle": [
+    {
+      "label": "Bruttolohn",
+      "wert": "CHF 1 050.00"
+    },
+    {
+      "label": "NBU-Beitrag (1.45%) – bisher",
+      "wert": "– CHF 15.23"
+    },
+    {
+      "label": "Nettolohn vor 18 (ca.)",
+      "wert": "CHF 1 034.77"
+    },
+    {
+      "label": "AHV-Beitrag (4.35%)",
+      "wert": "– CHF 45.68"
+    },
+    {
+      "label": "IV-Beitrag (0.70%)",
+      "wert": "– CHF 7.35"
+    },
+    {
+      "label": "EO-Beitrag (0.25%)",
+      "wert": "– CHF 2.63"
+    },
+    {
+      "label": "ALV-Beitrag (1.10%)",
+      "wert": "– CHF 11.55"
+    },
+    {
+      "label": "Nettolohn nach 18 (ca.)",
+      "wert": "CHF 967.56"
+    }
+  ],
+  "leitfrage": "Wie verändert sich mein Nettolohn ab dem 18. Geburtstag – und wie muss ich mein Budget anpassen, damit ich ohne Schulden auskomme?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 2.1 (Seite 46f.) und Kap. 2.2 (Seite 48–49) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.1 | S. 46",
+      "text": "Erkläre, welche vier Sozialversicherungsbeiträge ab dem 18. Geburtstag vom Lohn abgezogen werden. Was deckt jede dieser Versicherungen ab?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.1 | S. 46f.",
+      "text": "Berechne meinen neuen Nettolohn nach dem 18. Geburtstag: CHF 1 050 brutto minus AHV (4.35%), IV (0.70%), EO (0.25%), ALV (1.10%) und NBU (1.45%). Wie gross ist die monatliche Differenz zum bisherigen Nettolohn?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Du verlierst ab 18 rund CHF 67 netto pro Monat. Du hast zwei Möglichkeiten: (a) Variable Kosten (Freizeit, Kleider) sofort um CHF 67 kürzen. (b) Monatliche Rückstellungen aussetzen, bis der Lohn im 3. Lehrjahr steigt. Welche Option wählst du – und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Erstelle einen Budget-Vergleich «Vor 18» und «Nach 18» als zweispaltige Tabelle. Zeige, welche Posten du anpasst und wie du dennoch ohne Schulden auskommst.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein Budget ab 18",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Abzüge ab 18",
+      "punkte": [
+        "AHV 4.35%",
+        "IV 0.70% / EO 0.25%",
+        "ALV 1.10%"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Bisherige Abzüge",
+      "punkte": [
+        "NBU ca. 1.45%",
+        "KTG optional",
+        "Bisher kein AHV/ALV"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Budget anpassen",
+      "punkte": [
+        "Differenz berechnen",
+        "Variable Kosten kürzen",
+        "Rückstellungen planen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "BVG ab CHF 22 050/Jahr",
+        "Arbeitgeberbeitrag 50%",
+        "Lohnerhöhung 3. Lehrjahr"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Budget-Vergleich Vor/Nach 18",
+    "titel": "Format: Budget-Vergleich «Vor 18» / «Nach 18»",
+    "format_detail": "Zweispaltige Budgettabelle mit Vorher-Nachher-Vergleich und schriftlichem Fazit",
+    "beschreibung": "Du berechnest deinen neuen Nettolohn ab dem 18. Geburtstag, erstellst einen Budget-Vergleich und zeigst, welche Anpassungen nötig sind.",
+    "schritte": [
+      {
+        "label": "Abzüge auflisten",
+        "hint": "Liste alle Sozialversicherungsabzüge aus Kap. 2.1 (Seite 46) auf: Prozentwert und Betrag in CHF für deinen Bruttolohn CHF 1 050."
+      },
+      {
+        "label": "Nettolöhne berechnen",
+        "hint": "Berechne Nettolohn «Vor 18» (nur NBU 1.45%) und «Nach 18» (AHV+IV+EO+ALV+NBU). Zeige den Rechenweg."
+      },
+      {
+        "label": "Differenz ermitteln",
+        "hint": "Wie gross ist die monatliche Einkommensdifferenz in CHF? Auf welche Ausgabenposten hat das direkte Auswirkungen?"
+      },
+      {
+        "label": "Budget-Vergleich erstellen",
+        "hint": "Erstelle eine zweispaltige Tabelle nach Kap. 2.2 (Seite 48–49): Spalte «Vor 18» und Spalte «Nach 18» mit allen Einnahmen, Fixkosten, variablen Kosten und Rückstellungen."
+      },
+      {
+        "label": "Fazit formulieren",
+        "hint": "Schreibe 2–3 Sätze: Wie verändert sich deine finanzielle Lage ab dem 18. Geburtstag – und welche zwei konkreten Massnahmen ergreifst du?"
+      }
+    ],
+    "schreib_label": "BUDGET-VERGLEICH VOR 18 / NACH 18 HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_1_lohnbestandteile_lohnabzuege"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du hast Geburtstag am 15. Juli – ab wann genau gelten die neuen Abzüge? Laut Kap. 2.1: Ab dem 1. Januar des Jahres, in dem du 18 wirst. Was bedeutet das konkret für deinen Januarlohn?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du zusätzlich in eine Pensionskasse (BVG) eingezahlt werden sollst, weil dein Jahresverdienst CHF 22 050 übersteigt? Wie würde sich das auf deinen Nettolohn und dein Budget auswirken?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Kauffrau EFZ im 3. Lehrjahr verdient CHF 1 200 brutto und ist 19 Jahre alt. Berechne ihren ungefähren Nettolohn und vergleiche ihn mit deiner Situation nach dem 18. Geburtstag.",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 2.1 S. 46 — suche die Tabelle mit Abkürzungen und dem Zweck jeder Versicherung. Notiere: Abkürzung, ausgeschriebenen Namen, Zweck.",
+          "satzanfang": "Die AHV ist die ___ und sichert ___. Die ALV steht für ___ und zahlt, wenn ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Multipliziere CHF 1 050 mit jedem Prozentsatz (z. B. 4.35% = 0.0435). Addiere alle Abzüge und subtrahiere sie vom Bruttolohn.",
+          "satzanfang": "AHV: CHF 1 050 × 0.0435 = CHF ___. Total Abzüge neu: CHF ___. Nettolohn nach 18: CHF ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option b setzt voraus, dass du auf Unvorhergesehenes verzichtest. Was passiert, wenn etwas kaputt geht, während die Rückstellungen pausieren?",
+          "satzanfang": "Ich wähle Option ___, weil sie kurzfristig ___ und langfristig ___ bewirkt."
+        },
+        {
+          "nr": 4,
+          "tipp": "Tabelle mit 2 Spalten (Vor 18 / Nach 18), Zeilen für: Bruttolohn, alle Abzüge, Nettolohn, Fixkosten, Variable Kosten, Rückstellungen, Saldo. Zeige konkret, welchen Posten du anpasst.",
+          "satzanfang": "Vor 18 beträgt mein Nettolohn CHF ___. Nach 18 noch CHF ___. Die Differenz von CHF ___ gleiche ich aus, indem ich ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "AHV",
+          "definition": "Alters- und Hinterlassenenversicherung — sichert im Alter oder bei Tod des Verdieners eine Rente."
+        },
+        {
+          "term": "IV",
+          "definition": "Invalidenversicherung — zahlt bei dauerhafter Erwerbsunfähigkeit durch Krankheit oder Unfall."
+        },
+        {
+          "term": "EO",
+          "definition": "Erwerbsersatzordnung — entschädigt bei Militärdienst oder Mutterschaft."
+        },
+        {
+          "term": "ALV",
+          "definition": "Arbeitslosenversicherung — zahlt Taggelder bei Stellenverlust."
+        },
+        {
+          "term": "NBU",
+          "definition": "Nichtbetriebsunfall-Versicherung — deckt Unfälle in der Freizeit (Pflichtabzug für alle)."
+        },
+        {
+          "term": "Sozialversicherungsbeitrag",
+          "definition": "Prozentualer Abzug vom Bruttolohn, den Arbeitnehmende (und Arbeitgebende je 50%) an staatliche Versicherungen zahlen."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle eine Tabelle mit 2 Spalten (Vor 18 / Nach 18) und mindestens 7 Zeilen. Trage in jede Zeile dieselbe Budgetposition ein. Am Ende: Saldo je Spalte. Schreibe darunter 2–3 Sätze Fazit in Ich-Form.",
+        "beispiel": "AHV-Abzug | Vor 18: (kein) | Nach 18: – CHF 45.68 || Nettolohn | Vor 18: CHF 1 034.77 | Nach 18: CHF 967.56",
+        "checkfragen": [
+          "□ Enthält die Nachher-Spalte alle 4 neuen Abzüge (AHV, IV, EO, ALV)?",
+          "□ Stimmt die Differenz (ca. CHF 67)?",
+          "□ Zeigst du konkret, welchen Posten du anpasst, um die Differenz auszugleichen?",
+          "□ Ist das Fazit in Ich-Form (2–3 Sätze)?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Ab wann genau gelten die neuen Abzüge? Was wenn du im Juli Geburtstag hast — wann verändert sich dein Januarlohn? Warum ist das genaue Datum wichtig?",
+          "Warum zahlen Arbeitgeber 50% der Sozialversicherungsbeiträge — was bedeutet das für Alpiq als Betrieb, wenn du 18 wirst?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'AHV Beitragspflicht Lernende Schweiz' mit einer Suchmaschine. Ab welchem Alter und Einkommen beginnt die Beitragspflicht? Notiere eine Ausnahme."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist 22 und verdienst CHF 4 200 brutto bei Alpiq. BVG-Beiträge kommen hinzu. Übertrage die Vor/Nach-Tabellenlogik auf diese neue Situation — wie ändert sich das Bild gegenüber heute?",
+        "analyse": "Was passiert, wenn ein Betrieb vergisst, ab dem 1. Januar des 18. Geburtsjahres die Sozialversicherungsbeiträge abzuziehen? Beschreibe die Konsequenzen für die Person und für Alpiq als Betrieb.",
+        "recherche": "Suche nach 'OR Art. 322 Lohnabzüge Schweiz' mit einer Suchmaschine. Welche Abzüge sind gesetzlich erlaubt — und welche nicht? Notiere zwei konkrete Punkte.",
+        "praesentation": "Erkläre deiner jüngeren Schwester in 90 Sekunden, was sich ab deinem 18. Geburtstag am Lohn ändert — und warum das kein Fehler des Betriebs ist.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

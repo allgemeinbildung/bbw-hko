@@ -1,0 +1,408 @@
+{
+  "id": "3.2.1_nachhaltiger_konsum_sit_B",
+  "modul": "3.2",
+  "modul_titel": "Nachhaltiger Konsum",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Fast Fashion im Lehrbetrieb",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "nachhaltigkeit",
+    "fairtrade_labels"
+  ],
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": [
+      "3.2.1"
+    ],
+    "lebensbezug": "3.2",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion multimedial"
+    ],
+    "sk": [
+      5,
+      9,
+      3
+    ]
+  },
+  "persona": {
+    "beruf": "Detailhandelsfachfrau/-mann EFZ",
+    "betrieb": "Migros",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Detailhandelsfachfrau/-mann EFZ im 1. Lehrjahr bei Migros in Winterthur. Mein Betrieb bestellt jedes Jahr neue Arbeitsshirts für das Team — 3 Stück pro Person. Zur Auswahl stehen: ein Baumwollshirt aus Bangladesch für CHF 25 (konventionell produziert) oder ein Fairtrade-Shirt aus Portugal für CHF 89. Mein Chef sagt: \"Der Preis entscheidet.\" Im Lehrmittel (Kap. 1.5) habe ich aber gelesen, dass bei konventioneller Bekleidungsproduktion oft Mindestlöhne von CHF 1.50/Tag gezahlt werden und grosse Mengen Pestizide und Wasser verbraucht werden. Das Fairtrade-Label garantiert Mindestlohn, Verzicht auf Kinderarbeit und reduzierte Umweltbelastung. Ich möchte meinen Chef mit einer faktenbasierten Präsentation überzeugen — nicht mit Emotionen, sondern mit einem klaren Vergleich.",
+  "zahlen_tabelle": [
+    {
+      "label": "Konventionelles Shirt (CH Import, Bangladesch)",
+      "wert": "CHF 25"
+    },
+    {
+      "label": "Fairtrade-Shirt (Portugal, zertifiziert)",
+      "wert": "CHF 89"
+    },
+    {
+      "label": "Wasserverbrauch: 1 Baumwoll-T-Shirt",
+      "wert": "ca. 2'700 Liter"
+    },
+    {
+      "label": "Typischer Mindestlohn Textilindustrie BD",
+      "wert": "ca. CHF 1.50/Tag"
+    }
+  ],
+  "leitfrage": "Wie überzeugst du deinen Chef mit Fakten davon, dass das Fairtrade-Shirt die bessere Wahl ist?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 1.5 und Kap. 9.3 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.5 | S. 37",
+      "text": "Erkläre, was ein Fairtrade-Label garantiert, und nenne zwei weitere Lebensmittel- oder Energielabels, die du aus dem Migros-Sortiment kennst.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.3 | S. 231",
+      "text": "Vergleiche die beiden Shirts nach den drei Dimensionen der Nachhaltigkeit (ökologisch, ökonomisch, sozial): Erstelle eine kurze Tabelle mit je einem Punkt pro Dimension und Produkt.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.5 | S. 37",
+      "text": "Du hast zwei Optionen: (a) Das Billigshirt wählen und die Preisdifferenz (CHF 192 pro Person, 3 Shirts) im Betrieb sparen. (b) Das Fairtrade-Shirt wählen und den Mehrpreis mit sozialen und ökologischen Vorteilen begründen. Welche Option vertrittst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 9.3 | S. 231",
+      "text": "Formuliere in Ich-Form drei Kernaussagen für deine Präsentation an den Chef: eine ökologische, eine soziale und eine wirtschaftliche Aussage — jeweils mit einer konkreten Zahl oder einem Fachbegriff aus dem Lehrmittel.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Nachhaltige Arbeitskleidung",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Produktionsbedingungen",
+      "punkte": [
+        "Löhne & Arbeitsbedingungen",
+        "Pestizide & Wasserverbrauch",
+        "Transportweg & CO₂"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Labels & Zertifizierung",
+      "punkte": [
+        "Fairtrade: Mindestlohn, keine Kinderarbeit",
+        "Bio-Baumwolle",
+        "GOTS-Siegel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Drei Dimensionen Nachhaltigkeit",
+      "punkte": [
+        "Ökologisch: Pestizide & Wasser",
+        "Ökonomisch: Preis vs. echte Kosten",
+        "Sozial: Arbeitsgerechtigkeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Alternativen: Secondhand",
+        "Was andere Betriebe tun",
+        "Meine eigene Kleiderkaufroutine"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Multimedia-Präsentation",
+    "titel": "Format: Vergleichspräsentation (3 Folien)",
+    "format_detail": "Faktenorientierte Kurzpräsentation (3 Folien) mit Produktvergleich, Nachhaltigkeitsanalyse und persönlicher Empfehlung an den Chef",
+    "beschreibung": "Du erstellst eine 3-Folien-Präsentation: Folie 1 zeigt den direkten Vergleich der beiden Shirts (Tabelle), Folie 2 analysiert die drei Nachhaltigkeitsdimensionen, Folie 3 formuliert deine Empfehlung mit einem starken Argument.",
+    "schritte": [
+      {
+        "label": "Fakten recherchieren",
+        "hint": "Sammle Zahlen: Preis, Wasserverbrauch, Lohnniveau, Transportweg — aus Kap. 1.5 und dem Zahlen-Kasten oben."
+      },
+      {
+        "label": "Vergleichstabelle erstellen",
+        "hint": "Tabelle: 2 Spalten (konventionell / Fairtrade), 3 Zeilen (ökologisch / ökonomisch / sozial). Konkret bleiben."
+      },
+      {
+        "label": "Kernargument auswählen",
+        "hint": "Wähle das stärkste Argument für den Chef: Zahlen überzeugen — nicht nur Werte. Was kostet schlechtes Image?"
+      },
+      {
+        "label": "Visualisierung gestalten",
+        "hint": "8×8-Regel (Kap. 16.3): eine Aussage pro Folie, kontrastreiche Farben, kein Fliesstext."
+      },
+      {
+        "label": "Empfehlung formulieren",
+        "hint": "Folie 3: 'Ich empfehle ... , weil ...' — sprich den Chef direkt an, nenne eine Zahl und einen Wert."
+      }
+    ],
+    "schreib_label": "VERGLEICHSPRÄSENTATION (ENTWURF) HIER SKIZZIEREN",
+    "schreib_note": "-> wissen/fairtrade_labels"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Dein Chef akzeptiert den Wechsel zu Fairtrade-Shirts — will aber, dass du den Mehrpreis gegenüber dem Team rechtfertigst. Welche zwei Argumente nennst du an der nächsten Teamsitzung?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn ein Kollegin im Team sagt: 'Das ist doch egal, ich weiss sowieso nicht, wo meine Kleider herkommen'? Wie reagierst du — sachlich und ohne Vorwurf?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Koch/Köchin EFZ in einem Hotelrestaurant. Welche Einkaufsentscheidungen (Lebensmittel, Verpackung) könnten dort nach denselben Nachhaltigkeitsdimensionen bewertet werden?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.1",
+      "titel": "Bewusst konsumieren und handeln",
+      "kompetenz": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten beschreiben, wie wir nachhaltiger konsumieren können."
+    },
+    "ki_leitfragen": {
+      "offen": "Wie überzeugst du deinen Chef mit Fakten davon, dass das Fairtrade-Shirt die bessere Wahl ist?",
+      "argumentieren": "Vergleiche die beiden Shirts nach den drei Dimensionen der Nachhaltigkeit (ökologisch, ökonomisch, sozial): Erstelle eine kurze Tabelle mit je einem Punkt pro Dimension und Produkt.",
+      "entscheiden": "Du hast zwei Optionen: (a) Das Billigshirt wählen und die Preisdifferenz (CHF 192 pro Person, 3 Shirts) im Betrieb sparen. (b) Das Fairtrade-Shirt wählen und den Mehrpreis mit sozialen und ökologischen Vorteilen begründen. Welche Option vertrittst du — und warum?",
+      "formulieren": "Formuliere in Ich-Form drei Kernaussagen für deine Präsentation an den Chef: eine ökologische, eine soziale und eine wirtschaftliche Aussage — jeweils mit einer konkreten Zahl oder einem Fachbegriff aus dem Lehrmittel."
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_prompt_duell",
+      "ai_entscheidungscoach"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 100,
+        "grund": "Ökologie & Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "zukunft_frage": "Wird 'Fast Fashion' bis 2050 durch biologisch abbaubare Textilien oder durch ein globales Textil-Recycling-System ersetzt sein?",
+        "wild_card": "Die EU führt eine obligatorische 'Umwelt-Maut' auf alle Textil-Importe aus Nicht-EU-Ländern ein, was Billigshirts massiv verteuert.",
+        "blind_spot": "Die sozialen Folgen für Millionen Arbeiter/innen, wenn westliche Konsumenten schlagartig aufhören, konventionelle Mode zu kaufen."
+      },
+      "ai_prompt_duell": {
+        "score": 55,
+        "grund": "Universal | SK 3 (Problemlösung)",
+        "thema_vorgabe": "Überzeuge deinen Chef, dass das Portugal-Shirt für CHF 89 trotz des Preises die bessere Wahl für die Migros ist. Nutze Zahlen zum Wasserverbrauch (2'700L) und zum Lohnniveau (CHF 1.50/Tag).",
+        "system_prompt_zusatz": "Die KI spielt den Chef ('Herr Müller'), der extrem auf das Budget achtet. Er kontert jedes moralische Argument mit 'Wir müssen sparen'. Der User muss Imageverlust und Qualität ins Feld führen."
+      },
+      "ai_entscheidungscoach": {
+        "score": 55,
+        "grund": "Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "entscheid_situation": "Der Betrieb hat sich für Fairtrade entschieden. Nun stellt sich die Frage der Kommunikation: Soll Migros dies als 'Heldentat' gross vermarkten oder es diskret als Minimum-Standard einführen?",
+        "optionen": [
+          "Grosse Kampagne (Marketing-Vorteil, aber Risiko von Greenwashing-Vorwürfen)",
+          "Diskrete Einführung (Glaubwürdigkeit durch Taten statt Worte, aber kein sofortiger Image-Boost)"
+        ],
+        "entscheid_kontext": "Überlege, welches Vorgehen besser zur Markenidentität eines Detailhändlers passt, der für 'Nachhaltigkeit' stehen will."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 1.5 S. 37 erklärt das Fairtrade-Label. Fairtrade garantiert mindestens drei Dinge. Für weitere Labels aus dem Migros-Sortiment: Denk an Symbole, die du beim Einkaufen siehst — z. B. auf Kaffeepackungen oder Bio-Produkten.",
+          "satzanfang": "Das Fairtrade-Label garantiert: (1) ___, (2) ___, (3) ___. Bei Migros in Winterthur kenne ich ausserdem die Labels ___ und ___, die ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Nutze eine Tabelle mit 3 Zeilen (ökologisch / ökonomisch / sozial) und 2 Spalten (Billigshirt / Fairtrade-Shirt). Für jede Zelle: ein konkreter Punkt, möglichst mit Zahl oder Fachbegriff aus Kap. 9.3 oder dem Zahlenkasten.",
+          "satzanfang": "Ökologisch: Das konventionelle Shirt aus Bangladesch ___ (z. B. ___). Das Fairtrade-Shirt aus Portugal ___. Ökonomisch: ___. Sozial: ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Denke an den Ruf von Migros als Händler: Was würde eine Schweizer Kundin sagen, wenn sie erfährt, dass Migros-Mitarbeitende Shirts tragen, die für CHF 1.50/Tag produziert wurden? Dieses Argument ist stärker als reine Zahlen.",
+          "satzanfang": "Ich verteidige Option ___, weil ___. Mein stärkstes Argument: Wenn Migros ___, dann riskiert der Betrieb ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Schreibe je einen starken Satz pro Dimension — mit einer Zahl oder einem Fachbegriff aus dem Zahlenkasten oder Kap. 1.5/9.3. Kein Satz darf ohne konkreten Beleg auskommen.",
+          "satzanfang": "Ökologische Aussage: 'Ein konventionelles Baumwoll-Shirt verbraucht ca. ___ Liter Wasser.' Soziale Aussage: 'Bei konventioneller Produktion verdienen Näherinnen nur CHF ___/Tag, während ___.' Wirtschaftliche Aussage: '___'"
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Fairtrade",
+          "definition": "Zertifizierungssystem, das faire Löhne, Arbeitsbedingungen und Umweltstandards in der Produktion sicherstellt."
+        },
+        {
+          "term": "konventionell",
+          "definition": "Hergestellt nach üblichen (nicht besonders zertifizierten) Standards — oft ohne Rücksicht auf soziale oder ökologische Mindestanforderungen."
+        },
+        {
+          "term": "Drei Dimensionen Nachhaltigkeit",
+          "definition": "Ökologisch (Umwelt), ökonomisch (Wirtschaft) und sozial (Gesellschaft) müssen alle berücksichtigt werden."
+        },
+        {
+          "term": "Lieferkette",
+          "definition": "Alle Stationen, die ein Produkt von der Rohstoffgewinnung bis zum Verkauf durchläuft."
+        },
+        {
+          "term": "Wasserverbrauch (virtuell)",
+          "definition": "Gesamte Wassermenge, die für die Herstellung eines Produkts benötigt wird — oft unsichtbar, aber messbar."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle 3 Folien: Folie 1 = Tabelle mit Zahlen für beide Shirts (Preis, Wasserverbrauch, Lohnniveau). Folie 2 = drei Nachhaltigkeitsdimensionen je 1 Satz. Folie 3 = deine Empfehlung (1 Kernaussage + 1 stärkstes Argument). Pro Folie max. 8 Wörter pro Zeile (8×8-Regel).",
+        "beispiel": "Folie 1 (Tabelle):\n  | | Konventionell (BD) | Fairtrade (PT)\n  | Preis | CHF 25 | CHF 89\n  | Wasser | ca. 2'700 L | deutlich weniger\n  | Lohn/Tag | ~CHF 1.50 | Mindestlohn gesichert\nFolie 3: 'Empfehlung: Fairtrade — Migros steht für Nachhaltigkeit, und das muss die Kleidung zeigen.'",
+        "checkfragen": [
+          "□ Enthält Folie 1 eine echte Tabelle mit Zahlen für beide Shirts?",
+          "□ Verwende ich alle drei Nachhaltigkeitsdimensionen in Folie 2?",
+          "□ Formuliere ich Folie 3 in Ich-Form mit einer konkreten Zahl oder einem Argument?",
+          "□ Bleibe ich sachlich — keine rein emotionalen Aussagen ohne Beleg?",
+          "□ Halte ich die 8×8-Regel ein?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Migros positioniert sich als nachhaltiger Händler. Wenn der Betrieb trotzdem konventionelle Arbeitsshirts kauft: Ist das ein Widerspruch — und welche konkreten Konsequenzen könnte das für Kundinnen, Mitarbeitende und die Marke haben?",
+          "Der Wasserverbrauch von 2'700 Litern pro Shirt ist für die meisten Menschen abstrakt. Wie machst du diese Zahl greifbar — und welches Bild oder welchen Vergleich würdest du in deiner Präsentation verwenden?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Fairtrade Textil Schweiz Anforderungen Zertifizierung' mit einer Suchmaschine. Welche konkreten Bedingungen müssen Hersteller erfüllen — und wie wird die Einhaltung kontrolliert? Notiere zwei spezifische Standards.",
+          "Suche nach 'Fast Fashion Wasserverbrauch Bangladesch Studie' mit einer Suchmaschine. Welche Zahlen zum Wasserverbrauch oder Wasserverschmutzung durch die Textilindustrie werden genannt? Notiere eine konkrete Zahl."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist in 4 Jahren ausgebildete/r DHF/DHM bei Migros und zuständig für die Beschaffung der Teamkleidung für 20 Mitarbeitende. Erstelle eine Entscheidungsmatrix: Mehrkosten Fairtrade total (20 Personen × 3 Shirts × CHF 64 Differenz) vs. Imagegewinn und Mitarbeitenden-Zufriedenheit.",
+        "analyse": "Was passiert ökologisch und sozial, wenn alle Schweizer Detailhändler zu Fairtrade-Textilien wechseln? Welche zwei Branchen oder Länder würden am stärksten profitieren — und welche Akteure würden Widerstand leisten?",
+        "recherche": "Suche nach 'Lieferkettensorgfaltspflichtengesetz Deutschland Textilbranche' mit einer Suchmaschine. Welche Pflichten haben Unternehmen — und was ist der zentrale Unterschied zur heutigen Regelung in der Schweiz? Notiere einen konkreten Punkt.",
+        "praesentation": "Erkläre deinem Chef in 90 Sekunden, warum das Fairtrade-Shirt für Migros Winterthur die bessere Wahl ist. Kriterium: Der Chef soll nach deiner Erklärung eine konkrete Zahl (Wasserverbrauch oder Lohnunterschied) kennen und 1 Gegenargument erhalten haben.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

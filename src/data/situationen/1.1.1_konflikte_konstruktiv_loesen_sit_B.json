@@ -1,0 +1,456 @@
+{
+  "id": "1.1.1_konflikte_konstruktiv_loesen_sit_B",
+  "modul": "1.1",
+  "modul_titel": "Konstruktiv kommunizieren und Konflikte fair lösen",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Falsch verstanden im Team",
+  "emotion_tag": "Frustration",
+  "wissensknoten": [
+    "kommunikationsquadrat_vier_ohren"
+  ],
+  "nrlp": {
+    "lebensbezug": "1.1",
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_primary": [
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_secondary": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sk": [
+      6,
+      4,
+      2
+    ],
+    "sk_primary": [
+      6,
+      4
+    ],
+    "sk_secondary": [
+      2
+    ],
+    "themen": [
+      "T1"
+    ]
+  },
+  "persona": {
+    "beruf": "Kaufmann EFZ",
+    "betrieb": "SBB Kundenservice",
+    "ort": "Bern"
+  },
+  "situation_text": "Ich bin Kaufmann EFZ im 2. Lehrjahr beim SBB Kundenservice in Bern und verdiene CHF 1080 pro Monat. Im Teammeeting sage ich: «Der Rapport ist noch nicht vollständig, wir müssen die offenen Punkte heute schliessen.» Eine Kollegin reagiert verletzt, weil sie meine Aussage als persönlichen Angriff versteht. Ich möchte die Situation mit dem Kommunikationsquadrat klären, bevor der Konflikt festfährt. Wie gehe ich vor, damit Inhalt und Beziehung wieder zusammenpassen?",
+  "zahlen_tabelle": [
+    {
+      "label": "Monatslohn",
+      "wert": "CHF 1080"
+    },
+    {
+      "label": "Teammeeting",
+      "wert": "20 Minuten"
+    },
+    {
+      "label": "Offene Rapportpunkte",
+      "wert": "3 Positionen"
+    }
+  ],
+  "leitfrage": "Wie klärst du ein Missverständnis aus den vier Ohren so, dass die Zusammenarbeit im Team wieder funktioniert?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel S. 425–427 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 19.2 | S. 425-426",
+      "text": "Erkläre die vier Seiten einer Nachricht (Sachinhalt, Selbstkundgabe, Beziehung, Appell) in eigenen Worten.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 19.2 | S. 426",
+      "text": "Ordne die Aussage aus der Situation den vier Seiten zu und zeige, mit welchem Ohr die Kollegin vermutlich gehört hat.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 19.2 | S. 427, und S. 367",
+      "text": "Du kannst (a) die Bemerkung rückziehen, oder (b) das Missverständnis aktiv aussprechen und spiegeln. Welche Option führt eher zu einer Win-win-Lösung? Begründe.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 19.2 | S. 423, und S. 427",
+      "text": "Formuliere einen 6-Satz-Klärungstext: Ich-Botschaft, Spiegeln, Präzisierungsfrage und gemeinsamer Appell.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Missverständnis im Teamgespräch",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Vier Botschaften",
+      "punkte": [
+        "Sachinhalt",
+        "Selbstkundgabe",
+        "Beziehung/Appell"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Vier Ohren",
+      "punkte": [
+        "Sachohr",
+        "Beziehungsohr",
+        "Risiko Überempfindlichkeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Klärung",
+      "punkte": [
+        "Rückfrage",
+        "Spiegeln",
+        "Gemeinsame Vereinbarung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Teamregel für Meetings",
+        "Transfer in Chat",
+        "Persönlicher Lernpunkt"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Vier-Ohren-Analyseblatt",
+    "titel": "Format: Analyse + Klärungsstatement",
+    "format_detail": "Tabellarische Vier-Ohren-Analyse mit anschliessendem Klärungsstatement für das Team",
+    "beschreibung": "Du analysierst die strittige Aussage mit dem Kommunikationsquadrat und formulierst danach ein klares, beziehungsorientiertes Klärungsstatement.",
+    "schritte": [
+      {
+        "label": "Aussage sichern",
+        "hint": "Schreibe den Originalsatz ohne Interpretation auf."
+      },
+      {
+        "label": "Vier Seiten analysieren",
+        "hint": "Ergänze für jede Seite eine kurze Deutung."
+      },
+      {
+        "label": "Ohr-Effekt prüfen",
+        "hint": "Bestimme, welches Ohr den Konflikt am stärksten ausgelöst hat."
+      },
+      {
+        "label": "Win-win-Ziel setzen",
+        "hint": "Definiere ein gemeinsames Ziel für Beziehung und Aufgabe."
+      },
+      {
+        "label": "Klärungsstatement schreiben",
+        "hint": "Formuliere 6-8 Sätze mit Ich-Botschaft, Spiegeln und Appell."
+      }
+    ],
+    "schreib_label": "VIER-OHREN-ANALYSE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/kommunikationsquadrat_vier_ohren"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise - Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit - Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive - Welche Situation wäre für dich persönlich am schwierigsten - und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret - oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Grenzfall: Die Aussage ist sachlich korrekt, aber der Ton wirkt schärfer. Welche Ebene kippt zuerst?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn die Kollegin keine Klärung will und sagt: Passt schon. Wie kannst du trotzdem Beziehung sichern?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Transfer: Wie verändert sich die Vier-Ohren-Analyse bei derselben Botschaft im Teamchat?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 - Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 - Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 - Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 - Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 - Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 - Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {
+    "kapitel": [
+      "1.4 Der Lehrvertrag - Konflikte im Lehrbetrieb",
+      "19.2 Konflikte",
+      "19.1 Feedback",
+      "16.1 Diskussion"
+    ]
+  },
+  "registry_tags": {
+    "topic": "konfliktkommunikation",
+    "set": "1.1.1_konflikte_konstruktiv_loesen"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle als verantwortungsvolle, lernende Fachkraft im Betrieb.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, respektvoller Umgang im Team",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rollenklärung, professionelle Kommunikation",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Recht",
+          "detail": "Schutz der Persönlichkeit am Arbeitsplatz",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Kommunikationsmodelle (4-Ohren) zur Klärung nutzen"
+        },
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Analysieren von Gesprächsprotokollen und -situationen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Konfliktpotentiale in der Kommunikation erkennen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie klärst du ein Missverständnis aus den vier Ohren so, dass die Zusammenarbeit im Team wieder funktioniert?",
+      "argumentieren": "Ordne die Aussage aus der Situation den vier Seiten zu und zeige, mit welchem Ohr die Kollegin vermutlich gehört hat.",
+      "entscheiden": "Du kannst (a) die Bemerkung rückziehen, oder (b) das Missverständnis aktiv aussprechen und spiegeln. Welche Option führt eher zu einer Win-win-Lösung?",
+      "formulieren": "Formuliere einen 6-Satz-Klärungstext: Ich-Botschaft, Spiegeln, Präzisierungsfrage und gemeinsamer Appell."
+    },
+    "empfohlene_templates": [
+      "ai_redaktion",
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_redaktion": {
+        "score": 90,
+        "grund": "Gesellschaft: Identität · SK: Konflikte bewältigen",
+        "ki_auftrag": "Vergleiche drei verschiedene Stile, wie du das Missverständnis bei deiner Kollegin ansprechen kannst: (1) Entschuldigend-unterwürfig, (2) Sachlich-kühl, (3) Konstruktiv mit Ich-Botschaft. Analysiere, wie jede Nachricht auf dem 'Beziehungsohr' ankommt.",
+        "stil_vergleich_fokus": "Wahrnehmung von Kompetenz und Sympathie im Teamkontext",
+        "reflexions_impuls": "Welcher Stil passt am besten zu deiner Rolle als Lernender im 2. Lehrjahr bei der SBB?"
+      },
+      "ai_gegenpositionen": {
+        "score": 85,
+        "grund": "Gesellschaft: Ethik · SK: Standpunkte begründen",
+        "startposition": "Wenn mich jemand missversteht, ist das nicht mein Problem. Ich habe die Wahrheit gesagt, und wie andere das aufnehmen, kann ich nicht kontrollieren.",
+        "gegenargument_rahmen": "Verantwortung für die Wirkung der eigenen Botschaft, Bedeutung von psychologischer Sicherheit im Team, Unterschied zwischen 'Recht haben' und 'erfolgreich kommunizieren'",
+        "position_frage": "Wo endet die Verantwortung des Senders und wo beginnt die des Empfängers für das Gelingen eines Gesprächs?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 80,
+        "grund": "Gesellschaft: Ethik · SK: Standpunkte begründen",
+        "dilemma_frage": "Darf man eine sachlich korrekte Kritik im Team zurückhalten, nur um die Gefühle einer Person nicht zu verletzen?",
+        "tribunal_these": "Ehrlichkeit und Effizienz sind Kernwerte im Berufsalltag. Wer Kritik aus falscher Rücksicht verschweigt, schadet langfristig dem Team – solange die Form der Kritik professionell bleibt.",
+        "werte_hinweis": "Die KI wird wahrscheinlich für Transparenz plädieren. Was sie übersieht: das informelle Machtgefüge im Team und die 'unbeschriebenen Gesetze', wer wen wann kritisieren darf – und wie ein Lernender isoliert werden kann, wenn er gegen diese sozialen Codes verstösst."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Erkläre jede der vier Nachrichtenseiten kurz und alltagsnah aus dem Kundenservice-Kontext bei der SBB.",
+          "satzanfang": "Sachinhalt ist ___. Selbstkundgabe zeigt ___. Beziehung bedeutet ___. Appell will ___ erreichen."
+        },
+        {
+          "nr": 2,
+          "tipp": "Ordne die Aussage systematisch allen vier Seiten zu und benenne dann, welches Ohr bei der Kollegin vermutlich dominiert hat.",
+          "satzanfang": "Die Aussage enthält als Sachinhalt ___. Auf der Beziehungsebene wirkt sie ___. Die Kollegin hörte vermutlich mit dem ___-Ohr, weil ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Vergleiche Rückzug und aktives Klären nach Wirkung auf Vertrauen, Missverständnisrisiko und Teamarbeit.",
+          "satzanfang": "Für eine Win-win-Lösung wähle ich Option ___, weil ___. Dadurch kann das Team ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Baue den 6-Satz-Text in fixer Reihenfolge: Ich-Botschaft, Spiegeln, Präzisierungsfrage, gemeinsamer Appell, Vereinbarung, Abschluss.",
+          "satzanfang": "Ich-Botschaft: ?Ich ___?. Spiegeln: ?Ich habe gehört, dass ___.? Präzisierungsfrage: ?Meinst du mit ___ konkret ___??"
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Sachinhalt",
+          "definition": "Faktische Information, die unabhängig von Tonfall und Beziehungsebene geprüft werden kann."
+        },
+        {
+          "term": "Selbstkundgabe",
+          "definition": "Hinweis darauf, was die sprechende Person über sich preisgibt."
+        },
+        {
+          "term": "Beziehungsebene",
+          "definition": "Signal darüber, wie eine Person die andere sieht oder behandelt."
+        },
+        {
+          "term": "Appell",
+          "definition": "Aufforderung, was die andere Person denken oder tun soll."
+        },
+        {
+          "term": "Präzisierungsfrage",
+          "definition": "Rückfrage, die unklare Aussagen konkretisiert und Fehlinterpretationen reduziert."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Teile dein Vier-Ohren-Analyseblatt in zwei Spalten: links die Aussage mit vier Seiten, rechts deine Klärungsformulierung in 6 Sätzen nach vorgegebener Reihenfolge.",
+        "beispiel": "Analyse: Sachinhalt = Hinweis auf Tempo | Beziehung = ?zu langsam?.\nKlärung: ?Ich habe deine Bemerkung als Kritik am Tempo verstanden. Meinst du die Situation von heute Morgen oder generell??\nAppell: ?Lass uns Feedback mit konkretem Beispiel geben.?",
+        "checkfragen": [
+          "Habe ich alle vier Seiten der Nachricht klar zugeordnet?",
+          "Ist mein Klärungstext genau in 6 Sätzen strukturiert?",
+          "Enthält der Text eine echte Präzisierungsfrage?",
+          "Formuliere ich den Appell als gemeinsame Lösung und nicht als Vorwurf?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche Teamfolgen entstehen, wenn in stressigen Situationen vor allem mit dem Beziehungs-Ohr gehört wird?",
+          "Wie kann Führung im Kundenservice Missverständnisse reduzieren, ohne Kommunikation zu verlangsamen?",
+          "Welche Grenze liegt zwischen notwendiger Direktheit und verletzender Kommunikation im Schichtbetrieb?"
+        ],
+        "recherche_impulse": [
+          "Suche nach ?Vier-Ohren-Modell Arbeitsplatz Missverständnisse? mit einer Suchmaschine. Notiere zwei Hinweise, die für Teamabsprachen relevant sind.",
+          "Suche nach ?Klärungsgespräch Präzisierungsfragen Beispiele? mit einer Suchmaschine. Notiere mindestens eine Frageform, die deeskaliert."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "übertrage dein Analyseblatt auf eine Situation mit Kundenreklamation unter Zeitdruck. Welche Sätze müsstest du anpassen?",
+        "analyse": "Was passiert, wenn Teammitglieder wiederholt falsch hören, aber Klärungsgespräche vermeiden: für die Person und für die Servicequalität?",
+        "recherche": "Nutze die Suchbegriffe ?Kommunikationsmodell Teamkonflikt? und ?Missverständnisse Schichtbetrieb?. Notiere drei Punkte: Risiko, Gegenmassnahme, Evaluationskriterium.",
+        "praesentation": "Präsentiere dein 6-Satz-Klärungsmuster in 90 Sekunden einem Ausbildungsteam. Nenne zum Schluss drei Qualitätsmerkmale gelungener Klärung.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

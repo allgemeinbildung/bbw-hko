@@ -1,0 +1,423 @@
+{
+  "id": "1.1.1_identitaet_lernorte_sit_A",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "situation": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Noch Schüler oder schon Profi?",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "berufsbildung_lernorte",
+    "rollenidentitaet"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sk": [
+      2,
+      6,
+      8
+    ]
+  },
+  "persona": {
+    "beruf": "Detailhandelsfachfrau/mann EFZ",
+    "betrieb": "Migros",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Detailhandelsfachfrau im 1. Lehrjahr bei der Migros in Winterthur. Seit drei Wochen arbeite ich täglich im Verkauf — ich bediene Kundschaft, packe Regale und erfasse Bestellungen. Im Betrieb behandeln mich die Kolleginnen und Kollegen schon fast wie eine fertige Fachkraft. Doch wenn ich mit Schulkameradinnen über Hausaufgaben rede, fühle ich mich plötzlich wieder wie eine Schülerin. Letzte Woche bat mich die Filialleiterin, eigenständig eine Kundenreklamation zu bearbeiten — ohne Begleitung. Ich frage mich: Welche Rolle habe ich jetzt eigentlich — und was erwartet mein Umfeld wirklich von mir?",
+  "zahlen_tabelle": [],
+  "leitfrage": "Welche Rolle hast du jetzt eigentlich — und was erwartet dein Umfeld wirklich von dir?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 1.1 und Kap. 18.1 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.1 | S. 12",
+      "text": "Erkläre in eigenen Worten: Was ist deine Rolle an jedem der drei Lernorte (Betrieb, ÜK, Schule)? Nenne je zwei konkrete Aufgaben pro Lernort.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Deine Kollegin sagt: «Du bist jetzt Profi.» Deine Lehrperson sagt: «Du bist noch in Ausbildung.» Wer hat recht? Begründe mit einem Satz pro Position.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Die Filialleiterin übergibt dir wieder eine Aufgabe ohne Begleitung: (a) Du übernimmst sie eigenständig und zeigst Initiative. (b) Du bittest aktiv um eine kurze Einführung. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Erstelle dein persönliches Rollenportrait in Ich-Form: Was erwartet dein Umfeld heute von dir? Was lernst du noch? Halte je drei konkrete Punkte pro Spalte fest.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Meine neue Rolle",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Drei Lernorte",
+      "punkte": [
+        "Betrieb: praktisch",
+        "ÜK: Grundfertigkeiten",
+        "Schule: Theorie und ABU"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Erwartungen",
+      "punkte": [
+        "Vorgesetzte: Initiative",
+        "Lehrperson: Lernbereitschaft",
+        "Kolleginnen: Mitarbeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Rollenidentität",
+      "punkte": [
+        "Stärken erkennen",
+        "Unsicherheiten benennen",
+        "Eigene Entwicklung sehen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Vergleich mit Berufskolleginnen",
+        "Transfer auf anderen Beruf",
+        "Ziel in einem Jahr"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Rollenportrait",
+    "titel": "Format: Persönliches Rollenportrait (2-spaltig)",
+    "format_detail": "Tabelle mit zwei Spalten: «Was erwartet man von mir» und «Was ich noch lerne» — je drei konkrete Punkte pro Spalte",
+    "beschreibung": "Du erstellst ein persönliches Rollenportrait, das zeigt, was dein Umfeld heute von dir erwartet — und was du in deiner Ausbildung noch lernen darfst.",
+    "schritte": [
+      {
+        "label": "Erwartungen sammeln",
+        "hint": "Notiere je 2–3 Erwartungen aus drei Quellen: Betrieb, Schule, Familie oder Kolleginnen"
+      },
+      {
+        "label": "Lernstand einschätzen",
+        "hint": "Was kannst du heute schon gut? Wo brauchst du noch Unterstützung?"
+      },
+      {
+        "label": "Tabelle erstellen",
+        "hint": "Zwei Spalten: «Was erwartet man von mir» / «Was ich noch lerne» — je drei Punkte, konkret und in Ich-Form"
+      },
+      {
+        "label": "Lücken erkennen",
+        "hint": "Wo gibt es Widersprüche zwischen dem, was erwartet wird, und deinem jetzigen Können?"
+      },
+      {
+        "label": "Nächsten Schritt formulieren",
+        "hint": "Was tue ich in den nächsten zwei Wochen konkret, um eine Lücke zu verkleinern?"
+      }
+    ],
+    "schreib_label": "ROLLENPORTRAIT HIER ERARBEITEN",
+    "schreib_note": "-> wissen/berufsbildung_lernorte"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du bist jetzt im 2. Lehrjahr und hast deutlich mehr Eigenverantwortung. Wie hat sich dein Rollenportrait verändert — und was war der grösste Entwicklungsschritt?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn die Filialleiterin erwartet, dass du eine neue Lernende im 1. Lehrjahr anleitet — obwohl du selbst erst seit drei Wochen dabei bist? Wie gehst du damit um?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Polymechanikerin im 1. Lehrjahr bei ABB hat dasselbe Rollengefühl. Was würde sich in ihrem Rollenportrait unterscheiden — und was wäre gleich?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rolle in der Gesellschaft und in der Arbeitswelt"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+        },
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "System-Design und Lernarchitektur",
+        "Standpunkte begründen und Gegenargumente prüfen",
+        "Entscheiden unter Unsicherheit"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Welche Rolle hast du jetzt eigentlich — und was erwartet dein Umfeld wirklich von dir?",
+      "argumentieren": "Deine Kollegin sagt: «Du bist jetzt Profi.» Deine Lehrperson sagt: «Du bist noch in Ausbildung.» Wer hat recht? Begründe mit einem Satz pro Position.",
+      "entscheiden": "Die Filialleiterin übergibt dir wieder eine Aufgabe ohne Begleitung: (a) Du übernimmst sie eigenständig und zeigst Initiative. (b) Du bittest aktiv um eine kurze Einführung. Welche Option wählst du — und warum?",
+      "formulieren": "Erstelle dein persönliches Rollenportrait in Ich-Form: Was erwartet dein Umfeld heute von dir? Was lernst du noch? Halte je drei konkrete Punkte pro Spalte fest."
+    },
+    "empfohlene_templates": [
+      "ai_prompt_duell",
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_prompt_duell": {
+        "score": 75,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Identität",
+        "duell_frage": "Wie balancierst du bei Migros Eigeninitiative und Anspruch auf Begleitung im 1. Lehrjahr?",
+        "prompt_a_beispiel": "\"Welche Rechte habe ich als Lernende bei einer Kundenreklamation ohne Begleitung?\"",
+        "prompt_b_beispiel": "\"Ich bin Detailhandelsfachfrau/mann EFZ im 1. Lehrjahr bei Migros in Winterthur. Ich soll eine Reklamation allein bearbeiten. Welche Schritte sind rechtlich korrekt und respektvoll gegenüber meiner Filialleiterin?\"",
+        "prompt_c_beispiel": "\"Du bist Berufsbildungsberaterin für den Detailhandel. Ich bin 16 und unsicher, ob ich allein handeln oder Begleitung einfordern soll. Gib mir eine klare Strategie für mein nächstes Gespräch im Betrieb.\"",
+        "blind_spot": "Die KI kennt weder die konkrete Teamkultur in deiner Filiale noch den Ton deiner Filialleiterin. Sie liefert Regeln, aber nicht das situative Feingefühl für diesen Betrieb."
+      },
+      "ai_gegenpositionen": {
+        "score": 80,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Ethik + Recht",
+        "startposition": "Wenn mir eine Reklamation übergeben wird, soll ich sie allein lösen, sonst wirke ich im Betrieb unselbstständig.",
+        "gegenargument_rahmen": "Lehrvertragsrecht, Aufsichtspflicht im 1. Lehrjahr, Verantwortung des Ausbildungsbetriebs, Lernschutz",
+        "position_frage": "Wie viel Eigenverantwortung ist fair, wenn Ausbildung und Begleitung zugleich erwartet werden?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 80,
+        "grund": "Gesellschaft: Ethik + Recht | SK: Standpunkte begründen",
+        "dilemma_frage": "Ist es vertretbar, einer Lernenden im 1. Lehrjahr eine Kundenreklamation ohne Begleitung zu übergeben?",
+        "tribunal_these": "Ein Betrieb darf Selbstständigkeit fördern, aber nicht auf Kosten der Ausbildungs- und Schutzpflicht gegenüber Lernenden.",
+        "werte_hinweis": "Die KI wird eher formale Zuständigkeiten beurteilen. Schwer erfassbar bleiben das Machtgefälle zur Filialleitung und die Angst, als \"nicht belastbar\" zu gelten."
+      }
+    }
+  },
+  "scaffolding": {
+    "_wissensknoten_refs": [
+      "berufsbildung_lernorte",
+      "rollenidentität"
+    ],
+    "leicht": {
+      "vokabular": [
+        {
+          "term": "Lernorte",
+          "definition": "Die drei Orte der Ausbildung: Betrieb, Berufsfachschule und überbetriebliche Kurse."
+        },
+        {
+          "term": "Kundenreklamation",
+          "definition": "Eine Rückmeldung von Kundschaft, wenn etwas mit Produkt oder Service nicht stimmt."
+        },
+        {
+          "term": "Rollenidentität",
+          "definition": "Das eigene Verständnis, welche Verantwortung man in der Ausbildung bereits hat und was man noch lernt."
+        },
+        {
+          "term": "Eigenverantwortung",
+          "definition": "Aufgaben selbständig und zuverlässig übernehmen und für das eigene Handeln einstehen."
+        },
+        {
+          "term": "Rollenerwartung",
+          "definition": "Vorstellungen anderer Personen darüber, wie du dich in deiner Funktion verhalten sollst."
+        }
+      ],
+      "leitfragen_hilfen": [
+        {
+          "tipp": "Schau in Kap. 1.1 und ordne pro Lernort konkrete Tätigkeiten aus deinem Migros-Alltag zu.",
+          "satzanfang": "Im Lernort Betrieb übernehme ich bei der Migros ___ und ___. In der Berufsfachschule lerne ich ___ und ___.",
+          "nr": 1
+        },
+        {
+          "tipp": "Nutze beide Perspektiven getrennt: Rolle als Lernende in Ausbildung und Rolle mit Verantwortung im Verkauf.",
+          "satzanfang": "Die Kollegin hat teilweise recht, weil ich im Verkauf schon ___ übernehme. Die Lehrperson hat ebenfalls recht, weil ich bei ___ noch in Ausbildung bin.",
+          "nr": 2
+        },
+        {
+          "tipp": "Nimm Kap. 18.1 als Entscheidungskompass: Verantwortung zeigen und gleichzeitig Lernbedarf transparent machen.",
+          "satzanfang": "Ich wähle Option ___, weil ich bei Reklamationen bereits ___ kann, aber für ___ noch eine kurze Einführung brauche.",
+          "nr": 3
+        },
+        {
+          "tipp": "Erstelle zwei klare Spalten (Erwartet heute / Lerne noch) mit je drei konkreten Ich-Aussagen.",
+          "satzanfang": "Heute erwartet mein Umfeld, dass ich ___. Noch in Ausbildung bin ich bei ___, deshalb übe ich ___.",
+          "nr": 4
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle ein Rollenportrait als Tabelle mit 2 Spalten: links \"Was mein Umfeld heute erwartet\", rechts \"Was ich noch lerne\". Schreibe je 3 kurze Ich-Aussagen aus deinem Alltag als Detailhandelslernende bei der Migros.",
+        "beispiel": "Heute erwartet: Ich begrüsse Kundschaft freundlich.\nHeute erwartet: Ich halte Ordnung im Regalbereich.\nIch lerne noch: Ich bearbeite Reklamationen mit Rücksprache.\nIch lerne noch: Ich priorisiere Aufgaben bei grossem Kundenandrang.",
+        "checkfragen": [
+          "Hast du in beiden Spalten je 3 konkrete Punkte notiert?",
+          "Sind alle Aussagen in Ich-Form geschrieben?",
+          "Kommt dein Betriebskontext (Migros/Verkauf) in den Punkten vor?",
+          "Zeigst du klar den Unterschied zwischen aktueller Verantwortung und Lernfeld?"
+        ]
+      }
+    },
+    "stark": {
+      "vertiefung": {
+        "analyse": "Was passiert, wenn Lernende früh wie Vollprofis behandelt werden? Beurteile Folgen für dich persönlich und für die Ausbildungsqualität im Betrieb.",
+        "transfer": "Stell dir vor, du bist in zwei Jahren Stellvertretung in der Filiale. Erweitere dein Rollenportrait um neue Erwartungen bei Führung und Konfliktlösung.",
+        "praesentation": "Erkläre dein Rollenportrait in 90 Sekunden der Filialleiterin. Kriterium: klare Trennung zwischen aktueller Verantwortung und Lernzielen.",
+        "recherche": "Prüfe BBG Art. 15–19: Welche Verantwortungen tragen Betrieb, Schule und Lernende beim Aufbau beruflicher Rollenidentität? Suche zusätzlich nach «Berufsbildung Schweiz drei Lernorte» mit einer Suchmaschine und notiere einen wichtigen Punkt."
+      },
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche Folgen hat es für die Berufsidentität, wenn Lernende im Detailhandel zu früh wie volle Fachkräfte behandelt werden?",
+          "Wie verändert sich die Zusammenarbeit im Team, wenn Erwartungen von Betrieb, Schule und Lernenden nicht transparent abgestimmt sind?",
+          "Was wäre ein fairer Massstab, um zu entscheiden, welche Verantwortung im 1. Lehrjahr bereits übernommen werden soll?"
+        ],
+        "recherche_impulse": [
+          "Prüfe BBG Art. 15–19: Welche Pflichten haben Betrieb und Lernende bei der Entwicklung beruflicher Handlungskompetenz?",
+          "Suche nach «Berufsbildung Schweiz Begleitung Lernende 1. Lehrjahr» mit einer Suchmaschine. Welche Kriterien gelten für gute Begleitung? Notiere drei konkrete Punkte aus einer oder mehreren Quellen."
+        ]
+      }
+    }
+  }
+}

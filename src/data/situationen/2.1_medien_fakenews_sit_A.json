@@ -1,0 +1,429 @@
+{
+  "id": "2.1_medien_fakenews_sit_A",
+  "modul": "2.1",
+  "modul_titel": "Meinungen bilden und mitgestalten",
+  "situation": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Stimmt das wirklich?",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "medien_faktencheck"
+  ],
+  "nrlp": {
+    "nr": "2.1",
+    "nr_primary": [
+      "2.1"
+    ],
+    "lebensbezug": "2.1",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologie und digitale Transformation",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sk": [
+      1,
+      5,
+      6
+    ]
+  },
+  "persona": {
+    "beruf": "Kauffrau/Kaufmann EFZ",
+    "betrieb": "Migros",
+    "ort": "Zürich"
+  },
+  "situation_text": "Ich bin Kauffrau/Kaufmann-Lernende im 1. Lehrjahr bei Migros in Zürich. Auf meinem Instagram-Feed erscheint ein viraler Post mit über 12 000 Likes, der behauptet, ein bekanntes Migros-Fertigprodukt enthalte eine krebserregende Substanz. Drei Kolleginnen haben den Beitrag bereits geteilt und schreiben mir, ich soll ihn auch weiterleiten. Ich bin schockiert, aber ich weiss nicht, ob die Behauptung stimmt oder Fake News ist. Im Lehrmittel (Kap. 20.7) lese ich, dass es konkrete Prüfwerkzeuge gibt — Quellen-Check, Fakten-Check, Google-Check — um solche Behauptungen zu hinterfragen. Wie prüfe ich diesen Post systematisch, bevor ich ihn teile oder widerlege?",
+  "zahlen_tabelle": [
+    {
+      "label": "Post-Reichweite",
+      "wert": "12 000+ Likes"
+    },
+    {
+      "label": "Verbreitung im Umfeld",
+      "wert": "3 Kolleginnen haben bereits geteilt"
+    },
+    {
+      "label": "Behauptung",
+      "wert": "krebserregende Substanz (unbelegt)"
+    }
+  ],
+  "leitfrage": "Wie prüfe ich einen viralen Post systematisch, bevor ich ihn teile oder widerlege?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 20.7 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Erkläre den Unterschied zwischen einer seriösen und einer unseriösen Quelle im Internet. Nenne je zwei Merkmale.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Wende die drei Prüfschritte (Quellen-Check, Fakten-Check, Google-Check) auf den Instagram-Post an. Notiere für jeden Schritt, was du konkret tust und was du herausfindest.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Du hältst den Post für Fake News. Du hast zwei Optionen: (a) Du kommentierst den Post öffentlich mit einer sachlichen Richtigstellung. (b) Du informierst deine Kolleginnen nur privat. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Erstelle ein persönliches Fakten-Check-Protokoll für deinen Social-Media-Alltag: Formuliere in Ich-Form mindestens vier konkrete Regeln, nach denen du künftig vorgehst, bevor du Beiträge teilst.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Fake News prüfen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Quellen-Check",
+      "punkte": [
+        "Wer hat publiziert?",
+        "Impressum vorhanden?",
+        "Datum und Aktualität"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Fakten-Check",
+      "punkte": [
+        "Kernbehauptung isolieren",
+        "Offizielle Stellen prüfen (BAG, Migros)",
+        "Expertenmeinungen suchen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Google-Check",
+      "punkte": [
+        "Andere Medien bestätigen?",
+        "Bilder-Rückwärtssuche",
+        "Faktenchecker (SRF, Mimikama)"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Medienethik und Verantwortung",
+        "Reichweite meiner Handlung",
+        "Transfer in den Berufsalltag"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Fakten-Check-Protokoll",
+    "titel": "Format: Persönliches Fakten-Check-Protokoll",
+    "format_detail": "Schriftliches Prüfprotokoll für einen viralen Social-Media-Post — drei Prüfschritte, abschliessendes Urteil und vier persönliche Verhaltensregeln",
+    "beschreibung": "Du prüfst den viralen Instagram-Post mit den drei Checktools und hältst dein Vorgehen, deine Befunde und dein Urteil schriftlich fest.",
+    "schritte": [
+      {
+        "label": "Quellen-Check",
+        "hint": "Wer steckt hinter dem Post? Suche nach Erstpublizist, Impressum, Datum. Notiere deine Befunde in Stichworten."
+      },
+      {
+        "label": "Fakten-Check",
+        "hint": "Isoliere die Kernbehauptung. Prüfe sie auf offiziellen Seiten (BAG, Migros-Medienstelle, Konsumentenschutz)."
+      },
+      {
+        "label": "Google-Check",
+        "hint": "Suche, ob seriöse Medien die Behauptung bestätigen. Teste die Google-Bilder-Rückwärtssuche mit dem Post-Bild."
+      },
+      {
+        "label": "Urteil formulieren",
+        "hint": "Ist der Post glaubwürdig, fragwürdig oder eindeutig falsch? Begründe dein Urteil in 2–3 Sätzen mit Quellenverweis."
+      },
+      {
+        "label": "Persönliche Regeln",
+        "hint": "Formuliere 4 konkrete Regeln für deinen künftigen Social-Media-Alltag in Ich-Form (z. B. «Ich prüfe zuerst...»)."
+      }
+    ],
+    "schreib_label": "FAKTEN-CHECK-PROTOKOLL HIER ERARBEITEN",
+    "schreib_note": "-> wissen/medien_faktencheck"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Der Post behauptet keinen Gesundheitsschaden, sondern einen Preisbetrug. Ändert das dein Prüfvorgehen — und warum?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn sich herausstellt, dass der Post von einer bezahlten PR-Kampagne der Konkurrenz stammt? Wie verhältst du dich als Migros-Lernende?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Koch/Köchin EFZ in einer Restaurantkette. Ein viraler Post behauptet, euer Restaurant verarbeite abgelaufene Ware. Wie wendest du dieselben drei Prüfschritte an?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Schau in Kap. 20.7 nach den Merkmalen seriöser Quellen — achte auf Impressum, Datum und erkennbare Urheberschaft.",
+          "satzanfang": "Eine seriöse Quelle im Internet erkenne ich daran, dass sie ___ hat, während einer unseriösen Quelle oft ___ fehlt."
+        },
+        {
+          "nr": 2,
+          "tipp": "Mach für jeden der drei Prüfschritte einen separaten Abschnitt: Was habe ich konkret getan? Was habe ich herausgefunden?",
+          "satzanfang": "Beim Quellen-Check des Instagram-Posts habe ich festgestellt, dass ___. Beim Fakten-Check auf der BAG/Migros-Seite ___. Beim Google-Check haben seriöse Medien ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Überlege: Was sind die Konsequenzen jeder Option für dich als Migros-Lernende und für deine Kolleginnen? Kap. 20.7 hilft dir, die Reichweite deiner Handlung einzuschätzen.",
+          "satzanfang": "Ich entscheide mich für Option ___, weil als Migros-Lernende meine öffentliche Reaktion ___ und eine private Information ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Dein Protokoll braucht vier konkrete Regeln in Ich-Form — konkret heisst: «Ich prüfe zuerst...» statt «Man sollte...». Nutze die drei Checktools als Vorlage.",
+          "satzanfang": "Regel 1: Ich prüfe zuerst ___, bevor ich einen Beitrag bei Migros-Kolleginnen weiterleite. Regel 2: ..."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Quellen-Check",
+          "definition": "Prüfung, wer einen Beitrag verfasst und veröffentlicht hat"
+        },
+        {
+          "term": "Impressum",
+          "definition": "Pflichtangabe auf Websites, die Betreiber und Kontakt offenlegt"
+        },
+        {
+          "term": "Fakten-Check",
+          "definition": "Überprüfung einer Behauptung anhand offizieller oder unabhängiger Quellen"
+        },
+        {
+          "term": "viraler Post",
+          "definition": "Beitrag, der sich durch massenhafte Weiterleitungen sehr schnell verbreitet"
+        },
+        {
+          "term": "Kernbehauptung",
+          "definition": "Die zentrale, überprüfbare Aussage in einem Text oder Post"
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Mach drei Abschnitte mit je einem Titel (Quellen-Check / Fakten-Check / Google-Check). Darunter schreibst du je: Was habe ich konkret gemacht? Was habe ich gefunden? Am Schluss ein Urteil in 2–3 Sätzen mit Quellenverweis und deine vier persönlichen Regeln in Ich-Form.",
+        "beispiel": "Quellen-Check — Post über Lehrstellenabbau: Erstpublizist: anonymer Twitter-Account ohne Impressum. Datum: vor 3 Jahren. Befund: Quelle nicht verifizierbar, Datum überholt.",
+        "checkfragen": [
+          "Habe ich alle drei Prüfschritte mit konkreten Befunden ausgefüllt?",
+          "Enthält mein Urteil eine Quellenangabe?",
+          "Stehen meine vier Regeln in Ich-Form?",
+          "Habe ich das Protokoll auf den konkreten Migros-Instagram-Post bezogen?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Wenn Algorithmen bevorzugt Posts mit hoher emotionaler Wirkung (Schock, Empörung) verbreiten — welche gesellschaftlichen Konsequenzen hat das für die öffentliche Meinungsbildung?",
+          "Inwiefern trägt die Weiterleitungspraxis von Konsumentinnen wie deinen Kolleginnen zur Verbreitung von Fehlinformationen bei — und welche Mitverantwortung entsteht daraus?"
+        ],
+        "recherche_impulse": [
+          "Suche nach «Fake News Verbreitung Studie» mit einer Suchmaschine. Welche Faktoren begünstigen laut einer Studie die schnelle Verbreitung von Fehlinformationen? Notiere zwei konkrete Befunde."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Stell dir vor, du bist in zwei Jahren Kauffrau im Bereich Marketing bei Migros und erhältst täglich Presseanfragen zu viralen Posts über Produkte. Erstelle eine 5-Punkte-Checkliste, die dein heutiges Protokoll um einen professionellen Kommunikationskanal erweitert.",
+        "analyse": "Was passiert, wenn ein Unternehmen wie Migros eine Falschinformation über eigene Produkte nicht aktiv widerlegt — aus Sicht der Konsumentinnen und aus Sicht des Unternehmens selbst?",
+        "recherche": "Suche nach «Lauterkeitsrecht Schweiz irreführende Werbung» mit einer Suchmaschine. Welche Pflichten hat ein Unternehmen, wenn eine Falschinformation über seine Produkte viral geht? Notiere einen konkreten Rechtsgrundsatz.",
+        "praesentation": "Erkläre deiner Tandempartnerin in 90 Sekunden dein Fakten-Check-Protokoll: Was hast du geprüft, was gefunden — und welche der vier Regeln würdest du ihr am stärksten empfehlen?",
+        "wissensknoten_extra": []
+      }
+    }
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "lebensbezug_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "thema_leitidee": "In einer Welt, in der täglich unzählige Informationen und Meinungen auf mich einwirken, wird es für mich immer wichtiger, mir eine eigene, fundierte Haltung zu erarbeiten.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Technologie und digitale Transformation",
+          "detail": "Digitalisierung bei politischer Meinungsbildung",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Politische Ethik und Verantwortung in digitalen Räumen",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Politik",
+          "detail": "Meinungsbildung und Mitgestaltung",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption mündlich",
+          "detail": "Informationen aus Medien kritisch aufnehmen und einordnen"
+        },
+        {
+          "modus": "Produktion mündlich",
+          "detail": "Standpunkte begründet und respektvoll vertreten"
+        },
+        {
+          "modus": "Produktion schriftlich und bildlich",
+          "detail": "Meinungsorientierte Texte und Protokolle verfassen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Zwischen relevanten und irrelevanten Quellen und Inhalten unterscheiden",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie prüfe ich einen viralen Post systematisch, bevor ich ihn teile oder widerlege?",
+      "argumentieren": "Wende die drei Prüfschritte (Quellen-Check, Fakten-Check, Google-Check) auf den Instagram-Post an. Notiere für jeden Schritt, was du konkret tust und was du herausfindest.",
+      "entscheiden": "Du hältst den Post für Fake News. Du hast zwei Optionen: (a) Du kommentierst den Post öffentlich mit einer sachlichen Richtigstellung. (b) Du informierst deine Kolleginnen nur privat. Welche Option wählst du — und warum?",
+      "formulieren": "Erstelle ein persönliches Fakten-Check-Protokoll für deinen Social-Media-Alltag: Formuliere in Ich-Form mindestens vier konkrete Regeln, nach denen du künftig vorgehst, bevor du Beiträge teilst."
+    },
+    "empfohlene_templates": [
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_gegenpositionen": {
+        "score": 135,
+        "grund": "Ethik R2 · Standpunkt: Verantwortung beim viralen Weiterleiten",
+        "startposition": "Wenn ein Post 12'000 Likes hat und drei Kolleginnen ihn bereits geteilt haben, ist er wahrscheinlich glaubwürdig — Massen bestätigen selten etwas völlig Falsches.",
+        "gegenargument_rahmen": "Virale Verbreitung als Glaubwürdigkeitsersatz; Herdenverhalten in sozialen Netzwerken; rechtliche und ethische Haftung beim Weiterleiten falscher Gesundheitsbehauptungen",
+        "position_frage": "Wer trägt mehr Verantwortung für die Verbreitung von Fake News — die Plattformen, die viralen Content befördern, oder die Nutzerinnen, die ihn teilen?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 105,
+        "grund": "Ethik explizit R2 · Machtgefälle: Lernende vs. Viral-Dynamik",
+        "dilemma_frage": "Darf eine Lernende einen viralen Post öffentlich richtigstellen, wenn das Unternehmen, für das sie arbeitet, direkt von der Falschbehauptung betroffen ist?",
+        "tribunal_these": "Wer eine nachweislich falsche Gesundheitsbehauptung weiterleitet, trägt Mitverantwortung für den entstandenen Schaden — auch wenn sie den Post ursprünglich nur gesehen hat.",
+        "werte_hinweis": "Die KI wird auf Meinungsfreiheit und Plattformverantwortung verweisen. Was sie nicht erfasst: die Machtasymmetrie zwischen einer 16-jährigen Lernenden und einem Grosskonzern wie Migros — und den sozialen Druck durch Kolleginnen, der eine neutrale Entscheidung kaum möglich macht."
+      }
+    }
+  }
+}

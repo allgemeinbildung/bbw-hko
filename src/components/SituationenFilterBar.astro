@@ -1,0 +1,96 @@
+---
+import { nrlp } from '../lib/nrlp'
+import type { SituationFilters, SituationIndexEntry } from '../lib/situationen'
+
+interface Props {
+  filters: SituationFilters
+  entries: SituationIndexEntry[]
+}
+const { filters, entries } = Astro.props
+
+const lebensbezuege = Array.from(new Set(entries.map((e) => e.lebensbezug_nr).filter(Boolean) as string[])).sort()
+const kompetenzen = Array.from(new Set(entries.map((e) => e.kompetenz_nr).filter(Boolean) as string[])).sort()
+const sks = Array.from(new Set(entries.flatMap((e) => e.sk))).sort((a, b) => a - b)
+
+const sprachmodiList = (nrlp.zirkularitaet.sprachmodi as any[]).map((s) => s.bezeichnung)
+const aspekteList = (nrlp.zirkularitaet.gesellschaftsinhalte as any[]).map((a) => a.bezeichnung)
+---
+<div class="bg-white border border-slate-200 rounded-lg p-4 mb-5">
+  <form method="GET" class="space-y-3">
+    <div class="grid grid-cols-4 gap-3">
+      <div>
+        <label class="field-label">Suche</label>
+        <input type="search" name="q" value={filters.q} placeholder="Titel, Beruf, Format…" class="input mt-1" />
+      </div>
+      <div>
+        <label class="field-label">Lehrjahr</label>
+        <select name="lehrjahr" class="input mt-1">
+          <option value="" selected={!filters.lehrjahr}>Alle</option>
+          {[1, 2, 3].map((n) => (
+            <option value={String(n)} selected={filters.lehrjahr === String(n)}>{n}. Lehrjahr</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Thema</label>
+        <select name="thema_nr" class="input mt-1">
+          <option value="" selected={!filters.thema_nr}>Alle</option>
+          {nrlp.themen.map((t: any) => (
+            <option value={String(t.nr)} selected={filters.thema_nr === String(t.nr)}>T{t.nr} — {t.titel}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Lebensbezug</label>
+        <select name="lebensbezug" class="input mt-1">
+          <option value="" selected={!filters.lebensbezug}>Alle</option>
+          {lebensbezuege.map((lb) => (
+            <option value={lb} selected={filters.lebensbezug === lb}>{lb}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div class="grid grid-cols-4 gap-3">
+      <div>
+        <label class="field-label">Kompetenz</label>
+        <select name="kompetenz" class="input mt-1">
+          <option value="" selected={!filters.kompetenz}>Alle</option>
+          {kompetenzen.map((k) => (
+            <option value={k} selected={filters.kompetenz === k}>{k}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Schlüsselkompetenz</label>
+        <select name="sk" class="input mt-1">
+          <option value="" selected={!filters.sk}>Alle</option>
+          {sks.map((n) => (
+            <option value={String(n)} selected={filters.sk === String(n)}>SK {n}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Aspekt (Gesellschaft)</label>
+        <select name="aspekt" class="input mt-1">
+          <option value="" selected={!filters.aspekt}>Alle</option>
+          {aspekteList.map((a) => (
+            <option value={a} selected={filters.aspekt === a}>{a}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label class="field-label">Sprachmodus</label>
+        <select name="sprachmodus" class="input mt-1">
+          <option value="" selected={!filters.sprachmodus}>Alle</option>
+          {sprachmodiList.map((m) => (
+            <option value={m} selected={filters.sprachmodus === m}>{m}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div class="flex justify-end gap-2">
+      <a href="?" class="py-2 px-3 rounded-md border border-slate-300 text-sm text-slate-600 hover:bg-slate-50">Zurücksetzen</a>
+      <button type="submit" class="py-2 px-4 rounded-md text-white text-sm font-medium" style="background: var(--brand)">Filtern</button>
+    </div>
+  </form>
+</div>

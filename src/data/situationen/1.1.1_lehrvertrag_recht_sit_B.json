@@ -1,0 +1,461 @@
+{
+  "id": "1.1.1_lehrvertrag_recht_sit_B",
+  "modul": "1.1",
+  "modul_titel": "Auseinandersetzung mit dem Lehrvertrag (Aspekt Recht)",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "800 Franken — meine Schuld?",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "lehrvertrag"
+  ],
+  "nrlp": {
+    "lebensbezug": "1.1",
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_primary": [
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_secondary": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sk": [
+      6,
+      8,
+      2
+    ],
+    "sk_primary": [
+      6,
+      8
+    ],
+    "sk_secondary": [
+      2
+    ],
+    "themen": [
+      "T1"
+    ]
+  },
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Metallbau Huber AG",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Polymechaniker-Lernender im 1. Lehrjahr bei der Metallbau Huber AG in Winterthur. Mein Lohn beträgt CHF 750.– pro Monat. Beim Einrichten einer Fräsmaschine mache ich einen Fehler: Ein Fräskopf wird beschädigt, der Reparaturschaden liegt bei CHF 800.–. Mein Berufsbildner teilt mir mit, er werde den Betrag vollständig von meinem Lohn abziehen. Ich weiss, dass ich den Fehler nicht absichtlich gemacht habe. Gleichzeitig frage ich mich, welche Belege für Verschulden überhaupt vorliegen und was im Rechtsalltag «Treu und Glauben» bedeutet. Muss ich wirklich CHF 800.– zahlen — oder schützt mich das Gesetz vor einem vollen Abzug?",
+  "zahlen_tabelle": [
+    {
+      "label": "Dein Monatslohn",
+      "wert": "CHF 750.–"
+    },
+    {
+      "label": "Schadenbetrag",
+      "wert": "CHF 800.–"
+    },
+    {
+      "label": "Art des Fehlers",
+      "wert": "Fahrlässig (nicht absichtlich)"
+    },
+    {
+      "label": "Rechtsgrundlage Haftung",
+      "wert": "OR 321e"
+    }
+  ],
+  "leitfrage": "Für welchen Betrag haftest du wirklich – und wie argumentierst du fair mit OR 321e, Treu und Glauben und Belegen?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kapitel 1.4 (S. 31) und Kapitel 1.3 (Rechtsgrundsätze) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.4 | S. 31 sowie Kap. 1.3 S. 24",
+      "text": "Erkläre den Unterschied zwischen leichter und grober Fahrlässigkeit. Ergänze kurz: Was bedeuten in diesem Fall der Grundsatz Treu und Glauben (ZGB 2) und die Beweislast (ZGB 8)?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.4 | S. 31",
+      "text": "Ordne den Maschinenunfall ein: leichte oder grobe Fahrlässigkeit? Welche vier Faktoren aus OR 321e sind relevant? Welche konkreten Belege (z.B. Instruktion, Protokoll, Zeugenaussage) brauchst du, um deine Sicht sachlich zu stützen?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.4 | S. 31",
+      "text": "Dein Berufsbildner will CHF 800.– abziehen. Du hast zwei Möglichkeiten: (a) Du zahlst den vollen Betrag, um Streit zu vermeiden. (b) Du widersprichst schriftlich und nennst die gesetzliche Grundlage. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 1.4 | S. 31 sowie Kap. 1.3 S. 24",
+      "text": "Formuliere eine kurze E-Mail an deinen Berufsbildner. Erkläre deine Sichtweise mit OR 321e, fordere eine faire Klärung nach Treu und Glauben und nenne, welche Belege du zur gemeinsamen Prüfung vorschlägst. Verwende Ich-Botschaften und einen respektvollen Ton.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Haftung im Lehrbetrieb",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Fahrlässigkeit",
+      "punkte": [
+        "leichte Fahrlässigkeit",
+        "grobe Fahrlässigkeit",
+        "Absicht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Rechtsgrundsätze",
+      "punkte": [
+        "OR 321e (4 Faktoren)",
+        "ZGB 2 Treu und Glauben",
+        "ZGB 8 Beweislast"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Meine Rechte",
+      "punkte": [
+        "Lohnabzug nicht unbegrenzt",
+        "Schriftlicher Widerspruch",
+        "Kantonales Amt Berufsbildung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Was kostet Sorglosigkeit?",
+        "Präventiv handeln",
+        "Transfer zu meinem Beruf"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "E-Mail",
+    "titel": "Format: E-Mail an den Berufsbildner",
+    "format_detail": "Formelle E-Mail mit Schilderung des Sachverhalts, gesetzlicher Begründung (OR 321e) und konkretem Lösungsvorschlag",
+    "beschreibung": "Du verfasst eine formelle E-Mail an deinen Berufsbildner, in der du deinen Standpunkt zur Haftungsfrage klar darlegst, die gesetzliche Grundlage nennst und eine faire Lösung vorschlägst.",
+    "schritte": [
+      {
+        "label": "Betreff + Anrede",
+        "hint": "Formuliere einen klaren Betreff (z.B. «Schadenfall Fräsmaschine, 24.03.2026 — Rückfrage») und eine respektvolle Anrede."
+      },
+      {
+        "label": "Sachverhalt schildern",
+        "hint": "Beschreibe in 2–3 Sätzen, was passiert ist: Datum, Handlung, Schaden. Trenne Beobachtung und Bewertung klar."
+      },
+      {
+        "label": "Gesetzliche Grundlage nennen",
+        "hint": "Erkläre OR 321e und ergänze die Rechtsgrundsätze aus Kap. 1.3: faire Klärung (ZGB 2) und Nachvollziehbarkeit mit Belegen (ZGB 8)."
+      },
+      {
+        "label": "Lösungsvorschlag formulieren",
+        "hint": "Schlage eine konkrete Lösung vor (z.B. anteiliger Abzug, Ratenzahlung) und bitte um gemeinsame Sichtung der relevanten Belege."
+      },
+      {
+        "label": "Schluss + Gruss",
+        "hint": "Beende die E-Mail mit einer offenen Haltung: «Ich bin bereit, das Gespräch zu suchen ...» + formeller Gruss."
+      }
+    ],
+    "schreib_label": "E-MAIL HIER VERFASSEN",
+    "schreib_note": "-> wissen/lehrvertrag"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Der Schaden wäre derselbe, aber du hättest ausdrücklich gegen eine Anweisung gehandelt. Ändert sich deine Haftung — und warum?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn dein Berufsbildner den Lohnabzug stillschweigend durchführt, ohne dich vorher zu informieren? Was hast du für Möglichkeiten?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du bist Koch-Lernende/r und lässt versehentlich eine Pfanne auf dem Herd verbrennen — Schaden: CHF 120.–. Haftest du? Begründe mit OR 321e.",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {
+    "kapitel": [
+      "1.4 Der Lehrvertrag (Haftung, OR 321e)",
+      "1.3 Rechtsgrundlagen (Treu und Glauben, Beweislast)"
+    ]
+  },
+  "registry_tags": {
+    "topic": "lehrvertrag_recht",
+    "set": "1.1.1_lehrvertrag_recht"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle als verantwortungsvolle, lernende Fachkraft im Betrieb.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rolle in der Gesellschaft und in der Arbeitswelt",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+        },
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Für welchen Betrag haftest du wirklich – und wie argumentierst du fair mit OR 321e, Treu und Glauben und Belegen?",
+      "argumentieren": "Ordne den Maschinenunfall ein: leichte oder grobe Fahrlässigkeit? Welche vier Faktoren aus OR 321e sind relevant? Welche konkreten Belege brauchst du, um deine Sicht sachlich zu stützen?",
+      "entscheiden": "Dein Berufsbildner will CHF 800.– abziehen. Du hast zwei Möglichkeiten: (a) Du zahlst den vollen Betrag, um Streit zu vermeiden. (b) Du widersprichst schriftlich und nennst die gesetzliche Grundlage. Welche Option wählst du – und warum?",
+      "formulieren": "Formuliere eine kurze E-Mail an deinen Berufsbildner. Erkläre deine Sichtweise mit OR 321e, fordere eine faire Klärung nach Treu und Glauben und nenne, welche Belege du zur gemeinsamen Prüfung vorschlägst."
+    },
+    "empfohlene_templates": [
+      "ai_entscheidungscoach",
+      "ai_redaktion",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_entscheidungscoach": {
+        "score": 85,
+        "grund": "Gesellschaft: Recht · SK: Lebensphasen planen",
+        "entscheid_situation": "Du bist Polymechaniker-Lernender bei der Metallbau Huber AG. Ein Fräskopf wurde beschädigt (CHF 800.–). Dein Berufsbildner akan den vollen Schaden von deinem Lohn abziehen. Du weisst, dass OR 321e deinen Haftungsanteil einschränkt.",
+        "optionen": [
+          "Option A: Den vollen Betrag akzeptieren, um den Betriebsfrieden zu wahren und keine schlechte Note im Lehrzeugnis zu riskieren",
+          "Option B: Schriftlich widersprechen, OR 321e zitieren und eine faire Schadensaufteilung mit Nachweis der leichten Fahrlässigkeit beantragen"
+        ],
+        "entscheid_kontext": "OR 321e verpflichtet die Lernende nur zum Ersatz jenes Schadens, den sie verschuldet hat. Bei leichter Fahrlässigkeit – erkennbar an fehlender Vorsicht ohne Absicht – wird die Haftungssumme durch Faktoren wie Ausbildungsstand und Sorgfaltspflicht des Betriebs reduziert."
+      },
+      "ai_redaktion": {
+        "score": 65,
+        "grund": "Sprachmodus: Rezeption schriftlich · SK: Standpunkte begründen",
+        "textthema": "Du schreibst eine E-Mail an deinen Berufsbildner der Metallbau Huber AG, um den Haftungsstreit um den beschädigten Fräskopf sachlich und respektvoll zu klären.",
+        "stil_auftrag": "Lass die KI dieselbe E-Mail in drei Stilen schreiben: (1) Juristisch-sachlich – mit explizitem OR-321e-Verweis und neutralem Ton, (2) Persönlich-erklärend – mit Ich-Botschaften und Beschreibung des Unfallerlebnisses, (3) Lösungsorientiert-kooperativ – mit konkretem Kompromissvorschlag und offenem Gesprachsangebot. Vergleich dann: Was wirkt professioneller im Lehrbetrieb?",
+        "textformat_ziel": "Schreibe deine eigene formelle E-Mail an den Berufsbildner – ohne KI, in deinem persönlichen Ton."
+      },
+      "ai_ethik_tribunal": {
+        "score": 85,
+        "grund": "Gesellschaft: Ethik + Recht · SK: Standpunkte begründen",
+        "dilemma_frage": "Darf ein Ausbildungsbetrieb einer Lernenden den vollen Schaden eines Arbeitsunfalls vom Lohn abziehen, wenn dieser aus leichter Fahrlässigkeit entstanden ist?",
+        "tribunal_these": "Wer ausbildet, trägt auch Verantwortung für Fehler. Lernende sind keine vollständig eigenverantwortlichen Fachkräfte – der Betrieb darf Ausbildungsrisiken nicht vollständig auf die Auszubildenden übertragen.",
+        "werte_hinweis": "Die KI wird korrekt auf OR 321e und die vier Haftungsfaktoren verweisen. Was sie nicht einberechnet: dass ein Polymechaniker-Erstlehrjähriger im Umgang mit industriellen Maschinen noch unter Aufsicht steht – und dass fehlende Einweisung Mitverantwortung des Betriebs begründet."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Nutze Lehrmittel S. 31 und ordne den Fehler an der Fräsmaschine zuerst sachlich ein, bevor du über Geld oder Schuld urteilst.",
+          "satzanfang": "Leichte Fahrlässigkeit bedeutet ___, grobe Fahrlässigkeit bedeutet ___. In meinem Fall bei der Metallbau Huber AG spricht ___ eher für ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Arbeite mit einer Viererliste zu OR 321e (Schwere des Fehlers, Risiko, Instruktion, Erfahrung) und notiere pro Punkt einen Beleg.",
+          "satzanfang": "Ich ordne den Unfall als ___ ein, weil ___. Für meine Begründung brauche ich die Belege ___, ___ und ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Vergleiche die Folgen beider Optionen für deinen Lohn, das Arbeitsklima und deine Rechtsposition als Lernender.",
+          "satzanfang": "Ich wähle Option ___, weil ___. Ein Risiko dieser Option ist ___, aber ich sichere mich ab, indem ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Baue die E-Mail in vier Teile: Anlass, Rechtsbezug OR 321e, Bitte um faire Klärung nach Treu und Glauben, konkrete Belege zur Prüfung.",
+          "satzanfang": "Sehr geehrter Herr/Frau ___. Ich möchte den Schadenfall vom ___ klären. Nach OR 321e ist ___ wichtig. Ich bitte um ___ und schlage als Belege ___ vor."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Fahrlässigkeit",
+          "definition": "Sorgfaltspflichtverletzung ohne Absicht; je nach Schwere unterscheidet man leichte und grobe Form."
+        },
+        {
+          "term": "OR 321e",
+          "definition": "Gesetzesartikel zur Haftung von Arbeitnehmenden für verursachte Schäden."
+        },
+        {
+          "term": "Beweislast",
+          "definition": "Pflicht einer Partei, Tatsachen mit Unterlagen oder Aussagen nachvollziehbar zu belegen."
+        },
+        {
+          "term": "Treu und Glauben",
+          "definition": "Grundsatz, dass Konflikte ehrlich, fair und ohne missbräuchliches Verhalten geklärt werden müssen."
+        },
+        {
+          "term": "Lohnabzug",
+          "definition": "Abzug vom ausbezahlten Lohn, der rechtlich begrändet und korrekt dokumentiert sein muss."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Schreibe die E-Mail mit klaren Abschnitten: Betreff, kurze Sachlage, deine rechtliche Einordnung, Vorschlag zur gemeinsamen Klärung mit Belegen. Halte jeden Abschnitt bei 2 bis 3 Sätzen.",
+        "beispiel": "Betreff: Klärung Schadenfall Fräsmaschine vom 12.09.\nIch möchte den Vorfall sachlich prüfen und die Einordnung nach OR 321e besprechen.\nIch schlage vor, Instruktionsprotokoll, Maschinenjournal und eine Zeugenaussage gemeinsam anzuschauen.\nDanke für einen Termin zur fairen Klärung.",
+        "checkfragen": [
+          "Ist meine E-Mail respektvoll und in Ich-Form geschrieben?",
+          "Habe ich OR 321e korrekt erwähnt, ohne den Fall schon endgültig zu entscheiden?",
+          "Nenne ich mindestens drei konkrete Belege zur gemeinsamen Prüfung?",
+          "Formuliere ich eine klare Bitte um Klärung statt einen Vorwurf?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche Folgen hätte es für Lernende in technischen Berufen, wenn Betriebe bei jedem unbeabsichtigten Fehler den vollen Schaden überwälzen?",
+          "Wie lösst sich zwischen Lernchance und Sanktionslogik abgrenzen, wenn ein Fehler teure Maschinen betrifft?",
+          "Welche Rolle spielen Machtasymmetrien, wenn Lernende rechtlich argumentieren, aber von der Bewertung durch den BB abhängig bleiben?"
+        ],
+        "recherche_impulse": [
+          "Suche nach ?OR 321e Haftung Lernende Fahrlässigkeit Schweiz? mit einer Suchmaschine. Notiere zwei Kriterien, die Gerichte bei der Zumutbarkeit berücksichtigen.",
+          "Suche nach ?ZGB 2 Treu und Glauben Arbeitsverhältnis Beispiel? mit einer Suchmaschine. Notiere mindestens eine Information, die für ein faires Klärungsgespräch nützlich ist."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "überarbeite deine E-Mail für die Perspektive als Teamleiter/in: Wie würdest du denselben Vorfall dokumentieren, damit Lernende geschützt und Qualitätsstandards eingehalten werden?",
+        "analyse": "Was passiert im Betrieb, wenn Fehlerkultur primär über Schuldzuweisung läuft: für die Lernmotivation der Person und für die Sicherheitskultur im Team?",
+        "recherche": "Arbeite mit OR 321e und den Suchbegriffen ?Arbeitnehmerhaftung leichte grobe Fahrlässigkeit Schweiz?. Notiere drei Punkte: Haftungsgrenze, notwendige Belege und eine faire Verfahrensregel.",
+        "praesentation": "Präsentiere deine Position in 90 Sekunden einem fiktiven Ausbildungsteam. Schliesse mit drei Stichpunkten, wie Konfliktlösung und Lernziel zusammenpassen.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

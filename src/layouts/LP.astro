@@ -31,6 +31,10 @@ const error = Astro.url.searchParams.get('error')
             href="/meine-materialien"
             class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/meine-materialien' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}
           >Meine Materialien</a>
+          <a
+            href="/situationen"
+            class="px-4 py-1.5 rounded-md text-sm font-medium text-amber-700 hover:bg-amber-50"
+          >Situationen-Katalog →</a>
         </nav>
         <div class="flex items-center gap-3">
           <span class="text-sm text-slate-500 hidden sm:block">{user?.email}</span>

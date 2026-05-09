@@ -1,0 +1,365 @@
+{
+  "id": "3.1.2_budget_risiken_schulden_sit_A",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln",
+  "situation": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "CHF 470.– statt 220.–",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "ch_2_2_budget",
+    "ch_2_2_budget_schulden"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Kauffrau EFZ",
+    "betrieb": "PostFinance",
+    "ort": "Zürich"
+  },
+  "situation_text": "Ich bin Kauffrau-Lernende im 2. Lehrjahr bei der PostFinance in Zürich und verdiene CHF 1'050 netto pro Monat. Mein Kollege hat ein neues Auto und ich überlege, ob ich auch eines leasen soll — eine Werbeofferte zeigt CHF 220 pro Monat, das klingt machbar. Als ich den Leasingvertrag genauer lese, stosse ich auf Pflichten, die ich nicht erwartet hatte: obligatorische Vollkaskoversicherung, Haftpflicht, Benzin und Markenservice. Plötzlich stehen fast CHF 470 pro Monat im Raum — fast die Hälfte meines Lohnes. Kann ich mir das Leasing wirklich leisten, und welche Kosten muss ich in meinem Budget unbedingt einplanen?",
+  "zahlen_tabelle": [
+    {
+      "label": "Monatslohn netto (2. Lehrjahr KV)",
+      "wert": "CHF 1'050"
+    },
+    {
+      "label": "Leasingrate (Kleinwagen)",
+      "wert": "CHF 220"
+    },
+    {
+      "label": "Vollkasko + Haftpflicht",
+      "wert": "CHF 95"
+    },
+    {
+      "label": "Benzin (monatlich ca.)",
+      "wert": "CHF 120"
+    },
+    {
+      "label": "Service + Garagierung",
+      "wert": "CHF 35"
+    },
+    {
+      "label": "Autokosten total",
+      "wert": "CHF 470"
+    }
+  ],
+  "leitfrage": "Kann ich mir das Leasing wirklich leisten — und welche Gesamtkosten muss ich in mein Budget einplanen?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 8.1 (Seite 194–196) und Kap. 8.2 (Seite 199) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 8.1 | S. 195f.",
+      "text": "Erkläre, woraus sich eine Leasinggebühr zusammensetzt. Nenne mindestens drei Zusatzkosten, die beim Autoleasing neben der Leasingrate anfallen.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 8.1 | S. 195",
+      "text": "Mein Nettolohn beträgt CHF 1'050. Addiere alle Autokosten aus der Zahlen-Tabelle. Welchen Anteil (in Prozent) machen die Autokosten an meinem Monatslohn aus?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 8.1 | S. 195–196",
+      "text": "Du hast zwei Optionen: (a) Du gehst das Leasing ein und verzichtest dafür auf Ausgang und Kleider. (b) Du verzichtest auf das Leasing und sparst CHF 150 pro Monat für einen späteren Barkauf. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Formuliere in Ich-Form drei konkrete Massnahmen, mit denen du dein Budget so anpasst, dass entweder das Leasing tragbar wird oder du das Ziel (eigenes Auto) auf einem anderen Weg erreichst.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Autoleasing: Wahrer Monatspreis",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Leasinggebühr",
+      "punkte": [
+        "Abschreibung Auto",
+        "Zinsen Kapital",
+        "Restwert am Ende"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Zusatzkosten",
+      "punkte": [
+        "Vollkasko + Haftpflicht",
+        "Benzin",
+        "Markenservice"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Kreditfähigkeit",
+      "punkte": [
+        "Pfändbarer Lohnanteil",
+        "36-Monats-Regel (KKG)",
+        "IKO-Prüfung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Leasing vs. Kredit",
+        "Barzahlung Vorteil",
+        "Sparziel aufbauen"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Budget-Analyse",
+    "titel": "Format: Wahrer Monatspreis Autoleasing",
+    "format_detail": "Kostenaufstellung aller monatlichen Auto-Positionen + Anteil am Lohn + begründeter Entscheid",
+    "beschreibung": "Du berechnest alle monatlichen Kosten des Leasings, stellst sie deinem Lohn gegenüber und formulierst einen begründeten Entscheid.",
+    "schritte": [
+      {
+        "label": "Kosten auflisten",
+        "hint": "Notiere jede Auto-Position: Leasingrate, Vollkasko, Haftpflicht, Benzin, Service"
+      },
+      {
+        "label": "Gesamtkosten berechnen",
+        "hint": "Addiere alle Posten und berechne: Total ÷ CHF 1'050 × 100 = Anteil am Lohn in Prozent"
+      },
+      {
+        "label": "Kreditfähigkeit prüfen",
+        "hint": "Kannst du den Leasing-Betrag innerhalb von 36 Monaten zurückzahlen? Rechne: CHF 220 × 36 Monate"
+      },
+      {
+        "label": "Budget vergleichen",
+        "hint": "Stelle Einnahmen und Ausgaben gegenüber — was bleibt nach allen Kosten übrig?"
+      },
+      {
+        "label": "Entscheid formulieren",
+        "hint": "Schreibe in Ich-Form: «Ich entscheide mich für ..., weil ...» — mindestens 2 Argumente"
+      }
+    ],
+    "schreib_label": "KOSTENANALYSE + ENTSCHEID HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du verdienst im 3. Lehrjahr CHF 1'250 pro Monat. Ändert das deinen Entscheid bezüglich Autoleasing — und wenn ja, ab welchem Lohn würdest du ein Leasing eingehen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn die Vollkaskoversicherung für Fahranfänger unter 25 Jahren doppelt so teuer ist (CHF 190 statt CHF 95)? Wie verändert sich deine Budget-Analyse?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du bist Polymechaniker/in-Lernende/r bei ABB. Du überlegst, ein Motorrad statt ein Auto zu leasen. Welche der Kostenpositionen bleiben gleich — und welche fallen weg oder kommen neu dazu?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies Kap. 8.1 S. 195f. — suche die Definition von Leasinggebühr und liste alle Bestandteile auf. Schaue auch in die Zahlen-Tabelle der Situation für die konkreten Positionen.",
+          "satzanfang": "Eine Leasinggebühr besteht aus ___. Zusätzlich fallen folgende Kosten an: ___, ___ und ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Addiere alle Positionen aus der Zahlen-Tabelle: CHF 220 + CHF 95 + CHF 120 + CHF 35 = CHF ___. Dann rechne: Total ÷ CHF 1'050 × 100 = ___%. Erst rechnen, dann beurteilen.",
+          "satzanfang": "Die Autokosten total betragen CHF ___. Das sind ___ % meines Monatslohns von CHF 1'050, deshalb ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Rechne zuerst, was nach allen Autokosten (CHF 470) noch vom Lohn (CHF 1'050) übrig bleibt. Reicht das noch für Essen, Kleider, Ausgang? Dann entscheide.",
+          "satzanfang": "Ich wähle Option ___ (a: Leasing eingehen / b: Barkauf ansparen CHF 150/Mt), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Überlege: Was kannst du weglassen oder günstiger machen? Schreibe 3 konkrete Schritte in Ich-Form — z.B. Handy reduzieren, Ausgang kürzen, Sparbetrag festlegen.",
+          "satzanfang": "Massnahme 1: Ich reduziere ___ von CHF ___ auf CHF ___. Massnahme 2: Ich verzichte auf ___. Massnahme 3: Ich spare monatlich CHF ___ auf ein Sparkonto."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Leasinggebühr",
+          "definition": "Der monatliche Betrag, den man für das Nutzen eines geleasten Autos zahlt — setzt sich aus Abschreibung, Zinsen und Restwert zusammen."
+        },
+        {
+          "term": "Vollkaskoversicherung",
+          "definition": "Eine Auto-Versicherung, die auch selbst verursachte Schäden am eigenen Fahrzeug abdeckt — Pflicht bei vielen Leasingverträgen."
+        },
+        {
+          "term": "Haftpflichtversicherung",
+          "definition": "Die gesetzlich vorgeschriebene Mindestversicherung fürs Auto, die Schäden an anderen Personen oder Fahrzeugen deckt."
+        },
+        {
+          "term": "Kreditfähigkeit",
+          "definition": "Die Prüfung, ob jemand in der Lage ist, einen Kredit oder Leasingvertrag zurückzuzahlen — beim Autoleasing wird die 36-Monats-Regel angewendet."
+        },
+        {
+          "term": "Pfändbarer Lohnanteil",
+          "definition": "Der Teil des Lohns, der bei Schulden gepfändet werden darf — ein Existenzminimum wird immer geschützt."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Deine Budget-Analyse hat 3 Teile: 1. Tabelle: Liste alle Autopositionen mit Betrag (Leasingrate, Versicherung, Benzin, Service). 2. Berechnung: Gesamtkosten ÷ CHF 1'050 × 100 = Anteil in %. 3. Entscheid in Ich-Form: 'Ich entscheide mich für ..., weil ...' mit mindestens 2 Argumenten.",
+        "beispiel": "Thema: Motorrad-Kosten. Leasingrate CHF 150, Versicherung CHF 60, Benzin CHF 50. Total: CHF 260. Anteil am Lohn CHF 1'050: 24.8%. Entscheid: Ich kaufe kein Motorrad, weil fast 25% zu viel für mein Lehrlingsbudget sind.",
+        "checkfragen": [
+          "□ Habe ich alle 4 Autopositionen aus der Zahlen-Tabelle aufgelistet?",
+          "□ Habe ich die Gesamtkosten korrekt addiert (Resultat: CHF 470)?",
+          "□ Habe ich den Prozentanteil am Monatslohn CHF 1'050 berechnet?",
+          "□ Habe ich meinen Entscheid in Ich-Form mit mindestens 2 Argumenten formuliert?",
+          "□ Berücksichtige ich, was nach den Autokosten noch für Lebenshaltung bleibt?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Inwiefern ist ein Autoleasing für Lernende im 2. Lehrjahr ein strukturelles Risiko — und welche Bevölkerungsgruppen sind in der Schweiz am stärksten von fahrzeugbedingter Überschuldung betroffen?",
+          "Was wäre, wenn PostFinance als dein Ausbildungsbetrieb intern Leasingverträge ab einem bestimmten Lohnanteil für Lernende unterstützen oder ablehnen würde — wie würdest du das ethisch bewerten?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Autoleasing Schweiz Jugendliche Überschuldung Statistik' mit einer Suchmaschine. Wie hoch ist der Anteil junger Erwachsener mit fahrzeugbedingten Schulden? Notiere eine Zahl.",
+          "Suche nach 'Konsumkreditgesetz KKG Schweiz 36-Monate-Regel Leasing' mit einer Suchmaschine. Was regelt das KKG bei Leasingverträgen — und welche Schutzmassnahmen gelten für Lernende? Notiere einen konkreten Artikel."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist im 3. Lehrjahr und verdienst CHF 1'300. Erstelle eine zweite Budget-Analyse: Ab welchem Lohn könntest du dir das Leasing leisten — und wie viel Spielraum bliebe dann noch für Lebenshaltung?",
+        "analyse": "Was passiert gesellschaftlich, wenn eine ganze Generation von Lernenden Leasingverträge abschliesst, die sie sich eigentlich nicht leisten können? Analysiere aus zwei Perspektiven: Lernende (Schuldenfalle) und Wirtschaft (Kreditrisiko).",
+        "recherche": "Lies Konsumkreditgesetz (KKG) Art. 28 oder suche nach 'Leasing Schweiz Widerrufsfrist Lernende Rechte' mit einer Suchmaschine. Welche Rechte hast du bei einem Leasingvertrag — z.B. Widerruf? Notiere einen konkreten Artikel.",
+        "praesentation": "Erkläre deine Budget-Analyse in 90 Sekunden einem Kollegen, der ein Auto leasen will. Zeige die Prozentzahl und erkläre, warum CHF 470 von CHF 1'050 ein klares Warnzeichen sind.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

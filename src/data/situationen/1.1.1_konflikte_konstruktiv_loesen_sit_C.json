@@ -1,0 +1,463 @@
+{
+  "id": "1.1.1_konflikte_konstruktiv_loesen_sit_C",
+  "modul": "1.1",
+  "modul_titel": "Konstruktiv kommunizieren und Konflikte fair lösen",
+  "situation": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "Lohnabzug nach Fehler",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "rechte_pflichten_lehrvertrag"
+  ],
+  "nrlp": {
+    "lebensbezug": "1.1",
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_primary": [
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_secondary": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sk": [
+      6,
+      4,
+      2
+    ],
+    "sk_primary": [
+      6,
+      4
+    ],
+    "sk_secondary": [
+      2
+    ],
+    "themen": [
+      "T1"
+    ]
+  },
+  "persona": {
+    "beruf": "Elektroinstallateur EFZ",
+    "betrieb": "Elektro Zeta AG",
+    "ort": "Basel"
+  },
+  "situation_text": "Ich bin Elektroinstallateur EFZ im 1. Lehrjahr bei der Elektro Zeta AG in Basel und erhalte CHF 880 pro Monat. Bei einer Lieferung geht Material im Wert von CHF 420 kaputt, und mein Berufsbildner kündigt einen Lohnabzug an. Ich bin unsicher, ob es sich um leichte oder grobe Fahrlässigkeit handelt und welche Rechte ich im Lehrvertrag habe. Gleichzeitig möchte ich den Konflikt nicht eskalieren lassen. Wie kläre ich rechtlich sauber und fair, was ein angemessener Lösungsweg ist?",
+  "zahlen_tabelle": [
+    {
+      "label": "Monatslohn",
+      "wert": "CHF 880"
+    },
+    {
+      "label": "Schadenhöhe",
+      "wert": "CHF 420"
+    },
+    {
+      "label": "Angek. Lohnabzug",
+      "wert": "CHF 200"
+    },
+    {
+      "label": "Lohnfortzahlung 1. Lehrjahr",
+      "wert": "3 Wochen/Jahr (bei Krankheit/Unfall)"
+    }
+  ],
+  "leitfrage": "Wie verhandelst du einen angekündigten Lohnabzug so, dass Recht, Verantwortung und Fairness berücksichtigt werden?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel S. 136–139, S. 189–190 und S. 421–423 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 5.2 | S. 150",
+      "text": "Erkläre den Unterschied zwischen leichter und grober Fahrlässigkeit und warum dieser Unterschied für Schadenersatz wichtig ist.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 15.1 | S. 344",
+      "text": "Ordne die Situation ein: Welche Fakten sprechen für oder gegen einen Lohnabzug (OR 321a und OR 321e), und welche Informationen fehlen noch?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 19.1 | S. 422-423, 427",
+      "text": "Wie würdest du bei einem strukturierten Klärungsgespräch vorgehen, um eine faire Lösung zu erreichen?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 19.1 | S. 423",
+      "text": "Formuliere in Stichworten: Sachlage, eigene Verantwortung, offene Frage zur Bewertung und Vorschlag für eine faire Vereinbarung.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Rechte, Pflichten und Konfliktklärung",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Rechtslage",
+      "punkte": [
+        "Lehrvertrag",
+        "Schadenersatz",
+        "Abzugsregeln"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Konfliktfakten",
+      "punkte": [
+        "Was ist passiert?",
+        "Welche Beweise?",
+        "Welche Verantwortung?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Lösungsstrategie",
+      "punkte": [
+        "Gespräch vorbereiten",
+        "Win-win suchen",
+        "Vereinbarung dokumentieren"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Vertrauensperson",
+        "Amt für Berufsbildung",
+        "Transfer auf andere Fehlerfälle"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Faktencheck + Gesprächsleitfaden",
+    "titel": "Format: Klärungsdossier Lohnabzug",
+    "format_detail": "Kompakte Faktenübersicht mit Argumentation und Gesprächsleitfaden für die Aussprache",
+    "beschreibung": "Du erstellst ein klares Dossier mit Fakten, Rechtsbezug und einem Gesprächsleitfaden, um eine faire Lösung auszuhandeln.",
+    "schritte": [
+      {
+        "label": "Sachverhalt dokumentieren",
+        "hint": "Beschreibe den Vorfall neutral mit Ort, Zeit, Schaden und Beteiligten."
+      },
+      {
+        "label": "Rechtsbezug sichern",
+        "hint": "Notiere relevante Regeln aus Lehrvertrag und Lehrmittel."
+      },
+      {
+        "label": "Eigenen Standpunkt klären",
+        "hint": "Formuliere Verantwortung und offene Punkte in Ich-Form."
+      },
+      {
+        "label": "Lösungsoptionen vergleichen",
+        "hint": "Vergleiche mindestens zwei faire Varianten mit Folgen."
+      },
+      {
+        "label": "Gesprächsleitfaden schreiben",
+        "hint": "Erstelle einen Leitfaden mit Einstieg, Fragen und Vereinbarungsabschluss."
+      }
+    ],
+    "schreib_label": "KLÄRUNGSDOSSIER HIER ERARBEITEN",
+    "schreib_note": "-> wissen/rechte_pflichten_lehrvertrag"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise - Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit - Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive - Welche Situation wäre für dich persönlich am schwierigsten - und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret - oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Grenzfall: Der Schaden beträgt nur CHF 70. Ändert das etwas an der Gesprächsstrategie?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn zwei Personen beteiligt waren und die Verantwortung unklar ist? Wie legst du faire Kriterien fest?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Transfer: Wie gehst du vor, wenn es statt Materialschaden um eine fehlerhafte Kundenrechnung geht?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 - Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 - Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 - Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 - Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 - Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 - Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {
+    "kapitel": [
+      "1.4 Der Lehrvertrag - Konflikte im Lehrbetrieb",
+      "19.2 Konflikte",
+      "19.1 Feedback",
+      "16.1 Diskussion"
+    ]
+  },
+  "registry_tags": {
+    "topic": "konfliktkommunikation",
+    "set": "1.1.1_konflikte_konstruktiv_loesen"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle als verantwortungsvolle, lernende Fachkraft im Betrieb.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Schadenersatzrecht (OR 321e), Abzugsregeln",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Fairness, Verantwortung für Fehler",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Umgang mit Fehlern und Kritik",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Verhandlungen über Rechtsfolgen sachlich führen"
+        },
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Gesetzestexte (OR) verstehen und auf den Fall anwenden"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Komplexe rechtliche Sachverhalte vereinfacht erklären"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie verhandelst du einen angekündigten Lohnabzug so, dass Recht, Verantwortung und Fairness berücksichtigt werden?",
+      "argumentieren": "Ordne die Situation ein: Welche Fakten sprechen für oder gegen einen Lohnabzug, und welche Informationen fehlen noch?",
+      "entscheiden": "Wähle zwischen (a) sofort akzeptieren, (b) strukturiertes Klärungsgespräch mit Faktenblatt. Welche Option schafft eher eine nachhaltige Lösung?",
+      "formulieren": "Formuliere ein Gesprächsskript in Ich-Form: Sachlage, eigene Verantwortung, offene Frage zur Bewertung und Vorschlag für eine faire Vereinbarung."
+    },
+    "empfohlene_templates": [
+      "ai_entscheidungscoach",
+      "ai_ethik_tribunal",
+      "ai_gegenpositionen"
+    ],
+    "templates": {
+      "ai_entscheidungscoach": {
+        "score": 95,
+        "grund": "Gesellschaft: Recht · SK: Konflikte bewältigen",
+        "entscheid_situation": "Du bist Elektroinstallateur-Lernender. Dein BB kündigt einen Lohnabzug von CHF 200 an, weil Material im Wert von CHF 420 kaputt gegangen ist. Er sagt: 'Entweder du zahlst, oder wir haben ein Problem.' Du bist unsicher, ob das rechtens ist.",
+        "optionen": [
+          "Option A: Den Abzug sofort akzeptieren, um die Beziehung nicht zu gefährden und als kooperativ zu gelten",
+          "Option B: Um ein ruhiges Gespräch bitten, OR 321e prüfen (Fahrlässigkeitstufen) und nach einer schriftlichen Begründung für den Abzug fragen"
+        ],
+        "entscheid_kontext": "Laut OR 321e haftet der Arbeitnehmer nur für absichtlich oder fahrlässig verursachten Schaden. Bei Lernenden ist zudem das Berufsrisiko und der Ausbildungsstand zu berücksichtigen."
+      },
+      "ai_ethik_tribunal": {
+        "score": 90,
+        "grund": "Gesellschaft: Ethik + Recht · SK: Standpunkte begründen",
+        "dilemma_frage": "Ist es ethisch vertretbar, einem Lernenden einen Lohnabzug aufzudrücken, ohne dass die genaue Schuldfrage (Fahrlässigkeit) geklärt wurde?",
+        "tribunal_these": "Lernende sind per Definition Personen, die noch Fehler machen dürfen. Ein Lohnabzug bei einem Lernenden ist eine pädagogische Bankrott-Erklärung, wenn nicht grobes Verschulden vorliegt. Die existenzielle Unsicherheit durch Lohnabzug schadet dem Lernerfolg mehr als der finanzielle Verlust dem Betrieb.",
+        "werte_hinweis": "Die KI wird die Schutzwürdigkeit des Lernenden betonen. Was sie übersieht: Dass in kleinen Handwerksbetrieben CHF 420 viel Geld sein können und der BB vielleicht selbst unter finanziellem Druck steht – und wie man ein solches Gespräch ohne Verlierer führt."
+      },
+      "ai_gegenpositionen": {
+        "score": 85,
+        "grund": "Gesellschaft: Ethik · SK: Standpunkte begründen",
+        "startposition": "Wer einen Schaden verursacht, muss dafür bezahlen. Das ist die beste Lernelektion für das spätere Berufsleben. Schmerz im Portemonnaie verhindert künftige Fehler.",
+        "gegenargument_rahmen": "Differenzierung nach Verschulden (leichte/mittlere/grobe Fahrlässigkeit), Berufsrisiko des Arbeitgebers, Verhältnismässigkeit bei geringem Lehrlingslohn, pädagogischer statt finanzieller Fokus",
+        "position_frage": "Ab welchem Betrag oder welchem Grad an Unaufmerksamkeit ist finanzielle Haftung für Lernende sinnvoll?"
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Erkläre zuerst den Unterschied leichte/grobe Fahrlässigkeit und verknüpffe ihn dann mit Schadenersatz im Ausbildungsalltag.",
+          "satzanfang": "Leichte Fahrlässigkeit liegt vor, wenn ___. Grobe Fahrlässigkeit liegt vor, wenn ___. Für Schadenersatz ist das wichtig, weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Arbeite mit zwei Listen: Fakten für Lohnabzug, Fakten gegen Lohnabzug; ergänze danach fehlende Informationen.",
+          "satzanfang": "Für einen Lohnabzug spricht ___. Dagegen spricht ___. Für eine faire Beurteilung fehlen noch ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Vergleiche beide Optionen anhand Lernbeziehung, Rechtsklarheit und langfristiger Zusammenarbeit.",
+          "satzanfang": "Ich entscheide mich für Option ___, weil ___. Nachhaltig ist diese Option, da ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Halte die Reihenfolge im Skript ein: Sachlage, eigene Verantwortung, offene Bewertungsfrage, Vereinbarungsvorschlag.",
+          "satzanfang": "Sachlage: ?___?. Eigene Verantwortung: ?Ich ___?. Offene Frage: ?Wie beurteilen wir ___ fair?? Vereinbarung: ?Ich schlage ___ vor.?"
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Leichte Fahrlässigkeit",
+          "definition": "Sorgfaltsfehler mit geringerer Schwere, oft bei normalen Lern- und Arbeitssituationen."
+        },
+        {
+          "term": "Grobe Fahrlässigkeit",
+          "definition": "Deutlich schwere Pflichtverletzung trotz erkennbarer Risiken."
+        },
+        {
+          "term": "Schadenersatz",
+          "definition": "Ausgleich eines finanziellen Schadens unter rechtlich festgelegten Bedingungen."
+        },
+        {
+          "term": "Faktencheck",
+          "definition": "Systematische Prüfung, welche Informationen gesichert sind und welche noch fehlen."
+        },
+        {
+          "term": "Faire Vereinbarung",
+          "definition": "Nachvollziehbare Abmachung, die Verantwortung klärt und Zusammenarbeit ermöglicht."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle zuerst den Faktencheck in Stichpunkten (pro/contra/offen). Daraus leitest du den Gesprächsleitfaden mit vier klaren Abschnitten ab.",
+        "beispiel": "Fakten pro: Material beschädigt beim Einsatz.\nFakten contra: keine absichtliche Handlung, unklare Instruktion.\nFrage im Gespräch: ?Welche Kriterien nutzen wir für die Einordnung??\nVereinbarung: gemeinsame Prüfung der fehlenden Unterlagen.",
+        "checkfragen": [
+          "Sind Fakten, Bewertungen und offene Punkte klar getrennt?",
+          "Benenne ich auch meine eigene Verantwortung sachlich?",
+          "Enthält mein Leitfaden eine offene, nicht suggestive Bewertungsfrage?",
+          "Ist der Vereinbarungsvorschlag konkret und überprüfbar?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Wie kann ein Betrieb Fehler so aufarbeiten, dass Lernfortschritt und Haftungsfragen gleichzeitig ernst genommen werden?",
+          "Welche Risiken entstehen, wenn finanzielle Sanktionen ohne transparente Kriterien ausgesprochen werden?",
+          "Welche Rolle spielt Dokumentationsqualität bei Konflikten über Verantwortung im technischen Berufsfeld?"
+        ],
+        "recherche_impulse": [
+          "Suche nach ?Fahrlässigkeit Arbeitsplatz Lernende Schaden Schweiz? mit einer Suchmaschine. Notiere zwei externe Kriterien zur fairen Einordnung.",
+          "Suche nach ?Konfliktgespräch Faktenblatt Betrieb? mit einer Suchmaschine. Notiere mindestens eine Methode, wie Fakten vor Gesprächen strukturiert werden."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "übertrage deinen Leitfaden auf einen Fall mit wiederholtem Fehler und höherem Schaden. Welche Ergänzungen brauchst du in der Vereinbarung?",
+        "analyse": "Was passiert, wenn Lernende Fehler aus Angst vor Sanktionen nicht mehr offen ansprechen: für die Person und für die Sicherheitskultur im Betrieb?",
+        "recherche": "Nutze die Suchbegriffe ?Schadenfall Lernende Klärungsprozess? und ?faire Fehlerkultur Betrieb?. Notiere drei Punkte: Mindestdaten, Gesprächsregel, Follow-up-Schritt.",
+        "praesentation": "Präsentiere deinen Faktencheck in 90 Sekunden einer Lerngruppe. Nenne abschliessend drei Regeln für eine belastbare Konfliktklärung.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

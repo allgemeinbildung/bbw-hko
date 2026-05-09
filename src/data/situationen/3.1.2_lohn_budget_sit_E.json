@@ -1,0 +1,358 @@
+{
+  "id": "3.1.2_lohn_budget_sit_E",
+  "modul": "3.1",
+  "modul_titel": "Lohn und Budget",
+  "situation": "E",
+  "sit_farbe": "#6C3483",
+  "sit_farbe_light": "#E8DAEF",
+  "sit_farbe_mid": "#9B59B6",
+  "titel": "Umzug mit 18",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "ch_2_2_budget_moegliche_budgetpositionen_fuer_lernende",
+    "ch_2_2_budget_fixe_kosten",
+    "ch_2_2_budget_variable_kosten"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Informatiker EFZ",
+    "betrieb": "Swisscom",
+    "ort": "Luzern"
+  },
+  "situation_text": "Ich bin Informatiker EFZ im 3. Lehrjahr bei Swisscom in Luzern. Im Sommer werde ich 18 und plane, mit einem Kollegen in eine WG zu ziehen. Die Miete beträgt CHF 550 pro Monat, die Krankenkasse CHF 230. Mein Nettolohn beträgt CHF 1 020. Im Lehrmittel (Kap. 2.2) lese ich, dass ich vor dem Mietvertragsabschluss ein realistisches Budget aufstellen sollte – nur mit echten Zahlen und ehrlich. Ich muss prüfen, ob der Lohn tatsächlich reicht oder ob ich auf etwas verzichten muss, bevor ich unterschreibe.",
+  "zahlen_tabelle": [
+    {
+      "label": "Nettolohn",
+      "wert": "CHF 1 020.00"
+    },
+    {
+      "label": "Miete (Fixkosten)",
+      "wert": "– CHF 550.00"
+    },
+    {
+      "label": "Krankenkasse (Fixkosten)",
+      "wert": "– CHF 230.00"
+    },
+    {
+      "label": "Verbleibend nach Hauptfixkosten",
+      "wert": "CHF 240.00"
+    }
+  ],
+  "leitfrage": "Erstelle ein realistisches Monatsbudget für deine erste WG und zeige, ob dein Lehrlingslohn für ein schuldenfreies Leben ausreicht.",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 2.2 (Seite 48–49) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Erkläre die drei Kategorien eines Budgets nach Kap. 2.2: Fixkosten, variable Kosten und Rückstellungen. Nenne je zwei Beispiele, die für eine WG-Situation typisch sind.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Erstelle ein vollständiges Monatsbudget für die WG-Situation. Setze realistische Beträge für alle variablen Kosten und Rückstellungen ein. Berechne den Saldo.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Dein Budgetsaldo ist –CHF 80. Du hast zwei Optionen: (a) Den WG-Umzug trotzdem planen und auf eine Lohnerhöhung im 4. Lehrjahr warten. (b) Den Umzug um ein Jahr verschieben und monatlich CHF 80 mehr sparen. Welche Option wählst du – und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.2 | S. 48–49",
+      "text": "Formuliere eine schriftliche Begründung (3–4 Sätze), warum ein realistisches Budget vor dem Unterzeichnen des Mietvertrags unverzichtbar ist. Stütze dich auf konkrete Zahlen aus deiner Budgetrechnung.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Budget für meine erste WG",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Fixkosten WG",
+      "punkte": [
+        "Miete CHF 550",
+        "Krankenkasse CHF 230",
+        "ÖV-Abo / Handy"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Variable Kosten",
+      "punkte": [
+        "Essen / Haushaltsartikel",
+        "Kleider / Körperpflege",
+        "Freizeit / Hobby"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Rückstellungen",
+      "punkte": [
+        "Zahnarzt / Optiker",
+        "Ferien / Unvorhergesehenes",
+        "Steuern"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Monatliche Kontrolle",
+        "Saldo positiv halten",
+        "Beratung falls nötig"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Vollständiges Monatsbudget",
+    "titel": "Format: Vollständiges Monatsbudget WG-Szenario",
+    "format_detail": "Vollständige Budgettabelle (Einnahmen / Fixkosten / Variable Kosten / Rückstellungen / Saldo) mit schriftlicher Einschätzung",
+    "beschreibung": "Du erstellst ein realistisches Monatsbudget für deine geplante WG-Situation und prüfst, ob der Lehrlingslohn für ein schuldenfreies Leben ausreicht.",
+    "schritte": [
+      {
+        "label": "Einnahmen festhalten",
+        "hint": "Trage deinen Nettolohn (CHF 1 020) ein. Gibt es weitere Einnahmen (Elternbeitrag, Nebenverdienst)? Nur reale Beträge eintragen."
+      },
+      {
+        "label": "Fixkosten auflisten",
+        "hint": "Miete CHF 550 und Krankenkasse CHF 230 sind gesetzt. Ergänze weitere Fixkosten: Handy-Abo, ÖV-Monatsabo, weitere regelmässige Zahlungen."
+      },
+      {
+        "label": "Variable Kosten schätzen",
+        "hint": "Schätze realistische Monatsbeträge für Essen, Kleider, Freizeit, Körperpflege. Nutze die Positionsliste aus Kap. 2.2 (Seite 48–49)."
+      },
+      {
+        "label": "Rückstellungen planen",
+        "hint": "Wie viel legst du monatlich zurück für Zahnarzt, Ferien, Steuern und Diverses? Plane mindestens CHF 50–80 pro Monat ein."
+      },
+      {
+        "label": "Saldo berechnen und beurteilen",
+        "hint": "Total Einnahmen – Total Ausgaben = Saldo. Ist der Saldo positiv? Wenn nicht: Welche Position passt du an – und ist der Umzug realistisch?"
+      }
+    ],
+    "schreib_label": "VOLLSTÄNDIGES MONATSBUDGET WG-SZENARIO HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget_moegliche_budgetpositionen_fuer_lernende"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Dein Nettolohn bleibt CHF 1 020, aber die Miete steigt auf CHF 680. Kannst du noch in die WG einziehen – und welche zwei Positionen würdest du als Erstes kürzen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn deine WG-Mitbewohnerin nach zwei Monaten auszieht und du die gesamte Miete von CHF 1 100 alleine tragen müsstest? Wie würde sich das auf dein Budget auswirken – und was wären deine Optionen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Kauffrau EFZ im 1. Lehrjahr mit Nettolohn CHF 700 plant ebenfalls, in eine WG einzuziehen (Miete CHF 420, Krankenkasse CHF 195). Erstelle für sie eine Kurzeinschätzung: Ist das realistisch?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 2.2 S. 48–49 erklärt die drei Kategorien. Suche dort nach den Begriffen Fixkosten, variable Kosten und Rückstellungen. Für WG-Beispiele: Miete = Fixkosten, Essen = variable Kosten, Zahnarzt = Rückstellung.",
+          "satzanfang": "Fixkosten in meiner WG sind z. B. ___ und ___, weil ___. Variable Kosten wären z. B. ___ und ___, weil ___. Rückstellungen plane ich für ___ und ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Miete CHF 550 und Krankenkasse CHF 230 sind bereits gegeben. Schätze jetzt die variablen Kosten realistisch (Essen ca. CHF 200–250, Handy ca. CHF 30–50, Freizeit ca. CHF 50–80) und plane mindestens CHF 50–80 Rückstellungen ein.",
+          "satzanfang": "Einnahmen: CHF 1 020. Fixkosten: Miete CHF 550 + Krankenkasse CHF 230 + ___ = CHF ___. Variable Kosten: CHF ___. Rückstellungen: CHF ___. Saldo: CHF ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Überlege, was passiert, wenn die Lohnerhöhung im 4. Lehrjahr ausbleibt oder geringer ausfällt. Welche Option gibt dir mehr Sicherheit — und welche Kosten könntest du bei Option (a) bereits jetzt senken?",
+          "satzanfang": "Ich wähle Option ___, weil ___. Mein stärkstes Argument: ___. Das Risiko dieser Option wäre, dass ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Nutze den konkreten Saldo aus LF2 als Beweis. Ein realistisches Budget zeigt, ob ein Vertrag unterschrieben werden darf oder nicht. Verwende Zahlen — keine allgemeinen Aussagen.",
+          "satzanfang": "Mein Budget zeigt: Einnahmen CHF 1 020 minus Ausgaben total CHF ___ = Saldo CHF ___. Das bedeutet: Ohne Budget hätte ich ___ und riskiert, dass ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Fixkosten",
+          "definition": "Regelmässige, gleichbleibende Ausgaben wie Miete oder Krankenkasse, die jeden Monat anfallen."
+        },
+        {
+          "term": "variable Kosten",
+          "definition": "Ausgaben, die monatlich schwanken, z. B. Essen oder Freizeit."
+        },
+        {
+          "term": "Rückstellungen",
+          "definition": "Geldbeträge, die monatlich zurückgelegt werden für unregelmässige, aber planbare Ausgaben."
+        },
+        {
+          "term": "Budgetsaldo",
+          "definition": "Das Ergebnis: Einnahmen minus alle Ausgaben. Positiv = Überschuss, negativ = Defizit."
+        },
+        {
+          "term": "Mietvertrag",
+          "definition": "Rechtlich bindende Vereinbarung zwischen Mieter und Vermieter über die Nutzung und den Preis einer Wohnung."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Gliedere deine Budgettabelle in vier Blöcke: (1) Einnahmen, (2) Fixkosten, (3) Variable Kosten, (4) Rückstellungen. Berechne zuerst die Totale je Block, dann den Saldo unten. Schreibe danach 2–3 Sätze: Ist der Umzug realistisch — ja oder nein — und warum?",
+        "beispiel": "Einnahmen: Nettolohn CHF 1 200\nFixkosten: Miete CHF 480 + KK CHF 210 = CHF 690\nVariable Kosten: Essen CHF 220 + Handy CHF 40 + Kleider CHF 30 = CHF 290\nRückstellungen: CHF 60\nSaldo: CHF 1 200 – CHF 1 040 = +CHF 160 → Umzug realistisch, kleiner Puffer vorhanden.",
+        "checkfragen": [
+          "□ Habe ich alle vier Blöcke (Einnahmen, Fixkosten, Variable, Rückstellungen) ausgefüllt?",
+          "□ Sind Miete CHF 550 und Krankenkasse CHF 230 als Fixkosten eingetragen?",
+          "□ Habe ich den Saldo berechnet und das Vorzeichen angegeben?",
+          "□ Schreibe ich im Schlussteil, ob der Umzug realistisch ist — mit Bezug auf meinen Saldo?",
+          "□ Sind meine variablen Kosten realistisch (nicht zu tief angesetzt)?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Im Szenario teilst du die Miete mit einem Kollegen. Was passiert rechtlich und finanziell, wenn deine WG-Mitbewohnerin nach zwei Monaten auszieht — und welche Klausel im Mietvertrag könnte dich schützen?",
+          "Ein Budgetsaldo von –CHF 80 klingt klein. Ab welchem negativen Saldo hört eine Situation auf, 'riskant' zu sein, und wird 'unhaltbar'? Definiere eine persönliche Grenzregel und begründe sie."
+        ],
+        "recherche_impulse": [
+          "Suche nach 'OR Art. 257d Mietzinsverzug Schweiz' mit einer Suchmaschine. Was passiert laut Gesetz, wenn ein Mieter die Miete nicht zahlt — und welche Fristen gelten? Notiere die wichtigste Konsequenz.",
+          "Suche nach 'WG Mietvertrag Risiken Schweiz Lernende' mit einer Suchmaschine. Welche drei konkreten Risiken werden für junge Mieterinnen und Mieter in der ersten WG am häufigsten genannt?"
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist nun 25, ausgelernter Informatiker bei Swisscom und ziehst alleine in eine Zweizimmerwohnung für CHF 1 400. Erstelle ein neues Budgetraster und zeige, welche Position sich am stärksten verändert hat — und ob der Puffer grösser oder kleiner wurde.",
+        "analyse": "Was passiert, wenn eine 18-jährige Person einen Mietvertrag unterschreibt, ohne ein Budget erstellt zu haben, und nach 3 Monaten den Mietzins nicht mehr zahlen kann? Betrachte die Konsequenzen aus Sicht der Person (Betreibung) und aus Sicht der Gesellschaft (Sozialkosten, Rechtssystem).",
+        "recherche": "Suche nach 'Betreibung Schweiz Ablauf SchK' mit einer Suchmaschine. Was sind die drei Schritte eines Betreibungsverfahrens, und wie lange bleibt ein Betreibungseintrag im Register sichtbar? Notiere die wichtigsten Fristen.",
+        "praesentation": "Erkläre deinem Kollegen, der plant, dieselbe WG zu teilen, in 90 Sekunden: Dein Budget, ob der Umzug realistisch ist, und welche eine Anpassung du empfiehlst. Kriterium: Er soll danach wissen, ob er den Vertrag unterschreiben soll oder nicht.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

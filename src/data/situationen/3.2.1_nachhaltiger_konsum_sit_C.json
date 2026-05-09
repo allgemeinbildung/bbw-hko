@@ -1,0 +1,414 @@
+{
+  "id": "3.2.1_nachhaltiger_konsum_sit_C",
+  "modul": "3.2",
+  "modul_titel": "Nachhaltiger Konsum",
+  "situation": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "2000 Watt — wer bin ich?",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "nachhaltigkeit",
+    "energie_ressourcen"
+  ],
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": [
+      "3.2.1"
+    ],
+    "lebensbezug": "3.2",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion multimedial"
+    ],
+    "sk": [
+      5,
+      9,
+      3
+    ]
+  },
+  "persona": {
+    "beruf": "Koch/Köchin EFZ",
+    "betrieb": "Hotel Schweizerhof",
+    "ort": "Bern"
+  },
+  "situation_text": "Ich bin Koch/Köchin EFZ im 1. Lehrjahr im Hotel Schweizerhof in Bern. Im ABU-Unterricht erfahre ich: Die Schweiz verbraucht pro Person durchschnittlich 5'000 Watt — das 2.5-fache des Ziels der sogenannten 2000-Watt-Gesellschaft. Meine Lehrperson bittet mich, meinen eigenen Energieverbrauch zu schätzen: Smartphone, Dusche, Mobilität, Ernährung. Das Ergebnis überrascht mich — ich liege weit über 2000 Watt. Im Lehrmittel (Kap. 9.2) lese ich ausserdem: Ein Grossteil des Energieverbrauchs ist grau — also in den Produkten versteckt, die ich kaufe und esse. Als werdende Fachperson in einem Grossküchenbetrieb weiss ich: Auch mein Betrieb verbraucht enorme Energiemengen. Ich soll eine Multimedia-Präsentation erstellen: Welche drei Massnahmen kann ich als Lernende/r wirklich umsetzen — privat oder im Betrieb?",
+  "zahlen_tabelle": [
+    {
+      "label": "Energieverbrauch CH pro Person (aktuell)",
+      "wert": "ca. 5'000 Watt"
+    },
+    {
+      "label": "Ziel 2000-Watt-Gesellschaft",
+      "wert": "2'000 Watt"
+    },
+    {
+      "label": "Anteil Ernährung am Energieverbrauch",
+      "wert": "ca. 30%"
+    },
+    {
+      "label": "Einsparpotenzial durch saisonale Ernährung",
+      "wert": "bis zu 40% im Ernährungsbereich"
+    }
+  ],
+  "leitfrage": "Welche drei Massnahmen kannst du als Lernende/r wirklich umsetzen, um deinen Energieverbrauch zu senken?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 9.2 und Kap. 9.3 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.3 | S. 235",
+      "text": "Erkläre das Konzept der 2000-Watt-Gesellschaft: Was wird damit angestrebt — und warum liegt die Schweiz heute noch weit über diesem Ziel?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.2 | S. 230",
+      "text": "Wähle drei Bereiche deines Alltags (z.B. Ernährung, Mobilität, Geräte) und schätze jeweils: Wie gross ist der Anteil grauer Energie darin? Nutze die Zahlen aus Kap. 9.2 als Orientierung.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 9.3 | S. 233",
+      "text": "Du hast zwei Ansätze: (a) Individuelle Massnahmen (z.B. weniger Fleisch, kürzere Duschen). (b) Kollektive Massnahmen (z.B. Betrieb überzeugen, saisonale Menüs). Welchen Ansatz wählst du als wirkungsvoller — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 9.3 | S. 235",
+      "text": "Formuliere in Ich-Form drei konkrete Massnahmen für deine Präsentation: je eine für privaten Alltag, für deinen Beruf als Koch/Köchin und eine politische oder gesellschaftliche Massnahme. Nenne jeweils die erwartete Wirkung.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "2000-Watt-Gesellschaft & mein Verbrauch",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Energieverbrauch heute",
+      "punkte": [
+        "CH-Durchschnitt: 5'000 W",
+        "Mein geschätzter Verbrauch",
+        "Grösste Verbrauchsbereiche"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Graue Energie im Alltag",
+      "punkte": [
+        "Ernährung: ~30% des Verbrauchs",
+        "Mobilität & Transport",
+        "Geräte & Kleidung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Massnahmen",
+      "punkte": [
+        "Privat: saisonal essen, weniger Fleisch",
+        "Betrieb: Menüplanung, Abfall",
+        "Gesellschaft: CO₂-Lenkungsabgabe"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Andere Länder im Vergleich",
+        "Was 2000 Watt im Alltag bedeutet",
+        "Transfer: Grossküche Energiebilanz"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Multimedia-Präsentation",
+    "titel": "Format: Energiebilanz-Präsentation (3 Folien)",
+    "format_detail": "Faktenorientierte Kurzpräsentation (3 Folien) mit persönlicher Energiebilanz und drei konkreten Massnahmen",
+    "beschreibung": "Du erstellst eine 3-Folien-Präsentation: Folie 1 zeigt deine persönliche Energiebilanz (Schätzung), Folie 2 erklärt das 2000-Watt-Ziel und Hauptverbrauchsquellen, Folie 3 formuliert drei realistische Massnahmen für dich persönlich.",
+    "schritte": [
+      {
+        "label": "Eigenen Verbrauch schätzen",
+        "hint": "Schätze deinen Wattverbrauch in den Bereichen: Ernährung, Mobilität, Wohnen, Geräte — nutze die Tabelle oben."
+      },
+      {
+        "label": "Graue Energie einordnen",
+        "hint": "Welche deiner Schätzwerte enthalten viel graue Energie? Markiere die zwei grössten Posten."
+      },
+      {
+        "label": "Massnahmen ableiten",
+        "hint": "Formuliere 3 Massnahmen: eine für privat, eine für deinen Betrieb, eine gesellschaftliche — aus Kap. 9.3."
+      },
+      {
+        "label": "Visualisierung gestalten",
+        "hint": "Nutze ein einfaches Balken- oder Kreisdiagramm für Folie 1. 8×8-Regel für Folien 2 und 3."
+      },
+      {
+        "label": "Wirkung benennen",
+        "hint": "Schreibe bei jeder Massnahme: 'Das würde meinen Verbrauch um ca. X senken, weil ...' — mit Zahl oder Prozentangabe."
+      }
+    ],
+    "schreib_label": "ENERGIEBILANZ-PRÄSENTATION (ENTWURF) HIER SKIZZIEREN",
+    "schreib_note": "-> wissen/energie_ressourcen"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Stell dir vor, du hast alle deine Massnahmen umgesetzt und liegst jetzt bei 3'500 Watt. Welche weitere Massnahme hätte den grössten Effekt — und warum ist sie schwieriger umzusetzen als die bisherigen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn der Kanton Bern beschliesst, einen CO₂-Aufschlag von CHF 0.20 pro kWh Strom einzuführen — für alle Privathaushalte? Was würde das für dich und dein Hotel bedeuten?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Detailhandelsfachfrau/-mann EFZ in einem Supermarkt. Wie liesse sich das 2000-Watt-Konzept auf das Sortiment (Frischware, Tiefkühlprodukte, Importware) anwenden?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.1",
+      "titel": "Bewusst konsumieren und handeln",
+      "kompetenz": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten beschreiben, wie wir nachhaltiger konsumieren können."
+    },
+    "ki_leitfragen": {
+      "offen": "Welche drei Massnahmen kannst du als Lernende/r wirklich umsetzen, um deinen Energieverbrauch zu senken?",
+      "argumentieren": "Wähle drei Bereiche deines Alltags (z.B. Ernährung, Mobilität, Geräte) und schätze jeweils: Wie gross ist der Anteil grauer Energie darin? Nutze die Zahlen aus Kap. 9.2 als Orientierung.",
+      "entscheiden": "Du hast zwei Ansätze: (a) Individuelle Massnahmen (z.B. weniger Fleisch, kürzere Duschen). (b) Kollektive Massnahmen (z.B. Betrieb überzeugen, saisonale Menüs). Welchen Ansatz wählst du als wirkungsvoller — und warum?",
+      "formulieren": "Formuliere in Ich-Form drei konkrete Massnahmen für deine Präsentation: je eine für privaten Alltag, für deinen Beruf als Koch/Köchin und eine politische oder gesellschaftliche Massnahme."
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_lernassistent",
+      "ai_redaktion"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 100,
+        "grund": "Ökologie & Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "zukunft_frage": "Wann wird die Schweiz das 2000-Watt-Ziel tatsächlich erreichen, wenn man den Import-Faktor (graue Energie im Ausland) ehrlich mitrechnet?",
+        "wild_card": "Künstliche Intelligenz und Quantencomputer optimieren Stromnetze so effizient, dass der Schweizer Verbrauch ohne Komfortverlust um 40% sinkt.",
+        "blind_spot": "Die Belastungsgrenzen des Stromnetzes bei einer vollständigen Elektrifizierung von Heizung und Verkehr."
+      },
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "Identität | SK 3 (Problemlösung)",
+        "lernziel": "Das 2000-Watt-Konzept verstehen und den eigenen Verbrauch (Graue Energie vs. Direkte Energie) analysieren können.",
+        "system_prompt_vorlage": "Du bist ein Energieberater am Hotel Schweizerhof. Hilf dem Lernenden, seinen geschätzten 5000-Watt-Verbrauch in Bereiche zu zerlegen. Frage gezielt nach dem Energie-Faktor bei Lebensmitteln (Kühlung vs. Transport).",
+        "testfragen": [
+          "Was bedeutet '2000 Watt Dauerleistung' pro Person?",
+          "Warum ist saisonale Ernährung (bis zu 40% Einsparung) ein so starker Hebel?",
+          "Welche Rolle spielt die graue Energie in Hotel-Produkten (z.B. Bettwäsche, Reinigung)?"
+        ]
+      },
+      "ai_redaktion": {
+        "score": 25,
+        "grund": "SK 3 (Problemlösung) | Diversität",
+        "textthema": "Von 5000 auf 2000 Watt - Mein persönlicher Plan für mehr Nachhaltigkeit.",
+        "stil_auftrag": [
+          "Sachlich-analytisch (Fokus auf Kilowattstunden und CO2-Zahlen)",
+          "Motivierend-appellativ (Fokus auf 'Wir schaffen das im Team')",
+          "Kritisch-hinterfragend (Fokus auf versteckte graue Energie im Hotelalltag)"
+        ],
+        "textformat_ziel": "Stellungnahme für die monatliche Küchen-Teamsitzung zur Reduktion von Food Waste."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 9.3 S. 235 erklärt das Ziel. 2000 Watt = Dauerstromverbrauch pro Person. CH liegt bei ca. 5'000 Watt — das 2.5-Fache des Ziels. Gründe: Wohnen, Mobilität, Ernährung. Die Zahlen oben helfen für die Antwort.",
+          "satzanfang": "Die 2000-Watt-Gesellschaft strebt an, dass ___. Die Schweiz liegt heute bei ca. ___ Watt — das ___-Fache des Ziels. Die Hauptgründe dafür sind ___ und ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Wähle drei Bereiche (z. B. Ernährung, Mobilität, Geräte). Für jeden: Schätze den Anteil grauer Energie (hoch = > 50%, tief = < 20%). Hinweis: Ernährung = ca. 30% des Gesamtverbrauchs laut Zahlenkasten.",
+          "satzanfang": "Bereich 1 — Ernährung: ca. ___ Watt, davon ca. ___% graue Energie, weil ___. Bereich 2 — Mobilität: ___. Bereich 3 — Geräte: ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Individuelle Massnahmen (z. B. saisonal essen) wirken sofort, aber nur auf eine Person. Kollektive Massnahmen (z. B. Hotel-Küche auf saisonal umstellen) brauchen mehr Aufwand, aber treffen viel mehr Menschen — und du arbeitest täglich damit.",
+          "satzanfang": "Ich wähle Ansatz ___, weil ___. Als Koch/Köchin im Hotel Schweizerhof kann ich konkret ___ tun, was für ___ Personen Wirkung zeigt."
+        },
+        {
+          "nr": 4,
+          "tipp": "Je eine Massnahme in Ich-Form: privat (z. B. Fleisch reduzieren), Beruf als Koch/Köchin (z. B. saisonale Menüplanung), gesellschaftlich (z. B. CO₂-Abgabe unterstützen). Nenne bei jeder die erwartete Wirkung in % oder Watt.",
+          "satzanfang": "Privat: Ich ___, was meinen Verbrauch um ca. ___% senkt. Als Koch/Köchin im Schweizerhof: Ich ___, das bewirkt ___. Gesellschaftlich: Ich befürworte ___, weil ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "2000-Watt-Gesellschaft",
+          "definition": "Politisches Ziel: Jede Person soll dauerhaft nicht mehr als 2000 Watt Energie verbrauchen."
+        },
+        {
+          "term": "Graue Energie",
+          "definition": "Energie, die vor der Nutzungsphase eines Produkts anfällt — z. B. bei Herstellung und Transport von Lebensmitteln."
+        },
+        {
+          "term": "Dauerleistung (Watt)",
+          "definition": "Energiemenge pro Sekunde, gemittelt über das ganze Jahr — misst den durchschnittlichen Energiehunger einer Person."
+        },
+        {
+          "term": "Saisonale Ernährung",
+          "definition": "Essen von Lebensmitteln, die zur Jahreszeit passen und regional angebaut werden — spart bis zu 40% Energieverbrauch im Ernährungsbereich."
+        },
+        {
+          "term": "CO₂-Lenkungsabgabe",
+          "definition": "Staatliche Steuer auf CO₂-Emissionen, die klimaschädliches Verhalten verteuern und umweltfreundliche Alternativen fördern soll."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle 3 Folien: Folie 1 = persönliche Energiebilanz (Schätzwerte in Watt für 3 Bereiche, z. B. als Balkenübersicht). Folie 2 = 2000-Watt-Ziel und warum CH bei 5'000 W liegt (mit Zahlen aus Tabelle). Folie 3 = drei Massnahmen (privat / Betrieb / gesellschaftlich) mit je einer erwarteten Wirkung. 8×8-Regel einhalten.",
+        "beispiel": "Folie 1: Ernährung: ~1'500 W | Mobilität: ~2'000 W | Geräte: ~500 W | Total: ~4'000 W\nFolie 2: CH: 5'000 W → Ziel: 2'000 W | Haupttreiber: Mobilität + Ernährung\nFolie 3: Privat: saisonal essen → -40% Ernährungsanteil | Betrieb: saisonales Menü im Schweizerhof | Gesellschaft: CO₂-Abgabe",
+        "checkfragen": [
+          "□ Enthält Folie 1 Schätzwerte in Watt für mindestens 3 Bereiche?",
+          "□ Erkläre ich in Folie 2, warum die CH bei 5'000 W liegt (nicht nur das Ziel)?",
+          "□ Benennt jede der drei Massnahmen in Folie 3 eine erwartete Wirkung?",
+          "□ Formuliere ich mindestens eine Massnahme, die ich als Koch/Köchin im Betrieb umsetzen kann?",
+          "□ Halte ich die 8×8-Regel ein?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Die Schweiz verbraucht 5'000 Watt pro Person, obwohl keine Einzelperson ein Gerät mit 3'000 Watt besitzt. Erkläre das Konzept der grauen Energie im Zusammenhang mit globalem Handel — wo 'versteckt' sich unser Energieverbrauch?",
+          "Als Koch/Köchin im Hotel Schweizerhof verarbeitest du täglich Zutaten aus verschiedenen Regionen. Welche drei Schritte in der Lebensmittelkette (z. B. Anbau, Transport, Kühlung) verbrauchen am meisten Energie — und wo hast du als Lernende/r direkten Einfluss?"
+        ],
+        "recherche_impulse": [
+          "Suche nach '2000 Watt Gesellschaft Schweiz Energiestrategie 2050' mit einer Suchmaschine. Welche offiziellen Zieldaten nennt die Schweizer Energiestrategie 2050 — und welche Sektoren sollen am stärksten reduzieren? Notiere zwei konkrete Zahlen.",
+          "Suche nach 'Lebensmittel CO2 Fussabdruck Rindfleisch vs Gemüse Vergleich' mit einer Suchmaschine. Wie viel CO₂ verursacht 1 kg Rindfleisch im Vergleich zu 1 kg Gemüse? Notiere die Zahlen und die Quelle."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist in 4 Jahren Küchenchef/Küchenchefin im Hotel Schweizerhof. Die Hotelleitung bittet dich, die Energiebilanz der Küche um 20% zu senken. Welche drei Massnahmen schlägst du vor — und welche kannst du als Küchenchef/Küchenchefin alleine entscheiden, welche brauchen Genehmigung der Hotelleitung?",
+        "analyse": "Was passiert ökologisch und wirtschaftlich, wenn alle Schweizer Grossküchenbetriebe auf 100% saisonale Menüs umstellen? Schätze: Wie viel CO₂ könnte die Gastronomie jährlich einsparen (Ausgangswert: Ernährung = 30% des Energieverbrauchs)?",
+        "recherche": "Suche nach 'Gastronomie Nachhaltigkeit Schweiz Label Zertifizierung' mit einer Suchmaschine. Welche Zertifizierungen oder Labels existieren für nachhaltige Restaurants und Hotellerie in der Schweiz? Notiere zwei konkrete Programme.",
+        "praesentation": "Erkläre deiner Klasse in 90 Sekunden: Was ist die 2000-Watt-Gesellschaft, wo liegt dein geschätzter Verbrauch, und welche eine Massnahme könnte das Hotel Schweizerhof umsetzen. Kriterium: Deine Mitschüler/innen kennen danach die 2000-Watt-Zahl und mindestens eine Massnahme für Grossküchen.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

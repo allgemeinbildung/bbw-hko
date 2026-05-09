@@ -1,0 +1,431 @@
+{
+  "id": "2.1_medien_fakenews_sit_E",
+  "modul": "2.1",
+  "modul_titel": "Meinungen bilden und mitgestalten",
+  "situation": "E",
+  "sit_farbe": "#6C3483",
+  "sit_farbe_light": "#E8DAEF",
+  "sit_farbe_mid": "#9B59B6",
+  "titel": "Wer steckt dahinter?",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "medien_quellenkritik"
+  ],
+  "nrlp": {
+    "nr": "2.1",
+    "nr_primary": [
+      "2.1"
+    ],
+    "lebensbezug": "2.1",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologie und digitale Transformation",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sk": [
+      1,
+      5,
+      6
+    ]
+  },
+  "persona": {
+    "beruf": "Kauffrau/Kaufmann EFZ",
+    "betrieb": "Post CH AG",
+    "ort": "St. Gallen"
+  },
+  "situation_text": "Ich bin Kauffrau/Kaufmann-Lernende im 1. Lehrjahr bei Post CH AG in St. Gallen. Für eine ABU-Diskussion über das Schweizer Asylrecht finde ich einen Artikel auf einer mir unbekannten Nachrichtenwebsite namens «schweiz-heute.info». Der Artikel ist gut geschrieben und enthält konkrete Zahlen — er beeinflusst meine Meinung stark. Mein Mitschüler warnt mich: Er hat diese Seite noch nie gesehen und weiss nicht, wer dahintersteckt. Im Lehrmittel (Kap. 20.7) lese ich, dass ich mit dem Google-Check herausfinden kann, wer eine Website betreibt und ob sie seriös ist. Ich will den Artikel nur zitieren, wenn ich sicher bin, dass die Quelle transparent und verlässlich ist. Wie prüfe ich, wer hinter dieser Website steckt — und wie bewerte ich die Qualität der Quelle?",
+  "zahlen_tabelle": [
+    {
+      "label": "Quelle",
+      "wert": "schweiz-heute.info (unbekannte Website)"
+    },
+    {
+      "label": "Inhalt",
+      "wert": "Artikel über Schweizer Asylrecht mit konkreten Zahlen"
+    },
+    {
+      "label": "Problem",
+      "wert": "Kein Impressum, keine bekannte Trägerschaft sichtbar"
+    }
+  ],
+  "leitfrage": "Wie prüfe ich, wer hinter einer unbekannten Website steckt — und wie bewerte ich die Qualität der Quelle?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 20.7 und Kap. 7.1 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Erkläre, was ein Impressum ist und warum es auf einer seriösen Nachrichtenwebsite vorhanden sein muss. Nenne zwei weitere Merkmale einer transparenten Quelle.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Führe einen Google-Check für «schweiz-heute.info» durch (oder eine ähnliche unbekannte Website). Prüfe: (1) Wer betreibt die Seite? (2) Gibt es ein Impressum? (3) Berichten andere seriöse Medien dasselbe? Notiere deine Befunde.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 20.7 | S. 445",
+      "text": "Du kannst den Betreiber der Website nicht eindeutig identifizieren. Du hast zwei Optionen: (a) Du zitierst den Artikel trotzdem, weil die Zahlen plausibel klingen. (b) Du suchst dieselben Zahlen auf einer offiziellen Quelle (z. B. SEM, SRF, Bundesrat.admin.ch). Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 7.1 | S. 186",
+      "text": "Verfasse einen kurzen Quellenkommentar (mind. 5 Sätze in Ich-Form): Bewerte «schweiz-heute.info» anhand der Kriterien Transparenz, Trägerschaft, Unterscheidung Meinung/Fakt und Vergleich mit seriösen Alternativen. Empfehle, ob die Quelle zitierwürdig ist.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Quellenkritik",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Merkmale seriöser Quellen",
+      "punkte": [
+        "Impressum vorhanden",
+        "Transparente Trägerschaft",
+        "Klar gekennzeichnete Meinung vs. Fakt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Google-Check Vorgehen",
+      "punkte": [
+        "Domain-Recherche (whois)",
+        "Suche nach Website-Betreiber",
+        "Andere Medien bestätigen?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Rote Flaggen",
+      "punkte": [
+        "Kein Impressum",
+        "Reisserische Sprache",
+        "Keine Autorenangaben"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Desinformation als politisches Werkzeug",
+        "Anonyme Websites in der Schweiz",
+        "Rechtsgrundlagen Impressumspflicht"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Google-Check-Protokoll + Quellenkommentar",
+    "titel": "Format: Quellenprüfprotokoll mit Bewertung",
+    "format_detail": "Strukturiertes Prüfprotokoll für eine unbekannte Website (Google-Check + Transparenz-Kriterien) und abschliessender Quellenkommentar mit Zitierwürdigkeitsurteil",
+    "beschreibung": "Du prüfst die unbekannte Website systematisch und verfasst einen Quellenkommentar, der dein Urteil zur Zitierwürdigkeit begründet.",
+    "schritte": [
+      {
+        "label": "Impressum suchen",
+        "hint": "Navigiere zur Website und suche nach einem Impressum oder «Über uns». Was findest du — oder was fehlt? Notiere."
+      },
+      {
+        "label": "Google-Check",
+        "hint": "Suche den Websitename + «Betreiber», «Impressum», «Fake News» in Google. Gibt es Warnungen oder Berichte über die Seite?"
+      },
+      {
+        "label": "Dritte Quelle vergleichen",
+        "hint": "Suche dieselben Zahlen oder Aussagen auf admin.ch, SRF News oder Swissinfo. Stimmen sie überein — oder weichen sie ab?"
+      },
+      {
+        "label": "Transparenz-Checkliste ausfüllen",
+        "hint": "Bewerte die Quelle anhand von fünf Kriterien (Impressum, Autor, Datum, Trägerschaft, Meinung vs. Fakt) mit je Ja/Nein."
+      },
+      {
+        "label": "Quellenkommentar schreiben",
+        "hint": "Verfasse in Ich-Form 5 Sätze: Befunde, Urteil (zitierwürdig / nicht zitierwürdig) und Empfehlung für alternative Quellen."
+      }
+    ],
+    "schreib_label": "QUELLENPRÜFPROTOKOLL + KOMMENTAR HIER ERARBEITEN",
+    "schreib_note": "-> wissen/medien_quellenkritik"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Die Website hat ein Impressum, aber der genannte Betreiber ist eine anonyme GmbH ohne weitere Informationen. Ist das ein rotes Flag — oder reicht das aus? Begründe.",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn deine ABU-Lehrperson die nicht zitierwürdige Quelle trotzdem akzeptiert, weil «der Inhalt ja stimmt»? Wie reagierst du?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Elektroinstallateur/in EFZ und dein Vorgesetzter schickt dir einen Link zu technischen «Normen», die auf einer unbekannten Website veröffentlicht sind. Wie wendest du dieselben Prüfschritte an?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 20.7 erklärt, was zu einer seriösen Website gehört. Suche dort: Was muss ein Impressum enthalten — und warum ist das rechtlich und journalistisch relevant?",
+          "satzanfang": "Ein Impressum ist wichtig, weil es ___ offenlegt. Zwei weitere Merkmale einer transparenten Quelle sind ___ und ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Kap. 20.7 beschreibt den Google-Check Schritt für Schritt. Prüfe für jeden Schritt konkret: Was hast du gesucht? Was hast du gefunden oder nicht gefunden?",
+          "satzanfang": "Beim Google-Check von «schweiz-heute.info» habe ich als erstes ___ gesucht. Den Betreiber habe ich ___ gefunden/nicht gefunden. Andere seriöse Medien berichten ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Als Post-Lernende trägst du Verantwortung für das, was du in der ABU-Diskussion zitierst. Kap. 20.7 erklärt: Warum ist die Herkunft einer Quelle für Glaubwürdigkeit entscheidend?",
+          "satzanfang": "Ich wähle Option ___, weil für die ABU-Diskussion über Asylrecht wichtig ist, dass meine Quelle ___ — «schweiz-heute.info» kann das nicht garantieren, da ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Dein Quellenkommentar braucht vier Teile in Ich-Form: (1) Befunde aus dem Check, (2) Urteil zitierwürdig ja/nein, (3) Begründung mit mindestens zwei Kriterien, (4) Empfehlung für eine Alternative. Mindestens 5 Sätze.",
+          "satzanfang": "«schweiz-heute.info» ist für mich nicht zitierwürdig, weil ___. Die Kriterien Impressum, Autor und Trägerschaft sind ___. Ich empfehle stattdessen ___ als verlässliche Alternative."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Impressum",
+          "definition": "Gesetzlich vorgeschriebene Pflichtangaben über Betreiber und Kontakt einer Website"
+        },
+        {
+          "term": "Quellenkritik",
+          "definition": "Systematische Überprüfung, ob eine Quelle verlässlich und transparent ist"
+        },
+        {
+          "term": "Zitierwürdigkeit",
+          "definition": "Eignung einer Quelle für den Einsatz in Argumentationen oder schriftlichen Texten"
+        },
+        {
+          "term": "Domain-Recherche (whois)",
+          "definition": "Online-Tool, das zeigt, wer eine Website-Domain registriert hat"
+        },
+        {
+          "term": "Trägerschaft",
+          "definition": "Organisation oder Person, die eine Website betreibt und finanziert"
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein Produkt hat zwei Teile: (1) Protokolltabelle — mach eine Tabelle mit 5 Kriterien (Impressum, Autor, Datum, Trägerschaft, Meinung vs. Fakt) und bewerte jedes mit Ja/Nein plus kurzer Notiz. (2) Quellenkommentar — 5 Sätze in Ich-Form: Befunde, Urteil, Begründung mit Kriterien, Empfehlung für eine Alternative.",
+        "beispiel": "Impressum | nicht auffindbar | Nein. — Autor | kein Name, kein Profil | Nein. — Datum | vorhanden | Ja.",
+        "checkfragen": [
+          "Enthält meine Protokolltabelle alle 5 Kriterien?",
+          "Habe ich für jedes Kriterium einen konkreten Befund (nicht nur Ja/Nein) notiert?",
+          "Begründet mein Quellenkommentar das Urteil mit mindestens zwei Kriterien?",
+          "Habe ich eine konkrete alternative Quelle empfohlen?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche gesellschaftliche Gefahr entsteht, wenn politische Desinformation gezielt über anonym betriebene Websites verbreitet wird — besonders bei Themen wie Asyl und Migration?",
+          "Inwiefern ist die fehlende Impressumspflicht für kleine Websites ein strukturelles Problem für die digitale Öffentlichkeit in der Schweiz?"
+        ],
+        "recherche_impulse": [
+          "Suche nach «Impressumspflicht Schweiz Gesetz» mit einer Suchmaschine. Welches Gesetz regelt in der Schweiz die Impressumspflicht für Websites — und welche Ausnahmen gibt es? Notiere den Gesetzesartikel und eine konkrete Ausnahme."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Stell dir vor, du bist in zwei Jahren Sachbearbeiterin bei der Post und sollst für eine interne Schulung Kriterien erarbeiten, nach denen Mitarbeitende externe Quellen für Berichte einschätzen. Erweitere dein Transparenz-Protokoll auf 8 Kriterien für einen professionellen Kontext.",
+        "analyse": "Was passiert, wenn anonyme Websites mit politischen Fehlinformationen über Asylthemen viral gehen — aus Sicht der betroffenen Personengruppen und aus Sicht der Behörden?",
+        "recherche": "Suche nach «Desinformation Asyl Schweiz SEM» mit einer Suchmaschine. Wie reagiert das Staatssekretariat für Migration auf Falschinformationen über das Asylrecht? Notiere eine konkrete Massnahme.",
+        "praesentation": "Erkläre deiner ABU-Klasse in 90 Sekunden, warum du «schweiz-heute.info» als nicht zitierwürdig einschätzt — und empfehle zwei verlässliche Alternativen mit je einer kurzen Begründung.",
+        "wissensknoten_extra": []
+      }
+    }
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "lebensbezug_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "thema_leitidee": "In einer Welt, in der täglich unzählige Informationen und Meinungen auf mich einwirken, wird es für mich immer wichtiger, mir eine eigene, fundierte Haltung zu erarbeiten.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Technologie und digitale Transformation",
+          "detail": "Digitalisierung bei politischer Meinungsbildung",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Politische Ethik und Verantwortung in digitalen Räumen",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Politik",
+          "detail": "Meinungsbildung und Mitgestaltung",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption mündlich",
+          "detail": "Informationen aus Medien kritisch aufnehmen und einordnen"
+        },
+        {
+          "modus": "Produktion mündlich",
+          "detail": "Standpunkte begründet und respektvoll vertreten"
+        },
+        {
+          "modus": "Produktion schriftlich und bildlich",
+          "detail": "Meinungsorientierte Texte und Protokolle verfassen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Zwischen relevanten und irrelevanten Quellen und Inhalten unterscheiden",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie prüfe ich, wer hinter einer unbekannten Website steckt — und wie bewerte ich die Qualität der Quelle?",
+      "argumentieren": "Führe einen Google-Check für «schweiz-heute.info» durch (oder eine ähnliche unbekannte Website). Prüfe: (1) Wer betreibt die Seite? (2) Gibt es ein Impressum? (3) Berichten andere seriöse Medien dasselbe? Notiere deine Befunde.",
+      "entscheiden": "Du kannst den Betreiber der Website nicht eindeutig identifizieren. Du hast zwei Optionen: (a) Du zitierst den Artikel trotzdem, weil die Zahlen plausibel klingen. (b) Du suchst dieselben Zahlen auf einer offiziellen Quelle (z. B. SEM, SRF, Bundesrat.admin.ch). Welche Option wählst du — und warum?",
+      "formulieren": "Verfasse einen kurzen Quellenkommentar (mind. 5 Sätze in Ich-Form): Bewerte «schweiz-heute.info» anhand der Kriterien Transparenz, Trägerschaft, Unterscheidung Meinung/Fakt und Vergleich mit seriösen Alternativen. Empfehle, ob die Quelle zitierwürdig ist."
+    },
+    "empfohlene_templates": [
+      "ai_prompt_duell",
+      "ai_zeitkapsel"
+    ],
+    "templates": {
+      "ai_prompt_duell": {
+        "score": 90,
+        "grund": "SK1 Quellenkritik · 3 Prompt-Strategien für Website-Transparenz-Check",
+        "duell_frage": "Wie zuverlässig kann eine KI beurteilen, ob eine unbekannte Nachrichtenwebsite seriös und zitierwürdig ist?",
+        "prompt_a_beispiel": "«Ist die Website schweiz-heute.info seriös?»",
+        "prompt_b_beispiel": "«Ich bin Kauffrau-Lernende im 1. Lehrjahr bei der Post CH AG in St. Gallen. Für meine ABU-Diskussion über das Schweizer Asylrecht finde ich einen Artikel auf einer unbekannten Website. Wie erkenne ich, ob «schweiz-heute.info» zitierwürdig ist?»",
+        "prompt_c_beispiel": "«Du bist Investigativjournalistin, spezialisiert auf Desinformation in der Schweiz. Ich zeige dir eine Website ohne Impressum, die Asylstatistiken veröffentlicht. Gib mir eine professionelle Einschätzung ihrer Vertrauenswürdigkeit und erkläre, welche konkreten Prüfschritte du durchführen würdest.»",
+        "blind_spot": "Die KI prüft keine Live-Websites — sie weiss nicht, ob «schweiz-heute.info» heute noch existiert, wer seit letztem Monat dahintersteckt oder ob das Impressum gerade erst nachgefügt wurde. Aktuelle Domain-Registrierungsdaten und lokale Impressumspflichten liegen ausserhalb ihres Zugriffs."
+      },
+      "ai_zeitkapsel": {
+        "score": 45,
+        "grund": "Technologie R2 · Zukunft anonymer Desinformationswebsites in der Schweiz",
+        "zukunft_frage": "Wie wird die Verbreitung von anonym betriebenen Desinformationswebsites in der Schweiz in den nächsten 15 Jahren aussehen — mehr oder weniger als heute?",
+        "wild_card": "Stell dir vor: Die Schweiz führt 2030 eine obligatorische Echtzeit-Registrierungspflicht für alle öffentlichen Nachrichtenwebsites ein, verknüpft mit einer staatlichen Transparenzdatenbank. Wie ändert das deine Prognose?",
+        "blind_spot": "Die KI extrapoliert Technologietrends linear — sie kann nicht einschätzen, ob die Schweizer Gesellschaft neue Medienregulierungen politisch akzeptiert oder ablehnt, und wie schnell Desinformations-Akteure auf veränderte rechtliche Rahmenbedingungen reagieren."
+      }
+    }
+  }
+}

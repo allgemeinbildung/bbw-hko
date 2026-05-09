@@ -1,0 +1,409 @@
+{
+  "id": "6.1_sit_D",
+  "modul": "6.1",
+  "modul_titel": "Steuern",
+  "situation": "D",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Das Familiengespräch",
+  "emotion_tag": "Konflikt",
+  "wissensknoten": [
+    "steuern"
+  ],
+  "nrlp": {
+    "lebensbezug": "6.1",
+    "gesellschaft": [
+      "Wirtschaft",
+      "Politik",
+      "Ethik"
+    ],
+    "sk": [
+      5,
+      6
+    ],
+    "sprachmodi": [],
+    "themen": [
+      "T6",
+      "T5"
+    ]
+  },
+  "persona": {
+    "beruf": "Kaufmann/Kauffrau EFZ",
+    "betrieb": "ZKB",
+    "ort": "Zürich"
+  },
+  "situation_text": "Du bist Kaufmann/Kauffrau im 3. Lehrjahr bei der ZKB in Zürich. Am Sonntagabend beim Familienessen sagt dein Grossvater empört: «Früher war man sparsamer! Heute verprasst Bern einfach alles — Fr. 24,5 Milliarden allein für soziale Wohlfahrt. Das ist doppelt so viel wie für Bildung und Verkehr. Das kann nicht mit rechten Dingen zugehen.» Du erinnerst dich an den ABU-Unterricht: Du kennst die drei Steuerzwecke und die Bundesbudget-Zahlen 2022. Du willst sachlich antworten — ohne einen Familienstreit zu riskieren.",
+  "zahlen_tabelle": [
+    {
+      "label": "Soziale Wohlfahrt (2022)",
+      "wert": "Fr. 24'540 Mio. — 31,5 %"
+    },
+    {
+      "label": "Verkehr",
+      "wert": "Fr. 10'426 Mio. — 13,4 %"
+    },
+    {
+      "label": "Bildung und Forschung",
+      "wert": "Fr. 8'477 Mio. — 10,9 %"
+    },
+    {
+      "label": "Sicherheit",
+      "wert": "Fr. 6'427 Mio. — 8,2 %"
+    }
+  ],
+  "leitfrage": "Wie erklärst du deinem Grossvater, wozu die Fr. 24,5 Milliarden dienen — und warum das nicht einfach «Verschwenden» ist?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 10.1 (Seite 245-246) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 245",
+      "text": "Nenne die drei Steuerzwecke (fiskalpolitisch, sozialpolitisch, wirtschaftspolitisch) und erkläre je ein konkretes Beispiel. Was gehört konkret zur «sozialen Wohlfahrt»?",
+      "feld_hoehe_mm": 14
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 246",
+      "text": "Die direkte Bundessteuer brachte 2022 Fr. 26,3 Mrd. ein — das ist mehr als die MWST (Fr. 23,5 Mrd.). Erkläre: Was ist der Unterschied zwischen direkten und indirekten Steuern — und welche davon zahlt auch dein Grossvater als Rentner?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 245",
+      "text": "Dein Grossvater schlägt vor: «Kürzen wir einfach alle Staatsausgaben um 20 %!» Option (a): Du stimmst zu — weniger Staat, mehr individuelle Freiheit. Option (b): Du widersprichst — und erklärst, welche konkreten Leistungen wegfallen würden. Welche Position vertrittst du — mit welchen Argumenten?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 4,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 245",
+      "text": "Formuliere 3 konkrete Sätze, mit denen du deinem Grossvater sachlich und respektvoll erklärst, warum die hohen Sozialausgaben einen Sinn ergeben — ohne eine Grundsatzdiskussion zu provozieren. Schreibe sie direkt an ihn gerichtet.",
+      "feld_hoehe_mm": 17
+    }
+  ],
+  "mindmap_zentrum": "Steuern und Staatsaufgaben",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 — Steuerzwecke",
+      "punkte": [
+        "Fiskalpolitisch",
+        "Sozialpolitisch",
+        "Wirtschaftspolitisch"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 — Bundesausgaben",
+      "punkte": [
+        "Soziale Wohlfahrt",
+        "Verkehr",
+        "Bildung",
+        "Verhältnisse"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 — Argumentation",
+      "punkte": [
+        "Grossvater-Sicht",
+        "Eigene Sicht",
+        "Gemeinsame Punkte"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 — Optional",
+      "punkte": [
+        "Historischer Vergleich",
+        "Staatsquote damals und heute"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Argumentarium",
+    "titel": "Argumentarium «Familiengespräch Steuern»",
+    "format_detail": "Je 3 Argumente + 1 gemeinsamer Punkt, ca. 10–12 Sätze",
+    "beschreibung": "Du bereitest dich auf das nächste Familiengespräch vor. Erstelle ein Argumentarium, das beide Seiten ernst nimmt: die Sparsamkeits-Perspektive deines Grossvaters und deine eigene informierte Sicht. Sachlich, ohne Angriff, mit konkreten Zahlen aus dem Bundesbudget 2022.",
+    "schritte": [
+      {
+        "label": "Position Grossvater verstehen",
+        "hint": "Was meint er mit «früher war man sparsamer»? Welche Werte stehen dahinter — Sparsamkeit, Eigenverantwortung, Misstrauen gegenüber dem Staat?"
+      },
+      {
+        "label": "Drei Steuerzwecke nachschlagen",
+        "hint": "Je ein Beispiel aus dem Bundesbudget 2022 wählen — welcher Ausgabenposten illustriert welchen Steuerzweck am besten?"
+      },
+      {
+        "label": "Drei Argumente für mehr Staatsausgaben formulieren",
+        "hint": "Mit CHF-Bezug aus den Bundesbudget-Zahlen — konkret und nachvollziehbar, nicht ideologisch"
+      },
+      {
+        "label": "Zwei Zugeständnisse formulieren",
+        "hint": "Was könnte kritisch hinterfragt werden? Wo hat dein Grossvater einen Punkt? Ehrliche Anerkennung stärkt die eigene Glaubwürdigkeit."
+      },
+      {
+        "label": "Gemeinsamen Punkt formulieren",
+        "hint": "Worüber können Grossvater und du sich einigen? Ein gemeinsamer Wert (z.B. Effizienz des Staates, Transparenz) als Brücke"
+      }
+    ],
+    "schreib_label": "ARGUMENTARIUM — HIER SCHREIBEN",
+    "schreib_note": "→ wissen/steuern · wie_funktioniert_es + zahlen_fakten"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Welcher der drei Steuerzwecke erklärt deiner Meinung nach am besten, warum soziale Wohlfahrt so viel kostet?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Was ist der Unterschied zwischen direkten und indirekten Steuern — welche zahlt ihr in eurer Situation?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Nenne eine Verbindung zwischen deiner Situation D und einer anderen Situation (A, B, C oder E) — was haben sie gemeinsam?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Wie hast du dich gefühlt, als du mit den Zahlen aus dem Bundesbudget argumentiert hast — und wie war es, beide Seiten ernst zu nehmen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo hat dir der Wissensknoten → wissen/steuern geholfen — und was fehlte dir noch für das Familiengespräch?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was nimmst du konkret mit — für deine Arbeit bei der ZKB, wo Kunden manchmal ähnliche Fragen zu Steuern und Staatsausgaben stellen?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Dein Grossvater fragt, ob die Bundesausgaben seit 1990 wirklich gestiegen sind. Welche Informationsquellen würdest du nutzen — und was würde das zeigen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn der Staat tatsächlich die Sozialausgaben um 20 % kürzte? Welche Bevölkerungsgruppen wären am stärksten betroffen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Stelle dir vor, du diskutierst das gleiche Thema nicht mit deinem Grossvater, sondern mit einem Unternehmer, der viele Steuern zahlt. Wie würdest du deine Argumente anders gewichten?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Schriftliche Beantwortung LF 1–4"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Pflichtäste 1–3 vollständig"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Format, Inhalt, Vollständigkeit"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Ast 4 (optional, Vertiefung)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "R1–R3 reflektiert und ehrlich"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "V1–V3 sorgfältig bearbeitet"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 — 45 min",
+      "text": "Einstieg: Situation lesen, Leitfragen LF1–LF2, Mindmap beginnen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 — 45 min",
+      "text": "Leitfragen LF3–LF4, Handlungsprodukt erarbeiten und verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenpuzzle, Reflexion R1–R3, Vorbereitungsfragen V1–V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=6.1_sit_D",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/6.1_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "6.1_sit_D",
+    "aliases": [
+      "sit_D_grossvater"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T6",
+      "T5"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.4",
+      "titel": "Steuern und Staatsaufgaben",
+      "kompetenz": "Ich kann die Bedeutung der Steuern für die Gesellschaft beschreiben und Staatsaufgaben anhand des Bundesbudgets erklären."
+    },
+    "ki_leitfragen": {
+      "offen": "Wie erklärst du deinem Grossvater, wozu die Fr. 24,5 Milliarden dienen — und warum das nicht einfach «Verschwenden» ist?",
+      "argumentieren": "Nenne die drei Steuerzwecke (S. 115). Wo ordnest du die 'Soziale Wohlfahrt' (AHV, IV, ALV) ein — und warum ist dieser Zweck für den sozialen Frieden wichtig?",
+      "entscheiden": "Dein Grossvater fordert eine pauschale Kürzung um 20%. Welche konkreten Leistungen (Wegbau, Bildung, Rentensicherheit) würden dann wegfallen — und welches Risiko gehst du ein?",
+      "formulieren": "Schreibe drei respektvolle Sätze für das Familiengespräch, die zeigen, dass du seine Kritik an der Bürokratie verstehst, aber den Nutzen der Staatsausgaben siehst."
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 75,
+        "grund": "Wirtschaft/Politik | SK 5 (Werthaltungen)",
+        "zukunft_frage": "Werden im Jahr 2060 aufgrund der Alterung 50% des Budgets in die Pflege fliessen? Wie werden junge Steuerzahler darauf reagieren?",
+        "wild_card": "Der Staat führt eine 'Roboter-Steuer' ein: Da Maschinen die Arbeit machen, zahlt niemand mehr Einkommenssteuern, aber der Staat finanziert alles über Produktivitäts-Abgaben.",
+        "blind_spot": "Die Gefahr des 'Generationen-Konflikts': Wenn junge Menschen das Gefühl haben, nur noch für die Vergangenheit (Schulden und Renten) zu arbeiten."
+      },
+      "ai_gegenpositionen": {
+        "score": 55,
+        "grund": "Ethik/Politik | SK 5 (Werthaltungen)",
+        "startposition": "Die Schweiz hat eine viel zu hohe Staatsquote. Wir müssen die Ausgaben um 20% kürzen, um den Bürgern mehr individuelle Freiheit und tiefere Steuern zu ermöglichen.",
+        "gegenargument_rahmen": [
+          "Soziale Sicherheit ist das Rückgrat unserer stabilen Demokratie.",
+          "Bildung und Forschung sind unsere einzige Ressource — hier darf nicht gespart werden.",
+          "Infrastruktur (Verkehr) sichert den Wohlstand von morgen."
+        ],
+        "position_frage": "Braucht es einen starken Staat für die Sicherheit oder einen schlanken Staat für die Freiheit?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 55,
+        "grund": "Ethik | SK 5 (Werthaltungen)",
+        "dilemma_frage": "Darf der Staat junge Menschen durch hohe Steuern finanziell belasten, um den gewohnten Lebensstandard der älteren Generation zu sichern?",
+        "tribunal_these": "Steuergerechtigkeit bedeutet nicht nur Umverteilung von Reich zu Arm, sondern auch Solidarität zwischen den Generationen — unabhängig vom finanziellen Nutzen.",
+        "werte_hinweis": "Denk an den Wert der 'Solidarität' und die langfristigen Folgen einer gespaltenen Gesellschaft."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 10.1 S. 245 nennt die drei Steuerzwecke: fiskalpolitisch = Einnahmen für den Staat, sozialpolitisch = Umverteilung und soziale Sicherheit, wirtschaftspolitisch = Steuerung der Wirtschaft. Zur sozialen Wohlfahrt gehören: AHV, IV, ALV, Sozialhilfe, Ergänzungsleistungen.",
+          "satzanfang": "Die drei Steuerzwecke sind: (1) fiskalpolitisch: z. B. ___. (2) sozialpolitisch: z. B. ___. (3) wirtschaftspolitisch: z. B. ___. Die 'soziale Wohlfahrt' umfasst konkret: ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Direkte Steuern = direkt auf Einkommen/Vermögen der Person (z. B. Einkommensteuer, Vermögensteuer). Indirekte Steuern = auf Konsum und Waren (z. B. MWST). Dein Grossvater als Rentner zahlt zwar weniger Einkommensteuer, aber die MWST zahlt er auf jede Einkauf.",
+          "satzanfang": "Direkte Steuern treffen ___ direkt, z. B. ___. Indirekte Steuern treffen ___, z. B. die MWST. Dein Grossvater als Rentner zahlt noch ___ direkte Steuern, aber ___ indirekte Steuern bei jedem ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option (b) ist die sachlichere Antwort. Überlege: Was fällt weg bei 20% Kürzung? CHF 24,5 Mrd. × 20% = CHF 4,9 Mrd. weniger für soziale Wohlfahrt. Das trifft konkret: AHV-Renten, Invalidenversicherung, Sozialhilfe. Wer würde das am stärksten spüren?",
+          "satzanfang": "Ich vertrete Position ___, weil ___. Bei einer Kürzung um 20% würden konkret ___ wegfallen. Das würde besonders ___ treffen. Mein stärkstes Argument: ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Schreibe 3 Sätze direkt an deinen Grossvater. Beginne mit etwas, worüber ihr einig seid (z. B. Sparsamkeit ist wichtig). Dann zeige sachlich, warum der Grossteil der Sozialausgaben sinnvoll ist — mit einer Zahl aus dem Bundesbudget.",
+          "satzanfang": "Satz 1: 'Grossvater, ich verstehe, dass CHF 24,5 Milliarden viel klingt. Aber ___.' Satz 2: 'Zum Beispiel ___ (konkrete Leistung), das kostet CHF ___.' Satz 3: 'Das nützt auch dir, weil ___'"
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Fiskalpolitisch",
+          "definition": "Steuerzweck zur Deckung der Staatsausgaben — Steuern füllen die Staatskasse."
+        },
+        {
+          "term": "Sozialpolitisch",
+          "definition": "Steuerzweck zur Umverteilung und sozialen Absicherung — z. B. AHV, IV, Sozialhilfe."
+        },
+        {
+          "term": "Wirtschaftspolitisch",
+          "definition": "Steuerzweck zur Steuerung der Wirtschaft — z. B. Öko-Abgaben oder Investitionsanreize."
+        },
+        {
+          "term": "Direkte Steuer",
+          "definition": "Steuer, die direkt auf Einkommen oder Vermögen einer Person erhoben wird (z. B. Einkommensteuer)."
+        },
+        {
+          "term": "Indirekte Steuer",
+          "definition": "Steuer auf Waren und Dienstleistungen (z. B. MWST) — trifft alle Konsumentinnen und Konsumenten gleichermassen."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Gliedere dein Argumentarium in 5 Abschnitte: (1) Position des Grossvaters verstehen, (2) drei Argumente für Sozialausgaben (je mit Zahl), (3) zwei Zugeständnisse (was du nachvollziehen kannst), (4) gemeinsamer Punkt (z. B. Transparenz, Effizienz), (5) Schlusssatz. Halte ca. 10–12 Sätze ein.",
+        "beispiel": "Position Grossvater: Er findet CHF 24,5 Mrd. für Wohlfahrt zu viel — möchte Sparsamkeit.\nArgument 1: AHV kostet CHF 15 Mrd. — das sichert Renten für alle, auch für Grossvater.\nZugeständnis 1: Ja, Bürokratiekosten könnten transparenter ausgewiesen werden.\nGemeinsamer Punkt: Wir sind beide für einen Staat, der effizient mit Geld umgeht.",
+        "checkfragen": [
+          "□ Erkläre ich die Position des Grossvaters respektvoll (ohne Angriff)?",
+          "□ Stütze ich alle drei Argumente auf konkrete CHF-Zahlen aus dem Bundesbudget?",
+          "□ Mache ich mindestens zwei Zugeständnisse (wo der Grossvater einen Punkt hat)?",
+          "□ Formuliere ich einen gemeinsamen Wert als Brücke?",
+          "□ Vermeide ich Sätze wie 'Du hast Unrecht' oder 'Das ist falsch'?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Dein Grossvater sagt, 'früher war man sparsamer'. Welche historischen Daten widersprechen dem — und wie hat sich die Staatsquote (Staatsausgaben in % des BIP) in der Schweiz seit 1970 entwickelt? Was erklärt den Anstieg?",
+          "Die AHV wird von der arbeitenden Bevölkerung für die Rentner finanziert. In 30 Jahren werden doppelt so viele Rentner von halb so vielen Arbeitenden finanziert. Welche zwei politischen Optionen gibt es — und welche ist sozial fairer?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Bundesbudget Schweiz 2023 Ausgaben soziale Wohlfahrt Anteil' mit einer Suchmaschine. Welche drei grössten Posten umfasst die soziale Wohlfahrt — und wie gross ist ihr Anteil am Gesamtbudget? Notiere die Zahlen.",
+          "Suche nach 'AHV Reform Schweiz 2024 Finanzierung Zukunft' mit einer Suchmaschine. Welche Massnahmen wurden oder werden diskutiert, um die AHV langfristig zu sichern? Notiere zwei konkrete Reformvorschläge."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist in 5 Jahren Kaufmann/Kauffrau in der Finanzabteilung der ZKB und bekommst den Auftrag, für die interne Schulung einen 1-seitigen Überblick über die drei Steuerzwecke zu erstellen — mit je einem Praxisbeispiel aus dem Bankwesen. Erstelle den Überblick.",
+        "analyse": "Was passiert gesellschaftlich, wenn die Sozialhilfeausgaben um 20% gekürzt werden? Betrachte die Konsequenzen für (1) betroffene Personen direkt, (2) andere Staatskosten (Kriminalität, Gesundheit), (3) sozialen Frieden.",
+        "recherche": "Suche nach 'Staatsquote Schweiz Vergleich OECD Länder 2023' mit einer Suchmaschine. Wie hoch ist die Schweizer Staatsquote im internationalen Vergleich — und in welchem Land ist sie am tiefsten? Notiere zwei Länder mit Werten.",
+        "praesentation": "Erkläre deinem Grossvater in 90 Sekunden, warum die CHF 24,5 Mrd. für soziale Wohlfahrt sinnvoll sind — mit einer konkreten Zahl. Kriterium: Er soll danach eine konkrete Leistung kennen, die er selbst in Anspruch nehmen könnte.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+---
+import Situationen from '../../../layouts/Situationen.astro'
+import { situationenIndex, lehrjahrForEntry } from '../../../lib/situationen'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role, abteilung')
+  .eq('id', user.id)
+  .single()
+const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+
+const id = Astro.params.id as string
+const entry = situationenIndex.find((e) => e.id === id)
+if (!entry) return Astro.redirect('/situationen?error=Situation%20nicht%20gefunden')
+
+const { data: existing } = await Astro.locals.supabase
+  .from('feedbacks')
+  .select('*')
+  .eq('situation_id', id)
+  .eq('lp_id', user.id)
+  .order('created_at', { ascending: false })
+  .limit(1)
+  .maybeSingle()
+
+const lj = lehrjahrForEntry(entry)
+const initial = existing ?? {
+  klasse: '',
+  lehrjahr: lj ?? '',
+  abteilung: profile?.abteilung ?? '',
+  getestet_am: '',
+  dauer_lektionen: '',
+  tauglichkeit: null,
+  qualitaet: null,
+  schwierigkeit: null,
+  motivation: null,
+  weiterempfehlung: null,
+  was_funktionierte: '',
+  was_nicht_funktionierte: '',
+  aenderungsvorschlaege: '',
+  eigene_anpassungen: '',
+  anmerkungen: '',
+  status: 'entwurf',
+}
+const initialJson = JSON.stringify(initial)
+---
+<Situationen title={`Feedback: ${entry.titel ?? entry.id}`} role={role}>
+  <a href={`/situationen/${entry.id}`} class="text-sm text-slate-500 hover:text-slate-800 inline-flex items-center gap-1 mb-4">← Zurück zur Situation</a>
+
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Erfahrungsbericht</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      <span class="font-mono">{entry.kompetenz_nr}</span> · Sit {entry.sit_letter} ·
+      <span class="font-medium">{entry.titel}</span>
+    </p>
+  </div>
+
+  <div
+    x-data={`feedbackForm(${initialJson})`}
+    class="space-y-5"
+  >
+    <div x-show="message" x-cloak class="rounded-md p-3 text-sm" :class="messageType === 'error' ? 'bg-red-50 text-red-700 border border-red-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'">
+      <span x-text="message"></span>
+    </div>
+
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+      <h2 class="text-base font-semibold">Kontext der Erprobung</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+        <div>
+          <label class="field-label">Klasse</label>
+          <input type="text" x-model="form.klasse" class="input mt-1" placeholder="z.B. FaGe24a" />
+        </div>
+        <div>
+          <label class="field-label">Lehrjahr</label>
+          <select x-model="form.lehrjahr" class="input mt-1">
+            <option value="">—</option>
+            <template x-for="n in [1,2,3,4]" :key="n">
+              <option :value="n" x-text="n"></option>
+            </template>
+          </select>
+        </div>
+        <div>
+          <label class="field-label">Abteilung</label>
+          <input type="text" x-model="form.abteilung" class="input mt-1" />
+        </div>
+        <div>
+          <label class="field-label">Getestet am</label>
+          <input type="date" x-model="form.getestet_am" class="input mt-1" />
+        </div>
+        <div>
+          <label class="field-label">Dauer (Lektionen)</label>
+          <input type="number" step="0.5" min="0" x-model.number="form.dauer_lektionen" class="input mt-1" placeholder="z.B. 3" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-4">
+      <h2 class="text-base font-semibold">Bewertung (1 = tief / nicht zutreffend, 5 = hoch / sehr gut)</h2>
+
+      <template x-for="q in ratingQuestions" :key="q.field">
+        <div>
+          <div class="flex items-baseline justify-between gap-3 mb-1">
+            <label class="text-sm font-medium text-slate-800" x-text="q.label"></label>
+            <span class="text-xs text-slate-400" x-text="q.hint"></span>
+          </div>
+          <div class="radio-group">
+            <template x-for="n in [1,2,3,4,5]" :key="n">
+              <label class="radio-pill" :class="form[q.field] === n ? 'selected' : ''">
+                <input type="radio" :name="q.field" :value="n" x-model.number="form[q.field]" class="sr-only" />
+                <span x-text="n"></span>
+              </label>
+            </template>
+            <button type="button" class="radio-pill text-slate-400" @click="form[q.field] = null">—</button>
+          </div>
+        </div>
+      </template>
+
+      <div>
+        <label class="text-sm font-medium text-slate-800 block mb-1">Würdest du diese Situation anderen LPs weiterempfehlen?</label>
+        <div class="radio-group">
+          <label class="radio-pill" :class="form.weiterempfehlung === true ? 'selected' : ''">
+            <input type="radio" name="weiter" :value="true" @click="form.weiterempfehlung = true" class="sr-only" /> Ja
+          </label>
+          <label class="radio-pill" :class="form.weiterempfehlung === false ? 'selected' : ''">
+            <input type="radio" name="weiter" :value="false" @click="form.weiterempfehlung = false" class="sr-only" /> Nein
+          </label>
+          <button type="button" class="radio-pill text-slate-400" @click="form.weiterempfehlung = null">—</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+      <h2 class="text-base font-semibold">Erfahrungen im Detail</h2>
+      <div>
+        <label class="field-label">Was hat gut funktioniert?</label>
+        <textarea x-model="form.was_funktionierte" rows="3" class="input mt-1" placeholder="Was war für die Lernenden besonders wertvoll?"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Was hat nicht funktioniert?</label>
+        <textarea x-model="form.was_nicht_funktionierte" rows="3" class="input mt-1" placeholder="Stolpersteine, Missverständnisse, Zeitprobleme…"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Vorschläge zur Verbesserung</label>
+        <textarea x-model="form.aenderungsvorschlaege" rows="3" class="input mt-1" placeholder="Was sollte am Material angepasst werden?"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Eigene Anpassungen, die ihr gemacht habt</label>
+        <textarea x-model="form.eigene_anpassungen" rows="3" class="input mt-1" placeholder="Habt ihr die Situation/das Handlungsprodukt umformuliert? Wie?"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Weitere Anmerkungen</label>
+        <textarea x-model="form.anmerkungen" rows="2" class="input mt-1"></textarea>
+      </div>
+    </section>
+
+    <div class="flex items-center justify-between gap-3 pt-2">
+      <p class="text-xs text-slate-500">
+        Status: <span class="font-mono" x-text="form.status"></span>
+        <template x-if="existingId">
+          <span class="ml-2">· Bestehender Bericht — Änderungen werden gespeichert.</span>
+        </template>
+      </p>
+      <div class="flex gap-2">
+        <button type="button" @click="save('entwurf')" :disabled="saving" class="py-2 px-4 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50 disabled:opacity-50">
+          Als Entwurf speichern
+        </button>
+        <button type="button" @click="save('eingereicht')" :disabled="saving" class="py-2 px-4 rounded-md text-white text-sm font-medium disabled:opacity-50" style="background: var(--brand)">
+          Feedback einreichen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ situationId: entry.id, existingId: existing?.id ?? null }}>
+    window.feedbackForm = function (initial) {
+      return {
+        situationId,
+        existingId,
+        form: { ...initial },
+        saving: false,
+        message: '',
+        messageType: 'success',
+        ratingQuestions: [
+          { field: 'tauglichkeit', label: 'Tauglichkeit für meinen Unterricht', hint: '1 = unbrauchbar · 5 = sehr gut nutzbar' },
+          { field: 'qualitaet', label: 'Qualität von Situation + Handlungsprodukt', hint: '1 = mangelhaft · 5 = exzellent' },
+          { field: 'schwierigkeit', label: 'Schwierigkeit für die Lernenden', hint: '1 = zu leicht · 5 = zu anspruchsvoll' },
+          { field: 'motivation', label: 'Motivation/Engagement der Lernenden', hint: '1 = uninteressiert · 5 = sehr engagiert' },
+        ],
+        async save(targetStatus) {
+          this.saving = true
+          this.message = ''
+          try {
+            const payload = {
+              ...this.form,
+              situation_id: this.situationId,
+              status: targetStatus,
+              lehrjahr: this.form.lehrjahr === '' ? null : Number(this.form.lehrjahr),
+              dauer_lektionen: this.form.dauer_lektionen === '' || this.form.dauer_lektionen == null ? null : Number(this.form.dauer_lektionen),
+              getestet_am: this.form.getestet_am || null,
+            }
+            const res = this.existingId
+              ? await fetch(`/api/feedbacks/${this.existingId}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+              : await fetch(`/api/feedbacks`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+            const json = await res.json().catch(() => ({}))
+            if (!res.ok) throw new Error(json.error || 'Speichern fehlgeschlagen.')
+            if (json.data?.id && !this.existingId) this.existingId = json.data.id
+            this.form.status = targetStatus
+            this.messageType = 'success'
+            this.message = targetStatus === 'eingereicht' ? 'Feedback eingereicht. Danke!' : 'Entwurf gespeichert.'
+            if (targetStatus === 'eingereicht') {
+              setTimeout(() => { window.location.href = `/situationen/${this.situationId}?success=Feedback%20eingereicht.` }, 700)
+            }
+          } catch (err) {
+            this.messageType = 'error'
+            this.message = err.message
+          } finally {
+            this.saving = false
+          }
+        },
+      }
+    }
+  </script>
+</Situationen>

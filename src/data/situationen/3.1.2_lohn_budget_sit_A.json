@@ -1,0 +1,356 @@
+{
+  "id": "3.1.2_lohn_budget_sit_A",
+  "modul": "3.1",
+  "modul_titel": "Lohn und Budget",
+  "situation": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Der erste Lohnausweis",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "ch_2_1_lohnbestandteile_bruttolohn_nettolohn",
+    "ch_2_1_lohnbestandteile_lohnabzuege"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Detailhandelsfachfrau EFZ",
+    "betrieb": "Migros",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Detailhandelsfachfrau EFZ im 1. Lehrjahr bei der Migros in Winterthur. Im Lehrvertrag ist ein Monatslohn von CHF 950 brutto vereinbart. Heute habe ich meine erste Lohnabrechnung erhalten – auf dem Konto gutgeschrieben wurden aber nur CHF 926.70. Ich verstehe die verschiedenen Abzüge auf der Lohnabrechnung nicht und bin unsicher, ob die Abzüge korrekt und gesetzlich erlaubt sind. Darf mein Lehrbetrieb CHF 23.30 abziehen – und für was genau?",
+  "zahlen_tabelle": [
+    {
+      "label": "Bruttolohn (vereinbart)",
+      "wert": "CHF 950.00"
+    },
+    {
+      "label": "UVG-Beitrag (1.45%)",
+      "wert": "– CHF 13.80"
+    },
+    {
+      "label": "KTG-Beitrag (1.00%)",
+      "wert": "– CHF 9.50"
+    },
+    {
+      "label": "Nettolohn (ausbezahlt)",
+      "wert": "CHF 926.70"
+    }
+  ],
+  "leitfrage": "Darf mein Lehrbetrieb diese Abzüge vom Lohn vornehmen – und habe ich genau so viel Nettolohn erhalten, wie es das Gesetz vorsieht?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 2.1 (Seite 46f.) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.1 | S. 46",
+      "text": "Erkläre den Unterschied zwischen Brutto- und Nettolohn. Was bedeuten die Abkürzungen AHV, IV, EO und ALV auf der Lohnabrechnung?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.1 | S. 46f.",
+      "text": "Berechne anhand der Tabelle in Kap. 2.1, welche Abzüge für eine 16-jährige Lernende gesetzlich vorgesehen sind. Welchen Nettolohn ergibt eine Berechnung ausgehend von CHF 950 brutto?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.1 | S. 46f.",
+      "text": "Auf der Lohnabrechnung steht ein Abzug «Schulbesuch: CHF 30». Darf der Lehrbetrieb diesen Abzug vornehmen? (a) Ja, Schulkosten sind eine erlaubte Abzugsart. (b) Nein, Schulbesuch darf nicht abgezogen werden – diese Kosten trägt der Lehrbetrieb vollumfänglich. Entscheide und begründe mit Kap. 2.1.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.1 | S. 46f.",
+      "text": "Formuliere eine kurze Erklärung (3–5 Sätze) an deine Eltern, in der du darlegst, was auf deiner Lohnabrechnung steht und warum der ausbezahlte Betrag vom vereinbarten Lohn abweicht.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Meine erste Lohnabrechnung",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Lohnbestandteile",
+      "punkte": [
+        "Vereinbarter Lohn",
+        "Lohnzusätze",
+        "Bruttolohn"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Erlaubte Abzüge",
+      "punkte": [
+        "AHV/IV/EO/ALV",
+        "NBU-Prämie",
+        "BVG / KTG"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Verbotene Abzüge",
+      "punkte": [
+        "Schulbesuch",
+        "QV-Prüfung",
+        "ÜK-Kurse"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Spesenentschädigung",
+        "Sozialzulagen",
+        "Arbeitgeberbeitrag 50%"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Annotierte Lohnabrechnung + E-Mail",
+    "titel": "Format: Annotierte Lohnabrechnung + Erklärungs-E-Mail",
+    "format_detail": "Annotierte Muster-Lohnabrechnung mit markierten Abzügen + kurze E-Mail an Eltern mit Erklärung",
+    "beschreibung": "Du prüfst eine Lohnabrechnung auf Korrektheit und erklärst deinen Eltern schriftlich, warum der Nettolohn tiefer ist als der vereinbarte Bruttolohn.",
+    "schritte": [
+      {
+        "label": "Abzüge identifizieren",
+        "hint": "Liste alle Positionen der Beispiel-Lohnabrechnung (Kap. 2.1, Seite 46f.) auf und markiere: Pflichtabzug, freiwillig oder verboten."
+      },
+      {
+        "label": "Korrektheit prüfen",
+        "hint": "Vergleiche die Abzüge mit der Tabelle in Kap. 2.1. Stimmen die Prozentsätze? Gibt es unerlaubte Abzüge?"
+      },
+      {
+        "label": "Nettolohn berechnen",
+        "hint": "Berechne den Nettolohn ausgehend von CHF 950 brutto mit den korrekten gesetzlichen Abzügen (UVG 1.45%, KTG 1.00%)."
+      },
+      {
+        "label": "Fehler markieren",
+        "hint": "Gibt es auf der Abrechnung eine Position, die nicht abgezogen werden darf? Markiere sie und begründe kurz."
+      },
+      {
+        "label": "E-Mail formulieren",
+        "hint": "Schreibe 3–5 Sätze an deine Eltern: Was steht auf der Lohnabrechnung, und warum ist der ausbezahlte Betrag tiefer als CHF 950?"
+      }
+    ],
+    "schreib_label": "LOHNABRECHNUNG PRÜFEN + E-MAIL HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_1_lohnbestandteile_bruttolohn_nettolohn"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du bist 17 Jahre alt und verdienst CHF 800 brutto. Welche Abzüge darf dein Lehrbetrieb vornehmen – und welche sind gesetzlich verboten?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn dein Arbeitgeber versehentlich auch seinen Arbeitgeberbeitrag (50%) von deinem Lohn abzieht? Wie würde sich das auf deinen Nettolohn auswirken – und was könntest du tun?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Ein Polymechaniker EFZ im 3. Lehrjahr verdient CHF 1 100 brutto und ist 19 Jahre alt. Berechne seinen ungefähren Nettolohn und erkläre, welche Abzüge nun im Vergleich zu einem 16-Jährigen zusätzlich anfallen.",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 2.1 S. 46 erklärt alle Abzüge mit Abkürzungen und Prozentsätzen. Bruttolohn = vereinbarter Lohn vor Abzügen. Nettolohn = was tatsächlich ausbezahlt wird.",
+          "satzanfang": "Bruttolohn ist ___, Nettolohn ist ___. AHV steht für ___ und sichert ___. IV steht für ___ und zahlt, wenn ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Schaue in die Tabelle in Kap. 2.1: Für Lernende unter 18 fallen nur UVG (1.45%) und allenfalls KTG (1.00%) an. Rechne: CHF 950 × 0.0145 = CHF 13.78. KTG: CHF 950 × 0.01 = CHF 9.50.",
+          "satzanfang": "Für eine 16-jährige Lernende werden abgezogen: UVG CHF ___ (1.45%) und KTG CHF ___ (1.00%). Nettolohn: CHF 950 – CHF ___ – CHF ___ = CHF ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Kap. 2.1 enthält eine klare Regel zu Schulkosten: Die Berufsschule ist Pflicht im Rahmen der Ausbildung — wer trägt diese Kosten gesetzlich? Suche den Abschnitt zu erlaubten und verbotenen Abzügen.",
+          "satzanfang": "Ich entscheide mich für Option ___, weil ___. Laut Kap. 2.1 ist ein Abzug für Schulbesuch ___, weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "3–5 Sätze in Ich-Form an die Eltern. Erkläre: Was ist Bruttolohn, welche Abzüge gibt es, warum ist der Nettolohn tiefer als CHF 950. Vermeide zu viele Fachbegriffe.",
+          "satzanfang": "Liebe Eltern, auf meiner Lohnabrechnung steht ein Bruttolohn von CHF 950. Abgezogen werden ___. Das ergibt einen Nettolohn von CHF ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Bruttolohn",
+          "definition": "Der vereinbarte Lohn vor allen Abzügen, wie im Lehrvertrag festgehalten."
+        },
+        {
+          "term": "Nettolohn",
+          "definition": "Der tatsächlich ausbezahlte Betrag nach Abzug aller Sozialversicherungen und Prämien."
+        },
+        {
+          "term": "UVG (NBU)",
+          "definition": "Unfallversicherung für Nichtberufsunfälle — Pflichtabzug für alle Arbeitnehmenden."
+        },
+        {
+          "term": "KTG",
+          "definition": "Krankentaggeldversicherung — zahlt bei längerer Krankheit einen Teil des Lohns weiter."
+        },
+        {
+          "term": "Verbotene Abzüge",
+          "definition": "Kosten, die der Lehrbetrieb nicht vom Lohn abziehen darf, z. B. Schulbesuch, ÜK-Kurse oder Qualifikationsverfahren."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Teil 1 (Annotierte Lohnabrechnung): Zeichne die Muster-Lohnabrechnung nach und markiere jeden Posten mit einer Farbe (Pflichtabzug = grün, freiwillig = gelb, verboten = rot). Teil 2 (E-Mail): 3–5 Sätze an die Eltern — Anrede, was ist Bruttolohn, welche Abzüge, was ist Nettolohn.",
+        "beispiel": "Pflichtabzug (grün): NBU-Prämie 1.45% → CHF 13.78 | Verbotener Abzug (rot): 'Schulbesuch' darf nicht abgezogen werden",
+        "checkfragen": [
+          "□ Hast du alle Abzüge markiert (Pflicht / freiwillig / verboten)?",
+          "□ Stimmen die berechneten Prozentwerte (UVG 1.45%, KTG 1.00%)?",
+          "□ Erklärt die E-Mail, warum CHF 950 und CHF 926.70 unterschiedlich sind?",
+          "□ Ist die E-Mail in verständlicher Sprache ohne zu viele Fachbegriffe?",
+          "□ Enthält die E-Mail 3–5 Sätze in Ich-Form?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Du bist dieselbe Lernende bei Migros — jetzt im 3. Lehrjahr und 18 Jahre alt. Welche Abzüge kommen nun dazu — und wie verändern sie dein Budget?",
+          "Dein Lehrbetrieb zieht CHF 30 für 'ÜK-Kurse' zusätzlich ab. Ist das erlaubt — und welchen konkreten Schritt würdest du unternehmen?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'BBG Art. 19 Schulbesuch Lernende Schweiz' mit einer Suchmaschine. Was regelt dieses Gesetz genau — und welche Kosten muss der Betrieb tragen? Notiere einen konkreten Punkt."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist nach der Lehre KV-Fachperson im Personalwesen der Migros und zuständig für Lohnabrechnungen neuer Lernender. Welche Checkliste erstellst du, um verbotene Abzüge systematisch zu verhindern?",
+        "analyse": "Was passiert, wenn ein Lehrbetrieb systematisch verbotene Abzüge vornimmt — welche rechtlichen Konsequenzen entstehen für den Betrieb, und welche Optionen hat die Lernende?",
+        "recherche": "Suche nach 'OR Art. 323b Lohnabrechnung Pflichten Arbeitgeber Schweiz' mit einer Suchmaschine. Was muss eine Lohnabrechnung zwingend enthalten — und was nicht? Notiere zwei konkrete Anforderungen.",
+        "praesentation": "Erkläre deinen Eltern in 90 Sekunden mündlich, warum CHF 23.30 von deinem Lohn abgezogen wurden — ohne Papier vorlesen, nur aus dem Kopf.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "id": "3.1.2_budget_risiken_schulden_sit_B",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Gestern Zahltag, heute nichts mehr",
+  "emotion_tag": "Frustration",
+  "wissensknoten": [
+    "ch_2_2_budget",
+    "ch_2_2_budget_schulden"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Koch EFZ",
+    "betrieb": "Restaurant Frohsinn",
+    "ort": "St. Gallen"
+  },
+  "situation_text": "Ich bin Koch-Lernender im 1. Lehrjahr beim Restaurant Frohsinn in St. Gallen und verdiene CHF 750 netto pro Monat. Am ersten jeden Monats freue ich mich über meinen Lohn — doch nach spätestens zwei Wochen ist das Geld weg. Ich habe kein Sparkonto, mein Handy-Abo kostet CHF 79 pro Monat ohne Ausgabelimit, und für den Samstagabend-Ausgang leihe ich mir manchmal Geld von Kollegen. Mein Lehrmeister hat mir geraten, meine Finanzen grundlegend umzustrukturieren — aber ich weiss nicht, wo ich anfangen soll. Was muss ich sofort ändern, damit ich nächsten Monat nicht wieder pleite bin?",
+  "zahlen_tabelle": [
+    {
+      "label": "Monatslohn netto (1. Lehrjahr Koch)",
+      "wert": "CHF 750"
+    },
+    {
+      "label": "Handy-Abo (ohne Limit)",
+      "wert": "CHF 79"
+    },
+    {
+      "label": "Ausgang (Clubs, Ausgehen)",
+      "wert": "CHF 120–180"
+    },
+    {
+      "label": "Schulden bei Kollegen",
+      "wert": "CHF 340"
+    },
+    {
+      "label": "Prepaid-Abo Alternative",
+      "wert": "ab CHF 20"
+    }
+  ],
+  "leitfrage": "Was muss ich sofort ändern, damit ich nicht wieder pleite bin, bevor der Monat vorbei ist?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 8.2 (Seite 199) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Erkläre den Unterschied zwischen einem Lohnkonto und einem Sparkonto. Was ist eine Bezugslimite — und warum empfiehlt sie das Lehrmittel für Lernende?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Dein Handy-Abo kostet CHF 79 pro Monat. Ein Prepaid-Abo würde CHF 25 pro Monat kosten. Berechne: (a) Ersparnis pro Monat. (b) Ersparnis pro Jahr. (c) Welcher Anteil deines Jahreslohns (CHF 9'000) wäre das?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Deine Schulden bei Kollegen (CHF 340) übersteigen deinen Sparfreibetrag. Option (a): Du nimmst sofort Kontakt auf und vereinbarst CHF 80 Rückzahlung pro Monat. Option (b): Du wartest ab und hoffst, es löst sich von selbst. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Erstelle in Ich-Form einen persönlichen Sanierungsplan mit drei konkreten Sofortmassnahmen — inklusive Zwei-Konten-Modell, Handy-Wechsel und Ausgabengrenze für Ausgang.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein Budget sanieren",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Zwei-Konten-Modell",
+      "punkte": [
+        "Lohnkonto (laufend)",
+        "Sparkonto (Rücklage)",
+        "Bezugslimite einrichten"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Ausgaben senken",
+      "punkte": [
+        "Prepaid statt Abo",
+        "Ausgang reduzieren",
+        "Wenig Bargeld mitnehmen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Schulden regeln",
+      "punkte": [
+        "Überblick Schulden",
+        "Gläubiger kontaktieren",
+        "Ratenplan vereinbaren"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Impulskäufe vermeiden",
+        "Kontostand täglich prüfen",
+        "Kein Geld leihen"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Sanierungsplan",
+    "titel": "Format: Persönlicher Sanierungsplan (Tabelle + Massnahmen)",
+    "format_detail": "Monatsbudget-Tabelle (Einnahmen / Ausgaben / Saldo) + drei konkrete Sofortmassnahmen in Ich-Form",
+    "beschreibung": "Du analysierst deine aktuellen Einnahmen und Ausgaben und entwirfst einen konkreten Sanierungsplan mit dem Zwei-Konten-Modell und klaren Sparmassnahmen.",
+    "schritte": [
+      {
+        "label": "Einnahmen notieren",
+        "hint": "Dein Nettolohn CHF 750 — gibt es weitere Einnahmen (Trinkgeld, Elternbeitrag)?"
+      },
+      {
+        "label": "Ausgaben auflisten",
+        "hint": "Alle Fixkosten (Handy, Fahrabo) und variable Kosten (Ausgang, Kleider, Spontankäufe)"
+      },
+      {
+        "label": "Saldo berechnen",
+        "hint": "Einnahmen − Ausgaben = Saldo. Ist der Saldo positiv oder negativ? Wo liegen die grössten Posten?"
+      },
+      {
+        "label": "Massnahmen formulieren",
+        "hint": "Mindestens 3 Schritte: Was wechsle ich (Handy)? Was reduziere ich (Ausgang)? Was spare ich (Sparkonto)?"
+      },
+      {
+        "label": "Zwei-Konten-Modell beschreiben",
+        "hint": "Was kommt auf Lohnkonto, was auf Sparkonto — und wie viel genau? Wann richtest du es ein?"
+      }
+    ],
+    "schreib_label": "SANIERUNGSPLAN HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget_schulden"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Im 2. Lehrjahr verdienst du CHF 900 pro Monat. Wie änderst du deinen Sanierungsplan — und was sparst du neu auf dem Sparkonto?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn dein Arbeitgeber anbietet, den Lohn direkt aufzuteilen: 80% auf Lohnkonto, 20% auf gesperrtes Sparkonto? Würdest du das annehmen — und warum?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Kauffrau-Lernende bei der Post in Bern hat dasselbe Problem. Welche ihrer Ausgabenpositionen wären vermutlich anders als deine — und welche wären gleich?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies Kap. 8.2 S. 199 — suche die Definitionen von Lohnkonto, Sparkonto und Bezugslimite. Schreibe zu jedem Begriff in 1 Satz, wozu es dient.",
+          "satzanfang": "Das Lohnkonto dient für ___. Das Sparkonto dient für ___. Eine Bezugslimite ist ___, weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Rechne Schritt für Schritt: (a) CHF 79 − CHF 25 = CHF ___/Mt. (b) CHF ___ × 12 = CHF ___/Jahr. (c) CHF ___ ÷ CHF 9'000 × 100 = ___%. Kontrolliere deine Rechnung durch Quervergleich.",
+          "satzanfang": "(a) Ersparnis pro Monat: CHF ___. (b) Ersparnis pro Jahr: CHF ___. (c) Das sind ___ % meines Jahreslohns CHF 9'000 — das bedeutet ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Überlege: Option (a) schafft Klarheit und zeigt Verantwortung. Option (b) löst das Problem nicht — und riskiert, die Freundschaft zu belasten. Was ist dir wichtiger?",
+          "satzanfang": "Ich wähle Option ___ (a: Ratenplan CHF 80/Mt / b: abwarten), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Dein Plan braucht 3 konkrete Schritte: (1) Zwei-Konten-Modell einrichten — was auf welches Konto? (2) Handy wechseln — wann? (3) Ausgabengrenze Ausgang setzen — wie viel CHF pro Monat?",
+          "satzanfang": "Schritt 1: Ich richte ein Zwei-Konten-Modell ein: Lohnkonto ___, Sparkonto ___. Schritt 2: Ich wechsle auf Prepaid und spare CHF ___ pro Monat. Schritt 3: Ich setze meine Ausgabengrenze für Ausgang auf CHF ___ pro Monat."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Lohnkonto",
+          "definition": "Das Konto, auf das der Lohn eingeht und von dem laufende Ausgaben bezahlt werden — für den Alltagsgebrauch."
+        },
+        {
+          "term": "Sparkonto",
+          "definition": "Ein separates Konto für Rücklagen und Sparziele — das Geld dort ist nicht für den Alltag gedacht."
+        },
+        {
+          "term": "Bezugslimite",
+          "definition": "Eine selbst festgelegte oder vom Konto eingerichtete Obergrenze, wie viel Geld man täglich oder monatlich vom Konto abheben kann."
+        },
+        {
+          "term": "Zwei-Konten-Modell",
+          "definition": "Ein System mit einem Lohnkonto für laufende Ausgaben und einem Sparkonto für Rücklagen — verhindert, dass Ersparnisse 'versehentlich' ausgegeben werden."
+        },
+        {
+          "term": "Sanierungsplan",
+          "definition": "Ein konkreter Plan, mit dem man bestehende Schulden abbaut und neue Ausgaben kontrolliert — mit klaren Schritten und Terminen."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein Sanierungsplan hat 2 Teile: 1. Tabelle mit 3 Spalten (Kategorie / Aktuell / Nach Sanierung): zeige Handy-Abo, Ausgang, Saldo vor und nach der Sanierung. 2. Drei Sofortmassnahmen in Ich-Form: Was tust du diese Woche? Nächsten Monat?",
+        "beispiel": "Andere Person, gleiche Situation. Einnahmen: CHF 1000. Handy-Abo aktuell CHF 89, nach Sanierung CHF 25. Ausgang aktuell CHF 200, nach Sanierung CHF 80. Saldo verbessert sich von CHF -50 auf CHF +145. Sofortmassnahme: Prepaid-Wechsel noch diese Woche.",
+        "checkfragen": [
+          "□ Enthält meine Tabelle alle grossen Ausgabenpositionen (Handy, Ausgang, Schulden)?",
+          "□ Ist der Saldo nach Sanierung positiv?",
+          "□ Habe ich 3 Sofortmassnahmen in Ich-Form formuliert?",
+          "□ Habe ich das Zwei-Konten-Modell erklärt (was kommt auf welches Konto)?",
+          "□ Sind meine Massnahmen realistisch — kann ich sie einen Monat lang einhalten?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Inwiefern ist das Phänomen 'Gestern Zahltag, heute nichts mehr' ein strukturelles Problem (zu wenig Lohn) oder ein Verhaltensproblem (zu viel ausgeben) — und wie würdest du als Lehrmeister im Restaurant Frohsinn reagieren?",
+          "Was passiert mittelfristig, wenn ein Lernender systematisch Geld von Kollegen leiht — welche sozialen und rechtlichen Konsequenzen entstehen?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Lehrlingslohn Schweiz Koch EFZ 1. Lehrjahr Durchschnitt' mit einer Suchmaschine. Was ist der durchschnittliche Monatslohn für Koch/Köchin EFZ im 1. Lehrjahr? Notiere eine konkrete Zahl.",
+          "Suche nach 'Jugendschulden Schweiz Ursachen Statistik Studie' mit einer Suchmaschine. Was sind laut Forschung die häufigsten Ursachen für Schulden bei Jugendlichen? Notiere zwei konkrete Gründe."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist im 2. Lehrjahr und verdienst CHF 900. Erstelle einen überarbeiteten Sanierungsplan: Wie viel mehr kannst du jetzt sparen — und welche neue Ausgabe (z.B. Sportabo) könntest du dir nun leisten?",
+        "analyse": "Was passiert gesellschaftlich, wenn viele Lernende in der Gastronomie systematisch am Monatsende kein Geld mehr haben? Analysiere aus zwei Perspektiven: Lernende (Gesundheit, Konzentration) und Ausbildungsbetrieb (Arbeitsqualität).",
+        "recherche": "Suche nach 'Budgetberatung Schweiz Jugendliche Schulden Anlaufstelle' mit einer Suchmaschine. Welche kostenlosen Beratungsangebote gibt es für Lernende mit Schulden? Notiere zwei konkrete Anlaufstellen.",
+        "praesentation": "Erkläre deinen Sanierungsplan in 90 Sekunden einem Kollegen, der dasselbe Problem hat. Zeige die Budget-Tabelle und erkläre, warum das Zwei-Konten-Modell dir hilft, das Geld nicht 'versehentlich' auszugeben.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

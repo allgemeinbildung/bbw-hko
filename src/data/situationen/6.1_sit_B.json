@@ -1,0 +1,402 @@
+{
+  "id": "6.1_sit_B",
+  "modul": "6.1",
+  "modul_titel": "Steuern",
+  "situation": "B",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "MWST und Wertschöpfung",
+  "emotion_tag": "Verwirrung",
+  "wissensknoten": [
+    "mwst"
+  ],
+  "nrlp": {
+    "lebensbezug": "6.1",
+    "gesellschaft": [
+      "Wirtschaft",
+      "Recht"
+    ],
+    "sk": [
+      3,
+      8
+    ],
+    "sprachmodi": [],
+    "themen": [
+      "T6",
+      "T3"
+    ]
+  },
+  "persona": {
+    "beruf": "Detailhandelsassistent/in EFZ",
+    "betrieb": "Coop",
+    "ort": "Zürich"
+  },
+  "situation_text": "Du bist Detailhandelsassistent/in im 2. Lehrjahr bei Coop in Zürich. Dein Ausbilder zeigt dir eine Lieferantenrechnung für Damenschuhe: Warenwert Fr. 1'000.– + 7,7 % MWST = Fr. 1'077.–. Er fragt: «Warum zahlt Coop diese Fr. 77.– an den Staat — und warum muss Coop beim Weiterverkauf nicht nochmals die gesamte MWST zahlen?» Du hast im ABU-Unterricht von der Vorsteuer gehört, verstehst die Kette von Fabrikant → Händler → Endkunde aber noch nicht vollständig.",
+  "zahlen_tabelle": [
+    {
+      "label": "Fabrikant → Coop: Fr. 1'000.– + Fr. 77.– MWST",
+      "wert": "= Fr. 1'077.–"
+    },
+    {
+      "label": "Coop → Kunde: Fr. 2'000.– + Fr. 154.– MWST",
+      "wert": "= Fr. 2'154.–"
+    },
+    {
+      "label": "Coop zahlt an Bund: Fr. 154.– – Fr. 77.– (Vorsteuer)",
+      "wert": "= Fr. 77.–"
+    }
+  ],
+  "leitfrage": "Warum heisst diese Steuer «Mehrwert»-steuer — und wer zahlt am Ende wie viel MWST an den Staat?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 10.1 (Seite 248) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Was bedeutet «zzgl. MWST» auf einer Rechnung? Erkläre den Unterschied zwischen Nettobetrag, MWST-Betrag und Bruttobetrag.",
+      "feld_hoehe_mm": 14
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Berechne: Coop kauft Schuhe für Fr. 1'000.– + Fr. 77.– MWST ein und verkauft sie für Fr. 2'000.– + Fr. 154.– MWST. Wie viel MWST überweist Coop wirklich an den Bund — und was bedeutet «Vorsteuer» in diesem Zusammenhang?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Eine Kundin kauft bei Coop Lebensmittel für Fr. 80.– und Kosmetik für Fr. 40.–. Option (a): Du rechnest für alles den Normalsatz von 7,7 %. Option (b): Du rechnest 2,5 % auf Lebensmittel und 7,7 % auf Kosmetik. Welche Option ist korrekt — und warum gibt es überhaupt zwei verschiedene Steuersätze?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 4,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Erkläre in eigenen Worten (5–6 Sätze), warum die MWST «Mehrwert»-steuer heisst. Verwende ein eigenes Beispiel mit konkreten CHF-Beträgen — nicht das Beispiel aus dem Wissensknoten.",
+      "feld_hoehe_mm": 17
+    }
+  ],
+  "mindmap_zentrum": "MWST und Wertschöpfungskette",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 — MWST-Mechanismus",
+      "punkte": [
+        "Vorsteuer",
+        "Stufen",
+        "Bund"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 — Steuersätze",
+      "punkte": [
+        "7,7 % Normal",
+        "2,5 % Sonder",
+        "Ausnahmen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 — Im Betrieb",
+      "punkte": [
+        "Rechnung",
+        "Buchen",
+        "Quartalsabrechnung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 — Optional",
+      "punkte": [
+        "Ausnahmen",
+        "Internationale Aspekte"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Erklär-Skript",
+    "titel": "Erklär-Skript «Wie die MWST durch die Kette fliesst»",
+    "format_detail": "Skript — 4 Stufen, je 2–3 Sätze + CHF-Berechnung",
+    "beschreibung": "Du erklärst einer neuen Lernenden, die am ersten Tag im Betrieb ist, wie die MWST-Kette von der Fabrik bis zur Kasse funktioniert. Schreibe ein Erklär-Skript, das sie sofort versteht — klar, schrittweise, mit konkreten Zahlen.",
+    "schritte": [
+      {
+        "label": "Produktionsstufe 1 — Fabrikant",
+        "hint": "Berechnung: Fr. 1'000.– + 7,7 % = Fr. 1'077.– — wer zahlt hier was an wen?"
+      },
+      {
+        "label": "Produktionsstufe 2 — Grosshändler oder Händler",
+        "hint": "Einkauf + eigener Mehrwert + Vorsteuerabzug — was bleibt beim Staat hängen?"
+      },
+      {
+        "label": "Produktionsstufe 3 — Coop / Detailhändler",
+        "hint": "Gleiche Logik, höherer Verkaufspreis — Vorsteuer von Stufe 2 abziehen"
+      },
+      {
+        "label": "Endkunde",
+        "hint": "Zahlt den vollen MWST-Betrag, ohne Abzug — warum kann er keine Vorsteuer geltend machen?"
+      },
+      {
+        "label": "Gesamtüberblick",
+        "hint": "Bund erhält am Ende genau 7,7 % des Endpreises — zeige das mit einer Kontrollrechnung"
+      }
+    ],
+    "schreib_label": "ERKLÄR-SKRIPT — HIER SCHREIBEN",
+    "schreib_note": "→ wissen/mwst · wie_funktioniert_es"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Was ist der wichtigste Unterschied zwischen Vorsteuer und der MWST, die an den Bund geht?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Welcher Steuersatz gilt für Nahrungsmittel — und warum ist das so geregelt?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Nenne ein Beispiel, wie deine Situation mit einer anderen Situation (A, C, D oder E) zusammenhängt.",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was war der schwierigste Teil dieser Situation — und wie hast du das gelöst?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo hat dir der Wissensknoten → wissen/mwst wirklich geholfen — und wo hättest du mehr gebraucht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was nimmst du aus dieser Situation mit — konkret für deinen Arbeitsalltag bei Coop?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Was passiert, wenn ein Betrieb vergisst, auf einer Ausgangsrechnung die MWST auszuweisen? Welche Konsequenzen hat das?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du Produkte aus dem Ausland importierst — fällt dann trotzdem Schweizer MWST an?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du wechselst nach der Lehre in die Buchhaltung bei Migros. Wie buchst du am Quartalsende die MWST-Zahlung an die Eidgenössische Steuerverwaltung?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Schriftliche Beantwortung LF 1–4"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Pflichtäste 1–3 vollständig"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Format, Inhalt, Vollständigkeit"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Ast 4 (optional, Vertiefung)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "R1–R3 reflektiert und ehrlich"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "V1–V3 sorgfältig bearbeitet"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 — 45 min",
+      "text": "Einstieg: Situation lesen, Leitfragen LF1–LF2, Mindmap beginnen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 — 45 min",
+      "text": "Leitfragen LF3–LF4, Handlungsprodukt erarbeiten und verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenpuzzle, Reflexion R1–R3, Vorbereitungsfragen V1–V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=6.1_sit_B",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/6.1_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "6.1_sit_B",
+    "aliases": [
+      "sit_B_mwst_wertschoepfung"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T6",
+      "T3"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.3",
+      "titel": "Mehrwertsteuer",
+      "kompetenz": "Ich kann das Prinzip der Mehrwertsteuer und die Vorsteuer-Logik erklären und die Auswirkungen auf Konsumenten beurteilen."
+    },
+    "ki_leitfragen": {
+      "offen": "Warum heisst diese Steuer «Mehrwert»-steuer — und wer trägt die eigentliche Steuerlast?",
+      "argumentieren": "Coop kauft Schuhe für Fr. 1'000 + MWST und verkauft sie für Fr. 2'000 + MWST. Warum zahlt Coop nur Fr. 77.– an den Bund? Erkläre den Mechanismus der Vorsteuer.",
+      "entscheiden": "In der Schweiz gibt es verschiedene MWST-Sätze (z.B. 2.5% und 7.7%). Warum werden Lebensmittel steuerlich bevorzugt behandelt — ist das fair?",
+      "formulieren": "Formuliere einen Lehrsatz für deine neue Kollegin: Warum ist die MWST für ein Unternehmen wie Coop kein Aufwand, sondern ein 'Durchlaufposten'?"
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_prompt_duell",
+      "ai_redaktion"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 75,
+        "grund": "Wirtschaft/Politik | SK 5 (Werthaltungen)",
+        "zukunft_frage": "Wird die MWST im Jahr 2050 durch eine dynamische 'Öko-Steuer' ersetzt, die den Steuersatz in Echtzeit an den CO2-Fussabdruck eines Produkts anpasst?",
+        "wild_card": "Ab 2040 wird die MWST auf Luxusgüter wie E-Bikes oder teure Sneakers auf 40% angehoben, um ein bedingungsloses Grundeinkommen zu finanzieren.",
+        "blind_spot": "Hinweis: Seit dem 01.01.2024 gilt in der Schweiz der neue Normalsatz von 8.1% (statt 7.7%). Wie beeinflusst diese Erhöhung das Budget eines Durchschnittshaushalts?"
+      },
+      "ai_prompt_duell": {
+        "score": 55,
+        "grund": "Universal | SK 3 (Problemlösung)",
+        "thema_vorgabe": "Erkläre der neuen Lernenden 'Sara', warum Coop beim Einkauf die MWST bezahlt, sie aber später wieder vom Staat zurückfordert. Nutze die Begriffe 'Vorsteuer' und 'Nettoprinzip'.",
+        "system_prompt_zusatz": "Sara findet die MWST kompliziert und meint: 'Das ist doch doppelte Arbeit, erst dem Fabrikanten zahlen und dann vom Staat zurückholen.' Kontere mit dem Argument der Wertschöpfung."
+      },
+      "ai_redaktion": {
+        "score": 25,
+        "grund": "SK 3 (Problemlösung) | Diversität",
+        "textthema": "Die MWST-Kette einfach erklärt: Warum nur der Kunde am Ende wirklich zahlt.",
+        "stil_auftrag": [
+          "Sachlich-analytisch (Fokus auf Zahlen)",
+          "Einfach und bildhaft (Fokus auf die Lieferkette)",
+          "Praxisorientiert (Tipp für Detailhändler)"
+        ],
+        "textformat_ziel": "Ein kurzer Artikel für das interne Personalmagazin von Coop."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 10.1 S. 248 erklärt die Begriffe. Nettobetrag = Preis ohne Steuer. MWST-Betrag = der Steueranteil. Bruttobetrag = Netto + MWST. Auf Rechnungen steht 'zzgl. MWST', wenn die Steuer noch dazukommt.",
+          "satzanfang": "'Zzgl. MWST' bedeutet: Zum Preis von CHF ___ kommt noch ___ % MWST dazu, also CHF ___. Nettobetrag ist ___, MWST-Betrag ist ___, Bruttobetrag ist ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Coop zahlt CHF 77 MWST beim Einkauf (Vorsteuer). Beim Verkauf für CHF 2'000 muss Coop CHF 154 MWST verrechnen. Aber die CHF 77 darf Coop abziehen — also überweist Coop nur CHF 154 – CHF 77 = CHF 77 an den Bund. Der Rest bleibt beim Fabrikanten.",
+          "satzanfang": "Coop überweist wirklich nur CHF ___ an den Bund, weil die CHF 77 (Vorsteuer vom Einkauf) abgezogen werden. Vorsteuer bedeutet: ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option (b) ist korrekt. In der Schweiz gilt für Lebensmittel der reduzierte Satz von 2,5% und für Kosmetik der Normalsatz 7,7%. Berechnung: CHF 80 × 2,5% = CHF 2.00 + CHF 40 × 7,7% = CHF 3.08. Zwei verschiedene Sätze, weil Lebensmittel Grundbedarf sind.",
+          "satzanfang": "Option ___ ist korrekt. Für Lebensmittel gilt ___ %, für Kosmetik ___ %. Das macht: CHF ___ + CHF ___ = CHF ___ MWST total. Zwei Sätze gibt es, weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Der Begriff 'Mehrwert' zeigt: Jede Stufe (Fabrikant → Händler → Coop) fügt einen Mehrwert hinzu — und zahlt nur auf diesen eigenen Mehrwert Steuern. Das Beispiel soll ein eigenes sein: Nimm z. B. eine Handtasche oder ein Paar Schuhe mit anderen Zahlen.",
+          "satzanfang": "MWST heisst 'Mehrwert'-steuer, weil jede Stufe nur auf den ___ Steuern zahlt. Beispiel: Ich kaufe ___ für CHF ___ ein und verkaufe für CHF ___ + MWST. An den Staat überweise ich CHF ___ – CHF ___ = CHF ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Vorsteuer",
+          "definition": "MWST, die ein Unternehmen beim Einkauf bezahlt und später vom eigenen MWST-Betrag abziehen darf."
+        },
+        {
+          "term": "Mehrwert",
+          "definition": "Werterhöhung, die eine Stufe in der Wertschöpfungskette hinzufügt — z. B. wenn Coop Schuhe einkauft und teurer verkauft."
+        },
+        {
+          "term": "Normalsatz",
+          "definition": "Standard-MWST-Satz von 7,7% in der Schweiz (8,1% ab 2024), gilt für die meisten Waren und Dienstleistungen."
+        },
+        {
+          "term": "Sondersatz",
+          "definition": "Reduzierter MWST-Satz von 2,5% für Lebensmittel, Zeitungen und andere Grundbedarfsgüter."
+        },
+        {
+          "term": "Bruttobetrag",
+          "definition": "Gesamtpreis inklusive MWST — das ist der Betrag, den der Endkunde tatsächlich zahlt."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Schreibe für jede der 4 Stufen (Fabrikant, Grosshändler, Coop, Endkunde) 2–3 Sätze: Wer kauft was, wie viel MWST wird verrechnet, wie viel geht an den Bund. Beginne jede Stufe mit einer Überschrift, z. B. 'Stufe 1 — Fabrikant:'. Füge am Ende eine Kontrollrechnung ein: Bund erhält total = 7,7% des Endpreises.",
+        "beispiel": "Stufe 1 — Fabrikant:\n  Verkauft an Coop: CHF 1'000 + CHF 77 MWST = CHF 1'077. Der Fabrikant überweist CHF 77 an den Bund.\nStufe 3 — Coop:\n  Verkauft für CHF 2'000 + CHF 154 MWST. Zieht CHF 77 Vorsteuer ab. Zahlt CHF 77 an den Bund.\nEndkunde:\n  Zahlt CHF 154 MWST insgesamt — ohne Abzug, kein Vorsteuerrecht.",
+        "checkfragen": [
+          "□ Beschreibe ich alle 4 Stufen (Fabrikant, Grosshändler, Coop, Endkunde)?",
+          "□ Erkläre ich für jede Stufe, wie viel MWST an den Bund geht?",
+          "□ Erkläre ich, warum der Endkunde keine Vorsteuer abziehen kann?",
+          "□ Füge ich eine Kontrollrechnung am Schluss ein?",
+          "□ Schreibe ich alltagssprachlich — für eine neue Lernende, die das noch nie gehört hat?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Die MWST wird als 'neutral' für Unternehmen bezeichnet — weil sie nur durchläuft. Warum gilt das aber NICHT für den Endkunden? Und warum treffen hohe MWST-Sätze Menschen mit niedrigem Einkommen überproportional hart?",
+          "Ab Januar 2024 gilt in der Schweiz der neue Normalsatz von 8,1% statt 7,7%. Welche Auswirkung hat das konkret auf den Jahreseinkauf einer Familie mit CHF 30'000 Konsumausgaben — und welche Produktkategorien sind am stärksten betroffen?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'MWST Sätze Schweiz 2024 Änderung Normalsatz' mit einer Suchmaschine. Warum wurde der Satz angehoben — und welche politische Abstimmung hat das ermöglicht? Notiere das Hauptargument für die Erhöhung.",
+          "Suche nach 'MWST Ausnahmen Schweiz steuerbefreit Produktliste' mit einer Suchmaschine. Welche drei Waren oder Dienstleistungen sind von der MWST vollständig befreit — und warum?"
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Stelle dir vor, Coop führt eine neue Produktkategorie 'Second-Hand-Mode' ein. Gilt für gebrauchte Kleider ebenfalls 7,7% MWST — oder gibt es Ausnahmen? Recherchiere und formuliere eine Empfehlung, wie Coop das buchhalterisch korrekt handhaben sollte.",
+        "analyse": "Was würde passieren, wenn die Schweiz die MWST auf Lebensmittel von 2,5% auf 0% senken würde? Betrachte die Auswirkung auf den Bundeshaushalt (wie viel Einnahmen fallen weg?) und auf Haushalte mit niedrigem vs. hohem Einkommen.",
+        "recherche": "Suche nach 'MWST Schweiz Einnahmen Bund Milliarden 2023' mit einer Suchmaschine. Wie viel Prozent der gesamten Bundeseinnahmen macht die MWST aus — und was wäre der Anteil der Einkommensteuer? Notiere die Verhältniszahl.",
+        "praesentation": "Erkläre deiner neuen Kollegin in 90 Sekunden, warum die MWST für Coop ein 'Durchlaufposten' ist und wer wirklich zahlt. Kriterium: Sie soll danach erklären können, warum Coop nicht 'arm wird' durch die MWST.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

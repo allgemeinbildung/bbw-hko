@@ -1,0 +1,365 @@
+{
+  "id": "3.1.2_budget_risiken_schulden_sit_C",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln",
+  "situation": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "Der Verlustschein bleibt 20 Jahre",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "ch_2_2_budget_schuldensanierung",
+    "ch_2_2_budget_schulden"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Polymechaniker EFZ",
+    "betrieb": "ABB",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Polymechaniker-Lernender im 2. Lehrjahr bei ABB in Winterthur und verdiene CHF 900 netto pro Monat. Vor drei Monaten habe ich einen Zahlungsbefehl für eine unbezahlte Handyrechnung von CHF 1'400 ignoriert — ich dachte, das erledigt sich von selbst. Heute erhalte ich eine Pfändungsankündigung und erfahre beim Betreibungsamt, dass das Verfahren bereits weit fortgeschritten ist. Was mich am meisten schockt: Wenn am Ende ein Verlustschein ausgestellt wird, ist dieser zwanzig Jahre gültig und jederzeit erneut eintreibbar. Welche Schritte muss ich jetzt sofort unternehmen, um das Betreibungsverfahren noch zu stoppen?",
+  "zahlen_tabelle": [
+    {
+      "label": "Offene Handyrechnung",
+      "wert": "CHF 1'400"
+    },
+    {
+      "label": "Monatslohn netto (2. Lehrjahr)",
+      "wert": "CHF 900"
+    },
+    {
+      "label": "Gültigkeit Verlustschein",
+      "wert": "20 Jahre"
+    },
+    {
+      "label": "Frist Rechtsvorschlag",
+      "wert": "10 Tage"
+    },
+    {
+      "label": "Zahlungsfrist nach Zahlungsbefehl",
+      "wert": "20 Tage"
+    }
+  ],
+  "leitfrage": "Welche Schritte muss ich jetzt unternehmen, um das Betreibungsverfahren zu stoppen — und was bedeutet der Verlustschein für meine finanzielle Zukunft?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 8.2 (Seite 200–202) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 8.2 | S. 200",
+      "text": "Erkläre die drei Betreibungsarten. Welche Betreibungsart gilt in meiner Situation als Lernender — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 8.2 | S. 201",
+      "text": "Bringe folgende Verfahrensschritte in die richtige Reihenfolge: Pfändungsankündigung — Zahlungsbefehl — Betreibungsbegehren — Verwertungsbegehren — Fortsetzungsbegehren. Was hätte ich nach Erhalt des Zahlungsbefehls innerhalb von 10 Tagen tun können?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 8.2 | S. 201",
+      "text": "Du hast zwei Optionen: (a) Du bezahlst sofort CHF 1'400 (du bittest die Eltern um Hilfe). (b) Du erhebst Rechtsvorschlag, weil du glaubst, die Rechnung sei zu hoch. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 8.2 | S. 201–202",
+      "text": "Formuliere in Ich-Form drei konkrete Schritte, die du sofort unternimmst — und erkläre in 2–3 Sätzen, warum ein Verlustschein so schwerwiegende Folgen für deine finanzielle Zukunft hat.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Betreibungsverfahren stoppen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Verfahrensschritte",
+      "punkte": [
+        "Zahlungsbefehl (20 Tage)",
+        "Rechtsvorschlag (10 Tage)",
+        "Pfändungsankündigung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Meine Optionen",
+      "punkte": [
+        "Sofort zahlen",
+        "Rechtsvorschlag erheben",
+        "Ratenzahlung anfragen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Folgen Verlustschein",
+      "punkte": [
+        "20 Jahre gültig",
+        "Jederzeit neue Betreibung",
+        "Kreditwürdigkeit beschädigt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Rechnungen sofort prüfen",
+        "Zahlungsfristen im Kalender",
+        "Budget mit Notfallrücklage"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Handlungsplan",
+    "titel": "Format: Sofort-Handlungsplan Betreibung (3 Schritte + Begründung)",
+    "format_detail": "Tabellarischer 3-Schritte-Plan + 2–3 Sätze Erklärung der Verlustschein-Folgen",
+    "beschreibung": "Du erstellst einen Sofort-Handlungsplan, um das Betreibungsverfahren zu stoppen, und begründest, warum ein Verlustschein unbedingt verhindert werden muss.",
+    "schritte": [
+      {
+        "label": "Situation analysieren",
+        "hint": "An welchem Verfahrensschritt stehst du? Ist der Rechtsvorschlag noch möglich — oder nicht?"
+      },
+      {
+        "label": "Optionen abwägen",
+        "hint": "Was kostet sofortige Zahlung — was ist das Risiko des weiteren Abwartens?"
+      },
+      {
+        "label": "Kontakt aufnehmen",
+        "hint": "Wen kontaktierst du zuerst: Gläubigerin, Betreibungsamt oder Eltern? In welcher Reihenfolge?"
+      },
+      {
+        "label": "Handlungsplan schreiben",
+        "hint": "Drei konkrete Schritte in Ich-Form: Was tue ich heute — diese Woche — diesen Monat?"
+      },
+      {
+        "label": "Verlustschein-Folgen erklären",
+        "hint": "Was bedeutet «20 Jahre gültig»? Was kann in dieser Zeit passieren (neue Stelle, Wohnung mieten, Kredit)?"
+      }
+    ],
+    "schreib_label": "HANDLUNGSPLAN BETREIBUNG HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget_schuldensanierung"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Die offene Rechnung beträgt CHF 2'800 statt CHF 1'400. Ändert sich deine Strategie — und warum ist das ein Grenzfall für den pfändbaren Lohnanteil bei CHF 900 Lohn?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du weder Rechtsvorschlag erhebst noch zahlst? Beschreibe Schritt für Schritt, was dann mit deinem Lohn und deinen Wertsachen passiert.",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Kauffrau-Lernende bei Swisscom hat ebenfalls einen Zahlungsbefehl erhalten — für eine Abo-Schuld von CHF 680. Was würde sie in dieser Situation anders entscheiden als du — und warum?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies Kap. 8.2 S. 200 — suche die drei Betreibungsarten. Schreibe zu jeder Art: Für wen gilt sie — und in welcher Situation wird sie angewendet?",
+          "satzanfang": "Die drei Betreibungsarten sind: (1) ___, gilt für ___; (2) ___, gilt für ___; (3) ___, gilt für ___. In meiner Situation als Lernender bei ABB gilt ___, weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Lies Kap. 8.2 S. 201 — suche die Reihenfolge des Betreibungsverfahrens. Nummeriere die 5 Schritte. Dann beantworte: Was wäre nach dem Zahlungsbefehl noch möglich gewesen?",
+          "satzanfang": "Die richtige Reihenfolge ist: 1. ___; 2. ___; 3. ___; 4. ___; 5. ___. Nach dem Zahlungsbefehl hätte ich innerhalb von 10 Tagen ___ tun können."
+        },
+        {
+          "nr": 3,
+          "tipp": "Überprüfe zuerst: Hast du sachliche Gründe zu bezweifeln, dass die Rechnung CHF 1'400 korrekt ist? Wenn nein, ist Option (a) sicherer. Ein Rechtsvorschlag macht nur Sinn bei echtem Streit.",
+          "satzanfang": "Ich wähle Option ___ (a: sofort zahlen / b: Rechtsvorschlag erheben), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Schreibe 3 Sofortschritte: Was tust du heute? Diese Woche? Diesen Monat? Erkläre dann in 2-3 Sätzen, was '20 Jahre gültig' konkret bedeutet (Wohnung, Stelle, Kredit).",
+          "satzanfang": "Heute: Ich kontaktiere ___. Diese Woche: Ich ___. Diesen Monat: Ich ___. Ein Verlustschein ist deshalb schwerwiegend, weil ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Betreibungsverfahren",
+          "definition": "Das gesetzliche Verfahren in der Schweiz, mit dem Gläubiger unbezahlte Schulden gerichtlich einfordern können."
+        },
+        {
+          "term": "Zahlungsbefehl",
+          "definition": "Ein offizielles Schreiben des Betreibungsamts, das eine Zahlungsforderung enthält — man hat 20 Tage Zeit zu zahlen oder Rechtsvorschlag zu erheben."
+        },
+        {
+          "term": "Rechtsvorschlag",
+          "definition": "Der förmliche Einspruch gegen einen Zahlungsbefehl — muss innert 10 Tagen erhoben werden und stoppt das Betreibungsverfahren vorläufig."
+        },
+        {
+          "term": "Pfändung",
+          "definition": "Das Beschlagnahmen von Lohn oder Eigentum durch das Betreibungsamt, um eine Schuld zwangsweise einzutreiben."
+        },
+        {
+          "term": "Verlustschein",
+          "definition": "Ein Dokument, das ausgestellt wird, wenn eine Pfändung die Schuld nicht deckt — bleibt 20 Jahre gültig und kann jederzeit wieder aktiviert werden."
+        },
+        {
+          "term": "Betreibungsamt",
+          "definition": "Die staatliche Behörde, die Betreibungsverfahren durchführt und Zahlungsbefehle ausstellt."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein Handlungsplan hat 2 Teile: 1. Tabelle mit 3 Zeilen (Heute / Diese Woche / Diesen Monat): was genau du tust, wen du kontaktierst, welche Dokumente du brauchst. 2. Erklärungs-Abschnitt von 2-3 Sätzen: Was bedeutet der Verlustschein für Wohnungssuche, Kreditwürdigkeit und Stellenbewerbung?",
+        "beispiel": "Ähnliche Situation: Nichts bezahlte Gym-Mitgliedschaft CHF 600. Heute: Gläubiger anrufen und Ratenzahlung CHF 100/Mt vorschlagen. Diese Woche: Brief schriftlich bestätigen. Diesen Monat: Sicherstellen, dass erste Rate überwiesen ist. Folge: Ein Verlustschein würde 20 Jahre im Betreibungsregister bleiben.",
+        "checkfragen": [
+          "□ Habe ich die Heute/Diese-Woche/Diesen-Monat-Massnahmen konkret formuliert?",
+          "□ Habe ich genannt, wen ich zuerst kontaktiere (Betreibungsamt, Gläubiger, Eltern)?",
+          "□ Habe ich die Folgen eines Verlustscheins in 2-3 Sätzen erklärt?",
+          "□ Beziehe ich mich auf die konkrete Schuld von CHF 1'400?",
+          "□ Ist mein Plan realistisch mit CHF 900 Monatslohn?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Was sagt es über den Umgang mit Finanzen aus, wenn Lernende behördliche Schreiben wie Zahlungsbefehle ignorieren — und welche strukturellen Massnahmen (Schule, Betrieb, Familie) könnten das systematisch verhindern?",
+          "Inwiefern ist ein Verlustschein nicht nur ein finanzielles, sondern auch ein soziales Problem — wie beeinflusst er Wohnungssuche, Stellenbewerbung und Beziehungen der betroffenen Person?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Betreibungsregister Schweiz Wirkung Wohnungssuche Konsequenzen' mit einer Suchmaschine. Welche praktischen Folgen hat ein Eintrag im Betreibungsregister — z.B. bei der Wohnungssuche? Notiere zwei konkrete Konsequenzen.",
+          "Suche nach 'Schuldenberatung Winterthur Zürich Jugendliche kostenlos' mit einer Suchmaschine. Welche kostenlosen Beratungsangebote gibt es für Lernende mit Schulden im Raum Winterthur? Notiere eine Anlaufstelle."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Die Handyrechnung wurde aus Versehen falsch ausgestellt und beträgt tatsächlich nur CHF 700, nicht CHF 1'400. Du hast Rechtsvorschlag erhoben. Was passiert jetzt weiter — welche Schritte müsstest du einleiten, um die Betreibung definitiv zu stoppen?",
+        "analyse": "Was passiert in der Schweiz, wenn Lernende systematisch behördliche Mahnschreiben ignorieren? Analysiere aus zwei Perspektiven: Lernende (persönliche Folgen) und Gläubiger (wirtschaftliche Konsequenzen bei Ausfall).",
+        "recherche": "Lies Schuldbetreibungs- und Konkursgesetz (SchKG) Art. 74 zum Rechtsvorschlag oder suche nach 'SchKG Betreibungsverfahren Ablauf Fristen Übersicht' mit einer Suchmaschine. Was sind die genauen kritischen Fristen im Betreibungsverfahren? Notiere zwei konkrete Fristen.",
+        "praesentation": "Erkläre deinen Handlungsplan in 90 Sekunden einem Kollegen, dem dasselbe passiert ist. Zeige die 3-Schritte-Tabelle und erkläre in 1 Satz, warum ein Verlustschein 20 Jahre lang ein konkretes Problem bleibt.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

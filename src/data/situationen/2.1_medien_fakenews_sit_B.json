@@ -1,0 +1,429 @@
+{
+  "id": "2.1_medien_fakenews_sit_B",
+  "modul": "2.1",
+  "modul_titel": "Meinungen bilden und mitgestalten",
+  "situation": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Vierte Macht im Netz",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "medien_staatsgewalt"
+  ],
+  "nrlp": {
+    "nr": "2.1",
+    "nr_primary": [
+      "2.1"
+    ],
+    "lebensbezug": "2.1",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologie und digitale Transformation",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sk": [
+      1,
+      5,
+      6
+    ]
+  },
+  "persona": {
+    "beruf": "Informatiker/in EFZ",
+    "betrieb": "Swisscom",
+    "ort": "Bern"
+  },
+  "situation_text": "Ich bin Informatiker/in-Lernende im 2. Lehrjahr bei Swisscom in Bern. In der Mittagspause diskutieren zwei Berufskollegen heftig über die Migrationspolitik der Schweiz: Der eine beruft sich auf einen Artikel von watson.ch, der andere auf einen Beitrag der Weltwoche. Beide sagen: «Das steht doch klar in den Medien.» Ich merke, dass die Artikel komplett gegensätzliche Positionen vertreten, aber ich weiss nicht, wie ich beurteilen soll, welche Quelle verlässlicher ist. Im Lehrmittel (Kap. 7.1) lese ich, dass Medien als «vierte Staatsgewalt» gelten sollen — aber gleichzeitig durch Trägerschaft, Werbung und Sprache beeinflusst sein können. Wie erkenne ich, welcher Medienbeitrag neutraler berichtet?",
+  "zahlen_tabelle": [
+    {
+      "label": "Quelle A (watson.ch)",
+      "wert": "Onlinemedium, Boulevard-Format, Ringier-Gruppe"
+    },
+    {
+      "label": "Quelle B (Weltwoche)",
+      "wert": "Wochenmagazin, konservative Ausrichtung, unabhängig"
+    },
+    {
+      "label": "Thema",
+      "wert": "Migrationspolitik Schweiz — zwei gegensätzliche Darstellungen"
+    }
+  ],
+  "leitfrage": "Wie erkenne ich, welcher Medienbeitrag neutraler und verlässlicher berichtet?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 7.1 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 7.1 | S. 186",
+      "text": "Erkläre, was mit der «vierten Staatsgewalt» gemeint ist, und nenne zwei Aufgaben, die Medien in einer Demokratie erfüllen sollen.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 7.1 | S. 187",
+      "text": "Vergleiche watson.ch und die Weltwoche anhand von drei Kriterien: (1) Trägerschaft/Eigentümer, (2) Finanzierung/Werbung, (3) Sprache und Bildauswahl. Notiere deine Befunde in einer Tabelle.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 7.1 | S. 189",
+      "text": "Dein Kollege fragt dich, welchem der beiden Artikel er vertrauen soll. Du hast zwei Optionen: (a) Du empfiehlst ihm einen der beiden Artikel als «die bessere Quelle». (b) Du rätst ihm, beide zu lesen und eine dritte Quelle (z. B. SRF News) beizuziehen. Welche Empfehlung gibst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 7.1 | S. 187",
+      "text": "Erstelle eine Vergleichstabelle für drei Schweizer Medienangebote (z. B. SRF, watson.ch, Weltwoche) mit den Kriterien Trägerschaft, Ausrichtung, Finanzierung und Einschätzung Verlässlichkeit. Formuliere eine abschliessende Einschätzung in Ich-Form.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Medien beurteilen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Vierte Staatsgewalt",
+      "punkte": [
+        "Kontrollfunktion",
+        "Öffentlichkeit informieren",
+        "Meinungsbildung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Beurteilungskriterien",
+      "punkte": [
+        "Trägerschaft",
+        "Finanzierung/Werbung",
+        "Sprache und Bildauswahl"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Manipulation",
+      "punkte": [
+        "Selektion von Themen",
+        "Gewichtung",
+        "Zensur und Gegenmassnahmen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Medienkonzentration Schweiz",
+        "Meinungsfreiheit vs. Verantwortung",
+        "Eigene Mediendiät"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Vergleichstabelle + Einschätzung",
+    "titel": "Format: Medienvergleichstabelle",
+    "format_detail": "Strukturierte Tabelle mit drei Schweizer Medien nach den Kriterien Trägerschaft, Ausrichtung, Finanzierung und Verlässlichkeit — plus abschliessende persönliche Einschätzung",
+    "beschreibung": "Du vergleichst drei Schweizer Medienangebote systematisch und bewertest, welches für politische Informationen verlässlicher ist.",
+    "schritte": [
+      {
+        "label": "Medien auswählen",
+        "hint": "Wähle drei unterschiedliche Schweizer Medien (z. B. SRF, watson.ch, Weltwoche oder Tages-Anzeiger). Notiere den Typ (TV, Online, Print)."
+      },
+      {
+        "label": "Trägerschaft recherchieren",
+        "hint": "Suche online heraus, wer die jeweiligen Medien besitzt oder finanziert. Stichwort: Impressum, Wikipedia."
+      },
+      {
+        "label": "Sprache und Haltung analysieren",
+        "hint": "Vergleiche je einen Artikel zum gleichen Thema: Welche Wörter, Bilder und Betonung werden gewählt? Neutral oder wertend?"
+      },
+      {
+        "label": "Tabelle ausfüllen",
+        "hint": "Trage alle Befunde in die Vergleichstabelle ein (Trägerschaft, Ausrichtung, Finanzierung, Sprache, Verlässlichkeitseinschätzung 1–5)."
+      },
+      {
+        "label": "Persönliche Einschätzung",
+        "hint": "Formuliere in Ich-Form: Welchem Medium vertraust du am meisten — und warum? Begründe mit Bezug auf deine Tabelle."
+      }
+    ],
+    "schreib_label": "MEDIENVERGLEICHSTABELLE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/medien_staatsgewalt"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Beide Artikel berichten diesmal über ein Wirtschaftsthema (z. B. SNB-Entscheid). Ändern sich deine Beurteilungskriterien — oder bleiben sie gleich?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du herausfindest, dass dein bevorzugtes Medium vom gleichen Konzern wie dein Arbeitgeber Swisscom kontrolliert wird? Wie verändert das dein Vertrauen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Kauffrau/Kaufmann EFZ bei einem Pharmaunternehmen. Ein Medienbericht kritisiert einen eurer Wirkstoffe. Wie prüfst du mit denselben Kriterien, ob der Bericht sachlich ist?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Schau in Kap. 7.1: Welche drei Staatsgewalten gibt es bereits — und was ergänzt die Presse als vierte?",
+          "satzanfang": "Mit der «vierten Staatsgewalt» ist gemeint, dass Medien in einer Demokratie ___ sollen. Zwei Aufgaben sind: ___ und ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Mach eine Tabelle mit 3 Spalten (Kriterium / watson.ch / Weltwoche). Kap. 7.1 erklärt, was Trägerschaft und Finanzierung bedeuten — schreib konkrete Befunde, nicht nur «gut» oder «schlecht».",
+          "satzanfang": "Bei der Trägerschaft unterscheiden sich watson.ch und die Weltwoche so: watson.ch gehört ___, die Weltwoche ___. Bei der Sprache fällt auf, dass ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Es geht nicht darum, wer Recht hat — sondern welche Methode für politische Themen zuverlässiger ist. Kap. 7.1 erklärt die Idee der Quellenvielfalt.",
+          "satzanfang": "Ich empfehle meinem Swisscom-Kollegen Option ___, weil bei politischen Themen wie Migrationspolitik ___ wichtiger ist als ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Wähle drei Medien mit unterschiedlichen Formaten (z.B. TV, Online, Print). Deine Verlässlichkeitseinschätzung muss auf mindestens einem konkreten Tabellenkriterium basieren.",
+          "satzanfang": "Für politische Informationen vertraue ich am meisten ___, weil ___. Am wenigsten verlässlich finde ich für diesen Zweck ___, da ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Trägerschaft",
+          "definition": "Organisation oder Person, die ein Medium besitzt und finanziert"
+        },
+        {
+          "term": "vierte Staatsgewalt",
+          "definition": "Rolle der Medien als Kontrollinstanz neben Exekutive, Legislative und Judikative"
+        },
+        {
+          "term": "Finanzierung",
+          "definition": "Woher das Geld eines Mediums kommt (Werbung, Abonnemente, öffentliche Mittel)"
+        },
+        {
+          "term": "Ausrichtung",
+          "definition": "Politische oder weltanschauliche Tendenz eines Mediums"
+        },
+        {
+          "term": "Verlässlichkeit",
+          "definition": "Mass dafür, wie genau und unabhängig ein Medium berichtet"
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle zuerst eine Tabelle mit 6 Zeilen (Medienname, Typ, Trägerschaft, Finanzierung, Sprache/Haltung, Verlässlichkeit 1–5) und 4 Spalten (Kriterium + 3 Medien). Schreib danach 3–5 Sätze in Ich-Form als persönliche Einschätzung.",
+        "beispiel": "Trägerschaft | SRF: SRG SSR (öffentlich-rechtlich) | watson.ch: Ringier AG | Tages-Anzeiger: TX Group AG",
+        "checkfragen": [
+          "Habe ich drei verschiedene Medientypen (z.B. TV, Online, Print) verglichen?",
+          "Enthält jede Tabellenzelle einen konkreten Befund — nicht nur «gut» oder «schlecht»?",
+          "Bezieht sich meine persönliche Einschätzung auf mindestens ein Tabellenkriterium?",
+          "Steht meine Einschätzung in Ich-Form?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche Folgen hätte eine starke Medienkonzentration in der Schweiz — wenn drei Viertel aller Medien derselben Holding gehörten — für die demokratische Meinungsbildung?",
+          "Inwiefern ist die SRG als öffentlich-rechtliches Medium weniger anfällig für Interessenkonflikte als private Medien — und welche Risiken bleiben trotzdem bestehen?"
+        ],
+        "recherche_impulse": [
+          "Suche nach «Medienkonzentration Schweiz» mit einer Suchmaschine. Welche Mediengruppen dominieren den Schweizer Markt aktuell? Notiere zwei konkrete Fakten."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Stell dir vor, du bist Informatiker/in bei Swisscom und sollst für die interne Weiterbildung eine Empfehlung für drei verlässliche Medienquellen zu Wirtschaftsthemen ausarbeiten. Aktualisiere deine Vergleichstabelle für diesen beruflichen Kontext.",
+        "analyse": "Was passiert, wenn ein Medienhaus gleichzeitig Eigentümer eines grossen Telekommunikationsunternehmens ist — wie beeinflusst das die Berichterstattung über dieses Unternehmen aus Sicht der Leserschaft und aus Sicht der Redaktion?",
+        "recherche": "Suche nach «Medienfreiheit Schweiz Bundesverfassung» mit einer Suchmaschine. In welchem Artikel ist die Medienfreiheit verankert — und welche Grenzen setzt sie? Notiere den Artikel und eine konkrete Schranke.",
+        "praesentation": "Erkläre deinem Swisscom-Kollegen in 90 Sekunden und mit drei Stichpunkten, warum du für politische Informationen mehrere Quellen empfiehlst — und nenne konkret, welche drei du wählen würdest.",
+        "wissensknoten_extra": []
+      }
+    }
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "lebensbezug_text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+      "thema_leitidee": "In einer Welt, in der täglich unzählige Informationen und Meinungen auf mich einwirken, wird es für mich immer wichtiger, mir eine eigene, fundierte Haltung zu erarbeiten.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Technologie und digitale Transformation",
+          "detail": "Digitalisierung bei politischer Meinungsbildung",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Politische Ethik und Verantwortung in digitalen Räumen",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Politik",
+          "detail": "Meinungsbildung und Mitgestaltung",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption mündlich",
+          "detail": "Informationen aus Medien kritisch aufnehmen und einordnen"
+        },
+        {
+          "modus": "Produktion mündlich",
+          "detail": "Standpunkte begründet und respektvoll vertreten"
+        },
+        {
+          "modus": "Produktion schriftlich und bildlich",
+          "detail": "Meinungsorientierte Texte und Protokolle verfassen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Zwischen relevanten und irrelevanten Quellen und Inhalten unterscheiden",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wie erkenne ich, welcher Medienbeitrag neutraler und verlässlicher berichtet?",
+      "argumentieren": "Vergleiche watson.ch und die Weltwoche anhand von drei Kriterien: (1) Trägerschaft/Eigentümer, (2) Finanzierung/Werbung, (3) Sprache und Bildauswahl. Notiere deine Befunde in einer Tabelle.",
+      "entscheiden": "Dein Kollege fragt dich, welchem der beiden Artikel er vertrauen soll. Du hast zwei Optionen: (a) Du empfiehlst ihm einen der beiden Artikel als «die bessere Quelle». (b) Du rätst ihm, beide zu lesen und eine dritte Quelle (z. B. SRF News) beizuziehen. Welche Empfehlung gibst du — und warum?",
+      "formulieren": "Erstelle eine Vergleichstabelle für drei Schweizer Medienangebote (z. B. SRF, watson.ch, Weltwoche) mit den Kriterien Trägerschaft, Ausrichtung, Finanzierung und Einschätzung Verlässlichkeit. Formuliere eine abschliessende Einschätzung in Ich-Form."
+    },
+    "empfohlene_templates": [
+      "ai_gegenpositionen",
+      "ai_redaktion"
+    ],
+    "templates": {
+      "ai_gegenpositionen": {
+        "score": 135,
+        "grund": "Ethik R2 · Medienunabhängigkeit vs. Trägerpflicht als Streitfrage",
+        "startposition": "Ein Medium mit klarer politischer Ausrichtung ist ehrlicher als eines, das behauptet, neutral zu sein — denn echte Neutralität gibt es in der Berichterstattung sowieso nicht.",
+        "gegenargument_rahmen": "Strukturelle Pressevielfalt und Kontrollfunktion; wirtschaftliche Abhängigkeit durch Werbeeinnahmen und Träger; Unterschied zwischen redaktioneller Haltung und Faktentreue",
+        "position_frage": "Ist ein Medium mit transparent gemachter politischer Ausrichtung verlässlicher als eines, das Neutralität beansprucht, aber von einem Medienkonzern kontrolliert wird?"
+      },
+      "ai_redaktion": {
+        "score": 100,
+        "grund": "Technologie R2 · Produktionsmodus schriftlich — Stilvergleich Medienangebote",
+        "textthema": "Zwei Schweizer Medien berichten über dasselbe politische Ereignis mit gegensätzlicher Tonalität. Was macht den Unterschied — und wie klingt deine eigene sachliche Einschätzung dazu?",
+        "stil_auftrag": "Lass die KI denselben SNB-Zinsentscheid in drei Stilen formulieren: (1) Sachlich-informierend wie SRF News — mit Zahlen und ohne Wertung, (2) Meinungsstark wie ein Weltwoche-Kommentar — mit klarer politischer Haltung, (3) Emotional-nahbar wie ein watson.ch-Beitrag — persönlich und zugänglich. Vergleiche: Welcher Stil erzeugt welche Wirkung bei dir?",
+        "textformat_ziel": "Schreib deine eigene Medieneinschätzung als kurzen Kommentar (5–7 Sätze) — ohne KI, in deiner eigenen Stimme."
+      }
+    }
+  }
+}

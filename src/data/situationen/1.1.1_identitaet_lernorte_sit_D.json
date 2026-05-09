@@ -1,0 +1,432 @@
+{
+  "id": "1.1.1_identitaet_lernorte_sit_D",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "situation": "D",
+  "sit_farbe": "#A04000",
+  "sit_farbe_light": "#FAE5D3",
+  "sit_farbe_mid": "#E67E22",
+  "titel": "Selbstvertrauen Aufbau Baustelle",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "rollenidentitaet",
+    "selbstkompetenz"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sk": [
+      2,
+      6,
+      8
+    ]
+  },
+  "persona": {
+    "beruf": "Koch/Köchin EFZ",
+    "betrieb": "Restaurant Zum Bären",
+    "ort": "Basel"
+  },
+  "situation_text": "Ich bin Koch im 1. Lehrjahr im Restaurant Zum Bären in Basel. Mein Lehrlingslohn beträgt CHF 750.– pro Monat. Nach drei Wochen im Betrieb merke ich, dass mir vieles noch schwerfällt: Ich brauche zu lange für einfache Handgriffe, vergesse Abläufe und traue mich kaum, Fragen zu stellen — aus Angst, dumm zu wirken. Zwei erfahrene Kolleginnen witzeln gelegentlich über meine Fehler. Ich frage mich langsam, ob ich wirklich den richtigen Beruf gewählt habe. In der Schule haben wir besprochen, dass Unsicherheit am Anfang normal ist — und dass jeder Mensch Ressourcen mitbringt, auf die er aufbauen kann. Welche Stärken habe ich — und was ist mein erster konkreter Schritt?",
+  "zahlen_tabelle": [
+    {
+      "label": "Lehrlingslohn Koch/Köchin (1. Lehrjahr)",
+      "wert": "CHF 750.–/Monat"
+    },
+    {
+      "label": "Typische Probezeit Lehrvertrag",
+      "wert": "1–3 Monate"
+    }
+  ],
+  "leitfrage": "Welche Stärken hast du — und was ist dein erster konkreter Schritt, um in der neuen Rolle Boden zu fassen?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 18.1 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Was versteht man unter «Rollenidentität» beim Berufseinstieg? Erkläre in eigenen Worten, warum Unsicherheit in den ersten Wochen einer Ausbildung normal ist.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Nenne drei konkrete Ressourcen, die dir beim Aufbau von Selbstvertrauen in der neuen Rolle helfen könnten. Begründe jede Ressource mit einem Satz.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Du kannst (a) die Fehler schweigend hinnehmen und hoffen, dass es mit der Zeit besser wird, oder (b) aktiv eine Vertrauensperson im Betrieb oder der Schule ansprechen. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 18.1 | S. 410",
+      "text": "Erstelle einen persönlichen Stärken-Plan in Ich-Form: Nenne drei Stärken, die du mitbringst — und formuliere je eine konkrete Massnahme, die du diese Woche umsetzt.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein Selbstvertrauen aufbauen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Ressourcen",
+      "punkte": [
+        "Persönliche Stärken",
+        "Unterstützung im Betrieb",
+        "Schule und ÜK"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Neue Rolle",
+      "punkte": [
+        "Erwartungen der anderen",
+        "Eigene Erwartungen",
+        "Was ich noch lerne"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Erste Schritte",
+      "punkte": [
+        "Vertrauensperson ansprechen",
+        "Kleine Ziele setzen",
+        "Erfolge notieren"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Feedback aktiv holen",
+        "Vergleich mit Berufskolleginnen",
+        "Ziel nach 3 Monaten"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Stärken-Plan",
+    "titel": "Format: Persönlicher Stärken-Plan (Tabelle)",
+    "format_detail": "Tabelle mit drei Stärken und je einer konkreten Massnahme für diese Woche — alles in Ich-Form",
+    "beschreibung": "Du erstellst einen persönlichen Stärken-Plan, der zeigt, was du mitbringst — und wie du diese Stärken diese Woche konkret einsetzt, um in der neuen Rolle Fuss zu fassen.",
+    "schritte": [
+      {
+        "label": "Stärken sammeln",
+        "hint": "Was kannst du gut — auch ausserhalb der Küche? Denke an Schule, Hobby, Familie, Sport."
+      },
+      {
+        "label": "Stärken auf den Beruf übertragen",
+        "hint": "Wie hilft mir Stärke X konkret im Koch-Alltag? Schreibe je einen Übertragungssatz."
+      },
+      {
+        "label": "Massnahmen formulieren",
+        "hint": "Was tue ich diese Woche ganz konkret? Nicht «mehr üben» — sondern «Am Dienstag frage ich Chefkoch M. nach Feedback zu meiner Schnitttechnik.»"
+      },
+      {
+        "label": "Tabelle erstellen",
+        "hint": "3 Zeilen: Stärke — Wie hilft sie mir — Konkrete Massnahme diese Woche"
+      },
+      {
+        "label": "Ersten Schritt festlegen",
+        "hint": "Welche Massnahme setzt du als Erstes um — und bis wann? Schreibe Datum und Ort."
+      }
+    ],
+    "schreib_label": "STÄRKEN-PLAN HIER ERARBEITEN",
+    "schreib_note": "-> wissen/rollenidentität"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du bist jetzt im 2. Lehrjahr — die grössten Unsicherheiten sind weg. Was war der entscheidende Moment, in dem du gemerkt hast: «Ich kann das»?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn die witzelnden Kolleginnen direkt auf dich zugehen und sagen: «Du bist zu langsam für diese Küche»? Wie antwortest du — mit welcher Ressource aus deinem Plan?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Ein Informatiker im 1. Lehrjahr hat dasselbe Gefühl: Er versteht den Code nicht und traut sich nicht zu fragen. Was würde ihm dein Stärken-Plan raten — was wäre anders?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rolle in der Gesellschaft und in der Arbeitswelt"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+        },
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "System-Design und Lernarchitektur",
+        "Standpunkte begründen und Gegenargumente prüfen",
+        "Entscheiden unter Unsicherheit"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Welche Stärken hast du — und was ist dein erster konkreter Schritt, um in der neuen Rolle Boden zu fassen?",
+      "argumentieren": "Nenne drei konkrete Ressourcen, die dir beim Aufbau von Selbstvertrauen in der neuen Rolle helfen könnten. Begründe jede Ressource mit einem Satz.",
+      "entscheiden": "Du kannst (a) die Fehler schweigend hinnehmen und hoffen, dass es mit der Zeit besser wird, oder (b) aktiv eine Vertrauensperson im Betrieb oder der Schule ansprechen. Welche Option wählst du — und warum?",
+      "formulieren": "Erstelle einen persönlichen Stärken-Plan in Ich-Form: Nenne drei Stärken, die du mitbringst — und formuliere je eine konkrete Massnahme, die du diese Woche umsetzt."
+    },
+    "empfohlene_templates": [
+      "ai_prompt_duell",
+      "ai_gegenpositionen",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_prompt_duell": {
+        "score": 75,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Identität",
+        "duell_frage": "Wie baust du als Kochlernender im Restaurant Zum Bären Selbstvertrauen auf, ohne Fehler zu verstecken?",
+        "prompt_a_beispiel": "\"Wie kann ich im 1. Lehrjahr als Koch schneller sicherer werden?\"",
+        "prompt_b_beispiel": "\"Ich bin Koch/Köchin EFZ im 1. Lehrjahr im Restaurant Zum Bären in Basel. Ich brauche oft länger und frage aus Angst zu wenig nach. Welche drei konkreten Schritte helfen mir diese Woche?\"",
+        "prompt_c_beispiel": "\"Du bist Ausbildungscoach für Lernende in der Gastronomie. Ich fühle mich unsicher und werde wegen Fehlern manchmal belächelt. Gib mir einen realistischen Wochenplan für mehr Sicherheit im Küchenalltag.\"",
+        "blind_spot": "Die KI kann den Ton in deiner Brigade nicht fühlen und erkennt keine nonverbalen Signale im Team. Sie ersetzt nicht persönliches Feedback einer Vertrauensperson im Betrieb."
+      },
+      "ai_gegenpositionen": {
+        "score": 80,
+        "grund": "SK: Standpunkte begründen | Gesellschaft: Ethik + Recht",
+        "startposition": "Ich sollte zuerst still durchhalten und keine Hilfe ansprechen, damit ich nicht als ungeeignet wirke.",
+        "gegenargument_rahmen": "Lernpsychologie im Berufseinstieg, Rolle von Feedbackkultur, psychologische Sicherheit, Verantwortung der Ausbildenden",
+        "position_frage": "Ist Zurückhaltung ein Zeichen von Professionalität oder ein Risiko für Lernen und Sicherheit in der Küche?"
+      },
+      "ai_ethik_tribunal": {
+        "score": 80,
+        "grund": "Gesellschaft: Ethik + Recht | SK: Standpunkte begründen",
+        "dilemma_frage": "Ist es im Lehrbetrieb akzeptabel, Unsicherheit von Lernenden mit Witzen über Fehler zu kommentieren?",
+        "tribunal_these": "Humor im Team ist nur dann vertretbar, wenn er Lernende nicht entwertet und ihre Bereitschaft zu Fragen nicht blockiert.",
+        "werte_hinweis": "Die KI kann schwer bewerten, wann \"nur Spass\" in reale Abwertung kippt. Sie sieht nicht, wie wiederholte Sticheleien Selbstvertrauen und Lernleistung beeinflussen."
+      }
+    }
+  },
+  "scaffolding": {
+    "_wissensknoten_refs": [
+      "rollenidentität",
+      "selbstkompetenz"
+    ],
+    "leicht": {
+      "vokabular": [
+        {
+          "term": "Rollenidentität",
+          "definition": "Das wachsende Selbstbild, wie man seine berufliche Rolle versteht und ausfüllt."
+        },
+        {
+          "term": "Selbstvertrauen",
+          "definition": "Das Vertrauen in die eigenen Fähigkeiten, auch wenn Aufgaben neu oder schwierig sind."
+        },
+        {
+          "term": "Ressourcen",
+          "definition": "Eigene Stärken oder Unterstützungen, die helfen, Herausforderungen besser zu bewältigen."
+        },
+        {
+          "term": "Vertrauensperson",
+          "definition": "Eine Person, mit der man Probleme offen und ohne Angst besprechen kann."
+        },
+        {
+          "term": "Selbstkompetenz",
+          "definition": "Die Fähigkeit, das eigene Verhalten zu steuern, zu reflektieren und weiterzuentwickeln."
+        }
+      ],
+      "leitfragen_hilfen": [
+        {
+          "tipp": "In Kap. 18.1 findest du Rollenidentität als Entwicklungsprozess; verbinde das mit deinen ersten Wochen in der Küche.",
+          "satzanfang": "Rollenidentität bedeutet für mich als Lernender Koch, dass ___. Unsicherheit am Anfang ist normal, weil ___.",
+          "nr": 1
+        },
+        {
+          "tipp": "Wähle drei echte Ressourcen (z. B. Feedback, Lernjournal, Unterstützung) und begründe ihren Nutzen in deinem Betrieb.",
+          "satzanfang": "Eine Ressource ist ___, weil sie mir bei ___ hilft. Zusätzlich stärkt mich ___, da ___.",
+          "nr": 2
+        },
+        {
+          "tipp": "Entscheide mit Fokus auf langfristige Entwicklung statt kurzfristigem Durchhalten.",
+          "satzanfang": "Ich entscheide mich für Option ___, weil ich dadurch ___ verbessern und ___ vermeiden kann.",
+          "nr": 3
+        },
+        {
+          "tipp": "Nutze eine Zwei-Spalten-Struktur: Meine Stärke und Mein Schritt diese Woche.",
+          "satzanfang": "Meine Stärke ___ setze ich diese Woche ein, indem ich ___. Meine Stärke ___ nutze ich, um ___.",
+          "nr": 4
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle deinen Stärken-Plan als Tabelle mit 2 Spalten: links Meine Stärke, rechts Mein konkreter Schritt diese Woche. Notiere 3 Stärken und zu jeder genau 1 umsetzbare Massnahme im Küchenalltag.",
+        "beispiel": "Stärke: Ich bleibe auch unter Druck freundlich. | Schritt: Ich hole in jeder Schicht einmal aktiv Feedback ein.\nStärke: Ich arbeite sorgfältig. | Schritt: Ich kontrolliere meine Mise en place vor Servicebeginn.\nStärke: Ich lerne schnell aus Rückmeldungen. | Schritt: Ich notiere täglich einen Lernpunkt.",
+        "checkfragen": [
+          "Hast du 3 Stärken mit je einer konkreten Wochenmassnahme verbunden?",
+          "Sind die Massnahmen im Restaurantalltag realistisch umsetzbar?",
+          "Sind alle Formulierungen in Ich-Form geschrieben?",
+          "Zeigt dein Plan sowohl Selbstvertrauen als auch Lernbereitschaft?"
+        ]
+      }
+    },
+    "stark": {
+      "vertiefung": {
+        "analyse": "Was passiert, wenn Unsicherheit im Team mit Spott statt Feedback beantwortet wird? Beurteile Folgen für Person und Betriebskultur.",
+        "transfer": "Übertrage deinen Stärken-Plan auf eine zukünftige Rolle als Postenverantwortliche oder Postenverantwortlicher in der Küche in zwei Jahren.",
+        "praesentation": "Stelle deinen Stärken-Plan in 90 Sekunden einer Vertrauensperson vor. Kriterium: jede Stärke mit messbarer Wochenmassnahme.",
+        "recherche": "Prüfe OR Art. 328 (Fürsorgepflicht) und BBG Art. 15 (Ausbildungspflicht): Welche konkreten Unterstützungswege sind für Lernende im 1. Lehrjahr vorgesehen — und was kann das Restaurant Zum Bären aktiv tun?"
+      },
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Welche Auswirkungen hat Teamspott auf Lernleistung, Motivation und Bindung von Lernenden im Gastgewerbe?",
+          "Wie kann ein Betrieb eine Kultur schaffen, in der Fehler als Lernchancen statt als Makel behandelt werden?",
+          "Welche Rolle spielen Schule und Betrieb gemeinsam bei der Stabilisierung beruflicher Rollenidentität?"
+        ],
+        "recherche_impulse": [
+          "Prüfe OR Art. 328 (Fürsorgepflicht) und BBG Art. 15 (Ausbildungspflicht): Welche 2 konkreten Schutzmechanismen gelten für Lernende im 1. Lehrjahr?",
+          "Suche nach «Resilienz Lernende Berufsbildung» oder «Growth Mindset Ausbildung»: Welche Interventionen stärken Selbstvertrauen bei Lernenden nachhaltig?"
+        ]
+      }
+    }
+  }
+}

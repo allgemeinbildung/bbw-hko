@@ -1,0 +1,409 @@
+{
+  "id": "3.2.1_nachhaltiger_konsum_sit_E",
+  "modul": "3.2",
+  "modul_titel": "Nachhaltiger Konsum",
+  "situation": "E",
+  "sit_farbe": "#6C3483",
+  "sit_farbe_light": "#E8DAEF",
+  "sit_farbe_mid": "#9B59B6",
+  "titel": "Fliegen oder Zug?",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "klimawandel",
+    "nachhaltigkeit"
+  ],
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": [
+      "3.2.1"
+    ],
+    "lebensbezug": "3.2",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion multimedial"
+    ],
+    "sk": [
+      5,
+      9,
+      3
+    ]
+  },
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Sulzer AG",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Polymechaniker/in EFZ im 1. Lehrjahr bei Sulzer AG in Winterthur. Meine Berufsschule bietet ein 2-wöchiges Austauschpraktikum in Barcelona an. Ich habe zwei Reiseoptionen: Option A — Flug: 2 Stunden, CHF 80 Hin-Rückflug, ca. 180 kg CO₂ pro Person. Option B — Zug (Nachtzug via Paris): 10 Stunden, CHF 160 Hin-Rückfahrt, ca. 8 kg CO₂ pro Person. Im Lehrmittel (Kap. 9.1) habe ich gelesen, dass ein Flug den gleichen CO₂-Ausstoss verursacht wie mehrere Monate Autofahren. Mein bester Freund aus der Klasse sagt: Der Flug ist viel billiger, also fliegen wir einfach. Ich bin unsicher — denn ich habe auch die Texte zu Klimawandel und zur 2000-Watt-Gesellschaft gelesen. Ich soll eine Präsentation erstellen, die zeigt, wie ich diesen Entscheid ökologisch, ökonomisch und persönlich abwäge.",
+  "zahlen_tabelle": [
+    {
+      "label": "Flug Winterthur–Barcelona (Hin-Rück)",
+      "wert": "2h, CHF 80, ~180 kg CO₂"
+    },
+    {
+      "label": "Zug Winterthur–Barcelona (Hin-Rück)",
+      "wert": "10h, CHF 160, ~8 kg CO₂"
+    },
+    {
+      "label": "CO₂-Unterschied zwischen den Optionen",
+      "wert": "172 kg (22-fach höher beim Flug)"
+    },
+    {
+      "label": "Preisvorteil Flug vs. Zug",
+      "wert": "CHF 80 günstiger"
+    }
+  ],
+  "leitfrage": "Wie wägst du den Entscheid zwischen Flug und Zug ökologisch, ökonomisch und persönlich ab?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 9.1 und Kap. 9.3 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.1 | S. 220",
+      "text": "Erkläre den Unterschied zwischen dem natürlichen und dem vom Menschen verursachten Treibhauseffekt, und nenne zwei Folgen der Erderwärmung, die in Kap. 9.1 beschrieben werden.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.3 | S. 231",
+      "text": "Vergleiche die beiden Reiseoptionen nach den drei Dimensionen der Nachhaltigkeit: Ordne jeweils einen Vor- und Nachteil zu (ökologisch, ökonomisch, sozial/persönlich). Nutze die Zahlen aus der Tabelle oben.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 9.1 | S. 222",
+      "text": "Dein Freund argumentiert: 'Eine Person mehr oder weniger im Flugzeug ändert nichts.' Du denkst anders. Welche Option wählst du — und mit welchem Gegenargument überzeugst du deinen Freund?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 9.3 | S. 231",
+      "text": "Formuliere in Ich-Form drei Aussagen für deine Präsentation: eine klimabezogene (CO₂-Zahlen), eine wirtschaftliche (Preis und echte Kosten) und eine persönliche (deine Werte und Rolle als Konsument/in).",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mobilität & Klimawandel",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Klimawandel Grundlagen",
+      "punkte": [
+        "Treibhauseffekt natürlich vs. anthropogen",
+        "Erderwärmung: Folgen (Gletscher, Wetterextreme)",
+        "CO₂ als Hauptverursacher"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Vergleich Flug vs. Zug",
+      "punkte": [
+        "CO₂: 180 kg vs. 8 kg",
+        "Preis: CHF 80 vs. CHF 160",
+        "Reisezeit: 2h vs. 10h"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Entscheidungsfaktoren",
+      "punkte": [
+        "Ökologische Verantwortung",
+        "Persönliche Werte & Konsumrolle",
+        "Gesellschaftlicher Druck vs. eigene Haltung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "CO₂-Kompensation: Was bringt das?",
+        "Politische Instrumente (Kerosinsteuer)",
+        "Transfer: Betriebsreisen Sulzer AG"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Multimedia-Präsentation",
+    "titel": "Format: Abwägungs-Präsentation (3 Folien)",
+    "format_detail": "Fakten- und meinungsorientierte Kurzpräsentation (3 Folien) mit Reisevergleich, Klimaanalyse und persönlichem Entscheid mit Begründung",
+    "beschreibung": "Du erstellst eine 3-Folien-Präsentation: Folie 1 zeigt den Vergleich (Tabelle mit CO₂, Preis, Zeit), Folie 2 erklärt die Klimawirkung und die drei Nachhaltigkeitsdimensionen, Folie 3 formuliert deinen persönlichen Entscheid mit Begründung.",
+    "schritte": [
+      {
+        "label": "Vergleichsdaten sammeln",
+        "hint": "Trage alle Zahlen in eine Tabelle ein: Reisezeit, Preis, CO₂-Ausstoss. Quelle: Tabelle oben + Kap. 9.1."
+      },
+      {
+        "label": "Klimawirkung einordnen",
+        "hint": "Berechne: 172 kg CO₂ Unterschied = wie vielen Autokilometern entspricht das? (ca. 1'000 km). Zeige das auf Folie 2."
+      },
+      {
+        "label": "Drei Dimensionen zuordnen",
+        "hint": "Ökologisch, ökonomisch, sozial/persönlich: je ein Stichwort pro Dimension und Option in die Folie."
+      },
+      {
+        "label": "Visualisierung gestalten",
+        "hint": "Folie 1: Vergleichstabelle. Folie 2: Grafik oder Balken CO₂. Folie 3: Ich-Aussage gross und klar. 8×8-Regel."
+      },
+      {
+        "label": "Haltung formulieren",
+        "hint": "'Ich entscheide mich für ..., weil ...' — zeige, dass du die Abwägung bewusst und begründet triffst."
+      }
+    ],
+    "schreib_label": "ABWÄGUNGS-PRÄSENTATION (ENTWURF) HIER SKIZZIEREN",
+    "schreib_note": "-> wissen/klimawandel"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Deine Berufsschule führt neu eine freiwillige CO₂-Kompensation für alle Austauschreisen ein: CHF 15 extra beim Flug. Würdest du zahlen — und was erwartest du dafür? Ist das eine echte Lösung?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn Sulzer AG ankündigt, alle Geschäftsreisen unter 6 Stunden Zugfahrt künftig nur noch mit dem Zug zu erlauben? Welche Vor- und Nachteile siehst du für dich als Lernende/r — und für den Betrieb?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Informatiker/in EFZ bei einer Firma, die viele internationale Kundenmeetings hat. Welche nachhaltige Alternative zu Flugreisen würdest du dem Management vorschlagen — und wie begründest du das ökologisch und wirtschaftlich?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.1",
+      "titel": "Bewusst konsumieren und handeln",
+      "kompetenz": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten beschreiben, wie wir nachhaltiger konsumieren können."
+    },
+    "ki_leitfragen": {
+      "offen": "Wie wägst du den Entscheid zwischen Flug und Zug ökologisch, ökonomisch und persönlich ab?",
+      "argumentieren": "Vergleiche die beiden Reiseoptionen nach den drei Dimensionen der Nachhaltigkeit: Ordne jeweils einen Vor- und Nachteil zu (ökologisch, ökonomisch, sozial/persönlich). Nutze die Zahlen aus der Tabelle oben.",
+      "entscheiden": "Dein Freund argumentiert: 'Eine Person mehr oder weniger im Flugzeug ändert nichts.' Du denkst anders. Welche Option wählst du — und mit welchem Gegenargument überzeugst du deinen Freund?",
+      "formulieren": "Formuliere in Ich-Form drei Aussagen für deine Präsentation: eine klimabezogene (CO2-Zahlen), eine wirtschaftliche (Preis und echte Kosten) und eine persönliche (deine Werte und Rolle als Konsument/in)."
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_entscheidungscoach",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 100,
+        "grund": "Ökologie & Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "zukunft_frage": "Wann werden Kerosin-Flüge innerhalb Europas durch Hyperloops oder CO2-neutrale E-Flieger vollständig ersetzt sein?",
+        "wild_card": "Fluggesellschaften müssen die 'wahren Kosten' der Klimaschäden direkt auf das Ticket aufschlagen, wodurch der Flug nach Barcelona plötzlich CHF 450 kostet.",
+        "blind_spot": "Die psychologische Hürde: Warum fällt es uns so schwer, Zeit gegen Klimaschutz einzutauschen, selbst wenn wir die Fakten kennen?"
+      },
+      "ai_entscheidungscoach": {
+        "score": 55,
+        "grund": "Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "entscheid_situation": "Die Berufsschule stellt euch vor die Wahl: Entweder alle fliegen (billig) oder alle fahren Zug (teuer). Wenn ihr Zug fahrt, muss das Rahmenprogramm in Barcelona gekürzt werden, weil das Geld fehlt.",
+        "optionen": [
+          "Fliegen und volles Kulturprogramm in Barcelona geniessen",
+          "Zügig reisen und dafür Verzicht auf eine Exkursion vor Ort in Kauf nehmen"
+        ],
+        "entscheid_kontext": "Wäge ab zwischen dem ökologischen Fussabdruck der Reise (172kg CO2 Differenz) und dem Bildungswert vor Ort."
+      },
+      "ai_ethik_tribunal": {
+        "score": 25,
+        "grund": "SK 5 (Werthaltungen) | Diversität",
+        "dilemma_frage": "Ist es ethisch vertretbar, den eigenen Zeitvorteil (8 Stunden) und Preisvorteil (CHF 80) über die Klimaverantwortung gegenüber künftigen Generationen zu stellen?",
+        "tribunal_these": "Die Freiheit des Einzelnen, billig und schnell zu fliegen, endet dort, wo sie die kollektive Lebensgrundlage zerstört.",
+        "werte_hinweis": "Denk an das 'Trittbrettfahrer-Argument': Wenn jeder sagt 'Mein Flug spielt keine Rolle', erreichen wir die Klimaziele nie."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 9.1 S. 220 erklärt beide Formen. Natürlich = Sonne wärmt Erde, CO₂ hält Wärme zurück — ohne das wären wir gefroren. Anthropogen = Menschen produzieren zu viel CO₂ → mehr Wärme bleibt → Erderwärmung. Für 2 Folgen: Denke an Gletscher, Wetterextreme, Meeresspiegel.",
+          "satzanfang": "Der natürliche Treibhauseffekt sorgt dafür, dass ___. Der vom Menschen verursachte verstärkt das, weil ___. Zwei Folgen der Erderwärmung sind ___ und ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Erstelle eine Tabelle: 3 Zeilen (ökologisch / ökonomisch / sozial), 2 Spalten (Flug / Zug). Je ein Vor- und Nachteil pro Zelle. Zahlen aus dem Zahlenkasten einbauen: CO₂ (180 kg vs. 8 kg), Preis (CHF 80 vs. CHF 160), Zeit (2h vs. 10h).",
+          "satzanfang": "Ökologisch: Flug = ___ kg CO₂, Zug = ___ kg CO₂ — Unterschied: ___ kg. Ökonomisch: Flug CHF ___, Zug CHF ___. Sozial/persönlich: Der Flug hat den Vorteil ___, der Zug hat ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Das stärkste Gegenargument gegen 'eine Person ändert nichts' ist das Trittbrettfahrer-Problem: Wenn alle so denken, ändert sich kollektiv nichts. Nutze ausserdem die Zahl: 172 kg CO₂ = ca. 1'000 km Autofahrt — das ist greifbar.",
+          "satzanfang": "Ich wähle Option ___, weil ___. Gegen das Argument meines Freundes sage ich: 'Es stimmt nicht, dass eine Person nichts ändert, denn ___'"
+        },
+        {
+          "nr": 4,
+          "tipp": "Klimaaussage = CO₂-Zahlen (172 kg Unterschied, konkret vergleichen). Wirtschaftsaussage = Preis und 'echte Kosten' (wer zahlt für das CO₂, das der Flug verursacht?). Persönliche Aussage = deine Werte als Polymechaniker/in, der/die Präzision und Verantwortung schätzt.",
+          "satzanfang": "Klimaaussage: 'Der Flug erzeugt ___ kg CO₂ mehr als der Zug — das entspricht ca. ___ km Autofahrt.' Wirtschaftsaussage: 'Der Flug kostet CHF ___ weniger, aber die echten Kosten sind ___.' Persönliche Aussage: 'Als Polymechaniker/in bei Sulzer entscheide ich ___, weil ___'"
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Treibhauseffekt",
+          "definition": "Natürlicher Prozess, bei dem CO₂ und andere Gase Wärme in der Atmosphäre zurückhalten — lebensnotwendig, aber durch menschliche Aktivitäten verstärkt."
+        },
+        {
+          "term": "anthropogen",
+          "definition": "Durch den Menschen verursacht — z. B. anthropogener Treibhauseffekt durch CO₂-Emissionen aus Verbrennung fossiler Energieträger."
+        },
+        {
+          "term": "CO₂-Ausstoss",
+          "definition": "Menge Kohlendioxid, die bei einer Aktivität (z. B. Flug) freigesetzt wird — gemessen in Kilogramm pro Person."
+        },
+        {
+          "term": "Ökobilanz",
+          "definition": "Gesamtbewertung der Umweltauswirkungen einer Reise oder eines Produkts — berücksichtigt CO₂, Ressourcen und andere Faktoren."
+        },
+        {
+          "term": "Trittbrettfahrer-Problem",
+          "definition": "Situation, in der alle auf die Handlung anderer warten und so kollektive Ziele (wie Klimaschutz) nicht erreicht werden."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle 3 Folien: Folie 1 = Vergleichstabelle (CO₂, Preis, Reisezeit für Flug und Zug). Folie 2 = Klimawirkung einordnen (172 kg = ca. 1'000 km Auto) + 3 Nachhaltigkeitsdimensionen je 1 Stichpunkt. Folie 3 = persönlicher Entscheid in Ich-Form, mit stärkstem Argument und Gegenargument zum Freund. 8×8-Regel.",
+        "beispiel": "Folie 1 (Tabelle):\n  | | Flug | Zug\n  | CO₂ | ~180 kg | ~8 kg\n  | Preis | CHF 80 | CHF 160\n  | Zeit | 2h | 10h\nFolie 3: 'Ich entscheide Zug — 172 kg CO₂ Einsparung = ca. 1'000 km weniger Autofahrt pro Person.'",
+        "checkfragen": [
+          "□ Enthält Folie 1 alle drei Vergleichskriterien (CO₂, Preis, Zeit) mit konkreten Zahlen?",
+          "□ Erkläre ich in Folie 2, was 172 kg CO₂ bedeutet (z. B. Vergleich mit Autokilometern)?",
+          "□ Formuliere ich Folie 3 explizit in Ich-Form mit einer klaren Entscheidung?",
+          "□ Schreibe ich mindestens ein konkretes Gegenargument gegen 'eine Person ändert nichts'?",
+          "□ Halte ich die 8×8-Regel ein?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Dein Freund sagt, eine Person im Flugzeug macht keinen Unterschied. Erkläre, warum das Klimaproblem nicht durch Einzelentscheide allein gelöst werden kann — und welche Art von Massnahme (politisch, wirtschaftlich, sozial) nötig wäre, damit Zug systematisch attraktiver wird als Fliegen.",
+          "Ein Flugticket nach Barcelona kostet CHF 80 — aber wer zahlt die 'echten Kosten' der 180 kg CO₂? Beschreibe, was eine obligatorische CO₂-Steuer auf Kurzstreckenflüge ändern würde — und wie viel teurer der Flug dann wäre."
+        ],
+        "recherche_impulse": [
+          "Suche nach 'CO2 Kompensation Flug Kritik Wirksamkeit' mit einer Suchmaschine. Was sind die stärksten Kritikpunkte an CO₂-Kompensationsprogrammen für Flugreisen? Notiere zwei konkrete Gegenargumente.",
+          "Suche nach 'Kerosinsteuer Europa Kurzstreckenflüge Vorschlag' mit einer Suchmaschine. Welche Länder befürworten eine Steuer auf Kerosin — und wie würde das den Ticketpreis einer Reise Barcelona beeinflussen? Notiere einen Schätzwert."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist in 5 Jahren Projektleiter/in bei Sulzer und organisierst eine Geschäftsreise nach München. Erstelle eine CO₂-Vergleichstabelle (Zug, Auto, Flug) und formuliere eine schriftliche Empfehlung an die Geschäftsführung — begründet nach den drei Nachhaltigkeitsdimensionen.",
+        "analyse": "Was passiert ökonomisch und ökologisch, wenn die Schweiz eine obligatorische CO₂-Steuer auf alle Kurzstreckenflüge unter 1'000 km einführt? Betrachte Konsequenzen für Reisende, für Airlines und für den öffentlichen Verkehr.",
+        "recherche": "Suche nach 'Klimaschutzgesetz Schweiz CO2 Ziele Luftfahrt Reduktion' mit einer Suchmaschine. Welche Reduktionsziele hat die Schweiz für den Flugverkehr — und bis wann sollen diese erreicht werden? Notiere die wichtigste Zahl.",
+        "praesentation": "Erkläre deinem Freund in 90 Sekunden, warum du den Zug wählst. Kriterium: Dein Freund soll danach den CO₂-Unterschied (172 kg) kennen und ein konkretes Gegenargument zu 'eine Person ändert nichts' gehört haben.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

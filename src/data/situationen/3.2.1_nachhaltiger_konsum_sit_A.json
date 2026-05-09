@@ -1,0 +1,413 @@
+{
+  "id": "3.2.1_nachhaltiger_konsum_sit_A",
+  "modul": "3.2",
+  "modul_titel": "Nachhaltiger Konsum",
+  "situation": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Grau ist das neue Schwarz",
+  "emotion_tag": "Überraschung",
+  "wissensknoten": [
+    "graeenergie_oekobilanz",
+    "nachhaltigkeit"
+  ],
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": [
+      "3.2.1"
+    ],
+    "lebensbezug": "3.2",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion multimedial"
+    ],
+    "sk": [
+      5,
+      9,
+      3
+    ]
+  },
+  "persona": {
+    "beruf": "Informatiker/in EFZ",
+    "betrieb": "Swisscom",
+    "ort": "Zürich"
+  },
+  "situation_text": "Ich bin Informatiker/in EFZ im 1. Lehrjahr bei Swisscom in Zürich. Mein altes Smartphone hat nach 2 Jahren den Geist aufgegeben — ich kaufe mir ein neues für CHF 850. Im ABU-Unterricht zeigt mir meine Lehrperson eine Studie: Allein die Herstellung meines neuen Geräts hat ca. 70 kg CO₂ verursacht — das entspricht einer Autofahrt von Zürich nach Paris. Im Lehrmittel (Kap. 9.2) lerne ich das Konzept der grauen Energie: Der grösste Energieverbrauch eines Smartphones entsteht nicht beim Benutzen, sondern bei Herstellung, Transport und Entsorgung — das sind rund 80% der gesamten Ökobilanz. Ich möchte meine Klasse mit einer kurzen Multimedia-Präsentation überzeugen: Was bringt mehr — ein Recycling-Programm oder einfach das Smartphone länger nutzen?",
+  "zahlen_tabelle": [
+    {
+      "label": "CO₂ Herstellung Smartphone (neu)",
+      "wert": "ca. 70 kg"
+    },
+    {
+      "label": "CO₂ Nutzung pro Jahr",
+      "wert": "ca. 8 kg"
+    },
+    {
+      "label": "Anteil graue Energie an Gesamtökobilanz",
+      "wert": "ca. 80%"
+    },
+    {
+      "label": "Durchschnittliche Nutzungsdauer CH",
+      "wert": "2–2.5 Jahre"
+    }
+  ],
+  "leitfrage": "Was bringt mehr — ein Recycling-Programm oder das Smartphone einfach länger nutzen?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 9.2 und Kap. 9.3 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.2 | S. 230",
+      "text": "Erkläre, was unter 'grauer Energie' verstanden wird, und nenne zwei Alltagsprodukte, bei denen ein Grossteil der Energie bereits vor dem Kauf verbraucht wurde.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.3 | S. 231",
+      "text": "Ordne die drei Dimensionen der Nachhaltigkeit (ökologisch, ökonomisch, sozial) der Smartphone-Situation zu: Welche Dimension ist beim Kauf eines neuen Geräts am stärksten betroffen — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 9.2 | S. 230",
+      "text": "Du hast zwei Optionen: (a) Jährlich ein neues Gerät kaufen und das alte ins Recycling geben. (b) Das Gerät 5 Jahre nutzen und bei Bedarf reparieren lassen. Welche Strategie wählst du — und mit welchem Argument überzeugst du deine Mitschüler/innen?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 9.3 | S. 231",
+      "text": "Formuliere in Ich-Form drei Aussagen für deine Multimedia-Präsentation: eine Faktenaussage (Ökobilanz-Zahlen), eine Wirtschaftsaussage (Ressourcenknappheit) und eine persönliche Aussage (deine Rolle als Konsument/in).",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Graue Energie & Ökobilanz Smartphone",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Graue Energie",
+      "punkte": [
+        "Definition: Energie vor Nutzung",
+        "Herstellung: ~70 kg CO₂",
+        "Transport & Entsorgung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Drei Dimensionen Nachhaltigkeit",
+      "punkte": [
+        "Ökologisch: Ressourcen & Klima",
+        "Ökonomisch: Knappheit & Preis",
+        "Sozial: Arbeitsbedingungen Produktion"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Konsumentscheidung",
+      "punkte": [
+        "Länger nutzen = CO₂ sparen",
+        "Reparieren statt ersetzen",
+        "Recycling als letzter Schritt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Meine persönliche CO₂-Bilanz",
+        "Was andere Länder tun",
+        "Transfer auf andere Geräte"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Multimedia-Präsentation",
+    "titel": "Format: Ökobilanz-Präsentation (3 Folien)",
+    "format_detail": "Fakten- und meinungsorientierte Kurzpräsentation (3 Folien) zur Ökobilanz eines Smartphones mit persönlicher Handlungsempfehlung",
+    "beschreibung": "Du erstellst eine Multimedia-Präsentation mit 3 Folien: Folie 1 zeigt die Ökobilanz-Fakten, Folie 2 vergleicht zwei Konsumentscheidungen, Folie 3 formuliert deine persönliche Haltung.",
+    "schritte": [
+      {
+        "label": "Fakten sammeln",
+        "hint": "Notiere Zahlen aus Kap. 9.2: CO₂ bei Herstellung, Nutzung und Entsorgung. Markiere den Anteil grauer Energie."
+      },
+      {
+        "label": "Vergleich strukturieren",
+        "hint": "Erstelle eine Gegenüberstellung: 'Jährlich neu kaufen' vs. '5 Jahre nutzen' — mit konkreten CO₂-Zahlen."
+      },
+      {
+        "label": "Drei Dimensionen einbauen",
+        "hint": "Zeige kurz: ökologische, ökonomische und soziale Dimension deines Entscheids (je 1 Stichpunkt pro Dimension)."
+      },
+      {
+        "label": "Visualisierung gestalten",
+        "hint": "Nutze die 8×8-Regel aus Kap. 16.3: max. 8 Wörter pro Zeile, max. 8 Zeilen. Eine Kernaussage pro Folie."
+      },
+      {
+        "label": "Haltung formulieren",
+        "hint": "Schliesse Folie 3 mit einer Ich-Aussage ab: 'Ich habe entschieden ... , weil ...' — konkret und begründet."
+      }
+    ],
+    "schreib_label": "ÖKOBILANZ-PRÄSENTATION (ENTWURF) HIER SKIZZIEREN",
+    "schreib_note": "-> wissen/graeenergie_oekobilanz"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Dein Smartphone ist 3 Jahre alt und hat noch 80% Akkuleistung. Ein neues Modell kostet CHF 1'050, ein Akkuwechsel CHF 90. Was entscheidest du — und wie begründest du das ökologisch?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn Swisscom ankündigt, dass alle Lernenden jährlich ein neues Firmengerät erhalten — als 'Benefit'? Wie reagierst du, und was sagst du deiner Berufsbildnerin?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du arbeitest als Polymechaniker/in EFZ in einem Maschinenbaubetrieb. Welche Maschinen haben dort besonders viel graue Energie — und was könnte der Betrieb konkret tun?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.1",
+      "titel": "Bewusst konsumieren und handeln",
+      "kompetenz": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten beschreiben, wie wir nachhaltiger konsumieren können."
+    },
+    "ki_leitfragen": {
+      "offen": "Was bringt mehr — ein Recycling-Programm oder das Smartphone einfach länger nutzen?",
+      "argumentieren": "Ordne die drei Dimensionen der Nachhaltigkeit (ökologisch, ökonomisch, sozial) der Smartphone-Situation zu: Welche Dimension ist beim Kauf eines neuen Geräts am stärksten betroffen — und warum?",
+      "entscheiden": "Du hast zwei Optionen: (a) Jährlich ein neues Gerät kaufen und das alte ins Recycling geben. (b) Das Gerät 5 Jahre nutzen und bei Bedarf reparieren lassen. Welche Strategie wählst du — und mit welchem Argument überzeugst du deine Mitschüler/innen?",
+      "formulieren": "Formuliere in Ich-Form drei Aussagen für deine Multimedia-Präsentation: eine Faktenaussage (Ökobilanz-Zahlen), eine Wirtschaftsaussage (Ressourcenknappheit) und eine persönliche Aussage (deine Rolle als Konsument/in)."
+    },
+    "empfohlene_templates": [
+      "ai_zeitkapsel",
+      "ai_entscheidungscoach",
+      "ai_lernassistent"
+    ],
+    "templates": {
+      "ai_zeitkapsel": {
+        "score": 100,
+        "grund": "Ökologie & Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "zukunft_frage": "Wie wird sich der Anteil an 'grauer Energie' in Smartphones bis zum Jahr 2040 verändern, wenn Hardware modularer wird?",
+        "wild_card": "Ein weltweites 'Recht auf Reparatur'-Gesetz zwingt Hersteller zu 10 Jahren Ersatzteilgarantie.",
+        "blind_spot": "Die ökologischen Kosten des Tiefsee-Bergbaus für seltene Erden."
+      },
+      "ai_entscheidungscoach": {
+        "score": 55,
+        "grund": "Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "entscheid_situation": "Dein Handy-Display ist gesplittert. Eine Reparatur bei einem lokalen Shop kostet CHF 250, ein neues Modell CHF 850. Du hast das Geld für beide Optionen, aber dein Gerät ist erst 2 Jahre alt.",
+        "optionen": [
+          "Display reparieren lassen und CO2-Rucksack klein halten",
+          "Neues Modell kaufen und das alte Gerät als 'Graue Energie'-Abfall lagern"
+        ],
+        "entscheid_kontext": "Denk an die 70kg CO2, die bei jeder Neuproduktion sofort anfallen – unabhängig davon, wie effizient der Akku später ist."
+      },
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "Identität | SK 3 (Problemlösung)",
+        "lernziel": "Den Begriff 'Graue Energie' am Beispiel Smartphone präzise erklären und in die Ökobilanz einordnen können.",
+        "system_prompt_vorlage": "Du bist ein Lerncoach für Kreislaufwirtschaft. Hilf dem User, den Unterschied zwischen Nutzungsenergie und Herstellungsenergie zu verstehen. Nutze sokratische Fragen zum Thema 'CO2-Rucksack'.",
+        "testfragen": [
+          "Was genau zählt zur grauen Energie eines Smartphones?",
+          "Warum machen Herstellung und Transport oft 80% der Gesamtbilanz aus?",
+          "Wie berechnet man die CO2-Ersparnis pro Jahr, wenn man ein Gerät 4 statt 2 Jahre nutzt?"
+        ]
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 9.2 S. 230 erklärt graue Energie. Achte auf den Begriff 'vor der Nutzungsphase'. Für Alltagsprodukte: Überlege, welche Geräte oder Kleidungsstücke du regelmässig ersetzt — auch dort steckt graue Energie drin.",
+          "satzanfang": "Graue Energie ist die Energie, die ___ verbraucht wird — also noch bevor ___. Das gilt auch für ___, weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Kap. 9.3 beschreibt die drei Dimensionen: ökologisch = Ressourcen/CO₂, ökonomisch = Preis/Knappheit, sozial = Arbeitsbedingungen. Wende jede Dimension auf das Smartphone an — die Zahlen aus dem Zahlenkasten helfen.",
+          "satzanfang": "Die ___ Dimension ist beim Smartphone-Kauf am stärksten betroffen, weil ___. Konkret zeigt sich das daran, dass ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option (b) hat den tiefsten CO₂-Fussabdruck laut den Zahlen oben: 70 kg CO₂ fallen bei der Herstellung an — egal ob das alte Gerät recycliert wird oder nicht. Recycling hilft, löst das Grundproblem aber nicht.",
+          "satzanfang": "Ich wähle Option ___, weil ___. Mein stärkstes Argument für die Klasse: Wenn man das Gerät ___ Jahre nutzt, spart man ___ kg CO₂."
+        },
+        {
+          "nr": 4,
+          "tipp": "Schreibe je einen Satz pro Aussagetyp. Faktenaussage = Zahlen aus dem Zahlenkasten. Wirtschaftsaussage = Ressourcenknappheit oder Preisentwicklung. Persönliche Aussage = was du als Informatiker/in bei Swisscom konkret änderst.",
+          "satzanfang": "Faktenaussage: 'Die Herstellung meines Smartphones hat ___ kg CO₂ verursacht — das entspricht ___.' Wirtschaftsaussage: '___ wird knapper, weil ___.' Persönliche Aussage: 'Ich, als Informatiker/in bei Swisscom, entscheide mich für ___, weil ___'"
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Graue Energie",
+          "definition": "Energiemenge, die vor der Nutzungsphase eines Produkts anfällt — bei Herstellung, Transport und Entsorgung."
+        },
+        {
+          "term": "Ökobilanz",
+          "definition": "Gesamtbewertung der Umweltauswirkungen eines Produkts über seinen ganzen Lebenszyklus."
+        },
+        {
+          "term": "Nachhaltigkeit (drei Dimensionen)",
+          "definition": "Konzept, das ökologische, ökonomische und soziale Aspekte gleichgewichtig betrachtet."
+        },
+        {
+          "term": "Ressourcenknappheit",
+          "definition": "Zustand, in dem ein Rohstoff oder eine Ressource (z. B. seltene Erden) weltweit nur begrenzt verfügbar ist."
+        },
+        {
+          "term": "Recycling",
+          "definition": "Wiederverwertung von Materialien aus alten Produkten — reduziert Abfall, ersetzt aber nicht die graue Energie der Herstellung."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle 3 Folien: Folie 1 = Fakten (2–3 Zahlen aus dem Zahlenkasten + Was ist graue Energie?), Folie 2 = Vergleich der zwei Optionen (kurze Tabelle oder zwei Spalten), Folie 3 = Deine Haltung (Ich-Form, was entscheidest du und warum). Pro Folie max. 8 Wörter pro Zeile, max. 8 Zeilen (8×8-Regel aus Kap. 16.3).",
+        "beispiel": "Folie 1: 'Herstellung Smartphone: ~70 kg CO₂ | Nutzung pro Jahr: ~8 kg | Anteil graue Energie: ~80%'\nFolie 2: '5 Jahre nutzen: ~110 kg CO₂ gesamt | Jährlich kaufen: ~350 kg in 5 Jahren'\nFolie 3: 'Mein Entscheid: Gerät 4 Jahre nutzen → ~140 kg CO₂ eingespart'",
+        "checkfragen": [
+          "□ Hat jede Folie genau eine Kernaussage?",
+          "□ Verwende ich in Folie 1 konkrete Zahlen aus dem Zahlenkasten?",
+          "□ Ist Folie 2 ein echter Vergleich — beide Optionen mit Zahlen?",
+          "□ Beginnt Folie 3 mit 'Ich habe entschieden...' oder ähnlich?",
+          "□ Halte ich die 8×8-Regel ein (max. 8 Wörter pro Zeile, max. 8 Zeilen)?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Warum zahlen Konsumentinnen und Konsumenten die CO₂-Kosten der Herstellung nicht direkt beim Kauf — und welche politische Massnahme könnte das ändern? Welche Konsequenz hätte das für den Smartphone-Markt?",
+          "Swisscom tauscht Firmengeräte alle 2 Jahre aus als Standard-Betriebsprozess. Du als Lernende/r hast keinen Einfluss darauf. Wie verändert das deine persönliche CO₂-Bilanz — und was könntest du trotzdem als Einzelperson beeinflussen?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Recht auf Reparatur EU Verordnung 2024' mit einer Suchmaschine. Welche Produktkategorie ist als erstes betroffen — und welche drei konkreten Pflichten haben Hersteller? Notiere die wichtigste Änderung für Konsumentinnen und Konsumenten.",
+          "Suche nach 'CO2-Rucksack Smartphone Studie Deutschland' mit einer Suchmaschine. Welche Lebensphasen eines Smartphones werden verglichen — und wie gross ist der Anteil der Nutzungsphase? Notiere einen konkreten Prozentwert."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du präsentierst deine Ökobilanz-Folien nicht deiner Klasse, sondern deiner Teamleitung bei Swisscom, die über den nächsten Gerätewechsel entscheidet. Welchen Folienteil würdest du umschreiben — und welche zusätzliche Zahl (z. B. CO₂-Einsparung über 3 Jahre bei allen Lernenden) würdest du hinzufügen?",
+        "analyse": "Was passiert ökonomisch und ökologisch, wenn alle 8,7 Millionen Schweizerinnen und Schweizer ihr Smartphone 4 statt 2 Jahre nutzen? Schätze die CO₂-Einsparung (70 kg pro nicht gekauftes Gerät) und überlege, welche Marktsegmente davon profitieren und welche verlieren.",
+        "recherche": "Suche nach 'Lifecycle Assessment Smartphone Fraunhofer Institut' mit einer Suchmaschine. Welche Lebensphase verursacht laut Studie den grössten CO₂-Anteil? Notiere den Prozentwert und den Namen der Studie.",
+        "praesentation": "Erkläre deiner Klasse in 90 Sekunden: Was ist graue Energie, warum ist das als Informatiker/in bei Swisscom relevant, und was hast du für dich entschieden. Kriterium: Deine Mitschüler/innen sollen danach zwei konkrete CO₂-Zahlen nennen können.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

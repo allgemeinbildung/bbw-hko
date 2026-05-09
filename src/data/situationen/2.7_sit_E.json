@@ -1,0 +1,409 @@
+{
+  "id": "2.7_sit_E",
+  "modul": "2.7",
+  "modul_titel": "Preisbildung",
+  "situation": "E",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Das Medikament gibt es nicht mehr — oder nur noch teuer",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "nachfrage",
+    "preisbildung"
+  ],
+  "nrlp": {
+    "lebensbezug": "3.2",
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": null
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": null
+      },
+      {
+        "aspekt": "Recht",
+        "iteration": null
+      }
+    ],
+    "sprachmodi": [],
+    "sk": [
+      9,
+      3,
+      5,
+      1
+    ],
+    "themen": [
+      "T3"
+    ]
+  },
+  "persona": {
+    "beruf": "Lernende/r",
+    "betrieb": "Familienhaushalt",
+    "ort": "Apotheke in der Schweiz"
+  },
+  "situation_text": "Du bist Lernende/r. Deine Grossmutter braucht ein Blutdruckmedikament, das sie jeden Monat kaufen muss — es ist lebensnotwendig für sie. Normalerweise kostet es CHF 18 pro Packung. Doch in der Apotheke erfährst du: Es gibt seit Wochen einen Lieferengpass. Der Hersteller in Indien hat Produktionsprobleme, und die Lagerbestände in der Schweiz sind fast aufgebraucht. Das günstige Generikum ist vergriffen — es gibt nur noch ein teureres Originalprodukt für CHF 64. Deine Grossmutter fragt dich: «Wie kann das sein? Ich brauche das doch!»",
+  "zahlen_tabelle": [],
+  "leitfrage": "Warum steigt derPreiseines lebensnotwendigen Medikaments durch einen Lieferengpass — und was passiert, wenn der freieMarktbei Existenzbedürfnissen nicht mehr funktioniert?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze die Wissensknoten nachfrage und preisbildung. Erkläre den Lieferengpass wirtschaftlich korrekt und nimm in LF3/LF4 klar Stellung zur Frage, wo der Markt bei Existenzbedürfnissen an Grenzen stösst.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 73",
+      "text": "Erkläre den Unterschied zwischen einem Existenzbedürfnis und einem Kollektivbedürfnis. Auf welcher Maslow-Stufe steht das Bedürfnis nach einem lebensnotwendigen Medikament?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 75–77",
+      "text": "Ein Lieferengpass bedeutet: Das Angebot sinkt plötzlich stark. Erkläre mit der Angebotskurve, was mit dem Preis passiert, wenn das Angebot eines Gutes sinkt und die Nachfrage gleich bleibt. Zeichne die Verschiebung der Angebotskurve.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.7 | S. 73–77",
+      "text": "Du hast zwei Optionen: (a) Du kaufst das teure Originalpräparat für CHF 64 — deine Grossmutter bekommt ihr Medikament. (b) Du wartest auf das günstige Generikum (unbekannte Wartezeit) — möglicherweise gesundheitliches Risiko. Welche Option wählst du — und warum? Begründe auch mit Bezug auf Existenzbedürfnis.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.7 | S. 73–77",
+      "text": "Formuliere in Ich-Form, was du der Apothekerin sagst: Erkläre ihr, warum du findest, dass bei lebensnotwendigen Medikamenten der Preis nicht einfach durch Angebot und Nachfrage bestimmt werden sollte — und wer in so einem Fall eingreifen müsste.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Medikamentenengpass und Marktgrenzen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Existenzbedürfnis",
+      "punkte": [
+        "Gesundheit",
+        "Maslow Stufe 1",
+        "geringe Ausweichmöglichkeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Angebot",
+      "punkte": [
+        "Lieferengpass",
+        "Produktionsproblem",
+        "weniger Menge"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Preisbildung",
+      "punkte": [
+        "Preisanstieg",
+        "Angebotskurve",
+        "teures Original"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Staat",
+        "Krankenkasse",
+        "ethische Grenze"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Leserbrief",
+    "titel": "Format: Leserbrief — Stellungnahme zu Markt & Existenzbedürfnissen",
+    "format_detail": "Kurzer meinungsorientierter Text mit wirtschaftlicher Erklärung und klarer Forderung",
+    "beschreibung": "Du verfasst einen Leserbrief zur Frage, warum Preisbildung bei lebensnotwendigen Medikamenten nicht einfach wie bei einem beliebigen Konsumgut behandelt werden kann. Wirtschaftliche Logik und ethische Bewertung müssen dabei zusammenkommen.",
+    "schritte": [
+      {
+        "label": "Einstieg: Situation schildern",
+        "hint": "2–3 Sätze: Was ist passiert? (Lieferengpass, Preisanstieg CHF 18 → CHF 64). Mache die Situation für Leser/innen greifbar."
+      },
+      {
+        "label": "Wirtschaftlich erklären",
+        "hint": "2–3 Sätze: Erkläre den Preisanstieg mit Angebot/Nachfrage und Angebotskurven-Verschiebung. Benutze die Fachbegriffe aus dem Lehrmittel."
+      },
+      {
+        "label": "Das Problem benennen",
+        "hint": "2 Sätze: Warum ist das bei einem Existenzbedürfnis ein Problem? (Nachfrage ist unelastisch — man kann nicht «weniger krank» sein.)"
+      },
+      {
+        "label": "Deine Forderung formulieren",
+        "hint": "2–3 Sätze: Was soll der Staat oder die Krankenkasse tun? Formuliere eine klare Forderung in Ich-Form: «Ich finde, dass...»"
+      },
+      {
+        "label": "Abschluss: Appell",
+        "hint": "1–2 Sätze: Beende mit einem Appell an die Leser/innen oder die Politik. Kurz, direkt, wirkungsvoll."
+      }
+    ],
+    "schreib_label": "LESERBRIEF ZU MARKT & MEDIKAMENTEN HIER SCHREIBEN",
+    "schreib_note": "-> wissen/nachfrage und wissen/preisbildung für die Argumentation nutzen"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument.Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip der Preisbildung steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Was würde passieren, wenn der Lieferengpass plötzlich endet und das Generikum wieder verfügbar wäre? Was passiert dann mit dem Preis des Originalpräparates — und warum?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wäre, wenn der Staat den Apothekenpreis per Gesetz bei CHF 18 einfrieren würde? Was würde das für Anbieter bedeuten — wären sie noch bereit, das Medikament anzubieten?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Übertrage das Problem auf einen anderen Bereich: Was passiert bei einem Lieferengpass für Stahl in der Industrie (z.B. für die Baubranche in Basel)? Wer ist betroffen — und reagiert der Markt gleich wie bei Medikamenten?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe + Verbindungen"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch sichtbar?"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit + Ehrlichkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, Leitfragen LF1-LF2 bearbeiten, Mindmap beginnen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "Leitfragen LF3-LF4 bearbeiten, Handlungsprodukt erarbeiten und verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenaustausch, Reflexion R1-R3 und Vorbereitungsfragen V1-V3 abschliessen",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=2.7_sit_E",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/2.7_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "2.7_sit_E",
+    "aliases": [
+      "sit_E_medikament_engpass"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T3"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.2",
+      "titel": "Grenzen des Marktes",
+      "kompetenz": "Ich kann Preisfindung bei lebensnotwendigen Gütern kritisch hinterfragen und die Rolle staatlicher Eingriffe verstehen."
+    },
+    "ki_leitfragen": {
+      "offen": "Darf der Markt den Preis für ein lebensnotwendiges Medikament einfach verdreifachen?",
+      "argumentieren": "Erkläre den Engpass wirtschaftlich: Was passiert laut Angebotskurve (S. 75), wenn das Angebot massiv sinkt, aber die Nachfrage 'starr' bleibt?",
+      "entscheiden": "Du hast zwei Optionen: (a) Das teure Original für CHF 64 kaufen. (b) Auf das Generikum warten (Gesundheitsrisiko). Wie gewichtest du Sicherheit gegenüber Kosten?",
+      "formulieren": "Formuliere in Ich-Form eine Aussage für deinen Leserbrief: Warum ist Preisbildung bei Gesundheitsthemen keine reine 'Privatsache' des Marktes?"
+    },
+    "empfohlene_templates": [
+      "ai_ethik_tribunal",
+      "ai_entscheidungscoach",
+      "ai_lernassistent"
+    ],
+    "templates": {
+      "ai_ethik_tribunal": {
+        "score": 55,
+        "grund": "Ethik | SK 5 (Werthaltungen)",
+        "dilemma_frage": "Ist es moralisch vertretbar, mit dem Überlebenswillen schwerkranker Menschen Maximalgewinne durch künstliche Verknappung zu erzielen?",
+        "tribunal_these": "Existenzielle Grundbedürfnisse müssen der freien Preisbildung entzogen und staatlich kontrolliert werden, um soziale Gerechtigkeit zu garantieren.",
+        "werte_hinweis": "Denk an Maslow Stufe 1: Ohne Gesundheit sind alle höheren Bedürfnisse wertlos."
+      },
+      "ai_entscheidungscoach": {
+        "score": 55,
+        "grund": "Wirtschaft | SK 9 (Nachhaltigkeit)",
+        "entscheid_situation": "Deine Grossmutter hat nur eine geringe Rente. Ein monatlicher Aufpreis von CHF 46 belastet sie sehr. Die Apothekerin kann nicht sagen, wann das Generikum wieder kommt.",
+        "optionen": [
+          "Das Original kaufen (Volle Sicherheit, finanzielle Notlage für die Grossmutter)",
+          "Warten und nach Alternativen suchen (Finanzschonung, aber hohes Risiko)"
+        ],
+        "entscheid_kontext": "Wäge ab zwischen dem Preis der Gesundheit und der finanziellen Würde im Alter."
+      },
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "Identität | SK 3 (Problemlösung)",
+        "lernziel": "Das Konzept der unelastischen Nachfrage im Gesundheitswesen verstehen und Marktversagen benennen können.",
+        "system_prompt_vorlage": "Du bist ein Experte für Gesundheitspolitik. Erkläre dem User, warum Leute bei lebenswichtigen Medikamenten fast jeden Preis zahlen, und warum man hier von 'unelastischer Nachfrage' spricht.",
+        "testfragen": [
+          "Warum reagiert die Nachfrage bei Medikamenten kaum auf Preisänderungen?",
+          "Was passiert mit der Angebotskurve, wenn ein ganzer Produktionsstandort ausfällt?",
+          "Welche staatlichen Werkzeuge gibt es, um Medikamentenpreise künstlich tief zu halten?"
+        ]
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies den Wissensknoten zu Maslow's Bedürfnispyramide und den Unterschied zwischen Individual- und Kollektivbedürfnis. Ein Blutdruckmedikament ist lebensnotwendig — auf welcher Stufe steht das?",
+          "satzanfang": "Das Blutdruckmedikament ist ein ___ bedürfnis auf Maslow-Stufe ___ (physiologische Bedürfnisse), weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Ein Lieferengpass bedeutet: gleiche Nachfrage, aber viel weniger Angebot. Suche im Wissensknoten, wie sich die Angebotskurve bei einem Lieferausfall verschiebt.",
+          "satzanfang": "Bei einem Lieferengpass verschiebt sich die Angebotskurve nach ___ (links/rechts), weil ___. Folge: Der Preis steigt von CHF ___ auf CHF ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Denke an die Dringlichkeit: Deine Grossmutter braucht das Medikament täglich. Zähle die Risiken beider Optionen auf, bevor du entscheidest.",
+          "satzanfang": "Ich entscheide mich für Option ___ (CHF 64 Original kaufen / auf Generikum warten), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Erkläre zuerst, warum der Markt bei lebensnotwendigen Gütern versagen kann (Preis steigt, obwohl die Menschen keine Wahl haben), dann formuliere eine konkrete Forderung.",
+          "satzanfang": "Das Medikament meiner Grossmutter ist kein Luxusgut, sondern ___. Der Markt versagt hier, weil ___. Meine Forderung: ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Lieferengpass",
+          "definition": "Eine Situation, in der ein Gut nicht mehr oder nur noch begrenzt geliefert werden kann — das Angebot sinkt trotz gleich hoher Nachfrage."
+        },
+        {
+          "term": "Angebotskurve",
+          "definition": "Eine Linie im Diagramm, die zeigt: Je höher der Preis, desto mehr wird von einem Gut angeboten."
+        },
+        {
+          "term": "Marktversagen",
+          "definition": "Eine Situation, in der der Marktmechanismus kein gerechtes oder effizientes Ergebnis liefert — z.B. bei lebensnotwendigen Gütern."
+        },
+        {
+          "term": "Existenzbedürfnis",
+          "definition": "Ein Bedürfnis, das zum Überleben notwendig ist — z.B. Essen, Wohnen oder lebensnotwendige Medikamente."
+        },
+        {
+          "term": "Kollektivbedürfnis",
+          "definition": "Ein Bedürfnis, das viele Menschen gleichzeitig haben und das oft vom Staat gedeckt wird, z.B. Gesundheitsversorgung."
+        },
+        {
+          "term": "Generikum",
+          "definition": "Ein günstigeres Medikament mit demselben Wirkstoff wie das Original-Markenmedikament, aber von einem anderen Hersteller."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein Leserbrief hat 4 Teile: 1. Einleitung (1 Satz) — beschreibe konkret die Situation der Grossmutter. 2. Wirtschaftliche Erklärung (2-3 Sätze) — erkläre den Lieferengpass mit Angebot-Nachfrage-Logik. 3. Deine Meinung (2-3 Sätze) — warum ist das ungerecht? 4. Forderung (1-2 Sätze) — was soll die Politik tun?",
+        "beispiel": "Thema: Wohnungsnot in der Stadt. Einleitung: Familien können sich die Mieten nicht mehr leisten. Erklärung: Das Wohnungsangebot wächst langsamer als die Bevölkerung — Preise steigen. Meinung: Das ist sozial ungerecht, weil Wohnen ein Grundbedürfnis ist. Forderung: Der Staat muss mehr günstige Wohnungen bauen.",
+        "checkfragen": [
+          "□ Habe ich eine Einleitung mit der konkreten Situation (Grossmutter, CHF 64)?",
+          "□ Habe ich den Lieferengpass wirtschaftlich mit Angebot und Nachfrage erklärt?",
+          "□ Habe ich meine Meinung klar in Ich-Form formuliert?",
+          "□ Habe ich am Schluss eine konkrete Forderung an die Politik?",
+          "□ Ist mein Leserbrief meinungsorientiert — nicht nur neutral berichtend?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Inwiefern ist es gesellschaftlich akzeptabel, dass Preise für lebensnotwendige Medikamente nach demselben Marktprinzip funktionieren wie für Turnschuhe — obwohl Kranke keine Wahl haben?",
+          "Was wären die Folgen für die Pharmaindustrie und für Patientinnen und Patienten, wenn der Staat alle Medikamentenpreise staatlich festlegen würde?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Lieferengpass Medikamente Schweiz Heilmittelgesetz Massnahmen' mit einer Suchmaschine. Was hat die Schweiz als Reaktion auf Lieferengpässe unternommen? Notiere eine konkrete Massnahme.",
+          "Suche nach 'Generikum Schweiz teurer als Deutschland Ursache' mit einer Suchmaschine. Warum sind Medikamente in der Schweiz teurer als in Nachbarländern? Notiere zwei Gründe."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist Mitglied des Bundesrats und musst eine Notmassnahme für den Medikamentenengpass beschliessen. Formuliere in 3 Stichpunkten, welche Sofortmassnahmen du ergreifst — und welche wirtschaftlichen Interessen dabei in Konflikt geraten.",
+        "analyse": "Was passiert mittelfristig, wenn Pharmaunternehmen bestimmte Medikamente nicht mehr produzieren, weil die Gewinnmarge zu klein ist? Analysiere aus Sicht der Patientinnen und Patienten und der Pharmaindustrie.",
+        "recherche": "Lies Heilmittelgesetz (HMG) Art. 18 oder suche nach 'Pflichtlager Medikamente Schweiz gesetzliche Grundlage' mit einer Suchmaschine. Welche Pflichten hat die Schweiz zur Bevorratung lebenswichtiger Medikamente? Notiere den relevanten Artikel und seine Kernaussage.",
+        "praesentation": "Lies deinen Leserbrief der Klasse vor. Erkläre anschliessend in 1 Minute, welches wirtschaftliche Prinzip du verwendet hast — und warum Marktversagen bei Existenzbedürfnissen wie Medikamenten besonders problematisch ist.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

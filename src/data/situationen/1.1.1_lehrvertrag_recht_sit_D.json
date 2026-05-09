@@ -1,0 +1,468 @@
+{
+  "id": "1.1.1_lehrvertrag_recht_sit_D",
+  "modul": "1.1",
+  "modul_titel": "Auseinandersetzung mit dem Lehrvertrag (Aspekt Recht)",
+  "situation": "D",
+  "sit_farbe": "#A04000",
+  "sit_farbe_light": "#FAE5D3",
+  "sit_farbe_mid": "#E67E22",
+  "titel": "Krank im 1. Lehrjahr",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "lehrvertrag"
+  ],
+  "nrlp": {
+    "lebensbezug": "1.1",
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_primary": [
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodi_secondary": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sk": [
+      6,
+      8,
+      2
+    ],
+    "sk_primary": [
+      6,
+      8
+    ],
+    "sk_secondary": [
+      2
+    ],
+    "themen": [
+      "T1"
+    ]
+  },
+  "persona": {
+    "beruf": "Elektroinstallateur/in EFZ",
+    "betrieb": "Elektro Rüegg AG",
+    "ort": "St. Gallen"
+  },
+  "situation_text": "Ich bin Elektroinstallateur-Lernender im 1. Lehrjahr bei der Elektro Rüegg AG in St. Gallen. Mein Lohn beträgt CHF 800.– pro Monat. Nach einer schweren Grippe war ich insgesamt 4 Wochen krank und konnte nicht arbeiten. Mein Berufsbildner teilt mir mit, dass er nur für die ersten drei Wochen Lohn zahlen müsse und ich ab der vierten Woche auf mich selbst gestellt sei — und ausserdem könne die Lehrzeit verlängert werden, weil ich so viel gefehlt habe. Ich bin unsicher: Stimmt das? Was steht mir wirklich zu — und wann muss meine Lehrzeit tatsächlich verlängert werden?",
+  "zahlen_tabelle": [
+    {
+      "label": "Dein Monatslohn",
+      "wert": "CHF 800.–"
+    },
+    {
+      "label": "Krankheitsdauer",
+      "wert": "4 Wochen"
+    },
+    {
+      "label": "Lohnfortzahlung 1. Lehrjahr",
+      "wert": "mind. 3 Wochen / Jahr (OR 324a)"
+    },
+    {
+      "label": "Verlängerung Lehrzeit",
+      "wert": "Nur mit Bewilligung Kant. Amt Berufsbildung"
+    },
+    {
+      "label": "Voraussetzung Verlängerung",
+      "wert": "QV-Ziel nicht erreichbar (BBV)"
+    }
+  ],
+  "leitfrage": "Welchen Lohnanspruch hast du bei Krankheit — und wann muss deine Lehrzeit wirklich verlängert werden?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kapitel 1.4 (S. 30, 32) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.4 | S. 32",
+      "text": "Erkläre, was die Lohnfortzahlungspflicht bedeutet. Wie viele Wochen muss der Lehrbetrieb im 1. Lehrjahr bei Krankheit den Lohn weiterzahlen — und auf welcher Gesetzesgrundlage?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.4 | S. 30, 32",
+      "text": "Berechne: Wie viele Wochen hast du im 1. Lehrjahr Anspruch auf Lohnfortzahlung? Was geschieht ab der 4. Krankheitswoche? Wer könnte weitere Leistungen übernehmen (z.B. Taggeldversicherung)?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.4 | S. 30",
+      "text": "Dein BB sagt, die Lehrzeit werde verlängert. Du hast zwei Reaktionen: (a) Du stimmst zu, weil du Angst hast, Probleme zu machen. (b) Du fragst nach den genauen Voraussetzungen und meldest dich beim Kantonalen Amt für Berufsbildung. Welche Reaktion ist besser — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 1.4 | S. 30, 32",
+      "text": "Erstelle eine tabellarische Übersicht: Spalte 1 = Behauptung BB, Spalte 2 = Was das Gesetz wirklich sagt, Spalte 3 = Deine Reaktion. Fülle mindestens 3 Zeilen aus und stütze dich auf OR 324a und BBV.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Krankheit im Lehrverhältnis",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Lohnfortzahlung",
+      "punkte": [
+        "3 Wochen im 1. Lehrjahr",
+        "OR 324a",
+        "Taggeldversicherung möglich"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Verlängerung Lehrzeit",
+      "punkte": [
+        "Nur wenn QV-Ziel nicht erreichbar",
+        "Bewilligung Kant. Amt Berufsbildung",
+        "Kein Zwang ohne Grund"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Meine Rechte",
+      "punkte": [
+        "Lohnschutz bei Krankheit",
+        "Nicht zur Verlängerung zwingbar",
+        "Unterstützung durch Kant. Amt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "NBU vs. Krankheit",
+        "Was kostet Absenz wirklich?",
+        "Transfer zu meinem Beruf"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Tabellarische Übersicht",
+    "titel": "Format: Übersicht «Behauptung vs. Gesetz»",
+    "format_detail": "Dreispaltige Tabelle: Behauptung des BB | Was das Gesetz sagt | Deine Reaktion — mit mind. 3 Zeilen",
+    "beschreibung": "Du erstellst eine tabellarische Übersicht, die die Aussagen deines Berufsbildners mit den gesetzlichen Vorgaben vergleicht und daraus deine konkrete Reaktion ableitet.",
+    "schritte": [
+      {
+        "label": "Behauptungen auflisten",
+        "hint": "Notiere alle Aussagen deines BB: «Lohn nur 3 Wochen», «Lehrzeit wird verlängert» usw. — eine Zeile pro Behauptung."
+      },
+      {
+        "label": "Gesetz recherchieren",
+        "hint": "Schlage OR 324a und BBV nach. Was steht dort genau? Schreibe die Kernaussage in eigenen Worten."
+      },
+      {
+        "label": "Vergleich ziehen",
+        "hint": "Für jede Behauptung: Stimmt sie oder stimmt sie nicht? Begründe mit Gesetzesartikel."
+      },
+      {
+        "label": "Reaktion formulieren",
+        "hint": "Was machst du konkret? (z.B. «Ich frage nach dem Entscheid des Kant. Amtes», «Ich prüfe meine Krankentaggeldversicherung»)"
+      },
+      {
+        "label": "Schluss: Mein nächster Schritt",
+        "hint": "Formuliere in 1 Satz, was du als Nächstes tust und warum das wichtig ist."
+      }
+    ],
+    "schreib_label": "ÜBERSICHT «BEHAUPTUNG VS. GESETZ» HIER ERARBEITEN",
+    "schreib_note": "-> wissen/lehrvertrag"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Du bist im 2. Lehrjahr und warst 5 Wochen krank. Wie verändert sich die Lohnfortzahlungspflicht deines BB — und warum steigt sie mit den Lehrjahren?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn dein BB eine Krankentaggeldversicherung abgeschlossen hat, die ab der 4. Woche zahlt? Ändert das deinen Grundanspruch — oder ist das ein Zusatz?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du bist Koch-Lernende/r und hattest einen Sportunfall in der Freizeit (NBU) — 3 Wochen ausser Gefecht. Wer zahlt deinen Lohn? Wer zahlt die Heilungskosten?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {
+    "kapitel": [
+      "1.4 Der Lehrvertrag"
+    ]
+  },
+  "registry_tags": {
+    "topic": "lehrvertrag_recht",
+    "set": "1.1.1_lehrvertrag_recht"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+      "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+      "thema_leitidee": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle als verantwortungsvolle, lernende Fachkraft im Betrieb.",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Recht",
+          "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Ethik",
+          "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten",
+          "iteration": "R1"
+        },
+        {
+          "aspekt": "Identität und Sozialisation",
+          "detail": "Rolle in der Gesellschaft und in der Arbeitswelt",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Interaktion und Kollaboration mündlich",
+          "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+        },
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Welchen Lohnanspruch hast du bei Krankheit – und wann muss deine Lehrzeit wirklich verlängert werden?",
+      "argumentieren": "Berechne: Wie viele Wochen hast du im 1. Lehrjahr Anspruch auf Lohnfortzahlung? Was geschieht ab der 4. Krankheitswoche? Wer könnte weitere Leistungen übernehmen?",
+      "entscheiden": "Dein BB sagt, die Lehrzeit wird verlängert. Du hast zwei Reaktionen: (a) Du stimmst zu, weil du Angst hast, Probleme zu machen. (b) Du fragst nach den genauen Voraussetzungen und meldest dich beim Kantonalen Amt für Berufsbildung. Welche Reaktion ist besser – und warum?",
+      "formulieren": "Erstelle eine tabellarische Übersicht: Spalte 1 = Behauptung BB, Spalte 2 = Was das Gesetz wirklich sagt, Spalte 3 = Deine Reaktion. Fülle mindestens 3 Zeilen aus."
+    },
+    "empfohlene_templates": [
+      "ai_entscheidungscoach",
+      "ai_ethik_tribunal",
+      "ai_lernassistent"
+    ],
+    "templates": {
+      "ai_entscheidungscoach": {
+        "score": 75,
+        "grund": "Gesellschaft: Recht · SK: Lebensphasen planen",
+        "entscheid_situation": "Du bist Elektroinstallateur-Lernender bei der Elektro Rüegg AG in St. Gallen. Nach 4 Wochen Krankheit teilt dir dein BB mit: «Lohnfortzahlung endet nach Woche 3, und wir müssen deine Lehrzeit verlängern.» Du bist unsicher, ob das stimmt.",
+        "optionen": [
+          "Option A: Alles akzeptieren und darauf vertrauen, dass der Berufsbildner das Richtige tut",
+          "Option B: Beim Kantonalen Amt für Berufsbildung nachfragen, OR 324a und BBV prüfen, bevor du einer Lehrzeitverkürzung zustimmst"
+        ],
+        "entscheid_kontext": "Nach OR 324a besteht im ersten Lehrjahr ein Lohnfortzahlungsanspruch von mindestens drei Wochen. Eine Verlängerung der Lehrzeit ist gemäss BBV nur zulässig, wenn das Qualifikationsverfahren (QV) sonst nicht erreichbar ist – und erfordert zwingend eine Bewilligung des Kantonalen Amts für Berufsbildung."
+      },
+      "ai_ethik_tribunal": {
+        "score": 80,
+        "grund": "Gesellschaft: Ethik + Recht · SK: Standpunkte begründen",
+        "dilemma_frage": "Darf ein Ausbildungsbetrieb eine Lehrzeitverkürzung anordnen, ohne vorher das Kantonale Amt einzuschalten, wenn eine Lernende 4 Wochen krank war?",
+        "tribunal_these": "Krankheit ist kein Versagen. Wer krank war, hat Anspruch auf Lohnschutz und darf nicht einseitig durch eine Lehrzeitverkürzung sanktioniert werden – auch wenn der Betrieb das administrativ einfacher findet.",
+        "werte_hinweis": "Die KI wird auf OR 324a und BBV verweisen und die Unzulässigkeit der einseitigen Verlängerung bestätigen. Was sie nicht erkennt: wie viel sozialer Druck im Lehrbetrieb bereits ausgeübt wird, bevor diese Fragen überhaupt gestellt werden – und warum viele Lernende schweigen, obwohl sie im Recht wären."
+      },
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "SK: Lebensphasen planen · Gesellschaft: Recht",
+        "lernziel": "Lernende können erklären, welche Lohnfortzahlungsansprüche bei Krankheit gelten und unter welchen genauen Bedingungen eine Lehrzeitverlängerung möglich ist.",
+        "system_prompt_vorlage": "Du bist ein sokratischer Rechtscoach für Berufsschullernende in der Schweiz. Dein Thema: Krankheit im Lehrverhältnis (OR 324a, BBV). Frage immer zuerst, was [LERNENDE] bereits weiss. Erkläre Begriffe wie 'Lohnfortzahlung' oder 'Lehrzeitverlängerung' stets mit Praxisbeispiel. Gib niemals direkt die Artikelnummer, ohne zuvor eine Denkfrage gestellt zu haben.",
+        "testfragen": [
+          "Wie viele Wochen Lohnfortzahlung sind im 1. Lehrjahr bei Krankheit gesetzlich garantiert?",
+          "Was ist der Unterschied zwischen Krankentaggeldversicherung des Betriebs und dem gesetzlichen Mindestanspruch nach OR 324a?",
+          "Dein Berufsbildner sagt, vier Krankheitswochen machen eine Lehrzeitverlängerung nötig. Was fragst du zuerst zurück?"
+        ]
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Arbeite mit Lehrmittel S. 32 und notiere zuerst die gesetzliche Basis OR 324a, dann die konkrete Wochenzahl für das 1. Lehrjahr.",
+          "satzanfang": "Die Lohnfortzahlungspflicht bedeutet, dass ___. Im 1. Lehrjahr muss der Betrieb bei Krankheit ___ Wochen zahlen (Grundlage: ___)."
+        },
+        {
+          "nr": 2,
+          "tipp": "Lege eine kleine Zeitachse mit Woche 1 bis 4 an und trage ein, wer welche Leistung übernimmt.",
+          "satzanfang": "Ich habe Anspruch auf ___ Wochen Lohnfortzahlung. Ab der 4. Woche gilt ___. Mögliche weitere Leistungen kommen von ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Vergleiche beide Reaktionen nach Nutzen und Risiko: schnelle Zustimmung vs. Abklärung bei zuständiger Stelle.",
+          "satzanfang": "Die bessere Reaktion ist Option ___, weil ___. Eine Lehrzeitverlängerung ist nur dann sinnvoll/rechtlich möglich, wenn ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Nutze die Tabelle genau wie vorgegeben: Behauptung BB | Gesetz | Meine Reaktion, mit mindestens drei präzisen Zeilen.",
+          "satzanfang": "Behauptung: ?___?. Gesetz: ?___?. Meine Reaktion: ?___?. "
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Lohnfortzahlungspflicht",
+          "definition": "Pflicht des Betriebs, bei Krankheit den Lohn während einer begrenzten Zeit weiterzuzahlen."
+        },
+        {
+          "term": "OR 324a",
+          "definition": "Gesetzesartikel zur Lohnfortzahlung bei unverschuldeter Arbeitsverhinderung."
+        },
+        {
+          "term": "Taggeldversicherung",
+          "definition": "Versicherung, die nach Ablauf der ordentlichen Lohnfortzahlung weitere Leistungen erbringen kann."
+        },
+        {
+          "term": "Lehrzeitverlängerung",
+          "definition": "Verlängerung der Ausbildungsdauer, wenn Ausbildungsziele wegen Ausfällen nicht erreicht werden können."
+        },
+        {
+          "term": "BBV",
+          "definition": "Berufsbildungsverordnung mit Rahmenregeln zur Durchführung der beruflichen Grundbildung."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle eine Tabelle mit genau drei Spalten. Fülle mindestens drei Zeilen: zuerst die Behauptung deines BB, dann die passende Gesetzeslage, zuletzt deine konkrete, sachliche Reaktion.",
+        "beispiel": "Behauptung BB | Gesetz | Reaktion\n«Ab Woche 4 kein Anspruch» | OR 324a regelt Mindestdauer, danach mögliche Versicherung | «Ich kläre den Versicherungsstatus schriftlich.»\n«Lehrzeit wird automatisch verlängert» | Verlängerung braucht nachvollziehbare Begründung | «Ich bitte um formelle Prüfung mit Amt für Berufsbildung.»",
+        "checkfragen": [
+          "Habe ich mindestens drei vollständige Tabellenzeilen ausgefüllt?",
+          "Ist in jeder Zeile eine klare Gesetzesgrundlage genannt?",
+          "Sind meine Reaktionen sachlich und umsetzbar formuliert?",
+          "Zeigt die Tabelle klar den Unterschied zwischen Behauptung und Rechtslage?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Wie kann ein Betrieb Gesundheitsausfälle von Lernenden abfedern, ohne Ausbildungsqualität oder Fairness zu geführden?",
+          "Welche Kriterien sollten entscheiden, ob eine Lehrzeitverlängerung pädagogisch sinnvoll und rechtlich verhältnismüssig ist?",
+          "Welche Folgen hat es, wenn Lernende aus Angst vor Nachteilen zu wenig transparent über ihre Rechte bei Krankheit sprechen?"
+        ],
+        "recherche_impulse": [
+          "Suche nach ?OR 324a Lohnfortzahlung Lehrjahr Krankheit Schweiz? mit einer Suchmaschine. Notiere zwei Aussagen, die für den Fall im 1. Lehrjahr entscheidend sind.",
+          "Suche nach ?Lehrzeitverlängerung Krankheit Berufsbildung Schweiz? mit einer Suchmaschine. Notiere mindestens eine Information zu Voraussetzungen und Verfahren."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "übertrage deine Übersicht auf ein Szenario im 2. Lehrjahr mit erneutem längeren Ausfall und ergänze, wie du präventiv dokumentieren würdest.",
+        "analyse": "Was passiert, wenn Krankheitsausfälle primär als Disziplinproblem behandelt werden: für die betroffene Person und für die Vertrauenskultur im Betrieb?",
+        "recherche": "Arbeite mit OR 324a und den Suchbegriffen ?BBV Lehrzeitverlängerung Voraussetzungen?. Notiere drei Punkte: Anspruch, Entscheidkriterien und sinnvoller Eskalationsweg.",
+        "praesentation": "Präsentiere deine Tabelle in 90 Sekunden einer fiktiven Klassenrunde. Schliesse mit drei Stichpunkten, wie Lernende bei Krankheit rechtssicher und kooperativ handeln können.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

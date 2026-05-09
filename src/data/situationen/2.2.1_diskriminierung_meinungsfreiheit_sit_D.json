@@ -1,0 +1,412 @@
+{
+  "id": "2.2.1_diskriminierung_meinungsfreiheit_sit_D",
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten",
+  "situation": "D",
+  "sit_farbe": "#A04000",
+  "sit_farbe_light": "#FAE5D3",
+  "sit_farbe_mid": "#E67E22",
+  "titel": "Die Grenzen der Meinungsfreiheit",
+  "emotion_tag": "Entscheidungsdruck",
+  "wissensknoten": [
+    "meinungsfreiheit_schweiz",
+    "diskriminierung_menschenwuerde"
+  ],
+  "nrlp": {
+    "nr": "2.2.1",
+    "nr_primary": [
+      "2.2.1"
+    ],
+    "lebensbezug": "2.2",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      5,
+      6,
+      7
+    ]
+  },
+  "persona": {
+    "beruf": "Koch EFZ",
+    "betrieb": "Hotel Schweizerhof",
+    "ort": "Bern"
+  },
+  "situation_text": "Ich bin Koch EFZ im 1. Lehrjahr beim Hotel Schweizerhof in Bern. Mein Mitschüler Dominik postet auf TikTok ein Video, in dem er eine religiöse Gemeinschaft mit abwertenden Witzen darstellt. Innert 24 Stunden hat das Video über 4 000 Aufrufe. In der Klasse entsteht ein Streit: Die einen sagen, das sei Meinungsfreiheit (Art. 16 BV), die anderen meinen, es überschreite die Grenze zur strafbaren Rassendiskriminierung (Art. 261bis StGB). Ich soll für die nächste Lektion eine klare Stellungnahme erarbeiten: Wo endet die Meinungsfreiheit — und ab wann wird eine Aussage strafrechtlich relevant?",
+  "zahlen_tabelle": [
+    {
+      "label": "Aufrufe innert 24 Stunden",
+      "wert": "über 4 000"
+    },
+    {
+      "label": "Relevanter Artikel Meinungsfreiheit",
+      "wert": "Art. 16 BV"
+    },
+    {
+      "label": "Relevanter Straftatbestand",
+      "wert": "Art. 261bis StGB"
+    }
+  ],
+  "leitfrage": "Wo endet die Meinungsfreiheit — und ab wann wird eine Aussage zur strafbaren Diskriminierung?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 3.2 und Kap. 18.2 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.2 | S. 93",
+      "text": "Erkläre, was Art. 16 BV schützt — und nenne eine Schranke, die Art. 36 BV dem Staat erlaubt zu setzen.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 3.2 | S. 93",
+      "text": "Prüfe Dominiks Video anhand von Art. 261bis StGB: Welche drei Tatbestandsmerkmale müssen erfüllt sein, damit ein Beitrag strafbar ist? Sind sie im vorliegenden Fall erfüllt?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 3.2 | S. 93",
+      "text": "Du hast zwei Positionen: (a) Du verteidigst Dominiks Recht auf freie Meinungsäusserung. (b) Du argumentierst, das Video überschreitet die Grenze und erfordert Konsequenzen. Welche Position vertrittst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 3.2 | S. 93",
+      "text": "Formuliere in Ich-Form eine Pro-Kontra-Übersicht (je 3 Argumente für Meinungsfreiheit vs. Diskriminierung) und eine eigene Position in 4 Sätzen: Wo siehst du die Grenze?",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Meinungsfreiheit & Grenzen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Rechtliche Grundlage",
+      "punkte": [
+        "Art. 16 BV",
+        "Art. 36 BV",
+        "Art. 261bis StGB"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Tatbestandsmerkmale",
+      "punkte": [
+        "Herabsetzung",
+        "Öffentlichkeit",
+        "Religiöse/rassische Gruppe"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Mein Standpunkt",
+      "punkte": [
+        "Argumente sammeln",
+        "Ethische Abwägung",
+        "Eigener Entscheid"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Social Media & Reichweite",
+        "Algorithmus-Effekt",
+        "Konsequenzen im Netz"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Pro-Kontra-Übersicht + Stellungnahme",
+    "titel": "Format: Pro-Kontra-Übersicht mit Stellungnahme",
+    "format_detail": "Strukturierte Pro-Kontra-Übersicht (je 3 Argumente) + eigene schriftliche Stellungnahme (4 Sätze)",
+    "beschreibung": "Du arbeitest die rechtliche Lage zu Dominiks Video auf, sammelst Argumente für beide Seiten und formulierst eine begründete eigene Haltung.",
+    "schritte": [
+      {
+        "label": "Rechtslage klären",
+        "hint": "Art. 16 BV (Meinungsfreiheit) und Art. 261bis StGB je in 2 Sätzen zusammenfassen."
+      },
+      {
+        "label": "Video analysieren",
+        "hint": "Prüfe die 3 Tatbestandsmerkmale von Art. 261bis StGB: Herabsetzung? Öffentlich? Religiöse Gruppe betroffen?"
+      },
+      {
+        "label": "Pro-Kontra erarbeiten",
+        "hint": "Je 3 Argumente: Pro Meinungsfreiheit (Dominik hat das Recht...) und Kontra (Das Video verletzt...)."
+      },
+      {
+        "label": "Eigene Position formulieren",
+        "hint": "4 Sätze in Ich-Form: Welche Seite überwiegt? Welches Argument ist für mich ausschlaggebend?"
+      },
+      {
+        "label": "Empfehlung schreiben",
+        "hint": "Was sollte Dominik konkret tun? 1–2 Sätze mit klarer Handlungsempfehlung."
+      }
+    ],
+    "schreib_label": "PRO-KONTRA & STELLUNGNAHME HIER ERARBEITEN",
+    "schreib_note": "-> wissen/meinungsfreiheit_schweiz"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Was wenn Dominik das Video nach 2 Stunden löscht und sich öffentlich entschuldigt — ändert das die strafrechtliche Beurteilung nach Art. 261bis StGB?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn Dominik das Video nicht öffentlich, sondern in einem geschlossenen Klassen-Chat mit 22 Personen gepostet hätte — wäre das Tatbestandsmerkmal «Öffentlichkeit» noch erfüllt?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du bist Informatiker/in EFZ in St. Gallen. Dein Ausbildner teilt auf dem Firmen-LinkedIn einen Bericht mit diskriminierendem Kommentar. Welche Schritte unternimmst du — und warum?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 3.2 erklärt Art. 16 BV (was er schützt) und Art. 36 BV (3 Bedingungen für eine Einschränkung). Notiere je einen Satz zu beiden Artikeln.",
+          "satzanfang": "Art. 16 BV schützt das Recht, ___. Eine Einschränkung ist nach Art. 36 BV erlaubt, wenn (1) ___, (2) ___ und (3) ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Prüfe jedes der 3 Tatbestandsmerkmale von Art. 261bis StGB einzeln für Dominiks Video. Notiere je «erfüllt», «nicht erfüllt» oder «fraglich».",
+          "satzanfang": "Merkmal 1 (Herabsetzung): ___. Merkmal 2 (Öffentlichkeit): ___. Merkmal 3 (Religiöse Gruppe): ___. Deshalb ist Art. 261bis StGB ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Notiere je ein Argument für jede Position, bevor du dich entscheidest. Welches Argument ist für dich stärker?",
+          "satzanfang": "Ich vertrete Position ___, weil ___. Das wichtigste Argument gegen Position ___ ist ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Erst je 3 Argumente sammeln — ohne zu werten. Dann erst die eigene Position schreiben. Jedes Argument braucht einen Artikelbezug oder einen konkreten Grund.",
+          "satzanfang": "Pro Meinungsfreiheit: (1) ___, (2) ___, (3) ___. Pro Diskriminierungsschutz: (1) ___, (2) ___, (3) ___. Meine Position: Ich finde, dass ___, weil ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Meinungsfreiheit",
+          "definition": "Das Recht, Meinungen zu haben, zu äussern und zu empfangen — geschützt durch Art. 16 BV, aber einschränkbar nach Art. 36 BV."
+        },
+        {
+          "term": "Tatbestandsmerkmal",
+          "definition": "Eine einzelne Voraussetzung, die erfüllt sein muss, damit eine gesetzliche Regel angewendet werden kann."
+        },
+        {
+          "term": "Herabsetzung",
+          "definition": "Das Erniedrigen oder Beleidigen einer Person oder Gruppe in einer Weise, die ihre Würde verletzt."
+        },
+        {
+          "term": "Verhältnismässigkeit",
+          "definition": "Grundsatz, dass staatliche Massnahmen nicht weitergehen dürfen als nötig — das mildeste wirksame Mittel ist zu wählen."
+        },
+        {
+          "term": "Rassendiskriminierung",
+          "definition": "Die öffentliche Herabsetzung oder Diskriminierung einer Person oder Gruppe wegen Rasse, Ethnie oder Religion (Art. 261bis StGB)."
+        },
+        {
+          "term": "öffentliche Äusserung",
+          "definition": "Eine Aussage, die für eine unbestimmte Anzahl von Personen zugänglich ist — z.B. ein öffentlicher Social-Media-Post."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein Handlungsprodukt hat 3 Teile: (1) Tabelle mit 2 Spalten (Pro Meinungsfreiheit | Pro Diskriminierungsschutz), je 3 Argumente. (2) Eigene Position in 4 Sätzen in Ich-Form. (3) Empfehlung an Dominik in 1–2 Sätzen.",
+        "beispiel": "[Neutrales Thema — Satireplakat] Pro freie Rede: «Satire darf auch scharf sein.» | Pro Schutz: «Öffentliche Herabsetzung verletzt die Würde (Art. 7 BV).» Eigene Position: «Ich finde, dass die Aussage die Grenze überschreitet, weil Merkmal 2 (Öffentlichkeit) klar erfüllt ist.» Empfehlung: «Das Plakat sollte überarbeitet werden.»",
+        "checkfragen": [
+          "□ Hat meine Tabelle je 3 Argumente pro Spalte?",
+          "□ Enthält meine Position einen Verweis auf Art. 261bis StGB?",
+          "□ Habe ich Dominik eine konkrete Empfehlung gegeben?",
+          "□ Ist meine Position in Ich-Form und mit «weil» begründet?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Ab welcher Reichweite verändert sich die moralische Verantwortung für eine Aussage — macht es einen Unterschied, ob 400 oder 4 000 Personen Dominiks Video sehen?",
+          "Art. 261bis StGB schützt Gruppen, nicht Einzelpersonen. Was passiert, wenn eine Aussage eine Einzelperson verletzt, die einer geschützten Gruppe angehört — greift der Artikel dann trotzdem?"
+        ],
+        "recherche_impulse": [
+          "Suche nach «Strafanzeige Art. 261bis StGB Schweiz Ablauf» mit einer Suchmaschine. Wer kann eine Anzeige erstatten — und wie läuft das Verfahren ab? Notiere einen konkreten Schritt."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du bist Community-Manager beim Hotel Schweizerhof in Bern. Dominik ist Mitarbeiter und hat das Video mit seinem echten Namen gepostet. Was sind deine arbeitsrechtlichen Pflichten — und welche Konsequenzen ziehst du?",
+        "analyse": "Was passiert gesellschaftlich, wenn Social-Media-Plattformen Inhalte, die Art. 261bis StGB erfüllen könnten, nicht moderieren — für die betroffene Gruppe und für das Klima der freien Meinungsäusserung?",
+        "recherche": "Suche nach «Meldestelle Rassismus Schweiz Beratung» mit einer Suchmaschine. Welche Anlaufstellen gibt es für Betroffene von Rassendiskriminierung in der Schweiz? Notiere eine konkrete Information.",
+        "praesentation": "Erkläre dein Pro-Kontra in 90 Sekunden: je das stärkste Argument auf beiden Seiten und deinen Entscheid. Stelle danach die Frage: «Würde es einen Unterschied machen, wenn du zur betroffenen Gruppe gehörst?»",
+        "wissensknoten_extra": []
+      }
+    }
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "kompetenz_text": "Lernende beurteilen die Grenzen der Meinungsfreiheit anhand von Art. 16 BV und Art. 261bis StGB und entwickeln eine begründete Position zur Frage der strafbaren Herabsetzung.",
+      "lebensbezug_text": "Social-Media-Verhalten im Berufsalltag, Verantwortung für öffentliche Äusserungen, Unterschied zwischen provokativ und strafbar",
+      "thema_leitidee": "Meinungsfreiheit und ihre Grenzen — wann wird eine Aussage zur strafbaren Diskriminierung?",
+      "gesellschaft_details": [
+        {
+          "aspekt": "Ethik",
+          "detail": "Moralische Abwägung zwischen freier Meinungsäusserung und Schutz religiöser Gruppen",
+          "iteration": "R2"
+        },
+        {
+          "aspekt": "Politik",
+          "detail": "Art. 16 BV und Art. 261bis StGB als rechtlicher Rahmen der freien Meinungsäusserung",
+          "iteration": "R1"
+        }
+      ],
+      "sprachmodi_details": [
+        {
+          "modus": "Rezeption mündlich",
+          "detail": "Argumente zur Meinungsfreiheit und Diskriminierung rezipieren und abwägen"
+        },
+        {
+          "modus": "Rezeption audiovisuell",
+          "detail": "Audiovisuelle Inhalte (TikTok-Video) auf Tatbestandsmerkmale prüfen"
+        }
+      ],
+      "schluesselkompetenzen_texte": [
+        "SK 5: Pro-Kontra-Argumente zur Meinungsfreiheit begründen und eigene Position formulieren",
+        "SK 6: Öffentliche Aussagen auf ihre rechtliche und ethische Verantwortbarkeit prüfen",
+        "SK 7: Perspektive der betroffenen religiösen Gruppe einnehmen"
+      ]
+    },
+    "ki_leitfragen": {
+      "offen": "Wo endet die Meinungsfreiheit — und ab wann wird eine Aussage zur strafbaren Diskriminierung?",
+      "argumentieren": "Prüfe Dominiks Video anhand von Art. 261bis StGB: Welche drei Tatbestandsmerkmale müssen erfüllt sein, damit ein Beitrag strafbar ist? Sind sie im vorliegenden Fall erfüllt?",
+      "entscheiden": "Du hast zwei Positionen: (a) Du verteidigst Dominiks Recht auf freie Meinungsäusserung. (b) Du argumentierst, das Video überschreitet die Grenze und erfordert Konsequenzen. Welche Position vertrittst du — und warum?",
+      "formulieren": "Formuliere in Ich-Form eine Pro-Kontra-Übersicht (je 3 Argumente für Meinungsfreiheit vs. Diskriminierung) und eine eigene Position in 4 Sätzen: Wo siehst du die Grenze?"
+    },
+    "empfohlene_templates": [
+      "ai_gegenpositionen"
+    ],
+    "templates": {
+      "ai_gegenpositionen": {
+        "score": 110,
+        "grund": "Ethik+Politik · SK5 Standpunkte | Meinungsfreiheit vs. StGB Spannung",
+        "startposition": "Art. 16 BV schützt auch unbequeme und provozierende Meinungen — Dominiks Video ist geschmacklos, aber das allein macht es nicht strafbar. Meinungsfreiheit hat keinen Schönheitspreis zu gewinnen.",
+        "gegenargument_rahmen": "Tatbestandsmerkmale Art. 261bis StGB (Herabsetzung, Öffentlichkeit, religiöse Gruppe), Verhältnismässigkeit freier Rede gegenüber Minderheitenschutz, Reichweite und Viralität als Verstärkungsfaktor der Wirkung",
+        "position_frage": "Ab wann verletzt eine öffentliche Aussage über eine religiöse Gruppe die Grenze zwischen Satire und strafbarer Herabsetzung — und wer ist berechtigt, diese Linie zu ziehen?"
+      }
+    }
+  }
+}

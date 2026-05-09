@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "sync:situationen": "node scripts/sync-situationen.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.3",

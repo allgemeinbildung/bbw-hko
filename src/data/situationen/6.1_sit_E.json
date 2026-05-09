@@ -1,0 +1,404 @@
+{
+  "id": "6.1_sit_E",
+  "modul": "6.1",
+  "modul_titel": "Steuern",
+  "situation": "E",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Marcos E-Bike-Abzocke",
+  "emotion_tag": "Empörung",
+  "wissensknoten": [
+    "mwst"
+  ],
+  "nrlp": {
+    "lebensbezug": "6.1",
+    "gesellschaft": [
+      "Wirtschaft"
+    ],
+    "sk": [
+      3,
+      6
+    ],
+    "sprachmodi": [],
+    "themen": [
+      "T6",
+      "T3"
+    ]
+  },
+  "persona": {
+    "beruf": "Kaufmann/Kauffrau EFZ",
+    "betrieb": "Velohändler",
+    "ort": "Basel"
+  },
+  "situation_text": "Du bist Kaufmann/Kauffrau im 1. Lehrjahr bei einem Velohändler in Basel. Dein Freund Marco schickt dir einen Screenshot: Ein E-Bike auf einem Online-Marktplatz kostet Fr. 2'800.– «exkl. MWST». Im lokalen Laden kostet dasselbe Modell Fr. 3'015.60. Marco ist sauer: «Fr. 215.60 mehr — das ist doch Abzocke vom Laden!» Du weisst sofort, woher die Differenz kommt — und willst sie Marco erklären. Aber Marco kennt keine Fachbegriffe und hat keine Geduld für lange Erklärungen.",
+  "zahlen_tabelle": [
+    {
+      "label": "E-Bike Preis exkl. MWST",
+      "wert": "Fr. 2'800.–"
+    },
+    {
+      "label": "MWST 7,7 %",
+      "wert": "Fr. 215.60"
+    },
+    {
+      "label": "Endpreis inkl. MWST",
+      "wert": "Fr. 3'015.60"
+    },
+    {
+      "label": "Preisdifferenz (Marcos «Abzocke»)",
+      "wert": "Fr. 215.60"
+    }
+  ],
+  "leitfrage": "Wie erklärst du Marco in einfachen Worten, was MWST ist — und warum das keine Abzocke ist?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 10.1 (Seite 248) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Was ist die MWST — und was bedeutet der Unterschied zwischen «exkl. MWST» und «inkl. MWST»? Wie hoch ist der Normalsatz in der Schweiz?",
+      "feld_hoehe_mm": 14
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Berechne Schritt für Schritt: Das E-Bike kostet Fr. 2'800.– exkl. MWST (Normalsatz 7,7 %). (1) Wie hoch ist der MWST-Betrag? (2) Was ist der Endpreis? (3) Wer erhält diesen MWST-Betrag am Ende?",
+      "feld_hoehe_mm": 14
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Marco überlegt: (a) Er kauft das Bike beim ausländischen Online-Shop, der keine Schweizer MWST ausweist — spart so Fr. 215.60. (b) Er kauft beim Schweizer Händler zum vollen Preis. Welche Option ist rechtlich korrekt — und welche praktischen Risiken erwähnst du?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 4,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 248",
+      "text": "Schreibe Marco eine WhatsApp-Nachricht (5–7 Sätze), die erklärt, was MWST ist und warum der höhere Preis im Laden keine Abzocke ist. Alltagssprachlich — ohne Fachbegriffe wie «Vorsteuer» oder «Verbrauchssteuer».",
+      "feld_hoehe_mm": 17
+    }
+  ],
+  "mindmap_zentrum": "MWST-Grundlagen im Alltag",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 — MWST-Grundlagen",
+      "punkte": [
+        "Was ist es?",
+        "Wer zahlt?",
+        "Wohin fliesst es?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 — Steuersätze",
+      "punkte": [
+        "7,7 % Normal",
+        "2,5 % Sonder",
+        "Ausnahmen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 — Im Veloladen",
+      "punkte": [
+        "Rechnungen",
+        "Preisauszeichnung",
+        "Steuerpflicht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 — Optional",
+      "punkte": [
+        "Import und Ausland",
+        "Wann gilt Schweizer MWST?"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Erklärtext",
+    "titel": "Erklärtext «Lieber Marco, …»",
+    "format_detail": "8–10 Sätze, alltagssprachlich, mit Rechenbeispiel",
+    "beschreibung": "Du schreibst Marco einen kurzen, klaren Erklärtext — wie eine WhatsApp-Nachricht, aber etwas ausführlicher. Kein Fachwissen vorausgesetzt. Ziel: Marco versteht am Ende, was MWST ist, warum Fr. 215.60 dazukommen — und wer das Geld bekommt.",
+    "schritte": [
+      {
+        "label": "Missverständnis ansprechen",
+        "hint": "Marco, das ist keine Abzocke — hier ist der Grund. Mit einem einladenden Einstiegssatz beginnen."
+      },
+      {
+        "label": "MWST in einem Satz erklären",
+        "hint": "Ohne Fachbegriff, mit Alltagssprache — z.B. «eine Steuer, die der Staat auf fast alles draufschlägt, was wir kaufen»"
+      },
+      {
+        "label": "Rechenbeispiel einbauen",
+        "hint": "Fr. 2'800.– × 7,7 % = Fr. 215.60 — darum kostet das Bike im Laden Fr. 3'015.60"
+      },
+      {
+        "label": "Erklären, wer das Geld bekommt",
+        "hint": "Der Staat, nicht der Händler — der Laden leitet die Fr. 215.60 einfach weiter an den Bund"
+      },
+      {
+        "label": "Abschlusssatz / Tipp",
+        "hint": "Im Laden immer schauen, ob Preis inkl. oder exkl. MWST gilt — und was beim Ausland-Kauf zu beachten ist"
+      }
+    ],
+    "schreib_label": "ERKLÄRTEXT — HIER SCHREIBEN (beginne mit «Lieber Marco, …»)",
+    "schreib_note": "→ wissen/mwst · was_ist_es + wie_funktioniert_es"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Erkläre der Gruppe den Unterschied zwischen «exkl. MWST» und «inkl. MWST» — mit einem eigenen Zahlenbeispiel.",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Wer bekommt die MWST, die du im Laden zahlst — und wofür wird das Geld verwendet?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Welchen Zusammenhang siehst du zwischen deiner Situation E und einer anderen Situation (A, B, C oder D)?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "War es schwieriger als erwartet, die MWST ohne Fachbegriffe zu erklären — und was hat dir dabei geholfen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo hat dir der Wissensknoten → wissen/mwst geholfen — und was fehlt dir noch für die tägliche Arbeit im Veloladen?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was nimmst du für den Umgang mit Kunden mit — wenn jemand im Laden fragt, warum ein Produkt online günstiger aussieht?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Marco findet ein weiteres E-Bike-Angebot: Fr. 2'000.– «inkl. MWST». Er fragt: «Wie viel MWST steckt da drin?» Erkläre die Rückrechnung.",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn Marco das Bike bei einem deutschen Online-Shop bestellt und nach Basel liefern lässt — gilt dann Schweizer oder deutsche MWST?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Du wechselst nach der Lehre in die Buchhaltung des Veloladens. Wie buchst du die MWST auf einer Ausgangsrechnung für ein E-Bike an einen Kunden?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Schriftliche Beantwortung LF 1–4"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Pflichtäste 1–3 vollständig"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Format, Inhalt, Vollständigkeit"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Ast 4 (optional, Vertiefung)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "R1–R3 reflektiert und ehrlich"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "V1–V3 sorgfältig bearbeitet"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 — 45 min",
+      "text": "Einstieg: Situation lesen, Leitfragen LF1–LF2, Mindmap beginnen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 — 45 min",
+      "text": "Leitfragen LF3–LF4, Handlungsprodukt erarbeiten und verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenpuzzle, Reflexion R1–R3, Vorbereitungsfragen V1–V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=6.1_sit_E",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/6.1_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "6.1_sit_E",
+    "aliases": [
+      "sit_E_biker_freund"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T6",
+      "T3"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.3",
+      "titel": "Mehrwertsteuer und Konsum",
+      "kompetenz": "Ich kann das Prinzip der Mehrwertsteuer erklären und die Auswirkungen (z.B. Import/Inland) auf Konsumenten beurteilen."
+    },
+    "ki_leitfragen": {
+      "offen": "Wie erklärst du Marco in einfachen Worten, was MWST ist — und warum das keine Abzocke des Händlers ist?",
+      "argumentieren": "Ein Preis von Fr. 2'800.– 'exkl. MWST' bedeutet: Wer bekommt am Ende die Fr. 215.60 — der Händler oder der Staat (Bund)?",
+      "entscheiden": "Marco möchte das Bike im Ausland bestellen und die Schweizer MWST beim Zoll umgehen. Welche rechtlichen Risiken (Busse, Nachzahlung) und Nachteile (Garantie) erwähnst du in deinem Rat?",
+      "formulieren": "Schreibe Marco eine WhatsApp-Nachricht (5–7 Sätze): Was ist MWST eigentlich und warum ist sie für den Staat wichtig?"
+    },
+    "empfohlene_templates": [
+      "ai_prompt_duell",
+      "ai_entscheidungscoach",
+      "ai_ethik_tribunal"
+    ],
+    "templates": {
+      "ai_prompt_duell": {
+        "score": 55,
+        "grund": "Universal | SK 3 (Problemlösung)",
+        "thema_vorgabe": "Marco behauptet stur: 'Die Fr. 215.60 steckt sich der Velohändler in die eigene Tasche.' Überzeuge ihn davon, dass der Händler dieses Geld nur als 'Steuereintreiber' für den Bund sammelt.",
+        "system_prompt_zusatz": "Marco ist aggressiv-unsicher ('Alles Abzocke in der Schweiz!'). Erkläre ihm ruhig den Unterschied zwischen Brutto- und Nettolohn und wer am Ende von diesen Steuern profitiert (Strassen, Bildung)."
+      },
+      "ai_entscheidungscoach": {
+        "score": 55,
+        "grund": "Recht | SK 8 (Rechtlich handeln)",
+        "entscheid_situation": "Ein Bekannter bietet an, das E-Bike illegal aus dem Ausland über die Grenze zu bringen, ohne es beim Zoll anzumelden.",
+        "optionen": [
+          "Das Risiko eingehen (Einmaliger Preisvorteil, Gefahr von Busse und Strafregister)",
+          "Ehrlich verzollen (Kein Ärger mit dem Zoll, Unterstützung der Schweizer Infrastruktur, volle Garantie)"
+        ],
+        "entscheid_kontext": "Wäge ab zwischen einer kurzfristigen Ersparnis von Fr. 215.– und deinem Ruf als 'korrekter Bürger'."
+      },
+      "ai_ethik_tribunal": {
+        "score": 55,
+        "grund": "Ethik | SK 5 (Werthaltungen)",
+        "dilemma_frage": "Ist es fair, dass die MWST alle Menschen gleich trifft, obwohl Wohlhabende die Preisaufschläge kaum spüren, Lehrlinge aber sehr wohl?",
+        "tribunal_these": "Verbrauchssteuern sind die gerechteste Form der Besteuerung, da jeder nur für das zahlt, was er dem Wirtschaftssystem entnimmt.",
+        "werte_hinweis": "Denk an den Wert der 'Eigenverantwortung' vs. 'Soziale Fairness'."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 10.1 S. 248 erklärt die MWST. Der Normalsatz in der Schweiz ist 7,7% (ab 2024: 8,1%). 'Exkl. MWST' = Preis ohne Steuer. 'Inkl. MWST' = Preis mit Steuer bereits drin. Beim Online-Marktplatz stand 'exkl.' — das war der Trick.",
+          "satzanfang": "MWST ist eine Steuer, die ___. Der Normalsatz in der Schweiz beträgt ___ %. 'Exkl. MWST' bedeutet: CHF 2'800 + ___% = CHF ___. 'Inkl. MWST' bedeutet, der Preis von ___ enthält die Steuer bereits."
+        },
+        {
+          "nr": 2,
+          "tipp": "Berechnung: CHF 2'800 × 7,7% = CHF 215.60. Das ist der MWST-Betrag. Der Endpreis ist CHF 2'800 + CHF 215.60 = CHF 3'015.60. Den MWST-Betrag bekommt der Staat (Bund) — nicht der Händler. Der Händler leitet ihn einfach weiter.",
+          "satzanfang": "(1) MWST-Betrag: CHF 2'800 × ___% = CHF ___. (2) Endpreis: CHF 2'800 + CHF ___ = CHF ___. (3) Der MWST-Betrag geht an ___. Der Velohändler in Basel behält davon ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option (a) — ausländischer Shop — ist problematisch. Werden Waren im Wert über CHF 300 in die Schweiz eingeführt, fällt Zoll und MWST an. Ausserdem: fehlende Schweizer Garantie, kein lokaler Service, Risiko bei Defekten. Option (b) ist rechtlich korrekt.",
+          "satzanfang": "Option ___ ist rechtlich korrekt, weil ___. Die praktischen Risiken von Option (a) sind: (1) ___, (2) ___, (3) ___. Was ich Marco empfehle: ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Schreibe alltagssprachlich — so, als würdest du wirklich eine WhatsApp schreiben. Keine Fachbegriffe wie 'Vorsteuer'. Erkläre: Was ist MWST in einem Satz, wer bekommt das Geld, und warum ist der Laden nicht schuld an der Differenz.",
+          "satzanfang": "Lieber Marco, keine Sorge — das ist keine Abzocke! Die CHF 215.60 sind ___, eine Steuer, die der ___ draufschlägt. Dein Veloladen leitet dieses Geld einfach an ___ weiter. Es bleibt dem Händler ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "MWST",
+          "definition": "Mehrwertsteuer — eine Verbrauchssteuer, die der Staat auf fast alle Waren und Dienstleistungen erhebt."
+        },
+        {
+          "term": "exkl. MWST",
+          "definition": "Preis ohne Mehrwertsteuer — die Steuer muss noch dazugezählt werden."
+        },
+        {
+          "term": "inkl. MWST",
+          "definition": "Preis mit bereits eingerechneter Mehrwertsteuer — der Betrag, den man tatsächlich zahlt."
+        },
+        {
+          "term": "Normalsatz",
+          "definition": "Standard-MWST-Satz von 7,7% (ab 2024: 8,1%) — gilt z. B. für Fahrräder, Elektronik und Kleider."
+        },
+        {
+          "term": "Zoll",
+          "definition": "Abgabe beim Import von Waren aus dem Ausland — fällt in der Schweiz bei Privatimporten ab einem Warenwert über CHF 300 an."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Schreibe 8–10 Sätze in dieser Reihenfolge: (1) Einstieg — das ist kein Betrug, (2) Was MWST ist — ein Satz in Alltagssprache, (3) Rechenbeispiel (CHF 2'800 × 7,7%), (4) Wer das Geld bekommt (der Staat, nicht der Händler), (5) Tipp für die Zukunft (immer inkl./exkl. beachten + Auslandkauf-Risiken). Beginne mit 'Lieber Marco, …'.",
+        "beispiel": "Lieber Marco, das ist kein Abzocke! Die CHF 215.60 sind die MWST — eine Steuer, die der Staat auf fast alles draufschlägt, was wir kaufen. Dein Laden leitet dieses Geld einfach an den Bund weiter und behält davon nichts. Rechnung: CHF 2'800 × 7,7% = CHF 215.60. Beim Online-Angebot stand 'exkl.' — da wäre die Steuer noch dazugekommen. Im Laden ist sie schon drin.",
+        "checkfragen": [
+          "□ Beginne ich mit 'Lieber Marco,' und einem einladenden Satz?",
+          "□ Erkläre ich MWST in einem Satz ohne Fachbegriffe?",
+          "□ Baue ich das Rechenbeispiel (CHF 2'800 × 7,7% = CHF 215.60) ein?",
+          "□ Sage ich klar, wer das Geld bekommt — der Staat, nicht der Händler?",
+          "□ Gebe ich am Schluss einen praktischen Tipp (inkl./exkl. prüfen)?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Die MWST trifft alle gleich — egal ob Lernende mit CHF 950 Lohn oder jemand mit CHF 10'000. Ist das fair? Erkläre, warum eine proportionale Konsumsteuer arme Haushalte im Vergleich zu reichen relativ stärker belastet.",
+          "Marco möchte das Bike aus dem Ausland bestellen, weil 'exkl. MWST' billiger klingt. Welche drei Szenarien können entstehen, wenn er es beim Zoll nicht anmeldet — und welche rechtlichen und finanziellen Konsequenzen hat jedes Szenario?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'MWST Zoll Schweiz Privatimport Freigrenze 300 Franken' mit einer Suchmaschine. Welche Regeln gelten für Privatpersonen beim Import aus dem Ausland — und ab welchem Betrag fällt MWST und Zoll an? Notiere die genaue Freigrenze.",
+          "Suche nach 'MWST Normalsatz Schweiz 8.1 Prozent 2024 Auswirkung' mit einer Suchmaschine. Warum wurde der Satz angehoben — und welchen Einfluss hat das auf den Kauf eines E-Bikes von CHF 2'800? Notiere den neuen Steuerbetrag."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du arbeitest in 3 Jahren als Kaufmann/Kauffrau im Veloladen in Basel. Dein Chef bekommt eine Lieferung aus Deutschland: 10 E-Bikes à CHF 2'500 exkl. MWST. Zeige schrittweise, wie die MWST-Kette funktioniert — von Einkauf bis Verkauf an den Endkunden — und wie viel der Laden an den Bund überweist.",
+        "analyse": "Was würde passieren, wenn die Schweiz die MWST auf Elektrovelos auf 0% senken würde, um die Klimaziele zu unterstützen? Berechne den Preisvorteil für den Käufer — und überlege, wie viel Einnahmen dem Bund entgehen.",
+        "recherche": "Suche nach 'MWST Fahrräder Schweiz Sondersatz Ausnahme' mit einer Suchmaschine. Gilt für E-Bikes ein normaler oder ein reduzierter MWST-Satz — und warum? Notiere die rechtliche Grundlage.",
+        "praesentation": "Erkläre Marco in 90 Sekunden: Was ist MWST, warum die CHF 215.60 keine Abzocke sind, und was beim Auslandkauf zu beachten ist. Kriterium: Marco soll danach die Formel 'Preis × 7,7% = MWST' selbst anwenden können.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

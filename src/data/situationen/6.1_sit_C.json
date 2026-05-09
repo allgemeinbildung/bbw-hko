@@ -1,0 +1,411 @@
+{
+  "id": "6.1_sit_C",
+  "modul": "6.1",
+  "modul_titel": "Steuern",
+  "situation": "C",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Lohnrechner und Steuerprogression",
+  "emotion_tag": "Erwartung",
+  "wissensknoten": [
+    "steuererklaerung"
+  ],
+  "nrlp": {
+    "lebensbezug": "6.1",
+    "gesellschaft": [
+      "Wirtschaft",
+      "Recht"
+    ],
+    "sk": [
+      8,
+      2
+    ],
+    "sprachmodi": [],
+    "themen": [
+      "T6",
+      "T5"
+    ]
+  },
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Sulzer",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Du bist im letzten Monat deiner Lehre als Polymechaniker/in bei Sulzer in Winterthur. Dein Lehrlingslohn war Fr. 950.– pro Monat. Auf lohnrechner.ch recherchierst du: Eine ausgebildete Polymechaniker/in verdient in Winterthur im Durchschnitt Fr. 4'600.– Bruttolohn. Das klingt grossartig — bis deine Götti sagt: «Warte, bis du siehst, was netto übrigbleibt. Die Steuerprogression macht einiges weg.» Du willst es genau wissen: Wie viel wirst du wirklich nach Steuern erhalten — und warum zahlt man bei höherem Lohn prozentual mehr?",
+  "zahlen_tabelle": [
+    {
+      "label": "Lehrlingslohn (Monat)",
+      "wert": "Fr. 950.–"
+    },
+    {
+      "label": "Jahreseinkommen Lehrling",
+      "wert": "Fr. 11'400.–"
+    },
+    {
+      "label": "Fachkraft-Lohn Monat (lohnrechner.ch)",
+      "wert": "Fr. 4'600.–"
+    },
+    {
+      "label": "Jahreseinkommen Fachkraft",
+      "wert": "Fr. 55'200.–"
+    }
+  ],
+  "leitfrage": "Wie viel mehr Steuern zahlst du nach der Ausbildung — und was bedeutet das für dein monatliches Budget?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 10.1 (Seite 249 und 251) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 251",
+      "text": "Was bedeutet «Steuerprogression» — und warum zahlt jemand mit Fr. 55'200.– Jahreseinkommen prozentual mehr Steuern als jemand mit Fr. 11'400.–?",
+      "feld_hoehe_mm": 14
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 10.1 | S. 251",
+      "text": "Schau die Progressionstabelle an (Winterthur, ledig, ohne Kinder): Bei Fr. 50'000.– steuerbarem Einkommen beträgt der Satz 10,1 %. Berechne die ungefähre Jahressteuer für eine Fachkraft mit Fr. 55'200.– Bruttolohn (nach Abzügen ca. Fr. 50'000.– steuerbares Einkommen). Was bleibt monatlich netto übrig?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 249",
+      "text": "Deine Götti rät dir: (a) «Vergiss die Steuern jetzt — geniess einfach den höheren Lohn.» (b) «Plan jetzt schon, welche Abzüge du geltend machen kannst — Weiterbildung, Berufsauslagen.» Welche Option ist klüger — und welche zwei Abzüge könnten für dich als neue Fachkraft besonders relevant sein?",
+      "feld_hoehe_mm": 16
+    },
+    {
+      "nr": 4,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 10.1 | S. 251",
+      "text": "Erstelle eine einfache Vergleichstabelle: (1) Lehrlingslohn netto, (2) Fachkraft-Bruttolohn, (3) Fachkraft-Lohn nach Steuern (geschätzt). Schreibe einen Begleitsatz, der erklärt, was der Unterschied für dein konkretes Leben bedeutet.",
+      "feld_hoehe_mm": 17
+    }
+  ],
+  "mindmap_zentrum": "Steuerprogression und Lohn",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 — Steuerprogression",
+      "punkte": [
+        "Prinzip",
+        "Beispielzahlen",
+        "Sinn/Zweck"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 — Abzüge",
+      "punkte": [
+        "Berufsauslagen",
+        "Weiterbildung",
+        "Versicherungen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 — Lohnrechner.ch",
+      "punkte": [
+        "Was zeigt er?",
+        "Was fehlt?",
+        "Brutto vs. Netto"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 — Optional",
+      "punkte": [
+        "Kantonale Unterschiede",
+        "Steueroptimierung"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Lohn-Vergleichstabelle",
+    "titel": "Lohn-Vergleichstabelle + schriftliches Fazit",
+    "format_detail": "Tabelle (3–4 Zeilen) + 6–8 Sätze Fazit in Ich-Form",
+    "beschreibung": "Du erstellst für dich selbst — und für deine Götti — einen klaren Überblick: Was verdienst du als Fachkraft wirklich netto, nachdem Steuern abgezogen wurden? Das Fazit erklärt, was das für deine Lebensplanung bedeutet. Sachlich und ehrlich, in Ich-Form.",
+    "schritte": [
+      {
+        "label": "Bruttolohn recherchieren",
+        "hint": "lohnrechner.ch aufrufen: Polymechaniker/in, Winterthur, Erfahrungsstufe Einsteiger — Zahl notieren"
+      },
+      {
+        "label": "Steuerbares Einkommen schätzen",
+        "hint": "Bruttolohn minus Standardabzüge ca. 10 % (Berufsauslagen, AHV/IV/EO-Beiträge) = geschätztes steuerbares Einkommen"
+      },
+      {
+        "label": "Progressionstabelle nachschlagen",
+        "hint": "→ steuererklärung · zahlen_fakten — Steuersatz für Winterthur, ledig ablesen und auf geschätztes Einkommen anwenden"
+      },
+      {
+        "label": "Nettolohn berechnen und Vergleich erstellen",
+        "hint": "Bruttolohn minus Steuern — Vergleichstabelle: Lehrlingslohn netto / Fachkraft brutto / Fachkraft netto nach Steuern"
+      },
+      {
+        "label": "Fazit in Ich-Form verfassen",
+        "hint": "Was bedeutet das für mein Budget, meine Pläne, meine Erwartungen? Ehrlich und konkret, 6–8 Sätze"
+      }
+    ],
+    "schreib_label": "TABELLE + FAZIT — HIER SCHREIBEN",
+    "schreib_note": "→ wissen/steuererklärung · zahlen_fakten + wie_funktioniert_es"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Erkläre der Gruppe, was Steuerprogression bedeutet — in einem Satz, ohne Fachbegriffe.",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Was ist der Unterschied zwischen dem, was lohnrechner.ch zeigt — und dem, was du wirklich nach Steuern erhältst?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Nenne einen Zusammenhang zwischen deiner Situation C und einer anderen Situation (A, B, D oder E).",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was war das Überraschendste, das du über die Steuerprogression gelernt hast — und hat das deine Erwartungen verändert?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo hat dir der Wissensknoten → wissen/steuererklärung geholfen — und wo hättest du mehr oder andere Informationen gebraucht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was nimmst du konkret mit für deine Finanzplanung nach der Lehre bei Sulzer?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Was wäre, wenn du denselben Job nicht in Winterthur, sondern in Zug annehmen würdest? Was weisst du über kantonale Steuerunterschiede?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du eine Weiterbildung besuchst und dafür Fr. 1'800.– pro Jahr zahlst — darf das als Abzug geltend gemacht werden?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Erkläre deiner Götti in 3 Sätzen, was eine Flat Rate Tax wäre — und ob das für dich als neue Fachkraft mit Fr. 4'600.– besser oder schlechter wäre als das heutige Progressionssystem.",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Schriftliche Beantwortung LF 1–4"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Pflichtäste 1–3 vollständig"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Format, Inhalt, Vollständigkeit"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Ast 4 (optional, Vertiefung)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "R1–R3 reflektiert und ehrlich"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "V1–V3 sorgfältig bearbeitet"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 — 45 min",
+      "text": "Einstieg: Situation lesen, Leitfragen LF1–LF2, Mindmap beginnen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 — 45 min",
+      "text": "Leitfragen LF3–LF4, Handlungsprodukt erarbeiten und verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Gruppenpuzzle, Reflexion R1–R3, Vorbereitungsfragen V1–V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {
+    "html_path": "missions-renderer/dist/index.html?id=6.1_sit_C",
+    "module_index_path": "missions-renderer/dist/index.html",
+    "teacher_path": "missions-renderer/dist/data/6.1_teacher.html"
+  },
+  "source_refs": {
+    "registry_id": "6.1_sit_C",
+    "aliases": [
+      "sit_C_lohnrechner"
+    ]
+  },
+  "registry_tags": {
+    "themen": [
+      "T6",
+      "T5"
+    ],
+    "template": "default_4page"
+  },
+  "ki_vertiefung": {
+    "nrlp_anker": {
+      "nr": "3.2.4",
+      "titel": "Steuerprogression",
+      "kompetenz": "Ich kann die Bedeutung der Steuerprogression für die Gesellschaft beschreiben und die Auswirkungen auf das persönliche Budget analysieren."
+    },
+    "ki_leitfragen": {
+      "offen": "Was bedeutet Steuerprogression — und warum zahlt jemand mit Fachkraft-Lohn prozentual mehr Steuern als ein Lehrling?",
+      "argumentieren": "Vergleiche den Lehrlingslohn mit dem Fachkraft-Lohn (S. 116): Warum steigt der Steuersatz in Winterthur von fast 0% auf über 10% an?",
+      "entscheiden": "Deine Götti rät dir, Abzüge (z.B. Weiterbildung) jetzt schon zu planen. Welche zwei konkreten Abzüge könnten bei deinem ersten Fachkraft-Lohn (Fr. 4'600/Mt.) am meisten Geld sparen?",
+      "formulieren": "Erstelle ein kurzes Fazit: Was bedeutet der Unterschied zwischen Brutto- und Nettolohn für deine erste eigene Wohnung und deine Fixkosten?"
+    },
+    "empfohlene_templates": [
+      "ai_gegenpositionen",
+      "ai_lernassistent",
+      "ai_zeitkapsel"
+    ],
+    "templates": {
+      "ai_gegenpositionen": {
+        "score": 55,
+        "grund": "Ethik/Politik | SK 5 (Werthaltungen)",
+        "startposition": "Eine Einheitssteuer (Flat Tax) von z.B. 10% für alle wäre viel gerechter. Wer mehr leistet und verdient, sollte nicht durch höhere Steuersätze bestraft werden.",
+        "gegenargument_rahmen": [
+          "Höhere Einkommen können eine höhere Steuerlast leichter tragen (Leistungsfähigkeitsprinzip).",
+          "Umverteilung über das Steuersystem sichert den sozialen Frieden.",
+          "Existenzbedarfe müssen steuerlich geschützt werden (Progression beginnt oft erst ab einer gewissen Schwelle)."
+        ],
+        "position_frage": "Ist das heutige Progressionsmodell eine faire Solidarität oder eine Behinderung von beruflichem Aufstieg?"
+      },
+      "ai_lernassistent": {
+        "score": 55,
+        "grund": "Identität | SK 3 (Problemlösung)",
+        "lernziel": "Den finanziellen Übergang von der Lehre zum Berufseinstieg realistisch planen und die Steuerlast einkalkulieren.",
+        "system_prompt_vorlage": "Du bist ein Finanzcoach für junge Berufsleute. Erkläre dem User anhand der Sulzer-Zahlen (4'600.-), was nach Abzügen (AHV, PK, Steuern) wirklich übrig bleibt. Sei ehrlich und direkt.",
+        "testfragen": [
+          "Was ist der Unterschied zwischen Brutto- und Nettolohn?",
+          "Warum ist es klug, ab dem ersten vollen Lohn ein separates Steuerkonto zu führen?",
+          "Welche Rolle spielt die Wohngemeinde für die Höhe der Steuerprogression?"
+        ]
+      },
+      "ai_zeitkapsel": {
+        "score": 75,
+        "grund": "Wirtschaft/Politik | SK 5 (Werthaltungen)",
+        "zukunft_frage": "Wird das Erwerbseinkommen im Jahr 2060 überhaupt noch besteuert, oder wird sich der Staat dann rein über Roboter-Produktivität und Kapitalsteuern finanzieren?",
+        "wild_card": "Die Progression wird abgeschafft, dafür wird jeder Flug und jede Autofahrt extrem progressiv besteuert (je mehr CO2, desto teurer der Steuersatz).",
+        "blind_spot": "Die Gefahr der 'kalten Progression': Wenn Löhne wegen Inflation steigen, aber die Steuertabellen gleich bleiben, rutschen alle schleichend in höhere Steuersätze."
+      }
+    }
+  },
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Kap. 10.1 S. 251 erklärt Steuerprogression. Das Prinzip: Je mehr du verdienst, desto höher ist der Steuersatz — nicht nur der Betrag, auch der Prozentsatz steigt. Das soll sicherstellen, dass Reiche einen faireren Anteil zahlen als Arme.",
+          "satzanfang": "Steuerprogression bedeutet: Wer mehr verdient, zahlt ___ Prozent Steuern. Als Polymechaniker/in-Lernende/r zahle ich bei CHF 11'400 fast ___ %, als Fachkraft mit CHF 55'200 zahle ich ca. ___% — weil ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Berechnung: CHF 50'000 steuerbares Einkommen × 10,1% = CHF 5'050 Jahressteuer. Geteilt durch 12 = ca. CHF 421 pro Monat. Das zieht man vom Bruttogehalt ab (plus AHV/IV ca. 6,35%): CHF 4'600 – CHF 421 – ca. CHF 292 = ca. CHF 3'887 netto.",
+          "satzanfang": "Bei CHF 55'200 Bruttolohn und ca. CHF 50'000 steuerbarem Einkommen beträgt die Jahressteuer ca. CHF ___ (___%). Monatlich sind das CHF ___. Was netto bleibt: CHF 4'600 – CHF ___ (Steuern) – CHF ___ (AHV) = ca. CHF ___."
+        },
+        {
+          "nr": 3,
+          "tipp": "Option (b) ist die klügere Wahl: Je früher du Abzüge planst, desto weniger Steuern zahlst du. Typische Abzüge für neue Fachkräfte: Weiterbildungskosten (für Berufskurse), Berufsauslagen (Arbeitskleidung, Werkzeug), öffentlicher Verkehr.",
+          "satzanfang": "Ich wähle Option ___, weil ___. Die zwei Abzüge, die für mich als neue Polymechaniker-Fachkraft relevant sind: (1) ___, weil ___. (2) ___, weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Erstelle eine Tabelle mit 3 Zeilen: (1) Lehrlingslohn netto, (2) Fachkraft-Bruttogehalt, (3) Fachkraft nach Steuern (geschätzt). Füge dann 1 Satz ein, was das für dein Leben bedeutet — z. B. ob du eine Wohnung mieten kannst.",
+          "satzanfang": "Tabelle: Lehrlingslohn netto: CHF ___ | Fachkraft brutto: CHF 4'600 | Fachkraft nach Steuern (geschätzt): CHF ___. Das bedeutet für mein Leben: ___."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Steuerprogression",
+          "definition": "Steuersystem, bei dem höhere Einkommen nicht nur mehr, sondern auch prozentual mehr Steuern zahlen."
+        },
+        {
+          "term": "Bruttolohn",
+          "definition": "Lohn vor Abzügen von AHV, ALV, Steuern und anderen Sozialabgaben."
+        },
+        {
+          "term": "Nettolohn",
+          "definition": "Betrag, der nach allen Abzügen auf dem Konto ankommt — das tatsächlich verfügbare Geld."
+        },
+        {
+          "term": "Steuerbares Einkommen",
+          "definition": "Bruttolohn minus erlaubte Abzüge (Berufsauslagen, Weiterbildung, AHV-Beiträge) — die Grundlage für die Steuerberechnung."
+        },
+        {
+          "term": "Kalte Progression",
+          "definition": "Wenn Löhne durch Inflation steigen, man aber dadurch in eine höhere Steuerklasse rutscht — ohne realen Kaufkraftgewinn."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Erstelle eine Tabelle mit 3 Zeilen: Zeile 1 = Lehrlingslohn netto (CHF 950 – kleiner Sozialabzug), Zeile 2 = Fachkraft-Bruttolohn CHF 4'600, Zeile 3 = Fachkraft-Nettolohn nach Steuern (geschätzt, CHF 3'800–4'000). Schreibe danach 6–8 Sätze in Ich-Form: Was bedeutet das für dein Budget, deine Wohnung, deine Pläne?",
+        "beispiel": "| | Betrag pro Monat\nLehrlingslohn netto | CHF ~940\nFachkraft brutto | CHF 4'600\nFachkraft nach Steuern (ca.) | CHF ~3'850\n\nFazit: 'Ich werde als Fachkraft CHF 3'850 erhalten — das klingt viel, aber nach Miete und Krankenversicherung bleiben CHF ___ übrig.'",
+        "checkfragen": [
+          "□ Enthält meine Tabelle alle 3 Zeilen (Lehrlingslohn netto, Fachkraft brutto, Fachkraft nach Steuern)?",
+          "□ Sind die Zahlen realistisch geschätzt (nicht geraten, sondern mit Berechnung)?",
+          "□ Schreibe ich das Fazit in Ich-Form?",
+          "□ Erkläre ich konkret, was das für mein Leben bedeutet (Wohnung, Ersparnisse, Budget)?",
+          "□ Verwende ich die Begriffe 'steuerbares Einkommen' und 'Steuerprogression' korrekt?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Deine Götti sagt, Steuerprogression 'bestraft' höhere Leistung. Ist das fair — oder ist Progression das Prinzip, das soziale Ungleichheit reduziert? Formuliere zwei Argumente für und zwei gegen das Progressionsprinzip.",
+          "Als Polymechaniker/in wohnst du nach der Lehre möglicherweise in einer anderen Gemeinde. Warum kann derselbe Bruttolohn in Winterthur und in Nidwalden zu sehr verschiedenen Steuerbeträgen führen — und wie entscheidest du, wo du wohnst?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Steuerprogression Kantone Vergleich Schweiz Tabelle' mit einer Suchmaschine. Welche Kantone haben die tiefsten Steuersätze für mittlere Einkommen (ca. CHF 50'000)? Notiere zwei Kantone mit konkreten Steuersätzen.",
+          "Suche nach 'kalte Progression Schweiz Abstimmung Anpassung' mit einer Suchmaschine. Gibt es in der Schweiz Massnahmen gegen die kalte Progression — und was hat die Politik bisher entschieden? Notiere die wichtigste Massnahme."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Du verdienst nach der Lehre CHF 4'600 brutto und planst eine Weiterbildung zum Techniker HF (ca. CHF 4'000 Kurskosten). Zeige: Wie viel kannst du steuerlich abziehen — und wie viel Steuern sparst du dadurch konkret im ersten Berufsjahr?",
+        "analyse": "Was würde passieren, wenn die Schweiz eine Flat Tax von 10% für alle einführen würde — ohne Progression? Betrachte die Folgen für Lernende (CHF 11'400), Fachkräfte (CHF 55'200) und Kaderpersonen (CHF 150'000).",
+        "recherche": "Suche nach 'Steuerprogression Schweiz Abschaffung Flat Tax Initiative' mit einer Suchmaschine. Welche politischen Parteien befürworten eine Flat Tax — und welche Argumente werden dagegen vorgebracht? Notiere je ein Pro und ein Contra.",
+        "praesentation": "Erkläre deiner Götti in 90 Sekunden, was Steuerprogression bedeutet und warum du trotzdem Option (b) wählst — also Abzüge planst. Kriterium: Deine Götti kann danach erklären, was 'kalte Progression' bedeutet.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}

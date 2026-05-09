@@ -1,0 +1,365 @@
+{
+  "id": "3.1.2_budget_risiken_schulden_sit_E",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln",
+  "situation": "E",
+  "sit_farbe": "#6C3483",
+  "sit_farbe_light": "#E8DAEF",
+  "sit_farbe_mid": "#9B59B6",
+  "titel": "Gläubiger anrufen — wie das?",
+  "emotion_tag": "Unsicherheit",
+  "wissensknoten": [
+    "ch_2_2_budget_schuldensanierung",
+    "ch_2_2_budget_schulden"
+  ],
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ]
+  },
+  "persona": {
+    "beruf": "Kaufmann EFZ",
+    "betrieb": "Swisscom",
+    "ort": "St. Gallen"
+  },
+  "situation_text": "Ich bin Kaufmann-Lernender im 1. Lehrjahr bei Swisscom in St. Gallen und verdiene CHF 800 netto pro Monat. In den letzten Monaten habe ich CHF 1'200 an unbezahlten Handy-Rechnungen aufgehäuft und zusätzlich CHF 400 Ratenverzug bei einem Online-Kauf. Ich weiss, dass ich handeln muss — aber ich habe Angst vor dem Gespräch mit den Gläubigern. Im Lehrmittel steht: «Nimm Kontakt auf und lege alternative Rückzahlungsvarianten fest.» Das klingt einfacher, als es sich anfühlt. Wie gehe ich dieses Gespräch an — und was muss ich konkret vorbereiten, damit die Gläubiger auf meinen Vorschlag eingehen?",
+  "zahlen_tabelle": [
+    {
+      "label": "Monatslohn netto (1. Lehrjahr KV)",
+      "wert": "CHF 800"
+    },
+    {
+      "label": "Schulden Handy-Rechnungen",
+      "wert": "CHF 1'200"
+    },
+    {
+      "label": "Ratenverzug Online-Kauf",
+      "wert": "CHF 400"
+    },
+    {
+      "label": "Schulden gesamt",
+      "wert": "CHF 1'600"
+    },
+    {
+      "label": "Fixkosten monatlich (geschätzt)",
+      "wert": "CHF 520"
+    },
+    {
+      "label": "Spielraum für Tilgung",
+      "wert": "CHF 280"
+    }
+  ],
+  "leitfrage": "Wie nehme ich den Kontakt mit meinen Gläubigern auf — und was muss ich konkret vorbereiten?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 8.2 (Seite 199–200) als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Erkläre in eigenen Worten: Was bedeutet Schuldensanierung? Was ist eine «alternative Rückzahlungsvariante» — und welches Ziel verfolgt sie für Schuldner und Gläubiger?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Dein Nettolohn ist CHF 800. Fixkosten: CHF 520. Berechne: (a) Monatlicher Spielraum für Schuldentilgung. (b) In wie vielen Monaten könntest du CHF 1'600 bei einem Tilgungsbetrag von CHF 120/Monat zurückzahlen?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 8.2 | S. 199–200",
+      "text": "Zwei Optionen: (a) Du nimmst direkt Kontakt mit beiden Gläubigern auf und schlägst CHF 80/Monat Ratenzahlung vor. (b) Du kontaktierst zuerst budgetberatung.ch und lässt dich kostenlos beraten. Welche Option wählst du — und warum?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Formuliere eine E-Mail an den Handy-Anbieter, in der du deine Situation erklärst und einen konkreten Rückzahlungsplan von CHF 80 pro Monat vorschlägst. Schreibe in höflichem, sachlichem Ton.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Schulden bereinigen",
+  "mindmap_aeste": [
+    {
+      "titel": "Ast 1 - Situation überblicken",
+      "punkte": [
+        "Alle Schulden auflisten",
+        "Gläubiger identifizieren",
+        "Tilgungsspielraum berechnen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 2 - Kontakt aufnehmen",
+      "punkte": [
+        "Freundlich & sachlich",
+        "Konkreten Plan vorschlagen",
+        "Schriftlich festhalten"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 3 - Rückzahlungsoptionen",
+      "punkte": [
+        "Ratenzahlung vereinbaren",
+        "Stundung beantragen",
+        "budgetberatung.ch nutzen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ast 4 - Optional",
+      "punkte": [
+        "Budget mit Rücklage",
+        "Rechnungen sofort prüfen",
+        "Bezugslimite Karte"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "E-Mail + Rückzahlungsplan",
+    "titel": "Format: E-Mail an Gläubiger + Rückzahlungstabelle",
+    "format_detail": "E-Mail (höflich, sachlich, mit Rückzahlungsvorschlag) + einfache Tabelle: Schuld / Monatsrate / Dauer",
+    "beschreibung": "Du formulierst eine E-Mail an einen Gläubiger und erstellst eine einfache Rückzahlungstabelle, die zeigt, wie du deine Schulden in realistischen Raten begleichen kannst.",
+    "schritte": [
+      {
+        "label": "Schulden auflisten",
+        "hint": "Trage alle Schulden in eine Tabelle: Gläubiger — Betrag — Fälligkeit"
+      },
+      {
+        "label": "Spielraum berechnen",
+        "hint": "Lohn CHF 800 − Fixkosten CHF 520 = Spielraum für Tilgung. Wie viel kannst du monatlich realistisch zahlen?"
+      },
+      {
+        "label": "Rückzahlungsplan erstellen",
+        "hint": "Tabelle: Gläubiger A: CHF 80/Monat × X Monate; Gläubiger B: CHF 40/Monat × X Monate"
+      },
+      {
+        "label": "E-Mail formulieren",
+        "hint": "Betreff, Anrede, Situation in 2–3 Sätzen erklären, konkreten Vorschlag machen, freundlicher Abschluss"
+      },
+      {
+        "label": "Prüfen und senden",
+        "hint": "Ist die E-Mail sachlich, höflich und vollständig? Hast du Rückzahlungssumme und Dauer genannt?"
+      }
+    ],
+    "schreib_label": "E-MAIL + RÜCKZAHLUNGSPLAN HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ch_2_2_budget_schuldensanierung"
+  },
+  "gruppenpuzzle_fragen": [
+    {
+      "nr": "F1",
+      "text": "Expertise — Erkläre deine Situation in 90 Sek.: Problem, Entscheid, stärkstes Argument. Was ich von den anderen gehört habe:",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F2",
+      "text": "Gemeinsamkeit — Was haben alle fünf Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    },
+    {
+      "nr": "F3",
+      "text": "Perspektive — Welche Situation wäre für dich persönlich am schwierigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 12
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret — oder was prüfe ich beim nächsten Mal?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "vorgespraech_fragen": [
+    {
+      "nr": "V1",
+      "text": "Der Gläubiger antwortet: «CHF 80 pro Monat ist zu wenig. Wir akzeptieren mindestens CHF 150.» Du kannst dir das nicht leisten. Wie reagierst du — und was bietest du als Alternative an?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V2",
+      "text": "Was wenn du trotz E-Mail nach zwei Wochen keinen Rücklauf erhältst und danach ein Zahlungsbefehl kommt? Welche drei Schritte unternimmst du sofort?",
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "V3",
+      "text": "Eine Polymechanikerin bei ABB hat ebenfalls CHF 1'200 Schulden, aber keine Angst vor dem Gläubiger-Kontakt. Was würde sie in ihrer E-Mail anders formulieren — und was wäre inhaltlich dasselbe?",
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap (Situation)",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur + Tiefe"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 30,
+      "kriterium": "Rubrik 4 Stufen"
+    },
+    {
+      "produkt": "Mindmap-Erweiterung",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Erkenntnisse aus Austausch"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Vorbereitungsfragen",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 10,
+      "kriterium": "Vollständigkeit"
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Handlungsprodukt",
+      "aktiv": false
+    },
+    {
+      "label": "Bis Woche 3",
+      "text": "Austausch, R1-R3, V1-V3",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "scaffolding": {
+    "leicht": {
+      "leitfragen_hilfen": [
+        {
+          "nr": 1,
+          "tipp": "Lies Kap. 8.2 S. 199 — suche die Definition von Schuldensanierung. Erkläre dann, was eine 'alternative Rückzahlungsvariante' für beide Seiten bringt: Was gewinnt der Schuldner — was gewinnt der Gläubiger?",
+          "satzanfang": "Schuldensanierung bedeutet, dass ___. Eine alternative Rückzahlungsvariante ist ___. Für mich als Schuldner bringt das ___, für den Gläubiger ___."
+        },
+        {
+          "nr": 2,
+          "tipp": "Rechne Schritt für Schritt: (a) CHF 800 − CHF 520 = CHF ___ Spielraum pro Monat. (b) CHF 1'600 ÷ CHF 120 = ___ Monate Rückzahlungsdauer. Erst rechnen, dann beurteilen.",
+          "satzanfang": "(a) Monatlicher Spielraum: CHF 800 − CHF 520 = CHF ___. (b) Bei CHF 120 pro Monat dauert die Rückzahlung von CHF 1'600 genau ___ Monate."
+        },
+        {
+          "nr": 3,
+          "tipp": "Überprüfe: Hast du schon eine klare Vorstellung von deinem Rückzahlungsplan? Wenn nein, gibt dir Budgetberatung.ch Sicherheit. Wenn ja, ist der direkte Kontakt schneller und zeigt Eigeninitiative.",
+          "satzanfang": "Ich wähle Option ___ (a: direkt Gläubiger kontaktieren / b: zuerst Budgetberatung.ch nutzen), weil ___."
+        },
+        {
+          "nr": 4,
+          "tipp": "Eine gute E-Mail hat: Betreff (klar, mit Kundennummer). Anrede. Situation in 2-3 Sätzen (kein Jammern). Konkreter Vorschlag (CHF 80/Mt ab Datum X). Freundlicher Schluss.",
+          "satzanfang": "Betreff: Rückzahlungsvorschlag — Kundennummer ___. Sehr geehrte Damen und Herren, ich bin Lernender bei Swisscom und schlage vor, monatlich CHF ___ ab ___ zu zahlen. ..."
+        }
+      ],
+      "vokabular": [
+        {
+          "term": "Schuldensanierung",
+          "definition": "Ein geplantes Vorgehen, um bestehende Schulden schrittweise abzubauen — oft mit einem vereinbarten Ratenplan mit den Gläubigern."
+        },
+        {
+          "term": "Gläubiger",
+          "definition": "Die Person oder das Unternehmen, dem man Geld schuldet — z.B. ein Handy-Anbieter oder ein Online-Shop."
+        },
+        {
+          "term": "Schuldner",
+          "definition": "Die Person, die Geld schuldet und es zurückzahlen muss — in dieser Situation bist du der Schuldner."
+        },
+        {
+          "term": "Rückzahlungsplan",
+          "definition": "Eine Vereinbarung, wie viel man monatlich zurückzahlt, bis die Schuld vollständig beglichen ist."
+        },
+        {
+          "term": "Tilgung",
+          "definition": "Das schrittweise Zurückzahlen einer Schuld — z.B. CHF 80 pro Monat, bis der gesamte Betrag beglichen ist."
+        }
+      ],
+      "handlungsprodukt_hilfe": {
+        "strukturtipp": "Dein HP hat 2 Teile: 1. E-Mail mit Betreff, Anrede, Situationsbeschreibung (2-3 Sätze), konkretem Rückzahlungsvorschlag (CHF 80/Mt ab Datum) und freundlichem Schluss. 2. Rückzahlungstabelle mit 4 Spalten: Gläubiger | Schuld CHF | CHF/Monat | Dauer Monate.",
+        "beispiel": "E-Mail (neutrales Thema): 'Betreff: Rückzahlungsvorschlag — Kundennummer 123. Sehr geehrte Damen und Herren, ich befinde mich im 1. Lehrjahr und möchte meine offene Rechnung in Raten begleichen. Ich biete CHF 80/Mt ab 1. März. Ich bitte Sie, meinen Vorschlag zu prüfen. Freundliche Grüsse ...'",
+        "checkfragen": [
+          "□ Hat meine E-Mail einen klaren Betreff mit Kundennummer?",
+          "□ Habe ich meine Situation in 2-3 Sätzen erklärt (sachlich, ohne Ausreden)?",
+          "□ Habe ich einen konkreten Betrag (CHF 80/Mt) und ein Startdatum vorgeschlagen?",
+          "□ Ist meine E-Mail sachlich und höflich — kein Jammern, keine Schuldzuweisungen?",
+          "□ Habe ich die Rückzahlungstabelle für beide Gläubiger ausgefüllt?"
+        ]
+      }
+    },
+    "stark": {
+      "leitfragen_vertiefung": {
+        "vertiefungsfragen": [
+          "Inwiefern ist die Angst vor dem Gläubiger-Gespräch eine psychologische Falle — und welche gesellschaftlichen Faktoren führen dazu, dass junge Menschen Rechnungen lieber ignorieren als proaktiv zu kommunizieren?",
+          "Was passiert rechtlich und finanziell, wenn du einen Rückzahlungsplan vorschlägst, den der Gläubiger ablehnt — welche Verhandlungsoptionen hast du dann noch, bevor es zum Betreibungsverfahren kommt?"
+        ],
+        "recherche_impulse": [
+          "Suche nach 'Schuldenberatung Schweiz kostenlos Jugendliche Anlaufstellen' mit einer Suchmaschine. Welche kostenlosen Schuldenberatungsangebote gibt es in der Schweiz? Notiere zwei Anlaufstellen mit Kanton.",
+          "Suche nach 'Jugendverschuldung Schweiz Statistik Ursachen 2023 2024' mit einer Suchmaschine. Wie viele Jugendliche haben laut Statistik Schulden — und was sind die häufigsten Ursachen? Notiere eine konkrete Zahl."
+        ],
+        "wissensknoten_extra": []
+      },
+      "vertiefung": {
+        "transfer": "Der Handy-Anbieter hat deinen E-Mail-Vorschlag angenommen. Erstelle jetzt einen Überblick für den zweiten Gläubiger (Online-Kauf CHF 400): Wie passt du den Rückzahlungsplan an, damit beide Raten zusammen CHF 120/Mt nicht übersteigen?",
+        "analyse": "Was passiert gesellschaftlich, wenn Mobilfunkanbieter wie Swisscom aggressive Abo-Verträge an Lernende verkaufen, die sie sich strukturell nicht leisten können? Analysiere aus zwei Perspektiven: Lernende (Schuldenfalle) und Unternehmen (Marketingstrategie vs. Kundenbindung).",
+        "recherche": "Suche nach 'Fernmeldegesetz FMG Schweiz Abo Kündigung Minderjährige Schulden' mit einer Suchmaschine. Welche Rechte hast du als Lernender, wenn ein Abo-Vertrag zur Schuldenfalle wird? Notiere eine konkrete Regelung.",
+        "praesentation": "Lies deine E-Mail der Klasse vor. Erkläre in 1 Minute, warum ein sachlicher Ton wichtig ist — und warum es klüger ist, proaktiv zu kontaktieren, statt Rechnungen zu ignorieren und ein Betreibungsverfahren zu riskieren.",
+        "wissensknoten_extra": []
+      }
+    }
+  }
+}
