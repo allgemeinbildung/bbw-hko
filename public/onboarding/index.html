@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABU-Materialplattform – Einführung</title>
+<style>
+  :root {
+    --blue: #1e3a5f;
+    --blue-light: #2d5080;
+    --accent: #f59e0b;
+    --green: #16a34a;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; }
+
+  /* HEADER */
+  .header { background: var(--blue); color: white; padding: 48px 40px 40px; }
+  .header-inner { max-width: 900px; margin: 0 auto; }
+  .badge { display: inline-block; background: var(--accent); color: #7c2d12; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; margin-bottom: 16px; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+  .header p { font-size: 17px; opacity: .85; max-width: 620px; }
+
+  /* PROGRESS NAV */
+  .nav { background: var(--blue-light); padding: 0 40px; }
+  .nav-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 0; overflow-x: auto; }
+  .nav a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 14px 18px; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .15s; }
+  .nav a:hover { color: white; }
+  .nav a.lp { border-bottom-color: #60a5fa; color: white; }
+  .nav a.kt { border-bottom-color: var(--accent); color: white; }
+  .num { background: rgba(255,255,255,.2); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+
+  /* MAIN */
+  main { max-width: 900px; margin: 0 auto; padding: 48px 40px 80px; }
+
+  /* SECTION */
+  section { margin-bottom: 64px; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  section h2 { font-size: 26px; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
+  section > p { color: var(--muted); margin-bottom: 28px; max-width: 700px; }
+
+  /* ROLE PILLS */
+  .role-lp { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 99px; font-size: 12px; font-weight: 600; padding: 3px 12px; margin-bottom: 20px; }
+  .role-kt { display: inline-flex; align-items: center; gap: 6px; background: #fffbeb; color: #92400e; border: 1px solid #fde68a; border-radius: 99px; font-size: 12px; font-weight: 600; padding: 3px 12px; margin-bottom: 20px; }
+
+  /* STEP CARDS */
+  .steps { display: flex; flex-direction: column; gap: 32px; }
+  .step { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .step-head { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 14px; }
+  .step-num { background: var(--blue); color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .step-num.gold { background: var(--accent); color: #7c2d12; }
+  .step-head h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .step-head p { font-size: 14px; color: var(--muted); }
+  .step img { width: 100%; display: block; border-top: 1px solid var(--border); }
+  .step-note { padding: 14px 24px; background: #f8fafc; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+  .step-note strong { color: var(--text); }
+
+  /* TWO-PATH SPLIT */
+  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+  .path-card { border-radius: 12px; border: 2px solid; padding: 20px; }
+  .path-card.blue { border-color: #bfdbfe; background: #eff6ff; }
+  .path-card.orange { border-color: #fed7aa; background: #fff7ed; }
+  .path-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .path-card.blue h4 { color: #1d4ed8; }
+  .path-card.orange h4 { color: #c2410c; }
+  .path-card p { font-size: 13px; color: var(--muted); }
+  .path-icon { font-size: 28px; margin-bottom: 8px; }
+
+  /* INFO BOX */
+  .info { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px 18px; font-size: 14px; color: #166534; margin-bottom: 24px; display: flex; gap: 10px; align-items: flex-start; }
+
+  /* URL CHIP */
+  .url { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #e2e8f0; font-family: monospace; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 0 2px; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 32px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+
+  @media (max-width: 640px) {
+    .header, .nav, main { padding-left: 20px; padding-right: 20px; }
+    .paths { grid-template-columns: 1fr; }
+    .nav-inner { gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="badge">Entwurf zur Besprechung – KT1 · 19. Mai 2026</div>
+    <h1>ABU-Materialplattform</h1>
+    <p>Einführung für das Kernteam 1 — wie Lehrpersonen die Plattform nutzen und was ihr als KT1 in der Admin-Ansicht seht.</p>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#login"><span class="num">1</span> Anmelden</a>
+    <a href="#lp" class="lp"><span class="num">2</span> Lehrperson-Ansicht</a>
+    <a href="#situationen" class="lp"><span class="num">3</span> Situationen-Katalog</a>
+    <a href="#einreichen" class="lp"><span class="num">4</span> Material einreichen</a>
+    <a href="#kt1" class="kt"><span class="num">5</span> KT1-Ansicht</a>
+    <a href="#dashboard" class="kt"><span class="num">6</span> Lücken-Dashboard</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ─── 1. ANMELDEN ─── -->
+  <section id="login">
+    <div class="section-label">Schritt 1</div>
+    <h2>Anmelden</h2>
+    <p>Alle Nutzenden melden sich unter <span class="url">bbw-hko.vercel.app</span> an. Wer ein BBW-Konto hat, kann sich direkt mit Microsoft anmelden — kein separates Passwort nötig.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Login-Seite</h3>
+            <p>«Mit Microsoft (BBW) anmelden» für alle mit BBW-E-Mail — oder E-Mail/Passwort für externe Zugänge.</p>
+          </div>
+        </div>
+        <img src="login.jpg" alt="Login-Seite der ABU-Materialplattform">
+        <div class="step-note">
+          ℹ️ <span>Nach dem Login leitet die Plattform automatisch in die richtige Ansicht weiter — <strong>Lehrpersonen</strong> zu «Material einreichen», <strong>KT1-Mitglieder</strong> zur Admin-Übersicht.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── 2. LEHRPERSON ─── -->
+  <section id="lp">
+    <div class="role-lp">👩‍🏫 Lehrperson-Ansicht</div>
+    <div class="section-label">Schritt 2</div>
+    <h2>Was Lehrpersonen auf der Plattform tun können</h2>
+    <p>Nach dem Login stehen Lehrpersonen zwei Wege offen — je nachdem, ob sie ein fertiges Unterrichtsmaterial einreichen oder zuerst im Katalog vorhandener Situationen stöbern möchten.</p>
+
+    <div class="paths">
+      <div class="path-card blue">
+        <div class="path-icon">📚</div>
+        <h4>Weg A — Situationen-Katalog</h4>
+        <p>60 vorgefertigte Unterrichtssituationen durchstöbern, filtern und Feedback geben. Ideal zum Ausprobieren und Rückmelden.</p>
+      </div>
+      <div class="path-card orange">
+        <div class="path-icon">📝</div>
+        <h4>Weg B — Material einreichen</h4>
+        <p>Eigene Herausforderungen und Kompetenznachweise gemäss nRLP-Taxonomie strukturiert einreichen.</p>
+      </div>
+    </div>
+
+    <div class="info">✅ Beide Wege sind von jeder Seite aus erreichbar — über die Navigation oben.</div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── 3. SITUATIONEN ─── -->
+  <section id="situationen">
+    <div class="role-lp">👩‍🏫 Lehrperson-Ansicht</div>
+    <div class="section-label">Schritt 3 — Weg A</div>
+    <h2>Situationen-Katalog</h2>
+    <p>60 ausgearbeitete Unterrichtssituationen, alle am nRLP ausgerichtet. Lehrpersonen können filtern, lesen und Feedback geben.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num">A</div>
+          <div>
+            <h3>Katalog-Übersicht</h3>
+            <p>9 Filterfelder: Suche, Lehrjahr, Thema, Lebensbezug, Kompetenz, Schlüsselkompetenz, Aspekt, Sprachmodus. Jede Karte zeigt Persona, Handlungsprodukt und Taxonomie-Tags.</p>
+          </div>
+        </div>
+        <img src="situationen.jpg" alt="Situationen-Katalog mit 60 Situationen">
+        <div class="step-note">
+          📌 <span><strong>60 Situationen</strong> sind bereits erfasst. Die Karten zeigen den Emotions-Tag (z.B. «Entscheidungsdruck»), die Persona und die nRLP-Aspekte auf einen Blick.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num">A2</div>
+          <div>
+            <h3>Detailansicht einer Situation</h3>
+            <p>Vollständiger Text der Situation, Leitfrage, Handlungsprodukt mit Beschreibung und Taxonomie-Sidebar (Thema, Aspekte, SK, Dauer).</p>
+          </div>
+        </div>
+        <img src="sit_detail.jpg" alt="Detailansicht: Das neue iPhone — aber wozu?">
+        <div class="step-note">
+          💬 <span>Der <strong>«Feedback geben»-Button</strong> oben rechts öffnet ein Formular, in dem die Lehrperson die Situation bewertet und kommentiert.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── 4. EINREICHEN ─── -->
+  <section id="einreichen">
+    <div class="role-lp">👩‍🏫 Lehrperson-Ansicht</div>
+    <div class="section-label">Schritt 4 — Weg B</div>
+    <h2>Material einreichen</h2>
+    <p>Lehrpersonen reichen eigene Unterrichtsmaterialien ein. Das Formular führt Schritt für Schritt durch die nRLP-Taxonomie und schlägt passende Schlüsselkompetenzen automatisch vor.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num">B</div>
+          <div>
+            <h3>Einreichungsformular</h3>
+            <p>Block A (Identifikation): Lehrdauer, Lehrjahr, Thema, Titel. Block B (nRLP-Taxonomie): Schlüsselkompetenzen, Aspekte, Sprachmodi — mit automatischem Vorschlag nach Kompetenz-Auswahl.</p>
+          </div>
+        </div>
+        <img src="einreichen.jpg" alt="Material-Einreichungsformular">
+        <div class="step-note">
+          🧭 <span><strong>Taxonomie-Fluss:</strong> Lehrdauer → Thema → Lebensbezug → Kompetenz → Ein Klick auf «Taxonomie übernehmen» füllt Block B automatisch aus.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num">B2</div>
+          <div>
+            <h3>Meine Materialien</h3>
+            <p>Übersicht aller eigenen Einreichungen mit Status. Solange ein Material «Eingereicht» ist, kann es bearbeitet oder gelöscht werden.</p>
+          </div>
+        </div>
+        <img src="meine.jpg" alt="Meine Materialien — Übersicht eigener Einreichungen">
+        <div class="step-note">
+          🔒 <span>Nach einer <strong>Statusänderung durch KT1</strong> (z.B. «In Überarbeitung») ist das Material für die Lehrperson gesperrt — keine weiteren Änderungen möglich.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── 5. KT1 ÜBERSICHT ─── -->
+  <section id="kt1">
+    <div class="role-kt">🔑 KT1-Ansicht (Admin)</div>
+    <div class="section-label">Schritt 5</div>
+    <h2>Alle Materialien — Admin-Übersicht</h2>
+    <p>KT1-Mitglieder sehen nach dem Login sofort alle eingereichten Materialien aller Lehrpersonen. Status und Kommentare können direkt in der Tabelle gesetzt werden.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num gold">KT</div>
+          <div>
+            <h3>Übersicht aller Einreichungen</h3>
+            <p>14 Materialien aktuell. Filter nach Typ, Lehrdauer, Lehrjahr, Thema, Schlüsselkompetenz, Aspekt und Status. Inline-Statuseditor und Kommentarfeld direkt in der Tabelle.</p>
+          </div>
+        </div>
+        <img src="admin.jpg" alt="KT1 Admin-Übersicht aller Materialien">
+        <div class="step-note">
+          ⚡ <span><strong>Status-Workflow:</strong> Eingereicht → In Überarbeitung → Freigegeben / Abgelehnt. KT1 kann jeden Status direkt im Dropdown setzen und einen Kommentar hinterlassen.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── 6. DASHBOARD ─── -->
+  <section id="dashboard">
+    <div class="role-kt">🔑 KT1-Ansicht (Admin)</div>
+    <div class="section-label">Schritt 6</div>
+    <h2>Lücken-Dashboard</h2>
+    <p>Das Dashboard zeigt auf einen Blick, welche Bereiche des nRLP bereits durch eingereichte Materialien abgedeckt sind — und wo noch Lücken bestehen.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-head">
+          <div class="step-num gold">DB</div>
+          <div>
+            <h3>Abdeckungs-Balken &amp; Heatmap</h3>
+            <p>Drei Panels: Schlüsselkompetenzen-Abdeckung, Aspekte-Abdeckung, Sprachmodi-Abdeckung — jeweils mit Anzahl Materialien. Farbcode: rot = 0, orange = wenig, grün = gut abgedeckt.</p>
+          </div>
+        </div>
+        <img src="dashboard.jpg" alt="Lücken-Dashboard mit Abdeckungs-Balken">
+        <div class="step-note">
+          📊 <span>Filter nach <strong>Lehrdauer</strong> (EBA / EFZ-3J / EFZ-4J) oben rechts — die Balken aktualisieren sich sofort. Darunter folgt eine Heatmap Thema × Lehrjahr.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ─── NÄCHSTE SCHRITTE ─── -->
+  <section>
+    <div class="section-label">Nächste Schritte</div>
+    <h2>Für heute</h2>
+    <p style="margin-bottom:20px;">Ihr könnt die Plattform jetzt direkt ausprobieren. Hier sind die Zugangsdaten für den Test:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
+      <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:20px;">
+        <div style="font-size:12px;font-weight:700;color:#1d4ed8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">👩‍🏫 Lehrperson-Test</div>
+        <div style="font-family:monospace;font-size:14px;line-height:2;">
+          E-Mail: lehrer@hko.ch<br>
+          Passwort: lehrer$1234
+        </div>
+      </div>
+      <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:20px;">
+        <div style="font-size:12px;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🔑 Euer eigenes Konto</div>
+        <div style="font-size:14px;line-height:1.8;color:#64748b;">
+          Mit eurer BBW-E-Mail registrieren unter <span class="url" style="font-size:12px;">bbw-hko.vercel.app/registrieren</span> — ihr bekommt automatisch KT1-Zugang.
+        </div>
+      </div>
+    </div>
+    <div class="info" style="margin-bottom:0;">
+      💡 <span><strong>Feedbackpunkte für heute:</strong> Ist der Einreichungs-Workflow für Lehrpersonen verständlich? Welche Infos fehlen in der Admin-Übersicht? Ist das Dashboard nützlich so wie es ist?</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  ABU-Materialplattform · BBW · ABU Reform 2030 · Entwurf zur Besprechung KT1 · 19.05.2026
+</footer>
+
+</body>
+</html>
