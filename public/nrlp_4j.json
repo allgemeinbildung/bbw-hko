@@ -1,0 +1,841 @@
+{
+  "meta": {
+    "titel": "Schullehrplan ABU EFZ",
+    "typ": "4-jährige Grundbildung",
+    "kanton": "Zürich",
+    "version": "ABU Reform 2030 — Bildungsrat 2026-01",
+    "anzahl_themen": 2,
+    "lehrjahre": 4,
+    "themen_vollstaendig": 2,
+    "themen_skizze": 0,
+    "quelle_datei": "3_SLP_ABU_EFZ_4jährige_GB_Bildungsrat_202601.md",
+    "extrahiert_am": "2026-01-15T00:00:00Z",
+    "skript_version": "1.0.0",
+    "schema_version": "2026.01-bildungsrat",
+    "hinweis": "2 Themen vollständig ausgearbeitet. 0 Themen als Skizzen oder fehlend."
+  },
+  "zirkularitaet": {
+    "gesellschaftsinhalte": [
+      {
+        "bezeichnung": "Ethik",
+        "beschreibung": "Vom persönlichen Werteverständnis im Einstieg ins Berufsleben (T1), über ethische Abwägungen bei politischen Fragen und Mediennutzung (T2), weiter zu Verantwortung im Konsum (Fairness, Nachhaltigkeit, Tierwohl etc.) (T3) bis zu ethischen Fragen im Alltag des Zusammenlebens (T4).",
+        "wiederholungen": {
+          "T1": "R1",
+          "T2": "R2",
+          "T3": "R3",
+          "T4": "R4"
+        }
+      },
+      {
+        "bezeichnung": "Identität und Sozialisation",
+        "beschreibung": "Beginn mit der beruflichen Selbstfindung und dem Rollenwechsel (T1), dann Bedürfniswahrnehmung beim Konsum (T3), Reflexion über soziale Rollen und Konfliktkultur im Zusammenleben (T4), gefolgt von der Entwicklung zur selbstständigen Lebensführung beim Auszug (T6) und schliesslich der Langzeitperspektive der beruflichen Identität und Lebensplanung in einer sich wandelnden Arbeitswelt (T7).",
+        "wiederholungen": {
+          "T1": "R1",
+          "T3": "R2",
+          "T4": "R3",
+          "T6": "R4",
+          "T7": "R5"
+        }
+      },
+      {
+        "bezeichnung": "Kultur",
+        "beschreibung": "Beginnend mit Ausdrucksformen der Kunst bei Meinungsbildung (T2), dann explizit als interkulturelles Zusammenleben im Alltag (T4).",
+        "wiederholungen": {
+          "T2": "R1",
+          "T4": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Ökologie",
+        "beschreibung": "Startet mit Meinungsbildung zu ökologischen Themen (T2) und ökologischen Entscheidungen beim Konsum (T3), weiter zu Staatsverantwortung und Umweltpolitik (T5), dann zur nachhaltigen Alltagsgestaltung und Mobilität beim Wohnen (T6) und schliesslich zur Frage, wie Arbeit und Technologie ökologisch verträglich gestaltet werden können (T7).",
+        "wiederholungen": {
+          "T2": "R1",
+          "T3": "R2",
+          "T5": "R3",
+          "T6": "R4"
+        }
+      },
+      {
+        "bezeichnung": "Politik",
+        "beschreibung": "Beginn mit politischer Meinungsbildung, Mitbestimmung und demokratischer Diskursfähigkeit (T2), dann Übertragung in konkrete politische Partizipation ab 18 Jahren: Wahlen, direkte Demokratie und Einflussnahme auf politische Prozesse (T5).",
+        "wiederholungen": {
+          "T2": "R1",
+          "T5": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Recht",
+        "beschreibung": "Umfassender Aufbau quer durch alle Jahre: Berufsrecht und Lehrvertrag (T1), Konsumentenschutz und Vertragsrecht (T3), Rechte im sozialen Raum, z. B. Mietrecht, Nachbarschaft, Konfliktlösungsmechanismen (T4-T6), Sozialversicherungsrecht, Steuer- und Arbeitsrecht (T5-T7).",
+        "wiederholungen": {
+          "T1": "R1",
+          "T3": "R2",
+          "T4": "R3",
+          "T5": "R4",
+          "T6": "R5",
+          "T7": "R6"
+        }
+      },
+      {
+        "bezeichnung": "Technologische und digitale Transformation",
+        "beschreibung": "Zuerst Technologie beim Berufseinstieg (T1), dann als Thema der digitalen politischen Kommunikation und Medienkompetenz (T2), später als Zukunftsthema der Arbeitswelt mit Fokus auf Digitalisierung, KI, Automatisierung und Berufsethik (T7).",
+        "wiederholungen": {
+          "T1": "R1",
+          "T2": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Wirtschaft",
+        "beschreibung": "Einstieg mit persönlicher Finanzplanung, Lohn und Konsum (T1, T3), Ausbau durch Verständnis für staatliche Wirtschaftsstrukturen, Steuersysteme und soziale Umverteilung (T5), Anwendung im Kontext Wohnökonomie (Budget, Fixkosten, Versicherungen) (T6), Ausblick auf Zukunft der Erwerbsarbeit, Berufsstrategien und Marktveränderungen (T7).",
+        "wiederholungen": {
+          "T1": "R1",
+          "T3": "R2",
+          "T5": "R3",
+          "T6": "R4",
+          "T7": "R5"
+        }
+      }
+    ],
+    "sprachmodi": [
+      {
+        "bezeichnung": "Rezeption mündlich",
+        "wiederholungen": {
+          "T2": "R1",
+          "T6": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Rezeption audiovisuell",
+        "wiederholungen": {
+          "T3": "R1",
+          "T5": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Rezeption schriftlich und bildlich",
+        "wiederholungen": {
+          "T1": "R1",
+          "T4": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Produktion mündlich",
+        "wiederholungen": {
+          "T2": "R1",
+          "T5": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Produktion schriftlich und bildlich",
+        "wiederholungen": {
+          "T2": "R1",
+          "T4": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Produktion multimedial",
+        "wiederholungen": {
+          "T3": "R1",
+          "T6": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Interaktion und Kollaboration mündlich",
+        "wiederholungen": {
+          "T1": "R1",
+          "T4": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Interaktion und Kollaboration schriftlich",
+        "wiederholungen": {
+          "T3": "R1",
+          "T6": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Interaktion und Kollaboration digital",
+        "wiederholungen": {
+          "T1": "R1",
+          "T5": "R2"
+        }
+      }
+    ],
+    "schluesselkompetenzen": [
+      {
+        "bezeichnung": "Quellen unterscheiden",
+        "wiederholungen": {
+          "T2": "R1",
+          "T3": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Ziele setzen und anpassen",
+        "wiederholungen": {
+          "T1": "R1",
+          "T5": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Innovation und Problemlösung",
+        "wiederholungen": {
+          "T3": "R1",
+          "T6": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Teamarbeit",
+        "wiederholungen": {
+          "T1": "R1",
+          "T6": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Werthaltungen reflektieren",
+        "wiederholungen": {
+          "T2": "R1",
+          "T3": "R2",
+          "T4": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Standpunkte begründen",
+        "wiederholungen": {
+          "T1": "R1",
+          "T2": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Verständnis fördern",
+        "wiederholungen": {
+          "T2": "R1",
+          "T4": "R2",
+          "T6": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Lebensphasen planen",
+        "wiederholungen": {
+          "T1": "R1",
+          "T6": "R2",
+          "T7": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Nachhaltigkeit",
+        "wiederholungen": {
+          "T3": "R1",
+          "T5": "R2",
+          "T6": "R3"
+        }
+      },
+      {
+        "bezeichnung": "Anpassung",
+        "wiederholungen": {
+          "T4": "R1",
+          "T7": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Mehrdeutigkeit",
+        "wiederholungen": {
+          "T4": "R1",
+          "T5": "R2"
+        }
+      },
+      {
+        "bezeichnung": "Partizipation",
+        "wiederholungen": {
+          "T2": "R1",
+          "T5": "R2"
+        }
+      }
+    ]
+  },
+  "themen": [
+    {
+      "nr": 1,
+      "titel": "Ins Berufsleben einsteigen",
+      "lehrjahr": 1,
+      "lektionen": 33,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
+        "detail": "Ich setze mich mit den Inhalten meines Lehrvertrags auseinander und erkenne meine Rechte und Pflichten im Berufsalltag. Dazu lese und verarbeite ich unterschiedliche Quellen, z. B. Verträge oder betriebliche Regelwerke und nutze Informationen gezielt für meine Situation. Ausserdem mache ich erste Erfahrungen damit, wie in meiner neuen Rolle kommuniziert wird, wie Zusammenarbeit im Team gelingt und wie Konflikte fair gelöst werden. Dabei tausche ich mich mit anderen Lernenden und Mitarbeitenden über Erlebnisse und Herausforderungen aus und bringe meine Sichtweise ein. Ich erweitere meine Lern- und Arbeitstechniken und gehe bei meinem Einstieg in die Arbeitswelt bewusst mit meinen Ressourcen um, indem ich meine eigene Arbeit gezielt organisiere. Ich gehe mit meinem Geld verantwortungsbewusst um und lerne, meine Ausgaben zu planen und zu kontrollieren. So gestalte ich meinen Alltag im neuen Lebensabschnitt eigenständig und nachhaltig."
+      },
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Interaktion und Kollaboration mündlich",
+        "Interaktion und Kollaboration digital"
+      ],
+      "schluesselkompetenzen": [
+        "Sich selbst Ziele setzen, die Zielsetzung überprüfen und sich adaptiv verhalten",
+        "In unterschiedlichen Teams zielgerichtet und effizient arbeiten",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen"
+      ],
+      "lebensbezuege": [
+        {
+          "nr": "1.1",
+          "text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+          "lektionen": 15,
+          "kompetenzen": [
+            {
+              "nr": "1.1.1",
+              "text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen"
+                },
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Rolle in der Gesellschaft und in der Arbeitswelt"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+                },
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen"
+                }
+              ]
+            },
+            {
+              "nr": "1.1.2",
+              "text": "Ich kann die ausbildungsrelevanten IT-Infrastrukturen und digitalen Werkzeuge einrichten und sicher nutzen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "Schutz- und Sicherheitsaspekte, arbeitserleichternde Nutzung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategie sowie Orientierungs- und Suchmöglichkeiten auf Websites"
+                }
+              ]
+            },
+            {
+              "nr": "1.1.3",
+              "text": "Ich kann Kommunikationstechnologien verantwortungsvoll und zielgruppengerecht einsetzen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "Situative und zweckmässige Nutzung digitaler Kommunikationsregeln der verschiedenen Tools"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration schriftlich",
+                  "detail": "nach Konventionen kommunizieren"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "1.2",
+          "text": "Ich lerne effektiv und setze meine Ressourcen effizient ein.",
+          "lektionen": 6,
+          "kompetenzen": [
+            {
+              "nr": "1.2.1",
+              "text": "Ich kann meine Lern- und Arbeitszeit in Hinblick auf meine neue Lebenssituation strukturiert planen und meine Planung bei Bedarf anpassen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "arbeitserleichternde Nutzung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "an Gesprächen teilnehmen, Rückmeldung geben und annehmen"
+                }
+              ]
+            },
+            {
+              "nr": "1.2.2",
+              "text": "Ich kann mich auf den nächsten Kompetenznachweis zielgerichtet und effektiv vorbereiten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "sinnvolle Anwendung von Tools der künstlichen Intelligenz, zielgerichtetes Prompten"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Lernstrategien als persönliche Entscheidung, Selbstwirksamkeitsförderung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien"
+                },
+                {
+                  "modus": "Interaktion und Kollaboration digital",
+                  "detail": "mit Tools der künstlichen Intelligenz interagieren"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "1.3",
+          "text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "1.3.1",
+              "text": "Ich kann verschiedene Arten von Bedürfnissen unterscheiden, meine eigenen Bedürfnisse erkennen und Einflussmöglichkeiten darauf beurteilen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Bedürfnisbefriedigung"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Anerkennung und Zugehörigkeit zu sozialer Gruppe, mögliche Prägungen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Zentrale Aussagen aus Texten und Grafiken entnehmen mithilfe von Markierhilfe und Lesestrategien"
+                }
+              ]
+            },
+            {
+              "nr": "1.3.2",
+              "text": "Ich kann mein Budget realistisch planen, Abweichungen und Risiken identifizieren und entsprechende Anpassungen vornehmen sowie mich mit anderen darüber austauschen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "geeignete Instrumente für den Umgang mit eigenen Mitteln, Einschätzung der eigenen wirtschaftlichen Lage, Lohnabrechnung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen, Risiken erkennen und Rückmeldung dazu geben"
+                }
+              ]
+            },
+            {
+              "nr": "1.3.3",
+              "text": "Ich kann Risiken der Verschuldung erkennen, mein eigenes Konsumverhalten kritisch reflektieren, Wege zur Vermeidung von Schulden entwickeln und diese mit anderen diskutieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "nachhaltiger Umgang mit Geld, Schuldenprävention"
+                },
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Verantwortung für sich selbst übernehmen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Zentrale Aussagen aus Texten und Grafiken entnehmen mithilfe von Markierhilfe und Lesestrategien"
+                },
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen, Risiken erkennen und Rückmeldung dazu geben"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quelle": {
+        "datei": "3_SLP_ABU_EFZ_4jährige_GB_Bildungsrat_202601.md",
+        "seite_start": 8,
+        "seite_end": 11
+      }
+    },
+    {
+      "nr": 2,
+      "titel": "Meinungen bilden und mitgestalten",
+      "lehrjahr": 1,
+      "lektionen": 48,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "In einer Welt, in der täglich unzählige Informationen und Meinungen auf mich einwirken, wird es für mich immer wichtiger, mir eine eigene, fundierte Haltung zu erarbeiten. Zu diesem Zweck lerne ich, verschiedene Informationen systematisch zu beurteilen, meine Meinung bewusst zu bilden, sie respektvoll zu vertreten und mich aktiv in gesellschaftliche Prozesse einzubringen.",
+        "detail": "Ich lerne, Informationen kritisch zu prüfen. Ich erkenne den Einfluss von Algorithmen, Filterblasen und Desinformationen auf meine Meinungsbildung. Ich bin sensibilisiert für den Unterschied zwischen Fake News und verlässlichen Quellen. Ich entwickle Strategien, um mich sicher und selbstbestimmt in digitalen Räumen zu bewegen. Dazu höre ich politische Debatten, Interviews und Social Media-Beiträge, analysiere die Absichten hinter Aussagen und vergleiche Positionen. Auf dieser Basis setze ich mich mit ethischen Fragen zum Umgang mit Diskriminierung, Meinungsfreiheit und Verantwortung in Gesprächen und Medienbeiträgen auseinander. Ich reflektiere Menschenrechte und Grundwerte und überlege, wie sie auf aktuelle Themen angewandt werden können. Auch in der Kunst geht es oft um Standpunkte, Meinungen und Haltungen. Indem ich mich mit Kunst auseinandersetze, versuche ich herauszufinden, was Menschen bewegt. Dabei bringe ich unterschiedliche Sichtweisen in Diskussionen ein und lerne, meine Meinung begründet und respektvoll zu vertreten. Ich kenne politische Mitwirkungsmöglichkeiten von Jugendlichen und nicht stimm- und wahlberechtigten Personen und weiss, wie und wo ich meine persönlichen politischen Anliegen vertreten kann. Ich entwickle eigene Standpunkte, bereite sie sprachlich sorgfältig auf und präsentiere sie zielgruppengerecht, beispielsweise in Form eines Kampagnenbeitrags, einem Debattenbeitrag oder als Videostatement für Social Media. So erlebe ich, dass meine Stimme zählt und ich durch aktives Mitgestalten Veränderungen anstossen kann. Auch in der Kunst geht es oft um Standpunkte, Meinungen und Haltungen. Ich setze mich mit Kunst auseinander, um herauszufinden, was Menschen bewegt. Dabei finde ich meine eigene Haltung und lerne, sie künstlerisch zum Ausdruck zu bringen und andere Werke respektvoll zu rezensieren. Ich setze mich vertieft mit der Klimaveränderung auseinander und unterscheide zwischen wissenschaftlichen Fakten und Meinungen. Durch diese kritische Auseinandersetzung entwickle ich mögliche Lösungsansätze zur Klimaveränderung und erweitere meine Urteilskompetenz. Ich beteilige mich aktiv an Diskussionen und bringe meine Position reflektiert ein."
+      },
+      "sprachmodi": [
+        "Rezeption mündlich",
+        "Produktion mündlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "schluesselkompetenzen": [
+        "Zwischen relevanten und irrelevanten Quellen und Inhalten unterscheiden",
+        "Die eigenen Werthaltungen und Überzeugungen erkennen, verstehen, kritisch reflektieren und weiterentwickeln",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Unterschiedliche Standpunkte nachvollziehen und das gegenseitige Verständnis fördern",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen"
+      ],
+      "lebensbezuege": [
+        {
+          "nr": "2.1",
+          "text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "2.1.1",
+              "text": "Ich kann mündliche Beiträge zu aktuellen politischen Themen verstehen und die Interessen und Werte der betroffenen Personen identifizieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Politik",
+                  "detail": "Aktuelle politische Themen, Interessengruppen, politische Grundhaltungen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption mündlich",
+                  "detail": "Zentrale Aussagen aus Gesprächen oder Audioquellen mithilfe von Hörhilfen verstehen und erkennen"
+                },
+                {
+                  "modus": "Rezeption audiovisuell",
+                  "detail": "Zentrale Aussagen aus audiovisuellen Medien entnehmen"
+                }
+              ]
+            },
+            {
+              "nr": "2.1.2",
+              "text": "Ich kann grundlegende Merkmale von Manipulation und Desinformation anhand von Medienbeiträgen erkennen und meinen Umgang mit digitalen Kommunikationsräumen reflektieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "Chancen und Risiken aktueller Technologien, algorithmische Steuerung, Filterblasen, Desinformation (Fake News)"
+                },
+                {
+                  "aspekt": "Politik",
+                  "detail": "Beeinflussung und Manipulationsmöglichkeiten, Informations- und Meinungsfreiheit"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Grafiken mithilfe einer Lesestruktur lesen und verstehen"
+                },
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Eigene Mediennutzung dokumentieren und zwischen fakten- und meinungsbasierten Inhalten unterscheiden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "2.2",
+          "text": "Ich erlebe Diskussionen über Ungleichbehandlung und Ausgrenzung und frage mich, was gesagt werden darf und wie ich mich dabei verhalte.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "2.2.1",
+              "text": "Ich kann Beispiele von Ausgrenzung und Diskriminierung in Gesprächen und Medienbeiträgen analysieren und erklären, inwiefern sie die Meinungsfreiheit beeinflussen oder einschränken.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Würde des Menschen, moralische Prinzipien"
+                },
+                {
+                  "aspekt": "Politik",
+                  "detail": "Menschenrechte, demokratische Werte, Meinungsfreiheit"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption mündlich",
+                  "detail": "Zentrale Aussagen von mündlichen Beiträgen anhand von Hörhilfen erkennen"
+                },
+                {
+                  "modus": "Rezeption audiovisuell",
+                  "detail": "digitale Medieninhalte zu menschenrechtlichen Themen recherchieren und kritisch prüfen"
+                }
+              ]
+            },
+            {
+              "nr": "2.2.2",
+              "text": "Ich kann aus Gesprächen und Medienbeiträgen unterschiedliche (politische) Perspektiven nachvollziehen, daraus eigene Standpunkte entwickeln und diese sprachlich klar und nachvollziehbar ausdrücken.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Aushandlung von moralischen Entscheidungen, faire Vertretung von moralischen Überzeugungen"
+                },
+                {
+                  "aspekt": "Politik",
+                  "detail": "Wahrnehmung eigener und fremder Interessen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion mündlich",
+                  "detail": "In Gesprächen meinungsorientiert mithilfe einer Argumentationsstruktur kommunizieren"
+                },
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Meinungsorientierten Text verfassen (Kommentar)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "2.3",
+          "text": "Ich möchte mitreden, mitgestalten und ernst genommen werden bei Themen, die mich direkt oder indirekt betreffen.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "2.3.1",
+              "text": "Ich kann persönliche politische Anliegen formulieren und Möglichkeiten zur Mitwirkung aufzeigen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Politik",
+                  "detail": "Durchsetzungsstrategien eigener Interessen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Eigene Anliegen in einem digitalen Produkt (Flyer, Factsheet, Flugblatt) begründet festhalten"
+                }
+              ]
+            },
+            {
+              "nr": "2.3.2",
+              "text": "Ich kann eine begründete Meinung zu einem aktuellen gesellschaftlichen Thema entwickeln und diese in Diskussionen nachvollziehbar und respektvoll vertreten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Aktive Aushandlung von moralischen und politischen Entscheidungen, Auseinandersetzung mit anderen Überzeugungen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "In Gruppendiskussion politische Anliegen präsentieren, aushandeln und Gruppenentscheidungen mitentwickeln"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "2.4",
+          "text": "Ich entdecke, wie in verschiedenen Kunstformen Meinungen und Haltungen sichtbar werden und werde selbst kreativ tätig.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "2.4.1",
+              "text": "Ich kann Meinungen und Haltungen in künstlerischen Beiträgen erkennen und beschreiben und deren Wirkung auf mich einschätzen sowie meine eigene Haltung entwickeln und in einem künstlerischen Beitrag zum Ausdruck bringen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Kultur",
+                  "detail": "künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung, Kunst- und Meinungsfreiheit"
+                },
+                {
+                  "aspekt": "Kultur",
+                  "detail": "eigene Gestaltungs- und Ausdrucksfähigkeiten"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Anerkennung kultureller Realitäten"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Text schreiben, Prompt formulieren, Bild erzeugen"
+                }
+              ]
+            },
+            {
+              "nr": "2.4.2",
+              "text": "Ich kann in einer Rezension ein Werk beschreiben, meine Sichtweise begründen, andere Perspektiven einbeziehen und respektvoll kommentieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Kultur",
+                  "detail": "künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Anerkennung kultureller Realitäten"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "künstlerische Ausdrucksformen beschreiben und kommentieren"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "2.5",
+          "text": "Ich bilde mir zu Umweltthemen eine fundierte Meinung, reflektiere unterschiedliche Perspektiven und beteilige mich aktiv an Diskussionen und Entscheidungen.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "2.5.1",
+              "text": "Ich kann analysieren, wie ich selbst und die Gesellschaft aktuell von der Klimaveränderung betroffen sind und daraus begründete Aussagen zu zukünftigen Auswirkungen ableiten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ökologie",
+                  "detail": "gesellschaftliche Verhaltensmuster im Umgang mit Ressourcen wie Quasi-Kollektivgüter/Allmendegüter"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "faktenorientierte Beschreibung"
+                }
+              ]
+            },
+            {
+              "nr": "2.5.2",
+              "text": "Ich kann in einer Diskussion über gesellschaftliche und persönliche Lösungsansätze zur Klimaveränderung meine eigene Position sachlich und begründet einbringen, auf andere Perspektiven eingehen und respektvoll argumentieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "unterschiedliche Handlungsweisen aufgrund ethischer Grundsätze"
+                },
+                {
+                  "aspekt": "Ökologie",
+                  "detail": "Lösungsansätze bezüglich der ökologisch nachhaltigen Nutzung von natürlichen Ressourcen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion mündlich",
+                  "detail": "Meinung äussern mithilfe einer Argumentstruktur"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quelle": {
+        "datei": "3_SLP_ABU_EFZ_4jährige_GB_Bildungsrat_202601.md",
+        "seite_start": 12,
+        "seite_end": 21
+      }
+    }
+  ],
+  "umsetzungsbeispiele": [
+    {
+      "thema_nr": 2,
+      "variante": "2.4",
+      "niveau": "standard",
+      "lebensbezug": "Ich entdecke, wie in verschiedenen Kunstformen Meinungen und Haltungen sichtbar werden und werde selbst kreativ tätig.",
+      "schluesselkompetenzen": [
+        "Die eigenen Werthaltungen und Überzeugungen erkennen, verstehen, kritisch reflektieren und weiterentwickeln",
+        "Unterschiedliche Standpunkte nachvollziehen und das gegenseitige Verständnis fördern",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen"
+      ],
+      "beispiel_nr": 1,
+      "herausforderung": "Ich höre einen Song, der in den sozialen Medien viel diskutiert wird – es geht um Klimakrise, Diskriminierung oder psychische Gesundheit. Manche feiern ihn als starkes Statement, andere finden ihn übertrieben oder provozierend.",
+      "produkt": "Ich analysiere den Song und erstelle als Antwort darauf einen eigenen Text (z. B. Songstrophe, Poetry-Slam, Text-Collage), in dem ich meine Haltung ausdrücke. Optional: Vertonung oder Visualisierung (z. B. Audioaufnahme, Slides, Bildmontage).",
+      "sprachmodi": [
+        {
+          "modus": "Rezeption audiovisuell",
+          "detail": "Bildsprache/Tonalität deuten, audiovisuelle Medienformate unterscheiden, Absicht erkennen"
+        },
+        {
+          "modus": "Produktion schriftlich und bildlich",
+          "detail": "eigener Textbeitrag"
+        }
+      ],
+      "scaffolds": [
+        {
+          "modus": "Rezeption audiovisuell",
+          "detail": "Hörleitfaden mit Leitfragen, Wirkungstabelle, Sequenzplan, Transkriptionstool, Perspektivenschema"
+        },
+        {
+          "modus": "Produktion schriftlich und bildlich",
+          "detail": "Textgerüst, Kreativimpulse (z. B. Bild, KI-gestützter Textentwurf)"
+        }
+      ],
+      "bewertungspositionen": {
+        "sprache": [
+          "Deutliche, nachvollziehbare Analyse des Songs",
+          "Kreativer, strukturierter und adressatengerechter eigener Text",
+          "Wirkungsvoller Einsatz sprachlicher und gestalterischer Mittel"
+        ],
+        "gesellschaft": [
+          "Erkennen und benennen gesellschaftlicher Botschaften im Song",
+          "Eigenständige Meinungsbildung und definieren der Zielgruppe",
+          "Ausdruck persönlicher Werte und Haltung im eigenen Beitrag"
+        ]
+      }
+    },
+    {
+      "thema_nr": 2,
+      "variante": "2.4",
+      "niveau": "erweitert",
+      "lebensbezug": "",
+      "schluesselkompetenzen": [],
+      "beispiel_nr": 2,
+      "herausforderung": "Ich sehe in der Stadt oder online ein Graffiti oder ein Kunstplakat, das ein starkes Statement setzt, beispielsweise gegen Ausgrenzung, zur Klimakrise oder zur psychischen Gesundheit. Es bleibt mir im Kopf. Ich merke, dass Kunstwerke zu gesellschaftlichen Themen sehr unterschiedlich aufgenommen werden: Was für manche ein starkes Zeichen ist, empfinden andere als Provokation.",
+      "produkt": "Ich analysiere zwei kontrovers diskutierte Werke (z. B. Song und Plakatkampagne), vergleiche Reaktionen, entwickle meine eigene Position und gestalte ein multimediales Kunstkonzept (z. B. Videoclip, performative Aktion oder Online-Ausstellung), ergänzt mit einer Reflexion zur Wirkung auf verschiedene Zielgruppen.",
+      "sprachmodi": [
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Absicht erkennen, Bildsprache deuten, Werke vergleichen"
+        },
+        {
+          "modus": "Rezeption audiovisuell",
+          "detail": "audiovisuelle Medien deuten und vergleichen"
+        },
+        {
+          "modus": "Produktion multimedial",
+          "detail": "Gestaltung eines eigenen Kunstbeitrags"
+        }
+      ],
+      "scaffolds": [
+        {
+          "modus": "Rezeption schriftlich und bildlich",
+          "detail": "Vergleichsraster, Wirkungskategorien (Emotion – Argument – Provokation), Glossar zu Schlüsselbegriffen"
+        },
+        {
+          "modus": "Rezeption audiovisuell",
+          "detail": "Sequenzplan, Wirkungstabelle (Ton – Bild – Text – Reaktion), Transkriptionstool, Perspektivschema für Zielgruppenwirkung"
+        },
+        {
+          "modus": "Produktion multimedial",
+          "detail": "Storyboard-Vorlage, Toolübersicht (z. B. Canva, CapCut), Leitfaden für Präsentation, Zielgruppencheck, Feedbackbogen Wirkung und Gestaltung"
+        }
+      ],
+      "bewertungspositionen": {
+        "sprache": [
+          "Aussagekräftige Analyse von Text, Bild oder Video",
+          "Klar strukturierte und adressatengerechte Sprache",
+          "Wirkungsvoller Einsatz sprachlicher und gestalterischer Mittel"
+        ],
+        "gesellschaft": [
+          "Erkennen und Einordnen gesellschaftlicher Botschaften",
+          "Perspektivenvergleich und Auseinandersetzung mit anderen Sichtweisen",
+          "Reflektierte eigene Haltung mit Bezug zum Thema",
+          "Nachvollziehbare Gestaltung des multimedialen Kunstkonzepts",
+          "Beschreibung von öffentlicher Wirkung auf verschiedene Zielgruppen"
+        ]
+      }
+    }
+  ]
+}

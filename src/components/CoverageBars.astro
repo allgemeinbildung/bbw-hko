@@ -1,5 +1,6 @@
 ---
 import type { Nrlp } from '../lib/nrlp'
+import { skTooltip } from '../lib/sk-labels'
 
 interface Props {
   materials: Record<string, any>[]
@@ -59,7 +60,7 @@ function heatColor(n: number) {
           return (
             <div>
               <div class="flex justify-between text-xs mb-0.5">
-                <span class="text-slate-700 truncate pr-2" title={sk.bezeichnung}>{sk.bezeichnung}</span>
+                <span class="text-slate-700 truncate pr-2" title={skTooltip(sk.bezeichnung)}>{sk.bezeichnung}</span>
                 <span class="font-medium tabular-nums">{n}</span>
               </div>
               <div class="bar-track">

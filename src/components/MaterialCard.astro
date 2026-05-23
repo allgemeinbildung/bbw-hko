@@ -1,5 +1,6 @@
 ---
 import StatusBadge from './StatusBadge.astro'
+import { skTooltip } from '../lib/sk-labels'
 
 interface Props {
   material: Record<string, any>
@@ -20,7 +21,7 @@ function selbstcheckCount(sc: any): number {
 const TOTAL_CHECKS = 10
 const scCount = selbstcheckCount(m.selbstcheck || {})
 ---
-<article class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col">
+<article class="lion-bg bg-white border border-slate-200 rounded-lg p-4 flex flex-col">
   <div class="flex items-start justify-between gap-2 mb-2">
     <span class="chip chip-green">Kompetenznachweis</span>
     <div class="flex items-center gap-2">
@@ -48,7 +49,7 @@ const scCount = selbstcheckCount(m.selbstcheck || {})
     <div class="flex flex-wrap gap-1">
       {(m.schluesselkompetenzen || []).length > 0
         ? (m.schluesselkompetenzen as string[]).map((sk: string) => (
-            <span class="chip">{sk}</span>
+            <span class="chip" title={skTooltip(sk)}>{sk}</span>
           ))
         : <span class="text-xs text-slate-400 italic">keine</span>
       }

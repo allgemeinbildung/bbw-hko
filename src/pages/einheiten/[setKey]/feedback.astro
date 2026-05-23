@@ -1,0 +1,218 @@
+---
+import Einheiten from '../../../layouts/Einheiten.astro'
+import { einheitById } from '../../../lib/einheiten'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const setKey = Astro.params.setKey!
+const meta = einheitById(setKey)
+if (!meta) return new Response('Einheit nicht gefunden', { status: 404 })
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role, abteilung')
+  .eq('id', user.id)
+  .single()
+
+const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+const defaultAbteilung = profile?.abteilung ?? ''
+
+const knTypen = meta.kn_typen
+---
+<Einheiten title={`Feedback · ${meta.kompetenz_nr}`} role={role}>
+  <div class="max-w-3xl mx-auto">
+    <a href={`/einheiten/${setKey}`} class="text-sm text-slate-500 hover:text-slate-700">← Zurueck zur Einheit</a>
+    <h1 class="text-2xl font-semibold mt-2 mb-1">Feedback nach Unterricht</h1>
+    <p class="text-sm text-slate-500 mb-6">
+      Einheit <strong>{meta.kompetenz_nr} · {meta.slug.replace(/_/g, ' ')}</strong> — {meta.titel}
+    </p>
+
+    <form id="fb-form" class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
+      <input type="hidden" name="einheit_id" value={setKey} />
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Wann und mit wem hast du unterrichtet?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Klasse</span>
+            <input class="input" name="klasse" placeholder="z.B. FaGe24a" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Lehrjahr</span>
+            <input class="input" type="number" name="lehrjahr" min="1" max="4" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Abteilung</span>
+            <input class="input" name="abteilung" value={defaultAbteilung} />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Dauer (Lektionen)</span>
+            <input class="input" type="number" name="dauer_lektionen" step="0.5" min="0" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Getestet von</span>
+            <input class="input" type="date" name="getestet_von" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">bis</span>
+            <input class="input" type="date" name="getestet_bis" />
+          </label>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Welche Komponenten der Einheit hast du eingesetzt?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
+          <label class="check-item"><input type="checkbox" name="genutzt_sit_a" checked /> Situation A</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_sit_b" checked /> Situation B</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_sit_c" checked /> Situation C</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_kn" checked /> KN</label>
+        </div>
+        {knTypen.length > 0 && (
+          <label class="flex flex-col gap-1">
+            <span class="field-label">KN-Typ verwendet</span>
+            <select class="input" name="kn_typ_verwendet">
+              <option value="">— keine Auswahl —</option>
+              {knTypen.map((t) => <option value={t.typ}>{t.label}</option>)}
+            </select>
+          </label>
+        )}
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Bewertung (1 = sehr schwach … 5 = sehr stark)</h2>
+        <div class="space-y-3">
+          {[
+            ['tauglichkeit', 'Passt die Einheit in den Unterricht?'],
+            ['qualitaet', 'Qualitaet von Situationen + Handlungsprodukt'],
+            ['schwierigkeit', 'Anspruch fuer die Lernenden'],
+            ['motivation', 'Engagement der Lernenden'],
+            ['kn_validitaet', 'KN: hat er die Kompetenz wirklich gemessen?'],
+          ].map(([k, label]) => (
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-sm text-slate-700">{label}</span>
+              <div class="radio-group">
+                {[1, 2, 3, 4, 5].map((v) => (
+                  <label class="radio-pill">
+                    <input type="radio" name={k} value={v} hidden /> {v}
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+          <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100">
+            <span class="text-sm text-slate-700">Wuerdest du diese Einheit weiteren LP empfehlen?</span>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="weiterempfehlung" value="true" hidden /> Ja</label>
+              <label class="radio-pill"><input type="radio" name="weiterempfehlung" value="false" hidden /> Nein</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Qualitative Rueckmeldung</h2>
+        <div class="space-y-3">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Was hat funktioniert?</span>
+            <textarea class="input" name="was_funktionierte" rows="3"></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Was nicht?</span>
+            <textarea class="input" name="was_nicht_funktionierte" rows="3"></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Aenderungsvorschlaege</span>
+            <textarea class="input" name="aenderungsvorschlaege" rows="3"></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Eigene Anpassungen (was hast du veraendert?)</span>
+            <textarea class="input" name="eigene_anpassungen" rows="3"></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">War das Begleitdokument hilfreich?</span>
+            <textarea class="input" name="begleiter_nuetzlich" rows="2"></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Sonstige Anmerkungen</span>
+            <textarea class="input" name="anmerkungen" rows="2"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <div class="flex items-center justify-end gap-3">
+        <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
+        <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Feedback einreichen</button>
+      </div>
+
+      <div id="fb-msg" class="text-sm"></div>
+    </form>
+  </div>
+
+  <script is:inline>
+    // Make radio-pill labels behave like clickable pills (mirroring intake form).
+    document.querySelectorAll('.radio-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const input = pill.querySelector('input[type=radio]')
+        if (!input) return
+        document.querySelectorAll(`.radio-pill input[name=${input.name}]`).forEach((other) => {
+          other.checked = false
+          other.closest('.radio-pill').classList.remove('selected')
+        })
+        input.checked = true
+        pill.classList.add('selected')
+      })
+    })
+    document.querySelectorAll('.check-item input[type=checkbox]').forEach((cb) => {
+      const apply = () => cb.closest('.check-item').classList.toggle('checked', cb.checked)
+      apply(); cb.addEventListener('change', apply)
+    })
+
+    function gather(status) {
+      const form = document.getElementById('fb-form')
+      const fd = new FormData(form)
+      const obj = { status }
+      for (const [k, v] of fd.entries()) {
+        if (v === '' || v == null) continue
+        if (k === 'weiterempfehlung') obj[k] = v === 'true'
+        else if (['lehrjahr','tauglichkeit','qualitaet','schwierigkeit','motivation','kn_validitaet'].includes(k)) obj[k] = parseInt(v, 10)
+        else if (k === 'dauer_lektionen') obj[k] = parseFloat(v)
+        else obj[k] = v
+      }
+      // Checkboxes — explicit booleans
+      ;['genutzt_sit_a','genutzt_sit_b','genutzt_sit_c','genutzt_kn'].forEach((k) => {
+        const el = form.querySelector(`[name=${k}]`)
+        obj[k] = !!(el && el.checked)
+      })
+      return obj
+    }
+
+    async function send(status) {
+      const msg = document.getElementById('fb-msg')
+      msg.textContent = 'Speichere…'
+      msg.className = 'text-sm text-slate-500'
+      const payload = gather(status)
+      const res = await fetch('/api/einheit-feedbacks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      const body = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        msg.textContent = 'Fehler: ' + (body.error || res.statusText)
+        msg.className = 'text-sm text-red-600'
+        return
+      }
+      if (status === 'eingereicht') {
+        window.location.href = '/einheiten?success=Feedback eingereicht. Danke!'
+      } else {
+        msg.textContent = 'Entwurf gespeichert.'
+        msg.className = 'text-sm text-emerald-600'
+      }
+    }
+
+    document.getElementById('save-draft').addEventListener('click', () => send('entwurf'))
+    document.getElementById('submit-final').addEventListener('click', () => send('eingereicht'))
+  </script>
+</Einheiten>

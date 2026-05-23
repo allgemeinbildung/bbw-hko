@@ -1,0 +1,126 @@
+---
+import Einheiten from '../../layouts/Einheiten.astro'
+import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, prettifyId } from '../../lib/einheiten'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+
+const p = Astro.url.searchParams
+const filters = {
+  ...emptyEinheitenFilters(),
+  thema_nr: p.get('thema_nr') ?? '',
+  lehrgang: p.get('lehrgang') ?? '',
+  aspekt: p.get('aspekt') ?? '',
+  sk: p.get('sk') ?? '',
+  q: p.get('q') ?? '',
+}
+
+const filtered = applyEinheitenFilters(einheitenIndex, filters)
+
+const allAspekte = Array.from(new Set(einheitenIndex.flatMap((e) => e.aspekte))).sort()
+const allThemen = Array.from(new Set(einheitenIndex.map((e) => e.thema_nr).filter((n): n is number => n != null))).sort()
+const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang))).sort()
+---
+<Einheiten title="Einheiten" role={role}>
+  <div class="mb-5 flex items-end justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold">Einheiten-Katalog</h1>
+      <p class="text-sm text-slate-500 mt-1">
+        {filtered.length} von {einheitenIndex.length} Einheiten · vollstaendige Unterrichtseinheiten inkl. 3 Situationen + KN + Begleitdokument
+      </p>
+    </div>
+    <p class="text-xs text-slate-500 max-w-md text-right hidden md:block">
+      Waehle eine Einheit, lade das Bundle (HTML + Word) herunter, unterrichte
+      — und gib im Anschluss Feedback.
+    </p>
+  </div>
+
+  <form method="get" class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap gap-3 items-end">
+    <label class="flex flex-col gap-1">
+      <span class="field-label">Suche</span>
+      <input type="text" name="q" value={filters.q} placeholder="Stichwort..." class="input" style="min-width:14rem" />
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="field-label">Thema</span>
+      <select name="thema_nr" class="input" style="min-width:7rem">
+        <option value="">— alle —</option>
+        {allThemen.map((t) => <option value={String(t)} selected={filters.thema_nr === String(t)}>T{t}</option>)}
+      </select>
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="field-label">Lehrgang</span>
+      <select name="lehrgang" class="input" style="min-width:9rem">
+        <option value="">— alle —</option>
+        {allLehrgaenge.map((l) => <option value={l} selected={filters.lehrgang === l}>{l}</option>)}
+      </select>
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="field-label">Aspekt</span>
+      <select name="aspekt" class="input" style="min-width:14rem">
+        <option value="">— alle —</option>
+        {allAspekte.map((a) => <option value={a} selected={filters.aspekt === a}>{a}</option>)}
+      </select>
+    </label>
+    <button type="submit" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Filtern</button>
+    <a href="/einheiten" class="px-4 py-2 rounded-md text-sm text-slate-500 underline">Reset</a>
+  </form>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {filtered.map((e) => (
+      <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
+        <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
+          <div class="flex items-baseline gap-2 mb-2">
+            <span class="chip chip-blue">Komp {e.kompetenz_nr}</span>
+            {e.lehrgang && <span class="chip">{e.lehrgang}</span>}
+            {e.thema_nr != null && <span class="chip">T{e.thema_nr}</span>}
+          </div>
+          <h2 class="text-base font-semibold text-slate-900 leading-snug mb-1">
+            {prettifyId(e.id)}
+          </h2>
+          <p class="text-sm text-slate-600 mb-3 leading-snug line-clamp-3">{e.titel}</p>
+          <div class="text-xs text-slate-500 space-y-1">
+            <div>
+              <span class="font-medium">Situationen:</span>{' '}
+              {(['A','B','C'] as const).map((l) => e.sit_titel[l] ? l : null).filter(Boolean).join(' · ') || '—'}
+            </div>
+            {e.hybrid_situation_titel && (
+              <div><span class="font-medium">KN-Hybrid:</span> {e.hybrid_situation_titel}</div>
+            )}
+            <div class="flex flex-wrap gap-1 mt-2">
+              {e.aspekte.slice(0, 3).map((a) => <span class="chip chip-green">{a}</span>)}
+            </div>
+          </div>
+        </a>
+        <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
+          <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
+            Bundle: {e.bundle_dateien} Dateien →
+          </a>
+          {e.hat_begleiter && (
+            <a
+              href={`/einheiten/${e.id}/begleiter`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-slate-500 hover:text-slate-800 px-2 py-1 rounded hover:bg-slate-100 transition whitespace-nowrap"
+            >
+              Begleiter ↗
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {filtered.length === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-10 text-center text-slate-500">
+      Keine Einheiten gefunden.
+    </div>
+  )}
+</Einheiten>

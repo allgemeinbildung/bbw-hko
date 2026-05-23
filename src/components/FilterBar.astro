@@ -1,5 +1,6 @@
 ---
 import type { Nrlp } from '../lib/nrlp'
+import { skTooltip } from '../lib/sk-labels'
 
 interface Props {
   nrlp: Nrlp
@@ -52,7 +53,7 @@ const { nrlp, filters } = Astro.props
         <select name="sk" class="input mt-1">
           <option value="" selected={!filters.sk}>Alle</option>
           {nrlp.zirkularitaet.schluesselkompetenzen.map(s => (
-            <option value={s.bezeichnung} selected={filters.sk === s.bezeichnung}>{s.bezeichnung}</option>
+            <option value={s.bezeichnung} selected={filters.sk === s.bezeichnung} title={skTooltip(s.bezeichnung)}>{s.bezeichnung}</option>
           ))}
         </select>
       </div>

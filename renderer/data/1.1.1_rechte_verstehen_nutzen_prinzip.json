@@ -1,0 +1,161 @@
+{
+  "id": "1.1.1_rechte_verstehen_nutzen_prinzip",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "rechte_verstehen_nutzen",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-05-22",
+
+  "kern_kompetenzversprechen": "Ich klaere Tatbestand und Rechtsgrundlage aus geeigneten Quellen, beurteile meine Rolle und Verantwortung gegenueber dem Adressaten und beantworte eine rechtliche Anfrage schriftlich, begruendet und adressatengerecht.",
+
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K3+ oder K4"
+  },
+
+  "sub_facetten": {
+    "A": {
+      "facette": "Rechte, Pflichten und Datenschutz-Regeln aus Quellen extrahieren und als Regel-Spickzettel verdichten",
+      "konfliktart": "Betriebs-Anweisung vs. Lehrvertrags-Recht — welche Pflicht ist rechtlich im Vertrag verankert und welche nicht",
+      "handlungsprodukt_typ": "Regel-Spickzettel (rezeptiv-schriftlich, A4 strukturiert)",
+      "transferrable": true
+    },
+    "B": {
+      "facette": "Faelle bearbeiten — Tatbestand, Rechtslage und Rechtsfolge methodisch durchspielen",
+      "konfliktart": "Rechtslage formal korrekt klaeren vs. eigene Rolle und Verantwortung als beratende Mitlernende ehrlich einordnen",
+      "handlungsprodukt_typ": "Fall-Mappe mit 2 Faellen nach Tatbestand-Rechtslage-Rechtsfolge-Schema (Produktion schriftlich)",
+      "transferrable": true
+    },
+    "C": {
+      "facette": "Rechtliche Anfrage schriftlich und adressatengerecht beantworten",
+      "konfliktart": "Schnelle digitale Chat-Antwort vs. formelle Korrespondenz mit klarem Aufbau — Verantwortung fuer die korrekte Auskunft und fuer den passenden digitalen Kanal",
+      "handlungsprodukt_typ": "Antwortschreiben an Mitlernenden (E-Mail oder formeller Brief, 3B-Schema und Korrespondenz-Konventionen)",
+      "transferrable": true
+    }
+  },
+
+  "sk_pro_situation": {
+    "A": [1, 6, 11],
+    "B": [1, 3, 11],
+    "C": [6, 7, 11]
+  },
+
+  "sk_schnittmenge_kn": {
+    "primary": [1, 6, 11]
+  },
+
+  "aspekte": {
+    "Recht": "R1",
+    "Ethik": "R1",
+    "Identitaet und Sozialisation": "R1",
+    "Technologie und digitale Transformation": "R1"
+  },
+
+  "modi_units": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion schriftlich und bildlich"
+  ],
+
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion schriftlich und bildlich",
+    "Produktion muendlich",
+    "Interaktion und Kollaboration muendlich"
+  ],
+
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Schnell antworten (Mitlernender wartet) vs. sauber recherchieren (Antwort ist begruendet und korrekt)",
+      "Vollstaendige Auskunft geben vs. eigene Rechtsunsicherheit ehrlich benennen",
+      "Quellen direkt zitieren vs. in eigenen Worten verstaendlich umformulieren"
+    ],
+    "verbindlich": "Eine rechtliche Auskunft an einen Mitlernenden ist nie nur Wiedergabe — sie traegt Verantwortung. Die Aufgabe ist nicht, jede Unsicherheit zu verbergen oder jede Quelle abzudecken, sondern den Trade-off zwischen Tempo, Vollstaendigkeit und Ehrlichkeit begruendet auszuweisen."
+  },
+
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Wer eine rechtliche oder regelbasierte Anfrage beantworten will, klaert zuerst Tatbestand und Rechtsgrundlage aus geeigneten Quellen, prueft die eigene Rolle und Verantwortung gegenueber dem Adressaten und formuliert die Antwort im passenden Kommunikationskanal mit nachvollziehbarer Begruendung.",
+    "transferfeld": "Anfragen ausserhalb des Lehrbetriebs (Familie, Verein, Mietsache, Konsumentenanfrage), in denen Sachverhalt geklaert, Quelle gepruft und eine begruendete schriftliche Antwort verfasst werden muss."
+  },
+
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T4 — Verantwortung im sozialen und gesundheitlichen Zusammenleben uebernehmen (Datenschutz und Rechtsfragen).",
+    "r3_voraussicht": "T7 — Arbeitsrecht und schriftliche Kommunikation im Anstellungsverhaeltnis nach der Lehre."
+  },
+
+  "quellen_anker": {
+    "chapters": [
+      {"ref": "Kap. 1.3", "titel": "Rechtsgrundlagen — Loesen von Rechtsfaellen (Tatbestand, Rechtslage, Rechtsfolge)", "seiten": "Seite 18-25"},
+      {"ref": "Kap. 1.4", "titel": "Der Lehrvertrag — Rechte und Pflichten, Lohn, Arbeitszeit, Geschaeftsgeheimnisse, Lohnabzuege", "seiten": "Seite 28-37"},
+      {"ref": "Kap. 17.1", "titel": "Dokumentieren — Notiztechniken, Symbole, Markieren, Buendelung in eigenen Worten", "seiten": "Seite 372-378"},
+      {"ref": "Kap. 17.2", "titel": "Argumentieren — Stellungnahme, 3B-Schema (Behauptung, Begruendung, Beispiel)", "seiten": "Seite 384-392"},
+      {"ref": "Kap. 17.3", "titel": "Korrespondenz — Geschaeftsbrief (Anlass, Absicht, Begruendung, Schluss), E-Mail-Konventionen", "seiten": "Seite 396-404"},
+      {"ref": "Kap. 18.1", "titel": "Identitaet — soziale Interaktion, Rollenuebernahme als Arbeitnehmer", "seiten": "Seite 408-412"},
+      {"ref": "Kap. 20.7", "titel": "Medienkompetenz — Datenschutz und Datenmissbrauch im Internet", "seiten": "Seite 446-452"},
+      {"ref": "Kap. 20.8", "titel": "Recherchieren — Suchstrategien, Schluesselbegriffe, kritische Quellenbeurteilung", "seiten": "Seite 460-468"}
+    ],
+    "konzepte": [
+      "Lehrvertrag",
+      "Rechte und Pflichten Lernende",
+      "Pflichten Berufsbildende",
+      "Treuepflicht",
+      "Sorgfaltspflicht",
+      "Geschaeftsgeheimnis",
+      "Lohnabzuege",
+      "Hoechstarbeitszeit Jugendliche",
+      "Tatbestand",
+      "Rechtslage",
+      "Rechtsfolge",
+      "Sachverhalt",
+      "Datenschutz",
+      "Datenmissbrauch",
+      "Schluesselbegriff",
+      "Suchstrategie",
+      "Quellenkritik",
+      "3B-Schema",
+      "Behauptung Begruendung Beispiel",
+      "Geschaeftsbrief",
+      "Anlass Absicht Begruendung Schluss",
+      "Register",
+      "Adressatengerechtheit",
+      "Rollenuebernahme als Arbeitnehmer"
+    ]
+  },
+
+  "persona_pool_units": {
+    "berufe": [
+      "Polymechaniker/in EFZ",
+      "Baecker-Konditor-Confiseur/in EFZ",
+      "Informatiker/in EFZ"
+    ],
+    "orte": ["Basel", "Aarau", "St. Gallen"]
+  },
+
+  "persona_pool_kn_neu": {
+    "berufe": [
+      "Schreiner/in EFZ",
+      "Maurer/in EFZ"
+    ],
+    "orte": ["Thun", "Biel/Bienne"]
+  },
+
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_subfacetten": ["A", "B", "C"],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Situationen aneinandergereiht.",
+      "Konfliktart aller drei Subfacetten ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Trade-off aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf und Ort kommen in keiner sit_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ]
+  }
+}

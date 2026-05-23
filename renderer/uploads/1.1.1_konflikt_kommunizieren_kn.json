@@ -1,0 +1,171 @@
+{
+  "id": "1.1.1_konflikt_kommunizieren_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "konflikt_kommunizieren",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-05-22",
+
+  "set_ref": "1.1.1_konflikt_kommunizieren_set",
+  "prinzip_ref": "1.1.1_konflikt_kommunizieren_prinzip",
+  "anchored_situations": [
+    "1.1.1_konflikt_kommunizieren_sit_A",
+    "1.1.1_konflikt_kommunizieren_sit_B",
+    "1.1.1_konflikt_kommunizieren_sit_C"
+  ],
+
+  "dominanter_aspekt": "Ethik",
+  "kern_kompetenzversprechen": "Ich erkenne meine Rechte im Konflikt, waehle Kanal und Ton adressatengerecht und fuehre ein Konfliktgespraech so, dass die Beziehung traegt.",
+  "mehrdeutigkeits_pflicht": "In jedem Konflikt traegt mehr als ein legitimes Interesse — die Aufgabe ist nicht, eine Seite zu eliminieren, sondern den Trade-off offen zu benennen und begruendet zu entscheiden.",
+
+  "hybrid_situation": {
+    "titel": "Critical Incident — der Brief vom Lehrlingsverantwortlichen",
+    "persona": {
+      "beruf": "Konstrukteur/in EFZ",
+      "betrieb": "Konstruktionsbuero Berger Olten",
+      "ort": "Olten"
+    },
+    "emotion_tag": "Entscheidungsdruck",
+    "text": "Ich bin Konstrukteur-Lernender im 1. Lehrjahr im Konstruktionsbuero Berger in Olten und verdiene CHF 750. Gestern hat mein Berufsbildner mich gebeten, eine fehlerhafte Bauteil-Zeichnung vertraulich «zwischen uns» zu korrigieren — ohne den Vorfall in meine Lerndokumentation einzutragen. Als ich gezoegert habe, hat er mich vor dem Engineering-Review mit «Du bist halt noch nicht so weit» abgewertet. Heute Morgen liegt eine WhatsApp auf meiner privaten Nummer: «Erwarte deine Antwort bis 17 Uhr — sonst meld ich das beim Ausbildungsleiter.» Ich bin unsicher, ob er das ueberhaupt darf, ich kenne den richtigen Kanal nicht, und ich weiss nicht, wie ich das anspreche, ohne dass es zur Eskalation wird. Wie gehe ich jetzt vor?",
+    "leitfrage": "Wie gehe ich jetzt vor — und welcher Schritt ist der erste?",
+    "aktivierte_trade_offs": [
+      "Eigene Rechte durchsetzen vs. Beziehung zum Berufsbildner erhalten",
+      "Schnelle digitale Antwort vs. ueberlegtes persoenliches Gespraech",
+      "Klare Position vertreten vs. Lernenden-Rolle und Lernchance wahren"
+    ],
+    "alignment_note": {
+      "subfacetten_mapping": [
+        {"sit_letter": "A", "scene_element": "Die Bitte, die Lerndokumentation nicht zu fuehren, und der Hinweis auf «vertraulich zwischen uns» kollidieren mit der gesetzlich verankerten Lerndoku-Pflicht und der Treuepflicht — Rechtsklaerung wie in Sit A noetig."},
+        {"sit_letter": "B", "scene_element": "Die private WhatsApp mit Ultimatum bis 17 Uhr zwingt zur Kanalwahl-Entscheidung wie in Sit B — bleibt der Lernende im informellen privaten Kanal, oder zieht er das Schreiben in einen verbindlichen, geschaeftlichen Kanal?"},
+        {"sit_letter": "C", "scene_element": "Die Abwertung «Du bist halt noch nicht so weit» vor dem Team trifft Rolle und Selbstwert — die Aussprache erfordert Ich-Botschaften und ein Win-Win-Element wie in Sit C, sonst eskaliert die Situation oder der Lernende schweigt."}
+      ],
+      "new_dimensions": []
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespraech",
+      "format": "muendlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Situation lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespraech mit Lehrperson: 5 Fragen steigender Komplexitaet."
+      ],
+      "fragestruktur": [
+        {"nr": 1, "typ": "Erklaeren", "frage": "Erklaere mit eigenen Worten, welche Hauptpflichten du als Lernender hast (OR 321a, OR 345) und welche Pflicht zur Lerndokumentation in deinem Fall greift (Kap. 1.4).", "k_stufe": 2},
+        {"nr": 2, "typ": "Anwenden", "frage": "Wende die Kanal-Logik aus Kap. 17.3 auf die WhatsApp-Aufforderung an: Welcher Kanal waere sachgerecht — und wie begruendest du das gegenueber deinem Berufsbildner?", "k_stufe": 3},
+        {"nr": 3, "typ": "Beurteilen", "frage": "Du musst dein Recht auf eine korrekte Lerndokumentation einfordern und gleichzeitig die Beziehung erhalten. Bewertest du beide Pole gleich — und warum?", "k_stufe": 3},
+        {"nr": 4, "typ": "Transfer", "frage": "Vergleiche diesen Vorfall mit der Aussprache aus deiner Sit C: Was uebernimmst du an Methode (Vier Ohren, Ich-Botschaft, Win-Win) — und wo musst du anders vorgehen, weil hier ein Rechtsverstoss im Raum steht?", "k_stufe": 4},
+        {"nr": 5, "typ": "Werthaltung", "frage": "Welche ethische Werthaltung leitet dich, wenn der Berufsbildner dich auffordert, etwas «vertraulich» zu lassen, das eigentlich dokumentiert gehoert (Kap. 18.2)? Begruende, weshalb das nicht nur eine Rechtsfrage ist.", "k_stufe": 4}
+      ],
+      "sk": [6, 11, 7],
+      "aspekte": ["Recht", "Ethik", "Identitaet und Sozialisation", "Technologie und digitale Transformation"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion muendlich",
+        "Interaktion und Kollaboration muendlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Situation als Pruefungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexitaet."
+      ],
+      "aufgaben": [
+        {"nr": 1, "typ": "Erklaeren", "aufgabe": "Erklaere kurz (3-5 Saetze), welche zwei Punkte in der Aufforderung deines Berufsbildners aus Sicht des Lehrvertrags (Kap. 1.4, OR 345a) und der Lerndoku-Pflicht problematisch sind.", "k_stufe": 2},
+        {"nr": 2, "typ": "Unterscheiden", "aufgabe": "Beide Reaktionen — eine knappe WhatsApp-Antwort und ein formeller E-Mail an den Berufsbildner — entstehen aus dem gleichen Druck. Warum ist die E-Mail in dieser Situation ethisch und medienkompetent (Kap. 17.3, Kap. 20.7) anders zu beurteilen als die WhatsApp-Antwort? Nenne mindestens drei Argumente.", "k_stufe": 3},
+        {"nr": 3, "typ": "Entscheiden", "aufgabe": "Entscheide begruendet, welchen Kanal du fuer deine Antwort waehlst und welche Eroeffnung du in der mueundlichen Aussprache mit dem Berufsbildner verwendest. Formuliere die Eroeffnung als Ich-Botschaft (2-3 Saetze, Kap. 19.2).", "k_stufe": 3},
+        {"nr": 4, "typ": "Forderung", "aufgabe": "Verfasse eine kurze Forderung in Ich-Form (4-6 Saetze), wie du dir die zukuenftige Zusammenarbeit konkret vorstellst — Lerndoku, Kanalwahl, Feedback-Form. Beruecksichtige dabei sowohl deine Rechte als auch die Lernbeziehung (Win-Win-Logik aus Kap. 19.2).", "k_stufe": 4}
+      ],
+      "sk": [6, 11, 7],
+      "aspekte": ["Recht", "Ethik", "Identitaet und Sozialisation", "Technologie und digitale Transformation"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpraesentation 5 Min.)",
+      "ablauf": [
+        "Lernende waehlen eines ihrer drei Handlungsprodukte aus den Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gespraechs-Drehbuch).",
+        "Werkwahl-Begruendung (2-3 Saetze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Woerter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip hast du in deiner Situation gelernt — formuliere es in einem Satz.",
+        "Erklaere, wie dieses Prinzip in der Hybrid-Situation des KN sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was hast du durch die drei Situationen (Rechte klaeren, Kanal waehlen, Gespraech fuehren) insgesamt darueber gelernt?"
+      ],
+      "optional_praesentation": "Kurzpraesentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [6, 11],
+      "aspekte": ["Recht", "Ethik", "Identitaet und Sozialisation", "Technologie und digitale Transformation"],
+      "sprachmodi": ["Produktion schriftlich und bildlich"],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe (Lehrvertrag, Vier Ohren, Ich-Botschaft, Kanal) fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt; Quellen ungenau zitiert.",
+          "Begriffe aus Kap. 1.4, 17.3, 19.2 korrekt und situationsangemessen verwendet.",
+          "Differenziert, kontextualisiert, eigenstaendig formuliert; OR-/ArG-Verweise praezise."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begruendung erkennbar.",
+          "Begruendung ansatzweise vorhanden (z. B. nur Behauptung).",
+          "Begruendung nachvollziehbar und strukturiert nach 3B-Schema (Behauptung, Begruendung, Beispiel).",
+          "Schluessig, differenziert, Gegenargumente und Trade-offs explizit beruecksichtigt."
+        ]
+      },
+      {
+        "name": "Ethisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Prinzip nicht angewendet — der Konflikt wird rein als Machtfrage oder als Rechtsfrage behandelt.",
+          "Prinzip teilweise erkennbar — eine ethische Dimension wird gestreift.",
+          "Prinzip korrekt angewendet — Wuerde, Verantwortung und Perspektivenuebernahme sind in der Loesung sichtbar (Kap. 18.2).",
+          "Prinzip auf neue Zusammenhaenge uebertragen — Lernende erkennt die ethische Logik auch im hybriden Fall."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet, aber unbegruendet.",
+          "Position klar in Ich-Form formuliert, Trade-off benannt.",
+          "Position begruendet, Mehrdeutigkeit anerkannt, Wunsch fuer die Lernbeziehung explizit."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 90 %", "definition": "Stufen 1-2 dominant"},
+      {"label": "90 %", "definition": "mehrheitlich Stufe 3"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+    ]
+  },
+
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

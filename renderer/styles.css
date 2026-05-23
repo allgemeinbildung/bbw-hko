@@ -1,0 +1,1131 @@
+/* =========================================================
+   HKO Renderer — Berufsbildungsschule Winterthur
+   Two aesthetics: aesthetic-modern  |  aesthetic-editorial
+   ========================================================= */
+
+/* ---------- Reset & root ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background: #4a4d54;
+  color: #1a1d22;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Default neutral palette (KN/LP docs use this) ---------- */
+:root {
+  --sit-akzent: #2C3E50;
+  --sit-light:  #ECF0F1;
+  --sit-mid:    #7F8C8D;
+  --ink:        #1a1d22;
+  --ink-soft:   #4a5057;
+  --ink-mute:   #8b9099;
+  --rule:       #d8dbe0;
+  --rule-soft:  #ebedf0;
+  --line:       #BDC3C7;
+  --paper:      #ffffff;
+  --bg:         #4a4d54;
+  --schreibzeile: 8.5mm;
+}
+
+/* ---------- App chrome (screen-only) ---------- */
+.app-chrome {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: #1d2026;
+  color: #e8eaee;
+  border-bottom: 1px solid #2d3038;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 6px;
+  column-gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+.chrome-brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.chrome-brand .chrome-logo {
+  height: 22px; width: auto; filter: invert(1);
+}
+.chrome-brand .chrome-name {
+  font-weight: 600; white-space: nowrap;
+  font-size: 13px;
+}
+.chrome-brand .chrome-abt {
+  color: #a3a8b2;
+  background: transparent;
+  border: 1px solid #353841;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chrome-spacer { flex: 1; }
+.chrome-doc-pill {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #a3a8b2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: #2a2d35;
+  border-radius: 100px;
+}
+.chrome-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chrome-group-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b7180;
+  font-weight: 700;
+  background: #14161b;
+  padding: 3px 7px;
+  border-radius: 3px;
+  border: 1px solid #2a2d35;
+}
+.chrome-group-divider {
+  width: 1px;
+  align-self: stretch;
+  background: #2d3038;
+  margin: 6px 2px;
+}
+.chrome-select {
+  background: #2a2d35;
+  color: #e8eaee;
+  border: 1px solid #353841;
+  border-radius: 4px;
+  padding: 5px 24px 5px 9px;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23a3a8b2' d='M0 0h10L5 6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-color: #2a2d35;
+}
+.chrome-select:hover { border-color: #555867; }
+.chrome-seg {
+  display: inline-flex;
+  background: #2a2d35;
+  border: 1px solid #353841;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.chrome-seg button {
+  background: transparent;
+  border: 0;
+  color: #a3a8b2;
+  padding: 5px 9px;
+  font: inherit;
+  font-size: 11.5px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.chrome-seg button + button { border-left: 1px solid #353841; }
+.chrome-seg button:hover { color: #e8eaee; }
+.chrome-seg button.on { background: #e8eaee; color: #1d2026; font-weight: 500; }
+
+.chrome-set-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+.set-chip-name {
+  background: #2a2d35;
+  color: #a3a8b2;
+  border: 1px solid #353841;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font: inherit;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.set-chip-name:hover { color: #e8eaee; border-color: #555867; }
+.set-chip-name.active {
+  background: #e8eaee;
+  color: #1d2026;
+  border-color: #e8eaee;
+  font-weight: 500;
+}
+.set-chip-refresh {
+  background: transparent;
+  color: #6b7180;
+  border: 1px solid #353841;
+  border-radius: 4px;
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 3px;
+}
+.set-chip-refresh:hover { color: #e8eaee; border-color: #555867; }
+.chrome-btn {
+  font-family: inherit;
+  background: transparent;
+  border: 1px solid #353841;
+  color: #e8eaee;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  transition: all 0.15s;
+}
+.chrome-btn:hover { border-color: #555867; background: #2a2d35; }
+.chrome-btn.primary {
+  background: #e8eaee;
+  color: #1d2026;
+  border-color: #e8eaee;
+  font-weight: 500;
+}
+.chrome-btn.primary:hover { background: #fff; border-color: #fff; }
+.chrome-btn:disabled { opacity: 0.5; cursor: progress; }
+.chrome-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: 1px dashed #555867;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #a3a8b2;
+  transition: all 0.15s;
+}
+.chrome-file-label:hover { color: #e8eaee; border-color: #888c98; }
+.chrome-file-label input { display: none; }
+
+/* ---------- Status / toast ---------- */
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: #1d2026; color: #e8eaee;
+  padding: 10px 18px; border-radius: 4px;
+  font-size: 13px;
+  z-index: 100;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+.toast.error { background: #5a1e1e; }
+
+/* ---------- A4 page (screen letterbox) ---------- */
+.pages {
+  padding: 76px 24px 64px; /* top accounts for chrome */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.a4-page {
+  width: 210mm;
+  height: 297mm;            /* fixed A4, no growth */
+  padding: 12mm 16mm;
+  background: var(--paper);
+  position: relative;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+.a4-page-body {
+  height: calc(297mm - 48mm); /* slimmer header + footer */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.a4-page-body.grow > :last-child { flex: 1; min-height: 0; }
+
+/* ---------- Common typography ---------- */
+.a4-page { font-size: 10.5pt; line-height: 1.4; color: var(--ink); }
+.a4-page p { margin: 0 0 0.35em; text-wrap: pretty; }
+.a4-page strong { font-weight: 600; }
+.a4-page h1, .a4-page h2, .a4-page h3, .a4-page h4 {
+  margin: 0; line-height: 1.2; text-wrap: balance;
+}
+.a4-page :focus { outline: 2px solid var(--sit-akzent); outline-offset: 2px; }
+.a4-page [contenteditable]:hover { background: color-mix(in srgb, var(--sit-akzent) 4%, transparent); }
+
+/* ---------- Page header / footer ---------- */
+.page-head {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2mm; margin-bottom: 3mm;
+  gap: 10mm;
+}
+.page-head-left { display: flex; align-items: center; gap: 4mm; }
+.page-head-logo { height: 9mm; width: auto; }
+.page-head-meta {
+  font-size: 7.5pt; line-height: 1.3; color: var(--ink-soft);
+}
+.page-head-meta .school { font-weight: 600; color: var(--ink); font-size: 8.5pt; letter-spacing: -0.005em; }
+.page-head-meta .abt { color: var(--ink-mute); font-size: 7.5pt; letter-spacing: 0.01em; }
+.page-head-right {
+  text-align: right; font-size: 7pt; color: var(--ink-mute);
+  font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+.page-head-right .doc-code { font-weight: 600; color: var(--ink); }
+.page-head-right .doc-kompetenz { color: var(--sit-akzent); font-weight: 600; }
+
+.page-foot {
+  position: absolute;
+  bottom: 6mm; left: 18mm; right: 18mm;
+  display: flex; justify-content: space-between;
+  font-size: 7pt; color: var(--ink-mute);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.02em;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 2mm;
+}
+.page-foot .foot-titel { color: var(--ink-soft); }
+.page-foot .foot-sit { color: var(--sit-akzent); font-weight: 600; }
+
+/* ---------- Situation strip (top-of-page color band) ---------- */
+.sit-strip {
+  position: absolute; top: 0; left: 0; right: 0; height: 5mm;
+  background: var(--sit-akzent);
+}
+.sit-strip.neutral { background: var(--sit-akzent); }
+
+/* ---------- Section header ---------- */
+.section {
+  margin-top: 6mm;
+  break-inside: avoid;
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6mm;
+  margin-bottom: 3mm;
+  break-after: avoid;
+}
+.section-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--sit-akzent);
+  letter-spacing: 0.08em;
+}
+.section-title {
+  font-size: 16pt;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.section-rule {
+  flex: 1; height: 1px; background: var(--rule);
+  align-self: center;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-block;
+  padding: 1.5pt 6pt;
+  font-size: 7.5pt;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 2pt;
+  background: var(--sit-light);
+  color: var(--sit-akzent);
+  white-space: nowrap;
+}
+.badge.outline {
+  background: transparent;
+  border: 1px solid var(--sit-akzent);
+}
+.badge.k-stufe { background: #fff5e6; color: #9a5500; border: 1px solid #f2c889; }
+.badge.dim-suk { background: #e4eaf0; color: #2C3E50; }
+.badge.dim-ges { background: #f0e6ec; color: #6b2c4e; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 5pt; align-items: center; }
+
+/* ---------- Source ref ---------- */
+.source-ref {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7.5pt;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.source-ref strong { color: var(--sit-akzent); font-weight: 600; }
+
+/* ---------- Cockpit (Deckblatt) ---------- */
+.cockpit-title {
+  font-size: 19pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5mm;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.cockpit-sub {
+  font-size: 10.5pt;
+  color: var(--ink-soft);
+  margin-bottom: 4mm;
+  max-width: 150mm;
+}
+.cockpit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm 8mm;
+  margin-top: 4mm;
+}
+.cockpit-card {
+  padding: 3.5mm 4.5mm;
+  border: 1px solid var(--rule);
+  border-left: 3pt solid var(--sit-akzent);
+  background: color-mix(in srgb, var(--sit-light) 50%, white);
+}
+.cockpit-card h4 {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sit-akzent);
+  margin-bottom: 2mm;
+}
+.cockpit-card .big {
+  font-size: 12pt; font-weight: 600; line-height: 1.25;
+  color: var(--ink);
+}
+
+/* Cockpit tables (wochenplan, bewertungsraster) */
+.cockpit-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 9pt;
+  margin-top: 4mm;
+}
+.cockpit-table th {
+  text-align: left;
+  font-weight: 600; font-size: 7.5pt;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sit-akzent);
+  border-bottom: 1pt solid var(--sit-akzent);
+  padding: 2mm 3mm 2mm 0;
+}
+.cockpit-table td {
+  padding: 2.5mm 3mm 2.5mm 0;
+  border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.cockpit-table td:last-child { padding-right: 0; }
+.cockpit-table .num { font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; }
+
+/* ---------- Situation block ---------- */
+.sit-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4mm 8mm;
+  margin-bottom: 5mm;
+  font-size: 9pt;
+  color: var(--ink-soft);
+  align-items: center;
+}
+.sit-meta .item strong { display: block; font-size: 7pt; color: var(--ink-mute); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.5mm; }
+.sit-text {
+  font-size: 11pt;
+  line-height: 1.45;
+  max-width: 165mm;
+  color: var(--ink);
+  margin-bottom: 4mm;
+}
+.zahlen-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin-bottom: 5mm;
+}
+.zahlen-tabelle th {
+  text-align: left;
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sit-akzent);
+  border-bottom: 1pt solid var(--sit-akzent);
+  padding: 2mm 4mm 2mm 0;
+}
+.zahlen-tabelle td {
+  padding: 2.5mm 4mm 2.5mm 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.zahlen-tabelle td.wert {
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: right;
+  font-size: 9pt;
+  color: var(--ink);
+}
+
+.leitfrage-callout {
+  margin-top: 4mm;
+  padding: 4mm 5mm;
+  background: var(--sit-light);
+  border-left: 3pt solid var(--sit-akzent);
+  font-size: 11pt;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+}
+.leitfrage-callout::before {
+  content: 'Leitfrage';
+  display: block;
+  font-size: 7.5pt; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--sit-akzent);
+  margin-bottom: 1.5mm;
+}
+
+.tradeoff-callout {
+  margin-top: 4mm;
+  padding: 4mm 5mm;
+  border: 1px dashed var(--sit-akzent);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.tradeoff-callout::before {
+  content: 'Spannungsfeld';
+  display: block;
+  font-size: 7.5pt; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--sit-akzent);
+  margin-bottom: 1.5mm;
+}
+
+/* ---------- Leitfragen / Reflexion ---------- */
+.lf-item, .rf-item {
+  margin-bottom: 4mm;
+  break-inside: avoid;
+}
+.lf-head {
+  display: flex; align-items: baseline; gap: 4mm;
+  margin-bottom: 1.5mm;
+}
+.lf-nr {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--sit-akzent);
+  min-width: 7mm;
+}
+.lf-text { flex: 1; font-size: 10.5pt; line-height: 1.4; }
+.lf-text p { margin: 0 0 1mm; }
+.lf-meta {
+  display: flex; gap: 4mm; align-items: center;
+  margin-top: 1mm;
+}
+
+/* ---------- Schreibfeld (dual-mode writing field) ---------- */
+.feld {
+  --zeile: 8.5mm;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--zeile) - 1px),
+    var(--line) calc(var(--zeile) - 1px),
+    var(--line) var(--zeile)
+  );
+  border: 1px solid var(--sit-akzent);
+  border-radius: 2px;
+  padding: 0 3mm;
+  min-height: calc(var(--zeile) * 3);
+  margin-top: 3mm;
+  font-family: inherit;
+  font-size: 11pt;
+  line-height: var(--zeile);
+  color: var(--ink);
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  cursor: text;
+}
+.feld:empty::before {
+  content: attr(data-placeholder);
+  color: transparent;
+  pointer-events: none;
+}
+.feld[data-placeholder]:not(:focus):empty::before {
+  content: '';
+}
+.feld:focus {
+  border-color: var(--sit-akzent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--sit-akzent) 25%, transparent);
+}
+
+/* Skizzen/Drawing surface (no lines, just box) */
+.skizze {
+  border: 1px solid var(--sit-akzent);
+  border-radius: 2px;
+  min-height: 90mm;
+  margin-top: 4mm;
+  padding: 4mm;
+  position: relative;
+}
+.skizze-label {
+  position: absolute;
+  top: 3mm; left: 4mm;
+  font-size: 7.5pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--sit-akzent);
+}
+
+/* ---------- Mindmap ---------- */
+.mindmap {
+  margin-top: 4mm;
+  position: relative;
+  break-inside: avoid;
+}
+.mindmap-zentrum {
+  display: inline-block;
+  padding: 3mm 6mm;
+  background: var(--sit-akzent);
+  color: white;
+  font-weight: 600;
+  font-size: 11pt;
+  border-radius: 999px;
+  margin-bottom: 5mm;
+}
+.mindmap-skelett {
+  min-height: 130mm;
+  border: 1px solid var(--sit-akzent);
+  border-radius: 2px;
+  position: relative;
+  padding: 6mm;
+  display: flex; flex-direction: column; align-items: center;
+}
+.mindmap-skelett .zentrum-skelett {
+  margin: 16mm 0 12mm;
+}
+.mindmap-skelett .aeste-skelett {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8mm 18mm;
+  width: 100%;
+}
+.mindmap-skelett .ast-skelett {
+  font-weight: 600;
+  font-size: 10pt;
+  color: var(--sit-akzent);
+  padding-bottom: 1mm;
+  border-bottom: 1px dashed var(--sit-mid);
+}
+.mindmap-skelett .ast-skelett.optional::after {
+  content: ' · optional';
+  font-weight: 400;
+  color: var(--ink-mute);
+  font-size: 8pt;
+}
+
+.mindmap-voll {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5mm 8mm;
+}
+.mindmap-ast {
+  padding: 4mm 5mm;
+  background: color-mix(in srgb, var(--sit-light) 60%, white);
+  border-left: 3pt solid var(--sit-akzent);
+}
+.mindmap-ast h4 {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--sit-akzent);
+  margin-bottom: 2mm;
+}
+.mindmap-ast h4 .opt {
+  font-weight: 400;
+  color: var(--ink-mute);
+  font-size: 8pt;
+}
+.mindmap-ast ul {
+  margin: 0; padding-left: 4mm;
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+.mindmap-ast li { margin-bottom: 0.5mm; }
+
+/* ---------- Handlungsprodukt ---------- */
+.hp-intro {
+  font-size: 10.5pt; line-height: 1.4;
+  margin-bottom: 3mm;
+}
+.hp-schritte {
+  list-style: none; padding: 0; margin: 0 0 4mm;
+  counter-reset: schritt;
+}
+.hp-schritte li {
+  counter-increment: schritt;
+  padding: 2mm 0 2mm 12mm;
+  border-bottom: 1px solid var(--rule-soft);
+  position: relative;
+  break-inside: avoid;
+}
+.hp-schritte li::before {
+  content: counter(schritt, decimal-leading-zero);
+  position: absolute;
+  left: 0; top: 2.5mm;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 10pt;
+  color: var(--sit-akzent);
+}
+.hp-schritt-label { font-weight: 600; font-size: 10pt; margin-bottom: 0.5mm; }
+.hp-schritt-hint { font-size: 9pt; color: var(--ink-soft); line-height: 1.35; }
+
+.hp-flaeche {
+  border: 1px solid var(--sit-akzent);
+  border-radius: 2px;
+  min-height: 160mm;
+  margin-top: 4mm;
+  padding: 8mm 6mm 4mm;
+  --zeile: 8.5mm;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--zeile) - 1px),
+    var(--line) calc(var(--zeile) - 1px),
+    var(--line) var(--zeile)
+  );
+  background-position: 0 8mm;
+  background-size: 100% calc(var(--zeile) * 18);
+  background-repeat: no-repeat;
+  position: relative;
+  line-height: var(--zeile);
+  font-size: 11pt;
+  outline: none;
+  white-space: pre-wrap;
+}
+.hp-flaeche-label {
+  position: absolute;
+  top: 2mm; left: 6mm;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sit-akzent);
+}
+
+/* ---------- Austausch / Set sektion ---------- */
+.austausch-grid {
+  display: grid;
+  grid-template-columns: 80mm 1fr;
+  gap: 6mm 8mm;
+  font-size: 10pt;
+}
+.austausch-label {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sit-akzent);
+}
+.austausch-text { line-height: 1.5; }
+.runden { margin-top: 3mm; }
+.runden-item { display: flex; gap: 4mm; margin-bottom: 2mm; align-items: baseline; }
+.runden-item .nr {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--sit-akzent);
+  min-width: 18mm;
+}
+
+/* ---------- KN Rubrik-Grid ---------- */
+.rubrik-grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin-top: 4mm;
+}
+.rubrik-grid th, .rubrik-grid td {
+  border: 1px solid var(--rule);
+  padding: 2.5mm 3mm;
+  vertical-align: top;
+  line-height: 1.35;
+}
+.rubrik-grid th {
+  background: var(--sit-light);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sit-akzent);
+  text-align: left;
+}
+.rubrik-grid th.stufe-th { text-align: center; }
+.rubrik-grid .kriterium-name {
+  font-weight: 600;
+  font-size: 9pt;
+  color: var(--ink);
+  width: 38mm;
+}
+.rubrik-grid .stufe-cell {
+  font-size: 7.5pt;
+  color: var(--ink-soft);
+  position: relative;
+  padding-top: 7mm;
+  width: auto;
+}
+.rubrik-grid .stufe-cell .checkbox {
+  position: absolute;
+  top: 2mm; left: 50%;
+  transform: translateX(-50%);
+  width: 4mm; height: 4mm;
+  border: 1.5pt solid var(--sit-akzent);
+  border-radius: 1px;
+  background: white;
+}
+.rubrik-grid .dim-cell {
+  width: 14mm; text-align: center;
+}
+
+.niveau-legende {
+  display: flex; gap: 6mm; margin-top: 4mm;
+  font-size: 8.5pt;
+}
+.niveau-legende .niv {
+  flex: 1;
+  padding: 3mm 4mm;
+  border: 1px solid var(--rule);
+  border-left: 3pt solid var(--sit-akzent);
+  background: color-mix(in srgb, var(--sit-light) 35%, white);
+}
+.niveau-legende .niv .label {
+  font-weight: 600;
+  font-size: 8pt;
+  letter-spacing: 0.04em;
+  color: var(--sit-akzent);
+  margin-bottom: 0.5mm;
+  text-transform: uppercase;
+}
+.niveau-legende .niv .def { color: var(--ink-soft); }
+
+.noten-block {
+  display: flex; gap: 6mm; margin-top: 6mm;
+}
+.noten-cell {
+  flex: 1;
+  padding: 5mm 6mm;
+  border: 1px solid var(--sit-akzent);
+  border-radius: 2px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.noten-cell .label {
+  font-weight: 600;
+  font-size: 9pt;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sit-akzent);
+}
+.noten-cell .input {
+  width: 28mm; height: 9mm;
+  border-bottom: 2pt solid var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14pt;
+  text-align: right;
+  padding-right: 2mm;
+  font-weight: 600;
+}
+
+/* ---------- KN: Alignment table (LP only) ---------- */
+.alignment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin-top: 4mm;
+}
+.alignment-table th {
+  background: var(--sit-light);
+  color: var(--sit-akzent);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 2.5mm 3mm;
+  border-bottom: 1pt solid var(--sit-akzent);
+}
+.alignment-table td {
+  padding: 2.5mm 3mm;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.alignment-table .letter {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  font-size: 12pt;
+  width: 10mm;
+}
+
+/* ---------- KN-Typ card ---------- */
+.kn-typ-card {
+  margin-top: 6mm;
+  padding: 5mm 6mm;
+  border: 1px solid var(--rule);
+  border-top: 3pt solid var(--sit-akzent);
+  background: color-mix(in srgb, var(--sit-light) 25%, white);
+  break-inside: avoid;
+}
+.kn-typ-card .typ-head {
+  display: flex; align-items: baseline; gap: 4mm;
+  margin-bottom: 3mm;
+}
+.kn-typ-card .typ-label {
+  font-size: 13pt; font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.kn-typ-card .typ-format {
+  font-size: 9pt;
+  color: var(--ink-mute);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.kn-typ-card .ablauf {
+  margin: 2mm 0 3mm;
+  padding-left: 4mm;
+  font-size: 9.5pt;
+}
+.kn-typ-card .ablauf li { margin-bottom: 1mm; }
+.kn-typ-card .tags {
+  display: flex; flex-wrap: wrap; gap: 3pt;
+  margin-top: 3mm;
+}
+
+/* ---------- KN frage/aufgabe item ---------- */
+.kn-q-item {
+  margin-top: 4mm;
+  break-inside: avoid;
+}
+.kn-q-head {
+  display: flex; align-items: baseline; gap: 3mm; margin-bottom: 1.5mm;
+}
+.kn-q-nr {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  color: var(--sit-akzent);
+  font-size: 10pt;
+  min-width: 6mm;
+}
+.kn-q-text { font-size: 10pt; line-height: 1.5; flex: 1; }
+
+/* ---------- Subfacette tag ---------- */
+.subfacette {
+  display: inline-block;
+  padding: 1.5pt 6pt;
+  background: white;
+  border: 1px solid var(--sit-akzent);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sit-akzent);
+}
+
+/* =========================================================
+   COMPACT density (DOC-S info mode — 4 pages instead of 8)
+   ========================================================= */
+body.density-compact .a4-page { font-size: 9.5pt; }
+body.density-compact .section { margin-top: 5mm; }
+body.density-compact .section-head { margin-bottom: 3mm; }
+body.density-compact .section-title { font-size: 13pt; }
+body.density-compact .section-num { font-size: 8pt; }
+body.density-compact .cockpit-title { font-size: 18pt; margin-bottom: 2.5mm; }
+body.density-compact .cockpit-sub { font-size: 10pt; margin-bottom: 5mm; }
+body.density-compact .cockpit-card { padding: 3.5mm 4mm; }
+body.density-compact .cockpit-card .big { font-size: 12pt; }
+body.density-compact .cockpit-grid { gap: 5mm 8mm; margin-top: 4mm; }
+body.density-compact .cockpit-table { font-size: 8.5pt; }
+body.density-compact .cockpit-table th,
+body.density-compact .cockpit-table td { padding: 1.5mm 3mm 1.5mm 0; }
+body.density-compact .sit-text { font-size: 10pt; line-height: 1.5; margin-bottom: 4mm; }
+body.density-compact .sit-meta { font-size: 8.5pt; gap: 3mm 6mm; margin-bottom: 3mm; }
+body.density-compact .leitfrage-callout { font-size: 10pt; padding: 3mm 4mm; }
+body.density-compact .tradeoff-callout { font-size: 9pt; padding: 3mm 4mm; }
+body.density-compact .lf-item,
+body.density-compact .rf-item { margin-bottom: 3mm; }
+body.density-compact .lf-text { font-size: 9pt; line-height: 1.35; }
+body.density-compact .lf-text p { margin: 0 0 0.5mm; }
+body.density-compact .lf-nr { font-size: 9pt; min-width: 6mm; }
+body.density-compact .lf-meta { margin-top: 1mm; gap: 2mm; }
+body.density-compact .mindmap-ast { padding: 3mm 4mm; }
+body.density-compact .mindmap-ast ul { font-size: 8.5pt; }
+body.density-compact .mindmap-voll { gap: 3mm 6mm; }
+body.density-compact .hp-schritte li { padding: 2mm 0 2mm 10mm; }
+body.density-compact .hp-schritt-label { font-size: 9.5pt; }
+body.density-compact .hp-schritt-hint { font-size: 8.5pt; }
+body.density-compact .austausch-grid { font-size: 9pt; gap: 4mm 6mm; }
+body.density-compact .zahlen-tabelle { font-size: 8.5pt; }
+body.density-compact .zahlen-tabelle th,
+body.density-compact .zahlen-tabelle td { padding: 1.5mm 3mm 1.5mm 0; }
+
+/* =========================================================
+   EDITORIAL aesthetic overrides
+   ========================================================= */
+body.aesthetic-editorial {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+body.aesthetic-editorial .a4-page {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+body.aesthetic-editorial .cockpit-title,
+body.aesthetic-editorial .section-title,
+body.aesthetic-editorial .kn-typ-card .typ-label {
+  font-family: 'Newsreader', 'Source Serif 4', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+body.aesthetic-editorial .cockpit-title { font-size: 28pt; font-weight: 500; line-height: 1.1; }
+body.aesthetic-editorial .section-title { font-size: 19pt; font-weight: 500; }
+body.aesthetic-editorial .cockpit-sub {
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 12pt;
+  color: var(--ink-soft);
+}
+body.aesthetic-editorial .section {
+  margin-top: 11mm;
+  padding-top: 3mm;
+  border-top: 1pt solid var(--ink);
+}
+body.aesthetic-editorial .section-head {
+  display: block;
+  position: relative;
+  padding-left: 14mm;
+  margin-bottom: 6mm;
+}
+body.aesthetic-editorial .section-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 22pt;
+  font-weight: 400;
+  color: var(--sit-akzent);
+  letter-spacing: 0;
+}
+body.aesthetic-editorial .section-rule { display: none; }
+
+body.aesthetic-editorial .leitfrage-callout {
+  background: transparent;
+  border-left: 0;
+  border-top: 1pt solid var(--sit-akzent);
+  border-bottom: 1pt solid var(--sit-akzent);
+  padding: 4mm 0;
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 13pt;
+  font-weight: 400;
+}
+body.aesthetic-editorial .leitfrage-callout::before {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+}
+body.aesthetic-editorial .sit-text {
+  font-family: 'Newsreader', serif;
+  font-size: 12.5pt;
+  line-height: 1.55;
+}
+body.aesthetic-editorial .cockpit-card {
+  border: 0;
+  border-top: 2pt solid var(--sit-akzent);
+  background: transparent;
+  padding: 4mm 0;
+}
+body.aesthetic-editorial .cockpit-card .big {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: 15pt;
+}
+body.aesthetic-editorial .lf-nr {
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 16pt;
+  font-weight: 400;
+}
+body.aesthetic-editorial .lf-text { font-size: 11pt; }
+body.aesthetic-editorial .mindmap-ast {
+  background: transparent;
+  border-left: 0;
+  border-top: 1pt solid var(--sit-akzent);
+  padding: 3mm 0 0;
+}
+body.aesthetic-editorial .mindmap-ast h4 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: 10.5pt;
+}
+body.aesthetic-editorial .mindmap-zentrum {
+  background: transparent;
+  color: var(--sit-akzent);
+  border: 2pt solid var(--sit-akzent);
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-style: italic;
+}
+body.aesthetic-editorial .tradeoff-callout {
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 10.5pt;
+}
+body.aesthetic-editorial .kn-typ-card {
+  background: transparent;
+  border: 0;
+  border-top: 2pt solid var(--sit-akzent);
+  padding: 4mm 0;
+}
+body.aesthetic-editorial .kn-typ-card .typ-label { font-size: 17pt; }
+body.aesthetic-editorial .alignment-table th { background: transparent; border-top: 1pt solid var(--sit-akzent); }
+body.aesthetic-editorial .niveau-legende .niv {
+  background: transparent;
+  border: 0;
+  border-top: 1pt solid var(--sit-akzent);
+}
+
+/* =========================================================
+   Print
+   ========================================================= */
+@page { size: A4; margin: 0; }
+@media print {
+  body { background: white; }
+  .app-chrome, .tweaks-host, .toast { display: none !important; }
+  .pages { padding: 0; gap: 0; }
+  .a4-page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+  .a4-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  .feld {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+  .feld:focus { box-shadow: none !important; }
+  /* keep writing lines visible */
+  .feld, .hp-flaeche { background-color: white; }
+  .rubrik-grid .stufe-cell .checkbox { background: white; }
+  /* Avoid orphan breaks inside critical blocks */
+  .lf-item, .rf-item, .mindmap-ast, .kn-typ-card,
+  .rubrik-grid tr, .cockpit-card, .leitfrage-callout,
+  .tradeoff-callout, .austausch-grid, .niveau-legende .niv,
+  .noten-cell, .kn-q-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

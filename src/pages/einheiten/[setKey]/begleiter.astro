@@ -1,0 +1,186 @@
+---
+import { Marked } from 'marked'
+import { loadEinheit, einheitById } from '../../../lib/einheiten'
+import cssRaw from '../../../styles/einheiten-begleiter.css?raw'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const setKey = Astro.params.setKey!
+const meta = einheitById(setKey)
+const fullSet = loadEinheit(setKey)
+
+if (!meta || !fullSet || !fullSet.begleiter?.raw) {
+  return new Response('Begleitdokument nicht gefunden', { status: 404 })
+}
+
+const CALLOUT_LABELS: Record<string, string> = {
+  lernziel: 'Lernziel',
+  hinweis: 'Hinweis',
+  beispiel: 'Beispiel',
+  warnung: 'Warnung',
+  reflexion: 'Reflexion',
+  coaching: 'Coaching-Move',
+  mehrdeutigkeit: 'Mehrdeutigkeit halten',
+  differenzieren: 'Differenzieren',
+}
+
+function parseFrontmatter(raw: string): { meta: Record<string, string>; body: string } {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(raw)
+  if (!m) return { meta: {}, body: raw }
+  const fm: Record<string, string> = {}
+  m[1].split(/\r?\n/).forEach((line) => {
+    if (!line.trim() || line.trim().startsWith('#')) return
+    const km = /^([A-Za-z0-9_\-]+)\s*:\s*(.*)$/.exec(line)
+    if (!km) return
+    let v = km[2].trim()
+    if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1, -1)
+    fm[km[1]] = v
+  })
+  return { meta: fm, body: raw.slice(m[0].length) }
+}
+
+const marked = new Marked({ gfm: true, breaks: false })
+
+marked.use({
+  extensions: [{
+    name: 'callout',
+    level: 'block',
+    start(src: string) {
+      const i = src.search(/^>\s*\[!/m)
+      return i < 0 ? undefined : i
+    },
+    tokenizer(src: string) {
+      const rule = /^(?:>[ \t]*\[!([A-Za-z_]+)\][ \t]*(.*?)\r?\n)((?:>.*(?:\r?\n|$))*)/
+      const mt = rule.exec(src)
+      if (!mt) return
+      const type = mt[1].toLowerCase()
+      if (!(type in CALLOUT_LABELS)) return
+      const title = (mt[2] || '').trim()
+      const bodyText = mt[3]
+        .split(/\r?\n/)
+        .map((ln: string) => ln.replace(/^>[ \t]?/, ''))
+        .join('\n')
+        .replace(/\n+$/, '')
+      const tokens: any[] = []
+      ;(this as any).lexer.blockTokens(bodyText, tokens)
+      return { type: 'callout', raw: mt[0], calloutType: type, title, tokens }
+    },
+    renderer(token: any) {
+      const label = CALLOUT_LABELS[token.calloutType] || token.calloutType
+      // @ts-ignore
+      const bodyHtml = this.parser.parse(token.tokens)
+      const titlePart = token.title ? ` — ${token.title}` : ''
+      return `<div class="callout callout--${token.calloutType}"><div class="callout__label">${label}${titlePart}</div><div class="callout__body">${bodyHtml}</div></div>\n`
+    },
+  }],
+})
+
+const { meta: fm, body } = parseFrontmatter(fullSet.begleiter.raw)
+const htmlBody = await marked.parse(body)
+
+const pageTitle = fm.titel || `${meta.kompetenz_nr} · Begleitdokument`
+const eyebrow = [fm.kompetenz, fm.thema].filter(Boolean).join(' · ')
+
+const metaItems: string[] = []
+if (fm.kompetenz) metaItems.push(`<span><strong>Kompetenz</strong> ${fm.kompetenz}</span>`)
+if (fm.thema) metaItems.push(`<span><strong>Thema</strong> ${fm.thema}</span>`)
+if (fm.autor) metaItems.push(`<span><strong>Autor</strong> ${fm.autor}</span>`)
+if (fm.stand) metaItems.push(`<span><strong>Stand</strong> ${fm.stand}</span>`)
+
+const titleBlock = fm.titel ? `
+<div class="doc__title-block">
+  <div class="eyebrow">Begleitdokument · ABU Reform 2030${eyebrow ? ' · ' + eyebrow : ''}</div>
+  <h1>${fm.titel}</h1>
+  ${fm.untertitel ? `<p class="doc-sub">${fm.untertitel}</p>` : ''}
+  ${metaItems.length ? `<div class="meta">${metaItems.join('')}</div>` : ''}
+</div>` : ''
+
+const html = `<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${pageTitle}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+${cssRaw}
+/* Standalone overrides */
+body { overflow: auto; }
+#root { height: auto; }
+.begleiter-bar {
+  position: sticky; top: 0; z-index: 50;
+  background: white; border-bottom: 3px solid var(--bbw-brand);
+  display: flex; align-items: center; padding: 0 24px; height: 52px; gap: 16px;
+  font-family: var(--font-sans); font-size: 13px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.begleiter-bar .bar-title { font-weight: 600; font-size: 14px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.begleiter-bar .bar-back { color: var(--bbw-muted); text-decoration: none; font-size: 12px; white-space: nowrap; }
+.begleiter-bar .bar-back:hover { color: var(--bbw-ink); }
+.begleiter-bar .bar-print {
+  background: var(--bbw-ink); color: white;
+  border: none; border-radius: 4px;
+  padding: 7px 16px; font: inherit; font-size: 12px; font-weight: 500;
+  cursor: pointer; white-space: nowrap;
+}
+.begleiter-bar .bar-print:hover { background: #000; }
+.begleiter-bar .bar-download {
+  background: white; color: var(--bbw-ink);
+  border: 1px solid var(--bbw-line); border-radius: 4px;
+  padding: 7px 16px; font: inherit; font-size: 12px; font-weight: 500;
+  cursor: pointer; white-space: nowrap; text-decoration: none;
+  display: inline-block; line-height: 1.2;
+}
+.begleiter-bar .bar-download:hover { background: #f5f5f5; border-color: var(--bbw-ink-2); }
+.begleiter-wrap { max-width: 860px; margin: 32px auto 80px; padding: 0 24px; }
+.begleiter-card {
+  background: white; border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  padding: 56px 72px;
+}
+.doc__title-block .eyebrow {
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 9pt; color: var(--bbw-brand-deep); font-weight: 700; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.doc__title-block .eyebrow::before {
+  content: ""; display: inline-block; width: 28px; height: 3px; background: var(--bbw-brand); flex-shrink: 0;
+}
+.doc__title-block h1 { margin: 0 0 4px; }
+.doc-sub { color: var(--bbw-ink-2); font-style: italic; margin: 0 0 4px; }
+.doc__title-block .meta {
+  display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px;
+  font-size: 9.5pt; color: var(--bbw-muted); line-height: 1.5;
+}
+.doc__title-block .meta span strong { color: var(--bbw-ink-2); font-weight: 600; margin-right: 4px; }
+.doc__title-block { margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--bbw-line); }
+@media print {
+  .begleiter-bar { display: none !important; }
+  .begleiter-wrap { margin: 0; padding: 0; max-width: none; }
+  .begleiter-card { box-shadow: none; border-radius: 0; padding: 40px 56px; }
+}
+</style>
+</head>
+<body>
+<div class="begleiter-bar">
+  <a class="bar-back" href="/einheiten/${setKey}">← Workbench</a>
+  <span class="bar-title">${pageTitle}</span>
+  <a class="bar-download" href="/api/einheit-begleiter-docx/${setKey}">Als Word ↓</a>
+  <button class="bar-print" onclick="window.print()">Drucken</button>
+</div>
+<div class="begleiter-wrap">
+  <div class="begleiter-card">
+    <div class="doc">
+      ${titleBlock}
+      ${htmlBody}
+    </div>
+  </div>
+</div>
+</body>
+</html>`
+
+return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } })
+---

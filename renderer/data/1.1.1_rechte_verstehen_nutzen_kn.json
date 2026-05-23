@@ -1,0 +1,171 @@
+{
+  "id": "1.1.1_rechte_verstehen_nutzen_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "rechte_verstehen_nutzen",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-05-22",
+
+  "set_ref": "1.1.1_rechte_verstehen_nutzen_set",
+  "prinzip_ref": "1.1.1_rechte_verstehen_nutzen_prinzip",
+  "anchored_situations": [
+    "1.1.1_rechte_verstehen_nutzen_sit_A",
+    "1.1.1_rechte_verstehen_nutzen_sit_B",
+    "1.1.1_rechte_verstehen_nutzen_sit_C"
+  ],
+
+  "dominanter_aspekt": "Recht",
+  "kern_kompetenzversprechen": "Ich klaere Tatbestand und Rechtsgrundlage aus geeigneten Quellen, beurteile meine Rolle und Verantwortung gegenueber dem Adressaten und beantworte eine rechtliche Anfrage schriftlich, begruendet und adressatengerecht.",
+  "mehrdeutigkeits_pflicht": "Eine rechtliche Auskunft an einen Mitlernenden ist nie nur Wiedergabe — sie traegt Verantwortung. Die Aufgabe ist nicht, jede Unsicherheit zu verbergen oder jede Quelle abzudecken, sondern den Trade-off zwischen Tempo, Vollstaendigkeit und Ehrlichkeit begruendet auszuweisen.",
+
+  "hybrid_situation": {
+    "titel": "Mini Case — die Lohnabzug-Anfrage um 21 Uhr",
+    "persona": {
+      "beruf": "Schreiner/in EFZ",
+      "betrieb": "Schreinerei Berger Thun",
+      "ort": "Thun"
+    },
+    "emotion_tag": "Zeitdruck",
+    "text": "Ich bin Schreiner-Lernender im 1. Lehrjahr in der Schreinerei Berger in Thun und verdiene CHF 600. Heute Abend um 21 Uhr schreibt mir ein Mitlernender auf WhatsApp: 'Ich muss morgen frueh meinem Berufsbildner zeigen, ob er CHF 150 von meinem Lohn fuer einen Kratzer auf einem fertigen Werkstueck abziehen darf. Bitte hilf mir — kurz und klar.' Ich habe eine Stunde, meinen Regel-Spickzettel aus dem letzten Schulblock und Kap. 1.4 zu Hause. Was ich schreibe, leitet er weiter. Was ich nicht weiss, sollte ich nicht erfinden — aber wenn ich gar nicht antworte, steht er morgen ohne Argumente da. Wie gehe ich vor — und welcher Schritt ist der erste?",
+    "leitfrage": "Wie gehe ich jetzt vor — und welcher Schritt ist der erste?",
+    "aktivierte_trade_offs": [
+      "Quellen direkt zitieren vs. in eigenen Worten verstaendlich umformulieren",
+      "Vollstaendige Auskunft geben vs. eigene Rechtsunsicherheit ehrlich benennen",
+      "Schnell antworten (Mitlernender wartet) vs. sauber recherchieren (Antwort ist begruendet und korrekt)"
+    ],
+    "alignment_note": {
+      "subfacetten_mapping": [
+        {"sit_letter": "A", "scene_element": "Der Regel-Spickzettel aus dem letzten Schulblock und das Kap. 1.4 zu Hause aktivieren die rezeptive Quellenklaerung aus Sit A — die Frage zu Lohnabzug (OR 321e) ist genau eine der drei Spickzettel-Bloecke."},
+        {"sit_letter": "B", "scene_element": "Der Lohnabzug-Fall (CHF 150 fuer Kratzer am Werkstueck) ist ein klassischer Tatbestand-Rechtslage-Rechtsfolge-Fall aus Sit B — verschuldet oder nicht? Methodisch sauber pruefen statt aus dem Bauch antworten. Gleichzeitig stellt sich die Rollenfrage: was kann ich verlaesslich sagen, wo verweise ich weiter?"},
+        {"sit_letter": "C", "scene_element": "WhatsApp-Anfrage um 21 Uhr mit Weiterleitungs-Absicht aktiviert die Kanalwahl-Entscheidung aus Sit C — antworte ich im informellen WhatsApp-Kanal oder ziehe ich es in eine formelle, weiterleitbare E-Mail mit 3B-Begruendung?"}
+      ],
+      "new_dimensions": []
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespraech",
+      "format": "muendlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Situation lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespraech mit Lehrperson: 5 Fragen steigender Komplexitaet."
+      ],
+      "fragestruktur": [
+        {"nr": 1, "typ": "Erklaeren", "frage": "Erklaere mit eigenen Worten, welche Regel im OR den Lohnabzug fuer einen Schaden im Betrieb betrifft (OR 321e) und welche Voraussetzung erfuellt sein muss, damit ein Abzug ueberhaupt zulaessig waere.", "k_stufe": 2},
+        {"nr": 2, "typ": "Anwenden", "frage": "Wende das Schema Tatbestand-Rechtslage-Rechtsfolge aus Kap. 1.3 auf den CHF-150-Fall an: Was ist der Tatbestand, welche Rechtslage greift, welche Rechtsfolge leitest du ab?", "k_stufe": 3},
+        {"nr": 3, "typ": "Beurteilen", "frage": "Du hast nur eine Stunde Zeit und das Risiko, etwas Falsches zu sagen. Bewertest du Tempo und Sorgfalt in dieser Situation gleich — oder gibt einer dem anderen Vorrang? Begruende.", "k_stufe": 3},
+        {"nr": 4, "typ": "Transfer", "frage": "Vergleiche diese Anfrage mit dem Datenschutz-Block aus deinem Spickzettel (Sit A): Was uebernimmst du an Methode (Quelle pruefen, in eigenen Worten verdichten), und wo musst du anders vorgehen, weil hier ein konkreter Geld-Konflikt im Raum steht?", "k_stufe": 4},
+        {"nr": 5, "typ": "Werthaltung", "frage": "Welche Verantwortung uebernimmst du, wenn du als Mitlernende eine rechtliche Auskunft gibst, die spaeter dem Berufsbildner gezeigt wird (Kap. 18.1)? Begruende, weshalb das nicht nur eine Rechtsfrage ist.", "k_stufe": 4}
+      ],
+      "sk": [6, 11, 1],
+      "aspekte": ["Recht", "Ethik", "Identitaet und Sozialisation", "Technologie und digitale Transformation"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion muendlich",
+        "Interaktion und Kollaboration muendlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Situation als Pruefungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexitaet."
+      ],
+      "aufgaben": [
+        {"nr": 1, "typ": "Erklaeren", "aufgabe": "Erklaere kurz (3-5 Saetze), welche Regel im OR den Lohnabzug fuer Schaeden betrifft (OR 321e) und welche Voraussetzungen aus dem Lehrvertrag (Kap. 1.4) erfuellt sein muessen.", "k_stufe": 2},
+        {"nr": 2, "typ": "Unterscheiden", "aufgabe": "Beide Reaktionen — eine schnelle WhatsApp-Zusammenfassung und eine kurze formelle E-Mail mit 3B-Argumentation — entstehen aus dem gleichen Zeitdruck. Warum ist die E-Mail in dieser Situation rechtlich und medienkompetent (Kap. 17.3, Kap. 20.7) anders zu beurteilen als die WhatsApp-Antwort? Nenne mindestens drei Argumente.", "k_stufe": 3},
+        {"nr": 3, "typ": "Entscheiden", "aufgabe": "Entscheide begruendet: Welchen Kanal waehlst du, und in welcher Reihenfolge bearbeitest du die Frage (Quelle pruefen, Schema anwenden, schreiben)? Skizziere deine ersten drei Schritte in den 60 Minuten.", "k_stufe": 3},
+        {"nr": 4, "typ": "Forderung", "aufgabe": "Verfasse eine kurze Antwort an deinen Mitlernenden (8-12 Saetze, E-Mail-Format) nach dem Briefaufbau Anlass-Absicht-Begruendung-Schluss (Kap. 17.3) und integriertem 3B-Schema (Kap. 17.2). Zitiere mindestens einen OR-Artikel und markiere ehrlich, wo deine Auskunft nicht abschliessend ist.", "k_stufe": 4}
+      ],
+      "sk": [6, 11, 1],
+      "aspekte": ["Recht", "Ethik", "Identitaet und Sozialisation", "Technologie und digitale Transformation"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpraesentation 5 Min.)",
+      "ablauf": [
+        "Lernende waehlen eines ihrer drei Handlungsprodukte aus den Lernaufgaben (Regel-Spickzettel, Fall-Mappe oder Antwortschreiben).",
+        "Werkwahl-Begruendung (2-3 Saetze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Woerter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip hast du in deiner Situation gelernt — formuliere es in einem Satz.",
+        "Erklaere, wie dieses Prinzip in der Hybrid-Situation des KN sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was hast du durch die drei Situationen (Quellen klaeren, Faelle methodisch loesen, Antwort schreiben) insgesamt darueber gelernt?"
+      ],
+      "optional_praesentation": "Kurzpraesentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [6, 11],
+      "aspekte": ["Recht", "Ethik", "Identitaet und Sozialisation", "Technologie und digitale Transformation"],
+      "sprachmodi": ["Produktion schriftlich und bildlich"],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe (Lehrvertrag, Tatbestand, Rechtslage, Rechtsfolge, Kanal, 3B-Schema) fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt; Quellen ungenau zitiert.",
+          "Begriffe aus Kap. 1.3, 1.4, 17.3 korrekt und situationsangemessen verwendet.",
+          "Differenziert, kontextualisiert, eigenstaendig formuliert; OR-/ArG-Verweise praezise."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begruendung erkennbar.",
+          "Begruendung ansatzweise vorhanden (z. B. nur Behauptung).",
+          "Begruendung nachvollziehbar und strukturiert nach 3B-Schema (Behauptung, Begruendung, Beispiel).",
+          "Schluessig, differenziert, Gegenargumente und Trade-offs explizit beruecksichtigt."
+        ]
+      },
+      {
+        "name": "Rechtliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Prinzip nicht angewendet — die Anfrage wird rein als Gefuehlsfrage oder reine Meinung behandelt.",
+          "Prinzip teilweise erkennbar — eine rechtliche Grundlage wird gestreift, aber nicht ausgearbeitet.",
+          "Prinzip korrekt angewendet — Tatbestand, Rechtslage und Rechtsfolge sind sauber unterschieden und mit OR-/ArG-Quelle gestuetzt (Kap. 1.3, 1.4).",
+          "Prinzip auf neue Zusammenhaenge uebertragen — Lernende erkennt die rechtliche Logik auch im hybriden Fall und benennt Auslegungs-Spielraum."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet, aber unbegruendet.",
+          "Position klar in Ich-Form formuliert, Trade-off (Tempo vs. Sorgfalt, Vollstaendigkeit vs. Ehrlichkeit) benannt.",
+          "Position begruendet, Mehrdeutigkeit anerkannt, Rolle als beratende Mitlernende reflektiert (Verantwortung und Grenze explizit)."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 90 %", "definition": "Stufen 1-2 dominant"},
+      {"label": "90 %", "definition": "mehrheitlich Stufe 3"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+    ]
+  },
+
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

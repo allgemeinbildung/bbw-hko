@@ -1,0 +1,51 @@
+---
+import Einheiten from '../../layouts/Einheiten.astro'
+import EinheitWorkbench from '../../components/einheiten/EinheitWorkbench.tsx'
+import { einheitById, loadEinheit } from '../../lib/einheiten'
+import cssRenderer from '../../styles/einheiten-renderer.css?raw'
+import cssBegleiter from '../../styles/einheiten-begleiter.css?raw'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+
+const setKey = Astro.params.setKey!
+const meta = einheitById(setKey)
+const fullSet = loadEinheit(setKey)
+if (!meta || !fullSet) {
+  return new Response('Einheit nicht gefunden', { status: 404 })
+}
+---
+<Einheiten title={`Einheit ${meta.kompetenz_nr}`} role={role} fullBleed>
+  <style is:global set:html={cssRenderer}></style>
+
+  <div class="border-b border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-baseline gap-3">
+      <a href="/einheiten" class="text-sm text-slate-500 hover:text-slate-700">← Katalog</a>
+      <span class="text-slate-300">·</span>
+      <h1 class="text-lg font-semibold text-slate-900">{meta.kompetenz_nr} · {meta.slug.replace(/_/g, ' ')}</h1>
+      <span class="text-sm text-slate-500">{meta.titel}</span>
+      <div class="ml-auto flex items-center gap-2 text-xs text-slate-500">
+        <span class="chip chip-blue">{meta.lehrgang}</span>
+        {meta.thema_nr != null && <span class="chip">T{meta.thema_nr}</span>}
+        {meta.aspekte.slice(0, 2).map((a) => <span class="chip chip-green">{a}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <EinheitWorkbench
+    client:only="react"
+    set={fullSet}
+    cssRenderer={cssRenderer}
+    cssBegleiter={cssBegleiter}
+    logoUrl="/einheiten-assets/logo-bbw.png"
+    feedbackUrl={`/einheiten/${setKey}/feedback`}
+  />
+</Einheiten>

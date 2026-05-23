@@ -1,4 +1,5 @@
 ---
+import { skFullName } from '../lib/sk-labels'
 interface Props {
   materialId?: string
   initialData?: Record<string, any>
@@ -10,14 +11,9 @@ const isEdit = !!materialId
 {initialData && (
   <script type="application/json" id="intake-initial-data" set:html={JSON.stringify(initialData)} />
 )}
+<script type="application/json" id="sk-fullname-map" set:html={JSON.stringify(skFullName)} />
 
 <div x-data={`intakeForm(${JSON.stringify(materialId ?? null)})`} x-init="init()" x-cloak>
-
-  <!-- Loading -->
-  <div x-show="!nrlp" class="flex items-center justify-center py-12 text-slate-500">
-    <span x-show="!loadError">Lade nRLP-Daten…</span>
-    <div x-show="loadError" class="p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm" x-text="loadError"></div>
-  </div>
 
   <!-- Toast -->
   <div
@@ -28,7 +24,7 @@ const isEdit = !!materialId
     x-text="toast.msg"
   ></div>
 
-  <div x-show="nrlp">
+  <div>
     <div class="mb-5">
       <h1 class="text-2xl font-semibold" x-text={isEdit ? "'Material bearbeiten'" : "'Material einreichen'"}></h1>
       <p class="text-sm text-slate-500 mt-1">Jede Einreichung enthält eine Herausforderung und den dazugehörigen Kompetenznachweis. Pflichtfelder mit <span class="text-red-500">*</span> markiert.</p>
@@ -82,7 +78,7 @@ const isEdit = !!materialId
             </select>
           </div>
 
-          <div class="col-span-2">
+          <div class="col-span-2" x-show="nrlp">
             <label class="field-label">Thema (nRLP) <span class="text-red-500">*</span></label>
             <select x-model.number="form.thema_nr" @change="onThemaChange()" class="input mt-2" :class="errors.thema_nr ? 'invalid' : ''">
               <option value="">— wählen —</option>
@@ -91,6 +87,17 @@ const isEdit = !!materialId
               </template>
             </select>
             <div x-show="errors.thema_nr" class="text-xs text-red-600 mt-1">Bitte Thema wählen.</div>
+            <div x-show="nrlp" class="text-xs text-slate-400 mt-1" x-text="'Lehrplan: ' + (nrlp?.meta?.typ ?? '') + (nrlp?.meta?.version ? ' (' + nrlp.meta.version + ')' : '')"></div>
+          </div>
+
+          <!-- Lehrplan-Status (when nRLP not yet loaded) -->
+          <div class="col-span-2" x-show="!nrlp">
+            <label class="field-label">Thema (nRLP) <span class="text-red-500">*</span></label>
+            <div class="mt-2 px-3 py-2.5 rounded-md border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
+              <span x-show="!form.lehrdauer">Erst Lehrdauer wählen, damit der passende Lehrplan geladen werden kann.</span>
+              <span x-show="form.lehrdauer && nrlpLoading">Lade Lehrplan für <span x-text="form.lehrdauer"></span>…</span>
+              <span x-show="loadError" class="text-red-600" x-text="loadError"></span>
+            </div>
           </div>
 
           <div>
@@ -160,7 +167,7 @@ const isEdit = !!materialId
       </div>
 
       <!-- ── BLOCK B — nRLP-Taxonomie (shared) ─────────────────────────── -->
-      <div class="bg-white border border-slate-200 rounded-lg p-5 mb-5">
+      <div class="bg-white border border-slate-200 rounded-lg p-5 mb-5" x-show="nrlp">
         <h2 class="font-semibold text-slate-800 mb-4 flex items-center gap-2">
           <span class="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center" style="background: var(--brand)">B</span>
           nRLP-Taxonomie
@@ -174,7 +181,7 @@ const isEdit = !!materialId
             </div>
             <div class="check-grid mt-1.5">
               <template x-for="sk in (nrlp?.zirkularitaet?.schluesselkompetenzen ?? [])" :key="sk.bezeichnung">
-                <label class="check-item" :class="form.schluesselkompetenzen.includes(sk.bezeichnung) ? 'checked' : ''">
+                <label class="check-item" :class="form.schluesselkompetenzen.includes(sk.bezeichnung) ? 'checked' : ''" :title="skFullName[sk.bezeichnung] || sk.bezeichnung">
                   <input type="checkbox" :value="sk.bezeichnung" x-model="form.schluesselkompetenzen">
                   <span x-text="sk.bezeichnung"></span>
                 </label>
@@ -387,7 +394,9 @@ function intakeForm(materialId) {
   return {
     materialId,
     nrlp: null,
+    nrlpLoading: false,
     loadError: null,
+    skFullName: {},
     toast: { show: false, msg: '', error: false },
     errors: {},
     submitting: false,
@@ -395,6 +404,11 @@ function intakeForm(materialId) {
 
     async init() {
       this.form = this.emptyForm()
+
+      const skEl = document.getElementById('sk-fullname-map')
+      if (skEl) {
+        try { this.skFullName = JSON.parse(skEl.textContent || '{}') } catch {}
+      }
 
       // Pre-populate when editing
       const dataEl = document.getElementById('intake-initial-data')
@@ -426,12 +440,34 @@ function intakeForm(materialId) {
         } catch {}
       }
 
+      if (this.form.lehrdauer) await this.loadNrlp(this.form.lehrdauer)
+    },
+
+    nrlpFileFor(lehrdauer) {
+      if (lehrdauer === 'EFZ-3J') return '/nrlp_3j.json'
+      if (lehrdauer === 'EFZ-4J') return '/nrlp_4j.json'
+      if (lehrdauer === 'EBA')    return '/nrlp_2j.json'
+      return null
+    },
+
+    async loadNrlp(lehrdauer) {
+      this.nrlp = null
+      this.loadError = null
+      const file = this.nrlpFileFor(lehrdauer)
+      if (!file) { this.loadError = 'Keine Lehrplan-Datei für ' + lehrdauer + ' definiert.'; return }
+      this.nrlpLoading = true
       try {
-        const res = await fetch('/nrlp.json')
+        const res = await fetch(file)
+        if (res.status === 404) {
+          this.loadError = 'Lehrplan für ' + lehrdauer + ' ist noch nicht verfügbar.'
+          return
+        }
         if (!res.ok) throw new Error('HTTP ' + res.status)
         this.nrlp = await res.json()
       } catch (e) {
-        this.loadError = 'nrlp.json konnte nicht geladen werden: ' + e.message
+        this.loadError = 'Lehrplan konnte nicht geladen werden: ' + e.message
+      } finally {
+        this.nrlpLoading = false
       }
     },
 
@@ -491,6 +527,11 @@ function intakeForm(materialId) {
       if (this.form.lehrjahr && this.form.lehrjahr > this.maxLehrjahr) {
         this.form.lehrjahr = ''
       }
+      this.form.thema_nr = ''
+      this.form.thema_titel = ''
+      this.form.lebensbezug_nr = ''
+      this.form.kompetenz_nr = ''
+      if (this.form.lehrdauer) this.loadNrlp(this.form.lehrdauer)
     },
 
     get currentLebensbezuege() {

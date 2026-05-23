@@ -1,6 +1,8 @@
 import index from '../data/situationen.index.json'
 import { nrlp } from './nrlp'
 
+export type SituationLehrdauer = 'EBA' | 'EFZ-3J' | 'EFZ-4J'
+
 export interface SituationIndexEntry {
   id: string
   modul: string | null
@@ -22,6 +24,10 @@ export interface SituationIndexEntry {
   handlungsprodukt_titel: string | null
   quelle_json: string
   quelle_html: string
+  /** Optional curriculum tag. Untagged entries match every lehrdauer filter
+   *  (the legacy situationen library was built against the 3j plan, so this
+   *  field is filled in lazily as curriculum-specific variants are added). */
+  lehrdauer?: SituationLehrdauer | null
 }
 
 export const situationenIndex = index as SituationIndexEntry[]
@@ -39,6 +45,7 @@ export interface SituationFilters {
   lebensbezug: string
   kompetenz: string
   lehrjahr: string
+  lehrdauer: string
   sk: string
   aspekt: string
   sprachmodus: string
@@ -51,6 +58,7 @@ export function emptyFilters(): SituationFilters {
     lebensbezug: '',
     kompetenz: '',
     lehrjahr: '',
+    lehrdauer: '',
     sk: '',
     aspekt: '',
     sprachmodus: '',
@@ -71,6 +79,7 @@ export function applyFilters(
       const lj = lehrjahrForEntry(e)
       if (lj == null || String(lj) !== f.lehrjahr) return false
     }
+    if (f.lehrdauer && e.lehrdauer && e.lehrdauer !== f.lehrdauer) return false
     if (f.sk && !e.sk.map(String).includes(f.sk)) return false
     if (f.aspekt && !e.aspekte.includes(f.aspekt)) return false
     if (f.sprachmodus && !e.sprachmodi.includes(f.sprachmodus)) return false

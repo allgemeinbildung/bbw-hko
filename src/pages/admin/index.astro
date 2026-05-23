@@ -2,6 +2,7 @@
 import Admin from '../../layouts/Admin.astro'
 import FilterBar from '../../components/FilterBar.astro'
 import { nrlp } from '../../lib/nrlp'
+import { skTooltip } from '../../lib/sk-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -68,7 +69,7 @@ const count = materials?.length ?? 0
               <div class="text-xs text-slate-500 mt-0.5">T{m.thema_nr} · LJ {m.lehrjahr} · {m.sprachmodus_primaer}</div>
               <div class="flex flex-wrap gap-1 mt-1">
                 {(m.schluesselkompetenzen as string[]).slice(0,3).map((sk: string) => (
-                  <span class="chip">{sk}</span>
+                  <span class="chip" title={skTooltip(sk)}>{sk}</span>
                 ))}
               </div>
             </td>

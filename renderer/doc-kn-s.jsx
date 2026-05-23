@@ -1,0 +1,278 @@
+/* doc-kn-s.jsx — KN Durchfuehrung Schueler. One build per kn_typ. */
+/* globals React, A4Page, sitColors, Badge, SectionHead, Schreibfeld */
+
+function findKnTyp(kn, typ) {
+  return kn.kn_typen?.find(t => t.typ === typ) || kn.kn_typen?.[0];
+}
+
+function KnSPage({ kn, knTyp, abteilung, pageNum, pageTotal, children }) {
+  return (
+    <A4Page
+      sit={null}
+      abteilung={abteilung}
+      docCode={`DOC-KN-S · ${knTyp.typ.toUpperCase().slice(0, 14)}`}
+      docTitel={kn.hybrid_situation?.titel}
+      pageNum={pageNum}
+      pageTotal={pageTotal}
+      kompetenzNr={kn.kompetenz_nr}
+    >
+      <div className="a4-page-body">{children}</div>
+    </A4Page>
+  );
+}
+
+function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }) {
+  return (
+    <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
+      <div className="badge-row" style={{ marginBottom: '4mm' }}>
+        <Badge variant="outline">Kompetenznachweis {kn.kompetenz_nr}</Badge>
+        <Badge>{knTyp.label}</Badge>
+      </div>
+      <h1 className="cockpit-title">{kn.hybrid_situation?.titel}</h1>
+
+      <SectionHead num="01 · Hybrid-Situation">Situation</SectionHead>
+      <div className="sit-meta">
+        <div className="item"><strong>Beruf</strong>{kn.hybrid_situation?.persona?.beruf}</div>
+        <div className="item"><strong>Betrieb</strong>{kn.hybrid_situation?.persona?.betrieb}</div>
+        <div className="item"><strong>Ort</strong>{kn.hybrid_situation?.persona?.ort}</div>
+        <div className="item"><strong>Emotion</strong>{kn.hybrid_situation?.emotion_tag}</div>
+      </div>
+      <p className="sit-text">{kn.hybrid_situation?.text}</p>
+      <div className="leitfrage-callout">{kn.hybrid_situation?.leitfrage}</div>
+
+      <SectionHead num="02 · Rahmen">Format &amp; Ablauf</SectionHead>
+      <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
+        <strong style={{ color: 'var(--sit-akzent)' }}>Format:</strong> {knTyp.format}
+      </p>
+      {knTyp.ablauf && (
+        <ol style={{ paddingLeft: '5mm', fontSize: '10pt', lineHeight: 1.5, margin: 0 }}>
+          {knTyp.ablauf.map((a, i) => <li key={i} style={{ marginBottom: '1mm' }}>{a}</li>)}
+        </ol>
+      )}
+    </KnSPage>
+  );
+}
+
+function QItem({ nr, type, text, fieldKey, fieldHeightMm, edits, onEdit }) {
+  return (
+    <div className="kn-q-item">
+      <div className="kn-q-head">
+        <div className="kn-q-nr">{nr}</div>
+        <div className="kn-q-text">
+          <p>{text}</p>
+          {type && <div className="lf-meta"><Badge variant="outline">{type}</Badge></div>}
+        </div>
+      </div>
+      <Schreibfeld
+        heightMm={fieldHeightMm}
+        value={edits[fieldKey] || ''}
+        onChange={(v) => onEdit(fieldKey, v)}
+      />
+    </div>
+  );
+}
+
+function FachgespraechPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTotal }) {
+  // 5 questions, split 3 + 2 across two pages
+  const fs = knTyp.fragestruktur || [];
+  const part1 = fs.slice(0, 3);
+  const part2 = fs.slice(3);
+  return (
+    <>
+      <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
+        <SectionHead num="03 · Vorbereitung">Notizen zu den Fragen (1/2)</SectionHead>
+        <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
+          Nutze die 15 Minuten Vorbereitungszeit fuer stichwortartige Notizen zu jeder Frage. Im Gespraech sprichst du frei.
+        </p>
+        {part1.map((f, i) => (
+          <QItem
+            key={i}
+            nr={`F${f.nr}`}
+            type={f.typ}
+            text={f.frage}
+            fieldKey={`fg_${f.nr}`}
+            fieldHeightMm={22}
+            edits={edits} onEdit={onEdit}
+          />
+        ))}
+      </KnSPage>
+      <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart + 1} pageTotal={pageTotal}>
+        <SectionHead num="03 · Vorbereitung">Notizen zu den Fragen (2/2)</SectionHead>
+        {part2.map((f, i) => (
+          <QItem
+            key={i}
+            nr={`F${f.nr}`}
+            type={f.typ}
+            text={f.frage}
+            fieldKey={`fg_${f.nr}`}
+            fieldHeightMm={30}
+            edits={edits} onEdit={onEdit}
+          />
+        ))}
+      </KnSPage>
+    </>
+  );
+}
+
+function MiniCasePages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTotal }) {
+  // 4 aufgaben, split 2 + 2
+  const af = knTyp.aufgaben || [];
+  const part1 = af.slice(0, 2);
+  const part2 = af.slice(2);
+  return (
+    <>
+      <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
+        <SectionHead num="03 · Aufgaben">Pruefungsaufgaben (1/2)</SectionHead>
+        <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
+          Bearbeite alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson erlaubt, kein Internet.
+        </p>
+        {part1.map((a, i) => (
+          <QItem
+            key={i}
+            nr={`A${a.nr}`}
+            type={a.typ}
+            text={a.aufgabe}
+            fieldKey={`mc_${a.nr}`}
+            fieldHeightMm={55}
+            edits={edits} onEdit={onEdit}
+          />
+        ))}
+      </KnSPage>
+      <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart + 1} pageTotal={pageTotal}>
+        <SectionHead num="03 · Aufgaben">Pruefungsaufgaben (2/2)</SectionHead>
+        {part2.map((a, i) => (
+          <QItem
+            key={i}
+            nr={`A${a.nr}`}
+            type={a.typ}
+            text={a.aufgabe}
+            fieldKey={`mc_${a.nr}`}
+            fieldHeightMm={55}
+            edits={edits} onEdit={onEdit}
+          />
+        ))}
+      </KnSPage>
+    </>
+  );
+}
+
+function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTotal }) {
+  const reflex = knTyp.reflexionsfragen || [];
+  // Page A: Werkwahl + R1
+  // Page B: R2 + R3 (or remaining)
+  const pageBFragen = reflex.slice(1);
+  return (
+    <>
+      <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
+        <SectionHead num="03 · Werkwahl">Welches Handlungsprodukt waehle ich?</SectionHead>
+        <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
+          Waehle eines der drei Handlungsprodukte aus deinen Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gespraechs-Drehbuch) und begruende deine Wahl in 2–3 Saetzen.
+        </p>
+        <Schreibfeld
+          heightMm={28}
+          value={edits.ws_wahl || ''}
+          onChange={(v) => onEdit('ws_wahl', v)}
+        />
+
+        <SectionHead num="04 · Transfer-Reflexion">Reflexion (1/2)</SectionHead>
+        <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
+          Beantworte schriftlich, insgesamt 200–250 Woerter ueber alle drei Fragen.
+        </p>
+        {reflex.slice(0, 1).map((f, i) => (
+          <QItem
+            key={i}
+            nr={`R${i + 1}`}
+            text={f}
+            fieldKey={`ws_r${i + 1}`}
+            fieldHeightMm={55}
+            edits={edits} onEdit={onEdit}
+          />
+        ))}
+      </KnSPage>
+      <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart + 1} pageTotal={pageTotal}>
+        <SectionHead num="04 · Transfer-Reflexion">Reflexion (2/2)</SectionHead>
+        {pageBFragen.map((f, i) => (
+          <QItem
+            key={i}
+            nr={`R${i + 2}`}
+            text={f}
+            fieldKey={`ws_r${i + 2}`}
+            fieldHeightMm={45}
+            edits={edits} onEdit={onEdit}
+          />
+        ))}
+      </KnSPage>
+    </>
+  );
+}
+
+function RubrikPage({ kn, knTyp, abteilung, pageNum, pageTotal }) {
+  const rs = kn.rubrik_shared;
+  if (!rs) return null;
+  return (
+    <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
+      <SectionHead num="05 · Bewertungskriterien">Worauf geachtet wird</SectionHead>
+      <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
+        Die folgenden Kriterien werden bewertet. Sie verteilen sich auf zwei Dimensionen: sachliche Korrektheit (SuK) und gesellschaftliche Werthaltung (Ges). Beide Dimensionen werden separat benotet.
+      </p>
+      <table className="rubrik-grid">
+        <thead>
+          <tr>
+            <th>Kriterium</th>
+            <th className="dim-cell">Dimension</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rs.kriterien?.map((k, i) => (
+            <tr key={i}>
+              <td className="kriterium-name">{k.name}</td>
+              <td className="dim-cell">
+                <Badge variant={k.dimension === 'SuK' ? 'dim-suk' : 'dim-ges'}>{k.dimension}</Badge>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h4 style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '7mm', marginBottom: '2mm' }}>
+        Niveaubaender — was 90% / 100% heisst
+      </h4>
+      <div className="niveau-legende">
+        {rs.niveaubaender?.map((n, i) => (
+          <div className="niv" key={i}>
+            <div className="label">{n.label}</div>
+            <div className="def">{n.definition}</div>
+          </div>
+        ))}
+      </div>
+    </KnSPage>
+  );
+}
+
+function DocKnS({ kn, knTyp, abteilung, edits, onEdit }) {
+  const t = findKnTyp(kn, knTyp);
+  if (!t) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN-Typ nicht gefunden.</p></div>;
+  const style = sitColors(null);
+
+  let totalPages, body;
+  if (t.typ === 'fachgespraech') {
+    totalPages = 4;
+    body = <FachgespraechPages kn={kn} knTyp={t} abteilung={abteilung} edits={edits} onEdit={onEdit} pageStart={2} pageTotal={totalPages} />;
+  } else if (t.typ === 'mini_case_schriftlich') {
+    totalPages = 4;
+    body = <MiniCasePages kn={kn} knTyp={t} abteilung={abteilung} edits={edits} onEdit={onEdit} pageStart={2} pageTotal={totalPages} />;
+  } else {
+    totalPages = 4;
+    body = <WerkschauPages kn={kn} knTyp={t} abteilung={abteilung} edits={edits} onEdit={onEdit} pageStart={2} pageTotal={totalPages} />;
+  }
+
+  return (
+    <div style={style}>
+      <HeaderPage kn={kn} knTyp={t} abteilung={abteilung} pageNum={1} pageTotal={totalPages} />
+      {body}
+      <RubrikPage kn={kn} knTyp={t} abteilung={abteilung} pageNum={totalPages} pageTotal={totalPages} />
+    </div>
+  );
+}
+
+Object.assign(window, { DocKnS });
