@@ -117,7 +117,7 @@ const themas = [
     titel: 'Meinungen bilden und mitgestalten',
     lektionen: 30,
     puffer: 12,
-    intensity: 'dark',
+    intensity: 'medium',
     perioden: ['Jan: Diskriminierung & Meinungsfreiheit', 'Feb–Mär: Mitwirkung & Standpunkte'],
   },
   {
@@ -125,7 +125,7 @@ const themas = [
     titel: 'Bewusst konsumieren und handeln',
     lektionen: 33,
     puffer: 13,
-    intensity: 'medium',
+    intensity: 'dark',
     perioden: ['Sep–Okt: Bedürfnisse & Budget', 'Nov–Dez: Nachhaltigkeit & Kaufvertrag'],
   },
 ]
@@ -207,8 +207,8 @@ const semesterColumns = ([1, 2] as const).map((s) => {
       <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
         <span class="font-semibold text-slate-700 uppercase tracking-wider">Legende</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-thema1"></span>Thema 1 — Einstieg</span>
-        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema3"></span>Thema 3 — Konsum</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-thema2"></span>Thema 2 — Meinung</span>
+        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema3"></span>Thema 3 — Konsum</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-buffer"></span>Puffer / Repetition</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-holiday"></span>Ferien / Feiertag</span>
         <span class="ml-auto text-slate-500 italic">Tipp: Hover über eine Woche</span>
@@ -477,10 +477,10 @@ const semesterColumns = ([1, 2] as const).map((s) => {
     .cell-lessons { font-weight: 700; font-size: 0.85rem; }
     .cell-title { font-size: 0.6rem; opacity: 0.85; font-weight: 600; letter-spacing: 0.02em; }
 
-    /* T1 = light tint, T3 = medium green, T2 = dark green (matches teaching order) */
+    /* Chronological intensity: T1 light → T2 medium → T3 dark */
     .cell-thema1 { background: var(--brand-tint); color: var(--brand-dark); border-color: rgba(14,110,58,0.18); }
-    .cell-thema3 { background: var(--brand); color: white; }
-    .cell-thema2 { background: var(--brand-dark); color: white; }
+    .cell-thema2 { background: var(--brand); color: white; }
+    .cell-thema3 { background: var(--brand-dark); color: white; }
     .cell-buffer {
       background: white;
       color: #475569;
