@@ -49,58 +49,58 @@ type WeekCell = {
 }
 
 const calendar: WeekCell[] = [
-  // T1 — 18. Aug – 19. Okt
-  { n: 1, kw: 34, datum: '18.–22. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Lehrvertrag & Rollen', lb: '1.1' },
+  // ─── THEMA 1 — Aug 18 – Nov 7 (12 weeks incl. Herbstferien) ──────────
+  { n: 1, kw: 34, datum: '18.–22. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Einstieg & Lehrvertrag', lb: '1.1' },
   { n: 2, kw: 35, datum: '25.–29. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Rechte & Pflichten', lb: '1.1' },
-  { n: 3, kw: 36, datum: '1.–5. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Kommunikation', lb: '1.1' },
-  { n: 4, kw: 37, datum: '8.–12. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 IT-Werkzeuge', lb: '1.1' },
+  { n: 3, kw: 36, datum: '1.–5. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 IT-Werkzeuge', lb: '1.1' },
+  { n: 4, kw: 37, datum: '8.–12. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Kommunikation', lb: '1.1' },
   { n: 5, kw: 38, datum: '15.–19. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Konfliktgespräch', lb: '1.1', note: 'Vorbereitung KN 1.1' },
-  { n: 6, kw: 39, datum: '22.–26. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'KN 1.1 + T3.1 Start', lb: '1.1', note: 'Kompetenznachweis 1.1' },
-  { n: 7, kw: 40, datum: '29. Sep – 3. Okt', month: 'Oktober', trimester: 'T1', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Bedürfnisse', lb: '3.1' },
+  { n: 6, kw: 39, datum: '22.–26. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 Lernorganisation', lb: '1.2' },
+  { n: 7, kw: 40, datum: '29. Sep – 3. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 Ressourcen & KN-Vorbereitung', lb: '1.2' },
   { n: 8, kw: 41, datum: '6.–10. Okt', month: 'Oktober', trimester: 'T1', thema: null, lessons: 0, type: 'holiday', title: 'Herbstferien' },
   { n: 9, kw: 42, datum: '13.–17. Okt', month: 'Oktober', trimester: 'T1', thema: null, lessons: 0, type: 'holiday', title: 'Herbstferien' },
-  { n: 10, kw: 43, datum: '20.–24. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'T1-Puffer & T3.1', lb: '3.1' },
+  { n: 10, kw: 43, datum: '20.–24. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'KN 1.1 Konfliktgespräch', note: 'Kompetenznachweis 1.1' },
+  { n: 11, kw: 44, datum: '27.–31. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'T1 Repetition & Vertiefung' },
+  { n: 12, kw: 45, datum: '3.–7. Nov', month: 'November', trimester: 'T1', thema: 1, lessons: 2, type: 'buffer', title: 'T1 Abschluss & Reflexion' },
 
-  // T2 — 20. Okt 2025 – 4. Jan 2026
-  { n: 11, kw: 44, datum: '27.–31. Okt', month: 'Oktober', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Budget', lb: '3.1' },
-  { n: 12, kw: 45, datum: '3.–7. Nov', month: 'November', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Verschuldung', lb: '3.1', note: 'Prüfung Budgetplanung' },
-  { n: 13, kw: 46, datum: '10.–14. Nov', month: 'November', trimester: 'T2', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 Lernorganisation', lb: '1.2' },
-  { n: 14, kw: 47, datum: '17.–21. Nov', month: 'November', trimester: 'T2', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 KN-Vorbereitung', lb: '1.2' },
-  { n: 15, kw: 48, datum: '24.–28. Nov', month: 'November', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Nachhaltigkeit', lb: '3.2' },
-  { n: 16, kw: 49, datum: '1.–5. Dez', month: 'Dezember', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Produktwert', lb: '3.2' },
-  { n: 17, kw: 50, datum: '8.–12. Dez', month: 'Dezember', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Kaufvertrag', lb: '3.3' },
-  { n: 18, kw: 51, datum: '15.–19. Dez', month: 'Dezember', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Reklamation', lb: '3.3' },
+  // ─── THEMA 2 — Nov 10 – Mär 13 (18 weeks incl. Weihnachts- + Sportferien) ──
+  { n: 13, kw: 46, datum: '10.–14. Nov', month: 'November', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.1 Quellen kritisch prüfen', lb: '2.1' },
+  { n: 14, kw: 47, datum: '17.–21. Nov', month: 'November', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.1 Manipulation & Desinformation', lb: '2.1' },
+  { n: 15, kw: 48, datum: '24.–28. Nov', month: 'November', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.1 Filterblasen & Algorithmen', lb: '2.1' },
+  { n: 16, kw: 49, datum: '1.–5. Dez', month: 'Dezember', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Diskriminierung', lb: '2.2' },
+  { n: 17, kw: 50, datum: '8.–12. Dez', month: 'Dezember', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Meinungsfreiheit', lb: '2.2', note: 'Prüfung Desinformation' },
+  { n: 18, kw: 51, datum: '15.–19. Dez', month: 'Dezember', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Standpunkte entwickeln', lb: '2.2' },
   { n: 19, kw: 52, datum: '22.–26. Dez', month: 'Dezember', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Weihnachtsferien' },
   { n: 20, kw: 1, datum: '29. Dez – 2. Jan', month: 'Januar', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Weihnachtsferien' },
+  { n: 21, kw: 2, datum: '5.–9. Jan', month: 'Januar', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Kunst & Haltungen', lb: '2.2' },
+  { n: 22, kw: 3, datum: '12.–16. Jan', month: 'Januar', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Politische Mitwirkung', lb: '2.3' },
+  { n: 23, kw: 4, datum: '19.–23. Jan', month: 'Januar', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Anliegen formulieren', lb: '2.3' },
+  { n: 24, kw: 5, datum: '26.–30. Jan', month: 'Januar', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Debatte & Diskussion', lb: '2.3', note: 'Mündliche Diskussion' },
+  { n: 25, kw: 6, datum: '2.–6. Feb', month: 'Februar', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
+  { n: 26, kw: 7, datum: '9.–13. Feb', month: 'Februar', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
+  { n: 27, kw: 8, datum: '16.–20. Feb', month: 'Februar', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Puffer Repetition' },
+  { n: 28, kw: 9, datum: '23.–27. Feb', month: 'Februar', trimester: 'T2', thema: 2, lessons: 2, type: 'buffer', title: 'T2 Puffer Vertiefung', note: 'Fastnachtsmontag frei' },
+  { n: 29, kw: 10, datum: '2.–6. Mär', month: 'März', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Puffer Prüfungsvorbereitung' },
+  { n: 30, kw: 11, datum: '9.–13. Mär', month: 'März', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Abschluss & Konsolidierung' },
 
-  // T3 — 5. Jan – 16. Aug 2026
-  { n: 21, kw: 2, datum: '5.–9. Jan', month: 'Januar', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3-Puffer', lb: '3.3' },
-  { n: 22, kw: 3, datum: '12.–16. Jan', month: 'Januar', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3-Puffer Repetition' },
-  { n: 23, kw: 4, datum: '19.–23. Jan', month: 'Januar', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Diskriminierung', lb: '2.2' },
-  { n: 24, kw: 5, datum: '26.–30. Jan', month: 'Januar', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Meinungsfreiheit', lb: '2.2', note: 'Mündliche Diskussion' },
-  { n: 25, kw: 6, datum: '2.–6. Feb', month: 'Februar', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
-  { n: 26, kw: 7, datum: '9.–13. Feb', month: 'Februar', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
-  { n: 27, kw: 8, datum: '16.–20. Feb', month: 'Februar', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Perspektiven', lb: '2.2' },
-  { n: 28, kw: 9, datum: '23.–27. Feb', month: 'Februar', trimester: 'T3', thema: 2, lessons: 2, type: 'teaching', title: 'T2.3 Mitwirkung', lb: '2.3', note: 'Fastnachtsmontag frei' },
-  { n: 29, kw: 10, datum: '2.–6. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Standpunkte', lb: '2.3' },
-  { n: 30, kw: 11, datum: '9.–13. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Debatte', lb: '2.3' },
-  { n: 31, kw: 12, datum: '16.–20. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Abschluss', lb: '2.3' },
-  { n: 32, kw: 13, datum: '23.–27. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'T2-Puffer' },
-  { n: 33, kw: 14, datum: '30. Mär – 3. Apr', month: 'April', trimester: 'T3', thema: 2, lessons: 2, type: 'buffer', title: 'T2-Puffer', note: 'Karfreitag frei' },
-  { n: 34, kw: 15, datum: '6.–10. Apr', month: 'April', trimester: 'T3', thema: 2, lessons: 2, type: 'buffer', title: 'T2-Puffer', note: 'Ostermontag frei' },
-  { n: 35, kw: 16, datum: '13.–17. Apr', month: 'April', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'Prüfungsvorbereitung' },
+  // ─── THEMA 3 — Mär 16 – Jul 10 (17 weeks incl. Frühjahrsferien) ──────
+  { n: 31, kw: 12, datum: '16.–20. Mär', month: 'März', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Bedürfnisse erkennen', lb: '3.1' },
+  { n: 32, kw: 13, datum: '23.–27. Mär', month: 'März', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Budget planen', lb: '3.1' },
+  { n: 33, kw: 14, datum: '30. Mär – 3. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 2, type: 'teaching', title: 'T3.1 Verschuldung', lb: '3.1', note: 'Karfreitag frei' },
+  { n: 34, kw: 15, datum: '6.–10. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 2, type: 'teaching', title: 'T3.1 Abschluss', lb: '3.1', note: 'Ostermontag frei' },
+  { n: 35, kw: 16, datum: '13.–17. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Nachhaltigkeit', lb: '3.2' },
   { n: 36, kw: 17, datum: '20.–24. Apr', month: 'April', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Frühjahrsferien' },
   { n: 37, kw: 18, datum: '27. Apr – 1. Mai', month: 'Mai', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Frühjahrsferien' },
-  { n: 38, kw: 19, datum: '4.–8. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'T2-Puffer Repetition' },
-  { n: 39, kw: 20, datum: '11.–15. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 1, type: 'buffer', title: 'T2-Puffer', note: 'Auffahrt + Brücke frei' },
-  { n: 40, kw: 21, datum: '18.–22. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'T2-Puffer Konsolidierung' },
-  { n: 41, kw: 22, datum: '25.–29. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 2, type: 'buffer', title: 'T2-Puffer', note: 'Pfingstmontag frei' },
-  { n: 42, kw: 23, datum: '1.–5. Jun', month: 'Juni', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'Portfolio-Review' },
-  { n: 43, kw: 24, datum: '8.–12. Jun', month: 'Juni', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'Gesamtwiederholung' },
-  { n: 44, kw: 25, datum: '15.–19. Jun', month: 'Juni', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Abschlussreflexion' },
-  { n: 45, kw: 26, datum: '22.–26. Jun', month: 'Juni', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Abschlussreflexion' },
-  { n: 46, kw: 27, datum: '29. Jun – 3. Jul', month: 'Juli', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Portfolio-Abgabe' },
-  { n: 47, kw: 28, datum: '6.–10. Jul', month: 'Juli', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Abschluss & Ausblick' },
+  { n: 38, kw: 19, datum: '4.–8. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Konsumgewohnheiten', lb: '3.2' },
+  { n: 39, kw: 20, datum: '11.–15. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 1, type: 'teaching', title: 'T3.2 Klimawandel & Ressourcen', lb: '3.2', note: 'Auffahrt + Brücke frei' },
+  { n: 40, kw: 21, datum: '18.–22. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Produktwert', lb: '3.2' },
+  { n: 41, kw: 22, datum: '25.–29. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 2, type: 'teaching', title: 'T3.2 Marktmechanismen', lb: '3.2', note: 'Pfingstmontag frei' },
+  { n: 42, kw: 23, datum: '1.–5. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Anspruchsgruppen & Zielkonflikte', lb: '3.2' },
+  { n: 43, kw: 24, datum: '8.–12. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Abschluss & Multimedia-Produkt', lb: '3.2' },
+  { n: 44, kw: 25, datum: '15.–19. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Kaufverträge', lb: '3.3' },
+  { n: 45, kw: 26, datum: '22.–26. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Reklamation & Korrespondenz', lb: '3.3' },
+  { n: 46, kw: 27, datum: '29. Jun – 3. Jul', month: 'Juli', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Puffer & Portfolio-Review' },
+  { n: 47, kw: 28, datum: '6.–10. Jul', month: 'Juli', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Abschluss & Jahresreflexion' },
 ]
 
 const themas = [
@@ -110,23 +110,23 @@ const themas = [
     lektionen: 21,
     puffer: 8,
     intensity: 'light',
-    perioden: ['Aug–Okt: Lehrvertrag, Rechte/Pflichten, Kommunikation', 'Nov: Lernorganisation & Ressourcen'],
+    perioden: ['Aug–Sep: Lehrvertrag, Rechte/Pflichten, Kommunikation (T1.1)', 'Sep–Okt: Lernorganisation & Ressourcen (T1.2)', 'Okt–Nov: KN 1.1 & T1-Puffer'],
   },
   {
     nr: 2,
     titel: 'Meinungen bilden und mitgestalten',
     lektionen: 30,
-    puffer: 12,
+    puffer: 11,
     intensity: 'medium',
-    perioden: ['Jan: Diskriminierung & Meinungsfreiheit', 'Feb–Mär: Mitwirkung & Standpunkte'],
+    perioden: ['Nov: Quellen & Desinformation (T2.1)', 'Dez–Jan: Diskriminierung & Meinungsfreiheit (T2.2)', 'Jan–Feb: Mitwirkung & Standpunkte (T2.3)', 'Feb–Mär: T2-Puffer & Prüfung'],
   },
   {
     nr: 3,
     titel: 'Bewusst konsumieren und handeln',
-    lektionen: 33,
-    puffer: 13,
+    lektionen: 34,
+    puffer: 6,
     intensity: 'dark',
-    perioden: ['Sep–Okt: Bedürfnisse & Budget', 'Nov–Dez: Nachhaltigkeit & Kaufvertrag'],
+    perioden: ['Mär–Apr: Bedürfnisse & Budget (T3.1)', 'Apr–Jun: Nachhaltigkeit & Konsumkritik (T3.2)', 'Jun: Kaufverträge & Reklamation (T3.3)', 'Jul: T3-Puffer & Jahresreflexion'],
   },
 ]
 
@@ -189,8 +189,9 @@ const semesterColumns = ([1, 2] as const).map((s) => {
         <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · EFZ 3-Jährige · nRLP Bildungsrat 2026-01</p>
         <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">ABU 1. Lehrjahr — Schuljahr 2025/2026</h1>
         <p class="text-slate-600 mt-3 max-w-3xl">
-          39 Schulwochen · 3 Lektionen pro Woche · 84 Unterrichts­lektionen + 33 Puffer.
-          Fahre über eine Woche, um die geplanten Lebensbezüge und Kompetenzen aus dem nRLP einzusehen.
+          39 Schulwochen · 3 Lektionen pro Woche · die drei Themen werden chronologisch
+          nacheinander unterrichtet (T1 → T2 → T3). Fahre über eine Woche, um die geplanten
+          Lebensbezüge und Kompetenzen aus dem nRLP einzusehen.
         </p>
       </div>
 
@@ -198,9 +199,9 @@ const semesterColumns = ([1, 2] as const).map((s) => {
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
         <div class="stat-card"><p class="stat-label">Schulwochen</p><p class="stat-value">39</p></div>
         <div class="stat-card"><p class="stat-label">Verfügbar</p><p class="stat-value">117 L.</p></div>
-        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">84 L.</p></div>
-        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">33 L.</p></div>
-        <div class="stat-card"><p class="stat-label">Ferienwochen</p><p class="stat-value">7</p></div>
+        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">85 L.</p></div>
+        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">25 L.</p></div>
+        <div class="stat-card"><p class="stat-label">Ferienwochen</p><p class="stat-value">8</p></div>
       </div>
 
       <!-- Legend -->
