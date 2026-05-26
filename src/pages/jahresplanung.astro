@@ -1,0 +1,546 @@
+---
+import Base from '../layouts/Base.astro'
+import { nrlp } from '../lib/nrlp'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+// Build a flat lookup { "1.1": { thema, titel, kompetenzen[] }, ... }
+type KompetenzInfo = { nr: string; text: string }
+type LebensbezugInfo = {
+  thema_nr: number
+  thema_titel: string
+  lebensbezug_nr: string
+  lebensbezug_text: string
+  lektionen: number | null
+  kompetenzen: KompetenzInfo[]
+}
+const lookup: Record<string, LebensbezugInfo> = {}
+for (const thema of nrlp.themen as any[]) {
+  for (const lb of (thema.lebensbezuege ?? []) as any[]) {
+    lookup[lb.nr] = {
+      thema_nr: thema.nr,
+      thema_titel: thema.titel,
+      lebensbezug_nr: lb.nr,
+      lebensbezug_text: lb.text,
+      lektionen: lb.lektionen ?? null,
+      kompetenzen: (lb.kompetenzen ?? []).map((k: any) => ({ nr: k.nr, text: k.text })),
+    }
+  }
+}
+
+// School calendar — derived from JAHRESPLANUNG_1Lehrjahr_2025-2026.md
+// week: ISO week label, n: lesson-week ordinal (1..40)
+// trimester: T1|T2|T3, type: teaching|buffer|holiday, thema: 1|2|3|null
+// lb: lebensbezug code (matches lookup keys above) — optional for non-teaching
+type CellType = 'teaching' | 'buffer' | 'holiday'
+type WeekCell = {
+  n: number
+  kw: number
+  datum: string
+  month: string
+  trimester: 'T1' | 'T2' | 'T3'
+  thema: 1 | 2 | 3 | null
+  lessons: number
+  type: CellType
+  title: string
+  lb?: string
+  note?: string
+}
+
+const calendar: WeekCell[] = [
+  // T1 — 18. Aug – 19. Okt
+  { n: 1, kw: 34, datum: '18.–22. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Lehrvertrag & Rollen', lb: '1.1' },
+  { n: 2, kw: 35, datum: '25.–29. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Rechte & Pflichten', lb: '1.1' },
+  { n: 3, kw: 36, datum: '1.–5. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Kommunikation', lb: '1.1' },
+  { n: 4, kw: 37, datum: '8.–12. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 IT-Werkzeuge', lb: '1.1' },
+  { n: 5, kw: 38, datum: '15.–19. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Konfliktgespräch', lb: '1.1', note: 'Vorbereitung KN 1.1' },
+  { n: 6, kw: 39, datum: '22.–26. Sep', month: 'September', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'KN 1.1 + T3.1 Start', lb: '1.1', note: 'Kompetenznachweis 1.1' },
+  { n: 7, kw: 40, datum: '29. Sep – 3. Okt', month: 'Oktober', trimester: 'T1', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Bedürfnisse', lb: '3.1' },
+  { n: 8, kw: 41, datum: '6.–10. Okt', month: 'Oktober', trimester: 'T1', thema: null, lessons: 0, type: 'holiday', title: 'Herbstferien' },
+  { n: 9, kw: 42, datum: '13.–17. Okt', month: 'Oktober', trimester: 'T1', thema: null, lessons: 0, type: 'holiday', title: 'Herbstferien' },
+  { n: 10, kw: 43, datum: '20.–24. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'T1-Puffer & T3.1', lb: '3.1' },
+
+  // T2 — 20. Okt 2025 – 4. Jan 2026
+  { n: 11, kw: 44, datum: '27.–31. Okt', month: 'Oktober', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Budget', lb: '3.1' },
+  { n: 12, kw: 45, datum: '3.–7. Nov', month: 'November', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Verschuldung', lb: '3.1', note: 'Prüfung Budgetplanung' },
+  { n: 13, kw: 46, datum: '10.–14. Nov', month: 'November', trimester: 'T2', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 Lernorganisation', lb: '1.2' },
+  { n: 14, kw: 47, datum: '17.–21. Nov', month: 'November', trimester: 'T2', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 KN-Vorbereitung', lb: '1.2' },
+  { n: 15, kw: 48, datum: '24.–28. Nov', month: 'November', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Nachhaltigkeit', lb: '3.2' },
+  { n: 16, kw: 49, datum: '1.–5. Dez', month: 'Dezember', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Produktwert', lb: '3.2' },
+  { n: 17, kw: 50, datum: '8.–12. Dez', month: 'Dezember', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Kaufvertrag', lb: '3.3' },
+  { n: 18, kw: 51, datum: '15.–19. Dez', month: 'Dezember', trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Reklamation', lb: '3.3' },
+  { n: 19, kw: 52, datum: '22.–26. Dez', month: 'Dezember', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Weihnachtsferien' },
+  { n: 20, kw: 1, datum: '29. Dez – 2. Jan', month: 'Januar', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Weihnachtsferien' },
+
+  // T3 — 5. Jan – 16. Aug 2026
+  { n: 21, kw: 2, datum: '5.–9. Jan', month: 'Januar', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3-Puffer', lb: '3.3' },
+  { n: 22, kw: 3, datum: '12.–16. Jan', month: 'Januar', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3-Puffer Repetition' },
+  { n: 23, kw: 4, datum: '19.–23. Jan', month: 'Januar', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Diskriminierung', lb: '2.2' },
+  { n: 24, kw: 5, datum: '26.–30. Jan', month: 'Januar', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Meinungsfreiheit', lb: '2.2', note: 'Mündliche Diskussion' },
+  { n: 25, kw: 6, datum: '2.–6. Feb', month: 'Februar', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
+  { n: 26, kw: 7, datum: '9.–13. Feb', month: 'Februar', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
+  { n: 27, kw: 8, datum: '16.–20. Feb', month: 'Februar', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.2 Perspektiven', lb: '2.2' },
+  { n: 28, kw: 9, datum: '23.–27. Feb', month: 'Februar', trimester: 'T3', thema: 2, lessons: 2, type: 'teaching', title: 'T2.3 Mitwirkung', lb: '2.3', note: 'Fastnachtsmontag frei' },
+  { n: 29, kw: 10, datum: '2.–6. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Standpunkte', lb: '2.3' },
+  { n: 30, kw: 11, datum: '9.–13. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Debatte', lb: '2.3' },
+  { n: 31, kw: 12, datum: '16.–20. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', title: 'T2.3 Abschluss', lb: '2.3' },
+  { n: 32, kw: 13, datum: '23.–27. Mär', month: 'März', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'T2-Puffer' },
+  { n: 33, kw: 14, datum: '30. Mär – 3. Apr', month: 'April', trimester: 'T3', thema: 2, lessons: 2, type: 'buffer', title: 'T2-Puffer', note: 'Karfreitag frei' },
+  { n: 34, kw: 15, datum: '6.–10. Apr', month: 'April', trimester: 'T3', thema: 2, lessons: 2, type: 'buffer', title: 'T2-Puffer', note: 'Ostermontag frei' },
+  { n: 35, kw: 16, datum: '13.–17. Apr', month: 'April', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'Prüfungsvorbereitung' },
+  { n: 36, kw: 17, datum: '20.–24. Apr', month: 'April', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Frühjahrsferien' },
+  { n: 37, kw: 18, datum: '27. Apr – 1. Mai', month: 'Mai', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Frühjahrsferien' },
+  { n: 38, kw: 19, datum: '4.–8. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'T2-Puffer Repetition' },
+  { n: 39, kw: 20, datum: '11.–15. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 1, type: 'buffer', title: 'T2-Puffer', note: 'Auffahrt + Brücke frei' },
+  { n: 40, kw: 21, datum: '18.–22. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'T2-Puffer Konsolidierung' },
+  { n: 41, kw: 22, datum: '25.–29. Mai', month: 'Mai', trimester: 'T3', thema: 2, lessons: 2, type: 'buffer', title: 'T2-Puffer', note: 'Pfingstmontag frei' },
+  { n: 42, kw: 23, datum: '1.–5. Jun', month: 'Juni', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'Portfolio-Review' },
+  { n: 43, kw: 24, datum: '8.–12. Jun', month: 'Juni', trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', title: 'Gesamtwiederholung' },
+  { n: 44, kw: 25, datum: '15.–19. Jun', month: 'Juni', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Abschlussreflexion' },
+  { n: 45, kw: 26, datum: '22.–26. Jun', month: 'Juni', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Abschlussreflexion' },
+  { n: 46, kw: 27, datum: '29. Jun – 3. Jul', month: 'Juli', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Portfolio-Abgabe' },
+  { n: 47, kw: 28, datum: '6.–10. Jul', month: 'Juli', trimester: 'T3', thema: null, lessons: 3, type: 'buffer', title: 'Abschluss & Ausblick' },
+]
+
+const themas = [
+  {
+    nr: 1,
+    titel: 'Ins Berufsleben einsteigen',
+    lektionen: 21,
+    puffer: 8,
+    intensity: 'light',
+    perioden: ['Aug–Okt: Lehrvertrag, Rechte/Pflichten, Kommunikation', 'Nov: Lernorganisation & Ressourcen'],
+  },
+  {
+    nr: 2,
+    titel: 'Meinungen bilden und mitgestalten',
+    lektionen: 30,
+    puffer: 12,
+    intensity: 'dark',
+    perioden: ['Jan: Diskriminierung & Meinungsfreiheit', 'Feb–Mär: Mitwirkung & Standpunkte'],
+  },
+  {
+    nr: 3,
+    titel: 'Bewusst konsumieren und handeln',
+    lektionen: 33,
+    puffer: 13,
+    intensity: 'medium',
+    perioden: ['Sep–Okt: Bedürfnisse & Budget', 'Nov–Dez: Nachhaltigkeit & Kaufvertrag'],
+  },
+]
+
+// Semester-Split: 1 = Aug–Jan (n ≤ 24), 2 = Feb–Jul (n ≥ 25)
+const semesterOf = (n: number): 1 | 2 => (n <= 24 ? 1 : 2)
+const calendarWithSem = calendar.map((c) => ({ ...c, semester: semesterOf(c.n) }))
+
+const semesterSummary = ([1, 2] as const).map((s) => {
+  const cells = calendarWithSem.filter((c) => c.semester === s)
+  return {
+    code: s,
+    label: s === 1 ? 'Semester 1 · Aug – Jan' : 'Semester 2 · Feb – Jul',
+    weeks: cells.filter((c) => c.type !== 'holiday').length,
+    teaching: cells.filter((c) => c.type === 'teaching').reduce((sum, c) => sum + c.lessons, 0),
+    buffer: cells.filter((c) => c.type === 'buffer').reduce((sum, c) => sum + c.lessons, 0),
+    holidays: cells.filter((c) => c.type === 'holiday').length,
+  }
+})
+
+// Pre-group months per semester for SSR rendering (no client-side tab switching)
+type MonthGroup = { label: string; weeks: typeof calendarWithSem; lessons: number }
+const semesterColumns = ([1, 2] as const).map((s) => {
+  const cells = calendarWithSem.filter((c) => c.semester === s)
+  const groups: MonthGroup[] = []
+  let current: MonthGroup | null = null
+  for (const w of cells) {
+    const label = `${w.month} · ${w.trimester}`
+    if (!current || current.label !== label) {
+      current = { label, weeks: [], lessons: 0 }
+      groups.push(current)
+    }
+    current.weeks.push(w)
+    current.lessons += w.lessons
+  }
+  return { semester: s, groups }
+})
+---
+<Base title="Jahresplanung 1. Lehrjahr">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3 min-w-0">
+          <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="logo-black h-14 w-auto shrink-0" />
+          <span class="sr-only">BBW Berufsbildungsschule Winterthur</span>
+          <span class="hidden md:block pl-3 ml-1 border-l border-slate-200 text-xs uppercase tracking-wider text-slate-500 leading-tight">
+            ABU-Materialplattform<br />
+            <span class="normal-case tracking-normal text-slate-400">ABU Reform 2030</span>
+          </span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/" class="text-sm text-slate-600 hover:text-slate-900 font-medium">← Hauptplattform</a>
+          <span class="text-sm text-slate-500 hidden sm:block">{user.email}</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="jahresplanung()" x-cloak>
+      <!-- Title -->
+      <div class="mb-8">
+        <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · EFZ 3-Jährige · nRLP Bildungsrat 2026-01</p>
+        <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">ABU 1. Lehrjahr — Schuljahr 2025/2026</h1>
+        <p class="text-slate-600 mt-3 max-w-3xl">
+          39 Schulwochen · 3 Lektionen pro Woche · 84 Unterrichts­lektionen + 33 Puffer.
+          Fahre über eine Woche, um die geplanten Lebensbezüge und Kompetenzen aus dem nRLP einzusehen.
+        </p>
+      </div>
+
+      <!-- Summary stats -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+        <div class="stat-card"><p class="stat-label">Schulwochen</p><p class="stat-value">39</p></div>
+        <div class="stat-card"><p class="stat-label">Verfügbar</p><p class="stat-value">117 L.</p></div>
+        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">84 L.</p></div>
+        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">33 L.</p></div>
+        <div class="stat-card"><p class="stat-label">Ferienwochen</p><p class="stat-value">7</p></div>
+      </div>
+
+      <!-- Legend -->
+      <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
+        <span class="font-semibold text-slate-700 uppercase tracking-wider">Legende</span>
+        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema1"></span>Thema 1 — Einstieg</span>
+        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema3"></span>Thema 3 — Konsum</span>
+        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema2"></span>Thema 2 — Meinung</span>
+        <span class="flex items-center gap-2"><span class="legend-swatch cell-buffer"></span>Puffer / Repetition</span>
+        <span class="flex items-center gap-2"><span class="legend-swatch cell-holiday"></span>Ferien / Feiertag</span>
+        <span class="ml-auto text-slate-500 italic">Tipp: Hover über eine Woche</span>
+      </div>
+
+      <!-- Themen detail -->
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-slate-900 mb-4">Themen im 1. Lehrjahr</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          {themas.map((t) => (
+            <div class={`thema-card thema-card-${t.intensity}`}>
+              <div class="thema-header">
+                <span class="thema-nr">Thema {t.nr}</span>
+                <h3 class="thema-titel">{t.titel}</h3>
+              </div>
+              <dl class="grid grid-cols-3 gap-2 mb-4">
+                <div><dt class="thema-stat-label">Unterricht</dt><dd class="thema-stat-value">{t.lektionen} L.</dd></div>
+                <div><dt class="thema-stat-label">Puffer</dt><dd class="thema-stat-value">{t.puffer} L.</dd></div>
+                <div><dt class="thema-stat-label">Total</dt><dd class="thema-stat-value">{t.lektionen + t.puffer} L.</dd></div>
+              </dl>
+              <p class="thema-stat-label mb-1">Perioden</p>
+              <ul class="space-y-1 text-xs text-slate-700">
+                {t.perioden.map((p) => <li>· {p}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Timeline — two semesters side by side -->
+      <section class="bg-white border border-slate-200 rounded-lg p-6 mb-8 relative">
+        <h2 class="text-lg font-semibold text-slate-900 mb-5">Jahresübersicht (Schulwochen)</h2>
+
+        <div class="grid lg:grid-cols-2 gap-x-8 gap-y-6">
+          {semesterColumns.map((col, idx) => {
+            const s = semesterSummary[idx]
+            return (
+              <div>
+                <div class="flex items-baseline justify-between border-b border-slate-200 pb-2 mb-4">
+                  <h3 class="text-sm font-semibold text-[var(--brand-dark)] uppercase tracking-wider">{s.label}</h3>
+                  <span class="text-xs text-slate-500">{s.weeks} W · {s.teaching + s.buffer} L.</span>
+                </div>
+                {col.groups.map((group) => (
+                  <div class="mb-5 last:mb-0">
+                    <div class="flex items-baseline gap-3 mb-2">
+                      <h4 class="text-sm font-semibold text-slate-700">{group.label}</h4>
+                      <span class="text-xs text-slate-400">{group.weeks.length} W · {group.lessons} L.</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                      {group.weeks.map((w) => (
+                        <button
+                          x-on:mouseenter={`show(${w.n}, $event)`}
+                          x-on:mouseleave="hide()"
+                          x-on:focus={`show(${w.n}, $event)`}
+                          x-on:blur="hide()"
+                          class={`lesson-cell ${
+                            w.type === 'holiday' ? 'cell-holiday' :
+                            w.type === 'buffer' ? 'cell-buffer' :
+                            w.thema === 1 ? 'cell-thema1' :
+                            w.thema === 2 ? 'cell-thema2' :
+                            w.thema === 3 ? 'cell-thema3' : 'cell-buffer'
+                          }`}
+                        >
+                          <span class="cell-kw">KW {w.kw}</span>
+                          <span class="cell-lessons">{w.lessons > 0 ? `${w.lessons} L.` : '–'}</span>
+                          <span class="cell-title">{w.lb ? w.lb : (w.type === 'holiday' ? '★' : '·')}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )
+          })}
+        </div>
+
+        <!-- Floating tooltip -->
+        <div
+          x-show="active"
+          x-transition.opacity.duration.150ms
+          :style="`top:${tipY}px; left:${tipX}px;`"
+          class="tooltip-card"
+          @mouseenter="cancelHide()"
+          @mouseleave="hide()"
+        >
+          <template x-if="active">
+            <div>
+              <div class="flex items-start justify-between gap-3 mb-1.5">
+                <div>
+                  <p class="text-[10px] uppercase tracking-wider text-slate-400" x-text="`KW ${active.kw} · ${active.datum}`"></p>
+                  <p class="text-sm font-semibold text-slate-900" x-text="active.title"></p>
+                </div>
+                <span class="tip-badge" :class="cellClass(active)" x-text="active.type === 'holiday' ? 'Frei' : (active.type === 'buffer' ? 'Puffer' : 'T' + active.thema)"></span>
+              </div>
+              <p class="text-xs text-slate-500 mb-3" x-text="`${active.lessons} ${active.lessons === 1 ? 'Lektion' : 'Lektionen'}` + (active.note ? ' · ' + active.note : '')"></p>
+
+              <template x-if="active.lb && lookup[active.lb]">
+                <div class="border-t border-slate-200 pt-3">
+                  <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-0.5">Lebensbezug <span x-text="active.lb"></span></p>
+                  <p class="text-xs text-slate-700 italic mb-2.5" x-text="lookup[active.lb].lebensbezug_text"></p>
+
+                  <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Kompetenzen</p>
+                  <ul class="space-y-1.5">
+                    <template x-for="k in lookup[active.lb].kompetenzen" :key="k.nr">
+                      <li class="text-xs leading-snug text-slate-700">
+                        <span class="font-semibold text-[var(--brand-dark)]" x-text="k.nr"></span>
+                        <span x-text="' · ' + k.text"></span>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </template>
+
+              <template x-if="!active.lb && active.type === 'holiday'">
+                <p class="text-xs text-slate-500 italic border-t border-slate-200 pt-3">Schulfreie Woche — kein Unterricht.</p>
+              </template>
+              <template x-if="!active.lb && active.type === 'buffer'">
+                <p class="text-xs text-slate-500 italic border-t border-slate-200 pt-3">Pufferwoche für Repetition, Vertiefung oder Prüfungs­vorbereitung.</p>
+              </template>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <!-- Semester totals -->
+      <section class="grid md:grid-cols-2 gap-4">
+        {semesterSummary.map((s) => (
+          <div class="bg-white border border-slate-200 rounded-lg p-5">
+            <div class="flex items-baseline justify-between mb-3">
+              <h3 class="text-base font-semibold text-slate-900">{s.label}</h3>
+              <span class="text-xs text-slate-400">{s.weeks} Wochen</span>
+            </div>
+            <dl class="grid grid-cols-3 gap-2 text-xs">
+              <div>
+                <dt class="text-slate-500">Unterricht</dt>
+                <dd class="text-lg font-semibold text-[var(--brand-dark)]">{s.teaching}</dd>
+              </div>
+              <div>
+                <dt class="text-slate-500">Puffer</dt>
+                <dd class="text-lg font-semibold text-slate-700">{s.buffer}</dd>
+              </div>
+              <div>
+                <dt class="text-slate-500">Ferien</dt>
+                <dd class="text-lg font-semibold text-slate-400">{s.holidays}W</dd>
+              </div>
+            </dl>
+          </div>
+        ))}
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
+      Basis: nRLP 3-Jährige EFZ · ABU Reform 2030 — Bildungsrat 2026-01
+    </footer>
+  </div>
+
+  <script id="nrlp-lookup" type="application/json" set:html={JSON.stringify(lookup)} />
+  <script id="jp-calendar" type="application/json" set:html={JSON.stringify(calendar)} />
+
+  <script is:inline>
+    function jahresplanung() {
+      return {
+        active: null,
+        tipX: 0,
+        tipY: 0,
+        hideTimer: null,
+        lookup: JSON.parse(document.getElementById('nrlp-lookup').textContent),
+        calendar: JSON.parse(document.getElementById('jp-calendar').textContent),
+
+        cellClass(w) {
+          if (!w) return ''
+          if (w.type === 'holiday') return 'cell-holiday'
+          if (w.type === 'buffer') return 'cell-buffer'
+          if (w.thema === 1) return 'cell-thema1'
+          if (w.thema === 2) return 'cell-thema2'
+          if (w.thema === 3) return 'cell-thema3'
+          return 'cell-buffer'
+        },
+
+        show(n, ev) {
+          this.cancelHide()
+          const w = this.calendar.find((c) => c.n === n)
+          if (!w) return
+          const rect = ev.currentTarget.getBoundingClientRect()
+          const containerRect = ev.currentTarget.closest('section').getBoundingClientRect()
+          const tooltipWidth = 340
+          let x = rect.left - containerRect.left + rect.width / 2 - tooltipWidth / 2
+          x = Math.max(8, Math.min(x, containerRect.width - tooltipWidth - 8))
+          const y = rect.bottom - containerRect.top + 10
+          this.tipX = x
+          this.tipY = y
+          this.active = w
+        },
+
+        hide() {
+          this.hideTimer = setTimeout(() => { this.active = null }, 120)
+        },
+
+        cancelHide() {
+          if (this.hideTimer) { clearTimeout(this.hideTimer); this.hideTimer = null }
+        },
+      }
+    }
+  </script>
+
+  <style>
+    .stat-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+    }
+    .stat-card.stat-accent {
+      border-color: var(--brand);
+      background: var(--brand-tint);
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .stat-card.stat-accent .stat-label { color: var(--brand-dark); }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0.125rem;
+      line-height: 1.1;
+    }
+    .stat-card.stat-accent .stat-value { color: var(--brand-dark); }
+
+    .legend-swatch {
+      display: inline-block;
+      width: 1.5rem;
+      height: 0.875rem;
+      border-radius: 3px;
+    }
+
+    /* Lesson cells — single green palette, intensity = thema position in year */
+    .lesson-cell {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      min-width: 64px;
+      padding: 0.5rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      line-height: 1.2;
+      border: 1px solid transparent;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      cursor: pointer;
+    }
+    .lesson-cell:hover, .lesson-cell:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px -6px rgba(14, 110, 58, 0.35);
+      border-color: var(--brand-dark);
+      outline: none;
+      z-index: 5;
+    }
+    .cell-kw { font-size: 0.6rem; opacity: 0.75; font-weight: 500; }
+    .cell-lessons { font-weight: 700; font-size: 0.85rem; }
+    .cell-title { font-size: 0.6rem; opacity: 0.85; font-weight: 600; letter-spacing: 0.02em; }
+
+    /* T1 = light tint, T3 = medium green, T2 = dark green (matches teaching order) */
+    .cell-thema1 { background: var(--brand-tint); color: var(--brand-dark); border-color: rgba(14,110,58,0.18); }
+    .cell-thema3 { background: var(--brand); color: white; }
+    .cell-thema2 { background: var(--brand-dark); color: white; }
+    .cell-buffer {
+      background: white;
+      color: #475569;
+      border: 1px dashed #cbd5e1;
+    }
+    .cell-holiday {
+      background: repeating-linear-gradient(45deg, #f1f5f9, #f1f5f9 6px, #e2e8f0 6px, #e2e8f0 12px);
+      color: #94a3b8;
+      border: 1px solid #e2e8f0;
+    }
+    .cell-holiday .cell-title { color: #cbd5e1; }
+
+    .tooltip-card {
+      position: absolute;
+      width: 340px;
+      max-width: calc(100% - 2rem);
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 0.875rem 1rem;
+      box-shadow: 0 20px 40px -16px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(14, 110, 58, 0.08);
+      z-index: 40;
+      pointer-events: auto;
+    }
+    .tip-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      min-width: 0;
+      gap: 0;
+    }
+    .tip-badge.cell-buffer { border: 1px dashed #cbd5e1; background: white; color: #475569; }
+    .tip-badge.cell-holiday { background: #f1f5f9; color: #94a3b8; border: 1px solid #e2e8f0; }
+
+    /* Themen-Detail-Karten */
+    .thema-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-top: 3px solid var(--brand);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+    }
+    .thema-card-light { border-top-color: rgba(14,110,58,0.4); }
+    .thema-card-medium { border-top-color: var(--brand); }
+    .thema-card-dark { border-top-color: var(--brand-dark); }
+    .thema-header { margin-bottom: 1rem; }
+    .thema-nr {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-dark);
+    }
+    .thema-titel { font-size: 1rem; font-weight: 600; color: #0f172a; margin-top: 0.125rem; }
+    .thema-stat-label { font-size: 0.65rem; text-transform: uppercase; font-weight: 600; color: #64748b; letter-spacing: 0.04em; }
+    .thema-stat-value { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-top: 0.125rem; }
+  </style>
+</Base>

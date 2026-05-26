@@ -31,6 +31,12 @@ const tiles = [
     blurb: 'Eigenes Material erfassen, mit nRLP-Taxonomie versehen und KT1 zur Review vorlegen.',
     cta: 'Zum Formular',
   },
+  {
+    href: '/jahresplanung',
+    title: 'Jahresplanung 1. Lehrjahr',
+    blurb: 'Schuljahr 2025/2026 auf einen Blick: 39 Wochen, 3 Themen, alle Lebensbezüge und Kompetenzen aus dem nRLP — interaktiv und hoverbar.',
+    cta: 'Jahr ansehen',
+  },
 ]
 ---
 <Base title="Hauptplattform">
@@ -64,7 +70,7 @@ const tiles = [
         </p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {tiles.map(t => (
           <a href={t.href} class="wappen-tile group">
             <div class="wappen-lion" aria-hidden="true"></div>
