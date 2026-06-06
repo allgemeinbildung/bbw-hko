@@ -12,6 +12,8 @@ import {
 } from 'docx'
 
 import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson } from './types'
+import { skNameByNr } from '../sk-labels'
+import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from './sprachfoerderung'
 
 const A4_W = 11906
 const A4_H = 16838
@@ -297,14 +299,14 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
     children: [
       badgeRun('KOMP ' + (sit.nrlp?.nr || ''), akzent, 'outline'),
       new TextRun({ text: '  ' }),
-      badgeRun('SIT ' + sit.situation + ' · ' + (sit.emotion_tag || ''), akzent),
+      badgeRun('Herausforderung ' + sit.situation + ' · ' + (sit.emotion_tag || ''), akzent),
     ],
     spacing: { after: 200 },
   }))
   els.push(h(sit.titel || '', 'title'))
   els.push(p(sit.modul_titel || '', { run: { color: COLOR.inkSoft, size: 22, italics: true } }))
   if (sit.sub_facette) {
-    els.push(p('Subfacette ' + (sit.sub_facette.buchstabe || '') + ' — ' + (sit.sub_facette.label || ''),
+    els.push(p('Herausforderung ' + (sit.sub_facette.buchstabe || '') + ': ' + (sit.sub_facette.label || ''),
       { run: { color: akzent, bold: true, size: 18 } }))
   }
   els.push(spacer(120))
@@ -364,10 +366,11 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   if (sit.quellen_anker) {
     els.push(p('QUELLEN', { run: { color: akzent, bold: true, size: 14 } }))
     sit.quellen_anker.forEach((q) => {
+      const meta = [q.unterueberschrift, [q.ref, q.seiten].filter(Boolean).join(' · ')].filter(Boolean).join('  ·  ')
       els.push(new Paragraph({
         children: [
-          sourceRefRun(q.ref, akzent),
-          new TextRun({ text: '  ·  ' + q.titel + '  ·  ' + q.seiten, size: 18, color: COLOR.inkSoft }),
+          new TextRun({ text: q.titel || '', bold: true, size: 18 }),
+          ...(meta ? [new TextRun({ text: '  ·  ' + meta, size: 18, color: COLOR.inkSoft })] : []),
         ],
         spacing: { after: 60 },
         indent: { left: 200 },
@@ -380,7 +383,7 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
 
 function situationBlock(sit: SituationJson, akzent: string, light: string): any[] {
   const els: any[] = []
-  els.push(...sectionHead('02 · Situation', sit.titel || '', akzent))
+  els.push(...sectionHead('02 · Herausforderung', sit.titel || '', akzent))
   els.push(new Paragraph({
     children: [
       new TextRun({ text: 'BERUF ', color: COLOR.inkMute, size: 14, bold: true }),
@@ -535,6 +538,21 @@ function handlungsproduktBlock(sit: SituationJson, akzent: string, withField: bo
     children: [badgeRun(hp.format || '', akzent, 'outline')],
     spacing: { after: 160 },
   }))
+  // Cluster 6 — "Das lieferst du ab": konkrete Abgabe(n), parallel zum HTML-DocS-Callout
+  if (hp.abgaben?.length) {
+    els.push(p('DAS LIEFERST DU AB', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+    hp.abgaben.filter(Boolean).forEach((a) => {
+      els.push(new Paragraph({
+        children: [
+          new TextRun({ text: '•  ', color: akzent, bold: true, size: 20 }),
+          new TextRun({ text: a, size: 20 }),
+        ],
+        spacing: { after: 30 },
+        indent: { left: 200 },
+      }))
+    })
+    els.push(spacer(120))
+  }
   els.push(p(hp.beschreibung || '', { run: { size: 22 }, spacing: { after: 160, line: 360, lineRule: LineRuleType.AUTO } }))
   hp.schritte?.forEach((s, i) => {
     els.push(new Paragraph({
@@ -578,7 +596,7 @@ function austauschBlock(set: SetJson | null | undefined, sit: SituationJson | nu
     }
   }
   if (da) {
-    els.push(p('DEKONTEXTUALISIERUNG', { run: { color: akzent, bold: true, size: 14 } }))
+    els.push(p('TRANSFER', { run: { color: akzent, bold: true, size: 14 } }))
     els.push(p(da.auftrag || '', { run: { bold: true, size: 20 } }))
     els.push(p(`Format: ${da.format} · Gewicht: ${da.gewicht_prozent}% · Abgabe: ${da.abgabe}`,
       { run: { color: COLOR.inkSoft, size: 16 } }))
@@ -629,10 +647,10 @@ export function buildDocS({ sit, set, abteilung, mode, logoPng = null }: BuildDo
     children.push(...sectionHead('06 · Selbstcheck', 'Reflexion', akzent))
     children.push(...reflexionItems(sit, akzent, true, 35))
     children.push(pageBreak())
-    children.push(...sectionHead('07 · Austausch & Transfer', 'Austausch & Dekontextualisierung', akzent))
+    children.push(...sectionHead('07 · Austausch & Transfer', 'Austausch & Transfer', akzent))
     children.push(...austauschBlock(set, sit, akzent))
     children.push(spacer(120))
-    children.push(p('DEIN TRANSFER (5–7 SAETZE)', { run: { color: akzent, bold: true, size: 14 } }))
+    children.push(p('DEIN TRANSFER (5–7 SÄTZE)', { run: { color: akzent, bold: true, size: 14 } }))
     children.push(...schreibfeld(55))
   } else {
     children.push(pageBreak())
@@ -647,7 +665,7 @@ export function buildDocS({ sit, set, abteilung, mode, logoPng = null }: BuildDo
     children.push(pageBreak())
     children.push(...sectionHead('06 · Selbstcheck', 'Reflexion', akzent))
     children.push(...reflexionItems(sit, akzent, false))
-    children.push(...sectionHead('07 · Austausch & Transfer', 'Austausch & Dekontextualisierung', akzent))
+    children.push(...sectionHead('07 · Austausch & Transfer', 'Austausch & Transfer', akzent))
     children.push(...austauschBlock(set, sit, akzent))
   }
 
@@ -686,7 +704,10 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
   }))
   children.push(h(hs.titel || '', 'title'))
   children.push(spacer(80))
-  children.push(...sectionHead('01 · Hybrid-Situation', 'Situation', akzent))
+  children.push(...sectionHead('01 · Hybrid-Herausforderung', 'Herausforderung', akzent))
+  children.push(p(kn.hybrid_situation?.definition_kurz
+    || 'Eine Hybrid-Herausforderung bündelt die drei Herausforderungen (A, B, C) und ihre Kompetenzen in einer neuen, zusammengesetzten Aufgabe.',
+    { run: { italics: true, color: COLOR.inkSoft, size: 18 }, spacing: { after: 100 } }))
   children.push(new Paragraph({
     children: [
       new TextRun({ text: 'BERUF ', color: COLOR.inkMute, size: 14, bold: true }),
@@ -715,7 +736,7 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
   children.push(pageBreak())
   if (t.typ === 'fachgespraech') {
     children.push(...sectionHead('03 · Vorbereitung', 'Notizen zu den Fragen', akzent))
-    children.push(p('Stichwortartige Notizen zu jeder Frage. Im Gespraech sprichst du frei.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p('Stichwortartige Notizen zu jeder Frage. Im Gespräch sprichst du frei.', { run: { color: COLOR.inkSoft, size: 18 } }))
     t.fragestruktur?.forEach((f) => {
       children.push(new Paragraph({
         children: [
@@ -729,7 +750,7 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
       children.push(...schreibfeld(25))
     })
   } else if (t.typ === 'mini_case_schriftlich') {
-    children.push(...sectionHead('03 · Aufgaben', 'Pruefungsaufgaben', akzent))
+    children.push(...sectionHead('03 · Aufgaben', 'Prüfungsaufgaben', akzent))
     children.push(p('Bearbeite alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson, kein Internet.', { run: { color: COLOR.inkSoft, size: 18 } }))
     t.aufgaben?.forEach((a) => {
       children.push(new Paragraph({
@@ -744,11 +765,11 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
       children.push(...schreibfeld(55))
     })
   } else {
-    children.push(...sectionHead('03 · Werkwahl', 'Welches Handlungsprodukt waehle ich?', akzent))
-    children.push(p('Begruende deine Wahl in 2–3 Saetzen.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(...sectionHead('03 · Werkwahl', 'Welches Handlungsprodukt wähle ich?', akzent))
+    children.push(p('Begründe deine Wahl in 2–3 Sätzen.', { run: { color: COLOR.inkSoft, size: 18 } }))
     children.push(...schreibfeld(28))
     children.push(...sectionHead('04 · Transfer-Reflexion', 'Drei Reflexionsfragen', akzent))
-    children.push(p('Beantworte schriftlich, insgesamt 200–250 Woerter.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p('Beantworte schriftlich, insgesamt 200–250 Wörter.', { run: { color: COLOR.inkSoft, size: 18 } }))
     t.reflexionsfragen?.forEach((f, i) => {
       children.push(new Paragraph({
         children: [
@@ -801,9 +822,10 @@ export interface BuildKnLpOpts {
   set: SetJson | null
   abteilung?: string
   logoPng?: ArrayBuffer | Uint8Array | null
+  sits?: (SituationJson | null)[]
 }
 
-export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null }: BuildKnLpOpts): Document {
+export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = [] }: BuildKnLpOpts): Document {
   const akzent = COLOR.neutral
   const light = COLOR.neutralLight
   const docCode = 'DOC-KN-LP'
@@ -824,13 +846,65 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null }: Build
   children.push(h(prinzip?.kern_kompetenzversprechen || kn.kern_kompetenzversprechen || '', 'title'))
   children.push(p(kn.mehrdeutigkeits_pflicht || '', { run: { italics: true, color: COLOR.inkSoft, size: 20 } }))
 
-  children.push(...sectionHead('01 · Subfacetten A·B·C', 'Was die drei Situationen versprechen', akzent))
+  // 00 · Lehrplan-Bezug + Sprachförderung (Cluster 1 + 3) — from situation data
+  {
+    const real = (sits || []).filter((s): s is SituationJson => Boolean(s))
+    const ref = real[0]?.nrlp
+    const kompId = ref?.kompetenz_id || ref?.nr || kn.kompetenz_nr || ''
+    const kompText = ref?.kompetenz_text || prinzip?.kern_kompetenzversprechen || kn.kern_kompetenzversprechen || ''
+    const lbId = ref?.lebensbezug_id || ref?.lebensbezug || ''
+    const lbText = ref?.lebensbezug_text || '—'
+    const aspekte = prinzip?.aspekte
+      ? Object.entries(prinzip.aspekte).map(([a, it]) => a + (it ? ` (${it})` : ''))
+      : Array.from(new Set(real.flatMap((s) => (s.nrlp?.gesellschaft || []).map((g) => g.aspekt + (g.iteration ? ` (${g.iteration})` : '')))))
+    const smIds = unitSprachmodusIds(real)
+    const skSet = new Set<number>()
+    real.forEach((s) => (s.nrlp?.sk || []).forEach((n) => skSet.add(n)))
+    if (!skSet.size && prinzip?.sk_schnittmenge_kn?.primary) prinzip.sk_schnittmenge_kn.primary.forEach((n) => skSet.add(n))
+    const skList = Array.from(skSet).sort((a, b) => a - b)
+
+    children.push(...sectionHead('00 · Lehrplan-Bezug', 'Vollständige Metadaten dieser Einheit', akzent))
+    children.push(dataTable(
+      ['Feld', 'Wert'],
+      [
+        [`Kompetenz ${kompId}`, kompText],
+        [`Lebensbezug ${lbId}`, lbText],
+        ['Gesellschaftliche Aspekte', aspekte.length ? aspekte.join(' · ') : '—'],
+        ['Sprachmodi', smIds.length ? smIds.map((id) => `${id} ${lookupSprachmodus(id)?.bezeichnung || ''}`).join(' · ') : '—'],
+        ['Schlüsselkompetenzen', skList.length ? skList.map((n) => `SK ${n} ${skNameByNr(n)}`).join(' · ') : '—'],
+      ],
+      akzent, [30, 70],
+    ))
+
+    children.push(...sectionHead('00 · Sprachförderung', 'Welche Sprachmodi geübt werden — mit Methode', akzent))
+    const lehrgang = real[0]?.lehrgang || prinzip?.lehrgang
+    const smDetails = kompetenzSprachmodusDetails(kompId, lehrgang)
+    rezeptionFirst(smIds)
+      .map((id) => lookupSprachmodus(id))
+      .filter((sm): sm is NonNullable<typeof sm> => Boolean(sm))
+      .forEach((sm) => {
+        children.push(p(`${sm.id} · ${sm.bezeichnung}`, { run: { bold: true, color: akzent, size: 18 }, spacing: { before: 100, after: 20 } }))
+        children.push(p('Ziel: ' + sm.ziel, { run: { size: 16 } }))
+        sm.schritte.forEach((s, i) => {
+          children.push(new Paragraph({ children: [new TextRun({ text: `${i + 1}. ${s}`, size: 16 })], spacing: { after: 20 }, indent: { left: 200 } }))
+        })
+        children.push(p('Material: ' + sm.material.join(' · '), { run: { size: 16, color: COLOR.inkSoft } }))
+        const detail = smDetails.get(sm.bezeichnung)
+        if (detail) children.push(p('In dieser Einheit konkret: ' + detail, { run: { size: 16, color: akzent } }))
+      })
+    if (smIds.includes('SM1') || smIds.includes('SM2')) {
+      children.push(p(HOERVERSTAENDNIS_HINWEIS, { run: { italics: true, color: COLOR.inkSoft, size: 16 }, spacing: { before: 100 } }))
+    }
+  }
+
+  children.push(pageBreak())
+  children.push(...sectionHead('01 · Herausforderungen A·B·C', 'Was die drei Herausforderungen versprechen', akzent))
   if (prinzip?.sub_facetten) {
     ;['A', 'B', 'C'].forEach((letter) => {
       const sf = prinzip.sub_facetten![letter]
       if (!sf) return
       children.push(new Paragraph({
-        children: [new TextRun({ text: 'SUBFACETTE ' + letter, bold: true, color: akzent, size: 14 })],
+        children: [new TextRun({ text: 'HERAUSFORDERUNG ' + letter, bold: true, color: akzent, size: 14 })],
         spacing: { before: 100, after: 30 },
       }))
       children.push(p(sf.facette, { run: { bold: true, size: 22 } }))
@@ -839,7 +913,7 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null }: Build
   }
 
   if (prinzip?.zirkularitaet) {
-    children.push(...sectionHead('02 · Zirkularitaet', 'R1 jetzt — Ausblick T4 / T7', akzent))
+    children.push(...sectionHead('02 · Zirkularität', 'R1 jetzt — Ausblick T4 / T7', akzent))
     ;([
       ['R1 · Aktuell', prinzip.zirkularitaet.r1_aktuell],
       ['R2 · Voraussicht', prinzip.zirkularitaet.r2_voraussicht],
@@ -869,7 +943,10 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null }: Build
   }
 
   children.push(pageBreak())
-  children.push(...sectionHead('04 · Hybrid-Situation', hs.titel || '', akzent))
+  children.push(...sectionHead('04 · Hybrid-Herausforderung', hs.titel || '', akzent))
+  children.push(p(hs.definition_lang
+    || 'Die Hybrid-Herausforderung ist die Prüfungssituation des Kompetenznachweises: Sie führt die drei vorangehenden Herausforderungen (A, B, C) und die darin geübten Kompetenzen in einer neuen, zusammengesetzten Aufgabe zusammen und prüft so den Transfer.',
+    { run: { italics: true, color: COLOR.inkSoft, size: 18 }, spacing: { after: 100 } }))
   children.push(new Paragraph({
     children: [
       new TextRun({ text: 'BERUF ', color: COLOR.inkMute, size: 14, bold: true }),
@@ -888,9 +965,9 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null }: Build
     })
   }
   if (hs.alignment_note?.subfacetten_mapping) {
-    children.push(...sectionHead('05 · Alignment', 'Welche Subfacette welches Szenen-Element aktiviert', akzent))
+    children.push(...sectionHead('05 · Alignment', 'Welche Herausforderung welches Szenen-Element aktiviert', akzent))
     children.push(dataTable(
-      ['Subfacette', 'Szenen-Element'],
+      ['Herausforderung', 'Szenen-Element'],
       hs.alignment_note.subfacetten_mapping.map((m) => [
         new Paragraph({ children: [new TextRun({ text: m.sit_letter, bold: true, size: 22, font: 'Consolas' })] }),
         m.scene_element,
@@ -901,7 +978,7 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null }: Build
 
   ;(kn.kn_typen || []).forEach((kt, idx) => {
     children.push(pageBreak())
-    children.push(...sectionHead(`06.${idx + 1} · Durchfuehrung`, kt.label, akzent))
+    children.push(...sectionHead(`06.${idx + 1} · Durchführung`, kt.label, akzent))
     children.push(new Paragraph({
       children: [
         new TextRun({ text: 'Format: ', color: akzent, bold: true, size: 18 }),

@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro'
+
+if (Astro.locals.user) return Astro.redirect('/')
+---
+<Base title="Materialplattform · BBW">
+  <div class="min-h-screen bg-white flex flex-col">
+
+    <!-- Slim header bar -->
+    <header class="border-b border-slate-100 bg-white sticky top-0 z-10">
+      <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+        <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="logo-black h-12 w-auto" />
+        <a href="/login" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+          Anmelden &rarr;
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="flex-1 flex flex-col items-center justify-center px-6 py-20 text-center">
+
+      <!-- Badge lockup -->
+      <div class="mb-12">
+        <img
+          src="/abu-2030-badge.png"
+          alt="ABU Reform 2030"
+          class="h-56 w-auto"
+          onerror="this.style.display='none'"
+        />
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight mb-4">
+        Materialplattform
+      </h1>
+      <p class="text-lg text-slate-600 max-w-lg mb-2">
+        Unterrichtseinheiten und Situationen für die <strong>ABU Reform 2030</strong>
+      </p>
+      <p class="text-sm text-slate-400 mb-12">
+        Für Lehrpersonen der Berufsbildungsschule Winterthur
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-3 justify-center mb-20">
+        <a
+          href="/login"
+          class="px-8 py-3 rounded-lg text-white font-semibold transition hover:opacity-90"
+          style="background: var(--brand)"
+        >
+          Anmelden
+        </a>
+        <a
+          href="/registrieren"
+          class="px-8 py-3 rounded-lg border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition"
+        >
+          Konto erstellen
+        </a>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full">
+
+        <!-- Einheiten — primary -->
+        <div class="lion-bg border border-slate-200 rounded-xl p-6 text-left hover:border-[#0E6E3A] transition-colors" style="border-top: 3px solid var(--brand)">
+          <div class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--brand)">Einheiten</div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Katalog Einheiten</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Komplette Unterrichtseinheit — 3 Situationen A/B/C, Kompetenznachweis und
+            Begleitdokument — als ZIP-Paket herunterladen und sofort unterrichten.
+          </p>
+        </div>
+
+        <!-- Material einreichen — primary -->
+        <div class="lion-bg border border-slate-200 rounded-xl p-6 text-left hover:border-[#0E6E3A] transition-colors" style="border-top: 3px solid var(--brand)">
+          <div class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--brand)">Materialien</div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Material einreichen</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Eigenes Unterrichtsmaterial mit nRLP-Taxonomie erfassen und KT1 zur
+            Prüfung und Freigabe vorlegen.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Situationen — secondary footnote -->
+      <p class="text-xs text-slate-400 mt-5">
+        Auch verfügbar: 60 einzelne Situationen (A–E) im Pilot-Katalog
+      </p>
+
+    </section>
+
+    <footer class="border-t border-slate-100 py-4 px-6 text-center text-xs text-slate-400">
+      BBW Berufsbildungsschule Winterthur &middot; ABU Reform 2030
+    </footer>
+
+  </div>
+</Base>

@@ -1,12 +1,15 @@
 import type { ReactNode } from 'react'
 import { A4Page, Badge, SectionHead, sitColors } from './chrome'
-import type { KnJson, KnTyp, PrinzipJson, SetJson } from '../../../lib/einheiten/types'
+import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson } from '../../../lib/einheiten/types'
+import { skNameByNr } from '../../../lib/sk-labels'
+import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from '../../../lib/einheiten/sprachfoerderung'
 
 export interface DocKnLpProps {
   kn: KnJson
   prinzip: PrinzipJson | null
   set: SetJson | null
   abteilung?: string
+  sits?: (SituationJson | null)[]
 }
 
 function LpPage({ kn, abteilung, docCode, pageNum, pageTotal, docTitel, children }: { kn: KnJson; abteilung?: string; docCode: string; pageNum: number; pageTotal: number; docTitel?: string; children: ReactNode }) {
@@ -41,7 +44,7 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
       <p className="cockpit-sub" style={{ fontStyle: 'italic', fontSize: '10pt', marginBottom: '5mm' }}>
         {kn.mehrdeutigkeits_pflicht}
       </p>
-      <SectionHead num="01 · Subfacetten A · B · C">Was die drei Situationen versprechen</SectionHead>
+      <SectionHead num="01 · Herausforderungen A · B · C">Was die drei Herausforderungen versprechen</SectionHead>
       {prinzip?.sub_facetten && (
         <div className="cockpit-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr', gap: '4mm 5mm' }}>
           {['A', 'B', 'C'].map((letter) => {
@@ -49,7 +52,7 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
             if (!sf) return null
             return (
               <div className="cockpit-card" key={letter} style={{ padding: '3mm 4mm' }}>
-                <h4>Subfacette {letter}</h4>
+                <h4>Herausforderung {letter}</h4>
                 <div className="big" style={{ fontSize: '10pt', marginBottom: '1.5mm', lineHeight: 1.2 }}>{sf.facette}</div>
                 <p style={{ fontSize: '8pt', color: 'var(--ink-soft)', margin: 0, lineHeight: 1.35 }}>
                   <strong>Konfliktart:</strong> {sf.konfliktart}
@@ -61,7 +64,7 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
       )}
       {prinzip?.zirkularitaet && (
         <>
-          <SectionHead num="02 · Zirkularitaet">R1 jetzt — Ausblick T4 / T7</SectionHead>
+          <SectionHead num="02 · Zirkularität">R1 jetzt — Ausblick T4 / T7</SectionHead>
           <div className="cockpit-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr', gap: '4mm 5mm' }}>
             <div className="cockpit-card" style={{ padding: '3mm 4mm' }}>
               <h4>R1 · Aktuell</h4>
@@ -97,6 +100,9 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
               ))}
             </tbody>
           </table>
+          <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginTop: '2.5mm', maxWidth: '160mm', lineHeight: 1.4 }}>
+            Der Bogen zeigt den inhaltlichen Aufbau A → B → C. Die Reihenfolge im Unterricht ist frei wählbar — du kannst Herausforderungen weglassen oder umstellen. Im KN wird nur geprüft, was tatsächlich geübt wurde.
+          </p>
         </>
       )}
     </LpPage>
@@ -109,7 +115,11 @@ function DocKnLpHybrid({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; abte
     <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · HYBRID"
             docTitel={hs?.titel}
             pageNum={pageNum} pageTotal={pageTotal}>
-      <SectionHead num="04 · Hybrid-Situation">{hs?.titel}</SectionHead>
+      <SectionHead num="04 · Hybrid-Herausforderung">{hs?.titel}</SectionHead>
+      <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', fontStyle: 'italic', margin: '0 0 3mm', maxWidth: '170mm' }}>
+        {hs?.definition_lang
+          || 'Die Hybrid-Herausforderung ist die Prüfungssituation des Kompetenznachweises: Sie führt die drei vorangehenden Herausforderungen (A, B, C) und die darin geübten Kompetenzen in einer neuen, zusammengesetzten Aufgabe zusammen und prüft so den Transfer.'}
+      </p>
       <div className="sit-meta">
         <div className="item"><strong>Beruf</strong>{hs?.persona?.beruf}</div>
         <div className="item"><strong>Betrieb</strong>{hs?.persona?.betrieb}</div>
@@ -128,11 +138,11 @@ function DocKnLpHybrid({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; abte
           </ul>
         </>
       )}
-      <SectionHead num="05 · Alignment">Welche Subfacette welches Szenen-Element aktiviert</SectionHead>
+      <SectionHead num="05 · Alignment">Welche Herausforderung welches Szenen-Element aktiviert</SectionHead>
       <table className="alignment-table">
         <thead>
           <tr>
-            <th style={{ width: '14mm' }}>Subfacette</th>
+            <th style={{ width: '14mm' }}>Herausforderung</th>
             <th>Szenen-Element</th>
           </tr>
         </thead>
@@ -228,12 +238,12 @@ function KnTypCardLP({ knTyp }: { knTyp: KnTyp }) {
 
 function DocKnLpDurchfuehrungIntro({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; abteilung?: string; pageNum: number; pageTotal: number }) {
   return (
-    <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · DURCHFUEHRUNG"
+    <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · DURCHFÜHRUNG"
             docTitel={kn.hybrid_situation?.titel}
             pageNum={pageNum} pageTotal={pageTotal}>
-      <SectionHead num="06 · Durchfuehrung">Drei KN-Typen zur Auswahl</SectionHead>
+      <SectionHead num="06 · Durchführung">Drei KN-Typen zur Auswahl</SectionHead>
       <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
-        Alle drei Typen pruefen denselben Kompetenznachweis auf der gleichen Hybrid-Situation. Du waehlst pro Klasse oder pro Lernende/r, welcher Typ zum Einsatz kommt. K-Stufen-Hinweise sind nur fuer dich, nicht fuer Lernende sichtbar.
+        Alle drei Typen prüfen denselben Kompetenznachweis auf der gleichen Hybrid-Herausforderung. Du wählst pro Klasse oder pro Lernende/r, welcher Typ zum Einsatz kommt. K-Stufen-Hinweise sind nur für dich, nicht für Lernende sichtbar.
       </p>
       {kn.kn_typen?.[0] && <KnTypCardLP knTyp={kn.kn_typen[0]} />}
     </LpPage>
@@ -242,7 +252,7 @@ function DocKnLpDurchfuehrungIntro({ kn, abteilung, pageNum, pageTotal }: { kn: 
 
 function DocKnLpKnTyp({ kn, abteilung, knTyp, sectionNr, pageNum, pageTotal }: { kn: KnJson; abteilung?: string; knTyp: KnTyp; sectionNr: string; pageNum: number; pageTotal: number }) {
   return (
-    <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · DURCHFUEHRUNG"
+    <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · DURCHFÜHRUNG"
             docTitel={kn.hybrid_situation?.titel}
             pageNum={pageNum} pageTotal={pageTotal}>
       <SectionHead num={sectionNr}>{knTyp.label}</SectionHead>
@@ -291,7 +301,7 @@ function DocKnLpBewertung({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; a
         </tbody>
       </table>
       <h4 style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '5mm', marginBottom: '2mm' }}>
-        Niveaubaender
+        Niveaubänder
       </h4>
       <div className="niveau-legende">
         {rs.niveaubaender?.map((n, i) => (
@@ -321,15 +331,129 @@ function DocKnLpBewertung({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; a
   )
 }
 
-export function DocKnLp({ kn, prinzip, set, abteilung }: DocKnLpProps) {
+function MetaRow({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <tr>
+      <td style={{ width: '34mm', fontWeight: 600, color: 'var(--sit-akzent)', verticalAlign: 'top' }}>{label}</td>
+      <td>{children}</td>
+    </tr>
+  )
+}
+
+function DocKnLpMetadaten({ kn, prinzip, sits = [], abteilung, pageNum, pageTotal }: { kn: KnJson; prinzip: PrinzipJson | null; sits?: (SituationJson | null)[]; abteilung?: string; pageNum: number; pageTotal: number }) {
+  const real = sits.filter((s): s is SituationJson => Boolean(s))
+  const ref = real[0]?.nrlp
+  const kompId = ref?.kompetenz_id || ref?.nr || kn.kompetenz_nr
+  const kompText = ref?.kompetenz_text || prinzip?.kern_kompetenzversprechen || kn.kern_kompetenzversprechen
+  const lbId = ref?.lebensbezug_id || ref?.lebensbezug
+  const lbText = ref?.lebensbezug_text
+
+  // Aspekte: prefer prinzip.aspekte (aspekt→iteration), else union of sit gesellschaft
+  const aspekte: { aspekt: string; iteration?: string }[] = prinzip?.aspekte
+    ? Object.entries(prinzip.aspekte).map(([aspekt, iteration]) => ({ aspekt, iteration: String(iteration) }))
+    : Array.from(new Map(real.flatMap((s) => s.nrlp?.gesellschaft || []).map((g) => [g.aspekt, g])).values())
+
+  // Sprachmodi (union, ordered) + SK (union)
+  const smIds = unitSprachmodusIds(real)
+  const lehrgang = real[0]?.lehrgang || prinzip?.lehrgang
+  const smDetails = kompetenzSprachmodusDetails(kompId, lehrgang)
+  const skSet = new Set<number>()
+  real.forEach((s) => (s.nrlp?.sk || []).forEach((n) => skSet.add(n)))
+  if (!skSet.size && prinzip?.sk_schnittmenge_kn?.primary) prinzip.sk_schnittmenge_kn.primary.forEach((n) => skSet.add(n))
+  const skList = Array.from(skSet).sort((a, b) => a - b)
+
+  return (
+    <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · LEHRPLAN"
+            docTitel={`KN ${kn.kompetenz_nr}`}
+            pageNum={pageNum} pageTotal={pageTotal}>
+      <div className="badge-row" style={{ marginBottom: '4mm' }}>
+        <Badge variant="outline">Lehrperson</Badge>
+        <Badge>Lehrplan-Bezug &amp; Sprachförderung</Badge>
+      </div>
+      <SectionHead num="00 · Lehrplan-Bezug">Vollständige Metadaten dieser Einheit</SectionHead>
+      <table className="alignment-table" style={{ fontSize: '9.5pt' }}>
+        <tbody>
+          <MetaRow label={`Kompetenz ${kompId || ''}`}>{kompText}</MetaRow>
+          <MetaRow label={`Lebensbezug ${lbId || ''}`}>{lbText || <span style={{ color: 'var(--ink-mute)' }}>—</span>}</MetaRow>
+          <MetaRow label="Gesellschaftliche Aspekte">
+            {aspekte.length
+              ? aspekte.map((a, i) => (
+                  <span key={i} style={{ marginRight: '2mm' }}>{a.aspekt}{a.iteration ? ` (${a.iteration})` : ''}{i < aspekte.length - 1 ? ' ·' : ''}</span>
+                ))
+              : '—'}
+          </MetaRow>
+          <MetaRow label="Sprachmodi">
+            {smIds.length
+              ? smIds.map((id) => {
+                  const sm = lookupSprachmodus(id)
+                  return <span key={id} style={{ marginRight: '2mm' }}><strong>{id}</strong> {sm?.bezeichnung}</span>
+                })
+              : '—'}
+          </MetaRow>
+          <MetaRow label="Schlüsselkompetenzen">
+            {skList.length
+              ? skList.map((n, i) => (
+                  <span key={n}><strong>SK {n}</strong> {skNameByNr(n)}{i < skList.length - 1 ? ' · ' : ''}</span>
+                ))
+              : '—'}
+          </MetaRow>
+        </tbody>
+      </table>
+
+      <SectionHead num="00 · Sprachförderung">Welche Sprachmodi geübt werden — mit Methode</SectionHead>
+      {smIds.length ? (
+        <div>
+          {rezeptionFirst(smIds)
+            .map((id) => lookupSprachmodus(id))
+            .filter((sm): sm is NonNullable<typeof sm> => Boolean(sm))
+            .map((sm) => {
+              const detail = smDetails.get(sm.bezeichnung)
+              return (
+                <div className="cockpit-card" key={sm.id} style={{ padding: '3mm 4mm', marginBottom: '2.5mm' }}>
+                  <h4>{sm.id} · {sm.bezeichnung}</h4>
+                  <p style={{ fontSize: '9pt', margin: '1mm 0 0.5mm' }}><strong>Ziel:</strong> {sm.ziel}</p>
+                  <p style={{ fontSize: '8.5pt', margin: '0 0 0.5mm', color: 'var(--ink-soft)' }}><strong>Vorgehen:</strong></p>
+                  <ol style={{ fontSize: '8.5pt', lineHeight: 1.4, margin: '0 0 1mm', paddingLeft: '4mm' }}>
+                    {sm.schritte.map((s, i) => <li key={i}>{s}</li>)}
+                  </ol>
+                  <p style={{ fontSize: '8.5pt', margin: 0, color: 'var(--ink-soft)' }}>
+                    <strong>Material:</strong> {sm.material.join(' · ')}
+                  </p>
+                  {detail && (
+                    <p style={{ fontSize: '8.5pt', margin: '1mm 0 0', color: 'var(--sit-akzent)' }}>
+                      <strong>In dieser Einheit konkret:</strong> {detail}
+                    </p>
+                  )}
+                </div>
+              )
+            })}
+        </div>
+      ) : (
+        <p style={{ fontSize: '9.5pt', color: 'var(--ink-mute)' }}>Keine Sprachmodi hinterlegt.</p>
+      )}
+      {(smIds.includes('SM1') || smIds.includes('SM2')) && (
+        <p style={{
+          fontSize: '8.5pt', color: 'var(--ink-soft)', marginTop: '3mm',
+          padding: '2.5mm 3mm', borderLeft: '3px solid var(--sit-mid)', background: 'var(--sit-light)',
+          lineHeight: 1.45,
+        }}>
+          {HOERVERSTAENDNIS_HINWEIS}
+        </p>
+      )}
+    </LpPage>
+  )
+}
+
+export function DocKnLp({ kn, prinzip, set, abteilung, sits }: DocKnLpProps) {
   const style = sitColors(null)
   const kt = kn.kn_typen || []
-  const total = 3 + kt.length + 1
+  const total = 4 + kt.length + 1
   return (
     <div style={style}>
-      <DocKnLpKontext kn={kn} prinzip={prinzip} set={set} abteilung={abteilung} pageNum={1} pageTotal={total} />
-      <DocKnLpHybrid kn={kn} abteilung={abteilung} pageNum={2} pageTotal={total} />
-      <DocKnLpDurchfuehrungIntro kn={kn} abteilung={abteilung} pageNum={3} pageTotal={total} />
+      <DocKnLpMetadaten kn={kn} prinzip={prinzip} sits={sits} abteilung={abteilung} pageNum={1} pageTotal={total} />
+      <DocKnLpKontext kn={kn} prinzip={prinzip} set={set} abteilung={abteilung} pageNum={2} pageTotal={total} />
+      <DocKnLpHybrid kn={kn} abteilung={abteilung} pageNum={3} pageTotal={total} />
+      <DocKnLpDurchfuehrungIntro kn={kn} abteilung={abteilung} pageNum={4} pageTotal={total} />
       {kt.slice(1).map((t, i) => (
         <DocKnLpKnTyp
           key={i}
@@ -337,7 +461,7 @@ export function DocKnLp({ kn, prinzip, set, abteilung }: DocKnLpProps) {
           knTyp={t}
           sectionNr={`07 · ${t.label}`}
           abteilung={abteilung}
-          pageNum={4 + i}
+          pageNum={5 + i}
           pageTotal={total}
         />
       ))}

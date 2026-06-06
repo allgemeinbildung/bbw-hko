@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro'
 
 const user = Astro.locals.user
-if (!user) return Astro.redirect('/login')
+if (!user) return Astro.redirect('/welcome')
 
 const { data: profile } = await Astro.locals.supabase
   .from('profiles')

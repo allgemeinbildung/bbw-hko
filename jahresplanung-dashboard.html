@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABU Jahresplanung 1. Lehrjahr 2025/2026</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .thema1 { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+        .thema2 { background: linear-gradient(135deg, #10b981, #34d399); }
+        .thema3 { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+        .puffer { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+        .holiday { background: #ef4444; }
+
+        .lesson-cell {
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .lesson-cell:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            z-index: 20;
+        }
+
+        .lesson-cell:hover .tooltip {
+            opacity: 1;
+        }
+
+        .month-header {
+            font-weight: 600;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .week-number {
+            font-size: 11px;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 p-8">
+    <div x-data="jahresplanung()" class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-slate-900 mb-2">ABU Jahresplanung 2025/2026</h1>
+            <p class="text-lg text-slate-600 mb-4">1. Lehrjahr — 3 Lektionen pro Woche</p>
+
+            <!-- Summary Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+                <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                    <p class="text-sm text-slate-600">Schulwochen</p>
+                    <p class="text-2xl font-bold text-slate-900">39</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                    <p class="text-sm text-slate-600">Verfügbare Lektionen</p>
+                    <p class="text-2xl font-bold text-slate-900">117</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border-l-4 border-green-500">
+                    <p class="text-sm text-slate-600">Unterrichtslektionen</p>
+                    <p class="text-2xl font-bold text-slate-900">84</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border-l-4 border-purple-600">
+                    <p class="text-sm text-slate-600">Pufferlektionen</p>
+                    <p class="text-2xl font-bold text-slate-900">33</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border-l-4 border-red-500">
+                    <p class="text-sm text-slate-600">Ferienwochen</p>
+                    <p class="text-2xl font-bold text-slate-900">13</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="mb-8 bg-white rounded-lg p-6 border border-slate-200">
+            <h2 class="text-sm font-semibold text-slate-900 mb-4">Legende</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="thema1 h-6 w-12 rounded"></div>
+                    <span class="text-sm text-slate-700">Thema 1 (21 L.)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="thema2 h-6 w-12 rounded"></div>
+                    <span class="text-sm text-slate-700">Thema 2 (30 L.)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="thema3 h-6 w-12 rounded"></div>
+                    <span class="text-sm text-slate-700">Thema 3 (33 L.)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="puffer h-6 w-12 rounded"></div>
+                    <span class="text-sm text-slate-700">Puffer</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="holiday h-6 w-12 rounded"></div>
+                    <span class="text-sm text-slate-700">Ferien/Feiertage</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline View -->
+        <div class="bg-white rounded-lg p-6 border border-slate-200 overflow-x-auto">
+            <h2 class="text-lg font-semibold text-slate-900 mb-6">Jahresübersicht (Schulwochen)</h2>
+
+            <!-- Trimester Tabs -->
+            <div class="flex gap-2 mb-6 border-b border-slate-200">
+                <template x-for="trimester in ['T1', 'T2', 'T3']">
+                    <button
+                        @click="selectedTrimester = trimester"
+                        :class="selectedTrimester === trimester ? 'border-b-2 border-blue-500 text-blue-600 font-semibold' : 'text-slate-600 hover:text-slate-900'"
+                        class="px-4 py-2 transition">
+                        <span x-text="`${trimester} (${getTrimesterWeeks(trimester)} Wochen)`"></span>
+                    </button>
+                </template>
+            </div>
+
+            <!-- Trimester Content -->
+            <template x-for="trimester in ['T1', 'T2', 'T3']">
+                <div x-show="selectedTrimester === trimester" class="space-y-4">
+                    <!-- Monthly breakdown for this trimester -->
+                    <template x-for="month in getTrimesterMonths(trimester)">
+                        <div class="space-y-3">
+                            <div class="month-header text-lg" x-text="month.name"></div>
+
+                            <!-- Week grid -->
+                            <div class="grid grid-cols-7 gap-2">
+                                <template x-for="week in month.weeks">
+                                    <div
+                                        class="lesson-cell rounded-lg p-3 text-white text-center text-sm font-medium relative"
+                                        :class="getCellClass(week)"
+                                    >
+                                        <div class="text-xs opacity-75 week-number" x-text="`W${week.number}`"></div>
+                                        <div x-text="`${week.lessons}L`"></div>
+                                        <div class="tooltip" x-html="getTooltip(week)"></div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Trimester Summary -->
+                    <div class="mt-6 pt-4 border-t border-slate-200 grid grid-cols-4 gap-4">
+                        <div class="text-sm">
+                            <p class="text-slate-600">Schulwochen</p>
+                            <p class="text-xl font-bold text-slate-900" x-text="getTrimesterWeeks(trimester)"></p>
+                        </div>
+                        <div class="text-sm">
+                            <p class="text-slate-600">Unterrichtslektionen</p>
+                            <p class="text-xl font-bold text-blue-600" x-text="getTrimesterTeachingLessons(trimester)"></p>
+                        </div>
+                        <div class="text-sm">
+                            <p class="text-slate-600">Pufferlektionen</p>
+                            <p class="text-xl font-bold text-purple-600" x-text="getTrimesterBufferLessons(trimester)"></p>
+                        </div>
+                        <div class="text-sm">
+                            <p class="text-slate-600">Ferienwochen</p>
+                            <p class="text-xl font-bold text-red-600" x-text="getTrimesterHolidayWeeks(trimester)"></p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Theme Details -->
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+            <template x-for="thema in themas">
+                <div class="bg-white rounded-lg border border-slate-200 overflow-hidden">
+                    <div :class="'p-4 text-white ' + thema.colorClass">
+                        <h3 class="text-lg font-bold" x-text="`Thema ${thema.number}`"></h3>
+                        <p class="text-sm opacity-90" x-text="thema.titel"></p>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div>
+                            <p class="text-xs font-semibold text-slate-600 uppercase">Unterrichtslektionen</p>
+                            <p class="text-2xl font-bold text-slate-900" x-text="thema.lektionen"></p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-600 uppercase">Puffer</p>
+                            <p class="text-2xl font-bold text-purple-600" x-text="thema.puffer"></p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-600 uppercase">Total</p>
+                            <p class="text-2xl font-bold text-slate-900" x-text="thema.lektionen + thema.puffer"></p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-200">
+                            <p class="text-xs font-semibold text-slate-600 uppercase">Perioden</p>
+                            <div class="mt-2 space-y-1">
+                                <template x-for="periode in thema.perioden">
+                                    <p class="text-sm text-slate-700" x-text="periode"></p>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Key Milestones -->
+        <div class="mt-8 bg-white rounded-lg p-6 border border-slate-200">
+            <h2 class="text-lg font-semibold text-slate-900 mb-4">Wichtigste Meilensteine</h2>
+            <div class="space-y-3">
+                <template x-for="milestone in milestones">
+                    <div class="flex gap-4 pb-3 border-b border-slate-200 last:border-0">
+                        <div class="text-sm font-semibold text-slate-600 min-w-fit" x-text="milestone.date"></div>
+                        <div>
+                            <p class="font-semibold text-slate-900" x-text="milestone.title"></p>
+                            <p class="text-sm text-slate-600" x-text="milestone.description"></p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function jahresplanung() {
+            return {
+                selectedTrimester: 'T1',
+
+                themas: [
+                    {
+                        number: 1,
+                        titel: 'Ins Berufsleben einsteigen',
+                        lektionen: 21,
+                        puffer: 8,
+                        colorClass: 'thema1',
+                        perioden: [
+                            'P1 (Aug–Sep): Lehrvertrag, Rechte/Pflichten',
+                            'P2 (Sep–Okt): Kommunikation, Konfliktgespräche'
+                        ]
+                    },
+                    {
+                        number: 2,
+                        titel: 'Meinungen bilden und mitgestalten',
+                        lektionen: 30,
+                        puffer: 12,
+                        colorClass: 'thema2',
+                        perioden: [
+                            'P5 (Jan): Diskriminierung, Meinungsfreiheit',
+                            'P7 (Feb–Mär): Partizipation, Standpunkte'
+                        ]
+                    },
+                    {
+                        number: 3,
+                        titel: 'Bewusst konsumieren und handeln',
+                        lektionen: 33,
+                        puffer: 13,
+                        colorClass: 'thema3',
+                        perioden: [
+                            'P2 (Sep–Okt): Bedürfnisse, Budget, Schulden',
+                            'P4 (Nov–Jan): Nachhaltigkeit, Konsumrecht'
+                        ]
+                    }
+                ],
+
+                milestones: [
+                    { date: 'ca. Mitte Sept', title: 'Kompetenznachweis 1.1', description: 'Konfliktgespräch-Simulation (Thema 1)' },
+                    { date: 'ca. Mitte Nov', title: 'Prüfung Budgetplanung', description: 'Schriftliche Prüfung (Thema 3)' },
+                    { date: 'ca. Mitte Dez', title: 'Prüfung Desinformation', description: 'Prüfung zu Fake News & Quellen (Thema 2)' },
+                    { date: 'ca. Ende Jan', title: 'Mündliche Diskussion', description: 'Diskriminierung & Integration (Thema 2)' },
+                    { date: 'ca. Ende Apr', title: 'Gesamtwiederholung', description: 'Schriftliche Repetition Thema 1 & 2' },
+                    { date: 'Juni', title: 'Portfolio & Reflexion', description: 'Abschlussreflexion aller drei Themen' }
+                ],
+
+                // Calendar data for all weeks of the school year
+                schoolCalendar: [
+                    // August 2025 (T1)
+                    { week: 34, month: 'Aug', number: 1, trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', content: 'T1.1 Start' },
+                    { week: 35, month: 'Aug', number: 2, trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', content: 'T1.1 Lehrvertrag' },
+                    { week: 36, month: 'Sep', number: 3, trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', content: 'T1.1 Rechte/Pflichten' },
+                    { week: 37, month: 'Sep', number: 4, trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', content: 'T1.1 Kommunikation' },
+                    { week: 38, month: 'Sep', number: 5, trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', content: 'T1.1 Konflikte' },
+                    { week: 39, month: 'Sep', number: 6, trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', content: 'T1.1 + T3.1 Start' },
+                    { week: 40, month: 'Okt', number: 7, trimester: 'T1', thema: null, lessons: 3, type: 'teaching', content: 'T3.1 Bedürfnisse' },
+                    { week: 41, month: 'Okt', number: 8, trimester: 'T1', thema: null, lessons: 0, type: 'holiday', content: 'Herbstferien' },
+                    { week: 42, month: 'Okt', number: 9, trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', content: 'T1-Puffer' },
+
+                    // November - December 2025 (T2)
+                    { week: 43, month: 'Nov', number: 10, trimester: 'T2', thema: 1, lessons: 3, type: 'teaching', content: 'T1.2 Start' },
+                    { week: 44, month: 'Nov', number: 11, trimester: 'T2', thema: 1, lessons: 3, type: 'teaching', content: 'T1.2 Lernorganisation' },
+                    { week: 45, month: 'Nov', number: 12, trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', content: 'T3.1 Bedürfnisse' },
+                    { week: 46, month: 'Nov', number: 13, trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', content: 'T3.2 Budget' },
+                    { week: 47, month: 'Dez', number: 14, trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', content: 'T3.2 Nachhaltigkeit' },
+                    { week: 48, month: 'Dez', number: 15, trimester: 'T2', thema: 3, lessons: 3, type: 'teaching', content: 'T3.3 Kaufvertrag' },
+                    { week: 49, month: 'Dez', number: 16, trimester: 'T2', thema: null, lessons: 0, type: 'holiday', content: 'Weihnachtsferien' },
+                    { week: 50, month: 'Dez', number: 17, trimester: 'T2', thema: null, lessons: 0, type: 'holiday', content: 'Weihnachtsferien' },
+                    { week: 1, month: 'Jan', number: 18, trimester: 'T2', thema: 3, lessons: 3, type: 'buffer', content: 'T3-Puffer' },
+
+                    // January - February 2026 (T3)
+                    { week: 2, month: 'Jan', number: 19, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.1 Quellen' },
+                    { week: 3, month: 'Jan', number: 20, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.1 Desinformation' },
+                    { week: 4, month: 'Feb', number: 21, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.2 Diskriminierung' },
+                    { week: 5, month: 'Feb', number: 22, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.2 Meinungsfreiheit' },
+                    { week: 6, month: 'Feb', number: 23, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.2 Perspektiven' },
+                    { week: 7, month: 'Feb', number: 24, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Sportferien' },
+                    { week: 8, month: 'Feb', number: 25, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Sportferien' },
+                    { week: 9, month: 'Mär', number: 26, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.3 Partizipation' },
+                    { week: 10, month: 'Mär', number: 27, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.3 Standpunkte' },
+                    { week: 11, month: 'Mär', number: 28, trimester: 'T3', thema: 2, lessons: 3, type: 'teaching', content: 'T2.3 Debatte' },
+                    { week: 12, month: 'Mär', number: 29, trimester: 'T3', thema: null, lessons: 1, type: 'buffer', content: 'T2-Puffer' },
+
+                    // April - May 2026 (T3)
+                    { week: 13, month: 'Apr', number: 30, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Karfreitag' },
+                    { week: 14, month: 'Apr', number: 31, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Ostermontag' },
+                    { week: 15, month: 'Apr', number: 32, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Frühjahrsferien' },
+                    { week: 16, month: 'Apr', number: 33, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Frühjahrsferien' },
+                    { week: 17, month: 'Mai', number: 34, trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', content: 'T2-Puffer' },
+                    { week: 18, month: 'Mai', number: 35, trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', content: 'T2-Puffer' },
+                    { week: 19, month: 'Mai', number: 36, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Auffahrt/Brücke' },
+                    { week: 20, month: 'Mai', number: 37, trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', content: 'T2-Puffer' },
+                    { week: 21, month: 'Jun', number: 38, trimester: 'T3', thema: 2, lessons: 3, type: 'buffer', content: 'T2-Puffer' },
+                    { week: 22, month: 'Jun', number: 39, trimester: 'T3', thema: null, lessons: 3, type: 'buffer', content: 'Reflexion' },
+                    { week: 23, month: 'Jul', number: 40, trimester: 'T3', thema: null, lessons: 0, type: 'holiday', content: 'Sommerferien' }
+                ],
+
+                getCellClass(week) {
+                    if (week.type === 'holiday') return 'holiday text-white';
+                    if (week.type === 'buffer') return 'puffer text-white';
+                    if (week.thema === 1) return 'thema1 text-white';
+                    if (week.thema === 2) return 'thema2 text-white';
+                    if (week.thema === 3) return 'thema3 text-white';
+                    return 'bg-slate-200 text-slate-900';
+                },
+
+                getTooltip(week) {
+                    return `<strong>${week.content}</strong><br>KW ${week.week} (${week.month})<br>${week.lessons} Lektionen`;
+                },
+
+                getTrimesterMonths(trimester) {
+                    const filtered = this.schoolCalendar.filter(w => w.trimester === trimester);
+                    const months = {};
+
+                    filtered.forEach(week => {
+                        if (!months[week.month]) {
+                            months[week.month] = { name: this.getMonthName(week.month), weeks: [] };
+                        }
+                        months[week.month].weeks.push(week);
+                    });
+
+                    return Object.values(months);
+                },
+
+                getTrimesterWeeks(trimester) {
+                    return this.schoolCalendar.filter(w => w.trimester === trimester && w.type !== 'holiday').length;
+                },
+
+                getTrimesterTeachingLessons(trimester) {
+                    return this.schoolCalendar
+                        .filter(w => w.trimester === trimester && w.type === 'teaching')
+                        .reduce((sum, w) => sum + w.lessons, 0);
+                },
+
+                getTrimesterBufferLessons(trimester) {
+                    return this.schoolCalendar
+                        .filter(w => w.trimester === trimester && w.type === 'buffer')
+                        .reduce((sum, w) => sum + w.lessons, 0);
+                },
+
+                getTrimesterHolidayWeeks(trimester) {
+                    return this.schoolCalendar.filter(w => w.trimester === trimester && w.type === 'holiday').length;
+                },
+
+                getMonthName(abbr) {
+                    const months = {
+                        'Aug': 'August',
+                        'Sep': 'September',
+                        'Okt': 'Oktober',
+                        'Nov': 'November',
+                        'Dez': 'Dezember',
+                        'Jan': 'Januar',
+                        'Feb': 'Februar',
+                        'Mär': 'März',
+                        'Apr': 'April',
+                        'Mai': 'Mai',
+                        'Jun': 'Juni',
+                        'Jul': 'Juli'
+                    };
+                    return months[abbr] || abbr;
+                }
+            };
+        }
+    </script>
+</body>
+</html>

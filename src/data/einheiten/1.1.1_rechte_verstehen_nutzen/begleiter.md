@@ -54,6 +54,9 @@ A liefert die Quellen, auf denen B aufbaut; B liefert das juristische Gerüst, d
 
 **Verbindungsformel (Ges → SuK).** Der gesellschaftliche Gehalt (Recht: was darf der Betrieb?) wird über eine **Sprachhandlung** sichtbar: erst lesen und ordnen (Rezeption), dann schreiben und begründen (Produktion). Kurz: *Recht klären* → *begründet schreiben*. Die Ges-Dimension liefert den Inhalt, die SuK-Dimension die Form — beide werden geprüft.
 
+> [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
+> Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Lohn und Abzüge, Datenschutz, Fall-Schema) übst du **vorab im Unterricht**; die Situationsblätter setzen dieses Vorwissen voraus. Ergänze eigene Beispiele, Inputs und Übungen aus deinem Fundus.
+
 ---
 
 ## Ressourcen-Landkarte
@@ -111,6 +114,8 @@ Primär im KN aktiviert: **SK1, SK6, SK11** (Schnittmenge aller drei Situationen
 
 Wie die Klasse die drei Situationen bearbeitet, entscheidest **du**. Es gibt nicht „die richtige" Form. Die Wahl bestimmt den Lektionsaufwand und die Qualität der Kompetenz.
 
+Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Du kannst Situationen weglassen oder umstellen — im KN wird nur geprüft, was tatsächlich geübt wurde.
+
 | Variante | Wie | Lektionsaufwand (Lernaufgaben-Phase, ohne KN) | Preis / Nutzen |
 |---|---|---|---|
 | **A — Einzelarbeit, alle drei** | Jede/r bearbeitet A, B **und** C nacheinander. | ca. **7 Lektionen** (3 × 2 + 1 Auswertung) | Volle Kompetenz aus erster Hand. Hoher Zeitaufwand. |
@@ -142,7 +147,7 @@ Das Austausch-Kapitel weiter unten verzweigt nach Variante.
 
 **Die Situation (so steht sie im Schülermaterial):**
 
-> Ein Mitlernender aus einem anderen Betrieb stellt drei Fragen in der Werkstatt-Chatgruppe: Überstunden ohne Zuschlag? CHF 80 für eine kaputte Bohrmaschine vom Lohn abziehen? Private Handy-Nummer in eine Kunden-WhatsApp-Gruppe eintragen? Du willst fundiert antworten — und baust dir zuerst einen A4-Regel-Spickzettel aus Lehrvertrag, OR und Datenschutzregeln.
+> Ein Mitlernende/r aus einem anderen Betrieb stellt drei Fragen in der Werkstatt-Chatgruppe: Überstunden ohne Zuschlag? CHF 80 für eine kaputte Bohrmaschine vom Lohn abziehen? Private Handy-Nummer in eine Kunden-WhatsApp-Gruppe eintragen? Du willst fundiert antworten — und baust dir zuerst einen A4-Regel-Spickzettel aus Lehrvertrag, OR und Datenschutzregeln.
 
 ### Unterrichtsfahrplan
 
@@ -207,6 +212,17 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 > [!lernziel]
 > So sieht ein gutes Produkt aus: eine A4-Seite, drei Blöcke, jede der drei Mitlernenden-Fragen ist durch mindestens eine Zeile abgedeckt, jede Zeile in eigenen Worten **und** mit exakter Quelle (OR-Artikel oder „Kap. 20.7 S. 446"). Lesbar in 30 Sekunden.
 
+### Coaching & Scaffolds — auf einen Blick
+
+> [!coaching] Die drei Moves dieser Herausforderung
+> 1. **LF1:** Nicht abschreiben lassen — jeder OR-Artikel wird in einem eigenen Stichsatz zusammengefasst.
+> 2. **LF2:** Pro Antwort die stützende Quelle verlangen; die Bohrmaschinen-Frage (OR 321e: Abzug nur bei Verschulden) ist der Lackmustest.
+> 3. **LF3:** Erst 2 Minuten still entscheiden (Ja/Nein), dann begründen.
+> **Zum Abgeben bereit:** Spickzettel-Raster (drei Blöcke, Quellen vorgegeben, erste Zeile als gelöstes Beispiel).
+
+> [!coaching] Perspektivenwechsel
+> Lass die Lernende vor dem Verdichten kurz die Perspektive der drei fragenden Mitlernenden einnehmen: „Was braucht sie wirklich — den vollen Gesetzestext oder eine klare Antwort mit Quelle?" Adressatengerecht verdichten statt vollständig zitieren ist genau der Trade-off dieser Herausforderung und macht SK1 (Quellen unterscheiden) sichtbar.
+
 **Reflexion (Abgabe mit Set):** R1 überraschendste Regel · R2 Wo brauche ich den Spickzettel im Lehralltag? · R3 Schaue ich künftig zuerst im Vertrag oder im Internet nach?
 
 ---
@@ -228,7 +244,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 
 **Die Situation:**
 
-> Der Mitlernende hat zwei konkrete Fälle: (1) Der Berufsbildner verlangt eine private Samstags-Lieferung gegen Bezahlung, ausserhalb der Arbeitszeit. (2) Wegen eines im Familien-WhatsApp erwähnten Kundenfalls droht ein Lohnabzug von CHF 200. Du löst beide mit dem Schema Tatbestand–Rechtslage–Rechtsfolge (Kap. 1.3) und erstellst eine Fall-Mappe.
+> Der Mitlernende hat zwei konkrete Fälle: (1) Der Berufsbildner/in verlangt eine private Samstags-Lieferung gegen Bezahlung, ausserhalb der Arbeitszeit. (2) Wegen eines im Familien-WhatsApp erwähnten Kundenfalls droht ein Lohnabzug von CHF 200. Du löst beide mit dem Schema Tatbestand–Rechtslage–Rechtsfolge (Kap. 1.3) und erstellst eine Fall-Mappe.
 
 ### Unterrichtsfahrplan
 
@@ -273,7 +289,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 
 | Schritt | Fall 1 — Samstagsfahrt | Hinweis |
 |---|---|---|
-| **Tatbestand** (wertungsfrei) | *Berufsbildner verlangt private Lieferung am Samstag, gegen Bezahlung, ausserhalb der Arbeitszeit.* | Nur Fakten: wer, was, wann, wo. |
+| **Tatbestand** (wertungsfrei) | *Berufsbildner/in verlangt private Lieferung am Samstag, gegen Bezahlung, ausserhalb der Arbeitszeit.* | Nur Fakten: wer, was, wann, wo. |
 | **Rechtslage** (Artikel zitieren) | *__________ (Tipp: Überstunden / berufsfremde Arbeit)* | Wortgenau zitieren; bei mehreren Artikeln Spielraum benennen. |
 | **Rechtsfolge** (begründet) | *__________* | Subsumtion: passt der Tatbestand unter die Norm? In 1–2 Sätzen. |
 
@@ -287,6 +303,17 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 
 > [!lernziel]
 > So sieht ein gutes Produkt aus: beide Fälle in drei sauber getrennten Schritten, pro Fall mind. ein wortgenau zitierter und korrekt zugeordneter OR-/ArG-Artikel, mindestens eine Stelle mit explizit benanntem Auslegungsspielraum oder Restunsicherheit, Schlussabsatz mit klarer Rollenabgrenzung.
+
+### Coaching & Scaffolds — auf einen Blick
+
+> [!coaching] Die drei Moves dieser Herausforderung
+> 1. **LF2:** Reihenfolge eisern halten — erst Tatbestand ohne Wertung, dann Recht, dann Folge. „Das ist doch unfair" als Einstieg heisst zurückschicken.
+> 2. **LF3:** Die Rollenfrage (Anwältin vs. beratende Mitlernende) bewusst offen halten.
+> 3. **LF4:** Schlussabsatz mit benannter Restunsicherheit und Verweis (BB / BBV / Amt).
+> **Zum Abgeben bereit:** Schema-Tabelle (3 Schritte) · Artikel-Auswahlliste · Schlussabsatz-Gerüst.
+
+> [!coaching] Perspektivenwechsel
+> Bei Fall 2 (drohender Lohnabzug) die Sicht des Berufsbildner/in mitdenken lassen: „Aus welcher Sorge will er CHF 200 abziehen?" Das hilft, den Tatbestand wertungsfrei zu halten (eigene Empörung von den Fakten trennen) und schärft zugleich die eigene beratende Rolle gegenüber dem Mitlernenden.
 
 **Reflexion:** R1 welcher Fall war methodisch schwieriger? · R2 Wo nutze ich das Schema selbst? · R3 Welche Unsicherheit habe ich benannt, welche versteckt — was sagt das über meine Rolle?
 
@@ -305,11 +332,11 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 | **Aspekte** | Ethik, Technologie und digitale Transformation, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK6, SK7, SK11 |
-| **Trade-off** | Schnell antworten (Mitlernender wartet) vs. sauber recherchieren |
+| **Trade-off** | Schnell antworten (Mitlernende/r wartet) vs. sauber recherchieren |
 
 **Die Situation:**
 
-> Der Mitlernende fragt auf WhatsApp: „Kannst du mir das in 5 Minuten zusammenfassen?" Du spürst den Zeitdruck — aber WhatsApp ist nicht das richtige Medium für eine rechtliche Position, die der Berufsbildner ernst nehmen soll, und der Fall ist vertraulich. Du verfasst ein formelles Antwortschreiben (Briefaufbau Kap. 17.3, 3B-Schema Kap. 17.2), das er weiterleiten kann.
+> Der Mitlernende fragt auf WhatsApp: „Kannst du mir das in 5 Minuten zusammenfassen?" Du spürst den Zeitdruck — aber WhatsApp ist nicht das richtige Medium für eine rechtliche Position, die der Berufsbildner/in ernst nehmen soll, und der Fall ist vertraulich. Du verfasst ein formelles Antwortschreiben (Briefaufbau Kap. 17.3, 3B-Schema Kap. 17.2), das er weiterleiten kann.
 
 ### Unterrichtsfahrplan
 
@@ -348,7 +375,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 > Der Trade-off: **schnell antworten** (zeigt Verfügbarkeit) vs. **sauber recherchieren** (zeigt Verantwortung). Beide legitim. Bewertet wird, ob die Lernende ihre **Kanal- und Tempo-Entscheidung im Schreiben begründet** — nicht, ob sie WhatsApp oder E-Mail wählt. Lass nicht zu, dass „E-Mail ist einfach besser" als Patentlösung stehen bleibt.
 
 > [!warnung]
-> Stolperstein: Das Schreiben wird zur Gesetzes-Aufzählung ohne Adressatenbezug. Korrektur: Vor dem Schreiben klären — **wer liest das** (Mitlernender? Berufsbildner als Weiterleitung?) — und Anrede/Tonalität entsprechend wählen. Ohne Adressatenanalyse ist SK7 nicht gezeigt.
+> Stolperstein: Das Schreiben wird zur Gesetzes-Aufzählung ohne Adressatenbezug. Korrektur: Vor dem Schreiben klären — **wer liest das** (Mitlernende/r? Berufsbildner/in als Weiterleitung?) — und Anrede/Tonalität entsprechend wählen. Ohne Adressatenanalyse ist SK7 nicht gezeigt.
 
 ### Material zum Abgeben — Brief-Gerüst (Scaffold 90)
 
@@ -379,10 +406,21 @@ ____________ (Name, Funktion)
 > Kanalwahl-Begründung nicht vergessen: Im Schreiben selbst oder im Begleitsatz soll erkennbar sein, **warum** E-Mail/Brief statt WhatsApp gewählt wurde (Datenschutz, Vertraulichkeit, Weiterleitbarkeit — zwei Argumente aus Kap. 20.7).
 
 > [!differenzieren]
-> **90 %:** Brief-Vorlage als Lückentext (Anrede, Anlass-Block, Schluss-Block vorgegeben). **100 %:** zusätzlich eine **zweite Version** für einen anderen Adressaten (z. B. den Berufsbildner statt den Mitlernenden) verfassen und die Unterschiede dokumentieren.
+> **90 %:** Brief-Vorlage als Lückentext (Anrede, Anlass-Block, Schluss-Block vorgegeben). **100 %:** zusätzlich eine **zweite Version** für einen anderen Adressaten (z. B. den Berufsbildner/in statt den Mitlernenden) verfassen und die Unterschiede dokumentieren.
 
 > [!lernziel]
 > So sieht ein gutes Produkt aus: sauberer Anlass-Absicht-Begründung-Schluss-Aufbau, mindestens ein vollständiges 3B-Tripel im Begründungsteil, mindestens ein wortgenaues OR-/ArG-Zitat, Kanalwahl mit zwei Datenschutz-Argumenten begründet, Konventionen eingehalten (Anrede, keine Emoticons), Schreiben ist weiterleitbar.
+
+### Coaching & Scaffolds — auf einen Blick
+
+> [!coaching] Die drei Moves dieser Herausforderung
+> 1. **LF2:** Eine echte WhatsApp-Zeile und eine E-Mail-Anrede nebeneinander schreiben lassen — der Kontrast wirkt stärker als jede Erklärung.
+> 2. **LF3:** Kanalwahl mit zwei Argumenten aus Kap. 20.7 (Datenschutz, Vertraulichkeit) begründen.
+> 3. **LF4:** Das wichtigste Argument zuletzt im Begründungsteil (Kap. 17.2).
+> **Zum Abgeben bereit:** Brief-Gerüst (Lückentext mit eingebautem 3B).
+
+> [!coaching] Perspektivenwechsel
+> Vor dem Schreiben klären: „Wer liest das?" Lass die Lernende ihren Brief aus Sicht des Berufsbildner/in gegenlesen, an den er weitergeleitet wird: „Würdest du diese Mail ernst nehmen?" Ohne diese Adressatenanalyse ist SK7 nicht gezeigt — und genau sie unterscheidet ein weiterleitbares Schreiben von einer Gesetzes-Aufzählung.
 
 **Reflexion:** R1 was war beim formellen Schreiben am schwierigsten? · R2 Wo verfasse ich solche Antworten im Lehralltag? · R3 Was ändere ich, wenn die nächste Anfrage auf WhatsApp kommt?
 
@@ -446,7 +484,7 @@ Der KN prüft die **ganze** Kompetenz an **einem** neuen Fall (Hybrid-Situation)
 
 **Hybrid-Situation — „Die Lohnabzug-Anfrage um 21 Uhr"** (Persona neu: Schreiner-Lernende/r, Schreinerei Berger, Thun, CHF 600):
 
-> Heute um 21 Uhr schreibt mir ein Mitlernender auf WhatsApp: Sein Berufsbildner will morgen CHF 150 für einen Kratzer an einem fertigen Werkstück vom Lohn abziehen. Ich habe eine Stunde, meinen Regel-Spickzettel und Kap. 1.4 zu Hause. Was ich schreibe, leitet er weiter. Was ich nicht weiss, sollte ich nicht erfinden — aber wenn ich nicht antworte, steht er morgen ohne Argumente da. Wie gehe ich vor — und welcher Schritt ist der erste?
+> Heute um 21 Uhr schreibt mir ein Mitlernende/r auf WhatsApp: Sein Berufsbildner/in will morgen CHF 150 für einen Kratzer an einem fertigen Werkstück vom Lohn abziehen. Ich habe eine Stunde, meinen Regel-Spickzettel und Kap. 1.4 zu Hause. Was ich schreibe, leitet er weiter. Was ich nicht weiss, sollte ich nicht erfinden — aber wenn ich nicht antworte, steht er morgen ohne Argumente da. Wie gehe ich vor — und welcher Schritt ist der erste?
 
 **Wie die drei Teilfacetten im Hybrid-Fall stecken** (für die Lehrperson sichtbar, für die Lernenden nicht benannt):
 
@@ -471,12 +509,15 @@ Alle drei prüfen dieselbe Kompetenz und nutzen dieselbe Rubrik. Du wählst **ei
 > [!coaching]
 > Fachgespräch braucht **vorbereitete Fragen mit Musterantworten** und Zeitvorgaben pro Frage (sonst wird es zur spontanen Wissensabfrage). Lass die Lernenden mit einer einfachen Frage beginnen (Eisbrecher), wende Beurteilungsfehler aktiv ab (Halo, Sympathie, Selbstsicherheit) und gib Noten erst **nach** dem Gespräch bekannt. Frühere Noten vorher nicht ansehen.
 
+> [!hinweis] Ausblick — weitere Prüfformen möglich
+> Die drei hier angelegten KN-Formen (Fachgespräch, Mini Case schriftlich, Werkschau + Transfer-Reflexion) sind ein **Startset**, kein abschliessender Kanon. Dieselbe Hybrid-Herausforderung und dieselbe bi-dimensionale Rubrik tragen auch andere Formen — etwa einen **Critical Incident** (eine zugespitzte Entscheidungsszene mit Stopp-Punkt: „Was tust du jetzt?") oder ein **Produkt mit Präsentation** (ein vor der Klasse verteidigtes Handlungsprodukt). Diese sind bewusst noch nicht ausgearbeitet — wenn du eine brauchst, lässt sie sich auf der bestehenden Rubrik aufsetzen. Reiner Ausblick; im aktuellen Set wählst du aus den drei Formen oben.
+
 **Fragenpool Fachgespräch** (5 Fragen steigender Komplexität, aus dem KN):
 1. *(K2 Erklären)* OR 321e und die Voraussetzung für einen zulässigen Lohnabzug.
 2. *(K3 Anwenden)* Tatbestand-Rechtslage-Rechtsfolge auf den CHF-150-Fall.
 3. *(K3 Beurteilen)* Tempo vs. Sorgfalt — gleich gewichtet oder Vorrang? Begründen.
 4. *(K4 Transfer)* Vergleich mit dem Datenschutz-Block aus Sit A — was übernimmst du, was anders?
-5. *(K4 Werthaltung)* Verantwortung einer Auskunft, die dem Berufsbildner gezeigt wird (Kap. 18.1).
+5. *(K4 Werthaltung)* Verantwortung einer Auskunft, die dem Berufsbildner/in gezeigt wird (Kap. 18.1).
 
 **Aufgabenfolge Mini Case schriftlich** (4 Aufgaben): K2 OR 321e erklären → K3 E-Mail vs. WhatsApp rechtlich/medienkompetent unterscheiden (≥3 Argumente) → K3 Kanal + erste drei Schritte in 60 min → K4 kurze Antwort (8–12 Sätze, E-Mail-Format, ≥1 OR-Zitat, Unsicherheit ehrlich markiert).
 

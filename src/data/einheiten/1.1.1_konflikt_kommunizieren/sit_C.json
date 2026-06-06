@@ -3,182 +3,342 @@
   "modul": "1.1",
   "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
   "lehrgang": "EFZ_3J",
-
   "situation": "C",
   "sit_farbe": "#1E8449",
   "sit_farbe_light": "#D5F5E3",
   "sit_farbe_mid": "#27AE60",
-
-  "titel": "Aussprache vorbereiten — vier Ohren statt vier Vorwuerfe",
+  "titel": "Aussprache vorbereiten — vier Ohren statt vier Vorwürfe",
   "emotion_tag": "Anspannung",
-
-  "wissensknoten": ["konfliktgespraech_ich_botschaften"],
-
+  "wissensknoten": [
+    "konfliktgespräch_ich_botschaften"
+  ],
   "nrlp": {
     "nr": "1.1.1",
-    "nr_primary": ["1.1.1"],
+    "nr_primary": [
+      "1.1.1"
+    ],
     "lebensbezug": "1.1",
-    "themen": ["T1"],
+    "themen": [
+      "T1"
+    ],
     "gesellschaft": [
-      {"aspekt": "Ethik", "iteration": "R1"},
-      {"aspekt": "Identitaet und Sozialisation", "iteration": "R1"}
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
     ],
     "sprachmodi": [
       "Rezeption schriftlich und bildlich",
-      "Interaktion und Kollaboration muendlich"
+      "Interaktion und Kollaboration mündlich"
     ],
-    "sk": [4, 7, 11]
+    "sk": [
+      4,
+      7,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
-
   "persona": {
     "beruf": "Informatiker/in EFZ",
     "betrieb": "Noser Engineering Luzern",
     "ort": "Luzern"
   },
-
-  "situation_text": "Du bist Informatik-Lernender (Applikationsentwicklung) im 1. Lehrjahr bei Noser Engineering in Luzern und verdienst CHF 700 pro Monat. Seit drei Wochen leitet dich ein neuer Berufsbildner an. Er gibt dir kaum Feedback, kritisiert dich aber im Sprint-Review vor dem ganzen Team mit dem Satz: «Du hoerst einfach nicht zu.» Du fuehlst dich abgestempelt — denn du hoerst sehr wohl zu, du brauchst nur laenger, um Fragen zu formulieren. Heute hat er dir 15 Minuten am Donnerstag fuer eine Aussprache angeboten. Du willst hin, aber du willst auch nicht in eine zweite Demuetigung laufen.",
-
+  "situation_text": "Du bist Informatik-Lernende/r (Applikationsentwicklung) im 1. Lehrjahr bei Noser Engineering in Luzern und verdienst CHF 700 pro Monat. Seit drei Wochen leitet dich ein neuer Berufsbildner/in an. Er gibt dir kaum Feedback, kritisiert dich aber im Sprint-Review vor dem ganzen Team mit dem Satz: «Du hörst einfach nicht zu.» Du fühlst dich abgestempelt — denn du hörst sehr wohl zu, du brauchst nur länger, um Fragen zu formulieren. Heute hat er dir 15 Minuten am Donnerstag für eine Aussprache angeboten. Du willst hin, aber du willst auch nicht in eine zweite Demütigung laufen.",
   "zahlen_tabelle": [
-    {"label": "Lehrlingslohn LJ1", "wert": "CHF 700"},
-    {"label": "Vorbereitungszeit", "wert": "ca. 45 min"},
-    {"label": "Gespraechszeit", "wert": "15 min Donnerstag"}
+    {
+      "label": "Lehrlingslohn LJ1",
+      "wert": "CHF 700"
+    },
+    {
+      "label": "Vorbereitungszeit",
+      "wert": "ca. 45 min"
+    },
+    {
+      "label": "Gesprächszeit",
+      "wert": "15 min Donnerstag"
+    }
   ],
-
-  "leitfrage": "Wie bereite ich das Konfliktgespraech so vor, dass meine Position ankommt UND die Beziehung traegt?",
-
-  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 19.1 (Feedback), Kap. 19.2 (Konflikte, Schulz von Thun, Aussprache) und Kap. 18.1 (Identitaet) als Grundlage.",
-
+  "leitfrage": "Wie bereite ich das Konfliktgespräch so vor, dass meine Position ankommt UND die Beziehung trägt?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 19.1 (Feedback), Kap. 19.2 (Konflikte, Schulz von Thun, Aussprache) und Kap. 18.1 (Identität) als Grundlage.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 19.2 | S. 425-426",
-      "text": "Erklaere die vier Ebenen des Kommunikationsquadrats von Schulz von Thun (Sachinhalt, Selbstkundgabe, Beziehung, Appell) aus Kap. 19.2. Welche Botschaft sendet dein Berufsbildner mit dem Satz «Du hoerst einfach nicht zu.» auf jeder der vier Ebenen?",
+      "text": "Erkläre die vier Ebenen des Kommunikationsquadrats von Schulz von Thun (Sachinhalt, Selbstkundgabe, Beziehung, Appell) aus Kap. 19.2. Welche Botschaft sendet dein Berufsbildner/in mit dem Satz «Du hörst einfach nicht zu.» auf jeder der vier Ebenen?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 19.2 | S. 427-428",
-      "text": "Wende die Regel «Ich-Botschaften statt Du-Botschaften» aus Kap. 19.2 auf drei konkrete Saetze deines Vorwurfs an. Formuliere jede Du-Botschaft in eine Ich-Botschaft um (z. B. «Ich empfinde es als ...» statt «Du tust ...»).",
+      "text": "Wende die Regel «Ich-Botschaften statt Du-Botschaften» aus Kap. 19.2 auf drei konkrete Sätze deines Vorwurfs an. Formuliere jede Du-Botschaft in eine Ich-Botschaft um (z. B. «Ich empfinde es als ...» statt «Du tust ...»).",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 19.1 | S. 422-423",
-      "text": "Entscheide begruendet: Beginnst du die 15 Minuten mit dem Vorfall (deine Sicht), mit einer Frage an den Berufsbildner (Selbstkundgabeohr) oder mit dem gemeinsamen Ziel (Win-Win)? Stuetze deine Wahl auf zwei Regeln zum konstruktiven Feedback aus Kap. 19.1.",
+      "text": "Entscheide begründet: Beginnst du die 15 Minuten mit dem Vorfall (deine Sicht), mit einer Frage an den Berufsbildner/in (Selbstkundgabeohr) oder mit dem gemeinsamen Ziel (Win-Win)? Stütze deine Wahl auf zwei Regeln zum konstruktiven Feedback aus Kap. 19.1.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 19.2 | S. 426-428 plus Kap. 18.1 | S. 408-412",
-      "text": "Formuliere ein Drehbuch fuer die ersten 5 Minuten des Gespraechs: Eroeffnung (Ich-Botschaft, 2-3 Saetze), zwei aktive-Zuhoeren-Rueckfragen, ein Win-Win-Vorschlag. Beruecksichtige dabei deine Rolle als Lernende/r und den Selbstwert (Kap. 18.1).",
+      "text": "Formuliere ein Drehbuch für die ersten 5 Minuten des Gesprächs: Eröffnung (Ich-Botschaft, 2-3 Sätze), zwei aktive-Zuhören-Rückfragen, ein Win-Win-Vorschlag. Berücksichtige dabei deine Rolle als Lernende/r und den Selbstwert (Kap. 18.1).",
       "feld_hoehe_mm": 15
     }
   ],
-
   "mindmap_zentrum": "Aussprache vorbereiten",
   "mindmap_aeste": [
-    {"titel": "Vier Ohren (Kap. 19.2 S. 425-426)", "punkte": ["Sachohr — Was ist passiert?", "Selbstkundgabeohr — Was sagt das ueber ihn?", "Beziehungsohr — Wie steht er zu mir?", "Appellohr — Was soll ich tun?"], "optional": false},
-    {"titel": "Ich-Botschaft statt Du-Botschaft (Kap. 19.2 S. 428)", "punkte": ["«Ich empfinde es als ...»", "«Mir ist wichtig, dass ...»", "Konkretes Verhalten, kein Etikett", "Wunsch statt Vorwurf"], "optional": false},
-    {"titel": "Feedback-Regeln (Kap. 19.1 S. 422-423)", "punkte": ["Konkret und beobachtbar", "Zeitnah", "In Ich-Form", "Kritik annehmen ohne Rechtfertigung"], "optional": false},
-    {"titel": "Rolle und Selbstwert (Kap. 18.1)", "punkte": ["Rolle als Lernende anerkennen", "Selbstwert nicht aufgeben", "Soziale Interaktion bewusst"], "optional": true}
+    {
+      "titel": "Vier Ohren (Kap. 19.2 S. 425-426)",
+      "punkte": [
+        "Sachohr — Was ist passiert?",
+        "Selbstkundgabeohr — Was sagt das über ihn?",
+        "Beziehungsohr — Wie steht er zu mir?",
+        "Appellohr — Was soll ich tun?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ich-Botschaft statt Du-Botschaft (Kap. 19.2 S. 428)",
+      "punkte": [
+        "«Ich empfinde es als ...»",
+        "«Mir ist wichtig, dass ...»",
+        "Konkretes Verhalten, kein Etikett",
+        "Wunsch statt Vorwurf"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Feedback-Regeln (Kap. 19.1 S. 422-423)",
+      "punkte": [
+        "Konkret und beobachtbar",
+        "Zeitnah",
+        "In Ich-Form",
+        "Kritik annehmen ohne Rechtfertigung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Rolle und Selbstwert (Kap. 18.1)",
+      "punkte": [
+        "Rolle als Lernende anerkennen",
+        "Selbstwert nicht aufgeben",
+        "Soziale Interaktion bewusst"
+      ],
+      "optional": true
+    }
   ],
-
   "handlungsprodukt": {
-    "format": "Gespraechs-Drehbuch und Rollen-Probe",
-    "titel": "Drehbuch fuer meine Aussprache",
-    "format_detail": "Einseitiges Drehbuch (A4, 250-300 Woerter) mit drei Spalten: «Ich sage» (eigene Saetze in Ich-Botschaften), «Ich hoere» (was ich auf welchem Ohr aufnehme), «Ich frage» (Rueckfragen). Im Klassenraum gefolgt von einer 5-minuetigen Rollen-Probe mit einer Kollegin/einem Kollegen.",
-    "beschreibung": "Du erarbeitest dein Gespraechs-Drehbuch und uebst die ersten 5 Minuten der Aussprache mit einer Partnerin/einem Partner. Die Partnerperson spielt den Berufsbildner und gibt dir nach der Probe ein kurzes Feedback nach Kap. 19.1. Bewertet wird das Drehbuch plus eine 60-Sekunden-Selbstauswertung nach der Probe.",
+    "format": "Gesprächs-Drehbuch und Rollen-Probe",
+    "abgaben": ["Gesprächs-Drehbuch (A4, 3 Spalten: Ich sage / Ich höre / Ich frage)", "5-Minuten Rollen-Probe im Unterricht"],
+    "titel": "Drehbuch für meine Aussprache",
+    "format_detail": "Einseitiges Drehbuch (A4, 250-300 Wörter) mit drei Spalten: «Ich sage» (eigene Sätze in Ich-Botschaften), «Ich höre» (was ich auf welchem Ohr aufnehme), «Ich frage» (Rückfragen). Im Klassenraum gefolgt von einer 5-minütigen Rollen-Probe mit einer Kollegin/einem Kollegen.",
+    "beschreibung": "Du erarbeitest dein Gesprächs-Drehbuch und übst die ersten 5 Minuten der Aussprache mit einer Partnerin/einem Partner. Die Partnerperson spielt den Berufsbildner/in und gibt dir nach der Probe ein kurzes Feedback nach Kap. 19.1. Bewertet wird das Drehbuch plus eine 60-Sekunden-Selbstauswertung nach der Probe.",
     "schritte": [
-      {"label": "Vorfall sortieren mit den vier Ohren", "hint": "Tabelle vier Ohren x drei Schluesselaussagen — fuer jede Aussage notieren, was du auf welchem Ohr hoerst (Kap. 19.2 S. 425-426)."},
-      {"label": "Du-Botschaften umformulieren", "hint": "Drei Vorwuerfe nehmen, in Ich-Botschaft umschreiben. Vorlage: «Ich empfinde es als ..., wenn ...» (Kap. 19.2 S. 428)."},
-      {"label": "Win-Win-Vorschlag entwickeln", "hint": "Welcher konkrete Vorschlag bedient beide Interessen? Eine bis zwei Optionen vorbereiten (Kap. 19.2 S. 424, Strategien zur Konfliktloesung)."},
-      {"label": "Drehbuch in drei Spalten schreiben", "hint": "Ich sage — Ich hoere — Ich frage. Kein Monolog, sondern Wechsel."},
-      {"label": "Probe und Selbstauswertung", "hint": "5 Min. Rollenprobe; danach 60-Sek.-Selbstauswertung: Welche Ich-Botschaft hat gewirkt? Welche Du-Botschaft ist mir noch rausgerutscht?"}
+      {
+        "label": "Vorfall sortieren mit den vier Ohren",
+        "hint": "Tabelle vier Ohren x drei Schlüsselaussagen — für jede Aussage notieren, was du auf welchem Ohr hörst (Kap. 19.2 S. 425-426)."
+      },
+      {
+        "label": "Du-Botschaften umformulieren",
+        "hint": "Drei Vorwürfe nehmen, in Ich-Botschaft umschreiben. Vorlage: «Ich empfinde es als ..., wenn ...» (Kap. 19.2 S. 428)."
+      },
+      {
+        "label": "Win-Win-Vorschlag entwickeln",
+        "hint": "Welcher konkrete Vorschlag bedient beide Interessen? Eine bis zwei Optionen vorbereiten (Kap. 19.2 S. 424, Strategien zur Konfliktlösung)."
+      },
+      {
+        "label": "Drehbuch in drei Spalten schreiben",
+        "hint": "Ich sage — Ich höre — Ich frage. Kein Monolog, sondern Wechsel."
+      },
+      {
+        "label": "Probe und Selbstauswertung",
+        "hint": "5 Min. Rollenprobe; danach 60-Sek.-Selbstauswertung: Welche Ich-Botschaft hat gewirkt? Welche Du-Botschaft ist mir noch rausgerutscht?"
+      }
     ],
     "schreib_label": "DREHBUCH HIER ERARBEITEN",
-    "schreib_note": "-> wissen/konfliktgespraech_ich_botschaften"
+    "schreib_note": "-> wissen/konfliktgespräch_ich_botschaften"
   },
-
   "reflexion_fragen": [
-    {"nr": "R1", "text": "Auf welchem der vier Ohren hoere ich Kritik im Lehrbetrieb am haeufigsten — und warum?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Wo in meinem Lehralltag wuerde ich die Ich-Botschaft-Regel ab morgen konkret brauchen?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Was aendere ich konkret, damit aus einer Du-Botschaft eine Ich-Botschaft wird, bevor ich rede?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "nr": "R1",
+      "text": "Auf welchem der vier Ohren höre ich Kritik im Lehrbetrieb am häufigsten — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag würde ich die Ich-Botschaft-Regel ab morgen konkret brauchen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret, damit aus einer Du-Botschaft eine Ich-Botschaft wird, bevor ich rede?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
   ],
-
   "bewertungsraster": [
-    {"produkt": "Leitfragen", "abgabe": "Woche 1 — Ende Lektion", "gewicht": 20, "kriterium": "Inhaltliche Korrektheit"},
-    {"produkt": "Mindmap", "abgabe": "Woche 1 — Ende Lektion", "gewicht": 15, "kriterium": "Struktur · Tiefe · Verbindungen"},
-    {"produkt": "Handlungsprodukt", "abgabe": "Woche 2 — Ende Lektion", "gewicht": 35, "kriterium": "Rubrik 4 Stufen (SuK + Ges)"},
-    {"produkt": "Reflexion", "abgabe": "Woche 3 — Abgabe", "gewicht": 15, "kriterium": "Tiefe + Transfer"},
-    {"produkt": "Dekontextualisierung", "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)", "gewicht": 15, "kriterium": "Prinzip auf neue Situation uebertragen"}
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur · Tiefe · Verbindungen"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 35,
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Transfer",
+      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
+      "gewicht": 15,
+      "kriterium": "Prinzip auf neue Situation übertragen"
+    }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Situation lesen, LF1-LF2, Vier-Ohren-Tabelle und Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Drehbuch verfassen und Rollen-Probe", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Dekontextualisierung", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Vier-Ohren-Tabelle und Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Drehbuch verfassen und Rollen-Probe",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
   "template": "default_4page_v2",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "1.1.1_konflikt_kommunizieren_prinzip",
   "sub_facette": {
     "buchstabe": "C",
-    "label": "Konfliktgespraech rollenbewusst und beziehungserhaltend fuehren"
+    "label": "Konfliktgespräch rollenbewusst und beziehungserhaltend führen"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Klare Position vertreten vs. Lernenden-Rolle und Lernchance wahren",
-    "hint": "Schweigst du, verlierst du dein Anliegen; eskalierst du, verlierst du die Lernbeziehung. Bewertet wird, wie sauber du beide Pole im Gespraech haeltst."
+    "hint": "Schweigst du, verlierst du dein Anliegen; eskalierst du, verlierst du die Lernbeziehung. Bewertet wird, wie sauber du beide Pole im Gespräch hältst."
   },
-
   "dekontextualisierung": {
     "frage": "Wo in meinem Leben (Familie, Verein, WG) wende ich die Vier-Ohren-Logik und Ich-Botschaften ebenfalls an?",
-    "ziel": "Konfliktgespraeche grundsaetzlich rollenbewusst und beziehungserhaltend fuehren — die Methode (Vier Ohren, Ich-Botschaft, Aussprache-Punkte) ist uebertragbar."
+    "ziel": "Konfliktgespräche grundsätzlich rollenbewusst und beziehungserhaltend führen — die Methode (Vier Ohren, Ich-Botschaft, Aussprache-Punkte) ist übertragbar."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R1",
-    "r2_voraussicht": "T4 — Verantwortung in der Pflege/Betreuung — Konfliktgespraech mit Klienten oder Angehoerigen.",
-    "r3_voraussicht": "T7 — Konfliktgespraech mit Vorgesetzten in der Arbeitswelt."
+    "r2_voraussicht": "T4 — Verantwortung in der Pflege/Betreuung — Konfliktgespräch mit Klienten oder Angehörigen.",
+    "r3_voraussicht": "T7 — Konfliktgespräch mit Vorgesetzten in der Arbeitswelt."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 19.2", "titel": "Konflikte — Strategien, Kommunikationsquadrat Schulz von Thun, Ich-Botschaften, Aussprache", "seiten": "Seite 424-428", "fuer_leitfrage": [1, 2, 4]},
-    {"ref": "Kap. 19.1", "titel": "Feedback — Regeln fuer konstruktives Feedback und Kritik annehmen", "seiten": "Seite 422-423", "fuer_leitfrage": [3, 4]},
-    {"ref": "Kap. 18.1", "titel": "Identitaet — Rollenuebernahme und Selbstwert", "seiten": "Seite 408-412", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 19.2",
+      "titel": "Konflikte — Strategien, Kommunikationsquadrat Schulz von Thun, Ich-Botschaften, Aussprache",
+      "seiten": "Seite 424-428",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 19.1",
+      "titel": "Feedback — Regeln für konstruktives Feedback und Kritik annehmen",
+      "seiten": "Seite 422-423",
+      "fuer_leitfrage": [
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 18.1",
+      "titel": "Identität — Rollenübernahme und Selbstwert",
+      "seiten": "Seite 408-412",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Vier-Ohren-Verstaendnis", "indikator": "Kann eine Aussage auf allen vier Ebenen interpretieren und benennt das eigene dominante Ohr.", "gewicht_prozent": 25},
-      {"kriterium": "Ich-Botschaften-Praxis", "indikator": "Drei Ich-Botschaften im Drehbuch sind konkret, beschreiben Verhalten statt Etiketten und enthalten einen Wunsch.", "gewicht_prozent": 25},
-      {"kriterium": "Aktives Zuhoeren", "indikator": "Drehbuch enthaelt mindestens zwei offene Rueckfragen, die das Selbstkundgabe- oder Sachohr aktivieren.", "gewicht_prozent": 25},
-      {"kriterium": "Win-Win-Vorschlag", "indikator": "Vorschlag adressiert ein Interesse des Berufsbildners UND ein Interesse der Lernenden, beide explizit benannt.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Vier-Ohren-Verständnis",
+        "indikator": "Kann eine Aussage auf allen vier Ebenen interpretieren und benennt das eigene dominante Ohr.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Ich-Botschaften-Praxis",
+        "indikator": "Drei Ich-Botschaften im Drehbuch sind konkret, beschreiben Verhalten statt Etiketten und enthalten einen Wunsch.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Aktives Zuhören",
+        "indikator": "Drehbuch enthält mindestens zwei offene Rückfragen, die das Selbstkundgabe- oder Sachohr aktivieren.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Win-Win-Vorschlag",
+        "indikator": "Vorschlag adressiert ein Interesse des Berufsbildner/in UND ein Interesse der Lernenden, beide explizit benannt.",
+        "gewicht_prozent": 25
+      }
     ],
-    "scaffold_90": "Vier-Ohren-Tabellen-Vorlage plus Liste mit Satzanfaengen fuer Ich-Botschaften und Win-Win-Vorschlaege.",
-    "scaffold_100": "Zusaetzlich: Variante des Drehbuchs mit eskalierender Reaktion des Berufsbildners — wie reagierst du, wenn er emotional wird?"
+    "scaffold_90": "Vier-Ohren-Tabellen-Vorlage plus Liste mit Satzanfängen für Ich-Botschaften und Win-Win-Vorschläge.",
+    "scaffold_100": "Zusätzlich: Variante des Drehbuchs mit eskalierender Reaktion des Berufsbildner/in — wie reagierst du, wenn er emotional wird?"
   },
-
   "prinzip_handoff": {
-    "kernkonzept": "Konfliktgespraech als Zusammenspiel von Ich-Botschaft, aktivem Zuhoeren und Win-Win-Vorschlag — Beziehung wird durch Form gewahrt, nicht durch Schweigen.",
+    "kernkonzept": "Konfliktgespräch als Zusammenspiel von Ich-Botschaft, aktivem Zuhören und Win-Win-Vorschlag — Beziehung wird durch Form gewahrt, nicht durch Schweigen.",
     "lehrmittel_anker": "Kap. 19.2 S. 424-428 (Schulz von Thun, Ich-Botschaften, Aussprache) plus Kap. 19.1 S. 422-423 (Feedback) plus Kap. 18.1 S. 408-412 (Rolle und Selbstwert).",
-    "kn_aktivierung": "Im KN erscheint diese Subfacette als das Element Gespraechsfuehrung — kann die Lernende die Eroeffnung in einer Ich-Botschaft formulieren und ein Win-Win-Element nennen?",
-    "transfer_check": "Vor jedem schwierigen Gespraech kurz die vier Ohren durchspielen und mindestens einen Du-Botschafts-Satz in eine Ich-Botschaft uebersetzen."
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als das Element Gesprächsführung — kann die Lernende die Eröffnung in einer Ich-Botschaft formulieren und ein Win-Win-Element nennen?",
+    "transfer_check": "Vor jedem schwierigen Gespräch kurz die vier Ohren durchspielen und mindestens einen Du-Botschafts-Satz in eine Ich-Botschaft übersetzen."
   },
-
   "sk_anker": [
-    {"sk": 4, "wo": "Die Rollen-Probe im Klassenraum verlangt Teamarbeit mit einer Kollegin/einem Kollegen und Feedback-Austausch nach Kap. 19.1."},
-    {"sk": 7, "wo": "LF1 verlangt, die Botschaft des Berufsbildners auf allen vier Ohren zu hoeren — also seinen Standpunkt nachzuvollziehen, bevor du antwortest."},
-    {"sk": 11, "wo": "Im Drehbuch muss die Lernende den Trade-off zwischen klarer Positionierung und Rollen-Wahrung sichtbar halten — nicht nur kaempfen, nicht nur schweigen."}
+    {
+      "sk": 4,
+      "wo": "Die Rollen-Probe im Klassenraum verlangt Teamarbeit mit einer Kollegin/einem Kollegen und Feedback-Austausch nach Kap. 19.1."
+    },
+    {
+      "sk": 7,
+      "wo": "LF1 verlangt, die Botschaft des Berufsbildner/in auf allen vier Ohren zu hören — also seinen Standpunkt nachzuvollziehen, bevor du antwortest."
+    },
+    {
+      "sk": 11,
+      "wo": "Im Drehbuch muss die Lernende den Trade-off zwischen klarer Positionierung und Rollen-Wahrung sichtbar halten — nicht nur kämpfen, nicht nur schweigen."
+    }
   ]
 }

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import JSZip from 'jszip'
 
@@ -36,6 +36,13 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [bundling, setBundling] = useState(false)
   const [toast, setToast] = useState<{ kind: 'ok' | 'error'; msg: string } | null>(null)
 
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = '@media print { .app-chrome { display: none !important; } .pages { padding: 0; gap: 0; margin: 0; } body { margin: 0; padding: 0; } }'
+    document.head.appendChild(style)
+    return () => document.head.removeChild(style)
+  }, [])
+
   const onEdit = useCallback((k: string, v: string) => {
     setEdits((prev) => ({ ...prev, [k]: v }))
   }, [])
@@ -44,7 +51,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
 
   const docNode = useMemo(() => {
     if (doc === 'doc-s') {
-      if (!sit) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Situation {situation} fehlt.</p></div>
+      if (!sit) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Herausforderung {situation} fehlt.</p></div>
       return <DocS sit={sit} set={d.set} abteilung={abteilung} mode={mode} edits={edits} onEdit={onEdit} />
     }
     if (doc === 'doc-kn-s') {
@@ -52,7 +59,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       return <DocKnS kn={d.kn} knTyp={knTyp} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
     if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
-    return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} />
+    return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.sit_A, d.sit_B, d.sit_C]} />
   }, [doc, situation, mode, abteilung, edits, knTyp, sit, d, onEdit])
 
   const showToast = (msg: string, kind: 'ok' | 'error' = 'ok') => {
@@ -155,12 +162,12 @@ ${cssRenderer}
       }
 
       if (d.kn && d.prinzip) {
-        const markup = renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} />)
+        const markup = renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.sit_A, d.sit_B, d.sit_C]} />)
         const filename = `${prefix}_doc-kn-lp.html`
         zip.file(`html/${filename}`, wrap('DOC-KN-LP Lehrperson + Bewertung', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngArrayBuffer })
+          const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngArrayBuffer, sits: [d.sit_A, d.sit_B, d.sit_C] })
           zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
           log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
         } catch (e) { console.warn('docx KnLp failed', filename, e) }
@@ -216,7 +223,7 @@ ${cssRenderer}
           <span className="chrome-group-label">Doc</span>
           <div className="chrome-seg">
             <button className={doc === 'doc-s' ? 'on' : ''} onClick={() => setDoc('doc-s')}>Situationsheft</button>
-            <button className={doc === 'doc-kn-s' ? 'on' : ''} onClick={() => setDoc('doc-kn-s')}>KN&nbsp;Schüler</button>
+            <button className={doc === 'doc-kn-s' ? 'on' : ''} onClick={() => setDoc('doc-kn-s')}>KN&nbsp;Schüler/in</button>
             <button className={doc === 'doc-kn-lp' ? 'on' : ''} onClick={() => setDoc('doc-kn-lp')}>KN&nbsp;Lehrperson</button>
           </div>
         </div>
@@ -295,31 +302,31 @@ function buildReadme({ prefix, log, d, when }: { prefix: string; log: string[]; 
 
 ## Was ist drin?
 
-Dieses Bundle enthaelt ${log.length} Dokumente in zwei Formaten: druckfertige
+Dieses Bundle enthält ${log.length} Dokumente in zwei Formaten: druckfertige
 HTML-Dateien (A4, zum Direkt-Drucken im Browser) und Word-Dateien (.docx)
 (zum Anpassen / Kommentieren in Word). Beide Formate enthalten die gleichen
-Inhalte; HTML druckt 1:1 wie geplant, Word laesst sich weiterbearbeiten.
+Inhalte; HTML druckt 1:1 wie geplant, Word lässt sich weiterbearbeiten.
 
-Zusaetzlich liegt das Begleitdokument fuer die Lehrperson (\`_begleiter.docx\`)
+Zusätzlich liegt das Begleitdokument für die Lehrperson (\`_begleiter.docx\`)
 bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.
 
 ---
 
-## Set-Uebersicht
+## Set-Übersicht
 
 | Komponente | Titel |
 |---|---|
-| Situation A (rot) | ${d.sit_A?.titel || '—'} |
-| Situation B (blau) | ${d.sit_B?.titel || '—'} |
-| Situation C (gruen) | ${d.sit_C?.titel || '—'} |
-| KN Hybrid-Situation | ${d.kn?.hybrid_situation?.titel || '—'} |
+| Herausforderung A (rot) | ${d.sit_A?.titel || '—'} |
+| Herausforderung B (blau) | ${d.sit_B?.titel || '—'} |
+| Herausforderung C (grün) | ${d.sit_C?.titel || '—'} |
+| KN Hybrid-Herausforderung | ${d.kn?.hybrid_situation?.titel || '—'} |
 | Begleitdokument | ${d.begleiter?.meta?.titel || '—'} |
 
 ---
 
 ## Nach dem Unterricht
 
-Wenn du die Einheit umgesetzt hast, gib uns Feedback ueber das Online-Formular,
+Wenn du die Einheit umgesetzt hast, gib uns Feedback über das Online-Formular,
 das du im Workbench unter «Feedback nach Unterricht» findest. Das Feedback
 fliesst direkt ins Kernteam-1 Reviewing.
 

@@ -3,184 +3,355 @@
   "modul": "1.1",
   "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
   "lehrgang": "EFZ_3J",
-
   "situation": "A",
   "sit_farbe": "#C0392B",
   "sit_farbe_light": "#FADBD8",
   "sit_farbe_mid": "#E74C3C",
-
   "titel": "Darf der Betrieb das verlangen? — mein Regel-Spickzettel zum Lehrvertrag",
   "emotion_tag": "Verunsicherung",
-
-  "wissensknoten": ["lehrvertrag_rechte_pflichten"],
-
+  "wissensknoten": [
+    "lehrvertrag_rechte_pflichten"
+  ],
   "nrlp": {
     "nr": "1.1.1",
-    "nr_primary": ["1.1.1"],
+    "nr_primary": [
+      "1.1.1"
+    ],
     "lebensbezug": "1.1",
-    "themen": ["T1"],
+    "themen": [
+      "T1"
+    ],
     "gesellschaft": [
-      {"aspekt": "Recht", "iteration": "R1"},
-      {"aspekt": "Technologie und digitale Transformation", "iteration": "R1"}
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Technologie und digitale Transformation",
+        "iteration": "R1"
+      }
     ],
     "sprachmodi": [
       "Rezeption schriftlich und bildlich",
       "Produktion schriftlich und bildlich"
     ],
-    "sk": [1, 6, 11]
+    "sk": [
+      1,
+      6,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM5"
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
-
   "persona": {
     "beruf": "Polymechaniker/in EFZ",
     "betrieb": "Mechanikwerkstatt Roth AG Basel",
     "ort": "Basel"
   },
-
-  "situation_text": "Du bist Polymechaniker-Lernender im 1. Lehrjahr bei der Roth AG in Basel. Du verdienst CHF 850 und arbeitest 41 Stunden pro Woche. In der Werkstatt-Chatgruppe stellt dir ein Mitlernender aus einem anderen Betrieb mehrere Fragen: Darf sein Betrieb von ihm Ueberstunden ohne Zuschlag verlangen? Darf der Berufsbildner CHF 80 fuer eine kaputte Bohrmaschine vom Lehrlingslohn abziehen? Und darf die Firma seine private Handy-Nummer in eine WhatsApp-Kundengruppe eintragen? Du moechtest ihm fundiert antworten — aber zuerst musst du dir selbst klar werden, was im Lehrvertrag, im Obligationenrecht und in den Datenschutzregeln tatsaechlich steht. Du baust dir einen A4-Regel-Spickzettel, den du als Grundlage fuer alle drei Fragen nutzen kannst.",
-
+  "situation_text": "Du bist Polymechaniker-Lernende/r im 1. Lehrjahr bei der Roth AG in Basel. Du verdienst CHF 850 und arbeitest 41 Stunden pro Woche. In der Werkstatt-Chatgruppe stellt dir ein Mitlernende/r aus einem anderen Betrieb mehrere Fragen: Darf sein Betrieb von ihm Überstunden ohne Zuschlag verlangen? Darf der Berufsbildner/in CHF 80 für eine kaputte Bohrmaschine vom Lehrlingslohn abziehen? Und darf die Firma seine private Handy-Nummer in eine WhatsApp-Kundengruppe eintragen? Du möchtest ihm fundiert antworten — aber zuerst musst du dir selbst klar werden, was im Lehrvertrag, im Obligationenrecht und in den Datenschutzregeln tatsächlich steht. Du baust dir einen A4-Regel-Spickzettel, den du als Grundlage für alle drei Fragen nutzen kannst.",
   "zahlen_tabelle": [
-    {"label": "Lehrlingslohn LJ1 Polymechaniker", "wert": "CHF 850"},
-    {"label": "Arbeitszeit pro Woche", "wert": "41 h"},
-    {"label": "Hoechstarbeitszeit Jugendliche", "wert": "9 h pro Tag (ArG 31)"},
-    {"label": "Lohnabzug ohne Verschulden", "wert": "nicht zulaessig (OR 321e)"}
+    {
+      "label": "Lehrlingslohn LJ1 Polymechaniker",
+      "wert": "CHF 850"
+    },
+    {
+      "label": "Arbeitszeit pro Woche",
+      "wert": "41 h"
+    },
+    {
+      "label": "Höchstarbeitszeit Jugendliche",
+      "wert": "9 h pro Tag (ArG 31)"
+    },
+    {
+      "label": "Lohnabzug ohne Verschulden",
+      "wert": "nicht zulässig (OR 321e)"
+    }
   ],
-
-  "leitfrage": "Welche Regeln aus Lehrvertrag, OR und Datenschutz brauche ich als Spickzettel, um die drei Anfragen meines Mitlernenden fundiert beantworten zu koennen?",
-
+  "leitfrage": "Welche Regeln aus Lehrvertrag, OR und Datenschutz brauche ich als Spickzettel, um die drei Anfragen meines Mitlernenden fundiert beantworten zu können?",
   "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 1.4 (Der Lehrvertrag), Kap. 17.1 (Dokumentieren) und Kap. 20.7 (Medienkompetenz / Datenschutz) als Grundlage.",
-
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.4 | S. 29-33",
-      "text": "Welche Hauptpflichten haben Lernende (OR 321a, OR 345) und welche Pflichten haben Berufsbildende (OR 345a)? Notiere mindestens fuenf Punkte mit Markier-Symbolen aus Kap. 17.1 (Wichtiges = Stern, Strittiges = Fragezeichen, Definition = Unterstreichen).",
+      "text": "Welche Hauptpflichten haben Lernende (OR 321a, OR 345) und welche Pflichten haben Berufsbildende (OR 345a)? Notiere mindestens fünf Punkte mit Markier-Symbolen aus Kap. 17.1 (Wichtiges = Stern, Strittiges = Fragezeichen, Definition = Unterstreichen).",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.4 | S. 32-34",
-      "text": "Wende die Regeln zu Ueberstunden (OR 321c, ArG 31), Lohnabzug (OR 321e) und Geschaeftsgeheimnis/Treuepflicht (OR 321a) auf die drei Fragen deines Mitlernenden an. Welche Punkte sind zulaessig, welche nicht?",
+      "text": "Wende die Regeln zu Überstunden (OR 321c, ArG 31), Lohnabzug (OR 321e) und Geschäftsgeheimnis/Treuepflicht (OR 321a) auf die drei Fragen deines Mitlernenden an. Welche Punkte sind zulässig, welche nicht?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 20.7 | S. 446-452",
-      "text": "Entscheide begruendet: Ist es im Sinne des Datenschutzes (Kap. 20.7) zulaessig, dass der Betrieb die private Handy-Nummer ohne Zustimmung in eine WhatsApp-Kundengruppe eintraegt? Welche zwei Datenschutz-Regeln stehen dem entgegen?",
+      "text": "Entscheide begründet: Ist es im Sinne des Datenschutzes (Kap. 20.7) zulässig, dass der Betrieb die private Handy-Nummer ohne Zustimmung in eine WhatsApp-Kundengruppe einträgt? Welche zwei Datenschutz-Regeln stehen dem entgegen?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.1 | S. 372-378",
-      "text": "Formuliere deinen Regel-Spickzettel auf einer A4-Seite. Gliederung nach Kap. 17.1: drei Bloecke (Rechte und Pflichten Arbeit, Lohn und Abzuege, Datenschutz und digitale Kanaele), je 3-4 Stichworte in eigenen Worten plus exakte Quellenangabe (Artikel oder Kapitel).",
+      "text": "Formuliere deinen Regel-Spickzettel auf einer A4-Seite. Gliederung nach Kap. 17.1: drei Blöcke (Rechte und Pflichten Arbeit, Lohn und Abzüge, Datenschutz und digitale Kanäle), je 3-4 Stichworte in eigenen Worten plus exakte Quellenangabe (Artikel oder Kapitel).",
       "feld_hoehe_mm": 15
     }
   ],
-
   "mindmap_zentrum": "Regel-Spickzettel — Rechte, Lohn, Datenschutz",
   "mindmap_aeste": [
-    {"titel": "Pflichten Lernende (OR 321a, 345)", "punkte": ["Hauptpflicht: Anordnungen befolgen", "Sorgfaltspflicht", "Treuepflicht / Geschaeftsgeheimnis", "Berufsfachschule besuchen"], "optional": false},
-    {"titel": "Rechte Lernende und Lohn (OR 322ff., 321c, 321e, ArG 31)", "punkte": ["Lohn laut Vertrag", "Ueberstunden mit Zuschlag oder Freizeit", "Kein Lohnabzug ohne nachgewiesenes Verschulden", "Max. 9 h pro Tag unter 18 J."], "optional": false},
-    {"titel": "Pflichten Berufsbildende (OR 345a)", "punkte": ["Fachgerechte Ausbildung", "Lohnzahlung", "Versicherungspflicht (BU/NBU)", "Schutz Persoenlichkeit"], "optional": false},
-    {"titel": "Datenschutz / digitale Kanaele (Kap. 20.7)", "punkte": ["Zustimmung vor Datenweitergabe", "Zweckbindung der Daten", "Recht auf Auskunft", "Private vs. geschaeftliche Kanaele trennen"], "optional": true}
+    {
+      "titel": "Pflichten Lernende (OR 321a, 345)",
+      "punkte": [
+        "Hauptpflicht: Anordnungen befolgen",
+        "Sorgfaltspflicht",
+        "Treuepflicht / Geschäftsgeheimnis",
+        "Berufsfachschule besuchen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Rechte Lernende und Lohn (OR 322ff., 321c, 321e, ArG 31)",
+      "punkte": [
+        "Lohn laut Vertrag",
+        "Überstunden mit Zuschlag oder Freizeit",
+        "Kein Lohnabzug ohne nachgewiesenes Verschulden",
+        "Max. 9 h pro Tag unter 18 J."
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Pflichten Berufsbildende (OR 345a)",
+      "punkte": [
+        "Fachgerechte Ausbildung",
+        "Lohnzahlung",
+        "Versicherungspflicht (BU/NBU)",
+        "Schutz Persönlichkeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Datenschutz / digitale Kanäle (Kap. 20.7)",
+      "punkte": [
+        "Zustimmung vor Datenweitergabe",
+        "Zweckbindung der Daten",
+        "Recht auf Auskunft",
+        "Private vs. geschäftliche Kanäle trennen"
+      ],
+      "optional": true
+    }
   ],
-
   "handlungsprodukt": {
     "format": "Regel-Spickzettel",
+    "abgaben": ["A4-Regel-Spickzettel (3 Blöcke mit exakten Quellenangaben)"],
     "titel": "Mein A4-Regel-Spickzettel — Lehrvertrag, Lohn und Datenschutz",
-    "format_detail": "Einseitiges A4-Dokument mit drei thematischen Bloecken (Rechte und Pflichten Arbeit / Lohn und Abzuege / Datenschutz), jeweils 3-4 Stichworte in eigenen Worten plus exakte Quellenangabe (OR-Artikel oder Kap.-Verweis). Markier-Symbole aus Kap. 17.1 verwenden.",
-    "beschreibung": "Du erarbeitest einen kompakten A4-Spickzettel, der dir und deinem Mitlernenden als Nachschlagwerk dient. Er ist die rezeptive Vorstufe fuer die Fall-Mappe in Sit B und das Antwortschreiben in Sit C — sauber zitierte Quellen sparen dir spaeter doppelte Arbeit.",
+    "format_detail": "Einseitiges A4-Dokument mit drei thematischen Blöcken (Rechte und Pflichten Arbeit / Lohn und Abzüge / Datenschutz), jeweils 3-4 Stichworte in eigenen Worten plus exakte Quellenangabe (OR-Artikel oder Kap.-Verweis). Markier-Symbole aus Kap. 17.1 verwenden.",
+    "beschreibung": "Du erarbeitest einen kompakten A4-Spickzettel, der dir und deinem Mitlernenden als Nachschlagwerk dient. Er ist die rezeptive Vorstufe für die Fall-Mappe in Sit B und das Antwortschreiben in Sit C — sauber zitierte Quellen sparen dir später doppelte Arbeit.",
     "schritte": [
-      {"label": "Quellen sichten und markieren", "hint": "Kap. 1.4 und Kap. 20.7 mit den Symbol-Markierungen aus Kap. 17.1 lesen: Wichtiges = Stern, Strittiges = Fragezeichen, Definitionen = Unterstreichen."},
-      {"label": "Spickzettel-Raster vorbereiten", "hint": "Drei Bloecke A4 quer: (1) Rechte und Pflichten Arbeit, (2) Lohn und Abzuege, (3) Datenschutz / digitale Kanaele. Pro Block 3-4 Zeilen."},
-      {"label": "Inhalte in eigenen Worten verdichten", "hint": "Pro Punkt ein kurzer Stichsatz in eigenen Worten — nicht abschreiben. Kap. 17.1 zeigt die Buendelungs-Technik."},
-      {"label": "Quellenangaben praezisieren", "hint": "Hinter jedem Punkt exakte Quelle: OR-Artikel-Nummer oder 'Kap. 20.7 S. 446'. Suchstrategien aus Kap. 20.8 anwenden."},
-      {"label": "Quer-Check und Layout-Finish", "hint": "Pruefe: Sind alle drei Fragen des Mitlernenden mit mindestens einer Spickzettel-Zeile abgedeckt? Layout sauber, lesbar, eine Seite."}
+      {
+        "label": "Quellen sichten und markieren",
+        "hint": "Kap. 1.4 und Kap. 20.7 mit den Symbol-Markierungen aus Kap. 17.1 lesen: Wichtiges = Stern, Strittiges = Fragezeichen, Definitionen = Unterstreichen."
+      },
+      {
+        "label": "Spickzettel-Raster vorbereiten",
+        "hint": "Drei Blöcke A4 quer: (1) Rechte und Pflichten Arbeit, (2) Lohn und Abzüge, (3) Datenschutz / digitale Kanäle. Pro Block 3-4 Zeilen."
+      },
+      {
+        "label": "Inhalte in eigenen Worten verdichten",
+        "hint": "Pro Punkt ein kurzer Stichsatz in eigenen Worten — nicht abschreiben. Kap. 17.1 zeigt die Bündelungs-Technik."
+      },
+      {
+        "label": "Quellenangaben präzisieren",
+        "hint": "Hinter jedem Punkt exakte Quelle: OR-Artikel-Nummer oder 'Kap. 20.7 S. 446'. Suchstrategien aus Kap. 20.8 anwenden."
+      },
+      {
+        "label": "Quer-Check und Layout-Finish",
+        "hint": "Prüfe: Sind alle drei Fragen des Mitlernenden mit mindestens einer Spickzettel-Zeile abgedeckt? Layout sauber, lesbar, eine Seite."
+      }
     ],
     "schreib_label": "REGEL-SPICKZETTEL HIER ERARBEITEN",
     "schreib_note": "-> wissen/lehrvertrag_rechte_pflichten"
   },
-
   "reflexion_fragen": [
-    {"nr": "R1", "text": "Welche Regel aus Kap. 1.4 oder Kap. 20.7 hat mich beim Lesen am meisten ueberrascht — und warum?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Wo in meinem Lehralltag werde ich diesen Spickzettel oder eine eigene Version davon konkret brauchen?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Was aendere ich konkret, wenn die naechste unklare Anweisung kommt — schaue ich zuerst im Vertrag nach oder im Internet?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "nr": "R1",
+      "text": "Welche Regel aus Kap. 1.4 oder Kap. 20.7 hat mich beim Lesen am meisten überrascht — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag werde ich diesen Spickzettel oder eine eigene Version davon konkret brauchen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret, wenn die nächste unklare Anweisung kommt — schaue ich zuerst im Vertrag nach oder im Internet?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
   ],
-
   "bewertungsraster": [
-    {"produkt": "Leitfragen", "abgabe": "Woche 1 — Ende Lektion", "gewicht": 20, "kriterium": "Inhaltliche Korrektheit"},
-    {"produkt": "Mindmap", "abgabe": "Woche 1 — Ende Lektion", "gewicht": 15, "kriterium": "Struktur · Tiefe · Verbindungen"},
-    {"produkt": "Handlungsprodukt", "abgabe": "Woche 2 — Ende Lektion", "gewicht": 35, "kriterium": "Rubrik 4 Stufen (SuK + Ges)"},
-    {"produkt": "Reflexion", "abgabe": "Woche 3 — Abgabe", "gewicht": 15, "kriterium": "Tiefe + Transfer"},
-    {"produkt": "Dekontextualisierung", "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)", "gewicht": 15, "kriterium": "Prinzip auf neue Situation uebertragen"}
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur · Tiefe · Verbindungen"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 35,
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Transfer",
+      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
+      "gewicht": 15,
+      "kriterium": "Prinzip auf neue Situation übertragen"
+    }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Situation lesen, LF1-LF2, Quellen markieren, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Regel-Spickzettel auf A4 verfassen", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Dekontextualisierung", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Quellen markieren, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Regel-Spickzettel auf A4 verfassen",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
   "template": "default_4page_v2",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "1.1.1_rechte_verstehen_nutzen_prinzip",
   "sub_facette": {
     "buchstabe": "A",
     "label": "Rechte, Pflichten und Datenschutz-Regeln aus Quellen extrahieren und als Regel-Spickzettel verdichten"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
-    "trade_off": "Quellen direkt zitieren vs. in eigenen Worten verstaendlich umformulieren",
-    "hint": "Beide Pole sind legitim: Direkte Zitate sind rechtlich praezise, eigene Worte sind verstaendlich. Bewertet wird nicht die Wahl, sondern wie sauber du Quelle und eigene Formulierung im Spickzettel kennzeichnest."
+    "trade_off": "Quellen direkt zitieren vs. in eigenen Worten verständlich umformulieren",
+    "hint": "Beide Pole sind legitim: Direkte Zitate sind rechtlich präzise, eigene Worte sind verständlich. Bewertet wird nicht die Wahl, sondern wie sauber du Quelle und eigene Formulierung im Spickzettel kennzeichnest."
   },
-
   "dekontextualisierung": {
     "frage": "Wie baue ich mir einen Spickzettel zu einer anderen Rechtsfrage (Mietrecht, Konsumentenrecht, AHV), bei der ich mehrere Quellen abgleichen muss?",
-    "ziel": "Tatbestand und Rechtsgrundlage aus geeigneten Quellen klaeren — die rezeptive Vorstufe jeder begruendeten rechtlichen Auskunft."
+    "ziel": "Tatbestand und Rechtsgrundlage aus geeigneten Quellen klären — die rezeptive Vorstufe jeder begründeten rechtlichen Auskunft."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R1",
-    "r2_voraussicht": "T4 — Verantwortung im sozialen Zusammenleben (Datenschutz und Persoenlichkeitsrechte).",
-    "r3_voraussicht": "T7 — Arbeitsrecht im Anstellungsverhaeltnis nach der Lehre."
+    "r2_voraussicht": "T4 — Verantwortung im sozialen Zusammenleben (Datenschutz und Persönlichkeitsrechte).",
+    "r3_voraussicht": "T7 — Arbeitsrecht im Anstellungsverhältnis nach der Lehre."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 1.4", "titel": "Der Lehrvertrag — Pflichten Lernende, Rechte Lernende, Lohnabzuege, Geschaeftsgeheimnis", "seiten": "Seite 28-37", "fuer_leitfrage": [1, 2]},
-    {"ref": "Kap. 17.1", "titel": "Dokumentieren — Notiztechniken und Markieren mit Symbolen", "seiten": "Seite 372-378", "fuer_leitfrage": [1, 4]},
-    {"ref": "Kap. 20.7", "titel": "Medienkompetenz — Datenschutz, Datenmissbrauch, digitale Kanaele", "seiten": "Seite 446-452", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 20.8", "titel": "Recherchieren — Suchstrategien und kritische Quellenbeurteilung", "seiten": "Seite 460-468", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 1.4",
+      "titel": "Der Lehrvertrag — Pflichten Lernende, Rechte Lernende, Lohnabzüge, Geschäftsgeheimnis",
+      "seiten": "Seite 28-37",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 17.1",
+      "titel": "Dokumentieren — Notiztechniken und Markieren mit Symbolen",
+      "seiten": "Seite 372-378",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 20.7",
+      "titel": "Medienkompetenz — Datenschutz, Datenmissbrauch, digitale Kanäle",
+      "seiten": "Seite 446-452",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 20.8",
+      "titel": "Recherchieren — Suchstrategien und kritische Quellenbeurteilung",
+      "seiten": "Seite 460-468",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Rechtskenntnis Lehrvertrag", "indikator": "Kann mindestens drei Pflichten und drei Rechte aus Kap. 1.4 benennen und einer OR-Quelle zuordnen.", "gewicht_prozent": 25},
-      {"kriterium": "Datenschutzkenntnis", "indikator": "Nennt mindestens zwei Datenschutz-Regeln aus Kap. 20.7 und wendet sie auf den Handy-Nummer-Fall an.", "gewicht_prozent": 25},
-      {"kriterium": "Quellenarbeit und Dokumentation", "indikator": "Markiert systematisch nach Symbolen aus Kap. 17.1 und fuehrt im Spickzettel pro Punkt eine exakte Quellenangabe.", "gewicht_prozent": 25},
-      {"kriterium": "Eigene Worte und Verdichtung", "indikator": "Spickzettel ist in eigenen Worten formuliert (keine reinen Zitate) und passt auf eine A4-Seite.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Rechtskenntnis Lehrvertrag",
+        "indikator": "Kann mindestens drei Pflichten und drei Rechte aus Kap. 1.4 benennen und einer OR-Quelle zuordnen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Datenschutzkenntnis",
+        "indikator": "Nennt mindestens zwei Datenschutz-Regeln aus Kap. 20.7 und wendet sie auf den Handy-Nummer-Fall an.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Quellenarbeit und Dokumentation",
+        "indikator": "Markiert systematisch nach Symbolen aus Kap. 17.1 und führt im Spickzettel pro Punkt eine exakte Quellenangabe.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Eigene Worte und Verdichtung",
+        "indikator": "Spickzettel ist in eigenen Worten formuliert (keine reinen Zitate) und passt auf eine A4-Seite.",
+        "gewicht_prozent": 25
+      }
     ],
-    "scaffold_90": "Vorgegebenes A4-Raster mit drei Bloecken als Lueckentext, Quellenangaben bereits eingetragen.",
-    "scaffold_100": "Zusaetzlich: Vergleich der drei Fragen mit der Mustervorlage des kantonalen Amts fuer Berufsbildung."
+    "scaffold_90": "Vorgegebenes A4-Raster mit drei Blöcken als Lückentext, Quellenangaben bereits eingetragen.",
+    "scaffold_100": "Zusätzlich: Vergleich der drei Fragen mit der Mustervorlage des kantonalen Amts für Berufsbildung."
   },
-
   "prinzip_handoff": {
     "kernkonzept": "Quellen identifizieren, Regeln in eigenen Worten verdichten und mit exakter Quelle absichern.",
     "lehrmittel_anker": "Kap. 1.4 S. 28-37 (Lehrvertrag) plus Kap. 17.1 S. 372-378 (Dokumentieren) plus Kap. 20.7 S. 446-452 (Datenschutz) plus Kap. 20.8 S. 460-468 (Recherchieren).",
-    "kn_aktivierung": "Im KN erscheint diese Subfacette als Element Quellenklaerung — kann die Lernende benennen, aus welcher Quelle ein im Hybrid-Fall genannter Anspruch stammt?",
-    "transfer_check": "Bei jeder neuen Rechtsfrage zuerst pruefen, welche zwei oder drei Quellen den Tatbestand abdecken — und ob diese Quellen aktuell und vertrauenswuerdig sind."
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als Element Quellenklärung — kann die Lernende benennen, aus welcher Quelle ein im Hybrid-Fall genannter Anspruch stammt?",
+    "transfer_check": "Bei jeder neuen Rechtsfrage zuerst prüfen, welche zwei oder drei Quellen den Tatbestand abdecken — und ob diese Quellen aktuell und vertrauenswürdig sind."
   },
-
   "sk_anker": [
-    {"sk": 1, "wo": "Lernende unterscheidet zwischen relevanten Quellen (OR-Artikel im Kap. 1.4, Datenschutz-Regeln im Kap. 20.7) und irrelevanten Internet-Treffern (Kap. 20.8 Quellenkritik) beim Befuellen des Spickzettels (LF1, LF3, LF4)."},
-    {"sk": 6, "wo": "Im Spickzettel (LF4) begruendet die Lernende jeden eingetragenen Punkt mit einer exakten Quellenangabe — Standpunkt = Spickzettel-Eintrag, Begruendung = Quelle."},
-    {"sk": 11, "wo": "Reflexion R3 und mehrdeutigkeit.hint verlangen, dass die Lernende den Trade-off zwischen direktem Zitat und eigenen Worten explizit ausweist statt zu vereinheitlichen."}
+    {
+      "sk": 1,
+      "wo": "Lernende unterscheidet zwischen relevanten Quellen (OR-Artikel im Kap. 1.4, Datenschutz-Regeln im Kap. 20.7) und irrelevanten Internet-Treffern (Kap. 20.8 Quellenkritik) beim Befüllen des Spickzettels (LF1, LF3, LF4)."
+    },
+    {
+      "sk": 6,
+      "wo": "Im Spickzettel (LF4) begründet die Lernende jeden eingetragenen Punkt mit einer exakten Quellenangabe — Standpunkt = Spickzettel-Eintrag, Begründung = Quelle."
+    },
+    {
+      "sk": 11,
+      "wo": "Reflexion R3 und mehrdeutigkeit.hint verlangen, dass die Lernende den Trade-off zwischen direktem Zitat und eigenen Worten explizit ausweist statt zu vereinheitlichen."
+    }
   ]
 }

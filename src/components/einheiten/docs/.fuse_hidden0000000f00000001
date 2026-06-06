@@ -41,7 +41,7 @@ function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
       <SectionHead num="01 · Hybrid-Herausforderung">Herausforderung</SectionHead>
       <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', fontStyle: 'italic', margin: '0 0 3mm', maxWidth: '160mm' }}>
         {kn.hybrid_situation?.definition_kurz
-          || 'Eine Hybrid-Herausforderung bündelt die drei Herausforderungen (A, B, C) und ihre Kompetenzen in einer neuen, zusammengesetzten Aufgabe.'}
+          || 'Eine Hybrid-Herausforderung bündelt die drei Herausforderungen (A, B, C) und ihre Kompetenzen in einer neuen Situation.'}
       </p>
       <div className="sit-meta">
         <div className="item"><strong>Beruf</strong>{kn.hybrid_situation?.persona?.beruf}</div>
@@ -92,7 +92,7 @@ function FachgespraechPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pa
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
         <SectionHead num="03 · Vorbereitung">Notizen zu den Fragen (1/2)</SectionHead>
         <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-          Nutze die 15 Minuten Vorbereitungszeit für stichwortartige Notizen zu jeder Frage. Im Gespräch sprichst du frei.
+          Nutze die 15 Minuten Vorbereitungszeit fuer stichwortartige Notizen zu jeder Frage. Im Gespraech sprichst du frei.
         </p>
         {part1.map((f, i) => (
           <QItem
@@ -131,7 +131,7 @@ function MiniCasePages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTot
   return (
     <>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
-        <SectionHead num="03 · Aufgaben">Prüfungsaufgaben (1/2)</SectionHead>
+        <SectionHead num="03 · Aufgaben">Pruefungsaufgaben (1/2)</SectionHead>
         <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
           Bearbeite alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson erlaubt, kein Internet.
         </p>
@@ -148,7 +148,7 @@ function MiniCasePages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTot
         ))}
       </KnSPage>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart + 1} pageTotal={pageTotal}>
-        <SectionHead num="03 · Aufgaben">Prüfungsaufgaben (2/2)</SectionHead>
+        <SectionHead num="03 · Aufgaben">Pruefungsaufgaben (2/2)</SectionHead>
         {part2.map((a, i) => (
           <QItem
             key={i}
@@ -171,9 +171,9 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
   return (
     <>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
-        <SectionHead num="03 · Werkwahl">Welches Handlungsprodukt wähle ich?</SectionHead>
+        <SectionHead num="03 · Werkwahl">Welches Handlungsprodukt waehle ich?</SectionHead>
         <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
-          Wähle eines der drei Handlungsprodukte aus deinen Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gesprächs-Drehbuch) und begründe deine Wahl in 2–3 Sätzen.
+          Waehle eines der drei Handlungsprodukte aus deinen Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gespraechs-Drehbuch) und begruende deine Wahl in 2–3 Saetzen.
         </p>
         <Schreibfeld
           heightMm={28}
@@ -182,7 +182,7 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
         />
         <SectionHead num="04 · Transfer-Reflexion">Reflexion (1/2)</SectionHead>
         <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
-          Beantworte schriftlich, insgesamt 200–250 Wörter über alle drei Fragen.
+          Beantworte schriftlich, insgesamt 200–250 Woerter ueber alle drei Fragen.
         </p>
         {reflex.slice(0, 1).map((f, i) => (
           <QItem
@@ -240,7 +240,7 @@ function RubrikPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
         </tbody>
       </table>
       <h4 style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '7mm', marginBottom: '2mm' }}>
-        Niveaubänder — was 90% / 100% heisst
+        Niveaubaender — was 90% / 100% heisst
       </h4>
       <div className="niveau-legende">
         {rs.niveaubaender?.map((n, i) => (

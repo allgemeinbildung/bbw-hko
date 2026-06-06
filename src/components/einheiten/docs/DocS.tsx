@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { A4Page, Badge, HandlungsFlaeche, Schreibfeld, SectionHead, sitColors } from './chrome'
 import type { SituationJson, SetJson } from '../../../lib/einheiten/types'
+import { resolveSprachmodusIds, sprachmodusKurz } from '../../../lib/einheiten/sprachfoerderung'
 
 export interface DocSProps {
   sit: SituationJson
@@ -16,12 +17,12 @@ function CockpitHead({ sit }: { sit: SituationJson }) {
     <>
       <div className="badge-row" style={{ marginBottom: '2.5mm' }}>
         <Badge variant="outline">Kompetenz {sit.nrlp?.nr}</Badge>
-        <Badge>Situation {sit.situation} · {sit.emotion_tag}</Badge>
+        <Badge>Herausforderung {sit.situation} · {sit.emotion_tag}</Badge>
       </div>
       <h1 className="cockpit-title">{sit.titel}</h1>
       <p className="cockpit-sub">{sit.modul_titel}</p>
       <div className="badge-row" style={{ marginBottom: '3mm' }}>
-        <span className="subfacette">Subfacette {sit.sub_facette?.buchstabe} — {sit.sub_facette?.label}</span>
+        <span className="subfacette">Herausforderung {sit.sub_facette?.buchstabe}: {sit.sub_facette?.label}</span>
       </div>
     </>
   )
@@ -114,8 +115,11 @@ function QuellenList({ sit }: { sit: SituationJson }) {
       <ul style={{ margin: 0, paddingLeft: '4mm', fontSize: '8.5pt', lineHeight: 1.45 }}>
         {sit.quellen_anker.map((q, i) => (
           <li key={i} style={{ marginBottom: '0.5mm' }}>
-            <span className="source-ref"><strong>{q.ref}</strong></span> · {q.titel}{' '}
-            <span style={{ color: 'var(--ink-mute)' }}>· {q.seiten}</span>
+            <strong>{q.titel}</strong>
+            {q.unterueberschrift && <> · {q.unterueberschrift}</>}
+            {(q.ref || q.seiten) && (
+              <span style={{ color: 'var(--ink-mute)' }}> · {[q.ref, q.seiten].filter(Boolean).join(' · ')}</span>
+            )}
           </li>
         ))}
       </ul>
@@ -146,6 +150,24 @@ function SituationBlock({ sit }: { sit: SituationJson }) {
         </table>
       )}
       <div className="leitfrage-callout">{sit.leitfrage}</div>
+      {sit.mehrdeutigkeit?.trade_off && (
+        <div
+          className="spannungsfeld-callout"
+          style={{
+            marginTop: '3mm', padding: '2.5mm 3mm',
+            borderLeft: '3px solid var(--sit-akzent)',
+            background: 'var(--sit-light, rgba(0,0,0,0.03))',
+            fontSize: '9.5pt', lineHeight: 1.45,
+          }}
+        >
+          <span style={{
+            display: 'block', fontSize: '7.5pt', fontWeight: 600,
+            letterSpacing: '0.06em', textTransform: 'uppercase',
+            color: 'var(--sit-akzent)', marginBottom: '1mm',
+          }}>Spannungsfeld</span>
+          {sit.mehrdeutigkeit.trade_off}
+        </div>
+      )}
     </>
   )
 }
@@ -236,7 +258,7 @@ function MindmapSkelett({ sit }: { sit: SituationJson }) {
   return (
     <div className="mindmap">
       <p style={{ fontSize: '8pt', color: 'var(--ink-mute)', marginBottom: '3mm', fontStyle: 'italic' }}>
-        Skizziere deine Mindmap auf der Flaeche. Zentrum und Ast-Titel sind als Anker gesetzt; die Detail-Punkte arbeitest du selbst aus.
+        Skizziere deine Mindmap auf der Fläche. Zentrum und Ast-Titel sind als Anker gesetzt; die Detail-Punkte arbeitest du selbst aus.
       </p>
       <div className="mindmap-skelett" style={{ minHeight: '180mm' }}>
         <div className="zentrum-skelett">
@@ -254,14 +276,53 @@ function MindmapSkelett({ sit }: { sit: SituationJson }) {
   )
 }
 
+function SusMarker({ sit }: { sit: SituationJson }) {
+  // Small student-facing markers: which Sprachmodus / Kompetenz is being practiced.
+  const ids = resolveSprachmodusIds(sit.nrlp || {})
+  const komp = sit.nrlp?.kompetenz_id || sit.nrlp?.nr
+  if (!ids.length && !komp) return null
+  return (
+    <div className="sus-marker" style={{
+      display: 'flex', flexWrap: 'wrap', gap: '1.5mm', alignItems: 'center',
+      margin: '0 0 3mm', fontSize: '7.5pt',
+    }}>
+      <span style={{ color: 'var(--ink-mute)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Du übst:</span>
+      {ids.map((id) => (
+        <span key={id} style={{
+          fontWeight: 600, color: 'var(--sit-akzent)',
+          border: '1px solid var(--sit-akzent)', borderRadius: '2mm', padding: '0.3mm 1.5mm',
+        }}>{sprachmodusKurz(id)}</span>
+      ))}
+      {komp && (
+        <span style={{ color: 'var(--ink-mute)' }}>· Kompetenz {komp}</span>
+      )}
+    </div>
+  )
+}
+
+function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt']> }) {
+  const abgaben = hp.abgaben?.filter(Boolean) || []
+  if (!hp.format && !abgaben.length) return null
+  return (
+    <div className="abgabe-callout">
+      <div className="abgabe-label">Das lieferst du ab</div>
+      {hp.format && <div className="abgabe-format">{hp.format}</div>}
+      {abgaben.length > 0 && (
+        <ul className="abgabe-list">
+          {abgaben.map((a, i) => <li key={i}>{a}</li>)}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 function HandlungsproduktIntro({ sit }: { sit: SituationJson }) {
   const hp = sit.handlungsprodukt
   if (!hp) return null
   return (
     <>
-      <div className="badge-row" style={{ marginBottom: '4mm' }}>
-        <Badge variant="outline">{hp.format}</Badge>
-      </div>
+      <SusMarker sit={sit} />
+      <AbgabeCallout hp={hp} />
       <p className="hp-intro">{hp.beschreibung}</p>
       {hp.schritte && (
         <ol className="hp-schritte">
@@ -305,7 +366,7 @@ function AustauschBlock({ set, sit }: { set: SetJson | null; sit: SituationJson 
       )}
       {da && (
         <>
-          <div className="austausch-label">Dekontextualisierung</div>
+          <div className="austausch-label">Transfer</div>
           <div className="austausch-text">
             <p style={{ fontWeight: 500, margin: '0 0 1mm' }}>{da.auftrag}</p>
             <p style={{ fontSize: '8.5pt', color: 'var(--ink-soft)', margin: 0 }}>
@@ -328,7 +389,7 @@ function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info'
     <A4Page
       sit={common.sit.situation}
       abteilung={common.abteilung}
-      docCode={`DOC-S · SIT ${common.sit.situation} · ${common.mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`}
+      docCode={`DOC-S · HF ${common.sit.situation} · ${common.mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`}
       docTitel={common.sit.titel}
       sitLetter={common.sit.situation}
       pageNum={pageNum}
@@ -353,7 +414,7 @@ function DocSInfo({ sit, set, abteilung, mode }: DocSProps) {
         <QuellenList sit={sit} />
       </Page>
       <Page pageNum={2} pageTotal={total}>
-        <SectionHead num="02 · Situation">{sit.titel}</SectionHead>
+        <SectionHead num="02 · Herausforderung">{sit.titel}</SectionHead>
         <SituationBlock sit={sit} />
         <SectionHead num="03 · Wissensecke">Leitfragen</SectionHead>
         {sit.leitfragen_intro && (
@@ -376,7 +437,7 @@ function DocSInfo({ sit, set, abteilung, mode }: DocSProps) {
         {sit.reflexion_fragen?.map((rf, i) => (
           <ReflexionItem key={i} rf={rf} withField={false} />
         ))}
-        <SectionHead num="07 · Austausch &amp; Transfer">Austausch &amp; Dekontextualisierung</SectionHead>
+        <SectionHead num="07 · Austausch &amp; Transfer">Austausch &amp; Transfer</SectionHead>
         <AustauschBlock set={set} sit={sit} />
       </Page>
     </div>
@@ -403,7 +464,7 @@ function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
         <QuellenList sit={sit} />
       </Page>
       <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="02 · Situation">{sit.titel}</SectionHead>
+        <SectionHead num="02 · Herausforderung">{sit.titel}</SectionHead>
         <SituationBlock sit={sit} />
       </Page>
       {lfPairs.map((pair, pi) => (
@@ -445,14 +506,14 @@ function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
         ))}
       </Page>
       <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="07 · Austausch &amp; Transfer">Austausch &amp; Dekontextualisierung</SectionHead>
+        <SectionHead num="07 · Austausch &amp; Transfer">Austausch &amp; Transfer</SectionHead>
         <AustauschBlock set={set} sit={sit} />
         <p style={{
           fontSize: '8.5pt', color: 'var(--ink-mute)',
           marginTop: '4mm', marginBottom: '2mm',
           textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600,
         }}>
-          Dein Transfer (5–7 Saetze)
+          Dein Transfer (5–7 Sätze)
         </p>
         <Schreibfeld
           heightMm={55}

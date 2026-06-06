@@ -34,3 +34,26 @@ export const skFullName: Record<string, string> = {
 export function skTooltip(short: string): string {
   return skFullName[short] || short
 }
+
+/**
+ * Maps the numeric SK id (1–12, the order of nrlp zirkularitaet.schluesselkompetenzen[])
+ * to its short Bildungsrat label. Situation JSONs store SK as numbers (sk:[1,6,11]).
+ */
+export const skShortByNr: Record<number, string> = {
+  1: 'Quellen unterscheiden',
+  2: 'Ziele setzen und anpassen',
+  3: 'Innovation und Problemlösung',
+  4: 'Teamarbeit',
+  5: 'Werthaltungen reflektieren',
+  6: 'Standpunkte begründen',
+  7: 'Verständnis fördern',
+  8: 'Lebensphasen planen',
+  9: 'Nachhaltigkeit',
+  10: 'Anpassung',
+  11: 'Mehrdeutigkeit',
+  12: 'Partizipation',
+}
+
+export function skNameByNr(n: number): string {
+  return skShortByNr[n] || `SK ${n}`
+}

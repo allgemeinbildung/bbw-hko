@@ -6,7 +6,6 @@
   "thema": "T1",
   "version": "1.0.0",
   "erstellt_am": "2026-05-22",
-
   "prinzip_ref": "1.1.1_rechte_verstehen_nutzen_prinzip",
   "kn_ref": "1.1.1_rechte_verstehen_nutzen_kn",
   "situationen": [
@@ -14,28 +13,37 @@
     "1.1.1_rechte_verstehen_nutzen_sit_B",
     "1.1.1_rechte_verstehen_nutzen_sit_C"
   ],
-
   "konzept_progression": [
-    {"position": 1, "situation": "1.1.1_rechte_verstehen_nutzen_sit_A", "konzept": "Quellen identifizieren, Regeln in eigenen Worten verdichten und mit exakter Quelle absichern."},
-    {"position": 2, "situation": "1.1.1_rechte_verstehen_nutzen_sit_B", "konzept": "Tatbestand-Rechtslage-Rechtsfolge methodisch durchspielen und die eigene Rolle als beratende Mitlernende reflektieren."},
-    {"position": 3, "situation": "1.1.1_rechte_verstehen_nutzen_sit_C", "konzept": "Adressatengerechte schriftliche Antwort im passenden Kanal mit nachvollziehbarer 3B-Begruendung."}
+    {
+      "position": 1,
+      "situation": "1.1.1_rechte_verstehen_nutzen_sit_A",
+      "konzept": "Quellen identifizieren, Regeln in eigenen Worten verdichten und mit exakter Quelle absichern."
+    },
+    {
+      "position": 2,
+      "situation": "1.1.1_rechte_verstehen_nutzen_sit_B",
+      "konzept": "Tatbestand-Rechtslage-Rechtsfolge methodisch durchspielen und die eigene Rolle als beratende Mitlernende reflektieren."
+    },
+    {
+      "position": 3,
+      "situation": "1.1.1_rechte_verstehen_nutzen_sit_C",
+      "konzept": "Adressatengerechte schriftliche Antwort im passenden Kanal mit nachvollziehbarer 3B-Begründung."
+    }
   ],
-
   "austausch_phase": {
     "format": "gruppenpuzzle_jigsaw",
     "dauer_min": 30,
     "gruppenarbeit_jigsaw": {
-      "runde_1": "Expertise teilen — 90 Sek. pro Person: Welche Quelle hast du genutzt, welche Methode hast du angewandt, welcher Trade-off war fuer dich am schwierigsten?",
-      "runde_2": "Gemeinsamkeit abstrahieren — Was haben alle drei Situationen gemeinsam? Welches Grundprinzip steckt dahinter?",
-      "runde_3": "Transfer — Welche Situation waere persoenlich am schwierigsten und warum?"
+      "runde_1": "Expertise teilen — 90 Sek. pro Person: Welche Quelle hast du genutzt, welche Methode hast du angewandt, welcher Trade-off war für dich am schwierigsten?",
+      "runde_2": "Gemeinsamkeit abstrahieren — Was haben alle drei Herausforderungen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "runde_3": "Transfer — Welche Herausforderung wäre persönlich am schwierigsten und warum?"
     },
-    "einzelarbeit_plenum": "Lehrperson leitet Diskussion: Was haben alle drei Situationen gemeinsam? Welches Prinzip laesst sich verallgemeinern?"
+    "einzelarbeit_plenum": "Lehrperson leitet Diskussion: Was haben alle drei Herausforderungen gemeinsam? Welches Prinzip lässt sich verallgemeinern?"
   },
-
   "dekontextualisierungs_aufgabe": {
-    "auftrag": "Uebertrage das Kernprinzip aus deinen drei Situationen auf einen neuen, selbst gewaehlten Kontext.",
-    "format": "schriftlich, 5-7 Saetze, Lehrmittelbegriffe verwenden",
-    "ziel": "Wer eine rechtliche oder regelbasierte Anfrage beantworten will, klaert zuerst Tatbestand und Rechtsgrundlage aus geeigneten Quellen, prueft die eigene Rolle und Verantwortung gegenueber dem Adressaten und formuliert die Antwort im passenden Kommunikationskanal mit nachvollziehbarer Begruendung.",
+    "auftrag": "Übertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewählten Kontext.",
+    "format": "schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden",
+    "ziel": "Wer eine rechtliche oder regelbasierte Anfrage beantworten will, klärt zuerst Tatbestand und Rechtsgrundlage aus geeigneten Quellen, prüft die eigene Rolle und Verantwortung gegenüber dem Adressaten und formuliert die Antwort im passenden Kommunikationskanal mit nachvollziehbarer Begründung.",
     "gewicht_prozent": 15,
     "abgabe": "Woche 3 — vor KN"
   }

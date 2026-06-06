@@ -22,6 +22,12 @@ export interface NrlpRef {
   gesellschaft?: { aspekt: string; iteration?: string }[]
   sprachmodi?: string[]
   sk?: number[]
+  // Cluster 1 — machine-readable Lehrplan-Bezüge (additive, see references/sprachmodus-ids.md)
+  sprachmodus_ids?: string[]        // parallel to sprachmodi[]; e.g. ["SM3","SM8"]
+  kompetenz_id?: string             // explicit alias of nr, e.g. "1.1.1"
+  lebensbezug_id?: string           // explicit alias of lebensbezug, e.g. "1.1"
+  kompetenz_text?: string           // Klartext Kompetenz-Satz (RLP)
+  lebensbezug_text?: string         // Klartext Lebensbezug-Satz (RLP)
 }
 
 export interface SituationJson {
@@ -41,28 +47,42 @@ export interface SituationJson {
   situation_text?: string
   zahlen_tabelle?: { label: string; wert: string }[]
   leitfrage?: string
-  mehrdeutigkeit?: { explizit?: boolean; trade_off?: string }
-  wochen_plan?: { label: string; text: string }[]
+  mehrdeutigkeit?: { explizit?: boolean; trade_off?: string; hint?: string }
+  wochen_plan?: { label: string; text: string; aktiv?: boolean }[]
   bewertungsraster?: { produkt: string; abgabe: string; gewicht: number; kriterium: string }[]
-  quellen_anker?: { ref: string; titel: string; seiten: string }[]
+  quellen_anker?: { ref: string; titel: string; seiten: string; unterueberschrift?: string; fuer_leitfrage?: number[] }[]
   leitfragen_intro?: string
   leitfragen?: { nr: number; text: string; bloom?: string; knoten_ref?: string; feld_hoehe_mm?: number }[]
   mindmap_zentrum?: string
   mindmap_aeste?: { titel: string; optional?: boolean; punkte?: string[] }[]
   handlungsprodukt?: {
     format?: string
+    format_detail?: string
     titel?: string
+    abgaben?: string[]          // Cluster 6 — konkrete Abgabe(n) fuer den "Das lieferst du ab"-Block (additiv)
     beschreibung?: string
     schritte?: { label: string; hint: string }[]
     schreib_label?: string
+    schreib_note?: string
   }
-  reflexion_fragen?: { nr: string | number; text: string; sub?: string; feld_hoehe_mm?: number }[]
-  dekontextualisierung?: { frage?: string }
+  reflexion_fragen?: { nr: string | number; text: string; sub?: string | null; feld_hoehe_mm?: number }[]
+  dekontextualisierung?: { frage?: string; ziel?: string }
+  prinzip_ref?: string
+  prinzip_handoff?: {
+    kernkonzept?: string
+    lehrmittel_anker?: string
+    kn_aktivierung?: string
+    transfer_check?: string
+  }
+  sk_anker?: { sk: number; wo: string }[]
 }
 
 export interface SetJson {
   id?: string
-  konzept_progression?: { position: number | string; konzept: string }[]
+  prinzip_ref?: string
+  kn_ref?: string
+  situationen?: string[]
+  konzept_progression?: { position: number | string; situation?: string; konzept: string }[]
   austausch_phase?: {
     format?: string
     dauer_min?: number | string
@@ -72,9 +92,12 @@ export interface SetJson {
   dekontextualisierungs_aufgabe?: {
     auftrag?: string
     format?: string
+    ziel?: string
     gewicht_prozent?: number
     abgabe?: string
   }
+  // Cluster 3 — optional per-unit override; normally derived from sit_*.nrlp.sprachmodus_ids
+  sprachfoerderung?: { sprachmodus_ids?: string[]; hinweis_hoerverstaendnis?: string }
 }
 
 export interface KnTyp {
@@ -103,6 +126,8 @@ export interface KnJson {
     emotion_tag?: string
     text?: string
     leitfrage?: string
+    definition_kurz?: string    // SuS: kurze Erklärung "Hybrid-Herausforderung" bei Erstverwendung
+    definition_lang?: string    // LP: ausführlichere Erklärung
     aktivierte_trade_offs?: string[]
     alignment_note?: {
       subfacetten_mapping?: { sit_letter: string; scene_element: string }[]
@@ -117,12 +142,31 @@ export interface KnJson {
 
 export interface PrinzipJson {
   id?: string
+  modul?: string
+  kompetenz_nr?: string
+  lehrgang?: string
+  topic_slug?: string
   kern_kompetenzversprechen?: string
-  sub_facetten?: Record<string, { facette: string; konfliktart: string }>
+  bloom_zielprofil?: Record<string, string>
+  sub_facetten?: Record<string, { facette: string; konfliktart: string; handlungsprodukt_typ?: string; transferrable?: boolean }>
+  sk_pro_situation?: Record<string, number[]>
+  sk_schnittmenge_kn?: { primary: number[] }
+  aspekte?: Record<string, string>
+  mehrdeutigkeits_architektur?: { trade_off_raum: string[]; verbindlich?: string }
+  dekontextualisierungs_anker?: { anker_statement?: string; transferfeld?: string }
   zirkularitaet?: {
     r1_aktuell?: string
     r2_voraussicht?: string
     r3_voraussicht?: string
+  }
+  persona_pool_units?: { berufe: string[]; orte: string[] }
+  persona_pool_kn_neu?: { berufe: string[]; orte: string[] }
+  hybrid_situation_spec?: {
+    max_woerter?: number
+    perspektive?: string
+    must_activate_trade_offs_min?: number
+    must_combine_subfacetten?: string[]
+    lehrjahr_constraint?: string
   }
 }
 

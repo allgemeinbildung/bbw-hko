@@ -218,10 +218,61 @@ function blockquoteParagraphs(t: any): any[] {
   ]
 }
 
+// Callout-Typen, die im LP-Begleiter extra Gewicht bekommen (Cluster 5):
+// coaching + differenzieren tragen die didaktischen Kern-Moves und Scaffolds —
+// sie sollen aus dem leichteren Links-Rand-Stil der uebrigen Callouts heraus-
+// stechen. Render: farbiges Header-Band (Label weiss auf Rahmenfarbe) + Box.
+const EMPHASIS_CALLOUTS = new Set(['coaching', 'differenzieren'])
+
 function calloutTable(t: any): any[] {
   const colors = CALLOUT_COLORS[t.calloutType] || { bg: 'EEEEEE', bd: '888888' }
   const label = CALLOUT_LABELS[t.calloutType] || t.calloutType
   const labelText = label + (t.title ? '  ·  ' + t.title : '')
+  const body: any[] = []
+  for (const c of t.tokens) body.push(...blockToParagraphs(c))
+
+  if (EMPHASIS_CALLOUTS.has(t.calloutType)) {
+    const none = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' }
+    return [
+      new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        layout: 'fixed' as any,
+        borders: {
+          top:    { style: BorderStyle.SINGLE, size: 8,  color: colors.bd },
+          bottom: { style: BorderStyle.SINGLE, size: 8,  color: colors.bd },
+          left:   { style: BorderStyle.SINGLE, size: 40, color: colors.bd },
+          right:  { style: BorderStyle.SINGLE, size: 8,  color: colors.bd },
+          insideHorizontal: none,
+          insideVertical: none,
+        },
+        rows: [
+          new TableRow({
+            children: [new TableCell({
+              shading: { type: ShadingType.CLEAR, fill: colors.bd, color: 'auto' },
+              margins: { top: 70, bottom: 70, left: 220, right: 180 },
+              children: [new Paragraph({
+                spacing: { before: 0, after: 0 },
+                children: [new TextRun({
+                  text: labelText.toUpperCase(),
+                  bold: true, size: POINT(10.5), color: 'FFFFFF', font: 'Source Sans 3',
+                  characterSpacing: 16,
+                })],
+              })],
+            })],
+          }),
+          new TableRow({
+            children: [new TableCell({
+              shading: { type: ShadingType.CLEAR, fill: colors.bg, color: 'auto' },
+              margins: { top: 150, bottom: 150, left: 220, right: 180 },
+              children: body.length ? body : [new Paragraph({ children: [] })],
+            })],
+          }),
+        ],
+      }),
+      spacer(),
+    ]
+  }
+
   const inner: any[] = [
     new Paragraph({
       spacing: { before: 0, after: 80 },
@@ -231,8 +282,8 @@ function calloutTable(t: any): any[] {
         characterSpacing: 12,
       })],
     }),
+    ...body,
   ]
-  for (const c of t.tokens) inner.push(...blockToParagraphs(c))
   return [
     new Table({
       width: { size: 100, type: WidthType.PERCENTAGE },

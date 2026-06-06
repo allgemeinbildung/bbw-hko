@@ -46,6 +46,9 @@ Im Fahrplan jeder Situation (Kapitel 3-5) steht die AVIVA-Schicht; die IPERKA-Lo
 > [!hinweis] Lektionentotal
 > Abhaengig von der Durchfuehrungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Situationen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Situation = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Dekontextualisierung) ist eine gemeinsame Schluss-Lektion.
 
+> [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
+> Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Vier-Ohren-Modell, Kanal- und Registerwahl) uebst du **vorab im Unterricht**; die Situationsblaetter setzen dieses Vorwissen voraus. Ergaenze eigene Beispiele, Inputs und Uebungen aus deinem Fundus.
+
 ---
 
 ## 1. Kompetenz, Ressourcen, Architektur
@@ -90,7 +93,7 @@ Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit faedelt von K2 zu K4 �
 
 Drei Trade-offs spannen das ganze Set auf:
 
-1. **Eigene Rechte durchsetzen** vs. **Beziehung zum Berufsbildner erhalten** (A)
+1. **Eigene Rechte durchsetzen** vs. **Beziehung zum Berufsbildner/in erhalten** (A)
 2. **Schnelle digitale Antwort** vs. **ueberlegtes persoenliches Gespraech** (B)
 3. **Klare Position vertreten** vs. **Lernenden-Rolle und Lernchance wahren** (C)
 
@@ -126,6 +129,8 @@ Das erklaert das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Die Dekontex
 ## 2. Durchfuehrungs-Varianten — deine Entscheidung
 
 Du waehlst, wie die drei Situationen verteilt werden. Die Variante bestimmt Lektionentotal **und** wie der KN aussieht. Es gibt **kein** Standardmodell — entscheide nach Klasse, Zeit und Niveau.
+
+Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Du kannst Situationen weglassen oder umstellen — im KN wird nur geprueft, was tatsaechlich geuebt wurde.
 
 ### Variante A — Einzelarbeit, alle drei Situationen
 
@@ -177,7 +182,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 | Handlungsprodukt | Konflikt-Landkarte + Positionspapier (A4, 250-300 W, 3B-Schema) |
 | Wissensknoten | lehrvertrag_rechte_pflichten |
 
-> Du bist Schreiner-Lernende im 1. Lehrjahr. Dein Berufsbildner uebertraegt dir an einem Samstag die alleinige Inventur plus eine berufsfremde Werkstatt-Grundreinigung; zweimal in dieser Woche wurde die 9-Stunden-Grenze fuer Jugendliche ueberschritten. Du fuehlst dich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf er das ueberhaupt?
+> Du bist Schreiner-Lernende im 1. Lehrjahr. Dein Berufsbildner/in uebertraegt dir an einem Samstag die alleinige Inventur plus eine berufsfremde Werkstatt-Grundreinigung; zweimal in dieser Woche wurde die 9-Stunden-Grenze fuer Jugendliche ueberschritten. Du fuehlst dich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf er das ueberhaupt?
 
 > [!hinweis] Qualitaet der Situation (8 Merkmale Lernsituation)
 > Authentizitaet, Verortung (Winterthur, konkrete Zahlen), Problem (kein Reproduktionsauftrag), Affektivitaet (Verunsicherung), Kognition (K2-K4), Aktivitaet (Positionspapier), LJ-Passung (1. LJ, Lehrvertrag ist das erste echte Rechtsdokument), Relevanz (jede/r hat einen Lehrvertrag) — alle acht erfuellt. Die Zahlen-Tabelle gibt dir den Realismus-Anker fuers Plenum.
@@ -221,7 +226,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 
 **Konflikt-Landkarte (90%-Vorlage, ein Beispiel ausgefuellt):**
 
-| Was ist passiert (Fakten) | Welche Pflicht / welches Recht | Meine Sicht | Sicht Berufsbildner |
+| Was ist passiert (Fakten) | Welche Pflicht / welches Recht | Meine Sicht | Sicht Berufsbildner/in |
 |---|---|---|---|
 | *Bsp:* Werkstatt-Grundreinigung am Samstag verlangt | Recht auf nur berufsbezogene Arbeiten (OR 345a, BiVo) | Reinigung gehoert nicht zu meiner Ausbildung | „Muss halt auch gemacht werden, gehoert zum Betrieb" |
 | 2× ueber 9 h Arbeitszeit in der Woche | Hoechstarbeitszeit Jugendliche, ArG 31 | | |
@@ -250,10 +255,21 @@ ________________________________________________________________________.
 > [!differenzieren] 90 vs. 100 — Situation A
 > **90 % (alle):** Landkarten-Tabelle und 3B-Lueckentext oben werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — vergleiche deinen eigenen Lehrvertrag mit der Musterregelung des kantonalen Amts fuer Berufsbildung und notiere eine Abweichung. Kein zusaetzliches Pflicht-Pensum, sondern Vertiefung fuer die, die schneller sind.
 
+### Coaching & Scaffolds — auf einen Blick
+
+> [!coaching] Die drei Moves dieser Herausforderung
+> 1. **LF1:** Markieren mit den drei Symbolen (Kap. 17.1) statt abschreiben — sammle am Schluss nur die Fragezeichen ein.
+> 2. **LF3:** Erst 2 Minuten still entscheiden (welcher Konfliktweg?), dann begründen — so wird die Eskalations-Reihenfolge sichtbar.
+> 3. **LF4:** Reihenfolge Behauptung → Begründung → Beispiel erzwingen, mit mindestens einem OR-/ArG-Verweis.
+> **Zum Abgeben bereit:** Konflikt-Landkarte (90 %-Vorlage) · 3B-Lückentext.
+
+> [!coaching] Perspektivenwechsel
+> Bevor das Positionspapier geschrieben wird: Lass die Lernende die letzte Spalte der Konflikt-Landkarte („Sicht Berufsbildner/in") zuerst ausfüllen und eine Minute aus seiner Perspektive denken — „Warum verlangt er die Reinigung? Was sieht er, das du nicht siehst?" Das verhindert, dass das Positionspapier zur Anklageschrift kippt, und ist genau die Haltung, die im Raster unter „Position/Werthaltung" zählt.
+
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Situation A
-> Der Trade-off: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfaehige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kaempft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenk zurueck: „Wie klingt das fuer deinen Berufsbildner — willst du recht haben oder eine Loesung?"
+> Der Trade-off: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfaehige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kaempft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenk zurueck: „Wie klingt das fuer deinen Berufsbildner/in — willst du recht haben oder eine Loesung?"
 
 ### Wo welche SK geuebt wird
 
@@ -281,7 +297,7 @@ ________________________________________________________________________.
 | Handlungsprodukt | Schriftliche Antwort + Kanalbegruendung (A4, zweiteilig) |
 | Wissensknoten | geschaeftsbrief_email_register |
 
-> Du bist Automobilfachmann-Lernender im 2. Lehrjahr. Dein Berufsbildner hat dich gestern vor Kunden und Mechanikern lautstark kritisiert; heute schickt er dir eine knappe WhatsApp an die **private** Nummer mit Ultimatum bis 18 Uhr. Du willst zurueckmelden — aber WhatsApp privat, Geschaeftsmail oder Brief? Und in welchem Ton?
+> Du bist Automobilfachmann-Lernende/r im 2. Lehrjahr. Dein Berufsbildner/in hat dich gestern vor Kunden und Mechanikern lautstark kritisiert; heute schickt er dir eine knappe WhatsApp an die **private** Nummer mit Ultimatum bis 18 Uhr. Du willst zurueckmelden — aber WhatsApp privat, Geschaeftsmail oder Brief? Und in welchem Ton?
 
 ### Unterrichtsfahrplan
 
@@ -353,6 +369,17 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 > [!differenzieren] 90 vs. 100 — Situation B
 > **90 %:** Vergleichstabelle + Layout-Template austeilen. **100 %:** Zusatz — pruefe, ob deine Kanalwahl mit den Compliance-Regeln deines Betriebs (Datenschutz, Personalreglement) vereinbar ist.
 
+### Coaching & Scaffolds — auf einen Blick
+
+> [!coaching] Die drei Moves dieser Herausforderung
+> 1. **LF2:** Die drei WhatsApp-Probleme über gezielte Fragen herausarbeiten (Beweismittel? private Nummer? Wochenende?) — nicht in eine Datenschutz-Vorlesung kippen.
+> 2. **LF3:** Kanal-Vergleichstabelle vor der Entscheidung ausfüllen lassen — es gibt keine Musterlösung, Mail und Brief sind beide gültig.
+> 3. **LF4:** Du-Botschaften in Ich-Botschaften umbauen, Register halten (keine Emoticons, kein „Hoi" in der Geschäftsmail).
+> **Zum Abgeben bereit:** Kanal-Vergleichstabelle · Brief-/Mail-Layout-Template · Kanalbegründung-3-Satz-Gerüst.
+
+> [!coaching] Perspektivenwechsel
+> Lass die Lernende den gewählten Kanal aus Sicht des Empfängers lesen: „Wie wirkt eine schnelle WhatsApp an die Privatnummer auf deinen Berufsbildner/in — und wie eine sachliche Mail am Morgen?" Die antizipierte Wirkung auf die Gegenseite ist hier der Kern von SK7 (Verständnis fördern) und macht die Kanalbegründung erst tragfähig.
+
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Situation B
@@ -384,7 +411,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 | Handlungsprodukt | Gespraechs-Drehbuch (3 Spalten) + 5-Min-Rollen-Probe + 60-Sek-Selbstauswertung |
 | Wissensknoten | konfliktgespraech_ich_botschaften |
 
-> Du bist Informatik-Lernender im 1. Lehrjahr. Ein neuer Berufsbildner gibt kaum Feedback, kritisiert dich aber im Sprint-Review vor dem Team mit „Du hoerst einfach nicht zu." Du fuehlst dich abgestempelt. Heute bietet er dir 15 Minuten fuer eine Aussprache an — du willst hin, aber nicht in eine zweite Demuetigung laufen.
+> Du bist Informatik-Lernende/r im 1. Lehrjahr. Ein neuer Berufsbildner/in gibt kaum Feedback, kritisiert dich aber im Sprint-Review vor dem Team mit „Du hoerst einfach nicht zu." Du fuehlst dich abgestempelt. Heute bietet er dir 15 Minuten fuer eine Aussprache an — du willst hin, aber nicht in eine zweite Demuetigung laufen.
 
 ### Unterrichtsfahrplan
 
@@ -395,7 +422,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 | | Verarbeiten | Vier-Ohren-Tabelle + Mindmap | Einzel/Partner |
 | | Auswerten | „Auf welchem Ohr hoerst du den Satz zuerst?" | Plenum |
 | **2** (45') | Informieren · Verarbeiten | LF3 (Einstieg waehlen) + LF4: Drehbuch (3 Spalten) | Einzel |
-| | Verarbeiten | **Rollen-Probe** 5 Min. (Partner spielt Berufsbildner) | Partner |
+| | Verarbeiten | **Rollen-Probe** 5 Min. (Partner spielt Berufsbildner/in) | Partner |
 | | Auswerten | 60-Sek-Selbstauswertung: welche Ich-Botschaft wirkte? | Einzel |
 
 ### Leitfragen mit Coaching-Hinweisen
@@ -452,7 +479,18 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 ```
 
 > [!differenzieren] 90 vs. 100 — Situation C
-> **90 %:** Vier-Ohren-Tabelle + Satzanfaenge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildners — wie reagierst du, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
+> **90 %:** Vier-Ohren-Tabelle + Satzanfaenge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildner/in — wie reagierst du, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
+
+### Coaching & Scaffolds — auf einen Blick
+
+> [!coaching] Die drei Moves dieser Herausforderung
+> 1. **LF1:** Die vier Ohren am Tafel-Beispiel gemeinsam vormachen, bevor die Lernenden allein decodieren — das Modell ist neu.
+> 2. **LF2:** Pseudo-Ich-Botschaften („Ich finde, dass du nie zuhörst") sammeln und gemeinsam reparieren.
+> 3. **LF4:** Den Wechsel Ich sage → ich höre → ich frage erzwingen, mindestens zwei offene Rückfragen.
+> **Zum Abgeben bereit:** Vier-Ohren-Tabelle · Ich-Botschaft-Satzanfänge · Drehbuch-3-Spalten-Template · Win-Win-Satzanfänge.
+
+> [!coaching] Perspektivenwechsel
+> Die Vier-Ohren-Decodierung ist bereits angewandter Perspektivenwechsel. Vertiefe ihn: Lass die Lernende den Satz „Du hörst einfach nicht zu" einmal laut aus der Rolle des Berufsbildner/in sprechen, bevor sie ihr Drehbuch schreibt — „Welche Not oder welcher Druck steckt dahinter?" Wer die plausible Absicht der Gegenseite zuerst benennt, senkt die Abwehr im Gespräch und hält den Trade-off klar/Beziehung sichtbar.
 
 ### Mehrdeutigkeit halten
 
@@ -464,7 +502,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 | SK | Demonstration |
 |---|---|
 | **SK4 Teamarbeit** | Rollen-Probe mit Partner + Feedback-Austausch nach Kap. 19.1 |
-| **SK7 Verstaendnis foerdern** | LF1: den Standpunkt des Berufsbildners auf allen vier Ohren nachvollziehen |
+| **SK7 Verstaendnis foerdern** | LF1: den Standpunkt des Berufsbildner/in auf allen vier Ohren nachvollziehen |
 | **SK11 Mehrdeutigkeit** | Drehbuch haelt den Trade-off klar/Rolle sichtbar |
 
 ---
@@ -513,7 +551,7 @@ Das ist die Phase, die R1 ueberhaupt nach R2/R3 traegt (Quick Ref §6). Hier wir
 > Eine starke Dekontextualisierung nimmt das **Prinzip** (klaeren → Kanal waehlen → Gesicht wahren) und zeigt es in einem **fremden** Feld — z. B.: „Als mein Vermieter eine Nebenkosten-Nachzahlung verlangte, habe ich zuerst den Mietvertrag und das OR geprueft (Sachlage/Rechte), dann bewusst einen schriftlichen Brief statt einer WhatsApp gewaehlt (Kanal/Verbindlichkeit), und so formuliert, dass eine weitere Zusammenarbeit moeglich bleibt (Gesicht wahren)." — drei Schritte erkennbar, Lehrmittelbegriffe drin, neuer Kontext.
 
 > [!warnung] Typischer Stolperstein
-> Schwache Transfers **wiederholen** nur den Lehrbetriebs-Fall mit anderen Namen. Wenn jemand wieder ueber den Berufsbildner schreibt, ist das kein Transfer. Verlange einen Kontext **ausserhalb** des Lehrbetriebs (Familie, Verein, WG, Vermieter).
+> Schwache Transfers **wiederholen** nur den Lehrbetriebs-Fall mit anderen Namen. Wenn jemand wieder ueber den Berufsbildner/in schreibt, ist das kein Transfer. Verlange einen Kontext **ausserhalb** des Lehrbetriebs (Familie, Verein, WG, Vermieter).
 
 ---
 
@@ -525,7 +563,7 @@ Der KN nimmt eine **neue Hybrid-Situation** und prueft, ob die Lernende alle dre
 
 Persona: Konstrukteur/in EFZ, Konstruktionsbuero Berger, Olten — 1. LJ, CHF 750. (Bewusst **neue** Persona, kommt in keiner der drei Situationen vor.)
 
-> Der Berufsbildner bittet, eine fehlerhafte Zeichnung „vertraulich zwischen uns" zu korrigieren — **ohne** Eintrag in die Lerndokumentation. Beim Zoegern Abwertung vor dem Engineering-Review („Du bist halt noch nicht so weit"). Am Morgen eine private WhatsApp mit Ultimatum bis 17 Uhr. Leitfrage: „Wie gehe ich jetzt vor — und welcher Schritt ist der erste?"
+> Der Berufsbildner/in bittet, eine fehlerhafte Zeichnung „vertraulich zwischen uns" zu korrigieren — **ohne** Eintrag in die Lerndokumentation. Beim Zoegern Abwertung vor dem Engineering-Review („Du bist halt noch nicht so weit"). Am Morgen eine private WhatsApp mit Ultimatum bis 17 Uhr. Leitfrage: „Wie gehe ich jetzt vor — und welcher Schritt ist der erste?"
 
 So sind die drei Subfacetten verbaut (Alignment):
 
@@ -550,6 +588,9 @@ Drei Pruefformen sind angelegt, alle mit derselben Rubrik. Du waehlst eine (oder
 
 > [!coaching] Methodenwahl an Klasse + Variante koppeln
 > Nach Jigsaw (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespraech**, weil alle drei Facetten selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Facetten anpassen und Fragen/Aufgaben trimmen.
+
+> [!hinweis] Ausblick — weitere Prüfformen möglich
+> Die drei hier angelegten KN-Formen (Fachgespräch, Mini Case schriftlich, Werkschau + Transfer) sind ein **Startset**, kein abschliessender Kanon. Dieselbe Hybrid-Herausforderung und dieselbe bi-dimensionale Rubrik tragen auch andere Formen — etwa einen **Critical Incident** (eine zugespitzte Entscheidungsszene mit Stopp-Punkt: „Was tust du jetzt?") oder ein **Produkt mit Präsentation** (ein vor der Klasse verteidigtes Handlungsprodukt). Diese sind bewusst noch nicht ausgearbeitet — wenn du eine brauchst, lässt sie sich auf der bestehenden Rubrik aufsetzen. Reiner Ausblick; im aktuellen Set wählst du aus den drei Formen oben.
 
 **Fachgespraech — Fragenbogen (steigende Komplexitaet):**
 

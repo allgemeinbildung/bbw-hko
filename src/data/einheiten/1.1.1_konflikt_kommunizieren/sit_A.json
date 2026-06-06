@@ -3,183 +3,349 @@
   "modul": "1.1",
   "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
   "lehrgang": "EFZ_3J",
-
   "situation": "A",
   "sit_farbe": "#C0392B",
   "sit_farbe_light": "#FADBD8",
   "sit_farbe_mid": "#E74C3C",
-
   "titel": "Aufgabe gegen die Abmachung — was steht eigentlich im Lehrvertrag?",
   "emotion_tag": "Verunsicherung",
-
-  "wissensknoten": ["lehrvertrag_rechte_pflichten"],
-
+  "wissensknoten": [
+    "lehrvertrag_rechte_pflichten"
+  ],
   "nrlp": {
     "nr": "1.1.1",
-    "nr_primary": ["1.1.1"],
+    "nr_primary": [
+      "1.1.1"
+    ],
     "lebensbezug": "1.1",
-    "themen": ["T1"],
+    "themen": [
+      "T1"
+    ],
     "gesellschaft": [
-      {"aspekt": "Recht", "iteration": "R1"},
-      {"aspekt": "Identitaet und Sozialisation", "iteration": "R1"}
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
     ],
     "sprachmodi": [
       "Rezeption schriftlich und bildlich",
       "Interaktion und Kollaboration schriftlich"
     ],
-    "sk": [1, 6, 11]
+    "sk": [
+      1,
+      6,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM8"
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
-
   "persona": {
     "beruf": "Schreiner/in EFZ",
     "betrieb": "Schreinerei Brunner Winterthur",
     "ort": "Winterthur"
   },
-
-  "situation_text": "Du bist Schreiner-Lernende im 1. Lehrjahr bei der Schreinerei Brunner in Winterthur. Du beziehst einen Lehrlingslohn von CHF 600 und arbeitest 41 Stunden pro Woche. Letzte Woche hat dir dein Berufsbildner an einem Samstagmorgen die alleinige Inventur des Holzlagers plus die Werkstatt-Grundreinigung uebertragen — die Reinigung ist eine berufsfremde Aufgabe, die laut deinem Lehrvertrag und der Bildungsverordnung nicht zu deinem Beruf gehoert. Auch deine taegliche Arbeitszeit hat in dieser Woche zweimal die 9-Stunden-Grenze fuer Jugendliche unter 18 Jahren ueberschritten. Du fuehlst dich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf dein Berufsbildner das ueberhaupt? Du moechtest dich nicht gleich beschweren, aber du willst auch nicht hilflos bleiben.",
-
+  "situation_text": "Du bist Schreiner-Lernende im 1. Lehrjahr bei der Schreinerei Brunner in Winterthur. Du beziehst einen Lehrlingslohn von CHF 600 und arbeitest 41 Stunden pro Woche. Letzte Woche hat dir dein Berufsbildner/in an einem Samstagmorgen die alleinige Inventur des Holzlagers plus die Werkstatt-Grundreinigung übertragen — die Reinigung ist eine berufsfremde Aufgabe, die laut deinem Lehrvertrag und der Bildungsverordnung nicht zu deinem Beruf gehört. Auch deine tägliche Arbeitszeit hat in dieser Woche zweimal die 9-Stunden-Grenze für Jugendliche unter 18 Jahren überschritten. Du fühlst dich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf dein Berufsbildner/in das überhaupt? Du möchtest dich nicht gleich beschweren, aber du willst auch nicht hilflos bleiben.",
   "zahlen_tabelle": [
-    {"label": "Lehrlingslohn LJ1", "wert": "CHF 600"},
-    {"label": "Arbeitszeit pro Woche", "wert": "41 h"},
-    {"label": "Hoechstarbeitszeit Jugendliche", "wert": "9 h pro Tag (ArG 31)"},
-    {"label": "Ferien-Anspruch unter 20", "wert": "5 Wochen"}
+    {
+      "label": "Lehrlingslohn LJ1",
+      "wert": "CHF 600"
+    },
+    {
+      "label": "Arbeitszeit pro Woche",
+      "wert": "41 h"
+    },
+    {
+      "label": "Höchstarbeitszeit Jugendliche",
+      "wert": "9 h pro Tag (ArG 31)"
+    },
+    {
+      "label": "Ferien-Anspruch unter 20",
+      "wert": "5 Wochen"
+    }
   ],
-
-  "leitfrage": "Was sagt mein Lehrvertrag, und welche Position kann ich gegenueber meinem Berufsbildner sachlich begruenden?",
-
+  "leitfrage": "Was sagt mein Lehrvertrag, und welche Position kann ich gegenüber meinem Berufsbildner/in sachlich begründen?",
   "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 1.4 (Der Lehrvertrag), Kap. 17.1 (Dokumentieren) und Kap. 17.2 (Argumentieren) als Grundlage.",
-
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.4 | S. 29-33",
-      "text": "Welche Rechte und Pflichten regelt der Lehrvertrag fuer Lernende (Hauptpflicht, Sorgfaltspflicht, Treuepflicht) und welche Pflichten gelten fuer die Berufsbildenden (Ausbildungspflicht, OR 345a)? Notiere die fuenf wichtigsten Punkte mit Markier-Symbolen aus Kap. 17.1.",
+      "text": "Welche Rechte und Pflichten regelt der Lehrvertrag für Lernende (Hauptpflicht, Sorgfaltspflicht, Treuepflicht) und welche Pflichten gelten für die Berufsbildenden (Ausbildungspflicht, OR 345a)? Notiere die fünf wichtigsten Punkte mit Markier-Symbolen aus Kap. 17.1.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.4 | S. 32-33",
-      "text": "Wende die Regeln zur Hoechstarbeitszeit fuer Jugendliche (ArG 31, OR 345a) und zu berufsfremden Arbeiten auf deine Situation an. Welche zwei Punkte in der Anweisung deines Berufsbildners sind aus Sicht des Gesetzes unzulaessig?",
+      "text": "Wende die Regeln zur Höchstarbeitszeit für Jugendliche (ArG 31, OR 345a) und zu berufsfremden Arbeiten auf deine Situation an. Welche zwei Punkte in der Anweisung deines Berufsbildner/in sind aus Sicht des Gesetzes unzulässig?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 1.4 | S. 36-37",
-      "text": "Entscheide begruendet: Sprichst du den Konflikt direkt mit dem Berufsbildner an, suchst du zuerst das Gespraech mit deiner Berufsbildungsverantwortlichen, oder wendest du dich an das Kantonale Amt fuer Berufsbildung? Nutze die Konfliktfallregelung aus Kap. 1.4.",
+      "text": "Entscheide begründet: Sprichst du den Konflikt direkt mit dem Berufsbildner/in an, suchst du zuerst das Gespräch mit deiner Berufsbildungsverantwortlichen, oder wendest du dich an das Kantonale Amt für Berufsbildung? Nutze die Konfliktfallregelung aus Kap. 1.4.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.2 | S. 388-392",
-      "text": "Formuliere ein einseitiges Positionspapier nach dem 3B-Schema (Behauptung, Begruendung, Beispiel) aus Kap. 17.2. Behauptung: Welcher Punkt der Anweisung ist aus deiner Sicht nicht vereinbar mit dem Lehrvertrag? Begruendung: Welche Artikel aus dem OR/ArG stuetzen deine Position? Beispiel: Wie hat sich der Konflikt konkret gezeigt?",
+      "text": "Formuliere ein einseitiges Positionspapier nach dem 3B-Schema (Behauptung, Begründung, Beispiel) aus Kap. 17.2. Behauptung: Welcher Punkt der Anweisung ist aus deiner Sicht nicht vereinbar mit dem Lehrvertrag? Begründung: Welche Artikel aus dem OR/ArG stützen deine Position? Beispiel: Wie hat sich der Konflikt konkret gezeigt?",
       "feld_hoehe_mm": 15
     }
   ],
-
   "mindmap_zentrum": "Mein Lehrvertrag — Rechte und Pflichten",
   "mindmap_aeste": [
-    {"titel": "Pflichten Lernende (OR 321a, 345)", "punkte": ["Hauptpflicht: Anordnungen befolgen", "Sorgfaltspflicht", "Treuepflicht (Geschaeftsgeheimnisse)", "Berufsfachschule besuchen"], "optional": false},
-    {"titel": "Rechte Lernende (OR 322ff., 345a, ArG 31)", "punkte": ["Lohn laut Vertrag", "Max. 9 h pro Tag bis 18 J.", "5 Wochen Ferien bis 20 J.", "Nur berufsbezogene Arbeiten", "QV ohne Lohnabzug"], "optional": false},
-    {"titel": "Pflichten Berufsbildende (OR 345a)", "punkte": ["Fachgerechte Ausbildung", "Lohnzahlung", "Versicherungspflicht (BU/NBU)", "Ferien gewaehren", "Lehrzeugnis am Ende"], "optional": false},
-    {"titel": "Konfliktwege (Kap. 1.4 S. 36-37)", "punkte": ["1. Selbstkritik ueben", "2. Direktes Gespraech", "3. Berufsbildungsverantwortliche/r", "4. Kantonales Amt fuer Berufsbildung (ABB)"], "optional": true}
+    {
+      "titel": "Pflichten Lernende (OR 321a, 345)",
+      "punkte": [
+        "Hauptpflicht: Anordnungen befolgen",
+        "Sorgfaltspflicht",
+        "Treuepflicht (Geschäftsgeheimnisse)",
+        "Berufsfachschule besuchen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Rechte Lernende (OR 322ff., 345a, ArG 31)",
+      "punkte": [
+        "Lohn laut Vertrag",
+        "Max. 9 h pro Tag bis 18 J.",
+        "5 Wochen Ferien bis 20 J.",
+        "Nur berufsbezogene Arbeiten",
+        "QV ohne Lohnabzug"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Pflichten Berufsbildende (OR 345a)",
+      "punkte": [
+        "Fachgerechte Ausbildung",
+        "Lohnzahlung",
+        "Versicherungspflicht (BU/NBU)",
+        "Ferien gewähren",
+        "Lehrzeugnis am Ende"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Konfliktwege (Kap. 1.4 S. 36-37)",
+      "punkte": [
+        "1. Selbstkritik üben",
+        "2. Direktes Gespräch",
+        "3. Berufsbildungsverantwortliche/r",
+        "4. Kantonales Amt für Berufsbildung (ABB)"
+      ],
+      "optional": true
+    }
   ],
-
   "handlungsprodukt": {
     "format": "Positionspapier",
+    "abgaben": ["Positionspapier (A4, 250–300 Wörter, 3B-Schema)"],
     "titel": "Mein Positionspapier — Was steht im Lehrvertrag",
-    "format_detail": "Einseitiges A4-Positionspapier, ca. 250-300 Woerter, in drei Abschnitten nach dem 3B-Schema (Behauptung / Begruendung / Beispiel) aus Kap. 17.2 strukturiert, mit konkreten Quellenverweisen auf OR-/ArG-Artikel.",
-    "beschreibung": "Du formulierst auf einer A4-Seite eine sachliche, begruendete Position zum Vorfall. Das Papier ist die schriftliche Grundlage, mit der du in Sit B die richtige Kanal- und Register-Wahl treffen kannst und in Sit C ins Gespraech gehst. Es ist keine Anklage, sondern eine ueberpruefbare Klaerung der Sachlage.",
+    "format_detail": "Einseitiges A4-Positionspapier, ca. 250-300 Wörter, in drei Abschnitten nach dem 3B-Schema (Behauptung / Begründung / Beispiel) aus Kap. 17.2 strukturiert, mit konkreten Quellenverweisen auf OR-/ArG-Artikel.",
+    "beschreibung": "Du formulierst auf einer A4-Seite eine sachliche, begründete Position zum Vorfall. Das Papier ist die schriftliche Grundlage, mit der du in Sit B die richtige Kanal- und Register-Wahl treffen kannst und in Sit C ins Gespräch gehst. Es ist keine Anklage, sondern eine überprüfbare Klärung der Sachlage.",
     "schritte": [
-      {"label": "Quellen sichten und markieren", "hint": "Kap. 1.4 mit den Symbol-Markierungen aus Kap. 17.1 lesen: Wichtiges = Sterne, Strittiges = Fragezeichen, Definitionen = Unterstreichen."},
-      {"label": "Konflikt-Landkarte anlegen", "hint": "Drei Spalten: (a) Was ist passiert (Fakten), (b) Welche Pflicht/welches Recht betrifft das, (c) Welche Sichtweise habe ich, welche der Berufsbildner."},
-      {"label": "Behauptung formulieren", "hint": "Ein einzelner Satz in Ich-Form, der deine Hauptaussage traegt. Vorlage aus Kap. 17.2 S. 388."},
-      {"label": "Begruendung aufbauen", "hint": "Zwei bis drei Saetze, die mindestens einen OR-/ArG-Artikel aus deiner Mindmap zitieren. Steigerung: das wichtigste Argument kommt zuletzt."},
-      {"label": "Beispiel und Schluss", "hint": "Konkretes Beispiel aus deiner Woche (Inventur am Samstag, Ueberzeit) plus ein Schluss-Satz, der die Klaerung als Wunsch (nicht als Drohung) formuliert."}
+      {
+        "label": "Quellen sichten und markieren",
+        "hint": "Kap. 1.4 mit den Symbol-Markierungen aus Kap. 17.1 lesen: Wichtiges = Sterne, Strittiges = Fragezeichen, Definitionen = Unterstreichen."
+      },
+      {
+        "label": "Konflikt-Landkarte anlegen",
+        "hint": "Drei Spalten: (a) Was ist passiert (Fakten), (b) Welche Pflicht/welches Recht betrifft das, (c) Welche Sichtweise habe ich, welche der Berufsbildner/in."
+      },
+      {
+        "label": "Behauptung formulieren",
+        "hint": "Ein einzelner Satz in Ich-Form, der deine Hauptaussage trägt. Vorlage aus Kap. 17.2 S. 388."
+      },
+      {
+        "label": "Begründung aufbauen",
+        "hint": "Zwei bis drei Sätze, die mindestens einen OR-/ArG-Artikel aus deiner Mindmap zitieren. Steigerung: das wichtigste Argument kommt zuletzt."
+      },
+      {
+        "label": "Beispiel und Schluss",
+        "hint": "Konkretes Beispiel aus deiner Woche (Inventur am Samstag, Überzeit) plus ein Schluss-Satz, der die Klärung als Wunsch (nicht als Drohung) formuliert."
+      }
     ],
     "schreib_label": "POSITIONSPAPIER HIER ERARBEITEN",
     "schreib_note": "-> wissen/lehrvertrag_rechte_pflichten"
   },
-
   "reflexion_fragen": [
-    {"nr": "R1", "text": "Welche Stelle in meinem Lehrvertrag oder in Kap. 1.4 hat mich beim Lesen ueberrascht — und warum?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Wo in meinem Lehralltag werde ich dieses Wissen ueber Rechte und Pflichten konkret brauchen?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Was aendere ich konkret, wenn der naechste unklare Auftrag kommt — frage ich nach, dokumentiere ich, hole ich Rat?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "nr": "R1",
+      "text": "Welche Stelle in meinem Lehrvertrag oder in Kap. 1.4 hat mich beim Lesen überrascht — und warum?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag werde ich dieses Wissen über Rechte und Pflichten konkret brauchen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich konkret, wenn der nächste unklare Auftrag kommt — frage ich nach, dokumentiere ich, hole ich Rat?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
   ],
-
   "bewertungsraster": [
-    {"produkt": "Leitfragen", "abgabe": "Woche 1 — Ende Lektion", "gewicht": 20, "kriterium": "Inhaltliche Korrektheit"},
-    {"produkt": "Mindmap", "abgabe": "Woche 1 — Ende Lektion", "gewicht": 15, "kriterium": "Struktur · Tiefe · Verbindungen"},
-    {"produkt": "Handlungsprodukt", "abgabe": "Woche 2 — Ende Lektion", "gewicht": 35, "kriterium": "Rubrik 4 Stufen (SuK + Ges)"},
-    {"produkt": "Reflexion", "abgabe": "Woche 3 — Abgabe", "gewicht": 15, "kriterium": "Tiefe + Transfer"},
-    {"produkt": "Dekontextualisierung", "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)", "gewicht": 15, "kriterium": "Prinzip auf neue Situation uebertragen"}
+    {
+      "produkt": "Leitfragen",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 20,
+      "kriterium": "Inhaltliche Korrektheit"
+    },
+    {
+      "produkt": "Mindmap",
+      "abgabe": "Woche 1 — Ende Lektion",
+      "gewicht": 15,
+      "kriterium": "Struktur · Tiefe · Verbindungen"
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "abgabe": "Woche 2 — Ende Lektion",
+      "gewicht": 35,
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+    },
+    {
+      "produkt": "Reflexion",
+      "abgabe": "Woche 3 — Abgabe",
+      "gewicht": 15,
+      "kriterium": "Tiefe + Transfer"
+    },
+    {
+      "produkt": "Transfer",
+      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
+      "gewicht": 15,
+      "kriterium": "Prinzip auf neue Situation übertragen"
+    }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Situation lesen, LF1-LF2, Konflikt-Landkarte und Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Positionspapier verfassen (3B-Schema)", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Dekontextualisierung", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Situation lesen, LF1-LF2, Konflikt-Landkarte und Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Positionspapier verfassen (3B-Schema)",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
   "template": "default_4page_v2",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "1.1.1_konflikt_kommunizieren_prinzip",
   "sub_facette": {
     "buchstabe": "A",
-    "label": "Rechte und Pflichten im Lehrvertrag klaeren und Position formulieren"
+    "label": "Rechte und Pflichten im Lehrvertrag klären und Position formulieren"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
-    "trade_off": "Eigene Rechte durchsetzen vs. Beziehung zum Berufsbildner erhalten",
-    "hint": "Beide Pole sind legitim: Du hast vertraglich verankerte Rechte, und du bist gleichzeitig auf eine tragfaehige Lernbeziehung angewiesen. Bewertet wird nicht, ob du nachgibst oder kaempfst, sondern wie sauber du beides ausweist und begruendet entscheidest."
+    "trade_off": "Eigene Rechte durchsetzen vs. Beziehung zum Berufsbildner/in erhalten",
+    "hint": "Beide Pole sind legitim: Du hast vertraglich verankerte Rechte, und du bist gleichzeitig auf eine tragfähige Lernbeziehung angewiesen. Bewertet wird nicht, ob du nachgibst oder kämpfst, sondern wie sauber du beides ausweist und begründet entscheidest."
   },
-
   "dekontextualisierung": {
-    "frage": "Wie ueberpruefe ich in einer anderen Vertragssituation (Mietvertrag, Mitgliedschaftsvertrag, Praktikumsvertrag), ob das Verlangte ueberhaupt rechtlich vereinbart ist?",
-    "ziel": "Sachlage und eigene Rechte VOR der Reaktion klaeren — das ist die rezeptive Vorstufe jeder konstruktiven Konfliktkommunikation."
+    "frage": "Wie überprüfe ich in einer anderen Vertragssituation (Mietvertrag, Mitgliedschaftsvertrag, Praktikumsvertrag), ob das Verlangte überhaupt rechtlich vereinbart ist?",
+    "ziel": "Sachlage und eigene Rechte VOR der Reaktion klären — das ist die rezeptive Vorstufe jeder konstruktiven Konfliktkommunikation."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R1",
-    "r2_voraussicht": "T4 — Verantwortung im sozialen Zusammenleben uebernehmen.",
-    "r3_voraussicht": "T7 — Arbeitsrecht und Konflikt im Anstellungsverhaeltnis."
+    "r2_voraussicht": "T4 — Verantwortung im sozialen Zusammenleben übernehmen.",
+    "r3_voraussicht": "T7 — Arbeitsrecht und Konflikt im Anstellungsverhältnis."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 1.4", "titel": "Der Lehrvertrag — Pflichten Lernende, Rechte Lernende, Pflichten Berufsbildende", "seiten": "Seite 28-37", "fuer_leitfrage": [1, 2, 3]},
-    {"ref": "Kap. 17.1", "titel": "Dokumentieren — Notiztechniken und Markieren mit Symbolen", "seiten": "Seite 372-378", "fuer_leitfrage": [1]},
-    {"ref": "Kap. 17.2", "titel": "Argumentieren — Stellungnahme und 3B-Schema", "seiten": "Seite 384-392", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 1.4",
+      "titel": "Der Lehrvertrag — Pflichten Lernende, Rechte Lernende, Pflichten Berufsbildende",
+      "seiten": "Seite 28-37",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 17.1",
+      "titel": "Dokumentieren — Notiztechniken und Markieren mit Symbolen",
+      "seiten": "Seite 372-378",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 17.2",
+      "titel": "Argumentieren — Stellungnahme und 3B-Schema",
+      "seiten": "Seite 384-392",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Rechtskenntnis Lehrvertrag", "indikator": "Kann mindestens drei Pflichten und drei Rechte aus Kap. 1.4 benennen und einer OR-/ArG-Quelle zuordnen.", "gewicht_prozent": 25},
-      {"kriterium": "Quellenarbeit", "indikator": "Markiert Lehrmittel-Texte systematisch nach Symbolen aus Kap. 17.1 und bildet daraus eine Konflikt-Landkarte.", "gewicht_prozent": 25},
-      {"kriterium": "Argumentation 3B-Schema", "indikator": "Positionspapier enthaelt Behauptung, Begruendung mit Quellenverweis und konkretes Beispiel.", "gewicht_prozent": 25},
-      {"kriterium": "Mehrdeutigkeit anerkennen", "indikator": "Benennt im Positionspapier den Trade-off zwischen Rechtsdurchsetzung und Beziehungserhalt explizit.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Rechtskenntnis Lehrvertrag",
+        "indikator": "Kann mindestens drei Pflichten und drei Rechte aus Kap. 1.4 benennen und einer OR-/ArG-Quelle zuordnen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Quellenarbeit",
+        "indikator": "Markiert Lehrmittel-Texte systematisch nach Symbolen aus Kap. 17.1 und bildet daraus eine Konflikt-Landkarte.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Argumentation 3B-Schema",
+        "indikator": "Positionspapier enthält Behauptung, Begründung mit Quellenverweis und konkretes Beispiel.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mehrdeutigkeit anerkennen",
+        "indikator": "Benennt im Positionspapier den Trade-off zwischen Rechtsdurchsetzung und Beziehungserhalt explizit.",
+        "gewicht_prozent": 25
+      }
     ],
-    "scaffold_90": "Vorgegebene Konflikt-Landkarten-Tabelle und 3B-Vorlage als Lueckentext.",
-    "scaffold_100": "Zusaetzlich: Vergleich des eigenen Lehrvertrags mit der Musterregelung des kantonalen Amts."
+    "scaffold_90": "Vorgegebene Konflikt-Landkarten-Tabelle und 3B-Vorlage als Lückentext.",
+    "scaffold_100": "Zusätzlich: Vergleich des eigenen Lehrvertrags mit der Musterregelung des kantonalen Amts."
   },
-
   "prinzip_handoff": {
-    "kernkonzept": "Rechte und Pflichten aus dem Lehrvertrag als Sachgrundlage fuer eine begruendete Position.",
+    "kernkonzept": "Rechte und Pflichten aus dem Lehrvertrag als Sachgrundlage für eine begründete Position.",
     "lehrmittel_anker": "Kap. 1.4 S. 28-37 (Lehrvertrag, Konfliktfallregelung) plus Kap. 17.1 S. 372-378 (Dokumentieren) plus Kap. 17.2 S. 384-392 (3B-Schema).",
-    "kn_aktivierung": "Im KN erscheint diese Subfacette als das Element Rechtsklaerung — kann die Lernende benennen, welcher Vertrags-/Gesetzespunkt im Hybrid-Fall greift?",
-    "transfer_check": "Bei jeder neuen Anweisung im Lehrbetrieb zuerst pruefen, ob sie mit Lehrvertrag und Bildungsverordnung vereinbar ist."
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als das Element Rechtsklärung — kann die Lernende benennen, welcher Vertrags-/Gesetzespunkt im Hybrid-Fall greift?",
+    "transfer_check": "Bei jeder neuen Anweisung im Lehrbetrieb zuerst prüfen, ob sie mit Lehrvertrag und Bildungsverordnung vereinbar ist."
   },
-
   "sk_anker": [
-    {"sk": 1, "wo": "Lernende unterscheidet zwischen relevanten Lehrmittel-Quellen (OR-Artikel im Kap. 1.4) und irrelevanten Bauchgefuehl-Argumenten beim Befuellen der Konflikt-Landkarte (LF1, LF2)."},
-    {"sk": 6, "wo": "Im Positionspapier (LF4) begruendet die Lernende ihren Standpunkt nach dem 3B-Schema und stuetzt ihn mit konkreten Gesetzes-Verweisen."},
-    {"sk": 11, "wo": "Reflexion R3 verlangt, dass die Lernende den Trade-off zwischen Rechtsdurchsetzung und Beziehungserhalt explizit benennt, statt eine Seite zu eliminieren."}
+    {
+      "sk": 1,
+      "wo": "Lernende unterscheidet zwischen relevanten Lehrmittel-Quellen (OR-Artikel im Kap. 1.4) und irrelevanten Bauchgefühl-Argumenten beim Befüllen der Konflikt-Landkarte (LF1, LF2)."
+    },
+    {
+      "sk": 6,
+      "wo": "Im Positionspapier (LF4) begründet die Lernende ihren Standpunkt nach dem 3B-Schema und stützt ihn mit konkreten Gesetzes-Verweisen."
+    },
+    {
+      "sk": 11,
+      "wo": "Reflexion R3 verlangt, dass die Lernende den Trade-off zwischen Rechtsdurchsetzung und Beziehungserhalt explizit benennt, statt eine Seite zu eliminieren."
+    }
   ]
 }

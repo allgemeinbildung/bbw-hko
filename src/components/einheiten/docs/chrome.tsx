@@ -37,7 +37,7 @@ export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter,
       <footer className="page-foot">
         <div className="foot-titel">{docTitel}</div>
         <div>
-          {sitLetter && <span className="foot-sit">SIT {sitLetter} · </span>}
+          {sitLetter && <span className="foot-sit">HF {sitLetter} · </span>}
           <span>{pageNum} / {pageTotal}</span>
         </div>
       </footer>
