@@ -136,9 +136,7 @@ Das Austausch-Kapitel weiter unten verzweigt nach Variante.
 | | |
 |---|---|
 | **Teilfacette** | Rechte, Pflichten und Datenschutz-Regeln aus Quellen extrahieren und als Spickzettel verdichten |
-| **Persona** | Polymechaniker-Lernende/r, 1. LJ, Roth AG, Basel (CHF 850, 41 h/Woche) |
-| **Emotion** | Verunsicherung |
-| **Handlungsprodukt** | A4-Regel-Spickzettel, drei Blöcke |
+| **Persona** | Polymechaniker-Lernende/r, 1. LJ, Roth AG, Basel (CHF 850, 41 h/Woche) || **Handlungsprodukt** | A4-Regel-Spickzettel, drei Blöcke |
 | **Aspekte** | Recht, Technologie und digitale Transformation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK1, SK6, SK11 |
@@ -234,9 +232,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 | | |
 |---|---|
 | **Teilfacette** | Fälle methodisch durchspielen + eigene Rolle als beratende Mitlernende reflektieren |
-| **Persona** | Bäcker-Konditor-Lernende/r, 1. LJ, Beck Brunner, Aarau |
-| **Emotion** | Konzentration |
-| **Handlungsprodukt** | Fall-Mappe, 2 Fälle, je 3-Spalten-Tabelle + Schlussabsatz |
+| **Persona** | Bäcker-Konditor-Lernende/r, 1. LJ, Beck Brunner, Aarau || **Handlungsprodukt** | Fall-Mappe, 2 Fälle, je 3-Spalten-Tabelle + Schlussabsatz |
 | **Aspekte** | Recht, Ethik, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK1, SK3, SK11 |
@@ -326,9 +322,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 | | |
 |---|---|
 | **Teilfacette** | Rechtliche Anfrage schriftlich und adressatengerecht im richtigen Kanal beantworten |
-| **Persona** | Informatik-Lernende/r (Plattformentwicklung), 1. LJ, IT-Service Galliker, St. Gallen |
-| **Emotion** | Verantwortung |
-| **Handlungsprodukt** | Antwortschreiben (formelle E-Mail), 200–300 Wörter |
+| **Persona** | Informatik-Lernende/r (Plattformentwicklung), 1. LJ, IT-Service Galliker, St. Gallen || **Handlungsprodukt** | Antwortschreiben (formelle E-Mail), 200–300 Wörter |
 | **Aspekte** | Ethik, Technologie und digitale Transformation, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK6, SK7, SK11 |
@@ -460,7 +454,7 @@ Plenumsdiskussion, von der Lehrperson geleitet: „Was haben alle drei Situation
 
 Jetzt wird das Gelernte vom konkreten Fall **gelöst** und zum übertragbaren Prinzip gemacht. Ohne diesen Schritt greift die Zirkularität (R1 hier → R2 in T4 → R3 in T7) nicht.
 
-**Set-Aufgabe (Gewicht 15 %, Abgabe Woche 3, vor dem KN):**
+**Set-Aufgabe — Transfer (im eigenständigen «Austausch & Transfer»-Dokument, Abgabe Woche 3, vor dem KN):**
 
 > Übertrage das Kernprinzip aus deinen drei Situationen auf einen neuen, selbst gewählten Kontext. Schriftlich, 5–7 Sätze, mit Lehrmittelbegriffen.
 

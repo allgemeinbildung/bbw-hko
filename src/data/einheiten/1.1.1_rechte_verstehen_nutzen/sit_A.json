@@ -54,7 +54,7 @@
     "betrieb": "Mechanikwerkstatt Roth AG Basel",
     "ort": "Basel"
   },
-  "situation_text": "Du bist Polymechaniker-Lernende/r im 1. Lehrjahr bei der Roth AG in Basel. Du verdienst CHF 850 und arbeitest 41 Stunden pro Woche. In der Werkstatt-Chatgruppe stellt dir ein Mitlernende/r aus einem anderen Betrieb mehrere Fragen: Darf sein Betrieb von ihm Überstunden ohne Zuschlag verlangen? Darf der Berufsbildner/in CHF 80 für eine kaputte Bohrmaschine vom Lehrlingslohn abziehen? Und darf die Firma seine private Handy-Nummer in eine WhatsApp-Kundengruppe eintragen? Du möchtest ihm fundiert antworten — aber zuerst musst du dir selbst klar werden, was im Lehrvertrag, im Obligationenrecht und in den Datenschutzregeln tatsächlich steht. Du baust dir einen A4-Regel-Spickzettel, den du als Grundlage für alle drei Fragen nutzen kannst.",
+  "situation_text": "Ich bin Polymechaniker-Lernende/r im 1. Lehrjahr bei der Roth AG in Basel. Ich verdiene CHF 850 und arbeite 41 Stunden pro Woche. In der Werkstatt-Chatgruppe stellt mir ein Mitlernende/r aus einem anderen Betrieb mehrere Fragen: Darf sein Betrieb von ihm Überstunden ohne Zuschlag verlangen? Darf der Berufsbildner/in CHF 80 für eine kaputte Bohrmaschine vom Lehrlingslohn abziehen? Und darf die Firma seine private Handy-Nummer in eine WhatsApp-Kundengruppe eintragen? Ich möchte ihm fundiert antworten — aber zuerst muss ich mir selbst klar werden, was im Lehrvertrag, im Obligationenrecht und in den Datenschutzregeln tatsächlich steht. Ich baue mir einen A4-Regel-Spickzettel, den ich als Grundlage für alle drei Fragen nutzen kann.",
   "zahlen_tabelle": [
     {
       "label": "Lehrlingslohn LJ1 Polymechaniker",
@@ -101,7 +101,7 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.1 | S. 372-378",
-      "text": "Formuliere deinen Regel-Spickzettel auf einer A4-Seite. Gliederung nach Kap. 17.1: drei Blöcke (Rechte und Pflichten Arbeit, Lohn und Abzüge, Datenschutz und digitale Kanäle), je 3-4 Stichworte in eigenen Worten plus exakte Quellenangabe (Artikel oder Kapitel).",
+      "text": "Schreibe einen Block deines Spickzettels als Muster (z. B. «Lohn und Abzüge»): 3–4 Punkte in eigenen Worten, je mit exakter Quelle — knapp, im Nominalstil, nichts abschreiben.",
       "feld_hoehe_mm": 15
     }
   ],
@@ -153,7 +153,7 @@
     "abgaben": ["A4-Regel-Spickzettel (3 Blöcke mit exakten Quellenangaben)"],
     "titel": "Mein A4-Regel-Spickzettel — Lehrvertrag, Lohn und Datenschutz",
     "format_detail": "Einseitiges A4-Dokument mit drei thematischen Blöcken (Rechte und Pflichten Arbeit / Lohn und Abzüge / Datenschutz), jeweils 3-4 Stichworte in eigenen Worten plus exakte Quellenangabe (OR-Artikel oder Kap.-Verweis). Markier-Symbole aus Kap. 17.1 verwenden.",
-    "beschreibung": "Du erarbeitest einen kompakten A4-Spickzettel, der dir und deinem Mitlernenden als Nachschlagwerk dient. Er ist die rezeptive Vorstufe für die Fall-Mappe in Sit B und das Antwortschreiben in Sit C — sauber zitierte Quellen sparen dir später doppelte Arbeit.",
+    "beschreibung": "Ich erarbeite einen kompakten A4-Spickzettel, der mir und meinem Mitlernenden als Nachschlagwerk dient. Er ist die rezeptive Vorstufe für die Fall-Mappe in Sit B und das Antwortschreiben in Sit C — sauber zitierte Quellen sparen mir später doppelte Arbeit.",
     "schritte": [
       {
         "label": "Quellen sichten und markieren",
@@ -177,7 +177,24 @@
       }
     ],
     "schreib_label": "REGEL-SPICKZETTEL HIER ERARBEITEN",
-    "schreib_note": "-> wissen/lehrvertrag_rechte_pflichten"
+    "schreib_note": "-> wissen/lehrvertrag_rechte_pflichten",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Gemäss OR Art. … gilt: …»",
+        "«Laut Kap. 20.7 muss …»",
+        "«Wichtig (★): …»"
+      ],
+      "strategien": [
+        "Erst Quellen markieren (★ wichtig / ? strittig / _ Definition), dann pro Block verdichten",
+        "In eigenen Worten notieren statt abschreiben",
+        "Hinter jeden Punkt sofort die exakte Quelle setzen"
+      ],
+      "struktur": [
+        "Block 1: Rechte und Pflichten Arbeit",
+        "Block 2: Lohn und Abzüge",
+        "Block 3: Datenschutz und digitale Kanäle"
+      ]
+    }
   },
   "reflexion_fragen": [
     {
@@ -202,33 +219,38 @@
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 20,
-      "kriterium": "Inhaltliche Korrektheit"
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Pro Antwort mindestens eine exakte Quelle (OR-Artikel oder Kapitel) genannt",
+        "Markier-Symbole aus Kap. 17.1 verwendet"
+      ]
     },
     {
       "produkt": "Mindmap",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 15,
-      "kriterium": "Struktur · Tiefe · Verbindungen"
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Quellenbezug pro Ast erkennbar"
+      ]
     },
     {
       "produkt": "Handlungsprodukt",
-      "abgabe": "Woche 2 — Ende Lektion",
-      "gewicht": 35,
-      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Drei Blöcke (Rechte/Pflichten, Lohn, Datenschutz) auf einer A4-Seite",
+        "Pro Punkt eine exakte Quellenangabe",
+        "In eigenen Worten formuliert, keine reinen Zitate"
+      ]
     },
     {
       "produkt": "Reflexion",
-      "abgabe": "Woche 3 — Abgabe",
-      "gewicht": 15,
-      "kriterium": "Tiefe + Transfer"
-    },
-    {
-      "produkt": "Transfer",
-      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
-      "gewicht": 15,
-      "kriterium": "Prinzip auf neue Situation übertragen"
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Mindestens ein konkreter Transfer in den eigenen Lehralltag benannt"
+      ]
     }
   ],
   "wochen": 3,

@@ -58,7 +58,7 @@
     "betrieb": "IT-Service Galliker St. Gallen",
     "ort": "St. Gallen"
   },
-  "situation_text": "Du bist Informatik-Lernende (Plattformentwicklung) im 1. Lehrjahr beim IT-Service Galliker in St. Gallen. Dein Mitlernende/r hat deine Fall-Mappe (Sit B) gelesen und braucht jetzt eine kompakte schriftliche Antwort, die er seinem Berufsbildner/in zeigen kann. Er fragt dich auf WhatsApp: 'Kannst du mir das in 5 Minuten zusammenfassen?' Du spürst den Zeitdruck. Aber eine WhatsApp-Nachricht ist nicht das richtige Medium für eine rechtliche Position, die sein Berufsbildner/in ernst nehmen soll — und Datenschutz spielt auch eine Rolle, weil der Fall vertraulich ist. Du entscheidest, ihm ein formelles Antwortschreiben (E-Mail oder Brief) zu verfassen, das er bei Bedarf weiterleiten kann. Du nutzt das 3B-Schema und den Korrespondenz-Aufbau aus Kap. 17.2 und Kap. 17.3.",
+  "situation_text": "Ich bin Informatik-Lernende (Plattformentwicklung) im 1. Lehrjahr beim IT-Service Galliker in St. Gallen. Mein Mitlernende/r hat meine Fall-Mappe (Sit B) gelesen und braucht jetzt eine kompakte schriftliche Antwort, die er seinem Berufsbildner/in zeigen kann. Er fragt mich auf WhatsApp: 'Kannst du mir das in 5 Minuten zusammenfassen?' Ich spüre den Zeitdruck. Aber eine WhatsApp-Nachricht ist nicht das richtige Medium für eine rechtliche Position, die sein Berufsbildner/in ernst nehmen soll — und Datenschutz spielt auch eine Rolle, weil der Fall vertraulich ist. Ich entscheide, ihm ein formelles Antwortschreiben (E-Mail oder Brief) zu verfassen, das er bei Bedarf weiterleiten kann. Ich nutze das 3B-Schema und den Korrespondenz-Aufbau aus Kap. 17.2 und Kap. 17.3.",
   "zahlen_tabelle": [
     {
       "label": "Anfrage-Kanal Mitlernende/r",
@@ -105,7 +105,7 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.2 | S. 388-392",
-      "text": "Formuliere dein Antwortschreiben (ca. 200-300 Wörter). Verwende den Briefaufbau Anlass-Absicht-Begründung-Schluss (Kap. 17.3) und integriere das 3B-Schema (Behauptung, Begründung, Beispiel) aus Kap. 17.2 im Begründungsteil. Zitiere mindestens einen OR-/ArG-Artikel aus der Fall-Mappe.",
+      "text": "Schreibe den Begründungs-Absatz deines Schreibens nach dem 3B-Schema (4–5 Sätze, ein zitierter OR-/ArG-Artikel).",
       "feld_hoehe_mm": 15
     }
   ],
@@ -157,7 +157,7 @@
     "abgaben": ["Formelles Antwortschreiben (E-Mail, 200–300 Wörter, 3B-Schema + OR/ArG-Zitat)"],
     "titel": "Mein Antwortschreiben an den Mitlernenden — formell, begründet, adressatengerecht",
     "format_detail": "Formelle E-Mail im Word- oder Mail-Editor, ca. 200-300 Wörter, mit klarem Anlass-Absicht-Begründung-Schluss-Aufbau (Kap. 17.3), eingebettetem 3B-Schema (Kap. 17.2) und mindestens einem wortgenauen OR-/ArG-Zitat aus der Fall-Mappe.",
-    "beschreibung": "Du verfasst die endgültige schriftliche Antwort. Sie ist der produktive Abschluss des Sets: die Inhalte des Spickzettels (Sit A) und der methodisch sauberen Fall-Mappe (Sit B) münden in eine adressatengerechte Antwort. Sie soll deinem Mitlernenden konkret weiterhelfen, ohne deine Rolle als Mitlernende zu überschreiten.",
+    "beschreibung": "Ich verfasse die endgültige schriftliche Antwort. Sie ist der produktive Abschluss des Sets: die Inhalte des Spickzettels (Sit A) und der methodisch sauberen Fall-Mappe (Sit B) münden in eine adressatengerechte Antwort. Sie soll meinem Mitlernenden konkret weiterhelfen, ohne meine Rolle als Mitlernende zu überschreiten.",
     "schritte": [
       {
         "label": "Adressat und Anlass klären",
@@ -181,7 +181,24 @@
       }
     ],
     "schreib_label": "ANTWORTSCHREIBEN HIER ERARBEITEN",
-    "schreib_note": "-> wissen/korrespondenz_3b_schema"
+    "schreib_note": "-> wissen/korrespondenz_3b_schema",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Sehr geehrte/r … / Hallo …»",
+        "«Ich schreibe dir, weil …» (Anlass)",
+        "«Gemäss OR Art. … gilt …» (Begründung)",
+        "«Konkret heisst das für deinen Fall …» (Beispiel)"
+      ],
+      "strategien": [
+        "Erst Stichworte sammeln, dann ausformulieren",
+        "Wichtigstes Argument zuletzt setzen",
+        "Kanal bewusst wählen und die Wahl kurz begründen"
+      ],
+      "struktur": [
+        "Anlass – Absicht – Begründung (3B) – Schluss",
+        "3B im Begründungsteil: Behauptung – Begründung mit Quelle – Beispiel"
+      ]
+    }
   },
   "reflexion_fragen": [
     {
@@ -206,33 +223,38 @@
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 20,
-      "kriterium": "Inhaltliche Korrektheit"
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Vier Briefbausteine (Anlass-Absicht-Begründung-Schluss) erklärt",
+        "Kanalwahl mit Datenschutz-Argumenten begründet"
+      ]
     },
     {
       "produkt": "Mindmap",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 15,
-      "kriterium": "Struktur · Tiefe · Verbindungen"
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Bezug zu Kap. 17.2 / 17.3 / 20.7 erkennbar"
+      ]
     },
     {
       "produkt": "Handlungsprodukt",
-      "abgabe": "Woche 2 — Ende Lektion",
-      "gewicht": 35,
-      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Antwortschreiben 200–300 Wörter im Aufbau Anlass-Absicht-Begründung-Schluss",
+        "Ein vollständiges 3B-Tripel im Begründungsteil",
+        "Mindestens ein OR-/ArG-Zitat; adressatengerechte Anrede und Tonalität"
+      ]
     },
     {
       "produkt": "Reflexion",
-      "abgabe": "Woche 3 — Abgabe",
-      "gewicht": 15,
-      "kriterium": "Tiefe + Transfer"
-    },
-    {
-      "produkt": "Transfer",
-      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
-      "gewicht": 15,
-      "kriterium": "Prinzip auf neue Situation übertragen"
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konsequenz für künftige WhatsApp-Anfragen benannt"
+      ]
     }
   ],
   "wochen": 3,

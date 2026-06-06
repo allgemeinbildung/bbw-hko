@@ -106,6 +106,16 @@ export const PATCH: APIRoute = async ({ locals, request, params }) => {
       beurteilungsraster: body.beurteilungsraster,
       datei_name: body.datei_name || null,
       selbstcheck: body.selbstcheck,
+      // HKO-Beitragsfelder (Migration 010)
+      kompetenzversprechen: body.kompetenzversprechen || null,
+      leitfrage: body.leitfrage || null,
+      mehrdeutigkeit: body.mehrdeutigkeit || null,
+      kn_format: body.kn_format || null,
+      kn_aufgabe: body.kn_aufgabe || null,
+      bewertungskriterien: body.bewertungskriterien ?? [],
+      lehrmittel_anker: body.lehrmittel_anker || null,
+      didaktischer_kniff: body.didaktischer_kniff || null,
+      // zusatzmaterialien wird ueber /api/materials/[id]/files verwaltet
     })
     .eq('id', id)
     .select()

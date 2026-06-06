@@ -20,6 +20,13 @@ function selbstcheckCount(sc: any): number {
 
 const TOTAL_CHECKS = 10
 const scCount = selbstcheckCount(m.selbstcheck || {})
+
+const KN_FORMAT_LABEL: Record<string, string> = {
+  fachgespraech: 'Fachgespräch',
+  mini_case_schriftlich: 'Mini-Case schriftlich',
+  werkschau_transfer: 'Werkschau + Transfer',
+  andere: 'Andere Form',
+}
 ---
 <article class="lion-bg bg-white border border-slate-200 rounded-lg p-4 flex flex-col">
   <div class="flex items-start justify-between gap-2 mb-2">
@@ -39,6 +46,12 @@ const scCount = selbstcheckCount(m.selbstcheck || {})
     {showAuthor && m.profiles?.full_name && <span>{m.profiles.full_name} · </span>}
     {m.lehrdauer} · LJ {m.lehrjahr} · T{m.thema_nr} — {m.thema_titel}
   </div>
+
+  {m.kompetenzversprechen && (
+    <blockquote class="text-xs text-slate-600 italic border-l-2 pl-2.5 mb-3" style="border-color: var(--brand)">
+      „{m.kompetenzversprechen}"
+    </blockquote>
+  )}
 
   <div class="text-xs text-slate-600 mb-3">
     <span class="font-medium">Sprachmodus:</span> {m.sprachmodus_primaer}
@@ -74,6 +87,17 @@ const scCount = selbstcheckCount(m.selbstcheck || {})
     </div>
     <div>{m.handlungsprodukt_beschreibung}</div>
   </div>
+
+  {(m.kn_format || (m.zusatzmaterialien?.length ?? 0) > 0) && (
+    <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-slate-500">
+      {m.kn_format && (
+        <span class="chip">KN: {KN_FORMAT_LABEL[m.kn_format] ?? m.kn_format}</span>
+      )}
+      {(m.zusatzmaterialien?.length ?? 0) > 0 && (
+        <span class="inline-flex items-center gap-1">📎 {m.zusatzmaterialien.length} {m.zusatzmaterialien.length === 1 ? 'Datei' : 'Dateien'}</span>
+      )}
+    </div>
+  )}
 
   {m.kt1_kommentar && m.status === 'revision_noetig' && (
     <div class="mt-3 p-2 bg-red-50 border border-red-200 rounded text-xs text-red-700">

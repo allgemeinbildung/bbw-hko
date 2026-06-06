@@ -39,7 +39,7 @@ Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen K
 
 Im Fahrplan jeder Situation (Kapitel 3-5) steht die AVIVA-Schicht; die IPERKA-Logik liegt darunter (Leitfragen = Informieren/Planen/Entscheiden, Handlungsprodukt = Realisieren/Kontrollieren, Reflexion + Dekontext = Auswerten/Dekontextualisieren).
 
-**4. Bewertet wird das Produkt, bi-dimensional.** Der KN wird auf **zwei getrennten Noten** beurteilt: **SuK** (Sprache und Kommunikation) und **Ges** (Gesellschaft), gleichgewichtet. Die Prozessarbeit in den Situationen ist Uebung, kein benoteter KN-Bestandteil — die situationsinternen Bewertungsraster (Leitfragen 20 / Mindmap 15 / Handlungsprodukt 35 / Reflexion 15 / Dekontext 15) sind formative Erfahrungsnoten, falls du sie fuehrst.
+**4. Bewertet wird das Produkt, bi-dimensional.** Der KN wird auf **zwei getrennten Noten** beurteilt: **SuK** (Sprache und Kommunikation) und **Ges** (Gesellschaft), gleichgewichtet. Die Prozessarbeit in den Situationen ist Uebung, kein benoteter KN-Bestandteil — die situationsinternen Checklisten «Vollständigkeit» (Leitfragen, Mindmap, Handlungsprodukt, Reflexion — ohne Gewichtung) sind formative Selbstkontrolle, falls du sie fuehrst. Der Transfer wird im eigenständigen «Austausch & Transfer»-Dokument bearbeitet.
 
 **5. Mehrdeutigkeit ist gewollt.** In jeder Situation steckt ein echter Zielkonflikt (Rechte durchsetzen vs. Beziehung halten). Die Lernenden sollen ihn **nicht aufloesen**, sondern offen benennen und begruendet entscheiden. Das ist der Punkt, an dem traditioneller Unterricht am haeufigsten kippt — siehe die `[!mehrdeutigkeit]`-Hinweise.
 
@@ -174,9 +174,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 |---|---|
 | Titel | Aufgabe gegen die Abmachung — was steht eigentlich im Lehrvertrag? |
 | Sub-Facette | Rechte und Pflichten im Lehrvertrag klaeren und Position formulieren |
-| Persona | Schreiner/in EFZ, Schreinerei Brunner, Winterthur — 1. LJ, CHF 600, 41 h/Woche |
-| Emotion | Verunsicherung |
-| Aspekte (Ges) | Recht (R1), Identitaet und Sozialisation (R1) |
+| Persona | Schreiner/in EFZ, Schreinerei Brunner, Winterthur — 1. LJ, CHF 600, 41 h/Woche || Aspekte (Ges) | Recht (R1), Identitaet und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration schriftlich |
 | Schluesselkompetenzen | SK1 Quellen unterscheiden · SK6 Standpunkte begruenden · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Konflikt-Landkarte + Positionspapier (A4, 250-300 W, 3B-Schema) |
@@ -289,9 +287,7 @@ ________________________________________________________________________.
 |---|---|
 | Titel | Kritik per Chat — welcher Kanal traegt diese Antwort? |
 | Sub-Facette | Kanal und Register fuer eine schriftliche Konfliktantwort waehlen |
-| Persona | Automobilfachmann/-frau EFZ, Garage Suter AG, Aarau — 2. LJ, CHF 850 |
-| Emotion | Unter Druck |
-| Aspekte (Ges) | Technologie und digitale Transformation (R1), Ethik (R1) |
+| Persona | Automobilfachmann/-frau EFZ, Garage Suter AG, Aarau — 2. LJ, CHF 850 || Aspekte (Ges) | Technologie und digitale Transformation (R1), Ethik (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration schriftlich |
 | Schluesselkompetenzen | SK6 Standpunkte begruenden · SK7 Verstaendnis foerdern · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Schriftliche Antwort + Kanalbegruendung (A4, zweiteilig) |
@@ -403,9 +399,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 |---|---|
 | Titel | Aussprache vorbereiten — vier Ohren statt vier Vorwuerfe |
 | Sub-Facette | Konfliktgespraech rollenbewusst und beziehungserhaltend fuehren |
-| Persona | Informatiker/in EFZ (Applikationsentwicklung), Noser Engineering, Luzern — 1. LJ, CHF 700 |
-| Emotion | Anspannung |
-| Aspekte (Ges) | Ethik (R1), Identitaet und Sozialisation (R1) |
+| Persona | Informatiker/in EFZ (Applikationsentwicklung), Noser Engineering, Luzern — 1. LJ, CHF 700 || Aspekte (Ges) | Ethik (R1), Identitaet und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration muendlich |
 | Schluesselkompetenzen | SK4 Teamarbeit · SK7 Verstaendnis foerdern · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Gespraechs-Drehbuch (3 Spalten) + 5-Min-Rollen-Probe + 60-Sek-Selbstauswertung |
@@ -541,7 +535,7 @@ Kurzer Austausch in Kleingruppen ueber die jeweils gemachten Situationen, dann P
 
 Das ist die Phase, die R1 ueberhaupt nach R2/R3 traegt (Quick Ref §6). Hier wird das Wissen vom Schreiner-/Garage-/Informatik-Fall geloest.
 
-**Auftrag (Set):** Uebertrage das Kernprinzip aus deinen Situationen auf einen neuen, selbst gewaehlten Kontext. Schriftlich, **5-7 Saetze**, Lehrmittelbegriffe verwenden. Gewicht 15 %, Abgabe vor dem KN.
+**Auftrag (Set):** Uebertrage das Kernprinzip aus deinen Situationen auf einen neuen, selbst gewaehlten Kontext. Schriftlich, **5-7 Saetze**, Lehrmittelbegriffe verwenden. Abgabe vor dem KN (im eigenständigen «Austausch & Transfer»-Dokument).
 
 **Der Anker-Satz** (gehoert an die Tafel, nachdem die Klasse ihn selbst erarbeitet hat — nicht vorher vorgeben):
 

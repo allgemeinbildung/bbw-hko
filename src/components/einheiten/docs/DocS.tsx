@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 import { A4Page, Badge, HandlungsFlaeche, Schreibfeld, SectionHead, sitColors } from './chrome'
 import type { SituationJson, SetJson } from '../../../lib/einheiten/types'
-import { resolveSprachmodusIds, sprachmodusKurz } from '../../../lib/einheiten/sprachfoerderung'
 
 export interface DocSProps {
   sit: SituationJson
@@ -12,18 +11,20 @@ export interface DocSProps {
   onEdit: (key: string, value: string) => void
 }
 
+// C1 — Cockpit head: no Kompetenz badge, no emotion on the HF badge, sub-facette label only.
 function CockpitHead({ sit }: { sit: SituationJson }) {
   return (
     <>
       <div className="badge-row" style={{ marginBottom: '2.5mm' }}>
-        <Badge variant="outline">Kompetenz {sit.nrlp?.nr}</Badge>
-        <Badge>Herausforderung {sit.situation} · {sit.emotion_tag}</Badge>
+        <Badge>Herausforderung {sit.situation}</Badge>
       </div>
       <h1 className="cockpit-title">{sit.titel}</h1>
       <p className="cockpit-sub">{sit.modul_titel}</p>
-      <div className="badge-row" style={{ marginBottom: '3mm' }}>
-        <span className="subfacette">Herausforderung {sit.sub_facette?.buchstabe}: {sit.sub_facette?.label}</span>
-      </div>
+      {sit.sub_facette?.label && (
+        <div className="badge-row" style={{ marginBottom: '3mm' }}>
+          <span className="subfacette">{sit.sub_facette.label}</span>
+        </div>
+      )}
     </>
   )
 }
@@ -59,59 +60,52 @@ function MiniTableLabel({ children }: { children: ReactNode }) {
   )
 }
 
-function WochenPlanTable({ sit }: { sit: SituationJson }) {
-  if (!sit.wochen_plan) return null
-  const cleanLabel = (l: string) => (l || '').replace(/^Woche\s+\d+\s*[-–—]\s*/i, '').trim()
-  return (
-    <section style={{ marginTop: '4mm' }}>
-      <MiniTableLabel>Wochenplan</MiniTableLabel>
-      <table className="cockpit-table">
-        <thead><tr><th style={{ width: '26mm' }}>Dauer</th><th>Inhalt</th></tr></thead>
-        <tbody>
-          {sit.wochen_plan.map((w, i) => (
-            <tr key={i}><td className="num">{cleanLabel(w.label) || w.label}</td><td>{w.text}</td></tr>
-          ))}
-        </tbody>
-      </table>
-    </section>
-  )
-}
-
-function BewertungsRasterTable({ sit }: { sit: SituationJson }) {
+// C1 — Bewertungsraster → "Checkliste Vollständigkeit": Produkt · Kriterien · ☐ (no Abgabe/Gewicht/Total).
+// Kriterien cell shows vollstaendig_wenn[] as bullets (fallback to kriterium). Final column is an empty box.
+function ChecklisteVollstaendigkeit({ sit }: { sit: SituationJson }) {
   if (!sit.bewertungsraster) return null
-  const total = sit.bewertungsraster.reduce((s, r) => s + (r.gewicht || 0), 0)
   return (
     <section style={{ marginTop: '3mm' }}>
-      <MiniTableLabel>Bewertungsraster · Total {total}%</MiniTableLabel>
-      <table className="cockpit-table">
+      <MiniTableLabel>Checkliste Vollständigkeit</MiniTableLabel>
+      <table className="cockpit-table checkliste-table">
         <thead>
           <tr>
             <th style={{ width: '34mm' }}>Produkt</th>
-            <th style={{ width: '46mm' }}>Abgabe</th>
-            <th style={{ width: '14mm' }}>Gewicht</th>
-            <th>Kriterium</th>
+            <th>Kriterien</th>
+            <th style={{ width: '10mm', textAlign: 'center' }}>☐</th>
           </tr>
         </thead>
         <tbody>
-          {sit.bewertungsraster.map((b, i) => (
-            <tr key={i}>
-              <td><strong>{b.produkt}</strong></td>
-              <td>{b.abgabe}</td>
-              <td className="num">{b.gewicht}%</td>
-              <td>{b.kriterium}</td>
-            </tr>
-          ))}
+          {sit.bewertungsraster.map((b, i) => {
+            const bullets = b.vollstaendig_wenn?.filter(Boolean) || []
+            return (
+              <tr key={i}>
+                <td><strong>{b.produkt}</strong></td>
+                <td>
+                  {bullets.length > 0 ? (
+                    <ul className="checkliste-krit">
+                      {bullets.map((v, j) => <li key={j}>{v}</li>)}
+                    </ul>
+                  ) : (
+                    b.kriterium
+                  )}
+                </td>
+                <td style={{ textAlign: 'center' }}><span className="check-box">☐</span></td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </section>
   )
 }
 
-function QuellenList({ sit }: { sit: SituationJson }) {
+// C1 — "Quellen" → "Ressourcen". No enrichment.
+function RessourcenList({ sit }: { sit: SituationJson }) {
   if (!sit.quellen_anker) return null
   return (
     <section style={{ marginTop: '3mm' }}>
-      <MiniTableLabel>Quellen</MiniTableLabel>
+      <MiniTableLabel>Ressourcen</MiniTableLabel>
       <ul style={{ margin: 0, paddingLeft: '4mm', fontSize: '8.5pt', lineHeight: 1.45 }}>
         {sit.quellen_anker.map((q, i) => (
           <li key={i} style={{ marginBottom: '0.5mm' }}>
@@ -127,44 +121,14 @@ function QuellenList({ sit }: { sit: SituationJson }) {
   )
 }
 
+// C2 — Situation block: situation_text + Leitfrage (+ Spannungsfeld). sit-meta + zahlen_tabelle removed.
 function SituationBlock({ sit }: { sit: SituationJson }) {
   return (
     <>
-      <div className="sit-meta">
-        <div className="item"><strong>Beruf</strong>{sit.persona?.beruf}</div>
-        <div className="item"><strong>Betrieb</strong>{sit.persona?.betrieb}</div>
-        <div className="item"><strong>Ort</strong>{sit.persona?.ort}</div>
-        <div className="item"><strong>Emotion</strong>{sit.emotion_tag}</div>
-      </div>
       <p className="sit-text">{sit.situation_text}</p>
-      {sit.zahlen_tabelle && (
-        <table className="zahlen-tabelle">
-          <tbody>
-            {sit.zahlen_tabelle.map((z, i) => (
-              <tr key={i}>
-                <td>{z.label}</td>
-                <td className="wert">{z.wert}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
       <div className="leitfrage-callout">{sit.leitfrage}</div>
       {sit.mehrdeutigkeit?.trade_off && (
-        <div
-          className="spannungsfeld-callout"
-          style={{
-            marginTop: '3mm', padding: '2.5mm 3mm',
-            borderLeft: '3px solid var(--sit-akzent)',
-            background: 'var(--sit-light, rgba(0,0,0,0.03))',
-            fontSize: '9.5pt', lineHeight: 1.45,
-          }}
-        >
-          <span style={{
-            display: 'block', fontSize: '7.5pt', fontWeight: 600,
-            letterSpacing: '0.06em', textTransform: 'uppercase',
-            color: 'var(--sit-akzent)', marginBottom: '1mm',
-          }}>Spannungsfeld</span>
+        <div className="tradeoff-callout" style={{ marginTop: '3mm' }}>
           {sit.mehrdeutigkeit.trade_off}
         </div>
       )}
@@ -233,70 +197,155 @@ function ReflexionItem({ rf, withField, edits = {}, onEdit = () => {}, fieldHeig
   )
 }
 
-function MindmapFull({ sit }: { sit: SituationJson }) {
-  return (
-    <div className="mindmap">
-      <div className="mindmap-zentrum">{sit.mindmap_zentrum}</div>
-      <div className="mindmap-voll">
-        {sit.mindmap_aeste?.map((ast, i) => (
-          <div className="mindmap-ast" key={i}>
-            <h4>
-              {ast.titel}
-              {ast.optional && <span className="opt"> · optional</span>}
-            </h4>
-            <ul>
-              {ast.punkte?.map((p, j) => <li key={j}>{p}</li>)}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+// C5 — Radial mindmap: central node + 4 branch lines to 4 labelled sub-nodes. 4th branch (optional) dashed/lighter.
+// Optimized for exactly 4 branches; degrades to a simple grid for N≠4.
+function MindmapRadial({ sit, full }: { sit: SituationJson; full: boolean }) {
+  const aeste = sit.mindmap_aeste || []
 
-function MindmapSkelett({ sit }: { sit: SituationJson }) {
-  return (
-    <div className="mindmap">
-      <p style={{ fontSize: '8pt', color: 'var(--ink-mute)', marginBottom: '3mm', fontStyle: 'italic' }}>
-        Skizziere deine Mindmap auf der Fläche. Zentrum und Ast-Titel sind als Anker gesetzt; die Detail-Punkte arbeitest du selbst aus.
-      </p>
-      <div className="mindmap-skelett" style={{ minHeight: '180mm' }}>
-        <div className="zentrum-skelett">
-          <div className="mindmap-zentrum">{sit.mindmap_zentrum}</div>
-        </div>
-        <div className="aeste-skelett">
-          {sit.mindmap_aeste?.map((ast, i) => (
-            <div className={`ast-skelett ${ast.optional ? 'optional' : ''}`} key={i}>
-              {ast.titel}
+  if (aeste.length !== 4) {
+    return (
+      <div className="mindmap">
+        <div className="mindmap-zentrum">{sit.mindmap_zentrum}</div>
+        <div className="mindmap-voll">
+          {aeste.map((ast, i) => (
+            <div className="mindmap-ast" key={i}>
+              <h4>{ast.titel}{ast.optional && <span className="opt"> · optional</span>}</h4>
+              {full && ast.punkte && <ul>{ast.punkte.map((p, j) => <li key={j}>{p}</li>)}</ul>}
             </div>
           ))}
         </div>
       </div>
+    )
+  }
+
+  const cornerClass = ['mm-b1', 'mm-b2', 'mm-b3', 'mm-b4']
+  const lineEnds = [
+    { x2: 24, y2: 22 },
+    { x2: 76, y2: 22 },
+    { x2: 24, y2: 78 },
+    { x2: 76, y2: 78 },
+  ]
+  return (
+    <div className={`mindmap-radial ${full ? 'voll' : 'skelett'}`}>
+      <svg className="mindmap-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        {lineEnds.map((l, i) => (
+          <line
+            key={i}
+            x1="50" y1="50" x2={l.x2} y2={l.y2}
+            className={aeste[i].optional ? 'optional' : ''}
+          />
+        ))}
+      </svg>
+      <div className="mm-node mm-center">{sit.mindmap_zentrum}</div>
+      {aeste.map((ast, i) => (
+        <div className={`mm-node mm-branch ${cornerClass[i]} ${ast.optional ? 'optional' : ''}`} key={i}>
+          <h5>{ast.titel}{ast.optional && <span className="opt"> · optional</span>}</h5>
+          {full
+            ? (ast.punkte && <ul>{ast.punkte.map((p, j) => <li key={j}>{p}</li>)}</ul>)
+            : <div className="mm-space" />}
+        </div>
+      ))}
     </div>
   )
 }
 
-function SusMarker({ sit }: { sit: SituationJson }) {
-  // Small student-facing markers: which Sprachmodus / Kompetenz is being practiced.
-  const ids = resolveSprachmodusIds(sit.nrlp || {})
-  const komp = sit.nrlp?.kompetenz_id || sit.nrlp?.nr
-  if (!ids.length && !komp) return null
+// C5/AS-2 — skeleton intro hint refined to point at Leitfragen-Antworten + Ressourcen.
+function MindmapSkelett({ sit }: { sit: SituationJson }) {
   return (
-    <div className="sus-marker" style={{
-      display: 'flex', flexWrap: 'wrap', gap: '1.5mm', alignItems: 'center',
-      margin: '0 0 3mm', fontSize: '7.5pt',
-    }}>
-      <span style={{ color: 'var(--ink-mute)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Du übst:</span>
-      {ids.map((id) => (
-        <span key={id} style={{
-          fontWeight: 600, color: 'var(--sit-akzent)',
-          border: '1px solid var(--sit-akzent)', borderRadius: '2mm', padding: '0.3mm 1.5mm',
-        }}>{sprachmodusKurz(id)}</span>
-      ))}
-      {komp && (
-        <span style={{ color: 'var(--ink-mute)' }}>· Kompetenz {komp}</span>
+    <div className="mindmap">
+      <p className="mindmap-hint">
+        Baue deine Mindmap aus deinen Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänze die Detail-Punkte selbst.
+      </p>
+      <MindmapRadial sit={sit} full={false} />
+    </div>
+  )
+}
+
+// Dossier — the mindmap is NOT drawn here (it's done on paper or another device).
+// Just hint at the parts to generate: the four Ast-Titel. Keeps the Dossier one page shorter.
+function MindmapHinweis({ sit }: { sit: SituationJson }) {
+  const aeste = sit.mindmap_aeste || []
+  if (!aeste.length) return null
+  return (
+    <div className="mindmap-hinweis">
+      <p className="mm-hinweis-intro">
+        Die Mindmap erstellst du selbst — auf Papier oder einem Gerät. Baue sie aus dem Zentrum und diesen vier Ästen auf:
+      </p>
+      <ol className="mm-hinweis-aeste">
+        {aeste.map((ast, i) => (
+          <li key={i}>{ast.titel}{ast.optional && <span className="opt"> · optional</span>}</li>
+        ))}
+      </ol>
+    </div>
+  )
+}
+
+// C6 — replaces SusMarker: Lebensbezug + Sprachmodi (full labels) metadata.
+function HandlungsproduktMeta({ sit }: { sit: SituationJson }) {
+  const lebensbezug = sit.nrlp?.lebensbezug_text
+  const sprachmodi = (sit.nrlp?.sprachmodi || []).filter(Boolean)
+  if (!lebensbezug && !sprachmodi.length) return null
+  return (
+    <div className="hp-meta">
+      {lebensbezug && (
+        <div className="hp-meta-item">
+          <span className="hp-meta-label">Lebensbezug</span>
+          <span>{lebensbezug}</span>
+        </div>
+      )}
+      {sprachmodi.length > 0 && (
+        <div className="hp-meta-item">
+          <span className="hp-meta-label">Sprachmodi</span>
+          <span>{sprachmodi.join(' · ')}</span>
+        </div>
       )}
     </div>
+  )
+}
+
+// C6 — Gütekriterien checklist from lernfortschritt.kriterien (☐ + kriterium + indikator; gewicht ignored).
+function GuetekriterienListe({ sit }: { sit: SituationJson }) {
+  const kriterien = sit.lernfortschritt?.kriterien?.filter((k) => k && (k.kriterium || k.indikator)) || []
+  if (!kriterien.length) return null
+  return (
+    <section style={{ marginTop: '3mm' }}>
+      <MiniTableLabel>Gütekriterien</MiniTableLabel>
+      <ul className="guete-list">
+        {kriterien.map((k, i) => (
+          <li key={i}>
+            <span className="check-box">☐</span>
+            <span><strong>{k.kriterium}</strong>{k.indikator && <> — {k.indikator}</>}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+// C6 — Scaffolding: three labelled bullet groups (Satzanfänge · Strategien · Struktur).
+function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
+  const sc = sit.handlungsprodukt?.scaffolding
+  if (!sc) return null
+  const groups: { label: string; items?: string[] }[] = [
+    { label: 'Satzanfänge', items: sc.satzanfaenge },
+    { label: 'Strategien', items: sc.strategien },
+    { label: 'Struktur', items: sc.struktur },
+  ].filter((g) => (g.items?.filter(Boolean).length || 0) > 0)
+  if (!groups.length) return null
+  return (
+    <section style={{ marginTop: '3mm' }} className="scaffolding">
+      <MiniTableLabel>Scaffolding</MiniTableLabel>
+      <div className="scaffolding-groups">
+        {groups.map((g, i) => (
+          <div className="scaffolding-group" key={i}>
+            <div className="scaffolding-label">{g.label}</div>
+            <ul>
+              {g.items!.filter(Boolean).map((it, j) => <li key={j}>{it}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
 
@@ -316,14 +365,14 @@ function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt
   )
 }
 
-function HandlungsproduktIntro({ sit }: { sit: SituationJson }) {
+// C6 — 6a Anleitung: metadata → beschreibung → Schritte → Abgabe → Gütekriterien → Scaffolding. No write area.
+function HandlungsproduktAnleitung({ sit }: { sit: SituationJson }) {
   const hp = sit.handlungsprodukt
   if (!hp) return null
   return (
     <>
-      <SusMarker sit={sit} />
-      <AbgabeCallout hp={hp} />
-      <p className="hp-intro">{hp.beschreibung}</p>
+      <HandlungsproduktMeta sit={sit} />
+      {hp.beschreibung && <p className="hp-intro">{hp.beschreibung}</p>}
       {hp.schritte && (
         <ol className="hp-schritte">
           {hp.schritte.map((s, i) => (
@@ -334,58 +383,15 @@ function HandlungsproduktIntro({ sit }: { sit: SituationJson }) {
           ))}
         </ol>
       )}
+      <AbgabeCallout hp={hp} />
+      <GuetekriterienListe sit={sit} />
+      <ScaffoldingBlock sit={sit} />
     </>
   )
 }
 
-function AustauschBlock({ set, sit }: { set: SetJson | null; sit: SituationJson }) {
-  const ap = set?.austausch_phase
-  const da = set?.dekontextualisierungs_aufgabe
-  if (!ap && !da) return null
-  return (
-    <div className="austausch-grid">
-      {ap && (
-        <>
-          <div className="austausch-label">Austausch · {ap.format} · {ap.dauer_min} min</div>
-          <div className="austausch-text">
-            <div className="runden">
-              {ap.gruppenarbeit_jigsaw?.runde_1 && (
-                <div className="runden-item"><span className="nr">Runde 1</span><span>{ap.gruppenarbeit_jigsaw.runde_1}</span></div>
-              )}
-              {ap.gruppenarbeit_jigsaw?.runde_2 && (
-                <div className="runden-item"><span className="nr">Runde 2</span><span>{ap.gruppenarbeit_jigsaw.runde_2}</span></div>
-              )}
-              {ap.gruppenarbeit_jigsaw?.runde_3 && (
-                <div className="runden-item"><span className="nr">Runde 3</span><span>{ap.gruppenarbeit_jigsaw.runde_3}</span></div>
-              )}
-            </div>
-          </div>
-          <div className="austausch-label">Plenum</div>
-          <div className="austausch-text">{ap.einzelarbeit_plenum}</div>
-        </>
-      )}
-      {da && (
-        <>
-          <div className="austausch-label">Transfer</div>
-          <div className="austausch-text">
-            <p style={{ fontWeight: 500, margin: '0 0 1mm' }}>{da.auftrag}</p>
-            <p style={{ fontSize: '8.5pt', color: 'var(--ink-soft)', margin: 0 }}>
-              <strong>Format:</strong> {da.format} · <strong>Gewicht:</strong> {da.gewicht_prozent}% · <strong>Abgabe:</strong> {da.abgabe}
-            </p>
-            {sit.dekontextualisierung?.frage && (
-              <p style={{ marginTop: '2mm', margin: '2mm 0 0' }}>
-                <strong style={{ color: 'var(--sit-akzent)' }}>Leitend:</strong> {sit.dekontextualisierung.frage}
-              </p>
-            )}
-          </div>
-        </>
-      )}
-    </div>
-  )
-}
-
 function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info' | 'fill' }) {
-  return ({ pageNum, pageTotal, children }: { pageNum: number; pageTotal: number; children: ReactNode }) => (
+  return ({ pageNum, pageTotal, children, bodyClass }: { pageNum: number; pageTotal: number; children: ReactNode; bodyClass?: string }) => (
     <A4Page
       sit={common.sit.situation}
       abteilung={common.abteilung}
@@ -394,29 +400,42 @@ function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info'
       sitLetter={common.sit.situation}
       pageNum={pageNum}
       pageTotal={pageTotal}
-      kompetenzNr={common.sit.nrlp?.nr}
     >
-      <div className="a4-page-body">{children}</div>
+      <div className={bodyClass ? `a4-page-body ${bodyClass}` : 'a4-page-body'}>{children}</div>
     </A4Page>
   )
 }
 
-function DocSInfo({ sit, set, abteilung, mode }: DocSProps) {
+// Shared page-1 content: cockpit + merged situation + Checkliste + Ressourcen (C1/C2).
+function CockpitPageBody({ sit }: { sit: SituationJson }) {
+  return (
+    <>
+      <CockpitHead sit={sit} />
+      <CockpitCards sit={sit} />
+      <HandlungsproduktMeta sit={sit} />
+      <div style={{ marginTop: '2mm' }}>
+        <SituationBlock sit={sit} />
+      </div>
+      <ChecklisteVollstaendigkeit sit={sit} />
+      <RessourcenList sit={sit} />
+    </>
+  )
+}
+
+function DocSInfo({ sit, abteilung, mode }: DocSProps) {
   const Page = makePage({ sit, abteilung, mode })
+  let pageIdx = 0
+  const nextPage = () => ++pageIdx
+  // C2/redesign: Dossier no longer dedicates a page to the mindmap (it's drawn off-sheet) →
+  // the mindmap hint shares the Leitfragen page, so the Dossier is 4 pages instead of 5.
   const total = 4
   return (
     <div style={sitColors(sit)}>
-      <Page pageNum={1} pageTotal={total}>
-        <CockpitHead sit={sit} />
-        <CockpitCards sit={sit} />
-        <WochenPlanTable sit={sit} />
-        <BewertungsRasterTable sit={sit} />
-        <QuellenList sit={sit} />
+      <Page pageNum={nextPage()} pageTotal={total} bodyClass="cockpit-page">
+        <CockpitPageBody sit={sit} />
       </Page>
-      <Page pageNum={2} pageTotal={total}>
-        <SectionHead num="02 · Herausforderung">{sit.titel}</SectionHead>
-        <SituationBlock sit={sit} />
-        <SectionHead num="03 · Wissensecke">Leitfragen</SectionHead>
+      <Page pageNum={nextPage()} pageTotal={total}>
+        <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
         {sit.leitfragen_intro && (
           <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', maxWidth: '160mm', marginBottom: '3mm' }}>
             {sit.leitfragen_intro}
@@ -425,26 +444,24 @@ function DocSInfo({ sit, set, abteilung, mode }: DocSProps) {
         {sit.leitfragen?.map((lf, i) => (
           <LeitfrageItem key={i} lf={lf} withField={false} />
         ))}
+        <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
+        <MindmapHinweis sit={sit} />
       </Page>
-      <Page pageNum={3} pageTotal={total}>
-        <SectionHead num="04 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
-        <MindmapFull sit={sit} />
-        <SectionHead num="05 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
-        <HandlungsproduktIntro sit={sit} />
+      <Page pageNum={nextPage()} pageTotal={total}>
+        <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
+        <HandlungsproduktAnleitung sit={sit} />
       </Page>
-      <Page pageNum={4} pageTotal={total}>
-        <SectionHead num="06 · Selbstcheck">Reflexion</SectionHead>
+      <Page pageNum={nextPage()} pageTotal={total}>
+        <SectionHead num="05 · Selbstcheck">Reflexion</SectionHead>
         {sit.reflexion_fragen?.map((rf, i) => (
           <ReflexionItem key={i} rf={rf} withField={false} />
         ))}
-        <SectionHead num="07 · Austausch &amp; Transfer">Austausch &amp; Transfer</SectionHead>
-        <AustauschBlock set={set} sit={sit} />
       </Page>
     </div>
   )
 }
 
-function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
+function DocSFill({ sit, abteilung, mode, edits, onEdit }: DocSProps) {
   const Page = makePage({ sit, abteilung, mode })
   const lf = sit.leitfragen || []
   const lfPairs: typeof lf[] = []
@@ -452,26 +469,19 @@ function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
 
   let pageIdx = 0
   const nextPage = () => ++pageIdx
-  const actualTotal = 6 + lfPairs.length
+  // C2/C6/C8: cockpit+situation (1) + Leitfragen pairs + Mindmap (1) + HP Anleitung (1) + HP Arbeitsfläche (1) + Reflexion (1)
+  const actualTotal = 5 + lfPairs.length
 
   return (
     <div style={sitColors(sit)}>
-      <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <CockpitHead sit={sit} />
-        <CockpitCards sit={sit} />
-        <WochenPlanTable sit={sit} />
-        <BewertungsRasterTable sit={sit} />
-        <QuellenList sit={sit} />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="02 · Herausforderung">{sit.titel}</SectionHead>
-        <SituationBlock sit={sit} />
+      <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="cockpit-page">
+        <CockpitPageBody sit={sit} />
       </Page>
       {lfPairs.map((pair, pi) => (
         <Page key={`lfp-${pi}`} pageNum={nextPage()} pageTotal={actualTotal}>
           {pi === 0 ? (
             <>
-              <SectionHead num="03 · Wissensecke">Leitfragen</SectionHead>
+              <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
               {sit.leitfragen_intro && (
                 <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', maxWidth: '160mm', marginBottom: '5mm' }}>
                   {sit.leitfragen_intro}
@@ -479,7 +489,7 @@ function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
               )}
             </>
           ) : (
-            <SectionHead num={`03 · Wissensecke (${pi + 1})`}>Leitfragen (Fortsetzung)</SectionHead>
+            <SectionHead num={`02 · Wissensecke (${pi + 1})`}>Leitfragen (Fortsetzung)</SectionHead>
           )}
           {pair.map((q, i) => (
             <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} fieldHeightMm={55} />
@@ -487,12 +497,14 @@ function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
         </Page>
       ))}
       <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="04 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
+        <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapSkelett sit={sit} />
       </Page>
       <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="05 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
-        <HandlungsproduktIntro sit={sit} />
+        <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
+        <HandlungsproduktAnleitung sit={sit} />
+      </Page>
+      <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-arbeitsflaeche-page">
         <HandlungsFlaeche
           label={sit.handlungsprodukt?.schreib_label || 'HIER ERARBEITEN'}
           value={edits.handlungsprodukt || ''}
@@ -500,26 +512,10 @@ function DocSFill({ sit, set, abteilung, mode, edits, onEdit }: DocSProps) {
         />
       </Page>
       <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="06 · Selbstcheck">Reflexion</SectionHead>
+        <SectionHead num="05 · Selbstcheck">Reflexion</SectionHead>
         {sit.reflexion_fragen?.map((rf, i) => (
           <ReflexionItem key={i} rf={rf} withField={true} edits={edits} onEdit={onEdit} fieldHeightMm={35} />
         ))}
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="07 · Austausch &amp; Transfer">Austausch &amp; Transfer</SectionHead>
-        <AustauschBlock set={set} sit={sit} />
-        <p style={{
-          fontSize: '8.5pt', color: 'var(--ink-mute)',
-          marginTop: '4mm', marginBottom: '2mm',
-          textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600,
-        }}>
-          Dein Transfer (5–7 Sätze)
-        </p>
-        <Schreibfeld
-          heightMm={55}
-          value={edits.dekontext || ''}
-          onChange={(v) => onEdit('dekontext', v)}
-        />
       </Page>
     </div>
   )

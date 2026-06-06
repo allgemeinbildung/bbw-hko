@@ -54,7 +54,7 @@
     "betrieb": "Garage Suter AG Aarau",
     "ort": "Aarau"
   },
-  "situation_text": "Du bist Automobilfachmann-Lernende/r im 2. Lehrjahr bei der Garage Suter AG in Aarau und verdienst CHF 850 im Monat. Gestern hat dich dein Berufsbildner/in in der Werkstatt vor zwei Kunden und drei Mechanikern lautstark für einen falsch montierten Bremssattel kritisiert. Heute Morgen schickt er dir zusätzlich eine knappe WhatsApp-Nachricht an die private Nummer: «Brauche bis 18 Uhr deine Sicht der Sache. Sonst spreche ich mit der Lehrlingsverantwortlichen.» Du fühlst dich blossgestellt und unter Zeitdruck. Du möchtest deine Position zurückmelden — aber WhatsApp privat, geschäftliche E-Mail oder doch ein Brief an die Werkstattleitung? Und in welchem Ton?",
+  "situation_text": "Ich bin Automobilfachmann-Lernende/r im 2. Lehrjahr bei der Garage Suter AG in Aarau und verdiene CHF 850 im Monat. Gestern hat mich mein Berufsbildner/in in der Werkstatt vor zwei Kunden und drei Mechanikern lautstark für einen falsch montierten Bremssattel kritisiert. Heute Morgen schickt er mir zusätzlich eine knappe WhatsApp-Nachricht an die private Nummer: «Brauche bis 18 Uhr deine Sicht der Sache. Sonst spreche ich mit der Lehrlingsverantwortlichen.» Ich fühle mich blossgestellt und unter Zeitdruck. Ich möchte meine Position zurückmelden — aber WhatsApp privat, geschäftliche E-Mail oder doch ein Brief an die Werkstattleitung? Und in welchem Ton?",
   "zahlen_tabelle": [
     {
       "label": "Lehrlingslohn LJ2",
@@ -97,7 +97,7 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.3 | S. 400-404",
-      "text": "Formuliere deine Antwort vollständig im gewählten Kanal: Betreffzeile, Anrede, Anlass (was ist passiert), Absicht (was willst du erreichen), Begründung (deine Sicht der Sache), Schluss (konkreter Lösungsvorschlag). 200-250 Wörter, adressatengerechte Sprache, keine Emoticons.",
+      "text": "Schreibe (1) deine Kanalbegründung (2–3 Sätze) und (2) einen deeskalierenden Eröffnungssatz.",
       "feld_hoehe_mm": 15
     }
   ],
@@ -150,7 +150,7 @@
     "abgaben": ["Kanalbegründung (80–120 Wörter)", "Schreiben im gewählten Kanal (200–250 Wörter)"],
     "titel": "Mein Konflikt-Schreiben mit Kanalbegründung",
     "format_detail": "Zweiteilige A4-Abgabe: oben eine Kanalbegründung von 80-120 Wörtern (warum dieser Kanal, dieses Register), darunter die vollständige Antwort selbst (200-250 Wörter) im gewählten Format — entweder als Geschäftsmail-Layout oder als Brief-Layout aus Kap. 17.3.",
-    "beschreibung": "Du lieferst zwei Texte ab: eine kurze Meta-Begründung, weshalb du diesen Kanal und dieses Register gewählt hast, und das Schreiben selbst. Bewertet wird nicht der Inhalt allein, sondern die Stimmigkeit zwischen Kanalwahl, Register und Adressat.",
+    "beschreibung": "Ich liefere zwei Texte ab: eine kurze Meta-Begründung, weshalb ich diesen Kanal und dieses Register gewählt habe, und das Schreiben selbst. Bewertet wird nicht der Inhalt allein, sondern die Stimmigkeit zwischen Kanalwahl, Register und Adressat.",
     "schritte": [
       {
         "label": "Kanäle vergleichen",
@@ -174,7 +174,24 @@
       }
     ],
     "schreib_label": "ANTWORT UND KANALBEGRUENDUNG HIER ERARBEITEN",
-    "schreib_note": "-> wissen/geschäftsbrief_email_register"
+    "schreib_note": "-> wissen/geschäftsbrief_email_register",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Betreff: …»",
+        "«Sehr geehrte/r …»",
+        "«Ich wähle diesen Kanal, weil …» (Kanalbegründung)",
+        "«Mein Vorschlag ist …» (Schluss)"
+      ],
+      "strategien": [
+        "Kanäle in einer Tabelle vergleichen (Schnelligkeit / Verbindlichkeit / Register)",
+        "Anlass-Absicht-Begründung-Schluss zuerst stichwortartig skizzieren",
+        "Du-Form vermeiden, Ich-Botschaften vorbereiten"
+      ],
+      "struktur": [
+        "Teil 1: Kanalbegründung (80–120 Wörter)",
+        "Teil 2: Schreiben mit Anlass – Absicht – Begründung – Schluss"
+      ]
+    }
   },
   "reflexion_fragen": [
     {
@@ -199,33 +216,38 @@
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 20,
-      "kriterium": "Inhaltliche Korrektheit"
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Aufbau Anlass-Absicht-Begründung-Schluss erklärt",
+        "Drei Medienkompetenz-Probleme der privaten WhatsApp benannt"
+      ]
     },
     {
       "produkt": "Mindmap",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 15,
-      "kriterium": "Struktur · Tiefe · Verbindungen"
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Bezug zu Kap. 17.3 / 20.7 / 18.2 erkennbar"
+      ]
     },
     {
       "produkt": "Handlungsprodukt",
-      "abgabe": "Woche 2 — Ende Lektion",
-      "gewicht": 35,
-      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Kanalbegründung (80–120 Wörter) + Schreiben (200–250 Wörter)",
+        "Aufbau Anlass-Absicht-Begründung-Schluss erkennbar",
+        "Einheitliches Register, korrekte Anrede, keine Emoticons"
+      ]
     },
     {
       "produkt": "Reflexion",
-      "abgabe": "Woche 3 — Abgabe",
-      "gewicht": 15,
-      "kriterium": "Tiefe + Transfer"
-    },
-    {
-      "produkt": "Transfer",
-      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
-      "gewicht": 15,
-      "kriterium": "Prinzip auf neue Situation übertragen"
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konkrete Änderung der eigenen WhatsApp-Nutzung benannt"
+      ]
     }
   ],
   "wochen": 3,

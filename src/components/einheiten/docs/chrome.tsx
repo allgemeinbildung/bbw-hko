@@ -14,7 +14,7 @@ interface A4PageProps {
   logoUrl?: string
 }
 
-export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter, pageNum, pageTotal, kompetenzNr, logoUrl = '/logo-bbw-doc.png' }: A4PageProps) {
+export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter, pageNum, pageTotal, logoUrl = '/logo-bbw-doc.png' }: A4PageProps) {
   const sitClass = sit ? `sit-${sit}` : 'sit-neutral'
   return (
     <article className={`a4-page ${sitClass}`}>
@@ -29,7 +29,7 @@ export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter,
           )}
         </div>
         <div className="page-head-right">
-          {kompetenzNr && <div className="doc-kompetenz">KOMP {kompetenzNr}</div>}
+          {/* C1 — KOMP pill removed from the page header (kompetenzNr kept in signature for back-compat) */}
           <div className="doc-code">{docCode}</div>
         </div>
       </header>

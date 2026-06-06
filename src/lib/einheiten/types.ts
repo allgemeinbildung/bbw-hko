@@ -49,7 +49,8 @@ export interface SituationJson {
   leitfrage?: string
   mehrdeutigkeit?: { explizit?: boolean; trade_off?: string; hint?: string }
   wochen_plan?: { label: string; text: string; aktiv?: boolean }[]
-  bewertungsraster?: { produkt: string; abgabe: string; gewicht: number; kriterium: string }[]
+  // C1 — relaxed: abgabe/gewicht/kriterium now optional + unrendered; NEW vollstaendig_wenn drives the Checkliste
+  bewertungsraster?: { produkt: string; abgabe?: string; gewicht?: number; kriterium?: string; vollstaendig_wenn?: string[] }[]
   quellen_anker?: { ref: string; titel: string; seiten: string; unterueberschrift?: string; fuer_leitfrage?: number[] }[]
   leitfragen_intro?: string
   leitfragen?: { nr: number; text: string; bloom?: string; knoten_ref?: string; feld_hoehe_mm?: number }[]
@@ -64,6 +65,14 @@ export interface SituationJson {
     schritte?: { label: string; hint: string }[]
     schreib_label?: string
     schreib_note?: string
+    // C6 — language scaffolds for the Handlungsprodukt (additive); aligned to HP format + output Sprachmodus
+    scaffolding?: { satzanfaenge?: string[]; strategien?: string[]; struktur?: string[] }
+  }
+  // C6 — progress/quality criteria (present in data, now typed; additive). scaffold_90/100 = differentiation.
+  lernfortschritt?: {
+    kriterien?: { kriterium: string; indikator: string; gewicht_prozent?: number }[]
+    scaffold_90?: string
+    scaffold_100?: string
   }
   reflexion_fragen?: { nr: string | number; text: string; sub?: string | null; feld_hoehe_mm?: number }[]
   dekontextualisierung?: { frage?: string; ziel?: string }
@@ -88,6 +97,10 @@ export interface SetJson {
     dauer_min?: number | string
     gruppenarbeit_jigsaw?: { runde_1?: string; runde_2?: string; runde_3?: string }
     einzelarbeit_plenum?: string
+    // C8 — structured closure variants (keep old keys for back-compat; renderer reads new ?? old)
+    gruppenpuzzle?: { runde_1?: string; runde_2?: string; runde_3?: string }  // alias of gruppenarbeit_jigsaw
+    plenum?: string            // alias of einzelarbeit_plenum
+    einzelauftrag?: string     // NEW individual-closure prompt
   }
   dekontextualisierungs_aufgabe?: {
     auftrag?: string

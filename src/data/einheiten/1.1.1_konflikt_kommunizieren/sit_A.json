@@ -54,7 +54,7 @@
     "betrieb": "Schreinerei Brunner Winterthur",
     "ort": "Winterthur"
   },
-  "situation_text": "Du bist Schreiner-Lernende im 1. Lehrjahr bei der Schreinerei Brunner in Winterthur. Du beziehst einen Lehrlingslohn von CHF 600 und arbeitest 41 Stunden pro Woche. Letzte Woche hat dir dein Berufsbildner/in an einem Samstagmorgen die alleinige Inventur des Holzlagers plus die Werkstatt-Grundreinigung übertragen — die Reinigung ist eine berufsfremde Aufgabe, die laut deinem Lehrvertrag und der Bildungsverordnung nicht zu deinem Beruf gehört. Auch deine tägliche Arbeitszeit hat in dieser Woche zweimal die 9-Stunden-Grenze für Jugendliche unter 18 Jahren überschritten. Du fühlst dich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf dein Berufsbildner/in das überhaupt? Du möchtest dich nicht gleich beschweren, aber du willst auch nicht hilflos bleiben.",
+  "situation_text": "Ich bin Schreiner-Lernende im 1. Lehrjahr bei der Schreinerei Brunner in Winterthur. Ich beziehe einen Lehrlingslohn von CHF 600 und arbeite 41 Stunden pro Woche. Letzte Woche hat mir mein Berufsbildner/in an einem Samstagmorgen die alleinige Inventur des Holzlagers plus die Werkstatt-Grundreinigung übertragen — die Reinigung ist eine berufsfremde Aufgabe, die laut meinem Lehrvertrag und der Bildungsverordnung nicht zu meinem Beruf gehört. Auch meine tägliche Arbeitszeit hat in dieser Woche zweimal die 9-Stunden-Grenze für Jugendliche unter 18 Jahren überschritten. Ich fühle mich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf mein Berufsbildner/in das überhaupt? Ich möchte mich nicht gleich beschweren, aber ich will auch nicht hilflos bleiben.",
   "zahlen_tabelle": [
     {
       "label": "Lehrlingslohn LJ1",
@@ -101,7 +101,7 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.2 | S. 388-392",
-      "text": "Formuliere ein einseitiges Positionspapier nach dem 3B-Schema (Behauptung, Begründung, Beispiel) aus Kap. 17.2. Behauptung: Welcher Punkt der Anweisung ist aus deiner Sicht nicht vereinbar mit dem Lehrvertrag? Begründung: Welche Artikel aus dem OR/ArG stützen deine Position? Beispiel: Wie hat sich der Konflikt konkret gezeigt?",
+      "text": "Schreibe deine Kern-Behauptung und eine sachliche, adressatengerechte Begründung (3–4 Sätze, bestimmt aber respektvoll, keine Vorwürfe).",
       "feld_hoehe_mm": 15
     }
   ],
@@ -155,7 +155,7 @@
     "abgaben": ["Positionspapier (A4, 250–300 Wörter, 3B-Schema)"],
     "titel": "Mein Positionspapier — Was steht im Lehrvertrag",
     "format_detail": "Einseitiges A4-Positionspapier, ca. 250-300 Wörter, in drei Abschnitten nach dem 3B-Schema (Behauptung / Begründung / Beispiel) aus Kap. 17.2 strukturiert, mit konkreten Quellenverweisen auf OR-/ArG-Artikel.",
-    "beschreibung": "Du formulierst auf einer A4-Seite eine sachliche, begründete Position zum Vorfall. Das Papier ist die schriftliche Grundlage, mit der du in Sit B die richtige Kanal- und Register-Wahl treffen kannst und in Sit C ins Gespräch gehst. Es ist keine Anklage, sondern eine überprüfbare Klärung der Sachlage.",
+    "beschreibung": "Ich formuliere auf einer A4-Seite eine sachliche, begründete Position zum Vorfall. Das Papier ist die schriftliche Grundlage, mit der ich in Sit B die richtige Kanal- und Register-Wahl treffen kann und in Sit C ins Gespräch gehe. Es ist keine Anklage, sondern eine überprüfbare Klärung der Sachlage.",
     "schritte": [
       {
         "label": "Quellen sichten und markieren",
@@ -179,7 +179,24 @@
       }
     ],
     "schreib_label": "POSITIONSPAPIER HIER ERARBEITEN",
-    "schreib_note": "-> wissen/lehrvertrag_rechte_pflichten"
+    "schreib_note": "-> wissen/lehrvertrag_rechte_pflichten",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Ich sehe es so: …» (Behauptung)",
+        "«Gemäss OR/ArG Art. … gilt …» (Begründung)",
+        "«Konkret war es so: …» (Beispiel)",
+        "«Mein Wunsch ist …» (Schluss)"
+      ],
+      "strategien": [
+        "Erst Fakten in der Konflikt-Landkarte ordnen, dann formulieren",
+        "Sachlich bleiben: Verhalten beschreiben statt Vorwürfe machen",
+        "Wichtigstes Argument zuletzt setzen"
+      ],
+      "struktur": [
+        "3B-Aufbau: Behauptung – Begründung – Beispiel",
+        "Schluss als Wunsch, nicht als Drohung"
+      ]
+    }
   },
   "reflexion_fragen": [
     {
@@ -204,33 +221,38 @@
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 20,
-      "kriterium": "Inhaltliche Korrektheit"
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Rechte und Pflichten aus Kap. 1.4 korrekt zugeordnet",
+        "Konfliktweg aus Kap. 1.4 begründet gewählt"
+      ]
     },
     {
       "produkt": "Mindmap",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 15,
-      "kriterium": "Struktur · Tiefe · Verbindungen"
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "OR-/ArG-Bezug pro Ast erkennbar"
+      ]
     },
     {
       "produkt": "Handlungsprodukt",
-      "abgabe": "Woche 2 — Ende Lektion",
-      "gewicht": 35,
-      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Positionspapier auf einer A4-Seite (250–300 Wörter)",
+        "3B-Aufbau: Behauptung / Begründung mit OR-/ArG-Quelle / Beispiel",
+        "Sachlich formuliert, als Klärung und nicht als Anklage"
+      ]
     },
     {
       "produkt": "Reflexion",
-      "abgabe": "Woche 3 — Abgabe",
-      "gewicht": 15,
-      "kriterium": "Tiefe + Transfer"
-    },
-    {
-      "produkt": "Transfer",
-      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
-      "gewicht": 15,
-      "kriterium": "Prinzip auf neue Situation übertragen"
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konkrete Konsequenz für den nächsten unklaren Auftrag benannt"
+      ]
     }
   ],
   "wochen": 3,

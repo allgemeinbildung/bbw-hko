@@ -3,12 +3,13 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import JSZip from 'jszip'
 
 import { DocS } from './docs/DocS'
+import { DocAustausch } from './docs/DocAustausch'
 import { DocKnS } from './docs/DocKnS'
 import { DocKnLp } from './docs/DocKnLp'
 import { ABTEILUNGEN } from '../../lib/einheiten'
 import type { EinheitFullSet } from '../../lib/einheiten/types'
 
-import { buildDocS, buildKnS, buildKnLp, docToBlob } from '../../lib/einheiten/docx-builder'
+import { buildDocS, buildAustausch, buildKnS, buildKnLp, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 
 interface Props {
@@ -19,7 +20,7 @@ interface Props {
   feedbackUrl: string
 }
 
-type DocSel = 'doc-s' | 'doc-kn-s' | 'doc-kn-lp'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -35,12 +36,25 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [knTyp, setKnTyp] = useState<string>(d.kn?.kn_typen?.[0]?.typ || 'fachgespraech')
   const [bundling, setBundling] = useState(false)
   const [toast, setToast] = useState<{ kind: 'ok' | 'error'; msg: string } | null>(null)
+  const [navOpen, setNavOpen] = useState(false)
+  const [wbTop, setWbTop] = useState(80)
 
   useEffect(() => {
     const style = document.createElement('style')
-    style.textContent = '@media print { .app-chrome { display: none !important; } .pages { padding: 0; gap: 0; margin: 0; } body { margin: 0; padding: 0; } }'
+    style.textContent = '@media print { .wb-nav, .wb-dochead, .download-fab, .toast { display: none !important; } .wb-canvas .pages { padding: 0; gap: 0; margin: 0; } body { margin: 0; padding: 0; } }'
     document.head.appendChild(style)
     return () => document.head.removeChild(style)
+  }, [])
+
+  // Dock the sidebar / doc-header right beneath the page's sticky top bar.
+  useEffect(() => {
+    const measure = () => {
+      const h = document.querySelector('header')?.getBoundingClientRect().height
+      if (h) setWbTop(Math.round(h))
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
   }, [])
 
   const onEdit = useCallback((k: string, v: string) => {
@@ -53,6 +67,10 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     if (doc === 'doc-s') {
       if (!sit) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Herausforderung {situation} fehlt.</p></div>
       return <DocS sit={sit} set={d.set} abteilung={abteilung} mode={mode} edits={edits} onEdit={onEdit} />
+    }
+    if (doc === 'doc-austausch') {
+      if (!d.set) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Set fehlt.</p></div>
+      return <DocAustausch set={d.set} sits={[d.sit_A, d.sit_B, d.sit_C]} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
     if (doc === 'doc-kn-s') {
       if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
@@ -145,6 +163,19 @@ ${cssRenderer}
         }
       }
 
+      // C8 — set-level Austausch & Transfer doc (once per set; no longer embedded in the 6 DocS)
+      if (d.set) {
+        const markup = renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.sit_A, d.sit_B, d.sit_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
+        const filename = `${prefix}_doc-austausch.html`
+        zip.file(`html/${filename}`, wrap('DOC-AUSTAUSCH · Set-Abschluss', markup))
+        log.push(`html/${filename}`)
+        try {
+          const docx = buildAustausch({ set: d.set, sits: [d.sit_A, d.sit_B, d.sit_C], abteilung, logoPng: pngArrayBuffer })
+          zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
+          log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
+        } catch (e) { console.warn('docx Austausch failed', filename, e) }
+      }
+
       if (d.kn) {
         for (const typ of d.kn.kn_typen || []) {
           const markup = renderToStaticMarkup(<DocKnS kn={d.kn} knTyp={typ.typ} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
@@ -203,87 +234,131 @@ ${cssRenderer}
     }
   }
 
-  const handlePrint = () => window.print()
+  const knTypen = d.kn?.kn_typen || []
+  let docKicker = ''
+  let docName = ''
+  if (doc === 'doc-s') {
+    docKicker = `Herausforderung ${situation}`
+    docName = sit?.titel || `Herausforderung ${situation}`
+  } else if (doc === 'doc-austausch') {
+    docKicker = 'Set-Abschluss'
+    docName = 'Austausch & Transfer'
+  } else if (doc === 'doc-kn-s') {
+    docKicker = 'Kompetenznachweis · Schüler/in'
+    docName = knTypen.find((t) => t.typ === knTyp)?.label || 'Kompetenznachweis'
+  } else {
+    docKicker = 'Kompetenznachweis'
+    docName = 'Lehrperson + Bewertung'
+  }
+
+  const selectSit = (s: SitLetter) => { setDoc('doc-s'); setSituation(s); setNavOpen(false) }
+  const selectKnTyp = (t: string) => { setDoc('doc-kn-s'); setKnTyp(t); setNavOpen(false) }
+  const pick = (target: DocSel) => { setDoc(target); setNavOpen(false) }
 
   return (
-    <div className="aesthetic-modern">
-      <header className="app-chrome" style={{ position: 'sticky', top: 0, zIndex: 30 }}>
-        <select
-          className="chrome-abt"
-          value={abteilung}
-          onChange={(e) => setAbteilung(e.target.value)}
-        >
-          {ABTEILUNGEN.map((a) => (
-            <option key={a} value={a}>{a || '— Abteilung wählen —'}</option>
-          ))}
-        </select>
+    <div className="aesthetic-modern wb-root" style={{ '--wb-top': `${wbTop}px` } as any}>
+      <button className="wb-nav-toggle" onClick={() => setNavOpen((v) => !v)}>☰ Dokumente</button>
 
-        <div className="chrome-group-divider" />
-        <div className="chrome-group">
-          <span className="chrome-group-label">Doc</span>
-          <div className="chrome-seg">
-            <button className={doc === 'doc-s' ? 'on' : ''} onClick={() => setDoc('doc-s')}>Situationsheft</button>
-            <button className={doc === 'doc-kn-s' ? 'on' : ''} onClick={() => setDoc('doc-kn-s')}>KN&nbsp;Schüler/in</button>
-            <button className={doc === 'doc-kn-lp' ? 'on' : ''} onClick={() => setDoc('doc-kn-lp')}>KN&nbsp;Lehrperson</button>
-          </div>
+      <aside className={`wb-nav${navOpen ? ' open' : ''}`}>
+        <div className="wb-field">
+          <label htmlFor="wb-abt">Abteilung</label>
+          <select
+            id="wb-abt"
+            className="wb-select"
+            value={abteilung}
+            onChange={(e) => setAbteilung(e.target.value)}
+          >
+            {ABTEILUNGEN.map((a) => (
+              <option key={a} value={a}>{a || '— Abteilung wählen —'}</option>
+            ))}
+          </select>
         </div>
-
-        {doc === 'doc-s' && (
-          <>
-            <div className="chrome-group-divider" />
-            <div className="chrome-group">
-              <span className="chrome-group-label">Sit</span>
-              <div className="chrome-seg">
-                {(['A', 'B', 'C'] as SitLetter[]).map((s) => (
-                  <button key={s} className={situation === s ? 'on' : ''} onClick={() => setSituation(s)}>{s}</button>
-                ))}
-              </div>
-            </div>
-            <div className="chrome-group">
-              <span className="chrome-group-label">Modus</span>
-              <div className="chrome-seg">
-                <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>
-                <button className={mode === 'fill' ? 'on' : ''} onClick={() => setMode('fill')}>Auftrag</button>
-              </div>
-            </div>
-          </>
-        )}
-
-        {doc === 'doc-kn-s' && d.kn && (
-          <>
-            <div className="chrome-group-divider" />
-            <div className="chrome-group">
-              <span className="chrome-group-label">KN-Typ</span>
-              <div className="chrome-seg">
-                {(d.kn.kn_typen || []).map((t) => (
-                  <button key={t.typ} className={knTyp === t.typ ? 'on' : ''} onClick={() => setKnTyp(t.typ)}>{t.label}</button>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
-
-        <div className="chrome-spacer" />
 
         {d.begleiter?.raw && (
           <a
-            className="chrome-btn"
+            className="wb-action lies"
             href={`/einheiten/${d.id}/begleiter`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Begleiter ↗
+            📖 Lies mich!
           </a>
         )}
-        <a className="chrome-btn" href={feedbackUrl}>Feedback nach Unterricht →</a>
-        <button className="chrome-btn" onClick={handleBundle} disabled={bundling}>
-          {bundling ? 'Bundle läuft…' : 'Alle als ZIP'}
-        </button>
-        <button className="chrome-btn primary" onClick={handlePrint}>Drucken</button>
-      </header>
 
-      <main className="pages">{docNode}</main>
+        <nav className="wb-tree">
+          <div className="wb-tree-group">
+            <div className="wb-tree-head">Herausforderungen</div>
+            {(['A', 'B', 'C'] as SitLetter[]).map((s) =>
+              classifySit(d, s) ? (
+                <button
+                  key={s}
+                  className={`wb-item${doc === 'doc-s' && situation === s ? ' active' : ''}`}
+                  onClick={() => selectSit(s)}
+                >
+                  <span className={`wb-letter wb-letter-${s}`}>{s}</span>
+                  <span className="wb-item-title">{classifySit(d, s)?.titel || `Herausforderung ${s}`}</span>
+                </button>
+              ) : null,
+            )}
+          </div>
 
+          <button
+            className={`wb-item solo${doc === 'doc-austausch' ? ' active' : ''}`}
+            onClick={() => pick('doc-austausch')}
+          >
+            <span className="wb-dot">🔄</span>
+            <span className="wb-item-title">Austausch &amp; Transfer</span>
+          </button>
+
+          {d.kn && (
+            <div className="wb-tree-group">
+              <div className="wb-tree-head">Kompetenznachweis</div>
+              <div className="wb-tree-sub">Schüler/in</div>
+              {knTypen.map((t) => (
+                <button
+                  key={t.typ}
+                  className={`wb-item nested${doc === 'doc-kn-s' && knTyp === t.typ ? ' active' : ''}`}
+                  onClick={() => selectKnTyp(t.typ)}
+                >
+                  <span className="wb-item-title">{t.label}</span>
+                </button>
+              ))}
+              <button
+                className={`wb-item${doc === 'doc-kn-lp' ? ' active' : ''}`}
+                onClick={() => pick('doc-kn-lp')}
+              >
+                <span className="wb-dot">📋</span>
+                <span className="wb-item-title">Lehrperson + Bewertung</span>
+              </button>
+            </div>
+          )}
+        </nav>
+
+        <a className="wb-action" href={feedbackUrl}>✍ Feedback nach Unterricht</a>
+      </aside>
+
+      <div className="wb-canvas">
+        <div className="wb-dochead">
+          <div className="wb-dochead-title">
+            <span className="wb-dochead-kicker">{docKicker}</span>
+            <span className="wb-dochead-name">{docName}</span>
+          </div>
+          {doc === 'doc-s' && (
+            <div className="wb-mode">
+              <button className={mode === 'fill' ? 'on' : ''} onClick={() => setMode('fill')}>Auftrag</button>
+              <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>
+            </div>
+          )}
+        </div>
+
+        <main className="pages">{docNode}</main>
+      </div>
+
+      <button className="download-fab" onClick={handleBundle} disabled={bundling}>
+        {bundling ? '⏳ Download läuft…' : '⬇ Download'}
+      </button>
+
+      {navOpen && <div className="wb-scrim" onClick={() => setNavOpen(false)} />}
       {toast && <div className={`toast ${toast.kind === 'error' ? 'error' : ''}`}>{toast.msg}</div>}
     </div>
   )
@@ -306,6 +381,12 @@ Dieses Bundle enthält ${log.length} Dokumente in zwei Formaten: druckfertige
 HTML-Dateien (A4, zum Direkt-Drucken im Browser) und Word-Dateien (.docx)
 (zum Anpassen / Kommentieren in Word). Beide Formate enthalten die gleichen
 Inhalte; HTML druckt 1:1 wie geplant, Word lässt sich weiterbearbeiten.
+
+Das Situationsheft (DOC-S) gibt es je Herausforderung als Auftrag (zum Ausfüllen)
+und als Dossier (mit ausgearbeiteter Lösung). Der gemeinsame Set-Abschluss
+«Austausch & Transfer» (\`_doc-austausch\`) liegt einmal pro Set bei — er bündelt
+den Vergleich der drei Lösungen (Einzelauftrag / Gruppenpuzzle / Plenum) und die
+Transfer-Aufgabe.
 
 Zusätzlich liegt das Begleitdokument für die Lehrperson (\`_begleiter.docx\`)
 bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.

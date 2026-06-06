@@ -58,7 +58,7 @@
     "betrieb": "Beck Brunner Aarau",
     "ort": "Aarau"
   },
-  "situation_text": "Du bist Bäcker-Konditor-Lernende im 1. Lehrjahr beim Beck Brunner in Aarau. Dein Mitlernende/r aus dem Polymechanik-Betrieb (siehe Sit A) ist mit der allgemeinen Rechtslage zufrieden, hat aber zwei konkrete Fälle, bei denen er nicht weiterkommt. Fall 1: Sein Berufsbildner/in verlangt, dass er an einem Samstagmorgen eine private Bestellung des Chef/in nach Hause liefert — gegen Bezahlung, aber ausserhalb der Arbeitszeit. Fall 2: Er hat versehentlich einen vertraulichen Kundenfall im Familien-WhatsApp erwähnt; der Berufsbildner/in droht mit Lohnabzug von CHF 200. Du fühlst die Verantwortung, ihm methodisch sauber zu antworten. Im Kap. 1.3 steht die Schritt-für-Schritt-Methode dazu: Tatbestand feststellen, Rechtslage ermitteln, Rechtsfolge ableiten. Du erstellst eine Fall-Mappe.",
+  "situation_text": "Ich bin Bäcker-Konditor-Lernende im 1. Lehrjahr beim Beck Brunner in Aarau. Mein Mitlernende/r aus dem Polymechanik-Betrieb (siehe Sit A) ist mit der allgemeinen Rechtslage zufrieden, hat aber zwei konkrete Fälle, bei denen er nicht weiterkommt. Fall 1: Sein Berufsbildner/in verlangt, dass er an einem Samstagmorgen eine private Bestellung des Chef/in nach Hause liefert — gegen Bezahlung, aber ausserhalb der Arbeitszeit. Fall 2: Er hat versehentlich einen vertraulichen Kundenfall im Familien-WhatsApp erwähnt; der Berufsbildner/in droht mit Lohnabzug von CHF 200. Ich fühle die Verantwortung, ihm methodisch sauber zu antworten. Im Kap. 1.3 steht die Schritt-für-Schritt-Methode dazu: Tatbestand feststellen, Rechtslage ermitteln, Rechtsfolge ableiten. Ich erstelle eine Fall-Mappe.",
   "zahlen_tabelle": [
     {
       "label": "Fall 1 — Samstagsfahrt",
@@ -105,7 +105,7 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 1.3 | S. 23-25",
-      "text": "Formuliere deine Fall-Mappe: pro Fall eine Tabelle mit den drei Spalten Tatbestand / Rechtslage / Rechtsfolge plus einen Schlussabsatz, in dem du Restunsicherheiten und Empfehlungen für weitere Klärung benennst.",
+      "text": "Schreibe für einen Fall die Spalte «Rechtsfolge» als Wenn-dann-Mustersatz mit korrektem Fachbegriff.",
       "feld_hoehe_mm": 15
     }
   ],
@@ -157,7 +157,7 @@
     "abgaben": ["Fall-Mappe (A4, 1.5–2 Seiten, 2 Fälle nach Tatbestand–Rechtslage–Rechtsfolge)"],
     "titel": "Meine Fall-Mappe — zwei Fälle nach Schema Tatbestand-Rechtslage-Rechtsfolge",
     "format_detail": "Schriftliches A4-Dokument, 1.5-2 Seiten, mit einer Tabelle pro Fall (3 Spalten: Tatbestand, Rechtslage mit Artikel-Zitat, Rechtsfolge mit Begründung). Plus Schlussabsatz mit Restunsicherheiten und Empfehlung für weitere Klärung.",
-    "beschreibung": "Du erarbeitest die Fall-Mappe als methodisch sauber gegliedertes Arbeitsdokument. Sie ist die inhaltliche Vorstufe für das Antwortschreiben in Sit C — das saubere juristische Gerüst stützt die spätere E-Mail oder den Brief. Methode konsequent nach Kap. 1.3.",
+    "beschreibung": "Ich erarbeite die Fall-Mappe als methodisch sauber gegliedertes Arbeitsdokument. Sie ist die inhaltliche Vorstufe für das Antwortschreiben in Sit C — das saubere juristische Gerüst stützt die spätere E-Mail oder den Brief. Methode konsequent nach Kap. 1.3.",
     "schritte": [
       {
         "label": "Schema-Tabelle vorbereiten",
@@ -181,7 +181,24 @@
       }
     ],
     "schreib_label": "FALL-MAPPE HIER ERARBEITEN",
-    "schreib_note": "-> wissen/rechtsfälle_lösen"
+    "schreib_note": "-> wissen/rechtsfälle_lösen",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Tatbestand: … (wertungsfrei beschrieben)»",
+        "«Rechtslage: gemäss OR/ArG Art. … »",
+        "«Rechtsfolge: Wenn …, dann … »",
+        "«Unsicher bin ich bei …, hier verweise ich auf …»"
+      ],
+      "strategien": [
+        "Pro Fall die drei Schritte einzeln und in Reihenfolge ausfüllen",
+        "Tatbestand zuerst ohne Wertung sammeln",
+        "Artikel wortgenau zitieren, dann subsumieren (Tatbestand unter Norm fassen)"
+      ],
+      "struktur": [
+        "Tabelle je Fall: Spalte 1 Tatbestand · Spalte 2 Rechtslage · Spalte 3 Rechtsfolge",
+        "Schlussabsatz: Restunsicherheit – eigene Rolle – Empfehlung"
+      ]
+    }
   },
   "reflexion_fragen": [
     {
@@ -206,33 +223,38 @@
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 20,
-      "kriterium": "Inhaltliche Korrektheit"
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Schema Tatbestand-Rechtslage-Rechtsfolge korrekt erklärt",
+        "Pro Fall einschlägige Artikel genannt"
+      ]
     },
     {
       "produkt": "Mindmap",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 15,
-      "kriterium": "Struktur · Tiefe · Verbindungen"
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Methodenschritte den Ästen zugeordnet"
+      ]
     },
     {
       "produkt": "Handlungsprodukt",
-      "abgabe": "Woche 2 — Ende Lektion",
-      "gewicht": 35,
-      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Beide Fälle als 3-Spalten-Tabelle (Tatbestand / Rechtslage / Rechtsfolge)",
+        "Pro Fall mindestens ein wortgenaues OR-/ArG-Zitat",
+        "Schlussabsatz mit Restunsicherheit und Rollenklärung"
+      ]
     },
     {
       "produkt": "Reflexion",
-      "abgabe": "Woche 3 — Abgabe",
-      "gewicht": 15,
-      "kriterium": "Tiefe + Transfer"
-    },
-    {
-      "produkt": "Transfer",
-      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
-      "gewicht": 15,
-      "kriterium": "Prinzip auf neue Situation übertragen"
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Eigene Rolle als beratende Mitlernende reflektiert"
+      ]
     }
   ],
   "wochen": 3,

@@ -293,21 +293,23 @@ function sectionProps(docCode: string, docTitel: string, abteilung: string | und
   }
 }
 
+// C1 + C2 — cockpit (Deckblatt) now also carries the merged situation block.
+// Order mirrors the HTML CockpitPageBody: badges/title/sub-facette → cards →
+// situation_text → Leitfrage (+ Spannungsfeld) → Checkliste Vollständigkeit → Ressourcen.
 function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] {
   const els: any[] = []
+  // C1 — no KOMP badge; HF badge without emotion.
   els.push(new Paragraph({
     children: [
-      badgeRun('KOMP ' + (sit.nrlp?.nr || ''), akzent, 'outline'),
-      new TextRun({ text: '  ' }),
-      badgeRun('Herausforderung ' + sit.situation + ' · ' + (sit.emotion_tag || ''), akzent),
+      badgeRun('Herausforderung ' + sit.situation, akzent),
     ],
     spacing: { after: 200 },
   }))
   els.push(h(sit.titel || '', 'title'))
   els.push(p(sit.modul_titel || '', { run: { color: COLOR.inkSoft, size: 22, italics: true } }))
-  if (sit.sub_facette) {
-    els.push(p('Herausforderung ' + (sit.sub_facette.buchstabe || '') + ': ' + (sit.sub_facette.label || ''),
-      { run: { color: akzent, bold: true, size: 18 } }))
+  // C1 — sub-facette label only (no "Herausforderung X:" prefix).
+  if (sit.sub_facette?.label) {
+    els.push(p(sit.sub_facette.label, { run: { color: akzent, bold: true, size: 18 } }))
   }
   els.push(spacer(120))
 
@@ -334,37 +336,66 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
       ],
     })],
   }))
-  els.push(spacer(120))
+  els.push(spacer(80))
 
-  if (sit.wochen_plan) {
-    els.push(p('WOCHENPLAN', { run: { color: akzent, bold: true, size: 14 } }))
-    const clean = (l: string) => (l || '').replace(/^Woche\s+\d+\s*[-–—]\s*/i, '').trim() || l
-    els.push(dataTable(
-      ['Dauer', 'Inhalt'],
-      sit.wochen_plan.map((w) => [clean(w.label), w.text]),
-      akzent, [26, 74],
-    ))
-    els.push(spacer(80))
+  // page-1 metadata (Lebensbezug + Sprachmodi) — mirrors the HTML cockpit meta (also shown on the HP page)
+  {
+    const lebensbezug = sit.nrlp?.lebensbezug_text
+    const sprachmodi = (sit.nrlp?.sprachmodi || []).filter(Boolean)
+    if (lebensbezug) {
+      els.push(new Paragraph({
+        children: [
+          new TextRun({ text: 'LEBENSBEZUG  ', color: akzent, bold: true, size: 13 }),
+          new TextRun({ text: lebensbezug, size: 16, color: COLOR.inkSoft }),
+        ],
+        spacing: { after: 30 },
+      }))
+    }
+    if (sprachmodi.length) {
+      els.push(new Paragraph({
+        children: [
+          new TextRun({ text: 'SPRACHMODI  ', color: akzent, bold: true, size: 13 }),
+          new TextRun({ text: sprachmodi.join(' · '), size: 16, color: COLOR.inkSoft }),
+        ],
+        spacing: { after: 60 },
+      }))
+    }
   }
+  els.push(spacer(80))
 
+  // C2 — merged situation: situation_text + Leitfrage (+ Spannungsfeld). sit-meta + zahlen_tabelle dropped.
+  els.push(p(sit.situation_text || '', { run: { size: 22 }, spacing: { after: 160, line: 360, lineRule: LineRuleType.AUTO } }))
+  els.push(callout('Leitfrage', sit.leitfrage || '', akzent, light))
+  if (sit.mehrdeutigkeit?.trade_off) {
+    els.push(spacer(80))
+    els.push(callout('Spannungsfeld', sit.mehrdeutigkeit.trade_off, akzent, light))
+  }
+  els.push(spacer(140))
+
+  // C1 — Checkliste Vollständigkeit (Produkt · Kriterien · ☐); vollstaendig_wenn bullets; no Total/Abgabe/Gewicht.
   if (sit.bewertungsraster) {
-    const total = sit.bewertungsraster.reduce((s, r) => s + (r.gewicht || 0), 0)
-    els.push(p('BEWERTUNGSRASTER · TOTAL ' + total + '%', { run: { color: akzent, bold: true, size: 14 } }))
+    els.push(p('CHECKLISTE VOLLSTÄNDIGKEIT', { run: { color: akzent, bold: true, size: 14 } }))
     els.push(dataTable(
-      ['Produkt', 'Abgabe', 'Gewicht', 'Kriterium'],
-      sit.bewertungsraster.map((b) => [
-        new Paragraph({ children: [new TextRun({ text: b.produkt, bold: true, size: 18 })] }),
-        b.abgabe,
-        b.gewicht + '%',
-        b.kriterium,
-      ]),
-      akzent, [22, 30, 10, 38],
+      ['Produkt', 'Kriterien', '☐'],
+      sit.bewertungsraster.map((b) => {
+        const bullets = b.vollstaendig_wenn?.filter(Boolean) || []
+        const kritCell = bullets.length
+          ? bullets.map((v) => new Paragraph({ children: [new TextRun({ text: v, size: 16 })], bullet: { level: 0 }, spacing: { after: 20 } }))
+          : [p(b.kriterium || '', { run: { size: 18 } })]
+        return [
+          new Paragraph({ children: [new TextRun({ text: b.produkt, bold: true, size: 18 })] }),
+          kritCell,
+          new Paragraph({ children: [new TextRun({ text: '☐', size: 22, bold: true, color: akzent })], alignment: AlignmentType.CENTER }),
+        ]
+      }),
+      akzent, [26, 66, 8],
     ))
     els.push(spacer(80))
   }
 
+  // C1 — "Quellen" → "Ressourcen"
   if (sit.quellen_anker) {
-    els.push(p('QUELLEN', { run: { color: akzent, bold: true, size: 14 } }))
+    els.push(p('RESSOURCEN', { run: { color: akzent, bold: true, size: 14 } }))
     sit.quellen_anker.forEach((q) => {
       const meta = [q.unterueberschrift, [q.ref, q.seiten].filter(Boolean).join(' · ')].filter(Boolean).join('  ·  ')
       els.push(new Paragraph({
@@ -381,44 +412,7 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   return els
 }
 
-function situationBlock(sit: SituationJson, akzent: string, light: string): any[] {
-  const els: any[] = []
-  els.push(...sectionHead('02 · Herausforderung', sit.titel || '', akzent))
-  els.push(new Paragraph({
-    children: [
-      new TextRun({ text: 'BERUF ', color: COLOR.inkMute, size: 14, bold: true }),
-      new TextRun({ text: sit.persona?.beruf || '', size: 18 }),
-      new TextRun({ text: '   ·   ', color: COLOR.inkMute, size: 14 }),
-      new TextRun({ text: 'BETRIEB ', color: COLOR.inkMute, size: 14, bold: true }),
-      new TextRun({ text: sit.persona?.betrieb || '', size: 18 }),
-      new TextRun({ text: '   ·   ', color: COLOR.inkMute, size: 14 }),
-      new TextRun({ text: 'ORT ', color: COLOR.inkMute, size: 14, bold: true }),
-      new TextRun({ text: sit.persona?.ort || '', size: 18 }),
-      new TextRun({ text: '   ·   ', color: COLOR.inkMute, size: 14 }),
-      new TextRun({ text: 'EMOTION ', color: COLOR.inkMute, size: 14, bold: true }),
-      new TextRun({ text: sit.emotion_tag || '', size: 18 }),
-    ],
-    spacing: { after: 180 },
-  }))
-  els.push(p(sit.situation_text || '', { run: { size: 22 }, spacing: { after: 200, line: 360, lineRule: LineRuleType.AUTO } }))
-  if (sit.zahlen_tabelle) {
-    els.push(dataTable(
-      ['Kennzahl', 'Wert'],
-      sit.zahlen_tabelle.map((z) => [
-        z.label,
-        new Paragraph({ children: [new TextRun({ text: z.wert, font: 'Consolas', size: 18 })], alignment: AlignmentType.RIGHT }),
-      ]),
-      akzent, [70, 30],
-    ))
-    els.push(spacer(80))
-  }
-  els.push(callout('Leitfrage', sit.leitfrage || '', akzent, light))
-  if (sit.mehrdeutigkeit?.explizit && sit.mehrdeutigkeit.trade_off) {
-    els.push(spacer(80))
-    els.push(callout('Spannungsfeld', sit.mehrdeutigkeit.trade_off, akzent, light))
-  }
-  return els
-}
+// C2 — situationBlock removed; its content (situation_text + Leitfrage + Spannungsfeld) is now part of cockpitBlock.
 
 function leitfrageItems(sit: SituationJson, akzent: string, withField: boolean, fieldHeightMm?: number): any[] {
   const els: any[] = []
@@ -460,34 +454,13 @@ function reflexionItems(sit: SituationJson, akzent: string, withField: boolean, 
   return els
 }
 
-function mindmapFullBlock(sit: SituationJson, akzent: string): any[] {
+// C5 — DOCX mindmap as a 2×2 quadrant: center label on top, then 4 cells
+// (titel + punkte in full / titel + blank room in skeleton). 4th cell marked optional (dashed).
+function mindmapQuadrant(sit: SituationJson, akzent: string, full: boolean): any[] {
   const els: any[] = []
-  els.push(p(sit.mindmap_zentrum || '', {
-    run: { bold: true, color: 'FFFFFF', size: 24 }, alignment: AlignmentType.CENTER,
-    border: { top: { style: BorderStyle.SINGLE, color: akzent, size: 6 }, bottom: { style: BorderStyle.SINGLE, color: akzent, size: 6 } },
-  }))
-  els.push(spacer(60))
-  sit.mindmap_aeste?.forEach((ast) => {
-    els.push(new Paragraph({
-      children: [
-        new TextRun({ text: ast.titel, bold: true, color: akzent, size: 20 }),
-        ...(ast.optional ? [new TextRun({ text: '  · optional', color: COLOR.inkMute, size: 14 })] : []),
-      ],
-      spacing: { before: 120, after: 40 },
-      keepNext: true,
-    }))
-    ast.punkte?.forEach((pt) => {
-      els.push(new Paragraph({ children: [new TextRun({ text: pt, size: 18 })], bullet: { level: 0 }, spacing: { after: 40 } }))
-    })
-  })
-  return els
-}
+  const aeste = sit.mindmap_aeste || []
 
-function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
-  const els: any[] = []
-  els.push(p('Skizziere deine Mindmap. Zentrum und Ast-Titel sind Anker; die Detail-Punkte arbeitest du selbst aus.',
-    { run: { italics: true, color: COLOR.inkMute, size: 16 } }))
-  els.push(spacer(60))
+  // Center node (full width)
   els.push(new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
     rows: [new TableRow({
@@ -496,63 +469,108 @@ function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
       ], {
         shading: { type: ShadingType.SOLID, color: akzent },
         borders: { top: { style: BorderStyle.SINGLE, color: akzent, size: 12 }, bottom: { style: BorderStyle.SINGLE, color: akzent, size: 12 }, left: { style: BorderStyle.NIL }, right: { style: BorderStyle.NIL } },
-        margins: { top: 200, bottom: 200, left: 120, right: 120 },
+        margins: { top: 160, bottom: 160, left: 120, right: 120 },
       })],
     })],
   }))
-  els.push(spacer(160))
-  const aeste = sit.mindmap_aeste || []
-  const rows: TableRow[] = []
-  for (let i = 0; i < aeste.length; i += 2) {
-    const a = aeste[i], b = aeste[i + 1]
-    rows.push(new TableRow({
-      children: [
-        tcell([
-          p(a.titel + (a.optional ? '  · optional' : ''), { run: { color: akzent, bold: true, size: 18 } }),
-        ], { borders: { top: { style: BorderStyle.NIL }, bottom: { style: BorderStyle.DASHED, color: akzent, size: 4 }, left: { style: BorderStyle.NIL }, right: { style: BorderStyle.NIL } } }),
-        b
-          ? tcell([
-              p(b.titel + (b.optional ? '  · optional' : ''), { run: { color: akzent, bold: true, size: 18 } }),
-            ], { borders: { top: { style: BorderStyle.NIL }, bottom: { style: BorderStyle.DASHED, color: akzent, size: 4 }, left: { style: BorderStyle.NIL }, right: { style: BorderStyle.NIL } } })
-          : tcell(p('', { run: { size: 18 } }), { borders: { top: { style: BorderStyle.NIL }, bottom: { style: BorderStyle.NIL }, left: { style: BorderStyle.NIL }, right: { style: BorderStyle.NIL } } }),
-      ],
-    }))
-    for (let s = 0; s < 5; s++) {
-      rows.push(new TableRow({
+  els.push(spacer(120))
+
+  const cellFor = (ast: typeof aeste[number] | undefined): TableCell => {
+    if (!ast) return tcell(p('', { run: { size: 18 } }), { width: { size: 50, type: WidthType.PERCENTAGE } })
+    const kids: any[] = [
+      new Paragraph({
         children: [
-          tcell(p('', { run: { size: 18 } }), { borders: { top: { style: BorderStyle.NIL }, bottom: { style: BorderStyle.NIL }, left: { style: BorderStyle.NIL }, right: { style: BorderStyle.NIL } } }),
-          tcell(p('', { run: { size: 18 } }), { borders: { top: { style: BorderStyle.NIL }, bottom: { style: BorderStyle.NIL }, left: { style: BorderStyle.NIL }, right: { style: BorderStyle.NIL } } }),
+          new TextRun({ text: ast.titel, bold: true, color: akzent, size: 18 }),
+          ...(ast.optional ? [new TextRun({ text: '  · optional', color: COLOR.inkMute, size: 14 })] : []),
         ],
-      }))
+        spacing: { after: 60 },
+      }),
+    ]
+    if (full) {
+      ast.punkte?.forEach((pt) => kids.push(new Paragraph({ children: [new TextRun({ text: pt, size: 16 })], bullet: { level: 0 }, spacing: { after: 30 } })))
+    } else {
+      for (let s = 0; s < 4; s++) kids.push(new Paragraph({ children: [new TextRun({ text: '' })], spacing: { line: 320, lineRule: LineRuleType.AUTO } }))
     }
+    return tcell(kids, {
+      verticalAlign: 'top',
+      width: { size: 50, type: WidthType.PERCENTAGE },
+      borders: {
+        top: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule },
+        bottom: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule },
+        left: { style: ast.optional ? BorderStyle.DASHED : BorderStyle.SINGLE, size: 12, color: ast.optional ? COLOR.inkMute : akzent },
+        right: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule },
+      },
+    })
   }
-  els.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows }))
+
+  els.push(new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    rows: [
+      new TableRow({ children: [cellFor(aeste[0]), cellFor(aeste[1])] }),
+      new TableRow({ children: [cellFor(aeste[2]), cellFor(aeste[3])] }),
+    ],
+  }))
   return els
 }
 
-function handlungsproduktBlock(sit: SituationJson, akzent: string, withField: boolean): any[] {
+function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
+  const els: any[] = []
+  // C5/AS-2 — same hint string as the HTML skeleton.
+  els.push(p('Baue deine Mindmap aus deinen Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänze die Detail-Punkte selbst.',
+    { run: { italics: true, color: COLOR.inkMute, size: 16 } }))
+  els.push(spacer(80))
+  els.push(...mindmapQuadrant(sit, akzent, false))
+  return els
+}
+
+// Dossier mindmap — no diagram (drawn on paper/another device); just hint at the four Ast-Titel.
+function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
+  const els: any[] = []
+  els.push(p('Die Mindmap erstellst du selbst — auf Papier oder einem Gerät. Baue sie aus dem Zentrum und diesen vier Ästen auf:',
+    { run: { italics: true, color: COLOR.inkSoft, size: 16 } }))
+  ;(sit.mindmap_aeste || []).forEach((ast, i) => {
+    els.push(new Paragraph({
+      children: [
+        new TextRun({ text: (i + 1) + '. ', bold: true, color: akzent, size: 18, font: 'Consolas' }),
+        new TextRun({ text: ast.titel, size: 18 }),
+        ...(ast.optional ? [new TextRun({ text: '  · optional', color: COLOR.inkMute, size: 14 })] : []),
+      ],
+      spacing: { after: 40 },
+      indent: { left: 200 },
+    }))
+  })
+  return els
+}
+
+// C6 — Handlungsprodukt Anleitung (6a): metadata → beschreibung → Schritte → Abgabe → Gütekriterien → Scaffolding.
+// No write area here; the fill-mode Arbeitsfläche (6b) is emitted in buildDocS after a page break.
+function handlungsproduktBlock(sit: SituationJson, akzent: string): any[] {
   const hp = sit.handlungsprodukt
   if (!hp) return []
   const els: any[] = []
-  els.push(new Paragraph({
-    children: [badgeRun(hp.format || '', akzent, 'outline')],
-    spacing: { after: 160 },
-  }))
-  // Cluster 6 — "Das lieferst du ab": konkrete Abgabe(n), parallel zum HTML-DocS-Callout
-  if (hp.abgaben?.length) {
-    els.push(p('DAS LIEFERST DU AB', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
-    hp.abgaben.filter(Boolean).forEach((a) => {
-      els.push(new Paragraph({
-        children: [
-          new TextRun({ text: '•  ', color: akzent, bold: true, size: 20 }),
-          new TextRun({ text: a, size: 20 }),
-        ],
-        spacing: { after: 30 },
-        indent: { left: 200 },
-      }))
-    })
-    els.push(spacer(120))
+
+  // metadata (Lebensbezug + Sprachmodi) — replaces the old format badge / "Du übst"-Marker
+  const lebensbezug = sit.nrlp?.lebensbezug_text
+  const sprachmodi = (sit.nrlp?.sprachmodi || []).filter(Boolean)
+  if (lebensbezug) {
+    els.push(new Paragraph({
+      children: [
+        new TextRun({ text: 'LEBENSBEZUG  ', color: akzent, bold: true, size: 14 }),
+        new TextRun({ text: lebensbezug, size: 18, color: COLOR.inkSoft }),
+      ],
+      spacing: { after: 40 },
+    }))
   }
+  if (sprachmodi.length) {
+    els.push(new Paragraph({
+      children: [
+        new TextRun({ text: 'SPRACHMODI  ', color: akzent, bold: true, size: 14 }),
+        new TextRun({ text: sprachmodi.join(' · '), size: 18, color: COLOR.inkSoft }),
+      ],
+      spacing: { after: 140 },
+    }))
+  }
+
   els.push(p(hp.beschreibung || '', { run: { size: 22 }, spacing: { after: 160, line: 360, lineRule: LineRuleType.AUTO } }))
   hp.schritte?.forEach((s, i) => {
     els.push(new Paragraph({
@@ -565,53 +583,67 @@ function handlungsproduktBlock(sit: SituationJson, akzent: string, withField: bo
     }))
     els.push(p(s.hint || '', { run: { color: COLOR.inkSoft, size: 18 }, indent: { left: 400 } }))
   })
-  if (withField) {
-    els.push(spacer(160))
-    els.push(skizzeBox(150, hp.schreib_label || 'HIER ERARBEITEN', akzent))
+
+  // "Das lieferst du ab" — konkrete Abgabe(n)
+  if (hp.abgaben?.length) {
+    els.push(spacer(80))
+    els.push(p('DAS LIEFERST DU AB', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+    hp.abgaben.filter(Boolean).forEach((a) => {
+      els.push(new Paragraph({
+        children: [
+          new TextRun({ text: '•  ', color: akzent, bold: true, size: 20 }),
+          new TextRun({ text: a, size: 20 }),
+        ],
+        spacing: { after: 30 },
+        indent: { left: 200 },
+      }))
+    })
   }
+
+  // C6 — Gütekriterien (lernfortschritt.kriterien): ☐ + kriterium — indikator (gewicht ignored)
+  const kriterien = sit.lernfortschritt?.kriterien?.filter((k) => k && (k.kriterium || k.indikator)) || []
+  if (kriterien.length) {
+    els.push(spacer(80))
+    els.push(p('GÜTEKRITERIEN', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+    kriterien.forEach((k) => {
+      els.push(new Paragraph({
+        children: [
+          new TextRun({ text: '☐  ', bold: true, color: akzent, size: 20 }),
+          new TextRun({ text: k.kriterium || '', bold: true, size: 18 }),
+          ...(k.indikator ? [new TextRun({ text: ' — ' + k.indikator, size: 18, color: COLOR.inkSoft })] : []),
+        ],
+        spacing: { after: 40 },
+        indent: { left: 200 },
+      }))
+    })
+  }
+
+  // C6 — Scaffolding (Satzanfänge · Strategien · Struktur)
+  const sc = hp.scaffolding
+  if (sc) {
+    const groups: Array<[string, string[] | undefined]> = [
+      ['Satzanfänge', sc.satzanfaenge],
+      ['Strategien', sc.strategien],
+      ['Struktur', sc.struktur],
+    ]
+    const present = groups.filter(([, items]) => (items?.filter(Boolean).length || 0) > 0)
+    if (present.length) {
+      els.push(spacer(80))
+      els.push(p('SCAFFOLDING', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+      present.forEach(([label, items]) => {
+        els.push(p(label, { run: { color: akzent, bold: true, size: 16 }, spacing: { before: 60, after: 20 } }))
+        items!.filter(Boolean).forEach((it) => {
+          els.push(new Paragraph({ children: [new TextRun({ text: it, size: 18 })], bullet: { level: 0 }, spacing: { after: 20 }, indent: { left: 200 } }))
+        })
+      })
+    }
+  }
+
   return els
 }
 
-function austauschBlock(set: SetJson | null | undefined, sit: SituationJson | null | undefined, akzent: string): any[] {
-  const els: any[] = []
-  const ap = set?.austausch_phase
-  const da = set?.dekontextualisierungs_aufgabe
-  if (!ap && !da) return []
-  if (ap) {
-    els.push(p(`AUSTAUSCH · ${ap.format || ''} · ${ap.dauer_min || ''} MIN`, { run: { color: akzent, bold: true, size: 14 } }))
-    const jig = ap.gruppenarbeit_jigsaw || {}
-    ;([['Runde 1', jig.runde_1], ['Runde 2', jig.runde_2], ['Runde 3', jig.runde_3]] as Array<[string, string | undefined]>).forEach(([label, text]) => {
-      if (!text) return
-      els.push(new Paragraph({
-        children: [
-          new TextRun({ text: label + '   ', color: akzent, bold: true, size: 16, font: 'Consolas' }),
-          new TextRun({ text, size: 20 }),
-        ],
-        spacing: { after: 80 },
-      }))
-    })
-    if (ap.einzelarbeit_plenum) {
-      els.push(p('PLENUM', { run: { color: akzent, bold: true, size: 14 } }))
-      els.push(p(ap.einzelarbeit_plenum, { run: { size: 20 } }))
-    }
-  }
-  if (da) {
-    els.push(p('TRANSFER', { run: { color: akzent, bold: true, size: 14 } }))
-    els.push(p(da.auftrag || '', { run: { bold: true, size: 20 } }))
-    els.push(p(`Format: ${da.format} · Gewicht: ${da.gewicht_prozent}% · Abgabe: ${da.abgabe}`,
-      { run: { color: COLOR.inkSoft, size: 16 } }))
-    if (sit?.dekontextualisierung?.frage) {
-      els.push(new Paragraph({
-        children: [
-          new TextRun({ text: 'Leitend: ', color: akzent, bold: true, size: 18 }),
-          new TextRun({ text: sit.dekontextualisierung.frage, size: 20 }),
-        ],
-        spacing: { before: 100 },
-      }))
-    }
-  }
-  return els
-}
+// C8 — the embedded austausch block was removed from DOC-S. The set-level
+// "Austausch & Transfer" content now lives in the standalone buildAustausch() below.
 
 export interface BuildDocSOpts {
   sit: SituationJson
@@ -621,53 +653,201 @@ export interface BuildDocSOpts {
   logoPng?: ArrayBuffer | Uint8Array | null
 }
 
-export function buildDocS({ sit, set, abteilung, mode, logoPng = null }: BuildDocSOpts): Document {
+export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpts): Document {
   const palette = sitPalette(sit)
   const akzent = palette.akzent
   const light = palette.light
   const docCode = `DOC-S · SIT ${sit.situation} · ${mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`
   const docTitel = sit.titel || ''
 
+  // C1/C2/C6/C8 — page 1 cockpit carries the merged situation; HP split into Anleitung + Arbeitsfläche;
+  // austausch lives in the standalone DOC-AUSTAUSCH.
   const children: any[] = []
   children.push(...cockpitBlock(sit, akzent, light))
-  children.push(pageBreak())
-  children.push(...situationBlock(sit, akzent, light))
   if (mode === 'fill') {
     children.push(pageBreak())
-    children.push(...sectionHead('03 · Wissensecke', 'Leitfragen', akzent))
+    children.push(...sectionHead('02 · Wissensecke', 'Leitfragen', akzent))
     if (sit.leitfragen_intro) children.push(p(sit.leitfragen_intro, { run: { color: COLOR.inkSoft, size: 18 } }))
     children.push(...leitfrageItems(sit, akzent, true, 55))
     children.push(pageBreak())
-    children.push(...sectionHead('04 · Mindmap', sit.mindmap_zentrum || '', akzent))
+    children.push(...sectionHead('03 · Mindmap', sit.mindmap_zentrum || '', akzent))
     children.push(...mindmapSkelettBlock(sit, akzent))
     children.push(pageBreak())
-    children.push(...sectionHead('05 · Handlungsprodukt', sit.handlungsprodukt?.titel || '', akzent))
-    children.push(...handlungsproduktBlock(sit, akzent, true))
+    children.push(...sectionHead('04 · Handlungsprodukt', sit.handlungsprodukt?.titel || '', akzent))
+    children.push(...handlungsproduktBlock(sit, akzent))
     children.push(pageBreak())
-    children.push(...sectionHead('06 · Selbstcheck', 'Reflexion', akzent))
+    // 6b — full-page writing surface: no "Arbeitsfläche" heading, box fills the page
+    children.push(skizzeBox(235, sit.handlungsprodukt?.schreib_label || 'HIER ERARBEITEN', akzent))
+    children.push(pageBreak())
+    children.push(...sectionHead('05 · Selbstcheck', 'Reflexion', akzent))
     children.push(...reflexionItems(sit, akzent, true, 35))
-    children.push(pageBreak())
-    children.push(...sectionHead('07 · Austausch & Transfer', 'Austausch & Transfer', akzent))
-    children.push(...austauschBlock(set, sit, akzent))
-    children.push(spacer(120))
-    children.push(p('DEIN TRANSFER (5–7 SÄTZE)', { run: { color: akzent, bold: true, size: 14 } }))
-    children.push(...schreibfeld(55))
   } else {
     children.push(pageBreak())
-    children.push(...sectionHead('03 · Wissensecke', 'Leitfragen', akzent))
+    children.push(...sectionHead('02 · Wissensecke', 'Leitfragen', akzent))
     if (sit.leitfragen_intro) children.push(p(sit.leitfragen_intro, { run: { color: COLOR.inkSoft, size: 16 } }))
     children.push(...leitfrageItems(sit, akzent, false))
+    // Mindmap hint shares the Leitfragen page (Dossier saves a page) — no diagram, drawn off-sheet.
+    children.push(...sectionHead('03 · Mindmap', sit.mindmap_zentrum || '', akzent))
+    children.push(...mindmapHinweisBlock(sit, akzent))
     children.push(pageBreak())
-    children.push(...sectionHead('04 · Mindmap', sit.mindmap_zentrum || '', akzent))
-    children.push(...mindmapFullBlock(sit, akzent))
-    children.push(...sectionHead('05 · Handlungsprodukt', sit.handlungsprodukt?.titel || '', akzent))
-    children.push(...handlungsproduktBlock(sit, akzent, false))
+    children.push(...sectionHead('04 · Handlungsprodukt', sit.handlungsprodukt?.titel || '', akzent))
+    children.push(...handlungsproduktBlock(sit, akzent))
     children.push(pageBreak())
-    children.push(...sectionHead('06 · Selbstcheck', 'Reflexion', akzent))
+    children.push(...sectionHead('05 · Selbstcheck', 'Reflexion', akzent))
     children.push(...reflexionItems(sit, akzent, false))
-    children.push(...sectionHead('07 · Austausch & Transfer', 'Austausch & Transfer', akzent))
-    children.push(...austauschBlock(set, sit, akzent))
   }
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
+export interface BuildAustauschOpts {
+  set: SetJson | null
+  sits?: (SituationJson | null)[]
+  abteilung?: string
+  logoPng?: ArrayBuffer | Uint8Array | null
+}
+
+// C8 — standalone set-level "Austausch & Transfer" document (mirrors DocAustausch.tsx).
+export function buildAustausch({ set, sits = [], abteilung, logoPng = null }: BuildAustauschOpts): Document {
+  const akzent = COLOR.neutral
+  const docCode = 'DOC-AUSTAUSCH · SET-ABSCHLUSS'
+  const docTitel = 'Austausch & Transfer'
+
+  const validSits = (sits || []).filter((s): s is SituationJson => Boolean(s))
+  const ap = set?.austausch_phase
+  const da = set?.dekontextualisierungs_aufgabe
+  // back-compat: prefer the new structured closure keys, fall back to the legacy names
+  const gruppe = ap?.gruppenpuzzle ?? ap?.gruppenarbeit_jigsaw
+  const plenum = ap?.plenum ?? ap?.einzelarbeit_plenum
+  const einzel = ap?.einzelauftrag
+  const konzeptFor = (s: SituationJson) => set?.konzept_progression?.find((k) => k.situation === s.id)?.konzept
+
+  // Transfer is a template-constant set task → generic writing scaffold + self-check (mirrors DocAustausch.tsx).
+  const TRANSFER_SATZANFAENGE = [
+    '«Das gemeinsame Prinzip meiner drei Herausforderungen ist …»',
+    '«Ein neuer Kontext, in dem dasselbe Prinzip gilt, ist …»',
+    '«Dort zeigt es sich konkret so: …»',
+    '«Wie in Herausforderung … muss ich auch hier …»',
+  ]
+  const TRANSFER_CHECKLISTE = [
+    'Kernprinzip in eigenen Worten benannt',
+    'Neuer, selbst gewählter Kontext (nicht aus dem Unterricht)',
+    '5–7 Sätze geschrieben',
+    'Mindestens zwei Lehrmittelbegriffe verwendet',
+    'Bezug zu mindestens einer der drei Herausforderungen erkennbar',
+  ]
+
+  const optionHead = (kuerzel: string, label: string) => new Paragraph({
+    children: [
+      new TextRun({ text: '☐  ', bold: true, color: akzent, size: 22 }),
+      new TextRun({ text: kuerzel + ' · ', bold: true, color: akzent, size: 18, font: 'Consolas' }),
+      new TextRun({ text: label, bold: true, size: 20 }),
+    ],
+    spacing: { before: 120, after: 40 },
+    keepNext: true,
+  })
+
+  const children: any[] = []
+
+  // ---------------- Page 1 — Austausch ----------------
+  children.push(...sectionHead('01 · Austausch', 'Eure drei Lösungen im Vergleich', akzent))
+  children.push(p('Ihr habt drei Herausforderungen bearbeitet und je ein Handlungsprodukt erstellt. Vergleicht jetzt eure Lösungen und arbeitet das gemeinsame Prinzip heraus. Wählt eine Sozialform und haltet eure Ergebnisse im Notizfeld fest:',
+    { run: { size: 20 }, spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO } }))
+  validSits.forEach((s) => {
+    const k = konzeptFor(s)
+    children.push(new Paragraph({
+      children: [
+        new TextRun({ text: 'HF ' + s.situation + ': ', bold: true, color: akzent, size: 18 }),
+        new TextRun({ text: s.handlungsprodukt?.format || s.titel || '', size: 18 }),
+        ...(k ? [new TextRun({ text: ' — ' + k, size: 16, color: COLOR.inkSoft })] : []),
+      ],
+      bullet: { level: 0 },
+      spacing: { after: 40 },
+    }))
+  })
+  children.push(spacer(80))
+
+  if (einzel) {
+    children.push(optionHead('EA', 'Einzelauftrag'))
+    children.push(p(einzel, { run: { size: 20 }, indent: { left: 300 } }))
+    if (gruppe?.runde_3) {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: 'Und: ', bold: true, color: akzent, size: 18 }),
+          new TextRun({ text: gruppe.runde_3, size: 20 }),
+        ],
+        spacing: { after: 60 }, indent: { left: 300 },
+      }))
+    }
+    children.push(...schreibfeld(8))
+  }
+  if (gruppe && (gruppe.runde_1 || gruppe.runde_2 || gruppe.runde_3)) {
+    children.push(optionHead('GA', 'Gruppenpuzzle'))
+    ;([['Runde 1', gruppe.runde_1], ['Runde 2', gruppe.runde_2], ['Runde 3', gruppe.runde_3]] as Array<[string, string | undefined]>).forEach(([lab, text]) => {
+      if (!text) return
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: lab + '   ', color: akzent, bold: true, size: 16, font: 'Consolas' }),
+          new TextRun({ text, size: 20 }),
+        ],
+        spacing: { after: 60 },
+        indent: { left: 300 },
+      }))
+    })
+    children.push(...schreibfeld(8))
+  }
+  if (plenum) {
+    children.push(optionHead('PL', 'Plenum'))
+    children.push(p(plenum, { run: { size: 20 }, indent: { left: 300 } }))
+    children.push(...schreibfeld(8))
+  }
+
+  // ---------------- Page 2 — Transfer ----------------
+  children.push(pageBreak())
+  children.push(...sectionHead('02 · Transfer', 'Transfer (Einzelarbeit)', akzent))
+  if (da) {
+    children.push(p(da.auftrag || '', { run: { bold: true, size: 20 }, spacing: { after: 60 } }))
+    const metaParts = [da.format ? 'Format: ' + da.format : '', da.abgabe ? 'Abgabe: ' + da.abgabe : ''].filter(Boolean)
+    if (metaParts.length) children.push(p(metaParts.join('  ·  '), { run: { color: COLOR.inkSoft, size: 16 } }))
+    if (validSits.some((s) => s.dekontextualisierung?.frage)) {
+      children.push(p('BEISPIELE AUS EUREN HERAUSFORDERUNGEN', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 100, after: 40 } }))
+      validSits.forEach((s) => {
+        if (!s.dekontextualisierung?.frage) return
+        children.push(new Paragraph({
+          children: [
+            new TextRun({ text: 'HF ' + s.situation + ': ', bold: true, color: akzent, size: 16 }),
+            new TextRun({ text: s.dekontextualisierung.frage, size: 18 }),
+          ],
+          bullet: { level: 0 },
+          spacing: { after: 40 },
+        }))
+      })
+    }
+  }
+  children.push(p('SCHREIBHILFE — SATZANFÄNGE', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 120, after: 40 } }))
+  TRANSFER_SATZANFAENGE.forEach((s) => {
+    children.push(new Paragraph({ children: [new TextRun({ text: s, size: 18 })], bullet: { level: 0 }, spacing: { after: 30 } }))
+  })
+  children.push(spacer(80))
+  children.push(p('DEIN TRANSFER (5–7 SÄTZE)', { run: { color: akzent, bold: true, size: 14 } }))
+  children.push(...schreibfeld(50))
+  children.push(spacer(80))
+  children.push(p('SELBSTCHECK — HABE ICH DEN TRANSFER RICHTIG GEMACHT?', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+  TRANSFER_CHECKLISTE.forEach((c) => {
+    children.push(new Paragraph({
+      children: [
+        new TextRun({ text: '☐  ', bold: true, color: akzent, size: 18 }),
+        new TextRun({ text: c, size: 18 }),
+      ],
+      spacing: { after: 30 },
+      indent: { left: 200 },
+    }))
+  })
 
   return new Document({
     creator: 'HKO Renderer',

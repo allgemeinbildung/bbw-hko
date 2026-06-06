@@ -41,7 +41,8 @@
       11
     ],
     "sprachmodus_ids": [
-      "SM3"
+      "SM3",
+      "SM7"
     ],
     "kompetenz_id": "1.1.1",
     "lebensbezug_id": "1.1",
@@ -53,7 +54,7 @@
     "betrieb": "Noser Engineering Luzern",
     "ort": "Luzern"
   },
-  "situation_text": "Du bist Informatik-Lernende/r (Applikationsentwicklung) im 1. Lehrjahr bei Noser Engineering in Luzern und verdienst CHF 700 pro Monat. Seit drei Wochen leitet dich ein neuer Berufsbildner/in an. Er gibt dir kaum Feedback, kritisiert dich aber im Sprint-Review vor dem ganzen Team mit dem Satz: «Du hörst einfach nicht zu.» Du fühlst dich abgestempelt — denn du hörst sehr wohl zu, du brauchst nur länger, um Fragen zu formulieren. Heute hat er dir 15 Minuten am Donnerstag für eine Aussprache angeboten. Du willst hin, aber du willst auch nicht in eine zweite Demütigung laufen.",
+  "situation_text": "Ich bin Informatik-Lernende/r (Applikationsentwicklung) im 1. Lehrjahr bei Noser Engineering in Luzern und verdiene CHF 700 pro Monat. Seit drei Wochen leitet mich ein neuer Berufsbildner/in an. Er gibt mir kaum Feedback, kritisiert mich aber im Sprint-Review vor dem ganzen Team mit dem Satz: «Du hörst einfach nicht zu.» Ich fühle mich abgestempelt — denn ich höre sehr wohl zu, ich brauche nur länger, um Fragen zu formulieren. Heute hat er mir 15 Minuten am Donnerstag für eine Aussprache angeboten. Ich will hin, aber ich will auch nicht in eine zweite Demütigung laufen.",
   "zahlen_tabelle": [
     {
       "label": "Lehrlingslohn LJ1",
@@ -96,7 +97,7 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 19.2 | S. 426-428 plus Kap. 18.1 | S. 408-412",
-      "text": "Formuliere ein Drehbuch für die ersten 5 Minuten des Gesprächs: Eröffnung (Ich-Botschaft, 2-3 Sätze), zwei aktive-Zuhören-Rückfragen, ein Win-Win-Vorschlag. Berücksichtige dabei deine Rolle als Lernende/r und den Selbstwert (Kap. 18.1).",
+      "text": "Formuliere drei Ich-Botschaften für heikle Gesprächsmomente (je 1–2 Sätze, wertschätzend und klar).",
       "feld_hoehe_mm": 15
     }
   ],
@@ -147,7 +148,7 @@
     "abgaben": ["Gesprächs-Drehbuch (A4, 3 Spalten: Ich sage / Ich höre / Ich frage)", "5-Minuten Rollen-Probe im Unterricht"],
     "titel": "Drehbuch für meine Aussprache",
     "format_detail": "Einseitiges Drehbuch (A4, 250-300 Wörter) mit drei Spalten: «Ich sage» (eigene Sätze in Ich-Botschaften), «Ich höre» (was ich auf welchem Ohr aufnehme), «Ich frage» (Rückfragen). Im Klassenraum gefolgt von einer 5-minütigen Rollen-Probe mit einer Kollegin/einem Kollegen.",
-    "beschreibung": "Du erarbeitest dein Gesprächs-Drehbuch und übst die ersten 5 Minuten der Aussprache mit einer Partnerin/einem Partner. Die Partnerperson spielt den Berufsbildner/in und gibt dir nach der Probe ein kurzes Feedback nach Kap. 19.1. Bewertet wird das Drehbuch plus eine 60-Sekunden-Selbstauswertung nach der Probe.",
+    "beschreibung": "Ich erarbeite mein Gesprächs-Drehbuch und übe die ersten 5 Minuten der Aussprache mit einer Partnerin/einem Partner. Die Partnerperson spielt den Berufsbildner/in und gibt mir nach der Probe ein kurzes Feedback nach Kap. 19.1. Bewertet wird das Drehbuch plus eine 60-Sekunden-Selbstauswertung nach der Probe.",
     "schritte": [
       {
         "label": "Vorfall sortieren mit den vier Ohren",
@@ -171,7 +172,24 @@
       }
     ],
     "schreib_label": "DREHBUCH HIER ERARBEITEN",
-    "schreib_note": "-> wissen/konfliktgespräch_ich_botschaften"
+    "schreib_note": "-> wissen/konfliktgespräch_ich_botschaften",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Ich empfinde es als …, wenn …» (Ich-Botschaft)",
+        "«Habe ich richtig verstanden, dass …?» (Rückfrage)",
+        "«Mir ist wichtig, dass …» (Wunsch)",
+        "«Wie können wir …?» (Win-Win)"
+      ],
+      "strategien": [
+        "Vorfall zuerst mit den vier Ohren sortieren",
+        "Du-Botschaften konsequent in Ich-Botschaften übersetzen",
+        "Konkretes Verhalten benennen statt Etiketten"
+      ],
+      "struktur": [
+        "Drehbuch in drei Spalten: Ich sage – Ich höre – Ich frage",
+        "Eröffnung (Ich-Botschaft) – Rückfragen – Win-Win-Vorschlag"
+      ]
+    }
   },
   "reflexion_fragen": [
     {
@@ -196,33 +214,38 @@
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 20,
-      "kriterium": "Inhaltliche Korrektheit"
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Vier Ohren (Schulz von Thun) korrekt angewandt",
+        "Drei Du-Botschaften in Ich-Botschaften umformuliert"
+      ]
     },
     {
       "produkt": "Mindmap",
-      "abgabe": "Woche 1 — Ende Lektion",
-      "gewicht": 15,
-      "kriterium": "Struktur · Tiefe · Verbindungen"
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Bezug zu Kap. 19.1 / 19.2 / 18.1 erkennbar"
+      ]
     },
     {
       "produkt": "Handlungsprodukt",
-      "abgabe": "Woche 2 — Ende Lektion",
-      "gewicht": 35,
-      "kriterium": "Rubrik 4 Stufen (SuK + Ges)"
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Drehbuch in drei Spalten (Ich sage / Ich höre / Ich frage)",
+        "Eröffnung als Ich-Botschaft + mind. zwei Rückfragen + Win-Win-Vorschlag",
+        "5-Minuten Rollen-Probe durchgeführt und 60-Sek.-Selbstauswertung"
+      ]
     },
     {
       "produkt": "Reflexion",
-      "abgabe": "Woche 3 — Abgabe",
-      "gewicht": 15,
-      "kriterium": "Tiefe + Transfer"
-    },
-    {
-      "produkt": "Transfer",
-      "abgabe": "Woche 3 — Abgabe (Set-Aufgabe)",
-      "gewicht": 15,
-      "kriterium": "Prinzip auf neue Situation übertragen"
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Eigenes dominantes Ohr benannt und Transfer formuliert"
+      ]
     }
   ],
   "wochen": 3,
