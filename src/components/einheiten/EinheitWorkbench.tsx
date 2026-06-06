@@ -82,7 +82,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       const wrap = (title: string, bodyMarkup: string, opts: { compact?: boolean } = {}) => {
         const cls = ['aesthetic-modern']
         if (opts.compact) cls.push('density-compact')
-        const markup = bodyMarkup.replaceAll('assets/logo-bbw.png', pngDataUrl).replaceAll('/einheiten-assets/logo-bbw.png', pngDataUrl)
+        const markup = bodyMarkup.replaceAll('assets/logo-bbw.png', pngDataUrl).replaceAll('/einheiten-assets/logo-bbw.png', pngDataUrl).replaceAll('/logo-bbw-doc.png', pngDataUrl)
         return `<!DOCTYPE html>
 <html lang="de-CH">
 <head>

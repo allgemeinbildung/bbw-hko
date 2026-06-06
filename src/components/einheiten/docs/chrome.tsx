@@ -14,7 +14,7 @@ interface A4PageProps {
   logoUrl?: string
 }
 
-export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter, pageNum, pageTotal, kompetenzNr, logoUrl = '/einheiten-assets/logo-bbw.png' }: A4PageProps) {
+export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter, pageNum, pageTotal, kompetenzNr, logoUrl = '/logo-bbw-doc.png' }: A4PageProps) {
   const sitClass = sit ? `sit-${sit}` : 'sit-neutral'
   return (
     <article className={`a4-page ${sitClass}`}>

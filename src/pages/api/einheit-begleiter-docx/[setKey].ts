@@ -15,7 +15,7 @@ export const GET: APIRoute = async ({ params, request, locals }) => {
 
   // Fetch logo from the static asset origin (works in both dev and Vercel)
   const origin = new URL(request.url).origin
-  const logoRes = await fetch(`${origin}/einheiten-assets/logo-bbw.png`)
+  const logoRes = await fetch(`${origin}/logo-bbw-doc.png`)
   const logoPng = logoRes.ok ? await logoRes.arrayBuffer() : new ArrayBuffer(0)
 
   const buffer = await buildBegleiterBuffer(fullSet.begleiter.raw, logoPng)

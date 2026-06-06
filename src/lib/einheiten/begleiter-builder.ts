@@ -497,7 +497,7 @@ function buildHeader(_meta: BegleiterMeta, logoBuffer: ArrayBuffer | Uint8Array 
     ? new Paragraph({
         alignment: AlignmentType.LEFT,
         spacing: { before: 0, after: 0 },
-        children: [new ImageRun({ data: logoBuffer, transformation: { width: 150, height: 53 } } as any)],
+        children: [new ImageRun({ data: logoBuffer, transformation: { width: 150, height: 57 } } as any)],
       })
     : new Paragraph({
         alignment: AlignmentType.LEFT,
