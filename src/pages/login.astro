@@ -19,6 +19,11 @@ const error = Astro.url.searchParams.get('error')
         <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded text-sm text-red-700">{decodeURIComponent(error)}</div>
       )}
 
+      <div class="mb-4 p-3 bg-[var(--brand-tint)] border border-[var(--brand)]/30 rounded text-sm text-slate-700">
+        <p class="font-medium text-[var(--brand-dark)] mb-1">Lehrpersonen der BBW</p>
+        <p>Bitte mit dem <strong>BBW-Microsoft-Konto</strong> anmelden (Button unten).</p>
+      </div>
+
       <!-- Microsoft / BBW login -->
       <a
         href="/api/auth/microsoft"
