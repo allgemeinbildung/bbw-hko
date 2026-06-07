@@ -1,0 +1,237 @@
+---
+import Admin from '../../layouts/Admin.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+// Collect all feedbacks weitergeleitet_kt2 OR freigabe_gemeinsamer_kn=true
+// from all three feedback tables in parallel
+const [
+  { data: situFb },
+  { data: einheitFb },
+  { data: materialFb },
+] = await Promise.all([
+  Astro.locals.supabase
+    .from('feedbacks')
+    .select('*')
+    .or('status.eq.weitergeleitet_kt2,freigabe_gemeinsamer_kn.eq.true')
+    .order('created_at', { ascending: false }),
+  Astro.locals.supabase
+    .from('einheit_feedbacks')
+    .select('*')
+    .or('status.eq.weitergeleitet_kt2,freigabe_gemeinsamer_kn.eq.true')
+    .order('created_at', { ascending: false }),
+  Astro.locals.supabase
+    .from('material_feedbacks')
+    .select('*, materials(titel, kompetenz_nr)')
+    .or('status.eq.weitergeleitet_kt2,freigabe_gemeinsamer_kn.eq.true')
+    .order('created_at', { ascending: false }),
+])
+
+// Resolve lp names
+const allLpIds = Array.from(new Set([
+  ...(situFb ?? []).map((f: any) => f.lp_id),
+  ...(einheitFb ?? []).map((f: any) => f.lp_id),
+  ...(materialFb ?? []).map((f: any) => f.lp_id),
+].filter(Boolean)))
+
+let profilesById = new Map<string, { full_name: string | null }>()
+if (allLpIds.length > 0) {
+  const { data: profs } = await Astro.locals.supabase
+    .from('profiles').select('id, full_name').in('id', allLpIds)
+  profilesById = new Map((profs ?? []).map((p: any) => [p.id, { full_name: p.full_name }]))
+}
+
+type Row = {
+  id: string
+  stream: 'Situation' | 'Einheit' | 'Material'
+  ref_id: string
+  ref_label: string
+  lp_name: string | null
+  created_at: string
+  status: string
+  freigabe: boolean
+  tauglichkeit: number | null
+  qualitaet_situation: number | null
+  qualitaet_handlungsprodukt: number | null
+  niveau_passung: string | null
+  kn_ergebnis: string | null
+  neue_idee: boolean
+  idee_typ: string | null
+  idee_titel: string | null
+  idee_beschreibung: string | null
+  idee_dateien: any[]
+  endpoint: string
+}
+
+function kn_ergebnisLabel(v: string | null): string {
+  if (!v) return '—'
+  return { unter_50: '<50%', '50_75': '50–75%', '75_90': '75–90%', ueber_90: '>90%' }[v] ?? v
+}
+
+const rows: Row[] = [
+  ...(situFb ?? []).map((f: any) => ({
+    id: f.id,
+    stream: 'Situation' as const,
+    ref_id: f.situation_id,
+    ref_label: f.situation_id,
+    lp_name: profilesById.get(f.lp_id)?.full_name ?? null,
+    created_at: f.created_at,
+    status: f.status,
+    freigabe: !!f.freigabe_gemeinsamer_kn,
+    tauglichkeit: f.tauglichkeit,
+    qualitaet_situation: f.qualitaet_situation,
+    qualitaet_handlungsprodukt: f.qualitaet_handlungsprodukt,
+    niveau_passung: f.niveau_passung,
+    kn_ergebnis: f.kn_ergebnis ?? null,
+    neue_idee: !!f.neue_idee,
+    idee_typ: f.idee_typ,
+    idee_titel: f.idee_titel,
+    idee_beschreibung: f.idee_beschreibung,
+    idee_dateien: Array.isArray(f.idee_dateien) ? f.idee_dateien : [],
+    endpoint: `/api/feedbacks/${f.id}`,
+  })),
+  ...(einheitFb ?? []).map((f: any) => ({
+    id: f.id,
+    stream: 'Einheit' as const,
+    ref_id: f.einheit_id,
+    ref_label: f.einheit_id,
+    lp_name: profilesById.get(f.lp_id)?.full_name ?? null,
+    created_at: f.created_at,
+    status: f.status,
+    freigabe: !!f.freigabe_gemeinsamer_kn,
+    tauglichkeit: f.tauglichkeit,
+    qualitaet_situation: f.qualitaet_situation,
+    qualitaet_handlungsprodukt: f.qualitaet_handlungsprodukt,
+    niveau_passung: f.niveau_passung,
+    kn_ergebnis: f.kn_ergebnis ?? null,
+    neue_idee: !!f.neue_idee,
+    idee_typ: f.idee_typ,
+    idee_titel: f.idee_titel,
+    idee_beschreibung: f.idee_beschreibung,
+    idee_dateien: Array.isArray(f.idee_dateien) ? f.idee_dateien : [],
+    endpoint: `/api/einheit-feedbacks/${f.id}`,
+  })),
+  ...(materialFb ?? []).map((f: any) => ({
+    id: f.id,
+    stream: 'Material' as const,
+    ref_id: f.material_id,
+    ref_label: f.materials?.kompetenz_nr ? `${f.materials.kompetenz_nr} · ${f.materials.titel ?? ''}` : f.material_id,
+    lp_name: profilesById.get(f.lp_id)?.full_name ?? null,
+    created_at: f.created_at,
+    status: f.status,
+    freigabe: !!f.freigabe_gemeinsamer_kn,
+    tauglichkeit: f.tauglichkeit,
+    qualitaet_situation: f.qualitaet_situation,
+    qualitaet_handlungsprodukt: f.qualitaet_handlungsprodukt,
+    niveau_passung: f.niveau_passung,
+    kn_ergebnis: f.kn_ergebnis ?? null,
+    neue_idee: !!f.neue_idee,
+    idee_typ: f.idee_typ,
+    idee_titel: f.idee_titel,
+    idee_beschreibung: f.idee_beschreibung,
+    idee_dateien: Array.isArray(f.idee_dateien) ? f.idee_dateien : [],
+    endpoint: `/api/material-feedbacks/${f.id}`,
+  })),
+].sort((a, b) => b.created_at.localeCompare(a.created_at))
+
+const streamBadge: Record<string, string> = {
+  Situation: 'bg-sky-100 text-sky-800',
+  Einheit: 'bg-emerald-100 text-emerald-800',
+  Material: 'bg-violet-100 text-violet-800',
+}
+const niveauLabel: Record<string, string> = {
+  zu_leicht: 'Zu leicht', passend: 'Passend', zu_schwer: 'Zu schwer',
+}
+---
+<Admin title="KT2-Übergabe">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">KT2-Übergabemappe</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      Feedbacks mit Status «Weitergeleitet KT2» oder LP-Freigabe für den gemeinsamen Kompetenznachweis.
+      {rows.length} {rows.length === 1 ? 'Eintrag' : 'Einträge'}
+    </p>
+  </div>
+
+  {rows.length === 0 ? (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center text-slate-500">
+      Noch keine weitergeleiteten Feedbacks oder freigegebenen Ideen vorhanden.
+    </div>
+  ) : (
+    <div class="space-y-4">
+      {rows.map((row) => {
+        const created = row.created_at ? new Date(row.created_at).toLocaleDateString('de-CH') : ''
+        return (
+          <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+            <div class="p-4 flex flex-wrap items-start gap-3 justify-between">
+              <div class="min-w-0">
+                <div class="flex items-center gap-2 flex-wrap mb-1">
+                  <span class={`text-xs font-medium px-2 py-0.5 rounded-full ${streamBadge[row.stream]}`}>{row.stream}</span>
+                  {row.freigabe && (
+                    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Freigabe KT2</span>
+                  )}
+                  {row.status === 'weitergeleitet_kt2' && (
+                    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Weitergeleitet</span>
+                  )}
+                  <span class="text-xs text-slate-400">{created}</span>
+                </div>
+                <div class="font-medium text-slate-900 truncate">{row.ref_label}</div>
+                <div class="text-xs text-slate-500">{row.lp_name ?? '—'}</div>
+              </div>
+              <div class="flex flex-wrap gap-4 text-xs text-slate-600 shrink-0">
+                <div><span class="text-slate-400">Taug.</span> {row.tauglichkeit ?? '—'}</div>
+                <div><span class="text-slate-400">Qual.Sit.</span> {row.qualitaet_situation ?? '—'}</div>
+                <div><span class="text-slate-400">Qual.HP</span> {row.qualitaet_handlungsprodukt ?? '—'}</div>
+                <div><span class="text-slate-400">Niveau</span> {row.niveau_passung ? niveauLabel[row.niveau_passung] ?? row.niveau_passung : '—'}</div>
+                <div><span class="text-slate-400">KN-Ergebnis</span> {kn_ergebnisLabel(row.kn_ergebnis)}</div>
+              </div>
+            </div>
+
+            {row.neue_idee && (
+              <div class="border-t border-slate-100 bg-amber-50 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-xs font-semibold text-amber-800 uppercase tracking-wide">Neue Idee</span>
+                  {row.idee_typ && <span class="text-xs text-amber-700">{row.idee_typ}</span>}
+                </div>
+                {row.idee_titel && <div class="font-medium text-slate-900 mb-1">{row.idee_titel}</div>}
+                {row.idee_beschreibung && <p class="text-sm text-slate-700 whitespace-pre-wrap mb-2">{row.idee_beschreibung}</p>}
+                {row.idee_dateien.length > 0 && (
+                  <div class="flex flex-wrap gap-2">
+                    {row.idee_dateien.map((f: any) => (
+                      <a
+                        href={`${row.endpoint}/files?path=${encodeURIComponent(f.path)}`}
+                        target="_blank"
+                        class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-white border border-slate-200 rounded hover:bg-slate-50 text-slate-700"
+                      >
+                        📎 {f.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div class="border-t border-slate-100 px-4 py-2 flex items-center justify-between gap-3">
+              <span class="text-xs text-slate-500">
+                Status:
+                <select
+                  class="ml-1 text-xs border border-slate-200 rounded px-1 py-0.5 bg-white"
+                  data-endpoint={row.endpoint}
+                  onchange={`fetch(this.dataset.endpoint, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: this.value }) }).then(r => r.ok ? location.reload() : alert('Fehler beim Speichern.'))`}
+                >
+                  {['eingereicht', 'gesichtet', 'weitergeleitet_kt2'].map((s) => (
+                    <option value={s} selected={row.status === s}>{s}</option>
+                  ))}
+                </select>
+              </span>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )}
+</Admin>

@@ -12,12 +12,12 @@ function CockpitHead({ sit }) {
     <>
       <div className="badge-row" style={{ marginBottom: '2.5mm' }}>
         <Badge variant="outline">Kompetenz {sit.nrlp?.nr}</Badge>
-        <Badge>Situation {sit.situation} · {sit.emotion_tag}</Badge>
+        <Badge>Herausforderung {sit.buchstabe} · {sit.emotion_tag}</Badge>
       </div>
       <h1 className="cockpit-title">{sit.titel}</h1>
       <p className="cockpit-sub">{sit.modul_titel}</p>
       <div className="badge-row" style={{ marginBottom: '3mm' }}>
-        <span className="subfacette">Subfacette {sit.sub_facette?.buchstabe} — {sit.sub_facette?.label}</span>
+        <span className="subfacette">Herausforderung {sit.herausforderung?.buchstabe} — {sit.herausforderung?.label}</span>
       </div>
     </>
   );
@@ -128,7 +128,7 @@ function SituationBlock({ sit }) {
         <div className="item"><strong>Ort</strong>{sit.persona?.ort}</div>
         <div className="item"><strong>Emotion</strong>{sit.emotion_tag}</div>
       </div>
-      <p className="sit-text">{sit.situation_text}</p>
+      <p className="sit-text">{sit.buchstabe_text}</p>
       {sit.zahlen_tabelle && (
         <table className="zahlen-tabelle">
           <tbody>
@@ -312,11 +312,11 @@ function AustauschBlock({ set, sit }) {
 function makePage(common) {
   return ({ pageNum, pageTotal, children }) => (
     <A4Page
-      sit={common.sit.situation}
+      sit={common.sit.buchstabe}
       abteilung={common.abteilung}
-      docCode={`DOC-S · SIT ${common.sit.situation} · ${common.mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`}
+      docCode={`DOC-S · HF ${common.sit.buchstabe} · ${common.mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`}
       docTitel={common.sit.titel}
-      sitLetter={common.sit.situation}
+      sitLetter={common.sit.buchstabe}
       pageNum={pageNum}
       pageTotal={pageTotal}
       kompetenzNr={common.sit.nrlp?.nr}

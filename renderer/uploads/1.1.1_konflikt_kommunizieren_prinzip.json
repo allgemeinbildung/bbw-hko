@@ -16,21 +16,21 @@
     "LF4": "K3+ oder K4"
   },
 
-  "sub_facetten": {
+  "herausforderungen": {
     "A": {
-      "facette": "Rechte und Pflichten im Lehrvertrag klaeren und Position formulieren",
+      "herausforderung": "Rechte und Pflichten im Lehrvertrag klaeren und Position formulieren",
       "konfliktart": "Auftrag des Berufsbildners gegen Lehrvertrag-Recht / Pflicht-Konflikt im Lehrverhaeltnis",
       "handlungsprodukt_typ": "Konflikt-Landkarte und Positionspapier (rezeptiv-schriftlich)",
       "transferrable": true
     },
     "B": {
-      "facette": "Kanal und Register fuer eine schriftliche Konfliktantwort waehlen",
+      "herausforderung": "Kanal und Register fuer eine schriftliche Konfliktantwort waehlen",
       "konfliktart": "Schnelle digitale Antwort vs. verantwortungsvolle Kommunikation ueber den richtigen digitalen Kanal",
       "handlungsprodukt_typ": "Schriftliche Antwort (E-Mail oder Brief) plus Kanalbegruendung",
       "transferrable": true
     },
     "C": {
-      "facette": "Konfliktgespraech rollenbewusst und beziehungserhaltend fuehren",
+      "herausforderung": "Konfliktgespraech rollenbewusst und beziehungserhaltend fuehren",
       "konfliktart": "Eigene Rolle als Lernende vs. Autoritaet des Berufsbildners — fair zuhoeren und Ich-Botschaften wagen",
       "handlungsprodukt_typ": "Gespraechs-Drehbuch mit Ich-Botschaften plus Rollen-Probe",
       "transferrable": true
@@ -147,7 +147,7 @@
     "max_woerter": 120,
     "perspektive": "ICH",
     "must_activate_trade_offs_min": 1,
-    "must_combine_subfacetten": ["A", "B", "C"],
+    "must_combine_herausforderungen": ["A", "B", "C"],
     "persona_source": "persona_pool_kn_neu",
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",

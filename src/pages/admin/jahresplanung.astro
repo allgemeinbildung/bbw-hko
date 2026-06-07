@@ -1,0 +1,166 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import { nrlp } from '../../lib/nrlp'
+import { skFullName } from '../../lib/sk-labels'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role !== 'kt1' && profile?.role !== 'reviewer') return Astro.redirect('/einreichen')
+
+// Canonical lists (same source as /jahresplanung)
+const zSk = ((nrlp as any).zirkularitaet?.schluesselkompetenzen ?? []) as any[]
+const zSm = ((nrlp as any).zirkularitaet?.sprachmodi ?? []) as any[]
+const skNames = zSk.map((s) => s.bezeichnung as string)
+const smNames = zSm.map((s) => s.bezeichnung as string)
+
+// All plan instances across all LPs (RLS lets kt1/reviewer read every row)
+type PlanRow = {
+  id: string
+  label: string
+  user_id: string
+  coverage: Record<string, { sk_done?: string[]; sprachmodus_done?: string[] }> | null
+  updated_at: string
+  profiles: { full_name?: string; abteilung?: string } | null
+}
+let plans: PlanRow[] = []
+let loadError = ''
+try {
+  const { data, error } = await Astro.locals.supabase
+    .from('jahresplanung_plans')
+    .select('id,label,user_id,coverage,updated_at,profiles(full_name,abteilung)')
+    .order('updated_at', { ascending: false })
+  if (error) loadError = error.message
+  plans = (data as any) ?? []
+} catch (e: any) {
+  loadError = e?.message ?? 'Unbekannter Fehler'
+}
+
+// ── Aggregate coverage across all plans ──
+// For each SK / Sprachmodus: in how many plans was it checked at least once?
+const skAgg: Record<string, number> = Object.fromEntries(skNames.map((n) => [n, 0]))
+const smAgg: Record<string, number> = Object.fromEntries(smNames.map((n) => [n, 0]))
+
+const planSummaries = plans.map((p) => {
+  const skSet = new Set<string>()
+  const smSet = new Set<string>()
+  for (const lb of Object.keys(p.coverage ?? {})) {
+    for (const s of p.coverage![lb]?.sk_done ?? []) skSet.add(s)
+    for (const s of p.coverage![lb]?.sprachmodus_done ?? []) smSet.add(s)
+  }
+  skSet.forEach((s) => { if (s in skAgg) skAgg[s]++ })
+  smSet.forEach((s) => { if (s in smAgg) smAgg[s]++ })
+  return {
+    id: p.id,
+    label: p.label,
+    lp: p.profiles?.full_name ?? '—',
+    abteilung: p.profiles?.abteilung ?? '',
+    skCount: skSet.size,
+    smCount: smSet.size,
+    updated: p.updated_at,
+  }
+})
+
+const totalPlans = plans.length
+const skBars = skNames.map((n) => ({ name: n, full: skFullName[n] || n, plans: skAgg[n] }))
+const smBars = smNames.map((n) => ({ name: n, plans: smAgg[n] }))
+const pct = (n: number) => (totalPlans ? Math.round((n / totalPlans) * 100) : 0)
+const fmtDate = (s: string) => new Date(s).toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' })
+---
+<Admin title="Jahresplanung — Abdeckung">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Jahresplanung — schulweite Abdeckung</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      {totalPlans} Klassen-Planung{totalPlans === 1 ? '' : 'en'} von Lehrpersonen ausgewertet ·
+      basierend auf den in der «Abdeckung»-Sicht abgehakten Schlüsselkompetenzen und Sprachmodi.
+    </p>
+  </div>
+
+  {loadError && (
+    <div class="mb-6 rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+      Tabelle nicht erreichbar ({loadError}). Wurde Migration <code>011_jahresplanung_plans.sql</code> angewendet?
+    </div>
+  )}
+
+  {!loadError && totalPlans === 0 && (
+    <div class="mb-6 rounded-md border border-slate-200 bg-slate-50 px-4 py-6 text-sm text-slate-500 text-center">
+      Noch keine gespeicherten Klassen-Planungen. Sobald Lehrpersonen in
+      «Jahresplanung → Abdeckung» Kompetenzen abhaken, erscheint hier die Auswertung.
+    </div>
+  )}
+
+  {totalPlans > 0 && (
+    <div class="space-y-8">
+      <!-- SK coverage -->
+      <section class="bg-white border border-slate-200 rounded-lg p-6">
+        <h2 class="text-lg font-semibold mb-1">Schlüsselkompetenzen — in wie vielen Planungen geübt?</h2>
+        <p class="text-sm text-slate-500 mb-4">0 = systematische Lücke schulweit. Hover zeigt den vollständigen Bildungsrat-Satz.</p>
+        <div class="space-y-2">
+          {skBars.map((b) => (
+            <div class="flex items-center gap-3" title={b.full}>
+              <span class="w-52 shrink-0 text-sm text-slate-700 truncate">{b.name}</span>
+              <div class="flex-1 h-5 rounded bg-slate-100 overflow-hidden">
+                <div class={`h-full ${b.plans === 0 ? 'bg-red-300' : 'bg-[var(--brand)]'}`} style={`width:${Math.max(pct(b.plans), b.plans === 0 ? 0 : 4)}%`}></div>
+              </div>
+              <span class={`w-16 shrink-0 text-right text-sm tabular-nums ${b.plans === 0 ? 'text-red-600 font-semibold' : 'text-slate-600'}`}>{b.plans}/{totalPlans}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Sprachmodi coverage -->
+      <section class="bg-white border border-slate-200 rounded-lg p-6">
+        <h2 class="text-lg font-semibold mb-1">Sprachmodi — in wie vielen Planungen geübt?</h2>
+        <p class="text-sm text-slate-500 mb-4">Die nRLP verlangt, dass alle 9 Sprachmodi über den Zyklus vorkommen.</p>
+        <div class="space-y-2">
+          {smBars.map((b) => (
+            <div class="flex items-center gap-3">
+              <span class="w-60 shrink-0 text-sm text-slate-700 truncate">{b.name}</span>
+              <div class="flex-1 h-5 rounded bg-slate-100 overflow-hidden">
+                <div class={`h-full ${b.plans === 0 ? 'bg-red-300' : 'bg-[var(--brand)]'}`} style={`width:${Math.max(pct(b.plans), b.plans === 0 ? 0 : 4)}%`}></div>
+              </div>
+              <span class={`w-16 shrink-0 text-right text-sm tabular-nums ${b.plans === 0 ? 'text-red-600 font-semibold' : 'text-slate-600'}`}>{b.plans}/{totalPlans}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Per-plan table -->
+      <section class="bg-white border border-slate-200 rounded-lg p-6">
+        <h2 class="text-lg font-semibold mb-4">Planungen pro Lehrperson</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs uppercase tracking-wider text-slate-500 border-b border-slate-200">
+                <th class="py-2 pr-4">Klasse</th>
+                <th class="py-2 pr-4">Lehrperson</th>
+                <th class="py-2 pr-4">Abteilung</th>
+                <th class="py-2 pr-4 text-right">SK abgehakt</th>
+                <th class="py-2 pr-4 text-right">Sprachmodi</th>
+                <th class="py-2 text-right">Aktualisiert</th>
+              </tr>
+            </thead>
+            <tbody>
+              {planSummaries.map((p) => (
+                <tr class="border-b border-slate-100 last:border-0">
+                  <td class="py-2 pr-4 font-medium text-slate-800">{p.label}</td>
+                  <td class="py-2 pr-4 text-slate-700">{p.lp}</td>
+                  <td class="py-2 pr-4 text-slate-500">{p.abteilung}</td>
+                  <td class="py-2 pr-4 text-right tabular-nums">{p.skCount}/{skNames.length}</td>
+                  <td class="py-2 pr-4 text-right tabular-nums">{p.smCount}/{smNames.length}</td>
+                  <td class="py-2 text-right text-slate-500">{fmtDate(p.updated)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  )}
+</Admin>

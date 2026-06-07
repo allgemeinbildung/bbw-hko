@@ -32,6 +32,10 @@ const error = Astro.url.searchParams.get('error')
             class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/dashboard' ? 'admin-tab-active' : 'admin-tab'}`}
           >Lücken-Dashboard</a>
           <a
+            href="/admin/jahresplanung"
+            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/jahresplanung' ? 'admin-tab-active' : 'admin-tab'}`}
+          >Jahresplanung-Abdeckung</a>
+          <a
             href="/situationen/admin"
             class="px-4 py-1.5 rounded-md text-sm font-medium admin-tab"
           >Situationen-Feedbacks →</a>
@@ -39,6 +43,10 @@ const error = Astro.url.searchParams.get('error')
             href="/einheiten"
             class="px-4 py-1.5 rounded-md text-sm font-medium admin-tab"
           >Einheiten →</a>
+          <a
+            href="/admin/kt2"
+            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/kt2' ? 'admin-tab-active' : 'admin-tab'}`}
+          >KT2-Übergabe</a>
         </nav>
         <div class="flex items-center gap-3">
           <span class="text-sm hidden sm:block" style="color: rgba(255,255,255,0.7);">{user?.email}</span>

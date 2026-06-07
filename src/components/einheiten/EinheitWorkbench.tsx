@@ -24,7 +24,7 @@ type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
-  return d[`sit_${letter}`]
+  return d[`hf_${letter}`]
 }
 
 export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl }: Props) {
@@ -70,14 +70,14 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     }
     if (doc === 'doc-austausch') {
       if (!d.set) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Set fehlt.</p></div>
-      return <DocAustausch set={d.set} sits={[d.sit_A, d.sit_B, d.sit_C]} abteilung={abteilung} edits={edits} onEdit={onEdit} />
+      return <DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
     if (doc === 'doc-kn-s') {
       if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
       return <DocKnS kn={d.kn} knTyp={knTyp} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
     if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
-    return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.sit_A, d.sit_B, d.sit_C]} />
+    return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />
   }, [doc, situation, mode, abteilung, edits, knTyp, sit, d, onEdit])
 
   const showToast = (msg: string, kind: 'ok' | 'error' = 'ok') => {
@@ -165,12 +165,12 @@ ${cssRenderer}
 
       // C8 — set-level Austausch & Transfer doc (once per set; no longer embedded in the 6 DocS)
       if (d.set) {
-        const markup = renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.sit_A, d.sit_B, d.sit_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
+        const markup = renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-austausch.html`
         zip.file(`html/${filename}`, wrap('DOC-AUSTAUSCH · Set-Abschluss', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildAustausch({ set: d.set, sits: [d.sit_A, d.sit_B, d.sit_C], abteilung, logoPng: pngArrayBuffer })
+          const docx = buildAustausch({ set: d.set, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung, logoPng: pngArrayBuffer })
           zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
           log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
         } catch (e) { console.warn('docx Austausch failed', filename, e) }
@@ -193,12 +193,12 @@ ${cssRenderer}
       }
 
       if (d.kn && d.prinzip) {
-        const markup = renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.sit_A, d.sit_B, d.sit_C]} />)
+        const markup = renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />)
         const filename = `${prefix}_doc-kn-lp.html`
         zip.file(`html/${filename}`, wrap('DOC-KN-LP Lehrperson + Bewertung', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngArrayBuffer, sits: [d.sit_A, d.sit_B, d.sit_C] })
+          const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngArrayBuffer, sits: [d.hf_A, d.hf_B, d.hf_C] })
           zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
           log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
         } catch (e) { console.warn('docx KnLp failed', filename, e) }
@@ -397,9 +397,9 @@ bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinwei
 
 | Komponente | Titel |
 |---|---|
-| Herausforderung A (rot) | ${d.sit_A?.titel || '—'} |
-| Herausforderung B (blau) | ${d.sit_B?.titel || '—'} |
-| Herausforderung C (grün) | ${d.sit_C?.titel || '—'} |
+| Herausforderung A (rot) | ${d.hf_A?.titel || '—'} |
+| Herausforderung B (blau) | ${d.hf_B?.titel || '—'} |
+| Herausforderung C (grün) | ${d.hf_C?.titel || '—'} |
 | KN Hybrid-Herausforderung | ${d.kn?.hybrid_situation?.titel || '—'} |
 | Begleitdokument | ${d.begleiter?.meta?.titel || '—'} |
 

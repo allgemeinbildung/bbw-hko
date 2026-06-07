@@ -48,9 +48,9 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
   const begleiter = raw ? { raw, ...parseFrontmatter(raw) } : null
   return {
     id: slug,
-    sit_A: pickJson<SituationJson>(slug, 'sit_A'),
-    sit_B: pickJson<SituationJson>(slug, 'sit_B'),
-    sit_C: pickJson<SituationJson>(slug, 'sit_C'),
+    hf_A: pickJson<SituationJson>(slug, 'herausforderung_A'),
+    hf_B: pickJson<SituationJson>(slug, 'herausforderung_B'),
+    hf_C: pickJson<SituationJson>(slug, 'herausforderung_C'),
     kn: pickJson<KnJson>(slug, 'kn'),
     prinzip: pickJson<PrinzipJson>(slug, 'prinzip'),
     set: pickJson<SetJson>(slug, 'set'),

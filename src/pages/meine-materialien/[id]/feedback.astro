@@ -1,0 +1,440 @@
+---
+import LP from '../../../layouts/LP.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const materialId = Astro.params.id as string
+
+const { data: material } = await Astro.locals.supabase
+  .from('materials')
+  .select('id, titel, kompetenz_nr, submitted_by, schluesselkompetenzen, aspekte')
+  .eq('id', materialId)
+  .single()
+
+if (!material) return Astro.redirect('/meine-materialien?error=Material%20nicht%20gefunden')
+if (material.submitted_by !== user.id) return Astro.redirect('/meine-materialien?error=Keine%20Berechtigung')
+
+const { data: existing } = await Astro.locals.supabase
+  .from('material_feedbacks')
+  .select('*')
+  .eq('material_id', materialId)
+  .eq('lp_id', user.id)
+  .order('created_at', { ascending: false })
+  .limit(1)
+  .maybeSingle()
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('abteilung')
+  .eq('id', user.id)
+  .single()
+
+const declaredSk: string[] = material.schluesselkompetenzen ?? []
+const declaredAspekte: string[] = material.aspekte ?? []
+
+const initial = existing ?? {
+  klasse: '',
+  lehrjahr: '',
+  abteilung: profile?.abteilung ?? '',
+  getestet_am: '',
+  dauer_lektionen: '',
+  tauglichkeit: null,
+  qualitaet_situation: null,
+  qualitaet_handlungsprodukt: null,
+  schwierigkeit: null,
+  niveau_passung: null,
+  noetiges_scaffolding: '',
+  motivation: null,
+  weiterempfehlung: null,
+  kn_validitaet: null,
+  kn_fairness: null,
+  kn_zeit_angemessen: null,
+  kn_raster_brauchbar: null,
+  kn_ergebnis: null,
+  wirksame_sk: [],
+  wirksame_aspekte: [],
+  was_funktionierte: '',
+  was_nicht_funktionierte: '',
+  aenderungsvorschlaege: '',
+  eigene_anpassungen: '',
+  anmerkungen: '',
+  neue_idee: false,
+  idee_typ: null,
+  idee_titel: '',
+  idee_beschreibung: '',
+  freigabe_gemeinsamer_kn: false,
+  idee_dateien: [],
+  status: 'entwurf',
+}
+
+const initialJson = JSON.stringify(initial)
+const skJson = JSON.stringify(declaredSk)
+const aspekteJson = JSON.stringify(declaredAspekte)
+---
+<LP title={`Erfahrungsbericht: ${material.titel ?? material.kompetenz_nr}`}>
+  <a href="/meine-materialien" class="text-sm text-slate-500 hover:text-slate-800 inline-flex items-center gap-1 mb-4">← Meine Materialien</a>
+
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Erfahrungsbericht</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      <span class="font-mono">{material.kompetenz_nr}</span> · <span class="font-medium">{material.titel}</span>
+    </p>
+  </div>
+
+  <div x-data={`materialFeedbackForm(${initialJson}, ${skJson}, ${aspekteJson})`} class="space-y-5">
+    <div x-show="message" x-cloak class="rounded-md p-3 text-sm" :class="messageType === 'error' ? 'bg-red-50 text-red-700 border border-red-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'">
+      <span x-text="message"></span>
+    </div>
+
+    <!-- Kontext -->
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+      <h2 class="text-base font-semibold">Kontext der Erprobung</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+        <div>
+          <label class="field-label">Klasse</label>
+          <input type="text" x-model="form.klasse" class="input mt-1" placeholder="z.B. FaGe24a" />
+        </div>
+        <div>
+          <label class="field-label">Lehrjahr</label>
+          <select x-model="form.lehrjahr" class="input mt-1">
+            <option value="">—</option>
+            <template x-for="n in [1,2,3,4]" :key="n">
+              <option :value="n" x-text="n"></option>
+            </template>
+          </select>
+        </div>
+        <div>
+          <label class="field-label">Abteilung</label>
+          <input type="text" x-model="form.abteilung" class="input mt-1" />
+        </div>
+        <div>
+          <label class="field-label">Getestet am</label>
+          <input type="date" x-model="form.getestet_am" class="input mt-1" />
+        </div>
+        <div>
+          <label class="field-label">Dauer (Lektionen)</label>
+          <input type="number" step="0.5" min="0" x-model.number="form.dauer_lektionen" class="input mt-1" placeholder="z.B. 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Bewertung -->
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-4">
+      <h2 class="text-base font-semibold">Bewertung (1 = tief, 5 = hoch)</h2>
+
+      <template x-for="q in ratingQuestions" :key="q.field">
+        <div>
+          <div class="flex items-baseline justify-between gap-3 mb-1">
+            <label class="text-sm font-medium text-slate-800" x-text="q.label"></label>
+            <span class="text-xs text-slate-400" x-text="q.hint"></span>
+          </div>
+          <div class="radio-group">
+            <template x-for="n in [1,2,3,4,5]" :key="n">
+              <label class="radio-pill" :class="form[q.field] === n ? 'selected' : ''">
+                <input type="radio" :name="q.field" :value="n" x-model.number="form[q.field]" class="sr-only" />
+                <span x-text="n"></span>
+              </label>
+            </template>
+            <button type="button" class="radio-pill text-slate-400" @click="form[q.field] = null">—</button>
+          </div>
+        </div>
+      </template>
+
+      <!-- Niveau -->
+      <div class="pt-3 border-t border-slate-100 space-y-3">
+        <div>
+          <label class="text-sm font-medium text-slate-800 block mb-1">Niveau-Passung</label>
+          <div class="radio-group">
+            <template x-for="opt in niveauOptionen" :key="opt.value">
+              <label class="radio-pill" :class="form.niveau_passung === opt.value ? 'selected' : ''">
+                <input type="radio" name="niveau_passung" :value="opt.value" x-model="form.niveau_passung" class="sr-only" />
+                <span x-text="opt.label"></span>
+              </label>
+            </template>
+            <button type="button" class="radio-pill text-slate-400" @click="form.niveau_passung = null">—</button>
+          </div>
+        </div>
+        <div x-show="form.niveau_passung && form.niveau_passung !== 'passend'">
+          <label class="field-label">Nötiges Scaffolding / Anpassungsbedarf</label>
+          <textarea x-model="form.noetiges_scaffolding" rows="2" class="input mt-1"></textarea>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-100">
+        <label class="text-sm font-medium text-slate-800 block mb-1">Würdest du dieses Material anderen LPs weiterempfehlen?</label>
+        <div class="radio-group">
+          <label class="radio-pill" :class="form.weiterempfehlung === true ? 'selected' : ''">
+            <input type="radio" name="weiter" :value="true" @click="form.weiterempfehlung = true" class="sr-only" /> Ja
+          </label>
+          <label class="radio-pill" :class="form.weiterempfehlung === false ? 'selected' : ''">
+            <input type="radio" name="weiter" :value="false" @click="form.weiterempfehlung = false" class="sr-only" /> Nein
+          </label>
+          <button type="button" class="radio-pill text-slate-400" @click="form.weiterempfehlung = null">—</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- KN-Erfolg -->
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-4">
+      <h2 class="text-base font-semibold">Kompetenznachweis</h2>
+      <template x-for="q in knQuestions" :key="q.field">
+        <div>
+          <div class="flex items-baseline justify-between gap-3 mb-1">
+            <label class="text-sm font-medium text-slate-800" x-text="q.label"></label>
+          </div>
+          <div class="radio-group">
+            <template x-for="n in [1,2,3,4,5]" :key="n">
+              <label class="radio-pill" :class="form[q.field] === n ? 'selected' : ''">
+                <input type="radio" :name="q.field" :value="n" x-model.number="form[q.field]" class="sr-only" />
+                <span x-text="n"></span>
+              </label>
+            </template>
+            <button type="button" class="radio-pill text-slate-400" @click="form[q.field] = null">—</button>
+          </div>
+        </div>
+      </template>
+      <div>
+        <label class="field-label">Bestehensquote</label>
+        <select x-model="form.kn_ergebnis" class="input mt-1">
+          <option value="">— keine Angabe —</option>
+          <option value="unter_50">&lt; 50 %</option>
+          <option value="50_75">50 – 75 %</option>
+          <option value="75_90">75 – 90 %</option>
+          <option value="ueber_90">&gt; 90 %</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Taxonomie-Echo (P3) -->
+    <template x-if="declaredSk.length > 0 || declaredAspekte.length > 0">
+      <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+        <h2 class="text-base font-semibold">Welche Kompetenzen kamen tatsächlich zum Tragen?</h2>
+        <template x-if="declaredSk.length > 0">
+          <div>
+            <label class="field-label mb-2">Schlüsselkompetenzen</label>
+            <div class="flex flex-wrap gap-2 mt-1">
+              <template x-for="sk in declaredSk" :key="sk">
+                <label class="check-item" :class="form.wirksame_sk.includes(sk) ? 'checked' : ''">
+                  <input type="checkbox" :value="sk" :checked="form.wirksame_sk.includes(sk)"
+                    @change="form.wirksame_sk = $event.target.checked ? [...form.wirksame_sk, sk] : form.wirksame_sk.filter(s => s !== sk)" class="sr-only" />
+                  <span x-text="sk"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+        </template>
+        <template x-if="declaredAspekte.length > 0">
+          <div>
+            <label class="field-label mb-2">Gesellschafts-Aspekte</label>
+            <div class="flex flex-wrap gap-2 mt-1">
+              <template x-for="asp in declaredAspekte" :key="asp">
+                <label class="check-item" :class="form.wirksame_aspekte.includes(asp) ? 'checked' : ''">
+                  <input type="checkbox" :value="asp" :checked="form.wirksame_aspekte.includes(asp)"
+                    @change="form.wirksame_aspekte = $event.target.checked ? [...form.wirksame_aspekte, asp] : form.wirksame_aspekte.filter(a => a !== asp)" class="sr-only" />
+                  <span x-text="asp"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+        </template>
+      </section>
+    </template>
+
+    <!-- Qualitative Erfahrungen -->
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+      <h2 class="text-base font-semibold">Erfahrungen im Detail</h2>
+      <div>
+        <label class="field-label">Was hat gut funktioniert?</label>
+        <textarea x-model="form.was_funktionierte" rows="3" class="input mt-1"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Was hat nicht funktioniert?</label>
+        <textarea x-model="form.was_nicht_funktionierte" rows="3" class="input mt-1"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Vorschläge zur Verbesserung</label>
+        <textarea x-model="form.aenderungsvorschlaege" rows="3" class="input mt-1"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Eigene Anpassungen</label>
+        <textarea x-model="form.eigene_anpassungen" rows="3" class="input mt-1"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Weitere Anmerkungen</label>
+        <textarea x-model="form.anmerkungen" rows="2" class="input mt-1"></textarea>
+      </div>
+    </section>
+
+    <!-- Neue Idee (P4) -->
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+      <div class="flex items-center gap-3">
+        <label class="check-item" :class="form.neue_idee ? 'checked' : ''">
+          <input type="checkbox" x-model="form.neue_idee" class="sr-only" />
+          Ich habe eine neue/angepasste Herausforderung oder ein neues Handlungsprodukt erstellt
+        </label>
+      </div>
+      <template x-if="form.neue_idee">
+        <div class="space-y-3 pt-2 border-t border-slate-100">
+          <div>
+            <label class="field-label">Art der Idee</label>
+            <div class="radio-group mt-1">
+              <template x-for="opt in ideeTypOptionen" :key="opt.value">
+                <label class="radio-pill" :class="form.idee_typ === opt.value ? 'selected' : ''">
+                  <input type="radio" name="idee_typ" :value="opt.value" x-model="form.idee_typ" class="sr-only" />
+                  <span x-text="opt.label"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+          <div>
+            <label class="field-label">Titel <span class="text-red-500">*</span></label>
+            <input type="text" x-model="form.idee_titel" class="input mt-1" placeholder="Kurzer, beschreibender Titel" />
+          </div>
+          <div>
+            <label class="field-label">Beschreibung <span class="text-red-500">*</span></label>
+            <textarea x-model="form.idee_beschreibung" rows="4" class="input mt-1" placeholder="Was genau hast du erstellt oder verändert?"></textarea>
+          </div>
+          <div>
+            <label class="field-label">Dateien hochladen</label>
+            <p class="text-xs text-slate-500 mb-2">Max. 15 MB/Datei. Erlaubt: PDF, Word, Bilder, ZIP u.a.</p>
+            <template x-if="existingId">
+              <div>
+                <template x-if="form.idee_dateien.length > 0">
+                  <ul class="space-y-1 mb-2">
+                    <template x-for="f in form.idee_dateien" :key="f.path">
+                      <li class="flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5">
+                        <a :href="`/api/material-feedbacks/${existingId}/files?path=${encodeURIComponent(f.path)}`" target="_blank" class="underline text-slate-700 truncate" x-text="f.name"></a>
+                        <button type="button" class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0" @click="removeFile(f.path)">Entfernen</button>
+                      </li>
+                    </template>
+                  </ul>
+                </template>
+                <input type="file" multiple id="idee-files" class="text-sm text-slate-600" />
+              </div>
+            </template>
+            <template x-if="!existingId">
+              <p class="text-xs text-amber-600">Speichere zuerst als Entwurf, um Dateien hochzuladen.</p>
+            </template>
+          </div>
+          <div>
+            <label class="check-item" :class="form.freigabe_gemeinsamer_kn ? 'checked' : ''">
+              <input type="checkbox" x-model="form.freigabe_gemeinsamer_kn" class="sr-only" />
+              Darf das Kernteam (KT2) diese Idee für den gemeinsamen Kompetenznachweis verwenden?
+            </label>
+          </div>
+        </div>
+      </template>
+    </section>
+
+    <!-- Aktionsleiste -->
+    <div class="flex items-center justify-between gap-3 pt-2">
+      <p class="text-xs text-slate-500">
+        Status: <span class="font-mono" x-text="form.status"></span>
+        <template x-if="existingId">
+          <span class="ml-2">· Bestehender Bericht — Änderungen werden gespeichert.</span>
+        </template>
+      </p>
+      <div class="flex gap-2">
+        <button type="button" @click="save('entwurf')" :disabled="saving" class="py-2 px-4 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50 disabled:opacity-50">
+          Als Entwurf speichern
+        </button>
+        <button type="button" @click="save('eingereicht')" :disabled="saving" class="py-2 px-4 rounded-md text-white text-sm font-medium disabled:opacity-50" style="background: var(--brand)">
+          Feedback einreichen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ materialId: material.id, existingId: existing?.id ?? null }}>
+    window.materialFeedbackForm = function (initial, declaredSk, declaredAspekte) {
+      return {
+        materialId,
+        existingId,
+        form: { ...initial },
+        saving: false,
+        message: '',
+        messageType: 'success',
+        declaredSk,
+        declaredAspekte,
+        ratingQuestions: [
+          { field: 'tauglichkeit', label: 'Tauglichkeit für meinen Unterricht', hint: '1 = unbrauchbar · 5 = sehr gut nutzbar' },
+          { field: 'qualitaet_situation', label: 'Qualität der Situation', hint: '' },
+          { field: 'qualitaet_handlungsprodukt', label: 'Qualität des Handlungsprodukts', hint: '' },
+          { field: 'schwierigkeit', label: 'Schwierigkeit für die Lernenden', hint: '1 = zu leicht · 5 = zu anspruchsvoll' },
+          { field: 'motivation', label: 'Motivation/Engagement der Lernenden', hint: '' },
+        ],
+        knQuestions: [
+          { field: 'kn_validitaet', label: 'Validität (hat er die Kompetenz gemessen?)' },
+          { field: 'kn_fairness', label: 'Fairness (alle hatten eine faire Chance)' },
+          { field: 'kn_zeit_angemessen', label: 'Zeit angemessen' },
+          { field: 'kn_raster_brauchbar', label: 'Beurteilungsraster brauchbar' },
+        ],
+        niveauOptionen: [
+          { value: 'zu_leicht', label: 'Zu leicht' },
+          { value: 'passend', label: 'Passend' },
+          { value: 'zu_schwer', label: 'Zu schwer' },
+        ],
+        ideeTypOptionen: [
+          { value: 'herausforderung', label: 'Herausforderung' },
+          { value: 'handlungsprodukt', label: 'Handlungsprodukt' },
+          { value: 'kn_aufgabe', label: 'KN-Aufgabe' },
+        ],
+        async removeFile(path) {
+          if (!this.existingId) return
+          const res = await fetch(`/api/material-feedbacks/${this.existingId}/files?path=${encodeURIComponent(path)}`, { method: 'DELETE' })
+          const json = await res.json().catch(() => ({}))
+          if (res.ok) this.form.idee_dateien = json.data ?? this.form.idee_dateien.filter(f => f.path !== path)
+          else alert('Fehler beim Entfernen: ' + (json.error || res.statusText))
+        },
+        async uploadFiles() {
+          const input = document.getElementById('idee-files')
+          if (!input || !input.files || input.files.length === 0) return
+          const fd = new FormData()
+          for (const f of input.files) fd.append('files', f)
+          const res = await fetch(`/api/material-feedbacks/${this.existingId}/files`, { method: 'POST', body: fd })
+          const json = await res.json().catch(() => ({}))
+          if (res.ok) { this.form.idee_dateien = json.data ?? []; input.value = '' }
+          else throw new Error(json.error || 'Upload fehlgeschlagen.')
+        },
+        async save(targetStatus) {
+          if (this.form.neue_idee && (!this.form.idee_titel?.trim() || !this.form.idee_beschreibung?.trim())) {
+            this.messageType = 'error'
+            this.message = 'Bitte Titel und Beschreibung der neuen Idee ausfüllen.'
+            return
+          }
+          this.saving = true
+          this.message = ''
+          try {
+            const payload = {
+              ...this.form,
+              material_id: this.materialId,
+              status: targetStatus,
+              lehrjahr: this.form.lehrjahr === '' ? null : Number(this.form.lehrjahr),
+              dauer_lektionen: this.form.dauer_lektionen === '' || this.form.dauer_lektionen == null ? null : Number(this.form.dauer_lektionen),
+              getestet_am: this.form.getestet_am || null,
+            }
+            const res = this.existingId
+              ? await fetch(`/api/material-feedbacks/${this.existingId}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+              : await fetch(`/api/material-feedbacks`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+            const json = await res.json().catch(() => ({}))
+            if (!res.ok) throw new Error(json.error || 'Speichern fehlgeschlagen.')
+            if (json.data?.id && !this.existingId) this.existingId = json.data.id
+            if (this.form.neue_idee && this.existingId) await this.uploadFiles()
+            this.form.status = targetStatus
+            this.messageType = 'success'
+            this.message = targetStatus === 'eingereicht' ? 'Feedback eingereicht. Danke!' : 'Entwurf gespeichert.'
+            if (targetStatus === 'eingereicht') {
+              setTimeout(() => { window.location.href = '/meine-materialien?success=Feedback%20eingereicht.%20Danke!' }, 700)
+            }
+          } catch (err) {
+            this.messageType = 'error'
+            this.message = err.message
+          } finally {
+            this.saving = false
+          }
+        },
+      }
+    }
+  </script>
+</LP>

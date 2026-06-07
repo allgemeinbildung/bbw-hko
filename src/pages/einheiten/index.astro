@@ -88,8 +88,8 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
           <p class="text-sm text-slate-600 mb-3 leading-snug line-clamp-3">{e.titel}</p>
           <div class="text-xs text-slate-500 space-y-1">
             <div>
-              <span class="font-medium">Situationen:</span>{' '}
-              {(['A','B','C'] as const).map((l) => e.sit_titel[l] ? l : null).filter(Boolean).join(' · ') || '—'}
+              <span class="font-medium">Herausforderungen:</span>{' '}
+              {(['A','B','C'] as const).map((l) => e.hf_titel[l] ? l : null).filter(Boolean).join(' · ') || '—'}
             </div>
             {e.hybrid_situation_titel && (
               <div><span class="font-medium">KN-Hybrid:</span> {e.hybrid_situation_titel}</div>

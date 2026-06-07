@@ -1,6 +1,7 @@
 ---
 import Situationen from '../../../layouts/Situationen.astro'
 import { situationenIndex, lehrjahrForEntry } from '../../../lib/situationen'
+import { skNameByNr } from '../../../lib/sk-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -33,18 +34,34 @@ const initial = existing ?? {
   getestet_am: '',
   dauer_lektionen: '',
   tauglichkeit: null,
-  qualitaet: null,
+  qualitaet_situation: null,
+  qualitaet_handlungsprodukt: null,
   schwierigkeit: null,
+  niveau_passung: null,
+  noetiges_scaffolding: '',
   motivation: null,
   weiterempfehlung: null,
+  wirksame_sk: [],
+  wirksame_aspekte: [],
   was_funktionierte: '',
   was_nicht_funktionierte: '',
   aenderungsvorschlaege: '',
   eigene_anpassungen: '',
   anmerkungen: '',
+  neue_idee: false,
+  idee_typ: null,
+  idee_titel: '',
+  idee_beschreibung: '',
+  freigabe_gemeinsamer_kn: false,
+  idee_dateien: [],
   status: 'entwurf',
 }
+
+const declaredSk: string[] = (entry.sk ?? []).map((n) => skNameByNr(n))
+const declaredAspekte: string[] = entry.aspekte ?? []
 const initialJson = JSON.stringify(initial)
+const skJson = JSON.stringify(declaredSk)
+const aspekteJson = JSON.stringify(declaredAspekte)
 ---
 <Situationen title={`Feedback: ${entry.titel ?? entry.id}`} role={role}>
   <a href={`/situationen/${entry.id}`} class="text-sm text-slate-500 hover:text-slate-800 inline-flex items-center gap-1 mb-4">← Zurück zur Situation</a>
@@ -57,14 +74,12 @@ const initialJson = JSON.stringify(initial)
     </p>
   </div>
 
-  <div
-    x-data={`feedbackForm(${initialJson})`}
-    class="space-y-5"
-  >
+  <div x-data={`feedbackForm(${initialJson}, ${skJson}, ${aspekteJson})`} class="space-y-5">
     <div x-show="message" x-cloak class="rounded-md p-3 text-sm" :class="messageType === 'error' ? 'bg-red-50 text-red-700 border border-red-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'">
       <span x-text="message"></span>
     </div>
 
+    <!-- Kontext -->
     <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
       <h2 class="text-base font-semibold">Kontext der Erprobung</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
@@ -96,6 +111,7 @@ const initialJson = JSON.stringify(initial)
       </div>
     </section>
 
+    <!-- Bewertung -->
     <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-4">
       <h2 class="text-base font-semibold">Bewertung (1 = tief / nicht zutreffend, 5 = hoch / sehr gut)</h2>
 
@@ -117,7 +133,27 @@ const initialJson = JSON.stringify(initial)
         </div>
       </template>
 
-      <div>
+      <!-- Niveau-Passung -->
+      <div class="pt-3 border-t border-slate-100 space-y-3">
+        <div>
+          <label class="text-sm font-medium text-slate-800 block mb-1">Niveau-Passung</label>
+          <div class="radio-group">
+            <template x-for="opt in niveauOptionen" :key="opt.value">
+              <label class="radio-pill" :class="form.niveau_passung === opt.value ? 'selected' : ''">
+                <input type="radio" name="niveau_passung" :value="opt.value" x-model="form.niveau_passung" class="sr-only" />
+                <span x-text="opt.label"></span>
+              </label>
+            </template>
+            <button type="button" class="radio-pill text-slate-400" @click="form.niveau_passung = null">—</button>
+          </div>
+        </div>
+        <div x-show="form.niveau_passung && form.niveau_passung !== 'passend'">
+          <label class="field-label">Nötiges Scaffolding / Anpassungsbedarf</label>
+          <textarea x-model="form.noetiges_scaffolding" rows="2" class="input mt-1" placeholder="Was brauchen die Lernenden zusätzlich?"></textarea>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-100">
         <label class="text-sm font-medium text-slate-800 block mb-1">Würdest du diese Situation anderen LPs weiterempfehlen?</label>
         <div class="radio-group">
           <label class="radio-pill" :class="form.weiterempfehlung === true ? 'selected' : ''">
@@ -131,6 +167,43 @@ const initialJson = JSON.stringify(initial)
       </div>
     </section>
 
+    <!-- Taxonomie-Echo (P3) -->
+    <template x-if="declaredSk.length > 0 || declaredAspekte.length > 0">
+      <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+        <h2 class="text-base font-semibold">Welche Kompetenzen kamen tatsächlich zum Tragen?</h2>
+        <p class="text-xs text-slate-500">Nur die für diese Situation deklarierten SK / Aspekte sind auswählbar.</p>
+        <template x-if="declaredSk.length > 0">
+          <div>
+            <label class="field-label mb-2">Schlüsselkompetenzen</label>
+            <div class="flex flex-wrap gap-2 mt-1">
+              <template x-for="sk in declaredSk" :key="sk">
+                <label class="check-item" :class="form.wirksame_sk.includes(sk) ? 'checked' : ''">
+                  <input type="checkbox" :value="sk" :checked="form.wirksame_sk.includes(sk)"
+                    @change="form.wirksame_sk = $event.target.checked ? [...form.wirksame_sk, sk] : form.wirksame_sk.filter(s => s !== sk)" class="sr-only" />
+                  <span x-text="sk"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+        </template>
+        <template x-if="declaredAspekte.length > 0">
+          <div>
+            <label class="field-label mb-2">Gesellschafts-Aspekte</label>
+            <div class="flex flex-wrap gap-2 mt-1">
+              <template x-for="asp in declaredAspekte" :key="asp">
+                <label class="check-item" :class="form.wirksame_aspekte.includes(asp) ? 'checked' : ''">
+                  <input type="checkbox" :value="asp" :checked="form.wirksame_aspekte.includes(asp)"
+                    @change="form.wirksame_aspekte = $event.target.checked ? [...form.wirksame_aspekte, asp] : form.wirksame_aspekte.filter(a => a !== asp)" class="sr-only" />
+                  <span x-text="asp"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+        </template>
+      </section>
+    </template>
+
+    <!-- Qualitative Erfahrungen -->
     <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
       <h2 class="text-base font-semibold">Erfahrungen im Detail</h2>
       <div>
@@ -155,6 +228,68 @@ const initialJson = JSON.stringify(initial)
       </div>
     </section>
 
+    <!-- Neue Idee (P4) -->
+    <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
+      <div class="flex items-center gap-3">
+        <label class="check-item" :class="form.neue_idee ? 'checked' : ''">
+          <input type="checkbox" x-model="form.neue_idee" class="sr-only" />
+          Ich habe eine neue/angepasste Herausforderung oder ein neues Handlungsprodukt erstellt
+        </label>
+      </div>
+      <template x-if="form.neue_idee">
+        <div class="space-y-3 pt-2 border-t border-slate-100">
+          <div>
+            <label class="field-label">Art der Idee</label>
+            <div class="radio-group mt-1">
+              <template x-for="opt in ideeTypOptionen" :key="opt.value">
+                <label class="radio-pill" :class="form.idee_typ === opt.value ? 'selected' : ''">
+                  <input type="radio" name="idee_typ" :value="opt.value" x-model="form.idee_typ" class="sr-only" />
+                  <span x-text="opt.label"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+          <div>
+            <label class="field-label">Titel <span class="text-red-500">*</span></label>
+            <input type="text" x-model="form.idee_titel" class="input mt-1" placeholder="Kurzer, beschreibender Titel" />
+          </div>
+          <div>
+            <label class="field-label">Beschreibung <span class="text-red-500">*</span></label>
+            <textarea x-model="form.idee_beschreibung" rows="4" class="input mt-1" placeholder="Was genau hast du erstellt oder verändert?"></textarea>
+          </div>
+          <div>
+            <label class="field-label">Dateien hochladen</label>
+            <p class="text-xs text-slate-500 mb-2">Max. 15 MB/Datei. Erlaubt: PDF, Word, Bilder, ZIP u.a.</p>
+            <template x-if="existingId">
+              <div>
+                <template x-if="form.idee_dateien.length > 0">
+                  <ul class="space-y-1 mb-2">
+                    <template x-for="f in form.idee_dateien" :key="f.path">
+                      <li class="flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5">
+                        <a :href="`/api/feedbacks/${existingId}/files?path=${encodeURIComponent(f.path)}`" target="_blank" class="underline text-slate-700 truncate" x-text="f.name"></a>
+                        <button type="button" class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0" @click="removeFile(f.path)">Entfernen</button>
+                      </li>
+                    </template>
+                  </ul>
+                </template>
+                <input type="file" multiple id="idee-files" class="text-sm text-slate-600" />
+              </div>
+            </template>
+            <template x-if="!existingId">
+              <p class="text-xs text-amber-600">Speichere zuerst als Entwurf, um Dateien hochzuladen.</p>
+            </template>
+          </div>
+          <div>
+            <label class="check-item" :class="form.freigabe_gemeinsamer_kn ? 'checked' : ''">
+              <input type="checkbox" x-model="form.freigabe_gemeinsamer_kn" class="sr-only" />
+              Darf das Kernteam (KT2) diese Idee für den gemeinsamen Kompetenznachweis verwenden?
+            </label>
+          </div>
+        </div>
+      </template>
+    </section>
+
+    <!-- Aktionsleiste -->
     <div class="flex items-center justify-between gap-3 pt-2">
       <p class="text-xs text-slate-500">
         Status: <span class="font-mono" x-text="form.status"></span>
@@ -174,7 +309,7 @@ const initialJson = JSON.stringify(initial)
   </div>
 
   <script is:inline define:vars={{ situationId: entry.id, existingId: existing?.id ?? null }}>
-    window.feedbackForm = function (initial) {
+    window.feedbackForm = function (initial, declaredSk, declaredAspekte) {
       return {
         situationId,
         existingId,
@@ -182,13 +317,48 @@ const initialJson = JSON.stringify(initial)
         saving: false,
         message: '',
         messageType: 'success',
+        declaredSk,
+        declaredAspekte,
         ratingQuestions: [
           { field: 'tauglichkeit', label: 'Tauglichkeit für meinen Unterricht', hint: '1 = unbrauchbar · 5 = sehr gut nutzbar' },
-          { field: 'qualitaet', label: 'Qualität von Situation + Handlungsprodukt', hint: '1 = mangelhaft · 5 = exzellent' },
+          { field: 'qualitaet_situation', label: 'Qualität der Situation', hint: '1 = mangelhaft · 5 = exzellent' },
+          { field: 'qualitaet_handlungsprodukt', label: 'Qualität des Handlungsprodukts', hint: '1 = mangelhaft · 5 = exzellent' },
           { field: 'schwierigkeit', label: 'Schwierigkeit für die Lernenden', hint: '1 = zu leicht · 5 = zu anspruchsvoll' },
           { field: 'motivation', label: 'Motivation/Engagement der Lernenden', hint: '1 = uninteressiert · 5 = sehr engagiert' },
         ],
+        niveauOptionen: [
+          { value: 'zu_leicht', label: 'Zu leicht' },
+          { value: 'passend', label: 'Passend' },
+          { value: 'zu_schwer', label: 'Zu schwer' },
+        ],
+        ideeTypOptionen: [
+          { value: 'herausforderung', label: 'Herausforderung' },
+          { value: 'handlungsprodukt', label: 'Handlungsprodukt' },
+          { value: 'kn_aufgabe', label: 'KN-Aufgabe' },
+        ],
+        async removeFile(path) {
+          if (!this.existingId) return
+          const res = await fetch(`/api/feedbacks/${this.existingId}/files?path=${encodeURIComponent(path)}`, { method: 'DELETE' })
+          const json = await res.json().catch(() => ({}))
+          if (res.ok) this.form.idee_dateien = json.data ?? this.form.idee_dateien.filter(f => f.path !== path)
+          else alert('Fehler beim Entfernen: ' + (json.error || res.statusText))
+        },
+        async uploadFiles() {
+          const input = document.getElementById('idee-files')
+          if (!input || !input.files || input.files.length === 0) return
+          const fd = new FormData()
+          for (const f of input.files) fd.append('files', f)
+          const res = await fetch(`/api/feedbacks/${this.existingId}/files`, { method: 'POST', body: fd })
+          const json = await res.json().catch(() => ({}))
+          if (res.ok) { this.form.idee_dateien = json.data ?? []; input.value = '' }
+          else throw new Error(json.error || 'Upload fehlgeschlagen.')
+        },
         async save(targetStatus) {
+          if (this.form.neue_idee && (!this.form.idee_titel?.trim() || !this.form.idee_beschreibung?.trim())) {
+            this.messageType = 'error'
+            this.message = 'Bitte Titel und Beschreibung der neuen Idee ausfüllen.'
+            return
+          }
           this.saving = true
           this.message = ''
           try {
@@ -206,6 +376,7 @@ const initialJson = JSON.stringify(initial)
             const json = await res.json().catch(() => ({}))
             if (!res.ok) throw new Error(json.error || 'Speichern fehlgeschlagen.')
             if (json.data?.id && !this.existingId) this.existingId = json.data.id
+            if (this.form.neue_idee && this.existingId) await this.uploadFiles()
             this.form.status = targetStatus
             this.messageType = 'success'
             this.message = targetStatus === 'eingereicht' ? 'Feedback eingereicht. Danke!' : 'Entwurf gespeichert.'

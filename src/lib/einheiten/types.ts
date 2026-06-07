@@ -9,7 +9,7 @@ export interface Persona {
   ort?: string
 }
 
-export interface SubFacette {
+export interface SubHerausforderung {
   buchstabe?: string
   label?: string
 }
@@ -35,7 +35,7 @@ export interface SituationJson {
   modul?: string
   modul_titel?: string
   lehrgang?: string
-  situation: 'A' | 'B' | 'C'
+  buchstabe: 'A' | 'B' | 'C'
   sit_farbe?: string
   sit_farbe_light?: string
   sit_farbe_mid?: string
@@ -43,7 +43,7 @@ export interface SituationJson {
   emotion_tag?: string
   nrlp?: NrlpRef
   persona?: Persona
-  sub_facette?: SubFacette
+  herausforderung?: SubHerausforderung
   situation_text?: string
   zahlen_tabelle?: { label: string; wert: string }[]
   leitfrage?: string
@@ -90,8 +90,8 @@ export interface SetJson {
   id?: string
   prinzip_ref?: string
   kn_ref?: string
-  situationen?: string[]
-  konzept_progression?: { position: number | string; situation?: string; konzept: string }[]
+  herausforderungen?: string[]
+  konzept_progression?: { position: number | string; herausforderung?: string; konzept: string }[]
   austausch_phase?: {
     format?: string
     dauer_min?: number | string
@@ -143,7 +143,7 @@ export interface KnJson {
     definition_lang?: string    // LP: ausführlichere Erklärung
     aktivierte_trade_offs?: string[]
     alignment_note?: {
-      subfacetten_mapping?: { sit_letter: string; scene_element: string }[]
+      herausforderungen_mapping?: { hf_letter: string; scene_element: string }[]
     }
   }
   kn_typen?: KnTyp[]
@@ -161,7 +161,7 @@ export interface PrinzipJson {
   topic_slug?: string
   kern_kompetenzversprechen?: string
   bloom_zielprofil?: Record<string, string>
-  sub_facetten?: Record<string, { facette: string; konfliktart: string; handlungsprodukt_typ?: string; transferrable?: boolean }>
+  herausforderungen?: Record<string, { herausforderung: string; konfliktart: string; handlungsprodukt_typ?: string; transferrable?: boolean }>
   sk_pro_situation?: Record<string, number[]>
   sk_schnittmenge_kn?: { primary: number[] }
   aspekte?: Record<string, string>
@@ -178,7 +178,7 @@ export interface PrinzipJson {
     max_woerter?: number
     perspektive?: string
     must_activate_trade_offs_min?: number
-    must_combine_subfacetten?: string[]
+    must_combine_herausforderungen?: string[]
     lehrjahr_constraint?: string
   }
 }
@@ -212,8 +212,8 @@ export interface EinheitIndexEntry {
   dominanter_aspekt: string | null
   sk: number[]
   sprachmodi: string[]
-  situationen: string[]
-  sit_titel: { A: string | null; B: string | null; C: string | null }
+  herausforderungen: string[]
+  hf_titel: { A: string | null; B: string | null; C: string | null }
   hat_kn: boolean
   hat_begleiter: boolean
   hybrid_situation_titel: string | null
@@ -223,9 +223,9 @@ export interface EinheitIndexEntry {
 
 export interface EinheitFullSet {
   id: string
-  sit_A: SituationJson | null
-  sit_B: SituationJson | null
-  sit_C: SituationJson | null
+  hf_A: SituationJson | null
+  hf_B: SituationJson | null
+  hf_C: SituationJson | null
   kn: KnJson | null
   prinzip: PrinzipJson | null
   set: SetJson | null

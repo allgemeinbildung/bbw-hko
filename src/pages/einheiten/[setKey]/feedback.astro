@@ -1,6 +1,7 @@
 ---
 import Einheiten from '../../../layouts/Einheiten.astro'
 import { einheitById } from '../../../lib/einheiten'
+import { skNameByNr } from '../../../lib/sk-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -19,18 +20,23 @@ const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
 const defaultAbteilung = profile?.abteilung ?? ''
 
 const knTypen = meta.kn_typen
+const declaredSk: string[] = (meta.sk ?? []).map((n) => skNameByNr(n))
+const declaredAspekte: string[] = meta.aspekte ?? []
 ---
 <Einheiten title={`Feedback · ${meta.kompetenz_nr}`} role={role}>
   <div class="max-w-3xl mx-auto">
-    <a href={`/einheiten/${setKey}`} class="text-sm text-slate-500 hover:text-slate-700">← Zurueck zur Einheit</a>
+    <a href={`/einheiten/${setKey}`} class="text-sm text-slate-500 hover:text-slate-700">← Zurück zur Einheit</a>
     <h1 class="text-2xl font-semibold mt-2 mb-1">Feedback nach Unterricht</h1>
     <p class="text-sm text-slate-500 mb-6">
       Einheit <strong>{meta.kompetenz_nr} · {meta.slug.replace(/_/g, ' ')}</strong> — {meta.titel}
     </p>
 
+    <div id="fb-msg" class="text-sm mb-4 hidden"></div>
+
     <form id="fb-form" class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
       <input type="hidden" name="einheit_id" value={setKey} />
 
+      <!-- Kontext -->
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-3">Wann und mit wem hast du unterrichtet?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -61,13 +67,14 @@ const knTypen = meta.kn_typen
         </div>
       </section>
 
+      <!-- Komponenten -->
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-3">Welche Komponenten der Einheit hast du eingesetzt?</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
           <label class="check-item"><input type="checkbox" name="genutzt_sit_a" checked /> Situation A</label>
           <label class="check-item"><input type="checkbox" name="genutzt_sit_b" checked /> Situation B</label>
           <label class="check-item"><input type="checkbox" name="genutzt_sit_c" checked /> Situation C</label>
-          <label class="check-item"><input type="checkbox" name="genutzt_kn" checked /> KN</label>
+          <label class="check-item" id="kn-checkbox-wrap"><input type="checkbox" name="genutzt_kn" id="genutzt-kn-cb" checked /> KN</label>
         </div>
         {knTypen.length > 0 && (
           <label class="flex flex-col gap-1">
@@ -80,13 +87,15 @@ const knTypen = meta.kn_typen
         )}
       </section>
 
+      <!-- Bewertung -->
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-3">Bewertung (1 = sehr schwach … 5 = sehr stark)</h2>
         <div class="space-y-3">
           {[
             ['tauglichkeit', 'Passt die Einheit in den Unterricht?'],
-            ['qualitaet', 'Qualitaet von Situationen + Handlungsprodukt'],
-            ['schwierigkeit', 'Anspruch fuer die Lernenden'],
+            ['qualitaet_situation', 'Qualität der Situationen'],
+            ['qualitaet_handlungsprodukt', 'Qualität des Handlungsprodukts'],
+            ['schwierigkeit', 'Anspruch für die Lernenden'],
             ['motivation', 'Engagement der Lernenden'],
             ['kn_validitaet', 'KN: hat er die Kompetenz wirklich gemessen?'],
           ].map(([k, label]) => (
@@ -101,8 +110,27 @@ const knTypen = meta.kn_typen
               </div>
             </div>
           ))}
+
+          <!-- Niveau-Passung -->
+          <div class="pt-3 border-t border-slate-100">
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <span class="text-sm text-slate-700">Niveau-Passung</span>
+              <div class="radio-group">
+                <label class="radio-pill"><input type="radio" name="niveau_passung" value="zu_leicht" hidden /> Zu leicht</label>
+                <label class="radio-pill"><input type="radio" name="niveau_passung" value="passend" hidden /> Passend</label>
+                <label class="radio-pill"><input type="radio" name="niveau_passung" value="zu_schwer" hidden /> Zu schwer</label>
+              </div>
+            </div>
+            <div id="scaffolding-wrap" class="hidden mt-2">
+              <label class="flex flex-col gap-1">
+                <span class="field-label">Nötiges Scaffolding / Anpassungsbedarf</span>
+                <textarea class="input" name="noetiges_scaffolding" rows="2" placeholder="Was brauchen die Lernenden zusätzlich?"></textarea>
+              </label>
+            </div>
+          </div>
+
           <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100">
-            <span class="text-sm text-slate-700">Wuerdest du diese Einheit weiteren LP empfehlen?</span>
+            <span class="text-sm text-slate-700">Würdest du diese Einheit weiteren LP empfehlen?</span>
             <div class="radio-group">
               <label class="radio-pill"><input type="radio" name="weiterempfehlung" value="true" hidden /> Ja</label>
               <label class="radio-pill"><input type="radio" name="weiterempfehlung" value="false" hidden /> Nein</label>
@@ -111,8 +139,74 @@ const knTypen = meta.kn_typen
         </div>
       </section>
 
+      <!-- KN-Erfolg (P2) — sichtbar wenn genutzt_kn aktiv -->
+      <section id="kn-erfolg-section">
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Erfolg des Kompetenznachweises</h2>
+        <div class="space-y-3">
+          {[
+            ['kn_fairness', 'Fairness (alle hatten eine faire Chance)'],
+            ['kn_zeit_angemessen', 'Zeit angemessen'],
+            ['kn_raster_brauchbar', 'Beurteilungsraster brauchbar'],
+          ].map(([k, label]) => (
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-sm text-slate-700">{label}</span>
+              <div class="radio-group">
+                {[1, 2, 3, 4, 5].map((v) => (
+                  <label class="radio-pill">
+                    <input type="radio" name={k} value={v} hidden /> {v}
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Bestehensquote (Ergebnis-Bucket)</span>
+            <select class="input" name="kn_ergebnis">
+              <option value="">— keine Angabe —</option>
+              <option value="unter_50">&lt; 50 %</option>
+              <option value="50_75">50 – 75 %</option>
+              <option value="75_90">75 – 90 %</option>
+              <option value="ueber_90">&gt; 90 %</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- Taxonomie-Echo (P3) -->
+      {(declaredSk.length > 0 || declaredAspekte.length > 0) && (
+        <section>
+          <h2 class="text-base font-semibold text-slate-900 mb-2">Welche Kompetenzen kamen tatsächlich zum Tragen?</h2>
+          <p class="text-xs text-slate-500 mb-3">Nur die für diese Einheit deklarierten SK / Aspekte sind auswählbar.</p>
+          {declaredSk.length > 0 && (
+            <div class="mb-3">
+              <span class="field-label block mb-2">Schlüsselkompetenzen</span>
+              <div class="flex flex-wrap gap-2">
+                {declaredSk.map((sk) => (
+                  <label class="check-item">
+                    <input type="checkbox" name="wirksame_sk" value={sk} /> {sk}
+                  </label>
+                ))}
+              </div>
+            </div>
+          )}
+          {declaredAspekte.length > 0 && (
+            <div>
+              <span class="field-label block mb-2">Gesellschafts-Aspekte</span>
+              <div class="flex flex-wrap gap-2">
+                {declaredAspekte.map((asp) => (
+                  <label class="check-item">
+                    <input type="checkbox" name="wirksame_aspekte" value={asp} /> {asp}
+                  </label>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
+      <!-- Qualitative Rückmeldung -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Qualitative Rueckmeldung</h2>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Qualitative Rückmeldung</h2>
         <div class="space-y-3">
           <label class="flex flex-col gap-1">
             <span class="field-label">Was hat funktioniert?</span>
@@ -123,11 +217,11 @@ const knTypen = meta.kn_typen
             <textarea class="input" name="was_nicht_funktionierte" rows="3"></textarea>
           </label>
           <label class="flex flex-col gap-1">
-            <span class="field-label">Aenderungsvorschlaege</span>
+            <span class="field-label">Änderungsvorschläge</span>
             <textarea class="input" name="aenderungsvorschlaege" rows="3"></textarea>
           </label>
           <label class="flex flex-col gap-1">
-            <span class="field-label">Eigene Anpassungen (was hast du veraendert?)</span>
+            <span class="field-label">Eigene Anpassungen (was hast du verändert?)</span>
             <textarea class="input" name="eigene_anpassungen" rows="3"></textarea>
           </label>
           <label class="flex flex-col gap-1">
@@ -141,22 +235,57 @@ const knTypen = meta.kn_typen
         </div>
       </section>
 
+      <!-- Neue Idee (P4) -->
+      <section>
+        <label class="check-item" id="neue-idee-wrap">
+          <input type="checkbox" name="neue_idee" id="neue-idee-cb" />
+          Ich habe eine neue/angepasste Herausforderung oder ein neues Handlungsprodukt erstellt
+        </label>
+        <div id="neue-idee-section" class="hidden mt-4 space-y-3 pl-4 border-l-2 border-slate-200">
+          <div>
+            <span class="field-label block mb-2">Art der Idee</span>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="idee_typ" value="herausforderung" hidden /> Herausforderung</label>
+              <label class="radio-pill"><input type="radio" name="idee_typ" value="handlungsprodukt" hidden /> Handlungsprodukt</label>
+              <label class="radio-pill"><input type="radio" name="idee_typ" value="kn_aufgabe" hidden /> KN-Aufgabe</label>
+            </div>
+          </div>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Titel <span class="text-red-500">*</span></span>
+            <input class="input" name="idee_titel" placeholder="Kurzer, beschreibender Titel" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Beschreibung <span class="text-red-500">*</span></span>
+            <textarea class="input" name="idee_beschreibung" rows="4" placeholder="Was genau hast du erstellt oder verändert?"></textarea>
+          </label>
+          <div id="idee-upload-wrap">
+            <span class="field-label block mb-1">Dateien hochladen</span>
+            <p class="text-xs text-slate-500 mb-2">Max. 15 MB/Datei. Erlaubt: PDF, Word, Bilder, ZIP u.a.</p>
+            <div id="idee-file-list" class="space-y-1 mb-2"></div>
+            <p id="idee-upload-hint" class="text-xs text-amber-600 hidden">Speichere zuerst als Entwurf, um Dateien hochzuladen.</p>
+            <input type="file" multiple id="idee-files" class="text-sm text-slate-600" />
+          </div>
+          <label class="check-item" id="freigabe-wrap">
+            <input type="checkbox" name="freigabe_gemeinsamer_kn" />
+            Darf das Kernteam (KT2) diese Idee für den gemeinsamen Kompetenznachweis verwenden?
+          </label>
+        </div>
+      </section>
+
       <div class="flex items-center justify-end gap-3">
         <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
         <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Feedback einreichen</button>
       </div>
-
-      <div id="fb-msg" class="text-sm"></div>
     </form>
   </div>
 
   <script is:inline>
-    // Make radio-pill labels behave like clickable pills (mirroring intake form).
+    // Radio-pill click behaviour
     document.querySelectorAll('.radio-pill').forEach((pill) => {
       pill.addEventListener('click', () => {
         const input = pill.querySelector('input[type=radio]')
         if (!input) return
-        document.querySelectorAll(`.radio-pill input[name=${input.name}]`).forEach((other) => {
+        document.querySelectorAll(`.radio-pill input[name="${input.name}"]`).forEach((other) => {
           other.checked = false
           other.closest('.radio-pill').classList.remove('selected')
         })
@@ -169,48 +298,144 @@ const knTypen = meta.kn_typen
       apply(); cb.addEventListener('change', apply)
     })
 
+    // KN checkbox → toggle KN-Erfolg section
+    const knCb = document.getElementById('genutzt-kn-cb')
+    const knSection = document.getElementById('kn-erfolg-section')
+    function syncKn() { knSection.classList.toggle('hidden', !knCb.checked) }
+    syncKn(); knCb.addEventListener('change', syncKn)
+
+    // Niveau-Passung → scaffolding reveal
+    document.querySelectorAll('input[name="niveau_passung"]').forEach((r) => {
+      r.addEventListener('change', () => {
+        const val = document.querySelector('input[name="niveau_passung"]:checked')?.value
+        document.getElementById('scaffolding-wrap').classList.toggle('hidden', val === 'passend' || !val)
+      })
+    })
+
+    // Neue Idee → section toggle
+    const neueIdeeCb = document.getElementById('neue-idee-cb')
+    const neueIdeeSec = document.getElementById('neue-idee-section')
+    function syncNeueIdee() { neueIdeeSec.classList.toggle('hidden', !neueIdeeCb.checked) }
+    syncNeueIdee(); neueIdeeCb.addEventListener('change', syncNeueIdee)
+
+    // State: feedback row id returned after first save
+    let savedFeedbackId = null
+
     function gather(status) {
       const form = document.getElementById('fb-form')
       const fd = new FormData(form)
       const obj = { status }
+      const intFields = ['lehrjahr','tauglichkeit','qualitaet_situation','qualitaet_handlungsprodukt',
+        'schwierigkeit','motivation','kn_validitaet','kn_fairness','kn_zeit_angemessen','kn_raster_brauchbar']
       for (const [k, v] of fd.entries()) {
         if (v === '' || v == null) continue
         if (k === 'weiterempfehlung') obj[k] = v === 'true'
-        else if (['lehrjahr','tauglichkeit','qualitaet','schwierigkeit','motivation','kn_validitaet'].includes(k)) obj[k] = parseInt(v, 10)
+        else if (k === 'neue_idee') { /* handled via checkbox below */ }
+        else if (k === 'freigabe_gemeinsamer_kn') { /* handled below */ }
+        else if (k === 'wirksame_sk') { obj.wirksame_sk = obj.wirksame_sk ? [...obj.wirksame_sk, v] : [v] }
+        else if (k === 'wirksame_aspekte') { obj.wirksame_aspekte = obj.wirksame_aspekte ? [...obj.wirksame_aspekte, v] : [v] }
+        else if (intFields.includes(k)) obj[k] = parseInt(v, 10)
         else if (k === 'dauer_lektionen') obj[k] = parseFloat(v)
         else obj[k] = v
       }
-      // Checkboxes — explicit booleans
+      // Explicit booleans for checkboxes not in FormData when unchecked
       ;['genutzt_sit_a','genutzt_sit_b','genutzt_sit_c','genutzt_kn'].forEach((k) => {
-        const el = form.querySelector(`[name=${k}]`)
+        const el = form.querySelector(`[name="${k}"]`)
         obj[k] = !!(el && el.checked)
       })
+      obj.neue_idee = !!(form.querySelector('[name="neue_idee"]')?.checked)
+      obj.freigabe_gemeinsamer_kn = !!(form.querySelector('[name="freigabe_gemeinsamer_kn"]')?.checked)
+      obj.wirksame_sk = obj.wirksame_sk ?? []
+      obj.wirksame_aspekte = obj.wirksame_aspekte ?? []
       return obj
+    }
+
+    async function uploadIdeeDateien() {
+      const input = document.getElementById('idee-files')
+      if (!input || !input.files || input.files.length === 0 || !savedFeedbackId) return
+      const fd = new FormData()
+      for (const f of input.files) fd.append('files', f)
+      const res = await fetch(`/api/einheit-feedbacks/${savedFeedbackId}/files`, { method: 'POST', body: fd })
+      const body = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(body.error || 'Upload fehlgeschlagen.')
+      input.value = ''
+      renderFileList(body.data ?? [])
+    }
+
+    function renderFileList(files) {
+      const list = document.getElementById('idee-file-list')
+      list.innerHTML = ''
+      files.forEach((f) => {
+        const li = document.createElement('div')
+        li.className = 'flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5'
+        li.innerHTML = `<a href="/api/einheit-feedbacks/${savedFeedbackId}/files?path=${encodeURIComponent(f.path)}" target="_blank" class="underline text-slate-700 truncate">${f.name}</a>
+          <button class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0" data-path="${f.path}">Entfernen</button>`
+        li.querySelector('button').addEventListener('click', async () => {
+          const res = await fetch(`/api/einheit-feedbacks/${savedFeedbackId}/files?path=${encodeURIComponent(f.path)}`, { method: 'DELETE' })
+          const body = await res.json().catch(() => ({}))
+          if (res.ok) renderFileList(body.data ?? [])
+          else alert('Fehler: ' + (body.error || res.statusText))
+        })
+        list.appendChild(li)
+      })
     }
 
     async function send(status) {
       const msg = document.getElementById('fb-msg')
-      msg.textContent = 'Speichere…'
-      msg.className = 'text-sm text-slate-500'
       const payload = gather(status)
-      const res = await fetch('/api/einheit-feedbacks', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-      const body = await res.json().catch(() => ({}))
-      if (!res.ok) {
-        msg.textContent = 'Fehler: ' + (body.error || res.statusText)
+
+      if (payload.neue_idee && (!payload.idee_titel?.trim() || !payload.idee_beschreibung?.trim())) {
+        msg.textContent = 'Bitte Titel und Beschreibung der neuen Idee ausfüllen.'
         msg.className = 'text-sm text-red-600'
+        msg.classList.remove('hidden')
         return
       }
-      if (status === 'eingereicht') {
-        window.location.href = '/einheiten?success=Feedback eingereicht. Danke!'
-      } else {
-        msg.textContent = 'Entwurf gespeichert.'
-        msg.className = 'text-sm text-emerald-600'
+
+      msg.textContent = 'Speichere…'
+      msg.className = 'text-sm text-slate-500'
+      msg.classList.remove('hidden')
+
+      try {
+        let res, body
+        if (savedFeedbackId) {
+          res = await fetch(`/api/einheit-feedbacks/${savedFeedbackId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+        } else {
+          res = await fetch('/api/einheit-feedbacks', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+        }
+        body = await res.json().catch(() => ({}))
+        if (!res.ok) throw new Error(body.error || res.statusText)
+        if (body.data?.id) savedFeedbackId = body.data.id
+
+        // Show file input now that we have an id
+        document.getElementById('idee-upload-hint').classList.add('hidden')
+        document.getElementById('idee-files').classList.remove('hidden')
+
+        if (payload.neue_idee && savedFeedbackId) await uploadIdeeDateien()
+
+        if (status === 'eingereicht') {
+          window.location.href = '/einheiten?success=Feedback+eingereicht.+Danke!'
+        } else {
+          msg.textContent = 'Entwurf gespeichert.'
+          msg.className = 'text-sm text-emerald-600'
+        }
+      } catch (err) {
+        msg.textContent = 'Fehler: ' + err.message
+        msg.className = 'text-sm text-red-600'
       }
     }
+
+    // Show hint until first save
+    const ideeFileInput = document.getElementById('idee-files')
+    ideeFileInput.classList.add('hidden')
+    document.getElementById('idee-upload-hint').classList.remove('hidden')
 
     document.getElementById('save-draft').addEventListener('click', () => send('entwurf'))
     document.getElementById('submit-final').addEventListener('click', () => send('eingereicht'))

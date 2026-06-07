@@ -25,15 +25,6 @@ const primaryTiles = [
     blurb: 'Eigenes Material erfassen, mit nRLP-Taxonomie versehen und KT1 zur Review vorlegen.',
     cta: 'Zum Formular',
   },
-]
-
-const secondaryTiles = [
-  {
-    href: '/situationen',
-    title: 'Katalog Situationen',
-    blurb: 'Einzelne Situation (A–E) aus dem Pilot-Katalog auswählen, unterrichten und Feedback geben.',
-    cta: 'Zum Katalog',
-  },
   {
     href: '/jahresplanung',
     title: 'Jahresplanung 1. Lehrjahr',
@@ -73,8 +64,8 @@ const secondaryTiles = [
         </p>
       </div>
 
-      <!-- Primary: Einheiten + Einreichen -->
-      <div class="grid gap-6 md:grid-cols-2 mb-8">
+      <!-- Primary: Einheiten + Einreichen + Jahresplanung -->
+      <div class="grid gap-6 md:grid-cols-3 mb-8">
         {primaryTiles.map(t => (
           <a href={t.href} class="wappen-tile wappen-tile-primary group">
             <div class="wappen-lion" aria-hidden="true"></div>
@@ -92,22 +83,17 @@ const secondaryTiles = [
         ))}
       </div>
 
-      <!-- Secondary: Situationen + Jahresplanung -->
-      <div class="grid gap-4 md:grid-cols-2">
-        {secondaryTiles.map(t => (
-          <a href={t.href} class="wappen-tile wappen-tile-secondary group">
-            <div class="wappen-content">
-              <h2 class="wappen-title-sm">{t.title}</h2>
-              <p class="wappen-blurb-sm">{t.blurb}</p>
-              <span class="wappen-cta-sm">
-                {t.cta}
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
-                  <path d="M5 10h10M11 5l5 5-5 5" />
-                </svg>
-              </span>
-            </div>
+      <!-- Secondary: Situationen (text strip) -->
+      <div class="border-t border-slate-100 pt-5">
+        <p class="text-xs text-slate-400 uppercase tracking-wider mb-3">Weitere Angebote</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          <a href="/situationen" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-[var(--brand)] transition-colors">
+            Katalog Situationen
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+              <path d="M5 10h10M11 5l5 5-5 5" />
+            </svg>
           </a>
-        ))}
+        </div>
       </div>
     </main>
 

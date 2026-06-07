@@ -35,7 +35,7 @@ const microLabel = {
 
 function konzeptFor(set: SetJson | null, sit: SituationJson | null): string | undefined {
   if (!set?.konzept_progression || !sit?.id) return undefined
-  return set.konzept_progression.find((k) => k.situation === sit.id)?.konzept
+  return set.konzept_progression.find((k) => k.herausforderung === sit.id)?.konzept
 }
 
 export function DocAustausch({ set, sits, abteilung, edits, onEdit }: DocAustauschProps) {
@@ -73,7 +73,7 @@ export function DocAustausch({ set, sits, abteilung, edits, onEdit }: DocAustaus
                 const k = konzeptFor(set, s)
                 return (
                   <li key={i}>
-                    <span className="bsp-sit">HF {s.situation}:</span> {s.handlungsprodukt?.format || s.titel}
+                    <span className="bsp-sit">HF {s.buchstabe}:</span> {s.handlungsprodukt?.format || s.titel}
                     {k && <> — {k}</>}
                   </li>
                 )
@@ -162,7 +162,7 @@ export function DocAustausch({ set, sits, abteilung, edits, onEdit }: DocAustaus
                   <div style={microLabel}>Beispiele aus euren Herausforderungen</div>
                   <ul className="transfer-beispiele">
                     {validSits.map((s, i) => s.dekontextualisierung?.frage && (
-                      <li key={i}><span className="bsp-sit">HF {s.situation}:</span> {s.dekontextualisierung.frage}</li>
+                      <li key={i}><span className="bsp-sit">HF {s.buchstabe}:</span> {s.dekontextualisierung.frage}</li>
                     ))}
                   </ul>
                 </>

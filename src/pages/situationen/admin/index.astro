@@ -55,7 +55,8 @@ const stats = {
   gesichtet: feedbacks?.filter((f) => f.status === 'gesichtet').length ?? 0,
   weiter: feedbacks?.filter((f) => f.status === 'weitergeleitet_kt2').length ?? 0,
   avgTaug: avg((feedbacks ?? []).map((f) => f.tauglichkeit)),
-  avgQual: avg((feedbacks ?? []).map((f) => f.qualitaet)),
+  avgQualSit: avg((feedbacks ?? []).map((f) => f.qualitaet_situation ?? f.qualitaet)),
+  avgQualHP: avg((feedbacks ?? []).map((f) => f.qualitaet_handlungsprodukt)),
 }
 
 const statusBadge: Record<string, string> = {
@@ -71,7 +72,7 @@ const statusBadge: Record<string, string> = {
     <p class="text-sm text-slate-500 mt-1">Erfahrungsberichte der LPs · Sichtung &amp; Weiterleitung an KT2</p>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-5">
+  <div class="grid grid-cols-2 md:grid-cols-7 gap-3 mb-5">
     <div class="bg-white border border-slate-200 rounded-lg p-3">
       <div class="text-xs text-slate-500">Total</div>
       <div class="text-2xl font-semibold">{stats.total}</div>
@@ -93,8 +94,12 @@ const statusBadge: Record<string, string> = {
       <div class="text-2xl font-semibold">{stats.avgTaug}</div>
     </div>
     <div class="bg-white border border-slate-200 rounded-lg p-3">
-      <div class="text-xs text-slate-500">Ø Qualität</div>
-      <div class="text-2xl font-semibold">{stats.avgQual}</div>
+      <div class="text-xs text-slate-500">Ø Qual. Sit.</div>
+      <div class="text-2xl font-semibold">{stats.avgQualSit}</div>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-lg p-3">
+      <div class="text-xs text-slate-500">Ø Qual. HP</div>
+      <div class="text-2xl font-semibold">{stats.avgQualHP}</div>
     </div>
   </div>
 

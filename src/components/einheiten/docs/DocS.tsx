@@ -11,18 +11,18 @@ export interface DocSProps {
   onEdit: (key: string, value: string) => void
 }
 
-// C1 — Cockpit head: no Kompetenz badge, no emotion on the HF badge, sub-facette label only.
+// C1 — Cockpit head: no Kompetenz badge, no emotion on the HF badge, herausforderung label only.
 function CockpitHead({ sit }: { sit: SituationJson }) {
   return (
     <>
       <div className="badge-row" style={{ marginBottom: '2.5mm' }}>
-        <Badge>Herausforderung {sit.situation}</Badge>
+        <Badge>Herausforderung {sit.buchstabe}</Badge>
       </div>
       <h1 className="cockpit-title">{sit.titel}</h1>
       <p className="cockpit-sub">{sit.modul_titel}</p>
-      {sit.sub_facette?.label && (
+      {sit.herausforderung?.label && (
         <div className="badge-row" style={{ marginBottom: '3mm' }}>
-          <span className="subfacette">{sit.sub_facette.label}</span>
+          <span className="herausforderung">{sit.herausforderung.label}</span>
         </div>
       )}
     </>
@@ -393,11 +393,11 @@ function HandlungsproduktAnleitung({ sit }: { sit: SituationJson }) {
 function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info' | 'fill' }) {
   return ({ pageNum, pageTotal, children, bodyClass }: { pageNum: number; pageTotal: number; children: ReactNode; bodyClass?: string }) => (
     <A4Page
-      sit={common.sit.situation}
+      sit={common.sit.buchstabe}
       abteilung={common.abteilung}
-      docCode={`DOC-S · HF ${common.sit.situation} · ${common.mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`}
+      docCode={`DOC-S · HF ${common.sit.buchstabe} · ${common.mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`}
       docTitel={common.sit.titel}
-      sitLetter={common.sit.situation}
+      sitLetter={common.sit.buchstabe}
       pageNum={pageNum}
       pageTotal={pageTotal}
     >

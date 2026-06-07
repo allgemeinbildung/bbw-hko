@@ -1,11 +1,14 @@
 ---
 import Base from '../layouts/Base.astro'
 import { nrlp } from '../lib/nrlp'
+import { situationenIndex } from '../lib/situationen'
+import einheitenIndex from '../data/einheiten.index.json'
+import { skFullName } from '../lib/sk-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
 
-// Build a flat lookup { "1.1": { thema, titel, kompetenzen[] }, ... }
+// Build a flat lookup { "1.1": { thema, titel, kompetenzen[], sprachmodi[] }, ... }
 type KompetenzInfo = { nr: string; text: string }
 type LebensbezugInfo = {
   thema_nr: number
@@ -14,10 +17,16 @@ type LebensbezugInfo = {
   lebensbezug_text: string
   lektionen: number | null
   kompetenzen: KompetenzInfo[]
+  sprachmodi: string[]
 }
 const lookup: Record<string, LebensbezugInfo> = {}
 for (const thema of nrlp.themen as any[]) {
   for (const lb of (thema.lebensbezuege ?? []) as any[]) {
+    // Union of Sprachmodi recommended across this Lebensbezug's Kompetenzen
+    const sm = new Set<string>()
+    for (const k of (lb.kompetenzen ?? []) as any[]) {
+      for (const s of (k.sprachmodi ?? []) as any[]) if (s?.modus) sm.add(s.modus)
+    }
     lookup[lb.nr] = {
       thema_nr: thema.nr,
       thema_titel: thema.titel,
@@ -25,9 +34,75 @@ for (const thema of nrlp.themen as any[]) {
       lebensbezug_text: lb.text,
       lektionen: lb.lektionen ?? null,
       kompetenzen: (lb.kompetenzen ?? []).map((k: any) => ({ nr: k.nr, text: k.text })),
+      sprachmodi: [...sm],
     }
   }
 }
+
+// ── Feature 5: Situationen-Empfehlungen — grouped by Lebensbezug ──────────
+type SitRef = { id: string; titel: string; letter: string; format: string | null }
+const sitByLb: Record<string, SitRef[]> = {}
+for (const s of situationenIndex) {
+  if (!s.lebensbezug_nr) continue
+  ;(sitByLb[s.lebensbezug_nr] ??= []).push({
+    id: s.id,
+    titel: s.titel ?? s.id,
+    letter: s.sit_letter ?? '',
+    format: s.handlungsprodukt_format,
+  })
+}
+for (const k of Object.keys(sitByLb)) {
+  sitByLb[k].sort((a, b) => (a.letter || '').localeCompare(b.letter || ''))
+}
+
+// ── Herausforderungen (Einheiten) — central material, grouped by Lebensbezug ──
+// An Einheit's `modul` field (e.g. "1.1") equals the calendar's `lb` code.
+// These are the live, ready-to-teach units (Situationen above are inspiration).
+type HfRef = {
+  id: string
+  titel: string
+  kompetenz_nr: string
+  hat_kn: boolean
+  hat_begleiter: boolean
+  sit_count: number
+}
+const hfByLb: Record<string, HfRef[]> = {}
+for (const e of einheitenIndex as any[]) {
+  const lb = e.modul as string
+  if (!lb) continue
+  ;(hfByLb[lb] ??= []).push({
+    id: e.id,
+    titel: e.titel,
+    kompetenz_nr: e.kompetenz_nr,
+    hat_kn: Boolean(e.hat_kn),
+    hat_begleiter: Boolean(e.hat_begleiter),
+    sit_count: (e.situationen ?? []).length,
+  })
+}
+
+// ── Feature 1: SK-Abdeckungsmatrix (canonical nRLP) ──────────────────────
+// Source: zirkularitaet.schluesselkompetenzen[].wiederholungen — the official
+// "which SK is scheduled in which Thema" map. Columns = T1/T2/T3 (1. Lehrjahr),
+// cell = iteration depth R1/R2/R3 (light→dark), empty = not covered this year.
+const SK_COLS = ['T1', 'T2', 'T3'] as const
+const zSk = ((nrlp as any).zirkularitaet?.schluesselkompetenzen ?? []) as any[]
+const skMatrix = zSk.map((sk, i) => ({
+  nr: i + 1,
+  name: sk.bezeichnung as string,
+  full: skFullName[sk.bezeichnung] || sk.bezeichnung,
+  cells: SK_COLS.map((t) => (sk.wiederholungen?.[t] ?? null) as string | null),
+  inYear: SK_COLS.some((t) => Boolean(sk.wiederholungen?.[t])),
+}))
+// Thema → recommended SK names (for the Excel "SKs" column + coverage checklist)
+const themaSK: Record<number, string[]> = { 1: [], 2: [], 3: [] }
+zSk.forEach((sk) => {
+  ;([1, 2, 3] as const).forEach((t) => {
+    if (sk.wiederholungen?.['T' + t]) themaSK[t].push(sk.bezeichnung)
+  })
+})
+// Sprachmodi zirkularitaet (for the live coverage tab, Feature 8)
+const zSm = ((nrlp as any).zirkularitaet?.sprachmodi ?? []) as any[]
+const smCanon = zSm.map((s) => s.bezeichnung as string)
 
 // School calendar — derived from JAHRESPLANUNG_1Lehrjahr_2025-2026.md
 // week: ISO week label, n: lesson-week ordinal (1..40)
@@ -59,9 +134,9 @@ const calendar: WeekCell[] = [
   { n: 7, kw: 40, datum: '29. Sep – 3. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.2 Ressourcen & KN-Vorbereitung', lb: '1.2' },
   { n: 8, kw: 41, datum: '6.–10. Okt', month: 'Oktober', trimester: 'T1', thema: null, lessons: 0, type: 'holiday', title: 'Herbstferien' },
   { n: 9, kw: 42, datum: '13.–17. Okt', month: 'Oktober', trimester: 'T1', thema: null, lessons: 0, type: 'holiday', title: 'Herbstferien' },
-  { n: 10, kw: 43, datum: '20.–24. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'KN 1.1 Konfliktgespräch', note: 'Kompetenznachweis 1.1' },
+  { n: 10, kw: 43, datum: '20.–24. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'KN 1.1 Konfliktgespräch', note: 'Kompetenznachweis 1.1' },
   { n: 11, kw: 44, datum: '27.–31. Okt', month: 'Oktober', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'T1 Repetition & Vertiefung' },
-  { n: 12, kw: 45, datum: '3.–7. Nov', month: 'November', trimester: 'T1', thema: 1, lessons: 2, type: 'buffer', title: 'T1 Abschluss & Reflexion' },
+  { n: 12, kw: 45, datum: '3.–7. Nov', month: 'November', trimester: 'T1', thema: 1, lessons: 3, type: 'buffer', title: 'T1 Puffer — Abschluss' },
 
   // ─── THEMA 2 — Nov 10 – Mär 13 (18 weeks incl. Weihnachts- + Sportferien) ──
   { n: 13, kw: 46, datum: '10.–14. Nov', month: 'November', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2.1 Quellen kritisch prüfen', lb: '2.1' },
@@ -79,26 +154,26 @@ const calendar: WeekCell[] = [
   { n: 25, kw: 6, datum: '2.–6. Feb', month: 'Februar', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
   { n: 26, kw: 7, datum: '9.–13. Feb', month: 'Februar', trimester: 'T2', thema: null, lessons: 0, type: 'holiday', title: 'Sportferien' },
   { n: 27, kw: 8, datum: '16.–20. Feb', month: 'Februar', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Puffer Repetition' },
-  { n: 28, kw: 9, datum: '23.–27. Feb', month: 'Februar', trimester: 'T2', thema: 2, lessons: 2, type: 'buffer', title: 'T2 Puffer Vertiefung', note: 'Fastnachtsmontag frei' },
+  { n: 28, kw: 9, datum: '23.–27. Feb', month: 'Februar', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Puffer Vertiefung', note: 'Fastnachtsmontag frei' },
   { n: 29, kw: 10, datum: '2.–6. Mär', month: 'März', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Puffer Prüfungsvorbereitung' },
-  { n: 30, kw: 11, datum: '9.–13. Mär', month: 'März', trimester: 'T2', thema: 2, lessons: 3, type: 'buffer', title: 'T2 Abschluss & Konsolidierung' },
+  { n: 30, kw: 11, datum: '9.–13. Mär', month: 'März', trimester: 'T2', thema: 2, lessons: 3, type: 'teaching', title: 'T2 Abschluss & Übergabe zu T3' },
 
   // ─── THEMA 3 — Mär 16 – Jul 10 (17 weeks incl. Frühjahrsferien) ──────
   { n: 31, kw: 12, datum: '16.–20. Mär', month: 'März', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Bedürfnisse erkennen', lb: '3.1' },
   { n: 32, kw: 13, datum: '23.–27. Mär', month: 'März', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Budget planen', lb: '3.1' },
-  { n: 33, kw: 14, datum: '30. Mär – 3. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 2, type: 'teaching', title: 'T3.1 Verschuldung', lb: '3.1', note: 'Karfreitag frei' },
-  { n: 34, kw: 15, datum: '6.–10. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 2, type: 'teaching', title: 'T3.1 Abschluss', lb: '3.1', note: 'Ostermontag frei' },
+  { n: 33, kw: 14, datum: '30. Mär – 3. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Verschuldung', lb: '3.1', note: 'Karfreitag frei' },
+  { n: 34, kw: 15, datum: '6.–10. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.1 Abschluss', lb: '3.1', note: 'Ostermontag frei' },
   { n: 35, kw: 16, datum: '13.–17. Apr', month: 'April', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Nachhaltigkeit', lb: '3.2' },
   { n: 36, kw: 17, datum: '20.–24. Apr', month: 'April', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Frühjahrsferien' },
   { n: 37, kw: 18, datum: '27. Apr – 1. Mai', month: 'Mai', trimester: 'T3', thema: null, lessons: 0, type: 'holiday', title: 'Frühjahrsferien' },
   { n: 38, kw: 19, datum: '4.–8. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Konsumgewohnheiten', lb: '3.2' },
-  { n: 39, kw: 20, datum: '11.–15. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 1, type: 'teaching', title: 'T3.2 Klimawandel & Ressourcen', lb: '3.2', note: 'Auffahrt + Brücke frei' },
+  { n: 39, kw: 20, datum: '11.–15. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Klimawandel & Ressourcen', lb: '3.2', note: 'Auffahrt + Brücke frei' },
   { n: 40, kw: 21, datum: '18.–22. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Produktwert', lb: '3.2' },
-  { n: 41, kw: 22, datum: '25.–29. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 2, type: 'teaching', title: 'T3.2 Marktmechanismen', lb: '3.2', note: 'Pfingstmontag frei' },
+  { n: 41, kw: 22, datum: '25.–29. Mai', month: 'Mai', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Marktmechanismen', lb: '3.2', note: 'Pfingstmontag frei' },
   { n: 42, kw: 23, datum: '1.–5. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Anspruchsgruppen & Zielkonflikte', lb: '3.2' },
-  { n: 43, kw: 24, datum: '8.–12. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.2 Abschluss & Multimedia-Produkt', lb: '3.2' },
-  { n: 44, kw: 25, datum: '15.–19. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Kaufverträge', lb: '3.3' },
-  { n: 45, kw: 26, datum: '22.–26. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Reklamation & Korrespondenz', lb: '3.3' },
+  { n: 43, kw: 24, datum: '8.–12. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'teaching', title: 'T3.3 Kaufverträge & Reklamation', lb: '3.3' },
+  { n: 44, kw: 25, datum: '15.–19. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Puffer — Vertiefung' },
+  { n: 45, kw: 26, datum: '22.–26. Jun', month: 'Juni', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Puffer — Abschluss' },
   { n: 46, kw: 27, datum: '29. Jun – 3. Jul', month: 'Juli', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Puffer & Portfolio-Review' },
   { n: 47, kw: 28, datum: '6.–10. Jul', month: 'Juli', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Abschluss & Jahresreflexion' },
 ]
@@ -107,26 +182,26 @@ const themas = [
   {
     nr: 1,
     titel: 'Ins Berufsleben einsteigen',
-    lektionen: 21,
-    puffer: 8,
+    lektionen: 24,
+    puffer: 6,
     intensity: 'light',
-    perioden: ['Aug–Sep: Lehrvertrag, Rechte/Pflichten, Kommunikation (T1.1)', 'Sep–Okt: Lernorganisation & Ressourcen (T1.2)', 'Okt–Nov: KN 1.1 & T1-Puffer'],
+    perioden: ['Aug–Sep: Lehrvertrag, Rechte/Pflichten, Kommunikation (T1.1)', 'Sep–Okt: Lernorganisation & Ressourcen (T1.2)', 'Okt: KN 1.1 Konfliktgespräch & Repetition', 'Nov: T1 Abschluss & Übergabe'],
   },
   {
     nr: 2,
     titel: 'Meinungen bilden und mitgestalten',
-    lektionen: 30,
-    puffer: 11,
+    lektionen: 33,
+    puffer: 9,
     intensity: 'medium',
-    perioden: ['Nov: Quellen & Desinformation (T2.1)', 'Dez–Jan: Diskriminierung & Meinungsfreiheit (T2.2)', 'Jan–Feb: Mitwirkung & Standpunkte (T2.3)', 'Feb–Mär: T2-Puffer & Prüfung'],
+    perioden: ['Nov: Quellen & Desinformation (T2.1)', 'Dez–Jan: Diskriminierung & Meinungsfreiheit (T2.2)', 'Jan–Feb: Mitwirkung & Standpunkte (T2.3)', 'Feb–Mär: T2-Puffer (3 Wo.) & Abschluss'],
   },
   {
     nr: 3,
     titel: 'Bewusst konsumieren und handeln',
-    lektionen: 34,
-    puffer: 6,
+    lektionen: 33,
+    puffer: 12,
     intensity: 'dark',
-    perioden: ['Mär–Apr: Bedürfnisse & Budget (T3.1)', 'Apr–Jun: Nachhaltigkeit & Konsumkritik (T3.2)', 'Jun: Kaufverträge & Reklamation (T3.3)', 'Jul: T3-Puffer & Jahresreflexion'],
+    perioden: ['Mär–Apr: Bedürfnisse & Budget (T3.1)', 'Apr–Jun: Nachhaltigkeit & Konsumkritik (T3.2)', 'Jun: T3.3 Kaufverträge & Reklamation (1 Wo.)', 'Jun–Jul: T3-Puffer (4 Wo.) & Jahresreflexion'],
   },
 ]
 
@@ -163,6 +238,28 @@ const semesterColumns = ([1, 2] as const).map((s) => {
   }
   return { semester: s, groups }
 })
+
+// ── Feature 3: Feiertags-/Notizen-Panel ──────────────────────────────────
+// `note` mixes real public-holiday/Brücken-hints with didactic markers.
+// Split them so the panel reads cleanly when printed or shared.
+const isFeiertag = (n: string) => /frei|brücke|bruecke|ferien/i.test(n)
+const noteWeeks = calendar.filter((w) => w.note)
+const feiertagNotes = noteWeeks.filter((w) => isFeiertag(w.note!))
+const didaktikNotes = noteWeeks.filter((w) => !isFeiertag(w.note!))
+
+// ── Phase 2 (Feature 4/6/8): load this user's saved plan instances (SSR) ──
+// Table created by migration 011. Guarded so the page still renders if the
+// migration has not been applied yet (data → null, error swallowed).
+let plans: any[] = []
+try {
+  const { data } = await Astro.locals.supabase
+    .from('jahresplanung_plans')
+    .select('*')
+    .order('created_at', { ascending: true })
+  plans = data ?? []
+} catch {
+  plans = []
+}
 ---
 <Base title="Jahresplanung 1. Lehrjahr">
   <div class="min-h-screen flex flex-col">
@@ -185,7 +282,7 @@ const semesterColumns = ([1, 2] as const).map((s) => {
 
     <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="jahresplanung()" x-cloak>
       <!-- Title -->
-      <div class="mb-8">
+      <div class="mb-6">
         <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · EFZ 3-Jährige · nRLP Bildungsrat 2026-01</p>
         <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">ABU 1. Lehrjahr — Schuljahr 2025/2026</h1>
         <p class="text-slate-600 mt-3 max-w-3xl">
@@ -195,12 +292,55 @@ const semesterColumns = ([1, 2] as const).map((s) => {
         </p>
       </div>
 
+      <!-- Planungs-Toolbar (Feature 4/6/7/8) -->
+      <div class="jp-toolbar bg-white border border-slate-200 rounded-lg p-3 mb-8 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <!-- Klassen-Instanzen -->
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Klasse</span>
+          <template x-if="plans.length">
+            <select x-model="activePlanId" x-on:change="switchPlan($event.target.value)" class="jp-select">
+              <template x-for="p in plans" :key="p.id">
+                <option :value="p.id" x-text="p.label"></option>
+              </template>
+            </select>
+          </template>
+          <template x-if="!plans.length">
+            <span class="text-xs text-slate-400 italic">Basisvorlage (nicht gespeichert)</span>
+          </template>
+          <button class="jp-btn-ghost" x-on:click="newPlan()" :disabled="saving" title="Neue Klassen-Planung anlegen">＋ Klasse</button>
+        </div>
+
+        <span class="hidden sm:block w-px h-6 bg-slate-200"></span>
+
+        <!-- Panel-Umschalter -->
+        <div class="flex items-center gap-2">
+          <button class="jp-toggle" :class="editMode && 'jp-toggle-on'" x-on:click="editMode = !editMode">✏️ Bearbeiten</button>
+          <button class="jp-toggle" :class="showKn && 'jp-toggle-on'" x-on:click="showKn = !showKn; showCoverage = false">★ KN-Planung</button>
+          <button class="jp-toggle" :class="showCoverage && 'jp-toggle-on'" x-on:click="showCoverage = !showCoverage; showKn = false">▣ Abdeckung</button>
+        </div>
+
+        <span class="hidden sm:block w-px h-6 bg-slate-200"></span>
+
+        <!-- Export -->
+        <div class="flex items-center gap-2">
+          <button class="jp-btn-ghost" x-on:click="exportExcel()">⬇ Excel</button>
+          <button class="jp-btn-ghost" x-on:click="window.print()">🖨 PDF / Drucken</button>
+        </div>
+
+        <!-- Speicher-Status -->
+        <span class="ml-auto text-xs flex items-center gap-1.5" x-show="plans.length">
+          <span x-show="saving" class="text-slate-400">Speichern…</span>
+          <span x-show="!saving && savedAt" class="text-[var(--brand-dark)]">✓ gespeichert</span>
+          <span x-show="!saving && dirty && !savedAt" class="text-amber-600">ungespeichert</span>
+        </span>
+      </div>
+
       <!-- Summary stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
         <div class="stat-card"><p class="stat-label">Schulwochen</p><p class="stat-value">39</p></div>
         <div class="stat-card"><p class="stat-label">Verfügbar</p><p class="stat-value">117 L.</p></div>
-        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">85 L.</p></div>
-        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">25 L.</p></div>
+        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">90 L.</p></div>
+        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">27 L.</p></div>
         <div class="stat-card"><p class="stat-label">Ferienwochen</p><p class="stat-value">8</p></div>
       </div>
 
@@ -212,6 +352,8 @@ const semesterColumns = ([1, 2] as const).map((s) => {
         <span class="flex items-center gap-2"><span class="legend-swatch cell-thema3"></span>Thema 3 — Konsum</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-buffer"></span>Puffer / Repetition</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-holiday"></span>Ferien / Feiertag</span>
+        <span class="flex items-center gap-2"><span class="legend-hf">◆</span>Herausforderung (Einheit)</span>
+        <span class="flex items-center gap-2"><span class="legend-sit-mark">◇</span>Situationen (Inspiration)</span>
         <span class="ml-auto text-slate-500 italic">Tipp: Hover über eine Woche</span>
       </div>
 
@@ -236,6 +378,185 @@ const semesterColumns = ([1, 2] as const).map((s) => {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      <!-- Feature 1: SK-Abdeckungsmatrix (canonical nRLP) -->
+      <section class="bg-white border border-slate-200 rounded-lg p-6 mb-8">
+        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+          <h2 class="text-lg font-semibold text-slate-900">SK-Abdeckung im 1. Lehrjahr</h2>
+          <span class="text-xs text-slate-400">Quelle: nRLP-Zirkularität · 12 Schlüsselkompetenzen</span>
+        </div>
+        <p class="text-sm text-slate-600 mb-4 max-w-3xl">
+          Welche der 12 Schlüsselkompetenzen in T1–T3 eingeplant sind und in welcher
+          Iterationstiefe (R1 = erste Begegnung, R2/R3 = Wiederaufnahme & Vertiefung).
+          Graue Zeilen sind im 1. Lehrjahr <strong>nicht</strong> vorgesehen — vor einem
+          Kompetenznachweis sichtbar machen, was geübt wurde.
+        </p>
+        <div class="sk-matrix">
+          <div class="sk-row sk-head">
+            <div class="sk-name">Schlüsselkompetenz</div>
+            {SK_COLS.map((t) => <div class="sk-cell sk-colhead">{t}</div>)}
+          </div>
+          {skMatrix.map((sk) => (
+            <div class={`sk-row ${sk.inYear ? '' : 'sk-row-off'}`}>
+              <div class="sk-name" title={sk.full}>
+                <span class="sk-nr">{sk.nr}</span>{sk.name}
+              </div>
+              {sk.cells.map((c) => (
+                <div class={`sk-cell ${c ? `sk-r${c.replace('R', '')}` : 'sk-empty'}`}>
+                  {c ? c : '·'}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-xs text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r1"></span>R1 — erste Begegnung</span>
+          <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r2"></span>R2 — Wiederaufnahme</span>
+          <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r3"></span>R3 — Vertiefung</span>
+          <span class="flex items-center gap-1.5"><span class="sk-swatch sk-empty"></span>nicht im 1. Lehrjahr</span>
+        </div>
+      </section>
+
+      <!-- Feature 3: Feiertags- / Notizen-Panel -->
+      <details class="jp-notes mb-8" open>
+        <summary>
+          <span class="font-semibold text-slate-800">Feiertage, Brückentage &amp; didaktische Hinweise</span>
+          <span class="text-xs text-slate-400 ml-2">{noteWeeks.length} Wochen mit Vermerk</span>
+        </summary>
+        <div class="grid md:grid-cols-2 gap-6 mt-4">
+          <div>
+            <p class="jp-notes-h">Feiertage &amp; Brückentage</p>
+            {feiertagNotes.length ? (
+              <ul class="space-y-1.5">
+                {feiertagNotes.map((w) => (
+                  <li class="flex items-baseline gap-2 text-sm">
+                    <span class="jp-note-kw">KW {w.kw}</span>
+                    <span class="text-slate-400 text-xs w-28 shrink-0">{w.datum}</span>
+                    <span class="text-slate-700">{w.note}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : <p class="text-sm text-slate-400 italic">Keine.</p>}
+          </div>
+          <div>
+            <p class="jp-notes-h">Didaktische Hinweise (KN / Prüfungen)</p>
+            {didaktikNotes.length ? (
+              <ul class="space-y-1.5">
+                {didaktikNotes.map((w) => (
+                  <li class="flex items-baseline gap-2 text-sm">
+                    <span class="jp-note-kw">KW {w.kw}</span>
+                    <span class="text-slate-400 text-xs w-28 shrink-0">{w.datum}</span>
+                    <span class="text-slate-700">{w.note}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : <p class="text-sm text-slate-400 italic">Keine.</p>}
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 mt-3 italic">
+          Hinweis: Alle Schulwochen zählen 3 Lektionen — auch Wochen mit Feiertag.
+          Der Vermerk macht nur sichtbar, wo mit reduzierter Präsenz zu rechnen ist.
+        </p>
+      </details>
+
+      <!-- Feature 6: KN-Planungs-Sidebar -->
+      <section x-show="showKn" x-cloak class="jp-panel mb-8">
+        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+          <h2 class="text-lg font-semibold text-slate-900">Kompetenznachweise planen</h2>
+          <span class="text-xs text-slate-400">Termin · Format · Vorbereitung — pro Klasse gespeichert</span>
+        </div>
+        <p class="text-sm text-slate-600 mb-4" x-show="!plans.length">
+          Lege zuerst oben eine <strong>Klasse</strong> an, um KN-Termine zu speichern.
+        </p>
+        <div class="space-y-3" x-show="plans.length">
+          <template x-for="kn in knPlans" :key="kn.id">
+            <div class="jp-kn-row">
+              <div class="jp-kn-title" x-text="kn.label"></div>
+              <label class="jp-field">
+                <span>Woche</span>
+                <select x-model.number="kn.week_n" x-on:change="markDirty()" class="jp-select">
+                  <option :value="null">—</option>
+                  <template x-for="w in teachingWeeks()" :key="w.n">
+                    <option :value="w.n" x-text="`KW ${w.kw} · ${w.datum}`"></option>
+                  </template>
+                </select>
+              </label>
+              <label class="jp-field">
+                <span>Format</span>
+                <select x-model="kn.format" x-on:change="markDirty()" class="jp-select">
+                  <option value="">—</option>
+                  <option value="fachgespraech">Fachgespräch</option>
+                  <option value="mini_case_schriftlich">Mini-Case (schriftlich)</option>
+                  <option value="werkschau_transfer">Werkschau / Transfer</option>
+                  <option value="andere">Andere</option>
+                </select>
+              </label>
+              <label class="jp-field jp-field-grow">
+                <span>Notizen / vorbereitende Situationen</span>
+                <input type="text" x-model="kn.notes" x-on:input="markDirty()" class="jp-input" placeholder="z.B. Sit. 1.1_A + 1.1_B, Konfliktrollenspiel" />
+              </label>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <!-- Feature 8: Abdeckungs-Tab (SK + Sprachmodi, live) -->
+      <section x-show="showCoverage" x-cloak class="jp-panel mb-8">
+        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+          <h2 class="text-lg font-semibold text-slate-900">Abdeckung — was wurde tatsächlich geübt?</h2>
+          <span class="text-xs text-slate-400">Pro Lebensbezug abhaken · Vergleich mit nRLP-Empfehlung</span>
+        </div>
+        <p class="text-sm text-slate-600 mb-4" x-show="!plans.length">
+          Lege zuerst oben eine <strong>Klasse</strong> an, um die Abdeckung zu erfassen.
+        </p>
+        <div x-show="plans.length">
+          <!-- Live SK summary -->
+          <div class="mb-5">
+            <p class="jp-notes-h mb-2">SK-Abdeckung (abgehakt × · grau = nicht geübt)</p>
+            <div class="flex flex-wrap gap-2">
+              <template x-for="sk in skSummary()" :key="sk.name">
+                <span class="jp-sk-chip" :class="sk.count ? 'jp-sk-chip-on' : 'jp-sk-chip-off'" :title="sk.full">
+                  <span x-text="sk.name"></span>
+                  <span class="jp-sk-count" x-text="sk.count + '×'"></span>
+                </span>
+              </template>
+            </div>
+          </div>
+          <!-- Per-Lebensbezug checklists -->
+          <div class="space-y-4">
+            <template x-for="lb in taughtLbs()" :key="lb">
+              <div class="jp-cov-block">
+                <p class="jp-cov-h">
+                  <span x-text="lb"></span> ·
+                  <span class="text-slate-500 font-normal" x-text="lookup[lb] ? lookup[lb].thema_titel : ''"></span>
+                </p>
+                <div class="grid md:grid-cols-2 gap-x-6 gap-y-3 mt-2">
+                  <div>
+                    <p class="jp-cov-sub">Schlüsselkompetenzen (nRLP T<span x-text="lookup[lb] ? lookup[lb].thema_nr : ''"></span>)</p>
+                    <template x-for="skName in recSk(lb)" :key="skName">
+                      <label class="jp-check">
+                        <input type="checkbox" :checked="isDone(lb,'sk',skName)" x-on:change="toggle(lb,'sk',skName)" />
+                        <span x-text="skName"></span>
+                      </label>
+                    </template>
+                    <p x-show="!recSk(lb).length" class="text-xs text-slate-400 italic">Keine SK für dieses Thema gelistet.</p>
+                  </div>
+                  <div>
+                    <p class="jp-cov-sub">Sprachmodi</p>
+                    <template x-for="sm in recSm(lb)" :key="sm">
+                      <label class="jp-check">
+                        <input type="checkbox" :checked="isDone(lb,'sm',sm)" x-on:change="toggle(lb,'sm',sm)" />
+                        <span x-text="sm"></span>
+                      </label>
+                    </template>
+                    <p x-show="!recSm(lb).length" class="text-xs text-slate-400 italic">Keine Sprachmodi gelistet.</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
         </div>
       </section>
 
@@ -265,6 +586,15 @@ const semesterColumns = ([1, 2] as const).map((s) => {
                           x-on:mouseleave="hide()"
                           x-on:focus={`show(${w.n}, $event)`}
                           x-on:blur="hide()"
+                          x-on:click={`onCellClick(${w.n}, $event)`}
+                          :class={`{
+                            'cell-edit': editMode && mtype(${w.n}) !== 'holiday',
+                            'cell-holiday': mtype(${w.n}) === 'holiday',
+                            'cell-buffer': mtype(${w.n}) === 'buffer',
+                            'cell-thema1': mtype(${w.n}) === 'thema1',
+                            'cell-thema2': mtype(${w.n}) === 'thema2',
+                            'cell-thema3': mtype(${w.n}) === 'thema3'
+                          }`}
                           class={`lesson-cell ${
                             w.type === 'holiday' ? 'cell-holiday' :
                             w.type === 'buffer' ? 'cell-buffer' :
@@ -273,9 +603,12 @@ const semesterColumns = ([1, 2] as const).map((s) => {
                             w.thema === 3 ? 'cell-thema3' : 'cell-buffer'
                           }`}
                         >
+                          <span class="cell-star" x-show={`hasKn(${w.n})`} x-cloak>★</span>
                           <span class="cell-kw">KW {w.kw}</span>
-                          <span class="cell-lessons">{w.lessons > 0 ? `${w.lessons} L.` : '–'}</span>
-                          <span class="cell-title">{w.lb ? w.lb : (w.type === 'holiday' ? '★' : '·')}</span>
+                          <span class="cell-lessons" x-text={`mLessons(${w.n})`}>{w.lessons > 0 ? `${w.lessons} L.` : '–'}</span>
+                          <span class="cell-title" x-text={`mTitleMark(${w.n})`}>{w.lb ? w.lb : (w.type === 'holiday' ? '★' : '·')}</span>
+                          <span class="cell-hf" x-show={`hfCount(${w.n}) > 0`} x-cloak title="Herausforderungen (Einheiten)"><span class="cell-hf-dot">◆</span><span x-text={`hfCount(${w.n})`}></span></span>
+                          <span class="cell-sit" x-show={`sitCount(${w.n}) > 0`} x-cloak x-text={`sitCount(${w.n})`} title="Situationen zur Inspiration"></span>
                         </button>
                       ))}
                     </div>
@@ -300,19 +633,62 @@ const semesterColumns = ([1, 2] as const).map((s) => {
               <div class="flex items-start justify-between gap-3 mb-1.5">
                 <div>
                   <p class="text-[10px] uppercase tracking-wider text-slate-400" x-text="`KW ${active.kw} · ${active.datum}`"></p>
-                  <p class="text-sm font-semibold text-slate-900" x-text="active.title"></p>
+                  <p class="text-sm font-semibold text-slate-900" x-text="merged(active.n).title"></p>
                 </div>
-                <span class="tip-badge" :class="cellClass(active)" x-text="active.type === 'holiday' ? 'Frei' : (active.type === 'buffer' ? 'Puffer' : 'T' + active.thema)"></span>
+                <span class="tip-badge" :class="cellClass(merged(active.n))" x-text="merged(active.n).type === 'holiday' ? 'Frei' : (merged(active.n).type === 'buffer' ? 'Puffer' : 'T' + active.thema)"></span>
               </div>
               <p class="text-xs text-slate-500 mb-3" x-text="`${active.lessons} ${active.lessons === 1 ? 'Lektion' : 'Lektionen'}` + (active.note ? ' · ' + active.note : '')"></p>
+
+              <!-- Feature 4: Inline-Editor -->
+              <template x-if="editing">
+                <div class="jp-tip-edit">
+                  <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1.5">Woche bearbeiten</p>
+                  <div class="flex gap-2 mb-2">
+                    <button class="jp-mini" :class="merged(active.n).type==='teaching' && 'jp-mini-on'" x-on:click="setCellType(active.n,'teaching')">Unterricht</button>
+                    <button class="jp-mini" :class="merged(active.n).type==='buffer' && 'jp-mini-on'" x-on:click="setCellType(active.n,'buffer')">Puffer</button>
+                  </div>
+                  <input type="text" class="jp-input w-full mb-2" :value="merged(active.n).title" x-on:input="setCellTitle(active.n,$event.target.value)" placeholder="Titel der Woche" />
+                  <div class="flex justify-between items-center">
+                    <button class="text-xs text-slate-400 hover:text-slate-700" x-on:click="resetCell(active.n)">↺ zurücksetzen</button>
+                    <button class="text-xs text-[var(--brand-dark)] font-semibold" x-on:click="closeEditor()">Fertig</button>
+                  </div>
+                </div>
+              </template>
 
               <template x-if="active.lb && lookup[active.lb]">
                 <div class="border-t border-slate-200 pt-3">
                   <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-0.5">Lebensbezug <span x-text="active.lb"></span></p>
-                  <p class="text-xs text-slate-700 italic mb-2.5" x-text="lookup[active.lb].lebensbezug_text"></p>
+                  <p class="text-xs text-slate-700 italic mb-3" x-text="lookup[active.lb].lebensbezug_text"></p>
 
-                  <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Kompetenzen</p>
-                  <ul class="space-y-1.5">
+                  <!-- Herausforderungen (zentral) -->
+                  <template x-if="hfFor(active.lb).length">
+                    <div class="jp-hf-box mb-3">
+                      <p class="jp-hf-h">Herausforderungen · <span x-text="hfFor(active.lb).length"></span></p>
+                      <ul class="space-y-2">
+                        <template x-for="hf in hfFor(active.lb)" :key="hf.id">
+                          <li>
+                            <a :href="`/einheiten/${hf.id}`" target="_blank" rel="noopener" class="jp-hf-link">
+                              <span class="jp-hf-titel" x-text="hf.titel"></span>
+                              <span class="jp-hf-meta">
+                                <span class="jp-hf-kompetenz" x-text="hf.kompetenz_nr"></span>
+                                <span x-text="hf.sit_count + ' Situationen'"></span>
+                                <template x-if="hf.hat_kn"><span class="jp-hf-badge">KN</span></template>
+                                <template x-if="hf.hat_begleiter"><span class="jp-hf-badge">Begleiter</span></template>
+                                <span class="jp-hf-cta">Zur Herausforderung →</span>
+                              </span>
+                            </a>
+                          </li>
+                        </template>
+                      </ul>
+                    </div>
+                  </template>
+                  <template x-if="!hfFor(active.lb).length">
+                    <p class="jp-hf-empty mb-3">Noch keine fertige Herausforderung für diesen Lebensbezug — Situationen unten dienen als Inspiration.</p>
+                  </template>
+
+                  <!-- Kompetenzen (nRLP) -->
+                  <p class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Kompetenzen (nRLP)</p>
+                  <ul class="space-y-1.5 mb-3">
                     <template x-for="k in lookup[active.lb].kompetenzen" :key="k.nr">
                       <li class="text-xs leading-snug text-slate-700">
                         <span class="font-semibold text-[var(--brand-dark)]" x-text="k.nr"></span>
@@ -320,6 +696,24 @@ const semesterColumns = ([1, 2] as const).map((s) => {
                       </li>
                     </template>
                   </ul>
+
+                  <!-- Situationen (Inspiration, sekundär) -->
+                  <template x-if="sitFor(active.lb).length">
+                    <div class="jp-sit-box">
+                      <p class="jp-sit-h">Situationen zur Inspiration · <span x-text="sitFor(active.lb).length"></span></p>
+                      <ul class="space-y-0.5">
+                        <template x-for="s in sitFor(active.lb).slice(0, 5)" :key="s.id">
+                          <li>
+                            <a :href="`/situationen/${s.id}`" class="jp-sit-link" target="_blank" rel="noopener">
+                              <span class="jp-sit-letter" x-text="s.letter"></span>
+                              <span class="truncate" x-text="s.titel"></span>
+                            </a>
+                          </li>
+                        </template>
+                      </ul>
+                      <a :href="`/situationen?lebensbezug=${active.lb}`" target="_blank" rel="noopener" class="jp-sit-all" x-text="`Alle ${sitFor(active.lb).length} Situationen durchsuchen →`"></a>
+                    </div>
+                  </template>
                 </div>
               </template>
 
@@ -368,17 +762,61 @@ const semesterColumns = ([1, 2] as const).map((s) => {
 
   <script id="nrlp-lookup" type="application/json" set:html={JSON.stringify(lookup)} />
   <script id="jp-calendar" type="application/json" set:html={JSON.stringify(calendar)} />
+  <script id="jp-situationen" type="application/json" set:html={JSON.stringify(sitByLb)} />
+  <script id="jp-herausforderungen" type="application/json" set:html={JSON.stringify(hfByLb)} />
+  <script id="jp-thema-sk" type="application/json" set:html={JSON.stringify(themaSK)} />
+  <script id="jp-sk-names" type="application/json" set:html={JSON.stringify(skMatrix.map((s) => ({ nr: s.nr, name: s.name, full: s.full })))} />
+  <script id="jp-plans" type="application/json" set:html={JSON.stringify(plans)} />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" is:inline></script>
 
   <script is:inline>
     function jahresplanung() {
+      const parse = (id) => JSON.parse(document.getElementById(id).textContent)
+      const base = parse('jp-calendar')
+      const baseByN = Object.fromEntries(base.map((c) => [c.n, c]))
       return {
-        active: null,
-        tipX: 0,
-        tipY: 0,
-        hideTimer: null,
-        lookup: JSON.parse(document.getElementById('nrlp-lookup').textContent),
-        calendar: JSON.parse(document.getElementById('jp-calendar').textContent),
+        // ── static data ──
+        lookup: parse('nrlp-lookup'),
+        calendar: base,
+        baseByN,
+        sitByLb: parse('jp-situationen'),
+        hfByLb: parse('jp-herausforderungen'),
+        themaSK: parse('jp-thema-sk'),
+        skNames: parse('jp-sk-names'),
+        plans: parse('jp-plans'),
 
+        // ── tooltip state ──
+        active: null, tipX: 0, tipY: 0, hideTimer: null, pinned: false, editing: false,
+
+        // ── panel toggles ──
+        editMode: false, showKn: false, showCoverage: false,
+
+        // ── plan instance state (Feature 4/6/8) ──
+        activePlanId: null,
+        overrides: {},
+        knPlans: [],
+        coverage: {},
+        saving: false, dirty: false, savedAt: null, saveTimer: null,
+
+        init() {
+          if (this.plans.length) this.loadPlan(this.plans[0])
+          else this.knPlans = this.defaultKn()
+        },
+
+        // ── merged (base + overrides) ──
+        merged(n) { return { ...this.baseByN[n], ...(this.overrides[n] || {}) } },
+        mtype(n) {
+          const m = this.merged(n)
+          if (m.type === 'holiday') return 'holiday'
+          if (m.type === 'buffer') return 'buffer'
+          if (m.thema === 1) return 'thema1'
+          if (m.thema === 2) return 'thema2'
+          if (m.thema === 3) return 'thema3'
+          return 'buffer'
+        },
+        mLessons(n) { const l = this.merged(n).lessons; return l > 0 ? l + ' L.' : '–' },
+        mTitleMark(n) { const m = this.merged(n); return m.lb ? m.lb : (m.type === 'holiday' ? '★' : '·') },
         cellClass(w) {
           if (!w) return ''
           if (w.type === 'holiday') return 'cell-holiday'
@@ -389,6 +827,26 @@ const semesterColumns = ([1, 2] as const).map((s) => {
           return 'cell-buffer'
         },
 
+        // ── Herausforderungen (zentral) ──
+        hfFor(lb) { return this.hfByLb[lb] || [] },
+        hfCount(n) { const lb = this.merged(n).lb; return lb ? (this.hfByLb[lb] || []).length : 0 },
+
+        // ── Situationen (Inspiration, sekundär) ──
+        sitFor(lb) { return this.sitByLb[lb] || [] },
+        sitCount(n) { const lb = this.merged(n).lb; return lb ? (this.sitByLb[lb] || []).length : 0 },
+
+        // ── Feature 6: KN ──
+        defaultKn() {
+          return [
+            { id: 'kn1', label: 'KN 1 · Thema 1 — Einstieg', week_n: null, format: '', notes: '' },
+            { id: 'kn2', label: 'KN 2 · Thema 2 — Meinung bilden', week_n: null, format: '', notes: '' },
+            { id: 'kn3', label: 'KN 3 · Thema 3 — Konsum', week_n: null, format: '', notes: '' },
+          ]
+        },
+        hasKn(n) { return this.knPlans.some((k) => Number(k.week_n) === n) },
+        teachingWeeks() { return this.calendar.filter((c) => this.merged(c.n).type === 'teaching') },
+
+        // ── tooltip ──
         show(n, ev) {
           this.cancelHide()
           const w = this.calendar.find((c) => c.n === n)
@@ -399,17 +857,152 @@ const semesterColumns = ([1, 2] as const).map((s) => {
           let x = rect.left - containerRect.left + rect.width / 2 - tooltipWidth / 2
           x = Math.max(8, Math.min(x, containerRect.width - tooltipWidth - 8))
           const y = rect.bottom - containerRect.top + 10
-          this.tipX = x
-          this.tipY = y
-          this.active = w
+          this.tipX = x; this.tipY = y; this.active = w
+        },
+        hide() { if (this.pinned) return; this.hideTimer = setTimeout(() => { this.active = null }, 120) },
+        cancelHide() { if (this.hideTimer) { clearTimeout(this.hideTimer); this.hideTimer = null } },
+
+        // ── Feature 4: editing ──
+        onCellClick(n, ev) {
+          if (this.editMode && this.mtype(n) !== 'holiday') this.openEditor(n, ev)
+          else this.show(n, ev)
+        },
+        openEditor(n, ev) { this.show(n, ev); this.editing = true; this.pinned = true },
+        closeEditor() { this.editing = false; this.pinned = false; this.active = null },
+        setCellType(n, type) {
+          const ov = { ...(this.overrides[n] || {}), type }
+          if (type === 'teaching' && this.baseByN[n].thema == null) ov.thema = this.baseByN[n].thema
+          this.overrides = { ...this.overrides, [n]: ov }
+          this.markDirty()
+        },
+        setCellTitle(n, val) {
+          this.overrides = { ...this.overrides, [n]: { ...(this.overrides[n] || {}), title: val } }
+          this.markDirty()
+        },
+        resetCell(n) {
+          const o = { ...this.overrides }; delete o[n]; this.overrides = o; this.markDirty()
         },
 
-        hide() {
-          this.hideTimer = setTimeout(() => { this.active = null }, 120)
+        // ── Feature 8: coverage ──
+        taughtLbs() {
+          const seen = []
+          for (const c of this.calendar) {
+            const m = this.merged(c.n)
+            if (m.type === 'teaching' && m.lb && !seen.includes(m.lb)) seen.push(m.lb)
+          }
+          return seen
+        },
+        recSk(lb) { const info = this.lookup[lb]; return info ? (this.themaSK[info.thema_nr] || []) : [] },
+        recSm(lb) { const info = this.lookup[lb]; return info ? (info.sprachmodi || []) : [] },
+        covKey(kind) { return kind === 'sk' ? 'sk_done' : 'sprachmodus_done' },
+        isDone(lb, kind, name) {
+          const c = this.coverage[lb]; if (!c) return false
+          return (c[this.covKey(kind)] || []).includes(name)
+        },
+        toggle(lb, kind, name) {
+          const key = this.covKey(kind)
+          const c = { sk_done: [], sprachmodus_done: [], ...(this.coverage[lb] || {}) }
+          const arr = [...(c[key] || [])]
+          const i = arr.indexOf(name)
+          if (i >= 0) arr.splice(i, 1); else arr.push(name)
+          c[key] = arr
+          this.coverage = { ...this.coverage, [lb]: c }
+          this.markDirty()
+        },
+        skSummary() {
+          return this.skNames.map((sk) => {
+            let count = 0
+            for (const lb in this.coverage) {
+              if ((this.coverage[lb].sk_done || []).includes(sk.name)) count++
+            }
+            return { name: sk.name, full: sk.full, count }
+          })
         },
 
-        cancelHide() {
-          if (this.hideTimer) { clearTimeout(this.hideTimer); this.hideTimer = null }
+        // ── persistence ──
+        markDirty() { this.dirty = true; this.savedAt = null; this.scheduleSave() },
+        scheduleSave() {
+          if (!this.activePlanId) return
+          if (this.saveTimer) clearTimeout(this.saveTimer)
+          this.saveTimer = setTimeout(() => this.save(), 2000)
+        },
+        async save() {
+          if (!this.activePlanId) return
+          this.saving = true
+          try {
+            const res = await fetch('/api/jahresplan/' + this.activePlanId, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                calendar_overrides: this.overrides,
+                kn_plans: this.knPlans,
+                coverage: this.coverage,
+              }),
+            })
+            if (!res.ok) throw new Error((await res.json()).error || 'Fehler')
+            this.dirty = false; this.savedAt = Date.now()
+          } catch (e) {
+            alert('Speichern fehlgeschlagen: ' + e.message)
+          } finally {
+            this.saving = false
+          }
+        },
+        loadPlan(p) {
+          this.activePlanId = p.id
+          this.overrides = p.calendar_overrides || {}
+          this.knPlans = (p.kn_plans && p.kn_plans.length) ? p.kn_plans : this.defaultKn()
+          this.coverage = p.coverage || {}
+          this.dirty = false; this.savedAt = null
+        },
+        switchPlan(id) {
+          const p = this.plans.find((x) => x.id === id)
+          if (p) this.loadPlan(p)
+        },
+        async newPlan() {
+          const label = prompt('Name der Klassen-Planung (z.B. 26EFZ-A):')
+          if (!label) return
+          this.saving = true
+          try {
+            const res = await fetch('/api/jahresplan', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ label }),
+            })
+            const json = await res.json()
+            if (!res.ok) throw new Error(json.error || 'Fehler')
+            this.plans = [...this.plans, json.data]
+            this.loadPlan(json.data)
+          } catch (e) {
+            alert('Anlegen fehlgeschlagen: ' + e.message + '\n(Migration 011 angewendet?)')
+          } finally {
+            this.saving = false
+          }
+        },
+
+        // ── Feature 7: Excel export ──
+        exportExcel() {
+          if (typeof XLSX === 'undefined') { alert('Excel-Bibliothek noch nicht geladen.'); return }
+          const rows = [['KW', 'Datum', 'Thema', 'Typ', 'Titel', 'Lektionen', 'Lebensbezug', 'Herausforderungen', 'Kompetenzen', 'Schlüsselkompetenzen', 'Sprachmodi', 'Notizen']]
+          const typLabel = { teaching: 'Unterricht', buffer: 'Puffer', holiday: 'Ferien' }
+          for (const c of this.calendar) {
+            const m = this.merged(c.n)
+            if (m.type === 'holiday') continue
+            const info = m.lb ? this.lookup[m.lb] : null
+            const komp = info ? info.kompetenzen.map((k) => k.nr + ' ' + k.text).join('\n') : ''
+            const hf = m.lb ? (this.hfByLb[m.lb] || []).map((h) => h.kompetenz_nr + ' · ' + h.titel).join('\n') : ''
+            const sk = m.thema ? (this.themaSK[m.thema] || []).join(', ') : ''
+            const sm = info ? (info.sprachmodi || []).join(', ') : ''
+            rows.push([
+              'KW ' + m.kw, m.datum, m.thema ? 'T' + m.thema : '', typLabel[m.type] || m.type,
+              m.title, m.lessons, m.lb || '', hf, komp, sk, sm, m.note || '',
+            ])
+          }
+          const ws = XLSX.utils.aoa_to_sheet(rows)
+          ws['!cols'] = [{ wch: 7 }, { wch: 16 }, { wch: 6 }, { wch: 11 }, { wch: 34 }, { wch: 8 }, { wch: 11 }, { wch: 48 }, { wch: 50 }, { wch: 34 }, { wch: 30 }, { wch: 24 }]
+          const wb = XLSX.utils.book_new()
+          const label = this.activePlanId ? (this.plans.find((p) => p.id === this.activePlanId)?.label || 'Plan') : 'Basisvorlage'
+          XLSX.utils.book_append_sheet(wb, ws, 'Jahresplanung')
+          XLSX.writeFile(wb, 'Jahresplanung_1LJ_' + label.replace(/[^\w-]+/g, '_') + '.xlsx')
         },
       }
     }
@@ -449,6 +1042,8 @@ const semesterColumns = ([1, 2] as const).map((s) => {
       height: 0.875rem;
       border-radius: 3px;
     }
+    .legend-hf { color: var(--brand-dark); font-size: 0.7rem; }
+    .legend-sit-mark { color: #94a3b8; font-size: 0.7rem; }
 
     /* Lesson cells — single green palette, intensity = thema position in year */
     .lesson-cell {
@@ -543,5 +1138,169 @@ const semesterColumns = ([1, 2] as const).map((s) => {
     .thema-titel { font-size: 1rem; font-weight: 600; color: #0f172a; margin-top: 0.125rem; }
     .thema-stat-label { font-size: 0.65rem; text-transform: uppercase; font-weight: 600; color: #64748b; letter-spacing: 0.04em; }
     .thema-stat-value { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-top: 0.125rem; }
+
+    [x-cloak] { display: none !important; }
+
+    /* ── Toolbar (Feature 4/6/7/8) ── */
+    .jp-select, .jp-input {
+      border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.3rem 0.5rem;
+      font-size: 0.8rem; color: #0f172a; background: white; max-width: 100%;
+    }
+    .jp-select:focus, .jp-input:focus { outline: none; border-color: var(--brand); box-shadow: var(--brand-ring); }
+    .jp-btn-ghost {
+      font-size: 0.78rem; font-weight: 600; color: #334155;
+      border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.35rem 0.7rem;
+      background: white; transition: border-color .15s, color .15s;
+    }
+    .jp-btn-ghost:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .jp-btn-ghost:disabled { opacity: .5; cursor: not-allowed; }
+    .jp-toggle {
+      font-size: 0.78rem; font-weight: 600; color: #475569;
+      border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.35rem 0.7rem;
+      background: #f8fafc; transition: all .15s;
+    }
+    .jp-toggle:hover { border-color: var(--brand); }
+    .jp-toggle-on { background: var(--brand); color: white; border-color: var(--brand); }
+
+    .jp-panel { background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1.5rem; }
+
+    /* ── Feature 1: SK matrix ── */
+    .sk-matrix { display: flex; flex-direction: column; gap: 3px; }
+    .sk-row { display: grid; grid-template-columns: minmax(0,1fr) 56px 56px 56px; gap: 3px; align-items: stretch; }
+    .sk-head .sk-colhead { font-size: 0.7rem; font-weight: 700; color: #64748b; }
+    .sk-head .sk-name { font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+    .sk-name {
+      display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: #334155;
+      padding: 0.35rem 0.5rem; background: #f8fafc; border-radius: 4px;
+    }
+    .sk-nr {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.1rem; height: 1.1rem; border-radius: 9999px; background: #e2e8f0;
+      font-size: 0.62rem; font-weight: 700; color: #475569; flex-shrink: 0;
+    }
+    .sk-cell {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; border-radius: 4px; min-height: 1.9rem;
+    }
+    .sk-colhead { background: transparent; }
+    .sk-r1 { background: var(--brand-tint); color: var(--brand-dark); }
+    .sk-r2 { background: var(--brand); color: white; }
+    .sk-r3 { background: var(--brand-dark); color: white; }
+    .sk-empty { background: #f1f5f9; color: #cbd5e1; }
+    .sk-row-off .sk-name { opacity: 0.55; }
+    .sk-swatch { display: inline-block; width: 1rem; height: 0.75rem; border-radius: 3px; }
+
+    /* ── Feature 3: notes panel ── */
+    .jp-notes {
+      background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem 1.25rem;
+    }
+    .jp-notes > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; }
+    .jp-notes > summary::-webkit-details-marker { display: none; }
+    .jp-notes > summary::before { content: '▸'; color: #94a3b8; margin-right: 0.5rem; transition: transform .15s; }
+    .jp-notes[open] > summary::before { transform: rotate(90deg); }
+    .jp-notes-h { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand-dark); margin-bottom: 0.5rem; }
+    .jp-note-kw {
+      font-size: 0.65rem; font-weight: 700; color: var(--brand-dark);
+      background: var(--brand-tint); border-radius: 4px; padding: 0.05rem 0.35rem; flex-shrink: 0;
+    }
+
+    /* ── Feature 6: KN sidebar ── */
+    .jp-kn-row {
+      display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.75rem;
+      border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem; border-left: 3px solid var(--brand);
+    }
+    .jp-kn-title { font-size: 0.85rem; font-weight: 700; color: #0f172a; width: 100%; }
+    .jp-field { display: flex; flex-direction: column; gap: 0.2rem; }
+    .jp-field > span { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #64748b; }
+    .jp-field-grow { flex: 1; min-width: 200px; }
+    .jp-field-grow .jp-input { width: 100%; }
+
+    /* ── Feature 8: coverage ── */
+    .jp-cov-block { border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem; }
+    .jp-cov-h { font-size: 0.85rem; font-weight: 700; color: #0f172a; }
+    .jp-cov-sub { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #64748b; margin-bottom: 0.35rem; }
+    .jp-check { display: flex; align-items: flex-start; gap: 0.4rem; font-size: 0.78rem; color: #334155; padding: 0.12rem 0; cursor: pointer; }
+    .jp-check input { margin-top: 0.15rem; accent-color: var(--brand); }
+    .jp-sk-chip {
+      display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 600;
+      border-radius: 9999px; padding: 0.15rem 0.55rem; border: 1px solid transparent;
+    }
+    .jp-sk-chip-on { background: var(--brand); color: white; }
+    .jp-sk-chip-off { background: #f1f5f9; color: #94a3b8; }
+    .jp-sk-count { font-weight: 700; opacity: 0.85; }
+
+    /* ── cell additions ── */
+    .cell-star {
+      position: absolute; top: 2px; right: 3px; font-size: 0.6rem; color: #f59e0b; line-height: 1;
+      text-shadow: 0 0 2px rgba(0,0,0,0.15);
+    }
+    /* Herausforderungen — prominent, bottom-left */
+    .cell-hf {
+      position: absolute; bottom: 2px; left: 3px; display: inline-flex; align-items: center; gap: 1px;
+      font-size: 0.55rem; font-weight: 800; line-height: 1; padding: 0.08rem 0.28rem;
+      border-radius: 9999px; background: var(--brand-dark); color: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+    .cell-thema2 .cell-hf, .cell-thema3 .cell-hf { background: #fff; color: var(--brand-dark); }
+    .cell-hf-dot { font-size: 0.5rem; }
+    /* Situationen count — subtle, secondary, bottom-right */
+    .cell-sit {
+      position: absolute; bottom: 2px; right: 3px; font-size: 0.5rem; font-weight: 600;
+      color: #94a3b8; opacity: 0.85;
+    }
+    .cell-thema2 .cell-sit, .cell-thema3 .cell-sit { color: rgba(255,255,255,0.7); }
+    .cell-sit::before { content: '◇ '; }
+    .cell-edit { cursor: cell; box-shadow: 0 0 0 2px rgba(14,110,58,0.35) inset; }
+
+    /* Herausforderungen-Block im Tooltip (zentral) */
+    .jp-hf-box { background: var(--brand-tint); border: 1px solid rgba(14,110,58,0.22); border-radius: 8px; padding: 0.6rem 0.7rem; }
+    .jp-hf-h { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; color: var(--brand-dark); margin-bottom: 0.45rem; }
+    .jp-hf-link { display: block; text-decoration: none; border-radius: 6px; padding: 0.35rem 0.45rem; background: white; border: 1px solid rgba(14,110,58,0.15); transition: border-color .15s, box-shadow .15s; }
+    .jp-hf-link:hover { border-color: var(--brand); box-shadow: 0 4px 12px -6px rgba(14,110,58,0.4); }
+    .jp-hf-titel { display: block; font-size: 0.74rem; font-weight: 600; color: #0f172a; line-height: 1.25; margin-bottom: 0.3rem; }
+    .jp-hf-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.4rem; font-size: 0.62rem; color: #64748b; }
+    .jp-hf-kompetenz { font-weight: 700; color: var(--brand-dark); background: var(--brand-tint); border-radius: 4px; padding: 0 0.3rem; }
+    .jp-hf-badge { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--brand-dark); border: 1px solid rgba(14,110,58,0.3); border-radius: 9999px; padding: 0 0.3rem; }
+    .jp-hf-cta { margin-left: auto; font-weight: 700; color: var(--brand-dark); }
+    .jp-hf-empty { font-size: 0.72rem; font-style: italic; color: #94a3b8; border-left: 2px solid #e2e8f0; padding-left: 0.5rem; }
+
+    /* Situationen-Block im Tooltip (Inspiration, sekundär) */
+    .jp-sit-box { border-top: 1px dashed #e2e8f0; padding-top: 0.6rem; }
+    .jp-sit-h { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #94a3b8; margin-bottom: 0.35rem; }
+    .jp-sit-all { display: inline-block; margin-top: 0.4rem; font-size: 0.66rem; font-weight: 600; color: var(--brand-dark); text-decoration: none; }
+    .jp-sit-all:hover { text-decoration: underline; }
+
+    /* ── tooltip editor + situationen ── */
+    .jp-tip-edit { border-top: 1px solid #e2e8f0; padding-top: 0.75rem; margin-bottom: 0.25rem; }
+    .jp-mini {
+      font-size: 0.7rem; font-weight: 600; color: #475569; border: 1px solid #cbd5e1;
+      border-radius: 5px; padding: 0.2rem 0.55rem; background: white;
+    }
+    .jp-mini-on { background: var(--brand); color: white; border-color: var(--brand); }
+    .jp-sit-link {
+      display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: #334155;
+      padding: 0.15rem 0.3rem; border-radius: 4px; text-decoration: none;
+    }
+    .jp-sit-link:hover { background: var(--brand-tint); color: var(--brand-dark); }
+    .jp-sit-letter {
+      display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 1.1rem; height: 1.1rem; border-radius: 4px; font-size: 0.62rem; font-weight: 700;
+      background: var(--brand-tint); color: var(--brand-dark);
+    }
+
+    /* ── Feature 7: print / PDF (A4 landscape) ── */
+    @media print {
+      @page { size: A4 landscape; margin: 10mm; }
+      header, footer, .jp-toolbar, .tooltip-card { display: none !important; }
+      :global(body) { background: white !important; }
+      main { max-width: none !important; padding: 0 !important; }
+      .jp-panel { display: none !important; }
+      section, details, .jp-notes { break-inside: avoid; box-shadow: none !important; }
+      .lesson-cell { transform: none !important; box-shadow: none !important; }
+      .cell-thema2, .cell-thema3 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .sk-r1, .sk-r2, .sk-r3, .sk-empty, .cell-thema1, .cell-thema2, .cell-thema3, .cell-buffer, .cell-holiday {
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      }
+    }
   </style>
 </Base>

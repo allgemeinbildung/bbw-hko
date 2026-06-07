@@ -34,16 +34,16 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }) {
         {kn.mehrdeutigkeits_pflicht}
       </p>
 
-      <SectionHead num="01 · Subfacetten A · B · C">Was die drei Situationen versprechen</SectionHead>
-      {prinzip?.sub_facetten && (
+      <SectionHead num="01 · Herausforderungen A · B · C">Was die drei Herausforderungen versprechen</SectionHead>
+      {prinzip?.herausforderungen && (
         <div className="cockpit-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr', gap: '4mm 5mm' }}>
           {['A', 'B', 'C'].map((letter) => {
-            const sf = prinzip.sub_facetten[letter];
+            const sf = prinzip.herausforderungen[letter];
             if (!sf) return null;
             return (
               <div className="cockpit-card" key={letter} style={{ padding: '3mm 4mm' }}>
-                <h4>Subfacette {letter}</h4>
-                <div className="big" style={{ fontSize: '10pt', marginBottom: '1.5mm', lineHeight: 1.2 }}>{sf.facette}</div>
+                <h4>Herausforderung {letter}</h4>
+                <div className="big" style={{ fontSize: '10pt', marginBottom: '1.5mm', lineHeight: 1.2 }}>{sf.herausforderung}</div>
                 <p style={{ fontSize: '8pt', color: 'var(--ink-soft)', margin: 0, lineHeight: 1.35 }}>
                   <strong>Konfliktart:</strong> {sf.konfliktart}
                 </p>
@@ -125,18 +125,18 @@ function DocKnLpHybrid({ kn, abteilung, pageNum, pageTotal }) {
         </>
       )}
 
-      <SectionHead num="05 · Alignment">Welche Subfacette welches Szenen-Element aktiviert</SectionHead>
+      <SectionHead num="05 · Alignment">Welche Herausforderung welches Szenen-Element aktiviert</SectionHead>
       <table className="alignment-table">
         <thead>
           <tr>
-            <th style={{ width: '14mm' }}>Subfacette</th>
+            <th style={{ width: '14mm' }}>Herausforderung</th>
             <th>Szenen-Element</th>
           </tr>
         </thead>
         <tbody>
-          {hs?.alignment_note?.subfacetten_mapping?.map((m, i) => (
+          {hs?.alignment_note?.herausforderungen_mapping?.map((m, i) => (
             <tr key={i}>
-              <td className="letter">{m.sit_letter}</td>
+              <td className="letter">{m.hf_letter}</td>
               <td>{m.scene_element}</td>
             </tr>
           ))}

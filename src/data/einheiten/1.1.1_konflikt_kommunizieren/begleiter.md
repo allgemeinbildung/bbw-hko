@@ -27,7 +27,7 @@ Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen K
 
 **1. Von hinten gedacht (Backward Design).** Der KN wurde zuerst definiert, die drei Situationen danach. Das heisst: Jede Situation traegt genau die Bausteine, die im KN wieder auftauchen. Du musst nichts „dazu erfinden" — du fuehrst die Lernenden durch drei Teilstuecke, die der KN am Schluss zusammensetzt.
 
-**2. Eine Kompetenz, drei Facetten.** A klaert die **Rechtslage** (Lehrvertrag), B waehlt **Kanal und Register** einer schriftlichen Antwort, C fuehrt das **Konfliktgespraech**. Erst zusammen ergeben sie das Kompetenzversprechen.
+**2. Eine Kompetenz, drei Herausforderungen.** A klaert die **Rechtslage** (Lehrvertrag), B waehlt **Kanal und Register** einer schriftlichen Antwort, C fuehrt das **Konfliktgespraech**. Erst zusammen ergeben sie das Kompetenzversprechen.
 
 **3. Drei Phasen-Schichten, nicht vermischen.** (Quick Ref §6)
 
@@ -137,8 +137,8 @@ Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inha
 Jede/r bearbeitet A, dann B, dann C selbst.
 
 - **Lektionen:** 3 × 2 Erarbeitung = 6 + 1 Set-Schluss = **7 Lektionen** + KN
-- **Kompetenz:** voll — alle drei Facetten selbst durchlaufen
-- **KN:** ungekuerzt, alle drei Subfacetten aktivierbar
+- **Kompetenz:** voll — alle drei Herausforderungen selbst durchlaufen
+- **KN:** ungekuerzt, alle drei Herausforderungen aktivierbar
 - **Wann:** wenn Zeit da ist und die Klasse selbststaendig arbeitet
 
 ### Variante B — Einzelarbeit, Auswahl von 1-2 Situationen
@@ -146,10 +146,10 @@ Jede/r bearbeitet A, dann B, dann C selbst.
 Lernende waehlen 1-2 Situationen.
 
 - **Lektionen:** 1-2 × 2 = 2-4 + 1 Set-Schluss = **3-5 Lektionen** + KN
-- **Kompetenz:** teilweise — nur die gewaehlten Facetten selbst erarbeitet
+- **Kompetenz:** teilweise — nur die gewaehlten Herausforderungen selbst erarbeitet
 
 > [!warnung] KN muss mitgekuerzt werden
-> Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Facette (Gespraechsfuehrung) voll abpruefen. Streiche im Fachgespraech Frage 4 (Transfer auf Sit C) bzw. passe die Hybrid-Situation an, damit kein Pruefungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur pruefen, was unterrichtet wurde.
+> Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Gespraechsfuehrung) voll abpruefen. Streiche im Fachgespraech Frage 4 (Transfer auf Sit C) bzw. passe die Hybrid-Situation an, damit kein Pruefungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur pruefen, was unterrichtet wurde.
 
 ### Variante C — Gruppenarbeit mit Jigsaw
 
@@ -173,7 +173,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 | Feld | Inhalt |
 |---|---|
 | Titel | Aufgabe gegen die Abmachung — was steht eigentlich im Lehrvertrag? |
-| Sub-Facette | Rechte und Pflichten im Lehrvertrag klaeren und Position formulieren |
+| Herausforderung | Rechte und Pflichten im Lehrvertrag klaeren und Position formulieren |
 | Persona | Schreiner/in EFZ, Schreinerei Brunner, Winterthur — 1. LJ, CHF 600, 41 h/Woche || Aspekte (Ges) | Recht (R1), Identitaet und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration schriftlich |
 | Schluesselkompetenzen | SK1 Quellen unterscheiden · SK6 Standpunkte begruenden · SK11 Mehrdeutigkeit |
@@ -286,7 +286,7 @@ ________________________________________________________________________.
 | Feld | Inhalt |
 |---|---|
 | Titel | Kritik per Chat — welcher Kanal traegt diese Antwort? |
-| Sub-Facette | Kanal und Register fuer eine schriftliche Konfliktantwort waehlen |
+| Herausforderung | Kanal und Register fuer eine schriftliche Konfliktantwort waehlen |
 | Persona | Automobilfachmann/-frau EFZ, Garage Suter AG, Aarau — 2. LJ, CHF 850 || Aspekte (Ges) | Technologie und digitale Transformation (R1), Ethik (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration schriftlich |
 | Schluesselkompetenzen | SK6 Standpunkte begruenden · SK7 Verstaendnis foerdern · SK11 Mehrdeutigkeit |
@@ -398,7 +398,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 | Feld | Inhalt |
 |---|---|
 | Titel | Aussprache vorbereiten — vier Ohren statt vier Vorwuerfe |
-| Sub-Facette | Konfliktgespraech rollenbewusst und beziehungserhaltend fuehren |
+| Herausforderung | Konfliktgespraech rollenbewusst und beziehungserhaltend fuehren |
 | Persona | Informatiker/in EFZ (Applikationsentwicklung), Noser Engineering, Luzern — 1. LJ, CHF 700 || Aspekte (Ges) | Ethik (R1), Identitaet und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration muendlich |
 | Schluesselkompetenzen | SK4 Teamarbeit · SK7 Verstaendnis foerdern · SK11 Mehrdeutigkeit |
@@ -503,7 +503,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 ## 6. Austausch-Phase — verzweigt nach Variante
 
-Die Set-Schluss-Lektion bringt die drei Facetten zusammen. Wie sie laeuft, haengt von Kapitel 2 ab.
+Die Set-Schluss-Lektion bringt die drei Herausforderungen zusammen. Wie sie laeuft, haengt von Kapitel 2 ab.
 
 ### Bei Variante C (Jigsaw) — voller Gruppenpuzzle
 
@@ -527,7 +527,7 @@ Kein Experten-Jigsaw noetig (alle kennen alle Situationen). Stattdessen Plenum, 
 
 ### Bei Variante B (Auswahl 1-2) — gemischt
 
-Kurzer Austausch in Kleingruppen ueber die jeweils gemachten Situationen, dann Plenum-Prinzipsatz. Beachte: Lernende kennen nur ihre gewaehlten Facetten — der KN ist entsprechend zu kuerzen (Kapitel 2).
+Kurzer Austausch in Kleingruppen ueber die jeweils gemachten Situationen, dann Plenum-Prinzipsatz. Beachte: Lernende kennen nur ihre gewaehlten Herausforderungen — der KN ist entsprechend zu kuerzen (Kapitel 2).
 
 ---
 
@@ -551,7 +551,7 @@ Das ist die Phase, die R1 ueberhaupt nach R2/R3 traegt (Quick Ref §6). Hier wir
 
 ## 8. Der Kompetenznachweis (KN)
 
-Der KN nimmt eine **neue Hybrid-Situation** und prueft, ob die Lernende alle drei Facetten zusammenfuehren kann.
+Der KN nimmt eine **neue Hybrid-Situation** und prueft, ob die Lernende alle drei Herausforderungen zusammenfuehren kann.
 
 ### Hybrid-Situation — „Critical Incident: der Brief vom Lehrlingsverantwortlichen"
 
@@ -559,7 +559,7 @@ Persona: Konstrukteur/in EFZ, Konstruktionsbuero Berger, Olten — 1. LJ, CHF 75
 
 > Der Berufsbildner/in bittet, eine fehlerhafte Zeichnung „vertraulich zwischen uns" zu korrigieren — **ohne** Eintrag in die Lerndokumentation. Beim Zoegern Abwertung vor dem Engineering-Review („Du bist halt noch nicht so weit"). Am Morgen eine private WhatsApp mit Ultimatum bis 17 Uhr. Leitfrage: „Wie gehe ich jetzt vor — und welcher Schritt ist der erste?"
 
-So sind die drei Subfacetten verbaut (Alignment):
+So sind die drei Herausforderungen verbaut (Alignment):
 
 | Aus | zeigt sich im KN als |
 |---|---|
@@ -581,7 +581,7 @@ Drei Pruefformen sind angelegt, alle mit derselben Rubrik. Du waehlst eine (oder
 | **Werkschau + Transfer** | schriftlich (+ optional 5' Praes.), Werkwahl + Begruendung + Reflexion 200-250 W | Reflexion und Transfer ueber das eigene Produkt | Prod schriftl. | du die **Selbstreflexion** und das Prinzip-Verstaendnis ins Zentrum stellst |
 
 > [!coaching] Methodenwahl an Klasse + Variante koppeln
-> Nach Jigsaw (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespraech**, weil alle drei Facetten selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Facetten anpassen und Fragen/Aufgaben trimmen.
+> Nach Jigsaw (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespraech**, weil alle drei Herausforderungen selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Herausforderungen anpassen und Fragen/Aufgaben trimmen.
 
 > [!hinweis] Ausblick — weitere Prüfformen möglich
 > Die drei hier angelegten KN-Formen (Fachgespräch, Mini Case schriftlich, Werkschau + Transfer) sind ein **Startset**, kein abschliessender Kanon. Dieselbe Hybrid-Herausforderung und dieselbe bi-dimensionale Rubrik tragen auch andere Formen — etwa einen **Critical Incident** (eine zugespitzte Entscheidungsszene mit Stopp-Punkt: „Was tust du jetzt?") oder ein **Produkt mit Präsentation** (ein vor der Klasse verteidigtes Handlungsprodukt). Diese sind bewusst noch nicht ausgearbeitet — wenn du eine brauchst, lässt sie sich auf der bestehenden Rubrik aufsetzen. Reiner Ausblick; im aktuellen Set wählst du aus den drei Formen oben.

@@ -31,9 +31,9 @@ Wer von klassischem Frontalunterricht kommt, sieht hier vier Dinge, die anders s
 
 > Ich kläre Tatbestand und Rechtsgrundlage aus geeigneten Quellen, beurteile meine Rolle und Verantwortung gegenüber dem Adressaten und beantworte eine rechtliche Anfrage schriftlich, begründet und adressatengerecht.
 
-**2 — Ein 3er-Set, eine Kompetenz, drei Blickwinkel.** Die Kompetenz wird in drei **Situationen (A/B/C)** zerlegt. Jede ist eine eigene kleine Lebenswelt-Geschichte mit eigener Persona, eigenem Handlungsprodukt — und einer eigenen Teilfacette der Gesamtkompetenz:
+**2 — Ein 3er-Set, eine Kompetenz, drei Blickwinkel.** Die Kompetenz wird in drei **Situationen (A/B/C)** zerlegt. Jede ist eine eigene kleine Lebenswelt-Geschichte mit eigener Persona, eigenem Handlungsprodukt — und einer eigenen Herausforderung der Gesamtkompetenz:
 
-| Sit | Teilfacette | Handlungsprodukt | Persona |
+| Sit | Herausforderung | Handlungsprodukt | Persona |
 |---|---|---|---|
 | **A** | Quellen klären — Rechte, Pflichten, Datenschutz extrahieren | Regel-Spickzettel (A4) | Polymechaniker/in, Basel |
 | **B** | Fälle methodisch lösen — Tatbestand → Rechtslage → Rechtsfolge | Fall-Mappe (2 Fälle) | Bäcker-Konditor/in, Aarau |
@@ -135,7 +135,7 @@ Das Austausch-Kapitel weiter unten verzweigt nach Variante.
 
 | | |
 |---|---|
-| **Teilfacette** | Rechte, Pflichten und Datenschutz-Regeln aus Quellen extrahieren und als Spickzettel verdichten |
+| **Herausforderung** | Rechte, Pflichten und Datenschutz-Regeln aus Quellen extrahieren und als Spickzettel verdichten |
 | **Persona** | Polymechaniker-Lernende/r, 1. LJ, Roth AG, Basel (CHF 850, 41 h/Woche) || **Handlungsprodukt** | A4-Regel-Spickzettel, drei Blöcke |
 | **Aspekte** | Recht, Technologie und digitale Transformation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
@@ -231,7 +231,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 
 | | |
 |---|---|
-| **Teilfacette** | Fälle methodisch durchspielen + eigene Rolle als beratende Mitlernende reflektieren |
+| **Herausforderung** | Fälle methodisch durchspielen + eigene Rolle als beratende Mitlernende reflektieren |
 | **Persona** | Bäcker-Konditor-Lernende/r, 1. LJ, Beck Brunner, Aarau || **Handlungsprodukt** | Fall-Mappe, 2 Fälle, je 3-Spalten-Tabelle + Schlussabsatz |
 | **Aspekte** | Recht, Ethik, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
@@ -321,7 +321,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 
 | | |
 |---|---|
-| **Teilfacette** | Rechtliche Anfrage schriftlich und adressatengerecht im richtigen Kanal beantworten |
+| **Herausforderung** | Rechtliche Anfrage schriftlich und adressatengerecht im richtigen Kanal beantworten |
 | **Persona** | Informatik-Lernende/r (Plattformentwicklung), 1. LJ, IT-Service Galliker, St. Gallen || **Handlungsprodukt** | Antwortschreiben (formelle E-Mail), 200–300 Wörter |
 | **Aspekte** | Ethik, Technologie und digitale Transformation, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
@@ -480,7 +480,7 @@ Der KN prüft die **ganze** Kompetenz an **einem** neuen Fall (Hybrid-Situation)
 
 > Heute um 21 Uhr schreibt mir ein Mitlernende/r auf WhatsApp: Sein Berufsbildner/in will morgen CHF 150 für einen Kratzer an einem fertigen Werkstück vom Lohn abziehen. Ich habe eine Stunde, meinen Regel-Spickzettel und Kap. 1.4 zu Hause. Was ich schreibe, leitet er weiter. Was ich nicht weiss, sollte ich nicht erfinden — aber wenn ich nicht antworte, steht er morgen ohne Argumente da. Wie gehe ich vor — und welcher Schritt ist der erste?
 
-**Wie die drei Teilfacetten im Hybrid-Fall stecken** (für die Lehrperson sichtbar, für die Lernenden nicht benannt):
+**Wie die drei Herausforderungen im Hybrid-Fall stecken** (für die Lehrperson sichtbar, für die Lernenden nicht benannt):
 
 | Sit | Wo sie im Hybrid-Fall auftaucht |
 |---|---|

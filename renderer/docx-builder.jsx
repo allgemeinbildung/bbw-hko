@@ -325,14 +325,14 @@ function cockpitBlock(sit, akzent, light) {
     children: [
       badgeRun('KOMP ' + (sit.nrlp?.nr || ''), akzent, 'outline'),
       new TextRun({ text: '  ' }),
-      badgeRun('SIT ' + sit.situation + ' · ' + (sit.emotion_tag || ''), akzent),
+      badgeRun('HF ' + sit.buchstabe + ' · ' + (sit.emotion_tag || ''), akzent),
     ],
     spacing: { after: 200 },
   }));
   els.push(h(sit.titel || '', 'title'));
   els.push(p(sit.modul_titel || '', { run: { color: COLOR.inkSoft, size: 22, italics: true } }));
-  if (sit.sub_facette) {
-    els.push(p('Subfacette ' + (sit.sub_facette.buchstabe || '') + ' — ' + (sit.sub_facette.label || ''),
+  if (sit.herausforderung) {
+    els.push(p('Herausforderung ' + (sit.herausforderung.buchstabe || '') + ' — ' + (sit.herausforderung.label || ''),
       { run: { color: akzent, bold: true, size: 18 } }));
   }
   els.push(spacer(120));
@@ -432,7 +432,7 @@ function situationBlock(sit, akzent, light) {
     ],
     spacing: { after: 180 },
   }));
-  els.push(p(sit.situation_text || '', { run: { size: 22 }, spacing: { after: 200, line: 360, lineRule: LineRuleType.AUTO } }));
+  els.push(p(sit.buchstabe_text || '', { run: { size: 22 }, spacing: { after: 200, line: 360, lineRule: LineRuleType.AUTO } }));
 
   if (sit.zahlen_tabelle) {
     els.push(dataTable(
@@ -651,7 +651,7 @@ function buildDocS({ sit, set, abteilung, mode, logoPng }) {
   const palette = sitPalette(sit);
   const akzent = palette.akzent;
   const light = palette.light;
-  const docCode = `DOC-S · SIT ${sit.situation} · ${mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`;
+  const docCode = `DOC-S · HF ${sit.buchstabe} · ${mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`;
   const docTitel = sit.titel || '';
 
   const children = [];
@@ -873,10 +873,10 @@ function buildKnLp({ kn, prinzip, set, abteilung, logoPng }) {
   children.push(h(prinzip?.kern_kompetenzversprechen || kn.kern_kompetenzversprechen || '', 'title'));
   children.push(p(kn.mehrdeutigkeits_pflicht || '', { run: { italics: true, color: COLOR.inkSoft, size: 20 } }));
 
-  children.push(...sectionHead('01 · Subfacetten A·B·C', 'Was die drei Situationen versprechen', akzent));
-  if (prinzip?.sub_facetten) {
+  children.push(...sectionHead('01 · Herausforderungen A·B·C', 'Was die drei Herausforderungen versprechen', akzent));
+  if (prinzip?.herausforderungen) {
     ['A', 'B', 'C'].forEach(letter => {
-      const sf = prinzip.sub_facetten[letter];
+      const sf = prinzip.herausforderungen[letter];
       if (!sf) return;
       children.push(new Paragraph({
         children: [
@@ -884,7 +884,7 @@ function buildKnLp({ kn, prinzip, set, abteilung, logoPng }) {
         ],
         spacing: { before: 100, after: 30 },
       }));
-      children.push(p(sf.facette, { run: { bold: true, size: 22 } }));
+      children.push(p(sf.herausforderung, { run: { bold: true, size: 22 } }));
       children.push(p('Konfliktart: ' + sf.konfliktart, { run: { color: COLOR.inkSoft, size: 18 } }));
     });
   }
@@ -940,12 +940,12 @@ function buildKnLp({ kn, prinzip, set, abteilung, logoPng }) {
       children.push(new Paragraph({ children: [new TextRun({ text: to, size: 20 })], bullet: { level: 0 } }));
     });
   }
-  if (hs.alignment_note?.subfacetten_mapping) {
-    children.push(...sectionHead('05 · Alignment', 'Welche Subfacette welches Szenen-Element aktiviert', akzent));
+  if (hs.alignment_note?.herausforderungen_mapping) {
+    children.push(...sectionHead('05 · Alignment', 'Welche Herausforderung welches Szenen-Element aktiviert', akzent));
     children.push(dataTable(
-      ['Subfacette', 'Szenen-Element'],
-      hs.alignment_note.subfacetten_mapping.map(m => [
-        new Paragraph({ children: [new TextRun({ text: m.sit_letter, bold: true, size: 22, font: 'Consolas' })] }),
+      ['Herausforderung', 'Szenen-Element'],
+      hs.alignment_note.herausforderungen_mapping.map(m => [
+        new Paragraph({ children: [new TextRun({ text: m.hf_letter, bold: true, size: 22, font: 'Consolas' })] }),
         m.scene_element,
       ]),
       akzent,

@@ -49,22 +49,30 @@ const count = materials?.length ?? 0
           class="flex flex-col"
         >
           <MaterialCard material={m} />
-          {m.status === 'eingereicht' && (
-            <div class="flex gap-2 mt-2">
+          <div class="flex gap-2 mt-2">
+            <a
+              href={`/meine-materialien/${m.id}/feedback`}
+              class="flex-1 text-center py-1.5 text-sm border border-slate-300 rounded-md hover:bg-slate-50 text-slate-600 transition"
+            >
+              Erfahrung berichten
+            </a>
+            {m.status === 'eingereicht' && (
               <a
                 href={`/bearbeiten/${m.id}`}
                 class="flex-1 text-center py-1.5 text-sm border border-slate-300 rounded-md hover:bg-slate-50 text-slate-600 transition"
               >
                 Bearbeiten
               </a>
+            )}
+            {m.status === 'eingereicht' && (
               <button
                 @click="confirmDelete()"
                 :disabled="deleting"
                 class="flex-1 py-1.5 text-sm border border-red-200 rounded-md hover:bg-red-50 text-red-600 transition disabled:opacity-50"
                 x-text="deleting ? 'Löscht…' : 'Löschen'"
               ></button>
-            </div>
-          )}
+            )}
+          </div>
           <div x-show="deleteError" class="mt-1 text-xs text-red-600 text-center" x-text="deleteError"></div>
         </div>
       ))}

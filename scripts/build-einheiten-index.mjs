@@ -1,6 +1,6 @@
 // Builds src/data/einheiten.index.json from src/data/einheiten/<slug>/*.
 //
-// One entry per slug. Reads kn.json + prinzip.json + sit_A.json to denormalize
+// One entry per slug. Reads kn.json + prinzip.json + herausforderung_A.json to denormalize
 // the metadata teachers filter / browse by (kompetenz, titel, dominanter Aspekt,
 // SK, Aspekte, Sprachmodi, themen). Mirrors how scripts/sync-situationen.mjs
 // produces situationen.index.json.
@@ -43,9 +43,9 @@ const slugs = readdirSync(DATA_DIR).filter((n) => {
 const index = []
 for (const slug of slugs) {
   const dir = join(DATA_DIR, slug)
-  const sitA = readMaybe(join(dir, 'sit_A.json'))
-  const sitB = readMaybe(join(dir, 'sit_B.json'))
-  const sitC = readMaybe(join(dir, 'sit_C.json'))
+  const sitA = readMaybe(join(dir, 'herausforderung_A.json'))
+  const sitB = readMaybe(join(dir, 'herausforderung_B.json'))
+  const sitC = readMaybe(join(dir, 'herausforderung_C.json'))
   const kn = readMaybe(join(dir, 'kn.json'))
   const prinzip = readMaybe(join(dir, 'prinzip.json'))
   const set = readMaybe(join(dir, 'set.json'))
@@ -81,8 +81,8 @@ for (const slug of slugs) {
     dominanter_aspekt: kn?.dominanter_aspekt || null,
     sk: Array.isArray(nrlp.sk) ? nrlp.sk : [],
     sprachmodi: nrlp.sprachmodi || [],
-    situationen: ['A', 'B', 'C'].filter((l) => [sitA, sitB, sitC][{ A: 0, B: 1, C: 2 }[l]] != null),
-    sit_titel: {
+    herausforderungen: ['A', 'B', 'C'].filter((l) => [sitA, sitB, sitC][{ A: 0, B: 1, C: 2 }[l]] != null),
+    hf_titel: {
       A: sitA?.titel || null,
       B: sitB?.titel || null,
       C: sitC?.titel || null,

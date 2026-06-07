@@ -77,12 +77,12 @@ function classifyFile(json) {
   if (id.endsWith('_sit_B')) return 'sit_B';
   if (id.endsWith('_sit_C')) return 'sit_C';
   // Fallbacks
-  if (json.sub_facetten) return 'prinzip';
+  if (json.herausforderungen) return 'prinzip';
   if (json.kn_typen) return 'kn';
   if (json.konzept_progression) return 'set';
-  if (json.situation === 'A') return 'sit_A';
-  if (json.situation === 'B') return 'sit_B';
-  if (json.situation === 'C') return 'sit_C';
+  if (json.buchstabe === 'A') return 'sit_A';
+  if (json.buchstabe === 'B') return 'sit_B';
+  if (json.buchstabe === 'C') return 'sit_C';
   return null;
 }
 
@@ -398,8 +398,8 @@ Word-Datei speicherst du wie gewohnt mit Cmd/Ctrl+S.
 **\`_doc-kn-s_{fachgespraech|mini_case_schriftlich|werkschau_transfer}.html\`/\`.docx\`** — KN-Durchführung Schüler, je 3 Varianten pro Set: Mündliches Fachgespräch (30–35 Min), Schriftliche Prüfung (45–60 Min), oder Werkschau + Transfer-Reflexion (schriftlich + optional 5-Min-Präsentation). Enthält Hybrid-Situation, Ablauf, typ-spezifische Aufgaben mit Schreibfeldern und gestrippte Rubrik (ohne 4-Stufen-Diagnostik).
 
 **\`_doc-kn-lp.html\`/\`.docx\`** — KN-Durchführung + Bewertung Lehrperson, 1 Datei pro Set, 6 Seiten:
-1. Kontext (Kern-Kompetenzversprechen, Subfacetten A/B/C, Zirkularität, Konzeptbogen)
-2. Hybrid-Situation + Alignment (Szenen-Element → Subfacette, aktivierte Trade-offs)
+1. Kontext (Kern-Kompetenzversprechen, Herausforderungen A/B/C, Zirkularität, Konzeptbogen)
+2. Hybrid-Situation + Alignment (Szenen-Element → Herausforderung, aktivierte Trade-offs)
 3. Fachgespräch durchführen (inkl. K-Stufen)
 4. Mini Case durchführen (inkl. K-Stufen)
 5. Werkschau durchführen (inkl. K-Stufen)

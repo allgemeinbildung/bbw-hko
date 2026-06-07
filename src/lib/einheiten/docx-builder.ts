@@ -301,15 +301,15 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   // C1 — no KOMP badge; HF badge without emotion.
   els.push(new Paragraph({
     children: [
-      badgeRun('Herausforderung ' + sit.situation, akzent),
+      badgeRun('Herausforderung ' + sit.buchstabe, akzent),
     ],
     spacing: { after: 200 },
   }))
   els.push(h(sit.titel || '', 'title'))
   els.push(p(sit.modul_titel || '', { run: { color: COLOR.inkSoft, size: 22, italics: true } }))
   // C1 — sub-facette label only (no "Herausforderung X:" prefix).
-  if (sit.sub_facette?.label) {
-    els.push(p(sit.sub_facette.label, { run: { color: akzent, bold: true, size: 18 } }))
+  if (sit.herausforderung?.label) {
+    els.push(p(sit.herausforderung.label, { run: { color: akzent, bold: true, size: 18 } }))
   }
   els.push(spacer(120))
 
@@ -657,7 +657,7 @@ export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpt
   const palette = sitPalette(sit)
   const akzent = palette.akzent
   const light = palette.light
-  const docCode = `DOC-S · SIT ${sit.situation} · ${mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`
+  const docCode = `DOC-S · HF ${sit.buchstabe} · ${mode === 'info' ? 'DOSSIER' : 'AUFTRAG'}`
   const docTitel = sit.titel || ''
 
   // C1/C2/C6/C8 — page 1 cockpit carries the merged situation; HP split into Anleitung + Arbeitsfläche;
@@ -725,7 +725,7 @@ export function buildAustausch({ set, sits = [], abteilung, logoPng = null }: Bu
   const gruppe = ap?.gruppenpuzzle ?? ap?.gruppenarbeit_jigsaw
   const plenum = ap?.plenum ?? ap?.einzelarbeit_plenum
   const einzel = ap?.einzelauftrag
-  const konzeptFor = (s: SituationJson) => set?.konzept_progression?.find((k) => k.situation === s.id)?.konzept
+  const konzeptFor = (s: SituationJson) => set?.konzept_progression?.find((k) => k.herausforderung === s.id)?.konzept
 
   // Transfer is a template-constant set task → generic writing scaffold + self-check (mirrors DocAustausch.tsx).
   const TRANSFER_SATZANFAENGE = [
@@ -762,7 +762,7 @@ export function buildAustausch({ set, sits = [], abteilung, logoPng = null }: Bu
     const k = konzeptFor(s)
     children.push(new Paragraph({
       children: [
-        new TextRun({ text: 'HF ' + s.situation + ': ', bold: true, color: akzent, size: 18 }),
+        new TextRun({ text: 'HF ' + s.buchstabe + ': ', bold: true, color: akzent, size: 18 }),
         new TextRun({ text: s.handlungsprodukt?.format || s.titel || '', size: 18 }),
         ...(k ? [new TextRun({ text: ' — ' + k, size: 16, color: COLOR.inkSoft })] : []),
       ],
@@ -820,7 +820,7 @@ export function buildAustausch({ set, sits = [], abteilung, logoPng = null }: Bu
         if (!s.dekontextualisierung?.frage) return
         children.push(new Paragraph({
           children: [
-            new TextRun({ text: 'HF ' + s.situation + ': ', bold: true, color: akzent, size: 16 }),
+            new TextRun({ text: 'HF ' + s.buchstabe + ': ', bold: true, color: akzent, size: 16 }),
             new TextRun({ text: s.dekontextualisierung.frage, size: 18 }),
           ],
           bullet: { level: 0 },
@@ -1079,15 +1079,15 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
 
   children.push(pageBreak())
   children.push(...sectionHead('01 · Herausforderungen A·B·C', 'Was die drei Herausforderungen versprechen', akzent))
-  if (prinzip?.sub_facetten) {
+  if (prinzip?.herausforderungen) {
     ;['A', 'B', 'C'].forEach((letter) => {
-      const sf = prinzip.sub_facetten![letter]
+      const sf = prinzip.herausforderungen![letter]
       if (!sf) return
       children.push(new Paragraph({
         children: [new TextRun({ text: 'HERAUSFORDERUNG ' + letter, bold: true, color: akzent, size: 14 })],
         spacing: { before: 100, after: 30 },
       }))
-      children.push(p(sf.facette, { run: { bold: true, size: 22 } }))
+      children.push(p(sf.herausforderung, { run: { bold: true, size: 22 } }))
       children.push(p('Konfliktart: ' + sf.konfliktart, { run: { color: COLOR.inkSoft, size: 18 } }))
     })
   }
@@ -1144,12 +1144,12 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
       children.push(new Paragraph({ children: [new TextRun({ text: to, size: 20 })], bullet: { level: 0 } }))
     })
   }
-  if (hs.alignment_note?.subfacetten_mapping) {
+  if (hs.alignment_note?.herausforderungen_mapping) {
     children.push(...sectionHead('05 · Alignment', 'Welche Herausforderung welches Szenen-Element aktiviert', akzent))
     children.push(dataTable(
       ['Herausforderung', 'Szenen-Element'],
-      hs.alignment_note.subfacetten_mapping.map((m) => [
-        new Paragraph({ children: [new TextRun({ text: m.sit_letter, bold: true, size: 22, font: 'Consolas' })] }),
+      hs.alignment_note.herausforderungen_mapping.map((m) => [
+        new Paragraph({ children: [new TextRun({ text: m.hf_letter, bold: true, size: 22, font: 'Consolas' })] }),
         m.scene_element,
       ]),
       akzent, [14, 86],
