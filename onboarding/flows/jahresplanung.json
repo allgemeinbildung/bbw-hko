@@ -1,0 +1,114 @@
+{
+  "name": "Jahresplanung — Einführung für Lehrpersonen",
+  "description": "Diese Kurzanleitung führt dich durch alle Funktionen der interaktiven Jahresplanung für das 1. Lehrjahr ABU (EFZ 3-Jährige, Schuljahr 2025/26).",
+  "baseUrl": "http://localhost:4321",
+  "auth": "../auth.json",
+  "lang": "de",
+  "viewport": { "width": 1440, "height": 900 },
+  "steps": [
+    {
+      "action": "goto",
+      "value": "/jahresplanung",
+      "caption": "Öffne die **Jahresplanung** über die Navigation der Hauptplattform. Die Seite zeigt dir auf einen Blick das gesamte Schuljahr 2025/26 für das 1. Lehrjahr EFZ 3-Jährige.",
+      "screenshot": true,
+      "fullPage": false
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".stat-card >> nth=0",
+      "caption": "**Kennzahlen auf einen Blick** — Die fünf Statistik-Kacheln oben zeigen die wichtigsten Planungsgrössen: 39 Schulwochen, 117 verfügbare Lektionen, aufgeteilt in 90 L. Unterricht und 27 L. Puffer (+ 8 Ferienwochen).",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".legend-swatch >> nth=0",
+      "caption": "**Legende** — Die Legende erklärt die Farben im Kalender: Thema 1 (hellgrün), Thema 2 (mittelgrün), Thema 3 (dunkelgrün), Puffer/Repetition (grau) und Ferien/Feiertage (gestrichelt). Das ◆-Symbol markiert eine Herausforderung (fertige Einheit), ◇ steht für Situationen zur Inspiration.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".thema-card >> nth=0",
+      "caption": "**Themen-Übersicht** — Die drei Themenkarten zeigen Titel, Lektionenverteilung (Unterricht / Puffer / Total) und die Unterrichtsperioden auf einen Blick. Thema 1 «Ins Berufsleben einsteigen» (30 L.), T2 «Meinungen bilden» (42 L.) und T3 «Bewusst konsumieren» (45 L.).",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"SK-Abdeckung\")",
+      "caption": "**SK-Abdeckungsmatrix** — Diese Tabelle zeigt, welche der 12 Schlüsselkompetenzen (SK) in welchem Thema eingeplant sind und in welcher Iterationstiefe: R1 = erste Begegnung (hellgrün), R2 = Wiederaufnahme (mittelgrün), R3 = Vertiefung (dunkelgrün). Graue Zeilen sind im 1. Lehrjahr nicht vorgesehen.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "details.jp-notes",
+      "caption": "**Feiertage & didaktische Hinweise** — Dieses ausklappbare Panel listet alle Wochen mit besonderem Vermerk: links Feiertage und Brückentage (z.B. Karfreitag, Auffahrt), rechts didaktische Hinweise wie geplante Kompetenznachweise oder Prüfungswochen.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Jahresübersicht\")",
+      "caption": "**Kalender-Grid** — Das Herzstück der Seite: alle 47 Schulwochen des Jahres, aufgeteilt in zwei Semester (Aug–Jan und Feb–Jul). Jede Kachel zeigt KW-Nummer, Lektionen und Lebensbezug-Code. Farbige Kacheln = Unterricht, graue = Puffer, gestrichelte = Ferien.",
+      "screenshot": true
+    },
+    {
+      "action": "hover",
+      "selector": ".lesson-cell.cell-thema1 >> nth=0",
+      "caption": "**Hover-Tooltip** — Fahre mit der Maus über eine beliebige Unterrichtswoche. Der Tooltip zeigt dir den genauen Lebensbezug, die nRLP-Kompetenzen, empfohlene Schlüsselkompetenzen und Sprachmodi sowie verknüpfte Herausforderungen (◆) und Situationen (◇) als direkte Links.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".jp-toolbar",
+      "caption": "**Planungs-Toolbar** — Die Werkzeugleiste oben enthält alle interaktiven Funktionen: Klassen-Instanzen verwalten, Bearbeitungsmodus, KN-Planung, Abdeckungscheck sowie Export-Buttons für Excel und PDF.",
+      "screenshot": true
+    },
+    {
+      "action": "click",
+      "selector": "button.jp-btn-ghost:has-text(\"Klasse\")",
+      "caption": "**Neue Klasse anlegen** — Klicke auf **＋ Klasse**, um eine benannte Plan-Instanz für deine Klasse zu erstellen (z.B. «EFZ-3J 2025 KL-A»). Jede Instanz speichert deine Anpassungen, KN-Termine und Abdeckungscheck separat — ideal, wenn du mehrere Klassen unterrichtest.",
+      "screenshot": true
+    },
+    {
+      "action": "click",
+      "selector": "button.jp-toggle:has-text(\"KN-Planung\")",
+      "caption": "**KN-Planung aktivieren** — Klicke auf **★ KN-Planung**, um den Kompetenznachweisplaner einzublenden. Hier legst du für jeden KN die Woche, das Format (Fachgespräch / Mini-Case / Werkschau / Andere) und vorbereitende Situationen fest. Gespeichert pro Klasse.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Kompetenznachweise planen\")",
+      "caption": "**KN-Planung** — Der Planer listet automatisch die drei empfohlenen Kompetenznachweise auf (einen pro Thema). Wähle die Unterrichtswoche aus dem Dropdown und notiere z.B. welche Situationen zur Vorbereitung eingesetzt werden.",
+      "screenshot": true
+    },
+    {
+      "action": "click",
+      "selector": "button.jp-toggle:has-text(\"KN-Planung\")",
+      "caption": "",
+      "screenshot": false
+    },
+    {
+      "action": "click",
+      "selector": "button.jp-toggle:has-text(\"Abdeckung\")",
+      "caption": "**Abdeckungscheck aktivieren** — Klicke auf **▣ Abdeckung**, um den Live-Abdeckungscheck zu öffnen. Hier hakst du nach dem Unterricht ab, welche Schlüsselkompetenzen und Sprachmodi du pro Lebensbezug tatsächlich geübt hast.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Abdeckung —\")",
+      "caption": "**Abdeckung pro Lebensbezug** — Für jeden unterrichteten Lebensbezug erscheinen die nRLP-empfohlenen SK und Sprachmodi als Checkboxen. Die SK-Übersichts-Chips oben zeigen sofort, wie oft du jede Kompetenz eingesetzt hast — so erkennst du auf einen Blick, wo noch Lücken bestehen.",
+      "screenshot": true
+    },
+    {
+      "action": "click",
+      "selector": "button.jp-toggle:has-text(\"Abdeckung\")",
+      "caption": "",
+      "screenshot": false
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".jp-toolbar",
+      "caption": "**Export** — Mit **⬇ Excel** exportierst du den vollständigen Jahresplan als `.xlsx`-Datei (mit Lebensbezügen, SKs, Sprachmodi und Herausforderungen pro Woche). Mit **🖨 PDF / Drucken** öffnest du den Browser-Druckdialog — die Seite ist für A4 Querformat optimiert.",
+      "screenshot": true,
+      "highlight": "button.jp-btn-ghost:has-text(\"Excel\")"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "web-onboarding-capture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Capture scripts bundled with the web-onboarding-builder skill.",
+  "bin": { "onboarding": "capture.mjs" },
+  "scripts": {
+    "explore": "node capture.mjs explore",
+    "run": "node capture.mjs run",
+    "auth": "node capture.mjs auth",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

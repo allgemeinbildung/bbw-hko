@@ -94,7 +94,7 @@
   .step p code, .inline-code { background: var(--brand-tint); color: var(--brand-dark); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 12.5px; padding: 1px 6px; border-radius: 5px; }
 
   /* ── CARDS GRID (hub gates) ── */
-  .gates { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }
+  .gates { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 8px; }
   .gate { border: 1px solid var(--line); border-top: 3px solid var(--brand); border-radius: 12px; padding: 16px 18px; background: var(--card); }
   .gate.muted { border-top-color: #cbd5e1; opacity: .85; }
   .gate h4 { font-size: 15.5px; font-weight: 700; margin-bottom: 5px; }
@@ -208,11 +208,11 @@
   <section id="hub">
     <div class="kicker">Schritt 2</div>
     <h2>Die Hauptplattform — euer Ausgangspunkt</h2>
-    <p class="intro">Nach dem Login zeigt die Hauptplattform vier Einstiegs-Kacheln. Von hier aus wählt ihr, was ihr tun möchtet — und über «← Hauptplattform» in der oberen Leiste kommt ihr jederzeit wieder hierher zurück.</p>
+    <p class="intro">Nach dem Login zeigt die Hauptplattform drei Einstiegs-Kacheln. Von hier aus wählt ihr, was ihr tun möchtet — und über «← Hauptplattform» in der oberen Leiste kommt ihr jederzeit wieder hierher zurück.</p>
 
     <figure class="framed">
-      <img src="/onboarding/hub.jpg" alt="Hauptplattform-Hub mit vier Einstiegs-Kacheln">
-      <figcaption>Oben die Kopfleiste (Logo · «Meine Materialien» · Benutzer · Abmelden), darunter die vier Kacheln.</figcaption>
+      <img src="/onboarding/hub.jpg" alt="Hauptplattform-Hub mit drei Einstiegs-Kacheln">
+      <figcaption>Oben die Kopfleiste (Logo · «Meine Materialien» · Benutzer · Abmelden), darunter die drei Kacheln.</figcaption>
     </figure>
 
     <div class="gates">
@@ -222,14 +222,9 @@
         <span class="tag focus">Fokus dieses Rundgangs</span>
       </div>
       <div class="gate">
-        <h4>Katalog Situationen</h4>
-        <p>Einzelne Situation (A–E) aus dem Pilot-Katalog wählen, unterrichten und Feedback geben.</p>
-        <span class="tag side">Eigener Workflow</span>
-      </div>
-      <div class="gate muted">
         <h4>Material einreichen</h4>
         <p>Eigenes Material erfassen, mit nRLP-Taxonomie versehen und dem Kernteam 1 zur Review vorlegen.</p>
-        <span class="tag later">Folgt später</span>
+        <span class="tag side">Eigener Workflow</span>
       </div>
       <div class="gate">
         <h4>Jahresplanung 1. Lehrjahr</h4>
@@ -240,7 +235,7 @@
 
     <div class="note plain">
       <span class="ic">🧭</span>
-      <span>Dieser Rundgang folgt der Kachel <b>«Katalog Einheiten»</b> — dem Herzstück der Plattform. «Katalog Situationen» und «Jahresplanung» funktionieren ähnlich; «Material einreichen» behandeln wir zu einem späteren Zeitpunkt.</span>
+      <span>Dieser Rundgang folgt der Kachel <b>«Katalog Einheiten»</b> — dem Herzstück der Plattform. <b>«Material einreichen»</b> und <b>«Jahresplanung»</b> erkundet ihr bei Gelegenheit selbst. Tipp: Über den <b>«Katalog Situationen»</b> (erreichbar über die Navigationsleiste) findet ihr auch einzelne Situationen zum Stöbern.</span>
     </div>
   </section>
 
