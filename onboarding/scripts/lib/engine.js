@@ -60,6 +60,15 @@ export async function runFlow(flow, opts) {
       const wantsHighlight =
         (step.highlight ?? HIGHLIGHTABLE.has(step.action)) && !!step.selector && step.action !== "goto";
 
+      // For goto: navigate first so the screenshot shows the destination, not about:blank.
+      if (step.action === "goto") {
+        await performAction(page, step, flow.baseUrl);
+      }
+      // For scrollTo: scroll the element into view first so the highlight and
+      // screenshot both land at the right scroll position.
+      if (step.action === "scrollTo" && step.selector) {
+        try { await page.locator(step.selector).scrollIntoViewIfNeeded({ timeout: 8000 }); } catch {}
+      }
       if (wantsShot && wantsHighlight && step.selector) {
         try {
           await page.waitForSelector(step.selector, { timeout: 8000, state: "visible" });
@@ -75,11 +84,13 @@ export async function runFlow(flow, opts) {
           caption: defaultCaption(step),
           screenshot: join("screenshots", name),
           url: page.url(),
+          section: step.section || null,
         });
         shotN++;
       }
       if (wantsHighlight) await clearHighlight(page).catch(() => {});
-      await performAction(page, step, flow.baseUrl);
+      // goto was already performed above; all other actions run here.
+      if (step.action !== "goto") await performAction(page, step, flow.baseUrl);
     }
   } finally {
     await context.close();
