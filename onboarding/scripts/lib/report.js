@@ -46,11 +46,15 @@ function groupBySection(steps, defaultName) {
 }
 
 // One step rendered as a card (header with badge + caption, then screenshot).
-function stepCard(s, globalIndex, outDir) {
+function stepCard(s, globalIndex, outDir, baseUrl, productionBaseUrl) {
   const img = s.screenshot
     ? `<figure class="shot"><img src="${dataUri(join(outDir, s.screenshot))}" alt="${escapeHtml(s.caption)}"></figure>`
     : "";
-  const meta = s.url ? `<p class="meta">${escapeHtml(s.url)}</p>` : "";
+  let displayUrl = s.url || "";
+  if (displayUrl && baseUrl && productionBaseUrl) {
+    displayUrl = displayUrl.replace(baseUrl, productionBaseUrl);
+  }
+  const meta = displayUrl ? `<p class="meta"><a href="${escapeHtml(displayUrl)}" target="_blank" rel="noopener">${escapeHtml(displayUrl)}</a></p>` : "";
   return `<div class="step">
   <div class="step-head"><span class="num">${globalIndex}</span><h2>${captionToHtml(s.caption)}</h2></div>
   ${img}${meta}
@@ -67,14 +71,14 @@ function tabsHtml(sections) {
 }
 
 // Section panels — each contains the step cards for that section.
-function sectionsHtml(sections, outDir) {
+function sectionsHtml(sections, outDir, baseUrl, productionBaseUrl) {
   return sections
     .map((sec, i) => {
       const cards = sec.steps
         .map((s, j) => {
           // Add a dashed divider between steps (not before the first)
           const divider = j > 0 ? '<hr class="step-divider">\n' : "";
-          return divider + stepCard(s, s.globalIndex, outDir);
+          return divider + stepCard(s, s.globalIndex, outDir, baseUrl, productionBaseUrl);
         })
         .join("\n");
       return `<div class="sec-panel${i === 0 ? " active" : ""}" id="sec-${i}">
@@ -126,7 +130,7 @@ export function buildHtml(result, templatePath, lang) {
     .replaceAll("{{L_STEP}}",   escapeHtml(L.step))
     .replaceAll("{{L_OF}}",     escapeHtml(L.of))
     .replaceAll("{{TABS}}",     tabsHtml(sections))
-    .replaceAll("{{SECTIONS}}", sectionsHtml(sections, result.outDir));
+    .replaceAll("{{SECTIONS}}", sectionsHtml(sections, result.outDir, result.baseUrl, result.productionBaseUrl));
 }
 
 export async function renderPdf(html, outPath) {

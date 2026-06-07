@@ -1,0 +1,110 @@
+{
+  "name": "ABU-Materialplattform — Einführung & Rundgang",
+  "description": "Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.",
+  "baseUrl": "http://localhost:4321",
+  "productionBaseUrl": "https://bbw-hko.vercel.app",
+  "auth": null,
+  "lang": "de",
+  "viewport": { "width": 1440, "height": 900 },
+  "steps": [
+    {
+      "action": "goto",
+      "value": "/login",
+      "section": "Anmelden",
+      "caption": "Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen klicken auf **«Mit Microsoft (BBW) anmelden»** — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.",
+      "screenshot": true,
+      "fullPage": false
+    },
+    {
+      "action": "fill",
+      "selector": "#email",
+      "value": "lehrer@hko.ch",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "fill",
+      "selector": "#password",
+      "value": "lehrer$1234",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "click",
+      "selector": "button[type=\"submit\"]:has-text(\"Anmelden\")",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "waitForSelector",
+      "selector": "h1:has-text(\"Willkommen\")",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "screenshot",
+      "section": "Hauptplattform",
+      "caption": "Nach dem Login erscheint die **Hauptplattform** mit drei Einstiegs-Kacheln. Von hier führen alle Wege weiter — und über **«← Hauptplattform»** in der Navigationsleiste kommst du jederzeit wieder hierher zurück.",
+      "screenshot": true,
+      "fullPage": false
+    },
+    {
+      "action": "goto",
+      "value": "/einheiten",
+      "section": "Einheiten-Katalog",
+      "caption": "Klicke auf **«Katalog Einheiten»** (oder navigiere direkt über die Leiste). Der Katalog zeigt alle fertigen Unterrichtseinheiten — jede enthält 3 Situationen A/B/C, einen Kompetenznachweis und ein Begleitdokument.",
+      "screenshot": true,
+      "fullPage": false
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".lion-bg >> nth=0",
+      "section": "Einheiten-Katalog",
+      "caption": "Jede **Einheiten-Karte** zeigt auf einen Blick: Kompetenz-Nr., Lehrgang, Thema, das Kompetenzversprechen, die drei Situationen A · B · C sowie die Aspekte. **«Bundle: N Dateien →»** öffnet die Werkbank; **«Begleiter ↗»** öffnet direkt das Lehrpersonen-Begleitdokument.",
+      "screenshot": true
+    },
+    {
+      "action": "goto",
+      "value": "/einheiten/1.1.1_konflikt_kommunizieren",
+      "section": "Werkbank",
+      "caption": "Klicke auf **«Bundle: N Dateien →»**, um die **Werkbank** zu öffnen. Links die Navigationsleiste (Sidebar), rechts die grosse Dokumentvorschau.",
+      "screenshot": true,
+      "fullPage": false
+    },
+    {
+      "action": "waitForSelector",
+      "selector": ".wb-nav",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".wb-nav",
+      "section": "Werkbank",
+      "caption": "Die **Sidebar** listet alle Dokumente der Einheit als Baum: Herausforderungen A · B · C, Austausch & Transfer, Kompetenznachweis (Schüler/in + Lehrperson) und den Feedback-Button. Ein Klick auf einen Eintrag zeigt das Dokument sofort rechts an.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".wb-canvas",
+      "section": "Werkbank",
+      "caption": "Im **Vorschau-Bereich** siehst du live, wie das Dokument aussieht — druckfertig als A4-Seite. Oben im dunklen Dokumentkopf schaltest du beim Situationsheft zwischen **Auftrag** (leere Vorlage für Lernende) und **Dossier** (mit ausgearbeiteter Lösung) um.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": ".download-fab",
+      "section": "Werkbank",
+      "caption": "Der grüne **Download-Button** unten rechts lädt die gesamte Einheit als ZIP-Paket herunter — alle Dokumente als HTML und Word, plus Begleiter und README. Eine Einheit umfasst typischerweise 22–33 Dateien.",
+      "screenshot": true
+    },
+    {
+      "action": "goto",
+      "value": "/einheiten/1.1.1_konflikt_kommunizieren/feedback",
+      "section": "Nach dem Unterricht",
+      "caption": "Nach dem Unterricht: Klicke in der Werkbank auf **«Feedback nach Unterricht»**. Das Formular erfasst, wie die Einheit lief — welche Situationen und KN-Typen eingesetzt wurden, was gut klappte und was verbessert werden sollte. Jedes Feedback fliesst direkt ins Review des Kernteams 1.",
+      "screenshot": true,
+      "fullPage": false
+    }
+  ]
+}

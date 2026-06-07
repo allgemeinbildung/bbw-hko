@@ -1,0 +1,115 @@
+{
+  "name": "Material einreichen — Schritt für Schritt",
+  "description": "Diese Kurzanleitung erklärt das Formular «Eigenes Material teilen» — von der Verortung im Lehrplan bis zum Einreichen. Pflichtfelder sind mit * markiert; alle anderen Blöcke sind optional, aber wertvoll.",
+  "baseUrl": "http://localhost:4321",
+  "productionBaseUrl": "https://bbw-hko.vercel.app",
+  "auth": "../auth.json",
+  "lang": "de",
+  "viewport": { "width": 1440, "height": 900 },
+  "steps": [
+    {
+      "action": "goto",
+      "value": "/einreichen",
+      "section": "Überblick",
+      "caption": "Öffne **Material einreichen** über die Navigation. Das Formular ist in Blöcke A · B · H · K · Z · O gegliedert — jeder Block entspricht einem Schritt der Backward-Design-Kette: Kompetenzversprechen → Handlungssituation → Kompetenznachweis.",
+      "screenshot": true,
+      "fullPage": false
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Verortung im Lehrplan\")",
+      "section": "Block A — Verortung",
+      "caption": "**Block A — Verortung:** Wähle zuerst **Lehrdauer** (EFZ-3J / EFZ-4J / EBA) und **Lehrjahr**. Der passende Lehrplan wird danach automatisch geladen.",
+      "screenshot": true
+    },
+    {
+      "action": "click",
+      "selector": "label.radio-pill:has-text(\"EFZ-3J\")",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "waitForTimeout",
+      "value": "2500",
+      "screenshot": false,
+      "caption": ""
+    },
+    {
+      "action": "scrollTo",
+      "selector": "label:has-text(\"Thema (nRLP)\") >> nth=0",
+      "section": "Block A — Verortung",
+      "caption": "Sobald der Lehrplan geladen ist, wähle **Thema**, **Lebensbezug** und **Kompetenz** aus den Dropdowns. Für das **Kompetenzversprechen** («Ich kann …») schlägst du einen eigenen Satz vor — oder es wird aus der Lehrplan-Kompetenz vorausgefüllt.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"nRLP-Taxonomie\")",
+      "section": "Block B — Taxonomie",
+      "caption": "**Block B — nRLP-Taxonomie:** Hake die passenden **Schlüsselkompetenzen** (SK) und **Gesellschaftsinhalte** (Aspekte) an. Empfohlen sind je 2–3. Der grüne Button **«Empfohlene Taxonomie übernehmen»** setzt alle Häkchen automatisch auf die Lehrplan-Empfehlung.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "label:has-text(\"Sprachmodus primär\")",
+      "section": "Block B — Taxonomie",
+      "caption": "Wähle den **primären Sprachmodus** (z. B. «Argumentieren») aus dem Dropdown. Sekundäre Sprachmodi können zusätzlich angehakt werden.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Handlungssituation\")",
+      "section": "Block H — Handlungssituation",
+      "caption": "**Block H — Handlungssituation** (linke Seite): Der **Situationstext** beschreibt die Ausgangslage aus ICH-Perspektive — die Lernenden sollen sich damit identifizieren können. Die **Leitfrage** formuliert das zentrale Problem.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "label.field-label:has-text(\"Mehrdeutigkeit\")",
+      "section": "Block H — Handlungssituation",
+      "caption": "Die **Mehrdeutigkeit / Trade-off** ist der HKO-Kernpunkt: Beschreibe den echten Zielkonflikt, der die Situation handlungsorientiert macht (z.B. «Eigene Rechte durchsetzen vs. Beziehung erhalten»). Ohne Trade-off ist es eine Wissensfrage, keine Handlungssituation.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h3:has-text(\"Handlungsprodukt\")",
+      "section": "Block H — Handlungssituation",
+      "caption": "Das **Handlungsprodukt** beschreibt, was die Lernenden am Ende produzieren: Typ (Schriftlich / Mündlich / Multimedial / Mischform) und eine kurze Beschreibung. Darunter folgt eine optionale **Checkliste Handlungssituation**.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Kompetenznachweis\")",
+      "section": "Block K — Kompetenznachweis",
+      "caption": "**Block K — Kompetenznachweis** (rechte Seite): Wähle das **Prüfformat** (Fachgespräch / Mini-Case / Werkschau / Andere) und formuliere die **Prüfaufgabe** — idealerweise eine neue Transfer-Situation, nicht die geübte.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h3:has-text(\"Bewertungskriterien\")",
+      "section": "Block K — Kompetenznachweis",
+      "caption": "Unter **Bewertungskriterien** definierst du 3–5 Kriterien mit der Dimension **SuK** (Sprache & Kommunikation) oder **Ges** (Gesellschaft). Klicke auf «+ Kriterium hinzufügen», um neue Zeilen anzulegen.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Zusatzmaterialien\")",
+      "section": "Zusatzmaterialien & Anreicherung",
+      "caption": "**Block Z — Zusatzmaterialien:** Lade fertige Unterlagen hoch (Arbeitsblätter, Bewertungsraster, Präsentationen, Bilder). Max. 15 MB pro Datei. Die Dateien werden nur für dich und KT1 sichtbar gespeichert.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "h2:has-text(\"Anreicherung\")",
+      "section": "Zusatzmaterialien & Anreicherung",
+      "caption": "**Block O — Anreicherung (optional):** Füge einen **Lehrmittel-Anker** (Kapitelverweise) und einen **Didaktischen Kniff** hinzu — das hilft anderen Lehrpersonen, dein Material zu verstehen und einzusetzen.",
+      "screenshot": true
+    },
+    {
+      "action": "scrollTo",
+      "selector": "button:has-text(\"Material teilen\")",
+      "section": "Einreichen",
+      "caption": "Klicke auf **«Material teilen»**, um dein Material einzureichen. Es erscheint danach in «Meine Materialien» mit Status **eingereicht** und wird von KT1 geprüft. Du kannst es bis zur Freigabe jederzeit bearbeiten.",
+      "screenshot": true
+    }
+  ]
+}

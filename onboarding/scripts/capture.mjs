@@ -78,7 +78,7 @@ async function main() {
       headed: !!flags.headed,
       slowMo: flags.slowmo ? Number(flags.slowmo) : undefined,
     });
-    const result = { flowName: flow.name, description: flow.description, outDir, steps, videoPath };
+    const result = { flowName: flow.name, description: flow.description, outDir, steps, videoPath, baseUrl: flow.baseUrl, productionBaseUrl: flow.productionBaseUrl };
     const { md, html, pdf } = await writeReports(result, {
       templatePath: TEMPLATE,
       lang: flow.lang || "en",
