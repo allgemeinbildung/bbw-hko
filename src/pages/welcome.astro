@@ -41,7 +41,7 @@ const guestError = Astro.url.searchParams.get('guest_error')
         Für Lehrpersonen der Berufsbildungsschule Winterthur
       </p>
 
-      <!-- CTAs — primary action alone, secondary options smaller below -->
+      <!-- CTAs — primary action alone, guest option smaller below -->
       <div class="flex flex-col items-center gap-5">
         <a
           href="/login"
@@ -51,25 +51,15 @@ const guestError = Astro.url.searchParams.get('guest_error')
           Anmelden
         </a>
 
-        <div class="flex flex-wrap gap-3 justify-center">
-          <!-- Onboarding / tour — no login required -->
-          <a
-            href="/onboarding/index.html"
-            class="px-6 py-2.5 rounded-lg border text-base font-medium transition hover:bg-[var(--brand-tint)]"
-            style="border-color: var(--brand); color: var(--brand)"
+        <!-- Guest access (read-only, no code required) -->
+        <form method="POST" action="/api/auth/guest">
+          <button
+            type="submit"
+            class="px-6 py-2.5 rounded-lg border border-slate-300 text-slate-700 text-base font-medium hover:bg-slate-50 transition"
           >
-            Rundgang ansehen &rarr;
-          </a>
-          <!-- Guest access (read-only, no code required) -->
-          <form method="POST" action="/api/auth/guest">
-            <button
-              type="submit"
-              class="px-6 py-2.5 rounded-lg border border-slate-300 text-slate-700 text-base font-medium hover:bg-slate-50 transition"
-            >
-              Als Gast ansehen
-            </button>
-          </form>
-        </div>
+            Als Gast ansehen
+          </button>
+        </form>
       </div>
 
       {guestError && (
@@ -80,7 +70,7 @@ const guestError = Astro.url.searchParams.get('guest_error')
         Die Plattform ist nur auf Einladung zugänglich. Ein Konto erstellst du über die
         <a href="/login" class="underline hover:text-slate-600">Anmeldeseite</a> — einen Einladungscode erhältst du bei
         <a href="mailto:pietro.rossi@bbw.ch?subject=Zugang%20ABU-Materialplattform" class="underline hover:text-slate-600">pietro.rossi@bbw.ch</a>.
-        <strong>Rundgang</strong> und <strong>Gast-Zugang</strong> zeigen die Inhalte ohne eigenes Konto.
+        Mit dem <strong>Gast-Zugang</strong> siehst du die Inhalte ohne eigenes Konto.
       </p>
 
     </section>
