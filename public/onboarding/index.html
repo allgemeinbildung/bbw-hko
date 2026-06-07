@@ -167,7 +167,7 @@
     <a href="#anmelden"><span class="n">1</span> Anmelden</a>
     <a href="#hub"><span class="n">2</span> Hauptplattform</a>
     <a href="#katalog"><span class="n">3</span> Einheiten-Katalog</a>
-    <a href="#werkbank"><span class="n">4</span> Werkbank &amp; Leiste</a>
+    <a href="#werkbank"><span class="n">4</span> Werkbank &amp; Seitenleiste</a>
     <a href="#feedback"><span class="n">5</span> Nach dem Unterricht</a>
   </div>
 </nav>
@@ -278,50 +278,57 @@
   <!-- ── 4. WERKBANK ── -->
   <section id="werkbank">
     <div class="kicker">Schritt 4 — das Herzstück</div>
-    <h2>Die Werkbank &amp; ihre Werkzeugleiste</h2>
-    <p class="intro">Beim Öffnen einer Einheit landet ihr in der <b>Werkbank</b>. Ganz oben sitzt die <b>Werkzeugleiste</b> — von hier aus steuert ihr alles. Sie ist <b>anpassungsfähig</b>: je nach gewähltem Dokument erscheinen unterschiedliche Optionen. Hier ist sie im Detail.</p>
+    <h2>Die Werkbank &amp; ihre Seitenleiste</h2>
+    <p class="intro">Beim Öffnen einer Einheit landet ihr in der <b>Werkbank</b>. <b>Links</b> sitzt die <b>Seitenleiste</b> — euer Dokument-Navigator. Hier sind alle Dokumente der Einheit als übersichtlicher Baum aufgelistet; ein Klick zeigt das gewählte Dokument sofort in der grossen Vorschau rechts.</p>
 
-    <!-- Annotated toolbar -->
-    <div class="annot">
-      <img src="/onboarding/wb-toolbar.jpg" alt="Werkzeugleiste der Werkbank mit nummerierten Markierungen">
-      <span class="hot" style="left:9%;    top:50%">1</span>
-      <span class="hot" style="left:33.5%; top:50%">2</span>
-      <span class="hot" style="left:52%;   top:50%">3</span>
-      <span class="hot" style="left:62%;   top:50%">4</span>
-      <span class="hot" style="left:74.7%; top:50%">5</span>
-      <span class="hot" style="left:83.2%; top:50%">6</span>
-      <span class="hot" style="left:91.8%; top:50%">7</span>
-      <span class="hot" style="left:97%;   top:50%">8</span>
-    </div>
-
-    <div class="legend">
-      <div class="leg"><div class="ln">1</div><div class="lt"><b>Abteilung wählen</b><span>Deine Abteilung auswählen — sie wird auf alle erzeugten Dokumente gedruckt. Am besten zuerst setzen.</span></div></div>
-      <div class="leg"><div class="ln">2</div><div class="lt"><b>Doc — Dokument-Auswahl</b><span>Umschalten zwischen <b>Situationsheft</b>, <b>Austausch&nbsp;&amp;&nbsp;Transfer</b>, <b>KN&nbsp;Schüler/in</b> und <b>KN&nbsp;Lehrperson</b>.</span></div></div>
-      <div class="leg"><div class="ln">3</div><div class="lt"><b>Sit — A / B / C</b><span>Welche der drei Situationen angezeigt wird (A rot · B blau · C grün). Nur beim Situationsheft sichtbar.</span></div></div>
-      <div class="leg"><div class="ln">4</div><div class="lt"><b>Modus — Dossier / Auftrag</b><span><b>Auftrag</b> = leere Vorlage für die Lernenden. <b>Dossier</b> = dieselbe Situation mit ausgearbeiteter Lösung.</span></div></div>
-      <div class="leg"><div class="ln">5</div><div class="lt"><b>Begleiter ↗</b><span>Öffnet das Lehrpersonen-Begleitdokument in einem neuen Tab (Hintergrund, Didaktik, Coaching-Hinweise).</span></div></div>
-      <div class="leg"><div class="ln">6</div><div class="lt"><b>Feedback nach Unterricht →</b><span>Das Rückmeldeformular — nach dem Unterricht ausfüllen. Es fliesst direkt ins Kernteam-1-Review.</span></div></div>
-      <div class="leg"><div class="ln">7</div><div class="lt"><b>Alle als ZIP</b><span>Lädt die <b>gesamte</b> Einheit als ein Paket herunter (alle Dokumente als HTML <i>und</i> Word, plus Begleiter und README).</span></div></div>
-      <div class="leg"><div class="ln">8</div><div class="lt"><b>Drucken</b><span>Druckt das aktuell angezeigte Dokument sauber als A4 — die Leiste blendet sich beim Druck automatisch aus.</span></div></div>
+    <!-- Annotierte Seitenleiste -->
+    <div class="split" style="grid-template-columns: 300px 1fr;">
+      <div class="annot" style="margin-bottom:0;">
+        <img src="/onboarding/wb-toolbar.jpg" alt="Seitenleiste der Werkbank mit nummerierten Markierungen">
+        <span class="hot" style="left:8%; top:7%">1</span>
+        <span class="hot" style="left:8%; top:16%">2</span>
+        <span class="hot" style="left:8%; top:33%">3</span>
+        <span class="hot" style="left:8%; top:50%">4</span>
+        <span class="hot" style="left:8%; top:71%">5</span>
+        <span class="hot" style="left:8%; top:84%">6</span>
+        <span class="hot" style="left:8%; top:95%">7</span>
+      </div>
+      <div class="legend" style="grid-template-columns:1fr; align-content:start;">
+        <div class="leg"><div class="ln">1</div><div class="lt"><b>Abteilung wählen</b><span>Deine Abteilung auswählen — sie wird auf alle erzeugten Dokumente gedruckt. Am besten zuerst setzen.</span></div></div>
+        <div class="leg"><div class="ln">2</div><div class="lt"><b>📖 Lies mich!</b><span>Öffnet das Lehrpersonen-<b>Begleitdokument</b> in einem neuen Tab (Hintergrund, Didaktik, Coaching-Hinweise).</span></div></div>
+        <div class="leg"><div class="ln">3</div><div class="lt"><b>Herausforderungen A · B · C</b><span>Die drei <b>Situationshefte</b>. Ein Klick zeigt das Heft rechts an (A rot · B blau · C grün).</span></div></div>
+        <div class="leg"><div class="ln">4</div><div class="lt"><b>Austausch &amp; Transfer</b><span>Das Set-Abschlussdokument für die gemeinsame Auswertung und den Transfer.</span></div></div>
+        <div class="leg"><div class="ln">5</div><div class="lt"><b>Kompetenznachweis · Schüler/in</b><span>Die Prüfungsformate der Einheit — z.&nbsp;B. <b>Fachgespräch</b>, <b>Mini&nbsp;Case schriftlich</b>, <b>Werkschau + Transfer-Reflexion</b>.</span></div></div>
+        <div class="leg"><div class="ln">6</div><div class="lt"><b>📋 Lehrperson + Bewertung</b><span>Die Lehrpersonen-Fassung des Kompetenznachweises inkl. Bewertungsraster.</span></div></div>
+        <div class="leg"><div class="ln">7</div><div class="lt"><b>✍ Feedback nach Unterricht</b><span>Das Rückmeldeformular — nach dem Unterricht ausfüllen. Es fliesst direkt ins Kernteam-1-Review.</span></div></div>
+      </div>
     </div>
 
     <div class="note tip">
       <span class="ic">💡</span>
-      <span><b>Anpassungsfähige Leiste:</b> Wählt man bei <b>Doc</b> ein anderes Dokument, ändern sich die mittleren Werkzeuge. Beispiel: Bei <b>«KN Schüler/in»</b> verschwinden «Sit» und «Modus» — stattdessen erscheint <b>«KN-Typ»</b> mit den drei Prüfungsformaten der Einheit:</span>
+      <span><b>Live-Vorschau:</b> Was ihr links anklickt, erscheint sofort rechts in der grossen Vorschau. Das aktive Dokument ist in der Leiste grün hinterlegt.</span>
     </div>
 
+    <h3 style="font-size:18px;font-weight:800;margin:34px 0 14px;">Zwei Steuerungen sitzen direkt im Vorschau-Bereich</h3>
+    <p class="intro" style="margin-bottom:18px;">Nicht alles steckt in der Seitenleiste: Zwei Bedienelemente liegen direkt bei der Dokument-Vorschau rechts.</p>
+
     <figure class="framed">
-      <img src="/onboarding/wb-toolbar-kn.jpg" alt="Werkzeugleiste im Modus KN Schüler/in mit der Gruppe KN-Typ">
-      <figcaption>Bei <b>«KN Schüler/in»</b> erscheint die Gruppe <b>KN-Typ</b>: hier <b>Fachgespräch</b>, <b>Mini&nbsp;Case schriftlich</b> und <b>Werkschau + Transfer-Reflexion</b>.</figcaption>
+      <img src="/onboarding/wb-toolbar-kn.jpg" alt="Dunkle Dokument-Kopfzeile der Vorschau mit Umschalter Auftrag / Dossier">
+      <figcaption>Die <b>Dokument-Kopfzeile</b> (dunkel) zeigt links den Dokumentnamen. Rechts der Umschalter <b>Auftrag / Dossier</b> — er erscheint nur beim <b>Situationsheft</b>: <b>Auftrag</b> = leere Vorlage für die Lernenden, <b>Dossier</b> = dieselbe Situation mit ausgearbeiteter Lösung.</figcaption>
     </figure>
+
+    <div class="note plain">
+      <span class="ic">⬇</span>
+      <span>Unten rechts schwebt der grüne Knopf <b>«Download»</b>: er lädt die <b>gesamte</b> Einheit als ein ZIP-Paket herunter (alle Dokumente als HTML <i>und</i> Word, plus Begleiter und README). Einzelne Dokumente druckt ihr direkt aus der Vorschau mit <span class="inline-code">Strg/Cmd + P</span>.</span>
+    </div>
 
     <h3 style="font-size:18px;font-weight:800;margin:34px 0 14px;">Der typische Ablauf in der Werkbank</h3>
     <div class="steps">
-      <div class="step"><div class="sn">1</div><div><h3>Abteilung wählen</h3><p>Damit sie auf den Dokumenten erscheint.</p></div></div>
-      <div class="step"><div class="sn">2</div><div><h3>Dokument auswählen</h3><p>Situationsheft, Austausch &amp; Transfer, KN Schüler/in oder KN Lehrperson.</p></div></div>
-      <div class="step"><div class="sn">3</div><div><h3>Feinschliff</h3><p>Beim Situationsheft zwischen <b>A/B/C</b> und <b>Dossier/Auftrag</b> umschalten; beim KN den <b>KN-Typ</b> wählen.</p></div></div>
-      <div class="step"><div class="sn">4</div><div><h3>Ausgeben</h3><p>Einzeln mit <b>Drucken</b> — oder die ganze Einheit mit <b>Alle als ZIP</b> herunterladen.</p></div></div>
-      <div class="step"><div class="sn">5</div><div><h3>Vorbereiten</h3><p>Mit <b>Begleiter ↗</b> die didaktischen Hintergründe nachlesen, bevor es in den Unterricht geht.</p></div></div>
+      <div class="step"><div class="sn">1</div><div><h3>Abteilung wählen</h3><p>Oben in der Seitenleiste — damit sie auf den Dokumenten erscheint.</p></div></div>
+      <div class="step"><div class="sn">2</div><div><h3>Dokument anklicken</h3><p>In der Seitenleiste eine Herausforderung (A/B/C), Austausch &amp; Transfer oder einen Kompetenznachweis wählen.</p></div></div>
+      <div class="step"><div class="sn">3</div><div><h3>Feinschliff</h3><p>Beim Situationsheft rechts oben in der Kopfzeile zwischen <b>Auftrag</b> und <b>Dossier</b> umschalten.</p></div></div>
+      <div class="step"><div class="sn">4</div><div><h3>Ausgeben</h3><p>Einzeln per <b>Strg/Cmd + P</b> drucken — oder die ganze Einheit mit <b>Download</b> als ZIP holen.</p></div></div>
+      <div class="step"><div class="sn">5</div><div><h3>Vorbereiten</h3><p>Mit <b>📖 Lies mich!</b> die didaktischen Hintergründe nachlesen, bevor es in den Unterricht geht.</p></div></div>
     </div>
 
     <h3 style="font-size:18px;font-weight:800;margin:34px 0 14px;">So sieht ein fertiges Dokument aus</h3>
