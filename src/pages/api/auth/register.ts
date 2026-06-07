@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
 import { createAdminClient } from '../../../lib/supabase'
+import { REGISTER_CODE, codeMatches } from '../../../lib/access-codes'
 
 export const POST: APIRoute = async ({ locals, request, redirect }) => {
   const form = await request.formData()
@@ -7,6 +8,14 @@ export const POST: APIRoute = async ({ locals, request, redirect }) => {
   const password = form.get('password') as string
   const full_name = (form.get('full_name') as string).trim()
   const abteilung = (form.get('abteilung') as string).trim() || null
+  const code = form.get('code') as string
+
+  // Invitation-only: reject before creating any auth user.
+  if (!codeMatches(code, REGISTER_CODE)) {
+    return redirect(
+      `/registrieren?error=${encodeURIComponent('Ungültiger Einladungscode. Die Registrierung ist nur auf Einladung möglich — wende dich an pietro.rossi@bbw.ch.')}`
+    )
+  }
 
   const { data, error } = await locals.supabase.auth.signUp({ email, password })
 

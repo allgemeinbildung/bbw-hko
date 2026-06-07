@@ -10,7 +10,9 @@ const { data: profile } = await Astro.locals.supabase
   .select('role')
   .eq('id', user.id)
   .single()
-const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+const role: 'lp' | 'kt1' | 'gast' =
+  profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
+const isGuest = role === 'gast'
 
 const id = Astro.params.id as string
 const entry = situationenIndex.find((e) => e.id === id)
@@ -18,14 +20,17 @@ if (!entry) return Astro.redirect('/situationen?error=Situation%20nicht%20gefund
 
 const full = await loadFullSituation(id)
 
-const { data: myFeedback } = await Astro.locals.supabase
-  .from('feedbacks')
-  .select('id, status, getestet_am, tauglichkeit, qualitaet, weiterempfehlung')
-  .eq('situation_id', id)
-  .eq('lp_id', user.id)
-  .order('created_at', { ascending: false })
-  .limit(1)
-  .maybeSingle()
+// Guests cannot give feedback, so skip the personal-feedback lookup.
+const { data: myFeedback } = isGuest
+  ? { data: null }
+  : await Astro.locals.supabase
+      .from('feedbacks')
+      .select('id, status, getestet_am, tauglichkeit, qualitaet, weiterempfehlung')
+      .eq('situation_id', id)
+      .eq('lp_id', user.id)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle()
 
 const lj = lehrjahrForEntry(entry)
 const sit = entry.sit_letter ?? '?'
@@ -60,14 +65,16 @@ const bewertungsraster = full?.bewertungsraster ?? []
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-end gap-2 shrink-0">
-        <a href={`/situationen/${entry.id}/feedback`} class="py-2 px-4 rounded-md text-white text-sm font-medium" style="background: var(--brand)">
-          {myFeedback ? 'Feedback bearbeiten' : 'Feedback geben'}
-        </a>
-        {myFeedback && (
-          <span class="text-xs text-slate-500">Status: {myFeedback.status}</span>
-        )}
-      </div>
+      {!isGuest && (
+        <div class="flex flex-col items-end gap-2 shrink-0">
+          <a href={`/situationen/${entry.id}/feedback`} class="py-2 px-4 rounded-md text-white text-sm font-medium" style="background: var(--brand)">
+            {myFeedback ? 'Feedback bearbeiten' : 'Feedback geben'}
+          </a>
+          {myFeedback && (
+            <span class="text-xs text-slate-500">Status: {myFeedback.status}</span>
+          )}
+        </div>
+      )}
     </div>
 
     {entry.persona && (

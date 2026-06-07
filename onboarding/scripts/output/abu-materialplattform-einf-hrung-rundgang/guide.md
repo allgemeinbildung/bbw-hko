@@ -5,11 +5,11 @@ Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur 
 
 ## Anmelden
 
-### 1. Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen klicken auf **«Mit Microsoft (BBW) anmelden»** — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.
+### 1. Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen melden sich mit **«Mit Microsoft (BBW) anmelden»** an — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.
 
 ![1](screenshots/00-ffne-die-plattform-unter-bbw-hko-vercel-.png)
 
-<sub>http://localhost:4321/login</sub>
+<sub>http://localhost:4321/</sub>
 
 
 ## Hauptplattform

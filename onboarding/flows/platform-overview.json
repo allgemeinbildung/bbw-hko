@@ -3,43 +3,17 @@
   "description": "Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.",
   "baseUrl": "http://localhost:4321",
   "productionBaseUrl": "https://bbw-hko.vercel.app",
-  "auth": null,
+  "auth": "../auth.json",
   "lang": "de",
   "viewport": { "width": 1440, "height": 900 },
   "steps": [
     {
       "action": "goto",
-      "value": "/login",
+      "value": "/",
       "section": "Anmelden",
-      "caption": "Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen klicken auf **«Mit Microsoft (BBW) anmelden»** — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.",
+      "caption": "Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen melden sich mit **«Mit Microsoft (BBW) anmelden»** an — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.",
       "screenshot": true,
       "fullPage": false
-    },
-    {
-      "action": "fill",
-      "selector": "#email",
-      "value": "lehrer@hko.ch",
-      "screenshot": false,
-      "caption": ""
-    },
-    {
-      "action": "fill",
-      "selector": "#password",
-      "value": "lehrer$1234",
-      "screenshot": false,
-      "caption": ""
-    },
-    {
-      "action": "click",
-      "selector": "button[type=\"submit\"]:has-text(\"Anmelden\")",
-      "screenshot": false,
-      "caption": ""
-    },
-    {
-      "action": "waitForSelector",
-      "selector": "h1:has-text(\"Willkommen\")",
-      "screenshot": false,
-      "caption": ""
     },
     {
       "action": "screenshot",

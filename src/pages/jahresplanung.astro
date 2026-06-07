@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import GuestPrintBlock from '../components/GuestPrintBlock.astro'
 import { nrlp } from '../lib/nrlp'
 import { situationenIndex } from '../lib/situationen'
 import einheitenIndex from '../data/einheiten.index.json'
@@ -7,6 +8,13 @@ import { skFullName } from '../lib/sk-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
+
+const { data: jpProfile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+const isGuest = jpProfile?.role === 'gast'
 
 // Build a flat lookup { "1.1": { thema, titel, kompetenzen[], sprachmodi[] }, ... }
 type KompetenzInfo = { nr: string; text: string }
@@ -251,17 +259,20 @@ const didaktikNotes = noteWeeks.filter((w) => !isFeiertag(w.note!))
 // Table created by migration 011. Guarded so the page still renders if the
 // migration has not been applied yet (data → null, error swallowed).
 let plans: any[] = []
-try {
-  const { data } = await Astro.locals.supabase
-    .from('jahresplanung_plans')
-    .select('*')
-    .order('created_at', { ascending: true })
-  plans = data ?? []
-} catch {
-  plans = []
+if (!isGuest) {
+  try {
+    const { data } = await Astro.locals.supabase
+      .from('jahresplanung_plans')
+      .select('*')
+      .order('created_at', { ascending: true })
+    plans = data ?? []
+  } catch {
+    plans = []
+  }
 }
 ---
 <Base title="Jahresplanung 1. Lehrjahr">
+  {isGuest && <GuestPrintBlock />}
   <div class="min-h-screen flex flex-col">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
       <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
@@ -305,7 +316,16 @@ try {
         </a>
       </div>
 
+      <!-- Gast-Hinweis (read-only) -->
+      {isGuest && (
+        <div class="mb-8 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800 flex items-center gap-2">
+          <span class="text-xs font-medium px-2 py-0.5 rounded border border-amber-300 bg-amber-100 text-amber-700">Gast · nur Lesen</span>
+          Jahresplanung in der Leseansicht — Bearbeiten, Klassen-Planung und Export sind angemeldeten Lehrpersonen vorbehalten.
+        </div>
+      )}
+
       <!-- Planungs-Toolbar (Feature 4/6/7/8) -->
+      {!isGuest && (
       <div class="jp-toolbar bg-white border border-slate-200 rounded-lg p-3 mb-8 flex flex-wrap items-center gap-x-4 gap-y-3">
         <!-- Klassen-Instanzen -->
         <div class="flex items-center gap-2">
@@ -347,6 +367,7 @@ try {
           <span x-show="!saving && dirty && !savedAt" class="text-amber-600">ungespeichert</span>
         </span>
       </div>
+      )}
 
       <!-- Summary stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">

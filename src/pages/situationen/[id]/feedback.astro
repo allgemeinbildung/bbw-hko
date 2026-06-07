@@ -11,6 +11,7 @@ const { data: profile } = await Astro.locals.supabase
   .select('role, abteilung')
   .eq('id', user.id)
   .single()
+if (profile?.role === 'gast') return Astro.redirect('/situationen')
 const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
 
 const id = Astro.params.id as string

@@ -12,6 +12,7 @@ const { data: profile } = await Astro.locals.supabase
   .single()
 
 if (profile?.role === 'kt1') return Astro.redirect('/admin')
+if (profile?.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material einreichen ist nur für angemeldete Lehrpersonen möglich.'))
 ---
 <LP title="Einreichen">
   <IntakeForm initialData={{ abteilung: profile?.abteilung ?? '' }} />

@@ -53,9 +53,23 @@ const error = Astro.url.searchParams.get('error')
         </button>
       </form>
 
-      <p class="text-center text-sm text-slate-500 mt-5">
-        Noch kein Konto?
-        <a href="/registrieren" class="hover:underline font-medium" style="color: var(--brand)">Registrieren</a>
+      <div class="flex items-center gap-3 my-5">
+        <hr class="flex-1 border-slate-200">
+        <span class="text-xs text-slate-400">noch kein Konto?</span>
+        <hr class="flex-1 border-slate-200">
+      </div>
+
+      <a
+        href="/registrieren"
+        class="flex items-center justify-center w-full py-2.5 rounded-md border border-slate-300 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
+      >
+        Konto erstellen
+      </a>
+      <p class="text-center text-xs text-slate-400 mt-2">
+        Registrierung nur auf Einladung (Einladungscode erforderlich).
+      </p>
+      <p class="text-center text-xs text-slate-400 mt-3">
+        Nur schauen? <a href="/welcome" class="hover:underline" style="color: var(--brand)">Gast-Zugang &rarr;</a>
       </p>
     </div>
   </div>

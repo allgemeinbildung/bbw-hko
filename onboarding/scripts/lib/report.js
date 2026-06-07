@@ -1,13 +1,41 @@
 // Turn captured steps into deliverables: a self-contained tabbed HTML guide
 // (document view with section tabs + slides view + A4 print), a Markdown guide, and a PDF.
-import { readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { join, dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Resolve logos relative to this file: lib/ → scripts/ → onboarding/ → project root
+const _HERE = dirname(fileURLToPath(import.meta.url));
+const _PUB  = resolve(_HERE, "..", "..", "..", "public");
+
+let _logoDark = null, _logoLight = null, _badge = null;
+function badgeDataUri() {
+  if (_badge) return _badge;
+  const p = resolve(_PUB, "abu-2030-badge.png");
+  if (!existsSync(p)) return "";
+  _badge = `data:image/png;base64,${readFileSync(p).toString("base64")}`;
+  return _badge;
+}
+function logoDarkUri() {   // logo-bbw-mark.png — the stacked BBW mark used in all app headers
+  if (_logoDark) return _logoDark;
+  const p = resolve(_PUB, "logo-bbw-mark.png");
+  if (!existsSync(p)) return "";
+  _logoDark = `data:image/png;base64,${readFileSync(p).toString("base64")}`;
+  return _logoDark;
+}
+function logoLightUri() {  // logo-bbw-white.svg — white, for dark-green backgrounds
+  if (_logoLight) return _logoLight;
+  const p = resolve(_PUB, "logo-bbw-white.svg");
+  if (!existsSync(p)) return "";
+  _logoLight = `data:image/svg+xml;base64,${readFileSync(p).toString("base64")}`;
+  return _logoLight;
+}
 
 const LABELS = {
-  en: { doc: "Document", slides: "Slides", print: "Print", step: "Step", of: "of" },
-  de: { doc: "Dokument", slides: "Folien", print: "Drucken", step: "Schritt", of: "von" },
-  fr: { doc: "Document", slides: "Diapositives", print: "Imprimer", step: "Étape", of: "sur" },
-  it: { doc: "Documento", slides: "Diapositive", print: "Stampa", step: "Passo", of: "di" },
+  en: { doc: "Document", slides: "Slides", download: "Download PDF", step: "Step", of: "of" },
+  de: { doc: "Dokument", slides: "Folien", download: "PDF herunterladen", step: "Schritt", of: "von" },
+  fr: { doc: "Document", slides: "Diapositives", download: "Télécharger PDF", step: "Étape", of: "sur" },
+  it: { doc: "Documento", slides: "Diapositive", download: "Scarica PDF", step: "Passo", of: "di" },
 };
 function labels(lang) {
   return LABELS[(lang || "en").slice(0, 2).toLowerCase()] || LABELS.en;
@@ -55,7 +83,7 @@ function stepCard(s, globalIndex, outDir, baseUrl, productionBaseUrl) {
     displayUrl = displayUrl.replace(baseUrl, productionBaseUrl);
   }
   const meta = displayUrl ? `<p class="meta"><a href="${escapeHtml(displayUrl)}" target="_blank" rel="noopener">${escapeHtml(displayUrl)}</a></p>` : "";
-  return `<div class="step">
+  return `<div class="step" id="step-${globalIndex}">
   <div class="step-head"><span class="num">${globalIndex}</span><h2>${captionToHtml(s.caption)}</h2></div>
   ${img}${meta}
 </div>`;
@@ -88,6 +116,33 @@ function sectionsHtml(sections, outDir, baseUrl, productionBaseUrl) {
 </div>`;
     })
     .join("\n\n");
+}
+
+// Thumbnail grid used as the PDF cover/index page (hidden in screen mode).
+function buildPrintIndex(result, stepsWithIndex) {
+  const shots = stepsWithIndex.filter(s => s.screenshot);
+  if (!shots.length) return '';
+  const secCount = new Set(stepsWithIndex.map(s => s.section).filter(Boolean)).size;
+  const items = shots.map(s => {
+    const rawCap = s.caption.replace(/\*\*/g, '').replace(/\*/g, '').replace(/`/g, '');
+    return `<a href="#step-${s.globalIndex}" class="pi-item">
+  <div class="pi-row1"><span class="pi-num">${s.globalIndex}</span><span class="pi-sec">${escapeHtml(s.section || '')}</span></div>
+  <img src="${dataUri(join(result.outDir, s.screenshot))}" alt="">
+  <p class="pi-cap">${escapeHtml(rawCap.slice(0, 90))}</p>
+</a>`;
+  }).join('\n');
+  return `<div class="print-index">
+  <div class="pi-cover">
+    <div class="pi-cover-brand">
+      <img src="{{LOGO_LIGHT_URI}}" alt="BBW" class="pi-logo">
+      <span class="pi-cover-sep"></span>
+      <span class="pi-cover-tagline"><span>ABU-Materialplattform</span><span>ABU Reform 2030</span></span>
+    </div>
+    <h2>${escapeHtml(result.flowName)}</h2>
+    <p>${stepsWithIndex.length} Schritte &middot; ${secCount} Abschnitte &middot; ${shots.length} Screenshots</p>
+  </div>
+  <div class="pi-grid">${items}</div>
+</div>`;
 }
 
 export function buildMarkdown(result) {
@@ -126,11 +181,15 @@ export function buildHtml(result, templatePath, lang) {
     .replaceAll("{{DESC_BLOCK}}", desc)
     .replaceAll("{{L_DOC}}",    escapeHtml(L.doc))
     .replaceAll("{{L_SLIDES}}", escapeHtml(L.slides))
-    .replaceAll("{{L_PRINT}}",  escapeHtml(L.print))
+    .replaceAll("{{L_DOWNLOAD}}", escapeHtml(L.download))
     .replaceAll("{{L_STEP}}",   escapeHtml(L.step))
     .replaceAll("{{L_OF}}",     escapeHtml(L.of))
-    .replaceAll("{{TABS}}",     tabsHtml(sections))
-    .replaceAll("{{SECTIONS}}", sectionsHtml(sections, result.outDir, result.baseUrl, result.productionBaseUrl));
+    .replaceAll("{{TABS}}",           tabsHtml(sections))
+    .replaceAll("{{PRINT_INDEX}}",    buildPrintIndex(result, stepsWithIndex))
+    .replaceAll("{{SECTIONS}}",       sectionsHtml(sections, result.outDir, result.baseUrl, result.productionBaseUrl))
+    .replaceAll("{{LOGO_DARK_URI}}",  logoDarkUri())
+    .replaceAll("{{LOGO_LIGHT_URI}}", logoLightUri())
+    .replaceAll("{{BADGE_DATA_URI}}", badgeDataUri());
 }
 
 export async function renderPdf(html, outPath) {

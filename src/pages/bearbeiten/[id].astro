@@ -12,6 +12,7 @@ const { data: profile } = await Astro.locals.supabase
   .single()
 
 if (profile?.role === 'kt1') return Astro.redirect('/admin')
+if (profile?.role === 'gast') return Astro.redirect('/situationen')
 
 const { id } = Astro.params
 const { data: material } = await Astro.locals.supabase

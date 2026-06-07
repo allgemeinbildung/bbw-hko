@@ -9,6 +9,9 @@ const { data: profile } = await Astro.locals.supabase
   .eq('id', Astro.locals.user.id)
   .single()
 
+// Guests never set up an Abteilung — straight to the hub.
+if (profile?.role === 'gast') return Astro.redirect('/')
+
 // Already set — skip this page
 if (profile?.abteilung) {
   return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/einreichen')

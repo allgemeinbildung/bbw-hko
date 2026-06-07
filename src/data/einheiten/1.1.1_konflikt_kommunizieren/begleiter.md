@@ -17,7 +17,7 @@ quellen_json:
 
 # Begleit-Dokument — Konflikte kennen, kommunizieren, klaeren (1.1.1)
 
-> Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Unterlagen fuer die Lernenden (Situationsblaetter A/B/C, KN-Blatt) liegen separat als gerenderte A4-Broschueren vor. Hier steht, **wie** du die Einheit fuehrst: Phasenablauf, fertige Scaffolds zum Abgeben, Coaching-Bewegungen, bi-dimensionale Bewertung. Du sollst die Einheit unterrichten koennen, ohne anderswo nachschlagen zu muessen.
+> Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Unterlagen fuer die Lernenden (Situationsblaetter A/B/C, das Arbeitsblatt «Austausch & Transfer», KN-Blatt) liegen separat als gerenderte A4-Broschueren vor. Hier steht, **wie** du die Einheit fuehrst: Phasenablauf, fertige Scaffolds zum Abgeben, Coaching-Bewegungen, bi-dimensionale Bewertung. Du sollst die Einheit unterrichten koennen, ohne anderswo nachschlagen zu muessen.
 
 ---
 
@@ -44,7 +44,7 @@ Im Fahrplan jeder Situation (Kapitel 3-5) steht die AVIVA-Schicht; die IPERKA-Lo
 **5. Mehrdeutigkeit ist gewollt.** In jeder Situation steckt ein echter Zielkonflikt (Rechte durchsetzen vs. Beziehung halten). Die Lernenden sollen ihn **nicht aufloesen**, sondern offen benennen und begruendet entscheiden. Das ist der Punkt, an dem traditioneller Unterricht am haeufigsten kippt — siehe die `[!mehrdeutigkeit]`-Hinweise.
 
 > [!hinweis] Lektionentotal
-> Abhaengig von der Durchfuehrungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Situationen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Situation = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Dekontextualisierung) ist eine gemeinsame Schluss-Lektion.
+> Abhaengig von der Durchfuehrungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Situationen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Situation = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
 
 > [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
 > Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Vier-Ohren-Modell, Kanal- und Registerwahl) uebst du **vorab im Unterricht**; die Situationsblaetter setzen dieses Vorwissen voraus. Ergaenze eigene Beispiele, Inputs und Uebungen aus deinem Fundus.
@@ -108,7 +108,7 @@ Drei Trade-offs spannen das ganze Set auf:
 | R2 (Voraussicht) | T4 — Verantwortung im sozialen und gesundheitlichen Zusammenleben |
 | R3 (Voraussicht) | T7 — Konflikte in der Arbeitswelt nach der Lehre (MA-Gespraech, Kuendigung, Mobbing) |
 
-Das erklaert das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Die Dekontextualisierung (Kapitel 7) ist der Mechanismus, der R1 ueberhaupt nach R2/R3 traegt — ohne sie bleibt das Wissen am Schreiner-Fall kleben.
+Das erklaert das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Der Transfer (Kapitel 7) ist der Mechanismus, der R1 ueberhaupt nach R2/R3 traegt — ohne ihn bleibt das Wissen am Schreiner-Fall kleben.
 
 ### Lehrmittel-Anker (alle Situationen)
 
@@ -196,7 +196,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 | **2** (45') | Vorwissen | Landkarte kurz aufgreifen | Einzel |
 | | Informieren · Verarbeiten | LF3 (Konfliktweg) + LF4: Positionspapier nach 3B verfassen | Einzel |
 | | Auswerten | Selbstcheck mit Kriterienliste (unten) | Einzel |
-| **(Set-Schluss)** | — | Austausch, Reflexion, Dekontextualisierung → Kapitel 6/7 | je nach Variante |
+| **(Set-Schluss)** | — | Austausch, Reflexion, Transfer → Kapitel 6/7 | je nach Variante |
 
 ### Leitfragen mit Coaching-Hinweisen
 
@@ -501,9 +501,14 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 ---
 
-## 6. Austausch-Phase — verzweigt nach Variante
+## 6. Austausch & Transfer — das eigenstaendige Abschluss-Arbeitsblatt
 
-Die Set-Schluss-Lektion bringt die drei Herausforderungen zusammen. Wie sie laeuft, haengt von Kapitel 2 ab.
+Austausch und Transfer bilden seit dem Redesign **ein eigenstaendiges Set-Dokument**, das die Lernenden zusaetzlich zu den drei Situationsblaettern erhalten — kein Anhang im Situationsheft mehr. Es ist zweiseitig: **Seite 1 Austausch** (die drei Loesungen im Vergleich), **Seite 2 Transfer** (Kapitel 7). Die Set-Schluss-Lektion bringt damit die drei Herausforderungen zusammen; wie der Austausch konkret laeuft, haengt von der Durchfuehrungs-Variante (Kapitel 2) ab.
+
+> [!hinweis] Das Arbeitsblatt «Austausch & Transfer» — Aufbau und Wahl der Sozialform
+> Die Lernenden bekommen den Set-Abschluss als eigenes A4-Blatt (zwei Seiten):
+> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Saetzen mit je einem Beispiel zusammenfassen), **GA** (Gruppenpuzzle/Jigsaw, 3 Runden) und **PL** (Plenumssynthese). Jede Option hat ein Notizfeld. **Du waehlst eine** — passend zur Durchfuehrungs-Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt. Die Abschnitte unten (verzweigt nach Variante) beschreiben die gewaehlte Form im Detail.
+> - **Seite 2 — Transfer:** Der Transfer-Auftrag mit **Schreibhilfe (Satzanfaenge)** und einem **Selbstcheck** zum Abhaken. Hier geben die Lernenden ihren Transfer ab (Kapitel 7). Du musst das Blatt nicht selbst bauen — es liegt fertig im ZIP-Bundle.
 
 ### Bei Variante C (Jigsaw) — voller Gruppenpuzzle
 
@@ -512,18 +517,18 @@ Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Ex
 | Runde | Auftrag | Zeit | Deine Moderation |
 |---|---|---|---|
 | **1 — Expertise teilen** | Jede/r 90 Sek: Problem, Entscheid, staerkstes Argument | ~5' | Zeit hart stoppen. „90 Sekunden, dann naechste." Verhindert, dass A alles erzaehlt. |
-| **2 — Gemeinsamkeit abstrahieren** | Was haben alle drei Situationen gemeinsam? Welches Grundprinzip steckt dahinter? | ~12' | Hier entsteht die Dekontextualisierung. Frag: „Was ist in allen drei gleich, egal ob Rechtsfrage, Kanal oder Gespraech?" |
+| **2 — Gemeinsamkeit abstrahieren** | Was haben alle drei Situationen gemeinsam? Welches Grundprinzip steckt dahinter? | ~12' | Hier entsteht der Transfer. Frag: „Was ist in allen drei gleich, egal ob Rechtsfrage, Kanal oder Gespraech?" |
 | **3 — Transfer** | Welche Situation waere persoenlich am schwierigsten — und warum? | ~10' | Persoenlicher Bezug. Lass sie das Prinzip auf sich selbst beziehen, nicht abstrakt bleiben. |
 
 > [!warnung] Jigsaw-Qualitaet entscheidet ueber den KN
 > In Runde 1 muss jeder Experte sein Drittel **wirklich** vermitteln — nicht nur „ich habe halt den Brief geschrieben". Geh herum und hoer rein. Wenn eine Gruppe nur referiert, statt das Argument zu teilen, hak nach: „Und warum war das deine Entscheidung?" Ohne tragende Runde 1 fehlt zwei Dritteln der Klasse die KN-Grundlage.
 
 > [!coaching] Plenum-Abschluss
-> Sammle nach dem Jigsaw im Plenum **einen** gemeinsamen Prinzipsatz an der Tafel. Das ist die Bruecke zur Dekontextualisierung (Kapitel 7) und faellt dem KN-Transfer-Teil zu.
+> Sammle nach dem Jigsaw im Plenum **einen** gemeinsamen Prinzipsatz an der Tafel. Das ist die Bruecke zum Transfer (Kapitel 7) und faellt dem KN-Transfer-Teil zu.
 
 ### Bei Variante A (alle drei einzeln) — verkuerzter Austausch
 
-Kein Experten-Jigsaw noetig (alle kennen alle Situationen). Stattdessen Plenum, ~15 Min.: „Was haben die drei gemeinsam? Welches Prinzip laesst sich verallgemeinern?" Direkt weiter zur Dekontextualisierung.
+Kein Experten-Jigsaw noetig (alle kennen alle Situationen). Stattdessen Plenum, ~15 Min.: „Was haben die drei gemeinsam? Welches Prinzip laesst sich verallgemeinern?" Direkt weiter zum Transfer.
 
 ### Bei Variante B (Auswahl 1-2) — gemischt
 
@@ -531,18 +536,18 @@ Kurzer Austausch in Kleingruppen ueber die jeweils gemachten Situationen, dann P
 
 ---
 
-## 7. Dekontextualisierung — vom Fall zum Prinzip
+## 7. Transfer — vom Fall zum Prinzip
 
-Das ist die Phase, die R1 ueberhaupt nach R2/R3 traegt (Quick Ref §6). Hier wird das Wissen vom Schreiner-/Garage-/Informatik-Fall geloest.
+Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; fuer die Lernenden heisst der Auftrag **Transfer**. Das ist die Phase, die R1 ueberhaupt nach R2/R3 traegt (Quick Ref §6). Hier wird das Wissen vom Schreiner-/Garage-/Informatik-Fall geloest.
 
-**Auftrag (Set):** Uebertrage das Kernprinzip aus deinen Situationen auf einen neuen, selbst gewaehlten Kontext. Schriftlich, **5-7 Saetze**, Lehrmittelbegriffe verwenden. Abgabe vor dem KN (im eigenständigen «Austausch & Transfer»-Dokument).
+**Auftrag (Set):** Uebertrage das Kernprinzip aus deinen Situationen auf einen neuen, selbst gewaehlten Kontext. Schriftlich, **5-7 Saetze**, Lehrmittelbegriffe verwenden. Abgabe vor dem KN, auf Seite 2 des «Austausch & Transfer»-Arbeitsblatts.
 
 **Der Anker-Satz** (gehoert an die Tafel, nachdem die Klasse ihn selbst erarbeitet hat — nicht vorher vorgeben):
 
 > Wer im Konflikt handlungsfaehig ist, klaert zuerst die Sachlage und die eigenen Rechte, waehlt dann bewusst den Kommunikationskanal und das Register, und fuehrt das Gespraech so, dass beide Seiten ihr Gesicht wahren.
 
 > [!lernziel] So sieht guter Transfer aus
-> Eine starke Dekontextualisierung nimmt das **Prinzip** (klaeren → Kanal waehlen → Gesicht wahren) und zeigt es in einem **fremden** Feld — z. B.: „Als mein Vermieter eine Nebenkosten-Nachzahlung verlangte, habe ich zuerst den Mietvertrag und das OR geprueft (Sachlage/Rechte), dann bewusst einen schriftlichen Brief statt einer WhatsApp gewaehlt (Kanal/Verbindlichkeit), und so formuliert, dass eine weitere Zusammenarbeit moeglich bleibt (Gesicht wahren)." — drei Schritte erkennbar, Lehrmittelbegriffe drin, neuer Kontext.
+> Ein starker Transfer nimmt das **Prinzip** (klaeren → Kanal waehlen → Gesicht wahren) und zeigt es in einem **fremden** Feld — z. B.: „Als mein Vermieter eine Nebenkosten-Nachzahlung verlangte, habe ich zuerst den Mietvertrag und das OR geprueft (Sachlage/Rechte), dann bewusst einen schriftlichen Brief statt einer WhatsApp gewaehlt (Kanal/Verbindlichkeit), und so formuliert, dass eine weitere Zusammenarbeit moeglich bleibt (Gesicht wahren)." — drei Schritte erkennbar, Lehrmittelbegriffe drin, neuer Kontext.
 
 > [!warnung] Typischer Stolperstein
 > Schwache Transfers **wiederholen** nur den Lehrbetriebs-Fall mit anderen Namen. Wenn jemand wieder ueber den Berufsbildner/in schreibt, ist das kein Transfer. Verlange einen Kontext **ausserhalb** des Lehrbetriebs (Familie, Verein, WG, Vermieter).

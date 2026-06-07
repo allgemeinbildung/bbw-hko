@@ -11,7 +11,8 @@ const { data: profile } = await Astro.locals.supabase
   .eq('id', user.id)
   .single()
 
-const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
+const role: 'lp' | 'kt1' | 'gast' =
+  profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
 
 const p = Astro.url.searchParams
 const filters = {

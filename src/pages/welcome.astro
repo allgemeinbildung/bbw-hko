@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro'
 
 if (Astro.locals.user) return Astro.redirect('/')
+
+const guestError = Astro.url.searchParams.get('guest_error')
 ---
 <Base title="Materialplattform · BBW">
   <div class="h-screen bg-white flex flex-col overflow-hidden">
@@ -39,33 +41,46 @@ if (Astro.locals.user) return Astro.redirect('/')
         Für Lehrpersonen der Berufsbildungsschule Winterthur
       </p>
 
-      <!-- CTAs -->
-      <div class="flex flex-wrap gap-4 justify-center">
+      <!-- CTAs — primary action alone, secondary options smaller below -->
+      <div class="flex flex-col items-center gap-5">
         <a
           href="/login"
-          class="px-9 py-3 rounded-lg text-white font-semibold text-lg transition hover:opacity-90"
+          class="px-12 py-3.5 rounded-lg text-white font-semibold text-lg transition hover:opacity-90"
           style="background: var(--brand)"
         >
           Anmelden
         </a>
-        <a
-          href="/registrieren"
-          class="px-9 py-3 rounded-lg border border-slate-300 text-slate-700 font-medium text-lg hover:bg-slate-50 transition"
-        >
-          Konto erstellen
-        </a>
-        <!-- Onboarding / tour — for first-time visitors and KT1 showcasing, no login required -->
-        <a
-          href="/onboarding/index.html"
-          class="px-9 py-3 rounded-lg border font-semibold text-lg transition hover:bg-[var(--brand-tint)]"
-          style="border-color: var(--brand); color: var(--brand)"
-        >
-          Rundgang ansehen &rarr;
-        </a>
+
+        <div class="flex flex-wrap gap-3 justify-center">
+          <!-- Onboarding / tour — no login required -->
+          <a
+            href="/onboarding/index.html"
+            class="px-6 py-2.5 rounded-lg border text-base font-medium transition hover:bg-[var(--brand-tint)]"
+            style="border-color: var(--brand); color: var(--brand)"
+          >
+            Rundgang ansehen &rarr;
+          </a>
+          <!-- Guest access (read-only, no code required) -->
+          <form method="POST" action="/api/auth/guest">
+            <button
+              type="submit"
+              class="px-6 py-2.5 rounded-lg border border-slate-300 text-slate-700 text-base font-medium hover:bg-slate-50 transition"
+            >
+              Als Gast ansehen
+            </button>
+          </form>
+        </div>
       </div>
 
-      <p class="mt-6 text-sm text-slate-400">
-        Neu hier? Der Rundgang erklärt die Plattform Schritt für Schritt &mdash; ganz ohne Login.
+      {guestError && (
+        <p class="mt-4 text-sm text-red-600">{decodeURIComponent(guestError)}</p>
+      )}
+
+      <p class="mt-6 text-sm text-slate-400 max-w-lg">
+        Die Plattform ist nur auf Einladung zugänglich. Ein Konto erstellst du über die
+        <a href="/login" class="underline hover:text-slate-600">Anmeldeseite</a> — einen Einladungscode erhältst du bei
+        <a href="mailto:pietro.rossi@bbw.ch?subject=Zugang%20ABU-Materialplattform" class="underline hover:text-slate-600">pietro.rossi@bbw.ch</a>.
+        <strong>Rundgang</strong> und <strong>Gast-Zugang</strong> zeigen die Inhalte ohne eigenes Konto.
       </p>
 
     </section>

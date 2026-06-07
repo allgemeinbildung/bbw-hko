@@ -4,6 +4,13 @@ import LP from '../../../layouts/LP.astro'
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
 
+const { data: gprofile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+if (gprofile?.role === 'gast') return Astro.redirect('/situationen')
+
 const materialId = Astro.params.id as string
 
 const { data: material } = await Astro.locals.supabase

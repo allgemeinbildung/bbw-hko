@@ -8,6 +8,7 @@
   :root {
     --brand:#0E6E3A; --brand-dark:#094d28; --brand-tint:#e8f3ec;
     --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f7f8fa; --card:#ffffff;
+    --badge-img: url('{{BADGE_DATA_URI}}');
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -17,21 +18,39 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* ── HEADER ── */
+  /* ── HEADER — white, matches website chrome ── */
   .ob-header{
-    background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 100%);
-    color:#fff;padding:44px 40px 38px;
+    background:#fff;border-bottom:3px solid var(--brand);padding:0 40px;
   }
   .ob-header-inner{max-width:960px;margin:0 auto}
-  .ob-badge{
-    display:inline-block;background:rgba(255,255,255,.16);color:#fff;
-    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    padding:4px 12px;border-radius:99px;margin-bottom:14px;
+  /* Brand row: logo + separator + ABU-Materialplattform / ABU Reform 2030 */
+  .ob-brand-row{
+    display:flex;align-items:center;gap:12px;
+    padding:10px 0;border-bottom:1px solid var(--line);
   }
-  .ob-header h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-  .ob-header .lead{font-size:16px;opacity:.92;max-width:680px;color:#fff}
+  .ob-logo{height:48px;width:auto;flex-shrink:0;filter:brightness(0) saturate(100%);image-rendering:-webkit-optimize-contrast}
+  .ob-brand-sep{width:1px;height:34px;background:var(--line);flex-shrink:0;margin:0 2px}
+  .ob-brand-text{display:flex;flex-direction:column;gap:1px}
+  .ob-brand-platform{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .ob-brand-reform{font-size:11px;color:#94a3b8}
+  /* Guide intro below the brand row — flex row with decorative badge on the right */
+  .ob-guide-intro-wrap{display:flex;align-items:center;gap:20px;padding:20px 0 26px}
+  .ob-guide-intro{flex:1;min-width:0}
+  .ob-deco-badge{
+    width:80px;height:80px;flex-shrink:0;border-radius:50%;
+    background-image:var(--badge-img);background-size:contain;
+    background-repeat:no-repeat;background-position:center;
+    opacity:0.88;
+  }
+  .ob-badge{
+    display:inline-block;background:var(--brand-tint);color:var(--brand-dark);
+    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 10px;border-radius:99px;margin-bottom:12px;
+  }
+  .ob-header h1{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;color:var(--ink)}
+  .ob-header .lead{font-size:15px;color:var(--muted);max-width:680px}
 
-  /* ── STICKY TOOLBAR (view toggle + print) ── */
+  /* ── STICKY TOOLBAR (view toggle + download) ── */
   .ob-toolbar{
     background:#fff;border-bottom:1px solid var(--line);
     position:sticky;top:0;z-index:200;
@@ -140,53 +159,110 @@
   body.view-slides .sec-intro,
   body.view-slides .step-divider{display:none}
   body.view-slides .step{display:none}
+  body.view-slides .meta{display:none}
   body.view-slides .step.is-active{
     display:flex;flex-direction:column;position:fixed;inset:0;
-    margin:0;border:0;border-radius:0;
+    margin:0;border:0;border-radius:0;overflow:hidden;
     background:#fff;padding:40px 52px 80px;
     animation:ob-fade .18s ease;
   }
-  body.view-slides .step.is-active .step-head{margin-bottom:18px}
+  body.view-slides .step.is-active .step-head{margin-bottom:18px;flex-shrink:0}
   body.view-slides .step.is-active .step-head h2{font-size:22px}
   body.view-slides .step.is-active .num{width:36px;height:36px;font-size:16px}
   body.view-slides .step.is-active .shot{
-    flex:1 1 auto;min-height:0;display:flex;
+    flex:1 1 0;min-height:0;overflow:hidden;display:flex;
     align-items:center;justify-content:center;cursor:pointer;border:none;
   }
   body.view-slides .step.is-active .shot img{
     max-width:100%;max-height:100%;width:auto;height:auto;
     object-fit:contain;box-shadow:0 6px 30px rgba(0,0,0,.14);
   }
+  /* BBW logo watermark — top-right corner of each slide */
+  body.view-slides .step.is-active::after{
+    content:'';
+    position:absolute;top:12px;right:52px;
+    width:48px;height:48px;
+    background:url('{{LOGO_DARK_URI}}') no-repeat center/contain;
+    opacity:0.12;
+    pointer-events:none;
+  }
   body.view-slides .slide-controls{display:flex}
   @keyframes ob-fade{from{opacity:.4}to{opacity:1}}
+
+  /* ── PRINT INDEX (thumbnail overview — screen: hidden, print: first page) ── */
+  .print-index{display:none}
 
   /* ── PRINT (A4 landscape, one step per page) ── */
   @media print{
     @page{size:A4 landscape;margin:12mm}
     body{background:#fff}
-    .ob-toolbar,.ob-toc,.slide-controls,.ob-footer{display:none !important}
+    .ob-toolbar,.ob-toc,.slide-controls,.ob-footer,.ob-header{display:none !important}
     .ob-main{max-width:none;padding:0;margin:0}
-    .ob-header{padding:16px 28px 12px;break-after:avoid}
-    .ob-header h1{font-size:18pt}
-    .ob-header .lead{display:none}
-    .ob-badge{display:none}
     .sec-panel{display:block !important}
-    .sec-kicker,.sec-intro,.step-divider{display:none}
-    .sec-title{font-size:11pt;font-weight:700;color:var(--muted);margin:8pt 0 4pt}
+    .sec-title,.sec-kicker,.sec-intro,.step-divider{display:none}
+
+    /* ── index page ── */
+    .print-index{
+      display:block !important;
+      height:calc(100vh - 24mm);
+      overflow:hidden;
+      break-after:page;page-break-after:always;
+    }
+    .pi-cover{
+      background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+      color:#fff;padding:5mm 10mm 5mm;border-radius:3pt;margin-bottom:4mm;
+      position:relative;overflow:hidden;
+    }
+    .pi-cover::after{
+      content:'';
+      position:absolute;right:5mm;top:50%;transform:translateY(-50%);
+      width:18mm;height:18mm;
+      background-image:var(--badge-img);background-size:contain;
+      background-repeat:no-repeat;background-position:center;
+      opacity:0.75;
+    }
+    /* Brand row inside the cover */
+    .pi-cover-brand{display:flex;align-items:center;gap:4mm;margin-bottom:3mm}
+    .pi-logo{height:22pt;width:auto;flex-shrink:0}
+    .pi-cover-sep{width:0.5pt;height:17pt;background:rgba(255,255,255,.35);flex-shrink:0}
+    .pi-cover-tagline{display:flex;flex-direction:column;gap:0.3mm;font-size:7pt;opacity:.85}
+    .pi-cover h2{font-size:14pt;font-weight:800;letter-spacing:-.01em}
+    .pi-cover p{font-size:7.5pt;opacity:.85;margin-top:0.5mm}
+    .pi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3.5mm 4mm}
+    a.pi-item{display:block;text-decoration:none;color:inherit}
+    .pi-item{break-inside:avoid}
+    .pi-row1{display:flex;align-items:center;gap:1.5mm;margin-bottom:1.5mm}
+    .pi-num{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:13pt;height:13pt;border-radius:50%;flex-shrink:0;
+      background:var(--brand);color:#fff;font-weight:800;font-size:6.5pt;
+    }
+    .pi-sec{font-size:5.5pt;color:var(--muted);font-weight:700;
+      text-transform:uppercase;letter-spacing:.04em;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pi-item img{width:100%;height:auto;border:1px solid var(--line);
+      border-radius:2pt;display:block}
+    .pi-cap{font-size:5.5pt;color:var(--ink);margin-top:1mm;line-height:1.35;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+    /* ── step pages ── */
     .step{
       display:flex !important;flex-direction:column;
+      height:calc(100vh - 24mm);overflow:hidden;
       margin:0;border:0;border-radius:0;
       break-after:page;page-break-after:always;
     }
     .step:last-of-type{break-after:auto;page-break-after:auto}
+    .step-head{flex-shrink:0}
     .step-head h2{font-size:14pt}
-    .shot{flex:0 0 auto;text-align:center;border:none}
-    .shot img{max-height:16cm;width:auto;max-width:100%;box-shadow:none}
+    .shot{flex:1 1 auto;min-height:0;overflow:hidden;text-align:center;border:none}
+    .shot img{max-height:100%;width:auto;max-width:100%;box-shadow:none;object-fit:contain}
+    .meta{font-size:9pt;flex-shrink:0}
   }
 
   @media (max-width:640px){
-    .ob-header{padding:28px 20px 22px}
-    .ob-header h1{font-size:24px}
+    .ob-header{padding:0 20px}
+    .ob-header h1{font-size:22px}
     .ob-main{padding:28px 16px 60px}
     .ob-toc-inner{padding:0 12px}
   }
@@ -196,9 +272,24 @@
 
 <header class="ob-header">
   <div class="ob-header-inner">
-    <div class="ob-badge">Einführung &amp; Rundgang</div>
-    <h1>{{TITLE}}</h1>
-    {{DESC_BLOCK}}
+    <!-- Brand row: matches the website top-bar chrome exactly -->
+    <div class="ob-brand-row">
+      <img src="{{LOGO_DARK_URI}}" alt="BBW Berufsbildungsschule Winterthur" class="ob-logo">
+      <span class="ob-brand-sep"></span>
+      <span class="ob-brand-text">
+        <span class="ob-brand-platform">ABU-Materialplattform</span>
+        <span class="ob-brand-reform">ABU Reform 2030</span>
+      </span>
+    </div>
+    <!-- Guide intro + decorative ABU 2030 badge -->
+    <div class="ob-guide-intro-wrap">
+      <div class="ob-guide-intro">
+        <div class="ob-badge">Einführung &amp; Rundgang</div>
+        <h1>{{TITLE}}</h1>
+        {{DESC_BLOCK}}
+      </div>
+      <div class="ob-deco-badge" role="presentation" aria-hidden="true"></div>
+    </div>
   </div>
 </header>
 
@@ -208,7 +299,7 @@
     <button id="mDoc" class="active" type="button">{{L_DOC}}</button>
     <button id="mSlides" type="button">{{L_SLIDES}}</button>
   </div>
-  <button id="btnPrint" class="ob-btn" type="button">{{L_PRINT}}</button>
+  <a id="btnDownload" class="ob-btn" style="text-decoration:none">{{L_DOWNLOAD}}</a>
 </div>
 
 <nav class="ob-toc">
@@ -218,6 +309,7 @@
 </nav>
 
 <main class="ob-main">
+  {{PRINT_INDEX}}
   {{SECTIONS}}
 </main>
 
@@ -264,7 +356,11 @@
   });
   document.getElementById('mDoc').onclick    = function(){ setMode('doc'); };
   document.getElementById('mSlides').onclick = function(){ setMode('slides'); };
-  document.getElementById('btnPrint').onclick = function(){ window.print(); };
+  (function(){
+    var btn = document.getElementById('btnDownload');
+    btn.href = window.location.href.replace(/[?#].*$/,'').replace(/\.html$/,'.pdf');
+    btn.download = '';
+  })();
   document.getElementById('next').onclick = function(){ showStep(i+1); };
   document.getElementById('prev').onclick = function(){ showStep(i-1); };
 

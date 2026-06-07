@@ -14,7 +14,7 @@ quellen:
 
 # Begleit-Dokument — Rechte verstehen und nutzen (1.1.1)
 
-Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Einheit selbst (drei Situationen, Kompetenznachweis, Rubrik) ist fertig — hier steht, **wie man sie unterrichtet**: Ablauf pro Lektion, fertige Materialien zum Abgeben, wo Lernende stolpern, wie bi-dimensional bewertet wird. Es ist so geschrieben, dass auch eine Person, die noch nie HKO unterrichtet hat, die Einheit sicher durchführen kann.
+Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Einheit selbst (drei Situationen, Kompetenznachweis, Rubrik) ist fertig — hier steht, **wie man sie unterrichtet**: Ablauf pro Lektion, fertige Materialien zum Abgeben, wo Lernende stolpern, wie bi-dimensional bewertet wird. Es ist so geschrieben, dass auch eine Person, die noch nie HKO unterrichtet hat, die Einheit sicher durchführen kann. Zusätzlich zu den drei Situationsblättern und dem KN-Blatt erhalten die Lernenden den Set-Abschluss «Austausch & Transfer» als eigenes, zweiseitiges Arbeitsblatt.
 
 > [!hinweis]
 > Lektionen sind **relativ** nummeriert (Einheit 1, 2, 3 …). Jede „45 min"-Angabe ist **eine Lektion**, keine Kalenderwoche. Die Verteilung auf das Semester ist deine Sache — dieses Dokument macht dazu keine Vorgaben.
@@ -420,9 +420,14 @@ ____________ (Name, Funktion)
 
 ---
 
-## Austausch-Phase — verzweigt nach Variante
+## Austausch & Transfer — das eigenständige Abschluss-Arbeitsblatt
 
-Ziel der Austausch-Phase (ca. 30 min): Die drei Situationen werden zu **einem** Prinzip verdichtet. Das ist die Brücke zur Dekontextualisierung und zum KN-Hybrid-Fall.
+Austausch und Transfer bilden seit dem Redesign **ein eigenständiges Set-Dokument**, das die Lernenden zusätzlich zu den drei Situationsblättern erhalten — kein Anhang im Situationsheft mehr. Es ist zweiseitig: **Seite 1 Austausch** (die drei Lösungen im Vergleich), **Seite 2 Transfer** (Kapitel «Transfer»). Ziel der Austausch-Seite (ca. 30 min): Die drei Situationen werden zu **einem** Prinzip verdichtet — die Brücke zum Transfer und zum KN-Hybrid-Fall. Wie der Austausch konkret läuft, hängt von der Durchführungs-Variante ab.
+
+> [!hinweis] Das Arbeitsblatt «Austausch & Transfer» — Aufbau und Wahl der Sozialform
+> Die Lernenden bekommen den Set-Abschluss als eigenes A4-Blatt (zwei Seiten):
+> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Sätzen mit je einem Beispiel zusammenfassen), **GA** (Gruppenpuzzle/Jigsaw, 3 Runden) und **PL** (Plenumssynthese). Jede Option hat ein Notizfeld. **Du wählst eine** — passend zur Durchführungs-Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt. Die Abschnitte unten (verzweigt nach Variante) beschreiben die gewählte Form im Detail.
+> - **Seite 2 — Transfer:** Der Transfer-Auftrag mit **Schreibhilfe (Satzanfänge)** und einem **Selbstcheck** zum Abhaken. Hier geben die Lernenden ihren Transfer ab (Kapitel «Transfer»). Du musst das Blatt nicht selbst bauen — es liegt fertig im ZIP-Bundle.
 
 ### Bei Variante C (Jigsaw)
 
@@ -450,11 +455,11 @@ Plenumsdiskussion, von der Lehrperson geleitet: „Was haben alle drei Situation
 
 ---
 
-## Dekontextualisierung
+## Transfer
 
-Jetzt wird das Gelernte vom konkreten Fall **gelöst** und zum übertragbaren Prinzip gemacht. Ohne diesen Schritt greift die Zirkularität (R1 hier → R2 in T4 → R3 in T7) nicht.
+Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden heisst der Auftrag **Transfer**. Jetzt wird das Gelernte vom konkreten Fall **gelöst** und zum übertragbaren Prinzip gemacht. Ohne diesen Schritt greift die Zirkularität (R1 hier → R2 in T4 → R3 in T7) nicht.
 
-**Set-Aufgabe — Transfer (im eigenständigen «Austausch & Transfer»-Dokument, Abgabe Woche 3, vor dem KN):**
+**Set-Aufgabe — Transfer (auf Seite 2 des «Austausch & Transfer»-Arbeitsblatts, Abgabe Woche 3, vor dem KN):**
 
 > Übertrage das Kernprinzip aus deinen drei Situationen auf einen neuen, selbst gewählten Kontext. Schriftlich, 5–7 Sätze, mit Lehrmittelbegriffen.
 
@@ -552,4 +557,4 @@ Ges-Note  = Mittel aus Rechtliches Prinzip + Position/Werthaltung
 
 ---
 
-**Zusammenfassung:** Eine 3er-Set-Einheit zur Kompetenz 1.1.1 (Recht, EFZ 3J) — Lektionsaufwand je nach Durchführungs-Variante ca. 3–7 Lektionen plus KN. Drei Situationen (Regel-Spickzettel, Fall-Mappe, Antwortschreiben), abgeschlossen durch Austausch und Dekontextualisierung, geprüft wahlweise per Fachgespräch, Mini Case schriftlich oder Werkschau mit durchgängig bi-dimensionaler Rubrik.
+**Zusammenfassung:** Eine 3er-Set-Einheit zur Kompetenz 1.1.1 (Recht, EFZ 3J) — Lektionsaufwand je nach Durchführungs-Variante ca. 3–7 Lektionen plus KN. Drei Situationen (Regel-Spickzettel, Fall-Mappe, Antwortschreiben), abgeschlossen durch Austausch und Transfer, geprüft wahlweise per Fachgespräch, Mini Case schriftlich oder Werkschau mit durchgängig bi-dimensionaler Rubrik.

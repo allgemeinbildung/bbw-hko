@@ -18,6 +18,8 @@ interface Props {
   cssBegleiter: string
   logoUrl: string
   feedbackUrl: string
+  /** Read-only guest view: hides the bundle download and the feedback link. */
+  readOnly?: boolean
 }
 
 type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp'
@@ -27,7 +29,7 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
   return d[`hf_${letter}`]
 }
 
-export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl }: Props) {
+export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, readOnly = false }: Props) {
   const [doc, setDoc] = useState<DocSel>('doc-s')
   const [situation, setSituation] = useState<SitLetter>('A')
   const [mode, setMode] = useState<'info' | 'fill'>('fill')
@@ -334,7 +336,9 @@ ${cssRenderer}
           )}
         </nav>
 
-        <a className="wb-action" href={feedbackUrl}>✍ Feedback nach Unterricht</a>
+        {!readOnly && (
+          <a className="wb-action" href={feedbackUrl}>✍ Feedback nach Unterricht</a>
+        )}
       </aside>
 
       <div className="wb-canvas">
@@ -354,9 +358,15 @@ ${cssRenderer}
         <main className="pages">{docNode}</main>
       </div>
 
-      <button className="download-fab" onClick={handleBundle} disabled={bundling}>
-        {bundling ? '⏳ Download läuft…' : '⬇ Download'}
-      </button>
+      {readOnly ? (
+        <div className="download-fab" style={{ cursor: 'default', opacity: 0.85 }}>
+          👁 Gast-Ansicht · Download nur für angemeldete Lehrpersonen
+        </div>
+      ) : (
+        <button className="download-fab" onClick={handleBundle} disabled={bundling}>
+          {bundling ? '⏳ Download läuft…' : '⬇ Download'}
+        </button>
+      )}
 
       {navOpen && <div className="wb-scrim" onClick={() => setNavOpen(false)} />}
       {toast && <div className={`toast ${toast.kind === 'error' ? 'error' : ''}`}>{toast.msg}</div>}

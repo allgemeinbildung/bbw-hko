@@ -1,0 +1,21 @@
+---
+// Print-blocking stylesheet for the read-only guest view.
+// Include ONLY when the current user is a guest (role 'gast') so that
+// Ctrl+P / "Save as PDF" cannot be used to extract the rendered content.
+// It hides every top-level body element on print and shows a short notice
+// instead (a pseudo-element survives the display:none on real elements).
+---
+<style is:global>
+  @media print {
+    body > * { display: none !important; }
+    body::after {
+      content: "Drucken ist in der Gast-Ansicht deaktiviert. Bitte mit einem BBW-Konto anmelden.";
+      display: block !important;
+      padding: 40px;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #334155;
+    }
+  }
+</style>
