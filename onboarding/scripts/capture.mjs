@@ -3,8 +3,8 @@
 //   node capture.mjs auth    <url> [--out auth.json]
 //   node capture.mjs explore <url> [--out flows/site.json] [--max 6] [--auth auth.json]
 //   node capture.mjs run     <flow.json> [--auth auth.json] [--video] [--headed] [--no-pdf] [--out output/<name>]
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from "node:fs";
+import { dirname, join, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { saveAuth } from "./lib/auth.js";
 import { exploreSite } from "./lib/explore.js";
@@ -28,8 +28,15 @@ function parseArgs(argv) {
   }
   return { _, flags };
 }
-const slug = (s) =>
-  String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50) || "guide";
+// Umlaut-aware slug: ä→ae, ö→oe, ü→ue, ß→ss, then strip remaining non-ASCII.
+function slug(s) {
+  return String(s)
+    .toLowerCase()
+    .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
+    .replace(/ß/g, "ss").replace(/à|á|â/g, "a").replace(/è|é|ê/g, "e")
+    .replace(/ì|í|î/g, "i").replace(/ò|ó|ô/g, "o").replace(/ù|ú|û/g, "u")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50) || "guide";
+}
 
 const HELP = `
 web-onboarding-builder — capture a website into a step-by-step guide.
@@ -87,6 +94,23 @@ async function main() {
     console.log(`  Captured ${steps.length} screenshots.`);
     console.log(`  Guide written:\n    ${html}\n    ${md}${pdf ? "\n    " + pdf : ""}`);
     if (videoPath) console.log(`  Video: ${videoPath}`);
+
+    // Auto-deploy: if the flow has a `deploy` map ({ html: "path/to/out.html", pdf: "..." })
+    // copy the files to those destinations relative to the flow file's directory.
+    const flowDir = dirname(resolve(_[1]));
+    if (flow.deploy && typeof flow.deploy === "object") {
+      const pairs = [
+        [html, flow.deploy.html],
+        [md,   flow.deploy.md],
+        [pdf,  flow.deploy.pdf],
+      ].filter(([src, dst]) => src && dst);
+      for (const [src, dst] of pairs) {
+        const dest = resolve(flowDir, dst);
+        mkdirSync(dirname(dest), { recursive: true });
+        copyFileSync(src, dest);
+        console.log(`  Deployed: ${dest}`);
+      }
+    }
     console.log("");
     return;
   }

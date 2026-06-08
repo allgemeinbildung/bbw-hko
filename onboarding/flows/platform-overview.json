@@ -5,6 +5,10 @@
   "productionBaseUrl": "https://bbw-hko.vercel.app",
   "auth": "../auth.json",
   "lang": "de",
+  "deploy": {
+    "html": "../../public/onboarding/index.html",
+    "pdf":  "../../public/onboarding/index.pdf"
+  },
   "viewport": { "width": 1440, "height": 900 },
   "steps": [
     {
@@ -34,14 +38,14 @@
       "action": "scrollTo",
       "selector": ".lion-bg >> nth=0",
       "section": "Einheiten-Katalog",
-      "caption": "Jede **Einheiten-Karte** zeigt auf einen Blick: Kompetenz-Nr., Lehrgang, Thema, das Kompetenzversprechen, die drei Situationen A · B · C sowie die Aspekte. **«Bundle: N Dateien →»** öffnet die Werkbank; **«Begleiter ↗»** öffnet direkt das Lehrpersonen-Begleitdokument.",
+      "caption": "Jede **Einheiten-Karte** zeigt den Titel und das Kompetenzversprechen. **«Öffnen →»** öffnet die Werkbank; **«Lies mich!»** öffnet direkt das Lehrpersonen-Begleitdokument.",
       "screenshot": true
     },
     {
       "action": "goto",
       "value": "/einheiten/1.1.1_konflikt_kommunizieren",
       "section": "Werkbank",
-      "caption": "Klicke auf **«Bundle: N Dateien →»**, um die **Werkbank** zu öffnen. Links die Navigationsleiste (Sidebar), rechts die grosse Dokumentvorschau.",
+      "caption": "Klicke auf **«Öffnen →»**, um die **Werkbank** zu öffnen. Links die Navigationsleiste (Sidebar), rechts die grosse Dokumentvorschau.",
       "screenshot": true,
       "fullPage": false
     },

@@ -5,6 +5,10 @@
   "productionBaseUrl": "https://bbw-hko.vercel.app",
   "auth": "../auth.json",
   "lang": "de",
+  "deploy": {
+    "html": "../../public/onboarding/guide-jahresplanung.html",
+    "pdf":  "../../public/onboarding/guide-jahresplanung.pdf"
+  },
   "viewport": { "width": 1440, "height": 900 },
   "steps": [
     {

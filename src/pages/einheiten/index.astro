@@ -35,11 +35,11 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     <div>
       <h1 class="text-2xl font-semibold">Einheiten-Katalog</h1>
       <p class="text-sm text-slate-500 mt-1">
-        {filtered.length} von {einheitenIndex.length} Einheiten · vollstaendige Unterrichtseinheiten inkl. 3 Situationen + KN + Begleitdokument
+        {filtered.length} von {einheitenIndex.length} Einheiten · vollständige Unterrichtseinheiten inkl. 3 Herausforderungen + KN + Begleitdokument
       </p>
     </div>
     <p class="text-xs text-slate-500 max-w-md text-right hidden md:block">
-      Waehle eine Einheit, lade das Bundle (HTML + Word) herunter, unterrichte
+      Wähle eine Einheit, lade das Bundle (HTML + Word) herunter, unterrichte
       — und gib im Anschluss Feedback.
     </p>
   </div>
@@ -78,40 +78,24 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     {filtered.map((e) => (
       <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
         <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
-          <div class="flex items-baseline gap-2 mb-2">
-            <span class="chip chip-blue">Komp {e.kompetenz_nr}</span>
-            {e.lehrgang && <span class="chip">{e.lehrgang}</span>}
-            {e.thema_nr != null && <span class="chip">T{e.thema_nr}</span>}
-          </div>
           <h2 class="text-base font-semibold text-slate-900 leading-snug mb-1">
             {prettifyId(e.id)}
           </h2>
-          <p class="text-sm text-slate-600 mb-3 leading-snug line-clamp-3">{e.titel}</p>
-          <div class="text-xs text-slate-500 space-y-1">
-            <div>
-              <span class="font-medium">Herausforderungen:</span>{' '}
-              {(['A','B','C'] as const).map((l) => e.hf_titel[l] ? l : null).filter(Boolean).join(' · ') || '—'}
-            </div>
-            {e.hybrid_situation_titel && (
-              <div><span class="font-medium">KN-Hybrid:</span> {e.hybrid_situation_titel}</div>
-            )}
-            <div class="flex flex-wrap gap-1 mt-2">
-              {e.aspekte.slice(0, 3).map((a) => <span class="chip chip-green">{a}</span>)}
-            </div>
-          </div>
+          <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
         </a>
         <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
           <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
-            Bundle: {e.bundle_dateien} Dateien →
+            Öffnen →
           </a>
           {e.hat_begleiter && (
             <a
               href={`/einheiten/${e.id}/begleiter`}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs text-slate-500 hover:text-slate-800 px-2 py-1 rounded hover:bg-slate-100 transition whitespace-nowrap"
+              class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
+              style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
             >
-              Begleiter ↗
+              Lies mich!
             </a>
           )}
         </div>

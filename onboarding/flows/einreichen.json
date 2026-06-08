@@ -5,6 +5,10 @@
   "productionBaseUrl": "https://bbw-hko.vercel.app",
   "auth": "../auth.json",
   "lang": "de",
+  "deploy": {
+    "html": "../../public/onboarding/guide-einreichen.html",
+    "pdf":  "../../public/onboarding/guide-einreichen.pdf"
+  },
   "viewport": { "width": 1440, "height": 900 },
   "steps": [
     {
@@ -29,8 +33,10 @@
       "caption": ""
     },
     {
-      "action": "waitForTimeout",
-      "value": "5000",
+      "action": "waitForSelector",
+      "selector": "label:has-text(\"Thema (nRLP)\")",
+      "state": "visible",
+      "timeout": 10000,
       "screenshot": false,
       "caption": ""
     },

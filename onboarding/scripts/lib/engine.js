@@ -67,7 +67,7 @@ export async function runFlow(flow, opts) {
       // For scrollTo: scroll the element into view first so the highlight and
       // screenshot both land at the right scroll position.
       if (step.action === "scrollTo" && step.selector) {
-        try { await page.locator(step.selector).scrollIntoViewIfNeeded({ timeout: 8000 }); } catch {}
+        try { await page.locator(step.selector).scrollIntoViewIfNeeded({ timeout: step.timeout ?? 12000 }); } catch {}
       }
       if (wantsShot && wantsHighlight && step.selector) {
         try {
@@ -110,9 +110,9 @@ async function performAction(page, step, baseUrl) {
     case "press": await page.press(req(step.selector, "press"), step.value ?? "Enter"); break;
     case "hover": await page.hover(req(step.selector, "hover")); break;
     case "select": await page.selectOption(req(step.selector, "select"), step.value ?? ""); break;
-    case "waitForSelector": await page.waitForSelector(req(step.selector, "waitForSelector"), { timeout: 15000 }); break;
+    case "waitForSelector": await page.waitForSelector(req(step.selector, "waitForSelector"), { timeout: step.timeout ?? 30000, state: step.state ?? "attached" }); break;
     case "waitForTimeout": await page.waitForTimeout(Number(step.value ?? 1000)); break;
-    case "scrollTo": await page.locator(req(step.selector, "scrollTo")).scrollIntoViewIfNeeded(); break;
+    case "scrollTo": await page.locator(req(step.selector, "scrollTo")).scrollIntoViewIfNeeded({ timeout: step.timeout ?? 30000 }); break;
     case "screenshot": break;
     default: throw new Error(`Unknown action "${step.action}"`);
   }
