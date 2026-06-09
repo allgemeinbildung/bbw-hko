@@ -328,7 +328,7 @@ function GuetekriterienListe({ sit }: { sit: SituationJson }) {
   const kriterien = sit.lernfortschritt?.kriterien?.filter((k) => k && (k.kriterium || k.indikator)) || []
   if (!kriterien.length) return null
   return (
-    <section style={{ marginTop: '3mm' }}>
+    <section style={{ marginTop: '2mm' }}>
       <MiniTableLabel>Gütekriterien</MiniTableLabel>
       <ul className="guete-list">
         {kriterien.map((k, i) => (
@@ -353,7 +353,7 @@ function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
   ].filter((g) => (g.items?.filter(Boolean).length || 0) > 0)
   if (!groups.length) return null
   return (
-    <section style={{ marginTop: '2mm' }} className="scaffolding">
+    <section style={{ marginTop: '1.5mm' }} className="scaffolding">
       <MiniTableLabel>Wie geht das?</MiniTableLabel>
       <div className="scaffolding-groups">
         {groups.map((g, i) => (
@@ -471,7 +471,7 @@ function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: 
         <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapHinweis sit={sit} />
       </Page>
-      <Page pageNum={nextPage()} pageTotal={total}>
+      <Page pageNum={nextPage()} pageTotal={total} bodyClass="hp-anleitung-page">
         <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
         <HandlungsproduktAnleitung sit={sit} />
       </Page>
@@ -524,7 +524,7 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
         <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapSkelett sit={sit} />
       </Page>
-      <Page pageNum={nextPage()} pageTotal={actualTotal}>
+      <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-anleitung-page">
         <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
         <HandlungsproduktAnleitung sit={sit} />
       </Page>
