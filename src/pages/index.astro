@@ -1,18 +1,16 @@
 ---
 import Base from '../layouts/Base.astro'
 import GuestPrintBlock from '../components/GuestPrintBlock.astro'
+import { getAccess, bounceKt1 } from '../lib/auth'
 
-const user = Astro.locals.user
-if (!user) return Astro.redirect('/welcome')
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/welcome')
 
-const { data: profile } = await Astro.locals.supabase
-  .from('profiles')
-  .select('role')
-  .eq('id', user.id)
-  .single()
+// KT1 lands on /admin unless they opted into the LP-Ansicht preview.
+const bounce = bounceKt1(Astro, access)
+if (bounce) return bounce
 
-if (profile?.role === 'kt1') return Astro.redirect('/admin')
-const isGuest = profile?.role === 'gast'
+const isGuest = access.role === 'gast'
 
 const allTiles = [
   {

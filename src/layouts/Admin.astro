@@ -14,7 +14,7 @@ const error = Astro.url.searchParams.get('error')
 <Base title={title}>
   <div class="min-h-screen flex flex-col">
     <header class="admin-header sticky top-0 z-20" style="background: var(--brand-dark); border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <a href="/admin" class="flex items-center gap-3 min-w-0">
           <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="h-14 w-auto shrink-0" style="filter: brightness(0) invert(1)" />
           <span class="hidden md:block pl-3 ml-1 border-l text-xs uppercase tracking-wider leading-tight" style="border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85);">
@@ -25,31 +25,39 @@ const error = Astro.url.searchParams.get('error')
         <nav class="flex gap-1 p-1 rounded-lg" style="background: rgba(0,0,0,0.18);">
           <a
             href="/admin"
-            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin' ? 'admin-tab-active' : 'admin-tab'}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin' ? 'admin-tab-active' : 'admin-tab'}`}
           >Übersicht</a>
           <a
             href="/admin/dashboard"
-            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/dashboard' ? 'admin-tab-active' : 'admin-tab'}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/dashboard' ? 'admin-tab-active' : 'admin-tab'}`}
           >Lücken-Dashboard</a>
           <a
             href="/admin/jahresplanung"
-            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/jahresplanung' ? 'admin-tab-active' : 'admin-tab'}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/jahresplanung' ? 'admin-tab-active' : 'admin-tab'}`}
           >Jahresplanung-Abdeckung</a>
           <a
             href="/situationen/admin"
-            class="px-4 py-1.5 rounded-md text-sm font-medium admin-tab"
+            class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
           >Situationen-Feedbacks →</a>
           <a
             href="/einheiten"
-            class="px-4 py-1.5 rounded-md text-sm font-medium admin-tab"
+            class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
           >Einheiten →</a>
           <a
             href="/admin/kt2"
-            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/admin/kt2' ? 'admin-tab-active' : 'admin-tab'}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/kt2' ? 'admin-tab-active' : 'admin-tab'}`}
           >KT2-Übergabe</a>
         </nav>
         <div class="flex items-center gap-3">
-          <span class="text-sm hidden sm:block" style="color: rgba(255,255,255,0.7);">{user?.email}</span>
+          <a
+            href="/api/auth/view-as?mode=lp&to=/"
+            class="viewas-switch inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-md font-semibold"
+            title="Plattform aus Sicht einer Lehrperson ansehen"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            LP-Ansicht
+          </a>
+          <span class="text-sm hidden lg:block" style="color: rgba(255,255,255,0.7);">{user?.email}</span>
           <form method="POST" action="/api/auth/logout">
             <button type="submit" class="text-sm underline" style="color: rgba(255,255,255,0.7);">Abmelden</button>
           </form>
@@ -83,6 +91,17 @@ const error = Astro.url.searchParams.get('error')
   }
   .admin-tab-active {
     background: white;
+    color: var(--brand-dark);
+  }
+  /* Distinct mode-switch button: white outline so it reads as an action, not a tab. */
+  .viewas-switch {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .viewas-switch:hover {
+    background: #fff;
     color: var(--brand-dark);
   }
 </style>

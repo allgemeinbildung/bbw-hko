@@ -1,0 +1,57 @@
+---
+import { VIEW_AS_COOKIE } from '../lib/auth'
+
+// Only ever do work (and the DB round-trip) when the preview cookie is set,
+// so the normal LP/guest experience pays nothing for this component.
+const hasCookie = Astro.cookies.get(VIEW_AS_COOKIE)?.value === 'lp'
+const onAdmin = Astro.url.pathname.startsWith('/admin')
+
+let show = false
+if (hasCookie && !onAdmin && Astro.locals.user) {
+  const { data } = await Astro.locals.supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', Astro.locals.user.id)
+    .single()
+  show = data?.role === 'kt1'
+}
+
+const back = '/api/auth/view-as?mode=admin'
+---
+{show && (
+  <div class="viewas-banner">
+    <span class="viewas-banner__label">
+      👁 LP-Ansicht — Sie sehen die Plattform als Lehrperson (KT1-Vorschau)
+    </span>
+    <a href={back} class="viewas-banner__back">Zurück zur Admin-Ansicht</a>
+  </div>
+)}
+
+<style>
+  .viewas-banner {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.4rem 1rem;
+    font-size: 0.8125rem;
+    background: var(--brand-dark, #094d28);
+    color: #fff;
+  }
+  .viewas-banner__back {
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+  .viewas-banner__back:hover {
+    opacity: 0.85;
+  }
+  @media print {
+    .viewas-banner {
+      display: none;
+    }
+  }
+</style>

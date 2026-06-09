@@ -17,7 +17,7 @@ quellen_json:
 
 # Begleit-Dokument — Konflikte kennen, kommunizieren, klaeren (1.1.1)
 
-> Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Unterlagen fuer die Lernenden (Situationsblaetter A/B/C, das Arbeitsblatt «Austausch & Transfer», KN-Blatt) liegen separat als gerenderte A4-Broschueren vor. Hier steht, **wie** du die Einheit fuehrst: Phasenablauf, fertige Scaffolds zum Abgeben, Coaching-Bewegungen, bi-dimensionale Bewertung. Du sollst die Einheit unterrichten koennen, ohne anderswo nachschlagen zu muessen.
+> Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Unterlagen fuer die Lernenden (Situationsblaetter A/B/C, das Arbeitsblatt «Austausch & Transfer», KN-Blatt) liegen separat als druckfertige A4-Broschueren vor. Hier steht, **wie** du die Einheit fuehrst: Phasenablauf, fertige Scaffolds zum Abgeben, Coaching-Bewegungen, bi-dimensionale Bewertung. Du sollst die Einheit unterrichten koennen, ohne anderswo nachschlagen zu muessen.
 
 ---
 

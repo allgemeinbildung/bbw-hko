@@ -1,19 +1,15 @@
 ---
 import LP from '../layouts/LP.astro'
 import IntakeForm from '../components/IntakeForm.astro'
+import { getAccess, bounceKt1 } from '../lib/auth'
 
-const user = Astro.locals.user
-if (!user) return Astro.redirect('/login')
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
 
-const { data: profile } = await Astro.locals.supabase
-  .from('profiles')
-  .select('role, abteilung')
-  .eq('id', user.id)
-  .single()
-
-if (profile?.role === 'kt1') return Astro.redirect('/admin')
-if (profile?.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material einreichen ist nur für angemeldete Lehrpersonen möglich.'))
+const bounce = bounceKt1(Astro, access)
+if (bounce) return bounce
+if (access.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material einreichen ist nur für angemeldete Lehrpersonen möglich.'))
 ---
 <LP title="Einreichen">
-  <IntakeForm initialData={{ abteilung: profile?.abteilung ?? '' }} />
+  <IntakeForm initialData={{ abteilung: access.abteilung ?? '' }} />
 </LP>

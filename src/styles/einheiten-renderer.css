@@ -979,12 +979,14 @@ body {
 }
 .hp-flaeche-label {
   position: absolute;
-  top: 2mm; left: 6mm;
+  top: -2.5mm; left: 5mm;
   font-size: 7.5pt;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--sit-akzent);
+  background: white;
+  padding: 0 2mm;
 }
 
 /* ---------- Austausch / Set sektion ---------- */
