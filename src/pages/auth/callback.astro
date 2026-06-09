@@ -19,5 +19,5 @@ if (profile?.role === 'gast') return Astro.redirect('/')
 
 if (!profile?.abteilung) return Astro.redirect('/profil-einrichten')
 
-return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/einreichen')
+return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/')
 ---

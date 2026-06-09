@@ -14,10 +14,10 @@ if (profile?.role === 'gast') return Astro.redirect('/')
 
 // Already set — skip this page
 if (profile?.abteilung) {
-  return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/einreichen')
+  return Astro.redirect(profile.role === 'kt1' ? '/admin' : '/')
 }
 
-const redirectTo = profile?.role === 'kt1' ? '/admin' : '/einreichen'
+const redirectTo = profile?.role === 'kt1' ? '/admin' : '/'
 ---
 <Base title="Abteilung wählen">
   <div class="min-h-screen flex items-center justify-center px-4">
