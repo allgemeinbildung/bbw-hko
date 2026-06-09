@@ -31,14 +31,14 @@ if (!meta || !fullSet) {
 const abgedeckte = meta.abgedeckte_kompetenzen?.length ? meta.abgedeckte_kompetenzen : [meta.kompetenz_nr]
 const letters = ['A', 'B', 'C'] as const
 ---
-<Einheiten title={`Einheit ${meta.kompetenz_nr}`} role={role} fullBleed>
+<Einheiten title={meta.einheit_titel} role={role} fullBleed>
   <style is:global set:html={cssRenderer}></style>
 
   <div class="border-b border-slate-200 bg-white">
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-baseline gap-3">
       <a href="/einheiten" class="text-sm text-slate-500 hover:text-slate-700">← Katalog</a>
       <span class="text-slate-300">·</span>
-      <h1 class="text-lg font-semibold text-slate-900">{meta.kompetenz_nr} · {meta.slug.replace(/_/g, ' ')}</h1>
+      <h1 class="text-lg font-semibold text-slate-900">{meta.einheit_titel}</h1>
       <span class="text-sm text-slate-500">{meta.titel}</span>
       <div class="ml-auto flex items-center gap-2 text-xs text-slate-500">
         <span class="chip chip-blue">{meta.lehrgang}</span>

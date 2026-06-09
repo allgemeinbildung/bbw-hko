@@ -516,7 +516,7 @@ function mindmapQuadrant(sit: SituationJson, akzent: string, full: boolean): any
 function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
   const els: any[] = []
   // C5/AS-2 — same hint string as the HTML skeleton.
-  els.push(p('Baue deine Mindmap aus deinen Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänze die Detail-Punkte selbst.',
+  els.push(p('Bauen Sie Ihre Mindmap aus Ihren Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänzen Sie die Detail-Punkte selbst.',
     { run: { italics: true, color: COLOR.inkMute, size: 16 } }))
   els.push(spacer(80))
   els.push(...mindmapQuadrant(sit, akzent, false))
@@ -526,7 +526,7 @@ function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
 // Dossier mindmap — no diagram (drawn on paper/another device); just hint at the four Ast-Titel.
 function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
   const els: any[] = []
-  els.push(p('Die Mindmap erstellst du selbst — auf Papier oder einem Gerät. Baue sie aus dem Zentrum und diesen vier Ästen auf:',
+  els.push(p('Die Mindmap erstellen Sie selbst — auf Papier oder einem Gerät. Bauen Sie sie aus dem Zentrum und diesen vier Ästen auf:',
     { run: { italics: true, color: COLOR.inkSoft, size: 16 } }))
   ;(sit.mindmap_aeste || []).forEach((ast, i) => {
     els.push(new Paragraph({
@@ -584,10 +584,10 @@ function handlungsproduktBlock(sit: SituationJson, akzent: string): any[] {
     els.push(p(s.hint || '', { run: { color: COLOR.inkSoft, size: 18 }, indent: { left: 400 } }))
   })
 
-  // "Das lieferst du ab" — konkrete Abgabe(n)
+  // "Das liefern Sie ab" — konkrete Abgabe(n)
   if (hp.abgaben?.length) {
     els.push(spacer(80))
-    els.push(p('DAS LIEFERST DU AB', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+    els.push(p('DAS LIEFERN SIE AB', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
     hp.abgaben.filter(Boolean).forEach((a) => {
       els.push(new Paragraph({
         children: [
@@ -629,7 +629,7 @@ function handlungsproduktBlock(sit: SituationJson, akzent: string): any[] {
     const present = groups.filter(([, items]) => (items?.filter(Boolean).length || 0) > 0)
     if (present.length) {
       els.push(spacer(80))
-      els.push(p('SCAFFOLDING', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+      els.push(p('WIE GEHT DAS?', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
       present.forEach(([label, items]) => {
         els.push(p(label, { run: { color: akzent, bold: true, size: 16 }, spacing: { before: 60, after: 20 } }))
         items!.filter(Boolean).forEach((it) => {
@@ -916,7 +916,7 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
   children.push(pageBreak())
   if (t.typ === 'fachgespraech') {
     children.push(...sectionHead('03 · Vorbereitung', 'Notizen zu den Fragen', akzent))
-    children.push(p('Stichwortartige Notizen zu jeder Frage. Im Gespräch sprichst du frei.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p('Stichwortartige Notizen zu jeder Frage. Im Gespräch sprechen Sie frei.', { run: { color: COLOR.inkSoft, size: 18 } }))
     t.fragestruktur?.forEach((f) => {
       children.push(new Paragraph({
         children: [
@@ -931,7 +931,7 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
     })
   } else if (t.typ === 'mini_case_schriftlich') {
     children.push(...sectionHead('03 · Aufgaben', 'Prüfungsaufgaben', akzent))
-    children.push(p('Bearbeite alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson, kein Internet.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p('Bearbeiten Sie alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson, kein Internet.', { run: { color: COLOR.inkSoft, size: 18 } }))
     t.aufgaben?.forEach((a) => {
       children.push(new Paragraph({
         children: [
@@ -946,10 +946,10 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
     })
   } else {
     children.push(...sectionHead('03 · Werkwahl', 'Welches Handlungsprodukt wähle ich?', akzent))
-    children.push(p('Begründe deine Wahl in 2–3 Sätzen.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p('Begründen Sie Ihre Wahl in 2–3 Sätzen.', { run: { color: COLOR.inkSoft, size: 18 } }))
     children.push(...schreibfeld(28))
     children.push(...sectionHead('04 · Transfer-Reflexion', 'Drei Reflexionsfragen', akzent))
-    children.push(p('Beantworte schriftlich, insgesamt 200–250 Wörter.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p('Beantworten Sie schriftlich, insgesamt 200–250 Wörter.', { run: { color: COLOR.inkSoft, size: 18 } }))
     t.reflexionsfragen?.forEach((f, i) => {
       children.push(new Paragraph({
         children: [

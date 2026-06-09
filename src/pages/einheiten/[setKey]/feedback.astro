@@ -25,12 +25,12 @@ const knTypen = meta.kn_typen
 const declaredSk: string[] = (meta.sk ?? []).map((n) => skNameByNr(n))
 const declaredAspekte: string[] = meta.aspekte ?? []
 ---
-<Einheiten title={`Feedback · ${meta.kompetenz_nr}`} role={role}>
+<Einheiten title={`Feedback · ${meta.einheit_titel}`} role={role}>
   <div class="max-w-3xl mx-auto">
     <a href={`/einheiten/${setKey}`} class="text-sm text-slate-500 hover:text-slate-700">← Zurück zur Einheit</a>
     <h1 class="text-2xl font-semibold mt-2 mb-1">Feedback nach Unterricht</h1>
     <p class="text-sm text-slate-500 mb-6">
-      Einheit <strong>{meta.kompetenz_nr} · {meta.slug.replace(/_/g, ' ')}</strong> — {meta.titel}
+      Einheit <strong>{meta.einheit_titel}</strong> — {meta.titel}
     </p>
 
     <div id="fb-msg" class="text-sm mb-4 hidden"></div>

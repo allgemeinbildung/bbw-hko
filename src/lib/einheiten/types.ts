@@ -60,7 +60,7 @@ export interface SituationJson {
     format?: string
     format_detail?: string
     titel?: string
-    abgaben?: string[]          // Cluster 6 — konkrete Abgabe(n) fuer den "Das lieferst du ab"-Block (additiv)
+    abgaben?: string[]          // Cluster 6 — konkrete Abgabe(n) fuer den "Das liefern Sie ab"-Block (additiv)
     beschreibung?: string
     schritte?: { label: string; hint: string }[]
     schreib_label?: string
@@ -205,6 +205,8 @@ export interface EinheitIndexEntry {
   abgedeckte_kompetenzen: string[]
   slug: string
   titel: string
+  /** Anzeige-Titel der Einheit (aus set.json `einheit_titel`), z. B. "Im Konflikt kommunizieren". */
+  einheit_titel: string
   lehrgang: string
   modul: string | null
   modul_titel: string | null

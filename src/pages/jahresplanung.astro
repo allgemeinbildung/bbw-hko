@@ -254,7 +254,6 @@ const semesterColumns = ([1, 2] as const).map((s) => {
 const isFeiertag = (n: string) => /frei|brücke|bruecke|ferien/i.test(n)
 const noteWeeks = calendar.filter((w) => w.note)
 const feiertagNotes = noteWeeks.filter((w) => isFeiertag(w.note!))
-const didaktikNotes = noteWeeks.filter((w) => !isFeiertag(w.note!))
 
 // ── Phase 2 (Feature 4/6/8): load this user's saved plan instances (SSR) ──
 // Table created by migration 011. Guarded so the page still renders if the
@@ -417,12 +416,12 @@ if (!isGuest) {
       </section>
 
       <!-- Feature 1: SK-Abdeckungsmatrix (canonical nRLP) -->
-      <section class="bg-white border border-slate-200 rounded-lg p-6 mb-8">
-        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
-          <h2 class="text-lg font-semibold text-slate-900">SK-Abdeckung im 1. Lehrjahr</h2>
-          <span class="text-xs text-slate-400">Quelle: nRLP-Zirkularität · 12 Schlüsselkompetenzen</span>
-        </div>
-        <p class="text-sm text-slate-600 mb-4 max-w-3xl">
+      <details class="jp-notes mb-8">
+        <summary>
+          <span class="font-semibold text-slate-800">SK-Abdeckung im 1. Lehrjahr</span>
+          <span class="text-xs text-slate-400 ml-2">Quelle: nRLP-Zirkularität · 12 Schlüsselkompetenzen</span>
+        </summary>
+        <p class="text-sm text-slate-600 mb-4 mt-4 max-w-3xl">
           Welche der 12 Schlüsselkompetenzen in T1–T3 eingeplant sind und in welcher
           Iterationstiefe (R1 = erste Begegnung, R2/R3 = Wiederaufnahme & Vertiefung).
           Graue Zeilen sind im 1. Lehrjahr <strong>nicht</strong> vorgesehen — vor einem
@@ -452,43 +451,26 @@ if (!isGuest) {
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r3"></span>R3 — Vertiefung</span>
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-empty"></span>nicht im 1. Lehrjahr</span>
         </div>
-      </section>
+      </details>
 
       <!-- Feature 3: Feiertags- / Notizen-Panel -->
-      <details class="jp-notes mb-8" open>
+      <details class="jp-notes mb-8">
         <summary>
-          <span class="font-semibold text-slate-800">Feiertage, Brückentage &amp; didaktische Hinweise</span>
-          <span class="text-xs text-slate-400 ml-2">{noteWeeks.length} Wochen mit Vermerk</span>
+          <span class="font-semibold text-slate-800">Feiertage &amp; Brückentage</span>
+          <span class="text-xs text-slate-400 ml-2">{feiertagNotes.length} Wochen mit Vermerk</span>
         </summary>
-        <div class="grid md:grid-cols-2 gap-6 mt-4">
-          <div>
-            <p class="jp-notes-h">Feiertage &amp; Brückentage</p>
-            {feiertagNotes.length ? (
-              <ul class="space-y-1.5">
-                {feiertagNotes.map((w) => (
-                  <li class="flex items-baseline gap-2 text-sm">
-                    <span class="jp-note-kw">KW {w.kw}</span>
-                    <span class="text-slate-400 text-xs w-28 shrink-0">{w.datum}</span>
-                    <span class="text-slate-700">{w.note}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : <p class="text-sm text-slate-400 italic">Keine.</p>}
-          </div>
-          <div>
-            <p class="jp-notes-h">Didaktische Hinweise (KN / Prüfungen)</p>
-            {didaktikNotes.length ? (
-              <ul class="space-y-1.5">
-                {didaktikNotes.map((w) => (
-                  <li class="flex items-baseline gap-2 text-sm">
-                    <span class="jp-note-kw">KW {w.kw}</span>
-                    <span class="text-slate-400 text-xs w-28 shrink-0">{w.datum}</span>
-                    <span class="text-slate-700">{w.note}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : <p class="text-sm text-slate-400 italic">Keine.</p>}
-          </div>
+        <div class="mt-4">
+          {feiertagNotes.length ? (
+            <ul class="space-y-1.5">
+              {feiertagNotes.map((w) => (
+                <li class="flex items-baseline gap-2 text-sm">
+                  <span class="jp-note-kw">KW {w.kw}</span>
+                  <span class="text-slate-400 text-xs w-28 shrink-0">{w.datum}</span>
+                  <span class="text-slate-700">{w.note}</span>
+                </li>
+              ))}
+            </ul>
+          ) : <p class="text-sm text-slate-400 italic">Keine.</p>}
         </div>
         <p class="text-xs text-slate-400 mt-3 italic">
           Hinweis: Alle Schulwochen zählen 3 Lektionen — auch Wochen mit Feiertag.
@@ -1038,6 +1020,24 @@ if (!isGuest) {
         },
       }
     }
+  </script>
+
+  <!-- Print: die aufklappbaren Panels (SK-Abdeckung, Feiertage) sind am Bildschirm
+       geschlossen, werden für PDF/Druck aber geöffnet — so bleibt der gedruckte
+       Jahresplan vollständig. Nach dem Druck wird der Zustand wiederhergestellt. -->
+  <script>
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('details:not([open])').forEach((d) => {
+        d.setAttribute('data-print-opened', '')
+        d.open = true
+      })
+    })
+    window.addEventListener('afterprint', () => {
+      document.querySelectorAll('details[data-print-opened]').forEach((d) => {
+        d.open = false
+        d.removeAttribute('data-print-opened')
+      })
+    })
   </script>
 
   <style>

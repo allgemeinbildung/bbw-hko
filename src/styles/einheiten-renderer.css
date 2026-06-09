@@ -934,7 +934,7 @@ body {
 .hp-schritt-label { font-weight: 600; font-size: 10pt; margin-bottom: 0.5mm; }
 .hp-schritt-hint { font-size: 9pt; color: var(--ink-soft); line-height: 1.35; }
 
-/* "Das lieferst du ab" — konkrete Abgabe(n) am Anfang des Handlungsprodukt-Abschnitts (Cluster 6) */
+/* "Das liefern Sie ab" — konkrete Abgabe(n) am Anfang des Handlungsprodukt-Abschnitts (Cluster 6) */
 .abgabe-callout {
   margin: 0 0 3mm;
   padding: 2.5mm 4mm 3mm;
@@ -1072,15 +1072,17 @@ body {
 .guete-list li { display: flex; gap: 2.5mm; margin-bottom: 1.5mm; break-inside: avoid; align-items: baseline; }
 .guete-list li .check-box { flex: 0 0 auto; }
 
-/* C6 — Scaffolding (Satzanfänge · Strategien · Struktur) */
-.scaffolding-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
-.scaffolding-group { border-left: 2pt solid var(--sit-akzent); padding-left: 3mm; }
+/* C6 — Scaffolding (Satzanfänge · Strategien · Struktur) — compact: smaller type, tighter
+   leading, narrower gaps/indents so the block (last section on the HP-Anleitung page) fits
+   without being clipped, and leaves headroom for 4+ items per column. */
+.scaffolding-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.scaffolding-group { border-left: 2pt solid var(--sit-akzent); padding-left: 2.5mm; }
 .scaffolding-label {
-  font-size: 7.5pt; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--sit-akzent); margin-bottom: 1mm;
+  font-size: 7pt; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--sit-akzent); margin-bottom: 0.6mm;
 }
-.scaffolding-group ul { margin: 0; padding-left: 4mm; font-size: 8.5pt; line-height: 1.35; }
-.scaffolding-group li { margin-bottom: 0.5mm; }
+.scaffolding-group ul { margin: 0; padding-left: 3mm; font-size: 8pt; line-height: 1.22; }
+.scaffolding-group li { margin-bottom: 0.4mm; }
 
 /* C8 — standalone Austausch & Transfer doc */
 .austausch-optionen { margin-top: 3mm; display: flex; flex-direction: column; gap: 3mm; }

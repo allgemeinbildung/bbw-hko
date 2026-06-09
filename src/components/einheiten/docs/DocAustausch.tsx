@@ -179,7 +179,7 @@ export function DocAustausch({ set, sits, abteilung, edits, onEdit }: DocAustaus
             fontSize: '8.5pt', color: 'var(--ink-mute)', margin: '3mm 0 1mm',
             textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600,
           }}>
-            Dein Transfer (5–7 Sätze)
+            Ihr Transfer (5–7 Sätze)
           </p>
           <Schreibfeld heightMm={50} value={edits.transfer || ''} onChange={(v) => onEdit('transfer', v)} />
 

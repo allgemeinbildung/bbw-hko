@@ -93,7 +93,7 @@ function FachgespraechPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pa
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
         <SectionHead num="03 · Vorbereitung">Notizen zu den Fragen (1/2)</SectionHead>
         <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-          Nutze die 15 Minuten Vorbereitungszeit für stichwortartige Notizen zu jeder Frage. Im Gespräch sprichst du frei.
+          Nutzen Sie die 15 Minuten Vorbereitungszeit für stichwortartige Notizen zu jeder Frage. Im Gespräch sprechen Sie frei.
         </p>
         {part1.map((f, i) => (
           <QItem
@@ -134,7 +134,7 @@ function MiniCasePages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTot
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
         <SectionHead num="03 · Aufgaben">Prüfungsaufgaben (1/2)</SectionHead>
         <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-          Bearbeite alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson erlaubt, kein Internet.
+          Bearbeiten Sie alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson erlaubt, kein Internet.
         </p>
         {part1.map((a, i) => (
           <QItem
@@ -174,7 +174,7 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
         <SectionHead num="03 · Werkwahl">Welches Handlungsprodukt wähle ich?</SectionHead>
         <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
-          Wähle eines der drei Handlungsprodukte aus deinen Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gesprächs-Drehbuch) und begründe deine Wahl in 2–3 Sätzen.
+          Wählen Sie eines der drei Handlungsprodukte aus Ihren Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gesprächs-Drehbuch) und begründen Sie Ihre Wahl in 2–3 Sätzen.
         </p>
         <Schreibfeld
           heightMm={28}
@@ -183,7 +183,7 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
         />
         <SectionHead num="04 · Transfer-Reflexion">Reflexion (1/2)</SectionHead>
         <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
-          Beantworte schriftlich, insgesamt 200–250 Wörter über alle drei Fragen.
+          Beantworten Sie schriftlich, insgesamt 200–250 Wörter über alle drei Fragen.
         </p>
         {reflex.slice(0, 1).map((f, i) => (
           <QItem

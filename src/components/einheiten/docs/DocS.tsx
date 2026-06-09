@@ -257,7 +257,7 @@ function MindmapSkelett({ sit }: { sit: SituationJson }) {
   return (
     <div className="mindmap">
       <p className="mindmap-hint">
-        Baue deine Mindmap aus deinen Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänze die Detail-Punkte selbst.
+        Bauen Sie Ihre Mindmap aus Ihren Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänzen Sie die Detail-Punkte selbst.
       </p>
       <MindmapRadial sit={sit} full={false} />
     </div>
@@ -272,7 +272,7 @@ function MindmapHinweis({ sit }: { sit: SituationJson }) {
   return (
     <div className="mindmap-hinweis">
       <p className="mm-hinweis-intro">
-        Die Mindmap erstellst du selbst — auf Papier oder einem Gerät. Baue sie aus dem Zentrum und diesen vier Ästen auf:
+        Die Mindmap erstellen Sie selbst — auf Papier oder einem Gerät. Bauen Sie sie aus dem Zentrum und diesen vier Ästen auf:
       </p>
       <ol className="mm-hinweis-aeste">
         {aeste.map((ast, i) => (
@@ -336,8 +336,8 @@ function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
   ].filter((g) => (g.items?.filter(Boolean).length || 0) > 0)
   if (!groups.length) return null
   return (
-    <section style={{ marginTop: '3mm' }} className="scaffolding">
-      <MiniTableLabel>Scaffolding</MiniTableLabel>
+    <section style={{ marginTop: '2mm' }} className="scaffolding">
+      <MiniTableLabel>Wie geht das?</MiniTableLabel>
       <div className="scaffolding-groups">
         {groups.map((g, i) => (
           <div className="scaffolding-group" key={i}>
@@ -357,7 +357,7 @@ function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt
   if (!hp.format && !abgaben.length) return null
   return (
     <div className="abgabe-callout">
-      <div className="abgabe-label">Das lieferst du ab</div>
+      <div className="abgabe-label">Das liefern Sie ab</div>
       {hp.format && <div className="abgabe-format">{hp.format}</div>}
       {abgaben.length > 0 && (
         <ul className="abgabe-list">

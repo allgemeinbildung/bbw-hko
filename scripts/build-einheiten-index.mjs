@@ -83,6 +83,7 @@ for (const slug of slugs) {
     abgedeckte_kompetenzen: abgedeckteKompetenzen,
     slug: slugPart,
     titel,
+    einheit_titel: set?.einheit_titel || slugPart.replace(/_/g, ' ').replace(/^\w/, (c) => c.toUpperCase()),
     lehrgang: sitA?.lehrgang || begleiterMeta.beruf || 'EFZ_3J',
     modul: sitA?.modul || null,
     modul_titel: sitA?.modul_titel || null,

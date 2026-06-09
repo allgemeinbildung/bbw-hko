@@ -1,7 +1,7 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
-import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, prettifyId } from '../../lib/einheiten'
+import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters } from '../../lib/einheiten'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -27,6 +27,11 @@ const filters = {
 
 const filtered = applyEinheitenFilters(einheitenIndex, filters)
 
+// Filter-UI vorerst ausgeblendet (erst 2 Einheiten, alle T1 / 1.1.1). Auf `true` setzen,
+// sobald Einheiten aus verschiedenen Themen/Kompetenzen dazukommen → reaktiviert das Formular.
+// Die Filterlogik (URL-Query-Params) bleibt aktiv, nur die Bedienoberfläche ist verborgen.
+const SHOW_FILTER = false
+
 const allAspekte = Array.from(new Set(einheitenIndex.flatMap((e) => e.aspekte))).sort()
 const allThemen = Array.from(new Set(einheitenIndex.map((e) => e.thema_nr).filter((n): n is number => n != null))).sort()
 const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang))).sort()
@@ -36,7 +41,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     <div>
       <h1 class="text-2xl font-semibold">Unterrichtseinheiten-Katalog</h1>
       <p class="text-sm text-slate-500 mt-1">
-        {filtered.length} von {einheitenIndex.length} Unterrichtseinheiten · inkl. 3 Herausforderungen + KN + Begleitdokument
+        {SHOW_FILTER ? `${filtered.length} von ${einheitenIndex.length}` : einheitenIndex.length} Unterrichtseinheiten · inkl. 3 Herausforderungen + KN + Begleitdokument
       </p>
     </div>
     <p class="text-xs text-slate-500 max-w-md text-right hidden md:block">
@@ -45,6 +50,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     </p>
   </div>
 
+  {SHOW_FILTER && (
   <form method="get" class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap gap-3 items-end">
     <label class="flex flex-col gap-1">
       <span class="field-label">Suche</span>
@@ -74,13 +80,14 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     <button type="submit" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Filtern</button>
     <a href="/einheiten" class="px-4 py-2 rounded-md text-sm text-slate-500 underline">Reset</a>
   </form>
+  )}
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {filtered.map((e) => (
       <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
         <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
           <h2 class="text-base font-semibold text-slate-900 leading-snug mb-1">
-            {prettifyId(e.id)}
+            {e.einheit_titel}
           </h2>
           <div class="flex flex-wrap gap-1.5 mb-2">
             {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (

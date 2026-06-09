@@ -356,4 +356,29 @@ Das `sk_anker`-Feld ist **LP-/Taxonomie-Dokumentation** (wird Schülern nicht an
 4. ✅ `npm run build` grün.
 5. ✅ Grep-Endkontrolle: in den JSONs verbleiben nur Kategorie-C-Ausnahmen.
 
+---
+
+# Nachtrag (2026-06-09) — hartcodierte Renderer-Labels
+
+Beim Test fiel auf: «**Das lieferst du ab**» auf Seite 5/7 der Herausforderung. Diese Anrede steht **nicht in den JSON-Daten**, sondern **hartcodiert in den Renderer-Komponenten** (darum von der ersten Liste nicht erfasst). Ein Label dort rendert für **alle** Herausforderungen/KN gleichzeitig — sowohl als HTML-Vorschau als auch im **Word-Export** (`docx-builder.ts`). Sweep über alle Doc-Komponenten + DOCX-Builder (inkl. Imperative ohne Pronomen):
+
+**Korrigiert (Schüler-Dokumente, HTML + Word) — 15 Strings:**
+- `src/components/einheiten/docs/DocS.tsx` — L260 (Mindmap-Skelett), L275 (Mindmap-Hinweis), **L360 «Das lieferst du ab» → «Das liefern Sie ab»**
+- `src/components/einheiten/docs/DocKnS.tsx` — L96 (Fachgespräch-Vorb.), L137 (Mini-Case), L177 (Werkwahl), L186 (Transfer-Reflexion)
+- `src/components/einheiten/docs/DocAustausch.tsx` — L182 «Dein Transfer» → «Ihr Transfer»
+- `src/lib/einheiten/docx-builder.ts` — L519, L529, **L590 «DAS LIEFERST DU AB» → «DAS LIEFERN SIE AB»**, L919, L934, L949, L952 (Word-Pendants derselben Labels)
+- Kommentare/Doku angeglichen: `docx-builder.ts` L587, `types.ts` L63, `einheiten-renderer.css` L937.
+
+**Bewusst «du» belassen (LP-facing bzw. Peer-Anrede):**
+- `DocKnLp.tsx` L105/L247 — **LP-facing** KN-Dokument («… nur für dich, nicht für Lernende sichtbar») → wie Begleiter: «du».
+- `src/pages/einheiten/[setKey]/feedback.astro` — **LP-Feedbackformular** («… hast du unterrichtet?») → «du».
+- `EinheitWorkbench.tsx` L431/432 — Bundle-**README an die LP** → «du».
+- `src/lib/einheiten/sprachfoerderung.ts` L100 — SM8-Redemittel «Du schreibst …, dazu …» (Bezugnahme auf den Beitrag **einer Mitlernenden** = Peer-Anrede) → «du».
+
+**Offen geflaggt (kein «du», darum nicht angefasst):** `DocAustausch.tsx` L64–68 nutzt für die **Gruppen**-Austauschphase den Plural «ihr/eure» («Ihr habt … Vergleicht … eure Lösungen»). Das ist Gruppen-Anrede, nicht «du». Auf Wunsch formalisiere ich auch das zu «Sie» (dann «Sie haben … Vergleichen Sie … Ihre Lösungen»).
+
+`npm run build` grün (Renderer kompiliert, Bundle neu gehasht). `.fuse_hidden…`-Tempdatei wie vereinbart ignoriert.
+
+---
+
 *Erstellt durch vollständiges Lesen aller 14 Dateien beider Einheiten — nicht per Pronomen-Grep, da die Imperativ-Anreden («Entscheide», «Bearbeite» …) sonst durchrutschen.*
