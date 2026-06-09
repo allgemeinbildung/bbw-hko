@@ -4,6 +4,7 @@ import react from '@astrojs/react'
 import vercel from '@astrojs/vercel/serverless'
 
 export default defineConfig({
+  site: 'https://bbw-hko.ch',
   output: 'server',
   adapter: vercel(),
   integrations: [tailwind(), react({ include: ['**/einheiten/**'] })],

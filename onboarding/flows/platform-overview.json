@@ -2,7 +2,7 @@
   "name": "ABU-Materialplattform — Einführung & Rundgang",
   "description": "Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.",
   "baseUrl": "http://localhost:4321",
-  "productionBaseUrl": "https://bbw-hko.vercel.app",
+  "productionBaseUrl": "https://bbw-hko.ch",
   "auth": "../auth.json",
   "lang": "de",
   "deploy": {
@@ -15,7 +15,7 @@
       "action": "goto",
       "value": "/",
       "section": "Anmelden",
-      "caption": "Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen melden sich mit **«Mit Microsoft (BBW) anmelden»** an — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.",
+      "caption": "Öffne die Plattform unter **bbw-hko.ch**. BBW-Lehrpersonen melden sich mit **«Mit Microsoft (BBW) anmelden»** an — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.",
       "screenshot": true,
       "fullPage": false
     },

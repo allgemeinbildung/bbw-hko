@@ -1,11 +1,11 @@
-# ABU-Materialplattform — Einführung & Rundgang
+﻿# ABU-Materialplattform — Einführung & Rundgang
 
 Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.
 
 
 ## Anmelden
 
-### 1. Öffne die Plattform unter **bbw-hko.vercel.app**. BBW-Lehrpersonen klicken auf **«Mit Microsoft (BBW) anmelden»** — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.
+### 1. Öffne die Plattform unter **bbw-hko.ch**. BBW-Lehrpersonen klicken auf **«Mit Microsoft (BBW) anmelden»** — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.
 
 ![1](screenshots/00-ffne-die-plattform-unter-bbw-hko-vercel-.png)
 
