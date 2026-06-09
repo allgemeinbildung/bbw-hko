@@ -1059,13 +1059,16 @@ body {
 .mm-b3 { bottom: 0; left: 0; }
 .mm-b4 { bottom: 0; right: 0; }
 
-/* C6 — Handlungsprodukt metadata (Lebensbezug + Sprachmodi) */
+/* C6 — Handlungsprodukt metadata (Kompetenz[en] + Lebensbezug + Sprachmodi) */
 .hp-meta { margin: 0 0 3mm; display: flex; flex-direction: column; gap: 1.5mm; }
 .hp-meta-item { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); display: flex; gap: 3mm; }
 .hp-meta-label {
   flex: 0 0 24mm; font-size: 7pt; font-weight: 600; letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--sit-akzent); padding-top: 0.5mm;
 }
+/* Kompetenz-Zeile(n): Klartext-Satz verbatim aus dem nRLP, leicht betont; Nr als Akzent */
+.hp-meta-komp { color: var(--ink); }
+.hp-meta-komp .komp-nr { font-weight: 700; color: var(--sit-akzent); }
 
 /* C6 — Gütekriterien checklist */
 .guete-list { list-style: none; margin: 0; padding: 0; font-size: 9pt; line-height: 1.4; }
@@ -1135,9 +1138,11 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
 .cockpit-page .cockpit-table td { padding: 1mm 3mm 1mm 0; }
 .cockpit-page .checkliste-krit { font-size: 8pt; line-height: 1.18; }
 .cockpit-page .check-box { font-size: 10pt; }
-/* page-1 metadata (Lebensbezug + Sprachmodi) — compact, directly under the cockpit cards */
-.cockpit-page .hp-meta { margin: 1.5mm 0 0; gap: 0.3mm; }
+/* page-1 metadata (Kompetenz[en] + Lebensbezug + Sprachmodi) — compact, directly under the cockpit cards.
+   Trennlinie nach unten = Separator zwischen Metadaten und der Herausforderung darunter. */
+.cockpit-page .hp-meta { margin: 1.5mm 0 0; gap: 0.3mm; padding-bottom: 1.8mm; border-bottom: 0.5pt solid var(--rule); }
 .cockpit-page .hp-meta-item { font-size: 8pt; line-height: 1.28; gap: 2mm; }
+.cockpit-page .hp-meta-komp { line-height: 1.32; }
 .cockpit-page .hp-meta-label { flex: 0 0 20mm; font-size: 6.5pt; padding-top: 0.4mm; }
 
 /* page 6b — full-page writing surface: no section heading, ruling fills to the bottom.

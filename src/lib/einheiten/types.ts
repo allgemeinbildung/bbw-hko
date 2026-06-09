@@ -26,8 +26,11 @@ export interface NrlpRef {
   sprachmodus_ids?: string[]        // parallel to sprachmodi[]; e.g. ["SM3","SM8"]
   kompetenz_id?: string             // explicit alias of nr, e.g. "1.1.1"
   lebensbezug_id?: string           // explicit alias of lebensbezug, e.g. "1.1"
-  kompetenz_text?: string           // Klartext Kompetenz-Satz (RLP)
+  kompetenz_text?: string           // Klartext Kompetenz-Satz (RLP) — primäre Kompetenz
   lebensbezug_text?: string         // Klartext Lebensbezug-Satz (RLP)
+  // Verbatim aus nrlp_3j/4j.json aufgelöste Kompetenz-Sätze für ALLE nr_primary,
+  // SSR-seitig via enrichKompetenzen() befüllt (src/lib/einheiten/kompetenz-text.ts).
+  kompetenzen?: { nr: string; text: string }[]
 }
 
 export interface SituationJson {

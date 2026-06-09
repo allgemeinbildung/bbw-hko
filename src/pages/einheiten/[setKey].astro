@@ -2,6 +2,7 @@
 import Einheiten from '../../layouts/Einheiten.astro'
 import EinheitWorkbench from '../../components/einheiten/EinheitWorkbench.tsx'
 import { einheitById, loadEinheit } from '../../lib/einheiten'
+import { enrichKompetenzen } from '../../lib/einheiten/kompetenz-text'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import { skNameByNr, skTooltip } from '../../lib/sk-labels'
 import cssRenderer from '../../styles/einheiten-renderer.css?raw'
@@ -26,6 +27,11 @@ const fullSet = loadEinheit(setKey)
 if (!meta || !fullSet) {
   return new Response('Einheit nicht gefunden', { status: 404 })
 }
+
+// SSR: Kompetenz-Klartexte verbatim aus dem nRLP auflösen, bevor das Set ins
+// (client:only) Renderer-Island serialisiert wird — so bleibt der nRLP-Datensatz
+// aus dem Client-Bundle und Preview wie ZIP-Download zeigen die Kompetenzen.
+const renderSet = enrichKompetenzen(fullSet)
 
 // B3 — Abdeckungs-Übersicht aus dem Index (keine zusätzlichen Datenquellen nötig).
 const abgedeckte = meta.abgedeckte_kompetenzen?.length ? meta.abgedeckte_kompetenzen : [meta.kompetenz_nr]
@@ -110,7 +116,7 @@ const letters = ['A', 'B', 'C'] as const
 
   <EinheitWorkbench
     client:only="react"
-    set={fullSet}
+    set={renderSet}
     cssRenderer={cssRenderer}
     cssBegleiter={cssBegleiter}
     logoUrl="/logo-bbw-doc.png"

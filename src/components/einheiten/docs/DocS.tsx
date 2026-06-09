@@ -283,13 +283,30 @@ function MindmapHinweis({ sit }: { sit: SituationJson }) {
   )
 }
 
-// C6 — replaces SusMarker: Lebensbezug + Sprachmodi (full labels) metadata.
+// Kompetenz-Sätze (verbatim aus nRLP): bevorzugt das SSR-aufgelöste `nrlp.kompetenzen`
+// (alle nr_primary), Fallback auf den primären `kompetenz_text` — so erscheint die
+// Kompetenz auch bei un-angereicherten Daten.
+function kompetenzList(sit: SituationJson): { nr: string; text: string }[] {
+  const resolved = sit.nrlp?.kompetenzen?.filter((k) => k && k.text)
+  if (resolved && resolved.length) return resolved
+  const text = sit.nrlp?.kompetenz_text
+  return text ? [{ nr: sit.nrlp?.nr || '', text }] : []
+}
+
+// C6 — replaces SusMarker: Kompetenz(en) + Lebensbezug + Sprachmodi (full labels) metadata.
 function HandlungsproduktMeta({ sit }: { sit: SituationJson }) {
+  const kompetenzen = kompetenzList(sit)
   const lebensbezug = sit.nrlp?.lebensbezug_text
   const sprachmodi = (sit.nrlp?.sprachmodi || []).filter(Boolean)
-  if (!lebensbezug && !sprachmodi.length) return null
+  if (!kompetenzen.length && !lebensbezug && !sprachmodi.length) return null
   return (
     <div className="hp-meta">
+      {kompetenzen.map((k, i) => (
+        <div className="hp-meta-item hp-meta-komp" key={`k-${i}`}>
+          <span className="hp-meta-label">{i === 0 ? (kompetenzen.length > 1 ? 'Kompetenzen' : 'Kompetenz') : ''}</span>
+          <span>{k.nr && <span className="komp-nr">{k.nr}</span>} {k.text}</span>
+        </div>
+      ))}
       {lebensbezug && (
         <div className="hp-meta-item">
           <span className="hp-meta-label">Lebensbezug</span>

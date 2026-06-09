@@ -26,12 +26,6 @@ const allTiles = [
     cta: 'Zum Formular',
     lpOnly: true,
   },
-  {
-    href: '/jahresplanung',
-    title: 'Jahresplanung 1. Lehrjahr',
-    blurb: 'Schuljahr 2025/2026 auf einen Blick — 39 Wochen, 3 Themen, alle Lebensbezüge interaktiv.',
-    cta: 'Jahr ansehen',
-  },
 ]
 // Guests get a read-only hub without the «Material einreichen» tile.
 const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
@@ -66,23 +60,19 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
     </header>
 
     <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12 relative">
-      <div class="mb-10">
-        <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">Willkommen auf der Materialplattform</h1>
-        <p class="text-slate-600 mt-3 max-w-3xl">
-          Wähle den passenden Einstieg — du kannst jederzeit über «← Hauptplattform»
-          hierher zurückkehren.
-        </p>
-        <a
+      <div class="mb-12">
+        <h1 class="text-4xl font-semibold text-slate-900 tracking-tight">Materialplattform ABU 2030</h1>
+<a
           href="/onboarding/index.html"
-          class="mt-5 inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border text-base font-medium transition hover:bg-[var(--brand-tint)]"
+          class="mt-6 inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border text-base font-medium transition hover:bg-[var(--brand-tint)]"
           style="border-color: var(--brand); color: var(--brand)"
         >
           <span style="font-size:1.1em">📖</span> Rundgang ansehen &rarr;
         </a>
       </div>
 
-      <!-- Primary: Einheiten + Einreichen + Jahresplanung -->
-      <div class="grid gap-6 md:grid-cols-3 mb-8">
+      <!-- Primary: Einheiten + Einreichen -->
+      <div class="grid gap-6 md:grid-cols-2 mb-8">
         {primaryTiles.map(t => (
           <a href={t.href} class="wappen-tile wappen-tile-primary group">
             <div class="wappen-lion" aria-hidden="true"></div>
@@ -100,13 +90,19 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
         ))}
       </div>
 
-      <!-- Secondary: Situationen (text strip) -->
+      <!-- Secondary: Jahresplanung + Situationen (list) -->
       <div class="border-t border-slate-100 pt-5">
-        <p class="text-xs text-slate-400 uppercase tracking-wider mb-3">Weitere Angebote</p>
-        <div class="flex flex-wrap gap-x-6 gap-y-2">
-          <a href="/situationen" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-[var(--brand)] transition-colors">
+        <p class="text-xs text-slate-400 uppercase tracking-wider mb-4">Weitere Angebote</p>
+        <div class="flex flex-col gap-3">
+          <a href="/jahresplanung" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
+            Jahresplanung 1. Lehrjahr
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+              <path d="M5 10h10M11 5l5 5-5 5" />
+            </svg>
+          </a>
+          <a href="/situationen" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
             Katalog Situationen
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
               <path d="M5 10h10M11 5l5 5-5 5" />
             </svg>
           </a>
@@ -181,22 +177,22 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
     margin-bottom: 1rem;
   }
   .wappen-title {
-    font-size: 1.125rem;
+    font-size: 1.35rem;
     font-weight: 600;
     color: #0f172a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   .wappen-blurb {
-    font-size: 0.875rem;
-    line-height: 1.55;
+    font-size: 1rem;
+    line-height: 1.6;
     color: #475569;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .wappen-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--brand);
   }
