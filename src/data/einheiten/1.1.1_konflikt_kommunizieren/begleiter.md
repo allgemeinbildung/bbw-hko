@@ -17,29 +17,28 @@ quellen_json:
 
 # Begleit-Dokument — Konflikte kennen, kommunizieren, klaeren (1.1.1)
 
-> Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Unterlagen fuer die Lernenden (Situationsblaetter A/B/C, das Arbeitsblatt «Austausch & Transfer», KN-Blatt) liegen separat als druckfertige A4-Broschueren vor. Hier steht, **wie** du die Einheit fuehrst: Phasenablauf, fertige Scaffolds zum Abgeben, Coaching-Bewegungen, bi-dimensionale Bewertung. Du sollst die Einheit unterrichten koennen, ohne anderswo nachschlagen zu muessen.
+> Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden. Die Unterlagen fuer die Lernenden (Situationsblaetter A/B/C, das Arbeitsblatt «Austausch & Transfer», KN-Blatt) liegen separat als druckfertige A4-Broschueren vor. Hier steht, **wie** Sie die Einheit fuehren: Phasenablauf, fertige Scaffolds zum Abgeben, Coaching-Bewegungen, bi-dimensionale Bewertung. Sie sollen die Einheit unterrichten koennen, ohne anderswo nachschlagen zu muessen.
 
 ---
 
 ## 0. So funktioniert diese Einheit
 
-Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen Kompetenz, gefolgt von einem **Kompetenznachweis (KN)** mit einer neuen Hybrid-Situation. Wenn du bisher klassisch unterrichtet hast, sind hier die fuenf Dinge, die anders laufen:
+Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen Kompetenz, gefolgt von einem **Kompetenznachweis (KN)** mit einer neuen Hybrid-Situation. Wenn Sie bisher klassisch unterrichtet haben, sind hier die fuenf Dinge, die anders laufen:
 
-**1. Von hinten gedacht (Backward Design).** Der KN wurde zuerst definiert, die drei Situationen danach. Das heisst: Jede Situation traegt genau die Bausteine, die im KN wieder auftauchen. Du musst nichts „dazu erfinden" — du fuehrst die Lernenden durch drei Teilstuecke, die der KN am Schluss zusammensetzt.
+**1. Von hinten gedacht (Backward Design).** Der KN wurde zuerst definiert, die drei Situationen danach. Das heisst: Jede Situation traegt genau die Bausteine, die im KN wieder auftauchen. Sie muessen nichts „dazu erfinden" — Sie fuehren die Lernenden durch drei Teilstuecke, die der KN am Schluss zusammensetzt.
 
 **2. Eine Kompetenz, drei Herausforderungen.** A klaert die **Rechtslage** (Lehrvertrag), B waehlt **Kanal und Register** einer schriftlichen Antwort, C fuehrt das **Konfliktgespraech**. Erst zusammen ergeben sie das Kompetenzversprechen.
 
-**3. Drei Phasen-Schichten, nicht vermischen.** (Quick Ref §6)
+**3. Phasen-Schichten, nicht vermischen.** (Quick Ref §6)
 
 | Schicht | Modell | Reichweite |
 |---|---|---|
 | Ganze Einheit | **BBW 4-Phasen** | Einstieg (Situation) → Kompetenzaufbau → Wissensanwendung → KN |
-| Eine Lernsituation | **IPERKA + Dekontextualisierung** | Informieren → Planen → Entscheiden → Realisieren → Kontrollieren → Auswerten → Dekontextualisieren |
-| Eine einzelne Lektion | **AVIVA** | Ankommen → Vorwissen → Informieren → Verarbeiten → Auswerten |
+| Eine Herausforderung (~3 Lektionen) | **AViVA-Bogen** | Ankommen → Vorwissen → Informieren → Verarbeiten → Auswerten |
 
-Im Fahrplan jeder Situation (Kapitel 3-5) steht die AVIVA-Schicht; die IPERKA-Logik liegt darunter (Leitfragen = Informieren/Planen/Entscheiden, Handlungsprodukt = Realisieren/Kontrollieren, Reflexion + Dekontext = Auswerten/Dekontextualisieren).
+Der AViVA-Bogen ist der sichtbare Fahrplan jeder Herausforderung (Kapitel 3-5) und spannt sich über rund drei Lektionen — ohne feste Taktung, damit die Lernenden selbstständig arbeiten und Sie coachend begleiten. Darunter liegt die **IPERKA-Logik** (Leitfragen = Informieren/Planen/Entscheiden, Handlungsprodukt = Realisieren/Kontrollieren, Reflexion + Transfer = Auswerten/Dekontextualisieren).
 
-**4. Bewertet wird das Produkt, bi-dimensional.** Der KN wird auf **zwei getrennten Noten** beurteilt: **SuK** (Sprache und Kommunikation) und **Ges** (Gesellschaft), gleichgewichtet. Die Prozessarbeit in den Situationen ist Uebung, kein benoteter KN-Bestandteil — die situationsinternen Checklisten «Vollständigkeit» (Leitfragen, Mindmap, Handlungsprodukt, Reflexion — ohne Gewichtung) sind formative Selbstkontrolle, falls du sie fuehrst. Der Transfer wird im eigenständigen «Austausch & Transfer»-Dokument bearbeitet.
+**4. Bewertet wird das Produkt, bi-dimensional.** Der KN wird auf **zwei getrennten Noten** beurteilt: **SuK** (Sprache und Kommunikation) und **Ges** (Gesellschaft), gleichgewichtet. Die Prozessarbeit in den Situationen ist Uebung, kein benoteter KN-Bestandteil — die situationsinternen Checklisten «Vollständigkeit» (Leitfragen, Mindmap, Handlungsprodukt, Reflexion — ohne Gewichtung) sind formative Selbstkontrolle, falls Sie sie fuehren. Der Transfer wird im eigenständigen «Austausch & Transfer»-Dokument bearbeitet.
 
 **5. Mehrdeutigkeit ist gewollt.** In jeder Situation steckt ein echter Zielkonflikt (Rechte durchsetzen vs. Beziehung halten). Die Lernenden sollen ihn **nicht aufloesen**, sondern offen benennen und begruendet entscheiden. Das ist der Punkt, an dem traditioneller Unterricht am haeufigsten kippt — siehe die `[!mehrdeutigkeit]`-Hinweise.
 
@@ -47,7 +46,7 @@ Im Fahrplan jeder Situation (Kapitel 3-5) steht die AVIVA-Schicht; die IPERKA-Lo
 > Abhaengig von der Durchfuehrungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Situationen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Situation = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
 
 > [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
-> Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Vier-Ohren-Modell, Kanal- und Registerwahl) uebst du **vorab im Unterricht**; die Situationsblaetter setzen dieses Vorwissen voraus. Ergaenze eigene Beispiele, Inputs und Uebungen aus deinem Fundus.
+> Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Vier-Ohren-Modell, Kanal- und Registerwahl) ueben Sie **vorab im Unterricht**; die Situationsblaetter setzen dieses Vorwissen voraus. Ergaenzen Sie eigene Beispiele, Inputs und Uebungen aus Ihrem Fundus.
 
 ---
 
@@ -76,7 +75,7 @@ Getrennt nach den zwei Bewertungsdimensionen:
 
 > Die Lernende **verfasst eine begruendete Position / waehlt einen Kanal / fuehrt ein Gespraech** *(SuK-Sprachhandlung)*, indem sie **ihre Rechte aus dem Lehrvertrag / die Medien- und Ethikkriterien / das Vier-Ohren-Modell** *(GES-Wissen)* nutzt, um **im Konflikt handlungsfaehig zu bleiben, ohne die Lernbeziehung zu zerstoeren** *(Handlungsziel)*.
 
-Diese Formel ist dein Pruefstein, wenn du eine Lernenden-Arbeit ansiehst: Ist beides drin — das Fachwissen (GES) **und** die saubere Sprachhandlung (SuK)? Fehlt eine Seite, fehlt die Note auf einer Dimension.
+Diese Formel ist Ihr Pruefstein, wenn Sie eine Lernenden-Arbeit ansehen: Ist beides drin — das Fachwissen (GES) **und** die saubere Sprachhandlung (SuK)? Fehlt eine Seite, fehlt die Note auf einer Dimension.
 
 ### Bloom-Zielprofil pro Leitfrage
 
@@ -87,7 +86,7 @@ Diese Formel ist dein Pruefstein, wenn du eine Lernenden-Arbeit ansiehst: Ist be
 | LF3 — Entscheiden | K3 | Entscheidungsproblem |
 | LF4 — Formulieren | K3+ / K4 | Strategie-/Analyseproblem |
 
-Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit faedelt von K2 zu K4 — wenn du eine Situation kuerzt, halte LF3/LF4 unbedingt drin, sonst bleibt sie auf Reproduktion stehen.
+Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit faedelt von K2 zu K4 — wenn Sie eine Situation kuerzen, halten Sie LF3/LF4 unbedingt drin, sonst bleibt sie auf Reproduktion stehen.
 
 ### Mehrdeutigkeits-Architektur
 
@@ -128,9 +127,9 @@ Das erklaert das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Der Transfer
 
 ## 2. Durchfuehrungs-Varianten — deine Entscheidung
 
-Du waehlst, wie die drei Situationen verteilt werden. Die Variante bestimmt Lektionentotal **und** wie der KN aussieht. Es gibt **kein** Standardmodell — entscheide nach Klasse, Zeit und Niveau.
+Sie waehlen, wie die drei Situationen verteilt werden. Die Variante bestimmt Lektionentotal **und** wie der KN aussieht. Es gibt **kein** Standardmodell — entscheide nach Klasse, Zeit und Niveau.
 
-Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Du kannst Situationen weglassen oder umstellen — im KN wird nur geprueft, was tatsaechlich geuebt wurde.
+Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Sie koennen Situationen weglassen oder umstellen — im KN wird nur geprueft, was tatsaechlich geuebt wurde.
 
 ### Variante A — Einzelarbeit, alle drei Situationen
 
@@ -149,7 +148,7 @@ Lernende waehlen 1-2 Situationen.
 - **Kompetenz:** teilweise — nur die gewaehlten Herausforderungen selbst erarbeitet
 
 > [!warnung] KN muss mitgekuerzt werden
-> Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Gespraechsfuehrung) voll abpruefen. Streiche im Fachgespraech Frage 4 (Transfer auf Sit C) bzw. passe die Hybrid-Situation an, damit kein Pruefungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur pruefen, was unterrichtet wurde.
+> Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Gespraechsfuehrung) voll abpruefen. Streichen Sie im Fachgespraech Frage 4 (Transfer auf Sit C) bzw. passen Sie die Hybrid-Situation an, damit kein Pruefungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur pruefen, was unterrichtet wurde.
 
 ### Variante C — Gruppenarbeit mit Jigsaw
 
@@ -159,10 +158,10 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 - **Kompetenz:** ein Drittel selbst, zwei Drittel **stellvertretend** ueber den Austausch
 
 > [!warnung] Zwei Drittel werden nur stellvertretend erworben
-> Wer nur A gemacht hat, kennt B und C nur aus dem Jigsaw. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualitaet** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen (kein zweites Jigsaw), bevor der KN ansteht. Sonst pruefst du Wissen, das nie verarbeitet wurde.
+> Wer nur A gemacht hat, kennt B und C nur aus dem Jigsaw. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualitaet** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen (kein zweites Jigsaw), bevor der KN ansteht. Sonst pruefen Sie Wissen, das nie verarbeitet wurde.
 
 > [!coaching] Variante offen ansagen
-> Sag der Klasse zu Beginn, welche Variante laeuft und warum. Bei C: „Ihr werdet Experten fuer eine Situation und lernt die anderen zwei von euren Gspaenli — im Test braucht ihr alle drei, also hoert in der Austauschrunde wirklich zu." Das macht die Stellvertreter-Logik transparent.
+> Sagen Sie der Klasse zu Beginn, welche Variante laeuft und warum. Bei C: „Ihr werdet Experten fuer eine Situation und lernt die anderen zwei von euren Gspaenli — im Test braucht ihr alle drei, also hoert in der Austauschrunde wirklich zu." Das macht die Stellvertreter-Logik transparent.
 
 ---
 
@@ -180,45 +179,46 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 | Handlungsprodukt | Konflikt-Landkarte + Positionspapier (A4, 250-300 W, 3B-Schema) |
 | Wissensknoten | lehrvertrag_rechte_pflichten |
 
-> Du bist Schreiner-Lernende im 1. Lehrjahr. Dein Berufsbildner/in uebertraegt dir an einem Samstag die alleinige Inventur plus eine berufsfremde Werkstatt-Grundreinigung; zweimal in dieser Woche wurde die 9-Stunden-Grenze fuer Jugendliche ueberschritten. Du fuehlst dich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf er das ueberhaupt?
+> Sie sind Schreiner-Lernende/r im 1. Lehrjahr. Ihr Berufsbildner/in uebertraegt Ihnen an einem Samstag die alleinige Inventur plus eine berufsfremde Werkstatt-Grundreinigung; zweimal in dieser Woche wurde die 9-Stunden-Grenze fuer Jugendliche ueberschritten. Sie fuehlen sich verpflichtet, ja zu sagen, und gleichzeitig unsicher: Darf er das ueberhaupt?
 
 > [!hinweis] Qualitaet der Situation (8 Merkmale Lernsituation)
-> Authentizitaet, Verortung (Winterthur, konkrete Zahlen), Problem (kein Reproduktionsauftrag), Affektivitaet (Verunsicherung), Kognition (K2-K4), Aktivitaet (Positionspapier), LJ-Passung (1. LJ, Lehrvertrag ist das erste echte Rechtsdokument), Relevanz (jede/r hat einen Lehrvertrag) — alle acht erfuellt. Die Zahlen-Tabelle gibt dir den Realismus-Anker fuers Plenum.
+> Authentizitaet, Verortung (Winterthur, konkrete Zahlen), Problem (kein Reproduktionsauftrag), Affektivitaet (Verunsicherung), Kognition (K2-K4), Aktivitaet (Positionspapier), LJ-Passung (1. LJ, Lehrvertrag ist das erste echte Rechtsdokument), Relevanz (jede/r hat einen Lehrvertrag) — alle acht erfuellt. Die Zahlen-Tabelle gibt Ihnen den Realismus-Anker fuers Plenum.
 
 ### Unterrichtsfahrplan
 
-| Lektion | AVIVA-Phasen | Inhalt | Sozialform |
-|---|---|---|---|
-| **1** (45') | Ankommen · Vorwissen | Situation lesen, erste Reaktion sammeln („Was wuerdest du tun?") | Plenum |
-| | Informieren | LF1 + LF2: Kap. 1.4 lesen, mit Symbolen markieren (Kap. 17.1) | Einzel |
-| | Verarbeiten | Konflikt-Landkarte anlegen + Mindmap | Einzel/Partner |
-| | Auswerten | Murmelrunde: „Welche zwei Punkte sind unzulaessig?" | Partner |
-| **2** (45') | Vorwissen | Landkarte kurz aufgreifen | Einzel |
-| | Informieren · Verarbeiten | LF3 (Konfliktweg) + LF4: Positionspapier nach 3B verfassen | Einzel |
-| | Auswerten | Selbstcheck mit Kriterienliste (unten) | Einzel |
-| **(Set-Schluss)** | — | Austausch, Reflexion, Transfer → Kapitel 6/7 | je nach Variante |
+**AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung.** Die Lernenden arbeiten selbstständig; Sie begleiten mit Coaching-Gesprächen und bestimmen Tempo und Dauer der Phasen selbst.
+
+| AViVA-Phase | Was passiert | Sozialform |
+|---|---|---|
+| **Ankommen** | Situation lesen, erste Reaktion sammeln („Was würden Sie tun?") | Plenum |
+| **Vorwissen** | Bekanntes aktivieren, Konflikt-Landkarte anlegen | Einzel |
+| **Informieren** | LF1 + LF2: Kap. 1.4 lesen, mit Symbolen markieren (Kap. 17.1) | Einzel |
+| **Verarbeiten** | Mindmap ergänzen; LF3 (Konfliktweg) + LF4: Positionspapier nach 3B verfassen | Einzel/Partner |
+| **Auswerten** | Selbstcheck mit Kriterienliste (unten); Murmelrunde: „Welche zwei Punkte sind unzulässig?" | Partner |
+
+**Set-Schluss:** Austausch, Reflexion, Transfer → Kapitel 6/7 (je nach Variante).
 
 ### Leitfragen mit Coaching-Hinweisen
 
 **LF1 (K2):** Rechte und Pflichten aus Lehrvertrag — fuenf wichtigste Punkte mit Markier-Symbolen.
 
 > [!coaching] LF1
-> Lass die Lernenden nicht abschreiben, sondern **markieren mit den drei Symbolen aus Kap. 17.1**: Stern = wichtig, Fragezeichen = strittig, Unterstrich = Definition. Wer markiert, verarbeitet; wer abschreibt, kopiert. Sammle am Schluss nur die Fragezeichen — die zeigen dir, wo die Klasse unsicher ist.
+> Lassen Sie die Lernenden nicht abschreiben, sondern **markieren mit den drei Symbolen aus Kap. 17.1**: Stern = wichtig, Fragezeichen = strittig, Unterstrich = Definition. Wer markiert, verarbeitet; wer abschreibt, kopiert. Sammeln Sie am Schluss nur die Fragezeichen — die zeigen Ihnen, wo die Klasse unsicher ist.
 
 **LF2 (K3):** ArG 31 + berufsfremde Arbeiten anwenden — die zwei unzulaessigen Punkte.
 
 > [!warnung] Typischer Stolperstein bei LF2
-> Lernende nennen oft nur den **einen** offensichtlichen Punkt (Reinigung = berufsfremd) und uebersehen die **Arbeitszeit** (2× ueber 9 h). Frag gezielt nach der Zahlen-Tabelle: „Schau nochmal auf die Stunden — ist da auch etwas?" Beide Punkte sind die Bewertungsgrundlage fuers Positionspapier.
+> Lernende nennen oft nur den **einen** offensichtlichen Punkt (Reinigung = berufsfremd) und uebersehen die **Arbeitszeit** (2× ueber 9 h). Fragen Sie gezielt nach der Zahlen-Tabelle: „Schauen Sie nochmal auf die Stunden — ist da auch etwas?" Beide Punkte sind die Bewertungsgrundlage fuers Positionspapier.
 
 **LF3 (K3):** Konfliktweg waehlen — direktes Gespraech / BBV / kantonales Amt.
 
 > [!coaching] LF3 — Entscheidung vor Begruendung
-> Gib LF3 nicht als offene Frage frei. Lass zuerst **2 Minuten still entscheiden** (welcher Weg?), dann erst begruenden. Die Konfliktfallregelung in Kap. 1.4 hat eine Reihenfolge (zuerst Selbstkritik, dann direktes Gespraech) — die meisten springen sofort zum kantonalen Amt. Das ist die Stelle, an der du die Eskalations-Logik sichtbar machst.
+> Geben Sie LF3 nicht als offene Frage frei. Lassen Sie zuerst **2 Minuten still entscheiden** (welcher Weg?), dann erst begruenden. Die Konfliktfallregelung in Kap. 1.4 hat eine Reihenfolge (zuerst Selbstkritik, dann direktes Gespraech) — die meisten springen sofort zum kantonalen Amt. Das ist die Stelle, an der Sie die Eskalations-Logik sichtbar machen.
 
 **LF4 (K3+/K4):** Positionspapier nach 3B-Schema.
 
 > [!coaching] LF4
-> Bestehe auf der Reihenfolge **Behauptung → Begruendung → Beispiel** und auf mindestens einem konkreten OR-/ArG-Verweis in der Begruendung. „Das finde ich nicht fair" ist keine Begruendung; „OR 345a verlangt berufsbezogene Arbeiten" ist eine.
+> Bestehen Sie auf der Reihenfolge **Behauptung → Begruendung → Beispiel** und auf mindestens einem konkreten OR-/ArG-Verweis in der Begruendung. „Das finde ich nicht fair" ist keine Begruendung; „OR 345a verlangt berufsbezogene Arbeiten" ist eine.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -251,7 +251,7 @@ ________________________________________________________________________.
 ```
 
 > [!differenzieren] 90 vs. 100 — Situation A
-> **90 % (alle):** Landkarten-Tabelle und 3B-Lueckentext oben werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — vergleiche deinen eigenen Lehrvertrag mit der Musterregelung des kantonalen Amts fuer Berufsbildung und notiere eine Abweichung. Kein zusaetzliches Pflicht-Pensum, sondern Vertiefung fuer die, die schneller sind.
+> **90 % (alle):** Landkarten-Tabelle und 3B-Lueckentext oben werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — vergleichen Sie Ihren eigenen Lehrvertrag mit der Musterregelung des kantonalen Amts fuer Berufsbildung und notieren Sie eine Abweichung. Kein zusaetzliches Pflicht-Pensum, sondern Vertiefung fuer die, die schneller sind.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -262,12 +262,12 @@ ________________________________________________________________________.
 > **Zum Abgeben bereit:** Konflikt-Landkarte (90 %-Vorlage) · 3B-Lückentext.
 
 > [!coaching] Perspektivenwechsel
-> Bevor das Positionspapier geschrieben wird: Lass die Lernende die letzte Spalte der Konflikt-Landkarte („Sicht Berufsbildner/in") zuerst ausfüllen und eine Minute aus seiner Perspektive denken — „Warum verlangt er die Reinigung? Was sieht er, das du nicht siehst?" Das verhindert, dass das Positionspapier zur Anklageschrift kippt, und ist genau die Haltung, die im Raster unter „Position/Werthaltung" zählt.
+> Bevor das Positionspapier geschrieben wird: Lassen Sie die Lernende die letzte Spalte der Konflikt-Landkarte („Sicht Berufsbildner/in") zuerst ausfüllen und eine Minute aus seiner Perspektive denken — „Warum verlangt er die Reinigung? Was sieht er, das Sie nicht sehen?" Das verhindert, dass das Positionspapier zur Anklageschrift kippt, und ist genau die Haltung, die im Raster unter „Position/Werthaltung" zählt.
 
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Situation A
-> Der Trade-off: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfaehige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kaempft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenk zurueck: „Wie klingt das fuer deinen Berufsbildner/in — willst du recht haben oder eine Loesung?"
+> Der Trade-off: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfaehige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kaempft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenken Sie zurueck: „Wie klingt das fuer Ihren Berufsbildner/in — wollen Sie recht haben oder eine Loesung?"
 
 ### Wo welche SK geuebt wird
 
@@ -293,19 +293,19 @@ ________________________________________________________________________.
 | Handlungsprodukt | Schriftliche Antwort + Kanalbegruendung (A4, zweiteilig) |
 | Wissensknoten | geschaeftsbrief_email_register |
 
-> Du bist Automobilfachmann-Lernende/r im 2. Lehrjahr. Dein Berufsbildner/in hat dich gestern vor Kunden und Mechanikern lautstark kritisiert; heute schickt er dir eine knappe WhatsApp an die **private** Nummer mit Ultimatum bis 18 Uhr. Du willst zurueckmelden — aber WhatsApp privat, Geschaeftsmail oder Brief? Und in welchem Ton?
+> Sie sind Automobilfachmann-Lernende/r im 2. Lehrjahr. Ihr Berufsbildner/in hat Sie gestern vor Kunden und Mechanikern lautstark kritisiert; heute schickt er Ihnen eine knappe WhatsApp an die **private** Nummer mit Ultimatum bis 18 Uhr. Sie wollen zurueckmelden — aber WhatsApp privat, Geschaeftsmail oder Brief? Und in welchem Ton?
 
 ### Unterrichtsfahrplan
 
-| Lektion | AVIVA-Phasen | Inhalt | Sozialform |
-|---|---|---|---|
-| **1** (45') | Ankommen · Vorwissen | Situation lesen, „In welchem Kanal wuerdest du spontan antworten?" abstimmen | Plenum |
-| | Informieren | LF1 (Geschaeftsbrief/E-Mail, Kap. 17.3) + LF2 (Medienkompetenz, Kap. 20.7) | Einzel |
-| | Verarbeiten | Kanal-Vergleichstabelle + Mindmap | Partner |
-| | Auswerten | Blitzlicht: „Welcher Kanal hat gewonnen — und warum?" | Plenum |
-| **2** (45') | Informieren · Verarbeiten | LF3 (Kanal entscheiden) + LF4: Antwort verfassen | Einzel |
-| | Verarbeiten | Kanalbegruendung schreiben (80-120 W) | Einzel |
-| | Auswerten | Partner-Check: passt Register zum Kanal? | Partner |
+**AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung.** Die Lernenden arbeiten selbstständig; Sie begleiten mit Coaching-Gesprächen und bestimmen Tempo und Dauer der Phasen selbst.
+
+| AViVA-Phase | Was passiert | Sozialform |
+|---|---|---|
+| **Ankommen** | Situation lesen | Plenum |
+| **Vorwissen** | „In welchem Kanal würden Sie spontan antworten?" abstimmen | Plenum |
+| **Informieren** | LF1 (Geschäftsbrief/E-Mail, Kap. 17.3) + LF2 (Medienkompetenz, Kap. 20.7) | Einzel |
+| **Verarbeiten** | Kanal-Vergleichstabelle + Mindmap; LF3 (Kanal entscheiden) + LF4: Antwort verfassen; Kanalbegründung schreiben (80–120 W) | Einzel/Partner |
+| **Auswerten** | Blitzlicht „Welcher Kanal hat gewonnen — und warum?"; Partner-Check: passt Register zum Kanal? | Partner |
 
 ### Leitfragen mit Coaching-Hinweisen
 
@@ -314,12 +314,12 @@ ________________________________________________________________________.
 **LF2 (K3):** Medienkompetenz — drei Probleme der privaten WhatsApp.
 
 > [!coaching] LF2
-> Die drei Probleme sind nicht offensichtlich. Steuere mit Fragen: „Was passiert mit dieser Nachricht in einem halben Jahr?" (kein Beweismittel/Archiv), „Wer sieht deine private Nummer?" (Vermischung privat/geschaeftlich), „Was, wenn du am Wochenende frei hast?" (Erreichbarkeitsdruck). Drei reichen — nicht in eine Datenschutz-Vorlesung kippen.
+> Die drei Probleme sind nicht offensichtlich. Steuern Sie mit Fragen: „Was passiert mit dieser Nachricht in einem halben Jahr?" (kein Beweismittel/Archiv), „Wer sieht Ihre private Nummer?" (Vermischung privat/geschaeftlich), „Was, wenn Sie am Wochenende frei haben?" (Erreichbarkeitsdruck). Drei reichen — nicht in eine Datenschutz-Vorlesung kippen.
 
 **LF3 (K3):** Kanal entscheiden — WhatsApp / Mail / Brief, je 2 Argumente Kap. 17.3 + 1 Kap. 18.2.
 
 > [!coaching] LF3
-> Die meisten waehlen reflexhaft „kurze WhatsApp zurueck". Genau das ist der Lernpunkt. Lass die **Kanal-Vergleichstabelle** vor der Entscheidung ausfuellen — wer Verbindlichkeit und Beweismittel-Charakter einmal nebeneinander sieht, entscheidet anders. Es gibt **keine** Musterloesung; eine begruendete Geschaeftsmail und ein begruendeter Brief sind beide gueltig.
+> Die meisten waehlen reflexhaft „kurze WhatsApp zurueck". Genau das ist der Lernpunkt. Lassen Sie die **Kanal-Vergleichstabelle** vor der Entscheidung ausfuellen — wer Verbindlichkeit und Beweismittel-Charakter einmal nebeneinander sieht, entscheidet anders. Es gibt **keine** Musterloesung; eine begruendete Geschaeftsmail und ein begruendeter Brief sind beide gueltig.
 
 **LF4 (K3+/K4):** vollstaendige Antwort im gewaehlten Kanal, 200-250 W.
 
@@ -345,8 +345,8 @@ Betreff: ____________________________________________
 Anrede: Sehr geehrte/r ______________ , / Guten Tag ______________
 
 ANLASS    (Worum geht es?)        ___________________________________
-ABSICHT   (Was willst du?)        ___________________________________
-BEGRUENDUNG (Deine Sicht, sachlich) _________________________________
+ABSICHT   (Was wollen Sie?)       ___________________________________
+BEGRUENDUNG (Ihre Sicht, sachlich) __________________________________
           ___________________________________________________________
 SCHLUSS   (Konkreter Loesungsvorschlag) _____________________________
 
@@ -363,7 +363,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 ```
 
 > [!differenzieren] 90 vs. 100 — Situation B
-> **90 %:** Vergleichstabelle + Layout-Template austeilen. **100 %:** Zusatz — pruefe, ob deine Kanalwahl mit den Compliance-Regeln deines Betriebs (Datenschutz, Personalreglement) vereinbar ist.
+> **90 %:** Vergleichstabelle + Layout-Template austeilen. **100 %:** Zusatz — pruefen Sie, ob Ihre Kanalwahl mit den Compliance-Regeln Ihres Betriebs (Datenschutz, Personalreglement) vereinbar ist.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -374,7 +374,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 > **Zum Abgeben bereit:** Kanal-Vergleichstabelle · Brief-/Mail-Layout-Template · Kanalbegründung-3-Satz-Gerüst.
 
 > [!coaching] Perspektivenwechsel
-> Lass die Lernende den gewählten Kanal aus Sicht des Empfängers lesen: „Wie wirkt eine schnelle WhatsApp an die Privatnummer auf deinen Berufsbildner/in — und wie eine sachliche Mail am Morgen?" Die antizipierte Wirkung auf die Gegenseite ist hier der Kern von SK7 (Verständnis fördern) und macht die Kanalbegründung erst tragfähig.
+> Lassen Sie die Lernende den gewählten Kanal aus Sicht des Empfängers lesen: „Wie wirkt eine schnelle WhatsApp an die Privatnummer auf Ihren Berufsbildner/in — und wie eine sachliche Mail am Morgen?" Die antizipierte Wirkung auf die Gegenseite ist hier der Kern von SK7 (Verständnis fördern) und macht die Kanalbegründung erst tragfähig.
 
 ### Mehrdeutigkeit halten
 
@@ -405,38 +405,38 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 | Handlungsprodukt | Gespraechs-Drehbuch (3 Spalten) + 5-Min-Rollen-Probe + 60-Sek-Selbstauswertung |
 | Wissensknoten | konfliktgespraech_ich_botschaften |
 
-> Du bist Informatik-Lernende/r im 1. Lehrjahr. Ein neuer Berufsbildner/in gibt kaum Feedback, kritisiert dich aber im Sprint-Review vor dem Team mit „Du hoerst einfach nicht zu." Du fuehlst dich abgestempelt. Heute bietet er dir 15 Minuten fuer eine Aussprache an — du willst hin, aber nicht in eine zweite Demuetigung laufen.
+> Sie sind Informatik-Lernende/r im 1. Lehrjahr. Ein neuer Berufsbildner/in gibt kaum Feedback, kritisiert Sie aber im Sprint-Review vor dem Team mit „Du hoerst einfach nicht zu." Sie fuehlen sich abgestempelt. Heute bietet er Ihnen 15 Minuten fuer eine Aussprache an — Sie wollen hin, aber nicht in eine zweite Demuetigung laufen.
 
 ### Unterrichtsfahrplan
 
-| Lektion | AVIVA-Phasen | Inhalt | Sozialform |
-|---|---|---|---|
-| **1** (45') | Ankommen · Vorwissen | Situation lesen; „Wie fuehlt sich der Satz an?" | Plenum |
-| | Informieren | LF1 (Vier Ohren, Kap. 19.2) + LF2 (Ich-Botschaften) | Einzel |
-| | Verarbeiten | Vier-Ohren-Tabelle + Mindmap | Einzel/Partner |
-| | Auswerten | „Auf welchem Ohr hoerst du den Satz zuerst?" | Plenum |
-| **2** (45') | Informieren · Verarbeiten | LF3 (Einstieg waehlen) + LF4: Drehbuch (3 Spalten) | Einzel |
-| | Verarbeiten | **Rollen-Probe** 5 Min. (Partner spielt Berufsbildner/in) | Partner |
-| | Auswerten | 60-Sek-Selbstauswertung: welche Ich-Botschaft wirkte? | Einzel |
+**AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung.** Die Lernenden arbeiten selbstständig; Sie begleiten mit Coaching-Gesprächen und bestimmen Tempo und Dauer der Phasen selbst.
+
+| AViVA-Phase | Was passiert | Sozialform |
+|---|---|---|
+| **Ankommen** | Situation lesen | Plenum |
+| **Vorwissen** | „Wie fühlt sich der Satz an?" | Plenum |
+| **Informieren** | LF1 (Vier Ohren, Kap. 19.2) + LF2 (Ich-Botschaften) | Einzel |
+| **Verarbeiten** | Vier-Ohren-Tabelle + Mindmap; LF3 (Einstieg wählen) + LF4: Drehbuch (3 Spalten); **Rollen-Probe** 5 Min. (Partner spielt Berufsbildner/in) | Einzel/Partner |
+| **Auswerten** | „Auf welchem Ohr hören Sie den Satz zuerst?"; 60-Sek-Selbstauswertung: welche Ich-Botschaft wirkte? | Plenum/Einzel |
 
 ### Leitfragen mit Coaching-Hinweisen
 
 **LF1 (K2):** Vier Ebenen Schulz von Thun — den Satz „Du hoerst einfach nicht zu" decodieren.
 
 > [!coaching] LF1
-> Mach die vier Ohren am Tafel-Beispiel **gemeinsam** vor, bevor die Lernenden allein arbeiten — das Modell ist neu und kippt sonst. Decodiere den Satz live: Sachohr („du verstehst die Aufgabe nicht"), Selbstkundgabe („ich bin frustriert"), Beziehung („ich nehme dich nicht ernst"), Appell („streng dich an"). Erst dann LF1 freigeben.
+> Machen Sie die vier Ohren am Tafel-Beispiel **gemeinsam** vor, bevor die Lernenden allein arbeiten — das Modell ist neu und kippt sonst. Decodieren Sie den Satz live: Sachohr („du verstehst die Aufgabe nicht"), Selbstkundgabe („ich bin frustriert"), Beziehung („ich nehme dich nicht ernst"), Appell („streng dich an"). Erst dann LF1 freigeben.
 
 **LF2 (K3):** drei Du-Botschaften in Ich-Botschaften umformulieren.
 
 > [!warnung] Typischer Stolperstein bei LF2
-> Pseudo-Ich-Botschaften: „Ich finde, dass **du** nie zuhoerst" ist eine getarnte Du-Botschaft. Echte Ich-Botschaft = eigenes Empfinden + konkretes Verhalten + Wunsch, **ohne Etikett**. Sammle zwei, drei Pseudo-Versionen aus der Klasse und repariert sie gemeinsam.
+> Pseudo-Ich-Botschaften: „Ich finde, dass **du** nie zuhoerst" ist eine getarnte Du-Botschaft. Echte Ich-Botschaft = eigenes Empfinden + konkretes Verhalten + Wunsch, **ohne Etikett**. Sammeln Sie zwei, drei Pseudo-Versionen aus der Klasse und reparieren Sie sie gemeinsam.
 
 **LF3 (K3):** Gespraechseinstieg waehlen — Vorfall / Frage / gemeinsames Ziel, 2 Feedback-Regeln.
 
 **LF4 (K3+/K4):** Drehbuch erste 5 Minuten — Eroeffnung (Ich-Botschaft) + 2 Rueckfragen + Win-Win, Rolle/Selbstwert beruecksichtigen.
 
 > [!coaching] LF4 — kein Monolog
-> Bestehe auf dem **Wechsel** im Drehbuch: Ich sage → ich hoere → ich frage. Wer nur einen Eroeffnungs-Monolog schreibt, hat das Dialogische verfehlt. Mindestens zwei **offene** Rueckfragen (keine Ja/Nein-Fragen), die das Selbstkundgabe- oder Sachohr aktivieren.
+> Bestehen Sie auf dem **Wechsel** im Drehbuch: Ich sage → ich hoere → ich frage. Wer nur einen Eroeffnungs-Monolog schreibt, hat das Dialogische verfehlt. Mindestens zwei **offene** Rueckfragen (keine Ja/Nein-Fragen), die das Selbstkundgabe- oder Sachohr aktivieren.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -462,18 +462,18 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 | Ich sage | Ich hoere | Ich frage |
 |---|---|---|
-| *„Mir ist wichtig, dass wir das in Ruhe anschauen — der Sprint-Review hat mich getroffen."* | (Reaktion auf Beziehungsohr) | *„Wie ist der Satz bei dir gemeint gewesen?"* |
+| *„Mir ist wichtig, dass wir das in Ruhe anschauen — der Sprint-Review hat mich getroffen."* | (Reaktion auf Beziehungsohr) | *„Wie ist der Satz bei Ihnen gemeint gewesen?"* |
 | | | |
 
 **Win-Win-Satzanfaenge:**
 
 ```
 „Ein Vorschlag, der uns beiden hilft: ..."
-„Damit du ____ bekommst und ich ____ , koennten wir ..."
+„Damit Sie ____ bekommen und ich ____ , koennten wir ..."
 ```
 
 > [!differenzieren] 90 vs. 100 — Situation C
-> **90 %:** Vier-Ohren-Tabelle + Satzanfaenge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildner/in — wie reagierst du, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
+> **90 %:** Vier-Ohren-Tabelle + Satzanfaenge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildner/in — wie reagieren Sie, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -484,7 +484,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 > **Zum Abgeben bereit:** Vier-Ohren-Tabelle · Ich-Botschaft-Satzanfänge · Drehbuch-3-Spalten-Template · Win-Win-Satzanfänge.
 
 > [!coaching] Perspektivenwechsel
-> Die Vier-Ohren-Decodierung ist bereits angewandter Perspektivenwechsel. Vertiefe ihn: Lass die Lernende den Satz „Du hörst einfach nicht zu" einmal laut aus der Rolle des Berufsbildner/in sprechen, bevor sie ihr Drehbuch schreibt — „Welche Not oder welcher Druck steckt dahinter?" Wer die plausible Absicht der Gegenseite zuerst benennt, senkt die Abwehr im Gespräch und hält den Trade-off klar/Beziehung sichtbar.
+> Die Vier-Ohren-Decodierung ist bereits angewandter Perspektivenwechsel. Vertiefen Sie ihn: Lassen Sie die Lernende den Satz „Du hörst einfach nicht zu" einmal laut aus der Rolle des Berufsbildner/in sprechen, bevor sie ihr Drehbuch schreibt — „Welche Not oder welcher Druck steckt dahinter?" Wer die plausible Absicht der Gegenseite zuerst benennt, senkt die Abwehr im Gespräch und hält den Trade-off klar/Beziehung sichtbar.
 
 ### Mehrdeutigkeit halten
 
@@ -507,8 +507,8 @@ Austausch und Transfer bilden seit dem Redesign **ein eigenstaendiges Set-Dokume
 
 > [!hinweis] Das Arbeitsblatt «Austausch & Transfer» — Aufbau und Wahl der Sozialform
 > Die Lernenden bekommen den Set-Abschluss als eigenes A4-Blatt (zwei Seiten):
-> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Saetzen mit je einem Beispiel zusammenfassen), **GA** (Gruppenpuzzle/Jigsaw, 3 Runden) und **PL** (Plenumssynthese). Jede Option hat ein Notizfeld. **Du waehlst eine** — passend zur Durchfuehrungs-Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt. Die Abschnitte unten (verzweigt nach Variante) beschreiben die gewaehlte Form im Detail.
-> - **Seite 2 — Transfer:** Der Transfer-Auftrag mit **Schreibhilfe (Satzanfaenge)** und einem **Selbstcheck** zum Abhaken. Hier geben die Lernenden ihren Transfer ab (Kapitel 7). Du musst das Blatt nicht selbst bauen — es liegt fertig im ZIP-Bundle.
+> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Saetzen mit je einem Beispiel zusammenfassen), **GA** (Gruppenpuzzle/Jigsaw, 3 Runden) und **PL** (Plenumssynthese). Jede Option hat ein Notizfeld. **Sie waehlen eine** — passend zur Durchfuehrungs-Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt. Die Abschnitte unten (verzweigt nach Variante) beschreiben die gewaehlte Form im Detail.
+> - **Seite 2 — Transfer:** Der Transfer-Auftrag mit **Schreibhilfe (Satzanfaenge)** und einem **Selbstcheck** zum Abhaken. Hier geben die Lernenden ihren Transfer ab (Kapitel 7). Sie müssen das Blatt nicht selbst bauen — es liegt fertig im ZIP-Bundle.
 
 ### Bei Variante C (Jigsaw) — voller Gruppenpuzzle
 
@@ -639,4 +639,4 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 
 ## Anhang — Quellen dieses Dokuments
 
-Erzeugt aus dem 3er-Set 1.1.1 (`set`, `prinzip`, `sit_A/B/C`, `kn`). Didaktische Grundlagen: AVIVA/IPERKA/BBW-4-Phasen und bi-dim Bewertung aus `ABU_ASSESSMENT_QUICK_REFERENCE_v2.md` §5/§6, 8 Merkmale Lernsituation §10, K-Stufen §7. Lehrmittel-Verweise (Kap. 1.4-20.7) stammen aus den Quellen-Ankern der JSONs.
+Erzeugt aus dem 3er-Set 1.1.1 (`set`, `prinzip`, `sit_A/B/C`, `kn`). Didaktische Grundlagen: AViVA/IPERKA/BBW-4-Phasen und bi-dim Bewertung aus `ABU_ASSESSMENT_QUICK_REFERENCE_v2.md` §5/§6, 8 Merkmale Lernsituation §10, K-Stufen §7. Lehrmittel-Verweise (Kap. 1.4-20.7) stammen aus den Quellen-Ankern der JSONs.

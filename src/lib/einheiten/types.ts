@@ -201,6 +201,8 @@ export interface BegleiterMeta {
 export interface EinheitIndexEntry {
   id: string
   kompetenz_nr: string
+  /** B1 — alle real abgedeckten Kompetenzen (Union der nrlp.nr_primary über A/B/C). */
+  abgedeckte_kompetenzen: string[]
   slug: string
   titel: string
   lehrgang: string

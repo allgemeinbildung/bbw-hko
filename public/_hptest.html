@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* ---- geometry rules copied verbatim from einheiten-renderer.css ---- */
+*{box-sizing:border-box}
+body{margin:0;font-family:sans-serif;background:#888;display:flex;gap:16px;padding:16px}
+.a4-page{width:210mm;height:297mm;padding:12mm 16mm;background:#fff;position:relative;overflow:hidden}
+.a4-page-body{height:calc(297mm - 48mm);display:flex;flex-direction:column;overflow:hidden}
+.page-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ccc;padding-bottom:2mm;margin-bottom:3mm}
+.page-head-logo{height:9mm;width:40mm;background:#0E6E3A}
+.hp-flaeche{border:1px solid #0E6E3A;border-radius:2px;min-height:160mm;margin-top:4mm;padding:8mm 6mm 4mm;position:relative;line-height:8.5mm;font-size:11pt}
+.hp-flaeche-label{position:absolute;top:-2.5mm;left:5mm;font-size:7.5pt;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0E6E3A;background:#fff;padding:0 2mm}
+/* the two .hp-arbeitsflaeche-page lines — NEW = current file */
+.hp-arbeitsflaeche-page .hp-flaeche-wrap{flex:1 1 auto;display:flex;flex-direction:column;min-height:0;margin-top:6mm}
+.hp-arbeitsflaeche-page .hp-flaeche{flex:1 1 auto;min-height:0;margin-top:0}
+/* OLD variant: revert the two overrides to their pre-fix state */
+.old .hp-arbeitsflaeche-page .hp-flaeche-wrap{margin-top:0}
+.old .hp-arbeitsflaeche-page .hp-flaeche{margin-top:4mm}
+</style></head><body>
+<div class="a4-page old" id="pageOld">
+  <div class="page-head"><div class="page-head-logo"></div><div>DOC-S · HF C · AUFTRAG (OLD)</div></div>
+  <div class="a4-page-body hp-arbeitsflaeche-page">
+    <div class="hp-flaeche-wrap" style="position:relative">
+      <div class="hp-flaeche"></div>
+      <div class="hp-flaeche-label" id="lblOld">EIGENES GESPRÄCHSPROTOKOLL ERARBEITEN</div>
+    </div>
+  </div>
+</div>
+<div class="a4-page" id="pageNew">
+  <div class="page-head"><div class="page-head-logo"></div><div>DOC-S · HF C · AUFTRAG (NEW)</div></div>
+  <div class="a4-page-body hp-arbeitsflaeche-page">
+    <div class="hp-flaeche-wrap" style="position:relative">
+      <div class="hp-flaeche"></div>
+      <div class="hp-flaeche-label" id="lblNew">EIGENES GESPRÄCHSPROTOKOLL ERARBEITEN</div>
+    </div>
+  </div>
+</div>
+<script>
+function measure(pageId, lblId){
+  const body = document.querySelector('#'+pageId+' .a4-page-body');
+  const lbl = document.getElementById(lblId);
+  const br = body.getBoundingClientRect(), lr = lbl.getBoundingClientRect();
+  const overshootMm = (br.top - lr.top) / 3.7795; // >0 means label top is ABOVE body clip edge → clipped
+  return { bodyTopPx:+br.top.toFixed(1), labelTopPx:+lr.top.toFixed(1),
+           clippedByMm:+overshootMm.toFixed(2), clipped: lr.top < br.top - 0.5 };
+}
+window.__hp = { old: measure('pageOld','lblOld'), new: measure('pageNew','lblNew') };
+</script>
+</body></html>

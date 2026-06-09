@@ -7,6 +7,7 @@ import { DocAustausch } from './docs/DocAustausch'
 import { DocKnS } from './docs/DocKnS'
 import { DocKnLp } from './docs/DocKnLp'
 import { ABTEILUNGEN } from '../../lib/einheiten'
+import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import type { EinheitFullSet } from '../../lib/einheiten/types'
 
 import { buildDocS, buildAustausch, buildKnS, buildKnLp, docToBlob } from '../../lib/einheiten/docx-builder'
@@ -18,6 +19,8 @@ interface Props {
   cssBegleiter: string
   logoUrl: string
   feedbackUrl: string
+  /** B1/B2 — alle abgedeckten Kompetenzen der Einheit (Union über A/B/C; für die README-Übersicht). */
+  abgedeckteKompetenzen?: string[]
   /** Read-only guest view: hides the bundle download and the feedback link. */
   readOnly?: boolean
 }
@@ -29,7 +32,14 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
   return d[`hf_${letter}`]
 }
 
-export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, readOnly = false }: Props) {
+export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, readOnly = false }: Props) {
+  // B1/B2 — Union aller abgedeckten Kompetenzen der Einheit (für die README-Übersicht).
+  // Die DocS-Fusszeilen verwenden bewusst die PRO-Herausforderung-Werte (sit.nrlp.nr_primary),
+  // damit z.B. nur die Kanal-Herausforderung «(+1.1.3)» trägt, nicht jede Seite der Einheit.
+  const docAbgedeckte = abgedeckteKompetenzen && abgedeckteKompetenzen.length
+    ? abgedeckteKompetenzen
+    : Array.from(new Set([d.hf_A, d.hf_B, d.hf_C].flatMap((s) => s?.nrlp?.nr_primary || []).filter(Boolean)))
+        .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
   const [doc, setDoc] = useState<DocSel>('doc-s')
   const [situation, setSituation] = useState<SitLetter>('A')
   const [mode, setMode] = useState<'info' | 'fill'>('fill')
@@ -215,7 +225,7 @@ ${cssRenderer}
         } catch (e) { console.warn('begleiter docx failed', e) }
       }
 
-      const readme = buildReadme({ prefix, log, d, when: new Date() })
+      const readme = buildReadme({ prefix, log, d, when: new Date(), abgedeckteKompetenzen: docAbgedeckte })
       zip.file('README.md', readme)
 
       const blob = await zip.generateAsync({ type: 'blob' })
@@ -247,7 +257,7 @@ ${cssRenderer}
     docName = 'Austausch & Transfer'
   } else if (doc === 'doc-kn-s') {
     docKicker = 'Kompetenznachweis · Schüler/in'
-    docName = knTypen.find((t) => t.typ === knTyp)?.label || 'Kompetenznachweis'
+    docName = knTypLabel(knTyp, knTypen.find((t) => t.typ === knTyp)?.label) || 'Kompetenznachweis'
   } else {
     docKicker = 'Kompetenznachweis'
     docName = 'Lehrperson + Bewertung'
@@ -322,7 +332,7 @@ ${cssRenderer}
                   className={`wb-item nested${doc === 'doc-kn-s' && knTyp === t.typ ? ' active' : ''}`}
                   onClick={() => selectKnTyp(t.typ)}
                 >
-                  <span className="wb-item-title">{t.label}</span>
+                  <span className="wb-item-title">{knTypLabel(t.typ, t.label)}</span>
                 </button>
               ))}
               <button
@@ -374,12 +384,13 @@ ${cssRenderer}
   )
 }
 
-function buildReadme({ prefix, log, d, when }: { prefix: string; log: string[]; d: EinheitFullSet; when: Date }) {
+function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { prefix: string; log: string[]; d: EinheitFullSet; when: Date; abgedeckteKompetenzen?: string[] }) {
   const kompetenz = d.kn?.kompetenz_nr || (d.id.match(/^([\d.]+)/)?.[1]) || ''
+  const kompetenzList = abgedeckteKompetenzen.length ? abgedeckteKompetenzen.join(', ') : kompetenz
   const slug = d.id.replace(/^[\d.]+_/, '')
   return `# HKO ${prefix} — Inhalt des Bundles
 
-**Kompetenz:** ${kompetenz} · **Thema:** ${slug.replace(/_/g, ' ')}
+**Abgedeckte Kompetenzen:** ${kompetenzList} · **Thema:** ${slug.replace(/_/g, ' ')}
 **Generiert:** ${when.toLocaleString('de-CH')}
 **Dateien:** ${log.length}
 

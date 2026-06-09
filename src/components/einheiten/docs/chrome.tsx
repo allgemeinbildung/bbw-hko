@@ -11,11 +11,15 @@ interface A4PageProps {
   pageNum: number
   pageTotal: number
   kompetenzNr?: string
+  /** B2 — alle abgedeckten Kompetenzen; Zusatzwerte erscheinen als «(+1.1.3)» in der Fusszeile. */
+  abgedeckteKompetenzen?: string[]
   logoUrl?: string
 }
 
-export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter, pageNum, pageTotal, logoUrl = '/logo-bbw-doc.png' }: A4PageProps) {
+export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter, pageNum, pageTotal, kompetenzNr, abgedeckteKompetenzen, logoUrl = '/logo-bbw-doc.png' }: A4PageProps) {
   const sitClass = sit ? `sit-${sit}` : 'sit-neutral'
+  // B2 — Kompetenznummer(n) für den Druck. Primärnummer + ggf. zusätzlich abgedeckte.
+  const kompExtras = (abgedeckteKompetenzen || []).filter((k) => k && k !== kompetenzNr)
   return (
     <article className={`a4-page ${sitClass}`}>
       <div className="sit-strip" />
@@ -37,6 +41,9 @@ export function A4Page({ children, sit, abteilung, docCode, docTitel, sitLetter,
       <footer className="page-foot">
         <div className="foot-titel">{docTitel}</div>
         <div>
+          {kompetenzNr && (
+            <span className="foot-komp">Kompetenz {kompetenzNr}{kompExtras.length ? ` (+${kompExtras.join(', ')})` : ''} · </span>
+          )}
           {sitLetter && <span className="foot-sit">HF {sitLetter} · </span>}
           <span>{pageNum} / {pageTotal}</span>
         </div>

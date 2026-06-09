@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { A4Page, Badge, SectionHead, sitColors } from './chrome'
 import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson } from '../../../lib/einheiten/types'
 import { skNameByNr } from '../../../lib/sk-labels'
+import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from '../../../lib/einheiten/sprachfoerderung'
 
 export interface DocKnLpProps {
@@ -163,7 +164,7 @@ function KnTypCardLP({ knTyp }: { knTyp: KnTyp }) {
   return (
     <div className="kn-typ-card" style={{ marginTop: '4mm' }}>
       <div className="typ-head">
-        <div className="typ-label">{knTyp.label}</div>
+        <div className="typ-label">{knTypLabel(knTyp.typ, knTyp.label)}</div>
         <div className="typ-format">{knTyp.format}</div>
       </div>
       {knTyp.ablauf && (
@@ -459,7 +460,7 @@ export function DocKnLp({ kn, prinzip, set, abteilung, sits }: DocKnLpProps) {
           key={i}
           kn={kn}
           knTyp={t}
-          sectionNr={`07 · ${t.label}`}
+          sectionNr={`07 · ${knTypLabel(t.typ, t.label)}`}
           abteilung={abteilung}
           pageNum={5 + i}
           pageTotal={total}

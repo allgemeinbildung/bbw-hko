@@ -1138,9 +1138,13 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
 .cockpit-page .hp-meta-item { font-size: 8pt; line-height: 1.28; gap: 2mm; }
 .cockpit-page .hp-meta-label { flex: 0 0 20mm; font-size: 6.5pt; padding-top: 0.4mm; }
 
-/* page 6b — full-page writing surface: no section heading, ruling fills to the bottom */
-.hp-arbeitsflaeche-page .hp-flaeche-wrap { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
-.hp-arbeitsflaeche-page .hp-flaeche { flex: 1 1 auto; min-height: 0; }
+/* page 6b — full-page writing surface: no section heading, ruling fills to the bottom.
+   Drop the surface down a few mm so its label (the "heading above the lines") clears the
+   page header and isn't clipped by a4-page-body's overflow:hidden. The flex box absorbs the
+   offset (margin-top:0 instead of the base 4mm), so we just trade ~one line of ruling for the
+   headroom — the ruling still fills to the bottom of the page. */
+.hp-arbeitsflaeche-page .hp-flaeche-wrap { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; margin-top: 6mm; }
+.hp-arbeitsflaeche-page .hp-flaeche { flex: 1 1 auto; min-height: 0; margin-top: 0; }
 
 /* Dossier mindmap hint — no diagram (drawn on paper/another device), just the parts to generate */
 .mindmap-hinweis { margin-top: 2mm; break-inside: avoid; }

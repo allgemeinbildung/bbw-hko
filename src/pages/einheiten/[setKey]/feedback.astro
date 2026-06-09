@@ -1,6 +1,7 @@
 ---
 import Einheiten from '../../../layouts/Einheiten.astro'
 import { einheitById } from '../../../lib/einheiten'
+import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
 import { skNameByNr } from '../../../lib/sk-labels'
 
 const user = Astro.locals.user
@@ -72,9 +73,9 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-3">Welche Komponenten der Einheit hast du eingesetzt?</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
-          <label class="check-item"><input type="checkbox" name="genutzt_sit_a" checked /> Situation A</label>
-          <label class="check-item"><input type="checkbox" name="genutzt_sit_b" checked /> Situation B</label>
-          <label class="check-item"><input type="checkbox" name="genutzt_sit_c" checked /> Situation C</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_sit_a" checked /> Herausforderung A</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_sit_b" checked /> Herausforderung B</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_sit_c" checked /> Herausforderung C</label>
           <label class="check-item" id="kn-checkbox-wrap"><input type="checkbox" name="genutzt_kn" id="genutzt-kn-cb" checked /> KN</label>
         </div>
         {knTypen.length > 0 && (
@@ -82,7 +83,7 @@ const declaredAspekte: string[] = meta.aspekte ?? []
             <span class="field-label">KN-Typ verwendet</span>
             <select class="input" name="kn_typ_verwendet">
               <option value="">— keine Auswahl —</option>
-              {knTypen.map((t) => <option value={t.typ}>{t.label}</option>)}
+              {knTypen.map((t) => <option value={t.typ}>{knTypLabel(t.typ, t.label)}</option>)}
             </select>
           </label>
         )}
@@ -94,7 +95,7 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         <div class="space-y-3">
           {[
             ['tauglichkeit', 'Passt die Einheit in den Unterricht?'],
-            ['qualitaet_situation', 'Qualität der Situationen'],
+            ['qualitaet_situation', 'Qualität der Herausforderungen'],
             ['qualitaet_handlungsprodukt', 'Qualität des Handlungsprodukts'],
             ['schwierigkeit', 'Anspruch für die Lernenden'],
             ['motivation', 'Engagement der Lernenden'],
@@ -351,6 +352,11 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       return obj
     }
 
+    function hasQueuedFiles() {
+      const input = document.getElementById('idee-files')
+      return !!(input && input.files && input.files.length > 0)
+    }
+
     async function uploadIdeeDateien() {
       const input = document.getElementById('idee-files')
       if (!input || !input.files || input.files.length === 0 || !savedFeedbackId) return
@@ -419,16 +425,29 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         document.getElementById('idee-upload-hint').classList.add('hidden')
         document.getElementById('idee-files').classList.remove('hidden')
 
-        if (payload.neue_idee && savedFeedbackId) await uploadIdeeDateien()
+        // A1: Upload entkoppelt vom «neue Idee»-Flag und nicht-fatal.
+        // Die Feedback-Zeile ist bereits gespeichert; ein fehlgeschlagener Upload
+        // (z.B. fehlender Bucket) darf das gespeicherte Feedback NICHT verwerfen.
+        let uploadError = null
+        if (savedFeedbackId && hasQueuedFiles()) {
+          try { await uploadIdeeDateien() } catch (e) { uploadError = e }
+        }
 
         if (status === 'eingereicht') {
-          window.location.href = '/einheiten?success=Feedback+eingereicht.+Danke!'
+          if (uploadError) {
+            msg.textContent = 'Feedback gespeichert, aber der Datei-Upload ist fehlgeschlagen: ' + uploadError.message + ' Du kannst die Datei unten erneut hochladen.'
+            msg.className = 'text-sm text-amber-600'
+          } else {
+            window.location.href = '/einheiten?success=Feedback+eingereicht.+Danke!'
+          }
         } else {
-          msg.textContent = 'Entwurf gespeichert.'
-          msg.className = 'text-sm text-emerald-600'
+          msg.textContent = uploadError
+            ? 'Entwurf gespeichert, aber der Datei-Upload ist fehlgeschlagen: ' + uploadError.message
+            : 'Entwurf gespeichert.'
+          msg.className = uploadError ? 'text-sm text-amber-600' : 'text-sm text-emerald-600'
         }
       } catch (err) {
-        msg.textContent = 'Fehler: ' + err.message
+        msg.textContent = 'Fehler beim Speichern: ' + err.message
         msg.className = 'text-sm text-red-600'
       }
     }

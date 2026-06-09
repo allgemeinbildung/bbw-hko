@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { A4Page, Badge, Schreibfeld, SectionHead, sitColors } from './chrome'
+import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
 import type { KnJson, KnTyp } from '../../../lib/einheiten/types'
 
 export interface DocKnSProps {
@@ -35,7 +36,7 @@ function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
     <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
       <div className="badge-row" style={{ marginBottom: '4mm' }}>
         <Badge variant="outline">Kompetenznachweis {kn.kompetenz_nr}</Badge>
-        <Badge>{knTyp.label}</Badge>
+        <Badge>{knTypLabel(knTyp.typ, knTyp.label)}</Badge>
       </div>
       <h1 className="cockpit-title">{kn.hybrid_situation?.titel}</h1>
       <SectionHead num="01 · Hybrid-Herausforderung">Herausforderung</SectionHead>

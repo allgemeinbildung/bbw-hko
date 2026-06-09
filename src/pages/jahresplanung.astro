@@ -5,6 +5,7 @@ import { nrlp } from '../lib/nrlp'
 import { situationenIndex } from '../lib/situationen'
 import einheitenIndex from '../data/einheiten.index.json'
 import { skFullName } from '../lib/sk-labels'
+import { KN_TYP_OPTIONS } from '../lib/einheiten/kn-typ-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -521,10 +522,7 @@ if (!isGuest) {
                 <span>Format</span>
                 <select x-model="kn.format" x-on:change="markDirty()" class="jp-select">
                   <option value="">—</option>
-                  <option value="fachgespraech">Fachgespräch</option>
-                  <option value="mini_case_schriftlich">Mini-Case (schriftlich)</option>
-                  <option value="werkschau_transfer">Werkschau / Transfer</option>
-                  <option value="andere">Andere</option>
+                  {KN_TYP_OPTIONS.map((o) => <option value={o.value}>{o.label}</option>)}
                 </select>
               </label>
               <label class="jp-field jp-field-grow">

@@ -9,6 +9,9 @@ export interface DocSProps {
   mode: 'info' | 'fill'
   edits: Record<string, string>
   onEdit: (key: string, value: string) => void
+  // B2 — Kompetenznummer(n) für die Fusszeile; fallen auf die nrlp-Werte der Herausforderung zurück.
+  kompetenzNr?: string
+  abgedeckteKompetenzen?: string[]
 }
 
 // C1 — Cockpit head: no Kompetenz badge, no emotion on the HF badge, herausforderung label only.
@@ -390,7 +393,9 @@ function HandlungsproduktAnleitung({ sit }: { sit: SituationJson }) {
   )
 }
 
-function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info' | 'fill' }) {
+function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info' | 'fill'; kompetenzNr?: string; abgedeckteKompetenzen?: string[] }) {
+  const kompetenzNr = common.kompetenzNr || common.sit.nrlp?.nr
+  const abgedeckteKompetenzen = common.abgedeckteKompetenzen || common.sit.nrlp?.nr_primary
   return ({ pageNum, pageTotal, children, bodyClass }: { pageNum: number; pageTotal: number; children: ReactNode; bodyClass?: string }) => (
     <A4Page
       sit={common.sit.buchstabe}
@@ -400,6 +405,8 @@ function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info'
       sitLetter={common.sit.buchstabe}
       pageNum={pageNum}
       pageTotal={pageTotal}
+      kompetenzNr={kompetenzNr}
+      abgedeckteKompetenzen={abgedeckteKompetenzen}
     >
       <div className={bodyClass ? `a4-page-body ${bodyClass}` : 'a4-page-body'}>{children}</div>
     </A4Page>
@@ -422,8 +429,8 @@ function CockpitPageBody({ sit }: { sit: SituationJson }) {
   )
 }
 
-function DocSInfo({ sit, abteilung, mode }: DocSProps) {
-  const Page = makePage({ sit, abteilung, mode })
+function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: DocSProps) {
+  const Page = makePage({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen })
   let pageIdx = 0
   const nextPage = () => ++pageIdx
   // C2/redesign: Dossier no longer dedicates a page to the mindmap (it's drawn off-sheet) →
@@ -461,8 +468,8 @@ function DocSInfo({ sit, abteilung, mode }: DocSProps) {
   )
 }
 
-function DocSFill({ sit, abteilung, mode, edits, onEdit }: DocSProps) {
-  const Page = makePage({ sit, abteilung, mode })
+function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckteKompetenzen }: DocSProps) {
+  const Page = makePage({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen })
   const lf = sit.leitfragen || []
   const lfPairs: typeof lf[] = []
   for (let i = 0; i < lf.length; i += 2) lfPairs.push(lf.slice(i, i + 2))

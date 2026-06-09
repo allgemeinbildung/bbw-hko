@@ -86,7 +86,7 @@ export function applyEinheitenFilters(list: EinheitIndexEntry[], f: EinheitenFil
     if (f.aspekt && !e.aspekte.includes(f.aspekt)) return false
     if (f.sk && !e.sk.map(String).includes(f.sk)) return false
     if (qWords.length) {
-      const hay = `${e.id} ${e.titel} ${e.kompetenz_nr} ${e.aspekte.join(' ')} ${e.modul_titel ?? ''}`.toLowerCase()
+      const hay = `${e.id} ${e.titel} ${e.kompetenz_nr} ${(e.abgedeckte_kompetenzen ?? []).join(' ')} ${e.aspekte.join(' ')} ${e.modul_titel ?? ''}`.toLowerCase()
       if (!qWords.every((w) => hay.includes(w))) return false
     }
     return true

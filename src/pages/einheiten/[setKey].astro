@@ -2,6 +2,8 @@
 import Einheiten from '../../layouts/Einheiten.astro'
 import EinheitWorkbench from '../../components/einheiten/EinheitWorkbench.tsx'
 import { einheitById, loadEinheit } from '../../lib/einheiten'
+import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
+import { skNameByNr, skTooltip } from '../../lib/sk-labels'
 import cssRenderer from '../../styles/einheiten-renderer.css?raw'
 import cssBegleiter from '../../styles/einheiten-begleiter.css?raw'
 
@@ -24,6 +26,10 @@ const fullSet = loadEinheit(setKey)
 if (!meta || !fullSet) {
   return new Response('Einheit nicht gefunden', { status: 404 })
 }
+
+// B3 — Abdeckungs-Übersicht aus dem Index (keine zusätzlichen Datenquellen nötig).
+const abgedeckte = meta.abgedeckte_kompetenzen?.length ? meta.abgedeckte_kompetenzen : [meta.kompetenz_nr]
+const letters = ['A', 'B', 'C'] as const
 ---
 <Einheiten title={`Einheit ${meta.kompetenz_nr}`} role={role} fullBleed>
   <style is:global set:html={cssRenderer}></style>
@@ -42,6 +48,66 @@ if (!meta || !fullSet) {
     </div>
   </div>
 
+  <!-- B3 — «Was deckt diese Einheit ab?» (additive Übersicht aus dem Index) -->
+  <div class="border-b border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-5">
+      <h2 class="text-sm font-semibold text-slate-900 mb-3">Was deckt diese Einheit ab?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
+        <div>
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Kompetenzen</span>
+          <div class="flex flex-wrap gap-1.5">
+            {abgedeckte.map((k) => <span class="chip chip-blue">Kompetenz {k}</span>)}
+          </div>
+        </div>
+        {meta.aspekte.length > 0 && (
+          <div>
+            <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Gesellschafts-Aspekte</span>
+            <div class="flex flex-wrap gap-1.5">
+              {meta.aspekte.map((a) => <span class="chip chip-green">{a}</span>)}
+            </div>
+          </div>
+        )}
+        {meta.sprachmodi.length > 0 && (
+          <div>
+            <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Sprachmodi</span>
+            <div class="flex flex-wrap gap-1.5">
+              {meta.sprachmodi.map((s) => <span class="chip">{s}</span>)}
+            </div>
+          </div>
+        )}
+        {meta.sk.length > 0 && (
+          <div>
+            <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Schlüsselkompetenzen</span>
+            <div class="flex flex-wrap gap-1.5">
+              {meta.sk.map((n) => <span class="chip" title={skTooltip(skNameByNr(n))}>SK {n} · {skNameByNr(n)}</span>)}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-4 pt-4 border-t border-slate-100">
+        <div>
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">3 Herausforderungen</span>
+          <ol class="text-sm text-slate-600 space-y-1">
+            {letters.map((l) => meta.hf_titel[l] && (
+              <li><span class="font-medium text-slate-800">{l}</span> · {meta.hf_titel[l]}</li>
+            ))}
+          </ol>
+        </div>
+        {meta.kn_typen.length > 0 && (
+          <div>
+            <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Kompetenznachweis — verfügbare Typen</span>
+            <div class="flex flex-wrap gap-1.5">
+              {meta.kn_typen.map((t) => <span class="chip">{knTypLabel(t.typ, t.label)}</span>)}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <p class="text-xs text-slate-400 mt-4">Richtwert: ca. 3–7 Lektionen + Kompetenznachweis. Didaktische Details im Begleitdokument.</p>
+    </div>
+  </div>
+
   <EinheitWorkbench
     client:only="react"
     set={fullSet}
@@ -49,6 +115,7 @@ if (!meta || !fullSet) {
     cssBegleiter={cssBegleiter}
     logoUrl="/logo-bbw-doc.png"
     feedbackUrl={`/einheiten/${setKey}/feedback`}
+    abgedeckteKompetenzen={meta.abgedeckte_kompetenzen}
     readOnly={isGuest}
   />
 </Einheiten>

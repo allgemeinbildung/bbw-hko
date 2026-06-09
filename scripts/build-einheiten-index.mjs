@@ -67,9 +67,20 @@ for (const slug of slugs) {
   const kompetenzNr = (m && m[1]) || kn?.kompetenz_nr || nrlp.nr || ''
   const slugPart = m ? m[2] : slug
 
+  // B1 — alle real abgedeckten Kompetenzen: Union aus nrlp.nr_primary der drei
+  // Herausforderungen A/B/C, dedupliziert + numerisch sortiert. Fallback: [kompetenz_nr].
+  const abgedeckteSet = new Set()
+  for (const s of [sitA, sitB, sitC]) {
+    for (const n of (s?.nrlp?.nr_primary || [])) if (n) abgedeckteSet.add(String(n))
+  }
+  if (abgedeckteSet.size === 0 && kompetenzNr) abgedeckteSet.add(String(kompetenzNr))
+  const abgedeckteKompetenzen = Array.from(abgedeckteSet)
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+
   index.push({
     id: slug,
     kompetenz_nr: kompetenzNr,
+    abgedeckte_kompetenzen: abgedeckteKompetenzen,
     slug: slugPart,
     titel,
     lehrgang: sitA?.lehrgang || begleiterMeta.beruf || 'EFZ_3J',

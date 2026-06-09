@@ -22,12 +22,13 @@ const error = Astro.url.searchParams.get('error')
         <a href="/" class="flex items-center gap-3 min-w-0">
           <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="logo-black h-14 w-auto shrink-0" />
           <span class="min-w-0 pl-3 ml-1 border-l border-slate-200">
-            <span class="block text-base font-semibold leading-tight truncate text-slate-900">Einheiten <span class="text-xs font-normal text-slate-500 ml-1 align-middle border border-slate-300 rounded px-1.5 py-0.5">Pilot</span></span>
+            <span class="block text-base font-semibold leading-tight truncate text-slate-900">Unterrichtseinheiten <span class="text-xs font-normal text-slate-500 ml-1 align-middle border border-slate-300 rounded px-1.5 py-0.5">Pilot</span></span>
             <span class="block text-xs text-slate-500 leading-tight truncate">ABU Reform 2030 · Vollunterricht inkl. KN</span>
           </span>
         </a>
         <nav class="flex gap-1 bg-slate-100 p-1 rounded-lg">
-          <a href="/einheiten" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/einheiten' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Katalog Einheiten</a>
+          <a href="/einheiten" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/einheiten' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Katalog Unterrichtseinheiten</a>
+          <a href="/glossar" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/glossar' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Glossar</a>
           {role === 'gast' && (
             <a href="/situationen" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path.startsWith('/situationen') ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Katalog Situationen</a>
           )}
@@ -59,7 +60,7 @@ const error = Astro.url.searchParams.get('error')
     }
 
     <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
-      Einheiten-Katalog · Pilot · ABU Reform 2030
+      Unterrichtseinheiten-Katalog · Pilot · ABU Reform 2030
     </footer>
   </div>
 </Base>
