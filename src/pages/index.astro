@@ -57,7 +57,7 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
             <span class="text-xs font-medium px-2 py-0.5 rounded border border-amber-300 bg-amber-50 text-amber-700">Gast · nur Lesen</span>
           )}
           <a href="/onboarding/index.html" class="text-sm text-slate-400 hover:text-slate-600" title="Einführung &amp; Rundgang">Rundgang</a>
-          <span class="text-sm text-slate-500 hidden sm:block">{isGuest ? 'Gast' : user.email}</span>
+          <span class="text-sm text-slate-500 hidden sm:block">{isGuest ? 'Gast' : access.user.email}</span>
           <form method="POST" action="/api/auth/logout">
             <button type="submit" class="text-sm text-slate-500 hover:text-slate-700 underline">{isGuest ? 'Verlassen' : 'Abmelden'}</button>
           </form>
