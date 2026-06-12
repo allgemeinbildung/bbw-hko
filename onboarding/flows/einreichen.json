@@ -80,7 +80,8 @@
       "selector": "h2:has-text(\"Kompetenznachweis\")",
       "section": "Block K — Kompetenznachweis",
       "caption": "**Block K — Kompetenznachweis** (rechte Seite): Wähle das **Prüfformat** (Fachgespräch / Mini-Case / Werkschau / Andere) und formuliere die **Prüfaufgabe** — idealerweise eine neue Transfer-Situation, nicht die geübte.",
-      "screenshot": true
+      "screenshot": true,
+      "highlight": "label.field-label:has-text(\"Prüfformat\")"
     },
     {
       "action": "scrollTo",
