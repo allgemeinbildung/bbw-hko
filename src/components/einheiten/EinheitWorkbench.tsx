@@ -21,6 +21,8 @@ interface Props {
   feedbackUrl: string
   /** B1/B2 — alle abgedeckten Kompetenzen der Einheit (Union über A/B/C; für die README-Übersicht). */
   abgedeckteKompetenzen?: string[]
+  /** Vorbelegung des Abteilungs-Dropdowns aus dem LP-Profil (auf eine ABTEILUNGEN-Option gemappt). */
+  defaultAbteilung?: string
   /** Read-only guest view: hides the bundle download and the feedback link. */
   readOnly?: boolean
 }
@@ -32,7 +34,7 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
   return d[`hf_${letter}`]
 }
 
-export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, readOnly = false }: Props) {
+export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, defaultAbteilung = '', readOnly = false }: Props) {
   // B1/B2 — Union aller abgedeckten Kompetenzen der Einheit (für die README-Übersicht).
   // Die DocS-Fusszeilen verwenden bewusst die PRO-Herausforderung-Werte (sit.nrlp.nr_primary),
   // damit z.B. nur die Kanal-Herausforderung «(+1.1.3)» trägt, nicht jede Seite der Einheit.
@@ -43,7 +45,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [doc, setDoc] = useState<DocSel>('doc-s')
   const [situation, setSituation] = useState<SitLetter>('A')
   const [mode, setMode] = useState<'info' | 'fill'>('fill')
-  const [abteilung, setAbteilung] = useState('')
+  const [abteilung, setAbteilung] = useState(defaultAbteilung || '')
   const [edits, setEdits] = useState<Record<string, string>>({})
   const [knTyp, setKnTyp] = useState<string>(d.kn?.kn_typen?.[0]?.typ || 'fachgespraech')
   const [bundling, setBundling] = useState(false)
@@ -163,8 +165,9 @@ ${cssRenderer}
         if (!s || !d.set) continue
         for (const m of ['info', 'fill'] as const) {
           const markup = renderToStaticMarkup(<DocS sit={s} set={d.set} abteilung={abteilung} mode={m} edits={{}} onEdit={() => {}} />)
-          const filename = `${prefix}_doc-s_sit-${letter}_${m}.html`
-          const title = `DOC-S Sit ${letter} (${m}) · ${s.titel}`
+          const suffix = m === 'fill' ? 'auftrag' : 'dossier'
+          const filename = `${prefix}_doc-s_hf-${letter}_${suffix}.html`
+          const title = `DOC-S HF ${letter} (${suffix}) · ${s.titel}`
           zip.file(`html/${filename}`, wrap(title, markup, { compact: m === 'info' }))
           log.push(`html/${filename}`)
           try {
@@ -226,7 +229,7 @@ ${cssRenderer}
       }
 
       const readme = buildReadme({ prefix, log, d, when: new Date(), abgedeckteKompetenzen: docAbgedeckte })
-      zip.file('README.md', readme)
+      zip.file('README.html', readme)
 
       const blob = await zip.generateAsync({ type: 'blob' })
       const url = URL.createObjectURL(blob)
@@ -388,54 +391,84 @@ function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { pre
   const kompetenz = d.kn?.kompetenz_nr || (d.id.match(/^([\d.]+)/)?.[1]) || ''
   const kompetenzList = abgedeckteKompetenzen.length ? abgedeckteKompetenzen.join(', ') : kompetenz
   const slug = d.id.replace(/^[\d.]+_/, '')
-  return `# HKO ${prefix} — Inhalt des Bundles
+  const esc = (v: string) =>
+    String(v ?? '—')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+  const rows: [string, string][] = [
+    ['Herausforderung A (rot)', d.hf_A?.titel || '—'],
+    ['Herausforderung B (blau)', d.hf_B?.titel || '—'],
+    ['Herausforderung C (grün)', d.hf_C?.titel || '—'],
+    ['KN Hybrid-Herausforderung', d.kn?.hybrid_situation?.titel || '—'],
+    ['Begleitdokument', d.begleiter?.meta?.titel || '—'],
+  ]
+  return `<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HKO ${esc(prefix)} — Inhalt des Bundles</title>
+<style>
+  :root { --brand:#0E6E3A; --brand-dark:#094d28; --brand-tint:#e8f3ec; --ink:#1d2026; --muted:#5b6470; --line:#e2e6ea; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:40px 20px; background:#f6f7f8; color:var(--ink);
+    font-family:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.55; }
+  .sheet { max-width:760px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-top:4px solid var(--brand); border-radius:10px; padding:36px 44px 44px; }
+  h1 { font-size:1.5rem; margin:0 0 4px; color:var(--brand-dark); }
+  h2 { font-size:1.05rem; margin:32px 0 10px; color:var(--brand-dark);
+    border-bottom:1px solid var(--line); padding-bottom:6px; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 4px; }
+  .meta strong { color:var(--ink); }
+  p { margin:0 0 12px; }
+  code { background:var(--brand-tint); color:var(--brand-dark); padding:1px 6px; border-radius:4px;
+    font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.85em; }
+  table { width:100%; border-collapse:collapse; margin:8px 0 4px; font-size:.95rem; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:var(--brand-tint); color:var(--brand-dark); font-weight:600; width:34%; }
+  ul.files { columns:2; column-gap:28px; padding-left:18px; margin:8px 0 0; font-size:.88rem; color:var(--muted); }
+  ul.files li { break-inside:avoid; margin:0 0 3px; }
+  @media (max-width:560px){ ul.files{columns:1;} th{width:42%;} .sheet{padding:28px 22px;} }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <h1>HKO ${esc(prefix)} — Inhalt des Bundles</h1>
+  <p class="meta"><strong>Abgedeckte Kompetenzen:</strong> ${esc(kompetenzList)} · <strong>Thema:</strong> ${esc(slug.replace(/_/g, ' '))}</p>
+  <p class="meta"><strong>Generiert:</strong> ${esc(when.toLocaleString('de-CH'))} · <strong>Dateien:</strong> ${log.length}</p>
 
-**Abgedeckte Kompetenzen:** ${kompetenzList} · **Thema:** ${slug.replace(/_/g, ' ')}
-**Generiert:** ${when.toLocaleString('de-CH')}
-**Dateien:** ${log.length}
+  <h2>Was ist drin?</h2>
+  <p>Dieses Bundle enthält ${log.length} Dokumente in zwei Formaten: druckfertige
+  HTML-Dateien (A4, zum Direkt-Drucken im Browser) und Word-Dateien (.docx)
+  zum Anpassen / Kommentieren in Word. Beide Formate enthalten die gleichen
+  Inhalte; HTML druckt 1:1 wie geplant, Word lässt sich weiterbearbeiten.</p>
+  <p>Das Situationsheft (DOC-S) gibt es je Herausforderung als <code>_auftrag</code>
+  (zum Ausfüllen) und als <code>_dossier</code> (mit ausgearbeiteter Lösung),
+  benannt nach der Herausforderung (<code>hf-A</code> / <code>hf-B</code> / <code>hf-C</code>).
+  Der gemeinsame Set-Abschluss «Austausch &amp; Transfer» (<code>_doc-austausch</code>)
+  liegt einmal pro Set bei — er bündelt den Vergleich der drei Lösungen
+  (Einzelauftrag / Gruppenpuzzle / Plenum) und die Transfer-Aufgabe.</p>
+  <p>Zusätzlich liegt das Begleitdokument für die Lehrperson (<code>_begleiter.docx</code>)
+  bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.</p>
 
----
+  <h2>Set-Übersicht</h2>
+  <table>
+    <tbody>
+${rows.map(([k, v]) => `      <tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join('\n')}
+    </tbody>
+  </table>
 
-## Was ist drin?
+  <h2>Nach dem Unterricht</h2>
+  <p>Wenn du die Einheit umgesetzt hast, gib uns Feedback über das Online-Formular,
+  das du im Workbench unter «Feedback nach Unterricht» findest. Das Feedback
+  fliesst direkt ins Kernteam-1 Reviewing.</p>
 
-Dieses Bundle enthält ${log.length} Dokumente in zwei Formaten: druckfertige
-HTML-Dateien (A4, zum Direkt-Drucken im Browser) und Word-Dateien (.docx)
-(zum Anpassen / Kommentieren in Word). Beide Formate enthalten die gleichen
-Inhalte; HTML druckt 1:1 wie geplant, Word lässt sich weiterbearbeiten.
-
-Das Situationsheft (DOC-S) gibt es je Herausforderung als Auftrag (zum Ausfüllen)
-und als Dossier (mit ausgearbeiteter Lösung). Der gemeinsame Set-Abschluss
-«Austausch & Transfer» (\`_doc-austausch\`) liegt einmal pro Set bei — er bündelt
-den Vergleich der drei Lösungen (Einzelauftrag / Gruppenpuzzle / Plenum) und die
-Transfer-Aufgabe.
-
-Zusätzlich liegt das Begleitdokument für die Lehrperson (\`_begleiter.docx\`)
-bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.
-
----
-
-## Set-Übersicht
-
-| Komponente | Titel |
-|---|---|
-| Herausforderung A (rot) | ${d.hf_A?.titel || '—'} |
-| Herausforderung B (blau) | ${d.hf_B?.titel || '—'} |
-| Herausforderung C (grün) | ${d.hf_C?.titel || '—'} |
-| KN Hybrid-Herausforderung | ${d.kn?.hybrid_situation?.titel || '—'} |
-| Begleitdokument | ${d.begleiter?.meta?.titel || '—'} |
-
----
-
-## Nach dem Unterricht
-
-Wenn du die Einheit umgesetzt hast, gib uns Feedback über das Online-Formular,
-das du im Workbench unter «Feedback nach Unterricht» findest. Das Feedback
-fliesst direkt ins Kernteam-1 Reviewing.
-
----
-
-## Dateiliste
-
-${log.map((f) => '- ' + f).join('\n')}
-`
+  <h2>Dateiliste</h2>
+  <ul class="files">
+${log.map((f) => `    <li>${esc(f)}</li>`).join('\n')}
+  </ul>
+</main>
+</body>
+</html>`
 }

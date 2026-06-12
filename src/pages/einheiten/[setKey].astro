@@ -1,7 +1,7 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import EinheitWorkbench from '../../components/einheiten/EinheitWorkbench.tsx'
-import { einheitById, loadEinheit } from '../../lib/einheiten'
+import { einheitById, loadEinheit, ABTEILUNGEN } from '../../lib/einheiten'
 import { enrichKompetenzen } from '../../lib/einheiten/kompetenz-text'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import { skNameByNr, skTooltip } from '../../lib/sk-labels'
@@ -13,13 +13,20 @@ if (!user) return Astro.redirect('/login')
 
 const { data: profile } = await Astro.locals.supabase
   .from('profiles')
-  .select('role')
+  .select('role, abteilung')
   .eq('id', user.id)
   .single()
 
 const role: 'lp' | 'kt1' | 'gast' =
   profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
 const isGuest = role === 'gast'
+
+// Abteilung aus dem Profil auf eine Workbench-Option mappen (Profil speichert z.B.
+// «Technik | Ernährung», die Workbench-Optionen lauten «Abteilung Technik | Ernaehrung»).
+const normAbt = (s: string) =>
+  s.toLowerCase().replace(/abteilung/g, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/[^a-z0-9]/g, '')
+const defaultAbteilung =
+  ABTEILUNGEN.find((o) => o && profile?.abteilung && normAbt(o) === normAbt(profile.abteilung)) ?? ''
 
 const setKey = Astro.params.setKey!
 const meta = einheitById(setKey)
@@ -122,6 +129,7 @@ const letters = ['A', 'B', 'C'] as const
     logoUrl="/logo-bbw-doc.png"
     feedbackUrl={`/einheiten/${setKey}/feedback`}
     abgedeckteKompetenzen={meta.abgedeckte_kompetenzen}
+    defaultAbteilung={defaultAbteilung}
     readOnly={isGuest}
   />
 </Einheiten>

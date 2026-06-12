@@ -20,18 +20,6 @@ if (!entry) return Astro.redirect('/situationen?error=Situation%20nicht%20gefund
 
 const full = await loadFullSituation(id)
 
-// Guests cannot give feedback, so skip the personal-feedback lookup.
-const { data: myFeedback } = isGuest
-  ? { data: null }
-  : await Astro.locals.supabase
-      .from('feedbacks')
-      .select('id, status, getestet_am, tauglichkeit, qualitaet, weiterempfehlung')
-      .eq('situation_id', id)
-      .eq('lp_id', user.id)
-      .order('created_at', { ascending: false })
-      .limit(1)
-      .maybeSingle()
-
 const lj = lehrjahrForEntry(entry)
 const sit = entry.sit_letter ?? '?'
 const sitColors: Record<string, string> = {
@@ -65,16 +53,6 @@ const bewertungsraster = full?.bewertungsraster ?? []
           </div>
         </div>
       </div>
-      {!isGuest && (
-        <div class="flex flex-col items-end gap-2 shrink-0">
-          <a href={`/situationen/${entry.id}/feedback`} class="py-2 px-4 rounded-md text-white text-sm font-medium" style="background: var(--brand)">
-            {myFeedback ? 'Feedback bearbeiten' : 'Feedback geben'}
-          </a>
-          {myFeedback && (
-            <span class="text-xs text-slate-500">Status: {myFeedback.status}</span>
-          )}
-        </div>
-      )}
     </div>
 
     {entry.persona && (
@@ -167,7 +145,7 @@ const bewertungsraster = full?.bewertungsraster ?? []
         )}
 
         <div class="pt-3 border-t border-slate-100">
-          <a href={entry.quelle_html} target="_blank" rel="noopener" class="text-sm text-slate-600 hover:text-slate-900 underline">
+          <a href={`https://hf.abu-hko.ch/missions-renderer/dist/index.html?id=${entry.id}`} target="_blank" rel="noopener" class="text-sm text-slate-600 hover:text-slate-900 underline">
             Vollständige Mission auf abu-hko.ch öffnen ↗
           </a>
         </div>

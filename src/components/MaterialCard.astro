@@ -21,6 +21,8 @@ function selbstcheckCount(sc: any): number {
 const TOTAL_CHECKS = 10
 const scCount = selbstcheckCount(m.selbstcheck || {})
 
+const kompList: string[] = (m.kompetenz_nrs?.length ? m.kompetenz_nrs : (m.kompetenz_nr ? [m.kompetenz_nr] : []))
+
 const KN_FORMAT_LABEL: Record<string, string> = {
   fachgespraech: 'Fachgespräch',
   mini_case_schriftlich: 'Mini-Case schriftlich',
@@ -46,6 +48,12 @@ const KN_FORMAT_LABEL: Record<string, string> = {
     {showAuthor && m.profiles?.full_name && <span>{m.profiles.full_name} · </span>}
     {m.lehrdauer} · LJ {m.lehrjahr} · T{m.thema_nr} — {m.thema_titel}
   </div>
+
+  {kompList.length > 0 && (
+    <div class="flex flex-wrap gap-1 mb-2">
+      {kompList.map((k: string) => <span class="chip chip-blue">Komp {k}</span>)}
+    </div>
+  )}
 
   {m.kompetenzversprechen && (
     <blockquote class="text-xs text-slate-600 italic border-l-2 pl-2.5 mb-3" style="border-color: var(--brand)">

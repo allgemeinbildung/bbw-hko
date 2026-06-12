@@ -75,6 +75,14 @@ const count = materials?.length ?? 0
                 <div class="text-xs text-slate-500 italic mt-0.5 line-clamp-2">„{m.kompetenzversprechen}"</div>
               )}
               <div class="text-xs text-slate-500 mt-0.5">T{m.thema_nr} · LJ {m.lehrjahr} · {m.sprachmodus_primaer}</div>
+              {(() => {
+                const komps = (m.kompetenz_nrs?.length ? m.kompetenz_nrs : (m.kompetenz_nr ? [m.kompetenz_nr] : [])) as string[]
+                return komps.length > 0 && (
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    {komps.map((k: string) => <span class="chip chip-blue">Komp {k}</span>)}
+                  </div>
+                )
+              })()}
               <div class="flex flex-wrap gap-1 mt-1">
                 {(m.schluesselkompetenzen as string[]).slice(0,3).map((sk: string) => (
                   <span class="chip" title={skTooltip(sk)}>{sk}</span>

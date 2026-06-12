@@ -44,59 +44,53 @@ Diese Kurzanleitung erklärt das Formular «Eigenes Material teilen» — von de
 
 ## Block H — Handlungssituation
 
-### 6. **Block H — Handlungssituation** (linke Seite): Der **Situationstext** beschreibt die Ausgangslage aus ICH-Perspektive — die Lernenden sollen sich damit identifizieren können. Die **Leitfrage** formuliert das zentrale Problem.
+### 6. **Block H — Handlungssituation** (linke Seite): Der **Situationstext** beschreibt die Ausgangslage aus ICH-Perspektive — die Lernenden sollen sich damit identifizieren und als Handelnde in der Situation erkennen können.
 
 ![6](screenshots/05-block-h-handlungssituation-linke-seite-d.png)
 
 <sub>http://localhost:4321/einreichen</sub>
 
-### 7. Die **Mehrdeutigkeit / Trade-off** ist der HKO-Kernpunkt: Beschreibe den echten Zielkonflikt, der die Situation handlungsorientiert macht (z.B. «Eigene Rechte durchsetzen vs. Beziehung erhalten»). Ohne Trade-off ist es eine Wissensfrage, keine Handlungssituation.
+### 7. Das **Handlungsprodukt** beschreibt, was die Lernenden am Ende produzieren: Typ (Schriftlich / Mündlich / Multimedial / Mischform) und eine kurze Beschreibung. Darunter folgt eine optionale **Checkliste Handlungssituation**.
 
-![7](screenshots/06-die-mehrdeutigkeit-trade-off-ist-der-hko.png)
-
-<sub>http://localhost:4321/einreichen</sub>
-
-### 8. Das **Handlungsprodukt** beschreibt, was die Lernenden am Ende produzieren: Typ (Schriftlich / Mündlich / Multimedial / Mischform) und eine kurze Beschreibung. Darunter folgt eine optionale **Checkliste Handlungssituation**.
-
-![8](screenshots/07-das-handlungsprodukt-beschreibt-was-die-.png)
+![7](screenshots/06-das-handlungsprodukt-beschreibt-was-die-.png)
 
 <sub>http://localhost:4321/einreichen</sub>
 
 
 ## Block K — Kompetenznachweis
 
-### 9. **Block K — Kompetenznachweis** (rechte Seite): Wähle das **Prüfformat** (Fachgespräch / Mini-Case / Werkschau / Andere) und formuliere die **Prüfaufgabe** — idealerweise eine neue Transfer-Situation, nicht die geübte.
+### 8. **Block K — Kompetenznachweis** (rechte Seite): Wähle das **Prüfformat** (Fachgespräch / Mini-Case / Werkschau / Andere) und formuliere die **Prüfaufgabe** — idealerweise eine neue Transfer-Situation, nicht die geübte.
 
-![9](screenshots/08-block-k-kompetenznachweis-rechte-seite-w.png)
+![8](screenshots/07-block-k-kompetenznachweis-rechte-seite-w.png)
 
 <sub>http://localhost:4321/einreichen</sub>
 
-### 10. Unter **Bewertungskriterien** definierst du 3–5 Kriterien mit der Dimension **SuK** (Sprache & Kommunikation) oder **Ges** (Gesellschaft). Klicke auf «+ Kriterium hinzufügen», um neue Zeilen anzulegen.
+### 9. Unter **Bewertungskriterien** definierst du 3–5 Kriterien mit der Dimension **SuK** (Sprache & Kommunikation) oder **Ges** (Gesellschaft). Klicke auf «+ Kriterium hinzufügen», um neue Zeilen anzulegen.
 
-![10](screenshots/09-unter-bewertungskriterien-definierst-du-.png)
+![9](screenshots/08-unter-bewertungskriterien-definierst-du-.png)
 
 <sub>http://localhost:4321/einreichen</sub>
 
 
 ## Zusatzmaterialien & Anreicherung
 
-### 11. **Block Z — Zusatzmaterialien:** Lade fertige Unterlagen hoch (Arbeitsblätter, Bewertungsraster, Präsentationen, Bilder). Max. 15 MB pro Datei. Die Dateien werden nur für dich und KT1 sichtbar gespeichert.
+### 10. **Block Z — Zusatzmaterialien:** Lade fertige Unterlagen hoch (Arbeitsblätter, Bewertungsraster, Präsentationen, Bilder). Max. 15 MB pro Datei. Die Dateien werden nur für dich und KT1 sichtbar gespeichert.
 
-![11](screenshots/10-block-z-zusatzmaterialien-lade-fertige-u.png)
+![10](screenshots/09-block-z-zusatzmaterialien-lade-fertige-u.png)
 
 <sub>http://localhost:4321/einreichen</sub>
 
-### 12. **Block O — Anreicherung (optional):** Füge einen **Lehrmittel-Anker** (Kapitelverweise) und einen **Didaktischen Kniff** hinzu — das hilft anderen Lehrpersonen, dein Material zu verstehen und einzusetzen.
+### 11. **Block O — Anreicherung (optional):** Füge einen **Lehrmittel-Anker** (Kapitelverweise) und einen **Didaktischen Kniff** hinzu — das hilft anderen Lehrpersonen, dein Material zu verstehen und einzusetzen.
 
-![12](screenshots/11-block-o-anreicherung-optional-f-ge-einen.png)
+![11](screenshots/10-block-o-anreicherung-optional-f-ge-einen.png)
 
 <sub>http://localhost:4321/einreichen</sub>
 
 
 ## Einreichen
 
-### 13. Klicke auf **«Material teilen»**, um dein Material einzureichen. Es erscheint danach in «Meine Materialien» mit Status **eingereicht** und wird von KT1 geprüft. Du kannst es bis zur Freigabe jederzeit bearbeiten.
+### 12. Klicke auf **«Material teilen»**, um dein Material einzureichen. Es erscheint danach in «Meine Materialien» mit Status **eingereicht** und wird von KT1 geprüft. Du kannst es bis zur Freigabe jederzeit bearbeiten.
 
-![13](screenshots/12-klicke-auf-material-teilen-um-dein-mater.png)
+![12](screenshots/11-klicke-auf-material-teilen-um-dein-mater.png)
 
 <sub>http://localhost:4321/einreichen</sub>

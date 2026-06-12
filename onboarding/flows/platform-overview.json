@@ -1,6 +1,6 @@
 {
   "name": "ABU-Materialplattform — Einführung & Rundgang",
-  "description": "Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.",
+  "description": "Ein geführter Rundgang durch die Plattform — vom Einstieg über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.",
   "baseUrl": "http://localhost:4321",
   "productionBaseUrl": "https://bbw-hko.ch",
   "auth": "../auth.json",
@@ -13,16 +13,17 @@
   "steps": [
     {
       "action": "goto",
-      "value": "/",
-      "section": "Anmelden",
-      "caption": "Öffne die Plattform unter **bbw-hko.ch**. BBW-Lehrpersonen melden sich mit **«Mit Microsoft (BBW) anmelden»** an — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.",
+      "value": "https://bbw-hko.ch/welcome",
+      "section": "Einstieg",
+      "caption": "Öffne die Plattform unter **bbw-hko.ch**. BBW-Lehrpersonen klicken auf **«Anmelden»** und melden sich mit ihrem BBW-Microsoft-Konto an — kein zusätzliches Passwort nötig. Wer nur schauen möchte, kann die Plattform auch als **Gast** besuchen.",
       "screenshot": true,
       "fullPage": false
     },
     {
-      "action": "screenshot",
+      "action": "goto",
+      "value": "/",
       "section": "Hauptplattform",
-      "caption": "Nach dem Login erscheint die **Hauptplattform** mit drei Einstiegs-Kacheln. Von hier führen alle Wege weiter — und über **«← Hauptplattform»** in der Navigationsleiste kommst du jederzeit wieder hierher zurück.",
+      "caption": "Nach der Anmeldung erscheint die **Hauptplattform**. Die zwei Hauptkacheln führen zu den zentralen Workflows: **Katalog Unterrichtseinheiten** (fertige Einheiten auswählen, Bundle herunterladen, unterrichten) und **Material einreichen** (eigenes HKO-Material teilen und von KT1 prüfen lassen). Unter **«Weitere Angebote»** findest du die Jahresplanung und die Sammlung der Herausforderungen.",
       "screenshot": true,
       "fullPage": false
     },
@@ -30,15 +31,23 @@
       "action": "goto",
       "value": "/einheiten",
       "section": "Einheiten-Katalog",
-      "caption": "Klicke auf **«Katalog Einheiten»** (oder navigiere direkt über die Leiste). Der Katalog zeigt alle fertigen Unterrichtseinheiten — jede enthält 3 Situationen A/B/C, einen Kompetenznachweis und ein Begleitdokument.",
+      "caption": "Klicke auf **«Katalog Unterrichtseinheiten»**. Der Katalog zeigt alle fertigen Unterrichtseinheiten — jede enthält 3 Herausforderungen A/B/C, einen Kompetenznachweis und ein Begleitdokument für Lehrpersonen.",
       "screenshot": true,
       "fullPage": false
     },
     {
+      "action": "waitForSelector",
+      "selector": "a[href^=\"/einheiten/1.\"]",
+      "state": "visible",
+      "timeout": 10000,
+      "screenshot": false,
+      "caption": ""
+    },
+    {
       "action": "scrollTo",
-      "selector": ".lion-bg >> nth=0",
+      "selector": "a[href^=\"/einheiten/1.\"] >> nth=0",
       "section": "Einheiten-Katalog",
-      "caption": "Jede **Einheiten-Karte** zeigt den Titel und das Kompetenzversprechen. **«Öffnen →»** öffnet die Werkbank; **«Lies mich!»** öffnet direkt das Lehrpersonen-Begleitdokument.",
+      "caption": "Jede **Einheiten-Karte** zeigt den Titel der Einheit und das Kompetenzversprechen. **«Öffnen →»** öffnet die Werkbank mit allen Dokumenten; **«Lies mich!»** öffnet direkt das Lehrpersonen-Begleitdokument.",
       "screenshot": true
     },
     {
@@ -80,7 +89,7 @@
       "action": "goto",
       "value": "/einheiten/1.1.1_konflikt_kommunizieren/feedback",
       "section": "Nach dem Unterricht",
-      "caption": "Nach dem Unterricht: Klicke in der Werkbank auf **«Feedback nach Unterricht»**. Das Formular erfasst, wie die Einheit lief — welche Situationen und KN-Typen eingesetzt wurden, was gut klappte und was verbessert werden sollte. Jedes Feedback fliesst direkt ins Review des Kernteams 1.",
+      "caption": "Nach dem Unterricht: Klicke in der Werkbank auf **«Feedback nach Unterricht»**. Das Formular erfasst, wie die Einheit lief — welche Herausforderungen und KN-Typen eingesetzt wurden, was gut klappte und was verbessert werden sollte. Jedes Feedback fliesst direkt ins Review des Kernteams 1.",
       "screenshot": true,
       "fullPage": false
     }

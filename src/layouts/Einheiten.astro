@@ -30,7 +30,7 @@ const error = Astro.url.searchParams.get('error')
           <a href="/einheiten" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/einheiten' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Katalog Unterrichtseinheiten</a>
           <a href="/glossar" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/glossar' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Glossar</a>
           {role === 'gast' && (
-            <a href="/situationen" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path.startsWith('/situationen') ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Katalog Situationen</a>
+            <a href="/situationen" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path.startsWith('/situationen') ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Sammlung Herausforderungen</a>
           )}
           <a href={role === 'kt1' ? '/admin' : '/'} class="px-4 py-1.5 rounded-md text-sm font-medium text-slate-500 hover:text-slate-800">← Hauptplattform</a>
         </nav>

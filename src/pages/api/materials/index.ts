@@ -29,6 +29,7 @@ export const POST: APIRoute = async ({ locals, request }) => {
       thema_titel: body.thema_titel,
       lebensbezug_nr: body.lebensbezug_nr || null,
       kompetenz_nr: body.kompetenz_nr || null,
+      kompetenz_nrs: body.kompetenz_nrs ?? [],
       titel: body.titel,
       abteilung: body.abteilung || null,
       schluesselkompetenzen: body.schluesselkompetenzen,

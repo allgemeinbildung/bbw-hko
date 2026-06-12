@@ -42,14 +42,14 @@
     },
     {
       "action": "scrollTo",
-      "selector": "h2:has-text(\"SK-Abdeckung\")",
+      "selector": "details.jp-notes >> nth=0",
       "section": "Themen & SK",
       "caption": "**SK-Abdeckungsmatrix** — Diese Tabelle zeigt, welche der 12 Schlüsselkompetenzen (SK) in welchem Thema eingeplant sind und in welcher Iterationstiefe: R1 = erste Begegnung (hellgrün), R2 = Wiederaufnahme (mittelgrün), R3 = Vertiefung (dunkelgrün). Graue Zeilen sind im 1. Lehrjahr nicht vorgesehen.",
       "screenshot": true
     },
     {
       "action": "scrollTo",
-      "selector": "details.jp-notes",
+      "selector": "details.jp-notes >> nth=1",
       "section": "Feiertage & Kalender",
       "caption": "**Feiertage & didaktische Hinweise** — Dieses ausklappbare Panel listet alle Wochen mit besonderem Vermerk: links Feiertage und Brückentage (z.B. Karfreitag, Auffahrt), rechts didaktische Hinweise wie geplante Kompetenznachweise oder Prüfungswochen.",
       "screenshot": true

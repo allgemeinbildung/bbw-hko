@@ -1,46 +1,46 @@
-﻿# ABU-Materialplattform — Einführung & Rundgang
+# ABU-Materialplattform — Einführung & Rundgang
 
-Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.
+Ein geführter Rundgang durch die Plattform — vom Einstieg über den Hub bis zur kompletten Unterrichtseinheit. Schritt für Schritt: wo ist was.
 
 
-## Anmelden
+## Einstieg
 
-### 1. Öffne die Plattform unter **bbw-hko.ch**. BBW-Lehrpersonen melden sich mit **«Mit Microsoft (BBW) anmelden»** an — kein zusätzliches Passwort nötig. Alternativ: Login mit E-Mail und Passwort.
+### 1. Öffne die Plattform unter **bbw-hko.ch**. BBW-Lehrpersonen klicken auf **«Anmelden»** und melden sich mit ihrem BBW-Microsoft-Konto an — kein zusätzliches Passwort nötig. Wer nur schauen möchte, kann die Plattform auch als **Gast** besuchen.
 
-![1](screenshots/00-ffne-die-plattform-unter-bbw-hko-vercel-.png)
+![1](screenshots/00-ffne-die-plattform-unter-bbw-hko-ch-bbw-.png)
 
-<sub>http://localhost:4321/</sub>
+<sub>https://bbw-hko.ch/welcome</sub>
 
 
 ## Hauptplattform
 
-### 2. Nach dem Login erscheint die **Hauptplattform** mit drei Einstiegs-Kacheln. Von hier führen alle Wege weiter — und über **«← Hauptplattform»** in der Navigationsleiste kommst du jederzeit wieder hierher zurück.
+### 2. Nach der Anmeldung erscheint die **Hauptplattform**. Die zwei Hauptkacheln führen zu den zentralen Workflows: **Katalog Unterrichtseinheiten** (fertige Einheiten auswählen, Bundle herunterladen, unterrichten) und **Material einreichen** (eigenes HKO-Material teilen und von KT1 prüfen lassen). Unter **«Weitere Angebote»** findest du die Jahresplanung und die Sammlung der Herausforderungen.
 
-![2](screenshots/01-nach-dem-login-erscheint-die-hauptplattf.png)
+![2](screenshots/01-nach-der-anmeldung-erscheint-die-hauptpl.png)
 
 <sub>http://localhost:4321/</sub>
 
 
 ## Einheiten-Katalog
 
-### 3. Klicke auf **«Katalog Einheiten»** (oder navigiere direkt über die Leiste). Der Katalog zeigt alle fertigen Unterrichtseinheiten — jede enthält 3 Situationen A/B/C, einen Kompetenznachweis und ein Begleitdokument.
+### 3. Klicke auf **«Katalog Unterrichtseinheiten»**. Der Katalog zeigt alle fertigen Unterrichtseinheiten — jede enthält 3 Herausforderungen A/B/C, einen Kompetenznachweis und ein Begleitdokument für Lehrpersonen.
 
-![3](screenshots/02-klicke-auf-katalog-einheiten-oder-navigi.png)
+![3](screenshots/02-klicke-auf-katalog-unterrichtseinheiten-.png)
 
 <sub>http://localhost:4321/einheiten</sub>
 
-### 4. Jede **Einheiten-Karte** zeigt auf einen Blick: Kompetenz-Nr., Lehrgang, Thema, das Kompetenzversprechen, die drei Situationen A · B · C sowie die Aspekte. **«Bundle: N Dateien →»** öffnet die Werkbank; **«Begleiter ↗»** öffnet direkt das Lehrpersonen-Begleitdokument.
+### 4. Jede **Einheiten-Karte** zeigt den Titel der Einheit und das Kompetenzversprechen. **«Öffnen →»** öffnet die Werkbank mit allen Dokumenten; **«Lies mich!»** öffnet direkt das Lehrpersonen-Begleitdokument.
 
-![4](screenshots/03-jede-einheiten-karte-zeigt-auf-einen-bli.png)
+![4](screenshots/03-jede-einheiten-karte-zeigt-den-titel-der.png)
 
 <sub>http://localhost:4321/einheiten</sub>
 
 
 ## Werkbank
 
-### 5. Klicke auf **«Bundle: N Dateien →»**, um die **Werkbank** zu öffnen. Links die Navigationsleiste (Sidebar), rechts die grosse Dokumentvorschau.
+### 5. Klicke auf **«Öffnen →»**, um die **Werkbank** zu öffnen. Links die Navigationsleiste (Sidebar), rechts die grosse Dokumentvorschau.
 
-![5](screenshots/04-klicke-auf-bundle-n-dateien-um-die-werkb.png)
+![5](screenshots/04-klicke-auf-ffnen-um-die-werkbank-zu-ffne.png)
 
 <sub>http://localhost:4321/einheiten/1.1.1_konflikt_kommunizieren</sub>
 
@@ -65,7 +65,7 @@ Ein geführter Rundgang durch die Plattform — vom Login über den Hub bis zur 
 
 ## Nach dem Unterricht
 
-### 9. Nach dem Unterricht: Klicke in der Werkbank auf **«Feedback nach Unterricht»**. Das Formular erfasst, wie die Einheit lief — welche Situationen und KN-Typen eingesetzt wurden, was gut klappte und was verbessert werden sollte. Jedes Feedback fliesst direkt ins Review des Kernteams 1.
+### 9. Nach dem Unterricht: Klicke in der Werkbank auf **«Feedback nach Unterricht»**. Das Formular erfasst, wie die Einheit lief — welche Herausforderungen und KN-Typen eingesetzt wurden, was gut klappte und was verbessert werden sollte. Jedes Feedback fliesst direkt ins Review des Kernteams 1.
 
 ![9](screenshots/08-nach-dem-unterricht-klicke-in-der-werkba.png)
 

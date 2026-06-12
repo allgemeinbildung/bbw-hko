@@ -44,19 +44,36 @@ const sitColors: Record<string, string> = {
   D: 'bg-amber-100 text-amber-800 border-amber-200',
   E: 'bg-violet-100 text-violet-800 border-violet-200',
 }
+
+// Group by set (strip _sit_X suffix)
+function setKeyFor(id: string): string {
+  return id.replace(/_sit_[A-Z]$/, '')
+}
+
+const groupMap = new Map<string, typeof filtered>()
+for (const e of filtered) {
+  const key = setKeyFor(e.id)
+  if (!groupMap.has(key)) groupMap.set(key, [])
+  groupMap.get(key)!.push(e)
+}
+for (const entries of groupMap.values()) {
+  entries.sort((a, b) => (a.sit_letter ?? '').localeCompare(b.sit_letter ?? ''))
+}
+const groups = [...groupMap.entries()]
 ---
 <Situationen title="Situationen" role={role}>
-  <div class="mb-5 flex items-end justify-between gap-4">
-    <div>
-      <h1 class="text-2xl font-semibold">Situationen-Katalog</h1>
-      <p class="text-sm text-slate-500 mt-1">
-        {filtered.length} von {situationenIndex.length} Situationen · gefiltert nach nRLP
-      </p>
+  <div class="mb-5">
+    <div class="flex items-end justify-between gap-4 mb-4">
+      <div>
+        <h1 class="text-2xl font-semibold">Sammlung Herausforderungen</h1>
+        <p class="text-sm text-slate-500 mt-1">
+          {filtered.length} von {situationenIndex.length} Situationen · gefiltert nach nRLP
+        </p>
+      </div>
     </div>
-    <p class="text-xs text-slate-500 max-w-md text-right hidden md:block">
-      Wähle eine Situation, teste sie im Unterricht und gib uns Feedback.
-      Eigenes Material zusätzlich? → <a href="/einreichen" class="underline">Einreichen</a>
-    </p>
+    <div class="bg-[var(--brand-tint)] border border-[var(--brand)] border-opacity-30 rounded-lg px-4 py-3 text-sm text-slate-700">
+      Die aufgeführten Materialien stammen von <a href="https://abu-hko.ch" target="_blank" rel="noopener" class="font-medium underline">abu-hko.ch</a> und sind zur Verwendung mit dem Lehrmittel <span class="font-medium">Allgemeinbildung</span> gedacht. Sie dienen als <span class="font-medium">Inspiration</span> für den Unterricht und können frei eingesetzt werden. Für weitere Informationen oder Fragen: <a href="mailto:pietro.rossi@bbw.ch" class="font-medium underline">Pietro Rossi</a>.
+    </div>
   </div>
 
   <SituationenFilterBar filters={filters} entries={situationenIndex} />
@@ -67,41 +84,51 @@ const sitColors: Record<string, string> = {
     </div>
   )}
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {filtered.map((e) => {
-      const lj = lehrjahrForEntry(e)
-      const sit = e.sit_letter ?? '?'
-      const colorClass = sitColors[sit] ?? 'bg-slate-100 text-slate-700 border-slate-200'
+  <div class="space-y-4">
+    {groups.map(([setKey, entries]) => {
+      const rep = entries[0]
+      const lj = lehrjahrForEntry(rep)
+      const setNr = setKey.match(/^[\d.]+/)?.[0] ?? setKey
       return (
-        <a href={`/situationen/${e.id}`} class="lion-bg block bg-white border border-slate-200 rounded-lg p-4 hover:border-[var(--brand)] hover:shadow-sm transition">
-          <div class="flex items-start justify-between gap-2 mb-2">
-            <div class="flex items-center gap-2">
-              <span class={`inline-flex items-center justify-center w-8 h-8 rounded-md border text-sm font-bold ${colorClass}`}>{sit}</span>
-              <div class="text-xs text-slate-500">
-                <div class="font-mono">{e.kompetenz_nr}</div>
-                {lj && <div>{lj}. Lehrjahr</div>}
-              </div>
+        <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+          <div class="px-4 py-3 border-b border-slate-100 bg-slate-50 flex items-center gap-3">
+            <span class="font-mono text-sm font-semibold text-slate-700">{rep.kompetenz_nr ?? setNr}</span>
+            {rep.modul_titel && <span class="text-sm text-slate-700">{rep.modul_titel}</span>}
+            <div class="flex items-center gap-3 ml-auto text-xs text-slate-400">
+              {lj && <span>{lj}. Lehrjahr</span>}
+              <span>{entries.length} Situation{entries.length !== 1 ? 'en' : ''}</span>
             </div>
-            {e.emotion_tag && (
-              <span class="chip">{e.emotion_tag}</span>
-            )}
           </div>
-          <h3 class="font-semibold text-slate-900 leading-snug mb-1">{e.titel ?? e.id}</h3>
-          {e.persona && (
-            <p class="text-xs text-slate-500 mb-2">
-              {[e.persona.beruf, e.persona.betrieb, e.persona.ort].filter(Boolean).join(' · ')}
-            </p>
-          )}
-          {e.handlungsprodukt_format && (
-            <p class="text-xs text-slate-700 mb-2">
-              <span class="font-medium">Handlungsprodukt:</span> {e.handlungsprodukt_format}
-            </p>
-          )}
-          <div class="flex flex-wrap gap-1 mt-2">
-            {e.aspekte.map((a) => <span class="chip chip-blue">{a}</span>)}
-            {e.sk.map((n) => <span class="chip chip-green">SK {n}</span>)}
+          <div class={`grid grid-cols-2 sm:grid-cols-3 ${entries.length >= 5 ? 'lg:grid-cols-5' : entries.length === 4 ? 'lg:grid-cols-4' : entries.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} divide-x divide-y divide-slate-100`}>
+            {entries.map((e) => {
+              const sit = e.sit_letter ?? '?'
+              const colorClass = sitColors[sit] ?? 'bg-slate-100 text-slate-700 border-slate-200'
+              return (
+                <a href={`/situationen/${e.id}`} class="lion-bg block bg-white p-4 hover:bg-[var(--brand-tint)] transition group">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class={`inline-flex items-center justify-center w-8 h-8 rounded-md border text-sm font-bold ${colorClass}`}>{sit}</span>
+                    {e.emotion_tag && <span class="chip text-[10px]">{e.emotion_tag}</span>}
+                  </div>
+                  <h3 class="font-semibold text-slate-900 text-sm leading-snug mb-1 group-hover:text-[var(--brand)]">{e.titel ?? e.id}</h3>
+                  {e.persona && (
+                    <p class="text-[10px] text-slate-400 mb-2 leading-tight">
+                      {[e.persona.beruf, e.persona.ort].filter(Boolean).join(' · ')}
+                    </p>
+                  )}
+                  {e.handlungsprodukt_format && (
+                    <p class="text-[10px] text-slate-600 mb-2">
+                      <span class="font-medium">HP:</span> {e.handlungsprodukt_format}
+                    </p>
+                  )}
+                  <div class="flex flex-wrap gap-1 mt-auto">
+                    {e.aspekte.slice(0, 2).map((a) => <span class="chip chip-blue text-[10px]">{a}</span>)}
+                    {e.sk.map((n) => <span class="chip chip-green text-[10px]">SK {n}</span>)}
+                  </div>
+                </a>
+              )
+            })}
           </div>
-        </a>
+        </div>
       )
     })}
   </div>

@@ -137,16 +137,24 @@ const isEdit = !!materialId
             <div x-show="errors.lebensbezug_nr" class="text-xs text-red-600 mt-1">Bitte Lebensbezug wählen.</div>
           </div>
 
-          <!-- Kompetenz — only when a Lebensbezug is selected -->
+          <!-- Kompetenz(en) — Mehrfachauswahl, sobald ein Lebensbezug gewählt ist -->
           <div class="col-span-3" x-show="form.lebensbezug_nr && currentKompetenzen.length > 0">
-            <label class="field-label">Kompetenz <span class="text-red-500">*</span></label>
-            <select x-model="form.kompetenz_nr" @change="onKompetenzChange()" class="input mt-2" :class="errors.kompetenz_nr ? 'invalid' : ''">
-              <option value="">— wählen —</option>
+            <div class="flex items-baseline justify-between">
+              <label class="field-label">
+                Kompetenz(en) <span class="text-red-500">*</span>
+                <span class="font-normal normal-case text-slate-400">— Mehrfachauswahl möglich</span>
+              </label>
+              <span class="text-xs" :class="form.kompetenz_nrs.length >= 1 ? 'text-emerald-600' : 'text-amber-600'" x-text="form.kompetenz_nrs.length + ' gewählt'"></span>
+            </div>
+            <div class="space-y-1.5 mt-1.5">
               <template x-for="kn in currentKompetenzen" :key="kn.nr">
-                <option :value="kn.nr" x-text="kn.nr + ' — ' + kn.text"></option>
+                <label class="check-item items-start" :class="form.kompetenz_nrs.includes(kn.nr) ? 'checked' : ''">
+                  <input type="checkbox" :value="kn.nr" x-model="form.kompetenz_nrs" @change="onKompetenzToggle()">
+                  <span><span class="font-medium" x-text="kn.nr"></span> — <span x-text="kn.text"></span></span>
+                </label>
               </template>
-            </select>
-            <div x-show="errors.kompetenz_nr" class="text-xs text-red-600 mt-1">Bitte Kompetenz wählen.</div>
+            </div>
+            <div x-show="errors.kompetenz_nrs" class="text-xs text-red-600 mt-1">Bitte mindestens eine Kompetenz wählen.</div>
           </div>
 
           <!-- Kompetenzversprechen — the backward-design anchor -->
@@ -268,34 +276,6 @@ const isEdit = !!materialId
             ></textarea>
             <div x-show="errors.herausforderung_text" class="text-xs text-red-600 mt-1">Pflichtfeld.</div>
             <div class="text-xs text-slate-400 mt-1.5" x-text="form.herausforderung_text.length + ' Zeichen'"></div>
-          </div>
-
-          <div class="bg-white border border-slate-200 rounded-lg p-4 space-y-3">
-            <div>
-              <label class="field-label">Leitfrage <span class="text-red-500">*</span></label>
-              <input
-                type="text"
-                x-model="form.leitfrage"
-                placeholder="z. B. «Was sagt mein Lehrvertrag, und welche Position kann ich sachlich begründen?»"
-                class="input mt-1.5"
-                :class="errors.leitfrage ? 'invalid' : ''"
-              >
-              <div x-show="errors.leitfrage" class="text-xs text-red-600 mt-1">Pflichtfeld.</div>
-            </div>
-            <div>
-              <label class="field-label">
-                Mehrdeutigkeit / Trade-off <span class="text-red-500">*</span>
-                <span class="font-normal normal-case text-slate-400">— der echte Zielkonflikt, der die Situation handlungsorientiert macht</span>
-              </label>
-              <textarea
-                x-model="form.mehrdeutigkeit"
-                rows="2"
-                placeholder="z. B. «Eigene Rechte durchsetzen vs. Beziehung zum Berufsbildner erhalten — beide Pole sind legitim.»"
-                class="input mt-1.5 resize-none"
-                :class="errors.mehrdeutigkeit ? 'invalid' : ''"
-              ></textarea>
-              <div x-show="errors.mehrdeutigkeit" class="text-xs text-red-600 mt-1">Pflichtfeld — ohne Trade-off ist es eine Wissensfrage, keine Handlungssituation.</div>
-            </div>
           </div>
 
           <!-- Handlungsprodukt -->
@@ -595,6 +575,9 @@ function intakeForm(materialId) {
             thema_titel:                 d.thema_titel                 || '',
             lebensbezug_nr:              d.lebensbezug_nr              || '',
             kompetenz_nr:                d.kompetenz_nr                || '',
+            kompetenz_nrs:               Array.isArray(d.kompetenz_nrs) && d.kompetenz_nrs.length
+                                           ? d.kompetenz_nrs
+                                           : (d.kompetenz_nr ? [d.kompetenz_nr] : []),
             titel:                       d.titel                       || '',
             abteilung:                   d.abteilung                   || '',
             kompetenzversprechen:        d.kompetenzversprechen        || '',
@@ -603,8 +586,6 @@ function intakeForm(materialId) {
             sprachmodus_primaer:         d.sprachmodus_primaer         || '',
             sprachmodi_sekundaer:        d.sprachmodi_sekundaer        || [],
             herausforderung_text:        d.herausforderung_text        || '',
-            leitfrage:                   d.leitfrage                   || '',
-            mehrdeutigkeit:              d.mehrdeutigkeit              || '',
             handlungsprodukt_typ:        d.handlungsprodukt_typ        || '',
             handlungsprodukt_beschreibung: d.handlungsprodukt_beschreibung || '',
             kn_format:                   d.kn_format                   || '',
@@ -657,6 +638,7 @@ function intakeForm(materialId) {
         thema_titel: '',
         lebensbezug_nr: '',
         kompetenz_nr: '',
+        kompetenz_nrs: [],
         titel: '',
         abteilung: '',
         kompetenzversprechen: '',
@@ -665,8 +647,6 @@ function intakeForm(materialId) {
         sprachmodus_primaer: '',
         sprachmodi_sekundaer: [],
         herausforderung_text: '',
-        leitfrage: '',
-        mehrdeutigkeit: '',
         handlungsprodukt_typ: '',
         handlungsprodukt_beschreibung: '',
         kn_format: '',
@@ -708,6 +688,7 @@ function intakeForm(materialId) {
       this.form.thema_titel = ''
       this.form.lebensbezug_nr = ''
       this.form.kompetenz_nr = ''
+      this.form.kompetenz_nrs = []
       if (this.form.lehrdauer) this.loadNrlp(this.form.lehrdauer)
     },
 
@@ -723,20 +704,49 @@ function intakeForm(materialId) {
       return lb?.kompetenzen || []
     },
 
+    // Alle gewählten Kompetenz-Objekte (Mehrfachauswahl).
+    get selectedKompetenzen() {
+      const nrs = this.form.kompetenz_nrs || []
+      return this.currentKompetenzen.filter(x => nrs.includes(x.nr))
+    },
+
+    // Primäre (erste) gewählte Kompetenz — für Hinweistexte & Versprechen-Autofill.
     get selectedKompetenz() {
-      if (!this.form.kompetenz_nr) return null
-      return this.currentKompetenzen.find(x => x.nr === this.form.kompetenz_nr) || null
+      return this.selectedKompetenzen[0] || null
+    },
+
+    // Lehrplan-Kürzel (bezeichnung) zu Voll-Satz: skFullName ist short→full,
+    // die Thema-SK stehen aber als Voll-Sätze im nRLP. Wir brauchen full→short,
+    // damit die Checkbox-Werte (short bezeichnung) tatsächlich getroffen werden.
+    skShortFor(value) {
+      if (!value) return value
+      // schon ein Kurzname?
+      if (this.skFullName[value] !== undefined) return value
+      for (const [short, full] of Object.entries(this.skFullName)) {
+        if (full && full === value) return short
+      }
+      return value
     },
 
     get vorschlag() {
       const t = this.nrlp && this.form.thema_nr
         ? this.nrlp.themen.find(x => x.nr === this.form.thema_nr)
         : null
-      const kn = this.selectedKompetenz
+      const kns = this.selectedKompetenzen
+      const aspekte = []
+      const sprachmodi = []
+      kns.forEach(kn => {
+        ;(kn.gesellschaftliche_inhalte || []).forEach(g => {
+          if (!aspekte.includes(g.aspekt)) aspekte.push(g.aspekt)
+        })
+        ;(kn.sprachmodi || []).forEach(s => {
+          if (!sprachmodi.includes(s.modus)) sprachmodi.push(s.modus)
+        })
+      })
       return {
-        sk:        t?.schluesselkompetenzen || [],
-        aspekte:   kn ? kn.gesellschaftliche_inhalte.map(g => g.aspekt) : [],
-        sprachmodi: kn ? kn.sprachmodi.map(s => s.modus) : [],
+        sk:        (t?.schluesselkompetenzen || []).map(sk => this.skShortFor(sk)),
+        aspekte,
+        sprachmodi,
       }
     },
 
@@ -768,13 +778,17 @@ function intakeForm(materialId) {
       this.form.thema_titel = t ? t.titel : ''
       this.form.lebensbezug_nr = ''
       this.form.kompetenz_nr = ''
+      this.form.kompetenz_nrs = []
     },
 
     onLebensbezugChange() {
       this.form.kompetenz_nr = ''
+      this.form.kompetenz_nrs = []
     },
 
-    onKompetenzChange() {
+    onKompetenzToggle() {
+      // primäre Kompetenz nachführen (erste Auswahl, Rückwärtskompatibilität)
+      this.form.kompetenz_nr = this.form.kompetenz_nrs[0] || ''
       // Kompetenzversprechen mit dem Lehrplan-Satz vorbefüllen, wenn noch leer.
       const k = this.selectedKompetenz
       if (k && !this.form.kompetenzversprechen.trim()) {
@@ -850,13 +864,11 @@ function intakeForm(materialId) {
       if (!this.form.lehrjahr) e.lehrjahr = true
       if (!this.form.thema_nr) e.thema_nr = true
       if (this.currentLebensbezuege.length > 0 && !this.form.lebensbezug_nr) e.lebensbezug_nr = true
-      if (this.form.lebensbezug_nr && this.currentKompetenzen.length > 0 && !this.form.kompetenz_nr) e.kompetenz_nr = true
+      if (this.form.lebensbezug_nr && this.currentKompetenzen.length > 0 && this.form.kompetenz_nrs.length === 0) e.kompetenz_nrs = true
       if (!this.form.titel.trim()) e.titel = true
       if (!this.form.kompetenzversprechen.trim()) e.kompetenzversprechen = true
       if (!this.form.sprachmodus_primaer) e.sprachmodus_primaer = true
       if (!this.form.herausforderung_text.trim()) e.herausforderung_text = true
-      if (!this.form.leitfrage.trim()) e.leitfrage = true
-      if (!this.form.mehrdeutigkeit.trim()) e.mehrdeutigkeit = true
       if (!this.form.handlungsprodukt_typ) e.handlungsprodukt_typ = true
       if (!this.form.handlungsprodukt_beschreibung.trim()) e.handlungsprodukt_beschreibung = true
       if (!this.form.kn_format) e.kn_format = true
@@ -889,7 +901,8 @@ function intakeForm(materialId) {
             thema_nr: this.form.thema_nr,
             thema_titel: this.form.thema_titel,
             lebensbezug_nr: this.form.lebensbezug_nr || null,
-            kompetenz_nr: this.form.kompetenz_nr || null,
+            kompetenz_nr: this.form.kompetenz_nrs[0] || this.form.kompetenz_nr || null,
+            kompetenz_nrs: this.form.kompetenz_nrs || [],
             titel: this.form.titel,
             abteilung: this.form.abteilung || null,
             kompetenzversprechen: this.form.kompetenzversprechen,
@@ -898,8 +911,6 @@ function intakeForm(materialId) {
             sprachmodus_primaer: this.form.sprachmodus_primaer,
             sprachmodi_sekundaer: this.form.sprachmodi_sekundaer,
             herausforderung_text: this.form.herausforderung_text,
-            leitfrage: this.form.leitfrage,
-            mehrdeutigkeit: this.form.mehrdeutigkeit,
             handlungsprodukt_typ: this.form.handlungsprodukt_typ,
             handlungsprodukt_beschreibung: this.form.handlungsprodukt_beschreibung,
             kn_format: this.form.kn_format,

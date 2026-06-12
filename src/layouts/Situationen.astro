@@ -26,7 +26,7 @@ const error = Astro.url.searchParams.get('error')
           </span>
         </a>
         <nav class="flex gap-1 bg-slate-100 p-1 rounded-lg">
-          <a href="/situationen" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/situationen' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Katalog Situationen</a>
+          <a href="/situationen" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/situationen' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>Sammlung Herausforderungen</a>
           {role === 'kt1' && (
             <a href="/situationen/admin" class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path.startsWith('/situationen/admin') ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>KT1 · Feedbacks</a>
           )}
