@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+</style>
+</helmet>
+
+<div data-screen-label="Jahresplanung · Thema-Detail (Redesign)" style="min-height:100vh;background:#f8fafc;font-family:'DM Sans',system-ui,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased;">
+
+  <!-- App header -->
+  <header style="background:#ffffff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:30;">
+    <div style="max-width:980px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px;">
+      <img src="assets/logo-bbw.svg" alt="BBW" style="height:24px;width:auto;display:block;" />
+      <span style="font-size:13px;font-weight:600;color:#64748b;letter-spacing:.01em;">Materialplattform</span>
+      <a href="#" onClick="{{ noop }}" style="margin-left:auto;font-size:13px;font-weight:600;color:#475569;text-decoration:none;">← Gesamtübersicht</a>
+      <span style="font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:8px;">
+        <span style="width:26px;height:26px;border-radius:9999px;background:#e8f3ec;color:#094d28;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">PR</span>
+        pietro.rossi@bbw.ch
+      </span>
+    </div>
+  </header>
+
+  <main style="max-width:980px;margin:0 auto;padding:32px 24px 80px;">
+
+    <!-- Notes toggle strip -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#94a3b8;">Redesign-Vorschau · /jahresplanung/thema/1</span>
+      <button onClick="{{ toggleNotes }}" style="{{ notesBtnStyle }}">
+        <span style="font-size:13px;">◐</span> UX-Notizen {{ notesLabel }}
+      </button>
+    </div>
+
+    <!-- ============ Hero (orientation, always visible) ============ -->
+    <div style="border:1px solid #e2e8f0;border-top:4px solid rgba(14,110,58,.5);background:#e8f3ec;border-radius:14px;padding:22px 24px;margin-bottom:18px;">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px;">
+        <div>
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#094d28;margin:0 0 8px;">EFZ 3-Jährige · 1. Lehrjahr</p>
+          <h1 style="font-size:28px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin:0;color:#0f172a;">Thema 1 — Ins Berufsleben einsteigen</h1>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">
+            <span style="font-size:12px;font-weight:600;color:#094d28;background:#fff;border:1px solid rgba(14,110,58,.25);border-radius:9999px;padding:4px 11px;">21 Lektionen</span>
+            <span style="font-size:12px;font-weight:600;color:#094d28;background:#fff;border:1px solid rgba(14,110,58,.25);border-radius:9999px;padding:4px 11px;">2 Lebensbezüge</span>
+            <span style="font-size:12px;font-weight:600;color:#094d28;background:#fff;border:1px solid rgba(14,110,58,.25);border-radius:9999px;padding:4px 11px;">5 Kompetenzen</span>
+          </div>
+        </div>
+        <a href="#" onClick="{{ noop }}" style="white-space:nowrap;font-size:13px;font-weight:700;color:#fff;background:#0E6E3A;border-radius:9px;padding:10px 16px;text-decoration:none;box-shadow:0 2px 8px -2px rgba(14,110,58,.5);">Zur Wochenplanung →</a>
+      </div>
+    </div>
+
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;gap:10px;align-items:flex-start;margin:0 2px 18px;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+        <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">1</span>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Orientierung bleibt oben.</strong> Titel, Umfang, Leitidee, Schlüsselkompetenzen und Sprachmodi sieht die Lehrperson sofort — das ist der schnelle Überblick. Erst die tiefe Detail-Gliederung wird aufgeräumt.</p>
+      </div>
+    </sc-if>
+
+    <!-- ============ Leitidee ============ -->
+    <section style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:16px;">
+      <h2 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#094d28;margin:0 0 10px;">Leitidee</h2>
+      <p style="font-size:15px;line-height:1.6;color:#1e293b;margin:0;">Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme neu eine Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.</p>
+      <sc-if value="{{ leitideeOpen }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size:14px;line-height:1.6;color:#475569;margin:12px 0 0;">Ich setze mich mit den Inhalten meines Lehrvertrags auseinander und erkenne meine Rechte und Pflichten im Berufsalltag. Dazu lese und verarbeite ich unterschiedliche Quellen, z. B. Verträge oder betriebliche Regelwerke und nutze Informationen gezielt für meine Situation. Ausserdem mache ich erste Erfahrungen damit, wie in meiner neuen Rolle kommuniziert wird, wie Zusammenarbeit im Team gelingt und wie Konflikte fair gelöst werden. Ich erweitere meine Lern- und Arbeitstechniken und gehe bewusst mit meinen Ressourcen um.</p>
+      </sc-if>
+      <button onClick="{{ toggleLeitidee }}" style="margin-top:10px;font-size:13px;font-weight:600;color:#094d28;background:none;border:none;cursor:pointer;font-family:inherit;padding:0;">{{ leitideeLabel }}</button>
+    </section>
+
+    <!-- ============ Taxonomie overview (orientation) ============ -->
+    <section style="display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-bottom:28px;">
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+        <h2 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#094d28;margin:0 0 12px;">Schlüsselkompetenzen</h2>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <sc-for list="{{ themeSK }}" as="sk" hint-placeholder-count="4">
+            <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:#334155;line-height:1.45;">
+              <span style="width:6px;height:6px;border-radius:9999px;background:#0E6E3A;margin-top:7px;flex-shrink:0;"></span>{{ sk }}
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+        <h2 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#094d28;margin:0 0 12px;">Sprachmodi</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;">
+          <sc-for list="{{ themeSM }}" as="sm" hint-placeholder-count="3">
+            <span style="font-size:12px;font-weight:600;color:#094d28;background:#e8f3ec;border-radius:9999px;padding:5px 11px;">{{ sm }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Lebensbezüge accordion ============ -->
+    <section>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0;color:#0f172a;">Lebensbezüge &amp; Kompetenzen</h2>
+        <span style="font-size:12px;color:#94a3b8;">Klick öffnet einen Lebensbezug</span>
+      </div>
+
+      <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:8px;margin:10px 2px 14px;">
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+            <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">2</span>
+            <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Aufklappbar statt alles offen.</strong> Früher war jeder Lebensbezug mit allen Kompetenzen, Inhalten und Sprachmodi gleichzeitig ausgebreitet — eine endlose Wand. Jetzt zeigt jeder Lebensbezug zuerst nur Kurztext und Umfang; das Detail öffnet sich auf Klick.</p>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+            <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">3</span>
+            <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Material zuerst, nRLP-Taxonomie auf Abruf.</strong> Was die Lehrperson direkt verwenden kann — fertige Einheiten und Situationen — steht im aufgeklappten Lebensbezug vorne und farbig hervorgehoben. Die feingliedrige nRLP-Gliederung (gesellschaftliche Inhalte, Sprachmodi je Kompetenz) liegt hinter einem dezenten „nRLP-Details“-Schalter.</p>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ lbs }}" as="lb" hint-placeholder-count="2">
+          <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
+            <!-- LB header -->
+            <button onClick="{{ lb.toggle }}" style="{{ lb.headStyle }}">
+              <span style="width:34px;height:34px;flex-shrink:0;border-radius:9px;background:#094d28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;">{{ lb.nr }}</span>
+              <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;">
+                <span style="font-size:15px;font-weight:600;color:#0f172a;line-height:1.35;">{{ lb.text }}</span>
+                <span style="display:flex;flex-wrap:wrap;gap:6px;">
+                  <span style="font-size:11px;font-weight:600;color:#64748b;background:#f1f5f9;border-radius:6px;padding:2px 8px;">{{ lb.lekLabel }}</span>
+                  <span style="font-size:11px;font-weight:600;color:#64748b;background:#f1f5f9;border-radius:6px;padding:2px 8px;">{{ lb.kompLabel }}</span>
+                  <span style="font-size:11px;font-weight:700;color:#094d28;background:#e8f3ec;border-radius:6px;padding:2px 8px;">{{ lb.matLabel }}</span>
+                </span>
+              </span>
+              <span style="{{ lb.chevStyle }}">▾</span>
+            </button>
+
+            <!-- LB body -->
+            <sc-if value="{{ lb.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 18px 18px;">
+                <!-- Material (elevated) -->
+                <div style="background:#f0f7f2;border:1px solid rgba(14,110,58,.2);border-radius:10px;padding:14px 16px;margin-bottom:16px;">
+                  <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#094d28;margin:0 0 10px;">✦ Fertiges Material für diesen Lebensbezug</p>
+                  <div style="display:flex;flex-direction:column;gap:8px;">
+                    <sc-for list="{{ lb.einheiten }}" as="e" hint-placeholder-count="2">
+                      <a href="#" onClick="{{ noop }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;text-decoration:none;">
+                        <span style="font-size:14px;font-weight:600;color:#0f172a;flex:1;min-width:160px;">{{ e.titel }}</span>
+                        <span style="font-size:11px;font-weight:700;color:#094d28;background:#e8f3ec;border-radius:5px;padding:2px 7px;">{{ e.komp }}</span>
+                        <span style="font-size:11px;color:#64748b;">{{ e.sitLabel }}</span>
+                        <sc-if value="{{ e.kn }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;text-transform:uppercase;color:#094d28;border:1px solid rgba(14,110,58,.35);border-radius:9999px;padding:1px 7px;">KN</span></sc-if>
+                        <sc-if value="{{ e.begleiter }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;text-transform:uppercase;color:#094d28;border:1px solid rgba(14,110,58,.35);border-radius:9999px;padding:1px 7px;">Begleiter</span></sc-if>
+                      </a>
+                    </sc-for>
+                  </div>
+                  <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#094d28;margin:14px 0 8px;">Situationen zur Inspiration</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                    <sc-for list="{{ lb.situationen }}" as="s" hint-placeholder-count="4">
+                      <a href="#" onClick="{{ noop }}" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:7px;padding:5px 9px;text-decoration:none;">
+                        <span style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:4px;font-size:10px;font-weight:700;background:#e8f3ec;color:#094d28;">{{ s.letter }}</span>{{ s.titel }}
+                      </a>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <!-- Kompetenzen -->
+                <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin:0 0 10px;">Kompetenzen</p>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <sc-for list="{{ lb.komps }}" as="k" hint-placeholder-count="3">
+                    <div style="border:1px solid #eef2f6;border-left:3px solid #0E6E3A;border-radius:8px;padding:12px 14px;">
+                      <p style="font-size:14px;color:#1e293b;line-height:1.5;margin:0;"><span style="font-weight:800;color:#094d28;margin-right:7px;">{{ k.nr }}</span>{{ k.text }}</p>
+                      <button onClick="{{ k.toggle }}" style="{{ k.detailsBtnStyle }}">{{ k.detailsLabel }}</button>
+                      <sc-if value="{{ k.detailsOpen }}" hint-placeholder-val="{{ false }}">
+                        <div style="margin-top:10px;padding-top:12px;border-top:1px dashed #e2e8f0;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                          <div>
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#94a3b8;margin:0 0 7px;">Gesellschaftliche Inhalte</p>
+                            <div style="display:flex;flex-direction:column;gap:7px;">
+                              <sc-for list="{{ k.gesell }}" as="g" hint-placeholder-count="2">
+                                <p style="font-size:12px;color:#475569;line-height:1.4;margin:0;"><span style="font-weight:700;color:#094d28;margin-right:5px;">{{ g.aspekt }}</span>{{ g.detail }}</p>
+                              </sc-for>
+                            </div>
+                          </div>
+                          <div>
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#94a3b8;margin:0 0 7px;">Sprachmodi</p>
+                            <div style="display:flex;flex-direction:column;gap:7px;">
+                              <sc-for list="{{ k.sprach }}" as="sp" hint-placeholder-count="2">
+                                <p style="font-size:12px;color:#475569;line-height:1.4;margin:0;"><span style="font-weight:700;color:#094d28;margin-right:5px;">{{ sp.modus }}</span>{{ sp.detail }}</p>
+                              </sc-for>
+                            </div>
+                          </div>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- Prev / next nav -->
+    <nav style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:28px;padding-top:18px;border-top:1px solid #e2e8f0;">
+      <span style="font-size:13px;color:#cbd5e1;">Erstes Thema</span>
+      <a href="#" onClick="{{ noop }}" style="font-size:13px;font-weight:700;color:#094d28;text-decoration:none;">Wochenplanung 1. Lehrjahr</a>
+      <a href="#" onClick="{{ noop }}" style="font-size:13px;font-weight:600;color:#475569;text-decoration:none;">T2 · Meinungen bilden und mitgestalten →</a>
+    </nav>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    showNotes: true,
+    leitidee: false,
+    openLb: { '1.1': true, '1.2': false },
+    openKomp: {},
+  };
+
+  LBS = [
+    { nr: '1.1', text: 'Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.', lekt: 15,
+      einheiten: [
+        { titel: 'Mein Lehrvertrag – Rechte & Pflichten', komp: '1.1.1', sit: 4, kn: true, begleiter: true },
+        { titel: 'Konflikte im Betrieb fair lösen', komp: '1.1.1', sit: 3, kn: false, begleiter: true },
+      ],
+      situationen: [
+        { letter: 'A', titel: 'Erster Arbeitstag' }, { letter: 'B', titel: 'Missverständnis im Team' },
+        { letter: 'C', titel: 'Frage an die Berufsbildnerin' }, { letter: 'D', titel: 'Gruppenchat-Regeln' },
+        { letter: 'E', titel: 'Feedback annehmen' },
+      ],
+      komps: [
+        { nr: '1.1.1', text: 'Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.',
+          gesell: [
+            { aspekt: 'Recht', detail: 'Lehrvertragsrecht, sozial akzeptable Lösungen' },
+            { aspekt: 'Ethik', detail: 'Perspektivenübernahme, Konfliktstrategien' },
+            { aspekt: 'Identität & Sozialisation', detail: 'Soziale Rollen, Rollenkonflikte' },
+          ],
+          sprach: [
+            { modus: 'Rezeption schriftlich/bildlich', detail: 'Zentrale Aussagen aus Texten entnehmen mit Markierhilfe und Lesestrategien' },
+            { modus: 'Interaktion mündlich', detail: 'Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen' },
+          ] },
+        { nr: '1.1.2', text: 'Ich kann die ausbildungsrelevanten IT-Infrastrukturen und digitalen Werkzeuge einrichten und sicher nutzen.',
+          gesell: [{ aspekt: 'Digitale Transformation', detail: 'Schutz- und Sicherheitsaspekte, arbeitserleichternde Nutzung' }],
+          sprach: [{ modus: 'Rezeption schriftlich/bildlich', detail: 'Orientierungs- und Suchmöglichkeiten auf Webseiten nutzen' }] },
+        { nr: '1.1.3', text: 'Ich kann Kommunikationstechnologien verantwortungsvoll und zielgruppengerecht einsetzen.',
+          gesell: [{ aspekt: 'Digitale Transformation', detail: 'Situative und zweckmässige Nutzung digitaler Kommunikationsregeln' }],
+          sprach: [{ modus: 'Interaktion digital', detail: 'Nach Konventionen kommunizieren' }] },
+      ] },
+    { nr: '1.2', text: 'Ich lerne effektiv und setze meine Ressourcen effizient ein.', lekt: 6,
+      einheiten: [
+        { titel: 'Lernen lernen – meine Strategien', komp: '1.2.1', sit: 2, kn: false, begleiter: true },
+      ],
+      situationen: [
+        { letter: 'A', titel: 'Prüfungsphase planen' }, { letter: 'B', titel: 'KI als Lernhilfe' }, { letter: 'C', titel: 'Lerngruppe organisieren' },
+      ],
+      komps: [
+        { nr: '1.2.1', text: 'Ich kann meine Lern- und Arbeitszeit in Hinblick auf meine neue Lebenssituation strukturiert planen und meine Planung bei Bedarf anpassen.',
+          gesell: [{ aspekt: 'Digitale Transformation', detail: 'Arbeitserleichternde Nutzung von Tools' }],
+          sprach: [{ modus: 'Interaktion mündlich', detail: 'An Gesprächen teilnehmen, Rückmeldung geben und annehmen' }] },
+        { nr: '1.2.2', text: 'Ich kann mich auf den nächsten Kompetenznachweis zielgerichtet und effektiv vorbereiten.',
+          gesell: [
+            { aspekt: 'Digitale Transformation', detail: 'Sinnvolle Anwendung von KI-Tools, zielgerichtetes Prompten' },
+            { aspekt: 'Identität & Sozialisation', detail: 'Lernstrategien, Selbstwirksamkeitsförderung' },
+          ],
+          sprach: [
+            { modus: 'Rezeption schriftlich/bildlich', detail: 'Zentrale Aussagen aus Texten entnehmen mit Lesestrategien' },
+            { modus: 'Interaktion digital', detail: 'Mit Tools der künstlichen Intelligenz interagieren' },
+          ] },
+      ] },
+  ];
+
+  SK = [
+    'Sich selbst Ziele setzen, die Zielsetzung überprüfen und sich adaptiv verhalten',
+    'In unterschiedlichen Teams zielgerichtet und effizient arbeiten',
+    'Eigene Standpunkte begründen und andere davon überzeugen',
+    'Die eigenen Lebensphasen planen und mit Unwägbarkeiten umgehen',
+  ];
+  SM = ['Rezeption schriftlich & bildlich', 'Interaktion & Kollaboration mündlich', 'Interaktion & Kollaboration digital'];
+
+  renderVals() {
+    const s = this.state;
+
+    const lbs = this.LBS.map((lb) => {
+      const isOpen = !!s.openLb[lb.nr];
+      const matCount = lb.einheiten.length + lb.situationen.length;
+      return {
+        nr: lb.nr, text: lb.text,
+        lekLabel: lb.lekt + ' Lektionen',
+        kompLabel: lb.komps.length + ' Kompetenzen',
+        matLabel: lb.einheiten.length + ' Einheiten · ' + lb.situationen.length + ' Situationen',
+        isOpen,
+        toggle: () => this.setState({ openLb: Object.assign({}, s.openLb, { [lb.nr]: !s.openLb[lb.nr] }) }),
+        headStyle: {
+          width: '100%', display: 'flex', alignItems: 'center', gap: '14px', textAlign: 'left',
+          padding: '16px 18px', border: 'none', cursor: 'pointer', fontFamily: 'inherit',
+          background: isOpen ? '#f8fafc' : '#fff',
+        },
+        chevStyle: { flexShrink: 0, color: '#94a3b8', fontSize: '15px', transition: 'transform .15s',
+          transform: isOpen ? 'rotate(0deg)' : 'rotate(-90deg)' },
+        einheiten: lb.einheiten.map((e) => ({ titel: e.titel, komp: e.komp, sitLabel: e.sit + ' Situationen', kn: e.kn, begleiter: e.begleiter })),
+        situationen: lb.situationen,
+        komps: lb.komps.map((k) => {
+          const open = !!s.openKomp[k.nr];
+          return {
+            nr: k.nr, text: k.text, gesell: k.gesell, sprach: k.sprach, detailsOpen: open,
+            detailsLabel: open ? '▾ nRLP-Details ausblenden' : '▸ nRLP-Details (gesellschaftliche Inhalte, Sprachmodi)',
+            toggle: () => this.setState({ openKomp: Object.assign({}, s.openKomp, { [k.nr]: !s.openKomp[k.nr] }) }),
+            detailsBtnStyle: { marginTop: '9px', fontSize: '12px', fontWeight: 600, color: '#64748b',
+              background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0 },
+          };
+        }),
+      };
+    });
+
+    return {
+      lbs, themeSK: this.SK, themeSM: this.SM,
+      showNotes: s.showNotes, notesLabel: s.showNotes ? 'an' : 'aus',
+      notesBtnStyle: {
+        display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 11px', borderRadius: '8px',
+        fontFamily: 'inherit', fontSize: '12px', fontWeight: 600, cursor: 'pointer',
+        border: '1px solid ' + (s.showNotes ? '#0E6E3A' : '#cbd5e1'),
+        background: s.showNotes ? '#0E6E3A' : '#fff', color: s.showNotes ? '#fff' : '#64748b',
+      },
+      leitideeOpen: s.leitidee, leitideeLabel: s.leitidee ? '▾ Weniger' : '▸ Ausführliche Leitidee',
+      toggleNotes: () => this.setState({ showNotes: !s.showNotes }),
+      toggleLeitidee: () => this.setState({ leitidee: !s.leitidee }),
+      noop: (e) => { if (e && e.preventDefault) e.preventDefault(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

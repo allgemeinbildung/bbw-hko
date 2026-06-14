@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  @keyframes jpPop{from{opacity:0;transform:translateY(-6px) scale(.98);}to{opacity:1;transform:none;}}
+  @keyframes jpToast{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+
+<div data-screen-label="Jahresplanung · Wochenplanung (Redesign)" style="min-height:100vh;background:#f8fafc;font-family:'DM Sans',system-ui,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased;">
+
+  <!-- App header -->
+  <header style="background:#ffffff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:30;">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px;">
+      <img src="assets/logo-bbw.svg" alt="BBW" style="height:24px;width:auto;display:block;" />
+      <span style="font-size:13px;font-weight:600;color:#64748b;letter-spacing:.01em;">Materialplattform</span>
+      <span style="margin-left:auto;font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:8px;">
+        <span style="width:26px;height:26px;border-radius:9999px;background:#e8f3ec;color:#094d28;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">PR</span>
+        pietro.rossi@bbw.ch
+      </span>
+    </div>
+  </header>
+
+  <main style="max-width:1180px;margin:0 auto;padding:32px 24px 80px;">
+
+    <!-- Notes toggle strip -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#94a3b8;">Redesign-Vorschau · /jahresplanung</span>
+      <button onClick="{{ toggleNotes }}" style="{{ notesBtnStyle }}">
+        <span style="font-size:13px;">◐</span> UX-Notizen {{ notesLabel }}
+      </button>
+    </div>
+
+    <!-- Title block -->
+    <div style="margin-bottom:20px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#94a3b8;margin:0 0 8px;font-weight:600;">Jahresplanung · EFZ 3-Jährige · nRLP Bildungsrat 2026</p>
+      <h1 style="font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin:0;color:#0f172a;">ABU 1. Lehrjahr — Schuljahr 2025/26</h1>
+      <p style="color:#475569;margin:12px 0 0;max-width:680px;font-size:15px;line-height:1.55;">38 Schulwochen · 3 Lektionen pro Woche. Die drei Themen werden chronologisch nacheinander unterrichtet. Fahre über eine Woche, um Lebensbezüge &amp; Kompetenzen einzusehen.</p>
+    </div>
+
+    <!-- Slice switcher (navigation context — always visible) -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:10px 14px;background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;">Lehrgang</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:600;background:#0E6E3A;color:#fff;">EFZ 3-Jährige</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:500;color:#475569;border:1px solid #e2e8f0;">EFZ 4-Jährige</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:500;color:#475569;border:1px solid #e2e8f0;">EBA 2-Jährige</span>
+      </div>
+      <span style="width:1px;height:22px;background:#e2e8f0;"></span>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;">Lehrjahr</span>
+        <span style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:700;background:#0E6E3A;color:#fff;">1</span>
+        <span style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:500;color:#475569;border:1px solid #e2e8f0;">2</span>
+        <span style="width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:500;color:#475569;border:1px solid #e2e8f0;">3</span>
+      </div>
+      <span style="width:1px;height:22px;background:#e2e8f0;"></span>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;">Schuljahr</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:600;color:#334155;border:1px solid #cbd5e1;background:#f8fafc;">2025/26 ▾</span>
+      </div>
+      <a href="#" onClick="{{ noop }}" style="margin-left:auto;font-size:13px;font-weight:700;color:#094d28;text-decoration:none;">Gesamtübersicht 3 Jahre →</a>
+    </div>
+
+    <!-- ============ TIER 1 — calm primary bar ============ -->
+    <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 1px 2px rgba(15,23,42,.04);">
+      <!-- Class context -->
+      <div style="position:relative;">
+        <button onClick="{{ toggleClassMenu }}" style="display:flex;align-items:center;gap:10px;padding:7px 12px;border-radius:10px;border:1px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-family:inherit;text-align:left;">
+          <span style="width:30px;height:30px;border-radius:8px;background:#e8f3ec;color:#094d28;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">{{ activeClassInitial }}</span>
+          <span style="display:flex;flex-direction:column;line-height:1.25;">
+            <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#94a3b8;">Klasse</span>
+            <span style="font-size:14px;font-weight:600;color:#0f172a;">{{ activeClassLabel }}</span>
+          </span>
+          <span style="margin-left:4px;color:#94a3b8;font-size:12px;">▾</span>
+        </button>
+        <sc-if value="{{ classMenuOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:calc(100% + 8px);left:0;width:288px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 24px 48px -20px rgba(15,23,42,.32);padding:6px;z-index:40;">
+            <sc-for list="{{ classes }}" as="c" hint-placeholder-count="3">
+              <button onClick="{{ c.pick }}" style="{{ c.rowStyle }}">
+                <span style="display:flex;flex-direction:column;line-height:1.3;">
+                  <span style="font-size:14px;font-weight:600;color:#0f172a;">{{ c.label }}</span>
+                  <span style="font-size:12px;color:#94a3b8;">{{ c.sub }}</span>
+                </span>
+                <span style="{{ c.checkStyle }}">✓</span>
+              </button>
+            </sc-for>
+            <div style="height:1px;background:#f1f5f9;margin:6px 4px;"></div>
+            <button onClick="{{ noop }}" style="width:100%;display:flex;align-items:center;gap:8px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:#094d28;">
+              <span style="font-size:16px;line-height:1;">＋</span> Neue Klasse anlegen
+            </button>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- Primary action + overflow live on the right -->
+      <div style="margin-left:auto;display:flex;align-items:center;gap:10px;">
+        <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#94a3b8;font-weight:500;margin-right:2px;">
+          <span style="color:#0E6E3A;">✓</span> Automatisch gespeichert
+        </span>
+        <button onClick="{{ togglePlan }}" style="{{ planBtnStyle }}">
+          <span style="font-size:14px;">{{ planBtnIcon }}</span> {{ planBtnLabel }}
+        </button>
+        <div style="position:relative;">
+          <button onClick="{{ toggleMore }}" title="Mehr" style="{{ moreBtnStyle }}">⋯</button>
+          <sc-if value="{{ moreOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:calc(100% + 8px);right:0;width:262px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 24px 48px -20px rgba(15,23,42,.32);padding:6px;z-index:40;">
+              <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;padding:8px 12px 4px;margin:0;">Export</p>
+              <button onClick="{{ exportExcel }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:#334155;text-align:left;">
+                <span style="width:20px;text-align:center;">⬇</span> Excel exportieren
+              </button>
+              <button onClick="{{ printPdf }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:#334155;text-align:left;">
+                <span style="width:20px;text-align:center;">🖨</span> Drucken / PDF
+              </button>
+              <div style="height:1px;background:#f1f5f9;margin:6px 4px;"></div>
+              <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;padding:8px 12px 4px;margin:0;">Referenz</p>
+              <button onClick="{{ openSk }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:#334155;text-align:left;">
+                <span style="width:20px;text-align:center;">▦</span> SK-Abdeckung anzeigen
+              </button>
+              <button onClick="{{ openFeiertage }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:#334155;text-align:left;">
+                <span style="width:20px;text-align:center;">☼</span> Feiertage &amp; Brückentage
+              </button>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 1 annotation -->
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;gap:10px;align-items:flex-start;margin:10px 2px 0;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+        <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">1</span>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Immer sichtbar — nur das Nötige.</strong> Statt 8 gleichwertiger Buttons bleiben 3 Dinge: welche Klasse, ein klarer „Planen“-Knopf und ein „⋯“ für selten Genutztes. „Klasse“ und „+ Neue Klasse“ sind im Auswahlmenü zusammengefasst.</p>
+      </div>
+    </sc-if>
+
+    <!-- ============ TIER 2 — contextual planning bar ============ -->
+    <sc-if value="{{ planMode }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:14px;background:#0E6E3A;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;box-shadow:0 8px 24px -12px rgba(14,110,58,.5);">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.7);">Planen</span>
+        <div style="display:flex;gap:6px;background:rgba(255,255,255,.14);padding:4px;border-radius:10px;">
+          <button onClick="{{ tabWochen }}" style="{{ tabWochenStyle }}">✎ Wochen anpassen</button>
+          <button onClick="{{ tabKn }}" style="{{ tabKnStyle }}">★ Kompetenznachweise</button>
+          <button onClick="{{ tabAbdeckung }}" style="{{ tabAbdeckungStyle }}">▣ Abdeckung prüfen</button>
+        </div>
+        <button onClick="{{ togglePlan }}" style="margin-left:auto;padding:8px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.0);color:#fff;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;">Fertig</button>
+      </div>
+      <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:10px;align-items:flex-start;margin:10px 2px 0;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+          <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">2</span>
+          <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Werkzeuge erscheinen erst im Planen-Modus.</strong> Bearbeiten, Kompetenznachweise und Abdeckung sind die drei Aufgaben beim Planen — gebündelt auf einer eigenen, farbigen Leiste, damit klar ist: „jetzt bearbeite ich“. Mit „Fertig“ zurück zur ruhigen Leseansicht.</p>
+        </div>
+      </sc-if>
+    </sc-if>
+
+    <!-- Reference panel (from ⋯) -->
+    <sc-if value="{{ refSk }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:16px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <h2 style="font-size:17px;font-weight:700;margin:0;color:#0f172a;">SK-Abdeckung · 1. Lehrjahr</h2>
+          <button onClick="{{ closeRef }}" style="font-size:13px;font-weight:600;color:#64748b;background:none;border:none;cursor:pointer;font-family:inherit;">Schliessen ✕</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr repeat(3,44px);gap:6px;font-size:13px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;align-self:end;">Schlüsselkompetenz</div>
+          <div style="text-align:center;font-size:12px;font-weight:700;color:#64748b;">T1</div>
+          <div style="text-align:center;font-size:12px;font-weight:700;color:#64748b;">T2</div>
+          <div style="text-align:center;font-size:12px;font-weight:700;color:#64748b;">T3</div>
+          <sc-for list="{{ skRows }}" as="r" hint-placeholder-count="6">
+            <div style="{{ r.nameStyle }}"><span style="font-weight:700;color:#94a3b8;margin-right:6px;">{{ r.nr }}</span>{{ r.name }}</div>
+            <div style="{{ r.c1Style }}">{{ r.c1 }}</div>
+            <div style="{{ r.c2Style }}">{{ r.c2 }}</div>
+            <div style="{{ r.c3Style }}">{{ r.c3 }}</div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;font-size:12px;color:#64748b;">
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:18px;border-radius:4px;background:#e8f3ec;color:#094d28;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">R1</span> erste Begegnung</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:18px;border-radius:4px;background:#0E6E3A;color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">R2</span> Wiederaufnahme</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:18px;border-radius:4px;background:#094d28;color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">R3</span> Vertiefung</span>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ refFeiertage }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:16px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+          <h2 style="font-size:17px;font-weight:700;margin:0;color:#0f172a;">Feiertage &amp; Brückentage</h2>
+          <button onClick="{{ closeRef }}" style="font-size:13px;font-weight:600;color:#64748b;background:none;border:none;cursor:pointer;font-family:inherit;">Schliessen ✕</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <sc-for list="{{ holidayList }}" as="h" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:12px;font-size:14px;">
+              <span style="font-size:11px;font-weight:700;color:#094d28;background:#e8f3ec;border-radius:5px;padding:2px 8px;flex-shrink:0;">KW {{ h.kw }}</span>
+              <span style="color:#94a3b8;font-size:13px;width:120px;flex-shrink:0;">{{ h.datum }}</span>
+              <span style="color:#334155;font-weight:500;">{{ h.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="font-size:12px;color:#94a3b8;font-style:italic;margin:14px 0 0;">Alle Schulwochen zählen 3 Lektionen — der Vermerk zeigt nur, wo mit reduzierter Präsenz zu rechnen ist.</p>
+      </div>
+    </sc-if>
+
+    <!-- ============ TIER 2 panels ============ -->
+    <sc-if value="{{ showKn }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:16px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:4px;flex-wrap:wrap;">
+          <h2 style="font-size:18px;font-weight:700;margin:0;color:#0f172a;">Kompetenznachweise planen</h2>
+          <span style="font-size:12px;color:#94a3b8;">≥ 3 KN pro Semester · je KN = 1 Note Gesellschaft + 1 Note Sprache</span>
+        </div>
+        <div style="display:grid;gap:16px;margin-top:14px;">
+          <sc-for list="{{ semesters }}" as="s" hint-placeholder-count="2">
+            <div style="border:1px solid #eef2f6;border-radius:11px;overflow:hidden;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 14px;background:#f8fafc;border-bottom:1px solid #eef2f6;">
+                <div style="display:flex;align-items:baseline;gap:10px;">
+                  <span style="font-size:15px;font-weight:700;color:#0f172a;">{{ s.title }}</span>
+                  <span style="font-size:12px;color:#94a3b8;">{{ s.themes }}</span>
+                </div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <span style="{{ s.knBadgeStyle }}">{{ s.knBadge }}</span>
+                  <span style="{{ s.gesBadgeStyle }}">{{ s.gesBadge }}</span>
+                  <span style="{{ s.sprBadgeStyle }}">{{ s.sprBadge }}</span>
+                </div>
+              </div>
+              <div style="padding:12px 14px;display:flex;flex-direction:column;gap:8px;">
+                <sc-for list="{{ s.slots }}" as="k" hint-placeholder-count="2">
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;border:1px solid #f1f5f9;border-left:3px solid #0E6E3A;border-radius:8px;padding:9px 11px;background:#f8fafc;">
+                    <span style="font-size:11px;font-weight:800;color:#094d28;background:#e8f3ec;border-radius:5px;padding:2px 7px;">{{ k.nr }}</span>
+                    <span style="font-size:13px;color:#334155;font-weight:600;">{{ k.format }}</span>
+                    <span style="font-size:12px;color:#64748b;padding:3px 9px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;">Sprache: {{ k.sprache }}</span>
+                    <span style="font-size:12px;color:#64748b;padding:3px 9px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;">Aspekt: {{ k.aspekt }}</span>
+                    <span style="font-size:12px;color:#64748b;padding:3px 9px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;">{{ k.sk }}</span>
+                  </div>
+                </sc-for>
+                <button onClick="{{ noop }}" style="align-self:flex-start;margin-top:2px;font-size:13px;font-weight:600;color:#094d28;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:8px;padding:7px 13px;cursor:pointer;font-family:inherit;">＋ KN hinzufügen</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showAbdeckung }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:16px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <h2 style="font-size:18px;font-weight:700;margin:0;color:#0f172a;">Abdeckung prüfen</h2>
+          <span style="font-size:12px;color:#94a3b8;">Sind alle Schlüsselkompetenzen vor dem Kompetenznachweis geübt?</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <sc-for list="{{ coverage }}" as="c" hint-placeholder-count="6">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:160px;flex-shrink:0;font-size:13px;color:#334155;font-weight:500;"><span style="font-weight:700;color:#94a3b8;margin-right:6px;">{{ c.nr }}</span>{{ c.name }}</span>
+              <div style="flex:1;height:9px;background:#f1f5f9;border-radius:9999px;overflow:hidden;">
+                <div style="{{ c.barStyle }}"></div>
+              </div>
+              <span style="{{ c.tagStyle }}">{{ c.tag }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ Stats (calm, always visible) ============ -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px;">
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin:0 0 6px;font-weight:600;">Schulwochen</p>
+        <p style="font-size:24px;font-weight:700;margin:0;color:#0f172a;">38</p>
+      </div>
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin:0 0 6px;font-weight:600;">Verfügbar</p>
+        <p style="font-size:24px;font-weight:700;margin:0;color:#0f172a;">114 L.</p>
+      </div>
+      <div style="background:#e8f3ec;border:1px solid rgba(14,110,58,.25);border-radius:10px;padding:14px 16px;">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#094d28;margin:0 0 6px;font-weight:600;">Unterricht</p>
+        <p style="font-size:24px;font-weight:700;margin:0;color:#094d28;">105 L.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin:0 0 6px;font-weight:600;">Puffer</p>
+        <p style="font-size:24px;font-weight:700;margin:0;color:#0f172a;">9 L.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin:0 0 6px;font-weight:600;">Ferienwochen</p>
+        <p style="font-size:24px;font-weight:700;margin:0;color:#0f172a;">8</p>
+      </div>
+    </div>
+
+    <!-- ============ Calendar + week detail ============ -->
+    <div style="display:flex;gap:16px;margin-top:24px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="flex:1;min-width:340px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+          <h2 style="font-size:18px;font-weight:700;margin:0;color:#0f172a;">Schuljahr Woche für Woche</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:#475569;align-items:center;">
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;border-radius:3px;background:#e8f3ec;border:1px solid rgba(14,110,58,.18);"></span>T1</span>
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;border-radius:3px;background:#0E6E3A;"></span>T2</span>
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;border-radius:3px;background:#094d28;"></span>T3</span>
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;border-radius:3px;background:#fff;border:1px dashed #cbd5e1;"></span>Puffer</span>
+            <span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;border-radius:3px;background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 4px,#e2e8f0 4px,#e2e8f0 8px);"></span>Ferien</span>
+          </div>
+        </div>
+        {{ calendarEl }}
+      </div>
+
+      <!-- Week detail aside -->
+      <aside style="width:300px;flex-shrink:0;position:sticky;top:80px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;box-shadow:0 1px 2px rgba(15,23,42,.04);">
+        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;margin:0 0 4px;">Wochendetail</p>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:2px;">
+          <span style="font-size:16px;font-weight:700;color:#0f172a;">{{ detail.kwLabel }}</span>
+          <span style="font-size:12px;color:#94a3b8;">{{ detail.dateLabel }}</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:6px;margin:6px 0 2px;">
+          <span style="{{ detail.dotStyle }}"></span>
+          <span style="font-size:14px;font-weight:600;color:#0f172a;">{{ detail.themeTitle }}</span>
+        </div>
+        <sc-if value="{{ detail.isTeach }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:12px;">
+            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#94a3b8;margin:0 0 7px;">Lebensbezüge im nRLP</p>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <sc-for list="{{ detail.lb }}" as="x" hint-placeholder-count="3">
+                <div style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#334155;line-height:1.4;">
+                  <span style="width:5px;height:5px;border-radius:9999px;background:#0E6E3A;margin-top:6px;flex-shrink:0;"></span>{{ x }}
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:14px;padding-top:12px;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:12px;color:#94a3b8;">{{ detail.lessonsLabel }}</span>
+              <a href="#" onClick="{{ noop }}" style="font-size:12px;font-weight:700;color:#094d28;text-decoration:none;">Thema-Details →</a>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ detail.isHoliday }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:13px;color:#94a3b8;font-style:italic;margin:12px 0 0;line-height:1.5;">Ferienwoche — kein Unterricht. Alle anderen Schulwochen zählen 3 Lektionen.</p>
+        </sc-if>
+        <p style="font-size:11px;color:#cbd5e1;margin:14px 0 0;">Tipp: über eine Woche fahren, um Details zu sehen.</p>
+      </aside>
+    </div>
+
+    <!-- ============ Theme cards ============ -->
+    <section style="margin-top:28px;">
+      <h2 style="font-size:18px;font-weight:700;margin:0 0 14px;color:#0f172a;">Themen im 1. Lehrjahr</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <sc-for list="{{ themeCards }}" as="t" hint-placeholder-count="3">
+          <div style="{{ t.cardStyle }}">
+            <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin:0 0 4px;">Thema {{ t.nr }} · Details →</p>
+            <h3 style="font-size:16px;font-weight:700;margin:0 0 14px;color:#0f172a;line-height:1.3;">{{ t.titel }}</h3>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+              <div><p style="font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#94a3b8;margin:0 0 2px;font-weight:600;">Unterricht</p><p style="font-size:15px;font-weight:700;margin:0;color:#0f172a;">{{ t.lekt }} L.</p></div>
+              <div><p style="font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#94a3b8;margin:0 0 2px;font-weight:600;">Puffer</p><p style="font-size:15px;font-weight:700;margin:0;color:#0f172a;">{{ t.puffer }} L.</p></div>
+              <div><p style="font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#94a3b8;margin:0 0 2px;font-weight:600;">Total</p><p style="font-size:15px;font-weight:700;margin:0;color:#0f172a;">{{ t.total }} L.</p></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <sc-if value="{{ toast }}" hint-placeholder-val="">
+    <div style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;box-shadow:0 16px 40px -12px rgba(15,23,42,.5);z-index:60;">{{ toast }}</div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    plan: false,
+    tab: 'wochen',
+    moreOpen: false,
+    classMenuOpen: false,
+    activeClass: '25a',
+    ref: null,          // 'sk' | 'feiertage'
+    showNotes: true,
+    toast: '',
+    hover: 9,
+  };
+
+  CLASSES = [
+    { id: 'vorlage', label: 'Basisvorlage', sub: 'Schulstandard · schreibgeschützt' },
+    { id: '25a', label: '25a · Detailhandel EFZ', sub: 'Mo 08:00 · 18 Lernende' },
+    { id: '25b', label: '25b · Logistik EFZ', sub: 'Di 10:00 · 16 Lernende' },
+  ];
+
+  THEMES = [
+    { nr: 1, titel: 'Ins Berufsleben einsteigen', tier: 1, teach: 7, lekt: 21, puffer: 3,
+      lb: ['Lehrvertrag · Rechte & Pflichten', 'Lern- & Arbeitstechniken', 'Kommunikation & Teamarbeit'] },
+    { nr: 2, titel: 'Meinungen bilden und mitgestalten', tier: 2, teach: 13, lekt: 33, puffer: 3,
+      lb: ['Meinungsbildung & Medien', 'Politische Mitgestaltung', 'Kunst & Ausdrucksformen'] },
+    { nr: 3, titel: 'Bewusst konsumieren und handeln', tier: 3, teach: 14, lekt: 36, puffer: 3,
+      lb: ['Konsumentscheidungen treffen', 'Konsumrecht & Budget', 'Ökologie im Konsum'] },
+  ];
+
+  COLORS = {
+    1: { background: '#e8f3ec', color: '#094d28', border: '1px solid rgba(14,110,58,0.18)' },
+    2: { background: '#0E6E3A', color: '#ffffff', border: '1px solid #0E6E3A' },
+    3: { background: '#094d28', color: '#ffffff', border: '1px solid #094d28' },
+  };
+
+  HOLIDAYS = { 41: 'Herbstferien', 42: 'Herbstferien', 52: 'Weihnachtsferien', 1: 'Weihnachtsferien', 6: 'Sportferien', 7: 'Sportferien', 17: 'Frühlingsferien', 18: 'Frühlingsferien' };
+  ABBR = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+
+  fmt(d) { return d.getDate() + '. ' + this.ABBR[d.getMonth()]; }
+
+  buildWeeks() {
+    const seq = [];
+    for (let k = 34; k <= 52; k++) seq.push(k);
+    for (let k = 1; k <= 27; k++) seq.push(k);
+    const start = new Date(2025, 7, 18);
+    let bi = 0, used = 0, widx = 0;
+    const out = [];
+    for (const kw of seq) {
+      const date = new Date(start); date.setDate(start.getDate() + widx * 7); widx++;
+      const dl = this.fmt(date);
+      if (this.HOLIDAYS[kw]) {
+        out.push({ kw, kwLabel: 'KW ' + kw, dateLabel: dl, type: 'holiday', themeTitle: this.HOLIDAYS[kw], short: this.HOLIDAYS[kw], lessons: 0, lb: [], isTeach: false, isHoliday: true,
+          style: { background: 'repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 6px,#e2e8f0 6px,#e2e8f0 12px)', color: '#94a3b8', border: '1px solid #e2e8f0' } });
+        continue;
+      }
+      const blk = this.THEMES[bi];
+      if (used >= blk.teach) {
+        const isLastBlock = bi === this.THEMES.length - 1;
+        out.push({ kw, kwLabel: 'KW ' + kw, dateLabel: dl, type: 'buffer', themeNr: blk.nr, themeTitle: isLastBlock ? 'Puffer · Kompetenznachweis' : 'Puffer / Repetition', short: isLastBlock ? 'Puffer · KN ★' : 'Puffer', lessons: 3, lb: blk.lb, isKn: isLastBlock, isTeach: true, isHoliday: false,
+          style: { background: '#ffffff', color: '#475569', border: '1px dashed #cbd5e1' } });
+        if (bi < this.THEMES.length - 1) { bi++; used = 0; }
+        continue;
+      }
+      used++;
+      out.push({ kw, kwLabel: 'KW ' + kw, dateLabel: dl, type: 'teach', themeNr: blk.nr, themeTitle: blk.titel, short: 'T' + blk.nr + ' · ' + blk.titel, lessons: 3, lb: blk.lb, tier: blk.tier, isTeach: true, isHoliday: false,
+        style: Object.assign({}, this.COLORS[blk.tier]) });
+    }
+    return out;
+  }
+
+  renderCalendar(weeks) {
+    const hover = this.state.hover;
+    return React.createElement('div', {
+      style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(128px,1fr))', gap: '8px' },
+    }, weeks.map((w, i) => {
+      const sel = hover === i;
+      const cellStyle = Object.assign({
+        borderRadius: '9px', padding: '8px 10px', minHeight: '64px', display: 'flex', flexDirection: 'column',
+        justifyContent: 'space-between', gap: '6px', font: 'inherit', textAlign: 'left',
+        cursor: w.type === 'holiday' ? 'default' : 'pointer', position: 'relative',
+        boxShadow: sel ? '0 0 0 2px #0E6E3A, 0 8px 18px -10px rgba(14,110,58,.5)' : 'none',
+        transition: 'box-shadow .12s, transform .12s', transform: sel ? 'translateY(-1px)' : 'none',
+      }, w.style);
+      const onEnter = w.type === 'holiday' ? undefined : () => this.setState({ hover: i });
+      const top = React.createElement('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' } },
+        React.createElement('span', { style: { fontSize: '11px', fontWeight: 700, opacity: .9 } }, 'KW ' + w.kw),
+        w.isKn
+          ? React.createElement('span', { style: { fontSize: '10px', fontWeight: 800, background: 'rgba(14,110,58,.12)', color: '#094d28', borderRadius: '4px', padding: '0 4px' } }, '★ KN')
+          : React.createElement('span', { style: { fontSize: '10px', opacity: .65 } }, w.dateLabel));
+      const bottom = React.createElement('span', { style: { fontSize: '11.5px', fontWeight: 600, lineHeight: 1.25 } }, w.short);
+      return React.createElement('button', { key: i, onMouseEnter: onEnter, onFocus: onEnter, onClick: () => this.setState({ hover: i }), style: cellStyle }, top, bottom);
+    }));
+  }
+
+  dotFor(detail) {
+    const map = { 1: '#7dc49a', 2: '#0E6E3A', 3: '#094d28' };
+    const bg = detail.isHoliday ? '#cbd5e1' : (detail.type === 'buffer' ? '#cbd5e1' : map[detail.tier] || '#0E6E3A');
+    return { width: '9px', height: '9px', borderRadius: '9999px', background: bg, display: 'inline-block' };
+  }
+
+  flash(msg) {
+    this.setState({ toast: msg, moreOpen: false });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ toast: '' }), 2400);
+  }
+
+  tabStyle(name) {
+    const on = this.state.tab === name;
+    return { padding: '7px 13px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontFamily: 'inherit',
+      fontSize: '13px', fontWeight: 600, whiteSpace: 'nowrap',
+      background: on ? '#ffffff' : 'transparent', color: on ? '#094d28' : 'rgba(255,255,255,.92)',
+      boxShadow: on ? '0 2px 6px -2px rgba(0,0,0,.2)' : 'none' };
+  }
+
+  badge(ok, label) {
+    return { fontSize: '11px', fontWeight: 700, padding: '3px 9px', borderRadius: '9999px',
+      background: ok ? '#e8f3ec' : '#fef3c7', color: ok ? '#094d28' : '#92400e',
+      border: ok ? '1px solid rgba(14,110,58,.25)' : '1px solid #fde68a' };
+  }
+
+  skCell(val) {
+    if (!val) return { v: '·', style: { textAlign: 'center', padding: '6px 0', borderRadius: '6px', background: '#f8fafc', color: '#cbd5e1', fontSize: '12px', fontWeight: 700 } };
+    const map = { R1: { background: '#e8f3ec', color: '#094d28' }, R2: { background: '#0E6E3A', color: '#fff' }, R3: { background: '#094d28', color: '#fff' } };
+    return { v: val, style: Object.assign({ textAlign: 'center', padding: '6px 0', borderRadius: '6px', fontSize: '12px', fontWeight: 700 }, map[val]) };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const weeks = this.buildWeeks();
+    const detailRaw = weeks[s.hover] || weeks[0];
+    const detail = Object.assign({}, detailRaw, {
+      lessonsLabel: detailRaw.lessons + ' Lektionen',
+      dotStyle: this.dotFor(detailRaw),
+    });
+
+    const classObj = this.CLASSES.find((c) => c.id === s.activeClass) || this.CLASSES[1];
+    const classes = this.CLASSES.map((c) => ({
+      label: c.label, sub: c.sub,
+      pick: () => this.setState({ activeClass: c.id, classMenuOpen: false }),
+      rowStyle: { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', padding: '9px 12px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left', background: c.id === s.activeClass ? '#f1f5f9' : 'transparent' },
+      checkStyle: { color: '#0E6E3A', fontWeight: 700, opacity: c.id === s.activeClass ? 1 : 0 },
+    }));
+
+    // KN semesters
+    const semesters = [
+      { title: 'Semester 1', themes: 'Themen T1, T2', knOk: false, gesOk: false, sprOk: false,
+        knBadge: '2/3 KN', gesBadge: '2 Ges-Noten', sprBadge: '2 Sprache-Noten',
+        slots: [
+          { nr: 'KN 1', format: 'Schriftliche Arbeit', sprache: 'Standardsprache', aspekt: 'Recht', sk: 'SK1 Lernstrategien' },
+          { nr: 'KN 2', format: 'Mündliche Prüfung', sprache: 'Gespräch', aspekt: 'Ethik', sk: 'SK4 Information' },
+        ] },
+      { title: 'Semester 2', themes: 'Thema T3', knOk: true, gesOk: true, sprOk: true,
+        knBadge: '3/3 KN', gesBadge: '3 Ges-Noten', sprBadge: '3 Sprache-Noten',
+        slots: [
+          { nr: 'KN 3', format: 'Projektarbeit', sprache: 'Schreiben', aspekt: 'Ökologie', sk: 'SK7 Vernetzung' },
+          { nr: 'KN 4', format: 'Präsentation', sprache: 'Sprechen', aspekt: 'Recht', sk: 'SK2 Recherche' },
+          { nr: 'KN 5', format: 'Schriftliche Arbeit', sprache: 'Lesen', aspekt: 'Identität', sk: 'SK9 Reflexion' },
+        ] },
+    ].map((sm) => ({
+      title: sm.title, themes: sm.themes,
+      knBadge: sm.knBadge, gesBadge: sm.gesBadge, sprBadge: sm.sprBadge,
+      knBadgeStyle: this.badge(sm.knOk, sm.knBadge), gesBadgeStyle: this.badge(sm.gesOk), sprBadgeStyle: this.badge(sm.sprOk),
+      slots: sm.slots,
+    }));
+
+    // Coverage bars
+    const cov = [
+      { nr: 'SK1', name: 'Lernstrategien', pct: 100, depth: 'R3' },
+      { nr: 'SK2', name: 'Recherchieren', pct: 66, depth: 'R2' },
+      { nr: 'SK4', name: 'Information verarbeiten', pct: 100, depth: 'R3' },
+      { nr: 'SK6', name: 'Kommunikation', pct: 66, depth: 'R2' },
+      { nr: 'SK7', name: 'Vernetztes Denken', pct: 33, depth: 'R1' },
+      { nr: 'SK9', name: 'Selbstreflexion', pct: 33, depth: 'R1' },
+    ];
+    const coverage = cov.map((c) => ({
+      nr: c.nr, name: c.name, tag: c.depth,
+      barStyle: { width: c.pct + '%', height: '100%', borderRadius: '9999px', background: c.pct >= 100 ? '#0E6E3A' : (c.pct >= 60 ? '#4a9d6f' : '#a7d4ba') },
+      tagStyle: { fontSize: '11px', fontWeight: 700, color: '#094d28', background: '#e8f3ec', borderRadius: '6px', padding: '2px 8px', width: '34px', textAlign: 'center', flexShrink: 0 },
+    }));
+
+    // SK reference matrix
+    const skData = [
+      { nr: 'SK1', name: 'Lernstrategien', c: ['R1', 'R2', 'R3'] },
+      { nr: 'SK2', name: 'Recherchieren', c: ['R1', '', 'R2'] },
+      { nr: 'SK4', name: 'Information verarbeiten', c: ['R1', 'R2', 'R3'] },
+      { nr: 'SK6', name: 'Kommunikation', c: ['R1', 'R2', ''] },
+      { nr: 'SK7', name: 'Vernetztes Denken', c: ['', '', 'R1'] },
+      { nr: 'SK9', name: 'Selbstreflexion', c: ['', 'R1', ''] },
+    ];
+    const skRows = skData.map((r) => {
+      const off = !r.c.some(Boolean);
+      const c1 = this.skCell(r.c[0]), c2 = this.skCell(r.c[1]), c3 = this.skCell(r.c[2]);
+      return { nr: r.nr, name: r.name,
+        nameStyle: { fontSize: '13px', color: off ? '#cbd5e1' : '#334155', fontWeight: 500, alignSelf: 'center' },
+        c1: c1.v, c1Style: c1.style, c2: c2.v, c2Style: c2.style, c3: c3.v, c3Style: c3.style };
+    });
+
+    const holidayList = [
+      { kw: 41, datum: '6.–10. Okt 2025', label: 'Herbstferien' },
+      { kw: 42, datum: '13.–17. Okt 2025', label: 'Herbstferien' },
+      { kw: 52, datum: '22.–26. Dez 2025', label: 'Weihnachtsferien' },
+      { kw: 1, datum: '29. Dez–2. Jan', label: 'Weihnachtsferien' },
+      { kw: 6, datum: '2.–6. Feb 2026', label: 'Sportferien' },
+      { kw: 7, datum: '9.–13. Feb 2026', label: 'Sportferien' },
+      { kw: 17, datum: '20.–24. Apr 2026', label: 'Frühlingsferien' },
+      { kw: 18, datum: '27. Apr–1. Mai', label: 'Frühlingsferien' },
+    ];
+
+    const themeCards = this.THEMES.map((t) => ({
+      nr: t.nr, titel: t.titel, lekt: t.lekt, puffer: t.puffer, total: t.lekt + t.puffer,
+      cardStyle: { background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', borderTop: '3px solid ' + (t.tier === 1 ? 'rgba(14,110,58,.45)' : t.tier === 2 ? '#0E6E3A' : '#094d28'), padding: '16px 18px' },
+    }));
+
+    // Primary "Planen" button
+    const planBtnStyle = {
+      display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '9px 17px', borderRadius: '10px',
+      fontFamily: 'inherit', fontSize: '14px', fontWeight: 700, cursor: 'pointer',
+      border: s.plan ? '1px solid #cbd5e1' : '1px solid #0E6E3A',
+      background: s.plan ? '#ffffff' : '#0E6E3A', color: s.plan ? '#334155' : '#ffffff',
+      boxShadow: s.plan ? 'none' : '0 2px 8px -2px rgba(14,110,58,.5)',
+    };
+    const moreBtnStyle = {
+      width: '40px', height: '40px', borderRadius: '10px', border: '1px solid ' + (s.moreOpen ? '#0E6E3A' : '#e2e8f0'),
+      background: s.moreOpen ? '#e8f3ec' : '#fff', color: '#475569', cursor: 'pointer', fontSize: '20px',
+      lineHeight: 1, fontFamily: 'inherit', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+    };
+    const notesBtnStyle = {
+      display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 11px', borderRadius: '8px',
+      fontFamily: 'inherit', fontSize: '12px', fontWeight: 600, cursor: 'pointer',
+      border: '1px solid ' + (s.showNotes ? '#0E6E3A' : '#cbd5e1'),
+      background: s.showNotes ? '#0E6E3A' : '#fff', color: s.showNotes ? '#fff' : '#64748b',
+    };
+
+    return {
+      calendarEl: this.renderCalendar(weeks),
+      detail,
+      classes, activeClassLabel: classObj.label, activeClassInitial: classObj.label.slice(0, 2).toUpperCase(),
+      classMenuOpen: s.classMenuOpen, moreOpen: s.moreOpen,
+      planMode: s.plan, showNotes: s.showNotes,
+      notesLabel: s.showNotes ? 'an' : 'aus',
+      planBtnLabel: s.plan ? 'Leseansicht' : 'Planen', planBtnIcon: s.plan ? '←' : '✎',
+      planBtnStyle, moreBtnStyle, notesBtnStyle,
+      tabWochenStyle: this.tabStyle('wochen'), tabKnStyle: this.tabStyle('kn'), tabAbdeckungStyle: this.tabStyle('abdeckung'),
+      showKn: s.plan && s.tab === 'kn',
+      showAbdeckung: s.plan && s.tab === 'abdeckung',
+      refSk: s.ref === 'sk', refFeiertage: s.ref === 'feiertage',
+      semesters, coverage, skRows, holidayList, themeCards,
+      toast: s.toast,
+      // handlers
+      togglePlan: () => this.setState({ plan: !s.plan, ref: null, moreOpen: false }),
+      tabWochen: () => this.setState({ tab: 'wochen' }),
+      tabKn: () => this.setState({ tab: 'kn' }),
+      tabAbdeckung: () => this.setState({ tab: 'abdeckung' }),
+      toggleMore: () => this.setState({ moreOpen: !s.moreOpen, classMenuOpen: false }),
+      toggleClassMenu: () => this.setState({ classMenuOpen: !s.classMenuOpen, moreOpen: false }),
+      toggleNotes: () => this.setState({ showNotes: !s.showNotes }),
+      exportExcel: () => this.flash('Excel-Export wird vorbereitet …'),
+      printPdf: () => this.flash('Druckansicht wird geöffnet …'),
+      openSk: () => this.setState({ ref: 'sk', moreOpen: false }),
+      openFeiertage: () => this.setState({ ref: 'feiertage', moreOpen: false }),
+      closeRef: () => this.setState({ ref: null }),
+      noop: (e) => { if (e && e.preventDefault) e.preventDefault(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

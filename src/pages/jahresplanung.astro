@@ -456,50 +456,86 @@ if (!isGuest) {
         </div>
       )}
 
-      <!-- Planungs-Toolbar (Feature 4/6/7/8) -->
-      {!isGuest && (
-      <div class="jp-toolbar bg-white border border-slate-200 rounded-lg p-3 mb-8 flex flex-wrap items-center gap-x-4 gap-y-3">
-        <!-- Klassen-Instanzen -->
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Klasse</span>
-          <template x-if="plans.length">
-            <select x-model="activePlanId" x-on:change="switchPlan($event.target.value)" class="jp-select">
-              <template x-for="p in plans" :key="p.id">
-                <option :value="p.id" x-text="p.label"></option>
-              </template>
-            </select>
-          </template>
-          <template x-if="!plans.length">
-            <span class="text-xs text-slate-400 italic">Basisvorlage (nicht gespeichert)</span>
-          </template>
-          <button class="jp-btn-ghost" x-on:click="newPlan()" :disabled="saving" title="Neue Klassen-Planung anlegen">＋ Klasse</button>
+      <!-- Planungs-Steuerung — Progressive Disclosure (Tier 1/2/3) -->
+      <div class="mb-8">
+        <!-- Tier 1 — ruhige Primärleiste -->
+        <div class="jp-bar">
+          {!isGuest && (
+            <!-- Klassen-Dropdown (＋ Neue Klasse wandert hinein) -->
+            <div class="jp-pop" @click.outside="classMenuOpen=false" @keydown.escape="classMenuOpen=false">
+              <button type="button" class="jp-classbtn" :class="classMenuOpen && 'jp-classbtn-open'" @click="classMenuOpen=!classMenuOpen" :aria-expanded="classMenuOpen" aria-haspopup="menu">
+                <span class="jp-avatar" x-text="activeInitial()"></span>
+                <span class="jp-classlabel" x-text="activeLabel()"></span>
+                <span class="jp-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="jp-menu" x-show="classMenuOpen" x-cloak x-transition.opacity.duration.120ms role="menu">
+                <p class="jp-menu-label">Klasse</p>
+                <template x-if="!plans.length">
+                  <p class="jp-menu-empty">Noch keine Klasse — Basisvorlage aktiv.</p>
+                </template>
+                <template x-for="p in plans" :key="p.id">
+                  <button type="button" class="jp-menu-item" :class="p.id===activePlanId && 'jp-menu-item-on'" role="menuitem" @click="switchPlan(p.id); classMenuOpen=false">
+                    <span x-text="p.label"></span>
+                  </button>
+                </template>
+                <div class="jp-menu-sep"></div>
+                <button type="button" class="jp-menu-item jp-menu-add" role="menuitem" :disabled="saving" @click="classMenuOpen=false; newPlan()">＋ Neue Klasse</button>
+              </div>
+            </div>
+          )}
+
+          {!isGuest && (
+            <!-- Ein Primär-Verb: Planen -->
+            <button type="button" class="jp-primary" :class="planMode && 'jp-primary-on'" @click="togglePlan()" :aria-pressed="planMode">
+              <span aria-hidden="true">✎</span> Planen
+            </button>
+          )}
+
+          <!-- ⋯ Overflow (Tier 3) -->
+          <div class="jp-pop" @click.outside="moreOpen=false" @keydown.escape="moreOpen=false">
+            <button type="button" class="jp-icon" @click="moreOpen=!moreOpen" :aria-expanded="moreOpen" aria-haspopup="menu" aria-label="Weitere Aktionen" title="Weitere Aktionen">⋯</button>
+            <div class="jp-menu jp-menu-end" x-show="moreOpen" x-cloak x-transition.opacity.duration.120ms role="menu">
+              {!isGuest && <p class="jp-menu-label">Export</p>}
+              {!isGuest && (
+                <button type="button" class="jp-menu-item" role="menuitem" @click="moreOpen=false; exportExcel()">⬇ Excel exportieren</button>
+              )}
+              <button type="button" class="jp-menu-item" role="menuitem" @click="moreOpen=false; window.print()">🖨 Drucken / PDF</button>
+              {!isGuest && <div class="jp-menu-sep"></div>}
+              {!isGuest && <p class="jp-menu-label">Referenz</p>}
+              {!isGuest && (
+                <button type="button" class="jp-menu-item" role="menuitem" @click="moreOpen=false; openRef('sk')">▦ SK-Abdeckung anzeigen</button>
+              )}
+              {!isGuest && (
+                <button type="button" class="jp-menu-item" role="menuitem" @click="moreOpen=false; openRef('feiertage')">☼ Feiertage &amp; Brückentage</button>
+              )}
+            </div>
+          </div>
+
+          {!isGuest && (
+            <!-- Speicherstatus: leise Textzeile, kein Button -->
+            <span class="jp-savestatus" x-show="plans.length">
+              <span x-show="saving" class="text-slate-400">Speichern…</span>
+              <span x-show="!saving && savedAt" style="color:var(--brand-dark)">✓ Automatisch gespeichert</span>
+              <span x-show="!saving && dirty && !savedAt" class="text-amber-600">· ungespeichert</span>
+            </span>
+          )}
         </div>
 
-        <span class="hidden sm:block w-px h-6 bg-slate-200"></span>
-
-        <!-- Panel-Umschalter -->
-        <div class="flex items-center gap-2">
-          <button class="jp-toggle" :class="editMode && 'jp-toggle-on'" x-on:click="editMode = !editMode">✏️ Bearbeiten</button>
-          <button class="jp-toggle" :class="showKn && 'jp-toggle-on'" x-on:click="showKn = !showKn; showCoverage = false">★ KN-Planung</button>
-          <button class="jp-toggle" :class="showCoverage && 'jp-toggle-on'" x-on:click="showCoverage = !showCoverage; showKn = false">▣ Abdeckung</button>
-        </div>
-
-        <span class="hidden sm:block w-px h-6 bg-slate-200"></span>
-
-        <!-- Export -->
-        <div class="flex items-center gap-2">
-          <button class="jp-btn-ghost" x-on:click="exportExcel()">⬇ Excel</button>
-          <button class="jp-btn-ghost" x-on:click="window.print()">🖨 PDF / Drucken</button>
-        </div>
-
-        <!-- Speicher-Status -->
-        <span class="ml-auto text-xs flex items-center gap-1.5" x-show="plans.length">
-          <span x-show="saving" class="text-slate-400">Speichern…</span>
-          <span x-show="!saving && savedAt" class="text-[var(--brand-dark)]">✓ gespeichert</span>
-          <span x-show="!saving && dirty && !savedAt" class="text-amber-600">ungespeichert</span>
-        </span>
+        {!isGuest && (
+          <!-- Tier 2 — kontextuelle Planen-Leiste (nur im Planen-Modus) -->
+          <div class="jp-planbar" x-show="planMode" x-cloak x-transition.opacity.duration.150ms>
+            <div class="jp-planbar-row">
+              <div class="jp-seg2" role="tablist" aria-label="Planungs-Werkzeug">
+                <button type="button" class="jp-seg-btn" :class="planTab==='wochen' && 'jp-seg-btn-on'" role="tab" :aria-selected="planTab==='wochen'" @click="setTab('wochen')"><span aria-hidden="true">✎</span> Wochen anpassen</button>
+                <button type="button" class="jp-seg-btn" :class="planTab==='kn' && 'jp-seg-btn-on'" role="tab" :aria-selected="planTab==='kn'" @click="setTab('kn')"><span aria-hidden="true">★</span> Kompetenznachweise</button>
+                <button type="button" class="jp-seg-btn" :class="planTab==='abdeckung' && 'jp-seg-btn-on'" role="tab" :aria-selected="planTab==='abdeckung'" @click="setTab('abdeckung')"><span aria-hidden="true">▣</span> Abdeckung prüfen</button>
+              </div>
+              <button type="button" class="jp-done" @click="togglePlan()">Fertig</button>
+            </div>
+            <p class="jp-planbar-hint" x-show="planTab==='wochen'">Klicke unten im Kalender auf eine Woche, um Typ und Titel anzupassen.</p>
+          </div>
+        )}
       </div>
-      )}
 
       <!-- Summary stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
@@ -547,12 +583,15 @@ if (!isGuest) {
         </div>
       </section>
 
-      <!-- Feature 1: SK-Abdeckungsmatrix (canonical nRLP) -->
-      <details class="jp-notes mb-8">
-        <summary>
-          <span class="font-semibold text-slate-800">SK-Abdeckung im {lehrjahr}. Lehrjahr</span>
-          <span class="text-xs text-slate-400 ml-2">Quelle: nRLP-Zirkularität · 12 Schlüsselkompetenzen</span>
-        </summary>
+      <!-- Feature 1: SK-Abdeckungsmatrix — Referenzpanel (über ⋯ geöffnet) -->
+      <section id="jp-ref-sk" class="jp-ref mb-8" x-show="refPanel==='sk'" x-cloak x-transition.opacity.duration.150ms>
+        <div class="jp-ref-head">
+          <div>
+            <span class="font-semibold text-slate-800">SK-Abdeckung im {lehrjahr}. Lehrjahr</span>
+            <span class="text-xs text-slate-400 ml-2">Quelle: nRLP-Zirkularität · 12 Schlüsselkompetenzen</span>
+          </div>
+          <button type="button" class="jp-ref-close" @click="refPanel=null" aria-label="Schliessen">Schliessen ✕</button>
+        </div>
         <p class="text-sm text-slate-600 mb-4 mt-4 max-w-3xl">
           Welche der 12 Schlüsselkompetenzen in {plan.themeKeys.join('/')} eingeplant sind und in welcher
           Iterationstiefe (R1 = erste Begegnung, R2/R3 = Wiederaufnahme & Vertiefung).
@@ -583,14 +622,17 @@ if (!isGuest) {
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r3"></span>R3 — Vertiefung</span>
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-empty"></span>nicht in diesem Lehrjahr</span>
         </div>
-      </details>
+      </section>
 
-      <!-- Feature 3: Feiertags- / Notizen-Panel -->
-      <details class="jp-notes mb-8">
-        <summary>
-          <span class="font-semibold text-slate-800">Feiertage &amp; Brückentage</span>
-          <span class="text-xs text-slate-400 ml-2">{feiertagNotes.length} Wochen mit Vermerk</span>
-        </summary>
+      <!-- Feature 3: Feiertags- / Notizen-Panel — Referenzpanel (über ⋯ geöffnet) -->
+      <section id="jp-ref-feiertage" class="jp-ref mb-8" x-show="refPanel==='feiertage'" x-cloak x-transition.opacity.duration.150ms>
+        <div class="jp-ref-head">
+          <div>
+            <span class="font-semibold text-slate-800">Feiertage &amp; Brückentage</span>
+            <span class="text-xs text-slate-400 ml-2">{feiertagNotes.length} Wochen mit Vermerk</span>
+          </div>
+          <button type="button" class="jp-ref-close" @click="refPanel=null" aria-label="Schliessen">Schliessen ✕</button>
+        </div>
         <div class="mt-4">
           {feiertagNotes.length ? (
             <ul class="space-y-1.5">
@@ -608,10 +650,10 @@ if (!isGuest) {
           Hinweis: Alle Schulwochen zählen 3 Lektionen — auch Wochen mit Feiertag.
           Der Vermerk macht nur sichtbar, wo mit reduzierter Präsenz zu rechnen ist.
         </p>
-      </details>
+      </section>
 
       <!-- Feature 6: KN-Planung — semesterbasiert, kompetenz-/sprachmodus-orientiert -->
-      <section x-show="showKn" x-cloak class="jp-panel mb-8">
+      <section id="jp-panel-kn" x-show="showKn" x-cloak class="jp-panel mb-8">
         <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
           <h2 class="text-lg font-semibold text-slate-900">Kompetenznachweise planen</h2>
           <span class="text-xs text-slate-400">≥ 3 KN pro Semester · je KN = 1 Note Gesellschaft + 1 Note Sprache</span>
@@ -699,7 +741,7 @@ if (!isGuest) {
       </section>
 
       <!-- Feature 8: Abdeckungs-Tab (SK + Sprachmodi, live) -->
-      <section x-show="showCoverage" x-cloak class="jp-panel mb-8">
+      <section id="jp-panel-abdeckung" x-show="showCoverage" x-cloak class="jp-panel mb-8">
         <div class="flex items-baseline justify-between flex-wrap gap-2 mb-1">
           <h2 class="text-lg font-semibold text-slate-900">Abdeckung — was wurde tatsächlich geübt?</h2>
           <span class="text-xs text-slate-400">Pro Lebensbezug abhaken · Vergleich mit nRLP-Empfehlung</span>
@@ -996,8 +1038,12 @@ if (!isGuest) {
         // ── tooltip state ──
         active: null, tipX: 0, tipY: 0, hideTimer: null, pinned: false, editing: false,
 
-        // ── panel toggles ──
+        // ── panel toggles (intern; gesteuert über planMode/planTab) ──
         editMode: false, showKn: false, showCoverage: false,
+
+        // ── Progressive Disclosure (Tier 1/2/3) ──
+        planMode: false, planTab: 'wochen',
+        moreOpen: false, classMenuOpen: false, refPanel: null,
 
         // ── plan instance state (Feature 4/6/8) ──
         activePlanId: null,
@@ -1009,6 +1055,44 @@ if (!isGuest) {
         init() {
           if (this.plans.length) this.loadPlan(this.plans[0])
           else this.knPlans = this.defaultKn()
+        },
+
+        // ── Progressive Disclosure: Steuerung ──
+        activeLabel() {
+          const p = this.plans.find((x) => x.id === this.activePlanId)
+          return p ? p.label : 'Basisvorlage'
+        },
+        activeInitial() {
+          const l = (this.activeLabel() || '?').trim()
+          return l ? l.charAt(0).toUpperCase() : '·'
+        },
+        togglePlan() {
+          this.planMode = !this.planMode
+          if (this.planMode) {
+            this.refPanel = null
+            this.setTab('wochen')
+          } else {
+            this.editMode = false; this.showKn = false; this.showCoverage = false
+            this.editing = false; this.pinned = false; this.active = null
+          }
+        },
+        setTab(tab) {
+          this.planTab = tab
+          this.editMode = (tab === 'wochen')
+          this.showKn = (tab === 'kn')
+          this.showCoverage = (tab === 'abdeckung')
+          this.refPanel = null
+          if (tab === 'kn' || tab === 'abdeckung') this.scrollToPanel(tab === 'kn' ? '#jp-panel-kn' : '#jp-panel-abdeckung')
+        },
+        openRef(which) {
+          this.refPanel = this.refPanel === which ? null : which
+          if (this.refPanel) this.scrollToPanel(which === 'sk' ? '#jp-ref-sk' : '#jp-ref-feiertage')
+        },
+        scrollToPanel(sel) {
+          this.$nextTick(() => {
+            const el = document.querySelector(sel)
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          })
         },
 
         // ── merged (base + overrides) ──
@@ -1541,6 +1625,88 @@ if (!isGuest) {
 
     .jp-panel { background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1.5rem; }
 
+    /* ── Progressive Disclosure: Tier 1 Primärleiste ── */
+    .jp-bar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem;
+      background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.55rem 0.7rem;
+    }
+    .jp-pop { position: relative; }
+    .jp-classbtn {
+      display: inline-flex; align-items: center; gap: 0.5rem; min-height: 40px;
+      padding: 0.3rem 0.7rem 0.3rem 0.35rem; border: 1px solid #cbd5e1; border-radius: 8px;
+      background: white; color: #0f172a; font-size: 0.82rem; font-weight: 600; transition: border-color .15s;
+    }
+    .jp-classbtn:hover, .jp-classbtn-open { border-color: var(--brand); }
+    .jp-avatar {
+      display: inline-flex; align-items: center; justify-content: center; width: 1.6rem; height: 1.6rem;
+      border-radius: 9999px; background: var(--brand-tint); color: var(--brand-dark);
+      font-size: 0.75rem; font-weight: 800; flex-shrink: 0;
+    }
+    .jp-classlabel { max-width: 14rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .jp-caret { font-size: 0.7rem; color: #94a3b8; }
+    .jp-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem; min-height: 40px;
+      padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--brand);
+      background: var(--brand); color: white; font-size: 0.85rem; font-weight: 700; transition: background .15s;
+    }
+    .jp-primary:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+    .jp-primary-on { background: var(--brand-dark); border-color: var(--brand-dark); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.35); }
+    .jp-icon {
+      display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+      border-radius: 8px; border: 1px solid #cbd5e1; background: white; color: #475569;
+      font-size: 1.1rem; font-weight: 700; line-height: 1; transition: border-color .15s, color .15s;
+    }
+    .jp-icon:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .jp-savestatus { margin-left: auto; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+
+    /* Popover-Menü (Klasse + ⋯) */
+    .jp-menu {
+      position: absolute; top: calc(100% + 6px); left: 0; z-index: 50; min-width: 14rem;
+      background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.35rem;
+      box-shadow: 0 18px 40px -18px rgba(15,23,42,0.35), 0 0 0 1px rgba(14,110,58,0.06);
+    }
+    .jp-menu-end { left: auto; right: 0; }
+    .jp-menu-label { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; padding: 0.3rem 0.5rem 0.2rem; }
+    .jp-menu-empty { font-size: 0.72rem; color: #94a3b8; font-style: italic; padding: 0.2rem 0.5rem 0.4rem; }
+    .jp-menu-item {
+      display: flex; align-items: center; width: 100%; text-align: left; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 600; color: #334155; background: transparent;
+      border: none; border-radius: 7px; padding: 0.5rem 0.6rem; cursor: pointer; transition: background .12s, color .12s;
+    }
+    .jp-menu-item:hover { background: var(--brand-tint); color: var(--brand-dark); }
+    .jp-menu-item:disabled { opacity: .5; cursor: not-allowed; }
+    .jp-menu-item-on { color: var(--brand-dark); background: var(--brand-tint); }
+    .jp-menu-add { color: var(--brand-dark); font-weight: 700; }
+    .jp-menu-sep { height: 1px; background: #eef2f6; margin: 0.3rem 0.2rem; }
+
+    /* ── Tier 2: kontextuelle Planen-Leiste ── */
+    .jp-planbar {
+      margin-top: 0.6rem; background: var(--brand); border-radius: 0.5rem;
+      padding: 0.55rem 0.7rem; box-shadow: 0 8px 20px -12px rgba(14,110,58,0.55);
+    }
+    .jp-planbar-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+    .jp-seg2 { display: inline-flex; flex-wrap: wrap; gap: 0.25rem; background: rgba(255,255,255,0.14); border-radius: 8px; padding: 0.2rem; }
+    .jp-seg-btn {
+      display: inline-flex; align-items: center; gap: 0.35rem; min-height: 36px;
+      font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.9);
+      background: transparent; border: none; border-radius: 6px; padding: 0.3rem 0.7rem; cursor: pointer; transition: background .12s, color .12s;
+    }
+    .jp-seg-btn:hover { background: rgba(255,255,255,0.16); color: white; }
+    .jp-seg-btn-on { background: white; color: var(--brand-dark); }
+    .jp-done {
+      margin-left: auto; min-height: 36px; font-size: 0.8rem; font-weight: 700; color: white;
+      background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 7px; padding: 0.3rem 0.9rem; cursor: pointer; transition: background .12s;
+    }
+    .jp-done:hover { background: rgba(255,255,255,0.28); }
+    .jp-planbar-hint { margin-top: 0.5rem; font-size: 0.72rem; color: rgba(255,255,255,0.92); }
+
+    /* ── Tier 3: Referenzpanel (SK / Feiertage) ── */
+    .jp-ref { background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem 1.25rem; box-shadow: 0 12px 30px -20px rgba(15,23,42,0.3); }
+    .jp-ref-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+    .jp-ref-close { font-size: 0.72rem; font-weight: 700; color: #64748b; border: 1px solid #e2e8f0; background: white; border-radius: 7px; padding: 0.3rem 0.6rem; cursor: pointer; white-space: nowrap; transition: border-color .15s, color .15s; }
+    .jp-ref-close:hover { border-color: var(--brand); color: var(--brand-dark); }
+
     /* ── Slice-Switcher (Idee 1) ── */
     .jp-switch {
       display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem;
@@ -1706,11 +1872,14 @@ if (!isGuest) {
     /* ── Feature 7: print / PDF (A4 landscape) ── */
     @media print {
       @page { size: A4 landscape; margin: 10mm; }
-      header, footer, .jp-toolbar, .jp-switch, .tooltip-card { display: none !important; }
+      header, footer, .jp-bar, .jp-planbar, .jp-switch, .tooltip-card { display: none !important; }
       :global(body) { background: white !important; }
       main { max-width: none !important; padding: 0 !important; }
       .jp-panel { display: none !important; }
-      section, details, .jp-notes { break-inside: avoid; box-shadow: none !important; }
+      /* Referenzpanels (SK + Feiertage) im Druck immer vollständig zeigen */
+      .jp-ref { display: block !important; box-shadow: none !important; }
+      .jp-ref-close { display: none !important; }
+      section, details, .jp-notes, .jp-ref { break-inside: avoid; box-shadow: none !important; }
       .lesson-cell { transform: none !important; box-shadow: none !important; }
       .cell-thema2, .cell-thema3 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .sk-r1, .sk-r2, .sk-r3, .sk-empty, .cell-thema1, .cell-thema2, .cell-thema3, .cell-buffer, .cell-holiday {

@@ -79,7 +79,7 @@ const themaHref = (n: number) => `/jahresplanung/thema/${n}?lehrgang=${lehrgang}
       </div>
     </header>
 
-    <main class="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
+    <main class="flex-1 max-w-5xl mx-auto w-full px-6 py-10" x-data={`themaDetail(${JSON.stringify(lbs.map((l: any) => l.nr))})`} x-cloak>
       <!-- Hero -->
       <div class={`thd-hero ${accent}`}>
         <div class="flex flex-wrap items-start justify-between gap-4">
@@ -96,12 +96,19 @@ const themaHref = (n: number) => `/jahresplanung/thema/${n}?lehrgang=${lehrgang}
         </div>
       </div>
 
-      <!-- Leitidee -->
+      <!-- Leitidee — Kurztext immer sichtbar, Langtext gefaltet -->
       {(leitidee.kurz || leitidee.detail) && (
         <section class="thd-card mb-6">
           <h2 class="thd-h2">Leitidee</h2>
           {leitidee.kurz && <p class="text-slate-800 leading-relaxed">{leitidee.kurz}</p>}
-          {leitidee.detail && <p class="text-sm text-slate-600 leading-relaxed mt-3">{leitidee.detail}</p>}
+          {leitidee.detail && (
+            <button type="button" class="thd-more-btn" @click="leitidee=!leitidee" :aria-expanded="leitidee">
+              <span class="thd-more-caret" x-text="leitidee ? '▾' : '▸'"></span> Ausführliche Leitidee
+            </button>
+          )}
+          {leitidee.detail && (
+            <p class="text-sm text-slate-600 leading-relaxed mt-3" x-show="leitidee" x-cloak>{leitidee.detail}</p>
+          )}
         </section>
       )}
 
@@ -139,90 +146,125 @@ const themaHref = (n: number) => `/jahresplanung/thema/${n}?lehrgang=${lehrgang}
         </section>
       )}
 
-      <!-- Lebensbezüge mit Kompetenzen -->
+      <!-- Lebensbezüge als Akkordeon — Material zuerst, nRLP-Taxonomie gefaltet -->
       {!isSA && (
         <section class="mb-8">
-          <h2 class="text-lg font-semibold text-slate-900 mb-4">Lebensbezüge & Kompetenzen</h2>
-          <div class="space-y-6">
-            {lbs.map((lb) => (
-              <div class={`thd-lb ${accent}`}>
-                <div class="thd-lb-head">
+          <div class="flex items-baseline justify-between flex-wrap gap-2 mb-4">
+            <h2 class="text-lg font-semibold text-slate-900">Lebensbezüge & Kompetenzen</h2>
+            <div class="thd-acc-actions text-xs">
+              <button type="button" class="thd-acc-link" @click="openAll()">Alle öffnen</button>
+              <span class="text-slate-300">·</span>
+              <button type="button" class="thd-acc-link" @click="closeAll()">Alle schliessen</button>
+            </div>
+          </div>
+          <div class="space-y-4">
+            {lbs.map((lb) => {
+              const hfs = hfByLb[lb.nr] ?? []
+              const sits = sitByLb[lb.nr] ?? []
+              const kompCount = (lb.kompetenzen ?? []).length
+              return (
+              <div class={`thd-lb ${accent}`} :class={`isOpen('${lb.nr}') && 'thd-lb-open'`}>
+                <button type="button" class="thd-lb-head thd-lb-toggle" @click={`toggle('${lb.nr}')`} :aria-expanded={`isOpen('${lb.nr}')`}>
                   <span class="thd-lb-nr">{lb.nr}</span>
-                  <div class="min-w-0">
+                  <div class="min-w-0 flex-1">
                     <p class="thd-lb-text">{lb.text}</p>
-                    {lb.lektionen && <p class="thd-lb-lek">{lb.lektionen} Lektionen</p>}
+                    <div class="thd-lb-meta">
+                      {lb.lektionen ? <span class="thd-lb-metachip">{lb.lektionen} Lektionen</span> : null}
+                      <span class="thd-lb-metachip">{kompCount} {kompCount === 1 ? 'Kompetenz' : 'Kompetenzen'}</span>
+                      {hfs.length > 0 && <span class="thd-lb-metachip thd-lb-metachip-mat">{hfs.length} {hfs.length === 1 ? 'Einheit' : 'Einheiten'}</span>}
+                      {sits.length > 0 && <span class="thd-lb-metachip">{sits.length} Situationen</span>}
+                    </div>
                   </div>
-                </div>
+                  <span class="thd-chevron" aria-hidden="true">▾</span>
+                </button>
 
-                <!-- Kompetenzen -->
-                <div class="space-y-4 mt-4">
-                  {(lb.kompetenzen ?? []).map((k: any) => (
-                    <div class="thd-komp">
-                      <p class="thd-komp-titel"><span class="thd-komp-nr">{k.nr}</span>{k.text}</p>
-                      {(k.gesellschaftliche_inhalte ?? []).length > 0 && (
-                        <div class="thd-sub">
-                          <p class="thd-sub-h">Gesellschaftliche Inhalte</p>
-                          <ul class="space-y-1">
-                            {(k.gesellschaftliche_inhalte ?? []).map((g: any) => (
-                              <li class="text-xs text-slate-600"><span class="thd-aspekt">{g.aspekt}</span>{g.detail}</li>
+                <div class="thd-lb-body" x-show={`isOpen('${lb.nr}')`} x-cloak x-collapse>
+                  <!-- 1) Fertiges Material zuerst, farbig hervorgehoben -->
+                  {(hfs.length || sits.length) ? (
+                    <div class="thd-mat-box">
+                      <p class="thd-mat-box-h">Direkt einsetzbar</p>
+                      {hfs.length > 0 && (
+                        <div class="mb-3">
+                          <p class="thd-mat-h">Herausforderungen (fertige Einheiten)</p>
+                          <ul class="space-y-1.5">
+                            {hfs.map((hf: any) => (
+                              <li>
+                                <a href={`/einheiten/${hf.id}`} target="_blank" rel="noopener" class="thd-hf">
+                                  <span class="thd-hf-titel">{hf.titel}</span>
+                                  <span class="thd-hf-meta">
+                                    <span class="thd-hf-komp">{hf.kompetenz_nr}</span>
+                                    <span>{hf.sit_count} Situationen</span>
+                                    {hf.hat_kn && <span class="thd-hf-badge">KN</span>}
+                                    {hf.hat_begleiter && <span class="thd-hf-badge">Begleiter</span>}
+                                  </span>
+                                </a>
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
-                      {(k.sprachmodi ?? []).length > 0 && (
-                        <div class="thd-sub">
-                          <p class="thd-sub-h">Sprachmodi</p>
-                          <ul class="space-y-1">
-                            {(k.sprachmodi ?? []).map((s: any) => (
-                              <li class="text-xs text-slate-600"><span class="thd-modus">{s.modus}</span>{s.detail}</li>
+                      {sits.length > 0 && (
+                        <div>
+                          <p class="thd-mat-h">Situationen zur Inspiration</p>
+                          <div class="flex flex-wrap gap-1.5">
+                            {sits.slice(0, 8).map((s: any) => (
+                              <a href={`/situationen/${s.id}`} target="_blank" rel="noopener" class="thd-sit">
+                                <span class="thd-sit-letter">{s.letter}</span>{s.titel}
+                              </a>
                             ))}
-                          </ul>
+                          </div>
+                          <a href={`/situationen?lebensbezug=${lb.nr}`} target="_blank" rel="noopener" class="thd-sit-all">Alle {sits.length} Situationen durchsuchen →</a>
                         </div>
                       )}
                     </div>
-                  ))}
-                </div>
+                  ) : (
+                    <p class="thd-mat-empty">Noch keine fertige Einheit für diesen Lebensbezug — siehe Kompetenzen unten.</p>
+                  )}
 
-                <!-- Verknüpftes Material -->
-                {(hfByLb[lb.nr]?.length || sitByLb[lb.nr]?.length) && (
-                  <div class="thd-material">
-                    {hfByLb[lb.nr]?.length > 0 && (
-                      <div class="mb-3">
-                        <p class="thd-mat-h">Herausforderungen (fertige Einheiten)</p>
-                        <ul class="space-y-1.5">
-                          {hfByLb[lb.nr].map((hf: any) => (
-                            <li>
-                              <a href={`/einheiten/${hf.id}`} target="_blank" rel="noopener" class="thd-hf">
-                                <span class="thd-hf-titel">{hf.titel}</span>
-                                <span class="thd-hf-meta">
-                                  <span class="thd-hf-komp">{hf.kompetenz_nr}</span>
-                                  <span>{hf.sit_count} Situationen</span>
-                                  {hf.hat_kn && <span class="thd-hf-badge">KN</span>}
-                                  {hf.hat_begleiter && <span class="thd-hf-badge">Begleiter</span>}
-                                </span>
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
+                  <!-- 2) Kompetenzen prominent; nRLP-Feingliederung gefaltet -->
+                  <div class="space-y-3 mt-4">
+                    {(lb.kompetenzen ?? []).map((k: any) => {
+                      const hasDetail = (k.gesellschaftliche_inhalte ?? []).length > 0 || (k.sprachmodi ?? []).length > 0
+                      return (
+                      <div class="thd-komp">
+                        <p class="thd-komp-titel"><span class="thd-komp-nr">{k.nr}</span>{k.text}</p>
+                        {hasDetail && (
+                          <button type="button" class="thd-komp-toggle" @click={`toggleKomp('${k.nr}')`} :aria-expanded={`isKompOpen('${k.nr}')`}>
+                            <span class="thd-more-caret" x-text={`isKompOpen('${k.nr}') ? '▾' : '▸'`}>▸</span> nRLP-Details
+                          </button>
+                        )}
+                        {hasDetail && (
+                          <div class="thd-komp-detail" x-show={`isKompOpen('${k.nr}')`} x-cloak x-collapse>
+                            {(k.gesellschaftliche_inhalte ?? []).length > 0 && (
+                              <div class="thd-sub">
+                                <p class="thd-sub-h">Gesellschaftliche Inhalte</p>
+                                <ul class="space-y-1">
+                                  {(k.gesellschaftliche_inhalte ?? []).map((g: any) => (
+                                    <li class="text-xs text-slate-600"><span class="thd-aspekt">{g.aspekt}</span>{g.detail}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                            {(k.sprachmodi ?? []).length > 0 && (
+                              <div class="thd-sub">
+                                <p class="thd-sub-h">Sprachmodi</p>
+                                <ul class="space-y-1">
+                                  {(k.sprachmodi ?? []).map((s: any) => (
+                                    <li class="text-xs text-slate-600"><span class="thd-modus">{s.modus}</span>{s.detail}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
-                    )}
-                    {sitByLb[lb.nr]?.length > 0 && (
-                      <div>
-                        <p class="thd-mat-h">Situationen zur Inspiration</p>
-                        <div class="flex flex-wrap gap-1.5">
-                          {sitByLb[lb.nr].slice(0, 8).map((s: any) => (
-                            <a href={`/situationen/${s.id}`} target="_blank" rel="noopener" class="thd-sit">
-                              <span class="thd-sit-letter">{s.letter}</span>{s.titel}
-                            </a>
-                          ))}
-                        </div>
-                        <a href={`/situationen?lebensbezug=${lb.nr}`} target="_blank" rel="noopener" class="thd-sit-all">Alle {sitByLb[lb.nr].length} Situationen durchsuchen →</a>
-                      </div>
-                    )}
+                      )
+                    })}
                   </div>
-                )}
+                </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </section>
       )}
@@ -244,7 +286,24 @@ const themaHref = (n: number) => `/jahresplanung/thema/${n}?lehrgang=${lehrgang}
     </footer>
   </div>
 
+  <script is:inline>
+    function themaDetail(lbNrs) {
+      const all = Array.isArray(lbNrs) ? lbNrs.map(String) : []
+      return {
+        openLb: {}, openKomp: {}, leitidee: false,
+        init() { if (all.length) this.openLb[all[0]] = true },
+        isOpen(nr) { return !!this.openLb[String(nr)] },
+        toggle(nr) { nr = String(nr); this.openLb = { ...this.openLb, [nr]: !this.openLb[nr] } },
+        openAll() { const o = {}; all.forEach((n) => (o[n] = true)); this.openLb = o },
+        closeAll() { this.openLb = {} },
+        isKompOpen(nr) { return !!this.openKomp[String(nr)] },
+        toggleKomp(nr) { nr = String(nr); this.openKomp = { ...this.openKomp, [nr]: !this.openKomp[nr] } },
+      }
+    }
+  </script>
+
   <style>
+    [x-cloak] { display: none !important; }
     .thd-hero { border-radius: 0.75rem; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-top: 4px solid var(--brand); }
     .thd-hero.accent-1 { border-top-color: rgba(14,110,58,0.45); background: var(--brand-tint); }
     .thd-hero.accent-2 { border-top-color: var(--brand); background: var(--brand-tint); }
@@ -261,14 +320,49 @@ const themaHref = (n: number) => `/jahresplanung/thema/${n}?lehrgang=${lehrgang}
     .thd-dot { display: inline-block; width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: var(--brand); margin-top: 0.45rem; flex-shrink: 0; }
     .thd-sm-chip { font-size: 0.72rem; font-weight: 600; color: var(--brand-dark); background: var(--brand-tint); border-radius: 9999px; padding: 0.15rem 0.6rem; }
 
-    .thd-lb { background: white; border: 1px solid #e2e8f0; border-left: 4px solid var(--brand); border-radius: 0.5rem; padding: 1.25rem 1.5rem; }
+    .thd-lb { background: white; border: 1px solid #e2e8f0; border-left: 4px solid var(--brand); border-radius: 0.5rem; padding: 0; overflow: hidden; }
     .thd-lb.accent-1 { border-left-color: rgba(14,110,58,0.45); }
     .thd-lb.accent-2 { border-left-color: var(--brand); }
     .thd-lb.accent-3 { border-left-color: var(--brand-dark); }
-    .thd-lb-head { display: flex; align-items: flex-start; gap: 0.75rem; }
-    .thd-lb-nr { flex-shrink: 0; font-size: 0.8rem; font-weight: 800; color: white; background: var(--brand); border-radius: 6px; padding: 0.2rem 0.5rem; }
+    .thd-lb-toggle {
+      display: flex; align-items: flex-start; gap: 0.75rem; width: 100%; text-align: left;
+      background: transparent; border: none; cursor: pointer; padding: 1.1rem 1.5rem; transition: background .15s;
+    }
+    .thd-lb-toggle:hover { background: #f8fafc; }
+    .thd-lb-open > .thd-lb-toggle { background: #f8fafc; }
+    .thd-lb-nr { flex-shrink: 0; font-size: 0.8rem; font-weight: 800; color: white; background: var(--brand); border-radius: 6px; padding: 0.2rem 0.5rem; margin-top: 0.1rem; }
     .thd-lb-text { font-size: 0.95rem; font-weight: 600; color: #0f172a; line-height: 1.35; }
-    .thd-lb-lek { font-size: 0.7rem; color: #94a3b8; margin-top: 0.15rem; }
+    .thd-lb-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+    .thd-lb-metachip { font-size: 0.66rem; font-weight: 600; color: #64748b; background: #f1f5f9; border-radius: 9999px; padding: 0.1rem 0.5rem; }
+    .thd-lb-metachip-mat { color: var(--brand-dark); background: var(--brand-tint); }
+    .thd-chevron { flex-shrink: 0; align-self: center; color: #94a3b8; font-size: 0.8rem; transition: transform .2s; }
+    .thd-lb-open > .thd-lb-toggle .thd-chevron { transform: rotate(180deg); }
+    .thd-lb-body { padding: 0 1.5rem 1.4rem; }
+
+    /* Material-Box (zuerst, farbig hervorgehoben) */
+    .thd-mat-box { background: var(--brand-tint); border: 1px solid rgba(14,110,58,0.22); border-radius: 10px; padding: 0.85rem 1rem; }
+    .thd-mat-box-h { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-dark); margin-bottom: 0.55rem; }
+    .thd-mat-empty { font-size: 0.78rem; font-style: italic; color: #94a3b8; border-left: 2px solid #e2e8f0; padding-left: 0.6rem; }
+
+    /* Kompetenz-Detail-Toggle (nRLP gefaltet) */
+    .thd-komp-toggle {
+      display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.5rem;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+      color: #64748b; background: transparent; border: none; cursor: pointer; padding: 0.15rem 0;
+    }
+    .thd-komp-toggle:hover { color: var(--brand-dark); }
+    .thd-komp-detail { margin-top: 0.3rem; }
+    .thd-more-caret { display: inline-block; width: 0.7rem; color: #94a3b8; }
+
+    /* Leitidee-Mehr + Akkordeon-Aktionen */
+    .thd-more-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--brand-dark);
+      background: transparent; border: none; cursor: pointer; padding: 0;
+    }
+    .thd-more-btn:hover { text-decoration: underline; }
+    .thd-acc-link { font-weight: 600; color: var(--brand-dark); background: transparent; border: none; cursor: pointer; padding: 0 0.2rem; }
+    .thd-acc-link:hover { text-decoration: underline; }
 
     .thd-komp { border: 1px solid #f1f5f9; border-radius: 8px; padding: 0.75rem 0.9rem; background: #f8fafc; }
     .thd-komp-titel { font-size: 0.85rem; color: #1e293b; line-height: 1.35; }
@@ -300,11 +394,13 @@ const themaHref = (n: number) => `/jahresplanung/thema/${n}?lehrgang=${lehrgang}
     .thd-nav-center:hover { text-decoration: underline; }
 
     @media print {
-      header, footer, .thd-cta, .thd-nav { display: none !important; }
+      header, footer, .thd-cta, .thd-nav, .thd-chevron, .thd-acc-actions, .thd-more-btn, .thd-komp-toggle { display: none !important; }
       :global(body) { background: white !important; }
       main { max-width: none !important; padding: 0 !important; }
       section, .thd-lb, .thd-card { break-inside: avoid; }
-      .thd-hero, .thd-sm-chip, .thd-hf { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      /* Akkordeon + gefaltete Details für den Druck vollständig aufklappen */
+      .thd-lb-body, .thd-komp-detail, .thd-more-btn + p { display: block !important; height: auto !important; overflow: visible !important; }
+      .thd-hero, .thd-sm-chip, .thd-hf, .thd-mat-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </Base>

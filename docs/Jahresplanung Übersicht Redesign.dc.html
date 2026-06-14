@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+</style>
+</helmet>
+
+<div data-screen-label="Jahresplanung · Gesamtübersicht (Redesign)" style="min-height:100vh;background:#f8fafc;font-family:'DM Sans',system-ui,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased;">
+
+  <!-- App header -->
+  <header style="background:#ffffff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:30;">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px;">
+      <img src="assets/logo-bbw.svg" alt="BBW" style="height:24px;width:auto;display:block;" />
+      <span style="font-size:13px;font-weight:600;color:#64748b;letter-spacing:.01em;">Materialplattform</span>
+      <a href="#" onClick="{{ noop }}" style="margin-left:auto;font-size:13px;font-weight:600;color:#475569;text-decoration:none;">← Wochenplanung</a>
+      <span style="font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:8px;">
+        <span style="width:26px;height:26px;border-radius:9999px;background:#e8f3ec;color:#094d28;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">PR</span>
+        pietro.rossi@bbw.ch
+      </span>
+    </div>
+  </header>
+
+  <main style="max-width:1180px;margin:0 auto;padding:32px 24px 80px;">
+
+    <!-- Notes toggle strip -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#94a3b8;">Redesign-Vorschau · /jahresplanung/uebersicht</span>
+      <button onClick="{{ toggleNotes }}" style="{{ notesBtnStyle }}">
+        <span style="font-size:13px;">◐</span> UX-Notizen {{ notesLabel }}
+      </button>
+    </div>
+
+    <!-- Title block -->
+    <div style="margin-bottom:20px;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#94a3b8;margin:0 0 8px;font-weight:600;">Jahresplanung · Gesamtcurriculum · nRLP Bildungsrat 2026</p>
+      <h1 style="font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin:0;color:#0f172a;">Das ganze EFZ 3-Jährige-Curriculum auf einen Blick</h1>
+      <p style="color:#475569;margin:12px 0 0;max-width:700px;font-size:15px;line-height:1.55;">3 Lehrjahre · 8 Themen · 273 Lektionen geplant. Klicke auf ein Thema, um in die Wochenplanung einzusteigen. Vertiefte Analysen erscheinen auf Wunsch weiter unten.</p>
+    </div>
+
+    <!-- Slice switcher + print -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:10px 14px;background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;">Lehrgang</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:600;background:#0E6E3A;color:#fff;">EFZ 3-Jährige</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:500;color:#475569;border:1px solid #e2e8f0;">EFZ 4-Jährige</span>
+        <span style="padding:5px 11px;border-radius:8px;font-size:13px;font-weight:500;color:#475569;border:1px solid #e2e8f0;">EBA 2-Jährige</span>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:10px;">
+        <a href="#" onClick="{{ noop }}" style="font-size:13px;font-weight:700;color:#094d28;text-decoration:none;">Zur Wochenplanung →</a>
+        <div style="position:relative;">
+          <button onClick="{{ toggleMore }}" title="Mehr" style="{{ moreBtnStyle }}">⋯</button>
+          <sc-if value="{{ moreOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:calc(100% + 8px);right:0;width:240px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 24px 48px -20px rgba(15,23,42,.32);padding:6px;z-index:40;">
+              <button onClick="{{ printPdf }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:#334155;text-align:left;"><span style="width:20px;text-align:center;">🖨</span> Curriculum drucken (A4 quer)</button>
+              <button onClick="{{ exportImg }}" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 12px;border:none;background:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:#334155;text-align:left;"><span style="width:20px;text-align:center;">⬇</span> Als Bild exportieren</button>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TIER 1 — curriculum map (always visible) ============ -->
+    <section>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0;color:#0f172a;">Curriculum über 3 Lehrjahre</h2>
+        <span style="font-size:12px;color:#94a3b8;">Blockhöhe ∝ Lektionen · Klick öffnet die Wochenplanung</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start;">
+        <sc-for list="{{ years }}" as="y" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="#" onClick="{{ noop }}" style="display:flex;flex-direction:column;text-decoration:none;padding:9px 13px;border-radius:10px;background:#fff;border:1px solid #e2e8f0;">
+              <span style="font-size:14px;font-weight:700;color:#0f172a;">{{ y.ljLabel }}</span>
+              <span style="font-size:12px;color:#64748b;">{{ y.sjLabel }}</span>
+            </a>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <sc-for list="{{ y.themas }}" as="t" hint-placeholder-count="3">
+                <a href="#" onClick="{{ noop }}" title="{{ t.titel }}" style="{{ t.blockStyle }}">
+                  <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;opacity:.85;">{{ t.nrLabel }}</span>
+                  <span style="font-size:14px;font-weight:700;line-height:1.22;">{{ t.titel }}</span>
+                  <span style="font-size:11px;opacity:.92;margin-top:auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                    {{ t.meta }}
+                    <sc-if value="{{ t.knVisible }}" hint-placeholder-val="{{ false }}">
+                      <span style="font-size:9px;font-weight:800;text-transform:uppercase;border:1px solid currentColor;border-radius:9999px;padding:0 5px;opacity:.85;">KN</span>
+                    </sc-if>
+                  </span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;gap:10px;align-items:flex-start;margin:14px 2px 0;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+        <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">1</span>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Immer sichtbar — die Curriculum-Landkarte.</strong> Das ist, was die meisten Lehrpersonen hier suchen: welche Themen in welchem Jahr, wie gross, ein Klick führt in die Wochenplanung. Die drei dichten Analyse-Tabellen waren früher alle gleichzeitig darunter — jetzt sind sie aufgeräumt.</p>
+      </div>
+    </sc-if>
+
+    <!-- ============ TIER 2 — Vertiefen switcher ============ -->
+    <section style="margin-top:28px;">
+      <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;box-shadow:0 1px 2px rgba(15,23,42,.04);">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94a3b8;">Vertiefen</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onClick="{{ pickSpirale }}" style="{{ chipSpiraleStyle }}">◷ SK-Spirale</button>
+          <button onClick="{{ pickArc }}" style="{{ chipArcStyle }}">★ Kompetenznachweis-Bogen</button>
+          <button onClick="{{ pickBeispiel }}" style="{{ chipBeispielStyle }}">▣ KN-Beispielplanung</button>
+        </div>
+        <sc-if value="{{ analysisOpen }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ closeAnalysis }}" style="margin-left:auto;font-size:13px;font-weight:600;color:#64748b;background:none;border:none;cursor:pointer;font-family:inherit;">Schliessen ✕</button>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:10px;align-items:flex-start;margin:10px 2px 0;padding:10px 13px;background:#e8f3ec;border:1px solid rgba(14,110,58,.2);border-radius:9px;">
+          <span style="flex-shrink:0;width:20px;height:20px;border-radius:9999px;background:#0E6E3A;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">2</span>
+          <p style="margin:0;font-size:13px;line-height:1.5;color:#094d28;"><strong>Analyse erst auf Abruf — eine nach der anderen.</strong> Statt SK-Spirale, KN-Bogen und Beispielplanung dauerhaft untereinander zu stapeln, wählt die Lehrperson gezielt eine aus. Weniger Scrollen, weniger Überforderung, klarer Fokus.</p>
+        </div>
+      </sc-if>
+
+      <!-- Empty hint -->
+      <sc-if value="{{ analysisNone }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:14px;border:1px dashed #cbd5e1;border-radius:12px;padding:30px 24px;text-align:center;background:#fff;">
+          <p style="margin:0 0 4px;font-size:15px;font-weight:600;color:#475569;">Wähle oben eine Analyse, um tiefer einzusteigen</p>
+          <p style="margin:0;font-size:13px;color:#94a3b8;line-height:1.5;max-width:440px;margin-left:auto;margin-right:auto;">Die Curriculum-Landkarte oben genügt für den Alltag. Spirale, Nachweis-Bogen und Beispielplanung sind für die vertiefte Planung gedacht.</p>
+        </div>
+      </sc-if>
+
+      <!-- Panel: SK-Spirale -->
+      <sc-if value="{{ showSpirale }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:14px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+          <h3 style="font-size:17px;font-weight:700;margin:0 0 2px;color:#0f172a;">Schlüsselkompetenz-Spirale</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 16px;line-height:1.5;max-width:680px;">Wann wird jede der 12 SK über die 3 Jahre eingeführt (R1), wiederaufgenommen (R2) und vertieft (R3)? Leere Zellen = an dieser Stelle nicht verankert.</p>
+          <div style="overflow-x:auto;">{{ spiralEl }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:12px;color:#64748b;">
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:18px;border-radius:4px;background:#e8f3ec;color:#094d28;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">R1</span> Einführung</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:18px;border-radius:4px;background:#0E6E3A;color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">R2</span> Wiederaufnahme</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:18px;border-radius:4px;background:#094d28;color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">R3</span> Vertiefung</span>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- Panel: KN arc -->
+      <sc-if value="{{ showArc }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:14px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+          <h3 style="font-size:17px;font-weight:700;margin:0 0 2px;color:#0f172a;">Kompetenznachweise &amp; Schlussarbeit</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 16px;line-height:1.5;">7 Themen-Kompetenznachweise bauen über die Jahre auf die Schlussarbeit im 3. Lehrjahr hin.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;">
+            <sc-for list="{{ arc }}" as="y" hint-placeholder-count="3">
+              <div style="display:flex;align-items:stretch;gap:10px;">
+                <div style="display:flex;flex-direction:column;justify-content:center;padding-right:4px;">
+                  <span style="font-size:15px;font-weight:800;color:#094d28;">{{ y.ljLabel }}</span>
+                  <span style="font-size:11px;color:#94a3b8;">{{ y.sjLabel }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:188px;">
+                  <sc-for list="{{ y.nodes }}" as="n" hint-placeholder-count="3">
+                    <div style="{{ n.nodeStyle }}">
+                      <span style="{{ n.badgeStyle }}">{{ n.label }}</span>
+                      <span style="font-size:13px;font-weight:600;color:#0f172a;line-height:1.25;">{{ n.titel }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ y.hasArrow }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;align-items:center;color:#cbd5e1;font-size:24px;padding:0 2px;">→</div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- Panel: KN Beispielplanung -->
+      <sc-if value="{{ showBeispiel }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:14px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
+          <h3 style="font-size:17px;font-weight:700;margin:0 0 2px;color:#0f172a;">Beispiel-KN-Planung pro Semester</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 16px;line-height:1.5;max-width:680px;">Pro Semester mind. 3 Kompetenznachweise → 3 Noten Gesellschaft + 3 Noten Sprache. Im Planer pro Klasse anpassbar.</p>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <sc-for list="{{ beispiel }}" as="y" hint-placeholder-count="3">
+              <div style="border:1px solid #e2e8f0;border-radius:11px;padding:13px 15px;">
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:10px;">
+                  <span style="font-size:15px;font-weight:700;color:#0f172a;">{{ y.ljLabel }}</span>
+                  <span style="font-size:12px;color:#94a3b8;">{{ y.sjLabel }}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;">
+                  <sc-for list="{{ y.sems }}" as="s" hint-placeholder-count="2">
+                    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:11px 12px;">
+                      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px;">
+                        <span style="font-size:13px;font-weight:700;color:#094d28;">{{ s.title }}</span>
+                        <span style="font-size:11px;font-weight:600;color:#64748b;background:#fff;border:1px solid #e2e8f0;border-radius:9999px;padding:2px 9px;white-space:nowrap;">{{ s.tag }}</span>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:6px;">
+                        <sc-for list="{{ s.kns }}" as="k" hint-placeholder-count="3">
+                          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:5px;background:#fff;border:1px solid #eef2f6;border-left:3px solid #0E6E3A;border-radius:6px;padding:6px 8px;">
+                            <span style="font-size:11px;font-weight:800;color:#094d28;margin-right:2px;">{{ k.nr }}</span>
+                            <span style="font-size:11px;font-weight:600;border-radius:9999px;padding:2px 8px;background:#e8f3ec;color:#094d28;">{{ k.spr }}</span>
+                            <span style="font-size:11px;font-weight:600;border-radius:9999px;padding:2px 8px;background:#fef3c7;color:#b45309;">{{ k.asp }}</span>
+                            <span style="font-size:11px;font-weight:600;border-radius:9999px;padding:2px 8px;background:#f1f5f9;color:#475569;">{{ k.sk }}</span>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </section>
+
+  </main>
+
+  <sc-if value="{{ toast }}" hint-placeholder-val="">
+    <div style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;box-shadow:0 16px 40px -12px rgba(15,23,42,.5);z-index:60;">{{ toast }}</div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { analysis: null, moreOpen: false, showNotes: true, toast: '' };
+
+  POS = {
+    1: { background: '#e8f3ec', color: '#094d28', border: '1px solid rgba(14,110,58,0.18)' },
+    2: { background: '#0E6E3A', color: '#ffffff', border: '1px solid #0E6E3A' },
+    3: { background: '#094d28', color: '#ffffff', border: '1px solid #094d28' },
+  };
+
+  YEARS = [
+    { lj: 1, sj: '2025/26', total: 90, themas: [
+      { nr: 1, titel: 'Ins Berufsleben einsteigen', lekt: 21, lbs: 5 },
+      { nr: 2, titel: 'Meinungen bilden und mitgestalten', lekt: 33, lbs: 6 },
+      { nr: 3, titel: 'Bewusst konsumieren und handeln', lekt: 36, lbs: 6 },
+    ] },
+    { lj: 2, sj: '2026/27', total: 93, themas: [
+      { nr: 4, titel: 'Verantwortung für mich und andere übernehmen', lekt: 30, lbs: 5 },
+      { nr: 5, titel: 'Mich im Staat orientieren', lekt: 36, lbs: 6 },
+      { nr: 6, titel: 'Mein eigenes Zuhause', lekt: 27, lbs: 5 },
+    ] },
+    { lj: 3, sj: '2027/28', total: 90, themas: [
+      { nr: 7, titel: 'Schlussarbeit', lekt: 33, lbs: 0, isSA: true },
+      { nr: 8, titel: 'Arbeiten in der Zukunft', lekt: 57, lbs: 7 },
+    ] },
+  ];
+
+  MAXLEK = 57;
+
+  SK = [
+    ['Lernstrategien anwenden',     ['R1', '', 'R2', '', 'R3', '', '', '']],
+    ['Informationen recherchieren', ['', 'R1', '', '', 'R2', '', '', 'R3']],
+    ['Information verarbeiten',      ['R1', 'R2', '', 'R3', '', '', '', '']],
+    ['Schriftlich kommunizieren',   ['', 'R1', '', 'R2', '', '', 'R3', '']],
+    ['Mündlich kommunizieren',      ['R1', '', '', '', '', 'R2', 'R3', '']],
+    ['Zusammenarbeiten',            ['', '', '', 'R1', '', 'R2', '', '']],
+    ['Konflikte bewältigen',        ['', '', '', 'R1', '', '', '', 'R2']],
+    ['Vernetzt denken',             ['', '', 'R1', '', 'R2', '', '', 'R3']],
+    ['Probleme lösen',              ['', '', 'R1', '', '', 'R2', '', 'R3']],
+    ['Sich selbst organisieren',    ['R1', '', '', '', '', 'R2', '', '']],
+    ['Selbst reflektieren',         ['R1', '', '', '', '', '', 'R2', 'R3']],
+    ['Digital handeln',             ['', 'R1', '', '', '', '', '', 'R2']],
+  ];
+
+  ARC = [
+    { lj: 1, sj: '2025/26', nodes: [
+      { label: 'KN · T1', titel: 'Ins Berufsleben einsteigen' },
+      { label: 'KN · T2', titel: 'Meinungen bilden' },
+      { label: 'KN · T3', titel: 'Bewusst konsumieren' },
+    ] },
+    { lj: 2, sj: '2026/27', nodes: [
+      { label: 'KN · T4', titel: 'Verantwortung übernehmen' },
+      { label: 'KN · T5', titel: 'Im Staat orientieren' },
+      { label: 'KN · T6', titel: 'Mein eigenes Zuhause' },
+    ] },
+    { lj: 3, sj: '2027/28', nodes: [
+      { label: '★ Schlussarbeit', titel: 'Schlussarbeit (T7)', isSA: true },
+      { label: 'KN · T8', titel: 'Arbeiten in der Zukunft' },
+    ] },
+  ];
+
+  BEISPIEL = [
+    { lj: 1, sj: '2025/26', sems: [
+      { title: 'Semester 1', tag: '3 KN · 3+3 Noten', kns: [
+        { nr: 'KN 1', spr: 'Standardsprache', asp: 'Recht', sk: 'SK1' },
+        { nr: 'KN 2', spr: 'Gespräch', asp: 'Ethik', sk: 'SK4' },
+        { nr: 'KN 3', spr: 'Lesen', asp: 'Identität', sk: 'SK10' },
+      ] },
+      { title: 'Semester 2', tag: '3 KN · 3+3 Noten', kns: [
+        { nr: 'KN 4', spr: 'Schreiben', asp: 'Ökologie', sk: 'SK8' },
+        { nr: 'KN 5', spr: 'Sprechen', asp: 'Politik', sk: 'SK2' },
+        { nr: 'KN 6', spr: 'Hören', asp: 'Kultur', sk: 'SK5' },
+      ] },
+    ] },
+    { lj: 2, sj: '2026/27', sems: [
+      { title: 'Semester 3', tag: '3 KN · 3+3 Noten', kns: [
+        { nr: 'KN 1', spr: 'Standardsprache', asp: 'Recht', sk: 'SK6' },
+        { nr: 'KN 2', spr: 'Gespräch', asp: 'Ökologie', sk: 'SK9' },
+        { nr: 'KN 3', spr: 'Schreiben', asp: 'Politik', sk: 'SK8' },
+      ] },
+      { title: 'Semester 4', tag: '3 KN · 3+3 Noten', kns: [
+        { nr: 'KN 4', spr: 'Sprechen', asp: 'Identität', sk: 'SK3' },
+        { nr: 'KN 5', spr: 'Lesen', asp: 'Recht', sk: 'SK7' },
+        { nr: 'KN 6', spr: 'Hören', asp: 'Ethik', sk: 'SK11' },
+      ] },
+    ] },
+    { lj: 3, sj: '2027/28', sems: [
+      { title: 'Semester 5', tag: '3 KN · 3+3 Noten', kns: [
+        { nr: 'KN 1', spr: 'Schreiben', asp: 'Politik', sk: 'SK9' },
+        { nr: 'KN 2', spr: 'Sprechen', asp: 'Kultur', sk: 'SK7' },
+        { nr: 'KN 3', spr: 'Standardsprache', asp: 'Recht', sk: 'SK2' },
+      ] },
+      { title: 'Semester 6 · Schlussarbeit', tag: 'integrativ', kns: [
+        { nr: 'SA', spr: 'Prozess', asp: 'Produkt', sk: 'Präsentation' },
+      ] },
+    ] },
+  ];
+
+  flash(msg) {
+    this.setState({ toast: msg, moreOpen: false });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ toast: '' }), 2400);
+  }
+
+  chip(name) {
+    const on = this.state.analysis === name;
+    return { padding: '8px 14px', borderRadius: '9px', cursor: 'pointer', fontFamily: 'inherit',
+      fontSize: '13px', fontWeight: 600, whiteSpace: 'nowrap',
+      border: '1px solid ' + (on ? '#0E6E3A' : '#cbd5e1'),
+      background: on ? '#0E6E3A' : '#fff', color: on ? '#fff' : '#334155',
+      boxShadow: on ? '0 2px 8px -2px rgba(14,110,58,.5)' : 'none' };
+  }
+
+  skCell(val) {
+    const base = { textAlign: 'center', padding: '7px 0', borderRadius: '5px', fontSize: '12px', fontWeight: 700, minWidth: '36px' };
+    if (!val) return Object.assign({}, base, { background: '#f1f5f9', color: '#cbd5e1' });
+    const map = { R1: { background: '#e8f3ec', color: '#094d28' }, R2: { background: '#0E6E3A', color: '#fff' }, R3: { background: '#094d28', color: '#fff' } };
+    return Object.assign({}, base, map[val]);
+  }
+
+  renderSpiral() {
+    const cols = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8'];
+    const cellGrid = 'minmax(202px,1.7fr) repeat(8,minmax(36px,1fr)) 52px';
+    const rows = [];
+    // group header row
+    rows.push(React.createElement('div', { key: 'g', style: { display: 'grid', gridTemplateColumns: cellGrid, gap: '4px', marginBottom: '4px' } },
+      React.createElement('div', { style: { fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em', color: '#94a3b8', alignSelf: 'end', paddingBottom: '4px' } }, 'Schlüsselkompetenz'),
+      React.createElement('div', { style: { gridColumn: 'span 3', textAlign: 'center', fontSize: '11px', fontWeight: 700, color: '#475569', background: '#f1f5f9', borderRadius: '5px', padding: '4px 0' } }, '1. Lehrjahr'),
+      React.createElement('div', { style: { gridColumn: 'span 3', textAlign: 'center', fontSize: '11px', fontWeight: 700, color: '#475569', background: '#f1f5f9', borderRadius: '5px', padding: '4px 0' } }, '2. Lehrjahr'),
+      React.createElement('div', { style: { gridColumn: 'span 2', textAlign: 'center', fontSize: '11px', fontWeight: 700, color: '#475569', background: '#f1f5f9', borderRadius: '5px', padding: '4px 0' } }, '3. Lehrjahr'),
+      React.createElement('div', {}, '')
+    ));
+    // column header row
+    rows.push(React.createElement('div', { key: 'h', style: { display: 'grid', gridTemplateColumns: cellGrid, gap: '4px', marginBottom: '4px' } },
+      React.createElement('div', {}, ''),
+      ...cols.map((c) => React.createElement('div', { key: c, style: { textAlign: 'center', fontSize: '11px', fontWeight: 700, color: '#94a3b8' } }, c)),
+      React.createElement('div', { style: { textAlign: 'center', fontSize: '10px', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' } }, 'Stat.')
+    ));
+    // data rows
+    this.SK.forEach((sk, i) => {
+      const cells = sk[1];
+      const stops = cells.filter(Boolean).length;
+      rows.push(React.createElement('div', { key: i, style: { display: 'grid', gridTemplateColumns: cellGrid, gap: '4px', marginBottom: '4px', alignItems: 'center' } },
+        React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: stops ? '#334155' : '#cbd5e1', background: '#f8fafc', borderRadius: '5px', padding: '6px 9px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' } },
+          React.createElement('span', { style: { display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '20px', height: '20px', borderRadius: '9999px', background: '#e2e8f0', fontSize: '10px', fontWeight: 700, color: '#475569', flexShrink: 0 } }, i + 1),
+          sk[0]),
+        ...cells.map((c, ci) => React.createElement('div', { key: ci, style: this.skCell(c) }, c || '·')),
+        React.createElement('div', { style: { textAlign: 'center', fontSize: '13px', fontWeight: 700, color: stops ? '#475569' : '#d97706' } }, stops)
+      ));
+    });
+    return React.createElement('div', { style: { minWidth: '720px' } }, ...rows);
+  }
+
+  renderVals() {
+    const s = this.state;
+
+    const years = this.YEARS.map((y) => ({
+      ljLabel: y.lj + '. Lehrjahr', sjLabel: y.sj + ' · ' + y.total + ' L.',
+      themas: y.themas.map((t, i) => {
+        const pos = (i % 3) + 1;
+        const col = this.POS[pos];
+        const minH = Math.round(54 + (t.lekt / this.MAXLEK) * 128);
+        const blockStyle = Object.assign({
+          display: 'flex', flexDirection: 'column', gap: '5px', padding: '11px 13px', borderRadius: '10px',
+          textDecoration: 'none', minHeight: minH + 'px', cursor: 'pointer',
+        }, t.isSA ? { background: '#e8f3ec', color: '#094d28', border: '2px dashed rgba(14,110,58,.5)' } : col);
+        const meta = t.isSA ? (t.lekt + ' L. · Prozess · Produkt') : (t.lekt + ' L. · ' + t.lbs + ' Lebensbezüge');
+        return { nrLabel: 'T' + t.nr + (t.isSA ? ' · Schlussarbeit' : ''), titel: t.titel, meta, knVisible: !t.isSA, blockStyle };
+      }),
+    }));
+
+    const arc = this.ARC.map((y, yi) => ({
+      ljLabel: y.lj + '. LJ', sjLabel: y.sj, hasArrow: yi < this.ARC.length - 1,
+      nodes: y.nodes.map((n) => ({
+        label: n.label, titel: n.titel,
+        nodeStyle: { display: 'flex', flexDirection: 'column', gap: '3px', borderRadius: '9px', padding: '9px 11px',
+          border: n.isSA ? '1px solid #fde68a' : '1px solid #e2e8f0',
+          borderLeft: n.isSA ? '3px solid #f59e0b' : '3px solid #0E6E3A',
+          background: n.isSA ? '#fffbeb' : '#fff' },
+        badgeStyle: { fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.03em', color: n.isSA ? '#b45309' : '#094d28' },
+      })),
+    }));
+
+    return {
+      years, arc, beispiel: this.BEISPIEL,
+      spiralEl: this.renderSpiral(),
+      showNotes: s.showNotes, notesLabel: s.showNotes ? 'an' : 'aus',
+      notesBtnStyle: {
+        display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 11px', borderRadius: '8px',
+        fontFamily: 'inherit', fontSize: '12px', fontWeight: 600, cursor: 'pointer',
+        border: '1px solid ' + (s.showNotes ? '#0E6E3A' : '#cbd5e1'),
+        background: s.showNotes ? '#0E6E3A' : '#fff', color: s.showNotes ? '#fff' : '#64748b',
+      },
+      moreOpen: s.moreOpen,
+      moreBtnStyle: { width: '38px', height: '38px', borderRadius: '10px', border: '1px solid ' + (s.moreOpen ? '#0E6E3A' : '#e2e8f0'),
+        background: s.moreOpen ? '#e8f3ec' : '#fff', color: '#475569', cursor: 'pointer', fontSize: '19px', lineHeight: 1,
+        fontFamily: 'inherit', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' },
+      chipSpiraleStyle: this.chip('spirale'), chipArcStyle: this.chip('arc'), chipBeispielStyle: this.chip('beispiel'),
+      analysisOpen: !!s.analysis, analysisNone: !s.analysis,
+      showSpirale: s.analysis === 'spirale', showArc: s.analysis === 'arc', showBeispiel: s.analysis === 'beispiel',
+      toast: s.toast,
+      // handlers
+      toggleNotes: () => this.setState({ showNotes: !s.showNotes }),
+      toggleMore: () => this.setState({ moreOpen: !s.moreOpen }),
+      printPdf: () => this.flash('Druckansicht (A4 quer) wird geöffnet …'),
+      exportImg: () => this.flash('Curriculum-Bild wird vorbereitet …'),
+      pickSpirale: () => this.setState({ analysis: s.analysis === 'spirale' ? null : 'spirale' }),
+      pickArc: () => this.setState({ analysis: s.analysis === 'arc' ? null : 'arc' }),
+      pickBeispiel: () => this.setState({ analysis: s.analysis === 'beispiel' ? null : 'beispiel' }),
+      closeAnalysis: () => this.setState({ analysis: null }),
+      noop: (e) => { if (e && e.preventDefault) e.preventDefault(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

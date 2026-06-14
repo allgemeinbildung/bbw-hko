@@ -113,7 +113,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
       </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10">
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="uebersicht()" x-cloak>
       <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
           <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · Gesamtcurriculum · nRLP Bildungsrat 2026</p>
@@ -135,10 +135,17 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
           ))}
         </div>
         <a href="/jahresplanung" class="jp-overview-link">Zur Wochenplanung →</a>
+        <div class="jp-pop" @click.outside="moreOpen=false" @keydown.escape="moreOpen=false">
+          <button type="button" class="jp-icon" @click="moreOpen=!moreOpen" :aria-expanded="moreOpen" aria-haspopup="menu" aria-label="Weitere Aktionen" title="Weitere Aktionen">⋯</button>
+          <div class="jp-menu jp-menu-end" x-show="moreOpen" x-cloak x-transition.opacity.duration.120ms role="menu">
+            <button type="button" class="jp-menu-item" role="menuitem" @click="moreOpen=false; printAll()">🖨 Curriculum drucken (A4 quer)</button>
+            <button type="button" class="jp-menu-item" role="menuitem" @click="moreOpen=false; exportImage()">⬇ Als Bild exportieren</button>
+          </div>
+        </div>
       </div>
 
-      <!-- ── Idee 2: Mehrjahres-Übersicht ──────────────────────────────── -->
-      <section class="mb-12">
+      <!-- ── Idee 2: Mehrjahres-Übersicht (Curriculum-Landkarte) ───────── -->
+      <section class="mb-12" id="ueb-curriculum">
         <h2 class="text-lg font-semibold text-slate-900 mb-1">Curriculum über {nYears} Lehrjahre</h2>
         <p class="text-sm text-slate-500 mb-5">Jede Spalte ein Lehrjahr; Blockhöhe ∝ Lektionen. Klick öffnet die Wochenplanung.</p>
         <div class="ueb-grid" style={`grid-template-columns: repeat(${nYears}, minmax(0,1fr));`}>
@@ -170,8 +177,17 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
         </div>
       </section>
 
+      <!-- ── Vertiefen-Umschalter: höchstens eine Analyse gleichzeitig ──── -->
+      <div class="ueb-deepen" id="ueb-analyses">
+        <span class="ueb-deepen-label">Vertiefen</span>
+        <button type="button" class="ueb-chip" :class="analysis==='spirale' && 'ueb-chip-on'" @click="toggle('spirale')" :aria-pressed="analysis==='spirale'"><span aria-hidden="true">◷</span> SK-Spirale</button>
+        <button type="button" class="ueb-chip" :class="analysis==='arc' && 'ueb-chip-on'" @click="toggle('arc')" :aria-pressed="analysis==='arc'"><span aria-hidden="true">★</span> Kompetenznachweis-Bogen</button>
+        <button type="button" class="ueb-chip" :class="analysis==='beispiel' && 'ueb-chip-on'" @click="toggle('beispiel')" :aria-pressed="analysis==='beispiel'"><span aria-hidden="true">▣</span> KN-Beispielplanung</button>
+      </div>
+      <p class="ueb-hint" x-show="!analysis" x-cloak>Wähle eine Analyse, um tiefer einzutauchen — sie erscheint hier darunter.</p>
+
       <!-- ── Idee 3: Längsschnitt SK-Spirale ───────────────────────────── -->
-      <section class="mb-12">
+      <section class="ueb-analysis mb-12" x-show="analysis==='spirale'" x-cloak x-transition.opacity.duration.150ms>
         <h2 class="text-lg font-semibold text-slate-900 mb-1">Schlüsselkompetenz-Spirale</h2>
         <p class="text-sm text-slate-500 mb-5">
           Wann wird jede der 12 SK über die {nYears} Jahre eingeführt (R1), wiederaufgenommen (R2) und vertieft (R3)?
@@ -217,7 +233,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
       </section>
 
       <!-- ── Idee 4: KN-/Schlussarbeit-Progression ─────────────────────── -->
-      <section class="mb-8">
+      <section class="ueb-analysis mb-8" x-show="analysis==='arc'" x-cloak x-transition.opacity.duration.150ms>
         <h2 class="text-lg font-semibold text-slate-900 mb-1">Kompetenznachweise & Schlussarbeit</h2>
         <p class="text-sm text-slate-500 mb-5">
           {totalKn} Themen-Kompetenznachweise bauen über die Jahre auf die Schlussarbeit hin.
@@ -244,7 +260,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
       </section>
 
       <!-- ── Beispiel: KN-Planung pro Semester (Showcase) ──────────────── -->
-      <section class="mb-8">
+      <section class="ueb-analysis mb-8" x-show="analysis==='beispiel'" x-cloak x-transition.opacity.duration.150ms>
         <h2 class="text-lg font-semibold text-slate-900 mb-1">Beispiel-KN-Planung pro Semester</h2>
         <p class="text-sm text-slate-500 mb-5">
           Pro Semester mind. 3 Kompetenznachweise → 3 Noten Gesellschaft + 3 Noten Sprache.
@@ -293,7 +309,30 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
     </footer>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" is:inline></script>
+  <script is:inline>
+    function uebersicht() {
+      return {
+        analysis: null,
+        moreOpen: false,
+        toggle(a) { this.analysis = this.analysis === a ? null : a },
+        printAll() { window.print() },
+        exportImage() {
+          const el = document.getElementById('ueb-curriculum')
+          if (!el || typeof html2canvas === 'undefined') { window.print(); return }
+          html2canvas(el, { backgroundColor: '#ffffff', scale: 2 }).then((canvas) => {
+            const a = document.createElement('a')
+            a.href = canvas.toDataURL('image/png')
+            a.download = 'Curriculum-Uebersicht.png'
+            a.click()
+          }).catch(() => window.print())
+        },
+      }
+    }
+  </script>
+
   <style>
+    [x-cloak] { display: none !important; }
     /* Slice-Switcher (geteilt mit /jahresplanung) */
     .jp-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.6rem 0.9rem; }
     .jp-seg { display: flex; align-items: center; gap: 0.4rem; }
@@ -304,6 +343,24 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
     .jp-pill-on:hover { color: white; }
     .jp-overview-link { margin-left: auto; font-size: 0.8rem; font-weight: 700; color: var(--brand-dark); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 1px; }
     .jp-overview-link:hover { border-bottom-color: var(--brand); }
+
+    /* ⋯ Overflow-Menü (geteilt mit /jahresplanung) */
+    .jp-pop { position: relative; }
+    .jp-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; color: #475569; font-size: 1.1rem; font-weight: 700; line-height: 1; transition: border-color .15s, color .15s; }
+    .jp-icon:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .jp-menu { position: absolute; top: calc(100% + 6px); left: 0; z-index: 50; min-width: 16rem; background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.35rem; box-shadow: 0 18px 40px -18px rgba(15,23,42,0.35), 0 0 0 1px rgba(14,110,58,0.06); }
+    .jp-menu-end { left: auto; right: 0; }
+    .jp-menu-item { display: flex; align-items: center; width: 100%; text-align: left; gap: 0.5rem; font-size: 0.82rem; font-weight: 600; color: #334155; background: transparent; border: none; border-radius: 7px; padding: 0.5rem 0.6rem; cursor: pointer; transition: background .12s, color .12s; }
+    .jp-menu-item:hover { background: var(--brand-tint); color: var(--brand-dark); }
+
+    /* Vertiefen-Umschalter */
+    .ueb-deepen { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.6rem 0.8rem; margin-bottom: 0.75rem; }
+    .ueb-deepen-label { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-right: 0.25rem; }
+    .ueb-chip { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 600; color: #334155; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 0.35rem 0.85rem; min-height: 40px; cursor: pointer; transition: all .15s; }
+    .ueb-chip:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .ueb-chip-on { background: var(--brand); color: white; border-color: var(--brand); }
+    .ueb-chip-on:hover { color: white; }
+    .ueb-hint { font-size: 0.82rem; color: #94a3b8; font-style: italic; padding: 0.75rem 0.2rem 0.25rem; margin-bottom: 1.5rem; }
 
     /* Idee 2: Bird's-eye */
     .ueb-grid { display: grid; gap: 0.9rem; }
@@ -375,9 +432,11 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
 
     @media print {
       @page { size: A4 landscape; margin: 10mm; }
-      header, footer, .jp-switch { display: none !important; }
+      header, footer, .jp-switch, .ueb-deepen, .ueb-hint { display: none !important; }
       :global(body) { background: white !important; }
       main { max-width: none !important; padding: 0 !important; }
+      /* Beim Druck alle Analysen vollständig zeigen */
+      .ueb-analysis { display: block !important; }
       section { break-inside: avoid; }
       .cell-thema1, .cell-thema2, .cell-thema3, .sp-r1, .sp-r2, .sp-r3, .sp-empty {
         -webkit-print-color-adjust: exact; print-color-adjust: exact;
