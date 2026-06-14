@@ -323,3 +323,92 @@ export const ALL_LEHRGAENGE: { value: Lehrgang; label: string }[] = [
 export function parseLehrgang(raw: string | null | undefined): Lehrgang {
   return raw === 'EFZ-4J' ? 'EFZ-4J' : raw === 'EBA' ? 'EBA' : 'EFZ-3J'
 }
+
+// ── KN-Planung (semesterbasiert, kompetenz-/sprachmodus-orientiert) ─────────
+export interface KnSlot {
+  id: string
+  semester: number
+  sprachmodus: string
+  aspekt: string
+  sk: string
+  format: string
+  week_n: number | null
+  notes: string
+}
+export interface KnSemester {
+  semester: number
+  themeNrs: number[]
+  isSA: boolean
+  dueSprachmodi: string[]
+  dueAspekte: string[]
+  dueSk: string[]
+  weeks: { n: number; kw: number; datum: string }[]
+}
+export interface KnPlan {
+  semesters: KnSemester[]
+  seed: KnSlot[]
+  minPerSemester: number
+}
+
+/**
+ * Leitet aus einem Jahresplan die semesterbasierte KN-Planung ab: pro Semester
+ * mind. 3 KN (Schlussarbeit-Semester: 1 integrativer KN), jeder KN zielt auf
+ * einen Sprachmodus (Sprache-Note) + gesellschaftlichen Aspekt (Ges-Note) + SK,
+ * round-robin aus den Themen des Semesters. Reine Funktion, in Übersicht +
+ * Planer wiederverwendet (Single Source of Truth).
+ */
+export function buildKnPlan(
+  nrlp: any,
+  lehrgang: Lehrgang,
+  lehrjahr: number,
+  schuljahr: string,
+): KnPlan {
+  const plan = buildCalendar(nrlp, lehrgang, lehrjahr, schuljahr)
+  const zSk = ((nrlp?.zirkularitaet?.schluesselkompetenzen ?? []) as any[])
+  const themen = ((nrlp?.themen ?? []) as any[])
+  const themeByNr: Record<number, any> = Object.fromEntries(themen.map((t) => [t.nr, t]))
+  const skOfThema = (nr: number): string[] => zSk.filter((sk) => sk.wiederholungen?.['T' + nr]).map((sk) => sk.bezeichnung as string)
+  const aspekteOf = (nr: number): string[] => {
+    const set = new Set<string>()
+    for (const lb of (themeByNr[nr]?.lebensbezuege ?? []) as any[])
+      for (const k of (lb.kompetenzen ?? []) as any[])
+        for (const g of (k.gesellschaftliche_inhalte ?? []) as any[]) if (g?.aspekt) set.add(g.aspekt)
+    return [...set]
+  }
+  const smOf = (nr: number): string[] => [...new Set(((themeByNr[nr]?.sprachmodi ?? []) as string[]))]
+
+  const themaSemester: Record<number, number> = {}
+  for (const t of plan.themas) {
+    const cells = plan.calendar.filter((c) => c.thema === t.nr && c.type === 'teaching')
+    const knCell = cells.find((c) => c.isKn) ?? cells[cells.length - 1]
+    themaSemester[t.nr] = knCell && knCell.n <= 24 ? 1 : 2
+  }
+  const semesters: KnSemester[] = [1, 2].map((s) => {
+    const themeNrs = plan.themas.filter((t) => themaSemester[t.nr] === s).map((t) => t.nr)
+    const isSA = themeNrs.some((nr) => ((themeByNr[nr]?.lebensbezuege ?? []) as any[]).length === 0)
+    const dueSprachmodi = [...new Set(themeNrs.flatMap(smOf))]
+    const dueAspekte = [...new Set(themeNrs.flatMap(aspekteOf))]
+    const dueSk = [...new Set(themeNrs.flatMap(skOfThema))]
+    const weeks = plan.calendar
+      .filter((c) => c.type === 'teaching' && (c.n <= 24) === (s === 1))
+      .map((c) => ({ n: c.n, kw: c.kw, datum: c.datum }))
+    return { semester: s, themeNrs, isSA, dueSprachmodi, dueAspekte, dueSk, weeks }
+  }).filter((sem) => sem.themeNrs.length > 0)
+
+  const pick = (arr: string[], i: number) => (arr.length ? arr[i % arr.length] : '')
+  const seed: KnSlot[] = semesters.flatMap((sem) => {
+    const count = sem.isSA ? 1 : 3
+    return Array.from({ length: count }, (_, i) => ({
+      id: `s${sem.semester}_${i + 1}`,
+      semester: sem.semester,
+      sprachmodus: pick(sem.dueSprachmodi, i),
+      aspekt: pick(sem.dueAspekte, i),
+      sk: pick(sem.dueSk, i),
+      format: '',
+      week_n: null,
+      notes: sem.isSA ? 'Schlussarbeit – integrativer Kompetenznachweis' : '',
+    }))
+  })
+
+  return { semesters, seed, minPerSemester: 3 }
+}
