@@ -1,14 +1,35 @@
 ---
 import Base from '../layouts/Base.astro'
 import GuestPrintBlock from '../components/GuestPrintBlock.astro'
-import { nrlp } from '../lib/nrlp'
+import { nrlp, getNrlp } from '../lib/nrlp'
 import { situationenIndex } from '../lib/situationen'
 import einheitenIndex from '../data/einheiten.index.json'
 import { skFullName } from '../lib/sk-labels'
 import { KN_TYP_OPTIONS } from '../lib/einheiten/kn-typ-labels'
+import { buildCalendar, lehrjahreOf, defaultSchuljahr, parseLehrgang, lehrgangLabel as fmtLehrgang, ALL_LEHRGAENGE, type Lehrgang } from '../lib/jahresplanung/calendar'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
+
+// ── Slice-Auswahl (Idee 1: Lehrgang × Lehrjahr × Schuljahr) ──────────────
+// Aus Query-Params; Default EFZ-3J / 1. Lehrjahr / 2025/26 (rückwärtskompatibel).
+const COHORT_ANCHOR = 2025 // Schuljahr-Anker für die Default-Beschriftung
+const _url = new URL(Astro.request.url)
+const lehrgang: Lehrgang = parseLehrgang(_url.searchParams.get('lehrgang'))
+const maxLehrjahr = lehrjahreOf(lehrgang)
+let lehrjahr = parseInt(_url.searchParams.get('lj') ?? '1', 10)
+if (!Number.isFinite(lehrjahr) || lehrjahr < 1 || lehrjahr > maxLehrjahr) lehrjahr = 1
+const schuljahr = _url.searchParams.get('sj') || defaultSchuljahr(COHORT_ANCHOR, lehrjahr)
+// Auswahlliste der Schuljahre (Anker-Kohorte ± Nachbarjahre)
+const schuljahrOptions = [-1, 0, 1, 2].map((d) => defaultSchuljahr(COHORT_ANCHOR + d, lehrjahr))
+if (!schuljahrOptions.includes(schuljahr)) schuljahrOptions.unshift(schuljahr)
+
+// nRLP-Dataset für den gewählten Lehrgang (Fallback: 3J-Default)
+const ds = getNrlp(lehrgang) ?? nrlp
+
+// Generierter Jahresplan für diesen Slice
+const plan = buildCalendar(ds, lehrgang, lehrjahr, schuljahr)
+const lehrgangLabel = fmtLehrgang(lehrgang)
 
 const { data: jpProfile } = await Astro.locals.supabase
   .from('profiles')
@@ -29,7 +50,7 @@ type LebensbezugInfo = {
   sprachmodi: string[]
 }
 const lookup: Record<string, LebensbezugInfo> = {}
-for (const thema of nrlp.themen as any[]) {
+for (const thema of ds.themen as any[]) {
   for (const lb of (thema.lebensbezuege ?? []) as any[]) {
     // Union of Sprachmodi recommended across this Lebensbezug's Kompetenzen
     const sm = new Set<string>()
@@ -91,10 +112,11 @@ for (const e of einheitenIndex as any[]) {
 
 // ── Feature 1: SK-Abdeckungsmatrix (canonical nRLP) ──────────────────────
 // Source: zirkularitaet.schluesselkompetenzen[].wiederholungen — the official
-// "which SK is scheduled in which Thema" map. Columns = T1/T2/T3 (1. Lehrjahr),
-// cell = iteration depth R1/R2/R3 (light→dark), empty = not covered this year.
-const SK_COLS = ['T1', 'T2', 'T3'] as const
-const zSk = ((nrlp as any).zirkularitaet?.schluesselkompetenzen ?? []) as any[]
+// "which SK is scheduled in which Thema" map. Columns = the themes of the
+// selected Lehrjahr (e.g. T4/T5/T6 in LJ2); cell = iteration depth R1/R2/R3.
+const SK_COLS = plan.themeKeys // z.B. ['T4','T5','T6']
+const themaNrsInYear = plan.themas.map((t) => t.nr)
+const zSk = ((ds as any).zirkularitaet?.schluesselkompetenzen ?? []) as any[]
 const skMatrix = zSk.map((sk, i) => ({
   nr: i + 1,
   name: sk.bezeichnung as string,
@@ -102,16 +124,49 @@ const skMatrix = zSk.map((sk, i) => ({
   cells: SK_COLS.map((t) => (sk.wiederholungen?.[t] ?? null) as string | null),
   inYear: SK_COLS.some((t) => Boolean(sk.wiederholungen?.[t])),
 }))
-// Thema → recommended SK names (for the Excel "SKs" column + coverage checklist)
-const themaSK: Record<number, string[]> = { 1: [], 2: [], 3: [] }
+// Thema-Nr → recommended SK names (Excel "SKs" column + coverage checklist)
+const themaSK: Record<number, string[]> = {}
+themaNrsInYear.forEach((nr) => { themaSK[nr] = [] })
 zSk.forEach((sk) => {
-  ;([1, 2, 3] as const).forEach((t) => {
-    if (sk.wiederholungen?.['T' + t]) themaSK[t].push(sk.bezeichnung)
+  themaNrsInYear.forEach((nr) => {
+    if (sk.wiederholungen?.['T' + nr]) themaSK[nr].push(sk.bezeichnung)
   })
 })
 // Sprachmodi zirkularitaet (for the live coverage tab, Feature 8)
-const zSm = ((nrlp as any).zirkularitaet?.sprachmodi ?? []) as any[]
+const zSm = ((ds as any).zirkularitaet?.sprachmodi ?? []) as any[]
 const smCanon = zSm.map((s) => s.bezeichnung as string)
+
+// Default-KN-Vorlage: ein Kompetenznachweis pro Thema dieses Lehrjahrs (Feature 6)
+const defaultKnSeed = plan.themas.map((t, i) => ({
+  id: 'kn' + (i + 1),
+  label: `KN ${i + 1} · T${t.nr} — ${t.titel}`,
+  week_n: null as number | null,
+  format: '',
+  notes: '',
+}))
+
+// ── Export-Daten: alle Lehrjahre des Lehrgangs (Excel: ein Blatt pro Jahr) ──
+const exportYears = Array.from({ length: maxLehrjahr }, (_, i) => i + 1).map((lj) => {
+  const pl = buildCalendar(ds, lehrgang, lj, defaultSchuljahr(COHORT_ANCHOR, lj))
+  return {
+    lehrjahr: lj, schuljahr: pl.schuljahr, calendar: pl.calendar,
+    themas: pl.themas, themeKeys: pl.themeKeys, stats: pl.stats,
+  }
+})
+// SK je Thema-Nr über ALLE Themen (Export-Spalten + Spirale)
+const themaSKAll: Record<number, string[]> = {}
+for (const th of (ds.themen ?? []) as any[]) themaSKAll[th.nr] = []
+zSk.forEach((sk: any) => {
+  for (const th of (ds.themen ?? []) as any[]) {
+    if (sk.wiederholungen?.['T' + th.nr]) themaSKAll[th.nr].push(sk.bezeichnung)
+  }
+})
+const allThemeCols = ((ds.themen ?? []) as any[]).slice().sort((a, b) => a.nr - b.nr)
+  .map((t) => ({ nr: t.nr, lehrjahr: Number(t.lehrjahr), titel: t.titel }))
+const skSpiralRows = zSk.map((sk: any, i: number) => ({
+  nr: i + 1, name: sk.bezeichnung as string,
+  cells: allThemeCols.map((c) => (sk.wiederholungen?.['T' + c.nr] ?? null) as string | null),
+}))
 
 // School calendar — derived from JAHRESPLANUNG_1Lehrjahr_2025-2026.md
 // week: ISO week label, n: lesson-week ordinal (1..40)
@@ -132,7 +187,12 @@ type WeekCell = {
   note?: string
 }
 
-const calendar: WeekCell[] = [
+// ── Kalender + Themen + Statistik kommen jetzt aus dem Generator (Idee 1) ──
+const calendar = plan.calendar
+const themas = plan.themas
+const stats = plan.stats
+// ── Legacy-Basisdaten (durch den Generator ersetzt; kann gelöscht werden) ──
+const _legacyCalendar: any[] = [
   // ─── THEMA 1 — Aug 18 – Nov 7 (12 weeks incl. Herbstferien) ──────────
   { n: 1, kw: 34, datum: '18.–22. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Einstieg & Lehrvertrag', lb: '1.1' },
   { n: 2, kw: 35, datum: '25.–29. Aug', month: 'August', trimester: 'T1', thema: 1, lessons: 3, type: 'teaching', title: 'T1.1 Rechte & Pflichten', lb: '1.1' },
@@ -187,7 +247,7 @@ const calendar: WeekCell[] = [
   { n: 47, kw: 28, datum: '6.–10. Jul', month: 'Juli', trimester: 'T3', thema: 3, lessons: 3, type: 'buffer', title: 'T3 Abschluss & Jahresreflexion' },
 ]
 
-const themas = [
+const _legacyThemas: any[] = [
   {
     nr: 1,
     titel: 'Ins Berufsleben einsteigen',
@@ -265,13 +325,18 @@ if (!isGuest) {
       .from('jahresplanung_plans')
       .select('*')
       .order('created_at', { ascending: true })
-    plans = data ?? []
+    // Nur Pläne dieses Slice (Lehrgang × Lehrjahr × Schuljahr). Altzeilen ohne
+    // Skopus gelten als EFZ-3J / 1. Lehrjahr / 2025/26 (Migration 015-Default).
+    plans = (data ?? []).filter((p: any) =>
+      (p.lehrgang ?? 'EFZ-3J') === lehrgang &&
+      Number(p.lehrjahr ?? 1) === lehrjahr &&
+      (p.schuljahr ?? '2025/26') === schuljahr)
   } catch {
     plans = []
   }
 }
 ---
-<Base title="Jahresplanung 1. Lehrjahr">
+<Base title={`Jahresplanung ${lehrjahr}. Lehrjahr · ${lehrgangLabel}`}>
   {isGuest && <GuestPrintBlock />}
   <div class="min-h-screen flex flex-col">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
@@ -295,12 +360,12 @@ if (!isGuest) {
       <!-- Title -->
       <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · EFZ 3-Jährige · nRLP Bildungsrat 2026-01</p>
-          <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">ABU 1. Lehrjahr — Schuljahr 2025/2026</h1>
+          <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · {lehrgangLabel} · nRLP Bildungsrat 2026</p>
+          <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">ABU {lehrjahr}. Lehrjahr — Schuljahr {schuljahr}</h1>
           <p class="text-slate-600 mt-3 max-w-3xl">
-            39 Schulwochen · 3 Lektionen pro Woche · die drei Themen werden chronologisch
-            nacheinander unterrichtet (T1 → T2 → T3). Fahre über eine Woche, um die geplanten
-            Lebensbezüge und Kompetenzen aus dem nRLP einzusehen.
+            {stats.schulwochen} Schulwochen · 3 Lektionen pro Woche · die {plan.themas.length} Themen
+            werden chronologisch nacheinander unterrichtet ({plan.themeKeys.join(' → ')}).
+            Fahre über eine Woche, um die geplanten Lebensbezüge und Kompetenzen aus dem nRLP einzusehen.
           </p>
         </div>
         <a
@@ -314,6 +379,31 @@ if (!isGuest) {
         >
           <span style="font-size:1.1em">📖</span> Einführung &amp; Rundgang
         </a>
+      </div>
+
+      <!-- Slice-Switcher: Lehrgang × Lehrjahr × Schuljahr (Idee 1) -->
+      <div class="jp-switch mb-8">
+        <div class="jp-seg">
+          <span class="jp-seg-label">Lehrgang</span>
+          {ALL_LEHRGAENGE.map((lg) => (
+            <a href={`/jahresplanung?lehrgang=${lg.value}&lj=${Math.min(lehrjahr, lehrjahreOf(lg.value))}`} class={`jp-pill ${lehrgang === lg.value ? 'jp-pill-on' : ''}`}>{lg.label}</a>
+          ))}
+        </div>
+        <span class="jp-switch-sep"></span>
+        <div class="jp-seg">
+          <span class="jp-seg-label">Lehrjahr</span>
+          {Array.from({ length: maxLehrjahr }, (_, i) => i + 1).map((lj) => (
+            <a href={`/jahresplanung?lehrgang=${lehrgang}&lj=${lj}`} class={`jp-pill jp-pill-num ${lj === lehrjahr ? 'jp-pill-on' : ''}`}>{lj}</a>
+          ))}
+        </div>
+        <span class="jp-switch-sep"></span>
+        <div class="jp-seg">
+          <span class="jp-seg-label">Schuljahr</span>
+          <select class="jp-select" onchange={`location.href='/jahresplanung?lehrgang=${lehrgang}&lj=${lehrjahr}&sj='+encodeURIComponent(this.value)`}>
+            {schuljahrOptions.map((sj) => <option value={sj} selected={sj === schuljahr}>{sj}</option>)}
+          </select>
+        </div>
+        <a href="/jahresplanung/uebersicht" class="jp-overview-link">Gesamtübersicht {maxLehrjahr} Jahre →</a>
       </div>
 
       <!-- Gast-Hinweis (read-only) -->
@@ -371,19 +461,19 @@ if (!isGuest) {
 
       <!-- Summary stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
-        <div class="stat-card"><p class="stat-label">Schulwochen</p><p class="stat-value">39</p></div>
-        <div class="stat-card"><p class="stat-label">Verfügbar</p><p class="stat-value">117 L.</p></div>
-        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">90 L.</p></div>
-        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">27 L.</p></div>
-        <div class="stat-card"><p class="stat-label">Ferienwochen</p><p class="stat-value">8</p></div>
+        <div class="stat-card"><p class="stat-label">Schulwochen</p><p class="stat-value">{stats.schulwochen}</p></div>
+        <div class="stat-card"><p class="stat-label">Verfügbar</p><p class="stat-value">{stats.verfuegbar} L.</p></div>
+        <div class="stat-card stat-accent"><p class="stat-label">Unterricht</p><p class="stat-value">{stats.unterricht} L.</p></div>
+        <div class="stat-card"><p class="stat-label">Puffer</p><p class="stat-value">{stats.puffer} L.</p></div>
+        <div class="stat-card"><p class="stat-label">Ferienwochen</p><p class="stat-value">{stats.ferienwochen}</p></div>
       </div>
 
       <!-- Legend -->
       <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
         <span class="font-semibold text-slate-700 uppercase tracking-wider">Legende</span>
-        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema1"></span>Thema 1 — Einstieg</span>
-        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema2"></span>Thema 2 — Meinung</span>
-        <span class="flex items-center gap-2"><span class="legend-swatch cell-thema3"></span>Thema 3 — Konsum</span>
+        {plan.themas.map((t) => (
+          <span class="flex items-center gap-2"><span class={`legend-swatch cell-thema${t.tier}`}></span>T{t.nr} — {t.titel}</span>
+        ))}
         <span class="flex items-center gap-2"><span class="legend-swatch cell-buffer"></span>Puffer / Repetition</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-holiday"></span>Ferien / Feiertag</span>
         <span class="flex items-center gap-2"><span class="legend-hf">◆</span>Herausforderung (Einheit)</span>
@@ -393,14 +483,14 @@ if (!isGuest) {
 
       <!-- Themen detail -->
       <section class="mb-8">
-        <h2 class="text-lg font-semibold text-slate-900 mb-4">Themen im 1. Lehrjahr</h2>
+        <h2 class="text-lg font-semibold text-slate-900 mb-4">Themen im {lehrjahr}. Lehrjahr</h2>
         <div class="grid md:grid-cols-3 gap-4">
           {themas.map((t) => (
             <div class={`thema-card thema-card-${t.intensity}`}>
-              <div class="thema-header">
-                <span class="thema-nr">Thema {t.nr}</span>
+              <a href={`/jahresplanung/thema/${t.nr}?lehrgang=${lehrgang}`} class="thema-header thema-header-link">
+                <span class="thema-nr">Thema {t.nr} · Details →</span>
                 <h3 class="thema-titel">{t.titel}</h3>
-              </div>
+              </a>
               <dl class="grid grid-cols-3 gap-2 mb-4">
                 <div><dt class="thema-stat-label">Unterricht</dt><dd class="thema-stat-value">{t.lektionen} L.</dd></div>
                 <div><dt class="thema-stat-label">Puffer</dt><dd class="thema-stat-value">{t.puffer} L.</dd></div>
@@ -418,13 +508,13 @@ if (!isGuest) {
       <!-- Feature 1: SK-Abdeckungsmatrix (canonical nRLP) -->
       <details class="jp-notes mb-8">
         <summary>
-          <span class="font-semibold text-slate-800">SK-Abdeckung im 1. Lehrjahr</span>
+          <span class="font-semibold text-slate-800">SK-Abdeckung im {lehrjahr}. Lehrjahr</span>
           <span class="text-xs text-slate-400 ml-2">Quelle: nRLP-Zirkularität · 12 Schlüsselkompetenzen</span>
         </summary>
         <p class="text-sm text-slate-600 mb-4 mt-4 max-w-3xl">
-          Welche der 12 Schlüsselkompetenzen in T1–T3 eingeplant sind und in welcher
+          Welche der 12 Schlüsselkompetenzen in {plan.themeKeys.join('/')} eingeplant sind und in welcher
           Iterationstiefe (R1 = erste Begegnung, R2/R3 = Wiederaufnahme & Vertiefung).
-          Graue Zeilen sind im 1. Lehrjahr <strong>nicht</strong> vorgesehen — vor einem
+          Graue Zeilen sind in diesem Lehrjahr <strong>nicht</strong> vorgesehen — vor einem
           Kompetenznachweis sichtbar machen, was geübt wurde.
         </p>
         <div class="sk-matrix">
@@ -449,7 +539,7 @@ if (!isGuest) {
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r1"></span>R1 — erste Begegnung</span>
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r2"></span>R2 — Wiederaufnahme</span>
           <span class="flex items-center gap-1.5"><span class="sk-swatch sk-r3"></span>R3 — Vertiefung</span>
-          <span class="flex items-center gap-1.5"><span class="sk-swatch sk-empty"></span>nicht im 1. Lehrjahr</span>
+          <span class="flex items-center gap-1.5"><span class="sk-swatch sk-empty"></span>nicht in diesem Lehrjahr</span>
         </div>
       </details>
 
@@ -612,9 +702,9 @@ if (!isGuest) {
                           class={`lesson-cell ${
                             w.type === 'holiday' ? 'cell-holiday' :
                             w.type === 'buffer' ? 'cell-buffer' :
-                            w.thema === 1 ? 'cell-thema1' :
-                            w.thema === 2 ? 'cell-thema2' :
-                            w.thema === 3 ? 'cell-thema3' : 'cell-buffer'
+                            w.tier === 1 ? 'cell-thema1' :
+                            w.tier === 2 ? 'cell-thema2' :
+                            w.tier === 3 ? 'cell-thema3' : 'cell-buffer'
                           }`}
                         >
                           <span class="cell-star" x-show={`hasKn(${w.n})`} x-cloak>★</span>
@@ -770,7 +860,7 @@ if (!isGuest) {
     </main>
 
     <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
-      Basis: nRLP 3-Jährige EFZ · ABU Reform 2030 — Bildungsrat 2026-01
+      Basis: nRLP {lehrgangLabel} · ABU Reform 2030 — Bildungsrat 2026 · {lehrjahr}. Lehrjahr {schuljahr}
     </footer>
   </div>
 
@@ -781,8 +871,14 @@ if (!isGuest) {
   <script id="jp-thema-sk" type="application/json" set:html={JSON.stringify(themaSK)} />
   <script id="jp-sk-names" type="application/json" set:html={JSON.stringify(skMatrix.map((s) => ({ nr: s.nr, name: s.name, full: s.full })))} />
   <script id="jp-plans" type="application/json" set:html={JSON.stringify(plans)} />
+  <script id="jp-default-kn" type="application/json" set:html={JSON.stringify(defaultKnSeed)} />
+  <script id="jp-slice" type="application/json" set:html={JSON.stringify({ lehrgang, lehrjahr, schuljahr, lehrgangLabel })} />
+  <script id="jp-export" type="application/json" set:html={JSON.stringify(exportYears)} />
+  <script id="jp-thema-sk-all" type="application/json" set:html={JSON.stringify(themaSKAll)} />
+  <script id="jp-sk-spiral" type="application/json" set:html={JSON.stringify({ cols: allThemeCols, rows: skSpiralRows })} />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" is:inline></script>
+  <!-- xlsx-js-style: SheetJS-kompatibel, zusätzlich mit Zell-Styling (Farben/Rahmen) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js" is:inline></script>
 
   <script is:inline>
     function jahresplanung() {
@@ -799,6 +895,11 @@ if (!isGuest) {
         themaSK: parse('jp-thema-sk'),
         skNames: parse('jp-sk-names'),
         plans: parse('jp-plans'),
+        defaultKnTemplate: parse('jp-default-kn'),
+        slice: parse('jp-slice'),
+        exportYears: parse('jp-export'),
+        themaSKAll: parse('jp-thema-sk-all'),
+        skSpiral: parse('jp-sk-spiral'),
 
         // ── tooltip state ──
         active: null, tipX: 0, tipY: 0, hideTimer: null, pinned: false, editing: false,
@@ -824,9 +925,9 @@ if (!isGuest) {
           const m = this.merged(n)
           if (m.type === 'holiday') return 'holiday'
           if (m.type === 'buffer') return 'buffer'
-          if (m.thema === 1) return 'thema1'
-          if (m.thema === 2) return 'thema2'
-          if (m.thema === 3) return 'thema3'
+          if (m.tier === 1) return 'thema1'
+          if (m.tier === 2) return 'thema2'
+          if (m.tier === 3) return 'thema3'
           return 'buffer'
         },
         mLessons(n) { const l = this.merged(n).lessons; return l > 0 ? l + ' L.' : '–' },
@@ -835,9 +936,9 @@ if (!isGuest) {
           if (!w) return ''
           if (w.type === 'holiday') return 'cell-holiday'
           if (w.type === 'buffer') return 'cell-buffer'
-          if (w.thema === 1) return 'cell-thema1'
-          if (w.thema === 2) return 'cell-thema2'
-          if (w.thema === 3) return 'cell-thema3'
+          if (w.tier === 1) return 'cell-thema1'
+          if (w.tier === 2) return 'cell-thema2'
+          if (w.tier === 3) return 'cell-thema3'
           return 'cell-buffer'
         },
 
@@ -851,11 +952,7 @@ if (!isGuest) {
 
         // ── Feature 6: KN ──
         defaultKn() {
-          return [
-            { id: 'kn1', label: 'KN 1 · Thema 1 — Einstieg', week_n: null, format: '', notes: '' },
-            { id: 'kn2', label: 'KN 2 · Thema 2 — Meinung bilden', week_n: null, format: '', notes: '' },
-            { id: 'kn3', label: 'KN 3 · Thema 3 — Konsum', week_n: null, format: '', notes: '' },
-          ]
+          return (this.defaultKnTemplate || []).map((k) => ({ ...k }))
         },
         hasKn(n) { return this.knPlans.some((k) => Number(k.week_n) === n) },
         teachingWeeks() { return this.calendar.filter((c) => this.merged(c.n).type === 'teaching') },
@@ -980,7 +1077,12 @@ if (!isGuest) {
             const res = await fetch('/api/jahresplan', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ label }),
+              body: JSON.stringify({
+                label,
+                lehrgang: this.slice.lehrgang,
+                lehrjahr: this.slice.lehrjahr,
+                schuljahr: this.slice.schuljahr,
+              }),
             })
             const json = await res.json()
             if (!res.ok) throw new Error(json.error || 'Fehler')
@@ -993,30 +1095,143 @@ if (!isGuest) {
           }
         },
 
-        // ── Feature 7: Excel export ──
+        // ── Feature 7: Excel export — ganzer Lehrgang, ein Blatt pro Lehrjahr ──
         exportExcel() {
           if (typeof XLSX === 'undefined') { alert('Excel-Bibliothek noch nicht geladen.'); return }
-          const rows = [['KW', 'Datum', 'Thema', 'Typ', 'Titel', 'Lektionen', 'Lebensbezug', 'Herausforderungen', 'Kompetenzen', 'Schlüsselkompetenzen', 'Sprachmodi', 'Notizen']]
+          const C = { green: '0E6E3A', dark: '094D28', tint: 'E8F3EC', grey: 'EEF2F6', amber: 'FEF3C7', amberTxt: 'B45309', slate: '334155', muted: '94A3B8', white: 'FFFFFF', line: 'D9E2EC' }
+          const bd = { style: 'thin', color: { rgb: C.line } }
+          const borders = { top: bd, bottom: bd, left: bd, right: bd }
+          const lgLabel = this.slice.lehrgangLabel || this.slice.lehrgang
           const typLabel = { teaching: 'Unterricht', buffer: 'Puffer', holiday: 'Ferien' }
-          for (const c of this.calendar) {
-            const m = this.merged(c.n)
-            if (m.type === 'holiday') continue
-            const info = m.lb ? this.lookup[m.lb] : null
-            const komp = info ? info.kompetenzen.map((k) => k.nr + ' ' + k.text).join('\n') : ''
-            const hf = m.lb ? (this.hfByLb[m.lb] || []).map((h) => h.kompetenz_nr + ' · ' + h.titel).join('\n') : ''
-            const sk = m.thema ? (this.themaSK[m.thema] || []).join(', ') : ''
-            const sm = info ? (info.sprachmodi || []).join(', ') : ''
-            rows.push([
-              'KW ' + m.kw, m.datum, m.thema ? 'T' + m.thema : '', typLabel[m.type] || m.type,
-              m.title, m.lessons, m.lb || '', hf, komp, sk, sm, m.note || '',
-            ])
-          }
-          const ws = XLSX.utils.aoa_to_sheet(rows)
-          ws['!cols'] = [{ wch: 7 }, { wch: 16 }, { wch: 6 }, { wch: 11 }, { wch: 34 }, { wch: 8 }, { wch: 11 }, { wch: 48 }, { wch: 50 }, { wch: 34 }, { wch: 30 }, { wch: 24 }]
           const wb = XLSX.utils.book_new()
+
+          const HEADER = { font: { bold: true, color: { rgb: C.white }, sz: 10 }, fill: { fgColor: { rgb: C.dark } }, alignment: { vertical: 'center', horizontal: 'left', wrapText: true }, border: borders }
+          const TITLE = { font: { bold: true, sz: 14, color: { rgb: C.dark } } }
+          const SUBTITLE = { font: { bold: true, sz: 11, color: { rgb: C.green } } }
+          const NOTE = { font: { italic: true, sz: 9, color: { rgb: C.muted } } }
+          const rowFill = (tier, type) => {
+            if (type === 'holiday') return { fill: { fgColor: { rgb: C.grey } }, font: { italic: true, color: { rgb: C.muted } } }
+            if (type === 'buffer') return { font: { italic: true, color: { rgb: C.slate } } }
+            if (tier === 2) return { fill: { fgColor: { rgb: C.green } }, font: { color: { rgb: C.white } } }
+            if (tier === 3) return { fill: { fgColor: { rgb: C.dark } }, font: { color: { rgb: C.white } } }
+            if (tier === 1) return { fill: { fgColor: { rgb: C.tint } }, font: { color: { rgb: C.dark } } }
+            return {}
+          }
+          const styleRow = (ws, r, ncol, style) => {
+            for (let c = 0; c < ncol; c++) {
+              const ref = XLSX.utils.encode_cell({ r, c })
+              if (!ws[ref]) ws[ref] = { t: 's', v: '' }
+              ws[ref].s = Object.assign({ border: borders, alignment: { vertical: 'top', wrapText: true } }, style)
+            }
+          }
+          const styleCell = (ws, r, c, style) => {
+            const ref = XLSX.utils.encode_cell({ r, c })
+            if (!ws[ref]) ws[ref] = { t: 's', v: '' }
+            ws[ref].s = Object.assign({ border: borders, alignment: { vertical: 'top', wrapText: true } }, style)
+          }
+
+          // ===== Übersicht (Gesamtcurriculum) =====
+          {
+            const NC = 8
+            const aoa = []
+            aoa.push(['ABU Jahresplanung — ' + lgLabel])
+            aoa.push(['Gesamtcurriculum über ' + this.exportYears.length + ' Lehrjahre'])
+            aoa.push([])
+            aoa.push(['Lehrjahr', 'Schuljahr', 'Thema', 'Titel', 'Unterricht L.', 'Puffer L.', 'Lebensbezüge', 'Schlüsselkompetenzen'])
+            const meta = []
+            let totU = 0, totP = 0
+            for (const y of this.exportYears) {
+              for (const t of y.themas) {
+                const lbCount = new Set(y.calendar.filter((c) => c.thema === t.nr && c.lb).map((c) => c.lb)).size
+                aoa.push([y.lehrjahr, y.schuljahr, 'T' + t.nr, t.titel, t.lektionen, t.puffer, lbCount, (this.themaSKAll[t.nr] || []).join(', ')])
+                meta.push(t.tier); totU += t.lektionen; totP += t.puffer
+              }
+            }
+            aoa.push(['', '', '', 'Total', totU, totP, '', ''])
+            const ws = XLSX.utils.aoa_to_sheet(aoa)
+            ws['!cols'] = [{ wch: 9 }, { wch: 11 }, { wch: 7 }, { wch: 40 }, { wch: 13 }, { wch: 11 }, { wch: 13 }, { wch: 50 }]
+            ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: NC - 1 } }, { s: { r: 1, c: 0 }, e: { r: 1, c: NC - 1 } }]
+            styleRow(ws, 0, NC, TITLE); styleRow(ws, 1, NC, SUBTITLE); styleRow(ws, 3, NC, HEADER)
+            meta.forEach((tier, i) => styleRow(ws, 4 + i, NC, rowFill(tier, 'teaching')))
+            styleRow(ws, 4 + meta.length, NC, { font: { bold: true, color: { rgb: C.dark } } })
+            XLSX.utils.book_append_sheet(wb, ws, 'Übersicht')
+          }
+
+          // ===== ein Blatt pro Lehrjahr =====
+          const NCOL = 12
+          for (const y of this.exportYears) {
+            const isActive = Number(y.lehrjahr) === Number(this.slice.lehrjahr)
+            const knByWeek = {}
+            if (isActive) for (const k of this.knPlans) if (k.week_n) knByWeek[Number(k.week_n)] = k
+            const aoa = []
+            aoa.push(['ABU Jahresplanung — ' + lgLabel])
+            aoa.push([y.lehrjahr + '. Lehrjahr · Schuljahr ' + y.schuljahr + (isActive ? ' · aktive Klassen-Planung' : '')])
+            aoa.push(['Unterricht ' + y.stats.unterricht + ' L. · Puffer ' + y.stats.puffer + ' L. · ' + y.stats.schulwochen + ' Schulwochen · ' + y.stats.ferienwochen + ' Ferienwochen'])
+            aoa.push([])
+            aoa.push(['KW', 'Datum', 'Sem.', 'Thema', 'Typ', 'Titel', 'L.', 'Lebensbezug', 'Kompetenzen', 'Schlüsselkompetenzen', 'Sprachmodi', 'KN / Notizen'])
+            const meta = []
+            for (const baseC of y.calendar) {
+              const c = isActive ? this.merged(baseC.n) : baseC
+              const sem = c.n <= 24 ? 1 : 2
+              const info = c.lb ? this.lookup[c.lb] : null
+              const komp = info ? info.kompetenzen.map((k) => k.nr + ' ' + k.text).join('\n') : ''
+              const sk = c.thema ? (this.themaSKAll[c.thema] || []).join(', ') : ''
+              const sm = info ? (info.sprachmodi || []).join(', ') : ''
+              const knHere = knByWeek[c.n]
+              const knNote = knHere
+                ? ('★ KN' + (knHere.format ? ' (' + knHere.format + ')' : '') + (knHere.notes ? ' — ' + knHere.notes : ''))
+                : (c.isKn ? ('★ KN-Empfehlung T' + c.thema) : (c.note || ''))
+              aoa.push(['KW ' + c.kw, c.datum, 'S' + sem, c.thema ? 'T' + c.thema : '', typLabel[c.type] || c.type, c.title, c.type === 'holiday' ? '' : c.lessons, c.lb || '', komp, sk, sm, knNote])
+              meta.push({ tier: c.tier, type: c.type, kn: !!knHere || !!c.isKn })
+            }
+            const ws = XLSX.utils.aoa_to_sheet(aoa)
+            ws['!cols'] = [{ wch: 7 }, { wch: 16 }, { wch: 5 }, { wch: 7 }, { wch: 11 }, { wch: 34 }, { wch: 5 }, { wch: 11 }, { wch: 48 }, { wch: 28 }, { wch: 26 }, { wch: 32 }]
+            ws['!merges'] = [
+              { s: { r: 0, c: 0 }, e: { r: 0, c: NCOL - 1 } },
+              { s: { r: 1, c: 0 }, e: { r: 1, c: NCOL - 1 } },
+              { s: { r: 2, c: 0 }, e: { r: 2, c: NCOL - 1 } },
+            ]
+            styleRow(ws, 0, NCOL, TITLE); styleRow(ws, 1, NCOL, SUBTITLE); styleRow(ws, 2, NCOL, NOTE); styleRow(ws, 4, NCOL, HEADER)
+            meta.forEach((m, i) => {
+              const r = 5 + i
+              styleRow(ws, r, NCOL, rowFill(m.tier, m.type))
+              if (m.kn) styleCell(ws, r, NCOL - 1, { fill: { fgColor: { rgb: C.amber } }, font: { bold: true, color: { rgb: C.amberTxt } } })
+            })
+            XLSX.utils.book_append_sheet(wb, ws, y.lehrjahr + '. Lehrjahr')
+          }
+
+          // ===== SK-Spirale =====
+          {
+            const cols = this.skSpiral.cols
+            const NC = 2 + cols.length
+            const aoa = []
+            aoa.push(['Schlüsselkompetenz-Spirale — ' + lgLabel])
+            aoa.push(['R1 = Einführung · R2 = Wiederaufnahme · R3 = Vertiefung · leer = nicht verankert'])
+            aoa.push([])
+            aoa.push(['SK', ...cols.map((c) => 'T' + c.nr), 'Stationen'])
+            const rmeta = []
+            for (const row of this.skSpiral.rows) {
+              const stops = row.cells.filter(Boolean).length
+              aoa.push([row.nr + ' ' + row.name, ...row.cells.map((c) => c || ''), stops])
+              rmeta.push(row.cells)
+            }
+            const ws = XLSX.utils.aoa_to_sheet(aoa)
+            ws['!cols'] = [{ wch: 36 }, ...cols.map(() => ({ wch: 6 })), { wch: 10 }]
+            ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: NC - 1 } }, { s: { r: 1, c: 0 }, e: { r: 1, c: NC - 1 } }]
+            styleRow(ws, 0, NC, TITLE); styleRow(ws, 1, NC, NOTE); styleRow(ws, 3, NC, HEADER)
+            const rFill = { R1: { fill: { fgColor: { rgb: C.tint } }, font: { color: { rgb: C.dark }, bold: true } }, R2: { fill: { fgColor: { rgb: C.green } }, font: { color: { rgb: C.white }, bold: true } }, R3: { fill: { fgColor: { rgb: C.dark } }, font: { color: { rgb: C.white }, bold: true } } }
+            rmeta.forEach((cells, i) => {
+              const r = 4 + i
+              styleRow(ws, r, NC, {})
+              styleCell(ws, r, 0, { font: { color: { rgb: C.slate } } })
+              cells.forEach((v, ci) => { if (v) styleCell(ws, r, 1 + ci, Object.assign({ alignment: { horizontal: 'center' } }, rFill[v] || {})) })
+            })
+            XLSX.utils.book_append_sheet(wb, ws, 'SK-Spirale')
+          }
+
           const label = this.activePlanId ? (this.plans.find((p) => p.id === this.activePlanId)?.label || 'Plan') : 'Basisvorlage'
-          XLSX.utils.book_append_sheet(wb, ws, 'Jahresplanung')
-          XLSX.writeFile(wb, 'Jahresplanung_1LJ_' + label.replace(/[^\w-]+/g, '_') + '.xlsx')
+          const slug = (this.slice.lehrgang + '_' + label).replace(/[^\w-]+/g, '_')
+          XLSX.writeFile(wb, 'Jahresplanung_' + slug + '.xlsx')
         },
       }
     }
@@ -1160,6 +1375,9 @@ if (!isGuest) {
     .thema-card-medium { border-top-color: var(--brand); }
     .thema-card-dark { border-top-color: var(--brand-dark); }
     .thema-header { margin-bottom: 1rem; }
+    .thema-header-link { display: block; text-decoration: none; }
+    .thema-header-link:hover .thema-titel { color: var(--brand-dark); }
+    .thema-header-link:hover .thema-nr { text-decoration: underline; }
     .thema-nr {
       font-size: 0.7rem;
       font-weight: 700;
@@ -1195,6 +1413,29 @@ if (!isGuest) {
     .jp-toggle-on { background: var(--brand); color: white; border-color: var(--brand); }
 
     .jp-panel { background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1.5rem; }
+
+    /* ── Slice-Switcher (Idee 1) ── */
+    .jp-switch {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem;
+      background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.6rem 0.9rem;
+    }
+    .jp-seg { display: flex; align-items: center; gap: 0.4rem; }
+    .jp-seg-label { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-right: 0.15rem; }
+    .jp-switch-sep { width: 1px; height: 1.4rem; background: #e2e8f0; }
+    .jp-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 600; color: #334155; text-decoration: none;
+      border: 1px solid #cbd5e1; border-radius: 9999px; padding: 0.28rem 0.7rem; transition: all .15s;
+    }
+    .jp-pill-num { min-width: 2rem; padding: 0.28rem 0; }
+    .jp-pill:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .jp-pill-on { background: var(--brand); color: white; border-color: var(--brand); }
+    .jp-pill-on:hover { color: white; }
+    .jp-overview-link {
+      margin-left: auto; font-size: 0.8rem; font-weight: 700; color: var(--brand-dark);
+      text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 1px;
+    }
+    .jp-overview-link:hover { border-bottom-color: var(--brand); }
 
     /* ── Feature 1: SK matrix ── */
     .sk-matrix { display: flex; flex-direction: column; gap: 3px; }
@@ -1323,7 +1564,7 @@ if (!isGuest) {
     /* ── Feature 7: print / PDF (A4 landscape) ── */
     @media print {
       @page { size: A4 landscape; margin: 10mm; }
-      header, footer, .jp-toolbar, .tooltip-card { display: none !important; }
+      header, footer, .jp-toolbar, .jp-switch, .tooltip-card { display: none !important; }
       :global(body) { background: white !important; }
       main { max-width: none !important; padding: 0 !important; }
       .jp-panel { display: none !important; }

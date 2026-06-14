@@ -7,12 +7,15 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "npm run build:sk-labels && npm run sync:einheiten-nrlp && npm run build:einheiten-index",
     "build": "astro build",
     "preview": "astro preview",
+    "build:sk-labels": "node scripts/build-sk-labels.mjs",
     "sync:situationen": "node scripts/sync-situationen.mjs",
     "build:einheiten-index": "node scripts/build-einheiten-index.mjs",
     "md:index": "node begleiter/build-index.mjs",
-    "md:serve": "npx --yes serve begleiter -l 4173"
+    "md:serve": "npx --yes serve begleiter -l 4173",
+    "sync:einheiten-nrlp": "node scripts/sync-einheiten-nrlp.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.3",

@@ -3,22 +3,22 @@
     "titel": "Schullehrplan ABU EFZ",
     "typ": "3-jährige Grundbildung",
     "kanton": "Zürich",
-    "version": "ABU Reform 2030 — Bildungsrat 2026-01",
-    "anzahl_themen": 7,
+    "version": "ABU Reform 2030 — Bildungsrat 2026-06",
+    "anzahl_themen": 8,
     "lehrjahre": 3,
-    "themen_vollstaendig": 3,
-    "themen_skizze": 4,
-    "quelle_datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-    "extrahiert_am": "2026-01-15T00:00:00Z",
-    "skript_version": "1.0.0",
-    "schema_version": "2026.01-bildungsrat",
-    "hinweis": "3 Themen vollständig ausgearbeitet. 4 Themen als Skizzen oder fehlend."
+    "themen_vollstaendig": 8,
+    "themen_skizze": 0,
+    "quelle_datei": "2_SLP_EFZ_3jährig_20260605.md",
+    "extrahiert_am": "2026-06-14T00:00:00Z",
+    "skript_version": "2.0.0",
+    "schema_version": "2026.06-bildungsrat",
+    "hinweis": "8 Themen vollständig ausgearbeitet (finaler Erlass Bildungsrat 2026-06). Thema 7 = Schlussarbeit (ohne Lebensbezüge)."
   },
   "zirkularitaet": {
     "gesellschaftsinhalte": [
       {
         "bezeichnung": "Ethik",
-        "beschreibung": "Vom persönlichen Werteverständnis (T1) über politische Ethik (T2), Konsumverantwortung (T3) bis zu Verantwortung im sozialen und gesundheitlichen Zusammenleben (T4).",
+        "beschreibung": "Persönliches Werteverständnis (T1), politische Ethik (T2), Konsumverantwortung (T3), Verantwortung im sozialen Zusammenleben (T4)",
         "wiederholungen": {
           "T1": "R1",
           "T2": "R2",
@@ -28,26 +28,26 @@
       },
       {
         "bezeichnung": "Identität und Sozialisation",
-        "beschreibung": "Aufbau vom Selbstbild im Beruf (T1), Bedürfniswahrnehmung im Thema Konsum (T3), über Rollen im Zusammenleben (T4), Selbstständigkeit (T6) bis zur beruflichen Identität und Laufbahn (T7).",
+        "beschreibung": "Selbstbild im Beruf (T1), Bedürfniswahrnehmung im Konsum (T3), Rollen im Zusammenleben (T4), Selbstständigkeit (T6), berufliche Identität und Laufbahn (T8)",
         "wiederholungen": {
           "T1": "R1",
           "T3": "R2",
           "T4": "R3",
           "T6": "R4",
-          "T7": "R5"
+          "T8": "R5"
         }
       },
       {
         "bezeichnung": "Kultur",
-        "beschreibung": "Im Thema 2 integriert als Ausdrucksformen der Kunst bei Meinungsbildung (z. B. Musik, Film, Literatur). Im Thema 4 Kontext Migration und Vielfalt – fördert interkulturelles Verständnis.",
+        "beschreibung": "Ausdrucksformen der Kunst in der Meinungsbildung (T2), globale politische Herausforderungen (T5)",
         "wiederholungen": {
           "T2": "R1",
-          "T4": "R2"
+          "T5": "R2"
         }
       },
       {
         "bezeichnung": "Ökologie",
-        "beschreibung": "In Themen T3, T5, und T6 – ökologische Fragen in Konsum, Staat und Wohnen.",
+        "beschreibung": "Ökologische Fragestellungen im Konsum (T3), im Staat (T5), im Wohnen (T6)",
         "wiederholungen": {
           "T3": "R1",
           "T5": "R2",
@@ -56,7 +56,7 @@
       },
       {
         "bezeichnung": "Politik",
-        "beschreibung": "Zuerst Meinungsbildung und Mitgestaltung (T2), später politische Partizipation mit Erreichen der Volljährigkeit (T5).",
+        "beschreibung": "Meinungsbildung und Mitgestaltung (T2), politische Partizipation (T5)",
         "wiederholungen": {
           "T2": "R1",
           "T5": "R2"
@@ -64,33 +64,33 @@
       },
       {
         "bezeichnung": "Recht",
-        "beschreibung": "Kontinuierlich aufgebaut: Lehrvertrag (T1), Konsumrecht (T3), Asyl- und Gesundheitsrecht (T4), Steuer- und Mietrecht (T5 und T6), Arbeitsrecht (T7).",
+        "beschreibung": "Lehrvertrag (T1), Konsumrecht (T3), Asyl- und Gesundheitsrecht (T4), Steuer- und Mietrecht (T5 und T6), Arbeitsrecht (T8)",
         "wiederholungen": {
           "T1": "R1",
           "T3": "R2",
           "T4": "R3",
           "T5": "R4",
           "T6": "R5",
-          "T7": "R6"
+          "T8": "R6"
         }
       },
       {
         "bezeichnung": "Technologische und digitale Transformation",
-        "beschreibung": "Digitalisierung beim Berufseinstieg (T1), politischer Meinungsbildung (T2) und später in der Arbeitswelt (T7).",
+        "beschreibung": "Lern- und Arbeitstechniken beim Berufseinstieg (T1), politische Meinungsbildung (T2), Digitalisierung der Arbeitswelt (T8)",
         "wiederholungen": {
           "T1": "R1",
           "T2": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
         "bezeichnung": "Wirtschaft",
-        "beschreibung": "Von persönlicher Finanzkompetenz (T3) über Staatsfinanzen (T5), Wohnungsmarkt (T6) bis zum Arbeitsmarkt und neuen Erwerbsmodellen (T7).",
+        "beschreibung": "Persönliche Finanzkompetenz (T3), Staatsfinanzen (T5), Wohnungsmarkt (T6), Arbeitsmarkt und neue Erwerbsmodelle (T8)",
         "wiederholungen": {
           "T3": "R1",
           "T5": "R2",
           "T6": "R3",
-          "T7": "R4"
+          "T8": "R4"
         }
       }
     ],
@@ -114,7 +114,7 @@
         "wiederholungen": {
           "T1": "R1",
           "T4": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
@@ -136,7 +136,7 @@
         "wiederholungen": {
           "T3": "R1",
           "T6": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
@@ -151,7 +151,7 @@
         "wiederholungen": {
           "T3": "R1",
           "T6": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
@@ -178,19 +178,19 @@
         }
       },
       {
-        "bezeichnung": "Innovation und Problemlösung",
+        "bezeichnung": "Innovation und Problemlösungen entwickeln",
         "wiederholungen": {
           "T3": "R1",
           "T6": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
-        "bezeichnung": "Teamarbeit",
+        "bezeichnung": "In Teams arbeiten",
         "wiederholungen": {
           "T1": "R1",
           "T6": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
@@ -221,11 +221,11 @@
         "wiederholungen": {
           "T1": "R1",
           "T6": "R2",
-          "T7": "R3"
+          "T8": "R3"
         }
       },
       {
-        "bezeichnung": "Nachhaltigkeit",
+        "bezeichnung": "Nachhaltig handeln",
         "wiederholungen": {
           "T3": "R1",
           "T5": "R2",
@@ -233,14 +233,14 @@
         }
       },
       {
-        "bezeichnung": "Anpassung",
+        "bezeichnung": "Mit Wandel umgehen (Anpassung)",
         "wiederholungen": {
           "T4": "R1",
-          "T7": "R2"
+          "T8": "R2"
         }
       },
       {
-        "bezeichnung": "Mehrdeutigkeit",
+        "bezeichnung": "Mit Mehrdeutigkeiten umgehen",
         "wiederholungen": {
           "T4": "R1",
           "T5": "R2"
@@ -263,7 +263,7 @@
       "lektionen": 21,
       "vollstaendig": true,
       "leitidee": {
-        "kurz": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme eine neue Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
+        "kurz": "Der Beginn meiner beruflichen Grundbildung bedeutet einen tiefgreifenden Wandel. Ich übernehme neu eine Rolle im Berufsbildungssystem als verantwortungsvolle, lernende Fachkraft im Betrieb, in der Schule und in den überbetrieblichen Kursen (ÜK). In meiner Ausbildungszeit entwickle ich Orientierung und Sicherheit und finde meinen Platz in der Berufs- und Lebenswelt.",
         "detail": "Ich setze mich mit den Inhalten meines Lehrvertrags auseinander und erkenne meine Rechte und Pflichten im Berufsalltag. Dazu lese und verarbeite ich unterschiedliche Quellen, z. B. Verträge oder betriebliche Regelwerke und nutze Informationen gezielt für meine Situation. Ausserdem mache ich erste Erfahrungen damit, wie in meiner neuen Rolle kommuniziert wird, wie Zusammenarbeit im Team gelingt und wie Konflikte fair gelöst werden. Dabei tausche ich mich mit anderen Lernenden und Mitarbeitenden über Erlebnisse und Herausforderungen aus und bringe meine Sichtweise ein. Ich erweitere meine Lern- und Arbeitstechniken und gehe bei meinem Einstieg in die Arbeitswelt bewusst mit meinen Ressourcen um, indem ich meine eigene Arbeit gezielt organisiere."
       },
       "sprachmodi": [
@@ -285,7 +285,7 @@
           "kompetenzen": [
             {
               "nr": "1.1.1",
-              "text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen, gezielt nutzen und in Konfliktsituationen angemessen kommunizieren.",
+              "text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Recht",
@@ -293,11 +293,11 @@
                 },
                 {
                   "aspekt": "Ethik",
-                  "detail": "Perspektivenübernahme, gegenseitiger Respekt in Konflikten"
+                  "detail": "Perspektivenübernahme, Konfliktstrategien"
                 },
                 {
                   "aspekt": "Identität und Sozialisation",
-                  "detail": "Rolle in der Gesellschaft und in der Arbeitswelt"
+                  "detail": "Soziale Rollen, Rollenkonflikte"
                 }
               ],
               "sprachmodi": [
@@ -323,7 +323,7 @@
               "sprachmodi": [
                 {
                   "modus": "Rezeption schriftlich und bildlich",
-                  "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien sowie Orientierungs- und Suchmöglichkeiten auf Websites"
+                  "detail": "Zentrale Aussagen aus Texten entnehmen mithilfe von Markierhilfe und Lesestrategien sowie Orientierungs- und Suchmöglichkeiten auf Webseiten"
                 }
               ]
             },
@@ -333,13 +333,13 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Technologische und digitale Transformation",
-                  "detail": "Situative und zweckmässige Nutzung digitaler Kommunikationsregeln der verschiedenen Tools"
+                  "detail": "Situative und zweckmäßige Nutzung digitaler Kommunikationsregeln der verschiedenen Tools"
                 }
               ],
               "sprachmodi": [
                 {
-                  "modus": "Interaktion und Kollaboration schriftlich",
-                  "detail": "nach Konventionen kommunizieren"
+                  "modus": "Interaktion und Kollaboration digital",
+                  "detail": "Nach Konventionen kommunizieren"
                 }
               ]
             }
@@ -356,13 +356,13 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Technologische und digitale Transformation",
-                  "detail": "arbeitserleichternde Nutzung"
+                  "detail": "Arbeitserleichternde Nutzung"
                 }
               ],
               "sprachmodi": [
                 {
                   "modus": "Interaktion und Kollaboration mündlich",
-                  "detail": "an Gesprächen teilnehmen, Rückmeldung geben und annehmen"
+                  "detail": "An Gesprächen teilnehmen, Rückmeldung geben und annehmen"
                 }
               ]
             },
@@ -372,11 +372,11 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Technologische und digitale Transformation",
-                  "detail": "sinnvolle Anwendung von Tools der künstlichen Intelligenz, zielgerichtetes Prompten"
+                  "detail": "Sinnvolle Anwendung von Tools der künstlichen Intelligenz, zielgerichtetes Prompten"
                 },
                 {
                   "aspekt": "Identität und Sozialisation",
-                  "detail": "Lernstrategien als persönliche Entscheidung, Selbstwirksamkeitsförderung"
+                  "detail": "Lernstrategien, Selbstwirksamkeitsförderung"
                 }
               ],
               "sprachmodi": [
@@ -386,7 +386,7 @@
                 },
                 {
                   "modus": "Interaktion und Kollaboration digital",
-                  "detail": "mit Tools der künstlichen Intelligenz interagieren"
+                  "detail": "Mit Tools der künstlichen Intelligenz interagieren"
                 }
               ]
             }
@@ -394,20 +394,20 @@
         }
       ],
       "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": 9,
-        "seite_end": 11
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 6,
+        "seite_end": 9
       }
     },
     {
       "nr": 2,
       "titel": "Meinungen bilden und mitgestalten",
       "lehrjahr": 1,
-      "lektionen": 30,
+      "lektionen": 33,
       "vollstaendig": true,
       "leitidee": {
         "kurz": "In einer Welt, in der täglich unzählige Informationen und Meinungen auf mich einwirken, wird es für mich immer wichtiger, mir eine eigene, fundierte Haltung zu erarbeiten. Zu diesem Zweck lerne ich, verschiedene Informationen systematisch zu beurteilen, meine Meinung bewusst zu bilden, sie respektvoll zu vertreten und mich aktiv in gesellschaftliche Prozesse einzubringen.",
-        "detail": "Ich lerne, Informationen kritisch zu prüfen. Ich erkenne den Einfluss von Algorithmen, Filterblasen und Desinformationen auf meine Meinungsbildung. Ich bin sensibilisiert für den Unterschied zwischen Fake News und verlässlichen Quellen. Ich entwickle Strategien, um mich sicher und selbstbestimmt in digitalen Räumen zu bewegen. Dazu höre ich politische Debatten, Interviews und Social-Media-Beiträge, analysiere die Absichten hinter Aussagen und vergleiche Positionen. Auf dieser Basis setze ich mich mit ethischen Fragen zum Umgang mit Diskriminierung, Meinungsfreiheit und Verantwortung in Gesprächen und Medienbeiträgen auseinander. Ich reflektiere Menschenrechte und Grundwerte und überlege, wie sie auf aktuelle Themen angewandt werden können. Auch in der Kunst geht es oft um Standpunkte, Meinungen und Haltungen. Indem ich mich mit Kunst auseinandersetze, versuche ich herauszufinden, was Menschen bewegt. Dabei bringe ich unterschiedliche Sichtweisen in Diskussionen ein und lerne, meine Meinung begründet und respektvoll zu vertreten. Ich kenne politische Mitwirkungsmöglichkeiten von Jugendlichen und nicht stimm- und wahlberechtigten Personen und weiss, wie und wo ich meine persönlichen politischen Anliegen vertreten kann. Ich entwickle eigene Standpunkte, bereite sie sprachlich sorgfältig auf und präsentiere sie zielgruppengerecht, beispielsweise in Form eines Kampagnenbeitrags, einem Debattenbeitrag oder als Videostatement für Social Media. So erlebe ich, dass meine Stimme zählt und ich durch aktives Mitgestalten Veränderungen anstossen kann."
+        "detail": "Ich lerne, Informationen kritisch zu prüfen. Ich erkenne den Einfluss von Algorithmen, Filterblasen und Desinformationen auf meine Meinungsbildung. Ich bin sensibilisiert für den Unterschied zwischen Fake News und verlässlichen Quellen. Ich entwickle Strategien, um mich sicher und selbstbestimmt in digitalen Räumen zu bewegen. Dazu höre ich politische Debatten, Interviews und Social-Media-Beiträge, analysiere die Absichten hinter Aussagen und vergleiche Positionen. Auf dieser Basis setze ich mich mit ethischen Fragen zum Umgang mit Diskriminierung, Meinungsfreiheit und Verantwortung in Gesprächen und Medienbeiträgen auseinander. Ich reflektiere Menschenrechte und Grundwerte und überlege, wie sie auf aktuelle Themen angewandt werden können. Auch in der Kunst geht es oft um Standpunkte, Meinungen und Haltungen. Indem ich mich mit Kunst auseinandersetze, versuche ich herauszufinden, was Menschen bewegt. Dabei bringe ich unterschiedliche Sichtweisen in Diskussionen ein und lerne, meine Meinung begründet und respektvoll zu vertreten. Ich kenne politische Mitwirkungsmöglichkeiten von Jugendlichen und nicht stimm- und wahlberechtigten Personen und weiss, wie und wo ich meine persönlichen politischen Anliegen vertreten kann. Ich entwickle eigene Standpunkte, bereite sie sprachlich sorgfältig auf und präsentiere sie zielgruppengerecht, beispielsweise in Form eines Kampagnenbeitrags, in einem Debattenbeitrag oder als Videostatement für Social Media. So erlebe ich, dass meine Stimme zählt und ich durch aktives Mitgestalten Veränderungen anstoßen kann."
       },
       "sprachmodi": [
         "Rezeption mündlich",
@@ -424,7 +424,7 @@
       "lebensbezuege": [
         {
           "nr": "2.1",
-          "text": "Ich bin täglich mit Informationen aus verschiedenen Quellen konfrontiert und merke, dass ich oft nicht weiss, was stimmt und was nicht und warum mir gerade diese Inhalte angezeigt werden.",
+          "text": "Ich hinterfrage Informationen aus verschiedenen Quellen und erkenne, warum mir bestimmte Inhalte angezeigt werden.",
           "lektionen": 9,
           "kompetenzen": [
             {
@@ -439,7 +439,7 @@
               "sprachmodi": [
                 {
                   "modus": "Rezeption mündlich",
-                  "detail": "Zentrale Aussagen aus Gesprächen oder Audioquellen mithilfe von Hörhilfen verstehen und erkennen"
+                  "detail": "Zentrale Aussagen aus Gesprächen oder Audioquellen mithilfe eines Hörleitfadens verstehen und erkennen"
                 },
                 {
                   "modus": "Rezeption audiovisuell",
@@ -453,7 +453,7 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Technologische und digitale Transformation",
-                  "detail": "Chancen und Risiken aktueller Technologien, algorithmische Steuerung von Inhalten, Filterblasen, Desinformation (Fake News)"
+                  "detail": "Chancen und Risiken aktueller Technologien, algorithmische Steuerung, Filterblasen, Desinformation (Fake News)"
                 },
                 {
                   "aspekt": "Politik",
@@ -480,7 +480,7 @@
           "kompetenzen": [
             {
               "nr": "2.2.1",
-              "text": "Ich kann Beispiele von Ausgrenzung und Diskriminierung in Gesprächen und Medienbeiträgen analysieren und erklären, inwiefern sie die Meinungsfreiheit beeinflussen oder einschränken.",
+              "text": "Ich kann Beispiele von Ausgrenzung und Diskriminierung in Gesprächen und Medienbeiträgen analysieren und dabei die Bedeutung von Meinungsfreiheit reflektieren.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Ethik",
@@ -498,7 +498,7 @@
                 },
                 {
                   "modus": "Rezeption audiovisuell",
-                  "detail": "digitale Medieninhalte zu menschenrechtlichen Themen recherchieren und kritisch prüfen"
+                  "detail": "Digitale Medieninhalte zu menschenrechtlichen Themen recherchieren und kritisch prüfen"
                 }
               ]
             },
@@ -508,17 +508,17 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Ethik",
-                  "detail": "Aushandlung von moralischen Entscheidungen, faire Vertretung von moralischen Überzeugungen"
+                  "detail": "Ethische Prinzipien, Wertekonflikte"
                 },
                 {
                   "aspekt": "Politik",
-                  "detail": "Wahrnehmung eigener und fremder Interessen"
+                  "detail": "Eigene und fremde Interessen"
                 }
               ],
               "sprachmodi": [
                 {
                   "modus": "Produktion mündlich",
-                  "detail": "In Gesprächen meinungsorientiert mithilfe einer Argumentationsstruktur kommunizieren"
+                  "detail": "In Gesprächen mithilfe einer Argumentationsstruktur meinungsorientiert kommunizieren"
                 },
                 {
                   "modus": "Produktion schriftlich und bildlich",
@@ -528,11 +528,11 @@
             },
             {
               "nr": "2.2.3",
-              "text": "Ich kann Meinungen und Haltungen in künstlerischen Beiträgen erkennen und beschreiben und deren Wirkung auf mich einschätzen.",
+              "text": "Ich kann Meinungen und Haltungen in künstlerischen Beiträgen erkennen und beschreiben und deren Wirkung auf mich reflektieren.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Kultur",
-                  "detail": "künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung"
+                  "detail": "Künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung"
                 }
               ],
               "sprachmodi": [
@@ -547,7 +547,7 @@
         {
           "nr": "2.3",
           "text": "Ich möchte mitreden, mitgestalten und ernst genommen werden bei Themen, die mich direkt oder indirekt betreffen.",
-          "lektionen": 9,
+          "lektionen": 12,
           "kompetenzen": [
             {
               "nr": "2.3.1",
@@ -571,7 +571,7 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Ethik",
-                  "detail": "Aktive Aushandlung von moralischen und politischen Entscheidungen, Auseinandersetzung mit anderen Überzeugungen"
+                  "detail": "Ethische Prinzipien, Perspektivenübernahme"
                 }
               ],
               "sprachmodi": [
@@ -585,20 +585,20 @@
         }
       ],
       "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": 12,
-        "seite_end": 15
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 9,
+        "seite_end": 13
       }
     },
     {
       "nr": 3,
       "titel": "Bewusst konsumieren und handeln",
       "lehrjahr": 1,
-      "lektionen": 33,
+      "lektionen": 36,
       "vollstaendig": true,
       "leitidee": {
         "kurz": "Meine Konsumentscheidungen, sei es beim Einkaufen, Essen oder Reisen, beeinflussen andere Personen, Unternehmen und auch die Umwelt. Beim Thema «Bewusst konsumieren und handeln» gehe ich verantwortungsvoll mit meinem Lohn um. Ich reflektiere mein eigenes Konsumverhalten, erkenne wirtschaftliche Zusammenhänge, lerne meine Rechte als Konsument/in kennen und setze mich mit den ökologischen Auswirkungen meiner alltäglichen Entscheidungen auseinander.",
-        "detail": "Ich lerne, verantwortungsbewusst mit meinem Einkommen umzugehen und finde heraus, welche finanziellen Spielräume und Verpflichtungen damit verbunden sind. Dazu erstelle ich ein eigenes Budget und tausche mich über meine Bedürfnisse und Möglichkeiten mit anderen aus. Ich setze mich mit grundlegenden wirtschaftlichen Mechanismen auseinander: Was beeinflusst meine Konsumbedürfnisse? Dabei analysiere ich audiovisuelle Beiträge wie Werbecips, Erklärvideos oder Dokumentationen, um ökonomische Zusammenhänge zu erkennen und kritisch zu reflektieren. Ich reflektiere die sozialen, wirtschaftlichen und ökologischen Auswirkungen unserer Konsumgesellschaft. Ich vergleiche konventionelle und nachhaltige Konsumformen, befasse mich mit Produktionsbedingungen und Umweltauswirkungen und formuliere meine Erkenntnisse in multimedial gestalteten Beiträgen. Zudem lerne ich, welche Rechte und Pflichten sich aus Kaufverträgen ergeben, sei es im Laden, online oder bei digitalen Vertragsabschlüssen. Dadurch kann ich Rückgaberecht, Garantie, Reklamation oder Schutz vor Betrug in meinem Alltag anwenden und meine Rechte in Austauschformaten einfordern. So stärke ich meine Fähigkeit, wirtschaftlich informiert, rechtlich orientiert und ökologisch bewusst zu handeln – als verantwortungsvolle Konsumentin bzw. verantwortungsvoller Konsument."
+        "detail": "Ich lerne, verantwortungsbewusst mit meinem Einkommen umzugehen und finde heraus, welche finanziellen Spielräume und Verpflichtungen damit verbunden sind. Dazu erstelle ich ein eigenes Budget und tausche mich über meine Bedürfnisse und Möglichkeiten mit anderen aus. Ich setze mich mit grundlegenden wirtschaftlichen Mechanismen auseinander: Was beeinflusst meine Konsumbedürfnisse? Dabei analysiere ich audiovisuelle Beiträge wie Werbeclips, Erklärvideos oder Dokumentationen, um ökonomische Zusammenhänge zu erkennen und kritisch zu reflektieren. Ich reflektiere die sozialen, wirtschaftlichen und ökologischen Auswirkungen unserer Konsumgesellschaft. Ich vergleiche konventionelle und nachhaltige Konsumformen, befasse mich mit Produktionsbedingungen und Umweltauswirkungen und formuliere meine Erkenntnisse in multimedial gestalteten Beiträgen. Zudem lerne ich, welche Rechte und Pflichten sich aus Kaufverträgen ergeben, sei es im Laden, online oder bei digitalen Vertragsabschlüssen. Dadurch kann ich Rückgaberecht, Garantie, Reklamation oder Schutz vor Betrug in meinem Alltag anwenden und meine Rechte in Austauschformaten einfordern. So stärke ich meine Fähigkeit, wirtschaftlich informiert, rechtlich orientiert und ökologisch bewusst als verantwortungsvolle Konsumentin bzw. verantwortungsvoller Konsument zu handeln."
       },
       "sprachmodi": [
         "Rezeption audiovisuell",
@@ -619,7 +619,7 @@
           "kompetenzen": [
             {
               "nr": "3.1.1",
-              "text": "Ich kann verschiedene Arten von Bedürfnissen unterscheiden, meine eigenen Bedürfnisse erkennen und Einflussmöglichkeiten darauf beurteilen.",
+              "text": "Ich kann verschiedene Arten von Bedürfnissen unterscheiden, meine eigenen Bedürfnisse erkennen und beurteilen.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Wirtschaft",
@@ -627,7 +627,7 @@
                 },
                 {
                   "aspekt": "Identität und Sozialisation",
-                  "detail": "Anerkennung und Zugehörigkeit zu sozialer Gruppe, mögliche Prägungen"
+                  "detail": "Einfluss von Herkunft und Umfeld"
                 }
               ],
               "sprachmodi": [
@@ -643,7 +643,7 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Wirtschaft",
-                  "detail": "geeignete Instrumente für den Umgang mit eigenen Mitteln, Einschätzung der eigenen wirtschaftlichen Lage"
+                  "detail": "Geeignete Instrumente für den Umgang mit eigenen Mitteln, Einschätzung der eigenen wirtschaftlichen Lage"
                 }
               ],
               "sprachmodi": [
@@ -659,17 +659,17 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Wirtschaft",
-                  "detail": "nachhaltiger Umgang mit Geld, Schuldenprävention"
+                  "detail": "Schuldenprävention"
                 },
                 {
                   "aspekt": "Ethik",
-                  "detail": "Verantwortung für sich selbst übernehmen"
+                  "detail": "Eigenverantwortung"
                 }
               ],
               "sprachmodi": [
                 {
                   "modus": "Rezeption audiovisuell",
-                  "detail": "zentrale Aussagen aus audiovisuellen Medien entnehmen"
+                  "detail": "Zentrale Aussagen aus audiovisuellen Medien entnehmen"
                 }
               ]
             }
@@ -677,40 +677,36 @@
         },
         {
           "nr": "3.2",
-          "text": "Ich analysiere Konsumgewohnheiten unserer Gesellschaft nach nachhaltigen Kriterien.",
+          "text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat.",
           "lektionen": 18,
           "kompetenzen": [
             {
               "nr": "3.2.1",
-              "text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten beschreiben, wie wir nachhaltiger konsumieren können.",
+              "text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Ökologie",
-                  "detail": "Umweltbelastung reduzieren, Klimawandel, Umgang mit Ressourcen und Energie, drei Dimensionen der Nachhaltigkeit"
+                  "detail": "Energie- und Materialverbrauch, Emissionen, Klimawandel, drei Dimensionen der Nachhaltigkeit"
                 },
                 {
                   "aspekt": "Wirtschaft",
-                  "detail": "ökonomisches Grundproblem knapper Ressourcen"
-                },
-                {
-                  "aspekt": "Identität und Sozialisation",
-                  "detail": "meine Rollen in der Gesellschaft und in der Arbeitswelt"
+                  "detail": "Ökonomisches Grundproblem knapper Ressourcen"
                 }
               ],
               "sprachmodi": [
                 {
                   "modus": "Produktion multimedial",
-                  "detail": "fakten- oder meinungsorientierte Multimedia-Präsentation"
+                  "detail": "Fakten- oder meinungsorientierte Multimedia-Präsentation"
                 }
               ]
             },
             {
               "nr": "3.2.2",
-              "text": "Ich kann den Wert eines Produkts oder einer Dienstleistung anhand von Herstellung, Transport sowie Angebot und Nachfrage beurteilen.",
+              "text": "Ich kann den Preis und die Wirtschaftlichkeit eines Produkts oder einer Dienstleistung anhand von Herstellung, Transport sowie Angebot und Nachfrage beurteilen.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Wirtschaft",
-                  "detail": "Zusammenwirken unterschiedlicher Akteure im wirtschaftlichen Geschehen, unternehmerisches Denken und Handeln, Erwartungen verschiedener Anspruchsgruppen an ein Unternehmen, Zielkonflikte, Auswirkungen von Preisbildung, Marktmechanismen"
+                  "detail": "Auswirkungen von Preisbildung, Marktmechanismen, Unternehmerisches Denken und Handeln, Zielkonflikte von Anspruchsgruppen"
                 }
               ],
               "sprachmodi": [
@@ -724,22 +720,22 @@
         },
         {
           "nr": "3.3",
-          "text": "Ich kenne meine Rechte und Pflichten beim Einkaufen und fordere diese ein.",
-          "lektionen": 6,
+          "text": "Ich habe beim Einkaufen Pflichten, aber auch Rechte, die ich einfordern kann.",
+          "lektionen": 9,
           "kompetenzen": [
             {
               "nr": "3.3.1",
-              "text": "Ich kann die Wirkung von Kaufverträgen rechtlich beurteilen und auf eine konkrete Einkaufssituation anwenden.",
+              "text": "Ich kann die rechtlichen Folgen von Kaufverträgen beurteilen und auf eine konkrete Einkaufssituation anwenden.",
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Recht",
-                  "detail": "gesellschaftsrelevante juristische Regeln"
+                  "detail": "Kaufvertrag"
                 }
               ],
               "sprachmodi": [
                 {
                   "modus": "Rezeption schriftlich und bildlich",
-                  "detail": "Zentrale Aussagen aus Texten, Grafiken/Umfragen entnehmen"
+                  "detail": "Zentrale Aussagen aus Texten, Grafiken, Umfragen entnehmen"
                 }
               ]
             },
@@ -749,17 +745,17 @@
               "gesellschaftliche_inhalte": [
                 {
                   "aspekt": "Recht",
-                  "detail": "Identifizieren, rekonstruieren und interpretieren juristischer Informationen in Konfliktsituationen"
+                  "detail": "Kaufvertrag, Nutzung von Rechtsquellen"
                 }
               ],
               "sprachmodi": [
                 {
                   "modus": "Interaktion und Kollaboration mündlich",
-                  "detail": "an formalem Konfliktgespräch nach Konventionen teilnehmen"
+                  "detail": "An formalem Konfliktgespräch nach Konventionen teilnehmen"
                 },
                 {
                   "modus": "Interaktion und Kollaboration schriftlich",
-                  "detail": "formal korrespondieren"
+                  "detail": "Formal korrespondieren"
                 }
               ]
             }
@@ -767,50 +763,356 @@
         }
       ],
       "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": 16,
-        "seite_end": 23
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 13,
+        "seite_end": 17
       }
     },
     {
       "nr": 4,
       "titel": "Verantwortung für mich und andere übernehmen",
       "lehrjahr": 2,
-      "lektionen": null,
-      "vollstaendig": false,
-      "skizze": {
-        "leitidee": "Verantwortung zu übernehmen, bedeutet für mich, mich selbst, andere Menschen und das gemeinsame Zusammenleben ernst zu nehmen. Im Rahmen des Themas «Verantwortung für mich und andere übernehmen» setze ich mich mit meiner Rolle in der Gesellschaft auseinander, entwickle ein Bewusstsein für Mitverantwortung und reflektiere, was Fairness, Respekt und Solidarität bedeuten.",
-        "detail": "Ich setze mich mit Fragen meiner persönlichen Identität und sozialen Rollen auseinander, beispielsweise damit, was mein Leben, meine Beziehungen und meine Werte prägt. Dabei lese ich unterschiedliche Texte, Berichte oder Erfahrungsberichte zu Lebensrealitäten, gesellschaftlichen Normen und persönlichen Entwicklungen. Ich beleuchte die Vielfalt gesellschaftlicher Lebensformen: sexuelle Orientierung, kulturelle Hintergründe oder unterschiedliche soziale Realitäten. In Gesprächen mit anderen tausche ich mich über Erfahrungen, Haltungen und mögliche Vorurteile aus – und lerne, diese einzuordnen und zu hinterfragen. Ein weiterer Schwerpunkt liegt auf gesellschaftlicher Teilhabe und Chancengerechtigkeit. Ich schreibe eigene Texte, in denen ich gesellschaftliche Themen reflektiere, persönliche Bezüge herstelle und Möglichkeiten zu respektvollem Handeln beschreibe – etwa in Form von Briefen, Statements oder Kommentaren. Zudem befasse ich mich mit Fragen der körperlichen und seelischen Gesundheit, reflektiere den Umgang mit Belastungen, Grenzen und Verantwortung. So entwickle ich ein stärkeres Bewusstsein für mich selbst, für andere und dafür, was es heisst, in einer komplexen, vielfältigen Gesellschaft verantwortungsvoll zu handeln.",
-        "lebensbezuege": [
-          "Ich sorge für mein körperliches und psychisches Wohlbefinden, setze mich mit Risiken für meine Gesundheit bewusst auseinander und reflektiere den Einfluss meiner Identität sowie meines Umfelds.",
-          "Ich erkenne gesellschaftliche Vielfalt an und verhalte mich anderen gegenüber respektvoll – auch bei Unterschieden oder Vorurteilen.",
-          "Ich beschäftige mich mit Integration, Ausgrenzung und den Herausforderungen von Migration und Chancengerechtigkeit."
-        ]
+      "lektionen": 30,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "Ich setze mich mit meiner Gesundheit und meinem Selbstbild auseinander, tausche mich mit anderen aus und halte meine Erkenntnisse fest. Ich informiere mich über Risiken im Alltag und finde heraus, wie ich mich absichern kann. Ich lerne Menschen mit unterschiedlichen Hintergründen kennen, spreche mit ihnen und setze mich für ein respektvolles Miteinander ein.",
+        "detail": "Ich setze mich mit meinem körperlichen und psychischen Wohlbefinden auseinander. Dabei erkenne ich, wie gesellschaftliche Normen und Ideale mein Selbstbild beeinflussen. Im Austausch mit anderen und durch persönliche Texte und Darstellungen finde ich heraus, was mir guttut, und entwickle Strategien für einen gesunden Lebensstil. Ich lerne, wie ich mit gesundheitlichen und finanziellen Risiken umgehen kann. Ich werte Informationen aus verschiedenen Quellen aus, erkenne mögliche Folgen und finde heraus, wie ich mich gezielt absichern kann – etwa durch passende Versicherungen. So übernehme ich Verantwortung für mich selbst und für andere. Ich lebe in einer vielfältigen Gesellschaft. Ich lese Berichte, höre Erzählungen aus unterschiedlichen Lebensrealitäten und spreche mit anderen über ihre Erfahrungen. Dabei erkenne ich, welche Chancen und Herausforderungen Vielfalt mit sich bringt. Ich setze mich im Alltag, in der Schule und im Beruf für Respekt, Toleranz und ein gelingendes Zusammenleben ein."
       },
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "schluesselkompetenzen": [
+        "Die eigenen Werthaltungen und Überzeugungen erkennen, verstehen, kritisch reflektieren und weiterentwickeln",
+        "Unterschiedliche Standpunkte nachvollziehen und das gegenseitige Verständnis fördern",
+        "Sich in einem ständig verändernden Umfeld zurechtfinden und sich an dieses anpassen",
+        "Mit Mehrdeutigkeiten umgehen"
+      ],
+      "lebensbezuege": [
+        {
+          "nr": "4.1",
+          "text": "Ich sorge für mein körperliches und psychisches Wohlbefinden.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "4.1.1",
+              "text": "Ich kann den Einfluss von gesellschaftlichen Erwartungen und Normen auf mein Selbstbild analysieren und meine Erkenntnisse daraus festhalten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Persönlichkeitsentwicklung, Einfluss von Herkunft und Umfeld, Selbstbestimmung, soziale Rollen, Medieneinfluss"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "Gespräche führen über Erwartungen und Erkenntnisse"
+                },
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Strukturierte Notiz verfassen"
+                }
+              ]
+            },
+            {
+              "nr": "4.1.2",
+              "text": "Ich kann Merkmale eines gesunden Lebensstils in Erfahrung bringen, auswerten und daraus gesundheitsfördernde Massnahmen für mich ableiten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Eigenverantwortung"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Psychische und physische Gesundheit, Work-Life-Balance, Sucht und Hilfsangebote, Prävention"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Umfrage auswerten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "4.2",
+          "text": "Ich bin im Alltag gesundheitlichen und finanziellen Risiken ausgesetzt.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "4.2.1",
+              "text": "Ich kann mögliche gesundheitliche Risiken erkennen, beurteilen und eine geeignete finanzielle Absicherung ableiten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Eigenverantwortung, soziale Verantwortung, Solidaritätsprinzip"
+                },
+                {
+                  "aspekt": "Recht",
+                  "detail": "Krankenversicherung, Unfallversicherung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Grafiken interpretieren und Absicht von Texten erkennen"
+                }
+              ]
+            },
+            {
+              "nr": "4.2.2",
+              "text": "Ich kann Situationen erkennen, in denen ich haftbar bin und Massnahmen ergreifen, um mich vor Schäden an Dritten finanziell abzusichern.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Eigenverantwortung, soziale Verantwortung"
+                },
+                {
+                  "aspekt": "Recht",
+                  "detail": "Haftpflichtversicherung, Regress"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Grafiken interpretieren und Absicht von Texten erkennen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "4.3",
+          "text": "Ich lebe in einer vielfältigen Gesellschaft und möchte respektiert werden.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "4.3.1",
+              "text": "Ich kann gesellschaftliche Vielfalt beschreiben und die Chancen und Herausforderungen dieser Vielfalt für das Zusammenleben untersuchen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Gesellschaftliche Rolle, kulturelle Vielfalt"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration mündlich",
+                  "detail": "Interview führen, Chancen und Risiken erfragen"
+                },
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Erfahrungsberichte, Reportagen oder Kampagnen zu Vielfalt analysieren"
+                }
+              ]
+            },
+            {
+              "nr": "4.3.2",
+              "text": "Ich kann Ursachen und Auswirkungen von Migration anhand konkreter Beispiele analysieren und erklären, wie das Leben von Betroffenen und die Gesellschaft beeinflusst werden.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Migrationsrecht"
+                },
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Migrationsgründe (Demografie, Klimawandel, politische Konflikte, wirtschaftliche Abhängigkeit)"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Grafiken interpretieren, Absicht von Texten erkennen"
+                },
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Meinungsorientierten Text verfassen"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": 24,
-        "seite_end": 24
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 17,
+        "seite_end": 21
       }
     },
     {
       "nr": 5,
-      "titel": "Mich im Staat orientieren und Gesellschaft mitgestalten",
+      "titel": "Mich im Staat orientieren",
       "lehrjahr": 2,
-      "lektionen": null,
-      "vollstaendig": false,
-      "skizze": {
-        "leitidee": "Wichtige Schritte auf dem Weg in ein selbstbestimmtes Leben sind, sich finanziell zurechtzufinden und seine Rolle im Staat zu kennen. Im Themenbereich «Mich im Staat orientieren und finanzielle Selbstständigkeit entwickeln» verbinde ich persönliche finanzielle Entscheidungen, beispielsweise die Altersvorsorge, mit politischem Verständnis und ökologischer Verantwortung.",
-        "detail": "Ich lerne, wie ich eine Steuererklärung ausfülle, welche direkten und indirekten Steuern es gibt und wie das Vorsorgesystem der Schweiz mit den drei Säulen funktioniert – inklusive relevanter Versicherungen. Ich erfahre, wie ich mit 18 Jahren politisch mitbestimmen kann, z. B. durch Wahlen, Abstimmungen, Petitionen oder das Engagement in einer Partei oder ausserhalb, und erlerne, wie ich meine Ansichten argumentativ vertreten kann. Zugleich setze ich mich mit den Aufgaben des Staates auseinander: Wie funktioniert unsere Demokratie? Welche Herausforderungen bestehen – zum Beispiel im Bereich Umwelt, soziale Gerechtigkeit oder Digitalisierung? Und wie hängen wirtschaftliche, politische und ökologische Entscheidungen zusammen? Dabei wird mir bewusst, dass neben dem Inhalt auch die Bildsprache und die Tonalität politischer Beiträge einseitig gestaltet sein können und ich nehme selbst an einem digitalen Meinungsaustausch teil. So erwerbe ich grundlegendes Wissen, um finanziell handlungsfähig zu sein und meine Möglichkeiten zur Mitgestaltung in der Gesellschaft zu nutzen.",
-        "lebensbezuege": [
-          "Ich gehe selbstständig mit meinem Geld um, plane vorausschauend und berücksichtige dabei Altersvorsorge, Steuern sowie nachhaltige und innovative Geldanlagen, einschliesslich Kryptowährungen.",
-          "Ich kenne meine Rechte und Pflichten in der Gemeinschaft und weiss, wie ich unabhängig von Staatsbürgerschaft oder Herkunft mitgestalten kann.",
-          "Ich setze mich kritisch mit den verschiedenen Staatsaufgaben in nationaler wie internationaler Hinsicht auseinander."
-        ]
+      "lektionen": 36,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "Der Staat prägt meinen Alltag durch Gesetze, politische Entscheidungen und gesellschaftliche Prozesse. Ich lerne, wie das Schweizer Rechtssystem funktioniert und erkunde den Zweck von Steuern. Ich setze mich mit rechtsstaatlichen Prinzipien, Gesetzes- und Abstimmungsprozessen auseinander und präsentiere ein eigenes politisches Anliegen. Abschliessend analysiere ich staatliche Handlungsmöglichkeiten bei globalen Herausforderungen, untersuche die Wirkung medialer Beiträge und gestalte ein eigenes multimediales Werk, das zum Nachdenken oder Dialog anregen soll.",
+        "detail": "Der Staat prägt meinen Alltag durch Gesetze, politische Entscheidungen und gesellschaftliche Prozesse. In diesem Thema lerne ich, wie das Schweizer Rechtssystem aufgebaut ist: welche Institutionen es gibt, welche Rechtsnormen gelten und was das öffentliche Recht sowie das Strafrecht für meinen Alltag bedeuten. Diese Inhalte mache ich sichtbar, indem ich Rechtssituationen visuell darstelle und digitale Tools für die Zusammenarbeit nutze. Ich erkunde ausserdem, welchen Zweck Steuern erfüllen und fülle meine eigene Steuererklärung korrekt aus. Ich setze mich damit auseinander, wie rechtsstaatliche Prinzipien wie Gewaltenteilung, Föderalismus und demokratische Werte in der Schweiz umgesetzt werden und worin sich ein Rechtsstaat von einem Unrechtsstaat unterscheidet. Ich erarbeite, wie Gesetze und Abstimmungsprozesse funktionieren, arbeite mit digitalen Tools, formuliere ein eigenes politisches Anliegen und präsentiere es in einem mündlichen Beitrag. Ich setze mich kritisch mit den Aufgaben des Staates auf nationaler und internationaler Ebene auseinander und frage, welche Handlungsmöglichkeiten angesichts globaler Herausforderungen (z.B. Klimawandel) bestehen. Ich untersuche mediale Beiträge zu Umweltthemen und erkenne, wie Sprache, Bild und Ton öffentliche Meinungen beeinflussen. Abschliessend gestalte ich ein eigenes künstlerisches, multimediales Werk zu einer globalen Herausforderung und kommentiere, wie es zum Nachdenken oder zum Dialog anregen soll."
       },
+      "sprachmodi": [
+        "Rezeption audiovisuell",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration digital"
+      ],
+      "schluesselkompetenzen": [
+        "Sich selbst Ziele setzen, die Zielsetzung überprüfen und sich adaptiv verhalten",
+        "Vernetzt und systemisch denken, um sozial, ökologisch und ökonomisch nachhaltig zu handeln",
+        "Mit Mehrdeutigkeiten umgehen",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen"
+      ],
+      "lebensbezuege": [
+        {
+          "nr": "5.1",
+          "text": "Ich bin Teil der Schweizer Gesellschaft und habe Rechte und Pflichten.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "5.1.1",
+              "text": "Ich kann grundlegende Rechte und Pflichten in der Gemeinschaft verstehen und sie anhand von Alltagsbeispielen visualisieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Rechtsnormen, Bedeutung für das gesellschaftliche Zusammenleben, öffentliches Recht (inkl. Strafrecht), Personenrecht"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Rechtssituationen visualisieren inklusive Bildlegenden"
+                },
+                {
+                  "modus": "Interaktion und Kollaboration digital",
+                  "detail": "Digitale Tools der Zusammenarbeit nutzen"
+                }
+              ]
+            },
+            {
+              "nr": "5.1.2",
+              "text": "Ich kann den Zweck von Steuern beschreiben und meine Steuererklärung selbständig und korrekt ausfüllen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Staatshaushalt, Staatsbudget, Steuerpflicht, Steuerprogression"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion schriftlich und bildlich",
+                  "detail": "Steuerformular online ausfüllen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "5.2",
+          "text": "Ich erlebe, dass Gesetze und politische Entscheidungen verändert werden können.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "5.2.1",
+              "text": "Ich kann anhand alltäglicher Beispiele und aktueller Ereignisse aufzeigen, wie rechtsstaatliche Prinzipien in der Schweiz umgesetzt werden und begründet erläutern, was einen Rechtsstaat von einem Unrechtsstaat unterscheidet.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Politik",
+                  "detail": "Demokratische Werte, Gewaltenteilung, Gemeinwohl, Funktionsweise der drei Ebenen der nationalen Politik (Föderalismus), Bundesverfassung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration digital",
+                  "detail": "Digitale Tools der Zusammenarbeit nutzen"
+                }
+              ]
+            },
+            {
+              "nr": "5.2.2",
+              "text": "Ich kann ein eigenes politisches Anliegen auf Basis eines konkreten Problems aus meinem Alltag oder meiner Lebenswelt ausarbeiten und die einzelnen Schritte des Gesetzgebungs- bzw. Abstimmungsprozesses erläutern.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Politik",
+                  "detail": "Interessengruppen, politische Grundhaltungen, Meinungen und Werte zu politischen Themen, Möglichkeiten zur Teilnahme am politischen Leben"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion mündlich",
+                  "detail": "Anliegen präsentieren"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "5.3",
+          "text": "Ich begegne globalen, gesellschaftlichen Herausforderungen, die auch den Staat beschäftigen.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "5.3.1",
+              "text": "Ich kann anhand einer aktuellen globalen Herausforderung die Rolle des Staats und dessen Handlungsmöglichkeiten analysieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Politik",
+                  "detail": "Funktionen nationaler und supranationaler Organisationen in Europa und weltweit"
+                },
+                {
+                  "aspekt": "Ökologie",
+                  "detail": "Lösungsansätze zu gesellschaftlich nachhaltigem Handeln, globale Herausforderungen wie Bevölkerungswachstum, soziale Ungleichheit oder steigender Ressourcenverbrauch"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion mündlich",
+                  "detail": "Handlungsmöglichkeiten zu einer aktuellen globalen Herausforderung in einem Gesprächsbeitrag wiedergeben"
+                }
+              ]
+            },
+            {
+              "nr": "5.3.2",
+              "text": "Ich kann mediale Beiträge zum Klimawandel analysieren und die Wirkung von Sprache, Bild und Ton anhand konkreter Beispiele belegen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Politik",
+                  "detail": "Medienwirkung, Medien als vierte Gewalt"
+                },
+                {
+                  "aspekt": "Ökologie",
+                  "detail": "Ressourcenverbrauch, gesellschaftliche Verhaltensmuster im Umgang von Ressourcen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption audiovisuell",
+                  "detail": "Bildsprache und Tonalität von medialen Beiträgen deuten, Medienbeiträge zu aktuellen Umweltfragen hinsichtlich politischer Ebenen und politischer Gewalten analysieren"
+                }
+              ]
+            },
+            {
+              "nr": "5.3.3",
+              "text": "Ich kann ein eigenes künstlerisches Werk zu einer globalen Herausforderung gestalten und kommentieren, wie mein Werk zum Nachdenken oder zum Dialog anregen soll.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Kultur",
+                  "detail": "Kulturelle Ausdrucksmittel und -formen, eigene Gestaltungs- und Ausdrucksfähigkeiten"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Künstlerische Produkte erstellen und diese kommentieren"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": 25,
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 21,
         "seite_end": 25
       }
     },
@@ -818,139 +1120,481 @@
       "nr": 6,
       "titel": "Mein eigenes Zuhause",
       "lehrjahr": 2,
-      "lektionen": null,
-      "vollstaendig": false,
-      "skizze": {
-        "leitidee": "Der Auszug aus dem Elternhaus ist ein grosser Schritt in die Selbstständigkeit. Im Rahmen des Themas «Von zu Hause ausziehen» setze ich mich mit den Herausforderungen des eigenständigen Wohnens auseinander – sowohl rechtlich und organisatorisch als auch ökologisch und persönlich.",
-        "detail": "Ich befasse mich mit der Frage, wie ich eine passende Wohnung finde, die sich an meinen sozialen Bedürfnissen, meinem Lebensstil und meinen finanziellen Möglichkeiten orientiert. Ich lerne, wie ich den Einzug selbstständig plane und organisiere. Dabei erfahre ich auch, wie ich meine Mobilität im Alltag sinnvoll und ressourcenschonend gestalten kann – im Spannungsfeld von Kosten, Nachhaltigkeit und gesetzlichen Vorgaben. Um mich im Mietalltag sicher zu bewegen, setze ich mich mit den zentralen Rechten und Pflichten von Mietenden auseinander. Beim Hören eines Podcasts oder Interviews zum Mietrecht trainiere ich, relevante Aussagen zu filtern und Meinungen zu unterscheiden. In simulierten Korrespondenzen mit der Vermieterschaft oder der Schlichtungsbehörde übe ich, sachlich und zielgerichtet zu kommunizieren. Ich untersuche verschiedene Wohn- und Lebensformen – vom Einzelhaushalt über Wohngemeinschaften bis zum Zusammenleben mit der Partnerin oder dem Partner. Ich reflektiere, wie ich in unterschiedlichen Konstellationen respektvoll und kooperativ leben kann. Dabei setze ich mich mit der Frage auseinander, welche Form zu meinen Werten und Bedürfnissen passt. Um ein verantwortungsbewusstes und nachhaltiges Alltagsverhalten zu fördern, produziere ich ein Kurzvideo mit konkreten Tipps zum ressourcenschonenden Wohnen. Darin zeige ich, wie man Strom, Wasser und andere Ressourcen achtsam nutzt, Müll trennt und Mobilität ökologisch gestalten kann. So entwickle ich Kompetenzen und Orientierung, um selbstständig, informiert und verantwortungsvoll in einen neuen Lebensabschnitt zu starten – und mein Zuhause aktiv und bewusst zu gestalten.",
-        "lebensbezuege": [
-          "Ich finde eine Wohnung, die zu meinen sozialen, emotionalen und finanziellen Bedürfnissen passt, und kann den Einzug selbstständig organisieren.",
-          "Ich kenne meine Rechte und Pflichten als Mieter/in und kann mich bei Fragen rund ums Wohnen und Versichern selbstständig informieren und handeln.",
-          "Ich kenne verschiedene Wohn- und Lebensformen und weiss, wie ich das Zusammenleben mit anderen respektvoll und selbstständig gestalten kann.",
-          "Ich kann meine Mobilität im Alltag selbstständig organisieren und dabei ökologische, rechtliche und finanzielle Aspekte berücksichtigen."
-        ]
+      "lektionen": 27,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "In meinem eigenen Zuhause zu leben, bedeutet für mich viel Organisation und Selbstständigkeit. Im Rahmen des Themas «Mein eigenes Zuhause» setze ich mich mit den Herausforderungen des eigenständigen Wohnens auseinander. Dabei betrachte ich das Thema aus rechtlicher, wirtschaftlicher, ökologischer und persönlicher Perspektive. So lerne ich, welche Verantwortung mit dem selbstständigen Wohnen verbunden ist.",
+        "detail": "Ich befasse mich mit der Frage, wie ich eine passende Wohnung finde, die zu meinen sozialen Bedürfnissen, meinem Lebensstil und meinen finanziellen Möglichkeiten passt. Gleichzeitig lerne ich, den Einzug Schritt für Schritt zu planen und organisatorisch vorzubereiten. Darüber hinaus überlege ich, wie ich Wohnen und Mobilität im Alltag sinnvoll gestalten kann. Dazu berücksichtige ich sowohl Kosten, Nachhaltigkeit als auch gesetzliche Rahmenbedingungen. Damit ich mich im Mietalltag sicher bewegen kann, setze ich mich mit den zentralen Rechten und Pflichten von Mietenden sowie relevanten Versicherungen auseinander. In Korrespondenzen mit der Vermietung oder der Schlichtungsbehörde übe ich, sachlich und zielgerichtet zu kommunizieren. Ich untersuche unterschiedliche Wohn- und Lebensformen und erkenne, wie der demografische Wandel Wohnmodelle und das Zusammenleben prägt. Gleichzeitig reflektiere ich, wie ein respektvoller Umgang in Beziehungen und Nachbarschaft möglich ist. In kurzen multimedialen Darstellungen zeige ich auf, wie Wohnen ökologisch nachhaltiger gestaltet und ein gesundes, respektvolles Miteinander unterstützt werden kann. So entwickle ich Kompetenzen und Orientierung, um selbstständig, informiert und verantwortungsvoll mein Zuhause aktiv und bewusst zu gestalten."
       },
+      "sprachmodi": [
+        "Rezeption mündlich",
+        "Produktion multimedial",
+        "Interaktion und Kollaboration schriftlich"
+      ],
+      "schluesselkompetenzen": [
+        "Antizipative, unternehmerische und innovative Wege der Problemlösung erkennen, entwickeln und umsetzen",
+        "In unterschiedlichen Teams zielgerichtet und effizient arbeiten",
+        "Unterschiedliche Standpunkte nachvollziehen und das gegenseitige Verständnis fördern",
+        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen",
+        "Vernetzt und systemisch denken, um sozial, ökologisch und ökonomisch nachhaltig zu handeln"
+      ],
+      "lebensbezuege": [
+        {
+          "nr": "6.1",
+          "text": "Ich finde eine passende Wohnung und plane meinen Umzug.",
+          "lektionen": 6,
+          "kompetenzen": [
+            {
+              "nr": "6.1.1",
+              "text": "Ich kann eine Wohnung finden, die zu meinen sozialen und finanziellen Bedürfnissen passt.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Ökologie",
+                  "detail": "Mobilität"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Lebensqualität"
+                },
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Finanzielle Standortbestimmung, Suchstrategien auf Wohnungsmarkt"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption mündlich",
+                  "detail": "Hauptaussagen aus Gesprächs- und Hörmaterialien erkennen"
+                }
+              ]
+            },
+            {
+              "nr": "6.1.2",
+              "text": "Ich kann eine strukturierte Umzugsplanung mit Zeitplan und Budget erstellen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Nachhaltiger Umgang mit eigenen Mitteln, Ablauf eines Umzugs"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration schriftlich",
+                  "detail": "Umzugsplanung kooperativ erarbeiten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "6.2",
+          "text": "Ich ziehe in meine eigene Wohnung und kläre Fragen zu Mietvertrag und Versicherungen.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "6.2.1",
+              "text": "Ich kann rechtliche Grundlagen zum Mietverhältnis recherchieren und auf typische Herausforderungen anwenden.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Mietrecht, Konfliktstrategien"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration schriftlich",
+                  "detail": "Formal und informal korrespondieren, rechtlichen Bezug erläutern"
+                }
+              ]
+            },
+            {
+              "nr": "6.2.2",
+              "text": "Ich kann Angebote der Versicherungen zum Thema wohnen vergleichen und eine begründete Auswahl treffen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Haftpflichtversicherung, Hausratsversicherung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption mündlich",
+                  "detail": "Hauptaussagen und Absichten aus Gesprächen und Hörmaterialien erkennen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "6.3",
+          "text": "Ich setze mich mit verschiedenen Wohn- und Lebensformen auseinander.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "6.3.1",
+              "text": "Ich kann verschiedene Wohnformen nach ökonomischen, ökologischen und sozialen Kriterien beurteilen und die Auswirkung auf Gesellschaft und Umwelt einordnen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Bevölkerungswachstum, Alterung der Bevölkerung"
+                },
+                {
+                  "aspekt": "Ökologie",
+                  "detail": "nachhaltiger Umgang mit knappen Ressourcen, Reduktion der Umweltbelastung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Multimediale Reportage erstellen"
+                }
+              ]
+            },
+            {
+              "nr": "6.3.2",
+              "text": "Ich kann für konkrete Formen des Zusammenlebens Chancen und Herausforderungen analysieren und konstruktive Vorschläge für einen respektvollen Umgang entwickeln.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Psychische und physische Gesundheit, Gewaltformen, Hilfsangebote, häusliche Gewalt"
+                },
+                {
+                  "aspekt": "Ethik",
+                  "detail": "Eigenverantwortung, soziale Verantwortung, Schutz von Würde und Integrität, Gleichstellung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Multimediale Reportage erstellen"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": 26,
-        "seite_end": 26
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 25,
+        "seite_end": 29
       }
     },
     {
       "nr": 7,
-      "titel": "Arbeiten in der Zukunft",
+      "titel": "Schlussarbeit",
       "lehrjahr": 3,
-      "lektionen": null,
-      "vollstaendig": false,
-      "skizze": {
-        "leitidee": "Die Arbeitswelt verändert sich – durch neue Technologien, gesellschaftliche Entwicklungen und persönliche Lebensentwürfe. Im Rahmen des Themas «Arbeiten in der Zukunft» setze ich mich damit auseinander, wie ich meine berufliche Zukunft gestalten kann – mit Wissen über grundlegende arbeitsrechtliche Bedingungen und finanzielle Vorsorge, digitalen Kompetenzen und einem klaren Blick auf meine Ziele.",
-        "detail": "Ich befasse mich damit, wie Robotik, Künstliche Intelligenz und flexible Arbeitsformen die Berufswelt verändern – und was das für mich bedeutet. Ich setze mich mit den Anforderungen des Arbeitsmarktes auseinander, reflektiere meine Stärken und Ziele, entdecke passende Weiterbildungen und gestalte so meine Laufbahn. Auch die Fragen nach Work-Life-Balance und einem gesunden Umgang mit Belastungen spielen eine wichtige Rolle. So entwickle ich Perspektiven für eine Zukunft, die zu mir passt. Ich lerne, worauf es bei Arbeitsverträgen, Kündigungen und finanzieller Vorsorge ankommt, und verschaffe mir einen Überblick über Sozialversicherungen und meine beruflichen Rechte.",
-        "lebensbezuege": [
-          "Ich kenne die Chancen und Herausforderungen der Digitalisierung, Robotik und KI in der Arbeitswelt und kann einschätzen, welchen Einfluss diese Entwicklungen auf meine Berufsbranche und mein Berufsbild haben werden.",
-          "Ich plane meine berufliche Zukunft und achte dabei auch auf meine Lebensqualität.",
-          "Ich kenne meine Rechte und Pflichten im Arbeitsleben und kann mich im Wandel der Arbeitswelt zurechtfinden."
-        ]
+      "lektionen": 33,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "Ich bearbeite ein gesellschaftlich relevantes Thema, das ich aus mindestens zwei gesellschaftlichen Aspekten betrachte. Die Schlussarbeit besteht aus Prozess, Produkt und Präsentation, berücksichtigt mindestens vier Sprachmodi und deckt mindestens drei Schlüsselkompetenzen ab.",
+        "detail": "In den 9 Lektionen Konzeptphase steht die Auswahl eines zu mir passenden und gesellschaftlich relevanten Themas im Zentrum. Auf dieser Grundlage erstelle ich eine Konzeptvereinbarung für meine Schlussarbeit. Dazu formuliere ich Fragestellungen zu meinem Thema und plane gezielt, wie ich Informationen beschaffe, verarbeite und in meinem Produkt darstelle. Während der anschliessenden 21 Lektionen Unterrichtszeit beschaffe ich Informationen auf unterschiedliche Weise. Zum Beispiel recherchiere ich in verschiedenen Quellen, vergleiche diese miteinander und prüfe ihre Relevanz und Zuverlässigkeit. Ich kann auch eigenständig Daten erheben, indem ich beispielsweise Expertinnen oder Zeitzeugen befrage, eine anonyme Umfrage durchführen oder eigene Erfahrungen sammle. Meine Informationen verarbeite ich, indem ich sie strukturiere, zusammenfasse, vergleiche und bewerte. Die daraus gewonnenen Zusammenhänge und Schlussfolgerungen in Bezug auf meine Fragestellungen stelle ich verständlich und reflektiert dar. Zum Schluss präsentiere ich die wichtigsten Erkenntnisse meiner Schlussarbeit und verteidige meine Arbeit in einem vertiefenden Gespräch. Für die Vorbereitung der Präsentation stehen mir 3 Lektionen Unterrichtszeit zur Verfügung. Die Bestimmungen zum Qualifikationsverfahren und die Wegleitung meiner Berufsschule bilden die Anforderungen an meine Schlussarbeit ab."
       },
-      "quelle": {
-        "datei": "2_SLP_ABU_EFZ_3jährige_GB_Bildungsrat_202601.md",
-        "seite_start": null,
-        "seite_end": null
-      }
-    }
-  ],
-  "umsetzungsbeispiele": [
-    {
-      "thema_nr": 1,
-      "variante": "1.1",
-      "niveau": "standard",
-      "lebensbezug": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
-      "schluesselkompetenzen": [
-        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
-        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen"
-      ],
-      "herausforderung": "Ich habe eine Unklarheit zu meinen Rechten und Pflichten im Betrieb (z. B. Arbeitszeit, Pausen oder Aufgabenbereiche) und möchte die Situation mit Hilfe meines Lehrvertrags und weiterer betrieblicher Regelungen klären, bevor ich das Gespräch mit der zuständigen Person führe.",
-      "produkt": "Ich erstelle einen klar strukturierten Gesprächsleitfaden, in dem ich meine Argumente darlege und diese mit relevanten gesetzlichen Grundlagen und betrieblichen Regelungen stichhaltig begründe.",
       "sprachmodi": [
-        {
-          "modus": "Rezeption schriftlich und bildlich",
-          "detail": "Informationen aus Lehrvertrag, Reglementen und Websites entnehmen, vergleichen und für meine Situation nutzen."
-        },
-        {
-          "modus": "Interaktion und Kollaboration mündlich",
-          "detail": "Austausch in der Klasse, Rückmeldung geben, Argumentstruktur erkennen, Problem wahrnehmen."
-        }
+        "Rezeption mündlich, schriftlich und bildlich, audiovisuell zur Informationsbeschaffung",
+        "Produktion mündlich, schriftlich und bildlich, multimedial zur Informationsverarbeitung und Darstellung",
+        "Interaktion und Kollaboration mündlich, schriftlich, digital zur Informationsbeschaffung und Verarbeitung"
       ],
-      "scaffolds": [
-        {
-          "modus": "Rezeption schriftlich und bildlich",
-          "detail": "Lesestrategien, Lesestruktur, Markierhilfe"
-        },
-        {
-          "modus": "Interaktion und Kollaboration mündlich",
-          "detail": "Gesprächsbausteine, Argumentstruktur, Feedbackhilfe"
-        }
+      "schluesselkompetenzen": [
+        "Zwischen relevanten und irrelevanten Quellen und Inhalten unterscheiden",
+        "Sich selbst Ziele setzen, die Zielsetzung überprüfen und sich adaptiv verhalten",
+        "Antizipative, unternehmerische und innovative Wege der Problemlösung erkennen, entwickeln und umsetzen",
+        "In unterschiedlichen Teams zielgerichtet und effizient arbeiten",
+        "Die eigenen Werthaltungen und Überzeugungen erkennen, verstehen, kritisch reflektieren und weiterentwickeln",
+        "Ihre eigenen Standpunkte begründen und andere davon überzeugen",
+        "Unterschiedliche Standpunkte nachvollziehen und das gegenseitige Verständnis fördern",
+        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen",
+        "Vernetzt und systemisch denken, um sozial, ökologisch und ökonomisch nachhaltig zu handeln",
+        "Sich in einem sich ständig verändernden Umfeld zurechtfinden und sich an dieses anpassen",
+        "Mit Mehrdeutigkeiten umgehen",
+        "An gesellschaftlichen Prozessen partizipieren und Handlungsspielräume nutzen"
       ],
-      "bewertungspositionen": {
-        "sprache": [
-          "adressatengerechter Gesprächseinstieg mit klar formulierter Absicht",
-          "Klar strukturierte Argumente mit logischem Aufbau und stichhaltiger Begründung",
-          "Adressatengerechte Sprache"
-        ],
-        "gesellschaft": [
-          "Nachvollziehbare Beschreibung des Falls auf Grundlage rechtlicher und betrieblicher Grundlagen",
-          "Präzise Angabe der passenden Informationsquelle (z. B. Webseite, Gesetzestexte, Lehrvertrag)",
-          "Anwendung ethischer Prinzipien (Respekt, Perspektivenübernahme)"
-        ]
+      "lebensbezuege": [],
+      "quelle": {
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 29,
+        "seite_end": 30
       }
     },
     {
-      "thema_nr": 1,
-      "variante": "1.1",
-      "niveau": "erweitert",
-      "lebensbezug": "",
-      "schluesselkompetenzen": [],
-      "herausforderung": "Ich fühle mich im Betrieb nicht ernst genommen, da ich meist nur einfache Aufgaben wie Abräumen oder Sortieren erledigen darf. Ich habe das Gefühl, dabei nichts zu lernen, aber ich traue mich nicht, das offen anzusprechen. Ich möchte herausfinden, wie ich in einer solchen Situation respektvoll und klar kommunizieren kann und dabei die Rechte und Pflichten aus dem Lehrvertrag berücksichtige.",
-      "produkt": "Ich simuliere mit einer KI ein Konfliktgespräch, in dem ich mein Anliegen gegenüber einer Berufsbildnerin formuliere. Ich gebe der KI klare Instruktionen, wähle eine Gesprächsstrategie und dokumentiere den Dialogverlauf. Danach vergleiche ich meinen Dialogverlauf mit einem Kollegen und analysiere, wie konstruktiv und realistisch die Gespräche waren. Ich leite daraus konkrete Erkenntnisse für ein echtes Gespräch im Betrieb ab und halte diese schriftlich fest.",
+      "nr": 8,
+      "titel": "Arbeiten in der Zukunft",
+      "lehrjahr": 3,
+      "lektionen": 57,
+      "vollstaendig": true,
+      "leitidee": {
+        "kurz": "Die Arbeitswelt verändert sich durch neue Technologien, gesellschaftliche Entwicklungen und persönliche Lebensentwürfe. Im Thema «Arbeiten in der Zukunft» setze ich mich damit auseinander, wie ich meine berufliche Zukunft in einer sich wandelnden Arbeitswelt gestalten kann mit Wissen über technologische Entwicklungen, berufliche Laufbahnplanung, grundlegende arbeitsrechtliche Rahmenbedingungen sowie finanzielle Planung und Vorsorge. Dabei entwickle ich digitale Kompetenzen, reflektiere meine Stärken und Ziele und lerne, mich in einer sich wandelnden Arbeitswelt selbstständig zu orientieren und fundierte Entscheidungen zu treffen.",
+        "detail": "Ich vertiefe mein Wissen über die Rechte und Pflichten in der Arbeitswelt und analysiere, wie technologische Entwicklungen, wie Robotik oder Künstliche Intelligenz, sowie flexible Arbeitsformen die Berufswelt verändern und welche Chancen und Herausforderungen sich daraus für mich ergeben. Ich plane meine berufliche Zukunft, indem ich mich an den Anforderungen des Arbeitsmarkts orientiere, meine Stärken und Ziele reflektiere und passende Weiterbildungen recherchiere und bewerte. Ein weiterer Schwerpunkt ist die finanzielle Absicherung. Ich verschaffe mir einen Überblick über meine beruflichen Rechte und über die wichtigsten Sozialversicherungen. Ich informiere mich über verschiedene Finanzierungsarten und plane meine Altersvorsorge bewusst. Dabei beschäftige ich mich auch mit Finanzplanung, um Entscheidungen für grössere Anschaffungen oder Projekte treffen zu können. So baue ich eine solide finanzielle Basis auf, die meine beruflichen und persönlichen Ziele langfristig unterstützt."
+      },
       "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion multimedial",
+        "Interaktion und Kollaboration schriftlich"
+      ],
+      "schluesselkompetenzen": [
+        "Antizipative, unternehmerische und innovative Wege der Problemlösung erkennen, entwickeln und umsetzen",
+        "In unterschiedlichen Teams zielgerichtet und effizient arbeiten",
+        "Ihre Lebensphasen planen und mit Unwägbarkeiten umgehen",
+        "Sich in einem sich ständig verändernden Umfeld zurechtfinden und sich an dieses anpassen"
+      ],
+      "lebensbezuege": [
         {
-          "modus": "Rezeption schriftlich und bildlich",
-          "detail": "Informationen aus Lehrvertrag, Reglementen und Websites entnehmen; Informationen zu Gesprächsführung lesen und verstehen."
+          "nr": "8.1",
+          "text": "Ich lebe und arbeite in einer Welt, die sich durch technologische Entwicklungen verändert.",
+          "lektionen": 9,
+          "kompetenzen": [
+            {
+              "nr": "8.1.1",
+              "text": "Ich kann Informationen zu technologischen Entwicklungen aus verlässlichen Quellen auswerten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "Einfluss aktueller Technologien auf das persönliche berufliche Umfeld, Chancen und Risiken von KI"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Quellen kritisch prüfen, Beiträge vergleichen, Fachbegriffe verstehen"
+                }
+              ]
+            },
+            {
+              "nr": "8.1.2",
+              "text": "Ich kann die Chancen und Herausforderungen von technologischen Entwicklungen auf meine Berufsbranche einordnen und eine begründete Einschätzung formulieren.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Technologische und digitale Transformation",
+                  "detail": "Einfluss aktueller Technologien auf das persönliche berufliche Umfeld, digitale Transformation"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Persönliche Weiterbildung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Kreative, adressatengerechte multimediale Produktion"
+                }
+              ]
+            }
+          ]
         },
         {
-          "modus": "Interaktion und Kollaboration digital",
-          "detail": "Dialog mit KI führen."
+          "nr": "8.2",
+          "text": "Ich plane meine berufliche Zukunft.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "8.2.1",
+              "text": "Ich kann basierend auf meinen persönlichen Eigenschaften und Einstellungen übergeordnete Laufbahnziele entwickeln.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Laufbahnplanungskompetenz, Zukunftsperspektiven, Selbst- und Fremdbild"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration schriftlich",
+                  "detail": "Differenzierte Reflexion verfassen, Selbst- und Fremdeinschätzung vergleichen"
+                }
+              ]
+            },
+            {
+              "nr": "8.2.2",
+              "text": "Ich kann mich über passende Weiterbildungen informieren und einen realistischen Plan für die nächsten Karriereschritte erstellen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Weiterbildungskosten und Berufschancen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Beiträge vergleichen"
+                },
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Kreative, adressatengerechte multimediale Produktion erstellen"
+                }
+              ]
+            },
+            {
+              "nr": "8.2.3",
+              "text": "Ich kann eine multimediale Bewerbung zusammenstellen, in der ich meine Kompetenzen überzeugend darstelle und auf eine konkrete Stelle beziehe.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Berufliche Rolle und Selbstpräsentation"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Stellenanzeigen vergleichen"
+                },
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Kreative, multimediale Bewerbung mit Argumentation erstellen"
+                }
+              ]
+            }
+          ]
         },
         {
-          "modus": "Interaktion und Kollaboration mündlich",
-          "detail": "Austausch im Lernteam oder Klassengespräch über Erfahrungen und Reflexion."
+          "nr": "8.3",
+          "text": "Ich trete meine erste Stelle nach der Ausbildung an.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "8.3.1",
+              "text": "Ich kann Informationen zu arbeitsrechtlichen Grundlagen recherchieren und auf rechtliche Fälle anwenden.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Arbeitsrecht"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Fachtexte und Fachbegriffe verstehen"
+                }
+              ]
+            },
+            {
+              "nr": "8.3.2",
+              "text": "Ich kann für Konflikte in der Arbeitswelt mögliche Handlungsoptionen aufzeigen und für konkrete Fälle einen begründeten Lösungsplan ausarbeiten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Konfliktstrategien, Arbeitsrecht"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Konfliktlösungsvorschlag multimedial darstellen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "8.4",
+          "text": "Ich plane meine Finanzen heute und in der Zukunft.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "8.4.1",
+              "text": "Ich kann bei einem Erwerbsausfall meine finanzielle Situation analysieren und geeignete Massnahmen zur Absicherung ableiten.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Recht",
+                  "detail": "Sozialversicherungen, Abredeversicherung, Beitragslücken"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Lebensplanung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Fachtexte und Fachbegriffe verstehen"
+                }
+              ]
+            },
+            {
+              "nr": "8.4.2",
+              "text": "Ich kann Finanzierungsarten unterscheiden, deren Chancen und Risiken abschätzen und eine für mich passende Option begründet auswählen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Geeignete Instrumente zur Finanzierung, selbstverantwortlicher und ökonomisch nachhaltiger Umgang mit Geld, Anlagestrategie"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Rezeption schriftlich und bildlich",
+                  "detail": "Hauptaussagen vergleichen"
+                },
+                {
+                  "modus": "Produktion multimedial",
+                  "detail": "Lernvideo erstellen"
+                }
+              ]
+            },
+            {
+              "nr": "8.4.3",
+              "text": "Ich kann eine fundierte Finanzplanung in Verbindung mit meinen persönlichen Zielen erstellen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Wirtschaft",
+                  "detail": "Finanzplanung, Dreisäulenprinzip"
+                },
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Eigenverantwortung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "Interaktion und Kollaboration schriftlich",
+                  "detail": "Differenzierte Reflexion verfassen, Selbst- und Fremdeinschätzung vergleichen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nr": "8.5",
+          "text": "Ich stehe am Ende meiner Lehrzeit und bereite mich auf meine Abschlussprüfung vor.",
+          "lektionen": 12,
+          "kompetenzen": [
+            {
+              "nr": "8.5.1",
+              "text": "Ich kann meine Kompetenzen in den Schlussprüfungsthemen reflektieren und einen strukturierten Lernplan entwickeln.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "Identität und Sozialisation",
+                  "detail": "Lernstrategien, Strategien zur Bewältigung von Herausforderungen"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "",
+                  "detail": "Gemäss individueller Präferenz"
+                }
+              ]
+            },
+            {
+              "nr": "8.5.2",
+              "text": "Ich kann Zusammenhänge in den zentralen Schlussprüfungsthemen in einer strukturierten Lernübersicht nachweisen.",
+              "gesellschaftliche_inhalte": [
+                {
+                  "aspekt": "",
+                  "detail": "Ausgewählte Themen der Allgemeinbildung"
+                }
+              ],
+              "sprachmodi": [
+                {
+                  "modus": "",
+                  "detail": "Gemäss individueller Präferenz"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "scaffolds": [
-        {
-          "modus": "Rezeption schriftlich und bildlich",
-          "detail": "Lesestrategien, Lesestruktur, Markierhilfe"
-        },
-        {
-          "modus": "Interaktion und Kollaboration digital",
-          "detail": "KI-Assistenz mit Rollen, Prompt-Hilfe"
-        },
-        {
-          "modus": "Interaktion und Kollaboration mündlich",
-          "detail": "Argumentstruktur, Gesprächsbausteine, Feedbackhilfe"
-        }
-      ],
-      "bewertungspositionen": {
-        "sprache": [
-          "Klare Instruktion an die KI (ausformulierte Prompts)",
-          "Zielführende, realitätsnahe und respektvolle Gesprächsführung in der Simulation mit KI",
-          "Analyse des Dialogverlaufs mit Bezug auf Wirkung, Sprache und Gesprächsdynamik mit einem Kollegen"
-        ],
-        "gesellschaft": [
-          "Nachvollziehbare Beschreibung der Konfliktsituation (Ausgangslage)",
-          "Konstruktive Vertretung der eigenen Position im betrieblichen Kontext",
-          "Nachvollziehbare Festhaltung von zielführender Gesprächsstrategie und rechtlicher Erkenntnisse"
-        ]
+      "quelle": {
+        "datei": "2_SLP_EFZ_3jährig_20260605.md",
+        "seite_start": 30,
+        "seite_end": 35
       }
     }
-  ]
+  ],
+  "umsetzungsbeispiele": []
 }

@@ -1,5 +1,6 @@
 import nrlp3j from '../../public/nrlp_3j.json'
 import nrlp4j from '../../public/nrlp_4j.json'
+import nrlp2j from '../../public/nrlp_2j.json'
 
 export type Lehrdauer = 'EBA' | 'EFZ-3J' | 'EFZ-4J'
 
@@ -30,12 +31,12 @@ export interface Nrlp {
 const datasets: Partial<Record<Lehrdauer, Nrlp>> = {
   'EFZ-3J': nrlp3j as unknown as Nrlp,
   'EFZ-4J': nrlp4j as unknown as Nrlp,
-  // 'EBA': nrlp2j — to be added when the 2-jährige curriculum is published
+  'EBA': nrlp2j as unknown as Nrlp, // 2-jährige Grundbildung (Bildungsrat 2026-06)
 }
 
 /**
- * Returns the nRLP dataset for a given Lehrdauer, or `null` if that curriculum
- * has not been published yet (currently EBA / 2-jährig).
+ * Returns the nRLP dataset for a given Lehrdauer, or `null` if unknown.
+ * All three curricula (EBA / EFZ-3J / EFZ-4J) are published (Bildungsrat 2026-06).
  */
 export function getNrlp(lehrdauer: Lehrdauer | string | null | undefined): Nrlp | null {
   if (!lehrdauer) return null

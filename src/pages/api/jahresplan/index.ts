@@ -28,11 +28,19 @@ export const POST: APIRoute = async ({ locals, request }) => {
   const label = String(body.label ?? '').trim()
   if (!label) return J({ error: 'Bezeichnung (label) fehlt.' }, 400)
 
+  // Slice-Skopus (Migration 015). Defaults = EFZ-3J / 1. Lehrjahr für Rückwärtskompatibilität.
+  const lehrgang = body.lehrgang === 'EFZ-4J' ? 'EFZ-4J' : body.lehrgang === 'EBA' ? 'EBA' : 'EFZ-3J'
+  const maxLj = lehrgang === 'EBA' ? 2 : lehrgang === 'EFZ-4J' ? 4 : 3
+  let lehrjahr = Number(body.lehrjahr) || 1
+  if (lehrjahr < 1 || lehrjahr > maxLj) lehrjahr = 1
+
   const { data, error } = await locals.supabase
     .from('jahresplanung_plans')
     .insert({
       user_id: locals.user.id,
       label,
+      lehrgang,
+      lehrjahr,
       schuljahr: (body.schuljahr as string) || null,
       calendar_overrides: body.calendar_overrides ?? {},
       kn_plans: body.kn_plans ?? [],

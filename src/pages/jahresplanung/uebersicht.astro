@@ -1,0 +1,319 @@
+---
+import Base from '../../layouts/Base.astro'
+import GuestPrintBlock from '../../components/GuestPrintBlock.astro'
+import { nrlp, getNrlp } from '../../lib/nrlp'
+import { skFullName } from '../../lib/sk-labels'
+import { themesForYear, lehrjahreOf, defaultSchuljahr, parseLehrgang, lehrgangLabel as fmtLehrgang, ALL_LEHRGAENGE, type Lehrgang } from '../../lib/jahresplanung/calendar'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: prof } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+const isGuest = prof?.role === 'gast'
+
+// ── Slice: nur Lehrgang wählbar (Gesamtansicht über alle Lehrjahre) ──────
+const COHORT_ANCHOR = 2025
+const _url = new URL(Astro.request.url)
+const lehrgang: Lehrgang = parseLehrgang(_url.searchParams.get('lehrgang'))
+const lehrgangLabel = fmtLehrgang(lehrgang)
+const ds = getNrlp(lehrgang) ?? nrlp
+const nYears = lehrjahreOf(lehrgang)
+
+function lbLektionen(lb: any): number { return Number(lb.lektionen) || 0 }
+function themaLektionen(t: any): number {
+  const fromLb = ((t.lebensbezuege ?? []) as any[]).reduce((s, lb) => s + lbLektionen(lb), 0)
+  return fromLb || Number(t.lektionen) || 0
+}
+
+// ── Idee 2: Mehrjahres-Bird's-eye — pro Lehrjahr die Themen als Blöcke ────
+type YearCol = {
+  lehrjahr: number
+  schuljahr: string
+  total: number
+  themas: {
+    nr: number; pos: number; titel: string; lektionen: number; isSA: boolean
+    lbs: { nr: string; text: string; lektionen: number; kompCount: number }[]
+  }[]
+}
+const years: YearCol[] = []
+for (let lj = 1; lj <= nYears; lj++) {
+  const themes = themesForYear(ds, lj)
+  const themas = themes.map((t, i) => {
+    const lbs = ((t.lebensbezuege ?? []) as any[]).map((lb) => ({
+      nr: lb.nr, text: lb.text ?? '', lektionen: lbLektionen(lb),
+      kompCount: ((lb.kompetenzen ?? []) as any[]).length,
+    }))
+    return { nr: t.nr, pos: i + 1, titel: t.titel, lektionen: themaLektionen(t), isSA: lbs.length === 0, lbs }
+  })
+  years.push({
+    lehrjahr: lj,
+    schuljahr: defaultSchuljahr(COHORT_ANCHOR, lj),
+    total: themas.reduce((s, t) => s + t.lektionen, 0),
+    themas,
+  })
+}
+const programLektionen = years.reduce((s, y) => s + y.total, 0)
+const maxThemaLek = Math.max(1, ...years.flatMap((y) => y.themas.map((t) => t.lektionen)))
+
+// ── Idee 3: Längsschnitt SK-Spirale — 12 SK × alle Themen, nach Lehrjahr ──
+const allThemes = ((ds.themen ?? []) as any[]).slice().sort((a, b) => a.nr - b.nr)
+const themeCols = allThemes.map((t) => ({ nr: t.nr, lehrjahr: Number(t.lehrjahr), key: 'T' + t.nr }))
+const zSk = ((ds as any).zirkularitaet?.schluesselkompetenzen ?? []) as any[]
+const spiral = zSk.map((sk, i) => {
+  const cells = themeCols.map((c) => (sk.wiederholungen?.[c.key] ?? null) as string | null)
+  const stops = cells.filter(Boolean).length
+  return { nr: i + 1, name: sk.bezeichnung as string, full: skFullName[sk.bezeichnung] || sk.bezeichnung, cells, stops }
+})
+// Lehrjahr-Gruppen für die Spalten-Kopfzeile (colspans)
+const yearGroups: { lehrjahr: number; span: number }[] = []
+for (const c of themeCols) {
+  const last = yearGroups[yearGroups.length - 1]
+  if (last && last.lehrjahr === c.lehrjahr) last.span++
+  else yearGroups.push({ lehrjahr: c.lehrjahr, span: 1 })
+}
+const neverCovered = spiral.filter((s) => s.stops === 0)
+
+// ── Idee 4: KN-/Schlussarbeit-Progression ────────────────────────────────
+// Ein KN pro Fach-Thema; das Schlussarbeits-Thema bildet den Abschluss-Knoten.
+type KnNode = { thema: number; titel: string; isSA: boolean }
+const knArc = years.map((y) => ({
+  lehrjahr: y.lehrjahr,
+  schuljahr: y.schuljahr,
+  nodes: y.themas.map((t) => ({ thema: t.nr, titel: t.titel, isSA: t.isSA } as KnNode)),
+}))
+const totalKn = knArc.reduce((s, y) => s + y.nodes.filter((n) => !n.isSA).length, 0)
+
+const themaColors = ['cell-thema1', 'cell-thema2', 'cell-thema3']
+function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.length] }
+---
+<Base title={`Gesamtübersicht ${nYears} Jahre · ${lehrgangLabel}`}>
+  {isGuest && <GuestPrintBlock />}
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3 min-w-0">
+          <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="logo-black h-14 w-auto shrink-0" />
+          <span class="hidden md:block pl-3 ml-1 border-l border-slate-200 text-xs uppercase tracking-wider text-slate-500 leading-tight">
+            Materialplattform<br />
+            <span class="normal-case tracking-normal text-slate-400">ABU Reform 2030</span>
+          </span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/jahresplanung" class="text-sm text-slate-600 hover:text-slate-900 font-medium">← Wochenplanung</a>
+          <span class="text-sm text-slate-500 hidden sm:block">{user.email}</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10">
+      <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · Gesamtcurriculum · nRLP Bildungsrat 2026</p>
+          <h1 class="text-3xl font-semibold text-slate-900 tracking-tight">Das ganze {lehrgangLabel}-Curriculum auf einen Blick</h1>
+          <p class="text-slate-600 mt-3 max-w-3xl">
+            {nYears} Lehrjahre · {allThemes.length} Themen · {programLektionen} Lektionen geplant.
+            Die Spirale zeigt, wann jede Schlüsselkompetenz eingeführt und vertieft wird.
+            Klicke auf ein Lehrjahr, um in die Wochenplanung einzusteigen.
+          </p>
+        </div>
+      </div>
+
+      <!-- Lehrgang-Umschalter -->
+      <div class="jp-switch mb-8">
+        <div class="jp-seg">
+          <span class="jp-seg-label">Lehrgang</span>
+          {ALL_LEHRGAENGE.map((lg) => (
+            <a href={`/jahresplanung/uebersicht?lehrgang=${lg.value}`} class={`jp-pill ${lehrgang === lg.value ? 'jp-pill-on' : ''}`}>{lg.label}</a>
+          ))}
+        </div>
+        <a href="/jahresplanung" class="jp-overview-link">Zur Wochenplanung →</a>
+      </div>
+
+      <!-- ── Idee 2: Mehrjahres-Übersicht ──────────────────────────────── -->
+      <section class="mb-12">
+        <h2 class="text-lg font-semibold text-slate-900 mb-1">Curriculum über {nYears} Lehrjahre</h2>
+        <p class="text-sm text-slate-500 mb-5">Jede Spalte ein Lehrjahr; Blockhöhe ∝ Lektionen. Klick öffnet die Wochenplanung.</p>
+        <div class="ueb-grid" style={`grid-template-columns: repeat(${nYears}, minmax(0,1fr));`}>
+          {years.map((y) => (
+            <div class="ueb-col">
+              <a href={`/jahresplanung?lehrgang=${lehrgang}&lj=${y.lehrjahr}`} class="ueb-col-head">
+                <span class="ueb-col-lj">{y.lehrjahr}. Lehrjahr</span>
+                <span class="ueb-col-sj">{y.schuljahr} · {y.total} L.</span>
+              </a>
+              <div class="ueb-blocks">
+                {y.themas.map((t) => (
+                  <a
+                    href={`/jahresplanung/thema/${t.nr}?lehrgang=${lehrgang}`}
+                    class={`ueb-block ${posColor(t.pos)} ${t.isSA ? 'ueb-block-sa' : ''}`}
+                    style={`min-height:${Math.round(46 + (t.lektionen / maxThemaLek) * 120)}px;`}
+                    title={t.titel}
+                  >
+                    <span class="ueb-block-nr">T{t.nr}{t.isSA ? ' · Schlussarbeit' : ''}</span>
+                    <span class="ueb-block-titel">{t.titel}</span>
+                    <span class="ueb-block-meta">
+                      {t.lektionen} L.{!t.isSA && ` · ${t.lbs.length} Lebensbezüge`}
+                      {!t.isSA && <span class="ueb-block-kn">KN</span>}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- ── Idee 3: Längsschnitt SK-Spirale ───────────────────────────── -->
+      <section class="mb-12">
+        <h2 class="text-lg font-semibold text-slate-900 mb-1">Schlüsselkompetenz-Spirale</h2>
+        <p class="text-sm text-slate-500 mb-5">
+          Wann wird jede der 12 SK über die {nYears} Jahre eingeführt (R1), wiederaufgenommen (R2) und vertieft (R3)?
+          Leere Zeilen = im ganzen Bildungsgang nicht systematisch verankert.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="spiral">
+            <thead>
+              <tr>
+                <th class="sp-name-h" rowspan="2">Schlüsselkompetenz</th>
+                {yearGroups.map((g) => (
+                  <th class="sp-year-h" colspan={g.span}>{g.lehrjahr}. Lehrjahr</th>
+                ))}
+                <th class="sp-stops-h" rowspan="2">Stationen</th>
+              </tr>
+              <tr>
+                {themeCols.map((c) => <th class="sp-th-h">T{c.nr}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {spiral.map((sk) => (
+                <tr class={sk.stops === 0 ? 'sp-row-off' : ''}>
+                  <td class="sp-name" title={sk.full}><span class="sp-nr">{sk.nr}</span>{sk.name}</td>
+                  {sk.cells.map((c) => (
+                    <td class={`sp-cell ${c ? `sp-r${String(c).replace('R', '')}` : 'sp-empty'}`}>{c || ''}</td>
+                  ))}
+                  <td class={`sp-stops ${sk.stops === 0 ? 'sp-stops-zero' : ''}`}>{sk.stops}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-xs text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="sp-swatch sp-r1"></span>R1 — Einführung</span>
+          <span class="flex items-center gap-1.5"><span class="sp-swatch sp-r2"></span>R2 — Wiederaufnahme</span>
+          <span class="flex items-center gap-1.5"><span class="sp-swatch sp-r3"></span>R3 — Vertiefung</span>
+          {neverCovered.length > 0 && (
+            <span class="text-amber-600 font-medium ml-auto">
+              {neverCovered.length} SK ohne feste Verankerung: {neverCovered.map((s) => s.name).join(', ')}
+            </span>
+          )}
+        </div>
+      </section>
+
+      <!-- ── Idee 4: KN-/Schlussarbeit-Progression ─────────────────────── -->
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold text-slate-900 mb-1">Kompetenznachweise & Schlussarbeit</h2>
+        <p class="text-sm text-slate-500 mb-5">
+          {totalKn} Themen-Kompetenznachweise bauen über die Jahre auf die Schlussarbeit hin.
+        </p>
+        <div class="kn-arc">
+          {knArc.map((y, yi) => (
+            <div class="kn-year">
+              <div class="kn-year-head">
+                <span class="kn-year-lj">{y.lehrjahr}. LJ</span>
+                <span class="kn-year-sj">{y.schuljahr}</span>
+              </div>
+              <div class="kn-nodes">
+                {y.nodes.map((node) => (
+                  <div class={`kn-node ${node.isSA ? 'kn-node-sa' : ''}`}>
+                    <span class="kn-node-badge">{node.isSA ? '★ Schlussarbeit' : `KN · T${node.thema}`}</span>
+                    <span class="kn-node-titel">{node.titel}</span>
+                  </div>
+                ))}
+              </div>
+              {yi < knArc.length - 1 && <div class="kn-arrow">→</div>}
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
+      Gesamtübersicht · nRLP {lehrgangLabel} · ABU Reform 2030 — Bildungsrat 2026
+    </footer>
+  </div>
+
+  <style>
+    /* Slice-Switcher (geteilt mit /jahresplanung) */
+    .jp-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.6rem 0.9rem; }
+    .jp-seg { display: flex; align-items: center; gap: 0.4rem; }
+    .jp-seg-label { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; }
+    .jp-pill { display: inline-flex; align-items: center; font-size: 0.78rem; font-weight: 600; color: #334155; text-decoration: none; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 0.28rem 0.7rem; transition: all .15s; }
+    .jp-pill:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .jp-pill-on { background: var(--brand); color: white; border-color: var(--brand); }
+    .jp-pill-on:hover { color: white; }
+    .jp-overview-link { margin-left: auto; font-size: 0.8rem; font-weight: 700; color: var(--brand-dark); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 1px; }
+    .jp-overview-link:hover { border-bottom-color: var(--brand); }
+
+    /* Idee 2: Bird's-eye */
+    .ueb-grid { display: grid; gap: 0.9rem; }
+    .ueb-col { display: flex; flex-direction: column; gap: 0.6rem; }
+    .ueb-col-head { display: flex; flex-direction: column; text-decoration: none; padding: 0.5rem 0.7rem; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0; transition: border-color .15s; }
+    .ueb-col-head:hover { border-color: var(--brand); }
+    .ueb-col-lj { font-size: 0.85rem; font-weight: 700; color: #0f172a; }
+    .ueb-col-sj { font-size: 0.65rem; color: #64748b; }
+    .ueb-blocks { display: flex; flex-direction: column; gap: 0.5rem; }
+    .ueb-block { display: flex; flex-direction: column; justify-content: flex-start; gap: 0.2rem; padding: 0.6rem 0.7rem; border-radius: 8px; text-decoration: none; border: 1px solid transparent; transition: transform .15s, box-shadow .15s; }
+    .ueb-block:hover { transform: translateY(-2px); box-shadow: 0 8px 18px -8px rgba(14,110,58,0.4); }
+    .ueb-block-nr { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.85; }
+    .ueb-block-titel { font-size: 0.82rem; font-weight: 700; line-height: 1.2; }
+    .ueb-block-meta { font-size: 0.62rem; opacity: 0.9; margin-top: auto; display: flex; align-items: center; gap: 0.3rem; }
+    .ueb-block-kn { font-size: 0.5rem; font-weight: 800; text-transform: uppercase; border: 1px solid currentColor; border-radius: 9999px; padding: 0 0.3rem; opacity: 0.8; }
+    .ueb-block-sa { border: 2px dashed currentColor !important; }
+    /* reuse green intensity palette */
+    .cell-thema1 { background: var(--brand-tint); color: var(--brand-dark); border-color: rgba(14,110,58,0.18); }
+    .cell-thema2 { background: var(--brand); color: white; }
+    .cell-thema3 { background: var(--brand-dark); color: white; }
+
+    /* Idee 3: SK spiral table */
+    .spiral { border-collapse: separate; border-spacing: 3px; width: 100%; min-width: 640px; }
+    .sp-name-h, .sp-year-h, .sp-th-h, .sp-stops-h { font-size: 0.65rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.3rem 0.4rem; text-align: center; }
+    .sp-name-h { text-align: left; }
+    .sp-year-h { background: #f1f5f9; border-radius: 4px; }
+    .sp-name { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: #334155; padding: 0.3rem 0.5rem; background: #f8fafc; border-radius: 4px; white-space: nowrap; }
+    .sp-nr { display: inline-flex; align-items: center; justify-content: center; width: 1.1rem; height: 1.1rem; border-radius: 9999px; background: #e2e8f0; font-size: 0.6rem; font-weight: 700; color: #475569; flex-shrink: 0; }
+    .sp-cell { width: 40px; text-align: center; font-size: 0.66rem; font-weight: 700; border-radius: 4px; padding: 0.35rem 0; }
+    .sp-r1 { background: var(--brand-tint); color: var(--brand-dark); }
+    .sp-r2 { background: var(--brand); color: white; }
+    .sp-r3 { background: var(--brand-dark); color: white; }
+    .sp-empty { background: #f1f5f9; }
+    .sp-stops { text-align: center; font-size: 0.72rem; font-weight: 700; color: #475569; }
+    .sp-stops-zero { color: #d97706; }
+    .sp-row-off .sp-name { opacity: 0.6; }
+    .sp-swatch { display: inline-block; width: 1rem; height: 0.75rem; border-radius: 3px; }
+
+    /* Idee 4: KN arc */
+    .kn-arc { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0.5rem; }
+    .kn-year { display: flex; align-items: stretch; gap: 0.5rem; }
+    .kn-year > .kn-nodes { display: flex; flex-direction: column; gap: 0.5rem; min-width: 190px; }
+    .kn-year-head { display: flex; flex-direction: column; justify-content: center; padding-right: 0.4rem; }
+    .kn-year-lj { font-size: 0.9rem; font-weight: 800; color: var(--brand-dark); }
+    .kn-year-sj { font-size: 0.62rem; color: #94a3b8; }
+    .kn-node { display: flex; flex-direction: column; gap: 0.2rem; border: 1px solid #e2e8f0; border-left: 3px solid var(--brand); border-radius: 8px; padding: 0.5rem 0.7rem; background: white; }
+    .kn-node-sa { border-left-color: #f59e0b; border-color: #fde68a; background: #fffbeb; }
+    .kn-node-badge { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--brand-dark); }
+    .kn-node-sa .kn-node-badge { color: #b45309; }
+    .kn-node-titel { font-size: 0.74rem; font-weight: 600; color: #0f172a; line-height: 1.2; }
+    .kn-arrow { display: flex; align-items: center; color: #cbd5e1; font-size: 1.4rem; padding: 0 0.2rem; }
+
+    @media print {
+      @page { size: A4 landscape; margin: 10mm; }
+      header, footer, .jp-switch { display: none !important; }
+      :global(body) { background: white !important; }
+      main { max-width: none !important; padding: 0 !important; }
+      section { break-inside: avoid; }
+      .cell-thema1, .cell-thema2, .cell-thema3, .sp-r1, .sp-r2, .sp-r3, .sp-empty {
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      }
+    }
+  </style>
+</Base>
