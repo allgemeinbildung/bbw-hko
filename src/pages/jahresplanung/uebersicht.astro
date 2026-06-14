@@ -74,22 +74,28 @@ for (const c of themeCols) {
 }
 const neverCovered = spiral.filter((s) => s.stops === 0)
 
-// ── Idee 4: KN-/Schlussarbeit-Progression ────────────────────────────────
-// Ein KN pro Fach-Thema; das Schlussarbeits-Thema bildet den Abschluss-Knoten.
-type KnNode = { thema: number; titel: string; isSA: boolean }
-const knArc = years.map((y) => ({
-  lehrjahr: y.lehrjahr,
-  schuljahr: y.schuljahr,
-  nodes: y.themas.map((t) => ({ thema: t.nr, titel: t.titel, isSA: t.isSA } as KnNode)),
-}))
-const totalKn = knArc.reduce((s, y) => s + y.nodes.filter((n) => !n.isSA).length, 0)
-
-// Beispiel-KN-Planung pro Semester (Showcase) — identische Logik wie der Planer
+// ── Beispiel-KN-Planung pro Semester (Showcase) — identische Logik wie der Planer ──
 const knByYear = years.map((y) => ({
   lehrjahr: y.lehrjahr,
   schuljahr: y.schuljahr,
   plan: buildKnPlan(ds, lehrgang, y.lehrjahr, y.schuljahr),
 }))
+
+// ── Idee 4: KN-/Schlussarbeit-Progression ────────────────────────────────
+// Semesterbasiert (≥ 3 KN pro Semester) — konsistent mit der Beispielplanung
+// unten; das Schlussarbeits-Semester bildet den integrativen Abschluss-Knoten.
+type KnNode = { semester: number; themeNrs: number[]; isSA: boolean; count: number }
+const knArc = knByYear.map((y) => ({
+  lehrjahr: y.lehrjahr,
+  schuljahr: y.schuljahr,
+  nodes: y.plan.semesters.map((sem) => ({
+    semester: sem.semester,
+    themeNrs: sem.themeNrs,
+    isSA: sem.isSA,
+    count: y.plan.seed.filter((k) => k.semester === sem.semester).length,
+  } as KnNode)),
+}))
+const totalKn = knArc.reduce((s, y) => s + y.nodes.reduce((a, n) => a + (n.isSA ? 0 : n.count), 0), 0)
 
 const themaColors = ['cell-thema1', 'cell-thema2', 'cell-thema3']
 function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.length] }
@@ -236,7 +242,8 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
       <section class="ueb-analysis mb-8" x-show="analysis==='arc'" x-cloak x-transition.opacity.duration.150ms>
         <h2 class="text-lg font-semibold text-slate-900 mb-1">Kompetenznachweise & Schlussarbeit</h2>
         <p class="text-sm text-slate-500 mb-5">
-          {totalKn} Themen-Kompetenznachweise bauen über die Jahre auf die Schlussarbeit hin.
+          {totalKn} Kompetenznachweise (mind. 3 pro Semester → 3 Noten Gesellschaft + 3 Noten Sprache)
+          bauen über die Jahre auf die Schlussarbeit hin.
         </p>
         <div class="kn-arc">
           {knArc.map((y, yi) => (
@@ -248,8 +255,13 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
               <div class="kn-nodes">
                 {y.nodes.map((node) => (
                   <div class={`kn-node ${node.isSA ? 'kn-node-sa' : ''}`}>
-                    <span class="kn-node-badge">{node.isSA ? '★ Schlussarbeit' : `KN · T${node.thema}`}</span>
-                    <span class="kn-node-titel">{node.titel}</span>
+                    <span class="kn-node-badge">{node.isSA ? '★ Schlussarbeit' : `Sem ${node.semester} · ${node.count} KN`}</span>
+                    <span class="kn-node-titel">
+                      {node.isSA
+                        ? 'Integrativer Kompetenznachweis · Prozess · Produkt · Präsentation'
+                        : `${node.count} Noten Gesellschaft + ${node.count} Noten Sprache`}
+                    </span>
+                    <span class="kn-node-meta">Themen {node.themeNrs.map((n) => 'T' + n).join(', ')}</span>
                   </div>
                 ))}
               </div>
@@ -428,6 +440,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
     .kn-node-badge { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--brand-dark); }
     .kn-node-sa .kn-node-badge { color: #b45309; }
     .kn-node-titel { font-size: 0.74rem; font-weight: 600; color: #0f172a; line-height: 1.2; }
+    .kn-node-meta { font-size: 0.62rem; color: #94a3b8; margin-top: 0.15rem; }
     .kn-arrow { display: flex; align-items: center; color: #cbd5e1; font-size: 1.4rem; padding: 0 0.2rem; }
 
     @media print {
