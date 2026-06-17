@@ -446,15 +446,17 @@ function CockpitPageBody({ sit }: { sit: SituationJson }) {
   )
 }
 
+function ebaRootClass(sit: SituationJson): string | undefined {
+  return sit.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
+}
+
 function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: DocSProps) {
   const Page = makePage({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen })
   let pageIdx = 0
   const nextPage = () => ++pageIdx
-  // C2/redesign: Dossier no longer dedicates a page to the mindmap (it's drawn off-sheet) →
-  // the mindmap hint shares the Leitfragen page, so the Dossier is 4 pages instead of 5.
   const total = 4
   return (
-    <div style={sitColors(sit)}>
+    <div className={ebaRootClass(sit)} style={sitColors(sit)}>
       <Page pageNum={nextPage()} pageTotal={total} bodyClass="cockpit-page">
         <CockpitPageBody sit={sit} />
       </Page>
@@ -488,6 +490,10 @@ function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: 
 function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckteKompetenzen }: DocSProps) {
   const Page = makePage({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen })
   const lf = sit.leitfragen || []
+  const eba = sit.lehrgang === 'EBA_2J'
+  // Zwei Leitfragen pro Seite (EBA wie EFZ); EBA bekommt kleinere Schreibfelder,
+  // damit beide Bloecke trotz groesserer Schrift auf eine A4-Seite passen.
+  const lfFieldMm = eba ? 34 : 55
   const lfPairs: typeof lf[] = []
   for (let i = 0; i < lf.length; i += 2) lfPairs.push(lf.slice(i, i + 2))
 
@@ -497,7 +503,7 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
   const actualTotal = 5 + lfPairs.length
 
   return (
-    <div style={sitColors(sit)}>
+    <div className={ebaRootClass(sit)} style={sitColors(sit)}>
       <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="cockpit-page">
         <CockpitPageBody sit={sit} />
       </Page>
@@ -516,7 +522,7 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
             <SectionHead num={`02 · Wissensecke (${pi + 1})`}>Leitfragen (Fortsetzung)</SectionHead>
           )}
           {pair.map((q, i) => (
-            <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} fieldHeightMm={55} />
+            <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} fieldHeightMm={lfFieldMm} />
           ))}
         </Page>
       ))}

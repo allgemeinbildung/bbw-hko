@@ -1565,3 +1565,174 @@ body.aesthetic-editorial .niveau-legende .niv {
     page-break-inside: avoid;
   }
 }
+
+/* ============================================================================
+   EBA (lehrgang === "EBA_2J") — scoped unter .doc-eba.  KOMPLETT ADDITIV:
+   greift ausschliesslich unter .doc-eba, daher bleibt EFZ unveraendert.
+   Traegt die fuenf EBA-Prinzipien P1-P5 als Render-Regeln (Typografie, Dichte,
+   Segmentierung, Scaffolding-Prominenz, Affekt). Literal-Hex statt --brand*,
+   damit es auch im Standalone-ZIP-HTML (nur cssRenderer injiziert) greift.
+   ========================================================================= */
+.doc-eba {
+  --eba-brand: #0E6E3A;
+  --eba-brand-dark: #094d28;
+  --eba-brand-tint: #e8f3ec;
+}
+
+/* P3 — Sprachlast aus dem Layout: groessere Grundschrift, kurze Zeilen,
+   mehr Zeilenabstand, linksbuendig (KEIN Blocksatz). */
+.doc-eba { font-size: 12.5pt; line-height: 1.6; text-align: left; }
+.doc-eba p { max-width: 62ch; text-align: left; }
+.doc-eba .sit-text { font-size: 12.5pt; line-height: 1.65; }
+.doc-eba .lf-text p { font-size: 12.5pt; }
+.doc-eba h1, .doc-eba .cockpit-title { font-size: 22pt; }
+.doc-eba h2, .doc-eba .section-title { font-size: 16pt; }
+.doc-eba .leitfrage-callout { font-size: 13pt; line-height: 1.5; }
+
+/* P1 — Eine Sache pro Sichtfeld: klar abgegrenzte Bloecke, nicht umbrechen. */
+.doc-eba .lf-item {
+  border: 1.4px solid var(--rule); border-radius: 3mm;
+  padding: 4mm 5mm; margin-bottom: 4mm; page-break-inside: avoid;
+}
+.doc-eba .lf-nr {
+  background: var(--sit-akzent); color: #fff;
+  border-radius: 100px; padding: .4mm 3mm;
+}
+
+/* P2 — Nachschlagbar: Quellen-/Nugget-Anker sichtbar markieren. */
+.doc-eba .source-ref {
+  border: 1.3px solid var(--sit-akzent); color: var(--sit-akzent);
+  border-radius: 2mm; padding: .2mm 2mm; font-weight: 600;
+}
+.doc-eba .source-ref::before { content: "\1F4D6  "; }
+
+/* P4 — Scaffolding prominent (nicht versteckt/optional). */
+.doc-eba .scaffolding {
+  background: #fffdf5; border: 1.4px solid #e7dca8;
+  border-radius: 3mm; padding: 4mm;
+}
+.doc-eba .scaffolding-label { color: #8a6d1f; }
+
+/* P5 — Affekt + Selbstwirksamkeit: Trade-off einladend, nicht bedrohlich. */
+.doc-eba .tradeoff-callout {
+  background: var(--eba-brand-tint); border: 1px dashed var(--eba-brand);
+  border-radius: 3mm; color: var(--eba-brand-dark);
+}
+
+/* ---------- DocEbaDossier (EBA-only Doc) ---------- */
+.doc-eba .eba-dossier-intro {
+  background: var(--eba-brand-tint); border-radius: 3mm;
+  padding: 4mm 5mm; margin-bottom: 5mm;
+}
+.doc-eba .eba-nugget {
+  border: 1.5px solid var(--rule); border-radius: 3mm;
+  padding: 4mm 5mm; margin-bottom: 4mm; page-break-inside: avoid;
+}
+.doc-eba .eba-nugget.tag-a { border-left: 5px solid #C0392B; }
+.doc-eba .eba-nugget.tag-b { border-left: 5px solid #1A5276; }
+.doc-eba .eba-nugget-top { display: flex; align-items: center; gap: 3mm; margin-bottom: 1.5mm; }
+.doc-eba .eba-nugget-top h3 { font-size: 13pt; margin: 0; }
+.doc-eba .eba-ncode { color: #fff; border-radius: 2mm; padding: .6mm 2.5mm; font-weight: 700; }
+.doc-eba .eba-nugget.tag-a .eba-ncode { background: #C0392B; }
+.doc-eba .eba-nugget.tag-b .eba-ncode { background: #1A5276; }
+.doc-eba .eba-nugget.tag-ab .eba-ncode { background: var(--sit-akzent); }
+.doc-eba .eba-bsp { background: #f6f7f9; border-radius: 2mm; padding: 2.5mm 3.5mm; margin-top: 2mm; font-size: 11pt; }
+.doc-eba .eba-fakt { font-size: 9.5pt; color: var(--ink-mute); margin-top: 2mm; }
+.doc-eba .eba-fakt-ok { color: var(--eba-brand); margin-right: 3mm; }
+.doc-eba .eba-fakt-pruef { color: #b7791f; }
+
+/* Sprachhilfe-Karten (Scaffolds) + Schritt-fuer-Schritt (P1/P4). */
+.doc-eba .eba-scaffold-card {
+  border: 1.4px solid var(--rule); border-radius: 3mm;
+  padding: 4mm 5mm; margin-bottom: 4mm; page-break-inside: avoid;
+}
+.doc-eba .eba-scaffold-card h3 { font-size: 13pt; margin: 0 0 2mm; }
+.doc-eba .eba-scaffold-label {
+  font-size: 8.5pt; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--eba-brand-dark); margin: 2mm 0 1mm;
+}
+.doc-eba .eba-schritte { list-style: none; padding: 0; margin: 2mm 0; }
+.doc-eba .eba-schritte li {
+  display: flex; gap: 3mm; align-items: flex-start;
+  border: 1.3px solid var(--rule); border-radius: 2.5mm;
+  padding: 3mm 4mm; margin-bottom: 2.5mm;
+}
+.doc-eba .eba-schritt-n {
+  flex: 0 0 auto; width: 8mm; height: 8mm; border-radius: 100px;
+  background: var(--sit-akzent, #0E6E3A); color: #fff; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.doc-eba .eba-of { display: block; font-size: 9pt; color: var(--ink-mute); font-style: normal; }
+
+/* Transfer-Wissensblatt. */
+.doc-eba .eba-transfer {
+  background: var(--eba-brand-tint); border-radius: 3mm;
+  padding: 4mm 5mm; margin-top: 4mm;
+}
+.doc-eba .eba-transfer h3 { font-size: 13pt; margin: 0 0 2mm; color: var(--eba-brand-dark); }
+.doc-eba .eba-lead { font-weight: 600; }
+
+/* Glossar — zweispaltig, schnell auffindbar (P2). */
+.doc-eba .eba-glossar { column-count: 2; column-gap: 8mm; }
+.doc-eba .eba-gloss { break-inside: avoid; margin-bottom: 3mm; }
+.doc-eba .eba-gloss-b { font-weight: 700; color: var(--eba-brand-dark); }
+.doc-eba .eba-gloss-e { }
+.doc-eba .eba-gloss-x { display: block; font-size: 9.5pt; color: var(--ink-mute); margin-top: .5mm; }
+
+/* Recherche-Strip pro Nugget: Suche / KI / Selbst-Pruefen — kompakt, eine Zeile je Hinweis. */
+.doc-eba .eba-recherche {
+  margin-top: 3mm; padding-top: 2.5mm; border-top: 1px dashed var(--rule);
+  display: flex; flex-direction: column; gap: 2mm;
+}
+.doc-eba .eba-rh { display: flex; gap: 2.5mm; align-items: flex-start; font-size: 10.5pt; line-height: 1.45; }
+.doc-eba .eba-rh-ic { flex: 0 0 auto; width: 6mm; text-align: center; }
+.doc-eba .eba-rh b { color: var(--eba-brand-dark); }
+.doc-eba .eba-rh-note { display: block; font-size: 9pt; color: var(--ink-mute); font-style: italic; margin-top: 1mm; }
+.doc-eba .eba-rh-pruef b { color: #b7791f; }
+/* mehrere Suchanfragen */
+.doc-eba .eba-suchliste { margin: .5mm 0 0; padding-left: 5mm; }
+.doc-eba .eba-suchliste li { margin-bottom: .4mm; }
+/* KI-Beispiel pro Nugget: Anleitung + Prompt-Box + Tipp */
+.doc-eba .eba-ki-beispiel { flex: 1; }
+.doc-eba .eba-ki-howto { margin: .5mm 0; }
+.doc-eba .eba-ki-prompt {
+  background: #f6f7f9; border-left: 3px solid var(--eba-brand); border-radius: 2mm;
+  padding: 2.5mm 3.5mm; margin: 1.5mm 0; font-style: italic;
+}
+.doc-eba .eba-ki-tipp { font-size: 10pt; color: var(--ink-soft); margin: 1mm 0 0; }
+/* So lernen Sie mit KI — kompakte Liste (kein grosser Box-Block, spart Platz) */
+.doc-eba .eba-lernliste { margin: .5mm 0 0; padding-left: 5mm; }
+.doc-eba .eba-lernliste li { margin-bottom: 1mm; }
+.doc-eba .eba-lernliste b { color: var(--eba-brand-dark); }
+
+/* Titelseite (Kerndaten aus nRLP + Einleitung) */
+.doc-eba .eba-titel-head { margin-bottom: 5mm; }
+.doc-eba .eba-titel-kicker { font-size: 10pt; letter-spacing: .08em; text-transform: uppercase; color: var(--eba-brand); font-weight: 600; }
+.doc-eba .eba-titel-h1 { font-size: 28pt; line-height: 1.15; margin: 1mm 0 2.5mm; color: var(--eba-brand-dark); }
+.doc-eba .eba-titel-komp { font-size: 13.5pt; line-height: 1.5; max-width: none; }
+.doc-eba .eba-titel-meta { border-top: 1.4px solid var(--rule); border-bottom: 1.4px solid var(--rule); padding: 3.5mm 0; margin: 4mm 0 6mm; display: flex; flex-direction: column; gap: 2mm; font-size: 11pt; }
+.doc-eba .eba-titel-meta > div { display: flex; }
+.doc-eba .eba-titel-meta span { flex: 0 0 34mm; font-weight: 600; color: var(--eba-brand-dark); }
+.doc-eba .eba-einleitung h2 { font-size: 15pt; color: var(--eba-brand-dark); margin: 2mm 0 1.5mm; }
+.doc-eba .eba-einleitung h3 { font-size: 12pt; margin: 4mm 0 1.5mm; }
+.doc-eba .eba-einleitung-liste { padding-left: 5mm; }
+.doc-eba .eba-einleitung-liste li { margin-bottom: 1.5mm; }
+
+/* Notizen-Seite: linierte Schreibflaeche */
+.doc-eba .eba-notizen-hint { color: var(--ink-soft); margin-bottom: 3mm; }
+.doc-eba .eba-notizen {
+  height: 205mm; border: 1.4px solid var(--rule); border-radius: 3mm;
+  background-image: repeating-linear-gradient(transparent, transparent 8mm, var(--rule-soft) 8mm, var(--rule-soft) 8.3mm);
+}
+
+/* Einleitung-Liste: gruener Haken statt Bullet (BBW-Gruen, P5) */
+.doc-eba .eba-einleitung-liste { list-style: none; padding-left: 0; }
+.doc-eba .eba-einleitung-liste li { position: relative; padding-left: 7mm; margin-bottom: 1.8mm; }
+.doc-eba .eba-einleitung-liste li::before { content: "\2714"; position: absolute; left: 0; top: 0; color: var(--eba-brand); font-weight: 700; }
+
+/* Selbst-Pruefen: Schreiblinien fuer die Antwort */
+.doc-eba .eba-pruef-body { flex: 1; }
+.doc-eba .eba-pruef-lines {
+  height: 21mm; margin-top: 2mm;
+  background-image: repeating-linear-gradient(transparent, transparent 6.8mm, var(--rule) 6.8mm, var(--rule) 7mm);
+}

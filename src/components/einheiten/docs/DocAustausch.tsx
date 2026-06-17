@@ -15,7 +15,7 @@ export interface DocAustauschProps {
 
 // Transfer is a template-constant set task → generic writing scaffold + self-check.
 const TRANSFER_SATZANFAENGE = [
-  '«Das gemeinsame Prinzip meiner drei Herausforderungen ist …»',
+  '«Das gemeinsame Prinzip meiner Herausforderungen ist …»',
   '«Ein neuer Kontext, in dem dasselbe Prinzip gilt, ist …»',
   '«Dort zeigt es sich konkret so: …»',
   '«Wie in Herausforderung … muss ich auch hier …»',
@@ -25,7 +25,7 @@ const TRANSFER_CHECKLISTE = [
   'Neuer, selbst gewählter Kontext (nicht aus dem Unterricht)',
   '5–7 Sätze geschrieben',
   'Mindestens zwei Lehrmittelbegriffe verwendet',
-  'Bezug zu mindestens einer der drei Herausforderungen erkennbar',
+  'Bezug zu mindestens einer Herausforderung erkennbar',
 ]
 
 const microLabel = {
@@ -42,14 +42,18 @@ export function DocAustausch({ set, sits, abteilung, edits, onEdit }: DocAustaus
   const ap = set?.austausch_phase
   const da = set?.dekontextualisierungs_aufgabe
   const validSits = sits.filter((s): s is SituationJson => Boolean(s))
+  // Anzahl Herausforderungen als Wort: EBA hat zwei, EFZ drei.
+  const nHf = validSits.length
+  const nWord = nHf === 2 ? 'zwei' : nHf === 3 ? 'drei' : String(nHf)
 
   // Back-compat: prefer the new structured closure keys, fall back to the legacy names.
   const gruppe = ap?.gruppenpuzzle ?? ap?.gruppenarbeit_jigsaw
   const plenum = ap?.plenum ?? ap?.einzelarbeit_plenum
   const einzel = ap?.einzelauftrag
+  const ebaClass = sits.some((s) => s?.lehrgang === 'EBA_2J') ? 'doc-eba' : undefined
 
   return (
-    <div style={sitColors(null)}>
+    <div className={ebaClass} style={sitColors(null)}>
       {/* ---------------- Page 1 — Austausch ---------------- */}
       <A4Page
         sit={null}
@@ -61,9 +65,9 @@ export function DocAustausch({ set, sits, abteilung, edits, onEdit }: DocAustaus
         pageTotal={2}
       >
         <div className="a4-page-body austausch-page">
-          <SectionHead num="01 · Austausch">Eure drei Lösungen im Vergleich</SectionHead>
+          <SectionHead num="01 · Austausch">Eure {nWord} Lösungen im Vergleich</SectionHead>
           <p className="sit-text" style={{ marginBottom: '3mm' }}>
-            Ihr habt drei Herausforderungen bearbeitet und je ein Handlungsprodukt erstellt. Vergleicht jetzt eure
+            Ihr habt {nWord} Herausforderungen bearbeitet und je ein Handlungsprodukt erstellt. Vergleicht jetzt eure
             Lösungen und arbeitet das gemeinsame Prinzip heraus. Wählt eine Sozialform und haltet eure Ergebnisse im
             Notizfeld fest:
           </p>

@@ -135,6 +135,7 @@ export interface KnTyp {
 export interface KnJson {
   id?: string
   kompetenz_nr?: string
+  lehrgang?: string
   topic_slug?: string
   kern_kompetenzversprechen?: string
   dominanter_aspekt?: string
@@ -324,6 +325,14 @@ export interface EinheitIndexEntry {
   bundle_dateien: number
 }
 
+export interface DossierJson {
+  id: string; kompetenz_nr?: string; sprachniveau?: string
+  nuggets?: any[]
+  sprachmodi_scaffolds?: any[]
+  transfer_wissensblatt?: any
+  glossar?: any[]
+}
+
 export interface EinheitFullSet {
   id: string
   hf_A: SituationJson | null
@@ -336,4 +345,5 @@ export interface EinheitFullSet {
   ki: KiJson | null
   lernprompt: LernpromptJson | null
   lernbegleiter: LernbegleiterJson | null
+  dossier: DossierJson | null
 }

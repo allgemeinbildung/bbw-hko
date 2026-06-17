@@ -1,0 +1,158 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "lehrvertrag_orientieren",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "kern_kompetenzversprechen": "Ich kann mich mit dem Lehrvertrag in der Arbeitswelt orientieren. Bei Fragen oder Konflikten kontaktiere ich die richtige Stelle.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K2",
+    "LF3": "K3",
+    "LF4": "K3"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Lehrvertrag verstehen",
+      "konfliktart": "Eigene Rolle als neue/r Lernende/r: einen unklaren Punkt im Vertrag selbst klären oder nachfragen",
+      "handlungsprodukt_typ": "Digitale Nachricht mit KI-Check",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Bei einem Konflikt Hilfe holen",
+      "konfliktart": "Eigene Rolle im Betrieb: einen Konflikt selbst aushalten oder bei der zuständigen Stelle Hilfe holen",
+      "handlungsprodukt_typ": "Digitale Nachricht an die Kontaktstelle",
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      2,
+      7,
+      11
+    ],
+    "B": [
+      2,
+      7,
+      11
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      2,
+      7,
+      11
+    ]
+  },
+  "aspekte": {
+    "_kommentar": "Recht aus NRLP-Kompetenz (2x detail: Lehrvertrag-Aufbau + Konfliktmanagement/Kontaktstellen). Identität und Sozialisation ist ANTIZIPIERT aus der konfliktart beider Herausforderungen (Signal 'Rolle' — eigene Rolle als neue/r Lernende/r). Damit 2 Aspekte (RLP Z.791-Minimum) erfuellt.",
+    "Recht": "R1",
+    "Identität und Sozialisation": "R1"
+  },
+  "modi_units": {
+    "_kommentar": "SM9 (digital, KI) ist der Kompetenz-Modus und der Output-Modus beider Handlungsprodukte. SM3 (Lesen) wird beim Erschliessen des Lehrvertrags/Dossiers trainiert.",
+    "primaer": "Interaktion und Kollaboration digital",
+    "liste": [
+      "Interaktion und Kollaboration digital",
+      "Rezeption schriftlich und bildlich"
+    ]
+  },
+  "modi_kn": {
+    "_kommentar": "Obermenge von modi_units; fuer die Primaerform Fachgespraech kommen Produktion + Interaktion muendlich dazu.",
+    "liste": [
+      "Interaktion und Kollaboration digital",
+      "Rezeption schriftlich und bildlich",
+      "Produktion mündlich",
+      "Interaktion und Kollaboration mündlich"
+    ]
+  },
+  "mehrdeutigkeits_architektur": {
+    "_kommentar": "EIN gemeinsamer Trade-off trägt beide Herausforderungen (Spiralen-Regel). Gefuehrt: das Dossier-Transfer-Wissensblatt macht den Trade-off sichtbar.",
+    "trade_off_raum": [
+      "Selbst klären vs. Hilfe holen",
+      "Schnell reagieren vs. zuerst nachlesen"
+    ],
+    "verbindlich": "Beide Wege können richtig sein. Es hängt von der Situation ab. Eine Pauschalantwort gibt es nicht."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Ich prüfe zuerst, was ich selbst klären kann. Bei einem echten Problem hole ich Hilfe bei der richtigen Stelle. So bleibe ich handlungsfähig.",
+    "transferfeld": "Jede neue Situation mit Regeln und Verträgen (z. B. Mietvertrag, Handyvertrag, Versicherung)"
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T7 (Arbeit und Zukunft): Rechte und Pflichten im Arbeitsverhältnis vertieft.",
+    "_r3_kommentar": "EBA hat nur 2 Lehrjahre — keine r3-Stufe."
+  },
+  "quellen_anker": {
+    "_kommentar": "EBA hat KEIN Lehrmittel. Anker zeigen auf das Wissens-Dossier (Phase 7). konzepte sind der Seed fuer das A2-Glossar.",
+    "dossier_nuggets": [
+      {
+        "ref": "Dossier",
+        "herausforderung": "A",
+        "nuggets": "Nugget A-01..A-03"
+      },
+      {
+        "ref": "Dossier",
+        "herausforderung": "B",
+        "nuggets": "Nugget B-01..B-03"
+      }
+    ],
+    "konzepte": [
+      "Lehrvertrag",
+      "Probezeit",
+      "Kündigung",
+      "Kündigungsfrist",
+      "Konflikt",
+      "Kontaktstelle",
+      "Lehraufsicht",
+      "Berufsbildungsamt",
+      "Schlichtungsstelle",
+      "KI-Tool"
+    ]
+  },
+  "persona_pool_units": {
+    "_kommentar": "2 Berufe + 2 Orte, >=2 Abteilungen (Bau + Technik/Ernaehrung), EBA-Berufe (LJ1). EBA-Namen aus der 'Umfasst'-Spalte hko-framework §11 — siehe Log-Hinweis (Persona-Tabelle ist EFZ-zentriert).",
+    "berufe": [
+      "Malerpraktiker/in EBA",
+      "Automobilassistent/in EBA"
+    ],
+    "orte": [
+      "Winterthur",
+      "Olten"
+    ]
+  },
+  "persona_pool_kn_neu": {
+    "_kommentar": "Disjunkt von _units. Andere Abteilungen (Bau-Schreiner / Maschinenbau). LJ1.",
+    "berufe": [
+      "Schreinerpraktiker/in EBA",
+      "Mechanikpraktiker/in EBA"
+    ],
+    "orte": [
+      "Aarau",
+      "Thun"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "_lehrjahr_constraint_kommentar": "EBA hat nur LJ1-2; Units sind LJ1.",
+    "qualitaetskriterien": [
+      "Eine Szene — Lehrvertrag-Frage UND Konflikt zugleich sichtbar.",
+      "Konfliktart beider Herausforderungen sichtbar, ohne benannt zu werden.",
+      "Trade-off 'Selbst klären vs. Hilfe holen' spannt sich auf.",
+      "Persona neu (Schreinerpraktiker/in EBA, Aarau).",
+      "Leitfrage am Ende benennt die Spannung, ohne Antwort vorzugeben.",
+      "A2: kurze Sätze, max. 18 Wörter, Fachbegriffe nur mit Glossar-Deckung."
+    ]
+  }
+}

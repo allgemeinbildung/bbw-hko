@@ -12,6 +12,7 @@ import {
 } from 'docx'
 
 import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, LernpromptJson, LernbegleiterJson } from './types'
+import type { DossierJson, DossierRecherche, DossierScaffold } from '../../components/einheiten/docs/DocEbaDossier'
 import { skNameByNr } from '../sk-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from './sprachfoerderung'
 
@@ -848,6 +849,250 @@ export function buildAustausch({ set, sits = [], abteilung, logoPng = null }: Bu
       indent: { left: 200 },
     }))
   })
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
+// --- EBA Glossar+ (Dossier) ------------------------------------------------
+// Word-Export der EBA-Wissens-Einheit. Feldgleich zu DocEbaDossier.tsx: gleiche
+// Seiten in gleicher Reihenfolge (Titel · ein Nugget pro Seite · Sprachhilfe ·
+// Grundprinzip · Glossar · Notizen). Akzent set-weit BBW-Gruen.
+const BBW_GRUEN = '0E6E3A'
+const BBW_GRUEN_TINT = 'E8F3EC'
+
+function dossierNuggetCode(id: string): string {
+  // nugget_A_01 -> A-01 ; nugget_B_03 -> B-03 ; fallback: id (wie DocEbaDossier)
+  const m = id.match(/_([AB])_?0*?(\d+)$/i)
+  return m ? `${m[1].toUpperCase()}-${m[2].padStart(2, '0')}` : id
+}
+
+// Recherche-Strip eines Nuggets (mirror RechercheBlock in DocEbaDossier.tsx).
+function dossierRechercheBlock(r: DossierRecherche, akzent: string): any[] {
+  const queries = Array.isArray(r.suchbegriffe)
+    ? r.suchbegriffe.filter(Boolean)
+    : (r.suchbegriffe ? [r.suchbegriffe] : [])
+  const ki = r.ki_beispiel || (r.ki_prompt ? { prompt: r.ki_prompt } : undefined)
+  const hasKi = !!(ki && (ki.prompt || ki.so_fragst_du))
+  const lernen = (r.ki_lernen || []).filter((l) => l && l.prompt)
+  if (!queries.length && !hasKi && !lernen.length && !r.selbst_pruefen) return []
+
+  const els: any[] = []
+  const stripLabel = (icon: string, label: string) => new Paragraph({
+    children: [
+      new TextRun({ text: icon + '  ', size: 18 }),
+      new TextRun({ text: label, bold: true, color: akzent, size: 18 }),
+    ],
+    spacing: { before: 120, after: 40 },
+    keepNext: true,
+  })
+
+  if (queries.length) {
+    els.push(stripLabel('🔎', 'Suchen Sie online:'))
+    queries.forEach((q) => {
+      els.push(new Paragraph({ children: [new TextRun({ text: `«${q}»`, size: 18 })], bullet: { level: 0 }, spacing: { after: 20 }, indent: { left: 200 } }))
+    })
+  }
+  if (hasKi) {
+    els.push(stripLabel('🤖', 'So fragen Sie die KI:'))
+    if (ki!.so_fragst_du) els.push(p(ki!.so_fragst_du, { run: { size: 18 }, indent: { left: 200 } }))
+    if (ki!.prompt) els.push(promptBox(ki!.prompt))
+    if (ki!.tipp) els.push(p(ki!.tipp, { run: { italics: true, color: COLOR.inkSoft, size: 17 }, indent: { left: 200 } }))
+    els.push(p('Pruefen Sie die Antwort an einer sicheren Quelle.', { run: { italics: true, color: COLOR.inkMute, size: 16 }, indent: { left: 200 } }))
+  }
+  if (lernen.length) {
+    els.push(stripLabel('📚', 'So lernen Sie mit KI:'))
+    lernen.forEach((l) => {
+      els.push(new Paragraph({
+        children: [
+          ...(l.strategie ? [new TextRun({ text: l.strategie + ': ', bold: true, size: 18 })] : []),
+          new TextRun({ text: `«${l.prompt}»`, size: 18 }),
+        ],
+        bullet: { level: 0 }, spacing: { after: 30 }, indent: { left: 200 },
+      }))
+    })
+  }
+  if (r.selbst_pruefen) {
+    els.push(new Paragraph({
+      children: [
+        new TextRun({ text: '✏  ', size: 18 }),
+        new TextRun({ text: 'Selbst pruefen: ', bold: true, color: akzent, size: 18 }),
+        new TextRun({ text: r.selbst_pruefen, size: 18 }),
+      ],
+      spacing: { before: 120, after: 40 }, keepNext: true,
+    }))
+    els.push(...schreibfeld(8))
+  }
+  return els
+}
+
+// Sprachhilfe-Karte (mirror ScaffoldCard: nur Satzanfaenge + so_gehst_du_vor).
+function dossierScaffoldBlock(sc: DossierScaffold, akzent: string): any[] {
+  const els: any[] = []
+  els.push(h(`Herausforderung ${sc.tag || ''} — ${sc.modus_label || sc.sm_id || ''}`, 'section', COLOR.ink))
+  const satz = (sc.satzanfaenge || []).filter(Boolean)
+  if (satz.length) {
+    els.push(p('Satzanfaenge', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 80, after: 30 } }))
+    satz.forEach((s) => els.push(new Paragraph({ children: [new TextRun({ text: s, size: 19 })], bullet: { level: 0 }, spacing: { after: 30 } })))
+  }
+  const schritte = (sc.so_gehst_du_vor || []).filter(Boolean)
+  if (schritte.length) {
+    els.push(spacer(80))
+    schritte.forEach((s, i) => {
+      els.push(new Paragraph({
+        children: [
+          new TextRun({ text: String(i + 1) + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
+          new TextRun({ text: s.replace(/^\d+\.\s*/, ''), size: 19 }),
+        ],
+        spacing: { before: 60, after: 40 }, indent: { left: 200 },
+      }))
+    })
+  }
+  return els
+}
+
+export interface BuildDossierOpts {
+  dossier: DossierJson
+  abteilung?: string
+  kompetenzNr?: string
+  logoPng?: ArrayBuffer | Uint8Array | null
+}
+
+export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }: BuildDossierOpts): Document | null {
+  if (!dossier) return null
+  const kopf = dossier.kopf
+  const einleitung = dossier.einleitung
+  const nuggets = dossier.nuggets || []
+  const scaffolds = dossier.sprachmodi_scaffolds || []
+  const tw = dossier.transfer_wissensblatt
+  const glossar = dossier.glossar || []
+
+  // leeres Dossier -> kein Dokument (Workbench prueft if (docx))
+  if (!kopf && !einleitung && !nuggets.length && !scaffolds.length && !tw && !glossar.length) return null
+
+  const akzent = BBW_GRUEN
+  const light = BBW_GRUEN_TINT
+  const docCode = 'GLOSSAR+ · EBA'
+  const docTitel = kopf?.einheit_titel || 'Glossar+'
+  const komp = kompetenzNr || dossier.kompetenz_nr
+
+  // Nuggets sortiert A -> B -> rest (wie DocEbaDossier).
+  const aN = nuggets.filter((n) => n.tag === 'A')
+  const bN = nuggets.filter((n) => n.tag === 'B')
+  const rest = nuggets.filter((n) => n.tag !== 'A' && n.tag !== 'B')
+  const ordered = [...aN, ...bN, ...rest]
+
+  const children: any[] = []
+
+  // ---------------- Seite 1 — Titel + Einleitung ----------------
+  children.push(p('Glossar+ · EBA', { run: { color: akzent, bold: true, size: 16 }, spacing: { after: 40 } }))
+  children.push(h(docTitel, 'title'))
+  if (kopf?.kompetenz_text) children.push(p(kopf.kompetenz_text, { run: { italics: true, color: COLOR.inkSoft, size: 20 }, spacing: { after: 120, line: 320, lineRule: LineRuleType.AUTO } }))
+
+  if (kopf) {
+    const niveau = kopf.sprachniveau || dossier.sprachniveau || 'A2'
+    const metaRows: string[][] = []
+    if (kopf.thema_nr) metaRows.push(['Thema', `${kopf.thema_nr}${kopf.thema_titel ? ' · ' + kopf.thema_titel : ''}`])
+    if (kopf.lebensbezug_nr) metaRows.push(['Lebensbezug', `${kopf.lebensbezug_nr}${kopf.lebensbezug_text ? ' · ' + kopf.lebensbezug_text : ''}`])
+    if (kopf.kompetenz_nr || komp) metaRows.push(['Kompetenz', String(kopf.kompetenz_nr || komp)])
+    metaRows.push(['Lehrgang', `EBA (2 Jahre) · Niveau ${niveau}`])
+    children.push(spacer(80))
+    children.push(dataTable(['Feld', 'Wert'], metaRows, akzent, [26, 74]))
+  }
+
+  if (einleitung && (einleitung.was_ist_das || (einleitung.so_benutzt_du_es?.length || 0) > 0)) {
+    children.push(...sectionHead('Einleitung', 'Was ist das Glossar+?', akzent))
+    if (einleitung.was_ist_das) children.push(p(einleitung.was_ist_das, { run: { size: 20 }, spacing: { after: 100, line: 340, lineRule: LineRuleType.AUTO } }))
+    if ((einleitung.so_benutzt_du_es?.length || 0) > 0) {
+      children.push(h('So benutzt du es', 'sub', COLOR.ink))
+      einleitung.so_benutzt_du_es!.filter(Boolean).forEach((s) => {
+        children.push(new Paragraph({
+          children: [
+            new TextRun({ text: '✓  ', bold: true, color: akzent, size: 20 }),
+            new TextRun({ text: s, size: 19 }),
+          ],
+          spacing: { after: 40 }, indent: { left: 200 },
+        }))
+      })
+    }
+  }
+
+  // ---------------- Wissen — EIN Nugget pro Seite ----------------
+  ;(ordered.length ? ordered : [null]).forEach((n, i) => {
+    children.push(pageBreak())
+    children.push(...sectionHead('D1', i === 0 ? 'Dein Glossar+' : 'Glossar+ (Fortsetzung)', akzent))
+    if (!n) return
+    children.push(new Paragraph({
+      children: [new TextRun({ text: dossierNuggetCode(n.id), bold: true, color: akzent, size: 18, font: 'Consolas' })],
+      spacing: { before: 80, after: 20 }, keepNext: true,
+    }))
+    if (n.titel) children.push(h(n.titel, 'section', COLOR.ink))
+    if (n.inhalt) children.push(p(n.inhalt, { run: { size: 20 }, spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO } }))
+    if (n.beispiel) children.push(callout('Beispiel', n.beispiel, akzent, light))
+    if (n.recherche) children.push(...dossierRechercheBlock(n.recherche, akzent))
+  })
+
+  // ---------------- Sprachhilfe — ein Scaffold pro Seite ----------------
+  scaffolds.forEach((sc, i) => {
+    children.push(pageBreak())
+    children.push(...sectionHead('D2', i === 0 ? 'So schreibst du Schritt fuer Schritt' : 'So schreibst du (Fortsetzung)', akzent))
+    children.push(...dossierScaffoldBlock(sc, akzent))
+  })
+
+  // ---------------- Grundprinzip ----------------
+  if (tw) {
+    children.push(pageBreak())
+    children.push(...sectionHead('D2', 'Das Grundprinzip', akzent))
+    if (tw.prinzip_in_einfach) children.push(p(tw.prinzip_in_einfach, { run: { bold: true, size: 22 }, spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO } }))
+    if (tw.fachsystematik) children.push(p(tw.fachsystematik, { run: { size: 20 }, spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO } }))
+    const aS = (tw.austausch_scaffolds?.satzanfaenge || []).filter(Boolean)
+    if (aS.length) {
+      children.push(p('Austausch — Satzanfaenge', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 80, after: 30 } }))
+      aS.forEach((s) => children.push(new Paragraph({ children: [new TextRun({ text: s, size: 19 })], bullet: { level: 0 }, spacing: { after: 30 } })))
+    }
+  }
+
+  // ---------------- Glossar (zweispaltig) ----------------
+  if (glossar.length) {
+    children.push(pageBreak())
+    children.push(...sectionHead('D3', 'Glossar — schwierige Woerter einfach erklaert', akzent))
+    const glossEntry = (g: typeof glossar[number]): Paragraph => new Paragraph({
+      children: [
+        new TextRun({ text: g.begriff || '', bold: true, size: 18 }),
+        new TextRun({ text: ' — ', size: 18, color: COLOR.inkSoft }),
+        new TextRun({ text: g.erklaerung_a2 || '', size: 18 }),
+        ...(g.beispiel ? [new TextRun({ text: '  Bsp.: ' + g.beispiel, italics: true, size: 16, color: COLOR.inkMute })] : []),
+      ],
+      spacing: { after: 80, line: 300, lineRule: LineRuleType.AUTO },
+    })
+    const half = Math.ceil(glossar.length / 2)
+    const rows: TableRow[] = []
+    for (let i = 0; i < half; i++) {
+      const leftG = glossar[i]
+      const rightG = glossar[i + half]
+      const noBorders = {
+        top: { style: BorderStyle.NIL, size: 0 }, bottom: { style: BorderStyle.NIL, size: 0 },
+        left: { style: BorderStyle.NIL, size: 0 }, right: { style: BorderStyle.NIL, size: 0 },
+      }
+      rows.push(new TableRow({
+        children: [
+          tcell([glossEntry(leftG)], { width: { size: 50, type: WidthType.PERCENTAGE }, verticalAlign: 'top', borders: noBorders, margins: { top: 40, bottom: 40, left: 0, right: 140 } }),
+          tcell(rightG ? [glossEntry(rightG)] : [p('', { run: { size: 18 } })], { width: { size: 50, type: WidthType.PERCENTAGE }, verticalAlign: 'top', borders: noBorders, margins: { top: 40, bottom: 40, left: 140, right: 0 } }),
+        ],
+      }))
+    }
+    children.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows }))
+  }
+
+  // ---------------- Notizen ----------------
+  children.push(pageBreak())
+  children.push(...sectionHead('N', 'Meine Notizen', akzent))
+  children.push(p('Hier kannst du schreiben: Antworten, Fragen oder wichtige Woerter.', { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 120 } }))
+  children.push(...schreibfeld(200))
 
   return new Document({
     creator: 'HKO Renderer',

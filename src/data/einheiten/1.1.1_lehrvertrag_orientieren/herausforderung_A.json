@@ -1,0 +1,319 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_hf_A",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Ein Punkt im Lehrvertrag ist unklar",
+  "wissensknoten": [
+    "lehrvertrag",
+    "probezeit"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital",
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM9",
+      "SM3"
+    ],
+    "sk": [
+      2,
+      7,
+      11
+    ]
+  },
+  "persona": {
+    "beruf": "Malerpraktiker/in EBA",
+    "betrieb": "Malergeschäft Frei AG",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite bei der Malergeschäft Frei AG in Winterthur. Heute lese ich meinen Lehrvertrag genau durch. Bei der Probezeit verstehe ich einen Punkt nicht. Im Vertrag steht eine andere Dauer, als ich dachte. Ich bin unsicher. Soll ich einfach nichts sagen? Oder soll ich nachfragen? Ich will nicht dumm wirken. Aber ich will es richtig verstehen.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie finde ich heraus, was bei meiner Probezeit gilt?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Dossier zu Herausforderung A als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Nugget A-01",
+      "text": "Erklären Sie in zwei Sätzen: Was ist ein Lehrvertrag?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Nugget A-02",
+      "text": "Wie lange dauert die Probezeit normalerweise? Nennen Sie die Regel.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Dossier | Nugget A-02",
+      "text": "Prüfen Sie Ihren Fall. Was gilt, wenn im Vertrag nichts anderes steht?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Dossier | Nugget A-03",
+      "text": "Schreiben Sie eine kurze, höfliche digitale Nachricht. Fragen Sie nach dem unklaren Punkt.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein Lehrvertrag",
+  "mindmap_aeste": [
+    {
+      "titel": "Wichtige Teile",
+      "punkte": [
+        "Lohn",
+        "Ferien",
+        "Arbeitszeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Probezeit",
+      "punkte": [
+        "Dauer",
+        "Kündigung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer hilft mir?",
+      "punkte": [
+        "Berufsbildner/in",
+        "Eltern"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Meine Fragen",
+      "punkte": [],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Digitale Nachricht",
+    "titel": "Meine Nachfrage zum Lehrvertrag",
+    "format_detail": "Kurze digitale Nachricht (Chat oder E-Mail), 4-6 Sätze, nach einem KI-Check",
+    "beschreibung": "Ich schreibe eine kurze digitale Nachricht. Ich frage höflich nach dem unklaren Punkt. Vorher prüfe ich den Begriff mit einem KI-Tool und dem Dossier.",
+    "schritte": [
+      {
+        "label": "Punkt markieren",
+        "hint": "Welcher Satz ist unklar?"
+      },
+      {
+        "label": "Begriff nachschlagen",
+        "hint": "Dossier und KI-Tool nutzen"
+      },
+      {
+        "label": "Frage formulieren",
+        "hint": "Eine klare, kurze Frage"
+      },
+      {
+        "label": "Nachricht schreiben",
+        "hint": "Höflich, mit Gruss"
+      },
+      {
+        "label": "Prüfen und senden",
+        "hint": "Kurze Sätze? Höflich?"
+      }
+    ],
+    "schreib_label": "MEINE NACHRICHT HIER ERARBEITEN",
+    "schreib_note": "-> wissen/lehrvertrag",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Guten Tag, ich habe eine Frage zu meinem Lehrvertrag.»",
+        "«Im Vertrag steht …, das verstehe ich noch nicht ganz.»"
+      ],
+      "strategien": [
+        "Zuerst den Begriff im Dossier lesen, dann fragen.",
+        "Eine Frage pro Nachricht — kurz halten."
+      ],
+      "struktur": [
+        "Gruss – Frage – Dank",
+        "Kurze Sätze, ein Gedanke pro Satz"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen wichtig?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was mache ich beim nächsten Mal konkret anders?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen beantwortet",
+        "Probezeit-Regel richtig genannt",
+        "Bezug zum eigenen Vertrag"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur und Tiefe",
+      "vollstaendig_wenn": [
+        "Zentrum und 4 Ast-Titel übernommen",
+        "Pro Ast eigene Punkte"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Digitale Nachricht",
+      "vollstaendig_wenn": [
+        "Höfliche Anrede und Gruss",
+        "Eine klare Frage",
+        "Kurze Sätze (A2)"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe und Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Fragen beantwortet",
+        "Bezug zum Lehralltag"
+      ]
+    }
+  ],
+  "wochen_plan": [],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Lehrvertrag verstehen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Selbst klären vs. Hilfe holen",
+    "hint": "Beide Wege können richtig sein. Es hängt vom Punkt ab, der unklar ist."
+  },
+  "dekontextualisierung": {
+    "frage": "Wo musst du sonst noch einen Vertrag genau verstehen?",
+    "ziel": "Ich prüfe zuerst selbst und frage gezielt nach, statt etwas blind zu unterschreiben."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T7: Rechte und Pflichten im Arbeitsverhältnis vertieft."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Was steht im Lehrvertrag?",
+      "unterueberschrift": "Aufbau und wichtige Teile",
+      "nugget_ref": "Nugget A-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Probezeit — wie lange?",
+      "unterueberschrift": "Dauer und Regel",
+      "nugget_ref": "Nugget A-02",
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Höflich digital nachfragen",
+      "unterueberschrift": "Nachricht schreiben",
+      "nugget_ref": "Nugget A-03",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Lehrvertrag verstehen",
+        "indikator": "nennt wichtige Teile + Probezeit-Regel",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Eigenen Fall prüfen",
+        "indikator": "wendet die Regel auf sich an",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Digital nachfragen",
+        "indikator": "höfliche, klare Nachricht",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Reflexion",
+        "indikator": "benennt Lehralltags-Bezug",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Satzanfänge und Dossier-Nuggets stehen bereit.",
+    "scaffold_100": "Schreibt die Nachricht ohne Satzanfänge und ergänzt eine zweite Frage."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Vertrag verstehen, gezielt nachfragen",
+    "dossier_anker": "Dossier Nuggets A-01..A-03",
+    "kn_aktivierung": "Im KN taucht eine unklare Vertragsstelle wieder auf — jetzt zusammen mit einem Konflikt.",
+    "transfer_check": "Erkennt die lernende Person, wann Nachfragen reicht und wann mehr nötig ist?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "leitfrage 3: den eigenen Fall prüfen und sich orientieren"
+    },
+    {
+      "sk": 7,
+      "wo": "handlungsprodukt: höflich und klar digital nachfragen"
+    },
+    {
+      "sk": 11,
+      "wo": "mehrdeutigkeit: selbst klären oder nachfragen abwägen"
+    }
+  ]
+}

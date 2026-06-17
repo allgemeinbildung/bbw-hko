@@ -259,6 +259,7 @@ export function DocKnS({ kn, knTyp, abteilung, edits, onEdit }: DocKnSProps) {
   const t = findKnTyp(kn, knTyp)
   if (!t) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN-Typ nicht gefunden.</p></div>
   const style = sitColors(null)
+  const ebaClass = kn.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
   const totalPages = 4
   let body: ReactNode
   if (t.typ === 'fachgespraech') {
@@ -269,7 +270,7 @@ export function DocKnS({ kn, knTyp, abteilung, edits, onEdit }: DocKnSProps) {
     body = <WerkschauPages kn={kn} knTyp={t} abteilung={abteilung} edits={edits} onEdit={onEdit} pageStart={2} pageTotal={totalPages} />
   }
   return (
-    <div style={style}>
+    <div className={ebaClass} style={style}>
       <HeaderPage kn={kn} knTyp={t} abteilung={abteilung} pageNum={1} pageTotal={totalPages} />
       {body}
       <RubrikPage kn={kn} knTyp={t} abteilung={abteilung} pageNum={totalPages} pageTotal={totalPages} />

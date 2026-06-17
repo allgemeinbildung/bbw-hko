@@ -1,5 +1,5 @@
 import indexJson from '../../data/einheiten.index.json'
-import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson } from './types'
+import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson } from './types'
 
 export const einheitenIndex = indexJson as EinheitIndexEntry[]
 
@@ -116,6 +116,7 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
     ki: pickJson<KiJson>(slug, 'ki'),
     lernprompt: pickJson<LernpromptJson>(slug, 'lernprompt'),
     lernbegleiter: pickJson<LernbegleiterJson>(slug, 'lernbegleiter'),
+    dossier: pickJson<DossierJson>(slug, 'dossier'),
   }
 }
 

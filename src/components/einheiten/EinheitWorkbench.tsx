@@ -9,11 +9,12 @@ import { DocKnLp } from './docs/DocKnLp'
 import { DocKi } from './docs/DocKi'
 import { DocLernprompt } from './docs/DocLernprompt'
 import { DocLernbegleiter } from './docs/DocLernbegleiter'
+import { DocEbaDossier } from './docs/DocEbaDossier'
 import { ABTEILUNGEN } from '../../lib/einheiten'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import type { EinheitFullSet } from '../../lib/einheiten/types'
 
-import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, docToBlob } from '../../lib/einheiten/docx-builder'
+import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 
 interface Props {
@@ -30,7 +31,7 @@ interface Props {
   readOnly?: boolean
 }
 
-type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -108,6 +109,10 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     if (doc === 'doc-lernbegleiter') {
       if (!d.lernbegleiter) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Lernbegleiter fehlt.</p></div>
       return <DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={edits} onEdit={onEdit} />
+    }
+    if (doc === 'doc-dossier') {
+      if (!d.dossier) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Dossier fehlt.</p></div>
+      return <DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />
     }
     if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
     return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />
@@ -208,6 +213,20 @@ ${cssRenderer}
           zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
           log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
         } catch (e) { console.warn('docx Austausch failed', filename, e) }
+      }
+
+      if (d.dossier) {
+        const markup = renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />)
+        const filename = `${prefix}_doc-dossier.html`
+        zip.file(`html/${filename}`, wrap('Glossar+ (EBA) · Nachschlagen & Lernen', markup))
+        log.push(`html/${filename}`)
+        try {
+          const docx = buildDossier({ dossier: d.dossier, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
+          if (docx) {
+            zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
+            log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
+          }
+        } catch (e) { console.warn('docx Dossier failed', filename, e) }
       }
 
       if (d.kn) {
@@ -338,6 +357,9 @@ ${cssRenderer}
   } else if (doc === 'doc-lernbegleiter') {
     docKicker = 'KI-Fluency · Lernen'
     docName = 'KI-Lernbegleiter'
+  } else if (doc === 'doc-dossier') {
+    docKicker = 'EBA · Nachschlagen & Lernen'
+    docName = 'Glossar+'
   } else {
     docKicker = 'Kompetenznachweis'
     docName = 'Lehrperson + Bewertung'
@@ -401,6 +423,16 @@ ${cssRenderer}
             <span className="wb-dot">🔄</span>
             <span className="wb-item-title">Austausch &amp; Transfer</span>
           </button>
+
+          {d.dossier && (
+            <button
+              className={`wb-item solo${doc === 'doc-dossier' ? ' active' : ''}`}
+              onClick={() => pick('doc-dossier')}
+            >
+              <span className="wb-dot">📖</span>
+              <span className="wb-item-title">Glossar+</span>
+            </button>
+          )}
 
           {d.kn && (
             <div className="wb-tree-group">
@@ -518,10 +550,11 @@ function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { pre
   const rows: [string, string][] = [
     ['Herausforderung A (rot)', d.hf_A?.titel || '—'],
     ['Herausforderung B (blau)', d.hf_B?.titel || '—'],
-    ['Herausforderung C (grün)', d.hf_C?.titel || '—'],
-    ['KN Hybrid-Herausforderung', d.kn?.hybrid_situation?.titel || '—'],
-    ['Begleitdokument', d.begleiter?.meta?.titel || '—'],
   ]
+  if (d.hf_C) rows.push(['Herausforderung C (grün)', d.hf_C.titel || '—'])
+  if (d.dossier) rows.push(['Glossar+ (EBA)', 'Nuggets · Sprachhilfe · Glossar · Notizen'])
+  rows.push(['KN Hybrid-Herausforderung', d.kn?.hybrid_situation?.titel || '—'])
+  rows.push(['Begleitdokument', d.begleiter?.meta?.titel || '—'])
   if (d.ki?.assignments?.some((a) => a.key === 'ki_1')) rows.push(['KI-Auftrag 1', d.ki.assignments.find((a) => a.key === 'ki_1')?.titel || '—'])
   if (d.ki?.assignments?.some((a) => a.key === 'ki_2')) rows.push(['KI-Auftrag 2', d.ki.assignments.find((a) => a.key === 'ki_2')?.titel || '—'])
   if (d.lernprompt) rows.push(['KI-Lernprompt', 'Prompting lernen'])

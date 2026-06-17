@@ -1,0 +1,256 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "lehrvertrag_orientieren",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_set",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "anchored_situations": [
+    "1.1.1_lehrvertrag_orientieren_hf_A",
+    "1.1.1_lehrvertrag_orientieren_hf_B"
+  ],
+  "dominanter_aspekt": "Recht",
+  "kern_kompetenzversprechen": "Ich kann mich mit dem Lehrvertrag in der Arbeitswelt orientieren. Bei Fragen oder Konflikten kontaktiere ich die richtige Stelle.",
+  "mehrdeutigkeits_pflicht": "Selbst klären vs. Hilfe holen",
+  "hybrid_situation": {
+    "_kommentar": "Eine Szene, kombiniert A (unklarer Vertragspunkt) + B (Konflikt, Hilfe holen). Persona neu (Schreinerpraktiker/in EBA, Aarau). A2, ICH, endet mit Leitfrage.",
+    "titel": "Unklarer Vertrag und Ärger im Betrieb",
+    "persona": {
+      "beruf": "Schreinerpraktiker/in EBA",
+      "betrieb": "Schreinerei Holzer",
+      "ort": "Aarau"
+    },
+    "emotion_tag": "",
+    "text": "Ich bin Schreinerpraktiker/in EBA im 1. Lehrjahr in Aarau. Ich bin noch in der Probezeit. In meinem Lehrvertrag steht ein Punkt zur Probezeit, den ich nicht verstehe. Gleichzeitig läuft es im Betrieb schlecht. Ich darf kaum an die Maschinen. Mein Berufsbildner hat wenig Zeit für mich. Ich bin unsicher und ein bisschen wütend. Soll ich den Vertrag einfach hinnehmen? Soll ich selbst mit dem Betrieb reden? Oder soll ich Hilfe von aussen holen?",
+    "leitfrage": "Wie gehe ich vor — und warum?",
+    "aktivierte_trade_offs": [
+      "Selbst klären vs. Hilfe holen"
+    ],
+    "alignment_note": {
+      "_kommentar": "2 Eintraege (A/B).",
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Der unklare Punkt zur Probezeit im Lehrvertrag"
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Der Ärger im Betrieb und die Frage, wer hilft"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch (Primärform)",
+      "_primaer_kommentar": "EBA-Default, muendlich (RLP Z.791).",
+      "format": "mündlich, 25-30 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Dossier erlaubt, kein Internet).",
+        "10-15 Min. Gespräch mit der Lehrperson: 5 Fragen, stark geführt."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "frage": "Was ist die Probezeit? Erklären Sie es kurz.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Welche Teile des Lehrvertrags sind hier wichtig?",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Was können Sie selbst klären? Wofür brauchen Sie Hilfe?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Wen kontaktieren Sie zuerst — und warum genau diese Stelle?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Warum ist Hilfe holen kein Zeichen von Schwäche?",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [
+        2,
+        7,
+        11
+      ],
+      "aspekte": [
+        "Recht",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich (vereinfacht)",
+      "_vereinfacht_kommentar": "30-40 Min., K-Decke K3, Schreibhilfen im Blatt.",
+      "format": "schriftlich, 30-40 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt mit eingedruckten Schreibhilfen; Dossier erlaubt; kein Internet.",
+        "Vier kurze Aufgaben steigender Komplexität (K-Decke K3)."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "aufgabe": "Erklären Sie in zwei Sätzen, was die Probezeit ist.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Was ist eine Vertragsfrage? Was ist ein Konflikt? Nennen Sie je ein Beispiel.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Welchen ersten Schritt wählen Sie im Fall? Begründen Sie kurz.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Schreiben Sie eine kurze, sachliche Nachricht an die richtige Stelle.",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [
+        2,
+        7,
+        11
+      ],
+      "aspekte": [
+        "Recht",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+      "_vereinfacht_kommentar": "Weniger schreiblastig: Reflexion 120-150 Woerter, gefuehrt mit Satzanfaengen.",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte (Nachricht A oder Anfrage B).",
+        "Werkwahl-Begründung (2 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (120-150 Wörter): drei Fragen schriftlich beantworten, mit Satzanfängen aus dem Dossier."
+      ],
+      "reflexionsfragen": [
+        "Welche Grundregel haben Sie gelernt? Formulieren Sie sie in einem Satz.",
+        "Wie zeigt sich diese Regel in der Hybrid-Herausforderung? Was ist gleich, was anders als in Ihrem Fall?",
+        "Wann passt die Regel nicht so gut? Was haben Sie durch beide Fälle gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        2,
+        7,
+        11
+      ],
+      "_sk_kommentar": "Union(A,B) = [2,7,11].",
+      "aspekte": [
+        "Recht",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "_kommentar": "Bi-dimensional: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen, gleichgewichtet. SuK-Kriterien-Namen Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit integriert, KEINE Normen (EBA). Kriterium 3 nach dominantem Aspekt 'Recht' = 'Rechtliches Prinzip'.",
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "_integriert": "inkl. sprachlicher Konventionen (Rechtschreibung, Satzbau, Wortwahl auf A2; KEINE Normen)",
+        "stufen": [
+          "Begriffe fehlen oder falsch; sprachliche Konventionen kaum eingehalten.",
+          "Begriffe teilweise korrekt; einige Verstösse gegen Konventionen.",
+          "Begriffe korrekt und situationsangemessen; Konventionen weitgehend eingehalten (A2).",
+          "Differenziert und sicher; Konventionen sicher eingehalten."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "_integriert": "inkl. Sprachbewusstheit (adressaten- und situationsgerechte, bewusste Wortwahl)",
+        "stufen": [
+          "Keine Begründung erkennbar; keine Anpassung an Adressat/Situation.",
+          "Begründung ansatzweise; Anpassung ansatzweise erkennbar.",
+          "Begründung nachvollziehbar; Sprache passt zu Adressat und Situation.",
+          "Schlüssig und klar; Sprache bewusst und wirkungsvoll gewählt."
+        ]
+      },
+      {
+        "name": "Rechtliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Rechte/Stellen nicht erkannt.",
+          "Rechte/Stellen teilweise erkannt.",
+          "Rechte und richtige Stelle korrekt auf den Fall angewendet.",
+          "Anwendung auf einen neuen Fall übertragen."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet.",
+          "Position klar in Ich-Form formuliert.",
+          "Position begründet; Mehrdeutigkeit anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 90 %",
+        "definition": "Stufen 1-2 dominant"
+      },
+      {
+        "label": "90 %",
+        "definition": "mehrheitlich Stufe 3"
+      },
+      {
+        "label": "100 %",
+        "definition": "Stufe 4 in mind. 3 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_2er_eba_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}
