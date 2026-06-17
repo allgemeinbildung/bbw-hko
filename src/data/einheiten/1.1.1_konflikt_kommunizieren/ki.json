@@ -1,0 +1,138 @@
+{
+  "id": "1.1.1_konflikt_kommunizieren_ki",
+  "set_ref": "1.1.1_konflikt_kommunizieren_set",
+  "prinzip_ref": "1.1.1_konflikt_kommunizieren_prinzip",
+  "kn_ref": "1.1.1_konflikt_kommunizieren_kn",
+  "anchored_situations": [
+    "1.1.1_konflikt_kommunizieren_hf_A",
+    "1.1.1_konflikt_kommunizieren_hf_B",
+    "1.1.1_konflikt_kommunizieren_hf_C"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "thema": "T1",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: im Konflikt die eigenen Rechte erkennen, den Kanal adressatengerecht wählen und das Gespräch beziehungserhaltend führen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Lehrvertrag, Rechte und Pflichten Lernende (OR 321a, OR 345a), Lerndokumentations-Pflicht, Konfliktfallregelung.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Verantwortung und Werthaltung im Konflikt; offen benennen, wo beide Seiten ein berechtigtes Anliegen haben, statt eine Seite zu eliminieren.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Rollenübernahme und Selbstwert: als Lernende/r eine Position vertreten, ohne die Lernbeziehung zu beschädigen.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Kanalwahl und Register im digitalen Konflikt; KI als Schreib- und Sparringsinstrument mit Halluzinationsrisiko.",
+        "kompetenz_anker": "1.1.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK7 — Verständnis fördern",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Was kann eine KI in einem Konflikt für dich leisten — und welcher Schritt bleibt deine eigene Verantwortung?",
+    "kritisch": "Woran erkennst du, dass eine KI dir eine rechtlich falsche oder beziehungsschädigende Empfehlung gibt?",
+    "vergleichend": "Worin unterscheidet sich deine begründete Ich-Botschaft von einer KI-Formulierung, die du nicht selbst geprüft hast?",
+    "urteilend": "Würdest du eine KI-formulierte Konfliktnachricht abschicken, ohne sie selbst auf Ton und Recht zu prüfen — warum (nicht)?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Die KI als Gegenseite im Konflikt",
+      "ziel": "Du prüfst, wie tragfähig deine Position im Konflikt ist, indem du die KI die Sicht des Berufsbildner/in so stark wie möglich vertreten lässt.",
+      "bezug": "Nutzt alle drei Herausforderungen: die geklärten Rechte und Pflichten aus dem Lehrvertrag (A), die Kanal- und Register-Entscheidung (B) und das beziehungserhaltende Gespräch mit Ich-Botschaften (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Wer im Konflikt handlungsfähig ist, klärt zuerst Sachlage und Rechte, wählt dann bewusst Kanal und Register und führt das Gespräch so, dass beide Seiten ihr Gesicht wahren.",
+      "auftrag": "Wähle einen Konflikt aus deinen Herausforderungen (z. B. die Aufforderung, einen Vorfall nicht in die Lerndokumentation einzutragen). Formuliere zuerst deine eigene begründete Position mit dem Recht, auf das du dich stützt. Beauftrage dann eine KI, in der Rolle deines Berufsbildner/in die Gegenposition so stark wie möglich zu vertreten — mit Verweis auf Betriebsinteressen und Treuepflicht. Prüfe jede rechtliche Behauptung gegen dein Lehrmittel (Kap. 1.4, OR 321a/345a) und entscheide: Welche Gegenargumente sind ein berechtigtes Anliegen, das du anerkennen musst — und welche sind rechtlich falsch oder reine Machtausübung?",
+      "prompt_strategie": [
+        "Gib der KI eine klare Rolle: «Du bist mein Berufsbildner/in und siehst den Vorfall aus Sicht des Betriebs …»",
+        "Gib den Tatbestand wertungsfrei als Kontext mit — ohne deine eigene Position oder dein Wunschergebnis zu verraten.",
+        "Verlange zu jedem Gegenargument eine Begründung und, wo es um Recht geht, einen prüfbaren Verweis (OR-Artikel, Lehrvertrag).",
+        "Fordere in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Position und sag mir, wo ich nur recht haben will, aber die Beziehung gefährde.»"
+      ],
+      "ki_frei_vorher": "Halte OHNE KI fest: deine Position zum gewählten Konflikt in 2-3 Sätzen nach dem 3B-Schema (Behauptung, Begründung, Beispiel) plus das Recht oder die Quelle, auf die du dich stützt.",
+      "schritte": [
+        "Konflikt wählen und eigene Position KI-frei festhalten (siehe Feld auf Seite 1).",
+        "KI mit Rollen-Prompt als Berufsbildner/in ansetzen; die stärkste Gegenposition mit Begründungen verlangen.",
+        "Jede rechtliche Behauptung im Lehrmittel oder Gesetzestext nachschlagen: Stimmt sie — oder ist sie verzerrt oder erfunden?",
+        "Trennen: Welche Gegenargumente sind ein berechtigtes Anliegen (Beziehung, Betriebsinteresse), welche sind rechtlich falsch?",
+        "Deine Position überarbeiten: Was anerkennst du von der Gegenseite, was weist du begründet zurück — und wie formulierst du das beziehungserhaltend?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigenposition zuerst",
+          "indikator": "Die KI-freie Position mit Quelle liegt vor, bevor der erste Prompt abgesetzt wurde."
+        },
+        {
+          "kriterium": "Rechts-Verifikation",
+          "indikator": "Jede rechtliche Behauptung der KI ist nachgeschlagen und als korrekt, verzerrt oder erfunden markiert."
+        },
+        {
+          "kriterium": "Berechtigtes Anliegen erkannt",
+          "indikator": "Die überarbeitete Position unterscheidet mindestens ein berechtigtes Anliegen der Gegenseite von einer begründeten Zurückweisung."
+        }
+      ],
+      "reflexion": [
+        "Welches Gegenargument des Berufsbildner/in hat dich am meisten herausgefordert — und warum?",
+        "Hat die KI eine rechtliche Aussage erfunden oder verzerrt? Woran hast du es gemerkt?",
+        "Im Kompetenznachweis musst du im Konflikt deine eigene Position UND das Anliegen der Gegenseite fair und gleichwertig darstellen. Wie hilft dir diese Übung, beide Seiten begründet abzuwägen, statt nur recht behalten zu wollen?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_redaktion",
+      "titel": "KI-Entwurf der Konfliktantwort redigieren",
+      "ziel": "Du beurteilst, was eine KI beim adressatengerechten Konflikt-Schreiben leistet — und wo deine eigene Prüfung von Ton, Recht und Kanal unersetzlich bleibt.",
+      "bezug": "Nutzt alle drei Herausforderungen: die geklärte Rechtslage als Inhalt (A), die bewusste Kanal- und Register-Wahl (B) und die Ich-Botschaften aus dem Gesprächs-Drehbuch (C) — und wendet das Transfer-Prinzip an: Die Antwort gehört in den passenden Kanal, mit nachvollziehbarer Begründung und so formuliert, dass beide Seiten ihr Gesicht wahren.",
+      "auftrag": "Lass eine KI eine schriftliche Antwort an deinen Berufsbildner/in zu deinem Konflikt verfassen — mit allen Kontextangaben, die sie braucht. Redigiere den KI-Entwurf anschliessend wie eine Redaktorin/ein Redaktor: Prüfe Aufbau (Anlass — Absicht — Begründung — Schluss), ob Ich-Botschaften statt verdeckter Du-Botschaften verwendet werden, Register und Ton, die Kanal- und Datenschutz-Logik sowie die sachliche Richtigkeit der genannten Rechte. Erstelle daraus deine eigene, bessere Version und dokumentiere mindestens drei begründete Änderungen.",
+      "prompt_strategie": [
+        "Kontextualisiere vollständig: Worum geht der Konflikt, wer liest mit, was soll der Berufsbildner/in nach dem Lesen tun?",
+        "Gib das Format vor: schriftliche Antwort nach Anlass — Absicht — Begründung — Schluss, durchgehend Ich-Botschaften, max. 200 Wörter.",
+        "Verlange, dass die KI jede Ich-Botschaft markiert — so kannst du verdeckte Du-Botschaften und Vorwürfe leichter finden.",
+        "Zweiter Prompt: «Nenne drei Stellen, an denen mein Berufsbildner/in sich durch diesen Entwurf angegriffen fühlen könnte — und wie ich es beziehungserhaltend umformuliere.»"
+      ],
+      "ki_frei_vorher": "Notiere OHNE KI: die drei wichtigsten Punkte, die in deiner Antwort vorkommen müssen, und den Kanal, den du wählst — mit einem Satz Begründung.",
+      "schritte": [
+        "Konflikt wählen; eigene Eckpunkte und Kanalwahl KI-frei festhalten.",
+        "KI mit vollständigem Kontext und Formatvorgabe den Entwurf schreiben lassen.",
+        "Redaktionsprüfung: Aufbau, Ich-Botschaften, Ton, Kanal- und Datenschutz-Logik, sachliche Richtigkeit — Schwächen markieren.",
+        "Eigene Version erstellen; mindestens drei Änderungen mit Begründung dokumentieren (davon mindestens eine umformulierte Du- in eine Ich-Botschaft).",
+        "Vergleich: Welche Version würdest du wirklich abschicken — und welcher Satz entscheidet, ob das Gespräch eskaliert oder trägt?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Vollständiger Kontext-Prompt",
+          "indikator": "Der erste Prompt enthält Anlass, Adressat, gewünschte Wirkung und die Formatvorgabe (Aufbau, Ich-Botschaften, Länge)."
+        },
+        {
+          "kriterium": "Redaktionsprüfung dokumentiert",
+          "indikator": "Mindestens drei begründete Änderungen am KI-Entwurf sind festgehalten, davon mindestens eine Du- zu Ich-Botschaft."
+        },
+        {
+          "kriterium": "Eigene Version trägt",
+          "indikator": "Die finale Version hält den Aufbau ein, bleibt in der Ich-Form und begründet die Kanalwahl nachvollziehbar."
+        }
+      ],
+      "reflexion": [
+        "Was konnte die KI beim Formulieren schneller oder besser als du — und was hast du besser gekonnt?",
+        "Welche verdeckte Du-Botschaft oder welchen Tonbruch hättest du ohne die Redaktionsprüfung übersehen?",
+        "Im Kompetenznachweis musst du selbst — ohne KI — sachlich richtig und beziehungserhaltend schreiben. Was nimmst du aus dieser Redaktion mit, das du danach allein beherrschen musst?"
+      ]
+    }
+  ]
+}

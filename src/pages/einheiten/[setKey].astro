@@ -1,7 +1,7 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import EinheitWorkbench from '../../components/einheiten/EinheitWorkbench.tsx'
-import { einheitById, loadEinheit, ABTEILUNGEN } from '../../lib/einheiten'
+import { einheitById, loadEinheit, ABTEILUNGEN, isEntwurf, draftKomponenten, stripDraftComponents, KOMPONENTEN_LABEL } from '../../lib/einheiten'
 import { enrichKompetenzen } from '../../lib/einheiten/kompetenz-text'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import { skNameByNr, skTooltip } from '../../lib/sk-labels'
@@ -35,10 +35,19 @@ if (!meta || !fullSet) {
   return new Response('Einheit nicht gefunden', { status: 404 })
 }
 
+// Sichtbarkeit: ganze Entwurf-Einheiten sind für lp/gast nicht direkt aufrufbar.
+if (isEntwurf(meta) && role !== 'kt1') {
+  return Astro.redirect('/einheiten')
+}
+// Entwurf-Bausteine (z. B. KI-Fluency) für lp/gast aus dem Set entfernen, bevor
+// es ans Workbench-Island geht — KI-Tab + KI-Dateien im ZIP verschwinden.
+const visibleSet = stripDraftComponents(fullSet, meta, role)
+const draftKomps = role === 'kt1' ? draftKomponenten(meta) : []
+
 // SSR: Kompetenz-Klartexte verbatim aus dem nRLP auflösen, bevor das Set ins
 // (client:only) Renderer-Island serialisiert wird — so bleibt der nRLP-Datensatz
 // aus dem Client-Bundle und Preview wie ZIP-Download zeigen die Kompetenzen.
-const renderSet = enrichKompetenzen(fullSet)
+const renderSet = enrichKompetenzen(visibleSet)
 
 // B3 — Abdeckungs-Übersicht aus dem Index (keine zusätzlichen Datenquellen nötig).
 const abgedeckte = meta.abgedeckte_kompetenzen?.length ? meta.abgedeckte_kompetenzen : [meta.kompetenz_nr]
@@ -46,6 +55,18 @@ const letters = ['A', 'B', 'C'] as const
 ---
 <Einheiten title={meta.einheit_titel} role={role} fullBleed>
   <style is:global set:html={cssRenderer}></style>
+
+  {role === 'kt1' && (isEntwurf(meta) || draftKomps.length > 0) && (
+    <div class="bg-amber-50 border-b border-amber-200">
+      <div class="max-w-7xl mx-auto px-6 py-2.5 flex flex-wrap items-center gap-2 text-sm text-amber-900">
+        <span class="font-semibold">● Entwurf — nur für KT1 sichtbar.</span>
+        {isEntwurf(meta)
+          ? <span>Diese ganze Einheit ist noch nicht publiziert. Lehrpersonen sehen sie nicht.</span>
+          : <span>Live für alle, ausser: {draftKomps.map((k) => KOMPONENTEN_LABEL[k] ?? k).join(', ')} (sehen nur KT1).</span>}
+        <span class="ml-auto text-xs text-amber-700">Publizieren: Flag in <code>set.json</code> entfernen → <code>npm run build:einheiten-index</code> → deploy.</span>
+      </div>
+    </div>
+  )}
 
   <div class="border-b border-slate-200 bg-white">
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-baseline gap-3">

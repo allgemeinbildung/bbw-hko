@@ -1,10 +1,68 @@
 import indexJson from '../../data/einheiten.index.json'
-import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta } from './types'
+import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson } from './types'
 
 export const einheitenIndex = indexJson as EinheitIndexEntry[]
 
 export function einheitById(id: string): EinheitIndexEntry | undefined {
   return einheitenIndex.find((e) => e.id === id)
+}
+
+// ---------------------------------------------------------------------------
+// Sichtbarkeit / KT1-only Drafts
+// ---------------------------------------------------------------------------
+// Zwei Schalter (beide in set.json, beide optional, default = live für alle):
+//   • status: 'entwurf'            → ganze Einheit nur für KT1 (neue Einheit)
+//   • entwurf_komponenten: [...]   → einzelne Bausteine nur für KT1 (selektiv)
+// KT1 sieht immer alles (mit Badge); lp/gast sehen nur Publiziertes.
+
+export type Role = 'lp' | 'kt1' | 'gast'
+
+/** Bausteine-Gruppen: ein Toggle deckt mehrere Set-Dateien ab. */
+export const KOMPONENTEN_GRUPPEN: Record<string, (keyof EinheitFullSet)[]> = {
+  'ki-fluency': ['ki', 'lernprompt', 'lernbegleiter'],
+}
+
+/** Menschlich lesbares Label für die KT1-Entwürfe-Übersicht. */
+export const KOMPONENTEN_LABEL: Record<string, string> = {
+  'ki-fluency': 'KI-Fluency',
+}
+
+export function isEntwurf(entry: Pick<EinheitIndexEntry, 'status'>): boolean {
+  return entry.status === 'entwurf'
+}
+
+export function draftKomponenten(entry: Pick<EinheitIndexEntry, 'entwurf_komponenten'>): string[] {
+  return Array.isArray(entry.entwurf_komponenten) ? entry.entwurf_komponenten : []
+}
+
+/** Katalog-Filter: KT1 sieht alle Einheiten, lp/gast nur publizierte. */
+export function visibleEinheiten<T extends Pick<EinheitIndexEntry, 'status'>>(list: T[], role: Role): T[] {
+  if (role === 'kt1') return list
+  return list.filter((e) => !isEntwurf(e))
+}
+
+/** Ist ein Baustein-Gruppen-Key für diese Rolle sichtbar? */
+export function isKomponenteSichtbar(entry: Pick<EinheitIndexEntry, 'entwurf_komponenten'>, gruppe: string, role: Role): boolean {
+  if (role === 'kt1') return true
+  return !draftKomponenten(entry).includes(gruppe)
+}
+
+/**
+ * Entfernt Entwurf-Bausteine aus einem geladenen Set, bevor es an die (öffentliche)
+ * Workbench geht. Für KT1 unverändert; für lp/gast werden die zu jeder Entwurf-Gruppe
+ * gehörenden Dateien auf null gesetzt (KI-Tab + ZIP-Dateien verschwinden).
+ */
+export function stripDraftComponents(set: EinheitFullSet, entry: Pick<EinheitIndexEntry, 'entwurf_komponenten'>, role: Role): EinheitFullSet {
+  if (role === 'kt1') return set
+  const drafts = draftKomponenten(entry)
+  if (drafts.length === 0) return set
+  const out = { ...set }
+  for (const gruppe of drafts) {
+    for (const key of KOMPONENTEN_GRUPPEN[gruppe] ?? []) {
+      ;(out as Record<string, unknown>)[key] = null
+    }
+  }
+  return out
 }
 
 export function prettifyId(id: string): string {
@@ -55,6 +113,9 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
     prinzip: pickJson<PrinzipJson>(slug, 'prinzip'),
     set: pickJson<SetJson>(slug, 'set'),
     begleiter: begleiter ? { raw: begleiter.raw, meta: begleiter.meta } : null,
+    ki: pickJson<KiJson>(slug, 'ki'),
+    lernprompt: pickJson<LernpromptJson>(slug, 'lernprompt'),
+    lernbegleiter: pickJson<LernbegleiterJson>(slug, 'lernbegleiter'),
   }
 }
 

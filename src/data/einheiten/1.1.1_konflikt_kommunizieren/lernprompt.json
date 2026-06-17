@@ -1,0 +1,147 @@
+{
+  "id": "1.1.1_konflikt_kommunizieren_lernprompt",
+  "set_ref": "1.1.1_konflikt_kommunizieren_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «Konflikt erkennen, Kanal wählen, Gespräch führen» (Lehrvertrag-Rechte, Kanal und Register, Ich-Botschaften).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Du gibst der KI eine konkrete Rolle, bevor du die Aufgabe stellst. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
+        "thema_bezug": "Im Konflikt hängt alles von der Perspektive ab: Dieselbe Situation klingt aus Sicht des Berufsbildner/in, einer neutralen Lehraufsicht oder einer erfahrenen Berufsbildnerin völlig anders — und genau diese Perspektiven kannst du gezielt durchspielen.",
+        "beispiel_basis": "Du bist eine erfahrene Berufsbildnerin. Erkläre einem Lernenden im 1. Lehrjahr, wie er ein heikles Thema ansprechen kann, ohne dass das Gespräch eskaliert.",
+        "beispiel_fortgeschritten": "Du bist mein Berufsbildner/in und fühlst dich durch meine Kritik in Frage gestellt. Reagiere so, wie du es im Betrieb tun würdest, auf folgende Ich-Botschaft: [deine Formulierung]. Sag mir danach, welcher Satz dich am ehesten verärgert hat.",
+        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht automatisch beziehungsklug oder rechtlich korrekt: Auch als «Berufsbildnerin» kann die KI eine Eskalation empfehlen oder ein Recht falsch wiedergeben. Die Rolle steuert den Ton — die Entscheidung triffst du.",
+        "baukasten": {
+          "rolle": [
+            "erfahrene Berufsbildnerin",
+            "neutrale Lehraufsicht",
+            "mein Berufsbildner/in im Konflikt"
+          ],
+          "kontext": [
+            "Lernende/r im 1. Lehrjahr",
+            "Konflikt im Lehrbetrieb",
+            "Beziehung soll erhalten bleiben"
+          ],
+          "aufgabe": [
+            "Gesprächseröffnung vorschlagen",
+            "auf meine Ich-Botschaft reagieren",
+            "Risiken der Eskalation nennen"
+          ],
+          "format": [
+            "3 Sätze",
+            "Dialog-Beispiel"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Du lieferst der KI alle relevanten Fakten, bevor sie antwortet: Situation, Beteiligte, Ziel, Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
+        "thema_bezug": "Ein Konflikt ist ohne Tatbestand nicht zu beurteilen: Wer hat was gesagt, über welchen Kanal, welches Recht und welche Beziehung stehen auf dem Spiel? Erst mit diesen Fakten kann die KI eine brauchbare Einschätzung geben.",
+        "beispiel_basis": "Kontext: Lernender, 1. Lehrjahr. Der Berufsbildner schreibt mir auf meine private Nummer und verlangt eine Antwort bis 17 Uhr. Frage: Wie soll ich auf welchem Kanal reagieren?",
+        "beispiel_fortgeschritten": "Kontext: Schweizer Lehrverhältnis, EFZ, 1. Lehrjahr. Mein Berufsbildner verlangt, dass ich einen Vorfall nicht in die Lerndokumentation eintrage, und hat mich vor dem Team abgewertet. Ziel: die Sache klären und die Beziehung erhalten. Aufgabe: Zerlege den Konflikt in Sachlage, betroffene Rechte und Beziehungsfrage — kennzeichne, was ich noch nicht weiss.",
+        "warnung": "Vertrauliche Details gehören nicht in den Prompt: echte Namen, Betrieb und erkennbare Personen weglassen oder anonymisieren — sonst verletzt du selbst die Vertraulichkeit, um die es im Konflikt oft geht.",
+        "baukasten": {
+          "rolle": [
+            "neutraler Konflikt-Coach",
+            "Methoden-Coach für Gesprächsvorbereitung"
+          ],
+          "kontext": [
+            "Schweizer Lehrverhältnis EFZ",
+            "Sachlage in 2-3 Sätzen",
+            "welcher Kanal wurde genutzt"
+          ],
+          "aufgabe": [
+            "Konflikt in Sachlage / Recht / Beziehung zerlegen",
+            "offene Fragen auflisten",
+            "berechtigtes Anliegen beider Seiten benennen"
+          ],
+          "format": [
+            "Drei-Spalten-Tabelle",
+            "nummerierte Schritte"
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenposition fordern",
+        "erklaerung": "Du lässt die KI bewusst die Gegenseite vertreten, nachdem du deine Position formuliert hast. So findest du Schwächen in deiner Argumentation, bevor dein Gegenüber sie findet.",
+        "thema_bezug": "Jeder Konflikt in dieser Unit hat zwei legitime Seiten (deine Rechte vs. die Interessen des Betriebs). Wer die stärkste Gegenposition kennt, geht vorbereiteter und gelassener ins Gespräch — und kann offen benennen, wo beide Seiten ein berechtigtes Anliegen haben, statt überrascht zu werden.",
+        "beispiel_basis": "Ich behaupte: Ich habe ein Recht darauf, dass der Vorfall in meiner Lerndokumentation steht. Vertritt die Gegenposition meines Berufsbildner/in so stark wie möglich.",
+        "beispiel_fortgeschritten": "Hier ist meine Position nach dem 3B-Schema: [Behauptung, Begründung, Beispiel]. Greife sie als mein Berufsbildner/in an drei Stellen an. Sag mir danach, welcher meiner Punkte die Beziehung am stärksten belastet und wie ich ihn als Ich-Botschaft umformuliere.",
+        "warnung": "Die KI vertritt jede Position überzeugend — auch eine unfaire. Die Gegenposition zeigt dir Lücken in deiner Argumentation, ersetzt aber nicht dein Urteil darüber, welcher Einwand legitim ist und welcher nur Druck ausübt.",
+        "baukasten": {
+          "rolle": [
+            "mein Berufsbildner/in",
+            "kritische Mitlernende",
+            "strenge Prüfungsexpertin"
+          ],
+          "kontext": [
+            "meine Position als 3B-Argument",
+            "der Konflikt als Sachlage"
+          ],
+          "aufgabe": [
+            "Position an 3 Stellen angreifen",
+            "beziehungsbelastenden Punkt benennen",
+            "Umformulierung als Ich-Botschaft vorschlagen"
+          ],
+          "format": [
+            "3 nummerierte Einwände",
+            "Einwand + Wirkung auf die Beziehung"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen und Belege anfordern",
+        "erklaerung": "Du verlangst von der KI zu jeder rechtlichen Aussage die Quelle — und kündigst an, dass du sie prüfst. Das zwingt die KI zu vorsichtigeren Aussagen und gibt dir die Prüfspur für deine eigene Kontrolle.",
+        "thema_bezug": "Sobald es im Konflikt um Rechte und Pflichten geht (Lehrvertrag, Lerndokumentation, Arbeitszeit), ist die exakte Quelle das Qualitätsmerkmal: Eine KI-Aussage über dein Recht ohne prüfbaren Artikel ist im Gespräch wertlos und im KN ein Fehler.",
+        "beispiel_basis": "Welche Pflichten habe ich als Lernende/r laut Lehrvertrag, und welche hat mein Betrieb? Gib zu jeder Aussage den OR-Artikel an und markiere, wo du unsicher bist.",
+        "beispiel_fortgeschritten": "Erstelle eine Liste der Rechte und Pflichten von Lernenden im Schweizer Lehrvertrag rund um Lerndokumentation und Weisungsrecht. Pro Punkt: genauer OR-/ArG-Artikel, ein Satz in einfacher Sprache, Vertrauensgrad (sicher/unsicher). Ich prüfe jeden Artikel im Lehrmittel nach.",
+        "warnung": "KI-Systeme erfinden bei Schweizer Recht regelmässig plausibel klingende Artikelnummern. Jeder Artikel muss im Lehrmittel oder Gesetzestext nachgeschlagen werden — Übereinstimmung von Nummer UND Inhalt.",
+        "baukasten": {
+          "rolle": [
+            "Faktenprüfer",
+            "Gesetzes-Navigator"
+          ],
+          "kontext": [
+            "Schweizer Recht (OR, ArG, Lehrvertrag)",
+            "Stand der geltenden Fassung"
+          ],
+          "aufgabe": [
+            "Artikel zu Aussage finden",
+            "Aussage zu Artikel prüfen",
+            "Vertrauensgrad angeben"
+          ],
+          "format": [
+            "Tabelle Aussage/Quelle/Sicherheit",
+            "Liste mit Artikel in Klammern"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Prompt 1 liefert mit Rolle und vollständiger Sachlage eine erste Einschätzung deines Konflikts. Prompt 2 nutzt diese Antwort, um gezielt die Beziehungsfrage zu schärfen, die im ersten Schritt noch offen blieb — so wird aus einem allgemeinen Rat eine fallgenaue Gesprächsvorbereitung.",
+      "prompt_1": "Du bist ein neutraler Konflikt-Coach. Kontext: Lernender im 1. Lehrjahr, der Berufsbildner verlangt per privater WhatsApp eine Antwort bis 17 Uhr und hat mich zuvor vor dem Team abgewertet. Zerlege den Konflikt in Sachlage, betroffene Rechte und Beziehungsfrage und nenne die offenen Fragen, die ich noch klären muss.",
+      "prompt_2": "Auf Basis deiner Analyse: Schlage mir eine Gesprächseröffnung als Ich-Botschaft vor, die meine Position klarmacht, ohne meinen Berufsbildner/in vor dem Team blosszustellen — und sag mir, welche Formulierung am ehesten zur Eskalation führen würde."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "quellen_anfordern",
+        "gegenposition_fordern"
+      ],
+      "logik_und_ziel": "Prompt 1 erzeugt eine belegte Grundlage mit prüfbaren Artikeln zu deinen Rechten. Prompt 2 lässt die KI diese belegte Position aus Sicht des Betriebs angreifen — so erkennst du, welche deiner Belege auch unter Druck standhalten, bevor du sie ins Gespräch oder in den KN einbringst.",
+      "prompt_1": "Liste die drei wichtigsten Pflichten auf, die mein Betrieb mir gegenüber im Lehrverhältnis hat (inkl. Lerndokumentation). Pro Pflicht: genauer OR-/ArG-Artikel, ein Satz in einfacher Sprache, Vertrauensgrad (sicher/unsicher). Ich prüfe jeden Artikel nach.",
+      "prompt_2": "Übernimm jetzt die Rolle meines Berufsbildner/in: Greife meine Berufung auf diese Pflichten an den zwei Stellen an, an denen ein Betrieb realistisch widerspricht — und sag mir, welcher Punkt die Lernbeziehung am stärksten belastet, wenn ich ihn zu hart vortrage."
+    },
+    "prompt_vorlage": "Baue deinen Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

@@ -11,7 +11,7 @@ import {
   TabStopType, TabStopPosition, ImageRun,
 } from 'docx'
 
-import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson } from './types'
+import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, LernpromptJson, LernbegleiterJson } from './types'
 import { skNameByNr } from '../sk-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from './sprachfoerderung'
 
@@ -1284,6 +1284,356 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
   }))
   children.push(p('Aggregation: SuK-Note = Mittel der SuK-Kriterien · Ges-Note = Mittel der Ges-Kriterien. Beide Noten gleichgewichtet, aber nie zu einer Gesamtnote verschmolzen.',
     { run: { color: COLOR.inkMute, size: 14, italics: true } }))
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
+// ===========================================================================
+// KI-Fluency builders (additive). Mirror DocKi / DocLernprompt / DocLernbegleiter.
+// Local accent constants — never the green brand color.
+// ===========================================================================
+
+const KI_AKZENT = '1E3A5F'
+const KI_LIGHT = 'E8F0FE'
+const LP_AKZENT = '3B6FD4'
+const WARN_AKZENT = 'D97706'
+const WARN_LIGHT = 'FFF7ED'
+
+// monospace, shaded prompt box (kopierbarer Prompt)
+function promptBox(text: string): Table {
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    rows: [new TableRow({
+      children: [tcell([
+        p(text, { run: { size: 17, font: 'Consolas', color: '2A2F36' }, spacing: { after: 0, line: 260, lineRule: LineRuleType.AUTO } }),
+      ], {
+        shading: { type: ShadingType.SOLID, color: 'F5F7FA' },
+        borders: {
+          top: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+          bottom: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+          left: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+          right: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+        },
+      })],
+    })],
+  })
+}
+
+function microLabel(text: string, akzent: string): Paragraph {
+  return p(text.toUpperCase(), { run: { color: akzent, bold: true, size: 13 }, spacing: { before: 80, after: 20 } })
+}
+
+export interface BuildKiOpts {
+  ki: KiJson
+  which: 'ki_1' | 'ki_2'
+  abteilung?: string
+  logoPng?: ArrayBuffer | Uint8Array | null
+}
+
+export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): Document | null {
+  const list = ki.assignments || []
+  const a = list.find((x) => x.key === which) || (which === 'ki_1' ? list[0] : list[1])
+  if (!a) return null
+  const akzent = KI_AKZENT
+  const light = KI_LIGHT
+  const num = which === 'ki_1' ? '1' : '2'
+  const docCode = `DOC-KI-${num}`
+  const docTitel = a.titel || `KI-Auftrag ${num}`
+
+  const children: any[] = []
+  children.push(new Paragraph({
+    children: [
+      badgeRun('KI ' + num, akzent),
+      new TextRun({ text: '   KI-Fluency · formativ', color: LP_AKZENT, bold: true, size: 14 }),
+    ],
+    spacing: { after: 120 },
+  }))
+  children.push(h(docTitel, 'title'))
+  if (a.pattern) children.push(p(a.pattern, { run: { color: akzent, bold: true, size: 16, font: 'Consolas' } }))
+  if (a.ziel) children.push(callout('Ziel', a.ziel, akzent, light))
+  if (a.bezug) { children.push(spacer(60)); children.push(callout('Bezug', a.bezug, akzent, light)) }
+
+  // Lehrplan-Bezug (nRLP-Anker) + Leitfragen — am Anfang (parallel zur Preview-Seite 1).
+  const anker = ki.nrlp_anker
+  const lf = ki.ki_leitfragen
+  const skTexte = anker?.schluesselkompetenzen_texte || []
+  if (anker?.thema_text || skTexte.length) {
+    children.push(...sectionHead('Lehrplan-Bezug', 'Worum es geht', akzent))
+    if (anker?.thema_text) children.push(p(anker.thema_text, { run: { size: 18 }, spacing: { after: 80 } }))
+    if (skTexte.length) {
+      children.push(p('SCHLÜSSELKOMPETENZEN DIESER EINHEIT', { run: { color: akzent, bold: true, size: 13 }, spacing: { after: 20 } }))
+      skTexte.forEach((s) => {
+        const [code, ...rest] = s.split(' — ')
+        children.push(new Paragraph({
+          children: [
+            new TextRun({ text: code, bold: true, color: akzent, size: 16 }),
+            ...(rest.length ? [new TextRun({ text: ' — ' + rest.join(' — '), size: 16, color: COLOR.inkSoft })] : []),
+          ],
+          spacing: { after: 30 },
+        }))
+      })
+    }
+  }
+  if (lf) {
+    children.push(...sectionHead('Leitfragen', 'Behalte diese Fragen im Kopf', akzent))
+    ;([['Offen', lf.offen], ['Kritisch', lf.kritisch], ['Vergleichend', lf.vergleichend], ['Urteilend', lf.urteilend]] as Array<[string, string | undefined]>).forEach(([k, v]) => {
+      if (!v) return
+      children.push(new Paragraph({
+        children: [new TextRun({ text: k + ': ', bold: true, color: akzent, size: 16 }), new TextRun({ text: v, size: 16 })],
+        spacing: { after: 30 },
+      }))
+    })
+  }
+
+  if (a.auftrag) {
+    children.push(...sectionHead('01 · Auftrag', 'Das ist deine Aufgabe', akzent))
+    children.push(p(a.auftrag, { run: { size: 20 }, spacing: { after: 100, line: 340, lineRule: LineRuleType.AUTO } }))
+  }
+  if (a.ki_frei_vorher) {
+    children.push(...sectionHead('Ohne KI zuerst', 'Eigene Position festhalten', akzent))
+    children.push(p(a.ki_frei_vorher, { run: { size: 20 } }))
+    children.push(...schreibfeld(17))
+  }
+  if (a.prompt_strategie?.length) {
+    children.push(pageBreak())
+    children.push(...sectionHead('02 · Prompt-Strategie', 'So sprichst du mit der KI', akzent))
+    a.prompt_strategie.forEach((s, i) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: (i + 1) + '. ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
+          new TextRun({ text: s, size: 20 }),
+        ],
+        spacing: { after: 60 }, indent: { left: 200 },
+      }))
+    })
+  }
+
+  if (a.schritte?.length) {
+    children.push(...sectionHead('03 · Schritte', 'Schritt für Schritt', akzent))
+    a.schritte.forEach((s, i) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: String(i + 1).padStart(2, '0') + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
+          new TextRun({ text: s, size: 20 }),
+        ],
+        spacing: { after: 60 }, indent: { left: 200 },
+      }))
+    })
+  }
+  if (a.guetekriterien?.length) {
+    children.push(...sectionHead('04 · Gütekriterien', 'Daran erkennst du gute Arbeit', akzent))
+    a.guetekriterien.forEach((g) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: '☐  ', bold: true, color: akzent, size: 20 }),
+          new TextRun({ text: g.kriterium, bold: true, size: 18 }),
+          new TextRun({ text: ' — ' + g.indikator, size: 18, color: COLOR.inkSoft }),
+        ],
+        spacing: { after: 40 }, indent: { left: 200 },
+      }))
+    })
+    // Notiz-Feld: was hast du mit der KI gemacht?
+    children.push(p('NOTIERE, WAS DU MIT DER KI GEMACHT HAST', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 120, after: 20 } }))
+    children.push(p('Welchen Prompt hast du genutzt, was hat die KI geantwortet, was hast du geprüft oder geändert?', { run: { color: COLOR.inkSoft, size: 16 }, spacing: { after: 40 } }))
+    children.push(...schreibfeld(31))
+  }
+  if (a.reflexion?.length) {
+    children.push(pageBreak())
+    children.push(...sectionHead('05 · Reflexion', 'Denk darüber nach', akzent))
+    a.reflexion.forEach((r, i) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: 'R' + (i + 1) + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
+          new TextRun({ text: r, size: 20 }),
+        ],
+        spacing: { before: 100, after: 40 }, keepNext: true,
+      }))
+      children.push(...schreibfeld(29))
+    })
+  }
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
+export interface BuildLernpromptOpts {
+  lernprompt: LernpromptJson
+  abteilung?: string
+  logoPng?: ArrayBuffer | Uint8Array | null
+}
+
+export function buildLernprompt({ lernprompt, abteilung, logoPng = null }: BuildLernpromptOpts): Document | null {
+  const lp = lernprompt.lernprompt
+  if (!lp) return null
+  const akzent = LP_AKZENT
+  const docCode = 'DOC-LERNPROMPT'
+  const docTitel = 'KI-Lernprompt'
+
+  const children: any[] = []
+  children.push(new Paragraph({
+    children: [
+      badgeRun('P', akzent),
+      new TextRun({ text: '   KI-Fluency · Prompting', color: KI_AKZENT, bold: true, size: 14 }),
+    ],
+    spacing: { after: 120 },
+  }))
+  children.push(h('Prompting lernen', 'title'))
+  if (lp.thema_kontext) children.push(p(lp.thema_kontext, { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 120 } }))
+
+  ;(lp.techniken || []).forEach((t) => {
+    children.push(...sectionHead('Technik', t.titel || '', akzent))
+    if (t.erklaerung) children.push(p(t.erklaerung, { run: { size: 19 } }))
+    if (t.thema_bezug) children.push(p(t.thema_bezug, { run: { italics: true, color: COLOR.inkSoft, size: 17 } }))
+    if (t.beispiel_basis) { children.push(microLabel('Beispiel · Basis', akzent)); children.push(promptBox(t.beispiel_basis)) }
+    if (t.beispiel_fortgeschritten) { children.push(microLabel('Beispiel · fortgeschritten', akzent)); children.push(promptBox(t.beispiel_fortgeschritten)) }
+    if (t.warnung) { children.push(spacer(40)); children.push(callout('Achtung', t.warnung, WARN_AKZENT, WARN_LIGHT)) }
+    const bk = t.baukasten
+    if (bk) {
+      ;([['Rolle', bk.rolle], ['Kontext', bk.kontext], ['Aufgabe', bk.aufgabe], ['Format', bk.format]] as Array<[string, string[] | undefined]>).forEach(([label, items]) => {
+        if (!items?.length) return
+        children.push(new Paragraph({
+          children: [
+            new TextRun({ text: label + ': ', bold: true, color: akzent, size: 16 }),
+            new TextRun({ text: items.join(' · '), size: 16, color: COLOR.inkSoft }),
+          ],
+          spacing: { after: 30 },
+        }))
+      })
+    }
+    children.push(spacer(60))
+  })
+
+  const stack = (label: string, s: typeof lp.stacking_seite_1) => {
+    if (!s) return
+    children.push(...sectionHead(label, 'Prompts stapeln', akzent))
+    if (s.technik_keys?.length) children.push(p(s.technik_keys.join(' · '), { run: { color: akzent, bold: true, size: 14 } }))
+    if (s.logik_und_ziel) children.push(p(s.logik_und_ziel, { run: { size: 18, color: COLOR.inkSoft } }))
+    if (s.prompt_1) { children.push(microLabel('Prompt 1', akzent)); children.push(promptBox(s.prompt_1)) }
+    if (s.prompt_2) { children.push(microLabel('Prompt 2', akzent)); children.push(promptBox(s.prompt_2)) }
+  }
+  children.push(pageBreak())
+  stack('Stacking · 1', lp.stacking_seite_1)
+  stack('Stacking · 2', lp.stacking_seite_2)
+
+  if (lp.prompt_vorlage) {
+    children.push(spacer(120))
+    children.push(new Paragraph({
+      children: [new TextRun({ text: lp.prompt_vorlage, bold: true, color: 'FFFFFF', size: 20 })],
+      alignment: AlignmentType.CENTER,
+      shading: { type: ShadingType.SOLID, color: KI_AKZENT },
+      spacing: { before: 120, after: 120, line: 320, lineRule: LineRuleType.AUTO },
+    }))
+  }
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
+export interface BuildLernbegleiterOpts {
+  lernbegleiter: LernbegleiterJson
+  abteilung?: string
+  logoPng?: ArrayBuffer | Uint8Array | null
+}
+
+export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }: BuildLernbegleiterOpts): Document | null {
+  const lb = lernbegleiter.lernbegleiter
+  if (!lb) return null
+  const akzent = LP_AKZENT
+  const docCode = 'DOC-LERNBEGLEITER'
+  const docTitel = lb.titel || 'KI-Lernbegleiter'
+
+  const children: any[] = []
+  children.push(new Paragraph({
+    children: [
+      badgeRun('L', akzent),
+      new TextRun({ text: '   KI-Fluency · Lernen', color: KI_AKZENT, bold: true, size: 14 }),
+    ],
+    spacing: { after: 120 },
+  }))
+  children.push(h(docTitel, 'title'))
+  if (lb.ziel) children.push(p(lb.ziel, { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 120 } }))
+
+  const frei = lb.ki_frei_zuerst
+  if (frei) {
+    children.push(...sectionHead('Ohne KI zuerst', 'Wo stehst du?', akzent))
+    if (frei.auftrag) children.push(p(frei.auftrag, { run: { size: 20 } }))
+    ;(frei.selbsteinschaetzung || []).forEach((line) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: line, size: 18 }),
+          new TextRun({ text: '   1 ☐  2 ☐  3 ☐  4 ☐  5 ☐', color: akzent, bold: true, size: 16, font: 'Consolas' }),
+        ],
+        spacing: { after: 40 },
+        border: { bottom: { style: BorderStyle.SINGLE, size: 2, color: COLOR.ruleSoft } },
+      }))
+    })
+  }
+
+  if (lb.strategie_karten?.length) {
+    children.push(...sectionHead('Strategien', 'So lernst du mit der KI', akzent))
+    lb.strategie_karten.forEach((s) => {
+      children.push(p(s.technik || '', { run: { bold: true, color: KI_AKZENT, size: 20 }, spacing: { before: 100, after: 20 }, keepNext: true }))
+      if (s.wann) children.push(p('Wann: ' + s.wann, { run: { size: 18, color: COLOR.inkSoft } }))
+      if (s.prompt_basis) { children.push(microLabel('Prompt · Basis', akzent)); children.push(promptBox(s.prompt_basis)) }
+      if (s.prompt_fortgeschritten) { children.push(microLabel('Prompt · fortgeschritten', akzent)); children.push(promptBox(s.prompt_fortgeschritten)) }
+      if (s.warnung) { children.push(spacer(40)); children.push(callout('Achtung', s.warnung, WARN_AKZENT, WARN_LIGHT)) }
+    })
+  }
+
+  if (lb.kn_typ_tracks?.length) {
+    children.push(pageBreak())
+    children.push(...sectionHead('KN-Typen', 'Üben für deinen Kompetenznachweis', akzent))
+    lb.kn_typ_tracks.forEach((t) => {
+      children.push(p(t.label || '', { run: { bold: true, color: KI_AKZENT, size: 19 }, spacing: { before: 100, after: 20 }, keepNext: true }))
+      if (t.uebungsfokus) children.push(p(t.uebungsfokus, { run: { size: 18, color: COLOR.inkSoft } }))
+      if (t.prompt) children.push(promptBox(t.prompt))
+    })
+  }
+
+  if (lb.rubrik_fokus?.length) {
+    children.push(...sectionHead('Rubrik-Fokus', 'Worauf es im KN ankommt', akzent))
+    lb.rubrik_fokus.forEach((r) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: (r.dimension || '') + '  ', bold: true, color: akzent, size: 18 }),
+          ...(r.kriterien?.length ? [new TextRun({ text: '— ' + r.kriterien.join(' · '), size: 16, color: COLOR.inkMute })] : []),
+        ],
+        spacing: { before: 80, after: 20 },
+      }))
+      if (r.so_uebst_du) children.push(p(r.so_uebst_du, { run: { size: 18 } }))
+    })
+  }
+
+  if (lb.integritaet_warnung) {
+    children.push(spacer(80))
+    children.push(callout('Fairness & Integrität', lb.integritaet_warnung, 'DC2626', 'FEF2F2'))
+  }
+
+  if (lb.selbstcheck?.length) {
+    children.push(...sectionHead('Selbstcheck', 'Habe ich gut gelernt?', akzent))
+    lb.selbstcheck.forEach((c) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: '☐  ', bold: true, color: akzent, size: 20 }),
+          new TextRun({ text: c, size: 18 }),
+        ],
+        spacing: { after: 40 }, indent: { left: 200 },
+      }))
+    })
+  }
 
   return new Document({
     creator: 'HKO Renderer',

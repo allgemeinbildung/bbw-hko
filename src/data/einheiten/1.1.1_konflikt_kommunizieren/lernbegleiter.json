@@ -1,0 +1,110 @@
+{
+  "id": "1.1.1_konflikt_kommunizieren_lernbegleiter",
+  "set_ref": "1.1.1_konflikt_kommunizieren_set",
+  "prinzip_ref": "1.1.1_konflikt_kommunizieren_prinzip",
+  "kn_ref": "1.1.1_konflikt_kommunizieren_kn",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und dich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Du nutzt die KI als Lerncoach, um den Stoff dieser Unit zu wiederholen und dich gezielt auf einen möglichen Kompetenznachweis vorzubereiten — ohne dass die KI die Arbeit für dich macht.",
+    "kompetenzversprechen": "Ich erkenne meine Rechte im Konflikt, wähle Kanal und Ton adressatengerecht und führe ein Konfliktgespräch so, dass die Beziehung trägt.",
+    "ki_frei_zuerst": {
+      "auftrag": "Bevor du die KI nutzt: Schätze ehrlich ein, wie sicher du dich bei den drei Teilen des Kompetenzversprechens fühlst. Markiere für jeden Punkt 1 (noch unsicher) bis 5 (sitzt). Genau die Punkte mit 1-3 übst du danach zuerst.",
+      "selbsteinschaetzung": [
+        "Ich erkenne meine Rechte und Pflichten im Konflikt (Lehrvertrag, Lerndokumentation, OR 321a/345a).",
+        "Ich wähle Kanal und Ton bewusst und kann meine Wahl begründen (Kap. 17.3, 20.7).",
+        "Ich führe ein Konfliktgespräch beziehungserhaltend mit Ich-Botschaften und Vier-Ohren-Logik (Kap. 19.2)."
+      ]
+    },
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen (Retrieval)",
+        "wann": "Zum Wiederholen von Begriffen und Regeln — Vier Ohren, Ich-Botschaft, Kanal-Logik, Rechte im Lehrvertrag.",
+        "prompt_basis": "Stell mir nacheinander 5 Prüfungsfragen zum Thema Konflikt und Kommunikation im Lehrverhältnis (Vier-Ohren-Modell, Ich-Botschaft, Kanalwahl, Rechte). Gib mir die Lösung erst, nachdem ich geantwortet habe.",
+        "prompt_fortgeschritten": "Frag mich im Wechsel ab: eine Wissensfrage, dann eine Anwendungsfrage zu einer kurzen Konfliktsituation. Bewerte meine Antwort knapp und stell die nächste Frage erst, wenn ich nachgebessert habe.",
+        "warnung": "Lass dir die Lösung wirklich erst nach deiner Antwort geben — sonst übst du Wiedererkennen statt Abrufen, und im KN steht die Antwort nicht vor dir."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären (Feynman)",
+        "wann": "Wenn du prüfen willst, ob du ein Modell wirklich verstanden hast und nicht nur auswendig kannst.",
+        "prompt_basis": "Ich erkläre dir jetzt das Vier-Ohren-Modell und die Ich-Botschaft mit eigenen Worten. Hör zu und sag mir, wo meine Erklärung Lücken oder Fehler hat — ohne mir gleich die perfekte Version zu liefern.",
+        "prompt_fortgeschritten": "Ich erkläre dir, warum eine Ich-Botschaft im Konflikt anders wirkt als eine Du-Botschaft. Stell mir danach zwei Rückfragen, die ein/e Lehrperson stellen würde, um zu prüfen, ob ich es wirklich verstanden habe.",
+        "warnung": "Wenn die KI dir die fertige Erklärung schenkt, lernst du nichts. Bitte sie um Lücken-Hinweise und Rückfragen, nicht um die Musterlösung."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen (Transfer-Simulation)",
+        "wann": "Zum Üben des Transfers: ob du deine Methode auf einen neuen, unbekannten Konflikt überträgst.",
+        "prompt_basis": "Erfinde einen NEUEN Konfliktfall im Lehrbetrieb (anderer Beruf, andere Situation als ein Brief vom Lehrlingsverantwortlichen). Gib mir nur die Situation. Ich löse sie; danach bewerte meine Lösung nach den Kriterien Fachkorrektheit, Argumentation, ethisches Prinzip und Position/Werthaltung.",
+        "prompt_fortgeschritten": "Gib mir einen neuen Konfliktfall mit einer klaren Zwickmühle zwischen meinen Rechten und der Beziehung zum Betrieb. Nachdem ich entschieden habe, spiel die Gegenseite und prüfe, ob meine Begründung und mein Ton standhalten.",
+        "warnung": "Wichtig: Der Übungsfall muss ein ANDERER sein als die Konfliktsituation deines KN. Die KI darf dir keine Musterlösung für genau deinen KN-Fall geben — du übst die Methode, nicht eine auswendig gelernte Antwort."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Feedback auf einen Übungsversuch",
+        "wann": "Wenn du etwas Eigenes geschrieben hast (Ich-Botschaft, Antwortschreiben, Stellungnahme) und wissen willst, was fehlt.",
+        "prompt_basis": "Hier ist meine Ich-Botschaft für ein Konfliktgespräch: [dein Text]. Sag mir, was nach dem Kriterium «Position/Werthaltung» noch fehlt — nenne nur die Lücken, gib mir KEINE fertige Musterlösung.",
+        "prompt_fortgeschritten": "Hier ist mein Antwortschreiben an den Berufsbildner/in: [dein Text]. Prüfe Aufbau (Anlass-Absicht-Begründung-Schluss), Ich-Botschaften und Ton. Markiere drei Schwächen als Fragen an mich, damit ich selbst nachbessere.",
+        "warnung": "Bitte die KI ausdrücklich um Lücken und Fragen statt um die Verbesserung. Sobald sie deinen Text neu schreibt, ist es ihr Text — und im KN sitzt du allein da."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Repetitionsplan und Karteikarten",
+        "wann": "Zum Strukturieren der letzten Lernphase vor dem KN.",
+        "prompt_basis": "Erstelle mir aus diesen Themen einen Repetitionsplan für drei Lernabende: Rechte im Lehrvertrag, Vier-Ohren-Modell und Ich-Botschaft, Kanalwahl und Register. Pro Abend ein Schwerpunkt mit je einer kurzen Übung.",
+        "prompt_fortgeschritten": "Erstelle mir 10 Karteikarten (Frage / Antwort) zu den Kernbegriffen dieser Unit. Sortiere sie nach Schwierigkeit und markiere, welche eher Wissen und welche eher Anwendung prüfen.",
+        "warnung": "Karteikarten von der KI sind ein Entwurf, kein geprüfter Stoff: Gleiche jede Antwort mit deinem Lehrmittel ab, bevor du damit lernst — gerade bei Rechtsbegriffen."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Mündlich begründen unter Nachfragen — du erklärst, wendest an und bewertest beide Pole eines Konflikts.",
+        "prompt": "Simuliere ein kurzes Fachgespräch: Stell mir 5 mündliche Fragen steigender Schwierigkeit zu einem Konflikt im Lehrverhältnis (erklären, anwenden, beide Pole bewerten, mit meiner Methode vergleichen, Werthaltung begründen). Reagiere auf meine Antwort mit einer Rückfrage, wie es eine Lehrperson täte."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Schriftlicher Transfer: einen neuen Fall analysieren, Kanal begründet wählen, eine Ich-Botschaft und eine Forderung formulieren.",
+        "prompt": "Gib mir einen neuen schriftlichen Konfliktfall mit vier Aufgaben (erklären, unterscheiden, Kanal entscheiden, Forderung in Ich-Form). Ich schreibe meine Lösung; danach prüfst du sie nach den Rubrik-Kriterien und nennst mir Lücken als Fragen — ohne Musterlösung."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Das eigene Prinzip benennen und seinen Transfer reflektieren: Was ist gleich, was anders, wann versagt es?",
+        "prompt": "Ich erkläre dir das Grundprinzip, das ich in dieser Unit gelernt habe. Stell mir die drei Transfer-Fragen (Prinzip in einem Satz, wie es in einem neuen Fall sichtbar wird, wann es versagt) und prüfe, ob meine Antworten konkret genug sind."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Lass dich zu Begriffen (Vier Ohren, Ich-Botschaft, Kanal, Lehrvertrag-Rechte) abfragen und prüfe deine Argumente nach dem 3B-Schema gegen eine KI-Gegenposition — Quellen aber immer im Lehrmittel gegenchecken."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Ethisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Übe an neuen Fällen, offen zu benennen, wo beide Seiten ein berechtigtes Anliegen haben, und deine Position als begründete Ich-Botschaft zu formulieren — und hol dir Feedback auf Lücken, nicht auf eine fertige Lösung."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft dir beim Üben, nicht beim Abgeben. Im Kompetenznachweis sitzt du allein da: Lass dir deshalb nie deine konkrete KN-Lösung schreiben, sondern übe an anderen Fällen und an Lücken-Feedback. Und prüfe jede rechtliche Aussage der KI im Lehrmittel nach.",
+    "selbstcheck": [
+      "Ich habe zuerst KI-frei eingeschätzt, wo ich noch unsicher bin, und genau dort geübt.",
+      "Meine Übungsfälle waren andere als meine mögliche KN-Situation.",
+      "Ich habe die KI um Lücken-Feedback gebeten, nicht um fertige Lösungen.",
+      "Ich habe jede rechtliche Aussage der KI im Lehrmittel oder Gesetzestext nachgeschlagen.",
+      "Ich kann das Grundprinzip dieser Unit in einem Satz aus dem Kopf formulieren."
+    ]
+  }
+}

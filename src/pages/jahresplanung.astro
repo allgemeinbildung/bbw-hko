@@ -4,6 +4,7 @@ import GuestPrintBlock from '../components/GuestPrintBlock.astro'
 import { nrlp, getNrlp } from '../lib/nrlp'
 import { situationenIndex } from '../lib/situationen'
 import einheitenIndex from '../data/einheiten.index.json'
+import { visibleEinheiten, type Role } from '../lib/einheiten'
 import { skFullName } from '../lib/sk-labels'
 import { KN_TYP_OPTIONS } from '../lib/einheiten/kn-typ-labels'
 import { buildCalendar, lehrjahreOf, defaultSchuljahr, parseLehrgang, lehrgangLabel as fmtLehrgang, ALL_LEHRGAENGE, type Lehrgang } from '../lib/jahresplanung/calendar'
@@ -37,6 +38,9 @@ const { data: jpProfile } = await Astro.locals.supabase
   .eq('id', user.id)
   .single()
 const isGuest = jpProfile?.role === 'gast'
+// Sichtbarkeit: Entwurf-Einheiten erscheinen für lp/gast nicht in den Wochen-Pills.
+const jpRole: Role = jpProfile?.role === 'kt1' ? 'kt1' : jpProfile?.role === 'gast' ? 'gast' : 'lp'
+const sichtbareEinheiten = visibleEinheiten(einheitenIndex as any[], jpRole)
 
 // Build a flat lookup { "1.1": { thema, titel, kompetenzen[], sprachmodi[] }, ... }
 type KompetenzInfo = { nr: string; text: string }
@@ -97,7 +101,7 @@ type HfRef = {
   sit_count: number
 }
 const hfByLb: Record<string, HfRef[]> = {}
-for (const e of einheitenIndex as any[]) {
+for (const e of sichtbareEinheiten as any[]) {
   const lb = e.modul as string
   if (!lb) continue
   ;(hfByLb[lb] ??= []).push({

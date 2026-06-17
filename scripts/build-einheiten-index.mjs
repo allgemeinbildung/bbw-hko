@@ -49,6 +49,9 @@ for (const slug of slugs) {
   const kn = readMaybe(join(dir, 'kn.json'))
   const prinzip = readMaybe(join(dir, 'prinzip.json'))
   const set = readMaybe(join(dir, 'set.json'))
+  const ki = readMaybe(join(dir, 'ki.json'))
+  const lernprompt = readMaybe(join(dir, 'lernprompt.json'))
+  const lernbegleiter = readMaybe(join(dir, 'lernbegleiter.json'))
   const begleiterPath = join(dir, 'begleiter.md')
   const begleiterMeta = existsSync(begleiterPath) ? parseFrontmatter(readFileSync(begleiterPath, 'utf8')) : {}
 
@@ -77,8 +80,19 @@ for (const slug of slugs) {
   const abgedeckteKompetenzen = Array.from(abgedeckteSet)
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
 
+  // Sichtbarkeits-Steuerung (KT1-only Drafts). Beide Felder optional in set.json:
+  //  • status: 'entwurf' → ganze Einheit nur für KT1 sichtbar (neue Einheit)
+  //  • entwurf_komponenten: ['ki-fluency', …] → einzelne Bausteine einer sonst
+  //    live geschalteten Einheit nur für KT1 (selektives Publizieren)
+  const status = set?.status === 'entwurf' ? 'entwurf' : 'publiziert'
+  const entwurfKomponenten = Array.isArray(set?.entwurf_komponenten)
+    ? set.entwurf_komponenten.filter((x) => typeof x === 'string')
+    : []
+
   index.push({
     id: slug,
+    status,
+    entwurf_komponenten: entwurfKomponenten,
     kompetenz_nr: kompetenzNr,
     abgedeckte_kompetenzen: abgedeckteKompetenzen,
     slug: slugPart,
@@ -101,16 +115,20 @@ for (const slug of slugs) {
     },
     hat_kn: !!kn,
     hat_begleiter: existsSync(begleiterPath),
+    hat_ki: !!ki,
+    hat_lernprompt: !!lernprompt,
+    hat_lernbegleiter: !!lernbegleiter,
     hybrid_situation_titel: kn?.hybrid_situation?.titel || null,
     kn_typen: (kn?.kn_typen || []).map((t) => ({ typ: t.typ, label: t.label })),
-    bundle_dateien: estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter: existsSync(begleiterPath) }),
+    bundle_dateien: estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter: existsSync(begleiterPath), ki, lernprompt, lernbegleiter }),
   })
 }
 
-function estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter }) {
+function estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter, ki, lernprompt, lernbegleiter }) {
   // 6 DocS (3 letters × 2 modes) × 2 formats (html+docx) = 12
   // KnS variants × 2 formats
   // KnLp × 2 formats
+  // KI-Fluency: each KI-Auftrag × 2 formats, Lernprompt × 2, Lernbegleiter × 2
   // begleiter docx 1
   // readme 1
   let n = 0
@@ -119,6 +137,9 @@ function estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter }) {
   })
   if (kn) n += (kn.kn_typen?.length || 0) * 2
   if (kn && prinzip) n += 2
+  if (ki) n += (ki.assignments?.length || 0) * 2
+  if (lernprompt) n += 2
+  if (lernbegleiter) n += 2
   if (hatBegleiter) n += 1
   n += 1
   return n

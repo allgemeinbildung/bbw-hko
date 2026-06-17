@@ -6,11 +6,14 @@ import { DocS } from './docs/DocS'
 import { DocAustausch } from './docs/DocAustausch'
 import { DocKnS } from './docs/DocKnS'
 import { DocKnLp } from './docs/DocKnLp'
+import { DocKi } from './docs/DocKi'
+import { DocLernprompt } from './docs/DocLernprompt'
+import { DocLernbegleiter } from './docs/DocLernbegleiter'
 import { ABTEILUNGEN } from '../../lib/einheiten'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import type { EinheitFullSet } from '../../lib/einheiten/types'
 
-import { buildDocS, buildAustausch, buildKnS, buildKnLp, docToBlob } from '../../lib/einheiten/docx-builder'
+import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 
 interface Props {
@@ -27,7 +30,7 @@ interface Props {
   readOnly?: boolean
 }
 
-type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -89,6 +92,22 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     if (doc === 'doc-kn-s') {
       if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
       return <DocKnS kn={d.kn} knTyp={knTyp} abteilung={abteilung} edits={edits} onEdit={onEdit} />
+    }
+    if (doc === 'doc-ki-1') {
+      if (!d.ki) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KI-Auftrag 1 fehlt.</p></div>
+      return <DocKi ki={d.ki} which="ki_1" abteilung={abteilung} edits={edits} onEdit={onEdit} />
+    }
+    if (doc === 'doc-ki-2') {
+      if (!d.ki) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KI-Auftrag 2 fehlt.</p></div>
+      return <DocKi ki={d.ki} which="ki_2" abteilung={abteilung} edits={edits} onEdit={onEdit} />
+    }
+    if (doc === 'doc-lernprompt') {
+      if (!d.lernprompt) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Lernprompt fehlt.</p></div>
+      return <DocLernprompt lernprompt={d.lernprompt} abteilung={abteilung} edits={edits} onEdit={onEdit} />
+    }
+    if (doc === 'doc-lernbegleiter') {
+      if (!d.lernbegleiter) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Lernbegleiter fehlt.</p></div>
+      return <DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
     if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
     return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />
@@ -228,6 +247,53 @@ ${cssRenderer}
         } catch (e) { console.warn('begleiter docx failed', e) }
       }
 
+      // KI-Fluency-Dokumente (additiv) — nur wenn die jeweilige Datei existiert.
+      if (d.ki) {
+        for (const which of ['ki_1', 'ki_2'] as const) {
+          if (!d.ki.assignments?.some((a) => a.key === which)) continue
+          const num = which === 'ki_1' ? '1' : '2'
+          const markup = renderToStaticMarkup(<DocKi ki={d.ki} which={which} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
+          const filename = `${prefix}_doc-ki-${num}.html`
+          zip.file(`html/${filename}`, wrap(`DOC-KI-${num} · KI-Fluency`, markup))
+          log.push(`html/${filename}`)
+          try {
+            const docx = buildKi({ ki: d.ki, which, abteilung, logoPng: pngArrayBuffer })
+            if (docx) {
+              zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
+              log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
+            }
+          } catch (e) { console.warn('docx Ki failed', filename, e) }
+        }
+      }
+
+      if (d.lernprompt) {
+        const markup = renderToStaticMarkup(<DocLernprompt lernprompt={d.lernprompt} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
+        const filename = `${prefix}_doc-lernprompt.html`
+        zip.file(`html/${filename}`, wrap('DOC-LERNPROMPT · KI-Fluency', markup))
+        log.push(`html/${filename}`)
+        try {
+          const docx = buildLernprompt({ lernprompt: d.lernprompt, abteilung, logoPng: pngArrayBuffer })
+          if (docx) {
+            zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
+            log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
+          }
+        } catch (e) { console.warn('docx Lernprompt failed', filename, e) }
+      }
+
+      if (d.lernbegleiter) {
+        const markup = renderToStaticMarkup(<DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
+        const filename = `${prefix}_doc-lernbegleiter.html`
+        zip.file(`html/${filename}`, wrap('DOC-LERNBEGLEITER · KI-Fluency', markup))
+        log.push(`html/${filename}`)
+        try {
+          const docx = buildLernbegleiter({ lernbegleiter: d.lernbegleiter, abteilung, logoPng: pngArrayBuffer })
+          if (docx) {
+            zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
+            log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
+          }
+        } catch (e) { console.warn('docx Lernbegleiter failed', filename, e) }
+      }
+
       const readme = buildReadme({ prefix, log, d, when: new Date(), abgedeckteKompetenzen: docAbgedeckte })
       zip.file('README.html', readme)
 
@@ -261,6 +327,17 @@ ${cssRenderer}
   } else if (doc === 'doc-kn-s') {
     docKicker = 'Kompetenznachweis · Schüler/in'
     docName = knTypLabel(knTyp, knTypen.find((t) => t.typ === knTyp)?.label) || 'Kompetenznachweis'
+  } else if (doc === 'doc-ki-1' || doc === 'doc-ki-2') {
+    const which = doc === 'doc-ki-1' ? 'ki_1' : 'ki_2'
+    const a = d.ki?.assignments?.find((x) => x.key === which)
+    docKicker = 'KI-Fluency · formativ'
+    docName = a?.titel || (doc === 'doc-ki-1' ? 'KI-Auftrag 1' : 'KI-Auftrag 2')
+  } else if (doc === 'doc-lernprompt') {
+    docKicker = 'KI-Fluency · Prompting'
+    docName = 'KI-Lernprompt'
+  } else if (doc === 'doc-lernbegleiter') {
+    docKicker = 'KI-Fluency · Lernen'
+    docName = 'KI-Lernbegleiter'
   } else {
     docKicker = 'Kompetenznachweis'
     docName = 'Lehrperson + Bewertung'
@@ -347,6 +424,48 @@ ${cssRenderer}
               </button>
             </div>
           )}
+
+          {(d.ki || d.lernprompt || d.lernbegleiter) && (
+            <div className="wb-tree-group">
+              <div className="wb-tree-head">KI-Fluency</div>
+              {d.ki?.assignments?.some((a) => a.key === 'ki_1') && (
+                <button
+                  className={`wb-item${doc === 'doc-ki-1' ? ' active' : ''}`}
+                  onClick={() => pick('doc-ki-1')}
+                >
+                  <span className="wb-letter wb-letter-ki">1</span>
+                  <span className="wb-item-title">{d.ki?.assignments?.find((a) => a.key === 'ki_1')?.titel || 'KI-Auftrag 1'}</span>
+                </button>
+              )}
+              {d.ki?.assignments?.some((a) => a.key === 'ki_2') && (
+                <button
+                  className={`wb-item${doc === 'doc-ki-2' ? ' active' : ''}`}
+                  onClick={() => pick('doc-ki-2')}
+                >
+                  <span className="wb-letter wb-letter-ki">2</span>
+                  <span className="wb-item-title">{d.ki?.assignments?.find((a) => a.key === 'ki_2')?.titel || 'KI-Auftrag 2'}</span>
+                </button>
+              )}
+              {d.lernprompt && (
+                <button
+                  className={`wb-item${doc === 'doc-lernprompt' ? ' active' : ''}`}
+                  onClick={() => pick('doc-lernprompt')}
+                >
+                  <span className="wb-letter wb-letter-ki">P</span>
+                  <span className="wb-item-title">KI-Lernprompt</span>
+                </button>
+              )}
+              {d.lernbegleiter && (
+                <button
+                  className={`wb-item${doc === 'doc-lernbegleiter' ? ' active' : ''}`}
+                  onClick={() => pick('doc-lernbegleiter')}
+                >
+                  <span className="wb-letter wb-letter-ki">L</span>
+                  <span className="wb-item-title">KI-Lernbegleiter</span>
+                </button>
+              )}
+            </div>
+          )}
         </nav>
 
         {!readOnly && (
@@ -403,6 +522,11 @@ function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { pre
     ['KN Hybrid-Herausforderung', d.kn?.hybrid_situation?.titel || '—'],
     ['Begleitdokument', d.begleiter?.meta?.titel || '—'],
   ]
+  if (d.ki?.assignments?.some((a) => a.key === 'ki_1')) rows.push(['KI-Auftrag 1', d.ki.assignments.find((a) => a.key === 'ki_1')?.titel || '—'])
+  if (d.ki?.assignments?.some((a) => a.key === 'ki_2')) rows.push(['KI-Auftrag 2', d.ki.assignments.find((a) => a.key === 'ki_2')?.titel || '—'])
+  if (d.lernprompt) rows.push(['KI-Lernprompt', 'Prompting lernen'])
+  if (d.lernbegleiter) rows.push(['KI-Lernbegleiter', d.lernbegleiter.lernbegleiter?.titel || '—'])
+  const hatKi = !!(d.ki || d.lernprompt || d.lernbegleiter)
   return `<!DOCTYPE html>
 <html lang="de-CH">
 <head>
@@ -451,6 +575,10 @@ function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { pre
   (Einzelauftrag / Gruppenpuzzle / Plenum) und die Transfer-Aufgabe.</p>
   <p>Zusätzlich liegt das Begleitdokument für die Lehrperson (<code>_begleiter.docx</code>)
   bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.</p>
+${hatKi ? `  <p><strong>KI-Fluency-Dokumente</strong> (komplementär zur Einheit, formativ):
+  zwei KI-Aufträge (<code>_doc-ki-1</code>, <code>_doc-ki-2</code>) zum kritischen
+  KI-Einsatz, der <code>_doc-lernprompt</code> als Prompting-Werkstatt und der
+  <code>_doc-lernbegleiter</code> zur eigenständigen KN-Vorbereitung — je als HTML und Word.</p>` : ''}
 
   <h2>Set-Übersicht</h2>
   <table>

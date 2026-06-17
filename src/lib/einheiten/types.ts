@@ -114,6 +114,9 @@ export interface SetJson {
   }
   // Cluster 3 — optional per-unit override; normally derived from sit_*.nrlp.sprachmodus_ids
   sprachfoerderung?: { sprachmodus_ids?: string[]; hinweis_hoerverstaendnis?: string }
+  // Sichtbarkeit (KT1-only Drafts). Beide optional; fehlend = live für alle.
+  status?: 'entwurf' | 'publiziert'
+  entwurf_komponenten?: string[]   // z. B. ['ki-fluency'] → einzelne Bausteine nur KT1
 }
 
 export interface KnTyp {
@@ -201,8 +204,98 @@ export interface BegleiterMeta {
   [k: string]: string | undefined
 }
 
+// ---------------------------------------------------------------------------
+// KI-Fluency layer (additive) — complementary to the unit, see
+// docs/handoff-ki-renderer-teil-a.md. Permissive on purpose (all optional).
+// Three separate per-unit files: ki.json, lernprompt.json, lernbegleiter.json.
+// ---------------------------------------------------------------------------
+
+export interface KiAssignment {
+  key: 'ki_1' | 'ki_2' | string
+  pattern?: string
+  titel?: string
+  ziel?: string
+  bezug?: string
+  auftrag?: string
+  prompt_strategie?: string[]
+  ki_frei_vorher?: string
+  schritte?: string[]
+  guetekriterien?: { kriterium: string; indikator: string }[]
+  reflexion?: string[]
+}
+export interface KiJson {
+  id?: string
+  modul_titel?: string
+  thema?: string
+  lehrgang?: string
+  timing?: string
+  nrlp_anker?: {
+    thema_text?: string
+    gesellschaft_details?: { aspekt: string; detail: string; kompetenz_anker?: string }[]
+    schluesselkompetenzen_texte?: string[]
+  }
+  ki_leitfragen?: { offen?: string; kritisch?: string; vergleichend?: string; urteilend?: string }
+  assignments?: KiAssignment[]
+}
+
+export interface LernpromptTechnik {
+  key?: string
+  titel?: string
+  erklaerung?: string
+  thema_bezug?: string
+  beispiel_basis?: string
+  beispiel_fortgeschritten?: string
+  warnung?: string
+  baukasten?: { rolle?: string[]; kontext?: string[]; aufgabe?: string[]; format?: string[] }
+}
+export interface LernpromptStacking {
+  technik_keys?: string[]
+  logik_und_ziel?: string
+  prompt_1?: string
+  prompt_2?: string
+}
+export interface LernpromptJson {
+  id?: string
+  lernprompt?: {
+    version?: string
+    thema_kontext?: string
+    techniken?: LernpromptTechnik[]
+    stacking_seite_1?: LernpromptStacking
+    stacking_seite_2?: LernpromptStacking
+    prompt_vorlage?: string
+  }
+}
+
+export interface LernbegleiterStrategie {
+  key?: string
+  technik?: string
+  wann?: string
+  prompt_basis?: string
+  prompt_fortgeschritten?: string
+  warnung?: string
+}
+export interface LernbegleiterJson {
+  id?: string
+  lernbegleiter?: {
+    version?: string
+    titel?: string
+    ziel?: string
+    kompetenzversprechen?: string
+    ki_frei_zuerst?: { auftrag?: string; selbsteinschaetzung?: string[] }
+    strategie_karten?: LernbegleiterStrategie[]
+    kn_typ_tracks?: { typ?: string; label?: string; uebungsfokus?: string; prompt?: string }[]
+    rubrik_fokus?: { dimension?: string; kriterien?: string[]; so_uebst_du?: string }[]
+    integritaet_warnung?: string
+    selbstcheck?: string[]
+  }
+}
+
 export interface EinheitIndexEntry {
   id: string
+  /** Sichtbarkeit der ganzen Einheit. Fehlend/`publiziert` = live; `entwurf` = nur KT1. */
+  status?: 'entwurf' | 'publiziert'
+  /** Bausteine, die (bei sonst live Einheit) nur KT1 sieht. Gruppen-Keys, z. B. `ki-fluency`. */
+  entwurf_komponenten?: string[]
   kompetenz_nr: string
   /** B1 — alle real abgedeckten Kompetenzen (Union der nrlp.nr_primary über A/B/C). */
   abgedeckte_kompetenzen: string[]
@@ -223,6 +316,9 @@ export interface EinheitIndexEntry {
   hf_titel: { A: string | null; B: string | null; C: string | null }
   hat_kn: boolean
   hat_begleiter: boolean
+  hat_ki: boolean
+  hat_lernprompt: boolean
+  hat_lernbegleiter: boolean
   hybrid_situation_titel: string | null
   kn_typen: { typ: string; label: string }[]
   bundle_dateien: number
@@ -237,4 +333,7 @@ export interface EinheitFullSet {
   prinzip: PrinzipJson | null
   set: SetJson | null
   begleiter: { raw: string; meta: BegleiterMeta } | null
+  ki: KiJson | null
+  lernprompt: LernpromptJson | null
+  lernbegleiter: LernbegleiterJson | null
 }

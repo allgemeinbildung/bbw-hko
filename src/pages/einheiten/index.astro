@@ -1,7 +1,7 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
-import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters } from '../../lib/einheiten'
+import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, visibleEinheiten, isEntwurf, draftKomponenten, KOMPONENTEN_LABEL } from '../../lib/einheiten'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -25,7 +25,9 @@ const filters = {
   q: p.get('q') ?? '',
 }
 
-const filtered = applyEinheitenFilters(einheitenIndex, filters)
+// Sichtbarkeit nach Rolle: lp/gast sehen nur publizierte Einheiten, KT1 alle.
+const sichtbar = visibleEinheiten(einheitenIndex, role)
+const filtered = applyEinheitenFilters(sichtbar, filters)
 
 // Filter-UI vorerst ausgeblendet (erst 2 Einheiten, alle T1 / 1.1.1). Auf `true` setzen,
 // sobald Einheiten aus verschiedenen Themen/Kompetenzen dazukommen → reaktiviert das Formular.
@@ -41,7 +43,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     <div>
       <h1 class="text-2xl font-semibold">Unterrichtseinheiten-Katalog</h1>
       <p class="text-sm text-slate-500 mt-1">
-        {SHOW_FILTER ? `${filtered.length} von ${einheitenIndex.length}` : einheitenIndex.length} Unterrichtseinheiten · inkl. 3 Herausforderungen + KN + Begleitdokument
+        {SHOW_FILTER ? `${filtered.length} von ${sichtbar.length}` : sichtbar.length} Unterrichtseinheiten · inkl. 3 Herausforderungen + KN + Begleitdokument
       </p>
     </div>
     <p class="text-xs text-slate-500 max-w-md text-right hidden md:block">
@@ -89,6 +91,20 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
           <h2 class="text-base font-semibold text-slate-900 leading-snug mb-1">
             {e.einheit_titel}
           </h2>
+          {role === 'kt1' && (isEntwurf(e) || draftKomponenten(e).length > 0) && (
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              {isEntwurf(e) && (
+                <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+                  ● Entwurf · nur KT1
+                </span>
+              )}
+              {!isEntwurf(e) && draftKomponenten(e).map((k) => (
+                <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                  ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
+                </span>
+              ))}
+            </div>
+          )}
           <div class="flex flex-wrap gap-1.5 mb-2">
             {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
               <span class="chip chip-blue">Kompetenz {k}</span>
