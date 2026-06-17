@@ -902,7 +902,7 @@ function dossierRechercheBlock(r: DossierRecherche, akzent: string): any[] {
     if (ki!.so_fragst_du) els.push(p(ki!.so_fragst_du, { run: { size: 18 }, indent: { left: 200 } }))
     if (ki!.prompt) els.push(promptBox(ki!.prompt))
     if (ki!.tipp) els.push(p(ki!.tipp, { run: { italics: true, color: COLOR.inkSoft, size: 17 }, indent: { left: 200 } }))
-    els.push(p('Pruefen Sie die Antwort an einer sicheren Quelle.', { run: { italics: true, color: COLOR.inkMute, size: 16 }, indent: { left: 200 } }))
+    els.push(p('Prüfen Sie die Antwort an einer sicheren Quelle.', { run: { italics: true, color: COLOR.inkMute, size: 16 }, indent: { left: 200 } }))
   }
   if (lernen.length) {
     els.push(stripLabel('📚', 'So lernen Sie mit KI:'))
@@ -920,7 +920,7 @@ function dossierRechercheBlock(r: DossierRecherche, akzent: string): any[] {
     els.push(new Paragraph({
       children: [
         new TextRun({ text: '✏  ', size: 18 }),
-        new TextRun({ text: 'Selbst pruefen: ', bold: true, color: akzent, size: 18 }),
+        new TextRun({ text: 'Selbst prüfen: ', bold: true, color: akzent, size: 18 }),
         new TextRun({ text: r.selbst_pruefen, size: 18 }),
       ],
       spacing: { before: 120, after: 40 }, keepNext: true,
@@ -936,7 +936,7 @@ function dossierScaffoldBlock(sc: DossierScaffold, akzent: string): any[] {
   els.push(h(`Herausforderung ${sc.tag || ''} — ${sc.modus_label || sc.sm_id || ''}`, 'section', COLOR.ink))
   const satz = (sc.satzanfaenge || []).filter(Boolean)
   if (satz.length) {
-    els.push(p('Satzanfaenge', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 80, after: 30 } }))
+    els.push(p('Satzanfänge', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 80, after: 30 } }))
     satz.forEach((s) => els.push(new Paragraph({ children: [new TextRun({ text: s, size: 19 })], bullet: { level: 0 }, spacing: { after: 30 } })))
   }
   const schritte = (sc.so_gehst_du_vor || []).filter(Boolean)
@@ -1039,7 +1039,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Sprachhilfe — ein Scaffold pro Seite ----------------
   scaffolds.forEach((sc, i) => {
     children.push(pageBreak())
-    children.push(...sectionHead('D2', i === 0 ? 'So schreiben Sie Schritt fuer Schritt' : 'So schreiben Sie (Fortsetzung)', akzent))
+    children.push(...sectionHead('D2', i === 0 ? 'So schreiben Sie Schritt für Schritt' : 'So schreiben Sie (Fortsetzung)', akzent))
     children.push(...dossierScaffoldBlock(sc, akzent))
   })
 
@@ -1051,7 +1051,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
     if (tw.fachsystematik) children.push(p(tw.fachsystematik, { run: { size: 20 }, spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO } }))
     const aS = (tw.austausch_scaffolds?.satzanfaenge || []).filter(Boolean)
     if (aS.length) {
-      children.push(p('Austausch — Satzanfaenge', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 80, after: 30 } }))
+      children.push(p('Austausch — Satzanfänge', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 80, after: 30 } }))
       aS.forEach((s) => children.push(new Paragraph({ children: [new TextRun({ text: s, size: 19 })], bullet: { level: 0 }, spacing: { after: 30 } })))
     }
   }
@@ -1059,7 +1059,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Glossar (zweispaltig) ----------------
   if (glossar.length) {
     children.push(pageBreak())
-    children.push(...sectionHead('D3', 'Glossar — schwierige Woerter einfach erklaert', akzent))
+    children.push(...sectionHead('D3', 'Glossar — schwierige Wörter einfach erklärt', akzent))
     const glossEntry = (g: typeof glossar[number]): Paragraph => new Paragraph({
       children: [
         new TextRun({ text: g.begriff || '', bold: true, size: 18 }),
@@ -1091,7 +1091,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Notizen ----------------
   children.push(pageBreak())
   children.push(...sectionHead('N', 'Meine Notizen', akzent))
-  children.push(p('Hier kannst du schreiben: Antworten, Fragen oder wichtige Woerter.', { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 120 } }))
+  children.push(p('Hier können Sie schreiben: Antworten, Fragen oder wichtige Wörter.', { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 120 } }))
   children.push(...schreibfeld(200))
 
   return new Document({

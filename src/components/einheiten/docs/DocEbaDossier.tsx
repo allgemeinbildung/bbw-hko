@@ -122,7 +122,7 @@ function RechercheBlock({ r }: { r: DossierRecherche }) {
             {ki!.so_fragst_du && <p className="eba-ki-howto">{ki!.so_fragst_du}</p>}
             {ki!.prompt && <div className="eba-ki-prompt">{ki!.prompt}</div>}
             {ki!.tipp && <p className="eba-ki-tipp">{ki!.tipp}</p>}
-            <p className="eba-rh-note">Pruefen Sie die Antwort an einer sicheren Quelle.</p>
+            <p className="eba-rh-note">Prüfen Sie die Antwort an einer sicheren Quelle.</p>
           </div>
         </div>
       )}
@@ -143,7 +143,7 @@ function RechercheBlock({ r }: { r: DossierRecherche }) {
         <div className="eba-rh eba-rh-pruef">
           <span className="eba-rh-ic" aria-hidden="true">✏</span>
           <div className="eba-pruef-body">
-            <span><b>Selbst pruefen:</b> {r.selbst_pruefen}</span>
+            <span><b>Selbst prüfen:</b> {r.selbst_pruefen}</span>
             <div className="eba-pruef-lines" aria-hidden="true" />
           </div>
         </div>
@@ -173,7 +173,7 @@ function ScaffoldCard({ sc }: { sc: DossierScaffold }) {
       <h3>Herausforderung {sc.tag} — {sc.modus_label || sc.sm_id}</h3>
       {sc.satzanfaenge?.filter(Boolean).length ? (
         <>
-          <div className="eba-scaffold-label">Satzanfaenge</div>
+          <div className="eba-scaffold-label">Satzanfänge</div>
           <ul>{sc.satzanfaenge!.filter(Boolean).map((s, i) => <li key={i}>{s}</li>)}</ul>
         </>
       ) : null}
@@ -276,7 +276,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       titel: 'So schreiben Sie',
       body: (
         <>
-          <SectionHead num="D2">{i === 0 ? 'So schreiben Sie Schritt fuer Schritt' : 'So schreiben Sie (Fortsetzung)'}</SectionHead>
+          <SectionHead num="D2">{i === 0 ? 'So schreiben Sie Schritt für Schritt' : 'So schreiben Sie (Fortsetzung)'}</SectionHead>
           <ScaffoldCard sc={sc} />
         </>
       ),
@@ -296,7 +296,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
             {tw.fachsystematik && <p>{tw.fachsystematik}</p>}
             {tw.austausch_scaffolds?.satzanfaenge?.filter(Boolean).length ? (
               <>
-                <div className="eba-scaffold-label">Austausch — Satzanfaenge</div>
+                <div className="eba-scaffold-label">Austausch — Satzanfänge</div>
                 <ul>{tw.austausch_scaffolds.satzanfaenge!.filter(Boolean).map((s, i) => <li key={i}>{s}</li>)}</ul>
               </>
             ) : null}
@@ -314,7 +314,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       titel: 'Glossar',
       body: (
         <>
-          <SectionHead num="D3">{i === 0 ? 'Glossar — schwierige Woerter einfach erklaert' : 'Glossar (Fortsetzung)'}</SectionHead>
+          <SectionHead num="D3">{i === 0 ? 'Glossar — schwierige Wörter einfach erklärt' : 'Glossar (Fortsetzung)'}</SectionHead>
           <div className="eba-glossar">
             {grp.map((g) => (
               <div className="eba-gloss" key={g.id}>
@@ -335,7 +335,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
     body: (
       <>
         <SectionHead num="N">Meine Notizen</SectionHead>
-        <p className="eba-notizen-hint">Hier kannst du schreiben: Antworten, Fragen oder wichtige Woerter.</p>
+        <p className="eba-notizen-hint">Hier können Sie schreiben: Antworten, Fragen oder wichtige Wörter.</p>
         <div className="eba-notizen" aria-hidden="true" />
       </>
     ),
