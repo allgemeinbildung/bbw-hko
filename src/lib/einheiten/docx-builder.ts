@@ -1024,7 +1024,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Wissen — EIN Nugget pro Seite ----------------
   ;(ordered.length ? ordered : [null]).forEach((n, i) => {
     children.push(pageBreak())
-    children.push(...sectionHead('D1', i === 0 ? 'Ihr Glossar+' : 'Glossar+ (Fortsetzung)', akzent))
+    if (i === 0) children.push(...sectionHead('D1', 'Ihr Glossar+', akzent))
     if (!n) return
     children.push(new Paragraph({
       children: [new TextRun({ text: dossierNuggetCode(n.id), bold: true, color: akzent, size: 18, font: 'Consolas' })],
@@ -1039,7 +1039,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Sprachhilfe — ein Scaffold pro Seite ----------------
   scaffolds.forEach((sc, i) => {
     children.push(pageBreak())
-    children.push(...sectionHead('D2', i === 0 ? 'So schreiben Sie Schritt für Schritt' : 'So schreiben Sie (Fortsetzung)', akzent))
+    if (i === 0) children.push(...sectionHead('D2', 'So schreiben Sie Schritt für Schritt', akzent))
     children.push(...dossierScaffoldBlock(sc, akzent))
   })
 

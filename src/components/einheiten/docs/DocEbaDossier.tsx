@@ -262,7 +262,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       titel: 'Glossar+',
       body: (
         <>
-          <SectionHead num="D1">{i === 0 ? 'Ihr Glossar+' : 'Glossar+ (Fortsetzung)'}</SectionHead>
+          {i === 0 && <SectionHead num="D1">Ihr Glossar+</SectionHead>}
           {grp.map((n) => <NuggetCard key={n.id} n={n} />)}
         </>
       ),
@@ -276,7 +276,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       titel: 'So schreiben Sie',
       body: (
         <>
-          <SectionHead num="D2">{i === 0 ? 'So schreiben Sie Schritt für Schritt' : 'So schreiben Sie (Fortsetzung)'}</SectionHead>
+          {i === 0 && <SectionHead num="D2">So schreiben Sie Schritt für Schritt</SectionHead>}
           <ScaffoldCard sc={sc} />
         </>
       ),
@@ -314,7 +314,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       titel: 'Glossar',
       body: (
         <>
-          <SectionHead num="D3">{i === 0 ? 'Glossar — schwierige Wörter einfach erklärt' : 'Glossar (Fortsetzung)'}</SectionHead>
+          {i === 0 && <SectionHead num="D3">Glossar — schwierige Wörter einfach erklärt</SectionHead>}
           <div className="eba-glossar">
             {grp.map((g) => (
               <div className="eba-gloss" key={g.id}>
