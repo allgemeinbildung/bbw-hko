@@ -21,13 +21,13 @@
     "sprachniveau": "A2"
   },
   "einleitung": {
-    "was_ist_das": "Dieses Glossar+ ist deine Hilfe für die Aufträge. In der EBA gibt es kein Lehrmittel. Hier findest du das Wissen, das du brauchst.",
+    "was_ist_das": "Dieses Glossar+ ist Ihre Hilfe für die Aufträge. In der EBA gibt es kein Lehrmittel. Hier finden Sie das Wissen, das Sie brauchen.",
     "so_benutzt_du_es": [
-      "Du musst das Glossar+ nicht von vorne lesen.",
-      "Hast du eine Frage? Schau beim Anker nach. Der Anker steht beim Auftrag, zum Beispiel «Nugget A-02».",
-      "Schwierige Wörter findest du hinten im Glossar.",
-      "Bei jedem Wissen gibt es Tipps: online suchen, die KI fragen und mit der KI lernen.",
-      "Auf der letzten Seite kannst du selbst Notizen machen."
+      "Sie müssen das Glossar+ nicht von vorne lesen.",
+      "Haben Sie eine Frage? Schauen Sie beim Anker nach. Der Anker steht beim Auftrag, zum Beispiel «Info-Karte A-02».",
+      "Schwierige Wörter finden Sie hinten im Glossar.",
+      "Bei jedem Wissen gibt es Tipps: online suchen, eine KI wie Microsoft Copilot (an unserer Schule verfügbar) fragen und mit der KI lernen.",
+      "Auf der letzten Seite können Sie selbst Notizen machen."
     ]
   },
   "nuggets": [
@@ -35,8 +35,8 @@
       "id": "nugget_A_01",
       "tag": "A",
       "titel": "Was steht im Lehrvertrag?",
-      "inhalt": "Der Lehrvertrag ist ein schriftlicher Vertrag. Er regelt deine Lehre. Im Vertrag stehen Lohn, Ferien und Arbeitszeit. Auch die Probezeit steht darin. Das kantonale Amt prüft und genehmigt den Vertrag. Beide Seiten bekommen ein Exemplar.",
-      "beispiel": "Du findest deinen Lohn pro Monat auf der ersten Seite des Lehrvertrags.",
+      "inhalt": "Der Lehrvertrag ist ein schriftlicher Vertrag. Er regelt Ihre Lehre. Im Vertrag stehen Lohn, Ferien und Arbeitszeit. Auch die Probezeit steht darin. Das kantonale Amt prüft und genehmigt den Vertrag. Beide Seiten bekommen ein Exemplar.",
+      "beispiel": "Sie finden Ihren Lohn pro Monat auf der ersten Seite des Lehrvertrags.",
       "fuer_leitfrage": [
         1
       ],
@@ -61,19 +61,19 @@
           "Lehrvertrag Lohn Ferien Probezeit"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Sag, wer du bist und was du im Vertrag suchst.",
-          "prompt": "Ich bin in der Lehre und habe meinen Lehrvertrag vor mir. Erkläre mir einfach die wichtigsten Punkte: Lohn, Ferien, Arbeitszeit, Probezeit. Wo finde ich was?",
-          "tipp": "Frag nach: «Welcher Punkt ist am Anfang am wichtigsten?»"
+          "so_fragst_du": "Sagen Sie, wer Sie sind und was Sie im Vertrag suchen.",
+          "prompt": "Ich bin in der Lehre und habe meinen Lehrvertrag vor mir. Erklären Sie mir einfach die wichtigsten Punkte: Lohn, Ferien, Arbeitszeit, Probezeit. Wo finde ich was?",
+          "tipp": "Fragen Sie nach: «Welcher Punkt ist am Anfang am wichtigsten?»"
         },
         "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag: Welcher Lohn steht auf der ersten Seite?",
         "ki_lernen": [
           {
-            "strategie": "Lass dich abfragen",
-            "prompt": "Stell mir 4 Fragen zum Lehrvertrag: Wo steht der Lohn? Wer genehmigt den Vertrag? Was ist die Probezeit? Wer unterschreibt? Sag die Antwort erst, nachdem ich geraten habe."
+            "strategie": "Lassen Sie sich abfragen",
+            "prompt": "Stellen Sie mir 4 Fragen zum Lehrvertrag: Wo steht der Lohn? Wer genehmigt den Vertrag? Was ist die Probezeit? Wer unterschreibt? Sagen Sie die Antwort erst, nachdem ich geraten habe."
           },
           {
-            "strategie": "Finde es im Vertrag",
-            "prompt": "Ich tippe dir ab, was auf meiner ersten Vertragsseite steht. Hilf mir, die wichtigsten Punkte zu erkennen und zu ordnen."
+            "strategie": "Finden Sie es im Vertrag",
+            "prompt": "Ich tippe Ihnen ab, was auf meiner ersten Vertragsseite steht. Helfen Sie mir, die wichtigsten Punkte zu erkennen und zu ordnen."
           }
         ]
       }
@@ -82,7 +82,7 @@
       "id": "nugget_A_02",
       "tag": "A",
       "titel": "Probezeit — wie lange?",
-      "inhalt": "Die Probezeit steht im Lehrvertrag. Sie dauert 1 bis 3 Monate. Steht nichts im Vertrag, gelten 3 Monate. Mit Genehmigung der kantonalen Behörde sind bis zu 6 Monate möglich. In der Probezeit schaut ihr, ob die Lehre passt.",
+      "inhalt": "Die Probezeit steht im Lehrvertrag. Sie dauert 1 bis 3 Monate. Steht im Vertrag eine Dauer, gilt diese Dauer. Steht nichts im Vertrag, gelten 3 Monate. Mit Genehmigung der kantonalen Behörde sind bis zu 6 Monate möglich. In der Probezeit prüfen beide Seiten, ob die Lehre passt.",
       "beispiel": "Im Vertrag steht: Probezeit 3 Monate. Dann gilt diese Zeit ab dem ersten Arbeitstag.",
       "fuer_leitfrage": [
         2,
@@ -116,19 +116,19 @@
           "Probezeit verlängern Lehrvertrag"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Sag deine konkrete Situation und frag gezielt nach.",
-          "prompt": "Meine Probezeit dauert 3 Monate. Erkläre mir einfach: Was heisst das für mich? Was passiert am Ende der Probezeit? Wann kann sie länger werden?",
-          "tipp": "Frag nach: «Kann mir in der Probezeit gekündigt werden?»"
+          "so_fragst_du": "Sagen Sie Ihre konkrete Situation und fragen Sie gezielt nach.",
+          "prompt": "Meine Probezeit dauert 3 Monate. Erklären Sie mir einfach: Was heisst das für mich? Was passiert am Ende der Probezeit? Wann kann sie länger werden?",
+          "tipp": "Fragen Sie nach: «Kann mir in der Probezeit gekündigt werden?»"
         },
         "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag: Wie lange dauert Ihre Probezeit?",
         "ki_lernen": [
           {
-            "strategie": "Lass dich abfragen",
-            "prompt": "Stell mir 3 Fragen zur Probezeit (Dauer, Verlängerung, Kündigungsfrist). Gib mir die Lösung erst nach meiner Antwort."
+            "strategie": "Lassen Sie sich abfragen",
+            "prompt": "Stellen Sie mir 3 Fragen zur Probezeit (Dauer, Verlängerung, Kündigungsfrist). Geben Sie mir die Lösung erst nach meiner Antwort."
           },
           {
-            "strategie": "Spiel es durch",
-            "prompt": "Tu so, als wäre ich am Ende der Probezeit unsicher, ob es weitergeht. Stell mir Fragen und hilf mir zu überlegen, was ich tun kann."
+            "strategie": "Spielen Sie es durch",
+            "prompt": "Tun Sie so, als wäre ich am Ende der Probezeit unsicher, ob es weitergeht. Stellen Sie mir Fragen und helfen Sie mir zu überlegen, was ich tun kann."
           }
         ]
       }
@@ -137,7 +137,7 @@
       "id": "nugget_A_03",
       "tag": "A",
       "titel": "Höflich digital nachfragen",
-      "inhalt": "Du verstehst einen Punkt nicht? Dann frag nach. Lies den Begriff zuerst im Dossier. Ein KI-Tool kann dir den Begriff einfach erklären. Prüfe die Antwort aber immer. Dann schreib eine kurze, höfliche Nachricht. Stell eine klare Frage.",
+      "inhalt": "Verstehen Sie einen Punkt nicht? Dann fragen Sie nach. Lesen Sie den Begriff zuerst im Dossier. Ein KI-Tool kann Ihnen den Begriff einfach erklären. Prüfen Sie die Antwort aber immer. Dann schreiben Sie eine kurze, höfliche Nachricht. Stellen Sie eine klare Frage.",
       "beispiel": "«Guten Tag, ich habe eine Frage zur Probezeit in meinem Lehrvertrag.»",
       "fuer_leitfrage": [
         4
@@ -155,19 +155,19 @@
           "höflich nachfragen Vorlage"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Sag, was du fragen willst, und bitte um zwei Versionen zur Auswahl.",
-          "prompt": "Ich möchte meinen Berufsbildner höflich etwas zu meiner Probezeit fragen. Gib mir zwei kurze, höfliche Versionen. Ich wähle eine aus.",
-          "tipp": "Sag: «Mach die zweite Version noch etwas kürzer.»"
+          "so_fragst_du": "Sagen Sie, was Sie fragen wollen, und bitten Sie um zwei Versionen zur Auswahl.",
+          "prompt": "Ich möchte meinen Berufsbildner höflich etwas zu meiner Probezeit fragen. Geben Sie mir zwei kurze, höfliche Versionen. Ich wähle eine aus.",
+          "tipp": "Sagen Sie: «Machen Sie die zweite Version noch etwas kürzer.»"
         },
         "selbst_pruefen": "Schreiben Sie selbst eine kurze, höfliche Frage. Lesen Sie sie laut vor.",
         "ki_lernen": [
           {
-            "strategie": "Gib mir Feedback",
-            "prompt": "Hier ist meine Nachricht: [dein Text]. Sag mir nur, was noch fehlt oder zu unhöflich klingt. Schreib sie nicht für mich neu."
+            "strategie": "Geben Sie mir Feedback",
+            "prompt": "Hier ist meine Nachricht: [Ihr Text]. Sagen Sie mir nur, was noch fehlt oder zu unhöflich klingt. Schreiben Sie sie nicht für mich neu."
           },
           {
-            "strategie": "Spiel es durch",
-            "prompt": "Spiel meinen Berufsbildner. Ich schreibe dir eine höfliche Frage. Antworte so, wie er antworten könnte."
+            "strategie": "Spielen Sie es durch",
+            "prompt": "Spielen Sie meinen Berufsbildner. Ich schreibe Ihnen eine höfliche Frage. Antworten Sie so, wie er antworten könnte."
           }
         ]
       }
@@ -176,8 +176,8 @@
       "id": "nugget_B_01",
       "tag": "B",
       "titel": "Was ist ein Konflikt im Betrieb?",
-      "inhalt": "Ein Konflikt ist ein Streit oder ein Problem mit anderen. Im Betrieb passiert das manchmal. Vielleicht fühlst du dich unfair behandelt. Vielleicht versteht ihr euch falsch. Ein Konflikt ist normal. Wichtig ist, wie du damit umgehst.",
-      "beispiel": "Du bekommst immer nur das Putzen und darfst nie an die Maschine. Das ärgert dich.",
+      "inhalt": "Ein Konflikt ist ein Streit oder ein Problem mit anderen. Im Betrieb passiert das manchmal. Vielleicht fühlen Sie sich unfair behandelt. Vielleicht entsteht ein Missverständnis. Ein Konflikt ist normal. Wichtig ist, wie Sie damit umgehen.",
+      "beispiel": "Sie bekommen immer nur das Putzen und dürfen nie an die Maschine. Das ärgert Sie.",
       "fuer_leitfrage": [
         1
       ],
@@ -193,19 +193,19 @@
           "Konflikt Lehre Beispiel"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Bitte um eine einfache Erklärung mit zwei Beispielen.",
-          "prompt": "Erkläre mir einfach, was ein Konflikt im Betrieb ist. Nenne zwei typische Beispiele aus der Lehre. Sag mir auch, warum Konflikte normal sind.",
-          "tipp": "Frag nach: «Wie bleibe ich im Streit ruhig?»"
+          "so_fragst_du": "Bitten Sie um eine einfache Erklärung mit zwei Beispielen.",
+          "prompt": "Erklären Sie mir einfach, was ein Konflikt im Betrieb ist. Nennen Sie zwei typische Beispiele aus der Lehre. Sagen Sie mir auch, warum Konflikte normal sind.",
+          "tipp": "Fragen Sie nach: «Wie bleibe ich im Streit ruhig?»"
         },
         "selbst_pruefen": "Denken Sie an einen Konflikt, den Sie kennen. Was war das Problem? Schreiben Sie einen Satz.",
         "ki_lernen": [
           {
-            "strategie": "Erklär es selbst",
-            "prompt": "Ich erkläre dir mit eigenen Worten, was ein Konflikt im Betrieb ist. Sag mir nur, was in meiner Erklärung noch fehlt — gib mir nicht gleich die ganze Antwort."
+            "strategie": "Erklären Sie es selbst",
+            "prompt": "Ich erkläre Ihnen mit eigenen Worten, was ein Konflikt im Betrieb ist. Sagen Sie mir nur, was in meiner Erklärung noch fehlt — geben Sie mir nicht gleich die ganze Antwort."
           },
           {
-            "strategie": "Spiel es durch",
-            "prompt": "Beschreib mir eine kleine Konfliktsituation in der Lehre. Ich sage, wie ich reagieren würde. Sag mir danach, was gut war und was ich anders machen könnte."
+            "strategie": "Spielen Sie es durch",
+            "prompt": "Beschreiben Sie mir eine kleine Konfliktsituation in der Lehre. Ich sage, wie ich reagieren würde. Sagen Sie mir danach, was gut war und was ich anders machen könnte."
           }
         ]
       }
@@ -214,8 +214,8 @@
       "id": "nugget_B_02",
       "tag": "B",
       "titel": "Wer hilft mir? Die Kontaktstellen",
-      "inhalt": "Zuerst hilft oft die Berufsbildnerin oder der Berufsbildner. Auch die Lehrperson kann helfen. Bleibt das Problem, hilft eine Stelle von aussen. Das ist das kantonale Berufsbildungsamt (die Lehraufsicht). Diese Stelle vermittelt bei einem Konflikt. In manchen Kantonen gibt es auch eine Schlichtungsstelle.",
-      "beispiel": "Das Berufsbildungsamt hilft, wenn du und dein Betrieb keine Lösung findet.",
+      "inhalt": "Bei einem Problem im Betrieb helfen verschiedene Kontaktstellen. Gehen Sie der Reihe nach vor: 1. die Berufsbildnerin oder der Berufsbildner im Betrieb. 2. die lehrlingsverantwortliche Person im Betrieb. 3. die Lehrperson oder Klassenlehrperson an der Berufsfachschule. 4. das kantonale Berufsbildungsamt (die Lehraufsicht) — diese Stelle vermittelt bei einem Konflikt. 5. in manchen Kantonen zusätzlich eine Schlichtungsstelle. Beginnen Sie oben. Bleibt das Problem, holen Sie Hilfe bei der nächsten Stelle.",
+      "beispiel": "Das Berufsbildungsamt hilft, wenn Sie und Ihr Betrieb keine Lösung finden.",
       "fuer_leitfrage": [
         2
       ],
@@ -244,24 +244,24 @@
       ],
       "recherche": {
         "suchbegriffe": [
-          "kantonales Berufsbildungsamt",
-          "Lehraufsicht Kanton",
+          "Berufsbildungsamt [Ihr Kanton]",
+          "Lehraufsicht [Ihr Kanton] Kontakt",
           "Hilfe Konflikt Lehrbetrieb Amt"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Nenne deinen Kanton — dann wird die Antwort genau.",
+          "so_fragst_du": "Nennen Sie Ihren Kanton — dann wird die Antwort genau.",
           "prompt": "Ich mache eine Lehre im Kanton [Ihr Kanton]. Welche Stelle hilft bei Konflikten im Lehrbetrieb? Wie heisst sie genau und wie erreiche ich sie?",
-          "tipp": "Prüfe die Antwort: Suche den Namen der Stelle auch auf berufsbildung.ch."
+          "tipp": "Prüfen Sie die Antwort: Suchen Sie den Namen der Stelle auch auf berufsbildung.ch."
         },
         "selbst_pruefen": "Finden Sie heraus, wie das Berufsbildungsamt in Ihrem Kanton heisst und wo es ist.",
         "ki_lernen": [
           {
-            "strategie": "Finde es für mich",
-            "prompt": "Hilf mir, die richtige Stelle zu finden. Stell mir zuerst 2 Fragen zu meiner Situation und sag mir dann, an wen ich mich zuerst wende."
+            "strategie": "Finden Sie es für mich",
+            "prompt": "Helfen Sie mir, die richtige Stelle zu finden. Stellen Sie mir zuerst 2 Fragen zu meiner Situation und sagen Sie mir dann, an wen ich mich zuerst wende."
           },
           {
-            "strategie": "Lass dich abfragen",
-            "prompt": "Frag mich ab: Wer hilft zuerst? Wer hilft, wenn es im Betrieb nicht besser wird? Gib die Lösung erst nach meiner Antwort."
+            "strategie": "Lassen Sie sich abfragen",
+            "prompt": "Fragen Sie mich ab: Wer hilft zuerst? Wer hilft, wenn es im Betrieb nicht besser wird? Geben Sie mir die Lösung erst nach meiner Antwort."
           }
         ]
       }
@@ -270,7 +270,7 @@
       "id": "nugget_B_03",
       "tag": "B",
       "titel": "Schritt für Schritt Hilfe holen",
-      "inhalt": "Bleib zuerst ruhig. Sammle die Fakten: Was ist passiert? Seit wann? Überlege, wer helfen kann. Schreib eine sachliche Nachricht. Beschreibe das Problem kurz und klar. Bitte höflich um Hilfe. Nenne keine Schimpfwörter.",
+      "inhalt": "Bleiben Sie zuerst ruhig. Sammeln Sie die Fakten: Was ist passiert? Seit wann? Überlegen Sie, wer helfen kann. Schreiben Sie eine sachliche Nachricht. Beschreiben Sie das Problem kurz und klar. Bitten Sie höflich um Hilfe. Nennen Sie keine Schimpfwörter.",
       "beispiel": "«Guten Tag, ich bin Lernende/r und brauche Hilfe. In meinem Betrieb gibt es folgendes Problem: …»",
       "fuer_leitfrage": [
         3,
@@ -298,19 +298,19 @@
           "sachliche Nachricht schreiben"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Bitte um eine kurze Schritt-Liste statt einem langen Text.",
-          "prompt": "Ich habe ein Problem im Betrieb und will Hilfe holen. Mach mir eine einfache Checkliste: Was mache ich zuerst, was dann? Halte jeden Schritt kurz.",
-          "tipp": "Frag nach: «Was sollte ich NICHT in die Nachricht schreiben?»"
+          "so_fragst_du": "Bitten Sie um eine kurze Schritt-Liste statt einem langen Text.",
+          "prompt": "Ich habe ein Problem im Betrieb und will Hilfe holen. Machen Sie mir eine einfache Checkliste: Was mache ich zuerst, was dann? Halten Sie jeden Schritt kurz.",
+          "tipp": "Fragen Sie nach: «Was sollte ich NICHT in die Nachricht schreiben?»"
         },
         "selbst_pruefen": "Schreiben Sie die drei wichtigsten Fakten zu einem Problem auf: Was? Seit wann? Wer ist dabei?",
         "ki_lernen": [
           {
-            "strategie": "Gib mir Feedback",
-            "prompt": "Hier sind meine 3 Fakten zum Problem: [deine Fakten]. Sag mir, ob etwas Wichtiges fehlt, bevor ich Hilfe hole."
+            "strategie": "Geben Sie mir Feedback",
+            "prompt": "Hier sind meine 3 Fakten zum Problem: [Ihre Fakten]. Sagen Sie mir, ob etwas Wichtiges fehlt, bevor ich Hilfe hole."
           },
           {
-            "strategie": "Spiel es durch",
-            "prompt": "Spiel die Beratungsstelle. Ich schildere mein Problem in 3 Sätzen. Frag nach, was du noch wissen musst."
+            "strategie": "Spielen Sie es durch",
+            "prompt": "Spielen Sie die Beratungsstelle. Ich schildere mein Problem in 3 Sätzen. Fragen Sie nach, was Sie noch wissen müssen."
           }
         ]
       }
@@ -336,11 +336,11 @@
         "Kurze Sätze, ein Gedanke pro Satz"
       ],
       "so_gehst_du_vor": [
-        "1. Markiere den Punkt, den du nicht verstehst.",
-        "2. Lies den Begriff im Dossier.",
-        "3. Frag ein KI-Tool nach einer einfachen Erklärung. Prüfe die Antwort.",
-        "4. Schreib eine kurze, höfliche Nachricht mit deiner Frage.",
-        "5. Lies die Nachricht laut. Sind die Sätze kurz?"
+        "1. Markieren Sie den Punkt, den Sie nicht verstehen.",
+        "2. Lesen Sie den Begriff im Dossier.",
+        "3. Fragen Sie ein KI-Tool nach einer einfachen Erklärung. Prüfen Sie die Antwort.",
+        "4. Schreiben Sie eine kurze, höfliche Nachricht mit Ihrer Frage.",
+        "5. Lesen Sie die Nachricht laut. Sind die Sätze kurz?"
       ]
     },
     {
@@ -355,23 +355,23 @@
       "strategien": [
         "Zuerst Fakten sammeln.",
         "Sachlich bleiben — keine Schuldzuweisung.",
-        "Klar sagen, was du dir wünschst."
+        "Klar sagen, was Sie sich wünschen."
       ],
       "struktur": [
         "Wer bin ich – Problem – Bitte um Hilfe",
         "Kurze Sätze, ein Gedanke pro Satz"
       ],
       "so_gehst_du_vor": [
-        "1. Atme durch und bleib ruhig.",
-        "2. Schreib die Fakten auf: Was? Seit wann?",
-        "3. Wähle die richtige Stelle (siehe Nugget B-02).",
-        "4. Schreib eine sachliche Nachricht mit einer klaren Bitte.",
-        "5. Prüfe: ruhig, klar, höflich?"
+        "1. Atmen Sie durch und bleiben Sie ruhig.",
+        "2. Schreiben Sie die Fakten auf: Was? Seit wann?",
+        "3. Wählen Sie die richtige Stelle (siehe Info-Karte B-02).",
+        "4. Schreiben Sie eine sachliche Nachricht mit einer klaren Bitte.",
+        "5. Prüfen Sie: ruhig, klar, höflich?"
       ]
     }
   ],
   "transfer_wissensblatt": {
-    "fachsystematik": "Bei Fragen und Konflikten in der Arbeitswelt gibt es zwei Wege: selbst klären oder Hilfe holen. Zuerst prüfst du, was du selbst lösen kannst. Bei einem echten Problem holst du Hilfe bei der zuständigen Stelle. So bleibst du handlungsfähig und kennst deine Rechte.",
+    "fachsystematik": "Bei Fragen und Konflikten in der Arbeitswelt gibt es zwei Wege: selbst klären oder Hilfe holen. Zuerst prüfen Sie, was Sie selbst lösen können. Bei einem echten Problem holen Sie Hilfe bei der zuständigen Stelle. So bleiben Sie handlungsfähig und kennen Ihre Rechte.",
     "prinzip_in_einfach": "Erst selbst prüfen. Bei einem echten Problem Hilfe holen. Immer bei der richtigen Stelle.",
     "austausch_scaffolds": {
       "satzanfaenge": [
@@ -380,10 +380,10 @@
         "«Schwierig wäre für mich …, weil …»"
       ],
       "so_tauschst_du_aus": [
-        "1. Erzähl deinen Fall in 90 Sekunden.",
-        "2. Hör den anderen genau zu.",
-        "3. Findet zusammen die gemeinsame Regel.",
-        "4. Sag, welcher Fall für dich schwierig wäre."
+        "1. Erzählen Sie Ihren Fall in 90 Sekunden.",
+        "2. Hören Sie den anderen genau zu.",
+        "3. Finden Sie zusammen die gemeinsame Regel.",
+        "4. Sagen Sie, welcher Fall für Sie schwierig wäre."
       ]
     }
   },
@@ -391,14 +391,14 @@
     {
       "id": "lehrvertrag",
       "begriff": "Lehrvertrag",
-      "erklaerung_a2": "Ein schriftlicher Vertrag für deine Lehre. Er regelt Lohn, Ferien, Arbeitszeit und Probezeit.",
-      "beispiel": "Du unterschreibst den Lehrvertrag vor dem ersten Arbeitstag."
+      "erklaerung_a2": "Ein schriftlicher Vertrag für Ihre Lehre. Er regelt Lohn, Ferien, Arbeitszeit und Probezeit.",
+      "beispiel": "Sie unterschreiben den Lehrvertrag vor dem ersten Arbeitstag."
     },
     {
       "id": "probezeit",
       "begriff": "Probezeit",
-      "erklaerung_a2": "Die erste Zeit der Lehre. Ihr schaut, ob die Lehre passt. Sie dauert 1 bis 3 Monate.",
-      "beispiel": "In der Probezeit lernst du den Betrieb kennen."
+      "erklaerung_a2": "Die erste Zeit der Lehre. Beide Seiten schauen, ob die Lehre passt. Sie dauert 1 bis 3 Monate.",
+      "beispiel": "In der Probezeit lernen Sie den Betrieb kennen."
     },
     {
       "id": "kuendigung",
@@ -416,25 +416,25 @@
       "id": "konflikt",
       "begriff": "Konflikt",
       "erklaerung_a2": "Ein Streit oder ein Problem mit anderen Menschen.",
-      "beispiel": "Ein Konflikt mit dem Betrieb über deine Aufgaben."
+      "beispiel": "Ein Konflikt mit dem Betrieb über Ihre Aufgaben."
     },
     {
       "id": "kontaktstelle",
       "begriff": "Kontaktstelle",
-      "erklaerung_a2": "Eine Stelle, die dir bei einem Problem hilft.",
+      "erklaerung_a2": "Eine Stelle, die Ihnen bei einem Problem hilft.",
       "beispiel": "Das Berufsbildungsamt ist eine wichtige Kontaktstelle."
     },
     {
       "id": "lehraufsicht",
       "begriff": "Lehraufsicht",
       "erklaerung_a2": "Die kantonale Stelle, die über die Lehre wacht. Sie hilft bei Konflikten.",
-      "beispiel": "Die Lehraufsicht vermittelt zwischen dir und dem Betrieb."
+      "beispiel": "Die Lehraufsicht vermittelt zwischen Ihnen und dem Betrieb."
     },
     {
       "id": "berufsbildungsamt",
       "begriff": "Berufsbildungsamt",
       "erklaerung_a2": "Das kantonale Amt für die Berufslehre. Es genehmigt den Lehrvertrag und hilft bei Problemen.",
-      "beispiel": "Das Berufsbildungsamt deines Kantons findest du im Internet."
+      "beispiel": "Das Berufsbildungsamt Ihres Kantons finden Sie im Internet."
     },
     {
       "id": "schlichtungsstelle",
@@ -445,14 +445,14 @@
     {
       "id": "berufsbildner",
       "begriff": "Berufsbildner/in",
-      "erklaerung_a2": "Die Person im Betrieb, die dich ausbildet und begleitet.",
-      "beispiel": "Deine Berufsbildnerin zeigt dir die Arbeit im Betrieb."
+      "erklaerung_a2": "Die Person im Betrieb, die Sie ausbildet und begleitet.",
+      "beispiel": "Ihre Berufsbildnerin zeigt Ihnen die Arbeit im Betrieb."
     },
     {
       "id": "ki_tool",
       "begriff": "KI-Tool",
-      "erklaerung_a2": "Ein Computer-Programm, das Fragen beantwortet. Du musst die Antwort aber prüfen.",
-      "beispiel": "Ein KI-Tool erklärt dir einen schwierigen Begriff in einfachen Worten."
+      "erklaerung_a2": "Ein Computer-Programm, das Fragen beantwortet. Sie müssen die Antwort aber prüfen.",
+      "beispiel": "Ein KI-Tool erklärt Ihnen einen schwierigen Begriff in einfachen Worten."
     }
   ],
   "template": "dossier_eba_v1",

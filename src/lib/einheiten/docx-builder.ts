@@ -1008,7 +1008,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
     children.push(...sectionHead('Einleitung', 'Was ist das Glossar+?', akzent))
     if (einleitung.was_ist_das) children.push(p(einleitung.was_ist_das, { run: { size: 20 }, spacing: { after: 100, line: 340, lineRule: LineRuleType.AUTO } }))
     if ((einleitung.so_benutzt_du_es?.length || 0) > 0) {
-      children.push(h('So benutzt du es', 'sub', COLOR.ink))
+      children.push(h('So benutzen Sie es', 'sub', COLOR.ink))
       einleitung.so_benutzt_du_es!.filter(Boolean).forEach((s) => {
         children.push(new Paragraph({
           children: [
@@ -1024,7 +1024,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Wissen — EIN Nugget pro Seite ----------------
   ;(ordered.length ? ordered : [null]).forEach((n, i) => {
     children.push(pageBreak())
-    children.push(...sectionHead('D1', i === 0 ? 'Dein Glossar+' : 'Glossar+ (Fortsetzung)', akzent))
+    children.push(...sectionHead('D1', i === 0 ? 'Ihr Glossar+' : 'Glossar+ (Fortsetzung)', akzent))
     if (!n) return
     children.push(new Paragraph({
       children: [new TextRun({ text: dossierNuggetCode(n.id), bold: true, color: akzent, size: 18, font: 'Consolas' })],
@@ -1039,7 +1039,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   // ---------------- Sprachhilfe — ein Scaffold pro Seite ----------------
   scaffolds.forEach((sc, i) => {
     children.push(pageBreak())
-    children.push(...sectionHead('D2', i === 0 ? 'So schreibst du Schritt fuer Schritt' : 'So schreibst du (Fortsetzung)', akzent))
+    children.push(...sectionHead('D2', i === 0 ? 'So schreiben Sie Schritt fuer Schritt' : 'So schreiben Sie (Fortsetzung)', akzent))
     children.push(...dossierScaffoldBlock(sc, akzent))
   })
 
@@ -1100,6 +1100,16 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
     description: docCode,
     sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
   })
+}
+
+// SuS-Ansicht: Prozentzahlen (90 % / 100 %) nur im LP-Material; hier Wort-Labels.
+// Spiegelt susNiveauLabel() in DocKnS.tsx. Daten (kn.json) bleiben unveraendert.
+function susNiveauLabel(label: string): string {
+  const l = (label || '').toLowerCase()
+  if (l.includes('100')) return 'Vollständig & selbstständig'
+  if (l.includes('unter')) return 'Grundanforderung noch nicht erfüllt'
+  if (l.includes('90')) return 'Grundanforderung erfüllt'
+  return label.replace(/\s*\d+\s*%/g, '').trim() || label
 }
 
 export interface BuildKnSOpts {
@@ -1226,7 +1236,7 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
   kn.rubrik_shared?.niveaubaender?.forEach((n) => {
     children.push(new Paragraph({
       children: [
-        new TextRun({ text: n.label + '   ', bold: true, color: akzent, size: 18 }),
+        new TextRun({ text: susNiveauLabel(n.label) + '   ', bold: true, color: akzent, size: 18 }),
         new TextRun({ text: n.definition, size: 18 }),
       ],
       spacing: { after: 80 },

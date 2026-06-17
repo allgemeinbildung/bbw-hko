@@ -80,7 +80,7 @@ quellen_json:
 
 **Dossier-Anker** (statt Lehrmittel)
 
-| Herausforderung | Nuggets | Inhalt |
+| Herausforderung | Info-Karten | Inhalt |
 |---|---|---|
 | A | A-01..A-03 | Lehrvertrag, Probezeit, höflich nachfragen |
 | B | B-01..B-03 | Konflikt, Kontaktstellen, Hilfe holen |
@@ -124,7 +124,7 @@ quellen_json:
 
 **Leitfragen mit Coaching**
 - **LF1-LF2 (verstehen):** `[!coaching]` Lass zuerst das Dossier lesen, dann frei formulieren. Begriff „Probezeit" gemeinsam klären.
-- **LF3 (anwenden):** `[!coaching]` Jede/r prüft den eigenen Vertrag. Wer keinen dabei hat, nimmt das Beispiel aus Nugget A-02.
+- **LF3 (anwenden):** `[!coaching]` Jede/r prüft den eigenen Vertrag. Wer keinen dabei hat, nimmt das Beispiel aus Info-Karte A-02.
 - **LF4 (Nachricht):** `[!coaching]` Satzanfänge aus dem Dossier anbieten. `[!warnung]` Typischer Stolperstein: zu lange, unhöfliche Nachricht — auf kurze Sätze achten.
 
 **Scaffold-Werkstatt**
@@ -184,7 +184,7 @@ Freundliche Grüsse, [Name]
 | Auswerten | Anfragen vergleichen | Partner |
 
 **Leitfragen mit Coaching**
-- **LF1-LF2 (verstehen):** `[!coaching]` Sammelt zuerst die Kontaktstellen aus Nugget B-02 an der Tafel.
+- **LF1-LF2 (verstehen):** `[!coaching]` Sammelt zuerst die Kontaktstellen aus Info-Karte B-02 an der Tafel.
 - **LF3 (anwenden):** `[!coaching]` Erster Schritt ist oft ein ruhiges Gespräch — danach erst eine Stelle von aussen.
 - **LF4 (Anfrage):** `[!warnung]` Stolperstein: Schimpfwörter / Schuldzuweisung. Auf sachliche Sprache achten.
 
@@ -285,13 +285,25 @@ Drei Sozialformen (eigenes Set-Dokument): **EA** (Einzelauftrag), **GA** (Gruppe
 ## Sektion „Wissens-Dossier (A2)"
 
 EBA hat kein Lehrmittel — das **Dossier** (`dossier.json`) liefert das ganze Wissen:
-- 6 Wissens-Nuggets (A-01..A-03, B-01..B-03), je an eine Leitfrage gekoppelt.
+- 6 Wissens-Info-Karten (A-01..A-03, B-01..B-03), je an eine Leitfrage gekoppelt.
 - Sprachmodi-Scaffolds (digitale Nachricht / Anfrage, Schritt für Schritt).
 - Transfer-Wissensblatt + Austausch-Scaffolds.
 - A2-Glossar (Lehrvertrag, Probezeit, Kündigung, Kontaktstelle, Lehraufsicht …).
 
 > [!warnung] Für die LP zu prüfen
 > Der **genaue Name und die Kontaktdaten der zuständigen kantonalen Stelle** variieren je Kanton (im Dossier als `lp_prüfen` markiert). Bitte vor dem Einsatz für deinen Kanton einsetzen (z. B. Mittelschul- und Berufsbildungsamt). Alle übrigen Rechtsangaben sind web-validiert (OR Art. 344a/346, berufsbildung.ch).
+
+## Sektion „Von der Lehrperson bereitzustellen"
+
+Diese Materialien setzen die Aufträge voraus, liegen aber **nicht** als fertiges SuS-Blatt oder als Info-Karte im Dossier vor. Bitte vor dem Einsatz bereitstellen:
+
+| Material | Für welche Herausforderung | Quelle / Vorlage |
+|---|---|---|
+| Eigener Lehrvertrag der Lernenden (Kopie/Foto) | A (LF3 „eigenen Fall prüfen"), KN | Lernende bringen ihn mit; wer keinen hat, nutzt das Beispiel in Info-Karte A-02 |
+| Zugang zu einem KI-Tool (z. B. Microsoft Copilot) | A, B (digitale Nachricht mit KI-Check) | Schullizenz / schulseitig verfügbares Tool |
+
+> [!hinweis] Kontaktstellen — self-contained im Dossier
+> Die **Kontaktstellen-Liste** ist als abgesetzte Liste in **Info-Karte B-02** enthalten — nichts auszuteilen. Den **genauen Namen + die Kontaktdaten** der zuständigen kantonalen Stelle finden die Lernenden **selbst**: Info-Karte B-02 führt dazu den Such-Tipp «Berufsbildungsamt [Ihr Kanton]», den KI-Prompt mit «[Ihr Kanton]» und den Selbst-Prüf-Auftrag. Du musst die kantonale Stelle also **nicht** mehr vorbereiten — höchstens als Fallback, wenn die Recherche stockt (z. B. Kanton an die Tafel schreiben).
 
 ## Anhang
 

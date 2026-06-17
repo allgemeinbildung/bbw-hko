@@ -15,6 +15,17 @@ function findKnTyp(kn: KnJson, typ: string): KnTyp | undefined {
   return kn.kn_typen?.find((t) => t.typ === typ) || kn.kn_typen?.[0]
 }
 
+// SuS-Ansicht: Prozentzahlen (90 % / 100 %) sind ohne Legende kryptisch und gehoeren
+// nur ins LP-Material (Begleiter / DocKnLp). Hier zeigen wir Wort-Labels statt Prozente.
+// Die Daten (kn.json niveaubaender) bleiben unveraendert; nur diese SuS-Anzeige uebersetzt.
+function susNiveauLabel(label: string): string {
+  const l = (label || '').toLowerCase()
+  if (l.includes('100')) return 'Vollständig & selbstständig'
+  if (l.includes('unter')) return 'Grundanforderung noch nicht erfüllt'
+  if (l.includes('90')) return 'Grundanforderung erfüllt'
+  return label.replace(/\s*\d+\s*%/g, '').trim() || label
+}
+
 function KnSPage({ kn, knTyp, abteilung, pageNum, pageTotal, children }: { kn: KnJson; knTyp: KnTyp; abteilung?: string; pageNum: number; pageTotal: number; children: ReactNode }) {
   return (
     <A4Page
@@ -241,12 +252,12 @@ function RubrikPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
         </tbody>
       </table>
       <h4 style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '7mm', marginBottom: '2mm' }}>
-        Niveaubänder — was 90% / 100% heisst
+        Niveaubänder — was sie bedeuten
       </h4>
       <div className="niveau-legende">
         {rs.niveaubaender?.map((n, i) => (
           <div className="niv" key={i}>
-            <div className="label">{n.label}</div>
+            <div className="label">{susNiveauLabel(n.label)}</div>
             <div className="def">{n.definition}</div>
           </div>
         ))}

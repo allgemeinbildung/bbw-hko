@@ -58,28 +58,28 @@
     {
       "nr": 1,
       "bloom": "Verstehen",
-      "knoten_ref": "Dossier | Nugget B-01",
+      "knoten_ref": "Dossier | Info-Karte B-01",
       "text": "Erklären Sie in zwei Sätzen: Was ist ein Konflikt im Betrieb?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
-      "knoten_ref": "Dossier | Nugget B-02",
+      "knoten_ref": "Dossier | Info-Karte B-02",
       "text": "Wer kann bei einem Konflikt helfen? Nennen Sie zwei Stellen.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
-      "knoten_ref": "Dossier | Nugget B-03",
+      "knoten_ref": "Dossier | Info-Karte B-03",
       "text": "Prüfen Sie Ihren Fall. Welcher erste Schritt passt? Begründen Sie kurz.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
-      "knoten_ref": "Dossier | Nugget B-03",
+      "knoten_ref": "Dossier | Info-Karte B-03",
       "text": "Schreiben Sie eine kurze digitale Nachricht an eine Kontaktstelle. Schildern Sie Ihr Problem sachlich.",
       "feld_hoehe_mm": 15
     }
@@ -232,7 +232,7 @@
     "hint": "Manchmal hilft ein ruhiges Gespräch. Manchmal braucht es eine Stelle von aussen."
   },
   "dekontextualisierung": {
-    "frage": "Wo holst du dir sonst noch Hilfe von der richtigen Stelle?",
+    "frage": "Wo holen Sie sich sonst noch Hilfe von der richtigen Stelle?",
     "ziel": "Ich prüfe zuerst, was ich selbst lösen kann, und hole bei einem echten Problem Hilfe."
   },
   "zirkularitaet_anker": {
@@ -244,7 +244,7 @@
       "ref": "Dossier",
       "titel": "Was ist ein Konflikt im Betrieb?",
       "unterueberschrift": "Konflikt erkennen",
-      "nugget_ref": "Nugget B-01",
+      "nugget_ref": "Info-Karte B-01",
       "fuer_leitfrage": [
         1
       ]
@@ -253,7 +253,7 @@
       "ref": "Dossier",
       "titel": "Wer hilft mir? Die Kontaktstellen",
       "unterueberschrift": "Zuständige Stellen",
-      "nugget_ref": "Nugget B-02",
+      "nugget_ref": "Info-Karte B-02",
       "fuer_leitfrage": [
         2
       ]
@@ -262,7 +262,7 @@
       "ref": "Dossier",
       "titel": "Schritt für Schritt Hilfe holen",
       "unterueberschrift": "Vorgehen + Nachricht",
-      "nugget_ref": "Nugget B-03",
+      "nugget_ref": "Info-Karte B-03",
       "fuer_leitfrage": [
         3,
         4
@@ -297,7 +297,7 @@
   },
   "prinzip_handoff": {
     "kernkonzept": "Konflikt sachlich schildern, richtige Stelle wählen",
-    "dossier_anker": "Dossier Nuggets B-01..B-03",
+    "dossier_anker": "Dossier Info-Karten B-01..B-03",
     "kn_aktivierung": "Im KN kommt ein Konflikt wieder vor — zusammen mit einer unklaren Vertragsstelle.",
     "transfer_check": "Wählt die lernende Person die passende Stelle und bleibt sachlich?"
   },

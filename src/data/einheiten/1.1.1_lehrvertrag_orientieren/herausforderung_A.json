@@ -50,7 +50,7 @@
     "betrieb": "Malergeschäft Frei AG",
     "ort": "Winterthur"
   },
-  "situation_text": "Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite bei der Malergeschäft Frei AG in Winterthur. Heute lese ich meinen Lehrvertrag genau durch. Bei der Probezeit verstehe ich einen Punkt nicht. Im Vertrag steht eine andere Dauer, als ich dachte. Ich bin unsicher. Soll ich einfach nichts sagen? Oder soll ich nachfragen? Ich will nicht dumm wirken. Aber ich will es richtig verstehen.",
+  "situation_text": "Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite bei der Malergeschäft Frei AG in Winterthur. Heute lese ich meinen Lehrvertrag genau durch. Bei der Probezeit verstehe ich einen Punkt nicht. Im Vertrag steht eine andere Dauer, als ich dachte. Ich bin unsicher. Soll ich einfach nichts sagen? Oder soll ich nachfragen? Ich habe Angst, eine dumme Frage zu stellen. Aber ich will es richtig verstehen.",
   "zahlen_tabelle": [],
   "leitfrage": "Wie finde ich heraus, was bei meiner Probezeit gilt?",
   "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Dossier zu Herausforderung A als Grundlage.",
@@ -58,28 +58,28 @@
     {
       "nr": 1,
       "bloom": "Verstehen",
-      "knoten_ref": "Dossier | Nugget A-01",
+      "knoten_ref": "Dossier | Info-Karte A-01",
       "text": "Erklären Sie in zwei Sätzen: Was ist ein Lehrvertrag?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
-      "knoten_ref": "Dossier | Nugget A-02",
+      "knoten_ref": "Dossier | Info-Karte A-02",
       "text": "Wie lange dauert die Probezeit normalerweise? Nennen Sie die Regel.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
-      "knoten_ref": "Dossier | Nugget A-02",
-      "text": "Prüfen Sie Ihren Fall. Was gilt, wenn im Vertrag nichts anderes steht?",
+      "knoten_ref": "Dossier | Info-Karte A-02",
+      "text": "Prüfen Sie Ihren Fall. Was gilt, wenn im Lehrvertrag eine andere Dauer steht als abgemacht?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
-      "knoten_ref": "Dossier | Nugget A-03",
+      "knoten_ref": "Dossier | Info-Karte A-03",
       "text": "Schreiben Sie eine kurze, höfliche digitale Nachricht. Fragen Sie nach dem unklaren Punkt.",
       "feld_hoehe_mm": 15
     }
@@ -233,7 +233,7 @@
     "hint": "Beide Wege können richtig sein. Es hängt vom Punkt ab, der unklar ist."
   },
   "dekontextualisierung": {
-    "frage": "Wo musst du sonst noch einen Vertrag genau verstehen?",
+    "frage": "Wo müssen Sie sonst noch einen Vertrag genau verstehen?",
     "ziel": "Ich prüfe zuerst selbst und frage gezielt nach, statt etwas blind zu unterschreiben."
   },
   "zirkularitaet_anker": {
@@ -245,7 +245,7 @@
       "ref": "Dossier",
       "titel": "Was steht im Lehrvertrag?",
       "unterueberschrift": "Aufbau und wichtige Teile",
-      "nugget_ref": "Nugget A-01",
+      "nugget_ref": "Info-Karte A-01",
       "fuer_leitfrage": [
         1
       ]
@@ -254,7 +254,7 @@
       "ref": "Dossier",
       "titel": "Probezeit — wie lange?",
       "unterueberschrift": "Dauer und Regel",
-      "nugget_ref": "Nugget A-02",
+      "nugget_ref": "Info-Karte A-02",
       "fuer_leitfrage": [
         2,
         3
@@ -264,7 +264,7 @@
       "ref": "Dossier",
       "titel": "Höflich digital nachfragen",
       "unterueberschrift": "Nachricht schreiben",
-      "nugget_ref": "Nugget A-03",
+      "nugget_ref": "Info-Karte A-03",
       "fuer_leitfrage": [
         4
       ]
@@ -293,12 +293,12 @@
         "gewicht_prozent": 25
       }
     ],
-    "scaffold_90": "Satzanfänge und Dossier-Nuggets stehen bereit.",
+    "scaffold_90": "Satzanfänge und Dossier-Info-Karten stehen bereit.",
     "scaffold_100": "Schreibt die Nachricht ohne Satzanfänge und ergänzt eine zweite Frage."
   },
   "prinzip_handoff": {
     "kernkonzept": "Vertrag verstehen, gezielt nachfragen",
-    "dossier_anker": "Dossier Nuggets A-01..A-03",
+    "dossier_anker": "Dossier Info-Karten A-01..A-03",
     "kn_aktivierung": "Im KN taucht eine unklare Vertragsstelle wieder auf — jetzt zusammen mit einem Konflikt.",
     "transfer_check": "Erkennt die lernende Person, wann Nachfragen reicht und wann mehr nötig ist?"
   },

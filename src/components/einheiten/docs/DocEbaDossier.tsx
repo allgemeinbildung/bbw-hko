@@ -216,7 +216,7 @@ function TitelSeite({ kopf, einleitung }: { kopf?: DossierKopf; einleitung?: Dos
           {einleitung.was_ist_das && <p>{einleitung.was_ist_das}</p>}
           {(einleitung.so_benutzt_du_es?.length || 0) > 0 && (
             <>
-              <h3>So benutzt du es</h3>
+              <h3>So benutzen Sie es</h3>
               <ul className="eba-einleitung-liste">
                 {einleitung.so_benutzt_du_es!.map((s, i) => <li key={i}>{s}</li>)}
               </ul>
@@ -262,7 +262,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       titel: 'Glossar+',
       body: (
         <>
-          <SectionHead num="D1">{i === 0 ? 'Dein Glossar+' : 'Glossar+ (Fortsetzung)'}</SectionHead>
+          <SectionHead num="D1">{i === 0 ? 'Ihr Glossar+' : 'Glossar+ (Fortsetzung)'}</SectionHead>
           {grp.map((n) => <NuggetCard key={n.id} n={n} />)}
         </>
       ),
@@ -273,10 +273,10 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
   scaffolds.forEach((sc, i) => {
     pages.push({
       code: 'GLOSSAR+ · Sprachhilfe',
-      titel: 'So schreibst du',
+      titel: 'So schreiben Sie',
       body: (
         <>
-          <SectionHead num="D2">{i === 0 ? 'So schreibst du Schritt fuer Schritt' : 'So schreibst du (Fortsetzung)'}</SectionHead>
+          <SectionHead num="D2">{i === 0 ? 'So schreiben Sie Schritt fuer Schritt' : 'So schreiben Sie (Fortsetzung)'}</SectionHead>
           <ScaffoldCard sc={sc} />
         </>
       ),
