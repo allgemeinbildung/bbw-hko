@@ -90,14 +90,14 @@ Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit fädelt von K2 zu K4 �
 
 ### Mehrdeutigkeits-Architektur
 
-Drei Trade-offs spannen das ganze Set auf:
+Drei Zielkonflikte spannen das ganze Set auf:
 
 1. **Eigene Rechte durchsetzen** vs. **Beziehung zum Berufsbildner/in erhalten** (A)
 2. **Schnelle digitale Antwort** vs. **überlegtes persönliches Gespräch** (B)
 3. **Klare Position vertreten** vs. **Lernenden-Rolle und Lernchance wahren** (C)
 
 > [!mehrdeutigkeit] Der Grundsatz
-> In jedem Konflikt trägt mehr als ein legitimes Interesse. Die Aufgabe ist **nicht**, eine Seite zu eliminieren, sondern den Trade-off offen zu benennen und begründet zu entscheiden. Eine Lernende, die schreibt „ich habe recht, also setze ich es durch", hat die Kompetenz **nicht** gezeigt — auch wenn sie juristisch recht hat.
+> In jedem Konflikt trägt mehr als ein legitimes Interesse. Die Aufgabe ist **nicht**, eine Seite zu eliminieren, sondern den Zielkonflikt offen zu benennen und begründet zu entscheiden. Eine Lernende, die schreibt „ich habe recht, also setze ich es durch", hat die Kompetenz **nicht** gezeigt — auch wenn sie juristisch recht hat.
 
 ### Zirkularität — wo das wieder auftaucht
 
@@ -267,7 +267,7 @@ ________________________________________________________________________.
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Situation A
-> Der Trade-off: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfähige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kämpft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenken Sie zurück: „Wie klingt das für Ihren Berufsbildner/in — wollen Sie recht haben oder eine Lösung?"
+> Das Spannungsfeld: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfähige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kämpft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenken Sie zurück: „Wie klingt das für Ihren Berufsbildner/in — wollen Sie recht haben oder eine Lösung?"
 
 ### Wo welche SK geübt wird
 
@@ -275,7 +275,7 @@ ________________________________________________________________________.
 |---|---|
 | **SK1 Quellen unterscheiden** | LF1/LF2: trennt OR-Artikel (relevant) von Bauchgefühl-Argumenten beim Befüllen der Landkarte |
 | **SK6 Standpunkte begründen** | LF4: begründet im Positionspapier nach 3B mit Gesetzes-Verweis |
-| **SK11 Mehrdeutigkeit** | Reflexion R3: benennt den Trade-off explizit, statt eine Seite zu streichen |
+| **SK11 Mehrdeutigkeit** | Reflexion R3: benennt den Zielkonflikt explizit, statt eine Seite zu streichen |
 
 ---
 
@@ -379,7 +379,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Situation B
-> Trade-off: **schnelle digitale Antwort vs. überlegtes, verbindliches Schreiben**. WhatsApp gibt schnell Ruhe, hinterlässt aber kein Dokument; ein Brief ist verbindlich, kostet aber Tage. Bewertet wird, ob die Lernende die **Konsequenzen beider Kanäle** abwägt — nicht, welchen sie wählt. Wenn jemand schreibt „WhatsApp ist halt am schnellsten, fertig", fehlt die Abwägung.
+> Spannungsfeld: **schnelle digitale Antwort vs. überlegtes, verbindliches Schreiben**. WhatsApp gibt schnell Ruhe, hinterlässt aber kein Dokument; ein Brief ist verbindlich, kostet aber Tage. Bewertet wird, ob die Lernende die **Konsequenzen beider Kanäle** abwägt — nicht, welchen sie wählt. Wenn jemand schreibt „WhatsApp ist halt am schnellsten, fertig", fehlt die Abwägung.
 
 ### Wo welche SK geübt wird
 
@@ -387,7 +387,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 |---|---|
 | **SK6 Standpunkte begründen** | LF3: begründete Kanal-Entscheidung; LF4: ausformulierte Stellungnahme |
 | **SK7 Verständnis fördern** | Kanalbegründung: antizipiert die Wirkung auf Berufsbildner/Werkstattleitung |
-| **SK11 Mehrdeutigkeit** | LF3: nennt beide Pole des Kanal-Trade-offs |
+| **SK11 Mehrdeutigkeit** | LF3: nennt beide Pole des Kanal-Spannungsfelds |
 
 ---
 
@@ -484,12 +484,12 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 > **Zum Abgeben bereit:** Vier-Ohren-Tabelle · Ich-Botschaft-Satzanfänge · Drehbuch-3-Spalten-Template · Win-Win-Satzanfänge.
 
 > [!coaching] Perspektivenwechsel
-> Die Vier-Ohren-Decodierung ist bereits angewandter Perspektivenwechsel. Vertiefen Sie ihn: Lassen Sie die Lernende den Satz „Du hörst einfach nicht zu" einmal laut aus der Rolle des Berufsbildner/in sprechen, bevor sie ihr Drehbuch schreibt — „Welche Not oder welcher Druck steckt dahinter?" Wer die plausible Absicht der Gegenseite zuerst benennt, senkt die Abwehr im Gespräch und hält den Trade-off klar/Beziehung sichtbar.
+> Die Vier-Ohren-Decodierung ist bereits angewandter Perspektivenwechsel. Vertiefen Sie ihn: Lassen Sie die Lernende den Satz „Du hörst einfach nicht zu" einmal laut aus der Rolle des Berufsbildner/in sprechen, bevor sie ihr Drehbuch schreibt — „Welche Not oder welcher Druck steckt dahinter?" Wer die plausible Absicht der Gegenseite zuerst benennt, senkt die Abwehr im Gespräch und hält das Spannungsfeld klar/Beziehung sichtbar.
 
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Situation C
-> Trade-off: **klare Position vs. Lernenden-Rolle/Lernchance wahren**. Schweigt die Lernende, verliert sie ihr Anliegen; eskaliert sie, verliert sie die Lernbeziehung. Bewertet wird, wie sauber beide Pole im Gespräch gehalten werden. Im Drehbuch muss beides sichtbar bleiben — nicht nur kämpfen, nicht nur schweigen.
+> Spannungsfeld: **klare Position vs. Lernenden-Rolle/Lernchance wahren**. Schweigt die Lernende, verliert sie ihr Anliegen; eskaliert sie, verliert sie die Lernbeziehung. Bewertet wird, wie sauber beide Pole im Gespräch gehalten werden. Im Drehbuch muss beides sichtbar bleiben — nicht nur kämpfen, nicht nur schweigen.
 
 ### Wo welche SK geübt wird
 
@@ -497,7 +497,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 |---|---|
 | **SK4 Teamarbeit** | Rollen-Probe mit Partner + Feedback-Austausch nach Kap. 19.1 |
 | **SK7 Verständnis fördern** | LF1: den Standpunkt des Berufsbildner/in auf allen vier Ohren nachvollziehen |
-| **SK11 Mehrdeutigkeit** | Drehbuch hält den Trade-off klar/Rolle sichtbar |
+| **SK11 Mehrdeutigkeit** | Drehbuch hält das Spannungsfeld klar/Rolle sichtbar |
 
 ---
 
@@ -608,7 +608,7 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 | Kriterium | Dimension |
 |---|---|
 | Fachkorrektheit (Begriffe Lehrvertrag/Vier Ohren/Ich-Botschaft/Kanal korrekt) | **SuK** |
-| Argumentation (3B-Schema, Trade-offs explizit) | **SuK** |
+| Argumentation (3B-Schema, Zielkonflikte explizit) | **SuK** |
 | Ethisches Prinzip (Würde, Verantwortung, Perspektivenübernahme, Kap. 18.2) | **Ges** |
 | Position / Werthaltung (Ich-Form, Mehrdeutigkeit anerkannt, Wunsch für Beziehung) | **Ges** |
 
@@ -616,7 +616,7 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 
 | Stufe | Lesart |
 |---|---|
-| **4** | differenziert, kontextualisiert, eigenständig; Trade-offs/Transfer explizit |
+| **4** | differenziert, kontextualisiert, eigenständig; Zielkonflikte/Transfer explizit |
 | **3** | korrekt und situationsangemessen; nachvollziehbar strukturiert |
 | **2** | teilweise korrekt; ungenau / nur angedeutet |
 | **1** | fehlt, falsch, oder rein als Macht-/Rechtsfrage behandelt |
@@ -633,7 +633,7 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 > Trag die zwei Noten **physisch getrennt** ein (zwei Spalten, nie ein Mittelwert). Eine Lernende kann fachlich-sprachlich stark (SuK 100 %) und ethisch flach (Ges 90 %) sein — das ist eine echte, nützliche Information, die ein zusammengezogener Schnitt vernichtet. Aggregiere innerhalb jeder Dimension den Mittelwert der zwei Kriterien.
 
 > [!mehrdeutigkeit] Der häufigste Bewertungsfehler
-> Verführung: die „klarste" Lösung am höchsten zu benoten. Aber wer den Trade-off **auflöst** (z. B. „ich melde sofort dem Ausbildungsleiter, fertig"), verfehlt das Kompetenzversprechen — egal wie entschlossen das klingt. Stufe 4 in „Argumentation" und „Position" verlangt, dass **beide** legitimen Interessen sichtbar bleiben und die Entscheidung **begründet** fällt.
+> Verführung: die „klarste" Lösung am höchsten zu benoten. Aber wer den Zielkonflikt **auflöst** (z. B. „ich melde sofort dem Ausbildungsleiter, fertig"), verfehlt das Kompetenzversprechen — egal wie entschlossen das klingt. Stufe 4 in „Argumentation" und „Position" verlangt, dass **beide** legitimen Interessen sichtbar bleiben und die Entscheidung **begründet** fällt.
 
 ---
 

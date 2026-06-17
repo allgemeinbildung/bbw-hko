@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<title>EBA Print-Prototyp 1.1.1 — Lehrvertrag orientieren</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   EBA Print-Prototyp — Berufsbildungsschule Winterthur
+   Umsetzung der fuenf EBA-Rendering-Prinzipien (P1-P5) als Print-A4.
+   Default-Modus: PRINT. Teilt das A4-Grundraster der EFZ-Doc-Komponenten,
+   legt die EBA-Prinzipien als gezielte Abweichungen darueber.
+   ===================================================================== */
+:root{
+  --brand:#0E6E3A; --brand-dark:#094d28; --brand-tint:#e8f3ec;
+  --a:#C0392B; --a-tint:#FADBD8;          /* Herausforderung A = rot */
+  --b:#1A5276; --b-tint:#D6EAF8;          /* Herausforderung B = blau */
+  --ink:#1a1d22; --ink-soft:#41474e; --ink-mute:#7b818a;
+  --rule:#d8dbe0; --paper:#fff;
+  --akzent:var(--brand);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  background:#4a4d54; color:var(--ink);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+/* ---- A4 Seite (gleiches Raster wie EFZ: 210x297, 12/16mm) ---- */
+.page{
+  width:210mm; min-height:297mm; padding:14mm 16mm;
+  background:var(--paper); position:relative; margin:8mm auto;
+  box-shadow:0 2px 14px rgba(0,0,0,.35); overflow:hidden;
+}
+.page.a{--akzent:var(--a);} .page.b{--akzent:var(--b);}
+.strip{position:absolute; top:0; left:0; right:0; height:6mm; background:var(--akzent);}
+.head{display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid var(--rule); padding:4mm 0 2mm; margin-bottom:5mm; font-size:9pt; color:var(--ink-mute);}
+.head .code{font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--akzent);}
+.foot{position:absolute; bottom:8mm; left:16mm; right:16mm; display:flex; justify-content:space-between;
+  border-top:1px solid var(--rule); padding-top:2mm; font-size:8.5pt; color:var(--ink-mute);}
+
+/* ---- P3 Typografie: groesser, kurze Zeilen, viel Abstand, linksbuendig ---- */
+.page{font-size:13pt; line-height:1.65; text-align:left;}
+p{margin:0 0 3mm; max-width:62ch;}            /* kurze Zeilen, kein Buchformat */
+h1{font-size:24pt; line-height:1.15; margin:0 0 2mm;}
+h2{font-size:17pt; line-height:1.2; margin:0 0 3mm; color:var(--akzent);}
+h3{font-size:13.5pt; margin:0 0 2mm;}
+strong{font-weight:600;}
+.lead{font-size:13.5pt;}
+
+/* ---- P1 Segmentierung: jede Aufgabe ein klar abgegrenzter Block ---- */
+.block{border:1.5px solid var(--rule); border-radius:3mm; padding:5mm 6mm; margin:0 0 5mm; page-break-inside:avoid;}
+.block.accent{border-color:var(--akzent); border-left-width:5px;}
+.step-of{display:inline-block; font-size:10pt; font-weight:600; color:#fff; background:var(--akzent);
+  border-radius:100px; padding:1mm 3.5mm; margin-bottom:2.5mm;}
+.progress{display:flex; gap:1.5mm; margin:1mm 0 4mm;}
+.progress .dot{width:7mm; height:2.5mm; border-radius:100px; background:var(--rule);}
+.progress .dot.on{background:var(--akzent);}
+
+/* ---- Deckkarten ---- */
+.cards{display:flex; gap:5mm; margin:0 0 5mm;}
+.card{flex:1; background:var(--brand-tint); border-radius:3mm; padding:4mm 5mm;}
+.page.a .card{background:var(--a-tint);} .page.b .card{background:var(--b-tint);}
+.card h4{margin:0 0 1mm; font-size:9pt; letter-spacing:.06em; text-transform:uppercase; color:var(--akzent);}
+.card .big{font-size:13pt; font-weight:600;}
+.card .sub{font-size:10.5pt; color:var(--ink-soft); margin-top:1mm;}
+
+/* ---- Situation (warm, ICH) ---- */
+.situation{background:#fbfaf7; border-left:5px solid var(--akzent); border-radius:0 3mm 3mm 0; padding:5mm 6mm; margin:0 0 4mm;}
+.leitfrage-haupt{font-size:14pt; font-weight:600; color:var(--akzent); margin:3mm 0;}
+
+/* ---- P5 Mehrdeutigkeit einladend, nicht bedrohlich ---- */
+.tradeoff{background:var(--brand-tint); border:1px dashed var(--brand); border-radius:3mm; padding:4mm 5mm; margin:3mm 0; font-size:12pt;}
+.tradeoff .t{font-weight:600; color:var(--brand-dark);}
+
+/* ---- Leitfrage-Block (P1: einzeln) mit P2 Nugget-Anker ---- */
+.lf{margin:0 0 4mm;}
+.lf .lf-head{display:flex; align-items:baseline; gap:3mm; margin-bottom:1mm;}
+.lf .lf-nr{flex:0 0 auto; font-weight:700; color:#fff; background:var(--akzent); border-radius:100px; padding:.6mm 3mm; font-size:11pt;}
+.lf .lf-q{font-size:13pt; font-weight:600;}
+.anker{display:inline-block; font-size:9.5pt; font-weight:600; color:var(--akzent);
+  border:1.4px solid var(--akzent); border-radius:2mm; padding:.3mm 2mm; margin-left:1mm;}
+.anker::before{content:"\1F4D6  "; }   /* book glyph = nachschlagen */
+.lines{border:1px solid var(--rule); border-radius:2mm; height:22mm; margin-top:1.5mm;
+  background-image:repeating-linear-gradient(transparent,transparent 8mm,#eef0f2 8mm,#eef0f2 8.4mm);}
+.lines.tall{height:40mm;}
+
+/* ---- P4 Scaffolding prominent NEBEN der Schreibflaeche ---- */
+.work{display:flex; gap:5mm; margin-top:2mm;}
+.work .scaffold{flex:0 0 64mm; background:#fffdf5; border:1.4px solid #e7dca8; border-radius:3mm; padding:4mm;}
+.work .scaffold h4{margin:0 0 2mm; font-size:10pt; color:#8a6d1f; letter-spacing:.04em; text-transform:uppercase;}
+.work .scaffold ul{margin:0 0 3mm; padding-left:4.5mm;}
+.work .scaffold li{margin-bottom:1.5mm; font-size:11pt;}
+.work .flaeche{flex:1;}
+.work .flaeche .lines{height:62mm;}
+.niveau{display:flex; gap:3mm; margin:2mm 0 0; font-size:10.5pt;}
+.niveau .opt{flex:1; border:1.4px solid var(--rule); border-radius:2mm; padding:2.5mm 3mm;}
+.niveau .opt strong{color:var(--akzent);}
+
+/* ---- Schritte (P1: einzeln, "Schritt n von m") ---- */
+.schritt{display:flex; gap:3mm; align-items:flex-start; border:1.4px solid var(--rule); border-radius:2.5mm; padding:3mm 4mm; margin-bottom:2.5mm;}
+.schritt .n{flex:0 0 auto; width:8mm; height:8mm; border-radius:100px; background:var(--akzent); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:11pt;}
+.schritt .txt{font-size:12pt;}
+.schritt .of{display:block; font-size:9pt; color:var(--ink-mute);}
+
+/* ---- P2 Dossier: nachschlagbar, Nugget-Karten mit sichtbarem Anker ---- */
+.dossier-intro{background:var(--brand-tint); border-radius:3mm; padding:4mm 5mm; margin-bottom:5mm;}
+.nugget{border:1.5px solid var(--rule); border-radius:3mm; padding:4mm 5mm; margin-bottom:4mm; page-break-inside:avoid;}
+.nugget.tag-a{border-left:5px solid var(--a);} .nugget.tag-b{border-left:5px solid var(--b);}
+.nugget .ntop{display:flex; align-items:center; gap:3mm; margin-bottom:1.5mm;}
+.nugget .ncode{font-weight:700; color:#fff; border-radius:2mm; padding:.6mm 2.5mm; font-size:11pt; letter-spacing:.02em;}
+.nugget.tag-a .ncode{background:var(--a);} .nugget.tag-b .ncode{background:var(--b);}
+.nugget h3{margin:0;}
+.nugget .bsp{background:#f6f7f9; border-radius:2mm; padding:2.5mm 3.5mm; margin-top:2mm; font-size:11pt; color:var(--ink-soft);}
+.nugget .bsp b{color:var(--ink);}
+.fakt{font-size:9.5pt; color:var(--ink-mute); margin-top:2mm;}
+.fakt .ok{color:var(--brand);} .fakt .pruef{color:#b7791f;}
+
+/* ---- Glossar (P2/P3: schnell auffindbar, Fachbegriffe markiert) ---- */
+.glossar{column-count:2; column-gap:8mm;}
+.gloss{break-inside:avoid; margin-bottom:3mm;}
+.gloss .b{font-weight:700; color:var(--brand-dark);}
+.gloss .e{font-size:11pt;}
+.gloss .x{font-size:10pt; color:var(--ink-mute);}
+.begriff{color:var(--brand-dark); font-weight:600; border-bottom:1.5px dotted var(--brand);}
+
+.legend{display:flex; gap:6mm; flex-wrap:wrap; font-size:10.5pt; margin-top:4mm;}
+.legend .it{display:flex; align-items:center; gap:2mm;}
+.legend .sw{width:6mm; height:6mm; border-radius:1.5mm;}
+
+@page{size:A4 portrait; margin:0;}
+@media print{
+  body{background:#fff;}
+  .page{margin:0; box-shadow:none; page-break-after:always;}
+  .noprint{display:none;}
+}
+.noprint{max-width:210mm; margin:6mm auto; color:#e8eaee; font-size:13px; font-family:'IBM Plex Sans',sans-serif;}
+.noprint b{color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="noprint">
+  <b>EBA Print-Prototyp · Kompetenz 1.1.1 «Lehrvertrag orientieren»</b> — Default-Modus Print.
+  Zum Testen: im Browser <b>Drucken → Als PDF speichern</b> (A4, Ränder «keine»/Standard).
+  Umgesetzte Prinzipien: P1 Segmentierung · P2 nachschlagbares Dossier · P3 Typografie (gross, kurze Zeilen, linksbündig) · P4 Scaffolding neben der Schreibfläche · P5 Fortschritt + einladende Mehrdeutigkeit.
+</div>
+
+<!-- ============ DECKBLATT ============ -->
+<section class="page">
+  <div class="strip"></div>
+  <div class="head"><span class="code">EBA · Start</span><span>Ins Berufsleben einsteigen · 1.1.1</span></div>
+  <h1>Mein Lehrvertrag — und wer mir hilft</h1>
+  <p class="lead">In dieser Einheit lernst du zwei Dinge: deinen Lehrvertrag verstehen, und bei einem Problem die richtige Stelle um Hilfe bitten.</p>
+
+  <div class="block accent">
+    <h3>Das kannst du am Ende</h3>
+    <p>«Ich kann mich mit dem Lehrvertrag in der Arbeitswelt orientieren. Bei Fragen oder Konflikten kontaktiere ich die richtige Stelle.»</p>
+  </div>
+
+  <div class="block">
+    <h3>So arbeitest du</h3>
+    <div class="legend">
+      <div class="it"><span class="sw" style="background:var(--a)"></span> Herausforderung A — Lehrvertrag verstehen</div>
+      <div class="it"><span class="sw" style="background:var(--b)"></span> Herausforderung B — Hilfe holen</div>
+      <div class="it"><span class="sw" style="background:var(--brand)"></span> Dossier — hier schlägst du Wissen nach</div>
+    </div>
+    <p style="margin-top:4mm; font-size:11pt; color:var(--ink-soft)">Tipp: Wenn du bei einer Frage nicht weiterkommst, schau im Dossier nach. Jede Frage zeigt dir die passende Stelle <span class="anker">Nugget A-01</span>.</p>
+  </div>
+</section>
+
+<!-- ============ HERAUSFORDERUNG A ============ -->
+<section class="page a">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Herausforderung A · Seite 1</span><span>Lehrvertrag verstehen</span></div>
+  <h2>A — Ein Punkt im Lehrvertrag ist unklar</h2>
+  <div class="cards">
+    <div class="card"><h4>Das bist du</h4><div class="big">Malerpraktiker/in EBA</div><div class="sub">Malergeschäft Frei AG, Winterthur</div></div>
+    <div class="card"><h4>Das machst du</h4><div class="big">Digitale Nachricht</div><div class="sub">mit KI-Check</div></div>
+  </div>
+  <div class="situation">
+    <p>Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite bei der Malergeschäft Frei AG in Winterthur. Heute lese ich meinen Lehrvertrag genau durch. Bei der Probezeit verstehe ich einen Punkt nicht. Im Vertrag steht eine andere Dauer, als ich dachte. Ich bin unsicher. Soll ich einfach nichts sagen? Oder soll ich nachfragen?</p>
+  </div>
+  <div class="leitfrage-haupt">Wie finde ich heraus, was bei meiner Probezeit gilt?</div>
+  <div class="tradeoff"><span class="t">Du hast zwei Wege:</span> selbst klären oder nachfragen. Beide können richtig sein. Es kommt auf den Punkt an, der unklar ist.</div>
+</section>
+
+<section class="page a">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Herausforderung A · Seite 2</span><span>Leitfragen</span></div>
+  <h2>Beantworte die vier Fragen</h2>
+  <p style="font-size:11pt; color:var(--ink-soft)">Nutze das Dossier zu Herausforderung A. Der Anker zeigt dir, wo du nachschlägst.</p>
+
+  <div class="lf"><div class="lf-head"><span class="lf-nr">1</span><span class="lf-q">Erkläre in zwei Sätzen: Was ist ein Lehrvertrag?</span></div>
+    <span class="anker">Nugget A-01</span><div class="lines"></div></div>
+  <div class="lf"><div class="lf-head"><span class="lf-nr">2</span><span class="lf-q">Wie lange dauert die Probezeit normalerweise? Nenne die Regel.</span></div>
+    <span class="anker">Nugget A-02</span><div class="lines"></div></div>
+  <div class="lf"><div class="lf-head"><span class="lf-nr">3</span><span class="lf-q">Prüfe deinen Fall. Was gilt, wenn im Vertrag nichts anderes steht?</span></div>
+    <span class="anker">Nugget A-02</span><div class="lines"></div></div>
+  <div class="lf"><div class="lf-head"><span class="lf-nr">4</span><span class="lf-q">Schreibe eine kurze, höfliche digitale Nachricht. Frage nach dem unklaren Punkt.</span></div>
+    <span class="anker">Nugget A-03</span><div class="lines tall"></div></div>
+</section>
+
+<section class="page a">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Herausforderung A · Seite 3</span><span>Handlungsprodukt</span></div>
+  <h2>Deine Nachricht zum Lehrvertrag</h2>
+  <span class="step-of">So gehst du vor</span>
+  <div class="schritt"><span class="n">1</span><span class="txt">Markiere den Punkt, den du nicht verstehst.<span class="of">Schritt 1 von 5</span></span></div>
+  <div class="schritt"><span class="n">2</span><span class="txt">Lies den Begriff im Dossier.<span class="of">Schritt 2 von 5</span></span></div>
+  <div class="schritt"><span class="n">3</span><span class="txt">Frag ein KI-Tool nach einer einfachen Erklärung. Prüfe die Antwort.<span class="of">Schritt 3 von 5</span></span></div>
+  <div class="schritt"><span class="n">4</span><span class="txt">Schreib eine kurze, höfliche Nachricht mit deiner Frage.<span class="of">Schritt 4 von 5</span></span></div>
+  <div class="schritt"><span class="n">5</span><span class="txt">Lies die Nachricht laut. Sind die Sätze kurz?<span class="of">Schritt 5 von 5</span></span></div>
+
+  <div class="work">
+    <div class="scaffold">
+      <h4>Wie geht das?</h4>
+      <ul>
+        <li>«Guten Tag, ich habe eine Frage zu meinem Lehrvertrag.»</li>
+        <li>«Im Vertrag steht …, das verstehe ich noch nicht ganz.»</li>
+      </ul>
+      <h4>Aufbau</h4>
+      <ul><li>Gruss – Frage – Dank</li><li>Kurze Sätze, ein Gedanke pro Satz</li></ul>
+    </div>
+    <div class="flaeche">
+      <strong>Meine Nachricht</strong>
+      <div class="lines" style="height:62mm"></div>
+      <div class="niveau">
+        <div class="opt"><strong>Mit Hilfe (90%)</strong><br>Nimm die Satzanfänge oben.</div>
+        <div class="opt"><strong>Selbstständig (100%)</strong><br>Schreib ohne Satzanfänge. Stell eine zweite Frage.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERAUSFORDERUNG B (kondensiert) ============ -->
+<section class="page b">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Herausforderung B · Seite 1</span><span>Bei einem Konflikt Hilfe holen</span></div>
+  <h2>B — Ein Konflikt im Betrieb</h2>
+  <div class="cards">
+    <div class="card"><h4>Das bist du</h4><div class="big">Automobilassistent/in EBA</div><div class="sub">Garage Meier, Olten</div></div>
+    <div class="card"><h4>Das machst du</h4><div class="big">Digitale Nachricht</div><div class="sub">an die Kontaktstelle</div></div>
+  </div>
+  <div class="situation">
+    <p>Ich bin Automobilassistent/in EBA im 1. Lehrjahr. Ich arbeite in der Garage Meier in Olten. Seit zwei Wochen läuft es nicht gut. Ich bekomme fast nur das Putzen. Mein Berufsbildner hört mir kaum zu. Heute war ich richtig wütend. Soll ich einfach durchhalten? Oder soll ich mir Hilfe holen?</p>
+  </div>
+  <div class="leitfrage-haupt">Was kann ich tun — und wer hilft mir bei einem Konflikt?</div>
+  <div class="tradeoff"><span class="t">Gleicher Gedanke wie bei A:</span> selbst klären oder Hilfe holen. Bei einem echten Problem ist Hilfe holen richtig — und kein Zeichen von Schwäche.</div>
+
+  <div class="block" style="margin-top:5mm">
+    <h3>Die vier Fragen (Kurzform)</h3>
+    <div class="lf"><div class="lf-head"><span class="lf-nr">1</span><span class="lf-q">Was ist ein Konflikt im Betrieb?</span></div><span class="anker">Nugget B-01</span></div>
+    <div class="lf"><div class="lf-head"><span class="lf-nr">2</span><span class="lf-q">Wer kann bei einem Konflikt helfen? Nenne zwei Stellen.</span></div><span class="anker">Nugget B-02</span></div>
+    <div class="lf"><div class="lf-head"><span class="lf-nr">3</span><span class="lf-q">Welcher erste Schritt passt in deinem Fall? Begründe kurz.</span></div><span class="anker">Nugget B-03</span></div>
+    <div class="lf"><div class="lf-head"><span class="lf-nr">4</span><span class="lf-q">Schreibe eine kurze, sachliche Nachricht an eine Kontaktstelle.</span></div><span class="anker">Nugget B-03</span></div>
+    <p style="font-size:10.5pt; color:var(--ink-mute); margin-top:2mm">(Antwortlinien + Schreibfläche wie bei Herausforderung A — pro Frage eine eigene Seite.)</p>
+  </div>
+</section>
+
+<!-- ============ DOSSIER ============ -->
+<section class="page">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Dossier · Wissen</span><span>Hier schlägst du nach</span></div>
+  <h2>Dein Wissens-Dossier</h2>
+  <div class="dossier-intro">
+    <p style="margin:0"><strong>So benutzt du das Dossier:</strong> Du musst es nicht von vorne lesen. Wenn du bei einer Frage hängst, schau bei dem Anker nach, der dort steht — zum Beispiel <span class="anker">Nugget A-02</span>. Fachbegriffe wie <span class="begriff">Probezeit</span> findest du unten im Glossar.</p>
+  </div>
+
+  <div class="nugget tag-a"><div class="ntop"><span class="ncode">A-01</span><h3>Was steht im Lehrvertrag?</h3></div>
+    <p>Der <span class="begriff">Lehrvertrag</span> ist ein schriftlicher Vertrag. Er regelt deine Lehre. Im Vertrag stehen Lohn, Ferien und Arbeitszeit. Auch die <span class="begriff">Probezeit</span> steht darin. Das kantonale Amt prüft und genehmigt den Vertrag.</p>
+    <div class="bsp"><b>Beispiel:</b> Du findest deinen Lohn pro Monat auf der ersten Seite des Lehrvertrags.</div>
+    <div class="fakt"><span class="ok">✓ geprüft</span> · berufsbildung.ch</div></div>
+
+  <div class="nugget tag-a"><div class="ntop"><span class="ncode">A-02</span><h3>Probezeit — wie lange?</h3></div>
+    <p>Die <span class="begriff">Probezeit</span> steht im Lehrvertrag. Sie dauert 1 bis 3 Monate. Steht nichts im Vertrag, gelten 3 Monate. Mit Genehmigung der kantonalen Behörde sind bis zu 6 Monate möglich.</p>
+    <div class="bsp"><b>Beispiel:</b> Im Vertrag steht: Probezeit 3 Monate. Dann gilt diese Zeit ab dem ersten Arbeitstag.</div>
+    <div class="fakt"><span class="ok">✓ geprüft</span> · OR Art. 344a Abs. 3; berufsbildung.ch</div></div>
+
+  <div class="nugget tag-a"><div class="ntop"><span class="ncode">A-03</span><h3>Höflich digital nachfragen</h3></div>
+    <p>Du verstehst einen Punkt nicht? Dann frag nach. Lies den Begriff zuerst im Dossier. Ein <span class="begriff">KI-Tool</span> kann dir den Begriff einfach erklären. Prüfe die Antwort aber immer. Dann schreib eine kurze, höfliche Nachricht.</p>
+    <div class="bsp"><b>Beispiel:</b> «Guten Tag, ich habe eine Frage zur Probezeit in meinem Lehrvertrag.»</div></div>
+</section>
+
+<section class="page">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Dossier · Wissen</span><span>Hier schlägst du nach</span></div>
+
+  <div class="nugget tag-b"><div class="ntop"><span class="ncode">B-01</span><h3>Was ist ein Konflikt im Betrieb?</h3></div>
+    <p>Ein <span class="begriff">Konflikt</span> ist ein Streit oder ein Problem mit anderen. Im Betrieb passiert das manchmal. Vielleicht fühlst du dich unfair behandelt. Ein Konflikt ist normal. Wichtig ist, wie du damit umgehst.</p>
+    <div class="bsp"><b>Beispiel:</b> Du bekommst immer nur das Putzen und darfst nie an die Maschine. Das ärgert dich.</div></div>
+
+  <div class="nugget tag-b"><div class="ntop"><span class="ncode">B-02</span><h3>Wer hilft mir? Die Kontaktstellen</h3></div>
+    <p>Zuerst hilft oft die <span class="begriff">Berufsbildner/in</span>. Auch die Lehrperson kann helfen. Bleibt das Problem, hilft eine Stelle von aussen: das kantonale <span class="begriff">Berufsbildungsamt</span> (die <span class="begriff">Lehraufsicht</span>). Diese Stelle vermittelt bei einem Konflikt.</p>
+    <div class="bsp"><b>Beispiel:</b> Das Berufsbildungsamt hilft, wenn du und dein Betrieb keine Lösung findet.</div>
+    <div class="fakt"><span class="ok">✓ geprüft</span> · berufsbildung.ch &nbsp;|&nbsp; <span class="pruef">⚠ LP prüfen:</span> genauer Name der Stelle je Kanton verschieden</div></div>
+
+  <div class="nugget tag-b"><div class="ntop"><span class="ncode">B-03</span><h3>Schritt für Schritt Hilfe holen</h3></div>
+    <p>Bleib zuerst ruhig. Sammle die Fakten: Was ist passiert? Seit wann? Überlege, wer helfen kann. Schreib eine sachliche Nachricht. Bitte höflich um Hilfe. Nenne keine Schimpfwörter.</p>
+    <div class="bsp"><b>Beispiel:</b> «Guten Tag, ich bin Lernende/r und brauche Hilfe. In meinem Betrieb gibt es folgendes Problem: …»</div>
+    <div class="fakt"><span class="ok">✓ geprüft</span> · OR Art. 346 (Probezeit: 7 Tage Kündigungsfrist)</div></div>
+</section>
+
+<!-- ============ DOSSIER: Sprachhilfe + Transfer + Glossar ============ -->
+<section class="page">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Dossier · Sprachhilfe</span><span>So schreibst du digital</span></div>
+  <h2>So schreibst du eine digitale Nachricht</h2>
+
+  <div class="block accent" style="--akzent:var(--a)">
+    <h3>Für Herausforderung A (Frage stellen)</h3>
+    <div class="schritt"><span class="n" style="background:var(--a)">1</span><span class="txt">Markiere den Punkt, den du nicht verstehst.<span class="of">Schritt 1 von 5</span></span></div>
+    <div class="schritt"><span class="n" style="background:var(--a)">2</span><span class="txt">Lies den Begriff im Dossier.<span class="of">Schritt 2 von 5</span></span></div>
+    <div class="schritt"><span class="n" style="background:var(--a)">3</span><span class="txt">Frag ein KI-Tool. Prüfe die Antwort.<span class="of">Schritt 3 von 5</span></span></div>
+    <div class="schritt"><span class="n" style="background:var(--a)">4</span><span class="txt">Schreib eine kurze, höfliche Nachricht.<span class="of">Schritt 4 von 5</span></span></div>
+    <div class="schritt"><span class="n" style="background:var(--a)">5</span><span class="txt">Lies laut. Sind die Sätze kurz?<span class="of">Schritt 5 von 5</span></span></div>
+  </div>
+
+  <div class="block accent" style="--akzent:var(--b)">
+    <h3>Für Herausforderung B (Hilfe holen)</h3>
+    <p style="font-size:11.5pt">Satzanfänge: «Guten Tag, ich bin Lernende/r und brauche Hilfe.» · «In meinem Betrieb gibt es folgendes Problem: …» · «Können Sie mir bitte helfen?»</p>
+    <p style="font-size:11.5pt"><strong>Aufbau:</strong> Wer bin ich – Problem – Bitte um Hilfe. Bleib sachlich.</p>
+  </div>
+
+  <div class="block">
+    <h3>Das Grundprinzip (für beide)</h3>
+    <p class="lead">Erst selbst prüfen. Bei einem echten Problem Hilfe holen. Immer bei der richtigen Stelle.</p>
+  </div>
+</section>
+
+<section class="page">
+  <div class="strip"></div>
+  <div class="head"><span class="code">Dossier · Glossar</span><span>Schwierige Wörter einfach erklärt</span></div>
+  <h2>Glossar</h2>
+  <div class="glossar">
+    <div class="gloss"><span class="b">Lehrvertrag</span> — <span class="e">Ein schriftlicher Vertrag für deine Lehre. Er regelt Lohn, Ferien, Arbeitszeit und Probezeit.</span> <span class="x">Bsp.: Du unterschreibst ihn vor dem ersten Arbeitstag.</span></div>
+    <div class="gloss"><span class="b">Probezeit</span> — <span class="e">Die erste Zeit der Lehre. Ihr schaut, ob die Lehre passt. Sie dauert 1 bis 3 Monate.</span></div>
+    <div class="gloss"><span class="b">Kündigung</span> — <span class="e">Wenn jemand den Vertrag beendet. Beide Seiten können kündigen.</span></div>
+    <div class="gloss"><span class="b">Kündigungsfrist</span> — <span class="e">Die Zeit zwischen Kündigung und letztem Arbeitstag. In der Probezeit: 7 Tage.</span></div>
+    <div class="gloss"><span class="b">Konflikt</span> — <span class="e">Ein Streit oder ein Problem mit anderen Menschen.</span></div>
+    <div class="gloss"><span class="b">Kontaktstelle</span> — <span class="e">Eine Stelle, die dir bei einem Problem hilft.</span></div>
+    <div class="gloss"><span class="b">Lehraufsicht</span> — <span class="e">Die kantonale Stelle, die über die Lehre wacht. Sie hilft bei Konflikten.</span></div>
+    <div class="gloss"><span class="b">Berufsbildungsamt</span> — <span class="e">Das kantonale Amt für die Berufslehre. Es genehmigt den Lehrvertrag und hilft bei Problemen.</span></div>
+    <div class="gloss"><span class="b">Schlichtungsstelle</span> — <span class="e">Eine Stelle, die bei einem Streit eine Lösung sucht. Es gibt sie nicht in jedem Kanton.</span></div>
+    <div class="gloss"><span class="b">Berufsbildner/in</span> — <span class="e">Die Person im Betrieb, die dich ausbildet und begleitet.</span></div>
+    <div class="gloss"><span class="b">KI-Tool</span> — <span class="e">Ein Computer-Programm, das Fragen beantwortet. Du musst die Antwort aber prüfen.</span></div>
+  </div>
+</section>
+
+<!-- ============ KN (Kurzüberblick, LP/SuS) ============ -->
+<section class="page">
+  <div class="strip" style="background:var(--brand-dark)"></div>
+  <div class="head"><span class="code" style="color:var(--brand-dark)">Kompetenznachweis</span><span>Das zeigst du am Ende</span></div>
+  <h2 style="color:var(--brand-dark)">Der Kompetenznachweis</h2>
+  <div class="situation" style="border-color:var(--brand-dark)">
+    <p>Ich bin Schreinerpraktiker/in EBA im 1. Lehrjahr in Aarau. Ich bin noch in der Probezeit. In meinem Lehrvertrag steht ein Punkt zur Probezeit, den ich nicht verstehe. Gleichzeitig läuft es im Betrieb schlecht. Ich darf kaum an die Maschinen. Soll ich den Vertrag einfach hinnehmen? Soll ich selbst mit dem Betrieb reden? Oder soll ich Hilfe von aussen holen?</p>
+  </div>
+  <div class="leitfrage-haupt" style="color:var(--brand-dark)">Wie gehe ich vor — und warum?</div>
+
+  <div class="block accent" style="--akzent:var(--brand)">
+    <h3>So läuft der Nachweis (Standard: Fachgespräch)</h3>
+    <p style="font-size:11.5pt">Mündlich, 25–30 Minuten. Du bekommst 15 Minuten Vorbereitung. Das Dossier ist erlaubt, kein Internet. Dann sprichst du mit der Lehrperson über fünf Fragen — vom Erklären bis zur eigenen Entscheidung.</p>
+    <p style="font-size:11pt; color:var(--ink-soft)">Alternativen (gleichwertig, vereinfacht): Mini Case schriftlich · Werkschau mit kurzer Reflexion.</p>
+  </div>
+  <p style="font-size:10.5pt; color:var(--ink-mute)">Bewertet wird in zwei getrennten Noten: Sprache (Fachkorrektheit inkl. Konventionen, Argumentation inkl. Sprachbewusstheit) und Inhalt (Rechtliches Prinzip, Position/Werthaltung).</p>
+</section>
+
+</body>
+</html>

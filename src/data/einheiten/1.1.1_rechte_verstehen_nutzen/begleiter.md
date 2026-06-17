@@ -102,7 +102,7 @@ Sprachtechniken: Notiz-/Markiertechnik mit Symbolen (Kap. 17.1), Bündeln in eig
 |---|---|---|
 | **SK1** | Quellen unterscheiden | Relevante OR-Artikel (Kap. 1.4) von irrelevanten Internet-Treffern trennen — Sit A (LF1/3/4), Sit B (LF2/4) |
 | **SK6** | Standpunkte begründen | Jeder Spickzettel-Eintrag mit exakter Quelle; 3B-Begründung im Antwortschreiben — Sit A (LF4), Sit C (LF4) |
-| **SK11** | Mehrdeutigkeit | Trade-off explizit ausweisen statt auflösen — Sit A, B, C (jeweils LF3 + Reflexion) |
+| **SK11** | Mehrdeutigkeit | Zielkonflikt explizit ausweisen statt auflösen — Sit A, B, C (jeweils LF3 + Reflexion) |
 | SK3 | Innovation und Problemlösung | Fälle in eine eigene Tabellenarchitektur strukturieren — Sit B (LF4) |
 | SK7 | Verständnis fördern | Adressatenanalyse, Perspektivenübernahme — Sit C (LF2, LF4) |
 
@@ -141,7 +141,7 @@ Das Austausch-Kapitel weiter unten verzweigt nach Variante.
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK1, SK6, SK11 |
 | **Bloom** | LF1 K2 · LF2 K3 · LF3 K3 · LF4 K3+/K4 |
-| **Trade-off** | Quellen direkt zitieren vs. in eigenen Worten umformulieren |
+| **Spannungsfeld** | Quellen direkt zitieren vs. in eigenen Worten umformulieren |
 
 **Die Situation (so steht sie im Schülermaterial):**
 
@@ -173,7 +173,7 @@ Das Austausch-Kapitel weiter unten verzweigt nach Variante.
 - **LF4 (Formulieren, K3+/K4)** — Spickzettel auf A4, drei Blöcke, je 3–4 Stichworte in eigenen Worten **plus exakte Quelle**.
 
 > [!mehrdeutigkeit]
-> Der Trade-off hier: **wörtlich zitieren** (rechtlich präzise) vs. **in eigenen Worten** (verständlich). Lassen Sie beide Pole zu. Bewertet wird **nicht die Wahl**, sondern ob Lernende Quelle und eigene Formulierung sauber **kennzeichnen**. Wenn jemand fragt „Was ist besser?", spiegeln Sie zurück: „Für wen schreiben Sie — und was braucht der mehr, Genauigkeit oder Verständlichkeit?"
+> Das Spannungsfeld hier: **wörtlich zitieren** (rechtlich präzise) vs. **in eigenen Worten** (verständlich). Lassen Sie beide Pole zu. Bewertet wird **nicht die Wahl**, sondern ob Lernende Quelle und eigene Formulierung sauber **kennzeichnen**. Wenn jemand fragt „Was ist besser?", spiegeln Sie zurück: „Für wen schreiben Sie — und was braucht der mehr, Genauigkeit oder Verständlichkeit?"
 
 > [!warnung]
 > Typischer Stolperstein: Lernende schreiben den Gesetzestext ab und denken, das sei der Spickzettel. Ergebnis: keine eigene Verdichtung, SK1 und die SuK-Dimension nicht gezeigt. Korrektur: pro Punkt **max. eine Zeile, in eigenen Worten**, Quelle dahinter — nicht davor und nicht als Volltext.
@@ -209,7 +209,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 > **Zum Abgeben bereit:** Spickzettel-Raster (drei Blöcke, Quellen vorgegeben, erste Zeile als gelöstes Beispiel).
 
 > [!coaching] Perspektivenwechsel
-> Lassen Sie die Lernende vor dem Verdichten kurz die Perspektive der drei fragenden Mitlernenden einnehmen: „Was braucht sie wirklich — den vollen Gesetzestext oder eine klare Antwort mit Quelle?" Adressatengerecht verdichten statt vollständig zitieren ist genau der Trade-off dieser Herausforderung und macht SK1 (Quellen unterscheiden) sichtbar.
+> Lassen Sie die Lernende vor dem Verdichten kurz die Perspektive der drei fragenden Mitlernenden einnehmen: „Was braucht sie wirklich — den vollen Gesetzestext oder eine klare Antwort mit Quelle?" Adressatengerecht verdichten statt vollständig zitieren ist genau der Zielkonflikt dieser Herausforderung und macht SK1 (Quellen unterscheiden) sichtbar.
 
 **Reflexion (Abgabe mit Set):** R1 überraschendste Regel · R2 Wo brauche ich den Spickzettel im Lehralltag? · R3 Schaue ich künftig zuerst im Vertrag oder im Internet nach?
 
@@ -226,7 +226,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 | **Aspekte** | Recht, Ethik, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK1, SK3, SK11 |
-| **Trade-off** | Vollständige Auskunft geben vs. eigene Rechtsunsicherheit ehrlich benennen |
+| **Spannungsfeld** | Vollständige Auskunft geben vs. eigene Rechtsunsicherheit ehrlich benennen |
 
 **Die Situation:**
 
@@ -254,7 +254,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 - **LF4 (Formulieren, K3+/K4)** — Fall-Mappe: pro Fall 3-Spalten-Tabelle + Schlussabsatz mit Restunsicherheit und Empfehlung.
 
 > [!mehrdeutigkeit]
-> Der zentrale Trade-off: **vollständige Auskunft** (wirkt kompetent) vs. **ehrliche Unsicherheit** (schützt vor Falschauskunft). Beide sind legitim. Lassen Sie die Klasse nicht zur „immer alles beantworten"-Haltung kippen. Bewertet wird, ob die Lernende **markiert**, wo ihr Wissen sicher ist und wo sie auf BB, BBV oder das kantonale Amt verweist. Das aktive Benennen von Unsicherheit ist hier eine **Stärke**, kein Mangel.
+> Das zentrale Spannungsfeld: **vollständige Auskunft** (wirkt kompetent) vs. **ehrliche Unsicherheit** (schützt vor Falschauskunft). Beide sind legitim. Lassen Sie die Klasse nicht zur „immer alles beantworten"-Haltung kippen. Bewertet wird, ob die Lernende **markiert**, wo ihr Wissen sicher ist und wo sie auf BB, BBV oder das kantonale Amt verweist. Das aktive Benennen von Unsicherheit ist hier eine **Stärke**, kein Mangel.
 
 > [!warnung]
 > Stolperstein: Lernende vermischen Tatbestand und Rechtsfolge („Er darf das nicht, weil er ihn am Samstag arbeiten lässt"). Das ist eine Wertung im Tatbestand. Korrektur: Spalte 1 beschreibt nur, **was passiert ist** — wer, was, wann, wo, ohne „darf/darf nicht".
@@ -306,7 +306,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 | **Aspekte** | Ethik, Technologie und digitale Transformation, Identität und Sozialisation |
 | **Sprachmodi** | Rezeption + Produktion schriftlich und bildlich |
 | **SK** | SK6, SK7, SK11 |
-| **Trade-off** | Schnell antworten (Mitlernende/r wartet) vs. sauber recherchieren |
+| **Spannungsfeld** | Schnell antworten (Mitlernende/r wartet) vs. sauber recherchieren |
 
 **Die Situation:**
 
@@ -336,7 +336,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
   > Verlangen Sie das wichtigste Argument **zuletzt** im Begründungsteil (Kap. 17.2). Viele schreiben es zuerst und verlieren dann an Kraft.
 
 > [!mehrdeutigkeit]
-> Der Trade-off: **schnell antworten** (zeigt Verfügbarkeit) vs. **sauber recherchieren** (zeigt Verantwortung). Beide legitim. Bewertet wird, ob die Lernende ihre **Kanal- und Tempo-Entscheidung im Schreiben begründet** — nicht, ob sie WhatsApp oder E-Mail wählt. Lassen Sie nicht zu, dass „E-Mail ist einfach besser" als Patentlösung stehen bleibt.
+> Das Spannungsfeld: **schnell antworten** (zeigt Verfügbarkeit) vs. **sauber recherchieren** (zeigt Verantwortung). Beide legitim. Bewertet wird, ob die Lernende ihre **Kanal- und Tempo-Entscheidung im Schreiben begründet** — nicht, ob sie WhatsApp oder E-Mail wählt. Lassen Sie nicht zu, dass „E-Mail ist einfach besser" als Patentlösung stehen bleibt.
 
 > [!warnung]
 > Stolperstein: Das Schreiben wird zur Gesetzes-Aufzählung ohne Adressatenbezug. Korrektur: Vor dem Schreiben klären — **wer liest das** (Mitlernende/r? Berufsbildner/in als Weiterleitung?) — und Anrede/Tonalität entsprechend wählen. Ohne Adressatenanalyse ist SK7 nicht gezeigt.
@@ -405,7 +405,7 @@ Drei Runden, Expertengruppen mischen (je eine Person A, B, C pro Gruppe):
 
 | Runde | min | Auftrag |
 |---|---|---|
-| **1 — Expertise teilen** | je 90 Sek./Person | Welche Quelle haben Sie genutzt? Welche Methode angewandt? Welcher Trade-off war am schwierigsten? |
+| **1 — Expertise teilen** | je 90 Sek./Person | Welche Quelle haben Sie genutzt? Welche Methode angewandt? Welcher Zielkonflikt war am schwierigsten? |
 | **2 — Gemeinsamkeit abstrahieren** | ~10 | Was haben alle drei Situationen gemeinsam? Welches Grundprinzip steckt dahinter? |
 | **3 — Transfer** | ~8 | Welche Situation wäre persönlich am schwierigsten — und warum? |
 
@@ -463,7 +463,7 @@ Der KN prüft die **ganze** Kompetenz an **einem** neuen Fall (Hybrid-Situation)
 | **B** | „Kratzer — verschuldet oder nicht?" → Tatbestand-Rechtslage-Rechtsfolge; plus Rollenfrage: was kann ich verlässlich sagen? |
 | **C** | WhatsApp um 21 Uhr mit Weiterleitungs-Absicht → Kanalwahl: informell antworten oder formelle, weiterleitbare E-Mail mit 3B? |
 
-**Aktivierte Trade-offs:** alle drei (zitieren vs. umformulieren · vollständig vs. ehrlich unsicher · schnell vs. sauber).
+**Aktivierte Spannungsfelder:** alle drei (zitieren vs. umformulieren · vollständig vs. ehrlich unsicher · schnell vs. sauber).
 
 ### Methodenwahl — welche der drei KN-Formen?
 
@@ -499,9 +499,9 @@ Die geteilte Rubrik hat **vier Kriterien in zwei Dimensionen**. SuK und Ges werd
 | Kriterium | Dimension | Stufe 1 | Stufe 2 | Stufe 3 | Stufe 4 |
 |---|---|---|---|---|---|
 | **Fachkorrektheit** | **SuK** | Begriffe fehlen/falsch | teilweise korrekt, Quellen ungenau | korrekt und situationsangemessen (Kap. 1.3/1.4/17.3) | differenziert, eigenständig, OR-/ArG-Verweise präzise |
-| **Argumentation** | **SuK** | keine Begründung | nur Behauptung | nachvollziehbar nach 3B-Schema | schlüssig, Gegenargumente und Trade-offs explizit |
+| **Argumentation** | **SuK** | keine Begründung | nur Behauptung | nachvollziehbar nach 3B-Schema | schlüssig, Gegenargumente und Zielkonflikte explizit |
 | **Rechtliches Prinzip** | **Ges** | als Gefühls-/Meinungsfrage behandelt | rechtliche Grundlage gestreift | Tatbestand/Rechtslage/Rechtsfolge sauber + OR-Quelle | auf neue Zusammenhänge übertragen, Auslegungsspielraum benannt |
-| **Position / Werthaltung** | **Ges** | keine Position | angedeutet, unbegründet | Position in Ich-Form, Trade-off benannt | begründet, Mehrdeutigkeit anerkannt, Rolle als beratende Mitlernende reflektiert |
+| **Position / Werthaltung** | **Ges** | keine Position | angedeutet, unbegründet | Position in Ich-Form, Zielkonflikt benannt | begründet, Mehrdeutigkeit anerkannt, Rolle als beratende Mitlernende reflektiert |
 
 **Aggregation:**
 
@@ -523,7 +523,7 @@ Ges-Note  = Mittel aus Rechtliches Prinzip + Position/Werthaltung
 > Häufiger Bewertungsfehler: SuK und Ges zu **einer** Note verrechnen. Eine sprachlich brillante, aber rechtlich falsche Antwort ist SuK 3–4 und Ges 1–2 — das muss als **zwei** Noten stehen bleiben, sonst verschwindet die Information. „Konvention/Norm/Sprachbewusstheit" ist kein fünftes Kriterium, sondern in die SuK-Kriterien integriert.
 
 > [!coaching]
-> Halte beim Bewerten die Mehrdeutigkeit ein: Stufe 4 in „Position/Werthaltung" bekommt **nicht**, wer den Trade-off auflöst („E-Mail ist immer richtig"), sondern wer ihn **benennt und begründet aushält**. Wer ehrlich markiert, was er nicht weiss, und auf weiterführende Stellen verweist, zeigt die Kompetenz — nicht, wer souverän alles beantwortet.
+> Halte beim Bewerten die Mehrdeutigkeit ein: Stufe 4 in „Position/Werthaltung" bekommt **nicht**, wer den Zielkonflikt auflöst („E-Mail ist immer richtig"), sondern wer ihn **benennt und begründet aushält**. Wer ehrlich markiert, was er nicht weiss, und auf weiterführende Stellen verweist, zeigt die Kompetenz — nicht, wer souverän alles beantwortet.
 
 ---
 
