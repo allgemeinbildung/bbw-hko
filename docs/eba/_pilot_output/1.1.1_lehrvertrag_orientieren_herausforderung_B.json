@@ -1,0 +1,318 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_hf_B",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Ein Konflikt im Betrieb",
+  "wissensknoten": [
+    "konflikt",
+    "kontaktstelle"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital",
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM9",
+      "SM3"
+    ],
+    "sk": [
+      2,
+      7,
+      11
+    ]
+  },
+  "persona": {
+    "beruf": "Automobilassistent/in EBA",
+    "betrieb": "Garage Meier",
+    "ort": "Olten"
+  },
+  "situation_text": "Ich bin Automobilassistent/in EBA im 1. Lehrjahr. Ich arbeite in der Garage Meier in Olten. Seit zwei Wochen läuft es nicht gut. Ich bekomme fast nur das Putzen. Mein Berufsbildner hört mir kaum zu. Heute war ich richtig wütend. Ich denke sogar ans Aufhören. Soll ich einfach durchhalten? Oder soll ich mir Hilfe holen? Ich weiss nicht, wer mir helfen kann.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Was kann ich tun — und wer hilft mir bei einem Konflikt?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Dossier zu Herausforderung B als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Nugget B-01",
+      "text": "Erklären Sie in zwei Sätzen: Was ist ein Konflikt im Betrieb?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Nugget B-02",
+      "text": "Wer kann bei einem Konflikt helfen? Nennen Sie zwei Stellen.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Dossier | Nugget B-03",
+      "text": "Prüfen Sie Ihren Fall. Welcher erste Schritt passt? Begründen Sie kurz.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Dossier | Nugget B-03",
+      "text": "Schreiben Sie eine kurze digitale Nachricht an eine Kontaktstelle. Schildern Sie Ihr Problem sachlich.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Konflikt im Betrieb",
+  "mindmap_aeste": [
+    {
+      "titel": "Was ist passiert?",
+      "punkte": [
+        "Fakten",
+        "seit wann"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer hilft?",
+      "punkte": [
+        "Berufsbildner/in",
+        "Berufsbildungsamt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Erste Schritte",
+      "punkte": [
+        "ruhig bleiben",
+        "Hilfe holen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Meine Gefühle",
+      "punkte": [],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Digitale Nachricht an die Kontaktstelle",
+    "titel": "Meine Anfrage um Hilfe",
+    "format_detail": "Kurze, sachliche digitale Nachricht (E-Mail oder Formular), 5-7 Sätze",
+    "beschreibung": "Ich schreibe eine sachliche digitale Nachricht. Ich beschreibe mein Problem kurz und klar. Ich frage die Kontaktstelle um Hilfe.",
+    "schritte": [
+      {
+        "label": "Problem ordnen",
+        "hint": "Was ist passiert? Seit wann?"
+      },
+      {
+        "label": "Stelle wählen",
+        "hint": "Dossier: wer ist zuständig?"
+      },
+      {
+        "label": "Sachlich schreiben",
+        "hint": "Fakten, keine Schimpfwörter"
+      },
+      {
+        "label": "Bitte um Hilfe",
+        "hint": "Was wünsche ich mir?"
+      },
+      {
+        "label": "Prüfen und senden",
+        "hint": "Ruhig? Klar? Höflich?"
+      }
+    ],
+    "schreib_label": "MEINE ANFRAGE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/kontaktstelle",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Guten Tag, ich bin Lernende/r und brauche Hilfe.»",
+        "«In meinem Betrieb gibt es folgendes Problem: …»"
+      ],
+      "strategien": [
+        "Zuerst die Fakten sammeln, dann schreiben.",
+        "Sachlich bleiben — keine Schuldzuweisung."
+      ],
+      "struktur": [
+        "Wer bin ich – Problem – Bitte um Hilfe",
+        "Kurze Sätze, ein Gedanke pro Satz"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Wissen wichtig?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was mache ich beim nächsten Mal konkret anders?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen beantwortet",
+        "Zwei Kontaktstellen genannt",
+        "Erster Schritt begründet"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur und Tiefe",
+      "vollstaendig_wenn": [
+        "Zentrum und 4 Ast-Titel übernommen",
+        "Pro Ast eigene Punkte"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Digitale Nachricht",
+      "vollstaendig_wenn": [
+        "Sachliche Schilderung",
+        "Klare Bitte um Hilfe",
+        "Kurze Sätze (A2)"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe und Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Fragen beantwortet",
+        "Bezug zum Lehralltag"
+      ]
+    }
+  ],
+  "wochen_plan": [],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Bei einem Konflikt Hilfe holen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Selbst klären vs. Hilfe holen",
+    "hint": "Manchmal hilft ein ruhiges Gespräch. Manchmal braucht es eine Stelle von aussen."
+  },
+  "dekontextualisierung": {
+    "frage": "Wo holst du dir sonst noch Hilfe von der richtigen Stelle?",
+    "ziel": "Ich prüfe zuerst, was ich selbst lösen kann, und hole bei einem echten Problem Hilfe."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T7: Konflikte am Arbeitsplatz vertieft."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Was ist ein Konflikt im Betrieb?",
+      "unterueberschrift": "Konflikt erkennen",
+      "nugget_ref": "Nugget B-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Wer hilft mir? Die Kontaktstellen",
+      "unterueberschrift": "Zuständige Stellen",
+      "nugget_ref": "Nugget B-02",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Schritt für Schritt Hilfe holen",
+      "unterueberschrift": "Vorgehen + Nachricht",
+      "nugget_ref": "Nugget B-03",
+      "fuer_leitfrage": [
+        3,
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Konflikt verstehen",
+        "indikator": "beschreibt Problem sachlich",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Kontaktstellen kennen",
+        "indikator": "nennt zwei zuständige Stellen",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Hilfe holen",
+        "indikator": "sachliche digitale Anfrage",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Reflexion",
+        "indikator": "benennt Lehralltags-Bezug",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Satzanfänge und Kontaktstellen-Liste stehen bereit.",
+    "scaffold_100": "Schreibt die Anfrage ohne Satzanfänge und nennt den nächsten Schritt selbst."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Konflikt sachlich schildern, richtige Stelle wählen",
+    "dossier_anker": "Dossier Nuggets B-01..B-03",
+    "kn_aktivierung": "Im KN kommt ein Konflikt wieder vor — zusammen mit einer unklaren Vertragsstelle.",
+    "transfer_check": "Wählt die lernende Person die passende Stelle und bleibt sachlich?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "leitfrage 3: ersten Schritt wählen und begründen"
+    },
+    {
+      "sk": 7,
+      "wo": "handlungsprodukt: Problem sachlich und verständlich schildern"
+    },
+    {
+      "sk": 11,
+      "wo": "mehrdeutigkeit: selbst aushalten oder Hilfe holen abwägen"
+    }
+  ]
+}

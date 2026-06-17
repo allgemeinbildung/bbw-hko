@@ -1,0 +1,110 @@
+{
+  "id": "1.1.1_rechte_verstehen_nutzen_lernbegleiter",
+  "set_ref": "1.1.1_rechte_verstehen_nutzen_set",
+  "prinzip_ref": "1.1.1_rechte_verstehen_nutzen_prinzip",
+  "kn_ref": "1.1.1_rechte_verstehen_nutzen_kn",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und dich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Du nutzt die KI als Lerncoach, um den Stoff dieser Unit zu wiederholen und dich gezielt auf einen möglichen Kompetenznachweis vorzubereiten — ohne dass die KI die Arbeit für dich macht.",
+    "kompetenzversprechen": "Ich kläre Tatbestand und Rechtsgrundlage aus geeigneten Quellen, beurteile meine Rolle und Verantwortung gegenüber dem Adressaten und beantworte eine rechtliche Anfrage schriftlich, begründet und adressatengerecht.",
+    "ki_frei_zuerst": {
+      "auftrag": "Bevor du die KI nutzt: Schätze ehrlich ein, wie sicher du dich bei den drei Teilen des Kompetenzversprechens fühlst. Markiere für jeden Punkt 1 (noch unsicher) bis 5 (sitzt). Genau die Punkte mit 1-3 übst du danach zuerst.",
+      "selbsteinschaetzung": [
+        "Ich kläre Tatbestand und Rechtsgrundlage aus geeigneten Quellen und unterscheide Tatbestand, Rechtslage und Rechtsfolge (Kap. 1.3, 1.4, 20.8).",
+        "Ich beurteile meine Rolle und Verantwortung gegenüber dem Adressaten und benenne, wo meine Auskunft nicht abschliessend ist (Kap. 18.1).",
+        "Ich beantworte eine rechtliche Anfrage schriftlich, begründet und adressatengerecht nach Anlass-Absicht-Begründung-Schluss und 3B-Schema (Kap. 17.2, 17.3)."
+      ]
+    },
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen (Retrieval)",
+        "wann": "Zum Wiederholen von Begriffen und Regeln — Tatbestand, Rechtslage, Rechtsfolge, Rechte und Pflichten im Lehrvertrag, 3B-Schema, Briefaufbau.",
+        "prompt_basis": "Stell mir nacheinander 5 Prüfungsfragen zum Thema Rechte und Pflichten im Lehrverhältnis (Tatbestand-Rechtslage-Rechtsfolge, Lohnabzug, Treuepflicht, 3B-Schema, Briefaufbau). Gib mir die Lösung erst, nachdem ich geantwortet habe.",
+        "prompt_fortgeschritten": "Frag mich im Wechsel ab: eine Wissensfrage zu einem Rechtsbegriff, dann eine Anwendungsfrage zu einem kurzen Fall. Bewerte meine Antwort knapp und stell die nächste Frage erst, wenn ich nachgebessert habe.",
+        "warnung": "Lass dir die Lösung wirklich erst nach deiner Antwort geben — sonst übst du Wiedererkennen statt Abrufen, und im KN steht die Antwort nicht vor dir."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären (Feynman)",
+        "wann": "Wenn du prüfen willst, ob du das TLR-Schema wirklich verstanden hast und nicht nur auswendig kannst.",
+        "prompt_basis": "Ich erkläre dir jetzt mit eigenen Worten, wie das Schema Tatbestand-Rechtslage-Rechtsfolge funktioniert. Hör zu und sag mir, wo meine Erklärung Lücken oder Fehler hat — ohne mir gleich die perfekte Version zu liefern.",
+        "prompt_fortgeschritten": "Ich erkläre dir, warum man einen Rechtsfall zuerst in Tatbestand zerlegt, bevor man die Rechtsfolge nennt. Stell mir danach zwei Rückfragen, die eine Lehrperson stellen würde, um zu prüfen, ob ich es wirklich verstanden habe.",
+        "warnung": "Wenn die KI dir die fertige Erklärung schenkt, lernst du nichts. Bitte sie um Lücken-Hinweise und Rückfragen, nicht um die Musterlösung."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen (Transfer-Simulation)",
+        "wann": "Zum Üben des Transfers: ob du das TLR-Schema und die Quellenprüfung auf einen neuen, unbekannten Rechtsfall überträgst.",
+        "prompt_basis": "Erfinde einen NEUEN rechtlichen Anfragefall im Lehrverhältnis — anderer Beruf und ein anderes Thema als der Lohnabzug für einen Kratzer am Werkstück (zum Beispiel Überstunden, Ferienanspruch oder Geschäftsgeheimnis). Gib mir nur die Situation. Ich löse sie nach Tatbestand-Rechtslage-Rechtsfolge; danach bewerte meine Lösung nach den Kriterien Fachkorrektheit, Argumentation, Rechtliches Prinzip und Position/Werthaltung.",
+        "prompt_fortgeschritten": "Gib mir einen neuen Anfragefall mit einer klaren Zwickmühle zwischen schnell antworten und sauber recherchieren. Nachdem ich entschieden habe, spiel die Gegenseite und prüfe, ob meine Begründung und meine Quelle standhalten.",
+        "warnung": "Wichtig: Der Übungsfall muss ein ANDERER sein als der Lohnabzug-Fall um 21 Uhr aus deinem KN — anderer Beruf, anderes Rechtsthema. Die KI darf dir keine Musterlösung für genau deinen KN-Fall geben; du übst die Methode, nicht eine auswendig gelernte Antwort."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Feedback auf einen Übungsversuch",
+        "wann": "Wenn du etwas Eigenes geschrieben hast (Fall-Lösung, Antwortschreiben, Stellungnahme) und wissen willst, was fehlt.",
+        "prompt_basis": "Hier ist mein Antwortschreiben zu einem rechtlichen Anfragefall: [dein Text]. Sag mir nach dem Kriterium «Argumentation» (3B-Schema), was noch fehlt — nenne nur die Lücken, gib mir KEINE fertige Musterlösung.",
+        "prompt_fortgeschritten": "Hier ist meine Falllösung nach Tatbestand-Rechtslage-Rechtsfolge: [dein Text]. Prüfe, ob ich die Quelle korrekt zitiert und die offene Stelle ehrlich markiert habe. Markiere drei Schwächen als Fragen an mich, damit ich selbst nachbessere.",
+        "warnung": "Bitte die KI ausdrücklich um Lücken und Fragen statt um die Verbesserung. Sobald sie deinen Text neu schreibt, ist es ihr Text — und im KN sitzt du allein da."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Repetitionsplan und Karteikarten",
+        "wann": "Zum Strukturieren der letzten Lernphase vor dem KN.",
+        "prompt_basis": "Erstelle mir aus diesen Themen einen Repetitionsplan für drei Lernabende: Rechte und Pflichten im Lehrvertrag, Tatbestand-Rechtslage-Rechtsfolge, adressatengerechtes Antwortschreiben (3B-Schema, Briefaufbau). Pro Abend ein Schwerpunkt mit je einer kurzen Übung.",
+        "prompt_fortgeschritten": "Erstelle mir 10 Karteikarten (Frage / Antwort) zu den Kernbegriffen dieser Unit. Sortiere sie nach Schwierigkeit und markiere, welche eher Wissen und welche eher Anwendung prüfen.",
+        "warnung": "Karteikarten von der KI sind ein Entwurf, kein geprüfter Stoff: Gleiche jede Antwort mit deinem Lehrmittel ab, bevor du damit lernst — gerade bei OR-Artikeln und Rechtsbegriffen."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Mündlich begründen unter Nachfragen — du erklärst die Regel, wendest das TLR-Schema an und bewertest den Trade-off zwischen Tempo und Sorgfalt.",
+        "prompt": "Simuliere ein kurzes Fachgespräch: Stell mir 5 mündliche Fragen steigender Schwierigkeit zu einem rechtlichen Anfragefall (Regel erklären, TLR-Schema anwenden, Tempo gegen Sorgfalt bewerten, mit dem Spickzettel-Vorgehen vergleichen, Verantwortung der Auskunft begründen). Reagiere auf meine Antwort mit einer Rückfrage, wie es eine Lehrperson täte."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Schriftlicher Transfer: einen neuen Fall analysieren, den Kanal begründet wählen und ein Antwortschreiben mit zitiertem Artikel und ehrlich markierter offener Stelle verfassen.",
+        "prompt": "Gib mir einen neuen schriftlichen Anfragefall mit vier Aufgaben (Regel erklären, WhatsApp gegen formelle E-Mail unterscheiden, Kanal und Reihenfolge entscheiden, Antwort in E-Mail-Form verfassen). Ich schreibe meine Lösung; danach prüfst du sie nach den Rubrik-Kriterien und nennst mir Lücken als Fragen — ohne Musterlösung."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Das eigene Prinzip benennen und seinen Transfer reflektieren: Was ist gleich, was anders, wann versagt es?",
+        "prompt": "Ich erkläre dir das Grundprinzip, das ich in dieser Unit gelernt habe (zuerst Quelle und Tatbestand klären, dann Rolle prüfen, dann adressatengerecht antworten). Stell mir die drei Transfer-Fragen (Prinzip in einem Satz, wie es in einem neuen Fall sichtbar wird, wann es versagt) und prüfe, ob meine Antworten konkret genug sind."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Lass dich zu Begriffen (Lehrvertrag, Tatbestand, Rechtslage, Rechtsfolge, Kanal, 3B-Schema) abfragen und prüfe deine Begründung nach dem 3B-Schema gegen eine KI-Gegenfrage — jeden OR-Artikel aber immer im Lehrmittel gegenchecken."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Rechtliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Übe an neuen Fällen, Tatbestand, Rechtslage und Rechtsfolge sauber zu unterscheiden und deine Position als begründete Ich-Aussage zu formulieren, die den Trade-off zwischen Tempo, Vollständigkeit und Ehrlichkeit benennt — und hol dir Feedback auf Lücken, nicht auf eine fertige Lösung."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft dir beim Üben, nicht beim Abgeben. Im Kompetenznachweis sitzt du allein da: Lass dir deshalb nie deine konkrete KN-Lösung schreiben, sondern übe an anderen Fällen und an Lücken-Feedback. Und prüfe jede rechtliche Aussage der KI im Lehrmittel oder Gesetzestext nach — Nummer und Inhalt.",
+    "selbstcheck": [
+      "Ich habe zuerst KI-frei eingeschätzt, wo ich noch unsicher bin, und genau dort geübt.",
+      "Meine Übungsfälle waren andere als der Lohnabzug-Fall aus meinem möglichen KN.",
+      "Ich habe die KI um Lücken-Feedback gebeten, nicht um fertige Lösungen.",
+      "Ich habe jeden OR-Artikel der KI im Lehrmittel oder Gesetzestext nachgeschlagen.",
+      "Ich kann das Grundprinzip dieser Unit in einem Satz aus dem Kopf formulieren."
+    ]
+  }
+}

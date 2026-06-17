@@ -113,25 +113,25 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
           </div>
         )}
 
-        {(anker?.thema_text || skTexte.length) && (
+        {skTexte.length > 0 && (
           <section style={{ marginTop: '2mm' }}>
             <SectionHead num="Lehrplan-Bezug">Worum es geht</SectionHead>
-            {anker?.thema_text && <p style={{ ...bodyText, marginBottom: '2mm' }}>{anker.thema_text}</p>}
-            {skTexte.length > 0 && (
-              <>
-                <div style={microLabel}>Schlüsselkompetenzen dieser Einheit</div>
-                <ul style={{ ...listStyle, listStyleType: 'none', paddingLeft: 0, margin: 0 }}>
-                  {skTexte.map((s, i) => {
-                    const [code, ...rest] = s.split(' — ')
-                    return (
-                      <li key={i} style={{ marginBottom: '1mm', fontSize: '9.3pt', lineHeight: 1.36 }}>
-                        <strong style={{ color: KI_AKZENT }}>{code}</strong>{rest.length ? ` — ${rest.join(' — ')}` : ''}
-                      </li>
-                    )
-                  })}
-                </ul>
-              </>
-            )}
+            <div style={microLabel}>Schlüsselkompetenzen dieser Einheit</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5mm', marginTop: '0.5mm' }}>
+              {skTexte.map((s, i) => {
+                const [code, ...rest] = s.split(' — ')
+                return (
+                  <span key={i} style={{
+                    display: 'inline-flex', alignItems: 'baseline', gap: '1mm',
+                    background: KI_LIGHT, borderRadius: '3mm', padding: '0.8mm 2.5mm',
+                    fontSize: '9pt', lineHeight: 1.3,
+                  }}>
+                    <strong style={{ color: KI_AKZENT }}>{code}</strong>
+                    {rest.length ? <span style={{ color: '#3a4049' }}>{rest.join(' — ')}</span> : null}
+                  </span>
+                )
+              })}
+            </div>
           </section>
         )}
 

@@ -20,65 +20,73 @@ const lpVars = {
 
 const microLabel = {
   fontSize: '7.5pt', fontWeight: 600, letterSpacing: '0.05em',
-  textTransform: 'uppercase', color: LP_AKZENT, margin: '1.8mm 0 0.8mm',
+  textTransform: 'uppercase', color: LP_AKZENT, margin: '1.1mm 0 0.4mm',
 } as const
 
 const promptBox = {
   background: '#f5f7fa', border: '1px solid #d8dde4', borderRadius: '1mm',
-  padding: '2mm 2.5mm', margin: '0.8mm 0', fontFamily: "'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace",
-  fontSize: '8.6pt', lineHeight: 1.4, color: '#2a2f36', whiteSpace: 'pre-wrap',
+  padding: '1.5mm 2.2mm', margin: '0.5mm 0', fontFamily: "'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace",
+  fontSize: '8.2pt', lineHeight: 1.32, color: '#2a2f36', whiteSpace: 'pre-wrap',
 } as const
 
 const warnBox = {
   background: '#fff7ed', borderLeft: '3px solid #d97706',
-  padding: '1.5mm 2.5mm', borderRadius: '1mm', margin: '1.2mm 0',
-  fontSize: '8.3pt', lineHeight: 1.35, color: '#7c4a03',
+  padding: '1.1mm 2.2mm', borderRadius: '1mm', margin: '1mm 0',
+  fontSize: '8pt', lineHeight: 1.28, color: '#7c4a03',
 } as const
 
 const chip = {
   display: 'inline-block', fontSize: '7.5pt', background: LP_LIGHT, color: LP_DARK,
-  padding: '0.5mm 2mm', borderRadius: '3mm', fontWeight: 500, margin: '0 1mm 1mm 0',
+  padding: '0.4mm 1.8mm', borderRadius: '3mm', fontWeight: 500, margin: '0 1mm 0.6mm 0',
 } as const
 
 function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
   const bk = t.baukasten
   return (
     <div style={{
-      border: '1px solid #d8dde4', borderRadius: '1.5mm', overflow: 'hidden', marginBottom: '2.5mm', breakInside: 'avoid',
+      border: '1px solid #d8dde4', borderRadius: '1.5mm', overflow: 'hidden', marginBottom: '2mm', breakInside: 'avoid',
     }}>
-      <div style={{ background: LP_LIGHT, borderBottom: '1px solid #d8dde4', padding: '1.5mm 3mm', display: 'flex', alignItems: 'center', gap: '2.5mm' }}>
+      <div style={{ background: LP_LIGHT, borderBottom: '1px solid #d8dde4', padding: '1.2mm 3mm', display: 'flex', alignItems: 'center', gap: '2.5mm' }}>
         <span style={{
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          width: '6mm', height: '6mm', borderRadius: '50%', background: LP_AKZENT,
+          width: '5.5mm', height: '5.5mm', borderRadius: '50%', background: LP_AKZENT,
           color: '#fff', fontWeight: 700, fontSize: '9pt', flexShrink: 0,
         }}>{index}</span>
         <span style={{ fontSize: '11pt', fontWeight: 700, color: LP_DARK, lineHeight: 1.1 }}>{t.titel}</span>
       </div>
-      <div style={{ padding: '2.2mm 3mm' }}>
-        {t.erklaerung && <p style={{ margin: '0 0 1.4mm', fontSize: '9.3pt', lineHeight: 1.4 }}>{t.erklaerung}</p>}
+      <div style={{ padding: '1.8mm 3mm' }}>
+        {t.erklaerung && <p style={{ margin: '0 0 1.1mm', fontSize: '9pt', lineHeight: 1.34 }}>{t.erklaerung}</p>}
         {t.thema_bezug && (
-          <p style={{ margin: '0 0 1.4mm', fontSize: '8.8pt', lineHeight: 1.36, color: '#3a4049', fontStyle: 'italic' }}>{t.thema_bezug}</p>
+          <p style={{ margin: '0 0 1.1mm', fontSize: '8.6pt', lineHeight: 1.3, color: '#3a4049', fontStyle: 'italic' }}>{t.thema_bezug}</p>
         )}
-        {t.beispiel_basis && (
-          <>
-            <div style={microLabel}>Beispiel · Basis</div>
-            <div style={promptBox}>{t.beispiel_basis}</div>
-          </>
-        )}
-        {t.beispiel_fortgeschritten && (
-          <>
-            <div style={microLabel}>Beispiel · fortgeschritten</div>
-            <div style={promptBox}>{t.beispiel_fortgeschritten}</div>
-          </>
+        {(t.beispiel_basis || t.beispiel_fortgeschritten) && (
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: t.beispiel_basis && t.beispiel_fortgeschritten ? '40fr 60fr' : '1fr',
+            gap: '0 3mm', alignItems: 'start',
+          }}>
+            {t.beispiel_basis && (
+              <div>
+                <div style={microLabel}>Beispiel · Basis</div>
+                <div style={promptBox}>{t.beispiel_basis}</div>
+              </div>
+            )}
+            {t.beispiel_fortgeschritten && (
+              <div>
+                <div style={microLabel}>Beispiel · fortgeschritten</div>
+                <div style={promptBox}>{t.beispiel_fortgeschritten}</div>
+              </div>
+            )}
+          </div>
         )}
         {t.warnung && <div style={warnBox}>⚠ {t.warnung}</div>}
         {bk && (bk.rolle || bk.kontext || bk.aufgabe || bk.format) && (
-          <div style={{ marginTop: '1.4mm', borderTop: '1px dashed #d8dde4', paddingTop: '1.4mm' }}>
+          <div style={{ marginTop: '1mm', borderTop: '1px dashed #d8dde4', paddingTop: '1mm' }}>
             {([
               ['Rolle', bk.rolle], ['Kontext', bk.kontext], ['Aufgabe', bk.aufgabe], ['Format', bk.format],
             ] as Array<[string, string[] | undefined]>).map(([label, items]) =>
               items?.length ? (
-                <div key={label} style={{ marginBottom: '0.6mm', lineHeight: 1.6 }}>
+                <div key={label} style={{ marginBottom: '0.4mm', lineHeight: 1.45 }}>
                   <span style={{ fontSize: '7.8pt', fontWeight: 700, color: LP_AKZENT, marginRight: '1.5mm' }}>{label}:</span>
                   {items.map((it, i) => <span key={i} style={chip}>{it}</span>)}
                 </div>
@@ -117,7 +125,7 @@ function StackingPage({ s, vorlage }: { s: LernpromptStacking; vorlage?: string 
 
 function PageHeader({ titel, kontext }: { titel: string; kontext?: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '3mm', marginBottom: '2.5mm' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '3mm', marginBottom: '2mm' }}>
       <span style={{
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
         width: '9mm', height: '9mm', borderRadius: '50%', background: LP_AKZENT,

@@ -1,0 +1,138 @@
+{
+  "id": "1.1.1_rechte_verstehen_nutzen_ki",
+  "set_ref": "1.1.1_rechte_verstehen_nutzen_set",
+  "prinzip_ref": "1.1.1_rechte_verstehen_nutzen_prinzip",
+  "kn_ref": "1.1.1_rechte_verstehen_nutzen_kn",
+  "anchored_situations": [
+    "1.1.1_rechte_verstehen_nutzen_hf_A",
+    "1.1.1_rechte_verstehen_nutzen_hf_B",
+    "1.1.1_rechte_verstehen_nutzen_hf_C"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "thema": "T1",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: eine rechtliche Anfrage klären, die Rechtsgrundlage aus geeigneten Quellen prüfen und die Antwort begründet und adressatengerecht im passenden Kanal verfassen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Lehrvertrag, Rechte und Pflichten Lernende (OR 321a ff.), Lohnabzug bei Schaden (OR 321e), Tatbestand-Rechtslage-Rechtsfolge als Schema zum Lösen von Rechtsfällen (Kap. 1.3, 1.4).",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Verantwortung einer rechtlichen Auskunft an eine/n Mitlernende/n; ehrlich benennen, wo die eigene Auskunft nicht abschliessend ist, statt Sicherheit vorzutäuschen.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Rollenübernahme als beratende/r Mitlernende/r: was kann ich verlässlich sagen, wo verweise ich weiter (Kap. 18.1).",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Kanalwahl und Register zwischen schneller WhatsApp-Antwort und weiterleitbarer formeller E-Mail; Datenschutz (Kap. 20.7); KI als Recherche- und Schreibinstrument mit Halluzinationsrisiko bei Rechtsartikeln.",
+        "kompetenz_anker": "1.1.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK1 — Quellen unterscheiden",
+      "SK6 — Standpunkte begründen",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Was kann eine KI bei einer rechtlichen Anfrage für dich leisten — und welcher Schritt (Quelle prüfen, Verantwortung tragen) bleibt deine eigene Aufgabe?",
+    "kritisch": "Woran erkennst du, dass eine KI einen OR-Artikel erfunden oder eine Rechtsfolge verzerrt hat?",
+    "vergleichend": "Worin unterscheidet sich deine selbst geprüfte und im Lehrmittel belegte Auskunft von einer KI-Antwort, die du ungeprüft übernimmst?",
+    "urteilend": "Würdest du eine KI-formulierte Rechtsauskunft an eine/n Mitlernende/n weitergeben, ohne jeden Artikel nachgeschlagen zu haben — warum (nicht)?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Die KI als Gegenseite — hält dein Lohnabzug-Argument stand?",
+      "ziel": "Du prüfst, wie tragfähig deine rechtliche Auskunft ist, indem du die KI die Sicht des Betriebs so stark wie möglich vertreten lässt und jede ihrer Rechtsbehauptungen gegen die Quelle prüfst.",
+      "bezug": "Nutzt alle drei Herausforderungen: die aus Quellen verdichteten Rechte und Pflichten aus dem Regel-Spickzettel (A), die methodische Fallprüfung nach Tatbestand-Rechtslage-Rechtsfolge aus der Fall-Mappe (B) und die adressatengerechte schriftliche Antwort (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Wer eine rechtliche Anfrage beantwortet, klärt zuerst Tatbestand und Rechtsgrundlage aus geeigneten Quellen, prüft die eigene Rolle und Verantwortung gegenüber dem Adressaten und formuliert die Antwort im passenden Kanal mit nachvollziehbarer Begründung. Anker ist die KN-Hybrid-Szene: die Lohnabzug-Anfrage um 21 Uhr (CHF 150 für einen Kratzer am Werkstück, OR 321e).",
+      "auftrag": "Nimm einen Fall aus deiner Fall-Mappe oder den Lohnabzug-Fall (CHF 150 für einen Kratzer). Formuliere zuerst deine eigene begründete Auskunft nach dem Schema Tatbestand-Rechtslage-Rechtsfolge, mit dem OR-Artikel, auf den du dich stützt. Beauftrage dann eine KI, in der Rolle des Berufsbildner/in die Gegenposition so stark wie möglich zu vertreten — der Abzug sei zulässig. Prüfe jede rechtliche Behauptung gegen dein Lehrmittel (Kap. 1.3, 1.4, OR 321e) und entscheide: Welcher Einwand benennt eine echte rechtliche Voraussetzung, die du in deiner Auskunft berücksichtigen musst — und welcher ist rechtlich falsch, erfunden oder reine Druckausübung?",
+      "prompt_strategie": [
+        "Gib der KI eine klare Rolle: «Du bist mein Berufsbildner/in und willst begründen, warum der Lohnabzug von CHF 150 zulässig ist …»",
+        "Gib den Tatbestand wertungsfrei als Kontext mit (Kratzer am fertigen Werkstück, CHF 150) — ohne deine eigene Rechtsfolge oder dein Wunschergebnis zu verraten.",
+        "Verlange zu jedem Gegenargument einen prüfbaren Verweis (OR-Artikel, Kapitel im Lehrmittel) und einen Satz, warum die Voraussetzung hier erfüllt sein soll.",
+        "Fordere in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Auskunft und sag mir, an welchem Punkt ich eine Rechtsfolge behaupte, die ich noch gar nicht belegt habe.»"
+      ],
+      "ki_frei_vorher": "Halte OHNE KI fest: deine eigene Auskunft zum Lohnabzug-Fall nach dem Schema Tatbestand-Rechtslage-Rechtsfolge in 3-4 Sätzen, plus den OR-Artikel oder das Kapitel, auf das du dich stützt.",
+      "schritte": [
+        "Fall wählen und eigene Auskunft (Tatbestand-Rechtslage-Rechtsfolge + Quelle) KI-frei festhalten (siehe Feld auf Seite 1).",
+        "KI mit Rollen-Prompt als Berufsbildner/in ansetzen; die stärkste Gegenposition mit Begründungen und Quellenverweisen verlangen.",
+        "Jede rechtliche Behauptung im Lehrmittel oder Gesetzestext nachschlagen: Stimmt der Artikel nach Nummer UND Inhalt — oder ist er verzerrt oder erfunden?",
+        "Trennen: Welcher Einwand benennt eine echte rechtliche Voraussetzung (z. B. Verschulden), welcher ist rechtlich falsch oder Druck?",
+        "Deine Auskunft überarbeiten: Was berücksichtigst du neu, was weist du mit Quelle begründet zurück — und wo markierst du ehrlich, dass deine Auskunft nicht abschliessend ist?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigenposition zuerst",
+          "indikator": "Die KI-freie Auskunft nach Tatbestand-Rechtslage-Rechtsfolge mit Quelle liegt vor, bevor der erste Prompt abgesetzt wurde."
+        },
+        {
+          "kriterium": "Rechts-Verifikation",
+          "indikator": "Jede rechtliche Behauptung der KI ist im Lehrmittel oder Gesetzestext nachgeschlagen und als korrekt, verzerrt oder erfunden markiert (Nummer und Inhalt geprüft)."
+        },
+        {
+          "kriterium": "Echte Voraussetzung erkannt",
+          "indikator": "Die überarbeitete Auskunft unterscheidet mindestens eine rechtlich relevante Voraussetzung der Gegenseite von einer begründet zurückgewiesenen Behauptung."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand des Berufsbildner/in hat deine Rechtsfolge am stärksten herausgefordert — und hielt dein Argument stand?",
+        "Hat die KI einen OR-Artikel erfunden oder eine Rechtsfolge verzerrt? Woran genau hast du es gemerkt?",
+        "Im Kompetenznachweis — etwa im Fachgespräch (Frage 3: Tempo und Sorgfalt gleich gewichten oder nicht?) oder im Mini Case schriftlich — musst du deine Auskunft selbst begründen und Trade-offs ehrlich ausweisen. Wie hilft dir diese Übung, eine Rechtsbehauptung erst zu prüfen, bevor du sie als sicher weitergibst?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_redaktion",
+      "titel": "KI-Entwurf des Antwortschreibens redigieren",
+      "ziel": "Du beurteilst, was eine KI beim adressatengerechten Verfassen einer Rechtsauskunft leistet — und wo deine eigene Prüfung von Aufbau, Quelle, Kanal und Ehrlichkeit unersetzlich bleibt.",
+      "bezug": "Nutzt alle drei Herausforderungen: die geklärten Regeln aus dem Regel-Spickzettel als Inhalt (A), die methodisch geprüfte Rechtsfolge aus der Fall-Mappe als Begründung (B) und das Antwortschreiben nach Anlass-Absicht-Begründung-Schluss mit 3B-Schema (C) — und wendet das Transfer-Prinzip an: Die Antwort gehört in den passenden Kanal, mit nachvollziehbarer Begründung und so formuliert, dass sie weitergeleitet werden kann und ehrlich markiert, wo sie nicht abschliessend ist. Anker ist die KN-Hybrid-Szene: die Lohnabzug-Anfrage um 21 Uhr.",
+      "auftrag": "Lass eine KI eine schriftliche Antwort an deine/n Mitlernende/n zur Lohnabzug-Anfrage verfassen — mit allen Kontextangaben, die sie braucht. Redigiere den KI-Entwurf anschliessend wie eine Redaktorin/ein Redaktor: Prüfe den Aufbau (Anlass-Absicht-Begründung-Schluss, Kap. 17.3), das integrierte 3B-Schema (Behauptung-Begründung-Beispiel, Kap. 17.2), die Kanal- und Datenschutz-Logik (Kap. 20.7), ob mindestens ein OR-Artikel korrekt zitiert ist und ob das Schreiben ehrlich markiert, wo die Auskunft nicht abschliessend ist. Erstelle daraus deine eigene, bessere Version und dokumentiere mindestens drei begründete Änderungen.",
+      "prompt_strategie": [
+        "Kontextualisiere vollständig: Worum geht die Anfrage (Lohnabzug CHF 150), wer liest mit, dass die Antwort weitergeleitet wird, welcher Kanal gewählt ist.",
+        "Gib das Format vor: E-Mail nach Anlass-Absicht-Begründung-Schluss, integriertes 3B-Schema, mindestens ein zitierter OR-Artikel, 8-12 Sätze.",
+        "Verlange, dass die KI jede rechtliche Aussage mit Artikel markiert und kennzeichnet, wo sie unsicher ist — so findest du erfundene Artikel und überzogene Sicherheit leichter.",
+        "Zweiter Prompt: «Nenne drei Stellen, an denen dieser Entwurf eine Auskunft als sicher darstellt, die rechtlich nicht abschliessend ist — und formuliere sie ehrlicher.»"
+      ],
+      "ki_frei_vorher": "Notiere OHNE KI: die drei Punkte, die in deiner Antwort vorkommen müssen (geltender Artikel, Rechtsfolge, offene Stelle), und den Kanal, den du wählst — mit einem Satz Begründung.",
+      "schritte": [
+        "Anfrage festlegen; eigene Eckpunkte (Artikel, Rechtsfolge, offene Stelle) und Kanalwahl KI-frei festhalten.",
+        "KI mit vollständigem Kontext und Formatvorgabe den Entwurf schreiben lassen.",
+        "Redaktionsprüfung: Aufbau, 3B-Schema, Kanal- und Datenschutz-Logik, Richtigkeit des zitierten Artikels, ehrliche Markierung der offenen Stelle — Schwächen markieren.",
+        "Eigene Version erstellen; mindestens drei Änderungen mit Begründung dokumentieren (davon mindestens eine, die eine überzogene Sicherheit ehrlicher fasst).",
+        "Vergleich: Welche Version würdest du wirklich abschicken — und welcher Satz entscheidet, ob deine Auskunft verlässlich und ehrlich ist?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Vollständiger Kontext-Prompt",
+          "indikator": "Der erste Prompt enthält Anlass, Adressat, Weiterleitungs-Absicht, Kanal und die Formatvorgabe (Aufbau, 3B-Schema, Artikel zitieren, Länge)."
+        },
+        {
+          "kriterium": "Quellen-Verifikation im Entwurf",
+          "indikator": "Jeder von der KI zitierte OR-Artikel ist im Lehrmittel nachgeschlagen und als korrekt oder erfunden markiert, bevor er übernommen wird."
+        },
+        {
+          "kriterium": "Redaktionsprüfung dokumentiert",
+          "indikator": "Mindestens drei begründete Änderungen am KI-Entwurf sind festgehalten, davon mindestens eine, die eine offene Rechtsfrage ehrlich kennzeichnet."
+        }
+      ],
+      "reflexion": [
+        "Was konnte die KI beim Formulieren schneller oder besser als du — und was hast du beim Aufbau oder bei der Quelle besser gekonnt?",
+        "Welchen erfundenen Artikel oder welche überzogene Sicherheit hättest du ohne die Redaktionsprüfung übersehen?",
+        "Im Kompetenznachweis musst du selbst — ohne KI — ein Antwortschreiben verfassen, das einen Artikel korrekt zitiert und offene Stellen ehrlich markiert (Mini Case schriftlich, Aufgabe 4). Was nimmst du aus dieser Redaktion mit, das du danach allein beherrschen musst?"
+      ]
+    }
+  ]
+}

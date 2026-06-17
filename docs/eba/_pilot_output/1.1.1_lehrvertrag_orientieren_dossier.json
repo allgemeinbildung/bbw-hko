@@ -1,0 +1,302 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_dossier",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "lehrvertrag_orientieren",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_set",
+  "sprachniveau": "A2",
+  "nuggets": [
+    {
+      "id": "nugget_A_01",
+      "tag": "A",
+      "titel": "Was steht im Lehrvertrag?",
+      "inhalt": "Der Lehrvertrag ist ein schriftlicher Vertrag. Er regelt deine Lehre. Im Vertrag stehen Lohn, Ferien und Arbeitszeit. Auch die Probezeit steht darin. Das kantonale Amt prüft und genehmigt den Vertrag. Beide Seiten bekommen ein Exemplar.",
+      "beispiel": "Du findest deinen Lohn pro Monat auf der ersten Seite des Lehrvertrags.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Der Lehrvertrag ist schriftlich und wird von der kantonalen Behörde genehmigt.",
+          "wert": "schriftlich; Genehmigung durch kantonale Behörde vor Lehrbeginn",
+          "quelle": "berufsbildung.ch (Kontrolle und Genehmigung des Lehrvertrags)",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "lehrvertrag",
+        "probezeit",
+        "berufsbildungsamt"
+      ]
+    },
+    {
+      "id": "nugget_A_02",
+      "tag": "A",
+      "titel": "Probezeit — wie lange?",
+      "inhalt": "Die Probezeit steht im Lehrvertrag. Sie dauert 1 bis 3 Monate. Steht nichts im Vertrag, gelten 3 Monate. Mit Genehmigung der kantonalen Behörde sind bis zu 6 Monate möglich. In der Probezeit schaut ihr, ob die Lehre passt.",
+      "beispiel": "Im Vertrag steht: Probezeit 3 Monate. Dann gilt diese Zeit ab dem ersten Arbeitstag.",
+      "fuer_leitfrage": [
+        2,
+        3
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Die Probezeit dauert 1 bis 3 Monate; ohne Vereinbarung 3 Monate.",
+          "wert": "1-3 Monate; Default 3 Monate",
+          "quelle": "OR Art. 344a Abs. 3; berufsbildung.ch (Probezeit)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Verlängerung bis maximal 6 Monate mit Genehmigung der kantonalen Behörde.",
+          "wert": "max. 6 Monate, mit kantonaler Genehmigung",
+          "quelle": "OR Art. 344a Abs. 3; berufsbildung.ch",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "probezeit",
+        "lehrvertrag",
+        "berufsbildungsamt"
+      ]
+    },
+    {
+      "id": "nugget_A_03",
+      "tag": "A",
+      "titel": "Höflich digital nachfragen",
+      "inhalt": "Du verstehst einen Punkt nicht? Dann frag nach. Lies den Begriff zuerst im Dossier. Ein KI-Tool kann dir den Begriff einfach erklären. Prüfe die Antwort aber immer. Dann schreib eine kurze, höfliche Nachricht. Stell eine klare Frage.",
+      "beispiel": "«Guten Tag, ich habe eine Frage zur Probezeit in meinem Lehrvertrag.»",
+      "fuer_leitfrage": [
+        4
+      ],
+      "fakten_anker": [],
+      "glossar_refs": [
+        "ki_tool",
+        "lehrvertrag",
+        "probezeit"
+      ]
+    },
+    {
+      "id": "nugget_B_01",
+      "tag": "B",
+      "titel": "Was ist ein Konflikt im Betrieb?",
+      "inhalt": "Ein Konflikt ist ein Streit oder ein Problem mit anderen. Im Betrieb passiert das manchmal. Vielleicht fühlst du dich unfair behandelt. Vielleicht versteht ihr euch falsch. Ein Konflikt ist normal. Wichtig ist, wie du damit umgehst.",
+      "beispiel": "Du bekommst immer nur das Putzen und darfst nie an die Maschine. Das ärgert dich.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [],
+      "glossar_refs": [
+        "konflikt",
+        "berufsbildner"
+      ]
+    },
+    {
+      "id": "nugget_B_02",
+      "tag": "B",
+      "titel": "Wer hilft mir? Die Kontaktstellen",
+      "inhalt": "Zuerst hilft oft die Berufsbildnerin oder der Berufsbildner. Auch die Lehrperson kann helfen. Bleibt das Problem, hilft eine Stelle von aussen. Das ist das kantonale Berufsbildungsamt (die Lehraufsicht). Diese Stelle vermittelt bei einem Konflikt. In manchen Kantonen gibt es auch eine Schlichtungsstelle.",
+      "beispiel": "Das Berufsbildungsamt hilft, wenn du und dein Betrieb keine Lösung findet.",
+      "fuer_leitfrage": [
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Die kantonale Lehraufsicht (Berufsbildungsamt) vermittelt bei Konflikten im Lehrverhältnis.",
+          "wert": "kantonales Berufsbildungsamt / Lehraufsicht vermittelt",
+          "quelle": "berufsbildung.ch (Behörden; Auflösung des Lehrvertrags)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Der genaue Name und die Kontaktdaten der zuständigen Stelle hängen vom Kanton ab.",
+          "wert": "Name variiert (z. B. Amt für Berufsbildung, Mittelschul- und Berufsbildungsamt)",
+          "quelle": "berufsbildung.ch (Kantonale Anlaufstellen) — pro Kanton zu prüfen",
+          "validiert": false,
+          "lp_pruefen": true
+        }
+      ],
+      "glossar_refs": [
+        "kontaktstelle",
+        "lehraufsicht",
+        "berufsbildungsamt",
+        "schlichtungsstelle",
+        "berufsbildner"
+      ]
+    },
+    {
+      "id": "nugget_B_03",
+      "tag": "B",
+      "titel": "Schritt für Schritt Hilfe holen",
+      "inhalt": "Bleib zuerst ruhig. Sammle die Fakten: Was ist passiert? Seit wann? Überlege, wer helfen kann. Schreib eine sachliche Nachricht. Beschreibe das Problem kurz und klar. Bitte höflich um Hilfe. Nenne keine Schimpfwörter.",
+      "beispiel": "«Guten Tag, ich bin Lernende/r und brauche Hilfe. In meinem Betrieb gibt es folgendes Problem: …»",
+      "fuer_leitfrage": [
+        3,
+        4
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "In der Probezeit kann der Lehrvertrag mit 7 Tagen Frist gekündigt werden; danach nur aus wichtigen Gründen oder im Einvernehmen.",
+          "wert": "Probezeit: 7 Tage Kündigungsfrist; nach Probezeit: wichtige Gründe / Einvernehmen",
+          "quelle": "OR Art. 346; berufsbildung.ch (Kündigung)",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "konflikt",
+        "kontaktstelle",
+        "kuendigung",
+        "kuendigungsfrist"
+      ]
+    }
+  ],
+  "sprachmodi_scaffolds": [
+    {
+      "tag": "A",
+      "sm_id": "SM9",
+      "modus_label": "Digital zusammenarbeiten",
+      "satzanfaenge": [
+        "«Guten Tag, ich habe eine Frage zu …»",
+        "«Das verstehe ich noch nicht ganz: …»",
+        "«Vielen Dank für Ihre Hilfe.»"
+      ],
+      "strategien": [
+        "Begriff zuerst im Dossier lesen.",
+        "KI-Antwort immer prüfen.",
+        "Eine Frage pro Nachricht."
+      ],
+      "struktur": [
+        "Gruss – Frage – Dank",
+        "Kurze Sätze, ein Gedanke pro Satz"
+      ],
+      "so_gehst_du_vor": [
+        "1. Markiere den Punkt, den du nicht verstehst.",
+        "2. Lies den Begriff im Dossier.",
+        "3. Frag ein KI-Tool nach einer einfachen Erklärung. Prüfe die Antwort.",
+        "4. Schreib eine kurze, höfliche Nachricht mit deiner Frage.",
+        "5. Lies die Nachricht laut. Sind die Sätze kurz?"
+      ]
+    },
+    {
+      "tag": "B",
+      "sm_id": "SM9",
+      "modus_label": "Digital zusammenarbeiten",
+      "satzanfaenge": [
+        "«Guten Tag, ich bin Lernende/r und brauche Hilfe.»",
+        "«In meinem Betrieb gibt es folgendes Problem: …»",
+        "«Können Sie mir bitte helfen?»"
+      ],
+      "strategien": [
+        "Zuerst Fakten sammeln.",
+        "Sachlich bleiben — keine Schuldzuweisung.",
+        "Klar sagen, was du dir wünschst."
+      ],
+      "struktur": [
+        "Wer bin ich – Problem – Bitte um Hilfe",
+        "Kurze Sätze, ein Gedanke pro Satz"
+      ],
+      "so_gehst_du_vor": [
+        "1. Atme durch und bleib ruhig.",
+        "2. Schreib die Fakten auf: Was? Seit wann?",
+        "3. Wähle die richtige Stelle (siehe Nugget B-02).",
+        "4. Schreib eine sachliche Nachricht mit einer klaren Bitte.",
+        "5. Prüfe: ruhig, klar, höflich?"
+      ]
+    }
+  ],
+  "transfer_wissensblatt": {
+    "fachsystematik": "Bei Fragen und Konflikten in der Arbeitswelt gibt es zwei Wege: selbst klären oder Hilfe holen. Zuerst prüfst du, was du selbst lösen kannst. Bei einem echten Problem holst du Hilfe bei der zuständigen Stelle. So bleibst du handlungsfähig und kennst deine Rechte.",
+    "prinzip_in_einfach": "Erst selbst prüfen. Bei einem echten Problem Hilfe holen. Immer bei der richtigen Stelle.",
+    "austausch_scaffolds": {
+      "satzanfaenge": [
+        "«In meinem Fall habe ich …»",
+        "«Beide Fälle sind gleich, weil …»",
+        "«Schwierig wäre für mich …, weil …»"
+      ],
+      "so_tauschst_du_aus": [
+        "1. Erzähl deinen Fall in 90 Sekunden.",
+        "2. Hör den anderen genau zu.",
+        "3. Findet zusammen die gemeinsame Regel.",
+        "4. Sag, welcher Fall für dich schwierig wäre."
+      ]
+    }
+  },
+  "glossar": [
+    {
+      "id": "lehrvertrag",
+      "begriff": "Lehrvertrag",
+      "erklaerung_a2": "Ein schriftlicher Vertrag für deine Lehre. Er regelt Lohn, Ferien, Arbeitszeit und Probezeit.",
+      "beispiel": "Du unterschreibst den Lehrvertrag vor dem ersten Arbeitstag."
+    },
+    {
+      "id": "probezeit",
+      "begriff": "Probezeit",
+      "erklaerung_a2": "Die erste Zeit der Lehre. Ihr schaut, ob die Lehre passt. Sie dauert 1 bis 3 Monate.",
+      "beispiel": "In der Probezeit lernst du den Betrieb kennen."
+    },
+    {
+      "id": "kuendigung",
+      "begriff": "Kündigung",
+      "erklaerung_a2": "Wenn jemand den Vertrag beendet. Beide Seiten können kündigen.",
+      "beispiel": "In der Probezeit ist eine Kündigung mit kurzer Frist möglich."
+    },
+    {
+      "id": "kuendigungsfrist",
+      "begriff": "Kündigungsfrist",
+      "erklaerung_a2": "Die Zeit zwischen Kündigung und letztem Arbeitstag. In der Probezeit sind es 7 Tage.",
+      "beispiel": "Die Kündigungsfrist in der Probezeit ist kurz: 7 Tage."
+    },
+    {
+      "id": "konflikt",
+      "begriff": "Konflikt",
+      "erklaerung_a2": "Ein Streit oder ein Problem mit anderen Menschen.",
+      "beispiel": "Ein Konflikt mit dem Betrieb über deine Aufgaben."
+    },
+    {
+      "id": "kontaktstelle",
+      "begriff": "Kontaktstelle",
+      "erklaerung_a2": "Eine Stelle, die dir bei einem Problem hilft.",
+      "beispiel": "Das Berufsbildungsamt ist eine wichtige Kontaktstelle."
+    },
+    {
+      "id": "lehraufsicht",
+      "begriff": "Lehraufsicht",
+      "erklaerung_a2": "Die kantonale Stelle, die über die Lehre wacht. Sie hilft bei Konflikten.",
+      "beispiel": "Die Lehraufsicht vermittelt zwischen dir und dem Betrieb."
+    },
+    {
+      "id": "berufsbildungsamt",
+      "begriff": "Berufsbildungsamt",
+      "erklaerung_a2": "Das kantonale Amt für die Berufslehre. Es genehmigt den Lehrvertrag und hilft bei Problemen.",
+      "beispiel": "Das Berufsbildungsamt deines Kantons findest du im Internet."
+    },
+    {
+      "id": "schlichtungsstelle",
+      "begriff": "Schlichtungsstelle",
+      "erklaerung_a2": "Eine Stelle, die bei einem Streit eine Lösung sucht. Es gibt sie nicht in jedem Kanton.",
+      "beispiel": "Die Schlichtungsstelle hilft, einen Streit ohne Gericht zu lösen."
+    },
+    {
+      "id": "berufsbildner",
+      "begriff": "Berufsbildner/in",
+      "erklaerung_a2": "Die Person im Betrieb, die dich ausbildet und begleitet.",
+      "beispiel": "Deine Berufsbildnerin zeigt dir die Arbeit im Betrieb."
+    },
+    {
+      "id": "ki_tool",
+      "begriff": "KI-Tool",
+      "erklaerung_a2": "Ein Computer-Programm, das Fragen beantwortet. Du musst die Antwort aber prüfen.",
+      "beispiel": "Ein KI-Tool erklärt dir einen schwierigen Begriff in einfachen Worten."
+    }
+  ],
+  "template": "dossier_eba_v1",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}
