@@ -1,0 +1,353 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_hf_A",
+  "modul": "1.2",
+  "modul_titel": "Ich lerne effektiv und setze meine Ressourcen effizient ein",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Die KI antwortet sofort — aber lerne ich dabei etwas?",
+  "wissensknoten": [
+    "gezieltes_prompten_lernprozess"
+  ],
+  "nrlp": {
+    "nr": "1.2.2",
+    "nr_primary": [
+      "1.2.2"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital"
+    ],
+    "sk": [
+      3,
+      2,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM9"
+    ],
+    "kompetenz_id": "1.2.2",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann mich auf den nächsten Kompetenznachweis zielgerichtet und effektiv vorbereiten.",
+    "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
+  },
+  "persona": {
+    "beruf": "Informatiker/in EFZ",
+    "betrieb": "Noser Engineering AG",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Informatik-Lernende/r im 1. Lehrjahr bei der Noser Engineering AG in Winterthur. In zwei Wochen habe ich einen Kompetenznachweis zum Thema «Sicheres Arbeiten im Homeoffice», und ich will mich mit einem KI-Chatbot vorbereiten. Ich tippe «Erkläre mir Datensicherheit» ein und bekomme sofort eine glatte, lange Antwort — aber als ich sie zuklappe, könnte ich kaum drei Sätze davon selbst wiederholen. Es war schnell, es klang gut, und trotzdem habe ich das Gefühl, nichts wirklich verstanden zu haben. Ich frage mich, ob das an der KI liegt oder an meinen Fragen. Soll ich die erste Antwort einfach übernehmen, weil sie fertig aussieht, oder lohnt es sich, weiterzufragen, bis ich es wirklich kann?",
+  "zahlen_tabelle": [
+    {
+      "label": "Zeit bis zum KN",
+      "wert": "2 Wochen"
+    },
+    {
+      "label": "Erste KI-Antwort",
+      "wert": "ca. 300 Wörter"
+    },
+    {
+      "label": "Davon selbst wiederholbar",
+      "wert": "3 Sätze"
+    }
+  ],
+  "leitfrage": "Wie muss ich fragen, damit die KI mir beim Verstehen hilft — und nicht nur eine fertige Antwort liefert?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Du arbeitest ohne Lehrmittel — deine Quellen sind die KI-Tools selbst, dein eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "ohne Lehrmittel | KI-Tool",
+      "text": "Was ist ein Prompt, und warum liefert ein Sprachmodell auf eine vage Frage («Erkläre mir Datensicherheit») eine vage Antwort? Notiere in drei bis vier Sätzen, was ein gutes Prompt von einem schlechten unterscheidet (Ziel, Rolle, Kontext, gewünschtes Format).",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "eigener KN | KI-Tool",
+      "text": "Formuliere zu deinem eigenen KN-Thema drei aufeinander aufbauende Prompts: einen breiten Einstiegs-Prompt, einen, der die Rolle und das Lernziel vorgibt, und einen, der gezielt nachhakt («Erkläre es so, dass ich es jemandem weitererklären kann»). Gib alle drei nacheinander in das KI-Tool ein.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "KI-Dialog | eigene Notizen",
+      "text": "Entscheide für jede KI-Antwort begründet: Übernimmst du sie, oder hakst du nochmals nach? Markiere im Dialog, an welcher Stelle dein Verständnis tatsächlich gewachsen ist — und an welcher die KI dir nur Arbeit abgenommen hat, ohne dass du dazugelernt hast.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "KI-Dialog | eigene Notizen",
+      "text": "Schreibe zu deinem stärksten Prompt einen kurzen Kommentar von zwei bis drei Sätzen: Warum hat genau diese Frage dein Verständnis weitergebracht? Formuliere die Begründung so, dass du sie einer Mitlernenden/einem Mitlernenden im Chat erklären könntest.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Gezielt prompten — fragen, um zu verstehen",
+  "mindmap_aeste": [
+    {
+      "titel": "Bausteine eines guten Prompts",
+      "punkte": [
+        "Rolle vorgeben («Du bist meine Lerncoach/in»)",
+        "Ziel nennen («Ich will es selbst erklären können»)",
+        "Kontext geben (mein KN-Thema, mein Stand)",
+        "Format wünschen (Beispiel, Schritte, Frage zurück)"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Iterativ nachfragen",
+      "punkte": [
+        "«Erkläre einfacher / mit einem Beispiel»",
+        "«Stell mir eine Kontrollfrage»",
+        "«Was habe ich noch nicht verstanden?»",
+        "Schritt für Schritt statt eine Riesenantwort"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Verstehen statt übernehmen",
+      "punkte": [
+        "Antwort zuklappen, selbst wiederholen",
+        "Mit eigenen Worten nacherzählen",
+        "Lücken erkennen und gezielt nachfragen",
+        "Lernfortschritt markieren"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Stolpersteine",
+      "punkte": [
+        "Zu vage gefragt → schwammige Antwort",
+        "Erste Antwort kopiert, nichts behalten",
+        "Keine Kontrollfrage gestellt"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Prompt-Protokoll (kommentierter KI-Dialog)",
+    "abgaben": [
+      "Prompt-Protokoll mit mind. 3 iterativen Prompts und den KI-Antworten",
+      "Markierungen der Stellen mit echtem Lernfortschritt",
+      "Kurzkommentar zum stärksten Prompt (2–3 Sätze)"
+    ],
+    "titel": "Mein Prompt-Protokoll — wie ich mich vom schwammigen zum scharfen Fragen vorgearbeitet habe",
+    "format_detail": "Ein kommentierter KI-Dialog auf ein bis zwei A4-Seiten: mindestens drei iterativ verbesserte Prompts mit den jeweiligen KI-Antworten (gekürzt zitiert), farbig oder mit Symbolen markiert, wo dein Verständnis tatsächlich gewachsen ist, plus ein Kurzkommentar zum stärksten Prompt.",
+    "beschreibung": "Ich dokumentiere meinen eigenen KI-Dialog zur KN-Vorbereitung und mache sichtbar, wie ich vom vagen ersten Prompt zu einer Frage komme, die mein Verständnis wirklich weiterbringt. Das Protokoll zeigt nicht die schönste KI-Antwort, sondern meinen Lernweg: Wo habe ich nachgehakt, wo habe ich gemerkt, dass ich etwas selbst können muss? Es ist die Grundlage, mit der ich in Herausforderung B die Verlässlichkeit der KI prüfe und in Herausforderung C meinen Lernplan baue.",
+    "schritte": [
+      {
+        "label": "Ausgangs-Prompt festhalten",
+        "hint": "Schreibe deinen ersten, bewusst vagen Prompt auf und kopiere die KI-Antwort gekürzt darunter. Das ist dein «Vorher»-Bild."
+      },
+      {
+        "label": "Prompt schärfen",
+        "hint": "Baue Rolle, Ziel, Kontext und gewünschtes Format ein (Mindmap-Ast 1). Gib den verbesserten Prompt ein und notiere die neue Antwort."
+      },
+      {
+        "label": "Iterativ nachfragen",
+        "hint": "Stelle mindestens eine Kontroll- oder Vertiefungsfrage («Stell mir eine Frage zum Thema», «Erkläre das mit einem Beispiel aus meinem Beruf»)."
+      },
+      {
+        "label": "Lernfortschritt markieren",
+        "hint": "Markiere im Dialog mit Symbolen: Häkchen = hier habe ich verstanden, Fragezeichen = hier hat mir die KI nur Arbeit abgenommen, ohne dass ich dazugelernt habe."
+      },
+      {
+        "label": "Stärksten Prompt kommentieren",
+        "hint": "Wähle den Prompt, der dein Verständnis am meisten weitergebracht hat, und begründe in 2–3 Sätzen, warum gerade diese Frage gewirkt hat."
+      }
+    ],
+    "schreib_label": "PROMPT-PROTOKOLL HIER ERARBEITEN",
+    "schreib_note": "-> wissen/gezieltes_prompten_lernprozess",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Du bist meine Lerncoach/in für das Thema … (Rolle)»",
+        "«Mein Ziel ist, dass ich es selbst erklären kann — bitte … (Ziel)»",
+        "«Erkläre das nochmals einfacher / mit einem Beispiel … (Nachfrage)»",
+        "«Dieser Prompt hat mir geholfen, weil … (Kommentar)»"
+      ],
+      "strategien": [
+        "Erst breit fragen, dann mit Rolle/Ziel/Kontext schärfen, dann nachhaken",
+        "Nach jeder Antwort kurz zuklappen und selbst nacherzählen",
+        "Lernfortschritt sofort markieren, solange du den Eindruck noch frisch hast"
+      ],
+      "struktur": [
+        "Pro Prompt: Frage – KI-Antwort (gekürzt) – meine Markierung",
+        "Aufbau vom vagen zum scharfen Prompt sichtbar machen",
+        "Abschluss: Kommentar zum stärksten Prompt"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich beim Vergleich meiner Prompts am meisten überrascht — wie stark hat die Art der Frage die Antwort verändert?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meiner Ausbildung muss ich noch fragen können, statt nur fertige Antworten zu übernehmen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich beim nächsten KI-Dialog konkret, damit ich verstehe statt nur abnicke?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Gutes und schlechtes Prompten an eigenen Beispielen unterschieden",
+        "Übernehmen vs. Nachhaken pro Antwort begründet entschieden"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Verbindung zwischen Prompt-Bausteinen und Lernfortschritt erkennbar"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Mindestens 3 iterativ verbesserte Prompts mit KI-Antworten dokumentiert",
+        "Lernfortschritt im Dialog sichtbar markiert",
+        "Kurzkommentar zum stärksten Prompt vorhanden"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konkrete Konsequenz für den nächsten KI-Dialog benannt"
+      ]
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap, erste Prompts ausprobieren",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Prompt-Protokoll erstellen und Lernfortschritt markieren",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Gezielt prompten"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Effizienz vs. echtes Verständnis",
+    "hint": "Beide Pole sind legitim: Eine schnelle, fertige KI-Antwort spart Zeit, und Zeit ist vor einem KN knapp. Gleichzeitig nützt dir die schönste Antwort nichts, wenn du sie im KN nicht selbst wiedergeben kannst. Bewertet wird nicht, ob du schnell oder langsam arbeitest, sondern ob du bewusst entscheidest, wann Tempo reicht und wann du auf Verständnis bestehst."
+  },
+  "dekontextualisierung": {
+    "frage": "Wie stelle ich in einem ganz anderen Fach oder im Betrieb eine Frage an die KI, damit ich am Ende selbst etwas kann — und nicht nur eine Antwort besitze?",
+    "ziel": "KI macht mich schneller, aber nicht automatisch kompetenter — wer gezielt fragt, behält die Kontrolle über den eigenen Lernprozess."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T4 Verantwortung: KI-Einsatz im Betrieb verantworten.",
+    "r3_voraussicht": "T7 Arbeiten in der Zukunft: KI als Arbeitswerkzeug einordnen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "ohne Lehrmittel",
+      "titel": "KI-Tools, eigener Kompetenznachweis und eine selbstgewählte verlässliche Quelle als Material — kein Lehrmittelkapitel",
+      "seiten": "—",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Prompt-Qualität",
+        "indikator": "Baut Rolle, Ziel, Kontext und Format bewusst in mindestens einen Prompt ein.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Iteration",
+        "indikator": "Zeigt mindestens drei aufeinander aufbauende Prompts und hakt gezielt nach.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Lernfortschritt sichtbar machen",
+        "indikator": "Markiert im Dialog, wo Verständnis gewachsen ist und wo die KI nur Arbeit abgenommen hat.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mehrdeutigkeit anerkennen",
+        "indikator": "Benennt im Kommentar den Zielkonflikt zwischen Tempo und echtem Verständnis.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Vorgegebene Prompt-Bausteine-Liste (Rolle/Ziel/Kontext/Format) und ein Protokoll-Raster als Lückentext.",
+    "scaffold_100": "Zusätzlich: denselben Ausgangs-Prompt zweimal stellen — einmal vage, einmal scharf — und die beiden Antworten direkt gegenüberstellen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Gezieltes, iteratives Prompten als Werkzeug für echtes Verständnis statt fertiger Antworten.",
+    "lehrmittel_anker": "Ohne Lehrmittel — Material sind die KI-Tools selbst, der eigene kommende KN und eine selbstgewählte verlässliche Quelle.",
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als das Element Prompt-Qualität — kann die Lernende zeigen, dass sie die KI gezielt zum Verstehen einsetzt, statt die erste Antwort zu übernehmen?",
+    "transfer_check": "Vor jedem KI-Einsatz fragen: Hilft mir diese Frage, selbst etwas zu können — oder nimmt sie mir nur Arbeit ab?"
+  },
+  "sk_anker": [
+    {
+      "sk": 3,
+      "wo": "In LF2 und im Protokoll entwickelt die Lernende eigenständig bessere Prompts und probiert neue Frageweisen aus, statt bei der vagen Standardfrage zu bleiben."
+    },
+    {
+      "sk": 2,
+      "wo": "In LF3 setzt die Lernende sich pro Antwort das Ziel «verstehen statt übernehmen» und passt ihr Vorgehen an, wenn ein Prompt nicht wirkt."
+    },
+    {
+      "sk": 11,
+      "wo": "Im Kommentar (LF4) und in Reflexion R3 benennt die Lernende den Zielkonflikt zwischen Tempo und echtem Verständnis, statt eine Seite zu streichen."
+    }
+  ]
+}

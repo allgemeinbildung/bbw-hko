@@ -385,6 +385,32 @@ body {
 .wb-letter-ki { background: #1E3A5F; }
 .wb-dot { flex: 0 0 22px; text-align: center; font-size: 14px; }
 
+/* KI-Toolbox: collapsible group head (default closed) + badge + hint */
+.wb-tree-head-toggle {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; text-align: left;
+  background: transparent; border: 0; cursor: pointer; font: inherit;
+}
+.wb-tree-head-toggle .wb-ki-label {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.03em;
+  text-transform: uppercase; color: #0E6E3A;
+}
+.wb-ki-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 1px 7px; border-radius: 999px;
+  background: #e8f3ec; color: #094d28;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.04em;
+  border: 1px solid #bfe0cc;
+}
+.wb-chevron {
+  margin-left: auto; color: #0E6E3A; font-size: 11px;
+  transition: transform 0.15s ease;
+}
+.wb-tree-head-toggle.open .wb-chevron { transform: rotate(180deg); }
+.wb-ki-hint {
+  margin: 2px 8px 6px; font-size: 11px; line-height: 1.4; color: #64748b;
+}
+
 /* actions */
 .wb-action {
   display: inline-flex; align-items: center; gap: 8px;
@@ -419,6 +445,20 @@ body {
   text-transform: uppercase; color: #b9bdc5;
 }
 .wb-dochead-name { display: block; font-size: 15px; font-weight: 600; color: #fff; }
+
+/* KI-Toolbox info banner — appears above an active KI document (UI-only, not printed) */
+.wb-ki-banner {
+  margin: 16px 24px 0;
+  padding: 12px 16px;
+  background: #e8f3ec;
+  border: 1px solid #bfe0cc;
+  border-left: 4px solid #0E6E3A;
+  border-radius: 8px;
+  color: #1d2026;
+}
+.wb-ki-banner p { margin: 0; font-size: 12.5px; line-height: 1.5; }
+.wb-ki-banner p + p { margin-top: 6px; }
+.wb-ki-banner strong { color: #094d28; }
 .wb-mode {
   display: inline-flex; background: rgba(255,255,255,0.12);
   border-radius: 8px; padding: 3px; gap: 2px; flex-shrink: 0;
@@ -1534,7 +1574,7 @@ body.aesthetic-editorial .niveau-legende .niv {
 @media print {
   body { background: white; }
   .app-chrome, .tweaks-host, .toast, .download-fab,
-  .wb-nav, .wb-dochead, .wb-nav-toggle, .wb-scrim { display: none !important; }
+  .wb-nav, .wb-dochead, .wb-ki-banner, .wb-nav-toggle, .wb-scrim { display: none !important; }
   .wb-canvas .pages { padding: 0; }
   .pages { padding: 0; gap: 0; }
   .a4-page {
@@ -1632,10 +1672,28 @@ body.aesthetic-editorial .niveau-legende .niv {
 .doc-eba .eba-nugget.tag-b { border-left: 5px solid #1A5276; }
 .doc-eba .eba-nugget-top { display: flex; align-items: center; gap: 3mm; margin-bottom: 1.5mm; }
 .doc-eba .eba-nugget-top h3 { font-size: 13pt; margin: 0; }
-.doc-eba .eba-ncode { color: #fff; border-radius: 2mm; padding: .6mm 2.5mm; font-weight: 700; }
+.doc-eba .eba-ncode {
+  display: inline-flex; align-items: center;
+  background: var(--sit-akzent, #0E6E3A); color: #fff;
+  border-radius: 2mm; padding: .6mm 2.5mm; font-weight: 700;
+  font-size: 9.5pt; letter-spacing: .02em; white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+}
 .doc-eba .eba-nugget.tag-a .eba-ncode { background: #C0392B; }
 .doc-eba .eba-nugget.tag-b .eba-ncode { background: #1A5276; }
 .doc-eba .eba-nugget.tag-ab .eba-ncode { background: var(--sit-akzent); }
+
+/* Infokarten-Bruecke auf der Herausforderung — identischer Badge-Stil wie im Glossar+ */
+.doc-eba .eba-infokarten {
+  margin-top: 3mm; padding: 2.5mm 3mm;
+  border: 1px dashed var(--sit-akzent, #0E6E3A);
+  border-radius: 2mm; background: rgba(0,0,0,0.015);
+}
+.doc-eba .eba-infokarten-label {
+  font-size: 8pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--sit-akzent, #0E6E3A); margin-bottom: 1.8mm;
+}
+.doc-eba .eba-infokarten-codes { display: flex; flex-wrap: wrap; gap: 2mm; }
 .doc-eba .eba-bsp { background: #f6f7f9; border-radius: 2mm; padding: 2.5mm 3.5mm; margin-top: 2mm; font-size: 11pt; }
 .doc-eba .eba-fakt { font-size: 9.5pt; color: var(--ink-mute); margin-top: 2mm; }
 .doc-eba .eba-fakt-ok { color: var(--eba-brand); margin-right: 3mm; }

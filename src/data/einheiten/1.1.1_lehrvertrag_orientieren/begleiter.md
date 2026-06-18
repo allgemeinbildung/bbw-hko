@@ -136,8 +136,8 @@ Meine Frage: __________ ?
 Vielen Dank für Ihre Hilfe.
 Freundliche Grüsse, [Name]
 ```
-> [!differenzieren] 90 vs. 100
-> 90 %: mit Satzanfängen. 100 %: ohne Satzanfänge, plus eine zweite Frage.
+> [!differenzieren] 80 vs. 100
+> 80 %: mit Satzanfängen. 100 %: ohne Satzanfänge, plus eine zweite Frage.
 
 > [!mehrdeutigkeit] Herausforderung A
 > Halte offen: Nachfragen ist nicht „dumm". Manche Punkte kann man auch selbst im Dossier klären.
@@ -197,8 +197,8 @@ Das ist seit __________ so.
 Können Sie mir bitte helfen?
 Freundliche Grüsse, [Name]
 ```
-> [!differenzieren] 90 vs. 100
-> 90 %: mit Satzanfängen + Stellen-Liste. 100 %: wählt Stelle selbst und nennt den nächsten Schritt.
+> [!differenzieren] 80 vs. 100
+> 80 %: mit Satzanfängen + Stellen-Liste. 100 %: wählt Stelle selbst und nennt den nächsten Schritt.
 
 > [!mehrdeutigkeit] Herausforderung B
 > Halte offen: Nicht jeder Ärger ist schon ein Fall für das Amt. Aber bei einem echten Problem ist Hilfe holen richtig.

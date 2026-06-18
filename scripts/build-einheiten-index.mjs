@@ -128,7 +128,7 @@ function estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter, ki, 
   // 6 DocS (3 letters × 2 modes) × 2 formats (html+docx) = 12
   // KnS variants × 2 formats
   // KnLp × 2 formats
-  // KI-Fluency: each KI-Auftrag × 2 formats, Lernprompt × 2, Lernbegleiter × 2
+  // KI-Toolbox: each KI-Auftrag × 2 formats, Lernprompt × 2, Lernbegleiter × 2
   // begleiter docx 1
   // readme 1
   let n = 0

@@ -1,0 +1,347 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_hf_B",
+  "modul": "1.2",
+  "modul_titel": "Ich lerne effektiv und setze meine Ressourcen effizient ein",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Die KI nennt Quellen — aber gibt es sie wirklich?",
+  "wissensknoten": [
+    "ki_recherche_quellenpruefung"
+  ],
+  "nrlp": {
+    "nr": "1.2.2",
+    "nr_primary": [
+      "1.2.2"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sk": [
+      1,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "kompetenz_id": "1.2.2",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann mich auf den nächsten Kompetenznachweis zielgerichtet und effektiv vorbereiten.",
+    "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
+  },
+  "persona": {
+    "beruf": "Schreiner/in EFZ",
+    "betrieb": "Schreinerei Aebi GmbH",
+    "ort": "Thun"
+  },
+  "situation_text": "Ich bin Schreiner-Lernende/r im 1. Lehrjahr bei der Schreinerei Aebi in Thun. Für meinen kommenden Kompetenznachweis über nachhaltige Holzbeschaffung lasse ich die KI eine Online-Recherche machen: «Suche aktuelle Quellen zu FSC-zertifiziertem Schweizer Holz und fasse sie zusammen.» Ich bekomme eine überzeugend klingende Zusammenfassung mit vier verlinkten Quellen — sieht professionell aus. Als ich aus Neugier zwei der Links anklicke, führt einer ins Leere und beim anderen steht nichts von dem, was die KI behauptet hat. Jetzt bin ich unsicher: Sind die anderen beiden Quellen echt, oder hat die KI sie einfach erfunden? Ich habe wenig Zeit und die Zusammenfassung wäre praktisch — aber wenn ich falsche Quellen in meinen KN übernehme, fällt das auf mich zurück.",
+  "zahlen_tabelle": [
+    {
+      "label": "Von der KI gelieferte Quellen",
+      "wert": "4 Links"
+    },
+    {
+      "label": "Selbst geprüfte Links",
+      "wert": "2 von 4"
+    },
+    {
+      "label": "Davon belegt / nachvollziehbar",
+      "wert": "0 von 2"
+    }
+  ],
+  "leitfrage": "Wie prüfe ich, ob die Quellen einer KI-Recherche echt und verlässlich sind — bevor ich sie für meinen KN nutze?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Du arbeitest ohne Lehrmittel — deine Quellen sind die KI-Recherche selbst, dein eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle zum Gegenprüfen.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "ohne Lehrmittel | KI-Tool",
+      "text": "Was bedeutet es, dass ein Sprachmodell «halluzinieren» kann? Erkläre in drei bis vier Sätzen, warum eine KI Quellen oder URLs erfinden kann, die echt aussehen, aber nicht existieren.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "KI-Recherche | eigene Prüfung",
+      "text": "Lass die KI zu deinem eigenen KN-Thema eine Recherche mit Quellen machen. Prüfe danach jede genannte Quelle nach drei Kriterien: Existiert der Link / die Quelle wirklich? Steht dort tatsächlich, was die KI behauptet? Ist die Quelle vertrauenswürdig (Herausgeber, Aktualität)?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Analysieren",
+      "knoten_ref": "KI-Recherche | eigene Prüfung",
+      "text": "Analysiere das Gesamtbild: Wie verlässlich ist diese KI-Recherche insgesamt? Vergleiche Verlässlichkeit (stimmen die Quellen?), Tiefe (bleibt es an der Oberfläche?) und Nachvollziehbarkeit (kannst du jede Aussage zurückverfolgen?). Begründe, welchen Teilen du vertraust und welchen nicht.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "eigene Prüfung | Notizen",
+      "text": "Schreibe für eine der geprüften Quellen einen kurzen Prüf-Eintrag von zwei bis drei Sätzen: Was hast du kontrolliert, was war das Ergebnis, und würdest du diese Quelle im KN verwenden? Formuliere so, dass eine Aussenstehende deine Prüfung nachvollziehen könnte.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "KI-Recherche prüfen — vertrauen oder kontrollieren?",
+  "mindmap_aeste": [
+    {
+      "titel": "Warum KI Quellen erfindet",
+      "punkte": [
+        "Sprachmodell sagt das Wahrscheinlichste, nicht das Wahre",
+        "Halluzination: erfundene URLs und Titel",
+        "Antwort klingt sicher, auch wenn sie falsch ist"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Drei Prüfkriterien",
+      "punkte": [
+        "Existiert die Quelle / der Link wirklich?",
+        "Steht dort, was die KI behauptet?",
+        "Ist der Herausgeber vertrauenswürdig und aktuell?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Recherche bewerten",
+      "punkte": [
+        "Verlässlichkeit: stimmen die Quellen?",
+        "Tiefe: Oberfläche oder echter Gehalt?",
+        "Nachvollziehbarkeit: zurückverfolgbar?",
+        "Welchem Teil vertraue ich, welchem nicht?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Vertiefung: Modelle vergleichen",
+      "punkte": [
+        "Denselben Prompt in 2–3 Modelle geben",
+        "Outputs nebeneinander legen",
+        "Wo widersprechen sie sich?",
+        "Welches Modell belegt seine Aussagen besser?"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "KI-Recherche-Analyse",
+    "abgaben": [
+      "KI-Recherche-Analyse mit Prüftabelle aller von der KI genannten Quellen",
+      "Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit",
+      "Optional (100 %): Vergleich des Outputs aus 2–3 Modellen"
+    ],
+    "titel": "Meine KI-Recherche-Analyse — was hält der Prüfung stand?",
+    "format_detail": "Eine ein- bis zweiseitige Analyse: eine Prüftabelle, in der jede von der KI genannte Quelle nach den drei Kriterien (existiert / belegt / vertrauenswürdig) abgehakt ist, plus ein kurzes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit der Recherche.",
+    "beschreibung": "Ich lasse die KI eine Online-Recherche zu meinem KN-Thema machen und nehme sie anschliessend kritisch auseinander, statt sie einfach zu übernehmen. Ich prüfe jede Quelle, halte das Ergebnis in einer Tabelle fest und ziehe ein begründetes Gesamturteil: Welchen Teilen der Recherche kann ich für den KN vertrauen, welche muss ich verwerfen oder selbst nachprüfen? Diese Prüfhaltung trägt direkt in den Lernplan von Herausforderung C, wo ich entscheide, wo die KI hilft und wo ich bewusst selbst arbeite.",
+    "schritte": [
+      {
+        "label": "KI-Recherche erzeugen",
+        "hint": "Gib der KI einen klaren Recherche-Auftrag zu deinem KN-Thema und verlange ausdrücklich Quellen mit Links. Kopiere den Output gekürzt in deine Analyse."
+      },
+      {
+        "label": "Prüftabelle anlegen",
+        "hint": "Eine Zeile pro Quelle, drei Spalten: existiert? · belegt sie die Aussage? · vertrauenswürdig (Herausgeber/Datum)? Jede Spalte mit Ja/Nein und einer kurzen Notiz."
+      },
+      {
+        "label": "Quellen einzeln prüfen",
+        "hint": "Klicke jeden Link an, suche die behauptete Aussage und beurteile den Herausgeber. Halte erfundene oder leere Quellen klar als solche fest."
+      },
+      {
+        "label": "Gesamturteil bilden",
+        "hint": "Bewerte Verlässlichkeit, Tiefe und Nachvollziehbarkeit (Mindmap-Ast 3) und begründe, welchen Teilen du vertraust und welchen nicht."
+      },
+      {
+        "label": "Optional vertiefen",
+        "hint": "100 %: Gib denselben Recherche-Prompt in zwei bis drei verschiedene Modelle und vergleiche, wo sie sich widersprechen und welches seine Aussagen besser belegt."
+      }
+    ],
+    "schreib_label": "KI-RECHERCHE-ANALYSE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ki_recherche_quellenpruefung",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Die KI behauptet, dass … — geprüft habe ich …»",
+        "«Diese Quelle existiert / existiert nicht, weil …»",
+        "«Insgesamt halte ich die Recherche für … verlässlich, weil …»",
+        "«Diesem Teil vertraue ich, diesem nicht, weil …»"
+      ],
+      "strategien": [
+        "Jede Quelle einzeln prüfen, nicht die Recherche als Ganzes glauben",
+        "Behauptung der KI und tatsächlichen Quelleninhalt direkt nebeneinanderhalten",
+        "Bei Zweifel eine zweite, selbstgewählte Quelle zum Gegencheck nutzen"
+      ],
+      "struktur": [
+        "Prüftabelle: eine Zeile pro Quelle, drei Kriterien-Spalten",
+        "Darunter: Gesamturteil zu Verlässlichkeit / Tiefe / Nachvollziehbarkeit",
+        "Optional: Vergleichsspalte für 2–3 Modelle"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich beim Prüfen der KI-Quellen am meisten überrascht — wie viel hielt der Kontrolle wirklich stand?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meiner Ausbildung oder im Betrieb verlasse ich mich auf Infos, die ich eigentlich gegenprüfen müsste?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was prüfe ich beim nächsten KI-Output konkret nach, bevor ich ihn weiterverwende?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Halluzination korrekt erklärt",
+        "Jede Quelle nach den drei Kriterien geprüft"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Verbindung zwischen Prüfkriterien und Gesamturteil erkennbar"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Prüftabelle mit allen KI-Quellen und drei Kriterien ausgefüllt",
+        "Begründetes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit",
+        "Erfundene oder leere Quellen klar als solche markiert"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konkrete Konsequenz für den nächsten KI-Output benannt"
+      ]
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap, KI-Recherche erzeugen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Prüftabelle und Gesamturteil erstellen (optional: Modelle vergleichen)",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "KI-Recherche prüfen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Der KI vertrauen vs. den Output kontrollieren",
+    "hint": "Beide Pole sind legitim: Die KI-Recherche zu übernehmen spart enorm Zeit, und meistens klingt sie plausibel. Gleichzeitig kann eine einzige erfundene Quelle deinen ganzen KN beschädigen. Bewertet wird nicht, ob du der KI misstraust oder vertraust, sondern ob du begründet entscheidest, welchen Teilen du vertrauen kannst und welche du kontrollieren musst."
+  },
+  "dekontextualisierung": {
+    "frage": "Wie prüfe ich in einer anderen Situation — Betrieb, Schule, Alltag — ob eine KI-Auskunft auf echten Quellen beruht, bevor ich sie weitergebe?",
+    "ziel": "KI macht mich schneller, aber nicht automatisch kompetenter — wer ihre Ergebnisse prüft, bevor er sich darauf verlässt, behält die Verantwortung für das, was er weitergibt."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T4 Verantwortung: KI-Einsatz im Betrieb verantworten.",
+    "r3_voraussicht": "T7 Arbeiten in der Zukunft: KI als Arbeitswerkzeug einordnen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "ohne Lehrmittel",
+      "titel": "KI-Recherche, eigener Kompetenznachweis und eine selbstgewählte verlässliche Quelle zum Gegenprüfen — kein Lehrmittelkapitel",
+      "seiten": "—",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Halluzination verstehen",
+        "indikator": "Erklärt, warum ein Sprachmodell Quellen erfinden kann, die echt aussehen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Quellenprüfung",
+        "indikator": "Prüft jede genannte Quelle nach den drei Kriterien existiert / belegt / vertrauenswürdig.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Recherche bewerten",
+        "indikator": "Bildet ein begründetes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mehrdeutigkeit anerkennen",
+        "indikator": "Benennt den Zielkonflikt zwischen Vertrauen und Kontrolle und entscheidet differenziert.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Vorgegebene Prüftabelle (drei Kriterien-Spalten) und eine Liste von Leitfragen zur Quellenbewertung als Lückentext.",
+    "scaffold_100": "Zusätzlich: denselben Recherche-Prompt in zwei bis drei Modelle geben und die Outputs in einer Vergleichsspalte gegenüberstellen (Bloom K4)."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "KI-Recherche kritisch prüfen: Quellen, Verlässlichkeit und Nachvollziehbarkeit kontrollieren statt übernehmen.",
+    "lehrmittel_anker": "Ohne Lehrmittel — Material sind die KI-Recherche selbst, der eigene KN und eine selbstgewählte verlässliche Quelle zum Gegenprüfen.",
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als das Element Quellenkritik — erkennt die Lernende, wo sie einem KI-Output vertrauen kann und wo sie ihn kontrollieren muss?",
+    "transfer_check": "Bevor ich einen KI-Output weiterverwende: prüfen, ob seine Quellen wirklich existieren und belegen, was behauptet wird."
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "In LF2 und in der Prüftabelle unterscheidet die Lernende echte, belegte Quellen von erfundenen oder unbelegten KI-Quellen."
+    },
+    {
+      "sk": 11,
+      "wo": "In LF3 und im Gesamturteil hält die Lernende den Zielkonflikt zwischen Vertrauen und Kontrolle aus und entscheidet differenziert statt pauschal."
+    }
+  ]
+}

@@ -91,6 +91,14 @@ function nuggetCode(id: string): string {
   return m ? `${m[1].toUpperCase()}-${m[2].padStart(2, '0')}` : id
 }
 
+// Learner-facing Badge-Beschriftung: ein echter Karten-Code (A-01/B-03) wird als
+// «Info-Karte A-01» ausgewiesen (sichtbarer Code = optische Bruecke zur Herausforderung);
+// nicht-Karten-IDs (transfer/AB) bleiben unveraendert.
+function infokarteLabel(id: string): string {
+  const code = nuggetCode(id)
+  return /^[AB]-\d+$/.test(code) ? `Info-Karte ${code}` : code
+}
+
 // Recherche-Strip: aus dem internen Fakten-QA (validiert/lp_pruefen, bleibt im JSON)
 // werden hier learner-facing Hinweise — Suche, KI-Prompt, Selbst-Pruefauftrag.
 function RechercheBlock({ r }: { r: DossierRecherche }) {
@@ -118,7 +126,7 @@ function RechercheBlock({ r }: { r: DossierRecherche }) {
         <div className="eba-rh eba-rh-ki">
           <span className="eba-rh-ic" aria-hidden="true">🤖</span>
           <div className="eba-ki-beispiel">
-            <b>So fragen Sie die KI:</b>
+            <b>Fragen Sie eine KI Ihrer Wahl, z. B. Copilot:</b>
             {ki!.so_fragst_du && <p className="eba-ki-howto">{ki!.so_fragst_du}</p>}
             {ki!.prompt && <div className="eba-ki-prompt">{ki!.prompt}</div>}
             {ki!.tipp && <p className="eba-ki-tipp">{ki!.tipp}</p>}
@@ -130,7 +138,7 @@ function RechercheBlock({ r }: { r: DossierRecherche }) {
         <div className="eba-rh eba-rh-lernen">
           <span className="eba-rh-ic" aria-hidden="true">📚</span>
           <div className="eba-ki-beispiel">
-            <b>So lernen Sie mit KI:</b>
+            <b>So lernen Sie mit Copilot (oder einer KI Ihrer Wahl):</b>
             <ul className="eba-lernliste">
               {lernen.map((l, i) => (
                 <li key={i}>{l.strategie && <b>{l.strategie}: </b>}«{l.prompt}»</li>
@@ -157,7 +165,7 @@ function NuggetCard({ n }: { n: DossierNugget }) {
   return (
     <div className={`eba-nugget tag-${String(tag).toLowerCase()}`}>
       <div className="eba-nugget-top">
-        <span className="eba-ncode">{nuggetCode(n.id)}</span>
+        <span className="eba-ncode">{infokarteLabel(n.id)}</span>
         <h3>{n.titel}</h3>
       </div>
       {n.inhalt && <p>{n.inhalt}</p>}

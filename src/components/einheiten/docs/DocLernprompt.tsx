@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
 import type { LernpromptJson, LernpromptTechnik, LernpromptStacking } from '../../../lib/einheiten/types'
 
-// KI-Fluency · Prompting (mirrors hko-deploy `ki_lernprompt`).
+// KI-Toolbox · Prompting (mirrors hko-deploy `ki_lernprompt`).
 // Pagination (paired): each block of 2 Technik-Karten is followed by its
 // Stacking-Beispiele page (stacking_seite_1 after the first block,
 // stacking_seite_2 after the second). Accent #3B6FD4 as a local constant only.
@@ -133,7 +133,7 @@ function PageHeader({ titel, kontext }: { titel: string; kontext?: string }) {
       }}>P</span>
       <div>
         <div style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: LP_DARK }}>
-          KI-Fluency · Prompting
+          KI-Toolbox · Prompting
         </div>
         <div style={{ fontSize: '16pt', fontWeight: 700, color: 'var(--ink, #1d2026)', lineHeight: 1.12 }}>{titel}</div>
         {kontext && <p style={{ margin: '0.8mm 0 0', fontSize: '8.8pt', lineHeight: 1.36, color: '#3a4049' }}>{kontext}</p>}

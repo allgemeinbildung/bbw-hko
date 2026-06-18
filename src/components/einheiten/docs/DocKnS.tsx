@@ -15,14 +15,16 @@ function findKnTyp(kn: KnJson, typ: string): KnTyp | undefined {
   return kn.kn_typen?.find((t) => t.typ === typ) || kn.kn_typen?.[0]
 }
 
-// SuS-Ansicht: Prozentzahlen (90 % / 100 %) sind ohne Legende kryptisch und gehoeren
+// SuS-Ansicht: Prozentzahlen (80 % / 100 %) sind ohne Legende kryptisch und gehoeren
 // nur ins LP-Material (Begleiter / DocKnLp). Hier zeigen wir Wort-Labels statt Prozente.
 // Die Daten (kn.json niveaubaender) bleiben unveraendert; nur diese SuS-Anzeige uebersetzt.
+// Reihenfolge: zuerst '100', dann 'unter' (faengt "unter 60 %"), dann das Mittelband
+// ('80' neu / '90' altbestand) — so kollidieren Teilstring-Treffer nicht.
 function susNiveauLabel(label: string): string {
   const l = (label || '').toLowerCase()
   if (l.includes('100')) return 'Vollständig & selbstständig'
   if (l.includes('unter')) return 'Grundanforderung noch nicht erfüllt'
-  if (l.includes('90')) return 'Grundanforderung erfüllt'
+  if (l.includes('80') || l.includes('90')) return 'Grundanforderung erfüllt'
   return label.replace(/\s*\d+\s*%/g, '').trim() || label
 }
 
@@ -231,7 +233,7 @@ function RubrikPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
     <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
       <SectionHead num="05 · Bewertungskriterien">Worauf geachtet wird</SectionHead>
       <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-        Die folgenden Kriterien werden bewertet. Sie verteilen sich auf zwei Dimensionen: sachliche Korrektheit (SuK) und gesellschaftliche Werthaltung (Ges). Beide Dimensionen werden separat benotet.
+        Die folgenden Kriterien werden bewertet. Sie verteilen sich auf zwei Dimensionen: Sprache und Kommunikation (SuK) und gesellschaftliche Werthaltung (Ges). Beide Dimensionen werden separat benotet.
       </p>
       <table className="rubrik-grid">
         <thead>

@@ -124,6 +124,27 @@ function RessourcenList({ sit }: { sit: SituationJson }) {
   )
 }
 
+// EBA-only — Infokarten-Brücke: zeigt auf der Herausforderung die zugehörigen Glossar+-
+// Info-Karten mit demselben Badge-Stil wie im Glossar+ (optische Verbindung Auftrag ↔ Wissen).
+// Quelle: quellen_anker[].nugget_ref (z. B. "Info-Karte A-01"); Fallback auf leitfragen[].knoten_ref.
+function InfokartenAnker({ sit }: { sit: SituationJson }) {
+  if (sit.lehrgang !== 'EBA_2J') return null
+  const fromAnker = (sit.quellen_anker || []).map((q) => q.nugget_ref).filter(Boolean) as string[]
+  const fromLf = (sit.leitfragen || [])
+    .map((lf) => lf.knoten_ref?.split('|').pop()?.trim())
+    .filter((s): s is string => !!s && /Info-Karte/i.test(s))
+  const codes = Array.from(new Set([...fromAnker, ...fromLf]))
+  if (!codes.length) return null
+  return (
+    <section className="eba-infokarten">
+      <div className="eba-infokarten-label">Dazu passen diese Info-Karten im Glossar+</div>
+      <div className="eba-infokarten-codes">
+        {codes.map((c, i) => <span className="eba-ncode" key={i}>{c}</span>)}
+      </div>
+    </section>
+  )
+}
+
 // C2 — Situation block: situation_text + Leitfrage (+ Spannungsfeld). sit-meta + zahlen_tabelle removed.
 function SituationBlock({ sit }: { sit: SituationJson }) {
   return (
@@ -442,6 +463,7 @@ function CockpitPageBody({ sit }: { sit: SituationJson }) {
       </div>
       <ChecklisteVollstaendigkeit sit={sit} />
       <RessourcenList sit={sit} />
+      <InfokartenAnker sit={sit} />
     </>
   )
 }

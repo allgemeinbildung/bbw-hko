@@ -317,7 +317,7 @@ function DocKnLpBewertung({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; a
       </h4>
       <div className="noten-block">
         <div className="noten-cell">
-          <div className="label">SuK · Sach- und Kommunikationskompetenz</div>
+          <div className="label">SuK · Sprache und Kommunikation</div>
           <div className="input"></div>
         </div>
         <div className="noten-cell">

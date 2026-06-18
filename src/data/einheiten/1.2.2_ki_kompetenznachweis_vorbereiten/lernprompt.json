@@ -1,0 +1,148 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_lernprompt",
+  "set_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-18",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «Mit KI auf den Kompetenznachweis vorbereiten» (gezielt prompten, KI-Recherche prüfen, KI-Lernplan gestalten).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert, ob die KI Ihnen Stoff vorsagt oder Sie fragend zum eigenen Verstehen führt — also genau, ob sie für Sie lernt oder mit Ihnen.",
+        "thema_bezug": "Für die KN-Vorbereitung entscheidet die Rolle alles: Eine KI als «Lerncoach, der mich abfragt» bringt Sie weiter als eine KI, die Ihnen eine fertige Zusammenfassung hinlegt, die Sie im Kompetenznachweis nicht selbst wiedergeben können.",
+        "beispiel_basis": "Du bist mein Lerncoach. Frag mich zu meinem KN-Thema ab und gib mir die Lösung erst, nachdem ich geantwortet habe.",
+        "beispiel_fortgeschritten": "Du bist mein Lerncoach für den Kompetenznachweis über [Thema]. Stell mir nacheinander Kontrollfragen steigender Schwierigkeit, warte jeweils meine Antwort ab, korrigiere knapp und nenne mir die Lücke, die ich als Nächstes schliessen sollte.",
+        "warnung": "Eine Coach-Rolle macht die KI nicht automatisch zur verlässlichen Lehrperson: Auch als «Lerncoach» kann sie einen Fachbegriff falsch erklären oder eine Quelle erfinden. Die Rolle steuert, wie sie mit Ihnen spricht — ob der Inhalt stimmt, prüfen Sie selbst.",
+        "baukasten": {
+          "rolle": [
+            "mein Lerncoach, der mich abfragt",
+            "kritische Prüfungsexpertin",
+            "Entscheidungscoach für meine Lernzeit"
+          ],
+          "kontext": [
+            "Lernende/r im 1. Lehrjahr",
+            "Kompetenznachweis in wenigen Tagen",
+            "im KN ist keine KI erlaubt"
+          ],
+          "aufgabe": [
+            "mich abfragen, Lösung erst nach meiner Antwort",
+            "Kontrollfrage zu meinem Verständnis stellen",
+            "meine Lücke benennen"
+          ],
+          "format": [
+            "eine Frage nach der anderen",
+            "kurze Rückmeldung pro Antwort"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Ihr Thema, Ihr Stand, Ihr Ziel, Ihre Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer wird ihre Hilfe für genau Ihre Vorbereitung.",
+        "thema_bezug": "«Erkläre mir Datensicherheit» liefert eine schwammige Antwort, die Sie nicht behalten. Erst wenn die KI Ihr konkretes KN-Thema, Ihr Lehrjahr und Ihr Ziel «ich muss es im KN selbst erklären» kennt, kann sie Sie gezielt fragen und üben lassen.",
+        "beispiel_basis": "Kontext: Lernende/r, 1. Lehrjahr. KN-Thema: [Thema]. Ziel: Ich will es im KN ohne KI selbst erklären können. Frag mich ab.",
+        "beispiel_fortgeschritten": "Kontext: 1. Lehrjahr, EFZ. Mein KN über [Thema] ist in drei Tagen, ich darf darin keine KI nutzen. Mein Stand: [zwei Stichworte]. Ziel: die zwei grössten Lücken schliessen. Aufgabe: Zeig mir zuerst, welche Teilthemen ich noch nicht sicher habe, dann frag sie der Reihe nach ab.",
+        "warnung": "Keine echten Namen, keine vertraulichen Betriebsdaten in den Prompt — und verlassen Sie sich nicht darauf, dass die KI Ihren Kontext perfekt deutet: Prüfen Sie, ob ihre Fragen wirklich zu Ihrem KN-Thema passen, und steuern Sie nach, wenn sie abdriftet.",
+        "baukasten": {
+          "rolle": [
+            "Lerncoach für mein KN-Thema",
+            "Quellen-Prüfer"
+          ],
+          "kontext": [
+            "1. Lehrjahr, EFZ",
+            "KN-Thema und Termin",
+            "im KN keine KI erlaubt",
+            "mein aktueller Stand in 2 Stichworten"
+          ],
+          "aufgabe": [
+            "Teilthemen sortieren nach sicher/unsicher",
+            "Lücken zuerst abfragen",
+            "an meinen Stand anpassen"
+          ],
+          "format": [
+            "kurze Liste der Teilthemen",
+            "danach Frage für Frage"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen und Belege anfordern",
+        "erklaerung": "Sie verlangen von der KI zu jeder sachlichen Aussage die Quelle — und kündigen an, dass Sie sie prüfen. Das zwingt die KI zu vorsichtigeren Aussagen und gibt Ihnen die Prüfspur, mit der Sie erfundene Quellen und tote Links entlarven.",
+        "thema_bezug": "Sobald Sie KI für die Recherche zu Ihrem KN-Thema nutzen, ist die prüfbare Quelle das Qualitätsmerkmal: Eine KI nennt überzeugend klingende Links, von denen einer ins Leere führt — wer das nicht prüft, übernimmt erfundene Quellen in den Kompetenznachweis.",
+        "beispiel_basis": "Gib mir drei Quellen zu meinem KN-Thema [Thema]. Nenne zu jeder den genauen Link und den Herausgeber und markiere, wo du unsicher bist. Ich prüfe jede Quelle nach.",
+        "beispiel_fortgeschritten": "Recherchiere zu [Thema] und liefere pro Aussage eine Quelle mit Link, Herausgeber und Datum sowie einem Vertrauensgrad (sicher/unsicher). Sag mir ausdrücklich, welche Links du nicht garantieren kannst — ich klicke jeden an und gleiche den Inhalt mit meiner eigenen verlässlichen Quelle ab.",
+        "warnung": "KI-Systeme erfinden regelmässig Links und Quellentitel, die echt aussehen. Jeder Link muss angeklickt und jede Aussage am Ziel gegengeprüft werden — ein existierender Link belegt noch nicht, dass dort wirklich steht, was die KI behauptet.",
+        "baukasten": {
+          "rolle": [
+            "Quellen-Prüfer",
+            "kritische Rechercheassistenz"
+          ],
+          "kontext": [
+            "KN-Thema und worum es geht",
+            "ich prüfe jede Quelle selbst nach"
+          ],
+          "aufgabe": [
+            "Quelle zu jeder Aussage nennen",
+            "Vertrauensgrad angeben",
+            "unsichere Links offen markieren"
+          ],
+          "format": [
+            "Tabelle Aussage/Quelle/Sicherheit",
+            "Liste mit Link und Herausgeber"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt-für-Schritt denken",
+        "erklaerung": "Sie fordern die KI auf, ihren Gedankengang offenzulegen und in Schritten zu argumentieren, statt nur ein Ergebnis zu nennen. So können Sie jeden Schritt nachvollziehen, Schwachstellen erkennen und selbst die Entscheidung treffen.",
+        "thema_bezug": "Wenn Sie abwägen, was Sie der KI überlassen und was Sie selbst üben, hilft kein fertiges Urteil: Sie brauchen die Schritte. Lassen Sie die KI ihre Optionen mit Vorteil, Risiko und Begründung auffächern — entscheiden müssen Sie danach selbst, denn im KN tragen Sie die Verantwortung.",
+        "beispiel_basis": "Ich habe noch drei Tage bis zum KN über [Thema]. Zeig mir Schritt für Schritt meine Optionen, wie ich die Zeit einteile, und nenne pro Option Vorteil und Risiko. Entscheide nicht für mich.",
+        "beispiel_fortgeschritten": "Denk laut mit mir: Liste für meine KN-Vorbereitung drei Vorgehensweisen auf. Geh jede Schritt für Schritt durch, nenne pro Schritt, ob er mein eigenes Können stärkt oder ersetzt, und schliesse mit dem stärksten Gegenargument gegen jede Option. Die Entscheidung treffe ich selbst.",
+        "warnung": "Eine ausführlich begründete KI-Antwort wirkt überzeugend, ist aber nicht automatisch richtig: Die KI kann einen plausiblen Schritt einbauen, der für Ihren KN nichts bringt. Prüfen Sie jeden Schritt an Ihrer eigenen Erfahrung aus den drei Herausforderungen, statt der glatten Argumentationskette zu folgen.",
+        "baukasten": {
+          "rolle": [
+            "Entscheidungscoach",
+            "kritische Lehrperson"
+          ],
+          "kontext": [
+            "wenig Zeit bis zum KN",
+            "im KN keine KI erlaubt",
+            "Spannung Effizienz vs. echtes Verständnis"
+          ],
+          "aufgabe": [
+            "Optionen Schritt für Schritt auffächern",
+            "Vorteil und Risiko je Option nennen",
+            "Gegenargument zu jeder Option liefern"
+          ],
+          "format": [
+            "nummerierte Schritte",
+            "Optionstabelle mit Risiko-Spalte"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Prompt 1 setzt die Coach-Rolle und gibt der KI Ihren vollständigen Kontext, damit sie Sie gezielt zu Ihrem KN-Thema abfragt statt allgemein zu erklären. Prompt 2 nutzt ihre erste Reaktion, um genau die Lücke anzusteuern, die im ersten Schritt sichtbar wurde — so wird aus einer allgemeinen Hilfe eine Übung an Ihrer schwächsten Stelle.",
+      "prompt_1": "Du bist mein Lerncoach. Kontext: Ich bin im 1. Lehrjahr und habe in einigen Tagen einen Kompetenznachweis über [mein Thema], in dem ich keine KI nutzen darf. Mein Stand: [zwei Stichworte]. Sortiere zuerst, welche Teilthemen ich wahrscheinlich noch nicht sicher beherrsche, und gib mir die Lösung erst, nachdem ich selbst geantwortet habe.",
+      "prompt_2": "Auf Basis deiner Einschätzung: Frag mich jetzt das Teilthema ab, bei dem ich am unsichersten wirke. Stell mir eine Kontrollfrage, warte meine Antwort ab und sag mir danach, welche Lücke noch offen ist — ohne mir gleich die ganze Erklärung zu schenken."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "quellen_anfordern",
+        "chain_of_thought"
+      ],
+      "logik_und_ziel": "Prompt 1 erzeugt eine belegte Recherche mit prüfbaren Quellen zu Ihrem KN-Thema. Prompt 2 lässt die KI Schritt für Schritt abwägen, wie Sie mit dieser geprüften Grundlage weiterarbeiten — so verbinden Sie die Quellenprüfung aus Herausforderung B mit der bewussten Lernentscheidung aus Herausforderung C, bevor Sie sich festlegen.",
+      "prompt_1": "Recherchiere zu meinem KN-Thema [Thema] und liefere pro Kernaussage eine Quelle mit Link, Herausgeber und Vertrauensgrad (sicher/unsicher). Markiere ausdrücklich, welche Links du nicht garantieren kannst. Ich klicke jeden an und prüfe nach.",
+      "prompt_2": "Nimm nur die Quellen, die ich als geprüft markiert habe. Zeig mir jetzt Schritt für Schritt zwei Wege, wie ich die verbleibende Zeit einteile — was ich mit deiner Hilfe vertiefe und was ich bewusst ohne KI übe. Nenne pro Weg Vorteil, Risiko und das stärkste Gegenargument; die Entscheidung treffe ich selbst."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

@@ -222,7 +222,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
-**Konflikt-Landkarte (90%-Vorlage, ein Beispiel ausgefüllt):**
+**Konflikt-Landkarte (80%-Vorlage, ein Beispiel ausgefüllt):**
 
 | Was ist passiert (Fakten) | Welche Pflicht / welches Recht | Meine Sicht | Sicht Berufsbildner/in |
 |---|---|---|---|
@@ -230,7 +230,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 | 2× über 9 h Arbeitszeit in der Woche | Höchstarbeitszeit Jugendliche, ArG 31 | | |
 | | | | |
 
-**3B-Lückentext (90%-Vorlage):**
+**3B-Lückentext (80%-Vorlage):**
 
 ```
 BEHAUPTUNG (1 Satz, Ich-Form):
@@ -250,8 +250,8 @@ Mir ist wichtig, dass _________________________; deshalb wünsche ich mir
 ________________________________________________________________________.
 ```
 
-> [!differenzieren] 90 vs. 100 — Situation A
-> **90 % (alle):** Landkarten-Tabelle und 3B-Lückentext oben werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — vergleichen Sie Ihren eigenen Lehrvertrag mit der Musterregelung des kantonalen Amts für Berufsbildung und notieren Sie eine Abweichung. Kein zusätzliches Pflicht-Pensum, sondern Vertiefung für die, die schneller sind.
+> [!differenzieren] 80 vs. 100 — Situation A
+> **80 % (alle):** Landkarten-Tabelle und 3B-Lückentext oben werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — vergleichen Sie Ihren eigenen Lehrvertrag mit der Musterregelung des kantonalen Amts für Berufsbildung und notieren Sie eine Abweichung. Kein zusätzliches Pflicht-Pensum, sondern Vertiefung für die, die schneller sind.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -259,7 +259,7 @@ ________________________________________________________________________.
 > 1. **LF1:** Markieren mit den drei Symbolen (Kap. 17.1) statt abschreiben — sammle am Schluss nur die Fragezeichen ein.
 > 2. **LF3:** Erst 2 Minuten still entscheiden (welcher Konfliktweg?), dann begründen — so wird die Eskalations-Reihenfolge sichtbar.
 > 3. **LF4:** Reihenfolge Behauptung → Begründung → Beispiel erzwingen, mit mindestens einem OR-/ArG-Verweis.
-> **Zum Abgeben bereit:** Konflikt-Landkarte (90 %-Vorlage) · 3B-Lückentext.
+> **Zum Abgeben bereit:** Konflikt-Landkarte (80 %-Vorlage) · 3B-Lückentext.
 
 > [!coaching] Perspektivenwechsel
 > Bevor das Positionspapier geschrieben wird: Lassen Sie die Lernende die letzte Spalte der Konflikt-Landkarte („Sicht Berufsbildner/in") zuerst ausfüllen und eine Minute aus seiner Perspektive denken — „Warum verlangt er die Reinigung? Was sieht er, das Sie nicht sehen?" Das verhindert, dass das Positionspapier zur Anklageschrift kippt, und ist genau die Haltung, die im Raster unter „Position/Werthaltung" zählt.
@@ -328,7 +328,7 @@ ________________________________________________________________________.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
-**Kanal-Vergleichstabelle (90%-Vorlage, ausgefüllt):**
+**Kanal-Vergleichstabelle (80%-Vorlage, ausgefüllt):**
 
 | Kriterium | WhatsApp (privat) | Geschäftsmail | Brief |
 |---|---|---|---|
@@ -337,7 +337,7 @@ ________________________________________________________________________.
 | Register-Passung Konflikt | unpassend (privat) | passend (sachlich) | passend, aber schwerfällig |
 | Privat/geschäftlich getrennt? | nein | ja | ja |
 
-**Brief-/Mail-Layout-Template (90%-Vorlage):**
+**Brief-/Mail-Layout-Template (80%-Vorlage):**
 
 ```
 Betreff: ____________________________________________
@@ -362,8 +362,8 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 (Medienkompetenz-Argument zur Trennung privat/geschäftlich, Kap. 20.7).
 ```
 
-> [!differenzieren] 90 vs. 100 — Situation B
-> **90 %:** Vergleichstabelle + Layout-Template austeilen. **100 %:** Zusatz — prüfen Sie, ob Ihre Kanalwahl mit den Compliance-Regeln Ihres Betriebs (Datenschutz, Personalreglement) vereinbar ist.
+> [!differenzieren] 80 vs. 100 — Situation B
+> **80 %:** Vergleichstabelle + Layout-Template austeilen. **100 %:** Zusatz — prüfen Sie, ob Ihre Kanalwahl mit den Compliance-Regeln Ihres Betriebs (Datenschutz, Personalreglement) vereinbar ist.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -440,7 +440,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
-**Vier-Ohren-Tabelle (90%-Vorlage, Beispielzeile ausgefüllt):**
+**Vier-Ohren-Tabelle (80%-Vorlage, Beispielzeile ausgefüllt):**
 
 | Aussage | Sachohr | Selbstkundgabe-Ohr | Beziehungsohr | Appell-Ohr |
 |---|---|---|---|---|
@@ -472,8 +472,8 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 „Damit Sie ____ bekommen und ich ____ , könnten wir ..."
 ```
 
-> [!differenzieren] 90 vs. 100 — Situation C
-> **90 %:** Vier-Ohren-Tabelle + Satzanfänge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildner/in — wie reagieren Sie, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
+> [!differenzieren] 80 vs. 100 — Situation C
+> **80 %:** Vier-Ohren-Tabelle + Satzanfänge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildner/in — wie reagieren Sie, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -625,12 +625,12 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 
 | Band | Definition |
 |---|---|
-| unter 90 % | Stufen 1-2 dominant |
-| **90 %** | mehrheitlich Stufe 3 |
+| unter 60 % | Stufen 1-2 dominant |
+| **80 %** | mehrheitlich Stufe 3 |
 | **100 %** | Stufe 4 in mindestens 3 Kriterien |
 
 > [!coaching] Bi-dim sauber halten
-> Trag die zwei Noten **physisch getrennt** ein (zwei Spalten, nie ein Mittelwert). Eine Lernende kann fachlich-sprachlich stark (SuK 100 %) und ethisch flach (Ges 90 %) sein — das ist eine echte, nützliche Information, die ein zusammengezogener Schnitt vernichtet. Aggregiere innerhalb jeder Dimension den Mittelwert der zwei Kriterien.
+> Trag die zwei Noten **physisch getrennt** ein (zwei Spalten, nie ein Mittelwert). Eine Lernende kann fachlich-sprachlich stark (SuK 100 %) und ethisch flach (Ges 80 %) sein — das ist eine echte, nützliche Information, die ein zusammengezogener Schnitt vernichtet. Aggregiere innerhalb jeder Dimension den Mittelwert der zwei Kriterien.
 
 > [!mehrdeutigkeit] Der häufigste Bewertungsfehler
 > Verführung: die „klarste" Lösung am höchsten zu benoten. Aber wer den Zielkonflikt **auflöst** (z. B. „ich melde sofort dem Ausbildungsleiter, fertig"), verfehlt das Kompetenzversprechen — egal wie entschlossen das klingt. Stufe 4 in „Argumentation" und „Position" verlangt, dass **beide** legitimen Interessen sichtbar bleiben und die Entscheidung **begründet** fällt.

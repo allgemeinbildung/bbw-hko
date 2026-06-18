@@ -1,0 +1,255 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_kn",
+  "modul": "1.2",
+  "kompetenz_nr": "1.2.2",
+  "topic_slug": "ki_kompetenznachweis_vorbereiten",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-18",
+  "set_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_set",
+  "prinzip_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "anchored_situations": [
+    "1.2.2_ki_kompetenznachweis_vorbereiten_hf_A",
+    "1.2.2_ki_kompetenznachweis_vorbereiten_hf_B",
+    "1.2.2_ki_kompetenznachweis_vorbereiten_hf_C"
+  ],
+  "dominanter_aspekt": "Technologische und digitale Transformation",
+  "kern_kompetenzversprechen": "Ich kann KI-Werkzeuge gezielt einsetzen, um mich auf einen Kompetenznachweis vorzubereiten, und entscheide dabei begründet, wo ich der KI vertraue und wo ich ihre Ergebnisse selbst überprüfe.",
+  "mehrdeutigkeits_pflicht": "Es gibt keine «richtige» KI-Nutzung — jede Entscheidung, wo die KI hilft und wo nicht, muss begründbar bleiben. Bewertet wird nicht, wie viel KI eingesetzt wird, sondern wie bewusst zwischen Vertrauen und Kontrolle abgewogen wird.",
+  "hybrid_situation": {
+    "titel": "Drei Tage vor dem KN — wie weit lasse ich die KI ran?",
+    "persona": {
+      "beruf": "Polymechaniker/in EFZ",
+      "betrieb": "Maschinenfabrik Bucher AG",
+      "ort": "Luzern"
+    },
+    "emotion_tag": "Entscheidungsdruck",
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine neue Situation, in der du alles, was du in den drei Herausforderungen gelernt hast, zusammen anwenden musst.",
+    "definition_lang": "Die Hybrid-Herausforderung ist eine einzige neue Szene für den KN. Sie wiederholt keine der drei Lernaufgaben, sondern bringt deren Prinzipien — gezielt prompten, KI-Recherche prüfen, KI-Lernplan gestalten — in einer einzigen Entscheidungssituation zusammen. Die Lernenden zeigen, dass sie das Gelernte übertragen können.",
+    "text": "Ich bin Polymechaniker-Lernende/r im 1. Lehrjahr bei der Maschinenfabrik Bucher in Luzern. In drei Tagen habe ich einen Kompetenznachweis über Arbeitssicherheit an Maschinen. Ich bin spät dran, also frage ich die KI: «Fass mir die wichtigsten Sicherheitsregeln zusammen und nenne Quellen.» Ich bekomme eine glatte Liste mit drei Links — einer existiert nicht, das merke ich erst beim Anklicken. Trotzdem klingt alles überzeugend, und ich könnte es einfach übernehmen. Aber im KN sitze ich ohne KI und muss die Regeln selbst erklären. Jetzt entscheide ich: Was lasse ich die KI für mich tun, was prüfe ich nach, und was übe ich bewusst allein? Wie gehe ich vor — und wann vertraue ich der KI, wann nicht?",
+    "leitfrage": "Wie gehe ich vor — und wann vertraue ich der KI, wann kontrolliere ich sie selbst?",
+    "aktivierte_trade_offs": [
+      "Effizienz vs. echtes Verständnis",
+      "Der KI vertrauen vs. den Output kontrollieren",
+      "Abkürzung nehmen vs. eigene Selbstwirksamkeit aufbauen"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Die schnelle Sammelfrage «Fass mir die wichtigsten Sicherheitsregeln zusammen» ist ein vager Prompt — ob die Lernende verstehend oder nur übernehmend arbeitet, entscheidet sich an der Art, wie sie weiterfragt (Herausforderung A: gezielt prompten)."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Die drei Links, von denen einer nicht existiert, zwingen zur Quellenprüfung wie in Herausforderung B — vertraut die Lernende der überzeugend klingenden Recherche oder kontrolliert sie die Quellen?"
+        },
+        {
+          "hf_letter": "C",
+          "scene_element": "Der Druck «drei Tage, ich bin spät dran» und das Wissen «im KN sitze ich ohne KI» erzwingen eine Lernplan-Entscheidung wie in Herausforderung C — was übernimmt die KI, was muss selbst geübt werden?"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (eigene Lernunterlagen erlaubt, kein KI-Tool, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie mit eigenen Worten, was ein Prompt ist und warum die vage Sammelfrage «Fass mir die wichtigsten Sicherheitsregeln zusammen» eher zu einer oberflächlichen Antwort führt als ein gezielter Prompt.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Wenden Sie Ihre Quellenprüfung auf die drei von der KI gelieferten Links an: Nach welchen Kriterien prüfen Sie, ob eine Quelle echt und verlässlich ist — und wie gehen Sie mit dem Link um, der nicht existiert?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Sie müssen schnell fertig werden und gleichzeitig im KN ohne KI bestehen. Bewerten Sie beide Anliegen gleich — oder hat eines Vorrang? Begründen Sie.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie diese Situation mit Ihrem KI-Lernplan aus Herausforderung C: Welche Entscheidung «mit KI oder bewusst ohne» treffen Sie hier gleich, und wo müssen Sie wegen des Zeitdrucks anders vorgehen?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Welche Haltung leitet Sie, wenn die KI Ihnen anbietet, die ganze Vorbereitung abzunehmen? Begründen Sie, weshalb verantwortungsvolle KI-Nutzung mehr ist als nur eine Frage von Zeitersparnis.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        11,
+        1,
+        2
+      ],
+      "aspekte": [
+        "Technologische und digitale Transformation",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; eigene Lernunterlagen erlaubt nach LP-Entscheid; kein KI-Tool, kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie kurz (3-5 Sätze), warum eine KI Quellen oder Links erfinden kann, die echt aussehen, und woran Sie das im Beispiel mit den drei Links erkennen.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Zwei Wege führen scheinbar zum gleichen Ziel: die KI-Zusammenfassung einfach übernehmen oder sie gezielt prüfen und selbst nacharbeiten. Warum ist der zweite Weg im Hinblick auf den KN anders zu beurteilen als der erste? Nennen Sie mindestens drei Argumente.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie begründet, wie Sie Ihre verbleibenden drei Tage einteilen: Welche Schritte überlassen Sie der KI, welche prüfen Sie nach, welche üben Sie bewusst ohne KI? Formulieren Sie für einen Schritt einen gezielten Übe-Prompt (2-3 Sätze).",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form (4-6 Sätze) einen persönlichen Grundsatz, wie Sie KI künftig für Ihre KN-Vorbereitung einsetzen — wo Sie ihr vertrauen, wo Sie kontrollieren, und was Sie auf jeden Fall selbst können wollen.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        11,
+        1,
+        2
+      ],
+      "aspekte": [
+        "Technologische und digitale Transformation",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer drei Handlungsprodukte aus den Lernaufgaben (Prompt-Protokoll, KI-Recherche-Analyse oder KI-Lernplan).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung des KN sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was haben Sie durch die drei Herausforderungen (gezielt prompten, KI-Recherche prüfen, KI-Lernplan) insgesamt über den Umgang mit KI gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        5,
+        11
+      ],
+      "aspekte": [
+        "Technologische und digitale Transformation",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt; KI-Verhalten ungenau beschrieben.",
+          "Begriffe korrekt und situationsangemessen auf den KI-Einsatz angewendet.",
+          "Differenziert, kontextualisiert, eigenständig formuliert; KI-Mechanismen präzise benannt."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung erkennbar.",
+          "Begründung ansatzweise vorhanden (z. B. nur Behauptung).",
+          "Begründung nachvollziehbar und strukturiert; Vor- und Nachteile abgewogen.",
+          "Schlüssig, differenziert; Zielkonflikte zwischen Vertrauen und Kontrolle explizit berücksichtigt."
+        ]
+      },
+      {
+        "name": "Technologisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Prinzip nicht angewendet — KI-Output wird unkritisch übernommen oder pauschal abgelehnt.",
+          "Prinzip teilweise erkennbar — eine Dimension (Prompten / Prüfen / Steuern) wird gestreift.",
+          "Prinzip korrekt angewendet — gezieltes Prompten, Quellenprüfung und bewusster Einsatz greifen ineinander.",
+          "Prinzip auf neue Zusammenhänge übertragen — Lernende erkennt, wann KI Verständnis fördert und wann sie es ersetzt."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet, aber unbegründet.",
+          "Position klar in Ich-Form formuliert, Zielkonflikt zwischen Effizienz und eigenem Können benannt.",
+          "Position begründet, Mehrdeutigkeit anerkannt, verantwortungsvolle KI-Nutzung explizit reflektiert."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "Stufen 1-2 dominant"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich Stufe 3"
+      },
+      {
+        "label": "100 %",
+        "definition": "Stufe 4 in mind. 3 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

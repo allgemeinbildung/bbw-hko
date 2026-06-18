@@ -55,11 +55,12 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [bundling, setBundling] = useState(false)
   const [toast, setToast] = useState<{ kind: 'ok' | 'error'; msg: string } | null>(null)
   const [navOpen, setNavOpen] = useState(false)
+  const [kiOpen, setKiOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
 
   useEffect(() => {
     const style = document.createElement('style')
-    style.textContent = '@media print { .wb-nav, .wb-dochead, .download-fab, .toast { display: none !important; } .wb-canvas .pages { padding: 0; gap: 0; margin: 0; } body { margin: 0; padding: 0; } }'
+    style.textContent = '@media print { .wb-nav, .wb-dochead, .wb-ki-banner, .download-fab, .toast { display: none !important; } .wb-canvas .pages { padding: 0; gap: 0; margin: 0; } body { margin: 0; padding: 0; } }'
     document.head.appendChild(style)
     return () => document.head.removeChild(style)
   }, [])
@@ -266,14 +267,14 @@ ${cssRenderer}
         } catch (e) { console.warn('begleiter docx failed', e) }
       }
 
-      // KI-Fluency-Dokumente (additiv) — nur wenn die jeweilige Datei existiert.
+      // KI-Toolbox-Dokumente (additiv) — nur wenn die jeweilige Datei existiert.
       if (d.ki) {
         for (const which of ['ki_1', 'ki_2'] as const) {
           if (!d.ki.assignments?.some((a) => a.key === which)) continue
           const num = which === 'ki_1' ? '1' : '2'
           const markup = renderToStaticMarkup(<DocKi ki={d.ki} which={which} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
           const filename = `${prefix}_doc-ki-${num}.html`
-          zip.file(`html/${filename}`, wrap(`DOC-KI-${num} · KI-Fluency`, markup))
+          zip.file(`html/${filename}`, wrap(`DOC-KI-${num} · KI-Toolbox`, markup))
           log.push(`html/${filename}`)
           try {
             const docx = buildKi({ ki: d.ki, which, abteilung, logoPng: pngArrayBuffer })
@@ -288,7 +289,7 @@ ${cssRenderer}
       if (d.lernprompt) {
         const markup = renderToStaticMarkup(<DocLernprompt lernprompt={d.lernprompt} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-lernprompt.html`
-        zip.file(`html/${filename}`, wrap('DOC-LERNPROMPT · KI-Fluency', markup))
+        zip.file(`html/${filename}`, wrap('DOC-LERNPROMPT · KI-Toolbox', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildLernprompt({ lernprompt: d.lernprompt, abteilung, logoPng: pngArrayBuffer })
@@ -302,7 +303,7 @@ ${cssRenderer}
       if (d.lernbegleiter) {
         const markup = renderToStaticMarkup(<DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-lernbegleiter.html`
-        zip.file(`html/${filename}`, wrap('DOC-LERNBEGLEITER · KI-Fluency', markup))
+        zip.file(`html/${filename}`, wrap('DOC-LERNBEGLEITER · KI-Toolbox', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildLernbegleiter({ lernbegleiter: d.lernbegleiter, abteilung, logoPng: pngArrayBuffer })
@@ -349,13 +350,13 @@ ${cssRenderer}
   } else if (doc === 'doc-ki-1' || doc === 'doc-ki-2') {
     const which = doc === 'doc-ki-1' ? 'ki_1' : 'ki_2'
     const a = d.ki?.assignments?.find((x) => x.key === which)
-    docKicker = 'KI-Fluency · formativ'
+    docKicker = 'KI-Toolbox · formativ'
     docName = a?.titel || (doc === 'doc-ki-1' ? 'KI-Auftrag 1' : 'KI-Auftrag 2')
   } else if (doc === 'doc-lernprompt') {
-    docKicker = 'KI-Fluency · Prompting'
+    docKicker = 'KI-Toolbox · Prompting'
     docName = 'KI-Lernprompt'
   } else if (doc === 'doc-lernbegleiter') {
-    docKicker = 'KI-Fluency · Lernen'
+    docKicker = 'KI-Toolbox · Lernen'
     docName = 'KI-Lernbegleiter'
   } else if (doc === 'doc-dossier') {
     docKicker = 'EBA · Nachschlagen & Lernen'
@@ -368,6 +369,8 @@ ${cssRenderer}
   const selectSit = (s: SitLetter) => { setDoc('doc-s'); setSituation(s); setNavOpen(false) }
   const selectKnTyp = (t: string) => { setDoc('doc-kn-s'); setKnTyp(t); setNavOpen(false) }
   const pick = (target: DocSel) => { setDoc(target); setNavOpen(false) }
+
+  const isKiDoc = doc === 'doc-ki-1' || doc === 'doc-ki-2' || doc === 'doc-lernprompt' || doc === 'doc-lernbegleiter'
 
   return (
     <div className="aesthetic-modern wb-root" style={{ '--wb-top': `${wbTop}px` } as any}>
@@ -458,8 +461,20 @@ ${cssRenderer}
           )}
 
           {(d.ki || d.lernprompt || d.lernbegleiter) && (
-            <div className="wb-tree-group">
-              <div className="wb-tree-head">KI-Fluency</div>
+            <div className="wb-tree-group wb-tree-ki">
+              <button
+                type="button"
+                className={`wb-tree-head wb-tree-head-toggle${kiOpen ? ' open' : ''}`}
+                onClick={() => setKiOpen((v) => !v)}
+                aria-expanded={kiOpen}
+              >
+                <span className="wb-ki-badge">KI</span>
+                <span className="wb-ki-label">KI-Toolbox</span>
+                <span className="wb-chevron" aria-hidden="true">▾</span>
+              </button>
+              {kiOpen && (
+              <>
+              <p className="wb-ki-hint">Optionales Zusatzangebot — die Lehrperson entscheidet über den Einsatz.</p>
               {d.ki?.assignments?.some((a) => a.key === 'ki_1') && (
                 <button
                   className={`wb-item${doc === 'doc-ki-1' ? ' active' : ''}`}
@@ -496,6 +511,8 @@ ${cssRenderer}
                   <span className="wb-item-title">KI-Lernbegleiter</span>
                 </button>
               )}
+              </>
+              )}
             </div>
           )}
         </nav>
@@ -519,6 +536,22 @@ ${cssRenderer}
           )}
         </div>
 
+        {isKiDoc && (
+          <div className="wb-ki-banner" role="note">
+            <p>
+              <strong>KI-Toolbox — optionales Zusatzangebot.</strong> Der Einsatz dieser Materialien
+              entscheidet die Lehrperson; sie sind <strong>kein Pflichtteil</strong> der Einheit.
+              Verbindlich sind die drei Herausforderungen, der Kompetenznachweis und der
+              Lehrpersonen-/Bewertungsteil.
+            </p>
+            <p>
+              Jedes Dokument ist als <strong>Word-Datei</strong> herunterladbar und
+              <strong> nach Bedarf anpassbar</strong>. Tipps zur Reduktion der Dichte:
+              in <strong>Gruppenarbeit</strong> einsetzen · als <strong>Vertiefung für starke
+              Lernende</strong> · zum <strong>Üben vor dem Kompetenznachweis</strong>.
+            </p>
+          </div>
+        )}
         <main className="pages">{docNode}</main>
       </div>
 
@@ -608,7 +641,7 @@ function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { pre
   (Einzelauftrag / Gruppenpuzzle / Plenum) und die Transfer-Aufgabe.</p>
   <p>Zusätzlich liegt das Begleitdokument für die Lehrperson (<code>_begleiter.docx</code>)
   bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.</p>
-${hatKi ? `  <p><strong>KI-Fluency-Dokumente</strong> (komplementär zur Einheit, formativ):
+${hatKi ? `  <p><strong>KI-Toolbox-Dokumente</strong> (komplementär zur Einheit, formativ):
   zwei KI-Aufträge (<code>_doc-ki-1</code>, <code>_doc-ki-2</code>) zum kritischen
   KI-Einsatz, der <code>_doc-lernprompt</code> als Prompting-Werkstatt und der
   <code>_doc-lernbegleiter</code> zur eigenständigen KN-Vorbereitung — je als HTML und Word.</p>` : ''}

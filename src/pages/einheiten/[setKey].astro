@@ -39,7 +39,7 @@ if (!meta || !fullSet) {
 if (isEntwurf(meta) && role !== 'kt1') {
   return Astro.redirect('/einheiten')
 }
-// Entwurf-Bausteine (z. B. KI-Fluency) für lp/gast aus dem Set entfernen, bevor
+// Entwurf-Bausteine (z. B. KI-Toolbox) für lp/gast aus dem Set entfernen, bevor
 // es ans Workbench-Island geht — KI-Tab + KI-Dateien im ZIP verschwinden.
 const visibleSet = stripDraftComponents(fullSet, meta, role)
 const draftKomps = role === 'kt1' ? draftKomponenten(meta) : []

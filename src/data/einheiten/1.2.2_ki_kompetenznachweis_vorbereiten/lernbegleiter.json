@@ -1,0 +1,110 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_lernbegleiter",
+  "set_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_set",
+  "prinzip_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "kn_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_kn",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-18",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie nutzen die KI als Lerncoach, um den Stoff dieser Unit zu wiederholen und sich gezielt auf einen möglichen Kompetenznachweis vorzubereiten — und üben dabei genau das, was Sie im KN ohne KI selbst können müssen.",
+    "kompetenzversprechen": "Ich kann KI-Werkzeuge gezielt einsetzen, um mich auf einen Kompetenznachweis vorzubereiten, und entscheide dabei begründet, wo ich der KI vertraue und wo ich ihre Ergebnisse selbst überprüfe.",
+    "ki_frei_zuerst": {
+      "auftrag": "Bevor Sie die KI nutzen: Schätzen Sie ehrlich ein, wie sicher Sie sich bei den drei Teilen dieser Unit fühlen. Markieren Sie für jeden Punkt 1 (noch unsicher) bis 5 (sitzt). Genau die Punkte mit 1-3 üben Sie danach zuerst.",
+      "selbsteinschaetzung": [
+        "Ich kann der KI gezielte, aufeinander aufbauende Fragen stellen, sodass sie mir beim Verstehen hilft, statt mir nur eine fertige Antwort zu liefern.",
+        "Ich kann die Quellen einer KI-Recherche selbst prüfen und erkenne erfundene oder unbelegte Angaben, bevor ich sie übernehme.",
+        "Ich kann begründet entscheiden, wo mir die KI sinnvoll hilft und wo ich bewusst ohne sie übe, damit ich es im KN selbst kann."
+      ]
+    },
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen (Retrieval)",
+        "wann": "Zum Wiederholen von Begriffen und Regeln — Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit und Ihr eigenes KN-Thema.",
+        "prompt_basis": "Stell mir nacheinander 5 Prüfungsfragen zu meinem KN-Thema [Thema] und zu den Begriffen Prompt, Halluzination und Quellenkritik. Gib mir die Lösung erst, nachdem ich geantwortet habe.",
+        "prompt_fortgeschritten": "Frag mich im Wechsel ab: eine Wissensfrage zu einem Begriff, dann eine Anwendungsfrage zu einer kurzen KI-Situation. Bewerte meine Antwort knapp und stell die nächste Frage erst, wenn ich nachgebessert habe.",
+        "warnung": "Lassen Sie sich die Lösung wirklich erst nach Ihrer Antwort geben — sonst üben Sie Wiedererkennen statt Abrufen, und im KN steht keine KI-Antwort vor Ihnen."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären (Feynman)",
+        "wann": "Wenn Sie prüfen wollen, ob Sie einen Begriff wirklich verstanden haben und nicht nur eine KI-Erklärung auswendig können.",
+        "prompt_basis": "Ich erkläre dir jetzt mit eigenen Worten, was Halluzination bei einer KI bedeutet und warum man Quellen prüfen muss. Hör zu und sag mir, wo meine Erklärung Lücken oder Fehler hat — ohne mir gleich die perfekte Version zu liefern.",
+        "prompt_fortgeschritten": "Ich erkläre dir, warum gezieltes Prompten zu echtem Verständnis führt und schnelles Übernehmen nicht. Stell mir danach zwei Rückfragen, die eine Lehrperson stellen würde, um zu prüfen, ob ich es wirklich verstanden habe.",
+        "warnung": "Wenn die KI Ihnen die fertige Erklärung schenkt, lernen Sie nichts — und Sie üben genau die Abhängigkeit ein, die im KN nicht erlaubt ist. Bitten Sie sie um Lücken-Hinweise und Rückfragen, nicht um die Musterlösung."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen (Transfer-Simulation)",
+        "wann": "Zum Üben des Transfers: ob Sie Ihr Prinzip zum KI-Einsatz auf einen neuen, unbekannten Fall übertragen.",
+        "prompt_basis": "Erfinde einen NEUEN Fall, in dem jemand KI für eine Vorbereitung oder Aufgabe einsetzt — anderer Beruf, andere Situation als ein Polymechaniker drei Tage vor einem Sicherheits-KN. Gib mir nur die Situation. Ich entscheide, wo ich der KI vertraue und wo ich kontrolliere; danach bewerte meine Lösung nach den Kriterien Fachkorrektheit, Argumentation, technologisches Prinzip und Position/Werthaltung.",
+        "prompt_fortgeschritten": "Gib mir einen neuen Fall mit einer klaren Zwickmühle zwischen Zeitdruck und echtem Können. Nachdem ich entschieden habe, spiel die kritische Lehrperson und prüfe, ob meine Begründung und meine Abwägung zwischen Vertrauen und Kontrolle standhalten.",
+        "warnung": "Wichtig: Der Übungsfall muss ein ANDERER sein als die KN-Szene «Drei Tage vor dem KN» (Polymechaniker/in, Luzern, Arbeitssicherheit). Die KI darf Ihnen keine fertige Lösung für genau diese KN-Situation geben — Sie üben die Methode, nicht eine auswendig gelernte Antwort."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Feedback auf einen Übungsversuch",
+        "wann": "Wenn Sie etwas Eigenes erstellt haben (Prompt-Protokoll, Quellen-Prüfung, Lernplan, eine Stellungnahme) und wissen wollen, was fehlt.",
+        "prompt_basis": "Hier ist meine begründete Entscheidung, wo ich bei meiner KN-Vorbereitung der KI vertraue und wo ich kontrolliere: [dein Text]. Sag mir, was nach dem Kriterium «Position/Werthaltung» noch fehlt — nenne nur die Lücken, gib mir KEINE fertige Musterlösung.",
+        "prompt_fortgeschritten": "Hier ist meine KI-Recherche-Analyse: [dein Text]. Prüfe, ob ich jede Quelle nach den drei Kriterien (existiert / belegt / vertrauenswürdig) beurteilt habe. Markiere drei Schwächen als Fragen an mich, damit ich selbst nachbessere.",
+        "warnung": "Bitten Sie die KI ausdrücklich um Lücken und Fragen statt um die Verbesserung. Sobald sie Ihren Text neu schreibt, ist es ihr Text — und im KN sitzen Sie ohne sie da."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Repetitionsplan und Karteikarten",
+        "wann": "Zum Strukturieren der letzten Lernphase vor dem KN.",
+        "prompt_basis": "Erstell mir aus diesen Themen einen Repetitionsplan für drei Lernabende: gezielt prompten, KI-Recherche prüfen, KI-Lernplan und mein eigenes KN-Thema. Pro Abend ein Schwerpunkt mit je einer kurzen Übung, bei der ich selbst aktiv werde.",
+        "prompt_fortgeschritten": "Erstell mir 10 Karteikarten (Frage / Antwort) zu den Kernbegriffen dieser Unit und zu meinem KN-Thema. Sortiere sie nach Schwierigkeit und markiere, welche eher Wissen und welche eher Anwendung prüfen.",
+        "warnung": "Karteikarten und Antworten von der KI sind ein Entwurf, kein geprüfter Stoff: Gleichen Sie jede Antwort mit Ihrer verlässlichen Quelle ab, bevor Sie damit lernen — gerade weil die KI Fakten und Quellen erfinden kann."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Mündlich erklären und begründen unter Nachfragen — Sie erklären Begriffe, wenden Ihre Quellenprüfung an und bewerten die Abwägung zwischen Vertrauen und Kontrolle.",
+        "prompt": "Simuliere ein kurzes Fachgespräch: Stell mir 5 mündliche Fragen steigender Schwierigkeit zum Umgang mit KI in der KN-Vorbereitung (Prompt erklären, Quellenprüfung anwenden, Effizienz und Können abwägen, mit meinem KI-Lernplan vergleichen, Werthaltung begründen). Reagier auf meine Antwort mit einer Rückfrage, wie es eine Lehrperson täte."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Schriftlicher Transfer: einen neuen Fall analysieren, Halluzination erklären, die Zeit begründet einteilen und einen persönlichen Grundsatz in Ich-Form formulieren.",
+        "prompt": "Gib mir einen neuen schriftlichen Fall zum KI-Einsatz mit vier Aufgaben (Halluzination erklären, zwei Wege unterscheiden, Zeiteinteilung mit/ohne KI entscheiden, persönlichen Grundsatz in Ich-Form formulieren). Ich schreibe meine Lösung; danach prüfe sie nach den Rubrik-Kriterien und nenne mir Lücken als Fragen — ohne Musterlösung."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Das eigene Prinzip benennen und seinen Transfer reflektieren: Was ist gleich, was anders, wann versagt es?",
+        "prompt": "Ich erkläre dir das Grundprinzip zum Umgang mit KI, das ich in dieser Unit gelernt habe. Stell mir die drei Transfer-Fragen (Prinzip in einem Satz, wie es in einem neuen KI-Fall sichtbar wird, wann es versagt) und prüfe, ob meine Antworten konkret genug sind."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Lassen Sie sich zu den Begriffen (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) und Ihrem KN-Thema abfragen und prüfen Sie Ihre Argumente, indem Sie die KI eine Gegenposition vertreten lassen — Quellen aber immer an Ihrer verlässlichen Quelle gegenchecken, nie der KI-Angabe allein vertrauen."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Technologisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Üben Sie an neuen Fällen, das Prinzip «gezielt prompten, prüfen, bewusst steuern» anzuwenden und Ihre Position in Ich-Form zu formulieren: wo Sie der KI vertrauen, wo Sie kontrollieren und was Sie auf jeden Fall selbst können wollen — und holen Sie sich Feedback auf Lücken, nicht auf eine fertige Lösung."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nicht beim Abgeben. Im Kompetenznachweis sitzen Sie ohne KI da und müssen selbst erklären, prüfen und entscheiden: Lassen Sie sich deshalb nie Ihre konkrete KN-Lösung schreiben, sondern üben Sie an anderen Fällen und an Lücken-Feedback. Und prüfen Sie jede Wissensaussage und jede Quelle der KI an Ihrer verlässlichen Quelle nach.",
+    "selbstcheck": [
+      "Ich habe zuerst KI-frei eingeschätzt, wo ich noch unsicher bin, und genau dort geübt.",
+      "Meine Übungsfälle waren andere als die KN-Szene «Drei Tage vor dem KN».",
+      "Ich habe die KI um Lücken-Feedback gebeten, nicht um fertige Lösungen.",
+      "Ich habe jede Quelle und jede Wissensaussage der KI an meiner verlässlichen Quelle nachgeprüft.",
+      "Ich kann das Grundprinzip dieser Unit in einem Satz aus dem Kopf formulieren."
+    ]
+  }
+}

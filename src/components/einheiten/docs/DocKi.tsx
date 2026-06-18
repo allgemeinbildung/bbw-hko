@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import { A4Page, Badge, Schreibfeld, SectionHead } from './chrome'
 import type { KiJson, KiAssignment } from '../../../lib/einheiten/types'
 
-// KI-Fluency · formativ — renders ONE KI-Auftrag (chosen via `which`) across
+// KI-Toolbox · formativ — renders ONE KI-Auftrag (chosen via `which`) across
 // four A4 pages: Überblick (nRLP-Anker + Leitfragen) / Auftrag / Prompting &
 // Schritte / Kontrolle & Reflexion. Used twice in the workbench (ki_1, ki_2).
 // Accent is a local constant (#1E3A5F) and never written into the brand CSS
@@ -44,7 +44,7 @@ function Header({ num, titel, pattern }: { num: string; titel: string; pattern?:
         }}>{num}</span>
         <div>
           <div style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: KI_MID }}>
-            KI-Fluency · formativ
+            KI-Toolbox · formativ
           </div>
           <div style={{ fontSize: '16pt', fontWeight: 700, color: 'var(--ink, #1d2026)', lineHeight: 1.12 }}>
             {titel}

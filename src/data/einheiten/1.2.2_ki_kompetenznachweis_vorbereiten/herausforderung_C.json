@@ -1,0 +1,352 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_hf_C",
+  "modul": "1.2",
+  "modul_titel": "Ich lerne effektiv und setze meine Ressourcen effizient ein",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "Soll die KI für mich lernen — oder ich mit ihr?",
+  "wissensknoten": [
+    "ki_lernplan_selbstwirksamkeit"
+  ],
+  "nrlp": {
+    "nr": "1.2.2",
+    "nr_primary": [
+      "1.2.2"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital"
+    ],
+    "sk": [
+      2,
+      5,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM9"
+    ],
+    "kompetenz_id": "1.2.2",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann mich auf den nächsten Kompetenznachweis zielgerichtet und effektiv vorbereiten.",
+    "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
+  },
+  "persona": {
+    "beruf": "Bäcker-Konditor-Confiseur/in EFZ",
+    "betrieb": "Bäckerei-Konditorei Wirz",
+    "ort": "Aarau"
+  },
+  "situation_text": "Ich bin Bäcker-Konditor-Confiseur-Lernende/r im 1. Lehrjahr bei der Bäckerei-Konditorei Wirz in Aarau. In drei Wochen steht mein Kompetenznachweis zum Thema Hygiene und Lebensmittelsicherheit an, und ich habe ehrlich gesagt wenig Zeit zum Lernen. Am liebsten würde ich die KI alles vorbereiten lassen — Zusammenfassung, Lernkarten, sogar Antworten auf mögliche Prüfungsfragen. Aber im KN sitze ich allein da, ohne KI, und muss selbst erklären können. Ich merke: Wenn ich alles der KI überlasse, fühle ich mich vorbereitet, bin es aber nicht. Jetzt überlege ich, wie ich die KI als Lernhilfe nutze, ohne dass sie mir das Können abnimmt — wo lasse ich sie für mich arbeiten, und wo muss ich selbst durch?",
+  "zahlen_tabelle": [
+    {
+      "label": "Zeit bis zum KN",
+      "wert": "3 Wochen"
+    },
+    {
+      "label": "Verfügbare Lernzeit pro Woche",
+      "wert": "ca. 2 h"
+    },
+    {
+      "label": "Im KN erlaubte KI-Hilfe",
+      "wert": "keine"
+    }
+  ],
+  "leitfrage": "Wo lasse ich die KI für mich arbeiten — und wo muss ich bewusst ohne sie üben, damit ich es im KN selbst kann?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Du arbeitest ohne Lehrmittel — deine Grundlagen sind dein eigener kommender Kompetenznachweis, die KI-Tools und deine Erfahrungen aus den Herausforderungen A und B.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "eigener KN | Erfahrung A/B",
+      "text": "Was unterscheidet «sich vorbereitet fühlen» von «wirklich vorbereitet sein»? Erkläre in drei bis vier Sätzen, warum Selbstwirksamkeit — das Vertrauen, etwas selbst zu können — nur durch eigenes Üben entsteht und nicht dadurch, dass die KI es für mich erledigt.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "eigener KN | KI-Tool",
+      "text": "Teile dein KN-Thema in Lernschritte auf und ordne jedem Schritt zu, ob die KI dort sinnvoll hilft (z. B. Lernkarten erzeugen, Quiz stellen) oder ob du bewusst ohne sie übst (z. B. frei erklären, selbst zusammenfassen). Nutze die KI dabei aktiv als Lernpartnerin.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Lernplan | eigene Ziele",
+      "text": "Entscheide für jeden Lernschritt begründet: KI-Hilfe oder bewusst ohne. Setze dir pro Schritt ein konkretes Ziel («Ich kann die fünf HACCP-Schritte frei aufzählen») und begründe, warum dein Weg dorthin mit oder ohne KI führt.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "KI-Tool | Lernplan",
+      "text": "Formuliere drei gezielte Prompts, mit denen die KI dich beim Üben unterstützt, statt dir die Arbeit abzunehmen — etwa indem sie dich abfragt oder dir Feedback gibt. Schreibe sie so, dass du sie im Chat direkt einsetzen kannst.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein KI-Lernplan — helfen lassen ohne abgeben",
+  "mindmap_aeste": [
+    {
+      "titel": "Lernschritte zum KN",
+      "punkte": [
+        "Thema in Teilschritte aufteilen",
+        "Pro Schritt ein konkretes Ziel",
+        "Reihenfolge und Zeit grob planen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wo die KI hilft",
+      "punkte": [
+        "Lernkarten und Quizfragen erzeugen",
+        "Mich abfragen lassen",
+        "Erklärungen vereinfachen",
+        "Feedback auf meine Erklärung geben"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wo ich bewusst ohne arbeite",
+      "punkte": [
+        "Frei erklären, ohne nachzulesen",
+        "Selbst zusammenfassen",
+        "Üben, wie im KN (ohne KI)",
+        "Selbstwirksamkeit aufbauen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Verantwortungsvoll nutzen",
+      "punkte": [
+        "Ehrlich bleiben: was kann ich selbst?",
+        "KI als Hilfe, nicht als Ersatz",
+        "Nicht abgeben, was ich können muss"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Persönlicher KI-Lernplan für den nächsten Kompetenznachweis",
+    "abgaben": [
+      "KI-Lernplan mit Lernschritten und je einem konkreten Ziel",
+      "Pro Schritt begründete Entscheidung: mit KI / bewusst ohne",
+      "Drei Übe-Prompts, mit denen die KI dich abfragt statt für dich arbeitet"
+    ],
+    "titel": "Mein KI-Lernplan — wo die KI hilft und wo ich selbst durch muss",
+    "format_detail": "Ein ein- bis zweiseitiger persönlicher Lernplan: eine Tabelle mit Lernschritten zu deinem KN-Thema, je einem konkreten Lernziel und der begründeten Entscheidung «mit KI» oder «bewusst ohne KI», ergänzt um drei einsatzfertige Übe-Prompts.",
+    "beschreibung": "Ich baue meinen eigenen Lernplan für den nächsten KN und treffe für jeden Schritt eine bewusste Entscheidung, wo mir die KI hilft und wo ich bewusst ohne sie arbeite, um wirklich selbst zu können, was im KN zählt. Der Plan stützt sich auf das, was ich in Herausforderung A (gezielt prompten) und B (KI-Recherche prüfen) gelernt habe. Am Rande halte ich fest, dass ich die KI verantwortungsvoll nutze — als Hilfe, nicht als Ersatz für mein eigenes Können.",
+    "schritte": [
+      {
+        "label": "Lernschritte festlegen",
+        "hint": "Teile dein KN-Thema in vier bis sechs überschaubare Lernschritte auf und schreibe sie in die linke Spalte deiner Lernplan-Tabelle."
+      },
+      {
+        "label": "Ziele setzen",
+        "hint": "Formuliere pro Schritt ein konkretes, überprüfbares Ziel («Ich kann … frei aufzählen / selbst erklären»)."
+      },
+      {
+        "label": "KI-Einsatz entscheiden",
+        "hint": "Markiere pro Schritt «mit KI» oder «bewusst ohne KI» und schreibe einen kurzen Grund (Mindmap-Äste 2 und 3)."
+      },
+      {
+        "label": "Übe-Prompts formulieren",
+        "hint": "Schreibe drei Prompts, mit denen die KI dich abfragt oder dir Feedback gibt, statt dir Inhalte fertig zu liefern."
+      },
+      {
+        "label": "Verantwortungs-Check",
+        "hint": "Prüfe am Schluss kurz: Lasse ich die KI irgendwo etwas erledigen, das ich im KN selbst können muss? Halte einen Satz dazu fest."
+      }
+    ],
+    "schreib_label": "KI-LERNPLAN HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ki_lernplan_selbstwirksamkeit",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Mein Ziel für diesen Schritt ist, dass ich … selbst kann»",
+        "«Hier hilft mir die KI, indem sie …»",
+        "«Diesen Schritt übe ich bewusst ohne KI, weil …»",
+        "«Frag mich ab zu … und gib mir Feedback, ob … (Übe-Prompt)»"
+      ],
+      "strategien": [
+        "Erst Ziele setzen, dann entscheiden, welcher Weg dorthin führt",
+        "KI für Wiederholung und Abfrage nutzen, eigenes Erklären selbst trainieren",
+        "Ehrlich prüfen, was du im KN ohne Hilfe können musst"
+      ],
+      "struktur": [
+        "Tabelle: Lernschritt – Ziel – mit/ohne KI – Begründung",
+        "Darunter: drei einsatzfertige Übe-Prompts",
+        "Abschluss: kurzer Verantwortungs-Check"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich beim Planen am meisten überrascht — bei wie vielen Schritten ich eigentlich selbst durch muss?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meiner Ausbildung neige ich dazu, die KI etwas erledigen zu lassen, das ich selbst können sollte?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ändere ich an meiner KN-Vorbereitung konkret, damit ich am Prüfungstag wirklich vorbereitet bin — nicht nur gefühlt?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Unterschied zwischen gefühlter und echter Vorbereitung erklärt",
+        "Pro Lernschritt KI-Einsatz begründet entschieden"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Zentrum und vier Ast-Titel übernommen",
+        "Pro Ast eigene Detail-Punkte ergänzt",
+        "Verbindung zwischen Lernschritten und KI-Einsatz erkennbar"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Lernplan-Tabelle mit Schritten, Zielen und KI-Entscheidung ausgefüllt",
+        "Jede KI-Entscheidung begründet",
+        "Drei einsatzfertige Übe-Prompts und Verantwortungs-Check vorhanden"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konkrete Konsequenz für die eigene KN-Vorbereitung benannt"
+      ]
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap, Lernschritte festlegen",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, KI-Lernplan erstellen, Übe-Prompts formulieren",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "herausforderung": {
+    "buchstabe": "C",
+    "label": "KI-Lernplan gestalten"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Abkürzung nehmen vs. eigene Selbstwirksamkeit aufbauen",
+    "hint": "Beide Pole sind legitim: Die KI für sich arbeiten zu lassen ist bei knapper Zeit verlockend und manchmal genau richtig. Gleichzeitig sitzt du im KN allein da und musst es selbst können. Bewertet wird nicht, wie viel KI du nutzt, sondern ob du bewusst entscheidest, wo eine Abkürzung sinnvoll ist und wo du eigenes Können aufbauen musst."
+  },
+  "dekontextualisierung": {
+    "frage": "Wie plane ich in einer anderen Lern- oder Arbeitssituation, wo mir die KI Arbeit abnehmen darf und wo ich selbst Können aufbauen muss?",
+    "ziel": "KI macht mich schneller, aber nicht automatisch kompetenter — wer entscheidet, was er der KI überlässt und was er selbst können muss, bleibt selbstwirksam."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T4 Verantwortung: KI-Einsatz im Betrieb verantworten.",
+    "r3_voraussicht": "T7 Arbeiten in der Zukunft: KI als Arbeitswerkzeug einordnen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "ohne Lehrmittel",
+      "titel": "Eigener Kompetenznachweis, KI-Tools und die Erfahrungen aus Herausforderung A und B als Grundlage — kein Lehrmittelkapitel",
+      "seiten": "—",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Lernschritte und Ziele",
+        "indikator": "Teilt das KN-Thema in überschaubare Schritte mit je einem konkreten Lernziel.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Bewusste KI-Entscheidung",
+        "indikator": "Begründet pro Schritt, ob die KI hilft oder bewusst ohne sie geübt wird.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Übe-Prompts",
+        "indikator": "Formuliert Prompts, die abfragen oder Feedback geben, statt Inhalte abzunehmen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mehrdeutigkeit anerkennen",
+        "indikator": "Benennt den Zielkonflikt zwischen Abkürzung und Selbstwirksamkeit und entscheidet bewusst.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Vorgegebene Lernplan-Tabelle (Schritt / Ziel / mit-ohne KI / Grund) und eine Liste von Übe-Prompt-Mustern als Lückentext.",
+    "scaffold_100": "Zusätzlich: einen Lernschritt einmal mit und einmal ohne KI durchspielen und vergleichen, bei welchem Weg das Können besser hängen bleibt."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Persönlicher KI-Lernplan: bewusst entscheiden, wo KI hilft und wo eigene Selbstwirksamkeit aufgebaut wird.",
+    "lehrmittel_anker": "Ohne Lehrmittel — Grundlage sind der eigene KN, die KI-Tools und die Erfahrungen aus Herausforderung A und B.",
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als das Element Lernsteuerung — kann die Lernende begründen, wo sie der KI Arbeit überlässt und wo sie selbst können muss?",
+    "transfer_check": "Vor jeder Vorbereitung entscheiden: Was darf die KI übernehmen, und was muss ich selbst können, wenn ich allein dasitze?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "In LF3 setzt die Lernende sich pro Lernschritt ein konkretes Ziel und passt ihren Plan an, wenn ein Weg nicht zur Selbstwirksamkeit führt."
+    },
+    {
+      "sk": 5,
+      "wo": "Im Verantwortungs-Check und in Reflexion R2 reflektiert die Lernende ihre Werthaltung zur verantwortungsvollen KI-Nutzung — KI als Hilfe, nicht als Ersatz."
+    },
+    {
+      "sk": 11,
+      "wo": "In LF3 und im Lernplan hält die Lernende den Zielkonflikt zwischen Abkürzung und eigenem Können aus, statt pauschal alles oder nichts der KI zu überlassen."
+    }
+  ]
+}

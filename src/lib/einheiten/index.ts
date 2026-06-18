@@ -24,7 +24,7 @@ export const KOMPONENTEN_GRUPPEN: Record<string, (keyof EinheitFullSet)[]> = {
 
 /** Menschlich lesbares Label für die KT1-Entwürfe-Übersicht. */
 export const KOMPONENTEN_LABEL: Record<string, string> = {
-  'ki-fluency': 'KI-Fluency',
+  'ki-fluency': 'KI-Toolbox',
 }
 
 export function isEntwurf(entry: Pick<EinheitIndexEntry, 'status'>): boolean {

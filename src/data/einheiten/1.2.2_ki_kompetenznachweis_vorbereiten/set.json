@@ -1,0 +1,53 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_set",
+  "einheit_titel": "Mit KI auf den Kompetenznachweis vorbereiten",
+  "modul": "1.2",
+  "modul_titel": "Ich lerne effektiv und setze meine Ressourcen effizient ein",
+  "lehrgang": "EFZ_3J",
+  "thema": "T1",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-18",
+  "status": "entwurf",
+  "prinzip_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "kn_ref": "1.2.2_ki_kompetenznachweis_vorbereiten_kn",
+  "herausforderungen": [
+    "1.2.2_ki_kompetenznachweis_vorbereiten_hf_A",
+    "1.2.2_ki_kompetenznachweis_vorbereiten_hf_B",
+    "1.2.2_ki_kompetenznachweis_vorbereiten_hf_C"
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "1.2.2_ki_kompetenznachweis_vorbereiten_hf_A",
+      "konzept": "Gezieltes, iteratives Prompten als Werkzeug für echtes Verständnis statt fertiger Antworten."
+    },
+    {
+      "position": 2,
+      "herausforderung": "1.2.2_ki_kompetenznachweis_vorbereiten_hf_B",
+      "konzept": "KI-Recherche kritisch prüfen: Quellen, Verlässlichkeit und Nachvollziehbarkeit kontrollieren statt übernehmen."
+    },
+    {
+      "position": 3,
+      "herausforderung": "1.2.2_ki_kompetenznachweis_vorbereiten_hf_C",
+      "konzept": "Persönlicher KI-Lernplan: bewusst entscheiden, wo KI hilft und wo eigene Selbstwirksamkeit aufgebaut wird."
+    }
+  ],
+  "austausch_phase": {
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Expertise teilen — 90 Sek. pro Person: Problem, Entscheid, stärkstes Argument zur eigenen Herausforderung (Prompten / Recherche prüfen / Lernplan).",
+      "runde_2": "Gemeinsamkeit abstrahieren — Was haben alle drei Herausforderungen gemeinsam? Welches Grundprinzip zum Umgang mit KI steckt dahinter?",
+      "runde_3": "Transfer — Welche Herausforderung wäre persönlich am schwierigsten und warum?"
+    },
+    "einzelarbeit_plenum": "Lehrperson leitet Diskussion: Was haben alle drei Herausforderungen gemeinsam? Welches Prinzip zum bewussten KI-Einsatz lässt sich verallgemeinern?",
+    "einzelauftrag": "Fasse das gemeinsame Prinzip deiner drei Herausforderungen (gezielt prompten, KI-Recherche prüfen, KI-Lernplan) in 5 Sätzen zusammen und nenne je ein Beispiel aus deinem Lehralltag."
+  },
+  "dekontextualisierungs_aufgabe": {
+    "auftrag": "Übertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewählten Kontext, in dem du KI für Lernen oder Arbeit einsetzt.",
+    "format": "schriftlich, 5-7 Sätze, Fachbegriffe (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) verwenden",
+    "ziel": "KI macht mich schneller, aber nicht automatisch kompetenter. Wer KI nutzt, muss entscheiden, was er ihr überlässt und was er selbst können muss — und ihre Ergebnisse prüfen, bevor er sich darauf verlässt.",
+    "gewicht_prozent": 15,
+    "abgabe": "Woche 3 — vor KN"
+  }
+}

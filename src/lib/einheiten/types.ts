@@ -54,7 +54,7 @@ export interface SituationJson {
   wochen_plan?: { label: string; text: string; aktiv?: boolean }[]
   // C1 — relaxed: abgabe/gewicht/kriterium now optional + unrendered; NEW vollstaendig_wenn drives the Checkliste
   bewertungsraster?: { produkt: string; abgabe?: string; gewicht?: number; kriterium?: string; vollstaendig_wenn?: string[] }[]
-  quellen_anker?: { ref: string; titel: string; seiten: string; unterueberschrift?: string; fuer_leitfrage?: number[] }[]
+  quellen_anker?: { ref: string; titel: string; seiten?: string; unterueberschrift?: string; nugget_ref?: string; fuer_leitfrage?: number[] }[]
   leitfragen_intro?: string
   leitfragen?: { nr: number; text: string; bloom?: string; knoten_ref?: string; feld_hoehe_mm?: number }[]
   mindmap_zentrum?: string
@@ -206,7 +206,7 @@ export interface BegleiterMeta {
 }
 
 // ---------------------------------------------------------------------------
-// KI-Fluency layer (additive) — complementary to the unit, see
+// KI-Toolbox layer (additive) — complementary to the unit, see
 // docs/handoff-ki-renderer-teil-a.md. Permissive on purpose (all optional).
 // Three separate per-unit files: ki.json, lernprompt.json, lernbegleiter.json.
 // ---------------------------------------------------------------------------

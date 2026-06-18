@@ -1,0 +1,132 @@
+{
+  "id": "1.2.2_ki_kompetenznachweis_vorbereiten_prinzip",
+  "modul": "1.2",
+  "kompetenz_nr": "1.2.2",
+  "topic_slug": "ki_kompetenznachweis_vorbereiten",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-18",
+
+  "kern_kompetenzversprechen": "Ich kann KI-Werkzeuge gezielt einsetzen, um mich auf einen Kompetenznachweis vorzubereiten, und entscheide dabei begründet, wo ich der KI vertraue und wo ich ihre Ergebnisse selbst überprüfe.",
+
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K3+ oder K4"
+  },
+
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Gezielt prompten",
+      "konfliktart": "Schnelle Antwort nehmen vs. durch besseres Fragen wirklich verstehen",
+      "handlungsprodukt_typ": "Prompt-Protokoll (kommentierter KI-Dialog)",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "KI-Recherche prüfen",
+      "konfliktart": "Der überzeugend klingenden KI-Recherche vertrauen vs. Quellen und URLs selbst kontrollieren",
+      "handlungsprodukt_typ": "KI-Recherche-Analyse (Bewertung von Verlässlichkeit und Quellen)",
+      "transferrable": true
+    },
+    "C": {
+      "herausforderung": "KI-Lernplan gestalten",
+      "konfliktart": "Die KI für mich arbeiten lassen vs. eigene Selbstwirksamkeit aufbauen",
+      "handlungsprodukt_typ": "Persönlicher KI-Lernplan für den nächsten Kompetenznachweis",
+      "transferrable": true
+    }
+  },
+
+  "sk_pro_situation": {
+    "A": [3, 2, 11],
+    "B": [1, 11],
+    "C": [2, 5, 11]
+  },
+
+  "sk_schnittmenge_kn": {
+    "primary": [2, 11]
+  },
+
+  "aspekte": {
+    "Technologische und digitale Transformation": "R1",
+    "Identität und Sozialisation": "R1"
+  },
+
+  "modi_units": [
+    "Interaktion und Kollaboration digital",
+    "Rezeption schriftlich und bildlich"
+  ],
+
+  "modi_kn": [
+    "Interaktion und Kollaboration digital",
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Effizienz vs. echtes Verständnis",
+      "Der KI vertrauen vs. den Output kontrollieren",
+      "Abkürzung nehmen vs. eigene Selbstwirksamkeit aufbauen"
+    ],
+    "verbindlich": "Es gibt keine 'richtige' KI-Nutzung — jede Entscheidung, wo die KI hilft und wo nicht, muss begründbar bleiben."
+  },
+
+  "dekontextualisierungs_anker": {
+    "anker_statement": "KI macht mich schneller, aber nicht automatisch kompetenter. Wer KI nutzt, muss entscheiden, was er ihr überlässt und was er selbst können muss — und ihre Ergebnisse prüfen, bevor er sich darauf verlässt.",
+    "transferfeld": "Übertragbar auf jede Situation, in der ich KI für Lernen oder Arbeit einsetze — andere Fächer, Betrieb, Alltag."
+  },
+
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T4 Verantwortung: KI-Einsatz im Betrieb verantworten",
+    "r3_voraussicht": "T7 Arbeiten in der Zukunft: KI als Arbeitswerkzeug einordnen"
+  },
+
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "ohne Lehrmittel",
+        "titel": "Kein Lehrmittelkapitel — KI-Tools, eigener Kompetenznachweis und eine selbstgewählte Prüfquelle als Material",
+        "seiten": "—"
+      }
+    ],
+    "konzepte": [
+      "Sprachmodell (LLM)",
+      "Prompt",
+      "Halluzination",
+      "Quellenkritik",
+      "Selbstwirksamkeit",
+      "Lernstrategie"
+    ]
+  },
+
+  "persona_pool_units": {
+    "berufe": ["Informatiker/in EFZ", "Schreiner/in EFZ", "Bäcker-Konditor-Confiseur/in EFZ"],
+    "orte": ["Winterthur", "Thun", "Aarau"]
+  },
+
+  "persona_pool_kn_neu": {
+    "berufe": ["Polymechaniker/in EFZ", "Konstrukteur/in EFZ"],
+    "orte": ["Luzern", "Chur"]
+  },
+
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": ["A", "B", "C"],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf + Ort kommen in keiner herausforderung_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ]
+  }
+}

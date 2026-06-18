@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
 import type { LernbegleiterJson, LernbegleiterStrategie } from '../../../lib/einheiten/types'
 
-// KI-Fluency · Lernen — NEW doc (no hko-deploy precedent).
+// KI-Toolbox · Lernen — NEW doc (no hko-deploy precedent).
 // Pagination: page 1 = Kopf + Ohne-KI + erste 2 Strategie-Karten; weitere
 // Karten je 3 pro Seite; Schlussseite = KN-Tracks + Rubrik + Integrität +
 // Selbstcheck. Accent #3B6FD4 as a local constant only. renderToStaticMarkup-safe.
@@ -59,7 +59,7 @@ function PageHeader({ titel }: { titel: string }) {
       }}>L</span>
       <div>
         <div style={{ fontSize: '7pt', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: LB_DARK }}>
-          KI-Fluency · Lernen
+          KI-Toolbox · Lernen
         </div>
         <div style={{ fontSize: '13pt', fontWeight: 700, color: 'var(--ink, #1d2026)', lineHeight: 1.12 }}>{titel}</div>
       </div>

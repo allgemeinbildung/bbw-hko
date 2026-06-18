@@ -10,11 +10,11 @@
       {
         "key": "rollen_prompting",
         "titel": "Rollen-Prompting",
-        "erklaerung": "Du gibst der KI eine konkrete Rolle, bevor du die Aufgabe stellst. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
-        "thema_bezug": "Bei einer rechtlichen Anfrage klingt dieselbe Frage je nach Rolle völlig anders: Eine erfahrene Berufsbildnerin, eine neutrale Rechtsauskunft oder dein Betrieb, der einen Abzug rechtfertigen will, betonen je andere Punkte — und genau diese Perspektiven kannst du gezielt durchspielen.",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
+        "thema_bezug": "Bei einer rechtlichen Anfrage klingt dieselbe Frage je nach Rolle völlig anders: Eine erfahrene Berufsbildnerin, eine neutrale Rechtsauskunft oder Ihr Betrieb, der einen Abzug rechtfertigen will, betonen je andere Punkte — und genau diese Perspektiven können Sie gezielt durchspielen.",
         "beispiel_basis": "Du bist eine neutrale Rechtsauskunft für Lernende. Erkläre einem Lernenden im 1. Lehrjahr in einfacher Sprache, ob der Betrieb CHF 150 für einen Kratzer am Werkstück vom Lohn abziehen darf.",
         "beispiel_fortgeschritten": "Du bist mein Berufsbildner/in und willst den Lohnabzug von CHF 150 rechtfertigen. Begründe ihn so überzeugend wie möglich mit Verweis auf das OR — und sag mir danach, an welcher Stelle du selbst nicht sicher bist, ob die Voraussetzung erfüllt ist.",
-        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht automatisch rechtlich korrekt: Auch als «Rechtsauskunft» kann die KI einen OR-Artikel falsch wiedergeben. Die Rolle steuert den Ton — die Quelle prüfst du selbst.",
+        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht automatisch rechtlich korrekt: Auch als «Rechtsauskunft» kann die KI einen OR-Artikel falsch wiedergeben. Die Rolle steuert den Ton — die Quelle prüfen Sie selbst.",
         "baukasten": {
           "rolle": [
             "neutrale Rechtsauskunft für Lernende",
@@ -40,11 +40,11 @@
       {
         "key": "kontextualisieren",
         "titel": "Kontext geben",
-        "erklaerung": "Du lieferst der KI alle relevanten Fakten, bevor sie antwortet: Sachverhalt, Beteiligte, Ziel, Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
+        "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Sachverhalt, Beteiligte, Ziel, Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
         "thema_bezug": "Ein Rechtsfall ist ohne klaren Tatbestand nicht zu beurteilen: Wer hat was getan, welcher Schaden, welcher Lohn, welche Quelle steht zur Verfügung? Erst mit diesem Sachverhalt kann die KI eine brauchbare rechtliche Einschätzung geben.",
         "beispiel_basis": "Kontext: Schreiner-Lernende/r, 1. Lehrjahr, Lohn CHF 600. Ein Kratzer an einem fertigen Werkstück, der Betrieb will CHF 150 abziehen. Frage: Welche Regel im OR betrifft diesen Abzug?",
         "beispiel_fortgeschritten": "Kontext: Schweizer Lehrverhältnis, EFZ, 1. Lehrjahr. Sachverhalt: Kratzer am fertigen Werkstück, geplanter Lohnabzug CHF 150, unklar ob verschuldet. Ziel: eine begründete Auskunft an eine/n Mitlernende/n. Aufgabe: Zerlege den Fall in Tatbestand, Rechtslage und Rechtsfolge und kennzeichne, was ich noch nicht weiss.",
-        "warnung": "Vertrauliche Details gehören nicht in den Prompt: echte Namen, Betrieb und erkennbare Personen weglassen oder anonymisieren (Kap. 20.7 Datenschutz) — sonst gibst du selbst Daten preis, die du schützen solltest.",
+        "warnung": "Vertrauliche Details gehören nicht in den Prompt: echte Namen, Betrieb und erkennbare Personen weglassen oder anonymisieren (Kap. 20.7 Datenschutz) — sonst geben Sie selbst Daten preis, die Sie schützen sollten.",
         "baukasten": {
           "rolle": [
             "neutraler Methoden-Coach",
@@ -69,11 +69,11 @@
       {
         "key": "chain_of_thought",
         "titel": "Schritt-für-Schritt denken",
-        "erklaerung": "Du forderst die KI auf, ihren Weg in nachvollziehbaren Schritten offenzulegen, statt nur ein Ergebnis zu nennen. So kannst du jeden Schritt einzeln prüfen und siehst, wo eine Schlussfolgerung nicht trägt.",
-        "thema_bezug": "Das Schema Tatbestand-Rechtslage-Rechtsfolge (Kap. 1.3) ist selbst eine Schritt-für-Schritt-Methode: Wenn die KI diese Schritte einzeln zeigt, erkennst du sofort, ob sie vom Tatbestand zur Rechtsfolge sauber geschlossen hat oder eine Stufe übersprungen hat.",
+        "erklaerung": "Sie fordern die KI auf, ihren Weg in nachvollziehbaren Schritten offenzulegen, statt nur ein Ergebnis zu nennen. So können Sie jeden Schritt einzeln prüfen und sehen, wo eine Schlussfolgerung nicht trägt.",
+        "thema_bezug": "Das Schema Tatbestand-Rechtslage-Rechtsfolge (Kap. 1.3) ist selbst eine Schritt-für-Schritt-Methode: Wenn die KI diese Schritte einzeln zeigt, erkennen Sie sofort, ob sie vom Tatbestand zur Rechtsfolge sauber geschlossen hat oder eine Stufe übersprungen hat.",
         "beispiel_basis": "Löse den Lohnabzug-Fall Schritt für Schritt: Nenne zuerst den Tatbestand, dann die Rechtslage mit Artikel, dann die Rechtsfolge. Zeig jeden Schritt einzeln, bevor du zum Ergebnis kommst.",
-        "beispiel_fortgeschritten": "Arbeite den Fall in der Reihenfolge Tatbestand, Rechtslage, Rechtsfolge durch. Halte nach jedem Schritt an und markiere, welche Voraussetzung erfüllt sein muss, damit der nächste Schritt überhaupt gilt — und wo eine Angabe im Sachverhalt noch fehlt.",
-        "warnung": "Eine ausführliche Schritt-Kette klingt logisch, kann aber auf einem falschen Artikel aufbauen. Prüfe gerade den Übergang von der Rechtslage zur Rechtsfolge: Folgt die Rechtsfolge wirklich aus der genannten Quelle?",
+        "beispiel_fortgeschritten": "Arbeite den Fall in der Reihenfolge Tatbestand, Rechtslage, Rechtsfolge durch. Halt nach jedem Schritt an und markiere, welche Voraussetzung erfüllt sein muss, damit der nächste Schritt überhaupt gilt — und wo eine Angabe im Sachverhalt noch fehlt.",
+        "warnung": "Eine ausführliche Schritt-Kette klingt logisch, kann aber auf einem falschen Artikel aufbauen. Prüfen Sie gerade den Übergang von der Rechtslage zur Rechtsfolge: Folgt die Rechtsfolge wirklich aus der genannten Quelle?",
         "baukasten": {
           "rolle": [
             "Methoden-Coach für Rechtsfälle",
@@ -98,8 +98,8 @@
       {
         "key": "quellen_anfordern",
         "titel": "Quellen und Belege anfordern",
-        "erklaerung": "Du verlangst von der KI zu jeder rechtlichen Aussage die Quelle — und kündigst an, dass du sie prüfst. Das zwingt die KI zu vorsichtigeren Aussagen und gibt dir die Prüfspur für deine eigene Kontrolle.",
-        "thema_bezug": "Sobald es um Rechte, Pflichten und Lohnabzug geht (Lehrvertrag, OR 321e, Kap. 1.4), ist die exakte Quelle das Qualitätsmerkmal: Eine KI-Aussage über dein Recht ohne prüfbaren Artikel ist in der Antwort an eine/n Mitlernende/n wertlos und im KN ein Fehler.",
+        "erklaerung": "Sie verlangen von der KI zu jeder rechtlichen Aussage die Quelle — und kündigen an, dass Sie sie prüfen. Das zwingt die KI zu vorsichtigeren Aussagen und gibt Ihnen die Prüfspur für Ihre eigene Kontrolle.",
+        "thema_bezug": "Sobald es um Rechte, Pflichten und Lohnabzug geht (Lehrvertrag, OR 321e, Kap. 1.4), ist die exakte Quelle das Qualitätsmerkmal: Eine KI-Aussage über Ihr Recht ohne prüfbaren Artikel ist in der Antwort an eine/n Mitlernende/n wertlos und im KN ein Fehler.",
         "beispiel_basis": "Welche Regel im OR betrifft den Lohnabzug für einen Schaden im Betrieb? Gib mir den genauen Artikel und markiere, wo du unsicher bist. Ich schlage den Artikel im Lehrmittel nach.",
         "beispiel_fortgeschritten": "Erstelle eine Liste der Rechte und Pflichten von Lernenden rund um Lohn und Schaden im Schweizer Lehrvertrag. Pro Punkt: genauer OR-/ArG-Artikel, ein Satz in einfacher Sprache, Vertrauensgrad (sicher/unsicher). Ich prüfe jeden Artikel im Lehrmittel auf Nummer und Inhalt.",
         "warnung": "KI-Systeme erfinden bei Schweizer Recht regelmässig plausibel klingende Artikelnummern. Jeder Artikel muss im Lehrmittel oder Gesetzestext nachgeschlagen werden — Übereinstimmung von Nummer UND Inhalt.",
@@ -138,10 +138,10 @@
         "chain_of_thought",
         "quellen_anfordern"
       ],
-      "logik_und_ziel": "Prompt 1 lässt die KI den Fall Schritt für Schritt nach dem TLR-Schema durchdenken. Prompt 2 verlangt zu jedem Schritt den prüfbaren Artikel — so erkennst du, welche Schlussfolgerung wirklich auf einer Quelle steht und welche nur plausibel klingt, bevor du sie in deine Antwort oder den KN übernimmst.",
-      "prompt_1": "Löse den Lohnabzug-Fall Schritt für Schritt: Nenne zuerst den Tatbestand, dann die Rechtslage, dann die Rechtsfolge. Halte nach jedem Schritt an und markiere, welche Voraussetzung erfüllt sein muss, damit der nächste Schritt gilt.",
+      "logik_und_ziel": "Prompt 1 lässt die KI den Fall Schritt für Schritt nach dem TLR-Schema durchdenken. Prompt 2 verlangt zu jedem Schritt den prüfbaren Artikel — so erkennen Sie, welche Schlussfolgerung wirklich auf einer Quelle steht und welche nur plausibel klingt, bevor Sie sie in Ihre Antwort oder den KN übernehmen.",
+      "prompt_1": "Löse den Lohnabzug-Fall Schritt für Schritt: Nenne zuerst den Tatbestand, dann die Rechtslage, dann die Rechtsfolge. Halt nach jedem Schritt an und markiere, welche Voraussetzung erfüllt sein muss, damit der nächste Schritt gilt.",
       "prompt_2": "Geh jetzt deine drei Schritte noch einmal durch und gib zu jeder rechtlichen Aussage den genauen OR-Artikel sowie einen Vertrauensgrad (sicher/unsicher) an. Markiere die Stelle, an der du am ehesten einen Artikel verwechselt haben könntest — ich schlage jeden im Lehrmittel nach."
     },
-    "prompt_vorlage": "Baue deinen Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
   }
 }

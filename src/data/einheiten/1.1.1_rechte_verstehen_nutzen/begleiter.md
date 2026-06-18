@@ -178,7 +178,7 @@ Das Austausch-Kapitel weiter unten verzweigt nach Variante.
 > [!warnung]
 > Typischer Stolperstein: Lernende schreiben den Gesetzestext ab und denken, das sei der Spickzettel. Ergebnis: keine eigene Verdichtung, SK1 und die SuK-Dimension nicht gezeigt. Korrektur: pro Punkt **max. eine Zeile, in eigenen Worten**, Quelle dahinter — nicht davor und nicht als Volltext.
 
-### Material zum Abgeben — Spickzettel-Raster (Scaffold 90)
+### Material zum Abgeben — Spickzettel-Raster (Scaffold 80)
 
 Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Stichworte (die erste Zeile ist als gelöstes Beispiel vorgegeben):
 
@@ -195,7 +195,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 | | __________________________ | __________ |
 
 > [!differenzieren]
-> **90 % (alle):** obiges Raster als Lückentext, Quellen vorgegeben. **100 % (Vertiefung):** zusätzlich die drei Fragen mit der Mustervorlage des kantonalen Amts für Berufsbildung vergleichen — wo deckt sich der eigene Spickzettel, wo fehlt etwas?
+> **80 % (alle):** obiges Raster als Lückentext, Quellen vorgegeben. **100 % (Vertiefung):** zusätzlich die drei Fragen mit der Mustervorlage des kantonalen Amts für Berufsbildung vergleichen — wo deckt sich der eigene Spickzettel, wo fehlt etwas?
 
 > [!lernziel]
 > So sieht ein gutes Produkt aus: eine A4-Seite, drei Blöcke, jede der drei Mitlernenden-Fragen ist durch mindestens eine Zeile abgedeckt, jede Zeile in eigenen Worten **und** mit exakter Quelle (OR-Artikel oder „Kap. 20.7 S. 446"). Lesbar in 30 Sekunden.
@@ -259,7 +259,7 @@ Drei-Block-Raster A4 quer, Quellen bereits eingetragen, Lernende füllen die Sti
 > [!warnung]
 > Stolperstein: Lernende vermischen Tatbestand und Rechtsfolge („Er darf das nicht, weil er ihn am Samstag arbeiten lässt"). Das ist eine Wertung im Tatbestand. Korrektur: Spalte 1 beschreibt nur, **was passiert ist** — wer, was, wann, wo, ohne „darf/darf nicht".
 
-### Material zum Abgeben — Schema-Tabelle (Scaffold 90) + Artikel-Auswahl
+### Material zum Abgeben — Schema-Tabelle (Scaffold 80) + Artikel-Auswahl
 
 Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 
@@ -275,7 +275,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 > „Sicher sagen kann ich: ________. Unsicher bin ich bei ________; das würde ich mit ________ (BB / BBV / Amt für Berufsbildung) klären."
 
 > [!differenzieren]
-> **90 %:** Schema-Vorlage als ausfüllbare Tabelle + obige Artikel-Auswahlliste. **100 %:** zusätzlich die eigene Lösung mit einem Bundesgerichts-Leitentscheid aus der Lehrmittel-Vertiefung vergleichen.
+> **80 %:** Schema-Vorlage als ausfüllbare Tabelle + obige Artikel-Auswahlliste. **100 %:** zusätzlich die eigene Lösung mit einem Bundesgerichts-Leitentscheid aus der Lehrmittel-Vertiefung vergleichen.
 
 > [!lernziel]
 > So sieht ein gutes Produkt aus: beide Fälle in drei sauber getrennten Schritten, pro Fall mind. ein wortgenau zitierter und korrekt zugeordneter OR-/ArG-Artikel, mindestens eine Stelle mit explizit benanntem Auslegungsspielraum oder Restunsicherheit, Schlussabsatz mit klarer Rollenabgrenzung.
@@ -341,7 +341,7 @@ Pro Fall eine Tabelle, erste Zeile als gelöstes Beispiel:
 > [!warnung]
 > Stolperstein: Das Schreiben wird zur Gesetzes-Aufzählung ohne Adressatenbezug. Korrektur: Vor dem Schreiben klären — **wer liest das** (Mitlernende/r? Berufsbildner/in als Weiterleitung?) — und Anrede/Tonalität entsprechend wählen. Ohne Adressatenanalyse ist SK7 nicht gezeigt.
 
-### Material zum Abgeben — Brief-Gerüst (Scaffold 90)
+### Material zum Abgeben — Brief-Gerüst (Scaffold 80)
 
 Lückentext-Vorlage mit eingebautem 3B im Begründungsteil:
 
@@ -370,7 +370,7 @@ ____________ (Name, Funktion)
 > Kanalwahl-Begründung nicht vergessen: Im Schreiben selbst oder im Begleitsatz soll erkennbar sein, **warum** E-Mail/Brief statt WhatsApp gewählt wurde (Datenschutz, Vertraulichkeit, Weiterleitbarkeit — zwei Argumente aus Kap. 20.7).
 
 > [!differenzieren]
-> **90 %:** Brief-Vorlage als Lückentext (Anrede, Anlass-Block, Schluss-Block vorgegeben). **100 %:** zusätzlich eine **zweite Version** für einen anderen Adressaten (z. B. den Berufsbildner/in statt den Mitlernenden) verfassen und die Unterschiede dokumentieren.
+> **80 %:** Brief-Vorlage als Lückentext (Anrede, Anlass-Block, Schluss-Block vorgegeben). **100 %:** zusätzlich eine **zweite Version** für einen anderen Adressaten (z. B. den Berufsbildner/in statt den Mitlernenden) verfassen und die Unterschiede dokumentieren.
 
 > [!lernziel]
 > So sieht ein gutes Produkt aus: sauberer Anlass-Absicht-Begründung-Schluss-Aufbau, mindestens ein vollständiges 3B-Tripel im Begründungsteil, mindestens ein wortgenaues OR-/ArG-Zitat, Kanalwahl mit zwei Datenschutz-Argumenten begründet, Konventionen eingehalten (Anrede, keine Emoticons), Schreiben ist weiterleitbar.
@@ -515,8 +515,8 @@ Ges-Note  = Mittel aus Rechtliches Prinzip + Position/Werthaltung
 
 | Band | Definition |
 |---|---|
-| unter 90 % | Stufen 1–2 dominant |
-| 90 % | mehrheitlich Stufe 3 |
+| unter 60 % | Stufen 1–2 dominant |
+| 80 % | mehrheitlich Stufe 3 |
 | 100 % | Stufe 4 in mindestens 3 Kriterien |
 
 > [!warnung]

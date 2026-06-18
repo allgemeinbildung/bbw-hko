@@ -871,6 +871,13 @@ function dossierNuggetCode(id: string): string {
   return m ? `${m[1].toUpperCase()}-${m[2].padStart(2, '0')}` : id
 }
 
+// Learner-facing Badge-Beschriftung im Word-Glossar+ — «Info-Karte A-01» (Spiegel von
+// infokarteLabel() in DocEbaDossier.tsx); nicht-Karten-IDs unveraendert.
+function dossierInfokarteLabel(id: string): string {
+  const code = dossierNuggetCode(id)
+  return /^[AB]-\d+$/.test(code) ? `Info-Karte ${code}` : code
+}
+
 // Recherche-Strip eines Nuggets (mirror RechercheBlock in DocEbaDossier.tsx).
 function dossierRechercheBlock(r: DossierRecherche, akzent: string): any[] {
   const queries = Array.isArray(r.suchbegriffe)
@@ -1027,7 +1034,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
     if (i === 0) children.push(...sectionHead('D1', 'Ihr Glossar+', akzent))
     if (!n) return
     children.push(new Paragraph({
-      children: [new TextRun({ text: dossierNuggetCode(n.id), bold: true, color: akzent, size: 18, font: 'Consolas' })],
+      children: [new TextRun({ text: dossierInfokarteLabel(n.id), bold: true, color: akzent, size: 18, font: 'Consolas' })],
       spacing: { before: 80, after: 20 }, keepNext: true,
     }))
     if (n.titel) children.push(h(n.titel, 'section', COLOR.ink))
@@ -1102,13 +1109,13 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   })
 }
 
-// SuS-Ansicht: Prozentzahlen (90 % / 100 %) nur im LP-Material; hier Wort-Labels.
+// SuS-Ansicht: Prozentzahlen (80 % / 100 %) nur im LP-Material; hier Wort-Labels.
 // Spiegelt susNiveauLabel() in DocKnS.tsx. Daten (kn.json) bleiben unveraendert.
 function susNiveauLabel(label: string): string {
   const l = (label || '').toLowerCase()
   if (l.includes('100')) return 'Vollständig & selbstständig'
   if (l.includes('unter')) return 'Grundanforderung noch nicht erfüllt'
-  if (l.includes('90')) return 'Grundanforderung erfüllt'
+  if (l.includes('80') || l.includes('90')) return 'Grundanforderung erfüllt'
   return label.replace(/\s*\d+\s*%/g, '').trim() || label
 }
 
@@ -1220,7 +1227,7 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
 
   children.push(pageBreak())
   children.push(...sectionHead('05 · Bewertungskriterien', 'Worauf geachtet wird', akzent))
-  children.push(p('Vier Kriterien, zwei Dimensionen: sachliche Korrektheit (SuK) und gesellschaftliche Werthaltung (Ges). Beide werden separat benotet.', { run: { color: COLOR.inkSoft, size: 18 } }))
+  children.push(p('Vier Kriterien, zwei Dimensionen: Sprache und Kommunikation (SuK) und gesellschaftliche Werthaltung (Ges). Beide werden separat benotet.', { run: { color: COLOR.inkSoft, size: 18 } }))
   if (kn.rubrik_shared?.kriterien) {
     children.push(dataTable(
       ['Kriterium', 'Dimension'],
@@ -1517,7 +1524,7 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
     rows: [new TableRow({
       children: [
         tcell([
-          p('SuK · Sach- und Kommunikationskompetenz', { run: { color: akzent, bold: true, size: 14 } }),
+          p('SuK · Sprache und Kommunikation', { run: { color: akzent, bold: true, size: 14 } }),
           p('___________', { run: { size: 28, bold: true, font: 'Consolas' } }),
         ], { borders: {
           top: { style: BorderStyle.SINGLE, size: 6, color: akzent },
@@ -1549,7 +1556,7 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
 }
 
 // ===========================================================================
-// KI-Fluency builders (additive). Mirror DocKi / DocLernprompt / DocLernbegleiter.
+// KI-Toolbox builders (additive). Mirror DocKi / DocLernprompt / DocLernbegleiter.
 // Local accent constants — never the green brand color.
 // ===========================================================================
 
@@ -1604,7 +1611,7 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
   children.push(new Paragraph({
     children: [
       badgeRun('KI ' + num, akzent),
-      new TextRun({ text: '   KI-Fluency · formativ', color: LP_AKZENT, bold: true, size: 14 }),
+      new TextRun({ text: '   KI-Toolbox · formativ', color: LP_AKZENT, bold: true, size: 14 }),
     ],
     spacing: { after: 120 },
   }))
@@ -1737,7 +1744,7 @@ export function buildLernprompt({ lernprompt, abteilung, logoPng = null }: Build
   children.push(new Paragraph({
     children: [
       badgeRun('P', akzent),
-      new TextRun({ text: '   KI-Fluency · Prompting', color: KI_AKZENT, bold: true, size: 14 }),
+      new TextRun({ text: '   KI-Toolbox · Prompting', color: KI_AKZENT, bold: true, size: 14 }),
     ],
     spacing: { after: 120 },
   }))
@@ -1814,7 +1821,7 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
   children.push(new Paragraph({
     children: [
       badgeRun('L', akzent),
-      new TextRun({ text: '   KI-Fluency · Lernen', color: KI_AKZENT, bold: true, size: 14 }),
+      new TextRun({ text: '   KI-Toolbox · Lernen', color: KI_AKZENT, bold: true, size: 14 }),
     ],
     spacing: { after: 120 },
   }))
