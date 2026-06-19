@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt-Builder &mdash; NRLP ABU</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <a href="../index.html">&larr; NRLP</a>
+  <h1>Prompt-Builder</h1>
+</header>
+
+<div class="dataset-bar">
+  <label for="dataset-select">Lehrgang / Bildungstyp</label>
+  <select id="dataset-select" onchange="setDataset(this.value)">
+    <option value="/nrlp_3j.json" selected>EFZ &mdash; 3-j&auml;hrige Grundbildung</option>
+    <option value="/nrlp_4j.json">EFZ &mdash; 4-j&auml;hrige Grundbildung</option>
+    <option value="/nrlp_2j.json">EBA &mdash; 2-j&auml;hrige Grundbildung</option>
+  </select>
+  <span id="dataset-hint" class="dataset-hint"></span>
+</div>
+
+<div class="pb-note">Offizielle Umsetzungsbeispiele folgen (~Ende Juni 2026). Bis dahin dient eine passende Einheit/Situation als Orientierung.</div>
+
+<div class="mode-bar">
+  <button class="mode-btn active" id="btn-official" onclick="setMode('official')">A &mdash; Lehrplankonform</button>
+  <button class="mode-btn" id="btn-free" onclick="setMode('free')">B &mdash; Freie Auswahl</button>
+  <button class="mode-btn" id="btn-combo" onclick="setMode('combo')">C &mdash; Combo-Prompt</button>
+</div>
+
+<div class="layout">
+  <div class="left" id="left-panel">
+    <!-- populated by app.js -->
+  </div>
+
+  <div class="right">
+    <div class="prompt-actions">
+      <div style="width:100%">
+        <div class="section-title">Output-Typ</div>
+        <select class="output-select" id="output-type" onchange="renderPrompt()">
+          <!-- populated by render.js -->
+        </select>
+      </div>
+      <div style="width:100%">
+        <div class="section-title">Sprachniveau</div>
+        <select class="output-select" id="sprachniveau" onchange="renderPrompt()">
+          <option value="A1">A1 &mdash; Einsteiger</option>
+          <option value="A2">A2 &mdash; Grundlegende Kenntnisse</option>
+          <option value="B1" selected>B1 &mdash; Fortgeschrittene Sprachverwendung</option>
+          <option value="B2">B2 &mdash; Selbstst&auml;ndige Sprachverwendung</option>
+          <option value="C1">C1 &mdash; Fachkundige Sprachkenntnisse</option>
+          <option value="C2">C2 &mdash; Ann&auml;hernd muttersprachliche Kenntnisse</option>
+        </select>
+      </div>
+      <button class="btn primary" onclick="copyPrompt()">Kopieren</button>
+      <button class="btn" onclick="downloadPrompt()">Speichern (.txt)</button>
+    </div>
+    <div class="prompt-header">
+      <span>Prompt-Vorschau</span>
+      <button class="btn sm" onclick="clearAll()">Leeren</button>
+    </div>
+    <div class="prompt-body" id="prompt-body">
+      <div class="prompt-empty" id="prompt-empty">Noch nichts ausgew&auml;hlt.</div>
+      <pre class="prompt-pre hidden" id="prompt-pre"></pre>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

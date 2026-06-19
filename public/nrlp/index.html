@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NRLP ABU - Kompetenzmodell</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/shared/modals.css">
+  <link rel="stylesheet" href="./ext/visualizations.css">
+</head>
+<body>
+
+<div id="header">
+  <h1>NRLP Netzwerk</h1>
+  <span class="subtitle" id="dataset-subtitle">ABU Schullehrplan - Zuerich</span>
+  <div class="sep"></div>
+  <label class="dataset-picker">
+    <span>Datensatz</span>
+    <select id="dataset-select">
+      <option value="/nrlp_3j.json">EFZ 3-jaehrige Grundbildung</option>
+      <option value="/nrlp_4j.json">EFZ 4-jaehrige Grundbildung</option>
+      <option value="/nrlp_2j.json">EBA 2-jaehrige Grundbildung</option>
+    </select>
+  </label>
+  <div class="view-toggle-wrap" data-tour="view-toggle">
+    <span class="ctrl-label">Ansicht</span>
+    <div class="view-toggle-group" id="view-toggle-group">
+      <button class="view-btn active" data-view="graph">Netzwerk</button>
+      <button class="view-btn" data-view="zirkularitaet">Zirkularität</button>
+      <button class="view-btn" data-view="spirale">Spirale</button>
+      <button class="view-btn" data-view="chord">Chord</button>
+      <button class="view-btn" data-view="sankey">Sankey</button>
+    </div>
+  </div>
+  <div class="preset-wrap" data-tour="preset-group">
+    <span class="ctrl-label">Preset</span>
+    <div class="preset-btn-group" id="preset-btn-group">
+      <button class="preset-btn active" data-preset="voll">Voll</button>
+      <button class="preset-btn" data-preset="basis">Basis</button>
+      <button class="preset-btn" data-preset="didaktik">Didaktik</button>
+      <button class="preset-btn" data-preset="kompetenzen">Kompetenzen</button>
+      <button class="preset-btn" data-preset="zirkularitaet">Zirkularität</button>
+    </div>
+  </div>
+  <div class="preset-wrap" id="depth-wrap" title="Verbindungstiefe beim Fokussieren">
+    <span class="ctrl-label">Tiefe</span>
+    <div class="depth-btn-group" id="depth-btn-group">
+      <button class="preset-btn depth-btn active" data-depth="1" title="Nur direkte Nachbarn">1</button>
+      <button class="preset-btn depth-btn" data-depth="2" title="Nachbarn der Nachbarn">2</button>
+      <button class="preset-btn depth-btn" data-depth="3" title="3 Verbindungsschritte">3</button>
+    </div>
+  </div>
+  <div class="cat-toggle-group" id="cat-btns" data-tour="category-group">
+    <!-- populated by JS -->
+  </div>
+  <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" type="button" aria-pressed="false" title="Sidebar ausblenden">Sidebar ausblenden</button>
+  <button id="detail-sidebar-toggle-btn" class="sidebar-toggle-btn" type="button" aria-pressed="false" title="Details ausblenden">Details ausblenden</button>
+  <div class="info-btn-row" style="margin-top:0.5rem;">
+    <button class="info-btn" data-modal-open="nrlp-graph-optionen-modal">Was ist der NRLP-Graph?</button>
+    <button class="info-btn" data-modal-open="nrlp-graph-nutzung-modal">Nutzung</button>
+    <a class="info-btn" href="/prompt-builder" target="_top" style="text-decoration:none">Prompt-Builder →</a>
+  </div>
+</div>
+
+<div id="app">
+  <aside id="sidebar"></aside>
+  <div id="graph-container">
+    <div id="graph" data-tour="graph-area"></div>
+    <div id="legend"></div>
+    <section id="zirk-panel" class="hidden">
+      <div class="zirk-toolbar">
+        <label>
+          <span>Lehrjahr</span>
+          <select id="zirk-lehrjahr">
+            <option value="all">Alle</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+        <label>
+          <span>Min R</span>
+          <select id="zirk-min-r">
+            <option value="1">R1+</option>
+            <option value="2">R2+</option>
+            <option value="3">R3+</option>
+            <option value="4">R4+</option>
+            <option value="5">R5+</option>
+            <option value="6">R6+</option>
+          </select>
+        </label>
+        <div class="zirk-view-toggle" id="zirk-view-toggle">
+          <button class="zirk-view-btn active" data-zview="heatmap">Heatmap</button>
+          <button class="zirk-view-btn" data-zview="swimlane">Swimlane</button>
+          <button class="zirk-view-btn" data-zview="cards">Karten</button>
+        </div>
+      </div>
+      <div id="zirk-summary"></div>
+      <div id="zirk-matrix"></div>
+      <div id="zirk-cooccurrence"></div>
+    </section>
+    <section id="nrlp-extra" class="hidden"></section>
+  </div><!-- /graph-container -->
+  <aside id="detail-sidebar" class="empty">
+    <button id="zirk-back-btn" class="hidden">← Zurück zur Zirkularität</button>
+    <div id="detail-placeholder"></div>
+    <div id="detail-content"></div>
+  </aside>
+</div><!-- /app -->
+
+<button id="tour-help-btn" class="tour-help-btn" type="button" aria-label="Hilfe und Tour oeffnen" data-tour="help-button">?</button>
+
+<div id="tour-overlay" class="tour-overlay hidden" aria-hidden="true">
+  <div class="tour-backdrop"></div>
+  <div id="tour-spotlight" class="tour-spotlight hidden"></div>
+  <section id="tour-popover" class="tour-popover" role="dialog" aria-modal="true" aria-labelledby="tour-title">
+    <button id="tour-close-btn" class="tour-close-btn" type="button" aria-label="Tour schliessen">X</button>
+    <p id="tour-step-indicator" class="tour-step-indicator"></p>
+    <h2 id="tour-title" class="tour-title"></h2>
+    <p id="tour-body" class="tour-body"></p>
+    <div class="tour-actions">
+      <button id="tour-skip-btn" class="tour-btn ghost" type="button">Ueberspringen</button>
+      <button id="tour-prev-btn" class="tour-btn ghost" type="button">Zurueck</button>
+      <button id="tour-next-btn" class="tour-btn primary" type="button">Weiter</button>
+    </div>
+  </section>
+</div>
+
+<script>window.NRLP_ROLE = new URLSearchParams(location.search).get('role') || 'lp';</script>
+<script type="module" src="app.js"></script>
+<script src="/shared/modals.js"></script>
+<script>loadModals(['nrlp-graph-optionen','nrlp-graph-nutzung','nrlp-graph-tabs']);</script>
+<script src="https://unpkg.com/d3@7/dist/d3.min.js"></script>
+<script src="https://unpkg.com/d3-sankey@0.12/dist/d3-sankey.min.js"></script>
+<script type="module">
+  import { renderExtra } from './ext/visualizations.js';
+  window.NRLP_renderExtra = renderExtra;
+</script>
+</body>
+</html>
