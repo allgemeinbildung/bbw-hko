@@ -74,6 +74,13 @@ $indexHtml = Join-Path $dstNrlp "index.html"
   -replace '"\./(nrlp_\dj\.json)"', '"/$1"' |
   Set-Content $indexHtml -Encoding UTF8
 
+# Inject <base> so the app's relative assets (style.css, app.js, ./ext/*) resolve
+# under /nrlp/ even when Vercel serves this directory index at the bare /nrlp
+# path (no trailing slash) — where relative URLs would otherwise hit the site root.
+(Get-Content $indexHtml -Raw) `
+  -replace '(<meta charset="UTF-8"[^>]*>)', "`$1`n  <base href=""/nrlp/"" />" |
+  Set-Content $indexHtml -Encoding UTF8
+
 $stateJs = Join-Path $dstModules "state.js"
 (Get-Content $stateJs -Raw) `
   -replace "'\./(nrlp_\dj\.json)'", "'/`$1'" |
@@ -106,6 +113,10 @@ if (Test-Path $srcPB) {
   # (relative to /nrlp/prompt-builder/). Rewrite to absolute /nrlp_*.json.
   $pbIndex = Join-Path $dstPB "index.html"
   (Get-Content $pbIndex -Raw) -replace '"\.\./(nrlp_\dj\.json)"', '"/$1"' | Set-Content $pbIndex -Encoding UTF8
+  # Same <base> fix for the sub-app, scoped to its own directory.
+  (Get-Content $pbIndex -Raw) `
+    -replace '(<meta charset="UTF-8"[^>]*>)', "`$1`n  <base href=""/nrlp/prompt-builder/"" />" |
+    Set-Content $pbIndex -Encoding UTF8
   $pbApp = Join-Path $dstPB "app.js"
   (Get-Content $pbApp -Raw) -replace "'\.\./(nrlp_\dj\.json)'", "'/`$1'" | Set-Content $pbApp -Encoding UTF8
   Write-Host "prompt-builder imported into $dstPB" -ForegroundColor Green
