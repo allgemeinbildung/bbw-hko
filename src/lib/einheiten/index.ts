@@ -123,7 +123,7 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
 export const ABTEILUNGEN = [
   '',
   'Abteilung Bau',
-  'Abteilung Technik | Ernaehrung',
+  'Abteilung Technik | Ernährung',
   'Abteilung Maschinenbau',
   'Abteilung Informatik | Naturwissenschaften',
 ]

@@ -1061,11 +1061,13 @@ body {
 /* Shared checkbox glyph (Checkliste Vollständigkeit + Gütekriterien) */
 .check-box { color: var(--sit-akzent); font-size: 11pt; line-height: 1; }
 
-/* C1 — Checkliste Vollständigkeit (Produkt · Kriterien · ☐) */
+/* C1 — Checkliste Vollständigkeit (Produkt · Kriterien) — pro Zeile: schwarzes ✔ + Box */
 .checkliste-table td { vertical-align: top; }
-.checkliste-krit { margin: 0; padding-left: 4mm; font-size: 8.5pt; line-height: 1.35; }
-.checkliste-krit li { margin-bottom: 0.3mm; }
-.checkliste-krit li::marker { color: var(--sit-akzent); }
+.checkliste-krit { margin: 0; padding-left: 0; list-style: none; font-size: 8.5pt; line-height: 1.35; }
+.checkliste-krit li { display: flex; align-items: flex-start; gap: 1.6mm; margin-bottom: 0.5mm; }
+.checkliste-krit .krit-check { flex: 0 0 auto; color: #000; font-weight: 700; }
+.checkliste-krit .krit-text { flex: 1 1 auto; min-width: 0; }
+.checkliste-krit .krit-box { flex: 0 0 auto; margin-left: 1.5mm; color: #000; }
 
 /* C5 — radial Mindmap: center node + 4 branches (4th dashed/lighter) */
 .mindmap-hint {

@@ -373,23 +373,28 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   }
   els.push(spacer(140))
 
-  // C1 — Checkliste Vollständigkeit (Produkt · Kriterien · ☐); vollstaendig_wenn bullets; no Total/Abgabe/Gewicht.
+  // C1 — Checkliste Vollständigkeit (Produkt · Kriterien); pro Kriterien-Zeile: schwarzes ✔ + Box ☐.
   if (sit.bewertungsraster) {
     els.push(p('CHECKLISTE VOLLSTÄNDIGKEIT', { run: { color: akzent, bold: true, size: 14 } }))
     els.push(dataTable(
-      ['Produkt', 'Kriterien', '☐'],
+      ['Produkt', 'Kriterien'],
       sit.bewertungsraster.map((b) => {
         const bullets = b.vollstaendig_wenn?.filter(Boolean) || []
-        const kritCell = bullets.length
-          ? bullets.map((v) => new Paragraph({ children: [new TextRun({ text: v, size: 16 })], bullet: { level: 0 }, spacing: { after: 20 } }))
-          : [p(b.kriterium || '', { run: { size: 18 } })]
+        const lines = bullets.length ? bullets : (b.kriterium ? [b.kriterium] : [])
+        const kritCell = lines.map((v) => new Paragraph({
+          children: [
+            new TextRun({ text: '✔ ', bold: true, size: 16, color: '000000' }),
+            new TextRun({ text: v, size: 16 }),
+            new TextRun({ text: '   ☐', bold: true, size: 18, color: '000000' }),
+          ],
+          spacing: { after: 20 },
+        }))
         return [
           new Paragraph({ children: [new TextRun({ text: b.produkt, bold: true, size: 18 })] }),
           kritCell,
-          new Paragraph({ children: [new TextRun({ text: '☐', size: 22, bold: true, color: akzent })], alignment: AlignmentType.CENTER }),
         ]
       }),
-      akzent, [26, 66, 8],
+      akzent, [30, 70],
     ))
     els.push(spacer(80))
   }

@@ -21,8 +21,8 @@ const role: 'lp' | 'kt1' | 'gast' =
   profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
 const isGuest = role === 'gast'
 
-// Abteilung aus dem Profil auf eine Workbench-Option mappen (Profil speichert z.B.
-// «Technik | Ernährung», die Workbench-Optionen lauten «Abteilung Technik | Ernaehrung»).
+// Abteilung aus dem Profil auf eine Workbench-Option mappen (umlaut-insensitiv, damit
+// «Technik | Ernährung» aus dem Profil auf «Abteilung Technik | Ernährung» matcht).
 const normAbt = (s: string) =>
   s.toLowerCase().replace(/abteilung/g, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/[^a-z0-9]/g, '')
 const defaultAbteilung =

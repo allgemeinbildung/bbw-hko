@@ -75,25 +75,26 @@ function ChecklisteVollstaendigkeit({ sit }: { sit: SituationJson }) {
           <tr>
             <th style={{ width: '34mm' }}>Produkt</th>
             <th>Kriterien</th>
-            <th style={{ width: '10mm', textAlign: 'center' }}>☐</th>
           </tr>
         </thead>
         <tbody>
           {sit.bewertungsraster.map((b, i) => {
             const bullets = b.vollstaendig_wenn?.filter(Boolean) || []
+            const lines = bullets.length > 0 ? bullets : (b.kriterium ? [b.kriterium] : [])
             return (
               <tr key={i}>
                 <td><strong>{b.produkt}</strong></td>
                 <td>
-                  {bullets.length > 0 ? (
-                    <ul className="checkliste-krit">
-                      {bullets.map((v, j) => <li key={j}>{v}</li>)}
-                    </ul>
-                  ) : (
-                    b.kriterium
-                  )}
+                  <ul className="checkliste-krit">
+                    {lines.map((v, j) => (
+                      <li key={j}>
+                        <span className="krit-check" aria-hidden="true">✔</span>
+                        <span className="krit-text">{v}</span>
+                        <span className="krit-box" aria-hidden="true">☐</span>
+                      </li>
+                    ))}
+                  </ul>
                 </td>
-                <td style={{ textAlign: 'center' }}><span className="check-box">☐</span></td>
               </tr>
             )
           })}
