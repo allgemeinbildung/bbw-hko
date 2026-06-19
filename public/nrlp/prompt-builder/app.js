@@ -1,6 +1,6 @@
-﻿// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+﻿// ─────────────────────────────────────────────────────────────────────────────
 // app.js — Entry point. Loads data, wires up globals for onclick handlers.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 import { S, resetState, selectThema as _selectThema, selectLB as _selectLB, toggleLBOpen as _toggleLBOpen, toggleKomp as _toggleKomp, toggleSM_str as _toggleSM_str, toggleSM_obj as _toggleSM_obj, toggleSK as _toggleSK, toggleGI as _toggleGI, bulkToggleGI as _bulkToggleGI, bulkToggleSM_obj as _bulkToggleSM_obj, bulkToggleSM_str as _bulkToggleSM_str, bulkToggleSK as _bulkToggleSK, toggleAllKomp as _toggleAllKomp, setComboSelection as _setComboSelection, setPruefungstyp as _setPruefungstyp, setPruefungsdauer as _setPruefungsdauer, setHilfsmittel as _setHilfsmittel, setHandlungsprodukt as _setHandlungsprodukt } from './state.js';
 import { renderOfficialFlow, renderFreeFlow, renderComboFlow, renderPrompt as _renderPrompt, renderOutputTypeSelect } from './render.js';
@@ -14,7 +14,7 @@ function renderPrompt() {
 }
 let mode = 'official';
 
-// â”€â”€â”€ INIT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── INIT ─────────────────────────────────────────────────────────────────────
 
 async function loadDataset(path) {
   const res = await fetch(path);
@@ -62,7 +62,7 @@ async function init() {
   renderLeft();
 }
 
-// â”€â”€â”€ MODE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── MODE ─────────────────────────────────────────────────────────────────────
 
 function setMode(m) {
   mode = m;
@@ -106,7 +106,7 @@ function setHandlungsprodukt(value) {
   renderPrompt();
 }
 
-// â”€â”€â”€ RENDER DISPATCHER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── RENDER DISPATCHER ────────────────────────────────────────────────────────
 
 function renderLeft() {
   const el = document.getElementById('left-panel');
@@ -115,7 +115,7 @@ function renderLeft() {
   else el.innerHTML = renderComboFlow(nrlp);
 }
 
-// â”€â”€â”€ ACTIONS (called from prompt panel) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── ACTIONS (called from prompt panel) ──────────────────────────────────────
 
 function getOutputType() { 
   if (document.getElementById('btn-combo')?.classList.contains('active')) return 'combo';
@@ -148,7 +148,7 @@ function downloadPrompt() {
   URL.revokeObjectURL(url);
 }
 
-// â”€â”€â”€ GLOBAL WRAPPERS (required for onclick= in HTML) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── GLOBAL WRAPPERS (required for onclick= in HTML) ─────────────────────────
 
 function selectThema(nr) {
   _selectThema(nrlp, nr);

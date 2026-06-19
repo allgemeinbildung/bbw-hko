@@ -111,5 +111,19 @@ if (Test-Path $srcPB) {
   Write-Host "prompt-builder imported into $dstPB" -ForegroundColor Green
 }
 
+# --- 7) Repair mojibake -------------------------------------------------------
+#     The hko-deploy sources are double-encoded UTF-8 (cp1252-misread): the
+#     prompt-builder's render.js carries "Â·" for the middot and "â–¾"/"â–¸" for
+#     the LB toggle arrows, plus box-drawing "â”€" in code comments. Copy-Item is
+#     a byte copy, so it faithfully reproduces the corruption — we must actively
+#     repair after copying (a plain re-encode can't fix already-double-encoded
+#     bytes). scripts/fix-mojibake.py uses ftfy (mixed-corruption safe: leaves
+#     clean UTF-8 like "ä" alone) and self-bootstraps ftfy if missing.
+$fixScript = Join-Path $Dest "scripts\fix-mojibake.py"
+if (Test-Path $fixScript) {
+  Write-Host "Repairing mojibake in the imported files ..." -ForegroundColor Cyan
+  & python $fixScript --write
+}
+
 Write-Host "nRLP graph + prompt-builder imported into $dstNrlp" -ForegroundColor Green
 Write-Host "Next: apply the edits in docs/handoff-nrlp-graph.md and docs/handoff-nrlp-prompt-builder.md, then 'npm run build'." -ForegroundColor Yellow

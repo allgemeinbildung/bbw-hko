@@ -1,6 +1,6 @@
-﻿// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+﻿// ─────────────────────────────────────────────────────────────────────────────
 // render.js — HTML generation for both flows + prompt panel update.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 import { S } from './state.js';
 import { buildPrompt, OUTPUT_TYPES, rWertFor } from './prompts.js';
@@ -71,14 +71,14 @@ function bulkToggles(fnName, items) {
   </div>`;
 }
 
-// â”€â”€â”€ SHARED: THEMA GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SHARED: THEMA GRID ───────────────────────────────────────────────────────
 
 function themaGrid(nrlp, showLektionen) {
   let html = `<div class="thema-grid">`;
   for (const t of nrlp.themen) {
     const sel = S.thema?.nr === t.nr ? 'sel' : '';
     const sub = showLektionen
-      ? `Lehrjahr ${t.lehrjahr} Â· ${t.lektionen} Lektionen`
+      ? `Lehrjahr ${t.lehrjahr} · ${t.lektionen} Lektionen`
       : `Lehrjahr ${t.lehrjahr}`;
     html += `<div class="thema-card ${sel}" onclick="selectThema(${t.nr})">
       <div class="t-nr">T${t.nr}</div>
@@ -89,7 +89,7 @@ function themaGrid(nrlp, showLektionen) {
   return html + `</div>`;
 }
 
-// â”€â”€â”€ SHARED: KOMPETENZ LIST â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SHARED: KOMPETENZ LIST ───────────────────────────────────────────────────
 
 function kompList(lb) {
   return lb.kompetenzen.map(k => {
@@ -101,7 +101,7 @@ function kompList(lb) {
   }).join('');
 }
 
-// â”€â”€â”€ SHARED: GI LIST â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SHARED: GI LIST ─────────────────────────────────────────────────────────
 
 function giList(items) {
   return items.map(gi => {
@@ -113,7 +113,7 @@ function giList(items) {
   }).join('');
 }
 
-// â”€â”€â”€ OFFICIAL FLOW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── OFFICIAL FLOW ────────────────────────────────────────────────────────────
 
 export function renderOfficialFlow(nrlp) {
   let html = `<div class="section">
@@ -131,7 +131,7 @@ export function renderOfficialFlow(nrlp) {
       <div class="lb-header" onclick="selectLB('${lb.nr}')">
         <span class="lb-nr">${lb.nr}</span>
         <span class="lb-text">${lb.text}</span>
-        <span class="lb-toggle">${isOpen ? 'â–¾' : 'â–¸'}</span>
+        <span class="lb-toggle">${isOpen ? '▾' : '▸'}</span>
       </div>
       <div class="lb-komps ${isOpen ? '' : 'hidden'}">
         <div class="lb-komps-header">
@@ -191,7 +191,7 @@ export function renderOfficialFlow(nrlp) {
   return html;
 }
 
-// â”€â”€â”€ FREE FLOW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FREE FLOW ────────────────────────────────────────────────────────────────
 
 export function renderFreeFlow(nrlp) {
   let html = `<div class="section">
@@ -286,7 +286,7 @@ export function renderComboFlow(nrlp) {
   return html;
 }
 
-// â”€â”€â”€ PROMPT PANEL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── PROMPT PANEL ─────────────────────────────────────────────────────────────
 
 export function renderPrompt(nrlp) {
   const btnOfficial = document.getElementById('btn-official');
@@ -343,7 +343,7 @@ export function renderPrompt(nrlp) {
   }
 }
 
-// â”€â”€â”€ OUTPUT TYPE SELECT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── OUTPUT TYPE SELECT ───────────────────────────────────────────────────────
 
 export function renderOutputTypeSelect() {
   const sel = document.getElementById('output-type');
