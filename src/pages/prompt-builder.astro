@@ -1,0 +1,35 @@
+---
+// src/pages/prompt-builder.astro — Prompt-Builder als Unter-App des nRLP-Graphen.
+// Eingebettet als full-bleed iframe in BBW-Chrome, rollenbewusst.
+import Base from '../layouts/Base.astro'
+import { getAccess } from '../lib/auth'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+const role = access.role ?? 'lp'
+---
+<Base title="Prompt-Builder">
+  <div class="nrlp-wrap">
+    <header class="nrlp-bar">
+      <a class="back" href="/nrlp">← nRLP-Netzwerk</a>
+      <span class="title">Prompt-Builder</span>
+      <span class="sub">LLM-Prompts aus dem Lehrplan generieren</span>
+      <a class="help" href="/guides/prompt-builder.html" target="_blank" rel="noopener">📖 Anleitung</a>
+    </header>
+    <iframe id="pb-frame" src={`/nrlp/prompt-builder/index.html?role=${role}`} title="Prompt-Builder" loading="lazy"></iframe>
+  </div>
+
+  <style>
+    .nrlp-wrap{display:flex;flex-direction:column;height:100vh}
+    .nrlp-bar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;
+      border-bottom:1px solid var(--brand-tint);background:#fff}
+    .nrlp-bar .back{color:var(--brand-dark);font-weight:600;text-decoration:none}
+    .nrlp-bar .back:hover{text-decoration:underline}
+    .nrlp-bar .title{font-weight:700}
+    .nrlp-bar .sub{color:#6b7280;font-size:.85rem}
+    .nrlp-bar .help{margin-left:auto;color:var(--brand-dark);font-weight:600;text-decoration:none;
+      border:1px solid var(--brand-tint);border-radius:6px;padding:.3rem .65rem;white-space:nowrap}
+    .nrlp-bar .help:hover{border-color:var(--brand);background:var(--brand-tint)}
+    #pb-frame{display:block;flex:1;width:100%;border:0}
+  </style>
+</Base>

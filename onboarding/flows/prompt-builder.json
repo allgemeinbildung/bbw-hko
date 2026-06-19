@@ -1,0 +1,60 @@
+{
+  "name": "Prompt-Builder — vom Lehrplan zum fertigen LLM-Prompt",
+  "description": "Schritt für Schritt: aus Thema, Lebensbezug und Kompetenz der nRLP einen ausgefeilten Prompt für Lernsituationen, Aufgaben, Beurteilungsraster, Prüfungen, Arbeitsblätter und Reflexionen erzeugen — und kopieren.",
+  "baseUrl": "http://localhost:4321",
+  "productionBaseUrl": "https://bbw-hko.ch",
+  "auth": null,
+  "lang": "de",
+  "deploy": {
+    "html": "../../public/guides/prompt-builder.html",
+    "pdf":  "../../public/guides/prompt-builder.pdf"
+  },
+  "viewport": { "width": 1280, "height": 900 },
+
+  "steps": [
+    { "action": "goto", "value": "/nrlp/prompt-builder/index.html?role=lp", "screenshot": false, "caption": "" },
+    { "action": "waitForSelector", "selector": ".thema-card", "state": "visible", "timeout": 15000, "screenshot": false, "caption": "" },
+    { "action": "screenshot", "section": "Werkzeug öffnen",
+      "caption": "Der **Prompt-Builder**. Über **«← NRLP»** gelangst du zurück zum Lehrplan-Graphen. Ganz oben wählst du den **Lehrgang** (EFZ 3-jährig / 4-jährig / EBA), darunter den **Modus** A / B / C. Links triffst du deine Auswahl, rechts entsteht laufend der fertige Prompt." },
+
+    { "action": "click", "selector": "#btn-official", "section": "Auswahl treffen (Modus A)", "highlight": true,
+      "caption": "Bleibe im Modus **«A — Lehrplankonform»**. Er führt dich der Reihe nach durch **Thema → Lebensbezug → Kompetenz** — genau entlang des neuen Rahmenlehrplans (nRLP)." },
+    { "action": "click", "selector": ".thema-card >> nth=0", "section": "Auswahl treffen (Modus A)",
+      "caption": "Wähle ein **Thema** aus dem Lehrplan (hier **Thema 1 — Ins Berufsleben einsteigen**). Jede Karte zeigt Titel, Lehrjahr und Lektionenzahl." },
+    { "action": "waitForSelector", "selector": ".lb-item", "state": "visible", "timeout": 10000, "screenshot": false, "caption": "" },
+    { "action": "click", "selector": ".lb-header >> nth=0", "section": "Auswahl treffen (Modus A)",
+      "caption": "Klappe einen **Lebensbezug** auf und wähle ihn (z. B. **1.1**). Darunter erscheinen die zugehörigen Kompetenzen." },
+    { "action": "waitForSelector", "selector": ".komp-row", "state": "visible", "timeout": 10000, "screenshot": false, "caption": "" },
+    { "action": "click", "selector": ".komp-row >> nth=0", "section": "Auswahl treffen (Modus A)",
+      "caption": "Wähle eine oder mehrere **Kompetenzen** (z. B. **1.1.1**). Mehrfachauswahl ist möglich — und rechts füllt sich sofort der Prompt." },
+
+    { "action": "waitForSelector", "selector": "#prompt-pre", "state": "visible", "timeout": 15000, "screenshot": false, "caption": "" },
+    { "action": "scrollTo", "selector": ".gi-list >> nth=0", "screenshot": false, "caption": "" },
+    { "action": "screenshot", "section": "Automatische Taxonomie",
+      "caption": "Der Builder zieht **automatisch** die passende Taxonomie zur gewählten Kompetenz: **Gesellschaftliche Inhalte** und **Sprachmodi** — jeweils mit Progressionsstufe (R1–R3). Wähle ab, was für deine Einheit nicht relevant ist. Rechts wächst der Prompt entsprechend mit." },
+
+    { "action": "scrollTo", "selector": ".dataset-bar", "screenshot": false, "caption": "" },
+    { "action": "select", "selector": "#output-type", "value": "raster", "section": "Output-Typ wählen & kopieren", "highlight": true,
+      "caption": "Wähle rechts oben den **Output-Typ**. Sechs Typen stehen bereit: **Lernsituation, Aufgabenstellung, Beurteilungsraster, Prüfungsaufgabe, Arbeitsblatt** und **Reflexionsfragen**. Darunter stellst du das **Sprachniveau** (A1–C2) der Lernenden ein." },
+    { "action": "waitForSelector", "selector": "#prompt-pre", "state": "visible", "timeout": 10000, "screenshot": false, "caption": "" },
+    { "action": "screenshot", "section": "Output-Typ wählen & kopieren",
+      "caption": "Der Prompt rechts passt sich dem gewählten Typ an — hier ein **Beurteilungsraster**. So erzeugst du aus derselben Auswahl ganz unterschiedliche Materialien." },
+    { "action": "click", "selector": "text=Kopieren", "section": "Output-Typ wählen & kopieren", "highlight": true,
+      "caption": "Mit **«Kopieren»** landet der fertige Prompt in der Zwischenablage; **«Speichern (.txt)»** legt ihn als Datei ab. Füge ihn anschliessend in dein Sprachmodell ein (z. B. Claude oder ChatGPT)." },
+
+    { "action": "click", "selector": "#btn-combo", "section": "Combo-Kette (Modus C)", "highlight": true,
+      "caption": "Im Modus **«C — Combo-Prompt»** erzeugt der Builder eine zusammenhängende **6-Schritt-Kette**, die alle Output-Typen aufeinander aufbaut." },
+    { "action": "waitForSelector", "selector": "text=Combo-Selektion", "state": "visible", "timeout": 10000, "screenshot": false, "caption": "" },
+    { "action": "click", "selector": "text=Strukturiert", "screenshot": false, "caption": "" },
+    { "action": "click", "selector": ".thema-card >> nth=0", "section": "Combo-Kette (Modus C)",
+      "caption": "Wähle oben den **Selektions-Stil** (Strukturiert A / Flexibel B) und triff dann wie gewohnt deine Auswahl — beginne wieder mit dem **Thema**." },
+    { "action": "waitForSelector", "selector": ".lb-item", "state": "visible", "timeout": 10000, "screenshot": false, "caption": "" },
+    { "action": "click", "selector": ".lb-header >> nth=0", "screenshot": false, "caption": "" },
+    { "action": "waitForSelector", "selector": ".komp-row", "state": "visible", "timeout": 10000, "screenshot": false, "caption": "" },
+    { "action": "click", "selector": ".komp-row >> nth=0", "screenshot": false, "caption": "" },
+    { "action": "waitForSelector", "selector": "#prompt-pre", "state": "visible", "timeout": 15000, "screenshot": false, "caption": "" },
+    { "action": "scrollTo", "selector": ".dataset-bar", "screenshot": false, "caption": "" },
+    { "action": "screenshot", "section": "Combo-Kette (Modus C)",
+      "caption": "Die **Combo-Kette**: von der Lernsituation über Aufgabe, Raster, Prüfung und Arbeitsblatt bis zur Reflexion — als ein zusammenhängender Arbeitsauftrag für dein Sprachmodell." }
+  ]
+}

@@ -1,0 +1,35 @@
+---
+// src/pages/nrlp.astro — nRLP-Netzwerk (Vanilla-JS-App als Passthrough unter /nrlp/)
+// Eingebettet als full-bleed iframe in BBW-Chrome, rollenbewusst.
+import Base from '../layouts/Base.astro'
+import { getAccess } from '../lib/auth'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+
+// lp / kt1 / gast dürfen alle schauen (read-only). Die Deep-Links in die
+// echten /einheiten- und /situationen-Seiten erzwingen dort ihre eigenen
+// Gast-Beschränkungen, daher kein zusätzlicher Guard nötig.
+const role = access.role ?? 'lp'
+---
+<Base title="nRLP-Netzwerk">
+  <div class="nrlp-wrap">
+    <header class="nrlp-bar">
+      <a class="back" href="/">← Hauptplattform</a>
+      <span class="title">nRLP-Netzwerk</span>
+      <span class="sub">Vernetzung &amp; Zirkularität der ABU-Inhalte</span>
+    </header>
+    <iframe id="nrlp-frame" src={`/nrlp/index.html?role=${role}`} title="nRLP-Graph" loading="lazy"></iframe>
+  </div>
+
+  <style>
+    .nrlp-wrap{display:flex;flex-direction:column;height:100vh}
+    .nrlp-bar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;
+      border-bottom:1px solid var(--brand-tint);background:#fff}
+    .nrlp-bar .back{color:var(--brand-dark);font-weight:600;text-decoration:none}
+    .nrlp-bar .back:hover{text-decoration:underline}
+    .nrlp-bar .title{font-weight:700}
+    .nrlp-bar .sub{color:#6b7280;font-size:.85rem}
+    #nrlp-frame{display:block;flex:1;width:100%;border:0}
+  </style>
+</Base>
