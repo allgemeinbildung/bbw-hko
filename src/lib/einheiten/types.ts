@@ -342,6 +342,8 @@ export interface EinheitFullSet {
   prinzip: PrinzipJson | null
   set: SetJson | null
   begleiter: { raw: string; meta: BegleiterMeta } | null
+  /** KI-Toolbox «Lies mich!» — teacher-facing didactic guide (markdown, same shape as begleiter). */
+  kiLiesmich: { raw: string; meta: BegleiterMeta } | null
   ki: KiJson | null
   lernprompt: LernpromptJson | null
   lernbegleiter: LernbegleiterJson | null

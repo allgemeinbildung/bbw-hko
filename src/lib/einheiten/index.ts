@@ -19,7 +19,7 @@ export type Role = 'lp' | 'kt1' | 'gast'
 
 /** Bausteine-Gruppen: ein Toggle deckt mehrere Set-Dateien ab. */
 export const KOMPONENTEN_GRUPPEN: Record<string, (keyof EinheitFullSet)[]> = {
-  'ki-fluency': ['ki', 'lernprompt', 'lernbegleiter'],
+  'ki-fluency': ['ki', 'lernprompt', 'lernbegleiter', 'kiLiesmich'],
 }
 
 /** Menschlich lesbares Label für die KT1-Entwürfe-Übersicht. */
@@ -77,6 +77,7 @@ export function prettifyId(id: string): string {
 // Path is relative to this file.
 const sitFiles = import.meta.glob('../../data/einheiten/*/*.json', { eager: true }) as Record<string, { default: unknown }>
 const begleiterFiles = import.meta.glob('../../data/einheiten/*/begleiter.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
+const kiLiesmichFiles = import.meta.glob('../../data/einheiten/*/ki-liesmich.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
 
 function pickJson<T>(slug: string, name: string): T | null {
   for (const [path, mod] of Object.entries(sitFiles)) {
@@ -104,6 +105,8 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
   if (!einheitById(slug)) return null
   const raw = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
   const begleiter = raw ? { raw, ...parseFrontmatter(raw) } : null
+  const kiRaw = Object.entries(kiLiesmichFiles).find(([path]) => path.endsWith(`/${slug}/ki-liesmich.md`))?.[1]
+  const kiLiesmich = kiRaw ? { raw: kiRaw, ...parseFrontmatter(kiRaw) } : null
   return {
     id: slug,
     hf_A: pickJson<SituationJson>(slug, 'herausforderung_A'),
@@ -113,6 +116,7 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
     prinzip: pickJson<PrinzipJson>(slug, 'prinzip'),
     set: pickJson<SetJson>(slug, 'set'),
     begleiter: begleiter ? { raw: begleiter.raw, meta: begleiter.meta } : null,
+    kiLiesmich: kiLiesmich ? { raw: kiLiesmich.raw, meta: kiLiesmich.meta } : null,
     ki: pickJson<KiJson>(slug, 'ki'),
     lernprompt: pickJson<LernpromptJson>(slug, 'lernprompt'),
     lernbegleiter: pickJson<LernbegleiterJson>(slug, 'lernbegleiter'),

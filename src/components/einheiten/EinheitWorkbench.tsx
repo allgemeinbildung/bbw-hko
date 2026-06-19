@@ -261,9 +261,9 @@ ${cssRenderer}
       if (d.begleiter?.raw) {
         try {
           const blob = await buildBegleiterDocx(d.begleiter.raw, pngArrayBuffer)
-          const filename = `${prefix}_begleiter.docx`
-          zip.file(filename, blob)
-          log.push(filename)
+          const path = `Material_LP/${prefix}_begleiter.docx`
+          zip.file(path, blob)
+          log.push(path)
         } catch (e) { console.warn('begleiter docx failed', e) }
       }
 
@@ -314,8 +314,17 @@ ${cssRenderer}
         } catch (e) { console.warn('docx Lernbegleiter failed', filename, e) }
       }
 
+      if (d.kiLiesmich?.raw) {
+        try {
+          const blob = await buildBegleiterDocx(d.kiLiesmich.raw, pngArrayBuffer)
+          const path = `Material_LP/${prefix}_ki-liesmich.docx`
+          zip.file(path, blob)
+          log.push(path)
+        } catch (e) { console.warn('ki-liesmich docx failed', e) }
+      }
+
       const readme = buildReadme({ prefix, log, d, when: new Date(), abgedeckteKompetenzen: docAbgedeckte })
-      zip.file('README.html', readme)
+      zip.file('Übersicht_LP.html', readme)
 
       const blob = await zip.generateAsync({ type: 'blob' })
       const url = URL.createObjectURL(blob)
@@ -460,7 +469,7 @@ ${cssRenderer}
             </div>
           )}
 
-          {(d.ki || d.lernprompt || d.lernbegleiter) && (
+          {(d.ki || d.lernprompt || d.lernbegleiter || d.kiLiesmich) && (
             <div className="wb-tree-group wb-tree-ki">
               <button
                 type="button"
@@ -475,6 +484,16 @@ ${cssRenderer}
               {kiOpen && (
               <>
               <p className="wb-ki-hint">Optionales Zusatzangebot — die Lehrperson entscheidet über den Einsatz.</p>
+              {d.kiLiesmich?.raw && (
+                <a
+                  className="wb-action lies wb-ki-lies"
+                  href={`/einheiten/${d.id}/ki-liesmich`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  📖 KI-Toolbox — Lies mich!
+                </a>
+              )}
               {d.ki?.assignments?.some((a) => a.key === 'ki_1') && (
                 <button
                   className={`wb-item${doc === 'doc-ki-1' ? ' active' : ''}`}
@@ -580,89 +599,200 @@ function buildReadme({ prefix, log, d, when, abgedeckteKompetenzen = [] }: { pre
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-  const rows: [string, string][] = [
-    ['Herausforderung A (rot)', d.hf_A?.titel || '—'],
-    ['Herausforderung B (blau)', d.hf_B?.titel || '—'],
-  ]
-  if (d.hf_C) rows.push(['Herausforderung C (grün)', d.hf_C.titel || '—'])
-  if (d.dossier) rows.push(['Glossar+ (EBA)', 'Nuggets · Sprachhilfe · Glossar · Notizen'])
-  rows.push(['KN Hybrid-Herausforderung', d.kn?.hybrid_situation?.titel || '—'])
-  rows.push(['Begleitdokument', d.begleiter?.meta?.titel || '—'])
-  if (d.ki?.assignments?.some((a) => a.key === 'ki_1')) rows.push(['KI-Auftrag 1', d.ki.assignments.find((a) => a.key === 'ki_1')?.titel || '—'])
-  if (d.ki?.assignments?.some((a) => a.key === 'ki_2')) rows.push(['KI-Auftrag 2', d.ki.assignments.find((a) => a.key === 'ki_2')?.titel || '—'])
-  if (d.lernprompt) rows.push(['KI-Lernprompt', 'Prompting lernen'])
-  if (d.lernbegleiter) rows.push(['KI-Lernbegleiter', d.lernbegleiter.lernbegleiter?.titel || '—'])
-  const hatKi = !!(d.ki || d.lernprompt || d.lernbegleiter)
+  // The build log is the single source of truth for which files actually landed in the ZIP
+  // (some .docx builds can fail in try/catch). Only render a link if its path is present.
+  const logSet = new Set(log)
+  const has = (p: string) => logSet.has(p)
+
+  // A single document row: a label plus whichever of HTML / Word actually exists.
+  // htmlBase is the *.html filename (no folder); the Word twin lives under word/ with .docx.
+  const row = (label: string, opts: { htmlBase?: string; wordRoot?: string }) => {
+    const links: string[] = []
+    if (opts.htmlBase) {
+      const hp = `html/${opts.htmlBase}`
+      const wp = `word/${opts.htmlBase.replace(/\.html$/, '.docx')}`
+      if (has(hp)) links.push(`<a class="btn btn-html" href="${esc(hp)}" target="_blank" rel="noopener">HTML · drucken</a>`)
+      if (has(wp)) links.push(`<a class="btn btn-word" data-doc="${esc(wp)}" href="${esc(wp)}" title="Öffnet direkt in Microsoft Word">Word · öffnen</a>`)
+    }
+    if (opts.wordRoot && has(opts.wordRoot)) {
+      links.push(`<a class="btn btn-word" data-doc="${esc(opts.wordRoot)}" href="${esc(opts.wordRoot)}" title="Öffnet direkt in Microsoft Word">Word · öffnen</a>`)
+    }
+    if (!links.length) return ''
+    return `        <div class="row"><span class="row-label">${esc(label)}</span><span class="row-links">${links.join('')}</span></div>`
+  }
+
+  // A card groups one document family (e.g. Herausforderung A) and its rows.
+  const card = (title: string, rowsHtml: string[], opts: { accent?: string; sub?: string } = {}) => {
+    const body = rowsHtml.filter(Boolean)
+    if (!body.length) return ''
+    const style = opts.accent ? ` style="border-left-color:${opts.accent}"` : ''
+    const sub = opts.sub ? `<p class="card-sub">${esc(opts.sub)}</p>` : ''
+    return `      <article class="card"${style}>
+        <h3 class="card-title">${esc(title)}</h3>${sub}
+${body.join('\n')}
+      </article>`
+  }
+
+  const sections: string[] = []
+
+  // ── Herausforderungen A/B/C ────────────────────────────────────────────────
+  const hfAccent: Record<string, string> = { A: '#e11d48', B: '#0284c7', C: '#059669' }
+  const hfCards: string[] = []
+  for (const letter of ['A', 'B', 'C'] as const) {
+    const s = d[`hf_${letter}`]
+    if (!s) continue
+    hfCards.push(
+      card(`Herausforderung ${letter} — ${s.titel || ''}`.trim(), [
+        row('Auftrag (zum Ausfüllen)', { htmlBase: `${prefix}_doc-s_hf-${letter}_auftrag.html` }),
+        row('Dossier (nur Inhalte)', { htmlBase: `${prefix}_doc-s_hf-${letter}_dossier.html` }),
+      ], { accent: hfAccent[letter] }),
+    )
+  }
+  hfCards.push(card('Austausch & Transfer', [row('Set-Abschluss', { htmlBase: `${prefix}_doc-austausch.html` })]))
+  if (d.dossier) hfCards.push(card('Glossar+ (EBA)', [row('Nuggets · Sprachhilfe · Glossar · Notizen', { htmlBase: `${prefix}_doc-dossier.html` })]))
+  const hfC = hfCards.filter(Boolean)
+  if (hfC.length) sections.push(`  <details class="group"><summary>Herausforderungen <span class="count">${hfC.length}</span></summary><div class="group-body">${hfC.join('\n')}</div></details>`)
+
+  // ── Kompetenznachweis ──────────────────────────────────────────────────────
+  if (d.kn) {
+    const knCards: string[] = []
+    for (const typ of d.kn.kn_typen || []) {
+      knCards.push(card(`KN · ${knTypLabel(typ.typ, typ.label)}`, [
+        row('Schüler/in', { htmlBase: `${prefix}_doc-kn-s_${typ.typ}.html` }),
+      ]))
+    }
+    knCards.push(card('Lehrperson + Bewertung', [row('Auswertung & Bewertungsraster', { htmlBase: `${prefix}_doc-kn-lp.html` })]))
+    const knC = knCards.filter(Boolean)
+    if (knC.length) sections.push(`  <details class="group"><summary>Kompetenznachweis <span class="count">${knC.length}</span></summary><div class="group-body">${knC.join('\n')}</div></details>`)
+  }
+
+  // ── Begleitung (Lehrperson) ────────────────────────────────────────────────
+  const begleitCard = card('Begleitdokument', [row(d.begleiter?.meta?.titel || 'Didaktische Hinweise (Lehrperson)', { wordRoot: `Material_LP/${prefix}_begleiter.docx` })])
+  if (begleitCard) sections.push(`  <details class="group"><summary>Begleitung <span class="count">1</span></summary><div class="group-body">${begleitCard}</div></details>`)
+
+  // ── KI-Toolbox (optional) ──────────────────────────────────────────────────
+  const kiCards: string[] = []
+  if (d.kiLiesmich?.raw) kiCards.push(card('KI-Toolbox — Lies mich!', [row('Didaktischer Kompass (Lehrperson)', { wordRoot: `Material_LP/${prefix}_ki-liesmich.docx` })]))
+  if (d.ki?.assignments?.some((a) => a.key === 'ki_1')) kiCards.push(card(d.ki.assignments.find((a) => a.key === 'ki_1')?.titel || 'KI-Auftrag 1', [row('Formativer KI-Auftrag', { htmlBase: `${prefix}_doc-ki-1.html` })]))
+  if (d.ki?.assignments?.some((a) => a.key === 'ki_2')) kiCards.push(card(d.ki.assignments.find((a) => a.key === 'ki_2')?.titel || 'KI-Auftrag 2', [row('Formativer KI-Auftrag', { htmlBase: `${prefix}_doc-ki-2.html` })]))
+  if (d.lernprompt) kiCards.push(card('KI-Lernprompt', [row('Prompting-Werkstatt', { htmlBase: `${prefix}_doc-lernprompt.html` })]))
+  if (d.lernbegleiter) kiCards.push(card('KI-Lernbegleiter', [row(d.lernbegleiter.lernbegleiter?.titel || 'KN-Vorbereitung', { htmlBase: `${prefix}_doc-lernbegleiter.html` })]))
+  const kiC = kiCards.filter(Boolean)
+  if (kiC.length) {
+    sections.push(`  <details class="group"><summary>KI-Toolbox <span class="opt">optional</span> <span class="count">${kiC.length}</span></summary><div class="group-body"><p class="ki-note">Komplementär zur Einheit, formativ — der Einsatz entscheidet die Lehrperson.</p>${kiC.join('\n')}</div></details>`)
+  }
+
   return `<!DOCTYPE html>
 <html lang="de-CH">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HKO ${esc(prefix)} — Inhalt des Bundles</title>
+<title>HKO ${esc(prefix)} — Übersicht der Einheit</title>
 <style>
   :root { --brand:#0E6E3A; --brand-dark:#094d28; --brand-tint:#e8f3ec; --ink:#1d2026; --muted:#5b6470; --line:#e2e6ea; }
   * { box-sizing: border-box; }
   body { margin:0; padding:40px 20px; background:#f6f7f8; color:var(--ink);
     font-family:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.55; }
-  .sheet { max-width:760px; margin:0 auto; background:#fff; border:1px solid var(--line);
+  .sheet { max-width:820px; margin:0 auto; background:#fff; border:1px solid var(--line);
     border-top:4px solid var(--brand); border-radius:10px; padding:36px 44px 44px; }
   h1 { font-size:1.5rem; margin:0 0 4px; color:var(--brand-dark); }
-  h2 { font-size:1.05rem; margin:32px 0 10px; color:var(--brand-dark);
-    border-bottom:1px solid var(--line); padding-bottom:6px; }
   .meta { color:var(--muted); font-size:.92rem; margin:0 0 4px; }
   .meta strong { color:var(--ink); }
-  p { margin:0 0 12px; }
+  .intro { margin:14px 0 14px; }
+  .toolbar { display:flex; justify-content:flex-end; margin:0 0 12px; }
+  .group { border:1px solid var(--line); border-radius:8px; margin:0 0 10px; background:#fff; overflow:hidden; }
+  .group > summary { cursor:pointer; list-style:none; padding:13px 16px; font-size:1rem; font-weight:600;
+    color:var(--brand-dark); background:var(--brand-tint); display:flex; align-items:center; gap:8px; }
+  .group > summary::-webkit-details-marker { display:none; }
+  .group > summary::before { content:'▸'; font-size:.8rem; color:var(--brand); transition:transform .15s; }
+  .group[open] > summary::before { transform:rotate(90deg); }
+  .group > summary .count { margin-left:auto; font-size:.72rem; font-weight:700; color:var(--brand-dark);
+    background:#fff; border:1px solid var(--brand); padding:1px 9px; border-radius:999px; }
+  .group > summary .opt { font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    color:#fff; background:var(--brand); padding:2px 7px; border-radius:999px; }
+  .group-body { padding:14px 16px 6px; }
+  .ki-note { color:var(--muted); font-size:.88rem; margin:-4px 0 10px; }
+  .card { border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:8px;
+    padding:14px 16px; margin:0 0 10px; background:#fff; }
+  .card-title { font-size:.98rem; margin:0 0 8px; color:var(--ink); font-weight:600; }
+  .card-sub { color:var(--muted); font-size:.85rem; margin:-4px 0 8px; }
+  .row { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    gap:8px 12px; padding:6px 0; border-top:1px dashed var(--line); }
+  .card .row:first-of-type { border-top:0; }
+  .row-label { font-size:.92rem; color:var(--ink); }
+  .row-links { display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { display:inline-block; text-decoration:none; font-size:.82rem; font-weight:600;
+    padding:6px 12px; border-radius:6px; white-space:nowrap; line-height:1.2; }
+  .btn-html { background:var(--brand); color:#fff; }
+  .btn-html:hover { background:var(--brand-dark); }
+  .btn-word { background:#fff; color:var(--brand-dark); border:1px solid var(--brand); }
+  .btn-word:hover { background:var(--brand-tint); }
   code { background:var(--brand-tint); color:var(--brand-dark); padding:1px 6px; border-radius:4px;
     font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.85em; }
-  table { width:100%; border-collapse:collapse; margin:8px 0 4px; font-size:.95rem; }
-  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
-  th { background:var(--brand-tint); color:var(--brand-dark); font-weight:600; width:34%; }
-  ul.files { columns:2; column-gap:28px; padding-left:18px; margin:8px 0 0; font-size:.88rem; color:var(--muted); }
+  details { margin-top:26px; }
+  summary { cursor:pointer; font-size:.95rem; color:var(--brand-dark); font-weight:600; }
+  ul.files { columns:2; column-gap:28px; padding-left:18px; margin:10px 0 0; font-size:.86rem; color:var(--muted); }
   ul.files li { break-inside:avoid; margin:0 0 3px; }
-  @media (max-width:560px){ ul.files{columns:1;} th{width:42%;} .sheet{padding:28px 22px;} }
+  @media (max-width:560px){ ul.files{columns:1;} .sheet{padding:28px 22px;} .row{justify-content:flex-start;} }
 </style>
 </head>
 <body>
 <main class="sheet">
-  <h1>HKO ${esc(prefix)} — Inhalt des Bundles</h1>
+  <h1>HKO ${esc(prefix)} — Übersicht der Einheit</h1>
   <p class="meta"><strong>Abgedeckte Kompetenzen:</strong> ${esc(kompetenzList)} · <strong>Thema:</strong> ${esc(slug.replace(/_/g, ' '))}</p>
   <p class="meta"><strong>Generiert:</strong> ${esc(when.toLocaleString('de-CH'))} · <strong>Dateien:</strong> ${log.length}</p>
 
-  <h2>Was ist drin?</h2>
-  <p>Dieses Bundle enthält ${log.length} Dokumente in zwei Formaten: druckfertige
-  HTML-Dateien (A4, zum Direkt-Drucken im Browser) und Word-Dateien (.docx)
-  zum Anpassen / Kommentieren in Word. Beide Formate enthalten die gleichen
-  Inhalte; HTML druckt 1:1 wie geplant, Word lässt sich weiterbearbeiten.</p>
-  <p>Das Situationsheft (DOC-S) gibt es je Herausforderung als <code>_auftrag</code>
-  (zum Ausfüllen) und als <code>_dossier</code> (mit ausgearbeiteter Lösung),
-  benannt nach der Herausforderung (<code>hf-A</code> / <code>hf-B</code> / <code>hf-C</code>).
-  Der gemeinsame Set-Abschluss «Austausch &amp; Transfer» (<code>_doc-austausch</code>)
-  liegt einmal pro Set bei — er bündelt den Vergleich der drei Lösungen
-  (Einzelauftrag / Gruppenpuzzle / Plenum) und die Transfer-Aufgabe.</p>
-  <p>Zusätzlich liegt das Begleitdokument für die Lehrperson (<code>_begleiter.docx</code>)
-  bei — Hintergrund, didaktische Hinweise, Coaching-Moves, Mehrdeutigkeit-Hinweise.</p>
-${hatKi ? `  <p><strong>KI-Toolbox-Dokumente</strong> (komplementär zur Einheit, formativ):
-  zwei KI-Aufträge (<code>_doc-ki-1</code>, <code>_doc-ki-2</code>) zum kritischen
-  KI-Einsatz, der <code>_doc-lernprompt</code> als Prompting-Werkstatt und der
-  <code>_doc-lernbegleiter</code> zur eigenständigen KN-Vorbereitung — je als HTML und Word.</p>` : ''}
+  <p class="intro">Diese Seite verbindet alle Dokumente der Einheit. Klicke auf
+  <strong>HTML · drucken</strong>, um ein Dokument druckfertig im Browser zu öffnen, oder auf
+  <strong>Word · öffnen</strong>, um die <code>.docx</code>-Version direkt in Microsoft Word zum
+  Anpassen zu öffnen (Word muss installiert sein; beim ersten Mal fragt der Browser, ob Word
+  geöffnet werden darf — bestätigen). Beide Formate enthalten die gleichen Inhalte. Damit die
+  Links funktionieren, muss der ZIP-Ordner <em>vollständig entpackt</em> sein (Ordner
+  <code>html/</code> und <code>word/</code> daneben).</p>
 
-  <h2>Set-Übersicht</h2>
-  <table>
-    <tbody>
-${rows.map(([k, v]) => `      <tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join('\n')}
-    </tbody>
-  </table>
+  <div class="toolbar"><button type="button" id="toggleAll" class="btn btn-word">Alles aufklappen</button></div>
 
-  <h2>Nach dem Unterricht</h2>
-  <p>Wenn du die Einheit umgesetzt hast, gib uns Feedback über das Online-Formular,
-  das du im Workbench unter «Feedback nach Unterricht» findest. Das Feedback
-  fliesst direkt ins Kernteam-1 Reviewing.</p>
+${sections.join('\n')}
 
-  <h2>Dateiliste</h2>
-  <ul class="files">
-${log.map((f) => `    <li>${esc(f)}</li>`).join('\n')}
-  </ul>
+  <details class="group">
+    <summary>Nach dem Unterricht</summary>
+    <div class="group-body">
+      <p>Wenn du die Einheit umgesetzt hast, gib uns Feedback über das Online-Formular,
+      das du im Workbench unter «Feedback nach Unterricht» findest. Das Feedback
+      fliesst direkt ins Kernteam-1 Reviewing.</p>
+    </div>
+  </details>
+
+  <details class="filelist">
+    <summary>Vollständige Dateiliste (${log.length})</summary>
+    <ul class="files">
+${log.map((f) => `      <li>${esc(f)}</li>`).join('\n')}
+    </ul>
+  </details>
 </main>
+<script>
+  (function(){
+    var tg=document.getElementById('toggleAll');
+    if(tg){
+      var groups=Array.prototype.slice.call(document.querySelectorAll('details.group'));
+      tg.addEventListener('click',function(){
+        var anyClosed=groups.some(function(d){return !d.open;});
+        groups.forEach(function(d){d.open=anyClosed;});
+        tg.textContent=anyClosed?'Alles zuklappen':'Alles aufklappen';
+      });
+    }
+    // "Word · öffnen": launch the .docx directly in Microsoft Word via the ms-word: protocol
+    // handler, building an absolute file:// URL from this page's own location so it works
+    // wherever the teacher extracted the ZIP. Falls back to the plain link if JS is off.
+    Array.prototype.slice.call(document.querySelectorAll('a.btn-word[data-doc]')).forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        var abs=new URL(a.getAttribute('data-doc'),location.href).href;
+        window.location.href='ms-word:ofe|u|'+abs;
+      });
+    });
+  })();
+</script>
 </body>
 </html>`
 }
