@@ -29,9 +29,7 @@
     <div class="view-toggle-group" id="view-toggle-group">
       <button class="view-btn active" data-view="graph">Netzwerk</button>
       <button class="view-btn" data-view="zirkularitaet">Zirkularität</button>
-      <button class="view-btn" data-view="spirale">Spirale</button>
       <button class="view-btn" data-view="chord">Chord</button>
-      <button class="view-btn" data-view="sankey">Sankey</button>
     </div>
   </div>
   <div class="preset-wrap" data-tour="preset-group">
@@ -133,7 +131,6 @@
 <script src="/shared/modals.js"></script>
 <script>loadModals(['nrlp-graph-optionen','nrlp-graph-nutzung','nrlp-graph-tabs']);</script>
 <script src="https://unpkg.com/d3@7/dist/d3.min.js"></script>
-<script src="https://unpkg.com/d3-sankey@0.12/dist/d3-sankey.min.js"></script>
 <script type="module">
   import { renderExtra } from './ext/visualizations.js';
   window.NRLP_renderExtra = renderExtra;

@@ -191,7 +191,7 @@ function applyViewMode() {
   const detailSidebar = document.getElementById('detail-sidebar');
   const detailContent = document.getElementById('detail-content');
   const isZirk = state.viewMode === 'zirkularitaet';
-  const EXTRA = ['spirale', 'chord', 'sankey'];
+  const EXTRA = ['chord'];
   const isExtra = EXTRA.includes(state.viewMode);
   const extraEl = document.getElementById('nrlp-extra');
 

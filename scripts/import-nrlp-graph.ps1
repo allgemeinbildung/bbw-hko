@@ -81,6 +81,15 @@ $indexHtml = Join-Path $dstNrlp "index.html"
   -replace '(<meta charset="UTF-8"[^>]*>)', "`$1`n  <base href=""/nrlp/"" />" |
   Set-Content $indexHtml -Encoding UTF8
 
+# Drop the Spirale + Sankey extra views (we keep only Chord). Removes the two
+# view buttons and the now-unneeded d3-sankey CDN; the Chord view is enhanced
+# with click-to-highlight in ext/visualizations.js (not copied by this import).
+(Get-Content $indexHtml -Raw) `
+  -replace '\s*<button class="view-btn" data-view="spirale">[^<]*</button>', '' `
+  -replace '\s*<button class="view-btn" data-view="sankey">[^<]*</button>', '' `
+  -replace '\s*<script src="https://unpkg\.com/d3-sankey[^"]*"></script>', '' |
+  Set-Content $indexHtml -Encoding UTF8
+
 $stateJs = Join-Path $dstModules "state.js"
 (Get-Content $stateJs -Raw) `
   -replace "'\./(nrlp_\dj\.json)'", "'/`$1'" |
@@ -88,7 +97,8 @@ $stateJs = Join-Path $dstModules "state.js"
 
 $controllerJs = Join-Path $dstModules "app\controller.js"
 (Get-Content $controllerJs -Raw) `
-  -replace "'\./(nrlp_\dj\.json)'", "'/`$1'" |
+  -replace "'\./(nrlp_\dj\.json)'", "'/`$1'" `
+  -replace "const EXTRA = \['spirale', 'chord', 'sankey'\];", "const EXTRA = ['chord'];" |
   Set-Content $controllerJs -Encoding UTF8
 
 # --- 5) Stage the unit indexes for the "units as nodes" overlay --------------
