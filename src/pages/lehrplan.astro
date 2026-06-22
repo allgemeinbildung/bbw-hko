@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro'
+import GuestPrintBlock from '../components/GuestPrintBlock.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+const { data: prof } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+const isGuest = prof?.role === 'gast'
+
+const DOCS = [
+  { key: 'EFZ-3J', label: 'EFZ 3-jährig', file: '/slp/efz-3j.pdf', desc: 'Berufliche Grundbildung · 3 Jahre' },
+  { key: 'EFZ-4J', label: 'EFZ 4-jährig', file: '/slp/efz-4j.pdf', desc: 'Berufliche Grundbildung · 4 Jahre' },
+  { key: 'EBA',    label: 'EBA 2-jährig', file: '/slp/eba.pdf',    desc: 'Grundbildung mit Attest · 2 Jahre' },
+]
+const _url = new URL(Astro.request.url)
+const raw = _url.searchParams.get('lehrgang') ?? ''
+const initial = DOCS.some((d) => d.key === raw) ? raw : 'EFZ-3J'
+const initialDoc = DOCS.find((d) => d.key === initial)!
+---
+<Base title="Schullehrplan ABU">
+  {isGuest && <GuestPrintBlock />}
+  <div
+    class="min-h-screen flex flex-col"
+    x-data={`{ tab: '${initial}', docs: ${JSON.stringify(DOCS)}, get cur(){ return this.docs.find(d => d.key === this.tab) || this.docs[0] } }`}
+    x-cloak
+  >
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+      <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3 min-w-0">
+          <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="logo-black h-14 w-auto shrink-0" />
+          <span class="hidden md:block pl-3 ml-1 border-l border-slate-200 text-xs uppercase tracking-wider text-slate-500 leading-tight">
+            Materialplattform<br />
+            <span class="normal-case tracking-normal text-slate-400">ABU Reform 2030</span>
+          </span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/jahresplanung/uebersicht" class="text-sm text-slate-600 hover:text-slate-900 font-medium">← Gesamtübersicht</a>
+          <span class="text-sm text-slate-500 hidden sm:block">{user.email}</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
+      <div class="mb-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Offizielle Dokumente · Bildungsrat 09.06.2026</p>
+        <h1 class="text-2xl font-semibold text-slate-900 tracking-tight">Schullehrplan ABU (nRLP)</h1>
+        <p class="text-slate-600 mt-2 max-w-3xl text-sm">
+          Die genehmigten Schullehrpläne pro Lehrgang. Wähle einen Lehrgang, um das PDF direkt hier zu lesen.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <template x-for="d in docs" :key="d.key">
+          <button
+            type="button"
+            class="lp-tab"
+            :class="tab === d.key && 'lp-tab-on'"
+            @click="tab = d.key"
+            x-text="d.label"
+          ></button>
+        </template>
+        <div class="ml-auto flex items-center gap-2">
+          <a :href="cur.file" target="_blank" rel="noopener" class="lp-link">In neuem Tab öffnen ↗</a>
+          <a :href="cur.file" :download="cur.key + '.pdf'" class="lp-link lp-link-strong">Download</a>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-500 mb-3" x-text="cur.desc"></p>
+
+      <div class="rounded-lg overflow-hidden border border-slate-200 bg-slate-50" style="height: 82vh;">
+        <iframe
+          :src="cur.file + '#view=FitH'"
+          src={`${initialDoc.file}#view=FitH`}
+          title="Schullehrplan ABU (PDF)"
+          class="w-full h-full"
+          style="border: 0;"
+        ></iframe>
+      </div>
+      <noscript>
+        <p class="mt-3 text-sm">
+          <a href="/slp/efz-3j.pdf" class="underline">EFZ 3-jährig</a> ·
+          <a href="/slp/efz-4j.pdf" class="underline">EFZ 4-jährig</a> ·
+          <a href="/slp/eba.pdf" class="underline">EBA 2-jährig</a>
+        </p>
+      </noscript>
+    </main>
+
+    <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
+      Schullehrplan ABU · Bildungsrat 2026 · Quelle: BBW / Kanton Zürich
+    </footer>
+  </div>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    .lp-tab { display: inline-flex; align-items: center; font-size: 0.82rem; font-weight: 600; color: #334155; background: white; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 0.35rem 0.9rem; cursor: pointer; transition: all .15s; }
+    .lp-tab:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .lp-tab-on { background: var(--brand); color: white; border-color: var(--brand); }
+    .lp-tab-on:hover { color: white; }
+    .lp-link { font-size: 0.78rem; font-weight: 600; color: var(--brand-dark); text-decoration: none; padding: 0.35rem 0.5rem; border-radius: 6px; }
+    .lp-link:hover { text-decoration: underline; }
+    .lp-link-strong { border: 1px solid var(--brand); background: var(--brand-tint); }
+  </style>
+</Base>

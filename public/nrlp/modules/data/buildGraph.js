@@ -1,4 +1,4 @@
-﻿import { GESELLSCHAFT_COLORS, LEHRJAHR_COLORS } from '../config.js';
+﻿import { GESELLSCHAFT_COLORS, LEHRJAHR_COLORS, THEMA_COLORS } from '../config.js';
 
 export function normalizeConceptLabel(value) {
   return String(value || '')
@@ -63,7 +63,7 @@ export function buildGraphData(nrlp) {
       name: `T${t.nr}: ${t.titel}`,
       type: 'thema',
       lehrjahr: t.lehrjahr,
-      color: LEHRJAHR_COLORS[t.lehrjahr] || '#888',
+      color: THEMA_COLORS[t.nr] || LEHRJAHR_COLORS[t.lehrjahr] || '#888',
       val: 15,
       data: t
     });

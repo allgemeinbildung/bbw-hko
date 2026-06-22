@@ -402,7 +402,7 @@ if (!isGuest) {
       </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="jahresplanung()" x-cloak>
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="jahresplanung()" x-cloak data-lehrgang={getNrlp(lehrgang) ? lehrgang : 'EFZ-3J'}>
       <!-- Title -->
       <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
@@ -449,6 +449,7 @@ if (!isGuest) {
             {schuljahrOptions.map((sj) => <option value={sj} selected={sj === schuljahr}>{sj}</option>)}
           </select>
         </div>
+        <a href="/lehrplan" class="jp-overview-link" title="Offizielle Schullehrplan-PDFs">📄 Schullehrplan</a>
         <a href="/jahresplanung/uebersicht" class="jp-overview-link">Gesamtübersicht {maxLehrjahr} Jahre →</a>
       </div>
 
@@ -554,7 +555,7 @@ if (!isGuest) {
       <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
         <span class="font-semibold text-slate-700 uppercase tracking-wider">Legende</span>
         {plan.themas.map((t) => (
-          <span class="flex items-center gap-2"><span class={`legend-swatch cell-thema${t.tier}`}></span>T{t.nr} — {t.titel}</span>
+          <span class="flex items-center gap-2"><span class="legend-swatch thema-fill" data-thema={t.nr}></span>T{t.nr} — {t.titel}</span>
         ))}
         <span class="flex items-center gap-2"><span class="legend-swatch cell-buffer"></span>Puffer / Repetition</span>
         <span class="flex items-center gap-2"><span class="legend-swatch cell-holiday"></span>Ferien / Feiertag</span>
@@ -568,7 +569,7 @@ if (!isGuest) {
         <h2 class="text-lg font-semibold text-slate-900 mb-4">Themen im {lehrjahr}. Lehrjahr</h2>
         <div class="grid md:grid-cols-3 gap-4">
           {themas.map((t) => (
-            <div class={`thema-card thema-card-${t.intensity}`}>
+            <div class="thema-card thema-top" data-thema={t.nr}>
               <a href={`/jahresplanung/thema/${t.nr}?lehrgang=${lehrgang}`} class="thema-header thema-header-link">
                 <span class="thema-nr">Thema {t.nr} · Details →</span>
                 <h3 class="thema-titel">{t.titel}</h3>
@@ -833,16 +834,12 @@ if (!isGuest) {
                             'cell-edit': editMode && mtype(${w.n}) !== 'holiday',
                             'cell-holiday': mtype(${w.n}) === 'holiday',
                             'cell-buffer': mtype(${w.n}) === 'buffer',
-                            'cell-thema1': mtype(${w.n}) === 'thema1',
-                            'cell-thema2': mtype(${w.n}) === 'thema2',
-                            'cell-thema3': mtype(${w.n}) === 'thema3'
+                            'thema-fill': mtype(${w.n}) === 'thema'
                           }`}
+                          data-thema={w.thema ?? undefined}
                           class={`lesson-cell ${
                             w.type === 'holiday' ? 'cell-holiday' :
-                            w.type === 'buffer' ? 'cell-buffer' :
-                            w.tier === 1 ? 'cell-thema1' :
-                            w.tier === 2 ? 'cell-thema2' :
-                            w.tier === 3 ? 'cell-thema3' : 'cell-buffer'
+                            w.type === 'buffer' ? 'cell-buffer' : 'thema-fill'
                           }`}
                         >
                           <span class="cell-star" x-show={`hasKn(${w.n})`} x-cloak>★</span>
@@ -877,7 +874,7 @@ if (!isGuest) {
                   <p class="text-[10px] uppercase tracking-wider text-slate-400" x-text="`KW ${active.kw} · ${active.datum}`"></p>
                   <p class="text-sm font-semibold text-slate-900" x-text="merged(active.n).title"></p>
                 </div>
-                <span class="tip-badge" :class="cellClass(merged(active.n))" x-text="merged(active.n).type === 'holiday' ? 'Frei' : (merged(active.n).type === 'buffer' ? 'Puffer' : 'T' + active.thema)"></span>
+                <span class="tip-badge" :class="cellClass(merged(active.n))" :data-thema="active.thema" x-text="merged(active.n).type === 'holiday' ? 'Frei' : (merged(active.n).type === 'buffer' ? 'Puffer' : 'T' + active.thema)"></span>
               </div>
               <p class="text-xs text-slate-500 mb-3" x-text="`${active.lessons} ${active.lessons === 1 ? 'Lektion' : 'Lektionen'}` + (active.note ? ' · ' + active.note : '')"></p>
 
@@ -1105,10 +1102,7 @@ if (!isGuest) {
           const m = this.merged(n)
           if (m.type === 'holiday') return 'holiday'
           if (m.type === 'buffer') return 'buffer'
-          if (m.tier === 1) return 'thema1'
-          if (m.tier === 2) return 'thema2'
-          if (m.tier === 3) return 'thema3'
-          return 'buffer'
+          return 'thema'
         },
         mLessons(n) { const l = this.merged(n).lessons; return l > 0 ? l + ' L.' : '–' },
         mTitleMark(n) { const m = this.merged(n); return m.lb ? m.lb : (m.type === 'holiday' ? '★' : '·') },
@@ -1116,10 +1110,7 @@ if (!isGuest) {
           if (!w) return ''
           if (w.type === 'holiday') return 'cell-holiday'
           if (w.type === 'buffer') return 'cell-buffer'
-          if (w.tier === 1) return 'cell-thema1'
-          if (w.tier === 2) return 'cell-thema2'
-          if (w.tier === 3) return 'cell-thema3'
-          return 'cell-buffer'
+          return 'thema-fill'
         },
 
         // ── Herausforderungen (zentral) ──
@@ -1323,12 +1314,16 @@ if (!isGuest) {
           const TITLE = { font: { bold: true, sz: 14, color: { rgb: C.dark } } }
           const SUBTITLE = { font: { bold: true, sz: 11, color: { rgb: C.green } } }
           const NOTE = { font: { italic: true, sz: 9, color: { rgb: C.muted } } }
-          const rowFill = (tier, type) => {
+          // nRLP Thema-Identitätsfarben (siehe src/lib/thema-colors.ts) → [Fläche, Text]
+          const THEMA_HEX = {
+            1: ['009EE0', '000000'], 2: ['EC008C', '000000'], 3: ['EB690B', '000000'], 4: ['3EA743', '000000'],
+            5: ['033E80', 'FFFFFF'], 6: ['885EA0', 'FFFFFF'], 7: ['007B7A', 'FFFFFF'], 8: ['00A1A3', '000000'],
+          }
+          const rowFill = (thema, type) => {
             if (type === 'holiday') return { fill: { fgColor: { rgb: C.grey } }, font: { italic: true, color: { rgb: C.muted } } }
             if (type === 'buffer') return { font: { italic: true, color: { rgb: C.slate } } }
-            if (tier === 2) return { fill: { fgColor: { rgb: C.green } }, font: { color: { rgb: C.white } } }
-            if (tier === 3) return { fill: { fgColor: { rgb: C.dark } }, font: { color: { rgb: C.white } } }
-            if (tier === 1) return { fill: { fgColor: { rgb: C.tint } }, font: { color: { rgb: C.dark } } }
+            const tc = THEMA_HEX[thema]
+            if (tc) return { fill: { fgColor: { rgb: tc[0] } }, font: { color: { rgb: tc[1] } } }
             return {}
           }
           const styleRow = (ws, r, ncol, style) => {
@@ -1358,7 +1353,7 @@ if (!isGuest) {
               for (const t of y.themas) {
                 const lbCount = new Set(y.calendar.filter((c) => c.thema === t.nr && c.lb).map((c) => c.lb)).size
                 aoa.push([y.lehrjahr, y.schuljahr, 'T' + t.nr, t.titel, t.lektionen, t.puffer, lbCount, (this.themaSKAll[t.nr] || []).join(', ')])
-                meta.push(t.tier); totU += t.lektionen; totP += t.puffer
+                meta.push(t.nr); totU += t.lektionen; totP += t.puffer
               }
             }
             aoa.push(['', '', '', 'Total', totU, totP, '', ''])
@@ -1366,7 +1361,7 @@ if (!isGuest) {
             ws['!cols'] = [{ wch: 9 }, { wch: 11 }, { wch: 7 }, { wch: 40 }, { wch: 13 }, { wch: 11 }, { wch: 13 }, { wch: 50 }]
             ws['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: NC - 1 } }, { s: { r: 1, c: 0 }, e: { r: 1, c: NC - 1 } }]
             styleRow(ws, 0, NC, TITLE); styleRow(ws, 1, NC, SUBTITLE); styleRow(ws, 3, NC, HEADER)
-            meta.forEach((tier, i) => styleRow(ws, 4 + i, NC, rowFill(tier, 'teaching')))
+            meta.forEach((thema, i) => styleRow(ws, 4 + i, NC, rowFill(thema, 'teaching')))
             styleRow(ws, 4 + meta.length, NC, { font: { bold: true, color: { rgb: C.dark } } })
             XLSX.utils.book_append_sheet(wb, ws, 'Übersicht')
           }
@@ -1397,7 +1392,7 @@ if (!isGuest) {
                 ? ('★ KN' + (knHere.format ? ' (' + knHere.format + ')' : '') + (knTargets ? ' — ' + knTargets : '') + (knHere.notes ? ' — ' + knHere.notes : ''))
                 : (c.isKn ? ('★ KN-Empfehlung T' + c.thema) : (c.note || ''))
               aoa.push(['KW ' + c.kw, c.datum, 'S' + sem, c.thema ? 'T' + c.thema : '', typLabel[c.type] || c.type, c.title, c.type === 'holiday' ? '' : c.lessons, c.lb || '', komp, sk, sm, knNote])
-              meta.push({ tier: c.tier, type: c.type, kn: !!knHere || !!c.isKn })
+              meta.push({ thema: c.thema, type: c.type, kn: !!knHere || !!c.isKn })
             }
             const ws = XLSX.utils.aoa_to_sheet(aoa)
             ws['!cols'] = [{ wch: 7 }, { wch: 16 }, { wch: 5 }, { wch: 7 }, { wch: 11 }, { wch: 34 }, { wch: 5 }, { wch: 11 }, { wch: 48 }, { wch: 28 }, { wch: 26 }, { wch: 32 }]
@@ -1409,7 +1404,7 @@ if (!isGuest) {
             styleRow(ws, 0, NCOL, TITLE); styleRow(ws, 1, NCOL, SUBTITLE); styleRow(ws, 2, NCOL, NOTE); styleRow(ws, 4, NCOL, HEADER)
             meta.forEach((m, i) => {
               const r = 5 + i
-              styleRow(ws, r, NCOL, rowFill(m.tier, m.type))
+              styleRow(ws, r, NCOL, rowFill(m.thema, m.type))
               if (m.kn) styleCell(ws, r, NCOL - 1, { fill: { fgColor: { rgb: C.amber } }, font: { bold: true, color: { rgb: C.amberTxt } } })
             })
             XLSX.utils.book_append_sheet(wb, ws, y.lehrjahr + '. Lehrjahr')
@@ -1535,10 +1530,8 @@ if (!isGuest) {
     .cell-lessons { font-weight: 700; font-size: 0.85rem; }
     .cell-title { font-size: 0.6rem; opacity: 0.85; font-weight: 600; letter-spacing: 0.02em; }
 
-    /* Chronological intensity: T1 light → T2 medium → T3 dark */
-    .cell-thema1 { background: var(--brand-tint); color: var(--brand-dark); border-color: rgba(14,110,58,0.18); }
-    .cell-thema2 { background: var(--brand); color: white; }
-    .cell-thema3 { background: var(--brand-dark); color: white; }
+    /* Thema-Identitätsfarbe: .thema-fill + data-thema (global, Base.astro).
+       Lehrzellen tragen die nRLP-Farbe ihres Themas (flat, eine Farbe / Thema). */
     .cell-buffer {
       background: white;
       color: #475569;
@@ -1586,9 +1579,7 @@ if (!isGuest) {
       border-radius: 0.5rem;
       padding: 1.25rem;
     }
-    .thema-card-light { border-top-color: rgba(14,110,58,0.4); }
-    .thema-card-medium { border-top-color: var(--brand); }
-    .thema-card-dark { border-top-color: var(--brand-dark); }
+    /* Top-Border-Farbe kommt aus .thema-top + data-thema (global, Base.astro). */
     .thema-header { margin-bottom: 1rem; }
     .thema-header-link { display: block; text-decoration: none; }
     .thema-header-link:hover .thema-titel { color: var(--brand-dark); }
@@ -1826,14 +1817,14 @@ if (!isGuest) {
       border-radius: 9999px; background: var(--brand-dark); color: #fff;
       box-shadow: 0 1px 2px rgba(0,0,0,0.25);
     }
-    .cell-thema2 .cell-hf, .cell-thema3 .cell-hf { background: #fff; color: var(--brand-dark); }
+    .thema-fill .cell-hf { background: #fff; color: #111827; }
     .cell-hf-dot { font-size: 0.5rem; }
     /* Situationen count — subtle, secondary, bottom-right */
     .cell-sit {
       position: absolute; bottom: 2px; right: 3px; font-size: 0.5rem; font-weight: 600;
       color: #94a3b8; opacity: 0.85;
     }
-    .cell-thema2 .cell-sit, .cell-thema3 .cell-sit { color: rgba(255,255,255,0.7); }
+    .thema-fill .cell-sit { color: var(--tc-ink, #fff); opacity: 0.78; }
     .cell-sit::before { content: '◇ '; }
     .cell-edit { cursor: cell; box-shadow: 0 0 0 2px rgba(14,110,58,0.35) inset; }
 
@@ -1885,8 +1876,7 @@ if (!isGuest) {
       .jp-ref-close { display: none !important; }
       section, details, .jp-notes, .jp-ref { break-inside: avoid; box-shadow: none !important; }
       .lesson-cell { transform: none !important; box-shadow: none !important; }
-      .cell-thema2, .cell-thema3 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .sk-r1, .sk-r2, .sk-r3, .sk-empty, .cell-thema1, .cell-thema2, .cell-thema3, .cell-buffer, .cell-holiday {
+      .sk-r1, .sk-r2, .sk-r3, .sk-empty, .thema-fill, .cell-buffer, .cell-holiday {
         -webkit-print-color-adjust: exact; print-color-adjust: exact;
       }
     }

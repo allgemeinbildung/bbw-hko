@@ -92,6 +92,7 @@ const groups = [...groupMap.entries()]
       return (
         <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
           <div class="px-4 py-3 border-b border-slate-100 bg-slate-50 flex items-center gap-3">
+            {rep.thema_nr != null && <span class="thema-chip" data-thema={rep.thema_nr} data-lehrgang={rep.lehrdauer} title={`Thema ${rep.thema_nr}`}>T{rep.thema_nr}</span>}
             <span class="font-mono text-sm font-semibold text-slate-700">{rep.kompetenz_nr ?? setNr}</span>
             {rep.modul_titel && <span class="text-sm text-slate-700">{rep.modul_titel}</span>}
             <div class="flex items-center gap-3 ml-auto text-xs text-slate-400">

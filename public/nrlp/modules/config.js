@@ -5,6 +5,13 @@
   4: '#ec4899'
 };
 
+// nRLP Thema-Identitaetsfarben (EFZ 3-/4-jaehrig), Spiegel von
+// src/lib/thema-colors.ts. Themen-Knoten tragen ihre offizielle Lehrplanfarbe.
+export const THEMA_COLORS = {
+  1: '#009EE0', 2: '#EC008C', 3: '#EB690B', 4: '#3EA743',
+  5: '#033E80', 6: '#885EA0', 7: '#007B7A', 8: '#00A1A3'
+};
+
 export const GESELLSCHAFT_COLORS = {
   'Ethik': '#af7ac5',
   'Identität & Sozialisation': '#5499c7',

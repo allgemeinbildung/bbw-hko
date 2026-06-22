@@ -118,6 +118,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
               </div>
             )}
             <div class="flex flex-wrap gap-1.5 mb-2">
+              {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
               {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
                 <span class="chip chip-blue">Kompetenz {k}</span>
               ))}
@@ -159,7 +160,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
     </div>
 
     {ebaEinheiten.length > 0 && (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-lehrgang="EBA">
         {ebaEinheiten.map((e) => (
           <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
             <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
@@ -181,6 +182,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
                 </div>
               )}
               <div class="flex flex-wrap gap-1.5 mb-2">
+                {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
                 {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
                   <span class="chip chip-blue">Kompetenz {k}</span>
                 ))}

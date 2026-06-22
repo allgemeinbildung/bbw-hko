@@ -6,6 +6,12 @@ import { S } from './state.js';
 import { buildPrompt, OUTPUT_TYPES, rWertFor } from './prompts.js';
 import { skShort } from '../ext/sk-labels.js';
 
+// nRLP Thema-Identitaetsfarben (EFZ), Spiegel von src/lib/thema-colors.ts.
+const THEMA_COLORS = {
+  1: '#009EE0', 2: '#EC008C', 3: '#EB690B', 4: '#3EA743',
+  5: '#033E80', 6: '#885EA0', 7: '#007B7A', 8: '#00A1A3'
+};
+
 // Kleines R-Badge (R1 hell → R3 dunkel), gleiche Logik wie die Zirkularität-Heatmap.
 function rBadge(r) {
   if (!r) return '';
@@ -77,11 +83,12 @@ function themaGrid(nrlp, showLektionen) {
   let html = `<div class="thema-grid">`;
   for (const t of nrlp.themen) {
     const sel = S.thema?.nr === t.nr ? 'sel' : '';
+    const tc = THEMA_COLORS[t.nr] || '#64748b';
     const sub = showLektionen
       ? `Lehrjahr ${t.lehrjahr} · ${t.lektionen} Lektionen`
       : `Lehrjahr ${t.lehrjahr}`;
-    html += `<div class="thema-card ${sel}" onclick="selectThema(${t.nr})">
-      <div class="t-nr">T${t.nr}</div>
+    html += `<div class="thema-card ${sel}" onclick="selectThema(${t.nr})" style="border-left:5px solid ${tc}">
+      <div class="t-nr" style="color:${tc}">T${t.nr}</div>
       <div class="t-title">${t.titel}</div>
       <div class="t-lj">${sub}</div>
     </div>`;

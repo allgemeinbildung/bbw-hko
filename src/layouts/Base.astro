@@ -23,7 +23,46 @@ const { title = 'Materialplattform' } = Astro.props
       --brand-dark: #094d28;
       --brand-tint: #e8f3ec;
       --brand-ring: rgba(14, 110, 58, 0.18);
+
+      /* ── nRLP Thema-Identitätsfarben (Bildungsrat 2026) ──────────────────
+         Quelle: SLP-PDFs EFZ 3-/4-jährig (Pascal Rusch, 10.06.2026).
+         Einzige bewusste Ausnahme zur "Single-Green"-Regel.
+         Doku: docs/thema-farben.md · Helper: src/lib/thema-colors.ts
+         --thema-N-ink = WCAG-AA-konforme Textfarbe auf der Thema-Fläche. */
+      --thema-1: #009EE0; --thema-1-ink: #000000;
+      --thema-2: #EC008C; --thema-2-ink: #000000;
+      --thema-3: #EB690B; --thema-3-ink: #000000;
+      --thema-4: #3EA743; --thema-4-ink: #000000;
+      --thema-5: #033E80; --thema-5-ink: #FFFFFF;
+      --thema-6: #885EA0; --thema-6-ink: #FFFFFF;
+      --thema-7: #007B7A; --thema-7-ink: #FFFFFF;
+      --thema-8: #00A1A3; --thema-8-ink: #000000;
     }
+
+    /* data-thema="N" setzt die lokalen Custom-Properties --tc / --tc-ink,
+       die die Thema-Utility-Klassen unten konsumieren. Fallback = Brand-Grün. */
+    [data-thema="1"] { --tc: var(--thema-1); --tc-ink: var(--thema-1-ink); }
+    [data-thema="2"] { --tc: var(--thema-2); --tc-ink: var(--thema-2-ink); }
+    [data-thema="3"] { --tc: var(--thema-3); --tc-ink: var(--thema-3-ink); }
+    [data-thema="4"] { --tc: var(--thema-4); --tc-ink: var(--thema-4-ink); }
+    [data-thema="5"] { --tc: var(--thema-5); --tc-ink: var(--thema-5-ink); }
+    [data-thema="6"] { --tc: var(--thema-6); --tc-ink: var(--thema-6-ink); }
+    [data-thema="7"] { --tc: var(--thema-7); --tc-ink: var(--thema-7-ink); }
+    [data-thema="8"] { --tc: var(--thema-8); --tc-ink: var(--thema-8-ink); }
+    /* EBA 2-jährig: gleiche Palette, andere Zuordnung (T2–T6). Greift nur unter
+       einem data-lehrgang="EBA"-Vorfahren oder direkt am selben Element. */
+    [data-lehrgang="EBA"][data-thema="2"], [data-lehrgang="EBA"] [data-thema="2"] { --tc: var(--thema-3); --tc-ink: var(--thema-3-ink); }
+    [data-lehrgang="EBA"][data-thema="3"], [data-lehrgang="EBA"] [data-thema="3"] { --tc: var(--thema-4); --tc-ink: var(--thema-4-ink); }
+    [data-lehrgang="EBA"][data-thema="4"], [data-lehrgang="EBA"] [data-thema="4"] { --tc: var(--thema-6); --tc-ink: var(--thema-6-ink); }
+    [data-lehrgang="EBA"][data-thema="5"], [data-lehrgang="EBA"] [data-thema="5"] { --tc: var(--thema-2); --tc-ink: var(--thema-2-ink); }
+    [data-lehrgang="EBA"][data-thema="6"], [data-lehrgang="EBA"] [data-thema="6"] { --tc: var(--thema-5); --tc-ink: var(--thema-5-ink); }
+    .thema-fill { background: var(--tc, var(--brand)); color: var(--tc-ink, #fff); border-color: transparent; }
+    .thema-top { border-top-color: var(--tc, var(--brand)) !important; }
+    .thema-left { border-left-color: var(--tc, var(--brand)) !important; }
+    .thema-ink { color: var(--tc, var(--brand-dark)); }
+    .thema-dot { background: var(--tc, var(--brand)); }
+    .thema-chip { display: inline-flex; align-items: center; padding: 0.125rem 0.5rem; font-size: 0.7rem; line-height: 1.4; font-weight: 600; border-radius: 9999px; background: var(--tc, var(--brand)); color: var(--tc-ink, #fff); }
+    .thema-soft { background: color-mix(in srgb, var(--tc, var(--brand)) 14%, #fff); color: var(--tc, var(--brand-dark)); }
     html, body { font-family: 'DM Sans', system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
     [x-cloak] { display: none !important; }
     .tab-active { background: var(--brand); color: white; }

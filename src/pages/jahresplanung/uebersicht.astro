@@ -97,8 +97,6 @@ const knArc = knByYear.map((y) => ({
 }))
 const totalKn = knArc.reduce((s, y) => s + y.nodes.reduce((a, n) => a + (n.isSA ? 0 : n.count), 0), 0)
 
-const themaColors = ['cell-thema1', 'cell-thema2', 'cell-thema3']
-function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.length] }
 ---
 <Base title={`Gesamtübersicht ${nYears} Jahre · ${lehrgangLabel}`}>
   {isGuest && <GuestPrintBlock />}
@@ -113,6 +111,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
           </span>
         </a>
         <div class="flex items-center gap-4">
+          <a href="/lehrplan" class="text-sm text-slate-600 hover:text-[var(--brand)] font-medium" title="Offizielle Schullehrplan-PDFs">📄 Schullehrplan</a>
           <a href="/nrlp" class="text-sm text-slate-600 hover:text-[var(--brand)] font-medium" title="Vernetzung & Zirkularität der ABU-Inhalte">🕸 nRLP-Netzwerk</a>
           <a href="/jahresplanung" class="text-sm text-slate-600 hover:text-slate-900 font-medium">← Wochenplanung</a>
           <span class="text-sm text-slate-500 hidden sm:block">{user.email}</span>
@@ -120,7 +119,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
       </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="uebersicht()" x-cloak>
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-10" x-data="uebersicht()" x-cloak data-lehrgang={getNrlp(lehrgang) ? lehrgang : 'EFZ-3J'}>
       <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
           <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Jahresplanung · Gesamtcurriculum · nRLP Bildungsrat 2026</p>
@@ -166,7 +165,8 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
                 {y.themas.map((t) => (
                   <a
                     href={`/jahresplanung/thema/${t.nr}?lehrgang=${lehrgang}`}
-                    class={`ueb-block ${posColor(t.pos)} ${t.isSA ? 'ueb-block-sa' : ''}`}
+                    class={`ueb-block thema-fill ${t.isSA ? 'ueb-block-sa' : ''}`}
+                    data-thema={t.nr}
                     style={`min-height:${Math.round(46 + (t.lektionen / maxThemaLek) * 120)}px;`}
                     title={t.titel}
                   >
@@ -218,8 +218,8 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
               {spiral.map((sk) => (
                 <tr class={sk.stops === 0 ? 'sp-row-off' : ''}>
                   <td class="sp-name" title={sk.full}><span class="sp-nr">{sk.nr}</span>{sk.name}</td>
-                  {sk.cells.map((c) => (
-                    <td class={`sp-cell ${c ? `sp-r${String(c).replace('R', '')}` : 'sp-empty'}`}>{c || ''}</td>
+                  {sk.cells.map((c, ci) => (
+                    <td class={`sp-cell ${c ? 'thema-fill' : 'sp-empty'}`} data-thema={c ? themeCols[ci].nr : undefined}>{c || ''}</td>
                   ))}
                   <td class={`sp-stops ${sk.stops === 0 ? 'sp-stops-zero' : ''}`}>{sk.stops}</td>
                 </tr>
@@ -228,9 +228,8 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
           </table>
         </div>
         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-xs text-slate-500">
-          <span class="flex items-center gap-1.5"><span class="sp-swatch sp-r1"></span>R1 — Einführung</span>
-          <span class="flex items-center gap-1.5"><span class="sp-swatch sp-r2"></span>R2 — Wiederaufnahme</span>
-          <span class="flex items-center gap-1.5"><span class="sp-swatch sp-r3"></span>R3 — Vertiefung</span>
+          <span class="flex items-center gap-1.5"><span class="sp-swatch thema-fill" data-thema="1"></span><span class="sp-swatch thema-fill" data-thema="2"></span><span class="sp-swatch thema-fill" data-thema="3"></span>Zellenfarbe = Thema (T1–T8)</span>
+          <span>R1 Einführung · R2 Wiederaufnahme · R3 Vertiefung (im Feld angegeben)</span>
           {neverCovered.length > 0 && (
             <span class="text-amber-600 font-medium ml-auto">
               {neverCovered.length} SK ohne feste Verankerung: {neverCovered.map((s) => s.name).join(', ')}
@@ -385,15 +384,12 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
     .ueb-blocks { display: flex; flex-direction: column; gap: 0.5rem; }
     .ueb-block { display: flex; flex-direction: column; justify-content: flex-start; gap: 0.2rem; padding: 0.6rem 0.7rem; border-radius: 8px; text-decoration: none; border: 1px solid transparent; transition: transform .15s, box-shadow .15s; }
     .ueb-block:hover { transform: translateY(-2px); box-shadow: 0 8px 18px -8px rgba(14,110,58,0.4); }
-    .ueb-block-nr { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.85; }
-    .ueb-block-titel { font-size: 0.82rem; font-weight: 700; line-height: 1.2; }
+    .ueb-block-nr { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.9; }
+    .ueb-block-titel { font-size: 1.05rem; font-weight: 700; line-height: 1.22; }
     .ueb-block-meta { font-size: 0.62rem; opacity: 0.9; margin-top: auto; display: flex; align-items: center; gap: 0.3rem; }
     .ueb-block-kn { font-size: 0.5rem; font-weight: 800; text-transform: uppercase; border: 1px solid currentColor; border-radius: 9999px; padding: 0 0.3rem; opacity: 0.8; }
     .ueb-block-sa { border: 2px dashed currentColor !important; }
-    /* reuse green intensity palette */
-    .cell-thema1 { background: var(--brand-tint); color: var(--brand-dark); border-color: rgba(14,110,58,0.18); }
-    .cell-thema2 { background: var(--brand); color: white; }
-    .cell-thema3 { background: var(--brand-dark); color: white; }
+    /* Blockfarbe = Thema-Identitätsfarbe (.thema-fill + data-thema, global). */
 
     /* Idee 3: SK spiral table */
     .spiral { border-collapse: separate; border-spacing: 3px; width: 100%; min-width: 640px; }
@@ -403,9 +399,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
     .sp-name { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: #334155; padding: 0.3rem 0.5rem; background: #f8fafc; border-radius: 4px; white-space: nowrap; }
     .sp-nr { display: inline-flex; align-items: center; justify-content: center; width: 1.1rem; height: 1.1rem; border-radius: 9999px; background: #e2e8f0; font-size: 0.6rem; font-weight: 700; color: #475569; flex-shrink: 0; }
     .sp-cell { width: 40px; text-align: center; font-size: 0.66rem; font-weight: 700; border-radius: 4px; padding: 0.35rem 0; }
-    .sp-r1 { background: var(--brand-tint); color: var(--brand-dark); }
-    .sp-r2 { background: var(--brand); color: white; }
-    .sp-r3 { background: var(--brand-dark); color: white; }
+    /* Abgedeckte Zellen: .thema-fill + data-thema (Spalten-Thema); R-Stufe im Text. */
     .sp-empty { background: #f1f5f9; }
     .sp-stops { text-align: center; font-size: 0.72rem; font-weight: 700; color: #475569; }
     .sp-stops-zero { color: #d97706; }
@@ -452,7 +446,7 @@ function posColor(pos: number) { return themaColors[(pos - 1) % themaColors.leng
       /* Beim Druck alle Analysen vollständig zeigen */
       .ueb-analysis { display: block !important; }
       section { break-inside: avoid; }
-      .cell-thema1, .cell-thema2, .cell-thema3, .sp-r1, .sp-r2, .sp-r3, .sp-empty {
+      .thema-fill, .sp-empty {
         -webkit-print-color-adjust: exact; print-color-adjust: exact;
       }
     }
