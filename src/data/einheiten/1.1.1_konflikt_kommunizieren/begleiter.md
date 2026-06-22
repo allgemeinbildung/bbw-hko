@@ -23,9 +23,9 @@ quellen_json:
 
 ## 0. So funktioniert diese Einheit
 
-Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen Kompetenz, gefolgt von einem **Kompetenznachweis (KN)** mit einer neuen Hybrid-Situation. Wenn Sie bisher klassisch unterrichtet haben, sind hier die fünf Dinge, die anders laufen:
+Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen Kompetenz, gefolgt von einem **Kompetenznachweis (KN)** mit einer neuen Hybrid-Herausforderung. Wenn Sie bisher klassisch unterrichtet haben, sind hier die fünf Dinge, die anders laufen:
 
-**1. Von hinten gedacht (Backward Design).** Der KN wurde zuerst definiert, die drei Situationen danach. Das heisst: Jede Situation trägt genau die Bausteine, die im KN wieder auftauchen. Sie müssen nichts „dazu erfinden" — Sie führen die Lernenden durch drei Teilstücke, die der KN am Schluss zusammensetzt.
+**1. Von hinten gedacht (Backward Design).** Der KN wurde zuerst definiert, die drei Herausforderungen danach. Das heisst: Jede Herausforderung trägt genau die Bausteine, die im KN wieder auftauchen. Sie müssen nichts „dazu erfinden" — Sie führen die Lernenden durch drei Teilstücke, die der KN am Schluss zusammensetzt.
 
 **2. Eine Kompetenz, drei Herausforderungen.** A klärt die **Rechtslage** (Lehrvertrag), B wählt **Kanal und Register** einer schriftlichen Antwort, C führt das **Konfliktgespräch**. Erst zusammen ergeben sie das Kompetenzversprechen.
 
@@ -38,12 +38,12 @@ Diese Einheit ist ein **3er-Set**: drei Lernsituationen (A, B, C) zur gleichen K
 
 Der AViVA-Bogen ist der sichtbare Fahrplan jeder Herausforderung (Kapitel 3-5) und spannt sich über rund drei Lektionen — ohne feste Taktung, damit die Lernenden selbstständig arbeiten und Sie coachend begleiten. Darunter liegt die **IPERKA-Logik** (Leitfragen = Informieren/Planen/Entscheiden, Handlungsprodukt = Realisieren/Kontrollieren, Reflexion + Transfer = Auswerten/Dekontextualisieren).
 
-**4. Bewertet wird das Produkt, bi-dimensional.** Der KN wird auf **zwei getrennten Noten** beurteilt: **SuK** (Sprache und Kommunikation) und **Ges** (Gesellschaft), gleichgewichtet. Die Prozessarbeit in den Situationen ist Übung, kein benoteter KN-Bestandteil — die situationsinternen Checklisten «Vollständigkeit» (Leitfragen, Mindmap, Handlungsprodukt, Reflexion — ohne Gewichtung) sind formative Selbstkontrolle, falls Sie sie führen. Der Transfer wird im eigenständigen «Austausch & Transfer»-Dokument bearbeitet.
+**4. Bewertet wird das Produkt, bi-dimensional.** Der KN wird auf **zwei getrennten Noten** beurteilt: **SuK** (Sprache und Kommunikation) und **Ges** (Gesellschaft), gleichgewichtet. Die Prozessarbeit in den Herausforderungen ist Übung, kein benoteter KN-Bestandteil — die situationsinternen Checklisten «Vollständigkeit» (Leitfragen, Mindmap, Handlungsprodukt, Reflexion — ohne Gewichtung) sind formative Selbstkontrolle, falls Sie sie führen. Der Transfer wird im eigenständigen «Austausch & Transfer»-Dokument bearbeitet.
 
 **5. Mehrdeutigkeit ist gewollt.** In jeder Situation steckt ein echter Zielkonflikt (Rechte durchsetzen vs. Beziehung halten). Die Lernenden sollen ihn **nicht auflösen**, sondern offen benennen und begründet entscheiden. Das ist der Punkt, an dem traditioneller Unterricht am häufigsten kippt — siehe die `[!mehrdeutigkeit]`-Hinweise.
 
 > [!hinweis] Lektionentotal
-> Abhängig von der Durchführungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Situationen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Situation = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
+> Abhängig von der Durchführungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Herausforderungen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Herausforderung = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
 
 > [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
 > Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Vier-Ohren-Modell, Kanal- und Registerwahl) üben Sie **vorab im Unterricht**; die Situationsblätter setzen dieses Vorwissen voraus. Ergänzen Sie eigene Beispiele, Inputs und Übungen aus Ihrem Fundus.
@@ -86,7 +86,7 @@ Diese Formel ist Ihr Prüfstein, wenn Sie eine Lernenden-Arbeit ansehen: Ist bei
 | LF3 — Entscheiden | K3 | Entscheidungsproblem |
 | LF4 — Formulieren | K3+ / K4 | Strategie-/Analyseproblem |
 
-Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit fädelt von K2 zu K4 — wenn Sie eine Situation kürzen, halten Sie LF3/LF4 unbedingt drin, sonst bleibt sie auf Reproduktion stehen.
+Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit fädelt von K2 zu K4 — wenn Sie eine Herausforderung kürzen, halten Sie LF3/LF4 unbedingt drin, sonst bleibt sie auf Reproduktion stehen.
 
 ### Mehrdeutigkeits-Architektur
 
@@ -109,7 +109,7 @@ Drei Zielkonflikte spannen das ganze Set auf:
 
 Das erklärt das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Der Transfer (Kapitel 7) ist der Mechanismus, der R1 überhaupt nach R2/R3 trägt — ohne ihn bleibt das Wissen am Schreiner-Fall kleben.
 
-### Lehrmittel-Anker (alle Situationen)
+### Lehrmittel-Anker (alle Herausforderungen)
 
 | Kap. | Titel | Seiten |
 |---|---|---|
@@ -123,15 +123,26 @@ Das erklärt das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Der Transfer
 | 19.2 | Konflikte — Win-Win, Vier Ohren, Ich-Botschaften, Aussprache | 424-428 |
 | 20.7 | Medienkompetenz — digitale Kanäle | 446-452 |
 
+### 1.6 KI-Einsatz — Nutzungsideen für diese Einheit
+
+Diese Einheit lebt vom Argumentieren, von der bewussten Kanal- und Registerwahl und von der Gesprächsvorbereitung — alles Felder, in denen KI als Sparringpartner Wirkung entfalten kann. Der Begleiter macht dazu **keine Regel** (kein Verbot, kein Gebot): **Ob und wie** KI im Unterricht zum Einsatz kommt, entscheiden Sie. Die folgenden Ideen sind Empfehlungen, an denen Sie sich orientieren können — sie schützen jeweils die Eigenleistung, die im KN sichtbar bleiben muss.
+
+> [!ki_einsatz] Nutzungsideen für die ganze Einheit (Empfehlung, kein Muss)
+> Ob und wie KI eingesetzt wird, bleibt Ihr Entscheid. Wenn Sie KI einbinden möchten, wären für diese Kompetenz sinnvoll:
+> - **KI als Sparringpartner beim Argumentieren:** einen fertigen Entwurf (Positionspapier, Konflikt-Schreiben) auf Schlüssigkeit und 3B-Struktur gegenlesen lassen — bleibt es Klärung statt Anklage?
+> - **Register- und Ton-Prüfung:** einen Text daraufhin prüfen lassen, ob das Register zum Kanal und zum Adressaten passt (sachlich vs. vorwurfsvoll, Geschäftston vs. privater Chat-Ton).
+> - **Gegenposition simulieren:** KI die Rolle des Berufsbildner/in oder der Werkstattleitung übernehmen lassen, um die eigene Begründung und die Ich-Botschaften zu härten.
+> - **Nicht:** Texte oder Drehbücher von der KI generieren lassen — die Eigenleistung (SK6 Standpunkte begründen, SK7 Verständnis fördern, SK11 Mehrdeutigkeit halten) muss erkennbar bleiben, sonst trägt der KN nicht.
+
 ---
 
 ## 2. Durchführungs-Varianten — deine Entscheidung
 
-Sie wählen, wie die drei Situationen verteilt werden. Die Variante bestimmt Lektionentotal **und** wie der KN aussieht. Es gibt **kein** Standardmodell — entscheide nach Klasse, Zeit und Niveau.
+Sie wählen, wie die drei Herausforderungen verteilt werden. Die Variante bestimmt Lektionentotal **und** wie der KN aussieht. Es gibt **kein** Standardmodell — entscheide nach Klasse, Zeit und Niveau.
 
-Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Sie können Situationen weglassen oder umstellen — im KN wird nur geprüft, was tatsächlich geübt wurde.
+Auch die **Reihenfolge** A → B → C ist frei: Der Konzeptbogen zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Sie können Herausforderungen weglassen oder umstellen — im KN wird nur geprüft, was tatsächlich geübt wurde.
 
-### Variante A — Einzelarbeit, alle drei Situationen
+### Variante A — Einzelarbeit, alle drei Herausforderungen
 
 Jede/r bearbeitet A, dann B, dann C selbst.
 
@@ -140,32 +151,32 @@ Jede/r bearbeitet A, dann B, dann C selbst.
 - **KN:** ungekürzt, alle drei Herausforderungen aktivierbar
 - **Wann:** wenn Zeit da ist und die Klasse selbstständig arbeitet
 
-### Variante B — Einzelarbeit, Auswahl von 1-2 Situationen
+### Variante B — Einzelarbeit, Auswahl von 1-2 Herausforderungen
 
-Lernende wählen 1-2 Situationen.
+Lernende wählen 1-2 Herausforderungen.
 
 - **Lektionen:** 1-2 × 2 = 2-4 + 1 Set-Schluss = **3-5 Lektionen** + KN
 - **Kompetenz:** teilweise — nur die gewählten Herausforderungen selbst erarbeitet
 
 > [!warnung] KN muss mitgekürzt werden
-> Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Gesprächsführung) voll abprüfen. Streichen Sie im Fachgespräch Frage 4 (Transfer auf Sit C) bzw. passen Sie die Hybrid-Situation an, damit kein Prüfungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur prüfen, was unterrichtet wurde.
+> Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Gesprächsführung) voll abprüfen. Streichen Sie im Fachgespräch Frage 4 (Transfer auf Herausforderung C) bzw. passen Sie die Hybrid-Herausforderung an, damit kein Prüfungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur prüfen, was unterrichtet wurde.
 
 ### Variante C — Gruppenarbeit mit Jigsaw
 
-Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzle.
+Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppenpuzzle.
 
-- **Lektionen:** 2 Erarbeitung (eine Situation) + 1 Jigsaw-Austausch = **3 Lektionen** + KN
+- **Lektionen:** 2 Erarbeitung (eine Herausforderung) + 1 Jigsaw-Austausch = **3 Lektionen** + KN
 - **Kompetenz:** ein Drittel selbst, zwei Drittel **stellvertretend** über den Austausch
 
 > [!warnung] Zwei Drittel werden nur stellvertretend erworben
 > Wer nur A gemacht hat, kennt B und C nur aus dem Jigsaw. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualität** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen (kein zweites Jigsaw), bevor der KN ansteht. Sonst prüfen Sie Wissen, das nie verarbeitet wurde.
 
 > [!coaching] Variante offen ansagen
-> Sagen Sie der Klasse zu Beginn, welche Variante läuft und warum. Bei C: „Ihr werdet Experten für eine Situation und lernt die anderen zwei von euren Gspänli — im Test braucht ihr alle drei, also hört in der Austauschrunde wirklich zu." Das macht die Stellvertreter-Logik transparent.
+> Sagen Sie der Klasse zu Beginn, welche Variante läuft und warum. Bei C: „Ihr werdet Experten für eine Herausforderung und lernt die anderen zwei von euren Gspänli — im Test braucht ihr alle drei, also hört in der Austauschrunde wirklich zu." Das macht die Stellvertreter-Logik transparent.
 
 ---
 
-## 3. Situation A — Rechte klären
+## 3. Herausforderung A — Rechte klären
 
 ### Steckbrief
 
@@ -173,7 +184,8 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 |---|---|
 | Titel | Aufgabe gegen die Abmachung — was steht eigentlich im Lehrvertrag? |
 | Herausforderung | Rechte und Pflichten im Lehrvertrag klären und Position formulieren |
-| Persona | Schreiner/in EFZ, Schreinerei Brunner, Winterthur — 1. LJ, CHF 600, 41 h/Woche || Aspekte (Ges) | Recht (R1), Identität und Sozialisation (R1) |
+| Persona | Schreiner/in EFZ, Schreinerei Brunner, Winterthur — 1. LJ, CHF 600, 41 h/Woche |
+| Aspekte (Ges) | Recht (R1), Identität und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration schriftlich |
 | Schlüsselkompetenzen | SK1 Quellen unterscheiden · SK6 Standpunkte begründen · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Konflikt-Landkarte + Positionspapier (A4, 250-300 W, 3B-Schema) |
@@ -190,7 +202,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 
 | AViVA-Phase | Was passiert | Sozialform |
 |---|---|---|
-| **Ankommen** | Situation lesen, erste Reaktion sammeln („Was würden Sie tun?") | Plenum |
+| **Ankommen** | Herausforderung lesen, erste Reaktion sammeln („Was würden Sie tun?") | Plenum |
 | **Vorwissen** | Bekanntes aktivieren, Konflikt-Landkarte anlegen | Einzel |
 | **Informieren** | LF1 + LF2: Kap. 1.4 lesen, mit Symbolen markieren (Kap. 17.1) | Einzel |
 | **Verarbeiten** | Mindmap ergänzen; LF3 (Konfliktweg) + LF4: Positionspapier nach 3B verfassen | Einzel/Partner |
@@ -215,10 +227,23 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Situation, dann Gruppenpuzzl
 > [!coaching] LF3 — Entscheidung vor Begründung
 > Geben Sie LF3 nicht als offene Frage frei. Lassen Sie zuerst **2 Minuten still entscheiden** (welcher Weg?), dann erst begründen. Die Konfliktfallregelung in Kap. 1.4 hat eine Reihenfolge (zuerst Selbstkritik, dann direktes Gespräch) — die meisten springen sofort zum kantonalen Amt. Das ist die Stelle, an der Sie die Eskalations-Logik sichtbar machen.
 
+> [!troubleshooting] Herausforderung A — Lernende/r will sofort „zum Amt" oder gibt ganz nach
+> Häufigste Blockade bei LF3: Der Zielkonflikt „Recht durchsetzen vs. Beziehung erhalten" lähmt — entweder kippt die/der Lernende in Eskalation (kantonales Amt zuerst) oder gibt resigniert nach. Nicht die Lösung vorgeben. Fragen lassen: „Was möchtest du am Ende — recht haben, oder weiter gut mit deinem Berufsbildner/in arbeiten? Und welcher Weg in der Reihenfolge aus Kap. 1.4 bringt dich diesem Ziel am nächsten?" Sitzt die Einsicht, dass beide Pole legitim sind, entscheidet er die Eskalationsstufe selbst. **Erst dann** zurück zur Konflikt-Landkarte — die geordneten Fakten tragen die Begründung.
+
 **LF4 (K3+/K4):** Positionspapier nach 3B-Schema.
 
 > [!coaching] LF4
 > Bestehen Sie auf der Reihenfolge **Behauptung → Begründung → Beispiel** und auf mindestens einem konkreten OR-/ArG-Verweis in der Begründung. „Das finde ich nicht fair" ist keine Begründung; „OR 345a verlangt berufsbezogene Arbeiten" ist eine.
+
+### Tafelbild — fachliche Soll-Lösung
+
+> [!tafelbild] Erwartungsbild — Mein Lehrvertrag: Rechte und Pflichten
+> So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
+> **Pflicht-Äste** (alle sollen sie finden):
+> - **Pflichten Lernende (OR 321a, 345)** — Hauptpflicht (Anordnungen befolgen) · Sorgfaltspflicht · Treuepflicht (Geschäftsgeheimnisse) · Berufsfachschule besuchen
+> - **Rechte Lernende (OR 322ff., 345a, ArG 31)** — Lohn laut Vertrag · max. 9 h pro Tag bis 18 J. · 5 Wochen Ferien bis 20 J. · nur berufsbezogene Arbeiten · QV ohne Lohnabzug
+> - **Pflichten Berufsbildende (OR 345a)** — fachgerechte Ausbildung · Lohnzahlung · Versicherungspflicht (BU/NBU) · Ferien gewähren · Lehrzeugnis am Ende
+> **Optionale Vertiefung** (für 100 %): **Konfliktwege (Kap. 1.4 S. 36-37)** — 1. Selbstkritik üben · 2. direktes Gespräch · 3. Berufsbildungsverantwortliche/r · 4. Kantonales Amt für Berufsbildung (ABB). Dieser Ast trägt zugleich LF3 — wer ihn sauber legt, begründet die Eskalationsstufe.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -250,8 +275,39 @@ Mir ist wichtig, dass _________________________; deshalb wünsche ich mir
 ________________________________________________________________________.
 ```
 
-> [!differenzieren] 80 vs. 100 — Situation A
+> [!differenzieren] 80 vs. 100 — Herausforderung A
 > **80 % (alle):** Landkarten-Tabelle und 3B-Lückentext oben werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — vergleichen Sie Ihren eigenen Lehrvertrag mit der Musterregelung des kantonalen Amts für Berufsbildung und notieren Sie eine Abweichung. Kein zusätzliches Pflicht-Pensum, sondern Vertiefung für die, die schneller sind.
+
+### Wann ist das Produkt fertig?
+
+**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
+
+Leitfragen
+☐ Alle 4 Leitfragen schriftlich beantwortet
+☐ Rechte und Pflichten aus Kap. 1.4 korrekt zugeordnet
+☐ Konfliktweg aus Kap. 1.4 begründet gewählt
+
+Mindmap
+☐ Zentrum und vier Ast-Titel übernommen
+☐ Pro Ast eigene Detail-Punkte ergänzt
+☐ OR-/ArG-Bezug pro Ast erkennbar
+
+Handlungsprodukt
+☐ Positionspapier auf einer A4-Seite (250–300 Wörter)
+☐ 3B-Aufbau: Behauptung / Begründung mit OR-/ArG-Quelle / Beispiel
+☐ Sachlich formuliert, als Klärung und nicht als Anklage
+
+Reflexion
+☐ Alle 3 Reflexionsfragen beantwortet
+☐ Konkrete Konsequenz für den nächsten unklaren Auftrag benannt
+
+### KI-Einsatz in dieser Herausforderung
+
+> [!ki_einsatz] KI-Nutzungsideen — Herausforderung A (Positionspapier)
+> Ob und wie KI zum Einsatz kommt, entscheiden Sie. Sinnvoll wären hier:
+> - **Entwurf prüfen lassen:** das fertige Positionspapier auf Sachlichkeit und 3B-Struktur gegenlesen lassen — bleibt es Klärung statt Anklage, und steckt in der Begründung ein konkreter OR-/ArG-Verweis?
+> - **Gegenposition simulieren:** KI die Rolle des Berufsbildner/in übernehmen lassen und Gegenargumente liefern, um die eigene Begründung zu härten.
+> - **Nicht:** das Papier generieren lassen — die Eigenleistung (SK6 Standpunkte begründen) muss erkennbar bleiben.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -266,7 +322,7 @@ ________________________________________________________________________.
 
 ### Mehrdeutigkeit halten
 
-> [!mehrdeutigkeit] Situation A
+> [!mehrdeutigkeit] Herausforderung A
 > Das Spannungsfeld: **Rechte durchsetzen vs. Lernbeziehung erhalten**. Beide Pole sind legitim — die Lernende hat verankerte Rechte und ist gleichzeitig auf eine tragfähige Beziehung angewiesen. Bewertet wird **nicht**, ob sie nachgibt oder kämpft, sondern ob sie beides sauber ausweist. Wenn jemand das Positionspapier als Anklageschrift formuliert, lenken Sie zurück: „Wie klingt das für Ihren Berufsbildner/in — wollen Sie recht haben oder eine Lösung?"
 
 ### Wo welche SK geübt wird
@@ -279,7 +335,7 @@ ________________________________________________________________________.
 
 ---
 
-## 4. Situation B — Kanal und Register wählen
+## 4. Herausforderung B — Kanal und Register wählen
 
 ### Steckbrief
 
@@ -287,7 +343,8 @@ ________________________________________________________________________.
 |---|---|
 | Titel | Kritik per Chat — welcher Kanal trägt diese Antwort? |
 | Herausforderung | Kanal und Register für eine schriftliche Konfliktantwort wählen |
-| Persona | Automobilfachmann/-frau EFZ, Garage Suter AG, Aarau — 2. LJ, CHF 850 || Aspekte (Ges) | Technologie und digitale Transformation (R1), Ethik (R1) |
+| Persona | Automobilfachmann/-frau EFZ, Garage Suter AG, Aarau — 2. LJ, CHF 850 |
+| Aspekte (Ges) | Technologische und digitale Transformation (R1), Ethik (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration schriftlich |
 | Schlüsselkompetenzen | SK6 Standpunkte begründen · SK7 Verständnis fördern · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Schriftliche Antwort + Kanalbegründung (A4, zweiteilig) |
@@ -301,7 +358,7 @@ ________________________________________________________________________.
 
 | AViVA-Phase | Was passiert | Sozialform |
 |---|---|---|
-| **Ankommen** | Situation lesen | Plenum |
+| **Ankommen** | Herausforderung lesen | Plenum |
 | **Vorwissen** | „In welchem Kanal würden Sie spontan antworten?" abstimmen | Plenum |
 | **Informieren** | LF1 (Geschäftsbrief/E-Mail, Kap. 17.3) + LF2 (Medienkompetenz, Kap. 20.7) | Einzel |
 | **Verarbeiten** | Kanal-Vergleichstabelle + Mindmap; LF3 (Kanal entscheiden) + LF4: Antwort verfassen; Kanalbegründung schreiben (80–120 W) | Einzel/Partner |
@@ -321,10 +378,23 @@ ________________________________________________________________________.
 > [!coaching] LF3
 > Die meisten wählen reflexhaft „kurze WhatsApp zurück". Genau das ist der Lernpunkt. Lassen Sie die **Kanal-Vergleichstabelle** vor der Entscheidung ausfüllen — wer Verbindlichkeit und Beweismittel-Charakter einmal nebeneinander sieht, entscheidet anders. Es gibt **keine** Musterlösung; eine begründete Geschäftsmail und ein begründeter Brief sind beide gültig.
 
+> [!troubleshooting] Herausforderung B — Lernende/r tippt unter Zeitdruck sofort eine knappe WhatsApp zurück
+> Häufigste Blockade bei LF3: Das 18-Uhr-Ultimatum drückt, die/der Lernende will schnell Ruhe und antwortet reflexhaft im selben privaten Kanal — der Zielkonflikt „schnell vs. verbindlich" wird gar nicht erst gesehen. Nicht korrigieren, nicht den richtigen Kanal nennen. Fragen lassen: „Lies deine Antwort in einem halben Jahr nochmal — was beweist sie dann, und auf welchem Kanal?" Sitzt der Beweismittel-Charakter, entscheidet er die Kanalfrage selbst. **Erst dann** die Kanal-Vergleichstabelle austeilen — nicht davor.
+
 **LF4 (K3+/K4):** vollständige Antwort im gewählten Kanal, 200-250 W.
 
 > [!warnung] Typischer Stolperstein bei LF4
 > Lernende rutschen in **Du-Botschaften** und Vorwürfe („Sie haben mich blossgestellt"). Das gehört in eine Ich-Botschaft umgebaut (Vorbereitung für Sit C). Und: keine Emoticons, kein „Hoi" in einer Geschäftsmail — Register-Bruch ist hier der häufigste Punktverlust.
+
+### Tafelbild — fachliche Soll-Lösung
+
+> [!tafelbild] Erwartungsbild — Kanal · Register · Beweismittel
+> So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
+> **Pflicht-Äste** (alle sollen sie finden):
+> - **Geschäftsbrief (Kap. 17.3 S. 396-400)** — Anlass · Absicht · Begründung · Schluss · Beweismittel-Charakter
+> - **Geschäftliche E-Mail (Kap. 17.3 S. 400-404)** — präzise Betreffzeile · adressatenorientierte Sprache · keine Emoticons · klare Anrede + Gruss · CC/BCC bewusst
+> - **Medienkompetenz (Kap. 20.7)** — privat vs. geschäftlich trennen · verantwortungsvoller Umgang · Kanal passt zum Anlass? · Dokumentation und Archivierung
+> **Optionale Vertiefung** (für 100 %): **Ethische Prüfung (Kap. 18.2)** — Wer hat hier welche Macht? · Welche Norm wird verletzt? · Wahrt mein Ton die Würde beider Seiten? Dieser Ast liefert das dritte (ethische) Argument für die Kanalbegründung in LF3.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -362,8 +432,39 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 (Medienkompetenz-Argument zur Trennung privat/geschäftlich, Kap. 20.7).
 ```
 
-> [!differenzieren] 80 vs. 100 — Situation B
+> [!differenzieren] 80 vs. 100 — Herausforderung B
 > **80 %:** Vergleichstabelle + Layout-Template austeilen. **100 %:** Zusatz — prüfen Sie, ob Ihre Kanalwahl mit den Compliance-Regeln Ihres Betriebs (Datenschutz, Personalreglement) vereinbar ist.
+
+### Wann ist das Produkt fertig?
+
+**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
+
+Leitfragen
+☐ Alle 4 Leitfragen schriftlich beantwortet
+☐ Aufbau Anlass-Absicht-Begründung-Schluss erklärt
+☐ Drei Medienkompetenz-Probleme der privaten WhatsApp benannt
+
+Mindmap
+☐ Zentrum und vier Ast-Titel übernommen
+☐ Pro Ast eigene Detail-Punkte ergänzt
+☐ Bezug zu Kap. 17.3 / 20.7 / 18.2 erkennbar
+
+Handlungsprodukt
+☐ Kanalbegründung (80–120 Wörter) + Schreiben (200–250 Wörter)
+☐ Aufbau Anlass-Absicht-Begründung-Schluss erkennbar
+☐ Einheitliches Register, korrekte Anrede, keine Emoticons
+
+Reflexion
+☐ Alle 3 Reflexionsfragen beantwortet
+☐ Konkrete Änderung der eigenen WhatsApp-Nutzung benannt
+
+### KI-Einsatz in dieser Herausforderung
+
+> [!ki_einsatz] KI-Nutzungsideen — Herausforderung B (Konflikt-Schreiben + Kanalbegründung)
+> Ob und wie KI zum Einsatz kommt, entscheiden Sie. Sinnvoll wären hier:
+> - **Register prüfen lassen:** den fertigen Antwort-Entwurf daraufhin gegenlesen lassen, ob Ton und Register zum gewählten Kanal und zum Adressaten passen — schleicht sich ein privater Chat-Ton oder eine getarnte Du-Botschaft ein?
+> - **Kanal-Argumente schärfen:** die eigene Kanalbegründung der KI vorlegen und nach Gegenargumenten fragen — hält die Wahl, wenn jemand auf „schnell antworten" pocht?
+> - **Nicht:** das Schreiben oder die Begründung generieren lassen — die zu zeigende Eigenleistung (SK6 begründen, SK7 Wirkung auf den Adressaten antizipieren) muss erkennbar bleiben.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -378,7 +479,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 ### Mehrdeutigkeit halten
 
-> [!mehrdeutigkeit] Situation B
+> [!mehrdeutigkeit] Herausforderung B
 > Spannungsfeld: **schnelle digitale Antwort vs. überlegtes, verbindliches Schreiben**. WhatsApp gibt schnell Ruhe, hinterlässt aber kein Dokument; ein Brief ist verbindlich, kostet aber Tage. Bewertet wird, ob die Lernende die **Konsequenzen beider Kanäle** abwägt — nicht, welchen sie wählt. Wenn jemand schreibt „WhatsApp ist halt am schnellsten, fertig", fehlt die Abwägung.
 
 ### Wo welche SK geübt wird
@@ -391,7 +492,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 ---
 
-## 5. Situation C — Konfliktgespräch führen
+## 5. Herausforderung C — Konfliktgespräch führen
 
 ### Steckbrief
 
@@ -399,7 +500,8 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 |---|---|
 | Titel | Aussprache vorbereiten — vier Ohren statt vier Vorwürfe |
 | Herausforderung | Konfliktgespräch rollenbewusst und beziehungserhaltend führen |
-| Persona | Informatiker/in EFZ (Applikationsentwicklung), Noser Engineering, Luzern — 1. LJ, CHF 700 || Aspekte (Ges) | Ethik (R1), Identität und Sozialisation (R1) |
+| Persona | Informatiker/in EFZ (Applikationsentwicklung), Noser Engineering, Luzern — 1. LJ, CHF 700 |
+| Aspekte (Ges) | Ethik (R1), Identität und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich/bildlich · Interaktion und Kollaboration mündlich |
 | Schlüsselkompetenzen | SK4 Teamarbeit · SK7 Verständnis fördern · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Gesprächs-Drehbuch (3 Spalten) + 5-Min-Rollen-Probe + 60-Sek-Selbstauswertung |
@@ -413,7 +515,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 | AViVA-Phase | Was passiert | Sozialform |
 |---|---|---|
-| **Ankommen** | Situation lesen | Plenum |
+| **Ankommen** | Herausforderung lesen | Plenum |
 | **Vorwissen** | „Wie fühlt sich der Satz an?" | Plenum |
 | **Informieren** | LF1 (Vier Ohren, Kap. 19.2) + LF2 (Ich-Botschaften) | Einzel |
 | **Verarbeiten** | Vier-Ohren-Tabelle + Mindmap; LF3 (Einstieg wählen) + LF4: Drehbuch (3 Spalten); **Rollen-Probe** 5 Min. (Partner spielt Berufsbildner/in) | Einzel/Partner |
@@ -433,10 +535,23 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 **LF3 (K3):** Gesprächseinstieg wählen — Vorfall / Frage / gemeinsames Ziel, 2 Feedback-Regeln.
 
+### Tafelbild — fachliche Soll-Lösung
+
+> [!tafelbild] Erwartungsbild — Aussprache vorbereiten
+> So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
+> **Pflicht-Äste** (alle sollen sie finden):
+> - **Vier Ohren (Kap. 19.2 S. 425-426)** — Sachohr (Was ist passiert?) · Selbstkundgabeohr (Was sagt das über ihn?) · Beziehungsohr (Wie steht er zu mir?) · Appellohr (Was soll ich tun?)
+> - **Ich-Botschaft statt Du-Botschaft (Kap. 19.2 S. 428)** — „Ich empfinde es als …" · „Mir ist wichtig, dass …" · konkretes Verhalten, kein Etikett · Wunsch statt Vorwurf
+> - **Feedback-Regeln (Kap. 19.1 S. 422-423)** — konkret und beobachtbar · zeitnah · in Ich-Form · Kritik annehmen ohne Rechtfertigung
+> **Optionale Vertiefung** (für 100 %): **Rolle und Selbstwert (Kap. 18.1)** — Rolle als Lernende anerkennen · Selbstwert nicht aufgeben · soziale Interaktion bewusst. Dieser Ast hält das Spannungsfeld „klare Position vs. Lernenden-Rolle" sichtbar.
+
 **LF4 (K3+/K4):** Drehbuch erste 5 Minuten — Eröffnung (Ich-Botschaft) + 2 Rückfragen + Win-Win, Rolle/Selbstwert berücksichtigen.
 
 > [!coaching] LF4 — kein Monolog
 > Bestehen Sie auf dem **Wechsel** im Drehbuch: Ich sage → ich höre → ich frage. Wer nur einen Eröffnungs-Monolog schreibt, hat das Dialogische verfehlt. Mindestens zwei **offene** Rückfragen (keine Ja/Nein-Fragen), die das Selbstkundgabe- oder Sachohr aktivieren.
+
+> [!troubleshooting] Herausforderung C — Drehbuch wird zur Abrechnung (nur kämpfen) oder verstummt (nur schweigen)
+> Häufigste Blockade bei LF4: Der Zielkonflikt „klare Position vertreten vs. Lernenden-Rolle wahren" kippt in einen Pol — entweder schreibt die/der Lernende einen vorwurfsvollen Eröffnungs-Monolog, oder das Drehbuch wird so vorsichtig, dass das Anliegen verschwindet. Nicht selbst umformulieren. Spiegeln und fragen lassen: „Lies deine Eröffnung laut aus der Rolle des Berufsbildner/in — willst du danach mit ihm reden, oder machst du dicht? Und wo in deinem Drehbuch hört man, dass dir die Sache trotzdem wichtig ist?" Sitzt, dass beide Pole sichtbar bleiben müssen, baut er die Ich-Botschaft plus eine offene Rückfrage selbst ein. **Erst dann** das 3-Spalten-Drehbuch-Template austeilen.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -472,8 +587,39 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 „Damit Sie ____ bekommen und ich ____ , könnten wir ..."
 ```
 
-> [!differenzieren] 80 vs. 100 — Situation C
+> [!differenzieren] 80 vs. 100 — Herausforderung C
 > **80 %:** Vier-Ohren-Tabelle + Satzanfänge-Liste austeilen. **100 %:** Drehbuch-Variante mit **eskalierender** Reaktion des Berufsbildner/in — wie reagieren Sie, wenn er emotional wird? Das ist die anspruchsvollste Stufe, weil sie Improvisation unter Druck verlangt.
+
+### Wann ist das Produkt fertig?
+
+**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
+
+Leitfragen
+☐ Alle 4 Leitfragen schriftlich beantwortet
+☐ Vier Ohren (Schulz von Thun) korrekt angewandt
+☐ Drei Du-Botschaften in Ich-Botschaften umformuliert
+
+Mindmap
+☐ Zentrum und vier Ast-Titel übernommen
+☐ Pro Ast eigene Detail-Punkte ergänzt
+☐ Bezug zu Kap. 19.1 / 19.2 / 18.1 erkennbar
+
+Handlungsprodukt
+☐ Drehbuch in drei Spalten (Ich sage / Ich höre / Ich frage)
+☐ Eröffnung als Ich-Botschaft + mind. zwei Rückfragen + Win-Win-Vorschlag
+☐ 5-Minuten Rollen-Probe durchgeführt und 60-Sek.-Selbstauswertung
+
+Reflexion
+☐ Alle 3 Reflexionsfragen beantwortet
+☐ Eigenes dominantes Ohr benannt und Transfer formuliert
+
+### KI-Einsatz in dieser Herausforderung
+
+> [!ki_einsatz] KI-Nutzungsideen — Herausforderung C (Gesprächs-Drehbuch)
+> Ob und wie KI zum Einsatz kommt, entscheiden Sie. Sinnvoll wären hier:
+> - **Gegenüber simulieren:** KI die Rolle des Berufsbildner/in spielen lassen, damit die/der Lernende das Drehbuch testet und auf knappe oder gereizte Reaktionen Rückfragen üben kann (Ergänzung zur Partner-Rollen-Probe).
+> - **Ich-Botschaften prüfen lassen:** die drei formulierten Sätze gegenlesen lassen — sind es echte Ich-Botschaften (Empfinden + Verhalten + Wunsch) oder getarnte Du-Botschaften mit Etikett?
+> - **Nicht:** das Drehbuch schreiben lassen — die zu zeigende Eigenleistung (SK7 Verständnis fördern, SK11 das Spannungsfeld halten) muss erkennbar bleiben; gesprochen wird ohnehin in der Rollen-Probe.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -488,7 +634,7 @@ und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
 
 ### Mehrdeutigkeit halten
 
-> [!mehrdeutigkeit] Situation C
+> [!mehrdeutigkeit] Herausforderung C
 > Spannungsfeld: **klare Position vs. Lernenden-Rolle/Lernchance wahren**. Schweigt die Lernende, verliert sie ihr Anliegen; eskaliert sie, verliert sie die Lernbeziehung. Bewertet wird, wie sauber beide Pole im Gespräch gehalten werden. Im Drehbuch muss beides sichtbar bleiben — nicht nur kämpfen, nicht nur schweigen.
 
 ### Wo welche SK geübt wird
@@ -517,8 +663,8 @@ Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Ex
 | Runde | Auftrag | Zeit | Deine Moderation |
 |---|---|---|---|
 | **1 — Expertise teilen** | Jede/r 90 Sek: Problem, Entscheid, stärkstes Argument | ~5' | Zeit hart stoppen. „90 Sekunden, dann nächste." Verhindert, dass A alles erzählt. |
-| **2 — Gemeinsamkeit abstrahieren** | Was haben alle drei Situationen gemeinsam? Welches Grundprinzip steckt dahinter? | ~12' | Hier entsteht der Transfer. Frag: „Was ist in allen drei gleich, egal ob Rechtsfrage, Kanal oder Gespräch?" |
-| **3 — Transfer** | Welche Situation wäre persönlich am schwierigsten — und warum? | ~10' | Persönlicher Bezug. Lass sie das Prinzip auf sich selbst beziehen, nicht abstrakt bleiben. |
+| **2 — Gemeinsamkeit abstrahieren** | Was haben alle drei Herausforderungen gemeinsam? Welches Grundprinzip steckt dahinter? | ~12' | Hier entsteht der Transfer. Frag: „Was ist in allen drei gleich, egal ob Rechtsfrage, Kanal oder Gespräch?" |
+| **3 — Transfer** | Welche Herausforderung wäre persönlich am schwierigsten — und warum? | ~10' | Persönlicher Bezug. Lass sie das Prinzip auf sich selbst beziehen, nicht abstrakt bleiben. |
 
 > [!warnung] Jigsaw-Qualität entscheidet über den KN
 > In Runde 1 muss jeder Experte sein Drittel **wirklich** vermitteln — nicht nur „ich habe halt den Brief geschrieben". Geh herum und hör rein. Wenn eine Gruppe nur referiert, statt das Argument zu teilen, hak nach: „Und warum war das deine Entscheidung?" Ohne tragende Runde 1 fehlt zwei Dritteln der Klasse die KN-Grundlage.
@@ -528,11 +674,11 @@ Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Ex
 
 ### Bei Variante A (alle drei einzeln) — verkürzter Austausch
 
-Kein Experten-Jigsaw nötig (alle kennen alle Situationen). Stattdessen Plenum, ~15 Min.: „Was haben die drei gemeinsam? Welches Prinzip lässt sich verallgemeinern?" Direkt weiter zum Transfer.
+Kein Experten-Jigsaw nötig (alle kennen alle Herausforderungen). Stattdessen Plenum, ~15 Min.: „Was haben die drei gemeinsam? Welches Prinzip lässt sich verallgemeinern?" Direkt weiter zum Transfer.
 
 ### Bei Variante B (Auswahl 1-2) — gemischt
 
-Kurzer Austausch in Kleingruppen über die jeweils gemachten Situationen, dann Plenum-Prinzipsatz. Beachte: Lernende kennen nur ihre gewählten Herausforderungen — der KN ist entsprechend zu kürzen (Kapitel 2).
+Kurzer Austausch in Kleingruppen über die jeweils gemachten Herausforderungen, dann Plenum-Prinzipsatz. Beachte: Lernende kennen nur ihre gewählten Herausforderungen — der KN ist entsprechend zu kürzen (Kapitel 2).
 
 ---
 
@@ -540,7 +686,7 @@ Kurzer Austausch in Kleingruppen über die jeweils gemachten Situationen, dann P
 
 Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden heisst der Auftrag **Transfer**. Das ist die Phase, die R1 überhaupt nach R2/R3 trägt (Quick Ref §6). Hier wird das Wissen vom Schreiner-/Garage-/Informatik-Fall gelöst.
 
-**Auftrag (Set):** Übertrage das Kernprinzip aus deinen Situationen auf einen neuen, selbst gewählten Kontext. Schriftlich, **5-7 Sätze**, Lehrmittelbegriffe verwenden. Abgabe vor dem KN, auf Seite 2 des «Austausch & Transfer»-Arbeitsblatts.
+**Auftrag (Set):** Übertrage das Kernprinzip aus deinen Herausforderungen auf einen neuen, selbst gewählten Kontext. Schriftlich, **5-7 Sätze**, Lehrmittelbegriffe verwenden. Abgabe vor dem KN, auf Seite 2 des «Austausch & Transfer»-Arbeitsblatts.
 
 **Der Anker-Satz** (gehört an die Tafel, nachdem die Klasse ihn selbst erarbeitet hat — nicht vorher vorgeben):
 
@@ -556,11 +702,11 @@ Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden
 
 ## 8. Der Kompetenznachweis (KN)
 
-Der KN nimmt eine **neue Hybrid-Situation** und prüft, ob die Lernende alle drei Herausforderungen zusammenführen kann.
+Der KN nimmt eine **neue Hybrid-Herausforderung** und prüft, ob die Lernende alle drei Herausforderungen zusammenführen kann.
 
-### Hybrid-Situation — „Critical Incident: der Brief vom Lehrlingsverantwortlichen"
+### Hybrid-Herausforderung — „Critical Incident: der Brief vom Lehrlingsverantwortlichen"
 
-Persona: Konstrukteur/in EFZ, Konstruktionsbüro Berger, Olten — 1. LJ, CHF 750. (Bewusst **neue** Persona, kommt in keiner der drei Situationen vor.)
+Persona: Konstrukteur/in EFZ, Konstruktionsbüro Berger, Olten — 1. LJ, CHF 750. (Bewusst **neue** Persona, kommt in keiner der drei Herausforderungen vor.)
 
 > Der Berufsbildner/in bittet, eine fehlerhafte Zeichnung „vertraulich zwischen uns" zu korrigieren — **ohne** Eintrag in die Lerndokumentation. Beim Zögern Abwertung vor dem Engineering-Review („Du bist halt noch nicht so weit"). Am Morgen eine private WhatsApp mit Ultimatum bis 17 Uhr. Leitfrage: „Wie gehe ich jetzt vor — und welcher Schritt ist der erste?"
 
@@ -573,7 +719,7 @@ So sind die drei Herausforderungen verbaut (Alignment):
 | **C — Aussprache** | Abwertung vor dem Team trifft Rolle/Selbstwert; Aussprache braucht Ich-Botschaft + Win-Win |
 
 > [!hinweis] Neue Dimension
-> Der KN fügt eine Schärfung hinzu, die in keiner Einzelsituation so scharf war: Hier steht ein **möglicher Rechtsverstoss** (Lerndoku unterschlagen) im Raum. Der Transfer-Teil verlangt deshalb, dass die Lernende erkennt, **wo die Methode aus Sit C an Grenzen stösst** — reine Beziehungspflege reicht nicht, wenn eine Pflicht verletzt wird.
+> Der KN fügt eine Schärfung hinzu, die in keiner Einzelsituation so scharf war: Hier steht ein **möglicher Rechtsverstoss** (Lerndoku unterschlagen) im Raum. Der Transfer-Teil verlangt deshalb, dass die Lernende erkennt, **wo die Methode aus Herausforderung C an Grenzen stösst** — reine Beziehungspflege reicht nicht, wenn eine Pflicht verletzt wird.
 
 ### Methodenwahl — Entscheidungshilfe
 
@@ -598,8 +744,35 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 | 1 | Erklären | K2 | Hauptpflichten (OR 321a, 345) + Lerndoku-Pflicht |
 | 2 | Anwenden | K3 | Kanal-Logik (Kap. 17.3) auf die WhatsApp anwenden + begründen |
 | 3 | Beurteilen | K3 | Recht einfordern UND Beziehung halten — beide Pole gleich gewichten? |
-| 4 | Transfer | K4 | Vergleich mit Sit C: was übernehmen, wo anders, weil Rechtsverstoss im Raum |
+| 4 | Transfer | K4 | Vergleich mit Herausforderung C: was übernehmen, wo anders, weil Rechtsverstoss im Raum |
 | 5 | Werthaltung | K4 | ethische Werthaltung bei „vertraulich lassen, was dokumentiert gehört" (Kap. 18.2) |
+
+**Erwartungshorizont je Frage** — was eine Antwort auf welcher Stufe zeigt. Kein Wort-für-Wort-Skript, sondern der Massstab fürs faire, konsistente Benoten (Kriterium *Fachkorrektheit* für die K2-Frage, sonst *Argumentation* / *Position-Werthaltung* / *Ethisches Prinzip* aus `rubrik_shared`).
+
+> [!erwartungshorizont] Frage 1 (Erklären, K2) — Pflichten + Lerndoku-Pflicht
+> **Stufe 3 zeigt:** benennt die Hauptpflicht (Anordnungen befolgen, OR 321a), Sorgfalts- und Treuepflicht (OR 345) und ordnet die Lerndokumentations-Pflicht korrekt dem Fall zu (Kap. 1.4) — Begriffe richtig und situationsangemessen.
+> **Stufe 4 zeigt zusätzlich:** verweist präzise auf die einschlägigen OR-Artikel und erklärt, warum die „vertrauliche" Korrektur ohne Lerndoku-Eintrag genau gegen diese Pflicht läuft.
+> **Nicht Stufe 4 (hier: lückenhaft):** zählt nur „man muss halt machen, was der Chef sagt" auf, ohne die Lerndoku-Pflicht überhaupt zu nennen — die zentrale Pflicht des Falls fehlt.
+
+> [!erwartungshorizont] Frage 2 (Anwenden, K3) — Kanal-Logik begründen
+> **Stufe 3 zeigt:** wendet die Kanal-Kriterien aus Kap. 17.3 an (Register, Beweismittel-Charakter, Verbindlichkeit), wählt einen sachgerechten geschäftlichen Kanal und begründet die Wahl nachvollziehbar gegenüber dem Berufsbildner/in.
+> **Stufe 4 zeigt zusätzlich:** wägt die Kanäle differenziert ab (privat vs. geschäftlich, schnell vs. verbindlich) und macht die Medienkompetenz-Konsequenz aus Kap. 20.7 explizit, statt nur einen Kanal zu nennen.
+> **Nicht Stufe 4:** „Ich antworte einfach schnell per WhatsApp, dann ist Ruhe." — souverän entschieden, aber löst den Kanal-Zielkonflikt auf, statt ihn abzuwägen → verfehlt den Anwendungs-Kern.
+
+> [!erwartungshorizont] Frage 3 (Beurteilen, K3) — beide Pole gleich gewichten?
+> **Stufe 3 zeigt:** benennt beide Interessen (Recht auf korrekte Lerndoku · Beziehung zum Berufsbildner/in erhalten) und entscheidet begründet, ohne eine Seite zu streichen.
+> **Stufe 4 zeigt zusätzlich:** hält den Zielkonflikt offen aus, zeigt, warum keine Seite eliminiert werden darf, und bezieht die Rechtsverstoss-Schärfung des Hybrid-Falls in die Abwägung ein.
+> **Nicht Stufe 4:** „Ich meld's einfach dem Ausbildungsleiter, fertig." — klingt entschlossen, löst aber den Konflikt einseitig auf → verfehlt das Kompetenzversprechen.
+
+> [!erwartungshorizont] Frage 4 (Transfer, K4) — Methode aus Herausforderung C übernehmen, wo anders?
+> **Stufe 3 zeigt:** überträgt die Methode aus Herausforderung C (Vier Ohren, Ich-Botschaft, Win-Win) korrekt auf den Hybrid-Fall und benennt, was gleich bleibt.
+> **Stufe 4 zeigt zusätzlich:** erkennt die Grenze der reinen Beziehungspflege — weil ein möglicher Rechtsverstoss (Lerndoku unterschlagen) im Raum steht, reicht Win-Win nicht; die Sachlage muss zusätzlich geklärt/dokumentiert werden. Transfer und Bruchstelle explizit benannt.
+> **Nicht Stufe 4:** „Genau wie in Herausforderung C: Ich-Botschaft, Win-Win, Beziehung retten — passt." — übernimmt die Methode 1:1 und löst damit den Rechtskonflikt in reine Beziehungspflege auf, übersieht den Rechtsverstoss.
+
+> [!erwartungshorizont] Frage 5 (Werthaltung, K4) — „vertraulich lassen, was dokumentiert gehört"
+> **Stufe 3 zeigt:** formuliert eine begründete ethische Position (Würde, Verantwortung, Perspektivenübernahme, Kap. 18.2) und erklärt, weshalb das „vertrauliche" Weglassen problematisch ist.
+> **Stufe 4 zeigt zusätzlich:** macht sichtbar, dass es nicht nur eine Rechtsfrage ist — die ethische Logik (Verantwortung gegenüber der eigenen Ausbildung, Vertrauen, Vorbildwirkung) trägt auch dort, wo der Paragraph allein nicht greift; Position in Ich-Form mit anerkannter Mehrdeutigkeit.
+> **Nicht Stufe 4:** „Es ist verboten, also mach ich's nicht." — reduziert die Werthaltung auf die Rechtsfrage und löst die ethische Mehrdeutigkeit auf, statt sie zu begründen.
 
 ### Bi-dimensionale Bewertung — so benotest du (Quick Ref §5)
 
@@ -634,9 +807,3 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 
 > [!mehrdeutigkeit] Der häufigste Bewertungsfehler
 > Verführung: die „klarste" Lösung am höchsten zu benoten. Aber wer den Zielkonflikt **auflöst** (z. B. „ich melde sofort dem Ausbildungsleiter, fertig"), verfehlt das Kompetenzversprechen — egal wie entschlossen das klingt. Stufe 4 in „Argumentation" und „Position" verlangt, dass **beide** legitimen Interessen sichtbar bleiben und die Entscheidung **begründet** fällt.
-
----
-
-## Anhang — Quellen dieses Dokuments
-
-Erzeugt aus dem 3er-Set 1.1.1 (`set`, `prinzip`, `sit_A/B/C`, `kn`). Didaktische Grundlagen: AViVA/IPERKA/BBW-4-Phasen und bi-dim Bewertung aus `ABU_ASSESSMENT_QUICK_REFERENCE_v2.md` §5/§6, 8 Merkmale Lernsituation §10, K-Stufen §7. Lehrmittel-Verweise (Kap. 1.4-20.7) stammen aus den Quellen-Ankern der JSONs.

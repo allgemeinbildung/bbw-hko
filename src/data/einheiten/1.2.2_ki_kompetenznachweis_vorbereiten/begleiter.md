@@ -119,6 +119,17 @@ Das erklärt das Niveau: Hier wird **gelegt, nicht abgeschlossen**. Der Transfer
 > [!hinweis] Kein Lehrmittelkapitel — bewusst
 > Diese Einheit hat keinen Buchanker. Das Material sind die KI-Tools selbst, der eigene kommende KN jeder Lernenden und je eine selbstgewählte verlässliche Prüfquelle. Sorgen Sie vorab dafür, dass alle Lernenden Zugang zu einem KI-Tool haben und ein echtes KN-Thema mitbringen, an dem sie üben.
 
+### 1.6 KI-Einsatz — Nutzungsideen für diese Einheit
+
+Diese Einheit hat KI zum Thema — die Lernenden setzen KI-Werkzeuge selbst ein. Davon getrennt zu denken ist die Frage, **wie Sie als Lehrperson** KI beim Führen der Einheit nutzen könnten. **Ob und wie** Sie das tun, bleibt vollständig Ihr Entscheid — das Folgende sind Empfehlungen, keine Regel und keine Vorgabe. Achten Sie nur darauf, dass die Eigenleistung der Lernenden (das Prompten, Prüfen und Steuern, das im KN zählt) erkennbar Ihre eigene bleibt.
+
+> [!ki_einsatz] KI-Nutzungsideen für die ganze Einheit (LP entscheidet Ob/Wie)
+> Sinnvoll wären auf Einheits-Ebene zum Beispiel:
+> - **Persona-Varianten erzeugen:** zu den drei Herausforderungen weitere berufsspezifische Personas und KN-Themen generieren lassen, damit jede/r mit einem Fall aus dem eigenen Beruf üben kann.
+> - **Halluzination demonstrieren:** vor dem Unterricht selbst einen Recherche-Prompt zu einem Nischenthema testen, um ein eigenes Beispiel mit echten und erfundenen Quellen für Herausforderung B in der Hand zu haben.
+> - **Erwartungsbild schärfen:** die eigene Soll-Lösung gegen einen KI-Entwurf gegenlesen, um zu prüfen, ob Sie im Tafelbild (Kap. 3-5) einen Pflicht-Ast übersehen haben.
+> - **Fragenpool ergänzen:** zusätzliche Fachgespräch- oder Mini-Case-Varianten zur Hybrid-Herausforderung (Kap. 8) entwerfen lassen, die Sie anschliessend selbst auf Stufe und Zielkonflikt prüfen.
+
 ---
 
 ## 2. Durchführungs-Varianten — deine Entscheidung
@@ -212,10 +223,23 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 > [!coaching] LF3 — Markieren statt nur lesen
 > Geben Sie den Lernenden zwei Symbole: Häkchen = «hier habe ich verstanden», Fragezeichen = «hier hat mir die KI nur Arbeit abgenommen». Das Markieren zwingt zur ehrlichen Selbsteinschätzung — genau der Kern der Herausforderung. Sammeln Sie am Schluss nur die Fragezeichen ein, sie zeigen Ihnen die Lücken.
 
+> [!troubleshooting] Herausforderung A — Lernende/r übernimmt die erste glatte Antwort und will weiter
+> Nicht erklären, warum das zu wenig ist. Fragen lassen: «Klappen Sie die Antwort zu — könnten Sie das morgen ohne KI erklären?» Bleibt es still, sitzt der Punkt: Tempo hat das Verstehen nicht ersetzt. **Erst dann** das Häkchen/Fragezeichen-Markieren ansetzen — die Lücke, die er gerade selbst gespürt hat, ist genau die Stelle, an der er nachhaken muss.
+
 **LF4 (K3+/K4):** Kurzkommentar zum stärksten Prompt.
 
 > [!coaching] LF4
 > Verlangen Sie eine **Begründung mit Wirkung**, nicht «der war gut». Gut ist: «Dieser Prompt half, weil er die KI gezwungen hat, mir eine Kontrollfrage zu stellen, statt nur zu erklären.» Das ist die fokussierte Sprachform-Teilaufgabe, die ins Protokoll einfliesst.
+
+### Tafelbild — fachliche Soll-Lösung
+
+> [!tafelbild] Erwartungsbild — Gezielt prompten: fragen, um zu verstehen
+> **Pflicht-Äste** (Lernende sollen alle finden):
+> - **Bausteine eines guten Prompts** — Rolle vorgeben («Du bist meine Lerncoach/in») · Ziel nennen («Ich will es selbst erklären können») · Kontext geben (mein KN-Thema, mein Stand) · Format wünschen (Beispiel, Schritte, Frage zurück)
+> - **Iterativ nachfragen** — «Erkläre einfacher / mit einem Beispiel» · «Stell mir eine Kontrollfrage» · «Was habe ich noch nicht verstanden?» · Schritt für Schritt statt eine Riesenantwort
+> - **Verstehen statt übernehmen** — Antwort zuklappen, selbst wiederholen · mit eigenen Worten nacherzählen · Lücken erkennen und gezielt nachfragen · Lernfortschritt markieren
+>
+> **Optionale Vertiefung** (für 100 %): **Stolpersteine** — zu vage gefragt → schwammige Antwort · erste Antwort kopiert, nichts behalten · keine Kontrollfrage gestellt
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -239,6 +263,37 @@ NACHHAKEN: „Erkläre nochmals einfacher." · „Stell mir eine Kontrollfrage."
 
 > [!differenzieren] 80 vs. 100 — Herausforderung A
 > **80 % (alle):** Bausteine-Liste und Protokoll-Raster werden ausgeteilt. **100 % (selbstgesteuert):** Zusatzauftrag — denselben Ausgangs-Prompt zweimal stellen (einmal vage, einmal scharf) und die beiden Antworten direkt gegenüberstellen. Kein zusätzliches Pflicht-Pensum, sondern Vertiefung für die, die schneller sind.
+
+### Wann ist das Produkt fertig?
+
+**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
+
+Leitfragen
+☐ Alle vier Leitfragen schriftlich beantwortet
+☐ Gutes und schlechtes Prompten an eigenen Beispielen unterschieden
+☐ Übernehmen vs. Nachhaken pro Antwort begründet entschieden
+
+Mindmap
+☐ Zentrum und vier Ast-Titel übernommen
+☐ Pro Ast eigene Detail-Punkte ergänzt
+☐ Verbindung zwischen Prompt-Bausteinen und Lernfortschritt erkennbar
+
+Handlungsprodukt (Prompt-Protokoll)
+☐ Mindestens 3 iterativ verbesserte Prompts mit KI-Antworten dokumentiert
+☐ Lernfortschritt im Dialog sichtbar markiert
+☐ Kurzkommentar zum stärksten Prompt vorhanden
+
+Reflexion
+☐ Alle 3 Reflexionsfragen beantwortet
+☐ Konkrete Konsequenz für den nächsten KI-Dialog benannt
+
+### KI-Einsatz in dieser Herausforderung
+
+> [!ki_einsatz] KI-Nutzungsideen — Herausforderung A (Prompt-Protokoll)
+> Ob und wie KI zum Einsatz kommt, entscheiden Sie. Sinnvoll wären hier:
+> - **Gegen-Prompt prüfen lassen:** das fertige Prompt-Protokoll von der KI auf Schärfe gegenlesen lassen — «Welche meiner Prompts waren noch vage, welche gezielt?» — und die Rückmeldung als zusätzliche Markierungs-Ebene nutzen.
+> - **Kontrollfrage-Coach:** die KI die Rolle einer Prüferin übernehmen lassen, die nach jeder Erklärung eine Kontrollfrage stellt — so härtet die Lernende ihr eigenes Verständnis, statt sich Antworten liefern zu lassen.
+> - **Nicht:** die Begründung zum stärksten Prompt von der KI schreiben lassen — die Eigenleistung (SK3 eigene bessere Prompts entwickeln, das Benennen des Zielkonflikts) muss erkennbar bleiben.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -315,10 +370,23 @@ NACHHAKEN: „Erkläre nochmals einfacher." · „Stell mir eine Kontrollfrage."
 > [!coaching] LF3 — die K4-Stelle
 > Das ist die anspruchsvollste Leitfrage. Geben Sie drei Bewertungsachsen vor (verlässlich? tief? nachvollziehbar?) und verlangen Sie pro Achse einen Satz mit Beleg aus der eigenen Prüftabelle. So wird aus «die Recherche war mittel» eine echte Analyse.
 
+> [!troubleshooting] Herausforderung B — Lernende/r will die ganze Recherche pauschal verwerfen oder pauschal übernehmen
+> Nicht widersprechen. Spiegeln lassen: «Sie sagen, die Recherche ist unbrauchbar — welche einzelne Quelle hat denn die Prüfung bestanden, welche nicht?» (bzw. bei «alles gut»: «Zeigen Sie mir die Zeile in Ihrer Tabelle, wo Sie das belegt haben.») Sobald die Lernende Quelle für Quelle trennen muss, kippt das Pauschalurteil in die geforderte Differenzierung. **Erst dann** das 3-Achsen-Gesamturteil verlangen — es baut auf dieser quellenweisen Trennung auf.
+
 **LF4 (K3+/K4):** Prüf-Eintrag zu einer Quelle.
 
 > [!coaching] LF4
 > Der Prüf-Eintrag muss **nachvollziehbar** sein: was geprüft, was Ergebnis, Verwendung ja/nein. Das ist die fokussierte rezeptive Sprachform — die Lernende dokumentiert ihre Quellenlektüre so, dass eine Aussenstehende sie nachvollziehen könnte.
+
+### Tafelbild — fachliche Soll-Lösung
+
+> [!tafelbild] Erwartungsbild — KI-Recherche prüfen: vertrauen oder kontrollieren?
+> **Pflicht-Äste** (Lernende sollen alle finden):
+> - **Warum KI Quellen erfindet** — Sprachmodell sagt das Wahrscheinlichste, nicht das Wahre · Halluzination: erfundene URLs und Titel · Antwort klingt sicher, auch wenn sie falsch ist
+> - **Drei Prüfkriterien** — Existiert die Quelle / der Link wirklich? · Steht dort, was die KI behauptet? · Ist der Herausgeber vertrauenswürdig und aktuell?
+> - **Recherche bewerten** — Verlässlichkeit: stimmen die Quellen? · Tiefe: Oberfläche oder echter Gehalt? · Nachvollziehbarkeit: zurückverfolgbar? · Welchem Teil vertraue ich, welchem nicht?
+>
+> **Optionale Vertiefung** (für 100 %): **Modelle vergleichen** — denselben Prompt in 2-3 Modelle geben · Outputs nebeneinander legen · Wo widersprechen sie sich? · Welches Modell belegt seine Aussagen besser?
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -342,6 +410,37 @@ FAZIT:           Diesem Teil vertraue ich: ____ . Diesen prüfe ich selbst nach:
 
 > [!differenzieren] 80 vs. 100 — Herausforderung B
 > **80 %:** Prüftabelle + Gesamturteil-Gerüst austeilen. **100 %:** Zusatz — denselben Recherche-Prompt in zwei bis drei verschiedene Modelle geben und in einer Vergleichsspalte gegenüberstellen: Wo widersprechen sie sich, welches belegt besser? Das ist die optionale K4-Vertiefung, kein Pflichtteil.
+
+### Wann ist das Produkt fertig?
+
+**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
+
+Leitfragen
+☐ Alle vier Leitfragen schriftlich beantwortet
+☐ Halluzination korrekt erklärt
+☐ Jede Quelle nach den drei Kriterien geprüft
+
+Mindmap
+☐ Zentrum und vier Ast-Titel übernommen
+☐ Pro Ast eigene Detail-Punkte ergänzt
+☐ Verbindung zwischen Prüfkriterien und Gesamturteil erkennbar
+
+Handlungsprodukt (KI-Recherche-Analyse)
+☐ Prüftabelle mit allen KI-Quellen und drei Kriterien ausgefüllt
+☐ Begründetes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit
+☐ Erfundene oder leere Quellen klar als solche markiert
+
+Reflexion
+☐ Alle 3 Reflexionsfragen beantwortet
+☐ Konkrete Konsequenz für den nächsten KI-Output benannt
+
+### KI-Einsatz in dieser Herausforderung
+
+> [!ki_einsatz] KI-Nutzungsideen — Herausforderung B (KI-Recherche-Analyse)
+> Ob und wie KI zum Einsatz kommt, entscheiden Sie. Sinnvoll wären hier:
+> - **Material liefern lassen:** die KI bewusst eine Recherche mit Quellen zum eigenen KN-Thema erzeugen lassen — genau dieser Output ist das Prüfobjekt, das die Lernende anschliessend selbst kontrolliert.
+> - **Gegen-Modell zum Quercheck:** eine zweite KI bitten, eine von der ersten genannte Quelle zu verifizieren — und die widersprüchlichen Aussagen als Anlass nehmen, im Original nachzusehen statt einem Modell zu glauben.
+> - **Nicht:** das Gesamturteil von der KI formulieren lassen — die zu zeigende Kompetenz (SK1 echte von erfundenen Quellen unterscheiden) verlangt, dass die Prüfung und das Urteil sichtbar von der Lernenden stammen.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -417,10 +516,23 @@ FAZIT:           Diesem Teil vertraue ich: ____ . Diesen prüfe ich selbst nach:
 > [!coaching] LF3
 > Verlangen Sie pro Lernschritt ein **überprüfbares Ziel** («Ich kann die fünf HACCP-Schritte frei aufzählen»), nicht «ich lerne Hygiene». Nur an einem konkreten Ziel lässt sich entscheiden, ob KI hilft oder im Weg steht.
 
+> [!troubleshooting] Herausforderung C — Lernende/r schreibt zu jedem Schritt «mit KI» (Zeitdruck) und gibt das Üben ab
+> Nicht über Selbstwirksamkeit dozieren. Fragen lassen: «Stellen Sie sich vor, im KN sitzen Sie ohne KI — bei welchem dieser Schritte würden Sie ins Schwimmen kommen?» Der Schritt, den er nennt, beantwortet die Entscheidung selbst: dort muss er bewusst ohne KI üben. **Erst dann** die Spalte «Begründung» ausfüllen lassen — sie hält fest, warum genau dieser Schritt nicht delegierbar ist.
+
 **LF4 (K3+/K4):** Drei Übe-Prompts, die abfragen statt abnehmen.
 
 > [!coaching] LF4
 > Der Unterschied ist subtil und wichtig: «Erkläre mir HACCP» (nimmt ab) vs. «Frag mich zu HACCP ab und sag mir, was ich vergessen habe» (lässt üben). Sammeln Sie zwei, drei Lernenden-Prompts und sortieren Sie sie gemeinsam in «nimmt ab» und «lässt üben».
+
+### Tafelbild — fachliche Soll-Lösung
+
+> [!tafelbild] Erwartungsbild — Mein KI-Lernplan: helfen lassen ohne abgeben
+> **Pflicht-Äste** (Lernende sollen alle finden):
+> - **Lernschritte zum KN** — Thema in Teilschritte aufteilen · pro Schritt ein konkretes Ziel · Reihenfolge und Zeit grob planen
+> - **Wo die KI hilft** — Lernkarten und Quizfragen erzeugen · mich abfragen lassen · Erklärungen vereinfachen · Feedback auf meine Erklärung geben
+> - **Wo ich bewusst ohne arbeite** — frei erklären, ohne nachzulesen · selbst zusammenfassen · üben wie im KN (ohne KI) · Selbstwirksamkeit aufbauen
+>
+> **Optionale Vertiefung** (für 100 %): **Verantwortungsvoll nutzen** — ehrlich bleiben: was kann ich selbst? · KI als Hilfe, nicht als Ersatz · nicht abgeben, was ich können muss
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -443,6 +555,37 @@ VERANTWORTUNGS-CHECK: „Lasse ich die KI irgendwo etwas tun, das ich im KN selb
 
 > [!differenzieren] 80 vs. 100 — Herausforderung C
 > **80 %:** Lernplan-Tabelle + Übe-Prompt-Muster austeilen. **100 %:** Zusatz — einen Lernschritt einmal mit und einmal ohne KI durchspielen und vergleichen, bei welchem Weg das Können besser hängen bleibt.
+
+### Wann ist das Produkt fertig?
+
+**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
+
+Leitfragen
+☐ Alle vier Leitfragen schriftlich beantwortet
+☐ Unterschied zwischen gefühlter und echter Vorbereitung erklärt
+☐ Pro Lernschritt KI-Einsatz begründet entschieden
+
+Mindmap
+☐ Zentrum und vier Ast-Titel übernommen
+☐ Pro Ast eigene Detail-Punkte ergänzt
+☐ Verbindung zwischen Lernschritten und KI-Einsatz erkennbar
+
+Handlungsprodukt (KI-Lernplan)
+☐ Lernplan-Tabelle mit Schritten, Zielen und KI-Entscheidung ausgefüllt
+☐ Jede KI-Entscheidung begründet
+☐ Drei einsatzfertige Übe-Prompts und Verantwortungs-Check vorhanden
+
+Reflexion
+☐ Alle 3 Reflexionsfragen beantwortet
+☐ Konkrete Konsequenz für die eigene KN-Vorbereitung benannt
+
+### KI-Einsatz in dieser Herausforderung
+
+> [!ki_einsatz] KI-Nutzungsideen — Herausforderung C (KI-Lernplan)
+> Ob und wie KI zum Einsatz kommt, entscheiden Sie. Sinnvoll wären hier:
+> - **Übe-Prompts testen lassen:** die Lernende ihre drei Übe-Prompts direkt im KI-Tool ausprobieren lassen — fragt die KI sie tatsächlich ab und gibt Feedback, oder liefert sie doch fertige Antworten? Das schärft den Unterschied «abfragen vs. abnehmen».
+> - **Abfrage-Partnerin spielen:** für die als «bewusst ohne KI» markierten Schritte die KI am Ende als Abfrage-Coach einsetzen, um zu kontrollieren, ob das selbst Geübte wirklich frei sitzt — ohne dass sie beim Lernen selbst die Arbeit übernommen hat.
+> - **Nicht:** die Mit-/Ohne-Entscheidung und die Begründungen von der KI ausfüllen lassen — die Steuerungs- und Werthaltungs-Kompetenz (SK2/SK5) zeigt sich nur, wenn die Lernende selbst abwägt.
 
 ### Coaching & Scaffolds — auf einen Blick
 
@@ -470,7 +613,7 @@ VERANTWORTUNGS-CHECK: „Lasse ich die KI irgendwo etwas tun, das ich im KN selb
 
 ---
 
-## 6. Austausch & Transfer — das eigenständige Set-Dokument
+## 6. Austausch & Transfer — das eigenständige Abschluss-Arbeitsblatt
 
 Austausch und Transfer bilden ein **eigenständiges Set-Dokument**, das die Lernenden zusätzlich zu den drei Herausforderungsblättern erhalten. Es ist zweiseitig: **Seite 1 Austausch** (die drei Lösungen im Vergleich), **Seite 2 Transfer** (Kapitel 7). Wie der Austausch konkret läuft, hängt von der Durchführungs-Variante (Kapitel 2) ab.
 
@@ -567,7 +710,34 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 | 4 | Transfer | K4 | Vergleich mit dem KI-Lernplan aus Herausforderung C: wo gleich, wo wegen Zeitdruck anders |
 | 5 | Werthaltung | K4 | Haltung, wenn die KI die ganze Vorbereitung abnehmen will (verantwortungsvolle Nutzung) |
 
-### Bi-dimensionale Bewertung — so benotest du
+**Erwartungshorizont je Frage** — was eine Antwort auf welcher Stufe zeigt. Kein Wortlaut-Skript, sondern Orientierung für faire, konsistente Benotung ohne Musterlösung. (Bei einer Mini-Case- oder Werkschau-Wahl die analogen Aufgaben mit derselben Rubrik abgleichen.)
+
+> [!erwartungshorizont] Frage 1 (Erklären, K2) — vollständig vs. lückenhaft
+> **Stufe 3 zeigt:** erklärt mit eigenen Worten, was ein Prompt ist, und benennt, warum die vage Sammelfrage zu einer oberflächlichen Antwort führt (kein Ziel, keine Rolle, kein Kontext, kein Format vorgegeben).
+> **Stufe 4 zeigt zusätzlich:** benennt den Mechanismus präzise — das Modell füllt fehlende Vorgaben mit dem Wahrscheinlichsten — und überträgt das auf einen eigenen, gezielten Prompt als Gegenbeispiel.
+> **Nicht Stufe 4 (hier: lückenhaft):** «Ein Prompt ist halt die Frage an die KI.» — Begriff genannt, aber der Zusammenhang vage → präzise erklärt = warum, nicht nur was.
+
+> [!erwartungshorizont] Frage 2 (Anwenden, K3) — Quellenprüfung auf die drei Links
+> **Stufe 3 zeigt:** wendet die drei Kriterien (existiert / belegt die Aussage / vertrauenswürdig) auf die Links an und behandelt den toten Link korrekt als nicht verwendbar.
+> **Stufe 4 zeigt zusätzlich:** unterscheidet die subtile Halluzination (Link existiert, belegt aber das Behauptete nicht) von der offensichtlichen (toter Link) und beschreibt, wie sie die übrigen Quellen gegenprüft.
+> **Nicht Stufe 4:** «Ein Link ist tot, also stimmt die ganze Recherche nicht.» — souverän, löst aber den Konflikt auf (pauschales Verwerfen) statt quellenweise zu differenzieren.
+
+> [!erwartungshorizont] Frage 3 (Beurteilen, K3) — beide Anliegen gleich gewichten?
+> **Stufe 3 zeigt:** benennt beide Pole (schnell fertig werden · im KN ohne KI bestehen) und entscheidet begründet, ohne einen Pol zu streichen.
+> **Stufe 4 zeigt zusätzlich:** hält den Zielkonflikt offen aus, zeigt, warum Tempo und Eigenkönnen nicht gegeneinander ausgespielt werden dürfen, und ordnet situationsabhängig zu, wann welcher Pol Vorrang hat.
+> **Nicht Stufe 4:** «Hauptsache schnell fertig, im KN improvisiere ich.» — klingt entschlossen, löst aber den Konflikt auf → verfehlt das Kompetenzversprechen.
+
+> [!erwartungshorizont] Frage 4 (Transfer, K4) — Vergleich mit dem Lernplan aus Herausforderung C
+> **Stufe 3 zeigt:** überträgt die Mit-/Ohne-KI-Logik aus dem eigenen Lernplan auf die KN-Szene und nennt mindestens eine Entscheidung, die gleich bleibt, und eine, die wegen des Zeitdrucks anders ausfällt.
+> **Stufe 4 zeigt zusätzlich:** begründet die Abweichung am Prinzip (was unter Zeitdruck delegierbar ist, ohne die im KN nötige Selbstwirksamkeit zu opfern) und macht den Transfer explizit statt nur zu beschreiben.
+> **Nicht Stufe 4:** «Unter Zeitdruck lasse ich einfach alles von der KI machen.» — wirkt pragmatisch, hebt aber die ganze Steuerungslogik auf → kein Transfer.
+
+> [!erwartungshorizont] Frage 5 (Werthaltung, K4) — wenn die KI die ganze Vorbereitung abnehmen will
+> **Stufe 3 zeigt:** formuliert eine Haltung in Ich-Form und benennt den Zielkonflikt zwischen Effizienz und eigenem Können.
+> **Stufe 4 zeigt zusätzlich:** reflektiert verantwortungsvolle KI-Nutzung als mehr als Zeitersparnis (Verantwortung für das eigene Können, Ehrlichkeit gegenüber sich selbst) und anerkennt die Mehrdeutigkeit, statt eine Pauschalregel zu setzen.
+> **Nicht Stufe 4:** «Ich nutze KI für alles, das ist effizient und alle machen es so.» — souverän vorgetragen, löst die Werthaltungs-Mehrdeutigkeit aber auf → verfehlt das Versprechen.
+
+### Bi-dimensionale Bewertung — so benotest du (Quick Ref §5)
 
 Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges ergeben **zwei getrennte, gleichgewichtete Noten** — nie zu einer verrechnen.
 
@@ -600,9 +770,3 @@ Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges erg
 
 > [!mehrdeutigkeit] Der häufigste Bewertungsfehler
 > Verführung: die «klarste» Lösung am höchsten zu benoten. Aber wer den Zielkonflikt **auflöst** (z. B. «ich übernehme einfach alles von der KI, fertig» oder «ich nutze nie KI»), verfehlt das Kompetenzversprechen — egal wie entschlossen das klingt. Stufe 4 in «Argumentation» und «Position» verlangt, dass **beide** Pole (Vertrauen und Kontrolle) sichtbar bleiben und die Entscheidung **begründet** fällt.
-
----
-
-## Anhang — Quellen dieses Dokuments
-
-Erzeugt aus dem 3er-Set 1.2.2 (`set`, `prinzip`, `herausforderung_A/B/C`, `kn`). Didaktische Grundlagen: AViVA / IPERKA / BBW-4-Phasen und bi-dimensionale Bewertung, 8 Merkmale Lernsituation, K-Stufen. Diese Einheit arbeitet bewusst ohne Lehrmittel — Material sind die KI-Tools, der eigene kommende KN und eine selbstgewählte verlässliche Quelle.

@@ -22,6 +22,11 @@ export const CALLOUT_LABELS: Record<string, string> = {
   coaching: 'Coaching-Move',
   mehrdeutigkeit: 'Mehrdeutigkeit halten',
   differenzieren: 'Differenzieren',
+  // v2 — LP-Support-Erweiterungen (TEIL 6 der Struktur-Spec)
+  erwartungshorizont: 'Erwartungshorizont',
+  troubleshooting: 'Wenn es stockt',
+  tafelbild: 'Tafelbild',
+  ki_einsatz: 'KI-Einsatz',
 }
 
 export const CALLOUT_COLORS: Record<string, { bg: string; bd: string }> = {
@@ -33,6 +38,11 @@ export const CALLOUT_COLORS: Record<string, { bg: string; bd: string }> = {
   coaching:       { bg: 'FDF5E1', bd: 'A07A14' },
   mehrdeutigkeit: { bg: 'E6F1F1', bd: '2F7373' },
   differenzieren: { bg: 'EDEDED', bd: '4A4A4A' },
+  // v2 — LP-Support-Erweiterungen (TEIL 6 der Struktur-Spec) — distinct hues
+  erwartungshorizont: { bg: 'FBE7F1', bd: 'A12061' },
+  troubleshooting:    { bg: 'FCE9D8', bd: 'C2611A' },
+  tafelbild:          { bg: 'E4EDE8', bd: '1E5E45' },
+  ki_einsatz:         { bg: 'ECEAFA', bd: '5B3FD6' },
 }
 
 const POINT = (pt: number) => pt * 2
@@ -497,7 +507,7 @@ function buildHeader(_meta: BegleiterMeta, logoBuffer: ArrayBuffer | Uint8Array 
     ? new Paragraph({
         alignment: AlignmentType.LEFT,
         spacing: { before: 0, after: 0 },
-        children: [new ImageRun({ data: logoBuffer, transformation: { width: 150, height: 57 } } as any)],
+        children: [new ImageRun({ data: logoBuffer, transformation: { width: 150, height: 57 }, type: 'png' } as any)],
       })
     : new Paragraph({
         alignment: AlignmentType.LEFT,
