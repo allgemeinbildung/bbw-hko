@@ -82,7 +82,26 @@ marked.use({
 })
 
 const { meta: fm, body } = parseFrontmatter(fullSet.begleiter.raw)
-const htmlBody = await marked.parse(body)
+const htmlBodyRaw = await marked.parse(body)
+
+// Add stable ids to every H2 chapter and collect them for the sidebar index,
+// so each entry can jump straight to its section in one click.
+const toc: { id: string; text: string }[] = []
+let chapCounter = 0
+const htmlBody = htmlBodyRaw.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (_m, attrs, inner) => {
+  const id = `kap-${chapCounter++}`
+  const text = String(inner).replace(/<[^>]+>/g, '').trim()
+  toc.push({ id, text })
+  return `<h2${attrs} id="${id}">${inner}</h2>`
+})
+
+const tocHtml = toc.length ? `
+<nav class="begleiter-toc" aria-label="Inhalt">
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    ${toc.map((t) => `<li><a href="#${t.id}">${t.text}</a></li>`).join('')}
+  </ol>
+</nav>` : ''
 
 const pageTitle = fm.titel || `${meta.kompetenz_nr} · Begleitdokument`
 const eyebrow = [fm.kompetenz, fm.thema].filter(Boolean).join(' · ')
@@ -141,10 +160,46 @@ body { overflow: auto; }
 }
 .begleiter-bar .bar-download:hover { background: #f5f5f5; border-color: var(--bbw-ink-2); }
 .begleiter-wrap { max-width: 860px; margin: 32px auto 80px; padding: 0 24px; }
+/* Sidebar layout: sticky Inhalt index + content card */
+html { scroll-behavior: smooth; }
+.begleiter-layout {
+  display: flex; gap: 36px; align-items: flex-start;
+  max-width: 1180px; margin: 32px auto 80px; padding: 0 24px;
+}
+.begleiter-main { flex: 1; min-width: 0; }
+.begleiter-toc {
+  position: sticky; top: 72px; flex: 0 0 240px; width: 240px;
+  font-family: var(--font-sans); font-size: 13px;
+  max-height: calc(100vh - 96px); overflow-y: auto;
+}
+.begleiter-toc .toc-title {
+  text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 10px; font-weight: 700; color: var(--bbw-brand-deep); margin-bottom: 12px;
+}
+.begleiter-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.begleiter-toc li { counter-increment: toc; }
+.begleiter-toc a {
+  display: block; padding: 6px 10px; margin-bottom: 2px;
+  border-left: 2px solid var(--bbw-line); border-radius: 0 4px 4px 0;
+  color: var(--bbw-ink-2); text-decoration: none; line-height: 1.35;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.begleiter-toc a::before { content: counter(toc) ".\\00a0\\00a0"; color: var(--bbw-brand-deep); font-weight: 600; }
+.begleiter-toc a:hover,
+.begleiter-toc a.active {
+  background: var(--bbw-brand-tint, #e8f3ec);
+  border-left-color: var(--bbw-brand); color: var(--bbw-ink);
+}
+.begleiter-toc a.active { font-weight: 600; }
 .begleiter-card {
   background: white; border-radius: 8px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
   padding: 56px 72px;
+}
+.doc h2 { scroll-margin-top: 72px; }
+@media (max-width: 900px) {
+  .begleiter-toc { display: none; }
+  .begleiter-layout { max-width: 860px; }
 }
 .doc__title-block .eyebrow {
   font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.14em;
@@ -164,7 +219,9 @@ body { overflow: auto; }
 .doc__title-block { margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--bbw-line); }
 @media print {
   .begleiter-bar { display: none !important; }
-  .begleiter-wrap { margin: 0; padding: 0; max-width: none; }
+  .begleiter-toc { display: none !important; }
+  .begleiter-wrap,
+  .begleiter-layout { margin: 0; padding: 0; max-width: none; }
   .begleiter-card { box-shadow: none; border-radius: 0; padding: 40px 56px; }
 }
 </style>
@@ -176,14 +233,34 @@ body { overflow: auto; }
   <a class="bar-download" href="/api/einheit-begleiter-docx/${setKey}">Als Word ↓</a>
   <button class="bar-print" onclick="window.print()">Drucken</button>
 </div>
-<div class="begleiter-wrap">
-  <div class="begleiter-card">
-    <div class="doc">
-      ${titleBlock}
-      ${htmlBody}
+<div class="begleiter-layout">
+  ${tocHtml}
+  <div class="begleiter-main">
+    <div class="begleiter-card">
+      <div class="doc">
+        ${titleBlock}
+        ${htmlBody}
+      </div>
     </div>
   </div>
 </div>
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.begleiter-toc a'));
+    if (!links.length) return;
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    function onScroll() {
+      var pos = window.scrollY + 90;
+      var idx = 0;
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i] && targets[i].offsetTop <= pos) idx = i;
+      }
+      links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 </body>
 </html>`
 

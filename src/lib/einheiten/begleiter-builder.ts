@@ -9,6 +9,7 @@ import {
   HeadingLevel, AlignmentType, BorderStyle, ShadingType,
   Table, TableRow, TableCell, WidthType, PageNumber,
   ImageRun, LevelFormat, ExternalHyperlink, UnderlineType,
+  Bookmark, InternalHyperlink,
 } from 'docx'
 
 import type { BegleiterMeta } from './types'
@@ -185,7 +186,7 @@ function spacer(): Paragraph {
   return new Paragraph({ spacing: { before: 0, after: 0 }, children: [new TextRun({ text: '', size: POINT(4) })] })
 }
 
-function headingParagraph(t: any): Paragraph {
+function headingParagraph(t: any, bookmarkId?: string): Paragraph {
   const level = t.depth as 1 | 2 | 3 | 4
   const map: Record<number, any> = {
     1: { size: POINT(22), color: C.ink, bold: true, font: 'Source Serif 4', spacing: { before: 0, after: 120 } },
@@ -197,14 +198,59 @@ function headingParagraph(t: any): Paragraph {
   const cfg = map[level] || map[4]
   const runs = inlineRuns(t.tokens, { bold: cfg.bold, color: cfg.color, font: cfg.font, size: cfg.size, allCaps: cfg.caps })
   const headingStyle: any = { 1: HeadingLevel.HEADING_1, 2: HeadingLevel.HEADING_2, 3: HeadingLevel.HEADING_3, 4: HeadingLevel.HEADING_4 }[level]
+  // When a bookmarkId is given (H2 chapters), wrap the runs in a Bookmark so the
+  // page-1 Inhalt index can jump straight here via an InternalHyperlink anchor.
+  const children = bookmarkId ? [new Bookmark({ id: bookmarkId, children: runs as any })] : runs
   return new Paragraph({
     heading: headingStyle,
     spacing: cfg.spacing,
     border: cfg.border,
-    children: runs as any,
+    children: children as any,
     keepNext: true,
     pageBreakBefore: level === 2,
   })
+}
+
+// Flatten marked inline tokens to a plain text label for the Inhalt index.
+function tokenPlainText(tokens: any[] | undefined): string {
+  if (!tokens) return ''
+  return tokens.map((t: any) => (t.tokens && t.tokens.length ? tokenPlainText(t.tokens) : (t.text || ''))).join('')
+}
+
+// Page-1 clickable chapter index. One InternalHyperlink per H2 chapter, each
+// pointing at the matching Bookmark id (chap-N), so a click jumps to the section.
+function tocBlock(entries: { text: string; id: string }[]): Paragraph[] {
+  if (!entries.length) return []
+  const out: Paragraph[] = []
+  out.push(new Paragraph({
+    spacing: { before: 0, after: 120 },
+    children: [new TextRun({
+      text: 'INHALT', bold: true, color: C.brandDeep, size: POINT(9.5),
+      characterSpacing: 24, font: 'Source Sans 3',
+    })],
+  }))
+  entries.forEach((e, i) => {
+    out.push(new Paragraph({
+      spacing: { before: 30, after: 30, line: 300 },
+      indent: { left: TWIP(14), hanging: TWIP(14) },
+      children: [new InternalHyperlink({
+        anchor: e.id,
+        children: [
+          new TextRun({ text: `${i + 1}.  `, bold: true, color: C.brandDeep, size: POINT(10.5), font: 'Source Sans 3' }),
+          new TextRun({
+            text: e.text, color: C.ink, size: POINT(10.5), font: 'Source Sans 3',
+            underline: { type: UnderlineType.SINGLE, color: C.line },
+          }),
+        ],
+      })],
+    }))
+  })
+  out.push(new Paragraph({
+    spacing: { before: 80, after: 240 },
+    border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: C.line, space: 8 } },
+    children: [new TextRun({ text: '' })],
+  }))
+  return out
 }
 
 function blockquoteParagraphs(t: any): any[] {
@@ -592,10 +638,24 @@ function buildDocument(raw: string, logoBuffer: ArrayBuffer | Uint8Array | null 
   const marked = makeMarked()
   const tokens = marked.lexer(body || '') as any[]
 
+  // Collect H2 chapters (in document order) for the page-1 Inhalt index.
+  const chapters: { text: string; id: string }[] = []
+  for (const t of tokens) {
+    if (t.type === 'heading' && t.depth === 2) {
+      chapters.push({ text: tokenPlainText(t.tokens) || stripTags(decodeEntities(t.text || '')), id: `chap-${chapters.length}` })
+    }
+  }
+
   const children: any[] = []
   children.push(...titleBlock(meta))
+  children.push(...tocBlock(chapters))
+  let chapIdx = 0
   for (const t of tokens) {
-    for (const b of blockToParagraphs(t)) children.push(b)
+    if (t.type === 'heading' && t.depth === 2) {
+      children.push(headingParagraph(t, `chap-${chapIdx++}`))
+    } else {
+      for (const b of blockToParagraphs(t)) children.push(b)
+    }
   }
 
   return new Document({
@@ -631,3 +691,4 @@ export async function buildBegleiterBuffer(raw: string, logoBuffer: ArrayBuffer 
 }
 
 export function parseBegleiter(raw: string) { return parseFrontmatter(raw) }
+// (page-1 Inhalt index added)
