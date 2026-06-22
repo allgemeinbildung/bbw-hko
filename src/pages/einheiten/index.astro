@@ -29,6 +29,11 @@ const filters = {
 const sichtbar = visibleEinheiten(einheitenIndex, role)
 const filtered = applyEinheitenFilters(sichtbar, filters)
 
+// Aufteilung nach Grundbildungstyp: EFZ (3-/4-jährig) oben, EBA (2-jährig) unten.
+const isEba = (l: string | undefined | null) => (l ?? '').toUpperCase().startsWith('EBA')
+const efzEinheiten = filtered.filter((e) => !isEba(e.lehrgang))
+const ebaEinheiten = filtered.filter((e) => isEba(e.lehrgang))
+
 // Filter-UI vorerst ausgeblendet (erst 2 Einheiten, alle T1 / 1.1.1). Auf `true` setzen,
 // sobald Einheiten aus verschiedenen Themen/Kompetenzen dazukommen → reaktiviert das Formular.
 // Die Filterlogik (URL-Query-Params) bleibt aktiv, nur die Bedienoberfläche ist verborgen.
@@ -51,16 +56,6 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
       — und gib im Anschluss Feedback.
     </p>
   </div>
-
-  {role !== 'kt1' && (
-    <div class="mb-5 rounded-lg px-4 py-3 flex items-start gap-3 border" style="border-color: var(--brand); background: var(--brand-tint)">
-      <span class="text-lg leading-none" style="color: var(--brand-dark)" aria-hidden="true">◷</span>
-      <p class="text-sm text-slate-700 m-0">
-        <strong style="color: var(--brand-dark)">EBA – in Vorbereitung.</strong>
-        Einheiten für die zweijährige Grundbildung (EBA) entstehen gerade und werden in Kürze hier aufgeschaltet. Aktuell sind die EFZ-Einheiten sichtbar.
-      </p>
-    </div>
-  )}
 
   {SHOW_FILTER && (
   <form method="get" class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap gap-3 items-end">
@@ -94,57 +89,137 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
   </form>
   )}
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {filtered.map((e) => (
-      <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
-        <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
-          <h2 class="text-base font-semibold text-slate-900 leading-snug mb-1">
-            {e.einheit_titel}
-          </h2>
-          {role === 'kt1' && (isEntwurf(e) || draftKomponenten(e).length > 0) && (
+  {/* ── EFZ – Berufliche Grundbildung (3-/4-jährig) ───────────────────── */}
+  <section class="mb-10">
+    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
+      <h2 class="text-lg font-semibold text-slate-900">EFZ – Berufliche Grundbildung</h2>
+      <span class="text-xs text-slate-500">3-/4-jährig · {efzEinheiten.length} {efzEinheiten.length === 1 ? 'Einheit' : 'Einheiten'}</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {efzEinheiten.map((e) => (
+        <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
+          <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
+            <h3 class="text-base font-semibold text-slate-900 leading-snug mb-1">
+              {e.einheit_titel}
+            </h3>
+            {role === 'kt1' && (isEntwurf(e) || draftKomponenten(e).length > 0) && (
+              <div class="flex flex-wrap gap-1.5 mb-2">
+                {isEntwurf(e) && (
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+                    ● Entwurf · nur KT1
+                  </span>
+                )}
+                {!isEntwurf(e) && draftKomponenten(e).map((k) => (
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                    ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
+                  </span>
+                ))}
+              </div>
+            )}
             <div class="flex flex-wrap gap-1.5 mb-2">
-              {isEntwurf(e) && (
-                <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
-                  ● Entwurf · nur KT1
-                </span>
-              )}
-              {!isEntwurf(e) && draftKomponenten(e).map((k) => (
-                <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                  ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
-                </span>
+              {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
+                <span class="chip chip-blue">Kompetenz {k}</span>
               ))}
             </div>
-          )}
-          <div class="flex flex-wrap gap-1.5 mb-2">
-            {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
-              <span class="chip chip-blue">Kompetenz {k}</span>
-            ))}
-          </div>
-          <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
-        </a>
-        <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
-          <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
-            Öffnen →
+            <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
           </a>
-          {e.hat_begleiter && (
-            <a
-              href={`/einheiten/${e.id}/begleiter`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
-              style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
-            >
-              Lies mich!
+          <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
+            <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
+              Öffnen →
             </a>
-          )}
+            {e.hat_begleiter && (
+              <a
+                href={`/einheiten/${e.id}/begleiter`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
+                style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
+              >
+                Lies mich!
+              </a>
+            )}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
+      ))}
+    </div>
 
-  {filtered.length === 0 && (
-    <div class="bg-white border border-slate-200 rounded-lg p-10 text-center text-slate-500">
-      Keine Unterrichtseinheiten gefunden.
+    {efzEinheiten.length === 0 && (
+      <div class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500 text-sm">
+        Keine EFZ-Einheiten gefunden.
+      </div>
+    )}
+  </section>
+
+  {/* ── EBA – Zweijährige Grundbildung ────────────────────────────────── */}
+  <section class="mb-10">
+    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
+      <h2 class="text-lg font-semibold text-slate-900">EBA – Zweijährige Grundbildung</h2>
+      <span class="text-xs text-slate-500">2-jährig · {ebaEinheiten.length} {ebaEinheiten.length === 1 ? 'Einheit' : 'Einheiten'}</span>
+    </div>
+
+    {ebaEinheiten.length > 0 && (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {ebaEinheiten.map((e) => (
+          <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
+            <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
+              <h3 class="text-base font-semibold text-slate-900 leading-snug mb-1">
+                {e.einheit_titel}
+              </h3>
+              {role === 'kt1' && (isEntwurf(e) || draftKomponenten(e).length > 0) && (
+                <div class="flex flex-wrap gap-1.5 mb-2">
+                  {isEntwurf(e) && (
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+                      ● Entwurf · nur KT1
+                    </span>
+                  )}
+                  {!isEntwurf(e) && draftKomponenten(e).map((k) => (
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                      ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
+                    </span>
+                  ))}
+                </div>
+              )}
+              <div class="flex flex-wrap gap-1.5 mb-2">
+                {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
+                  <span class="chip chip-blue">Kompetenz {k}</span>
+                ))}
+              </div>
+              <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
+            </a>
+            <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
+              <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
+                Öffnen →
+              </a>
+              {e.hat_begleiter && (
+                <a
+                  href={`/einheiten/${e.id}/begleiter`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
+                  style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
+                >
+                  Lies mich!
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {ebaEinheiten.length === 0 && (
+      <p class="text-sm text-slate-400 italic">Noch keine EBA-Einheiten aufgeschaltet.</p>
+    )}
+  </section>
+
+  {ebaEinheiten.length === 0 && (
+    <div class="rounded-lg px-4 py-3 flex items-start gap-3 border" style="border-color: var(--brand); background: var(--brand-tint)">
+      <span class="text-lg leading-none" style="color: var(--brand-dark)" aria-hidden="true">◷</span>
+      <p class="text-sm text-slate-700 m-0">
+        <strong style="color: var(--brand-dark)">EBA – in Vorbereitung.</strong>
+        Einheiten für die zweijährige Grundbildung (EBA) entstehen gerade und werden in Kürze hier aufgeschaltet. Aktuell sind die EFZ-Einheiten sichtbar.
+      </p>
     </div>
   )}
 
