@@ -44,7 +44,7 @@ Der AViVA-Bogen ist der sichtbare Fahrplan jeder Herausforderung (Kapitel 3-5) u
 **5. Mehrdeutigkeit ist gewollt.** In jeder Herausforderung steckt ein echter Zielkonflikt — im Kern: **der KI vertrauen vs. ihre Ergebnisse kontrollieren**. Die Lernenden sollen ihn **nicht auflösen** («immer KI» oder «nie KI»), sondern offen benennen und begründet entscheiden. Das ist der Punkt, an dem Unterricht zu KI am häufigsten kippt — siehe die `[!mehrdeutigkeit]`-Hinweise.
 
 > [!hinweis] Lektionentotal
-> Abhängig von der Durchführungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw, Variante C) bis **7 Lektionen** (alle drei Herausforderungen einzeln, Variante A), jeweils zu 45 Minuten, plus den KN. Jede Herausforderung = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
+> Abhängig von der Durchführungs-Variante (Kapitel 2): **3 Lektionen** (Austausch & Transfer, Variante C) bis **7 Lektionen** (alle drei Herausforderungen einzeln, Variante A), jeweils zu 45 Minuten, plus den KN. Jede Herausforderung = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
 
 > [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
 > Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (was ein Prompt ist, wie KI «halluziniert», was Selbstwirksamkeit bedeutet) führen Sie **vorab im Unterricht** ein; die Herausforderungsblätter setzen dieses Vorwissen voraus. **Wichtig:** Die Lernenden brauchen Zugang zu einem KI-Tool und je einen echten eigenen kommenden KN als Übungsmaterial — es gibt bewusst kein Lehrmittelkapitel.
@@ -157,15 +157,15 @@ Lernende wählen 1-2 Herausforderungen.
 > [!warnung] KN muss mitgekürzt werden
 > Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Lernplan) voll abprüfen. Streichen Sie im Fachgespräch Frage 4 (Transfer auf Herausforderung C) bzw. passen Sie die Hybrid-Herausforderung an, damit kein Prüfungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur prüfen, was unterrichtet wurde.
 
-### Variante C — Gruppenarbeit mit Jigsaw
+### Variante C — Gruppenarbeit mit Austausch & Transfer
 
 Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppenpuzzle.
 
-- **Lektionen:** 2 Erarbeitung (eine Herausforderung) + 1 Jigsaw-Austausch = **3 Lektionen** + KN
+- **Lektionen:** 2 Erarbeitung (eine Herausforderung) + 1 Austausch & Transfer = **3 Lektionen** + KN
 - **Kompetenz:** ein Drittel selbst, zwei Drittel **stellvertretend** über den Austausch
 
 > [!warnung] Zwei Drittel werden nur stellvertretend erworben
-> Wer nur A gemacht hat, kennt B und C nur aus dem Jigsaw. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualität** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen, bevor der KN ansteht. Sonst prüfen Sie Wissen, das nie verarbeitet wurde.
+> Wer nur A gemacht hat, kennt B und C nur aus dem Austausch & Transfer. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualität** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen, bevor der KN ansteht. Sonst prüfen Sie Wissen, das nie verarbeitet wurde.
 
 > [!coaching] Variante offen ansagen
 > Sagen Sie der Klasse zu Beginn, welche Variante läuft und warum. Bei C: «Ihr werdet Experten für eine Herausforderung und lernt die anderen zwei von euren Gspänli — im KN braucht ihr alle drei, also hört in der Austauschrunde wirklich zu.» Das macht die Stellvertreter-Logik transparent.
@@ -619,10 +619,10 @@ Austausch und Transfer bilden ein **eigenständiges Set-Dokument**, das die Lern
 
 > [!hinweis] Das Arbeitsblatt «Austausch & Transfer» — Aufbau und Wahl der Sozialform
 > Die Lernenden bekommen den Set-Abschluss als eigenes A4-Blatt (zwei Seiten):
-> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte (Prompt-Protokoll, KI-Recherche-Analyse, KI-Lernplan) nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Sätzen mit je einem Beispiel), **GA** (Gruppenpuzzle/Jigsaw, 3 Runden) und **PL** (Plenumssynthese). **Sie wählen eine** — passend zur Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt.
+> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte (Prompt-Protokoll, KI-Recherche-Analyse, KI-Lernplan) nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Sätzen mit je einem Beispiel), **GA** (Austausch & Transfer, 3 Runden) und **PL** (Plenumssynthese). **Sie wählen eine** — passend zur Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt.
 > - **Seite 2 — Transfer:** Der Transfer-Auftrag mit Schreibhilfe und Selbstcheck. Das Blatt liegt fertig im ZIP-Bundle.
 
-### Bei Variante C (Jigsaw) — voller Gruppenpuzzle
+### Bei Variante C (Austausch & Transfer) — voller Gruppenpuzzle
 
 Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Experten.
 
@@ -632,15 +632,15 @@ Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Ex
 | **2 — Gemeinsamkeit abstrahieren** | Was haben alle drei Herausforderungen gemeinsam? Welches Grundprinzip zum KI-Einsatz steckt dahinter? | ~12' | Hier entsteht der Transfer. Frag: «Was ist in allen drei gleich — beim Prompten, beim Prüfen, beim Planen?» |
 | **3 — Transfer** | Welche Herausforderung wäre persönlich am schwierigsten — und warum? | ~10' | Persönlicher Bezug. Lass sie das Prinzip auf sich selbst beziehen, nicht abstrakt bleiben. |
 
-> [!warnung] Jigsaw-Qualität entscheidet über den KN
+> [!warnung] Austausch-&-Transfer-Qualität entscheidet über den KN
 > In Runde 1 muss jeder Experte sein Drittel **wirklich** vermitteln — nicht nur «ich habe halt prompted». Geh herum und hör rein. Wenn eine Gruppe nur referiert, hak nach: «Und warum war das deine Entscheidung?» Ohne tragende Runde 1 fehlt zwei Dritteln der Klasse die KN-Grundlage.
 
 > [!coaching] Plenum-Abschluss
-> Sammle nach dem Jigsaw im Plenum **einen** gemeinsamen Prinzipsatz an der Tafel («KI macht schneller, nicht automatisch kompetenter — ich entscheide, was ich ihr überlasse und was ich prüfe»). Das ist die Brücke zum Transfer (Kapitel 7).
+> Sammle nach dem Austausch & Transfer im Plenum **einen** gemeinsamen Prinzipsatz an der Tafel («KI macht schneller, nicht automatisch kompetenter — ich entscheide, was ich ihr überlasse und was ich prüfe»). Das ist die Brücke zum Transfer (Kapitel 7).
 
 ### Bei Variante A (alle drei einzeln) — verkürzter Austausch
 
-Kein Experten-Jigsaw nötig (alle kennen alle Herausforderungen). Stattdessen Plenum, ~15 Min.: «Was haben die drei gemeinsam? Welches Prinzip lässt sich verallgemeinern?» Direkt weiter zum Transfer.
+Kein Experten-Austausch & Transfer nötig (alle kennen alle Herausforderungen). Stattdessen Plenum, ~15 Min.: «Was haben die drei gemeinsam? Welches Prinzip lässt sich verallgemeinern?» Direkt weiter zum Transfer.
 
 ### Bei Variante B (Auswahl 1-2) — gemischt
 
@@ -695,7 +695,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 | **Werkschau + Transfer** | schriftlich (+ optional 5' Präs.), Werkwahl + Begründung + Reflexion 200-250 W | Reflexion und Transfer über das eigene Produkt | Prod schriftl. | du die **Selbstreflexion** und das Prinzip-Verständnis ins Zentrum stellst |
 
 > [!coaching] Methodenwahl an Klasse + Variante koppeln
-> Nach Jigsaw (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespräch**, weil alle drei Herausforderungen selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Herausforderungen anpassen und Fragen/Aufgaben trimmen.
+> Nach Austausch & Transfer (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespräch**, weil alle drei Herausforderungen selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Herausforderungen anpassen und Fragen/Aufgaben trimmen.
 
 > [!hinweis] Ausblick — weitere Prüfformen möglich
 > Die drei hier angelegten KN-Formen (Fachgespräch, Mini Case schriftlich, Werkschau + Transfer) sind ein **Startset**, kein abschliessender Kanon. Dieselbe Hybrid-Herausforderung und dieselbe bi-dimensionale Rubrik tragen auch andere Formen — etwa einen **Critical Incident** (eine zugespitzte Entscheidungsszene mit Stopp-Punkt: «Was tust du jetzt?») oder ein **Produkt mit Präsentation** (ein vor der Klasse verteidigtes Handlungsprodukt). Diese sind bewusst noch nicht ausgearbeitet — wenn du eine brauchst, lässt sie sich auf der bestehenden Rubrik aufsetzen. Reiner Ausblick.

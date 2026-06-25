@@ -43,7 +43,7 @@ Der AViVA-Bogen ist der sichtbare Fahrplan jeder Herausforderung (Kapitel 3-5) u
 **5. Mehrdeutigkeit ist gewollt.** In jeder Herausforderung steckt ein echter Zielkonflikt (Tempo vs. Sorgfalt, Vollständigkeit vs. ehrliche Unsicherheit, zitieren vs. umformulieren). Die Lernenden sollen ihn **nicht auflösen**, sondern offen benennen und begründet entscheiden. Das ist der Punkt, an dem traditioneller Unterricht am häufigsten kippt — siehe die `[!mehrdeutigkeit]`-Hinweise.
 
 > [!hinweis] Lektionentotal
-> Abhängig von der Durchführungs-Variante (Kapitel 2): **3 Lektionen** (Jigsaw) bis **7 Lektionen** (alle drei Herausforderungen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Herausforderung = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
+> Abhängig von der Durchführungs-Variante (Kapitel 2): **3 Lektionen** (Austausch & Transfer) bis **7 Lektionen** (alle drei Herausforderungen einzeln), jeweils zu 45 Minuten, plus den KN. Jede Herausforderung = 2 Erarbeitungs-Lektionen; die Set-Phase (Austausch + Reflexion + Transfer) ist eine gemeinsame Schluss-Lektion.
 
 > [!hinweis] Diese Unterlagen sind Starthilfe, nicht Vollprogramm
 > Das Set liefert Kompetenz, Herausforderung und Ideen — den roten Faden, nicht die fertige Einheit (Zielanspruch rund 80 %). Die fachlichen Grundlagen (Lehrvertrag, Lohn und Abzüge, Datenschutz, Fall-Schema, Korrespondenz) üben Sie **vorab im Unterricht**; die Situationsblätter setzen dieses Vorwissen voraus. Ergänzen Sie eigene Beispiele, Inputs und Übungen aus Ihrem Fundus.
@@ -161,15 +161,15 @@ Lernende wählen 1-2 Herausforderungen.
 > [!warnung] KN muss mitgekürzt werden
 > Wenn die Lernenden nur A und B gemacht haben, darf der KN nicht die C-Herausforderung (Antwortschreiben) voll abprüfen. Streichen Sie im Fachgespräch die entsprechende Transfer-Frage bzw. passen Sie die Hybrid-Herausforderung an, damit kein Prüfungsteil verlangt, was nie erarbeitet wurde. Konstruktives Alignment heisst: nur prüfen, was unterrichtet wurde.
 
-### Variante C — Gruppenarbeit mit Jigsaw
+### Variante C — Gruppenarbeit mit Austausch & Transfer
 
 Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppenpuzzle.
 
-- **Lektionen:** 2 Erarbeitung (eine Herausforderung) + 1 Jigsaw-Austausch = **3 Lektionen** + KN
+- **Lektionen:** 2 Erarbeitung (eine Herausforderung) + 1 Austausch & Transfer = **3 Lektionen** + KN
 - **Kompetenz:** ein Drittel selbst, zwei Drittel **stellvertretend** über den Austausch
 
 > [!warnung] Zwei Drittel werden nur stellvertretend erworben
-> Wer nur A gemacht hat, kennt B und C nur aus dem Jigsaw. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualität** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen (kein zweites Jigsaw), bevor der KN ansteht. Sonst prüfen Sie Wissen, das nie verarbeitet wurde.
+> Wer nur A gemacht hat, kennt B und C nur aus dem Austausch & Transfer. Der KN verlangt aber alle drei. Zwei Gegenmittel: (1) Die **Austausch-Qualität** eng moderieren (Kapitel 6) — die Expertenrunde muss wirklich tragen. (2) Die beiden nicht selbst erstellten Handlungsprodukte in **Einzelarbeit nachholen** lassen (keinen zweiten Austausch & Transfer), bevor der KN ansteht. Sonst prüfen Sie Wissen, das nie verarbeitet wurde.
 
 > [!coaching] Variante offen ansagen
 > Sagen Sie der Klasse zu Beginn, welche Variante läuft und warum. Bei C: „Ihr werdet Experten für eine Herausforderung und lernt die anderen zwei von euren Gspänli — im Test braucht ihr alle drei, also hört in der Austauschrunde wirklich zu." Das macht die Stellvertreter-Logik transparent.
@@ -356,7 +356,7 @@ Reflexion
 | AViVA-Phase | Was passiert | Sozialform |
 |---|---|---|
 | **Ankommen** | Herausforderung lesen: „Wie löst eigentlich eine Juristin einen Fall — wo fängt sie an?" | Plenum |
-| **Vorwissen** | Spickzettel aus Herausforderung A (oder Jigsaw-Input) reaktivieren | Murmelrunde |
+| **Vorwissen** | Spickzettel aus Herausforderung A (oder Austausch-&-Transfer-Input) reaktivieren | Murmelrunde |
 | **Informieren** | Kap. 1.3 lesen; drei Schritte am Beispiel nachvollziehen; LF1; LF3 (Rollenfrage) rahmen | Einzel |
 | **Verarbeiten** | LF2 (Fall 1 durchspielen); Mindmap Schema; LF3 + LF4; Fall-Mappe (2 Fälle) | Einzel |
 | **Auswerten** | Schritt-Reihenfolge laut benennen lassen; Restunsicherheit pro Fall benennen | Plenum/Einzel |
@@ -501,7 +501,7 @@ Reflexion
 | AViVA-Phase | Was passiert | Sozialform |
 |---|---|---|
 | **Ankommen** | Herausforderung lesen: „Worüber haben Sie schon mal etwas Wichtiges per Chat geregelt — und ging das gut?" | Plenum |
-| **Vorwissen** | Fall-Mappe aus Herausforderung B (oder Jigsaw-Input) reaktivieren; „Was ist die eine Sache, die der Brief erreichen soll?" | Murmelrunde |
+| **Vorwissen** | Fall-Mappe aus Herausforderung B (oder Austausch-&-Transfer-Input) reaktivieren; „Was ist die eine Sache, die der Brief erreichen soll?" | Murmelrunde |
 | **Informieren** | Kap. 17.3 (Briefaufbau) + Kap. 17.2 (3B); LF1 + LF2; LF3 begründen | Einzel |
 | **Verarbeiten** | Kanalwahl entscheiden (LF3); Mindmap; LF4: Antwortschreiben 200-300 Wörter mit eingebettetem 3B | Einzel |
 | **Auswerten** | Hand-Abstimmung E-Mail vs. WhatsApp, je zwei Argumente; Konventions-Check (Anrede, keine Emoticons, Quelle zitiert) | Plenum/Einzel |
@@ -638,10 +638,10 @@ Austausch und Transfer bilden seit dem Redesign **ein eigenständiges Set-Dokume
 
 > [!hinweis] Das Arbeitsblatt «Austausch & Transfer» — Aufbau und Wahl der Sozialform
 > Die Lernenden bekommen den Set-Abschluss als eigenes A4-Blatt (zwei Seiten):
-> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte (Regel-Spickzettel, Fall-Mappe, Antwortschreiben) nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Sätzen mit je einem Beispiel zusammenfassen), **GA** (Gruppenpuzzle/Jigsaw, 3 Runden) und **PL** (Plenumssynthese). Jede Option hat ein Notizfeld. **Sie wählen eine** — passend zur Durchführungs-Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt. Die Abschnitte unten (verzweigt nach Variante) beschreiben die gewählte Form im Detail.
+> - **Seite 1 — Austausch:** Oben stehen die drei Handlungsprodukte (Regel-Spickzettel, Fall-Mappe, Antwortschreiben) nebeneinander. Darunter sind **drei Sozialformen zum Ankreuzen** angeboten — **EA** (Einzelauftrag: das gemeinsame Prinzip allein in rund 5 Sätzen mit je einem Beispiel zusammenfassen), **GA** (Austausch & Transfer, 3 Runden) und **PL** (Plenumssynthese). Jede Option hat ein Notizfeld. **Sie wählen eine** — passend zur Durchführungs-Variante: Variante C → GA, Variante A → PL (oder EA), Variante B → EA/PL gemischt. Die Abschnitte unten (verzweigt nach Variante) beschreiben die gewählte Form im Detail.
 > - **Seite 2 — Transfer:** Der Transfer-Auftrag mit **Schreibhilfe (Satzanfänge)** und einem **Selbstcheck** zum Abhaken. Hier geben die Lernenden ihren Transfer ab (Kapitel 7). Sie müssen das Blatt nicht selbst bauen — es liegt fertig im ZIP-Bundle.
 
-### Bei Variante C (Jigsaw) — voller Gruppenpuzzle
+### Bei Variante C (Austausch & Transfer) — voller Gruppenpuzzle
 
 Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Experten.
 
@@ -651,15 +651,15 @@ Format: Gruppenpuzzle, **30 Minuten**. Neue Gruppen mit je einem A-, B- und C-Ex
 | **2 — Gemeinsamkeit abstrahieren** | Was haben alle drei Herausforderungen gemeinsam? Welches Grundprinzip steckt dahinter? | ~12' | Hier entsteht der Transfer. Frag: „Was müsstet ihr **bei jeder** rechtlichen Anfrage tun, egal ob Quelle, Fall oder Antwort?" |
 | **3 — Transfer** | Welche Herausforderung wäre persönlich am schwierigsten — und warum? | ~10' | Persönlicher Bezug. Lass sie das Prinzip auf sich selbst beziehen, nicht abstrakt bleiben. |
 
-> [!warnung] Jigsaw-Qualität entscheidet über den KN
-> In Runde 1 muss jeder Experte sein Drittel **wirklich** vermitteln — nicht nur „ich habe halt den Spickzettel gemacht". Geh herum und hör rein. Wenn eine Gruppe nur referiert, statt das Argument zu teilen, hak nach: „Und warum war das deine Entscheidung?" Ohne tragende Runde 1 fehlt zwei Dritteln der Klasse die KN-Grundlage. Plane danach Zeit ein, die zwei nicht selbst gebauten Produkte wenigstens skizzenhaft in Einzelarbeit nachzubauen (kein zweiter Jigsaw).
+> [!warnung] Austausch-&-Transfer-Qualität entscheidet über den KN
+> In Runde 1 muss jeder Experte sein Drittel **wirklich** vermitteln — nicht nur „ich habe halt den Spickzettel gemacht". Geh herum und hör rein. Wenn eine Gruppe nur referiert, statt das Argument zu teilen, hak nach: „Und warum war das deine Entscheidung?" Ohne tragende Runde 1 fehlt zwei Dritteln der Klasse die KN-Grundlage. Plane danach Zeit ein, die zwei nicht selbst gebauten Produkte wenigstens skizzenhaft in Einzelarbeit nachzubauen (keinen zweiten Austausch & Transfer).
 
 > [!coaching] Plenum-Abschluss
-> Sammle nach dem Jigsaw im Plenum **einen** gemeinsamen Prinzipsatz an der Tafel („zuerst Quelle klären, dann Rolle prüfen, dann adressatengerecht schreiben"). Das ist die Brücke zum Transfer (Kapitel 7) und fällt dem KN-Transfer-Teil zu.
+> Sammle nach dem Austausch & Transfer im Plenum **einen** gemeinsamen Prinzipsatz an der Tafel („zuerst Quelle klären, dann Rolle prüfen, dann adressatengerecht schreiben"). Das ist die Brücke zum Transfer (Kapitel 7) und fällt dem KN-Transfer-Teil zu.
 
 ### Bei Variante A (alle drei einzeln) — verkürzter Austausch
 
-Kein Experten-Jigsaw nötig (alle kennen alle Herausforderungen). Stattdessen Plenum, ~15 Min.: „Was haben die drei gemeinsam? Welches Prinzip lässt sich verallgemeinern?" Direkt weiter zum Transfer.
+Kein Experten-Austausch & Transfer nötig (alle kennen alle Herausforderungen). Stattdessen Plenum, ~15 Min.: „Was haben die drei gemeinsam? Welches Prinzip lässt sich verallgemeinern?" Direkt weiter zum Transfer.
 
 ### Bei Variante B (Auswahl 1-2) — gemischt
 
@@ -717,7 +717,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 | **Werkschau + Transfer-Reflexion** | schriftlich (+ optional 5' Präs.), Werkwahl + Begründung + Reflexion 200-250 W | Metaebene, Transfer, Selbsteinschätzung | Prod schriftl. | die drei Handlungsprodukte schon stark sind und du das **Prinzip-Verständnis** statt einer neuen Leistung prüfen willst |
 
 > [!coaching] Methodenwahl an Klasse + Variante koppeln
-> Nach Jigsaw (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespräch**, weil alle drei Herausforderungen selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Herausforderungen anpassen und Fragen/Aufgaben trimmen. Fachgespräch braucht **vorbereitete Fragen mit Erwartungshorizont** und Zeitvorgaben pro Frage; Noten erst **nach** dem Gespräch bekanntgeben.
+> Nach Austausch & Transfer (Variante C) ist die **Werkschau** stimmig — jede/r reflektiert das eigene, real erstellte Produkt. Nach Variante A passt **Mini Case** oder **Fachgespräch**, weil alle drei Herausforderungen selbst durchlaufen wurden. Bei Variante B: Methode an die gemachten Herausforderungen anpassen und Fragen/Aufgaben trimmen. Fachgespräch braucht **vorbereitete Fragen mit Erwartungshorizont** und Zeitvorgaben pro Frage; Noten erst **nach** dem Gespräch bekanntgeben.
 
 > [!hinweis] Ausblick — weitere Prüfformen möglich
 > Die drei hier angelegten KN-Formen (Fachgespräch, Mini Case schriftlich, Werkschau + Transfer-Reflexion) sind ein **Startset**, kein abschliessender Kanon. Dieselbe Hybrid-Herausforderung und dieselbe bi-dimensionale Rubrik tragen auch andere Formen — etwa einen **Critical Incident** (eine zugespitzte Entscheidungsszene mit Stopp-Punkt: „Was tust du jetzt?") oder ein **Produkt mit Präsentation** (ein vor der Klasse verteidigtes Handlungsprodukt). Diese sind bewusst noch nicht ausgearbeitet — wenn du eine brauchst, lässt sie sich auf der bestehenden Rubrik aufsetzen. Reiner Ausblick; im aktuellen Set wählst du aus den drei Formen oben.

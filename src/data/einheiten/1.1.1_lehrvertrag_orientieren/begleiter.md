@@ -98,7 +98,7 @@ quellen_json:
 
 - **Variante A (Einzelarbeit, beide Herausforderungen):** Kompetenz voll, KN ungekürzt. Richtwert je Herausforderung 2-3 Lektionen + KN.
 - **Variante B (Einzelarbeit, eine Herausforderung):** `[!warnung] KN muss mitgekürzt werden` — Constructive Alignment beachten.
-- **Variante C (Jigsaw, A+B im Austausch):** kompakter. `[!warnung] Die Hälfte wird nur stellvertretend erworben.`
+- **Variante C (Austausch & Transfer, A+B im Austausch):** kompakter. `[!warnung] Die Hälfte wird nur stellvertretend erworben.`
 
 > [!hinweis] Reihenfolge frei
 > Der Aufbau A → B zeigt den inhaltlichen Faden, nicht eine zwingende Sequenz. Du kannst eine Herausforderung weglassen oder tauschen; im KN wird nur geprüft, was geübt wurde.
@@ -308,7 +308,7 @@ Reflexion
 
 Drei Sozialformen (eigenes Set-Dokument): **EA** (Einzelauftrag), **GA** (Gruppenpuzzle, 3 Runden), **PL** (Plenum). Lernende nutzen die **Austausch-Scaffolds aus dem Dossier**.
 
-- **Variante C (Jigsaw):**
+- **Variante C (Austausch & Transfer):**
 
   | Runde | Auftrag | Zeit | Deine Moderation |
   |---|---|---|---|
