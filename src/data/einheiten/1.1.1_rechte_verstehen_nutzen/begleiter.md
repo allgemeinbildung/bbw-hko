@@ -29,7 +29,7 @@ Diese Einheit ist ein **3er-Set**: drei Herausforderungen (A, B, C) zur gleichen
 
 **2. Eine Kompetenz, drei Herausforderungen.** A klärt die **Quellen** (Regel-Spickzettel), B löst **Fälle methodisch** (Tatbestand-Rechtslage-Rechtsfolge), C verfasst die **adressatengerechte Antwort** im richtigen Kanal. Erst zusammen ergeben sie das Kompetenzversprechen.
 
-**3. Phasen-Schichten, nicht vermischen.** (Quick Ref §6)
+**3. Phasen-Schichten, nicht vermischen.**
 
 | Schicht | Modell | Reichweite |
 |---|---|---|
@@ -86,7 +86,7 @@ Diese Formel ist Ihr Prüfstein, wenn Sie eine Lernenden-Arbeit ansehen: Ist bei
 | LF3 — Entscheiden | K3 | Entscheidungsproblem |
 | LF4 — Formulieren | K3+ / K4 | Strategie-/Analyseproblem |
 
-Ziel-Niveau ABU-KN ist K3-K4 (Quick Ref §7). Die Einheit fädelt von K2 zu K4 — wenn Sie eine Herausforderung kürzen, halten Sie LF3/LF4 unbedingt drin, sonst bleibt sie auf Reproduktion stehen.
+Ziel-Niveau ABU-KN ist K3-K4. Die Einheit fädelt von K2 zu K4 — wenn Sie eine Herausforderung kürzen, halten Sie LF3/LF4 unbedingt drin, sonst bleibt sie auf Reproduktion stehen.
 
 ### Mehrdeutigkeits-Architektur
 
@@ -669,7 +669,7 @@ Kurzer Austausch in Kleingruppen über die jeweils gemachten Herausforderungen, 
 
 ## 7. Transfer — vom Fall zum Prinzip
 
-Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden heisst der Auftrag **Transfer**. Das ist die Phase, die R1 überhaupt nach R2/R3 trägt (Quick Ref §6). Hier wird das Wissen vom Polymechanik-/Bäcker-/Informatik-Fall gelöst.
+Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden heisst der Auftrag **Transfer**. Das ist die Phase, die R1 überhaupt nach R2/R3 trägt. Hier wird das Wissen vom Polymechanik-/Bäcker-/Informatik-Fall gelöst.
 
 **Auftrag (Set):** Übertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewählten Kontext. Schriftlich, **5-7 Sätze**, Lehrmittelbegriffe verwenden. Abgabe vor dem KN, auf Seite 2 des «Austausch & Transfer»-Arbeitsblatts.
 
@@ -805,7 +805,7 @@ Lernende wählen **eines** ihrer drei Handlungsprodukte, begründen die Wahl (2-
 > **Stufe 4 zeigt zusätzlich:** anerkennt die Mehrdeutigkeit, reflektiert die eigene Rolle und Verantwortung und hält aus, dass das Prinzip kein Patentrezept ist.
 > **Nicht Stufe 4:** „Das Prinzip funktioniert immer." — löst die Mehrdeutigkeit auf, verfehlt die Werthaltungs-Dimension.
 
-### Bi-dimensionale Bewertung — so benotest du (Quick Ref §5)
+### Bi-dimensionale Bewertung — so benotest du
 
 Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges ergeben **zwei getrennte, gleichgewichtete Noten** — nie zu einer verrechnen. Jedes Kriterium auf vier Stufen (1 = tiefste, 4 = höchste).
 

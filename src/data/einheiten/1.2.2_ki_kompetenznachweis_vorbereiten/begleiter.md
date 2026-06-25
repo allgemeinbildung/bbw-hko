@@ -737,7 +737,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 > **Stufe 4 zeigt zusätzlich:** reflektiert verantwortungsvolle KI-Nutzung als mehr als Zeitersparnis (Verantwortung für das eigene Können, Ehrlichkeit gegenüber sich selbst) und anerkennt die Mehrdeutigkeit, statt eine Pauschalregel zu setzen.
 > **Nicht Stufe 4:** «Ich nutze KI für alles, das ist effizient und alle machen es so.» — souverän vorgetragen, löst die Werthaltungs-Mehrdeutigkeit aber auf → verfehlt das Versprechen.
 
-### Bi-dimensionale Bewertung — so benotest du (Quick Ref §5)
+### Bi-dimensionale Bewertung — so benotest du
 
 Die geteilte Rubrik hat **vier Kriterien auf zwei Dimensionen**. SuK und Ges ergeben **zwei getrennte, gleichgewichtete Noten** — nie zu einer verrechnen.
 
