@@ -2,6 +2,13 @@ import type { APIRoute } from 'astro'
 
 const ALLOWED_FIELDS = [
   'einheit_id',
+  'feedback_art',
+  'eigen_titel',
+  'eigen_handlungssituation',
+  'eigen_handlungsprodukt',
+  'eigen_kn_format',
+  'eigen_kn_aufgabe',
+  'eigen_selbstcheck',
   'klasse',
   'lehrjahr',
   'abteilung',
@@ -58,7 +65,9 @@ export const POST: APIRoute = async ({ locals, request }) => {
   } catch {
     return new Response(JSON.stringify({ error: 'Ungueltiges JSON.' }), { status: 400 })
   }
-  if (!body.einheit_id) {
+  const feedbackArt = (body.feedback_art as string) ?? '1zu1'
+  // «eigenes Material» hat keinen Einheit-Bezug; sonst ist einheit_id Pflicht.
+  if (feedbackArt !== 'eigenes' && !body.einheit_id) {
     return new Response(JSON.stringify({ error: 'einheit_id fehlt.' }), { status: 400 })
   }
   const status = (body.status as string) ?? 'entwurf'

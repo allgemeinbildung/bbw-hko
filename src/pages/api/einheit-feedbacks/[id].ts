@@ -1,6 +1,13 @@
 import type { APIRoute } from 'astro'
 
 const LP_FIELDS = [
+  'feedback_art',
+  'eigen_titel',
+  'eigen_handlungssituation',
+  'eigen_handlungsprodukt',
+  'eigen_kn_format',
+  'eigen_kn_aufgabe',
+  'eigen_selbstcheck',
   'klasse',
   'lehrjahr',
   'abteilung',

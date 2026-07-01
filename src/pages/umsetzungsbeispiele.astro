@@ -1,0 +1,443 @@
+---
+import Base from '../layouts/Base.astro'
+import GuestPrintBlock from '../components/GuestPrintBlock.astro'
+import {
+  umsetzungsbeispiele,
+  UB_LEHRGAENGE,
+  allThemen,
+  allSprachmodi,
+  allSchluesselkompetenzen,
+  themaTitles,
+  parseRaster,
+  niveauLabel,
+} from '../lib/umsetzungsbeispiele'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+const { data: prof } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+const isGuest = prof?.role === 'gast'
+
+// Which tab first? ?tab=pdf or ?lehrgang=… deep-links.
+const _url = new URL(Astro.request.url)
+const wantPdf = _url.searchParams.get('tab') === 'pdf'
+const lgParam = _url.searchParams.get('lehrgang') ?? ''
+const initialLg = UB_LEHRGAENGE.some((d) => d.key === lgParam) ? lgParam : 'EFZ-3J'
+
+const themen = allThemen()
+const sprachmodi = allSprachmodi()
+const sks = allSchluesselkompetenzen()
+
+const efzTitles = themaTitles('EFZ-3J')
+const ebaTitles = themaTitles('EBA')
+const themaTitle = (nr: number) => efzTitles[nr] || ebaTitles[nr] || `Thema ${nr}`
+
+// Sort: Lehrgang (EFZ-3J, EFZ-4J, EBA) → Thema → Kompetenz-Nr → niveau
+const lgOrder: Record<string, number> = { 'EFZ-3J': 0, 'EFZ-4J': 1, 'EBA': 2 }
+const entries = [...umsetzungsbeispiele].sort((a, b) => {
+  if (lgOrder[a.lehrgang] !== lgOrder[b.lehrgang]) return lgOrder[a.lehrgang] - lgOrder[b.lehrgang]
+  const ta = a.thema_nrs[0] ?? 99, tb = b.thema_nrs[0] ?? 99
+  if (ta !== tb) return ta - tb
+  if (a.variant_label !== b.variant_label) return a.variant_label.localeCompare(b.variant_label)
+  return a.niveau.localeCompare(b.niveau)
+})
+
+const total = entries.length
+---
+<Base title="Umsetzungsbeispiele SLP ABU 2030">
+  {isGuest && <GuestPrintBlock />}
+  <div class="min-h-screen flex flex-col" x-data={`ub('${wantPdf ? 'pdf' : 'browse'}', '${initialLg}')`} x-cloak>
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3 min-w-0">
+          <img src="/logo-bbw-mark.png" alt="BBW Berufsbildungsschule Winterthur" class="logo-black h-14 w-auto shrink-0" />
+          <span class="hidden md:block pl-3 ml-1 border-l border-slate-200 text-xs uppercase tracking-wider text-slate-500 leading-tight">
+            Materialplattform<br />
+            <span class="normal-case tracking-normal text-slate-400">ABU Reform 2030</span>
+          </span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/lehrplan" class="text-sm text-slate-600 hover:text-slate-900 font-medium">Schullehrplan →</a>
+          <a href="/" class="text-sm text-slate-600 hover:text-slate-900 font-medium">← Hauptplattform</a>
+          <span class="text-sm text-slate-500 hidden sm:block">{isGuest ? 'Gast' : user.email}</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-8">
+      <div class="mb-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Offizielle Beispiele · Bildungsdirektion Kanton Zürich · 30.06.2026</p>
+        <h1 class="text-2xl font-semibold text-slate-900 tracking-tight">Umsetzungsbeispiele SLP ABU 2030</h1>
+        <p class="text-slate-600 mt-2 max-w-3xl text-sm">
+          Die offiziellen Umsetzungsvarianten des Schullehrplans: pro Kompetenz bzw. Lebensbezug eine
+          Herausforderung mit Produkt, Sprachmodus, Scaffolds und Bewertungspositionen. Durchsuche die
+          Sammlung oder lies die Original-PDFs.
+        </p>
+      </div>
+
+      <!-- Tab switch -->
+      <div class="flex flex-wrap items-center gap-2 mb-6 border-b border-slate-200">
+        <button type="button" class="ub-maintab" :class="tab === 'browse' && 'ub-maintab-on'" @click="tab = 'browse'">
+          Durchsuchen <span class="ub-count" x-text="'(' + visibleCount + ')'"></span>
+        </button>
+        <button type="button" class="ub-maintab" :class="tab === 'pdf' && 'ub-maintab-on'" @click="tab = 'pdf'">
+          Original-PDFs
+        </button>
+      </div>
+
+      <!-- ============ BROWSE TAB ============ -->
+      <div x-show="tab === 'browse'">
+        <!-- Filter bar -->
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-5">
+          <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            <label class="ub-field">
+              <span>Lehrgang</span>
+              <select x-model="f.lehrgang" @change="apply()">
+                <option value="">Alle</option>
+                {UB_LEHRGAENGE.map((d) => <option value={d.key}>{d.label}</option>)}
+              </select>
+            </label>
+            <label class="ub-field">
+              <span>Thema</span>
+              <select x-model="f.thema" @change="apply()">
+                <option value="">Alle Themen</option>
+                {themen.map((t) => <option value={String(t.nr)}>{`T${t.nr} · ${t.titel}`}</option>)}
+              </select>
+            </label>
+            <label class="ub-field">
+              <span>Niveau</span>
+              <select x-model="f.niveau" @change="apply()">
+                <option value="">Alle</option>
+                <option value="grund">Grundniveau</option>
+                <option value="erweitert">erweitertes Niveau</option>
+              </select>
+            </label>
+            <label class="ub-field">
+              <span>Sprachmodus</span>
+              <select x-model="f.sprach" @change="apply()">
+                <option value="">Alle</option>
+                {sprachmodi.map((m) => <option value={m}>{m}</option>)}
+              </select>
+            </label>
+            <label class="ub-field lg:col-span-3">
+              <span>Schlüsselkompetenz</span>
+              <select x-model="f.sk" @change="apply()">
+                <option value="">Alle</option>
+                {sks.map((k) => <option value={k}>{k.length > 90 ? k.slice(0, 90) + '…' : k}</option>)}
+              </select>
+            </label>
+            <label class="ub-field">
+              <span>Volltextsuche</span>
+              <input type="search" x-model="f.q" @input.debounce.200ms="apply()" placeholder="Stichwort, Kompetenz-Nr …" />
+            </label>
+          </div>
+          <div class="flex items-center justify-between mt-3">
+            <p class="text-xs text-slate-500"><span x-text="visibleCount"></span> von {total} Umsetzungsvarianten</p>
+            <button type="button" class="text-xs text-slate-500 hover:text-[var(--brand-dark)] underline" @click="reset()">Filter zurücksetzen</button>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid gap-4" id="ub-cards">
+          {entries.map((e) => {
+            const t = e.thema_nrs[0] ?? null
+            const search = [
+              e.titel, e.herausforderung, e.produkt, e.variant_label,
+              ...e.kompetenz_nrs, ...e.codes,
+              ...e.schluesselkompetenzen,
+              ...e.sprachmodi.map((m) => m.bereich + ' ' + m.text),
+              ...e.gesellschaftliche_inhalte.map((m) => m.bereich + ' ' + m.text),
+            ].join(' ').toLowerCase()
+            const rubrik = parseRaster(e.raster_md)
+            const hasRubrik = rubrik.suk.length > 0 || rubrik.ges.length > 0
+            return (
+              <article
+                class="ub-card lion-bg"
+                data-lehrgang={e.lehrgang}
+                data-thema={t != null ? String(t) : ''}
+                data-themas={e.thema_nrs.join(' ')}
+                data-niveau={e.niveau}
+                data-sprach={e.sprachmodi.map((m) => m.bereich).join('||')}
+                data-sk={e.schluesselkompetenzen.join('||')}
+                data-search={search}
+                x-data="{ open: false }"
+              >
+                <div class="ub-card-head">
+                  <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                    <span class="ub-badge-lg" data-thema={t != null ? String(t) : ''} data-lehrgang={e.lehrgang}>{e.variant_label}</span>
+                    {t != null && <span class="thema-chip" data-thema={String(t)} data-lehrgang={e.lehrgang}>{`T${t} · ${themaTitle(t)}`}</span>}
+                    <span class="ub-lg-chip">{e.lehrgang}</span>
+                    <span class:list={['ub-niv', e.niveau === 'erweitert' && 'ub-niv-erw']}>{niveauLabel(e.niveau)}</span>
+                  </div>
+                  <h3 class="ub-card-title">{e.titel}</h3>
+                  {e.kompetenz_nrs.length > 0 && (
+                    <p class="ub-komps">Kompetenzen: {e.kompetenz_nrs.join(', ')}</p>
+                  )}
+                  <p class="ub-heraus"><span class="ub-lbl">Herausforderung.</span> {e.herausforderung}</p>
+                  <p class="ub-produkt"><span class="ub-lbl">Produkt.</span> {e.produkt}</p>
+                  <button type="button" class="ub-more" @click="open = !open">
+                    <span x-show="!open">Details anzeigen ▾</span>
+                    <span x-show="open" x-cloak>Details ausblenden ▴</span>
+                  </button>
+                </div>
+
+                <div class="ub-card-body" x-show="open" x-collapse x-cloak>
+                  <!-- Inhalte / SK / Sprachmodus / Scaffolds als Karten, zweispaltig -->
+                  <div class="ub-grid">
+                    {e.gesellschaftliche_inhalte.length > 0 && (
+                      <section class="ub-block">
+                        <h4>Gesellschaftliche Inhalte</h4>
+                        <div class="ub-chips">
+                          {e.gesellschaftliche_inhalte.map((m) => (
+                            <div class="ub-chip">
+                              {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
+                              <span>{m.text}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+                    {e.schluesselkompetenzen.length > 0 && (
+                      <section class="ub-block">
+                        <h4>Schlüsselkompetenzen</h4>
+                        <div class="ub-chips">
+                          {e.schluesselkompetenzen.map((k) => <div class="ub-chip"><span>{k}</span></div>)}
+                        </div>
+                      </section>
+                    )}
+                    {e.sprachmodi.length > 0 && (
+                      <section class="ub-block">
+                        <h4>Sprachmodus</h4>
+                        <div class="ub-chips">
+                          {e.sprachmodi.map((m) => (
+                            <div class="ub-chip">
+                              {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
+                              <span>{m.text}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+                    {e.scaffolds.length > 0 && (
+                      <section class="ub-block">
+                        <h4>Scaffolds</h4>
+                        <div class="ub-chips">
+                          {e.scaffolds.map((m) => (
+                            <div class="ub-chip">
+                              {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
+                              <span>{m.text}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+                  </div>
+
+                  <!-- Bewertungspositionen, zweispaltig -->
+                  {(e.bewertung.suk.length > 0 || e.bewertung.ges.length > 0) && (
+                    <div class="ub-grid ub-grid-tight">
+                      {e.bewertung.suk.length > 0 && (
+                        <section class="ub-block">
+                          <h4>Bewertung · Sprache und Kommunikation</h4>
+                          <div class="ub-chips">
+                            {e.bewertung.suk.map((b) => <div class="ub-chip ub-chip-suk"><span>{b}</span></div>)}
+                          </div>
+                        </section>
+                      )}
+                      {e.bewertung.ges.length > 0 && (
+                        <section class="ub-block">
+                          <h4>Bewertung · Gesellschaft</h4>
+                          <div class="ub-chips">
+                            {e.bewertung.ges.map((b) => <div class="ub-chip ub-chip-ges"><span>{b}</span></div>)}
+                          </div>
+                        </section>
+                      )}
+                    </div>
+                  )}
+
+                  <!-- Kompetenzraster: Karte pro Bewertungsposition mit 4 Niveaustufen -->
+                  {hasRubrik && (
+                    <section class="ub-block ub-raster-block">
+                      <h4>Kompetenzraster</h4>
+                      <div class="ub-grid">
+                        {rubrik.suk.length > 0 && (
+                          <div class="ub-rubrik-col">
+                            <h5 class="ub-rubrik-domain">Sprache und Kommunikation</h5>
+                            {rubrik.suk.map((p) => (
+                              <div class="ub-rubrik">
+                                <div class="ub-rubrik-pos">{p.position}</div>
+                                <div class="ub-rubrik-levels">
+                                  {p.levels.map((lv, i) => (
+                                    <div class="ub-rubrik-lvl">
+                                      <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
+                                      <span>{lv}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {rubrik.ges.length > 0 && (
+                          <div class="ub-rubrik-col">
+                            <h5 class="ub-rubrik-domain">Gesellschaft</h5>
+                            {rubrik.ges.map((p) => (
+                              <div class="ub-rubrik">
+                                <div class="ub-rubrik-pos">{p.position}</div>
+                                <div class="ub-rubrik-levels">
+                                  {p.levels.map((lv, i) => (
+                                    <div class="ub-rubrik-lvl">
+                                      <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
+                                      <span>{lv}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </section>
+                  )}
+                </div>
+              </article>
+            )
+          })}
+        </div>
+
+        <p class="ub-empty text-center text-slate-500 py-16" x-show="visibleCount === 0" x-cloak>
+          Keine Umsetzungsvariante passt zu diesen Filtern.
+        </p>
+      </div>
+
+      <!-- ============ PDF TAB ============ -->
+      <div x-show="tab === 'pdf'" x-cloak>
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <template x-for="d in docs" :key="d.key">
+            <button type="button" class="lp-tab" :class="pdfTab === d.key && 'lp-tab-on'" @click="pdfTab = d.key" x-text="d.label"></button>
+          </template>
+          <div class="ml-auto flex items-center gap-2">
+            <a :href="curDoc.file" target="_blank" rel="noopener" class="lp-link">In neuem Tab öffnen ↗</a>
+            <a :href="curDoc.file" :download="'Umsetzungsvarianten_' + curDoc.key + '.pdf'" class="lp-link lp-link-strong">Download</a>
+          </div>
+        </div>
+        <p class="text-sm text-slate-500 mb-3" x-text="curDoc.desc"></p>
+        <div class="rounded-lg overflow-hidden border border-slate-200 bg-slate-50" style="height: 82vh;">
+          <iframe :src="curDoc.file + '#view=FitH'" src={`/umsetzungsbeispiele/${initialLg.toLowerCase()}.pdf#view=FitH`} title="Umsetzungsvarianten (PDF)" class="w-full h-full" style="border:0;"></iframe>
+        </div>
+        <noscript>
+          <p class="mt-3 text-sm">
+            <a href="/umsetzungsbeispiele/efz-3j.pdf" class="underline">EFZ 3-jährig</a> ·
+            <a href="/umsetzungsbeispiele/efz-4j.pdf" class="underline">EFZ 4-jährig</a> ·
+            <a href="/umsetzungsbeispiele/eba.pdf" class="underline">EBA 2-jährig</a>
+          </p>
+        </noscript>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
+      Umsetzungsvarianten SLP ABU 2030 · Bildungsdirektion Kanton Zürich · Quelle: BBW
+    </footer>
+  </div>
+
+  <script is:inline define:vars={{ docs: UB_LEHRGAENGE, initialLg }}>
+    document.addEventListener('alpine:init', () => {
+      window.Alpine.data('ub', (initialTab, lg) => ({
+        tab: initialTab,
+        pdfTab: lg,
+        docs,
+        f: { lehrgang: '', thema: '', niveau: '', sprach: '', sk: '', q: '' },
+        visibleCount: 0,
+        get curDoc() { return this.docs.find((d) => d.key === this.pdfTab) || this.docs[0] },
+        init() {
+          this.$nextTick(() => this.apply())
+        },
+        apply() {
+          const cards = Array.from(document.querySelectorAll('#ub-cards .ub-card'))
+          const q = (this.f.q || '').trim().toLowerCase()
+          let n = 0
+          cards.forEach((c) => {
+            const d = c.dataset
+            let ok = true
+            if (this.f.lehrgang && d.lehrgang !== this.f.lehrgang) ok = false
+            if (ok && this.f.thema && !((d.themas || '').split(' ').includes(this.f.thema))) ok = false
+            if (ok && this.f.niveau && d.niveau !== this.f.niveau) ok = false
+            if (ok && this.f.sprach && !((d.sprach || '').split('||').includes(this.f.sprach))) ok = false
+            if (ok && this.f.sk && !((d.sk || '').split('||').includes(this.f.sk))) ok = false
+            if (ok && q && !(d.search || '').includes(q)) ok = false
+            c.style.display = ok ? '' : 'none'
+            if (ok) n++
+          })
+          this.visibleCount = n
+        },
+        reset() {
+          this.f = { lehrgang: '', thema: '', niveau: '', sprach: '', sk: '', q: '' }
+          this.apply()
+        },
+      }))
+    })
+  </script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    /* main tabs */
+    .ub-maintab { position: relative; font-size: 0.9rem; font-weight: 600; color: #64748b; padding: 0.6rem 0.25rem; margin-right: 1.25rem; border-bottom: 2px solid transparent; cursor: pointer; background: none; }
+    .ub-maintab:hover { color: #0f172a; }
+    .ub-maintab-on { color: var(--brand-dark); border-bottom-color: var(--brand); }
+    .ub-count { font-weight: 500; color: #94a3b8; }
+    /* filter fields */
+    .ub-field { display: flex; flex-direction: column; gap: 0.25rem; }
+    .ub-field > span { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: #64748b; }
+    .ub-field select, .ub-field input { width: 100%; font-size: 0.85rem; padding: 0.4rem 0.55rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; background: white; color: #0f172a; }
+    .ub-field select:focus, .ub-field input:focus { outline: none; border-color: var(--brand); box-shadow: var(--brand-ring); }
+    /* cards */
+    .ub-card { position: relative; background: white; border: 1px solid #e2e8f0; border-left: 3px solid var(--brand); border-radius: 0.75rem; padding: 1.25rem 1.4rem; transition: box-shadow .15s, border-color .15s; }
+    .ub-card:hover { box-shadow: 0 8px 22px -14px rgba(14,110,58,.4); }
+    .ub-card-head { position: relative; z-index: 1; }
+    .ub-badge-lg { display: inline-flex; align-items: center; font-weight: 700; font-size: 0.82rem; color: white; background: var(--brand); border-radius: 0.4rem; padding: 0.15rem 0.5rem; }
+    .ub-lg-chip { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.03em; color: #475569; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.3rem; padding: 0.1rem 0.45rem; }
+    .ub-niv { font-size: 0.68rem; font-weight: 600; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.3rem; padding: 0.1rem 0.45rem; }
+    .ub-niv-erw { color: var(--brand-dark); background: var(--brand-tint); border-color: transparent; }
+    .ub-card-title { font-size: 1.02rem; font-weight: 600; color: #0f172a; line-height: 1.4; margin: 0.35rem 0 0.3rem; }
+    .ub-komps { font-size: 0.74rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .ub-heraus, .ub-produkt { font-size: 0.88rem; line-height: 1.55; color: #475569; margin-top: 0.35rem; }
+    .ub-lbl { font-weight: 700; color: #0f172a; }
+    .ub-more { margin-top: 0.75rem; font-size: 0.8rem; font-weight: 600; color: var(--brand-dark); background: none; cursor: pointer; padding: 0; }
+    .ub-more:hover { text-decoration: underline; }
+    .ub-card-body { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #e2e8f0; position: relative; z-index: 1; }
+    /* two-column grids */
+    .ub-grid { display: grid; grid-template-columns: 1fr; gap: 1rem 1.5rem; margin-bottom: 1.25rem; }
+    @media (min-width: 768px) { .ub-grid { grid-template-columns: 1fr 1fr; } }
+    .ub-grid-tight { gap: 0.75rem 1.5rem; }
+    .ub-block { min-width: 0; }
+    .ub-block h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand-dark); margin-bottom: 0.5rem; }
+    /* info chips (cards) */
+    .ub-chips { display: flex; flex-direction: column; gap: 0.4rem; }
+    .ub-chip { font-size: 0.83rem; line-height: 1.45; color: #334155; background: #f8fafc; border: 1px solid #eef2f6; border-left: 2px solid var(--brand); border-radius: 0.4rem; padding: 0.4rem 0.6rem; }
+    .ub-chip-b { display: block; font-weight: 700; color: #0f172a; margin-bottom: 0.1rem; }
+    .ub-chip-suk { border-left-color: #0ea5e9; }
+    .ub-chip-ges { border-left-color: #8b5cf6; }
+    /* Kompetenzraster cards */
+    .ub-raster-block { margin-bottom: 0; }
+    .ub-rubrik-col { min-width: 0; }
+    .ub-rubrik-domain { font-size: 0.8rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid var(--brand-tint); }
+    .ub-rubrik { border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.55rem 0.65rem; margin-bottom: 0.6rem; background: white; }
+    .ub-rubrik-pos { font-size: 0.8rem; font-weight: 700; color: #0f172a; margin-bottom: 0.45rem; line-height: 1.35; }
+    .ub-rubrik-levels { display: flex; flex-direction: column; gap: 0.35rem; }
+    .ub-rubrik-lvl { display: grid; grid-template-columns: 1.3rem 1fr; gap: 0.5rem; align-items: start; font-size: 0.76rem; line-height: 1.4; color: #334155; }
+    .ub-lvl-badge { display: inline-flex; align-items: center; justify-content: center; width: 1.3rem; height: 1.3rem; border-radius: 0.3rem; font-size: 0.7rem; font-weight: 700; color: white; }
+    .ub-lvl-badge[data-lvl="0"] { background: #ef4444; }
+    .ub-lvl-badge[data-lvl="1"] { background: #f59e0b; }
+    .ub-lvl-badge[data-lvl="2"] { background: #84cc16; }
+    .ub-lvl-badge[data-lvl="3"] { background: var(--brand); }
+    /* pdf tab (shared with lehrplan look) */
+    .lp-tab { display: inline-flex; align-items: center; font-size: 0.82rem; font-weight: 600; color: #334155; background: white; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 0.35rem 0.9rem; cursor: pointer; transition: all .15s; }
+    .lp-tab:hover { border-color: var(--brand); color: var(--brand-dark); }
+    .lp-tab-on { background: var(--brand); color: white; border-color: var(--brand); }
+    .lp-tab-on:hover { color: white; }
+    .lp-link { font-size: 0.78rem; font-weight: 600; color: var(--brand-dark); text-decoration: none; padding: 0.35rem 0.5rem; border-radius: 6px; }
+    .lp-link:hover { text-decoration: underline; }
+    .lp-link-strong { border: 1px solid var(--brand); background: var(--brand-tint); }
+  </style>
+</Base>

@@ -44,6 +44,10 @@ const error = Astro.url.searchParams.get('error')
             class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
           >Einheiten →</a>
           <a
+            href="/admin/eigene-materialien"
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/eigene-materialien' ? 'admin-tab-active' : 'admin-tab'}`}
+          >Geteilte Materialien</a>
+          <a
             href="/admin/kt2"
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/kt2' ? 'admin-tab-active' : 'admin-tab'}`}
           >KT2-Übergabe</a>

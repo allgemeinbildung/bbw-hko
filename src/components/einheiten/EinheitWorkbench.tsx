@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import JSZip from 'jszip'
 
@@ -38,6 +38,103 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
   return d[`hf_${letter}`]
 }
 
+// Dokumente, die ein Gast sehen darf. Alles andere (Kompetenznachweise, Lies-mich,
+// KI-Toolbox) wird gelistet, aber beim Anklicken durch das Gate-Panel ersetzt.
+const GUEST_ALLOWED: DocSel[] = ['doc-s', 'doc-austausch', 'doc-dossier']
+const GATE_MAIL = 'pietro.rossi@bbw.ch'
+
+function triggerDownload(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
+// Baut ein eigenständiges, druck-/ausfüllbares HTML-Dokument (identisch zum ZIP-Bundle),
+// für den Einzeldownload eines einzelnen Dokuments.
+function standaloneHtml(cssRenderer: string, title: string, bodyMarkup: string, pngDataUrl: string, opts: { compact?: boolean } = {}) {
+  const cls = ['aesthetic-modern']
+  if (opts.compact) cls.push('density-compact')
+  const markup = bodyMarkup
+    .replaceAll('assets/logo-bbw.png', pngDataUrl)
+    .replaceAll('/einheiten-assets/logo-bbw.png', pngDataUrl)
+    .replaceAll('/logo-bbw-doc.png', pngDataUrl)
+  return `<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <style>
+${cssRenderer}
+
+.standalone-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#1d2026;color:#e8eaee;padding:10px 18px;display:flex;align-items:center;gap:14px;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;}
+.standalone-bar .name{font-weight:600}
+.standalone-bar .spacer{flex:1}
+.standalone-bar button{font-family:inherit;background:#e8eaee;color:#1d2026;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.02em}
+.standalone-bar button:hover{background:#fff}
+.standalone-bar .hint{color:#a3a8b2;font-size:11px}
+.pages{padding:60px 24px 64px}
+@media print { .standalone-bar { display:none !important } .pages { padding: 0 } }
+  </style>
+</head>
+<body class="${cls.join(' ')}">
+  <div class="standalone-bar">
+    <span class="name">${title}</span>
+    <span class="hint">Tippe oder klicke in die Felder, dann auf Drucken.</span>
+    <span class="spacer"></span>
+    <button onclick="window.print()">Drucken</button>
+  </div>
+  <main class="pages">${markup}</main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.feld, .hp-flaeche').forEach(el => el.setAttribute('contenteditable', 'true'));
+    });
+  </script>
+</body>
+</html>`
+}
+
+// Gast-Sperre: statt des Dokuments erscheint ein Hinweis mit mailto-Kontakt.
+function GatePanel({ kind }: { kind: 'kn' | 'begleiter' | 'ki' }) {
+  const titles: Record<string, string> = {
+    kn: 'Kompetenznachweis — nur für Lehrpersonen',
+    begleiter: 'Begleitdokument «Lies mich!» — nur für Lehrpersonen',
+    ki: 'KI-Toolbox — nur für Lehrpersonen',
+  }
+  const subject = encodeURIComponent('Lehrpersonen-Zugang zur ABU-Materialplattform BBW')
+  const body = encodeURIComponent(
+    'Guten Tag Pietro\n\nIch möchte als Lehrperson vollen Zugang zur ABU-Materialplattform (bbw-hko.ch) erhalten.\n\nName:\nSchule / Abteilung:\nLehrpersonen-E-Mail:\n\nBesten Dank und freundliche Grüsse',
+  )
+  return (
+    <div className="a4-page wb-gate">
+      <div className="wb-gate-inner">
+        <div className="wb-gate-lock" aria-hidden="true">🔒</div>
+        <h2>{titles[kind]}</h2>
+        <p>
+          Dieser Bereich ist angemeldeten Lehrpersonen vorbehalten. In der Gast-Ansicht siehst du
+          die <strong>Herausforderungen</strong> sowie <strong>Austausch &amp; Transfer</strong>.
+          Kompetenznachweise und das Begleitdokument sind nicht öffentlich.
+        </p>
+        <p>
+          Wer vollen Zugriff möchte, schreibt eine E-Mail von einer{' '}
+          <strong>Lehrpersonen-Adresse</strong> an <a href={`mailto:${GATE_MAIL}`}>{GATE_MAIL}</a>.
+        </p>
+        <a className="wb-gate-cta" href={`mailto:${GATE_MAIL}?subject=${subject}&body=${body}`}>
+          ✉ Zugang anfragen
+        </a>
+      </div>
+    </div>
+  )
+}
+
 export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, defaultAbteilung = '', readOnly = false }: Props) {
   // B1/B2 — Union aller abgedeckten Kompetenzen der Einheit (für die README-Übersicht).
   // Die DocS-Fusszeilen verwenden bewusst die PRO-Herausforderung-Werte (sit.nrlp.nr_primary),
@@ -57,6 +154,16 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [navOpen, setNavOpen] = useState(false)
   const [kiOpen, setKiOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
+  // Gast-Gate für die Lies-mich-Buttons (KN/KI-Sperre läuft über die doc-Auswahl selbst).
+  const [guestGate, setGuestGate] = useState<null | 'kn' | 'begleiter' | 'ki'>(null)
+  const [dling, setDling] = useState(false)
+  const logoCache = useRef<{ buf: ArrayBuffer; dataUrl: string } | null>(null)
+
+  const prefix = useMemo(() => {
+    const kompetenz = d.kn?.kompetenz_nr || d.prinzip?.kern_kompetenzversprechen || (d.id.match(/^([\d.]+)/)?.[1]) || 'kompetenz'
+    const slugPart = d.id.replace(/^[\d.]+_/, '')
+    return `${kompetenz}_${slugPart}`
+  }, [d])
 
   useEffect(() => {
     const style = document.createElement('style')
@@ -124,6 +231,127 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     setTimeout(() => setToast(null), 3500)
   }
 
+  // Logo einmal laden (ArrayBuffer für docx, DataURL fürs HTML) und cachen.
+  const ensureLogo = useCallback(async () => {
+    if (logoCache.current) return logoCache.current
+    const buf = await fetch(logoUrl).then((r) => r.arrayBuffer())
+    const bytes = new Uint8Array(buf)
+    let bin = ''
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i])
+    const dataUrl = 'data:image/png;base64,' + btoa(bin)
+    logoCache.current = { buf, dataUrl }
+    return logoCache.current
+  }, [logoUrl])
+
+  // Baut Markup + docx-Factory + Dateiname für das aktuell angezeigte Dokument.
+  const currentArtifact = (
+    pngBuf: ArrayBuffer,
+  ): { baseName: string; title: string; compact?: boolean; markup: string; docx: () => any } | null => {
+    const p = prefix
+    if (doc === 'doc-s') {
+      if (!sit || !d.set) return null
+      const suffix = mode === 'fill' ? 'auftrag' : 'dossier'
+      return {
+        baseName: `${p}_doc-s_hf-${situation}_${suffix}`,
+        title: `DOC-S HF ${situation} (${suffix})`,
+        compact: mode === 'info',
+        markup: renderToStaticMarkup(<DocS sit={sit} set={d.set} abteilung={abteilung} mode={mode} edits={{}} onEdit={() => {}} />),
+        docx: () => buildDocS({ sit, set: d.set!, abteilung, mode, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-austausch') {
+      if (!d.set) return null
+      return {
+        baseName: `${p}_doc-austausch`,
+        title: 'DOC-AUSTAUSCH · Set-Abschluss',
+        markup: renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
+        docx: () => buildAustausch({ set: d.set!, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-dossier') {
+      if (!d.dossier) return null
+      return {
+        baseName: `${p}_doc-dossier`,
+        title: 'Glossar+ (EBA)',
+        markup: renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />),
+        docx: () => buildDossier({ dossier: d.dossier!, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-kn-s') {
+      if (!d.kn) return null
+      return {
+        baseName: `${p}_doc-kn-s_${knTyp}`,
+        title: `DOC-KN-S ${knTyp}`,
+        markup: renderToStaticMarkup(<DocKnS kn={d.kn} knTyp={knTyp} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
+        docx: () => buildKnS({ kn: d.kn!, knTyp, abteilung, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-kn-lp') {
+      if (!d.kn) return null
+      return {
+        baseName: `${p}_doc-kn-lp`,
+        title: 'DOC-KN-LP Lehrperson + Bewertung',
+        markup: renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />),
+        docx: () => buildKnLp({ kn: d.kn!, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngBuf, sits: [d.hf_A, d.hf_B, d.hf_C] }),
+      }
+    }
+    if (doc === 'doc-ki-1' || doc === 'doc-ki-2') {
+      if (!d.ki) return null
+      const which = doc === 'doc-ki-1' ? 'ki_1' : 'ki_2'
+      const num = which === 'ki_1' ? '1' : '2'
+      return {
+        baseName: `${p}_doc-ki-${num}`,
+        title: `DOC-KI-${num} · KI-Toolbox`,
+        markup: renderToStaticMarkup(<DocKi ki={d.ki} which={which} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
+        docx: () => buildKi({ ki: d.ki!, which, abteilung, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-lernprompt') {
+      if (!d.lernprompt) return null
+      return {
+        baseName: `${p}_doc-lernprompt`,
+        title: 'DOC-LERNPROMPT · KI-Toolbox',
+        markup: renderToStaticMarkup(<DocLernprompt lernprompt={d.lernprompt} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
+        docx: () => buildLernprompt({ lernprompt: d.lernprompt!, abteilung, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-lernbegleiter') {
+      if (!d.lernbegleiter) return null
+      return {
+        baseName: `${p}_doc-lernbegleiter`,
+        title: 'DOC-LERNBEGLEITER · KI-Toolbox',
+        markup: renderToStaticMarkup(<DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
+        docx: () => buildLernbegleiter({ lernbegleiter: d.lernbegleiter!, abteilung, logoPng: pngBuf }),
+      }
+    }
+    return null
+  }
+
+  // Einzeldownload des aktuell angezeigten Dokuments als HTML oder Word.
+  const downloadCurrent = async (kind: 'html' | 'word') => {
+    if (dling) return
+    setDling(true)
+    try {
+      const { buf, dataUrl } = await ensureLogo()
+      const art = currentArtifact(buf)
+      if (!art) { showToast('Für dieses Dokument ist kein Download verfügbar.', 'error'); return }
+      if (kind === 'html') {
+        const html = standaloneHtml(cssRenderer, art.title, art.markup, dataUrl, { compact: art.compact })
+        triggerDownload(new Blob([html], { type: 'text/html;charset=utf-8' }), `${art.baseName}.html`)
+      } else {
+        const docx = art.docx()
+        if (!docx) { showToast('Word-Version für dieses Dokument nicht verfügbar.', 'error'); return }
+        const blob = await docToBlob(docx)
+        triggerDownload(blob, `${art.baseName}.docx`)
+      }
+    } catch (e: any) {
+      console.error(e)
+      showToast('Download fehlgeschlagen: ' + (e?.message || e), 'error')
+    } finally {
+      setDling(false)
+    }
+  }
+
   const handleBundle = async () => {
     if (bundling) return
     setBundling(true)
@@ -181,9 +409,7 @@ ${cssRenderer}
 
       const zip = new JSZip()
       const log: string[] = []
-      const kompetenz = d.kn?.kompetenz_nr || d.prinzip?.kern_kompetenzversprechen || (d.id.match(/^([\d.]+)/)?.[1]) || 'kompetenz'
-      const slugPart = d.id.replace(/^[\d.]+_/, '')
-      const prefix = `${kompetenz}_${slugPart}`
+      // `prefix` stammt aus dem Component-Scope (useMemo).
 
       for (const letter of ['A', 'B', 'C'] as SitLetter[]) {
         const s = classifySit(d, letter)
@@ -375,11 +601,16 @@ ${cssRenderer}
     docName = 'Lehrperson + Bewertung'
   }
 
-  const selectSit = (s: SitLetter) => { setDoc('doc-s'); setSituation(s); setNavOpen(false) }
-  const selectKnTyp = (t: string) => { setDoc('doc-kn-s'); setKnTyp(t); setNavOpen(false) }
-  const pick = (target: DocSel) => { setDoc(target); setNavOpen(false) }
+  const selectSit = (s: SitLetter) => { setGuestGate(null); setDoc('doc-s'); setSituation(s); setNavOpen(false) }
+  const selectKnTyp = (t: string) => { setGuestGate(null); setDoc('doc-kn-s'); setKnTyp(t); setNavOpen(false) }
+  const pick = (target: DocSel) => { setGuestGate(null); setDoc(target); setNavOpen(false) }
 
   const isKiDoc = doc === 'doc-ki-1' || doc === 'doc-ki-2' || doc === 'doc-lernprompt' || doc === 'doc-lernbegleiter'
+
+  // Gast-Gate: gesperrte doc-Auswahl → Gate; zusätzlich die Lies-mich-Buttons via guestGate.
+  const docLocked = readOnly && !GUEST_ALLOWED.includes(doc)
+  const gateKind: null | 'kn' | 'begleiter' | 'ki' = guestGate ?? (docLocked ? (isKiDoc ? 'ki' : 'kn') : null)
+  const lockBadge = readOnly ? <span className="wb-lock" title="Nur für Lehrpersonen" aria-hidden="true">🔒</span> : null
 
   return (
     <div className="aesthetic-modern wb-root" style={{ '--wb-top': `${wbTop}px` } as any}>
@@ -401,14 +632,20 @@ ${cssRenderer}
         </div>
 
         {d.begleiter?.raw && (
-          <a
-            className="wb-action lies"
-            href={`/einheiten/${d.id}/begleiter`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            📖 Lies mich!
-          </a>
+          readOnly ? (
+            <button type="button" className="wb-action lies locked" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
+              📖 Lies mich! {lockBadge}
+            </button>
+          ) : (
+            <a
+              className="wb-action lies"
+              href={`/einheiten/${d.id}/begleiter`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📖 Lies mich!
+            </a>
+          )
         )}
 
         <nav className="wb-tree">
@@ -453,18 +690,20 @@ ${cssRenderer}
               {knTypen.map((t) => (
                 <button
                   key={t.typ}
-                  className={`wb-item nested${doc === 'doc-kn-s' && knTyp === t.typ ? ' active' : ''}`}
+                  className={`wb-item nested${doc === 'doc-kn-s' && knTyp === t.typ ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => selectKnTyp(t.typ)}
                 >
                   <span className="wb-item-title">{knTypLabel(t.typ, t.label)}</span>
+                  {lockBadge}
                 </button>
               ))}
               <button
-                className={`wb-item${doc === 'doc-kn-lp' ? ' active' : ''}`}
+                className={`wb-item${doc === 'doc-kn-lp' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                 onClick={() => pick('doc-kn-lp')}
               >
                 <span className="wb-dot">📋</span>
                 <span className="wb-item-title">Lehrperson + Bewertung</span>
+                {lockBadge}
               </button>
             </div>
           )}
@@ -485,49 +724,59 @@ ${cssRenderer}
               <>
               <p className="wb-ki-hint">Optionales Zusatzangebot — die Lehrperson entscheidet über den Einsatz.</p>
               {d.kiLiesmich?.raw && (
-                <a
-                  className="wb-action lies wb-ki-lies"
-                  href={`/einheiten/${d.id}/ki-liesmich`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  📖 KI-Toolbox — Lies mich!
-                </a>
+                readOnly ? (
+                  <button type="button" className="wb-action lies wb-ki-lies locked" onClick={() => { setGuestGate('ki'); setNavOpen(false) }}>
+                    📖 KI-Toolbox — Lies mich! {lockBadge}
+                  </button>
+                ) : (
+                  <a
+                    className="wb-action lies wb-ki-lies"
+                    href={`/einheiten/${d.id}/ki-liesmich`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    📖 KI-Toolbox — Lies mich!
+                  </a>
+                )
               )}
               {d.ki?.assignments?.some((a) => a.key === 'ki_1') && (
                 <button
-                  className={`wb-item${doc === 'doc-ki-1' ? ' active' : ''}`}
+                  className={`wb-item${doc === 'doc-ki-1' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-ki-1')}
                 >
                   <span className="wb-letter wb-letter-ki">1</span>
                   <span className="wb-item-title">{d.ki?.assignments?.find((a) => a.key === 'ki_1')?.titel || 'KI-Auftrag 1'}</span>
+                  {lockBadge}
                 </button>
               )}
               {d.ki?.assignments?.some((a) => a.key === 'ki_2') && (
                 <button
-                  className={`wb-item${doc === 'doc-ki-2' ? ' active' : ''}`}
+                  className={`wb-item${doc === 'doc-ki-2' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-ki-2')}
                 >
                   <span className="wb-letter wb-letter-ki">2</span>
                   <span className="wb-item-title">{d.ki?.assignments?.find((a) => a.key === 'ki_2')?.titel || 'KI-Auftrag 2'}</span>
+                  {lockBadge}
                 </button>
               )}
               {d.lernprompt && (
                 <button
-                  className={`wb-item${doc === 'doc-lernprompt' ? ' active' : ''}`}
+                  className={`wb-item${doc === 'doc-lernprompt' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-lernprompt')}
                 >
                   <span className="wb-letter wb-letter-ki">P</span>
                   <span className="wb-item-title">KI-Lernprompt</span>
+                  {lockBadge}
                 </button>
               )}
               {d.lernbegleiter && (
                 <button
-                  className={`wb-item${doc === 'doc-lernbegleiter' ? ' active' : ''}`}
+                  className={`wb-item${doc === 'doc-lernbegleiter' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-lernbegleiter')}
                 >
                   <span className="wb-letter wb-letter-ki">L</span>
                   <span className="wb-item-title">KI-Lernbegleiter</span>
+                  {lockBadge}
                 </button>
               )}
               </>
@@ -544,18 +793,27 @@ ${cssRenderer}
       <div className="wb-canvas">
         <div className="wb-dochead">
           <div className="wb-dochead-title">
-            <span className="wb-dochead-kicker">{docKicker}</span>
-            <span className="wb-dochead-name">{docName}</span>
+            <span className="wb-dochead-kicker">{gateKind ? 'Nur für Lehrpersonen' : docKicker}</span>
+            <span className="wb-dochead-name">{gateKind ? 'Zugriff eingeschränkt' : docName}</span>
           </div>
-          {doc === 'doc-s' && (
-            <div className="wb-mode">
-              <button className={mode === 'fill' ? 'on' : ''} onClick={() => setMode('fill')}>Auftrag</button>
-              <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>
-            </div>
-          )}
+          <div className="wb-dochead-actions">
+            {doc === 'doc-s' && !gateKind && (
+              <div className="wb-mode">
+                <button className={mode === 'fill' ? 'on' : ''} onClick={() => setMode('fill')}>Auftrag</button>
+                <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>
+              </div>
+            )}
+            {!readOnly && !gateKind && (
+              <div className="wb-dl" role="group" aria-label="Dieses Dokument herunterladen">
+                <span className="wb-dl-label">Dieses Dokument:</span>
+                <button type="button" onClick={() => downloadCurrent('html')} disabled={dling}>⬇ HTML</button>
+                <button type="button" onClick={() => downloadCurrent('word')} disabled={dling}>⬇ Word</button>
+              </div>
+            )}
+          </div>
         </div>
 
-        {isKiDoc && (
+        {isKiDoc && !gateKind && (
           <div className="wb-ki-banner" role="note">
             <p>
               <strong>KI-Toolbox — optionales Zusatzangebot.</strong> Der Einsatz dieser Materialien
@@ -571,7 +829,7 @@ ${cssRenderer}
             </p>
           </div>
         )}
-        <main className="pages">{docNode}</main>
+        <main className="pages">{gateKind ? <GatePanel kind={gateKind} /> : docNode}</main>
       </div>
 
       {readOnly ? (

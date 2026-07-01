@@ -1,0 +1,265 @@
+---
+import LP from '../layouts/LP.astro'
+import { getAccess, bounceKt1 } from '../lib/auth'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+
+const bounce = bounceKt1(Astro, access)
+if (bounce) return bounce
+if (access.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material teilen ist nur für angemeldete Lehrpersonen möglich.'))
+
+const defaultAbteilung = access.abteilung ?? ''
+
+const selbstcheckItems = [
+  ['situation_ich', 'Die Ausgangssituation ist aus der ICH-Perspektive der Lernenden formuliert.'],
+  ['handlungsprodukt', 'Es gibt ein konkretes Handlungsprodukt, das die Lernenden erstellen.'],
+  ['kn_transfer', 'Der Kompetenznachweis prüft die Kompetenz in einer neuen Situation (Transfer).'],
+  ['kriterien', 'Beurteilungskriterien (SuK / Gesellschaft) sind vorhanden.'],
+]
+---
+<LP title="Eigenes Material teilen">
+  <div class="max-w-3xl mx-auto">
+    <a href="/" class="text-sm text-slate-500 hover:text-slate-700">← Hauptplattform</a>
+    <h1 class="text-2xl font-semibold mt-2 mb-1">Eigenes Material teilen</h1>
+    <p class="text-sm text-slate-500 mb-6">
+      Du hast eigenes Material erstellt und erprobt? Fülle den kurzen Selbsteinschätzungsbogen aus und lade das Material als PDF hoch.
+      Das Kernteam (KT1) sieht deinen Beitrag und kann ihn in die Sammlung aufnehmen.
+    </p>
+
+    <div id="fb-msg" class="text-sm mb-4 hidden"></div>
+
+    <form id="em-form" class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
+      <input type="hidden" name="feedback_art" value="eigenes" />
+
+      <!-- Titel + Verortung -->
+      <section>
+        <label class="flex flex-col gap-1 mb-4">
+          <span class="field-label">Titel des Materials <span class="text-red-500">*</span></span>
+          <input class="input" name="eigen_titel" placeholder="z.B. Mietvertrag prüfen — Fall Polymechanik" />
+        </label>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Klasse</span>
+            <input class="input" name="klasse" placeholder="z.B. Poly24a" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Lehrjahr</span>
+            <input class="input" type="number" name="lehrjahr" min="1" max="4" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Abteilung</span>
+            <input class="input" name="abteilung" value={defaultAbteilung} />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Dauer (Lektionen)</span>
+            <input class="input" type="number" name="dauer_lektionen" step="0.5" min="0" />
+          </label>
+        </div>
+      </section>
+
+      <!-- Handlungssituation + Handlungsprodukt -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Handlungssituation & Handlungsprodukt</h2>
+        <div class="space-y-3">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Handlungssituation <span class="text-red-500">*</span></span>
+            <textarea class="input" name="eigen_handlungssituation" rows="3" placeholder="Die Ausgangssituation, in der die Lernenden handeln (ICH-Perspektive)."></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Handlungsprodukt <span class="text-red-500">*</span></span>
+            <textarea class="input" name="eigen_handlungsprodukt" rows="2" placeholder="Was erstellen die Lernenden konkret?"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <!-- Kompetenznachweis -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Kompetenznachweis</h2>
+        <div class="space-y-3">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">KN-Format <span class="text-red-500">*</span></span>
+            <select class="input" name="eigen_kn_format">
+              <option value="">— wählen —</option>
+              <option value="fachgespraech">Fachgespräch</option>
+              <option value="mini_case_schriftlich">Mini-Case (schriftlich)</option>
+              <option value="werkschau_transfer">Werkschau / Transfer</option>
+              <option value="andere">Andere</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">KN-Aufgabe <span class="text-red-500">*</span></span>
+            <textarea class="input" name="eigen_kn_aufgabe" rows="3" placeholder="Wie prüfst du die Kompetenz? Idealerweise eine neue Transfer-Situation."></textarea>
+          </label>
+        </div>
+      </section>
+
+      <!-- Selbstcheck -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-2">Kurzer Selbstcheck</h2>
+        <p class="text-xs text-slate-500 mb-3">Hake ab, was zutrifft — als schnelle Qualitätskontrolle.</p>
+        <div class="space-y-2">
+          {selbstcheckItems.map(([key, label]) => (
+            <label class="check-item">
+              <input type="checkbox" data-selbstcheck={key} /> {label}
+            </label>
+          ))}
+        </div>
+      </section>
+
+      <!-- PDF-Upload -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-2">Material hochladen (PDF) <span class="text-red-500">*</span></h2>
+        <p class="text-xs text-slate-500 mb-2">Nur PDF, max. 15 MB. Papier-Materialien bitte vorher einscannen.</p>
+        <div id="em-file-list" class="space-y-1 mb-2"></div>
+        <input type="file" id="em-files" accept="application/pdf,.pdf" class="text-sm text-slate-600" />
+      </section>
+
+      <div class="flex items-center justify-end gap-3">
+        <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
+        <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Material teilen</button>
+      </div>
+    </form>
+  </div>
+
+  <script is:inline>
+    document.querySelectorAll('.check-item input[type=checkbox]').forEach((cb) => {
+      const apply = () => cb.closest('.check-item').classList.toggle('checked', cb.checked)
+      apply(); cb.addEventListener('change', apply)
+    })
+
+    const form = document.getElementById('em-form')
+    let savedId = null
+
+    function gather(status) {
+      const fd = new FormData(form)
+      const obj = { status, feedback_art: 'eigenes' }
+      for (const [k, v] of fd.entries()) {
+        if (v === '' || v == null) continue
+        if (k === 'lehrjahr') obj[k] = parseInt(v, 10)
+        else if (k === 'dauer_lektionen') obj[k] = parseFloat(v)
+        else obj[k] = v
+      }
+      const selbstcheck = {}
+      form.querySelectorAll('[data-selbstcheck]').forEach((cb) => {
+        selbstcheck[cb.dataset.selbstcheck] = cb.checked
+      })
+      obj.eigen_selbstcheck = selbstcheck
+      return obj
+    }
+
+    function pdfQueued() {
+      const input = document.getElementById('em-files')
+      return !!(input && input.files && input.files.length > 0)
+    }
+
+    async function uploadPdf() {
+      const input = document.getElementById('em-files')
+      if (!input || !input.files || input.files.length === 0 || !savedId) return
+      const file = input.files[0]
+      if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+        throw new Error('Nur PDF-Dateien sind erlaubt.')
+      }
+      const fd = new FormData()
+      fd.append('files', file)
+      const res = await fetch(`/api/einheit-feedbacks/${savedId}/files`, { method: 'POST', body: fd })
+      const body = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(body.error || 'Upload fehlgeschlagen.')
+      input.value = ''
+      renderFileList(body.data ?? [])
+    }
+
+    function renderFileList(files) {
+      const list = document.getElementById('em-file-list')
+      list.innerHTML = ''
+      files.forEach((f) => {
+        const li = document.createElement('div')
+        li.className = 'flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5'
+        li.innerHTML = `<a href="/api/einheit-feedbacks/${savedId}/files?path=${encodeURIComponent(f.path)}" target="_blank" class="underline text-slate-700 truncate">${f.name}</a>
+          <button class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0">Entfernen</button>`
+        li.querySelector('button').addEventListener('click', async () => {
+          const res = await fetch(`/api/einheit-feedbacks/${savedId}/files?path=${encodeURIComponent(f.path)}`, { method: 'DELETE' })
+          const body = await res.json().catch(() => ({}))
+          if (res.ok) renderFileList(body.data ?? [])
+          else alert('Fehler: ' + (body.error || res.statusText))
+        })
+        list.appendChild(li)
+      })
+    }
+
+    function validate(payload, status) {
+      const req = [
+        ['eigen_titel', 'Titel'],
+        ['eigen_handlungssituation', 'Handlungssituation'],
+        ['eigen_handlungsprodukt', 'Handlungsprodukt'],
+        ['eigen_kn_format', 'KN-Format'],
+        ['eigen_kn_aufgabe', 'KN-Aufgabe'],
+      ]
+      if (status === 'eingereicht') {
+        for (const [k, label] of req) {
+          if (!payload[k] || !String(payload[k]).trim()) return `Bitte ${label} ausfüllen.`
+        }
+        if (!pdfQueued() && !savedId) return 'Bitte das Material als PDF hochladen.'
+      } else {
+        if (!payload.eigen_titel?.trim()) return 'Bitte mindestens einen Titel angeben, um zu speichern.'
+      }
+      return null
+    }
+
+    async function send(status) {
+      const msg = document.getElementById('fb-msg')
+      const payload = gather(status)
+      const err = validate(payload, status)
+      if (err) {
+        msg.textContent = err
+        msg.className = 'text-sm text-red-600'
+        msg.classList.remove('hidden')
+        return
+      }
+      msg.textContent = 'Speichere…'
+      msg.className = 'text-sm text-slate-500'
+      msg.classList.remove('hidden')
+
+      try {
+        let res
+        if (savedId) {
+          res = await fetch(`/api/einheit-feedbacks/${savedId}`, {
+            method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+          })
+        } else {
+          res = await fetch('/api/einheit-feedbacks', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+          })
+        }
+        const body = await res.json().catch(() => ({}))
+        if (!res.ok) throw new Error(body.error || res.statusText)
+        if (body.data?.id) savedId = body.data.id
+
+        let uploadError = null
+        if (savedId && pdfQueued()) {
+          try { await uploadPdf() } catch (e) { uploadError = e }
+        }
+
+        if (status === 'eingereicht') {
+          if (uploadError) {
+            msg.textContent = 'Material gespeichert, aber der PDF-Upload ist fehlgeschlagen: ' + uploadError.message + ' Bitte lade die PDF erneut hoch.'
+            msg.className = 'text-sm text-amber-600'
+          } else {
+            window.location.href = '/?success=Material+geteilt.+Danke!'
+          }
+        } else {
+          msg.textContent = uploadError
+            ? 'Entwurf gespeichert, aber der PDF-Upload ist fehlgeschlagen: ' + uploadError.message
+            : 'Entwurf gespeichert. Du kannst die PDF jetzt hochladen.'
+          msg.className = uploadError ? 'text-sm text-amber-600' : 'text-sm text-emerald-600'
+        }
+      } catch (err) {
+        msg.textContent = 'Fehler beim Speichern: ' + err.message
+        msg.className = 'text-sm text-red-600'
+      }
+    }
+
+    document.getElementById('save-draft').addEventListener('click', () => send('entwurf'))
+    document.getElementById('submit-final').addEventListener('click', () => send('eingereicht'))
+  </script>
+</LP>

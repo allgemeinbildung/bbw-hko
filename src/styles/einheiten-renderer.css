@@ -472,6 +472,46 @@ body {
 .wb-mode button:hover { color: #fff; }
 .wb-mode button.on { background: #fff; color: #1d2026; font-weight: 600; }
 
+/* dochead right-side actions: mode toggle + per-document download */
+.wb-dochead-actions { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.wb-dl { display: inline-flex; align-items: center; gap: 6px; }
+.wb-dl-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #b9bdc5; margin-right: 2px;
+}
+.wb-dl button {
+  background: rgba(255,255,255,0.12); border: 0; color: #e8eaee;
+  padding: 6px 12px; border-radius: 6px;
+  font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.wb-dl button:hover { background: #fff; color: #1d2026; }
+.wb-dl button:disabled { opacity: 0.6; cursor: progress; }
+
+/* locked nav items (guest view) */
+.wb-item.locked { color: #94a3b8; }
+.wb-lock { margin-left: auto; font-size: 12px; opacity: 0.8; flex-shrink: 0; }
+.wb-action.lies.locked { background: #64748b; border-color: #64748b; box-shadow: none; }
+.wb-action.lies.locked:hover { background: #475569; border-color: #475569; }
+
+/* guest gate panel (shown instead of a locked document) */
+.wb-gate { display: flex; align-items: center; justify-content: center; }
+.wb-gate-inner {
+  max-width: 520px; margin: 40px auto; text-align: center;
+  padding: 40px 36px; border: 1px solid #e2e8f0; border-radius: 14px;
+  background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.wb-gate-lock { font-size: 40px; line-height: 1; margin-bottom: 14px; }
+.wb-gate-inner h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 14px; }
+.wb-gate-inner p { font-size: 14px; line-height: 1.55; color: #475569; margin: 0 0 12px; }
+.wb-gate-inner a { color: #0E6E3A; font-weight: 600; }
+.wb-gate-cta {
+  display: inline-block; margin-top: 10px;
+  background: #0E6E3A; color: #fff !important; text-decoration: none;
+  padding: 11px 22px; border-radius: 10px; font-size: 14px; font-weight: 700;
+}
+.wb-gate-cta:hover { background: #0a5a2e; }
+
 /* preview area — no longer needs space for the old fixed chrome */
 .wb-canvas .pages { padding: 22px 24px 96px; }
 

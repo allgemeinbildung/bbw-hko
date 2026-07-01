@@ -5,6 +5,10 @@ import { buildBegleiterBuffer } from '../../../lib/einheiten/begleiter-builder'
 export const GET: APIRoute = async ({ params, request, locals }) => {
   if (!locals.user) return new Response('Unauthorized', { status: 401 })
 
+  // Gäste dürfen die KI-Toolbox nicht herunterladen.
+  const { data: gp } = await locals.supabase.from('profiles').select('role').eq('id', locals.user.id).single()
+  if (gp?.role === 'gast') return new Response('Forbidden', { status: 403 })
+
   const setKey = params.setKey!
   const meta = einheitById(setKey)
   const fullSet = loadEinheit(setKey)

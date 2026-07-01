@@ -52,6 +52,17 @@ const renderSet = enrichKompetenzen(visibleSet)
 // B3 — Abdeckungs-Übersicht aus dem Index (keine zusätzlichen Datenquellen nötig).
 const abgedeckte = meta.abgedeckte_kompetenzen?.length ? meta.abgedeckte_kompetenzen : [meta.kompetenz_nr]
 const letters = ['A', 'B', 'C'] as const
+
+// Kompetenz-Klartexte (verbatim aus dem nRLP) — bewusst NUR hier auf der Detailseite
+// ausgeschrieben, nicht im Katalog. Die Texte liegen bereits enrichKompetenzen-aufgelöst
+// in renderSet.hf_*.nrlp.kompetenzen; wir bauen daraus eine {nr → text}-Map.
+const kompTextMap = new Map<string, string>()
+for (const hf of [renderSet.hf_A, renderSet.hf_B, renderSet.hf_C]) {
+  for (const k of hf?.nrlp?.kompetenzen ?? []) {
+    if (k?.nr && k?.text && !kompTextMap.has(String(k.nr))) kompTextMap.set(String(k.nr), k.text)
+  }
+}
+const kompTexte = abgedeckte.map((nr) => ({ nr, text: kompTextMap.get(String(nr)) || '' }))
 ---
 <Einheiten title={meta.einheit_titel} role={role} fullBleed>
   <style is:global set:html={cssRenderer}></style>
@@ -86,13 +97,18 @@ const letters = ['A', 'B', 'C'] as const
   <div class="border-b border-slate-200 bg-white">
     <div class="max-w-7xl mx-auto px-6 py-5">
       <h2 class="text-sm font-semibold text-slate-900 mb-3">Was deckt diese Einheit ab?</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
-        <div>
-          <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Kompetenzen</span>
-          <div class="flex flex-wrap gap-1.5">
-            {abgedeckte.map((k) => <span class="chip chip-blue">Kompetenz {k}</span>)}
-          </div>
-        </div>
+      <div class="mb-5">
+        <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-2">Kompetenzen</span>
+        <ul class="space-y-2">
+          {kompTexte.map((k) => (
+            <li class="flex gap-2.5 items-start">
+              <span class="chip chip-blue shrink-0 mt-0.5">Kompetenz {k.nr}</span>
+              {k.text && <span class="text-sm text-slate-700 leading-snug">{k.text}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
         {meta.aspekte.length > 0 && (
           <div>
             <span class="block text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Gesellschafts-Aspekte</span>

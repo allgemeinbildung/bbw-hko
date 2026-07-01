@@ -141,6 +141,8 @@ export function showDetail(node) {
     if (u.lebensbezug) html += `<div class="detail-leitidee-kurz">${escHtmlMultiline(u.lebensbezug)}</div>`;
     if (u.herausforderung) html += `<div class="detail-desc"><strong>Herausforderung:</strong> ${escHtmlMultiline(u.herausforderung)}</div>`;
     if (u.produkt) html += `<div class="detail-desc"><strong>Produkt:</strong> ${escHtmlMultiline(u.produkt)}</div>`;
+    const ubLg = u.lehrgang ? `?lehrgang=${encodeURIComponent(u.lehrgang)}` : '';
+    html += `<a class="nrlp-open-btn" href="/umsetzungsbeispiele${ubLg}" target="_top">Alle Umsetzungsbeispiele ansehen →</a>`;
   } else if (node.type === 'scaffold') {
     const s = node.data;
     html += `<div class="detail-meta">Umsetzung ${escHtml(s.umsetzung_variante || '-')} &middot; Niveau ${escHtml(s.niveau || '-')}</div>`;

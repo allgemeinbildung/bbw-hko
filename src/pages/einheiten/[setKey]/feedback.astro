@@ -2,7 +2,6 @@
 import Einheiten from '../../../layouts/Einheiten.astro'
 import { einheitById } from '../../../lib/einheiten'
 import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
-import { skNameByNr } from '../../../lib/sk-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -22,8 +21,10 @@ const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
 const defaultAbteilung = profile?.abteilung ?? ''
 
 const knTypen = meta.kn_typen
-const declaredSk: string[] = (meta.sk ?? []).map((n) => skNameByNr(n))
-const declaredAspekte: string[] = meta.aspekte ?? []
+
+// Vorauswahl aus dem zentralen /feedback-Entscheidungsbaum (?art=1zu1|angepasst)
+const preArtRaw = Astro.url.searchParams.get('art')
+const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : ''
 ---
 <Einheiten title={`Feedback · ${meta.einheit_titel}`} role={role}>
   <div class="max-w-3xl mx-auto">
@@ -33,10 +34,37 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       Einheit <strong>{meta.einheit_titel}</strong> — {meta.titel}
     </p>
 
+    <!-- Schritt 1: Entscheidungsbaum -->
+    <div id="art-step" class="mb-2">
+      <h2 class="text-base font-semibold text-slate-900 mb-3">Wie hast du das Material genutzt?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <button type="button" class="art-choice" data-art="1zu1">
+          <span class="art-choice-title">1:1 übernommen</span>
+          <span class="art-choice-desc">Ich habe die Einheit unverändert unterrichtet. Kurzes Feedback, kein Upload.</span>
+        </button>
+        <button type="button" class="art-choice" data-art="angepasst">
+          <span class="art-choice-title">Angepasst</span>
+          <span class="art-choice-desc">Ich habe die vorgegebene Einheit verändert. Gleiches Feedback plus Upload der angepassten Dateien.</span>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">
+        Komplett eigenes Material erstellt? →
+        <a href="/eigenes-material" class="underline text-slate-600 hover:text-slate-900">Eigenes Material teilen</a>
+      </p>
+    </div>
+
     <div id="fb-msg" class="text-sm mb-4 hidden"></div>
 
-    <form id="fb-form" class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
+    <!-- Schritt 2: schlanker Feedback-Bogen (erst nach Auswahl sichtbar) -->
+    <form id="fb-form" data-pre-art={preArt} class="space-y-6 bg-white border border-slate-200 rounded-lg p-6 hidden">
       <input type="hidden" name="einheit_id" value={setKey} />
+      <input type="hidden" name="feedback_art" id="feedback-art" value="" />
+
+      <div class="flex items-center gap-2 -mt-1">
+        <span class="text-xs text-slate-500">Genutzt als:</span>
+        <span id="art-badge" class="text-xs font-semibold px-2 py-0.5 rounded-full"></span>
+        <button type="button" id="art-change" class="text-xs underline text-slate-500 hover:text-slate-700">ändern</button>
+      </div>
 
       <!-- Kontext -->
       <section>
@@ -71,12 +99,12 @@ const declaredAspekte: string[] = meta.aspekte ?? []
 
       <!-- Komponenten -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Welche Komponenten der Einheit hast du eingesetzt?</h2>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Welche Komponenten hast du eingesetzt?</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
           <label class="check-item"><input type="checkbox" name="genutzt_sit_a" checked /> Herausforderung A</label>
           <label class="check-item"><input type="checkbox" name="genutzt_sit_b" checked /> Herausforderung B</label>
           <label class="check-item"><input type="checkbox" name="genutzt_sit_c" checked /> Herausforderung C</label>
-          <label class="check-item" id="kn-checkbox-wrap"><input type="checkbox" name="genutzt_kn" id="genutzt-kn-cb" checked /> KN</label>
+          <label class="check-item"><input type="checkbox" name="genutzt_kn" id="genutzt-kn-cb" checked /> KN</label>
         </div>
         {knTypen.length > 0 && (
           <label class="flex flex-col gap-1">
@@ -89,7 +117,23 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         )}
       </section>
 
-      <!-- Bewertung -->
+      <!-- Angepasst: was verändert + Upload -->
+      <section id="angepasst-section" class="hidden rounded-lg border border-amber-200 bg-amber-50/60 p-4">
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Deine Anpassung</h2>
+        <label class="flex flex-col gap-1 mb-4">
+          <span class="field-label">Was hast du angepasst? <span class="text-red-500">*</span></span>
+          <textarea class="input" name="eigene_anpassungen" rows="3" placeholder="Beschreibe kurz, was du an der Einheit verändert hast (z.B. berufsspezifische Einstiegssituation, gekürzte Aufträge …)."></textarea>
+        </label>
+        <div>
+          <span class="field-label block mb-1">Angepasste Dateien hochladen</span>
+          <p class="text-xs text-slate-500 mb-2">PDF, HTML oder Word (DOCX). Mehrere Dateien möglich, max. 15 MB/Datei.</p>
+          <div id="idee-file-list" class="space-y-1 mb-2"></div>
+          <p id="idee-upload-hint" class="text-xs text-amber-600 hidden">Speichere zuerst als Entwurf, um Dateien hochzuladen.</p>
+          <input type="file" multiple id="idee-files" accept=".pdf,.html,.htm,.doc,.docx" class="text-sm text-slate-600" />
+        </div>
+      </section>
+
+      <!-- Bewertung (unverändert beibehalten) -->
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-3">Bewertung (1 = sehr schwach … 5 = sehr stark)</h2>
         <div class="space-y-3">
@@ -141,7 +185,7 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         </div>
       </section>
 
-      <!-- KN-Erfolg (P2) — sichtbar wenn genutzt_kn aktiv -->
+      <!-- KN-Erfolg — sichtbar wenn genutzt_kn aktiv -->
       <section id="kn-erfolg-section">
         <h2 class="text-base font-semibold text-slate-900 mb-3">Erfolg des Kompetenznachweises</h2>
         <div class="space-y-3">
@@ -174,104 +218,12 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         </div>
       </section>
 
-      <!-- Taxonomie-Echo (P3) -->
-      {(declaredSk.length > 0 || declaredAspekte.length > 0) && (
-        <section>
-          <h2 class="text-base font-semibold text-slate-900 mb-2">Welche Kompetenzen kamen tatsächlich zum Tragen?</h2>
-          <p class="text-xs text-slate-500 mb-3">Nur die für diese Einheit deklarierten SK / Aspekte sind auswählbar.</p>
-          {declaredSk.length > 0 && (
-            <div class="mb-3">
-              <span class="field-label block mb-2">Schlüsselkompetenzen</span>
-              <div class="flex flex-wrap gap-2">
-                {declaredSk.map((sk) => (
-                  <label class="check-item">
-                    <input type="checkbox" name="wirksame_sk" value={sk} /> {sk}
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-          {declaredAspekte.length > 0 && (
-            <div>
-              <span class="field-label block mb-2">Gesellschafts-Aspekte</span>
-              <div class="flex flex-wrap gap-2">
-                {declaredAspekte.map((asp) => (
-                  <label class="check-item">
-                    <input type="checkbox" name="wirksame_aspekte" value={asp} /> {asp}
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-        </section>
-      )}
-
-      <!-- Qualitative Rückmeldung -->
+      <!-- Ein Freitextfeld statt sechs -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Qualitative Rückmeldung</h2>
-        <div class="space-y-3">
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Was hat funktioniert?</span>
-            <textarea class="input" name="was_funktionierte" rows="3"></textarea>
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Was nicht?</span>
-            <textarea class="input" name="was_nicht_funktionierte" rows="3"></textarea>
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Änderungsvorschläge</span>
-            <textarea class="input" name="aenderungsvorschlaege" rows="3"></textarea>
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Eigene Anpassungen (was hast du verändert?)</span>
-            <textarea class="input" name="eigene_anpassungen" rows="3"></textarea>
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">War das Begleitdokument hilfreich?</span>
-            <textarea class="input" name="begleiter_nuetzlich" rows="2"></textarea>
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Sonstige Anmerkungen</span>
-            <textarea class="input" name="anmerkungen" rows="2"></textarea>
-          </label>
-        </div>
-      </section>
-
-      <!-- Neue Idee (P4) -->
-      <section>
-        <label class="check-item" id="neue-idee-wrap">
-          <input type="checkbox" name="neue_idee" id="neue-idee-cb" />
-          Ich habe eine neue/angepasste Herausforderung oder ein neues Handlungsprodukt erstellt
+        <label class="flex flex-col gap-1">
+          <span class="field-label">Was ist dir aufgefallen? (optional)</span>
+          <textarea class="input" name="anmerkungen" rows="3" placeholder="Was hat funktioniert, was nicht, Änderungsideen — kurz in eigenen Worten."></textarea>
         </label>
-        <div id="neue-idee-section" class="hidden mt-4 space-y-3 pl-4 border-l-2 border-slate-200">
-          <div>
-            <span class="field-label block mb-2">Art der Idee</span>
-            <div class="radio-group">
-              <label class="radio-pill"><input type="radio" name="idee_typ" value="herausforderung" hidden /> Herausforderung</label>
-              <label class="radio-pill"><input type="radio" name="idee_typ" value="handlungsprodukt" hidden /> Handlungsprodukt</label>
-              <label class="radio-pill"><input type="radio" name="idee_typ" value="kn_aufgabe" hidden /> KN-Aufgabe</label>
-            </div>
-          </div>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Titel <span class="text-red-500">*</span></span>
-            <input class="input" name="idee_titel" placeholder="Kurzer, beschreibender Titel" />
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Beschreibung <span class="text-red-500">*</span></span>
-            <textarea class="input" name="idee_beschreibung" rows="4" placeholder="Was genau hast du erstellt oder verändert?"></textarea>
-          </label>
-          <div id="idee-upload-wrap">
-            <span class="field-label block mb-1">Dateien hochladen</span>
-            <p class="text-xs text-slate-500 mb-2">Max. 15 MB/Datei. Erlaubt: PDF, Word, Bilder, ZIP u.a.</p>
-            <div id="idee-file-list" class="space-y-1 mb-2"></div>
-            <p id="idee-upload-hint" class="text-xs text-amber-600 hidden">Speichere zuerst als Entwurf, um Dateien hochzuladen.</p>
-            <input type="file" multiple id="idee-files" class="text-sm text-slate-600" />
-          </div>
-          <label class="check-item" id="freigabe-wrap">
-            <input type="checkbox" name="freigabe_gemeinsamer_kn" />
-            Darf das Kernteam (KT2) diese Idee für den gemeinsamen Kompetenznachweis verwenden?
-          </label>
-        </div>
       </section>
 
       <div class="flex items-center justify-end gap-3">
@@ -280,6 +232,27 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       </div>
     </form>
   </div>
+
+  <style>
+    .art-choice {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.6rem;
+      background: white;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    .art-choice:hover {
+      border-color: var(--brand);
+      box-shadow: 0 8px 20px -12px rgba(14, 110, 58, 0.4);
+      transform: translateY(-1px);
+    }
+    .art-choice-title { font-weight: 600; color: #0f172a; font-size: 1.05rem; }
+    .art-choice-desc { font-size: 0.8rem; line-height: 1.5; color: #64748b; }
+  </style>
 
   <script is:inline>
     // Radio-pill click behaviour
@@ -300,6 +273,36 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       apply(); cb.addEventListener('change', apply)
     })
 
+    // ── Entscheidungsbaum ────────────────────────────────────────────────
+    const artStep = document.getElementById('art-step')
+    const form = document.getElementById('fb-form')
+    const artInput = document.getElementById('feedback-art')
+    const artBadge = document.getElementById('art-badge')
+    const angepasstSection = document.getElementById('angepasst-section')
+
+    function selectArt(art) {
+      artInput.value = art
+      const isAngepasst = art === 'angepasst'
+      angepasstSection.classList.toggle('hidden', !isAngepasst)
+      artBadge.textContent = isAngepasst ? 'Angepasst' : '1:1 übernommen'
+      artBadge.className = 'text-xs font-semibold px-2 py-0.5 rounded-full ' +
+        (isAngepasst ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800')
+      artStep.classList.add('hidden')
+      form.classList.remove('hidden')
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    document.querySelectorAll('.art-choice').forEach((btn) => {
+      btn.addEventListener('click', () => selectArt(btn.dataset.art))
+    })
+    document.getElementById('art-change').addEventListener('click', () => {
+      form.classList.add('hidden')
+      artStep.classList.remove('hidden')
+    })
+
+    // Vorauswahl aus dem zentralen /feedback-Entscheidungsbaum → Auswahlschritt überspringen
+    const preArt = form.dataset.preArt
+    if (preArt === '1zu1' || preArt === 'angepasst') selectArt(preArt)
+
     // KN checkbox → toggle KN-Erfolg section
     const knCb = document.getElementById('genutzt-kn-cb')
     const knSection = document.getElementById('kn-erfolg-section')
@@ -314,17 +317,10 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       })
     })
 
-    // Neue Idee → section toggle
-    const neueIdeeCb = document.getElementById('neue-idee-cb')
-    const neueIdeeSec = document.getElementById('neue-idee-section')
-    function syncNeueIdee() { neueIdeeSec.classList.toggle('hidden', !neueIdeeCb.checked) }
-    syncNeueIdee(); neueIdeeCb.addEventListener('change', syncNeueIdee)
-
     // State: feedback row id returned after first save
     let savedFeedbackId = null
 
     function gather(status) {
-      const form = document.getElementById('fb-form')
       const fd = new FormData(form)
       const obj = { status }
       const intFields = ['lehrjahr','tauglichkeit','qualitaet_situation','qualitaet_handlungsprodukt',
@@ -332,10 +328,6 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       for (const [k, v] of fd.entries()) {
         if (v === '' || v == null) continue
         if (k === 'weiterempfehlung') obj[k] = v === 'true'
-        else if (k === 'neue_idee') { /* handled via checkbox below */ }
-        else if (k === 'freigabe_gemeinsamer_kn') { /* handled below */ }
-        else if (k === 'wirksame_sk') { obj.wirksame_sk = obj.wirksame_sk ? [...obj.wirksame_sk, v] : [v] }
-        else if (k === 'wirksame_aspekte') { obj.wirksame_aspekte = obj.wirksame_aspekte ? [...obj.wirksame_aspekte, v] : [v] }
         else if (intFields.includes(k)) obj[k] = parseInt(v, 10)
         else if (k === 'dauer_lektionen') obj[k] = parseFloat(v)
         else obj[k] = v
@@ -345,10 +337,6 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         const el = form.querySelector(`[name="${k}"]`)
         obj[k] = !!(el && el.checked)
       })
-      obj.neue_idee = !!(form.querySelector('[name="neue_idee"]')?.checked)
-      obj.freigabe_gemeinsamer_kn = !!(form.querySelector('[name="freigabe_gemeinsamer_kn"]')?.checked)
-      obj.wirksame_sk = obj.wirksame_sk ?? []
-      obj.wirksame_aspekte = obj.wirksame_aspekte ?? []
       return obj
     }
 
@@ -374,7 +362,7 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       list.innerHTML = ''
       files.forEach((f) => {
         const li = document.createElement('div')
-        li.className = 'flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5'
+        li.className = 'flex items-center justify-between text-sm bg-white border border-slate-200 rounded px-3 py-1.5'
         li.innerHTML = `<a href="/api/einheit-feedbacks/${savedFeedbackId}/files?path=${encodeURIComponent(f.path)}" target="_blank" class="underline text-slate-700 truncate">${f.name}</a>
           <button class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0" data-path="${f.path}">Entfernen</button>`
         li.querySelector('button').addEventListener('click', async () => {
@@ -391,10 +379,11 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       const msg = document.getElementById('fb-msg')
       const payload = gather(status)
 
-      if (payload.neue_idee && (!payload.idee_titel?.trim() || !payload.idee_beschreibung?.trim())) {
-        msg.textContent = 'Bitte Titel und Beschreibung der neuen Idee ausfüllen.'
+      if (payload.feedback_art === 'angepasst' && !payload.eigene_anpassungen?.trim()) {
+        msg.textContent = 'Bitte beschreibe kurz, was du angepasst hast.'
         msg.className = 'text-sm text-red-600'
         msg.classList.remove('hidden')
+        angepasstSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
         return
       }
 
@@ -403,7 +392,7 @@ const declaredAspekte: string[] = meta.aspekte ?? []
       msg.classList.remove('hidden')
 
       try {
-        let res, body
+        let res
         if (savedFeedbackId) {
           res = await fetch(`/api/einheit-feedbacks/${savedFeedbackId}`, {
             method: 'PATCH',
@@ -417,17 +406,13 @@ const declaredAspekte: string[] = meta.aspekte ?? []
             body: JSON.stringify(payload),
           })
         }
-        body = await res.json().catch(() => ({}))
+        const body = await res.json().catch(() => ({}))
         if (!res.ok) throw new Error(body.error || res.statusText)
         if (body.data?.id) savedFeedbackId = body.data.id
 
-        // Show file input now that we have an id
-        document.getElementById('idee-upload-hint').classList.add('hidden')
-        document.getElementById('idee-files').classList.remove('hidden')
+        // Datei-Upload jetzt möglich (nur angepasst)
+        document.getElementById('idee-upload-hint')?.classList.add('hidden')
 
-        // A1: Upload entkoppelt vom «neue Idee»-Flag und nicht-fatal.
-        // Die Feedback-Zeile ist bereits gespeichert; ein fehlgeschlagener Upload
-        // (z.B. fehlender Bucket) darf das gespeicherte Feedback NICHT verwerfen.
         let uploadError = null
         if (savedFeedbackId && hasQueuedFiles()) {
           try { await uploadIdeeDateien() } catch (e) { uploadError = e }
@@ -451,11 +436,6 @@ const declaredAspekte: string[] = meta.aspekte ?? []
         msg.className = 'text-sm text-red-600'
       }
     }
-
-    // Show hint until first save
-    const ideeFileInput = document.getElementById('idee-files')
-    ideeFileInput.classList.add('hidden')
-    document.getElementById('idee-upload-hint').classList.remove('hidden')
 
     document.getElementById('save-draft').addEventListener('click', () => send('entwurf'))
     document.getElementById('submit-final').addEventListener('click', () => send('eingereicht'))

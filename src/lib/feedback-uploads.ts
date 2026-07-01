@@ -4,6 +4,7 @@ export const FEEDBACK_BUCKET = 'feedback-uploads'
 const MAX_BYTES = 15 * 1024 * 1024
 const ALLOWED_EXT = [
   'pdf', 'doc', 'docx', 'odt', 'rtf', 'txt', 'md',
+  'html', 'htm',
   'ppt', 'pptx', 'xls', 'xlsx', 'csv',
   'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'zip',
 ]

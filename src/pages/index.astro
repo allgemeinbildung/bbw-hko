@@ -20,10 +20,10 @@ const allTiles = [
     cta: 'Zum Katalog',
   },
   {
-    href: '/einreichen',
-    title: 'Material einreichen',
-    blurb: 'Eigenes Material erfassen, mit nRLP-Taxonomie versehen und KT1 zur Review vorlegen.',
-    cta: 'Zum Formular',
+    href: '/feedback',
+    title: 'Feedback / Material einreichen',
+    blurb: 'Rückmeldung zu einer unterrichteten BBW-Einheit geben (1:1 oder angepasst) oder eigenes Material einreichen. Ein kurzer Entscheidungsbaum führt dich zum passenden Formular.',
+    cta: 'Los geht’s',
     lpOnly: true,
   },
 ]
@@ -97,14 +97,18 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
       <div class="border-t border-slate-100 pt-5">
         <p class="text-xs text-slate-400 uppercase tracking-wider mb-4">Weitere Angebote</p>
         <div class="flex flex-col gap-3">
+          <a href="/umsetzungsbeispiele" class="flex flex-col gap-0.5 group">
+            <span class="inline-flex items-center gap-2 text-base text-slate-600 group-hover:text-[var(--brand)] transition-colors">
+              Umsetzungsbeispiele SLP ABU 2030
+              <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-[var(--brand-tint)] text-[var(--brand-dark)] tracking-wide">Neu</span>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                <path d="M5 10h10M11 5l5 5-5 5" />
+              </svg>
+            </span>
+            <span class="text-xs text-slate-400">Offizielle Beispiele aus dem Schullehrplan — durchsuchbar oder als PDF</span>
+          </a>
           <a href="/jahresplanung/uebersicht" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
             Jahresplanung — alle Lehrjahre
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-              <path d="M5 10h10M11 5l5 5-5 5" />
-            </svg>
-          </a>
-          <a href="/situationen" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
-            Sammlung Herausforderungen
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
               <path d="M5 10h10M11 5l5 5-5 5" />
             </svg>
@@ -121,13 +125,12 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
               <path d="M5 10h10M11 5l5 5-5 5" />
             </svg>
           </a>
-          <span class="flex flex-col gap-0.5 cursor-default select-none">
-            <span class="inline-flex items-center gap-2 text-base text-slate-400">
-              Umsetzungsbeispiele SLP ABU 2030
-              <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-slate-100 text-slate-400 tracking-wide">Demnächst</span>
-            </span>
-            <span class="text-xs text-slate-400">Offizielle Beispiele aus dem Schullehrplan — ab Ende Juni</span>
-          </span>
+          <a href="/situationen" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
+            Sammlung Herausforderungen
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+              <path d="M5 10h10M11 5l5 5-5 5" />
+            </svg>
+          </a>
         </div>
       </div>
     </main>

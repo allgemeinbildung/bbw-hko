@@ -1,0 +1,165 @@
+---
+import Admin from '../../layouts/Admin.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+// Geteilte Materialien: angepasste Einheiten + komplett eigenes Material.
+// Entwürfe (status='entwurf') ausblenden — nur eingereichtes anzeigen.
+const { data: fbRaw } = await Astro.locals.supabase
+  .from('einheit_feedbacks')
+  .select('*')
+  .in('feedback_art', ['eigenes', 'angepasst'])
+  .neq('status', 'entwurf')
+  .order('created_at', { ascending: false })
+
+const fb = fbRaw ?? []
+
+// LP-Namen auflösen
+const lpIds = Array.from(new Set(fb.map((f: any) => f.lp_id).filter(Boolean)))
+let profilesById = new Map<string, { full_name: string | null }>()
+if (lpIds.length > 0) {
+  const { data: profs } = await Astro.locals.supabase
+    .from('profiles').select('id, full_name').in('id', lpIds)
+  profilesById = new Map((profs ?? []).map((p: any) => [p.id, { full_name: p.full_name }]))
+}
+
+const knFormatLabel: Record<string, string> = {
+  fachgespraech: 'Fachgespräch',
+  mini_case_schriftlich: 'Mini-Case (schriftlich)',
+  werkschau_transfer: 'Werkschau / Transfer',
+  andere: 'Andere',
+}
+const selbstcheckLabel: Record<string, string> = {
+  situation_ich: 'ICH-Perspektive',
+  handlungsprodukt: 'Handlungsprodukt',
+  kn_transfer: 'KN-Transfer',
+  kriterien: 'Beurteilungskriterien',
+}
+
+const eigeneCount = fb.filter((f: any) => f.feedback_art === 'eigenes').length
+const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').length
+---
+<Admin title="Geteilte Materialien">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Geteilte Materialien</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      Von Lehrpersonen geteiltes Material: {angepasstCount} angepasste Einheit(en) und {eigeneCount} eigene(s) Material(ien).
+    </p>
+  </div>
+
+  {fb.length === 0 ? (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center text-slate-500">
+      Noch keine geteilten Materialien vorhanden.
+    </div>
+  ) : (
+    <div class="space-y-4">
+      {fb.map((row: any) => {
+        const created = row.created_at ? new Date(row.created_at).toLocaleDateString('de-CH') : ''
+        const isEigenes = row.feedback_art === 'eigenes'
+        const dateien = Array.isArray(row.idee_dateien) ? row.idee_dateien : []
+        const lpName = profilesById.get(row.lp_id)?.full_name ?? '—'
+        const selbstcheck = (row.eigen_selbstcheck && typeof row.eigen_selbstcheck === 'object') ? row.eigen_selbstcheck : {}
+        const title = isEigenes ? (row.eigen_titel || 'Eigenes Material') : row.einheit_id
+        return (
+          <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+            <div class="p-4 flex flex-wrap items-start gap-3 justify-between">
+              <div class="min-w-0">
+                <div class="flex items-center gap-2 flex-wrap mb-1">
+                  <span class={`text-xs font-medium px-2 py-0.5 rounded-full ${isEigenes ? 'bg-violet-100 text-violet-800' : 'bg-amber-100 text-amber-800'}`}>
+                    {isEigenes ? 'Eigenes Material' : 'Angepasste Einheit'}
+                  </span>
+                  {row.freigabe_gemeinsamer_kn && (
+                    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Freigabe KT2</span>
+                  )}
+                  <span class="text-xs text-slate-400">{created}</span>
+                </div>
+                <div class="font-medium text-slate-900 truncate">{title}</div>
+                <div class="text-xs text-slate-500">
+                  {lpName}
+                  {row.klasse && <span> · {row.klasse}</span>}
+                  {row.abteilung && <span> · {row.abteilung}</span>}
+                  {row.lehrjahr && <span> · {row.lehrjahr}. LJ</span>}
+                </div>
+              </div>
+              {dateien.length > 0 && (
+                <div class="flex flex-wrap gap-2 shrink-0">
+                  {dateien.map((f: any) => (
+                    <a
+                      href={`/api/einheit-feedbacks/${row.id}/files?path=${encodeURIComponent(f.path)}`}
+                      target="_blank"
+                      class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-white border border-slate-200 rounded hover:bg-slate-50 text-slate-700"
+                    >📎 {f.name}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {isEigenes && (
+              <div class="border-t border-slate-100 bg-slate-50 p-4 space-y-2 text-sm">
+                {row.eigen_handlungssituation && (
+                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungssituation</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungssituation}</p></div>
+                )}
+                {row.eigen_handlungsprodukt && (
+                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungsprodukt</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungsprodukt}</p></div>
+                )}
+                {(row.eigen_kn_format || row.eigen_kn_aufgabe) && (
+                  <div>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Kompetenznachweis</span>
+                    <p class="text-slate-700 whitespace-pre-wrap">
+                      {row.eigen_kn_format && <strong>{knFormatLabel[row.eigen_kn_format] ?? row.eigen_kn_format}: </strong>}
+                      {row.eigen_kn_aufgabe}
+                    </p>
+                  </div>
+                )}
+                {Object.keys(selbstcheck).length > 0 && (
+                  <div class="flex flex-wrap gap-2 pt-1">
+                    {Object.entries(selbstcheck).map(([k, v]) => (
+                      <span class={`text-xs px-2 py-0.5 rounded-full ${v ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-500'}`}>
+                        {v ? '✓' : '✕'} {selbstcheckLabel[k] ?? k}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {!isEigenes && row.eigene_anpassungen && (
+              <div class="border-t border-slate-100 bg-amber-50 p-4">
+                <span class="text-xs font-semibold text-amber-800 uppercase tracking-wide">Was wurde angepasst</span>
+                <p class="text-sm text-slate-700 whitespace-pre-wrap mt-1">{row.eigene_anpassungen}</p>
+              </div>
+            )}
+
+            {row.anmerkungen && (
+              <div class="border-t border-slate-100 px-4 py-3">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Anmerkungen</span>
+                <p class="text-sm text-slate-700 whitespace-pre-wrap mt-1">{row.anmerkungen}</p>
+              </div>
+            )}
+
+            <div class="border-t border-slate-100 px-4 py-2 flex items-center justify-between gap-3">
+              {row.kt1_kommentar && <span class="text-xs text-slate-500 truncate">KT1: {row.kt1_kommentar}</span>}
+              <span class="text-xs text-slate-500 ml-auto">
+                Status:
+                <select
+                  class="ml-1 text-xs border border-slate-200 rounded px-1 py-0.5 bg-white"
+                  data-endpoint={`/api/einheit-feedbacks/${row.id}`}
+                  onchange={`fetch(this.dataset.endpoint, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: this.value }) }).then(r => r.ok ? location.reload() : alert('Fehler beim Speichern.'))`}
+                >
+                  {['eingereicht', 'gesichtet', 'weitergeleitet_kt2'].map((s) => (
+                    <option value={s} selected={row.status === s}>{s}</option>
+                  ))}
+                </select>
+              </span>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )}
+</Admin>
