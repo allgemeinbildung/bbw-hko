@@ -75,7 +75,7 @@
       "1.1.1"
     ],
     "slug": "lehrvertrag_orientieren",
-    "titel": "Ich kann mich mit dem Lehrvertrag in der Arbeitswelt orientieren. Bei Fragen oder Konflikten kontaktiere ich die richtige Stelle.",
+    "titel": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
     "einheit_titel": "Lehrvertrag orientieren",
     "lehrgang": "EBA_2J",
     "modul": "1.1",
@@ -90,7 +90,7 @@
     ],
     "dominanter_aspekt": "Recht",
     "sk": [
-      2,
+      1,
       7,
       11
     ],
@@ -103,8 +103,8 @@
       "B"
     ],
     "hf_titel": {
-      "A": "Ein Punkt im Lehrvertrag ist unklar",
-      "B": "Ein Konflikt im Betrieb",
+      "A": "Das komplexe Formular",
+      "B": "Anders als abgemacht",
       "C": null
     },
     "hat_kn": true,
@@ -112,7 +112,7 @@
     "hat_ki": false,
     "hat_lernprompt": false,
     "hat_lernbegleiter": false,
-    "hybrid_situation_titel": "Unklarer Vertrag und Ärger im Betrieb",
+    "hybrid_situation_titel": "Ab nächstem Monat auch samstags",
     "kn_typen": [
       {
         "typ": "fachgespraech",
@@ -197,6 +197,68 @@
     "bundle_dateien": 30
   },
   {
+    "id": "1.1.2_unterlagen_ordnen",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "1.1.2",
+    "abgedeckte_kompetenzen": [
+      "1.1.2"
+    ],
+    "slug": "unterlagen_ordnen",
+    "titel": "Ich kann meinen digitalen Lern- und Arbeitsplatz einrichten und meine Unterlagen ordnen. So finde ich schnell, was ich brauche.",
+    "einheit_titel": "Unterlagen ordnen",
+    "lehrgang": "EBA_2J",
+    "modul": "1.1",
+    "modul_titel": "Ins Berufsleben einsteigen",
+    "thema_nr": 1,
+    "themen": [
+      "T1"
+    ],
+    "aspekte": [
+      "Technologische und digitale Transformation",
+      "Identität und Sozialisation"
+    ],
+    "dominanter_aspekt": "Technologische und digitale Transformation",
+    "sk": [
+      1,
+      10,
+      11
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Alles neu, alles digital",
+      "B": "Der volle Downloads-Ordner",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hybrid_situation_titel": "Morgen ist das Gespräch",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch (Primärform)"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich (vereinfacht)"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion (vereinfacht)"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
     "id": "1.2.2_ki_kompetenznachweis_vorbereiten",
     "status": "entwurf",
     "entwurf_komponenten": [],
@@ -243,6 +305,71 @@
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
     "hybrid_situation_titel": "Drei Tage vor dem KN — wie weit lasse ich die KI ran?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 30
+  },
+  {
+    "id": "1.3.1_konsum_verantworten",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "1.3.1",
+    "abgedeckte_kompetenzen": [
+      "1.3.1",
+      "1.3.2",
+      "1.3.3"
+    ],
+    "slug": "konsum_verantworten",
+    "titel": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+    "einheit_titel": "Konsum verantworten",
+    "lehrgang": "EFZ_4J",
+    "modul": "1.3",
+    "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+    "thema_nr": 1,
+    "themen": [
+      "T1"
+    ],
+    "aspekte": [
+      "Wirtschaft",
+      "Identität und Sozialisation"
+    ],
+    "dominanter_aspekt": "Wirtschaft",
+    "sk": [
+      5,
+      11,
+      1
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
+    "hf_titel": {
+      "A": "Marke oder echtes Bedürfnis?",
+      "B": "Am 20. ist das Konto leer",
+      "C": "Abos, Kleinkredit, Schuldenspirale"
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
+    "hybrid_situation_titel": "0 Prozent — heute unterschreiben",
     "kn_typen": [
       {
         "typ": "fachgespraech",

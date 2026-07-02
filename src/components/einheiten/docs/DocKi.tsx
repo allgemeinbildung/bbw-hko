@@ -137,7 +137,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
 
         {lf && (
           <section style={{ marginTop: '2.5mm' }}>
-            <SectionHead num="Leitfragen">Behalte diese Fragen im Kopf</SectionHead>
+            <SectionHead num="Leitfragen">Behalten Sie diese Fragen im Kopf</SectionHead>
             <div style={{ background: KI_LIGHT, borderRadius: '1mm', padding: '2.5mm 3mm', fontSize: '9.3pt', lineHeight: 1.4 }}>
               {lf.offen && <p style={{ margin: '0 0 1mm' }}><strong>Offen:</strong> {lf.offen}</p>}
               {lf.kritisch && <p style={{ margin: '0 0 1mm' }}><strong>Kritisch:</strong> {lf.kritisch}</p>}
@@ -149,7 +149,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
 
         {a.auftrag && (
           <section style={{ marginTop: '2.5mm' }}>
-            <SectionHead num="01 · Auftrag">Das ist deine Aufgabe</SectionHead>
+            <SectionHead num="01 · Auftrag">Das ist Ihre Aufgabe</SectionHead>
             <p style={bodyText}>{a.auftrag}</p>
           </section>
         )}
@@ -167,7 +167,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
       <PageShell code="PROMPTING" n={2}>
         {a.prompt_strategie?.length ? (
           <section>
-            <SectionHead num="02 · Prompt-Strategie">So sprichst du mit der KI</SectionHead>
+            <SectionHead num="02 · Prompt-Strategie">So sprechen Sie mit der KI</SectionHead>
             <ol style={listStyle}>
               {a.prompt_strategie.map((s, i) => <li key={i} style={listItem}>{s}</li>)}
             </ol>
@@ -185,7 +185,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
 
         {a.guetekriterien?.length ? (
           <section style={{ marginTop: '3mm' }}>
-            <SectionHead num="04 · Gütekriterien">Daran erkennst du gute Arbeit</SectionHead>
+            <SectionHead num="04 · Gütekriterien">Daran erkennen Sie gute Arbeit</SectionHead>
             <ul className="guete-list" style={{ fontSize: '9.6pt' }}>
               {a.guetekriterien.map((g, i) => (
                 <li key={i}>
@@ -195,9 +195,9 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
               ))}
             </ul>
             <div style={{ marginTop: '2.5mm' }}>
-              <div style={microLabel}>Notiere, was du mit der KI gemacht hast</div>
+              <div style={microLabel}>Notieren Sie, was Sie mit der KI gemacht haben</div>
               <p style={{ fontSize: '8.6pt', color: '#5b6470', margin: '0 0 1mm', lineHeight: 1.32 }}>
-                Welchen Prompt hast du genutzt, was hat die KI geantwortet, was hast du geprüft oder geändert?
+                Welchen Prompt haben Sie genutzt, was hat die KI geantwortet, was haben Sie geprüft oder geändert?
               </p>
               <Schreibfeld heightMm={31} value={edits[`${key}_notiz`] || ''} onChange={(v) => onEdit(`${key}_notiz`, v)} />
             </div>
@@ -209,7 +209,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
       <PageShell code="REFLEXION" n={3}>
         {a.reflexion?.length ? (
           <section>
-            <SectionHead num="05 · Reflexion">Denk darüber nach</SectionHead>
+            <SectionHead num="05 · Reflexion">Denken Sie darüber nach</SectionHead>
             {a.reflexion.map((r, i) => (
               <div key={i} style={{ marginBottom: '2.5mm' }}>
                 <p style={{ ...bodyText, margin: '0 0 1.2mm' }}>

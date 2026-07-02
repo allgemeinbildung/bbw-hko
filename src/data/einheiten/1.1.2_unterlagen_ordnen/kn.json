@@ -1,44 +1,44 @@
 {
-  "id": "1.1.1_lehrvertrag_orientieren_kn",
+  "id": "1.1.2_unterlagen_ordnen_kn",
   "modul": "1.1",
-  "kompetenz_nr": "1.1.1",
-  "topic_slug": "lehrvertrag_orientieren",
+  "kompetenz_nr": "1.1.2",
+  "topic_slug": "unterlagen_ordnen",
   "lehrgang": "EBA_2J",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "erstellt_am": "2026-07-02",
-  "set_ref": "1.1.1_lehrvertrag_orientieren_set",
-  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "set_ref": "1.1.2_unterlagen_ordnen_set",
+  "prinzip_ref": "1.1.2_unterlagen_ordnen_prinzip",
   "anchored_situations": [
-    "1.1.1_lehrvertrag_orientieren_hf_A",
-    "1.1.1_lehrvertrag_orientieren_hf_B"
+    "1.1.2_unterlagen_ordnen_hf_A",
+    "1.1.2_unterlagen_ordnen_hf_B"
   ],
-  "dominanter_aspekt": "Recht",
-  "kern_kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
-  "mehrdeutigkeits_pflicht": "Selbst klären vs. Hilfe holen",
+  "dominanter_aspekt": "Technologische und digitale Transformation",
+  "kern_kompetenzversprechen": "Ich kann meinen digitalen Lern- und Arbeitsplatz einrichten und meine Unterlagen ordnen. So finde ich schnell, was ich brauche.",
+  "mehrdeutigkeits_pflicht": "Alles genau anschauen vs. gezielt das Wichtige herausfiltern",
   "hybrid_situation": {
-    "_kommentar": "Eine Szene, kombiniert A (im dichten Formular die relevante Stelle finden) + B (Unstimmigkeit sachlich klären, Weg wählen). Persona neu (Mechanikpraktiker/in EBA, Aarau). A2, ICH, endet mit Leitfrage. Begriffs-Test F2 bestanden: kein Einzelbegriff löst die Szene.",
-    "titel": "Ab nächstem Monat auch samstags",
+    "_kommentar": "Eine Szene, kombiniert A (neue Schul-Dokumente einordnen) + B (eigene verstreute Ablage nutzbar machen). Persona neu (Bäcker-Konditor-Confiseur/in EBA, Luzern). A2, ICH, endet mit Leitfrage.",
+    "titel": "Morgen ist das Gespräch",
     "persona": {
-      "beruf": "Mechanikpraktiker/in EBA",
-      "betrieb": "Werkstatt Keller AG",
-      "ort": "Aarau"
+      "beruf": "Bäcker-Konditor-Confiseur/in EBA",
+      "betrieb": "Bäckerei Marti",
+      "ort": "Luzern"
     },
     "emotion_tag": "",
-    "text": "Ich bin Mechanikpraktiker/in EBA im 1. Lehrjahr. Ich arbeite in der Werkstatt Keller AG in Aarau. Gestern sagte mein Berufsbildner: «Ab nächstem Monat arbeiten Sie auch am Samstag.» Das überrascht mich. Beim Vorstellungsgespräch hiess es anders. Ich nehme meinen Lehrvertrag hervor. Das Formular ist dicht: viele Felder, ein Verweis auf ein Reglement. Zur Arbeitszeit finde ich zwei Stellen. Ganz sicher bin ich nicht. Ich will nichts Falsches behaupten. Aber ich will auch nicht einfach schweigen.",
-    "leitfrage": "Kläre ich das selbst mit meinem Berufsbildner — oder hole ich zuerst Hilfe bei einer Stelle?",
+    "text": "Ich bin Bäcker-Konditor-Confiseur/in EBA im 1. Lehrjahr. Ich arbeite in der Bäckerei Marti in Luzern. Morgen habe ich das erste Standort-Gespräch mit meiner Berufsbildnerin. Sie schreibt: «Bringen Sie bitte den Bildungsbericht und Ihren Ausbildungsplan mit.» Heute kamen dazu drei neue Dokumente von der Schule: eine Anleitung, ein Merkblatt, neue Chat-Regeln. Meine Dateien liegen im Downloads-Ordner und im Chat. Etwas ist auf Papier. Ich habe nur eine Stunde Zeit. Lese ich jetzt alles genau? Oder ordne ich zuerst und suche gezielt?",
+    "leitfrage": "Wie gehe ich vor, damit ich morgen alles sofort finde?",
     "aktivierte_trade_offs": [
-      "Selbst klären vs. Hilfe holen"
+      "Alles genau anschauen vs. gezielt das Wichtige herausfiltern"
     ],
     "alignment_note": {
       "_kommentar": "2 Eintraege (A/B).",
       "herausforderungen_mapping": [
         {
           "hf_letter": "A",
-          "scene_element": "Im dichten Vertrags-Formular die relevante Stelle zur Arbeitszeit finden"
+          "scene_element": "Drei neue Schul-Dokumente sichten und in Kategorien einordnen"
         },
         {
           "hf_letter": "B",
-          "scene_element": "Die Unstimmigkeit sachlich klären und den Weg wählen"
+          "scene_element": "Die eigene verstreute Ablage für das Gespräch nutzbar machen"
         }
       ],
       "new_dimensions": []
@@ -58,19 +58,19 @@
         {
           "nr": 1,
           "typ": "Erklaeren",
-          "frage": "Zeigen Sie Ihre Notizen: Wie ist der Lehrvertrag aufgebaut? Nennen Sie die Abschnitte.",
+          "frage": "Zeigen Sie Ihre Notizen: In welche Kategorien ordnen Sie die drei neuen Dokumente? Warum?",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Anwenden",
-          "frage": "Wo suchen Sie die Antwort zur Samstagsarbeit? Beschreiben Sie Ihren Weg durch das Formular.",
+          "frage": "Wie finden Sie den Bildungsbericht in einer Minute? Beschreiben Sie Ihren Weg.",
           "k_stufe": 2
         },
         {
           "nr": 3,
           "typ": "Beurteilen",
-          "frage": "Was können Sie hier selbst klären? Wofür brauchen Sie Hilfe? Begründen Sie.",
+          "frage": "Sie haben nur eine Stunde. Was schauen Sie genau an, was nur kurz? Begründen Sie.",
           "k_stufe": 3
         },
         {
@@ -82,17 +82,17 @@
         {
           "nr": 5,
           "typ": "Werthaltung",
-          "frage": "Warum ist Hilfe holen kein Zeichen von Schwäche? Begründen Sie Ihre Haltung.",
+          "frage": "Warum ist gezieltes Filtern nicht einfach Faulheit? Begründen Sie Ihre Haltung.",
           "k_stufe": 3
         }
       ],
       "sk": [
-        2,
-        7,
+        1,
+        10,
         11
       ],
       "aspekte": [
-        "Recht",
+        "Technologische und digitale Transformation",
         "Identität und Sozialisation"
       ],
       "sprachmodi": [
@@ -115,35 +115,35 @@
         {
           "nr": 1,
           "typ": "Erklaeren",
-          "aufgabe": "Ordnen Sie den Fall: Was ist passiert? Was war abgemacht? Füllen Sie die Fakten-Tabelle aus.",
+          "aufgabe": "Ordnen Sie die drei neuen Dokumente je einer Kategorie zu. Ein Satz pro Dokument: Warum dort?",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Unterscheiden",
-          "aufgabe": "Was ist hier Vertragsfrage, was Konflikt? Ordnen Sie zu, je ein Beispiel aus dem Fall.",
+          "aufgabe": "Teilen Sie die Dokumente in zwei Gruppen: genau anschauen oder nur kurz. Begründen Sie die Teilung.",
           "k_stufe": 2
         },
         {
           "nr": 3,
           "typ": "Entscheiden",
-          "aufgabe": "Welchen ersten Schritt wählen Sie? Begründen Sie kurz mit einer Stelle aus dem Vertrag.",
+          "aufgabe": "Planen Sie Ihre Stunde: Was machen Sie zuerst, was danach? Begründen Sie kurz.",
           "k_stufe": 3
         },
         {
           "nr": 4,
           "typ": "Forderung",
-          "aufgabe": "Schreiben Sie eine kurze, sachliche Nachricht an die gewählte Stelle.",
+          "aufgabe": "Schreiben Sie drei Zeilen eines Orientierungszettels für morgen: Dokument, Ablageort, Hinweis.",
           "k_stufe": 3
         }
       ],
       "sk": [
-        2,
-        7,
+        1,
+        10,
         11
       ],
       "aspekte": [
-        "Recht",
+        "Technologische und digitale Transformation",
         "Identität und Sozialisation"
       ],
       "sprachmodi": [
@@ -158,7 +158,7 @@
       "_vereinfacht_kommentar": "Weniger schreiblastig: Reflexion 120-150 Woerter, gefuehrt mit Satzanfaengen.",
       "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
       "ablauf": [
-        "Lernende wählen eines ihrer beiden Handlungsprodukte (Vertrags-Übersicht A oder Nachricht B).",
+        "Lernende wählen eines ihrer beiden Handlungsprodukte (Checkliste A oder Orientierungszettel B).",
         "Werkwahl-Begründung (2 Sätze): Warum genau dieses Handlungsprodukt?",
         "Transfer-Reflexion (120-150 Wörter): drei Fragen schriftlich beantworten, mit Satzanfängen aus dem Dossier."
       ],
@@ -169,12 +169,12 @@
       ],
       "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
       "sk": [
-        7,
+        10,
         11
       ],
-      "_sk_kommentar": "Basis [5,6,10] ∩ Union(A,B)=[1,2,7,11] = leer; ergänzt aus primary [7,11] → [7,11].",
+      "_sk_kommentar": "Basis [5,6,10] ∩ Union(A,B)=[1,2,10,11] = [10]; ergänzt aus primary [10,11] → [10,11].",
       "aspekte": [
-        "Recht",
+        "Technologische und digitale Transformation",
         "Identität und Sozialisation"
       ],
       "sprachmodi": [
@@ -184,7 +184,7 @@
     }
   ],
   "rubrik_shared": {
-    "_kommentar": "Bi-dimensional: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen, gleichgewichtet. SuK-Namen Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit integriert, KEINE Normen (EBA). Kriterium 3 nach dominantem Aspekt 'Recht' = 'Rechtliches Prinzip'.",
+    "_kommentar": "Bi-dimensional: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen, gleichgewichtet. SuK-Namen Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit integriert, KEINE Normen (EBA). Kriterium 3 nach dominantem Aspekt 'Technologische und digitale Transformation' = 'Technologisches Prinzip'.",
     "dimensionen": [
       "SuK",
       "Ges"
@@ -213,12 +213,12 @@
         ]
       },
       {
-        "name": "Rechtliches Prinzip",
+        "name": "Technologisches Prinzip",
         "dimension": "Ges",
         "stufen": [
-          "Relevante Vertragsstellen/Stellen nicht erkannt.",
-          "Vertragsstellen/Stellen teilweise erkannt.",
-          "Relevante Stelle und richtigen Weg korrekt auf den Fall angewendet.",
+          "Digitale Ordnungsstrukturen nicht erkannt.",
+          "Ordnungsstrukturen teilweise erkannt.",
+          "Digitale Ordnungsstrukturen korrekt auf den Fall angewendet.",
           "Anwendung auf einen neuen Fall übertragen."
         ]
       },

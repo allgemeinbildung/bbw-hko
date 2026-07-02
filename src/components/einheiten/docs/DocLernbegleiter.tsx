@@ -117,7 +117,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
 
           {frei && (
             <section style={{ marginBottom: '2.5mm' }}>
-              <SectionHead num="Ohne KI zuerst">Wo stehst du?</SectionHead>
+              <SectionHead num="Ohne KI zuerst">Wo stehen Sie?</SectionHead>
               {frei.auftrag && <p style={{ margin: '0 0 1.4mm', fontSize: '9.3pt', lineHeight: 1.4 }}>{frei.auftrag}</p>}
               {frei.selbsteinschaetzung?.map((line, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '2mm', padding: '1mm 0', borderBottom: '1px solid #eef0f3' }}>
@@ -132,7 +132,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
 
           {firstCards.length ? (
             <section>
-              <SectionHead num="Strategien">So lernst du mit der KI</SectionHead>
+              <SectionHead num="Strategien">So lernen Sie mit der KI</SectionHead>
               {firstCards.map((s, i) => <StrategieKarte key={i} s={s} />)}
             </section>
           ) : null}
@@ -142,7 +142,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
       {/* Folgeseiten — weitere Strategie-Karten */}
       {restChunks.map((chunk, ci) => page(++pn, 'STRATEGIEN', (
         <>
-          <PageHeader titel="So lernst du mit der KI" />
+          <PageHeader titel="So lernen Sie mit der KI" />
           {chunk.map((s, i) => <StrategieKarte key={i} s={s} />)}
         </>
       )))}
@@ -152,7 +152,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
         <>
           {tracks.length ? (
             <section style={{ marginBottom: '2.5mm' }}>
-              <SectionHead num="KN-Typen">Üben für deinen Kompetenznachweis</SectionHead>
+              <SectionHead num="KN-Typen">Üben für Ihren Kompetenznachweis</SectionHead>
               {tracks.map((t, i) => (
                 <div key={i} style={{ border: '1px solid #d8dde4', borderLeft: `3px solid ${LB_AKZENT}`, borderRadius: '1mm', padding: '1.5mm 2.5mm', marginBottom: '1.5mm', breakInside: 'avoid' }}>
                   <div style={{ fontSize: '9.3pt', fontWeight: 700, color: LB_DARK }}>{t.label}</div>

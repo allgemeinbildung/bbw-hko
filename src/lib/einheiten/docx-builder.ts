@@ -1114,6 +1114,236 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   })
 }
 
+// --- EBA Infokarten-Vorlage (leeres, anpassbares Word-Template) -----------
+// Entscheidung Teammeeting 2026-07-02 (docs/eba/EBA-Material-Updates_2026-07-02.md, Punkt 5):
+// kein fixes Infokarten-Design vorgeben, stattdessen ein leeres, einheitlich strukturiertes
+// Word-Template zum Selbst-Ausfüllen (eigene Bilder, mehr/weniger Text) anbieten. Struktur
+// spiegelt die Felder eines Nuggets (dossier.nuggets[]) — Tag, Titel, Inhalt, Beispiel,
+// Fakten-Anker — bewusst ohne Recherche-Block und ohne feste Lesestrategie/Methode.
+export interface BuildInfokartenTemplateOpts {
+  abteilung?: string
+  logoPng?: ArrayBuffer | Uint8Array | null
+}
+
+export function buildInfokartenTemplate({ abteilung, logoPng = null }: BuildInfokartenTemplateOpts = {}): Document {
+  const akzent = BBW_GRUEN
+  const light = BBW_GRUEN_TINT
+  const docCode = 'INFOKARTEN-VORLAGE (LEER) · EBA'
+  const docTitel = 'Infokarten-Vorlage (leer)'
+
+  const children: any[] = []
+
+  // ---------------- Seite 1 — Anleitung ----------------
+  children.push(p('Infokarten-Vorlage (leer) · EBA', { run: { color: akzent, bold: true, size: 16 }, spacing: { after: 40 } }))
+  children.push(h('Ihre eigene Infokarte', 'title'))
+  children.push(p(
+    'Diese Vorlage gibt kein festes Kartendesign vor. Füllen Sie sie mit eigenen Bildern, mehr oder weniger Text und passen Sie sie an Ihre Klasse an. Die Struktur bleibt einheitlich, der Inhalt ist frei gestaltbar.',
+    { run: { size: 20 }, spacing: { after: 140, line: 340, lineRule: LineRuleType.AUTO } },
+  ))
+
+  children.push(p('SO FÜLLEN SIE DIE VORLAGE AUS', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 60 } }))
+  ;[
+    'Tag wählen: A oder B (zu welcher Herausforderung gehört die Karte?).',
+    'Titel kurz und konkret formulieren.',
+    'Inhalt auf A2-Niveau schreiben: einfache Sätze, keine Nebensätze.',
+    'Beispiel ergänzen — macht den Inhalt greifbar.',
+    'Fakten-Anker: Quelle/Verweis (Lehrmittel, Gesetz, Formular) notieren.',
+    'Eigenes Bild oder Icon einfügen — grössere Bilder sind ausdrücklich erwünscht.',
+  ].forEach((s) => {
+    children.push(new Paragraph({
+      children: [new TextRun({ text: '✓  ', bold: true, color: akzent, size: 20 }), new TextRun({ text: s, size: 19 })],
+      spacing: { after: 50 },
+      indent: { left: 200 },
+    }))
+  })
+
+  children.push(spacer(100))
+  children.push(callout(
+    'Teilen erwünscht',
+    'Funktioniert Ihre Karte gut? Reichen Sie sie über das Feedback-Formular ein — gute Karten werden anderen Lehrpersonen wieder zur Verfügung gestellt.',
+    akzent, light,
+  ))
+
+  // ---------------- Seite 2 — leere Karte (zum Ausfüllen & Duplizieren) ----------------
+  children.push(pageBreak())
+  children.push(...sectionHead('VORLAGE', 'Info-Karte', akzent))
+  children.push(p('Kopieren Sie diese Seite für jede weitere Karte (Strg+C / Strg+V in Word).', { run: { italics: true, color: COLOR.inkMute, size: 16 }, spacing: { after: 140 } }))
+
+  children.push(new Paragraph({
+    children: [new TextRun({ text: 'TAG:  ☐ A     ☐ B      ·      NR.: ____', bold: true, color: akzent, size: 18, font: 'Consolas' })],
+    spacing: { after: 100 },
+  }))
+
+  children.push(skizzeBox(40, 'BILD / ICON — HIER EINFÜGEN', akzent))
+  children.push(spacer(100))
+
+  children.push(p('TITEL', { run: { color: akzent, bold: true, size: 14 } }))
+  children.push(...schreibfeld(10))
+
+  children.push(p('INHALT (A2-Niveau, kurze Sätze)', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 100 } }))
+  children.push(...schreibfeld(35))
+
+  children.push(p('BEISPIEL', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 100 } }))
+  children.push(...schreibfeld(20))
+
+  children.push(p('FAKTEN-ANKER (Quelle / Verweis)', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 100 } }))
+  children.push(...schreibfeld(10))
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
+// --- EBA Infokarte-Vorlage (voll) — mit KI-Prompt + vorstrukturierten Recherche-Feldern ---
+// Zweite Variante zur obigen leeren Vorlage: Kopfbereich mit einem kopierbaren KI-Prompt
+// (an eine KI wie Copilot zu geben, zusammen mit dieser .docx), danach eine Karte mit exakt
+// denselben Feldern/Icons wie ein echtes Glossar+-Nugget (siehe dossierRechercheBlock oben),
+// aber inhaltlich leer/[ ]-platzhalter — die Lehrperson kann Felder loeschen oder ergaenzen.
+// Die Regeln im Prompt stammen aus der Skill-Referenz
+// .claude/skills/hko-2er-EBA-set-generator/references/{dossier-architecture,a2-language-rules}.md
+// (A2-Sprachregeln §1 + Recherche-Scaffold-Spezifikation §8).
+const INFOKARTE_AI_PROMPT_LINES = [
+  'Sie helfen mir, den Inhalt einer «Info-Karte» für Lernende der 2-jährigen beruflichen Grundbildung (EBA, Sprachniveau A2) zu erarbeiten. Die angehängte Word-Datei zeigt die Struktur der Karte (Titel, Inhalt, Beispiel, Fakten-Anker, Recherche-Hinweise).',
+  'Gehen Sie in dieser Reihenfolge vor:',
+  '1. Stellen Sie mir zuerst kurze Fragen: Was ist das Thema/der Titel der Karte? Welches Wissen brauchen die Lernenden (Inhalt)? Haben Sie ein konkretes Beispiel? Was ist die Quelle (Fakten-Anker, z. B. Lehrmittel, Gesetz, Formular)?',
+  '2. Formulieren Sie den Karten-Text strikt auf Sprachniveau A2: kurze Sätze (im Schnitt höchstens 12, nie mehr als 18 Wörter), höchstens ein Nebensatz pro Satz, aktive statt passive Sätze, Sie-Form in Anweisungen (keine Du-Anrede), echte Umlaute statt ae/oe/ue, kein «ß». Erklären Sie jeden Fachbegriff einfach und mit Beispiel.',
+  '3. Ergänzen Sie danach die Recherche-Hinweise: 2–3 einfache, alltagssprachliche Suchbegriffe (keine Gesetzesartikel); einen kurzen Hinweis, wie man eine KI dazu befragt; einen «geerdeten» Beispiel-Prompt mit einer konkreten Zahl oder Situation aus der Karte (nicht nur «Was ist X?»); zwei unterschiedliche Vorschläge, wie man mit einer KI weiterlernt (z. B. erklären lassen, abfragen lassen, selbst erklären und Lücken aufzeigen lassen, ein Rollenspiel machen, eine Checkliste erstellen lassen, Feedback zu einem eigenen Text einholen, oder etwas nachschlagen/vergleichen lassen); sowie einen kurzen Selbst-Prüfauftrag.',
+  '4. Wichtig: Die Lernenden sollen lernen, wie man eine KI richtig fragt — nicht nur einen fertigen Prompt erhalten.',
+  '5. Iterieren Sie mit mir, bis der Inhalt passt. Geben Sie mir am Schluss den fertigen Text abschnittsweise, in der gleichen Reihenfolge wie die Vorlage, damit ich ihn direkt einfügen kann.',
+]
+
+// Mehrzeiliger, kopierbarer Kasten (wie promptBox(), aber mit mehreren Absaetzen statt einem String).
+function promptLinesBox(lines: string[]): Table {
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    rows: [new TableRow({
+      children: [tcell(
+        lines.map((line, i) => p(line, {
+          run: { size: 17, font: 'Consolas', color: '2A2F36' },
+          spacing: { after: i === lines.length - 1 ? 0 : 140, line: 260, lineRule: LineRuleType.AUTO },
+        })),
+        {
+          shading: { type: ShadingType.SOLID, color: 'F5F7FA' },
+          borders: {
+            top: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+            bottom: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+            left: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+            right: { style: BorderStyle.SINGLE, size: 2, color: 'D8DDE4' },
+          },
+        },
+      )],
+    })],
+  })
+}
+
+function infokartePlaceholder(text = '[ ]'): TextRun {
+  return new TextRun({ text, italics: true, color: COLOR.inkMute, size: 18 })
+}
+
+function infokarteBulletPlaceholder(): Paragraph {
+  return new Paragraph({ children: [infokartePlaceholder()], bullet: { level: 0 }, spacing: { after: 30 }, indent: { left: 200 } })
+}
+
+// Recherche-Feldgruppe fuer die "volle" Vorlage — gleiche Icons/Reihenfolge wie
+// dossierRechercheBlock() (echte Nuggets), Labels 🤖/📚 nennen bewusst Copilot als
+// Standard-KI-Tool (Skill-Regel §9: „konkretes, schulseitig verfuegbares KI-Tool nennen").
+function infokarteRechercheTemplate(akzent: string): any[] {
+  const els: any[] = []
+  const stripLabel = (icon: string, label: string) => new Paragraph({
+    children: [
+      new TextRun({ text: icon + '  ', size: 18 }),
+      new TextRun({ text: label, bold: true, color: akzent, size: 18 }),
+    ],
+    spacing: { before: 120, after: 40 },
+    keepNext: true,
+  })
+
+  els.push(stripLabel('🔎', 'Suchen Sie online:'))
+  els.push(infokarteBulletPlaceholder())
+  els.push(infokarteBulletPlaceholder())
+
+  els.push(stripLabel('🤖', 'Fragen Sie eine KI Ihrer Wahl, z. B. Copilot:'))
+  els.push(new Paragraph({ children: [infokartePlaceholder()], spacing: { after: 60 }, indent: { left: 200 } }))
+  els.push(promptBox('[ ]'))
+
+  els.push(stripLabel('📚', 'So lernen Sie mit Copilot (oder einer KI Ihrer Wahl):'))
+  els.push(infokarteBulletPlaceholder())
+  els.push(infokarteBulletPlaceholder())
+
+  els.push(new Paragraph({
+    children: [
+      new TextRun({ text: '✏  ', size: 18 }),
+      new TextRun({ text: 'Selbst prüfen: ', bold: true, color: akzent, size: 18 }),
+      infokartePlaceholder(),
+    ],
+    spacing: { before: 120, after: 40 },
+    keepNext: true,
+  }))
+
+  return els
+}
+
+export function buildInfokartenTemplatePrefilled({ abteilung, logoPng = null }: BuildInfokartenTemplateOpts = {}): Document {
+  const akzent = BBW_GRUEN
+  const light = BBW_GRUEN_TINT
+  const docCode = 'INFOKARTE-VORLAGE (VOLL) · EBA'
+  const docTitel = 'Infokarte-Vorlage (voll)'
+
+  const children: any[] = []
+
+  // ---------------- Seite 1 — KI-Prompt zum Kopieren ----------------
+  children.push(p('Infokarte-Vorlage (voll) · EBA', { run: { color: akzent, bold: true, size: 16 }, spacing: { after: 40 } }))
+  children.push(h('Ihre Infokarte mit KI erstellen', 'title'))
+  children.push(p(
+    'Diese Vorlage hat dieselben Felder wie eine echte Wissenskarte im Glossar+. Statt sie von Hand auszufüllen, lassen Sie sich von einer KI dabei helfen — mit dem Prompt unten.',
+    { run: { size: 20 }, spacing: { after: 140, line: 340, lineRule: LineRuleType.AUTO } },
+  ))
+
+  children.push(p('SO GEHEN SIE VOR', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 60 } }))
+  ;[
+    'Kopieren Sie den Prompt weiter unten (grauer Kasten).',
+    'Öffnen Sie eine KI Ihrer Wahl, z. B. Microsoft Copilot.',
+    'Fügen Sie den Prompt ein und laden Sie dieses Word-Dokument dazu hoch.',
+    'Beantworten Sie die Fragen der KI zu Ihrer Karte.',
+    'Übertragen Sie den fertigen Text auf die Karte auf Seite 2 — oder lassen Sie die KI das Dokument direkt für Sie ausfüllen.',
+  ].forEach((s) => {
+    children.push(new Paragraph({
+      children: [new TextRun({ text: '✓  ', bold: true, color: akzent, size: 20 }), new TextRun({ text: s, size: 19 })],
+      spacing: { after: 50 },
+      indent: { left: 200 },
+    }))
+  })
+
+  children.push(spacer(100))
+  children.push(p('PROMPT ZUM KOPIEREN', { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+  children.push(promptLinesBox(INFOKARTE_AI_PROMPT_LINES))
+
+  // ---------------- Seite 2 — Karte mit denselben Feldern wie ein echtes Nugget ----------------
+  children.push(pageBreak())
+  children.push(...sectionHead('VORLAGE', 'Info-Karte', akzent))
+  children.push(p('Kopieren Sie diese Seite für jede weitere Karte. Felder können gelöscht oder ergänzt werden.', { run: { italics: true, color: COLOR.inkMute, size: 16 }, spacing: { after: 140 } }))
+
+  children.push(new Paragraph({
+    children: [new TextRun({ text: 'Info-Karte A-01', bold: true, color: akzent, size: 18, font: 'Consolas' })],
+    spacing: { before: 80, after: 20 },
+    keepNext: true,
+  }))
+  children.push(h('[ Titel ]', 'section', COLOR.ink))
+  children.push(new Paragraph({ children: [infokartePlaceholder('[ Inhalt der Karte — kurzer Wissenstext auf Sprachniveau A2 ]')], spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO } }))
+  children.push(callout('Beispiel', '[ ]', akzent, light))
+  children.push(...infokarteRechercheTemplate(akzent))
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: docTitel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, docTitel, abteilung, logoPng), children }],
+  })
+}
+
 // SuS-Ansicht: Prozentzahlen (80 % / 100 %) nur im LP-Material; hier Wort-Labels.
 // Spiegelt susNiveauLabel() in DocKnS.tsx. Daten (kn.json) bleiben unveraendert.
 function susNiveauLabel(label: string): string {
@@ -1647,7 +1877,7 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
     }
   }
   if (lf) {
-    children.push(...sectionHead('Leitfragen', 'Behalte diese Fragen im Kopf', akzent))
+    children.push(...sectionHead('Leitfragen', 'Behalten Sie diese Fragen im Kopf', akzent))
     ;([['Offen', lf.offen], ['Kritisch', lf.kritisch], ['Vergleichend', lf.vergleichend], ['Urteilend', lf.urteilend]] as Array<[string, string | undefined]>).forEach(([k, v]) => {
       if (!v) return
       children.push(new Paragraph({
@@ -1658,7 +1888,7 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
   }
 
   if (a.auftrag) {
-    children.push(...sectionHead('01 · Auftrag', 'Das ist deine Aufgabe', akzent))
+    children.push(...sectionHead('01 · Auftrag', 'Das ist Ihre Aufgabe', akzent))
     children.push(p(a.auftrag, { run: { size: 20 }, spacing: { after: 100, line: 340, lineRule: LineRuleType.AUTO } }))
   }
   if (a.ki_frei_vorher) {
@@ -1668,7 +1898,7 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
   }
   if (a.prompt_strategie?.length) {
     children.push(pageBreak())
-    children.push(...sectionHead('02 · Prompt-Strategie', 'So sprichst du mit der KI', akzent))
+    children.push(...sectionHead('02 · Prompt-Strategie', 'So sprechen Sie mit der KI', akzent))
     a.prompt_strategie.forEach((s, i) => {
       children.push(new Paragraph({
         children: [
@@ -1693,7 +1923,7 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
     })
   }
   if (a.guetekriterien?.length) {
-    children.push(...sectionHead('04 · Gütekriterien', 'Daran erkennst du gute Arbeit', akzent))
+    children.push(...sectionHead('04 · Gütekriterien', 'Daran erkennen Sie gute Arbeit', akzent))
     a.guetekriterien.forEach((g) => {
       children.push(new Paragraph({
         children: [
@@ -1704,14 +1934,14 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
         spacing: { after: 40 }, indent: { left: 200 },
       }))
     })
-    // Notiz-Feld: was hast du mit der KI gemacht?
-    children.push(p('NOTIERE, WAS DU MIT DER KI GEMACHT HAST', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 120, after: 20 } }))
-    children.push(p('Welchen Prompt hast du genutzt, was hat die KI geantwortet, was hast du geprüft oder geändert?', { run: { color: COLOR.inkSoft, size: 16 }, spacing: { after: 40 } }))
+    // Notiz-Feld: was haben Sie mit der KI gemacht?
+    children.push(p('NOTIEREN SIE, WAS SIE MIT DER KI GEMACHT HABEN', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 120, after: 20 } }))
+    children.push(p('Welchen Prompt haben Sie genutzt, was hat die KI geantwortet, was haben Sie geprüft oder geändert?', { run: { color: COLOR.inkSoft, size: 16 }, spacing: { after: 40 } }))
     children.push(...schreibfeld(31))
   }
   if (a.reflexion?.length) {
     children.push(pageBreak())
-    children.push(...sectionHead('05 · Reflexion', 'Denk darüber nach', akzent))
+    children.push(...sectionHead('05 · Reflexion', 'Denken Sie darüber nach', akzent))
     a.reflexion.forEach((r, i) => {
       children.push(new Paragraph({
         children: [
@@ -1835,7 +2065,7 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
 
   const frei = lb.ki_frei_zuerst
   if (frei) {
-    children.push(...sectionHead('Ohne KI zuerst', 'Wo stehst du?', akzent))
+    children.push(...sectionHead('Ohne KI zuerst', 'Wo stehen Sie?', akzent))
     if (frei.auftrag) children.push(p(frei.auftrag, { run: { size: 20 } }))
     ;(frei.selbsteinschaetzung || []).forEach((line) => {
       children.push(new Paragraph({
@@ -1850,7 +2080,7 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
   }
 
   if (lb.strategie_karten?.length) {
-    children.push(...sectionHead('Strategien', 'So lernst du mit der KI', akzent))
+    children.push(...sectionHead('Strategien', 'So lernen Sie mit der KI', akzent))
     lb.strategie_karten.forEach((s) => {
       children.push(p(s.technik || '', { run: { bold: true, color: KI_AKZENT, size: 20 }, spacing: { before: 100, after: 20 }, keepNext: true }))
       if (s.wann) children.push(p('Wann: ' + s.wann, { run: { size: 18, color: COLOR.inkSoft } }))
@@ -1862,7 +2092,7 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
 
   if (lb.kn_typ_tracks?.length) {
     children.push(pageBreak())
-    children.push(...sectionHead('KN-Typen', 'Üben für deinen Kompetenznachweis', akzent))
+    children.push(...sectionHead('KN-Typen', 'Üben für Ihren Kompetenznachweis', akzent))
     lb.kn_typ_tracks.forEach((t) => {
       children.push(p(t.label || '', { run: { bold: true, color: KI_AKZENT, size: 19 }, spacing: { before: 100, after: 20 }, keepNext: true }))
       if (t.uebungsfokus) children.push(p(t.uebungsfokus, { run: { size: 18, color: COLOR.inkSoft } }))

@@ -1,0 +1,48 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_set",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "lehrgang": "EBA_2J",
+  "thema": "T1",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+  "prinzip_ref": "1.1.2_unterlagen_ordnen_prinzip",
+  "kn_ref": "1.1.2_unterlagen_ordnen_kn",
+  "herausforderungen": [
+    "1.1.2_unterlagen_ordnen_hf_A",
+    "1.1.2_unterlagen_ordnen_hf_B"
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "1.1.2_unterlagen_ordnen_hf_A",
+      "konzept": "Komplexität reduzieren: kategorisieren und festhalten"
+    },
+    {
+      "position": 2,
+      "herausforderung": "1.1.2_unterlagen_ordnen_hf_B",
+      "konzept": "Eigenes Ordnungssystem mit Orientierungszettel"
+    }
+  ],
+  "austausch_phase": {
+    "_kommentar": "Drei wählbare Sozialformen. Lernende nutzen die Austausch-Scaffolds im Dossier (transfer_wissensblatt.austausch_scaffolds). Sie-Form, A2.",
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Erfahrung teilen — 90 Sek. pro Person: Mein System, meine Kategorien, mein bester Tipp. Nutzen Sie die Satzanfänge aus dem Dossier.",
+      "runde_2": "Gemeinsamkeit finden — Was ist bei beiden Systemen gleich? Welche Grundregel steckt dahinter?",
+      "runde_3": "Transfer — Zeigen Sie Ihre Checkliste oder Ihren Zettel. Findet die andere Person ein Dokument in einer Minute?"
+    },
+    "einzelarbeit_plenum": "Die Lehrperson leitet die Diskussion: Wann schaue ich alles genau an? Wann filtere ich? Welche Ordnungs-Regel gilt immer?",
+    "einzelauftrag": "Fassen Sie die gemeinsame Grundregel beider Fälle in 3-4 kurzen Sätzen zusammen. Nennen Sie je ein Beispiel aus Ihrem Lehralltag. Nutzen Sie die Austausch-Scaffolds im Dossier."
+  },
+  "dekontextualisierungs_aufgabe": {
+    "_kommentar": "Bewertete Set-Aufgabe (15 Prozent). ziel verweist auf prinzip.dekontextualisierungs_anker. Begriffe aus dem Dossier.",
+    "auftrag": "Übertragen Sie die Grundregel auf einen neuen Bereich mit vielen Informationen. Wählen Sie den Bereich selbst.",
+    "format": "schriftlich, 4-6 kurze Sätze, Begriffe aus dem Dossier verwenden",
+    "ziel": "Ich verschaffe mir zuerst einen Überblick. Dann ordne ich nach klaren Kategorien. So finde ich später schnell, was ich brauche.",
+    "gewicht_prozent": 15,
+    "abgabe": "vor dem KN"
+  },
+  "status": "entwurf"
+}

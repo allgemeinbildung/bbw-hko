@@ -14,7 +14,7 @@ import { ABTEILUNGEN } from '../../lib/einheiten'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import type { EinheitFullSet } from '../../lib/einheiten/types'
 
-import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, docToBlob } from '../../lib/einheiten/docx-builder'
+import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, buildInfokartenTemplate, buildInfokartenTemplatePrefilled, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 
 interface Props {
@@ -157,6 +157,8 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   // Gast-Gate für die Lies-mich-Buttons (KN/KI-Sperre läuft über die doc-Auswahl selbst).
   const [guestGate, setGuestGate] = useState<null | 'kn' | 'begleiter' | 'ki'>(null)
   const [dling, setDling] = useState(false)
+  const [templateDling, setTemplateDling] = useState(false)
+  const [templatePrefilledDling, setTemplatePrefilledDling] = useState(false)
   const logoCache = useRef<{ buf: ArrayBuffer; dataUrl: string } | null>(null)
 
   const prefix = useMemo(() => {
@@ -349,6 +351,42 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       showToast('Download fehlgeschlagen: ' + (e?.message || e), 'error')
     } finally {
       setDling(false)
+    }
+  }
+
+  // Leeres, anpassbares Infokarten-Word-Template (EBA) — unabhängig von der aktuellen
+  // doc-Auswahl herunterladbar (siehe docs/eba/EBA-Material-Updates_2026-07-02.md, Punkt 5).
+  const downloadInfokartenTemplate = async () => {
+    if (templateDling) return
+    setTemplateDling(true)
+    try {
+      const { buf } = await ensureLogo()
+      const docx = buildInfokartenTemplate({ abteilung, logoPng: buf })
+      const blob = await docToBlob(docx)
+      triggerDownload(blob, `${prefix}_infokarten-vorlage.docx`)
+    } catch (e: any) {
+      console.error(e)
+      showToast('Download fehlgeschlagen: ' + (e?.message || e), 'error')
+    } finally {
+      setTemplateDling(false)
+    }
+  }
+
+  // Zweite Variante: "voll" — mit kopierbarem KI-Prompt + denselben Feldern wie ein echtes
+  // Nugget, aber leer/[ ]. Gleiches Download-Pattern wie downloadInfokartenTemplate oben.
+  const downloadInfokartenTemplatePrefilled = async () => {
+    if (templatePrefilledDling) return
+    setTemplatePrefilledDling(true)
+    try {
+      const { buf } = await ensureLogo()
+      const docx = buildInfokartenTemplatePrefilled({ abteilung, logoPng: buf })
+      const blob = await docToBlob(docx)
+      triggerDownload(blob, `${prefix}_infokarte-vorlage-voll.docx`)
+    } catch (e: any) {
+      console.error(e)
+      showToast('Download fehlgeschlagen: ' + (e?.message || e), 'error')
+    } finally {
+      setTemplatePrefilledDling(false)
     }
   }
 
@@ -680,6 +718,32 @@ ${cssRenderer}
             >
               <span className="wb-dot">📖</span>
               <span className="wb-item-title">Glossar+</span>
+            </button>
+          )}
+
+          {d.dossier && !readOnly && (
+            <button
+              type="button"
+              className="wb-item solo"
+              onClick={downloadInfokartenTemplate}
+              disabled={templateDling}
+              title="Leeres, anpassbares Word-Template für eigene Infokarten"
+            >
+              <span className="wb-dot">🗂️</span>
+              <span className="wb-item-title">{templateDling ? 'Vorlage wird erstellt…' : 'Infokarten-Vorlage (leer)'}</span>
+            </button>
+          )}
+
+          {d.dossier && !readOnly && (
+            <button
+              type="button"
+              className="wb-item solo"
+              onClick={downloadInfokartenTemplatePrefilled}
+              disabled={templatePrefilledDling}
+              title="Vorlage mit kopierbarem KI-Prompt, um die Karte mit einer KI (z. B. Copilot) auszufüllen"
+            >
+              <span className="wb-dot">🤖</span>
+              <span className="wb-item-title">{templatePrefilledDling ? 'Vorlage wird erstellt…' : 'Infokarte-Vorlage (voll)'}</span>
             </button>
           )}
 

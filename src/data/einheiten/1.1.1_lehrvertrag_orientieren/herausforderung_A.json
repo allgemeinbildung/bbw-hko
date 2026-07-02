@@ -7,10 +7,10 @@
   "sit_farbe": "#C0392B",
   "sit_farbe_light": "#FADBD8",
   "sit_farbe_mid": "#E74C3C",
-  "titel": "Ein Punkt im Lehrvertrag ist unklar",
+  "titel": "Das komplexe Formular",
   "wissensknoten": [
     "lehrvertrag",
-    "probezeit"
+    "vertragsaufbau"
   ],
   "nrlp": {
     "nr": "1.1.1",
@@ -40,7 +40,7 @@
       "SM3"
     ],
     "sk": [
-      2,
+      1,
       7,
       11
     ]
@@ -48,66 +48,66 @@
   "persona": {
     "beruf": "Malerpraktiker/in EBA",
     "betrieb": "Malergeschäft Frei AG",
-    "ort": "Winterthur"
+    "ort": "Olten"
   },
-  "situation_text": "Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite bei der Malergeschäft Frei AG in Winterthur. Heute lese ich meinen Lehrvertrag genau durch. Bei der Probezeit verstehe ich einen Punkt nicht. Im Vertrag steht eine andere Dauer, als ich dachte. Ich bin unsicher. Soll ich einfach nichts sagen? Oder soll ich nachfragen? Ich habe Angst, eine dumme Frage zu stellen. Aber ich will es richtig verstehen.",
+  "situation_text": "Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite im Malergeschäft Frei AG in Olten. Heute nehme ich meinen Lehrvertrag hervor. Er ist ein Formular mit vielen Feldern, Verweisen und Fachbegriffen. Er wirkt kompliziert. Ich habe ihn unterschrieben. Aber ich weiss nicht genau, was drinsteht. Muss ich jetzt alles Wort für Wort lesen? Oder finde ich einen besseren Weg?",
   "zahlen_tabelle": [],
-  "leitfrage": "Wie finde ich heraus, was bei meiner Probezeit gilt?",
+  "leitfrage": "Wie verschaffe ich mir einen Überblick über mein Vertrags-Formular?",
   "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Dossier zu Herausforderung A als Grundlage.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte A-01",
-      "text": "Erklären Sie in zwei Sätzen: Was ist ein Lehrvertrag?",
+      "text": "Gliedern Sie Ihren Lehrvertrag: Geben Sie jedem Abschnitt einen eigenen Titel. Nutzen Sie die Tabelle.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte A-02",
-      "text": "Wie lange dauert die Probezeit normalerweise? Nennen Sie die Regel.",
+      "text": "Ordnen Sie fünf Vertragspunkte zu: Standard für alle Lehrverhältnisse oder speziell für Ihren Betrieb? Füllen Sie die Tabelle aus.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
-      "knoten_ref": "Dossier | Info-Karte A-02",
-      "text": "Prüfen Sie Ihren Fall. Was gilt, wenn im Lehrvertrag eine andere Dauer steht als abgemacht?",
+      "knoten_ref": "Dossier | Info-Karte A-03",
+      "text": "Markieren Sie drei Punkte, die für Sie jetzt am wichtigsten sind. Begründen Sie kurz: Warum diese?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
       "knoten_ref": "Dossier | Info-Karte A-03",
-      "text": "Schreiben Sie eine kurze, höfliche digitale Nachricht. Fragen Sie nach dem unklaren Punkt.",
+      "text": "Ein Feld bleibt unklar. Formulieren Sie dazu eine kurze, klare Frage an Ihre/n Berufsbildner/in.",
       "feld_hoehe_mm": 15
     }
   ],
   "mindmap_zentrum": "Mein Lehrvertrag",
   "mindmap_aeste": [
     {
-      "titel": "Wichtige Teile",
+      "titel": "Abschnitte",
       "punkte": [
-        "Lohn",
-        "Ferien",
-        "Arbeitszeit"
+        "Personen",
+        "Lohn und Ferien",
+        "Rechte und Pflichten"
       ],
       "optional": false
     },
     {
-      "titel": "Probezeit",
+      "titel": "Standard oder speziell?",
       "punkte": [
-        "Dauer",
-        "Kündigung"
+        "gilt für alle",
+        "gilt für meinen Betrieb"
       ],
       "optional": false
     },
     {
-      "titel": "Wer hilft mir?",
+      "titel": "Für mich wichtig",
       "punkte": [
-        "Berufsbildner/in",
-        "Eltern"
+        "jetzt",
+        "später"
       ],
       "optional": false
     },
@@ -118,46 +118,46 @@
     }
   ],
   "handlungsprodukt": {
-    "format": "Digitale Nachricht",
-    "titel": "Meine Nachfrage zum Lehrvertrag",
-    "format_detail": "Kurze digitale Nachricht (Chat oder E-Mail), 4-6 Sätze, nach einem KI-Check",
-    "beschreibung": "Ich schreibe eine kurze digitale Nachricht. Ich frage höflich nach dem unklaren Punkt. Vorher prüfe ich den Begriff mit einem KI-Tool und dem Dossier.",
+    "format": "Gegliederte Vertrags-Übersicht",
+    "titel": "Mein Vertrag auf einer Seite",
+    "format_detail": "Tabelle mit drei Spalten: Abschnitt, Standard/speziell, wichtig für mich — eine A4-Seite",
+    "beschreibung": "Ich gliedere mein Vertrags-Formular in Abschnitte. Ich ordne die Punkte: Standard oder betriebsspezifisch. Am Ende steht mein Vertrag auf einer Seite.",
     "schritte": [
       {
-        "label": "Punkt markieren",
-        "hint": "Welcher Satz ist unklar?"
+        "label": "Formular überfliegen",
+        "hint": "Titel und Felder zuerst"
       },
       {
-        "label": "Begriff nachschlagen",
-        "hint": "Dossier und KI-Tool nutzen"
+        "label": "Abschnitte bilden",
+        "hint": "Eigene Titel geben"
       },
       {
-        "label": "Frage formulieren",
-        "hint": "Eine klare, kurze Frage"
+        "label": "Zuordnen",
+        "hint": "Standard für alle oder speziell?"
       },
       {
-        "label": "Nachricht schreiben",
-        "hint": "Höflich, mit Gruss"
+        "label": "Wichtiges markieren",
+        "hint": "Was betrifft mich jetzt?"
       },
       {
-        "label": "Prüfen und senden",
-        "hint": "Kurze Sätze? Höflich?"
+        "label": "Übersicht prüfen",
+        "hint": "Verstehe ich jeden Titel?"
       }
     ],
-    "schreib_label": "MEINE NACHRICHT HIER ERARBEITEN",
+    "schreib_label": "MEINE VERTRAGS-ÜBERSICHT HIER ERARBEITEN",
     "schreib_note": "-> wissen/lehrvertrag",
     "scaffolding": {
       "satzanfaenge": [
-        "«Guten Tag, ich habe eine Frage zu meinem Lehrvertrag.»",
-        "«Im Vertrag steht …, das verstehe ich noch nicht ganz.»"
+        "«Dieser Abschnitt regelt …»",
+        "«Für mich ist … wichtig, weil …»"
       ],
       "strategien": [
-        "Zuerst den Begriff im Dossier lesen, dann fragen.",
-        "Eine Frage pro Nachricht — kurz halten."
+        "Nicht Wort für Wort lesen — zuerst die Struktur suchen.",
+        "Unklare Begriffe im Glossar des Dossiers nachschlagen."
       ],
       "struktur": [
-        "Gruss – Frage – Dank",
-        "Kurze Sätze, ein Gedanke pro Satz"
+        "Tabelle: Abschnitt – Standard/speziell – wichtig für mich",
+        "Pro Zeile ein Abschnitt"
       ]
     }
   },
@@ -170,7 +170,7 @@
     },
     {
       "nr": "R2",
-      "text": "Wo in meinem Lehralltag ist dieses Wissen wichtig?",
+      "text": "Wo in meinem Lehralltag ist dieses Vorgehen wichtig?",
       "sub": null,
       "feld_hoehe_mm": 10
     },
@@ -186,9 +186,9 @@
       "produkt": "Leitfragen",
       "kriterium": "Inhaltliche Korrektheit",
       "vollstaendig_wenn": [
-        "Alle 4 Leitfragen beantwortet",
-        "Probezeit-Regel richtig genannt",
-        "Bezug zum eigenen Vertrag"
+        "Alle 4 Leitfragen bearbeitet",
+        "Zuordnung Standard/speziell stimmt",
+        "Auswahl in LF3 begründet"
       ]
     },
     {
@@ -201,11 +201,11 @@
     },
     {
       "produkt": "Handlungsprodukt",
-      "kriterium": "Digitale Nachricht",
+      "kriterium": "Gegliederte Vertrags-Übersicht",
       "vollstaendig_wenn": [
-        "Höfliche Anrede und Gruss",
-        "Eine klare Frage",
-        "Kurze Sätze (A2)"
+        "Alle Abschnitte mit eigenem Titel",
+        "Standard/speziell zugeordnet",
+        "Drei wichtige Punkte markiert und begründet"
       ]
     },
     {
@@ -225,26 +225,26 @@
   "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
   "herausforderung": {
     "buchstabe": "A",
-    "label": "Lehrvertrag verstehen"
+    "label": "Lehrvertrag gliedern"
   },
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Selbst klären vs. Hilfe holen",
-    "hint": "Beide Wege können richtig sein. Es hängt vom Punkt ab, der unklar ist."
+    "hint": "Vieles können Sie mit Dossier und Glossar selbst entschlüsseln. Bei manchen Punkten ist Nachfragen besser. Beides kann richtig sein."
   },
   "dekontextualisierung": {
-    "frage": "Wo müssen Sie sonst noch einen Vertrag genau verstehen?",
-    "ziel": "Ich prüfe zuerst selbst und frage gezielt nach, statt etwas blind zu unterschreiben."
+    "frage": "Wo hilft Ihnen das Gliedern sonst noch bei einem schwierigen Dokument?",
+    "ziel": "Ich suche zuerst die Struktur und filtere das Relevante, statt alles zu lesen."
   },
   "zirkularitaet_anker": {
     "iteration": "R1",
-    "r2_voraussicht": "T7: Rechte und Pflichten im Arbeitsverhältnis vertieft."
+    "r2_voraussicht": "T6: Verträge verstehen – fair handeln — Verträge vertieft."
   },
   "quellen_anker": [
     {
       "ref": "Dossier",
-      "titel": "Was steht im Lehrvertrag?",
-      "unterueberschrift": "Aufbau und wichtige Teile",
+      "titel": "So ist ein Lehrvertrag aufgebaut",
+      "unterueberschrift": "Abschnitte und Felder",
       "nugget_ref": "Info-Karte A-01",
       "fuer_leitfrage": [
         1
@@ -252,20 +252,20 @@
     },
     {
       "ref": "Dossier",
-      "titel": "Probezeit — wie lange?",
-      "unterueberschrift": "Dauer und Regel",
+      "titel": "Standard oder speziell?",
+      "unterueberschrift": "Was gilt für alle Lehrverhältnisse?",
       "nugget_ref": "Info-Karte A-02",
       "fuer_leitfrage": [
-        2,
-        3
+        2
       ]
     },
     {
       "ref": "Dossier",
-      "titel": "Höflich digital nachfragen",
-      "unterueberschrift": "Nachricht schreiben",
+      "titel": "Wichtig für mich",
+      "unterueberschrift": "Filtern und gezielt fragen",
       "nugget_ref": "Info-Karte A-03",
       "fuer_leitfrage": [
+        3,
         4
       ]
     }
@@ -273,18 +273,18 @@
   "lernfortschritt": {
     "kriterien": [
       {
-        "kriterium": "Lehrvertrag verstehen",
-        "indikator": "nennt wichtige Teile + Probezeit-Regel",
+        "kriterium": "Vertrag gliedern",
+        "indikator": "gibt Abschnitten eigene, passende Titel",
         "gewicht_prozent": 25
       },
       {
-        "kriterium": "Eigenen Fall prüfen",
-        "indikator": "wendet die Regel auf sich an",
+        "kriterium": "Standard erkennen",
+        "indikator": "ordnet Punkte richtig zu",
         "gewicht_prozent": 25
       },
       {
-        "kriterium": "Digital nachfragen",
-        "indikator": "höfliche, klare Nachricht",
+        "kriterium": "Relevanz begründen",
+        "indikator": "wählt drei Punkte und begründet",
         "gewicht_prozent": 25
       },
       {
@@ -293,23 +293,23 @@
         "gewicht_prozent": 25
       }
     ],
-    "scaffold_90": "Satzanfänge und Dossier-Info-Karten stehen bereit.",
-    "scaffold_100": "Schreibt die Nachricht ohne Satzanfänge und ergänzt eine zweite Frage."
+    "scaffold_90": "Gliederungs-Tabelle und Glossar stehen im Dossier bereit.",
+    "scaffold_100": "Erstellt die Übersicht ohne Tabellen-Vorlage und ergänzt eine eigene Frage."
   },
   "prinzip_handoff": {
-    "kernkonzept": "Vertrag verstehen, gezielt nachfragen",
+    "kernkonzept": "Komplexes Formular gliedern und filtern",
     "dossier_anker": "Dossier Info-Karten A-01..A-03",
-    "kn_aktivierung": "Im KN taucht eine unklare Vertragsstelle wieder auf — jetzt zusammen mit einem Konflikt.",
-    "transfer_check": "Erkennt die lernende Person, wann Nachfragen reicht und wann mehr nötig ist?"
+    "kn_aktivierung": "Im KN taucht ein neues komplexes Dokument auf — zusammen mit einer Unstimmigkeit.",
+    "transfer_check": "Gliedert die lernende Person zuerst, statt alles zu lesen?"
   },
   "sk_anker": [
     {
-      "sk": 2,
-      "wo": "leitfrage 3: den eigenen Fall prüfen und sich orientieren"
+      "sk": 1,
+      "wo": "leitfragen 2-3: relevante von weniger wichtigen Vertragspunkten unterscheiden"
     },
     {
       "sk": 7,
-      "wo": "handlungsprodukt: höflich und klar digital nachfragen"
+      "wo": "leitfrage 4: eine klare, höfliche Frage an den Betrieb formulieren"
     },
     {
       "sk": 11,

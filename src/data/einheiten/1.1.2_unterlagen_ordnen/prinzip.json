@@ -1,0 +1,157 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_prinzip",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.2",
+  "topic_slug": "unterlagen_ordnen",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+  "_sequenz_kommentar": "Unit 1 der T1-Sequenz (Beschluss 2026-07-02): zuerst 1.1.2 (Ordnungsstruktur aufbauen), dann 1.1.1 (die Struktur im Konfliktfall nutzen). Quelle der Herausforderungen: Umsetzungsvariante 1.1.2 + Christof-Beispiel 'Unterlagen ordnen' (F1).",
+  "kern_kompetenzversprechen": "Ich kann meinen digitalen Lern- und Arbeitsplatz einrichten und meine Unterlagen ordnen. So finde ich schnell, was ich brauche.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K2",
+    "LF3": "K3",
+    "LF4": "K3"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Digitalen Arbeitsplatz einrichten",
+      "konfliktart": "Digitale Vorgaben der Schule: alles genau lesen oder gezielt das Relevante herausfiltern",
+      "handlungsprodukt_typ": "Kategorisierte Checkliste (3 Kategorien)",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Eigene Unterlagen ordnen",
+      "konfliktart": "Eigene Rolle als neue/r Lernende/r: vorgegebene digitale Struktur übernehmen oder eigenes System bauen",
+      "handlungsprodukt_typ": "Orientierungszettel zur eigenen Ablage",
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      1,
+      10,
+      11
+    ],
+    "B": [
+      2,
+      10,
+      11
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      10,
+      11
+    ]
+  },
+  "aspekte": {
+    "_kommentar": "Technologische und digitale Transformation aus NRLP-Kompetenz 1.1.2 (Ordnerstrukturen, Kommunikationsmittel, Kalender/Notizen). Identität und Sozialisation ANTIZIPIERT aus konfliktart B (Signal 'Rolle' — eigene Rolle als neue/r Lernende/r). Damit 2 Aspekte (RLP Z.791-Minimum) erfüllt.",
+    "Technologische und digitale Transformation": "R1",
+    "Identität und Sozialisation": "R1"
+  },
+  "modi_units": {
+    "_kommentar": "SM3 (Rezeption schriftlich und bildlich) ist der Kompetenz-Modus: zentrale Aussagen aus Dokumenten und Anleitungen entnehmen (Markierhilfen, Lesestrategien). Beide Handlungsprodukte (Checkliste, Orientierungszettel) trainieren genau dieses Sichten und Filtern.",
+    "primaer": "Rezeption schriftlich und bildlich",
+    "liste": [
+      "Rezeption schriftlich und bildlich"
+    ]
+  },
+  "modi_kn": {
+    "_kommentar": "Obermenge von modi_units; für die Primärform Fachgespräch kommen Produktion + Interaktion mündlich dazu, für den Mini Case Produktion schriftlich und bildlich.",
+    "liste": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich",
+      "Produktion mündlich",
+      "Interaktion und Kollaboration mündlich"
+    ]
+  },
+  "mehrdeutigkeits_architektur": {
+    "_kommentar": "EIN gemeinsamer Trade-off trägt beide Herausforderungen (Spiralen-Regel): A = Dokumente sichten (lesen vs. filtern), B = Unterlagen ablegen (alles behalten vs. aussortieren) — gleiches Muster, maximal kontrastreiche Kontexte. Der zweite Trade-off (Struktur übernehmen vs. eigenes System) vertieft HF B und den KN.",
+    "trade_off_raum": [
+      "Alles genau anschauen vs. gezielt das Wichtige herausfiltern",
+      "Vorgegebene Struktur übernehmen vs. eigenes System bauen"
+    ],
+    "verbindlich": "Beides kann richtig sein. Es kommt auf den Zweck an. Ein System ist gut, wenn ich damit schnell finde, was ich brauche."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Ich verschaffe mir zuerst einen Überblick. Dann ordne ich nach klaren Kategorien. So finde ich später schnell, was ich brauche.",
+    "transferfeld": "Jede neue Umgebung mit vielen Informationen (z. B. neuer Betrieb, neue App, Umzug, Unterlagen von Behörden)"
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T4 (Medien und digitale Welt): digitale Werkzeuge und Datenablage vertieft. Direkt anschliessend nutzt Unit 1.1.1 die hier gebaute Ordnung im Konfliktfall.",
+    "_r3_kommentar": "EBA hat nur 2 Lehrjahre — keine r3-Stufe."
+  },
+  "quellen_anker": {
+    "_kommentar": "EBA hat KEIN Lehrmittel. Anker zeigen auf das Wissens-Dossier (Phase 7). konzepte sind der Seed für das A2-Glossar. Rohmaterial: Umsetzungsvariante 1.1.2 (F1).",
+    "dossier_nuggets": [
+      {
+        "ref": "Dossier",
+        "herausforderung": "A",
+        "nuggets": "Info-Karte A-01..A-03"
+      },
+      {
+        "ref": "Dossier",
+        "herausforderung": "B",
+        "nuggets": "Info-Karte B-01..B-03"
+      }
+    ],
+    "konzepte": [
+      "Ordnerstruktur",
+      "Kategorie",
+      "Checkliste",
+      "Ablage",
+      "Cloud",
+      "Dateiname",
+      "Kalender",
+      "Notiz-App",
+      "Orientierungszettel",
+      "Anleitung"
+    ]
+  },
+  "persona_pool_units": {
+    "_kommentar": "2 Berufe + 2 Orte, >=2 Abteilungen (Bau + Technik/Ernährung), EBA-Berufe (LJ1). EBA-Namen aus der 'Umfasst'-Spalte hko-framework §11.",
+    "berufe": [
+      "Schreinerpraktiker/in EBA",
+      "Automobilassistent/in EBA"
+    ],
+    "orte": [
+      "Winterthur",
+      "Zürich"
+    ]
+  },
+  "persona_pool_kn_neu": {
+    "_kommentar": "Disjunkt von _units. Mechanikpraktiker/in EBA bringt eine neue Abteilung (Maschinenbau) für den Unseen-Transfer. LJ1.",
+    "berufe": [
+      "Bäcker-Konditor-Confiseur/in EBA",
+      "Mechanikpraktiker/in EBA"
+    ],
+    "orte": [
+      "Luzern",
+      "St. Gallen"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "_lehrjahr_constraint_kommentar": "EBA hat nur LJ1-2; Units sind LJ1.",
+    "qualitaetskriterien": [
+      "Eine Szene — neue Vorgaben sichten UND eigene Ablage nutzen, kurz vor einem wichtigen Termin.",
+      "Konfliktart beider Herausforderungen sichtbar, ohne benannt zu werden.",
+      "Trade-off 'Alles genau anschauen vs. gezielt das Wichtige herausfiltern' spannt sich auf.",
+      "Persona neu (Bäcker-Konditor-Confiseur/in EBA, Luzern).",
+      "Leitfrage am Ende benennt die Spannung, ohne Antwort vorzugeben.",
+      "A2: kurze Sätze, max. 18 Wörter, Fachbegriffe nur mit Glossar-Deckung."
+    ]
+  }
+}

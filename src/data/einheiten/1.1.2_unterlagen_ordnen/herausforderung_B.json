@@ -1,0 +1,317 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_hf_B",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Der volle Downloads-Ordner",
+  "wissensknoten": [
+    "ablage",
+    "orientierungszettel"
+  ],
+  "nrlp": {
+    "nr": "1.1.2",
+    "nr_primary": [
+      "1.1.2"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      2,
+      10,
+      11
+    ]
+  },
+  "persona": {
+    "beruf": "Automobilassistent/in EBA",
+    "betrieb": "Garage Weber AG",
+    "ort": "Zürich"
+  },
+  "situation_text": "Ich bin Automobilassistent/in EBA im 1. Lehrjahr. Ich arbeite in der Garage Weber AG in Zürich. Seit Lehrbeginn habe ich viele Unterlagen: von der Schule, vom Betrieb, dazu rechtliche Dokumente. Einiges liegt im Downloads-Ordner. Einiges im Chat. Einiges zuhause auf Papier. Gestern suchte ich ein Dokument sehr lange. Das will ich ändern. Aber wie ordne ich alles am besten?",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie ordne ich meine Unterlagen so, dass ich sie wiederfinde?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Dossier zu Herausforderung B als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte B-01",
+      "text": "Sammeln Sie Ihre Unterlagen. Ordnen Sie jede in die Tabelle ein: Schule, Betrieb oder rechtliche Dokumente.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte B-02",
+      "text": "Vergleichen Sie die zwei Ablage-Arten aus dem Dossier. Notieren Sie zu jeder einen Vorteil für Sie.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Dossier | Info-Karte B-02",
+      "text": "Legen Sie Ihre Struktur fest: Wählen Sie Ihre Hauptordner und benennen Sie sie. Begründen Sie kurz Ihre Wahl.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Dossier | Info-Karte B-03",
+      "text": "Schreiben Sie zwei Zeilen Ihres Orientierungszettels: Dokument, Ablageort und ein kurzer Hinweis-Satz.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Meine Unterlagen",
+  "mindmap_aeste": [
+    {
+      "titel": "Woher?",
+      "punkte": [
+        "Schule",
+        "Betrieb",
+        "rechtliche Dokumente"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wohin?",
+      "punkte": [
+        "Cloud-Ordner",
+        "Mappe zuhause"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie benennen?",
+      "punkte": [
+        "Datum zuerst",
+        "klarer Name"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Meine Fragen",
+      "punkte": [],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Orientierungszettel",
+    "titel": "Mein Orientierungszettel",
+    "format_detail": "Eine A4-Seite: Tabelle mit Dokument, Ablageort und Hinweis, 8-12 Zeilen",
+    "beschreibung": "Ich ordne meine Unterlagen nach einem klaren System. Auf dem Orientierungszettel halte ich fest, wo was liegt. So finde ich jedes Dokument schnell wieder.",
+    "schritte": [
+      {
+        "label": "Alles sammeln",
+        "hint": "Digital und Papier"
+      },
+      {
+        "label": "Gruppen bilden",
+        "hint": "Schule / Betrieb / rechtliche Dokumente"
+      },
+      {
+        "label": "Ablageort wählen",
+        "hint": "Dossier: die zwei Ablage-Arten"
+      },
+      {
+        "label": "Ablegen und benennen",
+        "hint": "Klare Namen, gleiche Regel"
+      },
+      {
+        "label": "Zettel schreiben",
+        "hint": "Wo liegt was? Ein Hinweis pro Zeile"
+      }
+    ],
+    "schreib_label": "MEIN ORIENTIERUNGSZETTEL HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ablage",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«… liegt in …»",
+        "«Wichtig: … finde ich unter …»"
+      ],
+      "strategien": [
+        "Erst gruppieren, dann ablegen.",
+        "Gleiche Regel für alle Dateinamen."
+      ],
+      "struktur": [
+        "Tabelle: Dokument – Ablageort – Hinweis",
+        "Pro Zeile ein Dokument"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Vorgehen wichtig?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was mache ich beim nächsten Mal konkret anders?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen bearbeitet",
+        "Gruppen richtig gebildet",
+        "Struktur-Wahl begründet"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur und Tiefe",
+      "vollstaendig_wenn": [
+        "Zentrum und 4 Ast-Titel übernommen",
+        "Pro Ast eigene Punkte"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Orientierungszettel",
+      "vollstaendig_wenn": [
+        "Alle drei Gruppen abgedeckt",
+        "Ablageort pro Zeile vermerkt",
+        "Klare, einheitliche Namen"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe und Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Fragen beantwortet",
+        "Bezug zum Lehralltag"
+      ]
+    }
+  ],
+  "wochen_plan": [],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.2_unterlagen_ordnen_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Eigene Unterlagen ordnen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Alles genau anschauen vs. gezielt das Wichtige herausfiltern",
+    "hint": "Alles genau ablegen kostet Zeit. Beim Aussortieren kann Wichtiges verloren gehen. Prüfen Sie: Was brauche ich wirklich?"
+  },
+  "dekontextualisierung": {
+    "frage": "Wo hilft Ihnen ein Ordnungssystem sonst noch?",
+    "ziel": "Ich ordne nach klaren Kategorien und halte fest, wo was liegt."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T4: Medien und digitale Welt — digitale Werkzeuge und Datenablage vertieft."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Meine drei Gruppen",
+      "unterueberschrift": "Schule – Betrieb – rechtliche Dokumente",
+      "nugget_ref": "Info-Karte B-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Zwei Ablage-Arten",
+      "unterueberschrift": "Vorgegebene Struktur oder eigenes System",
+      "nugget_ref": "Info-Karte B-02",
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Der Orientierungszettel",
+      "unterueberschrift": "So halte ich fest, wo was liegt",
+      "nugget_ref": "Info-Karte B-03",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Unterlagen gruppieren",
+        "indikator": "ordnet nach Herkunft richtig zu",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "System festlegen",
+        "indikator": "wählt und begründet die Struktur",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Orientierungszettel führen",
+        "indikator": "vollständige, klare Zeilen",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Reflexion",
+        "indikator": "benennt Lehralltags-Bezug",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Gruppen-Tabelle und Zettel-Vorlage stehen im Dossier bereit.",
+    "scaffold_100": "Erklärt einer anderen Person das eigene System in drei Sätzen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Eigenes Ordnungssystem mit Orientierungszettel",
+    "dossier_anker": "Dossier Info-Karten B-01..B-03",
+    "kn_aktivierung": "Im KN muss ein Dokument schnell gefunden werden — das System zeigt, ob es trägt.",
+    "transfer_check": "Findet die lernende Person ein Dokument schnell und erklärt ihr System?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "leitfrage 3: eine eigene Ordnungs-Regel festlegen und prüfen"
+    },
+    {
+      "sk": 10,
+      "wo": "situation: verstreute Unterlagen in ein System bringen"
+    },
+    {
+      "sk": 11,
+      "wo": "mehrdeutigkeit: alles behalten oder aussortieren abwägen"
+    }
+  ]
+}

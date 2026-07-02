@@ -4,8 +4,8 @@
   "kompetenz_nr": "1.1.1",
   "topic_slug": "lehrvertrag_orientieren",
   "lehrgang": "EBA_2J",
-  "version": "2.0.0",
-  "erstellt_am": "2026-07-02",
+  "version": "1.0.0",
+  "erstellt_am": "2026-06-17",
   "set_ref": "1.1.1_lehrvertrag_orientieren_set",
   "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
   "anchored_situations": [
@@ -13,19 +13,19 @@
     "1.1.1_lehrvertrag_orientieren_hf_B"
   ],
   "dominanter_aspekt": "Recht",
-  "kern_kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
+  "kern_kompetenzversprechen": "Ich kann mich mit dem Lehrvertrag in der Arbeitswelt orientieren. Bei Fragen oder Konflikten kontaktiere ich die richtige Stelle.",
   "mehrdeutigkeits_pflicht": "Selbst klären vs. Hilfe holen",
   "hybrid_situation": {
-    "_kommentar": "Eine Szene, kombiniert A (im dichten Formular die relevante Stelle finden) + B (Unstimmigkeit sachlich klären, Weg wählen). Persona neu (Mechanikpraktiker/in EBA, Aarau). A2, ICH, endet mit Leitfrage. Begriffs-Test F2 bestanden: kein Einzelbegriff löst die Szene.",
-    "titel": "Ab nächstem Monat auch samstags",
+    "_kommentar": "Eine Szene, kombiniert A (unklarer Vertragspunkt) + B (Konflikt, Hilfe holen). Persona neu (Schreinerpraktiker/in EBA, Aarau). A2, ICH, endet mit Leitfrage.",
+    "titel": "Unklarer Vertrag und Ärger im Betrieb",
     "persona": {
-      "beruf": "Mechanikpraktiker/in EBA",
-      "betrieb": "Werkstatt Keller AG",
+      "beruf": "Schreinerpraktiker/in EBA",
+      "betrieb": "Schreinerei Holzer",
       "ort": "Aarau"
     },
     "emotion_tag": "",
-    "text": "Ich bin Mechanikpraktiker/in EBA im 1. Lehrjahr. Ich arbeite in der Werkstatt Keller AG in Aarau. Gestern sagte mein Berufsbildner: «Ab nächstem Monat arbeiten Sie auch am Samstag.» Das überrascht mich. Beim Vorstellungsgespräch hiess es anders. Ich nehme meinen Lehrvertrag hervor. Das Formular ist dicht: viele Felder, ein Verweis auf ein Reglement. Zur Arbeitszeit finde ich zwei Stellen. Ganz sicher bin ich nicht. Ich will nichts Falsches behaupten. Aber ich will auch nicht einfach schweigen.",
-    "leitfrage": "Kläre ich das selbst mit meinem Berufsbildner — oder hole ich zuerst Hilfe bei einer Stelle?",
+    "text": "Ich bin Schreinerpraktiker/in EBA im 1. Lehrjahr in Aarau. Ich bin noch in der Probezeit. In meinem Lehrvertrag steht ein Punkt zur Probezeit, den ich nicht verstehe. Gleichzeitig läuft es im Betrieb schlecht. Ich darf kaum an die Maschinen. Mein Berufsbildner hat wenig Zeit für mich. Ich bin unsicher und ein bisschen wütend. Soll ich den Vertrag einfach hinnehmen? Soll ich selbst mit dem Betrieb reden? Oder soll ich Hilfe von aussen holen?",
+    "leitfrage": "Wie gehe ich vor — und warum?",
     "aktivierte_trade_offs": [
       "Selbst klären vs. Hilfe holen"
     ],
@@ -34,11 +34,11 @@
       "herausforderungen_mapping": [
         {
           "hf_letter": "A",
-          "scene_element": "Im dichten Vertrags-Formular die relevante Stelle zur Arbeitszeit finden"
+          "scene_element": "Der unklare Punkt zur Probezeit im Lehrvertrag"
         },
         {
           "hf_letter": "B",
-          "scene_element": "Die Unstimmigkeit sachlich klären und den Weg wählen"
+          "scene_element": "Der Ärger im Betrieb und die Frage, wer hilft"
         }
       ],
       "new_dimensions": []
@@ -58,31 +58,31 @@
         {
           "nr": 1,
           "typ": "Erklaeren",
-          "frage": "Zeigen Sie Ihre Notizen: Wie ist der Lehrvertrag aufgebaut? Nennen Sie die Abschnitte.",
+          "frage": "Was ist die Probezeit? Erklären Sie es kurz.",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Anwenden",
-          "frage": "Wo suchen Sie die Antwort zur Samstagsarbeit? Beschreiben Sie Ihren Weg durch das Formular.",
+          "frage": "Welche Teile des Lehrvertrags sind hier wichtig?",
           "k_stufe": 2
         },
         {
           "nr": 3,
           "typ": "Beurteilen",
-          "frage": "Was können Sie hier selbst klären? Wofür brauchen Sie Hilfe? Begründen Sie.",
+          "frage": "Was können Sie selbst klären? Wofür brauchen Sie Hilfe?",
           "k_stufe": 3
         },
         {
           "nr": 4,
           "typ": "Transfer",
-          "frage": "Vergleichen Sie mit Ihrer Lernaufgabe: Was machen Sie hier gleich, was anders?",
+          "frage": "Wen kontaktieren Sie zuerst — und warum genau diese Stelle?",
           "k_stufe": 3
         },
         {
           "nr": 5,
           "typ": "Werthaltung",
-          "frage": "Warum ist Hilfe holen kein Zeichen von Schwäche? Begründen Sie Ihre Haltung.",
+          "frage": "Warum ist Hilfe holen kein Zeichen von Schwäche?",
           "k_stufe": 3
         }
       ],
@@ -115,25 +115,25 @@
         {
           "nr": 1,
           "typ": "Erklaeren",
-          "aufgabe": "Ordnen Sie den Fall: Was ist passiert? Was war abgemacht? Füllen Sie die Fakten-Tabelle aus.",
+          "aufgabe": "Erklären Sie in zwei Sätzen, was die Probezeit ist.",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Unterscheiden",
-          "aufgabe": "Was ist hier Vertragsfrage, was Konflikt? Ordnen Sie zu, je ein Beispiel aus dem Fall.",
+          "aufgabe": "Was ist eine Vertragsfrage? Was ist ein Konflikt? Nennen Sie je ein Beispiel.",
           "k_stufe": 2
         },
         {
           "nr": 3,
           "typ": "Entscheiden",
-          "aufgabe": "Welchen ersten Schritt wählen Sie? Begründen Sie kurz mit einer Stelle aus dem Vertrag.",
+          "aufgabe": "Welchen ersten Schritt wählen Sie im Fall? Begründen Sie kurz.",
           "k_stufe": 3
         },
         {
           "nr": 4,
           "typ": "Forderung",
-          "aufgabe": "Schreiben Sie eine kurze, sachliche Nachricht an die gewählte Stelle.",
+          "aufgabe": "Schreiben Sie eine kurze, sachliche Nachricht an die richtige Stelle.",
           "k_stufe": 3
         }
       ],
@@ -158,7 +158,7 @@
       "_vereinfacht_kommentar": "Weniger schreiblastig: Reflexion 120-150 Woerter, gefuehrt mit Satzanfaengen.",
       "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
       "ablauf": [
-        "Lernende wählen eines ihrer beiden Handlungsprodukte (Vertrags-Übersicht A oder Nachricht B).",
+        "Lernende wählen eines ihrer beiden Handlungsprodukte (Nachricht A oder Anfrage B).",
         "Werkwahl-Begründung (2 Sätze): Warum genau dieses Handlungsprodukt?",
         "Transfer-Reflexion (120-150 Wörter): drei Fragen schriftlich beantworten, mit Satzanfängen aus dem Dossier."
       ],
@@ -169,10 +169,11 @@
       ],
       "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
       "sk": [
+        2,
         7,
         11
       ],
-      "_sk_kommentar": "Basis [5,6,10] ∩ Union(A,B)=[1,2,7,11] = leer; ergänzt aus primary [7,11] → [7,11].",
+      "_sk_kommentar": "Union(A,B) = [2,7,11].",
       "aspekte": [
         "Recht",
         "Identität und Sozialisation"
@@ -184,7 +185,7 @@
     }
   ],
   "rubrik_shared": {
-    "_kommentar": "Bi-dimensional: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen, gleichgewichtet. SuK-Namen Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit integriert, KEINE Normen (EBA). Kriterium 3 nach dominantem Aspekt 'Recht' = 'Rechtliches Prinzip'.",
+    "_kommentar": "Bi-dimensional: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen, gleichgewichtet. SuK-Kriterien-Namen Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit integriert, KEINE Normen (EBA). Kriterium 3 nach dominantem Aspekt 'Recht' = 'Rechtliches Prinzip'.",
     "dimensionen": [
       "SuK",
       "Ges"
@@ -216,9 +217,9 @@
         "name": "Rechtliches Prinzip",
         "dimension": "Ges",
         "stufen": [
-          "Relevante Vertragsstellen/Stellen nicht erkannt.",
-          "Vertragsstellen/Stellen teilweise erkannt.",
-          "Relevante Stelle und richtigen Weg korrekt auf den Fall angewendet.",
+          "Rechte/Stellen nicht erkannt.",
+          "Rechte/Stellen teilweise erkannt.",
+          "Rechte und richtige Stelle korrekt auf den Fall angewendet.",
           "Anwendung auf einen neuen Fall übertragen."
         ]
       },

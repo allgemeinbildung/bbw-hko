@@ -4,9 +4,10 @@
   "kompetenz_nr": "1.1.1",
   "topic_slug": "lehrvertrag_orientieren",
   "lehrgang": "EBA_2J",
-  "version": "1.0.0",
-  "erstellt_am": "2026-06-17",
-  "kern_kompetenzversprechen": "Ich kann mich mit dem Lehrvertrag in der Arbeitswelt orientieren. Bei Fragen oder Konflikten kontaktiere ich die richtige Stelle.",
+  "version": "2.0.1",
+  "erstellt_am": "2026-07-02",
+  "_sequenz_kommentar": "Unit 2 der T1-Sequenz (Beschluss 2026-07-02): baut auf 1.1.2_unterlagen_ordnen auf — die dort gebaute Ordnungsstruktur wird hier im Frage-/Konfliktfall genutzt. v2-Neugenerierung nach Feedback-Sitzung: Herausforderungen problemorientiert (Christof-Stil), Quelle = Umsetzungsvarianten (F1), kein Begriffs-Anker mehr (F2). Beide Units bleiben standalone unterrichtbar.",
+  "kern_kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
   "bloom_zielprofil": {
     "LF1": "K2",
     "LF2": "K2",
@@ -15,21 +16,21 @@
   },
   "herausforderungen": {
     "A": {
-      "herausforderung": "Lehrvertrag verstehen",
-      "konfliktart": "Eigene Rolle als neue/r Lernende/r: einen unklaren Punkt im Vertrag selbst klären oder nachfragen",
-      "handlungsprodukt_typ": "Digitale Nachricht mit KI-Check",
+      "herausforderung": "Lehrvertrag gliedern",
+      "konfliktart": "Komplexes Vertrags-Formular verstehen: unklare Vertragspunkte selbst klären oder nachfragen",
+      "handlungsprodukt_typ": "Gegliederte Vertrags-Übersicht (Tabelle)",
       "transferrable": true
     },
     "B": {
-      "herausforderung": "Bei einem Konflikt Hilfe holen",
-      "konfliktart": "Eigene Rolle im Betrieb: einen Konflikt selbst aushalten oder bei der zuständigen Stelle Hilfe holen",
-      "handlungsprodukt_typ": "Digitale Nachricht an die Kontaktstelle",
+      "herausforderung": "Im Konfliktfall Informationen finden",
+      "konfliktart": "Eigene Rolle als neue/r Lernende/r im Konflikt: selbst klären oder bei der richtigen Stelle Hilfe holen",
+      "handlungsprodukt_typ": "Digitale Nachricht an die gewählte Stelle",
       "transferrable": true
     }
   },
   "sk_pro_situation": {
     "A": [
-      2,
+      1,
       7,
       11
     ],
@@ -41,18 +42,17 @@
   },
   "sk_schnittmenge_kn": {
     "primary": [
-      2,
       7,
       11
     ]
   },
   "aspekte": {
-    "_kommentar": "Recht aus NRLP-Kompetenz (2x detail: Lehrvertrag-Aufbau + Konfliktmanagement/Kontaktstellen). Identität und Sozialisation ist ANTIZIPIERT aus der konfliktart beider Herausforderungen (Signal 'Rolle' — eigene Rolle als neue/r Lernende/r). Damit 2 Aspekte (RLP Z.791-Minimum) erfuellt.",
+    "_kommentar": "Recht aus NRLP-Kompetenz 1.1.1 (2x detail: Lehrvertrag-Aufbau + Konfliktmanagement/Kontaktstellen; Signal 'Vertrag' zusätzlich in konfliktart A). Identität und Sozialisation ANTIZIPIERT aus konfliktart B (Signal 'Rolle'). Damit 2 Aspekte (RLP Z.791-Minimum) erfüllt.",
     "Recht": "R1",
     "Identität und Sozialisation": "R1"
   },
   "modi_units": {
-    "_kommentar": "SM9 (digital, KI) ist der Kompetenz-Modus und der Output-Modus beider Handlungsprodukte. SM3 (Lesen) wird beim Erschliessen des Lehrvertrags/Dossiers trainiert.",
+    "_kommentar": "SM9 (Interaktion und Kollaboration digital) ist der Kompetenz-Modus und Output-Modus von HF B (digitale Nachricht, KI-Recherche Kontaktstellen wie UV 1.1.1). SM3 (Rezeption) wird beim Gliedern des Vertrags (HF A) aktiv trainiert — Anschluss an Unit 1.1.2.",
     "primaer": "Interaktion und Kollaboration digital",
     "liste": [
       "Interaktion und Kollaboration digital",
@@ -60,7 +60,7 @@
     ]
   },
   "modi_kn": {
-    "_kommentar": "Obermenge von modi_units; fuer die Primaerform Fachgespraech kommen Produktion + Interaktion muendlich dazu.",
+    "_kommentar": "Obermenge von modi_units; für die Primärform Fachgespräch kommen Produktion + Interaktion mündlich dazu.",
     "liste": [
       "Interaktion und Kollaboration digital",
       "Rezeption schriftlich und bildlich",
@@ -69,24 +69,24 @@
     ]
   },
   "mehrdeutigkeits_architektur": {
-    "_kommentar": "EIN gemeinsamer Trade-off trägt beide Herausforderungen (Spiralen-Regel). Gefuehrt: das Dossier-Transfer-Wissensblatt macht den Trade-off sichtbar.",
+    "_kommentar": "EIN gemeinsamer Trade-off trägt beide Herausforderungen (Spiralen-Regel): 'Selbst klären vs. Hilfe holen' — A = unklare Vertragspunkte (entschlüsseln oder nachfragen), B = Unstimmigkeit im Betrieb (ansprechen oder Kontaktstelle). Der Filter-Trade-off ist der methodische Zweitstrang (Anschluss an Unit 1.1.2). Beide liegen auf der Handlungsebene, nicht auf einem Rechtsbegriff (F2).",
     "trade_off_raum": [
       "Selbst klären vs. Hilfe holen",
-      "Schnell reagieren vs. zuerst nachlesen"
+      "Alles genau lesen vs. gezielt das Relevante herausfiltern"
     ],
-    "verbindlich": "Beide Wege können richtig sein. Es hängt von der Situation ab. Eine Pauschalantwort gibt es nicht."
+    "verbindlich": "Beide Wege können richtig sein. Es hängt von der Situation ab. Wichtig ist: Ich entscheide begründet."
   },
   "dekontextualisierungs_anker": {
-    "anker_statement": "Ich prüfe zuerst, was ich selbst klären kann. Bei einem echten Problem hole ich Hilfe bei der richtigen Stelle. So bleibe ich handlungsfähig.",
-    "transferfeld": "Jede neue Situation mit Regeln und Verträgen (z. B. Mietvertrag, Handyvertrag, Versicherung)"
+    "anker_statement": "Ich verschaffe mir zuerst einen Überblick und suche gezielt die relevante Stelle. Erst dann entscheide ich: selbst klären oder Hilfe holen.",
+    "transferfeld": "Jeder neue Vertrag und jede Unstimmigkeit (z. B. Handyvertrag, Mietvertrag, Online-Kauf)"
   },
   "zirkularitaet": {
     "r1_aktuell": "R1",
-    "r2_voraussicht": "T7 (Arbeit und Zukunft): Rechte und Pflichten im Arbeitsverhältnis vertieft.",
+    "r2_voraussicht": "T6 (Verträge verstehen – fair handeln): Verträge und faire Abmachungen vertieft.",
     "_r3_kommentar": "EBA hat nur 2 Lehrjahre — keine r3-Stufe."
   },
   "quellen_anker": {
-    "_kommentar": "EBA hat KEIN Lehrmittel. Anker zeigen auf das Wissens-Dossier (Phase 7). konzepte sind der Seed fuer das A2-Glossar.",
+    "_kommentar": "EBA hat KEIN Lehrmittel. Anker zeigen auf das Wissens-Dossier (Phase 7). konzepte sind der Seed für das A2-Glossar. Rohmaterial: Umsetzungsvariante 1.1.1 + Christof-Beispiel 'Lehrvertrag als komplexes Formular' (F1). Einzelne Rechtsbegriffe (z. B. Probezeit) sind Dossier-Ressource, nie Aufgabenkern (F2).",
     "dossier_nuggets": [
       {
         "ref": "Dossier",
@@ -101,37 +101,37 @@
     ],
     "konzepte": [
       "Lehrvertrag",
-      "Probezeit",
-      "Kündigung",
-      "Kündigungsfrist",
+      "Formular",
+      "Vertragspunkt",
+      "Standard",
+      "betriebsspezifisch",
       "Konflikt",
       "Kontaktstelle",
-      "Lehraufsicht",
       "Berufsbildungsamt",
-      "Schlichtungsstelle",
-      "KI-Tool"
+      "Lehraufsicht",
+      "Berufsbildner/in"
     ]
   },
   "persona_pool_units": {
-    "_kommentar": "2 Berufe + 2 Orte, >=2 Abteilungen (Bau + Technik/Ernaehrung), EBA-Berufe (LJ1). EBA-Namen aus der 'Umfasst'-Spalte hko-framework §11 — siehe Log-Hinweis (Persona-Tabelle ist EFZ-zentriert).",
+    "_kommentar": "2 Berufe + 2 Orte, >=2 Abteilungen (Bau + Technik/Ernährung), EBA-Berufe (LJ1). Disjunkt von den Unit-Personas der Schwester-Unit 1.1.2 (Sequenz-Sauberkeit).",
     "berufe": [
       "Malerpraktiker/in EBA",
-      "Automobilassistent/in EBA"
+      "Bäcker-Konditor-Confiseur/in EBA"
     ],
     "orte": [
-      "Winterthur",
-      "Olten"
+      "Olten",
+      "Bern"
     ]
   },
   "persona_pool_kn_neu": {
-    "_kommentar": "Disjunkt von _units. Andere Abteilungen (Bau-Schreiner / Maschinenbau). LJ1.",
+    "_kommentar": "Disjunkt von _units. Mechanikpraktiker/in EBA bringt eine neue Abteilung (Maschinenbau) für den Unseen-Transfer. LJ1.",
     "berufe": [
-      "Schreinerpraktiker/in EBA",
-      "Mechanikpraktiker/in EBA"
+      "Mechanikpraktiker/in EBA",
+      "Spenglerpraktiker/in EBA"
     ],
     "orte": [
       "Aarau",
-      "Thun"
+      "Basel"
     ]
   },
   "hybrid_situation_spec": {
@@ -147,10 +147,11 @@
     "lehrjahr_constraint": "match_units",
     "_lehrjahr_constraint_kommentar": "EBA hat nur LJ1-2; Units sind LJ1.",
     "qualitaetskriterien": [
-      "Eine Szene — Lehrvertrag-Frage UND Konflikt zugleich sichtbar.",
+      "Eine Szene — Unstimmigkeit im Betrieb UND komplexes Vertrags-Formular zugleich sichtbar.",
       "Konfliktart beider Herausforderungen sichtbar, ohne benannt zu werden.",
       "Trade-off 'Selbst klären vs. Hilfe holen' spannt sich auf.",
-      "Persona neu (Schreinerpraktiker/in EBA, Aarau).",
+      "Kein einzelner Rechtsbegriff löst die Szene (Begriffs-Test F2).",
+      "Persona neu (Mechanikpraktiker/in EBA, Aarau).",
       "Leitfrage am Ende benennt die Spannung, ohne Antwort vorzugeben.",
       "A2: kurze Sätze, max. 18 Wörter, Fachbegriffe nur mit Glossar-Deckung."
     ]

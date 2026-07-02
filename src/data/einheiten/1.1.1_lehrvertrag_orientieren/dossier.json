@@ -4,8 +4,8 @@
   "kompetenz_nr": "1.1.1",
   "topic_slug": "lehrvertrag_orientieren",
   "lehrgang": "EBA_2J",
-  "version": "1.0.0",
-  "erstellt_am": "2026-06-17",
+  "version": "2.0.0",
+  "erstellt_am": "2026-07-02",
   "set_ref": "1.1.1_lehrvertrag_orientieren_set",
   "sprachniveau": "A2",
   "kopf": {
@@ -21,59 +21,69 @@
     "sprachniveau": "A2"
   },
   "einleitung": {
-    "was_ist_das": "Dieses Glossar+ ist Ihre Hilfe für die Aufträge. In der EBA gibt es kein Lehrmittel. Hier finden Sie das Wissen, das Sie brauchen.",
+    "was_ist_das": "Dieses Dossier ist Ihre Hilfe für die Aufträge. In der EBA gibt es kein Lehrmittel. Hier finden Sie das Wissen, das Sie brauchen.",
     "so_benutzt_du_es": [
-      "Sie müssen das Glossar+ nicht von vorne lesen.",
+      "Sie müssen das Dossier nicht von vorne lesen.",
       "Haben Sie eine Frage? Schauen Sie beim Anker nach. Der Anker steht beim Auftrag, zum Beispiel «Info-Karte A-02».",
       "Schwierige Wörter finden Sie hinten im Glossar.",
-      "Bei jedem Wissen gibt es Tipps: online suchen, eine KI Ihrer Wahl (z. B. Microsoft Copilot, an unserer Schule verfügbar) fragen und mit Copilot (oder einer KI Ihrer Wahl) lernen.",
-      "Auf der letzten Seite können Sie selbst Notizen machen."
+      "Bei jeder Info-Karte gibt es Tipps: online suchen, eine KI fragen und mit einer KI lernen. An unserer Schule können Sie Microsoft Copilot nutzen.",
+      "Auf der letzten Seite können Sie eigene Notizen machen."
     ]
   },
   "nuggets": [
     {
       "id": "nugget_A_01",
       "tag": "A",
-      "titel": "Was steht im Lehrvertrag?",
-      "inhalt": "Der Lehrvertrag ist ein schriftlicher Vertrag. Er regelt Ihre Lehre. Im Vertrag stehen Lohn, Ferien und Arbeitszeit. Auch die Probezeit steht darin. Das kantonale Amt prüft und genehmigt den Vertrag. Beide Seiten bekommen ein Exemplar.",
-      "beispiel": "Sie finden Ihren Lohn pro Monat auf der ersten Seite des Lehrvertrags.",
+      "titel": "So ist ein Lehrvertrag aufgebaut",
+      "inhalt": "Der Lehrvertrag ist ein Formular. Alle Lehrverträge in der Schweiz nutzen das gleiche offizielle Formular. Es hat Felder und Abschnitte. Typische Abschnitte sind: die Personen, der Beruf und die Dauer, Lohn, Ferien und Arbeitszeit. Dazu kommen Rechte und Pflichten. Manche Felder sind Verweise. Ein Verweis zeigt auf einen anderen Text, zum Beispiel ein Reglement. Das kantonale Berufsbildungsamt prüft und genehmigt den Vertrag.",
+      "beispiel": "Der Abschnitt mit den Personen steht meistens ganz am Anfang des Formulars.",
       "fuer_leitfrage": [
         1
       ],
       "fakten_anker": [
         {
-          "behauptung": "Der Lehrvertrag ist schriftlich und wird von der kantonalen Behörde genehmigt.",
-          "wert": "schriftlich; Genehmigung durch kantonale Behörde vor Lehrbeginn",
-          "quelle": "berufsbildung.ch (Kontrolle und Genehmigung des Lehrvertrags)",
+          "behauptung": "Für den Lehrvertrag wird ein einheitliches, offizielles Formular verwendet.",
+          "wert": "einheitliches Lehrvertragsformular",
+          "quelle": "berufsbildung.ch (Lehrvertrag — offizielles Formular)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Das kantonale Amt prüft und genehmigt den Lehrvertrag.",
+          "wert": "Genehmigung durch kantonale Behörde",
+          "quelle": "berufsbildung.ch (Genehmigung des Lehrvertrags)",
           "validiert": true,
           "lp_pruefen": false
         }
       ],
       "glossar_refs": [
         "lehrvertrag",
-        "probezeit",
+        "formular",
+        "abschnitt",
+        "verweis",
+        "reglement",
         "berufsbildungsamt"
       ],
       "recherche": {
         "suchbegriffe": [
           "berufsbildung.ch Lehrvertrag",
-          "Was steht im Lehrvertrag",
-          "Lehrvertrag Lohn Ferien Probezeit"
+          "Lehrvertrag Formular Aufbau",
+          "Was steht im Lehrvertrag"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Sagen Sie, wer Sie sind und was Sie im Vertrag suchen.",
-          "prompt": "Ich bin in der Lehre und habe meinen Lehrvertrag vor mir. Erklären Sie mir einfach die wichtigsten Punkte: Lohn, Ferien, Arbeitszeit, Probezeit. Wo finde ich was?",
-          "tipp": "Fragen Sie nach: «Welcher Punkt ist am Anfang am wichtigsten?»"
+          "so_fragst_du": "Sagen Sie, wer Sie sind. Beschreiben Sie das Formular. Bitten Sie um eine einfache Erklärung.",
+          "prompt": "Ich bin in der Lehre. Mein Lehrvertrag ist ein Formular mit vielen Feldern und Verweisen. Erklären Sie mir einfach: Welche Abschnitte hat ein Lehrvertrag? Nennen Sie zu jedem Abschnitt ein Beispiel.",
+          "tipp": "Verstehen Sie die Antwort nicht? Schreiben Sie: «Erklären Sie das noch einfacher.»"
         },
-        "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag: Welcher Lohn steht auf der ersten Seite?",
+        "selbst_pruefen": "Nehmen Sie Ihren Lehrvertrag. Finden Sie den Abschnitt mit Lohn, Ferien und Arbeitszeit.",
         "ki_lernen": [
           {
             "strategie": "Lassen Sie sich abfragen",
-            "prompt": "Stellen Sie mir 4 Fragen zum Lehrvertrag: Wo steht der Lohn? Wer genehmigt den Vertrag? Was ist die Probezeit? Wer unterschreibt? Sagen Sie die Antwort erst, nachdem ich geraten habe."
+            "prompt": "Stellen Sie mir 4 Fragen zum Aufbau des Lehrvertrags: Welche Abschnitte gibt es? Wo stehen die Personen? Was ist ein Verweis? Wer genehmigt den Vertrag? Geben Sie mir die Lösung erst nach meiner Antwort."
           },
           {
-            "strategie": "Finden Sie es im Vertrag",
-            "prompt": "Ich tippe Ihnen ab, was auf meiner ersten Vertragsseite steht. Helfen Sie mir, die wichtigsten Punkte zu erkennen und zu ordnen."
+            "strategie": "Erklären Sie es selbst",
+            "prompt": "Ich erkläre Ihnen mit eigenen Worten, wie mein Lehrvertrag aufgebaut ist. Sagen Sie mir nur, welcher Abschnitt in meiner Erklärung noch fehlt. Geben Sie mir nicht die ganze Lösung."
           }
         ]
       }
@@ -81,54 +91,55 @@
     {
       "id": "nugget_A_02",
       "tag": "A",
-      "titel": "Probezeit — wie lange?",
-      "inhalt": "Die Probezeit steht im Lehrvertrag. Sie dauert 1 bis 3 Monate. Steht im Vertrag eine Dauer, gilt diese Dauer. Steht nichts im Vertrag, gelten 3 Monate. Mit Genehmigung der kantonalen Behörde sind bis zu 6 Monate möglich. In der Probezeit prüfen beide Seiten, ob die Lehre passt.",
-      "beispiel": "Im Vertrag steht: Probezeit 3 Monate. Dann gilt diese Zeit ab dem ersten Arbeitstag.",
+      "titel": "Standard oder speziell?",
+      "inhalt": "Viele Vertragspunkte sind Standard. Sie gelten für alle Lehrverhältnisse in der Schweiz. Diese Punkte kommen aus dem Gesetz. Beispiele sind die Probezeit oder das Recht auf Ausbildung im Betrieb. Andere Punkte sind betriebsspezifisch. Sie gelten nur für Ihren Betrieb. Beispiele sind Ihr Lohn, Ihre Arbeitszeiten und besondere Abmachungen. Beide Arten stehen im gleichen Formular.",
+      "beispiel": "Die Probezeit gibt es in jeder Lehre. Ihren Lohn hat Ihr Betrieb mit Ihnen abgemacht.",
       "fuer_leitfrage": [
-        2,
-        3
+        2
       ],
       "fakten_anker": [
         {
-          "behauptung": "Die Probezeit dauert 1 bis 3 Monate; ohne Vereinbarung 3 Monate.",
-          "wert": "1-3 Monate; Default 3 Monate",
-          "quelle": "OR Art. 344a Abs. 3; berufsbildung.ch (Probezeit)",
+          "behauptung": "Die Probezeit ist in jedem Lehrverhältnis gesetzlich vorgesehen.",
+          "wert": "Probezeit gesetzlich; in der Regel 1-3 Monate",
+          "quelle": "OR Art. 344a; berufsbildung.ch (Probezeit)",
           "validiert": true,
           "lp_pruefen": false
         },
         {
-          "behauptung": "Verlängerung bis maximal 6 Monate mit Genehmigung der kantonalen Behörde.",
-          "wert": "max. 6 Monate, mit kantonaler Genehmigung",
-          "quelle": "OR Art. 344a Abs. 3; berufsbildung.ch",
+          "behauptung": "Der Betrieb muss die lernende Person fachgemäss ausbilden.",
+          "wert": "Bildungspflicht des Betriebs",
+          "quelle": "OR Art. 344; berufsbildung.ch (Pflichten der Vertragsparteien)",
           "validiert": true,
           "lp_pruefen": false
         }
       ],
       "glossar_refs": [
-        "probezeit",
-        "lehrvertrag",
-        "berufsbildungsamt"
+        "vertragspunkt",
+        "standard",
+        "betriebsspezifisch",
+        "lehrverhaeltnis",
+        "probezeit"
       ],
       "recherche": {
         "suchbegriffe": [
-          "berufsbildung.ch Probezeit",
-          "Probezeit Lehre wie lange",
-          "Probezeit verlängern Lehrvertrag"
+          "berufsbildung.ch Lehrvertrag Inhalt",
+          "Lehrvertrag was gilt für alle",
+          "Lehrvertrag Lohn Arbeitszeit Betrieb"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Sagen Sie Ihre konkrete Situation und fragen Sie gezielt nach.",
-          "prompt": "Meine Probezeit dauert 3 Monate. Erklären Sie mir einfach: Was heisst das für mich? Was passiert am Ende der Probezeit? Wann kann sie länger werden?",
-          "tipp": "Fragen Sie nach: «Kann mir in der Probezeit gekündigt werden?»"
+          "so_fragst_du": "Tippen Sie fünf Punkte aus Ihrem Vertrag ab. Bitten Sie um eine Prüfung Ihrer Zuordnung.",
+          "prompt": "Hier sind fünf Punkte aus meinem Lehrvertrag: [Ihre Punkte]. Ich habe sie so zugeordnet: Standard für alle oder speziell für meinen Betrieb: [Ihre Zuordnung]. Prüfen Sie meine Zuordnung. Sagen Sie mir nur, wo ich falsch liege. Stellen Sie mir dazu eine Frage.",
+          "tipp": "Fragen Sie nach: «Woran erkenne ich einen Standard-Punkt?»"
         },
-        "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag: Wie lange dauert Ihre Probezeit?",
+        "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag: Finden Sie einen Punkt, der nur für Ihren Betrieb gilt.",
         "ki_lernen": [
           {
-            "strategie": "Lassen Sie sich abfragen",
-            "prompt": "Stellen Sie mir 3 Fragen zur Probezeit (Dauer, Verlängerung, Kündigungsfrist). Geben Sie mir die Lösung erst nach meiner Antwort."
+            "strategie": "Erklären Sie es mir",
+            "prompt": "Warum sind viele Punkte in jedem Lehrvertrag gleich? Erklären Sie es einfach. Nennen Sie ein Alltagsbeispiel für eine Regel, die für alle gilt."
           },
           {
-            "strategie": "Spielen Sie es durch",
-            "prompt": "Tun Sie so, als wäre ich am Ende der Probezeit unsicher, ob es weitergeht. Stellen Sie mir Fragen und helfen Sie mir zu überlegen, was ich tun kann."
+            "strategie": "Lassen Sie sich abfragen",
+            "prompt": "Nennen Sie mir 5 Vertragspunkte, zum Beispiel Probezeit oder Lohn. Ich sage zu jedem: Standard oder speziell für den Betrieb. Geben Sie mir die Lösung erst nach meiner Antwort."
           }
         ]
       }
@@ -136,38 +147,39 @@
     {
       "id": "nugget_A_03",
       "tag": "A",
-      "titel": "Höflich digital nachfragen",
-      "inhalt": "Verstehen Sie einen Punkt nicht? Dann fragen Sie nach. Lesen Sie den Begriff zuerst im Dossier. Ein KI-Tool kann Ihnen den Begriff einfach erklären. Prüfen Sie die Antwort aber immer. Dann schreiben Sie eine kurze, höfliche Nachricht. Stellen Sie eine klare Frage.",
-      "beispiel": "«Guten Tag, ich habe eine Frage zur Probezeit in meinem Lehrvertrag.»",
+      "titel": "Wichtig für mich",
+      "inhalt": "Nicht jeder Vertragspunkt ist jetzt gleich wichtig. Filtern hilft. Filtern heisst: das Wichtige auswählen. Fragen Sie sich: Was betrifft mich schon in diesem Monat? Beispiele sind Lohn, Arbeitszeit und Ferien. Anderes wird erst später wichtig. Bleibt ein Punkt unklar? Dann fragen Sie gezielt nach. Stellen Sie eine kurze, klare Frage an Ihre Berufsbildnerin oder Ihren Berufsbildner. Eine gute Frage nennt das Feld und sagt, was Sie wissen wollen.",
+      "beispiel": "Wichtig jetzt: mein Lohn und meine Arbeitszeit. Wichtig später: das Zeugnis am Ende der Lehre.",
       "fuer_leitfrage": [
+        3,
         4
       ],
       "fakten_anker": [],
       "glossar_refs": [
-        "ki_tool",
-        "lehrvertrag",
-        "probezeit"
+        "vertragspunkt",
+        "filtern",
+        "berufsbildner"
       ],
       "recherche": {
         "suchbegriffe": [
-          "höfliche E-Mail schreiben",
-          "Nachricht an Chef schreiben Beispiel",
-          "höflich nachfragen Vorlage"
+          "wichtige Punkte Lehrvertrag Lehrbeginn",
+          "gute Fragen stellen Arbeit",
+          "höflich nachfragen Beispiel"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Sagen Sie, was Sie fragen wollen, und bitten Sie um zwei Versionen zur Auswahl.",
-          "prompt": "Ich möchte meinen Berufsbildner höflich etwas zu meiner Probezeit fragen. Geben Sie mir zwei kurze, höfliche Versionen. Ich wähle eine aus.",
-          "tipp": "Sagen Sie: «Machen Sie die zweite Version noch etwas kürzer.»"
+          "so_fragst_du": "Bitten Sie um eine kurze Checkliste zum Filtern.",
+          "prompt": "Ich habe meinen Lehrvertrag in Abschnitte gegliedert. Machen Sie mir eine kurze Checkliste: Wie finde ich die drei Punkte, die mich diesen Monat betreffen? Halten Sie jeden Schritt kurz.",
+          "tipp": "Fragen Sie nach: «Was ist am Anfang der Lehre meistens am wichtigsten?»"
         },
-        "selbst_pruefen": "Schreiben Sie selbst eine kurze, höfliche Frage. Lesen Sie sie laut vor.",
+        "selbst_pruefen": "Markieren Sie in Ihrer Vertrags-Übersicht drei Punkte. Sagen Sie zu jedem in einem Satz: Warum jetzt wichtig?",
         "ki_lernen": [
           {
             "strategie": "Geben Sie mir Feedback",
-            "prompt": "Hier ist meine Nachricht: [Ihr Text]. Sagen Sie mir nur, was noch fehlt oder zu unhöflich klingt. Schreiben Sie sie nicht für mich neu."
+            "prompt": "Hier ist meine Frage an meine Berufsbildnerin: [Ihre Frage]. Sagen Sie mir nur, was noch fehlt oder unklar ist. Schreiben Sie die Frage nicht für mich neu."
           },
           {
             "strategie": "Spielen Sie es durch",
-            "prompt": "Spielen Sie meinen Berufsbildner. Ich schreibe Ihnen eine höfliche Frage. Antworten Sie so, wie er antworten könnte."
+            "prompt": "Spielen Sie meine Berufsbildnerin. Ich stelle Ihnen meine Frage zu einem Feld im Vertrag. Antworten Sie kurz. Sagen Sie mir danach, ob meine Frage klar war."
           }
         ]
       }
@@ -175,37 +187,38 @@
     {
       "id": "nugget_B_01",
       "tag": "B",
-      "titel": "Was ist ein Konflikt im Betrieb?",
-      "inhalt": "Ein Konflikt ist ein Streit oder ein Problem mit anderen. Im Betrieb passiert das manchmal. Vielleicht fühlen Sie sich unfair behandelt. Vielleicht entsteht ein Missverständnis. Ein Konflikt ist normal. Wichtig ist, wie Sie damit umgehen.",
-      "beispiel": "Sie bekommen immer nur das Putzen und dürfen nie an die Maschine. Das ärgert Sie.",
+      "titel": "Fakten zuerst",
+      "inhalt": "Bei einem Konflikt hilft Ordnung. Trennen Sie Fakten und Gefühle. Ein Fakt ist, was wirklich passiert ist. Ein Gefühl ist Ihre Reaktion darauf. Füllen Sie zuerst die Fakten-Tabelle aus: Was ist passiert? Seit wann? Was war abgemacht? Wer ist beteiligt? Gefühle dürfen sein. Aber in die Nachricht kommen zuerst die Fakten.",
+      "beispiel": "Fakt: Seit drei Wochen mache ich fast nur Abwasch. Gefühl: Ich bin enttäuscht.",
       "fuer_leitfrage": [
         1
       ],
       "fakten_anker": [],
       "glossar_refs": [
         "konflikt",
-        "berufsbildner"
+        "fakt",
+        "sachlich"
       ],
       "recherche": {
         "suchbegriffe": [
-          "Konflikt im Betrieb",
-          "berufsbildung.ch Streit Lehrbetrieb",
-          "Konflikt Lehre Beispiel"
+          "Fakten und Meinung unterscheiden",
+          "Konflikt sachlich beschreiben",
+          "Problem im Lehrbetrieb was tun"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Bitten Sie um eine einfache Erklärung mit zwei Beispielen.",
-          "prompt": "Erklären Sie mir einfach, was ein Konflikt im Betrieb ist. Nennen Sie zwei typische Beispiele aus der Lehre. Sagen Sie mir auch, warum Konflikte normal sind.",
-          "tipp": "Fragen Sie nach: «Wie bleibe ich im Streit ruhig?»"
+          "so_fragst_du": "Bitten Sie die KI, Ihnen nacheinander Fragen zu den Fakten zu stellen.",
+          "prompt": "Ich habe einen Konflikt im Lehrbetrieb. Stellen Sie mir nacheinander vier Fragen: Was ist passiert? Seit wann? Was war abgemacht? Wer ist beteiligt? Warten Sie nach jeder Frage auf meine Antwort.",
+          "tipp": "Sagen Sie danach: «Fassen Sie meine Fakten in drei kurzen Sätzen zusammen.»"
         },
-        "selbst_pruefen": "Denken Sie an einen Konflikt, den Sie kennen. Was war das Problem? Schreiben Sie einen Satz.",
+        "selbst_pruefen": "Lesen Sie Ihre Fakten-Tabelle. Streichen Sie alles, was ein Gefühl ist.",
         "ki_lernen": [
           {
-            "strategie": "Erklären Sie es selbst",
-            "prompt": "Ich erkläre Ihnen mit eigenen Worten, was ein Konflikt im Betrieb ist. Sagen Sie mir nur, was in meiner Erklärung noch fehlt — geben Sie mir nicht gleich die ganze Antwort."
+            "strategie": "Geben Sie mir Feedback",
+            "prompt": "Hier ist meine Fakten-Tabelle: [Ihre Fakten]. Sagen Sie mir nur: Welche Zeile ist kein Fakt, sondern ein Gefühl? Stellen Sie mir dazu eine Frage."
           },
           {
-            "strategie": "Spielen Sie es durch",
-            "prompt": "Beschreiben Sie mir eine kleine Konfliktsituation in der Lehre. Ich sage, wie ich reagieren würde. Sagen Sie mir danach, was gut war und was ich anders machen könnte."
+            "strategie": "Erklären Sie es selbst",
+            "prompt": "Ich erkläre Ihnen mit eigenen Worten den Unterschied zwischen Fakt und Gefühl. Sagen Sie mir nur, was in meiner Erklärung noch fehlt."
           }
         ]
       }
@@ -213,55 +226,54 @@
     {
       "id": "nugget_B_02",
       "tag": "B",
-      "titel": "Wer hilft mir? Die Kontaktstellen",
-      "inhalt": "Bei einem Problem im Betrieb helfen verschiedene Kontaktstellen. Gehen Sie der Reihe nach vor: 1. die Berufsbildnerin oder der Berufsbildner im Betrieb. 2. die lehrlingsverantwortliche Person im Betrieb. 3. die Lehrperson oder Klassenlehrperson an der Berufsfachschule. 4. das kantonale Berufsbildungsamt (die Lehraufsicht) — diese Stelle vermittelt bei einem Konflikt. 5. in manchen Kantonen zusätzlich eine Schlichtungsstelle. Beginnen Sie oben. Bleibt das Problem, holen Sie Hilfe bei der nächsten Stelle.",
-      "beispiel": "Das Berufsbildungsamt hilft, wenn Sie und Ihr Betrieb keine Lösung finden.",
+      "titel": "Wo steht was?",
+      "inhalt": "Sie wollen wissen, was gilt. Suchen Sie zuerst in Ihren eigenen Unterlagen. Die Vertrags-Übersicht ist Ihre Tabelle aus Herausforderung A. Sie zeigt, welcher Abschnitt zu Ihrem Fall passt. Ihr Lehrvertrag regelt zum Beispiel Lohn, Arbeitszeit und Ausbildung. Der Betrieb muss Sie im Beruf ausbilden. Das gehört zum Lehrverhältnis. Der Bildungsplan sagt, was Sie in der Lehre lernen sollen. Notieren Sie den Fundort. So können Sie im Gespräch darauf zeigen.",
+      "beispiel": "Für den Fall «fast nur Abwasch» passt der Abschnitt zu Aufgaben und Ausbildung.",
       "fuer_leitfrage": [
         2
       ],
       "fakten_anker": [
         {
-          "behauptung": "Die kantonale Lehraufsicht (Berufsbildungsamt) vermittelt bei Konflikten im Lehrverhältnis.",
-          "wert": "kantonales Berufsbildungsamt / Lehraufsicht vermittelt",
-          "quelle": "berufsbildung.ch (Behörden; Auflösung des Lehrvertrags)",
+          "behauptung": "Der Betrieb ist verpflichtet, die lernende Person im Beruf auszubilden.",
+          "wert": "Bildungspflicht des Lehrbetriebs",
+          "quelle": "OR Art. 344; berufsbildung.ch (Pflichten im Lehrverhältnis)",
           "validiert": true,
           "lp_pruefen": false
         },
         {
-          "behauptung": "Der genaue Name und die Kontaktdaten der zuständigen Stelle hängen vom Kanton ab.",
-          "wert": "Name variiert (z. B. Amt für Berufsbildung, Mittelschul- und Berufsbildungsamt)",
-          "quelle": "berufsbildung.ch (Kantonale Anlaufstellen) — pro Kanton zu prüfen",
-          "validiert": false,
-          "lp_pruefen": true
+          "behauptung": "Der Bildungsplan legt fest, was Lernende in der beruflichen Grundbildung lernen.",
+          "wert": "Bildungsplan als Grundlage der Ausbildung",
+          "quelle": "berufsbildung.ch (Bildungsplan)",
+          "validiert": true,
+          "lp_pruefen": false
         }
       ],
       "glossar_refs": [
-        "kontaktstelle",
-        "lehraufsicht",
-        "berufsbildungsamt",
-        "schlichtungsstelle",
-        "berufsbildner"
+        "lehrvertrag",
+        "lehrverhaeltnis",
+        "bildungsplan",
+        "abschnitt"
       ],
       "recherche": {
         "suchbegriffe": [
-          "Berufsbildungsamt [Ihr Kanton]",
-          "Lehraufsicht [Ihr Kanton] Kontakt",
-          "Hilfe Konflikt Lehrbetrieb Amt"
+          "Bildungsplan [Ihr Beruf] EBA",
+          "Pflichten Lehrbetrieb Ausbildung",
+          "berufsbildung.ch Lehrverhältnis"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Nennen Sie Ihren Kanton — dann wird die Antwort genau.",
-          "prompt": "Ich mache eine Lehre im Kanton [Ihr Kanton]. Welche Stelle hilft bei Konflikten im Lehrbetrieb? Wie heisst sie genau und wie erreiche ich sie?",
-          "tipp": "Prüfen Sie die Antwort: Suchen Sie den Namen der Stelle auch auf berufsbildung.ch."
+          "so_fragst_du": "Erklären Sie der KI Ihren Suchweg. Bitten Sie nur um Hinweise auf Lücken.",
+          "prompt": "Ich suche, was in meinem Fall gilt. Mein Plan: zuerst in der Vertrags-Übersicht schauen, dann im Abschnitt zu Aufgaben und Ausbildung, dann im Bildungsplan. Sagen Sie mir nur, was an meinem Suchweg fehlt. Geben Sie mir keine fertige Antwort.",
+          "tipp": "Fragen Sie danach: «Wo finde ich den Bildungsplan für meinen Beruf?»"
         },
-        "selbst_pruefen": "Finden Sie heraus, wie das Berufsbildungsamt in Ihrem Kanton heisst und wo es ist.",
+        "selbst_pruefen": "Suchen Sie den Bildungsplan für Ihren Beruf im Internet. Notieren Sie, wo Sie ihn gefunden haben.",
         "ki_lernen": [
           {
-            "strategie": "Finden Sie es für mich",
-            "prompt": "Helfen Sie mir, die richtige Stelle zu finden. Stellen Sie mir zuerst 2 Fragen zu meiner Situation und sagen Sie mir dann, an wen ich mich zuerst wende."
+            "strategie": "Machen Sie mir eine Checkliste",
+            "prompt": "Im Betrieb läuft etwas anders als abgemacht. Machen Sie mir eine kurze Checkliste: Wo suche ich zuerst nach? Nutzen Sie diese Orte: Vertrags-Übersicht, Lehrvertrag, Bildungsplan."
           },
           {
             "strategie": "Lassen Sie sich abfragen",
-            "prompt": "Fragen Sie mich ab: Wer hilft zuerst? Wer hilft, wenn es im Betrieb nicht besser wird? Geben Sie mir die Lösung erst nach meiner Antwort."
+            "prompt": "Fragen Sie mich ab: Wo steht mein Lohn? Wo steht, was ich lernen soll? Wo steht die Arbeitszeit? Geben Sie mir die Lösung erst nach meiner Antwort."
           }
         ]
       }
@@ -269,48 +281,57 @@
     {
       "id": "nugget_B_03",
       "tag": "B",
-      "titel": "Schritt für Schritt Hilfe holen",
-      "inhalt": "Bleiben Sie zuerst ruhig. Sammeln Sie die Fakten: Was ist passiert? Seit wann? Überlegen Sie, wer helfen kann. Schreiben Sie eine sachliche Nachricht. Beschreiben Sie das Problem kurz und klar. Bitten Sie höflich um Hilfe. Nennen Sie keine Schimpfwörter.",
-      "beispiel": "«Guten Tag, ich bin Lernende/r und brauche Hilfe. In meinem Betrieb gibt es folgendes Problem: …»",
+      "titel": "Die zwei Wege und die Stellen",
+      "inhalt": "Sie kennen die Fakten und wissen, was gilt. Jetzt wählen Sie den Weg. Weg 1: selbst ansprechen. Sie suchen das ruhige Gespräch mit Ihrer Berufsbildnerin oder Ihrem Berufsbildner. Das ist oft der beste erste Schritt. Weg 2: Hilfe holen bei einer Kontaktstelle. An der Schule hilft Ihre Lehrperson. Das kantonale Berufsbildungsamt (die Lehraufsicht) vermittelt bei Konflikten. Der Name der Stelle ist in jedem Kanton anders. Beide Wege können richtig sein. Begründen Sie Ihre Wahl mit den Fakten.",
+      "beispiel": "Erst das Gespräch im Betrieb. Bleibt das Problem, hilft das Berufsbildungsamt.",
       "fuer_leitfrage": [
         3,
         4
       ],
       "fakten_anker": [
         {
-          "behauptung": "In der Probezeit kann der Lehrvertrag mit 7 Tagen Frist gekündigt werden; danach nur aus wichtigen Gründen oder im Einvernehmen.",
-          "wert": "Probezeit: 7 Tage Kündigungsfrist; nach Probezeit: wichtige Gründe / Einvernehmen",
-          "quelle": "OR Art. 346; berufsbildung.ch (Kündigung)",
+          "behauptung": "Die kantonale Lehraufsicht (Berufsbildungsamt) vermittelt bei Konflikten im Lehrverhältnis.",
+          "wert": "kantonales Berufsbildungsamt / Lehraufsicht vermittelt",
+          "quelle": "berufsbildung.ch (Behörden und Anlaufstellen)",
           "validiert": true,
           "lp_pruefen": false
+        },
+        {
+          "behauptung": "Der genaue Name und die Kontaktdaten der zuständigen Stelle hängen vom Kanton ab.",
+          "wert": "Name variiert je Kanton (z. B. Amt für Berufsbildung, Mittelschul- und Berufsbildungsamt)",
+          "quelle": "berufsbildung.ch (Kantonale Anlaufstellen) — pro Kanton zu prüfen",
+          "validiert": false,
+          "lp_pruefen": true
         }
       ],
       "glossar_refs": [
-        "konflikt",
+        "berufsbildner",
         "kontaktstelle",
-        "kuendigung",
-        "kuendigungsfrist"
+        "berufsbildungsamt",
+        "lehraufsicht",
+        "vermitteln",
+        "konflikt"
       ],
       "recherche": {
         "suchbegriffe": [
-          "Probleme im Lehrbetrieb Hilfe",
-          "berufsbildung.ch Lehrvertrag Kündigung",
-          "sachliche Nachricht schreiben"
+          "Berufsbildungsamt [Ihr Kanton]",
+          "Lehraufsicht [Ihr Kanton] Kontakt",
+          "Hilfe Konflikt Lehrbetrieb"
         ],
         "ki_beispiel": {
-          "so_fragst_du": "Bitten Sie um eine kurze Schritt-Liste statt einem langen Text.",
-          "prompt": "Ich habe ein Problem im Betrieb und will Hilfe holen. Machen Sie mir eine einfache Checkliste: Was mache ich zuerst, was dann? Halten Sie jeden Schritt kurz.",
-          "tipp": "Fragen Sie nach: «Was sollte ich NICHT in die Nachricht schreiben?»"
+          "so_fragst_du": "Nennen Sie Ihren Kanton und Ihre Lage. Dann wird die Antwort genau.",
+          "prompt": "Ich mache eine EBA-Lehre im Kanton [Ihr Kanton]. Im Betrieb läuft etwas anders als abgemacht. Welche Stelle hilft mir? Wie heisst sie in meinem Kanton genau? Stellen Sie mir zuerst zwei Fragen zu meiner Lage.",
+          "tipp": "Prüfen Sie den Namen der Stelle auf der Website Ihres Kantons."
         },
-        "selbst_pruefen": "Schreiben Sie die drei wichtigsten Fakten zu einem Problem auf: Was? Seit wann? Wer ist dabei?",
+        "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag oder auf die Website Ihres Kantons: Wie heisst Ihr Berufsbildungsamt?",
         "ki_lernen": [
           {
-            "strategie": "Geben Sie mir Feedback",
-            "prompt": "Hier sind meine 3 Fakten zum Problem: [Ihre Fakten]. Sagen Sie mir, ob etwas Wichtiges fehlt, bevor ich Hilfe hole."
+            "strategie": "Spielen Sie es durch",
+            "prompt": "Spielen Sie meine Berufsbildnerin. Ich spreche das Problem ruhig an: Abgemacht war anderes, seit drei Wochen mache ich fast nur Abwasch. Antworten Sie so, wie sie antworten könnte. Sagen Sie mir danach, was ich gut gemacht habe."
           },
           {
-            "strategie": "Spielen Sie es durch",
-            "prompt": "Spielen Sie die Beratungsstelle. Ich schildere mein Problem in 3 Sätzen. Fragen Sie nach, was Sie noch wissen müssen."
+            "strategie": "Geben Sie mir Feedback",
+            "prompt": "Hier ist meine digitale Nachricht an die gewählte Stelle: [Ihr Text]. Sagen Sie mir nur als Fragen, wo etwas fehlt oder nicht sachlich klingt. Schreiben Sie die Nachricht nicht neu."
           }
         ]
       }
@@ -319,28 +340,28 @@
   "sprachmodi_scaffolds": [
     {
       "tag": "A",
-      "sm_id": "SM9",
-      "modus_label": "Digital zusammenarbeiten",
+      "sm_id": "SM3",
+      "modus_label": "Lesen und Verstehen",
       "satzanfaenge": [
-        "«Guten Tag, ich habe eine Frage zu …»",
-        "«Das verstehe ich noch nicht ganz: …»",
-        "«Vielen Dank für Ihre Hilfe.»"
+        "«Dieser Abschnitt regelt …»",
+        "«Das gilt für alle, weil …»",
+        "«Für mich ist … wichtig, weil …»"
       ],
       "strategien": [
-        "Begriff zuerst im Dossier lesen.",
-        "KI-Antwort immer prüfen.",
-        "Eine Frage pro Nachricht."
+        "Nicht Wort für Wort lesen. Zuerst Titel und Felder suchen.",
+        "Unklare Wörter im Glossar nachschlagen.",
+        "Verweise markieren und später klären."
       ],
       "struktur": [
-        "Gruss – Frage – Dank",
-        "Kurze Sätze, ein Gedanke pro Satz"
+        "Tabelle: Abschnitt – Standard/speziell – wichtig für mich",
+        "Pro Zeile ein Abschnitt"
       ],
       "so_gehst_du_vor": [
-        "1. Markieren Sie den Punkt, den Sie nicht verstehen.",
-        "2. Lesen Sie den Begriff im Dossier.",
-        "3. Fragen Sie ein KI-Tool nach einer einfachen Erklärung. Prüfen Sie die Antwort.",
-        "4. Schreiben Sie eine kurze, höfliche Nachricht mit Ihrer Frage.",
-        "5. Lesen Sie die Nachricht laut. Sind die Sätze kurz?"
+        "1. Überfliegen Sie das Formular: Titel und Felder zuerst.",
+        "2. Bilden Sie Abschnitte. Geben Sie jedem einen eigenen Titel.",
+        "3. Ordnen Sie zu: Standard für alle oder speziell für den Betrieb?",
+        "4. Markieren Sie, was für Sie jetzt wichtig ist.",
+        "5. Prüfen Sie: Verstehen Sie jeden Titel in Ihrer Tabelle?"
       ]
     },
     {
@@ -348,42 +369,43 @@
       "sm_id": "SM9",
       "modus_label": "Digital zusammenarbeiten",
       "satzanfaenge": [
-        "«Guten Tag, ich bin Lernende/r und brauche Hilfe.»",
-        "«In meinem Betrieb gibt es folgendes Problem: …»",
-        "«Können Sie mir bitte helfen?»"
+        "«Guten Tag, ich bin Lernende/r im 1. Lehrjahr.»",
+        "«Abgemacht war … Seit … ist es anders.»",
+        "«Ich wünsche mir …»",
+        "«Können wir darüber sprechen?»"
       ],
       "strategien": [
-        "Zuerst Fakten sammeln.",
-        "Sachlich bleiben — keine Schuldzuweisung.",
+        "Zuerst Fakten, dann Gefühle. Die Nachricht bleibt sachlich.",
+        "Erst nachschlagen, was gilt. Dann schreiben.",
         "Klar sagen, was Sie sich wünschen."
       ],
       "struktur": [
-        "Wer bin ich – Problem – Bitte um Hilfe",
+        "Wer bin ich – Fakten – was ich mir wünsche",
         "Kurze Sätze, ein Gedanke pro Satz"
       ],
       "so_gehst_du_vor": [
-        "1. Atmen Sie durch und bleiben Sie ruhig.",
-        "2. Schreiben Sie die Fakten auf: Was? Seit wann?",
-        "3. Wählen Sie die richtige Stelle (siehe Info-Karte B-02).",
-        "4. Schreiben Sie eine sachliche Nachricht mit einer klaren Bitte.",
-        "5. Prüfen Sie: ruhig, klar, höflich?"
+        "1. Füllen Sie die Fakten-Tabelle aus (Info-Karte B-01).",
+        "2. Schlagen Sie nach, was gilt (Info-Karte B-02).",
+        "3. Wählen Sie den Weg und die Stelle (Info-Karte B-03).",
+        "4. Schreiben Sie die Nachricht: Anrede, Fakten, Wunsch.",
+        "5. Prüfen Sie: ruhig, klar, höflich? Dann senden."
       ]
     }
   ],
   "transfer_wissensblatt": {
-    "fachsystematik": "Bei Fragen und Konflikten in der Arbeitswelt gibt es zwei Wege: selbst klären oder Hilfe holen. Zuerst prüfen Sie, was Sie selbst lösen können. Bei einem echten Problem holen Sie Hilfe bei der zuständigen Stelle. So bleiben Sie handlungsfähig und kennen Ihre Rechte.",
-    "prinzip_in_einfach": "Erst selbst prüfen. Bei einem echten Problem Hilfe holen. Immer bei der richtigen Stelle.",
+    "fachsystematik": "Neue Verträge und Unstimmigkeiten gehören zur Arbeitswelt. Es gibt ein Grundmuster. Zuerst verschaffe ich mir einen Überblick: gliedern und filtern. Dann suche ich gezielt die relevante Stelle. Erst danach entscheide ich: selbst klären oder Hilfe holen. Diese Reihenfolge macht mich sicher und handlungsfähig.",
+    "prinzip_in_einfach": "Zuerst Überblick verschaffen. Dann gezielt die passende Stelle suchen. Erst dann entscheiden: selbst klären oder Hilfe holen.",
     "austausch_scaffolds": {
       "satzanfaenge": [
-        "«In meinem Fall habe ich …»",
-        "«Beide Fälle sind gleich, weil …»",
+        "«In meinem Fall habe ich zuerst …»",
+        "«Bei beiden Fällen ist gleich: …»",
         "«Schwierig wäre für mich …, weil …»"
       ],
       "so_tauschst_du_aus": [
-        "1. Erzählen Sie Ihren Fall in 90 Sekunden.",
+        "1. Erzählen Sie Ihren Fall in 90 Sekunden: Fall, Vorgehen, bester Tipp.",
         "2. Hören Sie den anderen genau zu.",
-        "3. Finden Sie zusammen die gemeinsame Regel.",
-        "4. Sagen Sie, welcher Fall für Sie schwierig wäre."
+        "3. Finden Sie zusammen: Was ist bei beiden Fällen gleich? Welche Grundregel steckt dahinter?",
+        "4. Sagen Sie, welcher Fall für Sie schwierig wäre. Begründen Sie kurz."
       ]
     }
   },
@@ -391,32 +413,98 @@
     {
       "id": "lehrvertrag",
       "begriff": "Lehrvertrag",
-      "erklaerung_a2": "Ein schriftlicher Vertrag für Ihre Lehre. Er regelt Lohn, Ferien, Arbeitszeit und Probezeit.",
+      "erklaerung_a2": "Ein schriftlicher Vertrag für Ihre Lehre. Er regelt zum Beispiel Lohn, Ferien und Arbeitszeit.",
       "beispiel": "Sie unterschreiben den Lehrvertrag vor dem ersten Arbeitstag."
+    },
+    {
+      "id": "formular",
+      "begriff": "Formular",
+      "erklaerung_a2": "Ein Dokument mit vorgegebenen Feldern zum Ausfüllen.",
+      "beispiel": "Der Lehrvertrag ist ein Formular mit vielen Feldern."
+    },
+    {
+      "id": "abschnitt",
+      "begriff": "Abschnitt",
+      "erklaerung_a2": "Ein Teil eines Textes oder Formulars mit einem eigenen Thema.",
+      "beispiel": "Der Abschnitt zu Lohn und Ferien steht im Lehrvertrag."
+    },
+    {
+      "id": "vertragspunkt",
+      "begriff": "Vertragspunkt",
+      "erklaerung_a2": "Eine einzelne Regel oder Angabe im Vertrag.",
+      "beispiel": "Der Lohn ist ein Vertragspunkt."
+    },
+    {
+      "id": "verweis",
+      "begriff": "Verweis",
+      "erklaerung_a2": "Eine Stelle, die auf einen anderen Text zeigt.",
+      "beispiel": "Im Vertrag steht ein Verweis auf ein Reglement."
+    },
+    {
+      "id": "reglement",
+      "begriff": "Reglement",
+      "erklaerung_a2": "Ein Text mit Regeln, zum Beispiel zur Arbeitszeit.",
+      "beispiel": "Das Reglement des Betriebs regelt die Pausen."
+    },
+    {
+      "id": "standard",
+      "begriff": "Standard",
+      "erklaerung_a2": "Etwas gilt für alle gleich.",
+      "beispiel": "Die Probezeit ist ein Standard-Punkt in jedem Lehrvertrag."
+    },
+    {
+      "id": "betriebsspezifisch",
+      "begriff": "betriebsspezifisch",
+      "erklaerung_a2": "Etwas gilt nur für Ihren Betrieb.",
+      "beispiel": "Ihre Arbeitszeiten sind betriebsspezifisch."
+    },
+    {
+      "id": "lehrverhaeltnis",
+      "begriff": "Lehrverhältnis",
+      "erklaerung_a2": "Die Lehre als Vertrag zwischen Ihnen und dem Betrieb.",
+      "beispiel": "Das Lehrverhältnis beginnt am ersten Arbeitstag."
     },
     {
       "id": "probezeit",
       "begriff": "Probezeit",
-      "erklaerung_a2": "Die erste Zeit der Lehre. Beide Seiten schauen, ob die Lehre passt. Sie dauert 1 bis 3 Monate.",
+      "erklaerung_a2": "Die erste Zeit der Lehre. Beide Seiten schauen, ob die Lehre passt. Sie dauert meistens 1 bis 3 Monate.",
       "beispiel": "In der Probezeit lernen Sie den Betrieb kennen."
     },
     {
-      "id": "kuendigung",
-      "begriff": "Kündigung",
-      "erklaerung_a2": "Wenn jemand den Vertrag beendet. Beide Seiten können kündigen.",
-      "beispiel": "In der Probezeit ist eine Kündigung mit kurzer Frist möglich."
+      "id": "bildungsplan",
+      "begriff": "Bildungsplan",
+      "erklaerung_a2": "Ein Dokument zu Ihrem Beruf. Es sagt, was Sie in der Lehre lernen sollen.",
+      "beispiel": "Im Bildungsplan steht, welche Arbeiten Sie lernen."
     },
     {
-      "id": "kuendigungsfrist",
-      "begriff": "Kündigungsfrist",
-      "erklaerung_a2": "Die Zeit zwischen Kündigung und letztem Arbeitstag. In der Probezeit sind es 7 Tage.",
-      "beispiel": "Die Kündigungsfrist in der Probezeit ist kurz: 7 Tage."
+      "id": "filtern",
+      "begriff": "filtern",
+      "erklaerung_a2": "Das Wichtige auswählen und den Rest weglassen.",
+      "beispiel": "Sie filtern die drei Punkte, die Sie jetzt betreffen."
+    },
+    {
+      "id": "fakt",
+      "begriff": "Fakt",
+      "erklaerung_a2": "Etwas, das wirklich passiert ist. Kein Gefühl, keine Meinung.",
+      "beispiel": "Fakt: Seit drei Wochen mache ich fast nur Abwasch."
     },
     {
       "id": "konflikt",
       "begriff": "Konflikt",
       "erklaerung_a2": "Ein Streit oder ein Problem mit anderen Menschen.",
-      "beispiel": "Ein Konflikt mit dem Betrieb über Ihre Aufgaben."
+      "beispiel": "Ein Konflikt über Ihre Aufgaben im Betrieb."
+    },
+    {
+      "id": "unstimmigkeit",
+      "begriff": "Unstimmigkeit",
+      "erklaerung_a2": "Etwas ist anders als abgemacht.",
+      "beispiel": "Abgemacht war Ausbildung. Jetzt gibt es fast nur Abwasch. Das ist eine Unstimmigkeit."
+    },
+    {
+      "id": "sachlich",
+      "begriff": "sachlich",
+      "erklaerung_a2": "Bei den Fakten bleiben. Ohne Vorwürfe und Schimpfwörter.",
+      "beispiel": "Eine sachliche Nachricht nennt Fakten, keine Wut."
     },
     {
       "id": "kontaktstelle",
@@ -425,10 +513,10 @@
       "beispiel": "Das Berufsbildungsamt ist eine wichtige Kontaktstelle."
     },
     {
-      "id": "lehraufsicht",
-      "begriff": "Lehraufsicht",
-      "erklaerung_a2": "Die kantonale Stelle, die über die Lehre wacht. Sie hilft bei Konflikten.",
-      "beispiel": "Die Lehraufsicht vermittelt zwischen Ihnen und dem Betrieb."
+      "id": "berufsbildner",
+      "begriff": "Berufsbildner/in",
+      "erklaerung_a2": "Die Person im Betrieb, die Sie ausbildet und begleitet.",
+      "beispiel": "Ihre Berufsbildnerin zeigt Ihnen die Arbeit im Betrieb."
     },
     {
       "id": "berufsbildungsamt",
@@ -437,22 +525,22 @@
       "beispiel": "Das Berufsbildungsamt Ihres Kantons finden Sie im Internet."
     },
     {
-      "id": "schlichtungsstelle",
-      "begriff": "Schlichtungsstelle",
-      "erklaerung_a2": "Eine Stelle, die bei einem Streit eine Lösung sucht. Es gibt sie nicht in jedem Kanton.",
-      "beispiel": "Die Schlichtungsstelle hilft, einen Streit ohne Gericht zu lösen."
+      "id": "lehraufsicht",
+      "begriff": "Lehraufsicht",
+      "erklaerung_a2": "Die kantonale Stelle, die über die Lehre wacht. Sie hilft bei Konflikten.",
+      "beispiel": "Die Lehraufsicht vermittelt zwischen Ihnen und dem Betrieb."
     },
     {
-      "id": "berufsbildner",
-      "begriff": "Berufsbildner/in",
-      "erklaerung_a2": "Die Person im Betrieb, die Sie ausbildet und begleitet.",
-      "beispiel": "Ihre Berufsbildnerin zeigt Ihnen die Arbeit im Betrieb."
+      "id": "vermitteln",
+      "begriff": "vermitteln",
+      "erklaerung_a2": "Bei einem Streit helfen, eine Lösung zu finden.",
+      "beispiel": "Das Amt vermittelt zwischen Ihnen und dem Betrieb."
     },
     {
       "id": "ki_tool",
       "begriff": "KI-Tool",
-      "erklaerung_a2": "Ein Computer-Programm, das Fragen beantwortet. Sie müssen die Antwort aber prüfen.",
-      "beispiel": "Ein KI-Tool erklärt Ihnen einen schwierigen Begriff in einfachen Worten."
+      "erklaerung_a2": "Ein Computer-Programm, das Fragen beantwortet. Prüfen Sie die Antwort immer.",
+      "beispiel": "Ein KI-Tool erklärt Ihnen ein schwieriges Wort einfach."
     }
   ],
   "template": "dossier_eba_v1",

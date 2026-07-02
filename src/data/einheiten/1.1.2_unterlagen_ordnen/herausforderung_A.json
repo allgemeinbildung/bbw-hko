@@ -1,0 +1,318 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_hf_A",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Alles neu, alles digital",
+  "wissensknoten": [
+    "ordnerstruktur",
+    "kategorie"
+  ],
+  "nrlp": {
+    "nr": "1.1.2",
+    "nr_primary": [
+      "1.1.2"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      1,
+      10,
+      11
+    ]
+  },
+  "persona": {
+    "beruf": "Schreinerpraktiker/in EBA",
+    "betrieb": "Schreinerei Brunner AG",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin Schreinerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite bei der Schreinerei Brunner AG in Winterthur. Die Schule arbeitet digital: Lernplattform, E-Mail, Kalender, Cloud-Ablage. Ich habe viele Anleitungen und Dokumente bekommen. Alles wirkt wichtig. Aber ich kann nicht alles genau lesen. Was brauche ich jetzt wirklich? Ich will mir einen Überblick verschaffen.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie verschaffe ich mir einen Überblick über die digitalen Vorgaben der Schule?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Dossier zu Herausforderung A als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte A-01",
+      "text": "Sehen Sie die Dokumente der Schule durch. Ordnen Sie jedes einer Kategorie zu: Vorgaben, Anleitungen oder Kommunikation. Nutzen Sie die Tabelle.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte A-02",
+      "text": "Nehmen Sie eine Anleitung. Markieren Sie die zentralen Aussagen mit der Markierhilfe aus dem Dossier.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Dossier | Info-Karte A-02",
+      "text": "Wählen Sie drei Dinge, die Sie diese Woche einrichten. Begründen Sie kurz: Warum diese zuerst?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Dossier | Info-Karte A-03",
+      "text": "Füllen Sie eine Zeile Ihrer Checkliste vollständig aus: Kategorie, Dokument, Ablageort und ein Satz: Wofür brauche ich es?",
+      "feld_hoehe_mm": 15
+    }
+  ],
+  "mindmap_zentrum": "Mein digitaler Arbeitsplatz",
+  "mindmap_aeste": [
+    {
+      "titel": "Die drei Kategorien",
+      "punkte": [
+        "Vorgaben",
+        "Anleitungen",
+        "Kommunikation"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Meine Werkzeuge",
+      "punkte": [
+        "Lernplattform",
+        "E-Mail",
+        "Kalender"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Erste Schritte",
+      "punkte": [
+        "Zugänge testen",
+        "Ordner anlegen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Meine Fragen",
+      "punkte": [],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kategorisierte Checkliste",
+    "titel": "Meine Checkliste: digitaler Arbeitsplatz",
+    "format_detail": "Checkliste als Tabelle mit drei Kategorien, 8-12 Zeilen, eine A4-Seite",
+    "beschreibung": "Ich sichte die Dokumente der Schule. Ich ordne sie in drei Kategorien. In der Checkliste halte ich fest, wo was steht und wofür ich es brauche.",
+    "schritte": [
+      {
+        "label": "Dokumente sammeln",
+        "hint": "Alle Anleitungen an einen Ort"
+      },
+      {
+        "label": "Kategorien kennen",
+        "hint": "Dossier: die drei Kategorien"
+      },
+      {
+        "label": "Zuordnen",
+        "hint": "Jedes Dokument in eine Kategorie"
+      },
+      {
+        "label": "Festhalten",
+        "hint": "Wo liegt es? Wofür brauche ich es?"
+      },
+      {
+        "label": "Prüfen",
+        "hint": "Finde ich alles in einer Minute?"
+      }
+    ],
+    "schreib_label": "MEINE CHECKLISTE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/ordnerstruktur",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Dieses Dokument gehört zu …, weil …»",
+        "«Das brauche ich für …»"
+      ],
+      "strategien": [
+        "Zuerst grob sortieren, dann genau zuordnen.",
+        "Nicht alles lesen — zuerst Titel und Zwischentitel anschauen."
+      ],
+      "struktur": [
+        "Tabelle: Kategorie – Dokument – Ablageort – Wofür",
+        "Pro Zeile ein Dokument"
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich in dieser Einheit überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo in meinem Lehralltag ist dieses Vorgehen wichtig?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was mache ich beim nächsten Mal konkret anders?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen bearbeitet",
+        "Zuordnung zu den Kategorien stimmt",
+        "Auswahl in LF3 begründet"
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur und Tiefe",
+      "vollstaendig_wenn": [
+        "Zentrum und 4 Ast-Titel übernommen",
+        "Pro Ast eigene Punkte"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Kategorisierte Checkliste",
+      "vollstaendig_wenn": [
+        "Drei Kategorien verwendet",
+        "Mindestens 8 Dokumente erfasst",
+        "Ablageort pro Zeile vermerkt"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe und Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Fragen beantwortet",
+        "Bezug zum Lehralltag"
+      ]
+    }
+  ],
+  "wochen_plan": [],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.2_unterlagen_ordnen_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Digitalen Arbeitsplatz einrichten"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Alles genau anschauen vs. gezielt das Wichtige herausfiltern",
+    "hint": "Alles lesen kostet viel Zeit. Beim Filtern kann Wichtiges untergehen. Beides kann richtig sein — es kommt auf den Zweck an."
+  },
+  "dekontextualisierung": {
+    "frage": "Wo müssen Sie sich sonst noch in vielen Dokumenten orientieren?",
+    "ziel": "Ich verschaffe mir zuerst einen Überblick und ordne nach klaren Kategorien."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T4: Medien und digitale Welt — digitale Werkzeuge und Datenablage vertieft."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Die drei Kategorien",
+      "unterueberschrift": "Vorgaben – Anleitungen – Kommunikation",
+      "nugget_ref": "Info-Karte A-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Zentrale Aussagen finden",
+      "unterueberschrift": "Markieren und filtern",
+      "nugget_ref": "Info-Karte A-02",
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Die Checkliste führen",
+      "unterueberschrift": "So halte ich fest, wo was liegt",
+      "nugget_ref": "Info-Karte A-03",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Kategorien anwenden",
+        "indikator": "ordnet Dokumente richtig zu",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Relevantes filtern",
+        "indikator": "wählt drei Dinge und begründet",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Checkliste führen",
+        "indikator": "vollständige, klare Zeilen",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Reflexion",
+        "indikator": "benennt Lehralltags-Bezug",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Kategorien-Tabelle und Markierhilfe stehen im Dossier bereit.",
+    "scaffold_100": "Ergänzt eine eigene vierte Kategorie und begründet sie."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Komplexität reduzieren: kategorisieren und festhalten",
+    "dossier_anker": "Dossier Info-Karten A-01..A-03",
+    "kn_aktivierung": "Im KN trifft eine neue Dokumenten-Flut auf einen nahen Termin.",
+    "transfer_check": "Nutzt die lernende Person Kategorien und Checkliste, statt alles zu lesen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen 1-3: relevante von irrelevanten Dokumenten unterscheiden"
+    },
+    {
+      "sk": 10,
+      "wo": "situation: sich im neuen digitalen Umfeld der Schule zurechtfinden"
+    },
+    {
+      "sk": 11,
+      "wo": "mehrdeutigkeit: genau anschauen oder filtern abwägen"
+    }
+  ]
+}
