@@ -1,0 +1,147 @@
+{
+  "id": "1.3.1_konsum_verantworten_lernprompt",
+  "set_ref": "1.3.1_konsum_verantworten_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «Überlegt konsumieren» (Bedürfnisse unterscheiden, Budget planen, Verschuldung vermeiden).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
+        "thema_bezug": "Bei Geld hängt alles von der Perspektive ab: Dieselbe Anschaffung klingt aus Sicht einer Verkäuferin, einer nüchternen Budgetberaterin oder eines sparsamen Kollegen völlig anders — und genau diese Perspektiven können Sie gezielt durchspielen.",
+        "beispiel_basis": "Du bist eine Budgetberaterin. Erkläre einem Lernenden im 1. Lehrjahr, worauf er bei einem Handy-Abo achten sollte, damit sein Konto nicht vor Monatsende leer ist.",
+        "beispiel_fortgeschritten": "Du bist eine Verkäuferin und willst mir heute ein E-Bike-Leasing verkaufen («79 Franken/Monat, 0 Prozent»). Argumentiere so, wie du es im Laden tun würdest. Sag mir danach, mit welchem Satz du mich am ehesten zum sofortigen Unterschreiben bringst.",
+        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht automatisch korrekt: Auch als «Budgetberaterin» kann die KI eine Zahl erfinden oder eine Nebenkosten-Falle übersehen. Die Rolle steuert den Ton — nachrechnen müssen Sie.",
+        "baukasten": {
+          "rolle": [
+            "nüchterne Budgetberaterin",
+            "Verkäufer/in im Laden",
+            "sparsamer Kollege"
+          ],
+          "kontext": [
+            "Lernende/r im 1. Lehrjahr",
+            "knapper Lernendenlohn",
+            "Konto vor Monatsende leer"
+          ],
+          "aufgabe": [
+            "auf ein Angebot achten helfen",
+            "das Angebot anpreisen",
+            "vor einer Falle warnen"
+          ],
+          "format": [
+            "3 Sätze",
+            "Dialog-Beispiel"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Situation, Zahlen, Ziel, Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
+        "thema_bezug": "Eine Geldentscheidung ist ohne Zahlen nicht zu beurteilen: Wie hoch ist der Nettolohn, welche Fixkosten laufen, was kostet das Angebot im Monat und insgesamt? Erst mit diesen Fakten kann die KI eine brauchbare Einschätzung geben.",
+        "beispiel_basis": "Kontext: Lernender, 1. Lehrjahr, Nettolohn ca. 900 Franken. Fixkosten: Krankenkasse, Handy-Abo, Haushaltsbeitrag. Frage: Wie viel bleibt mir realistisch für variable Ausgaben pro Monat?",
+        "beispiel_fortgeschritten": "Kontext: Schweizer Lehrverhältnis, EFZ, 1. Lehrjahr, Nettolohn 900 Franken/Monat. Ein Leasing kostet 79 Franken/Monat plus Versicherung und Service. Ziel: herausfinden, ob das tragbar ist. Aufgabe: Zerlege die Entscheidung in Einnahmen, Fixkosten, neue Belastung und verbleibenden Spielraum — und markiere, welche Zahl ich noch klären muss.",
+        "warnung": "Erfundene oder geschönte Zahlen führen zu falschen Antworten: Geben Sie Ihre echten Beträge an und markieren Sie, was Sie noch nicht wissen, statt die KI raten zu lassen.",
+        "baukasten": {
+          "rolle": [
+            "neutraler Budget-Coach",
+            "Methoden-Coach fürs Abwägen"
+          ],
+          "kontext": [
+            "Schweizer Lehrverhältnis EFZ",
+            "Nettolohn und Fixkosten in Zahlen",
+            "Preis bzw. Monatsrate des Angebots"
+          ],
+          "aufgabe": [
+            "Entscheidung in Einnahmen / Kosten / Spielraum zerlegen",
+            "offene Zahlen auflisten",
+            "verbleibenden Spielraum berechnen"
+          ],
+          "format": [
+            "Budget-Tabelle",
+            "nummerierte Schritte"
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenposition fordern",
+        "erklaerung": "Sie lassen die KI bewusst die Gegenseite vertreten, nachdem Sie Ihren Entscheid formuliert haben. So finden Sie Schwächen in Ihrer Begründung, bevor ein Verkäufer oder Ihr Umfeld sie findet.",
+        "thema_bezug": "Jede Konsum- oder Kreditentscheidung hat zwei begründbare Seiten (der Wunsch jetzt vs. die Sicherheit später). Wer die stärkste Gegenposition kennt, hält dem Verkaufs- und Gruppendruck gelassener stand und kann benennen, wo ein Angebot wirklich sinnvoll ist und wo nur Druck.",
+        "beispiel_basis": "Ich habe entschieden, das E-Bike-Leasing NICHT zu machen. Vertritt die Gegenposition der Verkäuferin so überzeugend wie möglich.",
+        "beispiel_fortgeschritten": "Hier ist mein Entscheid mit Begründung: [Wunsch echt/geweckt + Budget-Tragbarkeit]. Greif ihn als Verkäuferin an drei Stellen an. Sag mir danach, an welcher Stelle ich nur aus Trotz ablehne, obwohl das Angebot für mich sinnvoll sein könnte.",
+        "warnung": "Die KI vertritt jede Position überzeugend — auch eine, die Sie in Schulden treibt. Die Gegenposition zeigt Lücken in Ihrer Begründung, ersetzt aber nicht Ihr Urteil darüber, welches Argument legitim ist und welches nur verkaufen will.",
+        "baukasten": {
+          "rolle": [
+            "Verkäufer/in",
+            "Kollege, der «alle haben es» sagt",
+            "Werbung"
+          ],
+          "kontext": [
+            "mein Entscheid mit Begründung",
+            "das Angebot als Zahlen"
+          ],
+          "aufgabe": [
+            "Entscheid an 3 Stellen angreifen",
+            "stärkstes Verkaufsargument nennen",
+            "sagen, wo ich nur aus Trotz ablehne"
+          ],
+          "format": [
+            "3 nummerierte Einwände",
+            "Einwand + Wirkung auf mein Budget"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt-für-Schritt denken",
+        "erklaerung": "Sie fordern die KI auf, ihren Denkweg in nachvollziehbaren Schritten offenzulegen, statt gleich ein Ergebnis zu nennen. So können Sie jeden Schritt prüfen und selbst weiterdenken.",
+        "thema_bezug": "Ob eine Rate tragbar ist oder eine Anschaffung Sinn macht, entscheidet sich in der Rechnung: Einnahmen, Fixkosten, neue Belastung, Rest. Lassen Sie die KI diesen Weg Schritt für Schritt zeigen, damit Sie einen Fehler oder eine vergessene Nebenkosten-Position sofort sehen.",
+        "beispiel_basis": "Rechne mir Schritt für Schritt vor, wie viel mir nach allen Fixkosten von 900 Franken Nettolohn bleibt. Zeig jeden Zwischenschritt, bevor du das Ergebnis nennst.",
+        "beispiel_fortgeschritten": "Prüfe Schritt für Schritt, ob ich mir eine Leasingrate von 79 Franken leisten kann: 1) verfügbarer Betrag nach Fixkosten, 2) zusätzliche Kosten des Leasings (Versicherung, Service), 3) was danach für Rückstellungen und Ausgang bleibt. Nenne nach jedem Schritt das Zwischenergebnis und markiere, welche Zahl ich noch prüfen muss.",
+        "warnung": "Ein sauber aussehender Rechenweg kann auf einer falschen Zahl beruhen. Prüfen Sie jeden Zwischenschritt mit Ihren echten Beträgen — die KI rechnet mit dem, was Sie ihr geben, auch wenn es unvollständig ist.",
+        "baukasten": {
+          "rolle": [
+            "Rechen-Coach",
+            "neutraler Budget-Coach"
+          ],
+          "kontext": [
+            "meine Einnahmen und Fixkosten",
+            "die neue Belastung in Zahlen"
+          ],
+          "aufgabe": [
+            "verfügbaren Betrag Schritt für Schritt berechnen",
+            "Zusatzkosten einzeln aufführen",
+            "Zwischenergebnisse nennen"
+          ],
+          "format": [
+            "nummerierte Rechenschritte",
+            "Zwischenergebnis pro Schritt"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Prompt 1 liefert mit Rolle und vollständigen Zahlen eine erste Einschätzung Ihrer Geldentscheidung. Prompt 2 nutzt diese Antwort, um den verbleibenden Spielraum konkret zu berechnen, der im ersten Schritt noch offen blieb — so wird aus einem allgemeinen Rat eine fallgenaue Budget-Einschätzung.",
+      "prompt_1": "Du bist ein neutraler Budget-Coach. Kontext: Lernender, 1. Lehrjahr, Nettolohn ca. 900 Franken, Fixkosten Krankenkasse, Handy-Abo und Haushaltsbeitrag. Ich überlege ein E-Bike-Leasing für 79 Franken/Monat. Zerlege die Entscheidung in Einnahmen, Fixkosten, neue Belastung und verbleibenden Spielraum und nenne die Zahlen, die ich noch klären muss.",
+      "prompt_2": "Auf Basis deiner Aufstellung: Rechne mir Schritt für Schritt vor, was mir nach der Leasingrate und den Zusatzkosten für Rückstellungen und Ausgang bleibt — und sag mir, ab welcher unerwarteten Ausgabe mein Budget kippt."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "gegenposition_fordern",
+        "chain_of_thought"
+      ],
+      "logik_und_ziel": "Prompt 1 lässt die KI Ihren Entscheid als Verkäuferin angreifen, damit Sie die stärksten Verkaufsargumente kennen. Prompt 2 nimmt genau diese Argumente und prüft sie Schritt für Schritt gegen Ihr Budget — so erkennen Sie, welches Argument auch der Rechnung standhält, bevor Sie unterschreiben.",
+      "prompt_1": "Hier ist mein Entscheid: Ich mache das Leasing NICHT, weil es zusätzlich zur Rate Versicherung und Service kostet und mein Spielraum knapp ist. Übernimm die Rolle der Verkäuferin und greif meinen Entscheid an den drei überzeugendsten Stellen an.",
+      "prompt_2": "Nimm jetzt dein stärkstes Verkaufsargument und rechne mir Schritt für Schritt vor, ob es meinem Budget wirklich standhält (Einnahmen, Fixkosten, Rate, Zusatzkosten, Rest) — und sag mir ehrlich, wo das Argument an einer Zahl scheitert."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

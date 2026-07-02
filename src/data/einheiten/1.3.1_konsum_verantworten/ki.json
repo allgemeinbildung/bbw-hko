@@ -1,0 +1,133 @@
+{
+  "id": "1.3.1_konsum_verantworten_ki",
+  "set_ref": "1.3.1_konsum_verantworten_set",
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "kn_ref": "1.3.1_konsum_verantworten_kn",
+  "anchored_situations": [
+    "1.3.1_konsum_verantworten_hf_A",
+    "1.3.1_konsum_verantworten_hf_B",
+    "1.3.1_konsum_verantworten_hf_C"
+  ],
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "thema": "T1",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: überlegte Konsum- und Geldentscheidungen treffen, indem ich Bedürfnisse unterscheide, mein Budget realistisch plane und Verschuldungsrisiken erkenne.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Bedürfnispyramide und Bedürfnisarten, Brutto-/Nettolohn und Sozialabzüge, fixe und variable Kosten, Rückstellungen, Leasing/Konsumkredit (KKG, Höchstzins 10 %, Bonitätsprüfung).",
+        "kompetenz_anker": "1.3.2"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Konsum als Ausdruck von Selbstbild und Zugehörigkeit; echte Bedürfnisse von durch Umfeld und Werbung geweckten Wünschen unterscheiden.",
+        "kompetenz_anker": "1.3.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Eigenverantwortung im Konsum; einen Kredit- oder Kaufentscheid vor sich selbst verantworten, statt Verantwortung auf Verkäufer oder Umfeld abzuschieben.",
+        "kompetenz_anker": "1.3.3"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK5 — Werthaltungen reflektieren",
+      "SK11 — Mit Mehrdeutigkeiten umgehen",
+      "SK6 — Standpunkte begründen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Was kann eine KI bei einer Konsum- oder Geldentscheidung für Sie leisten — und welcher Schritt bleibt Ihre eigene Verantwortung?",
+    "kritisch": "Woran erkennen Sie, dass eine KI eine Zahl (Rate, Zins, Nebenkosten) falsch angibt oder einen Wunsch als Bedürfnis verkauft?",
+    "vergleichend": "Worin unterscheidet sich Ihr selbst begründeter Entscheid von einer KI-Empfehlung, die Sie nicht gegen Ihr Budget geprüft haben?",
+    "urteilend": "Würden Sie einen Leasing- oder Kreditvertrag unterschreiben, weil eine KI ihn als tragbar bezeichnet — warum (nicht)?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Die KI als Verkäufer und Gruppendruck",
+      "ziel": "Sie prüfen, wie tragfähig Ihr Konsum- oder Kreditentscheid ist, indem Sie die KI die Rolle von Verkäufer/in, Werbung und «alle machen das» so überzeugend wie möglich spielen lassen.",
+      "bezug": "Nutzt alle drei Herausforderungen: die Unterscheidung echt/geweckt aus der Bedürfnis-Landkarte (A), die Tragbarkeitsprüfung mit dem Budget (B) und die Verschuldungsrisiken von Leasing und Kredit (C) — und prüft das Transfer-Prinzip: Überlegte Konsumentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann.",
+      "auftrag": "Wählen Sie eine konkrete Kauf- oder Kreditentscheidung aus Ihren Herausforderungen (z. B. ein Handy-Abo-Upgrade, ein Leasing oder ein grösserer Wunschkauf). Formulieren Sie zuerst Ihren eigenen begründeten Entscheid — mit Ihrer Bedürfnis-Einordnung (echt/geweckt) und der Tragbarkeit gegen Ihr Budget. Beauftragen Sie dann eine KI, in der Rolle einer verkaufenden Person und Ihres Umfelds das Angebot so attraktiv wie möglich zu machen — «0 Prozent», «nur X Franken im Monat», «alle haben es». Prüfen Sie jede Zahl (Rate, Zins, Nebenkosten) gegen das Lehrmittel (Kap. 8.1, 8.2) und Ihr Budget und entscheiden Sie: Welche Verkaufsargumente treffen ein echtes Bedürfnis — und welche erzeugen nur geweckten Wunsch oder verschweigen ein Risiko?",
+      "prompt_strategie": [
+        "Geben Sie der KI eine klare Rolle: «Du bist eine Verkäuferin und willst mir dieses Angebot heute verkaufen …»",
+        "Geben Sie das Angebot als Kontext mit (Preis, Rate, Laufzeit) — ohne Ihren eigenen Entscheid oder Ihre Bedenken zu verraten.",
+        "Verlangen Sie zu jedem Verkaufsargument, dass die KI die dazugehörige Zahl nennt — Rate, Gesamtkosten, Zins, Nebenkosten —, damit Sie sie nachrechnen können.",
+        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meines Nein und sag mir, wo ich nur aus Trotz ablehne, obwohl das Angebot für mich sinnvoll sein könnte.»"
+      ],
+      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihren Entscheid in 2-3 Sätzen — ist der Wunsch ein echtes Bedürfnis oder geweckt, und ist die monatliche Belastung gemäss Ihrem Budget tragbar (mit Zahl)?",
+      "schritte": [
+        "Kauf-/Kreditentscheid wählen und eigenen Entscheid KI-frei festhalten (siehe Feld auf Seite 1).",
+        "KI mit Rollen-Prompt als Verkäufer/in ansetzen; die stärksten Verkaufsargumente mit Zahlen verlangen.",
+        "Jede Zahl nachrechnen bzw. im Lehrmittel prüfen: Stimmen Rate, Gesamtkosten, Zins und Nebenkosten — oder wird etwas verschwiegen?",
+        "Trennen: Welche Argumente treffen ein echtes Bedürfnis, welche wecken nur einen Wunsch oder verstecken ein Verschuldungsrisiko?",
+        "Ihren Entscheid überarbeiten: Was übernehmen Sie, was weisen Sie begründet zurück — und wie begründen Sie ihn mit Bedürfnis und Budget?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigenentscheid zuerst",
+          "indikator": "Der KI-freie Entscheid mit Bedürfnis-Einordnung und Budget-Zahl liegt vor, bevor der erste Prompt abgesetzt wurde."
+        },
+        {
+          "kriterium": "Zahlen-Verifikation",
+          "indikator": "Jede von der KI genannte Zahl (Rate, Gesamtkosten, Zins, Nebenkosten) ist nachgerechnet oder im Lehrmittel geprüft und als korrekt, verzerrt oder erfunden markiert."
+        },
+        {
+          "kriterium": "Bedürfnis vs. Druck getrennt",
+          "indikator": "Der überarbeitete Entscheid unterscheidet mindestens ein echtes Bedürfnis von einem durch Verkauf/Umfeld geweckten Wunsch."
+        }
+      ],
+      "reflexion": [
+        "Welches Verkaufsargument hat Sie am meisten ins Wanken gebracht — und warum?",
+        "Hat die KI eine Zahl geschönt oder eine Nebenkosten-Falle verschwiegen? Woran haben Sie es gemerkt?",
+        "Im Kompetenznachweis (Fachgespräch oder Mini Case) müssen Sie einen verlockenden Entscheid unter Druck begründen und den Zielkonflikt offen benennen. Wie hilft Ihnen diese Übung, dem Verkaufsdruck standzuhalten, statt vorschnell Ja oder Nein zu sagen?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Die KI als Entscheidungscoach beim Abwägen",
+      "ziel": "Sie lassen sich von der KI durch das strukturierte Abwägen einer Geldentscheidung führen — Optionen, Folgen, Zielkonflikt —, ohne dass die KI die Entscheidung für Sie trifft.",
+      "bezug": "Nutzt alle drei Herausforderungen: die Bedürfnis-Frage «brauche ich das wirklich» (A), die Budget-Tragbarkeit und Anpassung (B) und das Verschuldungsrisiko einer Verpflichtung (C) — und wendet das Transfer-Prinzip an: momentane Wünsche bewusst gegen die langfristige finanzielle Sicherheit abwägen und den Entscheid vor sich selbst begründen.",
+      "auftrag": "Bringen Sie eine echte Geldentscheidung mit, die vor Ihnen liegt (z. B. Abo abschliessen oder kündigen, grössere Anschaffung jetzt oder später, Leasing ja oder nein). Lassen Sie die KI als neutralen Entscheidungscoach die Optionen strukturieren: Für jede Option Vorteile, Nachteile und Folgen für Ihr Budget, und den Zielkonflikt klar benennen. Wichtig: Die KI darf am Ende NICHT für Sie entscheiden. Sie treffen den Entscheid selbst, begründen ihn schriftlich mit Bedürfnis und Budget und benennen, welchen Nachteil Sie bewusst in Kauf nehmen.",
+      "prompt_strategie": [
+        "Geben Sie der KI die Rolle: «Du bist ein neutraler Entscheidungscoach. Entscheide nicht für mich, sondern hilf mir, sauber abzuwägen.»",
+        "Liefern Sie den Kontext vollständig: die Optionen, Ihre monatlichen Einnahmen und Fixkosten, den Preis bzw. die Rate.",
+        "Verlangen Sie das Denken in Schritten: erst alle Optionen, dann pro Option Vorteil/Nachteil/Budgetfolge, dann der Zielkonflikt — noch ohne Empfehlung.",
+        "Zweiter Prompt: «Fasse den Zielkonflikt in einem Satz und nenne die eine Frage, die ich mir selbst beantworten muss, bevor ich entscheide.»"
+      ],
+      "ki_frei_vorher": "Notieren Sie OHNE KI: die Optionen, die Sie sehen, sowie Ihre monatlichen Einnahmen und Fixkosten — damit die KI mit Ihren echten Zahlen arbeitet und nicht mit erfundenen.",
+      "schritte": [
+        "Echte Geldentscheidung und Optionen KI-frei festhalten, inkl. eigener Budget-Zahlen.",
+        "KI als neutralen Entscheidungscoach ansetzen; schrittweises Abwägen ohne Empfehlung verlangen.",
+        "Budgetfolgen jeder Option nachrechnen: Was bleibt am Monatsende, welches Risiko entsteht?",
+        "Zielkonflikt in eigenen Worten festhalten (z. B. momentaner Wunsch vs. langfristige Sicherheit).",
+        "Selbst entscheiden und den Entscheid schriftlich begründen: welchen Nachteil nehmen Sie bewusst in Kauf?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "KI entscheidet nicht",
+          "indikator": "Der finale Entscheid ist von der Lernenden selbst getroffen und begründet; die KI hat abgewogen, aber nicht empfohlen."
+        },
+        {
+          "kriterium": "Budget-Verifikation",
+          "indikator": "Die Budgetfolge jeder Option ist mit eigenen Zahlen nachgerechnet und geprüft, nicht von der KI übernommen."
+        },
+        {
+          "kriterium": "Zielkonflikt benannt",
+          "indikator": "Der Zielkonflikt ist in eigenen Worten festgehalten und der bewusst akzeptierte Nachteil ist genannt."
+        }
+      ],
+      "reflexion": [
+        "An welcher Stelle wollte die KI Ihnen die Entscheidung abnehmen — und wie haben Sie das erkannt?",
+        "Welche Budgetfolge ist Ihnen erst durch das schrittweise Abwägen aufgefallen?",
+        "Im Kompetenznachweis müssen Sie in einer neuen Situation Optionen abwägen und Ihren Entscheid begründen (z. B. im Mini Case Aufgabe «Entscheiden»). Was nehmen Sie aus dieser Übung mit, das Sie dort allein können müssen?"
+      ]
+    }
+  ]
+}
