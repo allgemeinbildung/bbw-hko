@@ -1,0 +1,191 @@
+{
+  "id": "1.3.1_konsum_verantworten_hf_A",
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "lehrgang": "EFZ_4J",
+
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+
+  "titel": "Marke oder echtes Bedürfnis?",
+
+  "wissensknoten": ["beduerfnisarten"],
+
+  "nrlp": {
+    "nr": "1.3.1",
+    "nr_primary": ["1.3.1"],
+    "lebensbezug": "1.3",
+    "themen": ["T1"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R1"},
+      {"aspekt": "Identität und Sozialisation", "iteration": "R1"}
+    ],
+    "sprachmodi": ["Rezeption schriftlich und bildlich"],
+    "sprachmodus_ids": ["SM3"],
+    "sk": [5, 11, 1],
+    "kompetenz_id": "1.3.1",
+    "lebensbezug_id": "1.3",
+    "kompetenz_text": "Ich kann verschiedene Arten von Bedürfnissen unterscheiden, meine eigenen Bedürfnisse erkennen und Einflussmöglichkeiten darauf beurteilen.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen."
+  },
+
+  "persona": {
+    "beruf": "Informatiker/in EFZ",
+    "betrieb": "IT-Abteilung eines Industriebetriebs",
+    "ort": "Winterthur"
+  },
+
+  "situation_text": "Ich bin im ersten Lehrjahr als Informatiker/in EFZ in Winterthur und habe zum ersten Mal regelmässig eigenes Geld. In der Berufsschule trage ich oft die gleichen Marken wie meine Kollegen, und mein Feed zeigt mir ständig neue Gadgets. Letzten Monat habe ich Kopfhörer für 250 Franken gekauft — vor allem, weil alle sie hatten. Jetzt frage ich mich: Was davon brauche ich wirklich, und was kaufe ich nur, weil es zu meinem Image passt? Ich will lernen, meine Bedürfnisse zu ordnen, bevor ich das nächste Mal zuschlage.",
+
+  "zahlen_tabelle": [
+    {"label": "Kopfhörer (Impulskauf letzter Monat)", "wert": "CHF 250"},
+    {"label": "Lernendenlohn 1. Lehrjahr (netto, ca.)", "wert": "CHF 750"}
+  ],
+
+  "leitfrage": "Welche meiner Wünsche sind echte Bedürfnisse — und welche weckt mein Umfeld?",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. 2.7, 1.5 und 17.1 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 8",
+      "text": "Erkläre mit der Bedürfnispyramide nach Maslow und den Begriffen Existenz- und Wahlbedürfnis, wie sich Bedürfnisse unterscheiden lassen.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 11",
+      "text": "Ordne fünf deiner letzten grösseren Anschaffungen den Bedürfnisarten zu (Existenz- oder Wahlbedürfnis, materiell oder immateriell).",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.5 | S. 37",
+      "text": "Entscheide bei zwei Wunschprodukten, welche Einflüsse (Werbung, Umfeld, Labels) deine Kaufabsicht steuern — und welchem Einfluss du bewusst folgen willst.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 17.1 | S. 380",
+      "text": "Formuliere mit der Markiertechnik zu drei markierten Wünschen je einen Satz, ob es ein echtes Bedürfnis oder ein durch dein Umfeld geweckter Wunsch ist.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Meine Bedürfnisse",
+  "mindmap_aeste": [
+    {"titel": "Bedürfnisarten", "punkte": ["Existenzbedürfnis", "Wahlbedürfnis", "materiell / immateriell"], "optional": false},
+    {"titel": "Maslow-Pyramide", "punkte": ["Grundbedürfnisse", "Sicherheit", "Selbstverwirklichung"], "optional": false},
+    {"titel": "Einflüsse auf mich", "punkte": ["Werbung & Feed", "Kollegen / Image", "Labels & Ethik"], "optional": false},
+    {"titel": "Mein Massstab", "punkte": ["Was brauche ich wirklich?", "Was kann warten?"], "optional": true}
+  ],
+
+  "handlungsprodukt": {
+    "format": "Kommentierte Bedürfnis-Landkarte (dokumentiert, Markiertechnik)",
+    "abgaben": [
+      "Bedürfnis-Landkarte auf A4 (mind. 8 eigene Bedürfnisse geordnet)",
+      "Farb- und Symbol-Legende (echt vs. geweckt)",
+      "Kurzkommentar (5-6 Sätze): Was habe ich über meine Bedürfnisse gelernt?"
+    ],
+    "titel": "Meine Bedürfnis-Landkarte",
+    "format_detail": "Eine A4-Übersicht (handschriftlich oder digital), auf der du deine Bedürfnisse nach Maslow und nach Existenz-/Wahlbedürfnis ordnest und mit Farben und persönlichen Symbolen markierst — echte gegen geweckte Bedürfnisse.",
+    "beschreibung": "Du hältst deine eigenen Bedürfnisse strukturiert fest, markierst mit Farben und Symbolen, welche echt und welche durch dein Umfeld geweckt sind, und begründest deinen persönlichen Massstab für überlegte Kaufentscheidungen.",
+    "schritte": [
+      {"label": "Bedürfnisse sammeln", "hint": "Notiere mind. 8 aktuelle Wünsche und Anschaffungen aus deinem Alltag."},
+      {"label": "Ordnen nach Theorie", "hint": "Ordne sie mit Maslow und Existenz-/Wahlbedürfnis (Kap. 2.7)."},
+      {"label": "Einflüsse markieren", "hint": "Markiere mit Farben, was Werbung, Umfeld oder Labels bei dir auslösen (Kap. 1.5)."},
+      {"label": "Symbole setzen", "hint": "Setze persönliche Symbole für 'echt' und 'geweckt' (Markiertechnik Kap. 17.1)."},
+      {"label": "Massstab formulieren", "hint": "Schreibe deinen Kurzkommentar: Woran erkenne ich künftig ein echtes Bedürfnis?"}
+    ],
+    "schreib_label": "BEDÜRFNIS-LANDKARTE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/beduerfnisarten",
+    "scaffolding": {
+      "satzanfaenge": ["«Dieses Bedürfnis ist echt, weil …»", "«Diesen Wunsch hat vor allem mein Umfeld geweckt, denn …»", "«Für mich hat Vorrang …»"],
+      "strategien": ["Erst alle Wünsche sammeln, dann ordnen — nicht gleichzeitig bewerten", "Nur Schlüsselwörter markieren, keine ganzen Sätze (Kap. 17.1)"],
+      "struktur": ["Zentrum: Ich → Äste: Bedürfnisarten, Maslow, Einflüsse, mein Massstab", "Legende: eine Farbe/ein Symbol pro Kategorie"]
+    }
+  },
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Was hat mich beim Ordnen meiner Bedürfnisse überrascht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Wo im Lehr- und Schulalltag beeinflusst mein Umfeld meine Kaufentscheidungen am stärksten?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Was prüfe ich beim nächsten grösseren Kauf konkret zuerst?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {"produkt": "Leitfragen", "kriterium": "Inhaltliche Korrektheit", "vollstaendig_wenn": ["Alle 4 Leitfragen schriftlich beantwortet", "Bedürfnisarten und Maslow korrekt angewendet (Kap. 2.7)", "Einflüsse auf die Kaufabsicht begründet benannt"]},
+    {"produkt": "Mindmap", "kriterium": "Struktur · Tiefe · Verbindungen", "vollstaendig_wenn": ["Zentrum und 4 Ast-Titel übernommen", "Pro Ast eigene Detail-Punkte ergänzt"]},
+    {"produkt": "Handlungsprodukt", "kriterium": "Rubrik 4 Stufen (SuK + Ges)", "vollstaendig_wenn": ["Mind. 8 Bedürfnisse geordnet", "Farb-/Symbol-Legende vorhanden und angewendet", "Kurzkommentar mit persönlichem Massstab"]},
+    {"produkt": "Reflexion", "kriterium": "Tiefe + Transfer", "vollstaendig_wenn": ["Alle 3 Reflexionsfragen beantwortet", "Konkreter Vorsatz für den nächsten Kauf benannt"]}
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Bedürfnis-Landkarte erarbeiten", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Bedürfnisse ordnen"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Eigener Massstab vs. sozialer Konsumdruck",
+    "hint": "Es gibt kein 'falsches' Wunschprodukt — entscheidend ist, ob du deinen Kauf vor dir selbst begründen kannst."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Woran erkenne ich in Zukunft, ob ein Wunsch aus mir selbst kommt oder von aussen geweckt wurde?",
+    "ziel": "Überlegte Konsumentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T6 'Mein eigenes Zuhause' — Bedürfnisse und Prioritäten beim Einrichten des eigenen Haushalts (LJ2).",
+    "r3_voraussicht": "T4 'Verantwortung für mich und andere' — Konsum und Nachhaltigkeit im grösseren Zusammenhang."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnisse und Güter", "unterueberschrift": "Bedürfnispyramide und Bedürfnisarten", "seiten": "Seite 8-13", "fuer_leitfrage": [1, 2]},
+    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — ethischer Konsum und Labels", "unterueberschrift": "Ökologische und ethische Kaufkriterien", "seiten": "Seite 37-39", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 17.1", "titel": "Dokumentieren — Lese- und Markierstrategien", "unterueberschrift": "Markieren und Symbole", "seiten": "Seite 380-385", "fuer_leitfrage": [4]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Bedürfnisse unterscheiden", "indikator": "Existenz-/Wahl- und materiell/immateriell korrekt zugeordnet", "gewicht_prozent": 25},
+      {"kriterium": "Einflüsse beurteilen", "indikator": "Werbung/Umfeld/Labels als Einflussfaktoren erkannt und bewertet", "gewicht_prozent": 25},
+      {"kriterium": "Markiertechnik", "indikator": "Farben und persönliche Symbole gezielt eingesetzt", "gewicht_prozent": 25},
+      {"kriterium": "Eigener Massstab", "indikator": "Persönlicher Entscheid begründet formuliert", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Vorgegebene Bedürfnis-Kategorien und Beispielkarte werden bereitgestellt.",
+    "scaffold_100": "Zusätzlich eine zweite Person interviewen und deren Bedürfnis-Landkarte vergleichen."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Echte vs. geweckte Bedürfnisse erkennen",
+    "lehrmittel_anker": "S. 8-13, 37-39",
+    "kn_aktivierung": "In der KN-Hybrid-Herausforderung muss die Lernende erkennen, welcher Anteil eines Kaufwunsches Bedürfnis und welcher Aussendruck ist.",
+    "transfer_check": "Kann die Lernende einen Konsumwunsch in echtes Bedürfnis und geweckten Wunsch trennen und das begründen?"
+  },
+
+  "sk_anker": [
+    {"sk": 5, "wo": "leitfragen[2].entscheiden + Kurzkommentar — eigene Werthaltung zum Konsum reflektieren"},
+    {"sk": 11, "wo": "mehrdeutigkeit.trade_off — eigener Massstab vs. sozialer Druck bleibt offen"},
+    {"sk": 1, "wo": "leitfragen[3] + Markiertechnik — Schlüsselinformationen aus dem Text herausarbeiten (Kap. 17.1)"}
+  ]
+}

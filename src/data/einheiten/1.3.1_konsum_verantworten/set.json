@@ -1,0 +1,44 @@
+{
+  "id": "1.3.1_konsum_verantworten_set",
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "lehrgang": "EFZ_4J",
+  "thema": "T1",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+  "status": "entwurf",
+
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "kn_ref": "1.3.1_konsum_verantworten_kn",
+  "herausforderungen": [
+    "1.3.1_konsum_verantworten_hf_A",
+    "1.3.1_konsum_verantworten_hf_B",
+    "1.3.1_konsum_verantworten_hf_C"
+  ],
+
+  "konzept_progression": [
+    {"position": 1, "herausforderung": "1.3.1_konsum_verantworten_hf_A", "konzept": "Echte von geweckten Bedürfnissen unterscheiden und Einflüsse beurteilen"},
+    {"position": 2, "herausforderung": "1.3.1_konsum_verantworten_hf_B", "konzept": "Realistisch planen, Engpässe erkennen und Anpassungen begründen"},
+    {"position": 3, "herausforderung": "1.3.1_konsum_verantworten_hf_C", "konzept": "Verschuldungsrisiken erkennen und Konsumentscheide verantworten"}
+  ],
+
+  "austausch_phase": {
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Expertise teilen — 90 Sek. pro Person: mein Problem, mein Entscheid, mein stärkstes Argument.",
+      "runde_2": "Gemeinsamkeit abstrahieren — Was haben Bedürfnisse ordnen, Budget planen und Schulden vermeiden gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "runde_3": "Transfer — Welche der drei Herausforderungen wäre für mich persönlich am schwierigsten und warum?"
+    },
+    "einzelarbeit_plenum": "Lehrperson leitet die Diskussion: Was haben alle drei Herausforderungen gemeinsam? Welches Prinzip lässt sich verallgemeinern?",
+    "einzelauftrag": "Fasse das gemeinsame Prinzip deiner drei Herausforderungen in 5 Sätzen zusammen und nenne je ein Beispiel aus deinem Lehralltag."
+  },
+
+  "dekontextualisierungs_aufgabe": {
+    "auftrag": "Übertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewählten Kontext.",
+    "format": "schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden",
+    "ziel": "Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann.",
+    "gewicht_prozent": 15,
+    "abgabe": "Woche 3 — vor KN"
+  }
+}

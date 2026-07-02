@@ -1,0 +1,169 @@
+{
+  "id": "1.3.1_konsum_verantworten_kn",
+  "modul": "1.3",
+  "kompetenz_nr": "1.3.1",
+  "topic_slug": "konsum_verantworten",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+
+  "set_ref": "1.3.1_konsum_verantworten_set",
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "anchored_situations": [
+    "1.3.1_konsum_verantworten_hf_A",
+    "1.3.1_konsum_verantworten_hf_B",
+    "1.3.1_konsum_verantworten_hf_C"
+  ],
+
+  "dominanter_aspekt": "Wirtschaft",
+  "kern_kompetenzversprechen": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+  "mehrdeutigkeits_pflicht": "Beide Seiten bleiben begründbar — es gibt keine allgemein 'richtige' Konsumentscheidung, nur eine, die ich für meine Lebenssituation verantworten kann.",
+
+  "hybrid_situation": {
+    "titel": "0 Prozent — heute unterschreiben",
+    "persona": {"beruf": "Polymechaniker/in EFZ", "betrieb": "Maschinenbaubetrieb", "ort": "Luzern"},
+    "emotion_tag": "",
+    "text": "Ich bin Polymechaniker/in EFZ im ersten Lehrjahr in Luzern. Im Pausenraum zeigt mir ein Kollege sein neues E-Bike — geleast, «nur 79 Franken im Monat, 0 Prozent». Genau so eins will ich auch, es passt zu mir und alle im Team fahren damit zur Arbeit. Gleichzeitig weiss ich, dass mein Konto schon vor dem 20. eng wird, seit ich das teurere Handy-Abo habe. Der Verkäufer sagt, die Rate sei «problemlos tragbar», und ich müsste heute unterschreiben, sonst sei das Angebot weg. Ich spüre den Druck — und die Rechnung geht in meinem Kopf noch nicht auf. Wie gehe ich vor — und warum?",
+    "leitfrage": "Wie gehe ich vor — und warum?",
+    "aktivierte_trade_offs": [
+      "Eigener Massstab vs. sozialer Konsumdruck",
+      "Momentaner Wunsch vs. langfristige finanzielle Sicherheit",
+      "Attraktives Angebot vs. verstecktes Verschuldungsrisiko"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die alle drei Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Hybrid-Herausforderung bündelt Bedürfnisunterscheidung, Budgetdenken und Verschuldungsrisiko in einer einzigen, neuen Entscheidungssituation mit einer bisher nicht verwendeten Persona (Unseen-Transfer). Die Lernenden müssen zeigen, dass sie das gemeinsame Prinzip anwenden, nicht nur eine der drei Aufgaben wiederholen.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {"hf_letter": "A", "scene_element": "Der Wunsch nach dem E-Bike «weil alle es haben» — echter Bedarf gegen durch das Umfeld geweckten Wunsch."},
+        {"hf_letter": "B", "scene_element": "Das Konto wird schon vor dem 20. eng, seit dem teureren Handy-Abo — knapper Budgetspielraum."},
+        {"hf_letter": "C", "scene_element": "Das 0-Prozent-Leasing mit «heute unterschreiben»-Druck — verlockendes Angebot mit verstecktem Verschuldungsrisiko."}
+      ],
+      "new_dimensions": []
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {"nr": 1, "typ": "Erklären", "frage": "Welche Bedürfnisarten und welche Kostenüberlegungen spielen in dieser Situation eine Rolle — und warum?", "k_stufe": 2},
+        {"nr": 2, "typ": "Anwenden", "frage": "Wie würdest du mit einem realistischen Budget prüfen, ob die Leasingrate für dich tragbar ist?", "k_stufe": 3},
+        {"nr": 3, "typ": "Beurteilen", "frage": "Ist das E-Bike für dich ein echtes Bedürfnis oder ein durch das Umfeld geweckter Wunsch — und ändert das deine Entscheidung?", "k_stufe": 3},
+        {"nr": 4, "typ": "Transfer", "frage": "Vergleiche diese Situation mit einer deiner drei Herausforderungen — wo ist das Prinzip gleich, wo unterschiedlich?", "k_stufe": 4},
+        {"nr": 5, "typ": "Werthaltung", "frage": "Wer trägt die Verantwortung, wenn die Rate später doch nicht tragbar ist — und weshalb ist das keine reine Geldfrage?", "k_stufe": 4}
+      ],
+      "sk": [6, 11, 5],
+      "aspekte": ["Wirtschaft", "Identität und Sozialisation", "Ethik"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {"nr": 1, "typ": "Erklären", "aufgabe": "Erkläre, welche Kosten bei einem 0-Prozent-Leasing tatsächlich anfallen können und warum die Monatsrate allein nicht aussagt, ob es tragbar ist.", "k_stufe": 2},
+        {"nr": 2, "typ": "Unterscheiden", "aufgabe": "Der Wunsch nach dem E-Bike und der Druck des Verkäufers wirken beide auf dich. Warum ist der geweckte Wunsch anders zu beurteilen als dein echter Bedarf?", "k_stufe": 3},
+        {"nr": 3, "typ": "Entscheiden", "aufgabe": "Entscheide dich für oder gegen die Unterschrift heute und begründe deinen Entscheid mit deinem Budget. Nenne die zwei Optionen und ihre Folgen.", "k_stufe": 3},
+        {"nr": 4, "typ": "Forderung", "aufgabe": "Formuliere in Ich-Form zwei Regeln, mit denen du dich künftig vor solchem Verschuldungsdruck schützt.", "k_stufe": 4}
+      ],
+      "sk": [6, 11, 5],
+      "aspekte": ["Wirtschaft", "Identität und Sozialisation", "Ethik"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer drei Handlungsprodukte aus den Lernaufgaben (Bedürfnis-Landkarte, Budget, Schuldenpräventions-Ratgeber).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip hast du in deiner Herausforderung gelernt — formuliere es in einem Satz.",
+        "Erkläre, wie dieses Prinzip in der Hybrid-Herausforderung mit dem E-Bike-Leasing sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was hast du durch die drei Herausforderungen insgesamt über überlegte Konsumentscheidungen gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [5, 6, 11],
+      "aspekte": ["Wirtschaft", "Identität und Sozialisation", "Ethik"],
+      "sprachmodi": ["Produktion schriftlich und bildlich"],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt verwendet.",
+          "Begriffe korrekt und situationsangemessen verwendet.",
+          "Begriffe differenziert, kontextualisiert und eigenständig auf die Situation bezogen."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung für die Entscheidung erkennbar.",
+          "Begründung ansatzweise vorhanden.",
+          "Begründung nachvollziehbar und strukturiert.",
+          "Schlüssig, differenziert, Gegenargumente und Folgen berücksichtigt."
+        ]
+      },
+      {
+        "name": "Wirtschaftliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Der Zusammenhang von Budget, Bedürfnis und Verschuldungsrisiko wird nicht angewendet.",
+          "Der Zusammenhang wird teilweise erkennbar.",
+          "Der Zusammenhang wird korrekt auf die Situation angewendet.",
+          "Das Prinzip wird auf neue Zusammenhänge übertragen (Transfer)."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare eigene Position.",
+          "Position angedeutet.",
+          "Position klar in Ich-Form formuliert.",
+          "Position begründet, Spannungsfeld zwischen Wunsch und Sicherheit anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 60 %", "definition": "Stufen 1-2 dominant (mind. 2 Kriterien auf Stufe 1 oder 2)"},
+      {"label": "80 %", "definition": "mehrheitlich Stufe 3 (mind. 3 Kriterien auf Stufe 3)"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 von 4 Kriterien"}
+    ]
+  },
+
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

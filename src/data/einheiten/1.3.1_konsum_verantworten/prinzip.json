@@ -1,0 +1,141 @@
+{
+  "id": "1.3.1_konsum_verantworten_prinzip",
+  "modul": "1.3",
+  "kompetenz_nr": "1.3.1",
+  "topic_slug": "konsum_verantworten",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-07-02",
+
+  "kern_kompetenzversprechen": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K3+ oder K4"
+  },
+
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Bedürfnisse ordnen",
+      "konfliktart": "Sofortiger Konsumwunsch vs. Selbstbild und Zugehörigkeit",
+      "handlungsprodukt_typ": "Kommentierte Bedürfnis-Landkarte (dokumentiert, Markiertechnik)",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Budget planen",
+      "konfliktart": "Fixe Verpflichtungen vs. Konsumwünsche im knappen Budget",
+      "handlungsprodukt_typ": "Realistisches Monatsbudget + moderiertes Budgetgespräch",
+      "transferrable": true
+    },
+    "C": {
+      "herausforderung": "Schulden vermeiden",
+      "konfliktart": "Leasing-/Kreditangebot vs. eigenverantwortliche Konsumentscheidung",
+      "handlungsprodukt_typ": "Persönlicher Schuldenpräventions-Ratgeber + Diskussion",
+      "transferrable": true
+    }
+  },
+
+  "sk_pro_situation": {
+    "A": [5, 11, 1],
+    "B": [2, 11, 6],
+    "C": [5, 11, 6]
+  },
+
+  "sk_schnittmenge_kn": {
+    "primary": [5, 11, 6]
+  },
+
+  "aspekte": {
+    "Wirtschaft": "R1",
+    "Identität und Sozialisation": "R1",
+    "Ethik": "R1"
+  },
+
+  "modi_units": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Sofortige vs. überlegte Bedürfnisbefriedigung",
+      "Momentaner Wunsch vs. langfristige finanzielle Sicherheit",
+      "Attraktives Angebot vs. verstecktes Verschuldungsrisiko",
+      "Eigener Massstab vs. sozialer Konsumdruck"
+    ],
+    "verbindlich": "Beide Seiten bleiben begründbar — es gibt keine allgemein 'richtige' Konsumentscheidung, nur eine, die ich für meine Lebenssituation verantworten kann."
+  },
+
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann.",
+    "transferfeld": "Übertragbar auf jede Situation, in der ein sofortiger Nutzen mit einem späteren Risiko oder einer Verpflichtung konkurriert (z.B. Abo-Abschluss, grössere Anschaffung, Freizeitausgabe)."
+  },
+
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T6 'Mein eigenes Zuhause' — Haushaltsbudget, Miete und wiederkehrende Verpflichtungen im eigenen Haushalt (LJ2).",
+    "r3_voraussicht": "T4 'Verantwortung für mich und andere' — Versicherungen und Altersvorsorge als langfristige finanzielle Absicherung."
+  },
+
+  "quellen_anker": {
+    "chapters": [
+      {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnisse und Güter", "seiten": "Seite 8-13"},
+      {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — ethischer Konsum und Labels", "seiten": "Seite 37-39"},
+      {"ref": "Kap. 17.1", "titel": "Dokumentieren — Lese- und Markierstrategien", "seiten": "Seite 380-385"},
+      {"ref": "Kap. 2.2", "titel": "Budget — fixe und variable Kosten, Rückstellungen", "seiten": "Seite 48-49"},
+      {"ref": "Kap. 2.1", "titel": "Lohnbestandteile — Brutto/Netto, Sozialabzüge", "seiten": "Seite 46-47"},
+      {"ref": "Kap. 16.1", "titel": "Diskussion — Regeln und Argumentation", "seiten": "Seite 366-367"},
+      {"ref": "Kap. 8.2", "titel": "Schulden und Betreibung — Schuldenfalle, Prävention", "seiten": "Seite 199-202"},
+      {"ref": "Kap. 8.1", "titel": "Kaufvertragsarten Teil 2 — Leasing und Konsumkredit", "seiten": "Seite 194-196"}
+    ],
+    "konzepte": [
+      "Bedürfnispyramide nach Maslow",
+      "Existenz- und Wahlbedürfnisse",
+      "materielle und immaterielle Bedürfnisse",
+      "Bruttolohn und Nettolohn",
+      "Sozialversicherungsabzüge (AHV, IV, EO, ALV, NBU)",
+      "fixe und variable Kosten",
+      "Rückstellungen",
+      "Schuldenspirale",
+      "Leasing und Konsumkredit",
+      "Bonitätsprüfung",
+      "ethischer Konsum und Labels"
+    ]
+  },
+
+  "persona_pool_units": {
+    "berufe": ["Informatiker/in EFZ", "Bäcker-Konditor-Confiseur/in EFZ", "Schreiner/in EFZ"],
+    "orte": ["Winterthur", "St. Gallen", "Thun"]
+  },
+
+  "persona_pool_kn_neu": {
+    "berufe": ["Polymechaniker/in EFZ", "Konstrukteur/in EFZ"],
+    "orte": ["Luzern", "Chur"]
+  },
+
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": ["A", "B", "C"],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf + Ort kommen in keiner herausforderung_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ]
+  }
+}
