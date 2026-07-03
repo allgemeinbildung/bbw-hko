@@ -465,6 +465,46 @@
       "beispiel": "Ein KI-Tool erklärt Ihnen ein schwieriges Wort einfach."
     }
   ],
+  "leseblatt": {
+    "titel": "Lesen und Verstehen: Ordnung schaffen",
+    "einleitung": "Lesen Sie den ganzen Text ruhig durch. Danach lösen Sie die Aufgaben. Sie dürfen im Text nachschauen.",
+    "gesamttext_quelle": "nuggets",
+    "richtig_falsch": [
+      {
+        "text": "Drei Kategorien helfen beim Ordnen: Vorgaben, Anleitungen und Kommunikation.",
+        "loesung": true
+      },
+      {
+        "text": "Sie müssen jedes Dokument von der Schule Wort für Wort genau lesen.",
+        "loesung": false
+      },
+      {
+        "text": "Die Checkliste hat vier Spalten: Kategorie, Dokument, Ablageort und Wofür.",
+        "loesung": true
+      },
+      {
+        "text": "Es gibt nur eine einzige richtige Ablage-Art.",
+        "loesung": false
+      },
+      {
+        "text": "Der Orientierungszettel zeigt, wo welches Dokument liegt.",
+        "loesung": true
+      }
+    ],
+    "w_fragen": [
+      "Nennen Sie die drei Kategorien für Ihre Unterlagen.",
+      "Was ist eine zentrale Aussage in einem Dokument? Erklären Sie es mit eigenen Worten.",
+      "Wozu brauchen Sie einen Orientierungszettel?"
+    ],
+    "vokabeln": [
+      "kategorie",
+      "zentrale_aussage",
+      "checkliste",
+      "ablage",
+      "ordnerstruktur",
+      "orientierungszettel"
+    ]
+  },
   "template": "dossier_eba_v1",
   "legacy": {},
   "source_refs": {},

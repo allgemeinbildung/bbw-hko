@@ -63,6 +63,16 @@ export interface DossierEinleitung {
   was_ist_das?: string
   so_benutzt_du_es?: string[]
 }
+export interface DossierLeseblattRF { text: string; loesung?: boolean }
+export interface DossierLeseblatt {
+  titel?: string
+  einleitung?: string
+  gesamttext_quelle?: string
+  richtig_falsch?: DossierLeseblattRF[]
+  w_fragen?: string[]
+  vokabeln?: string[]
+}
+
 export interface DossierJson {
   id: string; kompetenz_nr?: string; sprachniveau?: string
   kopf?: DossierKopf
@@ -71,6 +81,7 @@ export interface DossierJson {
   sprachmodi_scaffolds?: DossierScaffold[]
   transfer_wissensblatt?: DossierTransfer
   glossar?: DossierGlossarEntry[]
+  leseblatt?: DossierLeseblatt
 }
 
 export interface DocEbaDossierProps {

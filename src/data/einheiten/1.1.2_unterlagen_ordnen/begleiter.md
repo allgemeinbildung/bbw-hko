@@ -226,7 +226,7 @@ Reflexion
 
 ### Coaching & Scaffolds — auf einen Blick
 
-> [!coaching] Die drei Moves dieser Herausforderung
+> [!coaching] Die drei Schritte dieser Herausforderung
 > 1. Kategorien-Tabelle zeigen, Begründung statt «richtiger» Schublade. 2. Markieren als Angebot rahmen, max. drei Stellen. 3. Bei Festlesern zurückfragen: «Was brauchen Sie diese Woche zuerst?»
 > Zum Abgeben bereit: Beispiel-Checkliste (Tabelle), Kategorien-Tabelle + Markierhilfe (Dossier A-01/A-02).
 
@@ -342,7 +342,7 @@ Reflexion
 
 ### Coaching & Scaffolds — auf einen Blick
 
-> [!coaching] Die drei Moves dieser Herausforderung
+> [!coaching] Die drei Schritte dieser Herausforderung
 > 1. Unterlagen vorher ankündigen, drei Gruppen an der Tafel. 2. Bei Ordner-Wildwuchs zurückfragen: «Mit welchen drei Hauptordnern finden Sie morgen am schnellsten?» 3. Hinweis-Sätze kurz halten — ein Satz pro Zeile.
 > Zum Abgeben bereit: Orientierungszettel-Vorlage (Tabelle), Gruppen-Tabelle (Dossier B-01).
 
@@ -361,7 +361,7 @@ Drei Sozialformen (eigenes Set-Dokument): **EA** (Einzelauftrag), **GA** (Gruppe
   | 2 | Gemeinsamkeit finden: Was ist bei beiden Systemen gleich? Welche Grundregel? | 8' | Fragen: Was ist bei Checkliste **und** Zettel gleich? |
   | 3 | Transfer: Checkliste oder Zettel zeigen — findet die andere Person ein Dokument in einer Minute? | 8' | Den 1-Minute-Test wirklich stoppen lassen |
 
-  > [!warnung] Jigsaw-Qualität entscheidet über den KN
+  > [!warnung] Gruppenpuzzle-Qualität entscheidet über den KN
   > Wer in Runde 2 keine Grundregel formuliert, hat im KN bei der Transfer-Frage nichts in der Hand. Hören Sie in Runde 2 gezielt hinein.
 
   > [!coaching] Plenum-Abschluss
@@ -395,12 +395,12 @@ Drei Sozialformen (eigenes Set-Dokument): **EA** (Einzelauftrag), **GA** (Gruppe
 
 | Methode | Format | Primär prüft | Wähle wenn |
 |---|---|---|---|
-| Fachgespräch (Primärform) | mündlich, 25-30' (inkl. 15' Vorbereitung) | Ordnen + Entscheiden + Begründen | Standard für EBA (mündlicher Schwerpunkt) |
+| Kurzgespräch (Primärform) | mündlich, 5-10' Gespräch (+ ~15' Vorb.) | Ordnen + Entscheiden + Begründen | Standard für EBA (mündlicher Schwerpunkt) |
 | Mini Case schriftlich | schriftlich, 30-40' | Zuordnen + Planen + Schreiben | Klasse schreibt gern; Schreibhilfen eingedruckt |
 | Werkschau + Transfer-Reflexion | schriftlich (+ optional Kurzpräsentation 5') | Transfer der Grundregel | Produktbezug erwünscht |
 
 > [!coaching] Methodenwahl an Klasse und Variante koppeln
-> Fachgespräch ist der EBA-Default. Bei Variante B (nur eine Herausforderung geübt) den KN mitkürzen: nur die Fragen zur geübten Herausforderung stellen.
+> Kurzgespräch ist der EBA-Default. Bei Variante B (nur eine Herausforderung geübt) den KN mitkürzen: nur die Fragen zur geübten Herausforderung stellen.
 
 > [!hinweis] Ausblick — weitere Prüfformen möglich
 > Critical Incident oder ein Produkt mit Präsentation tragen dieselbe Hybrid-Herausforderung und dieselbe Rubrik (noch nicht ausgearbeitet).
@@ -409,7 +409,7 @@ Drei Sozialformen (eigenes Set-Dokument): **EA** (Einzelauftrag), **GA** (Gruppe
 
 Der Erwartungshorizont ersetzt keine Musterlösung — er sagt Ihnen je Frage, was eine vollständige bzw. Stufe-3/Stufe-4-Antwort zeigt. EBA-Decke K3: K2-Fragen werden als *vollständig vs. lückenhaft* beurteilt.
 
-*Fachgespräch (Primärform — 5 Fragen)*
+*Kurzgespräch (Primärform — 5 kurze Fragen)*
 
 | # | Typ | K | Fokus |
 |---|---|---|---|

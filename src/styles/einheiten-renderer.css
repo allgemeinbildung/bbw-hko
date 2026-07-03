@@ -1836,3 +1836,33 @@ body.aesthetic-editorial .niveau-legende .niv {
   height: 21mm; margin-top: 2mm;
   background-image: repeating-linear-gradient(transparent, transparent 6.8mm, var(--rule) 6.8mm, var(--rule) 7mm);
 }
+
+/* ---------------------------------------------------------------------------
+   EBA — Lese-Arbeitsblatt (DocLeseblatt). Scoped unter .doc-eba, komplett
+   additiv; greift nur auf dem optionalen Lese-Blatt.
+--------------------------------------------------------------------------- */
+.doc-eba .eba-lese-intro { color: var(--ink-soft); margin: 0 0 3mm; }
+.doc-eba .eba-lese-text p { margin: 0 0 3mm; line-height: 1.7; max-width: 66ch; }
+.doc-eba .eba-lese-num {
+  display: inline-block; min-width: 6mm; font-weight: 700;
+  color: var(--eba-brand, #0E6E3A); margin-right: 1.5mm;
+}
+.doc-eba .eba-lese-aufgabe-titel { font-weight: 700; margin: 5mm 0 2.5mm; }
+.doc-eba .eba-lese-rf { border-top: 1px solid var(--rule); }
+.doc-eba .eba-lese-rf-row {
+  display: flex; justify-content: space-between; gap: 5mm;
+  padding: 2.5mm 0; border-bottom: 1px solid var(--rule-soft);
+  page-break-inside: avoid;
+}
+.doc-eba .eba-lese-rf-opt { white-space: nowrap; color: var(--ink); font-variant-numeric: tabular-nums; }
+.doc-eba .eba-lese-frage { margin-bottom: 3.5mm; page-break-inside: avoid; }
+.doc-eba .eba-lese-frage-q { margin: 0 0 1.5mm; font-weight: 600; }
+.doc-eba .eba-lese-lines {
+  height: 16mm;
+  background-image: repeating-linear-gradient(transparent, transparent 6.8mm, var(--rule) 6.8mm, var(--rule) 7mm);
+}
+.doc-eba .eba-lese-vokabel {
+  border: 1.4px solid var(--rule); border-radius: 3mm; padding: 4mm 5mm;
+}
+.doc-eba .eba-lese-vok { padding: 1.5mm 0; line-height: 1.55; }
+.doc-eba .eba-lese-vok-b { font-weight: 700; }

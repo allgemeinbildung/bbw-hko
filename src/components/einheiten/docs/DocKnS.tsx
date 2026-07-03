@@ -49,7 +49,7 @@ function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
     <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
       <div className="badge-row" style={{ marginBottom: '4mm' }}>
         <Badge variant="outline">Kompetenznachweis {kn.kompetenz_nr}</Badge>
-        <Badge>{knTypLabel(knTyp.typ, knTyp.label)}</Badge>
+        <Badge>{knTypLabel(knTyp.typ, knTyp.label, kn.lehrgang)}</Badge>
       </div>
       <h1 className="cockpit-title">{kn.hybrid_situation?.titel}</h1>
       <SectionHead num="01 · Hybrid-Herausforderung">Herausforderung</SectionHead>

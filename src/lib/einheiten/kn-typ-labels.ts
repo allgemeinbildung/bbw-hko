@@ -29,6 +29,8 @@ export const KN_TYP_OPTIONS: { value: string; label: string }[] =
   Object.entries(KN_TYP_LABELS).map(([value, label]) => ({ value, label }))
 
 /** Resolve a KN-Typ key to its canonical display label, with an optional fallback. */
-export function knTypLabel(typ: string, fallback?: string): string {
+export function knTypLabel(typ: string, fallback?: string, lehrgang?: string): string {
+  // EBA nutzt die kürzere mündliche Form; EFZ behält das volle «Fachgespräch».
+  if (typ === 'fachgespraech' && lehrgang === 'EBA_2J') return 'Kurzgespräch'
   return KN_TYP_LABELS[typ] || fallback || typ
 }

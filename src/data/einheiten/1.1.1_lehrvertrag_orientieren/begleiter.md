@@ -39,7 +39,7 @@ quellen_json:
 > Diese Einheit ist **Unit 2** der T1-Sequenz und baut auf **1.1.2 „Unterlagen ordnen"** auf: Die dort gebaute Ordnung („Ordnung schaffen") wird hier im Frage- und Konfliktfall **genutzt** (Herausforderung B schlägt in den geordneten Unterlagen nach). Beide Einheiten bleiben einzeln unterrichtbar — was du dann ersetzen musst, steht in Sektion 2 und in der Sektion „Von der Lehrperson bereitzustellen".
 
 > [!hinweis] Lektionentotal
-> EBA-Klassen sind sehr verschieden. Es gibt **keinen festen Wochen-Wert** — du bestimmst Tempo und Dauer der Phasen selbst. Richtwerte: Variante A (beide Herausforderungen einzeln) je 2-3 Lektionen pro Herausforderung, plus Austausch & Transfer, plus KN. Variante C (Jigsaw) ist kompakter.
+> EBA-Klassen sind sehr verschieden. Es gibt **keinen festen Wochen-Wert** — du bestimmst Tempo und Dauer der Phasen selbst. Richtwerte: Variante A (beide Herausforderungen einzeln) je 2-3 Lektionen pro Herausforderung, plus Austausch & Transfer, plus KN. Variante C (Gruppenpuzzle) ist kompakter.
 
 > [!hinweis] Übe-Hinweis
 > Das Material ist Starthilfe (~80 %), kein Vollprogramm. Da EBA kein Lehrmittel hat, liegt das ganze Fachwissen im **Dossier** (siehe eigene Sektion unten). Die Herausforderungsblätter setzen voraus, dass die Lernenden mit dem Dossier arbeiten können — führe das Anker-Prinzip („Info-Karte A-01") einmal kurz vor.
@@ -116,9 +116,9 @@ quellen_json:
 - **Variante B (Einzelarbeit, eine Herausforderung):** möglich, aber:
 
   > [!warnung] KN muss mitgekürzt werden
-  > Der KN kombiniert A und B (Constructive Alignment). Wird nur eine Herausforderung unterrichtet, streiche im KN die Fragen der anderen (Fachgespräch: Frage 1-2 gehören zu A, Frage 3 zu B; Frage 4-5 tragen beide).
+  > Der KN kombiniert A und B (Constructive Alignment). Wird nur eine Herausforderung unterrichtet, streiche im KN die Fragen der anderen (Kurzgespräch: Frage 1-2 gehören zu A, Frage 3 zu B; Frage 4-5 tragen beide).
 
-- **Variante C (Jigsaw, A+B im Austausch):** kompakter. `[!warnung]` Die Hälfte wird nur stellvertretend erworben — Gegenmittel: Runde 2 des Austauschs sauber moderieren (gemeinsame Grundregel).
+- **Variante C (Gruppenpuzzle, A+B im Austausch):** kompakter. `[!warnung]` Die Hälfte wird nur stellvertretend erworben — Gegenmittel: Runde 2 des Austauschs sauber moderieren (gemeinsame Grundregel).
 
 > [!hinweis] Reihenfolge und Abhängigkeit
 > Der Aufbau A → B ist der inhaltliche Faden: B schlägt in der **Vertrags-Übersicht aus A** nach (LF2). Unterrichtest du B ohne A, stelle eine Muster-Übersicht bereit (siehe Sektion „Von der Lehrperson bereitzustellen"). Im KN wird nur geprüft, was geübt wurde.
@@ -245,7 +245,7 @@ Reflexion
 
 ### Coaching & Scaffolds — auf einen Blick
 
-> [!coaching] Die drei Moves dieser Herausforderung
+> [!coaching] Die drei Schritte dieser Herausforderung
 > 1. Überfliegen statt lesen (LF1). 2. Filterfrage an die Tafel: „Was betrifft mich diesen Monat?" (LF3). 3. Restfragen erst nach dem Dossier-Check formulieren lassen (LF4).
 > Zum Abgeben bereit: Tabellen-Vorlage (SM3-Scaffold), ausgefülltes Übersichts-Beispiel, Glossar.
 
@@ -375,7 +375,7 @@ Reflexion
 
 ### Coaching & Scaffolds — auf einen Blick
 
-> [!coaching] Die drei Moves dieser Herausforderung
+> [!coaching] Die drei Schritte dieser Herausforderung
 > 1. Fakten von Gefühlen trennen (LF1). 2. Fundort in den eigenen Unterlagen notieren lassen (LF2). 3. Weg-Wahl mit zwei Fakten begründen lassen (LF3).
 > Zum Abgeben bereit: Fakten-Tabelle (Info-Karte B-01), Nachricht-Vorlage (Lückentext), Satzanfänge (SM9-Scaffold).
 
@@ -386,7 +386,7 @@ Reflexion
 
 Der Austausch ist ein eigenständiges Set-Dokument mit drei wählbaren Sozialformen: **EA** (Einzelauftrag), **GA** (Gruppenpuzzle, 3 Runden), **PL** (Plenum). Lernende nutzen die **Austausch-Scaffolds aus dem Dossier** (Satzanfänge + „So tauschen Sie aus").
 
-- **Bei Variante C (Jigsaw, ~30 Min.):**
+- **Bei Variante C (Gruppenpuzzle, ~30 Min.):**
 
   | Runde | Auftrag | Zeit | Deine Moderation |
   |---|---|---|---|
@@ -394,7 +394,7 @@ Der Austausch ist ein eigenständiges Set-Dokument mit drei wählbaren Sozialfor
   | 2 | Gemeinsamkeit finden — Was ist bei beiden Fällen gleich? Welche Grundregel steckt dahinter? | 10' | Frage: „Was haben Formular-Gliedern und Konflikt-Klären gemeinsam?" |
   | 3 | Transfer — Welcher Fall wäre für mich am schwierigsten? Warum? | 8' | Begründung einfordern |
 
-  > [!warnung] Jigsaw-Qualität entscheidet über den KN
+  > [!warnung] Gruppenpuzzle-Qualität entscheidet über den KN
   > Wer in Runde 1 nur nacherzählt, hat in der Hybrid-Herausforderung des KN keine Grundregel zur Hand. Runde 2 ist die wichtigste — nimm dir dort Zeit.
 
   > [!coaching] Plenum-Abschluss
@@ -432,12 +432,12 @@ Der Austausch ist ein eigenständiges Set-Dokument mit drei wählbaren Sozialfor
 
 | Methode | Format | Primär prüft | Sprachmodi | Wähle wenn |
 |---|---|---|---|---|
-| Fachgespräch (Primärform) | mündlich, 25-30' | Orientierung im Formular + begründeter Entscheid | SM3, Produktion + Interaktion mündlich | Standard für EBA (mündlicher Schwerpunkt) |
+| Kurzgespräch (Primärform) | mündlich, 5-10' Gespräch (+ ~15' Vorb.) | Orientierung im Formular + begründeter Entscheid | SM3, Produktion + Interaktion mündlich | Standard für EBA (mündlicher Schwerpunkt) |
 | Mini Case schriftlich | schriftlich, 30-40' | Fakten ordnen + sachlich schreiben | SM3, Produktion schriftlich | Klasse schreibt gern; Schreibhilfen eingedruckt |
 | Werkschau + Transfer-Reflexion | schriftlich (+ optional Vortrag 5') | Transfer der Grundregel | Produktion schriftlich | Produktbezug erwünscht |
 
 > [!coaching] Methodenwahl an Klasse + Variante koppeln
-> Fachgespräch ist der EBA-Default. Bei Variante B (nur eine Herausforderung geübt) müssen die Fragen der ungeübten Herausforderung raus — siehe Sektion 2.
+> Kurzgespräch ist der EBA-Default. Bei Variante B (nur eine Herausforderung geübt) müssen die Fragen der ungeübten Herausforderung raus — siehe Sektion 2.
 
 > [!hinweis] Ausblick — weitere Prüfformen möglich
 > Die 3 KN-Typen sind ein Startset. Weitere Formen (Critical Incident, Produkt mit Präsentation) tragen dieselbe Hybrid-Herausforderung und dieselbe Rubrik, sind aber noch nicht ausgearbeitet.
@@ -446,7 +446,7 @@ Der Austausch ist ein eigenständiges Set-Dokument mit drei wählbaren Sozialfor
 
 Der Erwartungshorizont ersetzt keine Musterlösung — er sagt dir je Frage, was eine vollständige bzw. Stufe-3-/Stufe-4-Antwort zeigt, damit du fair und einheitlich benotest. EBA-Decke K3: K2-Fragen werden als *vollständig vs. lückenhaft* beurteilt.
 
-*Fachgespräch (Primärform — 15 Min. Vorbereitung mit Notizen, 10-15 Min. Gespräch, 5 Fragen)*
+*Kurzgespräch (Primärform — ca. 15 Min. Vorbereitung mit Notizen, 5-10 Min. Gespräch, 5 kurze Fragen)*
 
 | # | Typ | K | Fokus |
 |---|---|---|---|
@@ -476,15 +476,15 @@ Der Erwartungshorizont ersetzt keine Musterlösung — er sagt dir je Frage, was
 | # | Typ | K | Fokus |
 |---|---|---|---|
 | 1 | Erklären | K2 | Fakten-Tabelle zum Fall |
-| 2 | Unterscheiden | K2 | Vertragsfrage vs. Konflikt |
+| 2 | Unterscheiden | K2 | Frage zum Vertrag vs. Konflikt |
 | 3 | Entscheiden | K3 | erster Schritt mit Vertragsbezug |
 | 4 | Forderung | K3 | sachliche Nachricht |
 
 > [!erwartungshorizont] Aufgabe 1 (Erklären, K2) — Fakten-Tabelle zum Fall
 > **Vollständig zeigt:** füllt die Tabelle mit den Fall-Fakten (Samstagsarbeit angekündigt, beim Vorstellungsgespräch anders besprochen, zwei Stellen im Vertrag) — ohne Gefühle in den Fakten-Zeilen. **Lückenhaft:** Fakten und Bewertungen vermischt oder Felder leer.
 
-> [!erwartungshorizont] Aufgabe 2 (Unterscheiden, K2) — Vertragsfrage vs. Konflikt
-> **Vollständig zeigt:** unterscheidet die Vertragsfrage (Was steht zur Arbeitszeit? Was gilt?) vom Konflikt (Ankündigung passt nicht zur Abmachung), je mit einem Beispiel aus dem Fall. **Lückenhaft:** nur ein Begriff, ohne Fall-Beispiel.
+> [!erwartungshorizont] Aufgabe 2 (Unterscheiden, K2) — Frage zum Vertrag vs. Konflikt
+> **Vollständig zeigt:** unterscheidet die Frage zum Vertrag (Was steht zur Arbeitszeit? Was gilt?) vom Konflikt (Ankündigung passt nicht zur Abmachung), je mit einem Beispiel aus dem Fall. **Lückenhaft:** nur ein Begriff, ohne Fall-Beispiel.
 
 > [!erwartungshorizont] Aufgabe 3 (Entscheiden, K3) — erster Schritt mit Vertragsbezug
 > **Stufe 3 zeigt:** wählt einen sinnvollen ersten Schritt und begründet ihn mit einer konkreten Stelle aus dem Vertrag. **Stufe 4 zeigt zusätzlich:** wägt beide Wege ab und nennt eine Bedingung für den Wechsel. **Nicht Stufe 4:** nennt einen Schritt ohne Begründung oder ohne Vertragsbezug.

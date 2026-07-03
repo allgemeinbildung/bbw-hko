@@ -1114,6 +1114,96 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
   })
 }
 
+// ---------------------------------------------------------------------------
+// buildLeseblatt — optionales EBA Lese-Arbeitsblatt (Word). Lesetext aus den
+// Dossier-Info-Karten (nuggets[].inhalt, A -> B) + autorierte Aufgaben
+// (richtig/falsch, W-Fragen) + Vokabelbox aus dem Glossar. Spiegelt DocLeseblatt.
+// ---------------------------------------------------------------------------
+export function buildLeseblatt({ dossier, abteilung, kompetenzNr, logoPng = null }: BuildDossierOpts): Document | null {
+  if (!dossier) return null
+  const lese: any = (dossier as any).leseblatt
+  if (!lese) return null
+  const kopf = dossier.kopf
+  const nuggets: any[] = dossier.nuggets || []
+  const glossar: any[] = dossier.glossar || []
+  const ordered = [...nuggets.filter((n) => n.tag === 'A'), ...nuggets.filter((n) => n.tag === 'B')]
+  const absaetze: string[] = ordered.map((n) => n.inhalt).filter(Boolean)
+
+  const akzent = BBW_GRUEN
+  const docCode = 'LESEBLATT · EBA'
+  const titel = lese.titel || 'Lesen und Verstehen'
+  const komp = kompetenzNr || dossier.kompetenz_nr || kopf?.kompetenz_nr
+
+  const children: any[] = []
+  children.push(p('Lese-Arbeitsblatt · EBA', { run: { color: akzent, bold: true, size: 16 }, spacing: { after: 40 } }))
+  children.push(h(titel, 'title'))
+  if (komp) children.push(p('Kompetenz ' + komp, { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 40 } }))
+  if (lese.einleitung) children.push(p(lese.einleitung, { run: { italics: true, color: COLOR.inkSoft, size: 20 }, spacing: { after: 120, line: 320, lineRule: LineRuleType.AUTO } }))
+
+  // Lesetext, durchnummeriert
+  children.push(...sectionHead('L1', 'Lesetext', akzent))
+  absaetze.forEach((t, i) => {
+    children.push(new Paragraph({
+      children: [
+        new TextRun({ text: (i + 1) + '  ', bold: true, color: akzent, size: 20 }),
+        new TextRun({ text: t, size: 20 }),
+      ],
+      spacing: { after: 120, line: 340, lineRule: LineRuleType.AUTO },
+    }))
+  })
+
+  // Aufgaben
+  const rf: any[] = lese.richtig_falsch || []
+  const wf: string[] = lese.w_fragen || []
+  if (rf.length || wf.length) {
+    children.push(pageBreak())
+    children.push(...sectionHead('L2', 'Aufgaben zum Text', akzent))
+    if (rf.length) {
+      children.push(p('1. Richtig oder falsch? Kreuzen Sie an.', { run: { bold: true, size: 20 }, spacing: { before: 60, after: 60 } }))
+      rf.forEach((r) => {
+        children.push(new Paragraph({
+          children: [
+            new TextRun({ text: r.text, size: 19 }),
+            new TextRun({ text: '     ☐ richtig   ☐ falsch', size: 19, color: COLOR.inkSoft }),
+          ],
+          spacing: { after: 80, line: 320, lineRule: LineRuleType.AUTO },
+        }))
+      })
+    }
+    if (wf.length) {
+      children.push(p('2. Beantworten Sie die Fragen in ganzen Sätzen.', { run: { bold: true, size: 20 }, spacing: { before: 120, after: 60 } }))
+      wf.forEach((q, i) => {
+        children.push(p((i + 1) + ') ' + q, { run: { size: 20 }, spacing: { after: 20 } }))
+        children.push(...schreibfeld(12))
+      })
+    }
+  }
+
+  // Vokabelbox
+  const vok = (lese.vokabeln || []).map((id: string) => glossar.find((g) => g.id === id)).filter(Boolean)
+  if (vok.length) {
+    children.push(pageBreak())
+    children.push(...sectionHead('L3', 'Wichtige Wörter', akzent))
+    children.push(p('Diese Wörter helfen Ihnen beim Lesen.', { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 80 } }))
+    vok.forEach((g: any) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: (g.begriff || '') + ' — ', bold: true, size: 19 }),
+          new TextRun({ text: g.erklaerung_a2 || '', size: 19 }),
+        ],
+        spacing: { after: 80, line: 320, lineRule: LineRuleType.AUTO },
+      }))
+    })
+  }
+
+  return new Document({
+    creator: 'HKO Renderer',
+    title: titel,
+    description: docCode,
+    sections: [{ ...sectionProps(docCode, titel, abteilung, logoPng), children }],
+  })
+}
+
 // --- EBA Infokarten-Vorlage (leeres, anpassbares Word-Template) -----------
 // Entscheidung Teammeeting 2026-07-02 (docs/eba/EBA-Material-Updates_2026-07-02.md, Punkt 5):
 // kein fixes Infokarten-Design vorgeben, stattdessen ein leeres, einheitlich strukturiertes

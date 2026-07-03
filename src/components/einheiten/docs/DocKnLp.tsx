@@ -160,11 +160,11 @@ function DocKnLpHybrid({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; abte
   )
 }
 
-function KnTypCardLP({ knTyp }: { knTyp: KnTyp }) {
+function KnTypCardLP({ knTyp, lehrgang }: { knTyp: KnTyp; lehrgang?: string }) {
   return (
     <div className="kn-typ-card" style={{ marginTop: '4mm' }}>
       <div className="typ-head">
-        <div className="typ-label">{knTypLabel(knTyp.typ, knTyp.label)}</div>
+        <div className="typ-label">{knTypLabel(knTyp.typ, knTyp.label, lehrgang)}</div>
         <div className="typ-format">{knTyp.format}</div>
       </div>
       {knTyp.ablauf && (
@@ -246,7 +246,7 @@ function DocKnLpDurchfuehrungIntro({ kn, abteilung, pageNum, pageTotal }: { kn: 
       <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
         Alle drei Typen prüfen denselben Kompetenznachweis auf der gleichen Hybrid-Herausforderung. Du wählst pro Klasse oder pro Lernende/r, welcher Typ zum Einsatz kommt. K-Stufen-Hinweise sind nur für dich, nicht für Lernende sichtbar.
       </p>
-      {kn.kn_typen?.[0] && <KnTypCardLP knTyp={kn.kn_typen[0]} />}
+      {kn.kn_typen?.[0] && <KnTypCardLP knTyp={kn.kn_typen[0]} lehrgang={kn.lehrgang} />}
     </LpPage>
   )
 }
@@ -257,7 +257,7 @@ function DocKnLpKnTyp({ kn, abteilung, knTyp, sectionNr, pageNum, pageTotal }: {
             docTitel={kn.hybrid_situation?.titel}
             pageNum={pageNum} pageTotal={pageTotal}>
       <SectionHead num={sectionNr}>{knTyp.label}</SectionHead>
-      <KnTypCardLP knTyp={knTyp} />
+      <KnTypCardLP knTyp={knTyp} lehrgang={kn.lehrgang} />
     </LpPage>
   )
 }
@@ -460,7 +460,7 @@ export function DocKnLp({ kn, prinzip, set, abteilung, sits }: DocKnLpProps) {
           key={i}
           kn={kn}
           knTyp={t}
-          sectionNr={`07 · ${knTypLabel(t.typ, t.label)}`}
+          sectionNr={`07 · ${knTypLabel(t.typ, t.label, kn.lehrgang)}`}
           abteilung={abteilung}
           pageNum={5 + i}
           pageTotal={total}

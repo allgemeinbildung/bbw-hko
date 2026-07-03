@@ -543,6 +543,46 @@
       "beispiel": "Ein KI-Tool erklärt Ihnen ein schwieriges Wort einfach."
     }
   ],
+  "leseblatt": {
+    "titel": "Lesen und Verstehen: Mein Lehrvertrag",
+    "einleitung": "Lesen Sie den ganzen Text ruhig durch. Danach lösen Sie die Aufgaben. Sie dürfen im Text nachschauen.",
+    "gesamttext_quelle": "nuggets",
+    "richtig_falsch": [
+      {
+        "text": "Alle Lehrverträge in der Schweiz nutzen dasselbe offizielle Formular.",
+        "loesung": true
+      },
+      {
+        "text": "Der Lohn ist ein Standard-Punkt und für alle Betriebe gleich.",
+        "loesung": false
+      },
+      {
+        "text": "Das kantonale Berufsbildungsamt prüft und genehmigt den Lehrvertrag.",
+        "loesung": true
+      },
+      {
+        "text": "Bei einem Konflikt schreibt man zuerst die Gefühle, dann die Fakten.",
+        "loesung": false
+      },
+      {
+        "text": "Wenn im Betrieb etwas anders läuft als abgemacht, gibt es nur einen richtigen Weg.",
+        "loesung": false
+      }
+    ],
+    "w_fragen": [
+      "Was ist ein Verweis in einem Formular? Erklären Sie es mit eigenen Worten.",
+      "Nennen Sie zwei Stellen, die Ihnen bei einem Konflikt im Lehrbetrieb helfen können.",
+      "Was bedeutet «filtern», wenn Sie Ihren Vertrag lesen?"
+    ],
+    "vokabeln": [
+      "formular",
+      "verweis",
+      "standard",
+      "betriebsspezifisch",
+      "filtern",
+      "kontaktstelle"
+    ]
+  },
   "template": "dossier_eba_v1",
   "legacy": {},
   "source_refs": {},

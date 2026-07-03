@@ -10,11 +10,12 @@ import { DocKi } from './docs/DocKi'
 import { DocLernprompt } from './docs/DocLernprompt'
 import { DocLernbegleiter } from './docs/DocLernbegleiter'
 import { DocEbaDossier } from './docs/DocEbaDossier'
+import { DocLeseblatt } from './docs/DocLeseblatt'
 import { ABTEILUNGEN } from '../../lib/einheiten'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import type { EinheitFullSet } from '../../lib/einheiten/types'
 
-import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, buildInfokartenTemplate, buildInfokartenTemplatePrefilled, docToBlob } from '../../lib/einheiten/docx-builder'
+import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, buildLeseblatt, buildInfokartenTemplate, buildInfokartenTemplatePrefilled, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 
 interface Props {
@@ -31,7 +32,7 @@ interface Props {
   readOnly?: boolean
 }
 
-type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -40,7 +41,7 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
 
 // Dokumente, die ein Gast sehen darf. Alles andere (Kompetenznachweise, Lies-mich,
 // KI-Toolbox) wird gelistet, aber beim Anklicken durch das Gate-Panel ersetzt.
-const GUEST_ALLOWED: DocSel[] = ['doc-s', 'doc-austausch', 'doc-dossier']
+const GUEST_ALLOWED: DocSel[] = ['doc-s', 'doc-austausch', 'doc-dossier', 'doc-leseblatt']
 const GATE_MAIL = 'pietro.rossi@bbw.ch'
 
 function triggerDownload(blob: Blob, filename: string) {
@@ -153,6 +154,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [toast, setToast] = useState<{ kind: 'ok' | 'error'; msg: string } | null>(null)
   const [navOpen, setNavOpen] = useState(false)
   const [kiOpen, setKiOpen] = useState(false)
+  const [zusatzOpen, setZusatzOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
   // Gast-Gate für die Lies-mich-Buttons (KN/KI-Sperre läuft über die doc-Auswahl selbst).
   const [guestGate, setGuestGate] = useState<null | 'kn' | 'begleiter' | 'ki'>(null)
@@ -224,6 +226,10 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       if (!d.dossier) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Dossier fehlt.</p></div>
       return <DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />
     }
+    if (doc === 'doc-leseblatt') {
+      if (!d.dossier?.leseblatt) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Kein Lese-Arbeitsblatt.</p></div>
+      return <DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />
+    }
     if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
     return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />
   }, [doc, situation, mode, abteilung, edits, knTyp, sit, d, onEdit])
@@ -277,6 +283,15 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
         title: 'Glossar+ (EBA)',
         markup: renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />),
         docx: () => buildDossier({ dossier: d.dossier!, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
+      }
+    }
+    if (doc === 'doc-leseblatt') {
+      if (!d.dossier?.leseblatt) return null
+      return {
+        baseName: `${p}_doc-leseblatt`,
+        title: 'Lese-Arbeitsblatt (EBA)',
+        markup: renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />),
+        docx: () => buildLeseblatt({ dossier: d.dossier!, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-kn-s') {
@@ -494,6 +509,20 @@ ${cssRenderer}
         } catch (e) { console.warn('docx Dossier failed', filename, e) }
       }
 
+      if (d.dossier?.leseblatt) {
+        const markup = renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />)
+        const filename = `${prefix}_doc-leseblatt.html`
+        zip.file(`html/${filename}`, wrap('Lese-Arbeitsblatt (EBA) · Lesen & Verstehen', markup))
+        log.push(`html/${filename}`)
+        try {
+          const docx = buildLeseblatt({ dossier: d.dossier, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
+          if (docx) {
+            zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
+            log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
+          }
+        } catch (e) { console.warn('docx Leseblatt failed', filename, e) }
+      }
+
       if (d.kn) {
         for (const typ of d.kn.kn_typen || []) {
           const markup = renderToStaticMarkup(<DocKnS kn={d.kn} knTyp={typ.typ} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
@@ -619,7 +648,7 @@ ${cssRenderer}
     docName = 'Austausch & Transfer'
   } else if (doc === 'doc-kn-s') {
     docKicker = 'Kompetenznachweis · Schüler/in'
-    docName = knTypLabel(knTyp, knTypen.find((t) => t.typ === knTyp)?.label) || 'Kompetenznachweis'
+    docName = knTypLabel(knTyp, knTypen.find((t) => t.typ === knTyp)?.label, d.kn?.lehrgang) || 'Kompetenznachweis'
   } else if (doc === 'doc-ki-1' || doc === 'doc-ki-2') {
     const which = doc === 'doc-ki-1' ? 'ki_1' : 'ki_2'
     const a = d.ki?.assignments?.find((x) => x.key === which)
@@ -634,6 +663,9 @@ ${cssRenderer}
   } else if (doc === 'doc-dossier') {
     docKicker = 'EBA · Nachschlagen & Lernen'
     docName = 'Glossar+'
+  } else if (doc === 'doc-leseblatt') {
+    docKicker = 'EBA · Lesen & Verstehen'
+    docName = 'Lese-Arbeitsblatt'
   } else {
     docKicker = 'Kompetenznachweis'
     docName = 'Lehrperson + Bewertung'
@@ -720,11 +752,33 @@ ${cssRenderer}
               <span className="wb-item-title">Glossar+</span>
             </button>
           )}
+          {(d.dossier?.leseblatt || (d.dossier && !readOnly)) && (
+            <div className="wb-tree-group">
+              <button
+                type="button"
+                className={`wb-tree-head wb-tree-head-toggle${zusatzOpen ? ' open' : ''}`}
+                onClick={() => setZusatzOpen((v) => !v)}
+                aria-expanded={zusatzOpen}
+              >
+                <span className="wb-ki-label">Zusatzmaterialien</span>
+                <span className="wb-chevron" aria-hidden="true">▾</span>
+              </button>
+              {zusatzOpen && (
+                <>
+          {d.dossier?.leseblatt && (
+            <button
+              className={`wb-item nested${doc === 'doc-leseblatt' ? ' active' : ''}`}
+              onClick={() => pick('doc-leseblatt')}
+            >
+              <span className="wb-dot">📝</span>
+              <span className="wb-item-title">Lese-Arbeitsblatt</span>
+            </button>
+          )}
 
           {d.dossier && !readOnly && (
             <button
               type="button"
-              className="wb-item solo"
+              className="wb-item nested"
               onClick={downloadInfokartenTemplate}
               disabled={templateDling}
               title="Leeres, anpassbares Word-Template für eigene Infokarten"
@@ -737,7 +791,7 @@ ${cssRenderer}
           {d.dossier && !readOnly && (
             <button
               type="button"
-              className="wb-item solo"
+              className="wb-item nested"
               onClick={downloadInfokartenTemplatePrefilled}
               disabled={templatePrefilledDling}
               title="Vorlage mit kopierbarem KI-Prompt, um die Karte mit einer KI (z. B. Copilot) auszufüllen"
@@ -745,6 +799,10 @@ ${cssRenderer}
               <span className="wb-dot">🤖</span>
               <span className="wb-item-title">{templatePrefilledDling ? 'Vorlage wird erstellt…' : 'Infokarte-Vorlage (voll)'}</span>
             </button>
+          )}
+                </>
+              )}
+            </div>
           )}
 
           {d.kn && (
@@ -757,7 +815,7 @@ ${cssRenderer}
                   className={`wb-item nested${doc === 'doc-kn-s' && knTyp === t.typ ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => selectKnTyp(t.typ)}
                 >
-                  <span className="wb-item-title">{knTypLabel(t.typ, t.label)}</span>
+                  <span className="wb-item-title">{knTypLabel(t.typ, t.label, d.kn?.lehrgang)}</span>
                   {lockBadge}
                 </button>
               ))}
@@ -972,6 +1030,7 @@ ${body.join('\n')}
   }
   hfCards.push(card('Austausch & Transfer', [row('Set-Abschluss', { htmlBase: `${prefix}_doc-austausch.html` })]))
   if (d.dossier) hfCards.push(card('Glossar+ (EBA)', [row('Nuggets · Sprachhilfe · Glossar · Notizen', { htmlBase: `${prefix}_doc-dossier.html` })]))
+  if (d.dossier?.leseblatt) hfCards.push(card('Lese-Arbeitsblatt (EBA)', [row('Lesetext · Aufgaben · Vokabeln', { htmlBase: `${prefix}_doc-leseblatt.html` })]))
   const hfC = hfCards.filter(Boolean)
   if (hfC.length) sections.push(`  <details class="group"><summary>Herausforderungen <span class="count">${hfC.length}</span></summary><div class="group-body">${hfC.join('\n')}</div></details>`)
 
@@ -979,7 +1038,7 @@ ${body.join('\n')}
   if (d.kn) {
     const knCards: string[] = []
     for (const typ of d.kn.kn_typen || []) {
-      knCards.push(card(`KN · ${knTypLabel(typ.typ, typ.label)}`, [
+      knCards.push(card(`KN · ${knTypLabel(typ.typ, typ.label, d.kn?.lehrgang)}`, [
         row('Schüler/in', { htmlBase: `${prefix}_doc-kn-s_${typ.typ}.html` }),
       ]))
     }

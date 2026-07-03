@@ -331,6 +331,7 @@ export interface DossierJson {
   sprachmodi_scaffolds?: any[]
   transfer_wissensblatt?: any
   glossar?: any[]
+  leseblatt?: any
 }
 
 export interface EinheitFullSet {

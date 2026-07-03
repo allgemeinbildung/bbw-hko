@@ -151,6 +151,25 @@ const total = entries.length
             ].join(' ').toLowerCase()
             const rubrik = parseRaster(e.raster_md)
             const hasRubrik = rubrik.suk.length > 0 || rubrik.ges.length > 0
+            // Attach raster levels to each Bewertungsposition by position index —
+            // but only when the raster row count matches the Bewertungsposition
+            // count per Domain (the raster is generated from the same ordered
+            // source, so index pairing is correct even when wording drifts).
+            // For the few entries where counts differ, positions stay static and
+            // the complete raster is shown separately so no data is ever lost.
+            const rasterAligned =
+              hasRubrik &&
+              rubrik.suk.length === e.bewertung.suk.length &&
+              rubrik.ges.length === e.bewertung.ges.length
+            const bposSuk = e.bewertung.suk.map((text, i) => ({
+              position: text, levels: rasterAligned ? (rubrik.suk[i]?.levels ?? null) : null,
+            }))
+            const bposGes = e.bewertung.ges.map((text, i) => ({
+              position: text, levels: rasterAligned ? (rubrik.ges[i]?.levels ?? null) : null,
+            }))
+            const hasBpos = bposSuk.length > 0 || bposGes.length > 0
+            const showRasterFallback = hasRubrik && !rasterAligned
+            const hasOrient = e.gesellschaftliche_inhalte.length > 0 || e.schluesselkompetenzen.length > 0 || e.scaffolds.length > 0
             return (
               <article
                 class="ub-card lion-bg"
@@ -183,120 +202,190 @@ const total = entries.length
                 </div>
 
                 <div class="ub-card-body" x-show="open" x-collapse x-cloak>
-                  <!-- Inhalte / SK / Sprachmodus / Scaffolds als Karten, zweispaltig -->
-                  <div class="ub-grid">
-                    {e.gesellschaftliche_inhalte.length > 0 && (
-                      <section class="ub-block">
-                        <h4>Gesellschaftliche Inhalte</h4>
-                        <div class="ub-chips">
-                          {e.gesellschaftliche_inhalte.map((m) => (
-                            <div class="ub-chip">
-                              {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
-                              <span>{m.text}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                    {e.schluesselkompetenzen.length > 0 && (
-                      <section class="ub-block">
-                        <h4>Schlüsselkompetenzen</h4>
-                        <div class="ub-chips">
-                          {e.schluesselkompetenzen.map((k) => <div class="ub-chip"><span>{k}</span></div>)}
-                        </div>
-                      </section>
-                    )}
-                    {e.sprachmodi.length > 0 && (
-                      <section class="ub-block">
-                        <h4>Sprachmodus</h4>
-                        <div class="ub-chips">
-                          {e.sprachmodi.map((m) => (
-                            <div class="ub-chip">
-                              {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
-                              <span>{m.text}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                    {e.scaffolds.length > 0 && (
-                      <section class="ub-block">
-                        <h4>Scaffolds</h4>
-                        <div class="ub-chips">
-                          {e.scaffolds.map((m) => (
-                            <div class="ub-chip">
-                              {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
-                              <span>{m.text}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                  </div>
+                  <!-- TIER 2 — Prüfen & Bewerten (gewichtet, im Zentrum) -->
+                  {(e.sprachmodi.length > 0 || hasBpos || showRasterFallback) && (
+                    <section class="ub-assess">
+                      <div class="ub-assess-hd">
+                        <span class="ub-assess-ic" aria-hidden="true">◎</span>
+                        <span>Prüfen &amp; Bewerten</span>
+                      </div>
 
-                  <!-- Bewertungspositionen, zweispaltig -->
-                  {(e.bewertung.suk.length > 0 || e.bewertung.ges.length > 0) && (
-                    <div class="ub-grid ub-grid-tight">
-                      {e.bewertung.suk.length > 0 && (
-                        <section class="ub-block">
-                          <h4>Bewertung · Sprache und Kommunikation</h4>
+                      {e.sprachmodi.length > 0 && (
+                        <div class="ub-assess-sec">
+                          <h4>Sprachmodus</h4>
                           <div class="ub-chips">
-                            {e.bewertung.suk.map((b) => <div class="ub-chip ub-chip-suk"><span>{b}</span></div>)}
+                            {e.sprachmodi.map((m) => (
+                              <div class="ub-chip">
+                                {m.bereich && <span class="ub-chip-b">{m.bereich}</span>}
+                                <span>{m.text}</span>
+                              </div>
+                            ))}
                           </div>
-                        </section>
+                        </div>
                       )}
-                      {e.bewertung.ges.length > 0 && (
-                        <section class="ub-block">
-                          <h4>Bewertung · Gesellschaft</h4>
-                          <div class="ub-chips">
-                            {e.bewertung.ges.map((b) => <div class="ub-chip ub-chip-ges"><span>{b}</span></div>)}
+
+                      {hasBpos && (
+                        <div class="ub-assess-sec">
+                          <h4>
+                            Bewertungspositionen
+                            {hasRubrik && <span class="ub-hint"> · Position anklicken → Kompetenzraster</span>}
+                          </h4>
+                          <div class="ub-grid ub-grid-tight">
+                            {bposSuk.length > 0 && (
+                              <div class="ub-bcol">
+                                <h5 class="ub-bcol-dom ub-dom-suk">Sprache und Kommunikation</h5>
+                                {bposSuk.map((p) => (
+                                  p.levels ? (
+                                    <div class="ub-bpos" x-data="{ o: false }">
+                                      <button type="button" class="ub-bpos-hd" @click="o = !o" :aria-expanded="o">
+                                        <span class="ub-bpos-chev"><span x-show="!o">▸</span><span x-show="o" x-cloak>▾</span></span>
+                                        <span class="ub-bpos-mark ub-mark-suk"></span>
+                                        <span class="ub-bpos-txt">{p.position}</span>
+                                      </button>
+                                      <div class="ub-bpos-levels" x-show="o" x-collapse x-cloak>
+                                        {p.levels.map((lv, i) => (
+                                          <div class="ub-rubrik-lvl">
+                                            <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
+                                            <span>{lv}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <div class="ub-bpos ub-bpos-static">
+                                      <span class="ub-bpos-mark ub-mark-suk"></span>
+                                      <span class="ub-bpos-txt">{p.position}</span>
+                                    </div>
+                                  )
+                                ))}
+                              </div>
+                            )}
+                            {bposGes.length > 0 && (
+                              <div class="ub-bcol">
+                                <h5 class="ub-bcol-dom ub-dom-ges">Gesellschaft</h5>
+                                {bposGes.map((p) => (
+                                  p.levels ? (
+                                    <div class="ub-bpos" x-data="{ o: false }">
+                                      <button type="button" class="ub-bpos-hd" @click="o = !o" :aria-expanded="o">
+                                        <span class="ub-bpos-chev"><span x-show="!o">▸</span><span x-show="o" x-cloak>▾</span></span>
+                                        <span class="ub-bpos-mark ub-mark-ges"></span>
+                                        <span class="ub-bpos-txt">{p.position}</span>
+                                      </button>
+                                      <div class="ub-bpos-levels" x-show="o" x-collapse x-cloak>
+                                        {p.levels.map((lv, i) => (
+                                          <div class="ub-rubrik-lvl">
+                                            <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
+                                            <span>{lv}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <div class="ub-bpos ub-bpos-static">
+                                      <span class="ub-bpos-mark ub-mark-ges"></span>
+                                      <span class="ub-bpos-txt">{p.position}</span>
+                                    </div>
+                                  )
+                                ))}
+                              </div>
+                            )}
                           </div>
-                        </section>
+                        </div>
                       )}
-                    </div>
+
+                      {showRasterFallback && (
+                        <div class="ub-assess-sec">
+                          <h4>Kompetenzraster <span class="ub-hint"> · Position anklicken → Niveaustufen</span></h4>
+                          <div class="ub-grid ub-grid-tight">
+                            {rubrik.suk.length > 0 && (
+                              <div class="ub-bcol">
+                                <h5 class="ub-bcol-dom ub-dom-suk">Sprache und Kommunikation</h5>
+                                {rubrik.suk.map((p) => (
+                                  <div class="ub-bpos" x-data="{ o: false }">
+                                    <button type="button" class="ub-bpos-hd" @click="o = !o" :aria-expanded="o">
+                                      <span class="ub-bpos-chev"><span x-show="!o">▸</span><span x-show="o" x-cloak>▾</span></span>
+                                      <span class="ub-bpos-mark ub-mark-suk"></span>
+                                      <span class="ub-bpos-txt">{p.position}</span>
+                                    </button>
+                                    <div class="ub-bpos-levels" x-show="o" x-collapse x-cloak>
+                                      {p.levels.map((lv, i) => (
+                                        <div class="ub-rubrik-lvl">
+                                          <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
+                                          <span>{lv}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {rubrik.ges.length > 0 && (
+                              <div class="ub-bcol">
+                                <h5 class="ub-bcol-dom ub-dom-ges">Gesellschaft</h5>
+                                {rubrik.ges.map((p) => (
+                                  <div class="ub-bpos" x-data="{ o: false }">
+                                    <button type="button" class="ub-bpos-hd" @click="o = !o" :aria-expanded="o">
+                                      <span class="ub-bpos-chev"><span x-show="!o">▸</span><span x-show="o" x-cloak>▾</span></span>
+                                      <span class="ub-bpos-mark ub-mark-ges"></span>
+                                      <span class="ub-bpos-txt">{p.position}</span>
+                                    </button>
+                                    <div class="ub-bpos-levels" x-show="o" x-collapse x-cloak>
+                                      {p.levels.map((lv, i) => (
+                                        <div class="ub-rubrik-lvl">
+                                          <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
+                                          <span>{lv}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </section>
                   )}
 
-                  <!-- Kompetenzraster: Karte pro Bewertungsposition mit 4 Niveaustufen -->
-                  {hasRubrik && (
-                    <section class="ub-block ub-raster-block">
-                      <h4>Kompetenzraster</h4>
-                      <div class="ub-grid">
-                        {rubrik.suk.length > 0 && (
-                          <div class="ub-rubrik-col">
-                            <h5 class="ub-rubrik-domain">Sprache und Kommunikation</h5>
-                            {rubrik.suk.map((p) => (
-                              <div class="ub-rubrik">
-                                <div class="ub-rubrik-pos">{p.position}</div>
-                                <div class="ub-rubrik-levels">
-                                  {p.levels.map((lv, i) => (
-                                    <div class="ub-rubrik-lvl">
-                                      <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
-                                      <span>{lv}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {rubrik.ges.length > 0 && (
-                          <div class="ub-rubrik-col">
-                            <h5 class="ub-rubrik-domain">Gesellschaft</h5>
-                            {rubrik.ges.map((p) => (
-                              <div class="ub-rubrik">
-                                <div class="ub-rubrik-pos">{p.position}</div>
-                                <div class="ub-rubrik-levels">
-                                  {p.levels.map((lv, i) => (
-                                    <div class="ub-rubrik-lvl">
-                                      <span class="ub-lvl-badge" data-lvl={String(i)}>{i}</span>
-                                      <span>{lv}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                  <!-- TIER 3 — Orientierung (Kontext, zurückgenommen, standardmäßig eingeklappt) -->
+                  {hasOrient && (
+                    <section class="ub-orient" x-data="{ o: false }">
+                      <button type="button" class="ub-orient-tog" @click="o = !o" :aria-expanded="o">
+                        <span class="ub-orient-chev"><span x-show="!o">▸</span><span x-show="o" x-cloak>▾</span></span>
+                        Orientierung
+                        <span class="ub-orient-sub">· Gesellschaft · Schlüsselkompetenzen · Scaffolds</span>
+                      </button>
+                      <div class="ub-orient-body" x-show="o" x-collapse x-cloak>
+                        <div class="ub-orient-grid">
+                          {e.gesellschaftliche_inhalte.length > 0 && (
+                            <div class="ub-orient-card">
+                              <h4>Gesellschaftliche Inhalte</h4>
+                              {e.gesellschaftliche_inhalte.map((m) => (
+                                <p class="ub-orient-item">
+                                  {m.bereich && <b>{m.bereich}</b>}
+                                  {m.text}
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                          {e.schluesselkompetenzen.length > 0 && (
+                            <div class="ub-orient-card">
+                              <h4>Schlüsselkompetenzen</h4>
+                              {e.schluesselkompetenzen.map((k) => <p class="ub-orient-item">{k}</p>)}
+                            </div>
+                          )}
+                          {e.scaffolds.length > 0 && (
+                            <div class="ub-orient-card">
+                              <h4>Scaffolds</h4>
+                              {e.scaffolds.map((m) => (
+                                <p class="ub-orient-item">
+                                  {m.bereich && <b>{m.bereich}</b>}
+                                  {m.text}
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </section>
                   )}
@@ -418,13 +507,42 @@ const total = entries.length
     .ub-chip-b { display: block; font-weight: 700; color: #0f172a; margin-bottom: 0.1rem; }
     .ub-chip-suk { border-left-color: #0ea5e9; }
     .ub-chip-ges { border-left-color: #8b5cf6; }
-    /* Kompetenzraster cards */
-    .ub-raster-block { margin-bottom: 0; }
-    .ub-rubrik-col { min-width: 0; }
-    .ub-rubrik-domain { font-size: 0.8rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid var(--brand-tint); }
-    .ub-rubrik { border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.55rem 0.65rem; margin-bottom: 0.6rem; background: white; }
-    .ub-rubrik-pos { font-size: 0.8rem; font-weight: 700; color: #0f172a; margin-bottom: 0.45rem; line-height: 1.35; }
-    .ub-rubrik-levels { display: flex; flex-direction: column; gap: 0.35rem; }
+    /* TIER 2 — Prüfen & Bewerten (gewichteter, gerahmter Block) */
+    .ub-assess { border: 1px solid #cbd5e1; border-radius: 0.6rem; background: #fafcfb; margin-bottom: 1.1rem; overflow: hidden; }
+    .ub-assess-hd { display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.85rem; border-bottom: 1px solid #e2e8f0; background: var(--brand-tint); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand-dark); }
+    .ub-assess-ic { color: var(--brand); font-size: 0.9rem; line-height: 1; }
+    .ub-assess-sec { padding: 0.75rem 0.85rem; }
+    .ub-assess-sec + .ub-assess-sec { border-top: 1px dashed #e2e8f0; }
+    .ub-hint { font-weight: 500; text-transform: none; letter-spacing: 0; color: #94a3b8; }
+    .ub-bcol { min-width: 0; }
+    .ub-bcol-dom { font-size: 0.74rem; font-weight: 700; margin-bottom: 0.4rem; padding-bottom: 0.2rem; border-bottom: 2px solid; }
+    .ub-dom-suk { color: #0369a1; border-color: #bae6fd; }
+    .ub-dom-ges { color: #6d28d9; border-color: #ddd6fe; }
+    .ub-bpos { border: 1px solid #e2e8f0; border-radius: 0.4rem; margin-bottom: 0.4rem; background: white; overflow: hidden; }
+    .ub-bpos-hd { display: grid; grid-template-columns: 0.9rem 0.25rem 1fr; gap: 0.45rem; align-items: center; width: 100%; text-align: left; padding: 0.45rem 0.55rem; background: white; cursor: pointer; border: 0; }
+    .ub-bpos-hd:hover { background: #f8fafc; }
+    .ub-bpos-chev { color: #94a3b8; font-size: 0.7rem; line-height: 1; }
+    .ub-bpos-mark { width: 0.25rem; height: 0.9rem; border-radius: 2px; }
+    .ub-mark-suk { background: #0ea5e9; }
+    .ub-mark-ges { background: #8b5cf6; }
+    .ub-bpos-txt { font-size: 0.82rem; font-weight: 600; color: #0f172a; line-height: 1.35; }
+    .ub-bpos-static { display: grid; grid-template-columns: 0.25rem 1fr; gap: 0.45rem; align-items: center; padding: 0.45rem 0.55rem; }
+    .ub-bpos-levels { padding: 0.2rem 0.6rem 0.55rem 1.6rem; display: flex; flex-direction: column; gap: 0.3rem; border-top: 1px dashed #eef2f6; }
+    /* TIER 3 — Orientierung (zurückgenommener Kontext) */
+    .ub-orient { margin-top: 0.25rem; }
+    .ub-orient-tog { display: flex; align-items: center; gap: 0.4rem; width: 100%; text-align: left; background: none; border: 0; cursor: pointer; padding: 0.25rem 0; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: #94a3b8; }
+    .ub-orient-tog:hover { color: #64748b; }
+    .ub-orient-chev { font-size: 0.7rem; line-height: 1; }
+    .ub-orient-sub { font-weight: 500; text-transform: none; letter-spacing: 0; color: #cbd5e1; }
+    .ub-orient-body { margin-top: 0.6rem; }
+    .ub-orient-grid { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+    @media (min-width: 768px) { .ub-orient-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .ub-orient-card { background: #f8fafc; border: 1px solid #eef2f6; border-radius: 0.5rem; padding: 0.55rem 0.7rem; min-width: 0; }
+    .ub-orient-card h4 { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: #94a3b8; margin-bottom: 0.35rem; }
+    .ub-orient-item { font-size: 0.8rem; line-height: 1.4; color: #475569; margin-bottom: 0.3rem; }
+    .ub-orient-item:last-child { margin-bottom: 0; }
+    .ub-orient-item b { display: block; font-weight: 600; color: #334155; font-size: 0.74rem; }
+    /* Kompetenzraster-Stufen (inline, in Bewertungsposition) */
     .ub-rubrik-lvl { display: grid; grid-template-columns: 1.3rem 1fr; gap: 0.5rem; align-items: start; font-size: 0.76rem; line-height: 1.4; color: #334155; }
     .ub-lvl-badge { display: inline-flex; align-items: center; justify-content: center; width: 1.3rem; height: 1.3rem; border-radius: 0.3rem; font-size: 0.7rem; font-weight: 700; color: white; }
     .ub-lvl-badge[data-lvl="0"] { background: #ef4444; }
