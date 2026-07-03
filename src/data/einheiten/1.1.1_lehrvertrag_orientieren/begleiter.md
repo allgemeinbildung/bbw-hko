@@ -138,7 +138,7 @@ quellen_json:
 | Aspekte | Recht (R1); Identität und Sozialisation (R1) |
 | Sprachmodi | Lesen und Verstehen (SM3, Schwerpunkt); Digital zusammenarbeiten (SM9) |
 | Schlüsselkompetenzen | SK1, SK7, SK11 |
-| Handlungsprodukt | Gegliederte Vertrags-Übersicht (Tabelle, eine A4-Seite) |
+| Handlungsprodukt | Gegliederte Vertragsübersicht (Tabelle, eine A4-Seite) |
 | Wissensknoten | lehrvertrag, vertragsaufbau |
 
 > "Ich bin Malerpraktiker/in EBA im 1. Lehrjahr. Ich arbeite im Malergeschäft Frei AG in Olten. Heute nehme ich meinen Lehrvertrag hervor. Er ist ein Formular mit vielen Feldern, Verweisen und Fachbegriffen. Er wirkt kompliziert. Ich habe ihn unterschrieben. Aber ich weiss nicht genau, was drinsteht. Muss ich jetzt alles Wort für Wort lesen? Oder finde ich einen besseren Weg?"
@@ -171,7 +171,7 @@ quellen_json:
   > Schreib die Filterfrage an die Tafel: „Was betrifft mich schon diesen Monat?" Die Begründung in einem Satz genügt — Satzanfang: „Für mich ist … wichtig, weil …".
   > [!troubleshooting] Herausforderung A — „Alles ist wichtig": die Person will das ganze Formular Wort für Wort lesen
   > Häufigste Blockade bei LF3: Die Auswahl fällt schwer, alles scheint gleich wichtig — die Person liest sich fest. Nicht erklären. Frag zurück: **„Welche drei Punkte betreffen Sie schon diesen Monat?"** Danach weiter: Die Person markiert genau drei Punkte und begründet je in einem Satz. Der Rest bleibt in der Übersicht — er ist nicht weg, nur später dran.
-- **LF4 (K3 — entscheiden, Sprachform-Teilaufgabe):** „Ein Feld bleibt unklar. Formulieren Sie dazu eine kurze, klare Frage an Ihre/n Berufsbildner/in."
+- **LF4 (K3 — entscheiden, Sprachform-Teilaufgabe):** „Ein Feld bleibt unklar? Formulieren Sie dazu eine kurze, klare Frage an Ihre/n Berufsbildner/in. Ist für Sie alles klar? Dann überlegen Sie: Bei welchem Feld könnten andere Lernende Fragen haben? Formulieren Sie eine Beispielfrage."
   > [!coaching] LF4
   > Hier wird der Trade-off konkret: Erst prüfen die Lernenden, ob das Feld mit Dossier und Glossar selbst zu klären ist. Nur echte Restfragen werden formuliert. Kriterium für die Frage: nennt das Feld + sagt, was man wissen will.
 
@@ -284,7 +284,7 @@ Reflexion
 
 **Leitfragen mit Coaching**
 
-- **LF1 (K2 — Fall ordnen):** „Ordnen Sie Ihren Fall: Was ist passiert? Seit wann? Was war abgemacht? Füllen Sie die Fakten-Tabelle aus."
+- **LF1 (K2 — Fall ordnen):** „Erstellen Sie eine Fakten-Tabelle mit zwei Spalten (Fakten / Gefühle). Ordnen Sie Ihren Fall: Was ist passiert? Seit wann? Was war abgemacht?"
   > [!coaching] LF1
   > Fakten-Tabelle aus Info-Karte B-01 austeilen. Trenne an der Tafel zwei Spalten: Fakt / Gefühl. „Ich fühle mich ungerecht behandelt" gehört in die Gefühls-Spalte — sie darf sein, kommt aber nicht in die Nachricht zuerst.
 - **LF2 (K2 — nachschlagen):** „Suchen Sie in Ihrer Vertrags-Übersicht und Ihren Unterlagen: Welche Stelle passt zu Ihrem Fall?"
@@ -292,12 +292,12 @@ Reflexion
   > Vertrags-Übersicht aus Herausforderung A hervornehmen lassen (wer keine hat: Muster-Übersicht). Fundort notieren lassen — im Gespräch können sie dann darauf zeigen.
   > [!warnung] Typischer Stolperstein
   > Lernende suchen „die eine Zeile, die alles löst". Die gibt es nicht: Es geht um den passenden Abschnitt (Aufgaben/Ausbildung) plus den Bildungsplan (Info-Karte B-02).
-- **LF3 (K3 — Weg wählen):** „Vergleichen Sie die zwei Wege: selbst ansprechen oder Kontaktstelle. Wählen Sie einen Weg und begründen Sie kurz."
+- **LF3 (K3 — Weg wählen):** „Vergleichen Sie die zwei Wege: selbst ansprechen oder Kontaktstelle aufsuchen. Wählen Sie einen Weg und begründen Sie kurz."
   > [!coaching] LF3
   > Die zwei Wege aus Info-Karte B-03 nebeneinander an die Tafel. Beide sind legitim — verlange zwei Fakten aus der Tabelle als Begründung.
   > [!troubleshooting] Herausforderung B — will sofort „ans Amt" oder traut sich gar nichts
   > Häufigste Blockade bei LF3: Die Weg-Wahl kippt in ein Extrem — sofort Hilfe von aussen holen oder lieber schweigen und aushalten. Nicht korrigieren. Frag zurück: **„Haben Sie es schon ruhig im Betrieb angesprochen?"** Danach weiter: Die Person begründet ihren Weg mit zwei Fakten aus der Tabelle. Beide Wege bleiben erlaubt — bewertet wird die Begründung, nicht die Wahl.
-- **LF4 (K3 — Nachricht beginnen, Sprachform-Teilaufgabe):** „Schreiben Sie den ersten Teil Ihrer digitalen Nachricht: Anrede und zwei Sätze zu den Fakten."
+- **LF4 (K3 — Nachricht beginnen, Sprachform-Teilaufgabe):** „Beginnen Sie Ihre digitale Nachricht: Anrede und zwei Sätze zu den Fakten."
   > [!coaching] LF4
   > Satzanfänge aus dem SM9-Scaffold anbieten. Nur der Anfang wird hier trainiert — der Rest entsteht im Handlungsprodukt.
   > [!warnung] Typischer Stolperstein

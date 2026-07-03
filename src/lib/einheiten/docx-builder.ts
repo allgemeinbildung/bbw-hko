@@ -736,7 +736,7 @@ export function buildAustausch({ set, sits = [], abteilung, logoPng = null }: Bu
   // Transfer is a template-constant set task → generic writing scaffold + self-check (mirrors DocAustausch.tsx).
   const TRANSFER_SATZANFAENGE = [
     '«Das gemeinsame Prinzip meiner drei Herausforderungen ist …»',
-    '«Ein neuer Kontext, in dem dasselbe Prinzip gilt, ist …»',
+    '«Eine neue Situation, in der dasselbe Prinzip gilt, ist …»',
     '«Dort zeigt es sich konkret so: …»',
     '«Wie in Herausforderung … muss ich auch hier …»',
   ]

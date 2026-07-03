@@ -16,7 +16,7 @@ export interface DocAustauschProps {
 // Transfer is a template-constant set task → generic writing scaffold + self-check.
 const TRANSFER_SATZANFAENGE = [
   '«Das gemeinsame Prinzip meiner Herausforderungen ist …»',
-  '«Ein neuer Kontext, in dem dasselbe Prinzip gilt, ist …»',
+  '«Eine neue Situation, in der dasselbe Prinzip gilt, ist …»',
   '«Dort zeigt es sich konkret so: …»',
   '«Wie in Herausforderung … muss ich auch hier …»',
 ]
