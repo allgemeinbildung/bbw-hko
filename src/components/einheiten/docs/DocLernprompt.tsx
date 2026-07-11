@@ -7,6 +7,12 @@ import type { LernpromptJson, LernpromptTechnik, LernpromptStacking } from '../.
 // Stacking-Beispiele page (stacking_seite_1 after the first block,
 // stacking_seite_2 after the second). Accent #3B6FD4 as a local constant only.
 // renderToStaticMarkup-safe.
+//
+// Layout (ported from the improved hko-deploy ki_lernprompt template):
+//  - the two Technik-Karten sit side by side in a 2-column grid (was a stack);
+//    the grid's default align stretch keeps both columns equal height
+//  - prose (title/erklaerung/thema-bezug/prompts/warnung/chips) ~+15%; the
+//    small all-caps eyebrow labels and the number badge stay unchanged.
 
 const LP_AKZENT = '#3B6FD4'
 const LP_LIGHT = '#E8F0FE'
@@ -26,17 +32,17 @@ const microLabel = {
 const promptBox = {
   background: '#f5f7fa', border: '1px solid #d8dde4', borderRadius: '1mm',
   padding: '1.5mm 2.2mm', margin: '0.5mm 0', fontFamily: "'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace",
-  fontSize: '8.2pt', lineHeight: 1.32, color: '#2a2f36', whiteSpace: 'pre-wrap',
+  fontSize: '8.6pt', lineHeight: 1.3, color: '#2a2f36', whiteSpace: 'pre-wrap',
 } as const
 
 const warnBox = {
   background: '#fff7ed', borderLeft: '3px solid #d97706',
   padding: '1.1mm 2.2mm', borderRadius: '1mm', margin: '1mm 0',
-  fontSize: '8pt', lineHeight: 1.28, color: '#7c4a03',
+  fontSize: '8.4pt', lineHeight: 1.26, color: '#7c4a03',
 } as const
 
 const chip = {
-  display: 'inline-block', fontSize: '7.5pt', background: LP_LIGHT, color: LP_DARK,
+  display: 'inline-block', fontSize: '7.9pt', background: LP_LIGHT, color: LP_DARK,
   padding: '0.4mm 1.8mm', borderRadius: '3mm', fontWeight: 500, margin: '0 1mm 0.6mm 0',
 } as const
 
@@ -44,7 +50,7 @@ function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
   const bk = t.baukasten
   return (
     <div style={{
-      border: '1px solid #d8dde4', borderRadius: '1.5mm', overflow: 'hidden', marginBottom: '2mm', breakInside: 'avoid',
+      border: '1px solid #d8dde4', borderRadius: '1.5mm', overflow: 'hidden', breakInside: 'avoid',
     }}>
       <div style={{ background: LP_LIGHT, borderBottom: '1px solid #d8dde4', padding: '1.2mm 3mm', display: 'flex', alignItems: 'center', gap: '2.5mm' }}>
         <span style={{
@@ -52,19 +58,15 @@ function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
           width: '5.5mm', height: '5.5mm', borderRadius: '50%', background: LP_AKZENT,
           color: '#fff', fontWeight: 700, fontSize: '9pt', flexShrink: 0,
         }}>{index}</span>
-        <span style={{ fontSize: '11pt', fontWeight: 700, color: LP_DARK, lineHeight: 1.1 }}>{t.titel}</span>
+        <span style={{ fontSize: '11.5pt', fontWeight: 700, color: LP_DARK, lineHeight: 1.1 }}>{t.titel}</span>
       </div>
       <div style={{ padding: '1.8mm 3mm' }}>
-        {t.erklaerung && <p style={{ margin: '0 0 1.1mm', fontSize: '9pt', lineHeight: 1.34 }}>{t.erklaerung}</p>}
+        {t.erklaerung && <p style={{ margin: '0 0 1.1mm', fontSize: '9.4pt', lineHeight: 1.32 }}>{t.erklaerung}</p>}
         {t.thema_bezug && (
-          <p style={{ margin: '0 0 1.1mm', fontSize: '8.6pt', lineHeight: 1.3, color: '#3a4049', fontStyle: 'italic' }}>{t.thema_bezug}</p>
+          <p style={{ margin: '0 0 1.1mm', fontSize: '9pt', lineHeight: 1.28, color: '#3a4049', fontStyle: 'italic' }}>{t.thema_bezug}</p>
         )}
         {(t.beispiel_basis || t.beispiel_fortgeschritten) && (
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: t.beispiel_basis && t.beispiel_fortgeschritten ? '40fr 60fr' : '1fr',
-            gap: '0 3mm', alignItems: 'start',
-          }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.6mm 0', alignItems: 'start' }}>
             {t.beispiel_basis && (
               <div>
                 <div style={microLabel}>Beispiel · Basis</div>
@@ -109,7 +111,7 @@ function StackingPage({ s, vorlage }: { s: LernpromptStacking; vorlage?: string 
         </div>
       ) : null}
       {s.logik_und_ziel && (
-        <p style={{ margin: '0 0 2mm', fontSize: '9.5pt', lineHeight: 1.42, color: '#3a4049' }}>{s.logik_und_ziel}</p>
+        <p style={{ margin: '0 0 2mm', fontSize: '10pt', lineHeight: 1.42, color: '#3a4049' }}>{s.logik_und_ziel}</p>
       )}
       {s.prompt_1 && (<><div style={microLabel}>Prompt 1 — Grundlage schaffen</div><div style={promptBox}>{s.prompt_1}</div></>)}
       {s.prompt_2 && (<><div style={microLabel}>Prompt 2 — darauf aufbauen</div><div style={promptBox}>{s.prompt_2}</div></>)}
@@ -119,6 +121,16 @@ function StackingPage({ s, vorlage }: { s: LernpromptStacking; vorlage?: string 
           padding: '2.5mm 3mm', fontSize: '9.5pt', textAlign: 'center', fontWeight: 600,
         }}>{vorlage}</div>
       )}
+      {/* Freies Schreibfeld — füllt den Rest der Seite. Kein Label, kein Hinweis:
+          Platz, falls die/der Lernende einen eigenen Prompt notieren möchte.
+          `.feld` liefert die Schreiblinien (Druck: siehe einheiten-renderer.css). */}
+      <div
+        className="feld"
+        style={{ flex: 1, minHeight: '15mm', marginTop: '3mm' }}
+        contentEditable
+        suppressContentEditableWarning
+        spellCheck={false}
+      />
     </>
   )
 }
@@ -173,7 +185,10 @@ export function DocLernprompt({ lernprompt, abteilung }: DocLernpromptProps) {
           {bi === 0
             ? <PageHeader titel="Prompting lernen" kontext={lp.thema_kontext} />
             : <PageHeader titel="Prompting — weitere Techniken" />}
-          {blk.cards.map((t, i) => <TechnikKarte key={i} t={t} index={bi * 2 + i + 1} />)}
+          {/* 2-column grid; default align stretch keeps both columns equal height. */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3mm', alignItems: 'stretch' }}>
+            {blk.cards.map((t, i) => <TechnikKarte key={i} t={t} index={bi * 2 + i + 1} />)}
+          </div>
         </>
       ),
     })
