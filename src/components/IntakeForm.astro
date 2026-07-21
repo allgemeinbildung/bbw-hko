@@ -19,7 +19,7 @@ const isEdit = !!materialId
   <div
     x-show="toast.show"
     x-transition
-    class="fixed top-20 right-6 z-30 text-white px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium"
+    class="fixed top-20 right-6 z-30 max-w-sm text-white px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium leading-snug"
     :class="toast.error ? 'bg-red-600' : 'bg-emerald-600'"
     x-text="toast.msg"
   ></div>
@@ -927,7 +927,7 @@ function intakeForm(materialId) {
 
         if (!res.ok) {
           const body = await res.json().catch(() => ({}))
-          this.showToast(body.error || 'Fehler beim Speichern (' + res.status + ').', true)
+          this.showToast(this.describeSaveError(res.status, body.error), true, 8000)
           return
         }
 
@@ -956,10 +956,26 @@ function intakeForm(materialId) {
           this.showToast('Material gespeichert, aber der Upload ist fehlgeschlagen. Bitte über «Bearbeiten» erneut versuchen.', true)
         }
       } catch (e) {
-        this.showToast('Netzwerkfehler: ' + e.message, true)
+        this.showToast('Keine Verbindung zum Server — bitte Internetverbindung prüfen und erneut auf «Material teilen» klicken. Deine Eingaben bleiben erhalten. (' + e.message + ')', true, 8000)
       } finally {
         this.submitting = false
       }
+    },
+
+    // Übersetzt einen Server-Fehler in eine Meldung, die klarstellt, dass es ein
+    // technisches Problem ist — NICHT eine fehlende oder falsche Eingabe der Lehrperson.
+    describeSaveError(status, serverMsg) {
+      const raw = (serverMsg || '').toString()
+      // Fehlende DB-Spalte / Schema-Cache (z. B. nicht angewandte Migration)
+      if (/schema cache|column .* does not exist|find the '.*' column/i.test(raw)) {
+        return 'Technischer Fehler auf dem Server (Datenbank ist nicht aktuell) — nicht deine Eingaben. Bitte pietro.rossi@bbw.ch melden. Deine Angaben bleiben im Formular erhalten.'
+      }
+      if (status === 401) return 'Deine Sitzung ist abgelaufen. Bitte neu anmelden und erneut speichern.'
+      if (status === 413) return 'Die Anfrage war zu gross. Bitte einige Zusatzmaterialien entfernen und erneut versuchen.'
+      if (status >= 500) return 'Der Server hat einen Fehler gemeldet (nicht deine Eingaben). Bitte in ein paar Minuten erneut versuchen oder pietro.rossi@bbw.ch melden.'
+      // 4xx mit konkreter Server-Meldung: anzeigen, aber als System-Hinweis kennzeichnen
+      if (raw) return 'Speichern fehlgeschlagen: ' + raw + ' — falls das kein Eingabefeld betrifft, bitte pietro.rossi@bbw.ch melden.'
+      return 'Speichern fehlgeschlagen (Code ' + status + '). Deine Eingaben bleiben erhalten — bitte erneut versuchen oder pietro.rossi@bbw.ch melden.'
     },
 
     resetForm() {
@@ -968,9 +984,9 @@ function intakeForm(materialId) {
       this.newFiles = []
     },
 
-    showToast(msg, error = false) {
+    showToast(msg, error = false, duration = 3500) {
       this.toast = { show: true, msg, error }
-      setTimeout(() => { this.toast.show = false }, 3500)
+      setTimeout(() => { this.toast.show = false }, duration)
     },
   }
 }

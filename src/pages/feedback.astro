@@ -14,6 +14,13 @@ const role: Role = access.role === 'kt1' ? 'kt1' : 'lp'
 const units = visibleEinheiten(einheitenIndex, role)
   .slice()
   .sort((a, b) => a.id.localeCompare(b.id, 'de'))
+
+// Nach Lehrgang gruppieren (EFZ_3J / EFZ_4J → EFZ · EBA_2J → EBA), damit die
+// Lehrperson zuerst ihren Bildungsgang sieht. Slug/Dateiname wird nicht angezeigt.
+const gruppen = [
+  { label: 'EFZ', items: units.filter((e) => (e.lehrgang ?? '').startsWith('EFZ')) },
+  { label: 'EBA', items: units.filter((e) => (e.lehrgang ?? '').startsWith('EBA')) },
+].filter((g) => g.items.length > 0)
 ---
 <LP title="Feedback / Material einreichen">
   <div class="max-w-3xl mx-auto">
@@ -39,8 +46,12 @@ const units = visibleEinheiten(einheitenIndex, role)
         <span class="field-label block mb-1">Welche Einheit hast du unterrichtet?</span>
         <select id="einheit-select" class="input">
           <option value="">— Einheit wählen —</option>
-          {units.map((e) => (
-            <option value={e.id}>{e.einheit_titel ? `${e.einheit_titel} · ${e.id}` : e.id}</option>
+          {gruppen.map((g) => (
+            <optgroup label={g.label}>
+              {g.items.map((e) => (
+                <option value={e.id}>{e.einheit_titel || e.id}</option>
+              ))}
+            </optgroup>
           ))}
         </select>
       </div>
