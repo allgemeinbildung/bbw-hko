@@ -64,6 +64,33 @@ vollständig generiert.
 > `grid-template-rows: 1fr` nur die erste Zeile auf, und der «Vertiefung»-Hinweis bliebe
 > als eigene auto-Zeile sichtbar stehen.
 
+### Musterlösung und Vorwissens-Check
+
+Zwei optionale Felder. Fehlen sie, entfällt die jeweilige Folie — alles andere bleibt gleich.
+
+| Feld | Wo | Folie |
+|---|---|---|
+| `handlungsprodukt.musterloesung` | Herausforderung | letzte Unterfolie: ein **ausgefülltes** Produkt auf Stufe 3–4 |
+| `set.vorwissen_check` | Set | Hauptlinie nach der Übersicht |
+
+Die Musterlösung ist ein **Akkordeon**: immer nur ein Abschnitt offen, per Klick oder
+Leertaste. Das ist kein Stilentscheid — vollständig aufgeklappt läuft eine komplette
+Musterlösung unten aus der Folie (`check` meldet `canvas_overflow`). Faustregel für neue
+Inhalte: **max. ~900 Zeichen Text pro Abschnitt**. Die Mindmap bleibt bewusst
+mehrfach-offen; beide Verhalten teilen sich die `.reveal`-Mechanik.
+
+Die HyperFrames-Kopie klappt genau den **längsten** Abschnitt auf, damit `check` den
+realistischen Worst Case misst statt eines Zustands, den niemand sieht.
+
+`musterloesung.hinweis` steht **nur in den Referentennotizen** — er richtet sich an die
+Lehrperson und gehört nicht auf die Folie.
+
+Beim Vorwissens-Check sieht die Klasse nur die Fragen; Erwartungshorizont und
+«wenn unsicher»-Verweis liegen in den Notizen.
+
+Spezifikation für neue Einheiten: `.claude/skills/bbw-hko-3er-set/` →
+`references/json-field-mapping.md` (C7) und Check 30 in `coherence-checklist.md`.
+
 ### Farben
 
 `sit_farbe` / `sit_farbe_light` aus den Herausforderungs-JSONs, pro Folie als
