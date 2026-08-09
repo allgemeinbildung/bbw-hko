@@ -652,7 +652,7 @@ Kurzer Austausch in Kleingruppen über die jeweils gemachten Herausforderungen, 
 
 Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden heisst der Auftrag **Transfer**. Das ist die Phase, die R1 überhaupt nach R2/R3 trägt. Hier wird das Wissen vom konkreten KN-Fall gelöst.
 
-**Auftrag (Set):** Übertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewählten Kontext, in dem du KI für Lernen oder Arbeit einsetzt. Schriftlich, **5-7 Sätze**, Fachbegriffe (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) verwenden. Abgabe vor dem KN.
+**Auftrag (Set):** Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext, in dem Sie KI für Lernen oder Arbeit einsetzen. Schriftlich, **5-7 Sätze**, Fachbegriffe (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) verwenden. Abgabe vor dem KN.
 
 **Der Anker-Satz** (gehört an die Tafel, nachdem die Klasse ihn selbst erarbeitet hat — nicht vorher vorgeben):
 

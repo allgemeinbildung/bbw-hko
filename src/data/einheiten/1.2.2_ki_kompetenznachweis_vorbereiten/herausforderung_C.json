@@ -67,34 +67,34 @@
     }
   ],
   "leitfrage": "Wo lasse ich die KI für mich arbeiten — und wo muss ich bewusst ohne sie üben, damit ich es im KN selbst kann?",
-  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Du arbeitest ohne Lehrmittel — deine Grundlagen sind dein eigener kommender Kompetenznachweis, die KI-Tools und deine Erfahrungen aus den Herausforderungen A und B.",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie arbeiten ohne Lehrmittel — Ihre Grundlagen sind Ihr eigener kommender Kompetenznachweis, die KI-Tools und Ihre Erfahrungen aus den Herausforderungen A und B.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "eigener KN | Erfahrung A/B",
-      "text": "Was unterscheidet «sich vorbereitet fühlen» von «wirklich vorbereitet sein»? Erkläre in drei bis vier Sätzen, warum Selbstwirksamkeit — das Vertrauen, etwas selbst zu können — nur durch eigenes Üben entsteht und nicht dadurch, dass die KI es für mich erledigt.",
+      "text": "Was unterscheidet «sich vorbereitet fühlen» von «wirklich vorbereitet sein»? Erklären Sie in drei bis vier Sätzen, warum Selbstwirksamkeit — das Vertrauen, etwas selbst zu können — nur durch eigenes Üben entsteht und nicht dadurch, dass die KI es für Sie erledigt.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "eigener KN | KI-Tool",
-      "text": "Teile dein KN-Thema in Lernschritte auf und ordne jedem Schritt zu, ob die KI dort sinnvoll hilft (z. B. Lernkarten erzeugen, Quiz stellen) oder ob du bewusst ohne sie übst (z. B. frei erklären, selbst zusammenfassen). Nutze die KI dabei aktiv als Lernpartnerin.",
+      "text": "Teilen Sie Ihr KN-Thema in Lernschritte auf und ordnen Sie jedem Schritt zu, ob die KI dort sinnvoll hilft (z. B. Lernkarten erzeugen, Quiz stellen) oder ob Sie bewusst ohne sie üben (z. B. frei erklären, selbst zusammenfassen). Nutzen Sie die KI dabei aktiv als Lernpartnerin.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Lernplan | eigene Ziele",
-      "text": "Entscheide für jeden Lernschritt begründet: KI-Hilfe oder bewusst ohne. Setze dir pro Schritt ein konkretes Ziel («Ich kann die fünf HACCP-Schritte frei aufzählen») und begründe, warum dein Weg dorthin mit oder ohne KI führt.",
+      "text": "Entscheiden Sie für jeden Lernschritt begründet: KI-Hilfe oder bewusst ohne. Setzen Sie sich pro Schritt ein konkretes Ziel («Ich kann die fünf HACCP-Schritte frei aufzählen») und begründen Sie, warum Ihr Weg dorthin mit oder ohne KI führt.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "KI-Tool | Lernplan",
-      "text": "Formuliere drei gezielte Prompts, mit denen die KI dich beim Üben unterstützt, statt dir die Arbeit abzunehmen — etwa indem sie dich abfragt oder dir Feedback gibt. Schreibe sie so, dass du sie im Chat direkt einsetzen kannst.",
+      "text": "Formulieren Sie drei gezielte Prompts, mit denen die KI Sie beim Üben unterstützt, statt Ihnen die Arbeit abzunehmen — etwa indem sie Sie abfragt oder Ihnen Feedback gibt. Schreiben Sie sie so, dass Sie sie im Chat direkt einsetzen können.",
       "feld_hoehe_mm": 15
     }
   ],
@@ -144,31 +144,31 @@
     "abgaben": [
       "KI-Lernplan mit Lernschritten und je einem konkreten Ziel",
       "Pro Schritt begründete Entscheidung: mit KI / bewusst ohne",
-      "Drei Übe-Prompts, mit denen die KI dich abfragt statt für dich arbeitet"
+      "Drei Übe-Prompts, mit denen die KI Sie abfragt statt für Sie arbeitet"
     ],
     "titel": "Mein KI-Lernplan — wo die KI hilft und wo ich selbst durch muss",
-    "format_detail": "Ein ein- bis zweiseitiger persönlicher Lernplan: eine Tabelle mit Lernschritten zu deinem KN-Thema, je einem konkreten Lernziel und der begründeten Entscheidung «mit KI» oder «bewusst ohne KI», ergänzt um drei einsatzfertige Übe-Prompts.",
+    "format_detail": "Ein ein- bis zweiseitiger persönlicher Lernplan: eine Tabelle mit Lernschritten zu Ihrem KN-Thema, je einem konkreten Lernziel und der begründeten Entscheidung «mit KI» oder «bewusst ohne KI», ergänzt um drei einsatzfertige Übe-Prompts.",
     "beschreibung": "Ich baue meinen eigenen Lernplan für den nächsten KN und treffe für jeden Schritt eine bewusste Entscheidung, wo mir die KI hilft und wo ich bewusst ohne sie arbeite, um wirklich selbst zu können, was im KN zählt. Der Plan stützt sich auf das, was ich in Herausforderung A (gezielt prompten) und B (KI-Recherche prüfen) gelernt habe. Am Rande halte ich fest, dass ich die KI verantwortungsvoll nutze — als Hilfe, nicht als Ersatz für mein eigenes Können.",
     "schritte": [
       {
         "label": "Lernschritte festlegen",
-        "hint": "Teile dein KN-Thema in vier bis sechs überschaubare Lernschritte auf und schreibe sie in die linke Spalte deiner Lernplan-Tabelle."
+        "hint": "Teilen Sie Ihr KN-Thema in vier bis sechs überschaubare Lernschritte auf und schreiben Sie sie in die linke Spalte Ihrer Lernplan-Tabelle."
       },
       {
         "label": "Ziele setzen",
-        "hint": "Formuliere pro Schritt ein konkretes, überprüfbares Ziel («Ich kann … frei aufzählen / selbst erklären»)."
+        "hint": "Formulieren Sie pro Schritt ein konkretes, überprüfbares Ziel («Ich kann … frei aufzählen / selbst erklären»)."
       },
       {
         "label": "KI-Einsatz entscheiden",
-        "hint": "Markiere pro Schritt «mit KI» oder «bewusst ohne KI» und schreibe einen kurzen Grund (Mindmap-Äste 2 und 3)."
+        "hint": "Markieren Sie pro Schritt «mit KI» oder «bewusst ohne KI» und schreiben Sie einen kurzen Grund (Mindmap-Äste 2 und 3)."
       },
       {
         "label": "Übe-Prompts formulieren",
-        "hint": "Schreibe drei Prompts, mit denen die KI dich abfragt oder dir Feedback gibt, statt dir Inhalte fertig zu liefern."
+        "hint": "Schreiben Sie drei Prompts, mit denen die KI Sie abfragt oder Ihnen Feedback gibt, statt Ihnen Inhalte fertig zu liefern."
       },
       {
         "label": "Verantwortungs-Check",
-        "hint": "Prüfe am Schluss kurz: Lasse ich die KI irgendwo etwas erledigen, das ich im KN selbst können muss? Halte einen Satz dazu fest."
+        "hint": "Prüfen Sie am Schluss kurz: Lasse ich die KI irgendwo etwas erledigen, das ich im KN selbst können muss? Halten Sie einen Satz dazu fest."
       }
     ],
     "schreib_label": "KI-LERNPLAN HIER ERARBEITEN",
@@ -183,7 +183,7 @@
       "strategien": [
         "Erst Ziele setzen, dann entscheiden, welcher Weg dorthin führt",
         "KI für Wiederholung und Abfrage nutzen, eigenes Erklären selbst trainieren",
-        "Ehrlich prüfen, was du im KN ohne Hilfe können musst"
+        "Ehrlich prüfen, was Sie im KN ohne Hilfe können müssen"
       ],
       "struktur": [
         "Tabelle: Lernschritt – Ziel – mit/ohne KI – Begründung",
@@ -279,7 +279,7 @@
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Abkürzung nehmen vs. eigene Selbstwirksamkeit aufbauen",
-    "hint": "Beide Pole sind legitim: Die KI für sich arbeiten zu lassen ist bei knapper Zeit verlockend und manchmal genau richtig. Gleichzeitig sitzt du im KN allein da und musst es selbst können. Bewertet wird nicht, wie viel KI du nutzt, sondern ob du bewusst entscheidest, wo eine Abkürzung sinnvoll ist und wo du eigenes Können aufbauen musst."
+    "hint": "Beide Pole sind legitim: Die KI für sich arbeiten zu lassen ist bei knapper Zeit verlockend und manchmal genau richtig. Gleichzeitig sitzen Sie im KN allein da und müssen es selbst können. Bewertet wird nicht, wie viel KI Sie nutzen, sondern ob Sie bewusst entscheiden, wo eine Abkürzung sinnvoll ist und wo Sie eigenes Können aufbauen müssen."
   },
   "dekontextualisierung": {
     "frage": "Wie plane ich in einer anderen Lern- oder Arbeitssituation, wo mir die KI Arbeit abnehmen darf und wo ich selbst Können aufbauen muss?",

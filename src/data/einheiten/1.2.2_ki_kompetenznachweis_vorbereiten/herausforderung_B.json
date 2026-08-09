@@ -66,34 +66,34 @@
     }
   ],
   "leitfrage": "Wie prüfe ich, ob die Quellen einer KI-Recherche echt und verlässlich sind — bevor ich sie für meinen KN nutze?",
-  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Du arbeitest ohne Lehrmittel — deine Quellen sind die KI-Recherche selbst, dein eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle zum Gegenprüfen.",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie arbeiten ohne Lehrmittel — Ihre Quellen sind die KI-Recherche selbst, Ihr eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle zum Gegenprüfen.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "ohne Lehrmittel | KI-Tool",
-      "text": "Was bedeutet es, dass ein Sprachmodell «halluzinieren» kann? Erkläre in drei bis vier Sätzen, warum eine KI Quellen oder URLs erfinden kann, die echt aussehen, aber nicht existieren.",
+      "text": "Was bedeutet es, dass ein Sprachmodell «halluzinieren» kann? Erklären Sie in drei bis vier Sätzen, warum eine KI Quellen oder URLs erfinden kann, die echt aussehen, aber nicht existieren.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "KI-Recherche | eigene Prüfung",
-      "text": "Lass die KI zu deinem eigenen KN-Thema eine Recherche mit Quellen machen. Prüfe danach jede genannte Quelle nach drei Kriterien: Existiert der Link / die Quelle wirklich? Steht dort tatsächlich, was die KI behauptet? Ist die Quelle vertrauenswürdig (Herausgeber, Aktualität)?",
+      "text": "Lassen Sie die KI zu Ihrem eigenen KN-Thema eine Recherche mit Quellen machen. Prüfen Sie danach jede genannte Quelle nach drei Kriterien: Existiert der Link / die Quelle wirklich? Steht dort tatsächlich, was die KI behauptet? Ist die Quelle vertrauenswürdig (Herausgeber, Aktualität)?",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "KI-Recherche | eigene Prüfung",
-      "text": "Analysiere das Gesamtbild: Wie verlässlich ist diese KI-Recherche insgesamt? Vergleiche Verlässlichkeit (stimmen die Quellen?), Tiefe (bleibt es an der Oberfläche?) und Nachvollziehbarkeit (kannst du jede Aussage zurückverfolgen?). Begründe, welchen Teilen du vertraust und welchen nicht.",
+      "text": "Analysieren Sie das Gesamtbild: Wie verlässlich ist diese KI-Recherche insgesamt? Vergleichen Sie Verlässlichkeit (stimmen die Quellen?), Tiefe (bleibt es an der Oberfläche?) und Nachvollziehbarkeit (können Sie jede Aussage zurückverfolgen?). Begründen Sie, welchen Teilen Sie vertrauen und welchen nicht.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "eigene Prüfung | Notizen",
-      "text": "Schreibe für eine der geprüften Quellen einen kurzen Prüf-Eintrag von zwei bis drei Sätzen: Was hast du kontrolliert, was war das Ergebnis, und würdest du diese Quelle im KN verwenden? Formuliere so, dass eine Aussenstehende deine Prüfung nachvollziehen könnte.",
+      "text": "Schreiben Sie für eine der geprüften Quellen einen kurzen Prüf-Eintrag von zwei bis drei Sätzen: Was haben Sie kontrolliert, was war das Ergebnis, und würden Sie diese Quelle im KN verwenden? Formulieren Sie so, dass eine Aussenstehende Ihre Prüfung nachvollziehen könnte.",
       "feld_hoehe_mm": 15
     }
   ],
@@ -151,7 +151,7 @@
     "schritte": [
       {
         "label": "KI-Recherche erzeugen",
-        "hint": "Gib der KI einen klaren Recherche-Auftrag zu deinem KN-Thema und verlange ausdrücklich Quellen mit Links. Kopiere den Output gekürzt in deine Analyse."
+        "hint": "Geben Sie der KI einen klaren Recherche-Auftrag zu Ihrem KN-Thema und verlangen Sie ausdrücklich Quellen mit Links. Kopieren Sie den Output gekürzt in Ihre Analyse."
       },
       {
         "label": "Prüftabelle anlegen",
@@ -159,15 +159,15 @@
       },
       {
         "label": "Quellen einzeln prüfen",
-        "hint": "Klicke jeden Link an, suche die behauptete Aussage und beurteile den Herausgeber. Halte erfundene oder leere Quellen klar als solche fest."
+        "hint": "Klicken Sie jeden Link an, suchen Sie die behauptete Aussage und beurteilen Sie den Herausgeber. Halten Sie erfundene oder leere Quellen klar als solche fest."
       },
       {
         "label": "Gesamturteil bilden",
-        "hint": "Bewerte Verlässlichkeit, Tiefe und Nachvollziehbarkeit (Mindmap-Ast 3) und begründe, welchen Teilen du vertraust und welchen nicht."
+        "hint": "Bewerten Sie Verlässlichkeit, Tiefe und Nachvollziehbarkeit (Mindmap-Ast 3) und begründen Sie, welchen Teilen Sie vertrauen und welchen nicht."
       },
       {
         "label": "Optional vertiefen",
-        "hint": "100 %: Gib denselben Recherche-Prompt in zwei bis drei verschiedene Modelle und vergleiche, wo sie sich widersprechen und welches seine Aussagen besser belegt."
+        "hint": "100 %: Geben Sie denselben Recherche-Prompt in zwei bis drei verschiedene Modelle und vergleichen Sie, wo sie sich widersprechen und welches seine Aussagen besser belegt."
       }
     ],
     "schreib_label": "KI-RECHERCHE-ANALYSE HIER ERARBEITEN",
@@ -278,7 +278,7 @@
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Der KI vertrauen vs. den Output kontrollieren",
-    "hint": "Beide Pole sind legitim: Die KI-Recherche zu übernehmen spart enorm Zeit, und meistens klingt sie plausibel. Gleichzeitig kann eine einzige erfundene Quelle deinen ganzen KN beschädigen. Bewertet wird nicht, ob du der KI misstraust oder vertraust, sondern ob du begründet entscheidest, welchen Teilen du vertrauen kannst und welche du kontrollieren musst."
+    "hint": "Beide Pole sind legitim: Die KI-Recherche zu übernehmen spart enorm Zeit, und meistens klingt sie plausibel. Gleichzeitig kann eine einzige erfundene Quelle Ihren ganzen KN beschädigen. Bewertet wird nicht, ob Sie der KI misstrauen oder vertrauen, sondern ob Sie begründet entscheiden, welchen Teilen Sie vertrauen können und welche Sie kontrollieren müssen."
   },
   "dekontextualisierung": {
     "frage": "Wie prüfe ich in einer anderen Situation — Betrieb, Schule, Alltag — ob eine KI-Auskunft auf echten Quellen beruht, bevor ich sie weitergebe?",

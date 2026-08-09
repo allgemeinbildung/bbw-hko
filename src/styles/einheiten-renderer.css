@@ -426,6 +426,14 @@ body {
   box-shadow: 0 0 0 3px rgba(22,163,74,0.18);
 }
 .wb-action.lies:hover { background: #15803d; border-color: #15803d; }
+/* Unterrichtsdeck — sits directly under «Lies mich!», subordinate to it. */
+.wb-action.deck {
+  margin-top: 6px;
+  background: #fff; border-color: #16a34a; color: #15803d;
+}
+.wb-action.deck:hover { background: #f0fdf4; border-color: #15803d; }
+.wb-action.deck.locked { background: #f1f5f9; border-color: #cbd5e1; color: #64748b; }
+.wb-action.deck.locked:hover { background: #e2e8f0; border-color: #94a3b8; }
 .wb-tree + .wb-action { margin-top: 8px; }
 
 /* canvas + document header */

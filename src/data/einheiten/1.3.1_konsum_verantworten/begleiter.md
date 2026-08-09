@@ -159,17 +159,17 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 
 **Leitfragen mit Coaching-Hinweisen**
 
-**LF1 — Erkläre mit Maslow und Existenz-/Wahlbedürfnis, wie sich Bedürfnisse unterscheiden.**
+**LF1 — Erklären Sie mit Maslow und Existenz-/Wahlbedürfnis, wie sich Bedürfnisse unterscheiden.**
 
 > [!coaching] LF1
 > Lass die Lernenden zuerst eigene Beispiele in die Pyramide einordnen, bevor du die Fachbegriffe abfragst — so wird die Theorie am eigenen Konsum verankert.
 
-**LF2 — Ordne fünf deiner letzten Anschaffungen den Bedürfnisarten zu.**
+**LF2 — Ordnen Sie fünf Ihrer letzten Anschaffungen den Bedürfnisarten zu.**
 
 > [!coaching] LF2
 > Bestehe auf echten, eigenen Beispielen (keine erfundenen). Wer nur „Essen, Wohnen" nennt, wird aufgefordert, auch die Wahlbedürfnisse offen zu benennen.
 
-**LF3 — Entscheide bei zwei Wunschprodukten, welche Einflüsse deine Kaufabsicht steuern.**
+**LF3 — Entscheiden Sie bei zwei Wunschprodukten, welche Einflüsse Ihre Kaufabsicht steuern.**
 
 > [!warnung] Typischer Stolperstein
 > Lernende benennen Werbung schnell als Einfluss, blenden aber den sozialen Druck aus dem eigenen Umfeld aus — genau der ist hier der Kern.
@@ -268,17 +268,17 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 
 **Leitfragen mit Coaching-Hinweisen**
 
-**LF1 — Erkläre Brutto-/Nettolohn und die Sozialversicherungsabzüge.**
+**LF1 — Erklären Sie Brutto-/Nettolohn und die Sozialversicherungsabzüge.**
 
 > [!coaching] LF1
 > Nutze einen echten (anonymisierten) Lohnausweis als Anschauung — die Abzüge werden erst am konkreten Beispiel greifbar.
 
-**LF2 — Erstelle ein realistisches Monatsbudget mit deinen eigenen Zahlen.**
+**LF2 — Erstellen Sie ein realistisches Monatsbudget mit Ihren eigenen Zahlen.**
 
 > [!coaching] LF2
 > Bestehe auf eigenen, realistischen Zahlen. Runde Fantasiezahlen zurückweisen: „Was zahlst du wirklich fürs Handy?"
 
-**LF3 — Entscheide, welche 2-3 Ausgaben du anpasst.**
+**LF3 — Entscheiden Sie, welche 2-3 Ausgaben Sie anpassen.**
 
 > [!warnung] Typischer Stolperstein
 > Lernende „sparen" pauschal bei allem — statt gezielt zwei bis drei begründete Anpassungen zu wählen. Ein Budget, das niemand einhält, ist wertlos.
@@ -378,17 +378,17 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 
 **Leitfragen mit Coaching-Hinweisen**
 
-**LF1 — Erkläre, wie die Schuldenspirale entsteht und mit welchen Tipps man sie vermeidet.**
+**LF1 — Erklären Sie, wie die Schuldenspirale entsteht und mit welchen Tipps man sie vermeidet.**
 
 > [!coaching] LF1
 > Lass konkrete Tipps aus Kap. 8.2 in eigene Worte übersetzen (Prepaid statt Abo etc.) — nicht abschreiben.
 
-**LF2 — Analysiere die versteckten Kosten von Leasing und Konsumkredit.**
+**LF2 — Analysieren Sie die versteckten Kosten von Leasing und Konsumkredit.**
 
 > [!coaching] LF2
 > Rechne mit der Klasse ein Leasing-Beispiel durch (Rate + Nebenkosten + Nachzahlung), damit „0 Prozent" entzaubert wird.
 
-**LF3 — Entscheide, welche Verpflichtungen du eingehst und welche du streichst.**
+**LF3 — Entscheiden Sie, welche Verpflichtungen Sie eingehen und welche Sie streichen.**
 
 > [!warnung] Typischer Stolperstein
 > Lernende urteilen pauschal („Kredit = schlecht"), statt am eigenen Budget zu prüfen, was tragbar ist.
@@ -478,7 +478,7 @@ Der Austausch ist ein eigenständiges Set-Dokument mit drei wählbaren Sozialfor
 
 ## 7. Transfer
 
-Auftrag (aus set.json): Übertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewählten Kontext. Format: schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden.
+Auftrag (aus set.json): Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext. Format: schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden.
 
 > „Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
 

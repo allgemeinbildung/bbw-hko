@@ -17,7 +17,8 @@
     "md:serve": "npx --yes serve begleiter -l 4173",
     "sync:einheiten-nrlp": "node scripts/sync-einheiten-nrlp.mjs",
     "sync:nrlp-indexes": "node scripts/sync-nrlp-indexes.mjs",
-    "build:umsetzungsbeispiele-nrlp": "node scripts/build-umsetzungsbeispiele-nrlp.mjs"
+    "build:umsetzungsbeispiele-nrlp": "node scripts/build-umsetzungsbeispiele-nrlp.mjs",
+    "build:deck": "node scripts/build-deck.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.3",

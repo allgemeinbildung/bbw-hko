@@ -17,6 +17,7 @@ import type { EinheitFullSet } from '../../lib/einheiten/types'
 
 import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, buildLeseblatt, buildInfokartenTemplate, buildInfokartenTemplatePrefilled, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
+import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../lib/einheiten/deck-builder'
 
 interface Props {
   set: EinheitFullSet
@@ -168,6 +169,11 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     const slugPart = d.id.replace(/^[\d.]+_/, '')
     return `${kompetenz}_${slugPart}`
   }, [d])
+
+  // Unterrichtsdeck wird vollständig aus den JSONs + begleiter.md generiert.
+  // Aktuell nur EFZ — EBA hat eine eigene Logik und folgt separat.
+  const deckSource = useMemo(() => deckSourceFromFullSet(d), [d])
+  const deckAvailable = !!deckSource
 
   useEffect(() => {
     const style = document.createElement('style')
@@ -560,6 +566,20 @@ ${cssRenderer}
         } catch (e) { console.warn('begleiter docx failed', e) }
       }
 
+      // Unterrichtsdeck — eine eigenständige HTML-Datei (kein iframe, keine externen
+      // Skripte), damit sie aus dem entpackten ZIP per Doppelklick läuft.
+      if (deckSource) {
+        try {
+          const path = `Material_LP/${prefix}_unterrichtsdeck.html`
+          // Logo und Löwen-Wasserzeichen als Data-URI einbetten — im entpackten ZIP
+          // gibt es keinen Server, der /logo-bbw-doc.png bzw. /lion-only.svg liefert.
+          const lionSvg = await fetch('/lion-only.svg').then((r) => r.text()).catch(() => '')
+          const lionSrc = lionSvg ? 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(lionSvg))) : undefined
+          zip.file(path, buildStandaloneDeckHtml(deckSource, d.id, { logoSrc: pngDataUrl, lionSrc }))
+          log.push(path)
+        } catch (e) { console.warn('deck failed', e) }
+      }
+
       // KI-Toolbox-Dokumente (additiv) — nur wenn die jeweilige Datei existiert.
       if (d.ki) {
         for (const which of ['ki_1', 'ki_2'] as const) {
@@ -714,6 +734,23 @@ ${cssRenderer}
               rel="noopener noreferrer"
             >
               📖 Lies mich!
+            </a>
+          )
+        )}
+
+        {deckAvailable && (
+          readOnly ? (
+            <button type="button" className="wb-action deck locked" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
+              🖥️ Präsentation {lockBadge}
+            </button>
+          ) : (
+            <a
+              className="wb-action deck"
+              href={`/einheiten/${d.id}/deck`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🖥️ Präsentation
             </a>
           )
         )}
@@ -1048,8 +1085,14 @@ ${body.join('\n')}
   }
 
   // ── Begleitung (Lehrperson) ────────────────────────────────────────────────
+  const begleitCards: string[] = []
   const begleitCard = card('Begleitdokument', [row(d.begleiter?.meta?.titel || 'Didaktische Hinweise (Lehrperson)', { wordRoot: `Material_LP/${prefix}_begleiter.docx` })])
-  if (begleitCard) sections.push(`  <details class="group"><summary>Begleitung <span class="count">1</span></summary><div class="group-body">${begleitCard}</div></details>`)
+  if (begleitCard) begleitCards.push(begleitCard)
+  if (deckSourceFromFullSet(d)) {
+    const deckCard = card('Unterrichtsdeck', [row('Präsentation mit Referentennotizen (im Browser öffnen)', { wordRoot: `Material_LP/${prefix}_unterrichtsdeck.html` })])
+    if (deckCard) begleitCards.push(deckCard)
+  }
+  if (begleitCards.length) sections.push(`  <details class="group"><summary>Begleitung <span class="count">${begleitCards.length}</span></summary><div class="group-body">${begleitCards.join('\n')}</div></details>`)
 
   // ── KI-Toolbox (optional) ──────────────────────────────────────────────────
   const kiCards: string[] = []

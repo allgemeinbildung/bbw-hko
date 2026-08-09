@@ -67,34 +67,34 @@
     }
   ],
   "leitfrage": "Wie muss ich fragen, damit die KI mir beim Verstehen hilft — und nicht nur eine fertige Antwort liefert?",
-  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Du arbeitest ohne Lehrmittel — deine Quellen sind die KI-Tools selbst, dein eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle.",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie arbeiten ohne Lehrmittel — Ihre Quellen sind die KI-Tools selbst, Ihr eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "ohne Lehrmittel | KI-Tool",
-      "text": "Was ist ein Prompt, und warum liefert ein Sprachmodell auf eine vage Frage («Erkläre mir Datensicherheit») eine vage Antwort? Notiere in drei bis vier Sätzen, was ein gutes Prompt von einem schlechten unterscheidet (Ziel, Rolle, Kontext, gewünschtes Format).",
+      "text": "Was ist ein Prompt, und warum liefert ein Sprachmodell auf eine vage Frage («Erkläre mir Datensicherheit») eine vage Antwort? Notieren Sie in drei bis vier Sätzen, was ein gutes Prompt von einem schlechten unterscheidet (Ziel, Rolle, Kontext, gewünschtes Format).",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "eigener KN | KI-Tool",
-      "text": "Formuliere zu deinem eigenen KN-Thema drei aufeinander aufbauende Prompts: einen breiten Einstiegs-Prompt, einen, der die Rolle und das Lernziel vorgibt, und einen, der gezielt nachhakt («Erkläre es so, dass ich es jemandem weitererklären kann»). Gib alle drei nacheinander in das KI-Tool ein.",
+      "text": "Formulieren Sie zu Ihrem eigenen KN-Thema drei aufeinander aufbauende Prompts: einen breiten Einstiegs-Prompt, einen, der die Rolle und das Lernziel vorgibt, und einen, der gezielt nachhakt («Erkläre es so, dass ich es jemandem weitererklären kann»). Geben Sie alle drei nacheinander in das KI-Tool ein.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "KI-Dialog | eigene Notizen",
-      "text": "Entscheide für jede KI-Antwort begründet: Übernimmst du sie, oder hakst du nochmals nach? Markiere im Dialog, an welcher Stelle dein Verständnis tatsächlich gewachsen ist — und an welcher die KI dir nur Arbeit abgenommen hat, ohne dass du dazugelernt hast.",
+      "text": "Entscheiden Sie für jede KI-Antwort begründet: Übernehmen Sie sie, oder haken Sie nochmals nach? Markieren Sie im Dialog, an welcher Stelle Ihr Verständnis tatsächlich gewachsen ist — und an welcher die KI Ihnen nur Arbeit abgenommen hat, ohne dass Sie dazugelernt haben.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "KI-Dialog | eigene Notizen",
-      "text": "Schreibe zu deinem stärksten Prompt einen kurzen Kommentar von zwei bis drei Sätzen: Warum hat genau diese Frage dein Verständnis weitergebracht? Formuliere die Begründung so, dass du sie einer Mitlernenden/einem Mitlernenden im Chat erklären könntest.",
+      "text": "Schreiben Sie zu Ihrem stärksten Prompt einen kurzen Kommentar von zwei bis drei Sätzen: Warum hat genau diese Frage Ihr Verständnis weitergebracht? Formulieren Sie die Begründung so, dass Sie sie einer Mitlernenden/einem Mitlernenden im Chat erklären könnten.",
       "feld_hoehe_mm": 15
     }
   ],
@@ -148,28 +148,28 @@
       "Kurzkommentar zum stärksten Prompt (2–3 Sätze)"
     ],
     "titel": "Mein Prompt-Protokoll — wie ich mich vom schwammigen zum scharfen Fragen vorgearbeitet habe",
-    "format_detail": "Ein kommentierter KI-Dialog auf ein bis zwei A4-Seiten: mindestens drei iterativ verbesserte Prompts mit den jeweiligen KI-Antworten (gekürzt zitiert), farbig oder mit Symbolen markiert, wo dein Verständnis tatsächlich gewachsen ist, plus ein Kurzkommentar zum stärksten Prompt.",
+    "format_detail": "Ein kommentierter KI-Dialog auf ein bis zwei A4-Seiten: mindestens drei iterativ verbesserte Prompts mit den jeweiligen KI-Antworten (gekürzt zitiert), farbig oder mit Symbolen markiert, wo Ihr Verständnis tatsächlich gewachsen ist, plus ein Kurzkommentar zum stärksten Prompt.",
     "beschreibung": "Ich dokumentiere meinen eigenen KI-Dialog zur KN-Vorbereitung und mache sichtbar, wie ich vom vagen ersten Prompt zu einer Frage komme, die mein Verständnis wirklich weiterbringt. Das Protokoll zeigt nicht die schönste KI-Antwort, sondern meinen Lernweg: Wo habe ich nachgehakt, wo habe ich gemerkt, dass ich etwas selbst können muss? Es ist die Grundlage, mit der ich in Herausforderung B die Verlässlichkeit der KI prüfe und in Herausforderung C meinen Lernplan baue.",
     "schritte": [
       {
         "label": "Ausgangs-Prompt festhalten",
-        "hint": "Schreibe deinen ersten, bewusst vagen Prompt auf und kopiere die KI-Antwort gekürzt darunter. Das ist dein «Vorher»-Bild."
+        "hint": "Schreiben Sie Ihren ersten, bewusst vagen Prompt auf und kopieren Sie die KI-Antwort gekürzt darunter. Das ist Ihr «Vorher»-Bild."
       },
       {
         "label": "Prompt schärfen",
-        "hint": "Baue Rolle, Ziel, Kontext und gewünschtes Format ein (Mindmap-Ast 1). Gib den verbesserten Prompt ein und notiere die neue Antwort."
+        "hint": "Bauen Sie Rolle, Ziel, Kontext und gewünschtes Format ein (Mindmap-Ast 1). Geben Sie den verbesserten Prompt ein und notieren Sie die neue Antwort."
       },
       {
         "label": "Iterativ nachfragen",
-        "hint": "Stelle mindestens eine Kontroll- oder Vertiefungsfrage («Stell mir eine Frage zum Thema», «Erkläre das mit einem Beispiel aus meinem Beruf»)."
+        "hint": "Stellen Sie mindestens eine Kontroll- oder Vertiefungsfrage («Stell mir eine Frage zum Thema», «Erkläre das mit einem Beispiel aus meinem Beruf»)."
       },
       {
         "label": "Lernfortschritt markieren",
-        "hint": "Markiere im Dialog mit Symbolen: Häkchen = hier habe ich verstanden, Fragezeichen = hier hat mir die KI nur Arbeit abgenommen, ohne dass ich dazugelernt habe."
+        "hint": "Markieren Sie im Dialog mit Symbolen: Häkchen = hier habe ich verstanden, Fragezeichen = hier hat mir die KI nur Arbeit abgenommen, ohne dass ich dazugelernt habe."
       },
       {
         "label": "Stärksten Prompt kommentieren",
-        "hint": "Wähle den Prompt, der dein Verständnis am meisten weitergebracht hat, und begründe in 2–3 Sätzen, warum gerade diese Frage gewirkt hat."
+        "hint": "Wählen Sie den Prompt, der Ihr Verständnis am meisten weitergebracht hat, und begründen Sie in 2–3 Sätzen, warum gerade diese Frage gewirkt hat."
       }
     ],
     "schreib_label": "PROMPT-PROTOKOLL HIER ERARBEITEN",
@@ -184,7 +184,7 @@
       "strategien": [
         "Erst breit fragen, dann mit Rolle/Ziel/Kontext schärfen, dann nachhaken",
         "Nach jeder Antwort kurz zuklappen und selbst nacherzählen",
-        "Lernfortschritt sofort markieren, solange du den Eindruck noch frisch hast"
+        "Lernfortschritt sofort markieren, solange Sie den Eindruck noch frisch haben"
       ],
       "struktur": [
         "Pro Prompt: Frage – KI-Antwort (gekürzt) – meine Markierung",
@@ -280,7 +280,7 @@
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Effizienz vs. echtes Verständnis",
-    "hint": "Beide Pole sind legitim: Eine schnelle, fertige KI-Antwort spart Zeit, und Zeit ist vor einem KN knapp. Gleichzeitig nützt dir die schönste Antwort nichts, wenn du sie im KN nicht selbst wiedergeben kannst. Bewertet wird nicht, ob du schnell oder langsam arbeitest, sondern ob du bewusst entscheidest, wann Tempo reicht und wann du auf Verständnis bestehst."
+    "hint": "Beide Pole sind legitim: Eine schnelle, fertige KI-Antwort spart Zeit, und Zeit ist vor einem KN knapp. Gleichzeitig nützt Ihnen die schönste Antwort nichts, wenn Sie sie im KN nicht selbst wiedergeben können. Bewertet wird nicht, ob Sie schnell oder langsam arbeiten, sondern ob Sie bewusst entscheiden, wann Tempo reicht und wann Sie auf Verständnis bestehen."
   },
   "dekontextualisierung": {
     "frage": "Wie stelle ich in einem ganz anderen Fach oder im Betrieb eine Frage an die KI, damit ich am Ende selbst etwas kann — und nicht nur eine Antwort besitze?",
