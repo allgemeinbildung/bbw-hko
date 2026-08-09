@@ -1,0 +1,80 @@
+{
+  "id": "1.1.1_einstieg_interview_set",
+  "einheit_titel": "Wie ich frage, so erfahre ich",
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "lehrgang": "EFZ_3J",
+  "thema": "T1",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-09",
+  "status": "entwurf",
+  "entwurf_komponenten": [],
+  "set_typ": "varianten",
+  "prinzip_ref": "1.1.1_einstieg_interview_prinzip",
+  "kn_ref": "1.1.1_einstieg_interview_kn",
+  "herausforderungen": [
+    "1.1.1_einstieg_interview_hf_A",
+    "1.1.1_einstieg_interview_hf_B",
+    "1.1.1_einstieg_interview_hf_C"
+  ],
+  "varianten_achse": {
+    "name": "Befragungsmethode",
+    "frage": "Wie frage ich?",
+    "leitsatz": "Wer fragt, entscheidet mit, was überhaupt gesagt werden kann.",
+    "varianten": [
+      {
+        "herausforderung": "1.1.1_einstieg_interview_hf_A",
+        "buchstabe": "A",
+        "methode": "Strukturiert — vorbereiteter Fragenkatalog",
+        "oeffnet": "Vergleichbarkeit, Sicherheit, Vollständigkeit",
+        "schliesst": "Alles, woran ich vorher nicht gedacht habe",
+        "sprachmodus": "Interaktion und Kollaboration mündlich"
+      },
+      {
+        "herausforderung": "1.1.1_einstieg_interview_hf_B",
+        "buchstabe": "B",
+        "methode": "Narrativ — ein Erzählimpuls, dann zuhören",
+        "oeffnet": "Tiefe, Unerwartetes, Zwischentöne",
+        "schliesst": "Kontrolle über Zeit und Vollständigkeit",
+        "sprachmodus": "Interaktion und Kollaboration mündlich"
+      },
+      {
+        "herausforderung": "1.1.1_einstieg_interview_hf_C",
+        "buchstabe": "C",
+        "methode": "Schriftlich-digital — Anfrage und eine Runde Nachfassen",
+        "oeffnet": "Bedenkzeit, sorgfältige Formulierung, wörtlich dokumentierte Zitate",
+        "schliesst": "Tonfall, Zögern, spontane Rückfrage",
+        "sprachmodus": "Interaktion und Kollaboration digital"
+      }
+    ]
+  },
+  "einsatz_hinweis": {
+    "minimal": "Eine Herausforderung, eine Woche, 3 Lektionen. Vollständig und in sich geschlossen — Kurzprofil, Reflexion und Bewertungsraster funktionieren ohne die beiden anderen Wege.",
+    "empfohlen": "Die drei Wege parallel in derselben Klasse verteilen (Drittel/Drittel/Drittel), gleiche Woche, gleiches Handlungsprodukt. Erst dadurch wird die Austausch-Phase zum Erkenntnismoment: gleiche Aufgabe, gleicher Zeitrahmen, sichtbar verschiedene Ergebnisse.",
+    "nicht_vorgesehen": "Eine nacheinander abgearbeitete Reihe A → B → C. Die drei Herausforderungen bauen nicht aufeinander auf; hintereinander gespielt wiederholen sie dasselbe Produkt dreimal."
+  },
+  "austausch_phase": {
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "voraussetzung": "Funktioniert nur, wenn die drei Wege parallel vergeben wurden. Gruppen zu dritt bilden — je eine Person pro Methode.",
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Ergebnis zeigen — 90 Sek. pro Person: das eigene Kurzprofil vorstellen und das stärkste der drei Zitate vorlesen.",
+      "runde_2": "Methoden vergleichen — Welche Art von Information steht in allen drei Profilen? Welche steht nur in einem? Ein gemeinsames Blatt in zwei Spalten führen.",
+      "runde_3": "Grenzfall suchen — Für welche Person oder welche Situation wäre ausgerechnet die eigene Methode die schlechteste Wahl gewesen?"
+    },
+    "einzelarbeit_plenum": "Lehrperson sammelt die Zwei-Spalten-Blätter an der Wandtafel und leitet die Diskussion: Woran liegt es, dass dieselbe Aufgabe bei derselben Klasse so verschiedene Profile hervorbringt? Zielpunkt ist nicht «jede Methode hat Vor- und Nachteile», sondern die Einsicht, dass die Methode das Ergebnis mitproduziert.",
+    "einzelauftrag": "Formulieren Sie in einem einzigen Satz, was Ihre Methode über Ihr Gegenüber sichtbar gemacht hat und was sie verdeckt hat. Notieren Sie darunter eine Frage, die Sie mit einer der beiden anderen Methoden gestellt hätten."
+  },
+  "dekontextualisierungs_aufgabe": {
+    "auftrag": "Übertragen Sie das Prinzip auf eine Befragungssituation ausserhalb der Schule: Sie müssen von einer Person etwas erfahren, das Sie nirgends nachlesen können (Rückfrage beim Berufsbildner, Kundenwunsch im Laden, Auskunft bei einer Amtsstelle). Welche der drei Methoden wählen Sie — und was nehmen Sie damit bewusst in Kauf?",
+    "format": "mündlich im Plenum (2 Min.) oder 4–5 Sätze in Stichworten; Lehrmittelbegriffe aus Kap. 16.4 verwenden",
+    "format_hinweis": "Bewusst kein ausformulierter Text — Produktion schriftlich und bildlich hat seine R1 erst in T2. Die schriftliche Variante wird als Notiz geführt und nicht als Textsorte bewertet.",
+    "ziel": "Wer fragt, entscheidet mit, was überhaupt gesagt werden kann. Die Methode der Befragung ist kein neutrales Werkzeug, sondern formt das Ergebnis — deshalb wird sie vorher gewählt und nachher verantwortet.",
+    "gewicht_prozent": 15,
+    "abgabe": "Ende der Woche — vor dem KN"
+  },
+  "anschluss_t2": {
+    "hinweis": "Die Kurzprofile werden eingesammelt und aufbewahrt. Sie sind das Rohmaterial für die T2-Einheit, in der aus demselben Material auf drei Weisen ein Porträt entsteht (Produktion schriftlich und bildlich, R1).",
+    "achse_t2": "Textform — Zitat-Porträt (Kap. 16.4) · beschreibendes Porträt (Kap. 17.1 S. 388-389) · erzählendes Porträt (Kap. 17.1 S. 385-386)"
+  }
+}

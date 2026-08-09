@@ -12,7 +12,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { buildDeckHtml, buildStandaloneDeckHtml } from '../src/lib/einheiten/deck-builder.ts'
+import { buildDeckHtml, buildStandaloneDeckHtml, deckSourceFromFullSet } from '../src/lib/einheiten/deck-builder.ts'
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const UNITS = join(ROOT, 'src', 'data', 'einheiten')
@@ -33,31 +33,38 @@ const LOGO_DATA_URL =
 const LION_DATA_URL =
   'data:image/svg+xml;base64,' + readFileSync(join(ROOT, 'public', 'lion-only.svg')).toString('base64')
 
+// Einheiten in Arbeit können unvollständig sein (z. B. noch ohne kn.json oder
+// begleiter.md). Alles optional einlesen und die Entscheidung dem gleichen Gate
+// überlassen, das auch Route, Knopf und ZIP steuert.
+const maybeJson = (p) => (existsSync(p) ? readJson(p) : null)
+const maybeText = (p) => (existsSync(p) ? readFileSync(p, 'utf8') : null)
+
 function loadUnit(slug) {
   const dir = join(UNITS, slug)
-  const set = readJson(join(dir, 'set.json'))
-  const herausforderungen = ['A', 'B', 'C']
-    .map((L) => join(dir, `herausforderung_${L}.json`))
-    .filter(existsSync)
-    .map(readJson)
+  const raw = maybeText(join(dir, 'begleiter.md'))
   return {
-    set,
-    prinzip: readJson(join(dir, 'prinzip.json')),
-    kn: readJson(join(dir, 'kn.json')),
-    herausforderungen,
-    begleiter: readFileSync(join(dir, 'begleiter.md'), 'utf8'),
+    set: maybeJson(join(dir, 'set.json')),
+    prinzip: maybeJson(join(dir, 'prinzip.json')),
+    kn: maybeJson(join(dir, 'kn.json')),
+    hf_A: maybeJson(join(dir, 'herausforderung_A.json')),
+    hf_B: maybeJson(join(dir, 'herausforderung_B.json')),
+    hf_C: maybeJson(join(dir, 'herausforderung_C.json')),
+    begleiter: raw ? { raw } : null,
   }
 }
 
-const targets = all
-  ? readdirSync(UNITS).filter((d) => {
-      try {
-        return readJson(join(UNITS, d, 'set.json')).lehrgang?.startsWith('EFZ')
-      } catch {
-        return false
-      }
-    })
-  : slugs
+/** Was fehlt — nur für die Konsolenmeldung. */
+function missing(u) {
+  const m = []
+  if (!u.set) m.push('set.json')
+  if (!u.prinzip) m.push('prinzip.json')
+  if (!u.kn) m.push('kn.json')
+  if (!u.begleiter?.raw) m.push('begleiter.md')
+  if (!u.hf_A && !u.hf_B && !u.hf_C) m.push('herausforderung_*.json')
+  return m
+}
+
+const targets = all ? readdirSync(UNITS) : slugs
 
 if (!targets.length) {
   console.error('usage: node scripts/build-deck.mjs <slug> | --all  [--out <dir>]')
@@ -65,9 +72,12 @@ if (!targets.length) {
 }
 
 for (const slug of targets) {
-  const src = loadUnit(slug)
-  if (!String(src.set.lehrgang).startsWith('EFZ')) {
-    console.log(`  skip ${slug} (${src.set.lehrgang} — EBA folgt separat)`)
+  const unit = loadUnit(slug)
+  const src = deckSourceFromFullSet(unit)
+  if (!src) {
+    const lg = unit.set?.lehrgang
+    const why = lg && !String(lg).startsWith('EFZ') ? `${lg} — EBA folgt separat` : `unvollständig: ${missing(unit).join(', ')}`
+    console.log(`  skip ${slug}  (${why})`)
     continue
   }
   const assets = { logoSrc: LOGO_DATA_URL, lionSrc: LION_DATA_URL }

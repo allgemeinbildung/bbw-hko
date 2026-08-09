@@ -1,0 +1,233 @@
+{
+  "id": "1.1.1_einstieg_interview_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "einstieg_interview",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-09",
+  "set_ref": "1.1.1_einstieg_interview_set",
+  "prinzip_ref": "1.1.1_einstieg_interview_prinzip",
+  "anchored_situations": [
+    "1.1.1_einstieg_interview_hf_A",
+    "1.1.1_einstieg_interview_hf_B",
+    "1.1.1_einstieg_interview_hf_C"
+  ],
+  "dominanter_aspekt": "Identität und Sozialisation",
+  "kern_kompetenzversprechen": "Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.",
+  "mehrdeutigkeits_pflicht": "Keine der drei Methoden ist die richtige. Jede öffnet eine Tür und schliesst eine andere. Bewertet wird nicht die Wahl, sondern ob die Lernende benennen kann, was ihre Methode sichtbar macht und was sie verdeckt.",
+  "kn_logik": "Variantenset: Die Lernenden haben je EINE Methode praktiziert und die beiden anderen nur aus der Austausch-Phase kennengelernt. Die Hybrid-Herausforderung ist deshalb kein Zusammenbau dreier Teilschritte, sondern eine Lage, in der jede der drei Methoden aus einem anderen Grund scheitert. Geprüft wird die begründete Wahl unter Verzicht — nicht die Anwendung aller drei.",
+  "hybrid_situation": {
+    "titel": "Critical Incident — die neue Kollegin in der Frühschicht",
+    "persona": {
+      "beruf": "Logistiker/in EFZ",
+      "betrieb": "Verteilzentrum Rhyner Effretikon",
+      "ort": "Effretikon"
+    },
+    "emotion_tag": "Zeitdruck",
+    "text": "Ich bin Logistiker-Lernende/r im 1. Lehrjahr im Verteilzentrum Rhyner in Effretikon. Für die Lernendenseite im Intranet soll ich bis Freitag eine neue Mitlernende vorstellen. Sie hat vorletzte Woche angefangen, arbeitet Frühschicht und ist weg, wenn ich komme — gesehen habe ich sie zweimal, je zehn Minuten in der Pause. Beim ersten Mal habe ich meine Fragen von einem Zettel abgelesen; sie hat mit einem Wort geantwortet und auf den Boden geschaut. Auf meine Chat-Nachricht hat sie erst nach zwei Tagen geantwortet, dafür in ganzen Sätzen. Mein Berufsbildner will drei Zitate und «etwas Persönliches». Freitag ist in drei Tagen.",
+    "leitfrage": "Wie gehe ich jetzt vor — und warum ausgerechnet so?",
+    "aktivierte_trade_offs": [
+      "Vergleichbarkeit der Antworten vs. Raum für Überraschendes",
+      "Nähe und Tiefe vs. Steuerbarkeit und Zeitbudget",
+      "Bedenkzeit und Formulierungssorgfalt vs. Spontaneität und Zwischentöne"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Der abgelesene Fragenkatalog in der Pause ist bereits gescheitert — Struktur allein hat hier Einsilbigkeit erzeugt statt Vergleichbarkeit. Wer A wählt, muss erklären, was am Katalog anders werden müsste."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Der gesenkte Blick und die Einwortantworten sprechen für Erzählenlassen und aktives Zuhören — aber zehn Minuten Pause und drei Tage Frist stehen dem Zeitbedarf des narrativen Zugangs entgegen."
+        },
+        {
+          "hf_letter": "C",
+          "scene_element": "Schriftlich antwortet sie in ganzen Sätzen, also kommt ihr die Distanz entgegen und die Zitate lägen wörtlich vor — nur dauerte die erste Antwort zwei Tage, und die Frist ist in dreien."
+        }
+      ],
+      "new_dimensions": [
+        "Das Gegenüber hat eine erkennbare Präferenz, die der eigenen Bequemlichkeit widerspricht — die Methodenwahl ist hier auch eine Frage der Rücksichtnahme, nicht nur der Effizienz."
+      ]
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 25-30 Min. total pro Lernende/r",
+      "ablauf": [
+        "10 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie mit eigenen Worten vier der acht Fragearten aus Kap. 16.4 und geben Sie zu jeder ein Beispiel, das in dieser Situation passen würde.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Analysieren",
+          "frage": "Der erste Versuch in der Pause ist gescheitert. Analysieren Sie mit den Begriffen aus Kap. 16.4 und Kap. 16.1, woran das lag — nennen Sie mindestens zwei Ursachen, die nicht bei der Person Ihres Gegenübers liegen.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "frage": "Entscheiden Sie sich für eine der drei Methoden und begründen Sie die Wahl mit den Rahmenbedingungen der Situation (drei Tage, Frühschicht, Einwortantworten, drei Zitate verlangt).",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Verzicht begründen",
+          "frage": "Was nehmen Sie mit Ihrer Wahl bewusst in Kauf? Benennen Sie konkret, welche Information Sie damit vermutlich nicht bekommen werden — und wie Sie Ihrem Berufsbildner gegenüber damit umgehen.",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Ihr Gegenüber schreibt lieber, als zu sprechen. Inwiefern ist die Wahl der Methode hier nicht nur eine Frage der Effizienz, sondern auch eine Frage der Rücksichtnahme und der Rolle, in die Sie die andere Person bringen (Kap. 18.1)?",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [4, 6],
+      "aspekte": [
+        "Identität und Sozialisation",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität; Antworten in Stichworten oder kurzen Sätzen."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Nennen Sie vier Fragearten aus Kap. 16.4 und formulieren Sie zu jeder eine Frage, die Sie der neuen Mitlernenden stellen könnten. Kennzeichnen Sie die Frageart jeweils dahinter.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Analysieren",
+          "aufgabe": "Der abgelesene Fragenkatalog in der Pause hat Einwortantworten erzeugt. Nennen Sie drei Ursachen dafür, die in der Methode oder in der Situation liegen — nicht in der Person Ihres Gegenübers. Stützen Sie sich auf Kap. 16.4 und Kap. 16.1.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie begründet für eine der drei Methoden (strukturiertes Interview, Erzählenlassen, schriftlich-digitale Befragung) und skizzieren Sie Ihr Vorgehen für die verbleibenden drei Tage in maximal fünf Schritten.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Verzicht begründen",
+          "aufgabe": "Benennen Sie zwei Informationen, die Sie mit Ihrer Wahl voraussichtlich NICHT bekommen, und begründen Sie, warum Sie diesen Verlust in Kauf nehmen. Formulieren Sie zum Schluss in einem Satz, was Ihre Methode über die neue Mitlernende sichtbar machen wird.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [4, 6],
+      "aspekte": [
+        "Identität und Sozialisation",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Interaktion und Kollaboration digital"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "Vorlage des Kurzprofils plus mündliche oder stichwortartige Reflexion (10 Min.)",
+      "ablauf": [
+        "Lernende legen ihr Kurzprofil aus der bearbeiteten Herausforderung vor (A, B oder C).",
+        "Methodenwahl-Begründung (2-3 Sätze): Was hat meine Methode sichtbar gemacht, was verdeckt?",
+        "Transfer-Reflexion auf die Hybrid-Herausforderung: drei Fragen, mündlich oder in Stichworten."
+      ],
+      "reflexionsfragen": [
+        "Formulieren Sie in einem Satz das Prinzip, das hinter allen drei Methoden steht.",
+        "Welche der beiden Methoden, die Sie NICHT gemacht haben, hätte in Ihrer eigenen Herausforderung mehr hergegeben — und woran machen Sie das fest? Beziehen Sie sich auf das, was Sie in der Austausch-Phase gesehen haben.",
+        "Übertragen Sie auf die Hybrid-Herausforderung: Welche Methode wählen Sie dort, und welchen Verlust nehmen Sie in Kauf?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min. mit dem Kurzprofil als Anschauungsmaterial; LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [4, 6],
+      "aspekte": [
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fragearten und Gesprächsbegriffe (Kap. 16.4, 16.1, 19.2) fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt; Beispiele passen nur bedingt zur Situation.",
+          "Fragearten und Gesprächsbegriffe korrekt benannt und situationsangemessen mit eigenen Beispielen belegt.",
+          "Differenziert und eigenständig: Begriffe werden gegeneinander abgegrenzt und auf die konkrete Lage zugeschnitten."
+        ]
+      },
+      {
+        "name": "Begründung der Methodenwahl",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung — eine Methode wird genannt oder gar keine.",
+          "Begründung als Geschmacksurteil («finde ich besser») ohne Bezug zu den Rahmenbedingungen.",
+          "Begründung nachvollziehbar an mindestens zwei Rahmenbedingungen der Situation festgemacht.",
+          "Begründung schlüssig, wägt mindestens zwei Methoden gegeneinander ab und benennt den Verzicht explizit."
+        ]
+      },
+      {
+        "name": "Methode als Erkenntnisrahmen",
+        "dimension": "Ges",
+        "stufen": [
+          "Die Methode gilt als neutrales Werkzeug — das Ergebnis wird allein der befragten Person zugeschrieben.",
+          "Ein Zusammenhang zwischen Methode und Ergebnis wird gestreift, aber nicht ausgeführt.",
+          "Der Zusammenhang wird korrekt benannt: Die Methode macht Bestimmtes sichtbar und Anderes unsichtbar.",
+          "Der Zusammenhang wird auf eine neue Situation übertragen; die Lernende erkennt die eigene Mitverantwortung für das entstandene Bild."
+        ]
+      },
+      {
+        "name": "Rolle und Rücksichtnahme",
+        "dimension": "Ges",
+        "stufen": [
+          "Das Gegenüber erscheint nur als Informationsquelle.",
+          "Bedürfnisse des Gegenübers werden erwähnt, aber nicht in die Entscheidung einbezogen.",
+          "Die Methodenwahl berücksichtigt nachvollziehbar, was dem Gegenüber entgegenkommt (Kap. 18.1, Kap. 19.2).",
+          "Die Lernende erkennt und begründet den Zielkonflikt zwischen eigenem Zeitdruck und der Rolle, in die sie das Gegenüber bringt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      { "label": "unter 60 %", "definition": "Stufen 1-2 dominant" },
+      { "label": "80 %", "definition": "mehrheitlich Stufe 3" },
+      { "label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien" }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

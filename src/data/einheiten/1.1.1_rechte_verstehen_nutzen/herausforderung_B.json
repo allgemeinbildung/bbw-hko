@@ -198,6 +198,33 @@
         "Tabelle je Fall: Spalte 1 Tatbestand · Spalte 2 Rechtslage · Spalte 3 Rechtsfolge",
         "Schlussabsatz: Restunsicherheit – eigene Rolle – Empfehlung"
       ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn beide Fälle selbst durchgespielt wurden. Beispiel auf Stufe 3: die Methode ist sauber getrennt, die Unsicherheit ist benannt. Andere vertretbare Rechtsfolgen sind möglich — bewertet wird die Trennung der drei Schritte, nicht das Ergebnis.",
+      "abschnitte": [
+        {
+          "titel": "Fall 1 — Samstagsfahrt",
+          "zeilen": [
+            { "label": "Tatbestand", "text": "Der Berufsbildner verlangt, dass der Lernende an einem Samstagmorgen eine private Bestellung des Chefs zu dessen Wohnung liefert. Die Fahrt liegt ausserhalb der vereinbarten Arbeitszeit. Eine Bezahlung wurde zugesagt." },
+            { "label": "Rechtslage", "text": "Weisungen des Betriebs müssen sich auf die Arbeit und die Ausbildung beziehen (OR 321d). Lernende verrichten die Arbeiten, die der Ausbildung dienen (OR 345). Überstunden sind nur ausnahmsweise zumutbar und werden mit Freizeit oder Zuschlag ausgeglichen (OR 321c). Unter 18 Jahren gilt eine Höchstarbeitszeit von 9 Stunden pro Tag (ArG 31).", "quelle": "OR 321d · 345 · 321c · ArG 31" },
+            { "label": "Rechtsfolge", "text": "Wenn die Fahrt eine private Besorgung des Chefs ist, dann dient sie nicht der Ausbildung — der Lernende muss sie nicht übernehmen. Übernimmt er sie freiwillig, dann zählt die Zeit als Arbeitszeit und ist auszugleichen. Dass eine Bezahlung zugesagt wurde, macht die Anordnung für sich allein nicht zulässig." }
+          ]
+        },
+        {
+          "titel": "Fall 2 — Lohnabzug-Drohung",
+          "zeilen": [
+            { "label": "Tatbestand", "text": "Der Lernende hat einen vertraulichen Kundenfall im Familien-WhatsApp erwähnt. Der Berufsbildner kündigt an, CHF 200 vom Lohn abzuziehen." },
+            { "label": "Rechtslage", "text": "Geschäftsgeheimnisse dürfen nicht an Dritte weitergegeben werden (OR 321a Abs. 4). Für einen Schaden haftet die lernende Person nur, wenn sie ihn absichtlich oder fahrlässig verursacht hat; vorausgesetzt sind ein nachgewiesener Schaden, ein Verschulden und der Zusammenhang zwischen beidem (OR 321e).", "quelle": "OR 321a Abs. 4 · OR 321e" },
+            { "label": "Rechtsfolge", "text": "Wenn der Kundenfall vertraulich war, dann liegt eine Verletzung der Treuepflicht vor — der Betrieb darf das beanstanden. Ein Lohnabzug setzt darüber hinaus einen nachgewiesenen Schaden und ein Verschulden voraus. Solange der Betrieb keinen konkreten Schaden nachweist, ist ein einseitiger Abzug von CHF 200 nicht zulässig." }
+          ]
+        },
+        {
+          "titel": "Schlussabsatz — Rolle und Empfehlung",
+          "zeilen": [
+            { "text": "Sicher sagen kann ich: Eine private Samstagsfahrt gehört nicht zur Ausbildung, und ein Lohnabzug braucht ein nachgewiesenes Verschulden. Unsicher bin ich, ob im zweiten Fall überhaupt ein Schaden entstanden ist und wie hoch er wäre — das würde ich mit dem Berufsbildner oder dem kantonalen Amt für Berufsbildung klären. Ich bin Mitlernender und kein Anwalt; meine Auskunft ersetzt keine Rechtsberatung." }
+          ]
+        }
+      ]
     }
   },
   "reflexion_fragen": [

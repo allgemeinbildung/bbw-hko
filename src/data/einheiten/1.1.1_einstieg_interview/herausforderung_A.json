@@ -1,0 +1,412 @@
+{
+  "id": "1.1.1_einstieg_interview_hf_A",
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Fünfzehn Minuten, acht Fragen — das strukturierte Interview",
+  "emotion_tag": "Anspannung",
+  "wissensknoten": [
+    "interview_fragenkatalog"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": ["1.1.1"],
+    "lebensbezug": "1.1",
+    "themen": ["T1"],
+    "gesellschaft": [
+      { "aspekt": "Identität und Sozialisation", "iteration": "R1" }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sk": [2, 4, 6],
+    "sprachmodus_ids": ["SM3", "SM7"],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
+  },
+  "persona": {
+    "beruf": "Fachfrau/-mann Betreuung EFZ",
+    "betrieb": "Kita Sunnestube Winterthur",
+    "ort": "Winterthur"
+  },
+  "situation_text": "Ich bin FaBe-Lernende/r im 1. Lehrjahr und sitze seit zwei Wochen in einer ABU-Klasse, in der ich niemanden kenne. Heute soll ich eine Person aus dieser Klasse so kennenlernen, dass ich sie nachher der Klasse vorstellen kann — und sie tut dasselbe mit mir. Ich habe dafür genau 15 Minuten, und die Lehrperson hat angekündigt, dass am Schluss alle Profile nebeneinander an der Wand hängen und vergleichbar sein sollen. Ich kenne mein Gegenüber nicht, ich weiss nicht, was ihn oder sie beschäftigt, und ich habe Angst, dass mir nach drei Fragen nichts mehr einfällt und wir schweigend dasitzen.",
+  "zahlen_tabelle": [
+    { "label": "Gesprächszeit", "wert": "15 Min." },
+    { "label": "Fragen im Katalog", "wert": "8–10" },
+    { "label": "Wörtliche Zitate", "wert": "mind. 3" },
+    { "label": "Kurzprofil", "wert": "1 A4, Stichworte" }
+  ],
+  "leitfrage": "Welche Fragen stelle ich in welcher Reihenfolge, damit ich in 15 Minuten ein tragfähiges Bild bekomme?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich, bevor Sie ins Gespräch gehen. Grundlage sind Kap. 16.4 (Fachgespräch/Interview), Kap. 16.1 (Regeln der Gesprächsführung) und Kap. 17.1 (Notiztechniken).",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 16.4 | S. 373",
+      "text": "Kap. 16.4 unterscheidet acht Fragearten. Notieren Sie zu offenen, geschlossenen, Klärungs-, Informations- und Suggestivfragen je ein eigenes Beispiel, das zu Ihrem Gegenüber passen könnte. Markieren Sie die Suggestivfrage durch und halten Sie in einem Satz fest, warum sie in einem Interview problematisch ist.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 16.4 | S. 372",
+      "text": "Stellen Sie Ihren Fragenkatalog mit 8–10 Fragen zusammen und ordnen Sie ihn nach der Regel «Grundsatzfragen vor Detailfragen». Kennzeichnen Sie hinter jeder Frage die Frageart. Mindestens vier Fragen müssen offen sein.",
+      "feld_hoehe_mm": 20
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 16.1 | S. 366-367",
+      "text": "Entscheiden Sie begründet: Was tun Sie, wenn eine Antwort nur aus drei Wörtern besteht? Nachhaken mit einer Klärungsfrage, zur nächsten Frage gehen oder eine Pause aushalten? Stützen Sie sich auf die Gesprächsregeln aus Kap. 16.1.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Beurteilen",
+      "knoten_ref": "Kap. 16.4 | S. 372-373",
+      "text": "Nach dem Gespräch: Welche Ihrer Fragen hat am meisten hergegeben, welche am wenigsten — und woran lag das? Benennen Sie ausserdem eine Sache, die Sie über Ihr Gegenüber erfahren haben, obwohl Sie nicht danach gefragt hatten.",
+      "feld_hoehe_mm": 20
+    }
+  ],
+  "mindmap_zentrum": "Mein Fragenkatalog — 15 Minuten",
+  "mindmap_aeste": [
+    {
+      "titel": "Einstieg (Grundsatzfragen)",
+      "punkte": [
+        "Beruf, Betrieb, Ort",
+        "Wie kam es zu diesem Beruf?",
+        "Erster Arbeitstag",
+        "Schule vs. Betrieb"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Vertiefung (offene Fragen)",
+      "punkte": [
+        "Was war bisher am überraschendsten?",
+        "Was ist schwieriger als erwartet?",
+        "Worauf bist du stolz?",
+        "Was macht dich am Feierabend aus?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Fragearten (Kap. 16.4 S. 373)",
+      "punkte": [
+        "offen · geschlossen",
+        "Klärungs- · Definitionsfrage",
+        "Informations- · Entscheidungsfrage",
+        "Alternativfrage",
+        "Suggestivfrage vermeiden"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Gesprächsregeln (Kap. 16.1)",
+      "punkte": [
+        "Genau zuhören",
+        "Nicht ins Wort fallen",
+        "Zurückfragen bei Unklarheit",
+        "Ausreden lassen"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kurzprofil",
+    "abgaben": [
+      "Kurzprofil (1 A4, Stichworte)",
+      "3 wörtliche Zitate",
+      "Methoden-Notiz (3–4 Sätze)"
+    ],
+    "titel": "Kurzprofil meines Gegenübers",
+    "format_detail": "Eine A4-Seite in Stichworten — bewusst kein Fliesstext. Vier Felder: (1) Person und Ausbildung, (2) Der Einstieg in die Lehre, (3) Was diese Person ausmacht, (4) Drei wörtliche Zitate. Dazu am Fuss eine Methoden-Notiz von 3–4 Sätzen.",
+    "beschreibung": "Ich halte das Ergebnis meines Interviews so fest, dass eine andere Person damit arbeiten könnte. Stichworte statt Sätze, plus drei Aussagen im Originalwortlaut. Das Kurzprofil ist keine fertige Textsorte, sondern Rohmaterial: In T2 wird daraus ein ausformuliertes Porträt. Deshalb zählt hier Genauigkeit und Vollständigkeit, nicht schöner Stil.",
+    "schritte": [
+      {
+        "label": "Fragenkatalog schreiben",
+        "hint": "8–10 Fragen, nach Kap. 16.4 geordnet: Grundsatzfragen zuerst, Detailfragen später. Frageart hinter jede Frage notieren."
+      },
+      {
+        "label": "Notizblatt vorbereiten",
+        "hint": "Nach Kap. 17.1: A4 einseitig, vier Felder vorzeichnen, Platz für Nachträge lassen. Keine ganzen Sätze — Schlüsselwörter."
+      },
+      {
+        "label": "Interview führen (15 Min.)",
+        "hint": "Begrüssen, Absicht nennen, Katalog abarbeiten, aber bei Interessantem nachhaken. Ausreden lassen. Mitschreiben."
+      },
+      {
+        "label": "Zitate sichern",
+        "hint": "Drei Aussagen im Originalwortlaut festhalten und dem Gegenüber vorlesen: «Habe ich das richtig aufgeschrieben?»"
+      },
+      {
+        "label": "Profil und Methoden-Notiz",
+        "hint": "Felder füllen. Dann: Was hat mein Katalog sichtbar gemacht — und was ist mir durch die Struktur entgangen?"
+      }
+    ],
+    "schreib_label": "KURZPROFIL HIER ERARBEITEN",
+    "schreib_note": "-> wissen/interview_fragenkatalog",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Ich mache eine Kurzvorstellung über dich. Ich habe ein paar Fragen vorbereitet …» (Einstieg)",
+        "«Erzähl mir zuerst ganz allgemein …» (Grundsatzfrage)",
+        "«Was genau meinst du mit …?» (Klärungsfrage)",
+        "«Darf ich das so aufschreiben: …?» (Zitat sichern)"
+      ],
+      "strategien": [
+        "Katalog ist ein Geländer, kein Gefängnis — bei Interessantem nachhaken",
+        "Nach einer Antwort drei Sekunden warten, bevor die nächste Frage kommt",
+        "Zitate sofort wörtlich notieren, nicht aus dem Gedächtnis rekonstruieren"
+      ],
+      "struktur": [
+        "Grundsatzfragen vor Detailfragen (Kap. 16.4)",
+        "Vier Profil-Felder: Person · Einstieg · Was ausmacht · Zitate"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigenes Kurzprofil steht. Beispiel auf Stufe 3–4: Stichworte statt Fliesstext, Zitate wörtlich, und die Methoden-Notiz benennt eine konkrete Erfahrung statt einer Floskel. Befragt wurde hier ein Fachmann Betriebsunterhalt.",
+      "abschnitte": [
+        {
+          "titel": "Feld 1 — Person und Ausbildung",
+          "zeilen": [
+            {
+              "text": "Elias, 17 · Fachmann Betriebsunterhalt EFZ, 1. Lehrjahr"
+            },
+            {
+              "text": "Werkdienst der Gemeinde Wülflingen · Team von sechs Personen"
+            },
+            {
+              "text": "Schule: Donnerstag · Betrieb: Mo–Mi, Fr"
+            }
+          ]
+        },
+        {
+          "titel": "Feld 2 — Der Einstieg in die Lehre",
+          "zeilen": [
+            {
+              "text": "Wollte ursprünglich Landschaftsgärtner · zwei Schnupperwochen, dann umentschieden"
+            },
+            {
+              "text": "Ausschlag gab die Abwechslung: «nicht jeden Tag dasselbe»"
+            },
+            {
+              "text": "Erster Arbeitstag: allein den Werkhof gewischt, niemand hatte Zeit — «ich dachte, das wird jetzt immer so»"
+            },
+            {
+              "text": "Grösster Unterschied Schule/Betrieb: im Betrieb fragt niemand nach, ob man mitkommt"
+            }
+          ]
+        },
+        {
+          "titel": "Feld 3 — Was diese Person ausmacht",
+          "zeilen": [
+            {
+              "text": "Stolz auf die erste selbst reparierte Pumpe — ohne Anleitung"
+            },
+            {
+              "text": "Am überraschendsten: wie viel Kundenkontakt der Beruf hat"
+            },
+            {
+              "text": "Schwieriger als erwartet: früh aufstehen und die Kälte im Winter"
+            },
+            {
+              "text": "Feierabend: Unihockey, zweimal pro Woche Training, spielt im Verein seit er acht ist"
+            }
+          ]
+        },
+        {
+          "titel": "Feld 4 — Drei wörtliche Zitate",
+          "zeilen": [
+            {
+              "text": "«Ich dachte, das wird jetzt immer so — war es dann zum Glück nicht.»"
+            },
+            {
+              "text": "«Die Pumpe lief wieder, und niemand hatte mir gesagt wie.»"
+            },
+            {
+              "text": "«Im Verein bin ich seit ich acht bin. Das lasse ich mir nicht nehmen.»"
+            }
+          ]
+        },
+        {
+          "titel": "Methoden-Notiz",
+          "zeilen": [
+            {
+              "text": "Ich bin mit den Grundsatzfragen gestartet (Beruf, Betrieb, wie kam es dazu) und erst danach ins Persönliche gegangen — das hat gut funktioniert, er war schnell im Reden."
+            },
+            {
+              "text": "Meine geschlossenen Fragen brachten am wenigsten: «Gefällt es dir?» — «Ja.» Danach musste ich neu ansetzen."
+            },
+            {
+              "text": "Am meisten gebracht hat die Klärungsfrage «Was genau meinst du mit Abwechslung?». Da kam die Geschichte mit der Pumpe."
+            },
+            {
+              "text": "Beim nächsten Mal frage ich früher nach einem konkreten Beispiel statt nach einer Einschätzung."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "An welcher Stelle hat mein vorbereiteter Katalog mir geholfen — und wo hat er mich gebremst?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Was hätte ich erfahren, wenn ich gar keine Fragen vorbereitet hätte?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Wo in meinem Lehralltag muss ich jemandem gezielt Fragen stellen — und was nehme ich von heute mit?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Fragearten aus Kap. 16.4 korrekt zugeordnet",
+        "Problem der Suggestivfrage benannt"
+      ]
+    },
+    {
+      "produkt": "Fragenkatalog",
+      "kriterium": "Struktur · Fragearten · Reihenfolge",
+      "vollstaendig_wenn": [
+        "8–10 Fragen, mindestens vier davon offen",
+        "Frageart hinter jeder Frage notiert",
+        "Grundsatzfragen stehen vor Detailfragen"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Kurzprofil auf 1 A4, alle vier Felder gefüllt, Stichworte statt Fliesstext",
+        "Drei wörtliche Zitate, beim Gegenüber rückbestätigt",
+        "Methoden-Notiz benennt Gewinn UND Verlust der Methode"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Konkrete Gesprächssituation aus dem Lehralltag benannt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 · 3 Lektionen",
+      "text": "L1: Kap. 16.4 lesen, LF1–LF2, Fragenkatalog · L2: Interview (15 Min.) und Gegeninterview, Notizen · L3: Kurzprofil, LF4, Methoden-Notiz, Austausch",
+      "aktiv": true
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.1_einstieg_interview_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Strukturiertes Interview mit vorbereitetem Fragenkatalog führen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Vergleichbarkeit der Antworten vs. Raum für Überraschendes",
+    "hint": "Ein guter Katalog macht Profile vergleichbar und schützt vor Sprachlosigkeit. Gleichzeitig hören Sie nur Antworten auf Fragen, die Sie sich vorher ausgedacht haben. Bewertet wird nicht, ob Sie am Katalog kleben oder abweichen, sondern ob Sie benennen können, was Ihnen die Struktur gebracht und was sie Ihnen genommen hat."
+  },
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich in kurzer Zeit von einer Person vergleichbare Informationen bekommen — und würde ein Katalog dort auch helfen?",
+    "ziel": "Struktur erzeugt Vergleichbarkeit und Sicherheit, begrenzt aber das Feld des Sagbaren auf das, was ich vorher gedacht habe."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T2 — aus dem Kurzprofil wird ein ausformuliertes Porträt (Produktion schriftlich und bildlich R1).",
+    "r3_voraussicht": "T4 — Interaktion und Kollaboration mündlich R2."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 16.4",
+      "titel": "Fachgespräch/Interview — Vorbereitung, Durchführung, acht Fragearten",
+      "seiten": "Seite 372-373",
+      "fuer_leitfrage": [1, 2, 4]
+    },
+    {
+      "ref": "Kap. 16.1",
+      "titel": "Diskussion — Regeln der Gesprächsführung",
+      "seiten": "Seite 366-367",
+      "fuer_leitfrage": [3]
+    },
+    {
+      "ref": "Kap. 17.1",
+      "titel": "Dokumentieren — Notiztechniken, Stichworte und Schlüsselbegriffe",
+      "seiten": "Seite 380-390",
+      "fuer_leitfrage": [2]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Fragearten unterscheiden",
+        "indikator": "Ordnet mindestens fünf der acht Fragearten aus Kap. 16.4 korrekt zu und bildet je ein eigenes Beispiel.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Gesprächsführung",
+        "indikator": "Lässt ausreden, hakt bei knappen Antworten mit einer Klärungsfrage nach, hält die 15 Minuten ein.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Dokumentation",
+        "indikator": "Kurzprofil ist in Stichworten geführt, vollständig, und enthält drei rückbestätigte wörtliche Zitate.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Methodenbewusstsein",
+        "indikator": "Benennt in der Methoden-Notiz explizit, was der Katalog sichtbar gemacht und was er verdeckt hat.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Halbfertiger Fragenkatalog mit vier vorgegebenen Grundsatzfragen; Profil-Raster mit beschrifteten Feldern.",
+    "scaffold_100": "Zusätzlich: Katalog nach dem Gespräch überarbeiten und begründen, welche zwei Fragen ersetzt würden."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Der vorbereitete Fragenkatalog erzeugt Sicherheit und Vergleichbarkeit — und begrenzt zugleich, was gesagt werden kann.",
+    "lehrmittel_anker": "Kap. 16.4 S. 372-373 (Fragearten, Vorbereitung, Durchführung) plus Kap. 16.1 S. 366-367 (Gesprächsregeln) plus Kap. 17.1 S. 380-390 (Notiztechnik).",
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als die Option Struktur — kann die Lernende begründen, wann ein Katalog trägt und wann er im Weg steht?",
+    "transfer_check": "Vor jedem Gespräch, in dem ich etwas Bestimmtes erfahren muss, kurz überlegen: Welche drei Fragen muss ich sicher stellen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "Die Lernende setzt sich für das Gespräch ein Ziel (welches Bild will ich am Ende haben?), plant den Katalog darauf hin und passt ihn in LF4 nach dem Gespräch begründet an."
+    },
+    {
+      "sk": 4,
+      "wo": "Das Interview und das Gegeninterview verlangen, dass beide Seiten abwechselnd Verantwortung für den Gesprächsverlauf übernehmen und die Zeit gemeinsam einhalten."
+    },
+    {
+      "sk": 6,
+      "wo": "Die Methoden-Notiz verlangt eine begründete Aussage darüber, was die gewählte Methode geleistet hat — Standpunkt statt Geschmacksurteil."
+    }
+  ]
+}

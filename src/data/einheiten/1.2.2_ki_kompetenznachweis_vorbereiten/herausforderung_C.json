@@ -190,6 +190,69 @@
         "Darunter: drei einsatzfertige Übe-Prompts",
         "Abschluss: kurzer Verantwortungs-Check"
       ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigener Plan steht. Beispiel auf Stufe 3–4: pro Schritt eine begründete Entscheidung, nicht pauschal «KI ist gut/schlecht». Thema hier: Hygiene und Lebensmittelsicherheit.",
+      "abschnitte": [
+        {
+          "titel": "Lernplan — Schritte 1 bis 3",
+          "zeilen": [
+            {
+              "label": "Schritt 1",
+              "text": "Grundbegriffe HACCP · Ziel: die sieben Grundsätze in eigenen Worten nennen · MIT KI — sie erzeugt mir Lernkarten und fragt mich ab, das geht schneller als selbst Karten schreiben."
+            },
+            {
+              "label": "Schritt 2",
+              "text": "Kühlketten und Temperaturgrenzen · Ziel: Grenzwerte auswendig können · MIT KI — abfragen lassen, bis ich sie ohne Nachschauen nenne."
+            },
+            {
+              "label": "Schritt 3",
+              "text": "Hygieneregeln am eigenen Arbeitsplatz erklären · Ziel: frei erklären können, was ich in der Backstube konkret tue · BEWUSST OHNE KI — genau das muss ich im Kompetenznachweis allein können, und mein Betrieb ist nicht der aus dem Lehrbuch."
+            }
+          ]
+        },
+        {
+          "titel": "Lernplan — Schritte 4 und 5",
+          "zeilen": [
+            {
+              "label": "Schritt 4",
+              "text": "Einen Hygienefehler beurteilen und begründen · Ziel: eine Position vertreten · BEWUSST OHNE KI erarbeiten, danach MIT KI gegenlesen lassen — erst meine Begründung, dann die Rückmeldung."
+            },
+            {
+              "label": "Schritt 5",
+              "text": "Probelauf wie im Kompetenznachweis · Ziel: 10 Minuten frei sprechen · BEWUSST OHNE KI — im Kompetenznachweis sitze ich auch allein da."
+            }
+          ]
+        },
+        {
+          "titel": "Drei einsatzfertige Übe-Prompts",
+          "zeilen": [
+            {
+              "label": "Prompt 1",
+              "text": "Frag mich ab zu den sieben HACCP-Grundsätzen. Stell mir eine Frage nach der anderen und sag mir nach jeder Antwort, was noch fehlt."
+            },
+            {
+              "label": "Prompt 2",
+              "text": "Ich erkläre dir jetzt die Kühlkette in eigenen Worten. Hör zu und sag mir danach, welche Fachbegriffe ich falsch oder gar nicht verwendet habe."
+            },
+            {
+              "label": "Prompt 3",
+              "text": "Gib mir drei realistische Prüfungsfragen zu Hygiene in einer Bäckerei — aber keine Antworten. Die will ich selbst formulieren."
+            }
+          ]
+        },
+        {
+          "titel": "Verantwortungs-Check",
+          "zeilen": [
+            {
+              "text": "Was ich selbst können muss, übe ich selbst: erklären, beurteilen, frei sprechen. Was mich beim Üben unterstützt, darf die KI machen: abfragen, Karten erzeugen, Rückmeldung geben."
+            },
+            {
+              "text": "Ehrlich geprüft: Wenn ich mich nach dem Lernen vorbereitet fühle, aber es der KI überlassen habe, bin ich es nicht. Der Test ist, ob ich es ohne Bildschirm erklären kann."
+            }
+          ]
+        }
+      ]
     }
   },
   "reflexion_fragen": [

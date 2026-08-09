@@ -189,6 +189,63 @@
         "Drehbuch in drei Spalten: Ich sage – Ich höre – Ich frage",
         "Eröffnung (Ich-Botschaft) – Rückfragen – Win-Win-Vorschlag"
       ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigenes Drehbuch steht. Beispiel auf Stufe 3–4: Ich-Botschaften statt Etiketten, alle vier Ohren getrennt, Win-Win-Vorschlag am Schluss. Drei Spalten wie im Auftrag.",
+      "abschnitte": [
+        {
+          "titel": "Eröffnung",
+          "zeilen": [
+            {
+              "label": "Ich sage",
+              "text": "Danke, dass Sie sich die Zeit nehmen. Ich empfinde es als schwierig, wenn eine Rückmeldung im Sprint-Review vor dem ganzen Team kommt — dann bin ich vor allem damit beschäftigt, wie ich dastehe."
+            },
+            {
+              "label": "Ich höre",
+              "text": "Sachohr: Er findet, ich reagiere zu wenig auf Hinweise. Beziehungsohr: Er ist unzufrieden mit mir. Ich prüfe beides getrennt, statt nur das Beziehungsohr zu bedienen.",
+              "quelle": "Kap. 19.2, S. 425–426"
+            },
+            {
+              "label": "Ich frage",
+              "text": "Habe ich richtig verstanden, dass Sie sich mehr Rückfragen von mir wünschen — oder geht es um etwas anderes?"
+            }
+          ]
+        },
+        {
+          "titel": "Kern — der Satz «Du hörst einfach nicht zu»",
+          "zeilen": [
+            {
+              "label": "Ich sage",
+              "text": "Mir ist wichtig, dass Sie wissen: Ich höre zu. Ich brauche nur länger, bis ich eine Frage sauber formulieren kann. Wenn ich im Review still bin, heisst das nicht, dass ich abschalte."
+            },
+            {
+              "label": "Ich höre",
+              "text": "Selbstkundgabeohr: Vielleicht steht er selbst unter Druck und braucht schnellere Signale. Appellohr: Er will, dass ich mich früher melde."
+            },
+            {
+              "label": "Ich frage",
+              "text": "Woran würden Sie merken, dass ich zugehört habe? Was wäre für Sie ein gutes Zeichen?"
+            }
+          ]
+        },
+        {
+          "titel": "Abschluss — Win-Win",
+          "zeilen": [
+            {
+              "label": "Ich sage",
+              "text": "Mein Vorschlag: Ich fasse am Ende jedes Reviews in zwei Sätzen zusammen, was ich verstanden habe. Und wenn etwas nicht passt, melden Sie es mir kurz direkt statt in der Runde."
+            },
+            {
+              "label": "Ich höre",
+              "text": "Ich achte darauf, ob er den Vorschlag annimmt oder etwas anderes braucht — und bleibe offen, statt auf meiner Formulierung zu beharren."
+            },
+            {
+              "label": "Ich frage",
+              "text": "Wie können wir das für die nächsten vier Wochen ausprobieren und dann kurz schauen, ob es für uns beide besser läuft?"
+            }
+          ]
+        }
+      ]
     }
   },
   "reflexion_fragen": [

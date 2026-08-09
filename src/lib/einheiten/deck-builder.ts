@@ -138,6 +138,11 @@ export type Block =
   | { t: 'chips'; items: { text: string; dark?: boolean; color?: string }[] }
   | { t: 'quote'; text: string }
   | { t: 'mind'; zentrum: string; aeste: { titel: string; punkte: string[]; optional?: boolean }[] }
+  | {
+      t: 'muster'
+      hinweis?: string
+      abschnitte: { titel: string; zeilen: { label?: string; text: string; quelle?: string }[] }[]
+    }
 
 export type DeckCard = {
   k?: string
@@ -364,6 +369,38 @@ export function buildDeck(src: EinheitSource): Deck {
     ]),
   })
 
+  /* ---- Vorwissens-Check (optional) ---- */
+  const vw = set.vorwissen_check
+  if (vw?.items?.length) {
+    slides.push({
+      id: 'vorwissen',
+      accent: BRAND,
+      ctx: vw.titel ?? 'Vorwissen',
+      src: vw.dauer_min ? `${vw.dauer_min} Minuten · nicht benotet` : 'nicht benotet',
+      // Keine Überschrift — der Kicker sagt es bereits, und die sechs Karten brauchen den Platz.
+      headline: '',
+      body: [
+        {
+          t: 'cards',
+          grid: 2,
+          items: vw.items.map((it: any) => ({
+            k: `Frage ${it.nr}${it.gate ? ` · für Herausforderung ${it.gate}` : ''}`,
+            text: it.frage,
+          })),
+        },
+      ],
+      notes: notesFrom('Vorwissens-Check — prüfen, bevor Herausforderung A startet.', [
+        vw.hinweis,
+        ...vw.items.map(
+          (it: any) =>
+            `FRAGE ${it.nr}${it.gate ? ` (→ ${it.gate})` : ''}\n${it.frage}\nErwartet: ${it.erwartung}${
+              it.wenn_unsicher ? `\nWenn unsicher: ${it.wenn_unsicher}` : ''
+            }`
+        ),
+      ]),
+    })
+  }
+
   /* ---- per Herausforderung: Situation / Leitfragen / Produkt ---- */
   hfs.forEach((hf, i) => {
     const L = hf.buchstabe
@@ -489,6 +526,30 @@ export function buildDeck(src: EinheitSource): Deck {
         ...pick(s, ['tafelbild', 'differenzieren', 'mehrdeutigkeit', 'ki_einsatz']).map(fmtCallout),
       ]),
     })
+
+    // Musterlösung — letzte Unterfolie, Abschnitte einzeln aufklappbar.
+    const ml = hf.handlungsprodukt?.musterloesung
+    if (ml?.abschnitte?.length) {
+      slides.push({
+        id: `${L.toLowerCase()}-muster`,
+        accent: pal,
+        badge: L,
+        branchOf: parentId,
+        ctx: `Herausforderung ${L} · Musterlösung`,
+        src: 'Erst nach dem eigenen Entwurf',
+        headline: `So könnte es aussehen: ${hf.handlungsprodukt?.format ?? ''}`,
+        small: true,
+        body: [{ t: 'muster', hinweis: ml.hinweis, abschnitte: ml.abschnitte }],
+        notes: notesFrom(
+          `Herausforderung ${L} — Musterlösung. Abschnittsweise aufklappen (Klick oder Leertaste).`,
+          [
+            ml.hinweis,
+            'Nicht als Vorlage zum Abschreiben zeigen. Besser: erst den eigenen Entwurf danebenlegen lassen, dann Abschnitt für Abschnitt vergleichen — «Was haben Sie anders gelöst, und trägt Ihre Lösung auch?»',
+            ...pick(s, ['erwartungshorizont']).map(fmtCallout),
+          ]
+        ),
+      })
+    }
   })
 
   /* ---- Austausch ---- */
@@ -789,9 +850,9 @@ function renderBlock(b: Block): string {
       const cols = b.aeste
         .map(
           (a, k) =>
-            `<div class="mm-branch${a.optional ? ' opt' : ''}" style="--i:${k}"><button class="mm-t" type="button" aria-expanded="false"><span>${esc(
+            `<div class="mm-branch reveal${a.optional ? ' opt' : ''}" style="--i:${k}"><button class="mm-t" type="button" aria-expanded="false"><span>${esc(
               a.titel
-            )}</span><i class="mm-x" aria-hidden="true"></i></button><div class="mm-b"><div class="mm-bi"><ul>${a.punkte
+            )}</span><i class="mm-x" aria-hidden="true"></i></button><div class="mm-b"><div class="mm-bi"><ul class="mm-ul">${a.punkte
               .map((p) => `<li>${esc(p)}</li>`)
               .join('')}</ul>${
               a.optional ? '<div class="mm-opt">Vertiefung für 100 %</div>' : ''
@@ -801,6 +862,35 @@ function renderBlock(b: Block): string {
       return `<div class="mm"><div class="mm-center">${esc(b.zentrum)}</div>
         <svg class="mm-links" viewBox="0 0 100 100" preserveAspectRatio="none">${paths}</svg>
         <div class="mm-row" style="--n:${n}">${cols}</div></div>`
+    }
+    case 'muster': {
+      // Gleiche Aufklapp-Mechanik wie die Mindmap (.reveal): Titel steht, Inhalt kommt
+      // pro Klick — damit die Musterlösung nicht vor dem eigenen Entwurf sichtbar ist.
+      // Der längste Abschnitt wird markiert: die HyperFrames-Kopie klappt genau ihn auf,
+      // damit `check` den realistischen Worst Case eines Akkordeons prüft.
+      const lens = b.abschnitte.map((a) => a.zeilen.reduce((n, z) => n + z.text.length, 0))
+      const longest = lens.indexOf(Math.max(...lens))
+      const secs = b.abschnitte
+        .map(
+          (a, k) =>
+            `<div class="ms reveal${
+              k === longest ? ' ms-longest' : ''
+            }" style="--i:${k}"><button class="ms-t" type="button" aria-expanded="false"><span>${esc(
+              a.titel
+            )}</span><i class="mm-x" aria-hidden="true"></i></button><div class="mm-b"><div class="mm-bi">${a.zeilen
+              .map(
+                (z) =>
+                  `<div class="ms-z">${z.label ? `<span class="ms-l">${esc(z.label)}</span>` : ''}<span class="ms-x">${esc(
+                    z.text
+                  )}</span>${z.quelle ? `<span class="ms-q">${esc(z.quelle)}</span>` : ''}</div>`
+              )
+              .join('')}</div></div></div>`
+        )
+        .join('')
+      // data-accordion: immer nur ein Abschnitt offen. Sonst läuft eine vollständige
+      // Musterlösung unten aus der Folie (check meldet canvas_overflow).
+      // `hinweis` steht bewusst nur in den Notizen — er richtet sich an die Lehrperson.
+      return `<div class="ms-group" data-accordion>${secs}</div>`
     }
   }
 }
@@ -819,7 +909,7 @@ function renderSlide(s: DeckSlide, idx: number, logo = DEFAULT_LOGO): string {
     ? `${head}<div class="lionmark"></div><div class="hero"><h1>${esc(s.headline)}</h1>${
         s.lead ? `<div class="lead">${esc(s.lead)}</div>` : ''
       }${s.body.map(renderBlock).join('')}</div>${s.foot ? `<div class="foot">${esc(s.foot)}</div>` : ''}`
-    : `${head}<h1${s.small ? ' class="sm"' : ''}>${esc(s.headline)}</h1><div class="body${
+    : `${head}${s.headline ? `<h1${s.small ? ' class="sm"' : ''}>${esc(s.headline)}</h1>` : ''}<div class="body${
         s.center ? ' center' : ''
       }">${s.body.map(renderBlock).join('')}</div>`
 
@@ -857,6 +947,9 @@ ${DECK_CSS}
       .lionmark { background-image: url("${lion}") }
       /* First slide visible before any seek, so a fresh audience tab is never blank. */
       #deck-root > [data-scene-id]:first-child { opacity: 1; visibility: visible; }
+      /* Musterlösung ist im echten Deck ein Akkordeon — hier nur den längsten
+         Abschnitt zeigen, damit check den realistischen Worst Case misst. */
+      .ms-group .ms:not(.ms-longest) .mm-b { display: none; }
     </style>
   </head>
   <body>
@@ -993,6 +1086,18 @@ const DECK_CSS = `      * { margin: 0; padding: 0; box-sizing: border-box; }
       .mm-branch li::before { content: "· "; color: var(--acc); font-weight: 800; }
       .mm-opt { margin-top: 10px; font-size: 19px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--acc-dark); }
 
+      /* Musterlösung — aufklappbare Abschnitte */
+      .ms-group { display: flex; flex-direction: column; gap: 14px; }
+      .ms { background: #fff; border-radius: 16px; border-left: 10px solid var(--acc); padding: 16px 22px; box-shadow: 0 1px 0 rgba(16,32,26,.07); }
+      .ms-t { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; background: none; border: 0; padding: 0;
+        font: inherit; font-size: 26px; font-weight: 750; color: #10201a; }
+      .ms-t .mm-x { margin-top: 0; }
+      .ms-z { display: flex; align-items: baseline; gap: 12px; padding: 9px 0; border-top: 1px solid #eef2ef; font-size: 27px; line-height: 1.34; color: #172a22; }
+      .ms-z:first-child { border-top: 0; padding-top: 14px; }
+      .ms-l { flex: 0 0 190px; font-size: 21px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--acc-dark); }
+      .ms-x { flex: 1; min-width: 0; }
+      .ms-q { flex: 0 0 auto; font-size: 21px; font-weight: 700; color: var(--acc-dark); background: var(--acc-soft); border-radius: 8px; padding: 5px 12px; white-space: nowrap; }
+
       .foot { margin-top: 14px; font-size: 24px; color: #6b7c72; font-weight: 600; }
       /* Titelfolie: grösseres Logo + Löwen-Wasserzeichen wie die Katalogkarten (.lion-bg). */
       .titleslide .logo { height: 92px; width: 242px; }
@@ -1050,21 +1155,21 @@ const SHELL_CSS = `
 
   /* Mindmap: nur die Ast-Titel stehen da, der Inhalt kommt pro Klick.
      Der Ast selbst ist klickbar, nicht nur der Titel. */
-  .mm-branch { cursor: pointer; transition: box-shadow .15s, transform .15s; }
-  .mm-branch:hover { box-shadow: 0 4px 14px rgba(16,32,26,.13); }
-  .mm-branch .mm-b {
+  .reveal { cursor: pointer; transition: box-shadow .15s, transform .15s; }
+  .reveal:hover { box-shadow: 0 4px 14px rgba(16,32,26,.13); }
+  .reveal .mm-b {
     display: grid; grid-template-rows: 0fr;
     transition: grid-template-rows .34s cubic-bezier(.2,.7,.3,1), opacity .28s;
     opacity: 0;
   }
   /* Genau EIN Grid-Kind — bei mehreren würde 1fr nur die erste Zeile aufziehen
      und der «Vertiefung»-Hinweis bliebe als eigene auto-Zeile sichtbar. */
-  .mm-branch .mm-bi { overflow: hidden; min-height: 0; }
-  .mm-branch.open .mm-b { grid-template-rows: 1fr; opacity: 1; }
-  .mm-branch.open .mm-x::after { transform: scaleY(0); }        /* + wird zu − */
+  .reveal .mm-bi { overflow: hidden; min-height: 0; }
+  .reveal.open .mm-b { grid-template-rows: 1fr; opacity: 1; }
+  .reveal.open .mm-x::after { transform: scaleY(0); }        /* + wird zu − */
   .mm-x::after { transition: transform .25s ease; }
-  body.audience .mm-branch { cursor: default; }
-  @media (prefers-reduced-motion: reduce) { .mm-branch .mm-b { transition: none } }
+  body.audience .reveal { cursor: default; }
+  @media (prefers-reduced-motion: reduce) { .reveal .mm-b { transition: none } }
 
   /* Mindmap build-up — runs on slide entry (.anim is re-applied each time). */
   @keyframes mmPop { from { opacity: 0; transform: scale(.86) } to { opacity: 1; transform: none } }
@@ -1218,12 +1323,21 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
   function dive(d) { var p = pos[i]; go(at(p.c, p.r + d)); }
 
   /* ---- Mindmap: ein Ast pro Klick bzw. pro Leertaste ---- */
+  // Gilt für Mindmap-Äste UND Musterlösungs-Abschnitte — beide tragen .reveal.
   function branchesOf(n) {
-    return [].slice.call(scenes[n].querySelectorAll('.mm-branch'));
+    return [].slice.call(scenes[n].querySelectorAll('.reveal'));
   }
   function setBranch(n, k, open, quiet) {
-    var b = branchesOf(n)[k];
+    var all = branchesOf(n);
+    var b = all[k];
     if (!b) return;
+    // In einer Akkordeon-Gruppe (Musterlösung) schliesst das Öffnen die Geschwister.
+    var grp = open && b.closest ? b.closest('[data-accordion]') : null;
+    if (grp) {
+      for (var j = 0; j < all.length; j++) {
+        if (j !== k && grp.contains(all[j]) && all[j].classList.contains('open')) setBranch(n, j, false, quiet);
+      }
+    }
     b.classList.toggle('open', open);
     var t = b.querySelector('.mm-t');
     if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -1242,7 +1356,7 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
   }
   document.addEventListener('click', function (e) {
     if (audience) return;                     // Beamer-Fenster folgt nur
-    var b = e.target.closest && e.target.closest('.mm-branch');
+    var b = e.target.closest && e.target.closest('.reveal');
     if (!b || !scenes[i].contains(b)) return;
     var k = branchesOf(i).indexOf(b);
     setBranch(i, k, !b.classList.contains('open'));

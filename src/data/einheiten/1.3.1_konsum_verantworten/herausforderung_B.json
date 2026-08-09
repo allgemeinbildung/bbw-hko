@@ -108,6 +108,84 @@
       "satzanfaenge": ["«Ich passe … an, weil …»", "«Für mich ist … wichtiger als …, deshalb …»", "«Wie machst du das mit …?»"],
       "strategien": ["Nur realistische, eigene Zahlen einsetzen (Kap. 2.2)", "Erst zuhören, dann sachlich antworten — keine Killerphrasen (Kap. 16.1)"],
       "struktur": ["Budget: Einnahmen − fixe − variable − Rückstellungen = Saldo", "Gespräch: Standpunkt → Begründung → Rückfrage"]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigenes Budget steht. Beispiel auf Stufe 3–4: das Budget geht auf, die Anpassungen sind begründet, und im Gespräch wird zugehört statt verteidigt. Nettolohn CHF 900.",
+      "abschnitte": [
+        {
+          "titel": "Budget — Einnahmen und fixe Kosten",
+          "zeilen": [
+            {
+              "label": "Einnahmen",
+              "text": "Nettolohn CHF 900. Keine weiteren Einnahmen."
+            },
+            {
+              "label": "Fixe Kosten",
+              "text": "Krankenkasse CHF 120 · Handy-Abo CHF 40 · Haushaltsbeitrag zu Hause CHF 200 · ÖV-Abo CHF 65. Zusammen CHF 425."
+            },
+            {
+              "label": "Bleibt",
+              "text": "CHF 475 für alles Variable und für Rückstellungen."
+            }
+          ]
+        },
+        {
+          "titel": "Budget — variable Kosten vorher und nachher",
+          "zeilen": [
+            {
+              "label": "Vorher",
+              "text": "Ausgang CHF 220 · Take-away CHF 160 · Kleider CHF 120. Zusammen CHF 500 — also CHF 25 mehr, als überhaupt da ist. Genau deshalb ist am 20. das Konto leer."
+            },
+            {
+              "label": "Nachher",
+              "text": "Ausgang CHF 150 · Take-away CHF 80 · Kleider CHF 60. Zusammen CHF 290."
+            },
+            {
+              "label": "Rückstellungen",
+              "text": "Zahnarzt CHF 50 · Sparen CHF 80 · Unvorhergesehenes CHF 55. Zusammen CHF 185."
+            },
+            {
+              "label": "Saldo",
+              "text": "CHF 475 − 290 − 185 = CHF 0. Das Budget geht auf, und zum ersten Mal ist etwas zurückgelegt."
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Anpassungen — begründet",
+          "zeilen": [
+            {
+              "text": "Ich passe das Take-away an, weil es der grösste Posten ohne echten Gegenwert war: CHF 160 für Essen, das ich auch mitnehmen könnte. Das ist die Hälfte meiner Rückstellungen."
+            },
+            {
+              "text": "Für mich ist Ausgang wichtiger als neue Kleider, deshalb kürze ich dort weniger. Ich streiche nicht alles — ein Budget, das keinen Spass zulässt, halte ich keine zwei Monate durch."
+            },
+            {
+              "text": "Ich lege neu CHF 80 zur Seite, weil mich am meisten gestört hat, dass jede unerwartete Rechnung ein Problem war."
+            }
+          ]
+        },
+        {
+          "titel": "Budgetgespräch — mein Teil",
+          "zeilen": [
+            {
+              "label": "Standpunkt",
+              "text": "Ich habe beim Take-away am stärksten gekürzt und dafür den Ausgang weitgehend gelassen."
+            },
+            {
+              "label": "Begründung",
+              "text": "Weil ich dort Geld ausgebe, ohne etwas davon zu haben — beim Ausgang habe ich wenigstens etwas davon."
+            },
+            {
+              "label": "Rückfrage",
+              "text": "Wie machst du das mit dem Mittagessen? Du kommst mit weniger Lohn aus, das interessiert mich ehrlich."
+            },
+            {
+              "label": "Zuhören",
+              "text": "Sie nimmt Essen von zu Hause mit und kauft Kleider nur im Ausverkauf. Das mit dem Mittagessen übernehme ich — beim Rest bleibe ich bei meiner Lösung und sage ihr auch warum."
+            }
+          ]
+        }
+      ]
     }
   },
 

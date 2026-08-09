@@ -189,6 +189,87 @@
         "Darunter: Gesamturteil zu Verlässlichkeit / Tiefe / Nachvollziehbarkeit",
         "Optional: Vergleichsspalte für 2–3 Modelle"
       ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn die eigene Prüftabelle steht. Beispiel auf Stufe 3–4: jede Quelle einzeln an drei Kriterien geprüft, das Gesamturteil differenziert statt pauschal. Thema hier: FSC-zertifiziertes Schweizer Holz.",
+      "abschnitte": [
+        {
+          "titel": "Prüftabelle — Quelle 1",
+          "zeilen": [
+            {
+              "label": "Behauptung der KI",
+              "text": "FSC Schweiz, Jahresbericht 2024 — «85 % des Schweizer Waldes sind zertifiziert»."
+            },
+            {
+              "label": "Existiert?",
+              "text": "✓ Ja. FSC Schweiz gibt es, die Website ist erreichbar."
+            },
+            {
+              "label": "Belegt?",
+              "text": "✗ Nein. Im Bericht steht diese Zahl nicht; ich finde eine andere Grössenordnung. Die KI hat eine plausible Zahl erfunden."
+            },
+            {
+              "label": "Vertrauenswürdig?",
+              "text": "✓ Der Herausgeber schon — die zitierte Aussage nicht."
+            }
+          ]
+        },
+        {
+          "titel": "Prüftabelle — Quelle 2",
+          "zeilen": [
+            {
+              "label": "Behauptung der KI",
+              "text": "Link auf eine Studie der ETH Zürich zu Holzlieferketten."
+            },
+            {
+              "label": "Existiert?",
+              "text": "✗ Nein. Der Link führt ins Leere, und über die ETH-Suche finde ich keine Studie mit diesem Titel."
+            },
+            {
+              "label": "Belegt?",
+              "text": "— entfällt, die Quelle gibt es nicht."
+            },
+            {
+              "label": "Vertrauenswürdig?",
+              "text": "— entfällt. Klassische Halluzination: erfundener Titel, erfundene URL, seriös klingend."
+            }
+          ]
+        },
+        {
+          "titel": "Prüftabelle — Quellen 3 und 4",
+          "zeilen": [
+            {
+              "label": "Quelle 3",
+              "text": "Bundesamt für Umwelt (BAFU), Waldbericht. ✓ existiert · ✓ belegt die Aussage zur Waldfläche · ✓ vertrauenswürdig (Bundesstelle, aktuell)."
+            },
+            {
+              "label": "Quelle 4",
+              "text": "Branchenblog eines Holzhändlers. ✓ existiert · ✓ belegt die Aussage · ✗ nur bedingt vertrauenswürdig: Der Herausgeber verkauft selbst Holz, also nicht neutral."
+            }
+          ]
+        },
+        {
+          "titel": "Gesamturteil",
+          "zeilen": [
+            {
+              "label": "Verlässlichkeit",
+              "text": "Von vier Quellen hält eine der Prüfung ganz stand. Eine ist frei erfunden, eine belegt die Behauptung nicht, eine ist parteiisch. Die Zusammenfassung klang deutlich sicherer, als sie ist."
+            },
+            {
+              "label": "Tiefe",
+              "text": "Oberflächlich. Die KI nennt Zahlen und Labels, aber nichts zur Herkunft des Holzes in unserer Lieferkette — genau das brauche ich für den Kompetenznachweis."
+            },
+            {
+              "label": "Nachvollziehbarkeit",
+              "text": "Gering. Ohne eigenes Nachklicken hätte ich zwei falsche Angaben übernommen."
+            },
+            {
+              "label": "Mein Schluss",
+              "text": "Ich verwende nur die BAFU-Quelle direkt. Die KI-Zusammenfassung nutze ich als Suchhilfe, nicht als Beleg. Wenn ich eine Quelle nicht selbst geöffnet habe, zitiere ich sie nicht."
+            }
+          ]
+        }
+      ]
     }
   },
   "reflexion_fragen": [

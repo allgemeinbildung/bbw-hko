@@ -1,0 +1,411 @@
+{
+  "id": "1.1.1_einstieg_interview_hf_B",
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+  "titel": "Ein Satz und dann Stille — erzählen lassen statt abfragen",
+  "emotion_tag": "Kontrollverlust",
+  "wissensknoten": [
+    "interview_narrativ_zuhoeren"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": ["1.1.1"],
+    "lebensbezug": "1.1",
+    "themen": ["T1"],
+    "gesellschaft": [
+      { "aspekt": "Identität und Sozialisation", "iteration": "R1" }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sk": [4, 6, 8],
+    "sprachmodus_ids": ["SM3", "SM7"],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
+  },
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Meier Präzisionstechnik AG Wetzikon",
+    "ort": "Wetzikon"
+  },
+  "situation_text": "Ich bin Polymechaniker-Lernende/r im 1. Lehrjahr. Heute soll ich eine Person aus meiner ABU-Klasse kennenlernen und sie nachher vorstellen — aber die Lehrperson hat einen Fragenkatalog ausdrücklich verboten. Ich darf genau einen Satz sagen, um das Gespräch zu eröffnen, und danach nur noch Rückfragen stellen, die sich aus dem ergeben, was mein Gegenüber erzählt. Ich habe 15 Minuten. Mir ist unwohl dabei: Ohne Fragen in der Hand weiss ich nicht, wo das Gespräch hingeht, und ich habe Angst, dass es nach zwei Minuten stockt und ich nicht weiss, wie ich weitermache.",
+  "zahlen_tabelle": [
+    { "label": "Gesprächszeit", "wert": "15 Min." },
+    { "label": "Vorbereitete Fragen", "wert": "0" },
+    { "label": "Erzählimpuls", "wert": "1 Satz" },
+    { "label": "Kurzprofil", "wert": "1 A4, Stichworte" }
+  ],
+  "leitfrage": "Wie halte ich ein Gespräch am Laufen, ohne es zu steuern — und was höre ich, wenn ich nicht frage?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Grundlage sind Kap. 16.4 (Durchführung eines Interviews), Kap. 19.2 (Kommunikationsquadrat, Vier Ohren) und Kap. 17.1 (Notiztechniken).",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 19.2 | S. 425-427",
+      "text": "Erklären Sie das Kommunikationsquadrat von Schulz von Thun mit den vier Botschaften. Beschreiben Sie danach in zwei bis drei Sätzen, worauf man mit dem Selbstkundgabeohr hört («Was ist das für einer? Was ist mit ihm?») und warum genau dieses Ohr für ein Interview wichtig ist.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 16.4 | S. 372-373",
+      "text": "Formulieren Sie drei mögliche Erzählimpulse als ersten und einzigen vorbereiteten Satz — je einer zum Berufseinstieg, zu einem konkreten Tag und zu einer Person, die für Ihr Gegenüber wichtig war. Entscheiden Sie sich für einen und begründen Sie die Wahl. Notieren Sie ausserdem vier Klärungsfragen (Kap. 16.4), die in jedem Gespräch funktionieren.",
+      "feld_hoehe_mm": 20
+    },
+    {
+      "nr": 3,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.1 | S. 380-383",
+      "text": "Wer erzählen lässt, kann nicht alles mitschreiben. Legen Sie nach Kap. 17.1 ein Notizblatt an, das schnelles Mitschreiben erlaubt: Schlüsselwörter statt Sätze, ein freies Feld für wörtliche Aussagen, ein Rand für eigene Beobachtungen (Tonfall, Pausen, Lachen).",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Beurteilen",
+      "knoten_ref": "Kap. 19.2 | S. 426-427",
+      "text": "Nach dem Gespräch: Nennen Sie eine Aussage Ihres Gegenübers und schreiben Sie auf, was Sie mit dem Sachohr gehört haben und was mit dem Selbstkundgabeohr. Beurteilen Sie danach: Was haben Sie erfahren, wonach Sie nie gefragt hätten — und was fehlt Ihnen jetzt, weil Sie nicht gefragt haben?",
+      "feld_hoehe_mm": 20
+    }
+  ],
+  "mindmap_zentrum": "Erzählen lassen — Zuhören als Werkzeug",
+  "mindmap_aeste": [
+    {
+      "titel": "Erzählimpuls",
+      "punkte": [
+        "Offen, ohne Ja/Nein",
+        "Auf eine Situation zielen, nicht auf ein Thema",
+        "«Erzähl mir von deinem ersten Tag …»",
+        "Danach: schweigen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Vier Ohren (Kap. 19.2)",
+      "punkte": [
+        "Sachohr: was ist der Fakt?",
+        "Selbstkundgabeohr: was sagt das über ihn/sie?",
+        "Beziehungsohr",
+        "Appellohr"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Am Laufen halten",
+      "punkte": [
+        "Klärungsfrage: «Was meinst du mit …?»",
+        "Echo: letztes Wort wiederholen",
+        "Pause aushalten (3 Sek.)",
+        "Nachhaken bei Ausweichendem"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Beobachten",
+      "punkte": [
+        "Tonfall und Tempo",
+        "Wo wird gelacht?",
+        "Wo entsteht eine Pause?",
+        "Welches Wort kommt mehrfach?"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kurzprofil",
+    "abgaben": [
+      "Kurzprofil (1 A4, Stichworte)",
+      "3 wörtliche Zitate",
+      "Methoden-Notiz (3–4 Sätze)"
+    ],
+    "titel": "Kurzprofil meines Gegenübers",
+    "format_detail": "Eine A4-Seite in Stichworten — bewusst kein Fliesstext. Vier Felder: (1) Person und Ausbildung, (2) Der Einstieg in die Lehre, (3) Was diese Person ausmacht, (4) Drei wörtliche Zitate. Dazu am Fuss eine Methoden-Notiz von 3–4 Sätzen.",
+    "beschreibung": "Ich halte das Ergebnis meines Interviews so fest, dass eine andere Person damit arbeiten könnte. Stichworte statt Sätze, plus drei Aussagen im Originalwortlaut. Das Kurzprofil ist keine fertige Textsorte, sondern Rohmaterial: In T2 wird daraus ein ausformuliertes Porträt. Deshalb zählt hier Genauigkeit und Vollständigkeit, nicht schöner Stil.",
+    "schritte": [
+      {
+        "label": "Erzählimpuls festlegen",
+        "hint": "Ein Satz, offen, auf eine konkrete Situation gerichtet. Auswendig können — Sie werden ihn nicht ablesen wollen."
+      },
+      {
+        "label": "Notizblatt vorbereiten",
+        "hint": "Nach Kap. 17.1: Schlüsselwörter, freies Feld für Zitate, Rand für Beobachtungen. Rechnen Sie damit, unordentlich zu schreiben."
+      },
+      {
+        "label": "Interview führen (15 Min.)",
+        "hint": "Impuls setzen, dann zuhören. Nur Klärungsfragen. Pausen aushalten — die Fortsetzung kommt meist von selbst."
+      },
+      {
+        "label": "Lücken schliessen",
+        "hint": "Letzte 3 Minuten: Was fehlt für das Profil? Jetzt sind gezielte Fragen erlaubt — Name des Betriebs, Beruf, Ort."
+      },
+      {
+        "label": "Profil und Methoden-Notiz",
+        "hint": "Felder füllen. Dann: Was ist zur Sprache gekommen, weil ich nicht gefragt habe — und was fehlt mir, weil ich nicht gefragt habe?"
+      }
+    ],
+    "schreib_label": "KURZPROFIL HIER ERARBEITEN",
+    "schreib_note": "-> wissen/interview_narrativ_zuhoeren",
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Erzähl mir von …» (Erzählimpuls)",
+        "«Was meinst du genau mit …?» (Klärungsfrage)",
+        "«Und dann?» (Fortsetzung)",
+        "«Du hast vorhin gesagt … — wie war das?» (Rückgriff)"
+      ],
+      "strategien": [
+        "Nach dem Impuls bewusst schweigen — die ersten Sekunden Stille gehören dazu",
+        "Das letzte Wort des Gegenübers als Frage wiederholen, wenn nichts mehr kommt",
+        "Nie zwei Fragen hintereinander stellen"
+      ],
+      "struktur": [
+        "Impuls → erzählen lassen → klären → am Schluss Lücken füllen",
+        "Vier Profil-Felder: Person · Einstieg · Was ausmacht · Zitate"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigenes Kurzprofil steht. Beispiel auf Stufe 3–4: das Material stammt sichtbar aus einer Erzählung, nicht aus einem Fragenkatalog — und die Methoden-Notiz zeigt, dass die Pause ausgehalten wurde. Befragt wurde hier eine Coiffeuse-Lernende.",
+      "abschnitte": [
+        {
+          "titel": "Feld 1 — Person und Ausbildung",
+          "zeilen": [
+            {
+              "text": "Alina, 16 · Coiffeuse EFZ, 1. Lehrjahr"
+            },
+            {
+              "text": "Salon Kaufmann, Töss · zwei Lernende, vier Angestellte"
+            },
+            {
+              "text": "Erzählimpuls war: «Erzähl mir von deinem ersten Tag im Salon.»"
+            }
+          ]
+        },
+        {
+          "titel": "Feld 2 — Der Einstieg in die Lehre",
+          "zeilen": [
+            {
+              "text": "Erster Tag: durfte nur Haare zusammenwischen und Kaffee bringen"
+            },
+            {
+              "text": "Nach einer Woche die erste Kopfwäsche — «und die Frau hat gesagt, das sei angenehm gewesen»"
+            },
+            {
+              "text": "Mutter ist gelernte Coiffeuse · hat ihr abgeraten («harter Beruf, wenig Lohn»)"
+            },
+            {
+              "text": "Hat sich trotzdem entschieden — kam im Erzählen zweimal darauf zurück"
+            }
+          ]
+        },
+        {
+          "titel": "Feld 3 — Was diese Person ausmacht",
+          "zeilen": [
+            {
+              "text": "Erzählt am lebendigsten über Kundinnen, nicht über Technik"
+            },
+            {
+              "text": "Wort, das mehrfach kam: «zuhören» — dreimal in fünfzehn Minuten"
+            },
+            {
+              "text": "Lange Pause bei der Frage nach der Mutter — dort steckt etwas"
+            },
+            {
+              "text": "Ziel: eigener Salon, «aber nicht vor dreissig»"
+            }
+          ]
+        },
+        {
+          "titel": "Feld 4 — Drei wörtliche Zitate",
+          "zeilen": [
+            {
+              "text": "«Am ersten Tag habe ich nur gewischt. Ich habe trotzdem den ganzen Tag zugeschaut.»"
+            },
+            {
+              "text": "«Meine Mutter hat gesagt, ich soll das nicht machen. Sie weiss ja, wie es ist.»"
+            },
+            {
+              "text": "«Die meisten wollen gar keine neue Frisur. Die wollen reden.»"
+            }
+          ]
+        },
+        {
+          "titel": "Methoden-Notiz",
+          "zeilen": [
+            {
+              "text": "Ein Satz zum Start, dann geschwiegen. Nach etwa zehn Sekunden hat sie angefangen — die Pause auszuhalten war das Schwierigste."
+            },
+            {
+              "text": "Ich habe fast nur Klärungsfragen gestellt und zweimal das letzte Wort wiederholt («Zugeschaut?»). Das hat jedes Mal eine weitere Geschichte ausgelöst."
+            },
+            {
+              "text": "Auf dem Selbstkundgabeohr habe ich gehört, dass ihr die Anerkennung der Mutter wichtig ist — gefragt hat danach niemand."
+            },
+            {
+              "text": "Ohne Fragenkatalog bekam ich weniger Fakten, aber deutlich mehr über die Person. Für Feld 1 musste ich am Schluss zwei Dinge nachfragen."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Wie habe ich die erste Stille ausgehalten — und was ist danach passiert?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Was habe ich über mein Gegenüber erfahren, das in keinem Fragenkatalog vorgekommen wäre?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Wo in meinem Lehralltag wäre Zuhören statt Fragen die bessere Wahl — und wo wäre es falsch?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle 4 Leitfragen schriftlich beantwortet",
+        "Vier Botschaften des Kommunikationsquadrats korrekt benannt",
+        "Selbstkundgabeohr an einer echten Aussage angewendet"
+      ]
+    },
+    {
+      "produkt": "Erzählimpuls",
+      "kriterium": "Offenheit · Begründung",
+      "vollstaendig_wenn": [
+        "Drei Impulse formuliert, einer begründet gewählt",
+        "Gewählter Impuls ist offen und zielt auf eine Situation",
+        "Vier universelle Klärungsfragen notiert"
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Kurzprofil auf 1 A4, alle vier Felder gefüllt, Stichworte statt Fliesstext",
+        "Drei wörtliche Zitate, beim Gegenüber rückbestätigt",
+        "Methoden-Notiz benennt Gewinn UND Verlust der Methode"
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle 3 Reflexionsfragen beantwortet",
+        "Eine Situation benannt, in der Zuhören die falsche Wahl wäre"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 · 3 Lektionen",
+      "text": "L1: Kap. 19.2 (Vier Ohren) und Kap. 16.4 lesen, LF1–LF3, Impuls festlegen · L2: Interview (15 Min.) und Gegeninterview · L3: Kurzprofil, LF4, Methoden-Notiz, Austausch",
+      "aktiv": true
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.1_einstieg_interview_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Narratives Interview führen — erzählen lassen statt abfragen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Nähe und Tiefe vs. Steuerbarkeit und Zeitbudget",
+    "hint": "Wer erzählen lässt, erfährt Dinge, nach denen niemand gefragt hätte — und riskiert, dass am Ende der Name des Betriebs fehlt. Beide Seiten sind real. Bewertet wird nicht, ob Ihr Gespräch tief oder vollständig war, sondern ob Sie beides sehen und begründet damit umgehen."
+  },
+  "dekontextualisierung": {
+    "frage": "In welcher Situation ausserhalb der Schule würde ich mehr erfahren, wenn ich aufhöre zu fragen und anfange zuzuhören?",
+    "ziel": "Offenheit erzeugt Tiefe und Unerwartetes, kostet aber Kontrolle über Zeit und Vollständigkeit."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T2 — aus dem Kurzprofil wird ein ausformuliertes Porträt (Produktion schriftlich und bildlich R1).",
+    "r3_voraussicht": "T4 — Interaktion und Kollaboration mündlich R2."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 19.2",
+      "titel": "Konflikte — Kommunikationsquadrat, Vier Ohren, Selbstkundgabeohr",
+      "seiten": "Seite 424-427",
+      "fuer_leitfrage": [1, 4]
+    },
+    {
+      "ref": "Kap. 16.4",
+      "titel": "Fachgespräch/Interview — Durchführung, aufmerksam zuhören, nachhaken, Klärungsfragen",
+      "seiten": "Seite 372-373",
+      "fuer_leitfrage": [2]
+    },
+    {
+      "ref": "Kap. 17.1",
+      "titel": "Dokumentieren — Notiztechniken, Stichworte und Schlüsselbegriffe",
+      "seiten": "Seite 380-390",
+      "fuer_leitfrage": [3]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Aktives Zuhören",
+        "indikator": "Stellt im Gespräch überwiegend Klärungsfragen, die sich aus dem Gesagten ergeben, und hält Pausen aus.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Vier-Ohren-Modell anwenden",
+        "indikator": "Trennt an einer echten Aussage nachvollziehbar zwischen Sachohr und Selbstkundgabeohr.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Dokumentation unter Zeitdruck",
+        "indikator": "Kurzprofil ist trotz unstrukturiertem Gesprächsverlauf vollständig; drei rückbestätigte wörtliche Zitate.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Methodenbewusstsein",
+        "indikator": "Benennt in der Methoden-Notiz explizit, was das Erzählenlassen ermöglicht und was es gekostet hat.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Drei vorformulierte Erzählimpulse zur Auswahl; Kärtchen mit vier universellen Klärungsfragen für die Hand.",
+    "scaffold_100": "Zusätzlich: Eine Passage nach dem Gespräch aus dem Gedächtnis wörtlich rekonstruieren und mit den Notizen vergleichen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Zuhören statt Fragen öffnet den Raum für Unerwartetes — auf Kosten von Kontrolle und Vollständigkeit.",
+    "lehrmittel_anker": "Kap. 19.2 S. 424-427 (Vier Ohren, Selbstkundgabeohr) plus Kap. 16.4 S. 372-373 (Durchführung, Klärungsfragen) plus Kap. 17.1 S. 380-390 (Notiztechnik).",
+    "kn_aktivierung": "Im KN erscheint diese Herausforderung als die Option Offenheit — kann die Lernende begründen, wann sich Zuhören lohnt und wann es die nötigen Fakten kostet?",
+    "transfer_check": "Wenn ein Gespräch stockt, zuerst prüfen: Habe ich zu viel gefragt und zu wenig gewartet?"
+  },
+  "sk_anker": [
+    {
+      "sk": 4,
+      "wo": "Das narrative Interview verlangt, die Gesprächsverantwortung bewusst abzugeben und trotzdem für Zeit und Ergebnis mitverantwortlich zu bleiben."
+    },
+    {
+      "sk": 6,
+      "wo": "LF2 verlangt eine begründete Wahl zwischen drei Erzählimpulsen; die Methoden-Notiz verlangt einen begründeten Standpunkt zur Methode."
+    },
+    {
+      "sk": 8,
+      "wo": "Der Erzählimpuls zielt auf den Übergang Schule–Lehre als Lebensphase; die Lernende hört, wie ein anderer Mensch diesen Übergang bewältigt hat, und spiegelt das an der eigenen Situation (R2, R3)."
+    }
+  ]
+}

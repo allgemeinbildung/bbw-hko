@@ -191,6 +191,73 @@
         "Aufbau vom vagen zum scharfen Prompt sichtbar machen",
         "Abschluss: Kommentar zum stärksten Prompt"
       ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigenes Protokoll steht. Beispiel auf Stufe 3–4: die Schärfung vom vagen zum präzisen Prompt ist sichtbar, der Lernfortschritt ist markiert statt behauptet. Thema hier: Sicheres Arbeiten im Homeoffice.",
+      "abschnitte": [
+        {
+          "titel": "Prompt 1 — der vage Einstieg",
+          "zeilen": [
+            {
+              "label": "Meine Frage",
+              "text": "Erkläre mir Datensicherheit."
+            },
+            {
+              "label": "KI-Antwort (gekürzt)",
+              "text": "Lange, glatte Übersicht über Verschlüsselung, Passwörter, Backups, Firewalls — sechs Absätze, alles allgemein."
+            },
+            {
+              "label": "Meine Markierung",
+              "text": "✗ Nichts hängengeblieben. Ich könnte davon keine drei Sätze selbst wiederholen. Die Frage war zu weit — die KI konnte gar nicht wissen, was ich brauche."
+            }
+          ]
+        },
+        {
+          "titel": "Prompt 2 — Rolle, Ziel und Kontext ergänzt",
+          "zeilen": [
+            {
+              "label": "Meine Frage",
+              "text": "Du bist meine Lerncoach/in. Ich habe in zwei Wochen einen Kompetenznachweis zum Thema «Sicheres Arbeiten im Homeoffice» und bin Informatik-Lernende/r im 1. Lehrjahr. Mein Ziel ist, dass ich es selbst erklären kann. Erkläre mir die drei wichtigsten Risiken im Homeoffice — je in zwei Sätzen und mit einem Beispiel aus dem Betrieb."
+            },
+            {
+              "label": "KI-Antwort (gekürzt)",
+              "text": "Drei Risiken mit Beispiel: ungesichertes WLAN (Nachbar liest mit), Bildschirm im Wohnzimmer einsehbar (Besuch sieht Kundendaten), privates Gerät ohne Updates (Schadsoftware)."
+            },
+            {
+              "label": "Meine Markierung",
+              "text": "★ Jetzt konkret. Die Beispiele kann ich mir merken, weil ich sie mir vorstellen kann. Rolle + Ziel + Kontext haben die Antwort brauchbar gemacht."
+            }
+          ]
+        },
+        {
+          "titel": "Prompt 3 — Kontrollfrage statt weiterer Erklärung",
+          "zeilen": [
+            {
+              "label": "Meine Frage",
+              "text": "Erkläre nichts mehr. Stell mir stattdessen drei Kontrollfragen zu diesen drei Risiken und sag mir danach, was in meiner Antwort noch fehlt."
+            },
+            {
+              "label": "KI-Antwort (gekürzt)",
+              "text": "Drei Fragen; nach meiner Antwort der Hinweis, dass ich beim WLAN zwar das Risiko, aber keine Massnahme genannt habe (VPN, eigenes Passwort)."
+            },
+            {
+              "label": "Meine Markierung",
+              "text": "★ Hier ist der Lernschritt passiert. Ich musste selbst formulieren, und die Lücke wurde sichtbar — nicht die KI hat sie mir erklärt, ich habe sie gemerkt."
+            }
+          ]
+        },
+        {
+          "titel": "Kommentar zum stärksten Prompt",
+          "zeilen": [
+            {
+              "text": "Prompt 3 hat mir am meisten gebracht, weil ich dort selbst antworten musste. Prompt 2 war die beste Erklärung, aber Erklärungen kann ich nachlesen. Gelernt habe ich erst, als die KI mich abgefragt hat statt umgekehrt."
+            },
+            {
+              "text": "Für den Kompetenznachweis nehme ich mit: zuerst Rolle, Ziel und Kontext angeben — und dann die KI fragen lassen, nicht antworten lassen."
+            }
+          ]
+        }
+      ]
     }
   },
   "reflexion_fragen": [

@@ -1,0 +1,182 @@
+{
+  "id": "1.1.1_einstieg_interview_prinzip",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "einstieg_interview",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-09",
+  "set_typ": "varianten",
+  "kern_kompetenzversprechen": "Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K4"
+  },
+  "varianten_achse": {
+    "name": "Befragungsmethode",
+    "frage": "Wie frage ich?",
+    "invariant": "Handlungsprodukt, Zeitrahmen, Bewertungsraster und Gesprächspartner/in sind in allen drei Herausforderungen identisch.",
+    "variabel": "Nur die Methode der Befragung — und damit das, was überhaupt zur Sprache kommen kann.",
+    "begruendung": "Die drei Wege sind austauschbar, nicht aufeinander aufbauend. Eine Lehrperson kann eine beliebige Herausforderung allein einsetzen; die Einheit funktioniert vollständig mit einer einzigen Woche. Werden mehrere Wege in derselben Klasse parallel vergeben, entsteht in der Austausch-Phase der eigentliche Erkenntnisgewinn: dieselbe Aufgabe, dieselbe Person, sichtbar verschiedene Ergebnisse."
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Strukturiertes Interview mit vorbereitetem Fragenkatalog führen",
+      "methode": "Fragenkatalog vorab, geordnete Fragetypen, Grundsatz- vor Detailfragen (Kap. 16.4 S. 372-373)",
+      "handlungsprodukt_typ": "Kurzprofil in Stichworten plus drei wörtliche Zitate plus Methoden-Notiz",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Narratives Interview führen — erzählen lassen statt abfragen",
+      "methode": "Kein Katalog, ein Erzählimpuls, danach nur Klärungsfragen; aktives Zuhören mit dem Selbstkundgabeohr (Kap. 16.4 plus Kap. 19.2 S. 424-427)",
+      "handlungsprodukt_typ": "Kurzprofil in Stichworten plus drei wörtliche Zitate plus Methoden-Notiz",
+      "transferrable": true
+    },
+    "C": {
+      "herausforderung": "Schriftlich-digital befragen und gezielt nachfassen",
+      "methode": "Schriftliche Anfrage nach Konventionen, asynchrone Antwort, eine Runde Klärungsfragen (Kap. 17.3 S. 396-405 plus Kap. 16.4)",
+      "handlungsprodukt_typ": "Kurzprofil in Stichworten plus drei wörtliche Zitate plus Methoden-Notiz",
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [2, 4, 6],
+    "B": [4, 6, 8],
+    "C": [2, 4, 6]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [4, 6]
+  },
+  "aspekte": {
+    "Identität und Sozialisation": "R1",
+    "Technologische und digitale Transformation": "R1"
+  },
+  "modi_units": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich",
+    "Interaktion und Kollaboration digital"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich",
+    "Interaktion und Kollaboration digital",
+    "Produktion mündlich"
+  ],
+  "modi_hinweis": "Die drei Herausforderungen bleiben strikt in den T1-Modi (Rezeption schriftlich R1, Interaktion mündlich R1, Interaktion digital R1). Produktion schriftlich und bildlich wird bewusst NICHT bedient — dieser Modus hat seine R1 erst in T2. Das Handlungsprodukt ist deshalb ein Stichwort-Profil und kein Fliesstext. Einzig der KN-Typ Fachgespräch berührt Produktion mündlich (R1 in T2) und nimmt damit die unmittelbar folgende Themeneinheit vorweg.",
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Vergleichbarkeit der Antworten vs. Raum für Überraschendes",
+      "Nähe und Tiefe vs. Steuerbarkeit und Zeitbudget",
+      "Bedenkzeit und Formulierungssorgfalt vs. Spontaneität und Zwischentöne"
+    ],
+    "verbindlich": "Keine der drei Methoden ist die richtige. Jede öffnet eine Tür und schliesst eine andere. Bewertet wird nicht die Wahl, sondern ob die Lernende benennen kann, was ihre Methode sichtbar gemacht und was sie verdeckt hat."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Wer fragt, entscheidet mit, was überhaupt gesagt werden kann. Die Methode der Befragung ist kein neutrales Werkzeug, sondern formt das Ergebnis.",
+    "transferfeld": "Alle Situationen, in denen ich von einem Menschen etwas erfahren muss, das ich nicht nachlesen kann: Rückfrage beim Berufsbildner, Kundengespräch, Umfrage im ÜK, Gespräch mit einer Amtsstelle."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T2 — Das gesammelte Material wird zum Porträt ausformuliert (Produktion schriftlich und bildlich R1).",
+    "r3_voraussicht": "T4 — Interaktion und Kollaboration mündlich R2 in anspruchsvolleren Gesprächslagen."
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 16.4",
+        "titel": "Fachgespräch/Interview — Vorbereitung, Durchführung, acht Fragearten, Wiedergabe eines schriftlichen Interviews",
+        "seiten": "Seite 372-373"
+      },
+      {
+        "ref": "Kap. 16.1",
+        "titel": "Diskussion — Regeln der Gesprächsführung, Diskussionsstil",
+        "seiten": "Seite 366-367"
+      },
+      {
+        "ref": "Kap. 17.1",
+        "titel": "Dokumentieren — Notiztechniken, Markieren mit Symbolen, Sprachspeicher",
+        "seiten": "Seite 380-390"
+      },
+      {
+        "ref": "Kap. 17.3",
+        "titel": "Korrespondenz — E-Mail, Anfrage, Sprache und Stil, Muster einer Interviewanfrage",
+        "seiten": "Seite 396-405"
+      },
+      {
+        "ref": "Kap. 19.2",
+        "titel": "Konflikte — Kommunikationsquadrat, Vier Ohren, Selbstkundgabeohr, aktives Zuhören",
+        "seiten": "Seite 424-427"
+      },
+      {
+        "ref": "Kap. 18.1",
+        "titel": "Identität — soziale Interaktion, Rollenübernahme, Selbstwert",
+        "seiten": "Seite 410"
+      }
+    ],
+    "konzepte": [
+      "Interview",
+      "Fragenkatalog",
+      "Offene Frage",
+      "Geschlossene Frage",
+      "Klärungsfrage",
+      "Definitionsfrage",
+      "Informationsfrage",
+      "Entscheidungsfrage",
+      "Alternativfrage",
+      "Suggestivfrage",
+      "Grundsatzfrage vor Detailfrage",
+      "Nachhaken",
+      "Aktives Zuhören",
+      "Kommunikationsquadrat",
+      "Selbstkundgabeohr",
+      "Sachohr",
+      "Notiztechnik",
+      "Sprachspeicher",
+      "Stichwort und Schlüsselbegriff",
+      "Wörtliches Zitat",
+      "Nonverbale Äusserung",
+      "Adressatengerechte Anfrage",
+      "Soziale Rolle"
+    ]
+  },
+  "persona_pool_units": {
+    "berufe": [
+      "Fachfrau/-mann Betreuung EFZ",
+      "Polymechaniker/in EFZ",
+      "Detailhandelsfachfrau/-mann EFZ"
+    ],
+    "orte": [
+      "Winterthur",
+      "Wetzikon",
+      "Bülach"
+    ]
+  },
+  "persona_pool_kn_neu": {
+    "berufe": [
+      "Logistiker/in EFZ",
+      "Kauffrau/-mann EFZ"
+    ],
+    "orte": [
+      "Effretikon",
+      "Andelfingen"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 2,
+    "must_combine_herausforderungen": ["A", "B", "C"],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene mit widersprüchlichen Rahmenbedingungen — nicht drei Methoden aneinandergereiht.",
+      "Die Bedingungen schliessen jede der drei Methoden teilweise aus, keine ist offensichtlich richtig.",
+      "Mindestens zwei Spannungsfelder aus trade_off_raum spannen sich auf.",
+      "Persona ist neu (Beruf und Ort kommen in keiner Herausforderung vor).",
+      "Leitfrage verlangt die Methodenwahl UND ihre Begründung, ohne eine Antwort nahezulegen."
+    ]
+  }
+}

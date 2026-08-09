@@ -199,6 +199,41 @@
         "Anlass – Absicht – Begründung (3B) – Schluss",
         "3B im Begründungsteil: Behauptung – Begründung mit Quelle – Beispiel"
       ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigener Entwurf steht. Beispiel auf Stufe 3–4: Aufbau vollständig, ein 3B-Tripel erkennbar, OR-Zitat gesetzt, Unsicherheit ehrlich markiert. 232 Wörter.",
+      "abschnitte": [
+        {
+          "titel": "Kopf",
+          "zeilen": [
+            { "label": "Betreff", "text": "Lohnabzug für den Kratzer — was das Obligationenrecht dazu sagt" },
+            { "label": "Anrede", "text": "Hallo Luca" }
+          ]
+        },
+        {
+          "titel": "Anlass und Absicht",
+          "zeilen": [
+            { "label": "Anlass", "text": "Du hast mich gefragt, ob dein Berufsbildner CHF 150 von deinem Lohn abziehen darf, weil ein fertiges Werkstück einen Kratzer hat." },
+            { "label": "Absicht", "text": "Ich schreibe dir das schriftlich, damit du es deinem Berufsbildner zeigen kannst." }
+          ]
+        },
+        {
+          "titel": "Begründung nach 3B",
+          "zeilen": [
+            { "label": "Behauptung", "text": "Ein Lohnabzug ist nicht automatisch zulässig." },
+            { "label": "Begründung", "text": "Gemäss OR Art. 321e haftest du nur für Schaden, den du absichtlich oder fahrlässig verursacht hast. Der Betrieb muss also nachweisen, dass dich ein Verschulden trifft und wie hoch der Schaden ist. Ohne diesen Nachweis darf er nichts vom Lohn abziehen.", "quelle": "OR 321e" },
+            { "label": "Beispiel", "text": "Wenn der Kratzer beim normalen Arbeiten entstanden ist und du die Maschine korrekt bedient hast, fehlt das Verschulden — dann gibt es keinen Abzug." }
+          ]
+        },
+        {
+          "titel": "Schluss",
+          "zeilen": [
+            { "label": "Vorschlag", "text": "Bitte deinen Berufsbildner um eine schriftliche Begründung mit der Schadenhöhe. Dann seht ihr beide, worüber ihr eigentlich sprecht." },
+            { "label": "Grenze", "text": "Was ich nicht beurteilen kann, ist, ob dein Verhalten als fahrlässig gilt — das hängt vom konkreten Ablauf ab. Wenn ihr euch nicht einigt, wende dich an deinen Berufsbildungsverantwortlichen oder an das kantonale Amt für Berufsbildung." },
+            { "label": "Gruss", "text": "Freundliche Grüsse, Nina Keller, Lernende Informatik 1. Lehrjahr" }
+          ]
+        }
+      ]
     }
   },
   "reflexion_fragen": [
