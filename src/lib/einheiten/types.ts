@@ -117,6 +117,14 @@ export interface SetJson {
   // Sichtbarkeit (KT1-only Drafts). Beide optional; fehlend = live für alle.
   status?: 'entwurf' | 'publiziert'
   entwurf_komponenten?: string[]   // z. B. ['ki-fluency'] → einzelne Bausteine nur KT1
+  /** Kanonischer Lehrgang — steuert Datensatz-Auflösung und EBA-Rendering. Einwertig. */
+  lehrgang?: string
+  /**
+   * Alle Lehrgänge, für die die Einheit gültig ist (nur Katalog-Filter + Anzeige).
+   * Fehlend = [lehrgang]. Nur zulässig, wenn die abgedeckten Kompetenzen in allen
+   * genannten Datensätzen nummern- und textgleich sind — siehe ./lehrgang.ts.
+   */
+  lehrgaenge?: string[]
 }
 
 export interface KnTyp {
@@ -304,7 +312,10 @@ export interface EinheitIndexEntry {
   titel: string
   /** Anzeige-Titel der Einheit (aus set.json `einheit_titel`), z. B. "Im Konflikt kommunizieren". */
   einheit_titel: string
+  /** Kanonischer Lehrgang (aus herausforderung_A.json) — einwertig. */
   lehrgang: string
+  /** Alle gültigen Lehrgänge, inkl. `lehrgang`. Siehe ./lehrgang.ts. */
+  lehrgaenge: string[]
   modul: string | null
   modul_titel: string | null
   thema_nr: number | null

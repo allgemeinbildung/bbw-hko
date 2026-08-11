@@ -1,7 +1,7 @@
 ---
 import LP from '../layouts/LP.astro'
 import { getAccess, bounceKt1 } from '../lib/auth'
-import { einheitenIndex, visibleEinheiten, type Role } from '../lib/einheiten'
+import { einheitenIndex, visibleEinheiten, lehrgaengeOf, isEbaLehrgang, type Role } from '../lib/einheiten'
 
 const access = await getAccess(Astro)
 if (!access) return Astro.redirect('/login')
@@ -18,8 +18,8 @@ const units = visibleEinheiten(einheitenIndex, role)
 // Nach Lehrgang gruppieren (EFZ_3J / EFZ_4J → EFZ · EBA_2J → EBA), damit die
 // Lehrperson zuerst ihren Bildungsgang sieht. Slug/Dateiname wird nicht angezeigt.
 const gruppen = [
-  { label: 'EFZ', items: units.filter((e) => (e.lehrgang ?? '').startsWith('EFZ')) },
-  { label: 'EBA', items: units.filter((e) => (e.lehrgang ?? '').startsWith('EBA')) },
+  { label: 'EFZ', items: units.filter((e) => lehrgaengeOf(e).some((l) => !isEbaLehrgang(l))) },
+  { label: 'EBA', items: units.filter((e) => lehrgaengeOf(e).some(isEbaLehrgang)) },
 ].filter((g) => g.items.length > 0)
 ---
 <LP title="Feedback / Material einreichen">

@@ -1,0 +1,302 @@
+{
+  "id": "3.2.1_wahre_kosten_hf_B",
+  "modul": "3.2",
+  "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+  "lehrgang": "EFZ_3J",
+
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+
+  "titel": "Soll der Staat den Preis steuern?",
+
+  "wissensknoten": ["verursacherprinzip_lenkungsabgabe"],
+
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": ["3.2.1", "3.2.2"],
+    "lebensbezug": "3.2",
+    "themen": ["T3"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R1"},
+      {"aspekt": "Ethik", "iteration": "R1"}
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "sprachmodus_ids": ["SM8"],
+    "sk": [5, 6, 11],
+    "kompetenz_id": "3.2.1",
+    "lebensbezug_id": "3.2",
+    "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
+    "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
+  },
+
+  "persona": {
+    "beruf": "Maler/in EFZ",
+    "betrieb": "Malergeschäft Brunner",
+    "ort": "St. Gallen"
+  },
+
+  "situation_text": "Ich bin Maler/in EFZ im 1. Lehrjahr beim Malergeschäft Brunner in St. Gallen. Beim Aufräumen im Büro sehe ich die Jahresrechnung für die Sonderabfall-Entsorgung: 4200 Franken für Farbreste, Lösungsmittel und leere Gebinde. Mein Berufsbildner/in ärgert sich: «Das müsste der Farbhersteller zahlen, nicht wir — wir haben das Zeug ja bloss verstrichen.» Ein Mitlernender aus meiner Klasse sieht es umgekehrt und findet, der Staat solle gar nichts vorschreiben: Wäre umweltfreundliche Farbe wirklich besser, würde die Kundschaft sie von selbst verlangen. Im ABU lese ich, dass der Staat Umweltverschmutzung als Marktversagen behandelt und unter anderem mit Lenkungsabgaben gegensteuert. Unsere Klasse soll dazu paarweise eine begründete Stellungnahme verfassen und sie gegenseitig kommentieren.",
+
+  "zahlen_tabelle": [
+    {"label": "Sonderabfall-Entsorgung Malergeschäft Brunner, pro Jahr", "wert": "CHF 4200"},
+    {"label": "Gesamtabfall-Entsorgung pro Person in der Schweiz, pro Tag", "wert": "CHF 1.—"},
+    {"label": "Littering-Kosten für Gemeinden und öffentlichen Verkehr, pro Jahr", "wert": "CHF 200 Mio."},
+    {"label": "Ordnungsbusse Zigarettenstummel, Kanton Zürich", "wert": "CHF 80"}
+  ],
+
+  "leitfrage": "Wer soll die Kosten tragen, die unser Konsum verursacht — und mit welcher Begründung?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 1.5 und Kap. 9.3 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.5 | S. 41",
+      "text": "Erklären Sie in eigenen Worten, was das Verursacherprinzip verlangt und in welchem Gesetz es festgehalten ist.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.3 | S. 233",
+      "text": "Ordnen Sie den vier umweltpolitischen Instrumenten je ein Beispiel zu, das im Malergeschäft Brunner denkbar wäre.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.5 | S. 40-41",
+      "text": "Entscheiden Sie begründet, wer die 4200 Franken tragen soll: der Malerbetrieb, der Farbhersteller, die Kundschaft oder die Allgemeinheit über Steuern.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 9.3 | S. 233",
+      "text": "Formulieren Sie zu zweit den Gegenargument-Abschnitt Ihrer Stellungnahme: Nennen Sie das stärkste Argument der Gegenseite und entkräften Sie es in drei Sätzen.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Wer trägt die Folgekosten?",
+  "mindmap_aeste": [
+    {
+      "titel": "Das Verursacherprinzip",
+      "punkte": [
+        "Umweltschutz-Gesetz USG von 1983",
+        "Wer den Abfall verursacht, zahlt die Entsorgung",
+        "Vollzug liegt bei den Kantonen",
+        "Vermeiden – Vermindern – Verwerten"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Die vier Instrumente des Staates",
+      "punkte": [
+        "Appelle: Aufruf ohne Verpflichtung",
+        "Anreize: Lenkungsabgaben wie CO₂-Abgabe, LSVA, Abfallgebühr",
+        "Verbote und Beschränkungen",
+        "Nachsorge: Schäden im Nachhinein beheben"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Argumente der Gegenseite",
+      "punkte": [
+        "Der Markt regelt die Nachfrage von selbst",
+        "Abgaben verteuern das Angebot und treffen kleine Betriebe",
+        "Wettbewerbsnachteil gegenüber dem Ausland",
+        "Wer wenig verdient, zahlt anteilig mehr"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was es kostet, wenn niemand zahlt",
+      "punkte": [
+        "Littering: 200 Millionen Franken pro Jahr",
+        "Verunreinigung von Böden, Pflanzen und Gewässern",
+        "Material fällt aus dem Stoffkreislauf"
+      ],
+      "optional": true
+    }
+  ],
+
+  "handlungsprodukt": {
+    "format": "Kollaborative Stellungnahme",
+    "titel": "Lenkungsabgabe oder Markt? Unsere Stellungnahme",
+    "format_detail": "Gemeinsame schriftliche Stellungnahme von 300 bis 400 Wörtern in einem geteilten Dokument, dazu eine schriftliche Rückmeldung von 80 bis 120 Wörtern an ein anderes Paar.",
+    "beschreibung": "Ich verfasse zusammen mit meiner Partnerin oder meinem Partner eine begründete Stellungnahme dazu, wer die Folgekosten unseres Konsums tragen soll, und gebe einem anderen Paar eine schriftliche Rückmeldung.",
+    "schritte": [
+      {"label": "Positionen sammeln", "hint": "Notieren Sie zu zweit alle vier möglichen Kostenträger und je ein Argument dafür und dagegen."},
+      {"label": "Position festlegen", "hint": "Einigen Sie sich auf eine Position. Halten Sie schriftlich fest, worin Sie sich nicht einig waren — das brauchen Sie später."},
+      {"label": "Stellungnahme schreiben", "hint": "Bauen Sie den Text nach der vorgegebenen Struktur. Belegen Sie mindestens zwei Aussagen mit einer Kapitel- und Seitenangabe."},
+      {"label": "Gegenargument einarbeiten", "hint": "Setzen Sie den Abschnitt aus LF4 ein: stärkstes Gegenargument nennen, dann entkräften."},
+      {"label": "Rückmeldung schreiben", "hint": "Lesen Sie die Stellungnahme eines anderen Paars und schreiben Sie: eine Stärke, eine Nachfrage, ein konkreter Verbesserungsvorschlag."}
+    ],
+    "schreib_label": "STELLUNGNAHME HIER ERARBEITEN",
+    "schreib_note": "-> wissen/verursacherprinzip_lenkungsabgabe",
+    "abgaben": [
+      "Gemeinsame Stellungnahme (300–400 Wörter)",
+      "Schriftliche Rückmeldung an ein anderes Paar (80–120 Wörter)"
+    ],
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Wir vertreten die Position, dass …»",
+        "«Das Verursacherprinzip verlangt, dass …»",
+        "«Dagegen wird eingewendet, dass …»",
+        "«Dieser Einwand greift zu kurz, weil …»",
+        "«An eurer Stellungnahme überzeugt uns …, offen bleibt für uns …»"
+      ],
+      "strategien": [
+        "Zuerst beide Positionen aufschreiben, erst dann entscheiden — sonst fehlt das Gegenargument.",
+        "Jede Behauptung mit Kapitel und Seite belegen, bevor Sie weiterschreiben.",
+        "In der Rückmeldung Fragen statt Urteile formulieren: «Wie meint ihr das mit …?»"
+      ],
+      "struktur": [
+        "Position – Begründung mit Beleg – Gegenargument – Entkräftung – Schlussfolgerung"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Stufe 3–4. Exemplarisch ist der Gegenargument-Abschnitt: Er nimmt den Einwand ernst, statt ihn abzuwerten, und hält den Zielkonflikt offen.",
+      "abschnitte": [
+        {
+          "titel": "Position und Begründung",
+          "zeilen": [
+            {"label": "Absatz 1", "text": "Wir vertreten die Position, dass der Farbhersteller einen Teil der 4200 Franken tragen soll — nicht der Malerbetrieb allein. Das Umweltschutz-Gesetz von 1983 hält das Verursacherprinzip fest: Wer den Abfall verursacht, kommt für die Entsorgung auf. Verursacht wird der Sonderabfall aber nicht erst beim Streichen, sondern schon bei der Zusammensetzung der Farbe. Wer entscheidet, welche Lösungsmittel in die Dose kommen, entscheidet damit auch über die Entsorgungskosten.", "quelle": "Kap. 1.5, S. 41"}
+          ]
+        },
+        {
+          "titel": "Warum eine Lenkungsabgabe passt",
+          "zeilen": [
+            {"label": "Absatz 2", "text": "Das Lehrmittel beschreibt Umweltverschmutzung als Marktversagen: Der Markt bildet die Umweltkosten nicht ab, deshalb korrigiert der Staat. Von den vier Instrumenten passt hier der Anreiz am besten. Ein Appell an die Hersteller bleibt unverbindlich, ein Verbot bestimmter Farben träfe auch Anwendungen ohne Alternative. Eine Abgabe auf lösungsmittelhaltige Produkte würde die umweltfreundliche Variante relativ günstiger machen, ohne jemandem etwas zu verbieten.", "quelle": "Kap. 9.3, S. 233"}
+          ]
+        },
+        {
+          "titel": "Gegenargument und Entkräftung",
+          "zeilen": [
+            {"label": "Absatz 3", "text": "Das stärkste Gegenargument lautet: Der Hersteller wälzt die Abgabe auf den Preis ab, am Ende zahlt die Kundschaft — und kleine Betriebe wie Brunner verlieren Aufträge an Konkurrenten, die billiger offerieren. Dieser Einwand ist berechtigt und lässt sich nicht wegdiskutieren. Er spricht aber nicht gegen die Abgabe, sondern für ihre Ausgestaltung: Wenn die Erträge zurückerstattet werden, wie es das Lehrmittel für die CO₂-Abgabe beschreibt, trifft die Abgabe vor allem jene, die viel verursachen.", "quelle": "Kap. 9.3, S. 233"}
+          ]
+        },
+        {
+          "titel": "Schlussfolgerung",
+          "zeilen": [
+            {"label": "Absatz 4", "text": "Uns ist bewusst, dass wir damit nicht alle Kosten fair verteilen. Die 4200 Franken verschwinden nicht — sie werden nur an eine andere Stelle gerechnet. Wir halten es trotzdem für richtiger, sie dort anzusiedeln, wo über die Zusammensetzung entschieden wird, als bei jenen, die das Produkt nur anwenden. Wer die Kosten trägt, ist am Ende eine politische Entscheidung und keine Rechenaufgabe.", "quelle": "Kap. 1.5, S. 41"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Welches Argument der Gegenseite hat mich am meisten ins Wanken gebracht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Wo in meinem Lehrbetrieb zahlt jemand Kosten, die eigentlich woanders entstanden sind?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Was ändere ich an meiner Art zu argumentieren — oder was prüfe ich beim nächsten Mal zuerst?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "LF1 nennt das Umweltschutz-Gesetz als Rechtsgrundlage.",
+        "LF2 ordnet allen vier Instrumenten ein betriebsnahes Beispiel zu."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Alle drei Pflicht-Äste sind befüllt.",
+        "Der Ast «Argumente der Gegenseite» enthält mindestens drei ernstzunehmende Einwände.",
+        "Mindestens eine Verbindung zwischen Instrument und Gegenargument ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Die Stellungnahme umfasst 300 bis 400 Wörter und folgt der vorgegebenen Struktur.",
+        "Mindestens zwei Aussagen sind mit Kapitel und Seite belegt.",
+        "Das stärkste Gegenargument ist genannt und ernsthaft entkräftet, nicht abgewertet.",
+        "Die Rückmeldung enthält Stärke, Nachfrage und Verbesserungsvorschlag."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R1 benennt ein konkretes Argument, nicht nur ein Gefühl."
+      ]
+    }
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Stellungnahme schreiben und Rückmeldung geben", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "3.2.1_wahre_kosten_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Begründet Stellung nehmen, wer die Folgekosten des Konsums tragen soll — Konsument/in, Unternehmen oder Staat"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat",
+    "hint": "Alle drei Zuordnungen sind begründbar. Für den Betrieb spricht, dass er den Abfall physisch erzeugt. Für den Hersteller spricht, dass er über die Zusammensetzung entscheidet. Für die Allgemeinheit spricht, dass alle vom günstigen Bauen profitieren. Bewertet wird die Qualität Ihrer Begründung und wie ernst Sie die Gegenseite nehmen — nicht, welche Seite Sie wählen."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Bei welcher anderen Rechnung in meinem Umfeld liesse sich genauso fragen, wer sie eigentlich verursacht hat?",
+    "ziel": "Die Lernenden lösen das Verursacherprinzip vom Sonderabfall ab und erkennen es als allgemeine Zurechnungsfrage."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T5.2 — Gesetze und politische Entscheidungen verändern: Lenkungsabgaben als politisch umstrittenes Instrument.",
+    "r3_voraussicht": "T8.4 — Finanzen heute und in Zukunft: wer trägt langfristige Kosten von Konsum- und Vorsorgeentscheiden."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Umweltschutz-Gesetz, Verursacherprinzip, Vermeiden-Vermindern-Verwerten", "seiten": "Seite 41", "unterueberschrift": "Zukunft", "fuer_leitfrage": [1, 3]},
+    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Kosten der Abfallentsorgung und des Litterings", "seiten": "Seite 40", "unterueberschrift": "Littering", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — Marktversagen und die vier umweltpolitischen Instrumente, Lenkungsabgaben", "seiten": "Seite 233", "unterueberschrift": "Politische Instrumente", "fuer_leitfrage": [2, 4]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Verursacherprinzip verstanden", "indikator": "Das Prinzip wird korrekt und mit Rechtsgrundlage wiedergegeben.", "gewicht_prozent": 25},
+      {"kriterium": "Instrumente angewendet", "indikator": "Alle vier Instrumente sind mit betriebsnahen Beispielen belegt.", "gewicht_prozent": 25},
+      {"kriterium": "Position begründet", "indikator": "Die Stellungnahme stützt sich auf mindestens zwei belegte Aussagen.", "gewicht_prozent": 25},
+      {"kriterium": "Gegenseite ernst genommen", "indikator": "Das Gegenargument ist stark formuliert und sachlich entkräftet.", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Die vier Kostenträger und je ein Pro-Argument werden vorgegeben; die Lernenden ergänzen die Contra-Seite.",
+    "scaffold_100": "Zusätzlich wird eine zweite Lenkungsabgabe aus dem Lehrmittel auf ihre Wirkung im eigenen Berufsfeld geprüft."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Fehlende Kosten verschwinden nicht — sie werden jemandem zugerechnet, und diese Zurechnung ist eine begründbare Entscheidung.",
+    "lehrmittel_anker": "Kap. 1.5 S. 40-41 (Littering-Kosten, Umweltschutz-Gesetz, Verursacherprinzip), Kap. 9.3 S. 233 (Marktversagen und vier umweltpolitische Instrumente)",
+    "kn_aktivierung": "Im Kompetenznachweis liefert diese Herausforderung die Fähigkeit, eine Kostenzurechnung zu begründen und die Gegenposition auszuhalten.",
+    "transfer_check": "Die Lernenden können die Zurechnungsfrage an einem Beispiel ausserhalb der Abfallentsorgung durchspielen."
+  },
+
+  "sk_anker": [
+    {"sk": 5, "wo": "In LF3 müssen die Lernenden offenlegen, welche Werthaltung hinter ihrer Zuordnung steht — Eigenverantwortung, Herstellerpflicht oder Solidarität."},
+    {"sk": 6, "wo": "Die Stellungnahme verlangt eine belegte Position und im Gegenargument-Abschnitt die Auseinandersetzung mit dem stärksten Einwand."},
+    {"sk": 11, "wo": "Die Schlussfolgerung muss stehen lassen, dass die Kosten nur verschoben und nicht beseitigt werden — eine saubere Auflösung gibt es nicht."}
+  ]
+}

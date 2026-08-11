@@ -13,6 +13,7 @@
     "build:sk-labels": "node scripts/build-sk-labels.mjs",
     "sync:situationen": "node scripts/sync-situationen.mjs",
     "build:einheiten-index": "node scripts/build-einheiten-index.mjs",
+    "build:fonts-embed": "node scripts/build-fonts-embed.mjs",
     "md:index": "node begleiter/build-index.mjs",
     "md:serve": "npx --yes serve begleiter -l 4173",
     "sync:einheiten-nrlp": "node scripts/sync-einheiten-nrlp.mjs",

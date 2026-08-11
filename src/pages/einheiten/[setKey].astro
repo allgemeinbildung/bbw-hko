@@ -1,7 +1,7 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import EinheitWorkbench from '../../components/einheiten/EinheitWorkbench.tsx'
-import { einheitById, loadEinheit, ABTEILUNGEN, isEntwurf, draftKomponenten, stripDraftComponents, KOMPONENTEN_LABEL } from '../../lib/einheiten'
+import { einheitById, loadEinheit, ABTEILUNGEN, isEntwurf, draftKomponenten, stripDraftComponents, KOMPONENTEN_LABEL, lehrgaengeOf, lehrgangLabel } from '../../lib/einheiten'
 import { enrichKompetenzen } from '../../lib/einheiten/kompetenz-text'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import { skNameByNr, skTooltip } from '../../lib/sk-labels'
@@ -86,7 +86,7 @@ const kompTexte = abgedeckte.map((nr) => ({ nr, text: kompTextMap.get(String(nr)
       <h1 class="text-lg font-semibold text-slate-900">{meta.einheit_titel}</h1>
       <span class="text-sm text-slate-500">{meta.titel}</span>
       <div class="ml-auto flex items-center gap-2 text-xs text-slate-500">
-        <span class="chip chip-blue">{meta.lehrgang}</span>
+        {lehrgaengeOf(meta).map((l) => <span class="chip chip-blue">{lehrgangLabel(l)}</span>)}
         {meta.thema_nr != null && <span class="chip">T{meta.thema_nr}</span>}
         {meta.aspekte.slice(0, 2).map((a) => <span class="chip chip-green">{a}</span>)}
       </div>

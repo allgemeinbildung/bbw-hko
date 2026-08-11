@@ -1,0 +1,186 @@
+{
+  "id": "3.2.1_wahre_kosten_prinzip",
+  "modul": "3.2",
+  "kompetenz_nr": "3.2.1",
+  "topic_slug": "wahre_kosten",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-11",
+
+  "kern_kompetenzversprechen": "Ich kann aufdecken, welche Kosten im Preis eines Produkts fehlen, und begründet entscheiden, wer sie tragen soll.",
+
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K3+ oder K4"
+  },
+
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Aufdecken, welche Herstellungs- und Transportkosten im Preis eines Alltagsprodukts nicht sichtbar sind",
+      "konfliktart": "Tiefer Marktpreis vs. verdeckte Umwelt- und Herstellungskosten",
+      "handlungsprodukt_typ": "Multimediale Kostenaufschlüsselung eines Produkts (Erklärvideo oder vertonte Bildstrecke, 1-2 Minuten)",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Begründet Stellung nehmen, wer die Folgekosten des Konsums tragen soll — Konsument/in, Unternehmen oder Staat",
+      "konfliktart": "Verantwortung für Folgekosten vs. Markteingriff durch Lenkungsabgaben",
+      "handlungsprodukt_typ": "Kollaborative schriftliche Stellungnahme mit gegenseitiger Rückmeldung (Partnerarbeit)",
+      "transferrable": true
+    },
+    "C": {
+      "herausforderung": "Für ein selbst gewähltes Produkt ein zweites, ehrliches Preisschild gestalten und die eigene Kaufentscheidung begründen",
+      "konfliktart": "Ehrlicher Preis vs. Kaufbarkeit bei knappem Lehrlingslohn — und was die Umwelt am Ende trägt",
+      "handlungsprodukt_typ": "Multimediales ehrliches Preisschild mit gesprochener Kaufbegründung",
+      "transferrable": true
+    }
+  },
+
+  "sk_pro_situation": {
+    "A": [1, 9],
+    "B": [5, 6, 11],
+    "C": [6, 9, 11]
+  },
+
+  "sk_schnittmenge_kn": {
+    "primary": [6, 9, 11]
+  },
+
+  "aspekte": {
+    "Ökologie": "R1",
+    "Wirtschaft": "R1",
+    "Ethik": "R1"
+  },
+
+  "modi_units": [
+    "Rezeption audiovisuell",
+    "Produktion multimedial",
+    "Interaktion und Kollaboration schriftlich"
+  ],
+
+  "modi_kn": [
+    "Rezeption audiovisuell",
+    "Produktion multimedial",
+    "Interaktion und Kollaboration schriftlich",
+    "Rezeption schriftlich und bildlich",
+    "Produktion schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Tiefer Preis heute vs. Folgekosten, die andere tragen",
+      "Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat",
+      "Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl"
+    ],
+    "verbindlich": "Kein Preis lässt sich vollständig richtig rechnen. Die Aufgabe ist nicht, die eine korrekte Zahl zu finden, sondern offenzulegen, welche Kosten fehlen, und begründet zu entscheiden, wer sie tragen soll. Bewertet wird die Qualität der Begründung, nicht die gewählte Seite."
+  },
+
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Ein Preis zeigt, was jemand bezahlt — nicht, was etwas kostet. Wer die Differenz trägt, ist eine Entscheidung von Menschen, keine Eigenschaft des Produkts.",
+    "transferfeld": "Beschaffungs- und Materialentscheide im eigenen Lehrbetrieb sowie Dienstleistungen, bei denen der Preis Folgekosten verdeckt."
+  },
+
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T5.3 — Globale gesellschaftliche Herausforderungen: Klima, Energie und Globalisierung als politische Gestaltungsfrage.",
+    "r3_voraussicht": "T8.4 — Finanzen heute und in Zukunft: Konsum-, Anlage- und Vorsorgeentscheide mit langfristigen Folgekosten."
+  },
+
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 2.7",
+        "titel": "Preisbildung — Nachfrage- und Angebotskurve, Marktgleichgewicht, Verschiebungen, einfacher und erweiterter Wirtschaftskreislauf, Produktionsfaktoren",
+        "seiten": "Seite 73-84"
+      },
+      {
+        "ref": "Kap. 9.3",
+        "titel": "Nachhaltigkeit — drei Dimensionen, Marktversagen, politische Instrumente, Verursacherprinzip und Lenkungsabgaben, Energiestrategie 2050, 2000-Watt-Gesellschaft",
+        "seiten": "Seite 231-235"
+      },
+      {
+        "ref": "Kap. 1.5",
+        "titel": "Ökologie im Umfeld — Lebensmittel- und Energielabels, Fairtrade, Bio, IP-Suisse, Abfallminderung und Abfallentsorgung, Umweltschutzgesetz",
+        "seiten": "Seite 37-42"
+      },
+      {
+        "ref": "Kap. 11.2",
+        "titel": "Globalisierung — weltweite Arbeitsteilung und Spezialisierung, grenzüberschreitender Warenhandel, Importe und Exporte der Schweiz, Globalisierung der Umwelt",
+        "seiten": "Seite 272-281"
+      },
+      {
+        "ref": "Kap. 9.4",
+        "titel": "Mobilität — Energieverbrauch und Emissionen des Verkehrs, Zukunft der Mobilität, Elektromobilität, Mobility Pricing",
+        "seiten": "Seite 236-240"
+      }
+    ],
+    "konzepte": [
+      "externe Kosten",
+      "Verursacherprinzip",
+      "Lenkungsabgabe",
+      "CO2-Abgabe",
+      "LSVA",
+      "Marktversagen",
+      "Angebot und Nachfrage",
+      "Marktgleichgewicht",
+      "Nachfragekurve",
+      "Angebotskurve",
+      "Produktionsfaktoren",
+      "erweiterter Wirtschaftskreislauf",
+      "drei Dimensionen der Nachhaltigkeit",
+      "2000-Watt-Gesellschaft",
+      "Umweltschutzgesetz",
+      "Recyclingquote",
+      "Label",
+      "Fairtrade",
+      "weltweite Arbeitsteilung",
+      "Transportkosten",
+      "Zielkonflikt",
+      "Anspruchsgruppen"
+    ]
+  },
+
+  "persona_pool_units": {
+    "berufe": [
+      "Bäcker-Konditor-Confiseur/in EFZ",
+      "Maler/in EFZ",
+      "Informatiker/in EFZ"
+    ],
+    "orte": [
+      "Winterthur",
+      "St. Gallen",
+      "Biel/Bienne"
+    ]
+  },
+
+  "persona_pool_kn_neu": {
+    "berufe": [
+      "Polymechaniker/in EFZ",
+      "Forstwart/in EFZ"
+    ],
+    "orte": [
+      "Thun",
+      "Chur"
+    ]
+  },
+
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": ["A", "B", "C"],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf und Ort kommen in keiner herausforderung_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ]
+  }
+}

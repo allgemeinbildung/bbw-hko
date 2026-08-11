@@ -1,5 +1,8 @@
 import indexJson from '../../data/einheiten.index.json'
 import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson } from './types'
+import { lehrgaengeOf } from './lehrgang'
+
+export * from './lehrgang'
 
 export const einheitenIndex = indexJson as EinheitIndexEntry[]
 
@@ -148,7 +151,10 @@ export function applyEinheitenFilters(list: EinheitIndexEntry[], f: EinheitenFil
   const qWords = f.q.trim().toLowerCase().split(/\s+/).filter(Boolean)
   return list.filter((e) => {
     if (f.thema_nr && String(e.thema_nr ?? '') !== f.thema_nr) return false
-    if (f.lehrgang && e.lehrgang !== f.lehrgang) return false
+    // Eine Einheit kann für mehrere Lehrgänge gelten (z. B. 1.1.1 ist in 3J und 4J
+    // nummern- und textgleich) — deshalb Treffer auf der ganzen Liste, nicht nur
+    // auf dem kanonischen Lehrgang.
+    if (f.lehrgang && !lehrgaengeOf(e).includes(f.lehrgang)) return false
     if (f.aspekt && !e.aspekte.includes(f.aspekt)) return false
     if (f.sk && !e.sk.map(String).includes(f.sk)) return false
     if (qWords.length) {

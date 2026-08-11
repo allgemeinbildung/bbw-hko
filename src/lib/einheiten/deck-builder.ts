@@ -207,6 +207,8 @@ const Zahl = (n: number) => {
   return w.charAt(0).toUpperCase() + w.slice(1)
 }
 
+// Bewusste Kopie — dieses Modul bleibt importfrei. Bei Änderungen auch
+// LEHRGANG_LABEL in ./lehrgang.ts nachziehen.
 const LEHRGANG_LABEL: Record<string, string> = {
   EFZ_3J: 'EFZ 3-jährig',
   EFZ_4J: 'EFZ 4-jährig',

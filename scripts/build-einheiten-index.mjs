@@ -21,6 +21,18 @@ function readMaybe(p) {
   try { return readJson(p) } catch { return null }
 }
 
+// Kanonische Reihenfolge — Spiegel von LEHRGANG_ORDER in src/lib/einheiten/lehrgang.ts
+// (dieses Skript ist .mjs und kann das TS-Modul nicht importieren).
+const LEHRGANG_ORDER = ['EFZ_3J', 'EFZ_4J', 'EBA_2J']
+
+function sortLehrgaenge(list) {
+  const rank = (l) => {
+    const i = LEHRGANG_ORDER.indexOf(l)
+    return i === -1 ? LEHRGANG_ORDER.length : i
+  }
+  return [...list].sort((a, b) => rank(a) - rank(b) || a.localeCompare(b))
+}
+
 function parseFrontmatter(raw) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw || '')
   if (!m) return {}
@@ -89,6 +101,19 @@ for (const slug of slugs) {
     ? set.entwurf_komponenten.filter((x) => typeof x === 'string')
     : []
 
+  // Lehrgang: `lehrgang` bleibt einwertig und kanonisch (Datensatz-Auflösung,
+  // EBA-Rendering). `lehrgaenge` aus set.json listet zusätzlich alle Lehrgänge,
+  // für die die Einheit gültig ist — der kanonische ist immer enthalten, damit
+  // ein Filter auf ihn auch bei unvollständiger Liste greift. Die curriculare
+  // Zulässigkeit prüft scripts/sync-einheiten-nrlp.mjs. Siehe src/lib/einheiten/lehrgang.ts.
+  const lehrgang = sitA?.lehrgang || begleiterMeta.beruf || 'EFZ_3J'
+  const lehrgaenge = sortLehrgaenge(
+    Array.from(new Set([
+      lehrgang,
+      ...(Array.isArray(set?.lehrgaenge) ? set.lehrgaenge.filter((x) => typeof x === 'string') : []),
+    ])),
+  )
+
   index.push({
     id: slug,
     status,
@@ -98,7 +123,8 @@ for (const slug of slugs) {
     slug: slugPart,
     titel,
     einheit_titel: set?.einheit_titel || slugPart.replace(/_/g, ' ').replace(/^\w/, (c) => c.toUpperCase()),
-    lehrgang: sitA?.lehrgang || begleiterMeta.beruf || 'EFZ_3J',
+    lehrgang,
+    lehrgaenge,
     modul: sitA?.modul || null,
     modul_titel: sitA?.modul_titel || null,
     thema_nr: themaNr,

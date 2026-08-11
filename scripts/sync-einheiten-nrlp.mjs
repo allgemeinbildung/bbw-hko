@@ -73,10 +73,55 @@ const units = readdirSync(DATA_DIR).filter((n) => {
 let drift = 0
 let misses = 0
 let filesChanged = 0
+let badLehrgang = 0
+
+// Prueft die Mehrfach-Gueltigkeit aus set.json `lehrgaenge`: eine Einheit darf nur
+// dann fuer einen zweiten Lehrgang getaggt werden, wenn JEDE abgedeckte Kompetenz
+// dort unter DERSELBEN Nummer mit DEMSELBEN Text steht. Sonst zeigt der Katalog
+// eine Einheit unter einer Nummer, die im anderen Lehrplan etwas anderes bedeutet
+// (Klassiker: 3J 3.1 = Budget, 4J 3.1 = Werbung).
+// Siehe src/lib/einheiten/lehrgang.ts.
+function checkLehrgaenge(unit, set, hfJsons) {
+  const extra = (Array.isArray(set?.lehrgaenge) ? set.lehrgaenge : []).filter(
+    (l) => typeof l === 'string' && lehrgangToKey(l) !== lehrgangToKey(set?.lehrgang ?? hfJsons[0]?.lehrgang),
+  )
+  if (extra.length === 0) return
+
+  for (const lg of extra) {
+    const key = lehrgangToKey(lg)
+    const ds = loadDataset(key)
+    if (!ds.present) {
+      console.log(`  LEHRGANG ${unit}: set.json nennt "${lg}", aber fuer ${key} ist kein Datensatz publiziert`)
+      badLehrgang++
+      continue
+    }
+    for (const json of hfJsons) {
+      const nrlp = json?.nrlp
+      if (!nrlp) continue
+      const covered = (nrlp.nr_primary?.length ? nrlp.nr_primary : [nrlp.nr]).filter(Boolean).map(String)
+      for (const nr of covered) {
+        const there = ds.komp.get(nr)
+        if (!there) {
+          console.log(`  LEHRGANG ${unit}: Kompetenz ${nr} existiert in ${key} nicht -> "${lg}" ist unzulaessig`)
+          badLehrgang++
+        } else if (there !== nrlp.kompetenz_text && nr === String(nrlp.nr)) {
+          console.log(`  LEHRGANG ${unit}: Kompetenz ${nr} lautet in ${key} anders -> "${lg}" ist unzulaessig`)
+          badLehrgang++
+        }
+      }
+      const lbThere = ds.lb.get(String(nrlp.lebensbezug))
+      if (nrlp.lebensbezug && lbThere && lbThere !== nrlp.lebensbezug_text) {
+        console.log(`  LEHRGANG ${unit}: Lebensbezug ${nrlp.lebensbezug} lautet in ${key} anders -> "${lg}" ist unzulaessig`)
+        badLehrgang++
+      }
+    }
+  }
+}
 
 for (const unit of units) {
   const dir = join(DATA_DIR, unit)
   const hfFiles = readdirSync(dir).filter((f) => /^herausforderung_.*\.json$/i.test(f))
+  const hfJsons = []
   for (const f of hfFiles) {
     const path = join(dir, f)
     let text = readFileSync(path, 'utf8')
@@ -113,13 +158,21 @@ for (const unit of units) {
       writeFileSync(path, text)
       filesChanged++
     }
+    // Nach dem Sync einsammeln: die Mehrfach-Gueltigkeit wird gegen den bereits
+    // an den kanonischen Datensatz angeglichenen Text geprueft.
+    hfJsons.push(JSON.parse(text))
   }
+
+  let setJson = null
+  try { setJson = JSON.parse(readFileSync(join(dir, 'set.json'), 'utf8')) } catch { /* kein set.json */ }
+  checkLehrgaenge(unit, setJson, hfJsons)
 }
 
 const verb = CHECK ? 'would re-sync' : 're-synced'
 console.log(
   `[sync-einheiten-nrlp] ${units.length} units scanned | ${drift} drifted text field(s) ${verb} | ` +
-    `${misses} unresolved Kompetenz-Nr` + (CHECK ? '' : ` | ${filesChanged} file(s) written`),
+    `${misses} unresolved Kompetenz-Nr | ${badLehrgang} invalid lehrgaenge claim(s)` +
+    (CHECK ? '' : ` | ${filesChanged} file(s) written`),
 )
 
-if (CHECK && (drift > 0 || misses > 0)) process.exit(1)
+if (CHECK && (drift > 0 || misses > 0 || badLehrgang > 0)) process.exit(1)

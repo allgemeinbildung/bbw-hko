@@ -18,6 +18,10 @@ import type { EinheitFullSet } from '../../lib/einheiten/types'
 import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, buildLeseblatt, buildInfokartenTemplate, buildInfokartenTemplatePrefilled, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../lib/einheiten/deck-builder'
+import { buildStandaloneHtml } from '../../lib/einheiten/standalone-shell'
+
+/** Eingebettete IBM-Plex-Schnitte; erst beim ersten Download geladen (≈180 KB). */
+const FONTS_EMBED_URL = '/einheiten-assets/fonts-embed.css'
 
 interface Props {
   set: EinheitFullSet
@@ -54,54 +58,6 @@ function triggerDownload(blob: Blob, filename: string) {
   a.click()
   document.body.removeChild(a)
   setTimeout(() => URL.revokeObjectURL(url), 1000)
-}
-
-// Baut ein eigenständiges, druck-/ausfüllbares HTML-Dokument (identisch zum ZIP-Bundle),
-// für den Einzeldownload eines einzelnen Dokuments.
-function standaloneHtml(cssRenderer: string, title: string, bodyMarkup: string, pngDataUrl: string, opts: { compact?: boolean } = {}) {
-  const cls = ['aesthetic-modern']
-  if (opts.compact) cls.push('density-compact')
-  const markup = bodyMarkup
-    .replaceAll('assets/logo-bbw.png', pngDataUrl)
-    .replaceAll('/einheiten-assets/logo-bbw.png', pngDataUrl)
-    .replaceAll('/logo-bbw-doc.png', pngDataUrl)
-  return `<!DOCTYPE html>
-<html lang="de-CH">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${title}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
-  <style>
-${cssRenderer}
-
-.standalone-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#1d2026;color:#e8eaee;padding:10px 18px;display:flex;align-items:center;gap:14px;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;}
-.standalone-bar .name{font-weight:600}
-.standalone-bar .spacer{flex:1}
-.standalone-bar button{font-family:inherit;background:#e8eaee;color:#1d2026;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.02em}
-.standalone-bar button:hover{background:#fff}
-.standalone-bar .hint{color:#a3a8b2;font-size:11px}
-.pages{padding:60px 24px 64px}
-@media print { .standalone-bar { display:none !important } .pages { padding: 0 } }
-  </style>
-</head>
-<body class="${cls.join(' ')}">
-  <div class="standalone-bar">
-    <span class="name">${title}</span>
-    <span class="hint">Tippe oder klicke in die Felder, dann auf Drucken.</span>
-    <span class="spacer"></span>
-    <button onclick="window.print()">Drucken</button>
-  </div>
-  <main class="pages">${markup}</main>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.feld, .hp-flaeche').forEach(el => el.setAttribute('contenteditable', 'true'));
-    });
-  </script>
-</body>
-</html>`
 }
 
 // Gast-Sperre: statt des Dokuments erscheint ein Hinweis mit mailto-Kontakt.
@@ -163,6 +119,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [templateDling, setTemplateDling] = useState(false)
   const [templatePrefilledDling, setTemplatePrefilledDling] = useState(false)
   const logoCache = useRef<{ buf: ArrayBuffer; dataUrl: string } | null>(null)
+  const fontsCache = useRef<string | null>(null)
 
   const prefix = useMemo(() => {
     const kompetenz = d.kn?.kompetenz_nr || d.prinzip?.kern_kompetenzversprechen || (d.id.match(/^([\d.]+)/)?.[1]) || 'kompetenz'
@@ -256,6 +213,22 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     logoCache.current = { buf, dataUrl }
     return logoCache.current
   }, [logoUrl])
+
+  // Eingebettete Schriften einmal laden und cachen. Bewusst lazy: die ~180 KB
+  // belasten nur den Download, nicht den Seitenaufbau der Workbench. Schlägt es
+  // fehl, fällt der Shell auf den Google-Fonts-<link> zurück.
+  const ensureFonts = useCallback(async () => {
+    if (fontsCache.current !== null) return fontsCache.current
+    try {
+      const res = await fetch(FONTS_EMBED_URL)
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      fontsCache.current = await res.text()
+    } catch (e) {
+      console.warn('fonts-embed.css nicht ladbar — Fallback auf Google Fonts', e)
+      fontsCache.current = ''
+    }
+    return fontsCache.current
+  }, [])
 
   // Baut Markup + docx-Factory + Dateiname für das aktuell angezeigte Dokument.
   const currentArtifact = (
@@ -359,7 +332,15 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       const art = currentArtifact(buf)
       if (!art) { showToast('Für dieses Dokument ist kein Download verfügbar.', 'error'); return }
       if (kind === 'html') {
-        const html = standaloneHtml(cssRenderer, art.title, art.markup, dataUrl, { compact: art.compact })
+        const html = buildStandaloneHtml({
+          cssRenderer,
+          title: art.title,
+          bodyMarkup: art.markup,
+          pngDataUrl: dataUrl,
+          docKey: art.baseName,
+          fontsCss: (await ensureFonts()) || null,
+          compact: art.compact,
+        })
         triggerDownload(new Blob([html], { type: 'text/html;charset=utf-8' }), `${art.baseName}.html`)
       } else {
         const docx = art.docx()
@@ -415,56 +396,27 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     if (bundling) return
     setBundling(true)
     try {
-      const [pngArrayBuffer] = await Promise.all([
+      const [pngArrayBuffer, fontsCss] = await Promise.all([
         fetch(logoUrl).then((r) => r.arrayBuffer()),
+        ensureFonts(),
       ])
       const pngBytes = new Uint8Array(pngArrayBuffer)
       let bin = ''
       for (let i = 0; i < pngBytes.length; i++) bin += String.fromCharCode(pngBytes[i])
       const pngDataUrl = 'data:image/png;base64,' + btoa(bin)
 
-      const wrap = (title: string, bodyMarkup: string, opts: { compact?: boolean } = {}) => {
-        const cls = ['aesthetic-modern']
-        if (opts.compact) cls.push('density-compact')
-        const markup = bodyMarkup.replaceAll('assets/logo-bbw.png', pngDataUrl).replaceAll('/einheiten-assets/logo-bbw.png', pngDataUrl).replaceAll('/logo-bbw-doc.png', pngDataUrl)
-        return `<!DOCTYPE html>
-<html lang="de-CH">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${title}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
-  <style>
-${cssRenderer}
-
-.standalone-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#1d2026;color:#e8eaee;padding:10px 18px;display:flex;align-items:center;gap:14px;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;}
-.standalone-bar .name{font-weight:600}
-.standalone-bar .spacer{flex:1}
-.standalone-bar button{font-family:inherit;background:#e8eaee;color:#1d2026;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.02em}
-.standalone-bar button:hover{background:#fff}
-.standalone-bar .hint{color:#a3a8b2;font-size:11px}
-.pages{padding:60px 24px 64px}
-@media print { .standalone-bar { display:none !important } .pages { padding: 0 } }
-  </style>
-</head>
-<body class="${cls.join(' ')}">
-  <div class="standalone-bar">
-    <span class="name">${title}</span>
-    <span class="hint">Tippe oder klicke in die Felder, dann auf Drucken.</span>
-    <span class="spacer"></span>
-    <button onclick="window.print()">Drucken</button>
-  </div>
-  <main class="pages">${markup}</main>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.feld, .hp-flaeche').forEach(el => el.setAttribute('contenteditable', 'true'));
-    });
-  </script>
-</body>
-</html>`
-      }
+      // Der Dateiname ist zugleich der localStorage-Key des Dokuments — er ist über
+      // Einheiten hinweg eindeutig (prefix enthält Kompetenznummer + Slug).
+      const wrap = (filename: string, title: string, bodyMarkup: string, opts: { compact?: boolean } = {}) =>
+        buildStandaloneHtml({
+          cssRenderer,
+          title,
+          bodyMarkup,
+          pngDataUrl,
+          docKey: filename.replace(/\.html$/, ''),
+          fontsCss: fontsCss || null,
+          compact: opts.compact,
+        })
 
       const zip = new JSZip()
       const log: string[] = []
@@ -478,7 +430,7 @@ ${cssRenderer}
           const suffix = m === 'fill' ? 'auftrag' : 'dossier'
           const filename = `${prefix}_doc-s_hf-${letter}_${suffix}.html`
           const title = `DOC-S HF ${letter} (${suffix}) · ${s.titel}`
-          zip.file(`html/${filename}`, wrap(title, markup, { compact: m === 'info' }))
+          zip.file(`html/${filename}`, wrap(filename, title, markup, { compact: m === 'info' }))
           log.push(`html/${filename}`)
           try {
             const docx = buildDocS({ sit: s, set: d.set, abteilung, mode: m, logoPng: pngArrayBuffer })
@@ -492,7 +444,7 @@ ${cssRenderer}
       if (d.set) {
         const markup = renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-austausch.html`
-        zip.file(`html/${filename}`, wrap('DOC-AUSTAUSCH · Set-Abschluss', markup))
+        zip.file(`html/${filename}`, wrap(filename, 'DOC-AUSTAUSCH · Set-Abschluss', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildAustausch({ set: d.set, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung, logoPng: pngArrayBuffer })
@@ -504,7 +456,7 @@ ${cssRenderer}
       if (d.dossier) {
         const markup = renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />)
         const filename = `${prefix}_doc-dossier.html`
-        zip.file(`html/${filename}`, wrap('Glossar+ (EBA) · Nachschlagen & Lernen', markup))
+        zip.file(`html/${filename}`, wrap(filename, 'Glossar+ (EBA) · Nachschlagen & Lernen', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildDossier({ dossier: d.dossier, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
@@ -518,7 +470,7 @@ ${cssRenderer}
       if (d.dossier?.leseblatt) {
         const markup = renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />)
         const filename = `${prefix}_doc-leseblatt.html`
-        zip.file(`html/${filename}`, wrap('Lese-Arbeitsblatt (EBA) · Lesen & Verstehen', markup))
+        zip.file(`html/${filename}`, wrap(filename, 'Lese-Arbeitsblatt (EBA) · Lesen & Verstehen', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildLeseblatt({ dossier: d.dossier, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
@@ -533,7 +485,7 @@ ${cssRenderer}
         for (const typ of d.kn.kn_typen || []) {
           const markup = renderToStaticMarkup(<DocKnS kn={d.kn} knTyp={typ.typ} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
           const filename = `${prefix}_doc-kn-s_${typ.typ}.html`
-          zip.file(`html/${filename}`, wrap(`DOC-KN-S ${typ.label}`, markup))
+          zip.file(`html/${filename}`, wrap(filename, `DOC-KN-S ${typ.label}`, markup))
           log.push(`html/${filename}`)
           try {
             const docx = buildKnS({ kn: d.kn, knTyp: typ.typ, abteilung, logoPng: pngArrayBuffer })
@@ -548,7 +500,7 @@ ${cssRenderer}
       if (d.kn && d.prinzip) {
         const markup = renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />)
         const filename = `${prefix}_doc-kn-lp.html`
-        zip.file(`html/${filename}`, wrap('DOC-KN-LP Lehrperson + Bewertung', markup))
+        zip.file(`html/${filename}`, wrap(filename, 'DOC-KN-LP Lehrperson + Bewertung', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngArrayBuffer, sits: [d.hf_A, d.hf_B, d.hf_C] })
@@ -587,7 +539,7 @@ ${cssRenderer}
           const num = which === 'ki_1' ? '1' : '2'
           const markup = renderToStaticMarkup(<DocKi ki={d.ki} which={which} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
           const filename = `${prefix}_doc-ki-${num}.html`
-          zip.file(`html/${filename}`, wrap(`DOC-KI-${num} · KI-Toolbox`, markup))
+          zip.file(`html/${filename}`, wrap(filename, `DOC-KI-${num} · KI-Toolbox`, markup))
           log.push(`html/${filename}`)
           try {
             const docx = buildKi({ ki: d.ki, which, abteilung, logoPng: pngArrayBuffer })
@@ -602,7 +554,7 @@ ${cssRenderer}
       if (d.lernprompt) {
         const markup = renderToStaticMarkup(<DocLernprompt lernprompt={d.lernprompt} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-lernprompt.html`
-        zip.file(`html/${filename}`, wrap('DOC-LERNPROMPT · KI-Toolbox', markup))
+        zip.file(`html/${filename}`, wrap(filename, 'DOC-LERNPROMPT · KI-Toolbox', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildLernprompt({ lernprompt: d.lernprompt, abteilung, logoPng: pngArrayBuffer })
@@ -616,7 +568,7 @@ ${cssRenderer}
       if (d.lernbegleiter) {
         const markup = renderToStaticMarkup(<DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-lernbegleiter.html`
-        zip.file(`html/${filename}`, wrap('DOC-LERNBEGLEITER · KI-Toolbox', markup))
+        zip.file(`html/${filename}`, wrap(filename, 'DOC-LERNBEGLEITER · KI-Toolbox', markup))
         log.push(`html/${filename}`)
         try {
           const docx = buildLernbegleiter({ lernbegleiter: d.lernbegleiter, abteilung, logoPng: pngArrayBuffer })
@@ -1173,6 +1125,17 @@ ${body.join('\n')}
   geöffnet werden darf — bestätigen). Beide Formate enthalten die gleichen Inhalte. Damit die
   Links funktionieren, muss der ZIP-Ordner <em>vollständig entpackt</em> sein (Ordner
   <code>html/</code> und <code>word/</code> daneben).</p>
+
+  <p class="intro"><strong>Offline arbeiten und speichern.</strong> Die HTML-Auftragsdokumente
+  sind ausfüllbar und speichern sich selbst: Die Lernenden tippen in die Felder und klicken auf
+  <strong>Speichern</strong> (oder <code>Ctrl+S</code>). In Chrome und Edge wird dieselbe Datei
+  überschrieben; in Firefox und Safari entsteht eine Kopie <code>…_ausgefuellt.html</code>.
+  Diese Datei wieder öffnen — alle Eingaben sind da und weiter bearbeitbar. Schriften und Logo
+  stecken in der Datei, es braucht also weder Internet noch den entpackten Ordner. Zusätzlich
+  sichert der Browser Eingaben lokal zwischen; nach einem Absturz bietet die Datei beim Öffnen
+  an, sie wiederherzustellen. <strong>Einfügen ist in den Schreibfeldern deaktiviert</strong> —
+  die Lernenden formulieren selbst. Das ist eine Hürde und keine Sperre: technisch versierte
+  Lernende kommen daran vorbei, als Signal im Unterricht wirkt es trotzdem.</p>
 
   <div class="toolbar"><button type="button" id="toggleAll" class="btn btn-word">Alles aufklappen</button></div>
 

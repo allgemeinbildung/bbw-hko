@@ -1,7 +1,7 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
-import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, visibleEinheiten, isEntwurf, draftKomponenten, KOMPONENTEN_LABEL } from '../../lib/einheiten'
+import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, visibleEinheiten, isEntwurf, draftKomponenten, KOMPONENTEN_LABEL, lehrgaengeOf, lehrgangLabel, lehrgangShort, isEbaLehrgang, sortLehrgaenge } from '../../lib/einheiten'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -30,9 +30,9 @@ const sichtbar = visibleEinheiten(einheitenIndex, role)
 const filtered = applyEinheitenFilters(sichtbar, filters)
 
 // Aufteilung nach Grundbildungstyp: EFZ (3-/4-jährig) oben, EBA (2-jährig) unten.
-const isEba = (l: string | undefined | null) => (l ?? '').toUpperCase().startsWith('EBA')
-const efzEinheiten = filtered.filter((e) => !isEba(e.lehrgang))
-const ebaEinheiten = filtered.filter((e) => isEba(e.lehrgang))
+// Geprüft wird die ganze Gültigkeitsliste, nicht nur der kanonische Lehrgang.
+const efzEinheiten = filtered.filter((e) => lehrgaengeOf(e).some((l) => !isEbaLehrgang(l)))
+const ebaEinheiten = filtered.filter((e) => lehrgaengeOf(e).some((l) => isEbaLehrgang(l)))
 
 // Filter-UI vorerst ausgeblendet (erst 2 Einheiten, alle T1 / 1.1.1). Auf `true` setzen,
 // sobald Einheiten aus verschiedenen Themen/Kompetenzen dazukommen → reaktiviert das Formular.
@@ -41,7 +41,13 @@ const SHOW_FILTER = false
 
 const allAspekte = Array.from(new Set(einheitenIndex.flatMap((e) => e.aspekte))).sort()
 const allThemen = Array.from(new Set(einheitenIndex.map((e) => e.thema_nr).filter((n): n is number => n != null))).sort()
-const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang))).sort()
+const allLehrgaenge = sortLehrgaenge(Array.from(new Set(einheitenIndex.flatMap(lehrgaengeOf))))
+
+// EFZ-Karten zeigen, für welche EFZ-Varianten die Einheit gilt — seit Einheiten
+// für 3J UND 4J gültig sein können, ist das nicht mehr aus der Sektion ableitbar.
+// In der EBA-Sektion wäre der Chip redundant (dort ist alles EBA 2-jährig).
+const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
+  lehrgaengeOf(e).filter((l) => !isEbaLehrgang(l))
 ---
 <Einheiten title="Unterrichtseinheiten" role={role}>
   <div class="mb-5 flex items-end justify-between gap-4">
@@ -74,7 +80,7 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
       <span class="field-label">Lehrgang</span>
       <select name="lehrgang" class="input" style="min-width:9rem">
         <option value="">— alle —</option>
-        {allLehrgaenge.map((l) => <option value={l} selected={filters.lehrgang === l}>{l}</option>)}
+        {allLehrgaenge.map((l) => <option value={l} selected={filters.lehrgang === l}>{lehrgangLabel(l)}</option>)}
       </select>
     </label>
     <label class="flex flex-col gap-1">
@@ -119,6 +125,11 @@ const allLehrgaenge = Array.from(new Set(einheitenIndex.map((e) => e.lehrgang)))
             )}
             <div class="flex flex-wrap gap-1.5 mb-2">
               {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
+              {efzVarianten(e).length > 0 && (
+                <span class="chip" title={`Gültig für ${efzVarianten(e).map(lehrgangLabel).join(' und ')}`}>
+                  {efzVarianten(e).map(lehrgangShort).join(' · ')}
+                </span>
+              )}
               {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
                 <span class="chip chip-blue">Kompetenz {k}</span>
               ))}

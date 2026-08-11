@@ -1,0 +1,305 @@
+{
+  "id": "3.2.1_wahre_kosten_hf_C",
+  "modul": "3.2",
+  "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+  "lehrgang": "EFZ_3J",
+
+  "buchstabe": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+
+  "titel": "Das 199-Franken-Handy",
+
+  "wissensknoten": ["versteckte_kosten_konsumentscheid"],
+
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": ["3.2.1", "3.2.2"],
+    "lebensbezug": "3.2",
+    "themen": ["T3"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R1"},
+      {"aspekt": "Ökologie", "iteration": "R1"}
+    ],
+    "sprachmodi": [
+      "Produktion multimedial"
+    ],
+    "sprachmodus_ids": ["SM6"],
+    "sk": [6, 9, 11],
+    "kompetenz_id": "3.2.1",
+    "lebensbezug_id": "3.2",
+    "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
+    "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
+  },
+
+  "persona": {
+    "beruf": "Informatiker/in EFZ",
+    "betrieb": "Aare Informatik",
+    "ort": "Biel/Bienne"
+  },
+
+  "situation_text": "Ich bin Informatiker/in EFZ im 1. Lehrjahr bei der Aare Informatik in Biel/Bienne. Mein Handy ist nach drei Jahren zu langsam für die Apps, die ich im Lehrbetrieb brauche. Im Onlineshop finde ich ein Modell für 199 Franken; ein vergleichbares mit fünf Jahren Update-Garantie und austauschbarem Akku kostet 450 Franken. Bei einem Lehrlingslohn von 850 Franken im Monat ist das ein Unterschied, den ich deutlich spüre. In der Berufskunde haben wir gehört, dass in jedem Smartphone Rohstoffe aus Bergbaugebieten stecken und dass Elektroschrott zu den grossen Recyclingströmen der Schweiz gehört. Für den ABU soll ich zum günstigen Gerät ein zweites Preisschild gestalten — eines, das zeigt, was die 199 Franken nicht enthalten.",
+
+  "zahlen_tabelle": [
+    {"label": "Günstiges Smartphone", "wert": "CHF 199"},
+    {"label": "Vergleichsmodell, 5 Jahre Update-Garantie", "wert": "CHF 450"},
+    {"label": "Lehrlingslohn 1. Lehrjahr", "wert": "CHF 850 / Monat"},
+    {"label": "Recyclingquote Siedlungsabfall Schweiz", "wert": "52 %"},
+    {"label": "Recyclingquote Plastik Schweiz", "wert": "28 %"}
+  ],
+
+  "leitfrage": "Was steht nicht auf dem Preisschild meines Handys — und ändert das meinen Entscheid?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 1.5 und Kap. 2.7 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 11.2 | S. 279",
+      "text": "Erklären Sie anhand des Lehrmittels, wie unser Konsumverhalten mit Rohstoffabbau und Umweltbelastung in anderen Ländern zusammenhängt.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.5 | S. 41",
+      "text": "Wenden Sie die Reihenfolge Vermeiden – Vermindern – Verwerten auf Ihren Handykauf an und nennen Sie pro Stufe eine konkrete Möglichkeit.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.7 | S. 73-74",
+      "text": "Entscheiden Sie begründet zwischen dem Gerät für 199 Franken und dem für 450 Franken. Beziehen Sie Ihren Lehrlingslohn, den Nutzen und die erwartete Nutzungsdauer in Ihre Überlegung ein.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 1.5 | S. 39",
+      "text": "Formulieren Sie die drei Zeilen für Ihr zweites Preisschild: pro Zeile ein versteckter Kostenposten, je höchstens zwölf Wörter.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Das zweite Preisschild",
+  "mindmap_aeste": [
+    {
+      "titel": "Was auf dem Preisschild steht",
+      "punkte": [
+        "Verkaufspreis 199 Franken",
+        "Mehrwertsteuer und Handelsmarge",
+        "Gesetzliche Gewährleistung",
+        "Versand und Verpackung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was nicht darauf steht",
+      "punkte": [
+        "Rohstoffabbau und Bodenbelastung im Herkunftsland",
+        "Transport rund um die halbe Welt",
+        "Kurze Update-Dauer erzwingt den nächsten Kauf",
+        "Elektroschrott am Ende der Nutzung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was ich stattdessen tun kann",
+      "punkte": [
+        "Vermeiden: das alte Gerät länger nutzen oder reparieren lassen",
+        "Vermindern: ein gebrauchtes Gerät ohne Zwischenverarbeitung übernehmen",
+        "Verwerten: das alte Handy in die Rücknahme geben statt in die Schublade"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was mein Entscheid wirklich kostet",
+      "punkte": [
+        "Preis pro Nutzungsjahr statt Kaufpreis",
+        "Ersatzbeschaffung nach zwei statt nach fünf Jahren",
+        "Austauschbarer Akku verlängert die Lebensdauer"
+      ],
+      "optional": true
+    }
+  ],
+
+  "handlungsprodukt": {
+    "format": "Ehrliches Preisschild",
+    "titel": "Das zweite Preisschild für mein Handy",
+    "format_detail": "Gestaltetes Preisschild als Bild oder Folie mit dem sichtbaren Verkaufspreis und drei Zeilen versteckter Kosten, dazu eine gesprochene Kaufbegründung von 45 bis 60 Sekunden.",
+    "beschreibung": "Ich gestalte ein zweites Preisschild für mein Handy, das neben den 199 Franken die versteckten Kosten sichtbar macht, und begründe gesprochen, wie ich mich entscheide.",
+    "schritte": [
+      {"label": "Versteckte Posten sammeln", "hint": "Listen Sie aus LF1 und LF2 alle Kosten auf, die im Verkaufspreis fehlen — mindestens fünf."},
+      {"label": "Auf drei kürzen", "hint": "Wählen Sie die drei Posten mit der grössten Wirkung. Streichen Sie, was Sie nicht belegen können."},
+      {"label": "Preisschild gestalten", "hint": "Oben gross die 199 Franken, darunter die drei Zeilen. Nutzen Sie die Formulierungen aus LF4."},
+      {"label": "Preis pro Nutzungsjahr rechnen", "hint": "Teilen Sie beide Kaufpreise durch die erwartete Nutzungsdauer und schreiben Sie das Ergebnis aufs Schild."},
+      {"label": "Begründung aufnehmen", "hint": "Sprechen Sie 45 bis 60 Sekunden: Wie entscheiden Sie sich, und was spricht dagegen? Nutzen Sie die Satzanfänge."}
+    ],
+    "schreib_label": "PREISSCHILD HIER ERARBEITEN",
+    "schreib_note": "-> wissen/versteckte_kosten_konsumentscheid",
+    "abgaben": [
+      "Ehrliches Preisschild (Bild oder Folie, drei Zeilen versteckte Kosten)",
+      "Gesprochene Kaufbegründung (45–60 Sek.)"
+    ],
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Auf dem Schild steht 199 Franken. Nicht darauf steht …»",
+        "«Pro Nutzungsjahr kostet mich das Gerät …»",
+        "«Ich entscheide mich für …, weil …»",
+        "«Gegen meinen Entscheid spricht …»"
+      ],
+      "strategien": [
+        "Erst rechnen, dann entscheiden — der Preis pro Nutzungsjahr dreht das Ergebnis oft um.",
+        "Jede Zeile auf dem Schild muss zu einer Stelle im Lehrmittel passen; was Sie nicht belegen können, kommt weg.",
+        "Die Begründung einmal laut sprechen und die Zeit stoppen, bevor Sie aufnehmen."
+      ],
+      "struktur": [
+        "Sichtbarer Preis – drei versteckte Posten – Preis pro Nutzungsjahr – Entscheid – Gegenargument"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Stufe 3–4. Exemplarisch ist, dass die Musterlösung sich für das günstige Gerät entscheidet und den Widerspruch dazu offen benennt — nicht die «richtige» ökologische Antwort gibt.",
+      "abschnitte": [
+        {
+          "titel": "Das Schild",
+          "zeilen": [
+            {"label": "Kopfzeile", "text": "199.— · Smartphone, 128 GB", "quelle": ""},
+            {"label": "Zeile 1", "text": "Plus: Rohstoffabbau und belastete Böden im Herkunftsland.", "quelle": "Kap. 11.2, S. 279"},
+            {"label": "Zeile 2", "text": "Plus: Transport um die halbe Welt, im Preis nicht enthalten.", "quelle": "Kap. 11.2, S. 279"},
+            {"label": "Zeile 3", "text": "Plus: Elektroschrott nach zwei Jahren ohne Updates.", "quelle": "Kap. 1.5, S. 39"}
+          ]
+        },
+        {
+          "titel": "Preis pro Nutzungsjahr",
+          "zeilen": [
+            {"label": "Rechnung", "text": "Das günstige Gerät bekommt zwei Jahre Updates: 199 Franken geteilt durch 2 ergibt rund 100 Franken pro Jahr. Das teurere hat fünf Jahre Update-Garantie und einen austauschbaren Akku: 450 Franken geteilt durch 5 ergibt 90 Franken pro Jahr. Gerechnet auf die Nutzungsdauer ist das teurere Gerät also nicht teurer, sondern günstiger — und es fällt in derselben Zeit nur einmal Elektroschrott an statt zweimal.", "quelle": "Kap. 2.7, S. 73–74"}
+          ]
+        },
+        {
+          "titel": "Mein Entscheid",
+          "zeilen": [
+            {"label": "Gesprochene Begründung", "text": "Ich entscheide mich trotzdem für das Gerät zu 199 Franken. Bei 850 Franken Lohn im Monat sind 450 Franken auf einmal für mich nicht dasselbe wie 199 — auch wenn die Jahresrechnung anders aussieht. Was über fünf Jahre günstiger ist, nützt mir nichts, wenn ich es diesen Monat nicht bezahlen kann.", "quelle": ""}
+          ]
+        },
+        {
+          "titel": "Was dagegen spricht",
+          "zeilen": [
+            {"label": "Gegenargument", "text": "Gegen meinen Entscheid spricht, dass ich die Differenz nicht spare, sondern verschiebe: in zwei Jahren kaufe ich wieder, und die versteckten Kosten fallen ein zweites Mal an — nur nicht bei mir. Das Lehrmittel nennt als beste Stufe «Vermeiden»: das alte Gerät reparieren lassen. Das habe ich nicht geprüft. Wenn ich ehrlich bin, ist mein Entscheid eine Budget-Entscheidung und keine ökologische.", "quelle": "Kap. 1.5, S. 41"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Was hat sich für mich verändert, als ich den Preis pro Nutzungsjahr gerechnet habe?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Bei welcher Anschaffung in meinem Lehrbetrieb würde dieselbe Rechnung Sinn ergeben?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Was prüfe ich beim nächsten eigenen Kauf zuerst — und woran erinnere ich mich dann?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "LF2 nennt zu allen drei Stufen Vermeiden, Vermindern und Verwerten eine konkrete Möglichkeit.",
+        "LF3 enthält eine Rechnung und einen Entscheid, nicht nur eine Meinung."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Alle drei Pflicht-Äste sind befüllt.",
+        "Der Ast «Was nicht darauf steht» nennt mindestens drei belegbare Posten.",
+        "Mindestens eine Verbindung zwischen versteckten Kosten und Handlungsmöglichkeit ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Das Preisschild zeigt den Verkaufspreis und genau drei Zeilen versteckter Kosten.",
+        "Jede Zeile lässt sich einer Stelle im Lehrmittel zuordnen.",
+        "Der Preis pro Nutzungsjahr ist für beide Geräte gerechnet.",
+        "Die gesprochene Begründung dauert 45 bis 60 Sekunden und nennt auch das Gegenargument."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R2 nennt eine konkrete Anschaffung aus dem eigenen Lehrbetrieb."
+      ]
+    }
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Preisschild gestalten und Begründung aufnehmen", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "3.2.1_wahre_kosten_prinzip",
+  "herausforderung": {
+    "buchstabe": "C",
+    "label": "Für ein selbst gewähltes Produkt ein zweites, ehrliches Preisschild gestalten und die eigene Kaufentscheidung begründen"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl",
+    "hint": "Beide Entscheide sind vertretbar. Für das günstige Gerät spricht, dass 450 Franken auf einmal bei 850 Franken Lohn real nicht dasselbe sind wie eine Jahresrechnung. Für das teurere spricht, dass es pro Nutzungsjahr günstiger ist und nur halb so oft Elektroschrott erzeugt. Bewertet wird, ob Sie beide Seiten offenlegen — nicht, welches Gerät Sie wählen."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Bei welchem anderen Kauf würde mir der Preis pro Nutzungsjahr ein anderes Ergebnis liefern als der Kaufpreis?",
+    "ziel": "Die Lernenden lösen die Einsicht vom Smartphone ab: Der ausgeschriebene Preis ist nur einer von mehreren möglichen Massstäben."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T5.3 — Globale gesellschaftliche Herausforderungen: Rohstoffe und Umweltbelastung als politische Frage.",
+    "r3_voraussicht": "T8.4 — Finanzen heute und in Zukunft: Anschaffungen über die Lebensdauer rechnen statt über den Kaufpreis."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 11.2", "titel": "Globalisierung — Ressourcenverbrauch, Umweltbelastung, Zusammenhang mit unserem Konsumverhalten", "seiten": "Seite 279", "unterueberschrift": "Globalisierung der Umwelt", "fuer_leitfrage": [1]},
+    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Vermeiden, Vermindern, Verwerten als Reihenfolge des Bundesamts für Umwelt", "seiten": "Seite 41", "unterueberschrift": "Zukunft", "fuer_leitfrage": [2]},
+    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Siedlungsabfall, Elektroschrott und Grenzen des Recyclings", "seiten": "Seite 39", "unterueberschrift": "Recycling", "fuer_leitfrage": [4]},
+    {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnisse, beschränktes Einkommen und Nutzen als Entscheidungsgrundlage", "seiten": "Seite 73-74", "unterueberschrift": "Nachfrage / Nutzen", "fuer_leitfrage": [3]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Globaler Zusammenhang erklärt", "indikator": "Konsumverhalten und Rohstoffabbau werden korrekt verknüpft.", "gewicht_prozent": 25},
+      {"kriterium": "Handlungsstufen angewendet", "indikator": "Vermeiden, Vermindern und Verwerten sind je konkret ausgefüllt.", "gewicht_prozent": 25},
+      {"kriterium": "Entscheid gerechnet", "indikator": "Der Preis pro Nutzungsjahr ist für beide Geräte korrekt ermittelt.", "gewicht_prozent": 25},
+      {"kriterium": "Entscheid verantwortet", "indikator": "Die Begründung nennt Vor- und Gegenargument und verschweigt das Budget nicht.", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Die Rechenvorlage für den Preis pro Nutzungsjahr wird vorgegeben; die Lernenden setzen nur die Zahlen ein.",
+    "scaffold_100": "Zusätzlich wird eine dritte Option geprüft: gebrauchtes Gerät oder Reparatur des bestehenden Handys."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Der ausgeschriebene Preis ist nur ein Massstab unter mehreren — wer über die Nutzungsdauer und die Folgekosten rechnet, entscheidet auf einer anderen Grundlage.",
+    "lehrmittel_anker": "Kap. 11.2 S. 279 (Konsumverhalten und Rohstoffabbau), Kap. 1.5 S. 39 und S. 41 (Elektroschrott, Recyclinggrenzen, Vermeiden-Vermindern-Verwerten), Kap. 2.7 S. 73-74 (Bedürfnisse, Einkommen, Nutzen)",
+    "kn_aktivierung": "Im Kompetenznachweis liefert diese Herausforderung die Fähigkeit, eine eigene Konsumentscheidung offenzulegen und gegen die eigene Bequemlichkeit zu prüfen.",
+    "transfer_check": "Die Lernenden können die Rechnung Preis pro Nutzungsjahr auf eine andere Anschaffung übertragen, ohne das Handy zu erwähnen."
+  },
+
+  "sk_anker": [
+    {"sk": 6, "wo": "Die gesprochene Kaufbegründung verlangt eine Position mit Begründung und die ausdrückliche Nennung des Gegenarguments."},
+    {"sk": 9, "wo": "Der Ast «Was ich stattdessen tun kann» und LF2 verlangen, ökologische Handlungsstufen auf die eigene Anschaffung anzuwenden."},
+    {"sk": 11, "wo": "Der Entscheid muss offenlassen, dass ökonomische Machbarkeit und ökologische Wirkung hier auseinanderfallen — ohne den Widerspruch wegzuerklären."}
+  ]
+}

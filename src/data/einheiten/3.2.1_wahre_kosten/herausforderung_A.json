@@ -1,0 +1,301 @@
+{
+  "id": "3.2.1_wahre_kosten_hf_A",
+  "modul": "3.2",
+  "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+  "lehrgang": "EFZ_3J",
+
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+
+  "titel": "Warum kostet Vanille plötzlich das Vierfache?",
+
+  "wissensknoten": ["preisbildung_angebot_nachfrage"],
+
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": ["3.2.1", "3.2.2"],
+    "lebensbezug": "3.2",
+    "themen": ["T3"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R1"},
+      {"aspekt": "Ökologie", "iteration": "R1"}
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell",
+      "Produktion multimedial"
+    ],
+    "sprachmodus_ids": ["SM2", "SM6"],
+    "sk": [1, 9],
+    "kompetenz_id": "3.2.1",
+    "lebensbezug_id": "3.2",
+    "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
+    "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
+  },
+
+  "persona": {
+    "beruf": "Bäcker-Konditor-Confiseur/in EFZ",
+    "betrieb": "Bäckerei-Konditorei Sennhauser",
+    "ort": "Winterthur"
+  },
+
+  "situation_text": "Ich bin Bäcker-Konditor-Confiseur/in EFZ im 1. Lehrjahr bei der Bäckerei-Konditorei Sennhauser in Winterthur. Seit ein Zyklon über die Anbaugebiete in Madagaskar gezogen ist, kostet uns das Kilo Bourbon-Vanille im Einkauf 1250 Franken statt wie bisher 320 Franken. Mein Berufsbildner/in rechnet vor, dass ein Vanillegipfeli damit 40 Rappen teurer würde, und bestellt stattdessen synthetisches Vanillin für 28 Franken das Kilo. «Der Markt entscheidet», sagt er und legt die Offerte weg. Mich beschäftigt das: Unser Preis ändert sich, weil auf der anderen Seite der Welt Blüten weggeweht wurden — und im billigen Vanillin steckt Erdöl, das in keiner unserer Kalkulationen auftaucht. Für die nächste Teamsitzung soll ich erklären, wie dieser Preis überhaupt zustande kommt.",
+
+  "zahlen_tabelle": [
+    {"label": "Bourbon-Vanille Einkauf, vor dem Zyklon", "wert": "CHF 320 / kg"},
+    {"label": "Bourbon-Vanille Einkauf, heute", "wert": "CHF 1250 / kg"},
+    {"label": "Synthetisches Vanillin", "wert": "CHF 28 / kg"},
+    {"label": "Mehrkosten pro Vanillegipfeli", "wert": "CHF 0.40"}
+  ],
+
+  "leitfrage": "Wie entsteht der Preis für unsere Vanille — und welche Kosten stehen nicht darin?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 2.7 und Kap. 11.2 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 76-77",
+      "text": "Erklären Sie mit Angebots- und Nachfragekurve, warum der Vanillepreis nach dem Ernteausfall steigt. Nutzen Sie das Erdöl-Beispiel auf Seite 77 als Vorlage.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 81-82",
+      "text": "Ordnen Sie die Kostenbestandteile eines Vanillegipfeli den Produktionsfaktoren zu und benennen Sie, welcher Faktor durch den Ernteausfall teurer geworden ist.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 11.2 | S. 279",
+      "text": "Ihr Betrieb muss zwischen Bourbon-Vanille zu 1250 Franken und Vanillin zu 28 Franken wählen. Entscheiden Sie begründet, welche Variante Sie empfehlen — und benennen Sie, welche Umweltkosten in beiden Preisen fehlen.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 2.7 | S. 76",
+      "text": "Formulieren Sie die Sprechspur für das Schlussbild Ihrer Bildstrecke: drei Sätze, die sagen, was der Preis anzeigt und was er verschweigt.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Der Preis der Vanille",
+  "mindmap_aeste": [
+    {
+      "titel": "Was den Preis treibt",
+      "punkte": [
+        "Angebot sinkt nach dem Ernteausfall",
+        "Nachfrage bleibt gleich hoch",
+        "Je knapper das Gut, desto höher der Preis",
+        "Signalfunktion: der Preis lenkt Angebot und Nachfrage"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was im Preis steckt",
+      "punkte": [
+        "Produktionsfaktor Arbeit: Anbau, Ernte, Trocknung",
+        "Produktionsfaktor Boden und Umwelt: Rohstoff und Fläche",
+        "Produktionsfaktor Kapital: Lager, Maschinen, Transport",
+        "Handelsmarge und Import"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was im Preis fehlt",
+      "punkte": [
+        "Bodenerosion und Bodenvergiftung im Anbauland",
+        "Treibhausgase des Transports um die halbe Welt",
+        "Erdöl als Rohstoff im synthetischen Vanillin",
+        "Arbeitsbedingungen der Pflückenden"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer könnte die Lücke schliessen?",
+      "punkte": [
+        "Label wie Fairtrade oder Bio",
+        "Lenkungsabgabe des Staates",
+        "Höherer Verkaufspreis im Laden"
+      ],
+      "optional": true
+    }
+  ],
+
+  "handlungsprodukt": {
+    "format": "Vertonte Bildstrecke",
+    "titel": "Der Preisweg der Vanille",
+    "format_detail": "Vertonte Bildstrecke von 1 bis 2 Minuten mit 6 bis 8 Bildern und gesprochener Spur, aufgenommen mit dem Smartphone oder am Schulrechner.",
+    "beschreibung": "Ich zeige in einer vertonten Bildstrecke, wie der Preis für ein Kilo Vanille zustande kommt, und mache sichtbar, welche Kosten in diesem Preis fehlen.",
+    "schritte": [
+      {"label": "Preisweg sammeln", "hint": "Notieren Sie die Stationen von der Vanilleblüte bis zum Gipfeli: Anbau, Ernte, Trocknung, Transport, Import, Verarbeitung, Verkauf."},
+      {"label": "Zahlen einsetzen", "hint": "Übernehmen Sie die drei Einkaufspreise aus der Zahlentabelle und rechnen Sie die Differenz aus."},
+      {"label": "Lücke markieren", "hint": "Markieren Sie bei jeder Station in einer zweiten Farbe die Kosten, die auf keiner Rechnung stehen."},
+      {"label": "Bilder wählen", "hint": "Wählen Sie 6 bis 8 Bilder: eines pro Station und ein Schlussbild für die Lücke."},
+      {"label": "Sprechspur aufnehmen", "hint": "Sprechen Sie zu jedem Bild zwei bis drei Sätze. Nutzen Sie die Satzanfänge aus der Schreibhilfe."}
+    ],
+    "schreib_label": "PREISWEG HIER ERARBEITEN",
+    "schreib_note": "-> wissen/preisbildung_angebot_nachfrage",
+    "abgaben": [
+      "Vertonte Bildstrecke (1–2 Min., 6–8 Bilder)",
+      "Sprechspur als Text (150–200 Wörter)"
+    ],
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Der Preis steigt, weil das Angebot …»",
+        "«In diesem Preis enthalten sind …»",
+        "«Nicht bezahlt wird dagegen …»",
+        "«Wer diese Kosten trägt, ist …»"
+      ],
+      "strategien": [
+        "Erst alle Stationen stichwortartig sammeln, dann erst Sätze bauen.",
+        "Pro Bild höchstens eine Aussage — was nicht in drei Sätze passt, gehört auf ein eigenes Bild.",
+        "Sprechspur laut lesen und die Zeit stoppen, bevor Sie aufnehmen."
+      ],
+      "struktur": [
+        "Ausgangslage – Preisanstieg – Was im Preis steckt – Was fehlt – Schlussfrage"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Stufe 3–4. Exemplarisch ist, dass die Lücke benannt und nicht aufgelöst wird: die Musterlösung entscheidet sich, lässt die Gegenposition aber stehen.",
+      "abschnitte": [
+        {
+          "titel": "Ausgangslage und Preisanstieg",
+          "zeilen": [
+            {"label": "Bild 1–2", "text": "Vor dem Zyklon kostete uns ein Kilo Bourbon-Vanille 320 Franken, heute sind es 1250 Franken — fast das Vierfache. Verändert hat sich nicht die Nachfrage, sondern das Angebot: Der Sturm hat einen Teil der Ernte in Madagaskar vernichtet. Weniger Ware bei gleicher Nachfrage bedeutet einen höheren Preis. Genau das zeigt das Erdöl-Beispiel im Lehrmittel: Wenn die Fördermenge sinkt, steigt der Preis und die verkaufte Menge geht zurück.", "quelle": "Kap. 2.7, S. 77"}
+          ]
+        },
+        {
+          "titel": "Was im Preis steckt",
+          "zeilen": [
+            {"label": "Bild 3–5", "text": "Im Einkaufspreis stecken alle drei Produktionsfaktoren: Arbeit für Anbau, Handbestäubung, Ernte und die monatelange Trocknung. Boden und Umwelt als Anbaufläche und Rohstoff. Kapital für Lager, Transport und Verarbeitung. Teurer geworden ist vor allem der Faktor Boden und Umwelt — die Fläche liefert weniger Ertrag, die gleiche Arbeit ergibt weniger Vanille.", "quelle": "Kap. 2.7, S. 81–82"}
+          ]
+        },
+        {
+          "titel": "Was im Preis fehlt",
+          "zeilen": [
+            {"label": "Bild 6–7", "text": "Nicht bezahlt sind die Treibhausgase des Transports um die halbe Welt und die Belastung der Böden im Anbauland. Beim günstigen Vanillin ist die Lücke sogar grösser: Es kostet 28 Franken, wird aber aus Erdöl hergestellt. Das Lehrmittel hält fest, dass die Gründe für Bodenvergiftung und Rohstoffabbau in den Anbauländern oft in unserem Konsumverhalten liegen. Bezahlt wird das dort, nicht hier.", "quelle": "Kap. 11.2, S. 279"}
+          ]
+        },
+        {
+          "titel": "Empfehlung und offene Frage",
+          "zeilen": [
+            {"label": "Bild 8", "text": "Ich empfehle, für das Vanillegipfeli bei echter Vanille zu bleiben und die 40 Rappen auf den Verkaufspreis zu schlagen — weil unser Betrieb mit Handwerk wirbt und der Rohstoff Teil davon ist. Wirtschaftlich ist das riskant: Wer nicht mehr zahlen will, kauft beim Grossverteiler. Beide Varianten haben Kosten, die niemand auf der Etikette sieht. Der Preis sagt uns, was etwas kostet — nicht, was es wirklich kostet.", "quelle": "Kap. 2.7, S. 76"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Was hat mich am Preisweg der Vanille überrascht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Bei welchem Rohstoff in meinem Lehrbetrieb könnte ich dieselbe Rechnung aufmachen?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Worauf achte ich beim nächsten Einkaufsentscheid im Betrieb — oder was frage ich nach?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "LF1 nennt Angebot, Nachfrage und Knappheit als Preistreiber.",
+        "LF3 enthält eine Empfehlung mit Begründung, nicht nur eine Aufzählung."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Alle drei Pflicht-Äste sind befüllt.",
+        "Der Ast «Was im Preis fehlt» nennt mindestens drei konkrete Posten.",
+        "Mindestens eine Verbindung zwischen «Was den Preis treibt» und «Was im Preis fehlt» ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Die Bildstrecke dauert 1 bis 2 Minuten und hat 6 bis 8 Bilder.",
+        "Der Preisweg ist von der Blüte bis zum Verkauf nachvollziehbar.",
+        "Mindestens zwei fehlende Kostenposten sind benannt und begründet.",
+        "Die Sprechspur ist verständlich und frei gesprochen, nicht abgelesen."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R2 nennt einen konkreten Rohstoff aus dem eigenen Lehrbetrieb."
+      ]
+    }
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Bildstrecke erstellen und vertonen", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "3.2.1_wahre_kosten_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Aufdecken, welche Herstellungs- und Transportkosten im Preis eines Alltagsprodukts nicht sichtbar sind"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Tiefer Preis heute vs. Folgekosten, die andere tragen",
+    "hint": "Beide Entscheide sind vertretbar. Für das billige Vanillin spricht, dass der Betrieb konkurrenzfähig bleibt und niemand die 40 Rappen bezahlen muss. Für die echte Vanille spricht, dass die Folgekosten der Erdölvariante nur verschoben und nicht vermieden werden. Bewertet wird, wie gut Sie Ihren Entscheid begründen — nicht, welchen Sie treffen."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Bei welchem anderen Produkt in meinem Alltag würde eine solche Rechnung ähnlich ausfallen — und woran erkenne ich das?",
+    "ziel": "Die Lernenden lösen die Einsicht vom Rohstoff Vanille ab: Ein Preis zeigt, was jemand bezahlt, nicht was etwas kostet."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T5.3 — Globale gesellschaftliche Herausforderungen: Klima, Energie und Globalisierung als politische Gestaltungsfrage.",
+    "r3_voraussicht": "T8.4 — Finanzen heute und in Zukunft: Konsum- und Anlageentscheide mit langfristigen Folgekosten."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 2.7", "titel": "Preisbildung — Markt, Marktgleichgewicht, Verschiebung von Angebots- und Nachfragekurve", "seiten": "Seite 76-77", "unterueberschrift": "Markt / Veränderung des Marktgleichgewichts", "fuer_leitfrage": [1, 4]},
+    {"ref": "Kap. 2.7", "titel": "Preisbildung — Produktionsfaktoren und Wirtschaftssektoren", "seiten": "Seite 81-82", "unterueberschrift": "Produktionsfaktoren", "fuer_leitfrage": [2]},
+    {"ref": "Kap. 11.2", "titel": "Globalisierung — Ressourcenverbrauch, Umweltbelastung und Bodenbewirtschaftung in den Anbauländern", "seiten": "Seite 279", "unterueberschrift": "Globalisierung der Umwelt", "fuer_leitfrage": [3]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Preismechanismus erklärt", "indikator": "Angebot, Nachfrage und Knappheit werden korrekt verknüpft.", "gewicht_prozent": 25},
+      {"kriterium": "Kostenbestandteile zugeordnet", "indikator": "Die drei Produktionsfaktoren sind am Beispiel benannt.", "gewicht_prozent": 25},
+      {"kriterium": "Fehlende Kosten benannt", "indikator": "Mindestens zwei externe Kostenposten sind konkret und belegt.", "gewicht_prozent": 25},
+      {"kriterium": "Entscheid begründet", "indikator": "Die Empfehlung nennt beide Seiten des Zielkonflikts.", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Die Stationenliste des Preiswegs wird vorgegeben; die Lernenden ergänzen nur die fehlenden Kosten.",
+    "scaffold_100": "Zusätzlich wird der Verkaufspreis eines zweiten Produkts aus dem eigenen Betrieb gegengerechnet."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Ein Preis entsteht aus Angebot und Nachfrage — er bildet aber nur die Kosten ab, die jemand tatsächlich in Rechnung stellt.",
+    "lehrmittel_anker": "Kap. 2.7 S. 76-77 (Marktgleichgewicht und Verschiebungen), Kap. 2.7 S. 81-82 (Produktionsfaktoren), Kap. 11.2 S. 279 (Globalisierung der Umwelt)",
+    "kn_aktivierung": "Im Kompetenznachweis liefert diese Herausforderung die Fähigkeit, einen konkreten Preis in seine Bestandteile zu zerlegen und die Lücke zu benennen.",
+    "transfer_check": "Die Lernenden können den Preisweg an einem anderen Rohstoff wiederholen, ohne die Vanille zu erwähnen."
+  },
+
+  "sk_anker": [
+    {"sk": 1, "wo": "In LF3 und im Ast «Was im Preis fehlt» unterscheiden die Lernenden zwischen belegten Angaben aus dem Lehrmittel und Vermutungen über Anbaubedingungen."},
+    {"sk": 9, "wo": "Die Bildstrecke verlangt, ökonomische Preisbildung und ökologische Folgen in einer Darstellung zusammenzuführen statt getrennt zu behandeln."}
+  ]
+}

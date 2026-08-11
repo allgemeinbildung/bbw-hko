@@ -1,0 +1,59 @@
+{
+  "id": "3.2.1_wahre_kosten_set",
+  "einheit_titel": "Der Preis sagt nicht die Wahrheit",
+  "modul": "3.2",
+  "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+  "lehrgang": "EFZ_3J",
+  "lehrgaenge": ["EFZ_3J", "EFZ_4J"],
+  "thema": "T3",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-11",
+  "status": "entwurf",
+
+  "prinzip_ref": "3.2.1_wahre_kosten_prinzip",
+  "kn_ref": "3.2.1_wahre_kosten_kn",
+
+  "herausforderungen": [
+    "3.2.1_wahre_kosten_hf_A",
+    "3.2.1_wahre_kosten_hf_B",
+    "3.2.1_wahre_kosten_hf_C"
+  ],
+
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "3.2.1_wahre_kosten_hf_A",
+      "konzept": "Ein Preis entsteht aus Angebot und Nachfrage — er bildet aber nur die Kosten ab, die jemand tatsächlich in Rechnung stellt."
+    },
+    {
+      "position": 2,
+      "herausforderung": "3.2.1_wahre_kosten_hf_B",
+      "konzept": "Fehlende Kosten verschwinden nicht — sie werden jemandem zugerechnet, und diese Zurechnung ist eine begründbare Entscheidung."
+    },
+    {
+      "position": 3,
+      "herausforderung": "3.2.1_wahre_kosten_hf_C",
+      "konzept": "Der ausgeschriebene Preis ist nur ein Massstab unter mehreren — wer über die Nutzungsdauer und die Folgekosten rechnet, entscheidet auf einer anderen Grundlage."
+    }
+  ],
+
+  "austausch_phase": {
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Expertise teilen — 90 Sek. pro Person: Welches Produkt, welche fehlenden Kosten, welcher Entscheid?",
+      "runde_2": "Gemeinsamkeit abstrahieren — Was haben Vanille, Sonderabfall und Handy gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "runde_3": "Transfer — Bei welchem der drei Fälle fällt es am schwersten, die fehlenden Kosten jemandem zuzurechnen, und warum?"
+    },
+    "einzelarbeit_plenum": "Lehrperson leitet die Diskussion: In allen drei Herausforderungen fehlt etwas im Preis. Wer trägt es jeweils — und liesse sich daraus eine Regel ableiten, die für alle drei gilt?",
+    "einzelauftrag": "Fassen Sie das gemeinsame Prinzip Ihrer drei Herausforderungen (Preisweg der Vanille, Entsorgungsrechnung, zweites Preisschild) in 5 Sätzen zusammen und nennen Sie je ein Beispiel aus Ihrem Lehralltag."
+  },
+
+  "dekontextualisierungs_aufgabe": {
+    "auftrag": "Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext ausserhalb der behandelten Beispiele.",
+    "format": "schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden",
+    "ziel": "Ein Preis zeigt, was jemand bezahlt — nicht, was etwas kostet. Wer die Differenz trägt, ist eine Entscheidung von Menschen, keine Eigenschaft des Produkts.",
+    "gewicht_prozent": 15,
+    "abgabe": "Woche 3 — vor KN"
+  }
+}
