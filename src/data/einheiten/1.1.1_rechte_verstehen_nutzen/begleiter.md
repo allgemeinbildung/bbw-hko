@@ -64,10 +64,10 @@ Getrennt nach den zwei Bewertungsdimensionen:
 
 | GES — Gesellschaftswissen (was wissen) | SuK — Sprache und Kommunikation (was können) |
 |---|---|
-| Lehrvertrag: Rechte/Pflichten Lernende und Berufsbildende (OR 321a, 345, 345a) | Notiz- und Markiertechnik mit Symbolen (Kap. 17.1), Bündeln in eigenen Worten |
+| Lehrvertrag: Rechte/Pflichten Lernende und Berufsbildende (OR 321a, 345, 345a) | Notiz- und Markiertechnik mit Symbolen (Kap. 17.2), Bündeln in eigenen Worten |
 | Lohnabzug nur bei Verschulden (OR 321e); Überstunden (OR 321c / ArG 31) | Regeln in eigenen Worten verdichten und mit exakter Quelle absichern |
-| Schema Tatbestand–Rechtslage–Rechtsfolge (Kap. 1.3) | Argumentieren nach 3B-Schema (Behauptung-Begründung-Beispiel, Kap. 17.2) |
-| Geschäftsgeheimnis / Treuepflicht (OR 321a) | Geschäftsbrief/E-Mail: Anlass-Absicht-Begründung-Schluss, Register (Kap. 17.3) |
+| Schema Tatbestand–Rechtslage–Rechtsfolge (Kap. 1.3) | Argumentieren nach 3B-Schema (Behauptung-Begründung-Beispiel, Kap. 17.3) |
+| Geschäftsgeheimnis / Treuepflicht (OR 321a) | Geschäftsbrief/E-Mail: Anlass-Absicht-Begründung-Schluss, Register (Kap. 17.4) |
 | Datenschutz, Kanalwahl, Vertraulichkeit (Kap. 20.7) | adressatengerechte Sprache, Kanalbegründung |
 | eigene Rolle als beratende Mitlernende, Rollenübernahme (Kap. 18.1) | Quellenkritik / Suchstrategien (Kap. 20.8) |
 
@@ -204,7 +204,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 |---|---|---|
 | **Ankommen** | Herausforderung lesen, Emotion „Verunsicherung" aufgreifen: „Wer hat schon eine Anweisung im Betrieb bekommen und sich gefragt, ob die so erlaubt ist?" | Plenum |
 | **Vorwissen** | Schnellsammlung: Was steht eigentlich im Lehrvertrag? Welche der drei Fragen ist die kniffligste? | Murmelrunde |
-| **Informieren** | LF1 + LF2: Kap. 1.4 + Kap. 20.7 lesen, mit Symbolen markieren (Kap. 17.1: Stern = wichtig, ? = strittig, _ = Definition) | Einzel |
+| **Informieren** | LF1 + LF2: Kap. 1.4 + Kap. 20.7 lesen, mit Symbolen markieren (Kap. 17.2: Stern = wichtig, ? = strittig, _ = Definition) | Einzel |
 | **Verarbeiten** | Mindmap „Regel-Spickzettel" anlegen; LF3 (Datenschutz-Entscheidung) + LF4: Regel-Spickzettel auf A4 (drei Blöcke) | Einzel |
 | **Auswerten** | Selbstcheck mit Kriterienliste (unten); offene Fragen notieren | Einzel/Plenum |
 
@@ -215,7 +215,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 **LF1 (K2):** Hauptpflichten Lernende (OR 321a, 345) und Pflichten Berufsbildende (OR 345a) — mind. fünf Punkte mit Markier-Symbolen.
 
 > [!coaching] LF1
-> Lassen Sie die Lernenden nicht abschreiben, sondern **markieren mit den drei Symbolen aus Kap. 17.1**: Stern = wichtig, Fragezeichen = strittig, Unterstrich = Definition. Wer einen OR-Artikel findet, muss ihn in **einem eigenen Stichsatz** zusammenfassen. Fragen Sie bei Bedarf: „Was heisst das für Sie konkret in der Werkstatt?"
+> Lassen Sie die Lernenden nicht abschreiben, sondern **markieren mit den drei Symbolen aus Kap. 17.2**: Stern = wichtig, Fragezeichen = strittig, Unterstrich = Definition. Wer einen OR-Artikel findet, muss ihn in **einem eigenen Stichsatz** zusammenfassen. Fragen Sie bei Bedarf: „Was heisst das für Sie konkret in der Werkstatt?"
 
 **LF2 (K3):** Regeln zu Überstunden (OR 321c, ArG 31), Lohnabzug (OR 321e) und Geschäftsgeheimnis (OR 321a) auf die drei Fragen anwenden — zulässig oder nicht?
 
@@ -279,7 +279,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 Leitfragen
 ☐ Alle 4 Leitfragen schriftlich beantwortet
 ☐ Pro Antwort mindestens eine exakte Quelle (OR-Artikel oder Kapitel) genannt
-☐ Markier-Symbole aus Kap. 17.1 verwendet
+☐ Markier-Symbole aus Kap. 17.2 verwendet
 
 Mindmap
 ☐ Zentrum und vier Ast-Titel übernommen
@@ -306,7 +306,7 @@ Reflexion
 ### Coaching & Scaffolds — auf einen Blick
 
 > [!coaching] Die drei Moves dieser Herausforderung
-> 1. **LF1:** Nicht abschreiben lassen — jeder OR-Artikel wird mit den drei Symbolen (Kap. 17.1) markiert und in einem eigenen Stichsatz zusammengefasst.
+> 1. **LF1:** Nicht abschreiben lassen — jeder OR-Artikel wird mit den drei Symbolen (Kap. 17.2) markiert und in einem eigenen Stichsatz zusammengefasst.
 > 2. **LF2:** Pro Antwort die stützende Quelle verlangen; die Bohrmaschinen-Frage (OR 321e: Abzug nur bei Verschulden) ist der Lackmustest.
 > 3. **LF3:** Erst 2 Minuten still entscheiden (Ja/Nein), dann begründen.
 > **Zum Abgeben bereit:** Spickzettel-Raster (drei Blöcke, Quellen vorgegeben, erste Zeile als gelöstes Beispiel) · Satzanfänge für die Verdichtung.
@@ -489,7 +489,7 @@ Reflexion
 | Handlungsprodukt | Formelles Antwortschreiben (E-Mail, 200-300 Wörter), 3B-Schema + OR-/ArG-Zitat |
 | Wissensknoten | korrespondenz_3b_schema |
 
-> Ich bin Informatik-Lernende/r (Plattformentwicklung) im 1. Lehrjahr beim IT-Service Galliker in St. Gallen. Mein Mitlernende/r hat meine Fall-Mappe (Sit B) gelesen und fragt mich jetzt auf WhatsApp: „Kannst du mir das in 5 Minuten zusammenfassen?" Ich spüre den Zeitdruck — aber WhatsApp ist nicht das richtige Medium für eine rechtliche Position, die der Berufsbildner/in ernst nehmen soll, und der Fall ist vertraulich. Ich verfasse ein formelles Antwortschreiben (Briefaufbau Kap. 17.3, 3B-Schema Kap. 17.2), das er weiterleiten kann.
+> Ich bin Informatik-Lernende/r (Plattformentwicklung) im 1. Lehrjahr beim IT-Service Galliker in St. Gallen. Mein Mitlernende/r hat meine Fall-Mappe (Sit B) gelesen und fragt mich jetzt auf WhatsApp: „Kannst du mir das in 5 Minuten zusammenfassen?" Ich spüre den Zeitdruck — aber WhatsApp ist nicht das richtige Medium für eine rechtliche Position, die der Berufsbildner/in ernst nehmen soll, und der Fall ist vertraulich. Ich verfasse ein formelles Antwortschreiben (Briefaufbau Kap. 17.4, 3B-Schema Kap. 17.3), das er weiterleiten kann.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > Authentizität (Zeitdruck, Weiterleitungs-Absicht), Verortung (St. Gallen, konkreter Kanal-Konflikt WhatsApp vs. E-Mail), Problem (Kanal- und Tempo-Entscheidung), Affektivität (Verantwortung), Kognition (K2-K4), Aktivität (Antwortschreiben), LJ-Passung (1. LJ), Relevanz (jede/r schreibt solche Antworten) — alle acht erfüllt. Der Kanal-Zielkonflikt ist der didaktische Kern.
@@ -502,7 +502,7 @@ Reflexion
 |---|---|---|
 | **Ankommen** | Herausforderung lesen: „Worüber haben Sie schon mal etwas Wichtiges per Chat geregelt — und ging das gut?" | Plenum |
 | **Vorwissen** | Fall-Mappe aus Herausforderung B (oder Austausch-&-Transfer-Input) reaktivieren; „Was ist die eine Sache, die der Brief erreichen soll?" | Murmelrunde |
-| **Informieren** | Kap. 17.3 (Briefaufbau) + Kap. 17.2 (3B); LF1 + LF2; LF3 begründen | Einzel |
+| **Informieren** | Kap. 17.4 (Briefaufbau) + Kap. 17.3 (3B); LF1 + LF2; LF3 begründen | Einzel |
 | **Verarbeiten** | Kanalwahl entscheiden (LF3); Mindmap; LF4: Antwortschreiben 200-300 Wörter mit eingebettetem 3B | Einzel |
 | **Auswerten** | Hand-Abstimmung E-Mail vs. WhatsApp, je zwei Argumente; Konventions-Check (Anrede, keine Emoticons, Quelle zitiert) | Plenum/Einzel |
 
@@ -525,7 +525,7 @@ Reflexion
 **LF4 (K3+/K4):** Antwortschreiben mit Briefaufbau + eingebettetem 3B-Schema + mind. einem OR-/ArG-Zitat aus der Fall-Mappe.
 
 > [!coaching] LF4
-> Verlangen Sie das wichtigste Argument **zuletzt** im Begründungsteil (Kap. 17.2). Viele schreiben es zuerst und verlieren dann an Kraft. Und: keine Emoticons, korrekte Anrede mit Namen — Register-Bruch ist hier der häufigste Punktverlust.
+> Verlangen Sie das wichtigste Argument **zuletzt** im Begründungsteil (Kap. 17.3). Viele schreiben es zuerst und verlieren dann an Kraft. Und: keine Emoticons, korrekte Anrede mit Namen — Register-Bruch ist hier der häufigste Punktverlust.
 
 > [!warnung] Typischer Stolperstein bei LF4
 > Das Schreiben wird zur Gesetzes-Aufzählung ohne Adressatenbezug. Korrektur: Vor dem Schreiben klären — **wer liest das** (Mitlernende/r? Berufsbildner/in als Weiterleitung?) — und Anrede/Tonalität entsprechend wählen. Ohne Adressatenanalyse ist SK7 nicht gezeigt.
@@ -536,9 +536,9 @@ Reflexion
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
 > - **Kanalwahl (Kap. 20.7)** — Zweck des Kanals (informell vs. verbindlich) · Datenschutz (vertraulicher Fall) · Weiterleitbarkeit der Antwort · Geschwindigkeit vs. Sorgfalt
-> - **Briefaufbau (Kap. 17.3)** — 1. Anlass (warum schreibe ich) · 2. Absicht (was will ich erreichen) · 3. Begründung (Argumente plus Quellen) · 4. Schluss (Wunsch oder nächster Schritt)
-> - **3B-Schema (Kap. 17.2)** — Behauptung in einem Satz · Begründung mit Quelle / OR-Artikel · Beispiel aus dem konkreten Fall · wichtigstes Argument zum Schluss
-> **Optionale Vertiefung** (für 100 %): **E-Mail-Konventionen (Kap. 17.3)** — Anrede mit Namen · keine Emoticons im formellen Rahmen · kurz, korrekt, klar · Signatur mit Funktion. Dieser Ast liefert die Adressatengerechtheit, die ein weiterleitbares Schreiben von einer Gesetzes-Aufzählung unterscheidet.
+> - **Briefaufbau (Kap. 17.4)** — 1. Anlass (warum schreibe ich) · 2. Absicht (was will ich erreichen) · 3. Begründung (Argumente plus Quellen) · 4. Schluss (Wunsch oder nächster Schritt)
+> - **3B-Schema (Kap. 17.3)** — Behauptung in einem Satz · Begründung mit Quelle / OR-Artikel · Beispiel aus dem konkreten Fall · wichtigstes Argument zum Schluss
+> **Optionale Vertiefung** (für 100 %): **E-Mail-Konventionen (Kap. 17.4)** — Anrede mit Namen · keine Emoticons im formellen Rahmen · kurz, korrekt, klar · Signatur mit Funktion. Dieser Ast liefert die Adressatengerechtheit, die ein weiterleitbares Schreiben von einer Gesetzes-Aufzählung unterscheidet.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -587,7 +587,7 @@ Leitfragen
 Mindmap
 ☐ Zentrum und vier Ast-Titel übernommen
 ☐ Pro Ast eigene Detail-Punkte ergänzt
-☐ Bezug zu Kap. 17.2 / 17.3 / 20.7 erkennbar
+☐ Bezug zu Kap. 17.3 / 17.4 / 20.7 erkennbar
 
 Handlungsprodukt
 ☐ Antwortschreiben 200–300 Wörter im Aufbau Anlass-Absicht-Begründung-Schluss
@@ -611,7 +611,7 @@ Reflexion
 > [!coaching] Die drei Moves dieser Herausforderung
 > 1. **LF2:** Eine echte WhatsApp-Zeile und eine E-Mail-Anrede nebeneinander schreiben lassen — der Kontrast wirkt stärker als jede Erklärung.
 > 2. **LF3:** Kanalwahl mit zwei Argumenten aus Kap. 20.7 (Datenschutz, Vertraulichkeit) begründen.
-> 3. **LF4:** Das wichtigste Argument zuletzt im Begründungsteil (Kap. 17.2).
+> 3. **LF4:** Das wichtigste Argument zuletzt im Begründungsteil (Kap. 17.3).
 > **Zum Abgeben bereit:** Brief-Gerüst (Lückentext mit eingebautem 3B) · Kanalwahl-3-Satz-Gerüst.
 
 > [!coaching] Perspektivenwechsel
@@ -764,7 +764,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 | # | Typ | K | Fokus |
 |---|---|---|---|
 | 1 | Erklären | K2 | OR 321e + Lehrvertrags-Voraussetzungen (Kap. 1.4), 3-5 Sätze |
-| 2 | Unterscheiden | K3 | WhatsApp vs. formelle E-Mail rechtlich + medienkompetent (Kap. 17.3, 20.7), mind. 3 Argumente |
+| 2 | Unterscheiden | K3 | WhatsApp vs. formelle E-Mail rechtlich + medienkompetent (Kap. 17.4, 20.7), mind. 3 Argumente |
 | 3 | Entscheiden | K3 | Kanal wählen + erste drei Schritte in 60 Min. skizzieren (Quelle prüfen, Schema, schreiben) |
 | 4 | Forderung | K4 | Antwort (8-12 Sätze, E-Mail) Anlass-Absicht-Begründung-Schluss + 3B + OR-Zitat, Unsicherheit ehrlich markiert |
 
@@ -773,7 +773,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 > **Vollständig vs. lückenhaft:** vollständig = Artikel + Voraussetzung + Lehrvertrags-Bezug in eigenen Worten; lückenhaft = nur die Höhe kritisiert oder Verschulden ausgelassen, Quelle ungenau.
 
 > [!erwartungshorizont] Aufgabe 2 (Unterscheiden, K3) — E-Mail vs. WhatsApp
-> **Stufe 3 zeigt:** mindestens drei tragfähige Unterschiede (z. B. Vertraulichkeit/Datenschutz, Weiterleitbarkeit, Tonalität/Verbindlichkeit, Beweismittel-Charakter), sauber auf Kap. 17.3 / 20.7 bezogen.
+> **Stufe 3 zeigt:** mindestens drei tragfähige Unterschiede (z. B. Vertraulichkeit/Datenschutz, Weiterleitbarkeit, Tonalität/Verbindlichkeit, Beweismittel-Charakter), sauber auf Kap. 17.4 / 20.7 bezogen.
 > **Stufe 4 zeigt zusätzlich:** gewichtet die Argumente und macht deutlich, dass beide Kanäle aus demselben Zeitdruck entstehen — die Wahl ist eine begründete Abwägung, kein „E-Mail ist einfach besser".
 > **Nicht Stufe 4:** „WhatsApp ist unprofessionell, E-Mail ist professionell, fertig." — pauschal, löst die Abwägung auf, statt drei differenzierte Argumente zu liefern.
 

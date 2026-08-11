@@ -204,7 +204,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 |---|---|---|
 | **Ankommen** | Herausforderung lesen, erste Reaktion sammeln („Was würden Sie tun?") | Plenum |
 | **Vorwissen** | Bekanntes aktivieren, Konflikt-Landkarte anlegen | Einzel |
-| **Informieren** | LF1 + LF2: Kap. 1.4 lesen, mit Symbolen markieren (Kap. 17.1) | Einzel |
+| **Informieren** | LF1 + LF2: Kap. 1.4 lesen, mit Symbolen markieren (Kap. 17.2) | Einzel |
 | **Verarbeiten** | Mindmap ergänzen; LF3 (Konfliktweg) + LF4: Positionspapier nach 3B verfassen | Einzel/Partner |
 | **Auswerten** | Selbstcheck mit Kriterienliste (unten); Murmelrunde: „Welche zwei Punkte sind unzulässig?" | Partner |
 
@@ -215,7 +215,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 **LF1 (K2):** Rechte und Pflichten aus Lehrvertrag — fünf wichtigste Punkte mit Markier-Symbolen.
 
 > [!coaching] LF1
-> Lassen Sie die Lernenden nicht abschreiben, sondern **markieren mit den drei Symbolen aus Kap. 17.1**: Stern = wichtig, Fragezeichen = strittig, Unterstrich = Definition. Wer markiert, verarbeitet; wer abschreibt, kopiert. Sammeln Sie am Schluss nur die Fragezeichen — die zeigen Ihnen, wo die Klasse unsicher ist.
+> Lassen Sie die Lernenden nicht abschreiben, sondern **markieren mit den drei Symbolen aus Kap. 17.2**: Stern = wichtig, Fragezeichen = strittig, Unterstrich = Definition. Wer markiert, verarbeitet; wer abschreibt, kopiert. Sammeln Sie am Schluss nur die Fragezeichen — die zeigen Ihnen, wo die Klasse unsicher ist.
 
 **LF2 (K3):** ArG 31 + berufsfremde Arbeiten anwenden — die zwei unzulässigen Punkte.
 
@@ -243,7 +243,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 > - **Pflichten Lernende (OR 321a, 345)** — Hauptpflicht (Anordnungen befolgen) · Sorgfaltspflicht · Treuepflicht (Geschäftsgeheimnisse) · Berufsfachschule besuchen
 > - **Rechte Lernende (OR 322ff., 345a, ArG 31)** — Lohn laut Vertrag · max. 9 h pro Tag bis 18 J. · 5 Wochen Ferien bis 20 J. · nur berufsbezogene Arbeiten · QV ohne Lohnabzug
 > - **Pflichten Berufsbildende (OR 345a)** — fachgerechte Ausbildung · Lohnzahlung · Versicherungspflicht (BU/NBU) · Ferien gewähren · Lehrzeugnis am Ende
-> **Optionale Vertiefung** (für 100 %): **Konfliktwege (Kap. 1.4 S. 36-37)** — 1. Selbstkritik üben · 2. direktes Gespräch · 3. Berufsbildungsverantwortliche/r · 4. Kantonales Amt für Berufsbildung (ABB). Dieser Ast trägt zugleich LF3 — wer ihn sauber legt, begründet die Eskalationsstufe.
+> **Optionale Vertiefung** (für 100 %): **Konfliktwege (Kap. 1.4 S. 36)** — 1. Selbstkritik üben · 2. direktes Gespräch · 3. Berufsbildungsverantwortliche/r · 4. Kantonales Amt für Berufsbildung (ABB). Dieser Ast trägt zugleich LF3 — wer ihn sauber legt, begründet die Eskalationsstufe.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -312,7 +312,7 @@ Reflexion
 ### Coaching & Scaffolds — auf einen Blick
 
 > [!coaching] Die drei Moves dieser Herausforderung
-> 1. **LF1:** Markieren mit den drei Symbolen (Kap. 17.1) statt abschreiben — sammle am Schluss nur die Fragezeichen ein.
+> 1. **LF1:** Markieren mit den drei Symbolen (Kap. 17.2) statt abschreiben — sammle am Schluss nur die Fragezeichen ein.
 > 2. **LF3:** Erst 2 Minuten still entscheiden (welcher Konfliktweg?), dann begründen — so wird die Eskalations-Reihenfolge sichtbar.
 > 3. **LF4:** Reihenfolge Behauptung → Begründung → Beispiel erzwingen, mit mindestens einem OR-/ArG-Verweis.
 > **Zum Abgeben bereit:** Konflikt-Landkarte (80 %-Vorlage) · 3B-Lückentext.
@@ -360,7 +360,7 @@ Reflexion
 |---|---|---|
 | **Ankommen** | Herausforderung lesen | Plenum |
 | **Vorwissen** | „In welchem Kanal würden Sie spontan antworten?" abstimmen | Plenum |
-| **Informieren** | LF1 (Geschäftsbrief/E-Mail, Kap. 17.3) + LF2 (Medienkompetenz, Kap. 20.7) | Einzel |
+| **Informieren** | LF1 (Geschäftsbrief/E-Mail, Kap. 17.4) + LF2 (Medienkompetenz, Kap. 20.7) | Einzel |
 | **Verarbeiten** | Kanal-Vergleichstabelle + Mindmap; LF3 (Kanal entscheiden) + LF4: Antwort verfassen; Kanalbegründung schreiben (80–120 W) | Einzel/Partner |
 | **Auswerten** | Blitzlicht „Welcher Kanal hat gewonnen — und warum?"; Partner-Check: passt Register zum Kanal? | Partner |
 
@@ -373,7 +373,7 @@ Reflexion
 > [!coaching] LF2
 > Die drei Probleme sind nicht offensichtlich. Steuern Sie mit Fragen: „Was passiert mit dieser Nachricht in einem halben Jahr?" (kein Beweismittel/Archiv), „Wer sieht Ihre private Nummer?" (Vermischung privat/geschäftlich), „Was, wenn Sie am Wochenende frei haben?" (Erreichbarkeitsdruck). Drei reichen — nicht in eine Datenschutz-Vorlesung kippen.
 
-**LF3 (K3):** Kanal entscheiden — WhatsApp / Mail / Brief, je 2 Argumente Kap. 17.3 + 1 Kap. 18.2.
+**LF3 (K3):** Kanal entscheiden — WhatsApp / Mail / Brief, je 2 Argumente Kap. 17.4 + 1 Kap. 18.2.
 
 > [!coaching] LF3
 > Die meisten wählen reflexhaft „kurze WhatsApp zurück". Genau das ist der Lernpunkt. Lassen Sie die **Kanal-Vergleichstabelle** vor der Entscheidung ausfüllen — wer Verbindlichkeit und Beweismittel-Charakter einmal nebeneinander sieht, entscheidet anders. Es gibt **keine** Musterlösung; eine begründete Geschäftsmail und ein begründeter Brief sind beide gültig.
@@ -391,8 +391,8 @@ Reflexion
 > [!tafelbild] Erwartungsbild — Kanal · Register · Beweismittel
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
-> - **Geschäftsbrief (Kap. 17.3 S. 396-400)** — Anlass · Absicht · Begründung · Schluss · Beweismittel-Charakter
-> - **Geschäftliche E-Mail (Kap. 17.3 S. 400-404)** — präzise Betreffzeile · adressatenorientierte Sprache · keine Emoticons · klare Anrede + Gruss · CC/BCC bewusst
+> - **Geschäftsbrief (Kap. 17.4 S. 398-402)** — Anlass · Absicht · Begründung · Schluss · Beweismittel-Charakter
+> - **Geschäftliche E-Mail (Kap. 17.4 S. 402-406)** — präzise Betreffzeile · adressatenorientierte Sprache · keine Emoticons · klare Anrede + Gruss · CC/BCC bewusst
 > - **Medienkompetenz (Kap. 20.7)** — privat vs. geschäftlich trennen · verantwortungsvoller Umgang · Kanal passt zum Anlass? · Dokumentation und Archivierung
 > **Optionale Vertiefung** (für 100 %): **Ethische Prüfung (Kap. 18.2)** — Wer hat hier welche Macht? · Welche Norm wird verletzt? · Wahrt mein Ton die Würde beider Seiten? Dieser Ast liefert das dritte (ethische) Argument für die Kanalbegründung in LF3.
 
@@ -427,8 +427,8 @@ ______________________
 **Kanalbegründung (3-Satz-Gerüst):**
 
 ```
-Ich wähle ____________ (Kanal), weil ____________ (Pro-Argument 1, Kap. 17.3)
-und ____________ (Pro-Argument 2, Kap. 17.3). Ausserdem ____________
+Ich wähle ____________ (Kanal), weil ____________ (Pro-Argument 1, Kap. 17.4)
+und ____________ (Pro-Argument 2, Kap. 17.4). Ausserdem ____________
 (Medienkompetenz-Argument zur Trennung privat/geschäftlich, Kap. 20.7).
 ```
 
@@ -447,7 +447,7 @@ Leitfragen
 Mindmap
 ☐ Zentrum und vier Ast-Titel übernommen
 ☐ Pro Ast eigene Detail-Punkte ergänzt
-☐ Bezug zu Kap. 17.3 / 20.7 / 18.2 erkennbar
+☐ Bezug zu Kap. 17.4 / 20.7 / 18.2 erkennbar
 
 Handlungsprodukt
 ☐ Kanalbegründung (80–120 Wörter) + Schreiben (200–250 Wörter)
@@ -540,9 +540,9 @@ Reflexion
 > [!tafelbild] Erwartungsbild — Aussprache vorbereiten
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
-> - **Vier Ohren (Kap. 19.2 S. 425-426)** — Sachohr (Was ist passiert?) · Selbstkundgabeohr (Was sagt das über ihn?) · Beziehungsohr (Wie steht er zu mir?) · Appellohr (Was soll ich tun?)
+> - **Vier Ohren (Kap. 19.2 S. 427-428)** — Sachohr (Was ist passiert?) · Selbstkundgabeohr (Was sagt das über ihn?) · Beziehungsohr (Wie steht er zu mir?) · Appellohr (Was soll ich tun?)
 > - **Ich-Botschaft statt Du-Botschaft (Kap. 19.2 S. 428)** — „Ich empfinde es als …" · „Mir ist wichtig, dass …" · konkretes Verhalten, kein Etikett · Wunsch statt Vorwurf
-> - **Feedback-Regeln (Kap. 19.1 S. 422-423)** — konkret und beobachtbar · zeitnah · in Ich-Form · Kritik annehmen ohne Rechtfertigung
+> - **Feedback-Regeln (Kap. 19.1 S. 424-425)** — konkret und beobachtbar · zeitnah · in Ich-Form · Kritik annehmen ohne Rechtfertigung
 > **Optionale Vertiefung** (für 100 %): **Rolle und Selbstwert (Kap. 18.1)** — Rolle als Lernende anerkennen · Selbstwert nicht aufgeben · soziale Interaktion bewusst. Dieser Ast hält das Spannungsfeld „klare Position vs. Lernenden-Rolle" sichtbar.
 
 **LF4 (K3+/K4):** Drehbuch erste 5 Minuten — Eröffnung (Ich-Botschaft) + 2 Rückfragen + Win-Win, Rolle/Selbstwert berücksichtigen.
@@ -742,7 +742,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 | # | Typ | K | Fokus |
 |---|---|---|---|
 | 1 | Erklären | K2 | Hauptpflichten (OR 321a, 345) + Lerndoku-Pflicht |
-| 2 | Anwenden | K3 | Kanal-Logik (Kap. 17.3) auf die WhatsApp anwenden + begründen |
+| 2 | Anwenden | K3 | Kanal-Logik (Kap. 17.4) auf die WhatsApp anwenden + begründen |
 | 3 | Beurteilen | K3 | Recht einfordern UND Beziehung halten — beide Pole gleich gewichten? |
 | 4 | Transfer | K4 | Vergleich mit Herausforderung C: was übernehmen, wo anders, weil Rechtsverstoss im Raum |
 | 5 | Werthaltung | K4 | ethische Werthaltung bei „vertraulich lassen, was dokumentiert gehört" (Kap. 18.2) |
@@ -755,7 +755,7 @@ Drei Prüfformen sind angelegt, alle mit derselben Rubrik. Du wählst eine (oder
 > **Nicht Stufe 4 (hier: lückenhaft):** zählt nur „man muss halt machen, was der Chef sagt" auf, ohne die Lerndoku-Pflicht überhaupt zu nennen — die zentrale Pflicht des Falls fehlt.
 
 > [!erwartungshorizont] Frage 2 (Anwenden, K3) — Kanal-Logik begründen
-> **Stufe 3 zeigt:** wendet die Kanal-Kriterien aus Kap. 17.3 an (Register, Beweismittel-Charakter, Verbindlichkeit), wählt einen sachgerechten geschäftlichen Kanal und begründet die Wahl nachvollziehbar gegenüber dem Berufsbildner/in.
+> **Stufe 3 zeigt:** wendet die Kanal-Kriterien aus Kap. 17.4 an (Register, Beweismittel-Charakter, Verbindlichkeit), wählt einen sachgerechten geschäftlichen Kanal und begründet die Wahl nachvollziehbar gegenüber dem Berufsbildner/in.
 > **Stufe 4 zeigt zusätzlich:** wägt die Kanäle differenziert ab (privat vs. geschäftlich, schnell vs. verbindlich) und macht die Medienkompetenz-Konsequenz aus Kap. 20.7 explizit, statt nur einen Kanal zu nennen.
 > **Nicht Stufe 4:** „Ich antworte einfach schnell per WhatsApp, dann ist Ruhe." — souverän entschieden, aber löst den Kanal-Zielkonflikt auf, statt ihn abzuwägen → verfehlt den Anwendungs-Kern.
 

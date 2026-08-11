@@ -59,8 +59,8 @@ Diese Einheit ist ein **Variantenset**, kein progressives 3er-Set. Der Unterschi
 |---|---|
 | Soziale Rollen und Rollenübernahme (Kap. 18.1) | Acht Fragearten (Kap. 16.4 S. 373) |
 | Kommunikationsquadrat, Vier Ohren (Kap. 19.2) | Gesprächsführung: zuhören, nachhaken, ausreden lassen (Kap. 16.1, 16.4) |
-| Der Einstieg in die Lehre als biografischer Übergang | Notiztechnik: Stichworte, Schlüsselbegriffe (Kap. 17.1) |
-| Digitale Kommunikationskonventionen (Kap. 17.3) | Adressatengerechte schriftliche Anfrage (Kap. 17.3 S. 400) |
+| Der Einstieg in die Lehre als biografischer Übergang | Notiztechnik: Stichworte, Schlüsselbegriffe (Kap. 17.2) |
+| Digitale Kommunikationskonventionen (Kap. 17.4) | Adressatengerechte schriftliche Anfrage (Kap. 17.4 S. 402) |
 
 ---
 
@@ -145,7 +145,7 @@ Gruppen zu dritt — je eine Person pro Methode.
 Die Kurzprofile werden **eingesammelt und aufbewahrt**. Sie sind das Rohmaterial für die T2-Einheit, in der aus demselben Material auf drei Weisen ein **Porträt** entsteht — diesmal auf der Achse *Textform* statt *Befragungsmethode*, und dort dann als Produktion schriftlich und bildlich (R1).
 
 > [!hinweis] Eine Lücke im Lehrmittel, die didaktisch nützlich ist
-> Das Lehrmittel enthält **kein Kapitel zur Textsorte Porträt**. Für T1 ist das ohne Belang — Kap. 16.4 deckt die Interviewtechnik vollständig ab. Für T2 heisst es: Die Lernenden konstruieren die Textsorte selbst aus Kap. 16.4 (Wiedergabe eines Interviews), Kap. 17.1 S. 388–389 (Beschreibung) und Kap. 17.1 S. 385–386 (Bericht). Das ist kein Mangel, sondern der eigentliche Auftrag.
+> Das Lehrmittel enthält **kein Kapitel zur Textsorte Porträt**. Für T1 ist das ohne Belang — Kap. 16.4 deckt die Interviewtechnik vollständig ab. Für T2 heisst es: Die Lernenden konstruieren die Textsorte selbst aus Kap. 16.4 (Wiedergabe eines Interviews), Kap. 17.2 S. 390–391 (Beschreibung) und Kap. 17.2 S. 387–388 (Bericht). Das ist kein Mangel, sondern der eigentliche Auftrag.
 
 ---
 

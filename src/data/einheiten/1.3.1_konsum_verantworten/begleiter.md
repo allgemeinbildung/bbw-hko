@@ -50,7 +50,7 @@ quellen_json:
 
 | GES — Gesellschaftswissen | SuK — Sprache und Kommunikation |
 |---|---|
-| Bedürfnispyramide nach Maslow, Existenz-/Wahlbedürfnisse | Rezeption schriftlich und bildlich: Lese- und Markierstrategien (Kap. 17.1) |
+| Bedürfnispyramide nach Maslow, Existenz-/Wahlbedürfnisse | Rezeption schriftlich und bildlich: Lese- und Markierstrategien (Kap. 17.2) |
 | Bruttolohn/Nettolohn, Sozialversicherungsabzüge (AHV/IV/EO/ALV/NBU) | Interaktion und Kollaboration mündlich: Diskussions- und Gesprächsregeln (Kap. 16.1) |
 | Fixe/variable Kosten, Rückstellungen, Budget-Saldo | Argumente sachlich formulieren, auf Gegenpositionen eingehen |
 | Schuldenspirale, Leasing/Konsumkredit, Bonitätsprüfung | Eigene Position in Ich-Form begründen |
@@ -153,7 +153,7 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 |---|---|---|
 | Ankommen | Impuls: eigener letzter Impulskauf | Plenum |
 | Vorwissen | Was ist ein Bedürfnis? Erste Sammlung | Einzeln |
-| Informieren | Maslow, Bedürfnisarten (Kap. 2.7), Markiertechnik (Kap. 17.1) | Einzeln |
+| Informieren | Maslow, Bedürfnisarten (Kap. 2.7), Markiertechnik (Kap. 17.2) | Einzeln |
 | Verarbeiten | Bedürfnis-Landkarte erstellen, Einflüsse markieren | Einzeln |
 | Auswerten | Kurzkommentar, Reflexion | Einzeln |
 

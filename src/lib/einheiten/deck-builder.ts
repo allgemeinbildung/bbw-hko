@@ -243,8 +243,10 @@ function darken(hex: string, f = 0.74): string {
 function kapitelOf(hf: any): string {
   const seen: string[] = []
   for (const lf of hf.leitfragen ?? []) {
-    const m = /Kap\.\s*([\d.]+)/.exec(String(lf.knoten_ref ?? ''))
-    if (m && !seen.includes(m[1])) seen.push(m[1])
+    // matchAll, nicht exec: ein knoten_ref kann mehrere Quellen tragen
+    // ("Kap. 19.2 | S. 426-428 plus Kap. 18.1 | S. 412") — exec haette nur die erste gesehen.
+    for (const m of String(lf.knoten_ref ?? '').matchAll(/Kap\.\s*([\d.]+)/g))
+      if (!seen.includes(m[1])) seen.push(m[1])
   }
   seen.sort((a, b) => parseFloat(a) - parseFloat(b))
   return seen.length ? 'Kap. ' + seen.join(' · ') : ''

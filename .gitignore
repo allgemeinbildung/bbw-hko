@@ -14,4 +14,5 @@ index.html
 !public/nrlp/prompt-builder/index.html
 
 # Lehrmittel-Quelltexte (urheberrechtlich, nicht-öffentlich, nicht deployt)
-material/_lehrmittel/
+# Wildcard deckt auch die abgelegten Vorgängerausgaben ab (_lehrmittel_2025/ usw.)
+material/_lehrmittel*/

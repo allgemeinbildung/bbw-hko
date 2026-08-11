@@ -45,19 +45,19 @@
   ],
 
   "leitfrage": "Welche meiner Wünsche sind echte Bedürfnisse — und welche weckt mein Umfeld?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 2.7, 1.5 und 17.1 als Grundlage.",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 2.7, 1.5 und 17.2 als Grundlage.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
-      "knoten_ref": "Kap. 2.7 | S. 8",
+      "knoten_ref": "Kap. 2.7 | S. 73-84",
       "text": "Erklären Sie mit der Bedürfnispyramide nach Maslow und den Begriffen Existenz- und Wahlbedürfnis, wie sich Bedürfnisse unterscheiden lassen.",
       "feld_hoehe_mm": 15
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
-      "knoten_ref": "Kap. 2.7 | S. 11",
+      "knoten_ref": "Kap. 2.7 | S. 73-84",
       "text": "Ordnen Sie fünf Ihrer letzten grösseren Anschaffungen den Bedürfnisarten zu (Existenz- oder Wahlbedürfnis, materiell oder immateriell).",
       "feld_hoehe_mm": 15
     },
@@ -71,7 +71,7 @@
     {
       "nr": 4,
       "bloom": "Formulieren",
-      "knoten_ref": "Kap. 17.1 | S. 380",
+      "knoten_ref": "Kap. 17.2 | S. 381",
       "text": "Formulieren Sie mit der Markiertechnik zu drei markierten Wünschen je einen Satz, ob es ein echtes Bedürfnis oder ein durch Ihr Umfeld geweckter Wunsch ist.",
       "feld_hoehe_mm": 15
     }
@@ -99,14 +99,14 @@
       {"label": "Bedürfnisse sammeln", "hint": "Notieren Sie mind. 8 aktuelle Wünsche und Anschaffungen aus Ihrem Alltag."},
       {"label": "Ordnen nach Theorie", "hint": "Ordnen Sie sie mit Maslow und Existenz-/Wahlbedürfnis (Kap. 2.7)."},
       {"label": "Einflüsse markieren", "hint": "Markieren Sie mit Farben, was Werbung, Umfeld oder Labels bei Ihnen auslösen (Kap. 1.5)."},
-      {"label": "Symbole setzen", "hint": "Setzen Sie persönliche Symbole für 'echt' und 'geweckt' (Markiertechnik Kap. 17.1)."},
+      {"label": "Symbole setzen", "hint": "Setzen Sie persönliche Symbole für 'echt' und 'geweckt' (Markiertechnik Kap. 17.2)."},
       {"label": "Massstab formulieren", "hint": "Schreiben Sie Ihren Kurzkommentar: Woran erkenne ich künftig ein echtes Bedürfnis?"}
     ],
     "schreib_label": "BEDÜRFNIS-LANDKARTE HIER ERARBEITEN",
     "schreib_note": "-> wissen/beduerfnisarten",
     "scaffolding": {
       "satzanfaenge": ["«Dieses Bedürfnis ist echt, weil …»", "«Diesen Wunsch hat vor allem mein Umfeld geweckt, denn …»", "«Für mich hat Vorrang …»"],
-      "strategien": ["Erst alle Wünsche sammeln, dann ordnen — nicht gleichzeitig bewerten", "Nur Schlüsselwörter markieren, keine ganzen Sätze (Kap. 17.1)"],
+      "strategien": ["Erst alle Wünsche sammeln, dann ordnen — nicht gleichzeitig bewerten", "Nur Schlüsselwörter markieren, keine ganzen Sätze (Kap. 17.2)"],
       "struktur": ["Zentrum: Ich → Äste: Bedürfnisarten, Maslow, Einflüsse, mein Massstab", "Legende: eine Farbe/ein Symbol pro Kategorie"]
     },
     "musterloesung": {
@@ -234,9 +234,9 @@
   },
 
   "quellen_anker": [
-    {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnisse und Güter", "unterueberschrift": "Bedürfnispyramide und Bedürfnisarten", "seiten": "Seite 8-13", "fuer_leitfrage": [1, 2]},
+    {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnisse und Güter", "unterueberschrift": "Bedürfnispyramide und Bedürfnisarten", "seiten": "Seite 73-84", "fuer_leitfrage": [1, 2]},
     {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — ethischer Konsum und Labels", "unterueberschrift": "Ökologische und ethische Kaufkriterien", "seiten": "Seite 37-39", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 17.1", "titel": "Dokumentieren — Lese- und Markierstrategien", "unterueberschrift": "Markieren und Symbole", "seiten": "Seite 380-385", "fuer_leitfrage": [4]}
+    {"ref": "Kap. 17.2", "titel": "Dokumentieren — Lese- und Markierstrategien", "unterueberschrift": "Markieren und Symbole", "seiten": "Seite 381-387", "fuer_leitfrage": [4]}
   ],
 
   "lernfortschritt": {
@@ -252,7 +252,7 @@
 
   "prinzip_handoff": {
     "kernkonzept": "Echte vs. geweckte Bedürfnisse erkennen",
-    "lehrmittel_anker": "S. 8-13, 37-39",
+    "lehrmittel_anker": "Kap. 2.7 S. 73-84 (Bedürfnispyramide, Bedürfnisarten) plus Kap. 1.5 S. 37-39 (ökologische und ethische Kaufkriterien).",
     "kn_aktivierung": "In der KN-Hybrid-Herausforderung muss die Lernende erkennen, welcher Anteil eines Kaufwunsches Bedürfnis und welcher Aussendruck ist.",
     "transfer_check": "Kann die Lernende einen Konsumwunsch in echtes Bedürfnis und geweckten Wunsch trennen und das begründen?"
   },
@@ -260,6 +260,6 @@
   "sk_anker": [
     {"sk": 5, "wo": "leitfragen[2].entscheiden + Kurzkommentar — eigene Werthaltung zum Konsum reflektieren"},
     {"sk": 11, "wo": "mehrdeutigkeit.trade_off — eigener Massstab vs. sozialer Druck bleibt offen"},
-    {"sk": 1, "wo": "leitfragen[3] + Markiertechnik — Schlüsselinformationen aus dem Text herausarbeiten (Kap. 17.1)"}
+    {"sk": 1, "wo": "leitfragen[3] + Markiertechnik — Schlüsselinformationen aus dem Text herausarbeiten (Kap. 17.2)"}
   ]
 }
