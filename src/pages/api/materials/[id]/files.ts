@@ -70,7 +70,13 @@ async function authorize(
   return { ok: true, material, role }
 }
 
-// ── POST: Zusatzmaterialien hochladen (multipart/form-data, Feld "files") ──────
+// ── POST: Upload vorbereiten (JSON {op:'sign'}) ODER Direkt-Upload (multipart) ──
+//
+// Vercel-Serverless begrenzt den Request-Body auf 4.5 MB. Mehrere/grosse Dateien
+// sprengen dieses Limit im multipart-Pfad. Deshalb lädt der Client neu DIREKT zu
+// Supabase Storage hoch: er holt hier signierte Upload-URLs (op:'sign'), lädt die
+// Bytes an Vercel vorbei zu Supabase und meldet die fertigen Dateien via PUT zurück.
+// Der alte multipart-POST bleibt als Fallback für kleine Uploads erhalten.
 export const POST: APIRoute = async ({ locals, request, params }) => {
   const id = params.id
   if (!id) return json({ error: 'ID fehlt.' }, 400)
@@ -78,6 +84,40 @@ export const POST: APIRoute = async ({ locals, request, params }) => {
   const auth = await authorize(locals, id, { needOwner: true })
   if (!auth.ok) return auth.res
 
+  const contentType = request.headers.get('content-type') ?? ''
+
+  // ── Variante A: signierte Upload-URLs ausstellen ──────────────────────────
+  if (contentType.includes('application/json')) {
+    let payload: { op?: string; files?: Array<{ name?: string; size?: number; type?: string }> }
+    try {
+      payload = await request.json()
+    } catch {
+      return json({ error: 'Ungültiges JSON.' }, 400)
+    }
+    const wanted = Array.isArray(payload.files) ? payload.files : []
+    if (wanted.length === 0) return json({ error: 'Keine Dateien angefragt.' }, 400)
+
+    const admin = createAdminClient()
+    const slots: Array<{ name: string; path: string; signedUrl: string }> = []
+    for (const f of wanted) {
+      const name = String(f?.name ?? '')
+      const size = Number(f?.size ?? 0)
+      if (!name) return json({ error: 'Dateiname fehlt.' }, 400)
+      if (size > MAX_BYTES) return json({ error: `«${name}» ist grösser als 15 MB.` }, 400)
+      if (!ALLOWED_EXT.includes(extOf(name)))
+        return json({ error: `Dateityp «.${extOf(name)}» ist nicht erlaubt.` }, 400)
+
+      const safe = sanitize(name)
+      const path = `${auth.material.submitted_by}/${id}/${crypto.randomUUID()}_${safe}`
+      const { data, error } = await admin.storage.from(BUCKET).createSignedUploadUrl(path)
+      if (error || !data?.signedUrl)
+        return json({ error: `Upload-Vorbereitung fehlgeschlagen: ${error?.message ?? 'unbekannt'}` }, 400)
+      slots.push({ name, path, signedUrl: data.signedUrl })
+    }
+    return json({ data: slots })
+  }
+
+  // ── Variante B: klassischer multipart-Upload (Fallback) ───────────────────
   let form: FormData
   try {
     form = await request.formData()
@@ -123,6 +163,76 @@ export const POST: APIRoute = async ({ locals, request, params }) => {
   if (dbErr) {
     // Best effort: hochgeladene Objekte wieder entfernen, damit keine Waisen bleiben.
     await admin.storage.from(BUCKET).remove(added.map(a => a.path))
+    return json({ error: `Speichern fehlgeschlagen: ${dbErr.message}` }, 400)
+  }
+
+  return json({ data: merged }, 201)
+}
+
+// ── PUT: direkt zu Storage hochgeladene Dateien registrieren (JSON) ────────────
+// Body: { files: [{ name, path, type }] }. Der Server prüft, dass jeder Pfad zum
+// Material gehört und das Objekt wirklich existiert, und übernimmt die vom Storage
+// gemeldete Grösse (nicht die vom Client behauptete).
+export const PUT: APIRoute = async ({ locals, request, params }) => {
+  const id = params.id
+  if (!id) return json({ error: 'ID fehlt.' }, 400)
+
+  const auth = await authorize(locals, id, { needOwner: true })
+  if (!auth.ok) return auth.res
+
+  let payload: { files?: Array<{ name?: string; path?: string; type?: string }> }
+  try {
+    payload = await request.json()
+  } catch {
+    return json({ error: 'Ungültiges JSON.' }, 400)
+  }
+  const incoming = Array.isArray(payload.files) ? payload.files : []
+  if (incoming.length === 0) return json({ error: 'Keine Dateien übermittelt.' }, 400)
+
+  const admin = createAdminClient()
+  const prefix = `${auth.material.submitted_by}/${id}/`
+  const now = new Date().toISOString()
+  const added: FileMeta[] = []
+
+  for (const f of incoming) {
+    const path = String(f?.path ?? '')
+    const name = String(f?.name ?? '').slice(0, 200)
+    // Pfad muss zu genau diesem Material des Eigentümers gehören.
+    if (!path.startsWith(prefix) || path.includes('..'))
+      return json({ error: 'Ungültiger Datei-Pfad.' }, 400)
+
+    // Objekt-Existenz + tatsächliche Grösse aus dem Storage verifizieren.
+    const objectName = path.slice(prefix.length)
+    const { data: listed, error: listErr } = await admin.storage
+      .from(BUCKET)
+      .list(prefix.replace(/\/$/, ''), { limit: 100, search: objectName })
+    if (listErr) return json({ error: `Prüfung fehlgeschlagen: ${listErr.message}` }, 400)
+    const obj = (listed ?? []).find((o) => o.name === objectName)
+    if (!obj) return json({ error: `Hochgeladene Datei nicht gefunden: «${name}».` }, 400)
+
+    const size = Number((obj as any)?.metadata?.size ?? 0)
+    if (size > MAX_BYTES) {
+      await admin.storage.from(BUCKET).remove([path])
+      return json({ error: `«${name}» ist grösser als 15 MB.` }, 400)
+    }
+    const type = String((obj as any)?.metadata?.mimetype ?? f?.type ?? '')
+    added.push({ name, path, size, type, uploaded_at: now })
+  }
+
+  const existing: FileMeta[] = Array.isArray(auth.material.zusatzmaterialien)
+    ? auth.material.zusatzmaterialien
+    : []
+  // Doppelregistrierung desselben Pfads vermeiden.
+  const existingPaths = new Set(existing.map((e) => e.path))
+  const fresh = added.filter((a) => !existingPaths.has(a.path))
+  const merged = [...existing, ...fresh]
+
+  const { error: dbErr } = await admin
+    .from('materials')
+    .update({ zusatzmaterialien: merged })
+    .eq('id', id)
+  if (dbErr) {
+    await admin.storage.from(BUCKET).remove(fresh.map((a) => a.path))
     return json({ error: `Speichern fehlgeschlagen: ${dbErr.message}` }, 400)
   }
 

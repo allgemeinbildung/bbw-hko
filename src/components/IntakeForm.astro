@@ -839,21 +839,65 @@ function intakeForm(materialId) {
         this.showToast('Netzwerkfehler beim Entfernen.', true)
       }
     },
+    // Direkt-Upload zu Supabase Storage (an Vercels 4.5-MB-Body-Limit vorbei):
+    // 1) signierte Upload-URLs holen, 2) Bytes direkt zu Supabase PUTten,
+    // 3) fertige Dateien am Server registrieren.
     async uploadFiles(id) {
       if (!this.newFiles.length) return true
-      const fd = new FormData()
-      this.newFiles.forEach(f => fd.append('files', f))
+      const files = this.newFiles
       try {
-        const res = await fetch(`/api/materials/${id}/files`, { method: 'POST', body: fd })
-        if (!res.ok) {
-          const b = await res.json().catch(() => ({}))
-          this.showToast(b.error || 'Upload fehlgeschlagen.', true)
+        // 1) Upload-URLs anfragen
+        const signRes = await fetch(`/api/materials/${id}/files`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            op: 'sign',
+            files: files.map(f => ({ name: f.name, size: f.size, type: f.type })),
+          }),
+        })
+        if (!signRes.ok) {
+          const b = await signRes.json().catch(() => ({}))
+          this.showToast(b.error || 'Upload-Vorbereitung fehlgeschlagen.', true, 8000)
           return false
         }
+        const slots = (await signRes.json())?.data ?? []
+        if (slots.length !== files.length) {
+          this.showToast('Upload-Vorbereitung unvollständig. Bitte erneut versuchen.', true, 8000)
+          return false
+        }
+
+        // 2) jede Datei direkt zu Storage hochladen
+        const uploaded = []
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i]
+          const slot = slots[i]
+          const fd = new FormData()
+          fd.append('cacheControl', '3600')
+          fd.append('', file)
+          const up = await fetch(slot.signedUrl, { method: 'PUT', headers: { 'x-upsert': 'false' }, body: fd })
+          if (!up.ok) {
+            this.showToast(`Upload von «${file.name}» fehlgeschlagen. Bitte über «Bearbeiten» erneut versuchen.`, true, 8000)
+            return false
+          }
+          uploaded.push({ name: file.name, path: slot.path, type: file.type })
+        }
+
+        // 3) hochgeladene Dateien am Server registrieren
+        const reg = await fetch(`/api/materials/${id}/files`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ files: uploaded }),
+        })
+        if (!reg.ok) {
+          const b = await reg.json().catch(() => ({}))
+          this.showToast(b.error || 'Dateien konnten nicht gespeichert werden.', true, 8000)
+          return false
+        }
+
         this.newFiles = []
         return true
       } catch (e) {
-        this.showToast('Netzwerkfehler beim Upload: ' + e.message, true)
+        this.showToast('Netzwerkfehler beim Upload: ' + e.message, true, 8000)
         return false
       }
     },
