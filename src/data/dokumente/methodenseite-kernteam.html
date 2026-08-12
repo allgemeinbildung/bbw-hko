@@ -239,6 +239,58 @@
     font-weight: 600;
   }
 
+  /* ── Links ────────────────────────────────────────── */
+  a {
+    color: var(--brand);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--brand) 36%, transparent);
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-bottom-color: var(--brand); }
+  a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 1px; }
+  .byline a { color: var(--ink-soft); border-bottom-color: var(--rule); }
+  .byline a:hover { border-bottom-color: var(--ink-soft); }
+
+  .linkbox {
+    display: block;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--brand);
+    background: var(--ground-2);
+    padding: 18px 22px 19px;
+    margin: 30px 0 0;
+    max-width: 62ch;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .linkbox:hover { border-color: var(--brand); border-left-color: var(--brand); }
+  .linkbox-lab {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10.5px; letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 7px;
+  }
+  .linkbox-t {
+    display: block;
+    font-size: 20px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: 7px;
+  }
+  .linkbox-s {
+    display: block;
+    font-size: 15.5px; line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .linkbox-go {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-top: 13px;
+  }
+
   /* ── Papier ───────────────────────────────────────── */
   .paper-rail { overflow-x: auto; padding: 32px 0 10px; }
   .paper-spread {
@@ -360,7 +412,7 @@
   <p class="byline">
     <span>Pietro Rossi · BBW</span>
     <span>zur Diskussion im Kernteam 1</span>
-    <span>Beispiel: Einheit 3.2.1, Herausforderung C</span>
+    <span>Beispiel: <a href="https://bbw-hko.ch/einheiten/3.2.1_wahre_kosten">Einheit 3.2.1, Herausforderung C</a></span>
     <span>12. August 2026</span>
   </p>
 
@@ -416,7 +468,7 @@
     <div class="col">
       <h2>Das Lehrmittel trägt das Wissen, aber nicht das Produkt</h2>
       <p class="lead">
-        Eine Durchsicht aller 22 Handlungsprodukte der bisher fertigen acht Einheiten hat geprüft, welche Kapitel des Lehrmittels sie tatsächlich brauchen — und welche davon im Auftrag auch genannt werden.
+        Eine Durchsicht aller 22 Handlungsprodukte der <a href="https://bbw-hko.ch/einheiten">bisher fertigen acht Einheiten</a> hat geprüft, welche Kapitel des Lehrmittels sie tatsächlich brauchen — und welche davon im Auftrag auch genannt werden.
       </p>
       <p>
         Das Ergebnis hat zwei Seiten. Die erste ist erfreulich: Wo es um <strong>Wissen</strong>
@@ -666,6 +718,17 @@
       </div>
     </div>
     <p class="cap">Aufgeschlagenes Heft · links die Werkzeuge, rechts die Arbeitsfläche</p>
+
+    <div class="col">
+      <a class="linkbox" href="https://bbw-hko.ch/einheiten/3.2.1_wahre_kosten">
+        <span class="linkbox-lab">Die Einheit auf der Plattform</span>
+        <span class="linkbox-t">3.2.1 — Der Preis sagt nicht die Wahrheit</span>
+        <span class="linkbox-s">Alle drei Herausforderungen, der Kompetenznachweis und das Begleitdokument
+        für die Lehrperson — darunter auch das Heft, aus dem die beiden Seiten oben stammen.
+        Die Einheit steht als Entwurf und ist deshalb ausserhalb von Kernteam 1 nicht sichtbar.</span>
+        <span class="linkbox-go">Öffnen →</span>
+      </a>
+    </div>
   </section>
 
   <section>
