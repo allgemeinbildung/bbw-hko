@@ -496,6 +496,22 @@ body {
 .wb-dl button:hover { background: #fff; color: #1d2026; }
 .wb-dl button:disabled { opacity: 0.6; cursor: progress; }
 
+/* Hinweis auf die im Browser gesicherten Eingaben der Lehrperson (Online-Renderer).
+   Zurueckhaltend gehalten: es ist eine Zustandsanzeige, keine Aktion. */
+.wb-notiz {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-right: 14px; padding-right: 14px;
+  border-right: 1px solid rgba(255,255,255,0.14);
+}
+.wb-notiz-text { font-size: 11.5px; color: #b9bdc5; white-space: nowrap; }
+.wb-notiz button {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: 11.5px; color: #b9bdc5;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.wb-notiz button:hover { color: #fff; }
+@media print { .wb-notiz { display: none !important; } }
+
 /* locked nav items (guest view) */
 .wb-item.locked { color: #94a3b8; }
 .wb-lock { margin-left: auto; font-size: 12px; opacity: 0.8; flex-shrink: 0; }

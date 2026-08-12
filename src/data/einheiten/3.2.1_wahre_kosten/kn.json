@@ -1,0 +1,229 @@
+{
+  "id": "3.2.1_wahre_kosten_kn",
+  "modul": "3.2",
+  "kompetenz_nr": "3.2.1",
+  "topic_slug": "wahre_kosten",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-11",
+
+  "set_ref": "3.2.1_wahre_kosten_set",
+  "prinzip_ref": "3.2.1_wahre_kosten_prinzip",
+  "anchored_situations": [
+    "3.2.1_wahre_kosten_hf_A",
+    "3.2.1_wahre_kosten_hf_B",
+    "3.2.1_wahre_kosten_hf_C"
+  ],
+
+  "dominanter_aspekt": "Wirtschaft",
+  "kern_kompetenzversprechen": "Ich kann aufdecken, welche Kosten im Preis eines Produkts fehlen, und begründet entscheiden, wer sie tragen soll.",
+  "mehrdeutigkeits_pflicht": "Kein Preis lässt sich vollständig richtig rechnen. Die Aufgabe ist nicht, die eine korrekte Zahl zu finden, sondern offenzulegen, welche Kosten fehlen, und begründet zu entscheiden, wer sie tragen soll. Bewertet wird die Qualität der Begründung, nicht die gewählte Seite.",
+
+  "hybrid_situation": {
+    "titel": "Zwei Messschieber und eine Entsorgungsrechnung",
+    "persona": {
+      "beruf": "Polymechaniker/in EFZ",
+      "betrieb": "Werkzeugbau Aebi",
+      "ort": "Thun"
+    },
+    "text": "Ich bin Polymechaniker/in EFZ im 1. Lehrjahr bei der Werkzeugbau Aebi in Thun. Für die Abschlussarbeit im überbetrieblichen Kurs brauche ich einen eigenen Messschieber. Im Katalog stehen zwei: 39 Franken aus Fernost, 145 Franken aus einer Werkstatt im Jura, reparierbar und mit Ersatzteilen. Am selben Morgen liegt in der Werkstatt die Rechnung für die Entsorgung der Kühlschmierstoff-Emulsion auf dem Tisch, 2800 Franken. Mein Berufsbildner/in sagt dazu: «Eigentlich müsste das der Lieferant zahlen — oder der Staat soll eine Abgabe erheben, dann kostet das Zeug von Anfang an ehrlich.» Beim Blick auf die 39 Franken frage ich mich, ob mein Messschieber nicht dieselbe Rechnung offen lässt.",
+    "leitfrage": "Welchen Messschieber empfehle ich mir selbst — und wer sollte die Kosten tragen, die auf keiner der beiden Etiketten stehen?",
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine neue Situation, in der alle drei Herausforderungen dieser Einheit gleichzeitig stecken.",
+    "definition_lang": "Die Hybrid-Herausforderung ist die Prüfsituation des Kompetenznachweises. Sie ist bewusst neu — anderer Beruf, anderer Ort, anderes Produkt —, aktiviert aber dieselben drei Konfliktarten wie die Lernaufgaben A, B und C. Damit lässt sich prüfen, ob die Lernenden das Prinzip übertragen können und nicht nur ihre eigene Herausforderung wiedergeben.",
+    "aktivierte_trade_offs": [
+      "Tiefer Preis heute vs. Folgekosten, die andere tragen",
+      "Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat",
+      "Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Der Preisunterschied von 39 zu 145 Franken erklärt sich über Herstellungsort und Transportweg — beides steht auf keiner der beiden Etiketten."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Die Entsorgungsrechnung über 2800 Franken und der Satz des Berufsbildners stellen die Zurechnungsfrage: Lieferant, Betrieb oder Staat über eine Abgabe."
+        },
+        {
+          "hf_letter": "C",
+          "scene_element": "Der eigene Kauf mit dem Lehrlingslohn erzwingt die Wahl zwischen billig-jetzt und langlebig-reparierbar-teurer."
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie mit eigenen Worten, warum der Messschieber aus Fernost 39 Franken kosten kann und welche Kostenarten in diesem Preis nicht enthalten sind (Kap. 2.7 S. 81-82, Kap. 11.2 S. 279).",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Wenden Sie das Verursacherprinzip auf die Entsorgungsrechnung von 2800 Franken an: Wer wäre nach diesem Prinzip zahlungspflichtig, und woran machen Sie das fest (Kap. 1.5 S. 41)?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Ihr Berufsbildner/in schlägt eine staatliche Abgabe vor. Beide Wege — Lieferant zahlt oder Staat lenkt über eine Abgabe — sind vertretbar. Bewerten Sie beide gleichwertig und begründen Sie, weshalb Sie sich trotzdem für einen entscheiden.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie diesen Fall mit einer Herausforderung aus dem Unterricht: Was ist im Messschieber-Entscheid gleich wie dort, und was ist neu?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Sie entscheiden sich für einen der beiden Messschieber. Begründen Sie, weshalb das nicht nur eine Preisfrage ist — und was Ihre Entscheidung über Ihre eigene Haltung aussagt.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [5, 6, 11],
+      "aspekte": ["Wirtschaft", "Ökologie", "Ethik"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 60 Min., Lehrmittel erlaubt",
+      "ablauf": [
+        "Hybrid-Herausforderung und Aufgabenblatt werden ausgeteilt.",
+        "60 Min. Einzelarbeit; Lehrmittel und eigene Unterlagen erlaubt, kein Internet.",
+        "Abgabe von Hand oder digital, je nach Klassensetting."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie kurz (3-5 Sätze), welche Kostenarten im Preis von 39 Franken enthalten sind und welche darin fehlen. Nennen Sie mindestens zwei fehlende Posten mit Kapitel- und Seitenangabe.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Beide Rechnungen — der günstige Messschieber und die Entsorgung der Emulsion — entstehen durch dieselbe Logik: Kosten fallen dort an, wo sie niemand eingerechnet hat. Erklären Sie, warum die Entsorgungsrechnung trotzdem anders zu beurteilen ist als der Messschieberpreis.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie begründet, welchen Messschieber Sie kaufen. Rechnen Sie dabei mit dem Preis pro Nutzungsjahr und nennen Sie das Argument, das gegen Ihren Entscheid spricht.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form eine Forderung an eine der beteiligten Seiten — Lieferant, Betrieb oder Staat —, die dafür sorgt, dass die fehlenden Kosten künftig im Preis auftauchen. Begründen Sie, weshalb Sie diese Seite adressieren und nicht eine andere.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [6, 9, 11],
+      "aspekte": ["Wirtschaft", "Ökologie", "Ethik"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer drei Handlungsprodukte aus den Lernaufgaben (Bildstrecke zum Preisweg, Stellungnahme zur Kostenzurechnung oder zweites Preisschild).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung des KN sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was haben Sie durch die drei Herausforderungen (Preisweg aufdecken, Kosten zurechnen, eigenen Entscheid verantworten) insgesamt darüber gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [5, 6],
+      "aspekte": ["Wirtschaft", "Ökologie", "Ethik"],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich",
+        "Produktion mündlich"
+      ],
+      "rubrik_ref": "rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe (Angebot und Nachfrage, Produktionsfaktoren, Verursacherprinzip, Lenkungsabgabe) fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt; Quellen ungenau oder gar nicht zitiert.",
+          "Begriffe aus Kap. 2.7, 9.3, 1.5 und 11.2 korrekt und situationsangemessen verwendet, mit Kapitel- und Seitenangabe.",
+          "Differenziert und kontextualisiert; Preismechanik und Kostenzurechnung werden eigenständig verknüpft statt nebeneinander wiedergegeben."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Behauptungen ohne Begründung; kein erkennbarer Aufbau.",
+          "Begründungen vorhanden, aber unbelegt oder sprunghaft.",
+          "Position, Begründung und Beleg sind erkennbar aufgebaut; die Gegenseite wird erwähnt.",
+          "Das stärkste Gegenargument wird selbst formuliert und sachlich entkräftet, ohne es abzuwerten."
+        ]
+      },
+      {
+        "name": "Wirtschaftliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Der Preis wird als gegebene Zahl behandelt; kein Bezug zu Angebot, Nachfrage oder Kostenarten.",
+          "Einzelne Preisbestandteile werden genannt, aber nicht in Beziehung gesetzt.",
+          "Der Preis wird als Ergebnis von Angebot, Nachfrage und eingerechneten Kosten erklärt; fehlende Kosten sind benannt.",
+          "Die Zurechnung fehlender Kosten wird als gestaltbare Entscheidung erkannt und an der konkreten Situation durchgerechnet."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position; oder eine Position ohne jede Begründung.",
+          "Position vorhanden, Begründung bleibt an der Oberfläche («ist halt besser für die Umwelt»).",
+          "Position ist begründet und die eigene Werthaltung wird benannt.",
+          "Der Zielkonflikt wird offen gehalten: Die Entscheidung ist begründet, ihr Preis wird ausdrücklich mitgenannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 60 %", "definition": "Stufen 1-2 dominant"},
+      {"label": "80 %", "definition": "mehrheitlich Stufe 3"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+    ]
+  },
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

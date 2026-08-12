@@ -23,6 +23,28 @@ import { buildStandaloneHtml } from '../../lib/einheiten/standalone-shell'
 /** Eingebettete IBM-Plex-Schnitte; erst beim ersten Download geladen (≈180 KB). */
 const FONTS_EMBED_URL = '/einheiten-assets/fonts-embed.css'
 
+/**
+ * Eingaben der Lehrperson im Online-Renderer, pro Einheit im Browser gesichert,
+ * damit sie ein Schliessen der Seite überleben.
+ *
+ * Bewusst localStorage und nicht die Datenbank: kein Serverweg, keine Migration,
+ * sofort wirksam. Der Preis ist, dass die Notizen am Browserprofil hängen und
+ * nicht auf ein anderes Gerät mitwandern.
+ */
+const WB_STORAGE_PREFIX = 'hko-wb:'
+
+function loadEdits(unitId: string): Record<string, string> {
+  try {
+    const raw = localStorage.getItem(WB_STORAGE_PREFIX + unitId)
+    if (!raw) return {}
+    const parsed = JSON.parse(raw)
+    if (parsed && typeof parsed.edits === 'object' && parsed.edits) return parsed.edits
+  } catch {
+    // Privater Modus oder volles Kontingent — dann eben ohne Gedächtnis.
+  }
+  return {}
+}
+
 interface Props {
   set: EinheitFullSet
   cssRenderer: string
@@ -105,7 +127,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [situation, setSituation] = useState<SitLetter>('A')
   const [mode, setMode] = useState<'info' | 'fill'>('fill')
   const [abteilung, setAbteilung] = useState(defaultAbteilung || '')
-  const [edits, setEdits] = useState<Record<string, string>>({})
+  // client:only — kein SSR, localStorage steht beim ersten Render bereits zur
+  // Verfügung. Gäste bekommen keine Persistenz (dokumentierte «kein Speichern»-Regel).
+  const [edits, setEdits] = useState<Record<string, string>>(() => (readOnly ? {} : loadEdits(d.id)))
   const [knTyp, setKnTyp] = useState<string>(d.kn?.kn_typen?.[0]?.typ || 'fachgespraech')
   const [bundling, setBundling] = useState(false)
   const [toast, setToast] = useState<{ kind: 'ok' | 'error'; msg: string } | null>(null)
@@ -149,6 +173,36 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     window.addEventListener('resize', measure)
     return () => window.removeEventListener('resize', measure)
   }, [])
+
+  // Anzahl tatsächlich befüllter Felder — Grundlage für Anzeige und Aufräumen.
+  const notizCount = useMemo(
+    () => Object.values(edits).filter((v) => v && v.trim()).length,
+    [edits],
+  )
+
+  // Entprellt sichern. Ist nichts mehr drin, den Eintrag entfernen statt ein
+  // leeres Objekt zu hinterlassen.
+  useEffect(() => {
+    if (readOnly) return
+    const key = WB_STORAGE_PREFIX + d.id
+    const t = setTimeout(() => {
+      try {
+        if (notizCount > 0) localStorage.setItem(key, JSON.stringify({ ts: Date.now(), edits }))
+        else localStorage.removeItem(key)
+      } catch {
+        // Kontingent voll oder Speicher gesperrt — die Eingaben bleiben in der
+        // Sitzung nutzbar, nur eben ohne Gedächtnis über das Schliessen hinaus.
+      }
+    }, 700)
+    return () => clearTimeout(t)
+  }, [edits, notizCount, readOnly, d.id])
+
+  const clearNotizen = useCallback(() => {
+    if (!window.confirm('Alle eigenen Eingaben in dieser Einheit verwerfen? Das lässt sich nicht rückgängig machen.')) return
+    setEdits({})
+    try { localStorage.removeItem(WB_STORAGE_PREFIX + d.id) } catch { /* s.o. */ }
+    showToast('Eingaben verworfen.')
+  }, [d.id])
 
   const onEdit = useCallback((k: string, v: string) => {
     setEdits((prev) => ({ ...prev, [k]: v }))
@@ -340,6 +394,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           docKey: art.baseName,
           fontsCss: (await ensureFonts()) || null,
           compact: art.compact,
+          // Einfüge-Sperre + Schreibprotokoll: vorerst nur die Herausforderungen,
+          // und dort nur die auszufüllende Auftragsversion.
+          protokoll: doc === 'doc-s' && mode === 'fill',
         })
         triggerDownload(new Blob([html], { type: 'text/html;charset=utf-8' }), `${art.baseName}.html`)
       } else {
@@ -407,7 +464,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
 
       // Der Dateiname ist zugleich der localStorage-Key des Dokuments — er ist über
       // Einheiten hinweg eindeutig (prefix enthält Kompetenznummer + Slug).
-      const wrap = (filename: string, title: string, bodyMarkup: string, opts: { compact?: boolean } = {}) =>
+      const wrap = (filename: string, title: string, bodyMarkup: string, opts: { compact?: boolean; protokoll?: boolean } = {}) =>
         buildStandaloneHtml({
           cssRenderer,
           title,
@@ -416,6 +473,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           docKey: filename.replace(/\.html$/, ''),
           fontsCss: fontsCss || null,
           compact: opts.compact,
+          protokoll: opts.protokoll,
         })
 
       const zip = new JSZip()
@@ -430,7 +488,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           const suffix = m === 'fill' ? 'auftrag' : 'dossier'
           const filename = `${prefix}_doc-s_hf-${letter}_${suffix}.html`
           const title = `DOC-S HF ${letter} (${suffix}) · ${s.titel}`
-          zip.file(`html/${filename}`, wrap(filename, title, markup, { compact: m === 'info' }))
+          // Nur die Herausforderungen tragen Einfüge-Sperre + Schreibprotokoll,
+          // und dort nur die auszufüllende Auftragsversion.
+          zip.file(`html/${filename}`, wrap(filename, title, markup, { compact: m === 'info', protokoll: m === 'fill' }))
           log.push(`html/${filename}`)
           try {
             const docx = buildDocS({ sit: s, set: d.set, abteilung, mode: m, logoPng: pngArrayBuffer })
@@ -914,6 +974,14 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>
               </div>
             )}
+            {!readOnly && notizCount > 0 && (
+              <div className="wb-notiz" role="status">
+                <span className="wb-notiz-text">
+                  {notizCount === 1 ? '1 Feld' : `${notizCount} Felder`} in diesem Browser gesichert
+                </span>
+                <button type="button" onClick={clearNotizen}>verwerfen</button>
+              </div>
+            )}
             {!readOnly && !gateKind && (
               <div className="wb-dl" role="group" aria-label="Dieses Dokument herunterladen">
                 <span className="wb-dl-label">Dieses Dokument:</span>
@@ -1133,9 +1201,17 @@ ${body.join('\n')}
   Diese Datei wieder öffnen — alle Eingaben sind da und weiter bearbeitbar. Schriften und Logo
   stecken in der Datei, es braucht also weder Internet noch den entpackten Ordner. Zusätzlich
   sichert der Browser Eingaben lokal zwischen; nach einem Absturz bietet die Datei beim Öffnen
-  an, sie wiederherzustellen. <strong>Einfügen ist in den Schreibfeldern deaktiviert</strong> —
-  die Lernenden formulieren selbst. Das ist eine Hürde und keine Sperre: technisch versierte
-  Lernende kommen daran vorbei, als Signal im Unterricht wirkt es trotzdem.</p>
+  an, sie wiederherzustellen.</p>
+
+  <p class="intro"><strong>Nur in den Herausforderungs-Aufträgen:</strong> Einfügen ist in den
+  Schreibfeldern deaktiviert, und das Dokument führt ein <strong>Schreibprotokoll</strong> —
+  getippte Zeichen, blockierte Einfügeversuche und Feldänderungen, zu denen es keine
+  Tastatureingabe gab. Der Knopf «Schreibprotokoll» in der Leiste zeigt es; er ist für die
+  Lernenden sichtbar, das ist Absicht. Erfasst werden ausschliesslich Zähler und Zeitstempel,
+  nie Tasteninhalte, und nichts davon erscheint im Ausdruck oder in einer PDF-Fassung.
+  <strong>Es ist ein Gesprächsanlass, kein Beweis:</strong> wer Entwicklertools bedienen kann,
+  kann das Protokoll auch fälschen. Austausch, Kompetenznachweis und KI-Toolbox sind bewusst
+  ausgenommen.</p>
 
   <div class="toolbar"><button type="button" id="toggleAll" class="btn btn-word">Alles aufklappen</button></div>
 

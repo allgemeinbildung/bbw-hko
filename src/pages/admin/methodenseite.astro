@@ -1,0 +1,82 @@
+---
+// KT1-geschütztes Lesedokument: Vorschlag Methodenseite (Werkzeugseite Seite 6).
+// Bewusst OHNE Admin.astro/Base.astro — das Dokument bringt sein eigenes, vollständiges
+// Stylesheet mit und setzt Custom Properties auf :root. Unter Base.astro würden diese
+// mit den Marken-Variablen der Plattform kollidieren (--brand, --ink, --rule, --paper).
+// Die Quelle liegt unter src/ und nicht unter public/, damit sie ausschliesslich über
+// diese geschützte Route ausgeliefert wird.
+import doc from '../../data/dokumente/methodenseite-kernteam.html?raw'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role !== 'kt1') return Astro.redirect('/einreichen')
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Die methodische Lücke schliessen — Vorschlag Kernteam 1</title>
+    <link rel="icon" href="/favicon.svg" />
+    <style>
+      .kt1-bar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px 20px;
+        padding: 9px 30px;
+        background: #094d28;
+        color: rgba(255, 255, 255, 0.92);
+        font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .kt1-bar a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        padding-bottom: 1px;
+      }
+      .kt1-bar a:hover,
+      .kt1-bar a:focus-visible {
+        border-bottom-color: #fff;
+      }
+      .kt1-bar a:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+      .kt1-bar .zugang {
+        color: rgba(255, 255, 255, 0.62);
+        text-transform: none;
+        letter-spacing: 0.02em;
+      }
+      @media print {
+        .kt1-bar { display: none; }
+      }
+      @media (max-width: 700px) {
+        .kt1-bar { padding: 8px 18px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kt1-bar">
+      <a href="/admin">&larr; Materialplattform</a>
+      <span class="zugang">Nur für Kernteam 1 sichtbar · nicht öffentlich</span>
+    </div>
+    <Fragment set:html={doc} />
+  </body>
+</html>

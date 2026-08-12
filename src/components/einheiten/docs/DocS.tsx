@@ -167,9 +167,11 @@ interface LeitfrageItemProps {
   edits?: Record<string, string>
   onEdit?: (k: string, v: string) => void
   fieldHeightMm?: number
+  /** Namensraum der Herausforderung, z. B. «hfA_» — siehe editNs(). */
+  ns?: string
 }
 
-function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm }: LeitfrageItemProps) {
+function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '' }: LeitfrageItemProps) {
   return (
     <div className="lf-item">
       <div className="lf-head">
@@ -185,8 +187,8 @@ function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeig
       {withField && (
         <Schreibfeld
           heightMm={fieldHeightMm || lf.feld_hoehe_mm || 15}
-          value={edits[`lf_${lf.nr}`] || ''}
-          onChange={(v) => onEdit(`lf_${lf.nr}`, v)}
+          value={edits[`${ns}lf_${lf.nr}`] || ''}
+          onChange={(v) => onEdit(`${ns}lf_${lf.nr}`, v)}
         />
       )}
     </div>
@@ -199,9 +201,11 @@ interface ReflexionItemProps {
   edits?: Record<string, string>
   onEdit?: (k: string, v: string) => void
   fieldHeightMm?: number
+  /** Namensraum der Herausforderung, z. B. «hfA_» — siehe editNs(). */
+  ns?: string
 }
 
-function ReflexionItem({ rf, withField, edits = {}, onEdit = () => {}, fieldHeightMm }: ReflexionItemProps) {
+function ReflexionItem({ rf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '' }: ReflexionItemProps) {
   return (
     <div className="rf-item">
       <div className="lf-head">
@@ -214,8 +218,8 @@ function ReflexionItem({ rf, withField, edits = {}, onEdit = () => {}, fieldHeig
       {withField && (
         <Schreibfeld
           heightMm={fieldHeightMm || rf.feld_hoehe_mm || 10}
-          value={edits[`rf_${rf.nr}`] || ''}
-          onChange={(v) => onEdit(`rf_${rf.nr}`, v)}
+          value={edits[`${ns}rf_${rf.nr}`] || ''}
+          onChange={(v) => onEdit(`${ns}rf_${rf.nr}`, v)}
         />
       )}
     </div>
@@ -432,10 +436,35 @@ function HandlungsproduktAnleitung({ sit }: { sit: SituationJson }) {
   )
 }
 
-function makePage(common: { sit: SituationJson; abteilung?: string; mode: 'info' | 'fill'; kompetenzNr?: string; abgedeckteKompetenzen?: string[] }) {
+interface PageCommon {
+  sit: SituationJson
+  abteilung?: string
+  mode: 'info' | 'fill'
+  kompetenzNr?: string
+  abgedeckteKompetenzen?: string[]
+}
+
+/**
+ * Seitenrahmen für DOC-S.
+ *
+ * Bewusst eine Komponente auf Modulebene und KEINE Factory, die im Render-Body
+ * eine neue Komponente erzeugt. React vergleicht Elementtypen per Referenz: eine
+ * pro Render neu gebaute Funktion ist jedes Mal ein anderer Typ, worauf React
+ * den gesamten Teilbaum aus- und wieder einhängt. In der Workbench hat das bei
+ * jedem Tastenanschlag alle DOM-Knoten des Dokuments ersetzt — Cursor und
+ * Scrollposition gingen verloren, die Ansicht sprang zurück auf Seite 1.
+ * `common` als Prop durchzureichen kostet nur ein Re-Render, kein Remount.
+ */
+function DocSPage({
+  common,
+  pageNum,
+  pageTotal,
+  children,
+  bodyClass,
+}: { common: PageCommon; pageNum: number; pageTotal: number; children: ReactNode; bodyClass?: string }) {
   const kompetenzNr = common.kompetenzNr || common.sit.nrlp?.nr
   const abgedeckteKompetenzen = common.abgedeckteKompetenzen || common.sit.nrlp?.nr_primary
-  return ({ pageNum, pageTotal, children, bodyClass }: { pageNum: number; pageTotal: number; children: ReactNode; bodyClass?: string }) => (
+  return (
     <A4Page
       sit={common.sit.buchstabe}
       abteilung={common.abteilung}
@@ -473,17 +502,29 @@ function ebaRootClass(sit: SituationJson): string | undefined {
   return sit.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
 }
 
+/**
+ * Namensraum für die Eingabe-Keys einer Herausforderung.
+ *
+ * Die Workbench hält EIN gemeinsames `edits`-Objekt über alle Dokumente. Ohne
+ * diesen Präfix greifen HF A, B und C auf denselben Schlüssel `lf_1` zu — was in
+ * A getippt wurde, erschien dann auch in B und C. Andere Dokumenttypen haben
+ * eigene Präfixe (austausch_*, transfer, ws_wahl …) und kollidieren nicht.
+ */
+function editNs(sit: SituationJson): string {
+  return `hf${sit.buchstabe || '?'}_`
+}
+
 function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: DocSProps) {
-  const Page = makePage({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen })
+  const common: PageCommon = { sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }
   let pageIdx = 0
   const nextPage = () => ++pageIdx
   const total = 4
   return (
     <div className={ebaRootClass(sit)} style={sitColors(sit)}>
-      <Page pageNum={nextPage()} pageTotal={total} bodyClass="cockpit-page">
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={total} bodyClass="cockpit-page">
         <CockpitPageBody sit={sit} />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={total}>
+      </DocSPage>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={total}>
         <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
         {sit.leitfragen_intro && (
           <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', maxWidth: '160mm', marginBottom: '3mm' }}>
@@ -495,23 +536,24 @@ function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: 
         ))}
         <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapHinweis sit={sit} />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={total} bodyClass="hp-anleitung-page">
+      </DocSPage>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={total} bodyClass="hp-anleitung-page">
         <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
         <HandlungsproduktAnleitung sit={sit} />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={total}>
+      </DocSPage>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={total}>
         <SectionHead num="05 · Selbstcheck">Reflexion</SectionHead>
         {sit.reflexion_fragen?.map((rf, i) => (
           <ReflexionItem key={i} rf={rf} withField={false} />
         ))}
-      </Page>
+      </DocSPage>
     </div>
   )
 }
 
 function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckteKompetenzen }: DocSProps) {
-  const Page = makePage({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen })
+  const common: PageCommon = { sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }
+  const ns = editNs(sit)
   const lf = sit.leitfragen || []
   const eba = sit.lehrgang === 'EBA_2J'
   // Zwei Leitfragen pro Seite (EBA wie EFZ); EBA bekommt kleinere Schreibfelder,
@@ -527,11 +569,11 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
 
   return (
     <div className={ebaRootClass(sit)} style={sitColors(sit)}>
-      <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="cockpit-page">
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal} bodyClass="cockpit-page">
         <CockpitPageBody sit={sit} />
-      </Page>
+      </DocSPage>
       {lfPairs.map((pair, pi) => (
-        <Page key={`lfp-${pi}`} pageNum={nextPage()} pageTotal={actualTotal}>
+        <DocSPage common={common} key={`lfp-${pi}`} pageNum={nextPage()} pageTotal={actualTotal}>
           {pi === 0 ? (
             <>
               <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
@@ -545,31 +587,31 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
             <SectionHead num={`02 · Wissensecke (${pi + 1})`}>Leitfragen (Fortsetzung)</SectionHead>
           )}
           {pair.map((q, i) => (
-            <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} fieldHeightMm={lfFieldMm} />
+            <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={lfFieldMm} />
           ))}
-        </Page>
+        </DocSPage>
       ))}
-      <Page pageNum={nextPage()} pageTotal={actualTotal}>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal}>
         <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapSkelett sit={sit} />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-anleitung-page">
+      </DocSPage>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-anleitung-page">
         <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
         <HandlungsproduktAnleitung sit={sit} />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-arbeitsflaeche-page">
+      </DocSPage>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-arbeitsflaeche-page">
         <HandlungsFlaeche
           label={sit.handlungsprodukt?.schreib_label || 'HIER ERARBEITEN'}
-          value={edits.handlungsprodukt || ''}
-          onChange={(v) => onEdit('handlungsprodukt', v)}
+          value={edits[`${ns}handlungsprodukt`] || ''}
+          onChange={(v) => onEdit(`${ns}handlungsprodukt`, v)}
         />
-      </Page>
-      <Page pageNum={nextPage()} pageTotal={actualTotal}>
+      </DocSPage>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal}>
         <SectionHead num="05 · Selbstcheck">Reflexion</SectionHead>
         {sit.reflexion_fragen?.map((rf, i) => (
-          <ReflexionItem key={i} rf={rf} withField={true} edits={edits} onEdit={onEdit} fieldHeightMm={35} />
+          <ReflexionItem key={i} rf={rf} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={35} />
         ))}
-      </Page>
+      </DocSPage>
     </div>
   )
 }

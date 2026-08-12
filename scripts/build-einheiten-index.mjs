@@ -67,8 +67,27 @@ for (const slug of slugs) {
   const begleiterPath = join(dir, 'begleiter.md')
   const begleiterMeta = existsSync(begleiterPath) ? parseFrontmatter(readFileSync(begleiterPath, 'utf8')) : {}
 
+  // `nrlp` = Herausforderung A, kanonisch fuer Einzelwerte (Thema, Lebensbezug).
   const nrlp = sitA?.nrlp || {}
-  const aspekte = Array.from(new Set((nrlp.gesellschaft || []).map((g) => g.aspekt))).filter(Boolean)
+  const alleHf = [sitA, sitB, sitC].filter(Boolean)
+
+  // Abdeckungs-Felder sind die Union ueber A/B/C, nicht nur A: Aspekte, SK und
+  // Sprachmodi sind pro Herausforderung EDITORIELL verschieden (B kann Ethik
+  // aktivieren, das A nicht hat; C einen Modus trainieren, den A nicht kennt).
+  // Nur A zu lesen liess den Katalog-Filter und den «Was deckt diese Einheit ab?»-
+  // Block auf der Detailseite eine zu schmale Abdeckung behaupten.
+  // Reihenfolge: erstes Auftreten ueber A -> B -> C (stabil); SK numerisch sortiert.
+  const unionBy = (pick) => {
+    const out = []
+    for (const s of alleHf) for (const v of pick(s?.nrlp || {})) {
+      if (v != null && v !== '' && !out.includes(v)) out.push(v)
+    }
+    return out
+  }
+  const aspekte = unionBy((n) => (n.gesellschaft || []).map((g) => g.aspekt))
+  const sk = unionBy((n) => (Array.isArray(n.sk) ? n.sk : [])).sort((a, b) => a - b)
+  const sprachmodi = unionBy((n) => n.sprachmodi || [])
+
   const themaNr = Array.isArray(nrlp.themen) && nrlp.themen[0]
     ? parseInt(String(nrlp.themen[0]).replace(/^T/, ''), 10) || null
     : null
@@ -131,8 +150,8 @@ for (const slug of slugs) {
     themen: nrlp.themen || [],
     aspekte,
     dominanter_aspekt: kn?.dominanter_aspekt || null,
-    sk: Array.isArray(nrlp.sk) ? nrlp.sk : [],
-    sprachmodi: nrlp.sprachmodi || [],
+    sk,
+    sprachmodi,
     herausforderungen: ['A', 'B', 'C'].filter((l) => [sitA, sitB, sitC][{ A: 0, B: 1, C: 2 }[l]] != null),
     hf_titel: {
       A: sitA?.titel || null,
