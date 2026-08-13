@@ -548,6 +548,70 @@ function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
   return els
 }
 
+// 05 · Methoden — Werkzeugseite als 2×2-Tabelle, damit sie wie im HTML auf eine Seite passt.
+// Spiegelt MethodenGrid aus DocS.tsx. Wird nur aufgerufen, wenn `sit.methoden` Daten hat.
+function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: number, akzent: string): any {
+  const els: any[] = []
+  els.push(new Paragraph({
+    children: [
+      new TextRun({ text: `${nr}  `, bold: true, color: m.quelle === 'hko' ? COLOR.inkSoft : akzent, font: 'Consolas', size: 14 }),
+      new TextRun({ text: m.name, bold: true, size: 19 }),
+    ],
+    spacing: { after: 20 },
+  }))
+  els.push(p(
+    m.quelle === 'lehrmittel'
+      ? `Lehrmittel Kap. ${m.kap ?? ''}${m.seiten ? ` · ${m.seiten}` : ''}`
+      : 'Methodenkarte · nicht im Lehrmittel',
+    { run: { color: m.quelle === 'hko' ? COLOR.inkSoft : akzent, bold: true, size: 13 }, spacing: { after: 30 } },
+  ))
+  if (m.fuer) els.push(p(m.fuer, { run: { color: COLOR.inkMute, italics: true, size: 14 }, spacing: { after: 60 } }))
+
+  const block = (label: string, text: string) => {
+    els.push(p(label.toUpperCase(), { run: { color: m.quelle === 'hko' ? COLOR.inkSoft : akzent, bold: true, size: 12 }, spacing: { after: 20 } }))
+    els.push(p(text, { run: { size: 16 }, spacing: { after: 70 } }))
+  }
+  if (m.quelle === 'lehrmittel') {
+    if (m.lesen) block('Lesen', m.lesen)
+    if (m.tun) block('Damit tun Sie', m.tun)
+  } else {
+    if (m.schritte?.length) block('So geht das', m.schritte.filter(Boolean).map((s, j) => `${j + 1} ${s}`).join('  '))
+    if (m.ankommt) block('Worauf es ankommt', m.ankommt)
+  }
+  if (m.merk) els.push(p(m.merk, { run: { color: COLOR.inkSoft, size: 15 }, spacing: { before: 40 } }))
+
+  const kante = m.quelle === 'hko'
+    ? { style: BorderStyle.DOTTED, size: 8, color: COLOR.inkSoft }
+    : { style: BorderStyle.SINGLE, size: 12, color: akzent }
+  const rahmen = m.quelle === 'hko'
+    ? { style: BorderStyle.DASHED, size: 4, color: COLOR.inkMute }
+    : { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule }
+  return tcell(els, {
+    width: { size: 50, type: WidthType.PERCENTAGE },
+    borders: { top: kante, bottom: rahmen, left: rahmen, right: rahmen },
+  })
+}
+
+function methodenBlock(sit: SituationJson, akzent: string): any[] {
+  const items = (sit.methoden || []).filter(Boolean)
+  if (!items.length) return []
+  const els: any[] = []
+  els.push(p(
+    'Vier Werkzeuge, vier Felder. Wo ein Kapitel steht, schlagen Sie im Lehrmittel nach — hier steht, was Sie damit für diese Abgabe machen. Die übrigen Felder stehen für sich.',
+    { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 140 } },
+  ))
+  const rows: any[] = []
+  for (let i = 0; i < items.length; i += 2) {
+    const paar = items.slice(i, i + 2)
+    const zellen = paar.map((m, j) => methodeZelle(m, i + j + 1, akzent))
+    // Ungerade Restzelle auffüllen, damit die Tabelle rechteckig bleibt.
+    if (zellen.length === 1) zellen.push(tcell([p('')], { width: { size: 50, type: WidthType.PERCENTAGE } }))
+    rows.push(new TableRow({ children: zellen }))
+  }
+  els.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows }))
+  return els
+}
+
 // C6 — Handlungsprodukt Anleitung (6a): metadata → beschreibung → Schritte → Abgabe → Gütekriterien → Scaffolding.
 // No write area here; the fill-mode Arbeitsfläche (6b) is emitted in buildDocS after a page break.
 function handlungsproduktBlock(sit: SituationJson, akzent: string): any[] {
@@ -681,11 +745,18 @@ export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpt
     children.push(pageBreak())
     children.push(...sectionHead('04 · Handlungsprodukt', sit.handlungsprodukt?.titel || '', akzent))
     children.push(...handlungsproduktBlock(sit, akzent))
+    // Werkzeugseite nur bei vorhandenen Methoden-Daten — sonst bleibt der Bogen wie bisher.
+    const hatMethoden = (sit.methoden?.length ?? 0) > 0
+    if (hatMethoden) {
+      children.push(pageBreak())
+      children.push(...sectionHead('05 · Methoden', 'Womit Sie das herstellen', akzent))
+      children.push(...methodenBlock(sit, akzent))
+    }
     children.push(pageBreak())
     // 6b — full-page writing surface: no "Arbeitsfläche" heading, box fills the page
     children.push(skizzeBox(235, sit.handlungsprodukt?.schreib_label || 'HIER ERARBEITEN', akzent))
     children.push(pageBreak())
-    children.push(...sectionHead('05 · Selbstcheck', 'Reflexion', akzent))
+    children.push(...sectionHead(hatMethoden ? '06 · Selbstcheck' : '05 · Selbstcheck', 'Reflexion', akzent))
     children.push(...reflexionItems(sit, akzent, true, 35))
   } else {
     children.push(pageBreak())

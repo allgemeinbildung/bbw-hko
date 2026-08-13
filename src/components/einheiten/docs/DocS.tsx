@@ -395,6 +395,68 @@ function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
   )
 }
 
+// 05 · Methoden — Werkzeugseite: vier feste Felder im 2×2-Raster, gegenüber der
+// Arbeitsfläche. Rendert ausschliesslich aus `sit.methoden`; ohne das Feld gibt es
+// die Seite nicht (siehe hatMethoden in DocSFill).
+function MethodenGrid({ sit }: { sit: SituationJson }) {
+  const items = (sit.methoden || []).filter(Boolean)
+  if (!items.length) return null
+  return (
+    <div className="methoden-grid">
+      {items.map((m, i) => (
+        <div className={m.quelle === 'hko' ? 'methode-box hko' : 'methode-box'} key={i}>
+          <div className="methode-head">
+            <span className="methode-nr">{i + 1}</span>
+            <span className="methode-name">{m.name}</span>
+          </div>
+          <div className="methode-src">
+            {m.quelle === 'lehrmittel'
+              ? `▣ Lehrmittel Kap. ${m.kap ?? ''}${m.seiten ? ` · ${m.seiten}` : ''}`
+              : 'Methodenkarte · nicht im Lehrmittel'}
+          </div>
+          {m.fuer && <div className="methode-fuer">{m.fuer}</div>}
+          {m.quelle === 'lehrmittel' ? (
+            <>
+              {m.lesen && (
+                <div className="methode-block">
+                  <div className="methode-lab">Lesen</div>
+                  <div className="methode-txt">{m.lesen}</div>
+                </div>
+              )}
+              {m.tun && (
+                <div className="methode-block">
+                  <div className="methode-lab">Damit tun Sie</div>
+                  <div className="methode-txt">{m.tun}</div>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {!!m.schritte?.length && (
+                <div className="methode-block">
+                  <div className="methode-lab">So geht das</div>
+                  <div className="methode-txt">
+                    {m.schritte.filter(Boolean).map((s, j) => (
+                      <span key={j}><strong>{j + 1}</strong>{' '}{s}{' '}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {m.ankommt && (
+                <div className="methode-block">
+                  <div className="methode-lab">Worauf es ankommt</div>
+                  <div className="methode-txt">{m.ankommt}</div>
+                </div>
+              )}
+            </>
+          )}
+          {m.merk && <div className="methode-merk">{m.merk}</div>}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt']> }) {
   const abgaben = hp.abgaben?.filter(Boolean) || []
   if (!hp.format && !abgaben.length) return null
@@ -565,7 +627,11 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
   let pageIdx = 0
   const nextPage = () => ++pageIdx
   // C2/C6/C8: cockpit+situation (1) + Leitfragen pairs + Mindmap (1) + HP Anleitung (1) + HP Arbeitsfläche (1) + Reflexion (1)
-  const actualTotal = 5 + lfPairs.length
+  // Werkzeugseite: nur wenn Methoden-Daten vorliegen. Ohne sie bleibt alles exakt wie bisher
+  // (7 Seiten, Selbstcheck = 05); mit ihnen schiebt sich «05 · Methoden» zwischen Anleitung
+  // und Arbeitsfläche, sodass die Werkzeuge im gehefteten Heft dem Schreibfeld gegenüberliegen.
+  const hatMethoden = (sit.methoden?.length ?? 0) > 0
+  const actualTotal = 5 + lfPairs.length + (hatMethoden ? 1 : 0)
 
   return (
     <div className={ebaRootClass(sit)} style={sitColors(sit)}>
@@ -599,6 +665,16 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
         <SectionHead num="04 · Handlungsprodukt">{sit.handlungsprodukt?.titel}</SectionHead>
         <HandlungsproduktAnleitung sit={sit} />
       </DocSPage>
+      {hatMethoden && (
+        <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal} bodyClass="methoden-page">
+          <SectionHead num="05 · Methoden">Womit Sie das herstellen</SectionHead>
+          <p className="methoden-intro">
+            Vier Werkzeuge, vier Felder. Wo ein Kapitel steht, schlagen Sie im Lehrmittel nach —
+            hier steht, was Sie damit für diese Abgabe machen. Die übrigen Felder stehen für sich.
+          </p>
+          <MethodenGrid sit={sit} />
+        </DocSPage>
+      )}
       <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal} bodyClass="hp-arbeitsflaeche-page">
         <HandlungsFlaeche
           label={sit.handlungsprodukt?.schreib_label || 'HIER ERARBEITEN'}
@@ -607,7 +683,8 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
         />
       </DocSPage>
       <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal}>
-        <SectionHead num="05 · Selbstcheck">Reflexion</SectionHead>
+        {/* Nummer rückt nach, wenn die Werkzeugseite 05 belegt — ohne Methoden bleibt es 05. */}
+        <SectionHead num={hatMethoden ? '06 · Selbstcheck' : '05 · Selbstcheck'}>Reflexion</SectionHead>
         {sit.reflexion_fragen?.map((rf, i) => (
           <ReflexionItem key={i} rf={rf} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={35} />
         ))}

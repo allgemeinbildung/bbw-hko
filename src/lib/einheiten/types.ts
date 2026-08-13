@@ -71,6 +71,35 @@ export interface SituationJson {
     // C6 — language scaffolds for the Handlungsprodukt (additive); aligned to HP format + output Sprachmodus
     scaffolding?: { satzanfaenge?: string[]; strategien?: string[]; struktur?: string[] }
   }
+  /**
+   * Werkzeugseite «05 · Methoden» — vier feste Felder gegenüber der Arbeitsfläche.
+   *
+   * Rein additiv und datengesteuert: Fehlt das Feld (Stand: alle Einheiten ausser 3.2.1),
+   * wird die Seite gar nicht erst gerendert und der Bogen bleibt bei sieben Seiten. Erst
+   * mit Daten wächst er auf acht — dann liegt Seite 6 (Methoden) im gehefteten Heft
+   * gegenüber Seite 7 (Arbeitsfläche).
+   *
+   * Zwei Herkünfte, im Graudruck an der Kontur unterscheidbar:
+   *  - `lehrmittel` → `kap` (+ optional `seiten`) und das Paar `lesen` / `tun`.
+   *    `tun` überträgt die Methode auf genau diese Abgabe und wird deshalb pro
+   *    Herausforderung neu formuliert.
+   *  - `hko` → eigene Karte für das, was das Lehrmittel nicht anleitet: `schritte`
+   *    und `ankommt`. Sie muss vollständig sein, denn dahinter kommt nichts.
+   * `seiten` bleibt leer, solange die Seitenzahl nicht am Buch verifiziert ist —
+   * ein erfundener Verweis kostet Vertrauen für alle echten.
+   */
+  methoden?: {
+    name: string
+    quelle: 'lehrmittel' | 'hko'
+    kap?: string
+    seiten?: string
+    fuer?: string
+    lesen?: string
+    tun?: string
+    schritte?: string[]
+    ankommt?: string
+    merk?: string
+  }[]
   // C6 — progress/quality criteria (present in data, now typed; additive). scaffold_90/100 = differentiation.
   lernfortschritt?: {
     kriterien?: { kriterium: string; indikator: string; gewicht_prozent?: number }[]

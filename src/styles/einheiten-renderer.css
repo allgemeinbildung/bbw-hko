@@ -1194,6 +1194,66 @@ body {
 .scaffolding-group ul { margin: 0; padding-left: 3mm; font-size: 8pt; line-height: 1.22; }
 .scaffolding-group li { margin-bottom: 0.4mm; }
 
+/* 05 · Methoden — Werkzeugseite: vier feste Felder im 2×2-Raster, im gehefteten Heft
+   gegenüber der Arbeitsfläche. Greift nur auf Seiten, die aus `methoden`-Daten entstehen;
+   Herausforderungen ohne dieses Feld rendern die Seite gar nicht erst.
+   Herkunft trägt die Kontur, nicht die Farbe — durchgezogen = Lehrmittel, gestrichelt =
+   eigene Karte. So bleibt der Unterschied auch im Schwarz-Weiss-Kopierer lesbar. */
+.methoden-intro { font-size: 9pt; color: var(--ink-soft); margin: 0 0 3mm; max-width: 165mm; }
+.methoden-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3mm;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.methode-box {
+  border: 0.75pt solid var(--rule);
+  border-top: 2pt solid var(--sit-akzent);
+  padding: 3.4mm 3.8mm;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: color-mix(in srgb, var(--sit-light) 16%, white);
+  break-inside: avoid;
+}
+.methode-box.hko {
+  border: 0.75pt dashed var(--ink-mute);
+  border-top: 2pt dotted var(--ink-soft);
+  background: var(--paper);
+}
+.methode-head { display: flex; align-items: baseline; gap: 1.6mm; }
+.methode-nr {
+  font-family: 'IBM Plex Mono', monospace; font-size: 8pt; font-weight: 600;
+  color: var(--sit-akzent); flex: 0 0 auto;
+}
+.methode-box.hko .methode-nr { color: var(--ink-soft); }
+.methode-name { font-size: 11pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.methode-src {
+  font-family: 'IBM Plex Mono', monospace; font-size: 7pt; font-weight: 600;
+  letter-spacing: 0.02em; color: var(--sit-akzent); margin-top: 0.8mm;
+}
+.methode-box.hko .methode-src { color: var(--ink-soft); }
+.methode-fuer {
+  font-size: 8.5pt; font-style: italic; color: var(--ink-mute);
+  margin: 0.9mm 0 1.4mm; line-height: 1.3;
+}
+.methode-block { margin-bottom: 2mm; }
+.methode-lab {
+  font-size: 7pt; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--sit-akzent); margin-bottom: 0.4mm;
+}
+.methode-box.hko .methode-lab { color: var(--ink-soft); }
+.methode-txt { font-size: 9pt; line-height: 1.36; }
+.methode-txt strong { font-weight: 700; }
+.methode-merk {
+  margin-top: auto; padding-top: 2mm;
+  border-top: 0.5pt dotted var(--rule);
+  font-size: 8.5pt; line-height: 1.32; color: var(--ink-soft);
+}
+.methode-merk strong { color: var(--ink); font-weight: 700; }
+
 /* HP-Anleitung-Seite (04 · Handlungsprodukt): seit die Kompetenz-Zeile (verbatim
    nRLP-Satz, mehrzeilig) auch hier im hp-meta steht, wurde die Seite knapp und das
    «Wie geht das?»-Scaffolding unten abgeschnitten. Die ganze Seite leicht straffen —
