@@ -298,9 +298,9 @@
     filter: drop-shadow(0 10px 26px rgba(30, 26, 18, 0.15));
   }
   .a4 {
-    width: 442px; aspect-ratio: 210 / 297;
+    width: 560px; aspect-ratio: 210 / 297;
     background: var(--paper); color: var(--p-ink);
-    font-family: var(--sans); font-size: 9px; line-height: 1.42;
+    font-family: var(--sans); font-size: 9.9px; line-height: 1.4;
     display: flex; flex-direction: column; position: relative; overflow: hidden;
   }
   .a4 .strip { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--sit); }
@@ -320,33 +320,35 @@
   .a4-foot .fs { color: var(--sit); font-weight: 600; }
 
   .sechead { display: flex; align-items: baseline; gap: 8px; margin-bottom: 11px; }
-  .sechead .n { font-family: var(--mono); font-size: 7.5px; font-weight: 600; letter-spacing: 0.08em; color: var(--sit); white-space: nowrap; }
-  .sechead .t { font-size: 13px; font-weight: 700; letter-spacing: -0.012em; }
+  .sechead .n { font-family: var(--mono); font-size: 7.1px; font-weight: 600; letter-spacing: 0.08em; color: var(--sit); white-space: nowrap; }
+  .sechead .t { font-size: 13.2px; font-weight: 700; letter-spacing: -0.012em; }
   .sechead .r { flex: 1; height: 1px; background: var(--p-rule); }
   .m-intro { font-size: 8.5px; color: var(--p-soft); margin: 0 0 10px; }
 
-  .boxgrid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; flex: 1; min-height: 0; }
+  .boxgrid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: min-content 1fr; gap: 8px; flex: 1; min-height: 0; }
+  .box-bsp { margin: 0 0 5px; padding: 4px 0 4px 6px; border-left: 1.5px solid var(--p-rule); background: rgba(139,144,153,0.06); }
+  .box-bsp-z { font-size: 8px; line-height: 1.32; color: var(--p-soft); margin-bottom: 1px; }
   .box {
     border: 1px solid var(--p-rule); border-top: 2.5px solid var(--sit);
-    padding: 8px 9px; display: flex; flex-direction: column;
+    padding: 9px 10px; display: flex; flex-direction: column;
     background: #fbfdfb; min-height: 0;
   }
   .box.hko { border: 1px dashed var(--p-mute); border-top: 2.5px dotted var(--p-soft); background: var(--paper); }
   .box-head { display: flex; align-items: baseline; gap: 5px; }
-  .box-nr { font-family: var(--mono); font-size: 7px; font-weight: 600; color: var(--sit); }
+  .box-nr { font-family: var(--mono); font-size: 7.5px; font-weight: 600; color: var(--sit); }
   .box.hko .box-nr { color: var(--p-soft); }
-  .box-name { font-size: 9.5px; font-weight: 700; letter-spacing: -0.012em; line-height: 1.2; }
+  .box-name { font-size: 10.3px; font-weight: 700; letter-spacing: -0.012em; line-height: 1.2; }
   .box-src { font-family: var(--mono); font-size: 6.5px; font-weight: 600; color: var(--sit); margin: 2px 0 0; }
   .box.hko .box-src { color: var(--p-soft); }
-  .box-fuer { font-size: 7.5px; font-style: italic; color: var(--p-mute); margin: 3px 0 5px; line-height: 1.3; }
+  .box-fuer { font-size: 8px; font-style: italic; color: var(--p-mute); margin: 3px 0 5px; line-height: 1.3; }
   .box-block { margin-bottom: 5px; }
-  .box-lab { font-size: 6.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--sit); margin-bottom: 1.5px; }
+  .box-lab { font-size: 6.6px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--sit); margin-bottom: 1.5px; }
   .box.hko .box-lab { color: var(--p-soft); }
-  .box-txt { font-size: 8px; line-height: 1.38; }
+  .box-txt { font-size: 8.5px; line-height: 1.36; }
   .box-txt b { font-weight: 700; }
   .box-merk {
     margin-top: auto; padding-top: 5px; border-top: 1px dotted var(--p-rule);
-    font-size: 7.5px; line-height: 1.32; color: var(--p-soft);
+    font-size: 8px; line-height: 1.32; color: var(--p-soft);
   }
   .box-merk b { color: var(--p-ink); font-weight: 700; }
 
@@ -604,8 +606,7 @@
       <p>
         Die neue Seite ist ein festes Raster aus vier gleich gebauten Feldern. Es ist in
         jeder Herausforderung gleich aufgebaut, damit die Lernenden es beim vierten Mal
-        ohne Hinsehen lesen. Zwei Felder zeigen ins Lehrmittel, zwei stehen für sich —
-        die Aufteilung ist nicht vorgeschrieben, nur die Vier.
+        ohne Hinsehen lesen. Zwei Felder zeigen ins Lehrmittel, zwei stehen für sich — die Aufteilung ist nicht vorgeschrieben, nur die Vier. Die untere Reihe ist doppelt so hoch: Dort stehen die Karten, die mehr tragen müssen, weil hinter ihnen kein Kapitel steht.
       </p>
       <p>
         Rechts daneben, auf Seite 7, liegt die leere Fläche, auf der das Produkt entsteht.
@@ -628,8 +629,7 @@
               <span class="r"></span>
             </div>
             <p class="m-intro">
-              Vier Werkzeuge, vier Felder. Oben die beiden, die im Lehrmittel stehen; unten die
-              beiden, die dort fehlen und hier vollständig sind.
+              Vier Werkzeuge, vier Felder. Oben die Verweise ins Lehrmittel, unten die Karten mit Musterbeispiel.
             </p>
 
             <div class="boxgrid">
@@ -675,6 +675,18 @@
                   <div class="box-lab">Worauf es ankommt</div>
                   <div class="box-txt">Das Schild muss ohne Ihre Erklärung verständlich sein. Wer hinschaut, soll in fünf Sekunden sehen, was der Preis verschweigt.</div>
                 </div>
+                <div class="box-bsp">
+                  <div class="box-lab">So sieht das aus</div>
+                  <div class="box-bsp-z">89.—</div>
+                  <div class="box-bsp-z">+ 2 700 Liter Wasser für die Baumwolle</div>
+                  <div class="box-bsp-z">+ Transport aus Bangladesch, 8 000 km</div>
+                  <div class="box-bsp-z">+ Nach 20 Wäschen ausgeleiert</div>
+                  <div class="box-bsp-z">Pro Tragejahr: 89.— bei 1 Jahr · 30.— bei 3 Jahren</div>
+                </div>
+                <div class="box-block">
+                  <div class="box-lab">Typischer Fehler</div>
+                  <div class="box-txt">Zahlen ohne Quelle. Wer nachfragt, muss die Stelle im Lehrmittel finden können.</div>
+                </div>
                 <div class="box-merk">Jede versteckte Zeile trägt eine Zahl, die Sie <b>belegen können</b>.</div>
               </div>
 
@@ -689,6 +701,17 @@
                 <div class="box-block">
                   <div class="box-lab">Worauf es ankommt</div>
                   <div class="box-txt">Nicht auswendig lernen, sondern den geschriebenen Text frei nachsprechen — sonst klingt es abgelesen.</div>
+                </div>
+                <div class="box-bsp">
+                  <div class="box-lab">So sieht das aus</div>
+                  <div class="box-bsp-z">0:00 — «Ich habe mich für das gebrauchte Velo entschieden.»</div>
+                  <div class="box-bsp-z">0:09 — «Neu hätte es 900 Franken gekostet, gebraucht 280.»</div>
+                  <div class="box-bsp-z">0:34 — «Dafür muss ich die Bremsen ersetzen, das sind 60 Franken.»</div>
+                  <div class="box-bsp-z">0:52 — «Trotzdem bleibe ich dabei — pro Jahr fahre ich günstiger.»</div>
+                </div>
+                <div class="box-block">
+                  <div class="box-lab">Typischer Fehler</div>
+                  <div class="box-txt">Zu leise aufgenommen. Näher ans Mikrofon gehen, nicht lauter sprechen — sonst übersteuert es.</div>
                 </div>
                 <div class="box-merk">45–60 Sekunden sind <b>110–150 gesprochene Wörter</b>.</div>
               </div>
@@ -824,7 +847,8 @@
         an dem es erfahrungsgemäss schiefgeht, und eine Faustregel mit einer Zahl.
       </p>
       <p>
-        Wichtig ist, dass die Herkunft für die Lernenden sichtbar bleibt. Auf den Karten
+        <strong>Das Musterbeispiel gehört der Methode, nicht der Aufgabe.</strong> Die Karte «Sprechspur aufnehmen» steht in Herausforderung A und in C; beide zeigen dasselbe Beispiel — eine Kaufbegründung zum gebrauchten Velo, die mit keiner der beiden Aufgaben zu tun hat. Das ist Absicht und folgt dem Lehrmittel: Dessen Muster-Leserbrief handelt immer von Alkohol am Steuer und taugt trotzdem als Vorlage für jedes Thema. Was pro Aufgabe wechselt, ist nur die Übertragung — «wofür hier» und «damit tun Sie».</p>
+      <p>Wichtig ist auch, dass die Herkunft für die Lernenden sichtbar bleibt. Auf den Karten
         steht ausgeschrieben <em>«nicht im Lehrmittel»</em>, und sie sind an der Kontur
         unterscheidbar — gestrichelt statt durchgezogen, damit es auch im
         Schwarz-Weiss-Kopierer trägt. Wer wissen will, was im Buch steht und was ergänzt wurde, sieht es auf einen Blick.
@@ -837,7 +861,7 @@
     <div class="col">
       <h2>Eine Liste dessen, was noch fehlt</h2>
       <p>
-        Wird der Vorschlag umgesetzt, entsteht nebenbei etwas, das über die Plattform hinausreicht. Jede eigens geschriebene Methodenkarte ist ein dokumentierter Beleg dafür, dass die Reform ein Werkzeug verlangt, für das es noch
+        Die Karten liegen nicht in der Einheit, sondern in einer gemeinsamen Sammlung, aus der sich jede Herausforderung bedient. Nach der ersten Einheit umfasst sie elf Einträge: sieben verweisen ins Lehrmittel, vier ersetzen es. Damit entsteht nebenbei etwas, das über die Plattform hinausreicht. Jede eigens geschriebene Karte ist ein dokumentierter Beleg dafür, dass die Reform ein Werkzeug verlangt, für das es noch
         keinen Ort gibt. Nach einem Dutzend Einheiten liegt diese Liste geordnet vor.
       </p>
       <div class="aside">

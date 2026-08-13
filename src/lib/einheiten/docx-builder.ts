@@ -578,6 +578,14 @@ function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: num
     if (m.schritte?.length) block('So geht das', m.schritte.filter(Boolean).map((s, j) => `${j + 1} ${s}`).join('  '))
     if (m.ankommt) block('Worauf es ankommt', m.ankommt)
   }
+  if (m.beispiel?.length) {
+    els.push(p('SO SIEHT DAS AUS', { run: { color: m.quelle === 'hko' ? COLOR.inkSoft : akzent, bold: true, size: 12 }, spacing: { after: 20 } }))
+    m.beispiel.filter(Boolean).forEach((z) => {
+      els.push(p(z, { run: { color: COLOR.inkSoft, size: 15 }, indent: { left: 160 }, spacing: { after: 10 } }))
+    })
+    els.push(spacer(50))
+  }
+  if (m.fehler) block('Typischer Fehler', m.fehler)
   if (m.merk) els.push(p(m.merk, { run: { color: COLOR.inkSoft, size: 15 }, spacing: { before: 40 } }))
 
   const kante = m.quelle === 'hko'
@@ -593,7 +601,11 @@ function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: num
 }
 
 function methodenBlock(sit: SituationJson, akzent: string): any[] {
+  // Gleiche Gewichtssortierung wie im HTML (MethodenGrid): leichte Karten zuerst.
+  const angereichert = (m: NonNullable<SituationJson['methoden']>[number]) => !!(m.beispiel?.length || m.fehler)
   const items = (sit.methoden || []).filter(Boolean)
+    .slice()
+    .sort((a, b) => Number(angereichert(a)) - Number(angereichert(b)))
   if (!items.length) return []
   const els: any[] = []
   els.push(p(

@@ -398,8 +398,18 @@ function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
 // 05 · Methoden — Werkzeugseite: vier feste Felder im 2×2-Raster, gegenüber der
 // Arbeitsfläche. Rendert ausschliesslich aus `sit.methoden`; ohne das Feld gibt es
 // die Seite nicht (siehe hatMethoden in DocSFill).
+// Angereichert = trägt Musterbeispiel und/oder Fehlerhinweis. Entscheidet über die
+// Rasterzeile, nicht die Herkunft: Die untere Reihe bekommt den freien Platz (min-content
+// oben, 1fr unten), also müssen die schweren Karten dort landen. Stabile Sortierung, damit
+// die Reihenfolge innerhalb der beiden Gruppen so bleibt, wie sie in den Daten steht.
+function istAngereichert(m: NonNullable<SituationJson['methoden']>[number]): boolean {
+  return !!(m.beispiel?.length || m.fehler)
+}
+
 function MethodenGrid({ sit }: { sit: SituationJson }) {
   const items = (sit.methoden || []).filter(Boolean)
+    .slice()
+    .sort((a, b) => Number(istAngereichert(a)) - Number(istAngereichert(b)))
   if (!items.length) return null
   return (
     <div className="methoden-grid">
@@ -449,6 +459,20 @@ function MethodenGrid({ sit }: { sit: SituationJson }) {
                 </div>
               )}
             </>
+          )}
+          {!!m.beispiel?.length && (
+            <div className="methode-beispiel">
+              <div className="methode-lab">So sieht das aus</div>
+              {m.beispiel.filter(Boolean).map((z, j) => (
+                <div className="methode-bsp-zeile" key={j}>{z}</div>
+              ))}
+            </div>
+          )}
+          {m.fehler && (
+            <div className="methode-block methode-fehler">
+              <div className="methode-lab">Typischer Fehler</div>
+              <div className="methode-txt">{m.fehler}</div>
+            </div>
           )}
           {m.merk && <div className="methode-merk">{m.merk}</div>}
         </div>

@@ -1203,7 +1203,11 @@ body {
 .methoden-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  /* Obere Reihe (Lehrmittel-Verweise) nur so hoch wie noetig — der ganze Rest geht an
+     die untere Reihe, wo die eigenen Karten stehen. Sie muessen mehr tragen, weil hinter
+     ihnen kein Kapitel steht. Selbstjustierend: keine feste Quote, die bei laengeren
+     Texten klemmt. */
+  grid-template-rows: min-content 1fr;
   gap: 3mm;
   flex: 1 1 auto;
   min-height: 0;
@@ -1247,6 +1251,23 @@ body {
 .methode-box.hko .methode-lab { color: var(--ink-soft); }
 .methode-txt { font-size: 9pt; line-height: 1.36; }
 .methode-txt strong { font-weight: 700; }
+/* Musterbeispiel — muss als *zitiertes Material* lesbar sein, nicht als weitere Anweisung.
+   Deshalb getönter Einzug mit Haarlinie statt Fliesstext, und kein Fettdruck. */
+.methode-beispiel {
+  margin: 0 0 2mm;
+  padding: 1.6mm 0 1.6mm 2.4mm;
+  border-left: 1.5pt solid var(--rule);
+  background: color-mix(in srgb, var(--ink-mute) 6%, transparent);
+}
+.methode-bsp-zeile {
+  font-size: 8.5pt; line-height: 1.32; color: var(--ink-soft);
+  margin-bottom: 0.5mm;
+}
+.methode-bsp-zeile:last-child { margin-bottom: 0; }
+/* Fehlerhinweis: gleiche Marke wie die übrigen Blöcke, nur die Aussage trägt den
+   Unterschied — kein zusätzliches Signalrot, das die Ein-Farb-Regel der Seite bräche. */
+.methode-fehler .methode-txt { color: var(--ink-soft); }
+
 .methode-merk {
   margin-top: auto; padding-top: 2mm;
   border-top: 0.5pt dotted var(--rule);

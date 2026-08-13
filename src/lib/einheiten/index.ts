@@ -1,8 +1,10 @@
 import indexJson from '../../data/einheiten.index.json'
-import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson } from './types'
+import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson, MethodeRef } from './types'
 import { lehrgaengeOf } from './lehrgang'
+import { resolveMethoden } from './methoden'
 
 export * from './lehrgang'
+export { methodeKarte, alleMethodenKarten, resolveMethoden } from './methoden'
 
 export const einheitenIndex = indexJson as EinheitIndexEntry[]
 
@@ -104,6 +106,20 @@ function parseFrontmatter(raw: string): { meta: BegleiterMeta; body: string } {
   return { meta, body: raw.slice(m[0].length) }
 }
 
+/**
+ * Löst `methoden` von Kürzeln auf volle Karten auf — einmal, hier, bevor die Daten
+ * irgendeinen Renderer erreichen. Danach sehen HTML, Word und ZIP dieselbe aufgelöste
+ * Form, und niemand sonst muss die Kartei kennen.
+ */
+function withMethoden(sit: SituationJson | null): SituationJson | null {
+  if (!sit) return null
+  // Auf der Platte steht MethodeRef[], im Typ steht Methode[] — der eine Ort, an dem
+  // die beiden Stadien aufeinandertreffen.
+  const refs = sit.methoden as unknown as MethodeRef[] | undefined
+  if (!refs?.length) return sit
+  return { ...sit, methoden: resolveMethoden(refs) }
+}
+
 export function loadEinheit(slug: string): EinheitFullSet | null {
   if (!einheitById(slug)) return null
   const raw = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
@@ -112,9 +128,9 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
   const kiLiesmich = kiRaw ? { raw: kiRaw, ...parseFrontmatter(kiRaw) } : null
   return {
     id: slug,
-    hf_A: pickJson<SituationJson>(slug, 'herausforderung_A'),
-    hf_B: pickJson<SituationJson>(slug, 'herausforderung_B'),
-    hf_C: pickJson<SituationJson>(slug, 'herausforderung_C'),
+    hf_A: withMethoden(pickJson<SituationJson>(slug, 'herausforderung_A')),
+    hf_B: withMethoden(pickJson<SituationJson>(slug, 'herausforderung_B')),
+    hf_C: withMethoden(pickJson<SituationJson>(slug, 'herausforderung_C')),
     kn: pickJson<KnJson>(slug, 'kn'),
     prinzip: pickJson<PrinzipJson>(slug, 'prinzip'),
     set: pickJson<SetJson>(slug, 'set'),

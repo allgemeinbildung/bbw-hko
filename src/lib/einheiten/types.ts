@@ -33,6 +33,51 @@ export interface NrlpRef {
   kompetenzen?: { nr: string; text: string }[]
 }
 
+/**
+ * Eine Karte der Methodenkartei (src/data/methoden/<id>.json) — plattformweit und
+ * einheitenunabhängig. Sie beschreibt ein Werkzeug ein einziges Mal und wird von jeder
+ * Herausforderung referenziert, die es braucht.
+ *
+ * Das `beispiel` hat bewusst ein festes, neutrales Sujet: Die Karte weiss nicht, in
+ * welcher Einheit sie landet. Das ist kein Mangel, sondern das Verfahren des Lehrmittels
+ * selbst — dessen Muster-Leserbrief handelt immer von Alkohol am Steuer und taugt
+ * trotzdem als Vorlage für jedes Thema.
+ */
+export interface MethodeKarte {
+  id: string
+  name: string
+  quelle: 'lehrmittel' | 'hko'
+  kap?: string
+  seiten?: string
+  fuer?: string
+  /** nur `lehrmittel`: was im Kapitel steht, in zwei Sätzen. Ersetzt es nicht. */
+  lesen?: string
+  /** nur `hko`: die Karte muss vollständig sein, dahinter kommt kein Kapitel. */
+  schritte?: string[]
+  ankommt?: string
+  /** Musterbeispiel — das, was ein Lehrmittelkapitel mit seinem Muster leistet. */
+  beispiel?: string[]
+  /** Beobachtbares Symptom plus Abhilfe — anders als `ankommt`, das die Entscheidung nennt. */
+  fehler?: string
+  merk?: string
+}
+
+/** Was in herausforderung_*.json steht: Kürzel plus die einheitenspezifische Übertragung. */
+export interface MethodeRef {
+  ref: string
+  /** Wofür in genau dieser Abgabe — überschreibt das generische `fuer` der Karte. */
+  fuer?: string
+  /** Nur bei Lehrmittel-Karten: was mit dem Kapitel in dieser Abgabe zu tun ist. */
+  tun?: string
+  /** Ausnahme: eigenes Musterbeispiel statt des Karten-Beispiels. */
+  beispiel?: string[]
+}
+
+/** Karte + Übertragung, wie sie die Renderer sehen (Ergebnis von resolveMethoden). */
+export interface Methode extends MethodeKarte {
+  tun?: string
+}
+
 export interface SituationJson {
   id?: string
   modul?: string
@@ -74,6 +119,11 @@ export interface SituationJson {
   /**
    * Werkzeugseite «05 · Methoden» — vier feste Felder gegenüber der Arbeitsfläche.
    *
+   * ACHTUNG, zwei Stadien: In der JSON-Datei auf der Platte steht eine Liste von
+   * {@link MethodeRef} (nur Kürzel + Übertragung). `loadEinheit` löst sie gegen die
+   * Kartei auf, bevor sie irgendein Renderer sieht — ab da ist es {@link Methode}.
+   * Der Typ hier beschreibt das aufgelöste Stadium, weil alle Konsumenten nur das kennen.
+   *
    * Rein additiv und datengesteuert: Fehlt das Feld (Stand: alle Einheiten ausser 3.2.1),
    * wird die Seite gar nicht erst gerendert und der Bogen bleibt bei sieben Seiten. Erst
    * mit Daten wächst er auf acht — dann liegt Seite 6 (Methoden) im gehefteten Heft
@@ -88,18 +138,7 @@ export interface SituationJson {
    * `seiten` bleibt leer, solange die Seitenzahl nicht am Buch verifiziert ist —
    * ein erfundener Verweis kostet Vertrauen für alle echten.
    */
-  methoden?: {
-    name: string
-    quelle: 'lehrmittel' | 'hko'
-    kap?: string
-    seiten?: string
-    fuer?: string
-    lesen?: string
-    tun?: string
-    schritte?: string[]
-    ankommt?: string
-    merk?: string
-  }[]
+  methoden?: Methode[]
   // C6 — progress/quality criteria (present in data, now typed; additive). scaffold_90/100 = differentiation.
   lernfortschritt?: {
     kriterien?: { kriterium: string; indikator: string; gewicht_prozent?: number }[]
