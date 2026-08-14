@@ -34,10 +34,12 @@ const KN_FORMAT_LABEL: Record<string, string> = {
   <div class="flex items-start justify-between gap-2 mb-2">
     <span class="chip chip-green">Kompetenznachweis</span>
     <div class="flex items-center gap-2">
-      {scCount === TOTAL_CHECKS
-        ? <span class="text-xs text-emerald-600 font-medium">✓ {TOTAL_CHECKS}/{TOTAL_CHECKS}</span>
-        : <span class="text-xs text-amber-600 font-medium">⚠ {TOTAL_CHECKS - scCount} offen</span>
-      }
+      <span
+        class:list={["text-xs font-medium inline-flex items-center gap-1", scCount === TOTAL_CHECKS ? "text-emerald-600" : "text-slate-500"]}
+        title={`Selbstcheck der Lehrperson: ${scCount} von ${TOTAL_CHECKS} Qualitätskriterien angehakt (Checkliste Handlungssituation + Kompetenznachweis). Optional — kein Pflichtfeld.`}
+      >
+        <span aria-hidden="true">📋</span>{scCount}/{TOTAL_CHECKS}
+      </span>
       <StatusBadge status={m.status} />
     </div>
   </div>
