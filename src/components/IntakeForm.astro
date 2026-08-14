@@ -172,7 +172,7 @@ const isEdit = !!materialId
             >
             <div class="flex items-center justify-between mt-1">
               <span x-show="errors.kompetenzversprechen" class="text-xs text-red-600">Pflichtfeld.</span>
-              <span class="text-xs text-slate-400" x-show="selectedKompetenz" x-text="'Lehrplan-Kompetenz: ' + selectedKompetenz.text"></span>
+              <span class="text-xs text-slate-400" x-show="selectedKompetenz" x-text="'Lehrplan-Kompetenz: ' + (selectedKompetenz?.text ?? '')"></span>
             </div>
           </div>
 
@@ -858,8 +858,10 @@ function intakeForm(materialId) {
     // Direkt-Upload zu Supabase Storage (an Vercels 4.5-MB-Body-Limit vorbei):
     // 1) signierte Upload-URLs holen, 2) Bytes direkt zu Supabase PUTten,
     // 3) fertige Dateien am Server registrieren.
+    // Gibt null zurück bei Erfolg, sonst eine konkrete Fehlermeldung (String),
+    // die der Aufrufer anzeigt — so wird der echte Grund nie überschrieben.
     async uploadFiles(id) {
-      if (!this.newFiles.length) return true
+      if (!this.newFiles.length) return null
       const files = this.newFiles
       try {
         // 1) Upload-URLs anfragen
@@ -873,13 +875,11 @@ function intakeForm(materialId) {
         })
         if (!signRes.ok) {
           const b = await signRes.json().catch(() => ({}))
-          this.showToast(b.error || 'Upload-Vorbereitung fehlgeschlagen.', true, 8000)
-          return false
+          return b.error || `Upload-Vorbereitung fehlgeschlagen (Code ${signRes.status}).`
         }
         const slots = (await signRes.json())?.data ?? []
         if (slots.length !== files.length) {
-          this.showToast('Upload-Vorbereitung unvollständig. Bitte erneut versuchen.', true, 8000)
-          return false
+          return 'Upload-Vorbereitung unvollständig. Bitte erneut versuchen.'
         }
 
         // 2) jede Datei direkt zu Storage hochladen
@@ -892,8 +892,7 @@ function intakeForm(materialId) {
           fd.append('', file)
           const up = await fetch(slot.signedUrl, { method: 'PUT', headers: { 'x-upsert': 'false' }, body: fd })
           if (!up.ok) {
-            this.showToast(`Upload von «${file.name}» fehlgeschlagen. Bitte über «Bearbeiten» erneut versuchen.`, true, 8000)
-            return false
+            return `Upload von «${file.name}» fehlgeschlagen (Storage-Code ${up.status}).`
           }
           uploaded.push({ name: file.name, path: slot.path, type: file.type })
         }
@@ -906,15 +905,13 @@ function intakeForm(materialId) {
         })
         if (!reg.ok) {
           const b = await reg.json().catch(() => ({}))
-          this.showToast(b.error || 'Dateien konnten nicht gespeichert werden.', true, 8000)
-          return false
+          return b.error || `Dateien konnten nicht gespeichert werden (Code ${reg.status}).`
         }
 
         this.newFiles = []
-        return true
+        return null
       } catch (e) {
-        this.showToast('Netzwerkfehler beim Upload: ' + e.message, true, 8000)
-        return false
+        return 'Netzwerkfehler beim Upload: ' + e.message
       }
     },
 
@@ -995,9 +992,9 @@ function intakeForm(materialId) {
         const newId = this.materialId || saved?.data?.id
 
         // Zusatzmaterialien hochladen (nicht-fatal bei Fehler)
-        let uploadOk = true
+        let uploadErr = null
         if (newId && this.newFiles.length) {
-          uploadOk = await this.uploadFiles(newId)
+          uploadErr = await this.uploadFiles(newId)
         }
 
         if (this.form.abteilung) {
@@ -1008,12 +1005,13 @@ function intakeForm(materialId) {
           }).catch(() => {})
         }
 
-        if (uploadOk) {
+        if (!uploadErr) {
           this.showToast(this.materialId ? 'Änderungen gespeichert.' : 'Material erfolgreich geteilt.')
           if (!this.materialId) this.resetForm()
           setTimeout(() => { window.location.href = '/meine-materialien' }, 1800)
         } else {
-          this.showToast('Material gespeichert, aber der Upload ist fehlgeschlagen. Bitte über «Bearbeiten» erneut versuchen.', true)
+          // Konkreten Grund zeigen (nicht mehr überschreiben), damit klar wird, was fehlt.
+          this.showToast('Material gespeichert, aber der Datei-Upload schlug fehl: ' + uploadErr, true, 10000)
         }
       } catch (e) {
         this.showToast('Keine Verbindung zum Server — bitte Internetverbindung prüfen und erneut auf «Material teilen» klicken. Deine Eingaben bleiben erhalten. (' + e.message + ')', true, 8000)
