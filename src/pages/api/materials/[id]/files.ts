@@ -4,7 +4,7 @@ import { createAdminClient } from '../../../../lib/supabase'
 const BUCKET = 'zusatzmaterialien'
 const MAX_BYTES = 15 * 1024 * 1024 // 15 MB pro Datei
 const ALLOWED_EXT = [
-  'pdf', 'doc', 'docx', 'odt', 'rtf', 'txt', 'md',
+  'pdf', 'doc', 'docx', 'odt', 'rtf', 'txt', 'md', 'html', 'htm',
   'ppt', 'pptx', 'xls', 'xlsx', 'csv',
   'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'zip',
 ]
