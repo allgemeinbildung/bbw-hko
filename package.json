@@ -7,9 +7,10 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run build:sk-labels && npm run sync:einheiten-nrlp && npm run build:einheiten-index && npm run build:umsetzungsbeispiele-nrlp && npm run sync:nrlp-indexes",
+    "prebuild": "npm run check:nrlp && npm run build:sk-labels && npm run sync:einheiten-nrlp && npm run build:einheiten-index && npm run build:umsetzungsbeispiele-nrlp && npm run sync:nrlp-indexes",
     "build": "astro build",
     "preview": "astro preview",
+    "check:nrlp": "node scripts/check-nrlp-consistency.mjs",
     "build:sk-labels": "node scripts/build-sk-labels.mjs",
     "sync:situationen": "node scripts/sync-situationen.mjs",
     "build:einheiten-index": "node scripts/build-einheiten-index.mjs",
