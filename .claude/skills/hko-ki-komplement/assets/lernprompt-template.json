@@ -1,0 +1,40 @@
+{
+  "id": "{X.Y.Z}_{slug}_lernprompt",
+  "set_ref": "{X.Y.Z}_{slug}_set",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «{titel}».",
+    "techniken": [
+      {
+        "key": "rollen_prompting | kontextualisieren | chain_of_thought | format_vorgeben | gegenposition_fordern | quellen_anfordern (genau 4; immer rollen_prompting + kontextualisieren)",
+        "titel": "",
+        "erklaerung": "Wie + warum die Technik wirkt (2-3 Saetze, KEINE Beispiele)",
+        "thema_bezug": "konkret auf diese Unit bezogen",
+        "beispiel_basis": "direkt verwendbarer Prompt fuer diese Unit",
+        "beispiel_fortgeschritten": "anspruchsvollere Variante mit mehr Kontext",
+        "warnung": "technik-spezifischer Blindspot DIESER Unit (nicht generisch)",
+        "baukasten": {
+          "rolle": ["..."],
+          "kontext": ["..."],
+          "aufgabe": ["..."],
+          "format": ["..."]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": ["technik_1", "technik_2"],
+      "logik_und_ziel": "warum Prompt 2 NACH der ersten Antwort folgt",
+      "prompt_1": "themenspezifisch, kombiniert Technik 1+2",
+      "prompt_2": "baut EXPLIZIT auf der ersten Antwort auf"
+    },
+    "stacking_seite_2": {
+      "technik_keys": ["technik_3", "technik_4"],
+      "logik_und_ziel": "",
+      "prompt_1": "",
+      "prompt_2": ""
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

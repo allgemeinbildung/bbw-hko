@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "renderer",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "renderer"],
+      "port": 8765
+    },
+    {
+      "name": "astro",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 4321
+    }
+  ,{
+    "name": "guide",
+    "runtimeExecutable": "python",
+    "runtimeArgs": ["-m", "http.server", "4322", "--directory", "onboarding/output/jahresplanung"],
+    "port": 4322
+  }
+  ,{
+    "name": "guide-pb",
+    "runtimeExecutable": "python",
+    "runtimeArgs": ["-m", "http.server", "4399", "--directory", "public/guides"],
+    "port": 4399
+  }
+  ]
+}

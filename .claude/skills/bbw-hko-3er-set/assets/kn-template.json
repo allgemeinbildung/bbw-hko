@@ -1,0 +1,190 @@
+{
+  "_kommentar": {
+    "zweck": "KN-Dokument fuer ein 3er-Set. Eine Hybrid-Herausforderung, drei KN-Typen (LP waehlt am Platform-Layer), eine geteilte bi-dimensionale Rubrik. Inline generiert von Phase 4 — kein Handoff, kein kn_anchor.json mehr.",
+    "regeln": [
+      "hybrid_situation.text in Swiss German, max 120 Woerter, ICH-Perspektive.",
+      "Hybrid-Herausforderung muss mindestens ein Spannungsfeld aus prinzip.mehrdeutigkeits_architektur.trade_off_raum aktivieren.",
+      "Persona der Hybrid-Herausforderung ist disjunkt von allen drei herausforderung_*.persona — kommt aus prinzip.persona_pool_kn_neu.",
+      "Alle 3 KN-Typen sind im selben File — LP-Wahl ist Platform-Layer-Concern, kein Generation-Time-Lock-In.",
+      "Rubrik bi-dimensional: 4 Kriterien (je 2 in SuK und Ges), 4 Stufen, gleichgewichtet (Check 13).",
+      "Kriterium 3 (Wirtschaftliches Prinzip) wird je nach dominantem Aspekt umbenannt — siehe references/kn-architecture.md Paragraph 6.",
+      "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (hybrid_situation.{titel, text, leitfrage, alignment_note.*}, kn_typen[].fragestruktur[].frage, kn_typen[].aufgaben[].aufgabe, kn_typen[].reflexionsfragen[], rubrik_shared.kriterien[].{name, stufen[].text, niveaubaender[].text}). Transliteration nur in IDs (id, set_ref, prinzip_ref, anchored_situations[])."
+    ],
+    "abhaengigkeiten": "Konsumiert prinzip.json (Spannungsfelder, persona_pool_kn_neu, Transfer-Anker, hybrid_situation_spec), die drei herausforderung_*.json (konfliktart-per-Herausforderung, SK pro Herausforderung), set.json (dominanter Aspekt, kn_ref-Anker).",
+    "lebenszyklus": [
+      "Phase 4 Step 1 laedt Prerequisites.",
+      "Phase 4 Step 2 generiert Hybrid-Herausforderung und wartet auf User-Approval.",
+      "Phase 4 Steps 3-5 generieren die drei KN-Typen.",
+      "Phase 4 Step 6 passt Kriterium 3 an den dominanten Aspekt an.",
+      "Phase 4 Step 7 fuehrt Checks 10-13 aus.",
+      "Phase 4 Step 8 schreibt das File.",
+      "Phase 5 (Teacher-Guide) liest dieses File fuer die KN-Karten."
+    ]
+  },
+
+  "id": "{X.Y.Z}_{topic_slug}_kn",
+  "modul": "{X.Y}",
+  "kompetenz_nr": "{X.Y.Z}",
+  "topic_slug": "",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+
+  "set_ref": "{X.Y.Z}_{topic_slug}_set",
+  "prinzip_ref": "{X.Y.Z}_{topic_slug}_prinzip",
+  "anchored_situations": [
+    "{X.Y.Z}_{topic_slug}_hf_A",
+    "{X.Y.Z}_{topic_slug}_hf_B",
+    "{X.Y.Z}_{topic_slug}_hf_C"
+  ],
+
+  "dominanter_aspekt": "",
+  "kern_kompetenzversprechen": "",
+  "mehrdeutigkeits_pflicht": "",
+
+  "hybrid_situation": {
+    "_kommentar": "EINE Szene (nicht drei aneinandergereiht), die alle drei Lernaufgaben-Prinzipien gleichzeitig aktiviert. Persona aus prinzip.persona_pool_kn_neu (Unseen-Transfer). Endet mit einer Leitfrage, die die Spannung benennt ohne Antwort vorzugeben.",
+    "titel": "",
+    "persona": {"beruf": "", "betrieb": "", "ort": ""},
+    "emotion_tag": "",
+    "text": "",
+    "leitfrage": "",
+    "aktivierte_trade_offs": [],
+    "alignment_note": {
+      "_kommentar": "Strukturiert in v1.1. herausforderungen_mapping zeigt welches Herausforderungs-Prinzip durch welches Szenenelement aktiviert wird. new_dimensions listet Aspekte, die in keiner Herausforderungs-Konfliktart vorkommen (WARN-Marker).",
+      "herausforderungen_mapping": [
+        {"hf_letter": "A", "scene_element": ""},
+        {"hf_letter": "B", "scene_element": ""},
+        {"hf_letter": "C", "scene_element": ""}
+      ],
+      "new_dimensions": []
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespraech",
+      "format": "muendlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespraech mit Lehrperson: 5 Fragen steigender Komplexitaet."
+      ],
+      "fragestruktur": [
+        {"nr": 1, "typ": "Erklaeren", "frage": "", "k_stufe": 2},
+        {"nr": 2, "typ": "Anwenden", "frage": "", "k_stufe": 3},
+        {"nr": 3, "typ": "Beurteilen", "frage": "", "k_stufe": 3},
+        {"nr": 4, "typ": "Transfer", "frage": "", "k_stufe": 4},
+        {"nr": 5, "typ": "Werthaltung", "frage": "", "k_stufe": 4}
+      ],
+      "sk": [],
+      "aspekte": [],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion muendlich",
+        "Interaktion und Kollaboration muendlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Pruefungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexitaet."
+      ],
+      "aufgaben": [
+        {"nr": 1, "typ": "Erklaeren", "aufgabe": "", "k_stufe": 2},
+        {"nr": 2, "typ": "Unterscheiden", "aufgabe": "", "k_stufe": 3},
+        {"nr": 3, "typ": "Entscheiden", "aufgabe": "", "k_stufe": 3},
+        {"nr": 4, "typ": "Forderung", "aufgabe": "", "k_stufe": 4}
+      ],
+      "sk": [],
+      "aspekte": [],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpraesentation 5 Min.)",
+      "ablauf": [
+        "Lernende waehlen eines ihrer drei Handlungsprodukte aus den Lernaufgaben.",
+        "Werkwahl-Begruendung (2-3 Saetze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Woerter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip hast du in deiner Herausforderung gelernt — formuliere es in einem Satz.",
+        "Erklaere, wie dieses Prinzip in der Hybrid-Herausforderung sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was hast du durch die drei Herausforderungen insgesamt darueber gelernt?"
+      ],
+      "optional_praesentation": "Kurzpraesentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [],
+      "_sk_kommentar": "Adaptiv in v1.1. Basis-Kandidaten [5,6,10], gefiltert gegen Union(herausforderung_*.nrlp.sk). Wird in Phase 4 Step 5 befuellt. Mindestens 2, maximal 3 SK.",
+      "aspekte": [],
+      "sprachmodi": ["Produktion schriftlich und bildlich"],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "_kommentar": "Bi-dimensionale Rubrik: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen pro Kriterium, gleichgewichtet. Niveaubaender mappen auf Stufen-Verteilung. Kriterium 3 wird je nach dominantem Aspekt umbenannt — der Default-Wert hier ist 'Wirtschaftliches Prinzip' fuer Wirtschaft-dominierte Sets; references/kn-architecture.md Paragraph 6 listet die Varianten (Rechtliches Prinzip, Identitaetskonstrukt, Oekologisches Prinzip, ...).",
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe fehlen oder falsch verwendet.",
+          "Begriffe teilweise korrekt.",
+          "Begriffe korrekt und situationsangemessen.",
+          "Differenziert, kontextualisiert, eigenstaendig formuliert."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begruendung erkennbar.",
+          "Begruendung ansatzweise vorhanden.",
+          "Begruendung nachvollziehbar und strukturiert.",
+          "Schluessig, differenziert, Gegenargumente beruecksichtigt."
+        ]
+      },
+      {
+        "name": "Wirtschaftliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Prinzip nicht angewendet.",
+          "Prinzip teilweise erkennbar.",
+          "Prinzip korrekt auf die Herausforderung angewendet.",
+          "Prinzip auf neue Zusammenhaenge uebertragen."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet.",
+          "Position klar in Ich-Form formuliert.",
+          "Position begruendet, Mehrdeutigkeit anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 60 %", "definition": "Stufen 1-2 dominant"},
+      {"label": "80 %", "definition": "mehrheitlich Stufe 3"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+    ]
+  },
+
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

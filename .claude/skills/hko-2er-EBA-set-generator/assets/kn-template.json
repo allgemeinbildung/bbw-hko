@@ -1,0 +1,259 @@
+{
+  "_kommentar": {
+    "zweck": "KN-Dokument fuer ein 2er-EBA-Set. Eine Hybrid-Herausforderung (kombiniert A+B), drei KN-Typen (Fachgespraech = Default/Primaerform, muendlich; Mini Case schriftlich + Werkschau = vereinfachte Alternativen), eine geteilte bi-dimensionale Rubrik. Inline generiert von Phase 4 — kein Handoff. Unterscheidung vom EFZ-3er ausschliesslich ueber lehrgang=EBA_2J.",
+    "pivot_3_zu_2_eba": "Hybrid kombiniert BEIDE Herausforderungen A+B (must_combine [A,B]). anchored_situations == 2. Fachgespraech ist Primaerform (muendlich = EBA-Schwerpunkt, RLP Z.791). Mini Case + Werkschau sind vereinfacht: K-Decke K3 (keine K4-Pflicht), kuerzere Schreibmengen, mehr Scaffold direkt im Pruefungsblatt. SuK-Kriterien behalten die Namen Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit sind darin INTEGRIERT (KEINE Normen — EBA, RLP Z.791). KN-Ablauf: 'Dossier erlaubt, kein Internet' statt 'Lehrmittel erlaubt'.",
+    "regeln": [
+      "hybrid_situation.text in Swiss German, max 120 Woerter, ICH-Perspektive, A2.",
+      "Hybrid-Herausforderung muss mindestens einen Trade-off aus prinzip.mehrdeutigkeits_architektur.trade_off_raum aktivieren.",
+      "Persona der Hybrid-Herausforderung ist disjunkt von beiden herausforderung_*.persona — kommt aus prinzip.persona_pool_kn_neu. Lehrjahr 1-2 (EBA hat nur LJ1-2).",
+      "Alle 3 KN-Typen sind im selben File — LP-Wahl ist Platform-Layer-Concern, kein Generation-Time-Lock-In. Fachgespraech ist die empfohlene Primaerform.",
+      "Rubrik bi-dimensional: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen, gleichgewichtet (Check 13). SuK-Kriterien-Namen bleiben Fachkorrektheit + Argumentation; Konventionen + Sprachbewusstheit sind darin integriert, KEINE Normen (EBA).",
+      "Kriterium 3 (Gesellschafts-Prinzip) wird je nach dominantem Aspekt umbenannt — siehe references/kn-architecture.md Paragraph 6.",
+      "A2-Enforcement: jede SuS-gerichtete Prosa (hybrid_situation.text/leitfrage, fragestruktur[].frage, aufgaben[].aufgabe, reflexionsfragen[], rubrik-stufen) maximal A2; Pre-Write-Check gegen references/a2-language-rules.md. Sie-Form in Auftraegen/Fragen, ICH-Form im hybrid_situation.text-Narrativ.",
+      "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (hybrid_situation.{titel, text, leitfrage, alignment_note.*}, kn_typen[].fragestruktur[].frage, kn_typen[].aufgaben[].aufgabe, kn_typen[].reflexionsfragen[], rubrik_shared.kriterien[].{name, stufen[].text, niveaubaender[].text}). Transliteration nur in IDs (id, set_ref, prinzip_ref, anchored_situations[])."
+    ],
+    "abhaengigkeiten": "Konsumiert prinzip.json (Trade-offs, persona_pool_kn_neu, Transfer-Anker, hybrid_situation_spec), die zwei herausforderung_*.json (konfliktart-per-Herausforderung, SK pro Herausforderung), set.json (dominanter Aspekt, kn_ref-Anker).",
+    "lebenszyklus": [
+      "Phase 4 Step 1 laedt Prerequisites.",
+      "Phase 4 Step 2 generiert Hybrid-Herausforderung (kombiniert A+B) und wartet auf User-Approval.",
+      "Phase 4 Steps 3-5 generieren die drei KN-Typen (Fachgespraech primaer).",
+      "Phase 4 Step 6 passt Kriterium 3 an den dominanten Aspekt an.",
+      "Phase 4 Step 7 fuehrt Checks 10-13 + A2-Check aus.",
+      "Phase 4 Step 8 schreibt das File.",
+      "Phase 5 (Teacher-Guide) liest dieses File fuer die KN-Karten.",
+      "Phase 7 (Dossier) deckt jeden KN-Anspruch ab (Check Wissen<->KN-Alignment)."
+    ]
+  },
+  "id": "{X.Y.Z}_{topic_slug}_kn",
+  "modul": "{X.Y}",
+  "kompetenz_nr": "{X.Y.Z}",
+  "topic_slug": "",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "set_ref": "{X.Y.Z}_{topic_slug}_set",
+  "prinzip_ref": "{X.Y.Z}_{topic_slug}_prinzip",
+  "anchored_situations": [
+    "{X.Y.Z}_{topic_slug}_hf_A",
+    "{X.Y.Z}_{topic_slug}_hf_B"
+  ],
+  "dominanter_aspekt": "",
+  "kern_kompetenzversprechen": "",
+  "mehrdeutigkeits_pflicht": "",
+  "hybrid_situation": {
+    "_kommentar": "EINE Szene (nicht zwei aneinandergereiht), die beide Lernaufgaben-Prinzipien gleichzeitig aktiviert. Persona aus prinzip.persona_pool_kn_neu (Unseen-Transfer, LJ1-2). Endet mit einer Leitfrage, die die Spannung benennt ohne Antwort vorzugeben. Max 120 Woerter, ICH-Perspektive, A2.",
+    "titel": "",
+    "persona": {
+      "beruf": "",
+      "betrieb": "",
+      "ort": ""
+    },
+    "emotion_tag": "",
+    "text": "",
+    "leitfrage": "",
+    "aktivierte_trade_offs": [],
+    "alignment_note": {
+      "_kommentar": "herausforderungen_mapping zeigt welches Herausforderungs-Prinzip durch welches Szenenelement aktiviert wird (2 Eintraege A/B). new_dimensions listet Aspekte, die in keiner Herausforderungs-Konfliktart vorkommen (WARN-Marker).",
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": ""
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": ""
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch (Primärform)",
+      "_primaer_kommentar": "EBA-Default. Muendlich = EBA-Schwerpunkt (RLP Z.791: Produktion + Interaktion muendlich). Empfohlene Standardform; Mini Case + Werkschau sind Alternativen.",
+      "format": "mündlich, 25-30 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Dossier erlaubt, kein Internet).",
+        "10-15 Min. Gespräch mit der Lehrperson: 5 Fragen steigender Komplexität, stark geführt."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "frage": "",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "",
+          "k_stufe": 3
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [],
+      "aspekte": [],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich (vereinfacht)",
+      "_vereinfacht_kommentar": "EBA: kuerzer als EFZ (30-40 statt 45-60 Min.), K-Decke K3 (keine K4-Aufgabe), kuerzere Schreibmengen, mehr Scaffold direkt im Pruefungsblatt (Satzanfaenge/Struktur aus dem Dossier abgedruckt).",
+      "format": "schriftlich, 30-40 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt mit eingedruckten Schreibhilfen; Dossier erlaubt; kein Internet.",
+        "Vier kurze, strukturierte Aufgaben steigender Komplexität (K-Decke K3)."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "aufgabe": "",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [],
+      "aspekte": [],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+      "_vereinfacht_kommentar": "EBA: weniger schreiblastig. Reflexion 120-150 Woerter (statt 200-250), stark gefuehrt mit Satzanfaengen aus dem Dossier.",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben.",
+        "Werkwahl-Begründung (2 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (120-150 Wörter): drei Fragen schriftlich beantworten, mit Satzanfängen aus dem Dossier."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt? Formulieren Sie es in einem Satz.",
+        "Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann passt das Prinzip nicht? Was haben Sie durch die beiden Herausforderungen insgesamt darüber gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [],
+      "_sk_kommentar": "Adaptiv. Basis-Kandidaten [5,6,10], gefiltert gegen Union(herausforderung_*.nrlp.sk). Wird in Phase 4 Step 5 befuellt. Mindestens 2, maximal 3 SK.",
+      "aspekte": [],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "_kommentar": "Bi-dimensionale Rubrik: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen pro Kriterium, gleichgewichtet. Niveaubaender mappen auf Stufen-Verteilung. Kriterien-Namen bleiben 'Fachkorrektheit' + 'Argumentation' (SuK) wie im EFZ; EBA-Unterschied (RLP Z.791): Konventionen + Sprachbewusstheit sind IN die SuK-Kriterien integriert (nicht als eigene Kriterien), und es werden KEINE Normen geprueft (nur EFZ). Kriterium 3 wird je nach dominantem Aspekt umbenannt — Default 'Gesellschafts-Prinzip'; references/kn-architecture.md Paragraph 6 listet die Varianten.",
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "_integriert": "inkl. sprachlicher Konventionen (Rechtschreibung, Satzbau, Wortwahl auf A2; KEINE Normen)",
+        "stufen": [
+          "Begriffe fehlen oder falsch; sprachliche Konventionen kaum eingehalten.",
+          "Begriffe teilweise korrekt; einige Verstösse gegen Konventionen.",
+          "Begriffe korrekt und situationsangemessen; Konventionen weitgehend eingehalten (A2).",
+          "Differenziert, kontextualisiert; Konventionen sicher eingehalten."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "_integriert": "inkl. Sprachbewusstheit (adressaten- und situationsgerechte, bewusste Wortwahl)",
+        "stufen": [
+          "Keine Begründung erkennbar; keine Anpassung an Adressat/Situation.",
+          "Begründung ansatzweise; Anpassung ansatzweise erkennbar.",
+          "Begründung nachvollziehbar und strukturiert; Sprache passt zu Adressat/Situation.",
+          "Schlüssig, differenziert; Sprache bewusst und wirkungsvoll gewählt."
+        ]
+      },
+      {
+        "name": "Gesellschafts-Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Prinzip nicht angewendet.",
+          "Prinzip teilweise erkennbar.",
+          "Prinzip korrekt auf die Herausforderung angewendet.",
+          "Prinzip auf einen neuen Zusammenhang übertragen."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet.",
+          "Position klar in Ich-Form formuliert.",
+          "Position begründet; Mehrdeutigkeit anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "Stufen 1-2 dominant"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich Stufe 3"
+      },
+      {
+        "label": "100 %",
+        "definition": "Stufe 4 in mind. 3 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_2er_eba_default",
+  "_template_kommentar": "Renderer-Wert fuer den 2er-EBA-KN. Wie beim 3er kennt der Renderer diesen Wert noch nicht — Renderer-Anpassung erst nach Pietros Gold-Review.",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

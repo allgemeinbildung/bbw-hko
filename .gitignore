@@ -4,7 +4,10 @@ node_modules/
 dist/
 .vercel/
 .astro/
-.claude/
+# Die Generator-Skills unter .claude/skills/ sind Projektinhalt (sie tragen den
+# nRLP-/Lehrmittel-Crosswalk und die Didaktik-Regeln) und werden versioniert.
+# Nur die maschinenlokalen Einstellungen bleiben draussen.
+.claude/settings.local.json
 CLAUDE.md
 abu-plattform-supabase-handoff.md
 supabase/setup_full.sql
@@ -16,3 +19,10 @@ index.html
 # Lehrmittel-Quelltexte (urheberrechtlich, nicht-öffentlich, nicht deployt)
 # Wildcard deckt auch die abgelegten Vorgängerausgaben ab (_lehrmittel_2025/ usw.)
 material/_lehrmittel*/
+
+# Chromium/Crashpad-Rauschen aus dem Browser-Pane
+debug.log
+
+# Schreibrechte-Proben, die Tools in Skill-Ordnern hinterlassen
+.__wtest*
+.__probe

@@ -1,0 +1,157 @@
+{
+  "_kommentar": {
+    "zweck": "JSON-Skelett fuer die Prinzip-Datei eines 2er-EBA-Sets. Phase 0.5 fuellt alle Felder, validiert, schreibt nach src/data/einheiten/{X.Y.Z}_{topic_slug}/prinzip.json. Unterscheidung vom EFZ-3er ausschliesslich ueber lehrgang=EBA_2J.",
+    "pivot_3_zu_2_eba": "Zwei Herausforderungen (A/B), nicht drei. EBA-Bloom-Profil (K2-K3, K3 als Decke, K4 nur 100-Prozent-Extension). Persona-Pools kleiner (units 2+2). Lehrmittel-Anker entfallen — das Wissen liefert ein separat generiertes Dossier (Phase 7). kn_vorgabe ENTFERNT — KN-Typ ist LP-Wahl auf Platform-Layer. hybrid_situation_spec bleibt als Bruecke zur inline KN-Generierung (Phase 4).",
+    "regeln": [
+      "Alle Strings Swiss Standard German — kein Eszett (ß), immer ss.",
+      "Alle SuS-gerichteten Prosa-Felder maximal A2 (GER) — Pre-Write-Check gegen references/a2-language-rules.md.",
+      "Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (kern_kompetenzversprechen, herausforderungen[].*, mehrdeutigkeits_architektur.*, dekontextualisierungs_anker.*, persona_pool_units.{berufe[], orte[]}, persona_pool_kn_neu.{berufe[], orte[]}). Identifier (id, topic_slug, path) bleiben transliteriert. persona berufe/orte wortwoertlich aus kanonischer Tabelle hko-framework.md §11.",
+      "kern_kompetenzversprechen endet auf K2- oder K3-Verb in ICH-Form (K4 nicht im Pflicht-Versprechen).",
+      "herausforderungen enthaelt GENAU 2 Eintraege A/B.",
+      "sk_schnittmenge_kn.primary: SK in BEIDEN Herausforderungen (2 von 2). Minimum 2 SK gesamt (RLP Z.791).",
+      "modi_kn ist Obermenge von modi_units. Minimum 1 Modus (RLP Z.791); EBA-Schwerpunkt muendlich.",
+      "persona_pool_kn_neu muss disjunkt von persona_pool_units sein (Unseen-Transfer in Hybrid-Herausforderung).",
+      "hybrid_situation_spec ist Pflicht — definiert Constraints fuer Phase-4-Hybrid-Generierung.",
+      "Spiralen-Regel 2er (verbindlich): die beiden Herausforderungen tragen DENSELBEN Trade-off in MAXIMAL kontrastreichen Kontexten (verschiedene Abteilungen, verschiedene Konfliktarten). Zwei Datenpunkte sind das Minimum, um ein uebertragbares Muster sichtbar zu machen."
+    ],
+    "abhaengigkeiten": "Wird konsumiert von Phase 1 (Ideation: Anker fuer 4 Optionen, 2 pro Herausforderung A/B), Phase 2 (JSON-Generation: fuellt prinzip_ref + herausforderung + mehrdeutigkeit + dekontextualisierung in jede Herausforderung), Phase 3 (Set-Dokument: konzept_progression-Anker), Phase 3.5 (Wissensbedarf-Analyse), Phase 4 (inline KN-Generierung: trade_off_raum + persona_pool_kn_neu + hybrid_situation_spec), Phase 7 (Dossier-Generierung: dekontextualisierungs_anker + quellen_anker.konzepte als Glossar-Seed)."
+  },
+  "id": "{X.Y.Z}_{topic_slug}_prinzip",
+  "modul": "{X.Y}",
+  "kompetenz_nr": "{X.Y.Z}",
+  "topic_slug": "",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "kern_kompetenzversprechen": "",
+  "bloom_zielprofil": {
+    "_kommentar": "EBA-Profil: K2-K3, K3 als Decke. Verbindlich fuer Phase 2 — jede Unit-Leitfrage wird gegen diese Stufen geprueft. K4 ist NICHT Pflicht; nur als optionale 100-Prozent-Extension erlaubt.",
+    "LF1": "K2",
+    "LF2": "K2",
+    "LF3": "K3",
+    "LF4": "K3"
+  },
+  "herausforderungen": {
+    "_kommentar": "GENAU 2 Eintraege A/B. konfliktart und handlungsprodukt_typ steuern Phase-1-Ideation. transferrable=true heisst: KN-Generator darf diese Konfliktart in der Hybrid-Herausforderung aktivieren. A und B muessen maximal kontrastreich sein (verschiedene Abteilungen/Konfliktarten), aber denselben Trade-off tragen.",
+    "A": {
+      "herausforderung": "",
+      "konfliktart": "",
+      "handlungsprodukt_typ": "",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "",
+      "konfliktart": "",
+      "handlungsprodukt_typ": "",
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "_kommentar": "Provisorisch in Phase 0.5 gesetzt, in Phase 2 mit den konkreten Herausforderungen abgeglichen. Jede Liste 2-3 SK-Nummern. SK-Kurznamen siehe references/hko-framework.md.",
+    "A": [],
+    "B": []
+  },
+  "sk_schnittmenge_kn": {
+    "_kommentar": "Mengen-Logik fuer 2er-EBA-Set: SK in BEIDEN Units (2 von 2) -> primary. Diese primary-SK sind die einzige SK-Grundlage fuer die KN-Generierung. Gesamt mindestens 2 SK ueber beide Units (RLP Z.791).",
+    "primary": []
+  },
+  "aspekte": {
+    "_kommentar": "Aus NRLP-Kompetenz (nrlp_2j.json) uebernommen PLUS Aspekte, die durch herausforderungen[*].konfliktart aktiviert werden (Antizipation, siehe SKILL.md Phase 0.5 Step 2a). Minimum 2 Aspekte (RLP Z.791). iteration ist die R-Stufe (R1/R2) aus nrlp.zirkularitaet.gesellschaftsinhalte[].wiederholungen['T{X}']. Wenn kein Eintrag: R1. Antizipierte Aspekte bekommen ebenfalls Default R1.",
+    "_beispiel": {
+      "Recht": "R1",
+      "Ethik": "R1",
+      "Identitaet und Sozialisation": "R1"
+    }
+  },
+  "modi_units": {
+    "_kommentar": "Sprachmodi, die in den 2 Units aktiv trainiert werden. NRLP-Modi sind Kandidaten — gefiltert gegen die geplanten handlungsprodukt_typ-Aktivitaeten. Nur Modi aufnehmen, die mindestens ein Handlungsprodukt aktiv trainiert. EBA-Schwerpunkt: Rezeption muendlich/schriftlich, Produktion + Interaktion muendlich (RLP Z.791).",
+    "_beispiel": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration muendlich"
+    ]
+  },
+  "modi_kn": {
+    "_kommentar": "Sprachmodi, die der KN aktiv testen darf. Obermenge von modi_units; EBA-Default ist muendlich (Fachgespraech = Primaerform). Produktionsmodi nur, wo ein KN-Typ sie wirklich braucht (Produktion schriftlich fuer Mini Case, Produktion muendlich fuer Fachgespraech).",
+    "_beispiel": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion muendlich",
+      "Interaktion und Kollaboration muendlich"
+    ]
+  },
+  "mehrdeutigkeits_architektur": {
+    "_kommentar": "trade_off_raum nennt 2-4 Spannungspole, die BEIDE Herausforderungen tragen koennen. verbindlich ist eine Regel, die ueber beide Units konstant bleibt (keine Auto-Aufloesung der Mehrdeutigkeit). Mehrdeutigkeit ist im 2er-EBA-Set Pflicht in 2 von 2 Units (Check 6) — aber GEFUEHRT: das Dossier macht den Trade-off sichtbar (Transfer-Wissensblatt), die lernende Person muss ihn nicht selbst herausarbeiten.",
+    "trade_off_raum": [],
+    "verbindlich": ""
+  },
+  "dekontextualisierungs_anker": {
+    "_kommentar": "Ein generisches Prinzip-Statement, das aus BEIDEN Herausforderungen abstrahiert werden kann. Dient Phase 2 als Quelle fuer dekontextualisierung.ziel (per-Herausforderung Vorbereitung), Phase 3 als Quelle fuer set.dekontextualisierungs_aufgabe (bewertete Set-Aufgabe, 15 Prozent) und Phase 7 als Quelle fuer dossier.transfer_wissensblatt.prinzip_in_einfach.",
+    "anker_statement": "",
+    "transferfeld": ""
+  },
+  "zirkularitaet": {
+    "_kommentar": "Mapping zu nrlp.zirkularitaet (nrlp_2j.json). r1_aktuell ist die R-Stufe der Kompetenz im aktuellen Thema. r2_voraussicht skizziert spaeteres Wiederauftauchen. EBA hat nur 2 Lehrjahre — keine r3-Stufe.",
+    "r1_aktuell": "R1",
+    "r2_voraussicht": ""
+  },
+  "quellen_anker": {
+    "_kommentar": "EBA hat KEIN Lehrmittel. Die Anker zeigen auf das Wissens-Dossier (Phase 7). dossier_nuggets skizziert die geplanten Nugget-Bereiche pro Herausforderung; konzepte listet zentrale Begriffe, die in mindestens einer Herausforderung aufgeschlossen werden — sie sind der Seed fuer das Dossier-Glossar (A2-konform erklaert).",
+    "dossier_nuggets": [
+      {
+        "ref": "Dossier",
+        "herausforderung": "A",
+        "nuggets": "Info-Karte A-01..A-0N"
+      },
+      {
+        "ref": "Dossier",
+        "herausforderung": "B",
+        "nuggets": "Info-Karte B-01..B-0N"
+      }
+    ],
+    "konzepte": []
+  },
+  "persona_pool_units": {
+    "_kommentar": "2 Berufe + 2 Orte fuer die 2 Units (>=2 Abteilungen — maximaler Kontrast). Jede Persona in Phase 2 genau einmal verwenden (Check 14). Berufe und Orte ausschliesslich aus references/hko-framework.md §11 (Kanonische Lehrberufe + Staedte). EBA-Berufe bevorzugen, wo vorhanden. String-equality, kein Fuzzy-Matching. Bei Mismatch: ERR_PERSONA_NOT_CANONICAL. Personas im 1.-2. Lehrjahr (EBA hat nur LJ1-2).",
+    "berufe": [
+      "",
+      ""
+    ],
+    "orte": [
+      "",
+      ""
+    ]
+  },
+  "persona_pool_kn_neu": {
+    "_kommentar": "2 Berufe + 2 Orte, die in den 2 Units NICHT vorkommen. Phase 4 verwendet den ersten Eintrag fuer die Hybrid-Herausforderung; der zweite ist Reserve. DISJUNKT von persona_pool_units (Check 9). Lehrjahr 1-2.",
+    "berufe": [
+      "",
+      ""
+    ],
+    "orte": [
+      "",
+      ""
+    ]
+  },
+  "hybrid_situation_spec": {
+    "_kommentar": "Constraints fuer die Hybrid-Herausforderung in Phase 4. Die Hybrid-Herausforderung muss BEIDE Lernaufgaben-Prinzipien gleichzeitig aktivieren — sie ist der Bruecken-Stein zwischen Lernen und Pruefen. Maximal 120 Woerter, ICH-Perspektive, A2, muss mindestens einen Trade-off aus trade_off_raum aktivieren.",
+    "max_woerter": 120,
+    "_max_woerter_kommentar": "Zaehlt nur Woerter im hybrid_situation.text-Feld. Persona, Titel, Leitfrage, alignment_note werden NICHT mitgezaehlt. Bindestrich-Komposita und Zahlen je 1 Wort.",
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "_lehrjahr_constraint_kommentar": "Werte: 'match_units' (Default — gleiches Lehrjahr wie Herausforderungs-Personas), 'match_lehrgang' (irgendein gueltiges LJ des Lehrgangs — bei EBA nur LJ1-2), 'free' (unrestricted, WARN bei Sprung). EBA hat nur LJ1-2.",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart BEIDER Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Trade-off aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf + Ort kommen in keiner herausforderung_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben.",
+      "Text ist A2 (kurze Sätze, max. 18 Wörter pro Satz, Fachbegriffe nur mit Glossar-Deckung)."
+    ]
+  }
+}

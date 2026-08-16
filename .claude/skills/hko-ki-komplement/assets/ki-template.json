@@ -1,0 +1,61 @@
+{
+  "id": "{X.Y.Z}_{slug}_ki",
+  "set_ref": "{X.Y.Z}_{slug}_set",
+  "prinzip_ref": "{X.Y.Z}_{slug}_prinzip",
+  "kn_ref": "{X.Y.Z}_{slug}_kn",
+  "anchored_situations": [
+    "{X.Y.Z}_{slug}_hf_A",
+    "{X.Y.Z}_{slug}_hf_B",
+    "{X.Y.Z}_{slug}_hf_C"
+  ],
+  "modul": "X.Y",
+  "modul_titel": "",
+  "thema": "TX",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "1 Satz zum nRLP-Thema",
+    "gesellschaft_details": [
+      { "aspekt": "", "detail": "", "kompetenz_anker": "X.Y.Z" }
+    ],
+    "schluesselkompetenzen_texte": ["SK n — Kurzname"]
+  },
+  "ki_leitfragen": {
+    "offen": "",
+    "kritisch": "",
+    "vergleichend": "",
+    "urteilend": ""
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "eines der 7 Patterns (Scoring: references/ki-scoring.md)",
+      "titel": "",
+      "ziel": "AI-Fluency-Ziel (1 Satz)",
+      "bezug": "MUSS alle vorhandenen Herausforderungen + das Transfer-Prinzip (kn.hybrid_situation + dekontextualisierungs_anker) nennen (Check P6).",
+      "auftrag": "",
+      "prompt_strategie": ["3-4 konkrete Prompt-Hinweise; mind. einer ist ein Zweit-Prompt"],
+      "ki_frei_vorher": "Was die Lernenden OHNE KI festhalten, bevor sie die KI nutzen.",
+      "schritte": ["5 Schritte; der letzte verarbeitet das KI-Ergebnis kritisch"],
+      "guetekriterien": [
+        { "kriterium": "", "indikator": "formativ, beobachtbar; eines prüft Verifikation" }
+      ],
+      "reflexion": ["R1 inhaltlich", "R2 KI-kritisch", "R3 Transfer (>=1 Auftrag: Brücke zu einem KN-Typ)"]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "",
+      "titel": "",
+      "ziel": "",
+      "bezug": "",
+      "auftrag": "",
+      "prompt_strategie": [],
+      "ki_frei_vorher": "",
+      "schritte": [],
+      "guetekriterien": [],
+      "reflexion": []
+    }
+  ]
+}

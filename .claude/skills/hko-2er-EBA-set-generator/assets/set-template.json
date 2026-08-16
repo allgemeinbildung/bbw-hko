@@ -1,0 +1,60 @@
+{
+  "_kommentar": {
+    "zweck": "Set-Dokument fuer ein 2er-EBA-Set. Buendelt die zwei Herausforderungen (A/B), definiert die Austausch-Phase (Woche der LP-Wahl) und die bewertete Transfer-Aufgabe (15 Prozent des Set-Gewichts). Unterscheidung vom EFZ-3er ausschliesslich ueber lehrgang=EBA_2J.",
+    "pivot_3_zu_2_eba": "Zwei Herausforderungen A/B statt drei. konzept_progression == 2. Austausch-Phase abstrahiert aus BEIDEN Herausforderungen (zwei Datenpunkte = Minimum, um ein Muster sichtbar zu machen — Spiralen-Regel). Lehrmittelbegriffe -> Begriffe aus dem Dossier. Sie-Form in Auftraegen, Austausch-Scaffolds liegen im Dossier (transfer_wissensblatt.austausch_scaffolds).",
+    "regeln": [
+      "konzept_progression.length == 2 (eine Zeile pro Herausforderung A/B in der Lesereihenfolge).",
+      "austausch_phase ist Template-Konstant (Wortlaut wird nicht pro Set generiert) — nur die Verweise sind set-spezifisch.",
+      "dekontextualisierungs_aufgabe.auftrag ist Template-Konstant; konkretisierung pro Set kommt ueber set.dekontextualisierungs_aufgabe.ziel (referenziert prinzip.dekontextualisierungs_anker).",
+      "kn_ref zeigt auf das KN-Dokument, das Phase 4 generiert. In Phase 3 ist das File noch nicht da — das ist akzeptiert.",
+      "A2-Enforcement: alle SuS-gerichteten Prosa-Felder maximal A2 (GER), Pre-Write-Check gegen references/a2-language-rules.md. Sie-Form in Auftraegen.",
+      "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (austausch_phase.*, dekontextualisierungs_aufgabe.*, konzept_progression[].konzept). Transliteration nur in IDs (id, prinzip_ref, kn_ref, herausforderungen[])."
+    ],
+    "abhaengigkeiten": "Phase 3 erzeugt diese Datei nach Phase 2. Phase 3.5 (Wissensbedarf-Analyse) liest die Austausch- und Transfer-Anker. Phase 4 (inline KN) liest set.json fuer kn_ref-Anker und fuer den dominanten Aspekt (zur Rubrik-Anpassung). Phase 7 (Dossier) liefert die austausch_scaffolds, die die Austausch-Phase stuetzen."
+  },
+  "id": "{X.Y.Z}_{topic_slug}_set",
+  "modul": "{X.Y}",
+  "modul_titel": "",
+  "lehrgang": "EBA_2J",
+  "thema": "T{X}",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "prinzip_ref": "{X.Y.Z}_{topic_slug}_prinzip",
+  "kn_ref": "{X.Y.Z}_{topic_slug}_kn",
+  "herausforderungen": [
+    "{X.Y.Z}_{topic_slug}_hf_A",
+    "{X.Y.Z}_{topic_slug}_hf_B"
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "{X.Y.Z}_{topic_slug}_hf_A",
+      "konzept": ""
+    },
+    {
+      "position": 2,
+      "herausforderung": "{X.Y.Z}_{topic_slug}_hf_B",
+      "konzept": ""
+    }
+  ],
+  "austausch_phase": {
+    "_kommentar": "Template-konstante Austausch-Phase, gerendert im set-level Dokument 'Austausch & Transfer' (DOC-AUSTAUSCH) mit drei waehlbaren Sozialformen: EA (einzelauftrag) · GA (Gruppenpuzzle = gruppenarbeit_jigsaw) · PL (Plenum = einzelarbeit_plenum). Der Renderer liest die optionalen Aliasse gruppenpuzzle ?? gruppenarbeit_jigsaw und plenum ?? einzelarbeit_plenum (Rueckwaertskompatibilitaet). EBA: Lernende nutzen die Austausch-Scaffolds aus dem Dossier (transfer_wissensblatt.austausch_scaffolds).",
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Erfahrung teilen — 90 Sek. pro Person: Problem, Entscheid, stärkstes Argument. Nutzen Sie die Satzanfänge aus dem Dossier.",
+      "runde_2": "Gemeinsamkeit finden — Was haben beide Herausforderungen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "runde_3": "Transfer — Welche Herausforderung wäre für mich persönlich am schwierigsten und warum?"
+    },
+    "einzelarbeit_plenum": "Die Lehrperson leitet die Diskussion: Was haben beide Herausforderungen gemeinsam? Welches Prinzip gilt allgemein?",
+    "einzelauftrag": "Fassen Sie das gemeinsame Prinzip Ihrer beiden Herausforderungen in 3-4 kurzen Sätzen zusammen. Nennen Sie je ein Beispiel aus Ihrem Lehralltag. Nutzen Sie die Austausch-Scaffolds im Dossier."
+  },
+  "dekontextualisierungs_aufgabe": {
+    "_kommentar": "Bewertete Set-Aufgabe (15 Prozent im bewertungsraster jeder herausforderung_*.json). ziel verweist auf prinzip.dekontextualisierungs_anker — das ist die konkrete Bruecke vom Prinzip ins Set. EBA: kuerzere Schreibmenge, Begriffe aus dem Dossier statt Lehrmittel.",
+    "auftrag": "Übertragen Sie das Kernprinzip aus Ihren beiden Herausforderungen auf einen neuen, selbst gewählten Kontext.",
+    "format": "schriftlich, 4-6 kurze Sätze, Begriffe aus dem Dossier verwenden",
+    "ziel": "",
+    "gewicht_prozent": 15,
+    "abgabe": "vor dem KN"
+  }
+}

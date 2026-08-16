@@ -1,0 +1,209 @@
+{
+  "_kommentar": {
+    "zweck": "JSON-Skelett fuer eine einzelne Herausforderung eines 3er-Sets. Die Skill liest dieses Template in Phase 2, fuellt alle Felder pro Herausforderung A/B/C, validiert es und schreibt das Ergebnis nach src/data/einheiten/{X.Y.Z}_{topic_slug}/herausforderung_{LETTER}.json.",
+    "template_reservation": "template == 'default_4page_v2' ist RESERVIERT. Der Renderer kennt diesen Wert noch nicht — die Datei wird daher nicht gerendert. Das ist Absicht. Renderer-Anpassungen kommen erst nach Pietros Gold-Version-Review.",
+    "felder_klassifikation": {
+      "renderer_pflicht": "Alle Felder, die der Renderer ohne optional-chain konsumiert. Bei Drift crasht der Renderer. Pflicht ist Pflicht: modul_titel, buchstabe, sit_farbe/_light/_mid, wissensknoten (>=1), nrlp.gesellschaft (Array), nrlp.sk, zahlen_tabelle, leitfrage, leitfragen_intro, leitfragen (4 Items mit nr Int, bloom Str, knoten_ref, text, feld_hoehe_mm 15), mindmap_zentrum (flat), mindmap_aeste (4, Ast 4 optional:true, je {titel, punkte, optional}), handlungsprodukt.{format, titel, format_detail, beschreibung, schritte (5 Objekte {label, hint}), schreib_label, schreib_note}, reflexion_fragen (3 mit nr Str, text, sub null, feld_hoehe_mm 10), bewertungsraster (4 Eintraege, je mit vollstaendig_wenn 2-4 Bullets), wochen 3, wochen_plan (3 Eintraege {label, text, aktiv}), template, legacy {}, source_refs {}, registry_tags {}.",
+      "prinzip_first_additiv": "Renderer-unsichtbare Felder, die das Set zusammenhalten: prinzip_ref, herausforderung, mehrdeutigkeit, dekontextualisierung (per-Herausforderung Vorbereitung), zirkularitaet_anker, quellen_anker, lernfortschritt.",
+      "neu_fuer_3er": "lehrgang (Enum), prinzip_handoff (Object), sk_anker (Array, Laenge == nrlp.sk.length), handlungsprodukt.scaffolding (satzanfaenge/strategien/struktur), handlungsprodukt.musterloesung (C7 — ausgefuelltes Beispielprodukt, speist die Musterloesungs-Folie im Unterrichtsdeck), bewertungsraster[].vollstaendig_wenn. Die fruehere bewertungsraster-Zeile 'Transfer' entfaellt — der Transfer lebt jetzt im set-level Austausch-&-Transfer-Dokument (set.json -> austausch_phase.einzelauftrag + dekontextualisierungs_aufgabe).",
+      "entfernt_aus_3er": "gruppenpuzzle_fragen und vorgespraech_fragen wandern auf Set-Ebene (set.json -> austausch_phase + dekontextualisierungs_aufgabe). Hier nicht mehr enthalten."
+    },
+    "invarianten": [
+      "bewertungsraster.length == 4 (Leitfragen, Mindmap, Handlungsprodukt, Reflexion — keine Transfer-Zeile); jede Zeile hat 2-4 vollstaendig_wenn-Bullets (treibt die Checkliste Vollstaendigkeit). abgabe/gewicht sind optional und werden nicht mehr gerendert.",
+      "handlungsprodukt.scaffolding mit satzanfaenge/strategien/struktur — je >=1 Eintrag, ausgerichtet am HP-Format + Output-Sprachmodus.",
+      "handlungsprodukt.musterloesung mit 3-5 abschnitten, je {titel, zeilen[{label?, text, quelle?}]}; pro Abschnitt max. ~900 Zeichen text. Erfuellt format_detail wirklich (Wortzahl, Bauteile, Quellenzahl) und widerspricht dem [!tafelbild] nicht.",
+      "sk_anker.length === nrlp.sk.length — wer keine Verortung formulieren kann, traegt die SK nicht ein.",
+      "leitfragen.length == 4 und mindestens eine LF auf K3+/K4 (bloom in {Entscheiden, Analysieren, Formulieren}).",
+      "mindmap_aeste.length == 4, Ast 4 mit optional: true.",
+      "handlungsprodukt.schritte.length == 5, jeder Eintrag {label, hint} (Objekt, nicht String).",
+      "reflexion_fragen.length == 3, je {nr, text, sub: null, feld_hoehe_mm: 10}.",
+      "Keine Eszett (ß) — immer 'ss'. Echte Umlaute ä/ö/ü/Ä/Ö/Ü sind in Prosa-Feldern PFLICHT (situation_text, leitfrage, leitfragen[].text, handlungsprodukt.*, reflexion_fragen, mehrdeutigkeit.*, dekontextualisierung.*, prinzip_handoff.*, sk_anker[].wo, persona.beruf, persona.ort). Transliteration ae/oe/ue NUR in IDs, topic_slug, Filenames, JSON-keys. persona.beruf und persona.ort wortwoertlich aus kanonischer Tabelle hko-framework.md §11 (Spalte 'Schreibweise mit Umlauten').",
+      "wochen == 3 (Fixwert), wochen_plan.length == 3.",
+      "template == 'default_4page_v2' (Fixwert, reserviert)."
+    ]
+  },
+
+  "id": "{X.Y.Z}_{topic_slug}_hf_{LETTER}",
+  "modul": "{X.Y}",
+  "modul_titel": "",
+  "lehrgang": "EFZ_3J",
+
+  "buchstabe": "{LETTER}",
+  "sit_farbe": "",
+  "sit_farbe_light": "",
+  "sit_farbe_mid": "",
+
+  "titel": "",
+
+  "wissensknoten": [""],
+
+  "nrlp": {
+    "nr": "{X.Y.Z}",
+    "nr_primary": ["{X.Y.Z}"],
+    "lebensbezug": "{X.Y}",
+    "themen": ["T{X}"],
+    "gesellschaft": [
+      {"aspekt": "", "iteration": "R1"}
+    ],
+    "sprachmodi": [],
+    "sk": []
+  },
+
+  "persona": {
+    "beruf": "",
+    "betrieb": "",
+    "ort": ""
+  },
+
+  "situation_text": "",
+
+  "zahlen_tabelle": [],
+
+  "leitfrage": "",
+  "leitfragen_intro": "Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. {X.Y} als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. {X.Y} | S. {NN}",
+      "text": "",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. {X.Y} | S. {NN}",
+      "text": "",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. {X.Y} | S. {NN}",
+      "text": "",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. {X.Y} | S. {NN}",
+      "text": "",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "",
+  "mindmap_aeste": [
+    {"titel": "", "punkte": [], "optional": false},
+    {"titel": "", "punkte": [], "optional": false},
+    {"titel": "", "punkte": [], "optional": false},
+    {"titel": "", "punkte": [], "optional": true}
+  ],
+
+  "handlungsprodukt": {
+    "format": "",
+    "titel": "",
+    "format_detail": "",
+    "beschreibung": "",
+    "schritte": [
+      {"label": "", "hint": ""},
+      {"label": "", "hint": ""},
+      {"label": "", "hint": ""},
+      {"label": "", "hint": ""},
+      {"label": "", "hint": ""}
+    ],
+    "schreib_label": "",
+    "schreib_note": "",
+    "scaffolding": {
+      "satzanfaenge": ["", ""],
+      "strategien": ["", ""],
+      "struktur": ["", ""]
+    },
+    "musterloesung": {
+      "_hinweis_an_generator": "C7 — EIN vollstaendig ausgefuelltes Handlungsprodukt auf Stufe 3-4, keine Vorlage. 3-5 Abschnitte entlang scaffolding.struktur. Pro Abschnitt max. ~900 Zeichen text (Akkordeon: nur ein Abschnitt gleichzeitig offen, muss auf eine Folie passen). label max ~24 Zeichen, quelle max ~30 Zeichen (Chip, nowrap). Darf dem [!tafelbild] im begleiter.md nicht widersprechen. Offene Rechts-/Sachlage explizit benennen — das ist der Stufe-4-Anteil. Dieses _hinweis_an_generator-Feld im Output WEGLASSEN.",
+      "hinweis": "",
+      "abschnitte": [
+        {
+          "titel": "",
+          "zeilen": [
+            {"label": "", "text": "", "quelle": ""}
+          ]
+        }
+      ]
+    }
+  },
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Was hat mich in dieser Einheit ueberrascht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Wo in meinem Lehralltag ist dieses Wissen relevant?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Was aendere ich konkret — oder was pruefe ich beim naechsten Mal?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {"produkt": "Leitfragen", "kriterium": "Inhaltliche Korrektheit", "vollstaendig_wenn": ["", "", ""]},
+    {"produkt": "Mindmap", "kriterium": "Struktur · Tiefe · Verbindungen", "vollstaendig_wenn": ["", "", ""]},
+    {"produkt": "Handlungsprodukt", "kriterium": "Rubrik 4 Stufen (SuK + Ges)", "vollstaendig_wenn": ["", "", ""]},
+    {"produkt": "Reflexion", "kriterium": "Tiefe + Transfer", "vollstaendig_wenn": ["", ""]}
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Handlungsprodukt", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "{X.Y.Z}_{topic_slug}_prinzip",
+  "herausforderung": {
+    "buchstabe": "{LETTER}",
+    "label": ""
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "",
+    "hint": ""
+  },
+
+  "dekontextualisierung": {
+    "frage": "",
+    "ziel": ""
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "",
+    "r3_voraussicht": ""
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. {X.Y}", "titel": "", "seiten": "Seite {NN}", "fuer_leitfrage": [1]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "", "indikator": "", "gewicht_prozent": 25},
+      {"kriterium": "", "indikator": "", "gewicht_prozent": 25},
+      {"kriterium": "", "indikator": "", "gewicht_prozent": 25},
+      {"kriterium": "", "indikator": "", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "",
+    "scaffold_100": ""
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "",
+    "lehrmittel_anker": "",
+    "kn_aktivierung": "",
+    "transfer_check": ""
+  },
+
+  "sk_anker": [
+    {"sk": 0, "wo": ""}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "_kommentar": {
+    "zweck": "Set-Dokument fuer ein 3er-Set. Buendelt die drei Herausforderungen, definiert die Austausch-Phase (Gruppenpuzzle in Woche 3) und die bewertete Transfer-Aufgabe (15 Prozent des Set-Gewichts). NEU im 3er-Set: in der 5er-Skill waren Gruppenpuzzle-Fragen und Vorgespraechs-Fragen pro Mission dupliziert; hier zentral.",
+    "regeln": [
+      "konzept_progression.length == 3 (eine Zeile pro Herausforderung A/B/C in der Lesereihenfolge).",
+      "austausch_phase ist Template-Konstant (Wortlaut wird nicht pro Set generiert) — nur die Verweise sind set-spezifisch.",
+      "dekontextualisierungs_aufgabe.auftrag ist Template-Konstant; konkretisierung pro Set kommt ueber set.dekontextualisierungs_aufgabe.ziel (referenziert prinzip.dekontextualisierungs_anker).",
+      "kn_ref zeigt auf das KN-Dokument, das Phase 4 generiert. In Phase 3 ist das File noch nicht da — das ist akzeptiert.",
+      "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (austausch_phase.*, dekontextualisierungs_aufgabe.*, konzept_progression[].konzept). Transliteration nur in IDs (id, prinzip_ref, kn_ref, herausforderungen[])."
+    ],
+    "abhaengigkeiten": "Phase 3 erzeugt diese Datei nach Phase 2. Phase 4 (inline KN) liest set.json fuer kn_ref-Anker und fuer den dominanten Aspekt (zur Rubrik-Anpassung)."
+  },
+
+  "id": "{X.Y.Z}_{topic_slug}_set",
+  "modul": "{X.Y}",
+  "modul_titel": "",
+  "lehrgang": "EFZ_3J",
+  "_lehrgaenge_kommentar": "OPTIONAL. Alle Lehrgaenge, fuer die die Einheit gilt — nur wenn JEDE abgedeckte Kompetenz im anderen Datensatz unter DERSELBEN Nummer mit DEMSELBEN Text steht (z. B. LB 1.1, 1.2, 2.1, 2.3, 3.2, 3.3 sind in nrlp_3j/nrlp_4j identisch). Weglassen = nur `lehrgang`. Falsche Angaben faengt `npm run sync:einheiten-nrlp -- --check` ab.",
+  "lehrgaenge": ["EFZ_3J"],
+  "thema": "T{X}",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "status": "entwurf",
+
+  "prinzip_ref": "{X.Y.Z}_{topic_slug}_prinzip",
+  "kn_ref": "{X.Y.Z}_{topic_slug}_kn",
+  "herausforderungen": [
+    "{X.Y.Z}_{topic_slug}_hf_A",
+    "{X.Y.Z}_{topic_slug}_hf_B",
+    "{X.Y.Z}_{topic_slug}_hf_C"
+  ],
+
+  "konzept_progression": [
+    {"position": 1, "herausforderung": "{X.Y.Z}_{topic_slug}_hf_A", "konzept": ""},
+    {"position": 2, "herausforderung": "{X.Y.Z}_{topic_slug}_hf_B", "konzept": ""},
+    {"position": 3, "herausforderung": "{X.Y.Z}_{topic_slug}_hf_C", "konzept": ""}
+  ],
+
+  "austausch_phase": {
+    "_kommentar": "Template-konstante Austausch-Phase in Woche 3, gerendert im set-level Dokument 'Austausch & Transfer' (DOC-AUSTAUSCH) mit drei waehlbaren Sozialformen: EA (einzelauftrag) · GA (Gruppenpuzzle = gruppenarbeit_jigsaw) · PL (Plenum = einzelarbeit_plenum). Der Renderer liest die optionalen Aliasse gruppenpuzzle ?? gruppenarbeit_jigsaw und plenum ?? einzelarbeit_plenum (Rueckwaertskompatibilitaet).",
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Expertise teilen — 90 Sek. pro Person: Problem, Entscheid, staerkstes Argument.",
+      "runde_2": "Gemeinsamkeit abstrahieren — Was haben alle drei Herausforderungen gemeinsam? Welches Grundprinzip steckt dahinter?",
+      "runde_3": "Transfer — Welche Herausforderung waere persoenlich am schwierigsten und warum?"
+    },
+    "einzelarbeit_plenum": "Lehrperson leitet Diskussion: Was haben alle drei Herausforderungen gemeinsam? Welches Prinzip laesst sich verallgemeinern?",
+    "einzelauftrag": "Fasse das gemeinsame Prinzip deiner drei Herausforderungen in 5 Saetzen zusammen und nenne je ein Beispiel aus deinem Lehralltag."
+  },
+
+  "dekontextualisierungs_aufgabe": {
+    "_kommentar": "Bewertete Set-Aufgabe (15 Prozent im bewertungsraster jeder herausforderung_*.json). ziel verweist auf prinzip.dekontextualisierungs_anker — das ist die konkrete Bruecke vom Prinzip ins Set.",
+    "auftrag": "Uebertrage das Kernprinzip aus deinen drei Herausforderungen auf einen neuen, selbst gewaehlten Kontext.",
+    "format": "schriftlich, 5-7 Saetze, Lehrmittelbegriffe verwenden",
+    "ziel": "",
+    "gewicht_prozent": 15,
+    "abgabe": "Woche 3 — vor KN"
+  }
+}

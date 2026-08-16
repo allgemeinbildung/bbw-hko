@@ -1,0 +1,47 @@
+{
+  "id": "{X.Y.Z}_{slug}_lernbegleiter",
+  "set_ref": "{X.Y.Z}_{slug}_set",
+  "prinzip_ref": "{X.Y.Z}_{slug}_prinzip",
+  "kn_ref": "{X.Y.Z}_{slug}_kn",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "KI als Lerncoach fuer Repetition + KN-Vorbereitung (1 Satz).",
+    "kompetenzversprechen": "verbatim aus prinzip.kern_kompetenzversprechen",
+    "ki_frei_zuerst": {
+      "auftrag": "Selbsteinschaetzung VOR KI-Nutzung; Punkte mit 1-3 zuerst ueben.",
+      "selbsteinschaetzung": [
+        "je ein «Ich kann …»-Satz aus den Teilen des Kompetenzversprechens"
+      ]
+    },
+    "strategie_karten": [
+      {
+        "key": "retrieval | feynman | mock_transfer | uebungs_feedback | repetitionsplan (alle 5)",
+        "technik": "",
+        "wann": "",
+        "prompt_basis": "kopierbarer Prompt mit Unit-Material",
+        "prompt_fortgeschritten": "anspruchsvollere Variante",
+        "warnung": "technik-spezifisch (L3); mock_transfer: verbietet KN-Musterloesung (L2)"
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech | mini_case_schriftlich | werkschau_transfer (einer pro kn.kn_typen)",
+        "label": "",
+        "uebungsfokus": "",
+        "prompt": ""
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK | Ges",
+        "kriterien": ["Teilmenge von kn.rubrik_shared.kriterien derselben Dimension"],
+        "so_uebst_du": ""
+      }
+    ],
+    "integritaet_warnung": "Leitplanke in Lernenden-Sprache: KI hilft beim Ueben, nie bei der KN-Abgabe.",
+    "selbstcheck": ["4-5 Haekchen-Saetze inkl. «Mock-Faelle anders als KN», «Quellen geprueft»"]
+  }
+}

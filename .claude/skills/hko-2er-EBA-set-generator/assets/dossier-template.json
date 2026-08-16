@@ -1,0 +1,145 @@
+{
+  "_kommentar": {
+    "zweck": "JSON-Skelett fuer das Wissens-Dossier eines 2er-EBA-Sets. EBA hat KEIN Lehrmittel — dieses Dossier liefert das gesamte Wissen, das die Herausforderungen A/B und der KN voraussetzen. Es ist ein separates Glossar+, kein integrierter Modell-Teil. Phase 7 generiert es ZULETZT (nach KN, ggf. nach Begleiter) per Backward Design aus den fertigen Herausforderungen + KN und schreibt es nach src/data/einheiten/{X.Y.Z}_{topic_slug}/dossier.json.",
+    "backward_design": "Das Dossier wird NIE vorab gebaut. Es leitet sich rueckwaerts ab: jede Leitfrage (mission.leitfragen) und jeder KN-Anspruch (kn.kn_typen[].fragestruktur/aufgaben/reflexionsfragen) bekommt Dossier-Deckung. Check 'Wissen<->KN-Alignment' (ERR_DOSSIER_GAP) erzwingt das.",
+    "ordnung": "Primaer nach Herausforderung (A/B-Tag), Wissensart sekundaer. Lernende sollen je nach Herausforderung schnell finden. tag-Werte: 'A' | 'B' | 'AB' (beide) | 'transfer' (set-weit).",
+    "regeln": [
+      "sprachniveau == 'A2'. JEDES SuS-gerichtete Prosa-Feld (titel, inhalt, beispiel, erklaerung_a2, satzanfaenge, strategien, struktur, so_gehst_du_vor, fachsystematik, prinzip_in_einfach, so_tauschst_du_aus) maximal A2 — Pre-Write-Check gegen references/a2-language-rules.md (ERR-Gate vor dem Schreiben).",
+      "Jeder Fachbegriff, der in einem nugget.inhalt vorkommt, MUSS einen glossar-Eintrag haben (ERR_A2_BEGRIFF_OHNE_GLOSSAR) und im nugget.glossar_refs referenziert sein.",
+      "Jedes nugget hat fuer_leitfrage (Kopplung an mission.leitfragen[].nr) ODER ist transfer/AB-getaggt und an den KN gekoppelt. Kein verwaistes Nugget.",
+      "Jeder sprachmodi_scaffold.sm_id korrespondiert zum Output-Sprachmodus der Herausforderung mit gleichem tag (Sprachmodus-ID-Paritaet, references/sprachmodus-ids.md).",
+      "Jeder fakten_anker ist nach der Web-Validierung (Phase 7) entweder validiert:true ODER lp_pruefen:true — nie beides false (WARN_FAKT_UNGEPRUEFT).",
+      "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in allen Prosa-Feldern. Transliteration ae/oe/ue NUR in id-Feldern (id, set_ref, glossar[].id, nuggets[].id).",
+      "Sie-Form in direkten Lern-Anweisungen (so_gehst_du_vor, so_tauschst_du_aus, satzanfaenge sind neutral); A2 senkt Komplexitaet, nicht Hoeflichkeit."
+    ],
+    "abhaengigkeiten": "Phase 3.5 (Wissensbedarf-Analyse) liefert die Nugget-Bedarfsliste aus A/B + KN-Spec. Phase 7 fuellt das Template, validiert Fakten per Web, prueft Wissen<->KN-Alignment + A2 und schreibt die Datei. Die mission.leitfragen[].knoten_ref + mission.quellen_anker[].nugget_ref + prinzip.quellen_anker.dossier_nuggets sind die Anker, die hierher zeigen.",
+    "renderer_hinweis": "Der Renderer kennt template 'dossier_eba_v1' noch nicht. Wie alle Renderer-Belange wird das Dossier erst nach Pietros Gold-Review im Renderer verdrahtet (Loader src/lib/einheiten/index.ts liest dossier.json dann zusaetzlich)."
+  },
+  "id": "{X.Y.Z}_{topic_slug}_dossier",
+  "modul": "{X.Y}",
+  "kompetenz_nr": "{X.Y.Z}",
+  "topic_slug": "",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "YYYY-MM-DD",
+  "set_ref": "{X.Y.Z}_{topic_slug}_set",
+  "sprachniveau": "A2",
+  "kopf": {
+    "_kommentar": "Titelseite. Kerndaten DIREKT aus public/nrlp_2j.json zum kompetenz_nr ziehen (Thema nr/titel, Lebensbezug nr/text, Kompetenz nr/text, lehrjahr). einheit_titel = set.einheit_titel oder kurzer Titel aus topic_slug. lehrgang/sprachniveau konstant.",
+    "einheit_titel": "",
+    "kompetenz_nr": "{X.Y.Z}",
+    "kompetenz_text": "",
+    "lebensbezug_nr": "{X.Y}",
+    "lebensbezug_text": "",
+    "thema_nr": "{X}",
+    "thema_titel": "",
+    "lehrjahr": 1,
+    "lehrgang": "EBA_2J",
+    "sprachniveau": "A2"
+  },
+  "einleitung": {
+    "_kommentar": "Wird auf der Titelseite gerendert. A2, Sie-Form (kein du/dein/dir/dich; direkte Ansprache mit Sie). was_ist_das: 1-2 Saetze (Dossier ersetzt das Lehrmittel, hilft bei den Auftraegen). so_benutzt_du_es: 4-5 kurze Schritte (nicht von vorne lesen, Anker «Info-Karte A-02» nutzen, Glossar, Such-/KI-Tipps pro Nugget, ein Schritt nennt ein konkretes KI-Tool wie Microsoft Copilot, letzte Seite = Notizen).",
+    "was_ist_das": "",
+    "so_benutzt_du_es": ["", "", "", ""]
+  },
+  "nuggets": [
+    {
+      "_kommentar": "Kurze, situationsnahe Wissenseinheit, schnell auffindbar. tag ordnet sie der Herausforderung zu. fuer_leitfrage koppelt an mission.leitfragen[].nr. Mindestens 2-3 Nuggets pro Herausforderung (A/B), so dass jede Leitfrage gedeckt ist.",
+      "id": "nugget_A_01",
+      "tag": "A",
+      "titel": "",
+      "inhalt": "",
+      "beispiel": "",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [
+        {
+          "_kommentar": "INTERNE QA — wird NICHT mehr an Lernende gerendert. validiert/lp_pruefen steuern nur die Web-Validierung (Check Fakten). Aus diesen Fakten leitet Phase 7 die learner-facing recherche-Hinweise ab.",
+          "behauptung": "",
+          "wert": "",
+          "quelle": "",
+          "validiert": false,
+          "lp_pruefen": false
+        }
+      ],
+      "recherche": {
+        "_kommentar": "Learner-facing Scaffolds pro Nugget (P2/P5). EIN Nugget pro Seite — Platz fuer reiche Hinweise, alle aus Unit-Material. suchbegriffe = 2-3 Plain-Keyword-Suchen (KEIN Gesetzesartikel). ki_beispiel = vereinfachte Anleitung (so_fragst_du) + ausgearbeiteter A2-Prompt (prompt) + Nachfrage-Tipp (tipp). ki_lernen = 2 kurze A2-Lern-Prompts (Lernen MIT KI, abgeleitet vom EFZ-Lernbegleiter: retrieval 'Lassen Sie sich abfragen' + feynman 'Erklaeren Sie es selbst'). selbst_pruefen je Nugget (Anwendung/Check; bei lokal/persoenlich variierenden Fakten konkret). Pflicht: suchbegriffe, ki_beispiel.so_fragst_du+prompt, ki_lernen (2), selbst_pruefen. A2, Sie-Form. Siehe dossier-architecture.md §8.",
+        "suchbegriffe": ["", "", ""],
+        "ki_beispiel": {
+          "so_fragst_du": "",
+          "prompt": "",
+          "tipp": ""
+        },
+        "ki_lernen": [
+          { "strategie": "", "prompt": "" },
+          { "strategie": "", "prompt": "" }
+        ],
+        "selbst_pruefen": ""
+      },
+      "glossar_refs": []
+    }
+  ],
+  "sprachmodi_scaffolds": [
+    {
+      "_kommentar": "Erweiterte Sprachmodi-Hilfen, komplementaer zum Handlungsprodukt der Herausforderung mit gleichem tag. sm_id == Output-Sprachmodus der Herausforderung (mission.nrlp.sprachmodi / handlungsprodukt). so_gehst_du_vor ist EBA-spezifisch: Schritt-fuer-Schritt-Anleitung. Pro Herausforderung A und B je ein Scaffold-Eintrag.",
+      "tag": "A",
+      "sm_id": "SM5",
+      "modus_label": "",
+      "satzanfaenge": [
+        ""
+      ],
+      "strategien": [
+        ""
+      ],
+      "struktur": [
+        ""
+      ],
+      "so_gehst_du_vor": [
+        ""
+      ]
+    }
+  ],
+  "transfer_wissensblatt": {
+    "_kommentar": "Hebt die zwei Einzelfaelle (A/B) in Fachsystematik. Sitzt in der Dekontextualisierungs-Phase (set.dekontextualisierungs_aufgabe + kn-Prinzip). prinzip_in_einfach ist die A2-Fassung von prinzip.dekontextualisierungs_anker.anker_statement. austausch_scaffolds stuetzen die set.austausch_phase. set-weit (tag implizit 'transfer').",
+    "fachsystematik": "",
+    "prinzip_in_einfach": "",
+    "austausch_scaffolds": {
+      "satzanfaenge": [
+        ""
+      ],
+      "so_tauschst_du_aus": [
+        ""
+      ]
+    }
+  },
+  "glossar": [
+    {
+      "_kommentar": "Fachbegriffe A2-konform erklaert, mit konkretem Schweizer Beispiel. Jeder in einem nugget.inhalt verwendete Fachbegriff MUSS hier stehen (Check A2-Begriff-ohne-Glossar). id wird in nugget.glossar_refs referenziert.",
+      "id": "begriff_01",
+      "begriff": "",
+      "erklaerung_a2": "",
+      "beispiel": ""
+    }
+  ],
+  "leseblatt": {
+    "_kommentar": "OPTIONALES Zusatz-Dokument 'Lese-Arbeitsblatt' (Renderer DocLeseblatt) fuer die Lesefoerderung EBA. Der Gesamttext wird vom Renderer AUTOMATISCH aus nuggets[].inhalt (Reihenfolge A->B) zusammengezogen — hier NICHT duplizieren. Autoriere nur: einleitung + 5 richtig_falsch (aus Nugget-Inhalten ableitbar, je klar richtig oder falsch, loesung dokumentiert die Absicht, wird NICHT auf dem SuS-Blatt gedruckt) + 3 w_fragen (offene Verstaendnisfragen zum Text) + vokabeln (6 glossar-IDs der zentralen Begriffe). A2, Sie-Form, echte Umlaute. Rendert unter 'Zusatzmaterialien', nicht als Glossar+-Seite. Siehe references/dossier-architecture.md Paragraph 10.",
+    "titel": "Lesen und Verstehen: <Kurztitel der Einheit>",
+    "einleitung": "Lesen Sie den ganzen Text ruhig durch. Danach lösen Sie die Aufgaben. Sie dürfen im Text nachschauen.",
+    "gesamttext_quelle": "nuggets",
+    "richtig_falsch": [
+      { "text": "<Aussage, die aus einem Nugget-Inhalt klar RICHTIG ist>", "loesung": true },
+      { "text": "<Aussage, die aus einem Nugget-Inhalt klar FALSCH ist>", "loesung": false }
+    ],
+    "w_fragen": [
+      "<Offene Verstaendnisfrage 1 zum Lesetext>",
+      "<Offene Verstaendnisfrage 2 zum Lesetext>",
+      "<Offene Verstaendnisfrage 3 zum Lesetext>"
+    ],
+    "vokabeln": ["<glossar_id_1>", "<glossar_id_2>", "<glossar_id_3>", "<glossar_id_4>", "<glossar_id_5>", "<glossar_id_6>"]
+  },
+  "template": "dossier_eba_v1",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}
