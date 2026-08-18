@@ -69,7 +69,9 @@ Mindestens eine LF auf K3+/K4 — sonst 5. LF ergaenzen.
 
 #### `leitfragen[].loesung` (C10)
 
-Die **Antwort** auf die Leitfrage, formuliert fuer die Lehrperson. Sie speist ausschliesslich die Unterfolie `{a|b|c}-leitfragen-loesung` im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`) — dieselbe Akkordeon-Mechanik wie `handlungsprodukt.musterloesung`, eine Leitfrage pro Klick. **Sie wird nie im Schuelerbogen (`DocS`) gerendert** und darf deshalb den Massstab offen aussprechen.
+Die **Antwort** auf die Leitfrage, formuliert fuer die Lehrperson. Sie speist die Unterfolie `{a|b|c}-leitfragen-loesung` im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`) — dieselbe Akkordeon-Mechanik wie `handlungsprodukt.musterloesung`, eine Leitfrage pro Klick. **Sie wird nie im Schuelerbogen (`DocS`) gerendert** und darf deshalb den Massstab offen aussprechen.
+
+**Nicht zusaetzlich in `begleiter.md` schreiben.** `loadEinheit` spiegelt die Loesungen beim Laden als `> [!loesung]`-Callouts in den Begleiter (`src/lib/einheiten/begleiter-loesungen.ts`) — pro Herausforderung ein Kapitel «Loesungen der Leitfragen» vor dem Tafelbild. Handgeschriebene Loesungen im Markdown waeren eine zweite Quelle fuer denselben Satz und wuerden irgendwann abweichen.
 
 Abgrenzung zu den Nachbarfeldern — die drei sagen Verschiedenes und duerfen sich nicht doppeln:
 

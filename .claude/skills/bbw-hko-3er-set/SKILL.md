@@ -550,6 +550,8 @@ Die Loesungen werden **nicht formuliert, sondern gehoben** — Quelle ist dersel
 
 Kein Vorlese-Skript: Die Zeilen sind der **Massstab**, nicht die eine richtige Formulierung. Diesen Rahmen setzt das Deck bereits in den Referentennotizen; die Daten muessen ihn nur einhalten. Feldspezifikation: `references/json-field-mapping.md` §`leitfragen[].loesung`. Pruefung: Check 32.
 
+**Nur ins JSON schreiben, nie in `begleiter.md`.** Der Begleiter bekommt die Loesungen automatisch: `loadEinheit` spiegelt sie beim Laden als `> [!loesung]`-Callouts je Herausforderung ein (`src/lib/einheiten/begleiter-loesungen.ts`), Word-Export und HTML-Ansicht inklusive. Wer sie zusaetzlich ins Markdown schreibt, erzeugt eine zweite Quelle, die driftet.
+
 **Single-Format-Pflicht (NEU in v1.2):**
 
 `handlungsprodukt.format_detail` darf KEINE Format-Alternativen enthalten,

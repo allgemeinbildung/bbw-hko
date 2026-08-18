@@ -60,28 +60,138 @@
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte A-01",
       "text": "Gliedern Sie Ihren Lehrvertrag: Geben Sie jedem Abschnitt einen eigenen Titel. Nutzen Sie die Tabelle.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die typischen Abschnitte des Formulars",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Vier bis sechs Abschnitte mit eigenen Titeln. Die Titel stammen von der lernenden Person, nicht aus dem Formular.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Typische Abschnitte",
+            "text": "Die Personen. Beruf und Dauer. Lohn, Ferien und Arbeitszeit. Rechte und Pflichten.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Verweise",
+            "text": "Manche Felder zeigen auf einen anderen Text, etwa ein Reglement. Ein Verweis ist ein eigener Punkt, kein Abschnitt.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Massstab",
+            "text": "Der Titel sagt, was der Abschnitt regelt. «Geld und Zeit» trägt, «Punkt 3» trägt nicht."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Das Formular Wort für Wort abschreiben, statt zu bündeln."
+          }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte A-02",
       "text": "Ordnen Sie fünf Vertragspunkte zu: Standard für alle Lehrverhältnisse oder speziell für Ihren Betrieb? Füllen Sie die Tabelle aus.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Was aus dem Gesetz kommt, was der Betrieb setzt",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Fünf Punkte zugeordnet, die Zuordnung stimmt. Beide Arten stehen im gleichen Formular.",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Standard für alle",
+            "text": "Gilt für alle Lehrverhältnisse in der Schweiz und kommt aus dem Gesetz. Beispiele: die Probezeit, das Recht auf Ausbildung im Betrieb.",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Speziell für Betrieb",
+            "text": "Gilt nur für diesen Betrieb. Beispiele: der Lohn, die Arbeitszeiten, besondere Abmachungen.",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Massstab",
+            "text": "Die Begründung zählt, nicht das Etikett: Woran ist die Art erkennbar?"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "«Steht im Vertrag» als Begründung. Beide Arten stehen im Vertrag."
+          }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
       "knoten_ref": "Dossier | Info-Karte A-03",
       "text": "Markieren Sie drei Punkte, die für Sie jetzt am wichtigsten sind. Begründen Sie kurz: Warum diese?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Filtern nach dem, was jetzt zählt",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Drei Punkte, jeder mit einer kurzen Begründung. Das Kriterium ist die zeitliche Nähe.",
+            "quelle": "Info-Karte A-03"
+          },
+          {
+            "label": "Naheliegend",
+            "text": "Lohn, Arbeitszeit und Ferien betreffen die lernende Person schon in diesem Monat.",
+            "quelle": "Info-Karte A-03"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Die Probezeit, wenn sie gerade läuft. Oder ein offener Punkt aus dem eigenen Betrieb."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Drei Punkte ohne Begründung. Filtern heisst auswählen und sagen, warum.",
+            "quelle": "Info-Karte A-03"
+          },
+          {
+            "label": "Massstab",
+            "text": "Die Auswahl darf abweichen. Erkennbar sein muss ein Kriterium."
+          }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
       "knoten_ref": "Dossier | Info-Karte A-03",
       "text": "Ein Feld bleibt unklar? Formulieren Sie dazu eine kurze, klare Frage an Ihre/n Berufsbildner/in. Ist für Sie alles klar? Dann überlegen Sie: Bei welchem Feld könnten andere Lernende Fragen haben? Formulieren Sie eine Beispielfrage.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Eine Frage, die das Feld nennt",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Eine kurze Frage. Sie nennt das Feld und sagt, was unklar ist.",
+            "quelle": "Info-Karte A-03"
+          },
+          {
+            "label": "Beispiel",
+            "text": "«Im Vertrag steht ein Verweis auf ein Reglement. Welches Reglement ist gemeint? Wo finde ich es?»"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Die Beispielfrage für andere Lernende, wenn für die eigene Person alles klar ist. Das verlangt die Leitfrage ausdrücklich."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "«Ich verstehe den Vertrag nicht.» Ohne Feld kann niemand antworten."
+          },
+          {
+            "label": "Massstab",
+            "text": "Der Trade-off bleibt offen: Vieles lässt sich mit dem Dossier selbst klären, manches ist besser gefragt. Bewertet wird die Begründung."
+          }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Mein Lehrvertrag",
@@ -158,6 +268,76 @@
       "struktur": [
         "Tabelle: Abschnitt – Standard/speziell – wichtig für mich",
         "Pro Zeile ein Abschnitt"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn eine eigene Übersicht steht. Beispiel auf Stufe 3–4: jeder Abschnitt hat einen eigenen Titel, die Zuordnung Standard/speziell stimmt, drei Punkte sind begründet. Die Beispielwerte stammen aus einem fiktiven Vertrag — die Verträge der Lernenden sehen anders aus. Bewertet wird die Gliederung, nicht der Wert.",
+      "abschnitte": [
+        {
+          "titel": "Meine Abschnitte — gegliedert und zugeordnet",
+          "zeilen": [
+            {
+              "label": "Personen",
+              "text": "Namen und Adressen: ich, der Betrieb, meine Eltern. Standard für alle.",
+              "quelle": "Info-Karte A-01"
+            },
+            {
+              "label": "Beruf und Dauer",
+              "text": "Malerpraktiker/in EBA, zwei Jahre. Standard für alle."
+            },
+            {
+              "label": "Lohn",
+              "text": "Mein Lohn pro Lehrjahr. Speziell für meinen Betrieb.",
+              "quelle": "Info-Karte A-02"
+            },
+            {
+              "label": "Ferien und Arbeitszeit",
+              "text": "Wie viele Wochen Ferien. Wie viele Stunden pro Woche. Speziell für meinen Betrieb."
+            },
+            {
+              "label": "Rechte und Pflichten",
+              "text": "Der Betrieb bildet mich aus. Ich besuche die Schule. Standard für alle."
+            },
+            {
+              "label": "Verweis",
+              "text": "Ein Feld zeigt auf ein Reglement. Diesen Text lese ich separat.",
+              "quelle": "Info-Karte A-01"
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei wichtigsten Punkte — und warum",
+          "zeilen": [
+            {
+              "label": "Lohn",
+              "text": "Das betrifft mich jeden Monat. Ich will wissen, was ich bekomme.",
+              "quelle": "Info-Karte A-03"
+            },
+            {
+              "label": "Arbeitszeit",
+              "text": "Ich plane meine Woche danach. Darum muss ich die Zeiten kennen."
+            },
+            {
+              "label": "Probezeit",
+              "text": "Sie läuft jetzt gerade. Danach gelten andere Regeln.",
+              "quelle": "Info-Karte A-02"
+            }
+          ]
+        },
+        {
+          "titel": "Meine Frage an die Berufsbildnerin",
+          "zeilen": [
+            {
+              "text": "Guten Tag. Im Vertrag steht ein Verweis auf ein Reglement. Welches Reglement ist gemeint? Wo finde ich es?",
+              "quelle": "Info-Karte A-03"
+            },
+            {
+              "label": "Warum diese Frage trägt",
+              "text": "Sie nennt das Feld. Sie sagt klar, was ich wissen will.",
+              "quelle": "Info-Karte A-03"
+            }
+          ]
+        }
       ]
     }
   },

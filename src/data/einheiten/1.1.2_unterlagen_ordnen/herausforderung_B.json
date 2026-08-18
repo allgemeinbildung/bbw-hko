@@ -58,28 +58,141 @@
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte B-01",
       "text": "Sammeln Sie Ihre Unterlagen. Ordnen Sie jede in die Tabelle ein: Schule, Betrieb oder rechtliche Dokumente.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Woher die Unterlagen kommen",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Alle drei Gruppen kommen vor. Jede Unterlage steht in genau einer Gruppe.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Schule",
+            "text": "Etwa Stundenplan und Aufträge.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Betrieb",
+            "text": "Etwa Bildungsbericht und Arbeitspläne.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Rechtliche Dokumente",
+            "text": "Etwa Lehrvertrag und Zeugnisse. Sie werden oft noch nach der Lehre gebraucht.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Massstab",
+            "text": "Digital und Papier gehören beide in die Tabelle."
+          }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte B-02",
       "text": "Vergleichen Sie die zwei Ablage-Arten aus dem Dossier. Notieren Sie zu jeder einen Vorteil für Sie.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Vorgegebene Struktur oder eigenes System",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Beide Arten benannt, zu jeder ein Vorteil für die eigene Person.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Art 1",
+            "text": "Eine vorgegebene Struktur übernehmen, etwa die Cloud-Ordner der Schule. Vorteil: alle finden sich zurecht.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Art 2",
+            "text": "Ein eigenes System mit eigenen Hauptordnern bauen. Vorteil: es passt genau zur Person.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Massstab",
+            "text": "Gut ist das System, mit dem sich etwas schnell finden lässt. Beides kann richtig sein.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur eine Art beschreiben. Verlangt ist der Vergleich."
+          }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
       "knoten_ref": "Dossier | Info-Karte B-02",
       "text": "Legen Sie Ihre Struktur fest: Wählen Sie Ihre Hauptordner und benennen Sie sie. Begründen Sie kurz Ihre Wahl.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die eigene Struktur, begründet",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Hauptordner benannt und die Wahl der Ablage-Art begründet.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Naheliegend",
+            "text": "Drei Hauptordner entlang der drei Gruppen, etwa 01_Schule, 02_Betrieb, 03_Recht.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Die Cloud-Ordner der Schule übernehmen und nur die rechtlichen Dokumente separat halten."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Ordner ohne erkennbare Regel, etwa «Neu», «Neu2», «Rest»."
+          },
+          {
+            "label": "Massstab",
+            "text": "Die Struktur darf abweichen. Sie muss durchgehalten werden.",
+            "quelle": "Info-Karte B-02"
+          }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
       "knoten_ref": "Dossier | Info-Karte B-03",
       "text": "Schreiben Sie zwei Zeilen Ihres Orientierungszettels: Dokument, Ablageort und ein kurzer Hinweis-Satz.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Zwei Zeilen mit brauchbarem Hinweis",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Zwei Zeilen, je mit Dokument, Ablageort und einem kurzen Hinweis-Satz.",
+            "quelle": "Info-Karte B-03"
+          },
+          {
+            "label": "Beispiel",
+            "text": "«Lehrvertrag | Mappe zuhause, erste Seite | Das Original gut aufbewahren.»"
+          },
+          {
+            "label": "Der Hinweis",
+            "text": "Er hilft später beim Suchen. Er wiederholt nicht den Ablageort.",
+            "quelle": "Info-Karte B-03"
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "«Bildungsbericht | Cloud | in der Cloud». Der Hinweis sagt nichts Neues."
+          },
+          {
+            "label": "Massstab",
+            "text": "Verlangt sind nur zwei Zeilen, nicht der ganze Zettel. Der steht im Handlungsprodukt."
+          }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Meine Unterlagen",
@@ -156,6 +269,80 @@
       "struktur": [
         "Tabelle: Dokument – Ablageort – Hinweis",
         "Pro Zeile ein Dokument"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigener Zettel steht. Beispiel auf Stufe 3–4: alle drei Gruppen belegt, acht Dokumente, Ablageort in jeder Zeile, eine einheitliche Namens-Regel. Das Beispiel nutzt Ablage-Art 2 (eigene Hauptordner) — Art 1 mit den Cloud-Ordnern der Schule ist gleich gut, wenn die Regel durchgehalten wird.",
+      "abschnitte": [
+        {
+          "titel": "Gruppe 1: Schule",
+          "zeilen": [
+            {
+              "label": "Stundenplan",
+              "text": "Cloud, Ordner 01_Schule. Immer zuerst hier nachschauen.",
+              "quelle": "Info-Karte B-01"
+            },
+            {
+              "label": "Aufträge ABU",
+              "text": "Cloud, Ordner 01_Schule. Pro Auftrag eine Datei."
+            },
+            {
+              "label": "Notenblatt",
+              "text": "Cloud, Ordner 01_Schule. Nach jeder Prüfung ergänzen."
+            }
+          ]
+        },
+        {
+          "titel": "Gruppe 2: Betrieb",
+          "zeilen": [
+            {
+              "label": "Bildungsbericht",
+              "text": "Cloud, Ordner 02_Betrieb. Zweimal pro Jahr, mit Unterschrift.",
+              "quelle": "Info-Karte B-01"
+            },
+            {
+              "label": "Arbeitspläne",
+              "text": "Cloud, Ordner 02_Betrieb. Nur den aktuellen Monat behalten."
+            },
+            {
+              "label": "Ausbildungsplan",
+              "text": "Cloud, Ordner 02_Betrieb. Zeigt, was ich im Betrieb lerne."
+            }
+          ]
+        },
+        {
+          "titel": "Gruppe 3: rechtliche Dokumente",
+          "zeilen": [
+            {
+              "label": "Lehrvertrag",
+              "text": "Mappe zuhause, erste Seite. Das Original gut aufbewahren.",
+              "quelle": "Info-Karte B-01"
+            },
+            {
+              "label": "Zeugnisse",
+              "text": "Mappe zuhause. Ich brauche sie auch nach der Lehre.",
+              "quelle": "Info-Karte B-01"
+            }
+          ]
+        },
+        {
+          "titel": "Meine Namens-Regel",
+          "zeilen": [
+            {
+              "label": "Die Regel",
+              "text": "Datum zuerst, dann ein klarer Name.",
+              "quelle": "Info-Karte B-02"
+            },
+            {
+              "label": "Beispiel",
+              "text": "2026-03-04_Bildungsbericht.pdf"
+            },
+            {
+              "label": "Warum",
+              "text": "So liegen die Dateien nach Datum geordnet. Ich finde sie schnell."
+            }
+          ]
+        }
       ]
     }
   },

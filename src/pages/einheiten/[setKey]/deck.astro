@@ -1,5 +1,5 @@
 ---
-import { loadEinheit, einheitById } from '../../../lib/einheiten'
+import { loadEinheit, einheitById, isEntwurf } from '../../../lib/einheiten'
 import { guestGateHtml } from '../../../lib/einheiten/guest-gate'
 import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../../lib/einheiten/deck-builder'
 
@@ -28,10 +28,17 @@ if (gateProfile?.role === 'gast') {
   })
 }
 
+// Entwurf-Einheiten sind nur für KT1 sichtbar. Die Detailseite leitet lp/gast bereits
+// um — diese Unterroute wird aber direkt per URL erreicht und muss dieselbe Schranke
+// selbst ziehen, sonst liesse sich ein unveröffentlichtes Deck am Katalog vorbei öffnen.
+if (isEntwurf(meta) && gateProfile?.role !== 'kt1') {
+  return Astro.redirect('/einheiten')
+}
+
 const src = deckSourceFromFullSet(fullSet)
 if (!src) {
   return new Response(
-    'Für diese Einheit gibt es noch kein Unterrichtsdeck (aktuell nur EFZ-Einheiten).',
+    'Für diese Einheit gibt es noch kein Unterrichtsdeck — es fehlen Bausteine (Prinzip, KN, Begleiter oder Herausforderungen).',
     { status: 404 }
   )
 }

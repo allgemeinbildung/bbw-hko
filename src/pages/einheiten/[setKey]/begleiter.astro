@@ -1,6 +1,6 @@
 ---
 import { Marked } from 'marked'
-import { loadEinheit, einheitById } from '../../../lib/einheiten'
+import { loadEinheit, einheitById, isEntwurf } from '../../../lib/einheiten'
 import { guestGateHtml } from '../../../lib/einheiten/guest-gate'
 import cssRaw from '../../../styles/einheiten-begleiter.css?raw'
 
@@ -28,6 +28,12 @@ if (gateProfile?.role === 'gast') {
   })
 }
 
+// Entwurf-Einheiten sind nur für KT1 sichtbar — dieselbe Schranke wie in deck.astro.
+// Die Detailseite leitet lp/gast um, diese Unterroute wird aber direkt per URL erreicht.
+if (isEntwurf(meta) && gateProfile?.role !== 'kt1') {
+  return Astro.redirect('/einheiten')
+}
+
 const CALLOUT_LABELS: Record<string, string> = {
   lernziel: 'Lernziel',
   hinweis: 'Hinweis',
@@ -42,6 +48,8 @@ const CALLOUT_LABELS: Record<string, string> = {
   troubleshooting: 'Wenn es stockt',
   tafelbild: 'Tafelbild',
   ki_einsatz: 'KI-Einsatz',
+  // C10 — aus `leitfragen[].loesung` beim Laden eingespiegelt, nicht in der .md-Datei
+  loesung: 'Lösung der Leitfrage',
 }
 
 function parseFrontmatter(raw: string): { meta: Record<string, string>; body: string } {

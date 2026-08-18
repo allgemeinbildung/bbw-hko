@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Generates the teacher slide deck for one Einheit (or all EFZ Einheiten) from its
+// Generates the teacher slide deck for one Einheit (or all Einheiten) from its
 // JSON files + begleiter.md. Fully derived — no per-deck handwork.
 //
 //   node scripts/build-deck.mjs 1.1.1_rechte_verstehen_nutzen
@@ -49,6 +49,8 @@ function loadUnit(slug) {
     hf_A: maybeJson(join(dir, 'herausforderung_A.json')),
     hf_B: maybeJson(join(dir, 'herausforderung_B.json')),
     hf_C: maybeJson(join(dir, 'herausforderung_C.json')),
+    // EBA-only — ersetzt dort das fehlende Lehrmittel und speist die Wissens-Folien.
+    dossier: maybeJson(join(dir, 'dossier.json')),
     begleiter: raw ? { raw } : null,
   }
 }
@@ -75,9 +77,7 @@ for (const slug of targets) {
   const unit = loadUnit(slug)
   const src = deckSourceFromFullSet(unit)
   if (!src) {
-    const lg = unit.set?.lehrgang
-    const why = lg && !String(lg).startsWith('EFZ') ? `${lg} — EBA folgt separat` : `unvollständig: ${missing(unit).join(', ')}`
-    console.log(`  skip ${slug}  (${why})`)
+    console.log(`  skip ${slug}  (unvollständig: ${missing(unit).join(', ')})`)
     continue
   }
   const assets = { logoSrc: LOGO_DATA_URL, lionSrc: LION_DATA_URL }

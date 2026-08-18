@@ -60,28 +60,141 @@
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte B-01",
       "text": "Erstellen Sie eine Fakten-Tabelle mit zwei Spalten (Fakten / Gefühle). Ordnen Sie Ihren Fall: Was ist passiert? Seit wann? Was war abgemacht?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Fakten und Gefühle sauber getrennt",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Zwei Spalten, beide gefüllt. Die Fakten beantworten: Was ist passiert? Seit wann? Was war abgemacht?",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Fakt",
+            "text": "Was wirklich passiert ist. «Seit drei Wochen mache ich fast nur Abwasch.»",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Gefühl",
+            "text": "Die eigene Reaktion darauf. «Ich fühle mich ungerecht behandelt.»",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Massstab",
+            "text": "Gefühle dürfen in der Tabelle stehen. In die Nachricht kommen zuerst die Fakten.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Eine Wertung als Fakt notieren, etwa «Der Betrieb nutzt mich aus»."
+          }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte B-02",
       "text": "Suchen Sie in Ihrer Vertragsübersicht und Ihren Unterlagen: Welche Stelle passt zu Ihrem Fall? Notieren Sie den Fundort.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die passende Stelle in den eigenen Unterlagen",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Eine benannte Stelle plus Fundort. Zuerst wird in den eigenen Unterlagen gesucht.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Passende Stelle",
+            "text": "Der Lehrvertrag regelt Lohn, Arbeitszeit und Ausbildung. Der Betrieb muss im Beruf ausbilden.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Zweite Quelle",
+            "text": "Der Bildungsplan sagt, was in der Lehre gelernt werden soll.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Fundort",
+            "text": "Etwa: Lehrvertrag, Abschnitt Rechte und Pflichten. Darauf lässt sich im Gespräch zeigen.",
+            "quelle": "Info-Karte B-02"
+          },
+          {
+            "label": "Massstab",
+            "text": "Ohne Fundort bleibt die Aussage eine Behauptung."
+          }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
       "knoten_ref": "Dossier | Info-Karte B-03",
       "text": "Vergleichen Sie die zwei Wege: selbst ansprechen oder Kontaktstelle aufsuchen. Wählen Sie einen Weg und begründen Sie kurz.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die begründete Wahl zwischen zwei Wegen",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Beide Wege benannt, einer gewählt, die Wahl mit den eigenen Fakten begründet.",
+            "quelle": "Info-Karte B-03"
+          },
+          {
+            "label": "Weg 1",
+            "text": "Selbst ansprechen: das ruhige Gespräch mit der Berufsbildnerin oder dem Berufsbildner. Oft der beste erste Schritt.",
+            "quelle": "Info-Karte B-03"
+          },
+          {
+            "label": "Weg 2",
+            "text": "Hilfe holen: die Lehrperson an der Schule, danach das Berufsbildungsamt. Es vermittelt bei Konflikten.",
+            "quelle": "Info-Karte B-03"
+          },
+          {
+            "label": "Beide tragfähig",
+            "text": "Der Trade-off hat keine Pauschalantwort. Bewertet wird die Begründung, nicht die Wahl.",
+            "quelle": "Info-Karte B-03"
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Einen Weg nennen, ohne die eigenen Fakten zu verwenden."
+          }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
       "knoten_ref": "Dossier | Info-Karte B-03",
       "text": "Beginnen Sie Ihre digitale Nachricht: Anrede und zwei Sätze zu den Fakten.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Der Einstieg: Anrede und zwei Fakten",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Anrede plus genau zwei Sätze. Nur Fakten, keine Vorwürfe.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Beispiel",
+            "text": "«Guten Tag. Ich bin in der Lehre im 1. Lehrjahr. Abgemacht war die Ausbildung in der Backstube. Seit drei Wochen mache ich fast nur Abwasch.»"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Eine Anrede mit Namen, wenn die Stelle bekannt ist. Andere Reihenfolge der zwei Fakten."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Ein Vorwurf im ersten Satz. Oder der Wunsch schon hier — er gehört an den Schluss."
+          },
+          {
+            "label": "Massstab",
+            "text": "Verlangt ist nur der Einstieg, nicht die ganze Nachricht. Die steht im Handlungsprodukt."
+          }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Mein Konfliktfall",
@@ -157,6 +270,99 @@
       "struktur": [
         "Wer bin ich – Fakten – was ich mir wünsche",
         "Kurze Sätze, ein Gedanke pro Satz"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigener Entwurf steht. Beispiel auf Stufe 3–4: Fakten und Gefühle getrennt, Fundort genannt, Weg begründet, Nachricht sachlich in sechs Sätzen. Die Wahl von Weg 1 ist nicht die richtige Antwort — Weg 2 trägt mit derselben Begründung gleich weit.",
+      "abschnitte": [
+        {
+          "titel": "Zuerst: Fakten und Gefühle getrennt",
+          "zeilen": [
+            {
+              "label": "Was ist passiert",
+              "text": "Seit drei Wochen mache ich fast nur Abwasch und Reinigung.",
+              "quelle": "Info-Karte B-01"
+            },
+            {
+              "label": "Seit wann",
+              "text": "Seit dem 6. Oktober. Das sind drei Wochen."
+            },
+            {
+              "label": "Was war abgemacht",
+              "text": "Ich lerne den Beruf. Dazu gehört die Arbeit in der Backstube."
+            },
+            {
+              "label": "Mein Gefühl",
+              "text": "Ich bin enttäuscht. Das gehört nicht in die Nachricht.",
+              "quelle": "Info-Karte B-01"
+            }
+          ]
+        },
+        {
+          "titel": "Dann: was gilt — und wo es steht",
+          "zeilen": [
+            {
+              "text": "Meine Vertrags-Übersicht zeigt den Abschnitt Rechte und Pflichten.",
+              "quelle": "Info-Karte B-02"
+            },
+            {
+              "text": "Dort steht: Der Betrieb bildet mich im Beruf aus.",
+              "quelle": "Info-Karte B-02"
+            },
+            {
+              "label": "Fundort",
+              "text": "Lehrvertrag, Abschnitt Rechte und Pflichten. Darauf kann ich zeigen."
+            }
+          ]
+        },
+        {
+          "titel": "Mein Weg — und warum",
+          "zeilen": [
+            {
+              "label": "Ich wähle Weg 1",
+              "text": "Ich spreche zuerst selbst mit meiner Berufsbildnerin.",
+              "quelle": "Info-Karte B-03"
+            },
+            {
+              "label": "Begründung",
+              "text": "Wir haben noch nie darüber geredet. Ein ruhiges Gespräch ist der erste Schritt."
+            },
+            {
+              "label": "Wenn das nicht hilft",
+              "text": "Dann frage ich meine Lehrperson. Danach das Berufsbildungsamt.",
+              "quelle": "Info-Karte B-03"
+            }
+          ]
+        },
+        {
+          "titel": "Meine Nachricht — sechs Sätze",
+          "zeilen": [
+            {
+              "text": "Guten Tag. Ich bin in der Lehre im 1. Lehrjahr."
+            },
+            {
+              "text": "Abgemacht war die Ausbildung in der Backstube."
+            },
+            {
+              "text": "Seit drei Wochen mache ich fast nur Abwasch und Reinigung."
+            },
+            {
+              "text": "Im Lehrvertrag steht: Der Betrieb bildet mich im Beruf aus.",
+              "quelle": "Info-Karte B-02"
+            },
+            {
+              "text": "Mein Wunsch ist: Ich möchte wieder regelmässig in der Backstube mitarbeiten."
+            },
+            {
+              "text": "Können wir das diese Woche kurz besprechen? Freundliche Grüsse"
+            },
+            {
+              "label": "Warum das trägt",
+              "text": "Nur Fakten, keine Vorwürfe. Am Schluss steht ein klarer Wunsch.",
+              "quelle": "Info-Karte B-01"
+            }
+          ]
+        }
       ]
     }
   },

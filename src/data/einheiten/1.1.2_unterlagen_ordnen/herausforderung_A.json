@@ -58,28 +58,139 @@
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte A-01",
       "text": "Sehen Sie die Dokumente der Schule durch. Ordnen Sie jedes einer Kategorie zu: Vorgaben, Anleitungen oder Kommunikation. Nutzen Sie die Tabelle.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die drei Kategorien und was hineingehört",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Jedes Dokument in genau einer Kategorie. Alle drei Kategorien kommen vor.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Vorgaben",
+            "text": "Was eingehalten werden muss, etwa Regeln und Termine.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Anleitungen",
+            "text": "Was zeigt, wie etwas geht, etwa das Login auf der Lernplattform.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Kommunikation",
+            "text": "Womit andere erreicht werden, etwa E-Mail und Chat.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Massstab",
+            "text": "Grenzfälle sind normal. Es zählt die Begründung: Wozu dient das Dokument?"
+          }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Verstehen",
       "knoten_ref": "Dossier | Info-Karte A-02",
       "text": "Nehmen Sie eine Anleitung. Markieren Sie die zentralen Aussagen mit der Markierhilfe aus dem Dossier.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Was eine zentrale Aussage ausmacht",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Höchstens drei Markierungen pro Seite. Markiert sind Pflichten und Fristen.",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Zentrale Aussage",
+            "text": "Die Stelle sagt: Was muss ich tun? Bis wann?",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Signalwörter",
+            "text": "«muss», «bis», «wichtig». Sie führen meist zur zentralen Aussage.",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Massstab",
+            "text": "Die Markierhilfe ist ein Angebot, keine Pflicht. Ein eigener Weg zählt, wenn das Ergebnis stimmt.",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Halbe Seiten markieren. Dann ist nichts mehr hervorgehoben."
+          }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Anwenden",
       "knoten_ref": "Dossier | Info-Karte A-02",
       "text": "Wählen Sie drei Dinge, die Sie diese Woche einrichten. Begründen Sie kurz: Warum diese zuerst?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Reihenfolge nach Abhängigkeit",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Drei Dinge, jedes mit einer kurzen Begründung. Das Kriterium ist die Reihenfolge."
+          },
+          {
+            "label": "Naheliegend",
+            "text": "Zuerst die Zugänge testen: ohne Login geht nichts. Dann Ordner anlegen. Dann Termine eintragen."
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Eine andere Reihenfolge, wenn die Abhängigkeit benannt ist."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Drei Dinge ohne Begründung. Oder Dinge, die diese Woche nicht zu schaffen sind."
+          },
+          {
+            "label": "Massstab",
+            "text": "Die Auswahl darf abweichen. Erkennbar sein muss, warum diese zuerst."
+          }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Entscheiden",
       "knoten_ref": "Dossier | Info-Karte A-03",
       "text": "Füllen Sie eine Zeile Ihrer Checkliste vollständig aus: Kategorie, Dokument, Ablageort und ein Satz: Wofür brauche ich es?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Eine vollständige Zeile der Checkliste",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Alle vier Felder gefüllt: Kategorie, Dokument, Ablageort, Wofür.",
+            "quelle": "Info-Karte A-03"
+          },
+          {
+            "label": "Beispiel",
+            "text": "«Anleitungen | Login Lernplattform | Cloud, Ordner Anleitungen | Damit ich mich anmelden kann.»"
+          },
+          {
+            "label": "Ablageort",
+            "text": "Er sagt, wo sich das Dokument wiederfinden lässt. Ein Satz pro Feld reicht.",
+            "quelle": "Info-Karte A-03"
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "«Auf dem Computer» als Ablageort. Damit lässt sich nichts wiederfinden."
+          },
+          {
+            "label": "Massstab",
+            "text": "Der Test der Info-Karte: Ist das Dokument in einer Minute auffindbar?",
+            "quelle": "Info-Karte A-03"
+          }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Mein digitaler Arbeitsplatz",
@@ -157,6 +268,83 @@
       "struktur": [
         "Tabelle: Kategorie – Dokument – Ablageort – Wofür",
         "Pro Zeile ein Dokument"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn eine eigene Checkliste steht. Beispiel auf Stufe 3–4: alle drei Kategorien belegt, neun Dokumente erfasst, Ablageort in jeder Zeile, Spalte «Wofür» in einem Satz. Die Dokumentnamen sind Beispiele — jede Schule schickt andere. Bewertet wird die Zuordnung, nicht der Name.",
+      "abschnitte": [
+        {
+          "titel": "Kategorie 1: Vorgaben",
+          "zeilen": [
+            {
+              "label": "Schulordnung",
+              "text": "Lernplattform, Ordner Info. Regeln, die ich einhalten muss.",
+              "quelle": "Info-Karte A-01"
+            },
+            {
+              "label": "Regeln bei Krankheit",
+              "text": "Lernplattform, Ordner Info. Was ich tun muss, wenn ich krank bin."
+            },
+            {
+              "label": "Termine und Ferienplan",
+              "text": "Kalender. Wann ich frei habe und wann Prüfungen sind."
+            }
+          ]
+        },
+        {
+          "titel": "Kategorie 2: Anleitungen",
+          "zeilen": [
+            {
+              "label": "Login Lernplattform",
+              "text": "Cloud, Ordner Anleitungen. Wie ich mich anmelde.",
+              "quelle": "Info-Karte A-01"
+            },
+            {
+              "label": "Anleitung Cloud-Ablage",
+              "text": "Cloud, Ordner Anleitungen. Wie ich Dateien ablege."
+            },
+            {
+              "label": "Anleitung Schul-E-Mail",
+              "text": "Cloud, Ordner Anleitungen. Wie ich E-Mails schreibe und finde."
+            }
+          ]
+        },
+        {
+          "titel": "Kategorie 3: Kommunikation",
+          "zeilen": [
+            {
+              "label": "Klassen-Chat",
+              "text": "Handy, App. Kurze Fragen an die Klasse.",
+              "quelle": "Info-Karte A-01"
+            },
+            {
+              "label": "Schul-E-Mail",
+              "text": "Cloud, Ordner Info. Offizielle Fragen und Abgaben."
+            },
+            {
+              "label": "Kontaktliste",
+              "text": "Cloud, Ordner Info. Wer hilft mir bei welchem Problem."
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei ersten Schritte — und warum",
+          "zeilen": [
+            {
+              "label": "Zugänge testen",
+              "text": "Ohne Login geht nichts. Das mache ich zuerst.",
+              "quelle": "Info-Karte A-03"
+            },
+            {
+              "label": "Ordner anlegen",
+              "text": "Dann habe ich einen Platz für alles Neue."
+            },
+            {
+              "label": "Termine eintragen",
+              "text": "So verpasse ich keine Abgabe."
+            }
+          ]
+        }
       ]
     }
   },

@@ -1,0 +1,136 @@
+{
+  "typography": [
+    {
+      "role": "display",
+      "fontFamily": "system-ui",
+      "fontSize": "104px",
+      "fontWeight": "750",
+      "lineHeight": "106.08px",
+      "letterSpacing": "-1.56px",
+      "color": "#10201A",
+      "sampleText": "Rechte verstehen & nutzen"
+    },
+    {
+      "role": "heading",
+      "fontFamily": "system-ui",
+      "fontSize": "17px",
+      "fontWeight": "650",
+      "lineHeight": "22.1px",
+      "letterSpacing": "normal",
+      "color": "#E8F3EC",
+      "sampleText": "Einstieg — Überblick und Durchführungs-Variante offenlegen."
+    }
+  ],
+  "spacing": {
+    "observed": [
+      12,
+      16,
+      28,
+      30
+    ],
+    "baseUnit": 4
+  },
+  "radius": [
+    "999px"
+  ],
+  "shadows": [],
+  "buttons": [
+    {
+      "label": "‹",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#CFE3D6",
+      "padding": "7px 12px",
+      "borderRadius": "999px",
+      "border": "0px none rgb(207, 227, 214)",
+      "boxShadow": "none",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "height": "33px"
+    },
+    {
+      "label": "↑",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#8FD0A6",
+      "padding": "7px 12px",
+      "borderRadius": "999px",
+      "border": "0px none rgb(143, 208, 166)",
+      "boxShadow": "none",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "height": "33px"
+    }
+  ],
+  "cards": [],
+  "nav": {
+    "label": "navigation",
+    "background": "transparent",
+    "backgroundImage": "",
+    "backdropFilter": "",
+    "color": "#E8F3EC",
+    "padding": "16px 20px 10px",
+    "borderRadius": "0px",
+    "border": "",
+    "boxShadow": "none",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "height": "70.0938px"
+  },
+  "chips": [
+    {
+      "label": "Herausforderung A · Rege",
+      "background": "#C0392B",
+      "color": "#FFFFFF",
+      "padding": "10px 20px",
+      "borderRadius": "999px",
+      "border": "0px none rgb(255, 255, 255)",
+      "boxShadow": "none",
+      "fontSize": "26px",
+      "fontWeight": "700",
+      "height": "55px"
+    },
+    {
+      "label": "Herausforderung B · Fall",
+      "background": "#1A5276",
+      "color": "#FFFFFF",
+      "padding": "10px 20px",
+      "borderRadius": "999px",
+      "border": "0px none rgb(255, 255, 255)",
+      "boxShadow": "none",
+      "fontSize": "26px",
+      "fontWeight": "700",
+      "height": "55px"
+    },
+    {
+      "label": "Herausforderung C · Antw",
+      "background": "#1E8449",
+      "color": "#FFFFFF",
+      "padding": "10px 20px",
+      "borderRadius": "999px",
+      "border": "0px none rgb(255, 255, 255)",
+      "boxShadow": "none",
+      "fontSize": "26px",
+      "fontWeight": "700",
+      "height": "55px"
+    },
+    {
+      "label": "Austausch & Transfer",
+      "background": "#E8F3EC",
+      "color": "#094D28",
+      "padding": "10px 20px",
+      "borderRadius": "999px",
+      "border": "0px none rgb(9, 77, 40)",
+      "boxShadow": "none",
+      "fontSize": "26px",
+      "fontWeight": "700",
+      "height": "55px"
+    }
+  ],
+  "statCells": [],
+  "tabs": [],
+  "backgrounds": [],
+  "glass": []
+}

@@ -584,6 +584,7 @@ body {
 .doc .callout--troubleshooting    { --cl-bg: var(--c-trouble-bg);   --cl-bd: var(--c-trouble-bd); }
 .doc .callout--tafelbild          { --cl-bg: var(--c-tafel-bg);     --cl-bd: var(--c-tafel-bd); }
 .doc .callout--ki_einsatz         { --cl-bg: var(--c-ki-bg);        --cl-bd: var(--c-ki-bd); }
+.doc .callout--loesung            { --cl-bg: var(--c-erwartung-bg); --cl-bd: var(--c-erwartung-bd); }
 
 /* Title-page block at top */
 .doc__title-block {

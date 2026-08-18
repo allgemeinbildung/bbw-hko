@@ -6,7 +6,10 @@
 // NOT used for routing — 1.3.1_konsum_verantworten has no H3 structure at all, so
 // anything keyed to H3 would silently produce empty notes for that unit.
 //
-// Scope: EFZ (3er-Set). EBA has its own logic and is handled separately.
+// Scope: EFZ (3er-Set) und EBA (2er-Set) aus derselben Quelle. Der EBA-Begleiter behält
+// die EFZ-Sektionsnummern (0-4, 6, 7, 8 — Sektion 5 fehlt), deshalb trägt dieselbe
+// Notizen-Zuordnung beide Lehrgänge. EBA-spezifisch ist nur das `dossier.json`: es
+// ersetzt dort das fehlende Lehrmittel und speist die Wissens-Anker-Unterfolien.
 
 /* ------------------------------------------------------------------ */
 /* begleiter.md parsing                                                */
@@ -43,6 +46,15 @@ export function parseBegleiterSections(raw: string): Section[] {
     if (h2) {
       cur = { n: Number(h2[1]), heading: stripInline(h2[2]), callouts: [], tables: [] }
       sections.push(cur)
+      continue
+    }
+    // Ein UNNUMMERIERTES H2 beendet die laufende Sektion, statt sie fortzusetzen.
+    // Die EBA-Begleiter hängen hinter Sektion 8 noch «## Sektion „Wissens-Dossier (A2)"»
+    // und «## Sektion „Von der Lehrperson bereitzustellen"» an; ohne diesen Schnitt
+    // landeten deren Callouts (z. B. die kantonale Kontaktstelle) in den
+    // Referentennotizen des Kompetenznachweises.
+    if (/^##\s+\S/.test(line)) {
+      cur = null
       continue
     }
     if (!cur) continue
@@ -194,6 +206,8 @@ export type EinheitSource = {
   kn: any
   herausforderungen: any[] // ordered A, B, C
   begleiter: string
+  /** EBA only — `dossier.json` ersetzt dort das fehlende Lehrmittel. Fehlt bei EFZ. */
+  dossier?: any
 }
 
 /* ------------------------------------------------------------------ */
@@ -241,22 +255,91 @@ function darken(hex: string, f = 0.74): string {
   return '#' + ch.map((c) => c.toString(16).padStart(2, '0')).join('')
 }
 
-/** Unique Kapitel references from a Herausforderung's Leitfragen, for the header. */
-function kapitelOf(hf: any): string {
-  const seen: string[] = []
+/** Unique source references from a Herausforderung's Leitfragen, for the header.
+ *  Zwei Dialekte: EFZ verweist ins Lehrmittel ("Kap. 1.4 | S. 31-34"), EBA hat kein
+ *  Lehrmittel und verweist ins eigene Dossier ("Dossier | Info-Karte A-01"). Ohne den
+ *  zweiten Zweig bliebe die Kopfzeile der EBA-Leitfragen-Folie leer. */
+function quellenOf(hf: any): string {
+  const kap: string[] = []
+  const karten: string[] = []
   for (const lf of hf.leitfragen ?? []) {
+    const ref = String(lf.knoten_ref ?? '')
     // matchAll, nicht exec: ein knoten_ref kann mehrere Quellen tragen
     // ("Kap. 19.2 | S. 426-428 plus Kap. 18.1 | S. 412") — exec haette nur die erste gesehen.
-    for (const m of String(lf.knoten_ref ?? '').matchAll(/Kap\.\s*([\d.]+)/g))
-      if (!seen.includes(m[1])) seen.push(m[1])
+    for (const m of ref.matchAll(/Kap\.\s*([\d.]+)/g)) if (!kap.includes(m[1])) kap.push(m[1])
+    for (const m of ref.matchAll(/Info-Karte\s*([A-Z]-\d+)/gi)) if (!karten.includes(m[1])) karten.push(m[1])
   }
-  seen.sort((a, b) => parseFloat(a) - parseFloat(b))
-  return seen.length ? 'Kap. ' + seen.join(' · ') : ''
+  kap.sort((a, b) => parseFloat(a) - parseFloat(b))
+  if (kap.length) return 'Kap. ' + kap.join(' · ')
+  if (karten.length) return 'Info-Karte ' + karten.join(' · ')
+  return ''
 }
+
+/** Redaktionelle `_kommentar`-Schlüssel gehören nicht auf die Folie.
+ *  `prinzip.aspekte` führt sie in den EBA-Sets — ungefiltert erschiene ein 266 Zeichen
+ *  langer Fliesstext als Chip neben den zwei echten Aspekten. */
+function ohneKommentare<T>(obj: Record<string, T> | null | undefined): [string, T][] {
+  return Object.entries(obj ?? {}).filter(([k]) => !k.startsWith('_'))
+}
+
+/** «allen drei» trägt bei zwei Herausforderungen nicht — EBA-Sets haben nur A und B. */
+const alleN = (n: number) => (n === 2 ? 'beiden' : `allen ${zahl(n)}`)
+const IhreN = (n: number) => (n === 2 ? 'Ihre beiden' : `Ihre ${zahl(n)}`)
 
 function selbstcheckOf(hf: any): string[] {
   const row = (hf.bewertungsraster ?? []).find((r: any) => /handlungsprodukt/i.test(r.produkt ?? ''))
   return row?.vollstaendig_wenn ?? []
+}
+
+/* ---- Dossier (EBA) ------------------------------------------------ */
+
+/** «Info-Karte A-01» / «nugget_A_01» → «A-01». Die beiden Seiten des Joins schreiben
+ *  denselben Code verschieden; normalisiert wird er vergleichbar. */
+function nuggetCode(s: unknown): string {
+  const m = /([A-Z])[-_ ]?(\d+)/i.exec(String(s ?? ''))
+  return m ? `${m[1].toUpperCase()}-${m[2].padStart(2, '0')}` : ''
+}
+
+/** Die Info-Karten des Dossiers, die zu genau dieser Herausforderung gehören.
+ *  Primär über `quellen_anker[].nugget_ref` (die redaktionelle Zuordnung), Fallback
+ *  über `nuggets[].tag` — sonst verschwände die Folie, wenn ein Set nur den Tag pflegt. */
+function nuggetsFor(dossier: any, hf: any): any[] {
+  const alle: any[] = dossier?.nuggets ?? []
+  if (!alle.length) return []
+  const wanted = (hf.quellen_anker ?? []).map((q: any) => nuggetCode(q.nugget_ref)).filter(Boolean)
+  const byAnker = wanted
+    .map((c: string) => alle.find((n) => nuggetCode(n.id) === c))
+    .filter(Boolean)
+  if (byAnker.length) return byAnker
+  return alle.filter((n) => String(n.tag ?? '').toUpperCase() === String(hf.buchstabe ?? '').toUpperCase())
+}
+
+/** Leitfragen-Nummern, für die eine Info-Karte die Grundlage liefert. */
+function lfHinweis(dossier: any, hf: any, nug: any): string {
+  const anker = (hf.quellen_anker ?? []).find((q: any) => nuggetCode(q.nugget_ref) === nuggetCode(nug.id))
+  const lfs: number[] = anker?.fuer_leitfrage ?? nug.fuer_leitfrage ?? []
+  return lfs.length ? `für LF ${lfs.join(', ')}` : ''
+}
+
+/** A2-Glossarbegriffe der übergebenen Info-Karten, dedupliziert, in Reihenfolge. */
+function glossarFor(dossier: any, nuggets: any[]): string[] {
+  const eintraege: any[] = dossier?.glossar ?? []
+  const out: string[] = []
+  for (const n of nuggets) {
+    for (const ref of n.glossar_refs ?? []) {
+      const g = eintraege.find((e) => e.id === ref)
+      const wort = g?.begriff ?? ''
+      if (wort && !out.includes(wort)) out.push(wort)
+    }
+  }
+  return out
+}
+
+/** Sprachmodi-Scaffold des Dossiers für eine Herausforderung (A/B). */
+function scaffoldFor(dossier: any, hf: any): any | undefined {
+  return (dossier?.sprachmodi_scaffolds ?? []).find(
+    (s: any) => String(s.tag ?? '').toUpperCase() === String(hf.buchstabe ?? '').toUpperCase()
+  )
 }
 
 /* ------------------------------------------------------------------ */
@@ -264,24 +347,31 @@ function selbstcheckOf(hf: any): string[] {
 /* ------------------------------------------------------------------ */
 
 export function buildDeck(src: EinheitSource): Deck {
-  const { set, prinzip, kn, herausforderungen: hfs } = src
+  const { set, prinzip, kn, herausforderungen: hfs, dossier } = src
   const secs = parseBegleiterSections(src.begleiter)
   const sec = (n: number) => secs.find((s) => s.n === n)
   const n = hfs.length
   const slides: DeckSlide[] = []
 
   /* ---- 1 Titel ---- */
-  const aspekte = Object.entries(prinzip.aspekte ?? {}).map(([k, v]) => `${k} · ${v}`)
+  // `einheit_titel` fehlt in den EBA-Sets. Deren Dossier führt den Titel aber im Kopf —
+  // und der ist der richtige: `modul_titel` ist bei EBA der Themen-, nicht der
+  // Einheitentitel, beide T1-Einheiten hiessen sonst gleich «Ins Berufsleben einsteigen».
+  const deckTitel =
+    set.einheit_titel || dossier?.kopf?.einheit_titel || set.modul_titel || prinzip.topic_slug || 'Unterrichtsdeck'
+  const aspektePaare = ohneKommentare<string>(prinzip.aspekte)
+  const aspekte = aspektePaare.map(([k, v]) => `${k} · ${v}`)
   slides.push({
     id: 'titel',
     accent: BRAND,
     ctx: `BBW · ABU · Thema ${String(set.thema ?? '').replace(/^T/, '')} · Kompetenz ${prinzip.kompetenz_nr}`,
     src: LEHRGANG_LABEL[set.lehrgang] ?? set.lehrgang,
-    // `einheit_titel` fehlt z. B. in EBA-Sets — lieber der Lebensbezugs-Satz als "undefined".
-    headline: set.einheit_titel || set.modul_titel || prinzip.topic_slug || 'Unterrichtsdeck',
+    headline: deckTitel,
     hero: true,
-    lead: set.modul_titel,
-    foot: `Lebensbezug ${set.modul} · Aspekte ${Object.keys(prinzip.aspekte ?? {}).join(' · ')}`,
+    // Ohne `einheit_titel` fällt die Headline auf `modul_titel` zurück — dann stünde
+    // derselbe Satz zweimal untereinander.
+    lead: set.modul_titel === deckTitel ? undefined : set.modul_titel,
+    foot: `Lebensbezug ${set.modul} · Aspekte ${aspektePaare.map(([k]) => k).join(' · ')}`,
     body: [
       {
         t: 'chips',
@@ -327,7 +417,7 @@ export function buildDeck(src: EinheitSource): Deck {
       },
       { t: 'chips', items: aspekte.map((a) => ({ text: a })) },
     ],
-    notes: notesFrom('Der Massstab der Einheit — ein Satz, drei Bausteine.', [
+    notes: notesFrom(`Der Massstab der Einheit — ein Satz, ${zahl(n)} Bausteine.`, [
       ...pick(sec(1), ['mehrdeutigkeit', 'hinweis']).map(fmtCallout),
     ]),
   })
@@ -398,10 +488,16 @@ export function buildDeck(src: EinheitSource): Deck {
       small: true,
       body: [
         { t: 'prose', text: hf.situation_text },
-        {
-          t: 'nums',
-          items: (hf.zahlen_tabelle ?? []).slice(0, 4).map((z: any) => ({ l: z.label, v: z.wert })),
-        },
+        // EBA-Herausforderungen führen keine Zahlen — ein leerer `nums`-Block
+        // hinterliesse eine leere Kachelzeile zwischen Text und Leitfrage.
+        ...((hf.zahlen_tabelle ?? []).length
+          ? ([
+              {
+                t: 'nums',
+                items: hf.zahlen_tabelle.slice(0, 4).map((z: any) => ({ l: z.label, v: z.wert })),
+              },
+            ] as Block[])
+          : []),
         { t: 'ask', k: 'Leitfrage', text: hf.leitfrage },
       ],
       notes: notesFrom(`Herausforderung ${L} — Einstieg. Details liegen als Unterfolien darunter (↓).`, [
@@ -419,7 +515,7 @@ export function buildDeck(src: EinheitSource): Deck {
       badge: L,
       branchOf: parentId,
       ctx: `Herausforderung ${L} · Leitfragen`,
-      src: kapitelOf(hf),
+      src: quellenOf(hf),
       headline:
         blooms.length > 1
           ? `${Zahl(hf.leitfragen.length)} Leitfragen — von ${blooms[0]} bis ${blooms[blooms.length - 1]}.`
@@ -438,6 +534,62 @@ export function buildDeck(src: EinheitSource): Deck {
         ...pick(s, ['coaching', 'warnung', 'troubleshooting']).map(fmtCallout),
       ]),
     })
+
+    // Wissens-Anker — nur EBA. Dort gibt es kein Lehrmittel: das ganze Fachwissen liegt
+    // im Dossier, und die Leitfragen verweisen mit «Info-Karte A-01» dorthin. Diese Folie
+    // zeigt die zugehörigen Karten im Unterricht, statt sie nur zu zitieren.
+    // Aufklappbar (dieselbe `.reveal`-Mechanik wie Mindmap und Musterlösung), weil drei
+    // A2-Karten am Stück ~1400 Zeichen sind — Karte für Karte lesen ist die EBA-Bewegung.
+    const nuggets = dossier ? nuggetsFor(dossier, hf) : []
+    if (nuggets.length) {
+      const woerter = glossarFor(dossier, nuggets)
+      slides.push({
+        id: `${L.toLowerCase()}-wissen`,
+        accent: pal,
+        badge: L,
+        branchOf: parentId,
+        ctx: `Herausforderung ${L} · Wissen`,
+        src: 'Glossar+ · Info-Karten zu dieser Herausforderung',
+        headline: 'Hier steht, was Sie dafür wissen müssen.',
+        small: true,
+        body: [
+          {
+            t: 'muster',
+            abschnitte: nuggets.map((nug) => ({
+              titel: `Info-Karte ${nuggetCode(nug.id)} — ${nug.titel}`,
+              zeilen: [
+                { text: nug.inhalt, quelle: lfHinweis(dossier, hf, nug) },
+                ...(nug.beispiel ? [{ label: 'Beispiel', text: nug.beispiel }] : []),
+              ],
+            })),
+          },
+          ...(woerter.length
+            ? ([{ t: 'chips', items: woerter.map((w) => ({ text: w })) }] as Block[])
+            : []),
+        ],
+        notes: notesFrom(
+          `Herausforderung ${L} — Wissens-Anker aus dem Dossier. Eine Karte pro Klick.`,
+          [
+            'Die Lernenden haben dieselben Karten im Glossar+ vor sich. Die Folie ersetzt das Lesen nicht — sie gibt der Klasse einen gemeinsamen Takt.',
+            'Die Begriffszeile unten ist der A2-Wortschatz dieser Herausforderung; die Erklärungen stehen im Glossar+.',
+            // `lp_pruefen` markiert Fakten, die regional variieren (z. B. der Name der
+            // kantonalen Stelle) — die einzige Stelle im Dossier, die aktiv Handarbeit verlangt.
+            ...nuggets.flatMap((nug: any) =>
+              (nug.fakten_anker ?? [])
+                .filter((f: any) => f.lp_pruefen)
+                .map((f: any) => `VOR DEM EINSATZ PRÜFEN — ${nuggetCode(nug.id)}\n${f.behauptung}\n(${f.wert})`)
+            ),
+            nuggets.some((nug: any) => nug.recherche?.selbst_pruefen)
+              ? 'SELBST PRÜFEN — die Karten tragen je eine Kontrollaufgabe:\n' +
+                nuggets
+                  .filter((nug: any) => nug.recherche?.selbst_pruefen)
+                  .map((nug: any) => `· ${nuggetCode(nug.id)}: ${nug.recherche.selbst_pruefen}`)
+                  .join('\n')
+              : null,
+          ]
+        ),
+      })
+    }
 
     // Lösung der Leitfragen — eigene Unterfolie, gleiche Aufklapp-Mechanik wie die
     // Musterlösung des Handlungsprodukts: pro Klick eine Leitfrage. Sie entsteht nur,
@@ -528,6 +680,17 @@ export function buildDeck(src: EinheitSource): Deck {
       ],
       notes: notesFrom(`Herausforderung ${L} — Tafelbild und Scaffolds.`, [
         ...pick(s, ['tafelbild', 'differenzieren', 'mehrdeutigkeit', 'ki_einsatz']).map(fmtCallout),
+        // EBA: das Dossier führt pro Herausforderung ein Sprachmodus-Scaffold mit
+        // Schritt-für-Schritt-Anleitung. Es steht im Glossar+, aber die Lehrperson
+        // braucht es genau hier — beim Anmoderieren des Handlungsprodukts.
+        ...(() => {
+          const sc = dossier ? scaffoldFor(dossier, hf) : undefined
+          if (!sc) return []
+          return [
+            `SPRACH-SCAFFOLD ${sc.sm_id} — ${sc.modus_label} (im Glossar+)\n` +
+              (sc.so_gehst_du_vor ?? []).map((x: string) => `· ${x}`).join('\n'),
+          ]
+        })(),
       ]),
     })
 
@@ -563,7 +726,7 @@ export function buildDeck(src: EinheitSource): Deck {
     accent: BRAND,
     ctx: 'Austausch',
     src: 'Arbeitsblatt «Austausch & Transfer», Seite 1',
-    headline: `Was haben Ihre ${zahl(n)} Herausforderungen gemeinsam?`,
+    headline: `Was haben ${IhreN(n)} Herausforderungen gemeinsam?`,
     center: true,
     body: [
       {
@@ -583,6 +746,19 @@ export function buildDeck(src: EinheitSource): Deck {
     ],
     notes: notesFrom(`Austausch — Plenumssynthese.`, [
       ...pick(sec(6), ['coaching', 'warnung', 'hinweis']).map(fmtCallout),
+      // EBA: das Dossier hält den Austausch sprachlich gestützt — ohne Satzanfänge
+      // bleibt eine A2-Klasse in der Synthese stumm.
+      dossier?.transfer_wissensblatt?.austausch_scaffolds
+        ? 'AUSTAUSCH-SCAFFOLD (im Glossar+)\n' +
+          [
+            ...(dossier.transfer_wissensblatt.austausch_scaffolds.so_tauschst_du_aus ?? []).map(
+              (x: string) => `· ${x}`
+            ),
+            ...(dossier.transfer_wissensblatt.austausch_scaffolds.satzanfaenge ?? []).map(
+              (x: string) => `  ${x}`
+            ),
+          ].join('\n')
+        : null,
     ]),
   })
 
@@ -593,7 +769,7 @@ export function buildDeck(src: EinheitSource): Deck {
     accent: BRAND,
     ctx: 'Das Prinzip',
     src: 'Vergleichen Sie mit Ihrem eigenen Satz',
-    headline: `Das Prinzip hinter allen ${zahl(n)} Herausforderungen.`,
+    headline: `Das Prinzip hinter ${alleN(n)} Herausforderungen.`,
     small: true,
     center: true,
     body: [
@@ -602,6 +778,11 @@ export function buildDeck(src: EinheitSource): Deck {
         t: 'cards',
         grid: 2,
         items: [
+          // EBA: derselbe Anker noch einmal auf A2. Der Ankersatz oben ist die
+          // Fachformulierung — diese Karte ist der Satz, den die Klasse mitnimmt.
+          ...(dossier?.transfer_wissensblatt?.prinzip_in_einfach
+            ? [{ k: 'In einfacher Sprache', text: dossier.transfer_wissensblatt.prinzip_in_einfach, tint: true }]
+            : []),
           ...(zirk.r2_voraussicht ? [{ k: 'Kommt wieder', text: zirk.r2_voraussicht }] : []),
           ...(zirk.r3_voraussicht ? [{ k: 'Und später', text: zirk.r3_voraussicht }] : []),
         ],
@@ -613,6 +794,9 @@ export function buildDeck(src: EinheitSource): Deck {
         'Der Ankersatz darf nicht vorgegeben werden — sonst entfällt genau die Abstraktionsleistung, die der Kompetenznachweis prüft.',
         zirk.r1_aktuell || zirk.r2_voraussicht
           ? `ZIRKULARITÄT\n· Jetzt: ${zirk.r1_aktuell ?? '—'}\n· ${zirk.r2_voraussicht ?? ''}\n· ${zirk.r3_voraussicht ?? ''}`
+          : null,
+        dossier?.transfer_wissensblatt?.fachsystematik
+          ? `FACHSYSTEMATIK (Transfer-Wissensblatt im Glossar+)\n${dossier.transfer_wissensblatt.fachsystematik}`
           : null,
       ]
     ),
@@ -753,7 +937,7 @@ export function buildDeck(src: EinheitSource): Deck {
     ]),
   })
 
-  return { title: set.einheit_titel, slides }
+  return { title: deckTitel, slides }
 }
 
 /* ------------------------------------------------------------------ */
@@ -1427,13 +1611,24 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
 /* entry points                                                        */
 /* ------------------------------------------------------------------ */
 
-/** Adapter for the shape `loadEinheit()` returns. Null when the unit is not EFZ/complete. */
+/** Adapter for the shape `loadEinheit()` returns. Null when the unit is incomplete.
+ *
+ *  Kein Lehrgang-Filter mehr: EBA-Sets tragen dieselben Felder wie EFZ-Sets (nur zwei
+ *  statt drei Herausforderungen, ohne Zahlen/Musterlösung) und ihr Begleiter behält die
+ *  EFZ-Sektionsnummern — Sektion 5 fehlt einfach. Was fehlt, lässt `buildDeck` weg;
+ *  was nur EBA hat (das Dossier), kommt hier zusätzlich herein. */
 export function deckSourceFromFullSet(d: any): EinheitSource | null {
   if (!d?.set || !d?.prinzip || !d?.kn || !d?.begleiter?.raw) return null
-  if (!String(d.set.lehrgang ?? '').startsWith('EFZ')) return null // EBA folgt separat
   const hfs = [d.hf_A, d.hf_B, d.hf_C].filter(Boolean)
   if (!hfs.length) return null
-  return { set: d.set, prinzip: d.prinzip, kn: d.kn, herausforderungen: hfs, begleiter: d.begleiter.raw }
+  return {
+    set: d.set,
+    prinzip: d.prinzip,
+    kn: d.kn,
+    herausforderungen: hfs,
+    begleiter: d.begleiter.raw,
+    dossier: d.dossier ?? undefined,
+  }
 }
 
 /** HyperFrames composition — used for authoring and `hyperframes check`. */

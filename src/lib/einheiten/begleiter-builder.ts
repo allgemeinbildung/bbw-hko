@@ -28,6 +28,8 @@ export const CALLOUT_LABELS: Record<string, string> = {
   troubleshooting: 'Wenn es stockt',
   tafelbild: 'Tafelbild',
   ki_einsatz: 'KI-Einsatz',
+  // C10 — aus `leitfragen[].loesung` beim Laden eingespiegelt, nicht in der .md-Datei
+  loesung: 'Lösung der Leitfrage',
 }
 
 export const CALLOUT_COLORS: Record<string, { bg: string; bd: string }> = {
@@ -44,6 +46,8 @@ export const CALLOUT_COLORS: Record<string, { bg: string; bd: string }> = {
   troubleshooting:    { bg: 'FCE9D8', bd: 'C2611A' },
   tafelbild:          { bg: 'E4EDE8', bd: '1E5E45' },
   ki_einsatz:         { bg: 'ECEAFA', bd: '5B3FD6' },
+  // C10 — teilt den Ton des Erwartungshorizonts: beide sagen, was zählt.
+  loesung:            { bg: 'FBE7F1', bd: 'A12061' },
 }
 
 const POINT = (pt: number) => pt * 2

@@ -51,9 +51,10 @@ Im 3er-Set werden nur A/B/C verwendet. Die D/E-Triples aus dem 5er-Set sind unge
 |---|---|---|
 | `nr` | **integer** 1-4 | NICHT String "LF1" |
 | `bloom` | string | `"Verstehen"` / `"Anwenden"` / `"Entscheiden"` / `"Analysieren"` / `"Formulieren"` |
-| `knoten_ref` | string | `"Kap. {X.Y} | S. {NN}"` mit Pipe-Separator |
+| `knoten_ref` | string | `"Dossier | Info-Karte {LETTER}-NN"` mit Pipe-Separator (EBA hat kein Lehrmittel — nie `"Kap. … | S. …"`) |
 | `text` | string | NICHT `frage` |
 | `feld_hoehe_mm` | integer | `15` (konstant) |
+| `loesung` | Object | `{kern, zeilen[{label?, text, quelle?}]}` (C10, additiv) — siehe unten |
 
 K-Stufe-zu-bloom-Mapping:
 - K2 → `"Verstehen"`
@@ -65,6 +66,44 @@ K-Stufe-zu-bloom-Mapping:
 Mindestens eine LF auf K3+/K4 — sonst 5. LF ergaenzen.
 
 **LF4-Scoping (C4):** LF4 trainiert den Output-Sprachmodus (`nrlp.sprachmodus_ids`) als *fokussierte Teil-/Sprachform-Aufgabe* — EIN Baustein, der ins Handlungsprodukt einfliesst — und reproduziert NIE das ganze Handlungsprodukt. Methode passend zum Output-Modus aus `references/sprachfoerderung-methoden.md` waehlen. Beispiele: "Schreibe einen Block deines Spickzettels …", "Schreibe die Spalte «Rechtsfolge» als Wenn-dann-Mustersatz …", "Formuliere drei Ich-Botschaften …". Rezeption (SM3) bleibt bei LF1-3. Siehe Coherence-Check 20.
+
+#### `leitfragen[].loesung` (C10)
+
+Die **Antwort** auf die Leitfrage, formuliert fuer die Lehrperson. Sie speist die Unterfolie `{a|b}-leitfragen-loesung` im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`) — dieselbe Akkordeon-Mechanik wie `handlungsprodukt.musterloesung`, eine Leitfrage pro Klick. **Sie wird nie im Schuelerbogen (`DocS`) gerendert** und darf deshalb den Massstab offen aussprechen.
+
+**Nicht zusaetzlich in `begleiter.md` schreiben.** `loadEinheit` spiegelt die Loesungen beim Laden als `> [!loesung]`-Callouts in den Begleiter (`src/lib/einheiten/begleiter-loesungen.ts`) — pro Herausforderung ein Kapitel «Loesungen der Leitfragen» vor dem Tafelbild. Handgeschriebene Loesungen im Markdown waeren eine zweite Quelle fuer denselben Satz und wuerden irgendwann abweichen.
+
+Abgrenzung zu den Nachbarfeldern — die drei sagen Verschiedenes und duerfen sich nicht doppeln:
+
+| Feld | Antwortet auf |
+|---|---|
+| `leitfragen[].loesung` (C10) | «Was ist auf **diese** Frage eine tragfaehige Antwort?» — fachlicher Massstab pro LF |
+| `handlungsprodukt.musterloesung` (C7) | «Wie sieht das **fertige Produkt** aus?» — ein ausgefuelltes Exemplar |
+| `[!coaching]` / `[!warnung]` im Begleiter | «Wie **begleite** ich die Lernenden dorthin?» — Intervention, nicht Inhalt |
+
+| Feld | Wert |
+|---|---|
+| `kern` | Kurzlabel, **max. ~55 Zeichen** — steht auf dem Aufklapp-Titel hinter `LF {nr} · {bloom} — `. Benennt die Sache, wiederholt nicht die Frage (`"Die drei Kategorien und was hineingehoert"`, nicht `"Antwort auf Leitfrage 1"`). |
+| `zeilen[]` | 3–6 Objekte `{label?, text, quelle?}`. `text` ist Pflicht. |
+| `zeilen[].label` | Optional, **max. ~24 Zeichen** — 190px-Spalte. Benennt die Rolle der Zeile: den Bauteil (`"Fakt"`, `"Weg 1"`, `"Vorgaben"`), die Wertung (`"Erwartet"`, `"Ebenfalls tragfaehig"`, `"Nicht tragfaehig"`) oder die Formregel (`"Massstab"`, `"Haeufiger Fehler"`). |
+| `zeilen[].quelle` | Optional, **max. ~30 Zeichen**, Chip mit `white-space: nowrap`. Bei EBA die Dossier-Fundstelle (`"Info-Karte B-03"`), **nie** ein Lehrmittel-Kapitel. |
+
+**Woher der Inhalt kommt — Datenhebung, nicht Neuerfinden.** Bei EFZ ist die erste Quelle der Lehrmittel-Abschnitt; **bei EBA tritt das Dossier an diese Stelle**, weil es die einzige Wissensquelle ist. Reihenfolge:
+
+1. **Die Info-Karte aus `knoten_ref`** — genau das Nugget, das die Leitfrage beantwortet. `nuggets[].inhalt` liefert die Sachaussagen, `nuggets[].beispiel` die Beispielzeile, `nuggets[].fakten_anker` die belegten Werte. Was in der Karte nicht steht, steht auch nicht in der Loesung. Ein `fakten_anker` mit `lp_pruefen: true` (regional variabel) gehoert **nicht** als feste Aussage in die Loesung.
+2. **`mindmap_aeste`** — die Pflicht-Aeste sind bereits die fachliche Soll-Struktur; eine K2-Leitfrage ist meist deren Ausformulierung.
+3. **`mehrdeutigkeit.hint`** — bei Entscheidungs-Leitfragen liefert der Zielkonflikt die Zeilen `"Erwartet"` / `"Ebenfalls tragfaehig"` / `"Nicht tragfaehig"`.
+4. **`dossier.sprachmodi_scaffolds[]` + `handlungsprodukt.musterloesung`** — bei LF4 ist die Loesung der *eine* Baustein, den LF4 verlangt, nicht das ganze Produkt (C4).
+
+**Invarianten:**
+
+- **Eine Loesung pro Leitfrage**, also 4 pro Herausforderung — dieselbe `nr`-Zuordnung wie `leitfragen[]`. Eine LF ohne `loesung` laesst die Folie unvollstaendig wirken.
+- **3–6 `zeilen`, zusammen max. ~900 Zeichen `text`.** Akkordeon mit einem offenen Abschnitt; mehr passt nicht auf eine Folie (`hyperframes check` meldet sonst `canvas_overflow`). Gemessener EBA-Bestand: 266–482 Zeichen bei 5 Zeilen — die kurzen A2-Saetze lassen viel Rand.
+- **Bloom-treu:** Bei `"Entscheiden"` ist die richtige Antwort nicht *eine* Option, sondern eine **begruendete** Wahl — dort verpflichtend eine Zeile `"Erwartet"` **und** mindestens eine Zeile `"Ebenfalls tragfaehig"` / `"Nicht tragfaehig"` / `"Beide tragfaehig"`. Bei EBA liegt die Decke auf K3, LF3/LF4 tragen die Entscheidung.
+- **Register: LP-Text, nicht A2.** Die Loesung richtet sich an die Lehrperson und steht im neutralen Sachstil **ohne Anrede** — kein «Sie»-Imperativ, keine Possessiva `Ihre/Ihren/Ihrem`. Das Pronomen «sie» in dritter Person ist davon unberuehrt («Sie fuehren meist zur zentralen Aussage» = die Signalwoerter). **Ausnahme:** woertliche Musterformulierungen der Lernenden stehen in «Guillemets» und sind **dort A2-pflichtig** — sie sind das, was eine EBA-Klasse tatsaechlich schreiben koennen muss.
+- **Kein Widerspruch** zu `[!tafelbild]`, `[!warnung]` und `musterloesung` — die Loesung ist deren fachlicher Kern, nicht eine zweite Lehrmeinung.
+- **Kein Skript zum Vorlesen.** Die Zeilen sind der Massstab, an dem die Lehrperson die Antworten misst; Formulierungen der Lernenden duerfen abweichen, solange Quelle und eigene Verdichtung erkennbar sind. Diesen Rahmen setzt das Deck bereits in den Referentennotizen.
+- Prosa-Feld → echte Umlaute Pflicht, kein Eszett (Schweizer ss).
 
 ### `mindmap_zentrum` / `mindmap_aeste`
 
@@ -80,6 +119,29 @@ Pflichtfelder: `format`, `titel`, `format_detail`, `beschreibung`, `schritte`, `
 - `schreib_note`: `"-> wissen/{node_id_primary}"`
 - `abgaben` (Cluster 6, additiv): Array von 1-3 Klartext-Strings, je eine konkrete Abgabe — z.B. `["Kanalbegründung (80–120 Wörter)", "Schreiben im gewählten Kanal (200–250 Wörter)"]`. Speist den "Das lieferst du ab"-Block (DocS-Callout + DOCX). Bei mehrteiligem Produkt jede Teil-Abgabe einzeln auffuehren.
 - `scaffolding` (C6, additiv): Object `{satzanfaenge[], strategien[], struktur[]}` — je >=1 Eintrag, ausgerichtet am HP-Format + Output-Sprachmodus (`sprachmodus_ids`). Speist den Scaffolding-Block der Handlungsprodukt-Anleitung (Seite 6a). Beispiel rechte_C: `satzanfaenge: ["«Sehr geehrte/r …»", "«Gemäss OR Art. … gilt …»"]`, `strategien: ["Erst Stichworte sammeln, dann ausformulieren"]`, `struktur: ["Anlass – Absicht – Begründung – Schluss"]`.
+- `musterloesung` (C7, additiv): Object `{hinweis, abschnitte[]}` — **ein vollstaendig ausgefuelltes Handlungsprodukt auf Stufe 3–4**, nicht eine Vorlage und nicht eine Beschreibung. Speist die Musterloesungs-Folie im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`). Details und Invarianten: siehe unten.
+
+#### `handlungsprodukt.musterloesung` (C7)
+
+| Feld | Wert |
+|---|---|
+| `hinweis` | An die **Lehrperson**: Stufe des Beispiels + was daran exemplarisch ist. Erscheint NUR in den Referentennotizen, nie auf der Folie. Neutraler Sachstil, **nicht** A2-pflichtig. |
+| `abschnitte[]` | 3–5 Objekte `{titel, zeilen[]}`. Die Abschnitte folgen der `scaffolding.struktur` des Produkts. |
+| `abschnitte[].titel` | Kurz, benennt den Bauteil (`"Kategorie 1: Vorgaben"`, `"Meine Nachricht — sechs Sätze"`). |
+| `abschnitte[].zeilen[]` | Objekte `{label?, text, quelle?}`. `text` ist Pflicht. |
+| `zeilen[].label` | Optional, **max. ~24 Zeichen** — steht in einer 190px-Spalte. |
+| `zeilen[].quelle` | Optional, **max. ~30 Zeichen** — Chip mit `white-space: nowrap`. Bei EBA die Dossier-Fundstelle (`"Info-Karte A-01"`), **nie** ein Lehrmittel-Kapitel: EBA hat kein Lehrmittel. |
+
+**Invarianten (zusaetzlich zu den EFZ-Regeln):**
+
+- **`abschnitte[].zeilen[].text` ist SuS-Prosa und faellt unter das A2-Gate** (`a2-language-rules.md`): max. 18 Woerter/Satz (ERR), Ø <= 12, aktiv, ein Gedanke pro Satz, kein Fachbegriff ohne Glossar-Eintrag. `hinweis` ist LP-Text und ausgenommen.
+- **ICH-Form.** Die Musterloesung *ist* das Produkt der lernenden Person, nicht eine Anweisung an sie — also `"Ich ordne meine Unterlagen …"`, nie `"Ordnen Sie …"`. Die Sie-Form bleibt den Auftragsfeldern vorbehalten.
+- **Jede Sachaussage haengt an einer Info-Karte.** `quelle` verweist auf `dossier.nuggets[]`; was im Dossier nicht steht, steht auch nicht in der Musterloesung. Das ist bei EBA schaerfer als bei EFZ, weil das Dossier die einzige Wissensquelle ist.
+- **Tabellen-Produkte** (Checkliste, Uebersicht, Orientierungszettel — bei EBA die Mehrheit): ein `abschnitt` je Tabellen-Gruppe, eine `zeile` je Tabellenzeile, `label` = erste Spalte, `text` = restliche Spalten in ganzen Saetzen. Der letzte Abschnitt haelt die begruendete Auswahl bzw. die selbst gesetzte Regel (das ist der Stufe-4-Anteil).
+- **Werte, die im echten Produkt variieren** (Loehne, Dokumentnamen, Ferienwochen), sind Beispielwerte. Der `hinweis` sagt das explizit und nennt, was stattdessen bewertet wird — sonst korrigiert die Lehrperson gegen eine erfundene Zahl.
+- **Ein Abschnitt darf ~900 Zeichen `text` nicht ueberschreiten.** Das Deck rendert die Abschnitte als Akkordeon (immer nur einer offen); ein einzelner Abschnitt muss auf eine Folie passen. Als Richtwert traegt ein Abschnitt bis ~7 `zeilen`. `hyperframes check` meldet sonst `canvas_overflow`.
+- Kein Widerspruch zum `[!tafelbild]`-Callout in `begleiter.md`.
+- Prosa-Feld → echte Umlaute Pflicht, kein Eszett (Schweizer ss).
 
 ### `reflexion_fragen[]` (3 Items)
 

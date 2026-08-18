@@ -635,9 +635,9 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 | `situation_text` | 4-6 Saetze, Ich-Form (1. Person Singular), mit CHF/Fakten |
 | `zahlen_tabelle` | `[]` oder `[{label, wert}]` |
 | `leitfrage` (singular) | kondensierte Haupt-Frage |
-| `leitfragen[]` | 4 Items, **EBA-Bloom K2/K2/K3/K3** (knoten_ref → „Dossier \| Info-Karte {LETTER}-NN", kein Kapitel/Seite); **jede LF ist eine Taetigkeit mit Material (F3 — gliedern/zuordnen/markieren/Tabelle fuellen), keine Wissenswiedergabe (`WARN_LF_WISSENSABFRAGE`)**; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)** |
+| `leitfragen[]` | 4 Items, **EBA-Bloom K2/K2/K3/K3** (knoten_ref → „Dossier \| Info-Karte {LETTER}-NN", kein Kapitel/Seite); **jede LF ist eine Taetigkeit mit Material (F3 — gliedern/zuordnen/markieren/Tabelle fuellen), keine Wissenswiedergabe (`WARN_LF_WISSENSABFRAGE`)**; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. Je LF eine `loesung` {kern, zeilen[]} — Lehrpersonen-Antwort auf **der Bloom-Stufe der Frage**, aus der Info-Karte des `knoten_ref` gehoben (C10, Check 32) |
 | `mindmap_zentrum` / `mindmap_aeste` | flat top-level; genau 4 Aeste, Ast 4 `optional: true` (radial/Quadrant) |
-| `handlungsprodukt.*` | aus prinzip.herausforderungen[LETTER].handlungsprodukt_typ; inkl. `scaffolding` {satzanfaenge/strategien/struktur} (C6) |
+| `handlungsprodukt.*` | aus prinzip.herausforderungen[LETTER].handlungsprodukt_typ; inkl. `scaffolding` {satzanfaenge/strategien/struktur} (C6) und `musterloesung` {hinweis, abschnitte[]} (C7) |
 | `reflexion_fragen` | Template-Defaults, situationsspezifisch anpassbar |
 | `bewertungsraster` | 4 Eintraege, je mit `vollstaendig_wenn` (2-4 Bullets); keine Transfer-Zeile (C1) |
 | `wochen_plan` | **leer `[]`** (EBA: kein wochen-Fixwert, LP legt Rhythmus fest) |
@@ -661,6 +661,8 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 - Keine Eszett, keine `gruppenpuzzle_fragen` / `vorgespraech_fragen`, kein neu generiertes `emotion_tag`
 - `bewertungsraster.length === 4`, jede Zeile mit 2-4 `vollstaendig_wenn`; keine Transfer-Zeile (Check 19)
 - `handlungsprodukt.scaffolding` mit je **>=2** Eintraegen in satzanfaenge/strategien/struktur (Check 23, EBA verschaerft)
+- `handlungsprodukt.musterloesung` mit 3-5 `abschnitte`, je `{titel, zeilen[]}`; pro Abschnitt max. ~900 Zeichen `text` und als Richtwert <=7 `zeilen` (Check 30). **ICH-Form** (die Musterloesung ist das Produkt der lernenden Person, kein Auftrag an sie), jede Sachaussage per `zeilen[].quelle` an eine Info-Karte des Dossiers gebunden — nie an ein Lehrmittel-Kapitel. `zeilen[].text` faellt unter das A2-Gate, `hinweis` als LP-Text nicht. Beispielwerte, die im echten Produkt variieren (Loehne, Dokumentnamen), im `hinweis` als solche benennen.
+- Jede `leitfragen[]` mit `loesung` (`kern` <=55 Zeichen, 3-6 `zeilen`, zusammen ~900 Zeichen); Sachaussagen durch die Info-Karte des `knoten_ref` gedeckt; Entscheiden-LF mit `"Erwartet"` **und** Alternativ-/Ausschluss-Zeile (Check 32). **LP-Register ohne Anrede** — kein «Sie»-Imperativ, keine Possessiva `Ihre/Ihren/Ihrem`; das 3.-Person-«sie» bleibt erlaubt. Woertliche Lernenden-Formulierungen stehen in «Guillemets» und sind dort A2-pflichtig.
 - `nrlp.sprachmodus_ids.length === nrlp.sprachmodi.length` (Check 21)
 - LF4 ist fokussierte Output-Sprachmodus-Teilaufgabe, nicht das ganze Handlungsprodukt (Check 20)
 - `mindmap_aeste.length === 4`, Ast 4 `optional: true` (Check 22)
@@ -1427,6 +1429,9 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 - [ ] **Wissen↔KN-Alignment**: jede Leitfrage + jeder KN-Anspruch gedeckt (kein `ERR_DOSSIER_GAP`)
 - [ ] **Fakten-Validierung**: jeder `fakten_anker` `validiert:true` ODER `lp_pruefen:true`
 - [ ] A2-Check bestanden auf allen Prosa-Feldern
+- [ ] `handlungsprodukt.musterloesung` bei A **und** B: `hinweis` + 3-5 `abschnitte`, ICH-Form, `quelle` je Info-Karte (C7, Check 30)
+- [ ] `leitfragen[].loesung` bei allen 4 je Herausforderung: `kern` + 3-6 `zeilen`, zusammen <= ~900 Zeichen, Sachaussagen aus der Info-Karte des `knoten_ref`; Entscheiden-LF mit Alternativ-/Ausschluss-Zeile (C10, Check 32)
+- [ ] Beide LP-Felder stehen **nur im JSON**, nicht in `begleiter.md` (der Loader spiegelt sie; doppelt geschrieben driftet es)
 
 ### Begleiter-Dokument:
 - [ ] Frontmatter vollstaendig (titel, kompetenz, autor, stand, lehrgang, thema, lebensbezug, quellen_json inkl. `dossier.json`, **kein** herausforderung_C)

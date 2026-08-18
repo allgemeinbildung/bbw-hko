@@ -2,6 +2,7 @@ import indexJson from '../../data/einheiten.index.json'
 import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson, MethodeRef } from './types'
 import { lehrgaengeOf } from './lehrgang'
 import { resolveMethoden } from './methoden'
+import { withLeitfragenLoesungen } from './begleiter-loesungen'
 
 export * from './lehrgang'
 export { methodeKarte, alleMethodenKarten, resolveMethoden } from './methoden'
@@ -122,15 +123,21 @@ function withMethoden(sit: SituationJson | null): SituationJson | null {
 
 export function loadEinheit(slug: string): EinheitFullSet | null {
   if (!einheitById(slug)) return null
-  const raw = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
+  const hf_A = withMethoden(pickJson<SituationJson>(slug, 'herausforderung_A'))
+  const hf_B = withMethoden(pickJson<SituationJson>(slug, 'herausforderung_B'))
+  const hf_C = withMethoden(pickJson<SituationJson>(slug, 'herausforderung_C'))
+  const rawFile = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
+  // Die Leitfragen-Lösungen leben in den Herausforderungs-JSONs (C10) und werden hier
+  // einmal in den Begleiter gespiegelt — danach sehen HTML, Word und ZIP dieselbe Form.
+  const raw = rawFile ? withLeitfragenLoesungen(rawFile, [hf_A, hf_B, hf_C]) : undefined
   const begleiter = raw ? { raw, ...parseFrontmatter(raw) } : null
   const kiRaw = Object.entries(kiLiesmichFiles).find(([path]) => path.endsWith(`/${slug}/ki-liesmich.md`))?.[1]
   const kiLiesmich = kiRaw ? { raw: kiRaw, ...parseFrontmatter(kiRaw) } : null
   return {
     id: slug,
-    hf_A: withMethoden(pickJson<SituationJson>(slug, 'herausforderung_A')),
-    hf_B: withMethoden(pickJson<SituationJson>(slug, 'herausforderung_B')),
-    hf_C: withMethoden(pickJson<SituationJson>(slug, 'herausforderung_C')),
+    hf_A,
+    hf_B,
+    hf_C,
     kn: pickJson<KnJson>(slug, 'kn'),
     prinzip: pickJson<PrinzipJson>(slug, 'prinzip'),
     set: pickJson<SetJson>(slug, 'set'),

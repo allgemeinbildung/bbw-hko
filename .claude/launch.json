@@ -25,5 +25,11 @@
     "runtimeArgs": ["-m", "http.server", "4399", "--directory", "public/guides"],
     "port": 4399
   }
+  ,{
+    "name": "decks",
+    "runtimeExecutable": "python",
+    "runtimeArgs": ["-m", "http.server", "4390", "--directory", "decks/generated"],
+    "port": 4390
+  }
   ]
 }
