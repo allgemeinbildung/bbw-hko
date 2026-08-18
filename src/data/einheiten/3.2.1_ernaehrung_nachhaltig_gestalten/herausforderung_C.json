@@ -1,0 +1,332 @@
+{
+  "id": "3.2.1_ernaehrung_nachhaltig_gestalten_hf_C",
+  "modul": "3.2",
+  "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+  "lehrgang": "EFZ_4J",
+
+  "buchstabe": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+
+  "titel": "Was sich ändern liesse",
+
+  "wissensknoten": ["umweltpolitische_instrumente"],
+
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": ["3.2.1"],
+    "lebensbezug": "3.2",
+    "themen": ["T3"],
+    "gesellschaft": [
+      {"aspekt": "Ökologie", "iteration": "R1"},
+      {"aspekt": "Wirtschaft", "iteration": "R2"},
+      {"aspekt": "Ethik", "iteration": "R3"}
+    ],
+    "sprachmodi": [
+      "Produktion multimedial",
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "sprachmodus_ids": ["SM6", "SM8"],
+    "sk": [3, 9, 5],
+    "kompetenz_id": "3.2.1",
+    "lebensbezug_id": "3.2",
+    "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
+    "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
+  },
+
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+
+  "situation_text": "Ich weiss jetzt, was drei Tage lang auf meinem Teller lag, und ich habe einen Weg rückwärts verfolgt. Was ich nicht weiss: ob es überhaupt etwas bringt, wenn ich etwas ändere. In der Klasse höre ich beide Sätze. Der eine lautet: «Wenn alle bei sich anfangen, ändert sich alles.» Der andere lautet: «Was ich allein mache, ist gegen den Rest gerechnet nichts.» Im Lehrmittel lese ich, dass wir in der Schweiz heute rund 6500 Watt pro Person verbrauchen, angestrebt sind 2000. Drei Möglichkeiten liegen für mich auf dem Tisch: eine bei mir selbst, eine im Lehrbetrieb, eine über eine allgemeine Regelung. Jede wirkt anders, und jede kostet jemanden etwas. Ich muss mich für eine entscheiden und das begründen können.",
+
+  "zahlen_tabelle": [
+    {"label": "Energieverbrauch pro Person in der Schweiz heute", "wert": "rund 6500 Watt"},
+    {"label": "Zielwert der 2000-Watt-Gesellschaft", "wert": "2000 Watt"},
+    {"label": "Energieverbrauch pro Person und Jahr", "wert": "über 50'000 kWh"},
+    {"label": "Treibhausgase bis 2030 gegenüber 1990", "wert": "mindestens minus 50 %"},
+    {"label": "Netto-Null-Ziel der Schweiz", "wert": "ab 2050"},
+    {"label": "Umweltpolitische Instrumente im Lehrmittel", "wert": "4"}
+  ],
+
+  "leitfrage": "Welche Änderung bewirkt wie viel — und wer trägt ihre Kosten?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 9.3 und Kap. 17.3 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.3 | S. 233",
+      "text": "Erklären Sie die vier umweltpolitischen Instrumente (Appelle, Anreize, Verbote und Beschränkungen, Nachsorge) und nennen Sie zu jedem ein Beispiel aus dem Lehrmittel. Halten Sie fest, warum das Lehrmittel Umweltverschmutzung als Marktversagen bezeichnet.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.3 | S. 233",
+      "text": "Sammeln Sie zwei bis drei Änderungsmöglichkeiten, die an Ihren Befunden aus den Herausforderungen A und B ansetzen. Ordnen Sie jede Möglichkeit einer Ebene zu (bei mir selbst, im Lehrbetrieb, über eine allgemeine Regelung) und bestimmen Sie, welchem der vier Instrumente sie entspricht.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 9.3 | S. 234-235",
+      "text": "Schätzen Sie für jede Möglichkeit Wirkung und Kosten ab: die Wirkung mit einer Zahl oder wenigstens einer Grössenordnung, die Kosten mit der Angabe, wer sie trägt. Entscheiden Sie danach begründet für eine Möglichkeit — und benennen Sie, was gegen Ihre Wahl spricht.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 17.3 | S. 394",
+      "text": "Formulieren Sie den Kern Ihrer Empfehlung aus: die These in einem Satz und genau ein vollständig ausgebautes Argument nach dem 3B-Schema (Behauptung — Begründung mit Ihrer Zahl — Beispiel), genau so, wie Sie es in der Aufnahme sprechen würden. Dieses eine Argument ist Ihr Muster für die übrigen.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Was sich ändern liesse",
+  "mindmap_aeste": [
+    {
+      "titel": "Drei Ebenen",
+      "punkte": [
+        "Bei mir selbst: Einkauf, Menge, Zubereitung",
+        "Im Lehrbetrieb: Pausenverpflegung, Einkauf, Abfall",
+        "Über eine allgemeine Regelung: Abgabe, Vorschrift, Deklaration",
+        "Auf welcher Ebene liegt mein grösster Hebel?"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Vier Instrumente",
+      "punkte": [
+        "Appelle: kosten wenig, verpflichten niemanden",
+        "Anreize: Verursacherprinzip, Lenkungsabgabe",
+        "Verbote und Beschränkungen: wirken direkt, treffen alle",
+        "Nachsorge: repariert im Nachhinein, verhindert nichts"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wirkung und Kosten",
+      "punkte": [
+        "Wirkung als Zahl oder als Grössenordnung",
+        "Kosten in Franken, Zeit oder Bequemlichkeit",
+        "Wer zahlt: ich, der Betrieb, die Allgemeinheit",
+        "Wirkung tritt sofort oder erst nach Jahren ein"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was gegen meine Wahl spricht",
+      "punkte": [
+        "Wen meine Massnahme härter trifft als andere",
+        "Was sie nicht löst",
+        "Warum die verworfene Möglichkeit trotzdem vertretbar bleibt"
+      ],
+      "optional": true
+    }
+  ],
+
+  "handlungsprodukt": {
+    "format": "Meinungsorientierte Multimedia-Kurzpräsentation",
+    "titel": "Meine Empfehlung: eine Massnahme, begründet",
+    "format_detail": "Drei bis vier Folien mit einer Vergleichstabelle der geprüften Möglichkeiten (Ebene, Instrument, Wirkung, Kosten, wer zahlt) und einer gesprochenen Spur von rund 90 Sekunden; dazu eine schriftliche Rückmeldung von 80 bis 120 Wörtern an ein anderes Paar.",
+    "beschreibung": "Ich prüfe zwei bis drei Änderungsmöglichkeiten auf Wirkung und Kosten, empfehle begründet eine davon und gebe einem anderen Paar eine schriftliche Rückmeldung zu dessen Empfehlung.",
+    "schritte": [
+      {"label": "Möglichkeiten sammeln", "hint": "Setzen Sie an Ihren eigenen Befunden aus A und B an. Je eine Möglichkeit pro Ebene: bei mir selbst, im Lehrbetrieb, über eine allgemeine Regelung."},
+      {"label": "Instrument bestimmen", "hint": "Ordnen Sie jede Möglichkeit einem der vier umweltpolitischen Instrumente zu. Wenn keines passt, ist die Möglichkeit noch zu unscharf formuliert."},
+      {"label": "Wirkung und Kosten schätzen", "hint": "Tragen Sie beides in die Vergleichstabelle ein. Wo Sie nur schätzen können, schreiben Sie «geschätzt» dazu — eine ehrliche Grössenordnung ist mehr wert als eine erfundene Zahl."},
+      {"label": "Empfehlung aufnehmen", "hint": "Sprechen Sie rund 90 Sekunden: These, zwei bis drei Argumente nach dem Muster aus Leitfrage 4, Gegenposition in einem Satz, Schluss."},
+      {"label": "Rückmeldung schreiben", "hint": "Lesen oder hören Sie die Empfehlung eines anderen Paars und antworten Sie schriftlich auf zwei Fragen: Ist die Wirkung beziffert? Ist gesagt, wer die Kosten trägt?"}
+    ],
+    "schreib_label": "EMPFEHLUNG HIER ERARBEITEN",
+    "schreib_note": "-> wissen/umweltpolitische_instrumente",
+    "abgaben": [
+      "Vergleichstabelle der geprüften Möglichkeiten (Ebene, Instrument, Wirkung, Kosten, wer zahlt)",
+      "Gesprochene Empfehlung zu 3–4 Folien (rund 90 Sekunden)",
+      "Schriftliche Rückmeldung an ein anderes Paar (80–120 Wörter)"
+    ],
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Ich empfehle …, weil …»",
+        "«Diese Massnahme wirkt in der Grössenordnung von …, gemessen an …»",
+        "«Die Kosten trägt dabei …»",
+        "«Gegen meine Wahl spricht, dass …»"
+      ],
+      "strategien": [
+        "Erst die Tabelle vollständig füllen, dann erst entscheiden — sonst begründen Sie im Nachhinein, was Sie ohnehin wollten.",
+        "Eine Massnahme, die Sie nicht einem der vier Instrumente zuordnen können, ist noch keine Massnahme, sondern ein Wunsch.",
+        "Sprechen Sie die Spur einmal laut und stoppen Sie die Zeit, bevor Sie aufnehmen.",
+        "Die Gegenposition gehört in die Empfehlung, nicht danach: Wer sie weglässt, wirkt nicht überzeugter, sondern unvorbereitet."
+      ],
+      "struktur": [
+        "Ausgangslage – Vergleichstabelle – These – Argumente – Gegenposition – Schluss"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Stufe 3–4. Exemplarisch ist, dass die Wirkung ehrlich als Grössenordnung ausgewiesen wird und die verworfenen Möglichkeiten begründbar stehen bleiben, statt schlechtgeredet zu werden.",
+      "abschnitte": [
+        {
+          "titel": "Vergleichstabelle",
+          "zeilen": [
+            {"label": "Drei Optionen", "text": "1) Bei mir selbst: an zwei Tagen pro Woche pflanzlich essen. Instrument: Appell an mich selbst. Wirkung: klein, aber sofort und sicher. Kosten: Umstellung und Planung, finanziell eher entlastend. Zahlt: ich. 2) Im Lehrbetrieb: die Pausenverpflegung umstellen und Rüstabfall erfassen. Instrument: Anreiz plus Appell. Wirkung: mittel, betrifft alle Mitarbeitenden. Kosten: Einkauf und Arbeitszeit. Zahlt: der Betrieb. 3) Über eine allgemeine Regelung: eine verbindliche Deklarationspflicht für Herkunft und Verarbeitung. Instrument: Beschränkung. Wirkung: gross, aber erst nach Jahren. Kosten: Kontrolle und Aufwand für Anbieter, am Ende über die Preise. Zahlt: die Allgemeinheit.", "quelle": "Kap. 9.3, S. 233"}
+          ]
+        },
+        {
+          "titel": "These",
+          "zeilen": [
+            {"label": "Folie 2", "text": "Ich empfehle die Umstellung im Lehrbetrieb — nicht weil sie am meisten bewirkt, sondern weil sie das beste Verhältnis von Wirkung zu Aufwand hat und weil ich sie tatsächlich anstossen kann.", "quelle": "eigene Empfehlung"}
+          ]
+        },
+        {
+          "titel": "Argument nach dem 3B-Schema",
+          "zeilen": [
+            {"label": "Folie 3", "text": "Behauptung: Eine Änderung im Betrieb wirkt breiter als meine eigene. Begründung: Meine private Umstellung betrifft rund 14 Mahlzeiten pro Woche, die Pausenverpflegung im Betrieb betrifft neun Personen und damit ein Vielfaches davon; das ist eine Grössenordnung, keine gerechnete Zahl. Gemessen am Abstand zwischen den heutigen rund 6500 Watt pro Person und dem Ziel von 2000 Watt bleibt auch das klein — aber es ist der Schritt, den ich auslösen kann. Beispiel: Wenn im Betrieb künftig zweimal pro Woche ein pflanzliches Menü angeboten wird, ändert sich nicht meine, sondern die Standardwahl aller.", "quelle": "Kap. 9.3, S. 235"}
+          ]
+        },
+        {
+          "titel": "Gegenposition und Schluss",
+          "zeilen": [
+            {"label": "Folie 4", "text": "Gegen meine Wahl spricht Zweierlei. Erstens ist die Wirkung freiwilliger Massnahmen unsicher: Das Lehrmittel hält fest, dass aus Appellen keine Verpflichtung folgt und der Druck zur Verhaltensänderung gering bleibt. Zweitens verschiebt die Betriebslösung die Kosten auf jemand anderen — der Betrieb zahlt, entschieden habe ich. Wer die Deklarationspflicht vorzieht, hat deshalb gute Gründe: Sie wirkt langsamer, aber für alle gleich. Beide Wege bleiben vertretbar. Ich wähle den, dessen Wirkung ich im nächsten halben Jahr überprüfen kann.", "quelle": "Kap. 9.3, S. 233"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "methoden": [
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für den Aufbau Ihrer Argumente",
+      "tun": "Bauen Sie jedes Argument Ihrer Empfehlung nach dem 3B-Schema. Fehlt ein B, ist es noch eine Meinung und noch kein Argument."
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für die Dramaturgie der 90 Sekunden",
+      "tun": "Halten Sie den Statement-Aufbau ein: These zuerst, Argumente in der Mitte, Schluss als Aufforderung oder offene Frage."
+    },
+    {
+      "ref": "hko-sprechspur",
+      "fuer": "für die gesprochene Spur von rund 90 Sekunden"
+    },
+    {
+      "ref": "lm-19-1-feedback",
+      "fuer": "für Ihre schriftliche Rückmeldung an das andere Paar",
+      "tun": "Halten Sie sich an die Feedbackregeln: Beobachtung vor Bewertung, und je einen Satz zu Wirkung und zu Kostenträgerschaft."
+    }
+  ],
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Welche Möglichkeit habe ich verworfen — und was hat mich beim Abschätzen ihrer Wirkung überrascht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Welche Rückmeldung habe ich von einem anderen Paar erhalten — und was habe ich an meiner Begründung geändert?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Woran werde ich in einem halben Jahr erkennen, ob meine Empfehlung etwas bewirkt hat?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "LF1 nennt alle vier Instrumente mit je einem Beispiel und erklärt den Begriff Marktversagen.",
+        "LF2 ordnet jede Möglichkeit einer Ebene und einem Instrument zu.",
+        "LF3 nennt zu jeder Möglichkeit Wirkung und Kostenträger und entscheidet begründet."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Alle drei Pflicht-Äste sind befüllt.",
+        "Der Ast «Wirkung und Kosten» unterscheidet mindestens zwei verschiedene Kostenträger.",
+        "Mindestens eine Verbindung zwischen «Drei Ebenen» und «Vier Instrumente» ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Die Vergleichstabelle enthält zwei bis drei Möglichkeiten mit Ebene, Instrument, Wirkung, Kosten und Kostenträger.",
+        "Die gesprochene Empfehlung dauert rund 90 Sekunden und folgt dem Aufbau These – Argumente – Gegenposition – Schluss.",
+        "Mindestens ein Argument ist vollständig nach dem 3B-Schema gebaut und stützt sich auf eine eigene Zahl oder eine Zahl aus dem Lehrmittel.",
+        "Die schriftliche Rückmeldung an das andere Paar umfasst 80 bis 120 Wörter und beantwortet beide Prüffragen."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R3 nennt ein überprüfbares Anzeichen, nicht eine Absicht."
+      ]
+    }
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Möglichkeiten sammeln, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Vergleichstabelle, Muster-Argument", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Empfehlung aufnehmen, Rückmeldung schreiben, Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_prinzip",
+  "herausforderung": {
+    "buchstabe": "C",
+    "label": "Zwei bis drei Änderungsmöglichkeiten auf Wirkung und Kosten prüfen und eine begründet auswählen"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Grosse Wirkung vs. wer die Kosten der Änderung trägt",
+    "hint": "Beide Seiten bleiben begründbar. Für die wirksamste Massnahme spricht, dass kleine Schritte am Abstand zwischen 6500 und 2000 Watt wenig ändern. Für die eigene, kleinere Massnahme spricht, dass sie niemandem sonst Kosten aufbürdet und tatsächlich stattfindet. Bewertet wird, wie sauber Sie Wirkung und Kostenträgerschaft benennen — nicht, welche Massnahme Sie wählen."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Bei welcher anderen Änderung in meinem Alltag könnte ich Wirkung und Kosten auf dieselben drei Ebenen verteilen — und wo würde ich mich verschätzen?",
+    "ziel": "Die Lernenden lösen die Einsicht vom Essen ab: Ob eine Änderung etwas bewirkt, hängt von der Ebene ab, auf der sie ansetzt, und davon, wer ihre Kosten trägt."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T5 — Globale gesellschaftliche Herausforderungen: dieselben Instrumente, aber als politische Gestaltungsfrage auf internationaler Ebene.",
+    "r3_voraussicht": "T6 — Wohn- und Lebensformen: Massnahmen im eigenen Haushalt auf Wirkung und Kosten prüfen und langfristig planen."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — Marktversagen und die vier umweltpolitischen Instrumente: Appelle, Anreize mit Verursacherprinzip und Lenkungsabgabe, Verbote und Beschränkungen, Nachsorge", "seiten": "Seite 233", "unterueberschrift": "Politische Instrumente", "fuer_leitfrage": [1, 2]},
+    {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — Energiestrategie 2050 und 2000-Watt-Gesellschaft, heutiger Verbrauch von rund 6500 Watt pro Person", "seiten": "Seite 234-235", "unterueberschrift": "Energiestrategie 2050 und 2000-Watt-Gesellschaft", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — Schweizer Klimaziele: minus 50 Prozent bis 2030 gegenüber 1990, Netto-Null ab 2050", "seiten": "Seite 232", "unterueberschrift": "Schweizer Klimaziele", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 17.3", "titel": "Argumentieren — Aufbau einer schriftlichen Stellungnahme und das 3B-Schema", "seiten": "Seite 394", "unterueberschrift": "3B-Schema", "fuer_leitfrage": [4]},
+    {"ref": "Kap. 16.2", "titel": "Statement — Aufbau eines Statements für die gesprochene Empfehlung", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Instrumente verstanden", "indikator": "Die vier umweltpolitischen Instrumente werden korrekt unterschieden und mit Beispielen belegt.", "gewicht_prozent": 25},
+      {"kriterium": "Ebenen zugeordnet", "indikator": "Jede Möglichkeit ist einer Ebene und einem Instrument zugeordnet.", "gewicht_prozent": 25},
+      {"kriterium": "Wirkung und Kosten abgeschätzt", "indikator": "Zu jeder Möglichkeit stehen eine Grössenordnung der Wirkung und ein benannter Kostenträger.", "gewicht_prozent": 25},
+      {"kriterium": "Entscheid begründet", "indikator": "Die Empfehlung nennt beide Seiten des Zielkonflikts und lässt die verworfene Möglichkeit vertretbar stehen.", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Die drei Ebenen werden mit je einer fertig formulierten Möglichkeit vorgegeben; die Lernenden schätzen nur Wirkung und Kosten ab und entscheiden.",
+    "scaffold_100": "Zusätzlich wird geprüft, wie sich die Empfehlung ändern würde, wenn die Kosten auf einen anderen Träger verschoben würden."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Ob sich etwas ändert, hängt weniger vom guten Willen ab als von der Ebene, auf der angesetzt wird — und jede Ebene hat ihren Preis.",
+    "lehrmittel_anker": "Kap. 9.3 S. 233 (vier umweltpolitische Instrumente, Marktversagen, Verursacherprinzip), Kap. 9.3 S. 234-235 (2000-Watt-Gesellschaft, heutige 6500 Watt), Kap. 9.3 S. 232 (Schweizer Klimaziele), Kap. 17.3 S. 394 (3B-Schema)",
+    "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, eine Massnahme einer Wirkungsebene zuzuordnen und ihre Kosten einem Träger zuzuweisen.",
+    "transfer_check": "Die Lernenden können dieselbe Prüfung an einer Massnahme ausserhalb der Ernährung durchführen, ohne das Essen zu erwähnen."
+  },
+
+  "sk_anker": [
+    {"sk": 3, "wo": "In LF2 und in der Vergleichstabelle entwickeln die Lernenden eigene Lösungsvorschläge auf drei Ebenen, statt vorgegebene Massnahmen zu beurteilen."},
+    {"sk": 9, "wo": "Die Empfehlung verlangt, ökologische Wirkung, ökonomische Kosten und die soziale Frage der Kostenträgerschaft in einem Entscheid zusammenzuführen."},
+    {"sk": 5, "wo": "In LF3 und im Ast «Was gegen meine Wahl spricht» prüfen die Lernenden die eigene Haltung gegen die verworfene Möglichkeit und lassen diese begründbar stehen."}
+  ]
+}

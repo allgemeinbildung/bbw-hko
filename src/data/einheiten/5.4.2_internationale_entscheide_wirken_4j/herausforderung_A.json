@@ -1,0 +1,326 @@
+{
+  "id": "5.4.2_internationale_entscheide_wirken_4j_hf_A",
+  "modul": "5.4",
+  "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
+  "lehrgang": "EFZ_4J",
+
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+
+  "titel": "«Gestorben wegen einem Entscheid im Ausland»",
+
+  "wissensknoten": ["internationale_arbeitsteilung"],
+
+  "nrlp": {
+    "nr": "5.4.2",
+    "nr_primary": ["5.4.2"],
+    "lebensbezug": "5.4",
+    "themen": ["T5"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R4"},
+      {"aspekt": "Politik", "iteration": "R2"}
+    ],
+    "sprachmodi": [
+      "Produktion mündlich"
+    ],
+    "sprachmodus_ids": ["SM4"],
+    "sk": [6, 9],
+    "kompetenz_id": "5.4.2",
+    "lebensbezug_id": "5.4",
+    "kompetenz_text": "Ich kann anhand eines Beispiels erklären, wie internationale politische Entscheidungen Auswirkungen auf mein Leben und das Leben von anderen haben können.",
+    "lebensbezug_text": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen."
+  },
+
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Präzisionsmechanik Halter AG",
+    "ort": "Winterthur"
+  },
+
+  "situation_text": "Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. Wir fertigen Bauteile für Kundschaft im Ausland. An der Morgenrunde sagt der Betriebsleiter, ein grosser Auftrag sei «gestorben wegen einem Zollentscheid, den irgendwer im Ausland gefällt hat». Für mich heisst das konkret: Die Serie, an der ich diese Woche arbeiten sollte, ist verschoben, dafür kommt ein anderer Auftrag mit anderem Material, und der Einkauf rechnet neu mit sechs statt zwei Wochen Lieferzeit. Im ABU habe ich gelernt, dass die Schweiz rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel verdient — jetzt merke ich, dass dieser Franken auch durch unsere Werkstatt läuft. Den Satz des Betriebsleiters verstehe ich trotzdem nicht: Zwischen einem Entscheid irgendwo im Ausland und meinem Arbeitstag müssen Schritte liegen, die niemand benennt.",
+
+  "zahlen_tabelle": [
+    {"label": "Warenexporte der Schweiz 2023 (Kap. 11.2, S. 275)", "wert": "CHF 274 Mrd."},
+    {"label": "Warenimporte der Schweiz 2023 (Kap. 11.2, S. 275)", "wert": "CHF 226 Mrd."},
+    {"label": "Anteil des grenzüberschreitenden Handels am BIP (Kap. 11.2, S. 275)", "wert": "rund die Hälfte — jeder zweite Franken"},
+    {"label": "Anteil Maschinen und Elektronik an den Schweizer Exporten (Kap. 11.2, S. 275)", "wert": "15,6 %"},
+    {"label": "Exportanteil und Lieferfristen des eigenen Lehrbetriebs", "wert": "Platzhalter — im Betrieb erfragen"}
+  ],
+
+  "leitfrage": "Über welche Schritte kommt ein Handelsentscheid aus dem Ausland bis an meine Maschine?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 11.3 und Kap. 16.2 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 11.2 | S. 272-273",
+      "text": "Erklären Sie mit dem Lehrmittel, was Globalisierung und internationale Arbeitsteilung bedeuten und warum ein Land ohne eigene Rohstoffe wie die Schweiz besonders stark davon abhängt.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 11.3 | S. 285",
+      "text": "Wenden Sie die protektionistische Handelspolitik auf Ihren Lehrbetrieb an: Wer verlangt Schutz, wer bezahlt ihn, und welches Material oder welches Bauteil wird dadurch teurer oder schwerer verfügbar?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Analysieren",
+      "knoten_ref": "Kap. 11.2 | S. 273-275",
+      "text": "Gliedern Sie den Weg vom Entscheid bis zu Ihrem Arbeitstag in vier bis sechs Schritte. Belegen Sie jeden Schritt mit einer Stelle aus dem Lehrmittel oder mit einer eigenen Beobachtung aus dem Betrieb.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 16.2 | S. 368",
+      "text": "Formulieren Sie den Schlusszug Ihrer Erklärung sprechfertig: zwei Sätze, die den Schritt benennen, an dem der Entscheid bei Ihnen ankommt, und die dazu passende Zahl mit Quelle nennen.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Vom Entscheid bis in meine Werkstatt",
+  "mindmap_aeste": [
+    {
+      "titel": "Wer entscheidet was",
+      "punkte": [
+        "Staaten und Handelsblöcke setzen Zölle und Handelsschranken",
+        "WTO: 164 Mitglieder, über 90 Prozent des Welthandels",
+        "WTO ist zuständig für die Streitschlichtung bei Handelskonflikten",
+        "Schutz der eigenen Wirtschaft als politisches Ziel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie es sich fortpflanzt",
+      "punkte": [
+        "Preis für Material und Bauteile verändert sich",
+        "Lieferfristen und Verfügbarkeit verschieben sich",
+        "Offerten werden teurer, Aufträge verschieben sich",
+        "Betrieb wechselt Lieferanten oder Material"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wo es mich trifft",
+      "punkte": [
+        "Meine Arbeitsplanung für die Woche",
+        "Welche Serie ich fertige und mit welchem Material",
+        "Auslastung der Werkstatt und Überstunden",
+        "Längerfristig: Zahl der Lehrstellen im Betrieb"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer die Wirkung abfedern könnte",
+      "punkte": [
+        "Der Betrieb selbst über Lager und zweite Lieferquelle",
+        "Branchenverband und Gewerkschaft",
+        "Der Bund über Verhandlungen und Abkommen",
+        "Streitschlichtung der WTO"
+      ],
+      "optional": true
+    }
+  ],
+
+  "handlungsprodukt": {
+    "format": "Gesprochene Erklärung an der Wirkungskette",
+    "titel": "Vom Entscheid bis an meine Maschine",
+    "format_detail": "Gesprochene Erklärung von 90 Sekunden an einer selbst gezeichneten Wirkungskette auf A3 oder als Folie, mit dem Smartphone aufgenommen.",
+    "beschreibung": "Ich zeichne die Kette von einem internationalen Handelsentscheid bis an meinen Arbeitsplatz in vier bis sechs Schritten und erkläre sie in 90 Sekunden so, dass jeder Schritt belegt ist.",
+    "schritte": [
+      {"label": "Entscheid festhalten", "hint": "Notieren Sie in einem Satz, worüber entschieden wurde und wer entschieden hat — Staat, Handelsblock oder internationale Organisation."},
+      {"label": "Schritte sammeln", "hint": "Halten Sie stichwortartig fest, was zwischen dem Entscheid und Ihrem Arbeitstag passiert: Preis, Lieferfrist, Offerte, Auftrag, Arbeitsplanung."},
+      {"label": "Auf vier bis sechs Schritte kürzen", "hint": "Streichen Sie jeden Schritt, der nur eine Wiederholung ist. Was übrig bleibt, muss lückenlos aufeinander folgen."},
+      {"label": "Belege zuordnen", "hint": "Schreiben Sie zu jedem Schritt die Quelle: Kapitel und Seite aus dem Lehrmittel oder «eigene Beobachtung im Betrieb»."},
+      {"label": "Erklärung aufnehmen", "hint": "Sprechen Sie die Kette in 90 Sekunden durch, ein Schritt nach dem anderen. Nutzen Sie die Satzanfänge aus der Schreibhilfe und lesen Sie nicht ab."}
+    ],
+    "schreib_label": "WIRKUNGSKETTE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/internationale_arbeitsteilung",
+    "abgaben": [
+      "Wirkungskette auf A3 oder als Folie (4 bis 6 Schritte, je mit Beleg)",
+      "Tonaufnahme der Erklärung (90 Sekunden)"
+    ],
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Entschieden hat … auf der Ebene …»",
+        "«Der nächste Schritt ist …, das steht im Lehrmittel auf Seite …»",
+        "«Bei uns im Betrieb zeigt sich das so: …»",
+        "«Bei mir kommt der Entscheid an, sobald …»"
+      ],
+      "strategien": [
+        "Erst die Kette zeichnen, dann sprechen — wer beim Sprechen noch sucht, verliert die 90 Sekunden.",
+        "Pro Schritt genau ein Satz. Wer zwei Sätze braucht, hat zwei Schritte zusammengezogen.",
+        "Die Erklärung einmal laut halten und die Zeit stoppen, bevor Sie aufnehmen.",
+        "Jede Zahl mit Quelle nennen: «rund die Hälfte des BIP, Kapitel 11.2, Seite 275»."
+      ],
+      "struktur": [
+        "Ausgangslage – Entscheid – Schritte der Kette – Ankunft bei mir – Schlusssatz mit Zahl"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Stufe 3–4. Exemplarisch ist, dass jeder Schritt belegt wird und die Kette nicht abbricht: die Musterlösung nennt auch dort eine Quelle, wo sie sich auf eine eigene Beobachtung stützt.",
+      "abschnitte": [
+        {
+          "titel": "Ausgangslage und Entscheid",
+          "zeilen": [
+            {"label": "Schritt 1", "text": "Entschieden hat ein Staat ausserhalb der Schweiz, und zwar auf politischer Ebene: Er erhebt einen Zoll auf eingeführte Industriegüter. Das Lehrmittel beschreibt genau dieses Muster als protektionistische Handelspolitik — Unternehmen fürchten die Konkurrenz aus dem Ausland und verlangen staatlichen Schutz in Form von Zöllen und anderen Preisaufschlägen.", "quelle": "Kap. 11.3, S. 285"}
+          ]
+        },
+        {
+          "titel": "Wie der Entscheid weiterläuft",
+          "zeilen": [
+            {"label": "Schritte 2–3", "text": "Der Zoll verteuert unser Bauteil an der Grenze des Zielmarkts. Damit wird unsere Offerte teurer als die eines Anbieters im Zielland, und die Kundschaft verschiebt oder storniert den Auftrag. Das Lehrmittel hält fest, dass der Welthandel gerade deshalb gewachsen ist, weil Zölle gesenkt und der freie Güterverkehr gefördert wurde — geht dieser Schritt rückwärts, dreht sich die Wirkung um.", "quelle": "Kap. 11.2, S. 273"}
+          ]
+        },
+        {
+          "titel": "Wo es bei mir ankommt",
+          "zeilen": [
+            {"label": "Schritte 4–5", "text": "Weil der Auftrag wegfällt, zieht der Betrieb eine andere Serie vor und bestellt anderes Material, das erst in sechs statt in zwei Wochen kommt (eigene Beobachtung im Betrieb). Für mich heisst das: andere Arbeitsplanung, andere Einrichtung an der Maschine, weniger Auslastung in dieser Woche. Der Entscheid ist bei mir angekommen, ohne dass ich je etwas davon gelesen hätte.", "quelle": "eigene Beobachtung im Betrieb"}
+          ]
+        },
+        {
+          "titel": "Schlusssatz mit Zahl",
+          "zeilen": [
+            {"label": "Schluss", "text": "Die Schweiz verdient rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel — jeden zweiten Franken. Genau deshalb ist ein Zollentscheid im Ausland für uns kein Auslandthema, sondern eine Frage der Auftragslage. Offen bleibt, ob mich mehr Schutz an dieser Stelle schützen oder mir den Markt verschliessen würde: Beides lässt sich begründen.", "quelle": "Kap. 11.2, S. 275"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "methoden": [
+      {
+        "ref": "lm-17-2-w-fragen",
+        "fuer": "für das Gliedern der Wirkungskette",
+        "tun": "Prüfen Sie jeden Schritt mit denselben W-Fragen. Wo eine Antwort fehlt, fehlt ein Schritt oder ein Beleg."
+      },
+      {
+        "ref": "lm-16-2-statement",
+        "fuer": "für den Aufbau der gesprochenen Erklärung",
+        "tun": "Bauen Sie die 90 Sekunden in drei Zügen: ein Satz Ausgangslage, die Kette als Hauptteil, ein Schlusssatz mit Zahl."
+      },
+      {
+        "ref": "hko-wirkungskette",
+        "fuer": "für die Kette von vier bis sechs Schritten auf A3"
+      },
+      {
+        "ref": "hko-sprechspur",
+        "fuer": "für die Aufnahme der 90 Sekunden"
+      }
+    ],
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Welcher Schritt meiner Kette hat mich beim Aufschreiben am meisten überrascht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Welche Rückfrage einer mitlernenden Person hat den schwächsten Beleg in meiner Kette aufgedeckt — und wodurch habe ich ihn ersetzt?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Bei welcher Nachricht aus dem Ausland werde ich künftig zuerst fragen, über welche Schritte sie bei mir ankommt?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "LF1 verwendet die Begriffe Globalisierung und internationale Arbeitsteilung korrekt.",
+        "LF2 nennt für den eigenen Betrieb ein konkretes Material oder Bauteil.",
+        "LF4 enthält zwei sprechfertige Sätze mit einer Zahl und deren Quelle."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Alle drei Pflicht-Äste sind befüllt.",
+        "Der Ast «Wo es mich trifft» nennt mindestens zwei Folgen aus dem eigenen Lehrbetrieb.",
+        "Mindestens eine Verbindung zwischen «Wie es sich fortpflanzt» und «Wo es mich trifft» ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Die Kette hat 4 bis 6 Schritte und keine Lücke zwischen Entscheid und Arbeitsplatz.",
+        "Zu jedem Schritt steht ein Beleg: Kapitel und Seite oder eigene Beobachtung.",
+        "Die Erklärung dauert rund 90 Sekunden und ist frei gesprochen, nicht abgelesen.",
+        "Mindestens eine Zahl wird mit Quelle genannt."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R2 benennt eine konkrete Rückmeldung und was daraufhin geändert wurde."
+      ]
+    }
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Wirkungskette zeichnen, Erklärung aufnehmen", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "5.4.2_internationale_entscheide_wirken_4j_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Den Weg eines internationalen Handelsentscheids bis an den eigenen Arbeitsplatz in vier bis sechs belegten Schritten aufdecken"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Offener Marktzugang vs. Schutz der eigenen Arbeitsplätze",
+    "hint": "Beide Seiten lassen sich begründen. Für den offenen Marktzugang spricht, dass unser Betrieb vom Export lebt und Schutzzölle anderer Länder uns genau dort treffen. Für den Schutz spricht, dass Betriebe und Arbeitsplätze unter zu starker Konkurrenz aus dem Ausland verschwinden können. Bewertet wird, wie sauber Sie die Kette belegen — nicht, welche Seite Sie am Ende sympathischer finden."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Bei welcher anderen Nachricht aus dem Ausland liesse sich dieselbe Kette zeichnen — und woran erkenne ich, dass sie überhaupt bei mir ankommt?",
+    "ziel": "Die Lernenden lösen die Einsicht vom Zollbeispiel ab: Ein internationaler Entscheid wirkt über eine Kette, und diese Kette lässt sich Schritt für Schritt prüfen."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R4 (Wirtschaft) · R2 (Politik)",
+    "r2_voraussicht": "T7 Schlussarbeit — eine eigene Fragestellung mit internationalem Bezug recherchieren und mündlich vertreten.",
+    "r3_voraussicht": "T8.1 — technologische und wirtschaftliche Entwicklungen der eigenen Branche unter globalen Bedingungen."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 11.2", "titel": "Globalisierung — weltweite Verflechtung, Ursachen, internationale Arbeitsteilung", "seiten": "Seite 272-273", "unterueberschrift": "Was ist Globalisierung? / Globalisierung der Wirtschaft", "fuer_leitfrage": [1]},
+    {"ref": "Kap. 11.3", "titel": "Entwicklungsländer — exogene Ursachen, protektionistische Handelspolitik", "seiten": "Seite 285", "unterueberschrift": "Exogene Ursachen der Unterentwicklung", "fuer_leitfrage": [2]},
+    {"ref": "Kap. 11.2", "titel": "Globalisierung — Abbau von Handelsschranken, Bedeutung des internationalen Handels für die Schweiz", "seiten": "Seite 273-275", "unterueberschrift": "Globalisierung der Wirtschaft / Schweiz in der globalisierten Wirtschaft", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 16.2", "titel": "Statement — Aufbau in drei Zügen", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Mechanismus verstanden", "indikator": "Globalisierung und internationale Arbeitsteilung werden korrekt verwendet.", "gewicht_prozent": 25},
+      {"kriterium": "Kette lückenlos", "indikator": "Die 4 bis 6 Schritte folgen ohne Sprung aufeinander.", "gewicht_prozent": 25},
+      {"kriterium": "Belege", "indikator": "Jeder Schritt trägt eine Quelle, mindestens eine Zahl ist belegt.", "gewicht_prozent": 25},
+      {"kriterium": "Mündliche Umsetzung", "indikator": "Die Erklärung ist in 90 Sekunden verständlich und frei gesprochen.", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Die Stationen der Kette werden als Kärtchen vorgegeben; die Lernenden ordnen sie und ergänzen nur die Belege.",
+    "scaffold_100": "Zusätzlich wird eine zweite Kette für ein Material gezeichnet, das der Betrieb aus einer anderen Weltregion bezieht."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Ein internationaler Entscheid erreicht meinen Arbeitsplatz über eine Kette aus Preis, Verfügbarkeit und Auftragslage — nicht als Meinung.",
+    "lehrmittel_anker": "Kap. 11.2 S. 272-275 (Globalisierung, Handelsschranken, Aussenhandel der Schweiz), Kap. 11.3 S. 285 (protektionistische Handelspolitik), Kap. 16.2 S. 368 (Aufbau eines Statements)",
+    "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, einen Entscheid in belegte Einzelschritte zu zerlegen und den Punkt zu benennen, an dem er die eigene Arbeit verändert.",
+    "transfer_check": "Die Lernenden können dieselbe Kette an einem anderen Entscheid zeichnen, ohne den Zollfall zu erwähnen."
+  },
+
+  "sk_anker": [
+    {"sk": 6, "wo": "In LF4 und im Schlusszug der Erklärung begründen die Lernenden mit einer belegten Zahl, weshalb der Entscheid sie betrifft, statt ihn nur zu behaupten."},
+    {"sk": 9, "wo": "Die Wirkungskette verlangt, wirtschaftliche Verflechtung und die eigene Arbeitssituation in einer Darstellung zusammenzuführen statt getrennt zu betrachten."}
+  ]
+}

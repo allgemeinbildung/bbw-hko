@@ -14,8 +14,7 @@
   "kn_ref": "1.1.1_einstieg_interview_kn",
   "herausforderungen": [
     "1.1.1_einstieg_interview_hf_A",
-    "1.1.1_einstieg_interview_hf_B",
-    "1.1.1_einstieg_interview_hf_C"
+    "1.1.1_einstieg_interview_hf_B"
   ],
   "varianten_achse": {
     "name": "Befragungsmethode",
@@ -37,36 +36,28 @@
         "oeffnet": "Tiefe, Unerwartetes, Zwischentöne",
         "schliesst": "Kontrolle über Zeit und Vollständigkeit",
         "sprachmodus": "Interaktion und Kollaboration mündlich"
-      },
-      {
-        "herausforderung": "1.1.1_einstieg_interview_hf_C",
-        "buchstabe": "C",
-        "methode": "Schriftlich-digital — Anfrage und eine Runde Nachfassen",
-        "oeffnet": "Bedenkzeit, sorgfältige Formulierung, wörtlich dokumentierte Zitate",
-        "schliesst": "Tonfall, Zögern, spontane Rückfrage",
-        "sprachmodus": "Interaktion und Kollaboration digital"
       }
     ]
   },
   "einsatz_hinweis": {
-    "minimal": "Eine Herausforderung, eine Woche, 3 Lektionen. Vollständig und in sich geschlossen — Kurzprofil, Reflexion und Bewertungsraster funktionieren ohne die beiden anderen Wege.",
-    "empfohlen": "Die drei Wege parallel in derselben Klasse verteilen (Drittel/Drittel/Drittel), gleiche Woche, gleiches Handlungsprodukt. Erst dadurch wird die Austausch-Phase zum Erkenntnismoment: gleiche Aufgabe, gleicher Zeitrahmen, sichtbar verschiedene Ergebnisse.",
-    "nicht_vorgesehen": "Eine nacheinander abgearbeitete Reihe A → B → C. Die drei Herausforderungen bauen nicht aufeinander auf; hintereinander gespielt wiederholen sie dasselbe Produkt dreimal."
+    "minimal": "Eine Herausforderung, eine Woche, 3 Lektionen. Vollständig und in sich geschlossen — Kurzprofil, Reflexion und Bewertungsraster funktionieren ohne den anderen Weg.",
+    "empfohlen": "Die beiden Wege parallel in derselben Klasse verteilen (Hälfte/Hälfte), gleiche Woche, gleiches Handlungsprodukt. Erst dadurch wird die Austausch-Phase zum Erkenntnismoment: gleiche Aufgabe, gleicher Zeitrahmen, sichtbar verschiedene Ergebnisse.",
+    "nicht_vorgesehen": "Eine nacheinander abgearbeitete Reihe A → B. Die beiden Herausforderungen bauen nicht aufeinander auf; hintereinander gespielt wiederholen sie dasselbe Produkt zweimal."
   },
   "austausch_phase": {
-    "format": "gruppenpuzzle_jigsaw",
+    "format": "tandem_vergleich",
     "dauer_min": 30,
-    "voraussetzung": "Funktioniert nur, wenn die drei Wege parallel vergeben wurden. Gruppen zu dritt bilden — je eine Person pro Methode.",
+    "voraussetzung": "Funktioniert nur, wenn beide Wege parallel vergeben wurden. Tandems bilden — je eine Person pro Methode.",
     "gruppenarbeit_jigsaw": {
-      "runde_1": "Ergebnis zeigen — 90 Sek. pro Person: das eigene Kurzprofil vorstellen und das stärkste der drei Zitate vorlesen.",
-      "runde_2": "Methoden vergleichen — Welche Art von Information steht in allen drei Profilen? Welche steht nur in einem? Ein gemeinsames Blatt in zwei Spalten führen.",
+      "runde_1": "Ergebnis zeigen — 3 Min. pro Person: das eigene Kurzprofil vorstellen und das stärkste der drei Zitate vorlesen.",
+      "runde_2": "Methoden vergleichen — Welche Art von Information steht in beiden Profilen? Welche steht nur in einem? Ein gemeinsames Blatt in zwei Spalten führen.",
       "runde_3": "Grenzfall suchen — Für welche Person oder welche Situation wäre ausgerechnet die eigene Methode die schlechteste Wahl gewesen?"
     },
     "einzelarbeit_plenum": "Lehrperson sammelt die Zwei-Spalten-Blätter an der Wandtafel und leitet die Diskussion: Woran liegt es, dass dieselbe Aufgabe bei derselben Klasse so verschiedene Profile hervorbringt? Zielpunkt ist nicht «jede Methode hat Vor- und Nachteile», sondern die Einsicht, dass die Methode das Ergebnis mitproduziert.",
-    "einzelauftrag": "Formulieren Sie in einem einzigen Satz, was Ihre Methode über Ihr Gegenüber sichtbar gemacht hat und was sie verdeckt hat. Notieren Sie darunter eine Frage, die Sie mit einer der beiden anderen Methoden gestellt hätten."
+    "einzelauftrag": "Formulieren Sie in einem einzigen Satz, was Ihre Methode über Ihr Gegenüber sichtbar gemacht hat und was sie verdeckt hat. Notieren Sie darunter eine Frage, die Sie mit der anderen Methode gestellt hätten."
   },
   "dekontextualisierungs_aufgabe": {
-    "auftrag": "Übertragen Sie das Prinzip auf eine Befragungssituation ausserhalb der Schule: Sie müssen von einer Person etwas erfahren, das Sie nirgends nachlesen können (Rückfrage beim Berufsbildner, Kundenwunsch im Laden, Auskunft bei einer Amtsstelle). Welche der drei Methoden wählen Sie — und was nehmen Sie damit bewusst in Kauf?",
+    "auftrag": "Übertragen Sie das Prinzip auf eine Befragungssituation ausserhalb der Schule: Sie müssen von einer Person etwas erfahren, das Sie nirgends nachlesen können (Rückfrage beim Berufsbildner, Kundenwunsch im Laden, Auskunft bei einer Amtsstelle). Welche der beiden Methoden wählen Sie — und was nehmen Sie damit bewusst in Kauf?",
     "format": "mündlich im Plenum (2 Min.) oder 4–5 Sätze in Stichworten; Lehrmittelbegriffe aus Kap. 16.4 verwenden",
     "format_hinweis": "Bewusst kein ausformulierter Text — Produktion schriftlich und bildlich hat seine R1 erst in T2. Die schriftliche Variante wird als Notiz geführt und nicht als Textsorte bewertet.",
     "ziel": "Wer fragt, entscheidet mit, was überhaupt gesagt werden kann. Die Methode der Befragung ist kein neutrales Werkzeug, sondern formt das Ergebnis — deshalb wird sie vorher gewählt und nachher verantwortet.",

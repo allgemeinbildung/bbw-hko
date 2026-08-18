@@ -64,6 +64,7 @@ for (const slug of slugs) {
   const ki = readMaybe(join(dir, 'ki.json'))
   const lernprompt = readMaybe(join(dir, 'lernprompt.json'))
   const lernbegleiter = readMaybe(join(dir, 'lernbegleiter.json'))
+  const dossier = readMaybe(join(dir, 'dossier.json'))
   const begleiterPath = join(dir, 'begleiter.md')
   const begleiterMeta = existsSync(begleiterPath) ? parseFrontmatter(readFileSync(begleiterPath, 'utf8')) : {}
 
@@ -163,6 +164,10 @@ for (const slug of slugs) {
     hat_ki: !!ki,
     hat_lernprompt: !!lernprompt,
     hat_lernbegleiter: !!lernbegleiter,
+    // Werkzeugseite «05 · Methoden»: existiert, sobald EINE Herausforderung methoden fuehrt
+    // (die Seite ist pro Bogen datengesteuert — siehe docs/methodenkartei.md).
+    hat_methoden: alleHf.some((s) => Array.isArray(s?.methoden) && s.methoden.length > 0),
+    hat_dossier: !!dossier,
     hybrid_situation_titel: kn?.hybrid_situation?.titel || null,
     kn_typen: (kn?.kn_typen || []).map((t) => ({ typ: t.typ, label: t.label })),
     bundle_dateien: estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter: existsSync(begleiterPath), ki, lernprompt, lernbegleiter }),

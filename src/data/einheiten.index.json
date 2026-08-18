@@ -5,8 +5,7 @@
     "entwurf_komponenten": [],
     "kompetenz_nr": "1.1.1",
     "abgedeckte_kompetenzen": [
-      "1.1.1",
-      "1.1.3"
+      "1.1.1"
     ],
     "slug": "einstieg_interview",
     "titel": "Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.",
@@ -22,8 +21,7 @@
       "T1"
     ],
     "aspekte": [
-      "Identität und Sozialisation",
-      "Technologische und digitale Transformation"
+      "Identität und Sozialisation"
     ],
     "dominanter_aspekt": "Identität und Sozialisation",
     "sk": [
@@ -34,24 +32,24 @@
     ],
     "sprachmodi": [
       "Rezeption schriftlich und bildlich",
-      "Interaktion und Kollaboration mündlich",
-      "Interaktion und Kollaboration digital"
+      "Interaktion und Kollaboration mündlich"
     ],
     "herausforderungen": [
       "A",
-      "B",
-      "C"
+      "B"
     ],
     "hf_titel": {
       "A": "Fünfzehn Minuten, acht Fragen — das strukturierte Interview",
       "B": "Ein Satz und dann Stille — erzählen lassen statt abfragen",
-      "C": "Zwei Nachrichten, eine Chance — digital befragen und nachfassen"
+      "C": null
     },
     "hat_kn": true,
     "hat_begleiter": true,
     "hat_ki": false,
     "hat_lernprompt": false,
     "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
     "hybrid_situation_titel": "Critical Incident — die neue Kollegin in der Frühschicht",
     "kn_typen": [
       {
@@ -67,7 +65,7 @@
         "label": "Werkschau + Transfer-Reflexion"
       }
     ],
-    "bundle_dateien": 22
+    "bundle_dateien": 18
   },
   {
     "id": "1.1.1_konflikt_kommunizieren",
@@ -128,6 +126,8 @@
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
+    "hat_methoden": false,
+    "hat_dossier": false,
     "hybrid_situation_titel": "Critical Incident — der Brief vom Lehrlingsverantwortlichen",
     "kn_typen": [
       {
@@ -195,6 +195,8 @@
     "hat_ki": false,
     "hat_lernprompt": false,
     "hat_lernbegleiter": false,
+    "hat_methoden": false,
+    "hat_dossier": true,
     "hybrid_situation_titel": "Ab nächstem Monat auch samstags",
     "kn_typen": [
       {
@@ -270,6 +272,8 @@
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
+    "hat_methoden": false,
+    "hat_dossier": false,
     "hybrid_situation_titel": "Mini Case — die Lohnabzug-Anfrage um 21 Uhr",
     "kn_typen": [
       {
@@ -336,6 +340,8 @@
     "hat_ki": false,
     "hat_lernprompt": false,
     "hat_lernbegleiter": false,
+    "hat_methoden": false,
+    "hat_dossier": true,
     "hybrid_situation_titel": "Morgen ist das Gespräch",
     "kn_typen": [
       {
@@ -405,6 +411,8 @@
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
+    "hat_methoden": false,
+    "hat_dossier": false,
     "hybrid_situation_titel": "Drei Tage vor dem KN — wie weit lasse ich die KI ran?",
     "kn_typen": [
       {
@@ -477,6 +485,8 @@
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
+    "hat_methoden": false,
+    "hat_dossier": false,
     "hybrid_situation_titel": "0 Prozent — heute unterschreiben",
     "kn_typen": [
       {
@@ -493,6 +503,65 @@
       }
     ],
     "bundle_dateien": 30
+  },
+  {
+    "id": "3.2.1_ernaehrung_nachhaltig_gestalten",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "3.2.1",
+    "abgedeckte_kompetenzen": [
+      "3.2.1"
+    ],
+    "slug": "ernaehrung_nachhaltig_gestalten",
+    "titel": "Ich kann meine eigene Ernährung an belegten Zahlen prüfen und daraus begründet entscheiden, welche Änderung wie viel bewirkt — und wen sie etwas kostet.",
+    "einheit_titel": "Mein Essen in Zahlen",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_4J"
+    ],
+    "modul": "3.2",
+    "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+    "thema_nr": 3,
+    "themen": [
+      "T3"
+    ],
+    "aspekte": [
+      "Ökologie",
+      "Wirtschaft",
+      "Ethik"
+    ],
+    "dominanter_aspekt": null,
+    "sk": [
+      1,
+      3,
+      5,
+      9
+    ],
+    "sprachmodi": [
+      "Produktion multimedial",
+      "Rezeption audiovisuell",
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
+    "hf_titel": {
+      "A": "Drei Tage auf dem Teller",
+      "B": "Der Weg zurück",
+      "C": "Was sich ändern liesse"
+    },
+    "hat_kn": false,
+    "hat_begleiter": false,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hybrid_situation_titel": null,
+    "kn_typen": [],
+    "bundle_dateien": 13
   },
   {
     "id": "3.2.1_wahre_kosten",
@@ -550,6 +619,8 @@
     "hat_ki": false,
     "hat_lernprompt": false,
     "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
     "hybrid_situation_titel": "Zwei Messschieber und eine Entsorgungsrechnung",
     "kn_typen": [
       {
@@ -566,5 +637,63 @@
       }
     ],
     "bundle_dateien": 22
+  },
+  {
+    "id": "5.4.2_internationale_entscheide_wirken_4j",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "5.4.2",
+    "abgedeckte_kompetenzen": [
+      "5.4.2"
+    ],
+    "slug": "internationale_entscheide_wirken_4j",
+    "titel": "Ich verfolge einen internationalen Entscheid Schritt für Schritt bis in meinen Lehrbetrieb, ordne die Interessen der beteiligten Akteure ein und begründe mündlich, was dabei rechtlich gebunden und was politisch entschieden ist.",
+    "einheit_titel": "Bis zu mir hinunter",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_4J"
+    ],
+    "modul": "5.4",
+    "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
+    "thema_nr": 5,
+    "themen": [
+      "T5"
+    ],
+    "aspekte": [
+      "Wirtschaft",
+      "Politik",
+      "Recht"
+    ],
+    "dominanter_aspekt": null,
+    "sk": [
+      5,
+      6,
+      9,
+      11,
+      12
+    ],
+    "sprachmodi": [
+      "Produktion mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
+    "hf_titel": {
+      "A": "«Gestorben wegen einem Entscheid im Ausland»",
+      "B": "Zwei Berufsbildende, zwei Rechnungen",
+      "C": "«Muss gar nicht» oder «darf gar nicht anders»?"
+    },
+    "hat_kn": false,
+    "hat_begleiter": false,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hybrid_situation_titel": null,
+    "kn_typen": [],
+    "bundle_dateien": 13
   }
 ]

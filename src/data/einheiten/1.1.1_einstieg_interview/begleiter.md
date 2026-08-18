@@ -11,7 +11,6 @@ quellen_json:
   - "1.1.1_einstieg_interview_prinzip.json"
   - "1.1.1_einstieg_interview_herausforderung_A.json"
   - "1.1.1_einstieg_interview_herausforderung_B.json"
-  - "1.1.1_einstieg_interview_herausforderung_C.json"
   - "1.1.1_einstieg_interview_kn.json"
 ---
 
@@ -25,15 +24,14 @@ quellen_json:
 
 Diese Einheit ist ein **Variantenset**, kein progressives 3er-Set. Der Unterschied ist keine Feinheit — er ändert alles an der Durchführung.
 
-**Im progressiven 3er-Set** (z. B. «Im Konflikt kommunizieren») bauen A, B und C aufeinander auf: A klärt die Rechtslage, B wählt den Kanal, C führt das Gespräch. Alle Lernenden durchlaufen alle drei, das dauert rund fünf Wochen, und erst zusammen ergeben sie das Kompetenzversprechen.
+**Im progressiven Set** (z. B. «Im Konflikt kommunizieren») bauen die Herausforderungen aufeinander auf: Die eine klärt die Rechtslage, die nächste wählt den Kanal, die letzte führt das Gespräch. Alle Lernenden durchlaufen alle, das dauert rund fünf Wochen, und erst zusammen ergeben sie das Kompetenzversprechen.
 
-**Hier ist es umgekehrt.** A, B und C sind drei **gleichwertige Wege zum selben Handlungsprodukt**. Jeder Weg ist in sich geschlossen und dauert **eine Woche zu drei Lektionen**. Identisch sind: Handlungsprodukt (Kurzprofil), Zeitrahmen, Gesprächspartner, Bewertungsraster. Verschieden ist nur die **Befragungsmethode** — und damit das, was überhaupt zur Sprache kommen kann.
+**Hier ist es umgekehrt.** A und B sind zwei **gleichwertige Wege zum selben Handlungsprodukt**. Jeder Weg ist in sich geschlossen und dauert **eine Woche zu drei Lektionen**. Identisch sind: Handlungsprodukt (Kurzprofil), Zeitrahmen, Gesprächspartner, Bewertungsraster. Verschieden ist nur die **Befragungsmethode** — und damit das, was überhaupt zur Sprache kommen kann.
 
 | | Weg | Öffnet | Schliesst |
 |---|---|---|---|
 | **A** | Strukturiert — vorbereiteter Fragenkatalog | Vergleichbarkeit, Sicherheit, Vollständigkeit | Alles, woran ich vorher nicht gedacht habe |
 | **B** | Narrativ — ein Erzählimpuls, dann zuhören | Tiefe, Unerwartetes, Zwischentöne | Kontrolle über Zeit und Vollständigkeit |
-| **C** | Schriftlich-digital — Anfrage plus Nachfassen | Bedenkzeit, Sorgfalt, wörtliche Zitate | Tonfall, Zögern, spontane Rückfrage |
 
 > [!hinweis] Der wichtigste Satz dieser Einheit
 > «Wer fragt, entscheidet mit, was überhaupt gesagt werden kann.» Das ist nicht die Zusammenfassung — das ist der Lerngegenstand. Die Methode ist nicht das Mittel zum Inhalt, die Methode **ist** der Inhalt.
@@ -44,9 +42,9 @@ Diese Einheit ist ein **Variantenset**, kein progressives 3er-Set. Der Unterschi
 
 > «Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.»
 
-**nRLP-Verortung.** Kompetenz 1.1.1, Lebensbezug 1.1, Thema T1. Herausforderung C deckt zusätzlich 1.1.3 ab (Kommunikationstechnologien zielgruppengerecht einsetzen).
+**nRLP-Verortung.** Kompetenz 1.1.1, Lebensbezug 1.1, Thema T1.
 
-**Sprachmodi — bewusst begrenzt.** T1 führt genau drei Modi auf R1-Niveau ein: Rezeption schriftlich und bildlich, Interaktion und Kollaboration mündlich, Interaktion und Kollaboration digital. Die Einheit bleibt strikt in diesen dreien.
+**Sprachmodi — bewusst begrenzt.** T1 führt drei Modi auf R1-Niveau ein: Rezeption schriftlich und bildlich, Interaktion und Kollaboration mündlich, Interaktion und Kollaboration digital. Diese Einheit bedient die ersten beiden; der digitale Modus wird hier nicht abgedeckt und muss anderswo im Thema eingelöst werden.
 
 > [!hinweis] Warum das Handlungsprodukt kein Text ist
 > **Produktion schriftlich und bildlich hat seine R1 erst in T2.** Deshalb ist das Kurzprofil ausdrücklich ein **Stichwort-Raster mit Zitaten**, kein Fliesstext. Widerstehen Sie der Versuchung, «wenigstens einen kurzen Text» schreiben zu lassen — Sie nähmen der T2-Einheit ihren Gegenstand vorweg und bewerteten einen Modus, der noch nicht eingeführt ist. Das Kurzprofil ist Rohmaterial, kein Produkt.
@@ -60,7 +58,6 @@ Diese Einheit ist ein **Variantenset**, kein progressives 3er-Set. Der Unterschi
 | Soziale Rollen und Rollenübernahme (Kap. 18.1) | Acht Fragearten (Kap. 16.4 S. 373) |
 | Kommunikationsquadrat, Vier Ohren (Kap. 19.2) | Gesprächsführung: zuhören, nachhaken, ausreden lassen (Kap. 16.1, 16.4) |
 | Der Einstieg in die Lehre als biografischer Übergang | Notiztechnik: Stichworte, Schlüsselbegriffe (Kap. 17.2) |
-| Digitale Kommunikationskonventionen (Kap. 17.4) | Adressatengerechte schriftliche Anfrage (Kap. 17.4 S. 402) |
 
 ---
 
@@ -68,19 +65,19 @@ Diese Einheit ist ein **Variantenset**, kein progressives 3er-Set. Der Unterschi
 
 ### Variante 1 — Eine Herausforderung, eine Woche (Minimum)
 
-Sie wählen **einen** Weg für die ganze Klasse. 3 Lektionen. Vollständig und in sich geschlossen: Kurzprofil, Reflexion und Bewertungsraster funktionieren ohne die beiden anderen. Die Austausch-Phase entfällt oder schrumpft auf eine kurze Plenumsrunde.
+Sie wählen **einen** Weg für die ganze Klasse. 3 Lektionen. Vollständig und in sich geschlossen: Kurzprofil, Reflexion und Bewertungsraster funktionieren ohne den anderen. Die Austausch-Phase entfällt oder schrumpft auf eine kurze Plenumsrunde.
 
-Das ist der realistische Einstieg in der ersten Schulwoche — und er genügt.
+Das ist der realistische Einstieg, sobald eine Klasse sich noch nicht kennt — und er genügt.
 
-### Variante 2 — Drei Wege parallel (empfohlen)
+### Variante 2 — Beide Wege parallel (empfohlen)
 
-Sie teilen die Klasse in Drittel, jedes Drittel bekommt einen anderen Weg. Gleiche Woche, gleiches Produkt. 3 Lektionen plus 30 Minuten Austausch.
+Sie teilen die Klasse in zwei Hälften, jede Hälfte bekommt einen anderen Weg. Gleiche Woche, gleiches Produkt. 3 Lektionen plus 30 Minuten Austausch.
 
 > [!hinweis] Nur so trägt die Austausch-Phase
-> Der Jigsaw in Kapitel 4 setzt **parallele Vergabe** voraus. Wenn alle dasselbe gemacht haben, gibt es nichts zu tauschen. Führen Sie in diesem Fall stattdessen eine kurze Plenumsdiskussion: «Was hätte eine andere Methode ergeben?»
+> Der Tandem-Vergleich in Kapitel 4 setzt **parallele Vergabe** voraus. Wenn alle dasselbe gemacht haben, gibt es nichts zu tauschen. Führen Sie in diesem Fall stattdessen eine kurze Plenumsdiskussion: «Was hätte eine andere Methode ergeben?»
 
 > [!mehrdeutigkeit] Nicht als Reihe spielen
-> A → B → C nacheinander ist **nicht vorgesehen**. Die Wege bauen nicht aufeinander auf; hintereinander gespielt erzeugen sie dreimal dasselbe Produkt und langweilen. Wer mehr Zeit hat, nimmt lieber Variante 2 und investiert sie in die Austausch-Phase.
+> A → B nacheinander ist **nicht vorgesehen**. Die Wege bauen nicht aufeinander auf; hintereinander gespielt erzeugen sie zweimal dasselbe Produkt und langweilen. Wer mehr Zeit hat, nimmt lieber Variante 2 und investiert sie in die Austausch-Phase.
 
 ---
 
@@ -88,8 +85,8 @@ Sie teilen die Klasse in Drittel, jedes Drittel bekommt einen anderen Weg. Gleic
 
 | Lektion | AViVA | Inhalt |
 |---|---|---|
-| **L1** | Ankommen · Vorwissen · Informieren | Situation lesen. Lehrmittelkapitel des jeweiligen Wegs lesen. Leitfragen 1–2 (bei C: 1–2 plus Anfrage abschicken). Mindmap. |
-| **L2** | Verarbeiten | **Das Gespräch.** 15 Minuten Interview, dann Rollentausch — beide Seiten führen und werden befragt. Bei C: Antwort auswerten und nachfassen. |
+| **L1** | Ankommen · Vorwissen · Informieren | Situation lesen. Lehrmittelkapitel des jeweiligen Wegs lesen. Leitfragen 1–2. Mindmap. |
+| **L2** | Verarbeiten | **Das Gespräch.** 15 Minuten Interview, dann Rollentausch — beide Seiten führen und werden befragt. |
 | **L3** | Auswerten | Kurzprofil fertigstellen, Leitfrage 4, Methoden-Notiz, Reflexion. Anschliessend Austausch-Phase (bei Variante 2). |
 
 > [!hinweis] Der Rollentausch ist Pflicht
@@ -99,16 +96,15 @@ Sie teilen die Klasse in Drittel, jedes Drittel bekommt einen anderen Weg. Gleic
 
 - **Bei A:** Wer stur den Katalog abliest, bekommt Einwortantworten. Gehen Sie herum und flüstern Sie eine einzige Anweisung: «Frag jetzt nach, was sie eben gesagt hat.»
 - **Bei B:** Die erste Stille ist der kritische Moment. Bereiten Sie die Lernenden darauf vor, dass drei Sekunden Schweigen sich wie eine Minute anfühlen — und dass danach fast immer etwas kommt.
-- **Bei C:** Das Risiko ist, dass keine Antwort eintrifft. Vereinbaren Sie die Frist verbindlich und halten Sie ein Ersatz-Transkript bereit, falls jemand leer ausgeht.
 
 ---
 
 ## 4. Austausch-Phase (30 Min., nur bei Variante 2)
 
-Gruppen zu dritt — je eine Person pro Methode.
+Tandems — je eine Person pro Methode.
 
-1. **Ergebnis zeigen** (90 Sek. pro Person): Kurzprofil vorstellen, stärkstes Zitat vorlesen.
-2. **Methoden vergleichen:** Zwei Spalten führen — *Was steht in allen drei Profilen?* / *Was steht nur in einem?*
+1. **Ergebnis zeigen** (3 Min. pro Person): Kurzprofil vorstellen, stärkstes Zitat vorlesen.
+2. **Methoden vergleichen:** Zwei Spalten führen — *Was steht in beiden Profilen?* / *Was steht nur in einem?*
 3. **Grenzfall suchen:** Für welche Person wäre ausgerechnet die eigene Methode die schlechteste Wahl gewesen?
 
 **Plenum.** Sammeln Sie die Zwei-Spalten-Blätter an der Wandtafel.
@@ -122,8 +118,11 @@ Gruppen zu dritt — je eine Person pro Methode.
 
 **Hybrid-Herausforderung:** «Die neue Kollegin in der Frühschicht» — neue Persona (Logistiker/in EFZ, Effretikon), drei Tage Frist, ein bereits gescheiterter Katalog-Versuch, eine Person, die schriftlich in ganzen Sätzen antwortet, aber zwei Tage braucht.
 
+> [!hinweis] Der Chat ist kein dritter Weg
+> Dass die neue Kollegin auf die Chat-Nachricht ausführlich antwortet, ist in dieser Einheit **kein wählbarer Weg**, sondern ein **Befund über die Person**: Sie braucht Zeit und Distanz, um überhaupt etwas zu sagen. Wer das liest, entscheidet zwischen A und B anders als wer es überliest. Bewerten Sie also die Deutung des Details, nicht eine schriftlich-digitale Methode, die hier nicht unterrichtet wurde.
+
 > [!hinweis] Die KN-Logik im Variantenset
-> Im progressiven Set setzt der KN drei gelernte Teilschritte zusammen. **Das geht hier nicht** — jede Lernende hat nur eine Methode praktiziert. Die Hybrid-Herausforderung ist deshalb eine Lage, in der **jede der drei Methoden aus einem anderen Grund scheitert**. Geprüft wird die **begründete Wahl unter Verzicht**: Welchen Weg nehme ich, und was bekomme ich damit nachweislich nicht?
+> Im progressiven Set setzt der KN die gelernten Teilschritte zusammen. **Das geht hier nicht** — jede Lernende hat nur eine Methode praktiziert. Die Hybrid-Herausforderung ist deshalb eine Lage, in der **beide Methoden aus einem je anderen Grund an ihre Grenze kommen**. Geprüft wird die **begründete Wahl unter Verzicht**: Welchen Weg nehme ich, und was bekomme ich damit nachweislich nicht?
 >
 > Konsequenz für die Bewertung: Eine Lernende, die überzeugend begründet, warum sie trotz der Nachteile bei ihrer Methode bleibt, ist **nicht schlechter** als eine, die wechselt. Bewertet wird die Begründung, nie die Wahl.
 
@@ -151,6 +150,6 @@ Die Kurzprofile werden **eingesammelt und aufbewahrt**. Sie sind das Rohmaterial
 
 ## 7. Offene Punkte
 
-- **Modulbelegung.** Kompetenz 1.1.1 trägt im EFZ-3J bereits zwei Einheiten («Im Konflikt kommunizieren», «Rechte verstehen und nutzen»). Diese ist die dritte. Sie ist deutlich kürzer und als **Einstiegsaktivität der ersten Schulwochen** gedacht, nicht als Konkurrenz — der Ankerpunkt ist der Sprachmodus-Detailtext von 1.1.1: «Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen».
+- **Modulbelegung.** Kompetenz 1.1.1 trägt im EFZ-3J bereits zwei Einheiten («Im Konflikt kommunizieren», «Rechte verstehen und nutzen»). Diese ist die dritte. Sie ist deutlich kürzer und als **Einstiegsaktivität für eine Klasse, die sich noch nicht kennt** gedacht, nicht als Konkurrenz — der Ankerpunkt ist der Sprachmodus-Detailtext von 1.1.1: «Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen».
 - **Datenschutz.** Die Kurzprofile enthalten Aussagen über reale Mitlernende. Vereinbaren Sie zu Beginn: Was ins Profil kommt, entscheidet die befragte Person mit; die drei Zitate werden ihr vorgelesen und rückbestätigt. Profile werden nicht ohne Einverständnis ausgehängt.
-- **Klassen ohne Parallelhälfte.** Herausforderung C setzt voraus, dass sich die Beteiligten nicht täglich sehen. Ist Ihre Klasse vollzählig anwesend, ersetzen Sie die Rahmenbedingung: Befragung ausschliesslich schriftlich, ohne Sprechen, im selben Raum.
+- **Zeitpunkt im Schuljahr.** Die Situationstexte nennen weder Lehrjahr noch Schulwoche und die Persona ist neutral gehalten («Lernende/r EFZ»). Die Einheit lässt sich deshalb in jeder Klasse einsetzen, die sich noch nicht kennt — auch mitten im Jahr, nach einer Klassenzusammenlegung oder bei Neuzugängen.

@@ -1,0 +1,90 @@
+---
+// Katalogkarte einer Einheit — die eine Kartenform der Plattform.
+// Genutzt vom Katalog (EFZ- und EBA-Sektion). Die Entwurf-Badges rendern nur für
+// KT1; lp/gast sehen Entwürfe gar nicht erst (visibleEinheiten filtert vorher).
+import type { EinheitIndexEntry } from '../../lib/einheiten/types'
+import { isEntwurf, draftKomponenten, KOMPONENTEN_LABEL, lehrgangLabel, lehrgangShort } from '../../lib/einheiten'
+import type { Role } from '../../lib/einheiten'
+
+interface Props {
+  einheit: EinheitIndexEntry
+  role: Role
+  /** Lehrgang-Codes für den Gültigkeits-Chip. Leer/weggelassen = kein Chip
+   *  (in der EBA-Sektion wäre er redundant — dort ist alles EBA 2-jährig). */
+  varianten?: string[]
+}
+
+const { einheit: e, role, varianten = [] } = Astro.props
+const kompetenzen = e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]
+const komponenten = draftKomponenten(e)
+const zeigeEntwurf = role === 'kt1' && (isEntwurf(e) || komponenten.length > 0)
+
+// Woraus besteht dieser Entwurf? Bei einer ganzen Entwurf-Einheit ist jeder vorhandene
+// Baustein Entwurf — die Inhaltsliste IST also die Entwurfsliste. Zwei Bausteine sind
+// obligatorisch (KN, Begleiter); fehlen sie, ist die Einheit halbfertig, und genau das
+// muss die Karte zeigen, statt es hinter einem generischen Badge zu verstecken.
+const bausteine = zeigeEntwurf && isEntwurf(e)
+  ? [
+      { label: e.herausforderungen.length === 1 ? '1 Herausforderung' : `${e.herausforderungen.length} Herausforderungen`, da: e.herausforderungen.length > 0 },
+      { label: 'KN', da: e.hat_kn, pflicht: true },
+      { label: 'Begleiter', da: e.hat_begleiter, pflicht: true },
+      { label: 'KI-Toolbox', da: e.hat_ki },
+      { label: 'Methoden-Karten', da: e.hat_methoden },
+      { label: 'Dossier', da: e.hat_dossier },
+    ].filter((b) => b.da || b.pflicht)
+  : []
+---
+<div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
+  <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
+    <h3 class="text-base font-semibold text-slate-900 leading-snug mb-1">
+      {e.einheit_titel}
+    </h3>
+    {zeigeEntwurf && (
+      <div class="flex flex-wrap gap-1.5 mb-2">
+        {isEntwurf(e) && (
+          <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+            ● Entwurf · nur KT1
+          </span>
+        )}
+        {!isEntwurf(e) && komponenten.map((k) => (
+          <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+            ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
+          </span>
+        ))}
+        {bausteine.map((b) => (
+          b.da
+            ? <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">{b.label}</span>
+            : <span class="text-[11px] px-2 py-0.5 rounded-full bg-slate-50 text-slate-400 border border-slate-200 border-dashed" title="Baustein fehlt — Einheit noch nicht vollständig">ohne {b.label}</span>
+        ))}
+      </div>
+    )}
+    <div class="flex flex-wrap gap-1.5 mb-2">
+      {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
+      {varianten.length > 0 && (
+        <span class="chip" title={`Gültig für ${varianten.map(lehrgangLabel).join(' und ')}`}>
+          {varianten.map(lehrgangShort).join(' · ')}
+        </span>
+      )}
+      {kompetenzen.map((k) => (
+        <span class="chip chip-blue">Kompetenz {k}</span>
+      ))}
+    </div>
+    <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
+  </a>
+  <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
+    <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
+      Öffnen →
+    </a>
+    {e.hat_begleiter && (
+      <a
+        href={`/einheiten/${e.id}/begleiter`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
+        style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
+      >
+        Lies mich!
+      </a>
+    )}
+  </div>
+</div>

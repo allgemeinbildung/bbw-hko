@@ -17,9 +17,9 @@
   "varianten_achse": {
     "name": "Befragungsmethode",
     "frage": "Wie frage ich?",
-    "invariant": "Handlungsprodukt, Zeitrahmen, Bewertungsraster und Gesprächspartner/in sind in allen drei Herausforderungen identisch.",
+    "invariant": "Handlungsprodukt, Zeitrahmen, Bewertungsraster und Gesprächspartner/in sind in beiden Herausforderungen identisch.",
     "variabel": "Nur die Methode der Befragung — und damit das, was überhaupt zur Sprache kommen kann.",
-    "begruendung": "Die drei Wege sind austauschbar, nicht aufeinander aufbauend. Eine Lehrperson kann eine beliebige Herausforderung allein einsetzen; die Einheit funktioniert vollständig mit einer einzigen Woche. Werden mehrere Wege in derselben Klasse parallel vergeben, entsteht in der Austausch-Phase der eigentliche Erkenntnisgewinn: dieselbe Aufgabe, dieselbe Person, sichtbar verschiedene Ergebnisse."
+    "begruendung": "Die beiden Wege sind austauschbar, nicht aufeinander aufbauend. Eine Lehrperson kann eine beliebige Herausforderung allein einsetzen; die Einheit funktioniert vollständig mit einer einzigen Woche. Werden beide Wege in derselben Klasse parallel vergeben, entsteht in der Austausch-Phase der eigentliche Erkenntnisgewinn: dieselbe Aufgabe, dieselbe Person, sichtbar verschiedene Ergebnisse."
   },
   "herausforderungen": {
     "A": {
@@ -33,45 +33,34 @@
       "methode": "Kein Katalog, ein Erzählimpuls, danach nur Klärungsfragen; aktives Zuhören mit dem Selbstkundgabeohr (Kap. 16.4 plus Kap. 19.2 S. 426-429)",
       "handlungsprodukt_typ": "Kurzprofil in Stichworten plus drei wörtliche Zitate plus Methoden-Notiz",
       "transferrable": true
-    },
-    "C": {
-      "herausforderung": "Schriftlich-digital befragen und gezielt nachfassen",
-      "methode": "Schriftliche Anfrage nach Konventionen, asynchrone Antwort, eine Runde Klärungsfragen (Kap. 17.4 S. 398-407 plus Kap. 16.4)",
-      "handlungsprodukt_typ": "Kurzprofil in Stichworten plus drei wörtliche Zitate plus Methoden-Notiz",
-      "transferrable": true
     }
   },
   "sk_pro_situation": {
     "A": [2, 4, 6],
-    "B": [4, 6, 8],
-    "C": [2, 4, 6]
+    "B": [4, 6, 8]
   },
   "sk_schnittmenge_kn": {
     "primary": [4, 6]
   },
   "aspekte": {
-    "Identität und Sozialisation": "R1",
-    "Technologische und digitale Transformation": "R1"
+    "Identität und Sozialisation": "R1"
   },
   "modi_units": [
     "Rezeption schriftlich und bildlich",
-    "Interaktion und Kollaboration mündlich",
-    "Interaktion und Kollaboration digital"
+    "Interaktion und Kollaboration mündlich"
   ],
   "modi_kn": [
     "Rezeption schriftlich und bildlich",
     "Interaktion und Kollaboration mündlich",
-    "Interaktion und Kollaboration digital",
     "Produktion mündlich"
   ],
-  "modi_hinweis": "Die drei Herausforderungen bleiben strikt in den T1-Modi (Rezeption schriftlich R1, Interaktion mündlich R1, Interaktion digital R1). Produktion schriftlich und bildlich wird bewusst NICHT bedient — dieser Modus hat seine R1 erst in T2. Das Handlungsprodukt ist deshalb ein Stichwort-Profil und kein Fliesstext. Einzig der KN-Typ Fachgespräch berührt Produktion mündlich (R1 in T2) und nimmt damit die unmittelbar folgende Themeneinheit vorweg.",
+  "modi_hinweis": "Die beiden Herausforderungen bleiben strikt in den T1-Modi (Rezeption schriftlich R1, Interaktion mündlich R1). Produktion schriftlich und bildlich wird bewusst NICHT bedient — dieser Modus hat seine R1 erst in T2. Das Handlungsprodukt ist deshalb ein Stichwort-Profil und kein Fliesstext. Einzig der KN-Typ Fachgespräch berührt Produktion mündlich (R1 in T2) und nimmt damit die unmittelbar folgende Themeneinheit vorweg.",
   "mehrdeutigkeits_architektur": {
     "trade_off_raum": [
       "Vergleichbarkeit der Antworten vs. Raum für Überraschendes",
-      "Nähe und Tiefe vs. Steuerbarkeit und Zeitbudget",
-      "Bedenkzeit und Formulierungssorgfalt vs. Spontaneität und Zwischentöne"
+      "Nähe und Tiefe vs. Steuerbarkeit und Zeitbudget"
     ],
-    "verbindlich": "Keine der drei Methoden ist die richtige. Jede öffnet eine Tür und schliesst eine andere. Bewertet wird nicht die Wahl, sondern ob die Lernende benennen kann, was ihre Methode sichtbar gemacht und was sie verdeckt hat."
+    "verbindlich": "Keine der beiden Methoden ist die richtige. Jede öffnet eine Tür und schliesst eine andere. Bewertet wird nicht die Wahl, sondern ob die Lernende benennen kann, was ihre Methode sichtbar gemacht und was sie verdeckt hat."
   },
   "dekontextualisierungs_anker": {
     "anker_statement": "Wer fragt, entscheidet mit, was überhaupt gesagt werden kann. Die Methode der Befragung ist kein neutrales Werkzeug, sondern formt das Ergebnis.",
@@ -143,14 +132,10 @@
   },
   "persona_pool_units": {
     "berufe": [
-      "Fachfrau/-mann Betreuung EFZ",
-      "Polymechaniker/in EFZ",
-      "Detailhandelsfachfrau/-mann EFZ"
+      "Lernende/r EFZ"
     ],
     "orte": [
-      "Winterthur",
-      "Wetzikon",
-      "Bülach"
+      "Schweiz"
     ]
   },
   "persona_pool_kn_neu": {
@@ -167,13 +152,13 @@
     "max_woerter": 120,
     "perspektive": "ICH",
     "must_activate_trade_offs_min": 2,
-    "must_combine_herausforderungen": ["A", "B", "C"],
+    "must_combine_herausforderungen": ["A", "B"],
     "persona_source": "persona_pool_kn_neu",
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [
-      "Eine Szene mit widersprüchlichen Rahmenbedingungen — nicht drei Methoden aneinandergereiht.",
-      "Die Bedingungen schliessen jede der drei Methoden teilweise aus, keine ist offensichtlich richtig.",
+      "Eine Szene mit widersprüchlichen Rahmenbedingungen — nicht zwei Methoden aneinandergereiht.",
+      "Die Bedingungen schliessen jede der beiden Methoden teilweise aus, keine ist offensichtlich richtig.",
       "Mindestens zwei Spannungsfelder aus trade_off_raum spannen sich auf.",
       "Persona ist neu (Beruf und Ort kommen in keiner Herausforderung vor).",
       "Leitfrage verlangt die Methodenwahl UND ihre Begründung, ohne eine Antwort nahezulegen."

@@ -31,7 +31,84 @@ nur die aufführen, die zum Sprachmodus der Kompetenz passen.
 
 Steht ein Lebensbezug nicht in der Tabelle: **nicht raten.** Über Kapiteltitel und
 Inhalt suchen, Vorschlag der Lehrperson vorlegen, bestätigen lassen, danach diese
-Datei ergänzen.
+Datei ergänzen. Das dafür beste Werkzeug ist die Gegenlesung mit NotebookLM (unten).
+
+---
+
+## Gegenlesung mit NotebookLM
+
+Das Notebook **«Allgemeinbildung26»** (`ad3b8ab1-4720-42fa-b3c4-42058bca3649`) enthält
+dieselben 73 Kapitel wie `material/_lehrmittel/`, aber semantisch durchsuchbar. Es ist
+kein Inhaltsspeicher — die Texte liegen lokal — sondern ein **Findewerkzeug für die
+Kapitelauswahl**.
+
+### Wann — und wann nicht
+
+**Der Notebook füttert diese Tabelle, er ersetzt sie nicht.** Abfragen, wenn eine Zeile
+neu ist oder Zweifel bestehen; das Ergebnis hier eintragen. Danach liest die Generierung
+nur noch die Tabelle.
+
+**Nicht bei jeder Generierung abfragen.** Der Notebook antwortet nie zweimal gleich —
+live abgefragt würden Einheiten nicht reproduzierbar, und jede Generierung würde ohne
+Gewinn langsamer. Der Nutzen liegt ausschliesslich in Phase 0 bei der Kapitelauswahl,
+wo Trefferquote zählt. Für Seitenanker (`knoten_ref`) ist lokales Lesen strikt besser:
+deterministisch, seitengenau, gratis.
+
+### Wie fragen
+
+Fünf Dinge machen den Unterschied — ohne sie übersieht der Notebook belegbar Kapitel:
+
+1. **nRLP-Kompetenztext wörtlich einsetzen**, nicht das Themenwort. «Nachhaltigkeit»
+   liefert weniger als der volle Satz «Ich kann die Konsumgewohnheiten … beurteilen».
+2. **Ausdrücklich nach Kapiteln fragen, die das Stichwort *nicht* verwenden.** Das ist
+   der stärkste Hebel: er fördert genau die Kapitel zutage, die thematisch passen, aber
+   kein gemeinsames Vokabular haben.
+3. **Exaktes Zeilenformat vorgeben** — `Kap. X.Y | S. aa-bb | Beitrag (max. 12 Wörter)`.
+4. **Relevanztrennung verlangen**, z.B. eine Zeile `RANDBEZUG:` vor den Kapiteln mit
+   blosser Erwähnung. Er hält sich zuverlässig daran.
+5. **«Keine Einleitung, keine Rückfrage am Schluss»** — sonst hängt er einen
+   Gesprächsvorschlag an.
+
+Pro Abfrage eine **frische Konversation**: eine Folgefrage in derselben Konversation
+wird von der vorherigen geprägt.
+
+Vorlage:
+
+```
+Ich plane eine ABU-Unterrichtseinheit zu diesem Kompetenzziel: «{Kompetenztext}»
+
+Nenne mir ALLE Kapitel, die dafür Sachinhalt liefern — auch solche, die das Wort
+«{Themenwort}» gar nicht verwenden. Für jedes Kapitel genau eine Zeile im Format:
+
+Kap. X.Y | S. aa-bb | was es zur Kompetenz beiträgt (max. 12 Wörter)
+
+Sortiere nach Relevanz, wichtigste zuerst. Trenne am Schluss mit einer Zeile
+«RANDBEZUG:» jene Kapitel ab, die den Begriff nur beiläufig erwähnen.
+Keine Einleitung, keine Rückfrage am Schluss.
+```
+
+### Wie die Antwort lesen
+
+Die **Seitenzahlen stehen in `references[].cited_text`**, nicht im Antworttext — dort
+sind sie als `[Seite: NNN]` eingebettet. Die genannten Bereiche enden typisch **1–2
+Seiten früher** als das Kapitel, weil Übungsteil und Glossar wegfallen. Stichprobe über
+12 Kapitel: 6 exakt, 6 knapp darunter, keiner falsch. Für `quellen_anker` ist das
+brauchbar; für `knoten_ref` trotzdem lokal nachschlagen.
+
+### Wie filtern — in beide Richtungen
+
+**Was er zu viel nennt:** Kapitel, in denen das Stichwort nur im Fliesstext vorkommt,
+ohne curricularen Anker. Beispiel aus der 5.1.2-Gegenlesung: `8.4` (Schuldenbremse),
+`12.2` (Besteuerung im Konkubinat), `11.1` (AIA) — alles Treffer auf «Steuer», keines
+trägt zur Kompetenz bei. Verwerfen.
+
+**Was er zu wenig nennt, ist nicht automatisch falsch.** Die Tabellenzeile ist auf den
+ganzen **Lebensbezug** geschlüsselt, die Abfrage meist auf **eine Kompetenz**. Dass er
+bei 5.1.2 die Kapitel `6.1`, `6.2`, `3.3`, `3.1` nicht nannte, ist korrekt — die bedienen
+die Schwesterkompetenz 5.1.1.
+
+Jede Ergänzung oder Streichung ins **Änderungsprotokoll** unten, mit Begründung. Das
+Protokoll ist die Qualitätssicherung der Tabelle.
 
 ---
 
@@ -53,7 +130,7 @@ Seitenmarker durchgehend kleingeschrieben: `[seite: 186]`.
 | **2.2** | Ungleichbehandlung und Ausgrenzung diskutieren | 3.4 Migration, Integration und Rassismus · 12.1 Werte · 18.2 Werte, Normen, Moral und Ethik · 18.3 Perspektivenwechsel | 16.1 Diskussion · 17.3 Argumentieren |
 | **2.3** | Mitreden, mitgestalten, ernst genommen werden | 3.2 Mitwirkungsrechte und Pflichten · 6.4 Referendum und Initiative · 6.5 Entstehung eines Gesetzes · 6.6 Interessengruppen · 6.2 Bundesstaat Schweiz · 6.7 Übersicht Kanton Zürich | 16.1 Diskussion · 16.2 Statement · 17.3 Argumentieren |
 | **3.1** | Überlegte Konsumentscheidungen treffen | 2.1 Lohnbestandteile · 2.2 Budget · 2.3 Zahlungsarten · 8.2 Schulden und Betreibung · 2.6 Geldanlagemöglichkeiten | — |
-| **3.2** | Konsum mit Folgen für Umwelt und Gesellschaft | 9.3 Nachhaltigkeit · 1.5 Ökologie im Umfeld · 2.7 Preisbildung · 9.4 Mobilität · 11.2 Globalisierung · 8.4 Stabile Preise, Inflation und Deflation · 8.3 Konjunktur | — |
+| **3.2** | Konsum mit Folgen für Umwelt und Gesellschaft | 9.3 Nachhaltigkeit · 1.5 Ökologie im Umfeld · **9.2 Energie** · **9.1 Klima** · 2.7 Preisbildung · 9.4 Mobilität · 11.2 Globalisierung · 8.4 Stabile Preise, Inflation und Deflation · 8.3 Konjunktur | **16.3 Präsentation** |
 | **3.3** | Pflichten und Rechte beim Einkaufen | 2.4 Kaufvertragsarten Teil 1 · 8.1 Kaufvertragsarten Teil 2 · 2.5 Vertragsarten · 1.3 Rechtsgrundlagen | 17.4 Korrespondenz |
 | **4.1** | Körperliches und psychisches Wohlbefinden | 18.1 Identität · 18.2 Werte, Normen, Moral und Ethik · 4.3 Gesundheit und Sucht | 18.4 Motivation |
 | **4.2** | Gesundheitliche und finanzielle Risiken | 4.1 Versicherungswesen allgemein · 4.2 Kranken- und Unfallversicherung · 5.1 Sachversicherungen · 5.2 Haftpflichtversicherungen · 5.3 Verantwortung | — |
@@ -98,7 +175,7 @@ Konsumentscheidungen sind im 4J `1.3`, im 3J `3.1`. Immer den Lehrgang mitprüfe
 | **5.1** | Rechte und Pflichten | *wie 3J 5.1* | — |
 | **5.2** | Gesetze verändern | *wie 3J 5.2* | *wie 3J 5.2* |
 | **5.3** | Globale Herausforderungen | *wie 3J 5.3* | *wie 3J 5.3* |
-| **5.4** | Internationale Krisen und Konflikte | 11.1 Schweiz – EU · 11.2 Globalisierung · 11.3 Entwicklungsländer · 7.1 Medien | 20.8 Recherchieren |
+| **5.4** | Internationale Krisen und Konflikte | 11.1 Schweiz – EU · 11.2 Globalisierung · 11.3 Entwicklungsländer · 7.1 Medien · **6.6 Interessengruppen** | 20.8 Recherchieren · **16.2 Statement** |
 | **6.1** | Wohnung finden | *wie 3J 6.1* | 20.2 Projektplanung |
 | **6.2** | Mietvertrag und Versicherungen | *wie 3J 6.2* | 17.4 Korrespondenz |
 | **6.3** | Wohn- und Lebensformen | *wie 3J 6.3* | — |
@@ -122,6 +199,23 @@ Die Zuordnung ist **fachlich hergeleitet**, nicht aus einer offiziellen Konkorda
 gilt das Urteil der Lehrperson; Korrekturen bitte direkt hier eintragen.
 
 ### Änderungsprotokoll
+
+**2026-08-16 — LB 3.2 (3J, vom 4J via *wie 3J 3.2* geerbt) um `9.2 Energie`, `9.1 Klima`
+(Kernkapitel) und `16.3 Präsentation` (Methodenkapitel) ergänzt.** Befund aus der
+Generierung `3.2.1_ernaehrung_nachhaltig_gestalten`: Die inhaltlichen Kernbegriffe der
+Kompetenz — graue Energie, Ökobilanz, virtuelles Wasser — stehen in 9.2 (S. 229–230),
+nicht in den bisher gelisteten Kapiteln; der nRLP-Aspekt Ökologie nennt ausdrücklich
+«Klimawandel» (9.1 S. 220–223); der einzige Sprachmodus der Kompetenz 3.2.1 ist
+«Produktion multimedial», wofür 16.3 (S. 369–371, Aufbau + Visualisierung einer
+Präsentation) das einschlägige Methodenkapitel ist.
+
+**2026-08-16 — LB 5.4 (4J) um `6.6 Interessengruppen` (Kernkapitel) und `16.2 Statement`
+(Methodenkapitel) ergänzt.** Befund aus der Generierung
+`5.4.2_internationale_entscheide_wirken_4j`: Der gesellschaftliche Inhalt «Politik:
+Interessen verschiedener Akteure» der Kompetenz 5.4.2 wird im Lehrmittel nur in 6.6
+(S. 172–179, Verbände/Vernehmlassung/Lobby) getragen; der einzige Sprachmodus der
+Kompetenz ist «Produktion mündlich», wofür 16.2 (S. 368, Statement-Aufbau) besser
+passt als das bisher einzige Methodenkapitel 20.8 Recherchieren (bleibt bestehen).
 
 **2026-08-16 — LB 5.1 um `2.1 Lohnbestandteile` und `1.3 Rechtsgrundlagen` ergänzt.**
 Gegenlesung des Eintrags mit dem NotebookLM-Notebook «Allgemeinbildung26» für den

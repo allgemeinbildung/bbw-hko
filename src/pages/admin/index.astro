@@ -3,7 +3,7 @@ import Admin from '../../layouts/Admin.astro'
 import FilterBar from '../../components/FilterBar.astro'
 import { nrlp } from '../../lib/nrlp'
 import { skTooltip } from '../../lib/sk-labels'
-import { einheitenIndex, isEntwurf, draftKomponenten, KOMPONENTEN_LABEL } from '../../lib/einheiten'
+import { einheitenIndex, isEntwurf, draftKomponenten } from '../../lib/einheiten'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -44,38 +44,26 @@ const { data: materials } = await query
 const count = materials?.length ?? 0
 
 // KT1-Entwürfe: ganze Einheiten im Entwurf + live Einheiten mit Entwurf-Bausteinen.
-const entwurfEinheiten = einheitenIndex.filter((e) => isEntwurf(e))
-const komponentenEntwuerfe = einheitenIndex.filter((e) => !isEntwurf(e) && draftKomponenten(e).length > 0)
-const hatEntwuerfe = entwurfEinheiten.length > 0 || komponentenEntwuerfe.length > 0
+// Hier steht nur noch der Zähler — die Liste selbst lebt im Einheiten-Katalog,
+// wo jeder Entwurf als vollständige Karte mit «● Entwurf · nur KT1» erscheint.
+const anzahlEntwuerfe = einheitenIndex.filter((e) => isEntwurf(e) || draftKomponenten(e).length > 0).length
+const hatEntwuerfe = anzahlEntwuerfe > 0
 ---
 <Admin title="Übersicht">
   {hatEntwuerfe && (
-    <div class="mb-6 bg-amber-50 border border-amber-200 rounded-lg p-4">
-      <div class="flex items-baseline gap-2 mb-3">
+    <div class="mb-6 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3">
+      <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
         <h2 class="text-sm font-semibold text-amber-900">● Entwürfe — nur für KT1 sichtbar</h2>
-        <span class="text-xs text-amber-700">{entwurfEinheiten.length + komponentenEntwuerfe.length} offen · für interne Abstimmung vor der Freigabe</span>
+        <span class="text-xs text-amber-700">{anzahlEntwuerfe} offen · für interne Abstimmung vor der Freigabe</span>
+        <a href="/einheiten" class="ml-auto text-sm font-medium text-amber-900 underline whitespace-nowrap">Im Katalog ansehen →</a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-        {entwurfEinheiten.map((e) => (
-          <a href={`/einheiten/${e.id}`} class="flex items-center gap-2 bg-white border border-amber-200 rounded-md px-3 py-2 text-sm hover:border-amber-400 transition">
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 whitespace-nowrap">ganze Einheit</span>
-            <span class="font-medium text-slate-800 truncate">{e.einheit_titel}</span>
-            {e.lehrgang === 'EBA_2J' && <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 whitespace-nowrap">EBA</span>}
-            <span class="ml-auto text-amber-700">→</span>
-          </a>
-        ))}
-        {komponentenEntwuerfe.map((e) => (
-          <a href={`/einheiten/${e.id}`} class="flex items-center gap-2 bg-white border border-amber-200 rounded-md px-3 py-2 text-sm hover:border-amber-400 transition">
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 whitespace-nowrap">
-              {draftKomponenten(e).map((k) => KOMPONENTEN_LABEL[k] ?? k).join(', ')}
-            </span>
-            <span class="font-medium text-slate-800 truncate">{e.einheit_titel}</span>
-            {e.lehrgang === 'EBA_2J' && <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 whitespace-nowrap">EBA</span>}
-            <span class="ml-auto text-amber-700">→</span>
-          </a>
-        ))}
-      </div>
-      <p class="text-xs text-amber-700 mt-3">Freigeben: Flag in <code>set.json</code> entfernen → <code>npm run build:einheiten-index</code> → deploy.</p>
+      <p class="text-xs text-amber-800 mt-2 max-w-3xl">
+        Die Titelliste stand früher hier. Sie ist in den <a href="/einheiten" class="underline font-medium">Einheiten-Katalog</a> gewandert:
+        dort steht jeder Entwurf als vollständige Karte — Thema, Lehrgang, abgedeckte Kompetenzen, Kompetenzversprechen und «Lies mich!» —
+        zwischen den publizierten Einheiten, gelb markiert mit «● Entwurf · nur KT1». Das ist dieselbe Karte, die die Lehrpersonen sehen,
+        und sie zeigt einen Entwurf dort, wo er curricular hingehört, statt als blosse Zeile ohne Kontext.
+      </p>
+      <p class="text-xs text-amber-700 mt-2">Freigeben: Flag in <code>set.json</code> entfernen → <code>npm run build:einheiten-index</code> → deploy.</p>
     </div>
   )}
 

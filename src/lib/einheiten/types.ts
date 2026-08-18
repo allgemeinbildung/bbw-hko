@@ -399,6 +399,10 @@ export interface EinheitIndexEntry {
   hat_ki: boolean
   hat_lernprompt: boolean
   hat_lernbegleiter: boolean
+  /** Mindestens eine Herausforderung hat eine Methoden-Werkzeugseite. */
+  hat_methoden: boolean
+  /** EBA-Wissens-Dossier (dossier.json) vorhanden. */
+  hat_dossier: boolean
   hybrid_situation_titel: string | null
   kn_typen: { typ: string; label: string }[]
   bundle_dateien: number

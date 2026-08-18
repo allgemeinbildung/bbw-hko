@@ -32,11 +32,11 @@
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Polymechaniker/in EFZ",
-    "betrieb": "Meier Präzisionstechnik AG Wetzikon",
-    "ort": "Wetzikon"
+    "beruf": "Lernende/r EFZ",
+    "betrieb": "Berufsfachschule",
+    "ort": "Schweiz"
   },
-  "situation_text": "Ich bin Polymechaniker-Lernende/r im 1. Lehrjahr. Heute soll ich eine Person aus meiner ABU-Klasse kennenlernen und sie nachher vorstellen — aber die Lehrperson hat einen Fragenkatalog ausdrücklich verboten. Ich darf genau einen Satz sagen, um das Gespräch zu eröffnen, und danach nur noch Rückfragen stellen, die sich aus dem ergeben, was mein Gegenüber erzählt. Ich habe 15 Minuten. Mir ist unwohl dabei: Ohne Fragen in der Hand weiss ich nicht, wo das Gespräch hingeht, und ich habe Angst, dass es nach zwei Minuten stockt und ich nicht weiss, wie ich weitermache.",
+  "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung. Heute soll ich eine Person aus meiner ABU-Klasse kennenlernen und sie nachher vorstellen — aber die Lehrperson hat einen Fragenkatalog ausdrücklich verboten. Ich darf genau einen Satz sagen, um das Gespräch zu eröffnen, und danach nur noch Rückfragen stellen, die sich aus dem ergeben, was mein Gegenüber erzählt. Ich habe 15 Minuten. Mir ist unwohl dabei: Ohne Fragen in der Hand weiss ich nicht, wo das Gespräch hingeht, und ich habe Angst, dass es nach zwei Minuten stockt und ich nicht weiss, wie ich weitermache.",
   "zahlen_tabelle": [
     { "label": "Gesprächszeit", "wert": "15 Min." },
     { "label": "Vorbereitete Fragen", "wert": "0" },
@@ -254,6 +254,27 @@
       ]
     }
   },
+  "methoden": [
+      {
+        "ref": "lm-16-4-fragearten",
+        "fuer": "für die Klärungsfragen zwischendurch",
+        "tun": "Während des Erzählens ist nur die Klärungsfrage erlaubt. Alle anderen Arten heben Sie sich für die letzten drei Minuten auf, wenn Sie die Lücken füllen."
+      },
+      {
+        "ref": "lm-19-2-vier-ohren",
+        "fuer": "für das Zuhören, während Sie nicht fragen",
+        "tun": "Hören Sie bewusst auf dem Selbstkundgabe-Ohr: Was erfahren Sie über diese Person, ohne danach gefragt zu haben? Genau das gehört ins Feld «Was diese Person ausmacht»."
+      },
+      {
+        "ref": "hko-stille-aushalten",
+        "fuer": "für den Erzählimpuls und die Pausen danach"
+      },
+      {
+        "ref": "hko-woertlich-zitieren",
+        "fuer": "für die drei wörtlichen Zitate"
+      }
+    ],
+
   "reflexion_fragen": [
     {
       "nr": "R1",

@@ -1,0 +1,197 @@
+{
+  "id": "3.2.1_ernaehrung_nachhaltig_gestalten_prinzip",
+  "modul": "3.2",
+  "kompetenz_nr": "3.2.1",
+  "topic_slug": "ernaehrung_nachhaltig_gestalten",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-16",
+
+  "kern_kompetenzversprechen": "Ich kann meine eigene Ernährung an belegten Zahlen prüfen und daraus begründet entscheiden, welche Änderung wie viel bewirkt — und wen sie etwas kostet.",
+
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K3+ oder K4"
+  },
+
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Die eigene Ernährung über drei Tage erheben und drei Befunde belegen",
+      "konfliktart": "Gewohnte Ernährung vs. die ökologischen Folgen der eigenen Wahl",
+      "handlungsprodukt_typ": "Faktenorientierte Multimedia-Auswertung der eigenen Erhebung mit drei belegten Befund-Kacheln",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Ein Lebensmittel bis zur Quelle zurückverfolgen und entlang der drei Dimensionen belegen",
+      "konfliktart": "Knappe Ressourcen in der Herstellungskette vs. tiefer Preis im Laden",
+      "handlungsprodukt_typ": "Faktenorientiertes Produktprofil auf drei Karten entlang der drei Dimensionen der Nachhaltigkeit, mit Wegskizze",
+      "transferrable": true
+    },
+    "C": {
+      "herausforderung": "Zwei bis drei Änderungsmöglichkeiten auf Wirkung und Kosten prüfen und eine begründet auswählen",
+      "konfliktart": "Wirksamkeit einer Änderung vs. ihre Kosten und die Verantwortung dafür",
+      "handlungsprodukt_typ": "Meinungsorientierte Multimedia-Kurzpräsentation mit Vergleichstabelle und schriftlicher Rückmeldung",
+      "transferrable": true
+    }
+  },
+
+  "sub_facetten": {
+    "_kommentar": "Drei unterscheidbare Denkoperationen, nicht dreimal dasselbe Vorgehen. Die Kollisionsgefahr liegt zwischen B und C: Wenn C auf einen blossen Produktwechsel verkürzt, ist es nur B mit Empfehlungssatz. Schutz: C muss über mindestens zwei der drei Ebenen vergleichen und für jede Option Wirkung UND Kostenträger ausweisen.",
+    "A": "Erheben — eigene Daten, deskriptiv, Gegenwart",
+    "B": "Rekonstruieren — fremde Daten, systemisch, Vorgeschichte der Kette",
+    "C": "Abwägen — normativ und prospektiv, Wirkung gegen Kosten"
+  },
+
+  "sk_pro_situation": {
+    "A": [9, 5],
+    "B": [1, 9],
+    "C": [3, 9, 5]
+  },
+
+  "sk_schnittmenge_kn": {
+    "_kommentar": "SK9 in 3 von 3, SK5 in 2 von 3 (A und C). SK1 nur in B und daher nicht primary. Streng auf die vier T3-SK der Zirkularitaets-Spirale beschraenkt: SK1 Quellen unterscheiden (R2), SK3 Innovation und Problemloesungen entwickeln (R1), SK5 Werthaltungen reflektieren (R2), SK9 Nachhaltig handeln (R1). SK6 und SK11 sind in T3 NICHT vorgesehen und werden bewusst nicht getaggt, obwohl die Mehrdeutigkeits-Architektur didaktisch traegt.",
+    "primary": [9, 5]
+  },
+
+  "aspekte": {
+    "Ökologie": "R1",
+    "Wirtschaft": "R2",
+    "Ethik": "R3"
+  },
+
+  "aspekt_begruendung": {
+    "Ökologie": "nRLP-Kompetenz 3.2.1, gesellschaftliche Inhalte — Energie- und Materialverbrauch, Emissionen, Klimawandel, drei Dimensionen der Nachhaltigkeit. R-Stufe aus der T3-Spirale.",
+    "Wirtschaft": "nRLP-Kompetenz 3.2.1, gesellschaftliche Inhalte — ökonomisches Grundproblem knapper Ressourcen. R-Stufe aus der T3-Spirale (im 3J-Datensatz waere es R1).",
+    "Ethik": "antizipiert: Herausforderung C, Konfliktart «Wirksamkeit einer Änderung vs. ihre Kosten und die Verantwortung dafür» → Signal «Verantwortung».",
+    "Politik": "NICHT aktiviert — Politik steht in der T3-Spirale des 4J-Datensatzes nicht. Die Konfliktart von C ist deshalb bewusst ohne das Signalwort «Staat» formuliert; die drei Ebenen (bei mir selbst, im Lehrbetrieb, über eine allgemeine Regelung) leben im situation_text und im Handlungsprodukt, nicht in der Konfliktart.",
+    "Identität und Sozialisation": "NICHT antizipiert — kein Signalwort in konfliktart_A/B/C, obwohl der Aspekt in der T3-Spirale mit R2 vorhanden waere."
+  },
+
+  "modi_units": [
+    "Produktion multimedial",
+    "Rezeption audiovisuell",
+    "Interaktion und Kollaboration schriftlich"
+  ],
+
+  "modi_kn": [
+    "Produktion multimedial",
+    "Rezeption audiovisuell",
+    "Interaktion und Kollaboration schriftlich"
+  ],
+
+  "modi_begruendung": "«Produktion multimedial» ist der einzige Sprachmodus der nRLP-Kompetenz 3.2.1 (Detail: «Fakten- oder meinungsorientierte Multimedia-Präsentation») und wird in allen drei Herausforderungen trainiert — A und B faktenorientiert, C meinungsorientiert. «Rezeption audiovisuell» (Thema-Ebene T3) wird in B aktiv trainiert, weil dort eine Dokumentation oder ein Erklaervideo als Quelle ausgewertet und ausgewiesen wird. «Interaktion und Kollaboration schriftlich» (Thema-Ebene T3) wird in C durch die schriftliche Rueckmeldung an ein anderes Paar trainiert.",
+
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Gewohnte Ernährung vs. belegte Folgen der eigenen Wahl",
+      "Tiefer Preis im Laden vs. Ressourcenverbrauch in der Kette",
+      "Grosse Wirkung vs. wer die Kosten der Änderung trägt"
+    ],
+    "verbindlich": "Keine Ernährungsweise ist ohne Folgen. Die Aufgabe ist nicht, die richtige zu finden, sondern die Folgen zu beziffern und den eigenen Entscheid an dieser Zahl zu begründen. Bewertet wird die Qualität der Begründung, nicht die gewählte Ernährung."
+  },
+
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Eine Aussage über nachhaltigen Konsum ist erst dann überprüfbar, wenn benannt ist, welche Dimension sie meint, worauf ihre Zahl sich bezieht und wer die Kosten der vorgeschlagenen Änderung trägt.",
+    "transferfeld": "Aussagen und Versprechen über nachhaltigen Konsum — Labels, Werbeaussagen, betriebliche Zusagen und politische Vorlagen."
+  },
+
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T5 — Globale gesellschaftliche Herausforderungen: derselbe Blick auf Ressourcen und Instrumente, aber auf gesellschaftlicher und internationaler Ebene (SK9 dort R2).",
+    "r3_voraussicht": "T6 — Wohn- und Lebensformen: Ressourcenverbrauch im eigenen Haushalt planen, beurteilen und langfristig ausrichten (SK9 dort R3)."
+  },
+
+  "quellen_anker": {
+    "chapters": [
+      {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — Definition, drei Dimensionen, Marktversagen, vier umweltpolitische Instrumente, Verursacherprinzip und Lenkungsabgabe, Energiestrategie 2050, 2000-Watt-Gesellschaft, Schweizer Klimaziele", "seiten": "Seite 231-235"},
+      {"ref": "Kap. 9.2", "titel": "Energie — Ressourcenverbrauch am Beispiel Wasser, Wassermengen je Lebensmittel, graue Energie über den Lebenszyklus, Ökobilanz", "seiten": "Seite 227-230"},
+      {"ref": "Kap. 9.4", "titel": "Mobilität — Energieverbrauch und CO2-Emissionen des Verkehrs, Bodenbeanspruchung, Zukunft der Mobilität", "seiten": "Seite 236-237"},
+      {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnis, Existenz- und Wahlbedürfnisse, Individual- und Kollektivbedürfnisse", "seiten": "Seite 73-74"},
+      {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Lebensmittellabels, labelinfo.ch mit vier Bewertungskriterien, Fairtrade, Bio, IP-Suisse", "seiten": "Seite 37"},
+      {"ref": "Kap. 11.2", "titel": "Globalisierung — Globalisierung der Umwelt, Umweltschäden entlang weltweiter Warenströme", "seiten": "Seite 279"},
+      {"ref": "Kap. 17.3", "titel": "Argumentieren — Aufbau einer schriftlichen Stellungnahme, 3B-Schema", "seiten": "Seite 394"},
+      {"ref": "Kap. 16.3", "titel": "Präsentation — Aufbau, Visualisierungsmethoden, Grundsätze der Visualisierung", "seiten": "Seite 369-370"},
+      {"ref": "Kap. 16.2", "titel": "Statement — Aufbau eines Statements", "seiten": "Seite 368"}
+    ],
+    "konzepte": [
+      "drei Dimensionen der Nachhaltigkeit",
+      "ökologische Nachhaltigkeit",
+      "ökonomische Nachhaltigkeit",
+      "soziale Nachhaltigkeit",
+      "graue Energie",
+      "Ökobilanz",
+      "Lebenszyklus eines Produkts",
+      "Ressourcenverbrauch",
+      "virtuelles Wasser",
+      "Existenzbedürfnis",
+      "Wahlbedürfnis",
+      "Label",
+      "Fairtrade",
+      "IP-Suisse",
+      "Marktversagen",
+      "Verursacherprinzip",
+      "Lenkungsabgabe",
+      "Appelle, Anreize, Verbote, Nachsorge",
+      "2000-Watt-Gesellschaft",
+      "Netto-Null",
+      "Bezugsgrösse",
+      "Zielkonflikt"
+    ]
+  },
+
+  "herkunft_migration": [
+    {"konzept": "Drei Dimensionen der Nachhaltigkeit", "herkunft": "Kap. 9.3, S. 231", "genutzt_in": ["A", "B"]},
+    {"konzept": "Existenz- und Wahlbedürfnisse", "herkunft": "Kap. 2.7, S. 73-74", "genutzt_in": ["A"]},
+    {"konzept": "Lebensmittellabels und ihre vier Bewertungskriterien", "herkunft": "Kap. 1.5, S. 37", "genutzt_in": ["A", "B"]},
+    {"konzept": "Graue Energie und Ökobilanz", "herkunft": "Kap. 9.2, S. 230", "genutzt_in": ["B"]},
+    {"konzept": "Wassermengen je Lebensmittel (virtuelles Wasser)", "herkunft": "Kap. 9.2, S. 229", "genutzt_in": ["B"]},
+    {"konzept": "Verkehr als Energie- und Emissionstreiber", "herkunft": "Kap. 9.4, S. 236-237", "genutzt_in": ["B"]},
+    {"konzept": "Globalisierung der Umwelt", "herkunft": "Kap. 11.2, S. 279", "genutzt_in": ["B"]},
+    {"konzept": "Marktversagen und die vier umweltpolitischen Instrumente", "herkunft": "Kap. 9.3, S. 233", "genutzt_in": ["C"]},
+    {"konzept": "2000-Watt-Gesellschaft, heutiger Verbrauch rund 6500 Watt", "herkunft": "Kap. 9.3, S. 234-235", "genutzt_in": ["C"]},
+    {"konzept": "Schweizer Klimaziele (minus 50 Prozent bis 2030, Netto-Null ab 2050)", "herkunft": "Kap. 9.3, S. 232", "genutzt_in": ["C"]},
+    {"konzept": "3B-Schema für Argumente", "herkunft": "Kap. 17.3, S. 394", "genutzt_in": ["C"]},
+    {"konzept": "Aufbau eines Statements", "herkunft": "Kap. 16.2, S. 368", "genutzt_in": ["C"]},
+    {"konzept": "Visualisierungsgrundsätze", "herkunft": "Kap. 16.3, S. 369-370", "genutzt_in": ["A", "B"]}
+  ],
+
+  "lehrmittel_luecken": [
+    "Das Lehrmittel LM-26 hat kein Kapitel zu Ernährung, Landwirtschaft oder Lebensmittelabfall. Es liefert weder eine Schweizer Foodwaste-Zahl noch den Anteil der Ernährung am CO2-Fussabdruck eines Haushalts noch Preisanteile entlang einer Lebensmittelkette. Solche Zahlen kommen in dieser Einheit bewusst nicht vor; die Zahlen-Tabellen stützen sich ausschliesslich auf belegte Lehrmittelwerte.",
+    "Kap. 9.2 Energie fehlt in der Crosswalk-Zeile für Lebensbezug 3.2, obwohl graue Energie, Ökobilanz und die Wassermengen (S. 229-230) die inhaltlichen Kernbegriffe von Herausforderung B sind. Crosswalk-Ergänzung vorgeschlagen.",
+    "Kap. 9.1 Klima fehlt ebenfalls in der Crosswalk-Zeile, obwohl der nRLP-Aspekt Ökologie ausdrücklich «Klimawandel» nennt (9.1 S. 220-223). Crosswalk-Ergänzung vorgeschlagen.",
+    "Kap. 16.3 Präsentation fehlt als Methodenkapitel, obwohl «Produktion multimedial» der einzige Sprachmodus der Kompetenz ist. Crosswalk-Ergänzung vorgeschlagen.",
+    "Kap. 9.3 nennt die CO2-Abgabe als Lenkungsabgabe, aber ohne Frankenbetrag. Ein CHF-Wert wird deshalb nirgends behauptet.",
+    "Das Lehrmittel nennt auf S. 235 eine 6500-Watt-Gesellschaft. Diese Einheit verwendet diesen Wert. Die ältere Nachbar-Einheit 3.2.1_ressourcenknappheit_nachhaltig behauptet 4500 Watt — das ist nicht der Lehrmittelwert."
+  ],
+
+  "abgrenzung": {
+    "_kommentar": "Warum diese Einheit neben den drei bestehenden Nachbar-Einheiten zum selben Lebensbezug bestehen kann.",
+    "3.2.1_wahre_kosten": "Deren Kern ist der Preis: aufdecken, welche Kosten in ihm fehlen, und entscheiden, wer sie tragen soll. Diese Einheit fragt nicht nach dem Preis, sondern nach Menge und Wirkung — was ich tatsächlich esse (A), welche Ressourcen dahinterstehen (B), welche Änderung wie viel bewirkt (C). Der Preis ist in B nur eine von vier Profil-Angaben und in C eine Kostengrösse, nie das Erkenntnisobjekt.",
+    "3.2.1_ressourcenknappheit_nachhaltig": "Deren Kern ist das ökonomische Grundproblem, illustriert an drei generischen Konsumfeldern; Erkenntnisobjekt ist das Prinzip Knappheit. Diese Einheit setzt nicht beim Prinzip an, sondern bei eigenen erhobenen Daten: sie beginnt am eigenen Teller und endet bei einer Massnahmenwahl mit Wirkungsabschätzung. Ernährung ist Gegenstand, nicht Beispiel.",
+    "3.2.2_wahrer_wert_konsum": "Deren Kern ist der wahre Wert gegenüber dem Marktpreis über globale Verteilungsgerechtigkeit, durchgehend im schriftlichen Modus. Diese Einheit ist multimedial statt schriftlich, national und persönlich statt global-verteilungsethisch, und ihr Zielpunkt ist eine Handlungsentscheidung mit beziffertem Wirkungs-Kosten-Vergleich, keine Gerechtigkeitsbeurteilung.",
+    "verworfene_zuschnitte": [
+      "«Food Waste im Lehrbetrieb messen» statt A — setzt einen Betrieb mit Lebensmitteln voraus, liegt zu nah an ressourcenknappheit Sit A und stützt sich auf eine Zahl, die in LM-26 nicht existiert.",
+      "«Zwei Lebensmittel im Ökobilanz-Vergleich» statt B — deckungsgleich mit wahrer_wert Sit A (Erdbeeren im Dezember, Vergleichstabelle Marktpreis gegen Ökobilanz).",
+      "«Wer trägt die Verantwortung — ich, mein Betrieb oder der Staat?» als eigene Herausforderung — doppelt ressourcenknappheit Sit B und wahre_kosten HF B. Die Verantwortungsfrage bleibt erhalten, wird aber von einer Zustaendigkeits- zu einer Wirkungs- und Kostenfrage umgebaut.",
+      "«Preisanteile eines Lebensmittels aufschlüsseln» als eigener Zuschnitt — Kern von wahre_kosten und von wahrer_wert Sit C. Preisanteile leben hier nur als eine Angabe innerhalb des B-Profils.",
+      "Ein aktueller politischer Anwendungsfall als Herausforderung C — verstösst gegen die Fallneutralität und waere zum Unterrichtszeitpunkt bereits erledigt. Ein solcher Fall lebt ausschliesslich im Transferschritt des Set-Dokuments und ist dort austauschbar."
+    ]
+  },
+
+  "persona_pool_units": {
+    "_kommentar": "Bewusst generisch. Diese Einheit arbeitet ohne berufsspezifische Persona — siehe entscheidungen_pietro_2026_08_16. Die kanonische Berufs- und Staedteliste aus hko-framework.md §11 wird hier deshalb nicht gezogen, und die Abteilungs-Mix-Pflicht (ERR_PERSONA_ABTEILUNG_MONO) sowie das Persona-Verbrauchstracking (Check 14) sind fuer diese Einheit ausgesetzt.",
+    "berufe": ["Lernende/r EFZ, 2. Lehrjahr"],
+    "orte": ["eigener Wohnort"]
+  },
+
+  "entscheidungen_pietro_2026_08_16": [
+    "KEINE spezifische Persona. Alle drei Herausforderungen laufen ueber eine generische Lernenden-Perspektive im 2. Lehrjahr ohne Beruf, Betrieb und Ort. Begruendung: die Leitfrage «Was esse ich» ist eine Alltagsfrage, die jede Lernende und jeder Lernende ohne Berufswissen beantwortet; eine berufsspezifische Persona wuerde sie professionalisieren. Uebersteuert die Skill-Regeln zu persona_pool_units (Abteilungs-Mix, Pool-Verbrauch, kanonische Tabelle).",
+    "NUR EFZ_4J. Kein Dual-Tagging als lehrgaenge, obwohl Lebensbezug 3.2 und Kompetenz 3.2.1 in nrlp_3j.json und nrlp_4j.json nummern- und textgleich sind. Zu beachten waere sonst: T3 liegt im 3J im 1., im 4J im 2. Lehrjahr, und die Aspekt-R-Stufen weichen ab (Wirtschaft R1 statt R2).",
+    "SK streng T3-konform: nur SK1, SK3, SK5 und SK9 aus der Zirkularitaets-Spirale. SK6 und SK11 werden nicht getaggt.",
+    "Erhebungsdauer in Herausforderung A: 3 Tage. Die Erhebung laeuft ohne App, ohne Konto und ohne Datenweitergabe — Papierbogen mit fuenf Spalten, Handauszaehlung, Fotos nur lokal auf dem eigenen Geraet, vollstaendig durchfuehrbar auch ohne Smartphone.",
+    "Kein Kompetenznachweis in dieser Lieferung: kein kn.json, kein begleiter.md, keine KI-Dateien. Folgerichtig entfallen persona_pool_kn_neu und hybrid_situation_spec. Beide sind nachzuziehen, falls spaeter ein KN ergaenzt wird; modi_kn entspricht deshalb vorerst modi_units.",
+    "Fallneutralitaet: Herausforderungen A/B/C und dieses Prinzip-Dokument nennen keinen konkreten politischen Fall, kein Datum und keinen Gesetzeswortlaut. Der Anwendungsfall lebt ausschliesslich in set.json unter dekontextualisierungs_aufgabe.schritt_2_anwendung und ist dort ausdruecklich austauschbar — die Ersatzkriterien a bis e stehen daneben."
+  ]
+}

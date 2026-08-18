@@ -205,6 +205,8 @@ Repo-seitiger Waechter: `npm run check:nrlp` (`scripts/check-nrlp-consistency.mj
 
 **Step 4 — Kapitel bestimmen + Index bauen.** Zuerst `references/nrlp-lehrmittel-crosswalk.md` fuer `(lehrgang, lebensbezug_nr)` nachschlagen — **nie** die Datei aus der nRLP-Nummer raten. Dann Kapitel-Index aus `[seite: XX]`-Markers bauen. Bei fehlenden Markers: Fallback-Modus mit `"Kap. X.Y"` ueberall.
 
+**Fehlt die Zeile oder bestehen Zweifel:** Gegenlesung mit dem NotebookLM-Notebook «Allgemeinbildung26» — Vorgehen, Query-Vorlage und Filterregeln im Abschnitt *«Gegenlesung mit NotebookLM»* desselben Crosswalks. Der Notebook fuettert die Tabelle, er ersetzt sie nicht: Ergebnis eintragen, Aenderungsprotokoll nachfuehren, danach mit der Tabelle weiterarbeiten. **Nicht** bei jeder Generierung live abfragen — das macht Einheiten unreproduzierbar.
+
 **Step 5 — Confirm + proceed zu Phase 0.5:**
 
 ```
@@ -554,6 +556,41 @@ Vor jedem `_herausforderung_{LETTER}.json`-Write:
 5. Nach allen Fixes: zweiter Scan auf Residual-Pattern `/(ae|oe|ue|Ae|Oe|Ue)/` in Prosa-Feldern. Bei Fund ausserhalb Whitelist: `WARN_UMLAUT_RESIDUE: {wort} in {feld}` — User reviewt
 6. Eszett-Scan: `/ß/` → Auto-Fix zu `ss`, logge `ERR_ESZETT_FOUND` (wird automatisch gefixt, aber gemeldet)
 7. Bei mehr als 5 Fixes in einem File: `WARN_SPELLCHECK_HEAVY` — User-Review empfohlen
+
+**Schritt 2c — Werkzeugseite (`methoden`) fuellen — pro Herausforderung genau 4 Eintraege.**
+
+Volle Referenz: `docs/methodenkartei.md`. Das Handlungsprodukt bekommt eine eigene Seite,
+die benennt, **womit** es hergestellt wird. Ohne dieses Feld entfaellt die Seite —
+die Einheit haette dann 7 statt 8 Seiten und die Luecke, die das Feature schliessen soll.
+
+1. **Abgaben zerlegen.** Jede Zeile aus `handlungsprodukt.abgaben[]` fragt: Womit macht
+   man das? Typisch 3–5 Werkzeuge, auf **genau vier** verdichten.
+2. **Zuerst die Kartei fragen:** `ls src/data/methoden/`. Passt eine Karte, referenzieren —
+   nicht neu schreiben.
+3. **Dann das Lehrmittel fragen.** Die Methodenkapitel-Spalte in
+   `references/nrlp-lehrmittel-crosswalk.md` ist der Einstieg. Neue Lehrmittel-Karte
+   anlegen als `src/data/methoden/lm-{kap-mit-bindestrich}-{slug}.json` mit `quelle:
+   "lehrmittel"`, `kap`, `lesen` (zwei Saetze — die Karte ersetzt das Kapitel nicht),
+   `merk`. **`seiten` nur, wenn die Zahl am Buch verifiziert ist** — sonst weglassen.
+   Eine geratene Seitenzahl im Schuelerheft ist schlimmer als keine.
+4. **Erst wenn beides nichts hergibt:** eigene Karte `hko-{slug}.json` mit `quelle: "hko"`,
+   `schritte` (4 nummerierte), `ankommt`, `merk`. Sie muss vollstaendig sein, dahinter
+   kommt kein Kapitel. Die vier bekannten Luecken des Lehrmittels: mediale Produktion,
+   gestaltete Kurzformate, digitale Zusammenarbeit, KI.
+5. **Referenz schreiben** in `herausforderung_{LETTER}.json`:
+   `{ "ref": "<id>", "fuer": "<wofuer in dieser Abgabe>", "tun": "<Uebertragung>" }`.
+   `tun` nur bei Lehrmittel-Karten — es ist der Grund, warum die Karte existiert; ein
+   blosser Kapitelverweis steht schon auf Seite 5. `tun` und `fuer` sind
+   einheitenspezifisch und gehoeren **nie** auf die Karte.
+6. **Musterbeispiel + Fehler** (`beispiel`, `fehler`) auf **genau zwei** der vier
+   Karten — sie landen im Layout automatisch in der unteren, doppelt hohen Reihe.
+   Bei dreien wird die Seite still abgeschnitten; bei nur einer steht unten eine kurze
+   Karte neben einer langen und wird gestreckt. Zwei ist der ausbalancierte Fall. `beispiel` braucht ein **neutrales
+   Sujet**, das mit dieser Einheit nichts zu tun hat (wie die Musterbriefe im Lehrmittel).
+   `fehler` nennt ein *beobachtbares Symptom plus Abhilfe*, nicht die Verneinung von
+   `ankommt`.
+
+Nicht nach Herkunft sortieren — das macht der Renderer. Kein Index-Rebuild noetig.
 
 **Schritt 3 — Coherence-Audit** ueber alle 3 Herausforderungen (Checks 1-9 in `coherence-checklist.md`). Bei Fehler stoppen.
 
@@ -1219,7 +1256,7 @@ Gute Inhalte sind vorhanden, gehen aber unter — vor allem im Begleiter. **Sich
 
 ## References
 
-- `references/nrlp-lehrmittel-crosswalk.md` — **Phase 0 Pflicht-Lookup:** welche Lehrmittel-Kapitel zu welchem nRLP-Lebensbezug gehoeren (nach Lehrgang). Nummerierungen sind NICHT deckungsgleich.
+- `references/nrlp-lehrmittel-crosswalk.md` — **Phase 0 Pflicht-Lookup:** welche Lehrmittel-Kapitel zu welchem nRLP-Lebensbezug gehoeren (nach Lehrgang). Nummerierungen sind NICHT deckungsgleich. Enthaelt zusaetzlich die Anleitung zur Gegenlesung mit NotebookLM (Query-Vorlage, Filterregeln) und das Aenderungsprotokoll der Tabelle.
 - `references/prinzip-architecture.md` — Phase 0.5 Design-Regeln
 - `references/kn-architecture.md` — Phase 4 Design-Regeln (Hybrid + 3 KN-Typen + Rubrik)
 - `references/json-field-mapping.md` — Feld-fuer-Feld Mapping

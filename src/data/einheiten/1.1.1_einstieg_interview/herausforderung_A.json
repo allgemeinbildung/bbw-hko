@@ -32,11 +32,11 @@
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Fachfrau/-mann Betreuung EFZ",
-    "betrieb": "Kita Sunnestube Winterthur",
-    "ort": "Winterthur"
+    "beruf": "Lernende/r EFZ",
+    "betrieb": "Berufsfachschule",
+    "ort": "Schweiz"
   },
-  "situation_text": "Ich bin FaBe-Lernende/r im 1. Lehrjahr und sitze seit zwei Wochen in einer ABU-Klasse, in der ich niemanden kenne. Heute soll ich eine Person aus dieser Klasse so kennenlernen, dass ich sie nachher der Klasse vorstellen kann — und sie tut dasselbe mit mir. Ich habe dafür genau 15 Minuten, und die Lehrperson hat angekündigt, dass am Schluss alle Profile nebeneinander an der Wand hängen und vergleichbar sein sollen. Ich kenne mein Gegenüber nicht, ich weiss nicht, was ihn oder sie beschäftigt, und ich habe Angst, dass mir nach drei Fragen nichts mehr einfällt und wir schweigend dasitzen.",
+  "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung und sitze in einer ABU-Klasse, in der ich noch niemanden kenne. Heute soll ich eine Person aus dieser Klasse so kennenlernen, dass ich sie nachher der Klasse vorstellen kann — und sie tut dasselbe mit mir. Ich habe dafür genau 15 Minuten, und die Lehrperson hat angekündigt, dass am Schluss alle Profile nebeneinander an der Wand hängen und vergleichbar sein sollen. Ich kenne mein Gegenüber nicht, ich weiss nicht, was ihn oder sie beschäftigt, und ich habe Angst, dass mir nach drei Fragen nichts mehr einfällt und wir schweigend dasitzen.",
   "zahlen_tabelle": [
     { "label": "Gesprächszeit", "wert": "15 Min." },
     { "label": "Fragen im Katalog", "wert": "8–10" },
@@ -255,6 +255,27 @@
       ]
     }
   },
+  "methoden": [
+      {
+        "ref": "lm-16-4-fragearten",
+        "fuer": "für den Fragenkatalog",
+        "tun": "Notieren Sie hinter jede Ihrer 8 bis 10 Fragen die Frageart. Wo dreimal «geschlossen» hintereinander steht, bekommen Sie einsilbige Antworten — bauen Sie um."
+      },
+      {
+        "ref": "lm-17-2-stichwortnotizen",
+        "fuer": "für das Notizblatt und die vier Profilfelder",
+        "tun": "Zeichnen Sie die vier Profilfelder vor dem Gespräch aufs Blatt. Dann schreiben Sie beim Zuhören direkt ins richtige Feld, statt hinterher zu sortieren."
+      },
+      {
+        "ref": "hko-woertlich-zitieren",
+        "fuer": "für die drei wörtlichen Zitate"
+      },
+      {
+        "ref": "hko-methodennotiz",
+        "fuer": "für die Methoden-Notiz von 3 bis 4 Sätzen"
+      }
+    ],
+
   "reflexion_fragen": [
     {
       "nr": "R1",

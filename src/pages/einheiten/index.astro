@@ -1,7 +1,8 @@
 ---
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
-import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, visibleEinheiten, isEntwurf, draftKomponenten, KOMPONENTEN_LABEL, lehrgaengeOf, lehrgangLabel, lehrgangShort, isEbaLehrgang, sortLehrgaenge } from '../../lib/einheiten'
+import EinheitCard from '../../components/einheiten/EinheitCard.astro'
+import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, visibleEinheiten, lehrgaengeOf, lehrgangLabel, isEbaLehrgang, sortLehrgaenge } from '../../lib/einheiten'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -104,55 +105,7 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {efzEinheiten.map((e) => (
-        <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
-          <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
-            <h3 class="text-base font-semibold text-slate-900 leading-snug mb-1">
-              {e.einheit_titel}
-            </h3>
-            {role === 'kt1' && (isEntwurf(e) || draftKomponenten(e).length > 0) && (
-              <div class="flex flex-wrap gap-1.5 mb-2">
-                {isEntwurf(e) && (
-                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
-                    ● Entwurf · nur KT1
-                  </span>
-                )}
-                {!isEntwurf(e) && draftKomponenten(e).map((k) => (
-                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                    ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
-                  </span>
-                ))}
-              </div>
-            )}
-            <div class="flex flex-wrap gap-1.5 mb-2">
-              {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
-              {efzVarianten(e).length > 0 && (
-                <span class="chip" title={`Gültig für ${efzVarianten(e).map(lehrgangLabel).join(' und ')}`}>
-                  {efzVarianten(e).map(lehrgangShort).join(' · ')}
-                </span>
-              )}
-              {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
-                <span class="chip chip-blue">Kompetenz {k}</span>
-              ))}
-            </div>
-            <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
-          </a>
-          <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
-            <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
-              Öffnen →
-            </a>
-            {e.hat_begleiter && (
-              <a
-                href={`/einheiten/${e.id}/begleiter`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
-                style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
-              >
-                Lies mich!
-              </a>
-            )}
-          </div>
-        </div>
+        <EinheitCard einheit={e} role={role} varianten={efzVarianten(e)} />
       ))}
     </div>
 
@@ -173,50 +126,7 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
     {ebaEinheiten.length > 0 && (
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-lehrgang="EBA">
         {ebaEinheiten.map((e) => (
-          <div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
-            <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
-              <h3 class="text-base font-semibold text-slate-900 leading-snug mb-1">
-                {e.einheit_titel}
-              </h3>
-              {role === 'kt1' && (isEntwurf(e) || draftKomponenten(e).length > 0) && (
-                <div class="flex flex-wrap gap-1.5 mb-2">
-                  {isEntwurf(e) && (
-                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
-                      ● Entwurf · nur KT1
-                    </span>
-                  )}
-                  {!isEntwurf(e) && draftKomponenten(e).map((k) => (
-                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                      ● {KOMPONENTEN_LABEL[k] ?? k} im Entwurf · nur KT1
-                    </span>
-                  ))}
-                </div>
-              )}
-              <div class="flex flex-wrap gap-1.5 mb-2">
-                {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
-                {(e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]).map((k) => (
-                  <span class="chip chip-blue">Kompetenz {k}</span>
-                ))}
-              </div>
-              <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
-            </a>
-            <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
-              <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
-                Öffnen →
-              </a>
-              {e.hat_begleiter && (
-                <a
-                  href={`/einheiten/${e.id}/begleiter`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
-                  style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
-                >
-                  Lies mich!
-                </a>
-              )}
-            </div>
-          </div>
+          <EinheitCard einheit={e} role={role} />
         ))}
       </div>
     )}

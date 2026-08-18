@@ -1138,33 +1138,47 @@ body {
   font-size: 8pt; color: var(--ink-mute); margin-bottom: 3mm; font-style: italic;
   max-width: 165mm; line-height: 1.4;
 }
-.mindmap-radial { position: relative; width: 100%; min-height: 150mm; margin-top: 2mm; break-inside: avoid; }
+/* 3x3-Raster: Zentrum in der Mittelzelle, die vier Aeste in den Eckzellen, jeweils an
+   die zur Mitte zeigende Zellecke geheftet. Dadurch liegen die Anschlusspunkte fix bei
+   1/3 und 2/3 der Flaeche — die Boxen duerfen beliebig mit ihrem Text wachsen oder
+   schrumpfen, die Linien treffen sie trotzdem. Keine festen Box-Masse mehr. */
+.mindmap-radial {
+  position: relative; width: 100%; min-height: 150mm; margin-top: 2mm; break-inside: avoid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
 .mindmap-radial.voll { min-height: 120mm; }
 .mindmap-lines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .mindmap-lines line { stroke: var(--sit-mid); stroke-width: 1.2; }
 .mindmap-lines line.optional { stroke: var(--ink-mute); stroke-dasharray: 4 3; }
-.mm-node { position: absolute; z-index: 1; }
+.mm-node { z-index: 1; }
 .mm-center {
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  max-width: 64mm; text-align: center;
+  grid-area: 2 / 2 / 3 / 3; place-self: center;
+  max-width: 100%; text-align: center;
   padding: 3mm 5mm; background: var(--sit-akzent); color: #fff;
   font-weight: 600; font-size: 10pt; line-height: 1.2; border-radius: 6mm;
 }
 .mm-branch {
-  width: 46mm; padding: 2.5mm 3mm;
+  max-width: 100%; padding: 2.5mm 3mm;
   background: color-mix(in srgb, var(--sit-light) 60%, white);
   border-left: 3pt solid var(--sit-akzent);
 }
-.mm-branch h5 { margin: 0 0 1mm; font-size: 9pt; font-weight: 600; color: var(--sit-akzent); line-height: 1.2; }
+.mm-branch h5 { margin: 0; font-size: 9pt; font-weight: 600; color: var(--sit-akzent); line-height: 1.2; }
 .mm-branch h5 .opt { font-weight: 400; color: var(--ink-mute); font-size: 7.5pt; }
 .mm-branch.optional { border-left-style: dashed; border-left-color: var(--ink-mute); background: color-mix(in srgb, var(--sit-light) 30%, white); }
-.mm-branch ul { margin: 0; padding-left: 4mm; font-size: 8.5pt; line-height: 1.3; }
+.mm-branch ul { margin: 1mm 0 0; padding-left: 4mm; font-size: 8.5pt; line-height: 1.3; }
 .mm-branch li { margin-bottom: 0.3mm; }
-.mm-branch .mm-space { min-height: 20mm; }
-.mm-b1 { top: 0; left: 0; }
-.mm-b2 { top: 0; right: 0; }
-.mm-b3 { bottom: 0; left: 0; }
-.mm-b4 { bottom: 0; right: 0; }
+.mm-b1 { grid-area: 1 / 1 / 2 / 2; place-self: end end; }
+.mm-b2 { grid-area: 1 / 3 / 2 / 4; place-self: end start; }
+.mm-b3 { grid-area: 3 / 1 / 4 / 2; place-self: start end; }
+.mm-b4 { grid-area: 3 / 3 / 4 / 4; place-self: start start; }
+
+/* Die Mindmap-Seite hat ausser Kopf und Hinweis nichts weiter — die Karte nimmt den
+   ganzen Rest der Seite ein, wodurch das Zentrum in der Seitenmitte landet und rundum
+   Platz zum Weiterzeichnen bleibt. */
+.a4-page-body.mindmap-page .mindmap { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.a4-page-body.mindmap-page .mindmap-radial { flex: 1 1 auto; min-height: 0; margin-top: 0; }
 
 /* C6 — Handlungsprodukt metadata (Kompetenz[en] + Lebensbezug + Sprachmodi) */
 .hp-meta { margin: 0 0 3mm; display: flex; flex-direction: column; gap: 1.5mm; }

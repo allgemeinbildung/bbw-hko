@@ -248,11 +248,15 @@ function MindmapRadial({ sit, full }: { sit: SituationJson; full: boolean }) {
   }
 
   const cornerClass = ['mm-b1', 'mm-b2', 'mm-b3', 'mm-b4']
+  // Die Aeste sitzen als 3x3-Grid-Items in den Eckzellen, jeweils an der zur Mitte
+  // zeigenden Zellecke ausgerichtet. Diese Ecken liegen immer bei 1/3 bzw. 2/3 der
+  // Flaeche — unabhaengig davon, wie gross der Text eine Box macht. Darum enden die
+  // Linien hier auf denselben Werten und treffen die Box in jeder Groesse.
   const lineEnds = [
-    { x2: 24, y2: 22 },
-    { x2: 76, y2: 22 },
-    { x2: 24, y2: 78 },
-    { x2: 76, y2: 78 },
+    { x2: 100 / 3, y2: 100 / 3 },
+    { x2: 200 / 3, y2: 100 / 3 },
+    { x2: 100 / 3, y2: 200 / 3 },
+    { x2: 200 / 3, y2: 200 / 3 },
   ]
   return (
     <div className={`mindmap-radial ${full ? 'voll' : 'skelett'}`}>
@@ -269,9 +273,7 @@ function MindmapRadial({ sit, full }: { sit: SituationJson; full: boolean }) {
       {aeste.map((ast, i) => (
         <div className={`mm-node mm-branch ${cornerClass[i]} ${ast.optional ? 'optional' : ''}`} key={i}>
           <h5>{ast.titel}{ast.optional && <span className="opt"> · optional</span>}</h5>
-          {full
-            ? (ast.punkte && <ul>{ast.punkte.map((p, j) => <li key={j}>{p}</li>)}</ul>)
-            : <div className="mm-space" />}
+          {full && ast.punkte && <ul>{ast.punkte.map((p, j) => <li key={j}>{p}</li>)}</ul>}
         </div>
       ))}
     </div>
@@ -681,7 +683,7 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
           ))}
         </DocSPage>
       ))}
-      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal}>
+      <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal} bodyClass="mindmap-page">
         <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapSkelett sit={sit} />
       </DocSPage>

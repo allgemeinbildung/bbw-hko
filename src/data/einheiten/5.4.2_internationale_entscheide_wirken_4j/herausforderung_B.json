@@ -1,0 +1,327 @@
+{
+  "id": "5.4.2_internationale_entscheide_wirken_4j_hf_B",
+  "modul": "5.4",
+  "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
+  "lehrgang": "EFZ_4J",
+
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+
+  "titel": "Zwei Berufsbildende, zwei Rechnungen",
+
+  "wissensknoten": ["interessenverbaende_lobby"],
+
+  "nrlp": {
+    "nr": "5.4.2",
+    "nr_primary": ["5.4.2"],
+    "lebensbezug": "5.4",
+    "themen": ["T5"],
+    "gesellschaft": [
+      {"aspekt": "Politik", "iteration": "R2"},
+      {"aspekt": "Wirtschaft", "iteration": "R4"}
+    ],
+    "sprachmodi": [
+      "Produktion mündlich"
+    ],
+    "sprachmodus_ids": ["SM4"],
+    "sk": [6, 11, 12],
+    "kompetenz_id": "5.4.2",
+    "lebensbezug_id": "5.4",
+    "kompetenz_text": "Ich kann anhand eines Beispiels erklären, wie internationale politische Entscheidungen Auswirkungen auf mein Leben und das Leben von anderen haben können.",
+    "lebensbezug_text": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen."
+  },
+
+  "persona": {
+    "beruf": "Polymechaniker/in EFZ",
+    "betrieb": "Präzisionsmechanik Halter AG",
+    "ort": "Winterthur"
+  },
+
+  "situation_text": "Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. In der Pause streiten zwei Berufsbildende über eine Meldung aus Brüssel. Der eine sagt, ohne die Regeln des grossen Nachbarmarkts verlieren wir unsere Kundschaft; der andere sagt, wir übernähmen laufend Vorschriften, die bei uns niemand beschlossen habe. Ich weiss aus dem ABU, dass 55 Prozent unserer Exporte in die EU gehen und 71 Prozent unserer Importe von dort kommen — beide haben also etwas für sich. Am Abend sehe ich zum selben Entscheid drei Videos, und in jedem ist jemand anderes schuld. Mir wird klar: Hier steht nicht eine Wahrheit gegen eine Lüge, sondern Interesse gegen Interesse — und ich weiss noch nicht, wessen Rechnung ich am Ende mitbezahle.",
+
+  "zahlen_tabelle": [
+    {"label": "Anteil der Schweizer Exporte in die EU (Kap. 11.2, S. 276)", "wert": "55 %"},
+    {"label": "Anteil der Schweizer Importe aus der EU (Kap. 11.2, S. 276)", "wert": "71 %"},
+    {"label": "Handelsvolumen Schweiz – EU inklusive Dienstleistungen (Kap. 11.2, S. 276)", "wert": "rund CHF 1 Mrd. pro Tag"},
+    {"label": "Mitgliedstaaten der EU (Kap. 11.1, S. 258-259)", "wert": "27 Staaten, knapp 450 Mio. Einwohnerinnen und Einwohner"},
+    {"label": "Umsatzanteil des eigenen Lehrbetriebs mit Kundschaft im EU-Raum", "wert": "Platzhalter — im Betrieb erfragen"}
+  ],
+
+  "leitfrage": "Wer will beim Marktzugang was — und wer trägt am Schluss die Kosten?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 6.6, Kap. 11.1 und Kap. 16.2 als Grundlage.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 6.6 | S. 177-179",
+      "text": "Erklären Sie, was Verbände, Gewerkschaften und NGO sind und über welche Wege sie politische Entscheide beeinflussen. Nennen Sie mindestens drei dieser Wege.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 11.1 | S. 262-263",
+      "text": "Ordnen Sie den Entscheid der richtigen Ebene zu: Welches Organ entscheidet, und was bedeutet es für einen Betrieb wie meinen, dass dessen Beschlüsse für alle Mitgliedstaaten verbindlich sind?",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 3,
+      "bloom": "Analysieren",
+      "knoten_ref": "Kap. 11.1 | S. 267-269",
+      "text": "Tragen Sie für vier bis fünf Akteure je ein Interesse zusammen. Stellen Sie danach zwei Interessen gegenüber, die sich widersprechen, und benennen Sie begründet, wer bei welcher Lösung die Kosten trägt.",
+      "feld_hoehe_mm": 15
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 16.2 | S. 368",
+      "text": "Formulieren Sie den Hauptteil Ihres Statements sprechfertig: zwei Sätze aus der Sicht eines einzigen Akteurs — eine Behauptung, eine Begründung und ein Beleg.",
+      "feld_hoehe_mm": 15
+    }
+  ],
+
+  "mindmap_zentrum": "Wer will was beim Marktzugang",
+  "mindmap_aeste": [
+    {
+      "titel": "Die Akteure",
+      "punkte": [
+        "Staatenverbund mit seinen Organen: Rat, Kommission, Parlament",
+        "Bundesrat als Verhandlungsführung der Schweiz",
+        "Wirtschaftsverbände wie Swissmem oder economiesuisse",
+        "Gewerkschaften und die Belegschaft im Betrieb"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Ihre Interessen",
+      "punkte": [
+        "Zugang zum Binnenmarkt sichern",
+        "Gleiche Regeln für alle Anbietenden durchsetzen",
+        "Löhne und Arbeitsbedingungen schützen",
+        "Politisch selber bestimmen können"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer die Kosten trägt",
+      "punkte": [
+        "Betriebe über Anpassung an technische Vorschriften",
+        "Arbeitnehmende über Lohndruck ohne flankierende Massnahmen",
+        "Der Staat über abgegebene Entscheidungsmacht",
+        "Kundschaft und Bevölkerung über Preise und Auswahl"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wege des Einflusses",
+      "punkte": [
+        "Stellungnahme in der Vernehmlassung",
+        "Lobbyarbeit im Parlament",
+        "Initiative, Referendum und Abstimmungsparolen",
+        "Öffentlichkeitsarbeit und Medien"
+      ],
+      "optional": true
+    }
+  ],
+
+  "handlungsprodukt": {
+    "format": "Gesprochenes Statement zur Interessenlage",
+    "titel": "Wer will was — und wer zahlt",
+    "format_detail": "Statement von 90 bis 120 Sekunden, gehalten an einer selbst erstellten Akteurskarte mit vier bis fünf Akteuren auf A3 oder als Folie.",
+    "beschreibung": "Ich erstelle eine Akteurskarte zu einem Entscheid über den Marktzugang und halte dazu ein Statement, in dem ich benenne, welche Interessen zusammenstossen und wer die Kosten trägt.",
+    "schritte": [
+      {"label": "Akteure bestimmen", "hint": "Wählen Sie vier bis fünf Akteure: internationale Ebene, Bund, Wirtschaftsverband, Gewerkschaft, betroffene Bevölkerung."},
+      {"label": "Interessen zuordnen", "hint": "Pro Akteur ein Satz: Was will dieser Akteur erreichen? Belegen Sie mit einer Stelle aus Kap. 6.6 oder Kap. 11.1."},
+      {"label": "Mittel eintragen", "hint": "Pro Akteur ein Stichwort: Womit setzt er sein Interesse durch — Verhandlung, Vernehmlassung, Lobby, Abstimmung, Kaufentscheid?"},
+      {"label": "Zielkonflikt markieren", "hint": "Ziehen Sie eine Linie zwischen den zwei Interessen, die sich widersprechen, und schreiben Sie daneben, wer bei welcher Lösung bezahlt."},
+      {"label": "Statement halten", "hint": "Sprechen Sie 90 bis 120 Sekunden: Ausgangslage, der Zielkonflikt, wer zahlt, Schlusssatz. Nutzen Sie das 3B-Schema für jedes Argument."}
+    ],
+    "schreib_label": "AKTEURSKARTE HIER ERARBEITEN",
+    "schreib_note": "-> wissen/interessenverbaende_lobby",
+    "abgaben": [
+      "Akteurskarte (4 bis 5 Akteure, je Interesse, Mittel und getragene Kosten)",
+      "Statement von 90 bis 120 Sekunden"
+    ],
+    "scaffolding": {
+      "satzanfaenge": [
+        "«Für … steht auf dem Spiel, dass …»",
+        "«Dieser Akteur setzt sein Interesse durch, indem …»",
+        "«Diese beiden Interessen stossen zusammen, weil …»",
+        "«Wenn sich … durchsetzt, bezahlt … — und zwar mit …»"
+      ],
+      "strategien": [
+        "Pro Akteur nur ein Interesse aufschreiben. Wer zwei nennt, hat zwei Akteure zusammengezogen.",
+        "Jedes Interesse mit Kapitel und Seite belegen, bevor Sie es auf die Karte schreiben.",
+        "Den Zielkonflikt zuerst als Satz «X will …, Y will …» aufschreiben, dann erst sprechen.",
+        "Das Statement einmal laut halten und die Zeit stoppen."
+      ],
+      "struktur": [
+        "Ausgangslage – Akteure und Interessen – Zielkonflikt – Wer zahlt – Schlusssatz"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Stufe 3–4. Exemplarisch ist, dass beide Interessen als legitim dargestellt werden: die Musterlösung benennt den Zielkonflikt und die Kostenträger, ohne eine Seite zur richtigen zu erklären.",
+      "abschnitte": [
+        {
+          "titel": "Ausgangslage",
+          "zeilen": [
+            {"label": "Einstieg", "text": "Es geht um den Zugang zu einem grossen Markt, in den 55 Prozent unserer Exporte gehen und aus dem 71 Prozent unserer Importe stammen. Das Handelsvolumen zwischen der Schweiz und der EU beträgt inklusive Dienstleistungen rund eine Milliarde Franken pro Tag. Wer diesen Zugang verliert, verliert nicht ein Detail, sondern die Grundlage vieler Aufträge.", "quelle": "Kap. 11.2, S. 276"}
+          ]
+        },
+        {
+          "titel": "Akteure und Interessen",
+          "zeilen": [
+            {"label": "Karte", "text": "Der Staatenverbund will einheitliche, für alle Mitgliedstaaten verbindliche Regeln; seine Organe erlassen Gesetze, Verordnungen und Richtlinien, an die sich alle halten müssen. Der Bundesrat will den Marktzugang sichern, ohne zu viel Entscheidungsmacht abzugeben — deshalb der bilaterale Weg. Die Wirtschaftsverbände wollen, dass unsere Prüfungen drüben anerkannt werden, damit kein zweites Verfahren nötig ist. Die Gewerkschaften wollen die flankierenden Massnahmen behalten, die Dumpinglöhne verhindern sollen.", "quelle": "Kap. 11.1, S. 262 und S. 267"}
+          ]
+        },
+        {
+          "titel": "Zielkonflikt und Kosten",
+          "zeilen": [
+            {"label": "Kern", "text": "Der Zielkonflikt läuft zwischen «Regeln übernehmen» und «selber bestimmen». Übernehmen wir die Regeln, bezahlt der Staat mit abgegebener Entscheidungsmacht und die Betriebe mit dem Aufwand der Anpassung — dafür bleibt der Markt offen. Übernehmen wir sie nicht, bezahlen die Exportbetriebe mit doppelten Zulassungsverfahren und verlorenen Aufträgen, und am Schluss die Belegschaft mit weniger Arbeit. Die Verbände wirken auf beide Seiten ein: über die Vernehmlassung, über Kommissionen und über Lobbyarbeit im Parlament.", "quelle": "Kap. 6.6, S. 179"}
+          ]
+        },
+        {
+          "titel": "Schlusssatz",
+          "zeilen": [
+            {"label": "Schluss", "text": "Beide Berufsbildenden in unserer Pause haben recht — sie sprechen bloss aus verschiedenen Interessen. Deshalb frage ich bei der nächsten solchen Meldung zuerst: Wer sagt das, was will diese Person erreichen, und wer bezahlt, wenn sie sich durchsetzt.", "quelle": "Kap. 6.6, S. 179"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "methoden": [
+      {
+        "ref": "lm-17-3-3b-schema",
+        "fuer": "für jedes einzelne Argument im Statement",
+        "tun": "Bauen Sie jedes Argument in drei Schritten: Behauptung, Begründung, Beleg aus dem Lehrmittel."
+      },
+      {
+        "ref": "lm-16-2-statement",
+        "fuer": "für den Aufbau der 90 bis 120 Sekunden",
+        "tun": "Einleitung mit der Ausgangslage, Hauptteil mit dem Zielkonflikt, Schluss mit der Frage, wer bezahlt."
+      },
+      {
+        "ref": "hko-akteurskarte",
+        "fuer": "für die Karte mit vier bis fünf Akteuren"
+      },
+      {
+        "ref": "hko-sprechspur",
+        "fuer": "für das gesprochene Statement"
+      }
+    ],
+
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Welches Interesse habe ich beim ersten Lesen übersehen — und weshalb ist es mir zuerst nicht aufgefallen?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Welcher Akteur ist meiner eigenen Lage am nächsten, und deckt sich sein Interesse wirklich mit meinem?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Woran erkenne ich künftig in einem Video oder Beitrag, aus welchem Interesse heraus jemand spricht?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "LF1 nennt mindestens drei Wege des Einflusses aus Kap. 6.6.",
+        "LF2 erklärt, was ein verbindlicher Beschluss für einen Schweizer Betrieb bedeutet.",
+        "LF4 enthält Behauptung, Begründung und Beleg in sprechfertiger Form."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Alle drei Pflicht-Äste sind befüllt.",
+        "Zu jedem Akteur im Ast «Die Akteure» steht im Ast «Ihre Interessen» ein passender Eintrag.",
+        "Mindestens eine Verbindung markiert zwei Interessen, die sich widersprechen."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Die Akteurskarte enthält 4 bis 5 Akteure mit Interesse, Mittel und getragenen Kosten.",
+        "Mindestens zwei Interessen sind mit Kapitel und Seite belegt.",
+        "Das Statement dauert 90 bis 120 Sekunden und benennt den Zielkonflikt ausdrücklich.",
+        "Beide Seiten des Zielkonflikts bleiben als begründbar stehen."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R2 prüft die eigene Lage, statt nur einen Akteur zu wiederholen."
+      ]
+    }
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Akteurskarte erstellen, Statement halten", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "5.4.2_internationale_entscheide_wirken_4j_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Denselben Entscheid aus der Sicht mehrerer Akteure lesen und benennen, wessen Interesse sich durchsetzt und wer die Kosten trägt"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Regeln übernehmen vs. selber bestimmen",
+    "hint": "Beide Positionen sind vertretbar. Wer die Regeln übernimmt, sichert den Marktzugang, gibt aber Entscheidungsmacht ab. Wer selber bestimmt, behält die Macht, riskiert aber doppelte Verfahren und verlorene Aufträge. Bewertet wird, ob Sie beide Interessen sauber belegen — nicht, für welches Sie sich erwärmen."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Bei welchem anderen Entscheid könnte ich dieselbe Akteurskarte zeichnen — und welche Akteure kämen dort neu dazu?",
+    "ziel": "Die Lernenden lösen die Einsicht vom Marktzugang ab: Hinter einem Entscheid stehen Interessen, und wer sie benennt, erkennt auch, wer die Kosten trägt."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R2 (Politik) · R4 (Wirtschaft)",
+    "r2_voraussicht": "T7 Schlussarbeit — Interessen und Quellen einer eigenen Fragestellung offenlegen und mündlich vertreten.",
+    "r3_voraussicht": "T8.2 — berufliche Zukunft planen: wirtschaftliche Rahmenbedingungen der eigenen Branche einordnen."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 6.6", "titel": "Interessengruppen — Verbände, Gewerkschaften, NGO, politischer Einfluss und Lobby", "seiten": "Seite 177-179", "unterueberschrift": "Verbände / Funktion der Verbände in der Politik", "fuer_leitfrage": [1]},
+    {"ref": "Kap. 11.1", "titel": "Schweiz – EU — Supranationalität, Organe und verbindliche Beschlüsse", "seiten": "Seite 262-263", "unterueberschrift": "Aufbau und Funktionsweise der Europäischen Union", "fuer_leitfrage": [2]},
+    {"ref": "Kap. 11.1", "titel": "Schweiz – EU — bilaterale Verträge I und II, technische Handelshemmnisse, flankierende Massnahmen", "seiten": "Seite 267-269", "unterueberschrift": "Bilaterale Verträge", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 16.2", "titel": "Statement — Aufbau in drei Zügen", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Akteure erkannt", "indikator": "Vier bis fünf Akteure auf der richtigen Ebene benannt.", "gewicht_prozent": 25},
+      {"kriterium": "Interessen belegt", "indikator": "Mindestens zwei Interessen mit Kapitel und Seite gestützt.", "gewicht_prozent": 25},
+      {"kriterium": "Zielkonflikt benannt", "indikator": "Zwei widersprechende Interessen und die Kostenträger sind klar bezeichnet.", "gewicht_prozent": 25},
+      {"kriterium": "Mündliche Umsetzung", "indikator": "Das Statement ist in 90 bis 120 Sekunden verständlich aufgebaut.", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Die vier Akteure werden vorgegeben; die Lernenden ergänzen Interessen, Mittel und Kostenträger.",
+    "scaffold_100": "Zusätzlich wird ein fünfter Akteur ausserhalb der Schweiz und der EU aufgenommen und seine Wirkung auf den Zielkonflikt beschrieben."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Hinter einem internationalen Entscheid stehen Akteure mit gegenläufigen Interessen — wer sie benennt, sieht auch, wer die Kosten trägt.",
+    "lehrmittel_anker": "Kap. 6.6 S. 177-179 (Verbände, Lobby, Vernehmlassung), Kap. 11.1 S. 262-263 (Supranationalität und Organe), Kap. 11.1 S. 267-269 (bilaterale Verträge), Kap. 16.2 S. 368 (Statement)",
+    "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, eine Aussage einem Interesse zuzuordnen und den Zielkonflikt zu benennen, statt Positionen für Wahrheiten zu halten.",
+    "transfer_check": "Die Lernenden können eine Akteurskarte zu einem anderen Entscheid erstellen, ohne den Marktzugang zu erwähnen."
+  },
+
+  "sk_anker": [
+    {"sk": 6, "wo": "In LF4 und im Statement begründen die Lernenden eine Position aus der Sicht eines Akteurs nach dem 3B-Schema mit Beleg."},
+    {"sk": 11, "wo": "Der markierte Zielkonflikt auf der Akteurskarte muss stehen bleiben: Beide Interessen werden als begründbar dargestellt, ohne aufgelöst zu werden."},
+    {"sk": 12, "wo": "Im Ast «Wege des Einflusses» und in LF1 erarbeiten die Lernenden, über welche Kanäle Beteiligung an solchen Entscheiden überhaupt möglich ist."}
+  ]
+}
