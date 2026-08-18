@@ -53,28 +53,66 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 8.2 | S. 199",
       "text": "Erklären Sie, wie die Schuldenspirale entsteht und mit welchen konkreten Tipps (Bankkarte, Bargeld, Handy, Ausgang) man Schulden vermeiden kann.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Wie die Schuldenspirale entsteht — und Tipps dagegen",
+        "zeilen": [
+          { "label": "Schuldenspirale", "text": "Entsteht, wenn regelmässig mehr ausgegeben als eingenommen wird — ein Leben 'auf Pump' mit unangenehmen Folgen.", "quelle": "Kap. 8.2" },
+          { "label": "Bankkarte", "text": "Beim Bargeldbezug immer den Kontostand prüfen, möglichst wenig damit bezahlen.", "quelle": "Kap. 8.2" },
+          { "label": "Bargeld", "text": "Nur wenig im Portemonnaie mittragen, nichts von anderen ausleihen.", "quelle": "Kap. 8.2" },
+          { "label": "Handy", "text": "Prepaid statt Abo, oder ein Abo mit Gebührenlimite; Roaming ausschalten.", "quelle": "Kap. 8.2" },
+          { "label": "Ausgang", "text": "Party im Freundeskreis statt in teuren Clubs.", "quelle": "Kap. 8.2" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Analysieren",
-      "knoten_ref": "Kap. 8.1 | S. 194",
+      "knoten_ref": "Kap. 8.1 | S. 194-195",
       "text": "Analysieren Sie am Beispiel Auto-Leasing und Konsumkredit, welche versteckten Kosten und Risiken (Nebenkosten, Höchstzins, Bonitätsprüfung, Nachzahlungen) entstehen können.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Versteckte Kosten bei Leasing und Kredit",
+        "zeilen": [
+          { "label": "Eigentum", "text": "Beim Leasing bleibt das Auto immer Eigentum der Leasinggeberin — anders als beim Kredit, wo man ab Kauf Eigentümer ist.", "quelle": "Kap. 8.1" },
+          { "label": "Höchstzins", "text": "Gesetzlich max. 10 % Jahreszins bei Leasing und Konsumkredit — im Rechenbeispiel des Lehrmittels macht das über CHF 6'993 Zins bei CHF 23'310 Kredit.", "quelle": "Kap. 8.1" },
+          { "label": "Bonitätsprüfung", "text": "Vor Vertragsabschluss wird geprüft, ob der pfändbare Lohnanteil den Kredit in 36 Monaten zurückzahlen kann.", "quelle": "Kap. 8.1" },
+          { "label": "Nebenkosten", "text": "Leasingrate zeigt nur einen Teil der Wahrheit — Versicherung, Service, Kilometerüberschuss kommen dazu.", "quelle": "Kap. 8.1" },
+          { "label": "Schwach vs. stark", "text": "Schwach: nur die Monatsrate nennen. Stark: Gesamtaufwand über die ganze Laufzeit inklusive Zins und Nebenkosten vergleichen." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 2.2 | S. 48",
       "text": "Entscheiden Sie, welche Ihrer laufenden oder geplanten Verpflichtungen (Abos, Kredit, Leasing) Sie eingehen und welche Sie streichen — und begründen Sie es mit Ihrem Budget.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Welche Verpflichtung das Budget trägt",
+        "zeilen": [
+          { "label": "Budget-Regel", "text": "Merkpunkt aus Kap. 2.2: nur realistische, eigene Zahlen einsetzen — Ehrlichkeit und Disziplin sind Grundvoraussetzung.", "quelle": "Kap. 2.2" },
+          { "label": "Erwartet", "text": "Den Kleinkredit für Werkzeug und E-Bike streichen — beide Verpflichtungen laufen länger als die Sache hält, das Budget trägt es nicht." },
+          { "label": "Ebenfalls tragfähig", "text": "Ein Abo streichen statt des Kredits, wenn die laufenden Fixkosten den grösseren Engpass verursachen." },
+          { "label": "Nicht tragfähig", "text": "Alles eingehen, weil die einzelne Rate klein wirkt — die Summe entscheidet, nicht die Rate." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 8.2 | S. 199",
       "text": "Formulieren Sie drei persönliche Regeln zur Schuldenvermeidung, die Sie in der Gruppendiskussion vertreten können.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei überprüfbare Wenn-dann-Regeln",
+        "zeilen": [
+          { "label": "Regel-Muster", "text": "«Wenn …, dann …» — konkret und überprüfbar, keine allgemeine Absicht wie 'ich will sparsamer sein'.", "quelle": "Kap. 8.2" },
+          { "label": "Aus den Tipps ableiten", "text": "Jeder Lehrmittel-Tipp (Bankkarte, Bargeld, Handy, Ausgang) lässt sich in eine persönliche Wenn-dann-Regel übersetzen.", "quelle": "Kap. 8.2" },
+          { "label": "Vertretbar", "text": "«Meine Regel lautet …, damit …» — die Regel muss in der Diskussion begründbar sein, nicht nur behauptet." },
+          { "label": "Massstab", "text": "Drei Regeln, jede konkret genug, um in einem Monat überprüfbar zu sein." }
+        ]
+      }
     }
   ],
 

@@ -167,6 +167,15 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   // Aktuell nur EFZ — EBA hat eine eigene Logik und folgt separat.
   const deckSource = useMemo(() => deckSourceFromFullSet(d), [d])
   const deckAvailable = !!deckSource
+  // Das Deck führt die Lösungen der Leitfragen nur, wo sie gepflegt sind (C10) —
+  // der Knopf sagt es deshalb datengesteuert, statt es pauschal zu behaupten.
+  const deckHasLoesungen = useMemo(
+    () =>
+      !!deckSource?.herausforderungen.some((hf: any) =>
+        (hf.leitfragen ?? []).some((lf: any) => lf.loesung?.zeilen?.length)
+      ),
+    [deckSource]
+  )
 
   useEffect(() => {
     const style = document.createElement('style')
@@ -766,7 +775,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
         {deckAvailable && (
           readOnly ? (
             <button type="button" className="wb-action deck locked" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
-              🖥️ Präsentation {lockBadge}
+              🖥️ Präsentation{deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>} {lockBadge}
             </button>
           ) : (
             <a
@@ -775,7 +784,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
               target="_blank"
               rel="noopener noreferrer"
             >
-              🖥️ Präsentation
+              🖥️ Präsentation{deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>}
             </a>
           )
         )}
@@ -1122,7 +1131,13 @@ ${body.join('\n')}
   const begleitCard = card('Begleitdokument', [row(d.begleiter?.meta?.titel || 'Didaktische Hinweise (Lehrperson)', { wordRoot: `Material_LP/${prefix}_begleiter.docx` })])
   if (begleitCard) begleitCards.push(begleitCard)
   if (deckSourceFromFullSet(d)) {
-    const deckCard = card('Unterrichtsdeck', [row('Präsentation mit Referentennotizen (im Browser öffnen)', { wordRoot: `Material_LP/${prefix}_unterrichtsdeck.html` })])
+    const mitLoesungen = [d.hf_A, d.hf_B, d.hf_C].some((hf: any) =>
+      (hf?.leitfragen ?? []).some((lf: any) => lf.loesung?.zeilen?.length)
+    )
+    const deckLabel = mitLoesungen
+      ? 'Präsentation mit Referentennotizen und Lösungen der Leitfragen (im Browser öffnen)'
+      : 'Präsentation mit Referentennotizen (im Browser öffnen)'
+    const deckCard = card('Unterrichtsdeck', [row(deckLabel, { wordRoot: `Material_LP/${prefix}_unterrichtsdeck.html` })])
     if (deckCard) begleitCards.push(deckCard)
   }
   if (begleitCards.length) sections.push(`  <details class="group"><summary>Begleitung <span class="count">${begleitCards.length}</span></summary><div class="group-body">${begleitCards.join('\n')}</div></details>`)

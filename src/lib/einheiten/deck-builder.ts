@@ -373,38 +373,6 @@ export function buildDeck(src: EinheitSource): Deck {
     ]),
   })
 
-  /* ---- Vorwissens-Check (optional) ---- */
-  const vw = set.vorwissen_check
-  if (vw?.items?.length) {
-    slides.push({
-      id: 'vorwissen',
-      accent: BRAND,
-      ctx: vw.titel ?? 'Vorwissen',
-      src: vw.dauer_min ? `${vw.dauer_min} Minuten · nicht benotet` : 'nicht benotet',
-      // Keine Überschrift — der Kicker sagt es bereits, und die sechs Karten brauchen den Platz.
-      headline: '',
-      body: [
-        {
-          t: 'cards',
-          grid: 2,
-          items: vw.items.map((it: any) => ({
-            k: `Frage ${it.nr}${it.gate ? ` · für Herausforderung ${it.gate}` : ''}`,
-            text: it.frage,
-          })),
-        },
-      ],
-      notes: notesFrom('Vorwissens-Check — prüfen, bevor Herausforderung A startet.', [
-        vw.hinweis,
-        ...vw.items.map(
-          (it: any) =>
-            `FRAGE ${it.nr}${it.gate ? ` (→ ${it.gate})` : ''}\n${it.frage}\nErwartet: ${it.erwartung}${
-              it.wenn_unsicher ? `\nWenn unsicher: ${it.wenn_unsicher}` : ''
-            }`
-        ),
-      ]),
-    })
-  }
-
   /* ---- per Herausforderung: Situation / Leitfragen / Produkt ---- */
   hfs.forEach((hf, i) => {
     const L = hf.buchstabe

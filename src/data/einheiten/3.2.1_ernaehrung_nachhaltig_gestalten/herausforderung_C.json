@@ -60,28 +60,65 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 9.3 | S. 233",
       "text": "Erklären Sie die vier umweltpolitischen Instrumente (Appelle, Anreize, Verbote und Beschränkungen, Nachsorge) und nennen Sie zu jedem ein Beispiel aus dem Lehrmittel. Halten Sie fest, warum das Lehrmittel Umweltverschmutzung als Marktversagen bezeichnet.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Vier Instrumente und Marktversagen",
+        "zeilen": [
+          { "label": "Marktversagen", "text": "Umweltverschmutzung ist eine Form von Marktversagen — der Markt regelt ihre Folgen nicht von selbst.", "quelle": "Kap. 9.3" },
+          { "label": "Appelle", "text": "Appelle wecken Bewusstsein, verpflichten aber niemanden — Beispiel: Aufruf, Eier mit weniger Wasser zu kochen.", "quelle": "Kap. 9.3" },
+          { "label": "Anreize", "text": "Anreize belohnen umweltgerechtes Verhalten oder verrechnen Folgekosten — Beispiel: CO₂-Abgabe nach dem Verursacherprinzip.", "quelle": "Kap. 9.3" },
+          { "label": "Verbote/Beschränk.", "text": "Verbote untersagen problematische Stoffe oder Tätigkeiten direkt — Beispiel: Verbot energiefressender Glühlampen.", "quelle": "Kap. 9.3" },
+          { "label": "Nachsorge", "text": "Nachsorge beseitigt Schäden erst im Nachhinein, meist mit Steuergeldern — Beispiel: Kehrichtverbrennungsanlage.", "quelle": "Kap. 9.3" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 9.3 | S. 233",
       "text": "Sammeln Sie zwei bis drei Änderungsmöglichkeiten, die an Ihren Befunden aus den Herausforderungen A und B ansetzen. Ordnen Sie jede Möglichkeit einer Ebene zu (bei mir selbst, im Lehrbetrieb, über eine allgemeine Regelung) und bestimmen Sie, welchem der vier Instrumente sie entspricht.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Ebene und Instrument zuordnen",
+        "zeilen": [
+          { "label": "Bei mir selbst", "text": "Eine eigene Verhaltensänderung entspricht meist einem Appell an mich selbst — kein Zwang, aber ein bewusster Entscheid." },
+          { "label": "Im Lehrbetrieb", "text": "Eine Umstellung im Betrieb wirkt oft als Anreiz oder Appell an alle Mitarbeitenden zugleich." },
+          { "label": "Allgemeine Regelung", "text": "Eine verbindliche Vorschrift wie eine Deklarationspflicht ist eine Beschränkung — sie gilt für alle gleich.", "quelle": "Kap. 9.3" },
+          { "label": "Häufiger Fehler", "text": "Eine Massnahme nennen, ohne sie einem der vier Instrumente zuzuordnen — dann ist sie noch ein Wunsch, keine Massnahme." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 9.3 | S. 234-235",
       "text": "Schätzen Sie für jede Möglichkeit Wirkung und Kosten ab: die Wirkung mit einer Zahl oder wenigstens einer Grössenordnung, die Kosten mit der Angabe, wer sie trägt. Entscheiden Sie danach begründet für eine Möglichkeit — und benennen Sie, was gegen Ihre Wahl spricht.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Wirkung gegen Kostenträgerschaft abwägen",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Die Massnahme mit dem besten Verhältnis von Wirkung zu eigenem Aufwand wählen und benennen, wer die Kosten trägt." },
+          { "label": "Ebenfalls tragfähig", "text": "Die wirksamste Massnahme wählen, auch wenn sie kaum in eigener Reichweite liegt — der Abstand zwischen 6500 und 2000 Watt ist gross.", "quelle": "Kap. 9.3" },
+          { "label": "Nicht tragfähig", "text": "Eine Massnahme empfehlen, ohne zu sagen, wer ihre Kosten trägt — ich, der Betrieb oder die Allgemeinheit." },
+          { "label": "Grössenordnung", "text": "Wirkung als Zahl oder wenigstens als Grössenordnung angeben — eine ehrliche Schätzung zählt mehr als eine erfundene Zahl." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.3 | S. 394",
       "text": "Formulieren Sie den Kern Ihrer Empfehlung aus: die These in einem Satz und genau ein vollständig ausgebautes Argument nach dem 3B-Schema (Behauptung — Begründung mit Ihrer Zahl — Beispiel), genau so, wie Sie es in der Aufnahme sprechen würden. Dieses eine Argument ist Ihr Muster für die übrigen.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Ein Argument nach dem 3B-Schema",
+        "zeilen": [
+          { "label": "Massstab", "text": "Ein Argument braucht alle drei Bs: Behauptung in einem Satz, Begründung mit Beleg, Beispiel — sonst ist es nur eine Meinung.", "quelle": "Kap. 17.3" },
+          { "label": "Behauptung", "text": "Ein Satz, der die eigene These trägt — keine Begründung, kein Beispiel, nur die Aussage selbst.", "quelle": "Kap. 17.3" },
+          { "label": "Begründung", "text": "Mehrere Sätze, warum die Behauptung gilt, mit einer eigenen Zahl oder einer Zahl aus dem Lehrmittel als Beleg.", "quelle": "Kap. 17.3" },
+          { "label": "Beispiel", "text": "Ein konkreter Beleg, der die Begründung stützt — kein zweites allgemeines Argument." }
+        ]
+      }
     }
   ],
 

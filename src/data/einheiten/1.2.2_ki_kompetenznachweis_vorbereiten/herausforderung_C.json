@@ -74,28 +74,64 @@
       "bloom": "Verstehen",
       "knoten_ref": "eigener KN | Erfahrung A/B",
       "text": "Was unterscheidet «sich vorbereitet fühlen» von «wirklich vorbereitet sein»? Erklären Sie in drei bis vier Sätzen, warum Selbstwirksamkeit — das Vertrauen, etwas selbst zu können — nur durch eigenes Üben entsteht und nicht dadurch, dass die KI es für Sie erledigt.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Gefühlt vs. wirklich vorbereitet",
+        "zeilen": [
+          { "label": "Sich vorbereitet fühlen", "text": "Entsteht schon, wenn Inhalte einmal gelesen oder von der KI erklärt wurden — ein passiver Eindruck, keine geprüfte Fähigkeit." },
+          { "label": "Wirklich vorbereitet", "text": "Zeigt sich erst, wenn ich es ohne Hilfsmittel selbst erklären oder anwenden kann — genau das verlangt der Kompetenznachweis." },
+          { "label": "Selbstwirksamkeit", "text": "Das Vertrauen, etwas selbst zu können, entsteht durch eigenes Üben und Scheitern-Dürfen, nicht durch Zusehen bei der KI." },
+          { "label": "Grenze der KI", "text": "Die KI kann erklären und abfragen, das Üben selbst aber nicht abnehmen — deshalb trennt der Lernplan «mit KI» von «bewusst ohne»." },
+          { "label": "Prinzip", "text": "KI macht schneller, aber nicht automatisch kompetenter — wer entscheidet, was er ihr überlässt, bleibt selbstwirksam.", "quelle": "Prinzip der Einheit" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "eigener KN | KI-Tool",
       "text": "Teilen Sie Ihr KN-Thema in Lernschritte auf und ordnen Sie jedem Schritt zu, ob die KI dort sinnvoll hilft (z. B. Lernkarten erzeugen, Quiz stellen) oder ob Sie bewusst ohne sie üben (z. B. frei erklären, selbst zusammenfassen). Nutzen Sie die KI dabei aktiv als Lernpartnerin.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Wo KI hilft, wo ich selbst übe",
+        "zeilen": [
+          { "label": "Mit KI sinnvoll", "text": "Lernkarten und Quizfragen erzeugen, sich abfragen lassen, Erklärungen vereinfachen — Wiederholung und Feedback." },
+          { "label": "Bewusst ohne KI", "text": "Frei erklären, selbst zusammenfassen, unter Prüfungsbedingungen üben — genau das, was der KN ohne Hilfsmittel verlangt." },
+          { "label": "Zuordnungsregel", "text": "Schritte mit reproduzierbarem Wissen eignen sich für KI-Unterstützung, Schritte mit eigener Anwendung oder Erklärung nicht." },
+          { "label": "Häufiger Fehler", "text": "«KI hilft überall» oder «KI nirgends» statt einer Schritt-für-Schritt-Zuordnung — erst die Differenzierung macht den Plan brauchbar." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Lernplan | eigene Ziele",
       "text": "Entscheiden Sie für jeden Lernschritt begründet: KI-Hilfe oder bewusst ohne. Setzen Sie sich pro Schritt ein konkretes Ziel («Ich kann die fünf HACCP-Schritte frei aufzählen») und begründen Sie, warum Ihr Weg dorthin mit oder ohne KI führt.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Mit KI oder bewusst ohne — Wahl",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Reproduzierbares Wissen mit KI üben, Anwendungs- und Erklär-Schritte bewusst ohne KI: der KN verlangt beides ohne Hilfsmittel." },
+          { "label": "Ebenfalls tragfähig", "text": "Einen Schritt zuerst ohne KI erarbeiten und danach mit KI gegenlesen lassen — wenn die eigene Leistung zuerst steht." },
+          { "label": "Nicht tragfähig", "text": "Alle Schritte durchgehend mit KI abarbeiten, weil das schneller geht — dann fehlt am Prüfungstag genau das, was nie allein geübt wurde." },
+          { "label": "Ziel je Schritt", "text": "Jede Entscheidung braucht ein überprüfbares Ziel, z. B. «Ich kann die fünf HACCP-Schritte frei aufzählen»." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "KI-Tool | Lernplan",
       "text": "Formulieren Sie drei gezielte Prompts, mit denen die KI Sie beim Üben unterstützt, statt Ihnen die Arbeit abzunehmen — etwa indem sie Sie abfragt oder Ihnen Feedback gibt. Schreiben Sie sie so, dass Sie sie im Chat direkt einsetzen können.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Übe-Prompts, die abfragen",
+        "zeilen": [
+          { "label": "Bauteil", "text": "Drei Prompts, die die KI in die Rolle der Abfragenden versetzen — nicht in die Rolle der Erklärenden." },
+          { "label": "Musterformulierung", "text": "«Frag mich ab zu den fünf HACCP-Grundsätzen. Stell mir eine Frage nach der anderen und sag mir nach jeder Antwort, was noch fehlt.»" },
+          { "label": "Massstab", "text": "Der Prompt verlangt eine Rückfrage oder Rückmeldung an mich — kein Prompt, der einfach nochmals erklärt oder Antworten fertig liefert." }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Mein KI-Lernplan — helfen lassen ohne abgeben",

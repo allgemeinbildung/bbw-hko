@@ -74,28 +74,64 @@
       "bloom": "Verstehen",
       "knoten_ref": "ohne Lehrmittel | KI-Tool",
       "text": "Was ist ein Prompt, und warum liefert ein Sprachmodell auf eine vage Frage («Erkläre mir Datensicherheit») eine vage Antwort? Notieren Sie in drei bis vier Sätzen, was ein gutes Prompt von einem schlechten unterscheidet (Ziel, Rolle, Kontext, gewünschtes Format).",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Vier Bausteine eines guten Prompts",
+        "zeilen": [
+          { "label": "Rolle", "text": "Legt fest, aus welcher Perspektive die KI antwortet, z. B. «Du bist meine Lerncoach/in» statt einer neutralen Enzyklopädie-Antwort." },
+          { "label": "Ziel", "text": "Benennt, wozu die Antwort dient — «damit ich es selbst erklären kann» steuert die KI auf Verstehen statt auf Vollständigkeit." },
+          { "label": "Kontext", "text": "Liefert das eigene KN-Thema und den aktuellen Wissensstand, sonst antwortet die KI so allgemein wie möglich." },
+          { "label": "Format", "text": "Fordert eine Form ein, die zum Lernen passt — Beispiel, Schritte, Rückfrage statt Fliesstext." },
+          { "label": "Warum vage = vage", "text": "Ohne diese vier Angaben liefert die KI nur die wahrscheinlichste, breiteste Antwort — sie kennt weder Ziel noch Vorwissen." }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "eigener KN | KI-Tool",
       "text": "Formulieren Sie zu Ihrem eigenen KN-Thema drei aufeinander aufbauende Prompts: einen breiten Einstiegs-Prompt, einen, der die Rolle und das Lernziel vorgibt, und einen, der gezielt nachhakt («Erkläre es so, dass ich es jemandem weitererklären kann»). Geben Sie alle drei nacheinander in das KI-Tool ein.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die drei Prompts steigern sich",
+        "zeilen": [
+          { "label": "Prompt 1 — vage", "text": "«Erkläre mir …» ohne Rolle, Ziel oder Kontext bleibt bewusst vage — das Vergleichsmass für die spätere Steigerung." },
+          { "label": "Prompt 2 — geschärft", "text": "Mit Rolle, Ziel und dem eigenen KN-Thema als Kontext liefert die KI eine konkretere, brauchbarere Antwort." },
+          { "label": "Prompt 3 — trifft Kern", "text": "Verlangt ausdrücklich eine Kontrollfrage oder einen Weitererklär-Test — hier entsteht der eigentliche Lernschritt." },
+          { "label": "Häufiger Fehler", "text": "Drei gleich vage Prompts statt einer Steigerung: der dritte Prompt muss eine Kontrollfrage enthalten, keine weitere Erklärung verlangen." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "KI-Dialog | eigene Notizen",
       "text": "Entscheiden Sie für jede KI-Antwort begründet: Übernehmen Sie sie, oder haken Sie nochmals nach? Markieren Sie im Dialog, an welcher Stelle Ihr Verständnis tatsächlich gewachsen ist — und an welcher die KI Ihnen nur Arbeit abgenommen hat, ohne dass Sie dazugelernt haben.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Übernehmen oder nachhaken — Massstab",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Nachhaken, wenn die Antwort nicht in eigenen Worten wiederholbar ist — Tempo darf unbeantwortete Verständnislücken nicht übergehen." },
+          { "label": "Ebenfalls tragfähig", "text": "Eine fertige, klar verstandene Antwort übernehmen und die gesparte Zeit für einen anderen Teil der Vorbereitung nutzen — wenn das Verständnis wirklich steht." },
+          { "label": "Nicht tragfähig", "text": "Jede erste Antwort ungeprüft übernehmen, weil sie fertig aussieht — das ist Tempo ohne Kontrolle, kein Verständnis." },
+          { "label": "Markierung", "text": "Häkchen markiert gewachsenes Verständnis, Fragezeichen markiert reine Arbeitsabnahme durch die KI — beide müssen im Protokoll vorkommen." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "KI-Dialog | eigene Notizen",
       "text": "Schreiben Sie zu Ihrem stärksten Prompt einen kurzen Kommentar von zwei bis drei Sätzen: Warum hat genau diese Frage Ihr Verständnis weitergebracht? Formulieren Sie die Begründung so, dass Sie sie einer Mitlernenden/einem Mitlernenden im Chat erklären könnten.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Kommentar zum stärksten Prompt",
+        "zeilen": [
+          { "label": "Bauteil", "text": "Der Kommentar besteht aus zwei bis drei Sätzen: welche Frage wirkte, und warum — nicht eine Zusammenfassung des ganzen Protokolls." },
+          { "label": "Musterformulierung", "text": "«Diese Frage hat gewirkt, weil ich selbst antworten musste — die KI hat mich abgefragt statt mir zu erklären.»" },
+          { "label": "Massstab", "text": "Konkrete Wirkung benennen, was genau geholfen hat — kein pauschales «war gut» und kein neuer Prompt-Vorschlag." }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Gezielt prompten — fragen, um zu verstehen",

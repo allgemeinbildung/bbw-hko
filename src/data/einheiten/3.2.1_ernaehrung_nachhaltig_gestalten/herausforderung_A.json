@@ -57,28 +57,66 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 9.3 | S. 231",
       "text": "Erklären Sie die drei Dimensionen der Nachhaltigkeit in eigenen Worten und nennen Sie zu jeder Dimension ein Beispiel aus dem Essalltag.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die drei Dimensionen mit Essbeispiel",
+        "zeilen": [
+          { "label": "Ökologisch", "text": "Natur und Umwelt sollen für künftige Generationen erhalten bleiben — zum Beispiel Herkunft und Verpackung einer Mahlzeit.", "quelle": "Kap. 9.3" },
+          { "label": "Ökonomisch", "text": "Die Wirtschaft soll dauerhaft eine tragfähige Grundlage für Erwerb bieten — zum Beispiel der Preis einer Mahlzeit im eigenen Budget.", "quelle": "Kap. 9.3" },
+          { "label": "Sozial", "text": "Alle Mitglieder der Gesellschaft sollen an der Entwicklung teilhaben können — zum Beispiel wer mitisst und wo gekocht wird.", "quelle": "Kap. 9.3" },
+          { "label": "Zusammenspiel", "text": "Erst wenn alle drei Dimensionen gleichrangig verfolgt werden, entsteht ökologisches Gleichgewicht.", "quelle": "Kap. 9.3" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.7 | S. 73-74",
       "text": "Tragen Sie Ihre drei Erhebungstage vollständig in den Bogen ein und zählen Sie von Hand aus: Wie viele Mahlzeiten waren überwiegend pflanzlich, wie viele stark verarbeitet? Ordnen Sie danach zwei Ihrer Einträge einer Bedürfnisart zu (Existenzbedürfnis oder Wahlbedürfnis).",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Wie zählen, wie zuordnen",
+        "zeilen": [
+          { "label": "Pflanzlich zählen", "text": "Als überwiegend pflanzlich zählt eine Mahlzeit, wenn Gemüse, Getreide oder Hülsenfrüchte den Hauptteil bilden, nicht Fleisch oder Milchprodukte." },
+          { "label": "Stark verarbeitet", "text": "Stark verarbeitet ist, was industriell vorgefertigt ankommt, statt aus rohen Zutaten selbst zubereitet zu sein." },
+          { "label": "Existenzbedürfnis", "text": "Nahrung selbst ist ein Existenzbedürfnis — sie ist lebensnotwendig, unabhängig von Marke oder Ort.", "quelle": "Kap. 2.7" },
+          { "label": "Wahlbedürfnis", "text": "Die Form des Essens, etwa ein Take-away statt Kochen zu Hause, ist ein Wahlbedürfnis, sobald die Existenz gesichert ist.", "quelle": "Kap. 2.7" },
+          { "label": "Häufiger Fehler", "text": "Nur nach Vorliebe einordnen, statt zu prüfen, ob das Bedürfnis überhaupt lebensnotwendig ist." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 1.5 | S. 37",
       "text": "Entscheiden Sie, welche drei Befunde Ihre Erhebung wirklich trägt, und begründen Sie, warum Sie die übrigen Beobachtungen weglassen. Halten Sie dabei fest, welche Angaben auf einer Verpackung überhaupt etwas aussagen — und was drei Tage belegen können und was nicht.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Was einen Befund tragfähig macht",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Ein Befund braucht eine ausgezählte Zahl aus dem eigenen Bogen — eine geschätzte Angabe zählt nicht als Beleg." },
+          { "label": "Verpackung sagt aus", "text": "Etikette oder Preisschild sagen nur, was tatsächlich draufsteht — Herkunft, Gewicht, Preis, allenfalls ein Label.", "quelle": "Kap. 1.5" },
+          { "label": "Verpackung sagt nichts", "text": "Ohne Deklaration sagt sie nichts zu Sozialverträglichkeit oder Tierwohl — labelinfo.ch bewertet diese getrennt.", "quelle": "Kap. 1.5" },
+          { "label": "Nicht tragfähig", "text": "Eine Beobachtung ohne eigene Zahl, etwa «ich esse eher gesund» — das ist eine Vermutung, kein Befund." },
+          { "label": "Grenze dreier Tage", "text": "Drei Tage zeigen eine Tendenz, kein Jahresmuster — Ausnahmen und saisonale Schwankungen bleiben unsichtbar." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 9.3 | S. 231",
       "text": "Gestalten Sie eine einzige Befund-Kachel vollständig aus: Aussage in höchstens 12 Wörtern, die eigene Zahl aus dem Bogen, ein eigenes Foto und eine Zeile Einordnung, die eine der drei Dimensionen benennt. Diese eine Kachel ist Ihr Muster für die beiden übrigen.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Eine Kachel vollständig, als Muster",
+        "zeilen": [
+          { "label": "Massstab", "text": "Aussage höchstens 12 Wörter, eine eigene Zahl aus dem Bogen, ein eigenes Foto, eine Zeile Einordnung mit einer der drei Dimensionen." },
+          { "label": "Aussage", "text": "«Nur 4 von 14 Mahlzeiten waren überwiegend pflanzlich» — kurz, mit Zahl, ohne Wertung." },
+          { "label": "Einordnung", "text": "Die Zahl gehört zur ökologischen Dimension, weil tierische Lebensmittel mehr Fläche, Wasser und Energie brauchen als pflanzliche.", "quelle": "Kap. 9.3" },
+          { "label": "Häufiger Fehler", "text": "Eine Aussage ohne eigene Zahl aus dem Bogen — ein Eindruck ersetzt keinen Beleg." }
+        ]
+      }
     }
   ],
 

@@ -432,6 +432,15 @@ body {
   background: #fff; border-color: #16a34a; color: #15803d;
 }
 .wb-action.deck:hover { background: #f0fdf4; border-color: #15803d; }
+/* Zusatz auf dem Deck-Knopf («mit Lösungen») — leichter als das Label, damit der
+   Knopf weiter «Präsentation» heisst und der Hinweis nicht mit ihm konkurriert. */
+.wb-action-note {
+  margin-left: -2px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.02em;
+  padding: 2px 6px; border-radius: 999px;
+  background: #dcfce7; color: #15803d;
+}
+.wb-action.deck.locked .wb-action-note { background: #e2e8f0; color: #64748b; }
 .wb-action.deck.locked { background: #f1f5f9; border-color: #cbd5e1; color: #64748b; }
 .wb-action.deck.locked:hover { background: #e2e8f0; border-color: #94a3b8; }
 .wb-tree + .wb-action { margin-top: 8px; }

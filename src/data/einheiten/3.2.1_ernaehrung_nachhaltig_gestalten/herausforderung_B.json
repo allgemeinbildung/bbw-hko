@@ -60,28 +60,65 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 9.2 | S. 230",
       "text": "Erklären Sie die Begriffe «graue Energie» und «Ökobilanz» in eigenen Worten und zeigen Sie am Beispiel Schokolade (2,5 kWh pro Kilo), in welchen Phasen des Lebenszyklus graue Energie anfällt.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Graue Energie und Ökobilanz erklärt",
+        "zeilen": [
+          { "label": "Graue Energie", "text": "Alle Energie, die ein Produkt vor dem eigenen Gebrauch braucht — für Rohstoffe, Herstellung und Transport.", "quelle": "Kap. 9.2" },
+          { "label": "Anteil im Haushalt", "text": "Der Schweizer Durchschnittshaushalt verbraucht zwei Drittel seiner Energie als graue Energie, nur ein Drittel direkt als Strom oder Heizöl.", "quelle": "Kap. 9.2" },
+          { "label": "Schokolade-Beispiel", "text": "1 kg Schokolade braucht 2,5 kWh graue Energie — vom Anbau der Kakaobohne bis zur fertigen Tafel, nicht erst beim Essen.", "quelle": "Kap. 9.2" },
+          { "label": "Ökobilanz", "text": "Eine Ökobilanz misst Umweltbelastung, Ressourcenverbrauch und Energieart eines Produkts über Herstellung, Nutzung und Entsorgung.", "quelle": "Kap. 9.2" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 9.2 | S. 229",
       "text": "Rekonstruieren Sie für Ihr Lebensmittel die Stationen von der Erzeugung bis ins Regal (Anbau oder Haltung, Verarbeitung, Transport, Verpackung, Verkauf) und notieren Sie zu jeder Station, welche Ressource dort verbraucht wird. Ziehen Sie dafür eine Dokumentation oder ein Erklärvideo bei und halten Sie fest, welche Angabe von dort stammt.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Stationen und ihre Ressource",
+        "zeilen": [
+          { "label": "Anbau/Haltung", "text": "Grösster Ressourcenposten: 1 kg Rindfleisch braucht 15'455 Liter Wasser, 1 kg Hühnerfleisch 3900 Liter.", "quelle": "Kap. 9.2" },
+          { "label": "Verarbeitung", "text": "Strom und Wasser für Reinigung, Kühlung und Zerlegung im Verarbeitungsbetrieb." },
+          { "label": "Transport", "text": "Treibstoff für den Weg vom Erzeugerbetrieb zum Verteilzentrum und weiter ins Regal." },
+          { "label": "Verpackung/Verkauf", "text": "Verpackungsmaterial und Kühlenergie im Laden bis zum Verkauf." },
+          { "label": "Häufiger Fehler", "text": "Nur die Herstellung nennen und den Weg dorthin — Anbau, Transport, Verpackung — weglassen." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 9.4 | S. 236-237",
       "text": "Entscheiden Sie begründet, welche Station Ihres Wegs die grösste Umweltlast trägt. Prüfen Sie dabei jede Zahl auf ihre Bezugsgrösse: Gilt sie pro Kilo, pro Stück oder pro Jahr — und ist sie mit den Zahlen der anderen Stationen überhaupt vergleichbar?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Bezugsgrössen vor dem Vergleich prüfen",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Meist trägt Anbau oder Haltung die grösste Last — Wasserzahlen liegen dort im Tausenderbereich pro Kilo, weit vor Transport oder Verpackung." },
+          { "label": "Bezugsgrösse", "text": "38 % Anteil des Verkehrs gilt für den gesamten Schweizer Endenergieverbrauch 2023 — nicht für ein einzelnes Produkt.", "quelle": "Kap. 9.4" },
+          { "label": "Ebenfalls tragfähig", "text": "Bei einem Produkt mit langem Transportweg kann der Transport die grösste Last tragen — das ist von Fall zu Fall zu prüfen." },
+          { "label": "Nicht tragfähig", "text": "Literzahlen pro Kilo einfach mit Prozentzahlen des Landesverbrauchs addieren — die Bezugsgrössen passen nicht zusammen." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 9.3 | S. 231",
       "text": "Formulieren Sie eine einzige Dimension Ihres Produktprofils vollständig aus: eine Aussage, ein Beleg mit Quelle und Bezugsgrösse, eine offene Frage. Diese eine Dimension ist Ihr Muster für die beiden übrigen.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Eine Dimension vollständig, als Muster",
+        "zeilen": [
+          { "label": "Massstab", "text": "Eine Aussage, ein Beleg mit Quelle und Bezugsgrösse, eine offene Frage — pro Dimension genau diese drei Teile." },
+          { "label": "Aussage", "text": "«Mein Lebensmittel belastet vor allem die ökologische Dimension.»" },
+          { "label": "Beleg", "text": "Ökologische Nachhaltigkeit heisst, Natur und Umwelt für künftige Generationen zu erhalten — die passende Zahl liefert die eigene Wegskizze.", "quelle": "Kap. 9.3" },
+          { "label": "Offene Frage", "text": "Welche Bezugsgrösse macht meine Zahl mit anderen Produkten überhaupt vergleichbar?" }
+        ]
+      }
     }
   ],
 

@@ -57,28 +57,64 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 2.7 | S. 76-77",
       "text": "Erklären Sie mit Angebots- und Nachfragekurve, warum der Vanillepreis nach dem Ernteausfall steigt. Nutzen Sie das Erdöl-Beispiel auf Seite 77 als Vorlage.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Preisanstieg durch sinkendes Angebot",
+        "zeilen": [
+          { "label": "Angebot", "text": "Nach dem Zyklon sinkt das Angebot an Bourbon-Vanille aus Madagaskar.", "quelle": "Kap. 2.7, S. 77" },
+          { "label": "Nachfrage", "text": "Die Nachfrage nach Vanille bleibt gleich hoch.", "quelle": "Kap. 2.7, S. 76" },
+          { "label": "Knappheit", "text": "Je knapper ein Gut, desto höher sein Preis — wie beim Erdöl-Beispiel bei sinkender Fördermenge.", "quelle": "Kap. 2.7, S. 77" },
+          { "label": "Signalfunktion", "text": "Der Preis lenkt Angebot und Nachfrage: Ein höherer Preis dämpft die nachgefragte Menge.", "quelle": "Kap. 2.7, S. 76" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.7 | S. 81-82",
       "text": "Ordnen Sie die Kostenbestandteile eines Vanillegipfeli den Produktionsfaktoren zu und benennen Sie, welcher Faktor durch den Ernteausfall teurer geworden ist.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Welcher Produktionsfaktor teurer wurde",
+        "zeilen": [
+          { "label": "Boden/Umwelt", "text": "Anbaufläche und Rohstoff zählen zum Produktionsfaktor Boden/Umwelt — er ist durch den Ernteausfall teurer geworden.", "quelle": "Kap. 2.7, S. 81" },
+          { "label": "Arbeit", "text": "Handbestäubung, Ernte und Trocknung sind Produktionsfaktor Arbeit; ihr Aufwand ändert sich durch den Zyklon nicht.", "quelle": "Kap. 2.7, S. 81" },
+          { "label": "Kapital", "text": "Lager, Transport und Verarbeitung zählen zum Produktionsfaktor Kapital und bleiben ebenfalls unverändert.", "quelle": "Kap. 2.7, S. 81" },
+          { "label": "Häufiger Fehler", "text": "Den ganzen Preisanstieg der Arbeit zuschreiben — teurer wurde die Fläche und ihr Ertrag, nicht die Arbeitszeit." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 11.2 | S. 279",
       "text": "Ihr Betrieb muss zwischen Bourbon-Vanille zu 1250 Franken und Vanillin zu 28 Franken wählen. Entscheiden Sie begründet, welche Variante Sie empfehlen — und benennen Sie, welche Umweltkosten in beiden Preisen fehlen.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Vanille oder Vanillin — beide Preise unvollständig",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Bei der Bourbon-Vanille bleiben — die 40 Rappen sind sichtbar, während die Folgekosten des Vanillins nur verschoben, nicht vermieden werden." },
+          { "label": "Ebenfalls tragfähig", "text": "Das Vanillin wählen, wenn die Konkurrenzfähigkeit des Betriebs begründet höher gewichtet wird als die verschobenen Folgekosten." },
+          { "label": "Fehlt bei Vanille", "text": "Bodenerosion und -vergiftung sowie Waldvernichtung im Anbauland — Ursache oft im eigenen Konsumverhalten.", "quelle": "Kap. 11.2, S. 279" },
+          { "label": "Fehlt bei Vanillin", "text": "Erdöl als Rohstoff: Förderung und Umweltbelastung stehen in keinem der beiden Preise." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 2.7 | S. 76",
       "text": "Formulieren Sie die Sprechspur für das Schlussbild Ihrer Bildstrecke: drei Sätze, die sagen, was der Preis anzeigt und was er verschweigt.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Sätze für das Schlussbild",
+        "zeilen": [
+          { "label": "Satz 1 — zeigt an", "text": "«Der Preis von 1250 Franken zeigt, dass die Vanille nach dem Ernteausfall knapp geworden ist.»" },
+          { "label": "Satz 2 — verschweigt", "text": "«Nicht angezeigt wird dagegen die Bodenbelastung im Anbauland und der Erdölanteil im Vanillin.»" },
+          { "label": "Satz 3 — offen halten", "text": "«Wer diese Kosten am Ende trägt, ist damit noch nicht entschieden.»" },
+          { "label": "Massstab", "text": "Drei Sätze, keiner löst die Lücke auf — Satz 3 bleibt bewusst offen, nicht abschliessend.", "quelle": "Kap. 2.7, S. 76" }
+        ]
+      }
     }
   ],
 

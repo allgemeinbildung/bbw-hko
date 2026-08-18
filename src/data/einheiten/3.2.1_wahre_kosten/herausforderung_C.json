@@ -57,28 +57,64 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 11.2 | S. 279",
       "text": "Erklären Sie anhand des Lehrmittels, wie unser Konsumverhalten mit Rohstoffabbau und Umweltbelastung in anderen Ländern zusammenhängt.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Konsum hier, Umweltschäden anderswo",
+        "zeilen": [
+          { "label": "Input – Output", "text": "Ressourcenverbrauch und Umweltbelastung sind die zwei Dimensionen der globalen Umweltthematik.", "quelle": "Kap. 11.2, S. 279" },
+          { "label": "Schwellenländer", "text": "Industrieanlagen in Schwellenländern verschmutzen die Umwelt stärker, weil Umweltschutz dort weniger durchgesetzt wird.", "quelle": "Kap. 11.2, S. 279" },
+          { "label": "Bodenschäden", "text": "Bodenerosion und -vergiftung entstehen durch den Zwang zur Produktionsmaximierung.", "quelle": "Kap. 11.2, S. 279" },
+          { "label": "Ursache", "text": "Die Gründe dafür liegen oft in unserem Konsumverhalten — die Folgen sind global spürbar.", "quelle": "Kap. 11.2, S. 279" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.5 | S. 41",
       "text": "Wenden Sie die Reihenfolge Vermeiden – Vermindern – Verwerten auf Ihren Handykauf an und nennen Sie pro Stufe eine konkrete Möglichkeit.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Vermeiden – Vermindern – Verwerten am Handy",
+        "zeilen": [
+          { "label": "Vermeiden", "text": "Das alte Handy reparieren lassen oder länger nutzen — der beste Abfall ist der, der gar nicht erst anfällt.", "quelle": "Kap. 1.5, S. 41" },
+          { "label": "Vermindern", "text": "Ein gebrauchtes Gerät ohne Zwischenverarbeitung übernehmen, statt ein neues zu kaufen.", "quelle": "Kap. 1.5, S. 41" },
+          { "label": "Verwerten", "text": "Das alte Handy bei der Rücknahmestelle abgeben statt in der Schublade liegen zu lassen.", "quelle": "Kap. 1.5, S. 41" },
+          { "label": "Häufiger Fehler", "text": "Verwerten mit Vermeiden verwechseln — Recycling kommt erst, wenn der Kauf schon feststeht." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 2.7 | S. 73-74",
       "text": "Entscheiden Sie begründet zwischen dem Gerät für 199 Franken und dem für 450 Franken. Beziehen Sie Ihren Lehrlingslohn, den Nutzen und die erwartete Nutzungsdauer in Ihre Überlegung ein.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "199 oder 450 — beide Seiten offenlegen",
+        "zeilen": [
+          { "label": "Nutzenkonzept", "text": "Bei beschränktem Einkommen entscheidet der Nutzen, welches Gut gekauft wird — nicht allein der Preis.", "quelle": "Kap. 2.7, S. 73" },
+          { "label": "Erwartet", "text": "Das günstige Gerät, weil 450 Franken auf einmal bei 850 Franken Lohn real schwerer wiegen als eine Jahresrechnung." },
+          { "label": "Ebenfalls tragfähig", "text": "Das teurere Gerät, weil es pro Nutzungsjahr günstiger ist und nur halb so oft Elektroschrott erzeugt." },
+          { "label": "Massstab", "text": "Beide Seiten offenlegen zählt — nicht, welches Gerät gewählt wird." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 1.5 | S. 39",
       "text": "Formulieren Sie die drei Zeilen für Ihr zweites Preisschild: pro Zeile ein versteckter Kostenposten, je höchstens zwölf Wörter.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Zeilen für das zweite Preisschild",
+        "zeilen": [
+          { "label": "Zeile 1", "text": "«Plus: Rohstoffabbau und belastete Böden im Herkunftsland.»", "quelle": "Kap. 11.2, S. 279" },
+          { "label": "Zeile 2", "text": "«Plus: Transport um die halbe Welt, im Preis nicht enthalten.»", "quelle": "Kap. 11.2, S. 279" },
+          { "label": "Zeile 3", "text": "«Plus: Elektroschrott nach zwei Jahren ohne Updates.»", "quelle": "Kap. 1.5, S. 39" },
+          { "label": "Massstab", "text": "Höchstens zwölf Wörter pro Zeile, jede davon an einer Lehrmittelstelle belegbar." }
+        ]
+      }
     }
   ],
 

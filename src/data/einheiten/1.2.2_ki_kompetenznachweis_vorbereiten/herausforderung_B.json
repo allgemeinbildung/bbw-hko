@@ -73,28 +73,63 @@
       "bloom": "Verstehen",
       "knoten_ref": "ohne Lehrmittel | KI-Tool",
       "text": "Was bedeutet es, dass ein Sprachmodell «halluzinieren» kann? Erklären Sie in drei bis vier Sätzen, warum eine KI Quellen oder URLs erfinden kann, die echt aussehen, aber nicht existieren.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Warum eine KI Quellen erfindet",
+        "zeilen": [
+          { "label": "Halluzination", "text": "Ein Sprachmodell erzeugt Text nach Wahrscheinlichkeit, nicht nach Wahrheit — es kann Titel und URLs erfinden, die plausibel klingen, aber nicht existieren." },
+          { "label": "Warum überzeugend", "text": "Die Form — Name, Jahr, Link — folgt bekannten Mustern echter Quellen, deshalb wirkt eine erfundene Quelle genauso seriös wie eine echte." },
+          { "label": "Sicherer Ton", "text": "Die KI markiert Unsicherheit nicht von selbst — eine falsche Angabe klingt gleich bestimmt wie eine korrekte." },
+          { "label": "Konsequenz", "text": "Deshalb muss jede von der KI genannte Quelle einzeln geöffnet und geprüft werden, bevor sie in den KN übernommen wird." }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "KI-Recherche | eigene Prüfung",
       "text": "Lassen Sie die KI zu Ihrem eigenen KN-Thema eine Recherche mit Quellen machen. Prüfen Sie danach jede genannte Quelle nach drei Kriterien: Existiert der Link / die Quelle wirklich? Steht dort tatsächlich, was die KI behauptet? Ist die Quelle vertrauenswürdig (Herausgeber, Aktualität)?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Prüfkriterien angewendet",
+        "zeilen": [
+          { "label": "Existiert?", "text": "Link oder Titel im Original suchen — führt er ins Leere oder zu einer Seite, die es nicht gibt, ist die Quelle erfunden." },
+          { "label": "Belegt?", "text": "Auch ein echter Link kann die Behauptung nicht stützen — das ist die subtilste Falle: echte Quelle, falsch zusammengefasst." },
+          { "label": "Vertrauenswürdig?", "text": "Herausgeber und Aktualität prüfen — eine amtliche oder Fachquelle wiegt anders als ein Branchenblog mit Eigeninteresse." },
+          { "label": "Häufiger Fehler", "text": "Nur prüfen, ob der Link funktioniert, und Kriterium 2 überspringen — genau dort sitzt die subtilste Halluzination: echter Link, falsch zusammengefasst." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "KI-Recherche | eigene Prüfung",
       "text": "Analysieren Sie das Gesamtbild: Wie verlässlich ist diese KI-Recherche insgesamt? Vergleichen Sie Verlässlichkeit (stimmen die Quellen?), Tiefe (bleibt es an der Oberfläche?) und Nachvollziehbarkeit (können Sie jede Aussage zurückverfolgen?). Begründen Sie, welchen Teilen Sie vertrauen und welchen nicht.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Gesamturteil: drei Massstäbe",
+        "zeilen": [
+          { "label": "Verlässlichkeit", "text": "Anteil der Quellen, die Existenz- und Beleg-Prüfung tatsächlich bestehen — nicht die Zahl der genannten Quellen zählt, sondern wie viele standhalten." },
+          { "label": "Tiefe", "text": "Bleibt die Recherche bei allgemeinen Aussagen, oder liefert sie für den eigenen Betrieb verwertbare Details?" },
+          { "label": "Nachvollziehbarkeit", "text": "Kann jede Aussage bis zur Originalquelle zurückverfolgt werden, oder bleibt sie eine unbelegte Behauptung der KI?" },
+          { "label": "Schwach vs. stark", "text": "Schwach: pauschal «vertrauenswürdig» oder «unzuverlässig» urteilen. Stark: pro Quelle einzeln begründen, welchem Teil vertraut wird und welchem nicht." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "eigene Prüfung | Notizen",
       "text": "Schreiben Sie für eine der geprüften Quellen einen kurzen Prüf-Eintrag von zwei bis drei Sätzen: Was haben Sie kontrolliert, was war das Ergebnis, und würden Sie diese Quelle im KN verwenden? Formulieren Sie so, dass eine Aussenstehende Ihre Prüfung nachvollziehen könnte.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Ein Prüf-Eintrag pro Quelle",
+        "zeilen": [
+          { "label": "Bauteil", "text": "Ein Prüf-Eintrag nennt die Quelle, das Prüfergebnis und die Verwendungs-Entscheidung — nicht die ganze Prüftabelle." },
+          { "label": "Musterformulierung", "text": "«Der BAFU-Waldbericht existiert, belegt die Aussage zur Waldfläche und ist als Bundesstelle vertrauenswürdig — ich verwende ihn direkt im KN.»" },
+          { "label": "Massstab", "text": "Eine Aussenstehende Person muss die Prüfung nachvollziehen können, ohne selbst nachzuklicken." }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "KI-Recherche prüfen — vertrauen oder kontrollieren?",
