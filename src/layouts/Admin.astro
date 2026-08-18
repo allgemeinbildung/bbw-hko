@@ -36,6 +36,10 @@ const error = Astro.url.searchParams.get('error')
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/jahresplanung' ? 'admin-tab-active' : 'admin-tab'}`}
           >Jahresplanung-Abdeckung</a>
           <a
+            href="/admin/statistik"
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/statistik' ? 'admin-tab-active' : 'admin-tab'}`}
+          >Nutzung</a>
+          <a
             href="/situationen/admin"
             class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
           >Situationen-Feedbacks →</a>

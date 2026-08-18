@@ -114,5 +114,61 @@ const { title = 'Materialplattform' } = Astro.props
 <body class="min-h-screen">
   <ViewAsBanner />
   <slot />
+
+  <!--
+    Nutzungs-Tracking (eigene Erhebung, kein externer Dienst).
+    Sendet pro Seitenaufruf ein Beacon an /api/track. Bewusst `is:inline`, damit
+    es ohne Bundle-Roundtrip im ersten Byte steht und nie eine Seite blockiert.
+
+    Gespeichert werden nur Pfad, Rolle und zwei Zufalls-IDs (Besuch/Gerät) —
+    keine IP, kein User-Agent, keine Query-Strings. Details: src/lib/tracking.ts.
+    `window.hkoTrack(event, meta)` meldet zusätzlich Ereignisse, die serverseitig
+    unsichtbar sind — allen voran der clientseitig gebaute Einheiten-ZIP.
+  -->
+  <script is:inline>
+    (function () {
+      try {
+        if (navigator.webdriver) return
+        var rnd = function () {
+          return Math.random().toString(36).slice(2, 12) + Math.random().toString(36).slice(2, 12)
+        }
+        var pick = function (store, key) {
+          try {
+            var v = store.getItem(key)
+            if (!v) { v = rnd(); store.setItem(key, v) }
+            return v
+          } catch (e) { return rnd() } // Privater Modus: Besuch zählt trotzdem
+        }
+        var sid = pick(window.sessionStorage, 'hko_sid')
+        var vid = pick(window.localStorage, 'hko_vid')
+
+        var send = function (event, meta) {
+          var body = JSON.stringify({
+            event: event || 'pageview',
+            path: location.pathname,
+            sid: sid,
+            vid: vid,
+            referrer: document.referrer || null,
+            meta: meta || null,
+          })
+          try {
+            if (navigator.sendBeacon) {
+              navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }))
+            } else {
+              fetch('/api/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: body,
+                keepalive: true,
+              })
+            }
+          } catch (e) {}
+        }
+
+        window.hkoTrack = send
+        send('pageview')
+      } catch (e) {}
+    })()
+  </script>
 </body>
 </html>

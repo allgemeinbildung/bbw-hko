@@ -71,6 +71,17 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
 const GUEST_ALLOWED: DocSel[] = ['doc-s', 'doc-austausch', 'doc-dossier', 'doc-leseblatt']
 const GATE_MAIL = 'pietro.rossi@bbw.ch'
 
+/**
+ * Nutzungs-Tracking (Beacon aus `Base.astro`). Downloads werden hier gemeldet,
+ * weil sie vollständig im Browser entstehen — serverseitig ist von einem
+ * Bundle-Export nichts zu sehen. Fehlt der Beacon, passiert schlicht nichts.
+ */
+function trackDownload(meta: Record<string, unknown>) {
+  try {
+    ;(window as any).hkoTrack?.('download', meta)
+  } catch {}
+}
+
 function triggerDownload(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -80,6 +91,7 @@ function triggerDownload(blob: Blob, filename: string) {
   a.click()
   document.body.removeChild(a)
   setTimeout(() => URL.revokeObjectURL(url), 1000)
+  trackDownload({ art: 'einzeldokument', datei: filename.slice(0, 120) })
 }
 
 // Gast-Sperre: statt des Dokuments erscheint ein Hinweis mit mailto-Kontakt.
@@ -660,6 +672,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       a.click()
       document.body.removeChild(a)
       setTimeout(() => URL.revokeObjectURL(url), 1000)
+      trackDownload({ art: 'bundle', dateien: log.length, kn_typ: knTyp, abteilung: abteilung || null })
       showToast(`${log.length} Dateien als Zip exportiert.`)
     } catch (e: any) {
       console.error(e)

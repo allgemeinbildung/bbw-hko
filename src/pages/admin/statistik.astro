@@ -1,0 +1,332 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import { einheitById } from '../../lib/einheiten'
+import { situationenIndex } from '../../lib/situationen'
+import { AREA_LABEL, ROLE_LABEL, type TrackArea } from '../../lib/tracking'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role !== 'kt1' && profile?.role !== 'reviewer') return Astro.redirect('/')
+
+// Zeitfenster über die URL, damit der Umschalter ohne JS funktioniert.
+const ZEITRAEUME = [7, 30, 90, 365]
+const tageParam = Number(Astro.url.searchParams.get('tage'))
+const tage = ZEITRAEUME.includes(tageParam) ? tageParam : 30
+
+type Kennzahlen = { aufrufe: number; besuche: number; besucher: number; downloads: number; seit?: string | null }
+type TopEintrag = { ref: string; aufrufe: number; besuche: number; downloads: number; zuletzt: string }
+type Stats = {
+  von: string
+  tage: number
+  zeitraum: Kennzahlen
+  gesamt: Kennzahlen
+  verlauf: { tag: string; aufrufe: number; besuche: number }[]
+  rollen: { rolle: string; aufrufe: number; besuche: number; besucher: number }[]
+  einheiten: TopEintrag[]
+  situationen: TopEintrag[]
+  bereiche: { bereich: string; aufrufe: number; besuche: number }[]
+  seiten: { pfad: string; aufrufe: number; besuche: number }[]
+  herkunft: { quelle: string; besuche: number }[]
+}
+
+let stats: Stats | null = null
+let ladeFehler = ''
+try {
+  const { data, error } = await Astro.locals.supabase.rpc('hko_usage_stats', { p_days: tage })
+  if (error) ladeFehler = error.message
+  else stats = data as Stats
+} catch (e: any) {
+  ladeFehler = e?.message ?? 'Unbekannter Fehler'
+}
+
+const leer = !ladeFehler && (stats?.gesamt?.aufrufe ?? 0) === 0
+
+// Titel für die Slugs/IDs, damit die Tabelle lesbar ist statt kryptisch.
+const situationTitel = new Map(situationenIndex.map((s: any) => [s.id, s.titel as string]))
+const einheitInfo = (ref: string) => {
+  const e = einheitById(ref)
+  return {
+    titel: e?.einheit_titel ?? e?.titel ?? ref,
+    thema: e?.thema_nr ?? null,
+    href: `/einheiten/${ref}`,
+  }
+}
+
+const maxVerlauf = Math.max(1, ...(stats?.verlauf ?? []).map((v) => v.aufrufe))
+const maxBereich = Math.max(1, ...(stats?.bereiche ?? []).map((b) => b.aufrufe))
+const maxEinheit = Math.max(1, ...(stats?.einheiten ?? []).map((e) => e.aufrufe))
+
+const dfTag = new Intl.DateTimeFormat('de-CH', { day: '2-digit', month: '2-digit' })
+const dfDatum = new Intl.DateTimeFormat('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' })
+const zahl = (n: number | null | undefined) => new Intl.NumberFormat('de-CH').format(n ?? 0)
+---
+
+<Admin title="Nutzungsstatistik">
+  <div class="max-w-7xl mx-auto px-6 py-8 space-y-8">
+    <header class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-900">Nutzungsstatistik</h1>
+        <p class="text-sm text-slate-600 mt-1">
+          Eigene Erhebung auf bbw-hko.ch — Besuche, Seitenaufrufe und Downloads pro Einheit.
+        </p>
+      </div>
+      <nav class="flex gap-1 p-1 rounded-lg bg-slate-100" aria-label="Zeitraum">
+        {ZEITRAEUME.map((t) => (
+          <a
+            href={`/admin/statistik?tage=${t}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${t === tage ? 'tab-active' : 'text-slate-600 hover:bg-white'}`}
+          >{t === 365 ? '1 Jahr' : `${t} Tage`}</a>
+        ))}
+      </nav>
+    </header>
+
+    {ladeFehler && (
+      <div class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+        <p class="font-semibold">Statistik nicht abrufbar.</p>
+        <p class="mt-1">{ladeFehler}</p>
+        <p class="mt-2 text-red-700">
+          Wahrscheinlich ist die Migration <code class="font-mono">018_page_events.sql</code> noch nicht eingespielt.
+        </p>
+      </div>
+    )}
+
+    {leer && (
+      <div class="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        <p class="font-semibold">Noch keine Daten.</p>
+        <p class="mt-1">
+          Die Messung beginnt mit dem ersten Seitenaufruf nach dem Deploy — rückwirkend gibt es
+          keine Zahlen, weil vorher nichts erhoben wurde.
+        </p>
+      </div>
+    )}
+
+    {stats && !leer && (
+      <>
+        <!-- ── Kennzahlen ─────────────────────────────────────────────── -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { label: 'Besucher', wert: stats.zeitraum.besucher, hint: 'unterschiedliche Geräte' },
+            { label: 'Besuche', wert: stats.zeitraum.besuche, hint: 'Sitzungen' },
+            { label: 'Seitenaufrufe', wert: stats.zeitraum.aufrufe, hint: 'inkl. Wiederholungen' },
+            { label: 'Downloads', wert: stats.zeitraum.downloads, hint: 'Bundles + Einzeldokumente' },
+          ].map((k) => (
+            <div class="bg-white rounded-lg border border-slate-200 p-4">
+              <div class="field-label">{k.label}</div>
+              <div class="text-3xl font-bold text-slate-900 mt-1">{zahl(k.wert)}</div>
+              <div class="text-xs text-slate-500 mt-1">{k.hint}</div>
+            </div>
+          ))}
+        </section>
+
+        <p class="-mt-4 text-xs text-slate-500">
+          Seit Messbeginn{stats.gesamt.seit ? ` (${dfDatum.format(new Date(stats.gesamt.seit))})` : ''}:
+          <strong>{zahl(stats.gesamt.besucher)}</strong> Besucher ·
+          <strong>{zahl(stats.gesamt.besuche)}</strong> Besuche ·
+          <strong>{zahl(stats.gesamt.aufrufe)}</strong> Aufrufe ·
+          <strong>{zahl(stats.gesamt.downloads)}</strong> Downloads.
+        </p>
+
+        <!-- ── Verlauf ────────────────────────────────────────────────── -->
+        <section class="bg-white rounded-lg border border-slate-200 p-5">
+          <h2 class="text-sm font-semibold text-slate-900 mb-4">Seitenaufrufe pro Tag</h2>
+          <div class="flex items-end gap-px h-32 overflow-x-auto">
+            {stats.verlauf.map((v) => (
+              <div
+                class="flex-1 min-w-[3px] rounded-t transition-colors"
+                style={`height: ${Math.max(2, Math.round((v.aufrufe / maxVerlauf) * 100))}%; background: ${v.aufrufe ? 'var(--brand)' : '#e2e8f0'};`}
+                title={`${dfDatum.format(new Date(v.tag))}: ${v.aufrufe} Aufrufe · ${v.besuche} Besuche`}
+              />
+            ))}
+          </div>
+          <div class="flex justify-between text-xs text-slate-500 mt-2">
+            <span>{stats.verlauf.length ? dfTag.format(new Date(stats.verlauf[0].tag)) : ''}</span>
+            <span>Spitze: {zahl(maxVerlauf)} Aufrufe/Tag</span>
+            <span>{stats.verlauf.length ? dfTag.format(new Date(stats.verlauf[stats.verlauf.length - 1].tag)) : ''}</span>
+          </div>
+        </section>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+          <!-- ── Rollen ───────────────────────────────────────────────── -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-1">Wer war da?</h2>
+            <p class="text-xs text-slate-500 mb-3">
+              Das Gastkonto ist geteilt — «Besucher» trennt die Personen dahinter nach Gerät.
+            </p>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-xs uppercase tracking-wide text-slate-500 border-b border-slate-200">
+                  <th class="pb-2 font-semibold">Rolle</th>
+                  <th class="pb-2 font-semibold text-right">Besucher</th>
+                  <th class="pb-2 font-semibold text-right">Besuche</th>
+                  <th class="pb-2 font-semibold text-right">Aufrufe</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.rollen.map((r) => (
+                  <tr class="border-b border-slate-100 last:border-0">
+                    <td class="py-2">{ROLE_LABEL[r.rolle] ?? r.rolle}</td>
+                    <td class="py-2 text-right font-medium">{zahl(r.besucher)}</td>
+                    <td class="py-2 text-right text-slate-600">{zahl(r.besuche)}</td>
+                    <td class="py-2 text-right text-slate-600">{zahl(r.aufrufe)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+
+          <!-- ── Bereiche ─────────────────────────────────────────────── -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-3">Welcher Bereich?</h2>
+            <div class="space-y-2.5">
+              {stats.bereiche.map((b) => (
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span class="text-slate-700">{AREA_LABEL[b.bereich as TrackArea] ?? b.bereich}</span>
+                    <span class="text-slate-500 tabular-nums">{zahl(b.aufrufe)}</span>
+                  </div>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style={`width: ${Math.round((b.aufrufe / maxBereich) * 100)}%; background: var(--brand);`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <!-- ── Einheiten ──────────────────────────────────────────────── -->
+        <section class="bg-white rounded-lg border border-slate-200 p-5">
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">Welche Einheiten werden genutzt?</h2>
+          <p class="text-xs text-slate-500 mb-3">
+            Downloads zählen Bundle-Exporte und einzelne Dokumente — beides entsteht im Browser und
+            taucht in keinem Serverlog auf.
+          </p>
+          {stats.einheiten.length === 0 ? (
+            <p class="text-sm text-slate-500 py-4">Im gewählten Zeitraum wurde keine Einheit geöffnet.</p>
+          ) : (
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-xs uppercase tracking-wide text-slate-500 border-b border-slate-200">
+                  <th class="pb-2 font-semibold">Einheit</th>
+                  <th class="pb-2 font-semibold text-right">Aufrufe</th>
+                  <th class="pb-2 font-semibold text-right">Besuche</th>
+                  <th class="pb-2 font-semibold text-right">Downloads</th>
+                  <th class="pb-2 font-semibold text-right">zuletzt</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.einheiten.map((e) => {
+                  const info = einheitInfo(e.ref)
+                  return (
+                    <tr class="border-b border-slate-100 last:border-0 align-top">
+                      <td class="py-2 pr-3">
+                        <div class="flex items-center gap-2">
+                          {info.thema && <span class="thema-chip" data-thema={info.thema}>T{info.thema}</span>}
+                          <a href={info.href} class="font-medium text-slate-900 hover:underline">{info.titel}</a>
+                        </div>
+                        <div class="text-xs text-slate-400 font-mono mt-0.5">{e.ref}</div>
+                        <div class="bar-track mt-1.5 max-w-xs">
+                          <div class="bar-fill" style={`width: ${Math.round((e.aufrufe / maxEinheit) * 100)}%; background: var(--brand);`} />
+                        </div>
+                      </td>
+                      <td class="py-2 text-right font-medium tabular-nums">{zahl(e.aufrufe)}</td>
+                      <td class="py-2 text-right text-slate-600 tabular-nums">{zahl(e.besuche)}</td>
+                      <td class={`py-2 text-right tabular-nums ${e.downloads ? 'font-semibold text-slate-900' : 'text-slate-400'}`}>{zahl(e.downloads)}</td>
+                      <td class="py-2 text-right text-xs text-slate-500 whitespace-nowrap">{dfDatum.format(new Date(e.zuletzt))}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          )}
+        </section>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+          <!-- ── Situationen ──────────────────────────────────────────── -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-3">Meistgeöffnete Situationen</h2>
+            {stats.situationen.length === 0 ? (
+              <p class="text-sm text-slate-500 py-2">Keine Situation geöffnet.</p>
+            ) : (
+              <ul class="space-y-1.5 text-sm">
+                {stats.situationen.map((s) => (
+                  <li class="flex justify-between gap-3 border-b border-slate-100 last:border-0 pb-1.5">
+                    <a href={`/situationen/${s.ref}`} class="text-slate-700 hover:underline truncate">
+                      {situationTitel.get(s.ref) ?? s.ref}
+                    </a>
+                    <span class="text-slate-500 tabular-nums shrink-0">{zahl(s.aufrufe)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+
+          <!-- ── Herkunft ─────────────────────────────────────────────── -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-1">Woher kommen die Besuche?</h2>
+            <p class="text-xs text-slate-500 mb-3">Nur externe Verweise; interne Navigation zählt nicht.</p>
+            {stats.herkunft.length === 0 ? (
+              <p class="text-sm text-slate-500 py-2">Alle Besuche kamen direkt (Lesezeichen, Link, getippt).</p>
+            ) : (
+              <ul class="space-y-1.5 text-sm">
+                {stats.herkunft.map((h) => (
+                  <li class="flex justify-between gap-3 border-b border-slate-100 last:border-0 pb-1.5">
+                    <span class="text-slate-700 truncate">{h.quelle}</span>
+                    <span class="text-slate-500 tabular-nums shrink-0">{zahl(h.besuche)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        </div>
+
+        <!-- ── Seiten ─────────────────────────────────────────────────── -->
+        <section class="bg-white rounded-lg border border-slate-200 p-5">
+          <h2 class="text-sm font-semibold text-slate-900 mb-3">Meistbesuchte Seiten</h2>
+          <table class="w-full text-sm">
+            <tbody>
+              {stats.seiten.map((s) => (
+                <tr class="border-b border-slate-100 last:border-0">
+                  <td class="py-1.5 font-mono text-xs text-slate-700">{s.pfad}</td>
+                  <td class="py-1.5 text-right text-slate-600 tabular-nums w-24">{zahl(s.aufrufe)}</td>
+                  <td class="py-1.5 text-right text-slate-400 tabular-nums w-28 text-xs">{zahl(s.besuche)} Besuche</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </>
+    )}
+
+    <!-- ── Was gemessen wird ──────────────────────────────────────────── -->
+    <details class="bg-white rounded-lg border border-slate-200 p-5 text-sm">
+      <summary class="cursor-pointer font-semibold text-slate-900">Was wird gemessen — und was nicht?</summary>
+      <div class="mt-3 space-y-2 text-slate-600 leading-relaxed">
+        <p>
+          <strong class="text-slate-800">Erhoben:</strong> Pfad der aufgerufenen Seite, Rolle
+          (nicht angemeldet / LP / KT1 / Gast), zwei Zufalls-IDs für Besuch und Gerät, externer
+          Verweis-Host sowie Download-Ereignisse aus der Einheiten-Werkbank.
+        </p>
+        <p>
+          <strong class="text-slate-800">Nicht erhoben:</strong> IP-Adresse, User-Agent,
+          Query-Strings, Inhalte von Formularen. IDs eingereichter Materialien, Feedbacks und
+          Jahresplan-Instanzen werden bewusst nicht gespeichert — die Statistik soll Inhalte
+          bewerten, nicht Personen.
+        </p>
+        <p>
+          Gezählt wird clientseitig; Aufrufe ohne JavaScript und erkannte Bots fehlen. Die Zahlen
+          starten mit dem Deploy dieser Funktion — vorher wurde nichts aufgezeichnet.
+        </p>
+      </div>
+    </details>
+  </div>
+</Admin>

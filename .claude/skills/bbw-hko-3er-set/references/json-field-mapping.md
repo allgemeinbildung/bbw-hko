@@ -54,6 +54,7 @@ Im 3er-Set werden nur A/B/C verwendet. Die D/E-Triples aus dem 5er-Set sind unge
 | `knoten_ref` | string | `"Kap. {X.Y} | S. {a}-{b}"` mit Pipe-Separator. **Richtwert 3 Seiten**, mehr nur nach Ruecksprache — siehe Praezisions-Regel unten |
 | `text` | string | NICHT `frage` |
 | `feld_hoehe_mm` | integer | `15` (konstant) |
+| `loesung` | object | **C10, additiv** — Lehrpersonen-Loesung zu genau dieser Leitfrage. Speist die Deck-Folie «Loesung der Leitfragen». Details unten |
 
 K-Stufe-zu-bloom-Mapping:
 - K2 → `"Verstehen"`
@@ -65,6 +66,41 @@ K-Stufe-zu-bloom-Mapping:
 Mindestens eine LF auf K3+/K4 — sonst 5. LF ergaenzen.
 
 **LF4-Scoping (C4):** LF4 trainiert den Output-Sprachmodus (`nrlp.sprachmodus_ids`) als *fokussierte Teil-/Sprachform-Aufgabe* — EIN Baustein, der ins Handlungsprodukt einfliesst — und reproduziert NIE das ganze Handlungsprodukt. Methode passend zum Output-Modus aus `references/sprachfoerderung-methoden.md` waehlen. Beispiele: "Schreibe einen Block deines Spickzettels …", "Schreibe die Spalte «Rechtsfolge» als Wenn-dann-Mustersatz …", "Formuliere drei Ich-Botschaften …". Rezeption (SM3) bleibt bei LF1-3. Siehe Coherence-Check 20.
+
+#### `leitfragen[].loesung` (C10)
+
+Die **Antwort** auf die Leitfrage, formuliert fuer die Lehrperson. Sie speist ausschliesslich die Unterfolie `{a|b|c}-leitfragen-loesung` im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`) — dieselbe Akkordeon-Mechanik wie `handlungsprodukt.musterloesung`, eine Leitfrage pro Klick. **Sie wird nie im Schuelerbogen (`DocS`) gerendert** und darf deshalb den Massstab offen aussprechen.
+
+Abgrenzung zu den Nachbarfeldern — die drei sagen Verschiedenes und duerfen sich nicht doppeln:
+
+| Feld | Antwortet auf |
+|---|---|
+| `leitfragen[].loesung` (C10) | «Was ist auf **diese** Frage eine tragfaehige Antwort?» — fachlicher Massstab pro LF |
+| `handlungsprodukt.musterloesung` (C7) | «Wie sieht das **fertige Produkt** aus?» — ein ausgefuelltes Exemplar |
+| `[!coaching]` / `[!warnung]` im Begleiter | «Wie **begleite** ich die Lernenden dorthin?» — Intervention, nicht Inhalt |
+
+| Feld | Wert |
+|---|---|
+| `kern` | Kurzlabel, **max. ~55 Zeichen** — steht auf dem Aufklapp-Titel hinter `LF {nr} · {bloom} — `. Benennt die Sache, wiederholt nicht die Frage (`"Die zwei unzulässigen Punkte"`, nicht `"Antwort auf Leitfrage 2"`). |
+| `zeilen[]` | 3–6 Objekte `{label?, text, quelle?}`. `text` ist Pflicht. |
+| `zeilen[].label` | Optional, **max. ~24 Zeichen** — 190px-Spalte. Benennt die Rolle der Zeile: den Bauteil (`"Tatbestand"`, `"Behauptung"`, `"Sachinhalt"`), die Wertung (`"Erwartet"`, `"Ebenfalls tragfähig"`, `"Nicht tragfähig"`) oder die Formregel (`"Massstab"`, `"Häufiger Fehler"`). |
+| `zeilen[].quelle` | Optional, **max. ~30 Zeichen**, Chip mit `white-space: nowrap`. Nur die Fundstelle (`"OR 321e"`, `"ArG 31"`, `"Kap. 19.2"`), keine Saetze. |
+
+**Woher der Inhalt kommt — Datenhebung, nicht Neuerfinden.** Die Loesung wird aus den Quellen destilliert, die im Set ohnehin schon verankert sind, in dieser Reihenfolge:
+
+1. **Lehrmittel-Abschnitt aus `knoten_ref`** — genau die Seiten, die die Leitfrage beantworten. Die Sachaussagen und die Artikel-/Kapitelverweise der `quelle`-Chips stammen von dort, **wortwoertlich verifiziert, nie aus dem Gedaechtnis**. Was auf diesen Seiten nicht steht, steht auch nicht in der Loesung.
+2. **`mindmap_aeste`** — die Pflicht-Aeste sind bereits die fachliche Soll-Struktur; eine K2-Leitfrage ist meist deren Ausformulierung mit Quellen.
+3. **`mehrdeutigkeit.hint`** — bei Entscheidungs-Leitfragen (K3 «Entscheiden») liefert der Zielkonflikt die Zeilen `"Erwartet"` / `"Ebenfalls tragfähig"` / `"Nicht tragfähig"`.
+4. **`handlungsprodukt.scaffolding.struktur` + `musterloesung`** — bei der Formulier-Leitfrage (LF4) ist die Loesung der *eine* Baustein, den LF4 verlangt, nicht das ganze Produkt (C4).
+
+**Invarianten:**
+
+- **Eine Loesung pro Leitfrage**, also 4 pro Herausforderung — dieselbe `nr`-Zuordnung wie `leitfragen[]`. Lieber knapp als luecken­haft: eine LF ohne `loesung` laesst die Folie unvollstaendig wirken.
+- **3–6 `zeilen`, zusammen max. ~900 Zeichen `text`.** Die Folie ist ein Akkordeon mit einem offenen Abschnitt; mehr passt nicht auf eine Folie (`hyperframes check` meldet sonst `canvas_overflow`). Gemessener Bestand: 646–881 Zeichen bei 5–6 Zeilen sitzen mit Rand.
+- **Bloom-treu:** Die Loesung beantwortet die Frage auf **der Stufe, die `bloom` verlangt**. Bei `"Entscheiden"` ist die richtige Antwort nicht *eine* Option, sondern eine **begruendete** Wahl — deshalb dort verpflichtend eine Zeile `"Erwartet"` **und** mindestens eine Zeile `"Ebenfalls tragfähig"` oder `"Nicht tragfähig"`. Eine Entscheidungsfrage mit genau einer zulaessigen Antwort war keine Entscheidungsfrage.
+- **Kein Widerspruch** zu `[!tafelbild]`, `[!warnung]` und `musterloesung` — die Loesung ist deren fachlicher Kern, nicht eine zweite Lehrmeinung.
+- **Kein Skript zum Vorlesen.** Die Zeilen sind der Massstab, an dem die Lehrperson die Antworten der Lernenden misst; Formulierungen der Lernenden duerfen abweichen, solange Quelle und eigene Verdichtung erkennbar sind. Diesen Rahmen setzt das Deck bereits in den Referentennotizen — die Daten muessen ihn nur einhalten.
+- **Sprachform:** neutraler Sachstil, keine Anrede. Woertliche Rede (Musterformulierungen der Lernenden) steht in «Guillemets». Prosa-Feld → echte Umlaute Pflicht, kein Eszett.
 
 ---
 

@@ -85,28 +85,66 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.3 | S. 22-23",
       "text": "Erklären Sie mit eigenen Worten die drei Schritte der Methode aus Kap. 1.3: Was meint Tatbestand, was Rechtslage und was Rechtsfolge — und in welcher Reihenfolge bearbeitet man sie?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die drei Schritte in eigenen Worten",
+        "zeilen": [
+          { "label": "Tatbestand", "text": "Sachverhalt feststellen: Wer ist beteiligt, was liegt vor, was fordern die Beteiligten — wertungsfrei beschrieben.", "quelle": "Kap. 1.3" },
+          { "label": "Rechtslage", "text": "Zutreffende Gesetzestexte suchen: Welches Gesetz ist betroffen, welcher Artikel trifft zu?", "quelle": "Kap. 1.3" },
+          { "label": "Rechtsfolge", "text": "Die Antwort aus dem Gesetz ableiten: Wie lässt sich der Artikel auf diesen Fall anwenden, welche Schlussfolgerung ergibt sich?", "quelle": "Kap. 1.3" },
+          { "label": "Reihenfolge", "text": "Sie ist zwingend: Wer mit der Rechtsfolge beginnt, sucht sich die Artikel zum Wunschergebnis." }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.4 | S. 31-33",
       "text": "Wenden Sie das Schema auf Fall 1 (Samstagsfahrt) an: (a) Tatbestand in 2-3 Sätzen ohne Wertung, (b) einschlägige Artikel aus OR/ArG (Tipp: Überstunden, berufsfremde Arbeiten), (c) eine begründete Rechtsfolge.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Fall 1 (Samstagsfahrt) nach Schema",
+        "zeilen": [
+          { "label": "Tatbestand", "text": "Der Berufsbildner verlangt, an einem Samstagmorgen ausserhalb der Arbeitszeit eine private Bestellung des Chefs nach Hause zu liefern; die Fahrt wird bezahlt." },
+          { "label": "Rechtslage 1", "text": "Lernende müssen grundsätzlich nur Arbeiten verrichten, die etwas mit dem Beruf zu tun haben.", "quelle": "OR 345a" },
+          { "label": "Rechtslage 2", "text": "Überstunden sind zulässig, wenn sie betrieblich notwendig und zumutbar sind, und werden mit Freizeit oder 25 Prozent Zuschlag abgegolten.", "quelle": "OR 321c" },
+          { "label": "Rechtsfolge", "text": "Eine private Bestellung des Chefs ist weder betrieblich notwendig noch berufsbezogen — die Anordnung ist unzulässig, auch wenn sie bezahlt wird." },
+          { "label": "Abgrenzung", "text": "Wäre es eine betriebliche Lieferung, bliebe sie zulässig, sofern zumutbar und als Überstunde ausgeglichen; bei unter 18-Jährigen zusätzlich innerhalb der Grenzen von ArG 31.", "quelle": "ArG 31" },
+          { "label": "Häufiger Fehler", "text": "Wertung im Tatbestand («Der Chef nutzt ihn aus»). Wertungen gehören in die Rechtsfolge." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 18.1 | S. 412",
       "text": "Entscheiden Sie begründet: Beantworten Sie Fall 2 (Lohnabzug-Drohung) wie ein Anwalt — mit klarem 'Ja/Nein' — oder als beratende Mitlernende, die ihre eigene Rolle und Unsicherheit ehrlich benennt? Welcher Weg respektiert Ihre Identität als Lernende (Kap. 18.1) besser?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Anwalt oder beratende Mitlernende?",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Als beratende Mitlernende antworten — mit klarer Auskunft, aber offengelegter Rolle." },
+          { "label": "Begründung Identität", "text": "Rollen prägen, wer ich bin. Ich handle als Lernende, nicht als Anwältin; die eigene Unsicherheit zu benennen gehört zur Echtheit und ist keine Schwäche.", "quelle": "Kap. 18.1" },
+          { "label": "Konkret", "text": "Rechtslage nennen — ein Abzug ist nur bei nachgewiesenem Verschulden zulässig —, dann auf die Berufsbildungsverantwortliche oder das Kantonale Amt für Berufsbildung verweisen.", "quelle": "OR 321e · Kap. 1.4" },
+          { "label": "Ebenfalls tragfähig", "text": "Ein klares «So nicht», wenn zugleich gesagt wird, worauf es sich stützt und wo die eigene Auskunft endet." },
+          { "label": "Nicht tragfähig", "text": "Ein Ja oder Nein ohne Quelle und ohne Rollenklärung — dann trägt die Auskunft die Verantwortung nicht, die sie auslöst." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 1.3 | S. 23-25",
       "text": "Schreiben Sie für einen Fall die Spalte «Rechtsfolge» als Wenn-dann-Mustersatz mit korrektem Fachbegriff.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Rechtsfolge als Wenn-dann-Mustersatz",
+        "zeilen": [
+          { "label": "Muster 1", "text": "«Wenn der Betrieb einen Lohnabzug für einen Schaden vornimmt, ohne dass ein Verschulden nachgewiesen ist, dann ist der Abzug unzulässig und der Lohn bleibt geschuldet.»", "quelle": "OR 321e" },
+          { "label": "Muster 2", "text": "«Wenn eine angeordnete Arbeit nicht berufsbezogen ist, dann muss die lernende Person sie nicht verrichten.»", "quelle": "OR 345a" },
+          { "label": "Massstab", "text": "Ein Fachbegriff korrekt gesetzt (Verschulden, Subsumtion, Rechtsfolge, zumutbar), Artikel in Klammern, keine Wertung im Satz." }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Fall-Mappe — Tatbestand, Rechtslage, Rechtsfolge",

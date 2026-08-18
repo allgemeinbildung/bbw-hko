@@ -13,7 +13,7 @@ Transforms Swiss ABU Lehrmittel content into HKO 3er-Set Einheiten for bbw-hko �
 
 ## Schema-Compliance (zwingend, nicht verhandelbar)
 
-Die generierten JSONs landen pro Einheit in `src/data/einheiten/{X.Y.Z}_{slug}/` und werden vom Einheiten-Loader (`src/lib/einheiten/index.ts`) sowie dem Index-Build (`scripts/build-einheiten-index.mjs`) gelesen. Sie behalten `template: "default_4page_v2"` als Fixwert (die DocS-Komponenten erwarten diesen Wert).
+Die generierten JSONs landen pro Einheit in `src/data/einheiten/{X.Y.Z}_{slug}/` und werden vom Einheiten-Loader (`src/lib/einheiten/index.ts`) sowie dem Index-Build (`scripts/build-einheiten-index.mjs`) gelesen. Sie behalten `template: "default_4page_v2"` als Fixwert (die DocS-Komponenten erwarten diesen Wert). **Zwei Konsumenten, zwei Sichtbarkeiten:** `DocS` rendert den Schuelerbogen, `src/lib/einheiten/deck-builder.ts` das Unterrichtsdeck fuer die Lehrperson. Die LP-Felder `leitfragen[].loesung` (C10) und `handlungsprodukt.musterloesung` (C7) speisen **ausschliesslich** das Deck und duerfen nie im Schuelerbogen landen.
 
 **Wahrheits-Quellen (in dieser Reihenfolge):**
 
@@ -88,6 +88,7 @@ unveraendert — nur das sichtbare Wort wird ersetzt.
 - `handlungsprodukt.scaffolding`: `{satzanfaenge, strategien, struktur}`, je >=1 Eintrag (ausgerichtet am HP-Format + Output-Sprachmodus)
 - `leitfragen[].nr`: Integer 1-4
 - `leitfragen[].feld_hoehe_mm`: 15
+- `leitfragen[].loesung`: `{kern, zeilen[{label?, text, quelle?}]}` — 3-6 Zeilen, zusammen max. ~900 Zeichen (C10)
 - `reflexion_fragen[].feld_hoehe_mm`: 10, `sub: null`
 - `mindmap_aeste`: 4 Items, Ast 4 mit `optional: true`
 - `handlungsprodukt.schritte`: 5 Items, je `{label, hint}` Objekt
@@ -124,7 +125,7 @@ Alle Outputs landen in `src/data/einheiten/{X.Y.Z}_{topic_slug}/`. Danach nur no
 - `prinzip-architecture.md` — Phase 0.5 Design-Regeln
 - `kn-architecture.md` — Phase 4 Design-Regeln (Hybrid-Herausforderung, 3 KN-Typen, Rubrik)
 - `json-field-mapping.md` — Feld-fuer-Feld Mapping
-- `coherence-checklist.md` — 31 Checks v2.3 (Phase 2: 1-9+14+17-WARN+18-Sit+19-24+30+31, Phase 4: 10-13+15-16-WARN+18-KN, Phase 5/Begleiter: 25-29)
+- `coherence-checklist.md` — 32 Checks v2.4 (Phase 2: 1-9+14+17-WARN+18-Sit+19-24+30+31+32, Phase 4: 10-13+15-16-WARN+18-KN, Phase 5/Begleiter: 25-29)
 - `references/_common_misspellings.md` — Bekannte Spell-Halluzinationen, Pre-Write-Check-Liste
 - `hko-framework.md` — 12 SK, 9 Sprachmodi, 8 Aspekte, 8 Themen, Bloom, IPERKA, AViVA, bi-dim Rubric
 - `language-rules.md` — Swiss Standard German, ICH-Perspektive, verbotene Phrasen
@@ -505,7 +506,7 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 | `situation_text` | 4-6 Saetze, Ich-Form (1. Person Singular), mit CHF/Fakten |
 | `zahlen_tabelle` | `[]` oder `[{label, wert}]` |
 | `leitfrage` (singular) | kondensierte Haupt-Frage |
-| `leitfragen[]` | 4 Items, K2/K3/K3/K3+ oder K4; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. `knoten_ref` **Richtwert 3 Seiten**, Seitenzahlen aus echten `[seite: NN]`-Markern, Abschnitt ueber Ueberschriften bestimmen — nie den ganzen Kapitelbereich einsetzen. Mehr als 3 Seiten sind erlaubt, wenn der Inhalt wirklich verteilt steht, aber **nur nach Ruecksprache** (C9, Check 31) |
+| `leitfragen[]` | 4 Items, K2/K3/K3/K3+ oder K4; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. `knoten_ref` **Richtwert 3 Seiten**, Seitenzahlen aus echten `[seite: NN]`-Markern, Abschnitt ueber Ueberschriften bestimmen — nie den ganzen Kapitelbereich einsetzen. Mehr als 3 Seiten sind erlaubt, wenn der Inhalt wirklich verteilt steht, aber **nur nach Ruecksprache** (C9, Check 31). Je LF eine `loesung` {kern, zeilen[]} — Lehrpersonen-Antwort auf **der Bloom-Stufe der Frage**, aus dem `knoten_ref`-Abschnitt gehoben (C10, Check 32) |
 | `mindmap_zentrum` / `mindmap_aeste` | flat top-level; genau 4 Aeste, Ast 4 `optional: true` (radial/Quadrant) |
 | `handlungsprodukt.*` | aus prinzip.herausforderungen[LETTER].handlungsprodukt_typ; inkl. `scaffolding` {satzanfaenge/strategien/struktur} (C6) und `musterloesung` {hinweis, abschnitte[]} (C7) |
 | `reflexion_fragen` | Template-Defaults, situationsspezifisch anpassbar |
@@ -524,9 +525,30 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 - `bewertungsraster.length === 4`, jede Zeile mit 2-4 `vollstaendig_wenn`; keine Transfer-Zeile (Check 19)
 - `handlungsprodukt.scaffolding` mit je >=1 Eintrag in satzanfaenge/strategien/struktur (Check 23)
 - `handlungsprodukt.musterloesung` mit 3-5 `abschnitte`, je `{titel, zeilen[]}`; pro Abschnitt max. ~900 Zeichen `text` (Check 30)
+- Jede `leitfragen[]` mit `loesung` (3-6 Zeilen, ~900 Zeichen); Sachaussagen durch den `knoten_ref`-Abschnitt gedeckt; Entscheiden-LF mit Alternativ-/Ausschluss-Zeile (Check 32)
 - `nrlp.sprachmodus_ids.length === nrlp.sprachmodi.length` (Check 21)
 - LF4 ist fokussierte Output-Sprachmodus-Teilaufgabe, nicht das ganze Handlungsprodukt (Check 20)
 - `mindmap_aeste.length === 4`, Ast 4 `optional: true` (Check 22)
+
+**Schritt 2b — Leitfragen-Loesungen aus dem Lehrmittel heben (C10, NEU in v2.4):**
+
+Die Loesungen werden **nicht formuliert, sondern gehoben** — Quelle ist derselbe Abschnitt, den `knoten_ref` der jeweiligen Leitfrage benennt. Pro Leitfrage:
+
+1. **Abschnitt oeffnen.** `knoten_ref` → Kapiteldatei in `material/_lehrmittel/` (Kapitelnummer via `references/nrlp-lehrmittel-crosswalk.md`), zu den `[seite: NN]`-Markern springen. Steht die Antwort dort nicht, ist `knoten_ref` falsch — erst den Anker korrigieren (Check 31), dann die Loesung schreiben.
+2. **Sachaussagen extrahieren**, je eine pro Zeile, in eigenen Worten verdichtet — keine abgeschriebenen Gesetzes- oder Lehrbuchsaetze. Die Fundstelle wandert als `quelle`-Chip mit (`"OR 321e"`, `"ArG 31"`, `"Kap. 19.2"`); **nur Artikel und Kapitel, die im gelesenen Abschnitt wirklich stehen.**
+3. **Nach Bloom-Stufe formen** — die Loesung muss die Frage auf ihrer eigenen Stufe beantworten:
+
+| `bloom` | Zeilen-Muster |
+|---|---|
+| `Verstehen` (LF1) | 4-6 Sachzeilen mit `label` = Begriff (`"Treuepflicht"`, `"Sachinhalt"`), je ein `quelle`-Chip. Deckungsgleich mit den Pflicht-Aesten von `mindmap_aeste`. |
+| `Anwenden` (LF2) | Pro Fallbestandteil eine Zeile mit Urteil im `label` (`"Unzulässig 1"`, `"Zulässig bleibt"`), plus eine Zeile `"Häufiger Fehler"` aus dem `[!warnung]`-Stolperstein derselben Sektion. |
+| `Entscheiden` (LF3) | **Pflicht:** eine Zeile `"Erwartet"` (die auf Stufe 3 erwartete Wahl **mit** Begruendung) **und** mindestens eine Zeile `"Ebenfalls tragfähig"` oder `"Nicht tragfähig"`. Beide Pole stammen aus `mehrdeutigkeit.hint` — eine Entscheidungsfrage mit nur einer zulaessigen Antwort war keine. |
+| `Formulieren` (LF4) | Der **eine** Baustein, den LF4 verlangt, ausformuliert (Satz/Absatz/Zeilen), `label` = Bauteil aus `handlungsprodukt.scaffolding.struktur`, plus eine Zeile `"Massstab"`. Nie das ganze Handlungsprodukt (C4) — das steht in `musterloesung`. |
+
+4. **Kuerzen auf 3-6 Zeilen / ~900 Zeichen.** Die Deck-Folie ist ein Akkordeon mit genau einer offenen Leitfrage; laenger passt nicht auf die Folie.
+5. **Gegenprobe:** Wuerde eine Lehrperson, die nur diese Zeilen sieht, die Antwort einer lernenden Person fair beurteilen koennen — ohne im Lehrmittel nachzuschlagen und ohne den `[!tafelbild]`-Callout zu widerlegen?
+
+Kein Vorlese-Skript: Die Zeilen sind der **Massstab**, nicht die eine richtige Formulierung. Diesen Rahmen setzt das Deck bereits in den Referentennotizen; die Daten muessen ihn nur einhalten. Feldspezifikation: `references/json-field-mapping.md` §`leitfragen[].loesung`. Pruefung: Check 32.
 
 **Single-Format-Pflicht (NEU in v1.2):**
 
@@ -1009,6 +1031,8 @@ Zwei Register, nie vermischen (Vollregel: `references/language-rules.md` §4):
 | `situation_text`, `handlungsprodukt.beschreibung`, `leitfrage`, `hybrid_situation.text`, `reflexion_fragen`, `dekontextualisierung.frage` | **Ich** (1. Ps. Sg.) | „Ich ueberlege, ob ich das Leasing unterschreibe." |
 | `leitfragen_intro`, `leitfragen[].text`, `handlungsprodukt.schritte[].hint`, `handlungsprodukt.format_detail`, `mehrdeutigkeit.hint`, `set.einzelauftrag`, `set.dekontextualisierungs_aufgabe.auftrag`, alle KN-`frage`/`aufgabe` | **Sie** (Hoeflichkeits-Imperativ) | „Erklaeren Sie …", „Entscheiden Sie …", „Ihr Budget" |
 
+**Drittes, kleineres Register — LP-Felder.** `leitfragen[].loesung.zeilen[].text`, `handlungsprodukt.musterloesung.hinweis` und die Begleiter-Callouts richten sich an die Lehrperson und stehen im **neutralen Sachstil ohne Anrede** («Unzulaessig ist die Grundreinigung …»). Sie erscheinen nie im Schuelerbogen. Woertliche Musterformulierungen der Lernenden stehen darin in «Guillemets» und behalten ihr eigenes Register (die Ich-Form des Produkts). `musterloesung.abschnitte` selbst ist das Produkt und bleibt deshalb in der **Ich**-Form.
+
 **Kein `du/dein/dich/dir` in SuS-gerichteten Feldern.** Beim Umstellen die Verbform mitaendern — `Erklaere` → `Erklaeren Sie`, nicht nur das Pronomen tauschen.
 
 Ausgenommen (bleibt `du`):
@@ -1117,6 +1141,7 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 - [ ] `nrlp.gesellschaft` als Array of `{aspekt, iteration}`
 - [ ] `nrlp.nr_primary` enthält alle real abgedeckten Kompetenzen (Default Primär; Sekundär nur nach Pietro-Bestätigung) — B1
 - [ ] `leitfragen[]` 4 Items, je `nr` Integer, `bloom` String, `knoten_ref`, `text`, `feld_hoehe_mm: 15`
+- [ ] `leitfragen[].loesung` bei allen 4: `kern` + 3-6 `zeilen`, zusammen ≤ ~900 Zeichen, Quellen aus dem `knoten_ref`-Abschnitt (C10, Check 32)
 - [ ] `mindmap_zentrum` / `mindmap_aeste` flat top-level; `mindmap_aeste` 4 Items, Ast 4 `optional: true`
 - [ ] `handlungsprodukt.{format, titel, format_detail, beschreibung, schritte (5 Objekte), schreib_label, schreib_note}`
 - [ ] `reflexion_fragen` 3 Items, je `{nr (str), text, sub: null, feld_hoehe_mm: 10}`
@@ -1260,7 +1285,7 @@ Gute Inhalte sind vorhanden, gehen aber unter — vor allem im Begleiter. **Sich
 - `references/prinzip-architecture.md` — Phase 0.5 Design-Regeln
 - `references/kn-architecture.md` — Phase 4 Design-Regeln (Hybrid + 3 KN-Typen + Rubrik)
 - `references/json-field-mapping.md` — Feld-fuer-Feld Mapping
-- `references/coherence-checklist.md` — 31 Checks v2.3 (1-9+14+17-WARN+18-Sit+19-24+30+31: Phase 2, 10-13+15-16-WARN+18-KN: Phase 4, 25-29: Phase 5/Begleiter)
+- `references/coherence-checklist.md` — 32 Checks v2.4 (1-9+14+17-WARN+18-Sit+19-24+30+31+32: Phase 2, 10-13+15-16-WARN+18-KN: Phase 4, 25-29: Phase 5/Begleiter)
 - `references/_common_misspellings.md` — Bekannte Spell-Halluzinationen, Pre-Write-Check-Liste
 - `references/hko-framework.md` — 12 SK, 9 Sprachmodi, 8 Aspekte, Bloom, bi-dim Rubric
 - `references/language-rules.md` — Swiss German, ICH-Perspektive, verbotene Phrasen

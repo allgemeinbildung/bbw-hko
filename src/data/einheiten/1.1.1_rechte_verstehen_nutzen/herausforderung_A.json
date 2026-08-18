@@ -81,28 +81,68 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.4 | S. 31-34",
       "text": "Welche Hauptpflichten haben Lernende (OR 321a, OR 345) und welche Pflichten haben Berufsbildende (OR 345a)? Notieren Sie mindestens fünf Punkte mit Markier-Symbolen aus Kap. 17.2 (Wichtiges = Stern, Strittiges = Fragezeichen, Definition = Unterstreichen).",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Fünf Pflichten — meine und die des Betriebs",
+        "zeilen": [
+          { "label": "Hauptpflicht", "text": "Ich befolge die Anordnungen und besuche Pflichtunterricht und überbetriebliche Kurse.", "quelle": "OR 345" },
+          { "label": "Sorgfaltspflicht", "text": "Ich trage Sorge zu Arbeitsgeräten, Material und technischen Einrichtungen.", "quelle": "OR 321a" },
+          { "label": "Treuepflicht", "text": "Ich wahre Geschäftsgeheimnisse und unterlasse Schwarzarbeit.", "quelle": "OR 321a" },
+          { "label": "Haftung", "text": "Für fahrlässig oder absichtlich verursachte Schäden hafte ich — abgestuft nach Verschulden, Bildungsgrad, Berufsrisiko und Erfahrung.", "quelle": "OR 321e" },
+          { "label": "Pflichten Betrieb", "text": "Fachgerecht ausbilden, Lohn zahlen, versichern, Ferien gewähren und nur berufsbezogene Arbeiten übertragen.", "quelle": "OR 345a" },
+          { "label": "Form", "text": "Markiert, nicht abgeschrieben: Stern = wichtig, Fragezeichen = strittig, Unterstreichen = Definition.", "quelle": "Kap. 17.2" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.4 | S. 32-34",
       "text": "Wenden Sie die Regeln zu Überstunden (OR 321c, ArG 31), Lohnabzug (OR 321e) und Geschäftsgeheimnis/Treuepflicht (OR 321a) auf die drei Fragen Ihres Mitlernenden an. Welche Punkte sind zulässig, welche nicht?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die drei Fragen — zulässig oder nicht?",
+        "zeilen": [
+          { "label": "Überstunden", "text": "Ohne Ausgleich unzulässig: Überstunden dürfen verlangt werden, wenn sie betrieblich notwendig und zumutbar sind, sind aber mit Freizeit gleicher Dauer oder 25 Prozent Zuschlag abzugelten.", "quelle": "OR 321c" },
+          { "label": "Arbeitszeit", "text": "Zusätzliche Schranke: Unter 18 Jahren höchstens 9 Stunden pro Tag inklusive Überstunden, höchstens 45 Stunden pro Woche.", "quelle": "ArG 31" },
+          { "label": "Lohnabzug", "text": "Die CHF 80 für die Bohrmaschine nur, wenn ein Verschulden nachgewiesen ist; die Höhe richtet sich nach Fahrlässigkeitsgrad, Bildungsgrad, Berufsrisiko und Erfahrung. Ein pauschaler Abzug ist unzulässig.", "quelle": "OR 321e" },
+          { "label": "Handy-Nummer", "text": "Nicht ohne Zustimmung in die Kundengruppe — die Begründung folgt in Leitfrage 3.", "quelle": "Kap. 20.7" }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 20.7 | S. 446-447",
       "text": "Entscheiden Sie begründet: Ist es im Sinne des Datenschutzes (Kap. 20.7) zulässig, dass der Betrieb die private Handy-Nummer ohne Zustimmung in eine WhatsApp-Kundengruppe einträgt? Welche zwei Datenschutz-Regeln stehen dem entgegen?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Handy-Nummer in der Kundengruppe — zwei Regeln dagegen",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Ohne Einwilligung unzulässig." },
+          { "label": "Regel 1 — Zustimmung", "text": "Persönliche Daten dürfen nicht ohne Wissen und Einverständnis der betroffenen Person weitergegeben werden.", "quelle": "Kap. 20.7" },
+          { "label": "Regel 2 — Zweckbindung", "text": "Die private Nummer wurde für Privates erhoben. Sie in einen Kundenkanal zu geben, ändert den Zweck und macht sie für Dritte sichtbar.", "quelle": "Kap. 20.7" },
+          { "label": "Tragfähige Alternative", "text": "Geschäftliche Nummer oder Diensthandy, Kundenkontakt über einen betrieblichen Kanal." },
+          { "label": "Nicht tragfähig", "text": "«Machen doch alle so» — verantwortungsvoller Umgang mit Medien heisst, den Kanal zu prüfen, statt ihn zu übernehmen.", "quelle": "Kap. 20.7" }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.2 | S. 381-382",
       "text": "Schreiben Sie einen Block Ihres Spickzettels als Muster (z. B. «Lohn und Abzüge»): 3–4 Punkte in eigenen Worten, je mit exakter Quelle — knapp, im Nominalstil, nichts abschreiben.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Musterblock «Lohn und Abzüge»",
+        "zeilen": [
+          { "text": "Der Lohn wird so bezahlt, wie er im Lehrvertrag steht.", "quelle": "OR 322" },
+          { "text": "Überstunden werden mit Freizeit gleicher Dauer oder 25 Prozent Zuschlag ausgeglichen.", "quelle": "OR 321c" },
+          { "text": "Ein Lohnabzug für einen Schaden ist nur bei nachgewiesenem Verschulden zulässig.", "quelle": "OR 321e" },
+          { "text": "Unter 18 Jahren: höchstens 9 Stunden pro Tag; der Schulunterricht zählt als Arbeitszeit.", "quelle": "ArG 31" },
+          { "label": "Massstab", "text": "Eigene Worte, knapp im Nominalstil, je eine exakte Quelle — abgeschriebene Gesetzessätze zählen nicht.", "quelle": "Kap. 17.2" }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Regel-Spickzettel — Rechte, Lohn, Datenschutz",

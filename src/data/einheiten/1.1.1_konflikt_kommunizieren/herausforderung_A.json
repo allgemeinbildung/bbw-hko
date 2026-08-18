@@ -81,28 +81,67 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.4 | S. 31-34",
       "text": "Welche Rechte und Pflichten regelt der Lehrvertrag für Lernende (Hauptpflicht, Sorgfaltspflicht, Treuepflicht) und welche Pflichten gelten für die Berufsbildenden (Ausbildungspflicht, OR 345a)? Notieren Sie die fünf wichtigsten Punkte mit Markier-Symbolen aus Kap. 17.2.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Fünf Punkte aus dem Lehrvertrag",
+        "zeilen": [
+          { "label": "Hauptpflicht", "text": "Ich befolge die Anordnungen und besuche Pflichtunterricht und überbetriebliche Kurse.", "quelle": "OR 345" },
+          { "label": "Sorgfaltspflicht", "text": "Ich trage Sorge zu Arbeitsgeräten, Material und technischen Einrichtungen.", "quelle": "OR 321a" },
+          { "label": "Treuepflicht", "text": "Ich wahre Geschäftsgeheimnisse und unterlasse Schwarzarbeit.", "quelle": "OR 321a" },
+          { "label": "Ausbildungspflicht", "text": "Der Betrieb bildet mich fachgerecht aus und überträgt mir nur berufsbezogene Arbeiten.", "quelle": "OR 345a" },
+          { "label": "Lohn, Ferien, QV", "text": "Der Betrieb zahlt den Lohn laut Vertrag, gewährt bis 20 Jahre fünf Wochen Ferien und meldet mich zum QV an.", "quelle": "OR 345a · BBV 30 ff." },
+          { "label": "Form", "text": "Markiert, nicht abgeschrieben: Stern = wichtig, Fragezeichen = strittig, Unterstreichen = Definition.", "quelle": "Kap. 17.2" }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.4 | S. 32-33",
       "text": "Wenden Sie die Regeln zur Höchstarbeitszeit für Jugendliche (ArG 31, OR 345a) und zu berufsfremden Arbeiten auf Ihre Situation an. Welche zwei Punkte in der Anweisung Ihres Berufsbildner/in sind aus Sicht des Gesetzes unzulässig?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Die zwei unzulässigen Punkte",
+        "zeilen": [
+          { "label": "Unzulässig 1", "text": "Die Werkstatt-Grundreinigung ist berufsfremd — Lernende müssen nur Arbeiten verrichten, die etwas mit dem Beruf zu tun haben.", "quelle": "OR 345a" },
+          { "label": "Unzulässig 2", "text": "Zweimal über 9 Stunden: Für Jugendliche unter 18 gilt die tägliche Höchstarbeitszeit von 9 Stunden inklusive Überstunden, höchstens 45 Stunden pro Woche.", "quelle": "ArG 31" },
+          { "label": "Zulässig bleibt", "text": "Die Inventur selbst. Überstunden dürfen verlangt werden, wenn sie betrieblich notwendig und zumutbar sind — auszugleichen mit Freizeit gleicher Dauer oder 25 Prozent Zuschlag.", "quelle": "OR 321c" },
+          { "label": "Häufiger Fehler", "text": "Nur die Reinigung nennen. Die Arbeitszeit steht in der Zahlen-Tabelle — erst beide Punkte tragen das Positionspapier." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 1.4 | S. 36",
       "text": "Entscheiden Sie begründet: Sprechen Sie den Konflikt direkt mit dem Berufsbildner/in an, suchen Sie zuerst das Gespräch mit Ihrer Berufsbildungsverantwortlichen, oder wenden Sie sich an das Kantonale Amt für Berufsbildung? Nutzen Sie die Konfliktfallregelung aus Kap. 1.4.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Konfliktweg — die Reihenfolge trägt die Begründung",
+        "zeilen": [
+          { "label": "Reihenfolge", "text": "Zuerst Selbstkritik üben, dann eine Vertrauensperson beiziehen, dann das vorbereitete Gespräch mit dem Berufsbildner, erst zuletzt das Kantonale Amt für Berufsbildung.", "quelle": "Kap. 1.4 | S. 36" },
+          { "label": "Erwartet", "text": "Das direkte Gespräch zuerst — es klärt die Sache, ohne die Lernbeziehung zu belasten, und lässt die Eskalation offen." },
+          { "label": "Ebenfalls tragfähig", "text": "Zuerst die Berufsbildungsverantwortliche, wenn begründet wird, warum das direkte Gespräch nicht sicher erscheint." },
+          { "label": "Nicht tragfähig", "text": "Sofort zum Amt, ohne je gesprochen zu haben — oder nachgeben, ohne die eigene Position je formuliert zu haben." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.3 | S. 394-395",
       "text": "Schreiben Sie Ihre Kern-Behauptung und eine sachliche, adressatengerechte Begründung (3–4 Sätze, bestimmt aber respektvoll, keine Vorwürfe).",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Behauptung und Begründung nach dem 3B-Schema",
+        "zeilen": [
+          { "label": "Behauptung", "text": "Ich bin der Ansicht, dass die Werkstatt-Grundreinigung am Samstag nicht mit meinem Lehrvertrag vereinbar ist.", "quelle": "Kap. 17.3" },
+          { "label": "Begründung", "text": "Laut OR 345a müssen Lernende nur Arbeiten verrichten, die etwas mit dem Beruf zu tun haben; die Grundreinigung gehört nicht zu meinem Berufsbild.", "quelle": "OR 345a" },
+          { "label": "Begründung 2", "text": "Dazu kommt die Arbeitszeit: Sie lag diese Woche zweimal über 9 Stunden — ArG 31 setzt für unter 18-Jährige genau dort die Grenze.", "quelle": "ArG 31" },
+          { "label": "Schluss", "text": "Mir ist wichtig, dass die Inventur zu meiner Ausbildung beiträgt; deshalb wünsche ich mir, dass wir solche Aufträge vorher gemeinsam anschauen." },
+          { "label": "Nicht tragfähig", "text": "«Das finde ich nicht fair» — ein Gefühl ist keine Begründung, solange kein Artikel dahintersteht." }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Mein Lehrvertrag — Rechte und Pflichten",

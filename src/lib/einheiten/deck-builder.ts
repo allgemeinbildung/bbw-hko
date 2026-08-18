@@ -471,6 +471,38 @@ export function buildDeck(src: EinheitSource): Deck {
       ]),
     })
 
+    // Lösung der Leitfragen — eigene Unterfolie, gleiche Aufklapp-Mechanik wie die
+    // Musterlösung des Handlungsprodukts: pro Klick eine Leitfrage. Sie entsteht nur,
+    // wo `leitfragen[].loesung` gepflegt ist (Stand: die beiden 1.1.1-Einheiten);
+    // ohne Daten bleibt der Zweig wie bisher bei Leitfragen → Mindmap → Produkt.
+    const lfMitLoesung = (hf.leitfragen ?? []).filter((lf: any) => lf.loesung?.zeilen?.length)
+    if (lfMitLoesung.length) {
+      slides.push({
+        id: `${L.toLowerCase()}-leitfragen-loesung`,
+        accent: pal,
+        badge: L,
+        branchOf: parentId,
+        ctx: `Herausforderung ${L} · Lösung der Leitfragen`,
+        src: 'Erst nach der eigenen Bearbeitung',
+        headline: 'So sieht eine tragfähige Antwort aus.',
+        small: true,
+        body: [
+          {
+            t: 'muster',
+            abschnitte: lfMitLoesung.map((lf: any) => ({
+              titel: `LF ${lf.nr} · ${lf.bloom}${lf.loesung.kern ? ` — ${lf.loesung.kern}` : ''}`,
+              zeilen: lf.loesung.zeilen,
+            })),
+          },
+        ],
+        notes: notesFrom(`Herausforderung ${L} — Lösung der Leitfragen. Eine Frage pro Klick aufklappen.`, [
+          'Kein Wort-für-Wort-Skript, sondern der Massstab: Antworten der Lernenden dürfen abweichen, solange Quelle und eigene Verdichtung erkennbar sind.',
+          'Erst die eigenen Antworten danebenlegen lassen, dann Frage für Frage abgleichen — nicht vorlesen.',
+          ...pick(s, ['erwartungshorizont']).map(fmtCallout),
+        ]),
+      })
+    }
+
     // Mindmap — die Äste sind die strukturierte Fassung des Tafelbilds aus dem
     // Begleiter, deshalb vollständig aus dem JSON ableitbar.
     if (hf.mindmap_zentrum && (hf.mindmap_aeste ?? []).length) {

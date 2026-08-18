@@ -1,6 +1,6 @@
 # Kohaerenz-Checkliste — 3er-Set
 
-31 Checks (v2.3): Phase 2 (Checks 1-9, 14, 17, 18-Sit-Teil, 19-24, 30, 31), Phase 4 (Checks 10-13, 15-16, 18-KN-Teil), **Phase 5 / Begleiter (Checks 25-29, v2.1 — Struktur-Spec v2.1 TEIL 6/8)**. Bei ERR in 1-9/14/19/21/22/23/31: keine Mission-JSONs schreiben. Bei ERR in 10-13+16: keine `kn.json` schreiben. Bei ERR in 25-29: `begleiter.md` nicht final speichern, fehlenden Baustein ergaenzen. Check 15, 17 und 20 sind WARN-only. Check 31 ist **gespraechspflichtig statt blockierend**: >3 Seiten sind erlaubt, aber nur nach Ruecksprache mit Pietro (Quote: max. 1 pro Herausforderung, 2 pro Einheit). Check 18 ist WARN fuer Residual-Patterns, ERR fuer Persona-Felder und Eszett. Checks 19-24 sind aus dem Auftrag/Dossier-Redesign (v2.0); Checks 25-29 sind die Begleiter-v2-Checks (v2.1); Check 30 (Musterloesung) ist v2.2, Check 31 (knoten_ref-Praezision, C9) ist v2.3.
+32 Checks (v2.4): Phase 2 (Checks 1-9, 14, 17, 18-Sit-Teil, 19-24, 30, 31, 32), Phase 4 (Checks 10-13, 15-16, 18-KN-Teil), **Phase 5 / Begleiter (Checks 25-29, v2.1 — Struktur-Spec v2.1 TEIL 6/8)**. Bei ERR in 1-9/14/19/21/22/23/31: keine Mission-JSONs schreiben. Bei ERR in 10-13+16: keine `kn.json` schreiben. Bei ERR in 25-29: `begleiter.md` nicht final speichern, fehlenden Baustein ergaenzen. Check 15, 17 und 20 sind WARN-only. Check 31 ist **gespraechspflichtig statt blockierend**: >3 Seiten sind erlaubt, aber nur nach Ruecksprache mit Pietro (Quote: max. 1 pro Herausforderung, 2 pro Einheit). Check 18 ist WARN fuer Residual-Patterns, ERR fuer Persona-Felder und Eszett. Checks 19-24 sind aus dem Auftrag/Dossier-Redesign (v2.0); Checks 25-29 sind die Begleiter-v2-Checks (v2.1); Check 30 (Musterloesung) ist v2.2, Check 31 (knoten_ref-Praezision, C9) ist v2.3, Check 32 (Leitfragen-Loesung, C10) ist v2.4.
 
 ---
 
@@ -347,6 +347,22 @@ Fehlerfall: `ERR_KNOTEN_REF_SEITE_UNGUELTIG` (Seite existiert im Kapitel nicht) 
 
 ---
 
+### Check 32 — Leitfragen-Loesung tragfaehig (C10, NEU)
+
+Jede `sit_*.leitfragen[]` traegt eine `loesung`, die die Frage **auf ihrer Bloom-Stufe** beantwortet:
+
+- Vollstaendig: 4 Leitfragen → 4 `loesung`-Objekte, `nr`-treu zugeordnet.
+- `zeilen.length` zwischen 3 und 6; zusammen max. ~900 Zeichen `text`. Das Unterrichtsdeck rendert die Leitfragen als Akkordeon (immer nur eine offen) — eine zu lange Loesung laeuft aus der Folie, `hyperframes check` meldet `canvas_overflow`.
+- `kern` max. ~55 Zeichen (Aufklapp-Titel), `zeilen[].label` max. ~24 Zeichen, `zeilen[].quelle` max. ~30 Zeichen (Chip, `nowrap`).
+- **Quellenbindung:** Jede fachliche Sachaussage ist durch den Abschnitt gedeckt, auf den `knoten_ref` derselben Leitfrage zeigt; `quelle`-Chips nennen echte Artikel/Kapitel aus diesem Abschnitt. Nichts aus dem Gedaechtnis, nichts aus einem anderen Kapitel nachgeschoben.
+- **Bloom-Treue:** Bei `bloom: "Entscheiden"` enthaelt die Loesung eine Zeile `"Erwartet"` **und** mindestens eine Zeile `"Ebenfalls tragfähig"` oder `"Nicht tragfähig"` — eine Entscheidungsfrage mit genau einer zulaessigen Antwort war keine. Bei `bloom: "Formulieren"` (LF4) zeigt die Loesung genau den **einen** Baustein, den LF4 verlangt, nicht das ganze Handlungsprodukt (C4).
+- Kein Widerspruch zu `[!tafelbild]`, `[!warnung]` derselben Sektion und zu `handlungsprodukt.musterloesung`.
+- Keine Anrede, kein Vorlese-Skript; woertliche Musterformulierungen in «Guillemets».
+
+Fehlerfall: `ERR_LF_LOESUNG_MISSING` (eine oder mehrere Leitfragen ohne `loesung`) · `ERR_LF_LOESUNG_QUELLE_UNGEDECKT` (Sachaussage oder `quelle` steht nicht im `knoten_ref`-Abschnitt) · `WARN_LF_LOESUNG_ZU_LANG` (>6 Zeilen bzw. >900 Zeichen — Skill kuerzt und wartet auf OK) · `WARN_LF_LOESUNG_BLOOM_FLACH` (Entscheiden-LF ohne Alternativ-/Ausschluss-Zeile).
+
+---
+
 ## Auto-Fix-Verhalten
 
 | Code | Aktion |
@@ -362,6 +378,8 @@ Fehlerfall: `ERR_KNOTEN_REF_SEITE_UNGUELTIG` (Seite existiert im Kapitel nicht) 
 | `>3 Seiten` (kein Fehlercode) | **Kein Auto-Fix.** Skill stoppt, legt den Fall im Ausnahme-Format vor (Leitfrage · gefundene Spanne mit Ueberschriften · warum breit · drei Optionen · Empfehlung), wartet auf Pietros Entscheid |
 | `WARN_KNOTEN_REF_QUOTE` | Skill schlaegt **zuerst** Teilung/Neuformulierung der Leitfragen vor, statt eine zweite Ausnahme zu beantragen; ab der dritten in der Einheit zusaetzlich Angebot, Phase 0.5 nachzuschaerfen |
 | `WARN_KNOTEN_REF_OHNE_DECKUNG` | Skill schlaegt vor, `knoten_ref` leer zu lassen, und nennt die Alternative (anderes Kapitel via Crosswalk), wartet auf OK |
+| `WARN_LF_LOESUNG_ZU_LANG` | Skill kuerzt die Loesung auf 3-6 Zeilen / ~900 Zeichen (zuerst Wiederholungen, nie die `quelle`-Chips), wartet auf OK |
+| `WARN_LF_LOESUNG_BLOOM_FLACH` | Skill ergaenzt der Entscheiden-Leitfrage eine Zeile «Ebenfalls tragfähig» bzw. «Nicht tragfähig» aus `mehrdeutigkeit.hint`, wartet auf OK |
 | `ERR_*` | Keine Auto-Fix, Skill stoppt, schreibt nichts (bei Begleiter-ERR: Baustein ergaenzen, nicht final speichern) |
 
 Bei `WARN_*`-Codes laeuft die Skill weiter, nachdem die Korrektur angewendet ist; bei `ERR_*` muss Pietro die zugrundeliegende Inkonsistenz manuell aufloesen.

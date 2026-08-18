@@ -5,7 +5,7 @@
     "felder_klassifikation": {
       "renderer_pflicht": "Alle Felder, die der Renderer ohne optional-chain konsumiert. Bei Drift crasht der Renderer. Pflicht ist Pflicht: modul_titel, buchstabe, sit_farbe/_light/_mid, wissensknoten (>=1), nrlp.gesellschaft (Array), nrlp.sk, zahlen_tabelle, leitfrage, leitfragen_intro, leitfragen (4 Items mit nr Int, bloom Str, knoten_ref, text, feld_hoehe_mm 15), mindmap_zentrum (flat), mindmap_aeste (4, Ast 4 optional:true, je {titel, punkte, optional}), handlungsprodukt.{format, titel, format_detail, beschreibung, schritte (5 Objekte {label, hint}), schreib_label, schreib_note}, reflexion_fragen (3 mit nr Str, text, sub null, feld_hoehe_mm 10), bewertungsraster (4 Eintraege, je mit vollstaendig_wenn 2-4 Bullets), wochen 3, wochen_plan (3 Eintraege {label, text, aktiv}), template, legacy {}, source_refs {}, registry_tags {}.",
       "prinzip_first_additiv": "Renderer-unsichtbare Felder, die das Set zusammenhalten: prinzip_ref, herausforderung, mehrdeutigkeit, dekontextualisierung (per-Herausforderung Vorbereitung), zirkularitaet_anker, quellen_anker, lernfortschritt.",
-      "neu_fuer_3er": "lehrgang (Enum), prinzip_handoff (Object), sk_anker (Array, Laenge == nrlp.sk.length), handlungsprodukt.scaffolding (satzanfaenge/strategien/struktur), handlungsprodukt.musterloesung (C7 — ausgefuelltes Beispielprodukt, speist die Musterloesungs-Folie im Unterrichtsdeck), bewertungsraster[].vollstaendig_wenn. Die fruehere bewertungsraster-Zeile 'Transfer' entfaellt — der Transfer lebt jetzt im set-level Austausch-&-Transfer-Dokument (set.json -> austausch_phase.einzelauftrag + dekontextualisierungs_aufgabe).",
+      "neu_fuer_3er": "lehrgang (Enum), prinzip_handoff (Object), sk_anker (Array, Laenge == nrlp.sk.length), handlungsprodukt.scaffolding (satzanfaenge/strategien/struktur), handlungsprodukt.musterloesung (C7 — ausgefuelltes Beispielprodukt, speist die Musterloesungs-Folie im Unterrichtsdeck), leitfragen[].loesung (C10 — Lehrpersonen-Loesung je Leitfrage, speist die Folie «Loesung der Leitfragen» im Unterrichtsdeck, nie im Schuelerbogen), bewertungsraster[].vollstaendig_wenn. Die fruehere bewertungsraster-Zeile 'Transfer' entfaellt — der Transfer lebt jetzt im set-level Austausch-&-Transfer-Dokument (set.json -> austausch_phase.einzelauftrag + dekontextualisierungs_aufgabe).",
       "entfernt_aus_3er": "gruppenpuzzle_fragen und vorgespraech_fragen wandern auf Set-Ebene (set.json -> austausch_phase + dekontextualisierungs_aufgabe). Hier nicht mehr enthalten."
     },
     "invarianten": [
@@ -14,6 +14,7 @@
       "handlungsprodukt.musterloesung mit 3-5 abschnitten, je {titel, zeilen[{label?, text, quelle?}]}; pro Abschnitt max. ~900 Zeichen text. Erfuellt format_detail wirklich (Wortzahl, Bauteile, Quellenzahl) und widerspricht dem [!tafelbild] nicht.",
       "sk_anker.length === nrlp.sk.length — wer keine Verortung formulieren kann, traegt die SK nicht ein.",
       "leitfragen.length == 4 und mindestens eine LF auf K3+/K4 (bloom in {Entscheiden, Analysieren, Formulieren}).",
+      "Jede leitfragen[] traegt loesung mit kern + 3-6 zeilen[{label?, text, quelle?}]; zusammen max. ~900 Zeichen text. Jede Sachaussage ist durch den knoten_ref-Abschnitt gedeckt. Bei bloom=Entscheiden zusaetzlich eine Alternativ- oder Ausschluss-Zeile.",
       "mindmap_aeste.length == 4, Ast 4 mit optional: true.",
       "handlungsprodukt.schritte.length == 5, jeder Eintrag {label, hint} (Objekt, nicht String).",
       "reflexion_fragen.length == 3, je {nr, text, sub: null, feld_hoehe_mm: 10}.",
@@ -67,28 +68,56 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. {X.Y} | S. {NN}",
       "text": "",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "_hinweis_an_generator": "C10 — Loesung der Leitfrage fuer die Lehrperson; speist die Deck-Folie «Loesung der Leitfragen» und erscheint NIE im Schuelerbogen. 3-6 zeilen, zusammen max. ~900 Zeichen text (Akkordeon: nur eine Leitfrage gleichzeitig offen). kern max ~55 Zeichen, label max ~24, quelle max ~30 (Chip, nowrap). Inhalt aus dem knoten_ref-Abschnitt des Lehrmittels + mindmap_aeste + mehrdeutigkeit.hint; nichts aus dem Gedaechtnis. Bei bloom=Entscheiden Pflicht: Zeile «Erwartet» plus «Ebenfalls tragfähig» oder «Nicht tragfähig». Dieses _hinweis_an_generator-Feld im Output WEGLASSEN.",
+        "kern": "",
+        "zeilen": [
+          {"label": "", "text": "", "quelle": ""}
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. {X.Y} | S. {NN}",
       "text": "",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "_hinweis_an_generator": "C10 — Loesung der Leitfrage fuer die Lehrperson; speist die Deck-Folie «Loesung der Leitfragen» und erscheint NIE im Schuelerbogen. 3-6 zeilen, zusammen max. ~900 Zeichen text (Akkordeon: nur eine Leitfrage gleichzeitig offen). kern max ~55 Zeichen, label max ~24, quelle max ~30 (Chip, nowrap). Inhalt aus dem knoten_ref-Abschnitt des Lehrmittels + mindmap_aeste + mehrdeutigkeit.hint; nichts aus dem Gedaechtnis. Bei bloom=Entscheiden Pflicht: Zeile «Erwartet» plus «Ebenfalls tragfähig» oder «Nicht tragfähig». Dieses _hinweis_an_generator-Feld im Output WEGLASSEN.",
+        "kern": "",
+        "zeilen": [
+          {"label": "", "text": "", "quelle": ""}
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. {X.Y} | S. {NN}",
       "text": "",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "_hinweis_an_generator": "C10 — Loesung der Leitfrage fuer die Lehrperson; speist die Deck-Folie «Loesung der Leitfragen» und erscheint NIE im Schuelerbogen. 3-6 zeilen, zusammen max. ~900 Zeichen text (Akkordeon: nur eine Leitfrage gleichzeitig offen). kern max ~55 Zeichen, label max ~24, quelle max ~30 (Chip, nowrap). Inhalt aus dem knoten_ref-Abschnitt des Lehrmittels + mindmap_aeste + mehrdeutigkeit.hint; nichts aus dem Gedaechtnis. Bei bloom=Entscheiden Pflicht: Zeile «Erwartet» plus «Ebenfalls tragfähig» oder «Nicht tragfähig». Dieses _hinweis_an_generator-Feld im Output WEGLASSEN.",
+        "kern": "",
+        "zeilen": [
+          {"label": "", "text": "", "quelle": ""}
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. {X.Y} | S. {NN}",
       "text": "",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "_hinweis_an_generator": "C10 — Loesung der Leitfrage fuer die Lehrperson; speist die Deck-Folie «Loesung der Leitfragen» und erscheint NIE im Schuelerbogen. 3-6 zeilen, zusammen max. ~900 Zeichen text (Akkordeon: nur eine Leitfrage gleichzeitig offen). kern max ~55 Zeichen, label max ~24, quelle max ~30 (Chip, nowrap). Inhalt aus dem knoten_ref-Abschnitt des Lehrmittels + mindmap_aeste + mehrdeutigkeit.hint; nichts aus dem Gedaechtnis. Bei bloom=Entscheiden Pflicht: Zeile «Erwartet» plus «Ebenfalls tragfähig» oder «Nicht tragfähig». Dieses _hinweis_an_generator-Feld im Output WEGLASSEN.",
+        "kern": "",
+        "zeilen": [
+          {"label": "", "text": "", "quelle": ""}
+        ]
+      }
     }
   ],
 

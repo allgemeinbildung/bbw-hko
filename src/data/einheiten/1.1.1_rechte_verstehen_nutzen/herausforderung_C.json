@@ -86,28 +86,66 @@
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 17.4 | S. 398-399",
       "text": "Welche vier Bausteine hat der Geschäftsbrief nach Kap. 17.4 (Anlass, Absicht, Begründung, Schluss)? Was gehört in jeden Baustein, was nicht?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Vier Bausteine — was hineingehört, was nicht",
+        "zeilen": [
+          { "label": "Anlass", "text": "Warum ich schreibe: Bezug auf seine Anfrage und die zwei Fälle. Nicht hinein gehört die Vorgeschichte in Romanlänge.", "quelle": "Kap. 17.4" },
+          { "label": "Absicht", "text": "Was ich erreichen will: eine belastbare Auskunft, die er vorlegen kann. Nicht hinein gehört ein Bündel weiterer Anliegen." },
+          { "label": "Begründung", "text": "Die Argumente geordnet und mit Artikel belegt, das wichtigste zuletzt. Nicht hinein gehören Behauptungen ohne Quelle.", "quelle": "Kap. 17.3" },
+          { "label": "Schluss", "text": "Wunsch oder nächster Schritt. Nicht hinein gehören Drohung oder Ultimatum." }
+        ]
+      }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 17.4 | S. 400-401",
       "text": "Wenden Sie die E-Mail-Regeln aus Kap. 17.4 an: Wie unterscheidet sich eine adressatengerechte formelle E-Mail von einer WhatsApp-Nachricht — Anrede, Tonalität, Emoticons, Zitate? Nennen Sie mindestens drei Unterschiede.",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Unterschiede E-Mail gegenüber WhatsApp",
+        "zeilen": [
+          { "label": "Anrede", "text": "Die Person direkt und ausgeschrieben anreden, keine Abkürzungen; im Chat entfällt die Anrede meist ganz.", "quelle": "Kap. 17.4" },
+          { "label": "Tonalität", "text": "Höflich, sachlich, in Abschnitten gegliedert und dem Adressaten angemessen — statt Tempo und Umgangssprache." },
+          { "label": "Emoticons", "text": "Im geschäftlichen Bereich unpassend, ebenso Logos und Verzierungen.", "quelle": "Kap. 17.4 | S. 400" },
+          { "label": "Betreff und Bezug", "text": "Kurze, aussagekräftige Betreffzeile, erkennbarer Bezug auf die Anfrage, Grussformel und Signatur mit Funktion." }
+        ]
+      }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 20.7 | S. 446-447",
       "text": "Entscheiden Sie begründet: Antworten Sie auf demselben Kanal wie die Anfrage (WhatsApp) oder wählen Sie einen formelleren Kanal (E-Mail oder Brief)? Welche zwei Argumente aus Kap. 20.7 (Datenschutz, Vertraulichkeit) stützen Ihre Wahl?",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Gleicher Kanal oder formeller?",
+        "zeilen": [
+          { "label": "Erwartet", "text": "Der formellere Kanal — E-Mail oder Brief —, obwohl die Anfrage per WhatsApp kam." },
+          { "label": "Vertraulichkeit", "text": "Der Fall enthält betriebliche und persönliche Angaben. Solche Daten gehören nicht in einen privaten Chat; Datenmissbrauch ist im Netz schnell geschehen.", "quelle": "Kap. 20.7" },
+          { "label": "Weiterleitbarkeit", "text": "Er soll die Antwort seinem Berufsbildner zeigen können. Ein Schreiben trägt das, ein Chatverlauf nicht.", "quelle": "Kap. 20.7 · Kap. 17.4" },
+          { "label": "Ebenfalls tragfähig", "text": "Kurze Rückmeldung im Chat («Ich schicke dir das heute per Mail») plus formelles Schreiben — der Kanalwechsel wird angekündigt statt kommentarlos vollzogen." },
+          { "label": "Nicht tragfähig", "text": "Den ganzen Fall im Chat abhandeln, weil es schneller geht." }
+        ]
+      }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 17.3 | S. 394-395",
       "text": "Schreiben Sie den Begründungs-Absatz Ihres Schreibens nach dem 3B-Schema (4–5 Sätze, ein zitierter OR-/ArG-Artikel).",
-      "feld_hoehe_mm": 15
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Begründungs-Absatz nach dem 3B-Schema",
+        "zeilen": [
+          { "label": "Behauptung", "text": "Ein Lohnabzug von CHF 200 für die Erwähnung im Familien-Chat ist in dieser Form nicht zulässig." },
+          { "label": "Begründung", "text": "Lernende haften für Schäden nur, wenn ein Verschulden nachgewiesen ist; dabei sind Bildungsgrad, Berufsrisiko und Erfahrung zu berücksichtigen.", "quelle": "OR 321e" },
+          { "label": "Begründung 2", "text": "Die Treuepflicht ist zwar verletzt, sie begründet für sich allein aber keinen Abzug.", "quelle": "OR 321a" },
+          { "label": "Beispiel", "text": "Im geschilderten Fall ist weder ein Schaden beziffert noch ein Verschuldensgrad festgestellt worden." },
+          { "label": "Schluss", "text": "Ich empfehle, das Gespräch zu suchen und den Vorfall sachlich zu klären; bei Uneinigkeit vermittelt das Kantonale Amt für Berufsbildung.", "quelle": "Kap. 1.4" }
+        ]
+      }
     }
   ],
   "mindmap_zentrum": "Antwortschreiben — Kanal, Aufbau, Argumentation",

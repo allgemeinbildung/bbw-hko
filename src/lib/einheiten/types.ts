@@ -101,7 +101,20 @@ export interface SituationJson {
   bewertungsraster?: { produkt: string; abgabe?: string; gewicht?: number; kriterium?: string; vollstaendig_wenn?: string[] }[]
   quellen_anker?: { ref: string; titel: string; seiten?: string; unterueberschrift?: string; nugget_ref?: string; fuer_leitfrage?: number[] }[]
   leitfragen_intro?: string
-  leitfragen?: { nr: number; text: string; bloom?: string; knoten_ref?: string; feld_hoehe_mm?: number }[]
+  leitfragen?: {
+    nr: number
+    text: string
+    bloom?: string
+    knoten_ref?: string
+    feld_hoehe_mm?: number
+    /**
+     * Lehrpersonen-Lösung zu dieser Leitfrage — speist ausschliesslich die Unterfolie
+     * «Lösung der Leitfragen» im Unterrichtsdeck. Bewusst NICHT in DocS gerendert:
+     * der Schülerbogen bleibt unverändert, das Feld darf nie im ZIP für Lernende landen.
+     * `kern` ist die kurze Zeile auf dem Aufklapp-Titel, `zeilen` der Massstab selbst.
+     */
+    loesung?: { kern?: string; zeilen: { label?: string; text: string; quelle?: string }[] }
+  }[]
   mindmap_zentrum?: string
   mindmap_aeste?: { titel: string; optional?: boolean; punkte?: string[] }[]
   handlungsprodukt?: {
