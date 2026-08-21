@@ -448,7 +448,7 @@
 
   function go(n, quiet) {
     i = Math.max(0, Math.min(scenes.length - 1, n));
-    resetBranches(i);   // eine Mindmap startet immer zugeklappt
+    cursor = 0; applyCursor(true);   // eine Mindmap startet immer zugeklappt
     paint();
     if (!quiet && chan && !audience) chan.postMessage({ t: 'go', i: i });
   }
@@ -457,12 +457,10 @@
     chan.onmessage = function (e) {
       var d = e.data || {};
       if (d.t === 'go' && audience) go(d.i, true);
-      if (d.t === 'branch' && audience) setBranch(d.s, d.k, d.open, true);
+      if (d.t === 'cursor' && audience && d.s === i) { cursor = d.c; applyCursor(true); }
       if (d.t === 'hello' && !audience) {
         chan.postMessage({ t: 'go', i: i });
-        branchesOf(i).forEach(function (b, k) {
-          if (b.classList.contains('open')) chan.postMessage({ t: 'branch', s: i, k: k, open: true });
-        });
+        chan.postMessage({ t: 'cursor', s: i, c: cursor });
       }
     };
     if (audience) chan.postMessage({ t: 'hello' });
@@ -471,44 +469,39 @@
   function step(d) { var p = pos[i]; go(at(p.c + d, 0)); }
   function dive(d) { var p = pos[i]; go(at(p.c, p.r + d)); }
 
-  /* ---- Mindmap: ein Ast pro Klick bzw. pro Leertaste ---- */
+  /* ---- Mindmap / Musterlösung: ein Ast pro Klick bzw. pro Leertaste ---- */
   // Gilt für Mindmap-Äste UND Musterlösungs-Abschnitte — beide tragen .reveal.
+  // cursor = Anzahl der auf dieser Folie bereits aufgedeckten Äste. Die Leertaste
+  // zählt ihn hoch, statt den ersten *geschlossenen* Ast zu suchen: in einer
+  // Akkordeon-Gruppe schliesst das Aufdecken den Vorgänger wieder, und die Suche
+  // pendelte darum ewig zwischen Abschnitt 1 und 2, statt bis zum vierten zu laufen.
+  var cursor = 0;
   function branchesOf(n) {
     return [].slice.call(scenes[n].querySelectorAll('.reveal'));
   }
-  function setBranch(n, k, open, quiet) {
-    var all = branchesOf(n);
-    var b = all[k];
-    if (!b) return;
-    // In einer Akkordeon-Gruppe (Musterlösung) schliesst das Öffnen die Geschwister.
-    var grp = open && b.closest ? b.closest('[data-accordion]') : null;
-    if (grp) {
-      for (var j = 0; j < all.length; j++) {
-        if (j !== k && grp.contains(all[j]) && all[j].classList.contains('open')) setBranch(n, j, false, quiet);
-      }
-    }
-    b.classList.toggle('open', open);
-    var t = b.querySelector('.mm-t');
-    if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (!quiet && chan && !audience) chan.postMessage({ t: 'branch', s: n, k: k, open: open });
+  function applyCursor(quiet) {
+    var last = cursor - 1;
+    branchesOf(i).forEach(function (b, k) {
+      // In einer Akkordeon-Gruppe (Musterlösung) bleibt nur der zuletzt aufgedeckte
+      // Abschnitt offen — sonst läuft eine vollständige Lösung unten aus der Folie.
+      var solo = b.closest && b.closest('[data-accordion]');
+      var open = solo ? k === last : k < cursor;
+      b.classList.toggle('open', open);
+      var t = b.querySelector('.mm-t, .ms-t');
+      if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    if (!quiet && chan && !audience) chan.postMessage({ t: 'cursor', s: i, c: cursor });
   }
-  /** Opens the next still-closed branch. Returns false when they are all open. */
-  function openNextBranch() {
-    var bs = branchesOf(i);
-    for (var k = 0; k < bs.length; k++) {
-      if (!bs[k].classList.contains('open')) { setBranch(i, k, true); return true; }
-    }
-    return false;
-  }
-  function resetBranches(n) {
-    branchesOf(n).forEach(function (b, k) { setBranch(n, k, false, true); });
+  function setCursor(c, quiet) {
+    cursor = Math.max(0, Math.min(branchesOf(i).length, c));
+    applyCursor(quiet);
   }
   document.addEventListener('click', function (e) {
     if (audience) return;                     // Beamer-Fenster folgt nur
     var b = e.target.closest && e.target.closest('.reveal');
     if (!b || !scenes[i].contains(b)) return;
     var k = branchesOf(i).indexOf(b);
-    setBranch(i, k, !b.classList.contains('open'));
+    setCursor(b.classList.contains('open') ? k : k + 1);
   });
 
   document.addEventListener('keydown', function (e) {
@@ -516,9 +509,16 @@
     else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); dive(1); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); dive(-1); }
-    // Leertaste läuft in Lesereihenfolge: erst die Mindmap-Äste, dann weiter.
-    else if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); if (!openNextBranch()) go(i + 1); }
-    else if (e.key === 'Backspace' || e.key === 'PageUp') { e.preventDefault(); go(i - 1); }
+    // Leertaste läuft in Lesereihenfolge: erst die Äste der Folie, dann weiter.
+    else if (e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      if (cursor < branchesOf(i).length) setCursor(cursor + 1); else go(i + 1);
+    }
+    // Rückwärts spiegelbildlich: erst die Äste wieder zu, dann eine Folie zurück.
+    else if (e.key === 'Backspace' || e.key === 'PageUp') {
+      e.preventDefault();
+      if (cursor > 0) setCursor(cursor - 1); else go(i - 1);
+    }
     else if (e.key === 'Home') go(0);
     else if (e.key === 'End') go(scenes.length - 1);
     else if (e.key === 'n' || e.key === 'N') document.body.classList.toggle('notes'), fit();
