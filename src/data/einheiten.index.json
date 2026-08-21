@@ -1,5 +1,80 @@
 [
   {
+    "id": "1.1.1_ausbildung_erfassen_zeigen",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "1.1.1",
+    "abgedeckte_kompetenzen": [
+      "1.1.1"
+    ],
+    "slug": "ausbildung_erfassen_zeigen",
+    "titel": "Ich kann Informationen über meine Ausbildung aus analogen und digitalen Quellen zusammentragen und für ein bestimmtes Gegenüber verständlich aufbereiten.",
+    "einheit_titel": "Wo ich lerne, wer ich bin, wohin ich will",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "1.1",
+    "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+    "thema_nr": 1,
+    "themen": [
+      "T1"
+    ],
+    "aspekte": [
+      "Recht",
+      "Identität und Sozialisation",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Identität und Sozialisation",
+    "sk": [
+      1,
+      4,
+      6,
+      7,
+      8,
+      11
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
+    "hf_titel": {
+      "A": "Drei Orte, ein Vertrag — wer ist wofür zuständig?",
+      "B": "Was auf die Pinnwand darf",
+      "C": "Der Tag nach meinem EFZ"
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hybrid_situation_titel": "Der Stand am Berufsinfo-Abend",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 30
+  },
+  {
     "id": "1.1.1_einstieg_interview",
     "status": "entwurf",
     "entwurf_komponenten": [],
@@ -554,14 +629,14 @@
     },
     "hat_kn": false,
     "hat_begleiter": false,
-    "hat_ki": false,
-    "hat_lernprompt": false,
-    "hat_lernbegleiter": false,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
     "hybrid_situation_titel": null,
     "kn_typen": [],
-    "bundle_dateien": 13
+    "bundle_dateien": 21
   },
   {
     "id": "3.2.1_wahre_kosten",
@@ -616,9 +691,9 @@
     },
     "hat_kn": true,
     "hat_begleiter": true,
-    "hat_ki": false,
-    "hat_lernprompt": false,
-    "hat_lernbegleiter": false,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
     "hybrid_situation_titel": "Zwei Messschieber und eine Entsorgungsrechnung",
@@ -636,7 +711,7 @@
         "label": "Werkschau + Transfer-Reflexion"
       }
     ],
-    "bundle_dateien": 22
+    "bundle_dateien": 30
   },
   {
     "id": "5.4.2_internationale_entscheide_wirken_4j",
@@ -687,13 +762,13 @@
     },
     "hat_kn": false,
     "hat_begleiter": false,
-    "hat_ki": false,
-    "hat_lernprompt": false,
-    "hat_lernbegleiter": false,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
     "hybrid_situation_titel": null,
     "kn_typen": [],
-    "bundle_dateien": 13
+    "bundle_dateien": 21
   }
 ]

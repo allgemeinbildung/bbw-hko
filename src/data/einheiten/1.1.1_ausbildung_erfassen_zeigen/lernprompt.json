@@ -1,0 +1,148 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_lernprompt",
+  "set_ref": "1.1.1_ausbildung_erfassen_zeigen_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Einheit «Wo ich lerne, wer ich bin, wohin ich will» (drei Lernorte belegt erschliessen, sich adressatengerecht zeigen, die eigene Richtung begründen).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
+        "thema_bezug": "In dieser Einheit hängt alles am Gegenüber: Dieselbe Auskunft über Ihre Ausbildung klingt für eine Sekundarschülerin, für Ihre Ausbildnerin und für Ihre Lehrperson völlig verschieden. Mit einer Rolle können Sie genau diese Publika durchspielen, bevor Sie ihnen wirklich gegenüberstehen.",
+        "beispiel_basis": "Du bist eine Sekundarschülerin im 9. Schuljahr und kennst das duale System nicht. Lies meinen Text über meine Ausbildung und sag mir, welche Stelle du nicht verstehst: [dein Text]",
+        "beispiel_fortgeschritten": "Du bist meine Ausbildnerin und willst, dass unser Betrieb am Berufsinfo-Abend gut dasteht. Hier ist meine geplante Antwort auf die Frage, wie meine Ausbildung wirklich läuft: [dein Text]. Reagiere so, wie du es im Betrieb tun würdest, und sag mir danach, welcher Satz dich am ehesten stören würde.",
+        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht zutreffender: Auch als «Ausbildnerin» kann die KI Ihnen raten, etwas wegzulassen, das Sie eigentlich sagen müssten. Die Rolle steuert die Perspektive — welche Auswahl Sie verantworten, entscheiden Sie.",
+        "baukasten": {
+          "rolle": [
+            "Sekundarschülerin, die das duale System nicht kennt",
+            "meine Ausbildnerin im Betrieb",
+            "Vater am Berufsinfo-Abend"
+          ],
+          "kontext": [
+            "Lernende/r im 1. Lehrjahr",
+            "Publikum kennt mich nicht",
+            "60 Sekunden Zeit für die Antwort"
+          ],
+          "aufgabe": [
+            "unverständliche Stelle markieren",
+            "nachfragen wie das Publikum",
+            "auf meine Antwort reagieren"
+          ],
+          "format": [
+            "3 Sätze",
+            "Liste der Rückfragen"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Situation, Beteiligte, Ziel, Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
+        "thema_bezug": "Über «eine Lehre» weiss die KI viel, über Ihre Lehre nichts: Ohne Ihren Beruf, Ihren Betrieb, Ihr Lehrjahr und Ihren üK-Ablauf erfindet sie einen Durchschnitt, der auf Ihrem Orientierungsblatt nichts verloren hat. Nur Ihr Kontext macht aus einer allgemeinen Antwort eine, die zu Ihnen passt.",
+        "beispiel_basis": "Kontext: Ich bin im 1. Lehrjahr als Polymechaniker/in EFZ, Berufsfachschule an einem Tag pro Woche. Aufgabe: Formuliere vier Fragen, die ich meinem Lehrvertrag stellen kann, um herauszufinden, wofür mein Betrieb zuständig ist.",
+        "beispiel_fortgeschritten": "Kontext: Lernende/r im 1. Lehrjahr, Elektroinstallateur/in EFZ, drei Lernorte (Betrieb, Berufsfachschule, überbetriebliche Kurse). Ziel: ein A4-Blatt, mit dem ich meiner Familie in fünf Minuten meine Ausbildung erkläre. Aufgabe: Zerlege die Aufgabe in die vier Angaben, die ich pro Lernort brauche, und markiere zu jeder, in welchem Dokument ich sie suchen muss. Kennzeichne, was du über meinen Beruf nicht sicher weisst.",
+        "warnung": "Ihr Kontext ist Ihr eigenes Material — aber nicht alles gehört hinein: Namen von Mitlernenden, Vorgesetzten oder Kundschaft und alles, was Sie im Steckbrief in die Zone «niemand hier» gelegt haben, bleiben draussen. Was Sie einer KI geben, haben Sie ausgewählt — genau wie auf Ihrem Blatt.",
+        "baukasten": {
+          "rolle": [
+            "Recherche-Assistent",
+            "Coach für Dokumenten-Suche"
+          ],
+          "kontext": [
+            "Beruf und Lehrjahr",
+            "drei Lernorte, ein Vertrag",
+            "welche Dokumente mir vorliegen"
+          ],
+          "aufgabe": [
+            "Suchfragen pro Lernort formulieren",
+            "Angaben den Dokumenten zuordnen",
+            "Wissenslücken kennzeichnen"
+          ],
+          "format": [
+            "Drei-Spalten-Tabelle",
+            "nummerierte Fragenliste"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen und Belege anfordern",
+        "erklaerung": "Sie verlangen von der KI zu jeder Sachaussage die Fundstelle — und kündigen an, dass Sie sie prüfen. Das zwingt die KI zu vorsichtigeren Aussagen und gibt Ihnen die Prüfspur für Ihre eigene Kontrolle.",
+        "thema_bezug": "Ihr Orientierungsblatt verlangt zu jeder Angabe eine Fundstelle, und im Kompetenznachweis müssen Sie zu jedem Lernort sagen, wo dessen Aufgabe geregelt ist. Eine KI-Aussage über Ihre Ausbildung ohne prüfbare Stelle ist deshalb nicht bloss unschön, sondern auf Ihrem Blatt unbrauchbar.",
+        "beispiel_basis": "Welche Bestandteile muss ein Schweizer Lehrvertrag zwingend enthalten? Gib zu jedem Punkt an, wo er geregelt ist, und markiere, wo du unsicher bist. Ich schlage jeden Punkt in meinem eigenen Vertrag nach.",
+        "beispiel_fortgeschritten": "Erstelle eine Liste der Aufgaben von Lehrbetrieb, Berufsfachschule und überbetrieblichen Kursen in meinem Beruf. Pro Punkt: die Regelung oder das Dokument, in dem es steht, ein Satz in einfacher Sprache und ein Vertrauensgrad (sicher/unsicher). Markiere zusätzlich jede Angabe, die du nicht aus meinem Kontext hast, sondern selbst ergänzt hast.",
+        "warnung": "KI-Systeme erfinden bei Bildungsverordnungen, üK-Reglementen und Vertragsbestimmungen regelmässig plausibel klingende Angaben — und sie kennen Ihren Beruf oft nur ungefähr. Jede Angabe wird in Ihrem eigenen Dokument oder im Lehrmittel nachgeschlagen: Stelle UND Inhalt müssen übereinstimmen, sonst kommt sie nicht aufs Blatt.",
+        "baukasten": {
+          "rolle": [
+            "Faktenprüfer",
+            "Dokumenten-Navigator"
+          ],
+          "kontext": [
+            "Schweizer Berufsbildung, EFZ",
+            "mein Beruf und meine Bildungsverordnung",
+            "diese Dokumente liegen mir vor"
+          ],
+          "aufgabe": [
+            "Fundstelle zu Aussage nennen",
+            "Aussage gegen Dokument prüfen",
+            "Vertrauensgrad angeben"
+          ],
+          "format": [
+            "Tabelle Aussage/Fundstelle/Sicherheit",
+            "Liste mit Dokument in Klammern"
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenposition fordern",
+        "erklaerung": "Sie lassen die KI bewusst die Gegenseite vertreten, nachdem Sie Ihre Position formuliert haben. So finden Sie Schwächen in Ihrer Begründung, bevor Ihr Gegenüber sie findet.",
+        "thema_bezug": "Jede Auswahl in dieser Einheit hat eine Gegenseite: Was Sie weglassen, vermisst jemand, und Ihre Richtung ist die, die jemand anderes für Sie anders gewollt hätte. Wer die stärkste Erwartung des Umfelds kennt, kann seine eigene Begründung dagegenhalten, statt von ihr überrascht zu werden.",
+        "beispiel_basis": "Ich behaupte: Die zwei Wochen, in denen ich fast nur aufgeräumt habe, gehören nicht auf mein Vorstellungsblatt. Vertritt die Gegenposition so stark wie möglich.",
+        "beispiel_fortgeschritten": "Hier ist mein Entscheid nach dem 3B-Schema: [Behauptung, Begründung, Beispiel]. Greif ihn als die Person an, deren Erwartung ich damit nicht erfülle. Sag mir danach, an welcher Stelle mein Weglassen kippt — von zulässiger Auswahl zu Schönfärberei.",
+        "warnung": "Die KI vertritt jede Erwartung überzeugend, auch eine, die nicht Ihre ist. Die Gegenposition zeigt Lücken in Ihrer Begründung, entscheidet aber nicht, wessen Stimme Sie folgen: Ob ein Einwand ein berechtigtes Anliegen oder blosser Druck ist, beurteilen Sie.",
+        "baukasten": {
+          "rolle": [
+            "die Person, deren Erwartung ich nicht erfülle",
+            "meine Ausbildnerin",
+            "kritische Mitlernende"
+          ],
+          "kontext": [
+            "mein Entscheid als 3B-Argument",
+            "die weggelassene Angabe"
+          ],
+          "aufgabe": [
+            "Auswahl an 3 Stellen angreifen",
+            "Kippstelle zur Schönfärberei benennen",
+            "die schwächste Begründung markieren"
+          ],
+          "format": [
+            "3 nummerierte Einwände",
+            "Einwand + was er über meine Begründung zeigt"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Prompt 1 liefert mit Rolle und vollständigem Kontext eine erste Fassung dessen, was Ihr Publikum von Ihrer Ausbildung überhaupt wissen will. Prompt 2 nutzt genau diese Antwort weiter und dreht sie um: Aus den Rückfragen des Publikums wird die Liste der Angaben, die Sie belegen müssen — so entsteht aus einer allgemeinen Auskunft ein Blatt, das Ihrer Ausbildung entspricht.",
+      "prompt_1": "Du bist eine Sekundarschülerin im 9. Schuljahr und kennst das duale System nicht. Kontext: Ich bin im 1. Lehrjahr als Polymechaniker/in EFZ und habe drei Lernorte — Betrieb, Berufsfachschule und überbetriebliche Kurse. Stell mir die sechs Fragen, die du an einem Berufsinfo-Abend wirklich stellen würdest, und sag mir zu jeder, warum sie dich interessiert.",
+      "prompt_2": "Nimm deine sechs Fragen und ordne jeder zu, in welchem meiner Dokumente ich die Antwort finde: Lehrvertrag, Bildungsverordnung, Stundenplan oder üK-Aufgebot. Markiere die Fragen, die keines dieser Dokumente beantwortet — diese muss ich im Betrieb nachfragen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "quellen_anfordern",
+        "gegenposition_fordern"
+      ],
+      "logik_und_ziel": "Prompt 1 erzeugt eine belegte Grundlage: Aussagen über Ihre Ausbildung, jede mit Fundstelle und Vertrauensgrad. Prompt 2 setzt genau auf diese geprüfte Grundlage auf und lässt die KI Ihre Auswahl daraus angreifen — so erkennen Sie, welche Ihrer Weglassungen auch unter Nachfragen standhält, bevor Sie am Berufsinfo-Abend oder im Kompetenznachweis dafür geradestehen müssen.",
+      "prompt_1": "Liste die Aufgaben auf, die Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse in meiner Ausbildung als Polymechaniker/in EFZ haben. Pro Punkt: die Regelung oder das Dokument, in dem es steht, ein Satz in einfacher Sprache, Vertrauensgrad (sicher/unsicher). Ich schlage jeden Punkt nach.",
+      "prompt_2": "Aus deiner geprüften Liste wähle ich drei Angaben für mein Vorstellungsblatt aus und lasse die übrigen weg: [meine drei Angaben]. Übernimm jetzt die Rolle eines Vaters am Berufsinfo-Abend, der genauer nachfragt: Greif meine Auswahl an den zwei Stellen an, an denen sie ein falsches Bild erzeugen könnte, und sag mir, welche weggelassene Angabe ich zurückholen sollte."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

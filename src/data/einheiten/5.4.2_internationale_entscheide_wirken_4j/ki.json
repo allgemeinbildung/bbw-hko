@@ -1,0 +1,139 @@
+{
+  "id": "5.4.2_internationale_entscheide_wirken_4j_ki",
+  "set_ref": "5.4.2_internationale_entscheide_wirken_4j_set",
+  "prinzip_ref": "5.4.2_internationale_entscheide_wirken_4j_prinzip",
+  "anchored_situations": [
+    "5.4.2_internationale_entscheide_wirken_4j_hf_A",
+    "5.4.2_internationale_entscheide_wirken_4j_hf_B",
+    "5.4.2_internationale_entscheide_wirken_4j_hf_C"
+  ],
+  "modul": "5.4",
+  "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
+  "thema": "T5",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T5 — Mich im Staat orientieren: an einem Beispiel erklären, wie internationale politische Entscheide über eine belegbare Kette bis in den eigenen Lehrbetrieb wirken, wessen Interessen sich dabei durchsetzen und wie fest die Schweiz gebunden ist.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Wirtschaftsakteure sowie staatliches Handeln und globale Abhängigkeiten: Aussenhandel, internationale Arbeitsteilung, Handelsschranken und ihre Folgen für Preis, Material und Auftragslage im Betrieb.",
+        "kompetenz_anker": "5.4.2"
+      },
+      {
+        "aspekt": "Politik",
+        "detail": "Interessen verschiedener Akteure: Bund, Wirtschaftsverbände, Gewerkschaften, Nichtregierungsorganisationen und betroffene Bevölkerung setzen ihre Anliegen über Verhandlung, Vernehmlassung, Lobby oder Abstimmung durch.",
+        "kompetenz_anker": "5.4.2"
+      },
+      {
+        "aspekt": "Recht",
+        "detail": "Bindungsgrad staatlichen Handelns: Recht als erzwingbare Ordnung, völkerrechtliche Vertragspflicht und verbindlicher Beschluss gegenüber politisch offenem Entscheidungsspielraum.",
+        "kompetenz_anker": "5.4.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Was kann eine KI leisten, wenn Sie einen internationalen Entscheid einordnen wollen — und welcher Schritt bleibt Ihre eigene Denkarbeit?",
+    "kritisch": "Woran erkennen Sie, dass eine KI einen Vertrag, eine Organisation oder eine Zahl erfunden oder verwechselt hat?",
+    "vergleichend": "Worin unterscheidet sich Ihre belegte Wirkungskette von einer KI-Kette, deren Schritte Sie nicht selbst nachgeschlagen haben?",
+    "urteilend": "Würden Sie eine KI-Einschätzung zu einer aussenpolitischen Vorlage weitererzählen, ohne die genannten Verträge und Zahlen zu prüfen — warum (nicht)?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Die KI als Gegenseite im Zielkonflikt",
+      "ziel": "Sie prüfen, wie tragfähig Ihre Position in einem aussenwirtschaftlichen Zielkonflikt ist, indem Sie die KI die Gegenseite so stark wie möglich vertreten lassen und jede ihrer Vertrags- und Zahlenaussagen gegenprüfen.",
+      "bezug": "Nutzt alle drei Herausforderungen: die belegte Wirkungskette vom Entscheid bis an die eigene Maschine (A), die Akteurskarte mit den zusammenstossenden Interessen und der Kostenfrage (B) und die Sortierung «vertraglich gebunden oder politisch entschieden» (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Ein internationaler Entscheid wirkt nicht als Meinung, sondern über eine Kette, in der jemand auf einer bestimmten Ebene entscheidet, Interessen sich durchsetzen, eine Bindung entsteht oder eben nicht — und am Ende verändert sich etwas am eigenen Arbeitsplatz. Genau diese Kette müssen Sie in der Transfer-Aufgabe an einem aktuellen Fall mit Ihren fünf Prüf-Fragen sichtbar durchgehen.",
+      "auftrag": "Wählen Sie einen der drei Zielkonflikte Ihrer Einheit: offener Marktzugang gegen Schutz der eigenen Arbeitsplätze, Regeln übernehmen gegen selber bestimmen, oder Zugesagtes einhalten gegen neu entscheiden dürfen. Formulieren Sie zuerst Ihre eigene Position nach dem 3B-Schema, mit Kapitel und Seite als Beleg. Beauftragen Sie dann eine KI, in der Rolle eines Akteurs von der Gegenseite Ihrer Akteurskarte — etwa Wirtschaftsverband, Gewerkschaft oder Bundesverwaltung — die Gegenposition so stark wie möglich zu vertreten. Prüfen Sie jede Aussage über Verträge, Organisationen und Zahlen gegen Ihr Lehrmittel (Kap. 11.1, 11.2, 11.3, 6.6, 1.3) und entscheiden Sie danach: Welches Gegenargument ist ein berechtigtes Anliegen, das Sie in Ihrem Statement anerkennen müssen — und welches ist sachlich falsch oder nur Interessenbehauptung?",
+      "prompt_strategie": [
+        "Geben Sie der KI eine klare Rolle von Ihrer Akteurskarte: «Du bist Vertreter/in eines Wirtschaftsverbands und siehst den Entscheid aus Sicht der Exportbetriebe …»",
+        "Geben Sie den Entscheid wertungsfrei als Kontext mit — Ebene, Beteiligte, Streitpunkt — ohne Ihre eigene Position oder Ihr Wunschergebnis zu verraten.",
+        "Verlangen Sie zu jedem Gegenargument eine Begründung und, wo es um Verträge, Organisationen oder Zahlen geht, einen prüfbaren Verweis, den Sie im Lehrmittel nachschlagen können.",
+        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Position und sag mir, an welchem Schritt meiner Wirkungskette dir der Beleg fehlt.»"
+      ],
+      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihre Position zum gewählten Zielkonflikt in 2 bis 3 Sätzen nach dem 3B-Schema (Behauptung, Begründung, Beleg) plus Kapitel und Seite, auf die Sie sich stützen.",
+      "schritte": [
+        "Zielkonflikt wählen und die eigene Position mit Beleg KI-frei festhalten.",
+        "KI mit einem Rollen-Prompt als Akteur der Gegenseite ansetzen und die stärkste Gegenposition mit Begründungen verlangen.",
+        "Jede Aussage über Verträge, Organisationen und Zahlen im Lehrmittel nachschlagen: Stimmt sie, ist sie verzerrt, oder ist sie erfunden?",
+        "Trennen: Welches Gegenargument ist ein berechtigtes Anliegen mit erkennbarem Interesse, welches ist sachlich falsch?",
+        "Die eigene Position überarbeiten: Was anerkennen Sie von der Gegenseite, was weisen Sie begründet zurück — und wie sagen Sie das in einem Satz, der beide Seiten als begründbar stehen lässt?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigenposition zuerst",
+          "indikator": "Die KI-freie Position nach dem 3B-Schema mit Kapitel und Seite liegt vor, bevor der erste Prompt abgesetzt wurde."
+        },
+        {
+          "kriterium": "Quellen- und Vertrags-Verifikation",
+          "indikator": "Jede Aussage der KI über einen Vertrag, eine Organisation oder eine Zahl ist nachgeschlagen und als korrekt, verzerrt oder erfunden markiert."
+        },
+        {
+          "kriterium": "Berechtigtes Anliegen erkannt",
+          "indikator": "Die überarbeitete Position unterscheidet mindestens ein berechtigtes Anliegen der Gegenseite von einer begründeten Zurückweisung."
+        },
+        {
+          "kriterium": "Zielkonflikt bleibt offen",
+          "indikator": "Beide Seiten des Zielkonflikts stehen am Schluss als begründbar da; die eigene Wahl ist begründet, die Gegenseite nicht für unsinnig erklärt."
+        }
+      ],
+      "reflexion": [
+        "Welches Gegenargument hat Ihre Position am stärksten ins Wanken gebracht — und an welchem Schritt Ihrer Wirkungskette oder Ihrer Akteurskarte?",
+        "Hat die KI einen Vertrag, eine Organisation oder eine Zahl erfunden oder verwechselt? Woran haben Sie es gemerkt?",
+        "In der Transfer-Aufgabe tragen Sie Ihr Fazit zu einem aktuellen Fall mündlich vor, und in einem mündlichen Kompetenznachweis — etwa in einem Fachgespräch mit Rückfragen — müssen Sie beide Seiten des Zielkonflikts fair und gleichwertig darstellen. Wie hilft Ihnen diese Übung, unter Nachfragen begründet abzuwägen, statt nur recht behalten zu wollen?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_lernassistent",
+      "titel": "Die KI als Prüf-Partner für meine Wirkungskette",
+      "ziel": "Sie lassen sich von der KI Schritt für Schritt befragen statt beliefern und erkennen dabei selbst, wo Ihrer Kette ein Glied, ein Beleg oder eine saubere Unterscheidung fehlt.",
+      "bezug": "Nutzt alle drei Herausforderungen: die vier bis sechs Schritte der Wirkungskette (A), die Akteure mit Interesse, Mittel und getragenen Kosten (B) und die Zuordnung «vertraglich gebunden oder politisch entschieden» (C) — und trainiert das Transfer-Prinzip aus Austausch & Transfer: Ein internationaler Entscheid wirkt über eine Kette, die sich Schritt für Schritt prüfen lässt; wer sie prüft, kann eine Nachricht einordnen, statt ihr einfach zu glauben. Genau dieses Prüfen leisten Ihre fünf eigenen Prüf-Fragen aus der Transfer-Aufgabe.",
+      "auftrag": "Legen Sie Ihre eigene Wirkungskette, Ihre Akteurskarte oder Ihre Sortierung neben sich und lassen Sie sich von der KI wie von einer strengen Lernpartnerin befragen: zu jedem Kettenglied eine Nachfrage, wie es genau zum nächsten führt; zu jedem Akteur die Frage, woher sein Interesse belegt ist; zu jeder Zuordnung die Frage, an welchem Merkmal von Recht Sie sie festmachen. Die KI darf Ihnen keine fertige Kette und keine fertige Sortierung liefern — sie fragt, Sie antworten. Notieren Sie nach jeder Runde, welches Glied, welcher Beleg oder welche Begründung tatsächlich gefehlt hat, und bessern Sie nach. Zum Schluss lassen Sie sich dieselben Fragen an einem Fall stellen, den Sie noch nie bearbeitet haben, und prüfen, ob Ihre fünf Prüf-Fragen auch dort greifen.",
+      "prompt_strategie": [
+        "Geben Sie der KI die Rolle und die Grenze zugleich: «Du bist meine strenge Lernpartnerin. Stell mir Fragen zu meiner Wirkungskette, gib mir keine eigene Kette.»",
+        "Geben Sie Ihre Kette, Karte oder Sortierung vollständig als Kontext mit — inklusive der Belege, die Sie schon haben, damit die Nachfragen an den Lücken ansetzen.",
+        "Verlangen Sie Fragen statt Urteile: eine Nachfrage pro Glied, und erst nach Ihrer Antwort die Rückmeldung, ob die Lücke geschlossen ist.",
+        "Zweiter Prompt: «Erfinde jetzt einen anderen internationalen Entscheid und stell mir dieselben fünf Prüf-Fragen dazu — sag mir danach, welche meiner Antworten am schwächsten belegt war.»"
+      ],
+      "ki_frei_vorher": "Notieren Sie OHNE KI: Ihre Kette, Karte oder Sortierung im aktuellen Stand plus die zwei Stellen, an denen Sie selbst am unsichersten sind — diese zwei Stellen prüfen Sie danach zuerst.",
+      "schritte": [
+        "Eigenes Produkt und die zwei unsichersten Stellen KI-frei festhalten.",
+        "KI als fragende Lernpartnerin ansetzen und ausdrücklich verbieten, eine eigene Kette oder Sortierung zu liefern.",
+        "Runde für Runde antworten und nach jeder Runde notieren, welches Glied, welcher Beleg oder welche Begründung wirklich gefehlt hat.",
+        "Die Lücken im Lehrmittel schliessen: Kapitel und Seite zu jedem nachgebesserten Schritt eintragen (Kap. 11.1, 11.2, 6.6, 1.3).",
+        "Denselben Fragen an einem fremden Fall standhalten und entscheiden: Welche Nachfrage der KI übernehmen Sie dauerhaft in Ihr Prüf-Fragen-Rezept, welche weisen Sie begründet zurück?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "KI fragt, Lernende/r antwortet",
+          "indikator": "Im ganzen Verlauf liefert die KI keine fertige Kette, Karte oder Sortierung; die inhaltlichen Antworten stammen erkennbar von der Lernenden oder vom Lernenden."
+        },
+        {
+          "kriterium": "Lücken belegt geschlossen",
+          "indikator": "Mindestens zwei nachgebesserte Stellen sind mit Kapitel und Seite aus dem Lehrmittel belegt, nicht mit der KI-Antwort."
+        },
+        {
+          "kriterium": "Verifikation der Nachfragen",
+          "indikator": "Jede Sachaussage, die in einer Nachfrage der KI mitschwingt — Vertrag, Organisation, Zahl —, ist nachgeschlagen und als korrekt, verzerrt oder erfunden markiert."
+        },
+        {
+          "kriterium": "Rezept geschärft",
+          "indikator": "Mindestens eine der fünf Prüf-Fragen ist nach dem Fremdfall präziser formuliert, und die Änderung ist begründet."
+        }
+      ],
+      "reflexion": [
+        "An welcher Stelle Ihrer Kette, Karte oder Sortierung war die Lücke grösser, als Sie selbst gedacht hatten?",
+        "Wo hat die KI in einer Nachfrage eine Sachaussage mitgeliefert, die gar nicht stimmte — und was hätte es gekostet, sie ungeprüft zu übernehmen?",
+        "Im mündlichen Nachweis — im Vortrag Ihres Fazits zum aktuellen Fall wie in einem Fachgespräch mit Rückfragen — steht keine KI neben Ihnen, die Ihre Lücken vorher aufdeckt. Welche zwei Nachfragen stellen Sie sich künftig selbst, bevor Sie zu sprechen beginnen?"
+      ]
+    }
+  ]
+}

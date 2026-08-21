@@ -1,0 +1,140 @@
+{
+  "id": "3.2.1_ernaehrung_nachhaltig_gestalten_ki",
+  "set_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_set",
+  "prinzip_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_prinzip",
+  "kn_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_kn",
+  "anchored_situations": [
+    "3.2.1_ernaehrung_nachhaltig_gestalten_hf_A",
+    "3.2.1_ernaehrung_nachhaltig_gestalten_hf_B",
+    "3.2.1_ernaehrung_nachhaltig_gestalten_hf_C"
+  ],
+  "modul": "3.2",
+  "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
+  "thema": "T3",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T3 — Bewusst konsumieren und handeln: den eigenen Konsum an belegten Zahlen prüfen, die Kette hinter einem Produkt sichtbar machen und eine Änderung nach Wirkung und Kostenträgerschaft begründet auswählen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Ökologie",
+        "detail": "Energie- und Materialverbrauch, graue Energie und Ökobilanz über den Lebenszyklus, drei Dimensionen der Nachhaltigkeit, 2000-Watt-Ziel gegenüber den heutigen rund 6500 Watt (Kap. 9.2, 9.3).",
+        "kompetenz_anker": "3.2.1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Knappe Ressourcen, Existenz- und Wahlbedürfnisse, Preisbildung, Marktversagen sowie die vier umweltpolitischen Instrumente Appell, Anreiz, Verbot und Nachsorge (Kap. 2.7, 9.3).",
+        "kompetenz_anker": "3.2.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Verantwortung für die Folgen einer Änderung: Wer trägt ihre Kosten — ich selbst, der Lehrbetrieb oder die Allgemeinheit? Verursacherprinzip und Lenkungsabgabe als Zurechnungsfragen (Kap. 9.3).",
+        "kompetenz_anker": "3.2.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK9 — Nachhaltig handeln",
+      "SK5 — Werthaltungen reflektieren"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Was kann eine KI beim Beurteilen von Konsumzahlen für Sie leisten — und welcher Prüfschritt bleibt Ihre eigene Verantwortung?",
+    "kritisch": "Woran erkennen Sie, dass eine KI eine Zahl ohne Bezugsgrösse, mit falscher Quelle oder ganz erfunden geliefert hat?",
+    "vergleichend": "Worin unterscheidet sich Ihre selbst erhobene Zahl aus den drei Tagen von einer Durchschnittszahl, die eine KI Ihnen nennt?",
+    "urteilend": "Würden Sie eine Empfehlung abgeben, deren Wirkungszahl Sie nur von der KI haben und selbst nie nachgeschlagen haben — warum (nicht)?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Die KI als Gegenseite zu meiner Empfehlung",
+      "ziel": "Sie prüfen, wie tragfähig Ihre begründete Massnahmenempfehlung ist, indem Sie die KI die Sicht der Betroffenen so stark wie möglich vertreten lassen.",
+      "bezug": "Nutzt alle drei Herausforderungen: die eigenen ausgezählten Befunde aus der dreitägigen Erhebung (A), das Produktprofil mit Beleg, Quelle und Bezugsgrösse entlang der drei Dimensionen (B) und die Vergleichstabelle aus Ebene, Instrument, Wirkung, Kosten und Kostenträger samt begründeter Empfehlung (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Eine Aussage über nachhaltigen Konsum ist erst dann überprüfbar, wenn benannt ist, welche Dimension sie meint, worauf ihre Zahl sich bezieht und wer die Kosten der vorgeschlagenen Änderung trägt.",
+      "auftrag": "Nehmen Sie Ihre Empfehlung aus Herausforderung C — die eine Massnahme, für die Sie sich entschieden haben. Halten Sie zuerst ohne KI fest, welche Wirkung Sie ihr zuschreiben und wer ihre Kosten trägt. Beauftragen Sie dann eine KI, in der Rolle der Betroffenen die Gegenposition so stark wie möglich zu vertreten: als Person mit kleinem Budget, als Ihr Lehrbetrieb oder als Produzentin in der Kette. Verlangen Sie zu jedem Einwand eine Zahl mit Bezugsgrösse. Schlagen Sie jede Zahl im Lehrmittel oder in Ihrem eigenen Erhebungsbogen nach und entscheiden Sie: Welcher Einwand ist ein berechtigtes Anliegen, das Sie in Ihre Begründung aufnehmen müssen — und welcher stützt sich auf eine Zahl, die es so nicht gibt?",
+      "prompt_strategie": [
+        "Geben Sie der KI eine klare Rolle aus der Kette: «Du bist eine Person, die von meiner Massnahme die Kosten trägt — vertritt deine Sicht.»",
+        "Geben Sie Ihre Massnahme wertungsfrei als Kontext mit: Ebene, Instrument, geschätzte Wirkung, Kostenträger — aber nicht Ihr Wunschergebnis.",
+        "Verlangen Sie zu jedem Einwand eine Zahl MIT Bezugsgrösse (pro Kilo, pro Person, pro Jahr) und die Angabe, woher sie stammt.",
+        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Begründung und sag mir, wo ich Wirkung behaupte, ohne sie zu beziffern.»"
+      ],
+      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihre Empfehlung in 2-3 Sätzen nach dem 3B-Schema (Behauptung, Begründung, Beleg), dazu die Wirkung, die Sie ihr zuschreiben, und die Person oder Stelle, die ihre Kosten trägt.",
+      "schritte": [
+        "Eigene Empfehlung aus Herausforderung C samt Wirkung und Kostenträger KI-frei festhalten.",
+        "KI mit Rollen-Prompt als betroffene Seite ansetzen und die stärksten Einwände mit bezifferter Begründung verlangen.",
+        "Jede Zahl der KI prüfen: Steht sie im Lehrmittel oder in Ihrem eigenen Bogen — und nennt sie eine Bezugsgrösse?",
+        "Trennen: Welcher Einwand ist ein berechtigtes Anliegen, welcher stützt sich auf eine unbelegte oder erfundene Zahl?",
+        "Empfehlung überarbeiten: Was übernehmen Sie begründet, was weisen Sie mit welchem Beleg zurück — und welche Zahl schreiben Sie neu?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Empfehlung zuerst",
+          "indikator": "Die KI-freie Empfehlung mit Wirkung und Kostenträger liegt schriftlich vor, bevor der erste Prompt abgesetzt wurde."
+        },
+        {
+          "kriterium": "Zahlen-Verifikation",
+          "indikator": "Jede von der KI genannte Zahl ist im Lehrmittel oder im eigenen Erhebungsbogen nachgeschlagen und als belegt, ohne Bezugsgrösse oder erfunden markiert."
+        },
+        {
+          "kriterium": "Berechtigtes Anliegen erkannt",
+          "indikator": "Die überarbeitete Empfehlung unterscheidet mindestens ein übernommenes Anliegen der Gegenseite von einer belegt zurückgewiesenen Behauptung."
+        },
+        {
+          "kriterium": "Kostenträgerschaft benannt",
+          "indikator": "Die überarbeitete Begründung sagt ausdrücklich, wer die Kosten der Massnahme trägt, und nennt nicht nur ihre Wirkung."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand der betroffenen Seite hat Ihre Empfehlung am stärksten ins Wanken gebracht — und warum?",
+        "Hat die KI eine Zahl ohne Bezugsgrösse oder eine erfundene Quelle geliefert? Woran haben Sie es gemerkt?",
+        "Im Kompetenznachweis müssen Sie Ihre Position und das Anliegen der Gegenseite gleichwertig darstellen — im Fachgespräch mündlich unter Nachfragen, im Mini Case schriftlich an einem neuen Fall. Wie hilft Ihnen diese Übung, beide Seiten zu beziffern, statt nur die eigene Seite zu behaupten?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Wirkung und Kosten mit dem KI-Entscheidungscoach durchgehen",
+      "ziel": "Sie beurteilen, was eine KI beim Abwägen von Handlungsmöglichkeiten leistet — und wo Ihre eigene Prüfung von Zahl, Bezugsgrösse und Kostenträgerschaft unersetzlich bleibt.",
+      "bezug": "Nutzt alle drei Herausforderungen: die eigenen Befund-Kacheln aus der dreitägigen Erhebung als Ausgangslage (A), die Wegskizze und die drei Dimensionskarten als Beleglage (B) und die Vergleichstabelle der geprüften Möglichkeiten (C) — und wendet das Transfer-Prinzip aus Austausch & Transfer an: Eine Aussage über nachhaltigen Konsum ist erst dann überprüfbar, wenn benannt ist, welche Dimension sie meint, worauf ihre Zahl sich bezieht und wer die Kosten der vorgeschlagenen Änderung trägt.",
+      "auftrag": "Legen Sie zuerst ohne KI Ihre zwei bis drei Änderungsmöglichkeiten fest — je eine pro Ebene: bei mir selbst, im Lehrbetrieb, über eine allgemeine Regelung. Lassen Sie danach eine KI als Entscheidungscoach für jede Möglichkeit Wirkung und Kosten aufschlüsseln und ausdrücklich nennen, wer zahlt. Verlangen Sie, dass sie ihre Überlegung Schritt für Schritt offenlegt und jede Zahl mit Bezugsgrösse und Quelle ausweist. Prüfen Sie das Ergebnis gegen Ihre eigene Vergleichstabelle: Wo weicht die KI-Einschätzung von Ihrer ab, wo fehlt eine Bezugsgrösse, wo verschweigt sie einen Kostenträger? Erstellen Sie daraus Ihre eigene, bessere Tabelle und halten Sie mindestens drei begründete Änderungen fest.",
+      "prompt_strategie": [
+        "Rolle und Aufgabe trennen: «Du bist mein Entscheidungscoach. Du entscheidest nicht — du legst offen, was für und was gegen jede Möglichkeit spricht.»",
+        "Geben Sie die vier umweltpolitischen Instrumente als Raster mit, damit die KI jede Möglichkeit einer Wirkungsebene zuordnet statt frei zu assoziieren.",
+        "Verlangen Sie eine Tabelle mit den Spalten Ebene, Instrument, Wirkung, Kosten und wer zahlt — und «geschätzt» als Pflichtvermerk, wo keine Quelle existiert.",
+        "Zweiter Prompt: «Nenne für jede Möglichkeit die Person oder Gruppe, die du in deiner Kostenspalte weggelassen hast, und sag mir, welche meiner Zahlen ohne Bezugsgrösse dasteht.»"
+      ],
+      "ki_frei_vorher": "Notieren Sie OHNE KI: Ihre zwei bis drei Änderungsmöglichkeiten mit je einer Ebene, einer geschätzten Wirkung und der Angabe, wer die Kosten trägt — plus die Möglichkeit, die Sie im Moment vorziehen.",
+      "schritte": [
+        "Möglichkeiten, Ebenen und eigene Ersteinschätzung KI-frei in die Vergleichstabelle eintragen.",
+        "KI als Entscheidungscoach ansetzen: Wirkung, Kosten und Kostenträger je Möglichkeit, Schritt für Schritt offengelegt.",
+        "Jede Zahl der KI prüfen: Quelle vorhanden, Bezugsgrösse genannt, Wert im Lehrmittel auffindbar — oder als Schätzung gekennzeichnet?",
+        "Abweichungen markieren: Wo widerspricht die KI Ihrer Tabelle, wo fehlt ein Kostenträger, wo ist die Wirkung nur behauptet?",
+        "Eigene Tabelle überarbeiten und mindestens drei Änderungen begründen — davon mindestens eine, bei der Sie die KI-Einschätzung belegt zurückweisen."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Möglichkeiten zuerst",
+          "indikator": "Die zwei bis drei Möglichkeiten mit Ebene und Ersteinschätzung stehen KI-frei in der Tabelle, bevor die KI antwortet."
+        },
+        {
+          "kriterium": "Zahlen- und Quellen-Verifikation",
+          "indikator": "Zu jeder von der KI gelieferten Zahl ist im Produkt vermerkt, ob sie im Lehrmittel nachgeschlagen wurde, ob sie eine Bezugsgrösse nennt und ob sie eine Schätzung ist."
+        },
+        {
+          "kriterium": "Kostenträger vollständig",
+          "indikator": "Für jede Möglichkeit in der überarbeiteten Tabelle ist ausgewiesen, wer die Kosten trägt — auch dort, wo die KI diese Spalte leer gelassen hat."
+        },
+        {
+          "kriterium": "Eigene Entscheidung dokumentiert",
+          "indikator": "Mindestens drei Änderungen an der Tabelle sind begründet festgehalten, davon eine belegt begründete Zurückweisung der KI-Einschätzung."
+        }
+      ],
+      "reflexion": [
+        "Welche Möglichkeit hat die KI anders bewertet als Sie — und welche Zahl war der Grund dafür?",
+        "An welcher Stelle hat die KI eine Wirkung behauptet, ohne sie zu beziffern oder eine Bezugsgrösse zu nennen?",
+        "Im Kompetenznachweis rechnen Sie ohne KI: Was aus diesem Durchgang beherrschen Sie danach allein — und welchen Prüfschritt müssen Sie sich fest merken?"
+      ]
+    }
+  ]
+}

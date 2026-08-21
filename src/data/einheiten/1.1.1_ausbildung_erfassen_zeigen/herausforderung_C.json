@@ -1,0 +1,609 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_hf_C",
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+  "titel": "Der Tag nach meinem EFZ",
+  "wissensknoten": [
+    "rollenerwartung_und_eigene_richtung"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sk": [
+      6,
+      8,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM5"
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ",
+    "betrieb": "Berufsfachschule",
+    "ort": "Schweiz"
+  },
+  "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. Am Sonntag beim Familienessen sagt mein Onkel, ich solle «unbedingt die BM machen, sonst bist du in zehn Jahren dort, wo du heute stehst». Mein Berufsbildner hat letzte Woche etwas anderes gesagt: erst das EFZ sauber abschliessen, danach im Betrieb weiterkommen, alles andere sei Zeitverlust. Beide meinen es gut, beide kennen mich, und beide widersprechen sich. Meine Lehre hat vor acht Wochen begonnen und das Ende ist weit weg — trotzdem entscheiden andere Leute schon jetzt darüber. Ich habe gemerkt: Was ich selbst will, habe ich noch nirgends aufgeschrieben.",
+  "zahlen_tabelle": [
+    {
+      "label": "Berufsmaturität",
+      "wert": "während (BM1) oder nach der Lehre (BM2)"
+    },
+    {
+      "label": "Prüfungsfreier BM2-Eintritt, Kanton Zürich",
+      "wert": "EFZ-Schnitt ab 5.0"
+    },
+    {
+      "label": "Häufigster Weiterbildungsgrund (Umfrage 2021)",
+      "wert": "32 % — Chancen auf dem Arbeitsmarkt"
+    }
+  ],
+  "leitfrage": "Wohin will ich nach dem EFZ — und wessen Erwartung spricht da aus mir?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Die Grafik zum Bildungssystem auf Seite 13 ist Ihre Landkarte.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.1 | S. 13",
+      "text": "Beschreiben Sie anhand der Grafik zum Bildungssystem, welche Wege nach einem EFZ offenstehen — und was man für welchen Weg zusätzlich braucht.",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Nach dem EFZ ist nichts zu Ende — es teilt sich.",
+        "zeilen": [
+          {
+            "label": "Berufsmaturität",
+            "text": "Während der Lehre (BM1) oder danach (BM2). Sie öffnet den Zugang zur Fachhochschule.",
+            "quelle": "Kap. 1.1 S. 13"
+          },
+          {
+            "label": "Passerelle",
+            "text": "Ergänzungsprüfung nach der BM. Danach freier Zugang zu allen Schweizer Universitäten.",
+            "quelle": "Kap. 1.1 S. 13"
+          },
+          {
+            "label": "Höhere Berufsbildung",
+            "text": "Im gelernten Beruf weiterkommen: eidg. Fachausweis, eidg. Diplom, Höhere Fachschule.",
+            "quelle": "Kap. 15.2 S. 357"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "«BM oder nichts.» Die höhere Berufsbildung ist der zahlenmässig grösste Weg, nicht der Notausgang.",
+            "quelle": "Kap. 15.2 S. 357"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 18.4 | S. 420",
+      "text": "Schreiben Sie drei Sätze auf, die Sie über Ihre Zukunft schon gehört oder selbst gesagt haben. Ordnen Sie jeden zu: kommt der Antrieb von aussen oder von innen?",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Extrinsisch kommt von aussen, intrinsisch von innen.",
+        "zeilen": [
+          {
+            "label": "Extrinsisch",
+            "text": "Angeordnet, belohnt oder mit Strafe verbunden. Der Sinn wird nicht selbst erkannt.",
+            "quelle": "Kap. 18.4 S. 420"
+          },
+          {
+            "label": "Intrinsisch",
+            "text": "Neugier, eigenes Interesse, Anerkennung von innen. Man erkennt den Sinn und setzt sich Ziele.",
+            "quelle": "Kap. 18.4 S. 420"
+          },
+          {
+            "label": "Anwenden",
+            "text": "«Sonst bist du in zehn Jahren dort, wo du heute stehst» ist extrinsisch — der Antrieb ist die Drohung, nicht das Ziel.",
+            "quelle": ""
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Extrinsisch mit schlecht gleichgesetzt. Ein von aussen gesetztes Ziel kann man sich zu eigen machen — dann wechselt es die Seite.",
+            "quelle": ""
+          }
+        ]
+      }
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 18.2 | S. 414",
+      "text": "Zwei Personen, die es beide gut mit Ihnen meinen, erwarten Verschiedenes. Für welche Richtung entscheiden Sie sich — und wie begründen Sie das gegenüber der Person, deren Erwartung Sie nicht erfüllen?",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Erwartungen sind Normen — man kann sie begründet enttäuschen.",
+        "zeilen": [
+          {
+            "label": "Grundlage",
+            "text": "Normen sind Verhaltens- und Rollenerwartungen, die wir gegenseitig aneinander stellen.",
+            "quelle": "Kap. 18.2 S. 414"
+          },
+          {
+            "label": "Erwartet",
+            "text": "Eine Richtung wird gewählt und mit einem eigenen Wert begründet, nicht mit der Autorität der Person, die zustimmt.",
+            "quelle": ""
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Sich für den Weg entscheiden, den das Umfeld vorschlägt — sofern die Begründung die eigene ist und nicht die geliehene.",
+            "quelle": ""
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "«Ich mache, was mein Onkel sagt» oder «Ich mache das Gegenteil». Beides ersetzt die Begründung durch eine Person.",
+            "quelle": ""
+          }
+        ]
+      }
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 20.3 | S. 438",
+      "text": "Formulieren Sie einen einzigen Schritt für dieses Schuljahr, der in Ihre Richtung führt — so, dass Sie am Ende mit Ja oder Nein sagen können, ob Sie ihn getan haben.",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Ein Ziel, das man nicht prüfen kann, ist ein Wunsch.",
+        "zeilen": [
+          {
+            "label": "Bauteil",
+            "text": "Spezifisch und situationsbezogen statt allgemein.",
+            "quelle": "Kap. 20.3 S. 438"
+          },
+          {
+            "label": "Bauteil",
+            "text": "Messbar in Menge oder Qualität, realistisch unter den gegebenen Voraussetzungen.",
+            "quelle": "Kap. 20.3 S. 438"
+          },
+          {
+            "label": "Bauteil",
+            "text": "Terminiert — mit einem Datum, das im Schuljahr liegt.",
+            "quelle": "Kap. 20.3 S. 438"
+          },
+          {
+            "label": "Massstab",
+            "text": "Am Termin lässt sich mit Ja oder Nein antworten. Und der Schritt hängt nicht davon ab, was andere tun.",
+            "quelle": ""
+          }
+        ]
+      }
+    }
+  ],
+  "mindmap_zentrum": "Der Tag nach meinem EFZ",
+  "mindmap_aeste": [
+    {
+      "titel": "Wege nach dem EFZ",
+      "punkte": [
+        "Im Beruf bleiben",
+        "Berufsmaturität BM1 / BM2",
+        "Höhere Berufsbildung",
+        "Fachhochschule, Passerelle"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer erwartet was",
+      "punkte": [
+        "Eltern und Verwandte",
+        "Berufsbildner/in",
+        "Kolleg/innen",
+        "Ich selbst"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Woher kommt der Antrieb",
+      "punkte": [
+        "Von aussen: extrinsisch",
+        "Von innen: intrinsisch",
+        "Sinn selbst erkannt?",
+        "Wert dahinter"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Rolle und Norm",
+      "punkte": [
+        "Rollenerwartung",
+        "Wert hinter der Erwartung",
+        "Enttäuschen ist erlaubt",
+        "Begründen ist Pflicht"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Zukunftskarte",
+    "titel": "Der Tag nach meinem EFZ",
+    "format_detail": "Ein A4-Blatt hoch: oben ein Bild oder eine Skizze des Tages nach dem EFZ, in der Mitte drei Erwartungen anderer mit Namen der Rolle, unten der eigene Entscheid nach Behauptung–Begründung–Beispiel und ein einziger überprüfbarer Schritt für dieses Schuljahr.",
+    "beschreibung": "Ich zeichne oder beschreibe den Tag, an dem ich mein EFZ in der Hand halte, und was am Tag danach passieren soll. Dann trage ich ein, wer von mir was erwartet — nicht um zu klagen, sondern um zu sehen, wessen Stimme ich eigentlich höre, wenn ich an meine Zukunft denke. Zum Schluss entscheide ich mich für eine Richtung und begründe sie mit einem Grund, der mir gehört. Der letzte Kasten ist der kleinste und der wichtigste: ein Schritt, den ich dieses Schuljahr wirklich tun kann.",
+    "abgaben": [
+      "Zukunftskarte A4 hoch: Bild oder Skizze, drei Erwartungen, Entscheid, ein Schritt",
+      "Der Entscheid als Behauptung, Begründung und Beispiel (drei bis fünf Sätze)",
+      "Ein überprüfbarer Schritt mit Datum in diesem Schuljahr"
+    ],
+    "schritte": [
+      {
+        "label": "Den Tag beschreiben",
+        "hint": "Zuerst das Bild, dann die Analyse. Wer mit den Erwartungen anfängt, zeichnet fremde Zukunft."
+      },
+      {
+        "label": "Erwartungen sammeln",
+        "hint": "Vier bis fünf Rollen eintragen, mit Namen der Rolle statt der Person. Eine davon sitzt nicht am Tisch — denken Sie an sie."
+      },
+      {
+        "label": "Antrieb zuordnen",
+        "hint": "Bei jeder Erwartung markieren: kommt der Antrieb von aussen oder von innen? Auch bei Ihrer eigenen."
+      },
+      {
+        "label": "Entscheiden und begründen",
+        "hint": "Behauptung, Begründung, Beispiel. Die Begründung darf nicht «weil X das sagt» lauten — auch nicht, wenn X recht hat."
+      },
+      {
+        "label": "Einen Schritt setzen",
+        "hint": "Ein einziger Schritt, mit Datum. Prüfen Sie: hängt er davon ab, was jemand anderes tut? Dann umformulieren."
+      }
+    ],
+    "schreib_label": "Meine Zukunftskarte",
+    "schreib_note": "Stichworte im oberen Teil, ganze Sätze bei Begründung und Schritt.",
+    "scaffolding": {
+      "satzanfaenge": [
+        "Am Tag nach meinem EFZ möchte ich ...",
+        "... erwartet von mir, dass ich ... Dahinter steht der Wert ...",
+        "Ich entscheide mich für ..., weil ... Zum Beispiel ...",
+        "Bis zum ... habe ich ..."
+      ],
+      "strategien": [
+        "Zuerst den eigenen Tag beschreiben, erst danach die Erwartungen sammeln — sonst übernimmt man sie unbemerkt.",
+        "Rollen eintragen, nicht Personen. «Mein Berufsbildner» ist eine Rolle, «Herr K.» ist es nicht.",
+        "Bei jeder Erwartung den Wert dahinter suchen. Eine Erwartung, deren Wert man teilt, wird zur eigenen.",
+        "Den Schritt zum Schluss laut lesen und fragen: Kann ich das am Termin mit Ja oder Nein beantworten?"
+      ],
+      "struktur": [
+        "Oben — Bild oder Skizze: der Tag nach dem EFZ",
+        "Mitte — Erwartungen: Rolle, Erwartung, Wert dahinter, Antrieb von aussen oder innen",
+        "Unten links — Entscheid: Behauptung, Begründung, Beispiel",
+        "Unten rechts — mein Schritt bis (Datum)"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Ausgefülltes Beispiel einer lernenden Person aus dem Maschinenbau — nicht Ihr eigener Fall, sondern eine fremde Abgabe auf Stufe 3-4. Stufe 4 zeigt sich darin, dass die Begründung einen eigenen Wert nennt und die abgelehnte Erwartung ernst genommen statt abgetan wird — nicht darin, dass eine bestimmte Richtung gewählt wurde.",
+      "abschnitte": [
+        {
+          "titel": "Oben — der Tag nach dem EFZ",
+          "zeilen": [
+            {
+              "label": "Skizze",
+              "text": "Eine Werkstatt, in der ich an einer Maschine stehe, die ich selbst eingerichtet habe. Daneben eine zweite Person, der ich etwas zeige.",
+              "quelle": ""
+            },
+            {
+              "label": "In einem Satz",
+              "text": "Am Tag nach meinem EFZ möchte ich an einer Arbeit stehen, die ich allein verantworte — und ich möchte, dass mich jemand fragt, wie es geht.",
+              "quelle": ""
+            }
+          ]
+        },
+        {
+          "titel": "Mitte — wer erwartet was",
+          "zeilen": [
+            {
+              "label": "Onkel",
+              "text": "Erwartet die BM. Wert dahinter: nicht stehenbleiben, weiterkommen. Antrieb von aussen — die Begründung war eine Warnung, kein Ziel.",
+              "quelle": "Kap. 18.4 S. 420"
+            },
+            {
+              "label": "Berufsbildner/in",
+              "text": "Erwartet ein sauberes EFZ und danach Betriebserfahrung. Wert dahinter: zuerst können, dann weitergehen. Von aussen, aber ich teile den Wert.",
+              "quelle": ""
+            },
+            {
+              "label": "Eltern",
+              "text": "Erwarten «etwas Sicheres». Wert dahinter: Sicherheit. Von aussen. Sie sagen nicht, was sicher heisst.",
+              "quelle": ""
+            },
+            {
+              "label": "Ich selbst",
+              "text": "Ich will etwas können, das nicht jeder kann. Von innen — das ist der einzige Punkt, den mir niemand gesagt hat.",
+              "quelle": ""
+            },
+            {
+              "label": "Nicht am Tisch",
+              "text": "Die Person, die in fünf Jahren meine Stelle vergibt. Sie erwartet nichts von mir, aber sie schaut auf etwas — und ich weiss nicht, worauf.",
+              "quelle": ""
+            }
+          ]
+        },
+        {
+          "titel": "Unten links — mein Entscheid",
+          "zeilen": [
+            {
+              "label": "Behauptung",
+              "text": "Ich mache die BM nicht während der Lehre, sondern entscheide am Ende des zweiten Lehrjahrs neu.",
+              "quelle": ""
+            },
+            {
+              "label": "Begründung",
+              "text": "Mir ist wichtig, etwas wirklich zu können, bevor ich das Nächste anfange. Das ist mein Grund, nicht der meines Berufsbildners — er kommt nur zufällig zum selben Schluss.",
+              "quelle": ""
+            },
+            {
+              "label": "Beispiel",
+              "text": "Im üK habe ich gemerkt, dass ich Dinge, die ich zu schnell gelernt habe, nach zwei Wochen wieder falsch mache. Beim Messschieber war das so.",
+              "quelle": "Kap. 17.3 S. 394"
+            },
+            {
+              "label": "An den Onkel",
+              "text": "Er hat recht damit, dass eine Tür offenbleiben soll. Ich schliesse sie nicht — BM2 ist nach der Lehre möglich, im Kanton Zürich ab Schnitt 5.0 sogar prüfungsfrei. Ich verschiebe die Entscheidung, ich verwerfe sie nicht.",
+              "quelle": "Kap. 15.2 S. 358"
+            }
+          ]
+        },
+        {
+          "titel": "Unten rechts — mein Schritt",
+          "zeilen": [
+            {
+              "label": "Der Schritt",
+              "text": "Bis zu den Frühlingsferien halte ich im Lernjournal jede Woche eine Arbeit fest, die ich zum ersten Mal allein gemacht habe.",
+              "quelle": "Kap. 20.3 S. 438"
+            },
+            {
+              "label": "Prüfbar",
+              "text": "Am Termin sind es entweder rund zwanzig Einträge oder nicht.",
+              "quelle": ""
+            },
+            {
+              "label": "Hängt an mir",
+              "text": "Der Schritt hängt nicht davon ab, ob mir jemand etwas zeigt — nur davon, dass ich aufschreibe, was ich getan habe.",
+              "quelle": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "methoden": [
+    {
+      "ref": "hko-akteurskarte",
+      "fuer": "für die Übersicht, wer von Ihnen was erwartet und womit"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Begründung Ihres Entscheids",
+      "tun": "Behauptung ist die gewählte Richtung, Begründung ist Ihr eigener Wert, Beispiel ist eine Situation aus Ihren ersten Lehrwochen. Ohne Beispiel bleibt die Begründung eine Meinung."
+    },
+    {
+      "ref": "lm-20-3-smart",
+      "fuer": "für den einen Schritt, den Sie dieses Schuljahr wirklich tun",
+      "tun": "Prüfen Sie Ihren Schritt zusätzlich gegen eine Frage, die im Kapitel nicht steht: Hängt er davon ab, was jemand anderes tut? Dann ist es kein Schritt, sondern eine Hoffnung."
+    },
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für die Karte, die nachher im Portfolio liegt und gezeigt wird",
+      "tun": "Die Karte wird gelesen, während Sie danebenstehen. Halten Sie oben Stichworte, damit Sie erzählen können — ausformulierte Sätze gehören nur in Begründung und Schritt."
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Welche Erwartung habe ich für meine eigene gehalten, bis ich sie aufgeschrieben hatte?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo im Lehralltag entscheide ich schon jetzt über die Richtung, ohne es zu merken?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Wem sage ich meinen Entscheid — und was mache ich, wenn die Person widerspricht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "Mindestens drei Anschlusswege sind mit ihrer Voraussetzung genannt.",
+        "Bei LF3 ist eine Richtung gewählt und mit einem eigenen Wert begründet."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Die drei Pflicht-Äste sind gefüllt.",
+        "Jeder Ast trägt mindestens drei eigene Stichworte.",
+        "Mindestens eine Verbindung zwischen zwei Ästen ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Die Karte enthält alle vier Felder: Bild, Erwartungen, Entscheid, Schritt.",
+        "Mindestens drei Erwartungen sind mit Rolle, Wert dahinter und Antrieb eingetragen.",
+        "Die Begründung nennt einen eigenen Wert und nicht die Zustimmung einer Person.",
+        "Der Schritt trägt ein Datum und hängt nicht vom Handeln anderer ab."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R3 nennt eine konkrete Person und eine Reaktion auf Widerspruch."
+      ]
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Zukunftskarte",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.1_ausbildung_erfassen_zeigen_prinzip",
+  "herausforderung": {
+    "buchstabe": "C",
+    "label": "Meine Richtung begründen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Erwartungen meines Umfelds vs. mein eigener Wunsch für morgen",
+    "hint": "Die Erwartung der anderen ist nicht der Feind. Sie kommt meistens von Leuten, die es gut meinen und mehr gesehen haben. Nur: Sie kennen den Tag nach dem EFZ auch nicht. Wer alle Erwartungen erfüllt, hat nicht entschieden. Wer alle ablehnt, hat auch nicht entschieden — er hat nur widersprochen. Tragfähig ist beides, wenn die Begründung die eigene ist; nicht tragfähig ist eine Begründung, die aus dem Mund einer anderen Person stammt."
+  },
+  "dekontextualisierung": {
+    "frage": "Ich stehe vor einer Entscheidung, zu der mehrere Personen eine Meinung haben — Wohnort, Freizeit, Geld. Wie finde ich heraus, welche Stimme darin meine eigene ist?",
+    "ziel": "Das Prinzip lösen: Wer über sich Auskunft gibt oder über sich entscheidet, wählt aus — und die Auswahl trägt nur, wenn die Begründung einem selbst gehört."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T4 (4.1 Wohlbefinden) nimmt Werte und Selbstwert wieder auf — dann mit Blick auf Belastung und Gesundheit.",
+    "r3_voraussicht": "T8 (8.2 Berufliche Zukunft planen) öffnet den Horizont, den diese Herausforderung bewusst kurz hält: reale Anschlusswege, Bewerbung, Arbeitsmarkt."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 1.1",
+      "titel": "Schule und Betrieb — Bildungssystem Schweiz, Wege nach dem EFZ",
+      "seiten": "Seite 13",
+      "unterueberschrift": "Bildungssystem Schweiz",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 15.2",
+      "titel": "Qualifizierung für den Arbeitsmarkt — höhere Berufsbildung, Berufsmaturität, Fachhochschulen",
+      "seiten": "Seite 357-358",
+      "unterueberschrift": "Weiterbildungsmöglichkeiten in der Schweiz",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 18.4",
+      "titel": "Motivation — intrinsisch und extrinsisch",
+      "seiten": "Seite 420",
+      "unterueberschrift": "Motivation",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 18.2",
+      "titel": "Werte, Normen, Moral und Ethik — Normen als Verhaltens- und Rollenerwartungen",
+      "seiten": "Seite 413-414",
+      "unterueberschrift": "Norm als Verhaltensregel",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 20.3",
+      "titel": "Zielformulierung — SMART-Kriterien",
+      "seiten": "Seite 438",
+      "unterueberschrift": "SMART-Kriterien",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Überblick über die Wege",
+        "indikator": "Nennt mindestens drei Anschlusswege nach dem EFZ mit ihrer jeweiligen Voraussetzung.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Erwartungen unterscheiden",
+        "indikator": "Trennt fremde Rollenerwartungen vom eigenen Wunsch und benennt den Wert hinter jeder Erwartung.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Eigene Begründung",
+        "indikator": "Begründet den Entscheid mit einem eigenen Wert und einem Beispiel, nicht mit der Autorität einer Person.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Überprüfbarer Schritt",
+        "indikator": "Formuliert einen Schritt mit Datum, der am Termin mit Ja oder Nein beantwortbar ist.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Die Rollen für die Erwartungsspalte sind vorgegeben; die Lernenden füllen Erwartung, Wert und Antrieb ein.",
+    "scaffold_100": "Die Lernenden benennen zusätzlich die Person, die nicht am Tisch sitzt, aber später über sie entscheidet — und was diese wohl anschaut."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Eine Richtung wird nicht dadurch zur eigenen, dass man sie wählt, sondern dadurch, dass die Begründung einem selbst gehört.",
+    "lehrmittel_anker": "Kap. 1.1 S. 13 (Wege), Kap. 18.4 S. 420 (Antrieb), Kap. 18.2 S. 414 (Rollenerwartung), Kap. 20.3 S. 438 (Schritt)",
+    "kn_aktivierung": "Im KN zeigt sich diese Herausforderung darin, dass die lernende Person eine Entscheidung begründet, ohne sich hinter einer anderen Person zu verstecken.",
+    "transfer_check": "Kann die lernende Person bei einer fremden Entscheidung sagen, wessen Erwartung darin steckt und welchen Wert sie selbst dagegenhält?"
+  },
+  "sk_anker": [
+    {
+      "sk": 6,
+      "wo": "Im Entscheid-Feld: die gewählte Richtung wird nach Behauptung, Begründung und Beispiel vertreten — und der Person gegenüber begründet, deren Erwartung nicht erfüllt wird."
+    },
+    {
+      "sk": 8,
+      "wo": "In der Zukunftskarte selbst: ein Abschnitt des eigenen Lebens wird über das Lehrende hinaus gedacht, mit einem Schritt, der schon in diesem Schuljahr liegt."
+    },
+    {
+      "sk": 11,
+      "wo": "In der Erwartungsspalte: dass mehrere Personen gleichzeitig recht haben können, wird stehen gelassen, statt eine als die richtige auszuzeichnen."
+    }
+  ]
+}

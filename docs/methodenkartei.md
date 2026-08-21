@@ -45,7 +45,7 @@ und die Formulierungshilfen. Dazu kommt am Fuss eine Zeile: «Methoden — Sie f
 der Rückseite.»
 
 **Die Seite entsteht nur aus Daten.** Fehlt `methoden` in der Herausforderung, wird sie
-nicht gerendert, der Bogen bleibt bei sieben Seiten und der Selbstcheck bei `05`. Stand: vier Einheiten haben die Seite — `3.2.1_wahre_kosten`, `1.1.1_einstieg_interview`, `3.2.1_ernaehrung_nachhaltig_gestalten` und `5.4.2_internationale_entscheide_wirken_4j`. Alle übrigen sind unverändert.
+nicht gerendert, der Bogen bleibt bei sieben Seiten und der Selbstcheck bei `05`. Stand: fünf Einheiten haben die Seite — `3.2.1_wahre_kosten`, `1.1.1_einstieg_interview`, `3.2.1_ernaehrung_nachhaltig_gestalten`, `5.4.2_internationale_entscheide_wirken_4j` und `1.1.1_ausbildung_erfassen_zeigen`. In `1.1.1_einstieg_interview` führen nur zwei der drei Herausforderungen ein `methoden`-Array, in den übrigen vier alle drei. Alle anderen Einheiten sind unverändert.
 
 ---
 

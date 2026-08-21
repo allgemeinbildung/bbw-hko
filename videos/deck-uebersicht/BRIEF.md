@@ -68,3 +68,82 @@ Zielgruppe sind Berufsfachschullehrpersonen, die wissen wollen, wie das Ding fun
   BroadcastChannel-Sync).
 - Die Notizen sind Lehrpersonen-Material (Coaching, Tafelbild, Erwartungshorizont) und stammen
   aus `begleiter.md` — das ist ein Verkaufsargument des Decks und gehört ins Video.
+
+## Notes — Entscheide während des Laufs (Stand: Build abgeschlossen)
+
+- **Stimme:** Lena Fischer (HeyGen Starfish `88f5e1546a4245cca66c332671eb6d78`, Deutsch), neutral,
+  ohne Emotions-Tag. **Einschränkung:** HeyGen führt 23 deutsche Stimmen, alle
+  bundesdeutsch — kein Schweizer Hochdeutsch. Ein Wechsel ist billig (~0.30 USD für
+  alle 15 Zeilen neu).
+- **`hyperframes ... --list` zeigt nur 50 Stimmen** (hart kodiertes Limit im Skript). Die
+  deutschen Stimmen findet man erst über `GET /v3/voices?engine=starfish&page=N`.
+- **BGM:** Die Bibliothekssuche matcht nur auf Englisch; `music:` steht darum auf
+  `calm minimal underscore`. Bett auf `volume 0.10` statt 0.12, weil 189s dichte Sprache
+  darüber laufen. Der Assembler loopt den 98s-Track selbst auf die volle Länge.
+- **Drei TTS-Zeilen (06/07/08) fielen beim ersten Lauf mit `fetch failed` aus** und wurden
+  einzeln nachgezogen. **Achtung für spätere Läufe:** `audio.mjs fetch-sfx` baut
+  `audio_meta.json` aus der Engine-Meta neu und wirft dabei von Hand nachgetragene
+  Stimmen und den BGM-Cue weg — erst SFX holen, dann nachpatchen.
+- **Audio liegt als MP3, nicht als WAV.** Mit 16 MB WAV überschritt der Seitenaufbau die
+  fest verdrahtete 10s-Navigationsgrenze von `hyperframes snapshot`. Verifiziert wurde
+  darum über `hyperframes check --snapshots --at …` (respektiert `--timeout`).
+- **Caption-Skin:** `captions.mjs` injiziert die Farbschlüssel aus `frame.md`
+  (`--green`, `--pink`, …), das Skin liest aber `--cap-*`. Ohne Brücke fiel jede
+  Caption-Farbe auf die Preset-Literale zurück — die Pille war altrosa/rot, also genau
+  die Farbe, die die Video-Direktion als Chrome verbietet. Die Brücke steht jetzt in
+  `.hyperframes/caption-skin.html`.
+- **`frame.md` wurde nach `build-frame.mjs` von Hand korrigiert.** Die automatische
+  Rollenzuordnung hatte das flächenstärkste Rot (Herausforderung A) ins Chrome gehoben
+  und BBW-Grün nach hinten geschoben.
+- **Frame 12 zeigt alle 27 Platten als echte Aufnahmen**, nicht fünf Fotos zwischen
+  Platzhaltern — die Karte ist der Höhepunkt und muss das echte Deck zeigen.
+- **Logo:** `assets/logo-bbw-mark.png` muss RGBA bleiben. Eine Verkleinerung über
+  `convert("RGB")` plattet den Alphakanal auf Schwarz und das Zeichen erscheint als
+  schwarzer Kasten. Auf dem dunklen Grund läuft es über
+  `filter: brightness(0) invert(1)` — dieselbe Logik wie die weisse Logo-Variante der
+  Plattform für den dunklen Admin-Header.
+
+## Änderung nach Sichtung der ersten Fassung
+
+- **Keine Untertitel.** Der Caption-Track ist entfernt (`compositions/captions.html` +
+  `caption_groups.json` gelöscht, Assembler meldet `captions: no`). Die Sprache trägt
+  allein. Damit ist auch die 17-%-Sperrzone am unteren Rand frei — Beschriftungen dürfen
+  wieder unter die Platte.
+- **Keine gezeichneten Formen auf den Folien.** Markierkreise, Highlight-Kästen, Ringe,
+  Unterstreichungen, Sync-Boxen, der Zeiger samt Klick-Ripple und die Anker-Haarlinie in
+  Frame 7 sind abgeschaltet (je Frame ein kommentierter `display: none`-Block). Grund:
+  ihre Position war pro Platte aus Prozentwerten geschätzt und traf oft nicht die Stelle,
+  auf die sie zeigen sollten.
+- **Was die Aussage jetzt trägt:** die echten Zustandswechsel der Aufnahmen — Mindmap Ast
+  für Ast, Musterlösung Abschnitt für Abschnitt, zwei Fenster nebeneinander, die
+  27-Platten-Karte. Das war ohnehin der belastbare Teil; die Formen waren nur Zeigehilfe.
+- Erhalten bleiben: Kamerafahrten und Zooms, die farbigen Herausforderungs-Rails **neben**
+  der Platte, die Diagramm-Elemente in Frame 2 und 12 (aus Positionen berechnet, nicht
+  geschätzt) und die Fenster-Pills in Frame 14.
+- Die erste Fassung liegt als `renders/video-v1-mit-formen-und-untertiteln.mp4` daneben.
+
+## Stimmwahl — Befunde aus den Hörproben
+
+**Wichtig: Die Akzent-Anweisung schreibt den Text um, statt nur die Aussprache zu färben.**
+Mit `Accent: Schweizer Hochdeutsch, wie es in Zürich gesprochen wird` in den Director's
+Notes hat **Zubenelgenubi den Transkripttext nach Schweizerdeutsch übersetzt** — also
+Dialekt gesprochen statt Hochdeutsch mit Schweizer Färbung. Andere Stimmen trugen hörbar
+zu dick auf. Genau davor warnt die Gemini-Doku (Prompt-Klassifikator, „model reads your
+style instructions aloud").
+
+→ **Akzent-Anweisung ist in `scripts/gemini-tts.mjs` standardmässig AUS.** Sie lässt sich
+mit `--accent` zum Vergleich zuschalten, gehört aber nicht in den Produktionslauf. Die
+Style- und Pacing-Notes allein liefern den ruhigen, weichen Ton, der gewünscht war —
+HeyGens Härte war ohnehin das Problem, nicht der fehlende Schweizer Akzent.
+
+**Provider-Stand:**
+- **Gemini** (`gemini-2.5-flash-preview-tts`) läuft ohne Einschränkung, 30 Stimmen,
+  Sprechweise per Text steuerbar. Adapter: `scripts/gemini-tts.mjs` (Audio liegt über
+  REST in `steps[].content[].data`, nicht in `output_audio` — das ist SDK-Zucker).
+- **ElevenLabs** ist auf diesem Key fast dicht: keine Rechte `voices_read` / `user_read`,
+  und Library-Stimmen (Charlotte, Rachel, Aria) liefern HTTP 402
+  „Free users cannot use library voices via the API". Nur **Sarah**
+  (`EXAVITQu4vr4xnSDxMaL`) funktioniert. Adapter: `scripts/eleven-tts.mjs`.
+
+**Engere Auswahl nach Sichtung:** Schedar (ausgeglichen), Iapetus (klar),
+Rasalgethi (informativ) — alle ohne Akzent-Anweisung.

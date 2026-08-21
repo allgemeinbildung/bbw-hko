@@ -20,6 +20,12 @@ index.html
 # Wildcard deckt auch die abgelegten Vorgängerausgaben ab (_lehrmittel_2025/ usw.)
 material/_lehrmittel*/
 
+# Video-Deck (HyperFrames-Projekt unter videos/deck-uebersicht/).
+# Reines Produktionsmaterial: Renders, Audio-Samples, Frame-Packets, Waveform-Cache
+# und Thumbnails summieren sich auf ~175 MB und entstehen jederzeit neu aus BRIEF.md
+# und STORYBOARD.md. Sie gehoeren nicht in die Historie der Plattform.
+videos/
+
 # Chromium/Crashpad-Rauschen aus dem Browser-Pane
 debug.log
 

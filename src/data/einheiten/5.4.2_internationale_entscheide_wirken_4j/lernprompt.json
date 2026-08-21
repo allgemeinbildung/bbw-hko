@@ -1,0 +1,147 @@
+{
+  "id": "5.4.2_internationale_entscheide_wirken_4j_lernprompt",
+  "set_ref": "5.4.2_internationale_entscheide_wirken_4j_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Einheit «Bis zu mir hinunter» — internationale Entscheide bis in den eigenen Lehrbetrieb verfolgen, die Interessen der Akteure einordnen und unterscheiden, was vertraglich gebunden und was politisch entschieden ist.",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Interesse und Wortwahl der Antwort — die KI antwortet aus dieser Sicht statt allgemein. Damit wird sichtbar, dass dieselbe Sachlage je nach Standort anders klingt.",
+        "thema_bezug": "In dieser Einheit hängt alles am Standort: Derselbe Entscheid über den Marktzugang liest sich aus Sicht eines Wirtschaftsverbands, einer Gewerkschaft, der Bundesverwaltung oder der betroffenen Bevölkerung völlig anders. Genau diese Akteure stehen auf Ihrer Akteurskarte — und Sie können jeden davon gezielt sprechen lassen.",
+        "beispiel_basis": "Du bist Vertreter/in eines Schweizer Wirtschaftsverbands der Exportindustrie. Erkläre mir in fünf Sätzen, warum dir offener Marktzugang wichtiger ist als der Schutz einzelner Arbeitsplätze.",
+        "beispiel_fortgeschritten": "Du bist Gewerkschaftsvertreter/in in der Maschinenindustrie. Ich habe eine Wirkungskette von einem Handelsentscheid bis an meine Maschine gezeichnet: [meine Kette]. Reagiere aus deinem Interesse heraus und sag mir, welchen Schritt meiner Kette du bestreiten würdest und warum.",
+        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht richtiger: Auch als «Verbandsvertreter/in» erfindet die KI Zahlen zum Aussenhandel oder verwechselt bilaterale Verträge mit EU-Beschlüssen. Die Rolle steuert die Perspektive — belegen müssen Sie mit Kapitel und Seite.",
+        "baukasten": {
+          "rolle": [
+            "Vertreter/in eines Wirtschaftsverbands",
+            "Gewerkschaftsvertreter/in",
+            "Mitarbeitende/r der Bundesverwaltung",
+            "betroffene Person im Ausland"
+          ],
+          "kontext": [
+            "Entscheid über den Marktzugang",
+            "Lehrbetrieb in der Präzisionsmechanik",
+            "Zielkonflikt mit zwei begründbaren Seiten"
+          ],
+          "aufgabe": [
+            "das eigene Interesse benennen",
+            "meine Kette bestreiten",
+            "nennen, wer die Kosten trägt"
+          ],
+          "format": [
+            "5 Sätze",
+            "je ein Satz pro Akteur"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie liefern der KI vorab alles, was sie über Ihre Lage wissen muss: worum es geht, wer beteiligt ist, wofür Sie die Antwort brauchen. Ohne Kontext antwortet die KI für irgendeinen Fall — mit Kontext für Ihren. Je genauer der Rahmen, desto weniger müssen Sie hinterher aussortieren.",
+        "thema_bezug": "«Internationale Entscheide» ist ein riesiges Feld. Erst der Kontext — welche Ebene entschieden hat, welcher Betrieb betroffen ist, welcher Beruf, welches Material — macht aus einer allgemeinen Globalisierungs-Antwort eine Kette, die tatsächlich bis an Ihre Maschine reicht.",
+        "beispiel_basis": "Kontext: Ich bin Lernende/r Polymechanik im 3. Lehrjahr in einem Präzisionsmechanik-Betrieb in Winterthur. Der Betrieb bezieht Rohmaterial aus dem Ausland und exportiert Bauteile. Erkläre mir, worauf ich achten muss, wenn ein Handelsentscheid im Ausland den Zoll auf solche Bauteile verändert.",
+        "beispiel_fortgeschritten": "Kontext: Lernende/r Polymechanik, Betrieb mit Export- und Importanteil, Auftrag im Unterricht: eine Wirkungskette in vier bis sechs Schritten vom Entscheid bis an meinen Arbeitsplatz, jeder Schritt mit Beleg. Ich habe die Schritte Preis, Lieferfrist, Offerte, Auftrag. Sag mir, welcher Zwischenschritt in meiner Kette fehlt und welche Angabe ich dafür im Betrieb erfragen müsste.",
+        "warnung": "Nennen Sie keine internen Betriebsdaten, keine Kundennamen und keine Offertzahlen Ihres Lehrbetriebs. Für den Kontext genügen Branche, Materialart und Grössenordnung — alles Weitere gehört nicht in ein KI-Fenster.",
+        "baukasten": {
+          "rolle": [
+            "Lernende/r im 3. Lehrjahr",
+            "Fachperson für Aussenwirtschaft"
+          ],
+          "kontext": [
+            "Betrieb mit Import und Export",
+            "Auftrag: Kette in 4 bis 6 Schritten",
+            "jeder Schritt braucht einen Beleg"
+          ],
+          "aufgabe": [
+            "fehlenden Zwischenschritt nennen",
+            "Folgen für Preis und Frist einordnen"
+          ],
+          "format": [
+            "Stichworte",
+            "Liste mit Zwischenschritten"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt-für-Schritt denken",
+        "erklaerung": "Sie verlangen, dass die KI ihren Gedankengang offenlegt, statt nur ein Ergebnis zu nennen. Bei Ketten und Zuordnungen ist der Weg die eigentliche Leistung: Erst wenn jeder Zwischenschritt sichtbar ist, können Sie prüfen, an welcher Stelle die Begründung kippt. Ein Ergebnis ohne Weg lässt sich nicht kontrollieren.",
+        "thema_bezug": "Ihre drei Produkte sind Ketten und Zuordnungen: vom Entscheid bis an die Maschine, vom Akteur zum Interesse zu den Kosten, von der Handlung zum Merkmal «gebunden» oder «entschieden». Genau hier trennt der offengelegte Weg eine belegte Begründung von einer Behauptung, die einfach plausibel klingt.",
+        "beispiel_basis": "Geh Schritt für Schritt vor: Ein Staat erhöht den Zoll auf importierte Metallteile. Zeig mir jeden Zwischenschritt bis zum Arbeitsplatz einer Polymechanikerin in der Schweiz und begründe bei jedem Schritt, warum er zwingend zum nächsten führt.",
+        "beispiel_fortgeschritten": "Ich habe fünf staatliche Handlungen danach sortiert, ob sie vertraglich gebunden oder politisch entschieden sind: [meine Sortierung]. Prüfe jede Zuordnung einzeln und nenn mir bei jeder die Denkschritte, die dich zu deinem Urteil führen — und markiere die zwei Fälle, bei denen sich beide Lesarten begründen lassen.",
+        "warnung": "Ein sauber ausformulierter Gedankengang ist kein Beweis: Die KI kann eine Kette lückenlos wirken lassen und trotzdem ein erfundenes Glied einbauen. Prüfen Sie jeden Schritt einzeln gegen das Lehrmittel, statt sich vom flüssigen Ablauf überzeugen zu lassen.",
+        "baukasten": {
+          "rolle": [
+            "kritische Prüferin meiner Kette",
+            "neutrale Analystin"
+          ],
+          "kontext": [
+            "Kette vom Entscheid bis zum Arbeitsplatz",
+            "fünf Handlungen zum Sortieren"
+          ],
+          "aufgabe": [
+            "jeden Zwischenschritt offenlegen",
+            "die strittigen Zuordnungen markieren",
+            "begründen, warum ein Schritt zwingend folgt"
+          ],
+          "format": [
+            "nummerierte Schritte",
+            "pro Schritt eine Begründung"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen und Belege anfordern",
+        "erklaerung": "Sie verlangen zu jeder Sachaussage einen überprüfbaren Beleg und markieren, was ohne Beleg bleibt. So trennen Sie gesichertes Wissen von flüssig formulierter Vermutung. Der Beleg zählt aber erst, wenn Sie ihn selbst nachgeschlagen haben.",
+        "thema_bezug": "In dieser Einheit ist jeder Schritt belegpflichtig: Kapitel und Seite zu jedem Kettenglied, zu jedem Akteursinteresse, zu jeder Zuordnung «gebunden» oder «entschieden». Und gerade hier erfinden KI-Systeme besonders gern: Vertragsnamen, Zuständigkeiten von Organisationen, Aussenhandelszahlen.",
+        "beispiel_basis": "Nenne mir drei Wege, wie ein Wirtschaftsverband in der Schweiz politischen Einfluss nimmt, und gib zu jedem an, woher die Angabe stammt und wie sicher sie ist.",
+        "beispiel_fortgeschritten": "Ich behaupte: Ein verbindlicher Beschluss einer supranationalen Organisation wirkt für einen Schweizer Betrieb anders als ein bilateraler Vertrag. Prüfe diese Behauptung, gib zu jeder Teilaussage einen überprüfbaren Beleg an und markiere ausdrücklich, welche Teilaussagen du nicht belegen kannst.",
+        "warnung": "Eine erfundene Quelle sieht aus wie eine echte: Kapitelnummern, Seitenzahlen und Vertragsnamen sind schnell erzeugt. In dieser Einheit gilt darum: Jeder Beleg wird in Kap. 11.1, 11.2, 11.3, 6.6 oder 1.3 nachgeschlagen — passt die Angabe nicht, fliegt die Aussage raus.",
+        "baukasten": {
+          "rolle": [
+            "Faktenprüferin",
+            "Rechercheassistent mit Belegpflicht"
+          ],
+          "kontext": [
+            "belegpflichtige Wirkungskette",
+            "Zuordnung gebunden oder entschieden",
+            "Lehrmittel als Prüfmassstab"
+          ],
+          "aufgabe": [
+            "zu jeder Aussage einen Beleg nennen",
+            "Unbelegtes ausdrücklich markieren",
+            "Sicherheit der Angabe einschätzen"
+          ],
+          "format": [
+            "Tabelle Aussage und Beleg",
+            "Liste mit Sicherheitsstufe"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Prompt 1 liefert mit Rolle und vollständigem Kontext die Sicht eines einzelnen Akteurs auf Ihren Entscheid. Prompt 2 nutzt genau diese Antwort und dreht sie um: Erst wenn die Gegenseite auf dieselbe Sachlage antwortet, wird der Zielkonflikt sichtbar — und damit die Frage, wer die Kosten trägt.",
+      "prompt_1": "Du bist Vertreter/in eines Wirtschaftsverbands der Exportindustrie. Kontext: Lernende/r Polymechanik im 3. Lehrjahr, Betrieb in Winterthur mit Import von Rohmaterial und Export von Bauteilen; im Unterricht geht es um einen Entscheid über den Marktzugang. Erkläre mir aus deinem Interesse heraus, was dieser Entscheid für deinen Verband bedeutet und welche Folgen du in den Betrieben erwartest.",
+      "prompt_2": "Nimm jetzt deine eigene Antwort und stell ihr die Gegenseite gegenüber: Antworte als Gewerkschaftsvertreter/in auf genau dieselbe Sachlage. Sag mir danach in zwei Sätzen, welches der beiden Interessen sich in der Regel durchsetzt und wer am Schluss die Kosten trägt."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "chain_of_thought",
+        "quellen_anfordern"
+      ],
+      "logik_und_ziel": "Prompt 1 zwingt die KI, ihren Weg von einem internationalen Entscheid bis an Ihren Arbeitsplatz offenzulegen. Prompt 2 setzt genau dort an: Jeder einzelne Schritt aus der ersten Antwort muss nun einen Beleg tragen — und was ohne Beleg bleibt, fällt aus Ihrer Kette heraus, bevor Sie sie vortragen.",
+      "prompt_1": "Geh Schritt für Schritt vor: Ein Handelsentscheid im Ausland verändert die Bedingungen für importierte Metallteile. Zeig mir die Kette bis zum Arbeitsplatz einer Polymechanikerin in einem Schweizer Betrieb in vier bis sechs Schritten und begründe bei jedem Schritt, warum er zwingend zum nächsten führt.",
+      "prompt_2": "Geh deine eigene Kette jetzt nochmals durch und schreib zu jedem der Schritte, worauf die Aussage sich stützt und wie sicher sie ist. Markiere ausdrücklich jeden Schritt, für den du keinen Beleg nennen kannst — genau diese Schritte schlage ich im Lehrmittel nach."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

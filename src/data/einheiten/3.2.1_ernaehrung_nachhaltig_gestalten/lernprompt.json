@@ -1,0 +1,147 @@
+{
+  "id": "3.2.1_ernaehrung_nachhaltig_gestalten_lernprompt",
+  "set_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «Mein Essen in Zahlen» (dreitägige Erhebung, Produktprofil entlang der drei Dimensionen, Massnahmenwahl nach Wirkung und Kosten).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
+        "thema_bezug": "Beim Konsum hängt die Beurteilung davon ab, wer spricht: Dieselbe Massnahme klingt aus der Sicht einer Person mit kleinem Budget, aus der Sicht Ihres Lehrbetriebs oder aus der Sicht einer Produzentin in der Kette völlig anders — und genau diese Sichtweisen können Sie gezielt durchspielen.",
+        "beispiel_basis": "Du bist Einkäuferin in einem Detailhandelsgeschäft. Erkläre mir, welche drei Angaben du zu einem Lebensmittel brauchst, bevor du es als nachhaltig bezeichnest.",
+        "beispiel_fortgeschritten": "Du bist eine Person, die von meiner Massnahme die Kosten trägt. Hier ist meine Empfehlung: [meine Massnahme mit Ebene, Wirkung und Kostenträger]. Widersprich mir aus deiner Lage und sag mir danach, welcher meiner Sätze deine Situation gar nicht berücksichtigt.",
+        "warnung": "Eine Rolle macht die Antwort lebendiger, aber nicht richtiger: Auch als «Einkäuferin» oder «Klimaforscher» nennt die KI Wattzahlen, Wassermengen und Preisanteile, die frei erfunden sein können. Die Rolle steuert die Perspektive — die Zahl prüfen Sie im Lehrmittel.",
+        "baukasten": {
+          "rolle": [
+            "Einkäuferin im Detailhandel",
+            "Person mit knappem Budget",
+            "Produzentin in der Lieferkette"
+          ],
+          "kontext": [
+            "Lernende/r im 2. Lehrjahr",
+            "eigene Erhebung über drei Tage",
+            "Massnahme auf einer der drei Ebenen"
+          ],
+          "aufgabe": [
+            "Gegenposition zu meiner Massnahme vertreten",
+            "drei Angaben nennen, die zur Beurteilung fehlen",
+            "aus deiner Lage widersprechen"
+          ],
+          "format": [
+            "3 Sätze",
+            "Einwand plus Begründung"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Ausgangslage, Zahlen, Ziel und Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
+        "thema_bezug": "Ohne Ihre eigenen Zahlen antwortet die KI mit Durchschnittswerten, die mit Ihrem Teller nichts zu tun haben. Erst wenn Sie die ausgezählten Werte aus Ihrem dreitägigen Erhebungsbogen und die Stationen Ihrer Wegskizze mitgeben, bezieht sich die Antwort auf Ihren Fall.",
+        "beispiel_basis": "Kontext: Lernende/r im 2. Lehrjahr, drei Tage Erhebung, 11 Mahlzeiten, davon 3 überwiegend pflanzlich und 6 stark verarbeitet. Frage: Welche zwei Befunde daraus lassen sich mit einer Zahl belegen und welcher nicht?",
+        "beispiel_fortgeschritten": "Kontext: Meine Erhebung über drei Tage ergab [Ihre ausgezählten Werte]. Die Stichprobe umfasst nur Wochentage und keine Getränke ausser Wasser. Ziel: einen Befund formulieren, der diese Grenze mitnennt. Aufgabe: Zerlege meinen Entwurf in Aussage, Zahl, Bezugsgrösse und Grenze der Stichprobe und markiere, was davon fehlt.",
+        "warnung": "Persönliche Daten gehören nicht in den Prompt: Fotos Ihres Erhebungsbogens, Namen von Personen oder Ihrem Lehrbetrieb bleiben auf Ihrem Gerät. Geben Sie nur die ausgezählten Zahlen weiter — die reichen für jede brauchbare Antwort.",
+        "baukasten": {
+          "rolle": [
+            "neutraler Auswertungs-Coach",
+            "Methoden-Coach für Befunde"
+          ],
+          "kontext": [
+            "ausgezählte Werte aus drei Tagen",
+            "Stationen meiner Wegskizze",
+            "Grenzen meiner Stichprobe"
+          ],
+          "aufgabe": [
+            "Befund in Aussage, Zahl und Bezugsgrösse zerlegen",
+            "offene Lücken auflisten",
+            "prüfen, ob die Zahl die Aussage trägt"
+          ],
+          "format": [
+            "Tabelle Aussage / Zahl / Bezugsgrösse",
+            "nummerierte Liste"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen und Belege anfordern",
+        "erklaerung": "Sie verlangen von der KI zu jeder Zahl die Quelle und die Bezugsgrösse — und kündigen an, dass Sie beides prüfen. Das zwingt die KI zu vorsichtigeren Aussagen und gibt Ihnen die Prüfspur für Ihre eigene Kontrolle.",
+        "thema_bezug": "Diese Unit steht und fällt mit der Bezugsgrösse: 2,5 Kilowattstunden sind erst dann eine Aussage, wenn dabei steht «pro Kilo Schokolade». Ohne Bezugsgrösse ist eine Zahl in Ihrem Produktprofil und in Ihrer Vergleichstabelle unbrauchbar.",
+        "beispiel_basis": "Nenne mir drei belegte Angaben zum Ressourcenverbrauch von [mein Lebensmittel]. Gib zu jeder Angabe die Bezugsgrösse (pro Kilo, pro Person, pro Jahr) und die Quelle an und markiere, wo du unsicher bist.",
+        "beispiel_fortgeschritten": "Erstelle eine Tabelle zum Weg von [mein Lebensmittel] vom Anbau bis in den Laden. Pro Station: verbrauchter Ressourcentyp, eine Zahl mit Bezugsgrösse, Quelle und Vertrauensgrad (sicher/unsicher). Wo du keine belegte Zahl hast, schreib «keine Zahl gefunden» statt zu schätzen. Ich prüfe jede Angabe im Lehrmittel nach.",
+        "warnung": "KI-Systeme liefern bei Verbrauchs- und Emissionszahlen regelmässig plausibel klingende Werte ohne oder mit falscher Bezugsgrösse — und mischen Studien, die es nicht gibt, unter echte. Jede Zahl, die in Ihr Produkt kommt, muss im Lehrmittel auffindbar sein oder aus Ihrer eigenen Erhebung stammen.",
+        "baukasten": {
+          "rolle": [
+            "Faktenprüfer",
+            "Quellen-Navigator"
+          ],
+          "kontext": [
+            "Angaben für mein Produktprofil",
+            "Zahlen aus Kap. 9.2 und 9.3"
+          ],
+          "aufgabe": [
+            "Bezugsgrösse zu jeder Zahl nennen",
+            "Quelle und Vertrauensgrad angeben",
+            "Lücken als «keine Zahl gefunden» markieren"
+          ],
+          "format": [
+            "Tabelle Zahl / Bezugsgrösse / Quelle / Sicherheit",
+            "Liste mit Quelle in Klammern"
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenposition fordern",
+        "erklaerung": "Sie lassen die KI bewusst die Gegenseite vertreten, nachdem Sie Ihre Position formuliert haben. So finden Sie Schwächen in Ihrer Argumentation, bevor Ihr Gegenüber sie findet.",
+        "thema_bezug": "Jede Massnahme in dieser Unit hat zwei begründbare Seiten: die grosse Wirkung auf der einen, die Kosten für jemand anderen auf der anderen. Wer die stärkste Gegenposition kennt, kann sie in der eigenen Empfehlung offen benennen, statt beim Feedback des anderen Paars überrascht zu werden.",
+        "beispiel_basis": "Ich empfehle: [meine Massnahme]. Vertritt die Gegenposition der Person, die dafür bezahlen muss, so stark wie möglich.",
+        "beispiel_fortgeschritten": "Hier ist meine Empfehlung nach dem 3B-Schema: [Behauptung, Begründung, Beleg]. Greif sie an drei Stellen an und nenne zu jedem Einwand eine Zahl mit Bezugsgrösse. Sag mir danach, welcher meiner Belege am schwächsten ist und welchen Kostenträger ich übersehen habe.",
+        "warnung": "Die KI vertritt jede Seite überzeugend — auch mit erfundenen Zahlen. Die Gegenposition zeigt Ihnen Lücken in Ihrer Begründung, ersetzt aber nicht Ihr Urteil darüber, welcher Einwand belegt ist und welcher nur laut klingt.",
+        "baukasten": {
+          "rolle": [
+            "Person, die die Kosten trägt",
+            "Ausbildungsverantwortliche im Lehrbetrieb",
+            "kritisches Nachbarpaar"
+          ],
+          "kontext": [
+            "meine Empfehlung als 3B-Argument",
+            "Ebene und Instrument meiner Massnahme"
+          ],
+          "aufgabe": [
+            "Empfehlung an 3 Stellen angreifen",
+            "übersehenen Kostenträger benennen",
+            "schwächsten Beleg markieren"
+          ],
+          "format": [
+            "3 nummerierte Einwände",
+            "Einwand plus Zahl mit Bezugsgrösse"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Prompt 1 liefert mit Rolle und Ihren eigenen ausgezählten Werten eine erste Einschätzung Ihrer Befunde. Prompt 2 nutzt diese Antwort, um genau die Stelle zu schärfen, die im ersten Schritt offen blieb: die Bezugsgrösse und die Grenze Ihrer Stichprobe. So wird aus einem allgemeinen Kommentar eine prüfbare Befund-Kachel.",
+      "prompt_1": "Du bist mein neutraler Auswertungs-Coach. Kontext: Ich bin im 2. Lehrjahr und habe drei Tage lang meine Mahlzeiten erhoben: [meine ausgezählten Werte]. Die Stichprobe umfasst nur Wochentage. Nenne mir aus diesen Zahlen die drei Befunde, die sich am ehesten belegen lassen, und begründe kurz, warum die übrigen nicht tragen.",
+      "prompt_2": "Nimm den ersten deiner drei Befunde: Zerlege ihn in Aussage, Zahl und Bezugsgrösse und sag mir, welche Grenze meiner dreitägigen Stichprobe ich dazuschreiben muss, damit die Aussage ehrlich bleibt."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "quellen_anfordern",
+        "gegenposition_fordern"
+      ],
+      "logik_und_ziel": "Prompt 1 erzeugt eine belegte Grundlage mit Bezugsgrössen und Quellen zu Ihrer Massnahme. Prompt 2 lässt die KI genau diese belegte Empfehlung aus der Sicht der Zahlenden angreifen — so erkennen Sie, welche Ihrer Belege auch unter Druck standhalten, bevor Sie sie in die Kurzpräsentation oder in den Kompetenznachweis einbringen.",
+      "prompt_1": "Ich prüfe die Massnahme [meine Massnahme] auf einer der drei Ebenen: bei mir selbst, im Lehrbetrieb oder über eine allgemeine Regelung. Nenne mir zu Wirkung und Kosten je eine Angabe. Pro Angabe: Zahl, Bezugsgrösse, Quelle, Vertrauensgrad (sicher/unsicher). Wo du keine belegte Zahl hast, schreib «keine Zahl gefunden». Ich prüfe jede Angabe im Lehrmittel nach.",
+      "prompt_2": "Übernimm jetzt die Rolle der Person, die diese Kosten trägt: Greif meine Empfehlung an den zwei Stellen an, an denen dein Einwand am stärksten ist — und sag mir, welche der Zahlen aus deiner ersten Antwort dabei ohne Bezugsgrösse dasteht."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

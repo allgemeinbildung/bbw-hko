@@ -1,0 +1,140 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_ki",
+  "set_ref": "1.1.1_ausbildung_erfassen_zeigen_set",
+  "prinzip_ref": "1.1.1_ausbildung_erfassen_zeigen_prinzip",
+  "kn_ref": "1.1.1_ausbildung_erfassen_zeigen_kn",
+  "anchored_situations": [
+    "1.1.1_ausbildung_erfassen_zeigen_hf_A",
+    "1.1.1_ausbildung_erfassen_zeigen_hf_B",
+    "1.1.1_ausbildung_erfassen_zeigen_hf_C"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "thema": "T1",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: die eigene Ausbildung aus Dokumenten erschliessen, sich einem bestimmten Gegenüber verständlich zeigen und die eigene Richtung begründen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Lehrvertrag mit seinen obligatorischen Bestandteilen, Bildungsverordnung und Bildungsplan, Zuständigkeit von Lehrbetrieb, Berufsfachschule und überbetrieblichen Kursen — und die Pflicht, jede Angabe über die eigene Ausbildung belegen zu können.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Verantwortung für das, was man weglässt: Auswählen ist zulässig, solange das Weggelassene den Rest nicht verfälscht — und solange die Auswahl gegenüber dem Gegenüber begründbar bleibt.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Selbstbild und Fremdbild, Selbstkundgabe und soziale Rolle: dieselbe Person erzeugt vor verschiedenen Publika verschiedene Bilder von sich, ohne zu lügen — und trägt für diese Bilder Verantwortung.",
+        "kompetenz_anker": "1.1.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Was kann eine KI beim Zusammentragen und Aufbereiten von Informationen über Ihre Ausbildung leisten — und welcher Schritt bleibt zwingend Ihre eigene Arbeit?",
+    "kritisch": "Woran erkennen Sie, dass eine KI etwas über Ihren Beruf, Ihren Lehrvertrag oder Ihre überbetrieblichen Kurse behauptet, das für Sie gar nicht stimmt?",
+    "vergleichend": "Worin unterscheidet sich Ihre eigene, belegte Auswahl von einer KI-Fassung, die plausibel klingt, aber keine Fundstelle hat?",
+    "urteilend": "Würden Sie einen KI-geschriebenen Text über sich selbst weitergeben, ohne jede Angabe darin geprüft zu haben — warum (nicht)?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Die KI als Stimme der Erwartung",
+      "ziel": "Sie prüfen, wie tragfähig Ihre eigene Auswahl und Ihre eigene Richtung sind, indem Sie die KI die Erwartung Ihres Umfelds so stark wie möglich vertreten lassen.",
+      "bezug": "Nutzt alle drei Herausforderungen: die belegten Angaben und die Abweichungen «Das erlebe ich anders» vom Orientierungsblatt (A), die weggelassenen Angaben und Zonen-Entscheide aus dem Steckbrief-Doppel (B) und den begründeten Entscheid der Zukunftskarte (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Wer etwas über sich oder seine Lage mitteilt, wählt aus; die Auswahl richtet sich nach dem Gegenüber und nach dem Zweck und ist begründbar, auch wenn sie etwas weglässt. Genau das steht am Berufsinfo-Abend auf dem Prüfstand, wenn eine Person mit Weisungsbefugnis zuhört.",
+      "auftrag": "Wählen Sie eine einzige Auswahl-Entscheidung aus Ihren drei Produkten: eine Angabe, die Sie im Steckbrief weggelassen haben, eine Zeile «Das erlebe ich anders» oder Ihren Entscheid auf der Zukunftskarte. Halten Sie zuerst ohne KI Ihre Begründung fest. Beauftragen Sie dann eine KI, in der Rolle der Person zu sprechen, deren Erwartung Sie damit nicht erfüllen — Ihre Ausbildnerin, die es «positiv» will, oder das Familienmitglied, das eine andere Richtung erwartet. Lassen Sie diese Rolle Ihre Auswahl so stark wie möglich angreifen. Prüfen Sie danach jede Sachbehauptung über Lehrvertrag, Bildungsverordnung oder überbetriebliche Kurse gegen Ihre eigenen Dokumente (Kap. 1.1, 1.4) und trennen Sie: Was ist ein berechtigtes Anliegen, das Sie anerkennen — was ist blosser Druck, und was ist schlicht falsch?",
+      "prompt_strategie": [
+        "Geben Sie der KI eine klare Rolle mit Interesse: «Du bist meine Ausbildnerin und willst, dass unser Betrieb an diesem Abend gut dasteht …»",
+        "Geben Sie Ihre Entscheidung als Sachlage mit, aber nicht Ihre Begründung — sonst wiederholt die KI nur, was Sie ohnehin denken.",
+        "Verlangen Sie zu jedem Einwand eine Begründung und, wo es um Regelungen geht, die Fundstelle (Lehrvertrag, Bildungsverordnung, üK-Reglement) plus einen Vertrauensgrad.",
+        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Auswahl und sag mir, an welchem Punkt mein Weglassen kippt — von zulässig zu unehrlich.»"
+      ],
+      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihre Auswahl-Entscheidung in einem Satz und Ihre Begründung dazu nach dem 3B-Schema (Behauptung, Begründung, Beispiel) — dazu die Fundstelle oder das eigene Erlebnis, auf das Sie sich stützen.",
+      "schritte": [
+        "Eine Auswahl-Entscheidung aus A, B oder C wählen und die eigene Begründung KI-frei nach dem 3B-Schema festhalten.",
+        "Die KI mit einem Rollen-Prompt als Ausbildner/in oder als erwartende Person ansetzen und die stärksten Einwände gegen Ihre Auswahl verlangen.",
+        "Jede Sachbehauptung über Ausbildung, Vertrag oder üK in Ihren eigenen Dokumenten und im Lehrmittel nachschlagen: Stimmt sie, ist sie verzerrt oder erfunden?",
+        "Die Einwände sortieren: berechtigtes Anliegen des Gegenübers, blosse Druckausübung oder sachlich falsch — je mit einem Satz Begründung.",
+        "Die eigene Begründung überarbeiten: Was übernehmen Sie vom Gegenüber, was weisen Sie begründet zurück — und welcher Satz macht Ihre Auswahl gegenüber dieser Person verantwortbar?"
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Begründung zuerst",
+          "indikator": "Die KI-freie 3B-Begründung mit Fundstelle oder Erlebnis liegt schriftlich vor, bevor der erste Prompt abgesetzt wurde."
+        },
+        {
+          "kriterium": "Quellen- und Regelungs-Verifikation",
+          "indikator": "Jede Aussage der KI über Lehrvertrag, Bildungsverordnung oder überbetriebliche Kurse ist nachgeschlagen und als korrekt, verzerrt oder erfunden markiert — mit Angabe der geprüften Stelle."
+        },
+        {
+          "kriterium": "Berechtigtes Anliegen unterschieden",
+          "indikator": "Mindestens ein Einwand ist als berechtigtes Anliegen anerkannt und mindestens einer begründet zurückgewiesen; beide Zuordnungen sind je in einem Satz begründet."
+        },
+        {
+          "kriterium": "Kippstelle benannt",
+          "indikator": "Die überarbeitete Begründung nennt konkret, ab welcher weggelassenen Angabe die eigene Auswahl das Bild verfälschen würde."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand gegen Ihre Auswahl hat Sie am meisten herausgefordert — und was hat er über Ihre eigene Begründung gezeigt?",
+        "Hat die KI etwas über Ihren Beruf, Ihren Vertrag oder Ihre überbetrieblichen Kurse behauptet, das für Sie gar nicht stimmt? Woran haben Sie es gemerkt?",
+        "Im Kompetenznachweis kommt diese Spannung wieder: Im Fachgespräch fragt Frage 5, wem gegenüber Sie verpflichtet sind, während Ihre Ausbildnerin einen Meter weiter zuhört, und Frage 3 verlangt, dass Sie zwei Lücken unterschiedlich beurteilen. Wie hilft Ihnen diese Übung, dort beide Seiten abzuwägen, statt nur eine Seite zu bedienen?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_redaktion",
+      "titel": "KI-Entwurf meiner Vorstellung redigieren",
+      "ziel": "Sie beurteilen, was eine KI beim adressatengerechten Aufbereiten über Sie leistet — und wo Ihre eigene Prüfung von Auswahl, Beleg und Selbstkundgabe unersetzlich bleibt.",
+      "bezug": "Nutzt alle drei Herausforderungen: die belegten Angaben zu den drei Lernorten als Sachgrundlage (A), das Steckbrief-Doppel mit seinen zwei Fassungen und Zonen als Auswahl-Handwerk (B) und die begründete Richtung der Zukunftskarte als Antwort auf die Frage nach dem Danach (C) — und wendet das Transfer-Prinzip an: Wer etwas über sich oder seine Lage mitteilt, wählt aus; die Auswahl richtet sich nach dem Gegenüber und nach dem Zweck und ist begründbar, auch wenn sie etwas weglässt. Am Berufsinfo-Abend entscheidet genau diese Auswahl, ob ein Blatt zutrifft oder nur gut aussieht.",
+      "auftrag": "Lassen Sie eine KI ein kurzes Vorstellungsblatt über Ihre Ausbildung schreiben — für ein Publikum, das Sie nicht kennt, mit allen Angaben, die Sie ihr geben. Redigieren Sie den Entwurf anschliessend wie eine Redaktorin oder ein Redaktor: Prüfen Sie jede Sachangabe auf Belegbarkeit (steht das so in Ihrem Vertrag, Stundenplan oder üK-Aufgebot?), prüfen Sie mit der Teilbotschaft Selbstkundgabe, welches Bild von Ihnen der Text erzeugt, ordnen Sie jede Angabe einer Zone zu und markieren Sie, was der Entwurf weglässt und ob dieses Weglassen den Rest verfälscht. Erstellen Sie daraus Ihre eigene, bessere Fassung von 80 bis 100 Wörtern und dokumentieren Sie mindestens drei begründete Änderungen.",
+      "prompt_strategie": [
+        "Kontextualisieren Sie vollständig: Beruf, Lehrjahr, wer zuhört, was diese Personen nach dem Lesen wissen sollen — und was sie mit Ihnen vorhaben.",
+        "Geben Sie das Format vor: 80 bis 100 Wörter, Ich-Form, jede Sachangabe mit der Quelle in Klammern, keine Adjektive ohne Beleg.",
+        "Verlangen Sie, dass die KI jede Angabe markiert, die sie nicht aus Ihrem Kontext hat, sondern selbst ergänzt hat — das macht die erfundenen Stellen sichtbar.",
+        "Zweiter Prompt: «Nenne drei Angaben, die dein Entwurf weglässt, und sag mir zu jeder, ob mein Blatt dadurch nur kürzer oder bereits schöngefärbt wird.»"
+      ],
+      "ki_frei_vorher": "Notieren Sie OHNE KI: die drei Angaben, die auf Ihrem Blatt unbedingt stehen müssen, das Publikum, für das Sie schreiben, und eine Angabe, die Sie bewusst weglassen — mit einem Satz Begründung.",
+      "schritte": [
+        "Publikum bestimmen; die drei Pflichtangaben und die eine bewusste Auslassung KI-frei festhalten.",
+        "Der KI vollständigen Kontext und die Formatvorgabe geben und den Entwurf schreiben lassen.",
+        "Redaktionsprüfung Sachebene: jede Sachangabe gegen Lehrvertrag, Stundenplan oder üK-Aufgebot halten und Erfundenes streichen.",
+        "Redaktionsprüfung Beziehungsebene: mit der Teilbotschaft Selbstkundgabe Satz für Satz notieren, welches Bild entsteht, und jede Angabe einer Zone zuordnen.",
+        "Eigene Fassung von 80 bis 100 Wörtern schreiben; mindestens drei Änderungen begründen, davon mindestens eine gestrichene unbelegte Angabe — und in einem Satz festhalten, was Ihre Fassung bewusst nicht zeigt."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Vollständiger Kontext-Prompt",
+          "indikator": "Der erste Prompt enthält Beruf, Lehrjahr, Publikum, gewünschte Wirkung und die Formatvorgabe (Länge, Ich-Form, Quelle je Angabe)."
+        },
+        {
+          "kriterium": "Beleg-Verifikation",
+          "indikator": "Jede Sachangabe des KI-Entwurfs ist in einem eigenen Dokument oder im Lehrmittel nachgeschlagen und als belegt, ungeprüft oder erfunden markiert."
+        },
+        {
+          "kriterium": "Redaktion dokumentiert",
+          "indikator": "Mindestens drei begründete Änderungen sind festgehalten, davon mindestens eine gestrichene unbelegte Angabe."
+        },
+        {
+          "kriterium": "Auslassung verantwortet",
+          "indikator": "Die eigene Fassung nennt in einem Satz, was sie nicht zeigt, und begründet, weshalb das den Rest nicht verfälscht."
+        }
+      ],
+      "reflexion": [
+        "Was hat die KI beim Formulieren schneller gekonnt als Sie — und welche Angabe hätte nur Sie selbst richtig setzen können?",
+        "Welche erfundene oder ungeprüfte Angabe hätten Sie ohne die Beleg-Prüfung stehen lassen? Was wäre am Berufsinfo-Abend passiert, wenn jemand nachgefragt hätte?",
+        "Im Kompetenznachweis schreiben Sie ohne KI: Der Mini Case schriftlich verlangt in Aufgabe 3, drei Angaben für das A4-Blatt zu formulieren und eine bewusst wegzulassen, die Werkschau verlangt eine Werkwahl-Begründung dazu, was Ihr Leitstück zeigt und was nicht. Was aus dieser Redaktion müssen Sie danach allein beherrschen?"
+      ]
+    }
+  ]
+}

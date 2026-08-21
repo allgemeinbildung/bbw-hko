@@ -1,0 +1,233 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_prinzip",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "ausbildung_erfassen_zeigen",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "kern_kompetenzversprechen": "Ich kann Informationen über meine Ausbildung aus analogen und digitalen Quellen zusammentragen und für ein bestimmtes Gegenüber verständlich aufbereiten.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3",
+    "LF4": "K3+ oder K4"
+  },
+  "herausforderungen": {
+    "_kommentar": "Progression der Blickrichtung: aussen (A) — ich für andere (B) — ich morgen (C). Jedes Handlungsprodukt ist zugleich ein Portfolio-Baustein; die drei Bausteine werden im KN-Typ Werkschau kuratiert und digital zusammengestellt. Die Reihenfolge ist nicht zwingend: B setzt als einziges kein mitgebrachtes Dokument voraus und ist deshalb der Ersatz-Einstieg, wenn die Klasse den Lehrvertrag am ersten Schultag nicht dabei hat.",
+    "A": {
+      "herausforderung": "Lernorte erschliessen",
+      "konfliktart": "Was der Lehrvertrag regelt vs. was ich in meiner neuen Rolle im Betrieb erlebe",
+      "handlungsprodukt_typ": "Orientierungsblatt zu den drei Lernorten, jede Aussage mit Quellenbeleg",
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Mich adressatengerecht zeigen",
+      "konfliktart": "Offenheit vs. Zurückhaltung — welche Rolle ich wem gegenüber zeige und wofür ich Verantwortung übernehme",
+      "handlungsprodukt_typ": "Steckbrief-Doppel: zwei Fassungen derselben Selbstvorstellung, an einer Partnerperson erprobt",
+      "transferrable": true
+    },
+    "C": {
+      "herausforderung": "Meine Richtung begründen",
+      "konfliktart": "Erwartungen meines Umfelds vs. eigener Wunsch — meine Rolle und meine Werthaltung im Blick auf den Tag nach dem EFZ",
+      "handlungsprodukt_typ": "Zukunftskarte «Der Tag nach meinem EFZ» mit begründeter Wahl",
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "_kommentar": "SK6 und SK8 sind Zirkularitäts-SK von T1 auf R1. SK1, SK4, SK7 und SK11 folgen der Praxis der bestehenden T1-Einheiten. SK8 auf R1 ist zugleich der Grund, weshalb der Zukunftsblick in C curricular trägt, obwohl «berufliche Zukunft planen» erst in T8 sein eigenes Thema wird.",
+    "A": [
+      1,
+      6,
+      11
+    ],
+    "B": [
+      4,
+      7,
+      11
+    ],
+    "C": [
+      6,
+      8,
+      11
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      6,
+      11
+    ]
+  },
+  "aspekte": {
+    "Recht": "R1",
+    "Ethik": "R1",
+    "Identität und Sozialisation": "R1"
+  },
+  "modi_units": {
+    "_kommentar": "«Produktion schriftlich und bildlich» steht nicht in der nRLP-Kompetenz 1.1.1 (dort nur Rezeption schriftlich und Interaktion mündlich), wird aber von allen drei Portfolio-Bausteinen tatsächlich trainiert. Aufgenommen, weil die Einheit sonst einen Modus verschweigt, den sie übt — von der Lehrperson bestätigt.",
+    "liste": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ]
+  },
+  "modi_kn": {
+    "_kommentar": "Obermenge von modi_units; für das Fachgespräch kommt Produktion mündlich dazu.",
+    "liste": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich",
+      "Produktion mündlich"
+    ]
+  },
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe",
+      "Alles von mir zeigen vs. für mein Gegenüber auswählen und weglassen",
+      "Erwartungen meines Umfelds vs. mein eigener Wunsch für morgen"
+    ],
+    "verbindlich": "Beide Seiten müssen begründbar bleiben — bewertet wird die Begründung der Auswahl, nie die Menge des Gezeigten."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Wer etwas über sich oder seine Lage mitteilt, wählt aus. Die Auswahl richtet sich nach dem Gegenüber und nach dem Zweck — und sie ist begründbar, auch wenn sie etwas weglässt.",
+    "transferfeld": "Jede Situation ausserhalb der Schule, in der ich einer Person, die mich nicht kennt, in kurzer Zeit ein zutreffendes Bild von mir oder meiner Lage geben muss."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T4 (4.1 Wohlbefinden) nimmt Identität und Selbstwert erneut auf — dann mit Blick auf Belastung statt auf Orientierung.",
+    "r3_voraussicht": "T8 (8.2 Berufliche Zukunft planen) öffnet den Horizont, den C hier bewusst kurz hält: reale Anschlusswege, Bewerbungsunterlagen, Arbeitsmarkt."
+  },
+  "quellen_anker": {
+    "_kommentar": "Gegengelesen mit dem NotebookLM «Allgemeinbildung26» (2026-08-20). Kap. 17.4 Korrespondenz ist bewusst NICHT gelistet: seine Vorlagen zielen auf Bewerbungsschreiben und Lebenslauf und ziehen eine Selbstvorstellung in eine steife Leistungspräsentation. Der Sachanker für B ist stattdessen 19.2 (Teilbotschaft Selbstkundgabe). Kap. 18.2 endet bei S. 414 — das moralische Dilemma auf S. 415 ist für das 1. Lehrjahr zu anspruchsvoll und im Fallbeispiel emotional überfordernd.",
+    "chapters": [
+      {
+        "ref": "Kap. 1.1",
+        "titel": "Schule und Betrieb",
+        "seiten": "S. 12–15"
+      },
+      {
+        "ref": "Kap. 1.4",
+        "titel": "Der Lehrvertrag",
+        "seiten": "S. 28–34"
+      },
+      {
+        "ref": "Kap. 15.2",
+        "titel": "Qualifizierung für den Arbeitsmarkt",
+        "seiten": "S. 357–358"
+      },
+      {
+        "ref": "Kap. 16.2",
+        "titel": "Statement",
+        "seiten": "S. 368"
+      },
+      {
+        "ref": "Kap. 16.3",
+        "titel": "Präsentation",
+        "seiten": "S. 369–370"
+      },
+      {
+        "ref": "Kap. 17.1",
+        "titel": "Lesetechnik",
+        "seiten": "S. 380"
+      },
+      {
+        "ref": "Kap. 17.2",
+        "titel": "Dokumentieren",
+        "seiten": "S. 381–392"
+      },
+      {
+        "ref": "Kap. 17.3",
+        "titel": "Argumentieren",
+        "seiten": "S. 394–395"
+      },
+      {
+        "ref": "Kap. 18.1",
+        "titel": "Identität",
+        "seiten": "S. 412"
+      },
+      {
+        "ref": "Kap. 18.2",
+        "titel": "Werte, Normen, Moral und Ethik",
+        "seiten": "S. 413–414"
+      },
+      {
+        "ref": "Kap. 18.4",
+        "titel": "Motivation",
+        "seiten": "S. 420"
+      },
+      {
+        "ref": "Kap. 19.1",
+        "titel": "Feedback",
+        "seiten": "S. 424–425"
+      },
+      {
+        "ref": "Kap. 19.2",
+        "titel": "Konflikte",
+        "seiten": "S. 427"
+      },
+      {
+        "ref": "Kap. 20.3",
+        "titel": "Zielformulierung",
+        "seiten": "S. 438"
+      },
+      {
+        "ref": "Kap. 20.8",
+        "titel": "Recherchieren",
+        "seiten": "S. 451"
+      }
+    ],
+    "konzepte": [
+      "Duale Berufsbildung: Lehrbetrieb, Berufsfachschule, überbetriebliche Kurse",
+      "Bildungsverordnung und Bildungsplan",
+      "Obligatorische Bestandteile des Lehrvertrags",
+      "Rechte und Pflichten der Lernenden",
+      "Selbstkundgabe",
+      "Selbstbild und Fremdbild",
+      "Soziale Rolle und Rollenerwartung",
+      "Selbstwert",
+      "Intrinsische und extrinsische Motivation",
+      "SMART-Ziel",
+      "Quellenangabe"
+    ]
+  },
+  "persona_pool_units": {
+    "_kommentar": "BEWUSSTE ABWEICHUNG von der Abteilungs-Mix-Pflicht (hko-framework.md §11) und von der 1:1-Pool-Verbrauchsregel (Check 14) — gleiches Vorgehen wie in 1.1.1_einstieg_interview. In dieser Einheit arbeiten die Lernenden an sich selbst: am eigenen Lehrvertrag, an der eigenen Selbstvorstellung, an der eigenen Richtung. Ein zugewiesener Beruf mit Betrieb und Ort würde die Ich-Perspektive nicht stützen, sondern verstellen — die lernende Person müsste sich erst in eine Maurerin hineinversetzen, um über ihre eigene Ausbildung nachzudenken. Deshalb eine einzige generische Persona für alle drei Herausforderungen. Die Musterlösungen bleiben konkret: sie zeigen die Abgabe einer fremden Person und sind im hinweis-Feld entsprechend gerahmt.",
+    "berufe": [
+      "Lernende/r EFZ"
+    ],
+    "orte": [
+      "Schweiz"
+    ]
+  },
+  "persona_pool_kn_neu": {
+    "_kommentar": "Bleibt konkret — und zwar gerade weil die Units generisch sind. Der Kompetenznachweis ist der Unseen-Transfer: die lernende Person verlässt die eigene Lage und beurteilt einen fremden Fall. Laborant/in EFZ bringt dafür eine Abteilung, die in den Units gar nicht vorkommt.",
+    "berufe": [
+      "Laborant/in EFZ",
+      "Plattenleger/in EFZ"
+    ],
+    "orte": [
+      "Chur",
+      "Aarau"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf und Ort kommen in keiner herausforderung_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ]
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "ausbildung_erfassen_zeigen",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+
+  "set_ref": "1.1.1_ausbildung_erfassen_zeigen_set",
+  "prinzip_ref": "1.1.1_ausbildung_erfassen_zeigen_prinzip",
+  "anchored_situations": [
+    "1.1.1_ausbildung_erfassen_zeigen_hf_A",
+    "1.1.1_ausbildung_erfassen_zeigen_hf_B",
+    "1.1.1_ausbildung_erfassen_zeigen_hf_C"
+  ],
+
+  "dominanter_aspekt": "Identität und Sozialisation",
+  "kern_kompetenzversprechen": "Ich kann Informationen über meine Ausbildung aus analogen und digitalen Quellen zusammentragen und für ein bestimmtes Gegenüber verständlich aufbereiten.",
+  "mehrdeutigkeits_pflicht": "Beide Seiten müssen begründbar bleiben — bewertet wird die Begründung der Auswahl, nie die Menge des Gezeigten.",
+
+  "hybrid_situation": {
+    "titel": "Der Stand am Berufsinfo-Abend",
+    "definition_kurz": "Eine einzelne Situation, in der alles zusammenkommt, was Sie in den drei Herausforderungen einzeln geübt haben.",
+    "definition_lang": "Die Hybrid-Herausforderung ist keine vierte Lernaufgabe, sondern der Prüffall: eine neue Szene mit neuer Person und neuem Betrieb, in der die Konfliktarten aller drei Herausforderungen gleichzeitig wirksam sind. Wer nur eine der drei Herausforderungen bearbeitet hat, kann die Szene beschreiben, aber nicht auflösen — genau daran zeigt sich, ob das gemeinsame Prinzip erworben wurde.",
+    "persona": {
+      "beruf": "Laborant/in EFZ",
+      "betrieb": "Labor Grischun AG",
+      "ort": "Chur"
+    },
+    "text": "Ich bin Laborant/in im 1. Lehrjahr bei der Labor Grischun AG in Chur. Am Berufsinfo-Abend stehe ich am Stand meines Betriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Ich habe ein A4-Blatt vorbereitet. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur Geschirr gespült habe. Ein Vater fragt, was ich danach mache. Meine Ausbildnerin steht einen Meter weiter. Zu Hause habe ich diese Frage längst anders beantwortet als hier. Und beim üK-Ablauf, nach dem eine Mutter fragt, bin ich mir selbst nicht sicher.",
+    "leitfrage": "Was gehört auf mein Blatt und in meine Antwort — und wem gegenüber verantworte ich diese Auswahl?",
+    "aktivierte_trade_offs": [
+      "Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe",
+      "Alles von mir zeigen vs. für mein Gegenüber auswählen und weglassen",
+      "Erwartungen meines Umfelds vs. mein eigener Wunsch für morgen"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Der üK-Ablauf, nach dem die Mutter fragt und bei dem die lernende Person unsicher ist, sowie die zwei Wochen Geschirrspülen — was im Bildungsplan steht und was tatsächlich geschah."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Das vorbereitete A4-Blatt und die Vorgabe, es «positiv» zu halten: eine Auswahl für ein Publikum, das die Person nicht kennt."
+        },
+        {
+          "hf_letter": "C",
+          "scene_element": "Die Frage des Vaters nach dem Danach, die zu Hause längst anders beantwortet wurde."
+        }
+      ],
+      "new_dimensions": [
+        "Eine Person mit Weisungsbefugnis hört mit, während geantwortet wird. In A, B und C entscheidet die lernende Person unbeobachtet. Von der Lehrperson bewusst freigegeben: die Anwesenheit der Ausbildnerin macht aus der Schreibübung eine Entscheidung und ist im 1. Lehrjahr der Normalfall."
+      ]
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit der Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, wie Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse zusammenspielen — so, wie Sie es an diesem Abend einer Familie erklären würden, die das System nicht kennt.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Auf dem A4-Blatt steht die Ausbildung in der Fassung des Betriebs. Welche Angabe würden Sie ergänzen, damit das Blatt für diese Jugendlichen zutrifft — und welche würden Sie trotzdem weglassen?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Zwei Dinge fehlen: die zwei Wochen Geschirrspülen und der üK-Ablauf, den Sie selbst nicht kennen. Ist das zweimal dasselbe Problem oder sind es zwei verschiedene? Begründen Sie.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie diesen Abend mit einer Ihrer drei Lernaufgaben. Was funktioniert gleich — und was ist hier schwieriger als dort?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Ihre Ausbildnerin steht einen Meter weiter, als der Vater nach Ihrer Zukunft fragt. Wem gegenüber sind Sie in diesem Moment verpflichtet — und weshalb ist das mehr als eine Frage der Höflichkeit?",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [6, 7, 11],
+      "aspekte": ["Recht", "Ethik", "Identität und Sozialisation"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach Entscheid der Lehrperson; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie in drei bis fünf Sätzen, welche Aufgabe Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse haben. Nennen Sie zu jedem Lernort, wo diese Aufgabe geregelt ist.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Auf dem Blatt fehlen zwei Dinge: die zwei Wochen Geschirrspülen und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Formulieren Sie die drei Angaben, die auf dem A4-Blatt stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was das Blatt dadurch nicht mehr zeigt.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form, was Sie von Ihrem Betrieb erwarten, damit Sie an einem solchen Abend ehrlich Auskunft geben können — und was Sie im Gegenzug zusichern.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [1, 6, 11],
+      "aspekte": ["Recht", "Ethik", "Identität und Sozialisation"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "Portfolio, digital zusammengestellt (+ optional Kurzpräsentation 5 Min.)",
+      "_format_hinweis": "Abweichung vom Skill-Default: Dort wählen die Lernenden EIN Handlungsprodukt aus. In dieser Einheit sind die drei Produkte kumulativ angelegt — sie bilden zusammen das Portfolio. Gewählt wird deshalb nicht das Produkt, sondern das Leitstück.",
+      "ablauf": [
+        "Die drei Handlungsprodukte aus den Lernaufgaben werden zu einem Portfolio zusammengestellt und digital abgegeben — Orientierungsblatt, Steckbrief-Doppel, Zukunftskarte.",
+        "Deckblatt mit Werkwahl-Begründung (2-3 Sätze): Welches der drei Stücke zeigt am meisten über Sie — und was zeigt es nicht?",
+        "Transfer-Reflexion (200-250 Wörter): die drei Fragen schriftlich beantworten.",
+        "Optional 5 Min. Kurzpräsentation des Leitstücks vor der Klasse."
+      ],
+      "reflexionsfragen": [
+        "Nennen Sie drei Dinge, die Sie nach diesen drei Wochen sicher können — und je eine Stelle in Ihrem Portfolio, an der man das sieht.",
+        "Formulieren Sie in einem Satz das Prinzip, das alle drei Stücke gemeinsam haben. Zeigen Sie dann, wo dieses Prinzip am Berufsinfo-Abend sichtbar wird: Was ist gleich, was ist anders?",
+        "Nennen Sie eine Sache, die Sie noch nicht gut können, und den einen Schritt, mit dem Sie sie bis zu einem selbst gesetzten Termin verbessern. Und: Wann trägt das Prinzip nicht mehr — wann wäre Auswählen nicht mehr zulässig, sondern unehrlich?"
+      ],
+      "sk": [6, 11],
+      "aspekte": ["Recht", "Ethik", "Identität und Sozialisation"],
+      "sprachmodi": ["Produktion schriftlich und bildlich"],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe fehlen oder falsch verwendet.",
+          "Begriffe teilweise korrekt.",
+          "Begriffe korrekt und situationsangemessen.",
+          "Differenziert, kontextualisiert, eigenständig formuliert."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung erkennbar.",
+          "Begründung ansatzweise vorhanden.",
+          "Begründung nachvollziehbar und strukturiert.",
+          "Schlüssig, differenziert, Gegenargumente berücksichtigt."
+        ]
+      },
+      {
+        "name": "Identitätskonstrukt",
+        "dimension": "Ges",
+        "stufen": [
+          "Prinzip nicht angewendet.",
+          "Prinzip teilweise erkennbar.",
+          "Prinzip korrekt auf die Herausforderung angewendet.",
+          "Prinzip auf neue Zusammenhänge übertragen."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position.",
+          "Position angedeutet.",
+          "Position klar in Ich-Form formuliert.",
+          "Position begründet, Mehrdeutigkeit anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 60 %", "definition": "Stufen 1-2 dominant"},
+      {"label": "80 %", "definition": "mehrheitlich Stufe 3"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+    ]
+  },
+
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

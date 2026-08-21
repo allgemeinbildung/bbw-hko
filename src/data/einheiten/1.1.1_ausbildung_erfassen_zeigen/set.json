@@ -1,0 +1,73 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_set",
+  "einheit_titel": "Wo ich lerne, wer ich bin, wohin ich will",
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "lehrgang": "EFZ_3J",
+  "lehrgaenge": ["EFZ_3J", "EFZ_4J"],
+  "thema": "T1",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "status": "entwurf",
+  "entwurf_komponenten": [],
+
+  "prinzip_ref": "1.1.1_ausbildung_erfassen_zeigen_prinzip",
+  "kn_ref": "1.1.1_ausbildung_erfassen_zeigen_kn",
+  "herausforderungen": [
+    "1.1.1_ausbildung_erfassen_zeigen_hf_A",
+    "1.1.1_ausbildung_erfassen_zeigen_hf_B",
+    "1.1.1_ausbildung_erfassen_zeigen_hf_C"
+  ],
+
+  "einsatz_hinweis": {
+    "empfohlen": "Alle drei Herausforderungen mit derselben Klasse, in drei aufeinanderfolgenden Wochen. Jede lernende Person baut alle drei Produkte — sie bilden zusammen das Portfolio, das im Kompetenznachweis als Werkschau gezeigt wird.",
+    "reihenfolge": "A → B → C zeigt den inhaltlichen Aufbau (aussen — ich für andere — ich morgen), nicht eine zwingende Sequenz. Bringt die Klasse am ersten Schultag den Lehrvertrag nicht mit, starten Sie mit B: B setzt als einziges kein mitgebrachtes Dokument voraus, sondern nur die Person selbst. A folgt, sobald die Verträge da sind.",
+    "minimal": "Eine einzelne Herausforderung ist in sich geschlossen und funktioniert ohne die anderen zwei. Dann entfällt allerdings das Portfolio, und der Kompetenznachweis muss auf das gekürzt werden, was tatsächlich geübt wurde.",
+    "medienwechsel": "A, B und C entstehen auf Papier. Erst für die Werkschau wird das Portfolio digital zusammengestellt — der Wechsel vom Blatt zur abrufbaren Sammlung ist Teil des Nachweises, nicht bloss Formsache."
+  },
+
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "1.1.1_ausbildung_erfassen_zeigen_hf_A",
+      "konzept": "Zuständigkeit ist geregelt, Alltag ist gelebt — wer sich orientieren will, muss beides kennen und auseinanderhalten können."
+    },
+    {
+      "position": 2,
+      "herausforderung": "1.1.1_ausbildung_erfassen_zeigen_hf_B",
+      "konzept": "Wer über sich schreibt, wählt aus. Die Auswahl folgt dem Gegenüber — und sie ist begründbar, solange das Weggelassene den Rest nicht verfälscht."
+    },
+    {
+      "position": 3,
+      "herausforderung": "1.1.1_ausbildung_erfassen_zeigen_hf_C",
+      "konzept": "Eine Richtung wird nicht dadurch zur eigenen, dass man sie wählt, sondern dadurch, dass die Begründung einem selbst gehört."
+    }
+  ],
+
+  "austausch_phase": {
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "fokus": "Identität, Rollen und Zukunft — was in den drei Produkten über die Person steht, die sie gemacht hat.",
+    "voraussetzung": "Alle drei Produkte liegen vor: Orientierungsblatt, Steckbrief-Doppel, Zukunftskarte. Wer eine Herausforderung ausgelassen hat, nimmt am Austausch mit zwei Produkten teil und benennt in Runde 1, was fehlt.",
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Produkte zeigen — 90 Sekunden pro Person: das Orientierungsblatt kurz, dann eine einzige Angabe aus dem Steckbrief-Doppel, die nur in einer der beiden Fassungen steht, und der Schritt von der Zukunftskarte.",
+      "runde_2": "Rollen vergleichen — Legen Sie die drei Produkte einer Person nebeneinander. Welche Rolle zeigt jedes? In der Gruppe eine Liste führen: Rollen, die alle in der Runde haben, und Rollen, die nur einzelne haben.",
+      "runde_3": "Zukunft prüfen — Wessen Erwartung taucht in mehreren Zukunftskarten auf, ohne dass die Person am Tisch sitzt? Und welche Angabe würde jemand heute anders in eine Zone legen als vor drei Wochen?"
+    },
+    "einzelarbeit_plenum": "Die Lehrperson sammelt die Rollenlisten an der Wandtafel und führt die Diskussion auf die Frage zu, weshalb dieselbe Person auf drei Blättern drei verschiedene Bilder von sich erzeugt hat, ohne einmal zu lügen. Zielpunkt ist nicht «man passt sich eben an», sondern die Einsicht, dass die Auswahl das Bild herstellt — und dass sie deshalb begründet werden muss.",
+    "einzelauftrag": "Fassen Sie in fünf Sätzen zusammen, was Ihre drei Produkte gemeinsam haben. Nennen Sie zu jedem Satz ein Beispiel aus Ihrem eigenen Lehralltag. Schliessen Sie mit einem Satz darüber, welche Rolle in allen drei Produkten vorkommt — und welche nur in einem."
+  },
+
+  "dekontextualisierungs_aufgabe": {
+    "auftrag": "Übertragen Sie das Kernprinzip Ihrer drei Herausforderungen auf einen neuen, selbst gewählten Zusammenhang ausserhalb der Schule.",
+    "format": "schriftlich, 5-7 Sätze, mit den Begriffen aus dem Lehrmittel",
+    "ziel": "Wer etwas über sich oder seine Lage mitteilt, wählt aus. Die Auswahl richtet sich nach dem Gegenüber und nach dem Zweck — und sie ist begründbar, auch wenn sie etwas weglässt.",
+    "beispiele_aus_den_herausforderungen": [
+      "Ich muss mich in einer Organisation zurechtfinden, die ich noch nicht kenne — einem Verein, einem neuen Betrieb, einer Behörde. Welche vier Fragen stelle ich, und welches Dokument beantwortet sie?",
+      "Ich stelle mich einer Gruppe vor, die mich nicht kennt — einem neuen Team, einem Verein, einer Wohngemeinschaft. Welche Angabe lasse ich weg, und was zeige ich dadurch nicht mehr?",
+      "Ich stehe vor einer Entscheidung, zu der mehrere Personen eine Meinung haben — Wohnort, Freizeit, Geld. Wie finde ich heraus, welche Stimme darin meine eigene ist?"
+    ],
+    "gewicht_prozent": 15,
+    "abgabe": "Woche 3 — vor dem Kompetenznachweis"
+  }
+}

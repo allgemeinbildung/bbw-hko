@@ -1,0 +1,608 @@
+{
+  "id": "1.1.1_ausbildung_erfassen_zeigen_hf_A",
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Drei Orte, ein Vertrag — wer ist wofür zuständig?",
+  "wissensknoten": [
+    "duale_berufsbildung_lernorte"
+  ],
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sk": [
+      1,
+      6,
+      11
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM5"
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ",
+    "betrieb": "Berufsfachschule",
+    "ort": "Schweiz"
+  },
+  "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. Seit sechs Wochen habe ich drei Lernorte: den Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse. Geregelt ist das alles in einem einzigen Dokument, das bei mir zu Hause in einer Mappe liegt. Gestern kam per Post das üK-Aufgebot für zwei Tage im November — im Betrieb sagt man mir, davon wisse niemand etwas, ich solle das «mit dem Büro klären». Ich merke, dass ich nicht sagen könnte, wer eigentlich wofür zuständig ist. Und ich merke auch, dass in meinem Vertrag Dinge stehen, die im Alltag anders laufen.",
+  "zahlen_tabelle": [
+    {
+      "label": "Ferien bis zum vollendeten 20. Altersjahr",
+      "wert": "5 Wochen"
+    },
+    {
+      "label": "Tägliche Höchstarbeitszeit unter 18 Jahren",
+      "wert": "9 Stunden"
+    },
+    {
+      "label": "Berufsfachschulunterricht",
+      "wert": "gilt als Arbeitszeit"
+    }
+  ],
+  "leitfrage": "Wer ist für welchen Teil meiner Ausbildung zuständig — und wo steht das?",
+  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie brauchen dafür das Lehrmittel und Ihren eigenen Lehrvertrag.",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.1 | S. 12-13",
+      "text": "Erklären Sie in eigenen Worten, welche Aufgabe der Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse in Ihrer Ausbildung haben.",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Lernorte, drei Aufgaben — im Gesetz geregelt.",
+        "zeilen": [
+          {
+            "label": "Lehrbetrieb",
+            "text": "Ort der praktischen Bildung. Grundlage ist die Bildungsverordnung des jeweiligen Berufs.",
+            "quelle": "BBG 19"
+          },
+          {
+            "label": "Berufsfachschule",
+            "text": "Schulische Bildung, bestehend aus beruflichem und allgemeinbildendem Unterricht.",
+            "quelle": "BBG 21f."
+          },
+          {
+            "label": "Überbetriebliche Kurse",
+            "text": "Ergänzen Praxis und Schule dort, wo grundlegende Fertigkeiten sonst fehlen würden.",
+            "quelle": "BBG 23"
+          },
+          {
+            "label": "Gemeinsam getragen",
+            "text": "Schule, Lehrbetriebe und Berufsverbände zusammen. Die Lernenden wechseln in Abständen den Ort.",
+            "quelle": "Kap. 1.1 S. 12"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.4 | S. 29",
+      "text": "Suchen Sie in Ihrem eigenen Lehrvertrag die obligatorischen Bestandteile und notieren Sie, was bei Ihnen jeweils konkret steht.",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Fünf Punkte müssen im Vertrag stehen — OR 344a.",
+        "zeilen": [
+          {
+            "label": "Obligatorisch 1",
+            "text": "Art und Dauer der beruflichen Ausbildung mit genauer Berufsbezeichnung.",
+            "quelle": "OR 344a"
+          },
+          {
+            "label": "Obligatorisch 2-5",
+            "text": "Dauer der Probezeit, Arbeitszeit, Lohn und Ferien.",
+            "quelle": "OR 344a"
+          },
+          {
+            "label": "Nur empfohlen",
+            "text": "Berufskleider und Werkzeug, Schulmaterial, Unterkunft, Versicherungsprämien, Reisespesen.",
+            "quelle": "Kap. 1.4 S. 29"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Empfohlene Punkte werden für obligatorische gehalten. Fehlen sie, ist der Vertrag trotzdem gültig.",
+            "quelle": ""
+          }
+        ]
+      }
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 1.4 | S. 35",
+      "text": "Eine Angabe aus Ihrem Vertrag stimmt nicht mit dem überein, was Sie im Betrieb erleben. An wen wenden Sie sich zuerst — und weshalb nicht sofort an die nächsthöhere Stelle?",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Zuerst im Betrieb klären, erst dann nach aussen.",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Das Gespräch mit der berufsbildenden Person suchen — sie hat den Vertrag mitunterschrieben und kann ihn ändern.",
+            "quelle": "Kap. 1.4 S. 35"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Vorher eine Vertrauensperson beiziehen und mit ihr ordnen, worum es genau geht.",
+            "quelle": "Kap. 1.4 S. 35"
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Sofort das Amt für Berufsbildung anrufen. Es vermittelt erst, wenn sich die Vertragsparteien nicht einigen können.",
+            "quelle": "Kap. 1.4 S. 35"
+          },
+          {
+            "label": "Zuständigkeiten",
+            "text": "Kanton: Aufsicht. Berufsverband: Bildungsplan und üK. Schule: Stundenplan und Hausordnung.",
+            "quelle": "Kap. 1.1 S. 15"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 20.8 | S. 451",
+      "text": "Formulieren Sie für eine einzige Ihrer Angaben die Quellenzeile so, dass eine andere Person sie ohne Rückfrage überprüfen kann.",
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Eine Quellenzeile nennt Dokument und Fundstelle.",
+        "zeilen": [
+          {
+            "label": "Bauteil 1",
+            "text": "Name des Dokuments: Lehrvertrag, Bildungsverordnung, Stundenplan, üK-Aufgebot.",
+            "quelle": "Kap. 20.8 S. 451"
+          },
+          {
+            "label": "Bauteil 2",
+            "text": "Die Fundstelle: Ziffer, Seite oder Abschnitt. Nicht «steht irgendwo im Vertrag».",
+            "quelle": "Kap. 20.8 S. 451"
+          },
+          {
+            "label": "Bauteil 3",
+            "text": "Wörtlich Übernommenes in Anführungszeichen. Sinngemäss Wiedergegebenes braucht ebenso eine Angabe.",
+            "quelle": "Kap. 20.8 S. 451"
+          },
+          {
+            "label": "Massstab",
+            "text": "Eine zweite Person findet die Stelle allein mit dieser Zeile — ohne Sie zu fragen.",
+            "quelle": ""
+          }
+        ]
+      }
+    }
+  ],
+  "mindmap_zentrum": "Meine Ausbildung — wer, wo, wonach",
+  "mindmap_aeste": [
+    {
+      "titel": "Lehrbetrieb",
+      "punkte": [
+        "Praktische Bildung",
+        "Bildungsverordnung (BiVo)",
+        "Berufsbildner/in",
+        "Betriebsordnung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Berufsfachschule",
+      "punkte": [
+        "Beruflicher Unterricht",
+        "Allgemeinbildender Unterricht",
+        "Stundenplan und Hausordnung",
+        "Gilt als Arbeitszeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Überbetriebliche Kurse",
+      "punkte": [
+        "Grundlegende Fertigkeiten",
+        "Getragen vom Berufsverband",
+        "Eigenes Reglement",
+        "Aufgebot kommt per Post"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer beaufsichtigt das?",
+      "punkte": [
+        "Bund: BBG, OR, ArG",
+        "Kanton: Aufsicht und Reglemente",
+        "Berufsverband: Bildungsplan",
+        "Amt für Berufsbildung vermittelt"
+      ],
+      "optional": true
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Orientierungsblatt",
+    "titel": "Meine drei Lernorte auf einem Blatt",
+    "format_detail": "Ein A4-Blatt im Querformat mit drei Spalten. Pro Lernort vier Angaben, jede mit Fundstelle, dazu eine Zeile «Das erlebe ich anders».",
+    "beschreibung": "Ich baue ein Blatt, das meine eigene Ausbildung zeigt — nicht die Ausbildung allgemein. Jede Angabe darauf stammt aus einem Dokument, das ich benennen kann: mein Lehrvertrag, die Bildungsverordnung meines Berufs, mein Stundenplan, mein üK-Aufgebot. Pro Lernort halte ich zusätzlich in einer Zeile fest, wo mein Alltag von dem abweicht, was im Dokument steht. Am Ende hängt das Blatt in meinem Portfolio und ich könnte damit jemandem in fünf Minuten erklären, wie meine Ausbildung aufgebaut ist.",
+    "abgaben": [
+      "Orientierungsblatt A4 quer, drei Spalten, je vier belegte Angaben",
+      "Pro Lernort eine Zeile «Das erlebe ich anders» (ein bis zwei Sätze)"
+    ],
+    "schritte": [
+      {
+        "label": "Dokumente zusammentragen",
+        "hint": "Lehrvertrag, Stundenplan, üK-Aufgebot. Fehlt eines, notieren Sie, wo Sie es bekommen — die Lücke gehört aufs Blatt."
+      },
+      {
+        "label": "Fragen aufschreiben, dann suchen",
+        "hint": "Pro Lernort vier Fragen formulieren, bevor Sie das Dokument öffnen. Ohne Frage lesen Sie alles und finden nichts."
+      },
+      {
+        "label": "Angaben mit Fundstelle notieren",
+        "hint": "Zu jeder Angabe sofort Dokument und Stelle dazuschreiben. Nachträglich suchen kostet dreimal so lange."
+      },
+      {
+        "label": "Abweichung festhalten",
+        "hint": "Pro Lernort eine Zeile: Was steht im Dokument, was erleben Sie? Nur beschreiben, noch nicht bewerten."
+      },
+      {
+        "label": "Blatt gestalten und prüfen",
+        "hint": "Legen Sie das Blatt einer Person aus einem anderen Beruf vor. Versteht sie Ihre Ausbildung ohne Nachfrage?"
+      }
+    ],
+    "schreib_label": "Mein Orientierungsblatt",
+    "schreib_note": "Stichworte genügen — ausser bei der Zeile «Das erlebe ich anders», die braucht ganze Sätze.",
+    "scaffolding": {
+      "satzanfaenge": [
+        "Zuständig für ... ist ..., das steht in ...",
+        "Laut meinem Lehrvertrag ..., im Betrieb ist es aber so, dass ...",
+        "Diese Angabe konnte ich nirgends finden. Ich frage danach bei ..."
+      ],
+      "strategien": [
+        "Erst die Frage aufschreiben, dann das Dokument öffnen — Suchwörter festlegen und alles dazwischen überspringen.",
+        "Für jede der drei Spalten dieselben vier Fragen verwenden. So wird das Blatt vergleichbar.",
+        "Eine Angabe, die Sie nicht belegen können, kommt nicht aufs Blatt — sie kommt auf die Frageliste."
+      ],
+      "struktur": [
+        "Spalte 1 — Lehrbetrieb: vier Angaben mit Fundstelle, dann «Das erlebe ich anders»",
+        "Spalte 2 — Berufsfachschule: gleicher Aufbau",
+        "Spalte 3 — Überbetriebliche Kurse: gleicher Aufbau",
+        "Fusszeile — offene Fragen und wo ich die Antwort hole"
+      ]
+    },
+    "musterloesung": {
+      "hinweis": "Ausgefülltes Beispiel einer lernenden Person aus dem Baugewerbe — nicht Ihr eigener Fall, sondern eine fremde Abgabe auf Stufe 3-4. Die Stärke liegt nicht in der Menge, sondern darin, dass jede Angabe eine Fundstelle trägt und die Abweichung beschrieben statt beurteilt wird.",
+      "abschnitte": [
+        {
+          "titel": "Spalte 1 — Lehrbetrieb",
+          "zeilen": [
+            {
+              "label": "Aufgabe",
+              "text": "Praktische Bildung auf der Baustelle.",
+              "quelle": "Kap. 1.1 S. 12"
+            },
+            {
+              "label": "Grundlage",
+              "text": "Bildungsverordnung Maurer/in EFZ, dazu der Bildungsplan des Berufsverbands.",
+              "quelle": "BBG 19"
+            },
+            {
+              "label": "Meine Person",
+              "text": "Berufsbildner ist der Polier, im Vertrag ist die Geschäftsleiterin als Berufsbildnerin eingetragen.",
+              "quelle": "Lehrvertrag, Ziff. 1"
+            },
+            {
+              "label": "Meine Zeit",
+              "text": "42 Stunden pro Woche, Ferien 5 Wochen.",
+              "quelle": "Lehrvertrag, Ziff. 4 und 6"
+            },
+            {
+              "label": "Das erlebe ich anders",
+              "text": "Im Vertrag steht die Geschäftsleiterin als Berufsbildnerin. Angeleitet werde ich täglich vom Polier. Beides kann stimmen — ich weiss aber nicht, wen ich bei einer Vertragsfrage ansprechen muss.",
+              "quelle": ""
+            }
+          ]
+        },
+        {
+          "titel": "Spalte 2 — Berufsfachschule",
+          "zeilen": [
+            {
+              "label": "Aufgabe",
+              "text": "Schulische Bildung: beruflicher und allgemeinbildender Unterricht.",
+              "quelle": "BBG 21f."
+            },
+            {
+              "label": "Grundlage",
+              "text": "Schullehrplan, Stundenplan, Hausordnung der Schule.",
+              "quelle": "Kap. 1.1 S. 15"
+            },
+            {
+              "label": "Mein Tag",
+              "text": "Donnerstag, 8 Lektionen.",
+              "quelle": "Stundenplan HS 25/26"
+            },
+            {
+              "label": "Rechtlich",
+              "text": "Der obligatorische Unterricht gilt als Arbeitszeit.",
+              "quelle": "ArG 31"
+            },
+            {
+              "label": "Das erlebe ich anders",
+              "text": "Die Schulzeit gilt als Arbeitszeit. Zweimal wurde ich gefragt, ob ich am Schultag nicht doch auf die Baustelle könne, weil Termindruck war. Ich habe zugesagt, ohne zu wissen, dass das nicht vorgesehen ist.",
+              "quelle": ""
+            }
+          ]
+        },
+        {
+          "titel": "Spalte 3 — Überbetriebliche Kurse",
+          "zeilen": [
+            {
+              "label": "Aufgabe",
+              "text": "Grundlegende Fertigkeiten, die Betrieb und Schule nicht abdecken.",
+              "quelle": "BBG 23"
+            },
+            {
+              "label": "Grundlage",
+              "text": "üK-Reglement des Berufsverbands, nicht der Betrieb.",
+              "quelle": "Kap. 1.1 S. 15"
+            },
+            {
+              "label": "Meine Tage",
+              "text": "Zwei Tage im November, Aufgebot kam per Post.",
+              "quelle": "üK-Aufgebot vom 12.09."
+            },
+            {
+              "label": "Wer zahlt",
+              "text": "Für den Besuch der üK dürfen keine Lohnabzüge gemacht werden.",
+              "quelle": "Kap. 2.1 S. 46"
+            },
+            {
+              "label": "Das erlebe ich anders",
+              "text": "Das Aufgebot kam zu mir nach Hause, im Betrieb war das Datum nicht bekannt. Offen ist, wer die Termine dem Betrieb meldet — ich oder der Verband.",
+              "quelle": ""
+            }
+          ]
+        },
+        {
+          "titel": "Fusszeile — was offen bleibt",
+          "zeilen": [
+            {
+              "label": "Offene Frage 1",
+              "text": "Wer ist mein Ansprechpartner bei Vertragsfragen: die im Vertrag eingetragene Person oder der Polier? Ich frage im Büro nach.",
+              "quelle": ""
+            },
+            {
+              "label": "Offene Frage 2",
+              "text": "Muss ich üK-Termine selbst weitergeben? Ich frage beim nächsten üK die Kursleitung.",
+              "quelle": ""
+            },
+            {
+              "label": "Nicht gefunden",
+              "text": "Der Bildungsplan meines Berufs liegt mir nicht vor. Ich hole ihn über die Website des Berufsverbands.",
+              "quelle": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "methoden": [
+    {
+      "ref": "hko-gezielt-suchen",
+      "fuer": "für das Auffinden einzelner Angaben im eigenen Lehrvertrag"
+    },
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für die vier Fragen, die Sie an jeden der drei Lernorte stellen",
+      "tun": "Bilden Sie aus den W-Fragen vier feste Fragen und stellen Sie dieselben vier an alle drei Lernorte — sonst lassen sich die Spalten nachher nicht vergleichen."
+    },
+    {
+      "ref": "lm-20-8-quellenangaben",
+      "fuer": "für die Fundstelle hinter jeder Angabe auf dem Blatt",
+      "tun": "Setzen Sie hinter jede Angabe Dokument und Stelle. Ihr Lehrvertrag ist eine Quelle wie jede andere — nennen Sie ihn mit Ziffer, nicht nur mit Namen."
+    },
+    {
+      "ref": "hko-erhebungsbogen",
+      "fuer": "für das Festhalten dessen, was Sie im Betrieb tatsächlich erleben"
+    }
+  ],
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Welche Angabe über meine eigene Ausbildung hat mich am meisten überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Wo im Lehralltag hätte mir dieses Blatt in den letzten Wochen schon geholfen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Welche offene Frage kläre ich diese Woche — und bei wem?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "kriterium": "Inhaltliche Korrektheit",
+      "vollstaendig_wenn": [
+        "Alle vier Leitfragen sind schriftlich beantwortet.",
+        "Die drei Lernorte sind mit ihrer je eigenen Aufgabe unterschieden, nicht bloss aufgezählt.",
+        "Bei LF3 ist eine Reihenfolge gewählt und begründet, nicht nur eine Stelle genannt."
+      ]
+    },
+    {
+      "produkt": "Mindmap",
+      "kriterium": "Struktur · Tiefe · Verbindungen",
+      "vollstaendig_wenn": [
+        "Die drei Pflicht-Äste sind gefüllt.",
+        "Jeder Ast trägt mindestens drei eigene Stichworte.",
+        "Mindestens eine Verbindung zwischen zwei Ästen ist eingezeichnet."
+      ]
+    },
+    {
+      "produkt": "Handlungsprodukt",
+      "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
+      "vollstaendig_wenn": [
+        "Drei Spalten, je vier Angaben, jede mit einer nachprüfbaren Fundstelle.",
+        "Pro Lernort ist die Zeile «Das erlebe ich anders» in ganzen Sätzen ausgefüllt.",
+        "Angaben ohne Beleg stehen in der Fusszeile als offene Frage, nicht im Blatt."
+      ]
+    },
+    {
+      "produkt": "Reflexion",
+      "kriterium": "Tiefe + Transfer",
+      "vollstaendig_wenn": [
+        "Alle drei Reflexionsfragen sind beantwortet.",
+        "R3 nennt eine konkrete Person oder Stelle, nicht nur ein Vorhaben."
+      ]
+    }
+  ],
+  "wochen": 3,
+  "wochen_plan": [
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Orientierungsblatt",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
+  ],
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+  "prinzip_ref": "1.1.1_ausbildung_erfassen_zeigen_prinzip",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Lernorte erschliessen"
+  },
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe",
+    "hint": "Beides kann gleichzeitig zutreffen. Ein Vertrag regelt, wer wofür einsteht — er beschreibt nicht, wie ein Arbeitstag abläuft. Eine Abweichung ist deshalb nicht automatisch ein Verstoss; sie kann eine praktische Absprache sein, eine Unklarheit oder tatsächlich ein Problem. Wer sofort «Das ist illegal» schreibt, hat zu früh entschieden. Wer «Ist halt so» schreibt, hat gar nicht entschieden."
+  },
+  "dekontextualisierung": {
+    "frage": "Ich muss mich in einer Organisation zurechtfinden, die ich noch nicht kenne — einem Verein, einem neuen Betrieb, einer Behörde. Welche vier Fragen stelle ich, und welches Dokument beantwortet sie?",
+    "ziel": "Das Prinzip lösen: Wer sich orientieren will, sucht zuerst das Dokument, das die Zuständigkeiten regelt — und prüft dann, wo die gelebte Praxis davon abweicht."
+  },
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T5 (5.1 Rechte und Pflichten in der Schweiz) nimmt die Frage nach Zuständigkeiten wieder auf — dann für Bund, Kanton und Gemeinde statt für die drei Lernorte.",
+    "r3_voraussicht": "T8 (8.3 Erste Stelle antreten) verlangt dasselbe Vorgehen am Arbeitsvertrag, ohne dass es noch angeleitet wird."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 1.1",
+      "titel": "Schule und Betrieb — Organisation der Berufsbildung, Bildungssystem, Vollzugsorgane",
+      "seiten": "Seite 12-15",
+      "unterueberschrift": "Organisation der Berufsbildung",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 1.4",
+      "titel": "Der Lehrvertrag — Inhalt, obligatorische Bestandteile, Konflikte im Lehrbetrieb",
+      "seiten": "Seite 29-35",
+      "unterueberschrift": "Obligatorische Bestandteile des Lehrvertrags",
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 20.8",
+      "titel": "Recherchieren — Quellenangaben und Quellenverzeichnis",
+      "seiten": "Seite 451",
+      "unterueberschrift": "Quellenangaben und Quellenverzeichnis",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "kriterien": [
+      {
+        "kriterium": "Systemkenntnis",
+        "indikator": "Kann die Aufgabe jedes der drei Lernorte benennen und einer gesetzlichen Grundlage zuordnen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Arbeit am eigenen Dokument",
+        "indikator": "Findet gesuchte Angaben im eigenen Lehrvertrag gezielt und nennt die Fundstelle.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Belegdisziplin",
+        "indikator": "Jede Angabe auf dem Blatt trägt eine Quelle, die eine zweite Person ohne Rückfrage findet.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Umgang mit der Abweichung",
+        "indikator": "Beschreibt den Unterschied zwischen Dokument und Alltag, ohne ihn vorschnell zu bewerten.",
+        "gewicht_prozent": 25
+      }
+    ],
+    "scaffold_90": "Die vier Fragen pro Lernort werden vorgegeben; die Lernenden füllen nur die Angaben und Fundstellen ein.",
+    "scaffold_100": "Die Lernenden formulieren ihre vier Fragen selbst und begründen in der Fusszeile, weshalb gerade diese vier eine Ausbildung erschliessen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Zuständigkeit ist geregelt, Alltag ist gelebt — wer sich orientieren will, muss beides kennen und auseinanderhalten können.",
+    "lehrmittel_anker": "Kap. 1.1 S. 12-15 (drei Lernorte, Vollzugsorgane) und Kap. 1.4 S. 29-35 (obligatorische Bestandteile, Konfliktweg)",
+    "kn_aktivierung": "Im KN zeigt sich diese Herausforderung darin, dass die lernende Person eine Angabe über ihre Lage belegen kann, statt sie zu behaupten.",
+    "transfer_check": "Kann die lernende Person in einer fremden Organisation benennen, welches Dokument die Zuständigkeiten regelt?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "Beim Zusammentragen: Lehrvertrag, Bildungsverordnung, Stundenplan und Hörensagen aus dem Betrieb werden als unterschiedlich verlässliche Quellen behandelt — nur die ersten drei kommen mit Fundstelle aufs Blatt."
+    },
+    {
+      "sk": 6,
+      "wo": "In der Fusszeile und in LF3: die Wahl der ersten Anlaufstelle wird begründet, nicht nur genannt."
+    },
+    {
+      "sk": 11,
+      "wo": "In der Zeile «Das erlebe ich anders»: die Abweichung wird beschrieben und offen gehalten, statt sofort als Verstoss oder als Selbstverständlichkeit abgetan zu werden."
+    }
+  ]
+}

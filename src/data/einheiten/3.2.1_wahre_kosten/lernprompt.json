@@ -1,0 +1,141 @@
+{
+  "id": "3.2.1_wahre_kosten_lernprompt",
+  "set_ref": "3.2.1_wahre_kosten_set",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-20",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «Der Preis sagt nicht die Wahrheit» (Preisweg und fehlende Kosten, Zurechnung der Folgekosten, zweites Preisschild).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Interesse und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
+        "thema_bezug": "Bei der Frage, wer die fehlenden Kosten trägt, hängt die Antwort an der Perspektive: Eine Einkaufsleiterin, eine Umweltfachstelle und eine Lernende mit knappem Lohn begründen denselben Preis völlig unterschiedlich — und genau diese Sichtweisen können Sie gezielt durchspielen.",
+        "beispiel_basis": "Du bist Einkaufsleiterin in einem Handwerksbetrieb. Erkläre mir in einfachen Worten, warum du beim Werkzeugkauf zum günstigsten Angebot greifst, obwohl es kürzer hält.",
+        "beispiel_fortgeschritten": "Du bist Vertretung eines Branchenverbands und lehnst eine Lenkungsabgabe auf lösungsmittelhaltige Produkte ab. Reagiere so, wie du es an einer Anhörung tun würdest, auf meine Position: [meine Stellungnahme]. Sag mir danach, welches meiner Argumente dich am wenigsten überzeugt hat.",
+        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht richtiger: Auch als «Umweltfachstelle» kann die KI eine Abgabe oder ein Gesetz falsch wiedergeben oder Zahlen erfinden. Die Rolle steuert den Blickwinkel — nachschlagen müssen Sie in Kap. 1.5 und Kap. 9.3 trotzdem.",
+        "baukasten": {
+          "rolle": [
+            "Einkaufsleiter/in eines Betriebs",
+            "Vertretung eines Branchenverbands",
+            "Fachperson einer Umweltfachstelle",
+            "Lernende/r mit knappem Lohn"
+          ],
+          "kontext": [
+            "Kaufentscheid im Lehrbetrieb",
+            "Anhörung zu einer Lenkungsabgabe",
+            "Rechnung, die niemand eingerechnet hat"
+          ],
+          "aufgabe": [
+            "Kaufentscheid verteidigen",
+            "eine Abgabe begründen oder ablehnen",
+            "fehlende Kostenposten benennen"
+          ],
+          "format": [
+            "3 Sätze",
+            "Argumentliste mit Begründung"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie liefern der KI vorab die Angaben, die Ihren Fall einzigartig machen: Zahlen, Beteiligte, Zeitraum und Rahmenbedingungen. Ohne Kontext antwortet die KI auf einen Durchschnittsfall, den es so nirgends gibt.",
+        "thema_bezug": "Ihre Fälle leben von Zahlen: Einkaufspreise pro Kilo Vanille, 199 Franken Verkaufspreis, eine Entsorgungsrechnung, eine erwartete Nutzungsdauer. Erst wenn diese Angaben im Prompt stehen, kann die KI überhaupt über den Preis pro Nutzungsjahr oder über fehlende Posten reden statt über Nachhaltigkeit im Allgemeinen.",
+        "beispiel_basis": "Kontext: Ich vergleiche zwei Geräte, 199 Franken mit erwarteter Nutzungsdauer 3 Jahre und 420 Franken mit erwarteter Nutzungsdauer 7 Jahre, reparierbar. Rechne mir beide Preise pro Nutzungsjahr aus und sag mir, welche Angaben mir für einen fairen Vergleich noch fehlen.",
+        "beispiel_fortgeschritten": "Kontext: Ich bin Lernende/r im 1. Lehrjahr, mein Betrieb bezahlt jährlich eine Rechnung für die Entsorgung eines Betriebsstoffs, der Lieferant taucht in dieser Rechnung nicht auf. Ordne die beteiligten Seiten und ihre Interessen, benenne die Kosten, die in keiner Rechnung stehen, und nenne die offenen Fragen, die ich zuerst klären muss, bevor ich eine Position beziehe.",
+        "warnung": "Kontext macht die Antwort passgenauer, aber die KI rechnet trotzdem falsch: Prüfen Sie jede Division und jede Summe selbst nach und ergänzen Sie nie erfundene Zahlen. Übernehmen Sie nur Zahlen aus Ihrer Zahlentabelle oder aus dem Lehrmittel.",
+        "baukasten": {
+          "rolle": [
+            "neutrale Fachperson",
+            "kritische Mitlernende"
+          ],
+          "kontext": [
+            "Preise und Nutzungsdauer beider Varianten",
+            "Beteiligte: Lieferant, Betrieb, Staat",
+            "Lehrjahr und verfügbares Budget"
+          ],
+          "aufgabe": [
+            "Preis pro Nutzungsjahr rechnen",
+            "fehlende Angaben benennen",
+            "Interessen der Beteiligten ordnen"
+          ],
+          "format": [
+            "Tabelle mit zwei Spalten",
+            "Liste offener Fragen"
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenposition fordern",
+        "erklaerung": "Sie verlangen von der KI ausdrücklich die stärkste Sicht gegen Ihre eigene, statt eine ausgewogene Zusammenfassung. So finden Sie die Lücken in Ihrer Begründung, bevor sie jemand anderes findet.",
+        "thema_bezug": "In dieser Einheit gibt es keine richtige Zahl, sondern nur begründete Zurechnungen: Konsument/in, Unternehmen oder Staat. Wer nur die eigene Seite ausformuliert, merkt nicht, dass die Gegenseite oft ein berechtigtes Anliegen hat — genau das wird im Kompetenznachweis erwartet.",
+        "beispiel_basis": "Ich fordere, dass der Lieferant die Entsorgungskosten trägt. Nenne mir die drei stärksten Argumente dagegen und begründe jedes davon.",
+        "beispiel_fortgeschritten": "Hier ist meine Stellungnahme: [mein Text]. Vertritt konsequent die Gegenseite und greife die schwächste Begründung an. Sag mir danach, welches deiner Gegenargumente ein berechtigtes Anliegen ist, das ich anerkennen müsste, und welches reine Interessenvertretung ist.",
+        "warnung": "Die KI liefert die Gegenposition oft überzeugend und trotzdem fachlich falsch — etwa mit einem erfundenen Gesetzesbezug oder einem falsch angewendeten Verursacherprinzip. Schlagen Sie jedes Gegenargument in Kap. 1.5 S. 41 und Kap. 9.3 S. 231-235 nach, bevor Sie Ihre Position ändern.",
+        "baukasten": {
+          "rolle": [
+            "Anwältin der Gegenseite",
+            "skeptische Konsumentin"
+          ],
+          "kontext": [
+            "meine Position samt Begründung",
+            "das Spannungsfeld, um das es geht"
+          ],
+          "aufgabe": [
+            "die drei stärksten Gegenargumente nennen",
+            "meine schwächste Begründung angreifen",
+            "berechtigtes Anliegen von Interessenpolitik trennen"
+          ],
+          "format": [
+            "je Argument ein Satz mit Begründung",
+            "Rangliste nach Stärke"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt-für-Schritt denken",
+        "erklaerung": "Sie verlangen, dass die KI ihren Denkweg offenlegt und in nachvollziehbare Zwischenschritte zerlegt, bevor sie zu einem Ergebnis kommt. Damit wird der Weg prüfbar — und Sie sehen, an welcher Stelle er kippt.",
+        "thema_bezug": "Ein Preisweg besteht aus Stationen — Anbau, Transport, Import, Verarbeitung, Verkauf — und eine Kostenzurechnung aus mehreren Abwägungsschritten. Wenn die KI direkt mit einem Ergebnis antwortet, sehen Sie nicht, welche Station oder welcher Abwägungsschritt fehlt.",
+        "beispiel_basis": "Zerlege den Weg eines Rohstoffs vom Ursprungsland bis ins fertige Produkt in einzelne Stationen. Nenne pro Station, welche Kosten anfallen und welche davon üblicherweise in keiner Rechnung auftauchen. Arbeite Schritt für Schritt.",
+        "beispiel_fortgeschritten": "Geh Schritt für Schritt vor: Erstens, liste die Beteiligten und ihre Interessen auf. Zweitens, ordne jeder Seite die Kosten zu, die sie heute trägt. Drittens, benenne die Kosten, die heute niemand trägt. Viertens, zeige zwei mögliche Zurechnungen mit je einer Begründung. Nenne erst am Schluss, welche du für tragfähiger hältst und warum.",
+        "warnung": "Ein sauber gegliederter Denkweg kann von einer falschen Zwischenzahl ausgehen und trotzdem stimmig aussehen. Prüfen Sie jede Station und jede Zahl einzeln nach — vor allem dort, wo die KI von Angebot, Nachfrage und Produktionsfaktoren spricht (Kap. 2.7 S. 76-82).",
+        "baukasten": {
+          "rolle": [
+            "Analystin ohne eigenes Interesse",
+            "Lerncoach für Abwägungen"
+          ],
+          "kontext": [
+            "der Preisweg meines Produkts",
+            "die Kosten, die heute niemand trägt"
+          ],
+          "aufgabe": [
+            "in Stationen zerlegen",
+            "zwei Zurechnungen durchspielen",
+            "Zwischenschritte offenlegen"
+          ],
+          "format": [
+            "nummerierte Schritte",
+            "Fazit erst am Schluss"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": ["rollen_prompting", "kontextualisieren"],
+      "logik_und_ziel": "Prompt 1 liefert mit einer klaren Rolle und allen Zahlen Ihres Falls eine erste, fallgenaue Einschätzung. Prompt 2 nutzt genau diese Antwort weiter und zwingt die KI dazu, die Kosten zu benennen, die sie im ersten Schritt noch stillschweigend weggelassen hat — so wird aus einer allgemeinen Kaufberatung eine brauchbare Entscheidungsgrundlage.",
+      "prompt_1": "Du bist eine neutrale Fachperson für Beschaffung. Kontext: Ich bin Lernende/r im 1. Lehrjahr und vergleiche zwei Varianten desselben Werkzeugs — 39 Franken, nicht reparierbar, und 145 Franken, reparierbar mit Ersatzteilen. Rechne mir beide Preise pro Nutzungsjahr für eine Nutzungsdauer von 2 und von 10 Jahren aus und sag mir, welche Angaben dir für einen fairen Vergleich noch fehlen.",
+      "prompt_2": "Auf Basis deiner Rechnung: Nenne mir jetzt die Kosten, die in keinem der beiden Preise enthalten sind — bei Herstellung, Transport und Entsorgung. Ordne jedem Posten zu, wer ihn heute tatsächlich trägt, und markiere, wo du dir bei der Zuordnung unsicher bist."
+    },
+    "stacking_seite_2": {
+      "technik_keys": ["gegenposition_fordern", "chain_of_thought"],
+      "logik_und_ziel": "Prompt 1 holt die stärkste Sicht gegen Ihre Position, damit Sie Ihre Lücken sehen. Prompt 2 nimmt genau diese Gegenargumente und lässt sie Schritt für Schritt durchrechnen — so entscheidet sich, welches Gegenargument wirklich trägt und welches nur laut klingt.",
+      "prompt_1": "Meine Position: Die Folgekosten unseres Konsums soll das Unternehmen tragen, das sie verursacht. Vertritt konsequent die Gegenseite und nenne mir die drei stärksten Argumente dafür, dass stattdessen der Staat über eine Lenkungsabgabe eingreifen soll. Begründe jedes Argument.",
+      "prompt_2": "Nimm dein stärkstes Gegenargument aus der letzten Antwort und geh Schritt für Schritt durch, was passiert, wenn man ihm folgt: Wer zahlt zuerst, wer am Ende, was wird teurer, wer weicht aus? Sag mir erst danach, an welcher Stelle dieses Argument schwach wird — und wo meine ursprüngliche Position ein berechtigtes Anliegen hat, das du übergangen hast."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+  }
+}

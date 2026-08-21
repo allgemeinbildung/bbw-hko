@@ -124,7 +124,7 @@ Seitenmarker durchgehend kleingeschrieben: `[seite: 186]`.
 
 | LB | Lebensbezug | Kernkapitel | Methodenkapitel |
 |---|---|---|---|
-| **1.1** | Ausbildung zurechtfinden, konstruktiv kommunizieren | 1.1 Schule und Betrieb · 1.4 Der Lehrvertrag · 1.3 Rechtsgrundlagen | 20.8 Recherchieren · 17.2 Dokumentieren · 17.4 Korrespondenz · 20.7 Medienkompetenz · 19.2 Konflikte |
+| **1.1** | Ausbildung zurechtfinden, konstruktiv kommunizieren | 1.1 Schule und Betrieb · 1.4 Der Lehrvertrag · 1.3 Rechtsgrundlagen · **18.1 Identität** · **18.2 Werte, Normen, Moral und Ethik** | 20.8 Recherchieren · 17.2 Dokumentieren · 17.4 Korrespondenz · 20.7 Medienkompetenz · 19.2 Konflikte · **19.1 Feedback** · **20.1 Kreativitätstechniken** · **17.1 Lesetechnik** · **16.2 Statement** |
 | **1.2** | Effektiv lernen, Ressourcen einsetzen | — | 20.5 Lernplanung · 20.6 Lern- und Prüfungsstrategien · 20.4 Arbeitsplanung und Lernjournal · 17.1 Lesetechnik · 20.3 Zielformulierung · 18.4 Motivation |
 | **2.1** | Informationen hinterfragen, Quellen durchschauen | 7.1 Medien · 6.6 Interessengruppen | 20.7 Medienkompetenz · 20.8 Recherchieren |
 | **2.2** | Ungleichbehandlung und Ausgrenzung diskutieren | 3.4 Migration, Integration und Rassismus · 12.1 Werte · 18.2 Werte, Normen, Moral und Ethik · 18.3 Perspektivenwechsel | 16.1 Diskussion · 17.3 Argumentieren |
@@ -199,6 +199,10 @@ Die Zuordnung ist **fachlich hergeleitet**, nicht aus einer offiziellen Konkorda
 gilt das Urteil der Lehrperson; Korrekturen bitte direkt hier eintragen.
 
 ### Änderungsprotokoll
+
+**2026-08-20 (2) — LB 1.1 zusätzlich um `19.1 Feedback` und `16.2 Statement` (Methodenkapitel) ergänzt; zugleich eine **Warnung** zu `17.4 Korrespondenz` protokolliert.** Zweite Gegenlesung mit «Allgemeinbildung26», diesmal nicht auf Kapitelsuche, sondern gegen eine konkrete geplante Aufgabe (adressatengerechte Selbstvorstellung im 1. Lehrjahr). Befund: Das eigentliche Sachkapitel für «was gebe ich von mir zu erkennen» ist **19.2 S. 427** (Kommunikationsquadrat, Teilbotschaft *Selbstkundgabe*) — nicht 17.4. **17.4 S. 398–407 zieht eine Selbstvorstellungs-Aufgabe aktiv in die falsche Richtung**: die Vorlagen zielen auf Bewerbungsschreiben, tabellarischen Lebenslauf und formelle Geschäftskorrespondenz; Lernende liefern dann eine steife Leistungspräsentation statt einer Vorstellung. 17.4 bleibt für LB 1.1 gelistet (Korrespondenz mit dem Betrieb ist ein echter Anwendungsfall), taugt aber nicht als Muster für persönliche Texte. 19.1 S. 425 liefert die Feedbackregeln für Peer-Rückmeldungen, 16.2 S. 368 den schlanken Aufbau Einleitung/Hauptteil/Schluss für ein Kurz-Statement. **Dokumentierte Lücke:** Zur Frage, wo im schulischen Rahmen die Grenze zwischen Offenheit und unangebrachter Preisgabe verläuft, enthält das Lehrmittel nichts — dafür braucht es ein eigenes Scaffold.
+
+**2026-08-20 — LB 1.1 (3J, vom 4J via *wie 3J 1.1* geerbt) um `18.1 Identität`, `18.2 Werte, Normen, Moral und Ethik` (Kernkapitel) und `20.1 Kreativitätstechniken`, `17.1 Lesetechnik` (Methodenkapitel) ergänzt.** Befund aus der Gegenlesung mit dem Notebook «Allgemeinbildung26» für eine Einstiegs-Einheit im 1. Lehrjahr (Selbstvorstellung + eigene Grundbildung erfassen): Der nRLP-Aspekt von 1.1.1 nennt ausdrücklich «Soziale Rollen, Rollenkonflikte» — der Sachtext dazu steht in 18.1 (S. 412: Selbstbild/Fremdbild, Identität als «die Person, für die einen die anderen halten») und 18.2 (S. 413–417: Wertewandel der Jugend), nicht in den bisher gelisteten Kapiteln; beide lagen bisher nur unter LB 4.1 bzw. 8.2. 20.1 liefert auf S. 436 ausgerechnet eine Mindmap «Gesellschaft – Ich beginne meine Lehre», 17.1 die SQ3R-Lesetechnik für Lehrvertrag und Bildungsplan.
 
 **2026-08-16 — LB 3.2 (3J, vom 4J via *wie 3J 3.2* geerbt) um `9.2 Energie`, `9.1 Klima`
 (Kernkapitel) und `16.3 Präsentation` (Methodenkapitel) ergänzt.** Befund aus der
