@@ -76,7 +76,9 @@
   ],
   "modi_kn": [
     "Produktion mündlich",
-    "Interaktion und Kollaboration mündlich"
+    "Interaktion und Kollaboration mündlich",
+    "Rezeption schriftlich und bildlich",
+    "Produktion schriftlich und bildlich"
   ],
   "mehrdeutigkeits_architektur": {
     "trade_off_raum": [
@@ -245,11 +247,49 @@
       "Winterthur"
     ]
   },
+  "persona_pool_kn_neu": {
+    "berufe": [
+      "Bäcker-Konditor-Confiseur/in EFZ",
+      "Informatiker/in EFZ"
+    ],
+    "orte": [
+      "St. Gallen",
+      "Olten"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Persona ist neu (Beruf und Ort kommen in keiner herausforderung_*.persona vor).",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben.",
+      "Fallneutral: keine Abstimmungsvorlage, kein Abstimmungsdatum, kein Initiativtext. Der Fall der Hybrid-Herausforderung ist ein eigener, dauerhafter Fall."
+    ]
+  },
   "entscheidungen_pietro_2026_08_16": {
     "persona_einfach": "Bewusste Übersteuerung der Pool-Regeln: EINE Persona (Polymechaniker/in EFZ, 3. Lehrjahr, Winterthur) trägt alle drei Herausforderungen, damit die Wirkungskette, die Akteurskarte und die Sortierung auf denselben Betrieb zeigen. Damit entfallen die Abteilungs-Mix-Pflicht und der vollständige Pool-Verbrauch (ERR_PERSONA_ABTEILUNG_MONO, Check 14) für diese Einheit.",
     "kein_kn": "Für diese Einheit wird bewusst kein kn.json und kein begleiter.md erzeugt. modi_kn nennt die Sprachmodi, die ein späterer Kompetenznachweis abdecken würde; hybrid_situation_spec entfällt, solange kein KN existiert.",
     "fallneutralitaet": "Die drei Herausforderungen und dieses Prinzip arbeiten an dauerhaften Mechanismen und nennen keine Abstimmungsvorlage. Der aktuelle Fall lebt ausschliesslich in set.json, in schritt_2_anwendung der Dekontextualisierungsaufgabe, und ist dort ausdrücklich auswechselbar.",
     "abgrenzung_5_4_1": "5.4.2 trägt die Wirkungskette: wer entscheidet was, mit welchem Interesse, und wo kommt das bei mir an. Die Rechtsachse (Werthaltungen, Menschenrechte, Völkerrecht, Perspektivenrecherche) bleibt bei 5.4.1. Herausforderung C geht deshalb nicht tiefer als die Unterscheidung «vertraglich gebunden» vs. «politisch entschieden».",
     "crosswalk_hinweis": "Kap. 6.6 Interessengruppen und Kap. 16.2 Statement sind für 4J/5.4 fachlich einschlägig, stehen aber noch nicht in der Crosswalk-Zeile. Ergänzung vorgeschlagen, aber nicht eigenmächtig eingetragen."
+  },
+  "kn_nachgezogen_2026_08_21": {
+    "entscheid": "Der Entscheid «kein_kn» vom 2026-08-16 ist aufgehoben: kn.json und begleiter.md wurden am 2026-08-21 nachgezogen (Phasen 4 und 5 isoliert, Phasen 0 bis 3 unverändert). Der Eintrag «kein_kn» bleibt als Protokoll stehen.",
+    "ergaenzte_felder": "persona_pool_kn_neu und hybrid_situation_spec neu; modi_kn auf die vier Modi der Skill-Regel erweitert (modi_units vereinigt mit den Fachgespräch- und Mini-Case-Modi). Alle übrigen Felder unverändert.",
+    "persona_kn": "Die Hybrid-Herausforderung nutzt bewusst eine neue Persona (Bäcker-Konditor-Confiseur/in EFZ, St. Gallen) aus einer Abteilung, die in den Herausforderungen nicht vorkommt — die Einzel-Persona-Regel der Units gilt nur für A, B und C.",
+    "fallneutralitaet_kn": "kn.json nennt keine Abstimmungsvorlage und kein Datum. Der aktuelle Fall lebt weiterhin ausschliesslich in set.json (schritt_2_anwendung) und wird im begleiter.md nur im Transfer-Kapitel als auswechselbares Beispiel geführt.",
+    "dominanter_aspekt": "Wirtschaft und Politik stehen beide in allen drei Herausforderungen. Der Tiebreak der Skill (erster Eintrag der nRLP-Kompetenz) ergibt Wirtschaft; Kriterium 3 der Rubrik heisst deshalb «Wirtschaftliches Prinzip», deckt inhaltlich aber Wirkungskette und Bindungsfrage ab."
   }
 }

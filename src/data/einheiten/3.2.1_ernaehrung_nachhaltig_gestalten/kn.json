@@ -1,0 +1,232 @@
+{
+  "id": "3.2.1_ernaehrung_nachhaltig_gestalten_kn",
+  "modul": "3.2",
+  "kompetenz_nr": "3.2.1",
+  "topic_slug": "ernaehrung_nachhaltig_gestalten",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-08-21",
+
+  "set_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_set",
+  "prinzip_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_prinzip",
+  "anchored_situations": [
+    "3.2.1_ernaehrung_nachhaltig_gestalten_hf_A",
+    "3.2.1_ernaehrung_nachhaltig_gestalten_hf_B",
+    "3.2.1_ernaehrung_nachhaltig_gestalten_hf_C"
+  ],
+
+  "dominanter_aspekt": "Ökologie",
+  "kern_kompetenzversprechen": "Ich kann meine eigene Ernährung an belegten Zahlen prüfen und daraus begründet entscheiden, welche Änderung wie viel bewirkt — und wen sie etwas kostet.",
+  "mehrdeutigkeits_pflicht": "Keine Ernährungsweise ist ohne Folgen. Die Aufgabe ist nicht, die richtige zu finden, sondern die Folgen zu beziffern und den eigenen Entscheid an dieser Zahl zu begründen. Bewertet wird die Qualität der Begründung, nicht die gewählte Ernährung.",
+
+  "hybrid_situation": {
+    "titel": "Der Automat und die 40 Prozent",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "Entscheidungsdruck",
+    "text": "Ich bin im 2. Lehrjahr. In der Pausenzone hängt seit heute ein Aushang: Der Getränke- und Snackautomat soll umgestellt werden — weniger Importware, mehr regionale Produkte, andere Verpackung. Darunter steht in grosser Schrift ein Satz: «40 Prozent weniger Umweltbelastung.» Woher die Zahl stammt, steht nirgends. Die Preise steigen um 30 Rappen pro Artikel; wer wenig Geld hat, merkt das täglich. Bis Freitag sammelt die Klassensprecherin Rückmeldungen: zustimmen, ablehnen oder eine Bedingung stellen. Ich weiss nicht einmal, was ich selbst in einer Woche an diesem Automaten kaufe. Bis Freitag muss ich mich äussern — mit einer Begründung, die mehr ist als ein Bauchgefühl.",
+    "leitfrage": "Welche Rückmeldung gebe ich ab — und woran mache ich fest, dass meine Begründung trägt?",
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine neue Situation, in der alle drei Herausforderungen dieser Einheit gleichzeitig stecken.",
+    "definition_lang": "Die Hybrid-Herausforderung ist die Prüfsituation des Kompetenznachweises. Sie ist bewusst neu — anderer Ort, anderer Anlass, fremde Behauptung —, aktiviert aber dieselben drei Konfliktarten wie die Herausforderungen A, B und C. Damit lässt sich prüfen, ob die Lernenden das Prinzip übertragen können und nicht nur ihre eigene Herausforderung wiedergeben.",
+    "aktivierte_trade_offs": [
+      "Gewohnte Ernährung vs. belegte Folgen der eigenen Wahl",
+      "Tiefer Preis im Laden vs. Ressourcenverbrauch in der Kette",
+      "Grosse Wirkung vs. wer die Kosten der Änderung trägt"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Der Satz «Ich weiss nicht einmal, was ich selbst kaufe» macht die fehlende eigene Zahl sichtbar — eine Woche Strichliste und Kassenzettel genügen dafür, ganz ohne App, Konto oder Datenweitergabe."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Die Behauptung «40 Prozent weniger Umweltbelastung» steht ohne Bezugsgrösse und ohne die Kette dahinter da: Importware gegen regionale Produkte, dazu die Verpackung."
+        },
+        {
+          "hf_letter": "C",
+          "scene_element": "Die 30 Rappen Aufschlag pro Artikel stellen die Wirkungs- und Kostenfrage: Was bringt die Umstellung, und wer bezahlt sie täglich mit?"
+        }
+      ],
+      "new_dimensions": [],
+      "additional_trade_offs": []
+    }
+  },
+
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit der Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie in eigenen Worten die drei Dimensionen der Nachhaltigkeit und sagen Sie, was der Satz «40 Prozent weniger Umweltbelastung» aussagt, solange nirgends steht, worauf sich diese Zahl bezieht (Kap. 9.3 S. 231, Kap. 9.2 S. 230).",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Nehmen Sie ein einzelnes Produkt aus diesem Automaten und verfolgen Sie seinen Weg rückwärts: Welche Stationen durchläuft es, welche Ressource wird an welcher Station verbraucht, und an welcher Stelle fällt die graue Energie an (Kap. 9.2 S. 229-230, Kap. 9.4 S. 236-237)?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Der Aushang verspricht weniger Umweltbelastung, der Automat wird um 30 Rappen pro Artikel teurer. Stellen Sie beide Seiten zuerst gleich stark dar und begründen Sie danach, für welche Rückmeldung Sie sich trotzdem entscheiden.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie diesen Fall mit einer der drei Herausforderungen aus dem Unterricht: Was ist hier gleich wie dort, und was ist neu?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Wer müsste in diesem Fall handeln — Sie selbst, der Betrieb oder die Schule, oder eine allgemeine Regelung? Ordnen Sie Ihre Antwort einem der vier umweltpolitischen Instrumente zu und begründen Sie, weshalb das nicht nur eine Preisfrage ist (Kap. 9.3 S. 233).",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [9, 5, 1],
+      "aspekte": ["Ökologie", "Wirtschaft", "Ethik"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung und Aufgabenblatt werden ausgeteilt; Lehrmittel erlaubt nach Entscheid der Lehrperson, kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität, Einzelarbeit.",
+        "Abgabe von Hand oder digital, je nach Klassensetting."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie in 3 bis 5 Sätzen, was der Satz «40 Prozent weniger Umweltbelastung» belegen müsste, damit er überprüfbar wird: welche Dimension der Nachhaltigkeit er meint, worauf sich seine Zahl bezieht und in welchen Phasen des Lebenszyklus überhaupt graue Energie anfällt (Kap. 9.2 S. 230, Kap. 9.3 S. 231).",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Beide Änderungen am Automaten — mehr regionale Produkte statt Importware und eine andere Verpackung — sollen laut Aushang dieselbe Umweltbelastung senken. Erklären Sie, weshalb die beiden trotzdem unterschiedlich zu beurteilen sind. Nutzen Sie dafür den Unterschied zwischen der Vorkette eines Produkts und dem Ende seiner Kette (Kap. 9.2 S. 230).",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie begründet, welche der drei Rückmeldungen Sie abgeben: zustimmen, ablehnen oder eine Bedingung stellen. Geben Sie die Wirkung Ihrer Wahl als Zahl oder wenigstens als Grössenordnung an, benennen Sie, wer die 30 Rappen pro Artikel trägt, und nennen Sie das Argument, das gegen Ihren Entscheid spricht.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form eine Forderung an eine der beteiligten Seiten — an die Betreiberin des Automaten, an die Schule oder den Lehrbetrieb, oder an eine allgemeine Regelung. Ordnen Sie Ihre Forderung einem der vier umweltpolitischen Instrumente zu (Appelle, Anreize, Verbote und Beschränkungen, Nachsorge) und begründen Sie, weshalb Sie diese Seite ansprechen und nicht eine andere (Kap. 9.3 S. 233).",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [9, 1, 3],
+      "aspekte": ["Ökologie", "Wirtschaft", "Ethik"],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer drei Handlungsprodukte aus den Herausforderungen (die drei Befund-Kacheln, das Produktprofil mit Wegskizze oder die Empfehlung mit Vergleichstabelle).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum trägt genau dieses Handlungsprodukt den Transfer auf den Automaten-Fall?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung am Automaten sichtbar wird. Was ist gleich, was ist anders?",
+        "Wann versagt das Prinzip — und was haben Sie durch die drei Herausforderungen (dreitägige Erhebung, Produktprofil, Massnahmenwahl) insgesamt darüber gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., die Lehrperson stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [5, 9],
+      "aspekte": ["Ökologie", "Wirtschaft", "Ethik"],
+      "sprachmodi": [
+        "Produktion multimedial",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "rubrik_shared"
+    }
+  ],
+
+  "rubrik_shared": {
+    "dimensionen": ["SuK", "Ges"],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe wie die drei Dimensionen der Nachhaltigkeit, graue Energie, Ökobilanz oder Bezugsgrösse fehlen oder werden falsch verwendet.",
+          "Begriffe teilweise korrekt; Zahlen stehen ohne Bezugsgrösse da, Quellen werden ungenau oder gar nicht genannt.",
+          "Begriffe aus Kap. 9.2, 9.3 und 1.5 werden korrekt und situationsangemessen verwendet; jede Zahl trägt ihre Bezugsgrösse und ihre Quelle.",
+          "Differenziert und kontextualisiert: Ressourcenverbrauch, Bezugsgrösse und Wirkungsebene werden eigenständig verknüpft statt nebeneinander wiedergegeben."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Behauptungen ohne Begründung; kein erkennbarer Aufbau.",
+          "Begründungen vorhanden, aber unbelegt oder sprunghaft.",
+          "Position, Begründung und Beleg sind erkennbar aufgebaut; die Gegenseite wird erwähnt.",
+          "Das stärkste Gegenargument wird selbst formuliert und sachlich entkräftet, ohne es abzuwerten."
+        ]
+      },
+      {
+        "name": "Ökologisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Die behauptete Umweltwirkung wird als gegebene Zahl übernommen; weder eine Dimension noch eine Station der Kette wird benannt.",
+          "Einzelne Folgen werden genannt, aber keiner Dimension und keiner Station der Kette zugeordnet.",
+          "Die Wirkung wird einer Dimension und einer Station der Kette zugeordnet; die Änderung wird einer Wirkungsebene und einem umweltpolitischen Instrument zugewiesen.",
+          "Die Zuordnung wird auf einen neuen Zusammenhang übertragen: Es wird gezeigt, unter welcher Bedingung die Zahl trägt und unter welcher sie in die Irre führt."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine erkennbare Position; oder eine Position ohne jede Begründung.",
+          "Position vorhanden, die Begründung bleibt an der Oberfläche («ist halt besser für die Umwelt»).",
+          "Die Rückmeldung ist in Ich-Form begründet und benennt, wer die Kosten der Änderung trägt.",
+          "Der Zielkonflikt wird offen gehalten: Die Entscheidung ist begründet, und ihr Preis für die Betroffenen wird ausdrücklich mitgenannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {"label": "unter 60 %", "definition": "Stufen 1-2 dominant"},
+      {"label": "80 %", "definition": "mehrheitlich Stufe 3"},
+      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+    ]
+  },
+
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

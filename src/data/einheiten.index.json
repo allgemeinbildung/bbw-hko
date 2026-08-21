@@ -605,7 +605,7 @@
       "Wirtschaft",
       "Ethik"
     ],
-    "dominanter_aspekt": null,
+    "dominanter_aspekt": "Ökologie",
     "sk": [
       1,
       3,
@@ -627,16 +627,29 @@
       "B": "Der Weg zurück",
       "C": "Was sich ändern liesse"
     },
-    "hat_kn": false,
-    "hat_begleiter": false,
+    "hat_kn": true,
+    "hat_begleiter": true,
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
-    "hybrid_situation_titel": null,
-    "kn_typen": [],
-    "bundle_dateien": 21
+    "hybrid_situation_titel": "Der Automat und die 40 Prozent",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 30
   },
   {
     "id": "3.2.1_wahre_kosten",
@@ -739,7 +752,7 @@
       "Politik",
       "Recht"
     ],
-    "dominanter_aspekt": null,
+    "dominanter_aspekt": "Wirtschaft",
     "sk": [
       5,
       6,
@@ -760,15 +773,28 @@
       "B": "Zwei Berufsbildende, zwei Rechnungen",
       "C": "«Muss gar nicht» oder «darf gar nicht anders»?"
     },
-    "hat_kn": false,
-    "hat_begleiter": false,
+    "hat_kn": true,
+    "hat_begleiter": true,
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
-    "hybrid_situation_titel": null,
-    "kn_typen": [],
-    "bundle_dateien": 21
+    "hybrid_situation_titel": "Ein Nachweis, den niemand hier beschlossen hat",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 30
   }
 ]

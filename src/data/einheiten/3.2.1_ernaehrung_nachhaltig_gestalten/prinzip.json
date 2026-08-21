@@ -78,7 +78,11 @@
   "modi_kn": [
     "Produktion multimedial",
     "Rezeption audiovisuell",
-    "Interaktion und Kollaboration schriftlich"
+    "Interaktion und Kollaboration schriftlich",
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
   ],
 
   "modi_begruendung": "«Produktion multimedial» ist der einzige Sprachmodus der nRLP-Kompetenz 3.2.1 (Detail: «Fakten- oder meinungsorientierte Multimedia-Präsentation») und wird in allen drei Herausforderungen trainiert — A und B faktenorientiert, C meinungsorientiert. «Rezeption audiovisuell» (Thema-Ebene T3) wird in B aktiv trainiert, weil dort eine Dokumentation oder ein Erklaervideo als Quelle ausgewertet und ausgewiesen wird. «Interaktion und Kollaboration schriftlich» (Thema-Ebene T3) wird in C durch die schriftliche Rueckmeldung an ein anderes Paar trainiert.",
@@ -186,6 +190,33 @@
     "orte": ["eigener Wohnort"]
   },
 
+  "persona_pool_kn_neu": {
+    "_kommentar": "Bewusst generisch — identisch mit persona_pool_units. Check 11 (Hybrid-Persona disjunkt von den drei Herausforderungs-Personas) ist fuer diese Einheit ausgesetzt gemaess Entscheid 2026-08-16 — die Neuheit des Transfers liegt in der Situation, nicht in der Persona. Analog zur bereits ausgesetzten Check 14 (Persona-Pool-Verbrauch). Die Hybrid-Herausforderung «Der Automat und die 40 Prozent» ist ein neuer Fall (fremde Behauptung, fremder Anlass, kollektiver Mitentscheid), der in keiner der drei Herausforderungen vorkommt.",
+    "berufe": ["Lernende/r EFZ, 2. Lehrjahr"],
+    "orte": ["eigener Wohnort"]
+  },
+
+  "hybrid_situation_spec": {
+    "_kommentar": "Constraints fuer die Hybrid-Herausforderung in Phase 4. Nachgetragen am 2026-08-21, als der KN ergaenzt wurde.",
+    "max_woerter": 120,
+    "_max_woerter_kommentar": "Zaehlt nur Woerter im hybrid_situation.text-Feld. Persona, Titel, emotion_tag, Leitfrage und alignment_note werden NICHT mitgezaehlt. Bindestrich-Komposita und Zahlen je 1 Wort.",
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": ["A", "B", "C"],
+    "persona_source": "persona_pool_kn_neu",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: fremde Behauptung, fremder Anlass — keine Wiederholung des Erhebungsbogens, des Produktprofils oder der Massnahmenwahl.",
+      "Fallneutral: kein politischer Anwendungsfall, kein Datum, keine Vorlage — der austauschbare Fall lebt ausschliesslich im Transferschritt des Set-Dokuments.",
+      "Wo die Szene eine Erhebung nahelegt, muss diese ohne App, ohne Konto und ohne Datenweitergabe durchfuehrbar sein.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ]
+  },
+
   "entscheidungen_pietro_2026_08_16": [
     "KEINE spezifische Persona. Alle drei Herausforderungen laufen ueber eine generische Lernenden-Perspektive im 2. Lehrjahr ohne Beruf, Betrieb und Ort. Begruendung: die Leitfrage «Was esse ich» ist eine Alltagsfrage, die jede Lernende und jeder Lernende ohne Berufswissen beantwortet; eine berufsspezifische Persona wuerde sie professionalisieren. Uebersteuert die Skill-Regeln zu persona_pool_units (Abteilungs-Mix, Pool-Verbrauch, kanonische Tabelle).",
     "NUR EFZ_4J. Kein Dual-Tagging als lehrgaenge, obwohl Lebensbezug 3.2 und Kompetenz 3.2.1 in nrlp_3j.json und nrlp_4j.json nummern- und textgleich sind. Zu beachten waere sonst: T3 liegt im 3J im 1., im 4J im 2. Lehrjahr, und die Aspekt-R-Stufen weichen ab (Wirtschaft R1 statt R2).",
@@ -193,5 +224,14 @@
     "Erhebungsdauer in Herausforderung A: 3 Tage. Die Erhebung laeuft ohne App, ohne Konto und ohne Datenweitergabe — Papierbogen mit fuenf Spalten, Handauszaehlung, Fotos nur lokal auf dem eigenen Geraet, vollstaendig durchfuehrbar auch ohne Smartphone.",
     "Kein Kompetenznachweis in dieser Lieferung: kein kn.json, kein begleiter.md, keine KI-Dateien. Folgerichtig entfallen persona_pool_kn_neu und hybrid_situation_spec. Beide sind nachzuziehen, falls spaeter ein KN ergaenzt wird; modi_kn entspricht deshalb vorerst modi_units.",
     "Fallneutralitaet: Herausforderungen A/B/C und dieses Prinzip-Dokument nennen keinen konkreten politischen Fall, kein Datum und keinen Gesetzeswortlaut. Der Anwendungsfall lebt ausschliesslich in set.json unter dekontextualisierungs_aufgabe.schritt_2_anwendung und ist dort ausdruecklich austauschbar — die Ersatzkriterien a bis e stehen daneben."
+  ],
+
+  "kn_nachgezogen_2026_08_21": [
+    "Der Kompetenznachweis wurde nachgezogen: kn.json (Hybrid-Herausforderung «Der Automat und die 40 Prozent», drei KN-Typen, bi-dimensionale Rubrik) und begleiter.md liegen seit dem 2026-08-21 vor. Der Entscheid vom 2026-08-16 «Kein Kompetenznachweis in dieser Lieferung» ist damit erledigt; persona_pool_kn_neu und hybrid_situation_spec sind oben nachgetragen.",
+    "modi_kn erweitert auf die Skill-Union: modi_units plus «Rezeption schriftlich und bildlich» und «Produktion muendlich» und «Interaktion und Kollaboration muendlich» (Fachgespraech) plus «Produktion schriftlich und bildlich» (Mini Case schriftlich). modi_units bleibt unveraendert.",
+    "Check 11 (Hybrid-Persona disjunkt) ausgesetzt — Begruendung in persona_pool_kn_neu._kommentar. Die Neuheit des Transfers liegt in der Situation, nicht in der Persona.",
+    "Dominanter Aspekt des KN: Oekologie. Oekologie und Wirtschaft stehen beide in 3 von 3 Herausforderungen; der Gleichstand wird ueber den ersten Eintrag der nRLP-Kompetenz aufgeloest. Rubrik-Kriterium 3 heisst deshalb «Oekologisches Prinzip» — und grenzt den KN zugleich gegen 3.2.1_wahre_kosten ab, wo es «Wirtschaftliches Prinzip» heisst.",
+    "Fallneutralitaet gilt auch fuer den KN: kn.json nennt keine Abstimmungsvorlage, kein Datum und keine Initiativzahlen. Im begleiter.md kommt der austauschbare Anwendungsfall ausschliesslich in Sektion 7 (Transfer) vor, mit beiden Varianten und dem Verweis auf die Ersatzkriterien aus set.json.",
+    "Werkschau-Sprachmodi: «Produktion multimedial» plus «Produktion schriftlich und bildlich» statt der Template-Konstante — alle drei Handlungsprodukte dieser Einheit sind multimedial."
   ]
 }
