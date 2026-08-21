@@ -33,6 +33,29 @@ const FONTS_EMBED_URL = '/einheiten-assets/fonts-embed.css'
  */
 const WB_STORAGE_PREFIX = 'hko-wb:'
 
+/**
+ * Zustand der Seitenleiste (offen/eingeklappt), bewusst **einheitenübergreifend**:
+ * wer die Leiste einmal einklappt, will beim nächsten Dokument nicht wieder von
+ * vorn anfangen. Standard ist offen — eingeklappt ist eine Entscheidung der
+ * Lehrperson, nicht die Voreinstellung.
+ */
+const WB_NAV_KEY = 'hko-wb-nav-collapsed'
+
+function loadNavCollapsed(): boolean {
+  try {
+    return localStorage.getItem(WB_NAV_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
+/** Icon je KN-Typ — im eingeklappten Zustand ist es die einzige Beschriftung. */
+const KN_TYP_ICON: Record<string, string> = {
+  fachgespraech: '🗣️',
+  mini_case_schriftlich: '🗒️',
+  werkschau_transfer: '🖼️',
+}
+
 function loadEdits(unitId: string): Record<string, string> {
   try {
     const raw = localStorage.getItem(WB_STORAGE_PREFIX + unitId)
@@ -146,6 +169,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [bundling, setBundling] = useState(false)
   const [toast, setToast] = useState<{ kind: 'ok' | 'error'; msg: string } | null>(null)
   const [navOpen, setNavOpen] = useState(false)
+  const [navCollapsed, setNavCollapsed] = useState(loadNavCollapsed)
   const [kiOpen, setKiOpen] = useState(false)
   const [zusatzOpen, setZusatzOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
@@ -194,6 +218,14 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     window.addEventListener('resize', measure)
     return () => window.removeEventListener('resize', measure)
   }, [])
+
+  // Einklapp-Zustand überlebt Seitenwechsel und Neuladen.
+  useEffect(() => {
+    try {
+      if (navCollapsed) localStorage.setItem(WB_NAV_KEY, '1')
+      else localStorage.removeItem(WB_NAV_KEY)
+    } catch { /* privater Modus — dann eben ohne Gedächtnis */ }
+  }, [navCollapsed])
 
   // Anzahl tatsächlich befüllter Felder — Grundlage für Anzeige und Aufräumen.
   const notizCount = useMemo(
@@ -740,7 +772,21 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     <div className="aesthetic-modern wb-root" style={{ '--wb-top': `${wbTop}px` } as any}>
       <button className="wb-nav-toggle" onClick={() => setNavOpen((v) => !v)}>☰ Dokumente</button>
 
-      <aside className={`wb-nav${navOpen ? ' open' : ''}`}>
+      <aside className={`wb-nav${navOpen ? ' open' : ''}${navCollapsed ? ' collapsed' : ''}`}>
+        {/* Einklappen gibt dem Dokument die Breite zurück; die Seiten-Knöpfe
+            bleiben als Schmalspur stehen, damit ohne Aufklappen gewechselt
+            werden kann. Nur Desktop — mobil regelt das die Schublade. */}
+        <button
+          type="button"
+          className="wb-collapse"
+          onClick={() => setNavCollapsed((v) => !v)}
+          aria-expanded={!navCollapsed}
+          title={navCollapsed ? 'Seitenleiste ausklappen' : 'Seitenleiste einklappen'}
+        >
+          <span className="wb-collapse-icon" aria-hidden="true">{navCollapsed ? '»' : '«'}</span>
+          <span className="wb-collapse-label">Leiste einklappen</span>
+        </button>
+
         <div className="wb-field">
           <label htmlFor="wb-abt">Abteilung</label>
           <select
@@ -757,8 +803,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
 
         {d.begleiter?.raw && (
           readOnly ? (
-            <button type="button" className="wb-action lies locked" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
-              📖 Lies mich! {lockBadge}
+            <button type="button" className="wb-action lies locked" title="Lies mich!" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
+              <span className="wb-action-icon" aria-hidden="true">📖</span>
+              <span className="wb-action-label">Lies mich!</span> {lockBadge}
             </button>
           ) : (
             <a
@@ -766,16 +813,20 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
               href={`/einheiten/${d.id}/begleiter`}
               target="_blank"
               rel="noopener noreferrer"
+              title="Lies mich!"
             >
-              📖 Lies mich!
+              <span className="wb-action-icon" aria-hidden="true">📖</span>
+              <span className="wb-action-label">Lies mich!</span>
             </a>
           )
         )}
 
         {deckAvailable && (
           readOnly ? (
-            <button type="button" className="wb-action deck locked" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
-              🖥️ Präsentation{deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>} {lockBadge}
+            <button type="button" className="wb-action deck locked" title="Präsentation" onClick={() => { setGuestGate('begleiter'); setNavOpen(false) }}>
+              <span className="wb-action-icon" aria-hidden="true">🖥️</span>
+              <span className="wb-action-label">Präsentation</span>
+              {deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>} {lockBadge}
             </button>
           ) : (
             <a
@@ -783,8 +834,11 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
               href={`/einheiten/${d.id}/deck`}
               target="_blank"
               rel="noopener noreferrer"
+              title="Präsentation"
             >
-              🖥️ Präsentation{deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>}
+              <span className="wb-action-icon" aria-hidden="true">🖥️</span>
+              <span className="wb-action-label">Präsentation</span>
+              {deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>}
             </a>
           )
         )}
@@ -798,6 +852,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                   key={s}
                   className={`wb-item${doc === 'doc-s' && situation === s ? ' active' : ''}`}
                   onClick={() => selectSit(s)}
+                  title={classifySit(d, s)?.titel || `Herausforderung ${s}`}
                 >
                   <span className={`wb-letter wb-letter-${s}`}>{s}</span>
                   <span className="wb-item-title">{classifySit(d, s)?.titel || `Herausforderung ${s}`}</span>
@@ -809,6 +864,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           <button
             className={`wb-item solo${doc === 'doc-austausch' ? ' active' : ''}`}
             onClick={() => pick('doc-austausch')}
+            title="Austausch & Transfer"
           >
             <span className="wb-dot">🔄</span>
             <span className="wb-item-title">Austausch &amp; Transfer</span>
@@ -818,6 +874,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
             <button
               className={`wb-item solo${doc === 'doc-dossier' ? ' active' : ''}`}
               onClick={() => pick('doc-dossier')}
+              title="Glossar+"
             >
               <span className="wb-dot">📖</span>
               <span className="wb-item-title">Glossar+</span>
@@ -834,12 +891,15 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <span className="wb-ki-label">Zusatzmaterialien</span>
                 <span className="wb-chevron" aria-hidden="true">▾</span>
               </button>
-              {zusatzOpen && (
+              {/* Eingeklappt gibt es keinen Gruppenkopf zum Aufklappen — dann muss
+                  jede Seite als Knopf in der Schmalspur stehen. */}
+              {(zusatzOpen || navCollapsed) && (
                 <>
           {d.dossier?.leseblatt && (
             <button
               className={`wb-item nested${doc === 'doc-leseblatt' ? ' active' : ''}`}
               onClick={() => pick('doc-leseblatt')}
+              title="Lese-Arbeitsblatt"
             >
               <span className="wb-dot">📝</span>
               <span className="wb-item-title">Lese-Arbeitsblatt</span>
@@ -885,7 +945,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                   key={t.typ}
                   className={`wb-item nested${doc === 'doc-kn-s' && knTyp === t.typ ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => selectKnTyp(t.typ)}
+                  title={knTypLabel(t.typ, t.label, d.kn?.lehrgang)}
                 >
+                  <span className="wb-dot wb-rail-only" aria-hidden="true">{KN_TYP_ICON[t.typ] || '📄'}</span>
                   <span className="wb-item-title">{knTypLabel(t.typ, t.label, d.kn?.lehrgang)}</span>
                   {lockBadge}
                 </button>
@@ -893,6 +955,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
               <button
                 className={`wb-item${doc === 'doc-kn-lp' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                 onClick={() => pick('doc-kn-lp')}
+                title="Lehrperson + Bewertung"
               >
                 <span className="wb-dot">📋</span>
                 <span className="wb-item-title">Lehrperson + Bewertung</span>
@@ -913,13 +976,14 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <span className="wb-ki-label">KI-Toolbox</span>
                 <span className="wb-chevron" aria-hidden="true">▾</span>
               </button>
-              {kiOpen && (
+              {(kiOpen || navCollapsed) && (
               <>
               <p className="wb-ki-hint">Optionales Zusatzangebot — die Lehrperson entscheidet über den Einsatz.</p>
               {d.kiLiesmich?.raw && (
                 readOnly ? (
-                  <button type="button" className="wb-action lies wb-ki-lies locked" onClick={() => { setGuestGate('ki'); setNavOpen(false) }}>
-                    📖 KI-Toolbox — Lies mich! {lockBadge}
+                  <button type="button" className="wb-action lies wb-ki-lies locked" title="KI-Toolbox — Lies mich!" onClick={() => { setGuestGate('ki'); setNavOpen(false) }}>
+                    <span className="wb-action-icon" aria-hidden="true">📖</span>
+                    <span className="wb-action-label">KI-Toolbox — Lies mich!</span> {lockBadge}
                   </button>
                 ) : (
                   <a
@@ -927,8 +991,10 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                     href={`/einheiten/${d.id}/ki-liesmich`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="KI-Toolbox — Lies mich!"
                   >
-                    📖 KI-Toolbox — Lies mich!
+                    <span className="wb-action-icon" aria-hidden="true">📖</span>
+                    <span className="wb-action-label">KI-Toolbox — Lies mich!</span>
                   </a>
                 )
               )}
@@ -936,6 +1002,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <button
                   className={`wb-item${doc === 'doc-ki-1' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-ki-1')}
+                  title={d.ki?.assignments?.find((a) => a.key === 'ki_1')?.titel || 'KI-Auftrag 1'}
                 >
                   <span className="wb-letter wb-letter-ki">1</span>
                   <span className="wb-item-title">{d.ki?.assignments?.find((a) => a.key === 'ki_1')?.titel || 'KI-Auftrag 1'}</span>
@@ -946,6 +1013,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <button
                   className={`wb-item${doc === 'doc-ki-2' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-ki-2')}
+                  title={d.ki?.assignments?.find((a) => a.key === 'ki_2')?.titel || 'KI-Auftrag 2'}
                 >
                   <span className="wb-letter wb-letter-ki">2</span>
                   <span className="wb-item-title">{d.ki?.assignments?.find((a) => a.key === 'ki_2')?.titel || 'KI-Auftrag 2'}</span>
@@ -956,6 +1024,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <button
                   className={`wb-item${doc === 'doc-lernprompt' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-lernprompt')}
+                  title="KI-Lernprompt"
                 >
                   <span className="wb-letter wb-letter-ki">P</span>
                   <span className="wb-item-title">KI-Lernprompt</span>
@@ -966,6 +1035,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <button
                   className={`wb-item${doc === 'doc-lernbegleiter' ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => pick('doc-lernbegleiter')}
+                  title="KI-Lernbegleiter"
                 >
                   <span className="wb-letter wb-letter-ki">L</span>
                   <span className="wb-item-title">KI-Lernbegleiter</span>
@@ -979,7 +1049,10 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
         </nav>
 
         {!readOnly && (
-          <a className="wb-action" href={feedbackUrl}>✍ Feedback nach Unterricht</a>
+          <a className="wb-action" href={feedbackUrl} title="Feedback nach Unterricht">
+            <span className="wb-action-icon" aria-hidden="true">✍</span>
+            <span className="wb-action-label">Feedback nach Unterricht</span>
+          </a>
         )}
       </aside>
 

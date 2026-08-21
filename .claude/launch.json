@@ -13,6 +13,12 @@
       "runtimeArgs": ["run", "dev"],
       "port": 4321
     }
+    ,{
+      "name": "astro-alt",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "4325"],
+      "port": 4325
+    }
   ,{
     "name": "guide",
     "runtimeExecutable": "python",

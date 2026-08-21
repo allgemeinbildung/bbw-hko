@@ -445,6 +445,56 @@ body {
 .wb-action.deck.locked:hover { background: #e2e8f0; border-color: #94a3b8; }
 .wb-tree + .wb-action { margin-top: 8px; }
 
+/* =========================================================
+   Einklappbare Seitenleiste (nur Desktop)
+   Eingeklappt bleibt eine Schmalspur stehen: jede Seite behält ihren Knopf,
+   damit gewechselt werden kann, ohne die Leiste wieder aufzuklappen.
+   ========================================================= */
+.wb-collapse {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; text-align: left;
+  background: transparent; border: 0; border-radius: 8px;
+  padding: 6px 8px; cursor: pointer; font: inherit;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.09em;
+  text-transform: uppercase; color: #94a3b8;
+  transition: background 0.12s, color 0.12s;
+}
+.wb-collapse:hover { background: #f1f5f9; color: #0f172a; }
+.wb-collapse-icon { font-size: 15px; line-height: 1; font-weight: 800; color: #0E6E3A; }
+
+/* Icons, die nur die Schmalspur braucht (dort ist das Icon die Beschriftung). */
+.wb-rail-only { display: none; }
+
+@media (min-width: 881px) {
+  .wb-nav.collapsed { flex: 0 0 62px; width: 62px; padding: 14px 7px 20px; gap: 8px; }
+  .wb-nav.collapsed .wb-field,
+  .wb-nav.collapsed .wb-tree-head,
+  .wb-nav.collapsed .wb-tree-sub,
+  .wb-nav.collapsed .wb-ki-hint,
+  .wb-nav.collapsed .wb-item-title,
+  .wb-nav.collapsed .wb-action-label,
+  .wb-nav.collapsed .wb-action-note,
+  .wb-nav.collapsed .wb-lock,
+  .wb-nav.collapsed .wb-collapse-label { display: none; }
+  .wb-nav.collapsed .wb-rail-only { display: block; }
+  .wb-nav.collapsed .wb-collapse,
+  .wb-nav.collapsed .wb-item,
+  .wb-nav.collapsed .wb-action {
+    justify-content: center; gap: 0;
+    padding-left: 0; padding-right: 0;
+  }
+  .wb-nav.collapsed .wb-item.active { box-shadow: inset 3px 0 0 #0E6E3A; }
+  /* Ohne Gruppenköpfe braucht die Spur eine sichtbare Fuge zwischen den Blöcken. */
+  .wb-nav.collapsed .wb-tree-group:not(:first-child) {
+    border-top: 1px solid #e2e8f0; padding-top: 8px;
+  }
+}
+
+@media (max-width: 880px) {
+  /* Mobil regelt die Schublade (☰ Dokumente) — kein zweiter Zustand. */
+  .wb-collapse { display: none; }
+}
+
 /* canvas + document header */
 .wb-canvas { flex: 1; min-width: 0; }
 .wb-dochead {
