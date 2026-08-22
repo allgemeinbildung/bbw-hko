@@ -249,35 +249,6 @@ body {
   border-color: #3ad07a;
   box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.32);
 }
-/* Prominent floating «Download» action — fixed to the bottom-right of the window */
-.download-fab {
-  position: fixed;
-  right: 28px;
-  bottom: 28px;
-  z-index: 60;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #ffffff;
-  background: #0E6E3A;
-  border: none;
-  border-radius: 12px;
-  padding: 15px 26px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28), 0 0 0 4px rgba(14, 110, 58, 0.22);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
-}
-.download-fab:hover {
-  background: #0a5a2e;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.34), 0 0 0 5px rgba(14, 110, 58, 0.3);
-}
-.download-fab:active { transform: translateY(0); }
-.download-fab:disabled { opacity: 0.65; cursor: progress; transform: none; }
 
 /* =========================================================
    Workbench — sidebar document navigator
@@ -501,7 +472,8 @@ body {
   position: sticky;
   top: var(--wb-top, 80px);
   z-index: 20;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px 16px;
   padding: 11px 24px;
   background: rgba(29, 32, 38, 0.9);
   backdrop-filter: blur(8px);
@@ -541,19 +513,91 @@ body {
 
 /* dochead right-side actions: mode toggle + per-document download */
 .wb-dochead-actions { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.wb-dl { display: inline-flex; align-items: center; gap: 6px; }
-.wb-dl-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  color: #b9bdc5; margin-right: 2px;
+/* Herunterladen in der Seitenleiste — bei den Dokumenten, nicht über dem Blatt.
+   Zwei Ebenen: das offene Dokument (HTML/Word) und die ganze Einheit als ZIP. */
+.wb-dlbox {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 10px; border: 1px solid #e2e8f0; border-radius: 10px;
+  background: #f8fafc;
 }
-.wb-dl button {
-  background: rgba(255,255,255,0.12); border: 0; color: #e8eaee;
-  padding: 6px 12px; border-radius: 6px;
-  font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+.wb-dlbox-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.wb-dlbox-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+  color: #64748b; white-space: nowrap;
+}
+.wb-dlbox-btns { display: inline-flex; gap: 4px; flex-shrink: 0; }
+.wb-dlbox-btns button {
+  background: #fff; border: 1px solid #cbd5e1; color: #334155;
+  padding: 4px 9px; border-radius: 6px;
+  font: inherit; font-size: 11.5px; font-weight: 600; cursor: pointer;
+  transition: all 0.12s;
+}
+.wb-dlbox-btns button:hover:not(:disabled) { border-color: #0E6E3A; color: #0E6E3A; background: #fff; }
+.wb-dlbox-btns button:disabled { opacity: 0.5; cursor: not-allowed; }
+.wb-dlbox-zip {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 9px 12px; border: 0; border-radius: 8px;
+  background: #0E6E3A; color: #fff;
+  font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+  transition: background 0.12s;
+}
+.wb-dlbox-zip:hover:not(:disabled) { background: #0a5a2e; }
+.wb-dlbox-zip:disabled { opacity: 0.65; cursor: progress; }
+.wb-dlbox-gast {
+  margin: 0; padding: 9px 10px; border-radius: 8px;
+  border: 1px dashed #cbd5e1; background: #f8fafc;
+  font-size: 11.5px; line-height: 1.4; color: #64748b;
+}
+/* Schmalspur: nur die Symbole bleiben stehen, gestapelt. */
+.wb-nav.collapsed .wb-dlbox { padding: 6px 4px; gap: 6px; }
+.wb-nav.collapsed .wb-dlbox-row { flex-direction: column; gap: 4px; }
+.wb-nav.collapsed .wb-dlbox-label,
+.wb-nav.collapsed .wb-dlbox-zip-label,
+.wb-nav.collapsed .wb-dlbox-gast { display: none; }
+.wb-nav.collapsed .wb-dlbox-btns { flex-direction: column; width: 100%; }
+.wb-nav.collapsed .wb-dlbox-btns button { padding: 4px 2px; font-size: 10px; }
+.wb-nav.collapsed .wb-dlbox-zip { padding: 9px 0; }
+@media print { .wb-dlbox, .wb-dlbox-gast { display: none !important; } }
+
+/* Zoomsteuerung der Vorschau: Regler + Schrittknöpfe + «Breite füllen». */
+.wb-zoom {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 4px; border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+}
+.wb-zoom-step {
+  background: transparent; border: 0; color: #d7dadf;
+  width: 24px; height: 24px; border-radius: 6px;
+  font: inherit; font-size: 15px; line-height: 1; cursor: pointer;
   transition: background 0.12s, color 0.12s;
 }
-.wb-dl button:hover { background: #fff; color: #1d2026; }
-.wb-dl button:disabled { opacity: 0.6; cursor: progress; }
+.wb-zoom-step:hover:not(:disabled) { background: #fff; color: #1d2026; }
+.wb-zoom-step:disabled { opacity: 0.4; cursor: default; }
+.wb-zoom-range {
+  width: 84px; height: 16px; margin: 0 2px; cursor: pointer;
+  accent-color: #0E6E3A;
+  background: transparent;
+}
+.wb-zoom-val {
+  background: transparent; border: 0; color: #b9bdc5;
+  padding: 4px 4px; border-radius: 6px; min-width: 40px;
+  font: inherit; font-size: 11.5px; font-variant-numeric: tabular-nums;
+  cursor: pointer; transition: background 0.12s, color 0.12s;
+}
+.wb-zoom-val:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.wb-zoom-fit {
+  background: transparent; border: 0; color: #d7dadf;
+  padding: 5px 10px; border-radius: 6px; white-space: nowrap;
+  font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.wb-zoom-fit:hover { color: #fff; }
+.wb-zoom-fit.on { background: #fff; color: #1d2026; font-weight: 600; }
+@media print { .wb-zoom { display: none !important; } }
+/* Im engen Kopf zuerst den Regler opfern — die Schrittknöpfe und «Breite»
+   bleiben bedienbar. */
+@media (max-width: 1024px) { .wb-zoom-range, .wb-zoom-val { display: none; } }
 
 /* Hinweis auf die im Browser gesicherten Eingaben der Lehrperson (Online-Renderer).
    Zurueckhaltend gehalten: es ist eine Zustandsanzeige, keine Aktion. */
@@ -641,6 +685,20 @@ body {
 /* ---------- A4 page (screen letterbox) ---------- */
 .pages {
   padding: 76px 24px 64px; /* top accounts for chrome */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Bei Zoom > Fensterbreite darf das Blatt nicht links abgeschnitten werden —
+     `safe center` kippt in dem Fall auf linksbündig, damit der Rand scrollbar bleibt. */
+  align-items: safe center;
+  gap: 18px;
+  overflow-x: auto;
+}
+/* Zoomhülle der Werkbank. Der Zoom sitzt bewusst hier und nicht auf .pages:
+   die Hülle aussen bleibt ungezoomt und damit als Messgrundlage für
+   «Breite füllen» brauchbar. Das Standalone-HTML (standalone-shell) hat diese
+   Ebene nicht — .pages stapelt die Blätter dort weiterhin selbst. */
+.pages-zoom {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1793,10 +1851,12 @@ body.aesthetic-editorial .niveau-legende .niv {
 @page { size: A4; margin: 0; }
 @media print {
   body { background: white; }
-  .app-chrome, .tweaks-host, .toast, .download-fab,
+  .app-chrome, .tweaks-host, .toast,
   .wb-nav, .wb-dochead, .wb-ki-banner, .wb-nav-toggle, .wb-scrim { display: none !important; }
   .wb-canvas .pages { padding: 0; }
-  .pages { padding: 0; gap: 0; }
+  .pages { padding: 0; gap: 0; overflow: visible; }
+  /* Der Bildschirmzoom darf den Ausdruck nie skalieren. */
+  .pages-zoom { zoom: 1 !important; gap: 0; }
   .a4-page {
     box-shadow: none;
     margin: 0;

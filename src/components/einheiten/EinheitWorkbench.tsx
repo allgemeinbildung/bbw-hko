@@ -49,6 +49,30 @@ function loadNavCollapsed(): boolean {
   }
 }
 
+/**
+ * Zoomstufe der Vorschau — ebenfalls einheitenübergreifend gemerkt. Gespeichert
+ * wird entweder `fit` (Breite füllen, passt sich jeder Fensterbreite an) oder
+ * eine feste Prozentzahl. Ein A4-Blatt ist 210mm breit; CSS definiert 1mm als
+ * 96/25.4 px, die Umrechnung ist also exakt und muss nicht gemessen werden.
+ */
+const WB_ZOOM_KEY = 'hko-wb-zoom'
+const A4_WIDTH_PX = (210 * 96) / 25.4
+const ZOOM_MIN = 0.4
+const ZOOM_MAX = 2
+const clampZoom = (z: number) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z))
+
+function loadZoomPref(): { fit: boolean; zoom: number } {
+  try {
+    const raw = localStorage.getItem(WB_ZOOM_KEY)
+    if (raw === 'fit') return { fit: true, zoom: 1 }
+    const n = Number(raw)
+    if (Number.isFinite(n) && n > 0) return { fit: false, zoom: clampZoom(n) }
+  } catch { /* privater Modus — dann eben ohne Gedächtnis */ }
+  // Ohne gespeicherte Wahl: auf schmalen Fenstern passt das Blatt ohnehin nicht
+  // in die Spalte — dort ist «Breite» die brauchbarere Voreinstellung.
+  return { fit: typeof window !== 'undefined' && window.innerWidth < 1200, zoom: 1 }
+}
+
 /** Icon je KN-Typ — im eingeklappten Zustand ist es die einzige Beschriftung. */
 const KN_TYP_ICON: Record<string, string> = {
   fachgespraech: '🗣️',
@@ -173,6 +197,10 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   const [kiOpen, setKiOpen] = useState(false)
   const [zusatzOpen, setZusatzOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
+  const [zoomPref] = useState(loadZoomPref)
+  const [zoom, setZoom] = useState(zoomPref.zoom)
+  const [fitWidth, setFitWidth] = useState(zoomPref.fit)
+  const pagesRef = useRef<HTMLElement | null>(null)
   // Gast-Gate für die Lies-mich-Buttons (KN/KI-Sperre läuft über die doc-Auswahl selbst).
   const [guestGate, setGuestGate] = useState<null | 'kn' | 'begleiter' | 'ki'>(null)
   const [dling, setDling] = useState(false)
@@ -203,7 +231,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
 
   useEffect(() => {
     const style = document.createElement('style')
-    style.textContent = '@media print { .wb-nav, .wb-dochead, .wb-ki-banner, .download-fab, .toast { display: none !important; } .wb-canvas .pages { padding: 0; gap: 0; margin: 0; } body { margin: 0; padding: 0; } }'
+    style.textContent = '@media print { .wb-nav, .wb-dochead, .wb-ki-banner, .toast { display: none !important; } .wb-canvas .pages { padding: 0; gap: 0; margin: 0; } .pages-zoom { zoom: 1 !important; } body { margin: 0; padding: 0; } }'
     document.head.appendChild(style)
     return () => document.head.removeChild(style)
   }, [])
@@ -226,6 +254,46 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       else localStorage.removeItem(WB_NAV_KEY)
     } catch { /* privater Modus — dann eben ohne Gedächtnis */ }
   }, [navCollapsed])
+
+  // «Breite füllen» rechnet die Stufe aus der tatsächlich freien Spaltenbreite.
+  // Gemessen wird die **ungezoomte** Hülle (.pages) — der Zoom sitzt eine Ebene
+  // tiefer, sonst wäre die Messung zirkulär. Der ResizeObserver fängt neben dem
+  // Fenster auch das Ein-/Ausklappen der Seitenleiste ab.
+  useEffect(() => {
+    if (!fitWidth) return
+    const el = pagesRef.current
+    if (!el) return
+    const measure = () => {
+      const cs = getComputedStyle(el)
+      const avail = el.clientWidth - parseFloat(cs.paddingLeft || '0') - parseFloat(cs.paddingRight || '0')
+      // 2px Sicherheitsabstand: träfe die Breite exakt, könnte ein aufblitzender
+      // Querbalken die Messung im ResizeObserver aufschaukeln.
+      if (avail > 0) setZoom(clampZoom((avail - 2) / A4_WIDTH_PX))
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    // Der ResizeObserver ist die Feinabstimmung (Seitenleiste, Schriftgrad-Zoom
+    // des Browsers); das resize-Ereignis ist der verlässliche Grundfall.
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null
+    ro?.observe(el)
+    return () => {
+      window.removeEventListener('resize', measure)
+      ro?.disconnect()
+    }
+  }, [fitWidth, navCollapsed, navOpen])
+
+  // Zoomwahl überlebt Seitenwechsel und Neuladen (wie der Leisten-Zustand).
+  useEffect(() => {
+    try {
+      if (fitWidth) localStorage.setItem(WB_ZOOM_KEY, 'fit')
+      else localStorage.setItem(WB_ZOOM_KEY, String(Math.round(zoom * 100) / 100))
+    } catch { /* privater Modus — dann eben ohne Gedächtnis */ }
+  }, [fitWidth, zoom])
+
+  const setZoomManual = useCallback((z: number) => {
+    setFitWidth(false)
+    setZoom(clampZoom(Math.round(z * 100) / 100))
+  }, [])
 
   // Anzahl tatsächlich befüllter Felder — Grundlage für Anzeige und Aufräumen.
   const notizCount = useMemo(
@@ -1048,6 +1116,46 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           )}
         </nav>
 
+        {/* Herunterladen gehört zu den Dokumenten und steht darum bei ihnen — nicht
+            im Dokumentkopf und nicht als schwebender Knopf über dem Blatt. Zwei
+            Ebenen, absteigend: das gerade offene Dokument (HTML/Word) und die
+            ganze Einheit als ZIP. */}
+        {readOnly ? (
+          <p className="wb-dlbox-gast">👁 Gast-Ansicht · Download nur für angemeldete Lehrpersonen</p>
+        ) : (
+          <div className="wb-dlbox">
+            <div className="wb-dlbox-row">
+              <span className="wb-dlbox-label">Dieses Dokument</span>
+              <span className="wb-dlbox-btns">
+                <button
+                  type="button"
+                  onClick={() => downloadCurrent('html')}
+                  disabled={dling || !!gateKind}
+                  title="Das offene Dokument als HTML herunterladen"
+                >HTML</button>
+                <button
+                  type="button"
+                  onClick={() => downloadCurrent('word')}
+                  disabled={dling || !!gateKind}
+                  title="Das offene Dokument als Word-Datei herunterladen"
+                >Word</button>
+              </span>
+            </div>
+            <button
+              type="button"
+              className="wb-dlbox-zip"
+              onClick={handleBundle}
+              disabled={bundling}
+              title="Alle Dokumente der Einheit als ZIP herunterladen"
+            >
+              <span className="wb-dlbox-zip-icon" aria-hidden="true">⬇</span>
+              <span className="wb-dlbox-zip-label">
+                {bundling ? 'Download läuft…' : 'Ganze Einheit · ZIP'}
+              </span>
+            </button>
+          </div>
+        )}
+
         {!readOnly && (
           <a className="wb-action" href={feedbackUrl} title="Feedback nach Unterricht">
             <span className="wb-action-icon" aria-hidden="true">✍</span>
@@ -1069,19 +1177,55 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
                 <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>
               </div>
             )}
+            {!gateKind && (
+              <div className="wb-zoom" role="group" aria-label="Vorschau zoomen">
+                <button
+                  type="button"
+                  className="wb-zoom-step"
+                  onClick={() => setZoomManual(zoom - 0.1)}
+                  disabled={zoom <= ZOOM_MIN + 0.001}
+                  title="Verkleinern"
+                  aria-label="Verkleinern"
+                >−</button>
+                <input
+                  className="wb-zoom-range"
+                  type="range"
+                  min={ZOOM_MIN * 100}
+                  max={ZOOM_MAX * 100}
+                  step={5}
+                  value={Math.round(zoom * 100)}
+                  onChange={(e) => setZoomManual(Number(e.target.value) / 100)}
+                  aria-label="Zoomstufe"
+                />
+                <button
+                  type="button"
+                  className="wb-zoom-step"
+                  onClick={() => setZoomManual(zoom + 0.1)}
+                  disabled={zoom >= ZOOM_MAX - 0.001}
+                  title="Vergrössern"
+                  aria-label="Vergrössern"
+                >+</button>
+                <button
+                  type="button"
+                  className="wb-zoom-val"
+                  onClick={() => setZoomManual(1)}
+                  title="Auf 100 % zurücksetzen"
+                >{Math.round(zoom * 100)}%</button>
+                <button
+                  type="button"
+                  className={`wb-zoom-fit${fitWidth ? ' on' : ''}`}
+                  onClick={() => setFitWidth((v) => !v)}
+                  aria-pressed={fitWidth}
+                  title="Blattbreite an das Fenster anpassen"
+                >↔ Breite</button>
+              </div>
+            )}
             {!readOnly && notizCount > 0 && (
               <div className="wb-notiz" role="status">
                 <span className="wb-notiz-text">
                   {notizCount === 1 ? '1 Feld' : `${notizCount} Felder`} in diesem Browser gesichert
                 </span>
                 <button type="button" onClick={clearNotizen}>verwerfen</button>
-              </div>
-            )}
-            {!readOnly && !gateKind && (
-              <div className="wb-dl" role="group" aria-label="Dieses Dokument herunterladen">
-                <span className="wb-dl-label">Dieses Dokument:</span>
-                <button type="button" onClick={() => downloadCurrent('html')} disabled={dling}>⬇ HTML</button>
-                <button type="button" onClick={() => downloadCurrent('word')} disabled={dling}>⬇ Word</button>
               </div>
             )}
           </div>
@@ -1103,18 +1247,12 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
             </p>
           </div>
         )}
-        <main className="pages">{gateKind ? <GatePanel kind={gateKind} /> : docNode}</main>
+        <main className="pages" ref={pagesRef}>
+          <div className="pages-zoom" style={{ zoom }}>
+            {gateKind ? <GatePanel kind={gateKind} /> : docNode}
+          </div>
+        </main>
       </div>
-
-      {readOnly ? (
-        <div className="download-fab" style={{ cursor: 'default', opacity: 0.85 }}>
-          👁 Gast-Ansicht · Download nur für angemeldete Lehrpersonen
-        </div>
-      ) : (
-        <button className="download-fab" onClick={handleBundle} disabled={bundling}>
-          {bundling ? '⏳ Download läuft…' : '⬇ Download'}
-        </button>
-      )}
 
       {navOpen && <div className="wb-scrim" onClick={() => setNavOpen(false)} />}
       {toast && <div className={`toast ${toast.kind === 'error' ? 'error' : ''}`}>{toast.msg}</div>}
