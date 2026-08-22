@@ -167,6 +167,6 @@ const kompTexte = abgedeckte.map((nr) => ({ nr, text: kompTextMap.get(String(nr)
     feedbackUrl={`/einheiten/${setKey}/feedback`}
     abgedeckteKompetenzen={meta.abgedeckte_kompetenzen}
     defaultAbteilung={defaultAbteilung}
-    readOnly={isGuest && !import.meta.env.DEV}
+    readOnly={isGuest}
   />
 </Einheiten>
