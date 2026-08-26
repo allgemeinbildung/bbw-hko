@@ -4,6 +4,7 @@ import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson } from '../../.
 import { skNameByNr } from '../../../lib/sk-labels'
 import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from '../../../lib/einheiten/sprachfoerderung'
+import { RUBRIK_PUNKTE_LABELS, RUBRIK_ANKREUZ_HINWEIS } from '../../../lib/einheiten/rubrik-skala'
 
 export interface DocKnLpProps {
   kn: KnJson
@@ -265,21 +266,20 @@ function DocKnLpKnTyp({ kn, abteilung, knTyp, sectionNr, pageNum, pageTotal }: {
 function DocKnLpBewertung({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; abteilung?: string; pageNum: number; pageTotal: number }) {
   const rs = kn.rubrik_shared
   if (!rs) return null
-  const stufenLabels = ['Stufe 1', 'Stufe 2', 'Stufe 3', 'Stufe 4']
   return (
     <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · BEWERTUNG"
             docTitel={kn.hybrid_situation?.titel}
             pageNum={pageNum} pageTotal={pageTotal}>
       <SectionHead num="09 · Bewertung">Bi-dimensionaler Rubrik-Grid</SectionHead>
       <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
-        Pro Kriterium die zutreffende Stufe ankreuzen. SuK und Ges werden getrennt aggregiert — am Schluss zwei separate Noten, niemals zu einer verschmolzen.
+        {RUBRIK_ANKREUZ_HINWEIS}
       </p>
       <table className="rubrik-grid">
         <thead>
           <tr>
             <th style={{ width: '34mm' }}>Kriterium</th>
             <th className="dim-cell">Dim.</th>
-            {stufenLabels.map((label, i) => (
+            {RUBRIK_PUNKTE_LABELS.map((label, i) => (
               <th key={i} className="stufe-th">{label}</th>
             ))}
           </tr>

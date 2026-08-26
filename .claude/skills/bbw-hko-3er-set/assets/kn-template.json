@@ -6,7 +6,7 @@
       "Hybrid-Herausforderung muss mindestens ein Spannungsfeld aus prinzip.mehrdeutigkeits_architektur.trade_off_raum aktivieren.",
       "Persona der Hybrid-Herausforderung ist disjunkt von allen drei herausforderung_*.persona — kommt aus prinzip.persona_pool_kn_neu.",
       "Alle 3 KN-Typen sind im selben File — LP-Wahl ist Platform-Layer-Concern, kein Generation-Time-Lock-In.",
-      "Rubrik bi-dimensional: 4 Kriterien (je 2 in SuK und Ges), 4 Stufen, gleichgewichtet (Check 13).",
+      "Rubrik bi-dimensional: 4 Kriterien (je 2 in SuK und Ges), 4 Punktbaender (Skala 0-3), gleichgewichtet (Check 13).",
       "Kriterium 3 (Wirtschaftliches Prinzip) wird je nach dominantem Aspekt umbenannt — siehe references/kn-architecture.md Paragraph 6.",
       "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (hybrid_situation.{titel, text, leitfrage, alignment_note.*}, kn_typen[].fragestruktur[].frage, kn_typen[].aufgaben[].aufgabe, kn_typen[].reflexionsfragen[], rubrik_shared.kriterien[].{name, stufen[].text, niveaubaender[].text}). Transliteration nur in IDs (id, set_ref, prinzip_ref, anchored_situations[])."
     ],
@@ -132,7 +132,7 @@
   ],
 
   "rubrik_shared": {
-    "_kommentar": "Bi-dimensionale Rubrik: 4 Kriterien (2 SuK + 2 Ges), 4 Stufen pro Kriterium, gleichgewichtet. Niveaubaender mappen auf Stufen-Verteilung. Kriterium 3 wird je nach dominantem Aspekt umbenannt — der Default-Wert hier ist 'Wirtschaftliches Prinzip' fuer Wirtschaft-dominierte Sets; references/kn-architecture.md Paragraph 6 listet die Varianten (Rechtliches Prinzip, Identitaetskonstrukt, Oekologisches Prinzip, ...).",
+    "_kommentar": "Bi-dimensionale Rubrik: 4 Kriterien (2 SuK + 2 Ges), 4 Punktbaender pro Kriterium, gleichgewichtet. Die Skala ist 0-3 Punkte: der Array-Index von stufen[] IST die Punktzahl, stufen[0] = 0 Punkte = nichts Wesentliches der geforderten Kompetenz beobachtbar. Das Feld heisst weiterhin stufen (Datenmodell unveraendert), beschriftet wird es in src/lib/einheiten/rubrik-skala.ts. Niveaubaender mappen auf die Punkte-Verteilung. Kriterium 3 wird je nach dominantem Aspekt umbenannt — der Default-Wert hier ist 'Wirtschaftliches Prinzip' fuer Wirtschaft-dominierte Sets; references/kn-architecture.md Paragraph 6 listet die Varianten (Rechtliches Prinzip, Identitaetskonstrukt, Oekologisches Prinzip, ...).",
     "dimensionen": ["SuK", "Ges"],
     "kriterien": [
       {
@@ -177,9 +177,9 @@
       }
     ],
     "niveaubaender": [
-      {"label": "unter 60 %", "definition": "Stufen 1-2 dominant"},
-      {"label": "80 %", "definition": "mehrheitlich Stufe 3"},
-      {"label": "100 %", "definition": "Stufe 4 in mind. 3 Kriterien"}
+      {"label": "unter 60 %", "definition": "0-1 Punkte dominant"},
+      {"label": "80 %", "definition": "mehrheitlich 2 Punkte"},
+      {"label": "100 %", "definition": "3 Punkte in mind. 3 Kriterien"}
     ]
   },
 

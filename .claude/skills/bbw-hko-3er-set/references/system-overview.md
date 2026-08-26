@@ -529,10 +529,10 @@ The Kompetenznachweis renders two documents: **DOC-KN-S** (student) and **DOC-KN
         "name": "Fachkorrektheit",
         "dimension": "SuK",
         "stufen": [
-          "Begriffe fehlen oder falsch verwendet.",          // Stufe 1
-          "Begriffe teilweise korrekt, Lücken vorhanden.",  // Stufe 2
-          "Begriffe korrekt und situationsangemessen.",     // Stufe 3
-          "Differenziert, kontextualisiert, eigenständig."  // Stufe 4
+          "Begriffe fehlen oder falsch verwendet.",          // 0 Punkte
+          "Begriffe teilweise korrekt, Lücken vorhanden.",  // 1 Punkt
+          "Begriffe korrekt und situationsangemessen.",     // 2 Punkte
+          "Differenziert, kontextualisiert, eigenständig."  // 3 Punkte
         ]
       },
       {
@@ -563,9 +563,9 @@ The Kompetenznachweis renders two documents: **DOC-KN-S** (student) and **DOC-KN
       }
     ],
     "niveaubaender": [
-      { "label": "unter 60 %", "definition": "Stufen 1–2 dominant" },
-      { "label": "80 %",       "definition": "mehrheitlich Stufe 3" },
-      { "label": "100 %",      "definition": "Stufe 4 in mindestens 3 Kriterien" }
+      { "label": "unter 60 %", "definition": "0–1 Punkte dominant" },
+      { "label": "80 %",       "definition": "mehrheitlich 2 Punkte" },
+      { "label": "100 %",      "definition": "3 Punkte in mindestens 3 Kriterien" }
     ]
   }
 }
@@ -608,7 +608,7 @@ The Kompetenznachweis renders two documents: **DOC-KN-S** (student) and **DOC-KN
 | `hybrid_situation.alignment_note.herausforderungen_mapping[]` | Section 05: `Herausforderung | Szenen-Element` table |
 | `kn_typen[i].label/format/ablauf/fragestruktur-or-aufgaben[]` | Section 06.1–3: per typ |
 | `kn_typen[i].sk[]` + `.aspekte[]` | Section 06: badge chips below questions |
-| `rubrik_shared.kriterien[]` full 4×4 | Section 07: full rubric grid (Stufe 1–4 columns) |
+| `rubrik_shared.kriterien[]` full 4×4 | Section 07: full rubric grid (0–3 Punkte columns) |
 | `rubrik_shared.niveaubaender[]` | Section 07: Niveaubänder list |
 | SuK/Ges note boxes | Section 07: two empty boxes for teacher grading |
 
@@ -821,7 +821,7 @@ The v1.4 rule applies to all prose fields across all files and all code:
 | `fragestruktur` count (fachgespraech) | 5, K2→K3→K3→K4→K4 | Phase 4 Step 3 |
 | `aufgaben` count (mini_case) | 4, K2→K3→K3→K4 | Phase 4 Step 4 |
 | `reflexionsfragen` count (werkschau) | 3 | Phase 4 Step 5 |
-| `rubrik_shared.kriterien` | 4 rows: 2 SuK + 2 Ges, each 4 Stufen | Phase 4 Check 13 |
+| `rubrik_shared.kriterien` | 4 rows: 2 SuK + 2 Ges, each 4 Punktbaender (0–3) | Phase 4 Check 13 |
 | `niveaubaender` | 3 bands (unter 60 / 80 / 100 %) | Fixed template |
 | `persona_pool_units` | 3 berufe + 3 orte, each used exactly once in sit_A/B/C | Phase 2 Check 14 |
 | `persona_pool_kn_neu` | 2 berufe + 2 orte, disjoint from units | Phase 4 Check 11 |

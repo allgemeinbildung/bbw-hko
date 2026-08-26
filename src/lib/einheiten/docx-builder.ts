@@ -15,6 +15,7 @@ import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, Lernpr
 import type { DossierJson, DossierRecherche, DossierScaffold } from '../../components/einheiten/docs/DocEbaDossier'
 import { skNameByNr } from '../sk-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from './sprachfoerderung'
+import { RUBRIK_PUNKTE_LABELS, RUBRIK_ANKREUZ_HINWEIS } from './rubrik-skala'
 
 const A4_W = 11906
 const A4_H = 16838
@@ -1877,10 +1878,10 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
 
   children.push(pageBreak())
   children.push(...sectionHead('07 · Bewertung', 'Bi-dimensionaler Rubrik-Grid', akzent))
-  children.push(p('Pro Kriterium die zutreffende Stufe ankreuzen. SuK und Ges werden getrennt aggregiert — zwei separate Noten, niemals zu einer verschmolzen.', { run: { color: COLOR.inkSoft, size: 16 } }))
+  children.push(p(RUBRIK_ANKREUZ_HINWEIS, { run: { color: COLOR.inkSoft, size: 16 } }))
   const rs = kn.rubrik_shared
   if (rs?.kriterien) {
-    const headerCells = ['Kriterium', 'Dim.', 'Stufe 1', 'Stufe 2', 'Stufe 3', 'Stufe 4']
+    const headerCells = ['Kriterium', 'Dim.', ...RUBRIK_PUNKTE_LABELS]
     const rows = rs.kriterien.map((k) => {
       const cells: any[] = [
         new Paragraph({ children: [new TextRun({ text: k.name, bold: true, size: 18 })] }),

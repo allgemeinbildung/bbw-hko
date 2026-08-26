@@ -116,7 +116,7 @@ Fehlerfall: `ERR_KN_SK_OUT_OF_SCOPE` — listet welche SK in welchem KN-Typ das 
 ### Check 13 — Rubrik-Shape
 - `rubrik_shared.kriterien.length === 4`
 - Genau 2 Kriterien mit `dimension: "SuK"`, genau 2 mit `dimension: "Ges"`
-- Jedes Kriterium hat genau 4 Stufen
+- Jedes Kriterium hat genau 4 Punktbaender (`stufen[]`, Index = Punktzahl, Skala 0-3)
 - `rubrik_shared.niveaubaender.length === 3`
 
 Fehlerfall: `ERR_RUBRIK_SHAPE`.
@@ -273,13 +273,13 @@ Die «Wann ist das Produkt fertig?»-Liste rendert als `☐`-Checkliste, NICHT a
 Fehlerfall: `ERR_VOLLSTAENDIGKEIT_HAS_WEIGHTS` (Prozente/Gewichte im Check gefunden) · `WARN_VOLLSTAENDIGKEIT_SOURCE_DRIFT` (Haken-Punkte weichen von `vollstaendig_wenn[]` ab).
 
 ### Check 28 — Erwartungshorizont je Prueffrage (§E1)
-Sektion 8 enthaelt pro Frage/Aufgabe im Fragenpool einen `[!erwartungshorizont]`-Callout direkt nach der Frage. Titel = Frage-Nr + K-Stufe. K3/K4-Fragen: drei Zeilen (Stufe 3 zeigt / Stufe 4 zeigt zusaetzlich / Nicht Stufe 4 = Zielkonflikt-Aufloesung). K2-Fragen: «vollstaendig vs. lueckenhaft» (kein «Stufe 4 vs. aufloesen»-Kontrast). Anzahl == Zahl der Prueffragen der gewaehlten KN-Typen.
+Sektion 8 enthaelt pro Frage/Aufgabe im Fragenpool einen `[!erwartungshorizont]`-Callout direkt nach der Frage. Titel = Frage-Nr + K-Stufe. K3/K4-Fragen: drei Zeilen (2 Punkte zeigen / 3 Punkte zeigen zusaetzlich / Nicht 3 Punkte = Zielkonflikt-Aufloesung). K2-Fragen: «vollstaendig vs. lueckenhaft» (kein «3 Punkte vs. aufloesen»-Kontrast). Anzahl == Zahl der Prueffragen der gewaehlten KN-Typen.
 
 Fehlerfall: `ERR_ERWARTUNGSHORIZONT_MISSING` — listet Fragen ohne Erwartungshorizont · `WARN_ERWARTUNGSHORIZONT_K2_FORMAT` (K2-Frage nutzt den K3/K4-Dreizeiler).
 
 ### Check 29 — As-built-Invarianten (TEIL 8)
 - **Kein Anhang:** Es existiert KEIN Schluss-Kapitel «Anhang — Quellen» (TEIL 8.3). Dokument endet mit Sektion 8.
-- **Rubrik-Skala/Baender:** Sektion 8 nutzt Stufenskala **1–4** (1 = tiefste) und Niveaubaender **unter 60 % / 80 % / 100 %**, konsistent mit `kn.rubrik_shared` (TEIL 8.2).
+- **Rubrik-Skala/Baender:** Sektion 8 nutzt die Punkteskala **0–3** (0 = nichts Wesentliches beobachtbar) und Niveaubaender **unter 60 % / 80 % / 100 %**, konsistent mit `kn.rubrik_shared` (TEIL 8.2). Kein Vorkommen von «Stufe N» als Rubrik-Angabe — «Stufe» ist fuer Bloom-/K- und R-Stufen reserviert.
 - **Callout-Typen ⊆ 10:** jeder `[!typ]` im Begleiter ∈ {lernziel, hinweis, beispiel, warnung, reflexion, coaching, mehrdeutigkeit, differenzieren, erwartungshorizont, troubleshooting, tafelbild, ki_einsatz}.
 - **Terminologie:** sichtbare Prosa nutzt «Herausforderung A/B/C», nie «Situation X» (Ausnahmen: Fachbegriff «Lernsituation», Eigenname «Situationsblaetter»; TEIL 8.1).
 
@@ -296,8 +296,8 @@ Fehlerfall: `ERR_BEGLEITER_ANHANG_PRESENT` · `ERR_BEGLEITER_RUBRIK_SCALE` · `E
 - `zeilen[].label` max. ~24 Zeichen, `zeilen[].quelle` max. ~30 Zeichen (Chip, `nowrap`).
 - Die Musterloesung erfuellt `format_detail` messbar: geforderte Wortzahl (im `hinweis` beziffern), geforderte Bauteile, geforderte Quellenzahl.
 - Kein Widerspruch zum `[!tafelbild]`-Callout derselben Sektion im `begleiter.md`.
-- Offene Rechts- oder Sachlage wird **explizit benannt** statt geglaettet — das ist der Stufe-4-Anteil und spiegelt `mehrdeutigkeit.hint`.
-- `hinweis` richtet sich an die Lehrperson (Stufe des Beispiels, was daran exemplarisch ist) und erscheint nur in den Referentennotizen.
+- Offene Rechts- oder Sachlage wird **explizit benannt** statt geglaettet — das ist der 3-Punkte-Anteil und spiegelt `mehrdeutigkeit.hint`.
+- `hinweis` richtet sich an die Lehrperson (Niveau des Beispiels, was daran exemplarisch ist) und erscheint nur in den Referentennotizen.
 
 Fehlerfall: `ERR_MUSTERLOESUNG_MISSING` (fehlt ganz) · `WARN_MUSTERLOESUNG_ABSCHNITT_ZU_LANG` (Skill teilt den Abschnitt, wartet auf OK) · `WARN_MUSTERLOESUNG_IST_VORLAGE` (enthaelt Platzhalter wie „…" oder Lueckenstriche statt ausformuliertem Inhalt).
 

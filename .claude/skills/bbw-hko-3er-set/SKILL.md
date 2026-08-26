@@ -776,7 +776,7 @@ Passe `rubrik_shared.kriterien[2].name` an:
 | Technologie und digitale Transformation | Technologisches Prinzip |
 | Gleichstand | `"Fachliches Prinzip aus {Aspekt}"` |
 
-Stufen-Beschreibungen + Niveaubaender bleiben konstant.
+Punktbaender-Beschreibungen + Niveaubaender bleiben konstant.
 
 #### Step 7 — Coherence-Audit (Checks 10-13, 16)
 
@@ -784,7 +784,7 @@ Aus `coherence-checklist.md`:
 - Check 10: Hybrid aktiviert mind. 1 Trade-off, alignment_note benennt Mapping
 - Check 11: Hybrid-Persona disjunkt von allen 3 sit_*.persona (beruf + ort)
 - Check 12: KN-Typ 1 + 2 sk ⊆ Union(sit_*.nrlp.sk)
-- Check 13: Rubrik-Shape (4 Kriterien, 2 SuK + 2 Ges, je 4 Stufen, 3 Niveaubaender)
+- Check 13: Rubrik-Shape (4 Kriterien, 2 SuK + 2 Ges, je 4 Punktbaender à 0–3, 3 Niveaubaender)
 - Check 16: aktivierte_trade_offs enthaelt alle trade_offs der gemappten Herausforderungen
 
 Bei Fehler stoppen, kein File schreiben, Pietro reviewen lassen.
@@ -930,11 +930,11 @@ Der Austausch + Transfer ist seit dem Redesign ein **eigenstaendiges Set-Dokumen
   - `[!hinweis] Ausblick — weitere Pruefformen moeglich` callout (Cluster 5): die 3 KN-Typen sind ein Startset; weitere Formen (Critical Incident, Produkt mit Praesentation) tragen dieselbe Hybrid-Herausforderung und dieselbe Rubrik, sind aber noch nicht ausgearbeitet. Reiner Text, keine Funktion.
 - **Pro KN-Typ**: Fragenbogen-Tabelle (# | Typ | K | Fokus) fuer Fachgespraech; Aufgaben-Tabelle fuer Mini Case; Reflexionsfragen-Liste fuer Werkschau.
 - **`[!erwartungshorizont]` je Prueffrage/Aufgabe (v2, §E1)** — direkt **nach jeder Frage/Aufgabe** im Fragenpool ein eigener Callout. Titel-Pflicht: `Frage {n} ({Bloom-Verb}, K{n}) — {Kurzfokus}`. Inhalt drei Zeilen:
-  - **Stufe 3 zeigt:** was eine situationsangemessene, korrekte Antwort enthaelt (aus dem `frage`-Text + Stufe-3-Deskriptor des einschlaegigen Rubrik-Kriteriums).
-  - **Stufe 4 zeigt zusaetzlich:** Differenzierung, Zielkonflikt explizit offen gehalten, Transfer (aus Stufe-4-Deskriptor).
-  - **Nicht Stufe 4:** ein konkretes Gegenbeispiel, das souveraen klingt, aber den Zielkonflikt **aufloest** — der haeufigste Bewertungsfehler.
-  - Datenhebung: `kn_typen[].fragestruktur[].frage` × `kn_typen[].fragestruktur[].k_stufe` × thematisch passendes `rubrik_shared.kriterien[].stufen[]`. **Generierungsregel:** die `k_stufe` bestimmt das Ziel-Niveau; **K2-Fragen (Erklaeren) brauchen keinen «Stufe 4 vs. aufloesen»-Kontrast, sondern nur «vollstaendig vs. lueckenhaft».** Anzahl der Erwartungshorizont-Callouts richtet sich nach der Zahl der Prueffragen der Einheit.
-- **Bi-dimensionale Bewertung** — Tabelle: Kriterium | Dimension (4 Zeilen, 2 SuK + 2 Ges). Vier Stufen (**Skala 1–4, 1 = tiefste** — rubrik-interne Kriteriumsskala, NICHT die nRLP-Guetestufe 0–3; Spec K2/TEIL 8.2) als kompakte Tabelle. Niveaubaender **unter 60 % / 80 % / 100 %** (Spec K1/K3/TEIL 8.2). Aggregation als Code-Block, SuK- und Ges-Note getrennt, nie zu einer Zahl verrechnen. Werte stammen aus `kn.json` (`rubrik_shared.niveaubaender` + `kriterien[].stufen[]`) — Begleiter und JSON sind konsistent.
+  - **2 Punkte zeigen:** was eine situationsangemessene, korrekte Antwort enthaelt (aus dem `frage`-Text + dem 2-Punkte-Deskriptor des einschlaegigen Rubrik-Kriteriums).
+  - **3 Punkte zeigen zusaetzlich:** Differenzierung, Zielkonflikt explizit offen gehalten, Transfer (aus dem 3-Punkte-Deskriptor).
+  - **Nicht 3 Punkte:** ein konkretes Gegenbeispiel, das souveraen klingt, aber den Zielkonflikt **aufloest** — der haeufigste Bewertungsfehler.
+  - Datenhebung: `kn_typen[].fragestruktur[].frage` × `kn_typen[].fragestruktur[].k_stufe` × thematisch passendes `rubrik_shared.kriterien[].stufen[]`. **Generierungsregel:** die `k_stufe` bestimmt das Ziel-Niveau; **K2-Fragen (Erklaeren) brauchen keinen «3 Punkte vs. aufloesen»-Kontrast, sondern nur «vollstaendig vs. lueckenhaft».** Anzahl der Erwartungshorizont-Callouts richtet sich nach der Zahl der Prueffragen der Einheit.
+- **Bi-dimensionale Bewertung** — Tabelle: Kriterium | Dimension (4 Zeilen, 2 SuK + 2 Ges). Vier Punktbaender (**Skala 0–3, 0 = nichts Wesentliches der geforderten Kompetenz beobachtbar**; deckungsgleich mit den nRLP-Guetestufen 0–3 — Kernteam-1-Entscheid 2026-08; Spec K2/TEIL 8.2) als kompakte Tabelle. Niveaubaender **unter 60 % / 80 % / 100 %** (Spec K1/K3/TEIL 8.2). Aggregation als Code-Block, SuK- und Ges-Note getrennt, nie zu einer Zahl verrechnen. Werte stammen aus `kn.json` (`rubrik_shared.niveaubaender` + `kriterien[].stufen[]`) — Begleiter und JSON sind konsistent.
   - `[!coaching] Bi-dim sauber halten` callout.
   - `[!mehrdeutigkeit] Der haeufigste Bewertungsfehler` callout: erklaert, warum „klarste Loesung = hoechste Note" falsch ist.
 
@@ -1189,8 +1189,8 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 - [ ] Pro Herausforderung: Steckbrief, Herausforderungs-Zitat, Unterrichtsfahrplan, 4 LF-Coaching-Blöcke, Scaffold, Mehrdeutigkeit-Callout, SK-Tabelle
 - [ ] Pro Herausforderung die **4 v2-Bausteine** an korrekter Position: `[!tafelbild]` (vor Scaffold, §E4) · «Wann ist das Produkt fertig?»-Haken-Liste **ohne Prozente** (nach Scaffold, §E2) · `[!ki_einsatz]` (nach Check, §E5) · genau ein `[!troubleshooting]` im Leitfragen-Block an der kritischen LF (§E3)
 - [ ] Mind. 1 fertiger Scaffold (Lueckentext, Tabelle oder Drehbuch) pro Herausforderung
-- [ ] KN-Sektion: Alignment-Tabelle, alle 3 Methoden-Karten, bi-dim Rubrik, **`[!erwartungshorizont]` je Prueffrage** (§E1; K2-Fragen: «vollstaendig vs. lueckenhaft» statt «Stufe 4 vs. aufloesen»)
-- [ ] KN-Rubrik: Stufenskala **1–4** (1 = tiefste), Niveaubaender **unter 60 / 80 / 100 %** (Spec TEIL 8.2)
+- [ ] KN-Sektion: Alignment-Tabelle, alle 3 Methoden-Karten, bi-dim Rubrik, **`[!erwartungshorizont]` je Prueffrage** (§E1; K2-Fragen: «vollstaendig vs. lueckenhaft» statt «3 Punkte vs. aufloesen»)
+- [ ] KN-Rubrik: Punkteskala **0–3** (0 = nichts Wesentliches beobachtbar), Niveaubaender **unter 60 / 80 / 100 %** (Spec TEIL 8.2)
 - [ ] Pro Herausforderung: gebuendelter „Coaching & Scaffolds — auf einen Blick"-Abschnitt + `[!coaching] Perspektivenwechsel`-Callout (Cluster 5, LP-only)
 - [ ] KN-Sektion: `[!hinweis] Ausblick`-Methodenvielfalt vorhanden (Critical Incident / Produkt mit Praesentation; Cluster 5)
 - [ ] Alle Callouts typisiert; 10 erlaubte Typen (Basis: lernziel/hinweis/beispiel/warnung/reflexion/coaching/mehrdeutigkeit/differenzieren · v2: erwartungshorizont/troubleshooting/tafelbild/ki_einsatz)

@@ -201,6 +201,8 @@ Aggregation:
 | **1** | Zeigt groessere Abweichungen … |
 | **0** | Nicht nachvollziehbar oder weicht vollstaendig ab. |
 
+Diese Skala ist **auch die Skala der bi-dimensionalen KN-Rubrik** (`rubrik_shared.kriterien[].stufen[]`, Array-Index = Punktzahl). Sie wird als **Punkte** beschriftet, nicht als Stufen — «Stufe» bleibt Bloom-/K- und R-Stufen vorbehalten. Kernteam-1-Entscheid 2026-08; frueher lief die Rubrik faelschlich auf 1–4.
+
 **Konvention/Norm/Sprachbewusstheit** nicht als drittes Kriterium nebenher — sondern **in SuK-Kriterien integrieren** („Verfasst Kommentar unter Einhaltung der Genre-Konventionen").
 
 ---

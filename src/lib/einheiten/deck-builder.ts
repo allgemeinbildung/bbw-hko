@@ -15,6 +15,8 @@
 /* begleiter.md parsing                                                */
 /* ------------------------------------------------------------------ */
 
+import { RUBRIK_PUNKTE_MAX, RUBRIK_ZIELPUNKTZAHL } from './rubrik-skala'
+
 export type Callout = { type: string; title: string; body: string }
 export type MdTable = { head: string[]; rows: string[][] }
 export type Section = { n: number; heading: string; callouts: Callout[]; tables: MdTable[] }
@@ -872,7 +874,9 @@ export function buildDeck(src: EinheitSource): Deck {
   // Section 8 carries coaching for both the method choice and the grading. Route by a
   // small fixed lexicon so nothing is dropped; grading-flavoured callouts go to the
   // Bewertung slide, everything else stays with the method slide.
-  const isGrading = (c: Callout) => /bewert|benot|\bnote|raster|rubrik|stufe|dimension/i.test(c.title + ' ' + c.body)
+  // `stufe` bleibt im Lexikon, obwohl die Rubrik in Punkten spricht: noch nicht
+  // migrierte Begleiter-Texte sollen weiterhin auf der Bewertungsfolie landen.
+  const isGrading = (c: Callout) => /bewert|benot|\bnote|raster|rubrik|punkt|stufe|dimension/i.test(c.title + ' ' + c.body)
   const s8 = pick(sec(8), ['coaching', 'mehrdeutigkeit', 'warnung'])
   slides.push({
     id: 'kn-formen',
@@ -906,11 +910,11 @@ export function buildDeck(src: EinheitSource): Deck {
   /* ---- KN Bewertung ---- */
   const dims: string[] = kn.rubrik_shared?.dimensionen ?? []
   const baender: any[] = kn.rubrik_shared?.niveaubaender ?? []
-  const stufenCount = kriterien[0]?.stufen?.length ?? 4
+  const punkteMax = (kriterien[0]?.stufen?.length ?? RUBRIK_PUNKTE_MAX + 1) - 1
   slides.push({
     id: 'kn-bewertung',
     accent: BRAND,
-    ctx: `Bewertung · ${zahl(kriterien.length)} Kriterien, ${zahl(stufenCount)} Stufen`,
+    ctx: `Bewertung · ${zahl(kriterien.length)} Kriterien, 0–${punkteMax} Punkte`,
     src: `Zwei getrennte Noten: ${dims.join(' und ')}`,
     headline: `Bewertet wird auf zwei Spuren — ${dims.map((d) => DIMENSION_LABEL[d] ?? d).join(', ')}.`,
     small: true,
@@ -920,8 +924,8 @@ export function buildDeck(src: EinheitSource): Deck {
         grid: 2,
         items: kriterien.map((k) => ({
           k: `${k.dimension} · ${k.name}`,
-          // Stufe 3 is the "korrekt und situationsangemessen" band — the level students aim at.
-          text: k.stufen?.[2] ?? '',
+          // Das Band «korrekt und situationsangemessen» — die Punktzahl, auf die Lernende zielen.
+          text: k.stufen?.[RUBRIK_ZIELPUNKTZAHL] ?? '',
         })),
       },
       {

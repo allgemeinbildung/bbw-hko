@@ -186,7 +186,7 @@ Wenn Praesentation aktiv: zusaetzlich Produktion muendlich + Interaktion und Kol
 ### Struktur
 - 4 Kriterien
 - 2 in Dimension SuK (Sprache und Kommunikation), 2 in Dimension Ges (Gesellschaft)
-- 4 Stufen pro Kriterium
+- 4 Punktbaender pro Kriterium, Skala **0–3** (Index von `stufen[]` = Punktzahl; 0 = nichts Wesentliches beobachtbar)
 - Niveaubaender: unter 60 % / 80 % / 100 %
 - Aggregation: gleichgewichtet (SuK und Ges traegen gleich viel zur Endnote bei)
 
@@ -215,15 +215,15 @@ Das dritte Kriterium wird je nach dem dominanten Aspekt des Sets benannt. Der do
 | Technologie und digitale Transformation | Technologisches Prinzip |
 | Mehrere gleichrangig | "Fachliches Prinzip aus {Aspekt}" als generische Form |
 
-Die 4 Stufen-Beschreibungen bleiben strukturell konstant (Anwendung/Transfer-Progression), inhaltlich passt der Skill den Bezug auf den dominanten Aspekt automatisch an.
+Die 4 Punktbaender-Beschreibungen bleiben strukturell konstant (Anwendung/Transfer-Progression), inhaltlich passt der Skill den Bezug auf den dominanten Aspekt automatisch an.
 
-### Niveaubaender — Mapping auf Stufen
+### Niveaubaender — Mapping auf Punkte
 
-| Niveauband | Stufen-Verteilung |
+| Niveauband | Punkte-Verteilung |
 |---|---|
-| unter 60 % | Stufen 1-2 dominant (>= 2 Kriterien auf Stufe 1 oder 2) |
-| 80 % | mehrheitlich Stufe 3 (>= 3 Kriterien auf Stufe 3) |
-| 100 % | Stufe 4 in mind. 3 von 4 Kriterien |
+| unter 60 % | 0-1 Punkte dominant (>= 2 Kriterien auf 0 oder 1 Punkt) |
+| 80 % | mehrheitlich 2 Punkte (>= 3 Kriterien auf 2 Punkte) |
+| 100 % | 3 Punkte in mind. 3 von 4 Kriterien |
 
 ---
 

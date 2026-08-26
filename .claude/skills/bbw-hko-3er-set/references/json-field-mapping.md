@@ -141,13 +141,13 @@ Pflichtfelder: `format`, `titel`, `format_detail`, `beschreibung`, `schritte`, `
 - `schreib_note`: `"-> wissen/{node_id_primary}"`
 - `abgaben` (Cluster 6, additiv): Array von 1-3 Klartext-Strings, je eine konkrete Abgabe — z.B. `["Kanalbegründung (80–120 Wörter)", "Schreiben im gewählten Kanal (200–250 Wörter)"]`. Speist den "Das liefern Sie ab"-Block (DocS-Callout + DOCX). Bei mehrteiligem Produkt jede Teil-Abgabe einzeln auffuehren.
 - `scaffolding` (C6, additiv): Object `{satzanfaenge[], strategien[], struktur[]}` — je >=1 Eintrag, ausgerichtet am HP-Format + Output-Sprachmodus (`sprachmodus_ids`). Speist den Scaffolding-Block der Handlungsprodukt-Anleitung (Seite 6a). Beispiel rechte_C: `satzanfaenge: ["«Sehr geehrte/r …»", "«Gemäss OR Art. … gilt …»"]`, `strategien: ["Erst Stichworte sammeln, dann ausformulieren"]`, `struktur: ["Anlass – Absicht – Begründung – Schluss"]`.
-- `musterloesung` (C7, additiv): Object `{hinweis, abschnitte[]}` — **ein vollstaendig ausgefuelltes Handlungsprodukt auf Stufe 3–4**, nicht eine Vorlage und nicht eine Beschreibung. Speist die Musterloesungs-Folie im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`). Details und Invarianten: siehe unten.
+- `musterloesung` (C7, additiv): Object `{hinweis, abschnitte[]}` — **ein vollstaendig ausgefuelltes Handlungsprodukt auf 2–3 Punkten**, nicht eine Vorlage und nicht eine Beschreibung. Speist die Musterloesungs-Folie im Unterrichtsdeck (`src/lib/einheiten/deck-builder.ts`). Details und Invarianten: siehe unten.
 
 #### `handlungsprodukt.musterloesung` (C7)
 
 | Feld | Wert |
 |---|---|
-| `hinweis` | Ein Satz an die **Lehrperson**: Stufe des Beispiels + was daran exemplarisch ist. Erscheint NUR in den Referentennotizen, nie auf der Folie. |
+| `hinweis` | Ein Satz an die **Lehrperson**: Niveau des Beispiels + was daran exemplarisch ist. Erscheint NUR in den Referentennotizen, nie auf der Folie. |
 | `abschnitte[]` | 3–5 Objekte `{titel, zeilen[]}`. Die Abschnitte folgen der `scaffolding.struktur` des Produkts (z.B. Anlass / Absicht / Begruendung / Schluss). |
 | `abschnitte[].titel` | Kurz, benennt den Bauteil (`"Begründung nach 3B"`, `"Fall 1 — Samstagsfahrt"`). |
 | `abschnitte[].zeilen[]` | Objekte `{label?, text, quelle?}`. `text` ist Pflicht. |
@@ -276,7 +276,7 @@ Siehe `assets/kn-template.json` und `references/kn-architecture.md`. Zentrale Pf
 - `dominanter_aspekt` — bestimmt Kriterium-3-Wording in der Rubrik
 - `hybrid_situation` — eine Szene mit Persona aus persona_pool_kn_neu, max 120 Woerter, mind. 1 Trade-off aktiviert
 - `kn_typen[]` mit GENAU 3 Eintraegen in dieser Reihenfolge: `fachgespraech`, `mini_case_schriftlich`, `werkschau_transfer`
-- `rubrik_shared` mit 4 Kriterien (2 SuK + 2 Ges), je 4 Stufen, 3 Niveaubaender
+- `rubrik_shared` mit 4 Kriterien (2 SuK + 2 Ges), je 4 Punktbaender (Skala 0–3), 3 Niveaubaender
 
 ---
 
