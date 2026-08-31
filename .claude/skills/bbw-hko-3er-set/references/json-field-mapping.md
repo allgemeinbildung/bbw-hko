@@ -302,12 +302,14 @@ Diese sind Template-konstant. Pro Herausforderung duerfen die Texte angepasst we
 
 ## Bogen-Kopplung 2026-08 — neue Felder (additiv)
 
+**Erzeugungs-Reihenfolge (verbindlich, SKILL.md Schritt 2g):** `handlungsprodukt` (inkl. `schritte`, `abgaben`, `scaffolding.struktur`) wird VOR den Leitfragen entworfen; dann die Kopplungsmatrix (Schritt→LF-Absender), erst danach die LF-Texte mit `liefert` + `scaffolding` im selben Zug. Die Felder unten sind das Artefakt dieser Reihenfolge — nachtraegliches Eintragen erzeugt genau die Konstruktionsluecken, die in 5.4.2 nachtraeglich geschlossen werden mussten.
+
 | Feld | Datentyp | Pflicht | Anmerkung |
 |---|---|---|---|
 | `leitfragen[].liefert` | string | **JA** (Phase 2) | 3-7 Woerter, **nominal, ohne Verb**; benennt den Baustein des Handlungsprodukts, den diese LF liefert («die Spalte 'Ich hoere'»). Rendert als drittes Element der lf-meta-Zeile («→ liefert: …») in DocS und Word. Kopplung + Rueckrichtung: Check 33. |
 | `auftakt_typ` | `"vorbereitung"` \| `"kontext"` \| `"pfad"` | optional, empfohlen | Geschwister von `leitfragen_intro`; steuert nur dessen Darstellung (siehe §5), nicht den Text. |
 | `leitfragen[].scaffolding` | `{ strategien?: string[], satzanfaenge?: string[], produkt?: string }` | empfohlen (v3-Rail) | Rendert als rechte Spalte (~22%) neben der Leitfrage: «So gehen Sie vor» (1-2 Sie-Form-Hinweise, je max. 90 Zeichen) · «Satzanfaenge» (1-2, neutral/Ich-Form, je max. 60 Zeichen, in «Guillemets») · «Ins Produkt» (1 Satz, max. 110 Zeichen, konsistent mit `liefert`). Vokabular bewusst wie `handlungsprodukt.scaffolding`. Quellengebunden aus `loesung`/`schritte`/`handlungsprodukt.scaffolding` heben, nichts aus dem Gedaechtnis. |
-| `template` | string | JA (bestehend) | `"default_4page_v2"` bleibt der Standard fuer neu generierte Einheiten. `"default_4page_v3"` existiert als Pilot-Layout (5.4.2): Checkliste Vollstaendigkeit auf der Selbstcheck-Seite statt Seite 1, Reflexionsfelder 3 Schreiblinien. Der Renderer liest `template` seit 2026-08 — v3 nur auf explizite Anweisung setzen. |
+| `template` | string | JA (bestehend) | **`"default_4page_v3"` ist der Standard fuer neu generierte Einheiten** (Gold-Layout: Checkliste auf der Selbstcheck-Seite, 3-Linien-Reflexionsfelder, 8-Linien-LF-Felder, Statement-Block + Situations-Karte). Die neuen Felder BRAUCHEN diese Metrik — Rail + Auftakt auf v2 (9-Linien-Felder, Checkliste auf Seite 1) laufen ueber die A4-Kante. `"default_4page_v2"` bleibt fuer die publizierten Bestands-Einheiten, bis deren Migration entschieden ist. |
 
 ## Reform-Update 2026-06 — neue Felder (additiv)
 

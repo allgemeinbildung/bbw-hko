@@ -13,7 +13,7 @@ Transforms Swiss ABU Lehrmittel content into HKO 3er-Set Einheiten for bbw-hko �
 
 ## Schema-Compliance (zwingend, nicht verhandelbar)
 
-Die generierten JSONs landen pro Einheit in `src/data/einheiten/{X.Y.Z}_{slug}/` und werden vom Einheiten-Loader (`src/lib/einheiten/index.ts`) sowie dem Index-Build (`scripts/build-einheiten-index.mjs`) gelesen. Sie behalten `template: "default_4page_v2"` als Fixwert (die DocS-Komponenten erwarten diesen Wert). **Zwei Konsumenten, zwei Sichtbarkeiten:** `DocS` rendert den Schuelerbogen, `src/lib/einheiten/deck-builder.ts` das Unterrichtsdeck fuer die Lehrperson. Die LP-Felder `leitfragen[].loesung` (C10) und `handlungsprodukt.musterloesung` (C7) speisen **ausschliesslich** das Deck und duerfen nie im Schuelerbogen landen.
+Die generierten JSONs landen pro Einheit in `src/data/einheiten/{X.Y.Z}_{slug}/` und werden vom Einheiten-Loader (`src/lib/einheiten/index.ts`) sowie dem Index-Build (`scripts/build-einheiten-index.mjs`) gelesen. Sie tragen `template: "default_4page_v3"` (Gold-Layout, Standard fuer neu generierte Einheiten seit 2026-08; `"default_4page_v2"` bleibt den publizierten Bestands-Einheiten bis zu deren Migration). **Zwei Konsumenten, zwei Sichtbarkeiten:** `DocS` rendert den Schuelerbogen, `src/lib/einheiten/deck-builder.ts` das Unterrichtsdeck fuer die Lehrperson. Die LP-Felder `leitfragen[].loesung` (C10) und `handlungsprodukt.musterloesung` (C7) speisen **ausschliesslich** das Deck und duerfen nie im Schuelerbogen landen.
 
 **Wahrheits-Quellen (in dieser Reihenfolge):**
 
@@ -29,7 +29,7 @@ Die generierten JSONs landen pro Einheit in `src/data/einheiten/{X.Y.Z}_{slug}/`
 - Felder umbenennen (`text` vs. `frage`, `bloom` vs. `k_stufe`, `titel` vs. `label`, `punkte` vs. `inhalte`, `mindmap_zentrum` flat vs. nested `mindmap.zentrum`)
 - `nrlp.gesellschaft` als Object statt Array
 - `handlungsprodukt.schritte` als Strings statt `{label, hint}`-Objekten
-- `template` aendern (muss `"default_4page_v2"` sein — Fixwert, von den DocS-Komponenten erwartet)
+- `template` aendern (muss `"default_4page_v3"` sein — Standard fuer neue Einheiten; die Bogen-Kopplungs-Felder brauchen die v3-Metrik, auf v2 laufen Rail + Auftakt ueber die A4-Kante)
 - `gruppenpuzzle_fragen` oder `vorgespraech_fragen` in `sit_*.json` einfuegen (wandern auf Set-Ebene)
 - `bewertungsraster` mit Transfer-Zeile oder ohne `vollstaendig_wenn` (C1: genau 4 Zeilen — Leitfragen/Mindmap/Handlungsprodukt/Reflexion — je mit 2-4 `vollstaendig_wenn`-Bullets; der Transfer lebt im set-level Austausch-&-Transfer-Dokument)
 - `emotion_tag` neu generieren (C1: deprecated, wird nicht mehr gerendert; bestehende Werte bleiben stehen)
@@ -81,7 +81,7 @@ unveraendert — nur das sichtbare Wort wird ersetzt.
 - `prinzip_handoff`, `sk_anker`, `lehrgang` (NEU im 3er-Set)
 
 **Fixwerte:**
-- `template`: `"default_4page_v2"`
+- `template`: `"default_4page_v3"`
 - `wochen`: `3`
 - `legacy` / `source_refs` / `registry_tags`: `{}`
 - `bewertungsraster`: 4 Eintraege (siehe `assets/mission-template.json`), je mit `vollstaendig_wenn` (2-4 Bullets); keine Transfer-Zeile; `gewicht`/`abgabe` optional und unrendered
@@ -503,12 +503,22 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 - Bei Konflikt (Beruf bereits verbraucht): `ERR_PERSONA_DUPLICATE_USE` — Skill stoppt, schreibt nicht
 - Nach allen 3 Sits: Coherence Check 14 erzwingt vollstaendigen Pool-Verbrauch
 
+**Schritt 2g — Gold-Reihenfolge: Handlungsprodukt VOR den Leitfragen (Bogen-Kopplung 2026-08, verbindlich).**
+
+Der rote Faden Situation → Leitfragen → Methoden → Handlungsprodukt entsteht **konstruktiv, nicht nachtraeglich** (Gold-Referenz: `5.4.2_internationale_entscheide_wirken_4j` — dort mussten die Luecken nachtraeglich geschlossen werden, weil die LFs vor dem Produkt geschrieben waren). Innerhalb von Schritt 2 gilt darum diese Erzeugungs-Reihenfolge, unabhaengig von der Feldreihenfolge im JSON:
+
+1. **Erst das Ziel:** `handlungsprodukt` vollstaendig entwerfen — `format`/`titel`/`beschreibung` aus `prinzip.herausforderungen[LETTER].handlungsprodukt_typ`, die `abgaben`, die 5 `schritte` (Labels + vorlaeufige hints), `scaffolding.struktur`.
+2. **Dann die Kopplungsmatrix (intern, VOR jedem LF-Text):** Jedem der 5 Schritte genau einen LF-Absender zuordnen; jede LF speist >=1 Schritt, keine LF traegt 3+. Bloom-Leiter als Heuristik: LF1 (Verstehen) → Grundlagen-/Eroeffnungsschritt · LF2 (Anwenden) → der Schritt mit dem eigenen Material/Fall der Lernenden · LF3 (Analysieren) → der strukturbildende Kernschritt (darf 2 Schritte tragen) · LF4 (Formulieren) → der sprech- oder schreibfertige Baustein des Schlussschritts. Findet ein Schritt keinen ehrlichen Absender: den **Schritt** umbauen, nicht die Matrix schoenreden (Check 33 / `ERR_SCHRITT_OHNE_ABSENDER`).
+3. **Leitfragen als Bestellungen schreiben:** Jede LF wird aus ihrem Matrix-Schritt heraus formuliert — die Frage bestellt genau den Baustein, den der Schritt braucht. `liefert` und `scaffolding` (inkl. `produkt`-Satz) entstehen **im selben Zug** wie der LF-Text, nie als Nachtrag.
+4. **Rueckweg zementieren:** `schritte[].hint` nennt den Absender woertlich («Uebernehmen Sie aus LF_n …»); `handlungsprodukt.scaffolding.struktur` verortet die LF-Bausteine (z. B. «Ausgangslage (Satz aus LF2)»); `methoden[].tun` und `bewertungsraster[].vollstaendig_wenn` erzaehlen dieselbe Kopplung — pro LF ein Kriterium, das ihren Beitrag prueft.
+5. **Zuletzt der Auftakt:** `leitfragen_intro` erzaehlt den Pfad durch die Matrix (welche LF welchen Baustein liefert); `auftakt_typ` nach Funktion waehlen (`vorbereitung`/`pfad`/`kontext`).
+
 | `situation_text` | 4-6 Saetze, Ich-Form (1. Person Singular), mit CHF/Fakten |
 | `zahlen_tabelle` | `[]` oder `[{label, wert}]` |
 | `leitfrage` (singular) | kondensierte Haupt-Frage |
-| `leitfragen[]` | 4 Items, K2/K3/K3/K3+ oder K4; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. `knoten_ref` **Richtwert 3 Seiten**, Seitenzahlen aus echten `[seite: NN]`-Markern, Abschnitt ueber Ueberschriften bestimmen — nie den ganzen Kapitelbereich einsetzen. Mehr als 3 Seiten sind erlaubt, wenn der Inhalt wirklich verteilt steht, aber **nur nach Ruecksprache** (C9, Check 31). Je LF eine `loesung` {kern, zeilen[]} — Lehrpersonen-Antwort auf **der Bloom-Stufe der Frage**, aus dem `knoten_ref`-Abschnitt gehoben (C10, Check 32). Je LF ein `liefert` — 3-7 Woerter, nominal, ohne Verb: der Baustein des Handlungsprodukts, den diese LF liefert; jeder `handlungsprodukt.schritte[]`-Eintrag braucht mind. einen LF-Absender (Check 33) |
+| `leitfragen[]` | 4 Items, K2/K3/K3/K3+ oder K4; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. `knoten_ref` **Richtwert 3 Seiten**, Seitenzahlen aus echten `[seite: NN]`-Markern, Abschnitt ueber Ueberschriften bestimmen — nie den ganzen Kapitelbereich einsetzen. Mehr als 3 Seiten sind erlaubt, wenn der Inhalt wirklich verteilt steht, aber **nur nach Ruecksprache** (C9, Check 31). Je LF eine `loesung` {kern, zeilen[]} — Lehrpersonen-Antwort auf **der Bloom-Stufe der Frage**, aus dem `knoten_ref`-Abschnitt gehoben (C10, Check 32). Je LF ein `liefert` — 3-7 Woerter, nominal, ohne Verb: der Baustein des Handlungsprodukts, den diese LF liefert; jeder `handlungsprodukt.schritte[]`-Eintrag braucht mind. einen LF-Absender (Check 33). LF-Texte, `liefert` und `scaffolding` entstehen **aus der Kopplungsmatrix von Schritt 2g** — NACH dem Handlungsprodukt |
 | `mindmap_zentrum` / `mindmap_aeste` | flat top-level; genau 4 Aeste, Ast 4 `optional: true` (radial/Quadrant) |
-| `handlungsprodukt.*` | aus prinzip.herausforderungen[LETTER].handlungsprodukt_typ; inkl. `scaffolding` {satzanfaenge/strategien/struktur} (C6) und `musterloesung` {hinweis, abschnitte[]} (C7) |
+| `handlungsprodukt.*` | **ZUERST erzeugen (Schritt 2g)** — aus prinzip.herausforderungen[LETTER].handlungsprodukt_typ; inkl. `scaffolding` {satzanfaenge/strategien/struktur} (C6) und `musterloesung` {hinweis, abschnitte[]} (C7); `schritte[].hint` nennt den LF-Absender woertlich |
 | `reflexion_fragen` | Template-Defaults, situationsspezifisch anpassbar |
 | `bewertungsraster` | 4 Eintraege, je mit `vollstaendig_wenn` (2-4 Bullets); keine Transfer-Zeile (C1) |
 | `wochen_plan` | 3 Eintraege Template-Default |
@@ -1141,7 +1151,7 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 - [ ] Keine Eszett
 
 ### Jede Herausforderung (Renderer-Compliance):
-- [ ] `template == "default_4page_v2"`, `wochen == 3`, `legacy/source_refs/registry_tags == {}`
+- [ ] `template == "default_4page_v3"`, `wochen == 3`, `legacy/source_refs/registry_tags == {}`
 - [ ] `modul_titel`, `wissensknoten[0]`, `zahlen_tabelle`, `leitfrage` gesetzt
 - [ ] `leitfragen_intro` **ausgeschrieben** (kein Template-Default; Sie-Form, Lehrmittel-Schlusssatz, max. 510 Zeichen) + `auftakt_typ` ∈ `{vorbereitung, kontext, pfad}` gesetzt
 - [ ] `nrlp.gesellschaft` als Array of `{aspekt, iteration}`

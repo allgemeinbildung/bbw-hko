@@ -1,8 +1,8 @@
 {
   "_kommentar": {
     "zweck": "JSON-Skelett fuer eine einzelne Herausforderung eines 3er-Sets. Die Skill liest dieses Template in Phase 2, fuellt alle Felder pro Herausforderung A/B/C, validiert es und schreibt das Ergebnis nach src/data/einheiten/{X.Y.Z}_{topic_slug}/herausforderung_{LETTER}.json.",
-    "template_reservation": "template == 'default_4page_v2' ist der STANDARD fuer neu generierte Einheiten. Der Renderer liest template seit 2026-08: 'default_4page_v3' existiert als Pilot-Layout (5.4.2 — Checkliste Vollstaendigkeit auf der Selbstcheck-Seite statt Seite 1, Reflexionsfelder 3 Schreiblinien) und wird nur auf explizite Anweisung gesetzt.",
-    "bogen_kopplung_2026_08": "leitfragen_intro wird AUSGESCHRIEBEN, nie mit einem Default-Satz gefuellt (Sie-Form, Lehrmittel-Schlusssatz, max. 510 Zeichen — json-field-mapping.md §5). auftakt_typ ∈ {vorbereitung, kontext, pfad} steuert nur die Darstellung des Intros. leitfragen[].liefert ist PFLICHT: 3-7 Woerter, nominal, ohne Verb — der Baustein des Handlungsprodukts, den diese LF liefert; jeder handlungsprodukt.schritte[]-Eintrag braucht mind. einen LF-Absender (Check 33).",
+    "template_reservation": "template == 'default_4page_v3' ist der STANDARD fuer neu generierte Einheiten (Gold-Layout seit 2026-08: Checkliste Vollstaendigkeit auf der Selbstcheck-Seite, Reflexionsfelder 3 Schreiblinien, LF-Felder 8 Linien, Statement-Block + Situations-Karte auf Seite 1). Die Bogen-Kopplungs-Felder (liefert/scaffolding/auftakt_typ) brauchen diese Metrik — auf v2 laufen Rail und Auftakt ueber die A4-Kante. 'default_4page_v2' bleibt den publizierten Bestands-Einheiten, bis deren Migration entschieden ist.",
+    "bogen_kopplung_2026_08": "leitfragen_intro wird AUSGESCHRIEBEN, nie mit einem Default-Satz gefuellt (Sie-Form, Lehrmittel-Schlusssatz, max. 510 Zeichen — json-field-mapping.md §5). auftakt_typ ∈ {vorbereitung, kontext, pfad} steuert nur die Darstellung des Intros. leitfragen[].liefert ist PFLICHT: 3-7 Woerter, nominal, ohne Verb — der Baustein des Handlungsprodukts, den diese LF liefert; jeder handlungsprodukt.schritte[]-Eintrag braucht mind. einen LF-Absender (Check 33). ERZEUGUNGS-REIHENFOLGE (SKILL.md Schritt 2g): erst handlungsprodukt komplett, dann Kopplungsmatrix, erst danach LF-Texte mit liefert + scaffolding im selben Zug; schritte[].hint nennt den LF-Absender woertlich.",
     "felder_klassifikation": {
       "renderer_pflicht": "Alle Felder, die der Renderer ohne optional-chain konsumiert. Bei Drift crasht der Renderer. Pflicht ist Pflicht: modul_titel, buchstabe, sit_farbe/_light/_mid, wissensknoten (>=1), nrlp.gesellschaft (Array), nrlp.sk, zahlen_tabelle, leitfrage, leitfragen_intro (ausgeschrieben) + auftakt_typ, leitfragen (4 Items mit nr Int, bloom Str, knoten_ref, liefert, text, feld_hoehe_mm 15), mindmap_zentrum (flat), mindmap_aeste (4, Ast 4 optional:true, je {titel, punkte, optional}), handlungsprodukt.{format, titel, format_detail, beschreibung, schritte (5 Objekte {label, hint}), schreib_label, schreib_note}, reflexion_fragen (3 mit nr Str, text, sub null, feld_hoehe_mm 10), bewertungsraster (4 Eintraege, je mit vollstaendig_wenn 2-4 Bullets), wochen 3, wochen_plan (3 Eintraege {label, text, aktiv}), template, legacy {}, source_refs {}, registry_tags {}.",
       "prinzip_first_additiv": "Renderer-unsichtbare Felder, die das Set zusammenhalten: prinzip_ref, herausforderung, mehrdeutigkeit, dekontextualisierung (per-Herausforderung Vorbereitung), zirkularitaet_anker, quellen_anker, lernfortschritt.",
@@ -21,7 +21,7 @@
       "reflexion_fragen.length == 3, je {nr, text, sub: null, feld_hoehe_mm: 10}.",
       "Keine Eszett (ß) — immer 'ss'. Echte Umlaute ä/ö/ü/Ä/Ö/Ü sind in Prosa-Feldern PFLICHT (situation_text, leitfrage, leitfragen[].text, handlungsprodukt.*, reflexion_fragen, mehrdeutigkeit.*, dekontextualisierung.*, prinzip_handoff.*, sk_anker[].wo, persona.beruf, persona.ort). Transliteration ae/oe/ue NUR in IDs, topic_slug, Filenames, JSON-keys. persona.beruf und persona.ort wortwoertlich aus kanonischer Tabelle hko-framework.md §11 (Spalte 'Schreibweise mit Umlauten').",
       "wochen == 3 (Fixwert), wochen_plan.length == 3.",
-      "template == 'default_4page_v2' (Fixwert, reserviert)."
+      "template == 'default_4page_v3' (Standard fuer neue Einheiten, siehe template_reservation)."
     ]
   },
 
@@ -192,7 +192,7 @@
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 
-  "template": "default_4page_v2",
+  "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
