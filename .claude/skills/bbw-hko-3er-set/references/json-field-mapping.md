@@ -282,9 +282,11 @@ Siehe `assets/kn-template.json` und `references/kn-architecture.md`. Zentrale Pf
 
 ## 5. Default-Werte zum Auffuellen
 
-### `leitfragen_intro`
+### `leitfragen_intro` — KEIN Default mehr (Bogen-Kopplung 2026-08)
 
-> `"Bearbeite die vier Leitfragen schriftlich. Nutze das Lehrmittel Kap. {X.Y} als Grundlage."`
+`leitfragen_intro` wird pro Herausforderung **ausgeschrieben**, nie mit einem Template-Satz aufgefuellt. Es ist der Auftakt der Wissensecke: ~300-460 Zeichen, Sie-Form, benennt den Zusammenhang der vier Leitfragen (Vorbereitungs-Anweisung, Abhaengigkeitskette oder Kontextsetzung) und endet mit dem Lehrmittel-Schlusssatz («… Nutzen Sie das Lehrmittel Kap. … als Grundlage.»). Harte Obergrenze **510 Zeichen** — Seite 2 traegt `overflow: hidden` und schneidet still ab. Referenzton: `src/data/einheiten/3.2.1_ernaehrung_nachhaltig_gestalten/` und `5.4.2_internationale_entscheide_wirken_4j/`.
+
+Geschwisterfeld `auftakt_typ?: "vorbereitung" | "kontext" | "pfad"` (optional, empfohlen): steuert nur die **Darstellung** des Intros im Renderer — bei `vorbereitung` erscheint es als Kasten auf Seite 1 (und entfaellt auf Seite 2), bei `kontext`/`pfad` bekommt es auf Seite 2 eine Beschriftungszeile. Der Text selbst bleibt derselbe.
 
 ### `reflexion_fragen`-Default-Texte
 
@@ -297,6 +299,15 @@ Siehe `assets/kn-template.json` und `references/kn-architecture.md`. Zentrale Pf
 Diese sind Template-konstant. Pro Herausforderung duerfen die Texte angepasst werden, aber die nr-Reihenfolge bleibt.
 
 ---
+
+## Bogen-Kopplung 2026-08 — neue Felder (additiv)
+
+| Feld | Datentyp | Pflicht | Anmerkung |
+|---|---|---|---|
+| `leitfragen[].liefert` | string | **JA** (Phase 2) | 3-7 Woerter, **nominal, ohne Verb**; benennt den Baustein des Handlungsprodukts, den diese LF liefert («die Spalte 'Ich hoere'»). Rendert als drittes Element der lf-meta-Zeile («→ liefert: …») in DocS und Word. Kopplung + Rueckrichtung: Check 33. |
+| `auftakt_typ` | `"vorbereitung"` \| `"kontext"` \| `"pfad"` | optional, empfohlen | Geschwister von `leitfragen_intro`; steuert nur dessen Darstellung (siehe §5), nicht den Text. |
+| `leitfragen[].scaffolding` | `{ strategien?: string[], satzanfaenge?: string[], produkt?: string }` | empfohlen (v3-Rail) | Rendert als rechte Spalte (~22%) neben der Leitfrage: «So gehen Sie vor» (1-2 Sie-Form-Hinweise, je max. 90 Zeichen) · «Satzanfaenge» (1-2, neutral/Ich-Form, je max. 60 Zeichen, in «Guillemets») · «Ins Produkt» (1 Satz, max. 110 Zeichen, konsistent mit `liefert`). Vokabular bewusst wie `handlungsprodukt.scaffolding`. Quellengebunden aus `loesung`/`schritte`/`handlungsprodukt.scaffolding` heben, nichts aus dem Gedaechtnis. |
+| `template` | string | JA (bestehend) | `"default_4page_v2"` bleibt der Standard fuer neu generierte Einheiten. `"default_4page_v3"` existiert als Pilot-Layout (5.4.2): Checkliste Vollstaendigkeit auf der Selbstcheck-Seite statt Seite 1, Reflexionsfelder 3 Schreiblinien. Der Renderer liest `template` seit 2026-08 — v3 nur auf explizite Anweisung setzen. |
 
 ## Reform-Update 2026-06 — neue Felder (additiv)
 

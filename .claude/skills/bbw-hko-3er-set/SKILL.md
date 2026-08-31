@@ -506,7 +506,7 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 | `situation_text` | 4-6 Saetze, Ich-Form (1. Person Singular), mit CHF/Fakten |
 | `zahlen_tabelle` | `[]` oder `[{label, wert}]` |
 | `leitfrage` (singular) | kondensierte Haupt-Frage |
-| `leitfragen[]` | 4 Items, K2/K3/K3/K3+ oder K4; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. `knoten_ref` **Richtwert 3 Seiten**, Seitenzahlen aus echten `[seite: NN]`-Markern, Abschnitt ueber Ueberschriften bestimmen — nie den ganzen Kapitelbereich einsetzen. Mehr als 3 Seiten sind erlaubt, wenn der Inhalt wirklich verteilt steht, aber **nur nach Ruecksprache** (C9, Check 31). Je LF eine `loesung` {kern, zeilen[]} — Lehrpersonen-Antwort auf **der Bloom-Stufe der Frage**, aus dem `knoten_ref`-Abschnitt gehoben (C10, Check 32) |
+| `leitfragen[]` | 4 Items, K2/K3/K3/K3+ oder K4; **LF4 = fokussierte Output-Sprachmodus-Teilaufgabe (ein Baustein), nicht das ganze Handlungsprodukt (C4)**. `knoten_ref` **Richtwert 3 Seiten**, Seitenzahlen aus echten `[seite: NN]`-Markern, Abschnitt ueber Ueberschriften bestimmen — nie den ganzen Kapitelbereich einsetzen. Mehr als 3 Seiten sind erlaubt, wenn der Inhalt wirklich verteilt steht, aber **nur nach Ruecksprache** (C9, Check 31). Je LF eine `loesung` {kern, zeilen[]} — Lehrpersonen-Antwort auf **der Bloom-Stufe der Frage**, aus dem `knoten_ref`-Abschnitt gehoben (C10, Check 32). Je LF ein `liefert` — 3-7 Woerter, nominal, ohne Verb: der Baustein des Handlungsprodukts, den diese LF liefert; jeder `handlungsprodukt.schritte[]`-Eintrag braucht mind. einen LF-Absender (Check 33) |
 | `mindmap_zentrum` / `mindmap_aeste` | flat top-level; genau 4 Aeste, Ast 4 `optional: true` (radial/Quadrant) |
 | `handlungsprodukt.*` | aus prinzip.herausforderungen[LETTER].handlungsprodukt_typ; inkl. `scaffolding` {satzanfaenge/strategien/struktur} (C6) und `musterloesung` {hinweis, abschnitte[]} (C7) |
 | `reflexion_fragen` | Template-Defaults, situationsspezifisch anpassbar |
@@ -526,6 +526,8 @@ Beim Befuellen von `herausforderung_{LETTER}.persona`:
 - `handlungsprodukt.scaffolding` mit je >=1 Eintrag in satzanfaenge/strategien/struktur (Check 23)
 - `handlungsprodukt.musterloesung` mit 3-5 `abschnitte`, je `{titel, zeilen[]}`; pro Abschnitt max. ~900 Zeichen `text` (Check 30)
 - Jede `leitfragen[]` mit `loesung` (3-6 Zeilen, ~900 Zeichen); Sachaussagen durch den `knoten_ref`-Abschnitt gedeckt; Entscheiden-LF mit Alternativ-/Ausschluss-Zeile (Check 32)
+- Jede `leitfragen[]` mit `liefert` (3-7 Woerter, nominal, ohne Verb — der Produktbaustein, den diese LF liefert) UND jeder `handlungsprodukt.schritte[]`-Eintrag von >=1 LF gespeist; Schritt ohne LF-Absender = Konstruktionsluecke, stoppen und melden (Check 33)
+- Jede `leitfragen[]` mit `scaffolding` {strategien (1-2, Sie-Form, je ≤90 Z.), satzanfaenge (1-2, neutral/Ich-Form, je ≤60 Z.), produkt (1 Satz ≤110 Z., konsistent mit `liefert`)} — quellengebunden aus `loesung`/`schritte`/`handlungsprodukt.scaffolding` gehoben (Rail auf Seite 2)
 - `nrlp.sprachmodus_ids.length === nrlp.sprachmodi.length` (Check 21)
 - LF4 ist fokussierte Output-Sprachmodus-Teilaufgabe, nicht das ganze Handlungsprodukt (Check 20)
 - `mindmap_aeste.length === 4`, Ast 4 `optional: true` (Check 22)
@@ -1032,6 +1034,7 @@ Zwei Register, nie vermischen (Vollregel: `references/language-rules.md` §4):
 |---|---|---|
 | `situation_text`, `handlungsprodukt.beschreibung`, `leitfrage`, `hybrid_situation.text`, `reflexion_fragen`, `dekontextualisierung.frage` | **Ich** (1. Ps. Sg.) | „Ich ueberlege, ob ich das Leasing unterschreibe." |
 | `leitfragen_intro`, `leitfragen[].text`, `handlungsprodukt.schritte[].hint`, `handlungsprodukt.format_detail`, `mehrdeutigkeit.hint`, `set.einzelauftrag`, `set.dekontextualisierungs_aufgabe.auftrag`, alle KN-`frage`/`aufgabe` | **Sie** (Hoeflichkeits-Imperativ) | „Erklaeren Sie …", „Entscheiden Sie …", „Ihr Budget" |
+| `leitfragen[].liefert` | **nominal**, 3-7 Woerter, ohne Verb, keine Anrede | „die Spalte «Ich hoere»", „der sprechfertige Zweisatz" |
 
 **Drittes, kleineres Register — LP-Felder.** `leitfragen[].loesung.zeilen[].text`, `handlungsprodukt.musterloesung.hinweis` und die Begleiter-Callouts richten sich an die Lehrperson und stehen im **neutralen Sachstil ohne Anrede** («Unzulaessig ist die Grundreinigung …»). Sie erscheinen nie im Schuelerbogen. Woertliche Musterformulierungen der Lernenden stehen darin in «Guillemets» und behalten ihr eigenes Register (die Ich-Form des Produkts). `musterloesung.abschnitte` selbst ist das Produkt und bleibt deshalb in der **Ich**-Form.
 
@@ -1139,10 +1142,11 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 
 ### Jede Herausforderung (Renderer-Compliance):
 - [ ] `template == "default_4page_v2"`, `wochen == 3`, `legacy/source_refs/registry_tags == {}`
-- [ ] `modul_titel`, `wissensknoten[0]`, `zahlen_tabelle`, `leitfrage`, `leitfragen_intro` gesetzt
+- [ ] `modul_titel`, `wissensknoten[0]`, `zahlen_tabelle`, `leitfrage` gesetzt
+- [ ] `leitfragen_intro` **ausgeschrieben** (kein Template-Default; Sie-Form, Lehrmittel-Schlusssatz, max. 510 Zeichen) + `auftakt_typ` ∈ `{vorbereitung, kontext, pfad}` gesetzt
 - [ ] `nrlp.gesellschaft` als Array of `{aspekt, iteration}`
 - [ ] `nrlp.nr_primary` enthält alle real abgedeckten Kompetenzen (Default Primär; Sekundär nur nach Pietro-Bestätigung) — B1
-- [ ] `leitfragen[]` 4 Items, je `nr` Integer, `bloom` String, `knoten_ref`, `text`, `feld_hoehe_mm: 15`
+- [ ] `leitfragen[]` 4 Items, je `nr` Integer, `bloom` String, `knoten_ref`, `text`, `feld_hoehe_mm: 15`, `liefert` (3-7 Woerter, nominal, ohne Verb — Check 33)
 - [ ] `leitfragen[].loesung` bei allen 4: `kern` + 3-6 `zeilen`, zusammen ≤ ~900 Zeichen, Quellen aus dem `knoten_ref`-Abschnitt (C10, Check 32)
 - [ ] `mindmap_zentrum` / `mindmap_aeste` flat top-level; `mindmap_aeste` 4 Items, Ast 4 `optional: true`
 - [ ] `handlungsprodukt.{format, titel, format_detail, beschreibung, schritte (5 Objekte), schreib_label, schreib_note}`

@@ -24,9 +24,25 @@ function CockpitHead({ sit }: { sit: SituationJson }) {
       <h1 className="cockpit-title">{sit.titel}</h1>
       <p className="cockpit-sub">{sit.modul_titel}</p>
       {sit.herausforderung?.label && (
-        <div className="badge-row" style={{ marginBottom: '3mm' }}>
-          <span className="herausforderung">{sit.herausforderung.label}</span>
-        </div>
+        isV3(sit) ? (
+          /* v3: die Herausforderung ist die Ansage der Seite, nicht ein Badge daneben.
+             Uppercase entfällt bewusst — bei 12.5pt liest sich der Originaltext besser. */
+          <div style={{
+            marginBottom: '3mm',
+            width: '100%',
+            background: 'var(--sit-light)',
+            borderLeft: '1.5mm solid var(--sit-akzent)',
+            padding: '3mm 4mm',
+            fontSize: '12.5pt',
+            fontWeight: 700,
+            lineHeight: 1.35,
+            color: 'var(--ink)',
+          }}>{sit.herausforderung.label}</div>
+        ) : (
+          <div className="badge-row" style={{ marginBottom: '3mm' }}>
+            <span className="herausforderung">{sit.herausforderung.label}</span>
+          </div>
+        )
       )}
     </>
   )
@@ -61,6 +77,15 @@ function MiniTableLabel({ children }: { children: ReactNode }) {
       color: 'var(--sit-akzent)', marginBottom: '2mm'
     }}>{children}</h4>
   )
+}
+
+/**
+ * Layoutschalter. Einzige Quelle für die Seitenaufteilung ist `template` —
+ * nie `status` oder ein anderes Feld. Fehlt das Feld oder trägt es einen
+ * anderen Wert, gilt v2 (Checkliste auf Seite 1).
+ */
+function isV3(sit: SituationJson): boolean {
+  return sit.template === 'default_4page_v3'
 }
 
 // C1 — Bewertungsraster → "Checkliste Vollständigkeit": Produkt · Kriterien · ☐ (no Abgabe/Gewicht/Total).
@@ -101,6 +126,46 @@ function ChecklisteVollstaendigkeit({ sit }: { sit: SituationJson }) {
         </tbody>
       </table>
     </section>
+  )
+}
+
+// E3 — Auftakt-Typ: benennt, wozu das leitfragen_intro dient. Feld-präsenz-gesteuert —
+// ohne `auftakt_typ` bleibt alles wie bisher (nackter Intro-Absatz auf Seite 2).
+const AUFTAKT_LABEL: Record<NonNullable<SituationJson['auftakt_typ']>, string> = {
+  vorbereitung: 'Auftakt · Vorbereitung',
+  kontext: 'Auftakt · Kontext',
+  pfad: 'Auftakt · Pfad durch die Leitfragen',
+}
+
+// `vorbereitung` — das Intro gehört vor die Arbeit, also auf Seite 1. Schlank gehalten
+// (Linksregel statt Rahmen, 2 mm Padding): dort sind unter v3 nur ~220 px Luft.
+function AuftaktKasten({ sit }: { sit: SituationJson }) {
+  if (sit.auftakt_typ !== 'vorbereitung' || !sit.leitfragen_intro) return null
+  return (
+    <section style={{
+      marginTop: '3mm',
+      borderLeft: '0.6mm solid var(--sit-akzent)',
+      paddingLeft: '2mm',
+    }}>
+      <MiniTableLabel>{AUFTAKT_LABEL.vorbereitung}</MiniTableLabel>
+      <p style={{ margin: 0, fontSize: '9pt', lineHeight: 1.45 }}>{sit.leitfragen_intro}</p>
+    </section>
+  )
+}
+
+// Intro auf Seite 2. Ohne `auftakt_typ` exakt der bisherige Absatz; `kontext`/`pfad`
+// bekommen NUR eine Beschriftungszeile davor (kein Rahmen — Seite 2 hat kaum Luft);
+// `vorbereitung` steht stattdessen als Kasten auf Seite 1 und entfällt hier.
+function LeitfragenIntro({ sit, fontSize, marginBottom }: { sit: SituationJson; fontSize: string; marginBottom: string }) {
+  if (!sit.leitfragen_intro || sit.auftakt_typ === 'vorbereitung') return null
+  const label = sit.auftakt_typ ? AUFTAKT_LABEL[sit.auftakt_typ] : null
+  return (
+    <>
+      {label && <MiniTableLabel>{label}</MiniTableLabel>}
+      <p style={{ fontSize, color: 'var(--ink-soft)', maxWidth: '160mm', marginBottom }}>
+        {sit.leitfragen_intro}
+      </p>
+    </>
   )
 }
 
@@ -148,9 +213,31 @@ function InfokartenAnker({ sit }: { sit: SituationJson }) {
 
 // C2 — Situation block: situation_text + Leitfrage (+ Spannungsfeld). sit-meta + zahlen_tabelle removed.
 function SituationBlock({ sit }: { sit: SituationJson }) {
+  // v3: Die Situation ist der narrative Kern der Seite und bekommt eine eigene
+  // gerahmte Karte (weiss, Akzentrahmen, groessere Schrift) — sie steht damit
+  // gleichwertig neben dem Statement-Block, statt als Fliesstext unterzugehen.
+  const sitText = isV3(sit) ? (
+    <div style={{
+      position: 'relative',
+      border: '0.4mm solid var(--sit-akzent)',
+      borderRadius: '1mm',
+      padding: '2.5mm 3mm',
+      margin: '1.5mm 0 3mm',
+    }}>
+      {/* Fieldset-Label auf dem Rahmen — kostet keine eigene Zeile. */}
+      <span style={{
+        position: 'absolute', top: '-2.5mm', left: '3mm', background: '#fff',
+        padding: '0 1.5mm', fontSize: '7pt', fontWeight: 700, letterSpacing: '0.08em',
+        textTransform: 'uppercase', color: 'var(--sit-akzent)',
+      }}>Situation</span>
+      <p className="sit-text" style={{ fontSize: '10pt', lineHeight: 1.45, margin: 0 }}>{sit.situation_text}</p>
+    </div>
+  ) : (
+    <p className="sit-text">{sit.situation_text}</p>
+  )
   return (
     <>
-      <p className="sit-text">{sit.situation_text}</p>
+      {sitText}
       <div className="leitfrage-callout">{sit.leitfrage}</div>
       {sit.mehrdeutigkeit?.trade_off && (
         <div className="tradeoff-callout" style={{ marginTop: '3mm' }}>
@@ -171,9 +258,75 @@ interface LeitfrageItemProps {
   ns?: string
 }
 
-function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '' }: LeitfrageItemProps) {
+type LeitfrageScaffolding = NonNullable<NonNullable<SituationJson['leitfragen']>[number]['scaffolding']>
+
+/** Guillemets nur setzen, wenn die Daten sie nicht schon mitbringen. */
+function inGuillemets(s: string): string {
+  return /^«.*»$/.test(s.trim()) ? s.trim() : `«${s.trim()}»`
+}
+
+function railGruppen(sc: LeitfrageScaffolding) {
+  return {
+    strategien: sc.strategien?.filter(Boolean) || [],
+    satzanfaenge: sc.satzanfaenge?.filter(Boolean) || [],
+    produkt: sc.produkt?.trim() || '',
+  }
+}
+
+function hatRailInhalt(sc: LeitfrageScaffolding | undefined): sc is LeitfrageScaffolding {
+  if (!sc) return false
+  const g = railGruppen(sc)
+  return !!(g.strategien.length || g.satzanfaenge.length || g.produkt)
+}
+
+/**
+ * Schmale rechte Spalte neben einer Leitfrage — die Schreibhilfe für genau
+ * diesen Denkschritt. Feld-präsenz-gesteuert: ohne `lf.scaffolding` existiert
+ * die Spalte nicht und das LF-Item bleibt einspaltig wie bisher.
+ */
+function LeitfrageRail({ sc }: { sc: LeitfrageScaffolding }) {
+  const { strategien, satzanfaenge, produkt } = railGruppen(sc)
   return (
-    <div className="lf-item">
+    <aside style={{
+      flex: '0 0 22%',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '4mm',
+      fontSize: '7.5pt',
+      lineHeight: 1.35,
+      color: 'var(--ink-mute)',
+    }}>
+      {strategien.length > 0 && (
+        <div>
+          <MiniTableLabel>So gehen Sie vor</MiniTableLabel>
+          <ul style={{ margin: 0, paddingLeft: '3.5mm' }}>
+            {strategien.map((s, i) => <li key={i} style={{ marginBottom: '0.8mm' }}>{s}</li>)}
+          </ul>
+        </div>
+      )}
+      {satzanfaenge.length > 0 && (
+        <div>
+          <MiniTableLabel>Satzanfänge</MiniTableLabel>
+          <div style={{ fontStyle: 'italic' }}>
+            {satzanfaenge.map((s, i) => (
+              <div key={i} style={{ marginBottom: '0.8mm' }}>{inGuillemets(s)}</div>
+            ))}
+          </div>
+        </div>
+      )}
+      {produkt && (
+        <div>
+          <MiniTableLabel>Ins Produkt</MiniTableLabel>
+          <div>{produkt}</div>
+        </div>
+      )}
+    </aside>
+  )
+}
+
+function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '' }: LeitfrageItemProps) {
+  const kern = (
+    <>
       <div className="lf-head">
         <div className="lf-nr">LF{lf.nr}</div>
         <div className="lf-text">
@@ -181,6 +334,12 @@ function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeig
           <div className="lf-meta">
             <Badge variant="outline">{lf.bloom}</Badge>
             <span className="source-ref">{lf.knoten_ref}</span>
+            {/* Additiv: benennt den Baustein des Handlungsprodukts. Ohne `liefert` bleibt die Meta-Zeile unverändert. */}
+            {lf.liefert && (
+              <span style={{ fontSize: '7.5pt', color: 'var(--ink-mute)', fontStyle: 'italic' }}>
+                → liefert: {lf.liefert}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -191,6 +350,13 @@ function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeig
           onChange={(v) => onEdit(`${ns}lf_${lf.nr}`, v)}
         />
       )}
+    </>
+  )
+  if (!hatRailInhalt(lf.scaffolding)) return <div className="lf-item">{kern}</div>
+  return (
+    <div className="lf-item" style={{ display: 'flex', gap: '4mm', alignItems: 'flex-start', marginBottom: '6mm' }}>
+      <div style={{ flex: '1 1 78%', minWidth: 0 }}>{kern}</div>
+      <LeitfrageRail sc={lf.scaffolding} />
     </div>
   )
 }
@@ -579,7 +745,9 @@ function CockpitPageBody({ sit }: { sit: SituationJson }) {
       <div style={{ marginTop: '2mm' }}>
         <SituationBlock sit={sit} />
       </div>
-      <ChecklisteVollstaendigkeit sit={sit} />
+      <AuftaktKasten sit={sit} />
+      {/* v3: Checkliste wandert auf die Selbstcheck-Seite (vor die Reflexion). */}
+      {!isV3(sit) && <ChecklisteVollstaendigkeit sit={sit} />}
       <RessourcenList sit={sit} />
       <InfokartenAnker sit={sit} />
     </>
@@ -614,11 +782,7 @@ function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: 
       </DocSPage>
       <DocSPage common={common} pageNum={nextPage()} pageTotal={total}>
         <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
-        {sit.leitfragen_intro && (
-          <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', maxWidth: '160mm', marginBottom: '3mm' }}>
-            {sit.leitfragen_intro}
-          </p>
-        )}
+        <LeitfragenIntro sit={sit} fontSize="9pt" marginBottom="3mm" />
         {sit.leitfragen?.map((lf, i) => (
           <LeitfrageItem key={i} lf={lf} withField={false} />
         ))}
@@ -631,6 +795,8 @@ function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: 
       </DocSPage>
       <DocSPage common={common} pageNum={nextPage()} pageTotal={total}>
         <SectionHead num="05 · Selbstcheck">Reflexion</SectionHead>
+        {/* v3: erst Vollständigkeit prüfen, dann reflektieren. */}
+        {isV3(sit) && <ChecklisteVollstaendigkeit sit={sit} />}
         {sit.reflexion_fragen?.map((rf, i) => (
           <ReflexionItem key={i} rf={rf} withField={false} />
         ))}
@@ -646,7 +812,10 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
   const eba = sit.lehrgang === 'EBA_2J'
   // Zwei Leitfragen pro Seite (EBA wie EFZ); EBA bekommt kleinere Schreibfelder,
   // damit beide Bloecke trotz groesserer Schrift auf eine A4-Seite passen.
-  const lfFieldMm = eba ? 34 : 55
+  // v3: eine Schreiblinie weniger (51 → 8 statt 9 Linien) — die 82%-Hauptspalte
+  // neben der Scaffolding-Rail bricht die Fragetexte eine Zeile mehr um, sonst
+  // kippt die Seite mit langem leitfragen_intro über die A4-Kante.
+  const lfFieldMm = eba ? 34 : isV3(sit) ? 51 : 55
   const lfPairs: typeof lf[] = []
   for (let i = 0; i < lf.length; i += 2) lfPairs.push(lf.slice(i, i + 2))
 
@@ -669,11 +838,7 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
           {pi === 0 ? (
             <>
               <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
-              {sit.leitfragen_intro && (
-                <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', maxWidth: '160mm', marginBottom: '5mm' }}>
-                  {sit.leitfragen_intro}
-                </p>
-              )}
+              <LeitfragenIntro sit={sit} fontSize="10pt" marginBottom="5mm" />
             </>
           ) : (
             <SectionHead num={`02 · Wissensecke (${pi + 1})`}>Leitfragen (Fortsetzung)</SectionHead>
@@ -711,8 +876,13 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
       <DocSPage common={common} pageNum={nextPage()} pageTotal={actualTotal}>
         {/* Nummer rückt nach, wenn die Werkzeugseite 05 belegt — ohne Methoden bleibt es 05. */}
         <SectionHead num={hatMethoden ? '06 · Selbstcheck' : '05 · Selbstcheck'}>Reflexion</SectionHead>
+        {/* v3: erst Vollständigkeit prüfen, dann reflektieren. */}
+        {isV3(sit) && <ChecklisteVollstaendigkeit sit={sit} />}
+        {/* Unter v3 teilt sich die Seite mit der Checkliste. Am gerenderten Bogen gemessen:
+            nur 3 Schreiblinien bleiben überlauffrei. Schreibfeld (chrome.tsx) rechnet
+            minRows = max(3, ceil(mm/8.5) + 2) — 8 mm ist der grösste Wert, der noch 3 ergibt. */}
         {sit.reflexion_fragen?.map((rf, i) => (
-          <ReflexionItem key={i} rf={rf} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={35} />
+          <ReflexionItem key={i} rf={rf} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={isV3(sit) ? 8 : 35} />
         ))}
       </DocSPage>
     </div>

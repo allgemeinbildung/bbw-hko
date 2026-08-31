@@ -80,6 +80,15 @@ export interface Methode extends MethodeKarte {
 
 export interface SituationJson {
   id?: string
+  /**
+   * Layout-Variante des Bogens. Einziger Schalter für die Seitenaufteilung —
+   * nie `status` oder ein anderes Feld dafür verwenden.
+   * `default_4page_v2` (Default, auch wenn das Feld fehlt): Checkliste
+   * Vollständigkeit steht auf Seite 1 (Cockpit).
+   * `default_4page_v3`: Checkliste steht stattdessen auf der Selbstcheck-Seite,
+   * vor der Reflexion.
+   */
+  template?: string
   modul?: string
   modul_titel?: string
   lehrgang?: string
@@ -101,11 +110,34 @@ export interface SituationJson {
   bewertungsraster?: { produkt: string; abgabe?: string; gewicht?: number; kriterium?: string; vollstaendig_wenn?: string[] }[]
   quellen_anker?: { ref: string; titel: string; seiten?: string; unterueberschrift?: string; nugget_ref?: string; fuer_leitfrage?: number[] }[]
   leitfragen_intro?: string
+  /**
+   * E3 — benennt, wozu das `leitfragen_intro` dient, und steuert damit, wo es steht.
+   * Rein additiv: fehlt das Feld, bleibt das Intro der nackte Absatz auf Seite 2.
+   * `vorbereitung` — Kasten auf Seite 1 (Cockpit); Seite 2 zeigt es dann nicht mehr.
+   * `kontext` / `pfad` — bleibt auf Seite 2, bekommt nur eine Beschriftungszeile.
+   */
+  auftakt_typ?: 'vorbereitung' | 'kontext' | 'pfad'
   leitfragen?: {
     nr: number
     text: string
     bloom?: string
     knoten_ref?: string
+    /**
+     * Optional: benennt nominal (3–7 Wörter, ohne Verb), welchen Baustein des
+     * Handlungsprodukts diese Leitfrage liefert. Rein additiv — fehlt das Feld,
+     * rendern HTML und DOCX exakt wie bisher.
+     */
+    liefert?: string
+    /**
+     * Optional: Schreibhilfe für genau diese Leitfrage, gerendert als schmale
+     * rechte Spalte neben Frage und Schreibfeld (HTML wie DOCX, in beiden Modi).
+     * Bewusst dasselbe Vokabular wie `handlungsprodukt.scaffolding` — dort für
+     * das ganze Produkt, hier für den einen Denkschritt.
+     * `strategien` = «So gehen Sie vor» (knappe Liste), `satzanfaenge` =
+     * «Satzanfänge» (kursiv, in Guillemets), `produkt` = «Ins Produkt» (ein Satz).
+     * Rein additiv — fehlt das Feld, rendern HTML und DOCX exakt wie bisher.
+     */
+    scaffolding?: { strategien?: string[]; satzanfaenge?: string[]; produkt?: string }
     feld_hoehe_mm?: number
     /**
      * Lehrpersonen-Lösung zu dieser Leitfrage — speist ausschliesslich die Unterfolie

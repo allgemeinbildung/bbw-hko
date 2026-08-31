@@ -50,14 +50,27 @@
   ],
 
   "leitfrage": "Wer will beim Marktzugang was — und wer trägt am Schluss die Kosten?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 6.6, Kap. 11.1 und Kap. 16.2 als Grundlage.",
+  "leitfragen_intro": "Die vier Leitfragen bauen aufeinander auf: LF1 klärt die Akteurstypen, LF2 legt die verbindliche Ebene fest — erst dann ergibt der Zielkonflikt aus LF3 einen Sinn. Die dort notierten Interessen übertragen Sie direkt in die Akteurskarte des Handlungsprodukts. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 6.6, Kap. 11.1 und Kap. 16.2 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 6.6 | S. 177-179",
+      "liefert": "die Spalte «Mittel» der Akteurskarte",
       "text": "Erklären Sie, was Verbände, Gewerkschaften und NGO sind und über welche Wege sie politische Entscheide beeinflussen. Nennen Sie mindestens drei dieser Wege.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Ordnen Sie zuerst die drei Begriffe einzeln, bevor Sie die Wege des Einflusses suchen.",
+          "Zählen Sie die Wege einzeln ab — mindestens drei sind gefordert, nicht nur ein Beispiel."
+        ],
+        "satzanfaenge": [
+          "Ein Verband ist …",
+          "Diese Gruppen beeinflussen Entscheide, indem sie …"
+        ],
+        "produkt": "Die hier genannten Wege tragen Sie später als Stichwort in die Spalte «Mittel» der Akteurskarte ein."
+      },
       "loesung": {
         "kern": "Verbände, Gewerkschaften, NGO und Einfluss",
         "zeilen": [
@@ -74,6 +87,17 @@
       "knoten_ref": "Kap. 11.1 | S. 262-263",
       "text": "Ordnen Sie den Entscheid der richtigen Ebene zu: Welches Organ entscheidet, und was bedeutet es für einen Betrieb wie meinen, dass dessen Beschlüsse für alle Mitgliedstaaten verbindlich sind?",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Klären Sie zuerst, wer entscheidet, dann erst, was das für den Betrieb bedeutet.",
+          "Prüfen Sie, ob Sie das Parlament mit einem Landesparlament verwechseln."
+        ],
+        "satzanfaenge": [
+          "Zuständig ist …",
+          "Für meinen Betrieb bedeutet das, dass …"
+        ],
+        "produkt": "Die geklärte Ebene macht erst verständlich, warum der Zielkonflikt in LF3 entsteht."
+      },
       "loesung": {
         "kern": "Wer entscheidet, und wen bindet es",
         "zeilen": [
@@ -88,8 +112,20 @@
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "Kap. 11.1 | S. 267-269",
+      "liefert": "die Interessen- und Zielkonflikt-Einträge",
       "text": "Tragen Sie für vier bis fünf Akteure je ein Interesse zusammen. Stellen Sie danach zwei Interessen gegenüber, die sich widersprechen, und benennen Sie begründet, wer bei welcher Lösung die Kosten trägt.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie pro Akteur nur ein Interesse auf und belegen Sie es mit Kapitel und Seite.",
+          "Formulieren Sie den Zielkonflikt zuerst als Satz «X will …, Y will …»."
+        ],
+        "satzanfaenge": [
+          "«Für … steht auf dem Spiel, dass …»",
+          "«Diese beiden Interessen stossen zusammen, weil …»"
+        ],
+        "produkt": "Die Interessen und der Zielkonflikt fliessen direkt in die entsprechenden Einträge der Akteurskarte ein."
+      },
       "loesung": {
         "kern": "Interessen, Zielkonflikt, Kostenträger",
         "zeilen": [
@@ -104,8 +140,20 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 16.2 | S. 368",
+      "liefert": "der Hauptteil des Statements (3B-Schema)",
       "text": "Formulieren Sie den Hauptteil Ihres Statements sprechfertig: zwei Sätze aus der Sicht eines einzigen Akteurs — eine Behauptung, eine Begründung und ein Beleg.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Wählen Sie einen einzigen Akteur und bleiben Sie konsequent in dessen Perspektive.",
+          "Bauen Sie die zwei Sätze streng nach Behauptung, Begründung, Beleg auf."
+        ],
+        "satzanfaenge": [
+          "«Ich bin der Ansicht, dass …»",
+          "«Das begründe ich damit, dass …»"
+        ],
+        "produkt": "Diese zwei Sätze bilden wörtlich den Hauptteil des gesprochenen Statements im 3B-Schema."
+      },
       "loesung": {
         "kern": "Hauptteil im 3B-Schema, eine Sicht",
         "zeilen": [
@@ -302,7 +350,7 @@
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 
-  "template": "default_4page_v2",
+  "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},

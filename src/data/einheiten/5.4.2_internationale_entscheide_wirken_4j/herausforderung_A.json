@@ -50,7 +50,8 @@
   ],
 
   "leitfrage": "Über welche Schritte kommt ein Handelsentscheid aus dem Ausland bis an meine Maschine?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 11.3 und Kap. 16.2 als Grundlage.",
+  "leitfragen_intro": "Diese Herausforderung beginnt vor der ersten Lektion. Erfragen Sie im Lehrbetrieb den Exportanteil und die Lieferfristen für die Zahlentabelle sowie ein Material oder Bauteil, das aus dem Ausland eingekauft wird. LF1 lösen Sie mit dem Lehrmittel, LF2 braucht dieses eigene Beispiel. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 11.3 und Kap. 16.2 als Grundlage.",
+  "auftakt_typ": "vorbereitung",
   "leitfragen": [
     {
       "nr": 1,
@@ -58,6 +59,17 @@
       "knoten_ref": "Kap. 11.2 | S. 272-273",
       "text": "Erklären Sie mit dem Lehrmittel, was Globalisierung und internationale Arbeitsteilung bedeuten und warum ein Land ohne eigene Rohstoffe wie die Schweiz besonders stark davon abhängt.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 11.2 S. 272-273, markieren Sie Globalisierung und Arbeitsteilung.",
+          "Erklären Sie danach in eigenen Worten, warum die Schweiz ohne Rohstoffe abhängig ist."
+        ],
+        "satzanfaenge": [
+          "Globalisierung bedeutet, dass …",
+          "Die Schweiz ist abhängig, weil …"
+        ],
+        "produkt": "Diese Begriffsklärung bildet die Grundlage für den Mindmap-Ast «Wer entscheidet was»."
+      },
       "loesung": {
         "kern": "Globalisierung und Arbeitsteilung erklärt",
         "zeilen": [
@@ -72,8 +84,20 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 11.3 | S. 285",
+      "liefert": "das eigene Betriebsbeispiel für die Kette",
       "text": "Wenden Sie die protektionistische Handelspolitik auf Ihren Lehrbetrieb an: Wer verlangt Schutz, wer bezahlt ihn, und welches Material oder welches Bauteil wird dadurch teurer oder schwerer verfügbar?",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Erfragen Sie vorab im Betrieb Material und Lieferfrist (siehe Auftakt auf Seite 1).",
+          "Ordnen Sie zu: wer verlangt Schutz, wer zahlt, was wird dadurch teurer."
+        ],
+        "satzanfaenge": [
+          "Schutz verlangt …, bezahlen muss …",
+          "Bei uns im Betrieb wird … teurer, weil …"
+        ],
+        "produkt": "Diese Antwort liefert das Betriebsbeispiel für Schritt 2 der Wirkungskette im Handlungsprodukt."
+      },
       "loesung": {
         "kern": "Wer schützt, wer zahlt, was wird teurer",
         "zeilen": [
@@ -88,8 +112,20 @@
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "Kap. 11.2 | S. 273-275",
+      "liefert": "die gegliederte und belegte Wirkungskette",
       "text": "Gliedern Sie den Weg vom Entscheid bis zu Ihrem Arbeitstag in vier bis sechs Schritte. Belegen Sie jeden Schritt mit einer Stelle aus dem Lehrmittel oder mit einer eigenen Beobachtung aus dem Betrieb.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Sammeln Sie zuerst Stichworte, dann belegen Sie jeden Schritt einzeln mit Quelle.",
+          "Prüfen Sie Ihre Kette an schwacher/starker Antwort aus der Musterlösung."
+        ],
+        "satzanfaenge": [
+          "Schritt … folgt aus …, belegt durch …",
+          "Zwischen … und … liegt der Schritt …"
+        ],
+        "produkt": "Diese Gliederung wird direkt zur Wirkungskette auf A3 (Schritte 2 bis 4 im Handlungsprodukt)."
+      },
       "loesung": {
         "kern": "Vier Prüfkriterien für die Wirkungskette",
         "zeilen": [
@@ -104,8 +140,20 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 16.2 | S. 368",
+      "liefert": "der sprechfertige Schlusssatz mit Quellenzahl",
       "text": "Formulieren Sie den Schlusszug Ihrer Erklärung sprechfertig: zwei Sätze, die den Schritt benennen, an dem der Entscheid bei Ihnen ankommt, und die dazu passende Zahl mit Quelle nennen.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Sprechen Sie den Schlusssatz laut, bevor Sie ihn aufschreiben — er muss klingen.",
+          "Nennen Sie die Zahl stets mit Quelle: Kapitel und Seite, wie in Kap. 16.2 verlangt."
+        ],
+        "satzanfaenge": [
+          "«Bei mir kommt der Entscheid an, sobald …»",
+          "«Die Schweiz verdient rund die Hälfte …, Kap. …»"
+        ],
+        "produkt": "Dieser Schlusssatz wird wörtlich zum letzten Satz der 90-Sekunden-Erklärung im Handlungsprodukt."
+      },
       "loesung": {
         "kern": "Der Schlusszug mit Zahl und Quelle",
         "zeilen": [
@@ -302,7 +350,7 @@
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 
-  "template": "default_4page_v2",
+  "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},

@@ -295,6 +295,70 @@ function sectionProps(docCode: string, docTitel: string, abteilung: string | und
   }
 }
 
+/**
+ * Layoutschalter — Spiegel von isV3() in DocS.tsx. Einzige Quelle für die
+ * Seitenaufteilung ist `template`, nie `status` oder ein anderes Feld.
+ */
+function isV3(sit: SituationJson): boolean {
+  return sit.template === 'default_4page_v3'
+}
+
+// E3 — Auftakt-Typ; Spiegel von AUFTAKT_LABEL/AuftaktKasten/LeitfragenIntro in DocS.tsx.
+// Feld-präsenz-gesteuert: ohne `auftakt_typ` bleibt das Intro der bisherige Absatz auf Seite 2.
+const AUFTAKT_LABEL: Record<NonNullable<SituationJson['auftakt_typ']>, string> = {
+  vorbereitung: 'Auftakt · Vorbereitung',
+  kontext: 'Auftakt · Kontext',
+  pfad: 'Auftakt · Pfad durch die Leitfragen',
+}
+
+// `vorbereitung` — Intro als Kasten auf der Cockpit-Seite (nach der Situation, vor der Checkliste).
+function auftaktBlock(sit: SituationJson, akzent: string, light: string): any[] {
+  if (sit.auftakt_typ !== 'vorbereitung' || !sit.leitfragen_intro) return []
+  return [callout(AUFTAKT_LABEL.vorbereitung, sit.leitfragen_intro, akzent, light), spacer(80)]
+}
+
+// Intro auf Seite 2 — bei `vorbereitung` entfällt es hier, bei `kontext`/`pfad` bekommt
+// es nur eine Beschriftungszeile davor. Ohne das Feld: unverändert ein Absatz.
+function leitfragenIntroBlock(sit: SituationJson, akzent: string, size: number): any[] {
+  if (!sit.leitfragen_intro || sit.auftakt_typ === 'vorbereitung') return []
+  const els: any[] = []
+  if (sit.auftakt_typ) {
+    els.push(p(AUFTAKT_LABEL[sit.auftakt_typ].toUpperCase(), { run: { color: akzent, bold: true, size: 14 }, spacing: { after: 40 } }))
+  }
+  els.push(p(sit.leitfragen_intro, { run: { color: COLOR.inkSoft, size } }))
+  return els
+}
+
+// C1 — Checkliste Vollständigkeit (Produkt · Kriterien); pro Kriterien-Zeile: schwarzes ✔ + Box ☐.
+// Unter v2 auf der Cockpit-Seite, unter v3 auf der Selbstcheck-Seite vor der Reflexion.
+function checklisteBlock(sit: SituationJson, akzent: string): any[] {
+  if (!sit.bewertungsraster) return []
+  const els: any[] = []
+  els.push(p('CHECKLISTE VOLLSTÄNDIGKEIT', { run: { color: akzent, bold: true, size: 14 } }))
+  els.push(dataTable(
+    ['Produkt', 'Kriterien'],
+    sit.bewertungsraster.map((b) => {
+      const bullets = b.vollstaendig_wenn?.filter(Boolean) || []
+      const lines = bullets.length ? bullets : (b.kriterium ? [b.kriterium] : [])
+      const kritCell = lines.map((v) => new Paragraph({
+        children: [
+          new TextRun({ text: '✔ ', bold: true, size: 16, color: '000000' }),
+          new TextRun({ text: v, size: 16 }),
+          new TextRun({ text: '   ☐', bold: true, size: 18, color: '000000' }),
+        ],
+        spacing: { after: 20 },
+      }))
+      return [
+        new Paragraph({ children: [new TextRun({ text: b.produkt, bold: true, size: 18 })] }),
+        kritCell,
+      ]
+    }),
+    akzent, [30, 70],
+  ))
+  els.push(spacer(80))
+  return els
+}
+
 // C1 + C2 — cockpit (Deckblatt) now also carries the merged situation block.
 // Order mirrors the HTML CockpitPageBody: badges/title/sub-facette → cards →
 // situation_text → Leitfrage (+ Spannungsfeld) → Checkliste Vollständigkeit → Ressourcen.
@@ -310,8 +374,34 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   els.push(h(sit.titel || '', 'title'))
   els.push(p(sit.modul_titel || '', { run: { color: COLOR.inkSoft, size: 22, italics: true } }))
   // C1 — sub-facette label only (no "Herausforderung X:" prefix).
+  // v3 — Spiegel von CockpitHead in DocS.tsx: die Herausforderung wird zum Statement-Block
+  // (12.5pt fett, kein Uppercase, sit-light hinterlegt, kräftige Akzentkante links).
   if (sit.herausforderung?.label) {
-    els.push(p(sit.herausforderung.label, { run: { color: akzent, bold: true, size: 18 } }))
+    if (isV3(sit)) {
+      els.push(new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [new TableRow({
+          children: [tcell([
+            p(sit.herausforderung.label, {
+              run: { color: COLOR.ink, bold: true, size: 25 },
+              spacing: { after: 0, line: 320, lineRule: LineRuleType.AUTO },
+            }),
+          ], {
+            shading: { type: ShadingType.SOLID, color: light },
+            borders: {
+              top: { style: BorderStyle.NIL, size: 0 },
+              bottom: { style: BorderStyle.NIL, size: 0 },
+              left: { style: BorderStyle.SINGLE, size: 34, color: akzent },
+              right: { style: BorderStyle.NIL, size: 0 },
+            },
+            margins: { top: 120, bottom: 120, left: 160, right: 160 },
+          })],
+        })],
+      }))
+      els.push(spacer(80))
+    } else {
+      els.push(p(sit.herausforderung.label, { run: { color: akzent, bold: true, size: 18 } }))
+    }
   }
   els.push(spacer(120))
 
@@ -366,7 +456,31 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   els.push(spacer(80))
 
   // C2 — merged situation: situation_text + Leitfrage (+ Spannungsfeld). sit-meta + zahlen_tabelle dropped.
-  els.push(p(sit.situation_text || '', { run: { size: 22 }, spacing: { after: 160, line: 360, lineRule: LineRuleType.AUTO } }))
+  // v3: gerahmte Situations-Karte mit Label — Spiegel zum SituationBlock in DocS.tsx.
+  if (isV3(sit)) {
+    els.push(new Table({
+      width: { size: 100, type: WidthType.PERCENTAGE },
+      rows: [new TableRow({
+        children: [tcell([
+          p('SITUATION', { run: { size: 14, bold: true, color: akzent }, spacing: { after: 60 } }),
+          p(sit.situation_text || '', { run: { size: 21 }, spacing: { line: 340, lineRule: LineRuleType.AUTO } }),
+        ], {
+          width: { size: 100, type: WidthType.PERCENTAGE },
+          verticalAlign: 'top',
+          margins: { top: 120, bottom: 120, left: 160, right: 160 },
+          borders: {
+            top: { style: BorderStyle.SINGLE, size: 8, color: akzent },
+            bottom: { style: BorderStyle.SINGLE, size: 8, color: akzent },
+            left: { style: BorderStyle.SINGLE, size: 8, color: akzent },
+            right: { style: BorderStyle.SINGLE, size: 8, color: akzent },
+          },
+        })],
+      })],
+    }))
+    els.push(spacer(140))
+  } else {
+    els.push(p(sit.situation_text || '', { run: { size: 22 }, spacing: { after: 160, line: 360, lineRule: LineRuleType.AUTO } }))
+  }
   els.push(callout('Leitfrage', sit.leitfrage || '', akzent, light))
   if (sit.mehrdeutigkeit?.trade_off) {
     els.push(spacer(80))
@@ -374,31 +488,11 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
   }
   els.push(spacer(140))
 
-  // C1 — Checkliste Vollständigkeit (Produkt · Kriterien); pro Kriterien-Zeile: schwarzes ✔ + Box ☐.
-  if (sit.bewertungsraster) {
-    els.push(p('CHECKLISTE VOLLSTÄNDIGKEIT', { run: { color: akzent, bold: true, size: 14 } }))
-    els.push(dataTable(
-      ['Produkt', 'Kriterien'],
-      sit.bewertungsraster.map((b) => {
-        const bullets = b.vollstaendig_wenn?.filter(Boolean) || []
-        const lines = bullets.length ? bullets : (b.kriterium ? [b.kriterium] : [])
-        const kritCell = lines.map((v) => new Paragraph({
-          children: [
-            new TextRun({ text: '✔ ', bold: true, size: 16, color: '000000' }),
-            new TextRun({ text: v, size: 16 }),
-            new TextRun({ text: '   ☐', bold: true, size: 18, color: '000000' }),
-          ],
-          spacing: { after: 20 },
-        }))
-        return [
-          new Paragraph({ children: [new TextRun({ text: b.produkt, bold: true, size: 18 })] }),
-          kritCell,
-        ]
-      }),
-      akzent, [30, 70],
-    ))
-    els.push(spacer(80))
-  }
+  // E3 — Auftakt «Vorbereitung»: Intro steht hier statt auf Seite 2.
+  els.push(...auftaktBlock(sit, akzent, light))
+
+  // C1 — Checkliste Vollständigkeit; unter v3 steht sie stattdessen auf der Selbstcheck-Seite.
+  if (!isV3(sit)) els.push(...checklisteBlock(sit, akzent))
 
   // C1 — "Quellen" → "Ressourcen"
   if (sit.quellen_anker) {
@@ -421,10 +515,71 @@ function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] 
 
 // C2 — situationBlock removed; its content (situation_text + Leitfrage + Spannungsfeld) is now part of cockpitBlock.
 
+// Spiegel von LeitfrageRail in DocS.tsx: schmale rechte Spalte pro Leitfrage.
+// Gleiche Bedingung, gleiche Platzierung, gleiche drei Blöcke in gleicher Reihenfolge.
+type LeitfrageScaffolding = NonNullable<NonNullable<SituationJson['leitfragen']>[number]['scaffolding']>
+
+function railGruppen(sc: LeitfrageScaffolding) {
+  return {
+    strategien: sc.strategien?.filter(Boolean) || [],
+    satzanfaenge: sc.satzanfaenge?.filter(Boolean) || [],
+    produkt: sc.produkt?.trim() || '',
+  }
+}
+
+function hatRailInhalt(sc: LeitfrageScaffolding | undefined): sc is LeitfrageScaffolding {
+  if (!sc) return false
+  const g = railGruppen(sc)
+  return !!(g.strategien.length || g.satzanfaenge.length || g.produkt)
+}
+
+/** Guillemets nur setzen, wenn die Daten sie nicht schon mitbringen (wie in DocS.tsx). */
+function inGuillemets(s: string): string {
+  return /^«.*»$/.test(s.trim()) ? s.trim() : `«${s.trim()}»`
+}
+
+function railZelle(sc: LeitfrageScaffolding, akzent: string): TableCell {
+  const { strategien, satzanfaenge, produkt } = railGruppen(sc)
+  const els: any[] = []
+  const lab = (text: string) => p(text.toUpperCase(), {
+    run: { color: akzent, bold: true, size: 12 }, spacing: { before: 60, after: 20 },
+  })
+  if (strategien.length) {
+    els.push(lab('So gehen Sie vor'))
+    strategien.forEach((s) => els.push(new Paragraph({
+      children: [new TextRun({ text: s, size: 15, color: COLOR.inkMute })],
+      bullet: { level: 0 },
+      spacing: { after: 20 },
+    })))
+  }
+  if (satzanfaenge.length) {
+    els.push(lab('Satzanfänge'))
+    satzanfaenge.forEach((s) => els.push(p(inGuillemets(s), {
+      run: { size: 15, color: COLOR.inkMute, italics: true }, spacing: { after: 20 },
+    })))
+  }
+  if (produkt) {
+    els.push(lab('Ins Produkt'))
+    els.push(p(produkt, { run: { size: 15, color: COLOR.inkMute }, spacing: { after: 20 } }))
+  }
+  return tcell(els, {
+    width: { size: 22, type: WidthType.PERCENTAGE },
+    verticalAlign: 'top',
+    margins: { top: 0, bottom: 0, left: 140, right: 0 },
+    borders: {
+      top: { style: BorderStyle.NIL, size: 0 },
+      bottom: { style: BorderStyle.NIL, size: 0 },
+      left: { style: BorderStyle.SINGLE, size: 4, color: COLOR.ruleSoft },
+      right: { style: BorderStyle.NIL, size: 0 },
+    },
+  })
+}
+
 function leitfrageItems(sit: SituationJson, akzent: string, withField: boolean, fieldHeightMm?: number): any[] {
   const els: any[] = []
   sit.leitfragen?.forEach((lf) => {
-    els.push(new Paragraph({
+    const kern: any[] = []
+    kern.push(new Paragraph({
       children: [
         new TextRun({ text: 'LF' + lf.nr + '  ', bold: true, color: akzent, size: 22, font: 'Consolas' }),
         new TextRun({ text: lf.text, size: 20 }),
@@ -432,15 +587,47 @@ function leitfrageItems(sit: SituationJson, akzent: string, withField: boolean, 
       spacing: { before: 120, after: 40, line: 320, lineRule: LineRuleType.AUTO },
       keepNext: true,
     }))
-    els.push(new Paragraph({
+    kern.push(new Paragraph({
       children: [
         new TextRun({ text: '[' + (lf.bloom || '') + ']', color: akzent, bold: true, size: 14 }),
         new TextRun({ text: '  ' }),
         sourceRefRun(lf.knoten_ref || '', akzent),
+        // Spiegelt DocS: additiv, nur wenn gesetzt — ohne `liefert` bleibt die Meta-Zeile unverändert.
+        ...(lf.liefert
+          ? [new TextRun({ text: '   → liefert: ' + lf.liefert, color: COLOR.inkMute, size: 15, italics: true })]
+          : []),
       ],
       spacing: { after: 80 },
     }))
-    if (withField) els.push(...schreibfeld(fieldHeightMm || lf.feld_hoehe_mm || 15))
+    if (withField) kern.push(...schreibfeld(fieldHeightMm || lf.feld_hoehe_mm || 15))
+
+    // Ohne `scaffolding` bleibt das LF-Item die bisherige Absatzfolge; mit ihm wird es
+    // eine zweispaltige Tabelle (Hauptzelle 78 % / Rail 22 %, randlos bis auf die Trennlinie).
+    if (hatRailInhalt(lf.scaffolding)) {
+      els.push(new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [new TableRow({
+          children: [
+            tcell(kern, {
+              width: { size: 78, type: WidthType.PERCENTAGE },
+              verticalAlign: 'top',
+              margins: { top: 0, bottom: 0, left: 0, right: 140 },
+              borders: {
+                top: { style: BorderStyle.NIL, size: 0 },
+                bottom: { style: BorderStyle.NIL, size: 0 },
+                left: { style: BorderStyle.NIL, size: 0 },
+                right: { style: BorderStyle.NIL, size: 0 },
+              },
+            }),
+            railZelle(lf.scaffolding, akzent),
+          ],
+        })],
+      }))
+      // Spiegel zu marginBottom 6mm im DocS-Rail-Item — Luft zwischen den LF-Bloecken.
+      els.push(spacer(180))
+    } else {
+      els.push(...kern)
+    }
   })
   return els
 }
@@ -750,8 +937,9 @@ export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpt
   if (mode === 'fill') {
     children.push(pageBreak())
     children.push(...sectionHead('02 · Wissensecke', 'Leitfragen', akzent))
-    if (sit.leitfragen_intro) children.push(p(sit.leitfragen_intro, { run: { color: COLOR.inkSoft, size: 18 } }))
-    children.push(...leitfrageItems(sit, akzent, true, 55))
+    children.push(...leitfragenIntroBlock(sit, akzent, 18))
+    // v3: eine Schreiblinie weniger — Spiegel zu lfFieldMm in DocS.tsx (Rail-Umbruch).
+    children.push(...leitfrageItems(sit, akzent, true, isV3(sit) ? 51 : 55))
     children.push(pageBreak())
     children.push(...sectionHead('03 · Mindmap', sit.mindmap_zentrum || '', akzent))
     children.push(...mindmapSkelettBlock(sit, akzent))
@@ -770,11 +958,16 @@ export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpt
     children.push(skizzeBox(235, sit.handlungsprodukt?.schreib_label || 'HIER ERARBEITEN', akzent))
     children.push(pageBreak())
     children.push(...sectionHead(hatMethoden ? '06 · Selbstcheck' : '05 · Selbstcheck', 'Reflexion', akzent))
-    children.push(...reflexionItems(sit, akzent, true, 35))
+    // v3: erst Vollständigkeit prüfen, dann reflektieren.
+    if (isV3(sit)) children.push(...checklisteBlock(sit, akzent))
+    // Antwortfläche = schreibfeld(): lines = max(3, ceil(mm/8.5) + 1). 35 mm → 6 Linien (v2),
+    // 8 mm → 3 Linien (v3), damit Checkliste + Reflexion auf eine Seite passen. Gleicher
+    // Zahlenwert wie im HTML-Bogen, obwohl die Formel dort +2 statt +1 rechnet.
+    children.push(...reflexionItems(sit, akzent, true, isV3(sit) ? 8 : 35))
   } else {
     children.push(pageBreak())
     children.push(...sectionHead('02 · Wissensecke', 'Leitfragen', akzent))
-    if (sit.leitfragen_intro) children.push(p(sit.leitfragen_intro, { run: { color: COLOR.inkSoft, size: 16 } }))
+    children.push(...leitfragenIntroBlock(sit, akzent, 16))
     children.push(...leitfrageItems(sit, akzent, false))
     // Mindmap hint shares the Leitfragen page (Dossier saves a page) — no diagram, drawn off-sheet.
     children.push(...sectionHead('03 · Mindmap', sit.mindmap_zentrum || '', akzent))
@@ -784,6 +977,8 @@ export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpt
     children.push(...handlungsproduktBlock(sit, akzent))
     children.push(pageBreak())
     children.push(...sectionHead('05 · Selbstcheck', 'Reflexion', akzent))
+    // v3: erst Vollständigkeit prüfen, dann reflektieren.
+    if (isV3(sit)) children.push(...checklisteBlock(sit, akzent))
     children.push(...reflexionItems(sit, akzent, false))
   }
 

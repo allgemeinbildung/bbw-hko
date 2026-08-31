@@ -361,6 +361,19 @@ Jede `sit_*.leitfragen[]` traegt eine `loesung`, die die Frage **auf ihrer Bloom
 
 Fehlerfall: `ERR_LF_LOESUNG_MISSING` (eine oder mehrere Leitfragen ohne `loesung`) · `ERR_LF_LOESUNG_QUELLE_UNGEDECKT` (Sachaussage oder `quelle` steht nicht im `knoten_ref`-Abschnitt) · `WARN_LF_LOESUNG_ZU_LANG` (>6 Zeilen bzw. >900 Zeichen — Skill kuerzt und wartet auf OK) · `WARN_LF_LOESUNG_BLOOM_FLACH` (Entscheiden-LF ohne Alternativ-/Ausschluss-Zeile).
 
+### Check 33 — LF↔Produkt-Kopplung via `liefert` (Bogen-Kopplung 2026-08, NEU)
+
+Seite 2 (Leitfragen) und Seite 4 (Handlungsprodukt) sind ueber `leitfragen[].liefert` explizit gekoppelt — die Lernenden sehen an jeder Leitfrage, welchen Baustein des Produkts sie liefert.
+
+- **Pflicht pro Leitfrage:** `liefert` gesetzt — 3-7 Woerter, **nominal, ohne Verb** («die Spalte 'Ich hoere'», nicht «Sie erarbeiten …»). Der benannte Baustein existiert wirklich in `handlungsprodukt.schritte[]`, `abgaben[]` oder im `bewertungsraster` — Wortlaut-gestuetzt, nichts aus dem Gedaechtnis.
+- **Rueckrichtung (der wichtigere Teil):** Jeder Eintrag von `handlungsprodukt.schritte[]` wird von mindestens einer Leitfrage gespeist. Ein Schritt ohne LF-Absender ist eine **Konstruktionsluecke** — dann die Leitfragen umbauen, nicht das `liefert` schoenreden.
+- **Balance:** Keine einzelne LF traegt 3+ Schritte allein, waehrend eine andere LF keinen speist — das ist ein Umbau-Signal (Vorbild-Negativfall: 5.4.2 A vor der Kopplung, LF3 trug S2+S3+S4).
+- `liefert` haelt die Register-Regeln (kein Eszett, native Umlaute, Schraegstrich-Rollennomen) und passt einzeilig in die lf-meta-Zeile (kein Umbruch — `.lf-meta` hat kein `wrap`).
+
+Fehlerfall: `ERR_LF_LIEFERT_MISSING` (eine Leitfrage ohne `liefert`) · `ERR_SCHRITT_OHNE_ABSENDER` (ein Produktschritt wird von keiner LF gespeist — Konstruktionsluecke, Skill stoppt und meldet) · `WARN_LIEFERT_UNBALANCIERT` (eine LF speist 3+ Schritte allein) · `WARN_LIEFERT_VERBFORM` (liefert enthaelt ein finites Verb / Sie-Anrede).
+
+**Zusatz `leitfragen[].scaffolding` (Rail):** Jede LF traegt ein `scaffolding` mit `strategien` (1-2, Sie-Form, je ≤90 Zeichen), `satzanfaenge` (1-2, neutral oder Ich-Form — KEINE Sie-Anrede, je ≤60 Zeichen) und `produkt` (1 Satz ≤110 Zeichen, konsistent mit dem `liefert` derselben LF). Alles quellengebunden (`loesung`, `schritte`, `handlungsprodukt.scaffolding`); die Rail ist schmal (~22%) — Zeichenbudgets sind Layoutschutz, nicht Stil. Fehlerfall: `WARN_LF_SCAFFOLDING_MISSING` · `WARN_SCAFFOLDING_ZU_LANG` (Budget ueberschritten — Skill kuerzt und wartet auf OK) · `WARN_SCAFFOLDING_PRODUKT_WIDERSPRICHT_LIEFERT`.
+
 ---
 
 ## Auto-Fix-Verhalten

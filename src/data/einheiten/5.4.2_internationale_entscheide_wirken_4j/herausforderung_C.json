@@ -52,13 +52,26 @@
 
   "leitfrage": "Welche staatlichen Handlungen sind vertraglich gebunden — und welche werden politisch entschieden?",
   "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 1.3, Kap. 11.1, Kap. 11.3 und Kap. 16.2 als Grundlage. Sortiert werden diese fünf Handlungen: ein Asylgesuch nach dem Dubliner Abkommen behandeln · einen Streitschlichtungsentscheid der WTO umsetzen · die Höhe des Budgets für die Entwicklungszusammenarbeit festlegen · einem neuen Abkommen zustimmen oder es ablehnen · den alpenquerenden Güterverkehr auf die Schiene verlagern.",
+  "auftakt_typ": "kontext",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.3 | S. 21-22",
+      "liefert": "die vier Merkmale als Sortier-Massstab",
       "text": "Erklären Sie, woran das Lehrmittel Recht erkennt: erzwingbar, schriftlich fixiert, unbedingt verbindlich, allgemeingültig. Grenzen Sie es von Sitte, Brauch und Moral ab.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Prüfen Sie jedes Merkmal einzeln: erzwingbar, schriftlich, verbindlich, allgemeingültig.",
+          "Stellen Sie Recht direkt neben Sitte, Brauch und Moral aus dem Lösungstext."
+        ],
+        "satzanfaenge": [
+          "Recht erkenne ich an den Merkmalen …",
+          "Im Unterschied zu Sitte und Moral ist Recht …"
+        ],
+        "produkt": "Die vier Merkmale sind der Massstab für Schritt 1 «Merkmale festhalten»."
+      },
       "loesung": {
         "kern": "Recht: vier Merkmale gegen Sitte, Moral",
         "zeilen": [
@@ -73,8 +86,20 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 11.1 | S. 267-269",
+      "liefert": "die sortierte Übersicht mit Quellenbeleg",
       "text": "Ordnen Sie die fünf Handlungen aus der Aufgabenstellung den beiden Spalten «vertraglich gebunden» und «politisch entschieden» zu und notieren Sie zu jeder Zuordnung Kapitel und Seite.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie die vier Merkmale neben die Tabelle und prüfen Sie jede Handlung daran.",
+          "Fragen Sie: Gibt es eine Stelle, die im Streitfall entscheidet? Das spricht für Bindung."
+        ],
+        "satzanfaenge": [
+          "Diese Handlung ist gebunden, weil …",
+          "Diese Handlung ist politisch entschieden, weil …"
+        ],
+        "produkt": "Die belegte Zuordnung füllt die Schritte 2 und 3 der Übersicht."
+      },
       "loesung": {
         "kern": "Fünf Handlungen sortiert und belegt",
         "zeilen": [
@@ -90,8 +115,20 @@
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "Kap. 11.3 | S. 286",
+      "liefert": "die zwei strittigen Fälle mit Lesarten",
       "text": "Wählen Sie die zwei Zuordnungen, bei denen Sie am längsten gezögert haben. Begründen Sie für jede, weshalb sie sich auch anders einordnen liesse — und weshalb Sie sich trotzdem so entschieden haben.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Wählen Sie die zwei Handlungen, bei denen Sie am längsten gezögert haben, zuerst aus.",
+          "Schreiben Sie bei Zögern beide Lesarten auf, statt sich sofort festzulegen."
+        ],
+        "satzanfaenge": [
+          "Man könnte auch anders einordnen, weil …",
+          "Ich bleibe trotzdem bei meiner Zuordnung, weil …"
+        ],
+        "produkt": "Die zwei strittigen Fälle mit beiden Lesarten markieren Sie in Schritt 4 «Strittige Fälle markieren»."
+      },
       "loesung": {
         "kern": "Ziel gebunden, Ausgestaltung offen",
         "zeilen": [
@@ -106,8 +143,20 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 16.2 | S. 368",
+      "liefert": "der sprechfertige Zweisatz zum strittigen Fall",
       "text": "Formulieren Sie zu einer der beiden strittigen Zuordnungen einen sprechfertigen Zweisatz: Der erste Satz benennt beide Lesarten, der zweite begründet Ihre Zuordnung mit einer Quelle.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Formulieren Sie zuerst Satz 1 mit beiden Lesarten, danach erst Satz 2 mit Entscheid.",
+          "Sprechen Sie den Zweisatz einmal laut und stoppen Sie die Zeit dabei."
+        ],
+        "satzanfaenge": [
+          "Man könnte das als … lesen, weil …",
+          "Ich ordne es als … ein, weil …"
+        ],
+        "produkt": "Der Zweisatz bildet den Kern der 90-sekündigen Begründung in Schritt 5 «Begründung halten»."
+      },
       "loesung": {
         "kern": "Zweisatz: beide Lesarten, dann Entscheid",
         "zeilen": [
@@ -305,7 +354,7 @@
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 
-  "template": "default_4page_v2",
+  "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
