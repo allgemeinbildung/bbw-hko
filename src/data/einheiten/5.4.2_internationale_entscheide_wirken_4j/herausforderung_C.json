@@ -86,7 +86,7 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 11.1 | S. 267-269",
-      "liefert": "die sortierte Übersicht mit Quellenbeleg",
+      "liefert": "die eingetragene, sortierte Übersicht mit Quellenbeleg",
       "text": "Ordnen Sie die fünf Handlungen aus der Aufgabenstellung den beiden Spalten «vertraglich gebunden» und «politisch entschieden» zu und notieren Sie zu jeder Zuordnung Kapitel und Seite.",
       "feld_hoehe_mm": 15,
       "scaffolding": {
@@ -98,7 +98,7 @@
           "Diese Handlung ist gebunden, weil …",
           "Diese Handlung ist politisch entschieden, weil …"
         ],
-        "produkt": "Die belegte Zuordnung füllt die Schritte 2 und 3 der Übersicht."
+        "produkt": "Die eingetragenen Handlungen und die belegte Zuordnung füllen die Schritte 2 und 3."
       },
       "loesung": {
         "kern": "Fünf Handlungen sortiert und belegt",
@@ -143,27 +143,28 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 16.2 | S. 368",
-      "liefert": "der sprechfertige Zweisatz zum strittigen Fall",
-      "text": "Formulieren Sie zu einer der beiden strittigen Zuordnungen einen sprechfertigen Zweisatz: Der erste Satz benennt beide Lesarten, der zweite begründet Ihre Zuordnung mit einer Quelle.",
+      "liefert": "die zwei sprechfertigen Zweisätze",
+      "text": "Formulieren Sie zu beiden strittigen Zuordnungen je einen sprechfertigen Zweisatz: Der erste Satz benennt beide Lesarten, der zweite begründet Ihre Zuordnung mit einer Quelle.",
       "feld_hoehe_mm": 15,
       "scaffolding": {
         "strategien": [
-          "Formulieren Sie zuerst Satz 1 mit beiden Lesarten, danach erst Satz 2 mit Entscheid.",
-          "Sprechen Sie den Zweisatz einmal laut und stoppen Sie die Zeit dabei."
+          "Bauen Sie beide Zweisätze gleich: erst Satz 1 mit den Lesarten, dann Satz 2 mit Entscheid.",
+          "Sprechen Sie beide Zweisätze einmal laut und stoppen Sie die Zeit dabei."
         ],
         "satzanfaenge": [
           "Man könnte das als … lesen, weil …",
           "Ich ordne es als … ein, weil …"
         ],
-        "produkt": "Der Zweisatz bildet den Kern der 90-sekündigen Begründung in Schritt 5 «Begründung halten»."
+        "produkt": "Die zwei Zweisätze bilden den Kern der 90-sekündigen Begründung in Schritt 5 «Begründung halten»."
       },
       "loesung": {
-        "kern": "Zweisatz: beide Lesarten, dann Entscheid",
+        "kern": "Zwei Zweisätze: Lesarten, dann Entscheid",
         "zeilen": [
-          { "label": "Satz 1 (Lesarten)", "text": "«Man könnte das EZA-Budget als gebunden lesen, weil die Verfassung zur Linderung von Not und Armut verpflichtet — oder als politisch, weil niemand die Höhe festlegt.»" },
-          { "label": "Satz 2 (Begründung)", "text": "«Ich ordne es als politisch entschieden ein, weil Bundesrat und Parlament die Summe jedes Jahr neu festlegen, Kapitel 11.3, Seite 286.»", "quelle": "Kap. 11.3, S. 286" },
+          { "label": "Erster Fall · Satz 1", "text": "«Man könnte das EZA-Budget als gebunden lesen, weil die Verfassung zur Linderung von Not und Armut verpflichtet — oder als politisch, weil niemand die Höhe festlegt.»" },
+          { "label": "Erster Fall · Satz 2", "text": "«Ich ordne es als politisch entschieden ein, weil Bundesrat und Parlament die Summe jedes Jahr neu festlegen, Kapitel 11.3, Seite 286.»", "quelle": "Kap. 11.3, S. 286" },
+          { "label": "Zweiter Fall", "text": "«Man könnte die Zustimmung zu einem Abkommen als gebunden lesen, weil ein Nein den Marktzugang kostet. Ich ordne sie als politisch ein, weil das Stimmvolk 1992 den EWR-Beitritt ablehnte und der Bundesrat 2021 die Verhandlungen abbrach, Kapitel 11.1, Seite 266 und 269.»", "quelle": "Kap. 11.1, S. 266, 269" },
           { "label": "Aufbau", "text": "Ein Zweisatz braucht keine Einleitung — er beginnt mit dem Sachverhalt und endet mit der begründeten Position.", "quelle": "Kap. 16.2, S. 368" },
-          { "label": "Massstab", "text": "Beide Lesarten stehen im ersten Satz gleichwertig da, erst der zweite Satz legt sich fest." }
+          { "label": "Massstab", "text": "In beiden Zweisätzen stehen die Lesarten im ersten Satz gleichwertig da, erst der zweite Satz legt sich mit Quelle fest." }
         ]
       }
     }
@@ -220,7 +221,7 @@
     "beschreibung": "Ich sortiere fünf staatliche Handlungen danach, ob sie vertraglich gebunden oder politisch entschieden sind, belege jede Zuordnung und begründe die zwei strittigen Fälle mündlich.",
     "schritte": [
       {"label": "Merkmale festhalten", "hint": "Notieren Sie aus Kap. 1.3 die vier Merkmale von Recht — sie sind Ihr Massstab beim Sortieren."},
-      {"label": "Fünf Handlungen eintragen", "hint": "Übertragen Sie die fünf Handlungen aus der Aufgabenstellung in die linke Tabellenspalte."},
+      {"label": "Fünf Handlungen eintragen", "hint": "Übernehmen Sie die fünf Handlungen aus Ihrer Antwort auf Leitfrage 2 in die linke Tabellenspalte — dort haben Sie sie bereits zugeordnet und belegt."},
       {"label": "Sortieren und belegen", "hint": "Setzen Sie je ein Kreuz in «gebunden» oder «entschieden» und schreiben Sie Kapitel und Seite dazu."},
       {"label": "Strittige Fälle markieren", "hint": "Markieren Sie die zwei Zuordnungen, bei denen Sie gezögert haben, und notieren Sie beide Lesarten in Stichworten."},
       {"label": "Begründung halten", "hint": "Sprechen Sie 90 Sekunden vor Ihrer Partnerperson: pro strittigem Fall beide Lesarten und Ihr Entscheid mit Quelle. Holen Sie danach eine Rückmeldung ein."}
@@ -315,7 +316,7 @@
         "Alle vier Leitfragen sind schriftlich beantwortet.",
         "LF1 nennt die vier Merkmale von Recht und grenzt sie von Sitte, Brauch und Moral ab.",
         "LF2 ordnet alle fünf Handlungen zu und nennt je Kapitel und Seite.",
-        "LF4 enthält einen Zweisatz, der beide Lesarten benennt."
+        "LF4 enthält zu beiden strittigen Zuordnungen je einen Zweisatz, der beide Lesarten benennt und die Zuordnung mit einer Quelle begründet."
       ]
     },
     {

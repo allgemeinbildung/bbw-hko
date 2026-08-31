@@ -50,26 +50,27 @@
   ],
 
   "leitfrage": "Wer will beim Marktzugang was — und wer trägt am Schluss die Kosten?",
-  "leitfragen_intro": "Die vier Leitfragen bauen aufeinander auf: LF1 klärt die Akteurstypen, LF2 legt die verbindliche Ebene fest — erst dann ergibt der Zielkonflikt aus LF3 einen Sinn. Die dort notierten Interessen übertragen Sie direkt in die Akteurskarte des Handlungsprodukts. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 6.6, Kap. 11.1 und Kap. 16.2 als Grundlage.",
+  "leitfragen_intro": "Die vier Leitfragen bauen aufeinander auf und liefern je einen Baustein: LF1 die Akteure und ihre Mittel, LF2 die Ausgangslage des Statements, LF3 die Interessen und den Zielkonflikt, LF4 den Hauptteil. Ohne die verbindliche Ebene aus LF2 ergibt der Zielkonflikt aus LF3 keinen Sinn. Bearbeiten Sie die vier Leitfragen schriftlich mit dem Lehrmittel Kap. 6.6, 11.1 und 16.2 als Grundlage.",
   "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 6.6 | S. 177-179",
-      "liefert": "die Spalte «Mittel» der Akteurskarte",
-      "text": "Erklären Sie, was Verbände, Gewerkschaften und NGO sind und über welche Wege sie politische Entscheide beeinflussen. Nennen Sie mindestens drei dieser Wege.",
+      "liefert": "Akteursliste und Spalte «Mittel» der Akteurskarte",
+      "text": "Erklären Sie, was Verbände, Gewerkschaften und NGO sind und wie sie politische Entscheide beeinflussen — nennen Sie mindestens drei Wege. Bestimmen Sie daraus die vier bis fünf Akteure Ihrer Akteurskarte.",
       "feld_hoehe_mm": 15,
       "scaffolding": {
         "strategien": [
           "Ordnen Sie zuerst die drei Begriffe einzeln, bevor Sie die Wege des Einflusses suchen.",
-          "Zählen Sie die Wege einzeln ab — mindestens drei sind gefordert, nicht nur ein Beispiel."
+          "Zählen Sie drei Wege ab und bestimmen Sie erst dann die vier bis fünf Akteure."
         ],
         "satzanfaenge": [
           "Ein Verband ist …",
-          "Diese Gruppen beeinflussen Entscheide, indem sie …"
+          "Diese Gruppen beeinflussen Entscheide, indem sie …",
+          "Auf meine Akteurskarte gehören …"
         ],
-        "produkt": "Die hier genannten Wege tragen Sie später als Stichwort in die Spalte «Mittel» der Akteurskarte ein."
+        "produkt": "Die Wege werden zur Spalte «Mittel», die bestimmten Akteure zur ersten Spalte der Akteurskarte."
       },
       "loesung": {
         "kern": "Verbände, Gewerkschaften, NGO und Einfluss",
@@ -77,7 +78,8 @@
           { "label": "Verbände", "text": "Zweckvereinigungen, die die Interessen ihrer Mitglieder vertreten — nach Wirtschaftszweig oder nach Personengruppe.", "quelle": "Kap. 6.6, S. 177" },
           { "label": "Gewerkschaften", "text": "Arbeitnehmerverbände, die die Interessen der Angestellten vertreten, z. B. der Schweizerische Gewerkschaftsbund oder Unia.", "quelle": "Kap. 6.6, S. 177" },
           { "label": "NGO", "text": "Nichtregierungsorganisationen wie Amnesty International, WWF oder Greenpeace, die sich für Werte wie Menschenrechte oder Umweltschutz einsetzen.", "quelle": "Kap. 6.6, S. 178-179" },
-          { "label": "Drei Wege", "text": "Stellungnahme in der Vernehmlassung, Mitarbeit als Experten in Kommissionen, Lobbying bei den Räten — dazu Initiativen, Referenden und Abstimmungsparolen.", "quelle": "Kap. 6.6, S. 179" }
+          { "label": "Drei Wege", "text": "Stellungnahme in der Vernehmlassung, Mitarbeit als Experten in Kommissionen, Lobbying bei den Räten — dazu Initiativen, Referenden und Abstimmungsparolen.", "quelle": "Kap. 6.6, S. 179" },
+          { "label": "Akteure der Karte", "text": "Vier bis fünf: die internationale Ebene mit ihren Organen, der Bundesrat, der die Beziehungen bilateral regelt, ein Arbeitgeberverband wie Swissmem oder economiesuisse, eine Gewerkschaft wie Unia oder der Schweizerische Gewerkschaftsbund, dazu das Stimmvolk, das die sieben Verträge angenommen hat.", "quelle": "Kap. 6.6, S. 177; Kap. 11.1, S. 262 und S. 267" }
         ]
       }
     },
@@ -85,7 +87,8 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 11.1 | S. 262-263",
-      "text": "Ordnen Sie den Entscheid der richtigen Ebene zu: Welches Organ entscheidet, und was bedeutet es für einen Betrieb wie meinen, dass dessen Beschlüsse für alle Mitgliedstaaten verbindlich sind?",
+      "liefert": "die Ausgangslage des Statements",
+      "text": "Ordnen Sie den Entscheid der richtigen Ebene zu: Welches Organ entscheidet, und was bedeutet es für einen Betrieb wie meinen, dass seine Beschlüsse in allen Mitgliedstaaten verbindlich sind? Fassen Sie beides in einem sprechfertigen Satz als Ausgangslage zusammen.",
       "feld_hoehe_mm": 15,
       "scaffolding": {
         "strategien": [
@@ -94,9 +97,10 @@
         ],
         "satzanfaenge": [
           "Zuständig ist …",
-          "Für meinen Betrieb bedeutet das, dass …"
+          "Für meinen Betrieb bedeutet das, dass …",
+          "Ausgangslage: Der Entscheid fällt …"
         ],
-        "produkt": "Die geklärte Ebene macht erst verständlich, warum der Zielkonflikt in LF3 entsteht."
+        "produkt": "Dieser Satz eröffnet Ihr Statement als Ausgangslage; die geklärte Ebene trägt zugleich LF3."
       },
       "loesung": {
         "kern": "Wer entscheidet, und wen bindet es",
@@ -104,7 +108,8 @@
           { "label": "Zuständiges Organ", "text": "Der Rat der EU (Ministerrat) und das Europäische Parlament erlassen gemeinsam Gesetze, Verordnungen und Richtlinien — beide bilden die Legislative.", "quelle": "Kap. 11.1, S. 262-263" },
           { "label": "Supranational", "text": "Die EU-Staaten treten Zuständigkeiten an die EU-Organe ab; deren Beschlüsse gelten dann automatisch für alle Mitgliedstaaten.", "quelle": "Kap. 11.1, S. 262" },
           { "label": "Für meinen Betrieb", "text": "Ein Beschluss gilt in allen 27 Mitgliedstaaten gleich — ich kann mich nicht auf ein einzelnes, günstigeres Land berufen, wenn ich dorthin exportiere." },
-          { "label": "Häufiger Fehler", "text": "Das Europäische Parlament mit einem Landesparlament verwechseln — es hat weniger Macht, weil es Gesetze nur zusammen mit dem Ministerrat beschliesst.", "quelle": "Kap. 11.1, S. 263" }
+          { "label": "Häufiger Fehler", "text": "Das Europäische Parlament mit einem Landesparlament verwechseln — es hat weniger Macht, weil es Gesetze nur zusammen mit dem Ministerrat beschliesst.", "quelle": "Kap. 11.1, S. 263" },
+          { "label": "Muster-Ausgangslage", "text": "«Über diesen Punkt entscheiden der Rat der EU und das Europäische Parlament gemeinsam, und ihr Beschluss ist für alle 27 Mitgliedstaaten verbindlich — auch für den Markt, in den unser Betrieb liefert.»", "quelle": "Kap. 11.1, S. 262" }
         ]
       }
     },
@@ -216,11 +221,11 @@
     "format_detail": "Statement von 90 bis 120 Sekunden, gehalten an einer selbst erstellten Akteurskarte mit vier bis fünf Akteuren auf A3 oder als Folie.",
     "beschreibung": "Ich erstelle eine Akteurskarte zu einem Entscheid über den Marktzugang und halte dazu ein Statement, in dem ich benenne, welche Interessen zusammenstossen und wer die Kosten trägt.",
     "schritte": [
-      {"label": "Akteure bestimmen", "hint": "Wählen Sie vier bis fünf Akteure: internationale Ebene, Bund, Wirtschaftsverband, Gewerkschaft, betroffene Bevölkerung."},
+      {"label": "Akteure bestimmen", "hint": "Übertragen Sie die vier bis fünf Akteure, die Sie in LF1 bestimmt haben: internationale Ebene, Bund, Wirtschaftsverband, Gewerkschaft, betroffene Bevölkerung."},
       {"label": "Interessen zuordnen", "hint": "Pro Akteur ein Satz: Was will dieser Akteur erreichen? Belegen Sie mit einer Stelle aus Kap. 6.6 oder Kap. 11.1."},
       {"label": "Mittel eintragen", "hint": "Pro Akteur ein Stichwort: Womit setzt er sein Interesse durch — Verhandlung, Vernehmlassung, Lobby, Abstimmung, Kaufentscheid?"},
       {"label": "Zielkonflikt markieren", "hint": "Ziehen Sie eine Linie zwischen den zwei Interessen, die sich widersprechen, und schreiben Sie daneben, wer bei welcher Lösung bezahlt."},
-      {"label": "Statement halten", "hint": "Sprechen Sie 90 bis 120 Sekunden: Ausgangslage, der Zielkonflikt, wer zahlt, Schlusssatz. Nutzen Sie das 3B-Schema für jedes Argument."}
+      {"label": "Statement halten", "hint": "Sprechen Sie 90 bis 120 Sekunden entlang der Struktur: Ausgangslage (Satz aus LF2) – Akteure und Interessen – Zielkonflikt mit Ihrem Hauptteil aus LF4 – wer zahlt – Schlusssatz. Nutzen Sie das 3B-Schema für jedes Argument."}
     ],
     "schreib_label": "AKTEURSKARTE HIER ERARBEITEN",
     "schreib_note": "-> wissen/interessenverbaende_lobby",
@@ -242,7 +247,8 @@
         "Das Statement einmal laut halten und die Zeit stoppen."
       ],
       "struktur": [
-        "Ausgangslage – Akteure und Interessen – Zielkonflikt – Wer zahlt – Schlusssatz"
+        "Ausgangslage (Satz aus LF2) – Akteure und Interessen – Zielkonflikt – Wer zahlt – Schlusssatz",
+        "Den Hauptteil im 3B-Schema liefert LF4; er trägt die Begründung im Zielkonflikt."
       ]
     },
     "musterloesung": {
@@ -285,7 +291,7 @@
       {
         "ref": "lm-16-2-statement",
         "fuer": "für den Aufbau der 90 bis 120 Sekunden",
-        "tun": "Einleitung mit der Ausgangslage, Hauptteil mit dem Zielkonflikt, Schluss mit der Frage, wer bezahlt."
+        "tun": "Einleitung mit der Ausgangslage aus LF2, Hauptteil mit dem Zielkonflikt, Schluss mit der Frage, wer bezahlt."
       },
       {
         "ref": "hko-akteurskarte",
@@ -309,8 +315,9 @@
       "kriterium": "Inhaltliche Korrektheit",
       "vollstaendig_wenn": [
         "Alle vier Leitfragen sind schriftlich beantwortet.",
-        "LF1 nennt mindestens drei Wege des Einflusses aus Kap. 6.6.",
-        "LF2 erklärt, was ein verbindlicher Beschluss für einen Schweizer Betrieb bedeutet.",
+        "LF1 nennt mindestens drei Wege des Einflusses aus Kap. 6.6 und bestimmt vier bis fünf Akteure.",
+        "LF2 erklärt, was ein verbindlicher Beschluss für einen Schweizer Betrieb bedeutet, und endet mit einem Satz Ausgangslage.",
+        "LF3 nennt pro Akteur ein belegtes Interesse und stellt zwei sich widersprechende Interessen einander gegenüber.",
         "LF4 enthält Behauptung, Begründung und Beleg in sprechfertiger Form."
       ]
     },

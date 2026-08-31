@@ -50,33 +50,36 @@
   ],
 
   "leitfrage": "Über welche Schritte kommt ein Handelsentscheid aus dem Ausland bis an meine Maschine?",
-  "leitfragen_intro": "Diese Herausforderung beginnt vor der ersten Lektion. Erfragen Sie im Lehrbetrieb den Exportanteil und die Lieferfristen für die Zahlentabelle sowie ein Material oder Bauteil, das aus dem Ausland eingekauft wird. LF1 lösen Sie mit dem Lehrmittel, LF2 braucht dieses eigene Beispiel. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 11.3 und Kap. 16.2 als Grundlage.",
+  "leitfragen_intro": "Diese Herausforderung beginnt vor der ersten Lektion. Erfragen Sie im Lehrbetrieb den Exportanteil und die Lieferfristen für die Zahlentabelle und ein importiertes Material oder Bauteil. LF1 lösen Sie mit dem Lehrmittel, LF2 braucht dieses eigene Beispiel. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.1, 11.2, 11.3 und 16.2 als Grundlage.",
   "auftakt_typ": "vorbereitung",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
-      "knoten_ref": "Kap. 11.2 | S. 272-273",
-      "text": "Erklären Sie mit dem Lehrmittel, was Globalisierung und internationale Arbeitsteilung bedeuten und warum ein Land ohne eigene Rohstoffe wie die Schweiz besonders stark davon abhängt.",
+      "knoten_ref": "Kap. 11.2 | S. 272-273 · 11.1 | S. 271",
+      "liefert": "der Eröffnungssatz der Kette",
+      "text": "Erklären Sie mit dem Lehrmittel, was Globalisierung und internationale Arbeitsteilung bedeuten, warum ein Land ohne eigene Rohstoffe wie die Schweiz besonders stark davon abhängt und welche Arten von Entscheidungsträgern solche Handelsentscheide fällen.",
       "feld_hoehe_mm": 15,
       "scaffolding": {
         "strategien": [
           "Lesen Sie Kap. 11.2 S. 272-273, markieren Sie Globalisierung und Arbeitsteilung.",
-          "Erklären Sie danach in eigenen Worten, warum die Schweiz ohne Rohstoffe abhängig ist."
+          "Halten Sie fest, warum die Schweiz abhängig ist und wer über Handel entscheidet."
         ],
         "satzanfaenge": [
           "Globalisierung bedeutet, dass …",
-          "Die Schweiz ist abhängig, weil …"
+          "Entschieden hat …, also ein Staat, ein Block oder die WTO."
         ],
-        "produkt": "Diese Begriffsklärung bildet die Grundlage für den Mindmap-Ast «Wer entscheidet was»."
+        "produkt": "Wer entschieden hat, wird zum Eröffnungssatz von Schritt 1 und füllt den Ast «Wer entscheidet was»."
       },
       "loesung": {
-        "kern": "Globalisierung und Arbeitsteilung erklärt",
+        "kern": "Globalisierung, Arbeitsteilung und wer entscheidet",
         "zeilen": [
           { "label": "Globalisierung", "text": "Weltweite Verflechtung von Wirtschaft, Politik und Kultur auf Ebene von Individuen, Firmen und Staaten.", "quelle": "Kap. 11.2, S. 272" },
           { "label": "Ursachen", "text": "Technischer Fortschritt bei Transport und Kommunikation sowie der politische Abbau von Zöllen und Handelsschranken.", "quelle": "Kap. 11.2, S. 272" },
           { "label": "Arbeitsteilung", "text": "Jedes Land spezialisiert sich auf die Wirtschaftszweige, für die es günstige Voraussetzungen hat — Rohstoffe, Infrastruktur oder Know-how.", "quelle": "Kap. 11.2, S. 273" },
-          { "label": "Abhängigkeit CH", "text": "Ohne eigene Rohstoffe kann sich die Schweiz nicht auf deren Abbau spezialisieren — sie ist auf Importe und den Verkauf ihrer eigenen Spezialisierung angewiesen." }
+          { "label": "Abhängigkeit CH", "text": "Ohne eigene Rohstoffe kann sich die Schweiz nicht auf deren Abbau spezialisieren — sie ist auf Importe und den Verkauf ihrer eigenen Spezialisierung angewiesen." },
+          { "label": "Staat und Block", "text": "Handelsentscheide fällen einzelne Staaten über politische Entscheide zum Welthandel sowie Handelsblöcke wie die EU, in denen sich Länder zu einem Wirtschaftsraum zusammenschliessen.", "quelle": "Kap. 11.2, S. 272-273" },
+          { "label": "Internationale Organisation", "text": "Die WTO will freien Welthandel mit fairen Spielregeln; ihre 164 Mitglieder tragen über 90 Prozent des Welthandels, und sie schlichtet Handelskonflikte.", "quelle": "Kap. 11.1, S. 271" }
         ]
       }
     },
@@ -112,7 +115,7 @@
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "Kap. 11.2 | S. 273-275",
-      "liefert": "die gegliederte und belegte Wirkungskette",
+      "liefert": "die gekürzte Kette mit ihren Belegen",
       "text": "Gliedern Sie den Weg vom Entscheid bis zu Ihrem Arbeitstag in vier bis sechs Schritte. Belegen Sie jeden Schritt mit einer Stelle aus dem Lehrmittel oder mit einer eigenen Beobachtung aus dem Betrieb.",
       "feld_hoehe_mm": 15,
       "scaffolding": {
@@ -124,7 +127,7 @@
           "Schritt … folgt aus …, belegt durch …",
           "Zwischen … und … liegt der Schritt …"
         ],
-        "produkt": "Diese Gliederung wird direkt zur Wirkungskette auf A3 (Schritte 2 bis 4 im Handlungsprodukt)."
+        "produkt": "Diese Gliederung wird zur Wirkungskette auf A3 — Schritte 3 und 4 im Handlungsprodukt."
       },
       "loesung": {
         "kern": "Vier Prüfkriterien für die Wirkungskette",
@@ -216,8 +219,8 @@
     "format_detail": "Gesprochene Erklärung von 90 Sekunden an einer selbst gezeichneten Wirkungskette auf A3 oder als Folie, mit dem Smartphone aufgenommen.",
     "beschreibung": "Ich zeichne die Kette von einem internationalen Handelsentscheid bis an meinen Arbeitsplatz in vier bis sechs Schritten und erkläre sie in 90 Sekunden so, dass jeder Schritt belegt ist.",
     "schritte": [
-      {"label": "Entscheid festhalten", "hint": "Notieren Sie in einem Satz, worüber entschieden wurde und wer entschieden hat — Staat, Handelsblock oder internationale Organisation."},
-      {"label": "Schritte sammeln", "hint": "Halten Sie stichwortartig fest, was zwischen dem Entscheid und Ihrem Arbeitstag passiert: Preis, Lieferfrist, Offerte, Auftrag, Arbeitsplanung."},
+      {"label": "Entscheid festhalten", "hint": "Übernehmen Sie aus LF1, wer entschieden hat — Staat, Handelsblock oder internationale Organisation — und notieren Sie in einem Satz, worüber entschieden wurde."},
+      {"label": "Schritte sammeln", "hint": "Übernehmen Sie aus LF2, welches Material teurer oder knapper wird, und ergänzen Sie mit Kap. 11.3 S. 285 die Stichworte dazwischen: Preis, Lieferfrist, Offerte, Auftrag, Arbeitsplanung."},
       {"label": "Auf vier bis sechs Schritte kürzen", "hint": "Streichen Sie jeden Schritt, der nur eine Wiederholung ist. Was übrig bleibt, muss lückenlos aufeinander folgen."},
       {"label": "Belege zuordnen", "hint": "Schreiben Sie zu jedem Schritt die Quelle: Kapitel und Seite aus dem Lehrmittel oder «eigene Beobachtung im Betrieb»."},
       {"label": "Erklärung aufnehmen", "hint": "Sprechen Sie die Kette in 90 Sekunden durch, ein Schritt nach dem anderen. Nutzen Sie die Satzanfänge aus der Schreibhilfe und lesen Sie nicht ab."}
@@ -309,7 +312,7 @@
       "kriterium": "Inhaltliche Korrektheit",
       "vollstaendig_wenn": [
         "Alle vier Leitfragen sind schriftlich beantwortet.",
-        "LF1 verwendet die Begriffe Globalisierung und internationale Arbeitsteilung korrekt.",
+        "LF1 verwendet die Begriffe Globalisierung und internationale Arbeitsteilung korrekt und benennt die drei Arten von Entscheidungsträgern.",
         "LF2 nennt für den eigenen Betrieb ein konkretes Material oder Bauteil.",
         "LF4 enthält zwei sprechfertige Sätze mit einer Zahl und deren Quelle."
       ]
@@ -380,8 +383,9 @@
 
   "quellen_anker": [
     {"ref": "Kap. 11.2", "titel": "Globalisierung — weltweite Verflechtung, Ursachen, internationale Arbeitsteilung", "seiten": "Seite 272-273", "unterueberschrift": "Was ist Globalisierung? / Globalisierung der Wirtschaft", "fuer_leitfrage": [1]},
+    {"ref": "Kap. 11.1", "titel": "Welthandelsorganisation WTO — Ziel und Bedeutung", "seiten": "Seite 271", "unterueberschrift": "WTO", "fuer_leitfrage": [1]},
     {"ref": "Kap. 11.3", "titel": "Entwicklungsländer — exogene Ursachen, protektionistische Handelspolitik", "seiten": "Seite 285", "unterueberschrift": "Exogene Ursachen der Unterentwicklung", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 11.2", "titel": "Globalisierung — Abbau von Handelsschranken, Bedeutung des internationalen Handels für die Schweiz", "seiten": "Seite 273-275", "unterueberschrift": "Globalisierung der Wirtschaft / Schweiz in der globalisierten Wirtschaft", "fuer_leitfrage": [3]},
+    {"ref": "Kap. 11.2", "titel": "Globalisierung — Abbau von Handelsschranken, Bedeutung für die Schweiz", "seiten": "Seite 273-275", "fuer_leitfrage": [3]},
     {"ref": "Kap. 16.2", "titel": "Statement — Aufbau in drei Zügen", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
   ],
 
@@ -398,7 +402,7 @@
 
   "prinzip_handoff": {
     "kernkonzept": "Ein internationaler Entscheid erreicht meinen Arbeitsplatz über eine Kette aus Preis, Verfügbarkeit und Auftragslage — nicht als Meinung.",
-    "lehrmittel_anker": "Kap. 11.2 S. 272-275 (Globalisierung, Handelsschranken, Aussenhandel der Schweiz), Kap. 11.3 S. 285 (protektionistische Handelspolitik), Kap. 16.2 S. 368 (Aufbau eines Statements)",
+    "lehrmittel_anker": "Kap. 11.1 S. 271 (WTO), Kap. 11.2 S. 272-275 (Globalisierung, Handelsschranken, Aussenhandel der Schweiz), Kap. 11.3 S. 285 (protektionistische Handelspolitik), Kap. 16.2 S. 368 (Aufbau eines Statements)",
     "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, einen Entscheid in belegte Einzelschritte zu zerlegen und den Punkt zu benennen, an dem er die eigene Arbeit verändert.",
     "transfer_check": "Die Lernenden können dieselbe Kette an einem anderen Entscheid zeichnen, ohne den Zollfall zu erwähnen."
   },

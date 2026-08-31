@@ -324,7 +324,7 @@ function LeitfrageRail({ sc }: { sc: LeitfrageScaffolding }) {
   )
 }
 
-function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '' }: LeitfrageItemProps) {
+function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '', letzteImPaar = false }: LeitfrageItemProps & { letzteImPaar?: boolean }) {
   const kern = (
     <>
       <div className="lf-head">
@@ -354,7 +354,8 @@ function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeig
   )
   if (!hatRailInhalt(lf.scaffolding)) return <div className="lf-item">{kern}</div>
   return (
-    <div className="lf-item" style={{ display: 'flex', gap: '4mm', alignItems: 'flex-start', marginBottom: '6mm' }}>
+    // 6mm Luft nur ZWISCHEN den LF-Bloecken — nach dem letzten wuerde sie nur die A4-Kante anschneiden.
+    <div className="lf-item" style={{ display: 'flex', gap: '4mm', alignItems: 'flex-start', marginBottom: letzteImPaar ? 0 : '6mm' }}>
       <div style={{ flex: '1 1 78%', minWidth: 0 }}>{kern}</div>
       <LeitfrageRail sc={lf.scaffolding} />
     </div>
@@ -844,7 +845,7 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
             <SectionHead num={`02 · Wissensecke (${pi + 1})`}>Leitfragen (Fortsetzung)</SectionHead>
           )}
           {pair.map((q, i) => (
-            <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={lfFieldMm} />
+            <LeitfrageItem key={i} lf={q} withField={true} edits={edits} onEdit={onEdit} ns={ns} fieldHeightMm={lfFieldMm} letzteImPaar={i === pair.length - 1} />
           ))}
         </DocSPage>
       ))}
