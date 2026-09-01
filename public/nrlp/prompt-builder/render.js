@@ -8,8 +8,8 @@ import { skShort } from '../ext/sk-labels.js';
 
 // nRLP Thema-Identitaetsfarben (EFZ), Spiegel von src/lib/thema-colors.ts.
 const THEMA_COLORS = {
-  1: '#009EE0', 2: '#EC008C', 3: '#EB690B', 4: '#3EA743',
-  5: '#033E80', 6: '#885EA0', 7: '#007B7A', 8: '#00A1A3'
+  1: '#009EE0', 2: '#885EA0', 3: '#FFCC00', 4: '#EB690B',
+  5: '#3EA743', 6: '#EC008C', 7: '#00A1A3', 8: '#0076BD'
 };
 
 // Kleines R-Badge (R1 hell → R3 dunkel), gleiche Logik wie die Zirkularität-Heatmap.
