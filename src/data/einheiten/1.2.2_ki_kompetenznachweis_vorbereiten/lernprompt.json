@@ -41,7 +41,7 @@
         "key": "kontextualisieren",
         "titel": "Kontext geben",
         "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Ihr Thema, Ihr Stand, Ihr Ziel, Ihre Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer wird ihre Hilfe für genau Ihre Vorbereitung.",
-        "thema_bezug": "«Erkläre mir Datensicherheit» liefert eine schwammige Antwort, die Sie nicht behalten. Erst wenn die KI Ihr konkretes KN-Thema, Ihr Lehrjahr und Ihr Ziel «ich muss es im KN selbst erklären» kennt, kann sie Sie gezielt fragen und üben lassen.",
+        "thema_bezug": "«Erkläre mir das Thema» liefert eine schwammige Antwort, die Sie nicht behalten. Erst wenn die KI Ihr konkretes KN-Thema, Ihr Lehrjahr und Ihr Ziel «ich muss es im KN selbst erklären» kennt, kann sie Sie gezielt fragen und üben lassen.",
         "beispiel_basis": "Kontext: Lernende/r, 1. Lehrjahr. KN-Thema: [Thema]. Ziel: Ich will es im KN ohne KI selbst erklären können. Frag mich ab.",
         "beispiel_fortgeschritten": "Kontext: 1. Lehrjahr, EFZ. Mein KN über [Thema] ist in drei Tagen, ich darf darin keine KI nutzen. Mein Stand: [zwei Stichworte]. Ziel: die zwei grössten Lücken schliessen. Aufgabe: Zeig mir zuerst, welche Teilthemen ich noch nicht sicher habe, dann frag sie der Reihe nach ab.",
         "warnung": "Keine echten Namen, keine vertraulichen Betriebsdaten in den Prompt — und verlassen Sie sich nicht darauf, dass die KI Ihren Kontext perfekt deutet: Prüfen Sie, ob ihre Fragen wirklich zu Ihrem KN-Thema passen, und steuern Sie nach, wenn sie abdriftet.",
@@ -139,7 +139,7 @@
         "quellen_anfordern",
         "chain_of_thought"
       ],
-      "logik_und_ziel": "Prompt 1 erzeugt eine belegte Recherche mit prüfbaren Quellen zu Ihrem KN-Thema. Prompt 2 lässt die KI Schritt für Schritt abwägen, wie Sie mit dieser geprüften Grundlage weiterarbeiten — so verbinden Sie die Quellenprüfung aus Herausforderung B mit der bewussten Lernentscheidung aus Herausforderung C, bevor Sie sich festlegen.",
+      "logik_und_ziel": "Prompt 1 erzeugt eine belegte Recherche mit prüfbaren Quellen zu Ihrem KN-Thema. Prompt 2 lässt die KI Schritt für Schritt abwägen, wie Sie mit dieser geprüften Grundlage weiterarbeiten — so verbinden Sie die Prüfung der Quellen mit der bewussten Lernentscheidung, bevor Sie sich festlegen.",
       "prompt_1": "Recherchiere zu meinem KN-Thema [Thema] und liefere pro Kernaussage eine Quelle mit Link, Herausgeber und Vertrauensgrad (sicher/unsicher). Markiere ausdrücklich, welche Links du nicht garantieren kannst. Ich klicke jeden an und prüfe nach.",
       "prompt_2": "Nimm nur die Quellen, die ich als geprüft markiert habe. Zeig mir jetzt Schritt für Schritt zwei Wege, wie ich die verbleibende Zeit einteile — was ich mit deiner Hilfe vertiefe und was ich bewusst ohne KI übe. Nenne pro Weg Vorteil, Risiko und das stärkste Gegenargument; die Entscheidung treffe ich selbst."
     },

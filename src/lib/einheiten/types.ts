@@ -117,6 +117,13 @@ export interface SituationJson {
    * `kontext` / `pfad` — bleibt auf Seite 2, bekommt nur eine Beschriftungszeile.
    */
   auftakt_typ?: 'vorbereitung' | 'kontext' | 'pfad'
+  /**
+   * Autarkie-Regel: A darf Material erzeugen, das B und C weiterverwenden dürfen —
+   * als Angebot, nie als Bedingung. `verbindlich` ist darum immer `false`.
+   * Wird (noch) nicht gerendert; der Begleiter kann daraus einen Coaching-Hinweis
+   * für Variante A (alle drei nacheinander) bauen.
+   */
+  bereitet_vor?: { fuer: Array<'A' | 'B' | 'C'>; material: string; verbindlich: false }
   leitfragen?: {
     nr: number
     text: string

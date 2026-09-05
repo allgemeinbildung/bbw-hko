@@ -55,7 +55,7 @@ Der AViVA-Bogen ist der sichtbare Fahrplan jeder Herausforderung (Kapitel 3-5) u
 
 ### Das Kompetenzversprechen
 
-> „Ich kann KI-Werkzeuge gezielt einsetzen, um mich auf einen Kompetenznachweis vorzubereiten, und entscheide dabei begründet, wo ich der KI vertraue und wo ich ihre Ergebnisse selbst überprüfe."
+> „<!--hko:kn.kern_kompetenzversprechen-->Ich kann KI-Werkzeuge gezielt einsetzen, um mich auf einen Kompetenznachweis vorzubereiten, und entscheide dabei begründet, wo ich der KI vertraue und wo ich ihre Ergebnisse selbst überprüfe.<!--/hko-->"
 
 Dieser eine Satz ist der Massstab. Alles in der Einheit zahlt darauf ein: A = gezielt fragen, B = Ergebnisse prüfen, C = Einsatz steuern.
 
@@ -125,7 +125,7 @@ Diese Einheit hat KI zum Thema — die Lernenden setzen KI-Werkzeuge selbst ein.
 
 > [!ki_einsatz] KI-Nutzungsideen für die ganze Einheit (LP entscheidet Ob/Wie)
 > Sinnvoll wären auf Einheits-Ebene zum Beispiel:
-> - **Persona-Varianten erzeugen:** zu den drei Herausforderungen weitere berufsspezifische Personas und KN-Themen generieren lassen, damit jede/r mit einem Fall aus dem eigenen Beruf üben kann.
+> - **Ersatzfälle erzeugen:** zu den drei Herausforderungen zusätzliche konkrete Fälle und KN-Themen generieren lassen — als Auffangnetz für Lernende, die gerade keinen eigenen kommenden Kompetenznachweis haben. Die Personas bleiben neutral; konkret wird der Fall, nicht der Beruf.
 > - **Halluzination demonstrieren:** vor dem Unterricht selbst einen Recherche-Prompt zu einem Nischenthema testen, um ein eigenes Beispiel mit echten und erfundenen Quellen für Herausforderung B in der Hand zu haben.
 > - **Erwartungsbild schärfen:** die eigene Soll-Lösung gegen einen KI-Entwurf gegenlesen, um zu prüfen, ob Sie im Tafelbild (Kap. 3-5) einen Pflicht-Ast übersehen haben.
 > - **Fragenpool ergänzen:** zusätzliche Fachgespräch- oder Mini-Case-Varianten zur Hybrid-Herausforderung (Kap. 8) entwerfen lassen, die Sie anschliessend selbst auf Stufe und Zielkonflikt prüfen.
@@ -178,16 +178,16 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 
 | Feld | Inhalt |
 |---|---|
-| Titel | Die KI antwortet sofort — aber lerne ich dabei etwas? |
+| Titel | <!--hko:hf_A.titel-->Die KI antwortet sofort — aber lerne ich dabei etwas?<!--/hko--> |
 | Sub-Herausforderung | Gezielt prompten |
-| Persona | Informatiker/in EFZ, Noser Engineering AG, Winterthur — 1. LJ |
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Technologische und digitale Transformation (R1), Identität und Sozialisation (R1) |
 | Sprachmodi | Interaktion und Kollaboration digital (mit KI-Tools interagieren) |
 | Schlüsselkompetenzen | SK3 Innovation und Problemlösung · SK2 Ziele setzen und anpassen · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Prompt-Protokoll (kommentierter KI-Dialog, 1-2 A4) |
 | Wissensknoten | gezieltes_prompten_lernprozess |
 
-> Ich bin Informatik-Lernende/r im 1. Lehrjahr. In zwei Wochen habe ich einen KN, und ich will mich mit einem KI-Chatbot vorbereiten. Ich tippe «Erkläre mir Datensicherheit» ein und bekomme sofort eine glatte, lange Antwort — aber als ich sie zuklappe, könnte ich kaum drei Sätze davon selbst wiederholen. Es war schnell, es klang gut, und trotzdem habe ich nichts wirklich verstanden.
+> Ich bin im 1. Lehrjahr. In zwei Wochen ist mein nächster KN, und ich muss den Stoff dort ohne Hilfsmittel selbst erklären können. Gestern Abend habe ich mein Thema in einen KI-Chat kopiert und «erklär mir das» dahintergesetzt — nach vier Sekunden stand eine glatte Antwort da, rund dreihundert Wörter. Zwanzig Minuten später wollte ich sie mir selbst nacherzählen: Es kamen drei Sätze zusammen, dann war Schluss.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > Authentizität (jede/r bereitet sich auf KN vor), Verortung (konkretes Tool, konkrete Zahlen), Problem (kein Reproduktionsauftrag), Affektivität (das frustrierende «klang gut, verstanden nichts»), Kognition (K2-K4), Aktivität (Prompt-Protokoll), LJ-Passung (1. LJ, erster eigener KN), Relevanz (KI-Nutzung ist Alltag) — alle acht erfüllt.
@@ -235,7 +235,7 @@ Klasse in A/B/C-Gruppen aufgeteilt, jede macht eine Herausforderung, dann Gruppe
 
 > [!tafelbild] Erwartungsbild — Gezielt prompten: fragen, um zu verstehen
 > **Pflicht-Äste** (Lernende sollen alle finden):
-> - **Bausteine eines guten Prompts** — Rolle vorgeben («Du bist meine Lerncoach/in») · Ziel nennen («Ich will es selbst erklären können») · Kontext geben (mein KN-Thema, mein Stand) · Format wünschen (Beispiel, Schritte, Frage zurück)
+> - **Bausteine eines guten Prompts** — <!--hko:hf_A.mindmap_aeste[0].punkte[0]-->Rolle vorgeben («Du bist meine Lerncoach/in»)<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[1]-->Ziel nennen («Ich will es selbst erklären können»)<!--/hko--> · Kontext geben (mein KN-Thema, mein Stand) · <!--hko:hf_A.mindmap_aeste[0].punkte[3]-->Format wünschen (Beispiel, Schritte, Frage zurück)<!--/hko-->
 > - **Iterativ nachfragen** — «Erkläre einfacher / mit einem Beispiel» · «Stell mir eine Kontrollfrage» · «Was habe ich noch nicht verstanden?» · Schritt für Schritt statt eine Riesenantwort
 > - **Verstehen statt übernehmen** — Antwort zuklappen, selbst wiederholen · mit eigenen Worten nacherzählen · Lücken erkennen und gezielt nachfragen · Lernfortschritt markieren
 >
@@ -257,7 +257,7 @@ NACHHAKEN: „Erkläre nochmals einfacher." · „Stell mir eine Kontrollfrage."
 
 | Prompt (was ich gefragt habe) | KI-Antwort (gekürzt) | Markierung |
 |---|---|---|
-| *Bsp:* «Erkläre mir Datensicherheit» (vage) | *lange, glatte Liste* | ? nichts behalten |
+| *Bsp:* «Erkläre mir das Thema» (vage) | *lange, glatte Liste* | ? nichts behalten |
 | (geschärfter Prompt mit Rolle/Ziel) | | |
 | (Nachfrage / Kontrollfrage) | | |
 
@@ -269,23 +269,32 @@ NACHHAKEN: „Erkläre nochmals einfacher." · „Stell mir eine Kontrollfrage."
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 Leitfragen
-☐ Alle vier Leitfragen schriftlich beantwortet
+<!--hko:hf_A.bewertungsraster[0].vollstaendig_wenn|checkliste-->
+☐ Alle 4 Leitfragen schriftlich beantwortet
 ☐ Gutes und schlechtes Prompten an eigenen Beispielen unterschieden
 ☐ Übernehmen vs. Nachhaken pro Antwort begründet entschieden
+<!--/hko-->
 
 Mindmap
+<!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Zentrum und vier Ast-Titel übernommen
 ☐ Pro Ast eigene Detail-Punkte ergänzt
 ☐ Verbindung zwischen Prompt-Bausteinen und Lernfortschritt erkennbar
+<!--/hko-->
 
 Handlungsprodukt (Prompt-Protokoll)
-☐ Mindestens 3 iterativ verbesserte Prompts mit KI-Antworten dokumentiert
-☐ Lernfortschritt im Dialog sichtbar markiert
+<!--hko:hf_A.bewertungsraster[2].vollstaendig_wenn|checkliste-->
+☐ Die vier Prompt-Bausteine am Ausgangs-Prompt abgehakt
+☐ Mindestens drei iterativ verbesserte Prompts mit KI-Antworten dokumentiert
+☐ Lernfortschritt mit Häkchen und Fragezeichen im Dialog markiert
 ☐ Kurzkommentar zum stärksten Prompt vorhanden
+<!--/hko-->
 
 Reflexion
+<!--hko:hf_A.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle 3 Reflexionsfragen beantwortet
 ☐ Konkrete Konsequenz für den nächsten KI-Dialog benannt
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -327,16 +336,16 @@ Reflexion
 
 | Feld | Inhalt |
 |---|---|
-| Titel | Die KI nennt Quellen — aber gibt es sie wirklich? |
+| Titel | <!--hko:hf_B.titel-->Die KI nennt Quellen — aber gibt es sie wirklich?<!--/hko--> |
 | Sub-Herausforderung | KI-Recherche prüfen |
-| Persona | Schreiner/in EFZ, Schreinerei Aebi GmbH, Thun — 1. LJ |
+| Persona | <!--hko:hf_B.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Technologische und digitale Transformation (R1), Identität und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich und bildlich (Quellen prüfend lesen) |
 | Schlüsselkompetenzen | SK1 Quellen unterscheiden · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | KI-Recherche-Analyse mit Prüftabelle (1-2 A4) |
 | Wissensknoten | ki_recherche_quellenpruefung |
 
-> Ich bin Schreiner-Lernende/r im 1. Lehrjahr. Für meinen KN über nachhaltige Holzbeschaffung lasse ich die KI eine Online-Recherche machen und bekomme eine überzeugende Zusammenfassung mit vier Links. Als ich zwei davon anklicke, führt einer ins Leere, beim anderen steht nichts von dem, was die KI behauptet. Sind die anderen echt, oder hat die KI sie erfunden?
+> Ich bin im 1. Lehrjahr und lasse für meinen nächsten KN die KI recherchieren. Ich bekomme eine Zusammenfassung, die klingt wie aus einem Fachbuch, und vier Links darunter. Zwei klicke ich an: Der erste führt auf eine Fehlermeldung, beim zweiten steht der zitierte Satz nirgends. Zwei von zwei geprüften Links halten nicht, was sie versprechen — und zwei habe ich noch nicht angeschaut.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > Authentizität, Verortung (konkretes KN-Thema, vier Links), Problem (echte Unsicherheit), Affektivität (das Misstrauen nach dem ersten toten Link), Kognition (bis K4 — analytisches Bewerten), Aktivität (Prüftabelle), LJ-Passung, Relevanz (Quellenkritik bei KI ist eine Schlüsselkompetenz der Gegenwart) — alle acht erfüllt.
@@ -382,8 +391,8 @@ Reflexion
 
 > [!tafelbild] Erwartungsbild — KI-Recherche prüfen: vertrauen oder kontrollieren?
 > **Pflicht-Äste** (Lernende sollen alle finden):
-> - **Warum KI Quellen erfindet** — Sprachmodell sagt das Wahrscheinlichste, nicht das Wahre · Halluzination: erfundene URLs und Titel · Antwort klingt sicher, auch wenn sie falsch ist
-> - **Drei Prüfkriterien** — Existiert die Quelle / der Link wirklich? · Steht dort, was die KI behauptet? · Ist der Herausgeber vertrauenswürdig und aktuell?
+> - **Warum KI Quellen erfindet** — <!--hko:hf_B.mindmap_aeste[0].punkte[0]-->Sprachmodell sagt das Wahrscheinlichste, nicht das Wahre<!--/hko--> · Halluzination: erfundene URLs und Titel · <!--hko:hf_B.mindmap_aeste[0].punkte[2]-->Antwort klingt sicher, auch wenn sie falsch ist<!--/hko-->
+> - **Drei Prüfkriterien** — Existiert die Quelle / der Link wirklich? · Steht dort, was die KI behauptet? · <!--hko:hf_B.mindmap_aeste[1].punkte[2]-->Ist der Herausgeber vertrauenswürdig und aktuell?<!--/hko-->
 > - **Recherche bewerten** — Verlässlichkeit: stimmen die Quellen? · Tiefe: Oberfläche oder echter Gehalt? · Nachvollziehbarkeit: zurückverfolgbar? · Welchem Teil vertraue ich, welchem nicht?
 >
 > **Optionale Vertiefung** (für 100 %): **Modelle vergleichen** — denselben Prompt in 2-3 Modelle geben · Outputs nebeneinander legen · Wo widersprechen sie sich? · Welches Modell belegt seine Aussagen besser?
@@ -394,7 +403,7 @@ Reflexion
 
 | Quelle (Titel / Link) | Existiert? | Belegt die Aussage? | Vertrauenswürdig (Herausgeber/Datum)? |
 |---|---|---|---|
-| *Bsp:* «FSC-Bericht 2024», Link XY | nein (toter Link) | — | — |
+| *Bsp:* «Studie einer Hochschule 2024», Link XY | nein (toter Link) | — | — |
 | (Quelle 2) | | | |
 | (Quelle 3) | | | |
 
@@ -416,23 +425,32 @@ FAZIT:           Diesem Teil vertraue ich: ____ . Diesen prüfe ich selbst nach:
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 Leitfragen
-☐ Alle vier Leitfragen schriftlich beantwortet
+<!--hko:hf_B.bewertungsraster[0].vollstaendig_wenn|checkliste-->
+☐ Alle 4 Leitfragen schriftlich beantwortet
 ☐ Halluzination korrekt erklärt
 ☐ Jede Quelle nach den drei Kriterien geprüft
+<!--/hko-->
 
 Mindmap
+<!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Zentrum und vier Ast-Titel übernommen
 ☐ Pro Ast eigene Detail-Punkte ergänzt
 ☐ Verbindung zwischen Prüfkriterien und Gesamturteil erkennbar
+<!--/hko-->
 
 Handlungsprodukt (KI-Recherche-Analyse)
-☐ Prüftabelle mit allen KI-Quellen und drei Kriterien ausgefüllt
-☐ Begründetes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit
+<!--hko:hf_B.bewertungsraster[2].vollstaendig_wenn|checkliste-->
+☐ Prüftabelle mit allen KI-Quellen und den drei Prüffragen ausgefüllt
 ☐ Erfundene oder leere Quellen klar als solche markiert
+☐ Begründetes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit
+☐ Ausgeschriebener Prüf-Eintrag zu einer Quelle vorhanden
+<!--/hko-->
 
 Reflexion
+<!--hko:hf_B.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle 3 Reflexionsfragen beantwortet
 ☐ Konkrete Konsequenz für den nächsten KI-Output benannt
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -473,16 +491,16 @@ Reflexion
 
 | Feld | Inhalt |
 |---|---|
-| Titel | Soll die KI für mich lernen — oder ich mit ihr? |
+| Titel | <!--hko:hf_C.titel-->Soll die KI für mich lernen — oder ich mit ihr?<!--/hko--> |
 | Sub-Herausforderung | KI-Lernplan gestalten |
-| Persona | Bäcker-Konditor-Confiseur/in EFZ, Bäckerei-Konditorei Wirz, Aarau — 1. LJ |
+| Persona | <!--hko:hf_C.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Technologische und digitale Transformation (R1), Identität und Sozialisation (R1) |
 | Sprachmodi | Interaktion und Kollaboration digital (KI als Lernpartnerin) |
 | Schlüsselkompetenzen | SK2 Ziele setzen und anpassen · SK5 Werthaltungen reflektieren · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Persönlicher KI-Lernplan + drei Übe-Prompts (1-2 A4) |
 | Wissensknoten | ki_lernplan_selbstwirksamkeit |
 
-> Ich bin Bäcker-Konditor-Confiseur-Lernende/r im 1. Lehrjahr. In drei Wochen steht mein KN zu Hygiene und Lebensmittelsicherheit an, und ich habe wenig Zeit. Am liebsten würde ich die KI alles vorbereiten lassen. Aber im KN sitze ich allein da, ohne KI, und muss selbst erklären können. Wenn ich alles der KI überlasse, fühle ich mich vorbereitet, bin es aber nicht.
+> Ich bin im 1. Lehrjahr. In drei Wochen ist mein nächster KN, dort muss ich ohne Hilfsmittel selbst erklären. Lernzeit habe ich etwa zwei Stunden pro Woche. Gestern habe ich die KI achtzehn Lernkarten erzeugen lassen und mich vorbereitet gefühlt; heute Morgen konnte ich zwei davon frei wiedergeben. Sechs Stunden habe ich noch — ich muss entscheiden, wo die KI für mich arbeitet und wo ich selbst durch muss.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > Authentizität, Verortung (konkretes KN-Thema, knappe Lernzeit), Problem (echtes Steuerungsproblem), Affektivität (die Falle «gefühlt vorbereitet»), Kognition (K2-K4), Aktivität (Lernplan), LJ-Passung, Relevanz (Selbstwirksamkeit ist der Kern jeder Vorbereitung) — alle acht erfüllt.
@@ -514,7 +532,7 @@ Reflexion
 **LF3 (K3):** Pro Schritt entscheiden — mit KI oder bewusst ohne, je mit Ziel.
 
 > [!coaching] LF3
-> Verlangen Sie pro Lernschritt ein **überprüfbares Ziel** («Ich kann die fünf HACCP-Schritte frei aufzählen»), nicht «ich lerne Hygiene». Nur an einem konkreten Ziel lässt sich entscheiden, ob KI hilft oder im Weg steht.
+> Verlangen Sie pro Lernschritt ein **überprüfbares Ziel** («Ich kann die Abzüge auf einer Lohnabrechnung frei aufzählen»), nicht «ich lerne die Lohnabrechnung». Nur an einem konkreten Ziel lässt sich entscheiden, ob KI hilft oder im Weg steht.
 
 > [!troubleshooting] Herausforderung C — Lernende/r schreibt zu jedem Schritt «mit KI» (Zeitdruck) und gibt das Üben ab
 > Nicht über Selbstwirksamkeit dozieren. Fragen lassen: «Stellen Sie sich vor, im KN sitzen Sie ohne KI — bei welchem dieser Schritte würden Sie ins Schwimmen kommen?» Der Schritt, den er nennt, beantwortet die Entscheidung selbst: dort muss er bewusst ohne KI üben. **Erst dann** die Spalte «Begründung» ausfüllen lassen — sie hält fest, warum genau dieser Schritt nicht delegierbar ist.
@@ -522,7 +540,7 @@ Reflexion
 **LF4 (K3+/K4):** Drei Übe-Prompts, die abfragen statt abnehmen.
 
 > [!coaching] LF4
-> Der Unterschied ist subtil und wichtig: «Erkläre mir HACCP» (nimmt ab) vs. «Frag mich zu HACCP ab und sag mir, was ich vergessen habe» (lässt üben). Sammeln Sie zwei, drei Lernenden-Prompts und sortieren Sie sie gemeinsam in «nimmt ab» und «lässt üben».
+> Der Unterschied ist subtil und wichtig: «Erkläre mir mein Thema» (nimmt ab) vs. «Frag mich zu meinem Thema ab und sag mir, was ich vergessen habe» (lässt üben). Sammeln Sie zwei, drei Lernenden-Prompts und sortieren Sie sie gemeinsam in «nimmt ab» und «lässt üben».
 
 ### Tafelbild — fachliche Soll-Lösung
 
@@ -540,7 +558,7 @@ Reflexion
 
 | Lernschritt | Mein Ziel | Mit KI / bewusst ohne | Begründung |
 |---|---|---|---|
-| *Bsp:* HACCP-Schritte lernen | Ich kann sie frei aufzählen | bewusst ohne | muss ich im KN allein können |
+| *Bsp:* Fachbegriffe des Themas | Ich kann sie frei aufzählen | mit KI | Lernkarten und Abfragen gehen so schneller |
 | (Schritt 2) | | | |
 | (Schritt 3) | | | |
 
@@ -561,14 +579,18 @@ VERANTWORTUNGS-CHECK: „Lasse ich die KI irgendwo etwas tun, das ich im KN selb
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 Leitfragen
-☐ Alle vier Leitfragen schriftlich beantwortet
+<!--hko:hf_C.bewertungsraster[0].vollstaendig_wenn|checkliste-->
+☐ Alle 4 Leitfragen schriftlich beantwortet
 ☐ Unterschied zwischen gefühlter und echter Vorbereitung erklärt
 ☐ Pro Lernschritt KI-Einsatz begründet entschieden
+<!--/hko-->
 
 Mindmap
+<!--hko:hf_C.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Zentrum und vier Ast-Titel übernommen
 ☐ Pro Ast eigene Detail-Punkte ergänzt
 ☐ Verbindung zwischen Lernschritten und KI-Einsatz erkennbar
+<!--/hko-->
 
 Handlungsprodukt (KI-Lernplan)
 ☐ Lernplan-Tabelle mit Schritten, Zielen und KI-Entscheidung ausgefüllt
@@ -576,8 +598,10 @@ Handlungsprodukt (KI-Lernplan)
 ☐ Drei einsatzfertige Übe-Prompts und Verantwortungs-Check vorhanden
 
 Reflexion
+<!--hko:hf_C.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle 3 Reflexionsfragen beantwortet
 ☐ Konkrete Konsequenz für die eigene KN-Vorbereitung benannt
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -601,7 +625,7 @@ Reflexion
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Herausforderung C
-> Spannungsfeld: **Abkürzung nehmen vs. eigene Selbstwirksamkeit aufbauen**. Die KI für sich arbeiten zu lassen ist bei knapper Zeit verlockend und manchmal genau richtig — aber im KN sitzt die Lernende allein da. Bewertet wird, ob sie **bewusst entscheidet**, wo eine Abkürzung sinnvoll ist und wo sie eigenes Können aufbauen muss. Wenn der Plan nur «KI macht alles» lautet, fehlt die Selbstwirksamkeit; wenn er KI gar nicht nutzt, fehlt die effiziente Ressourcen-Nutzung (1.2).
+> Spannungsfeld: **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Abkürzung nehmen vs. eigene Selbstwirksamkeit aufbauen<!--/hko-->**. Die KI für sich arbeiten zu lassen ist bei knapper Zeit verlockend und manchmal genau richtig — aber im KN sitzt die Lernende allein da. Bewertet wird, ob sie **bewusst entscheidet**, wo eine Abkürzung sinnvoll ist und wo sie eigenes Können aufbauen muss. Wenn der Plan nur «KI macht alles» lautet, fehlt die Selbstwirksamkeit; wenn er KI gar nicht nutzt, fehlt die effiziente Ressourcen-Nutzung (1.2).
 
 ### Wo welche SK geübt wird
 
@@ -652,11 +676,11 @@ Kurzer Austausch in Kleingruppen über die jeweils gemachten Herausforderungen, 
 
 Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden heisst der Auftrag **Transfer**. Das ist die Phase, die R1 überhaupt nach R2/R3 trägt. Hier wird das Wissen vom konkreten KN-Fall gelöst.
 
-**Auftrag (Set):** Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext, in dem Sie KI für Lernen oder Arbeit einsetzen. Schriftlich, **5-7 Sätze**, Fachbegriffe (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) verwenden. Abgabe vor dem KN.
+**Auftrag (Set):** <!--hko:set.dekontextualisierungs_aufgabe.auftrag-->Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext, in dem Sie KI für Lernen oder Arbeit einsetzen.<!--/hko--> Schriftlich, **5-7 Sätze**, Fachbegriffe (Prompt, Halluzination, Quellenkritik, Selbstwirksamkeit) verwenden. Abgabe vor dem KN.
 
 **Der Anker-Satz** (gehört an die Tafel, nachdem die Klasse ihn selbst erarbeitet hat — nicht vorher vorgeben):
 
-> KI macht mich schneller, aber nicht automatisch kompetenter. Wer KI nutzt, muss entscheiden, was er ihr überlässt und was er selbst können muss — und ihre Ergebnisse prüfen, bevor er sich darauf verlässt.
+> <!--hko:set.dekontextualisierungs_aufgabe.ziel-->KI macht mich schneller, aber nicht automatisch kompetenter. Wer KI nutzt, muss entscheiden, was er ihr überlässt und was er selbst können muss — und ihre Ergebnisse prüfen, bevor er sich darauf verlässt.<!--/hko-->
 
 > [!lernziel] So sieht guter Transfer aus
 > Ein starker Transfer nimmt das **Prinzip** (gezielt fragen → prüfen → bewusst steuern) und zeigt es in einem **fremden** Feld — z. B.: «Als ich für die Theorieprüfung des Autofahrens lernte, liess ich mir von der KI Übungsfragen stellen (gezielt prompten), prüfte aber die Verkehrsregeln, die sie nannte, im offiziellen Lehrmittel nach (Quellenkritik, weil eine Regel falsch war), und übte das Erkennen der Vortrittssituationen bewusst ohne KI (Selbstwirksamkeit), weil ich sie in der Prüfung allein sehen muss.» — drei Schritte erkennbar, Fachbegriffe drin, neuer Kontext.
@@ -670,19 +694,19 @@ Im IPERKA-Modell ist das der Schritt **Dekontextualisieren**; für die Lernenden
 
 Der KN nimmt eine **neue Hybrid-Herausforderung** und prüft, ob die Lernende alle drei Herausforderungen zusammenführen kann.
 
-### Hybrid-Herausforderung — „Drei Tage vor dem KN — wie weit lasse ich die KI ran?"
+### Hybrid-Herausforderung — „<!--hko:kn.hybrid_situation.titel-->Drei Tage vor dem KN — die fertige Zusammenfassung im Klassenchat<!--/hko-->"
 
-Persona: Polymechaniker/in EFZ, Maschinenfabrik Bucher AG, Luzern — 1. LJ. (Bewusst **neue** Persona, kommt in keiner der drei Herausforderungen vor.)
+Persona: Lernende/r EFZ, 1. Lehrjahr — neutral, wie in allen drei Herausforderungen. **Neu ist nicht die Person, sondern der Fall** (Stufe 2): ein fremdes KI-Dokument, das bereits in der Klasse kursiert. In A, B und C arbeiten die Lernenden an eigenem Material, das sie selbst erzeugt haben — hier liegt ein fertiges Produkt von jemand anderem auf dem Tisch, und die Klasse hat es schon übernommen.
 
-> Drei Tage vor einem KN über Arbeitssicherheit fragt die Lernende die KI um eine schnelle Zusammenfassung mit Quellen. Sie bekommt eine glatte Liste mit drei Links — einer existiert nicht. Alles klingt überzeugend und könnte übernommen werden, doch im KN sitzt sie ohne KI. Leitfrage: «Wie gehe ich vor — und wann vertraue ich der KI, wann kontrolliere ich sie selbst?»
+> Drei Tage vor dem KN teilt jemand aus der Klasse im Gruppenchat eine KI-Zusammenfassung des ganzen Stoffs: drei Quellenlinks, zwölf «wahrscheinliche Prüfungsfragen» mit fertigen Antworten. Sechzehn Leute haben sie schon heruntergeladen. Der erste Link führt ins Leere, beim zweiten steht der zitierte Satz nirgends — der Rest klingt richtig. Im KN sitzt die Lernende ohne Hilfsmittel. Leitfrage: «<!--hko:kn.hybrid_situation.leitfrage-->Wie gehe ich mit dem fertigen Dokument aus dem Klassenchat um — was übernehme ich, was kontrolliere ich nach, und was muss ich selbst können?<!--/hko-->»
 
 So sind die drei Herausforderungen verbaut (Alignment):
 
 | Aus | zeigt sich im KN als |
 |---|---|
-| **A — Prompten** | Die vage Sammelfrage «Fass mir die wichtigsten Regeln zusammen» entscheidet darüber, ob verstehend oder nur übernehmend gearbeitet wird |
-| **B — Quellenprüfung** | Die drei Links, von denen einer nicht existiert, zwingen zur Kontrolle statt blindem Vertrauen |
-| **C — Lernplan** | Der Druck «drei Tage, ohne KI im KN» erzwingt die Entscheidung: was übernehmen, was selbst üben? |
+| **A — Prompten** | Das Dokument stammt aus einem einzigen vagen Sammel-Prompt — brauchbar wird es erst, wenn selbst gezielt weitergefragt wird |
+| **B — Quellenprüfung** | Die drei Links — einer tot, einer mit falschem Zitat — zwingen zur Kontrolle an **fremdem** Material, das sechzehn Leute bereits für richtig halten |
+| **C — Lernplan** | Zwölf fertige Antworten gegen drei Abende Lernzeit und einen KN ohne Hilfsmittel: was darf das Dokument abnehmen, was muss selbst geübt werden? |
 
 ### Methodenwahl — Entscheidungshilfe
 

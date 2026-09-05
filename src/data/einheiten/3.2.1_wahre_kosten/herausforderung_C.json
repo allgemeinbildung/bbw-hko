@@ -34,12 +34,12 @@
   },
 
   "persona": {
-    "beruf": "Informatiker/in EFZ",
-    "betrieb": "Aare Informatik",
-    "ort": "Biel/Bienne"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
 
-  "situation_text": "Ich bin Informatiker/in EFZ im 1. Lehrjahr bei der Aare Informatik in Biel/Bienne. Mein Handy ist nach drei Jahren zu langsam für die Apps, die ich im Lehrbetrieb brauche. Im Onlineshop finde ich ein Modell für 199 Franken; ein vergleichbares mit fünf Jahren Update-Garantie und austauschbarem Akku kostet 450 Franken. Bei einem Lehrlingslohn von 850 Franken im Monat ist das ein Unterschied, den ich deutlich spüre. In der Berufskunde haben wir gehört, dass in jedem Smartphone Rohstoffe aus Bergbaugebieten stecken und dass Elektroschrott zu den grossen Recyclingströmen der Schweiz gehört. Für den ABU soll ich zum günstigen Gerät ein zweites Preisschild gestalten — eines, das zeigt, was die 199 Franken nicht enthalten.",
+  "situation_text": "Mein Handy ist nach drei Jahren so langsam, dass die Apps, die ich täglich brauche, dauernd abstürzen. Im Onlineshop stehen zwei Geräte nebeneinander: eines für 199 Franken, eines für 450 Franken mit fünf Jahren Update-Garantie und austauschbarem Akku. Bei einem Lehrlingslohn von 850 Franken im Monat ist das ein Unterschied, den ich deutlich spüre. Unter beiden Angeboten steht dieselbe Zeile: «Rücknahme des Altgeräts kostenlos» — mehr Angaben gibt es nicht. Was ausser Gerät, Versand und Marge sonst noch in den 199 Franken steckt und was darin fehlt, steht auf keinem der beiden Preisschilder. Für den ABU soll ich zum günstigen Gerät ein zweites Preisschild gestalten — eines, das zeigt, was die 199 Franken nicht enthalten.",
 
   "zahlen_tabelle": [
     {"label": "Günstiges Smartphone", "wert": "CHF 199"},
@@ -50,7 +50,8 @@
   ],
 
   "leitfrage": "Was steht nicht auf dem Preisschild meines Handys — und ändert das meinen Entscheid?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 1.5 und Kap. 2.7 als Grundlage.",
+  "leitfragen_intro": "Die vier Leitfragen bauen Ihr zweites Preisschild auf: LF1 liefert die Liste der versteckten Kostenposten, LF2 die Alternative zum Neukauf, LF3 den gerechneten Entscheid und LF4 die drei Zeilen, die am Ende auf dem Schild stehen. Bearbeiten Sie die vier Leitfragen schriftlich, bevor Sie gestalten und aufnehmen. Nutzen Sie das Lehrmittel Kap. 11.2, Kap. 1.5 und Kap. 2.7 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
@@ -58,6 +59,12 @@
       "knoten_ref": "Kap. 11.2 | S. 279",
       "text": "Erklären Sie anhand des Lehrmittels, wie unser Konsumverhalten mit Rohstoffabbau und Umweltbelastung in anderen Ländern zusammenhängt.",
       "feld_hoehe_mm": 15,
+      "liefert": "die Liste der versteckten Kostenposten",
+      "scaffolding": {
+        "strategien": ["Lesen Sie Kap. 11.2 S. 279 und trennen Sie Ressourcenverbrauch von Umweltbelastung.", "Notieren Sie zu jedem Posten, wo im Gerät er steckt."],
+        "satzanfaenge": ["«Im Preis nicht enthalten ist …»", "«Diese Kosten entstehen dort, wo …»"],
+        "produkt": "Diese Liste ist der Vorrat für die drei Zeilen des Preisschilds."
+      },
       "loesung": {
         "kern": "Konsum hier, Umweltschäden anderswo",
         "zeilen": [
@@ -74,6 +81,12 @@
       "knoten_ref": "Kap. 1.5 | S. 41",
       "text": "Wenden Sie die Reihenfolge Vermeiden – Vermindern – Verwerten auf Ihren Handykauf an und nennen Sie pro Stufe eine konkrete Möglichkeit.",
       "feld_hoehe_mm": 15,
+      "liefert": "die Handlungsalternative zum Neukauf",
+      "scaffolding": {
+        "strategien": ["Prüfen Sie die drei Stufen der Reihe nach — Verwerten kommt zuletzt.", "Wählen Sie die Möglichkeit, die für Ihr Gerät wirklich in Frage kommt."],
+        "satzanfaenge": ["«Vermeiden hiesse in meinem Fall …»", "«Statt neu zu kaufen, könnte ich …»"],
+        "produkt": "Diese Alternative wird in der gesprochenen Begründung genannt."
+      },
       "loesung": {
         "kern": "Vermeiden – Vermindern – Verwerten am Handy",
         "zeilen": [
@@ -90,6 +103,12 @@
       "knoten_ref": "Kap. 2.7 | S. 73-74",
       "text": "Entscheiden Sie begründet zwischen dem Gerät für 199 Franken und dem für 450 Franken. Beziehen Sie Ihren Lehrlingslohn, den Nutzen und die erwartete Nutzungsdauer in Ihre Überlegung ein.",
       "feld_hoehe_mm": 15,
+      "liefert": "der gerechnete Entscheid pro Nutzungsjahr",
+      "scaffolding": {
+        "strategien": ["Rechnen Sie zuerst, entscheiden Sie danach — die Zahl dreht das Ergebnis oft um.", "Legen Sie Lohn, Nutzen und Nutzungsdauer nebeneinander."],
+        "satzanfaenge": ["«Pro Nutzungsjahr kostet das Gerät …»", "«Ich entscheide mich für …, weil …»"],
+        "produkt": "Beide Rechnungen und der Entscheid stehen in Schritt 3 auf dem Schild."
+      },
       "loesung": {
         "kern": "199 oder 450 — beide Seiten offenlegen",
         "zeilen": [
@@ -106,6 +125,12 @@
       "knoten_ref": "Kap. 1.5 | S. 39",
       "text": "Formulieren Sie die drei Zeilen für Ihr zweites Preisschild: pro Zeile ein versteckter Kostenposten, je höchstens zwölf Wörter.",
       "feld_hoehe_mm": 15,
+      "liefert": "die drei Zeilen des Preisschilds",
+      "scaffolding": {
+        "strategien": ["Zählen Sie jede Zeile nach: höchstens zwölf Wörter.", "Prüfen Sie zu jeder Zeile die Stelle im Lehrmittel."],
+        "satzanfaenge": ["«Plus: … im Herkunftsland.»", "«Plus: … nach zwei Jahren.»"],
+        "produkt": "Diese drei Zeilen stehen in Schritt 4 unter dem Verkaufspreis."
+      },
       "loesung": {
         "kern": "Drei Zeilen für das zweite Preisschild",
         "zeilen": [
@@ -166,11 +191,11 @@
     "format_detail": "Gestaltetes Preisschild als Bild oder Folie mit dem sichtbaren Verkaufspreis und drei Zeilen versteckter Kosten, dazu eine gesprochene Kaufbegründung von 45 bis 60 Sekunden.",
     "beschreibung": "Ich gestalte ein zweites Preisschild für mein Handy, das neben den 199 Franken die versteckten Kosten sichtbar macht, und begründe gesprochen, wie ich mich entscheide.",
     "schritte": [
-      {"label": "Versteckte Posten sammeln", "hint": "Listen Sie aus LF1 und LF2 alle Kosten auf, die im Verkaufspreis fehlen — mindestens fünf."},
-      {"label": "Auf drei kürzen", "hint": "Wählen Sie die drei Posten mit der grössten Wirkung. Streichen Sie, was Sie nicht belegen können."},
-      {"label": "Preisschild gestalten", "hint": "Oben gross die 199 Franken, darunter die drei Zeilen. Nutzen Sie die Formulierungen aus LF4."},
-      {"label": "Preis pro Nutzungsjahr rechnen", "hint": "Teilen Sie beide Kaufpreise durch die erwartete Nutzungsdauer und schreiben Sie das Ergebnis aufs Schild."},
-      {"label": "Begründung aufnehmen", "hint": "Sprechen Sie 45 bis 60 Sekunden: Wie entscheiden Sie sich, und was spricht dagegen? Nutzen Sie die Satzanfänge."}
+      {"label": "Versteckte Posten sammeln", "hint": "Übernehmen Sie aus LF1 den Zusammenhang zwischen unserem Konsum und dem Rohstoffabbau und listen Sie alle Kosten auf, die in den 199 Franken fehlen — mindestens fünf."},
+      {"label": "Eine Alternative zum Neukauf wählen", "hint": "Übernehmen Sie aus LF2 die Möglichkeiten zu Vermeiden, Vermindern und Verwerten und wählen Sie die eine, die Sie in Ihrer Begründung nennen. Streichen Sie aus Ihrer Liste, was Sie nicht belegen können."},
+      {"label": "Preis pro Nutzungsjahr rechnen", "hint": "Übernehmen Sie aus LF3 Ihren Entscheid und die erwartete Nutzungsdauer. Teilen Sie beide Kaufpreise durch die Nutzungsdauer, schreiben Sie beide Ergebnisse aufs Schild und setzen Sie oben gross die 199 Franken."},
+      {"label": "Drei Zeilen setzen und Begründung aufnehmen", "hint": "Übernehmen Sie aus LF4 die drei Zeilen mit je höchstens zwölf Wörtern und setzen Sie sie unter den Preis. Sprechen Sie danach 45 bis 60 Sekunden auf: wie Sie sich entscheiden und was dagegen spricht."},
+      {"label": "Aufnahme gegen die Kriterien abhören", "hint": "Hören Sie Ihre Aufnahme gegen die vier Kriterien im Bewertungsraster ab: drei Zeilen auf dem Schild, jede Zeile im Lehrmittel belegbar, Preis pro Nutzungsjahr für beide Geräte gerechnet, 45 bis 60 Sekunden mit Gegenargument. Nehmen Sie die eine Stelle neu auf, die ein Kriterium noch nicht erfüllt."}
     ],
     "schreib_label": "PREISSCHILD HIER ERARBEITEN",
     "schreib_note": "-> wissen/versteckte_kosten_konsumentscheid",
@@ -191,7 +216,7 @@
         "Die Begründung einmal laut sprechen und die Zeit stoppen, bevor Sie aufnehmen."
       ],
       "struktur": [
-        "Sichtbarer Preis – drei versteckte Posten – Preis pro Nutzungsjahr – Entscheid – Gegenargument"
+        "Sichtbarer Preis – drei versteckte Posten (LF1/LF4) – Preis pro Nutzungsjahr (LF3) – Entscheid (LF3) – Alternative und Gegenargument (LF2)"
       ]
     },
     "musterloesung": {
@@ -251,7 +276,7 @@
 
   "reflexion_fragen": [
     {"nr": "R1", "text": "Was hat sich für mich verändert, als ich den Preis pro Nutzungsjahr gerechnet habe?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Bei welcher Anschaffung in meinem Lehrbetrieb würde dieselbe Rechnung Sinn ergeben?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Bei welcher Anschaffung in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — würde dieselbe Rechnung Sinn ergeben?", "sub": null, "feld_hoehe_mm": 10},
     {"nr": "R3", "text": "Was prüfe ich beim nächsten eigenen Kauf zuerst — und woran erinnere ich mich dann?", "sub": null, "feld_hoehe_mm": 10}
   ],
 
@@ -289,7 +314,7 @@
       "kriterium": "Tiefe + Transfer",
       "vollstaendig_wenn": [
         "Alle drei Reflexionsfragen sind beantwortet.",
-        "R2 nennt eine konkrete Anschaffung aus dem eigenen Lehrbetrieb."
+        "R2 nennt eine konkrete Anschaffung aus dem eigenen Lehrbetrieb oder vom letzten Arbeitsort."
       ]
     }
   ],
@@ -297,7 +322,7 @@
   "wochen": 3,
   "wochen_plan": [
     {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Preisschild gestalten und Begründung aufnehmen", "aktiv": false},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Preisschild gestalten, Begründung aufnehmen und gegen die Kriterien abhören", "aktiv": false},
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 

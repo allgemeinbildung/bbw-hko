@@ -65,44 +65,45 @@ Fehlerfall: `ERR_MEHRDEUTIGKEIT_MISSING` (nach Auto-Fix-Versuch).
 ### Check 7 — Bloom-Tiefe
 Jede Herausforderung hat mindestens eine Leitfrage auf K3+/K4 (`bloom` ∈ `{"Entscheiden", "Analysieren", "Formulieren"}`).
 
-Fehlerfall: `WARN_BLOOM_TOO_LOW` — Skill versucht 5. LF zu ergaenzen, sonst stoppt.
+Fehlerfall: `WARN_BLOOM_TOO_LOW` — Skill hebt LF3 oder LF4 auf die noetige Stufe. **Nie eine 5. LF ergaenzen** (verletzt Check 33).
 
 ### Check 8 — sk_anker-Invariante
 Fuer jede Herausforderung: `sit_*.sk_anker.length === sit_*.nrlp.sk.length`. Jeder Eintrag in `sk_anker` hat `sk` (number) und `wo` (nicht-leer).
 
 Fehlerfall: `ERR_SK_ANKER_MISMATCH`.
 
-### Check 9 — Persona-Pools disjunkt
-`prinzip.persona_pool_kn_neu.berufe ∩ prinzip.persona_pool_units.berufe === ∅` UND `... .orte ∩ ... .orte === ∅`.
+### Check 9 — ENTFAELLT (Persona-Regel 2026-09)
 
-Fehlerfall: `ERR_PERSONA_OVERLAP` — Skill stoppt, Pietro muss persona_pool_kn_neu aendern.
+Prueft frueher, dass die KN-Personas von den Unit-Personas disjunkt sind. Es gibt keine Persona-Pools mehr — alle Personas sind neutral und identisch. Die Rolle dieses Checks uebernimmt **Check 11**, der die Disjunktheit des KN-**Falls** prueft.
 
-### Check 14 — Persona-Pool-Verbrauch (NEU in v1.1)
+### Check 14 — Persona neutral (Persona-Regel 2026-09, ersetzt den Pool-Verbrauch)
 
-Pool-Vollverbrauchs-Invariante:
-- Jeder `prinzip.persona_pool_units.berufe[i]` kommt in genau einem `sit_*.persona.beruf` vor
-- Jeder `prinzip.persona_pool_units.orte[i]` kommt in genau einem `sit_*.persona.ort` vor
+Es gibt keinen Persona-Pool mehr. Alle Personas sind neutral, in zwei zulaessigen Stufen — in den drei Herausforderungen, in der Transfer-Aufgabe **und** im Kompetenznachweis.
 
-Wenn Beruf oder Ort doppelt verwendet wird oder ein Eintrag ungenutzt bleibt:
-`ERR_PERSONA_POOL_MISUSE` — listet Duplikate und unverwendete Eintraege.
+- **Stufe 1 (Standard) — eigener Kontext:** `{beruf: "Lernende/r EFZ, N. Lehrjahr", betrieb: "eigener Lehrbetrieb", ort: "eigener Wohnort"}` (EBA analog). Konkret wird die Situation, weil die lernende Person ihren eigenen Fall einsetzt.
+- **Stufe 2 — gemeinsamer Fall:** dieselbe neutrale Persona, aber der `situation_text` bringt einen konkreten aeusseren Fall (Abstimmungsvorlage, Vertragsauszug, Aushang, Etikette). Fuer Themen, bei denen alle denselben Fall brauchen, um vergleichen zu koennen.
+- **Verboten** in `persona.beruf`: jeder konkrete Lehrberuf. **Verboten** in `persona.betrieb`: jeder Firmenname, auch ein erfundener. **Verboten** in `persona.ort`: jede Stadt.
+- **Auffangformulierung Pflicht,** wo der Betrieb gebraucht wird: «in Ihrem Lehrbetrieb — oder dort, wo Sie zuletzt gearbeitet haben». Nicht alle haben einen Lehrbetrieb.
+- **Gegenprobe:** Beruf aus dem `situation_text` streichen — bleibt eine Situation mit Reibung stehen? Wenn nicht, trug nicht der Beruf die Situation, sondern es gab keine. Positivfall: `1.1.1_ausbildung_erfassen_zeigen` A. Negativfall: `1.3.1_konsum_verantworten` A nannte einen Informatikerberuf in einer Situation ueber einen Kopfhoererkauf.
 
-Beispiel-Fehler (3.2.2 v1):
-  Duplikate: berufe[0] „Detailhandelsfachfrau/-mann" in sit_A UND sit_C
-  Unverwendet: berufe[1] „Koch / Koechin"
+Begruendung, damit die Regel nicht als Geschmacksfrage gelesen wird: Unter Variante C (Jigsaw) sieht eine lernende Person **genau eine** Herausforderung. Eine rotierende Berufspersona trifft dort in einer gemischten Klasse fast immer den falschen Beruf. Und eine Berufspersona zieht die Aufgabe zu Daten hin, die nur sie hat — der haeufigste Ursprung von Vorlauf-Verstoessen (Check 34).
 
----
-
-## Phase-4-Checks (10-13, 15)
+Fehlerfall: `ERR_PERSONA_SPEZIFISCH` (Beruf, Firma oder Stadt in `persona`) · `WARN_PERSONA_OHNE_AUFFANG` (Betrieb gebraucht, aber keine Alternative genannt) · `WARN_SITUATION_OHNE_EREIGNIS` (Gegenprobe scheitert: ohne Beruf bleibt keine Reibung).
 
 ### Check 10 — Hybrid-Herausforderung aktiviert Trade-offs
 `hybrid_situation.aktivierte_trade_offs.length >= 1` UND jeder Eintrag ∈ `prinzip.mehrdeutigkeits_architektur.trade_off_raum`. `hybrid_situation.alignment_note` benennt explizit, welcher Trade-off durch welches Szenenelement aktiviert wird.
 
 Fehlerfall: `ERR_HYBRID_NO_TRADE_OFF`.
 
-### Check 11 — Hybrid-Persona disjunkt
-`hybrid_situation.persona.beruf` kommt in keinem `sit_*.persona.beruf` vor. Gleiches fuer `ort`. Beide Bedingungen muessen halten.
+### Check 11 — Hybrid-FALL disjunkt (umgestellt 2026-09)
 
-Fehlerfall: `ERR_HYBRID_PERSONA_OVERLAP`.
+Frueher musste die KN-Persona von den drei Herausforderungs-Personas verschieden sein. Da alle Personas jetzt neutral und damit identisch sind, traegt die Disjunktheit der **Fall**, nicht die Person.
+
+`hybrid_situation` bringt eine Lage, die in keiner der drei Herausforderungen bearbeitet wurde — anderer Gegenstand, andere Beteiligte, andere Zahlen. Sie prueft damit Uebertragung statt Wiederholung. Vorbild: `3.2.1_ernaehrung_nachhaltig_gestalten`, wo die drei Herausforderungen am eigenen Essen arbeiten und der KN einen Aushang am Pausenautomaten vorlegt.
+
+Das ist ein bewusst in Kauf genommener Verlust: Der fremde Beruf war bisher ein Teil des Transfer-Tests. Er wird ersetzt, nicht gestrichen — der Fall muss die Arbeit jetzt allein leisten und darum deutlich neu sein.
+
+Fehlerfall: `ERR_HYBRID_FALL_OVERLAP` (der KN-Fall ist eine Variante eines Herausforderungs-Falls).
 
 ### Check 12 — SK-Konsistenz ueber KN-Typen
 Fuer ALLE drei KN-Typen (Fachgespraech, Mini Case schriftlich, Werkschau):
@@ -179,13 +180,13 @@ Algorithmus:
 3. Match-Tokens gegen Eigennamen-Whitelist abgleichen:
    - `Aarau`, `Olten`, `Goethe`, `Boeing`, `Aerogel`, `Aero*`-Komposita
    - Englische Lehnwoerter: `Queue`, `Manager`, `Layout`, `User` (kein ae/oe/ue im fraglichen Sinn)
-   - Persona-Namen aus kanonischer Tabelle (z.B. „Polymechaniker" — kein Umlaut)
+   - (Persona-Namen entfallen — Personas sind seit 2026-09 neutral)
 4. Falls Token NICHT auf Whitelist und KEIN passender Eintrag in
    `_common_misspellings.md` Pauschal-Tabelle existiert:
    `WARN_UMLAUT_RESIDUE: {wort} in {feld} ({datei})`.
-5. Persona-Spezial-Check: `sit_*.persona.beruf` und `sit_*.persona.ort` MUESSEN
-   string-identisch mit kanonischer Tabelle (Spalte „Schreibweise mit
-   Umlauten") sein. Bei Abweichung mit ae/oe/ue: `ERR_PERSONA_NOT_CANONICAL`.
+5. Persona-Spezial-Check (Persona-Regel 2026-09): `sit_*.persona` MUSS die
+   neutrale Form tragen — kein Lehrberuf, kein Firmenname, keine Stadt.
+   Bei Abweichung: `ERR_PERSONA_SPEZIFISCH` (Check 14).
 6. Eszett-Scan: regex `/ß/` in allen Feldern. Bei Fund: Auto-Fix zu `ss`,
    `ERR_ESZETT_FOUND` als Meldung (nicht-blockierend nach Fix).
 
@@ -361,20 +362,46 @@ Jede `sit_*.leitfragen[]` traegt eine `loesung`, die die Frage **auf ihrer Bloom
 
 Fehlerfall: `ERR_LF_LOESUNG_MISSING` (eine oder mehrere Leitfragen ohne `loesung`) · `ERR_LF_LOESUNG_QUELLE_UNGEDECKT` (Sachaussage oder `quelle` steht nicht im `knoten_ref`-Abschnitt) · `WARN_LF_LOESUNG_ZU_LANG` (>6 Zeilen bzw. >900 Zeichen — Skill kuerzt und wartet auf OK) · `WARN_LF_LOESUNG_BLOOM_FLACH` (Entscheiden-LF ohne Alternativ-/Ausschluss-Zeile).
 
-### Check 33 — LF↔Produkt-Kopplung via `liefert` (Bogen-Kopplung 2026-08, NEU)
+### Check 33 — LF↔Produkt-Kopplung 4+1 (Bogen-Kopplung 2026-08, auf Index-Regel umgestellt 2026-09)
 
-Seite 2 (Leitfragen) und Seite 4 (Handlungsprodukt) sind ueber `leitfragen[].liefert` explizit gekoppelt — die Lernenden sehen an jeder Leitfrage, welchen Baustein des Produkts sie liefert.
+Die Leitfragen-Seite und die Handlungsprodukt-Seite sind ueber `leitfragen[].liefert` explizit gekoppelt — die Lernenden sehen an jeder Leitfrage, welchen Baustein des Produkts sie liefert. Seit 2026-09 ist die Kopplung **strukturell statt redaktionell**: `schritte[i]` gehoert zu `leitfragen[i]` fuer i = 0..3, `schritte[4]` ist der Kontrollschritt. Damit kann ein verwaister Schritt gar nicht mehr entstehen, und keine LF kann zwei Schritte tragen.
 
-- **Pflicht pro Leitfrage:** `liefert` gesetzt — 3-7 Woerter, **nominal, ohne Verb** («die Spalte 'Ich hoere'», nicht «Sie erarbeiten …»). Der benannte Baustein existiert wirklich in `handlungsprodukt.schritte[]`, `abgaben[]` oder im `bewertungsraster` — Wortlaut-gestuetzt, nichts aus dem Gedaechtnis.
-- **Rueckrichtung (der wichtigere Teil):** Jeder Eintrag von `handlungsprodukt.schritte[]` wird von mindestens einer Leitfrage gespeist. Ein Schritt ohne LF-Absender ist eine **Konstruktionsluecke** — dann die Leitfragen umbauen, nicht das `liefert` schoenreden.
-- **Balance:** Keine einzelne LF traegt 3+ Schritte allein, waehrend eine andere LF keinen speist — das ist ein Umbau-Signal (Vorbild-Negativfall: 5.4.2 A vor der Kopplung, LF3 trug S2+S3+S4).
-- **Rueckweg:** Jeder Schritt mit LF-Absender nennt ihn im `hint` woertlich («Uebernehmen Sie aus LF_n …» o. ae.); wo `handlungsprodukt.scaffolding.struktur` Bausteine auflistet, verortet sie die liefernde LF (z. B. «Ausgangslage (Satz aus LF2)»). Hint, `liefert` und `scaffolding.produkt` derselben Kopplung duerfen sich nicht widersprechen (Negativfall: 5.4.2 C, der S2-hint nannte die Aufgabenstellung statt LF2 als Quelle).
-- **Genese:** Die Kopplung stammt aus der Matrix von SKILL.md Schritt 2g (Handlungsprodukt VOR den Leitfragen). Ein Schritt, der keinen ehrlichen Absender findet, ist ein Konstruktions-, kein Formulierungsproblem — Schritt umbauen.
-- `liefert` haelt die Register-Regeln (kein Eszett, native Umlaute, Schraegstrich-Rollennomen) und passt einzeilig in die lf-meta-Zeile (kein Umbruch — `.lf-meta` hat kein `wrap`).
+- **1:1-Kopplung:** `schritte.length === 5` und `leitfragen.length === 4`; Schritt 1 ← LF1, Schritt 2 ← LF2, Schritt 3 ← LF3, Schritt 4 ← LF4. Keine Matrix, keine Wahl.
+- **Der Kontrollschritt `schritte[4]`** hat bewusst **keinen** LF-Absender und ist eng definiert: nicht in `abgaben[]`, `hint` verweist auf die `vollstaendig_wenn`-Kriterien, Verifikationssprache («pruefen», «abgleichen», «gegenlesen», «ueberarbeiten»), nie Produktionssprache. Bei muendlichen Produkten wandert die Aufnahme auf Schritt 4, der Kontrollschritt wird die Ueberarbeitungsschlaufe.
+- **Pflicht pro Leitfrage:** `liefert` gesetzt — 3-7 Woerter, **nominal, ohne Verb** («die Spalte 'Ich hoere'», nicht «Sie erarbeiten …»). Der benannte Baustein existiert wirklich in `handlungsprodukt.schritte[]`, `abgaben[]` oder im `bewertungsraster`.
+- **Rueckweg:** `schritte[0..3].hint` nennt den Absender woertlich («Uebernehmen Sie aus LF_n …»); wo `handlungsprodukt.scaffolding.struktur` Bausteine auflistet, verortet sie die liefernde LF (z. B. «Ausgangslage (Satz aus LF2)»). Hint, `liefert` und `scaffolding.produkt` derselben Kopplung duerfen sich nicht widersprechen (Negativfall: 5.4.2 C, der S2-hint nannte die Aufgabenstellung statt LF2 als Quelle).
+- **Zuschnitt statt Ausnahme:** Passen die vier Produktionsschritte nicht auf die vier Bloom-Sprossen, ist die Herausforderung zu breit. Dann einen Lehrmittel-Anker in eine andere Herausforderung geben — nie einen fuenften Produktionsschritt erfinden oder den Kontrollschritt zweckentfremden.
+- `liefert` haelt die Register-Regeln (kein Eszett, native Umlaute) und passt einzeilig in die lf-meta-Zeile (kein Umbruch — `.lf-meta` hat kein `wrap`).
 
-Fehlerfall: `ERR_LF_LIEFERT_MISSING` (eine Leitfrage ohne `liefert`) · `ERR_SCHRITT_OHNE_ABSENDER` (ein Produktschritt wird von keiner LF gespeist — Konstruktionsluecke, Skill stoppt und meldet) · `WARN_LIEFERT_UNBALANCIERT` (eine LF speist 3+ Schritte allein) · `WARN_LIEFERT_VERBFORM` (liefert enthaelt ein finites Verb / Sie-Anrede).
+Fehlerfall: `ERR_LF_LIEFERT_MISSING` (eine Leitfrage ohne `liefert`) · `ERR_KOPPLUNG_NICHT_1ZU1` (Schritt- oder LF-Anzahl abweichend) · `ERR_VORLAUF_ALS_SCHRITT` (ein Schritt beschreibt eine Taetigkeit ausserhalb der Lektion — gehoert in den Bogen, siehe Check 34) · `WARN_KONTROLLSCHRITT_PRODUZIERT` (`schritte[4]` steht in `abgaben[]` oder benutzt Produktionssprache) · `WARN_HINT_OHNE_ABSENDER` (`schritte[0..3].hint` nennt seine LF nicht woertlich) · `WARN_LIEFERT_VERBFORM` (liefert enthaelt ein finites Verb / Sie-Anrede).
+
+### Check 34 — Voraussetzungsfreier Start (Autarkie-Regel, NEU 2026-09)
+
+Jede Herausforderung ist kalt startbar. Grund ist nicht Stil, sondern die Durchfuehrungs-Varianten: B (Auswahl) und C (Jigsaw) geben einer lernenden Person **genau eine** der drei Herausforderungen — jede harte Abhaengigkeit auf A bricht beide.
+
+- **Kein Vorlauf.** Weder `leitfragen_intro` noch `situation_text`, `leitfragen[].text`, `schritte[].hint` oder `handlungsprodukt.beschreibung` verlangen Material, das vor der ersten Lektion existieren muss. Verbotsmuster: «beginnt vor der ersten Lektion», «vor der ersten Lektion», «bringen Sie mit», «erfragen Sie vorab/vorher», «im Voraus».
+- **Kein Querverweis als Bedingung.** Ein Verweis auf eine andere Herausforderung in tragender Position (`beschreibung`, `quellen_anker`, `lehrmittel_anker`, `schritte[].hint`, `leitfragen[].text`, `bewertungsraster`) ist unzulaessig. **Erlaubt ist die Angebotsform** — zweiter Satz, konditional: «Haben Sie Herausforderung A bearbeitet, nehmen Sie …». Nie der erste Satz, nie die einzige Quelle.
+- **Mehrtaegiges Material** wird in der ersten Lektion angestossen und ist zur zweiten faellig; `wochen_plan` W1 nennt den Anstoss, W2 die Auswertung. Es ist ein Schritt der Herausforderung mit LF-Absender, kein Vorlauf.
+- **Ein LF-Text traegt einen Auftrag.** Kein LF-Text verlangt gleichzeitig einen Vorlauf-Vollzug und die eigene Bloom-Aufgabe. Drei oder mehr Imperative in einem LF-Text sind ein Zuschnitts-, kein Formulierungssignal (Negativfall: 3.2.1 A LF3 trug Auswahl + Verpackungsangaben + Stichprobengrenze, also drei Anker in einer Entscheiden-Frage).
+- **Keine Abhaengigkeit von Dritten** als Voraussetzung («Erfragen Sie im Lehrbetrieb …»): doppelt unzulaessig, weil Vorlauf **und** weil es Lernende bestraft, deren Betrieb nicht antwortet.
+- **A darf vorbereiten, nie bedingen.** Optionales Feld `bereitet_vor` in A: `{fuer: ["B","C"], material: "…", verbindlich: false}`. `verbindlich` muss `false` sein, und B/C duerfen dasselbe Material nirgends als Pflicht fuehren.
+
+Fehlerfall: `ERR_VORAUSSETZUNG_VOR_START` (Vorlauf-Muster gefunden) · `ERR_QUERVERWEIS_ALS_BEDINGUNG` (Verweis auf A/B/C in tragender Position) · `ERR_BEREITET_VOR_VERBINDLICH` (`verbindlich !== false`) · `WARN_SAMMELPHASE_OHNE_ANSTOSS` (mehrtaegiges Material ohne Anstoss in `wochen_plan` W1) · `WARN_LF_MEHRFACHAUFTRAG` (3+ Imperative in einem LF-Text).
 
 **Zusatz `leitfragen[].scaffolding` (Rail):** Jede LF traegt ein `scaffolding` mit `strategien` (1-2, Sie-Form, je ≤90 Zeichen), `satzanfaenge` (1-2, neutral oder Ich-Form — KEINE Sie-Anrede, je ≤60 Zeichen) und `produkt` (1 Satz ≤110 Zeichen, konsistent mit dem `liefert` derselben LF). Alles quellengebunden (`loesung`, `schritte`, `handlungsprodukt.scaffolding`); die Rail ist schmal (~22%) — Zeichenbudgets sind Layoutschutz, nicht Stil. Fehlerfall: `WARN_LF_SCAFFOLDING_MISSING` · `WARN_SCAFFOLDING_ZU_LANG` (Budget ueberschritten — Skill kuerzt und wartet auf OK) · `WARN_SCAFFOLDING_PRODUKT_WIDERSPRICHT_LIEFERT`.
+
+---
+
+### Check 35 — Begleiter zitiert, statt zu kopieren (NEU 2026-09)
+
+Alles im Begleiter, was woertlich aus einem JSON stammt, steht in einem `<!--hko:…-->`-Marker. Grund: Eine Kopie ist eine zweite Quelle. Am 2026-09-04 mussten nach einer Persona-Aenderung in sieben Einheiten Persona-Zeilen, Situationszitate, KN-Texte und eine KN-Frage von Hand nachgezogen werden; eine Mini-Case-Aufgabe war drei Fassungen alt, und niemand hatte es gesehen.
+
+- **Markiert werden:** Persona, `situation_text`, `titel`, `herausforderung.label`, `leitfragen[].text`, `mindmap_zentrum` und `mindmap_aeste[].punkte[]`, `mehrdeutigkeit.trade_off`, `bewertungsraster[].vollstaendig_wenn` (ein Marker je Rasterzeile, `|checkliste`), `kn.hybrid_situation.*`, die Fragen und Aufgaben der KN-Typen, `set.dekontextualisierungs_aufgabe.ziel`/`.auftrag`.
+- **Nicht markiert:** das YAML-Frontmatter (ein HTML-Kommentar bricht dort den Parser) und jede Begleiter-eigene Prosa — Coaching, Warnung, Troubleshooting, Erwartungshorizont, 8-Merkmale-Begruendung, Unterrichtsfahrplan. Sie kommentieren den Auftrag, statt ihn zu wiederholen.
+- **Der Rueckfalltext zwischen den Markern bleibt geschrieben** und muss der Quelle entsprechen — er ist das, was jemand liest, der die Datei roh oeffnet.
+- Syntax und Formatierer: `references/json-field-mapping.md` §Begleiter-Feldmarker.
+
+Fehlerfall: `ERR_BEGLEITER_MARKER_UNAUFLOESBAR` (Pfad zeigt ins Leere — Feld umbenannt oder entfernt?) · `WARN_BEGLEITER_DRIFT` (Rueckfalltext veraltet) · `WARN_BEGLEITER_KOPIE_OHNE_MARKER` (JSON-Text steht woertlich und unmarkiert im Begleiter).
 
 ---
 
@@ -382,7 +409,7 @@ Fehlerfall: `ERR_LF_LIEFERT_MISSING` (eine Leitfrage ohne `liefert`) · `ERR_SCH
 
 | Code | Aktion |
 |---|---|
-| `WARN_BLOOM_TOO_LOW` | Skill ergaenzt 5. Leitfrage auf K4, fragt User zur Bestaetigung |
+| `WARN_BLOOM_TOO_LOW` | Skill hebt LF3 oder LF4 auf K3+/K4 und wartet auf OK. **Kein Ergaenzen einer 5. LF** — die Kopplung ist 4+1 (Check 33); traegt der Zuschnitt keine hoehere Stufe, ist er zu flach und muss neu geschnitten werden |
 | `WARN_MEHRDEUTIGKEIT_NEAR_MISS` | Skill schlaegt naechstgelegenen Trade-off vor, wartet auf OK |
 | `WARN_LF4_EQUALS_HP` | Skill verengt LF4 auf einen Sprachform-Baustein (ein Block / eine Spalte / drei Saetze), wartet auf OK |
 | `WARN_DU_FORM_NARRATIVE` | Skill schreibt situation_text + handlungsprodukt.beschreibung in 1. Person Singular um (Zitate bleiben), wartet auf OK |
@@ -395,6 +422,11 @@ Fehlerfall: `ERR_LF_LIEFERT_MISSING` (eine Leitfrage ohne `liefert`) · `ERR_SCH
 | `WARN_KNOTEN_REF_OHNE_DECKUNG` | Skill schlaegt vor, `knoten_ref` leer zu lassen, und nennt die Alternative (anderes Kapitel via Crosswalk), wartet auf OK |
 | `WARN_LF_LOESUNG_ZU_LANG` | Skill kuerzt die Loesung auf 3-6 Zeilen / ~900 Zeichen (zuerst Wiederholungen, nie die `quelle`-Chips), wartet auf OK |
 | `WARN_LF_LOESUNG_BLOOM_FLACH` | Skill ergaenzt der Entscheiden-Leitfrage eine Zeile «Ebenfalls tragfähig» bzw. «Nicht tragfähig» aus `mehrdeutigkeit.hint`, wartet auf OK |
+| `WARN_LF_MEHRFACHAUFTRAG` | **Kein Auto-Fix.** Skill legt die LF vor, benennt die einzelnen Auftraege und schlaegt vor, welcher Anker in eine andere Herausforderung gehoert — wartet auf Pietros Entscheid (Zuschnitt, nicht Formulierung) |
+| `WARN_KONTROLLSCHRITT_PRODUZIERT` | Skill formuliert `schritte[4]` auf Verifikationssprache um und verschiebt das Produktteil nach `schritte[3]`, wartet auf OK |
+| `WARN_HINT_OHNE_ABSENDER` | Skill ergaenzt im `hint` den woertlichen Absender («Uebernehmen Sie aus LF_n …»), wartet auf OK |
+| `WARN_SAMMELPHASE_OHNE_ANSTOSS` | Skill traegt den Anstoss in `wochen_plan` W1 nach und nennt ihn im Auftakt, wartet auf OK |
+| `ERR_VORAUSSETZUNG_VOR_START` · `ERR_QUERVERWEIS_ALS_BEDINGUNG` | Keine Auto-Fix. Die Skill stoppt und legt zwei Optionen vor: Material in die erste Lektion holen, oder den Verweis in die Angebotsform stellen («Haben Sie A bearbeitet, …»). Beides aendert den Zuschnitt — Pietro entscheidet |
 | `ERR_*` | Keine Auto-Fix, Skill stoppt, schreibt nichts (bei Begleiter-ERR: Baustein ergaenzen, nicht final speichern) |
 
 Bei `WARN_*`-Codes laeuft die Skill weiter, nachdem die Korrektur angewendet ist; bei `ERR_*` muss Pietro die zugrundeliegende Inkonsistenz manuell aufloesen.

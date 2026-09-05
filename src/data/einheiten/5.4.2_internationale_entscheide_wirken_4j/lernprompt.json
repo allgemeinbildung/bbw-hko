@@ -13,7 +13,7 @@
         "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Interesse und Wortwahl der Antwort — die KI antwortet aus dieser Sicht statt allgemein. Damit wird sichtbar, dass dieselbe Sachlage je nach Standort anders klingt.",
         "thema_bezug": "In dieser Einheit hängt alles am Standort: Derselbe Entscheid über den Marktzugang liest sich aus Sicht eines Wirtschaftsverbands, einer Gewerkschaft, der Bundesverwaltung oder der betroffenen Bevölkerung völlig anders. Genau diese Akteure stehen auf Ihrer Akteurskarte — und Sie können jeden davon gezielt sprechen lassen.",
         "beispiel_basis": "Du bist Vertreter/in eines Schweizer Wirtschaftsverbands der Exportindustrie. Erkläre mir in fünf Sätzen, warum dir offener Marktzugang wichtiger ist als der Schutz einzelner Arbeitsplätze.",
-        "beispiel_fortgeschritten": "Du bist Gewerkschaftsvertreter/in in der Maschinenindustrie. Ich habe eine Wirkungskette von einem Handelsentscheid bis an meine Maschine gezeichnet: [meine Kette]. Reagiere aus deinem Interesse heraus und sag mir, welchen Schritt meiner Kette du bestreiten würdest und warum.",
+        "beispiel_fortgeschritten": "Du bist Gewerkschaftsvertreter/in aus der Branche meines Lehrbetriebs. Ich habe eine Wirkungskette von einem Handelsentscheid bis an meinen Arbeitsplatz gezeichnet: [meine Kette]. Reagiere aus deinem Interesse heraus und sag mir, welchen Schritt meiner Kette du bestreiten würdest und warum.",
         "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht richtiger: Auch als «Verbandsvertreter/in» erfindet die KI Zahlen zum Aussenhandel oder verwechselt bilaterale Verträge mit EU-Beschlüssen. Die Rolle steuert die Perspektive — belegen müssen Sie mit Kapitel und Seite.",
         "baukasten": {
           "rolle": [
@@ -24,7 +24,7 @@
           ],
           "kontext": [
             "Entscheid über den Marktzugang",
-            "Lehrbetrieb in der Präzisionsmechanik",
+            "eigener Lehrbetrieb mit importiertem Material",
             "Zielkonflikt mit zwei begründbaren Seiten"
           ],
           "aufgabe": [
@@ -43,8 +43,8 @@
         "titel": "Kontext geben",
         "erklaerung": "Sie liefern der KI vorab alles, was sie über Ihre Lage wissen muss: worum es geht, wer beteiligt ist, wofür Sie die Antwort brauchen. Ohne Kontext antwortet die KI für irgendeinen Fall — mit Kontext für Ihren. Je genauer der Rahmen, desto weniger müssen Sie hinterher aussortieren.",
         "thema_bezug": "«Internationale Entscheide» ist ein riesiges Feld. Erst der Kontext — welche Ebene entschieden hat, welcher Betrieb betroffen ist, welcher Beruf, welches Material — macht aus einer allgemeinen Globalisierungs-Antwort eine Kette, die tatsächlich bis an Ihre Maschine reicht.",
-        "beispiel_basis": "Kontext: Ich bin Lernende/r Polymechanik im 3. Lehrjahr in einem Präzisionsmechanik-Betrieb in Winterthur. Der Betrieb bezieht Rohmaterial aus dem Ausland und exportiert Bauteile. Erkläre mir, worauf ich achten muss, wenn ein Handelsentscheid im Ausland den Zoll auf solche Bauteile verändert.",
-        "beispiel_fortgeschritten": "Kontext: Lernende/r Polymechanik, Betrieb mit Export- und Importanteil, Auftrag im Unterricht: eine Wirkungskette in vier bis sechs Schritten vom Entscheid bis an meinen Arbeitsplatz, jeder Schritt mit Beleg. Ich habe die Schritte Preis, Lieferfrist, Offerte, Auftrag. Sag mir, welcher Zwischenschritt in meiner Kette fehlt und welche Angabe ich dafür im Betrieb erfragen müsste.",
+        "beispiel_basis": "Kontext: Ich bin Lernende/r EFZ im 3. Lehrjahr und arbeite in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — täglich mit Material, Ware oder Geräten, die nicht aus der Schweiz kommen. Der Betrieb bezieht dieses Material aus dem Ausland und liefert auch über die Grenze. Erkläre mir, worauf ich achten muss, wenn ein Handelsentscheid im Ausland den Zoll darauf verändert.",
+        "beispiel_fortgeschritten": "Kontext: Lernende/r EFZ im 3. Lehrjahr, Betrieb mit Export- und Importanteil, Auftrag im Unterricht: eine Wirkungskette in vier bis sechs Schritten vom Entscheid bis an meinen Arbeitsplatz, jeder Schritt mit Beleg. Ich habe die Schritte Preis, Lieferfrist, Offerte, Auftrag. Sag mir, welcher Zwischenschritt in meiner Kette fehlt und welche Angabe ich dafür im Betrieb erfragen müsste.",
         "warnung": "Nennen Sie keine internen Betriebsdaten, keine Kundennamen und keine Offertzahlen Ihres Lehrbetriebs. Für den Kontext genügen Branche, Materialart und Grössenordnung — alles Weitere gehört nicht in ein KI-Fenster.",
         "baukasten": {
           "rolle": [
@@ -70,8 +70,8 @@
         "key": "chain_of_thought",
         "titel": "Schritt-für-Schritt denken",
         "erklaerung": "Sie verlangen, dass die KI ihren Gedankengang offenlegt, statt nur ein Ergebnis zu nennen. Bei Ketten und Zuordnungen ist der Weg die eigentliche Leistung: Erst wenn jeder Zwischenschritt sichtbar ist, können Sie prüfen, an welcher Stelle die Begründung kippt. Ein Ergebnis ohne Weg lässt sich nicht kontrollieren.",
-        "thema_bezug": "Ihre drei Produkte sind Ketten und Zuordnungen: vom Entscheid bis an die Maschine, vom Akteur zum Interesse zu den Kosten, von der Handlung zum Merkmal «gebunden» oder «entschieden». Genau hier trennt der offengelegte Weg eine belegte Begründung von einer Behauptung, die einfach plausibel klingt.",
-        "beispiel_basis": "Geh Schritt für Schritt vor: Ein Staat erhöht den Zoll auf importierte Metallteile. Zeig mir jeden Zwischenschritt bis zum Arbeitsplatz einer Polymechanikerin in der Schweiz und begründe bei jedem Schritt, warum er zwingend zum nächsten führt.",
+        "thema_bezug": "Ihre drei Produkte sind Ketten und Zuordnungen: vom Entscheid bis an den Arbeitsplatz, vom Akteur zum Interesse zu den Kosten, von der Handlung zum Merkmal «gebunden» oder «entschieden». Genau hier trennt der offengelegte Weg eine belegte Begründung von einer Behauptung, die einfach plausibel klingt.",
+        "beispiel_basis": "Geh Schritt für Schritt vor: Ein Staat erhöht den Zoll auf importierte Metallteile. Zeig mir jeden Zwischenschritt bis zum Arbeitsplatz einer lernenden Person in einem Schweizer Betrieb und begründe bei jedem Schritt, warum er zwingend zum nächsten führt.",
         "beispiel_fortgeschritten": "Ich habe fünf staatliche Handlungen danach sortiert, ob sie vertraglich gebunden oder politisch entschieden sind: [meine Sortierung]. Prüfe jede Zuordnung einzeln und nenn mir bei jeder die Denkschritte, die dich zu deinem Urteil führen — und markiere die zwei Fälle, bei denen sich beide Lesarten begründen lassen.",
         "warnung": "Ein sauber ausformulierter Gedankengang ist kein Beweis: Die KI kann eine Kette lückenlos wirken lassen und trotzdem ein erfundenes Glied einbauen. Prüfen Sie jeden Schritt einzeln gegen das Lehrmittel, statt sich vom flüssigen Ablauf überzeugen zu lassen.",
         "baukasten": {
@@ -130,7 +130,7 @@
         "kontextualisieren"
       ],
       "logik_und_ziel": "Prompt 1 liefert mit Rolle und vollständigem Kontext die Sicht eines einzelnen Akteurs auf Ihren Entscheid. Prompt 2 nutzt genau diese Antwort und dreht sie um: Erst wenn die Gegenseite auf dieselbe Sachlage antwortet, wird der Zielkonflikt sichtbar — und damit die Frage, wer die Kosten trägt.",
-      "prompt_1": "Du bist Vertreter/in eines Wirtschaftsverbands der Exportindustrie. Kontext: Lernende/r Polymechanik im 3. Lehrjahr, Betrieb in Winterthur mit Import von Rohmaterial und Export von Bauteilen; im Unterricht geht es um einen Entscheid über den Marktzugang. Erkläre mir aus deinem Interesse heraus, was dieser Entscheid für deinen Verband bedeutet und welche Folgen du in den Betrieben erwartest.",
+      "prompt_1": "Du bist Vertreter/in eines Wirtschaftsverbands der Exportindustrie. Kontext: Lernende/r EFZ im 3. Lehrjahr, eigener Lehrbetrieb — oder der Betrieb, in dem ich zuletzt gearbeitet habe — mit Import von Material und Lieferungen über die Grenze; im Unterricht geht es um einen Entscheid über den Marktzugang. Erkläre mir aus deinem Interesse heraus, was dieser Entscheid für deinen Verband bedeutet und welche Folgen du in den Betrieben erwartest.",
       "prompt_2": "Nimm jetzt deine eigene Antwort und stell ihr die Gegenseite gegenüber: Antworte als Gewerkschaftsvertreter/in auf genau dieselbe Sachlage. Sag mir danach in zwei Sätzen, welches der beiden Interessen sich in der Regel durchsetzt und wer am Schluss die Kosten trägt."
     },
     "stacking_seite_2": {
@@ -139,7 +139,7 @@
         "quellen_anfordern"
       ],
       "logik_und_ziel": "Prompt 1 zwingt die KI, ihren Weg von einem internationalen Entscheid bis an Ihren Arbeitsplatz offenzulegen. Prompt 2 setzt genau dort an: Jeder einzelne Schritt aus der ersten Antwort muss nun einen Beleg tragen — und was ohne Beleg bleibt, fällt aus Ihrer Kette heraus, bevor Sie sie vortragen.",
-      "prompt_1": "Geh Schritt für Schritt vor: Ein Handelsentscheid im Ausland verändert die Bedingungen für importierte Metallteile. Zeig mir die Kette bis zum Arbeitsplatz einer Polymechanikerin in einem Schweizer Betrieb in vier bis sechs Schritten und begründe bei jedem Schritt, warum er zwingend zum nächsten führt.",
+      "prompt_1": "Geh Schritt für Schritt vor: Ein Handelsentscheid im Ausland verändert die Bedingungen für importierte Metallteile. Zeig mir die Kette bis zum Arbeitsplatz einer lernenden Person in einem Schweizer Betrieb in vier bis sechs Schritten und begründe bei jedem Schritt, warum er zwingend zum nächsten führt.",
       "prompt_2": "Geh deine eigene Kette jetzt nochmals durch und schreib zu jedem der Schritte, worauf die Aussage sich stützt und wie sicher sie ist. Markiere ausdrücklich jeden Schritt, für den du keinen Beleg nennen kannst — genau diese Schritte schlage ich im Lehrmittel nach."
     },
     "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"

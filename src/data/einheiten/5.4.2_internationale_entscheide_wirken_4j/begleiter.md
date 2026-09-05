@@ -55,7 +55,7 @@ quellen_json:
 
 ### Das Kompetenzversprechen
 
-> «Ich verfolge einen internationalen Entscheid Schritt für Schritt bis in meinen Lehrbetrieb, ordne die Interessen der beteiligten Akteure ein und begründe mündlich, was dabei rechtlich gebunden und was politisch entschieden ist.»
+> «<!--hko:kn.kern_kompetenzversprechen-->Ich verfolge einen internationalen Entscheid Schritt für Schritt bis in meinen Lehrbetrieb, ordne die Interessen der beteiligten Akteure ein und begründe mündlich, was dabei rechtlich gebunden und was politisch entschieden ist.<!--/hko-->»
 
 Der Satz koppelt drei Operationen, die einzeln je zu wenig sind: Wer nur die Kette zeichnet, sieht die Interessen nicht. Wer nur die Interessen benennt, kann nicht sagen, wie fest die Schweiz gebunden ist. Und wer nur sortiert, weiss nicht, wo der Entscheid bei ihm ankommt.
 
@@ -87,14 +87,14 @@ LF4 trainiert den Output-Sprachmodus **Produktion mündlich** als **einen Bauste
 
 ### Mehrdeutigkeits-Architektur
 
-1. **Offener Marktzugang vs. Schutz der eigenen Arbeitsplätze** → Herausforderung A
+1. **<!--hko:hf_A.mehrdeutigkeit.trade_off-->Offener Marktzugang vs. Schutz der eigenen Arbeitsplätze<!--/hko-->** → Herausforderung A
 2. **Regeln übernehmen vs. selber bestimmen** → Herausforderung B
-3. **Zugesagtes einhalten vs. neu entscheiden dürfen** → Herausforderung C
+3. **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Zugesagtes einhalten vs. neu entscheiden dürfen<!--/hko-->** → Herausforderung C
 
 Alle drei Spannungsfelder sind im KN gleichzeitig aktiv — das ist der Grund, weshalb die Hybrid-Herausforderung nicht eine der drei Lernaufgaben wiederholt.
 
 > [!mehrdeutigkeit] Der Grundsatz
-> Beide Seiten bleiben begründbar. Die Aufgabe ist nicht, die richtige Aussenpolitik zu finden, sondern offenzulegen, wer auf welcher Ebene entschieden hat, wie fest die Schweiz gebunden ist und wer die Folgen trägt. Bewertet wird die Qualität der Begründung, nicht die gewählte Seite.
+> <!--hko:kn.mehrdeutigkeits_pflicht-->Beide Seiten bleiben begründbar. Die Aufgabe ist nicht, die richtige Aussenpolitik zu finden, sondern offenzulegen, wer auf welcher Ebene entschieden hat, wie fest die Schweiz gebunden ist und wer die Folgen trägt. Bewertet wird die Qualität der Begründung, nicht die gewählte Seite.<!--/hko-->
 
 ### Zirkularität — wo das wieder auftaucht
 
@@ -177,19 +177,21 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 
 | Feld | Inhalt |
 |---|---|
-| Titel | «Gestorben wegen einem Entscheid im Ausland» |
-| Herausforderung | Den Weg eines internationalen Handelsentscheids bis an den eigenen Arbeitsplatz in vier bis sechs belegten Schritten aufdecken |
-| Persona | Polymechaniker/in EFZ, Präzisionsmechanik Halter AG, Winterthur — 3. LJ |
+| Titel | <!--hko:hf_A.titel-->«Gestorben wegen einem Entscheid im Ausland»<!--/hko--> |
+| Herausforderung | <!--hko:hf_A.herausforderung.label-->Den Weg eines internationalen Handelsentscheids bis an den eigenen Arbeitsplatz in vier bis sechs belegten Schritten aufdecken<!--/hko--> |
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 3. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Wirtschaft (R4), Politik (R2) |
 | Sprachmodi | Produktion mündlich (SM4) |
 | Schlüsselkompetenzen | SK6 Standpunkte begründen · SK9 Nachhaltigkeit |
 | Handlungsprodukt | Gesprochene Erklärung 90 Sek. an einer selbst gezeichneten Wirkungskette (A3 oder Folie) |
 | Wissensknoten | internationale_arbeitsteilung |
 
-> Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. Wir fertigen Bauteile für Kundschaft im Ausland. An der Morgenrunde sagt der Betriebsleiter, ein grosser Auftrag sei «gestorben wegen einem Zollentscheid, den irgendwer im Ausland gefällt hat». Für mich heisst das konkret: Die Serie, an der ich diese Woche arbeiten sollte, ist verschoben, dafür kommt ein anderer Auftrag mit anderem Material, und der Einkauf rechnet neu mit sechs statt zwei Wochen Lieferzeit. Im ABU habe ich gelernt, dass die Schweiz rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel verdient — jetzt merke ich, dass dieser Franken auch durch unsere Werkstatt läuft. Den Satz des Betriebsleiters verstehe ich trotzdem nicht: Zwischen einem Entscheid irgendwo im Ausland und meinem Arbeitstag müssen Schritte liegen, die niemand benennt.
+<!--hko:hf_A.situation_text|quote-->
+> Ich bin im 3. Lehrjahr und arbeite in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — jeden Tag mit Material, Ware oder Geräten, die nicht aus der Schweiz kommen. Am Montag heisst es an der Morgenbesprechung, ein grosser Auftrag sei «gestorben wegen einem Zollentscheid, den irgendwer im Ausland gefällt hat». Für mich heisst das konkret: Was ich für diese Woche eingeplant hatte, ist verschoben, dafür kommt eine andere Arbeit mit anderem Material, und der Einkauf rechnet neu mit sechs statt zwei Wochen Lieferzeit. Im ABU habe ich gelernt, dass die Schweiz rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel verdient — jetzt merke ich, dass dieser Franken auch durch meinen Arbeitstag läuft. Den Satz von der Morgenbesprechung verstehe ich trotzdem nicht: Zwischen einem Entscheid irgendwo im Ausland und meinem Arbeitstag müssen Schritte liegen, die niemand benennt.
+<!--/hko-->
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
-> Authentizität (verschobene Serien und neue Lieferfristen sind Alltag jedes Exportbetriebs), Verortung (Winterthur, konkrete Zahlen aus Kap. 11.2), Problem (kein Reproduktionsauftrag — die Kette muss selbst rekonstruiert werden), Affektivität (der Satz des Betriebsleiters erklärt nichts und lässt die Lernende unbefriedigt zurück), Kognition (K2–K4), Aktivität (Wirkungskette zeichnen und sprechen), LJ-Passung (im 3. LJ ist der Betriebsalltag vertraut genug, um die Kette zu prüfen), Relevanz (jede Lehrstelle in der Exportindustrie hängt daran) — alle acht erfüllt.
+> Authentizität (verschobene Arbeiten und neue Lieferfristen sind Alltag jedes Betriebs, der über die Grenze einkauft), Verortung (eigener Betrieb, Morgenbesprechung, konkrete Zahlen aus Kap. 11.2), Problem (kein Reproduktionsauftrag — die Kette muss selbst rekonstruiert werden), Affektivität (der Satz des Betriebsleiters erklärt nichts und lässt die Lernende unbefriedigt zurück), Kognition (K2–K4), Aktivität (Wirkungskette zeichnen und sprechen), LJ-Passung (im 3. LJ ist der Betriebsalltag vertraut genug, um die Kette zu prüfen), Relevanz (jede Lehrstelle in der Exportindustrie hängt daran) — alle acht erfüllt.
 
 ### Unterrichtsfahrplan
 
@@ -198,7 +200,7 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 | AViVA-Phase | Was passiert | Sozialform |
 |---|---|---|
 | **Ankommen** | Den Satz des Betriebsleiters an die Wand projizieren, ohne Kommentar: «Was fehlt in diesem Satz?» | Plenum |
-| **Vorwissen** | Erste Vermutungen sammeln, welche Schritte zwischen Entscheid und Werkstatt liegen | Einzel |
+| **Vorwissen** | Erste Vermutungen sammeln, welche Schritte zwischen Entscheid und Arbeitsplatz liegen | Einzel |
 | **Informieren** | LF1 + LF2: Kap. 11.2 S. 272–273 und Kap. 11.3 S. 285 lesen; Zahlentabelle auswerten | Einzel |
 | **Verarbeiten** | Mindmap; LF3 (Kette in 4–6 Schritte gliedern) + LF4 (Schlusszug sprechfertig); Kette auf A3 zeichnen | Einzel |
 | **Auswerten** | Erklärung zu zweit halten: «Welcher Schritt ist am schwächsten belegt?» — dann aufnehmen | Partner |
@@ -215,7 +217,7 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 **LF2 (K3):** Protektionistische Handelspolitik auf den eigenen Lehrbetrieb anwenden: Wer verlangt Schutz, wer bezahlt ihn, welches Material wird teurer?
 
 > [!warnung] Typischer Stolperstein bei LF2
-> Lernende beschreiben Schutzzölle nur als etwas, das «die anderen» machen, und übersehen, dass Schutz immer jemanden kostet — hier den eigenen Exportbetrieb. Fragen Sie: «Wenn ein anderes Land seine Werkstätten schützt, wer bezahlt das in Winterthur?»
+> Lernende beschreiben Schutzzölle nur als etwas, das «die anderen» machen, und übersehen, dass Schutz immer jemanden kostet — hier den eigenen Betrieb. Fragen Sie: «Wenn ein anderes Land seine Werkstätten schützt, wer bezahlt das in Winterthur?»
 
 **LF3 (K3/K4):** Den Weg vom Entscheid bis zum eigenen Arbeitstag in vier bis sechs Schritte gliedern und jeden Schritt belegen.
 
@@ -232,12 +234,12 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 
 ### Tafelbild — fachliche Soll-Lösung
 
-> [!tafelbild] Erwartungsbild — Vom Entscheid bis in meine Werkstatt
+> [!tafelbild] Erwartungsbild — <!--hko:hf_A.mindmap_zentrum-->Vom Entscheid bis an meinen Arbeitsplatz<!--/hko-->
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
-> - **Wer entscheidet was** — Staaten und Handelsblöcke setzen Zölle und Handelsschranken · WTO: 164 Mitglieder, über 90 Prozent des Welthandels · WTO ist zuständig für die Streitschlichtung bei Handelskonflikten · Schutz der eigenen Wirtschaft als politisches Ziel
-> - **Wie es sich fortpflanzt** — Preis für Material und Bauteile verändert sich · Lieferfristen und Verfügbarkeit verschieben sich · Offerten werden teurer, Aufträge verschieben sich · Betrieb wechselt Lieferanten oder Material
-> - **Wo es mich trifft** — Meine Arbeitsplanung für die Woche · Welche Serie ich fertige und mit welchem Material · Auslastung der Werkstatt und Überstunden · Längerfristig: Zahl der Lehrstellen im Betrieb
+> - **Wer entscheidet was** — <!--hko:hf_A.mindmap_aeste[0].punkte[0]-->Staaten und Handelsblöcke setzen Zölle und Handelsschranken<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[1]-->WTO: 164 Mitglieder, über 90 Prozent des Welthandels<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[2]-->WTO ist zuständig für die Streitschlichtung bei Handelskonflikten<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[3]-->Schutz der eigenen Wirtschaft als politisches Ziel<!--/hko-->
+> - **Wie es sich fortpflanzt** — Preis für Material und Ware verändert sich · <!--hko:hf_A.mindmap_aeste[1].punkte[1]-->Lieferfristen und Verfügbarkeit verschieben sich<!--/hko--> · <!--hko:hf_A.mindmap_aeste[1].punkte[2]-->Offerten werden teurer, Aufträge verschieben sich<!--/hko--> · Betrieb wechselt Lieferanten oder Material
+> - **Wo es mich trifft** — Meine Arbeitsplanung für die Woche · <!--hko:hf_A.mindmap_aeste[2].punkte[1]-->Welche Arbeit ich ausführe und mit welchem Material<!--/hko--> · Auslastung des Betriebs und Überstunden · <!--hko:hf_A.mindmap_aeste[2].punkte[3]-->Längerfristig: Zahl der Lehrstellen im Betrieb<!--/hko-->
 >
 > **Optionale Vertiefung** (für 100 %): **Wer die Wirkung abfedern könnte** — der Betrieb selbst über Lager und zweite Lieferquelle · Branchenverband und Gewerkschaft · der Bund über Verhandlungen und Abkommen · Streitschlichtung der WTO. Dieser Ast ist die Brücke zu Herausforderung B.
 
@@ -248,7 +250,7 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 | Schritt | Was hier passiert | Beleg (Kap./S. oder Beobachtung) |
 |---|---|---|
 | *Bsp:* 1 — Der Entscheid | Ein Staat oder Handelsblock erhöht einen Zoll auf eine Warengruppe | Kap. 11.2 S. 273 |
-| *Bsp:* 2 — Der Preis reagiert | Bauteile aus dieser Gruppe werden im Einkauf teurer | Kap. 11.3 S. 285 |
+| *Bsp:* 2 — Der Preis reagiert | Material aus dieser Gruppe wird im Einkauf teurer | Kap. 11.3 S. 285 |
 | 3 — | | |
 | 4 — | | |
 | 5 — (optional) | | |
@@ -275,25 +277,33 @@ Das ist kein Einzelfall: __________________________________ (Kap. ____, S. ____)
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 Leitfragen
+<!--hko:hf_A.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ Alle vier Leitfragen sind schriftlich beantwortet.
-☐ LF1 verwendet die Begriffe Globalisierung und internationale Arbeitsteilung korrekt.
+☐ LF1 verwendet die Begriffe Globalisierung und internationale Arbeitsteilung korrekt und benennt die drei Arten von Entscheidungsträgern.
 ☐ LF2 nennt für den eigenen Betrieb ein konkretes Material oder Bauteil.
 ☐ LF4 enthält zwei sprechfertige Sätze mit einer Zahl und deren Quelle.
+<!--/hko-->
 
 Mindmap
+<!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Pflicht-Äste sind befüllt.
-☐ Der Ast «Wo es mich trifft» nennt mindestens zwei Folgen aus dem eigenen Lehrbetrieb.
+☐ Der Ast «Wo es mich trifft» nennt mindestens zwei Folgen aus dem eigenen Arbeitsalltag.
 ☐ Mindestens eine Verbindung zwischen «Wie es sich fortpflanzt» und «Wo es mich trifft» ist eingezeichnet.
+<!--/hko-->
 
 Handlungsprodukt
+<!--hko:hf_A.bewertungsraster[2].vollstaendig_wenn|checkliste-->
 ☐ Die Kette hat 4 bis 6 Schritte und keine Lücke zwischen Entscheid und Arbeitsplatz.
 ☐ Zu jedem Schritt steht ein Beleg: Kapitel und Seite oder eigene Beobachtung.
 ☐ Die Erklärung dauert rund 90 Sekunden und ist frei gesprochen, nicht abgelesen.
 ☐ Mindestens eine Zahl wird mit Quelle genannt.
+<!--/hko-->
 
 Reflexion
+<!--hko:hf_A.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Reflexionsfragen sind beantwortet.
 ☐ R2 benennt eine konkrete Rückmeldung und was daraufhin geändert wurde.
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -312,12 +322,12 @@ Reflexion
 > **Zum Abgeben bereit:** Ketten-Raster (80 %-Vorlage) · Schlusszug-Lückentext.
 
 > [!coaching] Perspektivenwechsel
-> Bevor die Kette gezeichnet wird: Lassen Sie die Lernende eine Minute lang die Position eines Betriebs im anderen Land einnehmen — «Ihre Werkstatt verliert Aufträge an günstigere Anbieter. Was fordern Sie von Ihrer Regierung?» Wer den Schutzwunsch der Gegenseite einmal selbst formuliert hat, erklärt den Zoll nachher als Interessenlage und nicht als Schikane. Das ist die Haltung, die im Raster unter «Position/Werthaltung» zählt.
+> Bevor die Kette gezeichnet wird: Lassen Sie die Lernende eine Minute lang die Position eines Betriebs im anderen Land einnehmen — «Ihr Betrieb verliert Aufträge an günstigere Anbieter. Was fordern Sie von Ihrer Regierung?» Wer den Schutzwunsch der Gegenseite einmal selbst formuliert hat, erklärt den Zoll nachher als Interessenlage und nicht als Schikane. Das ist die Haltung, die im Raster unter «Position/Werthaltung» zählt.
 
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Herausforderung A
-> Das Spannungsfeld: **Offener Marktzugang vs. Schutz der eigenen Arbeitsplätze**. Für den offenen Zugang spricht, dass der Betrieb vom Export lebt; für den Schutz spricht, dass Arbeitsplätze unter zu starker Konkurrenz verschwinden können. Wenn jemand die Erklärung mit «Zölle sind einfach schädlich» beendet, lenken Sie zurück: «Und was sagen Sie dem Betrieb im anderen Land, der gerade schliesst?»
+> Das Spannungsfeld: **<!--hko:hf_A.mehrdeutigkeit.trade_off-->Offener Marktzugang vs. Schutz der eigenen Arbeitsplätze<!--/hko-->**. Für den offenen Zugang spricht, dass der Betrieb vom Export lebt; für den Schutz spricht, dass Arbeitsplätze unter zu starker Konkurrenz verschwinden können. Wenn jemand die Erklärung mit «Zölle sind einfach schädlich» beendet, lenken Sie zurück: «Und was sagen Sie dem Betrieb im anderen Land, der gerade schliesst?»
 
 ### Wo welche SK geübt wird
 
@@ -335,18 +345,20 @@ Reflexion
 | Feld | Inhalt |
 |---|---|
 | Titel | Zwei Berufsbildende, zwei Rechnungen |
-| Herausforderung | Denselben Entscheid aus der Sicht mehrerer Akteure lesen und benennen, wessen Interesse sich durchsetzt und wer die Kosten trägt |
-| Persona | Polymechaniker/in EFZ, Präzisionsmechanik Halter AG, Winterthur — 3. LJ |
+| Herausforderung | <!--hko:hf_B.herausforderung.label-->Denselben Entscheid aus der Sicht mehrerer Akteure lesen und benennen, wessen Interesse sich durchsetzt und wer die Kosten trägt<!--/hko--> |
+| Persona | <!--hko:hf_B.persona|persona-->Lernende/r EFZ, 3. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Politik (R2), Wirtschaft (R4) |
 | Sprachmodi | Produktion mündlich (SM4) |
 | Schlüsselkompetenzen | SK6 Standpunkte begründen · SK11 Mehrdeutigkeit · SK12 Partizipation |
 | Handlungsprodukt | Gesprochenes Statement 90–120 Sek. an einer selbst erstellten Akteurskarte (4–5 Akteure) |
 | Wissensknoten | interessenverbaende_lobby |
 
-> Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. In der Pause streiten zwei Berufsbildende über eine Meldung aus Brüssel. Der eine sagt, ohne die Regeln des grossen Nachbarmarkts verlieren wir unsere Kundschaft; der andere sagt, wir übernähmen laufend Vorschriften, die bei uns niemand beschlossen habe. Ich weiss aus dem ABU, dass 55 Prozent unserer Exporte in die EU gehen und 71 Prozent unserer Importe von dort kommen — beide haben also etwas für sich. Am Abend sehe ich zum selben Entscheid drei Videos, und in jedem ist jemand anderes schuld. Mir wird klar: Hier steht nicht eine Wahrheit gegen eine Lüge, sondern Interesse gegen Interesse — und ich weiss noch nicht, wessen Rechnung ich am Ende mitbezahle.
+<!--hko:hf_B.situation_text|quote-->
+> Ich bin im 3. Lehrjahr und arbeite in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe. Seit gestern geht eine Meldung aus Brüssel um: Weil ein Abkommen nicht aktualisiert wurde, sollen Schweizer Zulassungen im Nachbarmarkt ab nächstem Jahr nicht mehr automatisch gelten. In der Pause streiten zwei Mitarbeitende darüber. Die eine sagt, ohne die Regeln des grossen Nachbarmarkts verlieren wir unsere Kundschaft; der andere sagt, wir übernähmen laufend Vorschriften, die bei uns niemand beschlossen habe. Ich weiss aus dem ABU, dass 55 Prozent unserer Exporte in die EU gehen und 71 Prozent unserer Importe von dort kommen — beide haben also etwas für sich. Am Abend sehe ich zum selben Entscheid drei Videos, und in jedem ist jemand anderes schuld. Mir wird klar: Hier steht nicht eine Wahrheit gegen eine Lüge, sondern Interesse gegen Interesse — und ich weiss noch nicht, wessen Rechnung ich am Ende mitbezahle.
+<!--/hko-->
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
-> Authentizität (der Pausenstreit über den Nachbarmarkt ist in jedem Exportbetrieb zu hören), Verortung (Winterthur, vier belegte Prozentzahlen aus Kap. 11.2), Problem (kein Reproduktionsauftrag — die Interessen müssen selbst zugeordnet werden), Affektivität (drei Videos, drei Schuldige: das ist die eigene Medienerfahrung der Klasse), Kognition (K2–K4), Aktivität (Akteurskarte und Statement), LJ-Passung (im 3. LJ tragen Lernende bereits eigene Positionen vor), Relevanz (die Frage kehrt bei jeder Vorlage zum Verhältnis Schweiz – EU wieder) — alle acht erfüllt.
+> Authentizität (der Pausenstreit über den Nachbarmarkt ist in jedem Betrieb mit Kundschaft im Ausland zu hören), Verortung (eigener Betrieb, vier belegte Prozentzahlen aus Kap. 11.2), Problem (kein Reproduktionsauftrag — die Interessen müssen selbst zugeordnet werden), Affektivität (drei Videos, drei Schuldige: das ist die eigene Medienerfahrung der Klasse), Kognition (K2–K4), Aktivität (Akteurskarte und Statement), LJ-Passung (im 3. LJ tragen Lernende bereits eigene Positionen vor), Relevanz (die Frage kehrt bei jeder Vorlage zum Verhältnis Schweiz – EU wieder) — alle acht erfüllt.
 
 ### Unterrichtsfahrplan
 
@@ -392,11 +404,11 @@ Reflexion
 > [!tafelbild] Erwartungsbild — Wer will was beim Marktzugang
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
-> - **Die Akteure** — Staatenverbund mit seinen Organen: Rat, Kommission, Parlament · Bundesrat als Verhandlungsführung der Schweiz · Wirtschaftsverbände wie Swissmem oder economiesuisse · Gewerkschaften und die Belegschaft im Betrieb
+> - **Die Akteure** — <!--hko:hf_B.mindmap_aeste[0].punkte[0]-->Staatenverbund mit seinen Organen: Rat, Kommission, Parlament<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[1]-->Bundesrat als Verhandlungsführung der Schweiz<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[2]-->Wirtschaftsverbände wie Swissmem oder economiesuisse<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[3]-->Gewerkschaften und die Belegschaft im Betrieb<!--/hko-->
 > - **Ihre Interessen** — Zugang zum Binnenmarkt sichern · gleiche Regeln für alle Anbietenden durchsetzen · Löhne und Arbeitsbedingungen schützen · politisch selber bestimmen können
-> - **Wer die Kosten trägt** — Betriebe über Anpassung an technische Vorschriften · Arbeitnehmende über Lohndruck ohne flankierende Massnahmen · der Staat über abgegebene Entscheidungsmacht · Kundschaft und Bevölkerung über Preise und Auswahl
+> - **Wer die Kosten trägt** — <!--hko:hf_B.mindmap_aeste[2].punkte[0]-->Betriebe über Anpassung an technische Vorschriften<!--/hko--> · <!--hko:hf_B.mindmap_aeste[2].punkte[1]-->Arbeitnehmende über Lohndruck ohne flankierende Massnahmen<!--/hko--> · der Staat über abgegebene Entscheidungsmacht · <!--hko:hf_B.mindmap_aeste[2].punkte[3]-->Kundschaft und Bevölkerung über Preise und Auswahl<!--/hko-->
 >
-> **Optionale Vertiefung** (für 100 %): **Wege des Einflusses** — Stellungnahme in der Vernehmlassung · Lobbyarbeit im Parlament · Initiative, Referendum und Abstimmungsparolen · Öffentlichkeitsarbeit und Medien. Dieser Ast ist der SK12-Anker der Einheit.
+> **Optionale Vertiefung** (für 100 %): **Wege des Einflusses** — Stellungnahme in der Vernehmlassung · Lobbyarbeit im Parlament · <!--hko:hf_B.mindmap_aeste[3].punkte[2]-->Initiative, Referendum und Abstimmungsparolen<!--/hko--> · Öffentlichkeitsarbeit und Medien. Dieser Ast ist der SK12-Anker der Einheit.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -434,25 +446,34 @@ und deshalb __________________________________________________________.
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 Leitfragen
+<!--hko:hf_B.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ Alle vier Leitfragen sind schriftlich beantwortet.
-☐ LF1 nennt mindestens drei Wege des Einflusses aus Kap. 6.6.
-☐ LF2 erklärt, was ein verbindlicher Beschluss für einen Schweizer Betrieb bedeutet.
+☐ LF1 nennt mindestens drei Wege des Einflusses aus Kap. 6.6 und bestimmt vier bis fünf Akteure.
+☐ LF2 erklärt, was ein verbindlicher Beschluss für einen Schweizer Betrieb bedeutet, und endet mit einem Satz Ausgangslage.
+☐ LF3 nennt pro Akteur ein belegtes Interesse und stellt zwei sich widersprechende Interessen einander gegenüber.
 ☐ LF4 enthält Behauptung, Begründung und Beleg in sprechfertiger Form.
+<!--/hko-->
 
 Mindmap
+<!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Pflicht-Äste sind befüllt.
 ☐ Zu jedem Akteur im Ast «Die Akteure» steht im Ast «Ihre Interessen» ein passender Eintrag.
 ☐ Mindestens eine Verbindung markiert zwei Interessen, die sich widersprechen.
+<!--/hko-->
 
 Handlungsprodukt
+<!--hko:hf_B.bewertungsraster[2].vollstaendig_wenn|checkliste-->
 ☐ Die Akteurskarte enthält 4 bis 5 Akteure mit Interesse, Mittel und getragenen Kosten.
 ☐ Mindestens zwei Interessen sind mit Kapitel und Seite belegt.
 ☐ Das Statement dauert 90 bis 120 Sekunden und benennt den Zielkonflikt ausdrücklich.
 ☐ Beide Seiten des Zielkonflikts bleiben als begründbar stehen.
+<!--/hko-->
 
 Reflexion
+<!--hko:hf_B.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Reflexionsfragen sind beantwortet.
 ☐ R2 prüft die eigene Lage, statt nur einen Akteur zu wiederholen.
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -494,19 +515,21 @@ Reflexion
 
 | Feld | Inhalt |
 |---|---|
-| Titel | «Muss gar nicht» oder «darf gar nicht anders»? |
-| Herausforderung | Fünf staatliche Handlungen danach sortieren, ob sie vertraglich gebunden oder politisch entschieden sind, und jede Zuordnung begründen |
-| Persona | Polymechaniker/in EFZ, Präzisionsmechanik Halter AG, Winterthur — 3. LJ |
+| Titel | <!--hko:hf_C.titel-->«Muss gar nicht» oder «darf gar nicht anders»?<!--/hko--> |
+| Herausforderung | <!--hko:hf_C.herausforderung.label-->Fünf staatliche Handlungen danach sortieren, ob sie vertraglich gebunden oder politisch entschieden sind, und jede Zuordnung begründen<!--/hko--> |
+| Persona | <!--hko:hf_C.persona|persona-->Lernende/r EFZ, 3. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Recht (R4), Politik (R2), Wirtschaft (R4) |
 | Sprachmodi | Produktion mündlich (SM4) |
 | Schlüsselkompetenzen | SK5 Werthaltungen reflektieren · SK6 Standpunkte begründen · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Sortierte Übersicht (5 Handlungen, je mit Begründung und Quelle) + gesprochene Begründung 90 Sek. zu den zwei strittigen Fällen |
 | Wissensknoten | rechtsordnung_erzwingbar |
 
-> Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. Unter demselben Beitrag über eine aussenpolitische Frage lese ich zwei Kommentare: «Die Schweiz muss das gar nicht machen» und «Die Schweiz darf gar nicht anders». Beide klingen sicher, beide haben viele Likes. Mein Onkel sagt am Familientisch, am Schluss entscheide sowieso die Politik; meine Berufsbildnerin sagt, das meiste sei längst vertraglich abgemacht. Ich will nicht raten, wem ich glaube. Ich will die einzelnen Handlungen des Staates selber sortieren können: Was ist durch einen Vertrag gebunden, und was wird politisch entschieden?
+<!--hko:hf_C.situation_text|quote-->
+> Ich bin im 3. Lehrjahr. Seit dem Wochenende stehen unter demselben Beitrag über eine aussenpolitische Frage zwei Kommentare nebeneinander: «Die Schweiz muss das gar nicht machen» und «Die Schweiz darf gar nicht anders». Beide klingen sicher, beide haben über hundert Likes. Mein Onkel sagt am Familientisch, am Schluss entscheide sowieso die Politik; eine Mitlernende sagt in der Pause, das meiste sei längst vertraglich abgemacht. Ich will nicht raten, wem ich glaube. Ich will die einzelnen Handlungen des Staates selber sortieren können: Was ist durch einen Vertrag gebunden, und was wird politisch entschieden?
+<!--/hko-->
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
-> Authentizität (zwei sich widersprechende Kommentare unter demselben Beitrag kennt jede Klasse), Verortung (Winterthur, Familientisch und Betrieb als zwei widersprechende Autoritäten), Problem (kein Reproduktionsauftrag — es gibt einen Massstab, aber keine Liste zum Abschreiben), Affektivität («ich will nicht raten, wem ich glaube» ist ein echtes Motiv), Kognition (K2–K4), Aktivität (sortieren, belegen, sprechen), LJ-Passung (Rechtsgrundlagen sind im 4-jährigen Lehrgang bis zum 3. LJ gelegt), Relevanz (die Unterscheidung trägt jede spätere aussenpolitische Debatte) — alle acht erfüllt.
+> Authentizität (zwei sich widersprechende Kommentare unter demselben Beitrag kennt jede Klasse), Verortung (Familientisch und Pause als zwei widersprechende Autoritäten), Problem (kein Reproduktionsauftrag — es gibt einen Massstab, aber keine Liste zum Abschreiben), Affektivität («ich will nicht raten, wem ich glaube» ist ein echtes Motiv), Kognition (K2–K4), Aktivität (sortieren, belegen, sprechen), LJ-Passung (Rechtsgrundlagen sind im 4-jährigen Lehrgang bis zum 3. LJ gelegt), Relevanz (die Unterscheidung trägt jede spätere aussenpolitische Debatte) — alle acht erfüllt.
 
 ### Unterrichtsfahrplan
 
@@ -532,7 +555,7 @@ Reflexion
 **LF2 (K3):** Die fünf Handlungen den beiden Spalten zuordnen und je Kapitel und Seite notieren.
 
 > [!warnung] Typischer Stolperstein bei LF2
-> Lernende ordnen alles, was mit Geld zu tun hat, automatisch «politisch entschieden» zu und alles, was fremd klingt, «vertraglich gebunden». Die Höhe des Budgets für die Entwicklungszusammenarbeit ist tatsächlich politisch — aber nicht, weil es um Geld geht, sondern weil der Verfassungsauftrag das Ziel bindet und nicht den Betrag (Kap. 11.3 S. 286). Verlangen Sie das Merkmal, nicht die Intuition.
+> Lernende ordnen alles, was mit Geld zu tun hat, automatisch «politisch entschieden» zu und alles, was fremd klingt, «vertraglich gebunden». Die <!--hko:hf_C.mindmap_aeste[2].punkte[0]-->Höhe des Budgets für die Entwicklungszusammenarbeit<!--/hko--> ist tatsächlich politisch — aber nicht, weil es um Geld geht, sondern weil der Verfassungsauftrag das Ziel bindet und nicht den Betrag (Kap. 11.3 S. 286). Verlangen Sie das Merkmal, nicht die Intuition.
 
 **LF3 (K3/K4):** Die zwei Zuordnungen wählen, bei denen am längsten gezögert wurde, und für jede beide Lesarten begründen.
 
@@ -553,10 +576,10 @@ Reflexion
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
 > - **Woran ich Bindung erkenne** — erzwingbar durch den Staat oder eine Behörde · schriftlich fixiert in einem Vertrag oder Gesetz · unbedingt verbindlich und allgemeingültig · es gibt eine Stelle, die den Streit schlichtet
-> - **Vertraglich gebunden** — Dubliner Abkommen: Asylgesuche werden nach vereinbarten Regeln behandelt · WTO: Streitschlichtungsentscheide bei Handelskonflikten umsetzen · Landverkehrsabkommen: Verlagerung des alpenquerenden Verkehrs · verbindliche Beschlüsse eines Staatenverbunds für seine Mitglieder
-> - **Politisch entschieden** — Höhe des Budgets für die Entwicklungszusammenarbeit · einem neuen Abkommen zustimmen oder es ablehnen · Beitritt zu einer Organisation beantragen oder einfrieren · wie ein Verfassungsauftrag konkret ausgestaltet wird
+> - **Vertraglich gebunden** — <!--hko:hf_C.mindmap_aeste[1].punkte[0]-->Dubliner Abkommen: Asylgesuche werden nach vereinbarten Regeln behandelt<!--/hko--> · <!--hko:hf_C.mindmap_aeste[1].punkte[1]-->WTO: Streitschlichtungsentscheide bei Handelskonflikten umsetzen<!--/hko--> · <!--hko:hf_C.mindmap_aeste[1].punkte[2]-->Landverkehrsabkommen: Verlagerung des alpenquerenden Verkehrs<!--/hko--> · verbindliche Beschlüsse eines Staatenverbunds für seine Mitglieder
+> - **Politisch entschieden** — <!--hko:hf_C.mindmap_aeste[2].punkte[0]-->Höhe des Budgets für die Entwicklungszusammenarbeit<!--/hko--> · einem neuen Abkommen zustimmen oder es ablehnen · <!--hko:hf_C.mindmap_aeste[2].punkte[2]-->Beitritt zu einer Organisation beantragen oder einfrieren<!--/hko--> · wie ein Verfassungsauftrag konkret ausgestaltet wird
 >
-> **Optionale Vertiefung** (für 100 %): **Warum die Grenze wandert** — ein Vertrag wurde einmal politisch beschlossen · Verträge lassen sich kündigen oder neu verhandeln · der Verfassungsauftrag bindet das Ziel, nicht den Betrag · die Auslegung eines Begriffs bleibt strittig. Dieser Ast ist der SK5-Anker und trägt die beiden strittigen Fälle.
+> **Optionale Vertiefung** (für 100 %): **Warum die Grenze wandert** — ein Vertrag wurde einmal politisch beschlossen · <!--hko:hf_C.mindmap_aeste[3].punkte[1]-->Verträge lassen sich kündigen oder neu verhandeln<!--/hko--> · der Verfassungsauftrag bindet das Ziel, nicht den Betrag · die Auslegung eines Begriffs bleibt strittig. Dieser Ast ist der SK5-Anker und trägt die beiden strittigen Fälle.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -566,8 +589,8 @@ Reflexion
 |---|---|---|---|
 | *Bsp:* Asylgesuch nach dem Dubliner Abkommen behandeln | gebunden | schriftlich vereinbart, Verfahren geregelt | Kap. 11.1 S. 268 |
 | *Bsp:* Streitschlichtungsentscheid der WTO umsetzen | gebunden | es gibt eine Stelle, die den Streit entscheidet | Kap. 11.1 S. 271 |
-| *Bsp:* Höhe des Budgets für die Entwicklungszusammenarbeit festlegen | entschieden | Verfassungsauftrag bindet das Ziel, nicht den Betrag | Kap. 11.3 S. 286 |
-| Einem neuen Abkommen zustimmen oder es ablehnen | | | |
+| *Bsp:* <!--hko:hf_C.mindmap_aeste[2].punkte[0]-->Höhe des Budgets für die Entwicklungszusammenarbeit<!--/hko--> festlegen | entschieden | Verfassungsauftrag bindet das Ziel, nicht den Betrag | Kap. 11.3 S. 286 |
+| <!--hko:hf_C.mindmap_aeste[2].punkte[1]-->Einem neuen Abkommen zustimmen oder es ablehnen<!--/hko--> | | | |
 | Den alpenquerenden Güterverkehr auf die Schiene verlagern | | | |
 
 **Zweisatz-Lückentext für die strittigen Fälle (80 %-Vorlage):**
@@ -592,25 +615,33 @@ Ich ordne sie ____________________ zu, weil ______________________________
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 Leitfragen
+<!--hko:hf_C.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ Alle vier Leitfragen sind schriftlich beantwortet.
 ☐ LF1 nennt die vier Merkmale von Recht und grenzt sie von Sitte, Brauch und Moral ab.
 ☐ LF2 ordnet alle fünf Handlungen zu und nennt je Kapitel und Seite.
-☐ LF4 enthält einen Zweisatz, der beide Lesarten benennt.
+☐ LF4 enthält zu beiden strittigen Zuordnungen je einen Zweisatz, der beide Lesarten benennt und die Zuordnung mit einer Quelle begründet.
+<!--/hko-->
 
 Mindmap
+<!--hko:hf_C.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Pflicht-Äste sind befüllt.
 ☐ Jede der fünf Handlungen steht in genau einer der beiden Spalten-Äste.
 ☐ Mindestens eine Verbindung zeigt, weshalb eine Handlung auch in der anderen Spalte stehen könnte.
+<!--/hko-->
 
 Handlungsprodukt
+<!--hko:hf_C.bewertungsraster[2].vollstaendig_wenn|checkliste-->
 ☐ Alle fünf Handlungen sind zugeordnet und je mit einer Quelle belegt.
 ☐ Die zwei strittigen Zuordnungen sind markiert und mit beiden Lesarten festgehalten.
 ☐ Die gesprochene Begründung dauert rund 90 Sekunden und ist frei gesprochen.
 ☐ Die eigene Zuordnung wird begründet, ohne die Gegenlesart für falsch zu erklären.
+<!--/hko-->
 
 Reflexion
+<!--hko:hf_C.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Reflexionsfragen sind beantwortet.
 ☐ R3 benennt eine eigene Haltung und belegt sie an der eigenen Sortierung.
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -634,7 +665,7 @@ Reflexion
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Herausforderung C
-> Das Spannungsfeld: **Zugesagtes einhalten vs. neu entscheiden dürfen**. Wer Zugesagtes einhält, bleibt verlässlich und behält den Zugang zu Märkten und Verfahren; wer neu entscheiden will, behält Spielraum und riskiert Vertrauen und Gegenmassnahmen. Wenn jemand die Übersicht mit «Verträge kann man ja immer kündigen» abschliesst, lenken Sie zurück: «Was kostet diese Kündigung — und wen im Betrieb trifft das zuerst?»
+> Das Spannungsfeld: **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Zugesagtes einhalten vs. neu entscheiden dürfen<!--/hko-->**. Wer Zugesagtes einhält, bleibt verlässlich und behält den Zugang zu Märkten und Verfahren; wer neu entscheiden will, behält Spielraum und riskiert Vertrauen und Gegenmassnahmen. Wenn jemand die Übersicht mit «Verträge kann man ja immer kündigen» abschliesst, lenken Sie zurück: «Was kostet diese Kündigung — und wen im Betrieb trifft das zuerst?»
 
 ### Wo welche SK geübt wird
 
@@ -685,7 +716,7 @@ Der Transfer läuft in zwei Schritten und ist die einzige Stelle der Einheit, an
 
 **Schritt 2 — Das Rezept an einem aktuellen Fall anwenden.** Die Lernenden gehen ihre fünf Fragen sichtbar durch, stützen jede Antwort auf eine Quelle und tragen ein begründetes Fazit von 5 bis 7 Sätzen mündlich vor, mit einem Notizblatt als Stütze.
 
-> Ein internationaler Entscheid wirkt nicht als Meinung, sondern über eine Kette: Jemand entscheidet auf einer bestimmten Ebene, Interessen setzen sich durch, eine Bindung entsteht oder eben nicht — und am Ende verändert sich etwas an meinem Arbeitsplatz. Wer diese Kette prüft, kann eine Nachricht einordnen, statt ihr einfach zu glauben.
+> <!--hko:set.dekontextualisierungs_aufgabe.ziel-->Ein internationaler Entscheid wirkt nicht als Meinung, sondern über eine Kette: Jemand entscheidet auf einer bestimmten Ebene, Interessen setzen sich durch, eine Bindung entsteht oder eben nicht — und am Ende verändert sich etwas an meinem Arbeitsplatz. Wer diese Kette prüft, kann eine Nachricht einordnen, statt ihr einfach zu glauben.<!--/hko-->
 
 > [!hinweis] Der aktuelle Fall ist ein auswechselbares Beispiel
 > Für Schritt 2 liegt im `set.json` ein ausgearbeiteter Fall bereit: die Volksinitiative «Wahrung der schweizerischen Neutralität» mit Abstimmungstermin 27. September 2026 — inklusive Ausgangslage, Positionen von Bundesrat, Parlament und Parteien sowie einer Musterantwort auf alle fünf Prüf-Fragen. Der Fall trägt gut, weil er die Unterscheidung dieser Einheit sichtbar trennt: Ein angenommener Verfassungstext wäre bindend, die Auslegung der unbestimmten Begriffe bliebe politisch offen; und über das Embargogesetz und die Beschaffung reicht die Kette bis in Betriebe hinein.
@@ -702,13 +733,15 @@ Der Transfer läuft in zwei Schritten und ist die einzige Stelle der Einheit, an
 
 ## 8. Der Kompetenznachweis (KN)
 
-### Hybrid-Herausforderung — «Ein Nachweis, den niemand hier beschlossen hat»
+### Hybrid-Herausforderung — «<!--hko:kn.hybrid_situation.titel-->Ein Nachweis, den niemand hier beschlossen hat<!--/hko-->»
 
-**Persona:** Bäcker-Konditor-Confiseur/in EFZ, 3. Lehrjahr, Confiserie am Marktplatz, St. Gallen. Bewusst neu — anderer Beruf, anderer Ort, andere Branche als in den drei Herausforderungen.
+**Persona:** <!--hko:kn.hybrid_situation.persona|persona-->Lernende/r EFZ, 3. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko-->. Dieselbe neutrale Persona wie in den drei Herausforderungen (Persona-Regel 2026-09). Neu ist der **Fall**, nicht die Person: anderer Gegenstand (Nachweispflicht statt Zoll), andere Beteiligte (Lieferantin, Branchenverband, kleiner Nachbarbetrieb), andere Zahlen — so verlangt es Check 11.
 
-> Ich bin Bäcker-Konditor-Confiseur/in EFZ im 3. Lehrjahr in der Confiserie am Marktplatz in St. Gallen. Seit dieser Woche verlangt unser Lieferant für jede Lieferung Couverture einen Herkunftsnachweis für den Kakao; der Kilopreis steigt um 1.40 Franken, und zwei Sorten sind bis im Herbst nicht lieferbar. Meine Chefin sagt, wir hätten keine Wahl, weil wir Pralinés in den Nachbarmarkt liefern. Der Lieferant sagt am Telefon, die Schweiz habe diese Vorschrift gar nie beschlossen. Im Branchenverband fordern die grossen Betriebe, der Bund solle dieselbe Regel übernehmen; unsere Nachbarsbäckerei schreibt, das ruiniere die Kleinen. Ich soll morgen im Team erklären, warum die Praliné-Schachtel teurer wird.
+<!--hko:kn.hybrid_situation.text|quote-->
+> Ich bin im 3. Lehrjahr. Im Pausenraum hängt seit Montag ein Schreiben unserer Lieferantin. Ab 1. März verlangt der grosse Nachbarmarkt für ein Verbrauchsmaterial, mit dem wir täglich arbeiten, einen digitalen Produktpass: Herkunft, Zusammensetzung und Entsorgung müssen je Lieferung belegt sein. Der Preis steigt um 3.20 Franken pro Einheit, zwei von acht Varianten fallen weg. Meine Chefin sagt, wir hätten keine Wahl, weil ein Teil unserer Arbeit über die Grenze geht. Die Lieferantin schreibt, die Schweiz habe diese Pflicht nie beschlossen. Der Branchenverband fordert, der Bund solle sie für alle übernehmen; ein kleiner Betrieb aus der Nachbarschaft schreibt dagegen, das ruiniere die Kleinen. Am Freitag soll ich im Team erklären, warum unser Material teurer wird.
+<!--/hko-->
 
-**Leitfrage:** «Wer hat hier auf welcher Ebene entschieden, wie fest ist unser Betrieb daran gebunden — und wer trägt die Mehrkosten?»
+**Leitfrage:** «<!--hko:kn.hybrid_situation.leitfrage-->Wer hat hier auf welcher Ebene entschieden, wie fest ist unser Betrieb daran gebunden — und wer trägt die Mehrkosten?<!--/hko-->»
 
 | Aus Herausforderung | zeigt sich im KN als |
 |---|---|
@@ -734,10 +767,10 @@ Alle drei Spannungsfelder der Einheit sind aktiv. Neue Konfliktdimensionen komme
 
 ### Fragenpool Fachgespräch
 
-**Frage 1 (Erklären, K2):** Erklären Sie mit eigenen Worten, was internationale Arbeitsteilung bedeutet und weshalb ein Betrieb wie diese Confiserie bei einem Rohstoff wie Kakao vollständig auf Einfuhren angewiesen ist (Kap. 11.2 S. 272–273).
+**Frage 1 (Erklären, K2):** <!--hko:kn.kn_typen[0].fragestruktur[0].frage-->Erklären Sie mit eigenen Worten, was internationale Arbeitsteilung bedeutet und weshalb ein Betrieb in der Schweiz bei einem Verbrauchsmaterial wie diesem auf Einfuhren angewiesen sein kann (Kap. 11.2 S. 272-273).<!--/hko-->
 
 > [!erwartungshorizont] Frage 1 (Erklären, K2) — internationale Arbeitsteilung
-> **Vollständig:** Arbeitsteilung wird als Spezialisierung über Ländergrenzen erklärt, nicht nur als «Handel»; die Abhängigkeit wird an den natürlichen Voraussetzungen festgemacht (Kakao wächst hier nicht) und mit dem Aussenhandelsanteil der Schweiz verbunden.
+> **Vollständig:** Arbeitsteilung wird als Spezialisierung über Ländergrenzen erklärt, nicht nur als «Handel»; die Abhängigkeit wird an den Voraussetzungen festgemacht (Rohstoff, Anlagen oder Know-how fehlen hier) und mit dem Aussenhandelsanteil der Schweiz verbunden.
 > **Lückenhaft:** «Wir importieren halt alles» — ohne Mechanismus, ohne Beleg, ohne Unterscheidung zwischen «können wir nicht herstellen» und «lohnt sich nicht».
 
 **Frage 2 (Anwenden, K3):** Ordnen Sie den Entscheid der richtigen Ebene zu: Wer hat diese Vorschrift erlassen, und was bedeutet es für einen Betrieb wie diesen, dass Beschlüsse eines Staatenverbunds für dessen Mitglieder verbindlich sind (Kap. 11.1 S. 262–263)?
@@ -754,7 +787,7 @@ Alle drei Spannungsfelder der Einheit sind aktiv. Neue Konfliktdimensionen komme
 > **Stufe 4 zeigt zusätzlich:** Der Preis der eigenen Wahl wird selbst genannt — wer die Regel für alle will, sagt, dass die Kleinen zahlen; wer sie nur für die Ausfuhr will, sagt, dass zwei Standards im Betrieb entstehen.
 > **Nicht Stufe 4:** «Am besten übernimmt der Bund das für alle, dann ist es einheitlich» — eine saubere Lösung, die den Zielkonflikt wegräumt, statt ihn zu tragen.
 
-**Frage 4 (Transfer, K4):** Vergleichen Sie diesen Fall mit einer Herausforderung aus dem Unterricht: Was ist an der Kette vom Entscheid bis in den Betrieb gleich wie dort, und was ist hier neu?
+**Frage 4 (Transfer, K4):** <!--hko:kn.kn_typen[0].fragestruktur[3].frage-->Vergleichen Sie diesen Fall mit einer Herausforderung aus dem Unterricht: Was ist an der Kette vom Entscheid bis in den Betrieb gleich wie dort, und was ist hier neu?<!--/hko-->
 
 > [!erwartungshorizont] Frage 4 (Transfer, K4) — Vergleich mit dem Unterricht
 > **Stufe 3 zeigt:** Die Struktur wird als gleich erkannt (Entscheid, Preis- und Verfügbarkeitsreaktion, Ankunft im eigenen Arbeitstag) und mindestens ein Unterschied wird benannt.
@@ -770,7 +803,7 @@ Alle drei Spannungsfelder der Einheit sind aktiv. Neue Konfliktdimensionen komme
 
 ### Fragenpool Mini Case schriftlich
 
-**Aufgabe 1 (Erklären, K2):** Halten Sie die Kette vom Entscheid bis zum Preis der Praliné-Schachtel in vier bis sechs Schritten fest. Belegen Sie mindestens zwei Schritte mit Kapitel und Seite (Kap. 11.2 S. 272–273 und S. 275).
+**Aufgabe 1 (Erklären, K2):** <!--hko:kn.kn_typen[1].aufgaben[0].aufgabe-->Halten Sie die Kette vom Entscheid bis zum höheren Preis unseres Materials in vier bis sechs Schritten fest. Belegen Sie mindestens zwei Schritte mit Kapitel und Seite (Kap. 11.2 S. 272-273 und S. 275).<!--/hko-->
 
 > [!erwartungshorizont] Aufgabe 1 (Erklären, K2) — die Kette schriftlich
 > **Vollständig:** Vier bis sechs Schritte ohne Sprung, jeder Schritt ein Satz; mindestens zwei Belege mit Kapitel und Seite; der letzte Schritt endet beim Preis der Schachtel und nicht bei «der Wirtschaft».
@@ -801,8 +834,8 @@ Alle drei Spannungsfelder der Einheit sind aktiv. Neue Konfliktdimensionen komme
 
 Die Lernenden wählen eines ihrer drei Handlungsprodukte (Wirkungskette mit gesprochener Erklärung, Akteurskarte mit Statement oder sortierte Übersicht mit gesprochener Begründung), begründen die Wahl in 2–3 Sätzen und beantworten drei Fragen schriftlich (200–250 Wörter):
 
-1. Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.
-2. Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung des KN sichtbar wird. Was ist gleich, was ist anders?
+1. <!--hko:kn.kn_typen[2].reflexionsfragen[0]-->Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.<!--/hko-->
+2. <!--hko:kn.kn_typen[2].reflexionsfragen[1]-->Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung des KN sichtbar wird. Was ist gleich, was ist anders?<!--/hko-->
 3. Wann versagt das Prinzip — und was haben Sie durch die drei Herausforderungen insgesamt darüber gelernt?
 
 > [!erwartungshorizont] Reflexion 1–3 (K3/K4) — Werkschau

@@ -3,53 +3,81 @@
   "modul": "5.4",
   "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
   "lehrgang": "EFZ_4J",
-
   "buchstabe": "C",
   "sit_farbe": "#1E8449",
   "sit_farbe_light": "#D5F5E3",
   "sit_farbe_mid": "#27AE60",
-
   "titel": "«Muss gar nicht» oder «darf gar nicht anders»?",
-
-  "wissensknoten": ["rechtsordnung_erzwingbar"],
-
+  "wissensknoten": [
+    "rechtsordnung_erzwingbar"
+  ],
   "nrlp": {
     "nr": "5.4.2",
-    "nr_primary": ["5.4.2"],
+    "nr_primary": [
+      "5.4.2"
+    ],
     "lebensbezug": "5.4",
-    "themen": ["T5"],
+    "themen": [
+      "T5"
+    ],
     "gesellschaft": [
-      {"aspekt": "Recht", "iteration": "R4"},
-      {"aspekt": "Politik", "iteration": "R2"},
-      {"aspekt": "Wirtschaft", "iteration": "R4"}
+      {
+        "aspekt": "Recht",
+        "iteration": "R4"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R4"
+      }
     ],
     "sprachmodi": [
       "Produktion mündlich"
     ],
-    "sprachmodus_ids": ["SM4"],
-    "sk": [5, 6, 11],
+    "sprachmodus_ids": [
+      "SM4"
+    ],
+    "sk": [
+      5,
+      6,
+      11
+    ],
     "kompetenz_id": "5.4.2",
     "lebensbezug_id": "5.4",
     "kompetenz_text": "Ich kann anhand eines Beispiels erklären, wie internationale politische Entscheidungen Auswirkungen auf mein Leben und das Leben von anderen haben können.",
     "lebensbezug_text": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen."
   },
-
   "persona": {
-    "beruf": "Polymechaniker/in EFZ",
-    "betrieb": "Präzisionsmechanik Halter AG",
-    "ort": "Winterthur"
+    "beruf": "Lernende/r EFZ, 3. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
-
-  "situation_text": "Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. Unter demselben Beitrag über eine aussenpolitische Frage lese ich zwei Kommentare: «Die Schweiz muss das gar nicht machen» und «Die Schweiz darf gar nicht anders». Beide klingen sicher, beide haben viele Likes. Mein Onkel sagt am Familientisch, am Schluss entscheide sowieso die Politik; meine Berufsbildnerin sagt, das meiste sei längst vertraglich abgemacht. Ich will nicht raten, wem ich glaube. Ich will die einzelnen Handlungen des Staates selber sortieren können: Was ist durch einen Vertrag gebunden, und was wird politisch entschieden?",
-
+  "situation_text": "Ich bin im 3. Lehrjahr. Seit dem Wochenende stehen unter demselben Beitrag über eine aussenpolitische Frage zwei Kommentare nebeneinander: «Die Schweiz muss das gar nicht machen» und «Die Schweiz darf gar nicht anders». Beide klingen sicher, beide haben über hundert Likes. Mein Onkel sagt am Familientisch, am Schluss entscheide sowieso die Politik; eine Mitlernende sagt in der Pause, das meiste sei längst vertraglich abgemacht. Ich will nicht raten, wem ich glaube. Ich will die einzelnen Handlungen des Staates selber sortieren können: Was ist durch einen Vertrag gebunden, und was wird politisch entschieden?",
   "zahlen_tabelle": [
-    {"label": "Mitgliedsländer der WTO (Kap. 11.1, S. 271)", "wert": "164 Länder, über 90 % des Welthandelsvolumens"},
-    {"label": "Mitgliedstaaten der UNO (Kap. 11.1, S. 270)", "wert": "193 Staaten, Beitritt der Schweiz 2002"},
-    {"label": "Gewichtslimite für Lastwagen nach dem Landverkehrsabkommen (Kap. 11.1, S. 268)", "wert": "von 28 auf 40 Tonnen erhöht"},
-    {"label": "Menschen in extremer Armut weltweit (Kap. 11.3, S. 286)", "wert": "rund eine Milliarde"},
-    {"label": "Aktuelle Höhe des Bundesbudgets für die Entwicklungszusammenarbeit", "wert": "Platzhalter — nicht im Lehrmittel, bei Bedarf aktuell nachschlagen"}
+    {
+      "label": "Mitgliedsländer der WTO (Kap. 11.1, S. 271)",
+      "wert": "164 Länder, über 90 % des Welthandelsvolumens"
+    },
+    {
+      "label": "Mitgliedstaaten der UNO (Kap. 11.1, S. 270)",
+      "wert": "193 Staaten, Beitritt der Schweiz 2002"
+    },
+    {
+      "label": "Gewichtslimite für Lastwagen nach dem Landverkehrsabkommen (Kap. 11.1, S. 268)",
+      "wert": "von 28 auf 40 Tonnen erhöht"
+    },
+    {
+      "label": "Menschen in extremer Armut weltweit (Kap. 11.3, S. 286)",
+      "wert": "rund eine Milliarde"
+    },
+    {
+      "label": "Aktuelle Höhe des Bundesbudgets für die Entwicklungszusammenarbeit",
+      "wert": "Platzhalter — nicht im Lehrmittel, bei Bedarf aktuell nachschlagen"
+    }
   ],
-
   "leitfrage": "Welche staatlichen Handlungen sind vertraglich gebunden — und welche werden politisch entschieden?",
   "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 1.3, Kap. 11.1, Kap. 11.3 und Kap. 16.2 als Grundlage. Sortiert werden diese fünf Handlungen: ein Asylgesuch nach dem Dubliner Abkommen behandeln · einen Streitschlichtungsentscheid der WTO umsetzen · die Höhe des Budgets für die Entwicklungszusammenarbeit festlegen · einem neuen Abkommen zustimmen oder es ablehnen · den alpenquerenden Güterverkehr auf die Schiene verlagern.",
   "auftakt_typ": "kontext",
@@ -75,10 +103,25 @@
       "loesung": {
         "kern": "Recht: vier Merkmale gegen Sitte, Moral",
         "zeilen": [
-          { "label": "Vier Merkmale", "text": "Recht ist erzwingbar, schriftlich fixiert, unbedingt verbindlich und allgemeingültig.", "quelle": "Kap. 1.3, S. 21" },
-          { "label": "Sitte, Brauch", "text": "Überlieferte Verhaltensweisen und gewohnheitsmässige Handlungen — vom Staat nicht erzwingbar, nur beschränkt verbindlich.", "quelle": "Kap. 1.3, S. 22" },
-          { "label": "Moral", "text": "Werte und Normen des zwischenmenschlichen Verhaltens — ebenfalls nicht erzwingbar, solange sie nicht in eine Rechtsordnung übertragen sind.", "quelle": "Kap. 1.3, S. 21-22" },
-          { "label": "Abgrenzung", "text": "Erst wenn eine Erwartung erzwingbar und schriftlich fixiert ist, gehört sie zur Rechtsordnung — sonst bleibt sie Sitte, Brauch oder Moral." }
+          {
+            "label": "Vier Merkmale",
+            "text": "Recht ist erzwingbar, schriftlich fixiert, unbedingt verbindlich und allgemeingültig.",
+            "quelle": "Kap. 1.3, S. 21"
+          },
+          {
+            "label": "Sitte, Brauch",
+            "text": "Überlieferte Verhaltensweisen und gewohnheitsmässige Handlungen — vom Staat nicht erzwingbar, nur beschränkt verbindlich.",
+            "quelle": "Kap. 1.3, S. 22"
+          },
+          {
+            "label": "Moral",
+            "text": "Werte und Normen des zwischenmenschlichen Verhaltens — ebenfalls nicht erzwingbar, solange sie nicht in eine Rechtsordnung übertragen sind.",
+            "quelle": "Kap. 1.3, S. 21-22"
+          },
+          {
+            "label": "Abgrenzung",
+            "text": "Erst wenn eine Erwartung erzwingbar und schriftlich fixiert ist, gehört sie zur Rechtsordnung — sonst bleibt sie Sitte, Brauch oder Moral."
+          }
         ]
       }
     },
@@ -103,11 +146,29 @@
       "loesung": {
         "kern": "Fünf Handlungen sortiert und belegt",
         "zeilen": [
-          { "label": "Gebunden 1", "text": "Asylgesuch nach Dublin: Wird es in einem beteiligten Land entschieden, gilt der Entscheid auch für die Schweiz.", "quelle": "Kap. 11.1, S. 269" },
-          { "label": "Gebunden 2", "text": "WTO-Streitschlichtungsentscheid: Die WTO ist für die Streitschlichtung bei Handelskonflikten zuständig, 164 Mitglieder haben das anerkannt.", "quelle": "Kap. 11.1, S. 271" },
-          { "label": "Gebunden 3", "text": "Verlagerung des alpenquerenden Verkehrs: im Landverkehrsabkommen vereinbart, im Gegenzug die Gewichtslimite auf 40 Tonnen erhöht.", "quelle": "Kap. 11.1, S. 268" },
-          { "label": "Politisch entschieden", "text": "EZA-Budget und Zustimmung zu einem neuen Abkommen: Beides entscheiden Bundesrat, Parlament oder Stimmvolk jeweils neu." },
-          { "label": "Häufiger Fehler", "text": "Alles mit internationalem Bezug automatisch als gebunden einstufen — entscheidend ist, ob ein Vertrag oder eine zuständige Stelle existiert." }
+          {
+            "label": "Gebunden 1",
+            "text": "Asylgesuch nach Dublin: Wird es in einem beteiligten Land entschieden, gilt der Entscheid auch für die Schweiz.",
+            "quelle": "Kap. 11.1, S. 269"
+          },
+          {
+            "label": "Gebunden 2",
+            "text": "WTO-Streitschlichtungsentscheid: Die WTO ist für die Streitschlichtung bei Handelskonflikten zuständig, 164 Mitglieder haben das anerkannt.",
+            "quelle": "Kap. 11.1, S. 271"
+          },
+          {
+            "label": "Gebunden 3",
+            "text": "Verlagerung des alpenquerenden Verkehrs: im Landverkehrsabkommen vereinbart, im Gegenzug die Gewichtslimite auf 40 Tonnen erhöht.",
+            "quelle": "Kap. 11.1, S. 268"
+          },
+          {
+            "label": "Politisch entschieden",
+            "text": "EZA-Budget und Zustimmung zu einem neuen Abkommen: Beides entscheiden Bundesrat, Parlament oder Stimmvolk jeweils neu."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Alles mit internationalem Bezug automatisch als gebunden einstufen — entscheidend ist, ob ein Vertrag oder eine zuständige Stelle existiert."
+          }
         ]
       }
     },
@@ -132,10 +193,24 @@
       "loesung": {
         "kern": "Ziel gebunden, Ausgestaltung offen",
         "zeilen": [
-          { "label": "Kriterium", "text": "Eine Zuordnung wird strittig, wenn ein Verfassungsauftrag das Ziel vorschreibt, die konkrete Ausgestaltung aber offen lässt.", "quelle": "Kap. 11.3, S. 286" },
-          { "label": "Beispiel EZA-Budget", "text": "BV 54 verpflichtet die Schweiz zur Linderung von Not und Armut — das Ziel ist gebunden. Die Höhe des Budgets legen Bundesrat und Parlament aber jedes Jahr neu fest.", "quelle": "Kap. 11.3, S. 286" },
-          { "label": "Schwache Begründung", "text": "«Das ist halt Politik», ohne zu benennen, was am Verfassungsauftrag gebunden ist und was offenbleibt." },
-          { "label": "Starke Begründung", "text": "Trennt ausdrücklich das gebundene Ziel vom offenen Mittel und benennt, welches Organ über das Mittel entscheidet." }
+          {
+            "label": "Kriterium",
+            "text": "Eine Zuordnung wird strittig, wenn ein Verfassungsauftrag das Ziel vorschreibt, die konkrete Ausgestaltung aber offen lässt.",
+            "quelle": "Kap. 11.3, S. 286"
+          },
+          {
+            "label": "Beispiel EZA-Budget",
+            "text": "BV 54 verpflichtet die Schweiz zur Linderung von Not und Armut — das Ziel ist gebunden. Die Höhe des Budgets legen Bundesrat und Parlament aber jedes Jahr neu fest.",
+            "quelle": "Kap. 11.3, S. 286"
+          },
+          {
+            "label": "Schwache Begründung",
+            "text": "«Das ist halt Politik», ohne zu benennen, was am Verfassungsauftrag gebunden ist und was offenbleibt."
+          },
+          {
+            "label": "Starke Begründung",
+            "text": "Trennt ausdrücklich das gebundene Ziel vom offenen Mittel und benennt, welches Organ über das Mittel entscheidet."
+          }
         ]
       }
     },
@@ -160,16 +235,33 @@
       "loesung": {
         "kern": "Zwei Zweisätze: Lesarten, dann Entscheid",
         "zeilen": [
-          { "label": "Erster Fall · Satz 1", "text": "«Man könnte das EZA-Budget als gebunden lesen, weil die Verfassung zur Linderung von Not und Armut verpflichtet — oder als politisch, weil niemand die Höhe festlegt.»" },
-          { "label": "Erster Fall · Satz 2", "text": "«Ich ordne es als politisch entschieden ein, weil Bundesrat und Parlament die Summe jedes Jahr neu festlegen, Kapitel 11.3, Seite 286.»", "quelle": "Kap. 11.3, S. 286" },
-          { "label": "Zweiter Fall", "text": "«Man könnte die Zustimmung zu einem Abkommen als gebunden lesen, weil ein Nein den Marktzugang kostet. Ich ordne sie als politisch ein, weil das Stimmvolk 1992 den EWR-Beitritt ablehnte und der Bundesrat 2021 die Verhandlungen abbrach, Kapitel 11.1, Seite 266 und 269.»", "quelle": "Kap. 11.1, S. 266, 269" },
-          { "label": "Aufbau", "text": "Ein Zweisatz braucht keine Einleitung — er beginnt mit dem Sachverhalt und endet mit der begründeten Position.", "quelle": "Kap. 16.2, S. 368" },
-          { "label": "Massstab", "text": "In beiden Zweisätzen stehen die Lesarten im ersten Satz gleichwertig da, erst der zweite Satz legt sich mit Quelle fest." }
+          {
+            "label": "Erster Fall · Satz 1",
+            "text": "«Man könnte das EZA-Budget als gebunden lesen, weil die Verfassung zur Linderung von Not und Armut verpflichtet — oder als politisch, weil niemand die Höhe festlegt.»"
+          },
+          {
+            "label": "Erster Fall · Satz 2",
+            "text": "«Ich ordne es als politisch entschieden ein, weil Bundesrat und Parlament die Summe jedes Jahr neu festlegen, Kapitel 11.3, Seite 286.»",
+            "quelle": "Kap. 11.3, S. 286"
+          },
+          {
+            "label": "Zweiter Fall",
+            "text": "«Man könnte die Zustimmung zu einem Abkommen als gebunden lesen, weil ein Nein den Marktzugang kostet. Ich ordne sie als politisch ein, weil das Stimmvolk 1992 den EWR-Beitritt ablehnte und der Bundesrat 2021 die Verhandlungen abbrach, Kapitel 11.1, Seite 266 und 269.»",
+            "quelle": "Kap. 11.1, S. 266, 269"
+          },
+          {
+            "label": "Aufbau",
+            "text": "Ein Zweisatz braucht keine Einleitung — er beginnt mit dem Sachverhalt und endet mit der begründeten Position.",
+            "quelle": "Kap. 16.2, S. 368"
+          },
+          {
+            "label": "Massstab",
+            "text": "In beiden Zweisätzen stehen die Lesarten im ersten Satz gleichwertig da, erst der zweite Satz legt sich mit Quelle fest."
+          }
         ]
       }
     }
   ],
-
   "mindmap_zentrum": "Gebunden oder entschieden",
   "mindmap_aeste": [
     {
@@ -213,18 +305,32 @@
       "optional": true
     }
   ],
-
   "handlungsprodukt": {
     "format": "Gesprochene Begründung an der sortierten Übersicht",
     "titel": "Gebunden oder entschieden — meine Sortierung",
     "format_detail": "Sortierte Übersicht mit zwei Spalten und fünf Handlungen, je mit einer Begründung und einer Quelle, dazu eine gesprochene Begründung von 90 Sekunden zu den zwei strittigen Zuordnungen, gehalten vor einer Partnerperson.",
     "beschreibung": "Ich sortiere fünf staatliche Handlungen danach, ob sie vertraglich gebunden oder politisch entschieden sind, belege jede Zuordnung und begründe die zwei strittigen Fälle mündlich.",
     "schritte": [
-      {"label": "Merkmale festhalten", "hint": "Notieren Sie aus Kap. 1.3 die vier Merkmale von Recht — sie sind Ihr Massstab beim Sortieren."},
-      {"label": "Fünf Handlungen eintragen", "hint": "Übernehmen Sie die fünf Handlungen aus Ihrer Antwort auf Leitfrage 2 in die linke Tabellenspalte — dort haben Sie sie bereits zugeordnet und belegt."},
-      {"label": "Sortieren und belegen", "hint": "Setzen Sie je ein Kreuz in «gebunden» oder «entschieden» und schreiben Sie Kapitel und Seite dazu."},
-      {"label": "Strittige Fälle markieren", "hint": "Markieren Sie die zwei Zuordnungen, bei denen Sie gezögert haben, und notieren Sie beide Lesarten in Stichworten."},
-      {"label": "Begründung halten", "hint": "Sprechen Sie 90 Sekunden vor Ihrer Partnerperson: pro strittigem Fall beide Lesarten und Ihr Entscheid mit Quelle. Holen Sie danach eine Rückmeldung ein."}
+      {
+        "label": "Merkmale festhalten",
+        "hint": "Notieren Sie aus Kap. 1.3 die vier Merkmale von Recht — sie sind Ihr Massstab beim Sortieren."
+      },
+      {
+        "label": "Fünf Handlungen eintragen",
+        "hint": "Übernehmen Sie die fünf Handlungen aus Ihrer Antwort auf Leitfrage 2 in die linke Tabellenspalte — dort haben Sie sie bereits zugeordnet und belegt."
+      },
+      {
+        "label": "Sortieren und belegen",
+        "hint": "Setzen Sie je ein Kreuz in «gebunden» oder «entschieden» und schreiben Sie Kapitel und Seite dazu."
+      },
+      {
+        "label": "Strittige Fälle markieren",
+        "hint": "Markieren Sie die zwei Zuordnungen, bei denen Sie gezögert haben, und notieren Sie beide Lesarten in Stichworten."
+      },
+      {
+        "label": "Begründung halten",
+        "hint": "Sprechen Sie 90 Sekunden vor Ihrer Partnerperson: pro strittigem Fall beide Lesarten und Ihr Entscheid mit Quelle. Holen Sie danach eine Rückmeldung ein."
+      }
     ],
     "schreib_label": "SORTIERUNG HIER ERARBEITEN",
     "schreib_note": "-> wissen/rechtsordnung_erzwingbar",
@@ -255,59 +361,87 @@
         {
           "titel": "Mein Massstab",
           "zeilen": [
-            {"label": "Merkmale", "text": "Ich prüfe jede Handlung an den vier Merkmalen aus dem Lehrmittel: Recht ist erzwingbar, schriftlich fixiert, unbedingt verbindlich und allgemeingültig. Sitte, Brauch und Moral sind vom Staat nicht erzwingbar. Dazu kommt eine zweite Frage: Gibt es eine Stelle, die im Streitfall entscheidet?", "quelle": "Kap. 1.3, S. 21-22"}
+            {
+              "label": "Merkmale",
+              "text": "Ich prüfe jede Handlung an den vier Merkmalen aus dem Lehrmittel: Recht ist erzwingbar, schriftlich fixiert, unbedingt verbindlich und allgemeingültig. Sitte, Brauch und Moral sind vom Staat nicht erzwingbar. Dazu kommt eine zweite Frage: Gibt es eine Stelle, die im Streitfall entscheidet?",
+              "quelle": "Kap. 1.3, S. 21-22"
+            }
           ]
         },
         {
           "titel": "Klar gebunden",
           "zeilen": [
-            {"label": "Drei Fälle", "text": "Das Asylgesuch nach dem Dubliner Abkommen ist gebunden: Wird ein Gesuch in einem beteiligten Land abgelehnt, gilt der Entscheid auch für die Schweiz. Der Streitschlichtungsentscheid der WTO ist gebunden, weil die WTO ausdrücklich für die Streitschlichtung bei Handelskonflikten zuständig ist und ihre 164 Mitglieder das anerkannt haben. Die Verlagerung des alpenquerenden Verkehrs steht im Landverkehrsabkommen; im Gegenzug wurde die Gewichtslimite von 28 auf 40 Tonnen erhöht.", "quelle": "Kap. 11.1, S. 268-269 und S. 271"}
+            {
+              "label": "Drei Fälle",
+              "text": "Das Asylgesuch nach dem Dubliner Abkommen ist gebunden: Wird ein Gesuch in einem beteiligten Land abgelehnt, gilt der Entscheid auch für die Schweiz. Der Streitschlichtungsentscheid der WTO ist gebunden, weil die WTO ausdrücklich für die Streitschlichtung bei Handelskonflikten zuständig ist und ihre 164 Mitglieder das anerkannt haben. Die Verlagerung des alpenquerenden Verkehrs steht im Landverkehrsabkommen; im Gegenzug wurde die Gewichtslimite von 28 auf 40 Tonnen erhöht.",
+              "quelle": "Kap. 11.1, S. 268-269 und S. 271"
+            }
           ]
         },
         {
           "titel": "Strittiger Fall 1 — das EZA-Budget",
           "zeilen": [
-            {"label": "Beide Lesarten", "text": "Man könnte sagen, das sei gebunden: Die Bundesverfassung verlangt in Artikel 54, dass die Schweiz zur Linderung von Not und Armut in der Welt beiträgt. Ich ordne es trotzdem als politisch entschieden ein: Der Verfassungsauftrag bindet das Ziel, nicht den Betrag. Wie viel Geld ins Budget kommt, entscheiden Bundesrat und Parlament jedes Jahr neu.", "quelle": "Kap. 11.3, S. 286"}
+            {
+              "label": "Beide Lesarten",
+              "text": "Man könnte sagen, das sei gebunden: Die Bundesverfassung verlangt in Artikel 54, dass die Schweiz zur Linderung von Not und Armut in der Welt beiträgt. Ich ordne es trotzdem als politisch entschieden ein: Der Verfassungsauftrag bindet das Ziel, nicht den Betrag. Wie viel Geld ins Budget kommt, entscheiden Bundesrat und Parlament jedes Jahr neu.",
+              "quelle": "Kap. 11.3, S. 286"
+            }
           ]
         },
         {
           "titel": "Strittiger Fall 2 — einem Abkommen zustimmen",
           "zeilen": [
-            {"label": "Beide Lesarten", "text": "Man könnte sagen, wir seien faktisch gebunden, weil ein Nein den Marktzugang kostet. Rechtlich ist es aber ein politischer Entscheid: Die Schweiz hat 1992 den EWR-Beitritt abgelehnt und das Beitrittsgesuch eingefroren, 2021 die Verhandlungen abgebrochen und 2024 neue aufgenommen. Wirtschaftlicher Druck ist keine Rechtspflicht. Genau hier wandert die Grenze — und genau deshalb lohnt es sich, beide Sätze aus den Kommentaren zu prüfen, statt einem zu glauben.", "quelle": "Kap. 11.1, S. 266 und S. 269"}
+            {
+              "label": "Beide Lesarten",
+              "text": "Man könnte sagen, wir seien faktisch gebunden, weil ein Nein den Marktzugang kostet. Rechtlich ist es aber ein politischer Entscheid: Die Schweiz hat 1992 den EWR-Beitritt abgelehnt und das Beitrittsgesuch eingefroren, 2021 die Verhandlungen abgebrochen und 2024 neue aufgenommen. Wirtschaftlicher Druck ist keine Rechtspflicht. Genau hier wandert die Grenze — und genau deshalb lohnt es sich, beide Sätze aus den Kommentaren zu prüfen, statt einem zu glauben.",
+              "quelle": "Kap. 11.1, S. 266 und S. 269"
+            }
           ]
         }
       ]
     }
   },
-
   "methoden": [
-      {
-        "ref": "lm-17-3-3b-schema",
-        "fuer": "für die Begründung jeder Zuordnung",
-        "tun": "Bauen Sie jede Begründung in drei Schritten: Behauptung (gebunden oder entschieden), Begründung am Merkmal, Beleg mit Kapitel und Seite."
-      },
-      {
-        "ref": "lm-16-2-statement",
-        "fuer": "für den Aufbau der 90 Sekunden",
-        "tun": "Ein Satz Massstab, pro strittigem Fall beide Lesarten und Ihr Entscheid, ein Schlusssatz."
-      },
-      {
-        "ref": "lm-20-8-quellenangaben",
-        "fuer": "für die Quelle hinter jeder der fünf Zuordnungen",
-        "tun": "Hinter jede Zuordnung gehören Kapitel und Seite. Wo Sie nur «Lehrmittel» schreiben können, haben Sie die Stelle noch nicht gefunden."
-      },
-      {
-        "ref": "hko-sprechspur",
-        "fuer": "für die gesprochene Begründung von 90 Sekunden"
-      }
-    ],
-
-  "reflexion_fragen": [
-    {"nr": "R1", "text": "Bei welcher Handlung habe ich am längsten gezögert — und was genau hat das Zögern ausgelöst?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Welche Rückmeldung meiner Partnerperson hat meine Zuordnung ins Wanken gebracht, und wie habe ich darauf reagiert?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Was ist mir wichtiger: dass die Schweiz Zugesagtes einhält oder dass sie neu entscheiden kann — und woran merke ich das an meiner eigenen Sortierung?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Begründung jeder Zuordnung",
+      "tun": "Bauen Sie jede Begründung in drei Schritten: Behauptung (gebunden oder entschieden), Begründung am Merkmal, Beleg mit Kapitel und Seite."
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für den Aufbau der 90 Sekunden",
+      "tun": "Ein Satz Massstab, pro strittigem Fall beide Lesarten und Ihr Entscheid, ein Schlusssatz."
+    },
+    {
+      "ref": "lm-20-8-quellenangaben",
+      "fuer": "für die Quelle hinter jeder der fünf Zuordnungen",
+      "tun": "Hinter jede Zuordnung gehören Kapitel und Seite. Wo Sie nur «Lehrmittel» schreiben können, haben Sie die Stelle noch nicht gefunden."
+    },
+    {
+      "ref": "hko-sprechspur",
+      "fuer": "für die gesprochene Begründung von 90 Sekunden"
+    }
   ],
-
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Bei welcher Handlung habe ich am längsten gezögert — und was genau hat das Zögern ausgelöst?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Welche Rückmeldung meiner Partnerperson hat meine Zuordnung ins Wanken gebracht, und wie habe ich darauf reagiert?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Was ist mir wichtiger: dass die Schweiz Zugesagtes einhält oder dass sie neu entscheiden kann — und woran merke ich das an meiner eigenen Sortierung?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
@@ -347,71 +481,138 @@
       ]
     }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Übersicht sortieren, Begründung halten", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Übersicht sortieren, Begründung halten",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
   "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "5.4.2_internationale_entscheide_wirken_4j_prinzip",
   "herausforderung": {
     "buchstabe": "C",
     "label": "Fünf staatliche Handlungen danach sortieren, ob sie vertraglich gebunden oder politisch entschieden sind, und jede Zuordnung begründen"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Zugesagtes einhalten vs. neu entscheiden dürfen",
     "hint": "Beide Haltungen sind begründbar. Wer Zugesagtes einhält, bleibt verlässlich und behält den Zugang zu Märkten und Verfahren. Wer neu entscheiden will, behält Spielraum, riskiert aber Vertrauen und Gegenmassnahmen. Bewertet wird, wie sauber Sie Bindung und Spielraum unterscheiden — nicht, welche Haltung Sie vertreten."
   },
-
   "dekontextualisierung": {
     "frage": "Wenn ich morgen eine neue staatliche Handlung höre — mit welcher Frage prüfe ich zuerst, ob sie gebunden oder entschieden ist?",
     "ziel": "Die Lernenden lösen die Unterscheidung von den fünf Beispielen ab: Ob eine Handlung gebunden ist, erkennt man an Merkmalen, nicht am Ton der Aussage."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R4 (Recht) · R2 (Politik)",
     "r2_voraussicht": "T7 Schlussarbeit — Aussagen zu einer eigenen Fragestellung auf ihre Verbindlichkeit prüfen.",
     "r3_voraussicht": "T8.3 — erste Stelle antreten: Rechte, Pflichten und Spielräume im Arbeitsverhältnis unterscheiden."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 1.3", "titel": "Rechtsgrundlagen — Recht als erzwingbare Ordnung, Abgrenzung zu Sitte, Brauch und Moral, Stufenbau der Rechtsnormen", "seiten": "Seite 21-22", "unterueberschrift": "Aufgaben des Rechts / Aufbau der Rechtsordnung", "fuer_leitfrage": [1]},
-    {"ref": "Kap. 11.1", "titel": "Schweiz – EU — bilaterale Verträge, Landverkehr, Schengen und Dublin, weiterer bilateraler Weg", "seiten": "Seite 267-269", "unterueberschrift": "Bilaterale Verträge I und II", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 11.1", "titel": "Internationale Organisationen — UNO, WTO und Streitschlichtung bei Handelskonflikten", "seiten": "Seite 270-271", "unterueberschrift": "Internationale Organisation / WTO", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 11.3", "titel": "Entwicklungspolitik — Verfassungsauftrag BV 54, Entwicklungszusammenarbeit der Schweiz", "seiten": "Seite 286", "unterueberschrift": "Entwicklungspolitik / Entwicklungszusammenarbeit (EZA)", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 16.2", "titel": "Statement — Aufbau in drei Zügen", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 1.3",
+      "titel": "Rechtsgrundlagen — Recht als erzwingbare Ordnung, Abgrenzung zu Sitte, Brauch und Moral, Stufenbau der Rechtsnormen",
+      "seiten": "Seite 21-22",
+      "unterueberschrift": "Aufgaben des Rechts / Aufbau der Rechtsordnung",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 11.1",
+      "titel": "Schweiz – EU — bilaterale Verträge, Landverkehr, Schengen und Dublin, weiterer bilateraler Weg",
+      "seiten": "Seite 267-269",
+      "unterueberschrift": "Bilaterale Verträge I und II",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 11.1",
+      "titel": "Internationale Organisationen — UNO, WTO und Streitschlichtung bei Handelskonflikten",
+      "seiten": "Seite 270-271",
+      "unterueberschrift": "Internationale Organisation / WTO",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 11.3",
+      "titel": "Entwicklungspolitik — Verfassungsauftrag BV 54, Entwicklungszusammenarbeit der Schweiz",
+      "seiten": "Seite 286",
+      "unterueberschrift": "Entwicklungspolitik / Entwicklungszusammenarbeit (EZA)",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 16.2",
+      "titel": "Statement — Aufbau in drei Zügen",
+      "seiten": "Seite 368",
+      "unterueberschrift": "Aufbau eines Statements",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Massstab angewendet", "indikator": "Die vier Merkmale von Recht werden beim Sortieren sichtbar genutzt.", "gewicht_prozent": 25},
-      {"kriterium": "Zuordnung belegt", "indikator": "Alle fünf Handlungen tragen eine Quelle mit Kapitel und Seite.", "gewicht_prozent": 25},
-      {"kriterium": "Strittige Fälle", "indikator": "Zu zwei Zuordnungen sind beide Lesarten festgehalten.", "gewicht_prozent": 25},
-      {"kriterium": "Mündliche Umsetzung", "indikator": "Die Begründung ist in 90 Sekunden nachvollziehbar und frei gesprochen.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Massstab angewendet",
+        "indikator": "Die vier Merkmale von Recht werden beim Sortieren sichtbar genutzt.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Zuordnung belegt",
+        "indikator": "Alle fünf Handlungen tragen eine Quelle mit Kapitel und Seite.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Strittige Fälle",
+        "indikator": "Zu zwei Zuordnungen sind beide Lesarten festgehalten.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mündliche Umsetzung",
+        "indikator": "Die Begründung ist in 90 Sekunden nachvollziehbar und frei gesprochen.",
+        "gewicht_prozent": 25
+      }
     ],
     "scaffold_90": "Drei der fünf Handlungen sind bereits zugeordnet; die Lernenden sortieren die zwei strittigen und begründen sie.",
     "scaffold_100": "Zusätzlich wird eine sechste Handlung selbst gesucht und in die Übersicht eingeordnet."
   },
-
   "prinzip_handoff": {
     "kernkonzept": "Staatliche Handlungen unterscheiden sich im Bindungsgrad: Was vertraglich vereinbart und erzwingbar ist, folgt anderen Regeln als das, was politisch neu entschieden werden kann.",
     "lehrmittel_anker": "Kap. 1.3 S. 21-22 (Merkmale von Recht), Kap. 11.1 S. 267-269 (bilaterale Verträge, Dublin, Landverkehr), Kap. 11.1 S. 270-271 (UNO, WTO-Streitschlichtung), Kap. 11.3 S. 286 (Verfassungsauftrag BV 54), Kap. 16.2 S. 368 (Statement)",
     "kn_aktivierung": "Diese Herausforderung liefert den Massstab, mit dem sich eine Behauptung über staatliches Handeln prüfen lässt, statt sie zu glauben.",
     "transfer_check": "Die Lernenden können eine neue staatliche Handlung einordnen und ihre Zuordnung an einem Merkmal begründen, ohne die fünf Beispiele zu wiederholen."
   },
-
   "sk_anker": [
-    {"sk": 5, "wo": "In R3 und im Ast «Warum die Grenze wandert» prüfen die Lernenden, ob ihnen Verlässlichkeit oder Handlungsspielraum wichtiger ist und woran das an der eigenen Sortierung sichtbar wird."},
-    {"sk": 6, "wo": "In LF3, LF4 und der gesprochenen Begründung wird jede strittige Zuordnung nach dem 3B-Schema mit Merkmal und Quelle begründet."},
-    {"sk": 11, "wo": "Die zwei strittigen Fälle bleiben ausdrücklich zweideutig: Beide Lesarten werden festgehalten, bevor die eigene Zuordnung begründet wird."}
+    {
+      "sk": 5,
+      "wo": "In R3 und im Ast «Warum die Grenze wandert» prüfen die Lernenden, ob ihnen Verlässlichkeit oder Handlungsspielraum wichtiger ist und woran das an der eigenen Sortierung sichtbar wird."
+    },
+    {
+      "sk": 6,
+      "wo": "In LF3, LF4 und der gesprochenen Begründung wird jede strittige Zuordnung nach dem 3B-Schema mit Merkmal und Quelle begründet."
+    },
+    {
+      "sk": 11,
+      "wo": "Die zwei strittigen Fälle bleiben ausdrücklich zweideutig: Beide Lesarten werden festgehalten, bevor die eigene Zuordnung begründet wird."
+    }
   ]
 }

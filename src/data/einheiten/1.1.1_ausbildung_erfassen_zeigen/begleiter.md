@@ -25,7 +25,7 @@ quellen_json:
 
 ## 0. So funktioniert diese Einheit
 
-1. **Von hinten gedacht.** Zuerst stand der Kompetenznachweis fest, dann die drei Herausforderungen. Die Lernaufgaben führen auf eine einzige Prüfsituation zu — den Berufsinfo-Abend in Chur —, in der alle drei Konfliktarten gleichzeitig wirken. Wer das weiss, unterrichtet die drei Wochen anders: nicht als drei Themen, sondern als drei Anläufe auf dieselbe Sache.
+1. **Von hinten gedacht.** Zuerst stand der Kompetenznachweis fest, dann die drei Herausforderungen. Die Lernaufgaben führen auf eine einzige Prüfsituation zu — den Berufsinfo-Abend am Stand des Lehrbetriebs —, in der alle drei Konfliktarten gleichzeitig wirken. Wer das weiss, unterrichtet die drei Wochen anders: nicht als drei Themen, sondern als drei Anläufe auf dieselbe Sache.
 
 2. **Eine Kompetenz, drei Herausforderungen.** A — *Lernorte erschliessen*: die eigene Ausbildung belegt erfassen. B — *Mich adressatengerecht zeigen*: dieselbe Person für zwei Gegenüber. C — *Meine Richtung begründen*: der Tag nach dem EFZ und wessen Erwartung darin steckt. Die Blickrichtung wandert von aussen über «ich für andere» zu «ich morgen».
 
@@ -46,8 +46,9 @@ quellen_json:
 > **Variante C** (Gruppenpuzzle): 2 Lektionen + 1 Lektion Austausch = **3 Lektionen** plus KN.
 > Bei drei Lektionen pro Woche entspricht Variante A drei Schulwochen — genau der Einstiegsphase im August.
 
-> [!hinweis] Diese Einheit hat bewusst keine Berufspersona
-> Die anderen Einheiten geben eine Person vor — «Ich bin Schreiner/in bei X in Y». Hier steht überall nur «Ich bin Lernende/r in einer EFZ-Ausbildung». Der Grund: Die Lernenden arbeiten an ihrem **eigenen** Lehrvertrag, ihrer eigenen Selbstvorstellung, ihrer eigenen Richtung. Eine fremde Berufspersona würde die Ich-Perspektive nicht stützen, sondern verstellen — man müsste sich erst in eine Maurerin hineinversetzen, um über die eigene Ausbildung nachzudenken. Gleiches Vorgehen wie in `1.1.1_einstieg_interview`.
+> [!hinweis] Neutrale Persona — auf allen Blättern, auch im Kompetenznachweis
+> Überall in dieser Einheit steht dieselbe Person: «Lernende/r EFZ, 1. Lehrjahr · eigener Lehrbetrieb, eigener Wohnort». Kein Beruf, keine Firma, kein Ort — und im Kompetenznachweis dieselbe Person wie in den Lernaufgaben. Das ist seit September 2026 die Regel für alle Einheiten, und sie hat einen praktischen Grund: Unter Variante C (Gruppenpuzzle) sieht eine lernende Person genau **eine** Herausforderung; eine vorgegebene Berufspersona träfe dort in einer gemischten Klasse fast immer den falschen Beruf. Konkret wird die Sache nicht über die Person, sondern über das Ereignis — das üK-Aufgebot, der Steckbrief an der Pinnwand, der Satz des Onkels am Familientisch.
+> Nicht alle haben einen Lehrbetrieb (zwischen zwei Verträgen, schulisch organisierte Grundbildung). Wo ein Auftrag den Betrieb braucht, steht die Alternative auf dem Blatt: «in Ihrem Lehrbetrieb — oder dort, wo Sie zuletzt gearbeitet haben». Halten Sie das im Unterricht durch, auch mündlich.
 > Die **Musterlösungen** sind trotzdem konkret und tragen einen Beruf. Das ist kein Widerspruch: Sie zeigen, was *jemand anderes* abgegeben hat, und sind im Kopf entsprechend gekennzeichnet. Sagen Sie das der Klasse dazu, sonst kopiert jemand den Beruf mit.
 
 > [!hinweis] Das Material ist Starthilfe, nicht Vollprogramm
@@ -59,7 +60,7 @@ quellen_json:
 
 ### 1.1 Das Kompetenzversprechen
 
-> "Ich kann Informationen über meine Ausbildung aus analogen und digitalen Quellen zusammentragen und für ein bestimmtes Gegenüber verständlich aufbereiten."
+> "<!--hko:kn.kern_kompetenzversprechen-->Ich kann Informationen über meine Ausbildung aus analogen und digitalen Quellen zusammentragen und für ein bestimmtes Gegenüber verständlich aufbereiten.<!--/hko-->"
 
 ### 1.2 Ressourcenanalyse
 
@@ -90,14 +91,14 @@ LF4 trainiert dabei den Output-Sprachmodus als abgegrenzte Übung — die Quelle
 
 ### 1.4 Mehrdeutigkeits-Architektur
 
-1. **Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe** → Herausforderung A
-2. **Alles von mir zeigen vs. für mein Gegenüber auswählen und weglassen** → Herausforderung B
-3. **Erwartungen meines Umfelds vs. mein eigener Wunsch für morgen** → Herausforderung C
+1. **<!--hko:hf_A.mehrdeutigkeit.trade_off-->Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe<!--/hko-->** → Herausforderung A
+2. **<!--hko:hf_B.mehrdeutigkeit.trade_off-->Alles von mir zeigen vs. für mein Gegenüber auswählen und weglassen<!--/hko-->** → Herausforderung B
+3. **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Erwartungen meines Umfelds vs. mein eigener Wunsch für morgen<!--/hko-->** → Herausforderung C
 
 Alle drei sind Spannungsfelder, keine Fehler im Aufbau. Sie kehren im Kompetenznachweis gleichzeitig wieder.
 
 > [!mehrdeutigkeit] Der Grundsatz
-> Beide Seiten müssen begründbar bleiben — bewertet wird die Begründung der Auswahl, nie die Menge des Gezeigten. Eine lernende Person, die viel zeigt und es begründet, und eine, die wenig zeigt und es begründet, stehen auf derselben Stufe. Wer viel zeigt, ohne entschieden zu haben, steht darunter.
+> <!--hko:kn.mehrdeutigkeits_pflicht-->Beide Seiten müssen begründbar bleiben — bewertet wird die Begründung der Auswahl, nie die Menge des Gezeigten.<!--/hko--> Eine lernende Person, die viel zeigt und es begründet, und eine, die wenig zeigt und es begründet, stehen auf derselben Stufe. Wer viel zeigt, ohne entschieden zu haben, steht darunter.
 
 ### 1.5 Zirkularität
 
@@ -148,7 +149,7 @@ Dieser Begleiter macht **keine KI-Regel**. Ob und wie KI eingesetzt wird, ist Ih
 
 > [!hinweis] Die Reihenfolge ist frei
 > A → B → C zeigt den inhaltlichen Aufbau, nicht eine zwingende Unterrichtssequenz. Herausforderungen dürfen weggelassen oder umgestellt werden; im Kompetenznachweis wird nur geprüft, was tatsächlich geübt wurde.
-> **Der praktische Fall:** Bringt die Klasse am ersten Schultag den Lehrvertrag nicht mit — und das ist der Normalfall —, starten Sie mit **B**. B ist die einzige Herausforderung, die kein mitgebrachtes Dokument voraussetzt, sondern nur die Person selbst. A folgt in der zweiten Woche, wenn die Verträge da sind. Kündigen Sie in der ersten Lektion an, was mitzubringen ist; ein Foto des Vertrags auf dem Handy genügt.
+> **Der praktische Fall:** Alle drei Herausforderungen starten kalt — keine setzt ein Dokument voraus, das vor der ersten Lektion vorliegen muss. In **A** wird das Zusammentragen der Unterlagen in der ersten Lektion angestossen (Schritt 1) und ist zur zweiten fällig: LF1 läuft heute mit dem Lehrmittel, LF2 bis LF4 in der zweiten Lektion mit den eigenen Dokumenten. Ein Foto des Vertrags auf dem Handy genügt. Wer die Unterlagen nicht beibringt, arbeitet an der Lücke weiter — sie gehört in die Fusszeile des Blattes.
 
 **Variante A — Einzelarbeit, alle drei Herausforderungen.** 7 Lektionen plus KN. Die Kompetenz wird vollständig erworben, das Portfolio ist vollständig, der KN läuft ungekürzt. Das ist die Variante, für die die Einheit gebaut ist.
 
@@ -173,16 +174,18 @@ Dieser Begleiter macht **keine KI-Regel**. Ob und wie KI eingesetzt wird, ist Ih
 
 | | |
 |---|---|
-| Titel | Drei Orte, ein Vertrag — wer ist wofür zuständig? |
+| Titel | <!--hko:hf_A.titel-->Drei Orte, ein Vertrag — wer ist wofür zuständig?<!--/hko--> |
 | Sub-Herausforderung | Lernorte erschliessen |
-| Persona | Lernende/r EFZ, 1. Lehrjahr — bewusst ohne Beruf und Betrieb |
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Recht (R1) · Identität und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich und bildlich (SM3) · Produktion schriftlich und bildlich (SM5) |
 | Schlüsselkompetenzen | SK1 Quellen unterscheiden · SK6 Standpunkte begründen · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Orientierungsblatt: drei Lernorte, je vier belegte Angaben |
 | Wissensknoten | duale_berufsbildung_lernorte |
 
+<!--hko:hf_A.situation_text|quote-->
 > Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. Seit sechs Wochen habe ich drei Lernorte: den Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse. Geregelt ist das alles in einem einzigen Dokument, das bei mir zu Hause in einer Mappe liegt. Gestern kam per Post das üK-Aufgebot für zwei Tage im November — im Betrieb sagt man mir, davon wisse niemand etwas, ich solle das «mit dem Büro klären». Ich merke, dass ich nicht sagen könnte, wer eigentlich wofür zuständig ist. Und ich merke auch, dass in meinem Vertrag Dinge stehen, die im Alltag anders laufen.
+<!--/hko-->
 
 > [!hinweis] Qualität der Herausforderung
 > **Authentizität** — das üK-Aufgebot, von dem der Betrieb nichts weiss, ist ein Alltagsvorfall. **Verortung** — 1. Lehrjahr, sechs Wochen nach Lehrbeginn, drei Lernorte. **Problem** — eine Zuständigkeit ist unklar, nicht bloss eine Information fehlt. **Affektivität** — die Verlegenheit, die eigene Ausbildung nicht erklären zu können. **Kognition** — K2 bis K3+, mit Entscheidung bei LF3. **Aktivität** — es entsteht ein Blatt, das danach gebraucht wird. **LJ-Passung** — genau die ersten Wochen. **Relevanz** — jede lernende Person hat diese drei Orte.
@@ -195,18 +198,18 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 |---|---|---|
 | Ausrichten | Situation lesen. Frage in den Raum: «Wer von euch könnte jetzt gerade erklären, wer die üK organisiert?» | Plenum |
 | Vorwissen aktivieren | Die drei Lernorte an der Wandtafel sammeln, ohne Buch. Lücken stehen lassen. | Plenum |
-| Informieren | LF1 und LF2 mit Kap. 1.1 und dem eigenen Lehrvertrag. | Einzelarbeit |
-| Verarbeiten | Mindmap, dann LF3 und LF4. Danach das Orientierungsblatt. | Einzelarbeit |
+| Informieren | LF1 mit Kap. 1.1, Spaltenköpfe anlegen, Unterlagen für die zweite Lektion notieren. | Einzelarbeit |
+| Verarbeiten | Zweite Lektion: LF2 bis LF4 mit dem eigenen Lehrvertrag, Mindmap, dann das Orientierungsblatt. | Einzelarbeit |
 | Auswerten | Blatt einer Person aus einem anderen Beruf zeigen: versteht sie die Ausbildung ohne Nachfrage? | Partnerarbeit |
 
 ### Leitfragen mit Coaching-Hinweisen
 
-**LF1 (K2) — Erklären Sie in eigenen Worten, welche Aufgabe der Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse in Ihrer Ausbildung haben.**
+**LF1 (K2) — <!--hko:hf_A.leitfragen[0].text-->Erklären Sie in eigenen Worten, welche Aufgabe der Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse in Ihrer Ausbildung haben.<!--/hko-->**
 
 > [!coaching] LF1
 > Lassen Sie die drei Aufgaben zuerst mündlich formulieren, bevor jemand ins Buch schaut. Wer sagt «in der Schule lernt man Theorie», bekommt die Rückfrage: «Und was lernt man im üK?» Die üK sind die Stelle, an der fast alle unsicher sind — dort lohnt sich die Vorentlastung.
 
-**LF2 (K3) — Suchen Sie in Ihrem eigenen Lehrvertrag die obligatorischen Bestandteile und notieren Sie, was bei Ihnen jeweils konkret steht.**
+**LF2 (K3) — <!--hko:hf_A.leitfragen[1].text-->Suchen Sie in Ihrem eigenen Lehrvertrag die obligatorischen Bestandteile und notieren Sie, was bei Ihnen jeweils konkret steht.<!--/hko-->**
 
 > [!coaching] LF2
 > Gehen Sie herum und schauen Sie zu, **wie** gesucht wird. Wer bei Zeile eins anfängt und alles liest, bekommt die Methodenkarte «Gezielt suchen statt lesen» in die Hand und die Aufforderung, zuerst die Frage aufzuschreiben.
@@ -222,7 +225,7 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 > [!troubleshooting] Herausforderung A — «Bei mir stimmt alles, ich habe keine Abweichung»
 > Das kommt in jeder Klasse, meist von Lernenden, die den Konflikt nicht suchen wollen. Nicht erklären, sondern spiegeln: **«Sie haben letzte Woche im Betrieb etwas gemacht — beschreiben Sie mir den Dienstagvormittag. Und jetzt zeigen Sie mir, wo im Vertrag das steht.»** In neun von zehn Fällen steht es dort nicht, und das ist der Punkt: Ein Vertrag beschreibt keinen Arbeitstag. Die Abweichung ist kein Vorwurf an den Betrieb, sie ist die Regel — und genau das gehört in die Zeile.
 
-**LF4 (K3+) — Formulieren Sie für eine einzige Ihrer Angaben die Quellenzeile so, dass eine andere Person sie ohne Rückfrage überprüfen kann.**
+**LF4 (K3+) — <!--hko:hf_A.leitfragen[3].text-->Formulieren Sie für eine einzige Ihrer Angaben die Quellenzeile so, dass eine andere Person sie ohne Rückfrage überprüfen kann.<!--/hko-->**
 
 > [!coaching] LF4
 > Machen Sie die Probe aufs Exempel: Lassen Sie eine Quellenzeile vorlesen und suchen Sie selbst danach. Finden Sie die Stelle nicht, ist die Zeile nicht fertig. Das dauert zwei Minuten und ersetzt zehn Minuten Erklärung.
@@ -270,23 +273,31 @@ Satzanfänge zum Abgeben:
 ### Wann ist das Produkt fertig? (Selbstcheck — formativ, nicht benotet)
 
 **Leitfragen**
+<!--hko:hf_A.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ Alle vier Leitfragen sind schriftlich beantwortet.
 ☐ Die drei Lernorte sind mit ihrer je eigenen Aufgabe unterschieden, nicht bloss aufgezählt.
 ☐ Bei LF3 ist eine Reihenfolge gewählt und begründet, nicht nur eine Stelle genannt.
+<!--/hko-->
 
 **Mindmap**
+<!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Die drei Pflicht-Äste sind gefüllt.
 ☐ Jeder Ast trägt mindestens drei eigene Stichworte.
 ☐ Mindestens eine Verbindung zwischen zwei Ästen ist eingezeichnet.
+<!--/hko-->
 
 **Handlungsprodukt**
+<!--hko:hf_A.bewertungsraster[2].vollstaendig_wenn|checkliste-->
 ☐ Drei Spalten, je vier Angaben, jede mit einer nachprüfbaren Fundstelle.
 ☐ Pro Lernort ist die Zeile «Das erlebe ich anders» in ganzen Sätzen ausgefüllt.
 ☐ Angaben ohne Beleg stehen in der Fusszeile als offene Frage, nicht im Blatt.
+<!--/hko-->
 
 **Reflexion**
+<!--hko:hf_A.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Reflexionsfragen sind beantwortet.
 ☐ R3 nennt eine konkrete Person oder Stelle, nicht nur ein Vorhaben.
+<!--/hko-->
 
 > [!ki_einsatz] KI-Nutzungsideen — Herausforderung A (Orientierungsblatt)
 > **Suchwörter finden lassen.** Wer nicht weiss, wonach im Vertrag zu suchen ist, könnte eine KI fragen: «Ich suche im Lehrvertrag die Probezeit. Mit welchen drei Wörtern finde ich die Stelle?» Gesucht wird danach selbst.
@@ -326,14 +337,16 @@ Satzanfänge zum Abgeben:
 |---|---|
 | Titel | Was auf die Pinnwand darf |
 | Sub-Herausforderung | Mich adressatengerecht zeigen |
-| Persona | Lernende/r EFZ, 1. Lehrjahr — bewusst ohne Beruf und Betrieb |
+| Persona | <!--hko:hf_B.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Ethik (R1) · Identität und Sozialisation (R1) |
 | Sprachmodi | Produktion schriftlich und bildlich (SM5) · Interaktion und Kollaboration mündlich (SM7) |
 | Schlüsselkompetenzen | SK4 Teamarbeit · SK7 Verständnis fördern · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Steckbrief-Doppel: zwei Fassungen, am Partner erprobt |
 | Wissensknoten | selbstkundgabe_adressatenwahl |
 
+<!--hko:hf_B.situation_text|quote-->
 > Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. In der ABU-Lektion sollen wir uns vorstellen: ein kurzer Steckbrief, der an die Pinnwand im Klassenzimmer kommt. Ich habe meinen in zehn Minuten geschrieben, er ist ehrlich und er ist fertig. Beim Aufhängen bleibe ich stehen. Zwei Sätze darin stimmen zwar, aber ich will nicht, dass sie ein halbes Jahr lang für vierundzwanzig Leute an der Wand hängen. Und in einem dritten Satz kommt mein Berufsbildner vor, den ich nie gefragt habe, ob das in Ordnung ist. Der Lehrperson würde ich alle drei Sätze ohne Zögern sagen.
+<!--/hko-->
 
 > [!hinweis] Qualität der Herausforderung
 > **Authentizität** — die Vorstellungsrunde ist die erste ABU-Lektion überhaupt. **Verortung** — die erste ABU-Lektion, die Klasse kennt sich noch nicht. **Problem** — nicht «was schreibe ich», sondern «was hängt ein halbes Jahr». **Affektivität** — das Zögern beim Aufhängen kennen alle. **Kognition** — K2 bis K3+, mit echter Entscheidung bei LF3. **Aktivität** — zwei Texte plus ein Partnertest. **LJ-Passung** — die Klasse kennt sich noch nicht, das ist die Voraussetzung. **Relevanz** — es hängt danach wirklich.
@@ -352,7 +365,7 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 
 ### Leitfragen mit Coaching-Hinweisen
 
-**LF1 (K2) — Erklären Sie mit dem Kommunikationsquadrat, was «Selbstkundgabe» bedeutet — und weshalb sie auch dann mitläuft, wenn man sie nicht beabsichtigt.**
+**LF1 (K2) — <!--hko:hf_B.leitfragen[0].text-->Erklären Sie mit dem Kommunikationsquadrat, was «Selbstkundgabe» bedeutet — und weshalb sie auch dann mitläuft, wenn man sie nicht beabsichtigt.<!--/hko-->**
 
 > [!coaching] LF1
 > Nehmen Sie einen harmlosen Satz von der Wandtafel — «Ich fahre jeden Tag 40 Minuten mit dem Zug» — und lassen Sie die Klasse sammeln, was er über die Person verrät. Nach vier, fünf Nennungen ist der Begriff verstanden, ohne dass jemand die Definition gelesen hat.
@@ -362,7 +375,7 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 > [!coaching] LF2
 > Achten Sie auf den Unterschied zwischen «stimmt das» und «welches Bild entsteht». Wer nur bestätigt, dass die Angabe wahr ist, hat die Frage nicht beantwortet. Rückfrage: «Was denkt jemand über Sie, der Sie nicht kennt und nur diesen Satz liest?»
 
-**LF3 (K3) — Ordnen Sie jede Angabe einer Zone zu: dürfen alle wissen, nur die Lehrperson, niemand hier. Begründen Sie die zwei Zuordnungen, bei denen Sie am längsten überlegt haben.**
+**LF3 (K3) — <!--hko:hf_B.leitfragen[2].text-->Ordnen Sie jede Angabe Ihres Entwurfs einer Zone zu — dürfen alle wissen, nur die Lehrperson, niemand hier — und begründen Sie die zwei Zuordnungen, bei denen Sie am längsten überlegt haben.<!--/hko-->**
 
 > [!coaching] LF3
 > Machen Sie klar, dass die Zone-3-Angaben **nirgends abgegeben** werden — auch nicht bei Ihnen. Sonst ist die Zuordnung eine Falle. Und sagen Sie es, bevor die Arbeit beginnt, nicht nachher.
@@ -418,24 +431,32 @@ Satzanfänge zum Abgeben:
 ### Wann ist das Produkt fertig? (Selbstcheck — formativ, nicht benotet)
 
 **Leitfragen**
+<!--hko:hf_B.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ Alle vier Leitfragen sind schriftlich beantwortet.
 ☐ Die vier Botschaften des Kommunikationsquadrats sind unterschieden, nicht nur aufgezählt.
 ☐ Bei LF3 sind zwei Zuordnungen begründet, nicht bloss gesetzt.
+<!--/hko-->
 
 **Mindmap**
+<!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Die drei Pflicht-Äste sind gefüllt.
 ☐ Jeder Ast trägt mindestens drei eigene Stichworte.
 ☐ Mindestens eine Verbindung zwischen zwei Ästen ist eingezeichnet.
+<!--/hko-->
 
 **Handlungsprodukt**
+<!--hko:hf_B.bewertungsraster[2].vollstaendig_wenn|checkliste-->
 ☐ Beide Fassungen liegen vor, je 80 bis 100 Wörter, beide mit Einleitung, Hauptteil und Schluss.
-☐ Die Auswahlbegründung nennt auch, was die kurze Fassung dadurch nicht mehr zeigt.
+☐ Die Auswahlbegründung nennt nicht nur das Weggelassene, sondern auch, was die kurze Fassung dadurch nicht mehr zeigt.
 ☐ Werden andere Personen genannt, ist festgehalten, dass sie gefragt wurden — oder sie sind gestrichen.
 ☐ Die Rückmeldung der Partnerperson ist von dieser selbst geschrieben.
+<!--/hko-->
 
 **Reflexion**
+<!--hko:hf_B.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Reflexionsfragen sind beantwortet.
 ☐ R3 nennt eine konkrete Änderung am Text, nicht nur eine Absicht.
+<!--/hko-->
 
 > [!ki_einsatz] KI-Nutzungsideen — Herausforderung B (Steckbrief-Doppel)
 > **Register spiegeln lassen.** Beide Fassungen einer KI vorlegen: «Für wen ist Text 1 geschrieben, für wen Text 2? Woran erkennst du das?» Deckt sich die Antwort nicht mit der Absicht, liegt es am Text.
@@ -478,14 +499,16 @@ Satzanfänge zum Abgeben:
 |---|---|
 | Titel | Der Tag nach meinem EFZ |
 | Sub-Herausforderung | Meine Richtung begründen |
-| Persona | Lernende/r EFZ, 1. Lehrjahr — bewusst ohne Beruf und Betrieb |
+| Persona | <!--hko:hf_C.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Ethik (R1) · Identität und Sozialisation (R1) |
 | Sprachmodi | Rezeption schriftlich und bildlich (SM3) · Produktion schriftlich und bildlich (SM5) |
 | Schlüsselkompetenzen | SK6 Standpunkte begründen · SK8 Lebensphasen planen · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Zukunftskarte mit begründeter Wahl und einem Schritt |
 | Wissensknoten | rollenerwartung_und_eigene_richtung |
 
+<!--hko:hf_C.situation_text|quote-->
 > Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. Am Sonntag beim Familienessen sagt mein Onkel, ich solle «unbedingt die BM machen, sonst bist du in zehn Jahren dort, wo du heute stehst». Mein Berufsbildner hat letzte Woche etwas anderes gesagt: erst das EFZ sauber abschliessen, danach im Betrieb weiterkommen, alles andere sei Zeitverlust. Beide meinen es gut, beide kennen mich, und beide widersprechen sich. Meine Lehre hat vor acht Wochen begonnen und das Ende ist weit weg — trotzdem entscheiden andere Leute schon jetzt darüber. Ich habe gemerkt: Was ich selbst will, habe ich noch nirgends aufgeschrieben.
+<!--/hko-->
 
 > [!hinweis] Qualität der Herausforderung
 > **Authentizität** — das Familienessen im ersten Lehrjahr, mit genau diesen zwei Ratschlägen. **Verortung** — Familienessen, acht Wochen nach Lehrbeginn. **Problem** — zwei wohlmeinende Autoritäten widersprechen sich. **Affektivität** — der Druck ist echt und kommt zu früh. **Kognition** — K2 bis K4, mit Entscheidung und Begründung. **Aktivität** — eine Karte, die im Portfolio bleibt. **LJ-Passung** — SK8 steht in T1 auf R1. **Relevanz** — die Frage kommt an jedem Familienfest wieder.
@@ -575,24 +598,32 @@ Satzanfänge zum Abgeben:
 ### Wann ist das Produkt fertig? (Selbstcheck — formativ, nicht benotet)
 
 **Leitfragen**
+<!--hko:hf_C.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ Alle vier Leitfragen sind schriftlich beantwortet.
 ☐ Mindestens drei Anschlusswege sind mit ihrer Voraussetzung genannt.
 ☐ Bei LF3 ist eine Richtung gewählt und mit einem eigenen Wert begründet.
+<!--/hko-->
 
 **Mindmap**
+<!--hko:hf_C.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Die drei Pflicht-Äste sind gefüllt.
 ☐ Jeder Ast trägt mindestens drei eigene Stichworte.
 ☐ Mindestens eine Verbindung zwischen zwei Ästen ist eingezeichnet.
+<!--/hko-->
 
 **Handlungsprodukt**
+<!--hko:hf_C.bewertungsraster[2].vollstaendig_wenn|checkliste-->
 ☐ Die Karte enthält alle vier Felder: Bild, Erwartungen, Entscheid, Schritt.
 ☐ Mindestens drei Erwartungen sind mit Rolle, Wert dahinter und Antrieb eingetragen.
 ☐ Die Begründung nennt einen eigenen Wert und nicht die Zustimmung einer Person.
 ☐ Der Schritt trägt ein Datum und hängt nicht vom Handeln anderer ab.
+<!--/hko-->
 
 **Reflexion**
+<!--hko:hf_C.bewertungsraster[3].vollstaendig_wenn|checkliste-->
 ☐ Alle drei Reflexionsfragen sind beantwortet.
 ☐ R3 nennt eine konkrete Person und eine Reaktion auf Widerspruch.
+<!--/hko-->
 
 > [!ki_einsatz] KI-Nutzungsideen — Herausforderung C (Zukunftskarte)
 > **Als Gegenpartei antworten lassen.** «Du bist mein Onkel und findest, ich soll die BM machen. Ich erkläre dir meinen Entscheid — stelle mir drei kritische Rückfragen.» Wer die drei Fragen beantworten kann, hat eine tragfähige Begründung.
@@ -650,11 +681,11 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 
 ## 7. Transfer
 
-**Auftrag:** Übertragen Sie das Kernprinzip Ihrer drei Herausforderungen auf einen neuen, selbst gewählten Zusammenhang ausserhalb der Schule. Schriftlich, 5–7 Sätze, mit den Begriffen aus dem Lehrmittel. Abgabe in Woche 3, vor dem Kompetenznachweis.
+**Auftrag:** <!--hko:set.dekontextualisierungs_aufgabe.auftrag-->Übertragen Sie das Kernprinzip Ihrer drei Herausforderungen auf einen neuen, selbst gewählten Zusammenhang ausserhalb der Schule.<!--/hko--> Schriftlich, 5–7 Sätze, mit den Begriffen aus dem Lehrmittel. Abgabe in Woche 3, vor dem Kompetenznachweis.
 
 **Der Anker-Satz:**
 
-> Wer etwas über sich oder seine Lage mitteilt, wählt aus. Die Auswahl richtet sich nach dem Gegenüber und nach dem Zweck — und sie ist begründbar, auch wenn sie etwas weglässt.
+> <!--hko:set.dekontextualisierungs_aufgabe.ziel-->Wer etwas über sich oder seine Lage mitteilt, wählt aus. Die Auswahl richtet sich nach dem Gegenüber und nach dem Zweck — und sie ist begründbar, auch wenn sie etwas weglässt.<!--/hko-->
 
 > [!lernziel] So sieht guter Transfer aus
 > «Beim Fussballverein suchen sie einen neuen Juniorentrainer und haben mich gefragt. Ich müsste den Eltern von Zehnjährigen erklären, wer ich bin. Denen ist egal, dass ich Elektroinstallateur lerne — die wollen wissen, ob ihr Kind bei mir sicher ist und ob ich zuverlässig zu den Trainings komme. Meine Selbstkundgabe wäre also eine andere als in der Klasse: nicht «ich bin einer von euch», sondern «auf mich ist Verlass». Weglassen würde ich, dass ich selbst erst siebzehn bin — nicht weil es peinlich ist, sondern weil es in dieser Frage nichts über meine Zuverlässigkeit sagt. Wenn mich jemand direkt fragt, sage ich es.»
@@ -669,20 +700,26 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 
 ### 8.1 Die Hybrid-Herausforderung
 
-**Persona:** Laborant/in EFZ, Labor Grischun AG, Chur — 1. Lehrjahr, neu gegenüber allen drei Lernaufgaben.
+**Persona:** <!--hko:kn.hybrid_situation.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko-->.
 
-> Ich bin Laborant/in im 1. Lehrjahr bei der Labor Grischun AG in Chur. Am Berufsinfo-Abend stehe ich am Stand meines Betriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Ich habe ein A4-Blatt vorbereitet. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur Geschirr gespült habe. Ein Vater fragt, was ich danach mache. Meine Ausbildnerin steht einen Meter weiter. Zu Hause habe ich diese Frage längst anders beantwortet als hier. Und beim üK-Ablauf, nach dem eine Mutter fragt, bin ich mir selbst nicht sicher.
+<!--hko:kn.hybrid_situation.text|quote-->
+> Ich bin im 1. Lehrjahr. Am Berufsinfo-Abend stehe ich am Stand meines Lehrbetriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Das A4-Blatt auf dem Tisch hat der Betrieb gemacht, nicht ich. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur aufgeräumt und Material eingeräumt habe. Eine Mutter fragt nach dem Ablauf der überbetrieblichen Kurse, und ich bin mir selbst nicht sicher. Ein Vater fragt, was ich nach dem EFZ mache; zu Hause habe ich diese Frage längst anders beantwortet als hier, und meine Ausbildnerin steht einen Meter weiter. Was ich an diesem Abend sage, entscheidet mit, ob sich jemand für diese Ausbildung anmeldet.
+<!--/hko-->
 
-**Leitfrage:** Was gehört auf mein Blatt und in meine Antwort — und wem gegenüber verantworte ich diese Auswahl?
+**Leitfrage:** <!--hko:kn.hybrid_situation.leitfrage-->Was ergänze ich, was lasse ich weg — und wem gegenüber verantworte ich diese Auswahl?<!--/hko-->
 
 | Aus Herausforderung | zeigt sich im KN als |
 |---|---|
-| A — Lernorte erschliessen | Der üK-Ablauf, bei dem die Person unsicher ist, und die zwei Wochen Geschirrspülen: was im Bildungsplan steht und was tatsächlich geschah. |
-| B — Mich adressatengerecht zeigen | Das vorbereitete A4-Blatt und die Vorgabe, es «positiv» zu halten — eine Auswahl für ein Publikum, das die Person nicht kennt. |
+| A — Lernorte erschliessen | Der üK-Ablauf, bei dem die Person unsicher ist, und die zwei Wochen mit fast nur Aufräumarbeiten: was im Bildungsplan steht und was tatsächlich geschah. |
+| B — Mich adressatengerecht zeigen | Das vom Betrieb vorbereitete A4-Blatt und die Vorgabe, es «positiv» zu halten — eine Auswahl für ein Publikum, das die Person nicht kennt. |
 | C — Meine Richtung begründen | Die Frage des Vaters nach dem Danach, die zu Hause längst anders beantwortet wurde. |
 
-> [!hinweis] Eine neue Dimension
-> In A, B und C entscheidet die lernende Person unbeobachtet. Hier hört jemand mit, der Weisungsbefugnis hat: Die Ausbildnerin steht einen Meter weiter, während der Vater fragt. Das ist bewusst so gebaut und im 1. Lehrjahr der Normalfall — es macht aus der Schreibübung eine Entscheidung. Rechnen Sie damit, dass genau dieser Punkt im Gespräch am meisten Zeit braucht.
+> [!hinweis] Drei neue Dimensionen — sie ersetzen den fremden Beruf
+> Bis September 2026 trug ein fremder Beruf einen Teil des Transfers. Jetzt leistet das der **Fall** allein, und zwar an drei Stellen.
+> **Erstens:** In A, B und C entscheidet die lernende Person unbeobachtet. Hier hört jemand mit, der Weisungsbefugnis hat — die Ausbildnerin steht einen Meter weiter, während der Vater fragt. Das ist im 1. Lehrjahr der Normalfall und macht aus der Schreibübung eine Entscheidung.
+> **Zweitens:** Die Folge trifft nicht die lernende Person selbst. Wer sich nach diesem Abend anmeldet, entscheidet auf Grundlage ihrer Auskunft. In den drei Lernaufgaben trägt sie die Folgen ihrer Auswahl allein.
+> **Drittens:** Das A4-Blatt stammt vom Betrieb, nicht von ihr. In A, B und C wählt sie aus eigenem Material aus; hier muss sie eine fremde Auswahl erst prüfen, bevor sie sie vertritt.
+> Rechnen Sie damit, dass die zweite Dimension im Gespräch am meisten Zeit braucht.
 
 ### 8.2 Methodenwahl
 
@@ -712,9 +749,9 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 
 **Reflexionsfragen**
 
-1. Nennen Sie drei Dinge, die Sie nach diesen drei Wochen sicher können — und je eine Stelle in Ihrem Portfolio, an der man das sieht.
-2. Formulieren Sie in einem Satz das Prinzip, das alle drei Stücke gemeinsam haben. Zeigen Sie dann, wo dieses Prinzip am Berufsinfo-Abend sichtbar wird: Was ist gleich, was ist anders?
-3. Nennen Sie eine Sache, die Sie noch nicht gut können, und den einen Schritt, mit dem Sie sie bis zu einem selbst gesetzten Termin verbessern. Und: Wann trägt das Prinzip nicht mehr — wann wäre Auswählen nicht mehr zulässig, sondern unehrlich?
+1. <!--hko:kn.kn_typen[2].reflexionsfragen[0]-->Nennen Sie drei Dinge, die Sie nach diesen drei Wochen sicher können — und je eine Stelle in Ihrem Portfolio, an der man das sieht.<!--/hko-->
+2. <!--hko:kn.kn_typen[2].reflexionsfragen[1]-->Formulieren Sie in einem Satz das Prinzip, das alle drei Stücke gemeinsam haben. Zeigen Sie dann, wo dieses Prinzip am Berufsinfo-Abend sichtbar wird: Was ist gleich, was ist anders?<!--/hko-->
+3. <!--hko:kn.kn_typen[2].reflexionsfragen[2]-->Nennen Sie eine Sache, die Sie noch nicht gut können, und den einen Schritt, mit dem Sie sie bis zu einem selbst gesetzten Termin verbessern. Und: Wann trägt das Prinzip nicht mehr — wann wäre Auswählen nicht mehr zulässig, sondern unehrlich?<!--/hko-->
 
 > [!erwartungshorizont] Reflexionsfrage 3 (Werthaltung, K4) — die Grenze des Prinzips
 > **Stufe 3 zeigt:** eine benennbare Schwäche mit einem überprüfbaren Schritt, und eine Grenze des Prinzips, die genannt wird — etwa: wenn das Weggelassene den Rest in ein falsches Licht rückt.
@@ -731,34 +768,34 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 | 4 | Transfer | 4 | Vergleich mit einer eigenen Lernaufgabe |
 | 5 | Werthaltung | 4 | Verpflichtung gegenüber wem |
 
-**Frage 1 — Erklären Sie, wie Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse zusammenspielen — so, wie Sie es an diesem Abend einer Familie erklären würden, die das System nicht kennt.**
+**Frage 1 — <!--hko:kn.kn_typen[0].fragestruktur[0].frage-->Erklären Sie, wie Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse zusammenspielen — so, wie Sie es an diesem Abend einer Familie erklären würden, die das System nicht kennt.<!--/hko-->**
 
 > [!erwartungshorizont] Frage 1 (Erklären, K2) — die drei Lernorte
 > **Vollständig:** Alle drei Lernorte mit ihrer je eigenen Aufgabe, nicht als Aufzählung; die Adressierung an Laien ist erkennbar (keine Abkürzungen ohne Erklärung).
 > **Lückenhaft:** Die üK fehlen oder werden mit der Schule verwechselt — das ist der häufigste Ausfall. Ebenfalls lückenhaft: alle drei genannt, aber ohne Unterschied in der Aufgabe.
 
-**Frage 2 — Auf dem A4-Blatt steht die Ausbildung in der Fassung des Betriebs. Welche Angabe würden Sie ergänzen, damit das Blatt für diese Jugendlichen zutrifft — und welche würden Sie trotzdem weglassen?**
+**Frage 2 — <!--hko:kn.kn_typen[0].fragestruktur[1].frage-->Auf dem A4-Blatt steht die Ausbildung in der Fassung des Betriebs. Welche Angabe würden Sie ergänzen, damit das Blatt für diese Jugendlichen zutrifft — und welche würden Sie trotzdem weglassen?<!--/hko-->**
 
 > [!erwartungshorizont] Frage 2 (Anwenden, K3) — ergänzen und weglassen
 > **Stufe 3 zeigt:** eine konkrete Ergänzung **und** eine konkrete Weglassung, beide mit Bezug auf das Publikum — Jugendliche vor der Berufswahl, nicht Fachleute.
 > **Stufe 4 zeigt zusätzlich:** dass die Weglassung eine Folge hat, die benannt wird («dann erfahren sie nicht, dass …»).
 > **Nicht Stufe 4:** nur ergänzen wollen, ohne etwas wegzulassen. Wer alles aufnimmt, hat die Aufgabe nicht gelöst, sondern vermieden.
 
-**Frage 3 — Zwei Dinge fehlen: die zwei Wochen Geschirrspülen und der üK-Ablauf, den Sie selbst nicht kennen. Ist das zweimal dasselbe Problem oder sind es zwei verschiedene? Begründen Sie.**
+**Frage 3 — <!--hko:kn.kn_typen[0].fragestruktur[2].frage-->Zwei Dinge fehlen: die zwei Wochen mit fast nur Aufräumarbeiten und der üK-Ablauf, den Sie selbst nicht kennen. Ist das zweimal dasselbe Problem oder sind es zwei verschiedene? Begründen Sie.<!--/hko-->**
 
 > [!erwartungshorizont] Frage 3 (Beurteilen, K3) — zwei Lücken unterscheiden
 > **Stufe 3 zeigt:** die Unterscheidung wird getroffen — das eine ist bewusst weggelassen (Auswahl), das andere ist eine Wissenslücke. Die Begründung benennt diesen Unterschied.
-> **Stufe 4 zeigt zusätzlich:** dass beide trotzdem zusammenhängen — wer den üK-Ablauf nicht kennt, kann auch nicht beurteilen, ob die zwei Wochen Geschirrspülen im Rahmen lagen.
+> **Stufe 4 zeigt zusätzlich:** dass beide trotzdem zusammenhängen — wer den üK-Ablauf nicht kennt, kann auch nicht beurteilen, ob die zwei Wochen mit fast nur Aufräumarbeiten im Rahmen lagen.
 > **Nicht Stufe 4:** «Beides ist unehrlich.» Setzt Nichtwissen mit Verschweigen gleich und macht die Unterscheidung zunichte.
 
-**Frage 4 — Vergleichen Sie diesen Abend mit einer Ihrer drei Lernaufgaben. Was funktioniert gleich — und was ist hier schwieriger als dort?**
+**Frage 4 — <!--hko:kn.kn_typen[0].fragestruktur[3].frage-->Vergleichen Sie diesen Abend mit einer Ihrer drei Lernaufgaben. Was funktioniert gleich — und was ist hier schwieriger als dort?<!--/hko-->**
 
 > [!erwartungshorizont] Frage 4 (Transfer, K4) — Vergleich mit der eigenen Aufgabe
 > **Stufe 3 zeigt:** eine benannte Lernaufgabe, eine Gemeinsamkeit im Verfahren (Adressat klären, dann auswählen) und ein Unterschied.
 > **Stufe 4 zeigt zusätzlich:** dass der Unterschied strukturell benannt wird — hier antwortet man mündlich und sofort, in der Lernaufgabe schriftlich und mit Bedenkzeit; und jemand hört mit.
 > **Nicht Stufe 4:** «Es ist einfach schwieriger, weil es echt ist.» Richtig, aber unbestimmt — es benennt keinen Mechanismus.
 
-**Frage 5 — Ihre Ausbildnerin steht einen Meter weiter, als der Vater nach Ihrer Zukunft fragt. Wem gegenüber sind Sie in diesem Moment verpflichtet — und weshalb ist das mehr als eine Frage der Höflichkeit?**
+**Frage 5 — <!--hko:kn.kn_typen[0].fragestruktur[4].frage-->Ihre Ausbildnerin steht einen Meter weiter, als der Vater nach Ihrer Zukunft fragt. Wem gegenüber sind Sie in diesem Moment verpflichtet — und weshalb ist das mehr als eine Frage der Höflichkeit?<!--/hko-->**
 
 > [!erwartungshorizont] Frage 5 (Werthaltung, K4) — Verpflichtung gegenüber wem
 > **Stufe 3 zeigt:** mindestens zwei Verpflichtungen werden erkannt — gegenüber der fragenden Familie (zutreffende Auskunft) und gegenüber dem Betrieb (Loyalität, Arbeitsverhältnis) — und eine Position wird bezogen.
@@ -767,27 +804,27 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 
 ### 8.5 Mini Case schriftlich — Aufgaben
 
-**Aufgabe 1 — Erklären Sie in drei bis fünf Sätzen, welche Aufgabe Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse haben. Nennen Sie zu jedem Lernort, wo diese Aufgabe geregelt ist.**
+**Aufgabe 1 — <!--hko:kn.kn_typen[1].aufgaben[0].aufgabe-->Erklären Sie in drei bis fünf Sätzen, welche Aufgabe Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse haben. Nennen Sie zu jedem Lernort, wo diese Aufgabe geregelt ist.<!--/hko-->**
 
 > [!erwartungshorizont] Aufgabe 1 (Erklären, K2) — Lernorte mit Grundlage
 > **Vollständig:** drei Lernorte, drei Aufgaben, drei Grundlagen (BBG 19 / BBG 21f. / BBG 23 oder sinngemäss «Bildungsverordnung», «Schullehrplan», «üK-Reglement»).
 > **Lückenhaft:** Aufgaben ohne Grundlage — das ist der halbe Punkt. Oder die üK fehlen.
 
-**Aufgabe 2 — Auf dem Blatt fehlen zwei Dinge: die zwei Wochen Geschirrspülen und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.**
+**Aufgabe 2 — <!--hko:kn.kn_typen[1].aufgaben[1].aufgabe-->Auf dem Blatt fehlen zwei Dinge: die zwei Wochen mit fast nur Aufräumarbeiten und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.<!--/hko-->**
 
 > [!erwartungshorizont] Aufgabe 2 (Unterscheiden, K3) — Auswahl gegen Wissenslücke
 > **Stufe 3 zeigt:** die Unterscheidung zwischen bewusster Auswahl und fehlendem Wissen, mit je einer Folge.
 > **Stufe 4 zeigt zusätzlich:** dass die Wissenslücke behebbar ist und die Auswahl eine Entscheidung bleibt — die eine verlangt eine Handlung, die andere eine Begründung.
 > **Nicht Stufe 4:** beide Lücken gleich behandeln und moralisch bewerten.
 
-**Aufgabe 3 — Formulieren Sie die drei Angaben, die auf dem A4-Blatt stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was das Blatt dadurch nicht mehr zeigt.**
+**Aufgabe 3 — <!--hko:kn.kn_typen[1].aufgaben[2].aufgabe-->Formulieren Sie die drei Angaben, die auf dem A4-Blatt stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was das Blatt dadurch nicht mehr zeigt.<!--/hko-->**
 
 > [!erwartungshorizont] Aufgabe 3 (Entscheiden, K3) — drei Angaben plus eine Weglassung
 > **Stufe 3 zeigt:** drei adressatengerechte Angaben, eine begründete Weglassung, und die Folge der Weglassung wird genannt.
 > **Stufe 4 zeigt zusätzlich:** dass die drei Angaben aufeinander abgestimmt sind — sie ergeben zusammen ein Bild, nicht drei Fakten.
 > **Nicht Stufe 4:** drei Angaben, die alle dasselbe zeigen (dreimal «wie toll der Betrieb ist»). Formal erfüllt, inhaltlich keine Auswahl.
 
-**Aufgabe 4 — Formulieren Sie in Ich-Form, was Sie von Ihrem Betrieb erwarten, damit Sie an einem solchen Abend ehrlich Auskunft geben können — und was Sie im Gegenzug zusichern.**
+**Aufgabe 4 — <!--hko:kn.kn_typen[1].aufgaben[3].aufgabe-->Formulieren Sie in Ich-Form, was Sie von Ihrem Lehrbetrieb erwarten — oder von dort, wo Sie zuletzt gearbeitet haben —, damit Sie an einem solchen Abend ehrlich Auskunft geben können, und was Sie im Gegenzug zusichern.<!--/hko-->**
 
 > [!erwartungshorizont] Aufgabe 4 (Forderung, K4) — Erwartung und Gegenleistung
 > **Stufe 3 zeigt:** eine konkrete Erwartung in Ich-Form (nicht «man sollte») und eine konkrete Zusicherung.

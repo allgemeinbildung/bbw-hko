@@ -23,7 +23,7 @@ quellen_json:
 
 # Begleit-Dokument — Der Preis sagt nicht die Wahrheit (3.2.1)
 
-> **Gilt für EFZ 3-jährig und EFZ 4-jährig.** Die Kompetenzen 3.2.1 und 3.2.2 stehen in beiden Lehrplänen unter derselben Nummer mit demselben Wortlaut. Im 3-jährigen Lehrgang liegt Thema 3 im 1. Lehrjahr, im 4-jährigen im 2. Lehrjahr — die Einheit ist inhaltlich identisch, die Personas sind im 1. Lehrjahr angesiedelt.
+> **Gilt für EFZ 3-jährig und EFZ 4-jährig.** Die Kompetenzen 3.2.1 und 3.2.2 stehen in beiden Lehrplänen unter derselben Nummer mit demselben Wortlaut. Im 3-jährigen Lehrgang liegt Thema 3 im 1. Lehrjahr, im 4-jährigen im 2. Lehrjahr — die Einheit ist inhaltlich identisch, die Persona ist überall dieselbe neutrale («Lernende/r EFZ, 1. Lehrjahr, eigener Lehrbetrieb, eigener Wohnort»).
 
 ## 0. So funktioniert diese Einheit
 
@@ -55,7 +55,7 @@ quellen_json:
 
 ### Das Kompetenzversprechen
 
-> «Ich kann aufdecken, welche Kosten im Preis eines Produkts fehlen, und begründet entscheiden, wer sie tragen soll.»
+> «<!--hko:kn.kern_kompetenzversprechen-->Ich kann aufdecken, welche Kosten im Preis eines Produkts fehlen, und begründet entscheiden, wer sie tragen soll.<!--/hko-->»
 
 Der Satz koppelt die beiden nRLP-Kompetenzen bewusst: Ohne Preisbildungswissen (3.2.2) lässt sich die Lücke nicht bestimmen, ohne Nachhaltigkeitswissen (3.2.1) nicht benennen, was fehlt.
 
@@ -87,12 +87,12 @@ LF4 trainiert den Output-Sprachmodus als **einen Baustein**, der ins Handlungspr
 
 ### Mehrdeutigkeits-Architektur
 
-1. **Tiefer Preis heute vs. Folgekosten, die andere tragen** → Herausforderung A
-2. **Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat** → Herausforderung B
-3. **Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl** → Herausforderung C
+1. **<!--hko:hf_A.mehrdeutigkeit.trade_off-->Tiefer Preis heute vs. Folgekosten, die andere tragen<!--/hko-->** → Herausforderung A
+2. **<!--hko:hf_B.mehrdeutigkeit.trade_off-->Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat<!--/hko-->** → Herausforderung B
+3. **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl<!--/hko-->** → Herausforderung C
 
 > [!mehrdeutigkeit] Der Grundsatz
-> Kein Preis lässt sich vollständig richtig rechnen. Die Aufgabe ist nicht, die eine korrekte Zahl zu finden, sondern offenzulegen, welche Kosten fehlen, und begründet zu entscheiden, wer sie tragen soll. Bewertet wird die Qualität der Begründung, nicht die gewählte Seite.
+> <!--hko:kn.mehrdeutigkeits_pflicht-->Kein Preis lässt sich vollständig richtig rechnen. Die Aufgabe ist nicht, die eine korrekte Zahl zu finden, sondern offenzulegen, welche Kosten fehlen, und begründet zu entscheiden, wer sie tragen soll. Bewertet wird die Qualität der Begründung, nicht die gewählte Seite.<!--/hko-->
 
 ### Zirkularität — wo das wieder auftaucht
 
@@ -174,19 +174,19 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 
 | Feld | Inhalt |
 |---|---|
-| Titel | Warum kostet Vanille plötzlich das Vierfache? |
-| Herausforderung | Aufdecken, welche Herstellungs- und Transportkosten im Preis eines Alltagsprodukts nicht sichtbar sind |
-| Persona | Bäcker-Konditor-Confiseur/in EFZ, Bäckerei-Konditorei Sennhauser, Winterthur — 1. LJ |
+| Titel | <!--hko:hf_A.titel-->Warum kostet Vanille plötzlich das Vierfache?<!--/hko--> |
+| Herausforderung | <!--hko:hf_A.herausforderung.label-->Aufdecken, welche Herstellungs- und Transportkosten im Preis eines Alltagsprodukts nicht sichtbar sind<!--/hko--> |
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Wirtschaft (R1), Ökologie (R1) |
 | Sprachmodi | Rezeption audiovisuell · Produktion multimedial |
 | Schlüsselkompetenzen | SK1 Quellen unterscheiden · SK9 Nachhaltig handeln |
 | Handlungsprodukt | Vertonte Bildstrecke 1–2 Min., 6–8 Bilder + Sprechspur 150–200 Wörter |
 | Wissensknoten | preisbildung_angebot_nachfrage |
 
-> Ich bin Bäcker-Konditor-Confiseur/in EFZ im 1. Lehrjahr bei der Bäckerei-Konditorei Sennhauser in Winterthur. Seit ein Zyklon über die Anbaugebiete in Madagaskar gezogen ist, kostet uns das Kilo Bourbon-Vanille im Einkauf 1250 Franken statt wie bisher 320 Franken. Mein Berufsbildner/in bestellt stattdessen synthetisches Vanillin für 28 Franken das Kilo. «Der Markt entscheidet», sagt er. Mich beschäftigt das: Im billigen Vanillin steckt Erdöl, das in keiner unserer Kalkulationen auftaucht.
+> Seit Montag hängt an der Theke der Bäckerei, bei der ich mein Znüni hole, ein handgeschriebener Zettel: «Vanillegipfeli neu 2.80 statt 2.40 — Zyklon in Madagaskar». Daneben liegen für 1.60 die Gipfeli mit Aroma. Im Radio hiess es am selben Morgen: Ein Kilo Bourbon-Vanille kostet im Einkauf 1250 Franken statt bisher 320, synthetisches Vanillin dagegen 28 Franken das Kilo. «Der Markt entscheidet», sagt die Verkäuferin, als ich nachfrage. Mich beschäftigt das: Im billigen Aroma steckt Erdöl, das auf keinem der beiden Zettel auftaucht.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
-> Authentizität (Rohstoffpreise sind Alltag jedes Backbetriebs), Verortung (Winterthur, vier konkrete Zahlen), Problem (kein Reproduktionsauftrag — der Preis muss erklärt werden), Affektivität (der Satz «Der Markt entscheidet» lässt die Lernende unbefriedigt zurück), Kognition (K2–K4), Aktivität (Bildstrecke), LJ-Passung (Angebot und Nachfrage sind im 1. LJ neu, aber greifbar), Relevanz (jede/r kauft täglich) — alle acht erfüllt.
+> Authentizität (jede/r kauft ein und sieht Preise steigen), Verortung (Preiszettel an der Theke, sechs konkrete Zahlen), Problem (kein Reproduktionsauftrag — der Preis muss erklärt werden), Affektivität (der Satz «Der Markt entscheidet» lässt die Lernende unbefriedigt zurück), Kognition (K2–K4), Aktivität (Bildstrecke), LJ-Passung (Angebot und Nachfrage sind im 1. LJ neu, aber greifbar), Relevanz (jede/r kauft täglich) — alle acht erfüllt.
 
 ### Unterrichtsfahrplan
 
@@ -232,9 +232,9 @@ Drittel der Klasse je eine Herausforderung, dann Gruppenpuzzle.
 > [!tafelbild] Erwartungsbild — Der Preis der Vanille
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
-> - **Was den Preis treibt** — Angebot sinkt nach dem Ernteausfall · Nachfrage bleibt gleich hoch · je knapper das Gut, desto höher der Preis · Signalfunktion: der Preis lenkt Angebot und Nachfrage
+> - **Was den Preis treibt** — Angebot sinkt nach dem Ernteausfall · Nachfrage bleibt gleich hoch · je knapper das Gut, desto höher der Preis · <!--hko:hf_A.mindmap_aeste[0].punkte[3]-->Signalfunktion: der Preis lenkt Angebot und Nachfrage<!--/hko-->
 > - **Was im Preis steckt** — Produktionsfaktor Arbeit (Anbau, Handbestäubung, Ernte, Trocknung) · Produktionsfaktor Boden und Umwelt (Fläche, Rohstoff) · Produktionsfaktor Kapital (Lager, Transport, Verarbeitung) · Handelsmarge und Import
-> - **Was im Preis fehlt** — Bodenerosion und Bodenvergiftung im Anbauland · Treibhausgase des Transports · Erdöl als Rohstoff im synthetischen Vanillin · Arbeitsbedingungen der Pflückenden
+> - **Was im Preis fehlt** — <!--hko:hf_A.mindmap_aeste[2].punkte[0]-->Bodenerosion und Bodenvergiftung im Anbauland<!--/hko--> · Treibhausgase des Transports · Erdöl als Rohstoff im synthetischen Vanillin · Arbeitsbedingungen der Pflückenden
 >
 > **Optionale Vertiefung** (für 100 %): **Wer könnte die Lücke schliessen?** — Label wie Fairtrade oder Bio (Kap. 1.5 S. 37–38) · Lenkungsabgabe des Staates (Kap. 9.3 S. 233) · höherer Verkaufspreis im Laden. Dieser Ast ist die Brücke zu Herausforderung B.
 
@@ -315,7 +315,7 @@ Reflexion
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Herausforderung A
-> Das Spannungsfeld: **Tiefer Preis heute vs. Folgekosten, die andere tragen**. Beide Varianten haben ungezahlte Kosten — die echte Vanille im Anbauland, das Vanillin in der Erdölkette. Es gibt hier keine saubere Seite. Wenn jemand die Bildstrecke mit «deshalb sollten alle Bio kaufen» beendet, lenken Sie zurück: «Was kostet dieser Vorschlag — und wen trifft das?»
+> Das Spannungsfeld: **<!--hko:hf_A.mehrdeutigkeit.trade_off-->Tiefer Preis heute vs. Folgekosten, die andere tragen<!--/hko-->**. Beide Varianten haben ungezahlte Kosten — die echte Vanille im Anbauland, das Vanillin in der Erdölkette. Es gibt hier keine saubere Seite. Wenn jemand die Bildstrecke mit «deshalb sollten alle Bio kaufen» beendet, lenken Sie zurück: «Was kostet dieser Vorschlag — und wen trifft das?»
 
 ### Wo welche SK geübt wird
 
@@ -333,18 +333,18 @@ Reflexion
 | Feld | Inhalt |
 |---|---|
 | Titel | Soll der Staat den Preis steuern? |
-| Herausforderung | Begründet Stellung nehmen, wer die Folgekosten des Konsums tragen soll — Konsument/in, Unternehmen oder Staat |
-| Persona | Maler/in EFZ, Malergeschäft Brunner, St. Gallen — 1. LJ |
+| Herausforderung | <!--hko:hf_B.herausforderung.label-->Begründet Stellung nehmen, wer die Folgekosten des Konsums tragen soll — Konsument/in, Unternehmen oder Staat<!--/hko--> |
+| Persona | <!--hko:hf_B.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Wirtschaft (R1), Ethik (R1) |
 | Sprachmodi | Interaktion und Kollaboration schriftlich |
 | Schlüsselkompetenzen | SK5 Werthaltungen reflektieren · SK6 Standpunkte begründen · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Kollaborative Stellungnahme 300–400 W + Rückmeldung 80–120 W |
 | Wissensknoten | verursacherprinzip_lenkungsabgabe |
 
-> Beim Aufräumen im Büro sehe ich die Jahresrechnung für die Sonderabfall-Entsorgung: 4200 Franken für Farbreste, Lösungsmittel und leere Gebinde. Mein Berufsbildner/in ärgert sich: «Das müsste der Farbhersteller zahlen, nicht wir — wir haben das Zeug ja bloss verstrichen.» Ein Mitlernender sieht es umgekehrt: Wäre umweltfreundliche Farbe wirklich besser, würde die Kundschaft sie von selbst verlangen.
+> Im Schulzimmer liegt seit heute Morgen die Kopie einer Jahresrechnung auf dem Tisch: 4200 Franken für Sonderabfall — Farbreste, Lösungsmittel, leere Gebinde. Der Betrieb, der sie bezahlen muss, hat an den Rand geschrieben: «Das müsste der Farbhersteller zahlen, nicht wir — wir haben das Zeug ja bloss verstrichen.» Ein Mitlernender sieht es umgekehrt: Wäre lösungsmittelfreie Farbe wirklich besser, würde die Kundschaft sie von selbst verlangen.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
-> Authentizität (Entsorgungsrechnungen sind in jedem Malerbetrieb real), Verortung (St. Gallen, konkrete Summe), Problem (zwei legitime Positionen prallen aufeinander), Affektivität (der Ärger des Berufsbildners ist der emotionale Einstieg), Kognition (K2–K4), Aktivität (Stellungnahme + Peer-Rückmeldung), LJ-Passung (Verursacherprinzip ist konkret genug fürs 1. LJ), Relevanz (betrifft jeden Betrieb) — alle acht erfüllt.
+> Authentizität (Entsorgungsrechnungen dieser Art treffen in jedem Betrieb ein), Verortung (die Rechnung liegt auf dem Tisch, konkrete Summe), Problem (zwei legitime Positionen prallen aufeinander), Affektivität (die handschriftliche Randnotiz ist der emotionale Einstieg), Kognition (K2–K4), Aktivität (Stellungnahme + Peer-Rückmeldung), LJ-Passung (Verursacherprinzip ist konkret genug fürs 1. LJ), Relevanz (betrifft jeden Betrieb) — alle acht erfüllt.
 
 ### Unterrichtsfahrplan
 
@@ -367,7 +367,7 @@ Reflexion
 > [!coaching] LF1
 > Bestehen Sie auf der Jahreszahl und dem Gesetzesnamen (Umweltschutz-Gesetz, 1983). Nicht aus Formalismus: Wer weiss, dass das Prinzip seit über vierzig Jahren im Gesetz steht, argumentiert anders als jemand, der es für eine aktuelle Meinung hält.
 
-**LF2 (K3):** Den vier Instrumenten je ein Beispiel aus dem Malerbetrieb zuordnen.
+**LF2 (K3):** Den vier Instrumenten je ein Beispiel aus dem Fall der Farbe zuordnen.
 
 > [!warnung] Typischer Stolperstein bei LF2
 > **Anreiz** und **Verbot** werden regelmässig verwechselt. Der Unterschied: Bei einem Anreiz bleibt die Wahl bestehen, sie wird nur teurer oder billiger; bei einem Verbot fällt die Option weg. Prüffrage an die Klasse: «Könnten Sie es trotzdem noch tun, wenn Sie zahlen?» — Ja heisst Anreiz.
@@ -392,7 +392,7 @@ Reflexion
 > **Pflicht-Äste** (alle sollen sie finden):
 > - **Das Verursacherprinzip** — Umweltschutz-Gesetz USG von 1983 · wer den Abfall verursacht, zahlt die Entsorgung · Vollzug liegt bei den Kantonen · Reihenfolge Vermeiden – Vermindern – Verwerten
 > - **Die vier Instrumente des Staates** — Appelle (unverbindlich) · Anreize inkl. Lenkungsabgaben (CO₂-Abgabe, LSVA, Abfallgebühr) · Verbote und Beschränkungen · Nachsorge (ARA, KVA)
-> - **Argumente der Gegenseite** — der Markt regelt die Nachfrage selbst · Abgaben verteuern das Angebot und treffen kleine Betriebe · Wettbewerbsnachteil gegenüber dem Ausland · wer wenig verdient, zahlt anteilig mehr
+> - **Argumente der Gegenseite** — der Markt regelt die Nachfrage selbst · <!--hko:hf_B.mindmap_aeste[2].punkte[1]-->Abgaben verteuern das Angebot und treffen kleine Betriebe<!--/hko--> · Wettbewerbsnachteil gegenüber dem Ausland · wer wenig verdient, zahlt anteilig mehr
 >
 > **Optionale Vertiefung** (für 100 %): **Was es kostet, wenn niemand zahlt** — Littering 200 Mio. Franken pro Jahr · rund 1 Franken pro Person und Tag für die Gesamtentsorgung · Verunreinigung von Böden und Gewässern · Material fällt aus dem Stoffkreislauf (Kap. 1.5 S. 40).
 
@@ -403,7 +403,7 @@ Reflexion
 | Wer zahlt? | Argument dafür | Argument dagegen | Welches Instrument passt? |
 |---|---|---|---|
 | *Bsp:* Farbhersteller | Entscheidet über die Zusammensetzung | Wälzt die Kosten auf den Preis ab | Anreiz (Lenkungsabgabe) |
-| Malerbetrieb | | | |
+| Verarbeitender Betrieb | | | |
 | Kundschaft | | | |
 | Allgemeinheit über Steuern | | | |
 
@@ -490,7 +490,7 @@ Reflexion
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Herausforderung B
-> Das Spannungsfeld: **Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat**. Alle drei Zuordnungen sind begründbar, und keine löst das Problem — die 4200 Franken verschwinden nicht, sie werden nur anders verbucht. Wenn eine Gruppe schreibt «damit ist das Problem gelöst», lenken Sie zurück: «Wo sind die Kosten jetzt — und wer merkt es dort?»
+> Das Spannungsfeld: **<!--hko:hf_B.mehrdeutigkeit.trade_off-->Verantwortung bei der Konsumentin vs. beim Unternehmen vs. beim Staat<!--/hko-->**. Alle drei Zuordnungen sind begründbar, und keine löst das Problem — die 4200 Franken verschwinden nicht, sie werden nur anders verbucht. Wenn eine Gruppe schreibt «damit ist das Problem gelöst», lenken Sie zurück: «Wo sind die Kosten jetzt — und wer merkt es dort?»
 
 ### Wo welche SK geübt wird
 
@@ -509,18 +509,18 @@ Reflexion
 | Feld | Inhalt |
 |---|---|
 | Titel | Das 199-Franken-Handy |
-| Herausforderung | Für ein selbst gewähltes Produkt ein zweites, ehrliches Preisschild gestalten und die eigene Kaufentscheidung begründen |
-| Persona | Informatiker/in EFZ, Aare Informatik, Biel/Bienne — 1. LJ, CHF 850/Monat |
+| Herausforderung | <!--hko:hf_C.herausforderung.label-->Für ein selbst gewähltes Produkt ein zweites, ehrliches Preisschild gestalten und die eigene Kaufentscheidung begründen<!--/hko--> |
+| Persona | <!--hko:hf_C.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | Wirtschaft (R1), Ökologie (R1) |
 | Sprachmodi | Produktion multimedial |
 | Schlüsselkompetenzen | SK6 Standpunkte begründen · SK9 Nachhaltig handeln · SK11 Mehrdeutigkeit |
 | Handlungsprodukt | Ehrliches Preisschild (3 Zeilen) + gesprochene Kaufbegründung 45–60 Sek. |
 | Wissensknoten | versteckte_kosten_konsumentscheid |
 
-> Mein Handy ist nach drei Jahren zu langsam für die Apps, die ich im Lehrbetrieb brauche. Im Onlineshop finde ich ein Modell für 199 Franken; ein vergleichbares mit fünf Jahren Update-Garantie und austauschbarem Akku kostet 450 Franken. Bei einem Lehrlingslohn von 850 Franken im Monat ist das ein Unterschied, den ich deutlich spüre.
+> Mein Handy ist nach drei Jahren so langsam, dass die Apps, die ich täglich brauche, dauernd abstürzen. Im Onlineshop stehen zwei Geräte nebeneinander: eines für 199 Franken, eines für 450 Franken mit fünf Jahren Update-Garantie und austauschbarem Akku. Bei einem Lehrlingslohn von 850 Franken im Monat ist das ein Unterschied, den ich deutlich spüre.
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
-> Authentizität (fast jede/r Lernende steht regelmässig vor genau diesem Entscheid), Verortung (Biel/Bienne, Lohn und beide Preise konkret), Problem (kein Reproduktionsauftrag — das Budget widerspricht der Rechnung), Affektivität (das eigene Geld), Kognition (K2–K4), Aktivität (Preisschild + gesprochene Begründung), LJ-Passung (1. LJ, erster eigener Lohn), Relevanz (unmittelbar) — alle acht erfüllt. Diese Herausforderung ist die persönlichste der drei; rechnen Sie mit echter Beteiligung.
+> Authentizität (fast jede/r Lernende steht regelmässig vor genau diesem Entscheid), Verortung (zwei Angebote im Onlineshop, Lohn und beide Preise konkret), Problem (kein Reproduktionsauftrag — das Budget widerspricht der Rechnung), Affektivität (das eigene Geld), Kognition (K2–K4), Aktivität (Preisschild + gesprochene Begründung), LJ-Passung (1. LJ, erster eigener Lohn), Relevanz (unmittelbar) — alle acht erfüllt. Diese Herausforderung ist die persönlichste der drei; rechnen Sie mit echter Beteiligung.
 
 ### Unterrichtsfahrplan
 
@@ -567,10 +567,10 @@ Reflexion
 > So sieht die fachlich vollständige Mindmap aus — das gehört an die Tafel, das sollen die Lernenden mindestens finden.
 > **Pflicht-Äste** (alle sollen sie finden):
 > - **Was auf dem Preisschild steht** — Verkaufspreis 199 Franken · Mehrwertsteuer und Handelsmarge · gesetzliche Gewährleistung · Versand und Verpackung
-> - **Was nicht darauf steht** — Rohstoffabbau und Bodenbelastung im Herkunftsland · Transport rund um die halbe Welt · kurze Update-Dauer erzwingt den nächsten Kauf · Elektroschrott am Ende der Nutzung
+> - **Was nicht darauf steht** — <!--hko:hf_C.mindmap_aeste[1].punkte[0]-->Rohstoffabbau und Bodenbelastung im Herkunftsland<!--/hko--> · Transport rund um die halbe Welt · kurze Update-Dauer erzwingt den nächsten Kauf · Elektroschrott am Ende der Nutzung
 > - **Was ich stattdessen tun kann** — Vermeiden: altes Gerät länger nutzen oder reparieren · Vermindern: gebrauchtes Gerät übernehmen · Verwerten: Handy in die Rücknahme statt in die Schublade
 >
-> **Optionale Vertiefung** (für 100 %): **Was mein Entscheid wirklich kostet** — Preis pro Nutzungsjahr statt Kaufpreis · Ersatzbeschaffung nach zwei statt nach fünf Jahren · austauschbarer Akku verlängert die Lebensdauer. Dieser Ast trägt zugleich LF3.
+> **Optionale Vertiefung** (für 100 %): **Was mein Entscheid wirklich kostet** — Preis pro Nutzungsjahr statt Kaufpreis · <!--hko:hf_C.mindmap_aeste[3].punkte[1]-->Ersatzbeschaffung nach zwei statt nach fünf Jahren<!--/hko--> · austauschbarer Akku verlängert die Lebensdauer. Dieser Ast trägt zugleich LF3.
 
 ### Scaffold-Werkstatt (zum Abgeben)
 
@@ -661,7 +661,7 @@ Reflexion
 ### Mehrdeutigkeit halten
 
 > [!mehrdeutigkeit] Herausforderung C
-> Das Spannungsfeld: **Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl**. Diese Herausforderung hat eine Falle: Die Rechnung legt scheinbar die «richtige» Antwort nahe, und Lernende ahnen, welche Antwort im Unterricht erwünscht ist. Sagen Sie ausdrücklich, dass beide Entscheide volle Punktzahl erreichen können. Wer sich fürs günstige Gerät entscheidet und sauber begründet, warum die Jahresrechnung an der Budgetrealität scheitert, zeigt mehr Kompetenz als jemand, der die erwartete Antwort abliefert.
+> Das Spannungsfeld: **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Knappes Lehrlingsbudget vs. nachhaltigere, teurere Wahl<!--/hko-->**. Diese Herausforderung hat eine Falle: Die Rechnung legt scheinbar die «richtige» Antwort nahe, und Lernende ahnen, welche Antwort im Unterricht erwünscht ist. Sagen Sie ausdrücklich, dass beide Entscheide volle Punktzahl erreichen können. Wer sich fürs günstige Gerät entscheidet und sauber begründet, warum die Jahresrechnung an der Budgetrealität scheitert, zeigt mehr Kompetenz als jemand, der die erwartete Antwort abliefert.
 
 ### Wo welche SK geübt wird
 
@@ -709,11 +709,11 @@ Einzelauftrag (5 Sätze zum gemeinsamen Prinzip) plus kurze Plenumsrunde. Benenn
 
 ## 7. Transfer — vom Fall zum Prinzip
 
-**Auftrag:** Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext ausserhalb der behandelten Beispiele. Schriftlich, 5–7 Sätze, mit Lehrmittelbegriffen. Gewicht: 15 % des Set-Ergebnisses, Abgabe in Woche 3 vor dem KN.
+**Auftrag:** <!--hko:set.dekontextualisierungs_aufgabe.auftrag-->Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext ausserhalb der behandelten Beispiele.<!--/hko--> Schriftlich, 5–7 Sätze, mit Lehrmittelbegriffen. Gewicht: 15 % des Set-Ergebnisses, Abgabe in Woche 3 vor dem KN.
 
 **Der Anker-Satz:**
 
-> «Ein Preis zeigt, was jemand bezahlt — nicht, was etwas kostet. Wer die Differenz trägt, ist eine Entscheidung von Menschen, keine Eigenschaft des Produkts.»
+> «<!--hko:set.dekontextualisierungs_aufgabe.ziel-->Ein Preis zeigt, was jemand bezahlt — nicht, was etwas kostet. Wer die Differenz trägt, ist eine Entscheidung von Menschen, keine Eigenschaft des Produkts.<!--/hko-->»
 
 > [!lernziel] So sieht guter Transfer aus
 > Beispiel (Kontext ausserhalb des Lehrbetriebs): «Der Eintritt ins Hallenbad kostet 6 Franken. Das ist nicht, was ein Besuch kostet — die Gemeinde zahlt Heizung, Personal und Unterhalt aus Steuergeldern dazu. Wer nie ins Hallenbad geht, zahlt trotzdem mit; wer täglich geht, zahlt anteilig weniger als er verursacht. Ob das gerecht ist, hängt davon ab, ob man das Bad als Grundversorgung oder als Konsumgut sieht. Nach dem Verursacherprinzip müsste der Eintritt höher sein. Politisch entschieden wurde anders — und diese Entscheidung könnte man auch wieder ändern.» Das Prinzip ist übertragen, ohne dass Vanille, Farbe oder Handy vorkommen.
@@ -725,19 +725,19 @@ Einzelauftrag (5 Sätze zum gemeinsamen Prinzip) plus kurze Plenumsrunde. Benenn
 
 ## 8. Der Kompetenznachweis (KN)
 
-### Hybrid-Herausforderung — «Zwei Messschieber und eine Entsorgungsrechnung»
+### Hybrid-Herausforderung — «Zwei Jacken und eine Gemeinderechnung»
 
-Persona: **Polymechaniker/in EFZ, Werkzeugbau Aebi, Thun** — 1. Lehrjahr. Beruf und Ort kommen in keiner der drei Herausforderungen vor.
+Persona: **dieselbe neutrale wie in A, B und C** — Lernende/r EFZ, 1. Lehrjahr, eigener Lehrbetrieb, eigener Wohnort. Neu ist nicht die Person, sondern der **Fall**: anderer Gegenstand, andere Beteiligte, andere Zahlen. Den Transfer trägt hier allein die Sache.
 
-> Für die Abschlussarbeit im überbetrieblichen Kurs braucht die/der Lernende einen eigenen Messschieber: 39 Franken aus Fernost oder 145 Franken aus einer Werkstatt im Jura, reparierbar und mit Ersatzteilen. Am selben Morgen liegt die Rechnung für die Entsorgung der Kühlschmierstoff-Emulsion über 2800 Franken auf dem Tisch, und der Berufsbildner sagt, eigentlich müsste der Lieferant zahlen — oder der Staat solle eine Abgabe erheben. Beim Blick auf die 39 Franken stellt sich die Frage, ob der eigene Messschieber nicht dieselbe Rechnung offen lässt.
+> Die eigene Winterjacke hat einen kaputten Reissverschluss, flicken lohne sich nicht. Im Regal hängen zwei neue: 39 Franken die eine, 189 Franken die andere, mit Reparaturservice und Ersatzteilen auf zehn Jahre. Am selben Abend steht in der Lokalzeitung, dass die Gemeinde 12'000 Franken im Jahr dafür zahlt, überfüllte Kleidercontainer zu leeren und die unbrauchbaren Textilien zu verbrennen. Ein Leserbrief fordert eine vorgezogene Entsorgungsgebühr auf Kleidern, die Ladeninhaberin hält dagegen, das treffe nur die Kundschaft mit wenig Geld. Beim Blick auf die 39 Franken stellt sich die Frage, ob die eigene Jacke nicht dieselbe Rechnung offen lässt.
 
-**Leitfrage:** «Welchen Messschieber empfehle ich mir selbst — und wer sollte die Kosten tragen, die auf keiner der beiden Etiketten stehen?»
+**Leitfrage:** «<!--hko:kn.hybrid_situation.leitfrage-->Welche Jacke empfehle ich mir selbst — und wer sollte die Kosten tragen, die auf keiner der beiden Etiketten stehen?<!--/hko-->»
 
 | Aus Herausforderung | zeigt sich im KN als |
 |---|---|
-| **A** Preisweg aufdecken | Der Unterschied 39 zu 145 Franken erklärt sich über Herstellungsort und Transportweg — beides steht auf keiner Etikette |
-| **B** Kosten zurechnen | Die 2800 Franken und der Satz des Berufsbildners stellen die Zurechnungsfrage: Lieferant, Betrieb oder Staat |
-| **C** Eigenen Entscheid verantworten | Der eigene Kauf mit Lehrlingslohn erzwingt die Wahl zwischen billig-jetzt und langlebig-teurer |
+| **A** Preisweg aufdecken | Der Unterschied 39 zu 189 Franken erklärt sich über Material, Herstellungsort und Transportweg — nichts davon steht auf der Etikette |
+| **B** Kosten zurechnen | Die 12'000 Franken der Gemeinde, der Leserbrief und die Antwort der Ladeninhaberin stellen die Zurechnungsfrage: Herstellerin, Kundschaft oder Allgemeinheit |
+| **C** Eigenen Entscheid verantworten | Der eigene Kauf mit dem eigenen Lohn erzwingt die Wahl zwischen billig-jetzt und langlebig-teurer |
 
 Keine neue Konfliktdimension: Alles, was die Szene verlangt, wurde in A, B oder C vorbereitet.
 
@@ -760,8 +760,8 @@ Keine neue Konfliktdimension: Alles, was die Szene verlangt, wurde in A, B oder 
 | # | Typ | K | Fokus |
 |---|---|---|---|
 | 1 | Erklären | K2 | Warum 39 Franken möglich sind, welche Kostenarten fehlen |
-| 2 | Anwenden | K3 | Verursacherprinzip auf die Entsorgungsrechnung anwenden |
-| 3 | Beurteilen | K3 | Lieferant zahlt vs. Staat lenkt — beide gleichwertig bewerten |
+| 2 | Anwenden | K3 | Verursacherprinzip auf die 12'000 Franken der Gemeinde anwenden |
+| 3 | Beurteilen | K3 | Vorgezogene Gebühr vs. Finanzierung durch die Gemeinde — beide gleichwertig bewerten |
 | 4 | Transfer | K4 | Vergleich mit einer Herausforderung aus dem Unterricht |
 | 5 | Werthaltung | K4 | Was der eigene Entscheid über die eigene Haltung aussagt |
 
@@ -771,18 +771,18 @@ Keine neue Konfliktdimension: Alles, was die Szene verlangt, wurde in A, B oder 
 > **Nicht ausreichend:** «Weil dort die Löhne tiefer sind» als einzige Erklärung — das nennt einen Faktor, aber keine Kostenarten.
 
 > [!erwartungshorizont] Frage 2 (Anwenden, K3) — Verursacherprinzip
-> **Stufe 3 zeigt:** Das Verursacherprinzip wird korrekt benannt (Umweltschutz-Gesetz, wer verursacht, zahlt) und auf den Fall gelegt: Verursacht wird die Emulsion beim Zerspanen, aber die Zusammensetzung bestimmt der Lieferant — beide Zurechnungen werden als möglich erkannt.
+> **Stufe 3 zeigt:** Das Verursacherprinzip wird korrekt benannt (Umweltschutz-Gesetz, wer verursacht, zahlt) und auf den Fall gelegt: Weggeworfen wird die Jacke von der Kundschaft, über Material und Lebensdauer entscheidet aber die Herstellerin — beide Zurechnungen werden als möglich erkannt.
 > **Stufe 4 zeigt zusätzlich:** Die Antwort unterscheidet zwischen physischem Verursachen und Verursachen durch Produktgestaltung und begründet, welche der beiden Lesarten hier trägt.
 > **Nicht Stufe 4:** «Der Betrieb hat es benutzt, also zahlt der Betrieb» — klingt sauber, wendet das Prinzip aber mechanisch an, ohne die zweite Lesart überhaupt zu prüfen.
 
-> [!erwartungshorizont] Frage 3 (Beurteilen, K3) — Lieferant vs. staatliche Abgabe
+> [!erwartungshorizont] Frage 3 (Beurteilen, K3) — vorgezogene Gebühr vs. Gemeinde
 > **Stufe 3 zeigt:** Beide Wege werden mit je einem tragfähigen Argument dargestellt und als gleichwertig behandelt, bevor eine Entscheidung fällt; die Entscheidung ist begründet.
-> **Stufe 4 zeigt zusätzlich:** Der Preis der eigenen Entscheidung wird mitgenannt — etwa dass eine Abgabe kleine Betriebe härter trifft oder dass eine Herstellerpflicht sich im Verkaufspreis niederschlägt.
+> **Stufe 4 zeigt zusätzlich:** Der Preis der eigenen Entscheidung wird mitgenannt — etwa dass eine Gebühr Haushalte mit wenig Geld härter trifft oder dass die Finanzierung über die Gemeinde auch jene zahlen lässt, die kaum etwas wegwerfen.
 > **Nicht Stufe 4:** Eine Antwort, die einen der beiden Wege als «offensichtlich richtig» behandelt und den anderen nur als Strohmann aufbaut — sie löst den Zielkonflikt auf, statt ihn zu tragen.
 
 > [!erwartungshorizont] Frage 4 (Transfer, K4) — Vergleich mit dem Unterricht
 > **Stufe 3 zeigt:** Eine der drei Herausforderungen wird konkret benannt und mindestens eine strukturelle Gemeinsamkeit gezeigt (etwa: auch dort fehlten Kosten im Preis).
-> **Stufe 4 zeigt zusätzlich:** Es wird auch ein Unterschied benannt — zum Beispiel, dass hier zum ersten Mal derselbe Mensch Entscheider und Betroffener ist, weil er den Messschieber selbst bezahlt.
+> **Stufe 4 zeigt zusätzlich:** Es wird auch ein Unterschied benannt — zum Beispiel, dass hier zum ersten Mal derselbe Mensch Entscheider und Betroffener ist, weil er die Jacke selbst bezahlt.
 > **Nicht Stufe 4:** Eine reine Nacherzählung der eigenen Herausforderung mit dem Zusatz «das ist genau gleich» — die Gemeinsamkeit wird behauptet, nicht gezeigt.
 
 > [!erwartungshorizont] Frage 5 (Werthaltung, K4) — der eigene Entscheid
@@ -795,7 +795,7 @@ Keine neue Konfliktdimension: Alles, was die Szene verlangt, wurde in A, B oder 
 | # | Typ | K | Fokus |
 |---|---|---|---|
 | 1 | Erklären | K2 | Enthaltene und fehlende Kostenarten, mit Quellenangabe |
-| 2 | Unterscheiden | K3 | Warum Entsorgungsrechnung und Messschieberpreis unterschiedlich zu beurteilen sind |
+| 2 | Unterscheiden | K3 | Warum Gemeinderechnung und Jackenpreis unterschiedlich zu beurteilen sind |
 | 3 | Entscheiden | K3 | Kaufentscheid mit Preis pro Nutzungsjahr und Gegenargument |
 | 4 | Forderung | K4 | Forderung in Ich-Form an eine der beteiligten Seiten |
 

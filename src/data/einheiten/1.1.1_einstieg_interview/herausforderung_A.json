@@ -14,70 +14,154 @@
   ],
   "nrlp": {
     "nr": "1.1.1",
-    "nr_primary": ["1.1.1"],
+    "nr_primary": [
+      "1.1.1"
+    ],
     "lebensbezug": "1.1",
-    "themen": ["T1"],
+    "themen": [
+      "T1"
+    ],
     "gesellschaft": [
-      { "aspekt": "Identität und Sozialisation", "iteration": "R1" }
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
     ],
     "sprachmodi": [
       "Rezeption schriftlich und bildlich",
       "Interaktion und Kollaboration mündlich"
     ],
-    "sk": [2, 4, 6],
-    "sprachmodus_ids": ["SM3", "SM7"],
+    "sk": [
+      2,
+      4,
+      6
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM7"
+    ],
     "kompetenz_id": "1.1.1",
     "lebensbezug_id": "1.1",
     "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Lernende/r EFZ",
-    "betrieb": "Berufsfachschule",
-    "ort": "Schweiz"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
   "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung und sitze in einer ABU-Klasse, in der ich noch niemanden kenne. Heute soll ich eine Person aus dieser Klasse so kennenlernen, dass ich sie nachher der Klasse vorstellen kann — und sie tut dasselbe mit mir. Ich habe dafür genau 15 Minuten, und die Lehrperson hat angekündigt, dass am Schluss alle Profile nebeneinander an der Wand hängen und vergleichbar sein sollen. Ich kenne mein Gegenüber nicht, ich weiss nicht, was ihn oder sie beschäftigt, und ich habe Angst, dass mir nach drei Fragen nichts mehr einfällt und wir schweigend dasitzen.",
   "zahlen_tabelle": [
-    { "label": "Gesprächszeit", "wert": "15 Min." },
-    { "label": "Fragen im Katalog", "wert": "8–10" },
-    { "label": "Wörtliche Zitate", "wert": "mind. 3" },
-    { "label": "Kurzprofil", "wert": "1 A4, Stichworte" }
+    {
+      "label": "Gesprächszeit",
+      "wert": "15 Min."
+    },
+    {
+      "label": "Fragen im Katalog",
+      "wert": "8–10"
+    },
+    {
+      "label": "Wörtliche Zitate",
+      "wert": "mind. 3"
+    },
+    {
+      "label": "Kurzprofil",
+      "wert": "1 A4, Stichworte"
+    }
   ],
   "leitfrage": "Welche Fragen stelle ich in welcher Reihenfolge, damit ich in 15 Minuten ein tragfähiges Bild bekomme?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich, bevor Sie ins Gespräch gehen. Grundlage sind Kap. 16.4 (Fachgespräch/Interview), Kap. 16.1 (Regeln der Gesprächsführung) und Kap. 17.2 (Notiztechniken).",
+  "leitfragen_intro": "Die vier Leitfragen bauen Ihren Fragenkatalog auf. LF1 klärt die Fragearten — damit kennzeichnen Sie in Schritt 1 jede Ihrer Fragen. LF2 bringt die Fragen in die Reihenfolge, die auch Ihr Notizblatt bekommt. LF3 entscheidet, was Sie tun, wenn eine Antwort einsilbig bleibt. LF4 schreiben Sie erst nach dem Interview — sie wird zur Methoden-Notiz unter Ihrem Kurzprofil. Grundlage sind Kap. 16.4, Kap. 16.1 und Kap. 17.2.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 16.4 | S. 373",
-      "text": "Kap. 16.4 unterscheidet acht Fragearten. Notieren Sie zu offenen, geschlossenen, Klärungs-, Informations- und Suggestivfragen je ein eigenes Beispiel, das zu Ihrem Gegenüber passen könnte. Markieren Sie die Suggestivfrage durch und halten Sie in einem Satz fest, warum sie in einem Interview problematisch ist.",
+      "text": "Kap. 16.4 unterscheidet acht Fragearten. Halten Sie zur offenen, zur geschlossenen, zur Klärungs-, zur Informations- und zur Suggestivfrage je ein eigenes Beispiel fest und notieren Sie in einem Satz, warum die Suggestivfrage in einem Interview nichts zu suchen hat.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Fünf Fragearten und die Suggestivfrage",
         "zeilen": [
-          { "label": "Offene Frage", "text": "Ermöglicht ein breites Antwortspektrum, z. B. «Warum hast du dich für diesen Beruf entschieden?»", "quelle": "Kap. 16.4" },
-          { "label": "Geschlossene Frage", "text": "Gibt die Antwortmöglichkeiten vor, z. B. «Mit welchem Alter bist du von zuhause ausgezogen?»" },
-          { "label": "Klärungsfrage", "text": "Konkretisiert oder differenziert eine Antwort, z. B. «Was meinst du genau damit?»" },
-          { "label": "Informationsfrage", "text": "Bringt Tatsachen in Erfahrung, z. B. «Welche Kurse hast du bisher besucht?»" },
-          { "label": "Suggestivfrage", "text": "Legt die Antwort schon vor, z. B. «Du findest das sicher auch toll?» — deshalb im Interview vermeiden.", "quelle": "Kap. 16.4 S. 373" },
-          { "label": "Warum problematisch", "text": "Die Antwort spiegelt dann die Meinung der fragenden Person, nicht die des Gegenübers." }
+          {
+            "label": "Offene Frage",
+            "text": "Ermöglicht ein breites Antwortspektrum, z. B. «Warum hast du dich für diesen Beruf entschieden?»",
+            "quelle": "Kap. 16.4"
+          },
+          {
+            "label": "Geschlossene Frage",
+            "text": "Gibt die Antwortmöglichkeiten vor, z. B. «Mit welchem Alter bist du von zuhause ausgezogen?»"
+          },
+          {
+            "label": "Klärungsfrage",
+            "text": "Konkretisiert oder differenziert eine Antwort, z. B. «Was meinst du genau damit?»"
+          },
+          {
+            "label": "Informationsfrage",
+            "text": "Bringt Tatsachen in Erfahrung, z. B. «Welche Kurse hast du bisher besucht?»"
+          },
+          {
+            "label": "Suggestivfrage",
+            "text": "Legt die Antwort schon vor, z. B. «Du findest das sicher auch toll?» — deshalb im Interview vermeiden.",
+            "quelle": "Kap. 16.4 S. 373"
+          },
+          {
+            "label": "Warum problematisch",
+            "text": "Die Antwort spiegelt dann die Meinung der fragenden Person, nicht die des Gegenübers."
+          }
         ]
+      },
+      "liefert": "die Frageart hinter jeder Frage",
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 16.4 S. 373 und markieren Sie pro Frageart einen Satz.",
+          "Prüfen Sie jedes Beispiel: Welche Antwort lässt diese Frage überhaupt zu?"
+        ],
+        "satzanfaenge": [
+          "Eine offene Frage lässt zu, dass …",
+          "Diese Frage legt die Antwort nahe, weil …"
+        ],
+        "produkt": "Die Fragearten stehen in Schritt 1 hinter jeder Frage des Katalogs."
       }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 16.4 | S. 372",
-      "text": "Stellen Sie Ihren Fragenkatalog mit 8–10 Fragen zusammen und ordnen Sie ihn nach der Regel «Grundsatzfragen vor Detailfragen». Kennzeichnen Sie hinter jeder Frage die Frageart. Mindestens vier Fragen müssen offen sein.",
+      "text": "Bringen Sie Ihre acht bis zehn Fragen in die Reihenfolge, die Kap. 16.4 verlangt — Grundsatzfragen vor Detailfragen — und begründen Sie an einer Stelle, warum die Frage genau dort steht.",
       "feld_hoehe_mm": 20,
       "loesung": {
         "kern": "Ordnungsregel und Mindestanteil offener Fragen",
         "zeilen": [
-          { "label": "Reihenfolge", "text": "Erst allgemeine Grundsatzfragen zu Beruf und Betrieb, erst danach Detailfragen zu einzelnen Situationen.", "quelle": "Kap. 16.4" },
-          { "label": "Mindestanteil", "text": "Mindestens vier der 8–10 Fragen sind offen formuliert — sie lassen ein breites Antwortspektrum zu.", "quelle": "Kap. 16.4 S. 373" },
-          { "label": "Kennzeichnung", "text": "Hinter jeder Frage steht die Frageart in Klammern, damit die Struktur beim Interview sichtbar bleibt." },
-          { "label": "Häufiger Fehler", "text": "Der Katalog beginnt mit einer Detailfrage oder enthält versehentlich eine Suggestivfrage." }
+          {
+            "label": "Reihenfolge",
+            "text": "Erst allgemeine Grundsatzfragen zu Beruf und Betrieb, erst danach Detailfragen zu einzelnen Situationen.",
+            "quelle": "Kap. 16.4"
+          },
+          {
+            "label": "Mindestanteil",
+            "text": "Mindestens vier der 8–10 Fragen sind offen formuliert — sie lassen ein breites Antwortspektrum zu.",
+            "quelle": "Kap. 16.4 S. 373"
+          },
+          {
+            "label": "Kennzeichnung",
+            "text": "Hinter jeder Frage steht die Frageart in Klammern (aus LF1), damit die Struktur beim Interview sichtbar bleibt."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Der Katalog beginnt mit einer Detailfrage oder enthält versehentlich eine Suggestivfrage."
+          }
         ]
+      },
+      "liefert": "die Reihenfolge des Fragenkatalogs",
+      "scaffolding": {
+        "strategien": [
+          "Sortieren Sie zuerst grob in «allgemein» und «Detail», dann innerhalb der Gruppen.",
+          "Prüfen Sie: Verstünde jemand Frage 5, ohne Frage 1 gehört zu haben?"
+        ],
+        "satzanfaenge": [
+          "Zuerst frage ich nach …, weil …",
+          "Diese Frage kommt später, weil …"
+        ],
+        "produkt": "Diese Reihenfolge ordnet in Schritt 2 den Katalog und das Notizblatt."
       }
     },
     {
@@ -89,11 +173,36 @@
       "loesung": {
         "kern": "Klärungsfrage schlägt Weitergehen",
         "zeilen": [
-          { "label": "Regel", "text": "Genau zuhören und zurückfragen, wenn etwas unklar bleibt, statt einfach zur nächsten Frage zu gehen.", "quelle": "Kap. 16.1" },
-          { "label": "Erwartet", "text": "Mit einer Klärungsfrage nachhaken («Was meinst du genau damit?») — weicht vom Katalog ab, bringt aber mehr." },
-          { "label": "Ebenfalls tragfähig", "text": "Kurz schweigen und die Pause aushalten: Oft folgt von selbst eine Ergänzung, ohne dass man abweicht." },
-          { "label": "Nicht tragfähig", "text": "Sofort zur nächsten Frage übergehen — der Katalog wird wichtiger als das, was das Gegenüber sagen wollte." }
+          {
+            "label": "Regel",
+            "text": "Genau zuhören und zurückfragen, wenn etwas unklar bleibt, statt einfach zur nächsten Frage zu gehen.",
+            "quelle": "Kap. 16.1"
+          },
+          {
+            "label": "Erwartet",
+            "text": "Mit einer Klärungsfrage nachhaken («Was meinst du genau damit?») — weicht vom Katalog ab, bringt aber mehr."
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Kurz schweigen und die Pause aushalten: Oft folgt von selbst eine Ergänzung, ohne dass man abweicht."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Sofort zur nächsten Frage übergehen — der Katalog wird wichtiger als das, was das Gegenüber sagen wollte."
+          }
         ]
+      },
+      "liefert": "die Regel für einsilbige Antworten",
+      "scaffolding": {
+        "strategien": [
+          "Spielen Sie die drei Wege durch: Was gewinnen Sie, was verlieren Sie dabei?",
+          "Prüfen Sie Kap. 16.1 S. 366: Welche Gesprächsregel stützt Ihre Wahl?"
+        ],
+        "satzanfaenge": [
+          "Wenn eine Antwort kurz bleibt, …",
+          "Ich entscheide mich für …, weil …"
+        ],
+        "produkt": "Nach dieser Regel handeln Sie im Interview in Schritt 3."
       }
     },
     {
@@ -105,11 +214,38 @@
       "loesung": {
         "kern": "Was eine Frage ergiebig macht",
         "zeilen": [
-          { "label": "Ergiebig", "text": "Offene und Klärungsfragen liefern meist am meisten — sie lassen ein breites Antwortspektrum zu.", "quelle": "Kap. 16.4 S. 373" },
-          { "label": "Wenig ergiebig", "text": "Geschlossene und Entscheidungsfragen liefern oft nur ein Wort oder Ja/Nein — die Antworten sind vorgegeben.", "quelle": "Kap. 16.4 S. 373" },
-          { "label": "Nebenbei erfahren", "text": "Was neben dem Katalog zur Sprache kam, entstand meist aus einem Nachhaken bei einer ausweichenden Antwort.", "quelle": "Kap. 16.4 S. 372" },
-          { "label": "Massstab", "text": "Stark ist eine Auswertung, die eine konkrete Frage benennt und begründet — schwach ist eine allgemeine Einschätzung ohne Beispiel." }
+          {
+            "label": "Ergiebig",
+            "text": "Offene und Klärungsfragen liefern meist am meisten — sie lassen ein breites Antwortspektrum zu.",
+            "quelle": "Kap. 16.4 S. 373"
+          },
+          {
+            "label": "Wenig ergiebig",
+            "text": "Geschlossene und Entscheidungsfragen liefern oft nur ein Wort oder Ja/Nein — die Antworten sind vorgegeben.",
+            "quelle": "Kap. 16.4 S. 373"
+          },
+          {
+            "label": "Nebenbei erfahren",
+            "text": "Was neben dem Katalog zur Sprache kam, entstand meist aus einem Nachhaken bei einer ausweichenden Antwort.",
+            "quelle": "Kap. 16.4 S. 372"
+          },
+          {
+            "label": "Massstab",
+            "text": "Stark ist eine Auswertung, die eine konkrete Frage benennt und begründet — schwach ist eine allgemeine Einschätzung ohne Beispiel."
+          }
         ]
+      },
+      "liefert": "die Methoden-Notiz unter dem Profil",
+      "scaffolding": {
+        "strategien": [
+          "Nennen Sie je eine konkrete Frage, nicht «die offenen Fragen» allgemein.",
+          "Suchen Sie die Stelle in den Notizen, die nicht auf dem Katalog stand."
+        ],
+        "satzanfaenge": [
+          "Am meisten hergegeben hat die Frage …",
+          "Ohne zu fragen erfahren habe ich …"
+        ],
+        "produkt": "Aus diesen Sätzen wird in Schritt 4 die Methoden-Notiz am Fuss des Profils."
       }
     }
   ],
@@ -169,24 +305,24 @@
     "beschreibung": "Ich halte das Ergebnis meines Interviews so fest, dass eine andere Person damit arbeiten könnte. Stichworte statt Sätze, plus drei Aussagen im Originalwortlaut. Das Kurzprofil ist keine fertige Textsorte, sondern Rohmaterial: In T2 wird daraus ein ausformuliertes Porträt. Deshalb zählt hier Genauigkeit und Vollständigkeit, nicht schöner Stil.",
     "schritte": [
       {
-        "label": "Fragenkatalog schreiben",
-        "hint": "8–10 Fragen, nach Kap. 16.4 geordnet: Grundsatzfragen zuerst, Detailfragen später. Frageart hinter jede Frage notieren."
+        "label": "Den Fragenkatalog anlegen",
+        "hint": "Schreiben Sie acht bis zehn Fragen auf und setzen Sie hinter jede die Frageart aus LF1. Mindestens vier Fragen sind offen, keine ist eine Suggestivfrage."
       },
       {
-        "label": "Notizblatt vorbereiten",
-        "hint": "Nach Kap. 17.2: A4 einseitig, vier Felder vorzeichnen, Platz für Nachträge lassen. Keine ganzen Sätze — Schlüsselwörter."
+        "label": "Katalog und Notizblatt ordnen",
+        "hint": "Bringen Sie die Fragen in die Reihenfolge aus LF2: Grundsatzfragen zuerst. Legen Sie das Notizblatt in derselben Ordnung an — vier Felder, Schlüsselwörter statt Sätze (Kap. 17.2)."
       },
       {
-        "label": "Interview führen (15 Min.)",
-        "hint": "Begrüssen, Absicht nennen, Katalog abarbeiten, aber bei Interessantem nachhaken. Ausreden lassen. Mitschreiben."
+        "label": "Das Interview führen (15 Min.)",
+        "hint": "Ihr Gegenüber ist die Person, die Ihnen die Lehrperson zu Beginn der Lektion zuteilt. Begrüssen, Absicht nennen, Katalog abarbeiten. Bleibt eine Antwort einsilbig, greift Ihre Regel aus LF3. Drei Aussagen im Originalwortlaut festhalten und zurücklesen."
       },
       {
-        "label": "Zitate sichern",
-        "hint": "Drei Aussagen im Originalwortlaut festhalten und dem Gegenüber vorlesen: «Habe ich das richtig aufgeschrieben?»"
+        "label": "Das Kurzprofil zusammenstellen",
+        "hint": "Übertragen Sie Ihre Notizen in die vier Felder, Stichworte statt Sätze. Darunter kommt die Methoden-Notiz aus LF4."
       },
       {
-        "label": "Profil und Methoden-Notiz",
-        "hint": "Felder füllen. Dann: Was hat mein Katalog sichtbar gemacht — und was ist mir durch die Struktur entgangen?"
+        "label": "Alles gegen die Kriterien prüfen",
+        "hint": "Gehen Sie die vollständig-wenn-Kriterien im Bewertungsraster durch: vier gefüllte Felder in Stichworten, drei rückbestätigte Zitate, eine Methoden-Notiz, die Gewinn und Verlust benennt. Überarbeiten Sie die Stelle, die nicht standhält."
       }
     ],
     "schreib_label": "KURZPROFIL HIER ERARBEITEN",
@@ -204,8 +340,10 @@
         "Zitate sofort wörtlich notieren, nicht aus dem Gedächtnis rekonstruieren"
       ],
       "struktur": [
-        "Grundsatzfragen vor Detailfragen (Kap. 16.4)",
-        "Vier Profil-Felder: Person · Einstieg · Was ausmacht · Zitate"
+        "Vier Profil-Felder: Person · Einstieg · Was ausmacht · Zitate",
+        "Fragenkatalog: Frageart hinter jeder Frage (aus LF1), Grundsatz vor Detail (aus LF2)",
+        "Im Gespräch: die Regel für einsilbige Antworten (aus LF3)",
+        "Am Fuss des Profils: die Methoden-Notiz (aus LF4)"
       ]
     },
     "musterloesung": {
@@ -218,7 +356,7 @@
               "text": "Elias, 17 · Fachmann Betriebsunterhalt EFZ, 1. Lehrjahr"
             },
             {
-              "text": "Werkdienst der Gemeinde Wülflingen · Team von sechs Personen"
+              "text": "Werkdienst einer Gemeinde · Team von sechs Personen"
             },
             {
               "text": "Schule: Donnerstag · Betrieb: Mo–Mi, Fr"
@@ -294,26 +432,25 @@
     }
   },
   "methoden": [
-      {
-        "ref": "lm-16-4-fragearten",
-        "fuer": "für den Fragenkatalog",
-        "tun": "Notieren Sie hinter jede Ihrer 8 bis 10 Fragen die Frageart. Wo dreimal «geschlossen» hintereinander steht, bekommen Sie einsilbige Antworten — bauen Sie um."
-      },
-      {
-        "ref": "lm-17-2-stichwortnotizen",
-        "fuer": "für das Notizblatt und die vier Profilfelder",
-        "tun": "Zeichnen Sie die vier Profilfelder vor dem Gespräch aufs Blatt. Dann schreiben Sie beim Zuhören direkt ins richtige Feld, statt hinterher zu sortieren."
-      },
-      {
-        "ref": "hko-woertlich-zitieren",
-        "fuer": "für die drei wörtlichen Zitate"
-      },
-      {
-        "ref": "hko-methodennotiz",
-        "fuer": "für die Methoden-Notiz von 3 bis 4 Sätzen"
-      }
-    ],
-
+    {
+      "ref": "lm-16-4-fragearten",
+      "fuer": "für den Fragenkatalog",
+      "tun": "Notieren Sie hinter jede Ihrer 8 bis 10 Fragen die Frageart. Wo dreimal «geschlossen» hintereinander steht, bekommen Sie einsilbige Antworten — bauen Sie um."
+    },
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für das Notizblatt und die vier Profilfelder",
+      "tun": "Zeichnen Sie die vier Profilfelder vor dem Gespräch aufs Blatt. Dann schreiben Sie beim Zuhören direkt ins richtige Feld, statt hinterher zu sortieren."
+    },
+    {
+      "ref": "hko-woertlich-zitieren",
+      "fuer": "für die drei wörtlichen Zitate"
+    },
+    {
+      "ref": "hko-methodennotiz",
+      "fuer": "für die Methoden-Notiz von 3 bis 4 Sätzen"
+    }
+  ],
   "reflexion_fragen": [
     {
       "nr": "R1",
@@ -340,8 +477,8 @@
       "kriterium": "Inhaltliche Korrektheit",
       "vollstaendig_wenn": [
         "Alle 4 Leitfragen schriftlich beantwortet",
-        "Fragearten aus Kap. 16.4 korrekt zugeordnet",
-        "Problem der Suggestivfrage benannt"
+        "Fragearten aus Kap. 16.4 korrekt zugeordnet (LF1)",
+        "Regel für einsilbige Antworten begründet gewählt (LF3)"
       ]
     },
     {
@@ -349,8 +486,8 @@
       "kriterium": "Struktur · Fragearten · Reihenfolge",
       "vollstaendig_wenn": [
         "8–10 Fragen, mindestens vier davon offen",
-        "Frageart hinter jeder Frage notiert",
-        "Grundsatzfragen stehen vor Detailfragen"
+        "Frageart hinter jeder Frage notiert (LF1)",
+        "Grundsatzfragen stehen vor Detailfragen (LF2)"
       ]
     },
     {
@@ -359,7 +496,7 @@
       "vollstaendig_wenn": [
         "Kurzprofil auf 1 A4, alle vier Felder gefüllt, Stichworte statt Fliesstext",
         "Drei wörtliche Zitate, beim Gegenüber rückbestätigt",
-        "Methoden-Notiz benennt Gewinn UND Verlust der Methode"
+        "Methoden-Notiz benennt Gewinn UND Verlust der Methode (LF4)"
       ]
     },
     {
@@ -375,7 +512,7 @@
   "wochen_plan": [
     {
       "label": "Woche 1 · 3 Lektionen",
-      "text": "L1: Kap. 16.4 lesen, LF1–LF2, Fragenkatalog · L2: Interview (15 Min.) und Gegeninterview, Notizen · L3: Kurzprofil, LF4, Methoden-Notiz, Austausch",
+      "text": "L1: Kap. 16.4 lesen, LF1–LF2, Fragenkatalog und Notizblatt · L2: Paare zuteilen, Interview (15 Min.) und Gegeninterview, LF3 im Gespräch anwenden · L3: Kurzprofil, LF4, Methoden-Notiz, Prüfung gegen die Kriterien, Austausch",
       "aktiv": true
     }
   ],
@@ -407,19 +544,27 @@
       "ref": "Kap. 16.4",
       "titel": "Fachgespräch/Interview — Vorbereitung, Durchführung, acht Fragearten",
       "seiten": "Seite 372-373",
-      "fuer_leitfrage": [1, 2, 4]
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
     },
     {
       "ref": "Kap. 16.1",
       "titel": "Diskussion — Regeln der Gesprächsführung",
       "seiten": "Seite 366-367",
-      "fuer_leitfrage": [3]
+      "fuer_leitfrage": [
+        3
+      ]
     },
     {
       "ref": "Kap. 17.2",
       "titel": "Dokumentieren — Notiztechniken, Stichworte und Schlüsselbegriffe",
       "seiten": "Seite 381-392",
-      "fuer_leitfrage": [2]
+      "fuer_leitfrage": [
+        2
+      ]
     }
   ],
   "lernfortschritt": {
@@ -467,5 +612,6 @@
       "sk": 6,
       "wo": "Die Methoden-Notiz verlangt eine begründete Aussage darüber, was die gewählte Methode geleistet hat — Standpunkt statt Geschmacksurteil."
     }
-  ]
+  ],
+  "auftakt_typ": "pfad"
 }

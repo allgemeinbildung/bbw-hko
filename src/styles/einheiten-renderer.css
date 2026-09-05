@@ -33,6 +33,17 @@ body {
   --rule:       #d8dbe0;
   --rule-soft:  #ebedf0;
   --line:       #BDC3C7;
+  /* Kaestchen-Raster der Schreibflaechen. Bewusst --zeile/2 (8.5mm): so faellt
+     jede zweite waagrechte Rasterlinie mit der Schreibzeile zusammen, getippter
+     Text sitzt also weiter auf einer Linie statt zwischen den Kaestchen.
+
+     Das Raster wird als 4.25mm-Kachel (background-size) gezeichnet, NICHT als
+     repeating-linear-gradient. Am Bildschirm sehen beide gleich aus, aber Chrome
+     gibt einen repeating-linear-gradient beim Druck als PDF-Shading aus und
+     verkachelt die falsch: einzelne Rasterlinien fallen weg, andere verklumpen zu
+     Balken (gesehen im PDF eines KN-S am 2026-09-04). Die Kachel-Variante druckt
+     sauber. Also nicht "vereinfachen". */
+  --kaestchen:  4.25mm;
   --paper:      #ffffff;
   --bg:         #4a4d54;
   --schreibzeile: 8.5mm;
@@ -981,7 +992,7 @@ body {
 }
 .lf-head {
   display: flex; align-items: baseline; gap: 4mm;
-  margin-bottom: 1.5mm;
+  margin-bottom: 1mm;
 }
 .lf-nr {
   font-family: 'IBM Plex Mono', monospace;
@@ -1000,16 +1011,19 @@ body {
 /* ---------- Schreibfeld (dual-mode writing field) ---------- */
 .feld {
   --zeile: 8.5mm;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(var(--zeile) - 1px),
-    var(--line) calc(var(--zeile) - 1px),
-    var(--line) var(--zeile)
-  );
+  background-image:
+    linear-gradient(to bottom, var(--line) 0 0.2mm, transparent 0.2mm),
+    linear-gradient(to right,  var(--line) 0 0.2mm, transparent 0.2mm);
+  background-size: var(--kaestchen) var(--kaestchen);
   border: 1px solid var(--sit-akzent);
   border-radius: 2px;
-  padding: 0 3mm;
+  /* Die Grundlinie von 11pt IBM Plex Sans liegt in einer 8.5mm-Zeile 5.93mm unter
+     der Textoberkante. Ohne diesen Einzug traefe die Rasterlinie bei 4.25mm den
+     Text auf x-Hoehe — getippter Text saehe durchgestrichen aus. 8.5 - 5.93 = 2.57
+     schiebt die Grundlinie auf die Rasterlinie bei 8.5mm: geschrieben wird also,
+     wie auf Karopapier, auf der zweiten Linie. Bei geaenderter Schriftgroesse oder
+     geaendertem --zeile neu ausmessen. */
+  padding: 2.6mm 3mm 0;
   min-height: calc(var(--zeile) * 3);
   margin-top: 3mm;
   font-family: inherit;
@@ -1183,16 +1197,14 @@ body {
   border-radius: 2px;
   min-height: 160mm;
   margin-top: 4mm;
-  padding: 8mm 6mm 4mm;
+  /* 6.8mm statt 8mm: (6.8 + 5.93) ist ein Vielfaches von --kaestchen, die
+     Grundlinie sitzt also auf einer Rasterlinie. Siehe .feld. */
+  padding: 6.8mm 6mm 4mm;
   --zeile: 8.5mm;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(var(--zeile) - 1px),
-    var(--line) calc(var(--zeile) - 1px),
-    var(--line) var(--zeile)
-  );
-  background-position: 0 8mm;
+  background-image:
+    linear-gradient(to bottom, var(--line) 0 0.2mm, transparent 0.2mm),
+    linear-gradient(to right,  var(--line) 0 0.2mm, transparent 0.2mm);
+  background-size: var(--kaestchen) var(--kaestchen);
   position: relative;
   line-height: var(--zeile);
   font-size: 11pt;
@@ -1486,10 +1498,20 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
 .hp-arbeitsflaeche-page .hp-flaeche { flex: 1 1 auto; min-height: 0; margin-top: 0; }
 
 /* Dossier mindmap hint — no diagram (drawn on paper/another device), just the parts to generate */
-.mindmap-hinweis { margin-top: 2mm; break-inside: avoid; }
-.mm-hinweis-intro { font-size: 9pt; color: var(--ink-soft); margin: 0 0 1.5mm; line-height: 1.35; max-width: 165mm; }
-.mm-hinweis-aeste { margin: 0; padding-left: 6mm; font-size: 10pt; line-height: 1.5; }
-.mm-hinweis-aeste li { margin-bottom: 0.5mm; }
+/* Die vier Aeste stehen nebeneinander statt untereinander: der Hinweis teilt sich
+   die Dossier-Seite mit allen vier Leitfragen, und als Liste untereinander war er
+   dort noch nie zu sehen — er fiel zusammen mit LF4 ueber die A4-Kante. */
+.mindmap-hinweis { margin-top: 1.5mm; break-inside: avoid; }
+.mm-hinweis-intro { font-size: 8.5pt; color: var(--ink-soft); margin: 0 0 1.5mm; line-height: 1.35; max-width: 165mm; }
+.mm-hinweis-aeste {
+  margin: 0; padding-left: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 2mm 6mm;
+  font-size: 9pt; line-height: 1.35;
+}
+/* Bewusst ohne Nummern: ein <ol> mit display:flex zeigt seine Marker ohnehin
+   nicht mehr, und wo die Reihenfolge zaehlt, steht sie schon im Titel selbst
+   («Ast 1 — Bedürfnisarten» in 1.3.1). Ein Counter haette das verdoppelt. */
+.mm-hinweis-aeste li { margin-bottom: 0; }
 .mm-hinweis-aeste .opt { color: var(--ink-mute); font-size: 8pt; }
 
 /* ---------- KN Rubrik-Grid ---------- */
@@ -2056,11 +2078,14 @@ body.aesthetic-editorial .niveau-legende .niv {
 .doc-eba .eba-einleitung-liste { padding-left: 5mm; }
 .doc-eba .eba-einleitung-liste li { margin-bottom: 1.5mm; }
 
-/* Notizen-Seite: linierte Schreibflaeche */
+/* Notizen-Seite: karierte Schreibflaeche */
 .doc-eba .eba-notizen-hint { color: var(--ink-soft); margin-bottom: 3mm; }
 .doc-eba .eba-notizen {
   height: 205mm; border: 1.4px solid var(--rule); border-radius: 3mm;
-  background-image: repeating-linear-gradient(transparent, transparent 8mm, var(--rule-soft) 8mm, var(--rule-soft) 8.3mm);
+  background-image:
+    linear-gradient(to bottom, var(--rule-soft) 0 0.25mm, transparent 0.25mm),
+    linear-gradient(to right,  var(--rule-soft) 0 0.25mm, transparent 0.25mm);
+  background-size: var(--kaestchen) var(--kaestchen);
 }
 
 /* Einleitung-Liste: gruener Haken statt Bullet (BBW-Gruen, P5) */
@@ -2068,11 +2093,14 @@ body.aesthetic-editorial .niveau-legende .niv {
 .doc-eba .eba-einleitung-liste li { position: relative; padding-left: 7mm; margin-bottom: 1.8mm; }
 .doc-eba .eba-einleitung-liste li::before { content: "\2714"; position: absolute; left: 0; top: 0; color: var(--eba-brand); font-weight: 700; }
 
-/* Selbst-Pruefen: Schreiblinien fuer die Antwort */
+/* Selbst-Pruefen: kariertes Antwortfeld */
 .doc-eba .eba-pruef-body { flex: 1; }
 .doc-eba .eba-pruef-lines {
   height: 21mm; margin-top: 2mm;
-  background-image: repeating-linear-gradient(transparent, transparent 6.8mm, var(--rule) 6.8mm, var(--rule) 7mm);
+  background-image:
+    linear-gradient(to bottom, var(--rule) 0 0.2mm, transparent 0.2mm),
+    linear-gradient(to right,  var(--rule) 0 0.2mm, transparent 0.2mm);
+  background-size: var(--kaestchen) var(--kaestchen);
 }
 
 /* ---------------------------------------------------------------------------
@@ -2097,7 +2125,10 @@ body.aesthetic-editorial .niveau-legende .niv {
 .doc-eba .eba-lese-frage-q { margin: 0 0 1.5mm; font-weight: 600; }
 .doc-eba .eba-lese-lines {
   height: 16mm;
-  background-image: repeating-linear-gradient(transparent, transparent 6.8mm, var(--rule) 6.8mm, var(--rule) 7mm);
+  background-image:
+    linear-gradient(to bottom, var(--rule) 0 0.2mm, transparent 0.2mm),
+    linear-gradient(to right,  var(--rule) 0 0.2mm, transparent 0.2mm);
+  background-size: var(--kaestchen) var(--kaestchen);
 }
 .doc-eba .eba-lese-vokabel {
   border: 1.4px solid var(--rule); border-radius: 3mm; padding: 4mm 5mm;

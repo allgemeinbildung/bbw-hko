@@ -31,12 +31,12 @@
   },
 
   "persona": {
-    "beruf": "Bäcker-Konditor-Confiseur/in EFZ",
-    "betrieb": "Bäckerei-Konditorei",
-    "ort": "St. Gallen"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
 
-  "situation_text": "Ich mache eine Lehre als Bäcker-Konditor-Confiseur/in EFZ in St. Gallen und bekomme meinen Lohn monatlich aufs Konto. Das Problem: Rund um den 20. ist mein Konto regelmässig leer, obwohl noch zehn Tage bis zum nächsten Lohn fehlen. Am Anfang des Monats gebe ich zu viel für Ausgang, Kleider und Take-away aus. Meine Kollegin sagt, sie komme mit weniger Lohn gut über die Runden. Ich will endlich ein realistisches Budget aufstellen, herausfinden, wo ich anpassen muss, und das mit ihr besprechen — ohne mich zu rechtfertigen, aber mit guten Argumenten.",
+  "situation_text": "Ich bin im 1. Lehrjahr und bekomme meinen Lohn einmal im Monat aufs Konto. Rund um den 20. ist es regelmässig leer, obwohl noch zehn Tage bis zum nächsten Zahltag fehlen. Letzten Freitag musste ich einer Kollegin 40 Franken für ein Konzertticket schuldig bleiben, das wir zusammen gekauft hatten — das war mir unangenehm. Am Monatsanfang geht das meiste für Ausgang, Kleider und Take-away weg; wohin genau, weiss ich nicht, denn ich schreibe nichts auf. Dieselbe Kollegin kommt mit weniger Lohn über die Runden und bietet an, mein Budget mit mir durchzugehen. Bis dahin will ich ein realistisches Budget haben und begründen können, was ich ändere — ohne mich zu rechtfertigen.",
 
   "zahlen_tabelle": [
     {"label": "Nettolohn pro Monat (ca.)", "wert": "CHF 900"},
@@ -45,13 +45,26 @@
   ],
 
   "leitfrage": "Wie plane ich mein Geld so, dass es bis zum Monatsende reicht — und wie begründe ich meine Anpassungen?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 2.2, 2.1 und 16.1 als Grundlage.",
+  "leitfragen_intro": "Sie bauen in dieser Lektion Ihr Monatsbudget auf und bereiten damit das Budgetgespräch vor: LF1 liefert die Einnahmenzeile mit dem Nettolohn, LF2 das gegliederte Budget mit Saldo, LF3 die zwei bis drei begründeten Anpassungen, LF4 die drei Argumente und die Rückfrage, mit denen Sie das Gespräch führen. Rechnen Sie mit eigenen Zahlen; geschätzte genügen. Nutzen Sie das Lehrmittel Kap. 2.1, Kap. 2.2 und Kap. 16.1 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 2.1 | S. 46",
       "text": "Erklären Sie den Unterschied zwischen Bruttolohn und Nettolohn und welche Sozialversicherungsabzüge (AHV, IV, EO, ALV, NBU) Ihren ausbezahlten Lohn schmälern.",
+      "liefert": "die Einnahmenzeile mit Nettolohn",
+      "scaffolding": {
+        "strategien": [
+          "Rechnen Sie 12,8 % Sozialabzüge und rund 1 % NBU vom Bruttolohn ab.",
+          "Prüfen Sie, ob die Abzüge in Ihrem Alter schon gelten (Kap. 2.1)."
+        ],
+        "satzanfaenge": [
+          "Vom Bruttolohn gehen … ab, deshalb …",
+          "Netto bleiben mir monatlich …"
+        ],
+        "produkt": "Der Nettolohn ist die Einnahmenzeile des Budgets in Schritt 1."
+      },
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Bruttolohn, Nettolohn und die Abzüge",
@@ -68,7 +81,19 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.2 | S. 48",
-      "text": "Erstellen Sie ein realistisches Monatsbudget mit Ihren eigenen Zahlen und gliedern Sie die Ausgaben in fixe Kosten, variable Kosten und Rückstellungen.",
+      "text": "Erstellen Sie ein realistisches Monatsbudget mit Ihren eigenen Zahlen — geschätzte genügen, wo Sie sie nicht genau kennen — und gliedern Sie die Ausgaben in fixe Kosten, variable Kosten und Rückstellungen.",
+      "liefert": "das gegliederte Monatsbudget mit Saldo",
+      "scaffolding": {
+        "strategien": [
+          "Setzen Sie eigene, realistische Zahlen ein — geschätzte genügen (Kap. 2.2).",
+          "Ordnen Sie jede Ausgabe genau einer der drei Kostenarten zu."
+        ],
+        "satzanfaenge": [
+          "Fix bezahle ich jeden Monat …",
+          "Mein Saldo beträgt …, also …"
+        ],
+        "produkt": "Das gegliederte Budget mit Saldo ist das Blatt aus Schritt 2."
+      },
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Drei Kostenarten realistisch trennen",
@@ -85,6 +110,18 @@
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 2.2 | S. 49",
       "text": "Entscheiden Sie anhand Ihres Budget-Saldos, welche zwei bis drei Ausgaben Sie realistisch anpassen, damit das Geld bis Monatsende reicht.",
+      "liefert": "zwei bis drei begründete Anpassungen",
+      "scaffolding": {
+        "strategien": [
+          "Kürzen Sie zuerst dort, wo am wenigsten Gegenwert entsteht.",
+          "Lassen Sie die Rückstellungen stehen — sonst fehlt bald wieder Geld."
+        ],
+        "satzanfaenge": [
+          "Anpassen will ich …, weil …",
+          "Nicht kürzen kann ich …, denn …"
+        ],
+        "produkt": "Die zwei bis drei Anpassungen stehen begründet unter dem Budget (Schritt 3)."
+      },
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Welche Ausgaben anpassen — und warum",
@@ -101,6 +138,18 @@
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 16.1 | S. 366",
       "text": "Formulieren Sie für das Budgetgespräch drei sachliche Argumente für Ihre Anpassungen und eine Rückfrage, mit der Sie auf die Sicht Ihrer Kollegin eingehen (Diskussionsregeln Kap. 16.1).",
+      "liefert": "drei Argumente und eine Rückfrage",
+      "scaffolding": {
+        "strategien": [
+          "Ein Argument pro Anpassung, mit Grund — nicht rechtfertigen (Kap. 16.1).",
+          "Stellen Sie eine echte Rückfrage, keine rhetorische."
+        ],
+        "satzanfaenge": [
+          "«Ich passe … an, weil …»",
+          "«Wie machst du das mit …?»"
+        ],
+        "produkt": "Argumente und Rückfrage tragen das Budgetgespräch in Schritt 4."
+      },
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Drei Argumente und eine echte Rückfrage",
@@ -133,11 +182,11 @@
     "format_detail": "Ein ausgefülltes Budget (Vorlage oder Tabelle) plus ein vorbereitetes Budgetgespräch von 3-5 Minuten mit einer Partnerin oder einem Partner, in dem Sie Ihre Anpassungen sachlich begründen und auf ihre/seine Sicht eingehen.",
     "beschreibung": "Ich plane mein Geld mit realistischen eigenen Zahlen, identifiziere, wo es knapp wird, entscheide über Anpassungen und vertrete diese im Gespräch mit guten Argumenten, ohne die andere Sicht abzuwerten.",
     "schritte": [
-      {"label": "Einnahmen klären", "hint": "Bestimmen Sie Ihren Nettolohn (Kap. 2.1) und weitere Einnahmen."},
-      {"label": "Kosten erfassen", "hint": "Tragen Sie fixe und variable Kosten sowie Rückstellungen ein (Kap. 2.2)."},
-      {"label": "Saldo berechnen", "hint": "Rechnen Sie aus, ab wann das Geld knapp wird."},
-      {"label": "Anpassungen wählen", "hint": "Entscheiden Sie über 2-3 realistische Anpassungen und begründen Sie sie."},
-      {"label": "Gespräch vorbereiten & führen", "hint": "Formulieren Sie Argumente + Rückfrage (Kap. 16.1) und führen Sie das Budgetgespräch."}
+      {"label": "Nettolohn bestimmen", "hint": "Übernehmen Sie aus LF1 die Abzüge und rechnen Sie Ihren Nettolohn aus — nehmen Sie die Abrechnung aus Ihrem Lehrbetrieb, oder von dort, wo Sie zuletzt gearbeitet haben; eine Schätzung genügt. Er ist die Einnahmenzeile Ihres Budgets."},
+      {"label": "Budget aufstellen", "hint": "Übernehmen Sie aus LF2 die drei Kostenarten, tragen Sie Ihre Zahlen ein und schreiben Sie den Saldo unter die Tabelle."},
+      {"label": "Anpassungen festlegen", "hint": "Übernehmen Sie aus LF3 die zwei bis drei Anpassungen und halten Sie sie mit je einer Begründung unter dem Budget fest."},
+      {"label": "Budgetgespräch führen", "hint": "Führen Sie das Gespräch mit den drei Argumenten und der Rückfrage aus LF4: erst zuhören, dann sachlich antworten (Kap. 16.1)."},
+      {"label": "Abgleichen und überarbeiten", "hint": "Gleichen Sie Budget und Gesprächsnotiz mit den vollständig-wenn-Kriterien im Bewertungsraster ab und überarbeiten Sie eine Anpassung, die im Gespräch nicht getragen hat."}
     ],
     "schreib_label": "BUDGET UND GESPRÄCHSVORBEREITUNG HIER ERARBEITEN",
     "schreib_note": "-> wissen/budget_erstellen",
@@ -241,9 +290,9 @@
 
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Budget erstellen & Gespräch vorbereiten", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Budgetgespräch, Austausch (Set), Reflexion", "aktiv": false}
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Budget aufstellen, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Anpassungen festlegen, Gespräch vorbereiten", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Budgetgespräch führen, Abgleich mit dem Bewertungsraster, Austausch (Set), Reflexion", "aktiv": false}
   ],
 
   "template": "default_4page_v2",

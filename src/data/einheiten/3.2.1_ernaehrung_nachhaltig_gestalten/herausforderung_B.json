@@ -3,71 +3,131 @@
   "modul": "3.2",
   "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
   "lehrgang": "EFZ_4J",
-
   "buchstabe": "B",
   "sit_farbe": "#1A5276",
   "sit_farbe_light": "#D6EAF8",
   "sit_farbe_mid": "#2E86C1",
-
   "titel": "Der Weg zurück",
-
-  "wissensknoten": ["graue_energie_oekobilanz"],
-
+  "wissensknoten": [
+    "graue_energie_oekobilanz"
+  ],
   "nrlp": {
     "nr": "3.2.1",
-    "nr_primary": ["3.2.1"],
+    "nr_primary": [
+      "3.2.1"
+    ],
     "lebensbezug": "3.2",
-    "themen": ["T3"],
+    "themen": [
+      "T3"
+    ],
     "gesellschaft": [
-      {"aspekt": "Ökologie", "iteration": "R1"},
-      {"aspekt": "Wirtschaft", "iteration": "R2"}
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R2"
+      }
     ],
     "sprachmodi": [
       "Rezeption audiovisuell",
       "Produktion multimedial"
     ],
-    "sprachmodus_ids": ["SM2", "SM6"],
-    "sk": [1, 9],
+    "sprachmodus_ids": [
+      "SM2",
+      "SM6"
+    ],
+    "sk": [
+      1,
+      9
+    ],
     "kompetenz_id": "3.2.1",
     "lebensbezug_id": "3.2",
     "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
     "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
   },
-
   "persona": {
     "beruf": "Lernende/r EFZ, 2. Lehrjahr",
     "betrieb": "eigener Lehrbetrieb",
     "ort": "eigener Wohnort"
   },
-
   "situation_text": "Ich nehme ein einziges Lebensmittel aus meiner Erhebung und will wissen, was es gekostet hat, bevor es einen Preis hatte. Im Lehrmittel lese ich, dass in einem Frühstücksei 200 Liter Wasser stecken und dass die graue Energie eines Produkts meist grösser ist als alles, was ich beim Gebrauch sehe. Bei meinem Lebensmittel weiss ich davon nichts. Auf der Verpackung stehen ein Preis, ein Gewicht und vielleicht ein Land. Was zwischen Anbau und Ladenregal passiert ist — Wasser, Futter, Transport, Verpackung, wer wie viel am Preis verdient hat —, steht nirgends. Ich verfolge den Weg rückwärts und halte fest, was ich belegen kann und was ich nicht herausfinde.",
-
   "zahlen_tabelle": [
-    {"label": "Wasser für 1 Frühstücksei", "wert": "200 Liter"},
-    {"label": "Wasser für 1 kg Rindfleisch", "wert": "15'455 Liter"},
-    {"label": "Wasser für 1 kg Schweinefleisch", "wert": "4800 Liter"},
-    {"label": "Wasser für 1 kg Hühnerfleisch", "wert": "3900 Liter"},
-    {"label": "Graue Energie für 1 kg Schokolade", "wert": "2,5 kWh"},
-    {"label": "Anteil grauer Energie am Verbrauch eines Schweizer Durchschnittshaushalts", "wert": "rund zwei Drittel"},
-    {"label": "Anteil des Verkehrs am Schweizer Endenergieverbrauch 2023", "wert": "rund 38 %"}
+    {
+      "label": "Wasser für 1 Frühstücksei",
+      "wert": "200 Liter"
+    },
+    {
+      "label": "Wasser für 1 kg Rindfleisch",
+      "wert": "15'455 Liter"
+    },
+    {
+      "label": "Wasser für 1 kg Schweinefleisch",
+      "wert": "4800 Liter"
+    },
+    {
+      "label": "Wasser für 1 kg Hühnerfleisch",
+      "wert": "3900 Liter"
+    },
+    {
+      "label": "Graue Energie für 1 kg Schokolade",
+      "wert": "2,5 kWh"
+    },
+    {
+      "label": "Anteil grauer Energie am Verbrauch eines Schweizer Durchschnittshaushalts",
+      "wert": "rund zwei Drittel"
+    },
+    {
+      "label": "Anteil des Verkehrs am Schweizer Endenergieverbrauch 2023",
+      "wert": "rund 38 %"
+    }
   ],
-
   "leitfrage": "Was steckt in meinem Lebensmittel, bevor es einen Preis bekommt?",
-  "leitfragen_intro": "Wählen Sie zuerst Ihr Lebensmittel: eines aus Ihrem Erhebungsbogen, von dem Sie Packung, Gewicht und Preis kennen — ohne diese drei Angaben finden Sie zu wenig Belege. LF1 lösen Sie mit dem Lehrmittel, LF2 bis LF4 arbeiten an genau diesem einen Produkt. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 9.2, Kap. 9.4 und Kap. 9.3 als Grundlage sowie eine Dokumentation oder ein Erklärvideo zu Ihrem Lebensmittel, das Sie selbst suchen.",
+  "leitfragen_intro": "Wählen Sie in dieser Lektion Ihr Lebensmittel: eines, dessen Packung Sie fotografieren können und auf der Gewicht und Preis stehen — ohne diese Angaben finden Sie zu wenig Belege. Haben Sie Herausforderung A bearbeitet, nehmen Sie eines aus Ihrem Erhebungsbogen. LF1 lösen Sie mit dem Lehrmittel, LF2 bis LF4 arbeiten an diesem einen Produkt. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 9.2, Kap. 9.4 und Kap. 9.3 sowie eine selbst gesuchte Dokumentation als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 9.2 | S. 230",
+      "liefert": "die Phasen des Lebenszyklus",
       "text": "Erklären Sie die Begriffe «graue Energie» und «Ökobilanz» in eigenen Worten und zeigen Sie am Beispiel Schokolade (2,5 kWh pro Kilo), in welchen Phasen des Lebenszyklus graue Energie anfällt.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 9.2 und markieren Sie, wo im Lebenszyklus Energie anfällt.",
+          "Rechnen Sie das Schokoladenbeispiel einmal selbst nach: 2,5 kWh pro Kilo."
+        ],
+        "satzanfaenge": [
+          "Graue Energie ist die Energie, die …",
+          "In der Phase … fällt sie an, weil …"
+        ],
+        "produkt": "Die Phasen des Lebenszyklus geben der Wegskizze in Schritt 2 ihr Gerüst."
+      },
       "loesung": {
         "kern": "Graue Energie und Ökobilanz erklärt",
         "zeilen": [
-          { "label": "Graue Energie", "text": "Alle Energie, die ein Produkt vor dem eigenen Gebrauch braucht — für Rohstoffe, Herstellung und Transport.", "quelle": "Kap. 9.2" },
-          { "label": "Anteil im Haushalt", "text": "Der Schweizer Durchschnittshaushalt verbraucht zwei Drittel seiner Energie als graue Energie, nur ein Drittel direkt als Strom oder Heizöl.", "quelle": "Kap. 9.2" },
-          { "label": "Schokolade-Beispiel", "text": "1 kg Schokolade braucht 2,5 kWh graue Energie — vom Anbau der Kakaobohne bis zur fertigen Tafel, nicht erst beim Essen.", "quelle": "Kap. 9.2" },
-          { "label": "Ökobilanz", "text": "Eine Ökobilanz misst Umweltbelastung, Ressourcenverbrauch und Energieart eines Produkts über Herstellung, Nutzung und Entsorgung.", "quelle": "Kap. 9.2" }
+          {
+            "label": "Graue Energie",
+            "text": "Alle Energie, die ein Produkt vor dem eigenen Gebrauch braucht — für Rohstoffe, Herstellung und Transport.",
+            "quelle": "Kap. 9.2"
+          },
+          {
+            "label": "Anteil im Haushalt",
+            "text": "Der Schweizer Durchschnittshaushalt verbraucht zwei Drittel seiner Energie als graue Energie, nur ein Drittel direkt als Strom oder Heizöl.",
+            "quelle": "Kap. 9.2"
+          },
+          {
+            "label": "Schokolade-Beispiel",
+            "text": "1 kg Schokolade braucht 2,5 kWh graue Energie — vom Anbau der Kakaobohne bis zur fertigen Tafel, nicht erst beim Essen.",
+            "quelle": "Kap. 9.2"
+          },
+          {
+            "label": "Ökobilanz",
+            "text": "Eine Ökobilanz misst Umweltbelastung, Ressourcenverbrauch und Energieart eines Produkts über Herstellung, Nutzung und Entsorgung.",
+            "quelle": "Kap. 9.2"
+          }
         ]
       }
     },
@@ -75,16 +135,44 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 9.2 | S. 229",
+      "liefert": "die belegten Stationen des Wegs",
       "text": "Rekonstruieren Sie für Ihr Lebensmittel die Stationen von der Erzeugung bis ins Regal (Anbau oder Haltung, Verarbeitung, Transport, Verpackung, Verkauf) und notieren Sie zu jeder Station, welche Ressource dort verbraucht wird. Ziehen Sie dafür eine Dokumentation oder ein Erklärvideo bei und halten Sie fest, welche Angabe von dort stammt.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Zeichnen Sie rückwärts: vom Regal zur Erzeugung, eine Zeile pro Station.",
+          "Notieren Sie zu jeder Angabe sofort, aus welcher Quelle sie stammt."
+        ],
+        "satzanfaenge": [
+          "Vor dem Regal liegt die Station …",
+          "Dort wird … verbraucht, laut …"
+        ],
+        "produkt": "Diese Stationen und Quellen füllen Wegskizze und Belege, Schritte 2 und 3."
+      },
       "loesung": {
         "kern": "Stationen und ihre Ressource",
         "zeilen": [
-          { "label": "Anbau/Haltung", "text": "Grösster Ressourcenposten: 1 kg Rindfleisch braucht 15'455 Liter Wasser, 1 kg Hühnerfleisch 3900 Liter.", "quelle": "Kap. 9.2" },
-          { "label": "Verarbeitung", "text": "Strom und Wasser für Reinigung, Kühlung und Zerlegung im Verarbeitungsbetrieb." },
-          { "label": "Transport", "text": "Treibstoff für den Weg vom Erzeugerbetrieb zum Verteilzentrum und weiter ins Regal." },
-          { "label": "Verpackung/Verkauf", "text": "Verpackungsmaterial und Kühlenergie im Laden bis zum Verkauf." },
-          { "label": "Häufiger Fehler", "text": "Nur die Herstellung nennen und den Weg dorthin — Anbau, Transport, Verpackung — weglassen." }
+          {
+            "label": "Anbau/Haltung",
+            "text": "Grösster Ressourcenposten: 1 kg Rindfleisch braucht 15'455 Liter Wasser, 1 kg Hühnerfleisch 3900 Liter.",
+            "quelle": "Kap. 9.2"
+          },
+          {
+            "label": "Verarbeitung",
+            "text": "Strom und Wasser für Reinigung, Kühlung und Zerlegung im Verarbeitungsbetrieb."
+          },
+          {
+            "label": "Transport",
+            "text": "Treibstoff für den Weg vom Erzeugerbetrieb zum Verteilzentrum und weiter ins Regal."
+          },
+          {
+            "label": "Verpackung/Verkauf",
+            "text": "Verpackungsmaterial und Kühlenergie im Laden bis zum Verkauf."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur die Herstellung nennen und den Weg dorthin — Anbau, Transport, Verpackung — weglassen."
+          }
         ]
       }
     },
@@ -92,15 +180,40 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 9.4 | S. 236-237",
+      "liefert": "die Station mit der grössten Last",
       "text": "Entscheiden Sie begründet, welche Station Ihres Wegs die grösste Umweltlast trägt. Prüfen Sie dabei jede Zahl auf ihre Bezugsgrösse: Gilt sie pro Kilo, pro Stück oder pro Jahr — und ist sie mit den Zahlen der anderen Stationen überhaupt vergleichbar?",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Notieren Sie zu jeder Zahl die Bezugsgrösse, bevor Sie zwei vergleichen.",
+          "Zahlen mit verschiedener Bezugsgrösse sind nicht vergleichbar — sagen Sie es."
+        ],
+        "satzanfaenge": [
+          "Die grösste Last trägt …, weil …",
+          "Vergleichbar ist das nicht, weil …"
+        ],
+        "produkt": "Diese Entscheidung füllt die ökologische Karte in Schritt 4."
+      },
       "loesung": {
         "kern": "Bezugsgrössen vor dem Vergleich prüfen",
         "zeilen": [
-          { "label": "Erwartet", "text": "Meist trägt Anbau oder Haltung die grösste Last — Wasserzahlen liegen dort im Tausenderbereich pro Kilo, weit vor Transport oder Verpackung." },
-          { "label": "Bezugsgrösse", "text": "38 % Anteil des Verkehrs gilt für den gesamten Schweizer Endenergieverbrauch 2023 — nicht für ein einzelnes Produkt.", "quelle": "Kap. 9.4" },
-          { "label": "Ebenfalls tragfähig", "text": "Bei einem Produkt mit langem Transportweg kann der Transport die grösste Last tragen — das ist von Fall zu Fall zu prüfen." },
-          { "label": "Nicht tragfähig", "text": "Literzahlen pro Kilo einfach mit Prozentzahlen des Landesverbrauchs addieren — die Bezugsgrössen passen nicht zusammen." }
+          {
+            "label": "Erwartet",
+            "text": "Meist trägt Anbau oder Haltung die grösste Last — Wasserzahlen liegen dort im Tausenderbereich pro Kilo, weit vor Transport oder Verpackung."
+          },
+          {
+            "label": "Bezugsgrösse",
+            "text": "38 % Anteil des Verkehrs gilt für den gesamten Schweizer Endenergieverbrauch 2023 — nicht für ein einzelnes Produkt.",
+            "quelle": "Kap. 9.4"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Bei einem Produkt mit langem Transportweg kann der Transport die grösste Last tragen — das ist von Fall zu Fall zu prüfen."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Literzahlen pro Kilo einfach mit Prozentzahlen des Landesverbrauchs addieren — die Bezugsgrössen passen nicht zusammen."
+          }
         ]
       }
     },
@@ -108,20 +221,44 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 9.3 | S. 231",
+      "liefert": "die Muster-Dimension des Profils",
       "text": "Formulieren Sie eine einzige Dimension Ihres Produktprofils vollständig aus: eine Aussage, ein Beleg mit Quelle und Bezugsgrösse, eine offene Frage. Diese eine Dimension ist Ihr Muster für die beiden übrigen.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Eine Aussage, ein Beleg, eine offene Frage — mehr passt auf keine Karte.",
+          "Die offene Frage benennt, was Sie nicht herausgefunden haben."
+        ],
+        "satzanfaenge": [
+          "Belegt ist, dass … (Quelle …, pro Kilo)",
+          "Offen bleibt, ob …"
+        ],
+        "produkt": "Diese eine Dimension ist das Muster für die beiden übrigen Karten, Schritt 5."
+      },
       "loesung": {
         "kern": "Eine Dimension vollständig, als Muster",
         "zeilen": [
-          { "label": "Massstab", "text": "Eine Aussage, ein Beleg mit Quelle und Bezugsgrösse, eine offene Frage — pro Dimension genau diese drei Teile." },
-          { "label": "Aussage", "text": "«Mein Lebensmittel belastet vor allem die ökologische Dimension.»" },
-          { "label": "Beleg", "text": "Ökologische Nachhaltigkeit heisst, Natur und Umwelt für künftige Generationen zu erhalten — die passende Zahl liefert die eigene Wegskizze.", "quelle": "Kap. 9.3" },
-          { "label": "Offene Frage", "text": "Welche Bezugsgrösse macht meine Zahl mit anderen Produkten überhaupt vergleichbar?" }
+          {
+            "label": "Massstab",
+            "text": "Eine Aussage, ein Beleg mit Quelle und Bezugsgrösse, eine offene Frage — pro Dimension genau diese drei Teile."
+          },
+          {
+            "label": "Aussage",
+            "text": "«Mein Lebensmittel belastet vor allem die ökologische Dimension.»"
+          },
+          {
+            "label": "Beleg",
+            "text": "Ökologische Nachhaltigkeit heisst, Natur und Umwelt für künftige Generationen zu erhalten — die passende Zahl liefert die eigene Wegskizze.",
+            "quelle": "Kap. 9.3"
+          },
+          {
+            "label": "Offene Frage",
+            "text": "Welche Bezugsgrösse macht meine Zahl mit anderen Produkten überhaupt vergleichbar?"
+          }
         ]
       }
     }
   ],
-
   "mindmap_zentrum": "Der Weg meines Lebensmittels",
   "mindmap_aeste": [
     {
@@ -164,18 +301,32 @@
       "optional": true
     }
   ],
-
   "handlungsprodukt": {
     "format": "Faktenorientiertes Produktprofil",
     "titel": "Profil meines Lebensmittels",
     "format_detail": "Drei Karten oder drei Folien — je eine pro Dimension der Nachhaltigkeit — mit Aussage, Beleg samt Quelle und Bezugsgrösse und einer offenen Frage; dazu eine gezeichnete Wegskizze mit allen Stationen und dem jeweils verbrauchten Ressourcentyp.",
     "beschreibung": "Ich verfolge ein Lebensmittel bis zu seiner Quelle zurück und halte in einem Profil entlang der drei Dimensionen der Nachhaltigkeit fest, was ich belegen kann und was offen bleibt.",
     "schritte": [
-      {"label": "Lebensmittel wählen", "hint": "Nehmen Sie ein Produkt aus Ihrem eigenen Erhebungsbogen — eines, von dem Sie Packung, Gewicht und Preis kennen."},
-      {"label": "Weg rückwärts skizzieren", "hint": "Zeichnen Sie die Stationen vom Regal zurück zur Erzeugung. Für jede Station eine Zeile: was passiert dort, welche Ressource wird gebraucht."},
-      {"label": "Belege suchen", "hint": "Nutzen Sie zuerst das Lehrmittel, dann eine Dokumentation oder ein Erklärvideo. Notieren Sie zu jeder Zahl Quelle und Bezugsgrösse — ohne Bezugsgrösse ist eine Zahl unbrauchbar."},
-      {"label": "Drei Dimensionen füllen", "hint": "Ordnen Sie Ihre Belege der ökologischen, der ökonomischen und der sozialen Dimension zu. Wo Sie nichts finden, formulieren Sie eine offene Frage statt einer Vermutung."},
-      {"label": "Profil gestalten", "hint": "Bauen Sie die beiden übrigen Karten nach dem Muster aus Leitfrage 4 und legen Sie die Wegskizze daneben."}
+      {
+        "label": "Lebensmittel wählen",
+        "hint": "Wählen Sie ein Produkt, dessen Packung Sie fotografieren können — Gewicht und Preis müssen darauf stehen. Falls Sie Herausforderung A bearbeitet haben, nehmen Sie eines aus Ihrem Erhebungsbogen."
+      },
+      {
+        "label": "Weg rückwärts skizzieren",
+        "hint": "Zeichnen Sie die Stationen vom Regal zurück zur Erzeugung. Für jede Station eine Zeile: was passiert dort, welche Ressource wird gebraucht."
+      },
+      {
+        "label": "Belege suchen",
+        "hint": "Nutzen Sie zuerst das Lehrmittel, dann eine Dokumentation oder ein Erklärvideo. Notieren Sie zu jeder Zahl Quelle und Bezugsgrösse — ohne Bezugsgrösse ist eine Zahl unbrauchbar."
+      },
+      {
+        "label": "Drei Dimensionen füllen",
+        "hint": "Ordnen Sie Ihre Belege der ökologischen, der ökonomischen und der sozialen Dimension zu. Wo Sie nichts finden, formulieren Sie eine offene Frage statt einer Vermutung."
+      },
+      {
+        "label": "Profil gestalten",
+        "hint": "Bauen Sie die beiden übrigen Karten nach dem Muster aus Leitfrage 4 und legen Sie die Wegskizze daneben."
+      }
     ],
     "schreib_label": "PRODUKTPROFIL HIER ERARBEITEN",
     "schreib_note": "-> wissen/graue_energie_oekobilanz",
@@ -207,65 +358,97 @@
         {
           "titel": "Wegskizze — 1 kg Rindshackfleisch",
           "zeilen": [
-            {"label": "Stationen", "text": "Regal, gekühlt · Verpackung in Schale und Folie · Zerlegung und Verarbeitung im Betrieb · Transport zum Schlachthof und zum Verteilzentrum · Tierhaltung mit Futterbau und Weide · Anbau des Futters. Ressourcen je Station: Kühlenergie im Regal, Kunststoff bei der Verpackung, Strom und Wasser in der Verarbeitung, Treibstoff im Transport, Futter, Fläche und Wasser in der Haltung.", "quelle": "eigene Skizze"}
+            {
+              "label": "Stationen",
+              "text": "Regal, gekühlt · Verpackung in Schale und Folie · Zerlegung und Verarbeitung im Betrieb · Transport zum Schlachthof und zum Verteilzentrum · Tierhaltung mit Futterbau und Weide · Anbau des Futters. Ressourcen je Station: Kühlenergie im Regal, Kunststoff bei der Verpackung, Strom und Wasser in der Verarbeitung, Treibstoff im Transport, Futter, Fläche und Wasser in der Haltung.",
+              "quelle": "eigene Skizze"
+            }
           ]
         },
         {
           "titel": "Ökologische Dimension",
           "zeilen": [
-            {"label": "Aussage", "text": "Der grösste Ressourcenverbrauch entsteht vor der Verarbeitung, nicht im Laden. Beleg: Für 1 kg Rindfleisch werden rund 15'455 Liter Wasser gebraucht, für 1 kg Hühnerfleisch 3900 Liter — die Zahlen gelten je pro Kilo Fleisch und schliessen Futteranbau und Tränkewasser ein. Das passt zum Befund des Lehrmittels, dass die graue Energie eines Produkts zwei Drittel des Haushaltsverbrauchs ausmacht und über den ganzen Lebenszyklus anfällt. Offene Frage: Wie viel dieses Wassers ist Regen auf Schweizer Grasland und wie viel entnommenes Grundwasser?", "quelle": "Kap. 9.2, S. 229–230"}
+            {
+              "label": "Aussage",
+              "text": "Der grösste Ressourcenverbrauch entsteht vor der Verarbeitung, nicht im Laden. Beleg: Für 1 kg Rindfleisch werden rund 15'455 Liter Wasser gebraucht, für 1 kg Hühnerfleisch 3900 Liter — die Zahlen gelten je pro Kilo Fleisch und schliessen Futteranbau und Tränkewasser ein. Das passt zum Befund des Lehrmittels, dass die graue Energie eines Produkts zwei Drittel des Haushaltsverbrauchs ausmacht und über den ganzen Lebenszyklus anfällt. Offene Frage: Wie viel dieses Wassers ist Regen auf Schweizer Grasland und wie viel entnommenes Grundwasser?",
+              "quelle": "Kap. 9.2, S. 229–230"
+            }
           ]
         },
         {
           "titel": "Ökonomische Dimension",
           "zeilen": [
-            {"label": "Aussage", "text": "Der Preis im Regal bildet die Vorkette nicht ab. Beleg: Ich zahle 16.50 Franken für 1 kg; im Verkaufspreis sind Kühlung, Verpackung und Handelsmarge enthalten, Wasser und Fläche dagegen nicht. Der Transportanteil lässt sich einordnen: Der Verkehr verursachte 2023 rund 38 Prozent des Schweizer Endenergieverbrauchs und deckte ihn zu 93 Prozent mit Erdölprodukten. Diese Zahl gilt für den gesamten Verkehr, nicht für mein Päckli — sie zeigt die Grössenordnung, nicht meinen Anteil. Offene Frage: Welcher Anteil meiner 16.50 Franken bleibt beim Erzeugerbetrieb?", "quelle": "Kap. 9.4, S. 236"}
+            {
+              "label": "Aussage",
+              "text": "Der Preis im Regal bildet die Vorkette nicht ab. Beleg: Ich zahle 16.50 Franken für 1 kg; im Verkaufspreis sind Kühlung, Verpackung und Handelsmarge enthalten, Wasser und Fläche dagegen nicht. Der Transportanteil lässt sich einordnen: Der Verkehr verursachte 2023 rund 38 Prozent des Schweizer Endenergieverbrauchs und deckte ihn zu 93 Prozent mit Erdölprodukten. Diese Zahl gilt für den gesamten Verkehr, nicht für mein Päckli — sie zeigt die Grössenordnung, nicht meinen Anteil. Offene Frage: Welcher Anteil meiner 16.50 Franken bleibt beim Erzeugerbetrieb?",
+              "quelle": "Kap. 9.4, S. 236"
+            }
           ]
         },
         {
           "titel": "Soziale Dimension",
           "zeilen": [
-            {"label": "Aussage", "text": "Hier finde ich am wenigsten. Beleg: Auf der Packung steht das Herkunftsland und ein Label; das Lehrmittel nennt vier Kriterien, nach denen labelinfo.ch Labels bewertet — Glaubwürdigkeit, Sozialverträglichkeit, Tierwohl und Umweltfreundlichkeit. Zu Arbeitsbedingungen in Schlachtung und Verarbeitung steht auf meiner Packung nichts, und das Erklärvideo behauptet dazu etwas, ohne eine Quelle zu nennen. Ich übernehme es deshalb nicht. Offene Frage: Woran erkenne ich am Regal, ob ein Label die soziale Dimension überhaupt prüft?", "quelle": "Kap. 1.5, S. 37"}
+            {
+              "label": "Aussage",
+              "text": "Hier finde ich am wenigsten. Beleg: Auf der Packung steht das Herkunftsland und ein Label; das Lehrmittel nennt vier Kriterien, nach denen labelinfo.ch Labels bewertet — Glaubwürdigkeit, Sozialverträglichkeit, Tierwohl und Umweltfreundlichkeit. Zu Arbeitsbedingungen in Schlachtung und Verarbeitung steht auf meiner Packung nichts, und das Erklärvideo behauptet dazu etwas, ohne eine Quelle zu nennen. Ich übernehme es deshalb nicht. Offene Frage: Woran erkenne ich am Regal, ob ein Label die soziale Dimension überhaupt prüft?",
+              "quelle": "Kap. 1.5, S. 37"
+            }
           ]
         },
         {
           "titel": "Was offen bleibt",
           "zeilen": [
-            {"label": "Grenze", "text": "Meine drei Zahlen stammen aus drei verschiedenen Bezugssystemen: Liter pro Kilo, Prozent des Landesverbrauchs, Franken pro Packung. Sie lassen sich nebeneinanderstellen, aber nicht zusammenzählen. Ausserdem gilt die Wasserzahl für Rindfleisch allgemein und nicht für dieses Schweizer Produkt — die Haltung hier unterscheidet sich von einer Mast in einem trockenen Land. Für ein belastbares Urteil bräuchte ich eine Ökobilanz, und die wird laut Lehrmittel nur von Fachleuten erstellt.", "quelle": "Kap. 9.2, S. 230"}
+            {
+              "label": "Grenze",
+              "text": "Meine drei Zahlen stammen aus drei verschiedenen Bezugssystemen: Liter pro Kilo, Prozent des Landesverbrauchs, Franken pro Packung. Sie lassen sich nebeneinanderstellen, aber nicht zusammenzählen. Ausserdem gilt die Wasserzahl für Rindfleisch allgemein und nicht für dieses Schweizer Produkt — die Haltung hier unterscheidet sich von einer Mast in einem trockenen Land. Für ein belastbares Urteil bräuchte ich eine Ökobilanz, und die wird laut Lehrmittel nur von Fachleuten erstellt.",
+              "quelle": "Kap. 9.2, S. 230"
+            }
           ]
         }
       ]
     }
   },
-
   "methoden": [
-      {
-        "ref": "lm-17-2-w-fragen",
-        "fuer": "für die Vollständigkeit der Wegskizze",
-        "tun": "Prüfen Sie jede Station Ihres Wegs mit denselben W-Fragen. Wo eine Antwort fehlt, fehlt eine Station oder ein Beleg."
-      },
-      {
-        "ref": "lm-16-3-gestaltung",
-        "fuer": "für die drei Dimensionskarten",
-        "tun": "Halten Sie auf jeder Karte dieselbe Reihenfolge ein: Aussage, Beleg, offene Frage. Gleiche Struktur macht die drei Dimensionen vergleichbar."
-      },
-      {
-        "ref": "hko-storyboard",
-        "fuer": "für die Planung der Wegskizze"
-      },
-      {
-        "ref": "lm-20-8-quellenangaben",
-        "fuer": "für die Quellenliste am Schluss",
-        "tun": "Jede Zahl im Produktprofil braucht Kapitel und Seite oder die Fundstelle in der Dokumentation. Die Quellenliste sammelt sie."
-      }
-    ],
-
-  "reflexion_fragen": [
-    {"nr": "R1", "text": "Welche Station auf dem Weg meines Lebensmittels hatte ich vorher gar nicht auf der Rechnung?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Welche Rückmeldung habe ich zu meiner Muster-Dimension erhalten — und welche Zahl habe ich daraufhin nachgeprüft?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Wo im Lehrbetrieb begegnet mir eine Zahl, deren Bezugsgrösse ich bisher nie hinterfragt habe?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für die Vollständigkeit der Wegskizze",
+      "tun": "Prüfen Sie jede Station Ihres Wegs mit denselben W-Fragen. Wo eine Antwort fehlt, fehlt eine Station oder ein Beleg."
+    },
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für die drei Dimensionskarten",
+      "tun": "Halten Sie auf jeder Karte dieselbe Reihenfolge ein: Aussage, Beleg, offene Frage. Gleiche Struktur macht die drei Dimensionen vergleichbar."
+    },
+    {
+      "ref": "hko-storyboard",
+      "fuer": "für die Planung der Wegskizze"
+    },
+    {
+      "ref": "lm-20-8-quellenangaben",
+      "fuer": "für die Quellenliste am Schluss",
+      "tun": "Jede Zahl im Produktprofil braucht Kapitel und Seite oder die Fundstelle in der Dokumentation. Die Quellenliste sammelt sie."
+    }
   ],
-
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Welche Station auf dem Weg meines Lebensmittels hatte ich vorher gar nicht auf der Rechnung?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Welche Rückmeldung habe ich zu meiner Muster-Dimension erhalten — und welche Zahl habe ich daraufhin nachgeprüft?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Wo in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — begegnet mir eine Zahl, deren Bezugsgrösse ich bisher nie hinterfragt habe?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
@@ -301,75 +484,148 @@
       "kriterium": "Tiefe + Transfer",
       "vollstaendig_wenn": [
         "Alle drei Reflexionsfragen sind beantwortet.",
-        "R3 nennt eine konkrete Zahl aus dem eigenen Lehrbetrieb."
+        "R3 nennt eine konkrete Zahl aus dem eigenen Arbeitsalltag."
       ]
     }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Wegskizze, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Belege sammeln, Muster-Dimension", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Profil fertigstellen, Austausch (Set), Reflexion, Transfer", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Wegskizze, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Belege sammeln, Muster-Dimension",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Profil fertigstellen, Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
-  "template": "default_4page_v2",
+  "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_prinzip",
   "herausforderung": {
     "buchstabe": "B",
     "label": "Ein Lebensmittel bis zur Quelle zurückverfolgen und entlang der drei Dimensionen belegen"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Tiefer Preis im Laden vs. Ressourcenverbrauch in der Kette",
     "hint": "Beide Lesarten bleiben stehen. Für den tiefen Preis spricht, dass günstige Lebensmittel Menschen mit kleinem Budget ernähren. Für den Blick auf die Kette spricht, dass ein Preis nur die Kosten zeigt, die jemand in Rechnung gestellt hat. Bewertet wird, wie sauber Sie Ihre Belege ausweisen — nicht, welches Produkt Sie wählen."
   },
-
   "dekontextualisierung": {
     "frage": "Bei welchem anderen Gegenstand aus meinem Alltag würde derselbe Weg rückwärts ähnlich viel zutage fördern — und wo käme ich nicht weiter?",
     "ziel": "Die Lernenden lösen die Einsicht vom einzelnen Lebensmittel ab: Hinter jedem Produkt steht eine Kette, deren Ressourcenverbrauch nur mit ausgewiesener Bezugsgrösse beurteilbar wird."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R1",
     "r2_voraussicht": "T5 — Globale gesellschaftliche Herausforderungen: dieselbe Kette, aber als weltweite Arbeitsteilung und Umweltfrage.",
     "r3_voraussicht": "T6 — Wohn- und Lebensformen: Ressourcenketten im eigenen Haushalt beurteilen und Entscheide daran ausrichten."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 9.2", "titel": "Energie — graue Energie über den Lebenszyklus, Ökobilanz, Beispiele Schokolade, Smartphone und Personenwagen", "seiten": "Seite 230", "unterueberschrift": "Graue Energie / Ökobilanz", "fuer_leitfrage": [1, 3]},
-    {"ref": "Kap. 9.2", "titel": "Energie — Ressourcenverbrauch am Beispiel Wasser, Wassermengen für Lebensmittel und Kleidung", "seiten": "Seite 229", "unterueberschrift": "Ressourcenverbrauch am Beispiel Wasser", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 9.4", "titel": "Mobilität — Energieverbrauch und CO2-Emissionen des Verkehrs, Bodenbeanspruchung", "seiten": "Seite 236-237", "unterueberschrift": "Auswirkungen der Mobilität", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — die drei Dimensionen als Ordnungsraster für das Produktprofil", "seiten": "Seite 231", "unterueberschrift": "Aspekte der Nachhaltigkeit", "fuer_leitfrage": [4]},
-    {"ref": "Kap. 11.2", "titel": "Globalisierung — Globalisierung der Umwelt, Umweltschäden entlang weltweiter Warenströme", "seiten": "Seite 279", "unterueberschrift": "Globalisierung der Umwelt", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Lebensmittellabels und ihre vier Bewertungskriterien für die soziale Dimension", "seiten": "Seite 37", "unterueberschrift": "Lebensmittel-/Energielabels", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 9.2",
+      "titel": "Energie — graue Energie über den Lebenszyklus, Ökobilanz, Beispiele Schokolade, Smartphone und Personenwagen",
+      "seiten": "Seite 230",
+      "unterueberschrift": "Graue Energie / Ökobilanz",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 9.2",
+      "titel": "Energie — Ressourcenverbrauch am Beispiel Wasser, Wassermengen für Lebensmittel und Kleidung",
+      "seiten": "Seite 229",
+      "unterueberschrift": "Ressourcenverbrauch am Beispiel Wasser",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 9.4",
+      "titel": "Mobilität — Energieverbrauch und CO2-Emissionen des Verkehrs, Bodenbeanspruchung",
+      "seiten": "Seite 236-237",
+      "unterueberschrift": "Auswirkungen der Mobilität",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 9.3",
+      "titel": "Nachhaltigkeit — die drei Dimensionen als Ordnungsraster für das Produktprofil",
+      "seiten": "Seite 231",
+      "unterueberschrift": "Aspekte der Nachhaltigkeit",
+      "fuer_leitfrage": [
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 11.2",
+      "titel": "Globalisierung — Globalisierung der Umwelt, Umweltschäden entlang weltweiter Warenströme",
+      "seiten": "Seite 279",
+      "unterueberschrift": "Globalisierung der Umwelt",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 1.5",
+      "titel": "Ökologie im Umfeld — Lebensmittellabels und ihre vier Bewertungskriterien für die soziale Dimension",
+      "seiten": "Seite 37",
+      "unterueberschrift": "Lebensmittel-/Energielabels",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Grundbegriffe erklärt", "indikator": "Graue Energie und Ökobilanz werden korrekt unterschieden und am Lebenszyklus verortet.", "gewicht_prozent": 25},
-      {"kriterium": "Kette rekonstruiert", "indikator": "Mindestens vier Stationen sind benannt und mit einem Ressourcentyp versehen.", "gewicht_prozent": 25},
-      {"kriterium": "Belege ausgewiesen", "indikator": "Jede Zahl trägt Quelle und Bezugsgrösse; Zahlen aus verschiedenen Bezugssystemen werden nicht vermischt.", "gewicht_prozent": 25},
-      {"kriterium": "Lücken benannt", "indikator": "Wo nichts belegbar ist, steht eine offene Frage statt einer Vermutung.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Grundbegriffe erklärt",
+        "indikator": "Graue Energie und Ökobilanz werden korrekt unterschieden und am Lebenszyklus verortet.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Kette rekonstruiert",
+        "indikator": "Mindestens vier Stationen sind benannt und mit einem Ressourcentyp versehen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Belege ausgewiesen",
+        "indikator": "Jede Zahl trägt Quelle und Bezugsgrösse; Zahlen aus verschiedenen Bezugssystemen werden nicht vermischt.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Lücken benannt",
+        "indikator": "Wo nichts belegbar ist, steht eine offene Frage statt einer Vermutung.",
+        "gewicht_prozent": 25
+      }
     ],
     "scaffold_90": "Die Stationen der Kette werden als leere Liste vorgegeben; die Lernenden ergänzen nur Ressourcen und Belege.",
     "scaffold_100": "Zusätzlich wird ein zweites, vergleichbares Lebensmittel profiliert und die beiden Profile werden gegenübergestellt."
   },
-
   "prinzip_handoff": {
     "kernkonzept": "Hinter einem Lebensmittel steht eine Kette, deren Ressourcenverbrauch grösser ist als das, was im Laden sichtbar wird.",
     "lehrmittel_anker": "Kap. 9.2 S. 229 (Wassermengen je Lebensmittel), Kap. 9.2 S. 230 (graue Energie und Ökobilanz), Kap. 9.4 S. 236-237 (Verkehr als Energie- und Emissionstreiber), Kap. 9.3 S. 231 (drei Dimensionen)",
     "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, eine fremde Zahl auf ihre Bezugsgrösse zu prüfen und eine Kette systematisch aufzuschlüsseln.",
     "transfer_check": "Die Lernenden können denselben Weg an einem Nicht-Lebensmittel rekonstruieren, ohne Ernährung zu erwähnen."
   },
-
   "sk_anker": [
-    {"sk": 1, "wo": "In LF2 und LF3 trennen die Lernenden belegte Angaben aus Lehrmittel und Etikette von blossen Behauptungen einer Dokumentation und weisen jede Quelle einzeln aus."},
-    {"sk": 9, "wo": "Das Produktprofil verlangt, ökologische, ökonomische und soziale Folgen derselben Kette gemeinsam zu betrachten statt nur den Umweltaspekt."}
+    {
+      "sk": 1,
+      "wo": "In LF2 und LF3 trennen die Lernenden belegte Angaben aus Lehrmittel und Etikette von blossen Behauptungen einer Dokumentation und weisen jede Quelle einzeln aus."
+    },
+    {
+      "sk": 9,
+      "wo": "Das Produktprofil verlangt, ökologische, ökonomische und soziale Folgen derselben Kette gemeinsam zu betrachten statt nur den Umweltaspekt."
+    }
   ]
 }

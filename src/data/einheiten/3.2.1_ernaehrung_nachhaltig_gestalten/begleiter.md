@@ -55,7 +55,7 @@ quellen_json:
 
 ### Das Kompetenzversprechen
 
-> «Ich kann meine eigene Ernährung an belegten Zahlen prüfen und daraus begründet entscheiden, welche Änderung wie viel bewirkt — und wen sie etwas kostet.»
+> «<!--hko:kn.kern_kompetenzversprechen-->Ich kann meine eigene Ernährung an belegten Zahlen prüfen und daraus begründet entscheiden, welche Änderung wie viel bewirkt — und wen sie etwas kostet.<!--/hko-->»
 
 Der Satz koppelt zwei Bewegungen, die im Unterricht oft auseinanderfallen: erst messen, dann urteilen. Ohne eigene Zahl bleibt die Ernährungsdebatte Geschmacksfrage; ohne Kostenfrage bleibt sie folgenlos.
 
@@ -87,14 +87,14 @@ LF4 trainiert den Output-Sprachmodus als **einen Baustein**, der ins Handlungspr
 
 ### Mehrdeutigkeits-Architektur
 
-1. **Gewohnte Ernährung vs. belegte Folgen der eigenen Wahl** → Herausforderung A
-2. **Tiefer Preis im Laden vs. Ressourcenverbrauch in der Kette** → Herausforderung B
-3. **Grosse Wirkung vs. wer die Kosten der Änderung trägt** → Herausforderung C
+1. **<!--hko:hf_A.mehrdeutigkeit.trade_off-->Gewohnte Ernährung vs. belegte Folgen der eigenen Wahl<!--/hko-->** → Herausforderung A
+2. **<!--hko:hf_B.mehrdeutigkeit.trade_off-->Tiefer Preis im Laden vs. Ressourcenverbrauch in der Kette<!--/hko-->** → Herausforderung B
+3. **<!--hko:hf_C.mehrdeutigkeit.trade_off-->Grosse Wirkung vs. wer die Kosten der Änderung trägt<!--/hko-->** → Herausforderung C
 
 Alle drei Spannungsfelder sind in mindestens einer Herausforderung aktiviert; im Kompetenznachweis spannen sich alle drei gleichzeitig auf.
 
 > [!mehrdeutigkeit] Der Grundsatz
-> Keine Ernährungsweise ist ohne Folgen. Die Aufgabe ist nicht, die richtige zu finden, sondern die Folgen zu beziffern und den eigenen Entscheid an dieser Zahl zu begründen. Bewertet wird die Qualität der Begründung, nicht die gewählte Ernährung.
+> <!--hko:kn.mehrdeutigkeits_pflicht-->Keine Ernährungsweise ist ohne Folgen. Die Aufgabe ist nicht, die richtige zu finden, sondern die Folgen zu beziffern und den eigenen Entscheid an dieser Zahl zu begründen. Bewertet wird die Qualität der Begründung, nicht die gewählte Ernährung.<!--/hko-->
 
 ### Zirkularität — wo das wieder auftaucht
 
@@ -173,7 +173,7 @@ Auch die **Reihenfolge** A → B → C ist frei. Eine Einschränkung gibt es all
 |---|---|
 | Titel | Drei Tage auf dem Teller |
 | Sub-Herausforderung | Erheben — eigene Daten, deskriptiv, Gegenwart |
-| Persona | Lernende/r EFZ, 2. Lehrjahr — bewusst ohne Beruf, Betrieb und Ort |
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 2. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Ökologie (R1), Wirtschaft (R2) |
 | Sprachmodi | Produktion multimedial (SM6) |
 | Schlüsselkompetenzen | SK9 Nachhaltig handeln · SK5 Werthaltungen reflektieren |
@@ -184,7 +184,7 @@ Auch die **Reihenfolge** A → B → C ist frei. Eine Einschränkung gibt es all
 
 > «Ich bin im 2. Lehrjahr und esse an einem normalen Wochentag an drei Orten: im Lehrbetrieb, unterwegs und zu Hause. Im ABU lese ich, dass Nachhaltigkeit drei Dimensionen hat und dass unser Konsum Folgen für Umwelt und Gesellschaft hat. Über mein eigenes Essen habe ich dazu keine einzige Zahl. […] Bevor ich über nachhaltige Ernährung urteile, will ich das erst einmal wissen. Drei Tage lang halte ich es fest.»
 
-**Leitfrage:** «Was liegt tatsächlich auf meinem Teller — und was davon lässt sich belegen?»
+**Leitfrage:** «<!--hko:hf_A.leitfrage-->Was liegt tatsächlich auf meinem Teller — und was davon lässt sich belegen?<!--/hko-->»
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > **Authentizität:** jede und jeder isst, niemand braucht Berufswissen. **Verortung:** eigener Alltag über drei Orte. **Problem:** es fehlt die Zahl, nicht die Meinung. **Affektivität:** die eigene Erhebung überrascht fast immer. **Kognition:** Auszählen, Zuordnen, Auswählen. **Aktivität:** Erhebung ausserhalb der Lektion, Auswertung drinnen. **LJ-Passung:** 2. Lehrjahr, kein Vorwissen ausser den drei Dimensionen. **Relevanz:** die Grundlage für B und C.
@@ -280,25 +280,33 @@ Einordnung (eine Zeile):  Diese Zahl gehört zur ........ Dimension, weil ....
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 *Leitfragen*
-- ☐ Alle vier Leitfragen sind schriftlich beantwortet.
-- ☐ LF1 nennt alle drei Dimensionen der Nachhaltigkeit mit je einem Essbeispiel.
-- ☐ LF2 enthält ausgezählte Zahlen aus dem eigenen Bogen, keine Schätzungen.
-- ☐ LF3 begründet, warum die drei gewählten Befunde tragen und die übrigen nicht.
+<!--hko:hf_A.bewertungsraster[0].vollstaendig_wenn|checkliste-->
+☐ Alle vier Leitfragen sind schriftlich beantwortet.
+☐ LF1 nennt alle drei Dimensionen der Nachhaltigkeit mit je einem Essbeispiel.
+☐ LF2 enthält ausgezählte Zahlen aus dem eigenen Bogen, keine Schätzungen.
+☐ LF3 begründet, warum die drei gewählten Befunde tragen und die übrigen nicht.
+<!--/hko-->
 
 *Mindmap*
-- ☐ Alle drei Pflicht-Äste sind befüllt.
-- ☐ Der Ast «Die drei Dimensionen» ordnet mindestens zwei eigene Einträge einer Dimension zu.
-- ☐ Mindestens eine Verbindung zwischen «Was ich erhebe» und «Die drei Dimensionen» ist eingezeichnet.
+<!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
+☐ Alle drei Pflicht-Äste sind befüllt.
+☐ Der Ast «Die drei Dimensionen» ordnet mindestens zwei eigene Einträge einer Dimension zu.
+☐ Mindestens eine Verbindung zwischen «Was ich erhebe» und «Die drei Dimensionen» ist eingezeichnet.
+<!--/hko-->
 
 *Handlungsprodukt*
-- ☐ Der Erhebungsbogen deckt drei Tage lückenlos ab, Lücken sind als solche markiert.
-- ☐ Alle drei Befund-Kacheln nennen je eine Zahl aus dem eigenen Bogen.
-- ☐ Jede Kachel ordnet ihren Befund einer der drei Dimensionen zu.
-- ☐ Die Grenze der dreitägigen Stichprobe ist ausdrücklich benannt.
+<!--hko:hf_A.bewertungsraster[2].vollstaendig_wenn|checkliste-->
+☐ Der Erhebungsbogen deckt drei Tage lückenlos ab, Lücken sind als solche markiert.
+☐ Alle drei Befund-Kacheln nennen je eine Zahl aus dem eigenen Bogen.
+☐ Jede Kachel ordnet ihren Befund einer der drei Dimensionen zu.
+☐ Die Grenze der dreitägigen Stichprobe ist ausdrücklich benannt.
+<!--/hko-->
 
 *Reflexion*
-- ☐ Alle drei Reflexionsfragen sind beantwortet.
-- ☐ R2 nennt eine konkrete Änderung, die auf die Rückmeldung zurückgeht.
+<!--hko:hf_A.bewertungsraster[3].vollstaendig_wenn|checkliste-->
+☐ Alle drei Reflexionsfragen sind beantwortet.
+☐ R2 nennt eine konkrete Änderung, die auf die Rückmeldung zurückgeht.
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -341,7 +349,7 @@ Einordnung (eine Zeile):  Diese Zahl gehört zur ........ Dimension, weil ....
 |---|---|
 | Titel | Der Weg zurück |
 | Sub-Herausforderung | Rekonstruieren — fremde Daten, systemisch, Vorgeschichte der Kette |
-| Persona | Lernende/r EFZ, 2. Lehrjahr — bewusst ohne Beruf, Betrieb und Ort |
+| Persona | <!--hko:hf_B.persona|persona-->Lernende/r EFZ, 2. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Ökologie (R1), Wirtschaft (R2) |
 | Sprachmodi | Rezeption audiovisuell (SM2) · Produktion multimedial (SM6) |
 | Schlüsselkompetenzen | SK1 Quellen unterscheiden · SK9 Nachhaltig handeln |
@@ -352,7 +360,7 @@ Einordnung (eine Zeile):  Diese Zahl gehört zur ........ Dimension, weil ....
 
 > «Ich nehme ein einziges Lebensmittel aus meiner Erhebung und will wissen, was es gekostet hat, bevor es einen Preis hatte. […] Auf der Verpackung stehen ein Preis, ein Gewicht und vielleicht ein Land. Was zwischen Anbau und Ladenregal passiert ist — Wasser, Futter, Transport, Verpackung, wer wie viel am Preis verdient hat —, steht nirgends. Ich verfolge den Weg rückwärts und halte fest, was ich belegen kann und was ich nicht herausfinde.»
 
-**Leitfrage:** «Was steckt in meinem Lebensmittel, bevor es einen Preis bekommt?»
+**Leitfrage:** «<!--hko:hf_B.leitfrage-->Was steckt in meinem Lebensmittel, bevor es einen Preis bekommt?<!--/hko-->»
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > **Authentizität:** ein Produkt aus dem eigenen Bogen. **Verortung:** Laden, Küche, Lehrmittel. **Problem:** die Kette ist unsichtbar, die Belege sind lückenhaft. **Affektivität:** die Wasserzahlen wirken. **Kognition:** rückwärts rekonstruieren, Zahlen auf Bezugsgrössen prüfen. **Aktivität:** recherchieren, skizzieren, ausweisen. **LJ-Passung:** setzt A voraus, sonst kein Produkt. **Relevanz:** liefert die Prüflogik für den KN.
@@ -400,7 +408,7 @@ AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernende
 > **Pflicht — diese drei Äste sollen alle finden:**
 > - **Stationen des Wegs:** Anbau oder Tierhaltung (Fläche, Futter, Wasser) · Verarbeitung (Energie, Kühlung, Abfall) · Transport (Distanz, Verkehrsmittel, Treibstoff) · Verpackung und Verkauf (Material, Kühlung, Retouren)
 > - **Was ich beziffern kann:** Wasser pro Kilo aus dem Lehrmittel · graue Energie über den ganzen Lebenszyklus · Verkehrsanteil am Energieverbrauch · Preis im Regal und Gewicht auf der Packung
-> - **Woher meine Angaben stammen:** Lehrmittel mit Kapitel und Seite · Etikette und Preisschild · Dokumentation oder Erklärvideo mit Titel und Minute · was ich nirgends gefunden habe
+> - **Woher meine Angaben stammen:** Lehrmittel mit Kapitel und Seite · Etikette und Preisschild · <!--hko:hf_B.mindmap_aeste[2].punkte[2]-->Dokumentation oder Erklärvideo mit Titel und Minute<!--/hko--> · was ich nirgends gefunden habe
 >
 > **Vertiefung — für 100 %:**
 > - **Die soziale Dimension:** wer arbeitet an welcher Station · Preisanteil des Erzeugerbetriebs · Label wie Fairtrade, Bio oder IP-Suisse (Kap. 1.5 S. 37)
@@ -440,25 +448,33 @@ Regal  ←  Verkauf/Verpackung  ←  Transport  ←  Verarbeitung  ←  Anbau/Ha
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 *Leitfragen*
-- ☐ Alle vier Leitfragen sind schriftlich beantwortet.
-- ☐ LF1 unterscheidet graue Energie und Ökobilanz und verortet die graue Energie im Lebenszyklus.
-- ☐ LF2 nennt für jede Station die dort verbrauchte Ressource und weist die genutzte Dokumentation oder das Erklärvideo aus.
-- ☐ LF3 prüft mindestens zwei Zahlen ausdrücklich auf ihre Bezugsgrösse.
+<!--hko:hf_B.bewertungsraster[0].vollstaendig_wenn|checkliste-->
+☐ Alle vier Leitfragen sind schriftlich beantwortet.
+☐ LF1 unterscheidet graue Energie und Ökobilanz und verortet die graue Energie im Lebenszyklus.
+☐ LF2 nennt für jede Station die dort verbrauchte Ressource und weist die genutzte Dokumentation oder das Erklärvideo aus.
+☐ LF3 prüft mindestens zwei Zahlen ausdrücklich auf ihre Bezugsgrösse.
+<!--/hko-->
 
 *Mindmap*
-- ☐ Alle drei Pflicht-Äste sind befüllt.
-- ☐ Der Ast «Woher meine Angaben stammen» nennt mindestens eine Lücke.
-- ☐ Mindestens eine Verbindung zwischen «Stationen des Wegs» und «Was ich beziffern kann» ist eingezeichnet.
+<!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
+☐ Alle drei Pflicht-Äste sind befüllt.
+☐ Der Ast «Woher meine Angaben stammen» nennt mindestens eine Lücke.
+☐ Mindestens eine Verbindung zwischen «Stationen des Wegs» und «Was ich beziffern kann» ist eingezeichnet.
+<!--/hko-->
 
 *Handlungsprodukt*
-- ☐ Die Wegskizze enthält mindestens vier Stationen mit je einem Ressourcentyp.
-- ☐ Alle drei Dimensionen sind mit Aussage, Beleg und offener Frage besetzt.
-- ☐ Jede Zahl im Profil nennt Quelle und Bezugsgrösse.
-- ☐ Nicht Auffindbares steht als offene Frage da, nicht als Vermutung.
+<!--hko:hf_B.bewertungsraster[2].vollstaendig_wenn|checkliste-->
+☐ Die Wegskizze enthält mindestens vier Stationen mit je einem Ressourcentyp.
+☐ Alle drei Dimensionen sind mit Aussage, Beleg und offener Frage besetzt.
+☐ Jede Zahl im Profil nennt Quelle und Bezugsgrösse.
+☐ Nicht Auffindbares steht als offene Frage da, nicht als Vermutung.
+<!--/hko-->
 
 *Reflexion*
-- ☐ Alle drei Reflexionsfragen sind beantwortet.
-- ☐ R3 nennt eine konkrete Zahl aus dem eigenen Lehrbetrieb.
+<!--hko:hf_B.bewertungsraster[3].vollstaendig_wenn|checkliste-->
+☐ Alle drei Reflexionsfragen sind beantwortet.
+☐ R3 nennt eine konkrete Zahl aus dem eigenen Arbeitsalltag.
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -501,7 +517,7 @@ Regal  ←  Verkauf/Verpackung  ←  Transport  ←  Verarbeitung  ←  Anbau/Ha
 |---|---|
 | Titel | Was sich ändern liesse |
 | Sub-Herausforderung | Abwägen — normativ und prospektiv, Wirkung gegen Kosten |
-| Persona | Lernende/r EFZ, 2. Lehrjahr — bewusst ohne Beruf, Betrieb und Ort |
+| Persona | <!--hko:hf_C.persona|persona-->Lernende/r EFZ, 2. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Ökologie (R1), Wirtschaft (R2), Ethik (R3) |
 | Sprachmodi | Produktion multimedial (SM6) · Interaktion und Kollaboration schriftlich (SM8) |
 | Schlüsselkompetenzen | SK3 Innovation und Problemlösungen entwickeln · SK9 Nachhaltig handeln · SK5 Werthaltungen reflektieren |
@@ -512,7 +528,7 @@ Regal  ←  Verkauf/Verpackung  ←  Transport  ←  Verarbeitung  ←  Anbau/Ha
 
 > «Ich weiss jetzt, was drei Tage lang auf meinem Teller lag, und ich habe einen Weg rückwärts verfolgt. Was ich nicht weiss: ob es überhaupt etwas bringt, wenn ich etwas ändere. […] Im Lehrmittel lese ich, dass wir in der Schweiz heute rund 6500 Watt pro Person verbrauchen, angestrebt sind 2000. Drei Möglichkeiten liegen für mich auf dem Tisch: eine bei mir selbst, eine im Lehrbetrieb, eine über eine allgemeine Regelung. Jede wirkt anders, und jede kostet jemanden etwas.»
 
-**Leitfrage:** «Welche Änderung bewirkt wie viel — und wer trägt ihre Kosten?»
+**Leitfrage:** «<!--hko:hf_C.leitfrage-->Welche Änderung bewirkt wie viel — und wer trägt ihre Kosten?<!--/hko-->»
 
 > [!hinweis] Qualität der Herausforderung (8 Merkmale Lernsituation)
 > **Authentizität:** beide Sätze aus dem Situationstext fallen in jeder Klasse. **Verortung:** ich, Betrieb, allgemeine Regelung. **Problem:** Wirkung und Kosten sind beide unbekannt. **Affektivität:** der Abstand 6500 zu 2000 Watt provoziert. **Kognition:** vergleichen, abschätzen, entscheiden. **Aktivität:** Tabelle, Aufnahme, Rückmeldung. **LJ-Passung:** baut auf A und B auf. **Relevanz:** genau diese Abwägung prüft der KN.
@@ -608,25 +624,33 @@ Ein Satz, was ich an eurer Empfehlung überzeugend fand: ……
 **Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)
 
 *Leitfragen*
-- ☐ Alle vier Leitfragen sind schriftlich beantwortet.
-- ☐ LF1 nennt alle vier Instrumente mit je einem Beispiel und erklärt den Begriff Marktversagen.
-- ☐ LF2 ordnet jede Möglichkeit einer Ebene und einem Instrument zu.
-- ☐ LF3 nennt zu jeder Möglichkeit Wirkung und Kostenträger und entscheidet begründet.
+<!--hko:hf_C.bewertungsraster[0].vollstaendig_wenn|checkliste-->
+☐ Alle vier Leitfragen sind schriftlich beantwortet.
+☐ LF1 nennt alle vier Instrumente mit je einem Beispiel und erklärt den Begriff Marktversagen.
+☐ LF2 ordnet jede Möglichkeit einer Ebene und einem Instrument zu.
+☐ LF3 nennt zu jeder Möglichkeit Wirkung und Kostenträger und entscheidet begründet.
+<!--/hko-->
 
 *Mindmap*
-- ☐ Alle drei Pflicht-Äste sind befüllt.
-- ☐ Der Ast «Wirkung und Kosten» unterscheidet mindestens zwei verschiedene Kostenträger.
-- ☐ Mindestens eine Verbindung zwischen «Drei Ebenen» und «Vier Instrumente» ist eingezeichnet.
+<!--hko:hf_C.bewertungsraster[1].vollstaendig_wenn|checkliste-->
+☐ Alle drei Pflicht-Äste sind befüllt.
+☐ Der Ast «Wirkung und Kosten» unterscheidet mindestens zwei verschiedene Kostenträger.
+☐ Mindestens eine Verbindung zwischen «Drei Ebenen» und «Vier Instrumente» ist eingezeichnet.
+<!--/hko-->
 
 *Handlungsprodukt*
-- ☐ Die Vergleichstabelle enthält zwei bis drei Möglichkeiten mit Ebene, Instrument, Wirkung, Kosten und Kostenträger.
-- ☐ Die gesprochene Empfehlung dauert rund 90 Sekunden und folgt dem Aufbau These – Argumente – Gegenposition – Schluss.
-- ☐ Mindestens ein Argument ist vollständig nach dem 3B-Schema gebaut und stützt sich auf eine eigene Zahl oder eine Zahl aus dem Lehrmittel.
-- ☐ Die schriftliche Rückmeldung an das andere Paar umfasst 80 bis 120 Wörter und beantwortet beide Prüffragen.
+<!--hko:hf_C.bewertungsraster[2].vollstaendig_wenn|checkliste-->
+☐ Die Vergleichstabelle enthält zwei bis drei Möglichkeiten mit Ebene, Instrument, Wirkung, Kosten und Kostenträger.
+☐ Die gesprochene Empfehlung dauert rund 90 Sekunden und folgt dem Aufbau These – Argumente – Gegenposition – Schluss.
+☐ Mindestens ein Argument ist vollständig nach dem 3B-Schema gebaut und stützt sich auf eine eigene Zahl oder eine Zahl aus dem Lehrmittel.
+☐ Die schriftliche Rückmeldung an das andere Paar umfasst 80 bis 120 Wörter und beantwortet beide Prüffragen.
+<!--/hko-->
 
 *Reflexion*
-- ☐ Alle drei Reflexionsfragen sind beantwortet.
-- ☐ R3 nennt ein überprüfbares Anzeichen, nicht eine Absicht.
+<!--hko:hf_C.bewertungsraster[3].vollstaendig_wenn|checkliste-->
+☐ Alle drei Reflexionsfragen sind beantwortet.
+☐ R3 nennt ein überprüfbares Anzeichen, nicht eine Absicht.
+<!--/hko-->
 
 ### KI-Einsatz in dieser Herausforderung
 
@@ -699,7 +723,7 @@ Austausch in Partnerarbeit über die tatsächlich bearbeiteten Herausforderungen
 
 **Ziel — der Ankersatz:**
 
-> «Eine Aussage über nachhaltigen Konsum ist erst dann überprüfbar, wenn benannt ist, welche Dimension sie meint, worauf ihre Zahl sich bezieht und wer die Kosten der vorgeschlagenen Änderung trägt.»
+> «<!--hko:set.dekontextualisierungs_aufgabe.ziel-->Eine Aussage über nachhaltigen Konsum ist erst dann überprüfbar, wenn benannt ist, welche Dimension sie meint, worauf ihre Zahl sich bezieht und wer die Kosten der vorgeschlagenen Änderung trägt.<!--/hko-->»
 
 > [!lernziel] So sieht guter Transfer aus
 > Ein tragfähiger Prüfweg funktioniert auch dort, wo es nicht um Essen geht. Profi-Check aus dem Arbeitsblatt: das Wort «Lebensmittel» testweise durch «Ferienreise» ersetzen. Beispielhafte Schrittfolge: 1. Behauptung genau fassen (wer sagt was, für wen, ab wann). 2. Dimension zuordnen — und benennen, welche fehlt. 3. Zahl und Bezugsgrösse prüfen. 4. Wirkungsebene und Kostenträger bestimmen. 5. Gegenposition formulieren und trotzdem entscheiden.
@@ -734,7 +758,7 @@ Persona: **Lernende/r EFZ, 2. Lehrjahr** — bewusst generisch, wie in allen dre
 
 > In der Pausenzone hängt ein Aushang: Der Getränke- und Snackautomat soll umgestellt werden — weniger Importware, mehr regionale Produkte, andere Verpackung. Darunter steht gross: «40 Prozent weniger Umweltbelastung.» Woher die Zahl stammt, steht nirgends. Die Preise steigen um 30 Rappen pro Artikel. Bis Freitag sammelt die Klassensprecherin Rückmeldungen: zustimmen, ablehnen oder eine Bedingung stellen. Und die eigene Zahl fehlt: Was am Automaten tatsächlich gekauft wird, hat noch niemand erhoben.
 
-**Leitfrage:** «Welche Rückmeldung gebe ich ab — und woran mache ich fest, dass meine Begründung trägt?»
+**Leitfrage:** «<!--hko:kn.hybrid_situation.leitfrage-->Welche Rückmeldung gebe ich ab — und woran mache ich fest, dass meine Begründung trägt?<!--/hko-->»
 
 | Aus Herausforderung | zeigt sich im KN als |
 |---|---|

@@ -34,22 +34,23 @@
   },
 
   "persona": {
-    "beruf": "Maler/in EFZ",
-    "betrieb": "Malergeschäft Brunner",
-    "ort": "St. Gallen"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
 
-  "situation_text": "Ich bin Maler/in EFZ im 1. Lehrjahr beim Malergeschäft Brunner in St. Gallen. Beim Aufräumen im Büro sehe ich die Jahresrechnung für die Sonderabfall-Entsorgung: 4200 Franken für Farbreste, Lösungsmittel und leere Gebinde. Mein Berufsbildner/in ärgert sich: «Das müsste der Farbhersteller zahlen, nicht wir — wir haben das Zeug ja bloss verstrichen.» Ein Mitlernender aus meiner Klasse sieht es umgekehrt und findet, der Staat solle gar nichts vorschreiben: Wäre umweltfreundliche Farbe wirklich besser, würde die Kundschaft sie von selbst verlangen. Im ABU lese ich, dass der Staat Umweltverschmutzung als Marktversagen behandelt und unter anderem mit Lenkungsabgaben gegensteuert. Unsere Klasse soll dazu paarweise eine begründete Stellungnahme verfassen und sie gegenseitig kommentieren.",
+  "situation_text": "Im Schulzimmer liegt seit heute Morgen die Kopie einer Jahresrechnung auf dem Tisch: 4200 Franken für Sonderabfall — Farbreste, Lösungsmittel, leere Gebinde. Der Betrieb, der sie bezahlen muss, hat an den Rand geschrieben: «Das müsste der Farbhersteller zahlen, nicht wir — wir haben das Zeug ja bloss verstrichen.» Ein Mitlernender aus meiner Klasse sieht es umgekehrt und findet, der Staat solle gar nichts vorschreiben: Wäre lösungsmittelfreie Farbe wirklich besser, würde die Kundschaft sie von selbst verlangen. Im Lehrmittel lese ich, dass der Staat Umweltverschmutzung als Marktversagen behandelt und unter anderem mit Lenkungsabgaben gegensteuert. Unsere Klasse soll dazu paarweise eine begründete Stellungnahme verfassen und sie gegenseitig kommentieren.",
 
   "zahlen_tabelle": [
-    {"label": "Sonderabfall-Entsorgung Malergeschäft Brunner, pro Jahr", "wert": "CHF 4200"},
+    {"label": "Sonderabfall-Entsorgung laut Rechnung, pro Jahr", "wert": "CHF 4200"},
     {"label": "Gesamtabfall-Entsorgung pro Person in der Schweiz, pro Tag", "wert": "CHF 1.—"},
     {"label": "Littering-Kosten für Gemeinden und öffentlichen Verkehr, pro Jahr", "wert": "CHF 200 Mio."},
     {"label": "Ordnungsbusse Zigarettenstummel, Kanton Zürich", "wert": "CHF 80"}
   ],
 
   "leitfrage": "Wer soll die Kosten tragen, die unser Konsum verursacht — und mit welcher Begründung?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 1.5 und Kap. 9.3 als Grundlage.",
+  "leitfragen_intro": "Die vier Leitfragen liefern die Bausteine Ihrer Stellungnahme: LF1 die Rechtsgrundlage, LF2 das Instrument, das Sie vorschlagen, LF3 Ihre Position dazu, wer die 4200 Franken tragen soll, und LF4 den Gegenargument-Abschnitt. LF1 und LF2 lösen Sie allein, LF3 und LF4 zu zweit — alles schriftlich. Nutzen Sie das Lehrmittel Kap. 1.5 und Kap. 9.3 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
@@ -57,6 +58,12 @@
       "knoten_ref": "Kap. 1.5 | S. 41",
       "text": "Erklären Sie in eigenen Worten, was das Verursacherprinzip verlangt und in welchem Gesetz es festgehalten ist.",
       "feld_hoehe_mm": 15,
+      "liefert": "die Rechtsgrundlage der Begründung",
+      "scaffolding": {
+        "strategien": ["Lesen Sie Kap. 1.5 S. 41 und notieren Sie Gesetz, Jahr und Vollzugsebene.", "Prüfen Sie an der Rechnung, wer den Abfall verursacht."],
+        "satzanfaenge": ["«Das Verursacherprinzip verlangt, dass …»", "«Festgehalten ist es im … von …»"],
+        "produkt": "Diese Rechtsgrundlage belegt die Begründung in Schritt 1."
+      },
       "loesung": {
         "kern": "Verursacherprinzip und USG 1983",
         "zeilen": [
@@ -71,10 +78,16 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 9.3 | S. 233",
-      "text": "Ordnen Sie den vier umweltpolitischen Instrumenten je ein Beispiel zu, das im Malergeschäft Brunner denkbar wäre.",
+      "text": "Ordnen Sie den vier umweltpolitischen Instrumenten je ein Beispiel zu, das im Fall dieser Rechnung denkbar wäre.",
       "feld_hoehe_mm": 15,
+      "liefert": "das vorgeschlagene umweltpolitische Instrument",
+      "scaffolding": {
+        "strategien": ["Ordnen Sie jedem der vier Instrumente ein Beispiel aus dem Fall der Farbe zu.", "Prüfen Sie: Ein Verbot lässt keine Wahl, ein Anreiz ändert nur den Preis."],
+        "satzanfaenge": ["«Als Anreiz käme … in Frage, weil …»", "«Ein Verbot würde bedeuten, dass …»"],
+        "produkt": "Das gewählte Instrument steht in Schritt 2 im Vorschlag."
+      },
       "loesung": {
-        "kern": "Vier Instrumente am Beispiel Brunner",
+        "kern": "Vier Instrumente am Beispiel der Farbe",
         "zeilen": [
           { "label": "Appell", "text": "Ein Merkblatt zum sparsamen Umgang mit Lösungsmitteln — unverbindlich, ohne garantierte Wirkung.", "quelle": "Kap. 9.3, S. 233" },
           { "label": "Anreiz", "text": "Eine Lenkungsabgabe auf lösungsmittelhaltige Farbe würde die umweltfreundliche Variante relativ günstiger machen.", "quelle": "Kap. 9.3, S. 233" },
@@ -88,13 +101,19 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 1.5 | S. 40-41",
-      "text": "Entscheiden Sie begründet, wer die 4200 Franken tragen soll: der Malerbetrieb, der Farbhersteller, die Kundschaft oder die Allgemeinheit über Steuern.",
+      "text": "Entscheiden Sie begründet, wer die 4200 Franken tragen soll: der Betrieb, der die Farbe verarbeitet hat, der Farbhersteller, die Kundschaft oder die Allgemeinheit über Steuern.",
       "feld_hoehe_mm": 15,
+      "liefert": "die begründete Position des Paars",
+      "scaffolding": {
+        "strategien": ["Sammeln Sie zu allen vier Kostenträgern je ein Argument dafür und dagegen.", "Entscheiden Sie erst danach — sonst fehlt Ihnen das Gegenargument."],
+        "satzanfaenge": ["«Wir vertreten die Position, dass …»", "«Nicht einig waren wir uns bei …»"],
+        "produkt": "Diese Position eröffnet die Stellungnahme in Schritt 3."
+      },
       "loesung": {
         "kern": "Wer die 4200 Franken trägt",
         "zeilen": [
           { "label": "Erwartet", "text": "Der Farbhersteller — er entscheidet über die Zusammensetzung und damit über die Entsorgungskosten, nicht der Betrieb, der nur streicht." },
-          { "label": "Ebenfalls tragfähig", "text": "Der Malerbetrieb, weil er den Abfall physisch erzeugt und das Verursacherprinzip an der Entstehung ansetzt." },
+          { "label": "Ebenfalls tragfähig", "text": "Der Betrieb, der die Farbe verarbeitet hat, weil er den Abfall physisch erzeugt und das Verursacherprinzip an der Entstehung ansetzt." },
           { "label": "Auch denkbar", "text": "Die Allgemeinheit über Steuern, weil alle vom günstigen Bauen und Renovieren profitieren." },
           { "label": "Kostenhöhe", "text": "4200 Franken pro Jahr stehen den rund 1 Franken pro Person und Tag für die gesamte Schweizer Abfallentsorgung gegenüber.", "quelle": "Kap. 1.5, S. 40" }
         ]
@@ -106,6 +125,12 @@
       "knoten_ref": "Kap. 9.3 | S. 233",
       "text": "Formulieren Sie zu zweit den Gegenargument-Abschnitt Ihrer Stellungnahme: Nennen Sie das stärkste Argument der Gegenseite und entkräften Sie es in drei Sätzen.",
       "feld_hoehe_mm": 15,
+      "liefert": "der Gegenargument-Abschnitt der Stellungnahme",
+      "scaffolding": {
+        "strategien": ["Wählen Sie das stärkste Gegenargument, nicht das am leichtesten widerlegbare.", "Entkräften Sie es, ohne es abzuwerten."],
+        "satzanfaenge": ["«Dagegen wird eingewendet, dass …»", "«Dieser Einwand greift zu kurz, weil …»"],
+        "produkt": "Dieser Abschnitt wird in Schritt 4 in die Stellungnahme eingesetzt."
+      },
       "loesung": {
         "kern": "Gegenargument ernst nehmen und entkräften",
         "zeilen": [
@@ -166,11 +191,11 @@
     "format_detail": "Gemeinsame schriftliche Stellungnahme von 300 bis 400 Wörtern in einem geteilten Dokument, dazu eine schriftliche Rückmeldung von 80 bis 120 Wörtern an ein anderes Paar.",
     "beschreibung": "Ich verfasse zusammen mit meiner Partnerin oder meinem Partner eine begründete Stellungnahme dazu, wer die Folgekosten unseres Konsums tragen soll, und gebe einem anderen Paar eine schriftliche Rückmeldung.",
     "schritte": [
-      {"label": "Positionen sammeln", "hint": "Notieren Sie zu zweit alle vier möglichen Kostenträger und je ein Argument dafür und dagegen."},
-      {"label": "Position festlegen", "hint": "Einigen Sie sich auf eine Position. Halten Sie schriftlich fest, worin Sie sich nicht einig waren — das brauchen Sie später."},
-      {"label": "Stellungnahme schreiben", "hint": "Bauen Sie den Text nach der vorgegebenen Struktur. Belegen Sie mindestens zwei Aussagen mit einer Kapitel- und Seitenangabe."},
-      {"label": "Gegenargument einarbeiten", "hint": "Setzen Sie den Abschnitt aus LF4 ein: stärkstes Gegenargument nennen, dann entkräften."},
-      {"label": "Rückmeldung schreiben", "hint": "Lesen Sie die Stellungnahme eines anderen Paars und schreiben Sie: eine Stärke, eine Nachfrage, ein konkreter Verbesserungsvorschlag."}
+      {"label": "Rechtsgrundlage festhalten", "hint": "Übernehmen Sie aus LF1 die Definition des Verursacherprinzips samt Gesetz und Jahr. Das ist der Beleg, auf dem Ihre Begründung steht."},
+      {"label": "Ein Instrument vorschlagen", "hint": "Übernehmen Sie aus LF2 die vier Instrumente mit Ihren Beispielen und einigen Sie sich zu zweit auf das eine, das Sie in der Stellungnahme vorschlagen."},
+      {"label": "Position festlegen und Stellungnahme schreiben", "hint": "Übernehmen Sie aus LF3 Ihren Entscheid, wer die 4200 Franken tragen soll, und bauen Sie den Text nach der vorgegebenen Struktur: 300 bis 400 Wörter, mindestens zwei Aussagen mit Kapitel und Seite belegt. Halten Sie fest, worin Sie sich zu zweit nicht einig waren."},
+      {"label": "Gegenargument einarbeiten und zurückmelden", "hint": "Setzen Sie den Abschnitt aus LF4 ein: stärkstes Gegenargument nennen, dann entkräften. Lesen Sie danach die Stellungnahme eines anderen Paars und schreiben Sie Ihre 80 bis 120 Wörter — eine Stärke, eine Nachfrage, ein Verbesserungsvorschlag."},
+      {"label": "Text gegen die Kriterien gegenlesen", "hint": "Prüfen Sie Ihre Stellungnahme gegen die vier Kriterien im Bewertungsraster: 300 bis 400 Wörter nach der Struktur, zwei Aussagen mit Kapitel und Seite belegt, das stärkste Gegenargument ernsthaft entkräftet, die Rückmeldung mit Stärke, Nachfrage und Vorschlag. Überarbeiten Sie die eine Stelle, die ein Kriterium noch nicht erfüllt."}
     ],
     "schreib_label": "STELLUNGNAHME HIER ERARBEITEN",
     "schreib_note": "-> wissen/verursacherprinzip_lenkungsabgabe",
@@ -192,7 +217,7 @@
         "In der Rückmeldung Fragen statt Urteile formulieren: «Wie meint ihr das mit …?»"
       ],
       "struktur": [
-        "Position – Begründung mit Beleg – Gegenargument – Entkräftung – Schlussfolgerung"
+        "Position (LF3) – Begründung mit Beleg (LF1) – vorgeschlagenes Instrument (LF2) – Gegenargument und Entkräftung (LF4) – Schlussfolgerung"
       ]
     },
     "musterloesung": {
@@ -201,7 +226,7 @@
         {
           "titel": "Position und Begründung",
           "zeilen": [
-            {"label": "Absatz 1", "text": "Wir vertreten die Position, dass der Farbhersteller einen Teil der 4200 Franken tragen soll — nicht der Malerbetrieb allein. Das Umweltschutz-Gesetz von 1983 hält das Verursacherprinzip fest: Wer den Abfall verursacht, kommt für die Entsorgung auf. Verursacht wird der Sonderabfall aber nicht erst beim Streichen, sondern schon bei der Zusammensetzung der Farbe. Wer entscheidet, welche Lösungsmittel in die Dose kommen, entscheidet damit auch über die Entsorgungskosten.", "quelle": "Kap. 1.5, S. 41"}
+            {"label": "Absatz 1", "text": "Wir vertreten die Position, dass der Farbhersteller einen Teil der 4200 Franken tragen soll — nicht der verarbeitende Betrieb allein. Das Umweltschutz-Gesetz von 1983 hält das Verursacherprinzip fest: Wer den Abfall verursacht, kommt für die Entsorgung auf. Verursacht wird der Sonderabfall aber nicht erst beim Streichen, sondern schon bei der Zusammensetzung der Farbe. Wer entscheidet, welche Lösungsmittel in die Dose kommen, entscheidet damit auch über die Entsorgungskosten.", "quelle": "Kap. 1.5, S. 41"}
           ]
         },
         {
@@ -213,7 +238,7 @@
         {
           "titel": "Gegenargument und Entkräftung",
           "zeilen": [
-            {"label": "Absatz 3", "text": "Das stärkste Gegenargument lautet: Der Hersteller wälzt die Abgabe auf den Preis ab, am Ende zahlt die Kundschaft — und kleine Betriebe wie Brunner verlieren Aufträge an Konkurrenten, die billiger offerieren. Dieser Einwand ist berechtigt und lässt sich nicht wegdiskutieren. Er spricht aber nicht gegen die Abgabe, sondern für ihre Ausgestaltung: Wenn die Erträge zurückerstattet werden, wie es das Lehrmittel für die CO₂-Abgabe beschreibt, trifft die Abgabe vor allem jene, die viel verursachen.", "quelle": "Kap. 9.3, S. 233"}
+            {"label": "Absatz 3", "text": "Das stärkste Gegenargument lautet: Der Hersteller wälzt die Abgabe auf den Preis ab, am Ende zahlt die Kundschaft — und kleine Betriebe verlieren Aufträge an Konkurrenten, die billiger offerieren. Dieser Einwand ist berechtigt und lässt sich nicht wegdiskutieren. Er spricht aber nicht gegen die Abgabe, sondern für ihre Ausgestaltung: Wenn die Erträge zurückerstattet werden, wie es das Lehrmittel für die CO₂-Abgabe beschreibt, trifft die Abgabe vor allem jene, die viel verursachen.", "quelle": "Kap. 9.3, S. 233"}
           ]
         },
         {
@@ -250,7 +275,7 @@
 
   "reflexion_fragen": [
     {"nr": "R1", "text": "Welches Argument der Gegenseite hat mich am meisten ins Wanken gebracht?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Wo in meinem Lehrbetrieb zahlt jemand Kosten, die eigentlich woanders entstanden sind?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Wo in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — zahlt jemand Kosten, die woanders entstanden sind?", "sub": null, "feld_hoehe_mm": 10},
     {"nr": "R3", "text": "Was ändere ich an meiner Art zu argumentieren — oder was prüfe ich beim nächsten Mal zuerst?", "sub": null, "feld_hoehe_mm": 10}
   ],
 
@@ -296,7 +321,7 @@
   "wochen": 3,
   "wochen_plan": [
     {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Stellungnahme schreiben und Rückmeldung geben", "aktiv": false},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Stellungnahme schreiben, zurückmelden und gegen die Kriterien gegenlesen", "aktiv": false},
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 

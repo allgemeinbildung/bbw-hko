@@ -47,11 +47,11 @@
     "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
   },
   "persona": {
-    "beruf": "Informatiker/in EFZ",
-    "betrieb": "Noser Engineering AG",
-    "ort": "Winterthur"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
-  "situation_text": "Ich bin Informatik-Lernende/r im 1. Lehrjahr bei der Noser Engineering AG in Winterthur. In zwei Wochen habe ich einen Kompetenznachweis zum Thema «Sicheres Arbeiten im Homeoffice», und ich will mich mit einem KI-Chatbot vorbereiten. Ich tippe «Erkläre mir Datensicherheit» ein und bekomme sofort eine glatte, lange Antwort — aber als ich sie zuklappe, könnte ich kaum drei Sätze davon selbst wiederholen. Es war schnell, es klang gut, und trotzdem habe ich das Gefühl, nichts wirklich verstanden zu haben. Ich frage mich, ob das an der KI liegt oder an meinen Fragen. Soll ich die erste Antwort einfach übernehmen, weil sie fertig aussieht, oder lohnt es sich, weiterzufragen, bis ich es wirklich kann?",
+  "situation_text": "Ich bin im 1. Lehrjahr. In zwei Wochen ist mein nächster Kompetenznachweis — Thema und Termin stehen seit Montag fest, und ich muss den Stoff dort ohne Hilfsmittel selbst erklären können. Gestern Abend habe ich zum ersten Mal mit einem KI-Chat dafür gelernt: Ich habe mein Thema in den Chat kopiert und «erklär mir das» dahintergesetzt. Nach vier Sekunden stand eine glatte Antwort da, rund dreihundert Wörter, gut geschrieben. Ich habe sie zweimal gelesen, genickt und den Chat zugeklappt. Zwanzig Minuten später wollte ich sie mir selbst nacherzählen — es kamen drei Sätze zusammen, dann war Schluss. Ich weiss nicht, ob das an der KI liegt oder an meiner Frage. Und ich weiss nicht, ob ich die nächste Antwort einfach nehmen soll, weil sie fertig aussieht, oder ob ich weiterfragen soll, bis ich es wirklich selbst kann.",
   "zahlen_tabelle": [
     {
       "label": "Zeit bis zum KN",
@@ -67,23 +67,50 @@
     }
   ],
   "leitfrage": "Wie muss ich fragen, damit die KI mir beim Verstehen hilft — und nicht nur eine fertige Antwort liefert?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie arbeiten ohne Lehrmittel — Ihre Quellen sind die KI-Tools selbst, Ihr eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle.",
+  "leitfragen_intro": "Ihr Material ist der KI-Chat selbst und Ihr eigener kommender Kompetenznachweis — beides haben Sie ab der ersten Lektion. LF1 liefert die vier Bausteine, an denen Sie Ihren Ausgangs-Prompt messen; LF2 die drei aufeinander aufbauenden Prompts, LF3 die Markierungen im Dialog, LF4 den Kommentar zum stärksten Prompt. Bearbeiten Sie die vier Leitfragen schriftlich; Sie arbeiten ohne Lehrmittel.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "ohne Lehrmittel | KI-Tool",
-      "text": "Was ist ein Prompt, und warum liefert ein Sprachmodell auf eine vage Frage («Erkläre mir Datensicherheit») eine vage Antwort? Notieren Sie in drei bis vier Sätzen, was ein gutes Prompt von einem schlechten unterscheidet (Ziel, Rolle, Kontext, gewünschtes Format).",
+      "text": "Was ist ein Prompt, und warum liefert ein Sprachmodell auf eine vage Frage («Erkläre mir das Thema») eine vage Antwort? Notieren Sie in drei bis vier Sätzen, was ein gutes Prompt von einem schlechten unterscheidet, und halten Sie die vier Bausteine Rolle, Ziel, Kontext und Format als Prüfliste fest.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Vier Bausteine eines guten Prompts",
         "zeilen": [
-          { "label": "Rolle", "text": "Legt fest, aus welcher Perspektive die KI antwortet, z. B. «Du bist meine Lerncoach/in» statt einer neutralen Enzyklopädie-Antwort." },
-          { "label": "Ziel", "text": "Benennt, wozu die Antwort dient — «damit ich es selbst erklären kann» steuert die KI auf Verstehen statt auf Vollständigkeit." },
-          { "label": "Kontext", "text": "Liefert das eigene KN-Thema und den aktuellen Wissensstand, sonst antwortet die KI so allgemein wie möglich." },
-          { "label": "Format", "text": "Fordert eine Form ein, die zum Lernen passt — Beispiel, Schritte, Rückfrage statt Fliesstext." },
-          { "label": "Warum vage = vage", "text": "Ohne diese vier Angaben liefert die KI nur die wahrscheinlichste, breiteste Antwort — sie kennt weder Ziel noch Vorwissen." }
+          {
+            "label": "Rolle",
+            "text": "Legt fest, aus welcher Perspektive die KI antwortet, z. B. «Du bist meine Lerncoach/in» statt einer neutralen Enzyklopädie-Antwort."
+          },
+          {
+            "label": "Ziel",
+            "text": "Benennt, wozu die Antwort dient — «damit ich es selbst erklären kann» steuert die KI auf Verstehen statt auf Vollständigkeit."
+          },
+          {
+            "label": "Kontext",
+            "text": "Liefert das eigene KN-Thema und den aktuellen Wissensstand, sonst antwortet die KI so allgemein wie möglich."
+          },
+          {
+            "label": "Format",
+            "text": "Fordert eine Form ein, die zum Lernen passt — Beispiel, Schritte, Rückfrage statt Fliesstext."
+          },
+          {
+            "label": "Warum vage = vage",
+            "text": "Ohne diese vier Angaben liefert die KI nur die wahrscheinlichste, breiteste Antwort — sie kennt weder Ziel noch Vorwissen."
+          }
         ]
+      },
+      "liefert": "die vier Bausteine als Prüfliste",
+      "scaffolding": {
+        "strategien": [
+          "Stellen Sie Ihre vage Frage einmal — diese Antwort ist Ihr Vergleichsmass.",
+          "Prüfen Sie Ihren Prompt: Rolle, Ziel, Kontext, Format — was fehlt?"
+        ],
+        "satzanfaenge": [
+          "«Ein Prompt ist gut, wenn …»",
+          "«Vage bleibt die Antwort, weil …»"
+        ],
+        "produkt": "Die vier Bausteine werden zur Prüfliste über dem Ausgangs-Prompt."
       }
     },
     {
@@ -95,27 +122,75 @@
       "loesung": {
         "kern": "Die drei Prompts steigern sich",
         "zeilen": [
-          { "label": "Prompt 1 — vage", "text": "«Erkläre mir …» ohne Rolle, Ziel oder Kontext bleibt bewusst vage — das Vergleichsmass für die spätere Steigerung." },
-          { "label": "Prompt 2 — geschärft", "text": "Mit Rolle, Ziel und dem eigenen KN-Thema als Kontext liefert die KI eine konkretere, brauchbarere Antwort." },
-          { "label": "Prompt 3 — trifft Kern", "text": "Verlangt ausdrücklich eine Kontrollfrage oder einen Weitererklär-Test — hier entsteht der eigentliche Lernschritt." },
-          { "label": "Häufiger Fehler", "text": "Drei gleich vage Prompts statt einer Steigerung: der dritte Prompt muss eine Kontrollfrage enthalten, keine weitere Erklärung verlangen." }
+          {
+            "label": "Prompt 1 — vage",
+            "text": "«Erkläre mir …» ohne Rolle, Ziel oder Kontext bleibt bewusst vage — das Vergleichsmass für die spätere Steigerung."
+          },
+          {
+            "label": "Prompt 2 — geschärft",
+            "text": "Mit Rolle, Ziel und dem eigenen KN-Thema als Kontext liefert die KI eine konkretere, brauchbarere Antwort."
+          },
+          {
+            "label": "Prompt 3 — trifft Kern",
+            "text": "Verlangt ausdrücklich eine Kontrollfrage oder einen Weitererklär-Test — hier entsteht der eigentliche Lernschritt."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Drei gleich vage Prompts statt einer Steigerung: der dritte Prompt muss eine Kontrollfrage enthalten, keine weitere Erklärung verlangen."
+          }
         ]
+      },
+      "liefert": "die drei aufeinander aufbauenden Prompts",
+      "scaffolding": {
+        "strategien": [
+          "Erst breit fragen, dann mit Rolle, Ziel und Kontext schärfen.",
+          "Der dritte Prompt verlangt eine Kontrollfrage, keine neue Erklärung."
+        ],
+        "satzanfaenge": [
+          "«Du bist meine Lerncoach/in für …»",
+          "«Stell mir eine Frage dazu, statt zu erklären.»"
+        ],
+        "produkt": "Die drei Prompts bilden mit den Antworten den Hauptteil des Protokolls."
       }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "KI-Dialog | eigene Notizen",
-      "text": "Entscheiden Sie für jede KI-Antwort begründet: Übernehmen Sie sie, oder haken Sie nochmals nach? Markieren Sie im Dialog, an welcher Stelle Ihr Verständnis tatsächlich gewachsen ist — und an welcher die KI Ihnen nur Arbeit abgenommen hat, ohne dass Sie dazugelernt haben.",
+      "text": "Entscheiden Sie für jede KI-Antwort begründet, ob Sie sie übernehmen oder nochmals nachhaken, und markieren Sie im Dialog mit einem Häkchen, wo Ihr Verständnis gewachsen ist, und mit einem Fragezeichen, wo die KI Ihnen nur Arbeit abgenommen hat.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Übernehmen oder nachhaken — Massstab",
         "zeilen": [
-          { "label": "Erwartet", "text": "Nachhaken, wenn die Antwort nicht in eigenen Worten wiederholbar ist — Tempo darf unbeantwortete Verständnislücken nicht übergehen." },
-          { "label": "Ebenfalls tragfähig", "text": "Eine fertige, klar verstandene Antwort übernehmen und die gesparte Zeit für einen anderen Teil der Vorbereitung nutzen — wenn das Verständnis wirklich steht." },
-          { "label": "Nicht tragfähig", "text": "Jede erste Antwort ungeprüft übernehmen, weil sie fertig aussieht — das ist Tempo ohne Kontrolle, kein Verständnis." },
-          { "label": "Markierung", "text": "Häkchen markiert gewachsenes Verständnis, Fragezeichen markiert reine Arbeitsabnahme durch die KI — beide müssen im Protokoll vorkommen." }
+          {
+            "label": "Erwartet",
+            "text": "Nachhaken, wenn die Antwort nicht in eigenen Worten wiederholbar ist — Tempo darf unbeantwortete Verständnislücken nicht übergehen."
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Eine fertige, klar verstandene Antwort übernehmen und die gesparte Zeit für einen anderen Teil der Vorbereitung nutzen — wenn das Verständnis wirklich steht."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Jede erste Antwort ungeprüft übernehmen, weil sie fertig aussieht — das ist Tempo ohne Kontrolle, kein Verständnis."
+          },
+          {
+            "label": "Markierung",
+            "text": "Häkchen markiert gewachsenes Verständnis, Fragezeichen markiert reine Arbeitsabnahme durch die KI — beide müssen im Protokoll vorkommen."
+          }
         ]
+      },
+      "liefert": "die Markierungen im Dialog",
+      "scaffolding": {
+        "strategien": [
+          "Klappen Sie die Antwort zu und erzählen Sie sie in eigenen Worten nach.",
+          "Was Sie nicht selbst wiedergeben können, bekommt ein Fragezeichen."
+        ],
+        "satzanfaenge": [
+          "«Hier habe ich verstanden, weil …»",
+          "«Hier hat die KI nur abgenommen, dass …»"
+        ],
+        "produkt": "Häkchen und Fragezeichen machen den Lernfortschritt im Protokoll sichtbar."
       }
     },
     {
@@ -127,10 +202,30 @@
       "loesung": {
         "kern": "Kommentar zum stärksten Prompt",
         "zeilen": [
-          { "label": "Bauteil", "text": "Der Kommentar besteht aus zwei bis drei Sätzen: welche Frage wirkte, und warum — nicht eine Zusammenfassung des ganzen Protokolls." },
-          { "label": "Musterformulierung", "text": "«Diese Frage hat gewirkt, weil ich selbst antworten musste — die KI hat mich abgefragt statt mir zu erklären.»" },
-          { "label": "Massstab", "text": "Konkrete Wirkung benennen, was genau geholfen hat — kein pauschales «war gut» und kein neuer Prompt-Vorschlag." }
+          {
+            "label": "Bauteil",
+            "text": "Der Kommentar besteht aus zwei bis drei Sätzen: welche Frage wirkte, und warum — nicht eine Zusammenfassung des ganzen Protokolls."
+          },
+          {
+            "label": "Musterformulierung",
+            "text": "«Diese Frage hat gewirkt, weil ich selbst antworten musste — die KI hat mich abgefragt statt mir zu erklären.»"
+          },
+          {
+            "label": "Massstab",
+            "text": "Konkrete Wirkung benennen, was genau geholfen hat — kein pauschales «war gut» und kein neuer Prompt-Vorschlag."
+          }
         ]
+      },
+      "liefert": "der Kommentar zum stärksten Prompt",
+      "scaffolding": {
+        "strategien": [
+          "Wählen Sie den Prompt, nach dem Sie selbst etwas sagen mussten."
+        ],
+        "satzanfaenge": [
+          "«Diese Frage hat gewirkt, weil …»",
+          "«Gelernt habe ich erst, als …»"
+        ],
+        "produkt": "Der Kommentar schliesst das Protokoll ab und begründet den stärksten Prompt."
       }
     }
   ],
@@ -185,27 +280,27 @@
     ],
     "titel": "Mein Prompt-Protokoll — wie ich mich vom schwammigen zum scharfen Fragen vorgearbeitet habe",
     "format_detail": "Ein kommentierter KI-Dialog auf ein bis zwei A4-Seiten: mindestens drei iterativ verbesserte Prompts mit den jeweiligen KI-Antworten (gekürzt zitiert), farbig oder mit Symbolen markiert, wo Ihr Verständnis tatsächlich gewachsen ist, plus ein Kurzkommentar zum stärksten Prompt.",
-    "beschreibung": "Ich dokumentiere meinen eigenen KI-Dialog zur KN-Vorbereitung und mache sichtbar, wie ich vom vagen ersten Prompt zu einer Frage komme, die mein Verständnis wirklich weiterbringt. Das Protokoll zeigt nicht die schönste KI-Antwort, sondern meinen Lernweg: Wo habe ich nachgehakt, wo habe ich gemerkt, dass ich etwas selbst können muss? Es ist die Grundlage, mit der ich in Herausforderung B die Verlässlichkeit der KI prüfe und in Herausforderung C meinen Lernplan baue.",
+    "beschreibung": "Ich dokumentiere meinen eigenen KI-Dialog zur Vorbereitung auf meinen nächsten Kompetenznachweis und mache sichtbar, wie ich vom vagen ersten Prompt zu einer Frage komme, die mein Verständnis wirklich weiterbringt. Das Protokoll zeigt nicht die schönste KI-Antwort, sondern meinen Lernweg: Wo habe ich nachgehakt, und wo habe ich gemerkt, dass ich etwas selbst können muss?",
     "schritte": [
       {
         "label": "Ausgangs-Prompt festhalten",
-        "hint": "Schreiben Sie Ihren ersten, bewusst vagen Prompt auf und kopieren Sie die KI-Antwort gekürzt darunter. Das ist Ihr «Vorher»-Bild."
+        "hint": "Schreiben Sie Ihren ersten, bewusst vagen Prompt auf und kopieren Sie die KI-Antwort gekürzt darunter. Haken Sie mit der Prüfliste aus LF1 ab, welche der vier Bausteine fehlen. Das ist Ihr «Vorher»-Bild."
       },
       {
-        "label": "Prompt schärfen",
-        "hint": "Bauen Sie Rolle, Ziel, Kontext und gewünschtes Format ein (Mindmap-Ast 1). Geben Sie den verbesserten Prompt ein und notieren Sie die neue Antwort."
-      },
-      {
-        "label": "Iterativ nachfragen",
-        "hint": "Stellen Sie mindestens eine Kontroll- oder Vertiefungsfrage («Stell mir eine Frage zum Thema», «Erkläre das mit einem Beispiel aus meinem Beruf»)."
+        "label": "Prompts schärfen und eingeben",
+        "hint": "Übernehmen Sie die drei Prompts aus LF2, geben Sie sie nacheinander ein und notieren Sie jede Antwort gekürzt darunter. Der dritte Prompt stellt eine Kontrollfrage."
       },
       {
         "label": "Lernfortschritt markieren",
-        "hint": "Markieren Sie im Dialog mit Symbolen: Häkchen = hier habe ich verstanden, Fragezeichen = hier hat mir die KI nur Arbeit abgenommen, ohne dass ich dazugelernt habe."
+        "hint": "Übernehmen Sie aus LF3 Ihre Entscheidungen als Markierung: Häkchen = hier habe ich verstanden, Fragezeichen = hier hat mir die KI nur Arbeit abgenommen. Beide Zeichen müssen im Protokoll vorkommen."
       },
       {
         "label": "Stärksten Prompt kommentieren",
-        "hint": "Wählen Sie den Prompt, der Ihr Verständnis am meisten weitergebracht hat, und begründen Sie in 2–3 Sätzen, warum gerade diese Frage gewirkt hat."
+        "hint": "Setzen Sie den Kommentar aus LF4 ans Ende des Protokolls: welche Frage gewirkt hat und warum, in zwei bis drei Sätzen."
+      },
+      {
+        "label": "Gegen die Kriterien abgleichen",
+        "hint": "Gleichen Sie Ihr Protokoll mit den Kriterien unter «vollständig, wenn» ab: Prüfliste abgehakt, drei Prompts mit Antworten, beide Markierungszeichen, Kommentar. Überarbeiten Sie die eine Stelle, die noch nicht standhält."
       }
     ],
     "schreib_label": "PROMPT-PROTOKOLL HIER ERARBEITEN",
@@ -223,24 +318,24 @@
         "Lernfortschritt sofort markieren, solange Sie den Eindruck noch frisch haben"
       ],
       "struktur": [
-        "Pro Prompt: Frage – KI-Antwort (gekürzt) – meine Markierung",
-        "Aufbau vom vagen zum scharfen Prompt sichtbar machen",
-        "Abschluss: Kommentar zum stärksten Prompt"
+        "Kopf: Ausgangs-Prompt mit der Prüfliste aus LF1",
+        "Pro Prompt: Frage (LF2) – KI-Antwort gekürzt – Markierung (LF3)",
+        "Abschluss: Kommentar zum stärksten Prompt (LF4)"
       ]
     },
     "musterloesung": {
-      "hinweis": "Erst zeigen, wenn ein eigenes Protokoll steht. Beispiel auf Stufe 3–4: die Schärfung vom vagen zum präzisen Prompt ist sichtbar, der Lernfortschritt ist markiert statt behauptet. Thema hier: Sicheres Arbeiten im Homeoffice.",
+      "hinweis": "Erst zeigen, wenn ein eigenes Protokoll steht. Beispiel auf Stufe 3–4: die Schärfung vom vagen zum präzisen Prompt ist sichtbar, der Lernfortschritt ist markiert statt behauptet. Als KN-Thema steht hier «Rechte und Pflichten im Lehrvertrag» — im eigenen Protokoll setzen die Lernenden ihr eigenes Thema ein.",
       "abschnitte": [
         {
           "titel": "Prompt 1 — der vage Einstieg",
           "zeilen": [
             {
               "label": "Meine Frage",
-              "text": "Erkläre mir Datensicherheit."
+              "text": "Erkläre mir den Lehrvertrag."
             },
             {
               "label": "KI-Antwort (gekürzt)",
-              "text": "Lange, glatte Übersicht über Verschlüsselung, Passwörter, Backups, Firewalls — sechs Absätze, alles allgemein."
+              "text": "Lange, glatte Übersicht über Vertragsparteien, Dauer, Probezeit, Lohn, Ferien und Auflösung — sechs Absätze, alles allgemein."
             },
             {
               "label": "Meine Markierung",
@@ -253,15 +348,15 @@
           "zeilen": [
             {
               "label": "Meine Frage",
-              "text": "Du bist meine Lerncoach/in. Ich habe in zwei Wochen einen Kompetenznachweis zum Thema «Sicheres Arbeiten im Homeoffice» und bin Informatik-Lernende/r im 1. Lehrjahr. Mein Ziel ist, dass ich es selbst erklären kann. Erkläre mir die drei wichtigsten Risiken im Homeoffice — je in zwei Sätzen und mit einem Beispiel aus dem Betrieb."
+              "text": "Du bist meine Lerncoach/in. Ich habe in zwei Wochen einen Kompetenznachweis zum Thema «Rechte und Pflichten im Lehrvertrag» und bin im 1. Lehrjahr. Mein Ziel ist, dass ich es selbst erklären kann. Erkläre mir die drei wichtigsten Pflichten des Lehrbetriebs — je in zwei Sätzen und mit einem Beispiel aus dem Arbeitsalltag."
             },
             {
               "label": "KI-Antwort (gekürzt)",
-              "text": "Drei Risiken mit Beispiel: ungesichertes WLAN (Nachbar liest mit), Bildschirm im Wohnzimmer einsehbar (Besuch sieht Kundendaten), privates Gerät ohne Updates (Schadsoftware)."
+              "text": "Drei Pflichten mit Beispiel: ausbilden statt nur mitarbeiten lassen (ich werde angeleitet, nicht bloss eingesetzt), Lohn zahlen (jeden Monat, wie im Vertrag vereinbart), für Berufsfachschule und überbetriebliche Kurse freistellen (ohne Lohnabzug)."
             },
             {
               "label": "Meine Markierung",
-              "text": "★ Jetzt konkret. Die Beispiele kann ich mir merken, weil ich sie mir vorstellen kann. Rolle + Ziel + Kontext haben die Antwort brauchbar gemacht."
+              "text": "★ Jetzt konkret. Die Beispiele kann ich mir merken, weil ich sie aus meinem eigenen Alltag kenne. Rolle + Ziel + Kontext haben die Antwort brauchbar gemacht."
             }
           ]
         },
@@ -270,11 +365,11 @@
           "zeilen": [
             {
               "label": "Meine Frage",
-              "text": "Erkläre nichts mehr. Stell mir stattdessen drei Kontrollfragen zu diesen drei Risiken und sag mir danach, was in meiner Antwort noch fehlt."
+              "text": "Erkläre nichts mehr. Stell mir stattdessen drei Kontrollfragen zu diesen drei Pflichten und sag mir danach, was in meiner Antwort noch fehlt."
             },
             {
               "label": "KI-Antwort (gekürzt)",
-              "text": "Drei Fragen; nach meiner Antwort der Hinweis, dass ich beim WLAN zwar das Risiko, aber keine Massnahme genannt habe (VPN, eigenes Passwort)."
+              "text": "Drei Fragen; nach meiner Antwort der Hinweis, dass ich bei der Freistellung zwar die Pflicht genannt habe, aber nicht, an wen ich mich wende, wenn sie nicht eingehalten wird."
             },
             {
               "label": "Meine Markierung",
@@ -339,8 +434,9 @@
       "produkt": "Handlungsprodukt",
       "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
       "vollstaendig_wenn": [
-        "Mindestens 3 iterativ verbesserte Prompts mit KI-Antworten dokumentiert",
-        "Lernfortschritt im Dialog sichtbar markiert",
+        "Die vier Prompt-Bausteine am Ausgangs-Prompt abgehakt",
+        "Mindestens drei iterativ verbesserte Prompts mit KI-Antworten dokumentiert",
+        "Lernfortschritt mit Häkchen und Fragezeichen im Dialog markiert",
         "Kurzkommentar zum stärksten Prompt vorhanden"
       ]
     },
@@ -357,12 +453,12 @@
   "wochen_plan": [
     {
       "label": "Woche 1 - 45 min",
-      "text": "Herausforderung lesen, LF1-LF2, Mindmap, erste Prompts ausprobieren",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap, Ausgangs-Prompt und geschärfte Prompts im Chat testen",
       "aktiv": true
     },
     {
       "label": "Woche 2 - 45 min",
-      "text": "LF3-LF4, Prompt-Protokoll erstellen und Lernfortschritt markieren",
+      "text": "LF3-LF4, Protokoll markieren, Kommentar schreiben und gegen die Kriterien abgleichen",
       "aktiv": false
     },
     {
@@ -452,5 +548,14 @@
       "sk": 11,
       "wo": "Im Kommentar (LF4) und in Reflexion R3 benennt die Lernende den Zielkonflikt zwischen Tempo und echtem Verständnis, statt eine Seite zu streichen."
     }
-  ]
+  ],
+  "auftakt_typ": "pfad",
+  "bereitet_vor": {
+    "fuer": [
+      "B",
+      "C"
+    ],
+    "material": "Das Prompt-Protokoll mit den geschärften Prompts",
+    "verbindlich": false
+  }
 }

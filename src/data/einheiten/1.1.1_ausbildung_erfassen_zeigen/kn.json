@@ -22,14 +22,14 @@
   "hybrid_situation": {
     "titel": "Der Stand am Berufsinfo-Abend",
     "definition_kurz": "Eine einzelne Situation, in der alles zusammenkommt, was Sie in den drei Herausforderungen einzeln geübt haben.",
-    "definition_lang": "Die Hybrid-Herausforderung ist keine vierte Lernaufgabe, sondern der Prüffall: eine neue Szene mit neuer Person und neuem Betrieb, in der die Konfliktarten aller drei Herausforderungen gleichzeitig wirksam sind. Wer nur eine der drei Herausforderungen bearbeitet hat, kann die Szene beschreiben, aber nicht auflösen — genau daran zeigt sich, ob das gemeinsame Prinzip erworben wurde.",
+    "definition_lang": "Die Hybrid-Herausforderung ist keine vierte Lernaufgabe, sondern der Prüffall: ein neuer Anlass mit neuem Publikum und neuem Einsatz, in dem die Konfliktarten aller drei Herausforderungen gleichzeitig wirksam sind. Die Person ist dieselbe wie in den Lernaufgaben — neu ist die Lage, nicht der Beruf. Wer nur eine der drei Herausforderungen bearbeitet hat, kann die Szene beschreiben, aber nicht auflösen — genau daran zeigt sich, ob das gemeinsame Prinzip erworben wurde.",
     "persona": {
-      "beruf": "Laborant/in EFZ",
-      "betrieb": "Labor Grischun AG",
-      "ort": "Chur"
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
     },
-    "text": "Ich bin Laborant/in im 1. Lehrjahr bei der Labor Grischun AG in Chur. Am Berufsinfo-Abend stehe ich am Stand meines Betriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Ich habe ein A4-Blatt vorbereitet. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur Geschirr gespült habe. Ein Vater fragt, was ich danach mache. Meine Ausbildnerin steht einen Meter weiter. Zu Hause habe ich diese Frage längst anders beantwortet als hier. Und beim üK-Ablauf, nach dem eine Mutter fragt, bin ich mir selbst nicht sicher.",
-    "leitfrage": "Was gehört auf mein Blatt und in meine Antwort — und wem gegenüber verantworte ich diese Auswahl?",
+    "text": "Ich bin im 1. Lehrjahr. Am Berufsinfo-Abend stehe ich am Stand meines Lehrbetriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Das A4-Blatt auf dem Tisch hat der Betrieb gemacht, nicht ich. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur aufgeräumt und Material eingeräumt habe. Eine Mutter fragt nach dem Ablauf der überbetrieblichen Kurse, und ich bin mir selbst nicht sicher. Ein Vater fragt, was ich nach dem EFZ mache; zu Hause habe ich diese Frage längst anders beantwortet als hier, und meine Ausbildnerin steht einen Meter weiter. Was ich an diesem Abend sage, entscheidet mit, ob sich jemand für diese Ausbildung anmeldet.",
+    "leitfrage": "Was ergänze ich, was lasse ich weg — und wem gegenüber verantworte ich diese Auswahl?",
     "aktivierte_trade_offs": [
       "Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe",
       "Alles von mir zeigen vs. für mein Gegenüber auswählen und weglassen",
@@ -39,11 +39,11 @@
       "herausforderungen_mapping": [
         {
           "hf_letter": "A",
-          "scene_element": "Der üK-Ablauf, nach dem die Mutter fragt und bei dem die lernende Person unsicher ist, sowie die zwei Wochen Geschirrspülen — was im Bildungsplan steht und was tatsächlich geschah."
+          "scene_element": "Der üK-Ablauf, nach dem die Mutter fragt und bei dem die lernende Person unsicher ist, sowie die zwei Wochen mit fast nur Aufräumarbeiten — was im Bildungsplan steht und was tatsächlich geschah."
         },
         {
           "hf_letter": "B",
-          "scene_element": "Das vorbereitete A4-Blatt und die Vorgabe, es «positiv» zu halten: eine Auswahl für ein Publikum, das die Person nicht kennt."
+          "scene_element": "Das vom Betrieb vorbereitete A4-Blatt und die Vorgabe, es «positiv» zu halten: eine Auswahl für ein Publikum, das die Person nicht kennt."
         },
         {
           "hf_letter": "C",
@@ -51,7 +51,9 @@
         }
       ],
       "new_dimensions": [
-        "Eine Person mit Weisungsbefugnis hört mit, während geantwortet wird. In A, B und C entscheidet die lernende Person unbeobachtet. Von der Lehrperson bewusst freigegeben: die Anwesenheit der Ausbildnerin macht aus der Schreibübung eine Entscheidung und ist im 1. Lehrjahr der Normalfall."
+        "Eine Person mit Weisungsbefugnis hört mit, während geantwortet wird. In A, B und C entscheidet die lernende Person unbeobachtet. Von der Lehrperson bewusst freigegeben: die Anwesenheit der Ausbildnerin macht aus der Schreibübung eine Entscheidung und ist im 1. Lehrjahr der Normalfall.",
+        "Die Folge trifft nicht die lernende Person selbst, sondern eine fremde: Wer sich nach diesem Abend anmeldet, entscheidet auf Grundlage ihrer Auskunft. In A, B und C trägt sie die Folgen ihrer Auswahl allein — hier trägt sie jemand, den sie nicht kennt.",
+        "Das A4-Blatt stammt vom Betrieb, nicht von der lernenden Person. In A, B und C wählt sie aus eigenem Material aus; hier muss sie eine fremde Auswahl erst prüfen, bevor sie sie vertritt."
       ]
     }
   },
@@ -81,7 +83,7 @@
         {
           "nr": 3,
           "typ": "Beurteilen",
-          "frage": "Zwei Dinge fehlen: die zwei Wochen Geschirrspülen und der üK-Ablauf, den Sie selbst nicht kennen. Ist das zweimal dasselbe Problem oder sind es zwei verschiedene? Begründen Sie.",
+          "frage": "Zwei Dinge fehlen: die zwei Wochen mit fast nur Aufräumarbeiten und der üK-Ablauf, den Sie selbst nicht kennen. Ist das zweimal dasselbe Problem oder sind es zwei verschiedene? Begründen Sie.",
           "k_stufe": 3
         },
         {
@@ -124,7 +126,7 @@
         {
           "nr": 2,
           "typ": "Unterscheiden",
-          "aufgabe": "Auf dem Blatt fehlen zwei Dinge: die zwei Wochen Geschirrspülen und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.",
+          "aufgabe": "Auf dem Blatt fehlen zwei Dinge: die zwei Wochen mit fast nur Aufräumarbeiten und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.",
           "k_stufe": 3
         },
         {
@@ -136,7 +138,7 @@
         {
           "nr": 4,
           "typ": "Forderung",
-          "aufgabe": "Formulieren Sie in Ich-Form, was Sie von Ihrem Betrieb erwarten, damit Sie an einem solchen Abend ehrlich Auskunft geben können — und was Sie im Gegenzug zusichern.",
+          "aufgabe": "Formulieren Sie in Ich-Form, was Sie von Ihrem Lehrbetrieb erwarten — oder von dort, wo Sie zuletzt gearbeitet haben —, damit Sie an einem solchen Abend ehrlich Auskunft geben können, und was Sie im Gegenzug zusichern.",
           "k_stufe": 4
         }
       ],

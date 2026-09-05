@@ -46,11 +46,11 @@
     "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
   },
   "persona": {
-    "beruf": "Schreiner/in EFZ",
-    "betrieb": "Schreinerei Aebi GmbH",
-    "ort": "Thun"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
-  "situation_text": "Ich bin Schreiner-Lernende/r im 1. Lehrjahr bei der Schreinerei Aebi in Thun. Für meinen kommenden Kompetenznachweis über nachhaltige Holzbeschaffung lasse ich die KI eine Online-Recherche machen: «Suche aktuelle Quellen zu FSC-zertifiziertem Schweizer Holz und fasse sie zusammen.» Ich bekomme eine überzeugend klingende Zusammenfassung mit vier verlinkten Quellen — sieht professionell aus. Als ich aus Neugier zwei der Links anklicke, führt einer ins Leere und beim anderen steht nichts von dem, was die KI behauptet hat. Jetzt bin ich unsicher: Sind die anderen beiden Quellen echt, oder hat die KI sie einfach erfunden? Ich habe wenig Zeit und die Zusammenfassung wäre praktisch — aber wenn ich falsche Quellen in meinen KN übernehme, fällt das auf mich zurück.",
+  "situation_text": "Ich bin im 1. Lehrjahr und bereite mich auf meinen nächsten Kompetenznachweis vor. Für den Teil, in dem ich mit Zahlen und Quellen argumentieren muss, lasse ich zuerst die KI recherchieren: «Suche mir aktuelle Quellen zu meinem Thema und fasse sie zusammen.» Nach zwanzig Sekunden habe ich eine Zusammenfassung, die klingt wie aus einem Fachbuch, und vier Links darunter. Aus Neugier klicke ich zwei davon an. Der erste führt auf eine Fehlermeldung — die Seite gibt es nicht. Beim zweiten öffnet sich zwar eine echte Seite, aber der Satz, den die KI daraus zitiert, steht dort nirgends. Zwei von zwei geprüften Links halten nicht, was sie versprechen; zwei habe ich noch nicht angeschaut. Die Zusammenfassung wäre praktisch und die Zeit ist knapp — aber wenn eine erfundene Quelle in meinem Kompetenznachweis landet, steht mein Name darunter, nicht der der KI.",
   "zahlen_tabelle": [
     {
       "label": "Von der KI gelieferte Quellen",
@@ -66,54 +66,127 @@
     }
   ],
   "leitfrage": "Wie prüfe ich, ob die Quellen einer KI-Recherche echt und verlässlich sind — bevor ich sie für meinen KN nutze?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie arbeiten ohne Lehrmittel — Ihre Quellen sind die KI-Recherche selbst, Ihr eigener kommender Kompetenznachweis und eine selbstgewählte verlässliche Quelle zum Gegenprüfen.",
+  "leitfragen_intro": "Ihr Material ist die KI-Recherche, die Sie in dieser Lektion selbst erzeugen, und Ihr eigener kommender Kompetenznachweis. LF1 liefert die drei Prüffragen als Spaltenköpfe; LF2 die ausgefüllten Zeilen der Prüftabelle, LF3 das Gesamturteil, LF4 den ausgeschriebenen Prüf-Eintrag. Bearbeiten Sie die vier Leitfragen schriftlich; Sie arbeiten ohne Lehrmittel.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "ohne Lehrmittel | KI-Tool",
-      "text": "Was bedeutet es, dass ein Sprachmodell «halluzinieren» kann? Erklären Sie in drei bis vier Sätzen, warum eine KI Quellen oder URLs erfinden kann, die echt aussehen, aber nicht existieren.",
+      "text": "Was bedeutet es, dass ein Sprachmodell «halluzinieren» kann? Erklären Sie in drei bis vier Sätzen, warum eine KI Quellen oder URLs erfinden kann, die echt aussehen, aber nicht existieren, und leiten Sie daraus die drei Fragen ab, mit denen Sie jede Quelle prüfen.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Warum eine KI Quellen erfindet",
         "zeilen": [
-          { "label": "Halluzination", "text": "Ein Sprachmodell erzeugt Text nach Wahrscheinlichkeit, nicht nach Wahrheit — es kann Titel und URLs erfinden, die plausibel klingen, aber nicht existieren." },
-          { "label": "Warum überzeugend", "text": "Die Form — Name, Jahr, Link — folgt bekannten Mustern echter Quellen, deshalb wirkt eine erfundene Quelle genauso seriös wie eine echte." },
-          { "label": "Sicherer Ton", "text": "Die KI markiert Unsicherheit nicht von selbst — eine falsche Angabe klingt gleich bestimmt wie eine korrekte." },
-          { "label": "Konsequenz", "text": "Deshalb muss jede von der KI genannte Quelle einzeln geöffnet und geprüft werden, bevor sie in den KN übernommen wird." }
+          {
+            "label": "Halluzination",
+            "text": "Ein Sprachmodell erzeugt Text nach Wahrscheinlichkeit, nicht nach Wahrheit — es kann Titel und URLs erfinden, die plausibel klingen, aber nicht existieren."
+          },
+          {
+            "label": "Warum überzeugend",
+            "text": "Die Form — Name, Jahr, Link — folgt bekannten Mustern echter Quellen, deshalb wirkt eine erfundene Quelle genauso seriös wie eine echte."
+          },
+          {
+            "label": "Sicherer Ton",
+            "text": "Die KI markiert Unsicherheit nicht von selbst — eine falsche Angabe klingt gleich bestimmt wie eine korrekte."
+          },
+          {
+            "label": "Konsequenz",
+            "text": "Deshalb muss jede von der KI genannte Quelle einzeln geöffnet und geprüft werden, bevor sie in den KN übernommen wird."
+          },
+          {
+            "label": "Drei Prüffragen",
+            "text": "Daraus folgen die drei Fragen an jede Quelle: Existiert sie wirklich? Belegt sie, was die KI behauptet? Ist der Herausgeber vertrauenswürdig?"
+          }
         ]
+      },
+      "liefert": "die drei Prüffragen als Spaltenköpfe",
+      "scaffolding": {
+        "strategien": [
+          "Fragen Sie sich, woraus die KI antwortet — aus Sprachmustern, nicht aus Quellen."
+        ],
+        "satzanfaenge": [
+          "«Halluzinieren heisst, dass …»",
+          "«Deshalb prüfe ich zuerst, ob …»"
+        ],
+        "produkt": "Die drei Prüffragen werden zu den Spaltenköpfen der Prüftabelle."
       }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "KI-Recherche | eigene Prüfung",
-      "text": "Lassen Sie die KI zu Ihrem eigenen KN-Thema eine Recherche mit Quellen machen. Prüfen Sie danach jede genannte Quelle nach drei Kriterien: Existiert der Link / die Quelle wirklich? Steht dort tatsächlich, was die KI behauptet? Ist die Quelle vertrauenswürdig (Herausgeber, Aktualität)?",
+      "text": "Prüfen Sie jede Quelle, die die KI in Ihrer Recherche nennt, nach Ihren drei Fragen: Existiert die Quelle wirklich, steht dort tatsächlich, was die KI behauptet, und ist der Herausgeber vertrauenswürdig? Halten Sie pro Quelle eine Zeile fest.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Drei Prüfkriterien angewendet",
         "zeilen": [
-          { "label": "Existiert?", "text": "Link oder Titel im Original suchen — führt er ins Leere oder zu einer Seite, die es nicht gibt, ist die Quelle erfunden." },
-          { "label": "Belegt?", "text": "Auch ein echter Link kann die Behauptung nicht stützen — das ist die subtilste Falle: echte Quelle, falsch zusammengefasst." },
-          { "label": "Vertrauenswürdig?", "text": "Herausgeber und Aktualität prüfen — eine amtliche oder Fachquelle wiegt anders als ein Branchenblog mit Eigeninteresse." },
-          { "label": "Häufiger Fehler", "text": "Nur prüfen, ob der Link funktioniert, und Kriterium 2 überspringen — genau dort sitzt die subtilste Halluzination: echter Link, falsch zusammengefasst." }
+          {
+            "label": "Existiert?",
+            "text": "Link oder Titel im Original suchen — führt er ins Leere oder zu einer Seite, die es nicht gibt, ist die Quelle erfunden."
+          },
+          {
+            "label": "Belegt?",
+            "text": "Auch ein echter Link kann die Behauptung nicht stützen — das ist die subtilste Falle: echte Quelle, falsch zusammengefasst."
+          },
+          {
+            "label": "Vertrauenswürdig?",
+            "text": "Herausgeber und Aktualität prüfen — eine amtliche oder Fachquelle wiegt anders als ein Branchenblog mit Eigeninteresse."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur prüfen, ob der Link funktioniert, und Kriterium 2 überspringen — genau dort sitzt die subtilste Halluzination: echter Link, falsch zusammengefasst."
+          }
         ]
+      },
+      "liefert": "die ausgefüllten Zeilen der Prüftabelle",
+      "scaffolding": {
+        "strategien": [
+          "Klicken Sie jeden Link selbst an — ein plausibler Titel ist kein Beleg."
+        ],
+        "satzanfaenge": [
+          "«Die KI behauptet …, tatsächlich steht dort …»",
+          "«Diese Quelle existiert nicht, weil …»"
+        ],
+        "produkt": "Jede geprüfte Quelle wird zu einer Zeile der Prüftabelle."
       }
     },
     {
       "nr": 3,
       "bloom": "Analysieren",
       "knoten_ref": "KI-Recherche | eigene Prüfung",
-      "text": "Analysieren Sie das Gesamtbild: Wie verlässlich ist diese KI-Recherche insgesamt? Vergleichen Sie Verlässlichkeit (stimmen die Quellen?), Tiefe (bleibt es an der Oberfläche?) und Nachvollziehbarkeit (können Sie jede Aussage zurückverfolgen?). Begründen Sie, welchen Teilen Sie vertrauen und welchen nicht.",
+      "text": "Beurteilen Sie die Recherche als Ganzes an drei Massstäben — Verlässlichkeit (stimmen die Quellen?), Tiefe (bleibt es an der Oberfläche?) und Nachvollziehbarkeit (lässt sich jede Aussage zurückverfolgen?) — und begründen Sie, welchen Teilen Sie vertrauen und welchen nicht.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Gesamturteil: drei Massstäbe",
         "zeilen": [
-          { "label": "Verlässlichkeit", "text": "Anteil der Quellen, die Existenz- und Beleg-Prüfung tatsächlich bestehen — nicht die Zahl der genannten Quellen zählt, sondern wie viele standhalten." },
-          { "label": "Tiefe", "text": "Bleibt die Recherche bei allgemeinen Aussagen, oder liefert sie für den eigenen Betrieb verwertbare Details?" },
-          { "label": "Nachvollziehbarkeit", "text": "Kann jede Aussage bis zur Originalquelle zurückverfolgt werden, oder bleibt sie eine unbelegte Behauptung der KI?" },
-          { "label": "Schwach vs. stark", "text": "Schwach: pauschal «vertrauenswürdig» oder «unzuverlässig» urteilen. Stark: pro Quelle einzeln begründen, welchem Teil vertraut wird und welchem nicht." }
+          {
+            "label": "Verlässlichkeit",
+            "text": "Anteil der Quellen, die Existenz- und Beleg-Prüfung tatsächlich bestehen — nicht die Zahl der genannten Quellen zählt, sondern wie viele standhalten."
+          },
+          {
+            "label": "Tiefe",
+            "text": "Bleibt die Recherche bei allgemeinen Aussagen, oder liefert sie Details, die im eigenen Kompetenznachweis wirklich verwertbar sind?"
+          },
+          {
+            "label": "Nachvollziehbarkeit",
+            "text": "Kann jede Aussage bis zur Originalquelle zurückverfolgt werden, oder bleibt sie eine unbelegte Behauptung der KI?"
+          },
+          {
+            "label": "Schwach vs. stark",
+            "text": "Schwach: pauschal «vertrauenswürdig» oder «unzuverlässig» urteilen. Stark: pro Quelle einzeln begründen, welchem Teil vertraut wird und welchem nicht."
+          }
         ]
+      },
+      "liefert": "das Gesamturteil in drei Massstäben",
+      "scaffolding": {
+        "strategien": [
+          "Zählen Sie zuerst aus, wie viele Quellen die Prüfung bestanden haben."
+        ],
+        "satzanfaenge": [
+          "«Insgesamt halte ich die Recherche für …»",
+          "«Diesem Teil vertraue ich, jenem nicht, weil …»"
+        ],
+        "produkt": "Das Gesamturteil steht unter der Prüftabelle, dreiteilig begründet."
       }
     },
     {
@@ -125,10 +198,30 @@
       "loesung": {
         "kern": "Ein Prüf-Eintrag pro Quelle",
         "zeilen": [
-          { "label": "Bauteil", "text": "Ein Prüf-Eintrag nennt die Quelle, das Prüfergebnis und die Verwendungs-Entscheidung — nicht die ganze Prüftabelle." },
-          { "label": "Musterformulierung", "text": "«Der BAFU-Waldbericht existiert, belegt die Aussage zur Waldfläche und ist als Bundesstelle vertrauenswürdig — ich verwende ihn direkt im KN.»" },
-          { "label": "Massstab", "text": "Eine Aussenstehende Person muss die Prüfung nachvollziehen können, ohne selbst nachzuklicken." }
+          {
+            "label": "Bauteil",
+            "text": "Ein Prüf-Eintrag nennt die Quelle, das Prüfergebnis und die Verwendungs-Entscheidung — nicht die ganze Prüftabelle."
+          },
+          {
+            "label": "Musterformulierung",
+            "text": "«Das Faktenblatt des Bundes zur Berufsbildung existiert, belegt die Zahl, die ich zitiere, und ist als amtliche Quelle vertrauenswürdig — ich verwende es direkt im Kompetenznachweis.»"
+          },
+          {
+            "label": "Massstab",
+            "text": "Eine Aussenstehende Person muss die Prüfung nachvollziehen können, ohne selbst nachzuklicken."
+          }
         ]
+      },
+      "liefert": "der ausgeschriebene Prüf-Eintrag",
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie zu der Quelle, bei der die Prüfung am meisten ergeben hat."
+        ],
+        "satzanfaenge": [
+          "«Kontrolliert habe ich …, Ergebnis …»",
+          "«Im Kompetenznachweis nutze ich sie, weil …»"
+        ],
+        "produkt": "Der Prüf-Eintrag zeigt an einer Quelle, wie die Prüfung nachvollziehbar wird."
       }
     }
   ],
@@ -178,31 +271,31 @@
     "abgaben": [
       "KI-Recherche-Analyse mit Prüftabelle aller von der KI genannten Quellen",
       "Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit",
-      "Optional (100 %): Vergleich des Outputs aus 2–3 Modellen"
+      "Ausgeschriebener Prüf-Eintrag zu einer der geprüften Quellen"
     ],
     "titel": "Meine KI-Recherche-Analyse — was hält der Prüfung stand?",
-    "format_detail": "Eine ein- bis zweiseitige Analyse: eine Prüftabelle, in der jede von der KI genannte Quelle nach den drei Kriterien (existiert / belegt / vertrauenswürdig) abgehakt ist, plus ein kurzes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit der Recherche.",
-    "beschreibung": "Ich lasse die KI eine Online-Recherche zu meinem KN-Thema machen und nehme sie anschliessend kritisch auseinander, statt sie einfach zu übernehmen. Ich prüfe jede Quelle, halte das Ergebnis in einer Tabelle fest und ziehe ein begründetes Gesamturteil: Welchen Teilen der Recherche kann ich für den KN vertrauen, welche muss ich verwerfen oder selbst nachprüfen? Diese Prüfhaltung trägt direkt in den Lernplan von Herausforderung C, wo ich entscheide, wo die KI hilft und wo ich bewusst selbst arbeite.",
+    "format_detail": "Eine ein- bis zweiseitige Analyse: eine Prüftabelle, in der jede von der KI genannte Quelle nach den drei Prüffragen (existiert / belegt / vertrauenswürdig) abgehakt ist, darunter ein Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit und ein ausgeschriebener Prüf-Eintrag zu einer Quelle.",
+    "beschreibung": "Ich lasse die KI eine Online-Recherche zu meinem Thema für den nächsten Kompetenznachweis machen und nehme sie anschliessend kritisch auseinander, statt sie einfach zu übernehmen. Ich prüfe jede Quelle, halte das Ergebnis in einer Tabelle fest und ziehe ein begründetes Gesamturteil: Welchen Teilen der Recherche kann ich vertrauen, welche muss ich verwerfen oder selbst nachprüfen?",
     "schritte": [
       {
-        "label": "KI-Recherche erzeugen",
-        "hint": "Geben Sie der KI einen klaren Recherche-Auftrag zu Ihrem KN-Thema und verlangen Sie ausdrücklich Quellen mit Links. Kopieren Sie den Output gekürzt in Ihre Analyse."
-      },
-      {
-        "label": "Prüftabelle anlegen",
-        "hint": "Eine Zeile pro Quelle, drei Spalten: existiert? · belegt sie die Aussage? · vertrauenswürdig (Herausgeber/Datum)? Jede Spalte mit Ja/Nein und einer kurzen Notiz."
+        "label": "KI-Recherche erzeugen und Tabelle anlegen",
+        "hint": "Geben Sie der KI einen klaren Recherche-Auftrag zu Ihrem Thema und verlangen Sie ausdrücklich Quellen mit Links. Kopieren Sie den Output gekürzt in Ihre Analyse und schreiben Sie die drei Prüffragen aus LF1 als Spaltenköpfe darüber."
       },
       {
         "label": "Quellen einzeln prüfen",
-        "hint": "Klicken Sie jeden Link an, suchen Sie die behauptete Aussage und beurteilen Sie den Herausgeber. Halten Sie erfundene oder leere Quellen klar als solche fest."
+        "hint": "Übernehmen Sie aus LF2 pro Quelle eine Zeile: existiert? · belegt sie die Aussage? · vertrauenswürdig? Jede Spalte mit Ja/Nein und einer kurzen Notiz; erfundene oder leere Quellen halten Sie klar als solche fest."
       },
       {
         "label": "Gesamturteil bilden",
-        "hint": "Bewerten Sie Verlässlichkeit, Tiefe und Nachvollziehbarkeit (Mindmap-Ast 3) und begründen Sie, welchen Teilen Sie vertrauen und welchen nicht."
+        "hint": "Setzen Sie das Gesamturteil aus LF3 unter die Tabelle: Verlässlichkeit, Tiefe und Nachvollziehbarkeit, je mit einer Begründung aus Ihren eigenen Tabellenzeilen."
       },
       {
-        "label": "Optional vertiefen",
-        "hint": "100 %: Geben Sie denselben Recherche-Prompt in zwei bis drei verschiedene Modelle und vergleichen Sie, wo sie sich widersprechen und welches seine Aussagen besser belegt."
+        "label": "Prüf-Eintrag ausschreiben",
+        "hint": "Schreiben Sie den Prüf-Eintrag aus LF4 zu einer Quelle aus: was Sie kontrolliert haben, was dabei herauskam und ob Sie die Quelle verwenden."
+      },
+      {
+        "label": "Gegen die Kriterien gegenlesen",
+        "hint": "Lesen Sie Ihre Analyse gegen die Kriterien unter «vollständig, wenn» gegen: jede Quelle geprüft, jedes Urteil begründet, erfundene Quellen markiert. Überarbeiten Sie die eine Stelle, die noch nicht standhält."
       }
     ],
     "schreib_label": "KI-RECHERCHE-ANALYSE HIER ERARBEITEN",
@@ -220,32 +313,33 @@
         "Bei Zweifel eine zweite, selbstgewählte Quelle zum Gegencheck nutzen"
       ],
       "struktur": [
-        "Prüftabelle: eine Zeile pro Quelle, drei Kriterien-Spalten",
-        "Darunter: Gesamturteil zu Verlässlichkeit / Tiefe / Nachvollziehbarkeit",
-        "Optional: Vergleichsspalte für 2–3 Modelle"
+        "Kopf: die drei Prüffragen aus LF1 als Spaltenköpfe",
+        "Prüftabelle: eine Zeile pro Quelle (LF2)",
+        "Darunter: Gesamturteil zu Verlässlichkeit, Tiefe, Nachvollziehbarkeit (LF3)",
+        "Abschluss: ausgeschriebener Prüf-Eintrag zu einer Quelle (LF4)"
       ]
     },
     "musterloesung": {
-      "hinweis": "Erst zeigen, wenn die eigene Prüftabelle steht. Beispiel auf Stufe 3–4: jede Quelle einzeln an drei Kriterien geprüft, das Gesamturteil differenziert statt pauschal. Thema hier: FSC-zertifiziertes Schweizer Holz.",
+      "hinweis": "Erst zeigen, wenn die eigene Prüftabelle steht. Beispiel auf Stufe 3–4: jede Quelle einzeln an drei Kriterien geprüft, das Gesamturteil differenziert statt pauschal. Als KN-Thema steht hier «Lehrvertragsauflösungen in der Schweiz» — im eigenen Bogen setzen die Lernenden ihr eigenes Thema ein.",
       "abschnitte": [
         {
           "titel": "Prüftabelle — Quelle 1",
           "zeilen": [
             {
               "label": "Behauptung der KI",
-              "text": "FSC Schweiz, Jahresbericht 2024 — «85 % des Schweizer Waldes sind zertifiziert»."
+              "text": "Bundesamt für Statistik (BFS), Statistik der Lehrvertragsauflösungen — «jede vierte Lehre wird vorzeitig aufgelöst»."
             },
             {
               "label": "Existiert?",
-              "text": "✓ Ja. FSC Schweiz gibt es, die Website ist erreichbar."
+              "text": "✓ Ja. Das BFS führt eine Statistik zu Lehrvertragsauflösungen, die Seite ist erreichbar."
             },
             {
               "label": "Belegt?",
-              "text": "✗ Nein. Im Bericht steht diese Zahl nicht; ich finde eine andere Grössenordnung. Die KI hat eine plausible Zahl erfunden."
+              "text": "✗ Nein. In der Tabelle finde ich diesen Satz nicht und eine andere Grössenordnung. Die KI hat eine plausibel klingende Zahl erfunden."
             },
             {
               "label": "Vertrauenswürdig?",
-              "text": "✓ Der Herausgeber schon — die zitierte Aussage nicht."
+              "text": "✓ Der Herausgeber schon — die zitierte Zahl nicht."
             }
           ]
         },
@@ -254,11 +348,11 @@
           "zeilen": [
             {
               "label": "Behauptung der KI",
-              "text": "Link auf eine Studie der ETH Zürich zu Holzlieferketten."
+              "text": "Link auf eine Studie einer Schweizer Hochschule zu den Gründen von Lehrabbrüchen."
             },
             {
               "label": "Existiert?",
-              "text": "✗ Nein. Der Link führt ins Leere, und über die ETH-Suche finde ich keine Studie mit diesem Titel."
+              "text": "✗ Nein. Der Link führt ins Leere, und auch über eine Suche nach dem Titel finde ich diese Studie nirgends."
             },
             {
               "label": "Belegt?",
@@ -275,11 +369,11 @@
           "zeilen": [
             {
               "label": "Quelle 3",
-              "text": "Bundesamt für Umwelt (BAFU), Waldbericht. ✓ existiert · ✓ belegt die Aussage zur Waldfläche · ✓ vertrauenswürdig (Bundesstelle, aktuell)."
+              "text": "Faktenblatt des Bundes zur Berufsbildung. ✓ existiert · ✓ belegt die Aussage zur Zahl der Lehrverträge · ✓ vertrauenswürdig (amtliche Quelle, mit Jahrgang)."
             },
             {
               "label": "Quelle 4",
-              "text": "Branchenblog eines Holzhändlers. ✓ existiert · ✓ belegt die Aussage · ✗ nur bedingt vertrauenswürdig: Der Herausgeber verkauft selbst Holz, also nicht neutral."
+              "text": "Blog einer Nachhilfe-Plattform. ✓ existiert · ✓ belegt die Aussage · ✗ nur bedingt vertrauenswürdig: Der Herausgeber verkauft selbst Nachhilfe, ist also nicht neutral."
             }
           ]
         },
@@ -292,7 +386,7 @@
             },
             {
               "label": "Tiefe",
-              "text": "Oberflächlich. Die KI nennt Zahlen und Labels, aber nichts zur Herkunft des Holzes in unserer Lieferkette — genau das brauche ich für den Kompetenznachweis."
+              "text": "Oberflächlich. Die KI nennt Zahlen und Schlagworte, aber nichts zu den Gründen — und genau die brauche ich für meinen Kompetenznachweis."
             },
             {
               "label": "Nachvollziehbarkeit",
@@ -300,7 +394,7 @@
             },
             {
               "label": "Mein Schluss",
-              "text": "Ich verwende nur die BAFU-Quelle direkt. Die KI-Zusammenfassung nutze ich als Suchhilfe, nicht als Beleg. Wenn ich eine Quelle nicht selbst geöffnet habe, zitiere ich sie nicht."
+              "text": "Ich verwende nur das Faktenblatt des Bundes direkt. Die KI-Zusammenfassung nutze ich als Suchhilfe, nicht als Beleg. Wenn ich eine Quelle nicht selbst geöffnet habe, zitiere ich sie nicht."
             }
           ]
         }
@@ -316,7 +410,7 @@
     },
     {
       "nr": "R2",
-      "text": "Wo in meiner Ausbildung oder im Betrieb verlasse ich mich auf Infos, die ich eigentlich gegenprüfen müsste?",
+      "text": "Wo in meiner Ausbildung oder im Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — verlasse ich mich auf Infos, die ich eigentlich gegenprüfen müsste?",
       "sub": null,
       "feld_hoehe_mm": 10
     },
@@ -350,9 +444,10 @@
       "produkt": "Handlungsprodukt",
       "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
       "vollstaendig_wenn": [
-        "Prüftabelle mit allen KI-Quellen und drei Kriterien ausgefüllt",
+        "Prüftabelle mit allen KI-Quellen und den drei Prüffragen ausgefüllt",
+        "Erfundene oder leere Quellen klar als solche markiert",
         "Begründetes Gesamturteil zu Verlässlichkeit, Tiefe und Nachvollziehbarkeit",
-        "Erfundene oder leere Quellen klar als solche markiert"
+        "Ausgeschriebener Prüf-Eintrag zu einer Quelle vorhanden"
       ]
     },
     {
@@ -368,12 +463,12 @@
   "wochen_plan": [
     {
       "label": "Woche 1 - 45 min",
-      "text": "Herausforderung lesen, LF1-LF2, Mindmap, KI-Recherche erzeugen",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap, KI-Recherche erzeugen und Quellen prüfen",
       "aktiv": true
     },
     {
       "label": "Woche 2 - 45 min",
-      "text": "LF3-LF4, Prüftabelle und Gesamturteil erstellen (optional: Modelle vergleichen)",
+      "text": "LF3-LF4, Gesamturteil und Prüf-Eintrag schreiben, Analyse gegen die Kriterien gegenlesen",
       "aktiv": false
     },
     {
@@ -459,5 +554,6 @@
       "sk": 11,
       "wo": "In LF3 und im Gesamturteil hält die Lernende den Zielkonflikt zwischen Vertrauen und Kontrolle aus und entscheidet differenziert statt pauschal."
     }
-  ]
+  ],
+  "auftakt_typ": "pfad"
 }

@@ -164,7 +164,7 @@ Aus `Methoden_Handeln_Real.md`, `Methoden_Fachwissen.md`, `Methoden_Anwendung.md
 
 - 3 Faelle (Pflicht-80%) + 3 CI-Erweiterungen (100%-Extension)
 - 5-15 min pro Fall
-- Persona aus `kn_anchor.persona_pool_kn_neu` — Unseen-Transfer
+- Neutrale Persona wie in den Herausforderungen; der Unseen-Transfer steckt im FALL (Check 11)
 - Trade-off aus `kn_anchor.mehrdeutigkeits_trade_offs.trade_off_raum` aktiviert
 - Bi-dimensionale Rubric (siehe §6)
 
@@ -224,7 +224,7 @@ Diese Skala ist **auch die Skala der bi-dimensionalen KN-Rubrik** (`rubrik_share
 - LF auf K1 (pure Reproduktion) als Kern-Problem → automatisch hochstufen auf K3
 - LF4 ist immer K3+ oder K4
 - **LF4-Scoping (C4):** LF4 trainiert den Output-Sprachmodus (`nrlp.sprachmodus_ids`) als fokussierte Teil-/Sprachform-Aufgabe — EIN Baustein, der ins Handlungsprodukt einfliesst — nie das ganze Handlungsprodukt. Rezeption (SM3) bleibt bei LF1-3. Methode passend zum Output-Modus aus `references/sprachfoerderung-methoden.md`. (Coherence-Check 20.)
-- Wenn die 4 Standard-LFs nicht zu einem K4 kommen → 5. LF ergaenzen, die das Analyseproblem traegt
+- Wenn die 4 Standard-LFs nicht zu einem K4 kommen → LF3 oder LF4 auf K4 heben, die das Analyseproblem traegt. **Keine 5. LF** — die Kopplung ist 4+1 (Check 33); traegt der Zuschnitt kein K4, ist er zu flach und muss neu geschnitten werden
 
 ---
 
@@ -286,11 +286,12 @@ Drei Achsen, klar getrennt halten:
 
 ---
 
-## 11. Kanonische Lehrberufe und Schweizer Staedte (verbindlich fuer Persona-Pools)
+## 11. Kanonische Lehrberufe und Schweizer Staedte (Nachschlagewerk)
 
-Dies ist die Single-Source-of-Truth fuer Persona-Generierung. Phase 0.5 waehlt
-`persona_pool_units` und `persona_pool_kn_neu` ausschliesslich aus diesen Listen.
-Andere Schreibweisen sind Bugs (siehe v1-Audit: „Koeechin" statt „Koechin").
+> **Nicht mehr fuer die Generierung.** Seit der Persona-Regel 2026-09 sind alle
+> Personas neutral (Stufe 1 oder 2, Check 14) — es gibt keine `persona_pool_*`
+> mehr. Diese Listen bleiben als Nachschlagewerk fuer Schreibweisen, wenn ein
+> Beruf oder Ort einmal in einem Situationstext vorkommt.
 
 Kontext: Berufsbildungsschule Winterthur (BBW) — vier Abteilungen, ~40 Lehrberufe.
 Verwandte Berufe (z.B. Informatiker-Fachrichtungen, Praktiker EBA + Voll-EFZ einer
@@ -349,7 +350,10 @@ handhabbar zu halten. In der Prosa darf weiter spezifisch differenziert werden
 | maschinenbau | anlagen_apparatebauer, gusstechnologe, konstrukteur, polymechaniker, produktionsmechaniker |
 | informatik | entwickler_digitales_business, informatiker, laborant |
 
-### Abteilungs-Mix-Pflicht (verbindlich, v1.3)
+### Abteilungs-Mix-Pflicht — ENTFAELLT (Persona-Regel 2026-09)
+
+> Historisch. Es gibt keine Persona-Pools mehr; die folgende Regel wird nicht
+> mehr angewendet.
 
 Beim Befuellen von `persona_pool_units` (3 Berufe) und `persona_pool_kn_neu`
 (2 Berufe) gilt:

@@ -4,17 +4,16 @@
     "pivot_5_zu_3": "Drei Herausforderungen (A/B/C), nicht fuenf. Persona-Pools entsprechend kleiner. kn_vorgabe ENTFERNT — KN-Typ ist LP-Wahl auf Platform-Layer, nicht Generation-Time-Fixture. NEU: hybrid_situation_spec als Bruecke zur inline KN-Generierung (Phase 4).",
     "regeln": [
       "Alle Strings Swiss Standard German — kein Eszett (ß), immer ss.",
-      "Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (kern_kompetenzversprechen, herausforderungen[].*, mehrdeutigkeits_architektur.*, dekontextualisierungs_anker.*, persona_pool_units.{berufe[], orte[]}, persona_pool_kn_neu.{berufe[], orte[]}). Identifier (id, topic_slug, path) bleiben transliteriert. persona berufe/orte wortwoertlich aus kanonischer Tabelle hko-framework.md §11.",
+      "Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (kern_kompetenzversprechen, herausforderungen[].*, mehrdeutigkeits_architektur.*, dekontextualisierungs_anker.*, dekontextualisierungs_anker.*). Identifier (id, topic_slug, path) bleiben transliteriert.",
       "kern_kompetenzversprechen endet auf K3- oder K4-Verb in ICH-Form.",
       "herausforderungen enthaelt GENAU 3 Eintraege A/B/C.",
       "sk_schnittmenge_kn.primary: SK in mindestens 2 von 3 Herausforderungen — mit drei Units faellt der secondary-Tier weg.",
       "modi_kn ist Obermenge von modi_units.",
-      "persona_pool_kn_neu muss disjunkt von persona_pool_units sein (Unseen-Transfer in Hybrid-Herausforderung).",
+      "KEINE persona_pool_*-Felder mehr (Persona-Regel 2026-09): Personas sind neutral, Stufe 1 oder 2 — auch im KN. Der Unseen-Transfer entsteht ueber den FALL, nicht ueber die Person (Check 11/14).",
       "hybrid_situation_spec ist Pflicht — definiert Constraints fuer Phase-4-Hybrid-Generierung."
     ],
-    "abhaengigkeiten": "Wird konsumiert von Phase 1 (Ideation: Anker fuer 6 Optionen), Phase 2 (JSON-Generation: fuellt prinzip_ref + herausforderung + mehrdeutigkeit + dekontextualisierung in jede Herausforderung), Phase 3 (Set-Dokument: konzept_progression-Anker), Phase 4 (inline KN-Generierung: trade_off_raum + persona_pool_kn_neu + hybrid_situation_spec)."
+    "abhaengigkeiten": "Wird konsumiert von Phase 1 (Ideation: Anker fuer 6 Optionen), Phase 2 (JSON-Generation: fuellt prinzip_ref + herausforderung + mehrdeutigkeit + dekontextualisierung in jede Herausforderung), Phase 3 (Set-Dokument: konzept_progression-Anker), Phase 4 (inline KN-Generierung: trade_off_raum + hybrid_situation_spec)."
   },
-
   "id": "{X.Y.Z}_{topic_slug}_prinzip",
   "modul": "{X.Y}",
   "kompetenz_nr": "{X.Y.Z}",
@@ -22,9 +21,7 @@
   "lehrgang": "EFZ_3J",
   "version": "1.0.0",
   "erstellt_am": "YYYY-MM-DD",
-
   "kern_kompetenzversprechen": "",
-
   "bloom_zielprofil": {
     "_kommentar": "Verbindlich fuer Phase 2. Jede Unit-Leitfrage wird gegen diese Stufen geprueft. Mindestens eine LF pro Unit auf K3+/K4.",
     "LF1": "K2",
@@ -32,7 +29,6 @@
     "LF3": "K3",
     "LF4": "K3+ oder K4"
   },
-
   "herausforderungen": {
     "_kommentar": "GENAU 3 Eintraege A/B/C. konfliktart und handlungsprodukt_typ steuern Phase-1-Ideation. transferrable=true heisst: KN-Generator darf diese Konfliktart in der Hybrid-Herausforderung aktivieren.",
     "A": {
@@ -54,19 +50,16 @@
       "transferrable": true
     }
   },
-
   "sk_pro_situation": {
     "_kommentar": "Provisorisch in Phase 0.5 gesetzt, in Phase 2 mit den konkreten Herausforderungen abgeglichen. Jede Liste 2-3 SK-Nummern. SK-Kurznamen siehe references/hko-framework.md.",
     "A": [],
     "B": [],
     "C": []
   },
-
   "sk_schnittmenge_kn": {
     "_kommentar": "Mengen-Logik fuer 3er-Set: SK in mindestens 2 der 3 Units -> primary. Mit drei Units ist der secondary-Tier zu schwach um nuetzlich zu sein und wird weggelassen. Diese primary-SK sind die einzige SK-Grundlage fuer die KN-Generierung.",
     "primary": []
   },
-
   "aspekte": {
     "_kommentar": "Aus NRLP-Kompetenz uebernommen PLUS Aspekte, die durch herausforderungen[*].konfliktart aktiviert werden (Antizipation, siehe SKILL.md Phase 0.5 Step 2a). iteration ist die R-Stufe (R1/R2/R3) aus nrlp.zirkularitaet.gesellschaftsinhalte[].wiederholungen['T{X}']. Wenn kein Eintrag: R1. Antizipierte Aspekte bekommen ebenfalls Default R1.",
     "_beispiel": {
@@ -75,7 +68,6 @@
       "Identitaet und Sozialisation": "R1"
     }
   },
-
   "modi_units": {
     "_kommentar": "Sprachmodi, die in den 3 Units aktiv trainiert werden. NRLP-Modi sind Kandidaten — gefiltert gegen die geplanten handlungsprodukt_typ-Aktivitaeten. Blinder NRLP-Import erzeugt Drift (Check 5a). Nur Modi aufnehmen, die mindestens ein Handlungsprodukt aktiv trainiert.",
     "_beispiel": [
@@ -83,7 +75,6 @@
       "Interaktion und Kollaboration muendlich"
     ]
   },
-
   "modi_kn": {
     "_kommentar": "Sprachmodi, die der KN aktiv testen darf. Obermenge von modi_units; darf zusaetzlich Produktionsmodi enthalten, die nur im KN-Setting sinnvoll sind (z.B. Produktion schriftlich und bildlich fuer Mini Case schriftlich, Produktion muendlich fuer Fachgespraech).",
     "_beispiel": [
@@ -93,54 +84,44 @@
       "Interaktion und Kollaboration muendlich"
     ]
   },
-
   "mehrdeutigkeits_architektur": {
     "_kommentar": "SK11 ist haeufiger Default-Auslasser. trade_off_raum nennt 2-4 Spannungspole, die alle 3 Herausforderungen tragen koennen. verbindlich ist eine Regel, die ueber alle Units konstant bleibt (keine Auto-Aufloesung der Mehrdeutigkeit). Mehrdeutigkeit ist im 3er-Set Pflicht in 3 von 3 Units — Check 6.",
     "trade_off_raum": [],
     "verbindlich": ""
   },
-
   "dekontextualisierungs_anker": {
     "_kommentar": "Ein generisches Prinzip-Statement, das aus allen 3 Herausforderungen abstrahiert werden kann. Dient Phase 2 als Quelle fuer dekontextualisierung.ziel (per-Herausforderung Vorbereitung) und Phase 3 als Quelle fuer set.dekontextualisierungs_aufgabe (bewertete Set-Aufgabe, 15 Prozent).",
     "anker_statement": "",
     "transferfeld": ""
   },
-
   "zirkularitaet": {
     "_kommentar": "Mapping zu nrlp.zirkularitaet. r1_aktuell ist die R-Stufe der Kompetenz im aktuellen Thema. r2/r3 skizzieren spaeteres Wiederauftauchen.",
     "r1_aktuell": "R1",
     "r2_voraussicht": "",
     "r3_voraussicht": ""
   },
-
   "quellen_anker": {
     "_kommentar": "chapters listet Lehrmittelkapitel mit Seitenbereich. konzepte listet zentrale Begriffe, die in mindestens einer Herausforderung aufgeschlossen werden (Vokabular-Anker fuer Transfer).",
     "chapters": [
-      {"ref": "Kap. {X.Y}", "titel": "", "seiten": "Seite {NN}"}
+      {
+        "ref": "Kap. {X.Y}",
+        "titel": "",
+        "seiten": "Seite {NN}"
+      }
     ],
     "konzepte": []
   },
-
-  "persona_pool_units": {
-    "_kommentar": "3 Berufe + 3 Orte fuer die 3 Units. Jede Persona in Phase 2 genau einmal verwenden (Check 14). Berufe und Orte ausschliesslich aus references/hko-framework.md §11 (Kanonische Lehrberufe + Staedte). String-equality, kein Fuzzy-Matching. Bei Mismatch: ERR_PERSONA_NOT_CANONICAL.",
-    "berufe": ["", "", ""],
-    "orte": ["", "", ""]
-  },
-
-  "persona_pool_kn_neu": {
-    "_kommentar": "2 Berufe + 2 Orte, die in den 3 Units NICHT vorkommen. Phase 4 verwendet den ersten Eintrag fuer die Hybrid-Herausforderung; der zweite ist Reserve, falls Pietro die Hybrid-Persona aendern moechte. DISJUNKT von persona_pool_units (Check 9).",
-    "berufe": ["", ""],
-    "orte": ["", ""]
-  },
-
   "hybrid_situation_spec": {
     "_kommentar": "Constraints fuer die Hybrid-Herausforderung in Phase 4. NEU im 3er-Set. Die Hybrid-Herausforderung muss alle drei Lernaufgaben-Prinzipien gleichzeitig aktivieren — sie ist der Bruecken-Stein zwischen Lernen und Pruefen. Maximal 120 Woerter, ICH-Perspektive, muss mindestens ein Spannungsfeld aus trade_off_raum aktivieren.",
     "max_woerter": 120,
     "_max_woerter_kommentar": "Zaehlt nur Woerter im hybrid_situation.text-Feld. Persona, Titel, emotion_tag, Leitfrage, alignment_note werden NICHT mitgezaehlt. Bindestrich-Komposita und Zahlen je 1 Wort.",
     "perspektive": "ICH",
     "must_activate_trade_offs_min": 1,
-    "must_combine_herausforderungen": ["A", "B", "C"],
-    "persona_source": "persona_pool_kn_neu",
+    "must_combine_herausforderungen": [
+      "A",
+      "B",
+      "C"
+    ],
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "_lehrjahr_constraint_kommentar": "Werte: 'match_units' (Default — gleiches Lehrjahr wie Herausforderungs-Personas), 'match_lehrgang' (irgendein gueltiges LJ des Lehrgangs), 'free' (unrestricted, WARN bei Sprung).",
@@ -150,6 +131,7 @@
       "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
       "Persona ist neu (Beruf + Ort kommen in keiner herausforderung_*.persona vor).",
       "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
-    ]
+    ],
+    "persona_hinweis": "Neutrale Persona wie in den Herausforderungen (Stufe 1 oder 2). Der Transfer entsteht ueber den FALL: eine Lage, die in A/B/C nicht vorkam (Check 11)."
   }
 }

@@ -11,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:nrlp": "node scripts/check-nrlp-consistency.mjs",
+    "check:einheiten": "node scripts/check-einheiten.mjs",
     "build:sk-labels": "node scripts/build-sk-labels.mjs",
     "sync:situationen": "node scripts/sync-situationen.mjs",
     "build:einheiten-index": "node scripts/build-einheiten-index.mjs",

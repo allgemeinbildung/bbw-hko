@@ -103,29 +103,19 @@
     ]
   },
 
-  "persona_pool_units": {
-    "berufe": ["Informatiker/in EFZ", "Schreiner/in EFZ", "Bäcker-Konditor-Confiseur/in EFZ"],
-    "orte": ["Winterthur", "Thun", "Aarau"]
-  },
-
-  "persona_pool_kn_neu": {
-    "berufe": ["Polymechaniker/in EFZ", "Konstrukteur/in EFZ"],
-    "orte": ["Luzern", "Chur"]
-  },
-
   "hybrid_situation_spec": {
     "max_woerter": 120,
     "perspektive": "ICH",
     "must_activate_trade_offs_min": 1,
     "must_combine_herausforderungen": ["A", "B", "C"],
-    "persona_source": "persona_pool_kn_neu",
+    "persona_stufe": 2,
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [
       "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
       "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
       "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
-      "Persona ist neu (Beruf + Ort kommen in keiner herausforderung_*.persona vor).",
+      "Der FALL ist neu — anderer Gegenstand, andere Beteiligte, andere Zahlen als in A/B/C; die Persona bleibt neutral wie in den Herausforderungen (Stufe 2: der gemeinsame Fall steht im Text).",
       "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
     ]
   }

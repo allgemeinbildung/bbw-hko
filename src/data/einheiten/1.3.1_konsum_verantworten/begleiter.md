@@ -23,7 +23,7 @@ quellen_json:
 
 ## 0. So funktioniert diese Einheit
 
-1. **Von hinten gedacht (Backward Design).** Zuerst wurde der Kompetenznachweis definiert (eine Hybrid-Herausforderung mit E-Bike-Leasing), dann die drei Lernaufgaben, die darauf hinführen. Die Herausforderungen sind Lernwege zum KN, keine Vorprüfungen.
+1. **Von hinten gedacht (Backward Design).** Zuerst wurde der Kompetenznachweis definiert (eine Hybrid-Herausforderung mit einem konkreten Leasingangebot), dann die drei Lernaufgaben, die darauf hinführen. Die Herausforderungen sind Lernwege zum KN, keine Vorprüfungen.
 2. **Eine Kompetenz, drei Herausforderungen.** A — *Bedürfnisse ordnen* (1.3.1), B — *Budget planen* (1.3.2), C — *Schulden vermeiden* (1.3.3). Alle drei zahlen auf denselben roten Faden ein: überlegt konsumieren.
 3. **Drei Phasen-Schichten.**
 
@@ -44,7 +44,7 @@ quellen_json:
 
 **Das Kompetenzversprechen**
 
-> „Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge."
+> „<!--hko:kn.kern_kompetenzversprechen-->Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.<!--/hko-->"
 
 **Ressourcenanalyse**
 
@@ -72,8 +72,8 @@ quellen_json:
 **Mehrdeutigkeits-Architektur**
 
 1. Sofortige vs. überlegte Bedürfnisbefriedigung — v.a. Herausforderung A
-2. Momentaner Wunsch vs. langfristige finanzielle Sicherheit — v.a. Herausforderung B
-3. Attraktives Angebot vs. verstecktes Verschuldungsrisiko — v.a. Herausforderung C
+2. <!--hko:hf_B.mehrdeutigkeit.trade_off-->Momentaner Wunsch vs. langfristige finanzielle Sicherheit<!--/hko--> — v.a. Herausforderung B
+3. <!--hko:hf_C.mehrdeutigkeit.trade_off-->Attraktives Angebot vs. verstecktes Verschuldungsrisiko<!--/hko--> — v.a. Herausforderung C
 4. Eigener Massstab vs. sozialer Konsumdruck — trägt durch alle drei
 
 > [!mehrdeutigkeit] Der Grundsatz
@@ -133,17 +133,17 @@ Dieser Begleiter macht **keine** KI-Regel (kein Verbot, kein Gebot). Ob und wie 
 |---|---|
 | Titel | Marke oder echtes Bedürfnis? |
 | Sub-Herausforderung | Bedürfnisse ordnen (1.3.1) |
-| Persona | Informatiker/in EFZ, Winterthur |
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Wirtschaft, Identität und Sozialisation |
 | Sprachmodi | Rezeption schriftlich und bildlich |
 | Schlüsselkompetenzen | SK5, SK11, SK1 |
 | Handlungsprodukt | Kommentierte Bedürfnis-Landkarte (Markiertechnik) |
 | Wissensknoten | beduerfnisarten |
 
-> Ich bin im ersten Lehrjahr als Informatiker/in EFZ in Winterthur und habe zum ersten Mal regelmässig eigenes Geld. In der Berufsschule trage ich oft die gleichen Marken wie meine Kollegen, und mein Feed zeigt mir ständig neue Gadgets. Letzten Monat habe ich Kopfhörer für 250 Franken gekauft — vor allem, weil alle sie hatten. Jetzt frage ich mich: Was davon brauche ich wirklich, und was kaufe ich nur, weil es zu meinem Image passt?
+> Ich bin im 1. Lehrjahr und habe zum ersten Mal regelmässig eigenes Geld. Vor drei Wochen habe ich in der Mittagspause Kopfhörer für 250 Franken bestellt — zwei aus meiner Klasse hatten dieselben, und mein Feed zeigte sie mir tagelang. Seither liegen sie meistens in der Schublade. Diese Woche kommt der nächste Wunsch: Ein Kollege verkauft sein Handy für 300 Franken und will bis Freitag Bescheid.
 
 > [!hinweis] Qualität der Herausforderung
-> Authentisch (erster Lohn, Markendruck) · verortet (Berufsschule, Feed) · echtes Problem (echt vs. geweckt) · affektiv (Gruppendruck) · kognitiv (Maslow anwenden) · aktiv (eigene Landkarte) · LJ-passend (1. LJ) · relevant (jede Kaufentscheidung).
+> Authentisch (erster Lohn, Markendruck) · verortet (eigene Klasse, eigener Feed) · echtes Problem (echt vs. geweckt) · affektiv (Gruppendruck) · kognitiv (Maslow anwenden) · aktiv (eigene Landkarte) · LJ-passend (1. LJ) · relevant (jede Kaufentscheidung). Kein Beruf, kein Ort: Der Reibungspunkt sind der Kauf vor drei Wochen und die Zusage bis Freitag, nicht die Branche.
 
 **Unterrichtsfahrplan**
 
@@ -242,17 +242,17 @@ Reflexion: ☐ Alle 3 Reflexionsfragen beantwortet ☐ Vorsatz für nächsten Ka
 |---|---|
 | Titel | Am 20. ist das Konto leer |
 | Sub-Herausforderung | Budget planen (1.3.2) |
-| Persona | Bäcker-Konditor-Confiseur/in EFZ, St. Gallen |
+| Persona | <!--hko:hf_B.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Wirtschaft |
 | Sprachmodi | Interaktion und Kollaboration mündlich |
 | Schlüsselkompetenzen | SK2, SK11, SK6 |
 | Handlungsprodukt | Realistisches Monatsbudget + moderiertes Budgetgespräch |
 | Wissensknoten | budget_erstellen |
 
-> Ich mache eine Lehre als Bäcker-Konditor-Confiseur/in EFZ in St. Gallen und bekomme meinen Lohn monatlich. Das Problem: Rund um den 20. ist mein Konto regelmässig leer, obwohl noch zehn Tage bis zum nächsten Lohn fehlen. Meine Kollegin sagt, sie komme mit weniger Lohn gut über die Runden. Ich will endlich ein realistisches Budget aufstellen und das mit ihr besprechen — ohne mich zu rechtfertigen, aber mit guten Argumenten.
+> Ich bin im 1. Lehrjahr und bekomme meinen Lohn einmal im Monat aufs Konto. Rund um den 20. ist es regelmässig leer, obwohl noch zehn Tage bis zum nächsten Zahltag fehlen. Letzten Freitag musste ich einer Kollegin 40 Franken für ein Konzertticket schuldig bleiben. Dieselbe Kollegin kommt mit weniger Lohn über die Runden und bietet an, mein Budget mit mir durchzugehen. Bis dahin will ich ein realistisches Budget haben — ohne mich zu rechtfertigen.
 
 > [!hinweis] Qualität der Herausforderung
-> Authentisch (Konto leer vor Monatsende) · verortet (Lehrlingslohn) · echtes Problem (Engpass) · affektiv (Vergleich mit Kollegin) · kognitiv (Budget rechnen) · aktiv (Budget + Gespräch) · LJ-passend · relevant.
+> Authentisch (Konto leer vor Monatsende) · verortet (eigener Lohn, eigene Ausgaben) · echtes Problem (Engpass, offene 40 Franken) · affektiv (Vergleich mit Kollegin) · kognitiv (Budget rechnen) · aktiv (Budget + Gespräch) · LJ-passend · relevant. Die Zahlen kommen aus dem eigenen Monat; Schätzungen genügen, wo die Abrechnung fehlt.
 
 **Unterrichtsfahrplan**
 
@@ -352,17 +352,17 @@ Reflexion: ☐ Alle 3 Reflexionsfragen ☐ Eine konkrete Anpassung für diesen M
 |---|---|
 | Titel | Abos, Kleinkredit, Schuldenspirale |
 | Sub-Herausforderung | Schulden vermeiden (1.3.3) |
-| Persona | Schreiner/in EFZ, Thun |
+| Persona | <!--hko:hf_C.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
 | Aspekte | Wirtschaft, Ethik |
 | Sprachmodi | Rezeption schriftlich und bildlich, Interaktion und Kollaboration mündlich |
 | Schlüsselkompetenzen | SK5, SK11, SK6 |
 | Handlungsprodukt | Persönlicher Schuldenpräventions-Ratgeber + Diskussion |
 | Wissensknoten | schuldenpraevention |
 
-> Ich bin Schreiner/in EFZ in Thun und habe mehrere Abos abgeschlossen: Handy, Streaming, Fitness. Dazu kam Werbung für einen Kleinkredit für neue Werkzeuge und ein E-Bike — „bequem in kleinen Raten". Ein Kollege hat ein Auto geleast und merkt jetzt, wie teuer das mit allen Nebenkosten wird. Ich will die Risiken durchschauen, mein Konsumverhalten ehrlich anschauen und mir klare Regeln geben, die ich vor anderen vertreten kann.
+> Ich bin im 1. Lehrjahr und habe in den letzten Monaten mehrere Abos abgeschlossen: Handy, Streaming, Fitness — zusammen rund 130 Franken im Monat. Das Fitnessabo läuft bis Dezember, dort war ich seit Februar dreimal. Gestern lag Werbung für einen Kleinkredit über 4000 Franken im Briefkasten: „frei verwendbar, bequem in kleinen Raten". Ein Kollege hat so einen Kredit aufgenommen; seine Raten laufen jetzt ins dritte Jahr.
 
 > [!hinweis] Qualität der Herausforderung
-> Authentisch (Abos + Kreditwerbung) · verortet (Thun, Kollege mit Leasing) · echtes Problem (Schuldenfalle) · affektiv (Verlockung) · kognitiv (Kosten analysieren) · aktiv (Ratgeber + Diskussion) · LJ-passend · relevant.
+> Authentisch (eigene Abos + Kreditwerbung) · verortet (Briefkasten, gebundenes Fitnessabo, Kollege mit laufendem Kredit) · echtes Problem (Schuldenfalle) · affektiv (Verlockung) · kognitiv (Kosten analysieren) · aktiv (Ratgeber + Diskussion) · LJ-passend · relevant. Bewusst ohne Leasingobjekt — das Leasing ist der Fall des Kompetenznachweises und soll dort neu sein.
 
 **Unterrichtsfahrplan**
 
@@ -478,9 +478,9 @@ Der Austausch ist ein eigenständiges Set-Dokument mit drei wählbaren Sozialfor
 
 ## 7. Transfer
 
-Auftrag (aus set.json): Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext. Format: schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden.
+Auftrag (aus set.json): <!--hko:set.dekontextualisierungs_aufgabe.auftrag-->Übertragen Sie das Kernprinzip aus Ihren drei Herausforderungen auf einen neuen, selbst gewählten Kontext.<!--/hko--> Format: schriftlich, 5-7 Sätze, Lehrmittelbegriffe verwenden.
 
-> „Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+> „<!--hko:set.dekontextualisierungs_aufgabe.ziel-->Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann.<!--/hko-->"
 
 > [!lernziel] So sieht guter Transfer aus
 > Beispiel (neuer Kontext, ausserhalb Konsum): „Beim Zeitmanagement in der Prüfungswoche wollte ich sofort mit dem einfachsten Fach beginnen (momentaner Wunsch). Ich habe stattdessen abgewogen, welches Fach mir langfristig die meisten Punkte bringt (Sicherheit), und meinen Plan begründet — genau wie beim Budget."
@@ -492,13 +492,16 @@ Auftrag (aus set.json): Übertragen Sie das Kernprinzip aus Ihren drei Herausfor
 
 **Hybrid-Herausforderung**
 
-> Polymechaniker/in EFZ, Luzern: Ein Kollege zeigt sein geleastes E-Bike („79 Franken/Monat, 0 Prozent"). Ich will genau so eins — es passt zu mir und alle im Team fahren damit. Gleichzeitig wird mein Konto schon vor dem 20. eng, seit ich das teurere Handy-Abo habe. Der Verkäufer drängt: heute unterschreiben, sonst ist das Angebot weg. Wie gehe ich vor — und warum?
+> Vor mir liegt ein Angebotsblatt aus einem Velogeschäft: E-Bike, Katalogpreis 3900 Franken, in grosser Schrift „0 Prozent Zins", darunter 48 Monatsraten zu 89 Franken. Klein gedruckt stehen 250 Franken Bearbeitungsgebühr, und das Velo gehört bis zur letzten Rate der Leasinggeberin. Gültig bis Samstag. Zwei aus meinem Team fahren dasselbe Modell zur Arbeit. Gleichzeitig wird mein Konto seit dem teureren Handy-Abo schon vor dem 20. eng. Wie gehe ich vor — und warum?
+
+> [!hinweis] Warum der Fall neu sein muss
+> Die Persona ist dieselbe neutrale wie in A, B und C — den Transfer trägt darum allein der Fall. In den drei Herausforderungen arbeiten die Lernenden an eigenen Wünschen, eigenem Budget und eigenen Abos; hier liegt ein fremdes Dokument mit nachrechenbaren Zahlen und einer Frist vor ihnen. 48 × 89 Franken plus 250 Franken Gebühr sind 4522 Franken für ein Velo, das 3900 kostet und bis zur letzten Rate nicht ihnen gehört — die Rechnung ist der Prüfgegenstand.
 
 | Aus Herausforderung | zeigt sich im KN als |
 |---|---|
-| A (echt vs. geweckt) | Wunsch nach dem E-Bike „weil alle es haben" |
+| A (echt vs. geweckt) | Zwei aus dem Team fahren dasselbe Modell |
 | B (Budget/Engpass) | Konto vor dem 20. eng seit teurerem Abo |
-| C (Verschuldungsrisiko) | 0-Prozent-Leasing mit „heute unterschreiben"-Druck |
+| C (Verschuldungsrisiko) | „0 Prozent" gross, Gebühr und Eigentumsvorbehalt klein, Frist bis Samstag |
 
 **Methodenwahl**
 
@@ -526,7 +529,7 @@ Auftrag (aus set.json): Übertragen Sie das Kernprinzip aus Ihren drei Herausfor
 
 > [!erwartungshorizont] Frage 1 (Erklären, K2) — Bedürfnisarten und Kosten
 > Vollständig zeigt: benennt, dass das E-Bike ein Wahlbedürfnis ist, und dass beim Leasing mehr als die Monatsrate anfällt (Nebenkosten, Laufzeit).
-> Lückenhaft: nennt nur „ich will es" oder „79 Franken" ohne Bedürfnis-/Kostenbegriff.
+> Lückenhaft: nennt nur „ich will es" oder „89 Franken" ohne Bedürfnis-/Kostenbegriff.
 
 > [!erwartungshorizont] Frage 3 (Beurteilen, K3) — echt vs. geweckt
 > Stufe 3 zeigt: unterscheidet begründet, welcher Anteil des Wunsches echt und welcher durch Team/Umfeld geweckt ist.

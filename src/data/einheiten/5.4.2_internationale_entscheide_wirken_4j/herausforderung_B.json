@@ -3,52 +3,77 @@
   "modul": "5.4",
   "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
   "lehrgang": "EFZ_4J",
-
   "buchstabe": "B",
   "sit_farbe": "#1A5276",
   "sit_farbe_light": "#D6EAF8",
   "sit_farbe_mid": "#2E86C1",
-
-  "titel": "Zwei Berufsbildende, zwei Rechnungen",
-
-  "wissensknoten": ["interessenverbaende_lobby"],
-
+  "titel": "Zwei Mitarbeitende, zwei Rechnungen",
+  "wissensknoten": [
+    "interessenverbaende_lobby"
+  ],
   "nrlp": {
     "nr": "5.4.2",
-    "nr_primary": ["5.4.2"],
+    "nr_primary": [
+      "5.4.2"
+    ],
     "lebensbezug": "5.4",
-    "themen": ["T5"],
+    "themen": [
+      "T5"
+    ],
     "gesellschaft": [
-      {"aspekt": "Politik", "iteration": "R2"},
-      {"aspekt": "Wirtschaft", "iteration": "R4"}
+      {
+        "aspekt": "Politik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R4"
+      }
     ],
     "sprachmodi": [
       "Produktion mündlich"
     ],
-    "sprachmodus_ids": ["SM4"],
-    "sk": [6, 11, 12],
+    "sprachmodus_ids": [
+      "SM4"
+    ],
+    "sk": [
+      6,
+      11,
+      12
+    ],
     "kompetenz_id": "5.4.2",
     "lebensbezug_id": "5.4",
     "kompetenz_text": "Ich kann anhand eines Beispiels erklären, wie internationale politische Entscheidungen Auswirkungen auf mein Leben und das Leben von anderen haben können.",
     "lebensbezug_text": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen."
   },
-
   "persona": {
-    "beruf": "Polymechaniker/in EFZ",
-    "betrieb": "Präzisionsmechanik Halter AG",
-    "ort": "Winterthur"
+    "beruf": "Lernende/r EFZ, 3. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
-
-  "situation_text": "Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. In der Pause streiten zwei Berufsbildende über eine Meldung aus Brüssel. Der eine sagt, ohne die Regeln des grossen Nachbarmarkts verlieren wir unsere Kundschaft; der andere sagt, wir übernähmen laufend Vorschriften, die bei uns niemand beschlossen habe. Ich weiss aus dem ABU, dass 55 Prozent unserer Exporte in die EU gehen und 71 Prozent unserer Importe von dort kommen — beide haben also etwas für sich. Am Abend sehe ich zum selben Entscheid drei Videos, und in jedem ist jemand anderes schuld. Mir wird klar: Hier steht nicht eine Wahrheit gegen eine Lüge, sondern Interesse gegen Interesse — und ich weiss noch nicht, wessen Rechnung ich am Ende mitbezahle.",
-
+  "situation_text": "Ich bin im 3. Lehrjahr und arbeite in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe. Seit gestern geht eine Meldung aus Brüssel um: Weil ein Abkommen nicht aktualisiert wurde, sollen Schweizer Zulassungen im Nachbarmarkt ab nächstem Jahr nicht mehr automatisch gelten. In der Pause streiten zwei Mitarbeitende darüber. Die eine sagt, ohne die Regeln des grossen Nachbarmarkts verlieren wir unsere Kundschaft; der andere sagt, wir übernähmen laufend Vorschriften, die bei uns niemand beschlossen habe. Ich weiss aus dem ABU, dass 55 Prozent unserer Exporte in die EU gehen und 71 Prozent unserer Importe von dort kommen — beide haben also etwas für sich. Am Abend sehe ich zum selben Entscheid drei Videos, und in jedem ist jemand anderes schuld. Mir wird klar: Hier steht nicht eine Wahrheit gegen eine Lüge, sondern Interesse gegen Interesse — und ich weiss noch nicht, wessen Rechnung ich am Ende mitbezahle.",
   "zahlen_tabelle": [
-    {"label": "Anteil der Schweizer Exporte in die EU (Kap. 11.2, S. 276)", "wert": "55 %"},
-    {"label": "Anteil der Schweizer Importe aus der EU (Kap. 11.2, S. 276)", "wert": "71 %"},
-    {"label": "Handelsvolumen Schweiz – EU inklusive Dienstleistungen (Kap. 11.2, S. 276)", "wert": "rund CHF 1 Mrd. pro Tag"},
-    {"label": "Mitgliedstaaten der EU (Kap. 11.1, S. 258-259)", "wert": "27 Staaten, knapp 450 Mio. Einwohnerinnen und Einwohner"},
-    {"label": "Umsatzanteil des eigenen Lehrbetriebs mit Kundschaft im EU-Raum", "wert": "Platzhalter — im Betrieb erfragen"}
+    {
+      "label": "Anteil der Schweizer Exporte in die EU (Kap. 11.2, S. 276)",
+      "wert": "55 %"
+    },
+    {
+      "label": "Anteil der Schweizer Importe aus der EU (Kap. 11.2, S. 276)",
+      "wert": "71 %"
+    },
+    {
+      "label": "Handelsvolumen Schweiz – EU inklusive Dienstleistungen (Kap. 11.2, S. 276)",
+      "wert": "rund CHF 1 Mrd. pro Tag"
+    },
+    {
+      "label": "Mitgliedstaaten der EU (Kap. 11.1, S. 258-259)",
+      "wert": "27 Staaten, knapp 450 Mio. Einwohnerinnen und Einwohner"
+    },
+    {
+      "label": "Umsatzanteil des eigenen Betriebs mit Kundschaft im EU-Raum",
+      "wert": "Platzhalter — im Betrieb erfragen"
+    }
   ],
-
   "leitfrage": "Wer will beim Marktzugang was — und wer trägt am Schluss die Kosten?",
   "leitfragen_intro": "Die vier Leitfragen bauen aufeinander auf und liefern je einen Baustein: LF1 die Akteure und ihre Mittel, LF2 die Ausgangslage des Statements, LF3 die Interessen und den Zielkonflikt, LF4 den Hauptteil. Ohne die verbindliche Ebene aus LF2 ergibt der Zielkonflikt aus LF3 keinen Sinn. Bearbeiten Sie die vier Leitfragen schriftlich mit dem Lehrmittel Kap. 6.6, 11.1 und 16.2 als Grundlage.",
   "auftakt_typ": "pfad",
@@ -75,11 +100,31 @@
       "loesung": {
         "kern": "Verbände, Gewerkschaften, NGO und Einfluss",
         "zeilen": [
-          { "label": "Verbände", "text": "Zweckvereinigungen, die die Interessen ihrer Mitglieder vertreten — nach Wirtschaftszweig oder nach Personengruppe.", "quelle": "Kap. 6.6, S. 177" },
-          { "label": "Gewerkschaften", "text": "Arbeitnehmerverbände, die die Interessen der Angestellten vertreten, z. B. der Schweizerische Gewerkschaftsbund oder Unia.", "quelle": "Kap. 6.6, S. 177" },
-          { "label": "NGO", "text": "Nichtregierungsorganisationen wie Amnesty International, WWF oder Greenpeace, die sich für Werte wie Menschenrechte oder Umweltschutz einsetzen.", "quelle": "Kap. 6.6, S. 178-179" },
-          { "label": "Drei Wege", "text": "Stellungnahme in der Vernehmlassung, Mitarbeit als Experten in Kommissionen, Lobbying bei den Räten — dazu Initiativen, Referenden und Abstimmungsparolen.", "quelle": "Kap. 6.6, S. 179" },
-          { "label": "Akteure der Karte", "text": "Vier bis fünf: die internationale Ebene mit ihren Organen, der Bundesrat, der die Beziehungen bilateral regelt, ein Arbeitgeberverband wie Swissmem oder economiesuisse, eine Gewerkschaft wie Unia oder der Schweizerische Gewerkschaftsbund, dazu das Stimmvolk, das die sieben Verträge angenommen hat.", "quelle": "Kap. 6.6, S. 177; Kap. 11.1, S. 262 und S. 267" }
+          {
+            "label": "Verbände",
+            "text": "Zweckvereinigungen, die die Interessen ihrer Mitglieder vertreten — nach Wirtschaftszweig oder nach Personengruppe.",
+            "quelle": "Kap. 6.6, S. 177"
+          },
+          {
+            "label": "Gewerkschaften",
+            "text": "Arbeitnehmerverbände, die die Interessen der Angestellten vertreten, z. B. der Schweizerische Gewerkschaftsbund oder Unia.",
+            "quelle": "Kap. 6.6, S. 177"
+          },
+          {
+            "label": "NGO",
+            "text": "Nichtregierungsorganisationen wie Amnesty International, WWF oder Greenpeace, die sich für Werte wie Menschenrechte oder Umweltschutz einsetzen.",
+            "quelle": "Kap. 6.6, S. 178-179"
+          },
+          {
+            "label": "Drei Wege",
+            "text": "Stellungnahme in der Vernehmlassung, Mitarbeit als Experten in Kommissionen, Lobbying bei den Räten — dazu Initiativen, Referenden und Abstimmungsparolen.",
+            "quelle": "Kap. 6.6, S. 179"
+          },
+          {
+            "label": "Akteure der Karte",
+            "text": "Vier bis fünf: die internationale Ebene mit ihren Organen, der Bundesrat, der die Beziehungen bilateral regelt, ein Arbeitgeberverband wie Swissmem oder economiesuisse, eine Gewerkschaft wie Unia oder der Schweizerische Gewerkschaftsbund, dazu das Stimmvolk, das die sieben Verträge angenommen hat.",
+            "quelle": "Kap. 6.6, S. 177; Kap. 11.1, S. 262 und S. 267"
+          }
         ]
       }
     },
@@ -105,11 +150,30 @@
       "loesung": {
         "kern": "Wer entscheidet, und wen bindet es",
         "zeilen": [
-          { "label": "Zuständiges Organ", "text": "Der Rat der EU (Ministerrat) und das Europäische Parlament erlassen gemeinsam Gesetze, Verordnungen und Richtlinien — beide bilden die Legislative.", "quelle": "Kap. 11.1, S. 262-263" },
-          { "label": "Supranational", "text": "Die EU-Staaten treten Zuständigkeiten an die EU-Organe ab; deren Beschlüsse gelten dann automatisch für alle Mitgliedstaaten.", "quelle": "Kap. 11.1, S. 262" },
-          { "label": "Für meinen Betrieb", "text": "Ein Beschluss gilt in allen 27 Mitgliedstaaten gleich — ich kann mich nicht auf ein einzelnes, günstigeres Land berufen, wenn ich dorthin exportiere." },
-          { "label": "Häufiger Fehler", "text": "Das Europäische Parlament mit einem Landesparlament verwechseln — es hat weniger Macht, weil es Gesetze nur zusammen mit dem Ministerrat beschliesst.", "quelle": "Kap. 11.1, S. 263" },
-          { "label": "Muster-Ausgangslage", "text": "«Über diesen Punkt entscheiden der Rat der EU und das Europäische Parlament gemeinsam, und ihr Beschluss ist für alle 27 Mitgliedstaaten verbindlich — auch für den Markt, in den unser Betrieb liefert.»", "quelle": "Kap. 11.1, S. 262" }
+          {
+            "label": "Zuständiges Organ",
+            "text": "Der Rat der EU (Ministerrat) und das Europäische Parlament erlassen gemeinsam Gesetze, Verordnungen und Richtlinien — beide bilden die Legislative.",
+            "quelle": "Kap. 11.1, S. 262-263"
+          },
+          {
+            "label": "Supranational",
+            "text": "Die EU-Staaten treten Zuständigkeiten an die EU-Organe ab; deren Beschlüsse gelten dann automatisch für alle Mitgliedstaaten.",
+            "quelle": "Kap. 11.1, S. 262"
+          },
+          {
+            "label": "Für meinen Betrieb",
+            "text": "Ein Beschluss gilt in allen 27 Mitgliedstaaten gleich — ich kann mich nicht auf ein einzelnes, günstigeres Land berufen, wenn ich dorthin exportiere."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Das Europäische Parlament mit einem Landesparlament verwechseln — es hat weniger Macht, weil es Gesetze nur zusammen mit dem Ministerrat beschliesst.",
+            "quelle": "Kap. 11.1, S. 263"
+          },
+          {
+            "label": "Muster-Ausgangslage",
+            "text": "«Über diesen Punkt entscheiden der Rat der EU und das Europäische Parlament gemeinsam, und ihr Beschluss ist für alle 27 Mitgliedstaaten verbindlich — auch für den Markt, in den unser Betrieb liefert.»",
+            "quelle": "Kap. 11.1, S. 262"
+          }
         ]
       }
     },
@@ -134,10 +198,24 @@
       "loesung": {
         "kern": "Interessen, Zielkonflikt, Kostenträger",
         "zeilen": [
-          { "label": "Analysekriterium", "text": "Pro Akteur zählt nur ein Interesse, belegt mit Kapitel und Seite — Bund, Wirtschaftsverbände, Gewerkschaften und Bevölkerung vertreten unterschiedliche Interessen.", "quelle": "Kap. 11.1, S. 267-269" },
-          { "label": "Zielkonflikt", "text": "Wirtschaftsverbände wollen die gegenseitige Anerkennung von Prüfungen ohne doppeltes Verfahren, Gewerkschaften wollen die flankierenden Massnahmen gegen Dumpinglöhne behalten.", "quelle": "Kap. 11.1, S. 267" },
-          { "label": "Wer zahlt", "text": "Fällt der Marktzugang weg, zahlen Exportbetriebe mit doppelten Prüfverfahren; fehlen die flankierenden Massnahmen, zahlen die Arbeitnehmenden mit Lohndruck." },
-          { "label": "Schwach vs. stark", "text": "Schwach: nur ein Interesse behaupten. Stark: das Interesse mit einer Lehrmittelstelle belegen und sagen, wer bei welcher Lösung zahlt." }
+          {
+            "label": "Analysekriterium",
+            "text": "Pro Akteur zählt nur ein Interesse, belegt mit Kapitel und Seite — Bund, Wirtschaftsverbände, Gewerkschaften und Bevölkerung vertreten unterschiedliche Interessen.",
+            "quelle": "Kap. 11.1, S. 267-269"
+          },
+          {
+            "label": "Zielkonflikt",
+            "text": "Wirtschaftsverbände wollen die gegenseitige Anerkennung von Prüfungen ohne doppeltes Verfahren, Gewerkschaften wollen die flankierenden Massnahmen gegen Dumpinglöhne behalten.",
+            "quelle": "Kap. 11.1, S. 267"
+          },
+          {
+            "label": "Wer zahlt",
+            "text": "Fällt der Marktzugang weg, zahlen Exportbetriebe mit doppelten Prüfverfahren; fehlen die flankierenden Massnahmen, zahlen die Arbeitnehmenden mit Lohndruck."
+          },
+          {
+            "label": "Schwach vs. stark",
+            "text": "Schwach: nur ein Interesse behaupten. Stark: das Interesse mit einer Lehrmittelstelle belegen und sagen, wer bei welcher Lösung zahlt."
+          }
         ]
       }
     },
@@ -162,15 +240,29 @@
       "loesung": {
         "kern": "Hauptteil im 3B-Schema, eine Sicht",
         "zeilen": [
-          { "label": "Behauptung", "text": "«Ich bin der Ansicht, dass die technische Anerkennung unserer Prüfungen für unseren Betrieb entscheidend ist.»" },
-          { "label": "Begründung", "text": "«Ohne gegenseitige Anerkennung bräuchten unsere Bauteile eine zweite Prüfung im EU-Markt — das kostet Zeit und Geld.»", "quelle": "Kap. 11.1, S. 267" },
-          { "label": "Beleg", "text": "«Diese technischen Handelshemmnisse sind Teil der sieben Verträge der Bilateralen I.»", "quelle": "Kap. 11.1, S. 267" },
-          { "label": "Massstab", "text": "Der Hauptteil eines Statements schildert den Sachverhalt und begründet die zentrale Aussage — keine Einleitung, kein Schluss.", "quelle": "Kap. 16.2, S. 368" }
+          {
+            "label": "Behauptung",
+            "text": "«Ich bin der Ansicht, dass die technische Anerkennung unserer Prüfungen für unseren Betrieb entscheidend ist.»"
+          },
+          {
+            "label": "Begründung",
+            "text": "«Ohne gegenseitige Anerkennung bräuchten unsere Bauteile eine zweite Prüfung im EU-Markt — das kostet Zeit und Geld.»",
+            "quelle": "Kap. 11.1, S. 267"
+          },
+          {
+            "label": "Beleg",
+            "text": "«Diese technischen Handelshemmnisse sind Teil der sieben Verträge der Bilateralen I.»",
+            "quelle": "Kap. 11.1, S. 267"
+          },
+          {
+            "label": "Massstab",
+            "text": "Der Hauptteil eines Statements schildert den Sachverhalt und begründet die zentrale Aussage — keine Einleitung, kein Schluss.",
+            "quelle": "Kap. 16.2, S. 368"
+          }
         ]
       }
     }
   ],
-
   "mindmap_zentrum": "Wer will was beim Marktzugang",
   "mindmap_aeste": [
     {
@@ -214,18 +306,32 @@
       "optional": true
     }
   ],
-
   "handlungsprodukt": {
     "format": "Gesprochenes Statement zur Interessenlage",
     "titel": "Wer will was — und wer zahlt",
     "format_detail": "Statement von 90 bis 120 Sekunden, gehalten an einer selbst erstellten Akteurskarte mit vier bis fünf Akteuren auf A3 oder als Folie.",
     "beschreibung": "Ich erstelle eine Akteurskarte zu einem Entscheid über den Marktzugang und halte dazu ein Statement, in dem ich benenne, welche Interessen zusammenstossen und wer die Kosten trägt.",
     "schritte": [
-      {"label": "Akteure bestimmen", "hint": "Übertragen Sie die vier bis fünf Akteure, die Sie in LF1 bestimmt haben: internationale Ebene, Bund, Wirtschaftsverband, Gewerkschaft, betroffene Bevölkerung."},
-      {"label": "Interessen zuordnen", "hint": "Pro Akteur ein Satz: Was will dieser Akteur erreichen? Belegen Sie mit einer Stelle aus Kap. 6.6 oder Kap. 11.1."},
-      {"label": "Mittel eintragen", "hint": "Pro Akteur ein Stichwort: Womit setzt er sein Interesse durch — Verhandlung, Vernehmlassung, Lobby, Abstimmung, Kaufentscheid?"},
-      {"label": "Zielkonflikt markieren", "hint": "Ziehen Sie eine Linie zwischen den zwei Interessen, die sich widersprechen, und schreiben Sie daneben, wer bei welcher Lösung bezahlt."},
-      {"label": "Statement halten", "hint": "Sprechen Sie 90 bis 120 Sekunden entlang der Struktur: Ausgangslage (Satz aus LF2) – Akteure und Interessen – Zielkonflikt mit Ihrem Hauptteil aus LF4 – wer zahlt – Schlusssatz. Nutzen Sie das 3B-Schema für jedes Argument."}
+      {
+        "label": "Akteure bestimmen",
+        "hint": "Übertragen Sie die vier bis fünf Akteure, die Sie in LF1 bestimmt haben: internationale Ebene, Bund, Wirtschaftsverband, Gewerkschaft, betroffene Bevölkerung."
+      },
+      {
+        "label": "Interessen zuordnen",
+        "hint": "Pro Akteur ein Satz: Was will dieser Akteur erreichen? Belegen Sie mit einer Stelle aus Kap. 6.6 oder Kap. 11.1."
+      },
+      {
+        "label": "Mittel eintragen",
+        "hint": "Pro Akteur ein Stichwort: Womit setzt er sein Interesse durch — Verhandlung, Vernehmlassung, Lobby, Abstimmung, Kaufentscheid?"
+      },
+      {
+        "label": "Zielkonflikt markieren",
+        "hint": "Ziehen Sie eine Linie zwischen den zwei Interessen, die sich widersprechen, und schreiben Sie daneben, wer bei welcher Lösung bezahlt."
+      },
+      {
+        "label": "Statement halten",
+        "hint": "Sprechen Sie 90 bis 120 Sekunden entlang der Struktur: Ausgangslage (Satz aus LF2) – Akteure und Interessen – Zielkonflikt mit Ihrem Hauptteil aus LF4 – wer zahlt – Schlusssatz. Nutzen Sie das 3B-Schema für jedes Argument."
+      }
     ],
     "schreib_label": "AKTEURSKARTE HIER ERARBEITEN",
     "schreib_note": "-> wissen/interessenverbaende_lobby",
@@ -257,58 +363,86 @@
         {
           "titel": "Ausgangslage",
           "zeilen": [
-            {"label": "Einstieg", "text": "Es geht um den Zugang zu einem grossen Markt, in den 55 Prozent unserer Exporte gehen und aus dem 71 Prozent unserer Importe stammen. Das Handelsvolumen zwischen der Schweiz und der EU beträgt inklusive Dienstleistungen rund eine Milliarde Franken pro Tag. Wer diesen Zugang verliert, verliert nicht ein Detail, sondern die Grundlage vieler Aufträge.", "quelle": "Kap. 11.2, S. 276"}
+            {
+              "label": "Einstieg",
+              "text": "Es geht um den Zugang zu einem grossen Markt, in den 55 Prozent unserer Exporte gehen und aus dem 71 Prozent unserer Importe stammen. Das Handelsvolumen zwischen der Schweiz und der EU beträgt inklusive Dienstleistungen rund eine Milliarde Franken pro Tag. Wer diesen Zugang verliert, verliert nicht ein Detail, sondern die Grundlage vieler Aufträge.",
+              "quelle": "Kap. 11.2, S. 276"
+            }
           ]
         },
         {
           "titel": "Akteure und Interessen",
           "zeilen": [
-            {"label": "Karte", "text": "Der Staatenverbund will einheitliche, für alle Mitgliedstaaten verbindliche Regeln; seine Organe erlassen Gesetze, Verordnungen und Richtlinien, an die sich alle halten müssen. Der Bundesrat will den Marktzugang sichern, ohne zu viel Entscheidungsmacht abzugeben — deshalb der bilaterale Weg. Die Wirtschaftsverbände wollen, dass unsere Prüfungen drüben anerkannt werden, damit kein zweites Verfahren nötig ist. Die Gewerkschaften wollen die flankierenden Massnahmen behalten, die Dumpinglöhne verhindern sollen.", "quelle": "Kap. 11.1, S. 262 und S. 267"}
+            {
+              "label": "Karte",
+              "text": "Der Staatenverbund will einheitliche, für alle Mitgliedstaaten verbindliche Regeln; seine Organe erlassen Gesetze, Verordnungen und Richtlinien, an die sich alle halten müssen. Der Bundesrat will den Marktzugang sichern, ohne zu viel Entscheidungsmacht abzugeben — deshalb der bilaterale Weg. Die Wirtschaftsverbände wollen, dass unsere Prüfungen drüben anerkannt werden, damit kein zweites Verfahren nötig ist. Die Gewerkschaften wollen die flankierenden Massnahmen behalten, die Dumpinglöhne verhindern sollen.",
+              "quelle": "Kap. 11.1, S. 262 und S. 267"
+            }
           ]
         },
         {
           "titel": "Zielkonflikt und Kosten",
           "zeilen": [
-            {"label": "Kern", "text": "Der Zielkonflikt läuft zwischen «Regeln übernehmen» und «selber bestimmen». Übernehmen wir die Regeln, bezahlt der Staat mit abgegebener Entscheidungsmacht und die Betriebe mit dem Aufwand der Anpassung — dafür bleibt der Markt offen. Übernehmen wir sie nicht, bezahlen die Exportbetriebe mit doppelten Zulassungsverfahren und verlorenen Aufträgen, und am Schluss die Belegschaft mit weniger Arbeit. Die Verbände wirken auf beide Seiten ein: über die Vernehmlassung, über Kommissionen und über Lobbyarbeit im Parlament.", "quelle": "Kap. 6.6, S. 179"}
+            {
+              "label": "Kern",
+              "text": "Der Zielkonflikt läuft zwischen «Regeln übernehmen» und «selber bestimmen». Übernehmen wir die Regeln, bezahlt der Staat mit abgegebener Entscheidungsmacht und die Betriebe mit dem Aufwand der Anpassung — dafür bleibt der Markt offen. Übernehmen wir sie nicht, bezahlen die Exportbetriebe mit doppelten Zulassungsverfahren und verlorenen Aufträgen, und am Schluss die Belegschaft mit weniger Arbeit. Die Verbände wirken auf beide Seiten ein: über die Vernehmlassung, über Kommissionen und über Lobbyarbeit im Parlament.",
+              "quelle": "Kap. 6.6, S. 179"
+            }
           ]
         },
         {
           "titel": "Schlusssatz",
           "zeilen": [
-            {"label": "Schluss", "text": "Beide Berufsbildenden in unserer Pause haben recht — sie sprechen bloss aus verschiedenen Interessen. Deshalb frage ich bei der nächsten solchen Meldung zuerst: Wer sagt das, was will diese Person erreichen, und wer bezahlt, wenn sie sich durchsetzt.", "quelle": "Kap. 6.6, S. 179"}
+            {
+              "label": "Schluss",
+              "text": "Beide Berufsbildenden in unserer Pause haben recht — sie sprechen bloss aus verschiedenen Interessen. Deshalb frage ich bei der nächsten solchen Meldung zuerst: Wer sagt das, was will diese Person erreichen, und wer bezahlt, wenn sie sich durchsetzt.",
+              "quelle": "Kap. 6.6, S. 179"
+            }
           ]
         }
       ]
     }
   },
-
   "methoden": [
-      {
-        "ref": "lm-17-3-3b-schema",
-        "fuer": "für jedes einzelne Argument im Statement",
-        "tun": "Bauen Sie jedes Argument in drei Schritten: Behauptung, Begründung, Beleg aus dem Lehrmittel."
-      },
-      {
-        "ref": "lm-16-2-statement",
-        "fuer": "für den Aufbau der 90 bis 120 Sekunden",
-        "tun": "Einleitung mit der Ausgangslage aus LF2, Hauptteil mit dem Zielkonflikt, Schluss mit der Frage, wer bezahlt."
-      },
-      {
-        "ref": "hko-akteurskarte",
-        "fuer": "für die Karte mit vier bis fünf Akteuren"
-      },
-      {
-        "ref": "hko-sprechspur",
-        "fuer": "für das gesprochene Statement"
-      }
-    ],
-
-  "reflexion_fragen": [
-    {"nr": "R1", "text": "Welches Interesse habe ich beim ersten Lesen übersehen — und weshalb ist es mir zuerst nicht aufgefallen?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Welcher Akteur ist meiner eigenen Lage am nächsten, und deckt sich sein Interesse wirklich mit meinem?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Woran erkenne ich künftig in einem Video oder Beitrag, aus welchem Interesse heraus jemand spricht?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für jedes einzelne Argument im Statement",
+      "tun": "Bauen Sie jedes Argument in drei Schritten: Behauptung, Begründung, Beleg aus dem Lehrmittel."
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für den Aufbau der 90 bis 120 Sekunden",
+      "tun": "Einleitung mit der Ausgangslage aus LF2, Hauptteil mit dem Zielkonflikt, Schluss mit der Frage, wer bezahlt."
+    },
+    {
+      "ref": "hko-akteurskarte",
+      "fuer": "für die Karte mit vier bis fünf Akteuren"
+    },
+    {
+      "ref": "hko-sprechspur",
+      "fuer": "für das gesprochene Statement"
+    }
   ],
-
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Welches Interesse habe ich beim ersten Lesen übersehen — und weshalb ist es mir zuerst nicht aufgefallen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Welcher Akteur ist meiner eigenen Lage am nächsten, und deckt sich sein Interesse wirklich mit meinem?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Woran erkenne ich künftig in einem Video oder Beitrag, aus welchem Interesse heraus jemand spricht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
@@ -349,70 +483,129 @@
       ]
     }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Akteurskarte erstellen, Statement halten", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Akteurskarte erstellen, Statement halten",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
   "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "5.4.2_internationale_entscheide_wirken_4j_prinzip",
   "herausforderung": {
     "buchstabe": "B",
     "label": "Denselben Entscheid aus der Sicht mehrerer Akteure lesen und benennen, wessen Interesse sich durchsetzt und wer die Kosten trägt"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Regeln übernehmen vs. selber bestimmen",
     "hint": "Beide Positionen sind vertretbar. Wer die Regeln übernimmt, sichert den Marktzugang, gibt aber Entscheidungsmacht ab. Wer selber bestimmt, behält die Macht, riskiert aber doppelte Verfahren und verlorene Aufträge. Bewertet wird, ob Sie beide Interessen sauber belegen — nicht, für welches Sie sich erwärmen."
   },
-
   "dekontextualisierung": {
     "frage": "Bei welchem anderen Entscheid könnte ich dieselbe Akteurskarte zeichnen — und welche Akteure kämen dort neu dazu?",
     "ziel": "Die Lernenden lösen die Einsicht vom Marktzugang ab: Hinter einem Entscheid stehen Interessen, und wer sie benennt, erkennt auch, wer die Kosten trägt."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R2 (Politik) · R4 (Wirtschaft)",
     "r2_voraussicht": "T7 Schlussarbeit — Interessen und Quellen einer eigenen Fragestellung offenlegen und mündlich vertreten.",
     "r3_voraussicht": "T8.2 — berufliche Zukunft planen: wirtschaftliche Rahmenbedingungen der eigenen Branche einordnen."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 6.6", "titel": "Interessengruppen — Verbände, Gewerkschaften, NGO, politischer Einfluss und Lobby", "seiten": "Seite 177-179", "unterueberschrift": "Verbände / Funktion der Verbände in der Politik", "fuer_leitfrage": [1]},
-    {"ref": "Kap. 11.1", "titel": "Schweiz – EU — Supranationalität, Organe und verbindliche Beschlüsse", "seiten": "Seite 262-263", "unterueberschrift": "Aufbau und Funktionsweise der Europäischen Union", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 11.1", "titel": "Schweiz – EU — bilaterale Verträge I und II, technische Handelshemmnisse, flankierende Massnahmen", "seiten": "Seite 267-269", "unterueberschrift": "Bilaterale Verträge", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 16.2", "titel": "Statement — Aufbau in drei Zügen", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 6.6",
+      "titel": "Interessengruppen — Verbände, Gewerkschaften, NGO, politischer Einfluss und Lobby",
+      "seiten": "Seite 177-179",
+      "unterueberschrift": "Verbände / Funktion der Verbände in der Politik",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 11.1",
+      "titel": "Schweiz – EU — Supranationalität, Organe und verbindliche Beschlüsse",
+      "seiten": "Seite 262-263",
+      "unterueberschrift": "Aufbau und Funktionsweise der Europäischen Union",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 11.1",
+      "titel": "Schweiz – EU — bilaterale Verträge I und II, technische Handelshemmnisse, flankierende Massnahmen",
+      "seiten": "Seite 267-269",
+      "unterueberschrift": "Bilaterale Verträge",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 16.2",
+      "titel": "Statement — Aufbau in drei Zügen",
+      "seiten": "Seite 368",
+      "unterueberschrift": "Aufbau eines Statements",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Akteure erkannt", "indikator": "Vier bis fünf Akteure auf der richtigen Ebene benannt.", "gewicht_prozent": 25},
-      {"kriterium": "Interessen belegt", "indikator": "Mindestens zwei Interessen mit Kapitel und Seite gestützt.", "gewicht_prozent": 25},
-      {"kriterium": "Zielkonflikt benannt", "indikator": "Zwei widersprechende Interessen und die Kostenträger sind klar bezeichnet.", "gewicht_prozent": 25},
-      {"kriterium": "Mündliche Umsetzung", "indikator": "Das Statement ist in 90 bis 120 Sekunden verständlich aufgebaut.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Akteure erkannt",
+        "indikator": "Vier bis fünf Akteure auf der richtigen Ebene benannt.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Interessen belegt",
+        "indikator": "Mindestens zwei Interessen mit Kapitel und Seite gestützt.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Zielkonflikt benannt",
+        "indikator": "Zwei widersprechende Interessen und die Kostenträger sind klar bezeichnet.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mündliche Umsetzung",
+        "indikator": "Das Statement ist in 90 bis 120 Sekunden verständlich aufgebaut.",
+        "gewicht_prozent": 25
+      }
     ],
     "scaffold_90": "Die vier Akteure werden vorgegeben; die Lernenden ergänzen Interessen, Mittel und Kostenträger.",
     "scaffold_100": "Zusätzlich wird ein fünfter Akteur ausserhalb der Schweiz und der EU aufgenommen und seine Wirkung auf den Zielkonflikt beschrieben."
   },
-
   "prinzip_handoff": {
     "kernkonzept": "Hinter einem internationalen Entscheid stehen Akteure mit gegenläufigen Interessen — wer sie benennt, sieht auch, wer die Kosten trägt.",
     "lehrmittel_anker": "Kap. 6.6 S. 177-179 (Verbände, Lobby, Vernehmlassung), Kap. 11.1 S. 262-263 (Supranationalität und Organe), Kap. 11.1 S. 267-269 (bilaterale Verträge), Kap. 16.2 S. 368 (Statement)",
     "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, eine Aussage einem Interesse zuzuordnen und den Zielkonflikt zu benennen, statt Positionen für Wahrheiten zu halten.",
     "transfer_check": "Die Lernenden können eine Akteurskarte zu einem anderen Entscheid erstellen, ohne den Marktzugang zu erwähnen."
   },
-
   "sk_anker": [
-    {"sk": 6, "wo": "In LF4 und im Statement begründen die Lernenden eine Position aus der Sicht eines Akteurs nach dem 3B-Schema mit Beleg."},
-    {"sk": 11, "wo": "Der markierte Zielkonflikt auf der Akteurskarte muss stehen bleiben: Beide Interessen werden als begründbar dargestellt, ohne aufgelöst zu werden."},
-    {"sk": 12, "wo": "Im Ast «Wege des Einflusses» und in LF1 erarbeiten die Lernenden, über welche Kanäle Beteiligung an solchen Entscheiden überhaupt möglich ist."}
+    {
+      "sk": 6,
+      "wo": "In LF4 und im Statement begründen die Lernenden eine Position aus der Sicht eines Akteurs nach dem 3B-Schema mit Beleg."
+    },
+    {
+      "sk": 11,
+      "wo": "Der markierte Zielkonflikt auf der Akteurskarte muss stehen bleiben: Beide Interessen werden als begründbar dargestellt, ohne aufgelöst zu werden."
+    },
+    {
+      "sk": 12,
+      "wo": "Im Ast «Wege des Einflusses» und in LF1 erarbeiten die Lernenden, über welche Kanäle Beteiligung an solchen Entscheiden überhaupt möglich ist."
+    }
   ]
 }

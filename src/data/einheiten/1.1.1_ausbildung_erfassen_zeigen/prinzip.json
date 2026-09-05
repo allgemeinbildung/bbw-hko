@@ -190,26 +190,6 @@
       "Quellenangabe"
     ]
   },
-  "persona_pool_units": {
-    "_kommentar": "BEWUSSTE ABWEICHUNG von der Abteilungs-Mix-Pflicht (hko-framework.md §11) und von der 1:1-Pool-Verbrauchsregel (Check 14) — gleiches Vorgehen wie in 1.1.1_einstieg_interview. In dieser Einheit arbeiten die Lernenden an sich selbst: am eigenen Lehrvertrag, an der eigenen Selbstvorstellung, an der eigenen Richtung. Ein zugewiesener Beruf mit Betrieb und Ort würde die Ich-Perspektive nicht stützen, sondern verstellen — die lernende Person müsste sich erst in eine Maurerin hineinversetzen, um über ihre eigene Ausbildung nachzudenken. Deshalb eine einzige generische Persona für alle drei Herausforderungen. Die Musterlösungen bleiben konkret: sie zeigen die Abgabe einer fremden Person und sind im hinweis-Feld entsprechend gerahmt.",
-    "berufe": [
-      "Lernende/r EFZ"
-    ],
-    "orte": [
-      "Schweiz"
-    ]
-  },
-  "persona_pool_kn_neu": {
-    "_kommentar": "Bleibt konkret — und zwar gerade weil die Units generisch sind. Der Kompetenznachweis ist der Unseen-Transfer: die lernende Person verlässt die eigene Lage und beurteilt einen fremden Fall. Laborant/in EFZ bringt dafür eine Abteilung, die in den Units gar nicht vorkommt.",
-    "berufe": [
-      "Laborant/in EFZ",
-      "Plattenleger/in EFZ"
-    ],
-    "orte": [
-      "Chur",
-      "Aarau"
-    ]
-  },
   "hybrid_situation_spec": {
     "max_woerter": 120,
     "perspektive": "ICH",
@@ -219,14 +199,13 @@
       "B",
       "C"
     ],
-    "persona_source": "persona_pool_kn_neu",
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [
       "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
       "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
       "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
-      "Persona ist neu (Beruf und Ort kommen in keiner herausforderung_*.persona vor).",
+      "Der Fall ist neu: anderer Anlass, andere Beteiligte, anderer Einsatz als in A, B und C — die Persona bleibt die neutrale (Persona-Regel 2026-09).",
       "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
     ]
   }

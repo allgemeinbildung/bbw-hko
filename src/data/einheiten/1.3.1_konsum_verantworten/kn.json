@@ -21,9 +21,9 @@
 
   "hybrid_situation": {
     "titel": "0 Prozent — heute unterschreiben",
-    "persona": {"beruf": "Polymechaniker/in EFZ", "betrieb": "Maschinenbaubetrieb", "ort": "Luzern"},
+    "persona": {"beruf": "Lernende/r EFZ, 1. Lehrjahr", "betrieb": "eigener Lehrbetrieb", "ort": "eigener Wohnort"},
     "emotion_tag": "",
-    "text": "Ich bin Polymechaniker/in EFZ im ersten Lehrjahr in Luzern. Im Pausenraum zeigt mir ein Kollege sein neues E-Bike — geleast, «nur 79 Franken im Monat, 0 Prozent». Genau so eins will ich auch, es passt zu mir und alle im Team fahren damit zur Arbeit. Gleichzeitig weiss ich, dass mein Konto schon vor dem 20. eng wird, seit ich das teurere Handy-Abo habe. Der Verkäufer sagt, die Rate sei «problemlos tragbar», und ich müsste heute unterschreiben, sonst sei das Angebot weg. Ich spüre den Druck — und die Rechnung geht in meinem Kopf noch nicht auf. Wie gehe ich vor — und warum?",
+    "text": "Ich bin im 1. Lehrjahr. Vor mir liegt ein Angebotsblatt aus einem Velogeschäft: E-Bike, Katalogpreis 3900 Franken, in grosser Schrift «0 Prozent Zins», darunter 48 Monatsraten zu 89 Franken. Klein gedruckt stehen 250 Franken Bearbeitungsgebühr, und das Velo gehört bis zur letzten Rate der Leasinggeberin. Der Verkäufer hat mir das Blatt gestern in die Hand gedrückt — gültig bis Samstag. Zwei aus meinem Team fahren dasselbe Modell zur Arbeit. Gleichzeitig wird mein Konto seit dem teureren Handy-Abo schon vor dem 20. eng. Die Zahlen auf dem Blatt und die in meinem Kopf gehen nicht zusammen. Wie gehe ich vor — und warum?",
     "leitfrage": "Wie gehe ich vor — und warum?",
     "aktivierte_trade_offs": [
       "Eigener Massstab vs. sozialer Konsumdruck",
@@ -31,12 +31,12 @@
       "Attraktives Angebot vs. verstecktes Verschuldungsrisiko"
     ],
     "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die alle drei Lernaufgaben gleichzeitig verlangt.",
-    "definition_lang": "Die Hybrid-Herausforderung bündelt Bedürfnisunterscheidung, Budgetdenken und Verschuldungsrisiko in einer einzigen, neuen Entscheidungssituation mit einer bisher nicht verwendeten Persona (Unseen-Transfer). Die Lernenden müssen zeigen, dass sie das gemeinsame Prinzip anwenden, nicht nur eine der drei Aufgaben wiederholen.",
+    "definition_lang": "Die Hybrid-Herausforderung bündelt Bedürfnisunterscheidung, Budgetdenken und Verschuldungsrisiko in einer einzigen Entscheidungssituation. Neu ist nicht die Person, sondern der Fall: ein konkretes Leasingangebot mit nachrechenbaren Zahlen und einer Frist, das in keiner der drei Herausforderungen vorkam. In A, B und C arbeiten die Lernenden an ihren eigenen Wünschen, ihrem eigenen Budget und ihren eigenen Abos; hier liegt ein fremdes Dokument vor ihnen, das sie prüfen müssen. Die Lernenden müssen zeigen, dass sie das gemeinsame Prinzip übertragen, nicht eine der drei Aufgaben wiederholen.",
     "alignment_note": {
       "herausforderungen_mapping": [
-        {"hf_letter": "A", "scene_element": "Der Wunsch nach dem E-Bike «weil alle es haben» — echter Bedarf gegen durch das Umfeld geweckten Wunsch."},
-        {"hf_letter": "B", "scene_element": "Das Konto wird schon vor dem 20. eng, seit dem teureren Handy-Abo — knapper Budgetspielraum."},
-        {"hf_letter": "C", "scene_element": "Das 0-Prozent-Leasing mit «heute unterschreiben»-Druck — verlockendes Angebot mit verstecktem Verschuldungsrisiko."}
+        {"hf_letter": "A", "scene_element": "Zwei aus dem Team fahren dasselbe Modell — echter Bedarf gegen einen durch das Umfeld geweckten Wunsch."},
+        {"hf_letter": "B", "scene_element": "Das Konto wird seit dem teureren Handy-Abo schon vor dem 20. eng — die Rate von 89 Franken muss gegen ein knappes Budget gerechnet werden."},
+        {"hf_letter": "C", "scene_element": "«0 Prozent Zins» in grosser Schrift, 48 Raten, 250 Franken Gebühr und Eigentumsvorbehalt im Kleingedruckten, dazu die Frist bis Samstag — verstecktes Verschuldungsrisiko hinter einem attraktiven Angebot."}
       ],
       "new_dimensions": []
     }
@@ -53,7 +53,7 @@
       ],
       "fragestruktur": [
         {"nr": 1, "typ": "Erklären", "frage": "Welche Bedürfnisarten und welche Kostenüberlegungen spielen in dieser Situation eine Rolle — und warum?", "k_stufe": 2},
-        {"nr": 2, "typ": "Anwenden", "frage": "Wie würden Sie mit einem realistischen Budget prüfen, ob die Leasingrate für Sie tragbar ist?", "k_stufe": 3},
+        {"nr": 2, "typ": "Anwenden", "frage": "Wie würden Sie mit einem realistischen Budget prüfen, ob die Rate von 89 Franken für Sie tragbar ist?", "k_stufe": 3},
         {"nr": 3, "typ": "Beurteilen", "frage": "Ist das E-Bike für Sie ein echtes Bedürfnis oder ein durch das Umfeld geweckter Wunsch — und ändert das Ihre Entscheidung?", "k_stufe": 3},
         {"nr": 4, "typ": "Transfer", "frage": "Vergleichen Sie diese Situation mit einer Ihrer drei Herausforderungen — wo ist das Prinzip gleich, wo unterschiedlich?", "k_stufe": 4},
         {"nr": 5, "typ": "Werthaltung", "frage": "Wer trägt die Verantwortung, wenn die Rate später doch nicht tragbar ist — und weshalb ist das keine reine Geldfrage?", "k_stufe": 4}
@@ -76,9 +76,9 @@
         "Vier strukturierte Aufgaben steigender Komplexität."
       ],
       "aufgaben": [
-        {"nr": 1, "typ": "Erklären", "aufgabe": "Erklären Sie, welche Kosten bei einem 0-Prozent-Leasing tatsächlich anfallen können und warum die Monatsrate allein nicht aussagt, ob es tragbar ist.", "k_stufe": 2},
-        {"nr": 2, "typ": "Unterscheiden", "aufgabe": "Der Wunsch nach dem E-Bike und der Druck des Verkäufers wirken beide auf Sie. Warum ist der geweckte Wunsch anders zu beurteilen als Ihr echter Bedarf?", "k_stufe": 3},
-        {"nr": 3, "typ": "Entscheiden", "aufgabe": "Entscheiden Sie sich für oder gegen die Unterschrift heute und begründen Sie Ihren Entscheid mit Ihrem Budget. Nennen Sie die zwei Optionen und ihre Folgen.", "k_stufe": 3},
+        {"nr": 1, "typ": "Erklären", "aufgabe": "Rechnen Sie aus, was das Angebot über die ganze Laufzeit kostet, und erklären Sie, warum die Monatsrate allein nicht aussagt, ob es tragbar ist.", "k_stufe": 2},
+        {"nr": 2, "typ": "Unterscheiden", "aufgabe": "Der Wunsch nach dem E-Bike, das Modell der beiden Teamkollegen und die Frist bis Samstag wirken zusammen auf Sie. Warum ist ein so geweckter Wunsch anders zu beurteilen als ein echter Bedarf?", "k_stufe": 3},
+        {"nr": 3, "typ": "Entscheiden", "aufgabe": "Entscheiden Sie sich für oder gegen die Unterschrift bis Samstag und begründen Sie Ihren Entscheid mit Ihrem Budget. Nennen Sie die zwei Optionen und ihre Folgen.", "k_stufe": 3},
         {"nr": 4, "typ": "Forderung", "aufgabe": "Formulieren Sie in Ich-Form zwei Regeln, mit denen Sie sich künftig vor solchem Verschuldungsdruck schützen.", "k_stufe": 4}
       ],
       "sk": [6, 11, 5],
@@ -100,7 +100,7 @@
       ],
       "reflexionsfragen": [
         "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
-        "Erklären Sie, wie dieses Prinzip in der Hybrid-Herausforderung mit dem E-Bike-Leasing sichtbar wird. Was ist gleich, was ist anders?",
+        "Erklären Sie, wie dieses Prinzip im Leasingangebot der Hybrid-Herausforderung sichtbar wird. Was ist gleich, was ist anders?",
         "Wann versagt das Prinzip — und was haben Sie durch die drei Herausforderungen insgesamt über überlegte Konsumentscheidungen gelernt?"
       ],
       "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",

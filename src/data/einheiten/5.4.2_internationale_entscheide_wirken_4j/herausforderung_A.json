@@ -3,55 +3,79 @@
   "modul": "5.4",
   "modul_titel": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen.",
   "lehrgang": "EFZ_4J",
-
   "buchstabe": "A",
   "sit_farbe": "#C0392B",
   "sit_farbe_light": "#FADBD8",
   "sit_farbe_mid": "#E74C3C",
-
   "titel": "«Gestorben wegen einem Entscheid im Ausland»",
-
-  "wissensknoten": ["internationale_arbeitsteilung"],
-
+  "wissensknoten": [
+    "internationale_arbeitsteilung"
+  ],
   "nrlp": {
     "nr": "5.4.2",
-    "nr_primary": ["5.4.2"],
+    "nr_primary": [
+      "5.4.2"
+    ],
     "lebensbezug": "5.4",
-    "themen": ["T5"],
+    "themen": [
+      "T5"
+    ],
     "gesellschaft": [
-      {"aspekt": "Wirtschaft", "iteration": "R4"},
-      {"aspekt": "Politik", "iteration": "R2"}
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R4"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R2"
+      }
     ],
     "sprachmodi": [
       "Produktion mündlich"
     ],
-    "sprachmodus_ids": ["SM4"],
-    "sk": [6, 9],
+    "sprachmodus_ids": [
+      "SM4"
+    ],
+    "sk": [
+      6,
+      9
+    ],
     "kompetenz_id": "5.4.2",
     "lebensbezug_id": "5.4",
     "kompetenz_text": "Ich kann anhand eines Beispiels erklären, wie internationale politische Entscheidungen Auswirkungen auf mein Leben und das Leben von anderen haben können.",
     "lebensbezug_text": "Ich werde mit Nachrichten über Krisen und Konflikte konfrontiert, die auch die Schweiz und mich betreffen."
   },
-
   "persona": {
-    "beruf": "Polymechaniker/in EFZ",
-    "betrieb": "Präzisionsmechanik Halter AG",
-    "ort": "Winterthur"
+    "beruf": "Lernende/r EFZ, 3. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
-
-  "situation_text": "Ich bin Polymechaniker/in EFZ im 3. Lehrjahr bei der Präzisionsmechanik Halter AG in Winterthur. Wir fertigen Bauteile für Kundschaft im Ausland. An der Morgenrunde sagt der Betriebsleiter, ein grosser Auftrag sei «gestorben wegen einem Zollentscheid, den irgendwer im Ausland gefällt hat». Für mich heisst das konkret: Die Serie, an der ich diese Woche arbeiten sollte, ist verschoben, dafür kommt ein anderer Auftrag mit anderem Material, und der Einkauf rechnet neu mit sechs statt zwei Wochen Lieferzeit. Im ABU habe ich gelernt, dass die Schweiz rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel verdient — jetzt merke ich, dass dieser Franken auch durch unsere Werkstatt läuft. Den Satz des Betriebsleiters verstehe ich trotzdem nicht: Zwischen einem Entscheid irgendwo im Ausland und meinem Arbeitstag müssen Schritte liegen, die niemand benennt.",
-
+  "situation_text": "Ich bin im 3. Lehrjahr und arbeite in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — jeden Tag mit Material, Ware oder Geräten, die nicht aus der Schweiz kommen. Am Montag heisst es an der Morgenbesprechung, ein grosser Auftrag sei «gestorben wegen einem Zollentscheid, den irgendwer im Ausland gefällt hat». Für mich heisst das konkret: Was ich für diese Woche eingeplant hatte, ist verschoben, dafür kommt eine andere Arbeit mit anderem Material, und der Einkauf rechnet neu mit sechs statt zwei Wochen Lieferzeit. Im ABU habe ich gelernt, dass die Schweiz rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel verdient — jetzt merke ich, dass dieser Franken auch durch meinen Arbeitstag läuft. Den Satz von der Morgenbesprechung verstehe ich trotzdem nicht: Zwischen einem Entscheid irgendwo im Ausland und meinem Arbeitstag müssen Schritte liegen, die niemand benennt.",
   "zahlen_tabelle": [
-    {"label": "Warenexporte der Schweiz 2023 (Kap. 11.2, S. 275)", "wert": "CHF 274 Mrd."},
-    {"label": "Warenimporte der Schweiz 2023 (Kap. 11.2, S. 275)", "wert": "CHF 226 Mrd."},
-    {"label": "Anteil des grenzüberschreitenden Handels am BIP (Kap. 11.2, S. 275)", "wert": "rund die Hälfte — jeder zweite Franken"},
-    {"label": "Anteil Maschinen und Elektronik an den Schweizer Exporten (Kap. 11.2, S. 275)", "wert": "15,6 %"},
-    {"label": "Exportanteil und Lieferfristen des eigenen Lehrbetriebs", "wert": "Platzhalter — im Betrieb erfragen"}
+    {
+      "label": "Warenexporte der Schweiz 2023 (Kap. 11.2, S. 275)",
+      "wert": "CHF 274 Mrd."
+    },
+    {
+      "label": "Warenimporte der Schweiz 2023 (Kap. 11.2, S. 275)",
+      "wert": "CHF 226 Mrd."
+    },
+    {
+      "label": "Anteil des grenzüberschreitenden Handels am BIP (Kap. 11.2, S. 275)",
+      "wert": "rund die Hälfte — jeder zweite Franken"
+    },
+    {
+      "label": "Anteil Maschinen und Elektronik an den Schweizer Exporten (Kap. 11.2, S. 275)",
+      "wert": "15,6 %"
+    },
+    {
+      "label": "Exportanteil und Lieferfristen im eigenen Betrieb",
+      "wert": "eigenes Beispiel — bis Woche 2 ergänzen"
+    }
   ],
-
-  "leitfrage": "Über welche Schritte kommt ein Handelsentscheid aus dem Ausland bis an meine Maschine?",
-  "leitfragen_intro": "Diese Herausforderung beginnt vor der ersten Lektion. Erfragen Sie im Lehrbetrieb den Exportanteil und die Lieferfristen für die Zahlentabelle und ein importiertes Material oder Bauteil. LF1 lösen Sie mit dem Lehrmittel, LF2 braucht dieses eigene Beispiel. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.1, 11.2, 11.3 und 16.2 als Grundlage.",
-  "auftakt_typ": "vorbereitung",
+  "leitfrage": "Über welche Schritte kommt ein Handelsentscheid aus dem Ausland bis an meinen Arbeitsplatz?",
+  "leitfragen_intro": "Wählen Sie in dieser Lektion ein importiertes Material oder Bauteil, mit dem Sie im Betrieb arbeiten — was Sie darüber wissen, genügt für den Anfang. Bis zur zweiten Lektion ergänzen Sie, was sich erfragen lässt: Exportanteil, Lieferfrist, Preisentwicklung. LF1 lösen Sie mit dem Lehrmittel, LF2 arbeitet an diesem Beispiel. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 11.1, 11.2, 11.3 und 16.2 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
@@ -74,12 +98,35 @@
       "loesung": {
         "kern": "Globalisierung, Arbeitsteilung und wer entscheidet",
         "zeilen": [
-          { "label": "Globalisierung", "text": "Weltweite Verflechtung von Wirtschaft, Politik und Kultur auf Ebene von Individuen, Firmen und Staaten.", "quelle": "Kap. 11.2, S. 272" },
-          { "label": "Ursachen", "text": "Technischer Fortschritt bei Transport und Kommunikation sowie der politische Abbau von Zöllen und Handelsschranken.", "quelle": "Kap. 11.2, S. 272" },
-          { "label": "Arbeitsteilung", "text": "Jedes Land spezialisiert sich auf die Wirtschaftszweige, für die es günstige Voraussetzungen hat — Rohstoffe, Infrastruktur oder Know-how.", "quelle": "Kap. 11.2, S. 273" },
-          { "label": "Abhängigkeit CH", "text": "Ohne eigene Rohstoffe kann sich die Schweiz nicht auf deren Abbau spezialisieren — sie ist auf Importe und den Verkauf ihrer eigenen Spezialisierung angewiesen." },
-          { "label": "Staat und Block", "text": "Handelsentscheide fällen einzelne Staaten über politische Entscheide zum Welthandel sowie Handelsblöcke wie die EU, in denen sich Länder zu einem Wirtschaftsraum zusammenschliessen.", "quelle": "Kap. 11.2, S. 272-273" },
-          { "label": "Internationale Organisation", "text": "Die WTO will freien Welthandel mit fairen Spielregeln; ihre 164 Mitglieder tragen über 90 Prozent des Welthandels, und sie schlichtet Handelskonflikte.", "quelle": "Kap. 11.1, S. 271" }
+          {
+            "label": "Globalisierung",
+            "text": "Weltweite Verflechtung von Wirtschaft, Politik und Kultur auf Ebene von Individuen, Firmen und Staaten.",
+            "quelle": "Kap. 11.2, S. 272"
+          },
+          {
+            "label": "Ursachen",
+            "text": "Technischer Fortschritt bei Transport und Kommunikation sowie der politische Abbau von Zöllen und Handelsschranken.",
+            "quelle": "Kap. 11.2, S. 272"
+          },
+          {
+            "label": "Arbeitsteilung",
+            "text": "Jedes Land spezialisiert sich auf die Wirtschaftszweige, für die es günstige Voraussetzungen hat — Rohstoffe, Infrastruktur oder Know-how.",
+            "quelle": "Kap. 11.2, S. 273"
+          },
+          {
+            "label": "Abhängigkeit CH",
+            "text": "Ohne eigene Rohstoffe kann sich die Schweiz nicht auf deren Abbau spezialisieren — sie ist auf Importe und den Verkauf ihrer eigenen Spezialisierung angewiesen."
+          },
+          {
+            "label": "Staat und Block",
+            "text": "Handelsentscheide fällen einzelne Staaten über politische Entscheide zum Welthandel sowie Handelsblöcke wie die EU, in denen sich Länder zu einem Wirtschaftsraum zusammenschliessen.",
+            "quelle": "Kap. 11.2, S. 272-273"
+          },
+          {
+            "label": "Internationale Organisation",
+            "text": "Die WTO will freien Welthandel mit fairen Spielregeln; ihre 164 Mitglieder tragen über 90 Prozent des Welthandels, und sie schlichtet Handelskonflikte.",
+            "quelle": "Kap. 11.1, S. 271"
+          }
         ]
       }
     },
@@ -88,11 +135,11 @@
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 11.3 | S. 285",
       "liefert": "das eigene Betriebsbeispiel für die Kette",
-      "text": "Wenden Sie die protektionistische Handelspolitik auf Ihren Lehrbetrieb an: Wer verlangt Schutz, wer bezahlt ihn, und welches Material oder welches Bauteil wird dadurch teurer oder schwerer verfügbar?",
+      "text": "Wenden Sie die protektionistische Handelspolitik auf Ihren Lehrbetrieb an — oder auf den Betrieb, in dem Sie zuletzt gearbeitet haben: Wer verlangt Schutz, wer bezahlt ihn, und welches Material oder welches Bauteil wird dadurch teurer oder schwerer verfügbar?",
       "feld_hoehe_mm": 15,
       "scaffolding": {
         "strategien": [
-          "Erfragen Sie vorab im Betrieb Material und Lieferfrist (siehe Auftakt auf Seite 1).",
+          "Nehmen Sie ein Material, das Sie kennen — Zahlen ergänzen Sie bis zur zweiten Lektion.",
           "Ordnen Sie zu: wer verlangt Schutz, wer zahlt, was wird dadurch teurer."
         ],
         "satzanfaenge": [
@@ -104,10 +151,24 @@
       "loesung": {
         "kern": "Wer schützt, wer zahlt, was wird teurer",
         "zeilen": [
-          { "label": "Schutzverlangend", "text": "Betriebe und Branchen in Industriestaaten, die eine zu starke ausländische Konkurrenz fürchten und deshalb Zölle oder Preisaufschläge verlangen.", "quelle": "Kap. 11.3, S. 285" },
-          { "label": "Wer bezahlt", "text": "Der eigene Betrieb, wenn er Material oder Bauteile im Ausland einkauft — der Zoll verteuert den Einkauf und verengt die Lieferkette.", "quelle": "Kap. 11.3, S. 285" },
-          { "label": "Betroffenes Material", "text": "Bauteile oder Vormaterial, das nicht in der Schweiz hergestellt wird — welches genau, ist im eigenen Betrieb zu erfragen." },
-          { "label": "Häufiger Fehler", "text": "Nur den Preis nennen. Ebenso wichtig: Lieferfristen steigen und Material wird schwerer verfügbar — beides gehört in die Antwort." }
+          {
+            "label": "Schutzverlangend",
+            "text": "Betriebe und Branchen in Industriestaaten, die eine zu starke ausländische Konkurrenz fürchten und deshalb Zölle oder Preisaufschläge verlangen.",
+            "quelle": "Kap. 11.3, S. 285"
+          },
+          {
+            "label": "Wer bezahlt",
+            "text": "Der eigene Betrieb, wenn er Material oder Bauteile im Ausland einkauft — der Zoll verteuert den Einkauf und verengt die Lieferkette.",
+            "quelle": "Kap. 11.3, S. 285"
+          },
+          {
+            "label": "Betroffenes Material",
+            "text": "Bauteile oder Vormaterial, das nicht in der Schweiz hergestellt wird — welches genau, ist im eigenen Betrieb zu erfragen."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur den Preis nennen. Ebenso wichtig: Lieferfristen steigen und Material wird schwerer verfügbar — beides gehört in die Antwort."
+          }
         ]
       }
     },
@@ -132,10 +193,24 @@
       "loesung": {
         "kern": "Vier Prüfkriterien für die Wirkungskette",
         "zeilen": [
-          { "label": "Kette prüfen", "text": "Eine vollständige Kette beginnt beim politischen Entscheid und endet ohne Lücke bei der eigenen Arbeitsstelle — jeder Zwischenschritt braucht einen Beleg.", "quelle": "Kap. 11.2, S. 273-275" },
-          { "label": "Schwache Antwort", "text": "Nennt nur Anfang und Ende («Zoll im Ausland» — «weniger Arbeit für mich»), ohne die Schritte dazwischen zu belegen." },
-          { "label": "Starke Antwort", "text": "Belegt jeden Zwischenschritt einzeln: Preis, Lieferfrist, Offerte, Auftragsvergabe, Arbeitsplanung — mit Quelle oder eigener Beobachtung." },
-          { "label": "Zahl als Beleg", "text": "Rund die Hälfte des Schweizer BIP entsteht im grenzüberschreitenden Handel — das macht jede Kette plausibel, die bei einem Handelsentscheid beginnt.", "quelle": "Kap. 11.2, S. 275" }
+          {
+            "label": "Kette prüfen",
+            "text": "Eine vollständige Kette beginnt beim politischen Entscheid und endet ohne Lücke bei der eigenen Arbeitsstelle — jeder Zwischenschritt braucht einen Beleg.",
+            "quelle": "Kap. 11.2, S. 273-275"
+          },
+          {
+            "label": "Schwache Antwort",
+            "text": "Nennt nur Anfang und Ende («Zoll im Ausland» — «weniger Arbeit für mich»), ohne die Schritte dazwischen zu belegen."
+          },
+          {
+            "label": "Starke Antwort",
+            "text": "Belegt jeden Zwischenschritt einzeln: Preis, Lieferfrist, Offerte, Auftragsvergabe, Arbeitsplanung — mit Quelle oder eigener Beobachtung."
+          },
+          {
+            "label": "Zahl als Beleg",
+            "text": "Rund die Hälfte des Schweizer BIP entsteht im grenzüberschreitenden Handel — das macht jede Kette plausibel, die bei einem Handelsentscheid beginnt.",
+            "quelle": "Kap. 11.2, S. 275"
+          }
         ]
       }
     },
@@ -160,16 +235,29 @@
       "loesung": {
         "kern": "Der Schlusszug mit Zahl und Quelle",
         "zeilen": [
-          { "label": "Schlusssatz", "text": "«Bei mir kommt der Entscheid an, sobald der Betrieb die Serie wechselt und mit sechs statt zwei Wochen Lieferzeit rechnet.»" },
-          { "label": "Zahl mit Quelle", "text": "«Die Schweiz verdient rund die Hälfte ihres BIP im grenzüberschreitenden Handel, Kapitel 11.2, Seite 275.»", "quelle": "Kap. 11.2, S. 275" },
-          { "label": "Aufbau", "text": "Der Schluss eines Statements ist ein Appell oder eine zugespitzte Aussage, kein neuer Sachverhalt.", "quelle": "Kap. 16.2, S. 368" },
-          { "label": "Massstab", "text": "Zwei kurze, frei gesprochene Sätze — nicht abgelesen, mit einer konkret belegten Zahl." }
+          {
+            "label": "Schlusssatz",
+            "text": "«Bei mir kommt der Entscheid an, sobald der Betrieb die Arbeit umstellt und mit sechs statt zwei Wochen Lieferzeit rechnet.»"
+          },
+          {
+            "label": "Zahl mit Quelle",
+            "text": "«Die Schweiz verdient rund die Hälfte ihres BIP im grenzüberschreitenden Handel, Kapitel 11.2, Seite 275.»",
+            "quelle": "Kap. 11.2, S. 275"
+          },
+          {
+            "label": "Aufbau",
+            "text": "Der Schluss eines Statements ist ein Appell oder eine zugespitzte Aussage, kein neuer Sachverhalt.",
+            "quelle": "Kap. 16.2, S. 368"
+          },
+          {
+            "label": "Massstab",
+            "text": "Zwei kurze, frei gesprochene Sätze — nicht abgelesen, mit einer konkret belegten Zahl."
+          }
         ]
       }
     }
   ],
-
-  "mindmap_zentrum": "Vom Entscheid bis in meine Werkstatt",
+  "mindmap_zentrum": "Vom Entscheid bis an meinen Arbeitsplatz",
   "mindmap_aeste": [
     {
       "titel": "Wer entscheidet was",
@@ -195,8 +283,8 @@
       "titel": "Wo es mich trifft",
       "punkte": [
         "Meine Arbeitsplanung für die Woche",
-        "Welche Serie ich fertige und mit welchem Material",
-        "Auslastung der Werkstatt und Überstunden",
+        "Welche Arbeit ich ausführe und mit welchem Material",
+        "Auslastung des Betriebs und Überstunden",
         "Längerfristig: Zahl der Lehrstellen im Betrieb"
       ],
       "optional": false
@@ -212,18 +300,32 @@
       "optional": true
     }
   ],
-
   "handlungsprodukt": {
     "format": "Gesprochene Erklärung an der Wirkungskette",
-    "titel": "Vom Entscheid bis an meine Maschine",
+    "titel": "Vom Entscheid bis an meinen Arbeitsplatz",
     "format_detail": "Gesprochene Erklärung von 90 Sekunden an einer selbst gezeichneten Wirkungskette auf A3 oder als Folie, mit dem Smartphone aufgenommen.",
     "beschreibung": "Ich zeichne die Kette von einem internationalen Handelsentscheid bis an meinen Arbeitsplatz in vier bis sechs Schritten und erkläre sie in 90 Sekunden so, dass jeder Schritt belegt ist.",
     "schritte": [
-      {"label": "Entscheid festhalten", "hint": "Übernehmen Sie aus LF1, wer entschieden hat — Staat, Handelsblock oder internationale Organisation — und notieren Sie in einem Satz, worüber entschieden wurde."},
-      {"label": "Schritte sammeln", "hint": "Übernehmen Sie aus LF2, welches Material teurer oder knapper wird, und ergänzen Sie mit Kap. 11.3 S. 285 die Stichworte dazwischen: Preis, Lieferfrist, Offerte, Auftrag, Arbeitsplanung."},
-      {"label": "Auf vier bis sechs Schritte kürzen", "hint": "Streichen Sie jeden Schritt, der nur eine Wiederholung ist. Was übrig bleibt, muss lückenlos aufeinander folgen."},
-      {"label": "Belege zuordnen", "hint": "Schreiben Sie zu jedem Schritt die Quelle: Kapitel und Seite aus dem Lehrmittel oder «eigene Beobachtung im Betrieb»."},
-      {"label": "Erklärung aufnehmen", "hint": "Sprechen Sie die Kette in 90 Sekunden durch, ein Schritt nach dem anderen. Nutzen Sie die Satzanfänge aus der Schreibhilfe und lesen Sie nicht ab."}
+      {
+        "label": "Entscheid festhalten",
+        "hint": "Übernehmen Sie aus LF1, wer entschieden hat — Staat, Handelsblock oder internationale Organisation — und notieren Sie in einem Satz, worüber entschieden wurde."
+      },
+      {
+        "label": "Schritte sammeln",
+        "hint": "Übernehmen Sie aus LF2, welches Material teurer oder knapper wird, und ergänzen Sie mit Kap. 11.3 S. 285 die Stichworte dazwischen: Preis, Lieferfrist, Offerte, Auftrag, Arbeitsplanung."
+      },
+      {
+        "label": "Auf vier bis sechs Schritte kürzen",
+        "hint": "Streichen Sie jeden Schritt, der nur eine Wiederholung ist. Was übrig bleibt, muss lückenlos aufeinander folgen."
+      },
+      {
+        "label": "Belege zuordnen",
+        "hint": "Schreiben Sie zu jedem Schritt die Quelle: Kapitel und Seite aus dem Lehrmittel oder «eigene Beobachtung im Betrieb»."
+      },
+      {
+        "label": "Erklärung aufnehmen",
+        "hint": "Sprechen Sie die Kette in 90 Sekunden durch, ein Schritt nach dem anderen. Nutzen Sie die Satzanfänge aus der Schreibhilfe und lesen Sie nicht ab."
+      }
     ],
     "schreib_label": "WIRKUNGSKETTE HIER ERARBEITEN",
     "schreib_note": "-> wissen/internationale_arbeitsteilung",
@@ -254,58 +356,86 @@
         {
           "titel": "Ausgangslage und Entscheid",
           "zeilen": [
-            {"label": "Schritt 1", "text": "Entschieden hat ein Staat ausserhalb der Schweiz, und zwar auf politischer Ebene: Er erhebt einen Zoll auf eingeführte Industriegüter. Das Lehrmittel beschreibt genau dieses Muster als protektionistische Handelspolitik — Unternehmen fürchten die Konkurrenz aus dem Ausland und verlangen staatlichen Schutz in Form von Zöllen und anderen Preisaufschlägen.", "quelle": "Kap. 11.3, S. 285"}
+            {
+              "label": "Schritt 1",
+              "text": "Entschieden hat ein Staat ausserhalb der Schweiz, und zwar auf politischer Ebene: Er erhebt einen Zoll auf eingeführte Industriegüter. Das Lehrmittel beschreibt genau dieses Muster als protektionistische Handelspolitik — Unternehmen fürchten die Konkurrenz aus dem Ausland und verlangen staatlichen Schutz in Form von Zöllen und anderen Preisaufschlägen.",
+              "quelle": "Kap. 11.3, S. 285"
+            }
           ]
         },
         {
           "titel": "Wie der Entscheid weiterläuft",
           "zeilen": [
-            {"label": "Schritte 2–3", "text": "Der Zoll verteuert unser Bauteil an der Grenze des Zielmarkts. Damit wird unsere Offerte teurer als die eines Anbieters im Zielland, und die Kundschaft verschiebt oder storniert den Auftrag. Das Lehrmittel hält fest, dass der Welthandel gerade deshalb gewachsen ist, weil Zölle gesenkt und der freie Güterverkehr gefördert wurde — geht dieser Schritt rückwärts, dreht sich die Wirkung um.", "quelle": "Kap. 11.2, S. 273"}
+            {
+              "label": "Schritte 2–3",
+              "text": "Der Zoll verteuert unser Produkt an der Grenze des Zielmarkts. Damit wird unsere Offerte teurer als die eines Anbieters im Zielland, und die Kundschaft verschiebt oder storniert den Auftrag. Das Lehrmittel hält fest, dass der Welthandel gerade deshalb gewachsen ist, weil Zölle gesenkt und der freie Güterverkehr gefördert wurde — geht dieser Schritt rückwärts, dreht sich die Wirkung um.",
+              "quelle": "Kap. 11.2, S. 273"
+            }
           ]
         },
         {
           "titel": "Wo es bei mir ankommt",
           "zeilen": [
-            {"label": "Schritte 4–5", "text": "Weil der Auftrag wegfällt, zieht der Betrieb eine andere Serie vor und bestellt anderes Material, das erst in sechs statt in zwei Wochen kommt (eigene Beobachtung im Betrieb). Für mich heisst das: andere Arbeitsplanung, andere Einrichtung an der Maschine, weniger Auslastung in dieser Woche. Der Entscheid ist bei mir angekommen, ohne dass ich je etwas davon gelesen hätte.", "quelle": "eigene Beobachtung im Betrieb"}
+            {
+              "label": "Schritte 4–5",
+              "text": "Weil der Auftrag wegfällt, zieht der Betrieb eine andere Arbeit vor und bestellt anderes Material, das erst in sechs statt in zwei Wochen kommt (eigene Beobachtung im Betrieb). Für mich heisst das: andere Arbeitsplanung, andere Vorbereitung am Arbeitsplatz, weniger Auslastung in dieser Woche. Der Entscheid ist bei mir angekommen, ohne dass ich je etwas davon gelesen hätte.",
+              "quelle": "eigene Beobachtung im Betrieb"
+            }
           ]
         },
         {
           "titel": "Schlusssatz mit Zahl",
           "zeilen": [
-            {"label": "Schluss", "text": "Die Schweiz verdient rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel — jeden zweiten Franken. Genau deshalb ist ein Zollentscheid im Ausland für uns kein Auslandthema, sondern eine Frage der Auftragslage. Offen bleibt, ob mich mehr Schutz an dieser Stelle schützen oder mir den Markt verschliessen würde: Beides lässt sich begründen.", "quelle": "Kap. 11.2, S. 275"}
+            {
+              "label": "Schluss",
+              "text": "Die Schweiz verdient rund die Hälfte ihres Bruttoinlandprodukts im grenzüberschreitenden Handel — jeden zweiten Franken. Genau deshalb ist ein Zollentscheid im Ausland für uns kein Auslandthema, sondern eine Frage der Auftragslage. Offen bleibt, ob mich mehr Schutz an dieser Stelle schützen oder mir den Markt verschliessen würde: Beides lässt sich begründen.",
+              "quelle": "Kap. 11.2, S. 275"
+            }
           ]
         }
       ]
     }
   },
-
   "methoden": [
-      {
-        "ref": "lm-17-2-w-fragen",
-        "fuer": "für das Gliedern der Wirkungskette",
-        "tun": "Prüfen Sie jeden Schritt mit denselben W-Fragen. Wo eine Antwort fehlt, fehlt ein Schritt oder ein Beleg."
-      },
-      {
-        "ref": "lm-16-2-statement",
-        "fuer": "für den Aufbau der gesprochenen Erklärung",
-        "tun": "Bauen Sie die 90 Sekunden in drei Zügen: ein Satz Ausgangslage, die Kette als Hauptteil, ein Schlusssatz mit Zahl."
-      },
-      {
-        "ref": "hko-wirkungskette",
-        "fuer": "für die Kette von vier bis sechs Schritten auf A3"
-      },
-      {
-        "ref": "hko-sprechspur",
-        "fuer": "für die Aufnahme der 90 Sekunden"
-      }
-    ],
-
-  "reflexion_fragen": [
-    {"nr": "R1", "text": "Welcher Schritt meiner Kette hat mich beim Aufschreiben am meisten überrascht?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Welche Rückfrage einer mitlernenden Person hat den schwächsten Beleg in meiner Kette aufgedeckt — und wodurch habe ich ihn ersetzt?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Bei welcher Nachricht aus dem Ausland werde ich künftig zuerst fragen, über welche Schritte sie bei mir ankommt?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für das Gliedern der Wirkungskette",
+      "tun": "Prüfen Sie jeden Schritt mit denselben W-Fragen. Wo eine Antwort fehlt, fehlt ein Schritt oder ein Beleg."
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für den Aufbau der gesprochenen Erklärung",
+      "tun": "Bauen Sie die 90 Sekunden in drei Zügen: ein Satz Ausgangslage, die Kette als Hauptteil, ein Schlusssatz mit Zahl."
+    },
+    {
+      "ref": "hko-wirkungskette",
+      "fuer": "für die Kette von vier bis sechs Schritten auf A3"
+    },
+    {
+      "ref": "hko-sprechspur",
+      "fuer": "für die Aufnahme der 90 Sekunden"
+    }
   ],
-
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Welcher Schritt meiner Kette hat mich beim Aufschreiben am meisten überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Welche Rückfrage einer mitlernenden Person hat den schwächsten Beleg in meiner Kette aufgedeckt — und wodurch habe ich ihn ersetzt?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Bei welcher Nachricht aus dem Ausland werde ich künftig zuerst fragen, über welche Schritte sie bei mir ankommt?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
@@ -322,7 +452,7 @@
       "kriterium": "Struktur · Tiefe · Verbindungen",
       "vollstaendig_wenn": [
         "Alle drei Pflicht-Äste sind befüllt.",
-        "Der Ast «Wo es mich trifft» nennt mindestens zwei Folgen aus dem eigenen Lehrbetrieb.",
+        "Der Ast «Wo es mich trifft» nennt mindestens zwei Folgen aus dem eigenen Arbeitsalltag.",
         "Mindestens eine Verbindung zwischen «Wie es sich fortpflanzt» und «Wo es mich trifft» ist eingezeichnet."
       ]
     },
@@ -345,70 +475,133 @@
       ]
     }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Wirkungskette zeichnen, Erklärung aufnehmen", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1-LF2, Material wählen — Betriebszahlen bis Woche 2, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "LF3-LF4, Wirkungskette zeichnen, Erklärung aufnehmen",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
   "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "5.4.2_internationale_entscheide_wirken_4j_prinzip",
   "herausforderung": {
     "buchstabe": "A",
     "label": "Den Weg eines internationalen Handelsentscheids bis an den eigenen Arbeitsplatz in vier bis sechs belegten Schritten aufdecken"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Offener Marktzugang vs. Schutz der eigenen Arbeitsplätze",
     "hint": "Beide Seiten lassen sich begründen. Für den offenen Marktzugang spricht, dass unser Betrieb vom Export lebt und Schutzzölle anderer Länder uns genau dort treffen. Für den Schutz spricht, dass Betriebe und Arbeitsplätze unter zu starker Konkurrenz aus dem Ausland verschwinden können. Bewertet wird, wie sauber Sie die Kette belegen — nicht, welche Seite Sie am Ende sympathischer finden."
   },
-
   "dekontextualisierung": {
     "frage": "Bei welcher anderen Nachricht aus dem Ausland liesse sich dieselbe Kette zeichnen — und woran erkenne ich, dass sie überhaupt bei mir ankommt?",
     "ziel": "Die Lernenden lösen die Einsicht vom Zollbeispiel ab: Ein internationaler Entscheid wirkt über eine Kette, und diese Kette lässt sich Schritt für Schritt prüfen."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R4 (Wirtschaft) · R2 (Politik)",
     "r2_voraussicht": "T7 Schlussarbeit — eine eigene Fragestellung mit internationalem Bezug recherchieren und mündlich vertreten.",
     "r3_voraussicht": "T8.1 — technologische und wirtschaftliche Entwicklungen der eigenen Branche unter globalen Bedingungen."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 11.2", "titel": "Globalisierung — weltweite Verflechtung, Ursachen, internationale Arbeitsteilung", "seiten": "Seite 272-273", "unterueberschrift": "Was ist Globalisierung? / Globalisierung der Wirtschaft", "fuer_leitfrage": [1]},
-    {"ref": "Kap. 11.1", "titel": "Welthandelsorganisation WTO — Ziel und Bedeutung", "seiten": "Seite 271", "unterueberschrift": "WTO", "fuer_leitfrage": [1]},
-    {"ref": "Kap. 11.3", "titel": "Entwicklungsländer — exogene Ursachen, protektionistische Handelspolitik", "seiten": "Seite 285", "unterueberschrift": "Exogene Ursachen der Unterentwicklung", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 11.2", "titel": "Globalisierung — Abbau von Handelsschranken, Bedeutung für die Schweiz", "seiten": "Seite 273-275", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 16.2", "titel": "Statement — Aufbau in drei Zügen", "seiten": "Seite 368", "unterueberschrift": "Aufbau eines Statements", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 11.2",
+      "titel": "Globalisierung — weltweite Verflechtung, Ursachen, internationale Arbeitsteilung",
+      "seiten": "Seite 272-273",
+      "unterueberschrift": "Was ist Globalisierung? / Globalisierung der Wirtschaft",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 11.1",
+      "titel": "Welthandelsorganisation WTO — Ziel und Bedeutung",
+      "seiten": "Seite 271",
+      "unterueberschrift": "WTO",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 11.3",
+      "titel": "Entwicklungsländer — exogene Ursachen, protektionistische Handelspolitik",
+      "seiten": "Seite 285",
+      "unterueberschrift": "Exogene Ursachen der Unterentwicklung",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 11.2",
+      "titel": "Globalisierung — Abbau von Handelsschranken, Bedeutung für die Schweiz",
+      "seiten": "Seite 273-275",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 16.2",
+      "titel": "Statement — Aufbau in drei Zügen",
+      "seiten": "Seite 368",
+      "unterueberschrift": "Aufbau eines Statements",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Mechanismus verstanden", "indikator": "Globalisierung und internationale Arbeitsteilung werden korrekt verwendet.", "gewicht_prozent": 25},
-      {"kriterium": "Kette lückenlos", "indikator": "Die 4 bis 6 Schritte folgen ohne Sprung aufeinander.", "gewicht_prozent": 25},
-      {"kriterium": "Belege", "indikator": "Jeder Schritt trägt eine Quelle, mindestens eine Zahl ist belegt.", "gewicht_prozent": 25},
-      {"kriterium": "Mündliche Umsetzung", "indikator": "Die Erklärung ist in 90 Sekunden verständlich und frei gesprochen.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Mechanismus verstanden",
+        "indikator": "Globalisierung und internationale Arbeitsteilung werden korrekt verwendet.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Kette lückenlos",
+        "indikator": "Die 4 bis 6 Schritte folgen ohne Sprung aufeinander.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Belege",
+        "indikator": "Jeder Schritt trägt eine Quelle, mindestens eine Zahl ist belegt.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Mündliche Umsetzung",
+        "indikator": "Die Erklärung ist in 90 Sekunden verständlich und frei gesprochen.",
+        "gewicht_prozent": 25
+      }
     ],
     "scaffold_90": "Die Stationen der Kette werden als Kärtchen vorgegeben; die Lernenden ordnen sie und ergänzen nur die Belege.",
     "scaffold_100": "Zusätzlich wird eine zweite Kette für ein Material gezeichnet, das der Betrieb aus einer anderen Weltregion bezieht."
   },
-
   "prinzip_handoff": {
     "kernkonzept": "Ein internationaler Entscheid erreicht meinen Arbeitsplatz über eine Kette aus Preis, Verfügbarkeit und Auftragslage — nicht als Meinung.",
     "lehrmittel_anker": "Kap. 11.1 S. 271 (WTO), Kap. 11.2 S. 272-275 (Globalisierung, Handelsschranken, Aussenhandel der Schweiz), Kap. 11.3 S. 285 (protektionistische Handelspolitik), Kap. 16.2 S. 368 (Aufbau eines Statements)",
     "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, einen Entscheid in belegte Einzelschritte zu zerlegen und den Punkt zu benennen, an dem er die eigene Arbeit verändert.",
     "transfer_check": "Die Lernenden können dieselbe Kette an einem anderen Entscheid zeichnen, ohne den Zollfall zu erwähnen."
   },
-
   "sk_anker": [
-    {"sk": 6, "wo": "In LF4 und im Schlusszug der Erklärung begründen die Lernenden mit einer belegten Zahl, weshalb der Entscheid sie betrifft, statt ihn nur zu behaupten."},
-    {"sk": 9, "wo": "Die Wirkungskette verlangt, wirtschaftliche Verflechtung und die eigene Arbeitssituation in einer Darstellung zusammenzuführen statt getrennt zu betrachten."}
+    {
+      "sk": 6,
+      "wo": "In LF4 und im Schlusszug der Erklärung begründen die Lernenden mit einer belegten Zahl, weshalb der Entscheid sie betrifft, statt ihn nur zu behaupten."
+    },
+    {
+      "sk": 9,
+      "wo": "Die Wirkungskette verlangt, wirtschaftliche Verflechtung und die eigene Arbeitssituation in einer Darstellung zusammenzuführen statt getrennt zu betrachten."
+    }
   ]
 }

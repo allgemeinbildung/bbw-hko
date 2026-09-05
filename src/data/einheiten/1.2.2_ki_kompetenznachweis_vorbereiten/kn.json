@@ -17,17 +17,17 @@
   "kern_kompetenzversprechen": "Ich kann KI-Werkzeuge gezielt einsetzen, um mich auf einen Kompetenznachweis vorzubereiten, und entscheide dabei begründet, wo ich der KI vertraue und wo ich ihre Ergebnisse selbst überprüfe.",
   "mehrdeutigkeits_pflicht": "Es gibt keine «richtige» KI-Nutzung — jede Entscheidung, wo die KI hilft und wo nicht, muss begründbar bleiben. Bewertet wird nicht, wie viel KI eingesetzt wird, sondern wie bewusst zwischen Vertrauen und Kontrolle abgewogen wird.",
   "hybrid_situation": {
-    "titel": "Drei Tage vor dem KN — wie weit lasse ich die KI ran?",
+    "titel": "Drei Tage vor dem KN — die fertige Zusammenfassung im Klassenchat",
     "persona": {
-      "beruf": "Polymechaniker/in EFZ",
-      "betrieb": "Maschinenfabrik Bucher AG",
-      "ort": "Luzern"
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
     },
     "emotion_tag": "Entscheidungsdruck",
     "definition_kurz": "Eine Hybrid-Herausforderung ist eine neue Situation, in der Sie alles, was Sie in den drei Herausforderungen gelernt haben, zusammen anwenden müssen.",
     "definition_lang": "Die Hybrid-Herausforderung ist eine einzige neue Szene für den KN. Sie wiederholt keine der drei Lernaufgaben, sondern bringt deren Prinzipien — gezielt prompten, KI-Recherche prüfen, KI-Lernplan gestalten — in einer einzigen Entscheidungssituation zusammen. Die Lernenden zeigen, dass sie das Gelernte übertragen können.",
-    "text": "Ich bin Polymechaniker-Lernende/r im 1. Lehrjahr bei der Maschinenfabrik Bucher in Luzern. In drei Tagen habe ich einen Kompetenznachweis über Arbeitssicherheit an Maschinen. Ich bin spät dran, also frage ich die KI: «Fass mir die wichtigsten Sicherheitsregeln zusammen und nenne Quellen.» Ich bekomme eine glatte Liste mit drei Links — einer existiert nicht, das merke ich erst beim Anklicken. Trotzdem klingt alles überzeugend, und ich könnte es einfach übernehmen. Aber im KN sitze ich ohne KI und muss die Regeln selbst erklären. Jetzt entscheide ich: Was lasse ich die KI für mich tun, was prüfe ich nach, und was übe ich bewusst allein? Wie gehe ich vor — und wann vertraue ich der KI, wann nicht?",
-    "leitfrage": "Wie gehe ich vor — und wann vertraue ich der KI, wann kontrolliere ich sie selbst?",
+    "text": "Ich bin im 1. Lehrjahr, in drei Tagen ist der Kompetenznachweis. Heute Morgen hat jemand aus der Klasse im Gruppenchat eine Datei geteilt: eine KI-Zusammenfassung des ganzen Stoffs, drei Quellenlinks darunter, dazu zwölf «wahrscheinliche Prüfungsfragen» — mit fertigen Antworten. Sechzehn Leute haben sie schon heruntergeladen. Ich öffne den ersten Link: Fehlermeldung. Beim zweiten steht der zitierte Satz nirgends. Der Rest klingt richtig, und ich habe noch drei Abende. Im Kompetenznachweis sitze ich ohne Hilfsmittel und muss selbst erklären. Was übernehme ich aus diesem Dokument, was kontrolliere ich nach, und was muss ich in den drei Abenden selbst können?",
+    "leitfrage": "Wie gehe ich mit dem fertigen Dokument aus dem Klassenchat um — was übernehme ich, was kontrolliere ich nach, und was muss ich selbst können?",
     "aktivierte_trade_offs": [
       "Effizienz vs. echtes Verständnis",
       "Der KI vertrauen vs. den Output kontrollieren",
@@ -37,15 +37,15 @@
       "herausforderungen_mapping": [
         {
           "hf_letter": "A",
-          "scene_element": "Die schnelle Sammelfrage «Fass mir die wichtigsten Sicherheitsregeln zusammen» ist ein vager Prompt — ob die Lernende verstehend oder nur übernehmend arbeitet, entscheidet sich an der Art, wie sie weiterfragt (Herausforderung A: gezielt prompten)."
+          "scene_element": "Das Dokument ist aus einem einzigen vagen Sammel-Prompt entstanden («fass den ganzen Stoff zusammen»). Wer es brauchbar machen will, muss selbst gezielt weiterfragen statt es zu übernehmen — das ist das Prinzip aus Herausforderung A: gezielt prompten."
         },
         {
           "hf_letter": "B",
-          "scene_element": "Die drei Links, von denen einer nicht existiert, zwingen zur Quellenprüfung wie in Herausforderung B — vertraut die Lernende der überzeugend klingenden Recherche oder kontrolliert sie die Quellen?"
+          "scene_element": "Die drei Quellenlinks, von denen einer ins Leere führt und einer den zitierten Satz nicht enthält, zwingen zur Quellenprüfung wie in Herausforderung B — an fremdem Material, das bereits sechzehn Leute für richtig halten."
         },
         {
           "hf_letter": "C",
-          "scene_element": "Der Druck «drei Tage, ich bin spät dran» und das Wissen «im KN sitze ich ohne KI» erzwingen eine Lernplan-Entscheidung wie in Herausforderung C — was übernimmt die KI, was muss selbst geübt werden?"
+          "scene_element": "Zwölf fertige Antworten gegen drei Abende Lernzeit und einen Kompetenznachweis ohne Hilfsmittel: Es muss entschieden werden, was das Dokument abnehmen darf und was selbst geübt werden muss — die Lernplan-Entscheidung aus Herausforderung C, hier unter Zeitdruck und an fremdem Material."
         }
       ],
       "new_dimensions": []
@@ -64,31 +64,31 @@
         {
           "nr": 1,
           "typ": "Erklären",
-          "frage": "Erklären Sie mit eigenen Worten, was ein Prompt ist und warum die vage Sammelfrage «Fass mir die wichtigsten Sicherheitsregeln zusammen» eher zu einer oberflächlichen Antwort führt als ein gezielter Prompt.",
+          "frage": "Erklären Sie mit eigenen Worten, was ein Prompt ist und warum ein einziger vager Sammel-Prompt («Fass mir den ganzen Stoff zusammen») eher zu einer oberflächlichen Zusammenfassung führt als eine Folge gezielter Fragen.",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Anwenden",
-          "frage": "Wenden Sie Ihre Quellenprüfung auf die drei von der KI gelieferten Links an: Nach welchen Kriterien prüfen Sie, ob eine Quelle echt und verlässlich ist — und wie gehen Sie mit dem Link um, der nicht existiert?",
+          "frage": "Wenden Sie Ihre Quellenprüfung auf die drei Links im geteilten Dokument an: Nach welchen Kriterien prüfen Sie, ob eine Quelle echt und verlässlich ist — und wie gehen Sie mit dem Link um, der ins Leere führt?",
           "k_stufe": 3
         },
         {
           "nr": 3,
           "typ": "Beurteilen",
-          "frage": "Sie müssen schnell fertig werden und gleichzeitig im KN ohne KI bestehen. Bewerten Sie beide Anliegen gleich — oder hat eines Vorrang? Begründen Sie.",
+          "frage": "Sie müssen in drei Abenden fertig werden und gleichzeitig im Kompetenznachweis ohne Hilfsmittel bestehen. Bewerten Sie beide Anliegen gleich — oder hat eines Vorrang? Begründen Sie.",
           "k_stufe": 3
         },
         {
           "nr": 4,
           "typ": "Transfer",
-          "frage": "Vergleichen Sie diese Situation mit Ihrem KI-Lernplan aus Herausforderung C: Welche Entscheidung «mit KI oder bewusst ohne» treffen Sie hier gleich, und wo müssen Sie wegen des Zeitdrucks anders vorgehen?",
+          "frage": "Vergleichen Sie diese Lage mit Ihrem eigenen KI-Lernplan aus Herausforderung C: Welche Entscheidung «mit KI oder bewusst ohne» treffen Sie hier gleich, und wo müssen Sie wegen des Zeitdrucks und wegen des fremden Dokuments anders vorgehen?",
           "k_stufe": 4
         },
         {
           "nr": 5,
           "typ": "Werthaltung",
-          "frage": "Welche Haltung leitet Sie, wenn die KI Ihnen anbietet, die ganze Vorbereitung abzunehmen? Begründen Sie, weshalb verantwortungsvolle KI-Nutzung mehr ist als nur eine Frage von Zeitersparnis.",
+          "frage": "Welche Haltung leitet Sie, wenn ein fertiges KI-Dokument im Klassenchat kursiert und Ihnen die ganze Vorbereitung abnehmen will? Begründen Sie, weshalb verantwortungsvolle KI-Nutzung mehr ist als eine Frage von Zeitersparnis — auch gegenüber der Klasse.",
           "k_stufe": 4
         }
       ],
@@ -120,19 +120,19 @@
         {
           "nr": 1,
           "typ": "Erklären",
-          "aufgabe": "Erklären Sie kurz (3-5 Sätze), warum eine KI Quellen oder Links erfinden kann, die echt aussehen, und woran Sie das im Beispiel mit den drei Links erkennen.",
+          "aufgabe": "Erklären Sie kurz (3-5 Sätze), warum eine KI Quellen oder Links erfinden kann, die echt aussehen, und woran Sie das an den drei Links im geteilten Dokument erkennen.",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Unterscheiden",
-          "aufgabe": "Zwei Wege führen scheinbar zum gleichen Ziel: die KI-Zusammenfassung einfach übernehmen oder sie gezielt prüfen und selbst nacharbeiten. Warum ist der zweite Weg im Hinblick auf den KN anders zu beurteilen als der erste? Nennen Sie mindestens drei Argumente.",
+          "aufgabe": "Zwei Wege führen scheinbar zum gleichen Ziel: die Zusammenfassung aus dem Klassenchat einfach übernehmen oder sie gezielt prüfen und selbst nacharbeiten. Warum ist der zweite Weg im Hinblick auf den Kompetenznachweis anders zu beurteilen als der erste? Nennen Sie mindestens drei Argumente.",
           "k_stufe": 3
         },
         {
           "nr": 3,
           "typ": "Entscheiden",
-          "aufgabe": "Entscheiden Sie begründet, wie Sie Ihre verbleibenden drei Tage einteilen: Welche Schritte überlassen Sie der KI, welche prüfen Sie nach, welche üben Sie bewusst ohne KI? Formulieren Sie für einen Schritt einen gezielten Übe-Prompt (2-3 Sätze).",
+          "aufgabe": "Entscheiden Sie begründet, wie Sie Ihre verbleibenden drei Abende einteilen: Welche Teile des Dokuments übernehmen Sie, welche prüfen Sie nach, welche Inhalte üben Sie bewusst ohne KI? Formulieren Sie für einen Teil einen gezielten Übe-Prompt (2-3 Sätze).",
           "k_stufe": 3
         },
         {

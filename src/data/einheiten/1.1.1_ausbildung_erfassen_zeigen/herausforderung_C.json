@@ -49,9 +49,9 @@
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Lernende/r EFZ",
-    "betrieb": "Berufsfachschule",
-    "ort": "Schweiz"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
   "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. Am Sonntag beim Familienessen sagt mein Onkel, ich solle «unbedingt die BM machen, sonst bist du in zehn Jahren dort, wo du heute stehst». Mein Berufsbildner hat letzte Woche etwas anderes gesagt: erst das EFZ sauber abschliessen, danach im Betrieb weiterkommen, alles andere sei Zeitverlust. Beide meinen es gut, beide kennen mich, und beide widersprechen sich. Meine Lehre hat vor acht Wochen begonnen und das Ende ist weit weg — trotzdem entscheiden andere Leute schon jetzt darüber. Ich habe gemerkt: Was ich selbst will, habe ich noch nirgends aufgeschrieben.",
   "zahlen_tabelle": [
@@ -69,14 +69,27 @@
     }
   ],
   "leitfrage": "Wohin will ich nach dem EFZ — und wessen Erwartung spricht da aus mir?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Die Grafik zum Bildungssystem auf Seite 13 ist Ihre Landkarte.",
+  "leitfragen_intro": "Sie zeichnen in dieser Lektion den Tag nach Ihrem EFZ und bauen die Karte darum herum auf: LF1 verortet den Tag auf einem Anschlussweg, LF2 sammelt die Erwartungen mit ihrem Antrieb, LF3 entscheidet die Richtung, LF4 setzt den einen überprüfbaren Schritt. Bearbeiten Sie die vier Leitfragen schriftlich. Die Grafik zum Bildungssystem auf Seite 13 ist Ihre Landkarte; nutzen Sie das Lehrmittel Kap. 1.1, Kap. 18.4, Kap. 18.2 und Kap. 20.3 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.1 | S. 13",
+      "liefert": "die Anschlusswege mit ihren Voraussetzungen",
       "text": "Beschreiben Sie anhand der Grafik zum Bildungssystem, welche Wege nach einem EFZ offenstehen — und was man für welchen Weg zusätzlich braucht.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie die Grafik auf S. 13 von unten nach oben, Stufe für Stufe.",
+          "Notieren Sie zu jedem Weg, was er zusätzlich verlangt."
+        ],
+        "satzanfaenge": [
+          "Nach dem EFZ führt ein Weg zu …",
+          "Dafür brauche ich zusätzlich …"
+        ],
+        "produkt": "Die Wege verorten den gezeichneten Tag auf der Karte in Schritt 1."
+      },
       "loesung": {
         "kern": "Nach dem EFZ ist nichts zu Ende — es teilt sich.",
         "zeilen": [
@@ -107,8 +120,20 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 18.4 | S. 420",
+      "liefert": "die Erwartungen mit ihrem Antrieb",
       "text": "Schreiben Sie drei Sätze auf, die Sie über Ihre Zukunft schon gehört oder selbst gesagt haben. Ordnen Sie jeden zu: kommt der Antrieb von aussen oder von innen?",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Tragen Sie Rollen ein, nicht Namen: «mein Berufsbildner» statt «Herr K.».",
+          "Suchen Sie hinter jeder Erwartung den Wert, der sie trägt."
+        ],
+        "satzanfaenge": [
+          "… erwartet von mir, dass ich …",
+          "Der Antrieb kommt von aussen, weil …"
+        ],
+        "produkt": "Diese Erwartungen füllen das Mittelfeld der Karte in Schritt 2."
+      },
       "loesung": {
         "kern": "Extrinsisch kommt von aussen, intrinsisch von innen.",
         "zeilen": [
@@ -139,8 +164,20 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 18.2 | S. 414",
+      "liefert": "der Entscheid mit eigener Begründung",
       "text": "Zwei Personen, die es beide gut mit Ihnen meinen, erwarten Verschiedenes. Für welche Richtung entscheiden Sie sich — und wie begründen Sie das gegenüber der Person, deren Erwartung Sie nicht erfüllen?",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Bauen Sie die Antwort als Behauptung, Begründung, Beispiel.",
+          "Prüfen Sie: Steht in der Begründung ein Wert, der Ihnen gehört?"
+        ],
+        "satzanfaenge": [
+          "Ich entscheide mich für …, weil …",
+          "Zum Beispiel …"
+        ],
+        "produkt": "Behauptung, Begründung und Beispiel füllen das Feld Entscheid in Schritt 3."
+      },
       "loesung": {
         "kern": "Erwartungen sind Normen — man kann sie begründet enttäuschen.",
         "zeilen": [
@@ -171,8 +208,20 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 20.3 | S. 438",
+      "liefert": "der eine überprüfbare Schritt",
       "text": "Formulieren Sie einen einzigen Schritt für dieses Schuljahr, der in Ihre Richtung führt — so, dass Sie am Ende mit Ja oder Nein sagen können, ob Sie ihn getan haben.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Setzen Sie ein Datum in dieses Schuljahr, keinen Zeitraum.",
+          "Prüfen Sie: Hängt der Schritt vom Handeln anderer ab?"
+        ],
+        "satzanfaenge": [
+          "Bis zum … habe ich …",
+          "Getan ist er, wenn …"
+        ],
+        "produkt": "Der Schritt schliesst die Karte unten rechts in Schritt 4 ab."
+      },
       "loesung": {
         "kern": "Ein Ziel, das man nicht prüfen kann, ist ein Wunsch.",
         "zeilen": [
@@ -255,24 +304,24 @@
     ],
     "schritte": [
       {
-        "label": "Den Tag beschreiben",
-        "hint": "Zuerst das Bild, dann die Analyse. Wer mit den Erwartungen anfängt, zeichnet fremde Zukunft."
+        "label": "Den Tag zeichnen und verorten",
+        "hint": "Zuerst das Bild, dann die Analyse. Tragen Sie mit den Wegen aus LF1 ein, welcher Anschluss zu diesem Tag führt und was er verlangt."
       },
       {
-        "label": "Erwartungen sammeln",
-        "hint": "Vier bis fünf Rollen eintragen, mit Namen der Rolle statt der Person. Eine davon sitzt nicht am Tisch — denken Sie an sie."
-      },
-      {
-        "label": "Antrieb zuordnen",
-        "hint": "Bei jeder Erwartung markieren: kommt der Antrieb von aussen oder von innen? Auch bei Ihrer eigenen."
+        "label": "Erwartungen und Antrieb eintragen",
+        "hint": "Übernehmen Sie die Sätze aus LF2 als Erwartungen ins Mittelfeld: Rolle, Erwartung, Wert dahinter, Antrieb von aussen oder innen."
       },
       {
         "label": "Entscheiden und begründen",
-        "hint": "Behauptung, Begründung, Beispiel. Die Begründung darf nicht «weil X das sagt» lauten — auch nicht, wenn X recht hat."
+        "hint": "Schreiben Sie den Entscheid aus LF3 als Behauptung, Begründung, Beispiel. Die Begründung darf nicht «weil X das sagt» lauten — auch nicht, wenn X recht hat."
       },
       {
-        "label": "Einen Schritt setzen",
-        "hint": "Ein einziger Schritt, mit Datum. Prüfen Sie: hängt er davon ab, was jemand anderes tut? Dann umformulieren."
+        "label": "Den Schritt festlegen",
+        "hint": "Setzen Sie den Schritt aus LF4 mit Datum unten rechts auf die Karte. Ein einziger Schritt, nicht drei."
+      },
+      {
+        "label": "Die Karte gegen die Kriterien prüfen",
+        "hint": "Gehen Sie die Kriterien im Bewertungsraster durch: alle vier Felder gefüllt, drei Erwartungen mit Wert und Antrieb, ein eigener Wert in der Begründung, ein Schritt mit Datum, der nicht vom Handeln anderer abhängt. Überarbeiten Sie, was nicht standhält."
       }
     ],
     "schreib_label": "Meine Zukunftskarte",
@@ -291,10 +340,10 @@
         "Den Schritt zum Schluss laut lesen und fragen: Kann ich das am Termin mit Ja oder Nein beantworten?"
       ],
       "struktur": [
-        "Oben — Bild oder Skizze: der Tag nach dem EFZ",
-        "Mitte — Erwartungen: Rolle, Erwartung, Wert dahinter, Antrieb von aussen oder innen",
-        "Unten links — Entscheid: Behauptung, Begründung, Beispiel",
-        "Unten rechts — mein Schritt bis (Datum)"
+        "Oben — Bild oder Skizze: der Tag nach dem EFZ, verortet auf einem Weg (aus LF1)",
+        "Mitte — Erwartungen: Rolle, Erwartung, Wert dahinter, Antrieb von aussen oder innen (aus LF2)",
+        "Unten links — Entscheid: Behauptung, Begründung, Beispiel (aus LF3)",
+        "Unten rechts — mein Schritt bis (Datum) (aus LF4)"
       ]
     },
     "musterloesung": {
@@ -476,7 +525,7 @@
   "wochen_plan": [
     {
       "label": "Woche 1 - 45 min",
-      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "text": "Herausforderung lesen, LF1-LF2, Tag zeichnen, Mindmap",
       "aktiv": true
     },
     {

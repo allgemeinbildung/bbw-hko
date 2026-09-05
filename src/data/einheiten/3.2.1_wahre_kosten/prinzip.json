@@ -143,28 +143,15 @@
     ]
   },
 
-  "persona_pool_units": {
-    "berufe": [
-      "Bäcker-Konditor-Confiseur/in EFZ",
-      "Maler/in EFZ",
-      "Informatiker/in EFZ"
-    ],
-    "orte": [
-      "Winterthur",
-      "St. Gallen",
-      "Biel/Bienne"
-    ]
-  },
-
-  "persona_pool_kn_neu": {
-    "berufe": [
-      "Polymechaniker/in EFZ",
-      "Forstwart/in EFZ"
-    ],
-    "orte": [
-      "Thun",
-      "Chur"
-    ]
+  "persona_regel": {
+    "stufe": "neutral (Persona-Regel 2026-09)",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "gilt_fuer": "Herausforderungen A/B/C, Transfer-Aufgabe und Kompetenznachweis — identisch, ohne Beruf, Firma oder Ort.",
+    "konkretheit": "Alle drei Herausforderungen und der KN arbeiten auf Stufe 2: Die Konkretheit steckt im äusseren Fall (Preiszettel an der Theke, Entsorgungsrechnung, zwei Geräte im Onlineshop, zwei Jacken und die Gemeinderechnung), nicht in der Person."
   },
 
   "hybrid_situation_spec": {
@@ -172,14 +159,14 @@
     "perspektive": "ICH",
     "must_activate_trade_offs_min": 1,
     "must_combine_herausforderungen": ["A", "B", "C"],
-    "persona_source": "persona_pool_kn_neu",
+    "persona_source": "persona_regel",
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [
       "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
       "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
       "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
-      "Persona ist neu (Beruf und Ort kommen in keiner herausforderung_*.persona vor).",
+      "Der Fall ist neu: Gegenstand, Beteiligte und Zahlen kommen in keiner Herausforderung vor (die Persona bleibt dieselbe neutrale).",
       "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
     ]
   }

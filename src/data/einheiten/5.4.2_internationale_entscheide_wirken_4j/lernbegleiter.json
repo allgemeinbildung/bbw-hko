@@ -8,11 +8,11 @@
     "version": "1.0",
     "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
     "ziel": "Sie nutzen die KI als Lerncoach, um den Stoff dieser Einheit zu wiederholen und sich gezielt auf einen mündlichen Nachweis vorzubereiten — ohne dass die KI die Denkarbeit für Sie übernimmt.",
-    "kompetenzversprechen": "Ich verfolge einen internationalen Entscheid Schritt für Schritt bis in meinen Lehrbetrieb, ordne die Interessen der beteiligten Akteure ein und begründe mündlich, was dabei rechtlich gebunden und was politisch entschieden ist.",
+    "kompetenzversprechen": "Ich verfolge einen internationalen Entscheid Schritt für Schritt bis an meinen Arbeitsplatz, ordne die Interessen der beteiligten Akteure ein und begründe mündlich, was dabei rechtlich gebunden und was politisch entschieden ist.",
     "ki_frei_zuerst": {
       "auftrag": "Bevor Sie die KI nutzen: Schätzen Sie ehrlich ein, wie sicher Sie sich bei den drei Teilen des Kompetenzversprechens fühlen. Markieren Sie für jeden Punkt 1 (noch unsicher) bis 5 (sitzt). Genau die Punkte mit 1 bis 3 üben Sie danach zuerst.",
       "selbsteinschaetzung": [
-        "Ich verfolge einen internationalen Entscheid in vier bis sechs belegten Schritten bis in meinen Lehrbetrieb (Kap. 11.1, 11.2).",
+        "Ich verfolge einen internationalen Entscheid in vier bis sechs belegten Schritten bis an meinen Arbeitsplatz (Kap. 11.1, 11.2).",
         "Ich ordne die Interessen der beteiligten Akteure ein und sage, wer die Kosten trägt (Kap. 6.6, 11.1).",
         "Ich begründe mündlich, was vertraglich gebunden und was politisch entschieden ist (Kap. 1.3, 11.1)."
       ]
@@ -38,7 +38,7 @@
         "key": "mock_transfer",
         "technik": "Übungsfall lösen (Transfer-Simulation)",
         "wann": "Zum Üben des Transfers: ob Ihre fünf Prüf-Fragen auch bei einem Entscheid greifen, den Sie noch nie bearbeitet haben.",
-        "prompt_basis": "Erfinde einen NEUEN internationalen Entscheid als Übungsfall — ausdrücklich einen anderen als die aktuelle Vorlage, die wir im Unterricht bearbeiten, und einen anderen Wirtschaftszweig als die Metall- und Maschinenindustrie. Gib mir nur die Situation in fünf Sätzen. Ich wende meine fünf Prüf-Fragen an; danach sag mir, welche meiner Antworten am schwächsten belegt war.",
+        "prompt_basis": "Erfinde einen NEUEN internationalen Entscheid als Übungsfall — ausdrücklich einen anderen als die aktuelle Vorlage, die wir im Unterricht bearbeiten, und einen anderen Wirtschaftszweig als den meines Lehrbetriebs. Gib mir nur die Situation in fünf Sätzen. Ich wende meine fünf Prüf-Fragen an; danach sag mir, welche meiner Antworten am schwächsten belegt war.",
         "prompt_fortgeschritten": "Gib mir einen neuen Fall mit einem klaren Zielkonflikt zwischen Marktzugang und Selbstbestimmung, in einer Branche, die im Unterricht nicht vorkam. Nachdem ich meine Einordnung vorgetragen habe, spiel einen Akteur der Gegenseite und prüfe, ob meine Begründung und meine Zuordnung «gebunden oder entschieden» standhalten.",
         "warnung": "Wichtig: Der Übungsfall muss ein ANDERER sein als der aktuelle Fall Ihrer Transfer-Aufgabe und als eine Situation, die im Nachweis kommen könnte. Die KI darf Ihnen dafür keine fertige Lösung, keine fertige Kette und kein fertiges Fazit liefern — Sie üben die fünf Prüf-Fragen, nicht eine auswendig gelernte Antwort."
       },

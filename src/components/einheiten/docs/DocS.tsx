@@ -324,7 +324,62 @@ function LeitfrageRail({ sc }: { sc: LeitfrageScaffolding }) {
   )
 }
 
-function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '', letzteImPaar = false }: LeitfrageItemProps & { letzteImPaar?: boolean }) {
+/**
+ * Dieselben Gruppen wie in der Rail, aber unter der Frage und ueber die volle
+ * Breite in bis zu drei Spalten.
+ *
+ * Warum es die zweite Variante gibt: im Dossier stehen alle vier Leitfragen auf
+ * EINER Seite. Neben der Frage macht die 22%-Rail jeden Block so hoch wie ihr
+ * laengster Text — links bleibt die halbe Spalte leer, und ab LF4 lief die Seite
+ * ueber die A4-Kante (LF4 und die Mindmap-Sektion fielen ersatzlos weg, gesehen
+ * am 2026-09-04). Nebeneinander gelegt braucht dasselbe Material rund ein Drittel
+ * der Hoehe. Im Fuell-Dokument bleibt die Rail, dort stehen nur zwei Leitfragen
+ * pro Seite und darunter das Schreibfeld.
+ */
+function LeitfrageScaffoldUnten({ sc }: { sc: LeitfrageScaffolding }) {
+  const { strategien, satzanfaenge, produkt } = railGruppen(sc)
+  const spalten = [
+    strategien.length > 0 && (
+      <div key="strategien">
+        <MiniTableLabel>So gehen Sie vor</MiniTableLabel>
+        <ul style={{ margin: 0, paddingLeft: '3.5mm' }}>
+          {strategien.map((t, i) => <li key={i} style={{ marginBottom: '0.8mm' }}>{t}</li>)}
+        </ul>
+      </div>
+    ),
+    satzanfaenge.length > 0 && (
+      <div key="satzanfaenge">
+        <MiniTableLabel>Satzanfänge</MiniTableLabel>
+        <div style={{ fontStyle: 'italic' }}>
+          {satzanfaenge.map((t, i) => <div key={i} style={{ marginBottom: '0.8mm' }}>{inGuillemets(t)}</div>)}
+        </div>
+      </div>
+    ),
+    produkt && (
+      <div key="produkt">
+        <MiniTableLabel>Ins Produkt</MiniTableLabel>
+        <div>{produkt}</div>
+      </div>
+    ),
+  ].filter(Boolean)
+  return (
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: `repeat(${spalten.length}, 1fr)`,
+      gap: '5mm',
+      marginTop: '1.5mm',
+      paddingTop: '1.2mm',
+      borderTop: '0.3mm solid var(--rule)',
+      fontSize: '7.5pt',
+      lineHeight: 1.35,
+      color: 'var(--ink-mute)',
+    }}>
+      {spalten}
+    </div>
+  )
+}
+
+function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '', letzteImPaar = false, scaffoldUnten = false }: LeitfrageItemProps & { letzteImPaar?: boolean; scaffoldUnten?: boolean }) {
   const kern = (
     <>
       <div className="lf-head">
@@ -353,6 +408,15 @@ function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeig
     </>
   )
   if (!hatRailInhalt(lf.scaffolding)) return <div className="lf-item">{kern}</div>
+  if (scaffoldUnten) {
+    return (
+      // 3mm statt der 6mm der Rail-Variante: hier stehen vier Bloecke auf einer Seite.
+      <div className="lf-item" style={{ marginBottom: letzteImPaar ? 0 : '3mm' }}>
+        {kern}
+        <LeitfrageScaffoldUnten sc={lf.scaffolding} />
+      </div>
+    )
+  }
   return (
     // 6mm Luft nur ZWISCHEN den LF-Bloecken — nach dem letzten wuerde sie nur die A4-Kante anschneiden.
     <div className="lf-item" style={{ display: 'flex', gap: '4mm', alignItems: 'flex-start', marginBottom: letzteImPaar ? 0 : '6mm' }}>
@@ -785,7 +849,7 @@ function DocSInfo({ sit, abteilung, mode, kompetenzNr, abgedeckteKompetenzen }: 
         <SectionHead num="02 · Wissensecke">Leitfragen</SectionHead>
         <LeitfragenIntro sit={sit} fontSize="9pt" marginBottom="3mm" />
         {sit.leitfragen?.map((lf, i) => (
-          <LeitfrageItem key={i} lf={lf} withField={false} />
+          <LeitfrageItem key={i} lf={lf} withField={false} scaffoldUnten />
         ))}
         <SectionHead num="03 · Mindmap">{sit.mindmap_zentrum}</SectionHead>
         <MindmapHinweis sit={sit} />

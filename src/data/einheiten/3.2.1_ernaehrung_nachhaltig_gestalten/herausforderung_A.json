@@ -3,68 +3,121 @@
   "modul": "3.2",
   "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
   "lehrgang": "EFZ_4J",
-
   "buchstabe": "A",
   "sit_farbe": "#C0392B",
   "sit_farbe_light": "#FADBD8",
   "sit_farbe_mid": "#E74C3C",
-
   "titel": "Drei Tage auf dem Teller",
-
-  "wissensknoten": ["drei_dimensionen_nachhaltigkeit"],
-
+  "wissensknoten": [
+    "drei_dimensionen_nachhaltigkeit"
+  ],
   "nrlp": {
     "nr": "3.2.1",
-    "nr_primary": ["3.2.1"],
+    "nr_primary": [
+      "3.2.1"
+    ],
     "lebensbezug": "3.2",
-    "themen": ["T3"],
+    "themen": [
+      "T3"
+    ],
     "gesellschaft": [
-      {"aspekt": "Ökologie", "iteration": "R1"},
-      {"aspekt": "Wirtschaft", "iteration": "R2"}
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R2"
+      }
     ],
     "sprachmodi": [
       "Produktion multimedial"
     ],
-    "sprachmodus_ids": ["SM6"],
-    "sk": [9, 5],
+    "sprachmodus_ids": [
+      "SM6"
+    ],
+    "sk": [
+      9,
+      5
+    ],
     "kompetenz_id": "3.2.1",
     "lebensbezug_id": "3.2",
     "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
     "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
   },
-
   "persona": {
     "beruf": "Lernende/r EFZ, 2. Lehrjahr",
     "betrieb": "eigener Lehrbetrieb",
     "ort": "eigener Wohnort"
   },
-
-  "situation_text": "Ich bin im 2. Lehrjahr und esse an einem normalen Wochentag an drei Orten: im Lehrbetrieb, unterwegs und zu Hause. Im ABU lese ich, dass Nachhaltigkeit drei Dimensionen hat und dass unser Konsum Folgen für Umwelt und Gesellschaft hat. Über mein eigenes Essen habe ich dazu keine einzige Zahl. Ich weiss ungefähr, was ich mag, und ich habe eine Meinung dazu, wie andere sich ernähren — aber ich habe nie aufgeschrieben, was tatsächlich auf meinem Teller liegt, woher es kommt und was es kostet. Bevor ich über nachhaltige Ernährung urteile, will ich das erst einmal wissen. Drei Tage lang halte ich es fest.",
-
+  "situation_text": "Ich bin im 2. Lehrjahr und esse an einem normalen Wochentag an drei Orten: im Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe —, unterwegs und zu Hause. Im ABU lese ich, dass Nachhaltigkeit drei Dimensionen hat und dass unser Konsum Folgen für Umwelt und Gesellschaft hat. Über mein eigenes Essen habe ich dazu keine einzige Zahl. Ich weiss ungefähr, was ich mag, und ich habe eine Meinung dazu, wie andere sich ernähren — aber ich habe nie aufgeschrieben, was tatsächlich auf meinem Teller liegt, woher es kommt und was es kostet. Bevor ich über nachhaltige Ernährung urteile, will ich das erst einmal wissen. Drei Tage lang halte ich es fest.",
   "zahlen_tabelle": [
-    {"label": "Erhebungsdauer", "wert": "3 Tage"},
-    {"label": "Spalten im Erhebungsbogen", "wert": "5"},
-    {"label": "Belegte Befunde im Handlungsprodukt", "wert": "3"},
-    {"label": "Bewertungskriterien von labelinfo.ch", "wert": "4"},
-    {"label": "Dimensionen der Nachhaltigkeit", "wert": "3"}
+    {
+      "label": "Erhebungsdauer",
+      "wert": "3 Tage"
+    },
+    {
+      "label": "Spalten im Erhebungsbogen",
+      "wert": "5"
+    },
+    {
+      "label": "Belegte Befunde im Handlungsprodukt",
+      "wert": "3"
+    },
+    {
+      "label": "Bewertungskriterien von labelinfo.ch",
+      "wert": "4"
+    },
+    {
+      "label": "Dimensionen der Nachhaltigkeit",
+      "wert": "3"
+    }
   ],
-
   "leitfrage": "Was liegt tatsächlich auf meinem Teller — und was davon lässt sich belegen?",
-  "leitfragen_intro": "Diese Herausforderung beginnt vor der ersten Lektion. Legen Sie den Erhebungsbogen an — fünf Spalten (Was · Herkunft · Verarbeitungsgrad · pflanzlich oder tierisch · Preis), eine Zeile pro Mahlzeit und Getränk — und führen Sie ihn drei Tage lang mit: eintragen sofort nach dem Essen, nicht am Abend aus dem Gedächtnis. LF1 lösen Sie ohne Daten, LF2 bis LF4 brauchen den ausgefüllten Bogen. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 9.3, Kap. 2.7 und Kap. 1.5 als Grundlage.",
+  "leitfragen_intro": "Sie legen den Erhebungsbogen in dieser Lektion an — fünf Spalten (Was · Herkunft · Verarbeitungsgrad · pflanzlich oder tierisch · Preis), eine Zeile pro Mahlzeit und Getränk — und führen ihn drei Tage lang mit: eintragen sofort nach dem Essen, nicht am Abend aus dem Gedächtnis. LF1 lösen Sie heute, LF2 bis LF4 in der zweiten Lektion mit dem ausgefüllten Bogen. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 9.3, Kap. 2.7 und Kap. 1.5 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 9.3 | S. 231",
-      "text": "Erklären Sie die drei Dimensionen der Nachhaltigkeit in eigenen Worten und nennen Sie zu jeder Dimension ein Beispiel aus dem Essalltag.",
+      "liefert": "die Spaltenzuordnung des Erhebungsbogens",
+      "text": "Erklären Sie die drei Dimensionen der Nachhaltigkeit in eigenen Worten und nennen Sie zu jeder Dimension ein Beispiel aus dem Essalltag. Bestimmen Sie danach, welche Spalte Ihres Erhebungsbogens zu welcher Dimension spricht.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 9.3 S. 231 und markieren Sie die drei Dimensionen einzeln.",
+          "Prüfen Sie jede Spalte Ihres Bogens: Zu welcher Dimension spricht sie?"
+        ],
+        "satzanfaenge": [
+          "Ökologisch heisst, dass …",
+          "Diese Spalte gehört zu …, weil …"
+        ],
+        "produkt": "Die Spaltenzuordnung begründet den Erhebungsbogen aus Schritt 1."
+      },
       "loesung": {
         "kern": "Die drei Dimensionen mit Essbeispiel",
         "zeilen": [
-          { "label": "Ökologisch", "text": "Natur und Umwelt sollen für künftige Generationen erhalten bleiben — zum Beispiel Herkunft und Verpackung einer Mahlzeit.", "quelle": "Kap. 9.3" },
-          { "label": "Ökonomisch", "text": "Die Wirtschaft soll dauerhaft eine tragfähige Grundlage für Erwerb bieten — zum Beispiel der Preis einer Mahlzeit im eigenen Budget.", "quelle": "Kap. 9.3" },
-          { "label": "Sozial", "text": "Alle Mitglieder der Gesellschaft sollen an der Entwicklung teilhaben können — zum Beispiel wer mitisst und wo gekocht wird.", "quelle": "Kap. 9.3" },
-          { "label": "Zusammenspiel", "text": "Erst wenn alle drei Dimensionen gleichrangig verfolgt werden, entsteht ökologisches Gleichgewicht.", "quelle": "Kap. 9.3" }
+          {
+            "label": "Ökologisch",
+            "text": "Natur und Umwelt sollen für künftige Generationen erhalten bleiben — zum Beispiel Herkunft und Verpackung einer Mahlzeit.",
+            "quelle": "Kap. 9.3"
+          },
+          {
+            "label": "Ökonomisch",
+            "text": "Die Wirtschaft soll dauerhaft eine tragfähige Grundlage für Erwerb bieten — zum Beispiel der Preis einer Mahlzeit im eigenen Budget.",
+            "quelle": "Kap. 9.3"
+          },
+          {
+            "label": "Sozial",
+            "text": "Alle Mitglieder der Gesellschaft sollen an der Entwicklung teilhaben können — zum Beispiel wer mitisst und wo gekocht wird.",
+            "quelle": "Kap. 9.3"
+          },
+          {
+            "label": "Zusammenspiel",
+            "text": "Erst wenn alle drei Dimensionen gleichrangig verfolgt werden, entsteht ökologisches Gleichgewicht.",
+            "quelle": "Kap. 9.3"
+          }
         ]
       }
     },
@@ -72,16 +125,45 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.7 | S. 73-74",
-      "text": "Tragen Sie Ihre drei Erhebungstage vollständig in den Bogen ein und zählen Sie von Hand aus: Wie viele Mahlzeiten waren überwiegend pflanzlich, wie viele stark verarbeitet? Ordnen Sie danach zwei Ihrer Einträge einer Bedürfnisart zu (Existenzbedürfnis oder Wahlbedürfnis).",
+      "liefert": "die ausgezählten Zahlen des Bogens",
+      "text": "Zählen Sie Ihren ausgefüllten Bogen von Hand aus: Wie viele Mahlzeiten waren überwiegend pflanzlich, wie viele stark verarbeitet? Ordnen Sie danach zwei Ihrer Einträge einer Bedürfnisart zu (Existenzbedürfnis oder Wahlbedürfnis).",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Zählen Sie mit Strichen aus, Zeile für Zeile — keine Rechenhilfe nötig.",
+          "Prüfen Sie bei jedem Eintrag zuerst, ob er lebensnotwendig ist."
+        ],
+        "satzanfaenge": [
+          "An drei Tagen habe ich … Mahlzeiten erfasst, davon …",
+          "Dieser Eintrag ist ein …bedürfnis, weil …"
+        ],
+        "produkt": "Diese Zahlen sind die Auszählung in Schritt 3 und die Basis jeder Kachel."
+      },
       "loesung": {
         "kern": "Wie zählen, wie zuordnen",
         "zeilen": [
-          { "label": "Pflanzlich zählen", "text": "Als überwiegend pflanzlich zählt eine Mahlzeit, wenn Gemüse, Getreide oder Hülsenfrüchte den Hauptteil bilden, nicht Fleisch oder Milchprodukte." },
-          { "label": "Stark verarbeitet", "text": "Stark verarbeitet ist, was industriell vorgefertigt ankommt, statt aus rohen Zutaten selbst zubereitet zu sein." },
-          { "label": "Existenzbedürfnis", "text": "Nahrung selbst ist ein Existenzbedürfnis — sie ist lebensnotwendig, unabhängig von Marke oder Ort.", "quelle": "Kap. 2.7" },
-          { "label": "Wahlbedürfnis", "text": "Die Form des Essens, etwa ein Take-away statt Kochen zu Hause, ist ein Wahlbedürfnis, sobald die Existenz gesichert ist.", "quelle": "Kap. 2.7" },
-          { "label": "Häufiger Fehler", "text": "Nur nach Vorliebe einordnen, statt zu prüfen, ob das Bedürfnis überhaupt lebensnotwendig ist." }
+          {
+            "label": "Pflanzlich zählen",
+            "text": "Als überwiegend pflanzlich zählt eine Mahlzeit, wenn Gemüse, Getreide oder Hülsenfrüchte den Hauptteil bilden, nicht Fleisch oder Milchprodukte."
+          },
+          {
+            "label": "Stark verarbeitet",
+            "text": "Stark verarbeitet ist, was industriell vorgefertigt ankommt, statt aus rohen Zutaten selbst zubereitet zu sein."
+          },
+          {
+            "label": "Existenzbedürfnis",
+            "text": "Nahrung selbst ist ein Existenzbedürfnis — sie ist lebensnotwendig, unabhängig von Marke oder Ort.",
+            "quelle": "Kap. 2.7"
+          },
+          {
+            "label": "Wahlbedürfnis",
+            "text": "Die Form des Essens, etwa ein Take-away statt Kochen zu Hause, ist ein Wahlbedürfnis, sobald die Existenz gesichert ist.",
+            "quelle": "Kap. 2.7"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur nach Vorliebe einordnen, statt zu prüfen, ob das Bedürfnis überhaupt lebensnotwendig ist."
+          }
         ]
       }
     },
@@ -89,16 +171,45 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 1.5 | S. 37",
+      "liefert": "die drei tragenden Befunde",
       "text": "Entscheiden Sie, welche drei Befunde Ihre Erhebung wirklich trägt, und begründen Sie, warum Sie die übrigen Beobachtungen weglassen. Halten Sie dabei fest, welche Angaben auf einer Verpackung überhaupt etwas aussagen — und was drei Tage belegen können und was nicht.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Erst alles auszählen, dann entscheiden, welche drei Befunde tragen.",
+          "Befund-Test: Steht eine selbst ausgezählte Zahl aus dem Bogen dahinter?"
+        ],
+        "satzanfaenge": [
+          "Auffällig ist, dass …",
+          "Nicht sagen kann ich, ob …"
+        ],
+        "produkt": "Die drei gewählten Befunde werden zu den drei Kacheln in Schritt 4."
+      },
       "loesung": {
         "kern": "Was einen Befund tragfähig macht",
         "zeilen": [
-          { "label": "Erwartet", "text": "Ein Befund braucht eine ausgezählte Zahl aus dem eigenen Bogen — eine geschätzte Angabe zählt nicht als Beleg." },
-          { "label": "Verpackung sagt aus", "text": "Etikette oder Preisschild sagen nur, was tatsächlich draufsteht — Herkunft, Gewicht, Preis, allenfalls ein Label.", "quelle": "Kap. 1.5" },
-          { "label": "Verpackung sagt nichts", "text": "Ohne Deklaration sagt sie nichts zu Sozialverträglichkeit oder Tierwohl — labelinfo.ch bewertet diese getrennt.", "quelle": "Kap. 1.5" },
-          { "label": "Nicht tragfähig", "text": "Eine Beobachtung ohne eigene Zahl, etwa «ich esse eher gesund» — das ist eine Vermutung, kein Befund." },
-          { "label": "Grenze dreier Tage", "text": "Drei Tage zeigen eine Tendenz, kein Jahresmuster — Ausnahmen und saisonale Schwankungen bleiben unsichtbar." }
+          {
+            "label": "Erwartet",
+            "text": "Ein Befund braucht eine ausgezählte Zahl aus dem eigenen Bogen — eine geschätzte Angabe zählt nicht als Beleg."
+          },
+          {
+            "label": "Verpackung sagt aus",
+            "text": "Etikette oder Preisschild sagen nur, was tatsächlich draufsteht — Herkunft, Gewicht, Preis, allenfalls ein Label.",
+            "quelle": "Kap. 1.5"
+          },
+          {
+            "label": "Verpackung sagt nichts",
+            "text": "Ohne Deklaration sagt sie nichts zu Sozialverträglichkeit oder Tierwohl — labelinfo.ch bewertet diese getrennt.",
+            "quelle": "Kap. 1.5"
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Eine Beobachtung ohne eigene Zahl, etwa «ich esse eher gesund» — das ist eine Vermutung, kein Befund."
+          },
+          {
+            "label": "Grenze dreier Tage",
+            "text": "Drei Tage zeigen eine Tendenz, kein Jahresmuster — Ausnahmen und saisonale Schwankungen bleiben unsichtbar."
+          }
         ]
       }
     },
@@ -106,20 +217,44 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 9.3 | S. 231",
+      "liefert": "die Muster-Kachel als Vorlage",
       "text": "Gestalten Sie eine einzige Befund-Kachel vollständig aus: Aussage in höchstens 12 Wörtern, die eigene Zahl aus dem Bogen, ein eigenes Foto und eine Zeile Einordnung, die eine der drei Dimensionen benennt. Diese eine Kachel ist Ihr Muster für die beiden übrigen.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Sprechen Sie die Aussage laut: Passt sie in zwölf Wörter?",
+          "Fotografieren Sie das, worüber die Kachel spricht — nicht daneben."
+        ],
+        "satzanfaenge": [
+          "«Nur … von … Mahlzeiten waren …»",
+          "Diese Zahl gehört zur … Dimension, weil …"
+        ],
+        "produkt": "Diese eine Kachel ist das Muster für die beiden übrigen in Schritt 5."
+      },
       "loesung": {
         "kern": "Eine Kachel vollständig, als Muster",
         "zeilen": [
-          { "label": "Massstab", "text": "Aussage höchstens 12 Wörter, eine eigene Zahl aus dem Bogen, ein eigenes Foto, eine Zeile Einordnung mit einer der drei Dimensionen." },
-          { "label": "Aussage", "text": "«Nur 4 von 14 Mahlzeiten waren überwiegend pflanzlich» — kurz, mit Zahl, ohne Wertung." },
-          { "label": "Einordnung", "text": "Die Zahl gehört zur ökologischen Dimension, weil tierische Lebensmittel mehr Fläche, Wasser und Energie brauchen als pflanzliche.", "quelle": "Kap. 9.3" },
-          { "label": "Häufiger Fehler", "text": "Eine Aussage ohne eigene Zahl aus dem Bogen — ein Eindruck ersetzt keinen Beleg." }
+          {
+            "label": "Massstab",
+            "text": "Aussage höchstens 12 Wörter, eine eigene Zahl aus dem Bogen, ein eigenes Foto, eine Zeile Einordnung mit einer der drei Dimensionen."
+          },
+          {
+            "label": "Aussage",
+            "text": "«Nur 4 von 14 Mahlzeiten waren überwiegend pflanzlich» — kurz, mit Zahl, ohne Wertung."
+          },
+          {
+            "label": "Einordnung",
+            "text": "Die Zahl gehört zur ökologischen Dimension, weil tierische Lebensmittel mehr Fläche, Wasser und Energie brauchen als pflanzliche.",
+            "quelle": "Kap. 9.3"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Eine Aussage ohne eigene Zahl aus dem Bogen — ein Eindruck ersetzt keinen Beleg."
+          }
         ]
       }
     }
   ],
-
   "mindmap_zentrum": "Was drei Tage über mein Essen zeigen",
   "mindmap_aeste": [
     {
@@ -162,18 +297,32 @@
       "optional": true
     }
   ],
-
   "handlungsprodukt": {
     "format": "Faktenorientierte Multimedia-Auswertung",
     "titel": "Drei Tage auf meinem Teller",
     "format_detail": "Eine A3-Seite oder eine Folie mit dem abfotografierten Erhebungsbogen und drei Befund-Kacheln, je mit Aussage (höchstens 12 Wörter), eigener Zahl aus dem Bogen, einem eigenen Foto und einer Zeile Einordnung.",
     "beschreibung": "Ich werte meinen dreitägigen Erhebungsbogen aus und halte drei Befunde fest, die ich mit einer eigenen Zahl und einem eigenen Bild belegen kann.",
     "schritte": [
-      {"label": "Bogen vorbereiten", "hint": "Zeichnen Sie den Bogen mit fünf Spalten auf ein Blatt: Was · Herkunft · Verarbeitungsgrad · pflanzlich oder tierisch · Preis. Eine Zeile pro Mahlzeit und Getränk."},
-      {"label": "Drei Tage erheben", "hint": "Tragen Sie sofort nach dem Essen ein, nicht am Abend aus dem Gedächtnis. Etiketten und Preisschilder dürfen Sie mit der Handykamera abfotografieren; die Fotos bleiben auf Ihrem Gerät."},
-      {"label": "Von Hand auszählen", "hint": "Zählen Sie mit Strichen aus: Anzahl Mahlzeiten, davon überwiegend pflanzlich, davon stark verarbeitet, Summe der Preise. Notieren Sie auch, was Sie nicht erfassen konnten."},
-      {"label": "Drei Befunde wählen", "hint": "Ein Befund braucht eine Zahl aus Ihrem eigenen Bogen. Beobachtungen ohne Zahl gehören nicht auf die Auswertung."},
-      {"label": "Kacheln gestalten", "hint": "Bauen Sie die beiden übrigen Kacheln nach dem Muster aus Leitfrage 4. Ein Foto pro Kachel, eine Aussage, eine Zahl, eine Zeile Einordnung."}
+      {
+        "label": "Bogen vorbereiten",
+        "hint": "Zeichnen Sie den Bogen mit fünf Spalten auf ein Blatt: Was · Herkunft · Verarbeitungsgrad · pflanzlich oder tierisch · Preis. Eine Zeile pro Mahlzeit und Getränk."
+      },
+      {
+        "label": "Drei Tage erheben",
+        "hint": "Tragen Sie sofort nach dem Essen ein, nicht am Abend aus dem Gedächtnis. Etiketten und Preisschilder dürfen Sie mit der Handykamera abfotografieren; die Fotos bleiben auf Ihrem Gerät."
+      },
+      {
+        "label": "Von Hand auszählen",
+        "hint": "Zählen Sie mit Strichen aus: Anzahl Mahlzeiten, davon überwiegend pflanzlich, davon stark verarbeitet, Summe der Preise. Notieren Sie auch, was Sie nicht erfassen konnten."
+      },
+      {
+        "label": "Drei Befunde wählen",
+        "hint": "Ein Befund braucht eine Zahl aus Ihrem eigenen Bogen. Beobachtungen ohne Zahl gehören nicht auf die Auswertung."
+      },
+      {
+        "label": "Kacheln gestalten",
+        "hint": "Bauen Sie die beiden übrigen Kacheln nach dem Muster aus Leitfrage 4. Ein Foto pro Kachel, eine Aussage, eine Zahl, eine Zeile Einordnung."
+      }
     ],
     "schreib_label": "AUSWERTUNG HIER ERARBEITEN",
     "schreib_note": "-> wissen/drei_dimensionen_nachhaltigkeit",
@@ -204,64 +353,96 @@
         {
           "titel": "Der Erhebungsbogen",
           "zeilen": [
-            {"label": "Grundlage", "text": "In drei Tagen habe ich 14 Mahlzeiten und Getränke erfasst: 5 im Lehrbetrieb, 4 unterwegs, 5 zu Hause. Erfasst habe ich jeweils, was es war, welche Herkunft auf der Etikette oder am Schild stand, wie stark verarbeitet es war, ob es überwiegend pflanzlich oder tierisch war und was es gekostet hat. Bei 4 Einträgen fehlt die Herkunft, weil auf Take-away-Verpackungen nichts angegeben war. Das habe ich in einer eigenen Zeile festgehalten, statt zu schätzen.", "quelle": "eigener Bogen"}
+            {
+              "label": "Grundlage",
+              "text": "In drei Tagen habe ich 14 Mahlzeiten und Getränke erfasst: 5 im Lehrbetrieb, 4 unterwegs, 5 zu Hause. Erfasst habe ich jeweils, was es war, welche Herkunft auf der Etikette oder am Schild stand, wie stark verarbeitet es war, ob es überwiegend pflanzlich oder tierisch war und was es gekostet hat. Bei 4 Einträgen fehlt die Herkunft, weil auf Take-away-Verpackungen nichts angegeben war. Das habe ich in einer eigenen Zeile festgehalten, statt zu schätzen.",
+              "quelle": "eigener Bogen"
+            }
           ]
         },
         {
           "titel": "Befund 1 — mehr tierisch als gedacht",
           "zeilen": [
-            {"label": "Kachel 1", "text": "Aussage: «Nur 4 von 14 Mahlzeiten waren überwiegend pflanzlich.» Zahl: 4 von 14, das ist weniger als ein Drittel. Foto: mein Mittagessen am zweiten Tag. Einordnung: Das gehört zur ökologischen Dimension — tierische Lebensmittel brauchen in Herstellung und Anbau mehr Fläche, Wasser und Energie als pflanzliche. Vor der Erhebung hätte ich etwa die Hälfte geschätzt.", "quelle": "Kap. 9.3, S. 231"}
+            {
+              "label": "Kachel 1",
+              "text": "Aussage: «Nur 4 von 14 Mahlzeiten waren überwiegend pflanzlich.» Zahl: 4 von 14, das ist weniger als ein Drittel. Foto: mein Mittagessen am zweiten Tag. Einordnung: Das gehört zur ökologischen Dimension — tierische Lebensmittel brauchen in Herstellung und Anbau mehr Fläche, Wasser und Energie als pflanzliche. Vor der Erhebung hätte ich etwa die Hälfte geschätzt.",
+              "quelle": "Kap. 9.3, S. 231"
+            }
           ]
         },
         {
           "titel": "Befund 2 — der Preis der Bequemlichkeit",
           "zeilen": [
-            {"label": "Kachel 2", "text": "Aussage: «Unterwegs zahle ich pro Mahlzeit gut das Doppelte.» Zahl: 4 Mahlzeiten unterwegs kosteten zusammen 38.60 Franken, 5 Mahlzeiten zu Hause zusammen 21.40 Franken. Foto: die Verpackung vom Mittwoch. Einordnung: Das ist die ökonomische Dimension. Nach den Bedürfnisarten ist das Essen selbst ein Existenzbedürfnis, die Form unterwegs aber ein Wahlbedürfnis — dort liegt mein Spielraum.", "quelle": "Kap. 2.7, S. 73–74"}
+            {
+              "label": "Kachel 2",
+              "text": "Aussage: «Unterwegs zahle ich pro Mahlzeit gut das Doppelte.» Zahl: 4 Mahlzeiten unterwegs kosteten zusammen 38.60 Franken, 5 Mahlzeiten zu Hause zusammen 21.40 Franken. Foto: die Verpackung vom Mittwoch. Einordnung: Das ist die ökonomische Dimension. Nach den Bedürfnisarten ist das Essen selbst ein Existenzbedürfnis, die Form unterwegs aber ein Wahlbedürfnis — dort liegt mein Spielraum.",
+              "quelle": "Kap. 2.7, S. 73–74"
+            }
           ]
         },
         {
           "titel": "Befund 3 — Herkunft steht selten drauf",
           "zeilen": [
-            {"label": "Kachel 3", "text": "Aussage: «Bei 4 von 14 Einträgen konnte ich keine Herkunft feststellen.» Zahl: 4 von 14. Foto: eine Take-away-Schale ohne Angaben. Einordnung: Ohne Herkunftsangabe lässt sich weder die ökologische noch die soziale Dimension beurteilen. Das Lehrmittel nennt vier Kriterien, nach denen labelinfo.ch Labels bewertet — angewendet werden können sie nur dort, wo überhaupt etwas deklariert ist.", "quelle": "Kap. 1.5, S. 37"}
+            {
+              "label": "Kachel 3",
+              "text": "Aussage: «Bei 4 von 14 Einträgen konnte ich keine Herkunft feststellen.» Zahl: 4 von 14. Foto: eine Take-away-Schale ohne Angaben. Einordnung: Ohne Herkunftsangabe lässt sich weder die ökologische noch die soziale Dimension beurteilen. Das Lehrmittel nennt vier Kriterien, nach denen labelinfo.ch Labels bewertet — angewendet werden können sie nur dort, wo überhaupt etwas deklariert ist.",
+              "quelle": "Kap. 1.5, S. 37"
+            }
           ]
         },
         {
           "titel": "Was drei Tage nicht zeigen",
           "zeilen": [
-            {"label": "Grenze", "text": "Drei Tage sind eine kleine Stichprobe. Sie zeigen eine Tendenz, kein Jahresmittel: In dieser Woche hatte ich zwei Spätdienste, an denen ich unterwegs gegessen habe — in einer anderen Woche wäre das Verhältnis anders. Was mein Bogen ausserdem nicht erfasst, ist alles, was vor dem Laden passiert ist. Meine Zahlen beginnen erst beim Preisschild.", "quelle": "eigener Bogen"}
+            {
+              "label": "Grenze",
+              "text": "Drei Tage sind eine kleine Stichprobe. Sie zeigen eine Tendenz, kein Jahresmittel: In dieser Woche hatte ich zwei Spätdienste, an denen ich unterwegs gegessen habe — in einer anderen Woche wäre das Verhältnis anders. Was mein Bogen ausserdem nicht erfasst, ist alles, was vor dem Laden passiert ist. Meine Zahlen beginnen erst beim Preisschild.",
+              "quelle": "eigener Bogen"
+            }
           ]
         }
       ]
     }
   },
-
   "methoden": [
-      {
-        "ref": "lm-17-2-w-fragen",
-        "fuer": "für die Vollständigkeit des Erhebungsbogens",
-        "tun": "Gehen Sie jede Zeile Ihres Bogens mit denselben W-Fragen durch. Wo eine Antwort fehlt, tragen Sie «nicht feststellbar» ein statt zu schätzen."
-      },
-      {
-        "ref": "lm-16-3-gestaltung",
-        "fuer": "für die Gestaltung der A3-Seite",
-        "tun": "Prüfen Sie die Seite gegen die Gestaltungsregeln: heller Grund, leere Fläche zwischen den Kacheln, Farben sparsam. Der Bogen ist Beleg, nicht Schmuck."
-      },
-      {
-        "ref": "hko-erhebungsbogen",
-        "fuer": "für die Erhebung über die drei Tage"
-      },
-      {
-        "ref": "hko-befund-kachel",
-        "fuer": "für die drei Befund-Kacheln"
-      }
-    ],
-
-  "reflexion_fragen": [
-    {"nr": "R1", "text": "Was hat mich an meinem eigenen Erhebungsbogen überrascht?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Welche Rückmeldung habe ich zu meiner Muster-Kachel erhalten — und was habe ich daraufhin geändert?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Welchen meiner drei Befunde würde ich bei einer Erhebung über zwei Wochen zuerst überprüfen?", "sub": null, "feld_hoehe_mm": 10}
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für die Vollständigkeit des Erhebungsbogens",
+      "tun": "Gehen Sie jede Zeile Ihres Bogens mit denselben W-Fragen durch. Wo eine Antwort fehlt, tragen Sie «nicht feststellbar» ein statt zu schätzen."
+    },
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für die Gestaltung der A3-Seite",
+      "tun": "Prüfen Sie die Seite gegen die Gestaltungsregeln: heller Grund, leere Fläche zwischen den Kacheln, Farben sparsam. Der Bogen ist Beleg, nicht Schmuck."
+    },
+    {
+      "ref": "hko-erhebungsbogen",
+      "fuer": "für die Erhebung über die drei Tage"
+    },
+    {
+      "ref": "hko-befund-kachel",
+      "fuer": "für die drei Befund-Kacheln"
+    }
   ],
-
+  "reflexion_fragen": [
+    {
+      "nr": "R1",
+      "text": "Was hat mich an meinem eigenen Erhebungsbogen überrascht?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R2",
+      "text": "Welche Rückmeldung habe ich zu meiner Muster-Kachel erhalten — und was habe ich daraufhin geändert?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    },
+    {
+      "nr": "R3",
+      "text": "Welchen meiner drei Befunde würde ich bei einer Erhebung über zwei Wochen zuerst überprüfen?",
+      "sub": null,
+      "feld_hoehe_mm": 10
+    }
+  ],
   "bewertungsraster": [
     {
       "produkt": "Leitfragen",
@@ -301,69 +482,126 @@
       ]
     }
   ],
-
   "wochen": 3,
   "wochen_plan": [
-    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1, Erhebungsbogen anlegen, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "Erhebung auswerten, LF2-LF3, Muster-Kachel (LF4)", "aktiv": false},
-    {"label": "Woche 3 - 45 min", "text": "Auswertung fertigstellen, Austausch (Set), Reflexion, Transfer", "aktiv": false}
+    {
+      "label": "Woche 1 - 45 min",
+      "text": "Herausforderung lesen, LF1, Erhebungsbogen anlegen — Erhebung startet heute, Mindmap",
+      "aktiv": true
+    },
+    {
+      "label": "Woche 2 - 45 min",
+      "text": "Erhebung auswerten, LF2-LF3, Muster-Kachel (LF4)",
+      "aktiv": false
+    },
+    {
+      "label": "Woche 3 - 45 min",
+      "text": "Auswertung fertigstellen, Austausch (Set), Reflexion, Transfer",
+      "aktiv": false
+    }
   ],
-
-  "template": "default_4page_v2",
+  "template": "default_4page_v3",
   "legacy": {},
   "source_refs": {},
   "registry_tags": {},
-
   "prinzip_ref": "3.2.1_ernaehrung_nachhaltig_gestalten_prinzip",
   "herausforderung": {
     "buchstabe": "A",
     "label": "Die eigene Ernährung über drei Tage erheben und drei Befunde belegen"
   },
-
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Gewohnte Ernährung vs. belegte Folgen der eigenen Wahl",
     "hint": "Beide Lesarten sind vertretbar. Für die Gewohnheit spricht, dass Essen Zeit, Geld und Umstände hat und nicht frei gewählt ist. Für die Zahlen spricht, dass eine Gewohnheit erst dann beurteilbar wird, wenn man sie beziffert. Bewertet wird, wie sauber Sie Ihre Befunde belegen — nicht, wie Sie sich ernähren."
   },
-
   "dekontextualisierung": {
     "frage": "Bei welcher anderen Alltagsgewohnheit würde eine dreitägige Erhebung ähnlich viel zeigen — und woran erkenne ich, dass die Zahlen tragen?",
     "ziel": "Die Lernenden lösen die Einsicht vom Essen ab: Eine Aussage über eigenes Verhalten wird erst überprüfbar, wenn eine erhobene Zahl mit ausgewiesener Grenze dahintersteht."
   },
-
   "zirkularitaet_anker": {
     "iteration": "R1",
     "r2_voraussicht": "T5 — Globale gesellschaftliche Herausforderungen: derselbe Blick auf Ressourcen, aber auf gesellschaftlicher statt persönlicher Ebene.",
     "r3_voraussicht": "T6 — Wohn- und Lebensformen: Ressourcenverbrauch im eigenen Haushalt planen und begründen."
   },
-
   "quellen_anker": [
-    {"ref": "Kap. 9.3", "titel": "Nachhaltigkeit — Definition, Ressourcenverbrauch, die drei Dimensionen der Nachhaltigkeit", "seiten": "Seite 231", "unterueberschrift": "Nachhaltige Entwicklung / Aspekte der Nachhaltigkeit", "fuer_leitfrage": [1, 4]},
-    {"ref": "Kap. 2.7", "titel": "Preisbildung — Bedürfnis, Existenz- und Wahlbedürfnisse, Individual- und Kollektivbedürfnisse", "seiten": "Seite 73-74", "unterueberschrift": "Nachfrage / Bedürfnisarten", "fuer_leitfrage": [2]},
-    {"ref": "Kap. 1.5", "titel": "Ökologie im Umfeld — Lebensmittellabels, labelinfo.ch mit vier Bewertungskriterien, Fairtrade, Bio, IP-Suisse", "seiten": "Seite 37", "unterueberschrift": "Lebensmittel-/Energielabels", "fuer_leitfrage": [3]},
-    {"ref": "Kap. 16.3", "titel": "Präsentation — Visualisierungsmethoden und Grundsätze der Visualisierung", "seiten": "Seite 369-370", "unterueberschrift": "Grundsätze der Visualisierung", "fuer_leitfrage": [4]}
+    {
+      "ref": "Kap. 9.3",
+      "titel": "Nachhaltigkeit — Definition, Ressourcenverbrauch, die drei Dimensionen der Nachhaltigkeit",
+      "seiten": "Seite 231",
+      "unterueberschrift": "Nachhaltige Entwicklung / Aspekte der Nachhaltigkeit",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 2.7",
+      "titel": "Preisbildung — Bedürfnis, Existenz- und Wahlbedürfnisse, Individual- und Kollektivbedürfnisse",
+      "seiten": "Seite 73-74",
+      "unterueberschrift": "Nachfrage / Bedürfnisarten",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 1.5",
+      "titel": "Ökologie im Umfeld — Lebensmittellabels, labelinfo.ch mit vier Bewertungskriterien, Fairtrade, Bio, IP-Suisse",
+      "seiten": "Seite 37",
+      "unterueberschrift": "Lebensmittel-/Energielabels",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 16.3",
+      "titel": "Präsentation — Visualisierungsmethoden und Grundsätze der Visualisierung",
+      "seiten": "Seite 369-370",
+      "unterueberschrift": "Grundsätze der Visualisierung",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
   ],
-
   "lernfortschritt": {
     "kriterien": [
-      {"kriterium": "Dimensionen verstanden", "indikator": "Die drei Dimensionen der Nachhaltigkeit werden korrekt unterschieden und am Essalltag illustriert.", "gewicht_prozent": 25},
-      {"kriterium": "Erhebung vollständig", "indikator": "Drei Tage sind lückenlos erfasst, nicht Erfasstes ist markiert statt geschätzt.", "gewicht_prozent": 25},
-      {"kriterium": "Befunde belegt", "indikator": "Jeder der drei Befunde stützt sich auf eine ausgezählte Zahl aus dem eigenen Bogen.", "gewicht_prozent": 25},
-      {"kriterium": "Grenzen benannt", "indikator": "Die Aussagekraft der dreitägigen Stichprobe wird selbst eingeschätzt.", "gewicht_prozent": 25}
+      {
+        "kriterium": "Dimensionen verstanden",
+        "indikator": "Die drei Dimensionen der Nachhaltigkeit werden korrekt unterschieden und am Essalltag illustriert.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Erhebung vollständig",
+        "indikator": "Drei Tage sind lückenlos erfasst, nicht Erfasstes ist markiert statt geschätzt.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Befunde belegt",
+        "indikator": "Jeder der drei Befunde stützt sich auf eine ausgezählte Zahl aus dem eigenen Bogen.",
+        "gewicht_prozent": 25
+      },
+      {
+        "kriterium": "Grenzen benannt",
+        "indikator": "Die Aussagekraft der dreitägigen Stichprobe wird selbst eingeschätzt.",
+        "gewicht_prozent": 25
+      }
     ],
     "scaffold_90": "Der Erhebungsbogen wird vorgedruckt abgegeben; die Lernenden tragen nur ein und zählen aus.",
     "scaffold_100": "Zusätzlich wird ein vierter Erhebungstag am Wochenende erfasst und mit den drei Arbeitstagen verglichen."
   },
-
   "prinzip_handoff": {
     "kernkonzept": "Meine Konsumgewohnheit ist beobachtbar und belegbar — nicht bloss ein Gefühl.",
     "lehrmittel_anker": "Kap. 9.3 S. 231 (drei Dimensionen der Nachhaltigkeit), Kap. 2.7 S. 73-74 (Existenz- und Wahlbedürfnisse), Kap. 1.5 S. 37 (Labels und ihre Bewertungskriterien)",
     "kn_aktivierung": "Diese Herausforderung liefert die Fähigkeit, eine eigene Beobachtung in eine belegte Zahl mit ausgewiesener Grenze zu überführen.",
     "transfer_check": "Die Lernenden können dieselbe Erhebung an einer anderen Alltagsgewohnheit durchführen, ohne über Ernährung zu sprechen."
   },
-
   "sk_anker": [
-    {"sk": 9, "wo": "Die Auswertung verlangt, ökologische, ökonomische und soziale Beobachtungen am eigenen Essen zusammenzuführen statt sie getrennt zu behandeln."},
-    {"sk": 5, "wo": "In LF3 und in der Reflexion stossen die eigene Vorannahme über das eigene Essverhalten und die ausgezählten Zahlen aufeinander; die Lernenden benennen die Differenz."}
+    {
+      "sk": 9,
+      "wo": "Die Auswertung verlangt, ökologische, ökonomische und soziale Beobachtungen am eigenen Essen zusammenzuführen statt sie getrennt zu behandeln."
+    },
+    {
+      "sk": 5,
+      "wo": "In LF3 und in der Reflexion stossen die eigene Vorannahme über das eigene Essverhalten und die ausgezählten Zahlen aufeinander; die Lernenden benennen die Differenz."
+    }
   ]
 }

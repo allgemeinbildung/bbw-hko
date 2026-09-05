@@ -4,13 +4,13 @@
     "regeln": [
       "hybrid_situation.text in Swiss German, max 120 Woerter, ICH-Perspektive.",
       "Hybrid-Herausforderung muss mindestens ein Spannungsfeld aus prinzip.mehrdeutigkeits_architektur.trade_off_raum aktivieren.",
-      "Persona der Hybrid-Herausforderung ist disjunkt von allen drei herausforderung_*.persona — kommt aus prinzip.persona_pool_kn_neu.",
+      "Persona der Hybrid-Herausforderung ist dieselbe neutrale wie in den Herausforderungen (Stufe 1 oder 2). Disjunkt sein muss der FALL, nicht die Person (Check 11).",
       "Alle 3 KN-Typen sind im selben File — LP-Wahl ist Platform-Layer-Concern, kein Generation-Time-Lock-In.",
       "Rubrik bi-dimensional: 4 Kriterien (je 2 in SuK und Ges), 4 Punktbaender (Skala 0-3), gleichgewichtet (Check 13).",
       "Kriterium 3 (Wirtschaftliches Prinzip) wird je nach dominantem Aspekt umbenannt — siehe references/kn-architecture.md Paragraph 6.",
       "Keine Eszett (ß) — immer ss. Echte Umlaute ä/ö/ü PFLICHT in Prosa-Feldern (hybrid_situation.{titel, text, leitfrage, alignment_note.*}, kn_typen[].fragestruktur[].frage, kn_typen[].aufgaben[].aufgabe, kn_typen[].reflexionsfragen[], rubrik_shared.kriterien[].{name, stufen[].text, niveaubaender[].text}). Transliteration nur in IDs (id, set_ref, prinzip_ref, anchored_situations[])."
     ],
-    "abhaengigkeiten": "Konsumiert prinzip.json (Spannungsfelder, persona_pool_kn_neu, Transfer-Anker, hybrid_situation_spec), die drei herausforderung_*.json (konfliktart-per-Herausforderung, SK pro Herausforderung), set.json (dominanter Aspekt, kn_ref-Anker).",
+    "abhaengigkeiten": "Konsumiert prinzip.json (Spannungsfelder, Transfer-Anker, hybrid_situation_spec), die drei herausforderung_*.json (konfliktart-per-Herausforderung, SK pro Herausforderung), set.json (dominanter Aspekt, kn_ref-Anker).",
     "lebenszyklus": [
       "Phase 4 Step 1 laedt Prerequisites.",
       "Phase 4 Step 2 generiert Hybrid-Herausforderung und wartet auf User-Approval.",
@@ -43,7 +43,7 @@
   "mehrdeutigkeits_pflicht": "",
 
   "hybrid_situation": {
-    "_kommentar": "EINE Szene (nicht drei aneinandergereiht), die alle drei Lernaufgaben-Prinzipien gleichzeitig aktiviert. Persona aus prinzip.persona_pool_kn_neu (Unseen-Transfer). Endet mit einer Leitfrage, die die Spannung benennt ohne Antwort vorzugeben.",
+    "_kommentar": "EINE Szene (nicht drei aneinandergereiht), die alle drei Lernaufgaben-Prinzipien gleichzeitig aktiviert. Neutrale Persona; der Unseen-Transfer steckt im FALL, nicht im Beruf. Endet mit einer Leitfrage, die die Spannung benennt ohne Antwort vorzugeben.",
     "titel": "",
     "persona": {"beruf": "", "betrieb": "", "ort": ""},
     "emotion_tag": "",

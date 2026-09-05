@@ -49,9 +49,9 @@
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Lernende/r EFZ",
-    "betrieb": "Berufsfachschule",
-    "ort": "Schweiz"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
   "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. Seit sechs Wochen habe ich drei Lernorte: den Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse. Geregelt ist das alles in einem einzigen Dokument, das bei mir zu Hause in einer Mappe liegt. Gestern kam per Post das üK-Aufgebot für zwei Tage im November — im Betrieb sagt man mir, davon wisse niemand etwas, ich solle das «mit dem Büro klären». Ich merke, dass ich nicht sagen könnte, wer eigentlich wofür zuständig ist. Und ich merke auch, dass in meinem Vertrag Dinge stehen, die im Alltag anders laufen.",
   "zahlen_tabelle": [
@@ -69,14 +69,27 @@
     }
   ],
   "leitfrage": "Wer ist für welchen Teil meiner Ausbildung zuständig — und wo steht das?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie brauchen dafür das Lehrmittel und Ihren eigenen Lehrvertrag.",
+  "leitfragen_intro": "Sie legen das Orientierungsblatt in dieser Lektion an — drei Spalten, eine pro Lernort. LF1 lösen Sie heute mit dem Lehrmittel; gleichzeitig notieren Sie, welche Dokumente Sie zu Hause holen (Lehrvertrag, Stundenplan, üK-Aufgebot). Zur zweiten Lektion liegen sie auf dem Tisch, dann folgen LF2 bis LF4. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 1.1, Kap. 1.4 und Kap. 20.8 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 1.1 | S. 12-13",
+      "liefert": "die drei Spaltenköpfe mit ihrer Aufgabe",
       "text": "Erklären Sie in eigenen Worten, welche Aufgabe der Lehrbetrieb, die Berufsfachschule und die überbetrieblichen Kurse in Ihrer Ausbildung haben.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 1.1 S. 12-13 und markieren Sie pro Lernort einen Satz.",
+          "Prüfen Sie: Wofür steht jeder Ort allein, nicht was alle drei gemeinsam tun?"
+        ],
+        "satzanfaenge": [
+          "Der Lehrbetrieb ist zuständig für …",
+          "Anders als die Schule …"
+        ],
+        "produkt": "Die drei Aufgaben werden die Spaltenköpfe des Blattes in Schritt 1."
+      },
       "loesung": {
         "kern": "Drei Lernorte, drei Aufgaben — im Gesetz geregelt.",
         "zeilen": [
@@ -107,8 +120,20 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 1.4 | S. 29",
+      "liefert": "die belegten Angaben je Spalte",
       "text": "Suchen Sie in Ihrem eigenen Lehrvertrag die obligatorischen Bestandteile und notieren Sie, was bei Ihnen jeweils konkret steht.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Gehen Sie den Vertrag mit einer festen Frageliste durch, Punkt für Punkt.",
+          "Schreiben Sie Dokument und Ziffer sofort dazu, nicht erst am Schluss."
+        ],
+        "satzanfaenge": [
+          "In meinem Lehrvertrag steht unter Ziffer …",
+          "Diese Angabe finde ich in …"
+        ],
+        "produkt": "Diese Angaben füllen die drei Spalten in Schritt 2, jede mit ihrer Fundstelle."
+      },
       "loesung": {
         "kern": "Fünf Punkte müssen im Vertrag stehen — OR 344a.",
         "zeilen": [
@@ -139,8 +164,20 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 1.4 | S. 35",
-      "text": "Eine Angabe aus Ihrem Vertrag stimmt nicht mit dem überein, was Sie im Betrieb erleben. An wen wenden Sie sich zuerst — und weshalb nicht sofort an die nächsthöhere Stelle?",
+      "liefert": "die Abweichungszeile mit Anlaufstelle",
+      "text": "Eine Angabe aus Ihrem Vertrag stimmt nicht mit dem überein, was Sie in Ihrem Lehrbetrieb erleben — oder dort, wo Sie zuletzt gearbeitet haben. An wen wenden Sie sich zuerst — und weshalb nicht sofort an die nächsthöhere Stelle?",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Halten Sie zuerst fest, was abweicht, und bewerten Sie erst danach.",
+          "Prüfen Sie Kap. 1.4 S. 35: Wer ist die erste Stelle, wer die nächste?"
+        ],
+        "satzanfaenge": [
+          "Im Vertrag steht …, im Alltag erlebe ich …",
+          "Zuerst wende ich mich an …, weil …"
+        ],
+        "produkt": "Daraus wird die Zeile «Das erlebe ich anders» pro Lernort in Schritt 3."
+      },
       "loesung": {
         "kern": "Zuerst im Betrieb klären, erst dann nach aussen.",
         "zeilen": [
@@ -171,8 +208,20 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 20.8 | S. 451",
+      "liefert": "die Muster-Quellenzeile für alle Angaben",
       "text": "Formulieren Sie für eine einzige Ihrer Angaben die Quellenzeile so, dass eine andere Person sie ohne Rückfrage überprüfen kann.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Nennen Sie Dokument, Ziffer und Datum — in dieser Reihenfolge.",
+          "Lesen Sie die Zeile jemandem vor: Findet er die Stelle ohne Rückfrage?"
+        ],
+        "satzanfaenge": [
+          "Quelle: Lehrvertrag, Ziffer …, vom …",
+          "Nachzulesen in … unter …"
+        ],
+        "produkt": "Diese eine Zeile ist das Muster für alle Fundstellen in Schritt 4."
+      },
       "loesung": {
         "kern": "Eine Quellenzeile nennt Dokument und Fundstelle.",
         "zeilen": [
@@ -254,24 +303,24 @@
     ],
     "schritte": [
       {
-        "label": "Dokumente zusammentragen",
-        "hint": "Lehrvertrag, Stundenplan, üK-Aufgebot. Fehlt eines, notieren Sie, wo Sie es bekommen — die Lücke gehört aufs Blatt."
+        "label": "Die drei Spalten anlegen",
+        "hint": "Übernehmen Sie aus LF1 die Aufgabe jedes Lernorts als Spaltenkopf. Notieren Sie gleich, welche Dokumente Sie zu Hause holen — zur zweiten Lektion liegen sie auf dem Tisch."
       },
       {
-        "label": "Fragen aufschreiben, dann suchen",
-        "hint": "Pro Lernort vier Fragen formulieren, bevor Sie das Dokument öffnen. Ohne Frage lesen Sie alles und finden nichts."
+        "label": "Angaben mit Fundstelle eintragen",
+        "hint": "Tragen Sie die Angaben aus LF2 in die Spalten ein, je vier pro Lernort. Zu jeder sofort Dokument und Stelle dazuschreiben."
       },
       {
-        "label": "Angaben mit Fundstelle notieren",
-        "hint": "Zu jeder Angabe sofort Dokument und Stelle dazuschreiben. Nachträglich suchen kostet dreimal so lange."
+        "label": "Die Abweichung festhalten",
+        "hint": "Pro Lernort eine Zeile «Das erlebe ich anders», dazu die Anlaufstelle aus LF3. Nur beschreiben, noch nicht bewerten."
       },
       {
-        "label": "Abweichung festhalten",
-        "hint": "Pro Lernort eine Zeile: Was steht im Dokument, was erleben Sie? Nur beschreiben, noch nicht bewerten."
+        "label": "Die Fundstellen ausschreiben",
+        "hint": "Bauen Sie alle Quellenzeilen nach dem Muster aus LF4. Gestalten Sie das Blatt so, dass die drei Spalten nebeneinander lesbar sind."
       },
       {
-        "label": "Blatt gestalten und prüfen",
-        "hint": "Legen Sie das Blatt einer Person aus einem anderen Beruf vor. Versteht sie Ihre Ausbildung ohne Nachfrage?"
+        "label": "Das Blatt gegen die Kriterien prüfen",
+        "hint": "Gehen Sie die Kriterien im Bewertungsraster durch: drei Spalten, je vier belegte Angaben, jede Zeile «Das erlebe ich anders» in ganzen Sätzen, Angaben ohne Beleg in der Fusszeile. Überarbeiten Sie die Stelle, die nicht standhält."
       }
     ],
     "schreib_label": "Mein Orientierungsblatt",
@@ -288,9 +337,9 @@
         "Eine Angabe, die Sie nicht belegen können, kommt nicht aufs Blatt — sie kommt auf die Frageliste."
       ],
       "struktur": [
-        "Spalte 1 — Lehrbetrieb: vier Angaben mit Fundstelle, dann «Das erlebe ich anders»",
-        "Spalte 2 — Berufsfachschule: gleicher Aufbau",
-        "Spalte 3 — Überbetriebliche Kurse: gleicher Aufbau",
+        "Spaltenköpfe — die drei Lernorte mit ihrer Aufgabe (aus LF1)",
+        "Spalte 1-3 — je vier Angaben mit Fundstelle (aus LF2), Quellenzeile nach dem Muster aus LF4",
+        "Pro Spalte unten — «Das erlebe ich anders» mit Anlaufstelle (aus LF3)",
         "Fusszeile — offene Fragen und wo ich die Antwort hole"
       ]
     },
@@ -491,12 +540,12 @@
   "wochen_plan": [
     {
       "label": "Woche 1 - 45 min",
-      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "text": "Herausforderung lesen, LF1, drei Spalten anlegen — Dokumente für Lektion 2 notieren, Mindmap",
       "aktiv": true
     },
     {
       "label": "Woche 2 - 45 min",
-      "text": "LF3-LF4, Orientierungsblatt",
+      "text": "Dokumente auswerten, LF2-LF4, Orientierungsblatt",
       "aktiv": false
     },
     {

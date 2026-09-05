@@ -47,11 +47,11 @@
     "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
   },
   "persona": {
-    "beruf": "Bäcker-Konditor-Confiseur/in EFZ",
-    "betrieb": "Bäckerei-Konditorei Wirz",
-    "ort": "Aarau"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
-  "situation_text": "Ich bin Bäcker-Konditor-Confiseur-Lernende/r im 1. Lehrjahr bei der Bäckerei-Konditorei Wirz in Aarau. In drei Wochen steht mein Kompetenznachweis zum Thema Hygiene und Lebensmittelsicherheit an, und ich habe ehrlich gesagt wenig Zeit zum Lernen. Am liebsten würde ich die KI alles vorbereiten lassen — Zusammenfassung, Lernkarten, sogar Antworten auf mögliche Prüfungsfragen. Aber im KN sitze ich allein da, ohne KI, und muss selbst erklären können. Ich merke: Wenn ich alles der KI überlasse, fühle ich mich vorbereitet, bin es aber nicht. Jetzt überlege ich, wie ich die KI als Lernhilfe nutze, ohne dass sie mir das Können abnimmt — wo lasse ich sie für mich arbeiten, und wo muss ich selbst durch?",
+  "situation_text": "Ich bin im 1. Lehrjahr. In drei Wochen habe ich meinen nächsten Kompetenznachweis, und ich weiss, was dort verlangt wird: Ich muss den Stoff ohne Hilfsmittel selbst erklären — kein Blatt, kein Handy, keine KI. Zeit zum Lernen habe ich etwa zwei Stunden pro Woche, mehr liegt neben Arbeit und Schule nicht drin. Am liebsten würde ich die KI alles vorbereiten lassen: Zusammenfassung, Lernkarten, sogar die Antworten auf mögliche Prüfungsfragen. Gestern habe ich genau das ausprobiert. Nach einer halben Stunde hatte ich achtzehn fertige Lernkarten und das gute Gefühl, vorbereitet zu sein. Heute Morgen habe ich mich selbst abgefragt: zwei von achtzehn konnte ich frei wiedergeben. Ich merke, dass ich mich vorbereitet fühle und es nicht bin. Sechs Stunden Lernzeit habe ich noch. Ich muss entscheiden, wofür ich sie brauche — wo die KI für mich arbeitet, und wo ich selbst durch muss.",
   "zahlen_tabelle": [
     {
       "label": "Zeit bis zum KN",
@@ -67,70 +67,168 @@
     }
   ],
   "leitfrage": "Wo lasse ich die KI für mich arbeiten — und wo muss ich bewusst ohne sie üben, damit ich es im KN selbst kann?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Sie arbeiten ohne Lehrmittel — Ihre Grundlagen sind Ihr eigener kommender Kompetenznachweis, die KI-Tools und Ihre Erfahrungen aus den Herausforderungen A und B.",
+  "leitfragen_intro": "Ihre Grundlage ist Ihr eigener kommender Kompetenznachweis — sein Thema, sein Termin und das, was Sie dort ohne Hilfsmittel können müssen — dazu die KI-Werkzeuge selbst. LF1 liefert diesen Massstab; LF2 die Lernschritte mit je einem Ziel, LF3 die Entscheidung mit Grund je Schritt, LF4 die drei Übe-Prompts. Bearbeiten Sie die vier Leitfragen schriftlich; Sie arbeiten ohne Lehrmittel. Haben Sie Herausforderung A oder B bearbeitet, nehmen Sie Ihre dortigen Prompts als Ausgangspunkt.",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
-      "knoten_ref": "eigener KN | Erfahrung A/B",
-      "text": "Was unterscheidet «sich vorbereitet fühlen» von «wirklich vorbereitet sein»? Erklären Sie in drei bis vier Sätzen, warum Selbstwirksamkeit — das Vertrauen, etwas selbst zu können — nur durch eigenes Üben entsteht und nicht dadurch, dass die KI es für Sie erledigt.",
+      "knoten_ref": "eigener KN | eigene Notizen",
+      "text": "Was unterscheidet «sich vorbereitet fühlen» von «wirklich vorbereitet sein»? Erklären Sie in drei bis vier Sätzen, warum Selbstwirksamkeit — das Vertrauen, etwas selbst zu können — nur durch eigenes Üben entsteht. Halten Sie danach fest, was Sie in Ihrem nächsten Kompetenznachweis ohne Hilfsmittel selbst können müssen.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Gefühlt vs. wirklich vorbereitet",
         "zeilen": [
-          { "label": "Sich vorbereitet fühlen", "text": "Entsteht schon, wenn Inhalte einmal gelesen oder von der KI erklärt wurden — ein passiver Eindruck, keine geprüfte Fähigkeit." },
-          { "label": "Wirklich vorbereitet", "text": "Zeigt sich erst, wenn ich es ohne Hilfsmittel selbst erklären oder anwenden kann — genau das verlangt der Kompetenznachweis." },
-          { "label": "Selbstwirksamkeit", "text": "Das Vertrauen, etwas selbst zu können, entsteht durch eigenes Üben und Scheitern-Dürfen, nicht durch Zusehen bei der KI." },
-          { "label": "Grenze der KI", "text": "Die KI kann erklären und abfragen, das Üben selbst aber nicht abnehmen — deshalb trennt der Lernplan «mit KI» von «bewusst ohne»." },
-          { "label": "Prinzip", "text": "KI macht schneller, aber nicht automatisch kompetenter — wer entscheidet, was er ihr überlässt, bleibt selbstwirksam.", "quelle": "Prinzip der Einheit" }
+          {
+            "label": "Sich vorbereitet fühlen",
+            "text": "Entsteht schon, wenn Inhalte einmal gelesen oder von der KI erklärt wurden — ein passiver Eindruck, keine geprüfte Fähigkeit."
+          },
+          {
+            "label": "Wirklich vorbereitet",
+            "text": "Zeigt sich erst, wenn ich es ohne Hilfsmittel selbst erklären oder anwenden kann — genau das verlangt der Kompetenznachweis."
+          },
+          {
+            "label": "Selbstwirksamkeit",
+            "text": "Das Vertrauen, etwas selbst zu können, entsteht durch eigenes Üben und Scheitern-Dürfen, nicht durch Zusehen bei der KI."
+          },
+          {
+            "label": "Grenze der KI",
+            "text": "Die KI kann erklären und abfragen, das Üben selbst aber nicht abnehmen — deshalb trennt der Lernplan «mit KI» von «bewusst ohne»."
+          },
+          {
+            "label": "Massstab",
+            "text": "Der Massstab steht im eigenen Kompetenznachweis: Thema, Termin, Form — und was dort ohne Hilfsmittel gekonnt sein muss."
+          },
+          {
+            "label": "Prinzip",
+            "text": "KI macht schneller, aber nicht automatisch kompetenter — wer entscheidet, was er ihr überlässt, bleibt selbstwirksam.",
+            "quelle": "Prinzip der Einheit"
+          }
         ]
+      },
+      "liefert": "der Massstab des eigenen Kompetenznachweises",
+      "scaffolding": {
+        "strategien": [
+          "Schlagen Sie nach, wann Ihr nächster Kompetenznachweis ist und was er verlangt.",
+          "Prüfen Sie: Was davon müssen Sie ohne Hilfsmittel können?"
+        ],
+        "satzanfaenge": [
+          "«Vorbereitet fühlen heisst noch nicht, dass …»",
+          "«Ohne Hilfsmittel können muss ich …»"
+        ],
+        "produkt": "Der Massstab steht als Kopfzeile über der Lernplan-Tabelle."
       }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
-      "knoten_ref": "eigener KN | KI-Tool",
-      "text": "Teilen Sie Ihr KN-Thema in Lernschritte auf und ordnen Sie jedem Schritt zu, ob die KI dort sinnvoll hilft (z. B. Lernkarten erzeugen, Quiz stellen) oder ob Sie bewusst ohne sie üben (z. B. frei erklären, selbst zusammenfassen). Nutzen Sie die KI dabei aktiv als Lernpartnerin.",
+      "knoten_ref": "eigener KN | eigene Notizen",
+      "text": "Teilen Sie Ihr Thema für den Kompetenznachweis in vier bis sechs überschaubare Lernschritte auf und setzen Sie zu jedem Schritt ein konkretes, überprüfbares Ziel («Ich kann die Abzüge auf einer Lohnabrechnung frei aufzählen»).",
       "feld_hoehe_mm": 15,
       "loesung": {
-        "kern": "Wo KI hilft, wo ich selbst übe",
+        "kern": "Lernschritte mit überprüfbaren Zielen",
         "zeilen": [
-          { "label": "Mit KI sinnvoll", "text": "Lernkarten und Quizfragen erzeugen, sich abfragen lassen, Erklärungen vereinfachen — Wiederholung und Feedback." },
-          { "label": "Bewusst ohne KI", "text": "Frei erklären, selbst zusammenfassen, unter Prüfungsbedingungen üben — genau das, was der KN ohne Hilfsmittel verlangt." },
-          { "label": "Zuordnungsregel", "text": "Schritte mit reproduzierbarem Wissen eignen sich für KI-Unterstützung, Schritte mit eigener Anwendung oder Erklärung nicht." },
-          { "label": "Häufiger Fehler", "text": "«KI hilft überall» oder «KI nirgends» statt einer Schritt-für-Schritt-Zuordnung — erst die Differenzierung macht den Plan brauchbar." }
+          {
+            "label": "Zuschnitt",
+            "text": "Vier bis sechs Schritte, jeder in einer Lerneinheit zu schaffen — ein Schritt, den man nicht abschliessen kann, ist zwei Schritte."
+          },
+          {
+            "label": "Ziel-Form",
+            "text": "Jedes Ziel beginnt mit «Ich kann …» und nennt eine beobachtbare Leistung: aufzählen, erklären, beurteilen."
+          },
+          {
+            "label": "Beispiel",
+            "text": "«Ich kann die Abzüge auf einer Lohnabrechnung frei aufzählen» ist überprüfbar; «Ich verstehe die Lohnabrechnung» ist es nicht."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Stoffgebiete statt Ziele in die Tabelle schreiben — «Lohnabrechnung» ist ein Thema, kein Ziel."
+          }
         ]
+      },
+      "liefert": "die Lernschritte mit je einem Ziel",
+      "scaffolding": {
+        "strategien": [
+          "Ein Schritt ist so gross, dass Sie ihn in einer Lerneinheit schaffen."
+        ],
+        "satzanfaenge": [
+          "«Schritt …: Ich kann danach …»",
+          "«Mein Ziel für diesen Schritt ist …»"
+        ],
+        "produkt": "Die Lernschritte und Ziele füllen die ersten beiden Spalten der Tabelle."
       }
     },
     {
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Lernplan | eigene Ziele",
-      "text": "Entscheiden Sie für jeden Lernschritt begründet: KI-Hilfe oder bewusst ohne. Setzen Sie sich pro Schritt ein konkretes Ziel («Ich kann die fünf HACCP-Schritte frei aufzählen») und begründen Sie, warum Ihr Weg dorthin mit oder ohne KI führt.",
+      "text": "Entscheiden Sie für jeden Lernschritt begründet, ob die KI Sie dort unterstützt (Lernkarten, Abfragen, Rückmeldung) oder ob Sie ihn bewusst ohne sie üben, und schreiben Sie zu jeder Entscheidung einen kurzen Grund.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Mit KI oder bewusst ohne — Wahl",
         "zeilen": [
-          { "label": "Erwartet", "text": "Reproduzierbares Wissen mit KI üben, Anwendungs- und Erklär-Schritte bewusst ohne KI: der KN verlangt beides ohne Hilfsmittel." },
-          { "label": "Ebenfalls tragfähig", "text": "Einen Schritt zuerst ohne KI erarbeiten und danach mit KI gegenlesen lassen — wenn die eigene Leistung zuerst steht." },
-          { "label": "Nicht tragfähig", "text": "Alle Schritte durchgehend mit KI abarbeiten, weil das schneller geht — dann fehlt am Prüfungstag genau das, was nie allein geübt wurde." },
-          { "label": "Ziel je Schritt", "text": "Jede Entscheidung braucht ein überprüfbares Ziel, z. B. «Ich kann die fünf HACCP-Schritte frei aufzählen»." }
+          {
+            "label": "Erwartet",
+            "text": "Reproduzierbares Wissen mit KI üben, Anwendungs- und Erklär-Schritte bewusst ohne KI: der KN verlangt beides ohne Hilfsmittel."
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Einen Schritt zuerst ohne KI erarbeiten und danach mit KI gegenlesen lassen — wenn die eigene Leistung zuerst steht."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Alle Schritte durchgehend mit KI abarbeiten, weil das schneller geht — dann fehlt am Prüfungstag genau das, was nie allein geübt wurde."
+          },
+          {
+            "label": "Zuordnungsregel",
+            "text": "Schritte mit reproduzierbarem Wissen eignen sich für KI-Unterstützung, Schritte mit eigener Anwendung oder Erklärung nicht."
+          }
         ]
+      },
+      "liefert": "die Entscheidung mit Grund je Schritt",
+      "scaffolding": {
+        "strategien": [
+          "Fragen Sie pro Schritt: Muss ich das im Kompetenznachweis allein können?"
+        ],
+        "satzanfaenge": [
+          "«Hier hilft mir die KI, indem sie …»",
+          "«Diesen Schritt übe ich ohne KI, weil …»"
+        ],
+        "produkt": "Entscheidung und Grund füllen die dritte und vierte Spalte der Tabelle."
       }
     },
     {
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "KI-Tool | Lernplan",
-      "text": "Formulieren Sie drei gezielte Prompts, mit denen die KI Sie beim Üben unterstützt, statt Ihnen die Arbeit abzunehmen — etwa indem sie Sie abfragt oder Ihnen Feedback gibt. Schreiben Sie sie so, dass Sie sie im Chat direkt einsetzen können.",
+      "text": "Formulieren Sie drei gezielte Prompts, mit denen die KI Sie beim Üben unterstützt, statt Ihnen die Arbeit abzunehmen — etwa indem sie Sie abfragt oder Ihnen eine Rückmeldung gibt. Schreiben Sie sie so, dass Sie sie im Chat direkt einsetzen können.",
       "feld_hoehe_mm": 15,
       "loesung": {
         "kern": "Drei Übe-Prompts, die abfragen",
         "zeilen": [
-          { "label": "Bauteil", "text": "Drei Prompts, die die KI in die Rolle der Abfragenden versetzen — nicht in die Rolle der Erklärenden." },
-          { "label": "Musterformulierung", "text": "«Frag mich ab zu den fünf HACCP-Grundsätzen. Stell mir eine Frage nach der anderen und sag mir nach jeder Antwort, was noch fehlt.»" },
-          { "label": "Massstab", "text": "Der Prompt verlangt eine Rückfrage oder Rückmeldung an mich — kein Prompt, der einfach nochmals erklärt oder Antworten fertig liefert." }
+          {
+            "label": "Bauteil",
+            "text": "Drei Prompts, die die KI in die Rolle der Abfragenden versetzen — nicht in die Rolle der Erklärenden."
+          },
+          {
+            "label": "Musterformulierung",
+            "text": "«Frag mich ab zu den Abzügen auf der Lohnabrechnung. Stell mir eine Frage nach der anderen und sag mir nach jeder Antwort, was noch fehlt.»"
+          },
+          {
+            "label": "Massstab",
+            "text": "Der Prompt verlangt eine Rückfrage oder Rückmeldung an mich — kein Prompt, der einfach nochmals erklärt oder Antworten fertig liefert."
+          }
         ]
+      },
+      "liefert": "die drei Übe-Prompts",
+      "scaffolding": {
+        "strategien": [
+          "Der Prompt verlangt eine Frage an Sie, keine weitere Erklärung."
+        ],
+        "satzanfaenge": [
+          "«Frag mich ab zu … und sag mir, was fehlt.»",
+          "«Ich erkläre dir …, melde mir zurück, was fehlt.»"
+        ],
+        "produkt": "Die drei Übe-Prompts stehen unter der Tabelle, einsatzfertig."
       }
     }
   ],
@@ -151,7 +249,7 @@
         "Lernkarten und Quizfragen erzeugen",
         "Mich abfragen lassen",
         "Erklärungen vereinfachen",
-        "Feedback auf meine Erklärung geben"
+        "Rückmeldung auf meine Erklärung geben"
       ],
       "optional": false
     },
@@ -178,33 +276,33 @@
   "handlungsprodukt": {
     "format": "Persönlicher KI-Lernplan für den nächsten Kompetenznachweis",
     "abgaben": [
-      "KI-Lernplan mit Lernschritten und je einem konkreten Ziel",
+      "KI-Lernplan mit Massstab, Lernschritten und je einem konkreten Ziel",
       "Pro Schritt begründete Entscheidung: mit KI / bewusst ohne",
       "Drei Übe-Prompts, mit denen die KI Sie abfragt statt für Sie arbeitet"
     ],
     "titel": "Mein KI-Lernplan — wo die KI hilft und wo ich selbst durch muss",
-    "format_detail": "Ein ein- bis zweiseitiger persönlicher Lernplan: eine Tabelle mit Lernschritten zu Ihrem KN-Thema, je einem konkreten Lernziel und der begründeten Entscheidung «mit KI» oder «bewusst ohne KI», ergänzt um drei einsatzfertige Übe-Prompts.",
-    "beschreibung": "Ich baue meinen eigenen Lernplan für den nächsten KN und treffe für jeden Schritt eine bewusste Entscheidung, wo mir die KI hilft und wo ich bewusst ohne sie arbeite, um wirklich selbst zu können, was im KN zählt. Der Plan stützt sich auf das, was ich in Herausforderung A (gezielt prompten) und B (KI-Recherche prüfen) gelernt habe. Am Rande halte ich fest, dass ich die KI verantwortungsvoll nutze — als Hilfe, nicht als Ersatz für mein eigenes Können.",
+    "format_detail": "Ein ein- bis zweiseitiger persönlicher Lernplan: oben der Massstab aus dem eigenen Kompetenznachweis, darunter eine Tabelle mit vier bis sechs Lernschritten, je einem überprüfbaren Ziel und der begründeten Entscheidung «mit KI» oder «bewusst ohne KI», am Schluss drei einsatzfertige Übe-Prompts.",
+    "beschreibung": "Ich baue meinen eigenen Lernplan für den nächsten Kompetenznachweis und entscheide für jeden Schritt bewusst, wo mir die KI hilft und wo ich ohne sie arbeite, damit ich am Prüfungstag selbst kann, was zählt. Ausgangspunkt ist mein eigener Kompetenznachweis: sein Thema, sein Termin und das, was ich dort ohne Hilfsmittel können muss. Am Rande halte ich fest, dass ich die KI verantwortungsvoll nutze — als Hilfe, nicht als Ersatz für mein eigenes Können.",
     "schritte": [
       {
-        "label": "Lernschritte festlegen",
-        "hint": "Teilen Sie Ihr KN-Thema in vier bis sechs überschaubare Lernschritte auf und schreiben Sie sie in die linke Spalte Ihrer Lernplan-Tabelle."
+        "label": "Eigenen Kompetenznachweis festhalten",
+        "hint": "Tragen Sie den Massstab aus LF1 als Kopfzeile über die Tabelle: Thema, Termin und Form Ihres nächsten Kompetenznachweises — und was Sie dort ohne Hilfsmittel können müssen."
       },
       {
-        "label": "Ziele setzen",
-        "hint": "Formulieren Sie pro Schritt ein konkretes, überprüfbares Ziel («Ich kann … frei aufzählen / selbst erklären»)."
+        "label": "Lernschritte und Ziele eintragen",
+        "hint": "Übernehmen Sie aus LF2 die vier bis sechs Lernschritte in die linke Spalte und daneben je ein überprüfbares Ziel."
       },
       {
         "label": "KI-Einsatz entscheiden",
-        "hint": "Markieren Sie pro Schritt «mit KI» oder «bewusst ohne KI» und schreiben Sie einen kurzen Grund (Mindmap-Äste 2 und 3)."
+        "hint": "Übernehmen Sie aus LF3 pro Schritt die Entscheidung «mit KI» oder «bewusst ohne KI» und den kurzen Grund dazu."
       },
       {
         "label": "Übe-Prompts formulieren",
-        "hint": "Schreiben Sie drei Prompts, mit denen die KI Sie abfragt oder Ihnen Feedback gibt, statt Ihnen Inhalte fertig zu liefern."
+        "hint": "Setzen Sie die drei Prompts aus LF4 unter die Tabelle, einsatzfertig für den Chat. Haben Sie Herausforderung A bearbeitet, nehmen Sie Ihre dortigen Prompts als Ausgangspunkt."
       },
       {
-        "label": "Verantwortungs-Check",
-        "hint": "Prüfen Sie am Schluss kurz: Lasse ich die KI irgendwo etwas erledigen, das ich im KN selbst können muss? Halten Sie einen Satz dazu fest."
+        "label": "Gegen die Kriterien gegenlesen",
+        "hint": "Lesen Sie Ihren Plan gegen die Kriterien unter «vollständig, wenn» gegen: Hat jeder Schritt ein überprüfbares Ziel und einen Grund? Lassen Sie irgendwo die KI etwas erledigen, das Sie am Prüfungstag selbst können müssen? Überarbeiten Sie diese eine Stelle."
       }
     ],
     "schreib_label": "KI-LERNPLAN HIER ERARBEITEN",
@@ -214,7 +312,7 @@
         "«Mein Ziel für diesen Schritt ist, dass ich … selbst kann»",
         "«Hier hilft mir die KI, indem sie …»",
         "«Diesen Schritt übe ich bewusst ohne KI, weil …»",
-        "«Frag mich ab zu … und gib mir Feedback, ob … (Übe-Prompt)»"
+        "«Frag mich ab zu … und melde mir zurück, ob … (Übe-Prompt)»"
       ],
       "strategien": [
         "Erst Ziele setzen, dann entscheiden, welcher Weg dorthin führt",
@@ -222,28 +320,45 @@
         "Ehrlich prüfen, was Sie im KN ohne Hilfe können müssen"
       ],
       "struktur": [
-        "Tabelle: Lernschritt – Ziel – mit/ohne KI – Begründung",
-        "Darunter: drei einsatzfertige Übe-Prompts",
-        "Abschluss: kurzer Verantwortungs-Check"
+        "Kopfzeile: mein Kompetenznachweis und was ich dort ohne Hilfsmittel können muss (LF1)",
+        "Tabelle: Lernschritt – Ziel (LF2) – mit/ohne KI – Grund (LF3)",
+        "Darunter: drei einsatzfertige Übe-Prompts (LF4)"
       ]
     },
     "musterloesung": {
-      "hinweis": "Erst zeigen, wenn ein eigener Plan steht. Beispiel auf Stufe 3–4: pro Schritt eine begründete Entscheidung, nicht pauschal «KI ist gut/schlecht». Thema hier: Hygiene und Lebensmittelsicherheit.",
+      "hinweis": "Erst zeigen, wenn ein eigener Plan steht. Beispiel auf Stufe 3–4: pro Schritt eine begründete Entscheidung, nicht pauschal «KI ist gut/schlecht». Als KN-Thema steht hier «Die Lohnabrechnung» — im eigenen Plan setzen die Lernenden ihr eigenes Thema ein.",
       "abschnitte": [
+        {
+          "titel": "Massstab — mein Kompetenznachweis",
+          "zeilen": [
+            {
+              "label": "Thema und Termin",
+              "text": "Die Lohnabrechnung: vom Bruttolohn zum Nettolohn. In drei Wochen, mündlich vor der Klasse."
+            },
+            {
+              "label": "Ohne Hilfsmittel können",
+              "text": "Die Abzüge frei aufzählen und je in einem Satz erklären, an einer Abrechnung Zeile für Zeile zeigen, was passiert, und beurteilen, ob eine Abrechnung stimmig ist."
+            },
+            {
+              "label": "Lernzeit",
+              "text": "Rund zwei Stunden pro Woche, also sechs Stunden — der Plan muss in diese Zeit passen, sonst plane ich an mir vorbei."
+            }
+          ]
+        },
         {
           "titel": "Lernplan — Schritte 1 bis 3",
           "zeilen": [
             {
               "label": "Schritt 1",
-              "text": "Grundbegriffe HACCP · Ziel: die sieben Grundsätze in eigenen Worten nennen · MIT KI — sie erzeugt mir Lernkarten und fragt mich ab, das geht schneller als selbst Karten schreiben."
+              "text": "Brutto, Netto und die einzelnen Abzüge · Ziel: die Abzüge frei aufzählen · MIT KI — sie erzeugt mir Lernkarten und fragt mich ab, das geht schneller als selbst Karten schreiben."
             },
             {
               "label": "Schritt 2",
-              "text": "Kühlketten und Temperaturgrenzen · Ziel: Grenzwerte auswendig können · MIT KI — abfragen lassen, bis ich sie ohne Nachschauen nenne."
+              "text": "Wozu die einzelnen Abzüge dienen · Ziel: zu jedem Abzug in einem Satz sagen, wogegen er mich absichert · MIT KI — abfragen lassen, bis ich es ohne Nachschauen kann."
             },
             {
               "label": "Schritt 3",
-              "text": "Hygieneregeln am eigenen Arbeitsplatz erklären · Ziel: frei erklären können, was ich in der Backstube konkret tue · BEWUSST OHNE KI — genau das muss ich im Kompetenznachweis allein können, und mein Betrieb ist nicht der aus dem Lehrbuch."
+              "text": "Eine echte Abrechnung Zeile für Zeile erklären · Ziel: an meiner eigenen Abrechnung frei erklären, was jede Zeile bedeutet · BEWUSST OHNE KI — genau das muss ich im Kompetenznachweis allein können, und meine Abrechnung sieht anders aus als das Musterbeispiel."
             }
           ]
         },
@@ -252,7 +367,7 @@
           "zeilen": [
             {
               "label": "Schritt 4",
-              "text": "Einen Hygienefehler beurteilen und begründen · Ziel: eine Position vertreten · BEWUSST OHNE KI erarbeiten, danach MIT KI gegenlesen lassen — erst meine Begründung, dann die Rückmeldung."
+              "text": "Beurteilen, ob eine Abrechnung stimmig ist, und das begründen · Ziel: eine Position vertreten · BEWUSST OHNE KI erarbeiten, danach MIT KI gegenlesen lassen — erst meine Begründung, dann die Rückmeldung."
             },
             {
               "label": "Schritt 5",
@@ -265,20 +380,20 @@
           "zeilen": [
             {
               "label": "Prompt 1",
-              "text": "Frag mich ab zu den sieben HACCP-Grundsätzen. Stell mir eine Frage nach der anderen und sag mir nach jeder Antwort, was noch fehlt."
+              "text": "Frag mich ab zu den Abzügen auf der Lohnabrechnung. Stell mir eine Frage nach der anderen und sag mir nach jeder Antwort, was noch fehlt."
             },
             {
               "label": "Prompt 2",
-              "text": "Ich erkläre dir jetzt die Kühlkette in eigenen Worten. Hör zu und sag mir danach, welche Fachbegriffe ich falsch oder gar nicht verwendet habe."
+              "text": "Ich erkläre dir jetzt in eigenen Worten, wie aus dem Bruttolohn der Nettolohn wird. Hör zu und sag mir danach, welche Fachbegriffe ich falsch oder gar nicht verwendet habe."
             },
             {
               "label": "Prompt 3",
-              "text": "Gib mir drei realistische Prüfungsfragen zu Hygiene in einer Bäckerei — aber keine Antworten. Die will ich selbst formulieren."
+              "text": "Gib mir drei realistische Prüfungsfragen zur Lohnabrechnung — aber keine Antworten. Die will ich selbst formulieren."
             }
           ]
         },
         {
-          "titel": "Verantwortungs-Check",
+          "titel": "Gegenlesen — der ehrliche Check",
           "zeilen": [
             {
               "text": "Was ich selbst können muss, übe ich selbst: erklären, beurteilen, frei sprechen. Was mich beim Üben unterstützt, darf die KI machen: abfragen, Karten erzeugen, Rückmeldung geben."
@@ -334,9 +449,10 @@
       "produkt": "Handlungsprodukt",
       "kriterium": "Rubrik 4 Stufen (SuK + Ges)",
       "vollstaendig_wenn": [
-        "Lernplan-Tabelle mit Schritten, Zielen und KI-Entscheidung ausgefüllt",
-        "Jede KI-Entscheidung begründet",
-        "Drei einsatzfertige Übe-Prompts und Verantwortungs-Check vorhanden"
+        "Massstab aus dem eigenen Kompetenznachweis als Kopfzeile festgehalten",
+        "Lernplan-Tabelle mit vier bis sechs Schritten und je einem überprüfbaren Ziel",
+        "Pro Schritt die Entscheidung mit KI / bewusst ohne KI begründet",
+        "Drei einsatzfertige Übe-Prompts vorhanden"
       ]
     },
     {
@@ -352,12 +468,12 @@
   "wochen_plan": [
     {
       "label": "Woche 1 - 45 min",
-      "text": "Herausforderung lesen, LF1-LF2, Mindmap, Lernschritte festlegen",
+      "text": "Herausforderung lesen, LF1-LF2, Mindmap, eigenen Kompetenznachweis und Lernschritte festhalten",
       "aktiv": true
     },
     {
       "label": "Woche 2 - 45 min",
-      "text": "LF3-LF4, KI-Lernplan erstellen, Übe-Prompts formulieren",
+      "text": "LF3-LF4, KI-Einsatz entscheiden, Übe-Prompts formulieren und den Plan gegenlesen",
       "aktiv": false
     },
     {
@@ -392,7 +508,7 @@
   "quellen_anker": [
     {
       "ref": "ohne Lehrmittel",
-      "titel": "Eigener Kompetenznachweis, KI-Tools und die Erfahrungen aus Herausforderung A und B als Grundlage — kein Lehrmittelkapitel",
+      "titel": "Der eigene kommende Kompetenznachweis und die KI-Werkzeuge als Material — kein Lehrmittelkapitel",
       "seiten": "—",
       "fuer_leitfrage": [
         1,
@@ -416,7 +532,7 @@
       },
       {
         "kriterium": "Übe-Prompts",
-        "indikator": "Formuliert Prompts, die abfragen oder Feedback geben, statt Inhalte abzunehmen.",
+        "indikator": "Formuliert Prompts, die abfragen oder Rückmeldung geben, statt Inhalte abzunehmen.",
         "gewicht_prozent": 25
       },
       {
@@ -430,14 +546,14 @@
   },
   "prinzip_handoff": {
     "kernkonzept": "Persönlicher KI-Lernplan: bewusst entscheiden, wo KI hilft und wo eigene Selbstwirksamkeit aufgebaut wird.",
-    "lehrmittel_anker": "Ohne Lehrmittel — Grundlage sind der eigene KN, die KI-Tools und die Erfahrungen aus Herausforderung A und B.",
+    "lehrmittel_anker": "Ohne Lehrmittel — Material sind der eigene kommende Kompetenznachweis und die KI-Werkzeuge selbst.",
     "kn_aktivierung": "Im KN erscheint diese Herausforderung als das Element Lernsteuerung — kann die Lernende begründen, wo sie der KI Arbeit überlässt und wo sie selbst können muss?",
     "transfer_check": "Vor jeder Vorbereitung entscheiden: Was darf die KI übernehmen, und was muss ich selbst können, wenn ich allein dasitze?"
   },
   "sk_anker": [
     {
       "sk": 2,
-      "wo": "In LF3 setzt die Lernende sich pro Lernschritt ein konkretes Ziel und passt ihren Plan an, wenn ein Weg nicht zur Selbstwirksamkeit führt."
+      "wo": "In LF2 und LF3 setzt die Lernende sich pro Lernschritt ein konkretes Ziel und passt ihren Plan an, wenn ein Weg nicht zur Selbstwirksamkeit führt."
     },
     {
       "sk": 5,
@@ -447,5 +563,6 @@
       "sk": 11,
       "wo": "In LF3 und im Lernplan hält die Lernende den Zielkonflikt zwischen Abkürzung und eigenem Können aus, statt pauschal alles oder nichts der KI zu überlassen."
     }
-  ]
+  ],
+  "auftakt_typ": "pfad"
 }

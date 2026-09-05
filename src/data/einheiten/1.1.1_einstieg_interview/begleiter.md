@@ -40,7 +40,7 @@ Diese Einheit ist ein **Variantenset**, kein progressives 3er-Set. Der Unterschi
 
 ## 1. Kompetenzversprechen und Verortung
 
-> «Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.»
+> «<!--hko:kn.kern_kompetenzversprechen-->Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.<!--/hko-->»
 
 **nRLP-Verortung.** Kompetenz 1.1.1, Lebensbezug 1.1, Thema T1.
 
@@ -116,7 +116,7 @@ Tandems — je eine Person pro Methode.
 
 ## 5. Kompetenznachweis
 
-**Hybrid-Herausforderung:** «Die neue Kollegin in der Frühschicht» — neue Persona (Logistiker/in EFZ, Effretikon), drei Tage Frist, ein bereits gescheiterter Katalog-Versuch, eine Person, die schriftlich in ganzen Sätzen antwortet, aber zwei Tage braucht.
+**Hybrid-Herausforderung:** «Die neue Kollegin in der Frühschicht» — dieselbe neutrale Persona wie in A und B, aber ein neuer Fall: der Lehrbetrieb statt des Schulzimmers, drei Tage Frist, zwei Pausen von zehn Minuten, ein bereits gescheiterter Katalog-Versuch und eine Person, die schriftlich in ganzen Sätzen antwortet, aber zwei Tage braucht. Den Transfer leistet hier die Lage, nicht ein fremder Beruf.
 
 > [!hinweis] Der Chat ist kein dritter Weg
 > Dass die neue Kollegin auf die Chat-Nachricht ausführlich antwortet, ist in dieser Einheit **kein wählbarer Weg**, sondern ein **Befund über die Person**: Sie braucht Zeit und Distanz, um überhaupt etwas zu sagen. Wer das liest, entscheidet zwischen A und B anders als wer es überliest. Bewerten Sie also die Deutung des Details, nicht eine schriftlich-digitale Methode, die hier nicht unterrichtet wurde.
@@ -152,4 +152,4 @@ Die Kurzprofile werden **eingesammelt und aufbewahrt**. Sie sind das Rohmaterial
 
 - **Modulbelegung.** Kompetenz 1.1.1 trägt im EFZ-3J bereits zwei Einheiten («Im Konflikt kommunizieren», «Rechte verstehen und nutzen»). Diese ist die dritte. Sie ist deutlich kürzer und als **Einstiegsaktivität für eine Klasse, die sich noch nicht kennt** gedacht, nicht als Konkurrenz — der Ankerpunkt ist der Sprachmodus-Detailtext von 1.1.1: «Aktiv zuhören und nach Rollen-Konventionen an Gesprächen teilnehmen».
 - **Datenschutz.** Die Kurzprofile enthalten Aussagen über reale Mitlernende. Vereinbaren Sie zu Beginn: Was ins Profil kommt, entscheidet die befragte Person mit; die drei Zitate werden ihr vorgelesen und rückbestätigt. Profile werden nicht ohne Einverständnis ausgehängt.
-- **Zeitpunkt im Schuljahr.** Die Situationstexte nennen weder Lehrjahr noch Schulwoche und die Persona ist neutral gehalten («Lernende/r EFZ»). Die Einheit lässt sich deshalb in jeder Klasse einsetzen, die sich noch nicht kennt — auch mitten im Jahr, nach einer Klassenzusammenlegung oder bei Neuzugängen.
+- **Zeitpunkt im Schuljahr.** Die Situationstexte nennen keine Schulwoche, und die Persona ist in allen drei Dokumenten dieselbe neutrale (Lernende/r EFZ, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort). Die Einheit lässt sich deshalb in jeder Klasse einsetzen, die sich noch nicht kennt — auch mitten im Jahr, nach einer Klassenzusammenlegung oder bei Neuzugängen.

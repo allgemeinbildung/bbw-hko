@@ -19,12 +19,12 @@
   "hybrid_situation": {
     "titel": "Critical Incident — die neue Kollegin in der Frühschicht",
     "persona": {
-      "beruf": "Logistiker/in EFZ",
-      "betrieb": "Verteilzentrum Rhyner Effretikon",
-      "ort": "Effretikon"
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
     },
     "emotion_tag": "Zeitdruck",
-    "text": "Ich bin Logistiker-Lernende/r im Verteilzentrum Rhyner in Effretikon. Für die Lernendenseite im Intranet soll ich bis Freitag eine neue Mitlernende vorstellen. Sie hat vorletzte Woche angefangen, arbeitet Frühschicht und ist weg, wenn ich komme — gesehen habe ich sie zweimal, je zehn Minuten in der Pause. Beim ersten Mal habe ich meine Fragen von einem Zettel abgelesen; sie hat mit einem Wort geantwortet und auf den Boden geschaut. Auf meine Chat-Nachricht hat sie erst nach zwei Tagen geantwortet, dafür in ganzen Sätzen. Mein Berufsbildner will drei Zitate und «etwas Persönliches». Freitag ist in drei Tagen.",
+    "text": "Ich bin im 1. Lehrjahr. In meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — hat vorletzte Woche eine neue Mitlernende angefangen. Für die Lernendenseite im Intranet soll ich sie bis Freitag vorstellen. Sie arbeitet Frühschicht und ist weg, wenn ich komme; gesehen habe ich sie zweimal, je zehn Minuten in der Pause. Beim ersten Mal habe ich meine Fragen ab Zettel abgelesen — sie hat mit einem Wort geantwortet und auf den Boden geschaut. Auf meine Chat-Nachricht hat sie erst nach zwei Tagen geantwortet, dafür in ganzen Sätzen. Mein Berufsbildner will drei Zitate und «etwas Persönliches». Freitag ist in drei Tagen.",
     "leitfrage": "Wie gehe ich jetzt vor — und warum ausgerechnet so?",
     "aktivierte_trade_offs": [
       "Vergleichbarkeit der Antworten vs. Raum für Überraschendes",
@@ -42,8 +42,10 @@
         }
       ],
       "new_dimensions": [
+        "Der Fall ist neu, nicht die Person: In A und B sitzt das Gegenüber 15 Minuten am selben Tisch im Schulzimmer, hier ist es im Betrieb strukturell abwesend — zwei Pausen von zehn Minuten, verteilt auf drei Tage, dazwischen nur ein schriftlicher Kanal.",
         "Das Gegenüber hat eine erkennbare Präferenz, die der eigenen Bequemlichkeit widerspricht — die Methodenwahl ist hier auch eine Frage der Rücksichtnahme, nicht nur der Effizienz.",
-        "Dass sie auf die Chat-Nachricht in ganzen Sätzen antwortet, ist kein dritter Weg, sondern ein Befund über die Person: Sie braucht Zeit und Distanz, um überhaupt etwas zu sagen. Wer das liest, entscheidet zwischen A und B anders als wer es überliest."
+        "Dass sie auf die Chat-Nachricht in ganzen Sätzen antwortet, ist kein dritter Weg, sondern ein Befund über die Person: Sie braucht Zeit und Distanz, um überhaupt etwas zu sagen. Wer das liest, entscheidet zwischen A und B anders als wer es überliest.",
+        "Der Auftrag kommt von einer dritten Person und das Ergebnis wird veröffentlicht: In A und B hängt das Profil in der eigenen Klasse, hier steht es auf der Lernendenseite im Intranet und der Berufsbildner gibt die Bedingungen vor."
       ]
     }
   },
@@ -88,7 +90,10 @@
           "k_stufe": 4
         }
       ],
-      "sk": [4, 6],
+      "sk": [
+        4,
+        6
+      ],
       "aspekte": [
         "Identität und Sozialisation"
       ],
@@ -133,7 +138,10 @@
           "k_stufe": 4
         }
       ],
-      "sk": [4, 6],
+      "sk": [
+        4,
+        6
+      ],
       "aspekte": [
         "Identität und Sozialisation"
       ],
@@ -157,7 +165,10 @@
         "Übertragen Sie auf die Hybrid-Herausforderung: Welche Methode wählen Sie dort, und welchen Verlust nehmen Sie in Kauf?"
       ],
       "optional_praesentation": "Kurzpräsentation 5 Min. mit dem Kurzprofil als Anschauungsmaterial; LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
-      "sk": [4, 6],
+      "sk": [
+        4,
+        6
+      ],
       "aspekte": [
         "Identität und Sozialisation"
       ],
@@ -169,7 +180,10 @@
     }
   ],
   "rubrik_shared": {
-    "dimensionen": ["SuK", "Ges"],
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
     "kriterien": [
       {
         "name": "Fachkorrektheit",
@@ -213,9 +227,18 @@
       }
     ],
     "niveaubaender": [
-      { "label": "unter 60 %", "definition": "0–1 Punkte dominant" },
-      { "label": "80 %", "definition": "mehrheitlich 2 Punkte" },
-      { "label": "100 %", "definition": "3 Punkte in mind. 3 Kriterien" }
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 Kriterien"
+      }
     ]
   },
   "template": "kn_3er_default",

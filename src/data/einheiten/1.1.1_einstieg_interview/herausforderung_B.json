@@ -14,37 +14,63 @@
   ],
   "nrlp": {
     "nr": "1.1.1",
-    "nr_primary": ["1.1.1"],
+    "nr_primary": [
+      "1.1.1"
+    ],
     "lebensbezug": "1.1",
-    "themen": ["T1"],
+    "themen": [
+      "T1"
+    ],
     "gesellschaft": [
-      { "aspekt": "Identität und Sozialisation", "iteration": "R1" }
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
     ],
     "sprachmodi": [
       "Rezeption schriftlich und bildlich",
       "Interaktion und Kollaboration mündlich"
     ],
-    "sk": [4, 6, 8],
-    "sprachmodus_ids": ["SM3", "SM7"],
+    "sk": [
+      4,
+      6,
+      8
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM7"
+    ],
     "kompetenz_id": "1.1.1",
     "lebensbezug_id": "1.1",
     "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Lernende/r EFZ",
-    "betrieb": "Berufsfachschule",
-    "ort": "Schweiz"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
   "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung. Heute soll ich eine Person aus meiner ABU-Klasse kennenlernen und sie nachher vorstellen — aber die Lehrperson hat einen Fragenkatalog ausdrücklich verboten. Ich darf genau einen Satz sagen, um das Gespräch zu eröffnen, und danach nur noch Rückfragen stellen, die sich aus dem ergeben, was mein Gegenüber erzählt. Ich habe 15 Minuten. Mir ist unwohl dabei: Ohne Fragen in der Hand weiss ich nicht, wo das Gespräch hingeht, und ich habe Angst, dass es nach zwei Minuten stockt und ich nicht weiss, wie ich weitermache.",
   "zahlen_tabelle": [
-    { "label": "Gesprächszeit", "wert": "15 Min." },
-    { "label": "Vorbereitete Fragen", "wert": "0" },
-    { "label": "Erzählimpuls", "wert": "1 Satz" },
-    { "label": "Kurzprofil", "wert": "1 A4, Stichworte" }
+    {
+      "label": "Gesprächszeit",
+      "wert": "15 Min."
+    },
+    {
+      "label": "Vorbereitete Fragen",
+      "wert": "0"
+    },
+    {
+      "label": "Erzählimpuls",
+      "wert": "1 Satz"
+    },
+    {
+      "label": "Kurzprofil",
+      "wert": "1 A4, Stichworte"
+    }
   ],
   "leitfrage": "Wie halte ich ein Gespräch am Laufen, ohne es zu steuern — und was höre ich, wenn ich nicht frage?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Grundlage sind Kap. 16.4 (Durchführung eines Interviews), Kap. 19.2 (Kommunikationsquadrat, Vier Ohren) und Kap. 17.2 (Notiztechniken).",
+  "leitfragen_intro": "Die vier Leitfragen bereiten ein Gespräch vor, das Sie nicht steuern. LF1 klärt, worauf Sie hören — daraus wird in Schritt 1 die Beobachtungsspalte Ihres Notizblatts. LF2 liefert den einen Satz, mit dem Sie eröffnen. LF3 entscheidet, was Sie tun, wenn es stockt. LF4 schreiben Sie erst nach dem Gespräch — sie wird zur Methoden-Notiz unter Ihrem Kurzprofil. Grundlage sind Kap. 19.2, Kap. 16.4 und Kap. 17.2.",
   "leitfragen": [
     {
       "nr": 1,
@@ -55,44 +81,126 @@
       "loesung": {
         "kern": "Vier Botschaften und das Selbstkundgabeohr",
         "zeilen": [
-          { "label": "Sachinhalt", "text": "Worüber ich informiere — die nüchterne Tatsachenebene einer Aussage.", "quelle": "Kap. 19.2" },
-          { "label": "Selbstkundgabe", "text": "Was ich von mir preisgebe, ob ich will oder nicht — daraus hört die andere Person etwas über mich heraus.", "quelle": "Kap. 19.2" },
-          { "label": "Beziehung", "text": "Was ich von der anderen Person halte und wie ich zu ihr stehe." },
-          { "label": "Appell", "text": "Was ich beim Gegenüber erreichen möchte." },
-          { "label": "Warum wichtig", "text": "Wer mit dem Selbstkundgabeohr hört, will etwas über die Person erfahren, nicht nur über den Fakt — genau das liefert ein Interview.", "quelle": "Kap. 19.2 S. 428" }
+          {
+            "label": "Sachinhalt",
+            "text": "Worüber ich informiere — die nüchterne Tatsachenebene einer Aussage.",
+            "quelle": "Kap. 19.2"
+          },
+          {
+            "label": "Selbstkundgabe",
+            "text": "Was ich von mir preisgebe, ob ich will oder nicht — daraus hört die andere Person etwas über mich heraus.",
+            "quelle": "Kap. 19.2"
+          },
+          {
+            "label": "Beziehung",
+            "text": "Was ich von der anderen Person halte und wie ich zu ihr stehe."
+          },
+          {
+            "label": "Appell",
+            "text": "Was ich beim Gegenüber erreichen möchte."
+          },
+          {
+            "label": "Warum wichtig",
+            "text": "Wer mit dem Selbstkundgabeohr hört, will etwas über die Person erfahren, nicht nur über den Fakt — genau das liefert ein Interview.",
+            "quelle": "Kap. 19.2 S. 428"
+          }
         ]
+      },
+      "liefert": "die Beobachtungsspalte des Notizblatts",
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 19.2 S. 427-429 und notieren Sie pro Botschaft ein Stichwort.",
+          "Prüfen Sie an einem Satz: Was ist Fakt, was gibt die Person von sich preis?"
+        ],
+        "satzanfaenge": [
+          "Mit dem Selbstkundgabeohr höre ich …",
+          "Für ein Interview ist das wichtig, weil …"
+        ],
+        "produkt": "Diese Hörrichtung wird in Schritt 1 die Beobachtungsspalte des Blattes."
       }
     },
     {
       "nr": 2,
       "bloom": "Anwenden",
-      "knoten_ref": "Kap. 16.4 | S. 372-373",
-      "text": "Formulieren Sie drei mögliche Erzählimpulse als ersten und einzigen vorbereiteten Satz — je einer zum Berufseinstieg, zu einem konkreten Tag und zu einer Person, die für Ihr Gegenüber wichtig war. Entscheiden Sie sich für einen und begründen Sie die Wahl. Notieren Sie ausserdem vier Klärungsfragen (Kap. 16.4), die in jedem Gespräch funktionieren.",
+      "knoten_ref": "Kap. 16.4 | S. 372",
+      "text": "Formulieren Sie drei mögliche Erzählimpulse als ersten und einzigen vorbereiteten Satz — je einer zum Berufseinstieg, zu einem konkreten Tag und zu einer Person, die für Ihr Gegenüber wichtig war. Entscheiden Sie sich danach für einen und begründen Sie die Wahl.",
       "feld_hoehe_mm": 20,
       "loesung": {
-        "kern": "Ein Impuls für eine Situation, vier Klärungsfragen",
+        "kern": "Ein Impuls für eine Situation, nicht für ein Thema",
         "zeilen": [
-          { "label": "Erzählimpuls", "text": "Ein offener Satz zu einer konkreten Situation, nicht zu einem Thema — «Erzähl mir von deinem ersten Tag im Betrieb.»", "quelle": "Kap. 16.4" },
-          { "label": "Auswahlkriterium", "text": "Der gewählte Impuls zielt auf eine Situation, die das Gegenüber vermutlich gerne erzählt, nicht auf eine Bewertung." },
-          { "label": "Klärungsfragen", "text": "Vier Fragen, die in jedem Gespräch funktionieren: «Was meinst du genau damit?», «Wie kam es dazu?», «Was war da los?», «Und dann?»", "quelle": "Kap. 16.4 S. 373" },
-          { "label": "Häufiger Fehler", "text": "Der Impuls fragt nach einem Thema statt nach einer Situation und lässt sich mit einem Wort beantworten." }
+          {
+            "label": "Erzählimpuls",
+            "text": "Ein offener Satz zu einer konkreten Situation, nicht zu einem Thema — «Erzähl mir von deinem ersten Tag im Betrieb.»",
+            "quelle": "Kap. 16.4"
+          },
+          {
+            "label": "Drei Varianten",
+            "text": "Berufseinstieg («Wie kam es dazu, dass du …»), ein konkreter Tag («Erzähl mir von deinem ersten Tag …»), eine wichtige Person («Erzähl mir von jemandem, der dir geholfen hat …»)."
+          },
+          {
+            "label": "Auswahlkriterium",
+            "text": "Der gewählte Impuls zielt auf eine Situation, die das Gegenüber vermutlich gerne erzählt, nicht auf eine Bewertung."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Der Impuls fragt nach einem Thema statt nach einer Situation und lässt sich mit einem Wort beantworten.",
+            "quelle": "Kap. 16.4"
+          }
         ]
+      },
+      "liefert": "der eine Erzählimpuls zum Einstieg",
+      "scaffolding": {
+        "strategien": [
+          "Zielen Sie auf eine Situation, nicht auf ein Thema — Situationen erzählt man.",
+          "Prüfen Sie jeden Impuls: Liesse er sich mit einem einzigen Wort beantworten?"
+        ],
+        "satzanfaenge": [
+          "Erzähl mir von …",
+          "Ich wähle diesen Impuls, weil …"
+        ],
+        "produkt": "Dieser eine Satz eröffnet das Gespräch in Schritt 2 und Schritt 3."
       }
     },
     {
       "nr": 3,
-      "bloom": "Anwenden",
-      "knoten_ref": "Kap. 17.2 | S. 381-382",
-      "text": "Wer erzählen lässt, kann nicht alles mitschreiben. Legen Sie nach Kap. 17.2 ein Notizblatt an, das schnelles Mitschreiben erlaubt: Schlüsselwörter statt Sätze, ein freies Feld für wörtliche Aussagen, ein Rand für eigene Beobachtungen (Tonfall, Pausen, Lachen).",
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 16.4 | S. 373",
+      "text": "Ihr Gegenüber verstummt nach zwei Minuten. Entscheiden Sie begründet, was Sie tun: die Pause aushalten, das letzte Wort als Frage zurückgeben oder mit einer Klärungsfrage nachhaken. Notieren Sie dazu vier Klärungsfragen, die in jedem Gespräch funktionieren.",
       "feld_hoehe_mm": 15,
       "loesung": {
-        "kern": "Schlüsselwörter, Zitat-Feld, Beobachtungs-Rand",
+        "kern": "Klärungsfragen und der Umgang mit Stille",
         "zeilen": [
-          { "label": "Schlüsselwörter", "text": "Keine ganzen Sätze — nur Substantive, Verben und Adjektive, das erleichtert das Mitschreiben und die Erinnerung.", "quelle": "Kap. 17.2" },
-          { "label": "Zitat-Feld", "text": "Ein eigenes, freies Feld für wörtliche Aussagen — dort wird nichts zusammengefasst, sondern original notiert." },
-          { "label": "Beobachtungs-Rand", "text": "Ein Rand für Tonfall, Pausen, Lachen — Beobachtungen, die neben dem Gesagten stehen." },
-          { "label": "Häufiger Fehler", "text": "Ganze Sätze mitschreiben — wer formuliert, verpasst den nächsten Satz des Gegenübers.", "quelle": "Kap. 17.2 S. 382" }
+          {
+            "label": "Klärungsfragen",
+            "text": "Vier Fragen, die in jedem Gespräch funktionieren: «Was meinst du genau damit?», «Wie kam es dazu?», «Was war da los?», «Und dann?»",
+            "quelle": "Kap. 16.4 S. 373"
+          },
+          {
+            "label": "Erwartet",
+            "text": "Zuerst die Pause aushalten — meist folgt von selbst eine Fortsetzung; erst danach mit einer Klärungsfrage nachhaken.",
+            "quelle": "Kap. 16.4"
+          },
+          {
+            "label": "Ebenfalls tragfähig",
+            "text": "Das letzte Wort des Gegenübers als Frage zurückgeben: hält den Faden, ohne ein neues Thema zu setzen."
+          },
+          {
+            "label": "Nicht tragfähig",
+            "text": "Einen zweiten Impuls setzen — damit übernimmt die fragende Person die Steuerung wieder, die sie hier abgeben soll."
+          }
         ]
+      },
+      "liefert": "die vier Klärungsfragen für unterwegs",
+      "scaffolding": {
+        "strategien": [
+          "Zählen Sie innerlich bis drei, bevor Sie überhaupt eine Frage stellen.",
+          "Schreiben Sie die vier Fragen auf den Blattrand — dort sehen Sie sie im Gespräch."
+        ],
+        "satzanfaenge": [
+          "Was meinst du genau damit?",
+          "Bei Stille warte ich zuerst, weil …"
+        ],
+        "produkt": "Diese vier Fragen halten das Gespräch in Schritt 3 am Laufen."
       }
     },
     {
@@ -104,11 +212,38 @@
       "loesung": {
         "kern": "Ein Zitat auf zwei Ohren hören",
         "zeilen": [
-          { "label": "Sachohr", "text": "Was buchstäblich gesagt wurde — die nüchterne Tatsache in der Aussage.", "quelle": "Kap. 19.2 S. 428" },
-          { "label": "Selbstkundgabeohr", "text": "Was die Aussage über die Person preisgibt, ohne dass sie danach gefragt wurde.", "quelle": "Kap. 19.2 S. 428" },
-          { "label": "Ungefragt erfahren", "text": "Meist entsteht das aus einer langen Antwort oder einer Pause, nicht aus einer geplanten Frage." },
-          { "label": "Massstab", "text": "Stark ist eine Auswertung, die ein konkretes Zitat auf beiden Ohren unterscheidet — schwach ist eine, die nur zusammenfasst, was gesagt wurde.", "quelle": "Kap. 19.2 S. 429" }
+          {
+            "label": "Sachohr",
+            "text": "Was buchstäblich gesagt wurde — die nüchterne Tatsache in der Aussage.",
+            "quelle": "Kap. 19.2 S. 428"
+          },
+          {
+            "label": "Selbstkundgabeohr",
+            "text": "Was die Aussage über die Person preisgibt, ohne dass sie danach gefragt wurde.",
+            "quelle": "Kap. 19.2 S. 428"
+          },
+          {
+            "label": "Ungefragt erfahren",
+            "text": "Meist entsteht das aus einer langen Antwort oder einer Pause, nicht aus einer geplanten Frage."
+          },
+          {
+            "label": "Massstab",
+            "text": "Stark ist eine Auswertung, die ein konkretes Zitat auf beiden Ohren unterscheidet — schwach ist eine, die nur zusammenfasst, was gesagt wurde.",
+            "quelle": "Kap. 19.2 S. 429"
+          }
         ]
+      },
+      "liefert": "die Methoden-Notiz unter dem Profil",
+      "scaffolding": {
+        "strategien": [
+          "Nehmen Sie ein wörtliches Zitat und hören Sie es auf beiden Ohren durch.",
+          "Benennen Sie die Lücke konkret, nicht als «mir fehlt noch einiges»."
+        ],
+        "satzanfaenge": [
+          "Auf dem Sachohr höre ich …, auf dem Selbstkundgabeohr …",
+          "Ungefragt erfahren habe ich …"
+        ],
+        "produkt": "Aus diesen Sätzen wird in Schritt 4 die Methoden-Notiz am Fuss des Profils."
       }
     }
   ],
@@ -167,24 +302,24 @@
     "beschreibung": "Ich halte das Ergebnis meines Interviews so fest, dass eine andere Person damit arbeiten könnte. Stichworte statt Sätze, plus drei Aussagen im Originalwortlaut. Das Kurzprofil ist keine fertige Textsorte, sondern Rohmaterial: In T2 wird daraus ein ausformuliertes Porträt. Deshalb zählt hier Genauigkeit und Vollständigkeit, nicht schöner Stil.",
     "schritte": [
       {
-        "label": "Erzählimpuls festlegen",
-        "hint": "Ein Satz, offen, auf eine konkrete Situation gerichtet. Auswendig können — Sie werden ihn nicht ablesen wollen."
+        "label": "Das Notizblatt anlegen",
+        "hint": "Legen Sie drei Zonen an (Kap. 17.2): Schlüsselwörter, ein freies Feld für Zitate und die Beobachtungsspalte aus LF1 — Tonfall, Pausen, Lachen."
       },
       {
-        "label": "Notizblatt vorbereiten",
-        "hint": "Nach Kap. 17.2: Schlüsselwörter, freies Feld für Zitate, Rand für Beobachtungen. Rechnen Sie damit, unordentlich zu schreiben."
+        "label": "Den Erzählimpuls festlegen",
+        "hint": "Übernehmen Sie den gewählten Satz aus LF2 und lernen Sie ihn auswendig. Er ist der einzige Satz, den Sie vorbereiten — Sie werden ihn nicht ablesen wollen."
       },
       {
-        "label": "Interview führen (15 Min.)",
-        "hint": "Impuls setzen, dann zuhören. Nur Klärungsfragen. Pausen aushalten — die Fortsetzung kommt meist von selbst."
+        "label": "Das Interview führen (15 Min.)",
+        "hint": "Ihr Gegenüber ist die Person, die Ihnen die Lehrperson zu Beginn der Lektion zuteilt. Impuls setzen, dann zuhören. Stockt es, greifen Sie zu den vier Klärungsfragen aus LF3. Die letzten drei Minuten gehören den Lücken; drei Aussagen im Originalwortlaut festhalten und zurücklesen."
       },
       {
-        "label": "Lücken schliessen",
-        "hint": "Letzte 3 Minuten: Was fehlt für das Profil? Jetzt sind gezielte Fragen erlaubt — Name des Betriebs, Beruf, Ort."
+        "label": "Das Kurzprofil zusammenstellen",
+        "hint": "Übertragen Sie Ihre Notizen in die vier Felder, Stichworte statt Sätze. Darunter kommt die Methoden-Notiz aus LF4."
       },
       {
-        "label": "Profil und Methoden-Notiz",
-        "hint": "Felder füllen. Dann: Was ist zur Sprache gekommen, weil ich nicht gefragt habe — und was fehlt mir, weil ich nicht gefragt habe?"
+        "label": "Alles gegen die Kriterien prüfen",
+        "hint": "Gehen Sie die vollständig-wenn-Kriterien im Bewertungsraster durch: vier gefüllte Felder in Stichworten, drei rückbestätigte Zitate, eine Methoden-Notiz, die Gewinn und Verlust benennt. Überarbeiten Sie die Stelle, die nicht standhält."
       }
     ],
     "schreib_label": "KURZPROFIL HIER ERARBEITEN",
@@ -203,7 +338,9 @@
       ],
       "struktur": [
         "Impuls → erzählen lassen → klären → am Schluss Lücken füllen",
-        "Vier Profil-Felder: Person · Einstieg · Was ausmacht · Zitate"
+        "Vier Profil-Felder: Person · Einstieg · Was ausmacht · Zitate",
+        "Notizblatt: Schlüsselwörter, Zitatfeld, Beobachtungsspalte (aus LF1)",
+        "Am Fuss des Profils: die Methoden-Notiz (aus LF4)"
       ]
     },
     "musterloesung": {
@@ -292,26 +429,25 @@
     }
   },
   "methoden": [
-      {
-        "ref": "lm-16-4-fragearten",
-        "fuer": "für die Klärungsfragen zwischendurch",
-        "tun": "Während des Erzählens ist nur die Klärungsfrage erlaubt. Alle anderen Arten heben Sie sich für die letzten drei Minuten auf, wenn Sie die Lücken füllen."
-      },
-      {
-        "ref": "lm-19-2-vier-ohren",
-        "fuer": "für das Zuhören, während Sie nicht fragen",
-        "tun": "Hören Sie bewusst auf dem Selbstkundgabe-Ohr: Was erfahren Sie über diese Person, ohne danach gefragt zu haben? Genau das gehört ins Feld «Was diese Person ausmacht»."
-      },
-      {
-        "ref": "hko-stille-aushalten",
-        "fuer": "für den Erzählimpuls und die Pausen danach"
-      },
-      {
-        "ref": "hko-woertlich-zitieren",
-        "fuer": "für die drei wörtlichen Zitate"
-      }
-    ],
-
+    {
+      "ref": "lm-16-4-fragearten",
+      "fuer": "für die Klärungsfragen zwischendurch",
+      "tun": "Während des Erzählens ist nur die Klärungsfrage erlaubt. Alle anderen Arten heben Sie sich für die letzten drei Minuten auf, wenn Sie die Lücken füllen."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für das Zuhören, während Sie nicht fragen",
+      "tun": "Hören Sie bewusst auf dem Selbstkundgabe-Ohr: Was erfahren Sie über diese Person, ohne danach gefragt zu haben? Genau das gehört ins Feld «Was diese Person ausmacht»."
+    },
+    {
+      "ref": "hko-stille-aushalten",
+      "fuer": "für den Erzählimpuls und die Pausen danach"
+    },
+    {
+      "ref": "hko-woertlich-zitieren",
+      "fuer": "für die drei wörtlichen Zitate"
+    }
+  ],
   "reflexion_fragen": [
     {
       "nr": "R1",
@@ -338,17 +474,17 @@
       "kriterium": "Inhaltliche Korrektheit",
       "vollstaendig_wenn": [
         "Alle 4 Leitfragen schriftlich beantwortet",
-        "Vier Botschaften des Kommunikationsquadrats korrekt benannt",
-        "Selbstkundgabeohr an einer echten Aussage angewendet"
+        "Vier Botschaften des Kommunikationsquadrats korrekt benannt (LF1)",
+        "Selbstkundgabeohr an einer echten Aussage angewendet (LF4)"
       ]
     },
     {
       "produkt": "Erzählimpuls",
       "kriterium": "Offenheit · Begründung",
       "vollstaendig_wenn": [
-        "Drei Impulse formuliert, einer begründet gewählt",
+        "Drei Impulse formuliert, einer begründet gewählt (LF2)",
         "Gewählter Impuls ist offen und zielt auf eine Situation",
-        "Vier universelle Klärungsfragen notiert"
+        "Vier Klärungsfragen notiert und im Gespräch eingesetzt (LF3)"
       ]
     },
     {
@@ -357,7 +493,7 @@
       "vollstaendig_wenn": [
         "Kurzprofil auf 1 A4, alle vier Felder gefüllt, Stichworte statt Fliesstext",
         "Drei wörtliche Zitate, beim Gegenüber rückbestätigt",
-        "Methoden-Notiz benennt Gewinn UND Verlust der Methode"
+        "Methoden-Notiz benennt Gewinn UND Verlust der Methode (LF4)"
       ]
     },
     {
@@ -373,7 +509,7 @@
   "wochen_plan": [
     {
       "label": "Woche 1 · 3 Lektionen",
-      "text": "L1: Kap. 19.2 (Vier Ohren) und Kap. 16.4 lesen, LF1–LF3, Impuls festlegen · L2: Interview (15 Min.) und Gegeninterview · L3: Kurzprofil, LF4, Methoden-Notiz, Austausch",
+      "text": "L1: Kap. 19.2 (Vier Ohren) und Kap. 16.4 lesen, LF1–LF3, Notizblatt und Erzählimpuls · L2: Paare zuteilen, Interview (15 Min.) und Gegeninterview · L3: Kurzprofil, LF4, Methoden-Notiz, Prüfung gegen die Kriterien, Austausch",
       "aktiv": true
     }
   ],
@@ -405,19 +541,27 @@
       "ref": "Kap. 19.2",
       "titel": "Konflikte — Kommunikationsquadrat, Vier Ohren, Selbstkundgabeohr",
       "seiten": "Seite 426-429",
-      "fuer_leitfrage": [1, 4]
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
     },
     {
       "ref": "Kap. 16.4",
       "titel": "Fachgespräch/Interview — Durchführung, aufmerksam zuhören, nachhaken, Klärungsfragen",
       "seiten": "Seite 372-373",
-      "fuer_leitfrage": [2]
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
     },
     {
       "ref": "Kap. 17.2",
       "titel": "Dokumentieren — Notiztechniken, Stichworte und Schlüsselbegriffe",
       "seiten": "Seite 381-392",
-      "fuer_leitfrage": [3]
+      "fuer_leitfrage": [
+        1
+      ]
     }
   ],
   "lernfortschritt": {
@@ -465,5 +609,6 @@
       "sk": 8,
       "wo": "Der Erzählimpuls zielt auf den Übergang Schule–Lehre als Lebensphase; die Lernende hört, wie ein anderer Mensch diesen Übergang bewältigt hat, und spiegelt das an der eigenen Situation (R2, R3)."
     }
-  ]
+  ],
+  "auftakt_typ": "pfad"
 }

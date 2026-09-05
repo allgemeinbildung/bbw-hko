@@ -36,11 +36,22 @@
     }
   },
   "sk_pro_situation": {
-    "A": [2, 4, 6],
-    "B": [4, 6, 8]
+    "A": [
+      2,
+      4,
+      6
+    ],
+    "B": [
+      4,
+      6,
+      8
+    ]
   },
   "sk_schnittmenge_kn": {
-    "primary": [4, 6]
+    "primary": [
+      4,
+      6
+    ]
   },
   "aspekte": {
     "Identität und Sozialisation": "R1"
@@ -130,37 +141,21 @@
       "Soziale Rolle"
     ]
   },
-  "persona_pool_units": {
-    "berufe": [
-      "Lernende/r EFZ"
-    ],
-    "orte": [
-      "Schweiz"
-    ]
-  },
-  "persona_pool_kn_neu": {
-    "berufe": [
-      "Logistiker/in EFZ",
-      "Kauffrau/-mann EFZ"
-    ],
-    "orte": [
-      "Effretikon",
-      "Andelfingen"
-    ]
-  },
   "hybrid_situation_spec": {
     "max_woerter": 120,
     "perspektive": "ICH",
     "must_activate_trade_offs_min": 2,
-    "must_combine_herausforderungen": ["A", "B"],
-    "persona_source": "persona_pool_kn_neu",
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [
       "Eine Szene mit widersprüchlichen Rahmenbedingungen — nicht zwei Methoden aneinandergereiht.",
       "Die Bedingungen schliessen jede der beiden Methoden teilweise aus, keine ist offensichtlich richtig.",
       "Mindestens zwei Spannungsfelder aus trade_off_raum spannen sich auf.",
-      "Persona ist neu (Beruf und Ort kommen in keiner Herausforderung vor).",
+      "Der Fall ist neu: anderer Ort, andere Beteiligte, andere Bedingungen als in A und B — die Persona bleibt die neutrale (Persona-Regel 2026-09).",
       "Leitfrage verlangt die Methodenwahl UND ihre Begründung, ohne eine Antwort nahezulegen."
     ]
   }

@@ -35,22 +35,25 @@
   },
 
   "persona": {
-    "beruf": "Bäcker-Konditor-Confiseur/in EFZ",
-    "betrieb": "Bäckerei-Konditorei Sennhauser",
-    "ort": "Winterthur"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
 
-  "situation_text": "Ich bin Bäcker-Konditor-Confiseur/in EFZ im 1. Lehrjahr bei der Bäckerei-Konditorei Sennhauser in Winterthur. Seit ein Zyklon über die Anbaugebiete in Madagaskar gezogen ist, kostet uns das Kilo Bourbon-Vanille im Einkauf 1250 Franken statt wie bisher 320 Franken. Mein Berufsbildner/in rechnet vor, dass ein Vanillegipfeli damit 40 Rappen teurer würde, und bestellt stattdessen synthetisches Vanillin für 28 Franken das Kilo. «Der Markt entscheidet», sagt er und legt die Offerte weg. Mich beschäftigt das: Unser Preis ändert sich, weil auf der anderen Seite der Welt Blüten weggeweht wurden — und im billigen Vanillin steckt Erdöl, das in keiner unserer Kalkulationen auftaucht. Für die nächste Teamsitzung soll ich erklären, wie dieser Preis überhaupt zustande kommt.",
+  "situation_text": "Seit Montag hängt an der Theke der Bäckerei, bei der ich mein Znüni hole, ein handgeschriebener Zettel: «Vanillegipfeli neu 2.80 statt 2.40 — Zyklon in Madagaskar». Daneben liegen für 1.60 die Gipfeli mit Aroma. Im Radio hiess es am selben Morgen: Ein Kilo Bourbon-Vanille kostet im Einkauf 1250 Franken statt bisher 320, synthetisches Vanillin dagegen 28 Franken das Kilo — auf ein Gipfeli gerechnet sind das 40 Rappen Unterschied. «Der Markt entscheidet», sagt die Verkäuferin, als ich nachfrage, und wendet sich der nächsten Kundin zu. Mich beschäftigt das: Der Preis meines Znünis ändert sich, weil auf der anderen Seite der Welt Blüten weggeweht wurden — und im billigen Aroma steckt Erdöl, das auf keinem der beiden Zettel auftaucht. Im ABU soll ich erklären, wie dieser Preis überhaupt zustande kommt.",
 
   "zahlen_tabelle": [
     {"label": "Bourbon-Vanille Einkauf, vor dem Zyklon", "wert": "CHF 320 / kg"},
     {"label": "Bourbon-Vanille Einkauf, heute", "wert": "CHF 1250 / kg"},
     {"label": "Synthetisches Vanillin", "wert": "CHF 28 / kg"},
-    {"label": "Mehrkosten pro Vanillegipfeli", "wert": "CHF 0.40"}
+    {"label": "Mehrkosten pro Vanillegipfeli", "wert": "CHF 0.40"},
+    {"label": "Vanillegipfeli an der Theke, neu", "wert": "CHF 2.80"},
+    {"label": "Gipfeli mit Aroma an der Theke", "wert": "CHF 1.60"}
   ],
 
-  "leitfrage": "Wie entsteht der Preis für unsere Vanille — und welche Kosten stehen nicht darin?",
-  "leitfragen_intro": "Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 2.7 und Kap. 11.2 als Grundlage.",
+  "leitfrage": "Wie entsteht der Preis dieser Vanille — und welche Kosten stehen nicht darin?",
+  "leitfragen_intro": "Die vier Leitfragen bauen Ihre Bildstrecke Schritt für Schritt auf: LF1 liefert die Erklärung, warum der Preis gestiegen ist, LF2 die Kostenbestandteile je Produktionsfaktor, LF3 die Kosten, die in keinem der beiden Preise stehen, und LF4 die drei Sätze für Ihr Schlussbild. Bearbeiten Sie die vier Leitfragen schriftlich, bevor Sie aufnehmen. Nutzen Sie das Lehrmittel Kap. 2.7 und Kap. 11.2 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
@@ -58,6 +61,12 @@
       "knoten_ref": "Kap. 2.7 | S. 76-77",
       "text": "Erklären Sie mit Angebots- und Nachfragekurve, warum der Vanillepreis nach dem Ernteausfall steigt. Nutzen Sie das Erdöl-Beispiel auf Seite 77 als Vorlage.",
       "feld_hoehe_mm": 15,
+      "liefert": "die Erklärung des Preisanstiegs",
+      "scaffolding": {
+        "strategien": ["Lesen Sie Kap. 2.7 S. 76-77 und trennen Sie Angebot und Nachfrage sauber.", "Prüfen Sie am Erdöl-Beispiel, welche Kurve sich verschiebt."],
+        "satzanfaenge": ["«Der Preis steigt, weil das Angebot …»", "«Je knapper ein Gut, desto …»"],
+        "produkt": "Diese Erklärung eröffnet den Preisweg in Schritt 1."
+      },
       "loesung": {
         "kern": "Preisanstieg durch sinkendes Angebot",
         "zeilen": [
@@ -74,6 +83,12 @@
       "knoten_ref": "Kap. 2.7 | S. 81-82",
       "text": "Ordnen Sie die Kostenbestandteile eines Vanillegipfeli den Produktionsfaktoren zu und benennen Sie, welcher Faktor durch den Ernteausfall teurer geworden ist.",
       "feld_hoehe_mm": 15,
+      "liefert": "die Kostenbestandteile je Produktionsfaktor",
+      "scaffolding": {
+        "strategien": ["Ordnen Sie jede Station des Preiswegs einem der drei Produktionsfaktoren zu.", "Prüfen Sie zuletzt, welcher Faktor durch den Zyklon wirklich teurer wurde."],
+        "satzanfaenge": ["«Anbau und Ernte zählen zum Faktor …»", "«Teurer geworden ist …, weil …»"],
+        "produkt": "Diese Zuordnung beschriftet die Stationen des Preiswegs in Schritt 2."
+      },
       "loesung": {
         "kern": "Welcher Produktionsfaktor teurer wurde",
         "zeilen": [
@@ -88,15 +103,21 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 11.2 | S. 279",
-      "text": "Ihr Betrieb muss zwischen Bourbon-Vanille zu 1250 Franken und Vanillin zu 28 Franken wählen. Entscheiden Sie begründet, welche Variante Sie empfehlen — und benennen Sie, welche Umweltkosten in beiden Preisen fehlen.",
+      "text": "Die Bäckerei muss zwischen Bourbon-Vanille zu 1250 Franken und Aroma zu 28 Franken wählen. Entscheiden Sie begründet, welche Variante Sie empfehlen — und benennen Sie, welche Umweltkosten in beiden Preisen fehlen.",
       "feld_hoehe_mm": 15,
+      "liefert": "die fehlenden Kosten samt Empfehlung",
+      "scaffolding": {
+        "strategien": ["Prüfen Sie beide Varianten getrennt: Was fehlt bei der Vanille, was beim Vanillin?", "Entscheiden Sie erst, wenn beide Listen stehen."],
+        "satzanfaenge": ["«Nicht bezahlt wird dagegen …»", "«Ich empfehle …, weil …»"],
+        "produkt": "Diese Kosten werden in Schritt 3 als Lücke markiert."
+      },
       "loesung": {
-        "kern": "Vanille oder Vanillin — beide Preise unvollständig",
+        "kern": "Vanille oder Aroma — beide Preise unvollständig",
         "zeilen": [
           { "label": "Erwartet", "text": "Bei der Bourbon-Vanille bleiben — die 40 Rappen sind sichtbar, während die Folgekosten des Vanillins nur verschoben, nicht vermieden werden." },
-          { "label": "Ebenfalls tragfähig", "text": "Das Vanillin wählen, wenn die Konkurrenzfähigkeit des Betriebs begründet höher gewichtet wird als die verschobenen Folgekosten." },
+          { "label": "Ebenfalls tragfähig", "text": "Das Aroma wählen, wenn die Konkurrenzfähigkeit der Bäckerei begründet höher gewichtet wird als die verschobenen Folgekosten." },
           { "label": "Fehlt bei Vanille", "text": "Bodenerosion und -vergiftung sowie Waldvernichtung im Anbauland — Ursache oft im eigenen Konsumverhalten.", "quelle": "Kap. 11.2, S. 279" },
-          { "label": "Fehlt bei Vanillin", "text": "Erdöl als Rohstoff: Förderung und Umweltbelastung stehen in keinem der beiden Preise." }
+          { "label": "Fehlt beim Aroma", "text": "Erdöl als Rohstoff: Förderung und Umweltbelastung stehen in keinem der beiden Preise." }
         ]
       }
     },
@@ -106,11 +127,17 @@
       "knoten_ref": "Kap. 2.7 | S. 76",
       "text": "Formulieren Sie die Sprechspur für das Schlussbild Ihrer Bildstrecke: drei Sätze, die sagen, was der Preis anzeigt und was er verschweigt.",
       "feld_hoehe_mm": 15,
+      "liefert": "die drei Sätze des Schlussbildes",
+      "scaffolding": {
+        "strategien": ["Sprechen Sie die drei Sätze laut, bevor Sie sie aufschreiben.", "Halten Sie Satz 3 offen — er löst die Lücke nicht auf."],
+        "satzanfaenge": ["«Der Preis zeigt, dass …»", "«Wer diese Kosten trägt, ist …»"],
+        "produkt": "Diese drei Sätze schliessen die Sprechspur in Schritt 4 ab."
+      },
       "loesung": {
         "kern": "Drei Sätze für das Schlussbild",
         "zeilen": [
           { "label": "Satz 1 — zeigt an", "text": "«Der Preis von 1250 Franken zeigt, dass die Vanille nach dem Ernteausfall knapp geworden ist.»" },
-          { "label": "Satz 2 — verschweigt", "text": "«Nicht angezeigt wird dagegen die Bodenbelastung im Anbauland und der Erdölanteil im Vanillin.»" },
+          { "label": "Satz 2 — verschweigt", "text": "«Nicht angezeigt wird dagegen die Bodenbelastung im Anbauland und der Erdölanteil im Aroma.»" },
           { "label": "Satz 3 — offen halten", "text": "«Wer diese Kosten am Ende trägt, ist damit noch nicht entschieden.»" },
           { "label": "Massstab", "text": "Drei Sätze, keiner löst die Lücke auf — Satz 3 bleibt bewusst offen, nicht abschliessend.", "quelle": "Kap. 2.7, S. 76" }
         ]
@@ -145,7 +172,7 @@
       "punkte": [
         "Bodenerosion und Bodenvergiftung im Anbauland",
         "Treibhausgase des Transports um die halbe Welt",
-        "Erdöl als Rohstoff im synthetischen Vanillin",
+        "Erdöl als Rohstoff im synthetischen Aroma",
         "Arbeitsbedingungen der Pflückenden"
       ],
       "optional": false
@@ -167,11 +194,11 @@
     "format_detail": "Vertonte Bildstrecke von 1 bis 2 Minuten mit 6 bis 8 Bildern und gesprochener Spur, aufgenommen mit dem Smartphone oder am Schulrechner.",
     "beschreibung": "Ich zeige in einer vertonten Bildstrecke, wie der Preis für ein Kilo Vanille zustande kommt, und mache sichtbar, welche Kosten in diesem Preis fehlen.",
     "schritte": [
-      {"label": "Preisweg sammeln", "hint": "Notieren Sie die Stationen von der Vanilleblüte bis zum Gipfeli: Anbau, Ernte, Trocknung, Transport, Import, Verarbeitung, Verkauf."},
-      {"label": "Zahlen einsetzen", "hint": "Übernehmen Sie die drei Einkaufspreise aus der Zahlentabelle und rechnen Sie die Differenz aus."},
-      {"label": "Lücke markieren", "hint": "Markieren Sie bei jeder Station in einer zweiten Farbe die Kosten, die auf keiner Rechnung stehen."},
-      {"label": "Bilder wählen", "hint": "Wählen Sie 6 bis 8 Bilder: eines pro Station und ein Schlussbild für die Lücke."},
-      {"label": "Sprechspur aufnehmen", "hint": "Sprechen Sie zu jedem Bild zwei bis drei Sätze. Nutzen Sie die Satzanfänge aus der Schreibhilfe."}
+      {"label": "Preisweg sammeln", "hint": "Übernehmen Sie aus LF1 die Erklärung, warum der Preis nach dem Ernteausfall steigt. Notieren Sie danach die Stationen von der Vanilleblüte bis zum Gipfeli: Anbau, Ernte, Trocknung, Transport, Import, Verarbeitung, Verkauf — und je ein Bild dazu (eigenes Foto, Skizze oder Bild aus dem Lehrmittel)."},
+      {"label": "Kosten den Faktoren zuordnen", "hint": "Übernehmen Sie aus LF2 die Zuordnung der Kostenbestandteile zu Arbeit, Boden und Kapital und schreiben Sie sie zu den Stationen. Setzen Sie dazu die Einkaufspreise aus der Zahlentabelle ein und rechnen Sie die Differenz aus."},
+      {"label": "Lücke markieren", "hint": "Übernehmen Sie aus LF3 die Umweltkosten, die in beiden Preisen fehlen, und markieren Sie sie bei jeder Station in einer zweiten Farbe. Das Schlussbild Ihrer Bildstrecke zeigt genau diese Lücke."},
+      {"label": "Sprechspur aufnehmen", "hint": "Übernehmen Sie aus LF4 die drei Sätze für das Schlussbild. Sprechen Sie zu jedem der 6 bis 8 Bilder zwei bis drei Sätze und nehmen Sie die Spur auf — 1 bis 2 Minuten, frei gesprochen."},
+      {"label": "Aufnahme gegen die Kriterien abhören", "hint": "Hören Sie Ihre Aufnahme gegen die vier Kriterien im Bewertungsraster ab: 1 bis 2 Minuten, 6 bis 8 Bilder, mindestens zwei fehlende Kostenposten benannt und begründet, frei gesprochen statt abgelesen. Nehmen Sie die eine Stelle neu auf, die ein Kriterium noch nicht erfüllt."}
     ],
     "schreib_label": "PREISWEG HIER ERARBEITEN",
     "schreib_note": "-> wissen/preisbildung_angebot_nachfrage",
@@ -192,7 +219,7 @@
         "Sprechspur laut lesen und die Zeit stoppen, bevor Sie aufnehmen."
       ],
       "struktur": [
-        "Ausgangslage – Preisanstieg – Was im Preis steckt – Was fehlt – Schlussfrage"
+        "Ausgangslage – Preisanstieg (LF1) – Was im Preis steckt (LF2) – Was fehlt (LF3) – Schlussfrage (LF4)"
       ]
     },
     "musterloesung": {
@@ -201,7 +228,7 @@
         {
           "titel": "Ausgangslage und Preisanstieg",
           "zeilen": [
-            {"label": "Bild 1–2", "text": "Vor dem Zyklon kostete uns ein Kilo Bourbon-Vanille 320 Franken, heute sind es 1250 Franken — fast das Vierfache. Verändert hat sich nicht die Nachfrage, sondern das Angebot: Der Sturm hat einen Teil der Ernte in Madagaskar vernichtet. Weniger Ware bei gleicher Nachfrage bedeutet einen höheren Preis. Genau das zeigt das Erdöl-Beispiel im Lehrmittel: Wenn die Fördermenge sinkt, steigt der Preis und die verkaufte Menge geht zurück.", "quelle": "Kap. 2.7, S. 77"}
+            {"label": "Bild 1–2", "text": "Vor dem Zyklon kostete ein Kilo Bourbon-Vanille im Einkauf 320 Franken, heute sind es 1250 Franken — fast das Vierfache. Verändert hat sich nicht die Nachfrage, sondern das Angebot: Der Sturm hat einen Teil der Ernte in Madagaskar vernichtet. Weniger Ware bei gleicher Nachfrage bedeutet einen höheren Preis. Genau das zeigt das Erdöl-Beispiel im Lehrmittel: Wenn die Fördermenge sinkt, steigt der Preis und die verkaufte Menge geht zurück.", "quelle": "Kap. 2.7, S. 77"}
           ]
         },
         {
@@ -213,13 +240,13 @@
         {
           "titel": "Was im Preis fehlt",
           "zeilen": [
-            {"label": "Bild 6–7", "text": "Nicht bezahlt sind die Treibhausgase des Transports um die halbe Welt und die Belastung der Böden im Anbauland. Beim günstigen Vanillin ist die Lücke sogar grösser: Es kostet 28 Franken, wird aber aus Erdöl hergestellt. Das Lehrmittel hält fest, dass die Gründe für Bodenvergiftung und Rohstoffabbau in den Anbauländern oft in unserem Konsumverhalten liegen. Bezahlt wird das dort, nicht hier.", "quelle": "Kap. 11.2, S. 279"}
+            {"label": "Bild 6–7", "text": "Nicht bezahlt sind die Treibhausgase des Transports um die halbe Welt und die Belastung der Böden im Anbauland. Beim günstigen Aroma ist die Lücke sogar grösser: Es kostet 28 Franken, wird aber aus Erdöl hergestellt. Das Lehrmittel hält fest, dass die Gründe für Bodenvergiftung und Rohstoffabbau in den Anbauländern oft in unserem Konsumverhalten liegen. Bezahlt wird das dort, nicht hier.", "quelle": "Kap. 11.2, S. 279"}
           ]
         },
         {
           "titel": "Empfehlung und offene Frage",
           "zeilen": [
-            {"label": "Bild 8", "text": "Ich empfehle, für das Vanillegipfeli bei echter Vanille zu bleiben und die 40 Rappen auf den Verkaufspreis zu schlagen — weil unser Betrieb mit Handwerk wirbt und der Rohstoff Teil davon ist. Wirtschaftlich ist das riskant: Wer nicht mehr zahlen will, kauft beim Grossverteiler. Beide Varianten haben Kosten, die niemand auf der Etikette sieht. Der Preis sagt uns, was etwas kostet — nicht, was es wirklich kostet.", "quelle": "Kap. 2.7, S. 76"}
+            {"label": "Bild 8", "text": "Ich empfehle, für das Vanillegipfeli bei echter Vanille zu bleiben und die 40 Rappen auf den Verkaufspreis zu schlagen — weil die Bäckerei mit Handwerk wirbt und der Rohstoff Teil davon ist. Wirtschaftlich ist das riskant: Wer die 2.80 nicht zahlen will, kauft beim Grossverteiler. Beide Varianten haben Kosten, die niemand auf der Etikette sieht. Der Preis sagt uns, was etwas kostet — nicht, was es wirklich kostet.", "quelle": "Kap. 2.7, S. 76"}
           ]
         }
       ]
@@ -249,8 +276,8 @@
 
   "reflexion_fragen": [
     {"nr": "R1", "text": "Was hat mich am Preisweg der Vanille überrascht?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R2", "text": "Bei welchem Rohstoff in meinem Lehrbetrieb könnte ich dieselbe Rechnung aufmachen?", "sub": null, "feld_hoehe_mm": 10},
-    {"nr": "R3", "text": "Worauf achte ich beim nächsten Einkaufsentscheid im Betrieb — oder was frage ich nach?", "sub": null, "feld_hoehe_mm": 10}
+    {"nr": "R2", "text": "Bei welchem Material in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe — könnte ich dieselbe Rechnung aufmachen?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Worauf achte ich beim nächsten eigenen Einkaufsentscheid — oder was frage ich nach?", "sub": null, "feld_hoehe_mm": 10}
   ],
 
   "bewertungsraster": [
@@ -287,7 +314,7 @@
       "kriterium": "Tiefe + Transfer",
       "vollstaendig_wenn": [
         "Alle drei Reflexionsfragen sind beantwortet.",
-        "R2 nennt einen konkreten Rohstoff aus dem eigenen Lehrbetrieb."
+        "R2 nennt ein konkretes Material aus dem eigenen Lehrbetrieb oder vom letzten Arbeitsort."
       ]
     }
   ],
@@ -295,7 +322,7 @@
   "wochen": 3,
   "wochen_plan": [
     {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Mindmap", "aktiv": true},
-    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Bildstrecke erstellen und vertonen", "aktiv": false},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Bildstrecke bauen, Sprechspur aufnehmen und gegen die Kriterien abhören", "aktiv": false},
     {"label": "Woche 3 - 45 min", "text": "Austausch (Set), Reflexion, Transfer", "aktiv": false}
   ],
 
@@ -313,7 +340,7 @@
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Tiefer Preis heute vs. Folgekosten, die andere tragen",
-    "hint": "Beide Entscheide sind vertretbar. Für das billige Vanillin spricht, dass der Betrieb konkurrenzfähig bleibt und niemand die 40 Rappen bezahlen muss. Für die echte Vanille spricht, dass die Folgekosten der Erdölvariante nur verschoben und nicht vermieden werden. Bewertet wird, wie gut Sie Ihren Entscheid begründen — nicht, welchen Sie treffen."
+    "hint": "Beide Entscheide sind vertretbar. Für das billige Aroma spricht, dass die Bäckerei konkurrenzfähig bleibt und niemand die 40 Rappen bezahlen muss. Für die echte Vanille spricht, dass die Folgekosten der Erdölvariante nur verschoben und nicht vermieden werden. Bewertet wird, wie gut Sie Ihren Entscheid begründen — nicht, welchen Sie treffen."
   },
 
   "dekontextualisierung": {
@@ -341,7 +368,7 @@
       {"kriterium": "Entscheid begründet", "indikator": "Die Empfehlung nennt beide Seiten des Zielkonflikts.", "gewicht_prozent": 25}
     ],
     "scaffold_90": "Die Stationenliste des Preiswegs wird vorgegeben; die Lernenden ergänzen nur die fehlenden Kosten.",
-    "scaffold_100": "Zusätzlich wird der Verkaufspreis eines zweiten Produkts aus dem eigenen Betrieb gegengerechnet."
+    "scaffold_100": "Zusätzlich wird der Verkaufspreis eines zweiten Produkts aus dem eigenen Lehrbetrieb — oder vom letzten Arbeitsort — gegengerechnet."
   },
 
   "prinzip_handoff": {

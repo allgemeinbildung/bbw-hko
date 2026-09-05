@@ -3,6 +3,7 @@ import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJ
 import { lehrgaengeOf } from './lehrgang'
 import { resolveMethoden } from './methoden'
 import { withLeitfragenLoesungen } from './begleiter-loesungen'
+import { withFeldern } from './begleiter-felder'
 
 export * from './lehrgang'
 export { methodeKarte, alleMethodenKarten, resolveMethoden } from './methoden'
@@ -129,7 +130,19 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
   const rawFile = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
   // Die Leitfragen-Lösungen leben in den Herausforderungs-JSONs (C10) und werden hier
   // einmal in den Begleiter gespiegelt — danach sehen HTML, Word und ZIP dieselbe Form.
-  const raw = rawFile ? withLeitfragenLoesungen(rawFile, [hf_A, hf_B, hf_C]) : undefined
+  // Davor werden die Feld-Marker (`<!--hko:…-->`) aufgelöst: Persona, Situationstext,
+  // KN-Szene und KN-Fragen stehen kanonisch in den JSONs, der Begleiter zitiert sie nur.
+  // Reihenfolge: erst Felder, dann Lösungen — letztere fügen ganze Blöcke ein und
+  // sollen dabei bereits aufgelöste Marker sehen.
+  const knRaw = pickJson<KnJson>(slug, 'kn')
+  const setRaw = pickJson<SetJson>(slug, 'set')
+  const prinzipRaw = pickJson<PrinzipJson>(slug, 'prinzip')
+  const raw = rawFile
+    ? withLeitfragenLoesungen(
+        withFeldern(rawFile, { hf_A, hf_B, hf_C, kn: knRaw, set: setRaw, prinzip: prinzipRaw }),
+        [hf_A, hf_B, hf_C]
+      )
+    : undefined
   const begleiter = raw ? { raw, ...parseFrontmatter(raw) } : null
   const kiRaw = Object.entries(kiLiesmichFiles).find(([path]) => path.endsWith(`/${slug}/ki-liesmich.md`))?.[1]
   const kiLiesmich = kiRaw ? { raw: kiRaw, ...parseFrontmatter(kiRaw) } : null
@@ -138,9 +151,9 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
     hf_A,
     hf_B,
     hf_C,
-    kn: pickJson<KnJson>(slug, 'kn'),
-    prinzip: pickJson<PrinzipJson>(slug, 'prinzip'),
-    set: pickJson<SetJson>(slug, 'set'),
+    kn: knRaw,
+    prinzip: prinzipRaw,
+    set: setRaw,
     begleiter: begleiter ? { raw: begleiter.raw, meta: begleiter.meta } : null,
     kiLiesmich: kiLiesmich ? { raw: kiLiesmich.raw, meta: kiLiesmich.meta } : null,
     ki: pickJson<KiJson>(slug, 'ki'),

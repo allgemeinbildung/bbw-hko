@@ -63,7 +63,7 @@ K-Stufe-zu-bloom-Mapping:
 - K3+ (Formulieren) → `"Formulieren"` (bei "Formuliere...", "Verfasse...", "Schreibe...")
 - K4 → `"Analysieren"`
 
-Mindestens eine LF auf K3+/K4 — sonst 5. LF ergaenzen.
+Mindestens eine LF muss K3+/K4 erreichen. **Keine fuenfte Leitfrage ergaenzen** — das verletzt die 4+1-Kopplung (Check 33, genau 4 LF zu 5 Schritten). Stattdessen LF3 oder LF4 auf die noetige Stufe heben; traegt der Zuschnitt das nicht, ist die Herausforderung zu flach geschnitten.
 
 **LF4-Scoping (C4):** LF4 trainiert den Output-Sprachmodus (`nrlp.sprachmodus_ids`) als *fokussierte Teil-/Sprachform-Aufgabe* — EIN Baustein, der ins Handlungsprodukt einfliesst — und reproduziert NIE das ganze Handlungsprodukt. Methode passend zum Output-Modus aus `references/sprachfoerderung-methoden.md` waehlen. Beispiele: "Schreibe einen Block deines Spickzettels …", "Schreibe die Spalte «Rechtsfolge» als Wenn-dann-Mustersatz …", "Formuliere drei Ich-Botschaften …". Rezeption (SM3) bleibt bei LF1-3. Siehe Coherence-Check 20.
 
@@ -286,7 +286,36 @@ Siehe `assets/kn-template.json` und `references/kn-architecture.md`. Zentrale Pf
 
 `leitfragen_intro` wird pro Herausforderung **ausgeschrieben**, nie mit einem Template-Satz aufgefuellt. Es ist der Auftakt der Wissensecke: ~300-460 Zeichen, Sie-Form, benennt den Zusammenhang der vier Leitfragen (Vorbereitungs-Anweisung, Abhaengigkeitskette oder Kontextsetzung) und endet mit dem Lehrmittel-Schlusssatz («… Nutzen Sie das Lehrmittel Kap. … als Grundlage.»). Harte Obergrenze **510 Zeichen** — Seite 2 traegt `overflow: hidden` und schneidet still ab. Referenzton: `src/data/einheiten/3.2.1_ernaehrung_nachhaltig_gestalten/` und `5.4.2_internationale_entscheide_wirken_4j/`.
 
-Geschwisterfeld `auftakt_typ?: "vorbereitung" | "kontext" | "pfad"` (optional, empfohlen): steuert nur die **Darstellung** des Intros im Renderer — bei `vorbereitung` erscheint es als Kasten auf Seite 1 (und entfaellt auf Seite 2), bei `kontext`/`pfad` bekommt es auf Seite 2 eine Beschriftungszeile. Der Text selbst bleibt derselbe.
+Geschwisterfeld `auftakt_typ?: "vorbereitung" | "kontext" | "pfad"` (optional, empfohlen): steuert die **Platzierung** des Intros im Renderer. Der Text selbst bleibt derselbe, der Ort nicht:
+
+| Wert | Wirkung |
+|---|---|
+| `vorbereitung` | Kasten auf Seite 1 — **und der Absatz ueber LF1 entfaellt** |
+| `pfad` | bleibt ueber LF1, Beschriftung «Auftakt · Pfad durch die Leitfragen» |
+| `kontext` | bleibt ueber LF1, Beschriftung «Auftakt · Kontext» |
+| Feld fehlt | bleibt ueber LF1 als nackter Absatz (Altverhalten) |
+
+**`vorbereitung` ist die teure Wahl** und nur zulaessig, wenn auf Seite 1 wirklich etwas eingerichtet wird, das vor den Leitfragen gelesen werden muss. Sonst stehen die Lernenden auf der Leitfragen-Seite ohne Anleitung da — und das faellt erst am gedruckten Bogen auf. **Im Zweifel `pfad`.** Nach der Autarkie-Regel (Check 34) gibt es keinen Vorlauf mehr; damit ist `vorbereitung` in den meisten Faellen schlicht falsch.
+
+**Layout, gemessen 2026-09** (nicht geraten — am Renderer nachgemessen): Im **Auftrag** (`mode: "fill"`, der Bogen fuer die Lernenden) stehen **zwei Leitfragen pro Seite**, die Rail passt, Ueberstand 0. Im **Dossier** (`mode: "info"`, kompakt) stehen alle vier auf einer Seite — dort laeuft die Rail um 385-622 px ueber und schneidet still ab (Mindmap verschwindet). Das ist ein Renderer-Thema, kein Datenthema: **die Rail-Budgets sind fuer den Auftrag richtig bemessen und duerfen nicht wegen des Dossiers gekuerzt werden.**
+
+### Begleiter-Feldmarker (`<!--hko:…-->`, 2026-09)
+
+`begleiter.md` zitiert Felder, die kanonisch in den JSONs stehen. Statt sie zu kopieren, werden sie markiert; `loadEinheit` loest die Marker beim Laden auf (`src/lib/einheiten/begleiter-felder.ts`), bevor HTML, Word oder ZIP den Begleiter sehen.
+
+| Formatierer | Ergebnis | typisches Feld |
+|---|---|---|
+| *(ohne)* | Rohtext | `hf_A.titel`, `kn.kn_typen[0].fragestruktur[0].frage` |
+| `\|persona` | «Beruf — Betrieb, Ort» | `hf_A.persona`, `kn.hybrid_situation.persona` |
+| `\|quote` | Blockzitat, Marker auf **eigener** Zeile | `hf_A.situation_text`, `kn.hybrid_situation.text` |
+| `\|checkliste` | `☐`-Zeilen aus einem Array | `hf_A.bewertungsraster[2].vollstaendig_wenn` |
+| `\|liste` | `-`-Zeilen aus einem Array | Aufzaehlungen |
+
+Pfadform: `hf_A` / `hf_B` / `hf_C` / `kn` / `set` als Wurzel, dann Punkt- und Index-Notation (`kn.kn_typen[1].aufgaben[0].aufgabe`).
+
+**Der Text zwischen den Markern ist Rueckfall und wird trotzdem geschrieben.** Wer die Datei roh oeffnet, soll den Inhalt lesen. Er muss der Quelle entsprechen — `WARN_BEGLEITER_DRIFT` meldet Abweichungen, `ERR_BEGLEITER_MARKER_UNAUFLOESBAR` einen Pfad ins Leere, `WARN_BEGLEITER_KOPIE_OHNE_MARKER` eine unmarkierte Kopie.
+
+**Grenzen, bewusst:** Kein Marker im YAML-Frontmatter (bricht den Parser). Kein Marker um Begleiter-eigene Prosa — Coaching, Erwartungshorizonte, 8-Merkmale-Begruendungen, Unterrichtsfahrplan. Die kommentieren den Auftrag und haben keine Quelle; sie driften weiter und brauchen beim Aendern einer Einheit weiterhin ein Augenpaar.
 
 ### `reflexion_fragen`-Default-Texte
 
@@ -309,7 +338,7 @@ Diese sind Template-konstant. Pro Herausforderung duerfen die Texte angepasst we
 | `leitfragen[].liefert` | string | **JA** (Phase 2) | 3-7 Woerter, **nominal, ohne Verb**; benennt den Baustein des Handlungsprodukts, den diese LF liefert («die Spalte 'Ich hoere'»). Rendert als drittes Element der lf-meta-Zeile («→ liefert: …») in DocS und Word. Kopplung + Rueckrichtung: Check 33. |
 | `auftakt_typ` | `"vorbereitung"` \| `"kontext"` \| `"pfad"` | optional, empfohlen | Geschwister von `leitfragen_intro`; steuert nur dessen Darstellung (siehe §5), nicht den Text. |
 | `leitfragen[].scaffolding` | `{ strategien?: string[], satzanfaenge?: string[], produkt?: string }` | empfohlen (v3-Rail) | Rendert als rechte Spalte (~22%) neben der Leitfrage: «So gehen Sie vor» (1-2 Sie-Form-Hinweise, je max. 90 Zeichen) · «Satzanfaenge» (1-2, neutral/Ich-Form, je max. 60 Zeichen, in «Guillemets») · «Ins Produkt» (1 Satz, max. 110 Zeichen, konsistent mit `liefert`). Vokabular bewusst wie `handlungsprodukt.scaffolding`. Quellengebunden aus `loesung`/`schritte`/`handlungsprodukt.scaffolding` heben, nichts aus dem Gedaechtnis. |
-| `template` | string | JA (bestehend) | **`"default_4page_v3"` ist der Standard fuer neu generierte Einheiten** (Gold-Layout: Checkliste auf der Selbstcheck-Seite, 3-Linien-Reflexionsfelder, 8-Linien-LF-Felder, Statement-Block + Situations-Karte). Die neuen Felder BRAUCHEN diese Metrik — Rail + Auftakt auf v2 (9-Linien-Felder, Checkliste auf Seite 1) laufen ueber die A4-Kante. `"default_4page_v2"` bleibt fuer die publizierten Bestands-Einheiten, bis deren Migration entschieden ist. |
+| `template` | string | JA (bestehend) | **`"default_4page_v3"` ist der Standard fuer neu generierte Einheiten** (Gold-Layout: Checkliste auf der Selbstcheck-Seite, 3-Linien-Reflexionsfelder, 8-Linien-LF-Felder, Statement-Block + Situations-Karte). **KORREKTUR 2026-09:** Die neuen Felder brauchen diese Metrik NICHT. Am Renderer nachgemessen: `isV3()` verschiebt nur die Checkliste von Seite 1 auf die Selbstcheck-Seite; die Leitfragen-Seite gewinnt keinen Platz. Im Auftrag (`mode: "fill"`) stehen zwei Leitfragen pro Seite, Rail und Auftakt passen auf v2 wie auf v3. Nur das kompakte Dossier (`mode: "info"`, alle vier LF auf einer Seite) schneidet ab — ein Renderer-Thema, kein Datenthema. `"default_4page_v2"` bleibt fuer die publizierten Bestands-Einheiten, bis deren Migration entschieden ist. |
 
 ## Reform-Update 2026-06 — neue Felder (additiv)
 

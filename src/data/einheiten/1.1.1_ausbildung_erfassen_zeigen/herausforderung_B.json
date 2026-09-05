@@ -49,21 +49,34 @@
     "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
   },
   "persona": {
-    "beruf": "Lernende/r EFZ",
-    "betrieb": "Berufsfachschule",
-    "ort": "Schweiz"
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
   },
   "situation_text": "Ich bin Lernende/r in einer EFZ-Ausbildung im 1. Lehrjahr. In der ABU-Lektion sollen wir uns vorstellen: ein kurzer Steckbrief, der an die Pinnwand im Klassenzimmer kommt. Ich habe meinen in zehn Minuten geschrieben, er ist ehrlich und er ist fertig. Beim Aufhängen bleibe ich stehen. Zwei Sätze darin stimmen zwar, aber ich will nicht, dass sie ein halbes Jahr lang für vierundzwanzig Leute an der Wand hängen. Und in einem dritten Satz kommt mein Berufsbildner vor, den ich nie gefragt habe, ob das in Ordnung ist. Der Lehrperson würde ich alle drei Sätze ohne Zögern sagen.",
   "zahlen_tabelle": [],
   "leitfrage": "Wie viel von mir gehört an die Wand — und wie entscheide ich das?",
-  "leitfragen_intro": "Schreiben Sie zuerst zehn Minuten lang einen Steckbrief über sich — alles, was Ihnen einfällt, ungefiltert und ohne Auswahl. Dieser Entwurf ist Ihr Arbeitsmaterial: LF2 und LF3 arbeiten daran, und die beiden Fassungen im Auftrag entstehen daraus. Bearbeiten Sie danach die vier Leitfragen schriftlich; für LF1 brauchen Sie das Lehrmittel.",
+  "leitfragen_intro": "Sie schreiben zu Beginn dieser Lektion zehn Minuten lang einen Steckbrief über sich — ungefiltert, ohne Auswahl. Dieser Entwurf ist Ihr Arbeitsmaterial: LF1 gibt Ihnen die Prüffrage dafür, LF2 prüft die Wirkung, LF3 setzt die Zonen, LF4 schreibt den Einstiegssatz. Daraus entstehen die beiden Fassungen im Auftrag. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 19.2, Kap. 18.1 und Kap. 16.2 als Grundlage.",
+  "auftakt_typ": "pfad",
   "leitfragen": [
     {
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 19.2 | S. 427",
+      "liefert": "die Prüffrage nach der Selbstkundgabe",
       "text": "Erklären Sie mit dem Kommunikationsquadrat, was «Selbstkundgabe» bedeutet — und weshalb sie auch dann mitläuft, wenn man sie nicht beabsichtigt.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 19.2 S. 427 und trennen Sie die vier Botschaften voneinander.",
+          "Prüfen Sie an einem eigenen Satz: Was gibt er von mir zu erkennen?"
+        ],
+        "satzanfaenge": [
+          "Selbstkundgabe heisst, dass …",
+          "Dieser Satz verrät über mich …"
+        ],
+        "produkt": "Die Prüffrage markiert in Schritt 1 jeden Satz des Entwurfs."
+      },
       "loesung": {
         "kern": "Jede Äusserung sagt vier Dinge gleichzeitig.",
         "zeilen": [
@@ -99,8 +112,20 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 18.1 | S. 412",
+      "liefert": "die Wirkung von drei Angaben",
       "text": "Wählen Sie aus Ihrem Entwurf drei Angaben aus. Notieren Sie zu jeder, welches Bild von Ihnen dabei entsteht — und ob dieses Bild dem entspricht, das Sie von sich selbst haben.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Nehmen Sie die drei Angaben, bei denen Sie beim Aufhängen gezögert haben.",
+          "Fragen Sie zu jeder: Welches Bild entsteht, wenn nur das dasteht?"
+        ],
+        "satzanfaenge": [
+          "Diese Angabe lässt mich wirken wie …",
+          "Das trifft zu, weil …"
+        ],
+        "produkt": "Die Wirkung dieser drei Angaben trägt die Auswahlbegründung in Schritt 3."
+      },
       "loesung": {
         "kern": "Identität hat zwei Teile: mein Bild und ihres.",
         "zeilen": [
@@ -131,8 +156,20 @@
       "nr": 3,
       "bloom": "Entscheiden",
       "knoten_ref": "Kap. 19.2 | S. 427",
-      "text": "Ordnen Sie jede Angabe Ihres Entwurfs einer Zone zu: dürfen alle wissen, nur die Lehrperson, niemand hier. Markieren Sie zusätzlich jede Stelle, an der eine andere Person vorkommt. Begründen Sie die zwei Zuordnungen, bei denen Sie am längsten überlegt haben.",
+      "liefert": "die drei Zeilen Auswahlbegründung",
+      "text": "Ordnen Sie jede Angabe Ihres Entwurfs einer Zone zu — dürfen alle wissen, nur die Lehrperson, niemand hier — und begründen Sie die zwei Zuordnungen, bei denen Sie am längsten überlegt haben.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Setzen Sie die Zone zuerst und begründen Sie erst danach.",
+          "Markieren Sie jede Stelle, an der eine andere Person vorkommt."
+        ],
+        "satzanfaenge": [
+          "Diese Angabe gehört in Zone …, weil …",
+          "Am längsten überlegt habe ich bei …"
+        ],
+        "produkt": "Die zwei begründeten Zuordnungen werden die Auswahlbegründung in Schritt 3."
+      },
       "loesung": {
         "kern": "Die Zone folgt dem Gegenüber, nicht dem Wahrheitsgehalt.",
         "zeilen": [
@@ -163,8 +200,20 @@
       "nr": 4,
       "bloom": "Formulieren",
       "knoten_ref": "Kap. 16.2 | S. 368",
+      "liefert": "der Einstiegssatz der Klassenfassung",
       "text": "Formulieren Sie den Einstiegssatz Ihrer Klassenfassung — einen Satz, der Aufmerksamkeit weckt, ohne etwas preiszugeben, das in eine andere Zone gehört.",
       "feld_hoehe_mm": 15,
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie drei Varianten und behalten Sie eine davon.",
+          "Prüfen Sie: Weckt der Satz Interesse, ohne Zone 2 zu öffnen?"
+        ],
+        "satzanfaenge": [
+          "Wer mich sucht, findet mich meistens …",
+          "Ich bin die Person, die …"
+        ],
+        "produkt": "Dieser Satz eröffnet in Schritt 4 die Klassenfassung."
+      },
       "loesung": {
         "kern": "Die Einleitung weckt Aufmerksamkeit, mehr nicht.",
         "zeilen": [
@@ -248,24 +297,24 @@
     ],
     "schritte": [
       {
-        "label": "Material bereitlegen",
-        "hint": "Sie brauchen drei Dinge: Ihren Entwurf, die Zonenzuordnung aus LF3 und den Einstiegssatz aus LF4. Fehlt eines, holen Sie es zuerst nach."
+        "label": "Entwurf schreiben und markieren",
+        "hint": "Zehn Minuten ungefiltert schreiben. Gehen Sie den Entwurf danach mit der Prüffrage aus LF1 Satz für Satz durch und notieren Sie daneben, was er über Sie verrät."
       },
       {
-        "label": "Klassenfassung schreiben",
-        "hint": "80 bis 100 Wörter mit Einleitung, Hauptteil und Schluss. Nur Angaben aus Zone 1, und keine Person, die Sie nicht gefragt haben."
+        "label": "Die Wirkung festhalten",
+        "hint": "Nehmen Sie die drei Angaben aus LF2 und halten Sie zu jeder fest, welches Bild entsteht — und ob es zu dem passt, das Sie zeigen wollen."
       },
       {
-        "label": "Fassung für die Lehrperson schreiben",
-        "hint": "Gleicher Aufbau, andere Auswahl. Keine der beiden ist die geschönte Version der anderen — beide sind ganz."
+        "label": "Zonen setzen und Auswahl begründen",
+        "hint": "Übernehmen Sie die Zuordnung aus LF3 und schreiben Sie die drei Zeilen Auswahlbegründung. Markieren Sie jede Stelle, an der eine andere Person vorkommt — gefragt oder gestrichen."
       },
       {
-        "label": "An der Partnerperson prüfen",
-        "hint": "Vorlesen, dann fragen: «Was für eine Person hast du jetzt vor dir?» Nicht erklären, nur zuhören und mitschreiben."
+        "label": "Beide Fassungen schreiben und vorlesen",
+        "hint": "Beginnen Sie die Klassenfassung mit dem Einstiegssatz aus LF4, je 80 bis 100 Wörter, gleicher Aufbau in beiden Fassungen. Lesen Sie danach eine Fassung Ihrer Partnerperson vor; sie schreibt Ihnen zwei Sätze auf, welches Bild angekommen ist."
       },
       {
-        "label": "Auswahl begründen",
-        "hint": "Drei Zeilen: welche Angabe fehlt links, weshalb, und was die Klassenfassung dadurch nicht mehr zeigt."
+        "label": "Gegen die Kriterien gegenlesen",
+        "hint": "Prüfen Sie beide Fassungen an den Kriterien im Bewertungsraster: Wortzahl, Aufbau, keine ungefragte Person, dreizeilige Begründung. Überarbeiten Sie die eine Stelle, an der die Rückmeldung nicht zu Ihrer Absicht passt."
       }
     ],
     "schreib_label": "Meine zwei Fassungen",
@@ -284,9 +333,9 @@
         "Rückmeldung wörtlich mitschreiben statt aus dem Gedächtnis zusammenfassen."
       ],
       "struktur": [
-        "Links — Klassenfassung: Einstiegssatz · drei bis vier Angaben · wofür ich ansprechbar bin",
+        "Links — Klassenfassung: Einstiegssatz (aus LF4) · drei bis vier Angaben aus Zone 1 (aus LF3) · wofür ich ansprechbar bin",
         "Rechts — Fassung Lehrperson: gleicher Aufbau, andere Auswahl",
-        "Unten — Auswahlbegründung in drei Zeilen",
+        "Unten — Auswahlbegründung in drei Zeilen (aus LF3, gestützt auf LF2)",
         "Fuss — zwei Sätze Rückmeldung der Partnerperson"
       ]
     },
@@ -459,7 +508,7 @@
   "wochen_plan": [
     {
       "label": "Woche 1 - 45 min",
-      "text": "Herausforderung lesen, LF1-LF2, Mindmap",
+      "text": "Herausforderung lesen, Entwurf schreiben, LF1-LF2, Mindmap",
       "aktiv": true
     },
     {

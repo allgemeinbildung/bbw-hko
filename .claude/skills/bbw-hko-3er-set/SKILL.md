@@ -29,7 +29,7 @@ Die generierten JSONs landen pro Einheit in `src/data/einheiten/{X.Y.Z}_{slug}/`
 - Felder umbenennen (`text` vs. `frage`, `bloom` vs. `k_stufe`, `titel` vs. `label`, `punkte` vs. `inhalte`, `mindmap_zentrum` flat vs. nested `mindmap.zentrum`)
 - `nrlp.gesellschaft` als Object statt Array
 - `handlungsprodukt.schritte` als Strings statt `{label, hint}`-Objekten
-- `template` aendern (muss `"default_4page_v3"` sein — Standard fuer neue Einheiten; die Bogen-Kopplungs-Felder brauchen die v3-Metrik, auf v2 laufen Rail + Auftakt ueber die A4-Kante)
+- `template` aendern (Standard fuer NEUE Einheiten ist `"default_4page_v3"`. KORREKTUR 2026-09: die Bogen-Kopplungs-Felder brauchen v3 NICHT — im Auftrag stehen zwei Leitfragen pro Seite, die Rail passt auf v2 wie auf v3. `isV3()` verschiebt nur die Checkliste. Bestands-Einheiten auf v2 duerfen bleiben.)
 - `gruppenpuzzle_fragen` oder `vorgespraech_fragen` in `sit_*.json` einfuegen (wandern auf Set-Ebene)
 - `bewertungsraster` mit Transfer-Zeile oder ohne `vollstaendig_wenn` (C1: genau 4 Zeilen — Leitfragen/Mindmap/Handlungsprodukt/Reflexion — je mit 2-4 `vollstaendig_wenn`-Bullets; der Transfer lebt im set-level Austausch-&-Transfer-Dokument)
 - `emotion_tag` neu generieren (C1: deprecated, wird nicht mehr gerendert; bestehende Werte bleiben stehen)
@@ -45,7 +45,7 @@ Prosa-Felder (vollstaendige Liste, Pre-Write-Scan Pflicht):
 | Datei | Felder |
 |---|---|
 | `sit_*.json` | `titel`, `situation_text`, `leitfrage`, `leitfragen_intro`, `leitfragen[].text`, `mindmap_zentrum`, `mindmap_aeste[].text`, `handlungsprodukt.{titel, format_detail, beschreibung, schreib_label, schreib_note}`, `handlungsprodukt.schritte[].{label, hint}`, `reflexion_fragen[].text`, `mehrdeutigkeit.{trade_off, hint}`, `dekontextualisierung.{frage, ziel}`, `prinzip_handoff.{kernkonzept, lehrmittel_anker, kn_aktivierung, transfer_check}`, `sk_anker[].wo`, `persona.{beruf, betrieb, ort}`, `zahlen_tabelle[].label`, `bewertungsraster[].kriterium`, `wochen_plan[].text`, `quellen_anker.chapters[]`, `quellen_anker.konzepte[]`, `lernfortschritt.*` |
-| `prinzip.json` | `kern_kompetenzversprechen`, `herausforderungen[].{herausforderung, konfliktart, handlungsprodukt_typ}`, `mehrdeutigkeits_architektur.{trade_off_raum[], verbindlich}`, `dekontextualisierungs_anker.{anker_statement, transferfeld}`, `aspekte` Werte-Strings, `persona_pool_units.{berufe[], orte[]}`, `persona_pool_kn_neu.{berufe[], orte[]}`, `quellen_anker.{chapters[], konzepte[]}` |
+| `prinzip.json` | `kern_kompetenzversprechen`, `herausforderungen[].{herausforderung, konfliktart, handlungsprodukt_typ}`, `mehrdeutigkeits_architektur.{trade_off_raum[], verbindlich}`, `dekontextualisierungs_anker.{anker_statement, transferfeld}`, `aspekte` Werte-Strings, `quellen_anker.{chapters[], konzepte[]}` |
 | `set.json` | `austausch_phase.*`, `dekontextualisierungs_aufgabe.*`, `konzept_progression[].konzept` |
 | `kn.json` | `hybrid_situation.{titel, text, leitfrage, alignment_note.*}`, `kn_typen[].fragestruktur[].frage`, `kn_typen[].aufgaben[].aufgabe`, `kn_typen[].reflexionsfragen[]`, `rubrik_shared.kriterien[].{name, stufen[].text, niveaubaender[].text}` |
 | `begleiter.md` | Alle sichtbaren Prosa-Abschnitte, Tabellen-Zellen, Callouts, Headings |
@@ -342,49 +342,60 @@ modi_kn = modi_units (Pflicht-Obermenge)
 | `dekontextualisierungs_anker` | generisches Prinzip-Statement + Transferfeld |
 | `zirkularitaet` | r1_aktuell, r2_voraussicht, r3_voraussicht |
 | `quellen_anker.chapters[]` / `.konzepte[]` | Lehrmittel-Anker + Vokabular |
-| `persona_pool_units` | 3 berufe + 3 orte |
-| `persona_pool_kn_neu` | 2 berufe + 2 orte, disjunkt von _units |
+| ~~`persona_pool_units`~~ / ~~`persona_pool_kn_neu`~~ | **entfallen** (Persona-Regel 2026-09) — Personas sind neutral, Stufe 1 oder 2 |
 | `hybrid_situation_spec` | Constraints fuer Phase 4 (max 120 Woerter, ICH, must_activate_trade_offs_min: 1, ...) |
 
-**persona_pool_units (verbindlich kanonisch, v1.3, Umlaut-clarification v1.4):**
+**Personas: neutral, in zwei Stufen (Persona-Regel 2026-09, verbindlich).**
 
-`berufe` und `orte` werden ausschliesslich aus `references/hko-framework.md` §11
-(Kanonische Lehrberufe + Schweizer Staedte) gewaehlt. Die Lehrberufe-Tabelle ist
-nach den vier BBW-Abteilungen gruppiert (Bau, Technik/Ernährung, Maschinenbau,
-Informatik); verwandte Berufe sind zu IDs zusammengefasst (z.B. `informatiker`
-deckt alle drei Fachrichtungen ab).
+Es werden **keine berufsspezifischen Personas mehr erzeugt** — weder in den drei
+Herausforderungen noch in der Transfer-Aufgabe noch im Kompetenznachweis. Grund
+ist nicht Stil, sondern Reichweite: Unter Variante C (Jigsaw) sieht eine lernende
+Person **genau eine** Herausforderung. Eine rotierende Berufspersona trifft dort
+in einer gemischten Klasse fast immer den falschen Beruf und schliesst den Rest
+aus. Ausserdem zieht eine Berufspersona die Aufgabe zu Daten hin, die nur sie
+hat — der haeufigste Ursprung von Vorlauf-Verstoessen (Check 34).
 
-**Wichtig — Schreibweise:** In `persona_pool_units.berufe[]` und
-`persona_pool_kn_neu.berufe[]` wird der **String aus Spalte „Schreibweise mit
-Umlauten"** uebernommen (z.B. `"Bäcker-Konditor-Confiseur/in EFZ"`,
-`"Land-/Baumaschinenmechaniker/in EFZ"`) — nicht die ID aus Spalte 1. IDs sind
-nur die interne Lookup-Form fuer Abteilungs-Mix-Validierung. Analog `orte[]`:
-`"Zürich"`, `"St. Gallen"` — nicht `zuerich`, `sankt_gallen`.
+Die Konkretheit wandert von der Person in **das Ereignis** und **die Zahlen**.
+Zwei zulaessige Stufen, pro Herausforderung genau eine:
 
-Pre-Write-Validierung:
-- Jeder beruf-Eintrag muss string-identisch mit der **Umlauten-Spalte** der Kanonischen-Lehrberufe-Tabelle sein (kein Fuzzy-Matching, keine Transliteration)
-- Jeder ort-Eintrag muss string-identisch mit der **Umlauten-Spalte** der Staedte-Tabelle sein
-- Bei Mismatch: `ERR_PERSONA_NOT_CANONICAL` — Skill stoppt, Pietro waehlt aus der Liste
-- Hinweis: ae/oe/ue-Schreibweise eines Berufs in persona.beruf ist automatisch ein Bug — entweder kanonisch (mit Umlauten) oder gar nicht
+| Stufe | `persona` | Woher die Konkretheit kommt | Wann |
+|---|---|---|---|
+| **1 — eigener Kontext** | `{beruf: "Lernende/r EFZ, N. Lehrjahr", betrieb: "eigener Lehrbetrieb", ort: "eigener Wohnort"}` | die lernende Person setzt ihren eigenen Fall ein | Standard. Deckt auch Betriebs-Themen ab: Arbeitsrecht, Konflikt, Lehrvertrag — jede lernende Person **hat** einen Betrieb, und der eigene ist konkreter als ein erfundener |
+| **2 — gemeinsamer Fall** | dieselbe neutrale Persona | ein konkreter aeusserer Fall im `situation_text`: eine Abstimmungsvorlage, ein Vertragsauszug, ein Aushang, eine Etikette | wenn **alle denselben Fall** brauchen, um vergleichen zu koennen — Recht, Politik, Wirtschaft |
 
-**Abteilungs-Mix-Pflicht (NEU in v1.3):**
+Bei EBA analog mit `"Lernende/r EBA, N. Lehrjahr"`.
 
-Die 3 Berufe in `persona_pool_units` MUESSEN aus mindestens 3 verschiedenen
-BBW-Abteilungen stammen. Lookup jeder ID → Abteilung via Tabelle in
-`hko-framework.md` §11.
-- `count(unique_abteilungen(units)) >= 3` — sonst `ERR_PERSONA_ABTEILUNG_MONO`,
-  Skill stoppt, Pool muss neu gezogen werden
-- Standardmuster: je ein Beruf aus drei der vier Abteilungen (z.B. Bau +
-  Informatik + Technik/Ernaehrung)
-- Auswahl per Generation aktiv durchmischen: nicht zweimal hintereinander
-  dieselbe Drei-Abteilungs-Kombi vorschlagen
+**Auffangformulierung Pflicht.** Nicht alle haben einen Lehrbetrieb (zwischen
+zwei Vertraegen, schulisch organisierte Grundbildung). Wo der `situation_text`
+oder ein `schritte[].hint` den Betrieb braucht, steht die Alternative dabei:
+«in Ihrem Lehrbetrieb — oder dort, wo Sie zuletzt gearbeitet haben».
 
-`persona_pool_kn_neu` analog, plus:
-- Check 9 (disjunkt von _units) bleibt
-- Mindestens einer der 2 KN-neu-Berufe MUSS aus einer Abteilung stammen, die
-  in `persona_pool_units` gar nicht vertreten ist — sonst
-  `WARN_PERSONA_KN_NEU_NO_NEW_ABTEILUNG`, User-Bestaetigung erforderlich.
-  Ziel: Unseen-Transfer auf eine neue Berufsbranche.
+**Die Gegenprobe, die den Unterschied macht.** Neutral heisst nicht blass. Nimm
+den `situation_text` und streiche den Beruf: Bleibt eine Situation mit Reibung
+stehen? Wenn nicht, trug nicht der Beruf die Situation, sondern es gab keine.
+Positivbeispiel im Bestand: `1.1.1_ausbildung_erfassen_zeigen` A — «Gestern kam
+per Post das ueK-Aufgebot fuer zwei Tage im November, im Betrieb sagt man mir,
+davon wisse niemand etwas.» Kein Beruf, trotzdem ein Konflikt mit Datum und
+Beteiligten. Negativbeispiel: `1.3.1_konsum_verantworten` A nannte
+«Informatiker/in EFZ in Winterthur» in einer Situation ueber Kopfhoererkauf —
+der Beruf kostete die Identifikation aller anderen und trug nichts.
+
+**Was damit entfaellt:** `persona_pool_units`, `persona_pool_kn_neu`, die
+Abteilungs-Mix-Pflicht, der Pool-Vollverbrauch (Check 14), die
+Disjunktheits-Pruefung zwischen Unit- und KN-Persona (Check 9 / Check 11) und
+die Fehlercodes `ERR_PERSONA_NOT_CANONICAL`, `ERR_PERSONA_ABTEILUNG_MONO`,
+`ERR_PERSONA_DUPLICATE_USE`, `ERR_PERSONA_POOL_MISUSE`,
+`WARN_PERSONA_KN_NEU_NO_NEW_ABTEILUNG`. Die Kanonischen-Lehrberufe-Tabelle in
+`references/hko-framework.md` §11 bleibt als Nachschlagewerk bestehen, wird aber
+fuer die Generierung nicht mehr gebraucht.
+
+**Auch der Kompetenznachweis ist neutral** (Entscheid Pietro, 2026-09-04). Das
+kostet etwas: Ein fremder Kontext im KN war bisher Teil des Transfer-Tests. Der
+Transfer wird jetzt ueber die **Sache** hergestellt, nicht ueber die Person —
+die `hybrid_situation` muss einen Fall bringen, den die Lernenden in den drei
+Herausforderungen nicht bearbeitet haben (Stufe 2). Vorbild im Bestand:
+`3.2.1_ernaehrung_nachhaltig_gestalten` — neutrale Persona, aber der Fall «Der
+Automat und die 40 Prozent» ist neu und zwingt zur Uebertragung.
 
 #### Step 3 — User Review (Markdown, nicht raw JSON)
 
@@ -420,7 +431,7 @@ Transfer-Anker:
   "{generisches Prinzip}"
 
 Hybrid-Herausforderung-Spec:
-  max 120 Woerter, ICH, mind. 1 Spannungsfeld, Persona aus persona_pool_kn_neu
+  max 120 Woerter, ICH, mind. 1 Spannungsfeld, neutrale Persona (Stufe 1 oder 2); der FALL muss neu sein
 
 Personas:
   Units (3): {berufe + orte}
@@ -447,7 +458,7 @@ Pro Herausforderung zwei Kandidaten-Herausforderungen. Jeder Kandidat:
 - Matched die Konfliktart + Handlungsprodukt-Typ der Herausforderung
 - ICH-Perspektive
 - K3/K4 (kein purer K1)
-- Beruf + Betrieb + Ort aus `persona_pool_units`
+- Neutrale Persona nach Stufe 1 oder 2 — nie ein spezifischer Beruf
 - Mindestens ein Trade-off aus `trade_off_raum`
 - Konkrete Kapitel + Seite aus Kapitel-Index
 
@@ -490,28 +501,43 @@ Read `assets/mission-template.json` + `references/json-field-mapping.md`.
 | `titel` | aus Phase 1 (kein `emotion_tag` mehr generieren — C1) |
 | `wissensknoten` | mind. 1 node_id-Slug |
 | `nrlp.*` | aus Phase 0 (sk situationsspezifisch!) |
-| `persona` | aus `prinzip.persona_pool_units` |
+| `persona` | neutral: `{beruf: "Lernende/r EFZ, N. Lehrjahr", betrieb: "eigener Lehrbetrieb", ort: "eigener Wohnort"}` — Stufe 1; bei Stufe 2 identisch, der Fall steht im `situation_text` |
 
 **Mehrfachabdeckung (B1):** `nrlp.nr_primary` listet die Kompetenz-Nummern, die diese Herausforderung **tatsächlich** übt/prüft. Default = nur die Primär-Kompetenz `["{X.Y.Z}"]`. Deckt die Herausforderung nachweislich eine weitere nRLP-Kompetenz mit ab, deren Nummer ergänzen (z. B. `["1.1.1","1.1.3"]`). **Welche Sekundär-Kompetenzen gelten, entscheidet Pietro — nicht raten; im Zweifel nur Primär.**
 
 **Persona-Verbrauchstracking (NEU in v1.1):**
 
 Beim Befuellen von `herausforderung_{LETTER}.persona`:
-- Tracke verwendete `beruf`- und `ort`-Werte in einer internen Liste `used_berufe[]` / `used_orte[]`
-- Jeder Beruf aus `persona_pool_units.berufe` darf in genau einer Herausforderung verwendet werden
-- Jeder Ort aus `persona_pool_units.orte` analog
-- Bei Konflikt (Beruf bereits verbraucht): `ERR_PERSONA_DUPLICATE_USE` — Skill stoppt, schreibt nicht
-- Nach allen 3 Sits: Coherence Check 14 erzwingt vollstaendigen Pool-Verbrauch
+- **Alle drei Herausforderungen tragen dieselbe neutrale Persona.** Kein Pool, keine Rotation, kein Verbrauch — die Unterscheidung zwischen A, B und C liegt in der Sache, nicht in der Person.
+- Pro Herausforderung Stufe 1 **oder** Stufe 2 waehlen und im `situation_text` durchhalten.
+- Gegenprobe vor dem Schreiben: Beruf aus dem `situation_text` streichen — bleibt eine Situation mit Reibung stehen? Wenn nicht, fehlt das Ereignis, nicht der Beruf.
+- Fehlerfall: `ERR_PERSONA_SPEZIFISCH` (ein Berufsname, Firmenname oder Ortsname statt der neutralen Form)
 
-**Schritt 2g — Gold-Reihenfolge: Handlungsprodukt VOR den Leitfragen (Bogen-Kopplung 2026-08, verbindlich).**
+**Schritt 2f — Autarkie-Klaerung (VOR allem anderen in Schritt 2, Autarkie-Regel 2026-09, verbindlich).**
+
+Stell dir vor dem Entwurf genau eine Frage: **Was muss existieren, damit die erste Lektion dieser Herausforderung funktioniert?** Ist die Antwort mehr als «das Blatt und das Lehrmittel», ist der Zuschnitt falsch — nicht die Formulierung.
+
+- **Jede Herausforderung startet kalt.** Sie verlangt nichts, was vor ihrer ersten Lektion existieren muesste, und nichts aus einer anderen Herausforderung. Das ist keine Stilfrage: Die Durchfuehrungs-Varianten B (Auswahl) und C (Jigsaw) geben einer lernenden Person **genau eine** der drei Herausforderungen. Jede harte Abhaengigkeit auf A bricht beide Varianten.
+- **A traegt zusaetzlich eine Rolle:** A ist der Einstieg, definitionsgemaess ohne Vorgeschichte. A **darf** Material erzeugen, das B und C weiterverwenden duerfen — als Angebot, nie als Bedingung. Wer B ohne A bearbeitet, darf nichts vermissen. Sichtbar gemacht wird das mit `bereitet_vor` (`verbindlich` immer `false`); im Text von B/C erscheint es als zweiter Satz («Haben Sie Herausforderung A bearbeitet, nehmen Sie …»), nie als erster.
+- **Mehrtaegiges Material gehoert in den Bogen, nicht davor.** Was ueber Tage entsteht — eine Erhebung, ein Beleg, eine Beobachtung — wird in der **ersten Lektion angestossen** und ist zur **zweiten faellig**. Es ist ein Schritt der Herausforderung mit LF-Absender, kein Vorlauf. `wochen_plan` W1 nennt den Anstoss, W2 die Auswertung.
+- **Keine Abhaengigkeit von Dritten.** «Erfragen Sie im Betrieb …» als Voraussetzung ist doppelt unzulaessig: Es ist ein Vorlauf, und es bestraft Lernende, deren Betrieb nicht antwortet. Als Angebot innerhalb der Lektion ist es erlaubt.
+
+Fehlerfaelle: `ERR_VORAUSSETZUNG_VOR_START` · `ERR_QUERVERWEIS_ALS_BEDINGUNG` · `WARN_SAMMELPHASE_OHNE_ANSTOSS` (Check 34).
+
+**Schritt 2g — Gold-Reihenfolge: Handlungsprodukt VOR den Leitfragen (Bogen-Kopplung 2026-08, 4+1-Regel 2026-09, verbindlich).**
 
 Der rote Faden Situation → Leitfragen → Methoden → Handlungsprodukt entsteht **konstruktiv, nicht nachtraeglich** (Gold-Referenz: `5.4.2_internationale_entscheide_wirken_4j` — dort mussten die Luecken nachtraeglich geschlossen werden, weil die LFs vor dem Produkt geschrieben waren). Innerhalb von Schritt 2 gilt darum diese Erzeugungs-Reihenfolge, unabhaengig von der Feldreihenfolge im JSON:
 
 1. **Erst das Ziel:** `handlungsprodukt` vollstaendig entwerfen — `format`/`titel`/`beschreibung` aus `prinzip.herausforderungen[LETTER].handlungsprodukt_typ`, die `abgaben`, die 5 `schritte` (Labels + vorlaeufige hints), `scaffolding.struktur`.
-2. **Dann die Kopplungsmatrix (intern, VOR jedem LF-Text):** Jedem der 5 Schritte genau einen LF-Absender zuordnen; jede LF speist >=1 Schritt, keine LF traegt 3+. Bloom-Leiter als Heuristik: LF1 (Verstehen) → Grundlagen-/Eroeffnungsschritt · LF2 (Anwenden) → der Schritt mit dem eigenen Material/Fall der Lernenden · LF3 (Analysieren) → der strukturbildende Kernschritt (darf 2 Schritte tragen) · LF4 (Formulieren) → der sprech- oder schreibfertige Baustein des Schlussschritts. Findet ein Schritt keinen ehrlichen Absender: den **Schritt** umbauen, nicht die Matrix schoenreden (Check 33 / `ERR_SCHRITT_OHNE_ABSENDER`).
-3. **Leitfragen als Bestellungen schreiben:** Jede LF wird aus ihrem Matrix-Schritt heraus formuliert — die Frage bestellt genau den Baustein, den der Schritt braucht. `liefert` und `scaffolding` (inkl. `produkt`-Satz) entstehen **im selben Zug** wie der LF-Text, nie als Nachtrag.
-4. **Rueckweg zementieren:** `schritte[].hint` nennt den Absender woertlich («Uebernehmen Sie aus LF_n …»); `handlungsprodukt.scaffolding.struktur` verortet die LF-Bausteine (z. B. «Ausgangslage (Satz aus LF2)»); `methoden[].tun` und `bewertungsraster[].vollstaendig_wenn` erzaehlen dieselbe Kopplung — pro LF ein Kriterium, das ihren Beitrag prueft.
-5. **Zuletzt der Auftakt:** `leitfragen_intro` erzaehlt den Pfad durch die Matrix (welche LF welchen Baustein liefert); `auftakt_typ` nach Funktion waehlen (`vorbereitung`/`pfad`/`kontext`).
+2. **Die Kopplung ist Bauart, nicht Redaktion — 4+1:** `schritte[0..3]` gehoeren **index-treu** zu `leitfragen[0..3]`. Schritt 1 ← LF1, Schritt 2 ← LF2, Schritt 3 ← LF3, Schritt 4 ← LF4. Es gibt keine Matrix und keine Wahl. **`schritte[4]` ist der Kontrollschritt** und hat bewusst **keinen** LF-Absender: Er prueft, er liefert nicht. Passen die vier Produktionsschritte nicht auf die vier Bloom-Sprossen, ist die Herausforderung zu breit geschnitten — dann den **Zuschnitt** kuerzen (einen Lehrmittel-Anker in eine andere Herausforderung geben), nicht einen fuenften Produktionsschritt erfinden.
+3. **Der Kontrollschritt (`schritte[4]`) ist eng definiert**, sonst wird er die neue Sammelstelle fuer alles ohne Absender:
+   - erscheint **nicht** in `abgaben[]` — er erzeugt kein Produktteil,
+   - sein `hint` verweist auf die `vollstaendig_wenn`-Kriterien des `bewertungsraster`,
+   - Verifikationssprache («pruefen», «abgleichen», «gegenlesen», «eine Stelle ueberarbeiten»), nie Produktionssprache.
+   Bei mündlichen Produkten wandert die Aufnahme auf Schritt 4 und der Kontrollschritt wird die Ueberarbeitungsschlaufe («Hoeren Sie Ihre Aufnahme gegen die Kriterien ab und nehmen Sie eine Stelle neu auf»). Damit bekommen die Lernenden das Bewertungsraster zum ersten Mal auf ihr eigenes Blatt.
+4. **Leitfragen als Bestellungen schreiben:** Jede LF wird aus ihrem Schritt heraus formuliert — die Frage bestellt genau den Baustein, den der Schritt braucht. `liefert` und `scaffolding` (inkl. `produkt`-Satz) entstehen **im selben Zug** wie der LF-Text, nie als Nachtrag. **Eine LF traegt einen Auftrag.** Drei Imperative in einem LF-Text heissen: Der Schritt ist zwei Schritte, oder ein Anker gehoert nicht hierher (`WARN_LF_MEHRFACHAUFTRAG`).
+5. **Rueckweg zementieren:** `schritte[0..3].hint` nennt den Absender woertlich («Uebernehmen Sie aus LF_n …»); `handlungsprodukt.scaffolding.struktur` verortet die LF-Bausteine (z. B. «Ausgangslage (Satz aus LF2)»); `methoden[].tun` und `bewertungsraster[].vollstaendig_wenn` erzaehlen dieselbe Kopplung — pro LF ein Kriterium, das ihren Beitrag prueft.
+6. **Zuletzt der Auftakt:** `leitfragen_intro` erzaehlt den Pfad durch die vier Kopplungen (welche LF welchen Baustein liefert). `auftakt_typ` waehlen — und dabei wissen, was das Feld **tut**: `vorbereitung` verschiebt den Absatz als Kasten auf Seite 1 und **entfernt ihn von der Leitfragen-Seite**; `pfad` und `kontext` lassen ihn ueber LF1 stehen und setzen nur eine Beschriftungszeile davor. `vorbereitung` darum **nur**, wenn auf Seite 1 wirklich etwas eingerichtet wird, das vor den Leitfragen gelesen werden muss. Im Zweifel `pfad` — sonst fehlt den Lernenden die Anleitung genau dort, wo sie zu arbeiten beginnen, und das merkt man erst am gedruckten Bogen.
 
 | `situation_text` | 4-6 Saetze, Ich-Form (1. Person Singular), mit CHF/Fakten |
 | `zahlen_tabelle` | `[]` oder `[{label, wert}]` |
@@ -536,7 +562,9 @@ Der rote Faden Situation → Leitfragen → Methoden → Handlungsprodukt entste
 - `handlungsprodukt.scaffolding` mit je >=1 Eintrag in satzanfaenge/strategien/struktur (Check 23)
 - `handlungsprodukt.musterloesung` mit 3-5 `abschnitte`, je `{titel, zeilen[]}`; pro Abschnitt max. ~900 Zeichen `text` (Check 30)
 - Jede `leitfragen[]` mit `loesung` (3-6 Zeilen, ~900 Zeichen); Sachaussagen durch den `knoten_ref`-Abschnitt gedeckt; Entscheiden-LF mit Alternativ-/Ausschluss-Zeile (Check 32)
-- Jede `leitfragen[]` mit `liefert` (3-7 Woerter, nominal, ohne Verb — der Produktbaustein, den diese LF liefert) UND jeder `handlungsprodukt.schritte[]`-Eintrag von >=1 LF gespeist; Schritt ohne LF-Absender = Konstruktionsluecke, stoppen und melden (Check 33)
+- Jede `leitfragen[]` mit `liefert` (3-7 Woerter, nominal, ohne Verb — der Produktbaustein, den diese LF liefert); `schritte[i]` ↔ `leitfragen[i]` index-treu fuer i = 0..3, `schritte[4]` ist Kontrollschritt ohne Absender (Check 33)
+- Kein LF-Text mit 3+ Arbeitsauftraegen (Imperativen); kein LF-Text, der einen Vorlauf-Vollzug und die eigene Bloom-Aufgabe zugleich verlangt (Check 34)
+- Voraussetzungsfreier Start: kein Verweis auf eine andere Herausforderung in tragender Position, kein Material, das vor der ersten Lektion existieren muss (Check 34)
 - Jede `leitfragen[]` mit `scaffolding` {strategien (1-2, Sie-Form, je ≤90 Z.), satzanfaenge (1-2, neutral/Ich-Form, je ≤60 Z.), produkt (1 Satz ≤110 Z., konsistent mit `liefert`)} — quellengebunden aus `loesung`/`schritte`/`handlungsprodukt.scaffolding` gehoben (Rail auf Seite 2)
 - `nrlp.sprachmodus_ids.length === nrlp.sprachmodi.length` (Check 21)
 - LF4 ist fokussierte Output-Sprachmodus-Teilaufgabe, nicht das ganze Handlungsprodukt (Check 20)
@@ -671,7 +699,7 @@ Read `assets/kn-template.json` + `references/kn-architecture.md`.
 #### Step 2 — Hybrid-Herausforderung generieren
 
 Read `kn-architecture.md` Paragraph 2. Konstruiere eine **eine** Szene:
-- Persona aus `prinzip.persona_pool_kn_neu[0]` (Default; `[1]` Reserve)
+- Neutrale Persona wie in den Herausforderungen. Der Transfer entsteht ueber den **Fall**, nicht ueber die Person: die `hybrid_situation` bringt eine Lage, die in A/B/C nicht vorkam (Stufe 2). Vorbild: `3.2.1_ernaehrung_nachhaltig_gestalten` — «Der Automat und die 40 Prozent»
 - max. 120 Woerter, ICH-Perspektive
 - Aktiviert alle drei `herausforderung.konfliktart`-Aspekte gleichzeitig (sichtbar, nicht explizit benannt)
 - Aktiviert mindestens einen Trade-off aus `prinzip.mehrdeutigkeits_architektur.trade_off_raum`
@@ -794,7 +822,7 @@ Punktbaender-Beschreibungen + Niveaubaender bleiben konstant.
 
 Aus `coherence-checklist.md`:
 - Check 10: Hybrid aktiviert mind. 1 Trade-off, alignment_note benennt Mapping
-- Check 11: Hybrid-Persona disjunkt von allen 3 sit_*.persona (beruf + ort)
+- Check 11: Hybrid-**Fall** disjunkt von allen 3 Herausforderungen (die Persona ist bewusst dieselbe neutrale)
 - Check 12: KN-Typ 1 + 2 sk ⊆ Union(sit_*.nrlp.sk)
 - Check 13: Rubrik-Shape (4 Kriterien, 2 SuK + 2 Ges, je 4 Punktbaender à 0–3, 3 Niveaubaender)
 - Check 16: aktivierte_trade_offs enthaelt alle trade_offs der gemappten Herausforderungen
@@ -818,6 +846,28 @@ Confirm: `✓ {X.Y.Z}_{topic_slug}/kn.json gespeichert`. Proceed zu Phase 5.
 
 Generiere das Lehrperson-Begleitdokument als strukturiertes Markdown mit YAML-Frontmatter.
 **Output:** `src/data/einheiten/{X.Y.Z}_{topic_slug}/begleiter.md`.
+
+**Feld-Marker statt Kopien (Begleiter-Injektion 2026-09, verbindlich).**
+
+Der Begleiter zitiert Inhalte, die kanonisch in den JSONs stehen — Persona, Situationstext, Leitfragen, Checkliste, KN-Szene, KN-Fragen. **Schreibe sie nie als Kopie hinein.** Fasse sie in einen Marker; `loadEinheit` ersetzt ihn beim Laden durch den aktuellen Wert (`src/lib/einheiten/begleiter-felder.ts`), und HTML, Word und ZIP sehen dieselbe Form. Dasselbe Prinzip wie bei den Leitfragen-Loesungen und den Methodenkarten.
+
+```markdown
+| Persona | <!--hko:hf_A.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko--> |
+
+<!--hko:hf_A.situation_text|quote-->
+> Ich bin im 1. Lehrjahr und …
+<!--/hko-->
+
+<!--hko:hf_A.bewertungsraster[2].vollstaendig_wenn|checkliste-->
+☐ Die Kette hat 4 bis 6 Schritte …
+<!--/hko-->
+```
+
+- **Der Text zwischen den Markern ist Rueckfall und wird trotzdem geschrieben** — wer die Datei roh oeffnet, soll den Inhalt lesen, nicht einen leeren Kommentar. Er muss beim Schreiben mit der Quelle uebereinstimmen; `WARN_BEGLEITER_DRIFT` meldet, wenn nicht.
+- **Formatierer:** ohne Angabe Rohtext · `|persona` → «Beruf — Betrieb, Ort» · `|quote` → Blockzitat (Marker auf **eigener Zeile**, sonst liest Markdown das `>` als Text) · `|checkliste` → `☐`-Zeilen aus einem Array · `|liste` → `-`-Zeilen.
+- **Nicht ins Frontmatter** — ein HTML-Kommentar bricht dort den Parser. Die `kompetenz:`-Zeile bleibt Kopie.
+- **Was NICHT verdrahtet wird:** Coaching-, Warnungs- und Troubleshooting-Callouts, Erwartungshorizonte, die 8-Merkmale-Begruendungen, der Unterrichtsfahrplan. Sie kommentieren den Auftrag und haben keine Quelle im JSON — das ist der eigentliche Wert des Begleiters und bleibt Handarbeit.
+- Pruefung: `node scripts/check-einheiten.mjs <slug>` meldet `WARN_BEGLEITER_KOPIE_OHNE_MARKER`, sobald ein JSON-Text woertlich und unmarkiert im Begleiter steht.
 
 Das `begleiter.md` ist das vollstaendige Unterrichts-Kompendium — Lektion fuer Lektion, mit fertigen Scaffolds, Coaching-Moves und bi-dim Bewertungsbeispiel. Es wird vom `begleiter-builder.ts` zu einem gestalteten `.docx` umgewandelt und liegt in jedem ZIP-Bundle (EinheitWorkbench).
 
@@ -897,8 +947,8 @@ Drei Varianten (immer alle drei dokumentieren):
 
 Jede Herausforderung bekommt dieselbe Unterstruktur:
 
-1. **Steckbrief-Tabelle** (Felder: Titel, Sub-Herausforderung, Persona, Aspekte, Sprachmodi, Schluesselkompetenzen, Handlungsprodukt, Wissensknoten — **kein Emotion-Feld mehr**, C1) — aus `sit_*.json`-Feldern.
-2. **Herausforderungs-Zitat** — `situation_text` als Blockzitat.
+1. **Steckbrief-Tabelle** — Titel, Sub-Herausforderung und Persona als **Marker** (`hf_{L}.titel`, `hf_{L}.herausforderung.label`, `hf_{L}.persona|persona`), nicht als Kopie. (Felder: Titel, Sub-Herausforderung, Persona, Aspekte, Sprachmodi, Schluesselkompetenzen, Handlungsprodukt, Wissensknoten — **kein Emotion-Feld mehr**, C1) — aus `sit_*.json`-Feldern.
+2. **Herausforderungs-Zitat** — `situation_text` als Blockzitat, **als Marker** `<!--hko:hf_{L}.situation_text|quote-->` mit Marker und Zitat auf getrennten Zeilen.
 3. `[!hinweis] Qualitaet der Herausforderung` callout — 8 Merkmale kurz pruefen (Authentizitaet, Verortung, Problem, Affektivitaet, Kognition, Aktivitaet, LJ-Passung, Relevanz).
 4. **Unterrichtsfahrplan** — Einleitungssatz „AViVA-Bogen über ~3 Lektionen — Richtwerte, keine feste Taktung. Die Lernenden arbeiten selbstständig; Sie begleiten coachend und bestimmen Tempo und Dauer der Phasen selbst." Danach Tabelle **AViVA-Phase | Was passiert | Sozialform** (NICHT „Lektion | … | 2 Lektionen à 45'"), Phasen aus `leitfragen`- und `handlungsprodukt`-Feldern.
 5. **Leitfragen mit Coaching-Hinweisen** — Fuer jede LF (1-4):
@@ -909,7 +959,7 @@ Jede Herausforderung bekommt dieselbe Unterstruktur:
 6. **`[!tafelbild]` — fachliche Soll-Loesung (v2, §E4)** — **vor** der Scaffold-Werkstatt (das Soll-Bild rahmt die Vorlagen). Callout `[!tafelbild]`, Titel `Erwartungsbild — {mindmap_zentrum}`. Mindmap als Erwartungsbild, getrennt nach **Pflicht-Aesten** (Lernende sollen alle finden) und **optionaler Vertiefung** (fuer 100%). Datenhebung 1:1: `mindmap_zentrum` → Callout-Titel; `mindmap_aeste[]` mit `optional: false` → Pflicht-Block, `optional: true` → Vertiefungs-Block; Detailpunkte aus `mindmap_aeste[].punkte[]` (bzw. `.text`). Das speist zugleich die 100%-Differenzierung.
 7. **Scaffold-Werkstatt** — mind. ein fertig ausgefuellter Template (Lueckentext, Tabelle, Drehbuch, oder Vergleichstabelle), abgeleitet aus `handlungsprodukt.schritte`, `handlungsprodukt.scaffolding` (Satzanfaenge/Strategien/Struktur, C6) und dem Sprachmodus. Als Code-Block oder Markdown-Tabelle. Die **Gütekriterien** der Handlungsprodukt-Seite stammen aus `lernfortschritt.kriterien` (kriterium + indikator).
    - `[!differenzieren] 80 vs. 100` callout: beschreibt, was alle bekommen (80%) vs. schnellere Lernende (100%).
-8. **«Wann ist das Produkt fertig?» — Vollstaendigkeits-Check (v2, §E2)** — **nach** der Scaffold-Werkstatt. **Reine Haken-Liste (Checkliste), KEINE Tabelle mit Prozenten/Gewichten** — der Check ist formative Selbstkontrolle der Lernaufgaben-Phase, nicht der benotete KN. Ueberschrift-Zeile: `**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)`. Datenhebung 1:1 aus `bewertungsraster[]`: pro Eintrag `.produkt` (bzw. `.kriterium`) als Teilprodukt-Ueberschrift + `vollstaendig_wenn[]` als `☐`-Punkte. Reihenfolge: Leitfragen → Mindmap → Handlungsprodukt → Reflexion. **Die `lernfortschritt.kriterien[].gewicht_prozent`-Werte werden NICHT angezeigt** (Entscheid Pietro 2026-06-22: Gewichte suggerieren Benotung — auch nicht LP-intern).
+8. **«Wann ist das Produkt fertig?» — Vollstaendigkeits-Check (v2, §E2)** — **nach** der Scaffold-Werkstatt. **Reine Haken-Liste (Checkliste), KEINE Tabelle mit Prozenten/Gewichten** — der Check ist formative Selbstkontrolle der Lernaufgaben-Phase, nicht der benotete KN. Ueberschrift-Zeile: `**Wann ist das Produkt fertig?** (Selbstcheck — formativ, nicht benotet)`. **Als Marker, nicht als Kopie:** pro Eintrag `.produkt` (bzw. `.kriterium`) als Teilprodukt-Ueberschrift, darunter `<!--hko:hf_{L}.bewertungsraster[i].vollstaendig_wenn|checkliste-->` — der Formatierer erzeugt die `☐`-Zeilen aus dem Raster. Genau `☐ ` als Praefix, ohne Listenstrich (der Korpus fuehrt sonst zwei Formen). Ein Marker je Rasterzeile, nie einer pro Haken. Reihenfolge: Leitfragen → Mindmap → Handlungsprodukt → Reflexion. **Die `lernfortschritt.kriterien[].gewicht_prozent`-Werte werden NICHT angezeigt** (Entscheid Pietro 2026-06-22: Gewichte suggerieren Benotung — auch nicht LP-intern).
 9. **`[!ki_einsatz]` — KI-Einsatz in dieser Herausforderung (v2, §E5)** — **nach** dem Vollstaendigkeits-Check, **vor** dem Coaching-Block. Callout `[!ki_einsatz]`, Titel-Pflicht (z.B. `KI-Nutzungsideen — Herausforderung A ({Produkt})`). 2–3 **situationsspezifische** Ideen, an die jeweilige Sprachhandlung gekoppelt, plus immer ein **«Nicht:»**-Hinweis, der die zu zeigende SK schuetzt. Zwei tragende Muster: (1) Entwurf korrigieren/pruefen lassen (bei Schreibprodukten), (2) Rolle einer Gegenpartei uebernehmen (bei Argumentations-/Gespraechsprodukten). Ableitung aus `handlungsprodukt.format` + dominanter Sprachhandlung. Formulierung durchgaengig **Empfehlung** („waere sinnvoll", „koennten"), nie Vorschrift; Ob/Wie bleibt LP-Entscheid. **Keine KI-Regel, kein Verweis auf die unveroeffentlichten KI-Fluency-Materialien.**
 10. **Mehrdeutigkeit halten** — `[!mehrdeutigkeit] Herausforderung {X}` callout mit dem situationsspezifischen `trade_off`-Wert (im Fliesstext als **Spannungsfeld** benennen) und konkretem Eingriff-Satz.
 11. **Wo welche SK geuebt wird** — Tabelle SK | Demonstration (ein konkreter Satz pro SK, wo genau im Arbeitsauftrag). Aus `sk_anker[].wo`.
@@ -935,7 +985,7 @@ Der Austausch + Transfer ist seit dem Redesign ein **eigenstaendiges Set-Dokumen
 
 **Sektion 8 — Der Kompetenznachweis (KN)**
 
-- **Hybrid-Herausforderung** — Persona + Herausforderungs-Zusammenfassung als Blockzitat. Dann Alignment-Tabelle (Aus Sit X | zeigt sich im KN als).
+- **Hybrid-Herausforderung** — Persona + Herausforderungs-Zusammenfassung als Blockzitat, beides **als Marker**: `kn.hybrid_situation.persona|persona`, `kn.hybrid_situation.text|quote`, dazu Titel und Leitfrage (`kn.hybrid_situation.titel`, `.leitfrage`). Auch die Fragen und Aufgaben der Fragenpools sind Marker (`kn.kn_typen[i].fragestruktur[j].frage`, `.aufgaben[j].aufgabe`) — der `[!erwartungshorizont]` darunter dagegen nicht, er hat keine Quelle im JSON. Dann Alignment-Tabelle (Aus Sit X | zeigt sich im KN als).
   - `[!hinweis] Neue Dimension` callout: falls `alignment_note.new_dimensions[]` nicht leer.
 - **Methodenwahl** — Tabelle: Methode | Format | Primaer prueft | Sprachmodi | Waehle wenn. Fuer alle 3 KN-Typen.
   - `[!coaching] Methodenwahl an Klasse + Variante koppeln` callout.
@@ -1026,7 +1076,7 @@ Danach erscheint die neue Einheit im Katalog unter `/einheiten`. (Der `prebuild`
   - **Technik/Ernaehrung:** Automobilfachmann/-frau, Baecker-Konditor-Confiseur/in, Elektroinstallateur/in, Zweiradmechaniker/in, Land-/Baumaschinenmechaniker/in
   - **Maschinenbau:** Anlagen- und Apparatebauer/in, Gusstechnologe/in, Konstrukteur/in, Polymechaniker/in, Produktionsmechaniker/in
   - **Informatik:** Entwickler/in Digitales Business, Informatiker/in (alle Fachrichtungen), Laborant/in (alle Fachrichtungen)
-- Mix-Pflicht: pro 3er-Set drei verschiedene Abteilungen in `persona_pool_units`
+- ~~Mix-Pflicht~~ entfaellt: Personas sind neutral, es gibt keinen Pool zu mischen
 
 ### ICH-Perspektive Formula
 ```
@@ -1060,7 +1110,7 @@ Ausgenommen (bleibt `du`):
 - K1 als Kern-Problem → automatisch hochstufen auf K3
 - K3 = Entscheiden (zwei Optionen mit Begruendung)
 - K4 = Analysieren (Ursache-Wirkung, Vergleich, Bewertung)
-- LF4 ist immer K3+ oder K4 — sonst 5. LF ergaenzen
+- LF4 ist immer K3+ oder K4 — sonst LF3/LF4 anheben, **nie eine 5. LF ergaenzen** (Check 33: genau 4 LF)
 - **LF4-Scoping (C4):** LF4 trainiert den Output-Sprachmodus (`nrlp.sprachmodus_ids`) als fokussierte Teil-/Sprachform-Aufgabe — EIN Baustein, der ins Handlungsprodukt einfliesst — nie das ganze Handlungsprodukt. Rezeption (SM3) bleibt bei LF1-3. Methode aus `references/sprachfoerderung-methoden.md` passend zum Output-Modus.
 
 ### Constructive Alignment
@@ -1085,7 +1135,7 @@ Kompetenzziel-Verb ↔ Lernaktivitaet ↔ Handlungsprodukt muessen matchen. LF4 
 |---|---|---|
 | `ERR_KN_INPUTS` | sit_*.json oder prinzip.json fehlt fuer Phase 4 | Stop, keine kn.json |
 | `ERR_HYBRID_NO_TRADE_OFF` | Hybrid aktiviert keinen Trade-off | Stop, Pietro reviewen |
-| `ERR_HYBRID_PERSONA_OVERLAP` | Hybrid-Persona ∈ sit_*.persona | Stop, persona_pool_kn_neu fixen |
+| `ERR_HYBRID_FALL_OVERLAP` | Hybrid-**Fall** kommt schon in A/B/C vor | Stop, neuen Fall waehlen (die Persona bleibt dieselbe neutrale) |
 | `ERR_KN_SK_OUT_OF_SCOPE` | KN-Typ-SK ∉ Union(sit_*.nrlp.sk) | Stop |
 | `ERR_RUBRIK_SHAPE` | Rubrik nicht 4×4 oder Dimensionen falsch | Stop |
 | `ERR_HERAUSFORDERUNG_MISSING` | sit_*.herausforderung nicht in prinzip | Stop |
@@ -1093,12 +1143,10 @@ Kompetenzziel-Verb ↔ Lernaktivitaet ↔ Handlungsprodukt muessen matchen. LF4 
 | `ERR_SK_OUT_OF_BOUNDS` | sk_schnittmenge_kn.primary nicht in Union(sit_*.sk) | Stop |
 | `ERR_SK_ANKER_MISMATCH` | sk_anker.length != nrlp.sk.length | Stop |
 | `ERR_MEHRDEUTIGKEIT_MISSING` | Herausforderung ohne trade_off | Stop nach Auto-Fix-Versuch |
-| `ERR_PERSONA_OVERLAP` | persona_pool_units ∩ persona_pool_kn_neu != ∅ | Stop |
-| `ERR_PERSONA_NOT_CANONICAL` | Beruf oder Ort nicht in kanonischer Liste (hko-framework.md §11) | Stop, Pietro waehlt aus Liste |
+| `ERR_PERSONA_SPEZIFISCH` | eine `persona` nennt einen Beruf, eine Firma oder eine Stadt statt der neutralen Form | Stop, auf Stufe 1 oder 2 umschreiben |
+| `ERR_PERSONA_SPEZIFISCH` | `persona` nennt einen Lehrberuf, eine Firma oder eine Stadt statt der neutralen Form | Stop, auf Stufe 1 oder 2 umschreiben (Check 14) |
 | `ERR_PERSONA_DUPLICATE_USE` | Beruf oder Ort bereits in einer frueheren Herausforderung verwendet | Stop, schreibt nicht |
 | `ERR_PERSONA_POOL_MISUSE` | Beruf/Ort doppelt oder ungenutzt nach 3 Sits (Check 14) | Stop |
-| `ERR_PERSONA_ABTEILUNG_MONO` | `persona_pool_units` deckt weniger als 3 BBW-Abteilungen ab | Stop, Pool neu ziehen mit Abteilungs-Mix |
-| `WARN_PERSONA_KN_NEU_NO_NEW_ABTEILUNG` | `persona_pool_kn_neu` enthaelt keinen Beruf aus einer in Units abwesenden Abteilung | User-Bestaetigung: Unseen-Transfer schwaecher — beabsichtigt? |
 | `ERR_MODI_KN_SUBSET` | modi_units ⊄ modi_kn (Check 5b) | Stop vor Phase 4 |
 | `WARN_MODE_UNTRAINED` | Modus in modi_units ohne Trainings-Footprint (Check 5a) | User fragt: entfernen oder Schritt ergaenzen? |
 | `WARN_HYBRID_LJ_MISMATCH` | Hybrid-Persona Lehrjahr ≠ Sit-Personas Lehrjahr | User-Bestaetigung: beabsichtigt? |
@@ -1110,7 +1158,7 @@ Kompetenzziel-Verb ↔ Lernaktivitaet ↔ Handlungsprodukt muessen matchen. LF4 
 | `WARN_UMLAUT_RESIDUE` | nach Auto-Fix bleibt ae/oe/ue-Pattern in Prosa-Feld (ausserhalb Whitelist) | User-Review: Eigenname oder vergessenen Umlaut? |
 | `ERR_ESZETT_FOUND` | `ß` in irgendeinem Feld gefunden | Auto-Fix zu `ss`, Stelle gemeldet |
 | `WARN_SK_DRIFT` | Phase 0 Step 2a: `themen[].schluesselkompetenzen` weicht von `zirkularitaet…wiederholungen` ab | Zirkularitaets-Liste verwenden, beide Listen zeigen, Pietro informieren (Datensatz reparieren, nicht die Skill umgehen) |
-| `WARN_BLOOM_TOO_LOW` | keine K3+/K4-LF | Auto-Fix: 5. LF ergaenzen, User bestaetigen |
+| `WARN_BLOOM_TOO_LOW` | keine K3+/K4-LF | Auto-Fix: LF3/LF4 anheben, User bestaetigen — **keine 5. LF** (Check 33) |
 | `WARN_MEHRDEUTIGKEIT_NEAR_MISS` | trade_off fast aus trade_off_raum | Auto-Fix: naechster Vorschlag, User-OK |
 
 ---
@@ -1146,14 +1194,16 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 - [ ] Genau 3 Herausforderungen A/B/C
 - [ ] `sk_schnittmenge_kn.primary` >= 2 SK
 - [ ] `mehrdeutigkeits_architektur.trade_off_raum` >= 2 Eintraege
-- [ ] `persona_pool_units` 3+3, `persona_pool_kn_neu` 2+2, disjunkt
+- [ ] Keine `persona_pool_*`-Felder mehr; alle Personas neutral (Stufe 1 oder 2), auch im KN
 - [ ] `hybrid_situation_spec` ausgefuellt
 - [ ] Keine Eszett
 
 ### Jede Herausforderung (Renderer-Compliance):
 - [ ] `template == "default_4page_v3"`, `wochen == 3`, `legacy/source_refs/registry_tags == {}`
 - [ ] `modul_titel`, `wissensknoten[0]`, `zahlen_tabelle`, `leitfrage` gesetzt
-- [ ] `leitfragen_intro` **ausgeschrieben** (kein Template-Default; Sie-Form, Lehrmittel-Schlusssatz, max. 510 Zeichen) + `auftakt_typ` ∈ `{vorbereitung, kontext, pfad}` gesetzt
+- [ ] `leitfragen_intro` **ausgeschrieben** (kein Template-Default; Sie-Form, Lehrmittel-Schlusssatz, max. 510 Zeichen) + `auftakt_typ` ∈ `{vorbereitung, kontext, pfad}` gesetzt — `vorbereitung` nur, wenn auf Seite 1 wirklich etwas eingerichtet wird (es entfernt den Absatz ueber LF1); im Zweifel `pfad`
+- [ ] **Autarkie:** kalt startbar, kein Vorlauf, kein Querverweis als Bedingung; bei A optional `bereitet_vor` mit `verbindlich: false` (Check 34)
+- [ ] **4+1:** `schritte[0..3]` index-treu zu `leitfragen[0..3]`; `schritte[4]` Kontrollschritt ohne Absender, nicht in `abgaben[]`, Verifikationssprache, verweist auf `vollstaendig_wenn` (Check 33)
 - [ ] `nrlp.gesellschaft` als Array of `{aspekt, iteration}`
 - [ ] `nrlp.nr_primary` enthält alle real abgedeckten Kompetenzen (Default Primär; Sekundär nur nach Pietro-Bestätigung) — B1
 - [ ] `leitfragen[]` 4 Items, je `nr` Integer, `bloom` String, `knoten_ref`, `text`, `feld_hoehe_mm: 15`, `liefert` (3-7 Woerter, nominal, ohne Verb — Check 33)
@@ -1185,7 +1235,7 @@ src/data/einheiten/{X.Y.Z}_{topic_slug}/
 ### KN-Dokument:
 - [ ] `id`, `set_ref`, `prinzip_ref`, `anchored_situations[]` (3)
 - [ ] `dominanter_aspekt` bestimmt, Kriterium-3-Wording angepasst
-- [ ] `hybrid_situation.text` <= 120 Woerter, ICH, Persona disjunkt von sit_*.persona
+- [ ] `hybrid_situation.text` <= 120 Woerter, ICH; Persona neutral wie in A/B/C, der **Fall** disjunkt (Check 11/14)
 - [ ] `hybrid_situation.aktivierte_trade_offs.length >= 1`, alle ∈ trade_off_raum
 - [ ] `hybrid_situation.alignment_note` benennt Mapping
 - [ ] `kn_typen[]` GENAU 3 (fachgespraech, mini_case_schriftlich, werkschau_transfer)

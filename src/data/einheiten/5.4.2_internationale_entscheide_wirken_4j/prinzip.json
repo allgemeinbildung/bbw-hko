@@ -239,24 +239,6 @@
       ]
     }
   ],
-  "persona_pool_units": {
-    "berufe": [
-      "Polymechaniker/in EFZ"
-    ],
-    "orte": [
-      "Winterthur"
-    ]
-  },
-  "persona_pool_kn_neu": {
-    "berufe": [
-      "Bäcker-Konditor-Confiseur/in EFZ",
-      "Informatiker/in EFZ"
-    ],
-    "orte": [
-      "St. Gallen",
-      "Olten"
-    ]
-  },
   "hybrid_situation_spec": {
     "max_woerter": 120,
     "perspektive": "ICH",
@@ -266,20 +248,20 @@
       "B",
       "C"
     ],
-    "persona_source": "persona_pool_kn_neu",
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [
       "Eine Szene — nicht drei separate Mini-Herausforderungen aneinandergereiht.",
       "Konfliktart aller drei Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
       "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
-      "Persona ist neu (Beruf und Ort kommen in keiner herausforderung_*.persona vor).",
+      "Der FALL ist neu (Check 11): anderer Gegenstand, andere Beteiligte, andere Zahlen als in A, B und C. Die Persona ist neutral und in allen vier Dokumenten identisch.",
       "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben.",
       "Fallneutral: keine Abstimmungsvorlage, kein Abstimmungsdatum, kein Initiativtext. Der Fall der Hybrid-Herausforderung ist ein eigener, dauerhafter Fall."
-    ]
+    ],
+    "persona_regel": "Neutrale Persona (Persona-Regel 2026-09): {beruf: \"Lernende/r EFZ, 3. Lehrjahr\", betrieb: \"eigener Lehrbetrieb\", ort: \"eigener Wohnort\"} — identisch mit den drei Herausforderungen. Stufe 2: Die Neuheit traegt der FALL, nicht die Person."
   },
   "entscheidungen_pietro_2026_08_16": {
-    "persona_einfach": "Bewusste Übersteuerung der Pool-Regeln: EINE Persona (Polymechaniker/in EFZ, 3. Lehrjahr, Winterthur) trägt alle drei Herausforderungen, damit die Wirkungskette, die Akteurskarte und die Sortierung auf denselben Betrieb zeigen. Damit entfallen die Abteilungs-Mix-Pflicht und der vollständige Pool-Verbrauch (ERR_PERSONA_ABTEILUNG_MONO, Check 14) für diese Einheit.",
+    "persona_einfach": "Ueberholt durch die Persona-Regel 2026-09 (siehe persona_regel_2026_09_04). Protokoll: Bis zum 2026-09-04 trugen alle drei Herausforderungen EINE berufsspezifische Persona (Polymechaniker/in EFZ, Praezisionsmechanik-Betrieb, Winterthur), damit Wirkungskette, Akteurskarte und Sortierung auf denselben Betrieb zeigten. Der Zusammenhalt bleibt erhalten — er laeuft jetzt ueber den eigenen Betrieb der lernenden Person statt ueber einen erfundenen.",
     "kein_kn": "Für diese Einheit wird bewusst kein kn.json und kein begleiter.md erzeugt. modi_kn nennt die Sprachmodi, die ein späterer Kompetenznachweis abdecken würde; hybrid_situation_spec entfällt, solange kein KN existiert.",
     "fallneutralitaet": "Die drei Herausforderungen und dieses Prinzip arbeiten an dauerhaften Mechanismen und nennen keine Abstimmungsvorlage. Der aktuelle Fall lebt ausschliesslich in set.json, in schritt_2_anwendung der Dekontextualisierungsaufgabe, und ist dort ausdrücklich auswechselbar.",
     "abgrenzung_5_4_1": "5.4.2 trägt die Wirkungskette: wer entscheidet was, mit welchem Interesse, und wo kommt das bei mir an. Die Rechtsachse (Werthaltungen, Menschenrechte, Völkerrecht, Perspektivenrecherche) bleibt bei 5.4.1. Herausforderung C geht deshalb nicht tiefer als die Unterscheidung «vertraglich gebunden» vs. «politisch entschieden».",
@@ -287,9 +269,16 @@
   },
   "kn_nachgezogen_2026_08_21": {
     "entscheid": "Der Entscheid «kein_kn» vom 2026-08-16 ist aufgehoben: kn.json und begleiter.md wurden am 2026-08-21 nachgezogen (Phasen 4 und 5 isoliert, Phasen 0 bis 3 unverändert). Der Eintrag «kein_kn» bleibt als Protokoll stehen.",
-    "ergaenzte_felder": "persona_pool_kn_neu und hybrid_situation_spec neu; modi_kn auf die vier Modi der Skill-Regel erweitert (modi_units vereinigt mit den Fachgespräch- und Mini-Case-Modi). Alle übrigen Felder unverändert.",
-    "persona_kn": "Die Hybrid-Herausforderung nutzt bewusst eine neue Persona (Bäcker-Konditor-Confiseur/in EFZ, St. Gallen) aus einer Abteilung, die in den Herausforderungen nicht vorkommt — die Einzel-Persona-Regel der Units gilt nur für A, B und C.",
+    "ergaenzte_felder": "hybrid_situation_spec neu (der damals ebenfalls ergaenzte Persona-Pool ist am 2026-09-04 wieder entfallen); modi_kn auf die vier Modi der Skill-Regel erweitert (modi_units vereinigt mit den Fachgespräch- und Mini-Case-Modi). Alle übrigen Felder unverändert.",
+    "persona_kn": "Ueberholt durch die Persona-Regel 2026-09. Protokoll: Die Hybrid-Herausforderung nutzte bis zum 2026-09-04 bewusst eine fremde Berufspersona aus einer Abteilung, die in den Herausforderungen nicht vorkam. Diese Funktion traegt jetzt der Fall (Check 11).",
     "fallneutralitaet_kn": "kn.json nennt keine Abstimmungsvorlage und kein Datum. Der aktuelle Fall lebt weiterhin ausschliesslich in set.json (schritt_2_anwendung) und wird im begleiter.md nur im Transfer-Kapitel als auswechselbares Beispiel geführt.",
     "dominanter_aspekt": "Wirtschaft und Politik stehen beide in allen drei Herausforderungen. Der Tiebreak der Skill (erster Eintrag der nRLP-Kompetenz) ergibt Wirtschaft; Kriterium 3 der Rubrik heisst deshalb «Wirtschaftliches Prinzip», deckt inhaltlich aber Wirkungskette und Bindungsfrage ab."
+  },
+  "persona_regel_2026_09_04": {
+    "entscheid": "Persona-Regel 2026-09 umgesetzt: Keine berufsspezifischen Personas mehr — weder in den drei Herausforderungen noch im Kompetenznachweis. Alle vier Dokumente fuehren {beruf: \"Lernende/r EFZ, 3. Lehrjahr\", betrieb: \"eigener Lehrbetrieb\", ort: \"eigener Wohnort\"}.",
+    "entfernt": "persona_pool_units und persona_pool_kn_neu sind ersatzlos geloescht; hybrid_situation_spec.persona_source ist durch persona_regel ersetzt, das Qualitaetskriterium «Persona ist neu» durch «Der FALL ist neu».",
+    "arbeitsplatzbezug": "Die Einheit lebt davon, dass ein internationaler Entscheid bis an den eigenen Arbeitsplatz durchschlaegt. Der Bezug laeuft neu ueber die Sache statt ueber den Beruf: Jede lernende Person arbeitet mit Material, Ware oder Geraeten, die irgendwoher kommen, und jeder Betrieb kennt Preis, Verfuegbarkeit, Lieferfrist und Auftragslage. Berufsspezifisches Vokabular (Maschine, Werkstatt, Serie, Bauteil-Fertigung) ist aus A entfernt.",
+    "auffangformulierung": "Wo der Betrieb gebraucht wird, steht die Alternative dabei: «in meinem Lehrbetrieb — oder dort, wo ich zuletzt gearbeitet habe» (situation_text A und B, leitfragen[1].text in A).",
+    "kn_fall": "Der KN-Fall ist neu geschnitten, damit er ohne den fremden Beruf noch traegt (Check 11): eine Nachweispflicht des Nachbarmarkts (digitaler Produktpass) auf einem Verbrauchsmaterial, ausgeloest durch ein Schreiben der Lieferantin. Gegenstand, Beteiligte und Zahlen sind gegenueber A (Zoll, Lieferfrist, Auftrag), B (nicht mehr automatisch geltende Zulassungen) und C (fuenf staatliche Handlungen sortieren) verschieden."
   }
 }
