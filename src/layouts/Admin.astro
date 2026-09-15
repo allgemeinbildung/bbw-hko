@@ -10,6 +10,13 @@ const path = Astro.url.pathname
 
 const success = Astro.url.searchParams.get('success')
 const error = Astro.url.searchParams.get('error')
+
+// Zähler am Meldungen-Tab: offene Tickets, bei denen KT1 am Zug ist.
+const { count: meldungenOffen } = await Astro.locals.supabase
+  .from('meldungen')
+  .select('id', { count: 'exact', head: true })
+  .eq('wartet_auf', 'kt1')
+  .neq('status', 'erledigt')
 ---
 <Base title={title}>
   <div class="min-h-screen flex flex-col">
@@ -27,6 +34,15 @@ const error = Astro.url.searchParams.get('error')
             href="/admin"
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin' ? 'admin-tab-active' : 'admin-tab'}`}
           >Übersicht</a>
+          <a
+            href="/admin/meldungen"
+            class={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm font-medium transition ${path.startsWith('/admin/meldungen') ? 'admin-tab-active' : 'admin-tab'}`}
+          >
+            Meldungen
+            {(meldungenOffen ?? 0) > 0 && (
+              <span class="min-w-[1.25rem] px-1.5 rounded-full bg-red-600 text-white text-[0.7rem] leading-5 text-center" title="offene Meldungen, KT1 am Zug">{meldungenOffen}</span>
+            )}
+          </a>
           <a
             href="/admin/dashboard"
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/dashboard' ? 'admin-tab-active' : 'admin-tab'}`}

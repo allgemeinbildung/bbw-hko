@@ -47,6 +47,9 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
           {!isGuest && (
             <a href="/meine-materialien" class="text-sm text-slate-600 hover:text-slate-900 font-medium">Meine Materialien</a>
           )}
+          {!isGuest && (
+            <a href="/meine-meldungen" class="text-sm text-slate-600 hover:text-slate-900 font-medium">Meine Meldungen</a>
+          )}
           {isGuest && (
             <span class="text-xs font-medium px-2 py-0.5 rounded border border-amber-300 bg-amber-50 text-amber-700">Gast · nur Lesen</span>
           )}

@@ -1,0 +1,66 @@
+---
+import LP from '../layouts/LP.astro'
+import { getAccess, bounceKt1 } from '../lib/auth'
+import { STATUS_CLASS, STATUS_LABEL, formatDatum, kurztitel, type MeldungRow } from '../lib/meldungen'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+
+const bounce = bounceKt1(Astro, access, '/admin/meldungen')
+if (bounce) return bounce
+if (access.role === 'gast') return Astro.redirect('/')
+
+const { data } = await Astro.locals.supabase
+  .from('meldungen')
+  .select('*, meldung_antworten(count)')
+  .eq('lp_id', access.user.id)
+  .order('updated_at', { ascending: false })
+
+const meldungen = (data ?? []) as (MeldungRow & { meldung_antworten: { count: number }[] })[]
+const ungelesen = meldungen.filter((m) => m.lp_ungelesen).length
+---
+<LP title="Meine Meldungen">
+  <div class="max-w-3xl mx-auto">
+    <a href="/" class="text-sm text-slate-500 hover:text-slate-700">← Hauptplattform</a>
+    <h1 class="text-2xl font-semibold mt-2">Meine Meldungen</h1>
+    <p class="text-sm text-slate-500 mt-1 mb-6">
+      {meldungen.length} {meldungen.length === 1 ? 'Meldung' : 'Meldungen'}
+      {ungelesen > 0 && <span class="text-red-600 font-medium"> · {ungelesen} mit neuer Antwort</span>}
+    </p>
+
+    {meldungen.length === 0 && (
+      <div class="bg-white border border-slate-200 rounded-lg p-12 text-center">
+        <div class="text-5xl mb-3">🛠️</div>
+        <div class="text-lg font-medium text-slate-700">Noch keine Meldungen</div>
+        <div class="text-sm text-slate-500 mt-1">
+          Wenn etwas klemmt: unten rechts auf «Problem melden» klicken.
+        </div>
+      </div>
+    )}
+
+    {meldungen.length > 0 && (
+      <ul class="space-y-2">
+        {meldungen.map((m) => {
+          const anzahl = m.meldung_antworten?.[0]?.count ?? 0
+          return (
+            <li>
+              <a href={`/meine-meldungen/${m.id}`}
+                class={`block bg-white border rounded-lg px-4 py-3 hover:border-[var(--brand)] transition ${m.lp_ungelesen ? 'border-red-300' : 'border-slate-200'}`}>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-mono text-slate-400">#{m.nr}</span>
+                  <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_CLASS[m.status]}`}>{STATUS_LABEL[m.status]}</span>
+                  {m.lp_ungelesen && <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-700">Neue Antwort</span>}
+                  <span class="ml-auto text-xs text-slate-400">{formatDatum(m.updated_at)}</span>
+                </div>
+                <div class="mt-1 text-slate-800 font-medium">{kurztitel(m.text, 110)}</div>
+                <div class="text-xs text-slate-500 mt-0.5">
+                  {anzahl} {anzahl === 1 ? 'Antwort' : 'Antworten'}{m.screenshot_path && ' · mit Screenshot'}
+                </div>
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    )}
+  </div>
+</LP>

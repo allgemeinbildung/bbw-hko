@@ -1,0 +1,109 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import { STATUS_CLASS, STATUS_LABEL, formatDatum, kurztitel, type MeldungRow } from '../../lib/meldungen'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+const ANSICHTEN = [
+  { key: 'offen', label: 'Offen' },
+  { key: 'erledigt', label: 'Erledigt' },
+  { key: 'alle', label: 'Alle' },
+] as const
+type Ansicht = (typeof ANSICHTEN)[number]['key']
+const raw = Astro.url.searchParams.get('ansicht')
+const ansicht: Ansicht = ANSICHTEN.some((a) => a.key === raw) ? (raw as Ansicht) : 'offen'
+
+let query = Astro.locals.supabase
+  .from('meldungen')
+  .select('*, reporter:profiles!lp_id(full_name, abteilung), meldung_antworten(count)')
+  .order('updated_at', { ascending: false })
+if (ansicht === 'offen') query = query.neq('status', 'erledigt')
+if (ansicht === 'erledigt') query = query.eq('status', 'erledigt')
+
+const { data } = await query
+type Row = MeldungRow & {
+  reporter: { full_name: string | null; abteilung: string | null } | null
+  meldung_antworten: { count: number }[]
+}
+// KT1 am Zug zuerst, danach nach letzter Aktivität.
+const meldungen = ((data ?? []) as Row[]).sort((a, b) => {
+  const za = a.wartet_auf === 'kt1' && a.status !== 'erledigt' ? 0 : 1
+  const zb = b.wartet_auf === 'kt1' && b.status !== 'erledigt' ? 0 : 1
+  return za - zb || b.updated_at.localeCompare(a.updated_at)
+})
+
+const pfadVon = (url: string | null) => {
+  try { return url ? new URL(url).pathname : '–' } catch { return '–' }
+}
+---
+<Admin title="Meldungen">
+  <div class="flex flex-wrap items-end justify-between gap-3 mb-5">
+    <div>
+      <h1 class="text-2xl font-semibold">Meldungen</h1>
+      <p class="text-sm text-slate-500 mt-1">Probleme und Frust aus «Problem melden» — rot markiert heisst: KT1 ist am Zug.</p>
+    </div>
+    <nav class="flex gap-1 bg-slate-100 p-1 rounded-lg">
+      {ANSICHTEN.map((a) => (
+        <a href={`/admin/meldungen?ansicht=${a.key}`}
+          class={`px-3 py-1 rounded-md text-sm font-medium transition ${a.key === ansicht ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}>{a.label}</a>
+      ))}
+    </nav>
+  </div>
+
+  {meldungen.length === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center text-slate-500">
+      {ansicht === 'offen' ? 'Keine offenen Meldungen. 🎉' : 'Keine Meldungen.'}
+    </div>
+  )}
+
+  {meldungen.length > 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+          <tr>
+            <th class="px-4 py-2">#</th>
+            <th class="px-4 py-2">Meldung</th>
+            <th class="px-4 py-2">Von</th>
+            <th class="px-4 py-2">Seite</th>
+            <th class="px-4 py-2">Status</th>
+            <th class="px-4 py-2 whitespace-nowrap">Letzte Aktivität</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          {meldungen.map((m) => {
+            const amZug = m.wartet_auf === 'kt1' && m.status !== 'erledigt'
+            const anzahl = m.meldung_antworten?.[0]?.count ?? 0
+            return (
+              <tr class={`hover:bg-slate-50 ${amZug ? 'border-l-4 border-l-red-500' : ''}`}>
+                <td class="px-4 py-3 font-mono text-xs text-slate-400">{m.nr}</td>
+                <td class="px-4 py-3">
+                  <a href={`/admin/meldungen/${m.id}`} class="font-medium text-slate-800 hover:underline">{kurztitel(m.text, 90)}</a>
+                  <div class="text-xs text-slate-500 mt-0.5">
+                    {anzahl} {anzahl === 1 ? 'Antwort' : 'Antworten'}
+                    {m.screenshot_path && ' · 🖼 Screenshot'}
+                    {m.js_fehler?.length > 0 && <span class="text-red-600"> · {m.js_fehler.length} JS-Fehler</span>}
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-slate-600">
+                  {m.reporter?.full_name ?? '–'}
+                  {m.reporter?.abteilung && <div class="text-xs text-slate-400">{m.reporter.abteilung}</div>}
+                </td>
+                <td class="px-4 py-3 text-xs text-slate-500 font-mono break-all max-w-[14rem]">{pfadVon(m.url)}</td>
+                <td class="px-4 py-3">
+                  <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_CLASS[m.status]}`}>{STATUS_LABEL[m.status]}</span>
+                  {amZug && <div class="text-xs text-red-600 mt-1 font-medium">KT1 am Zug</div>}
+                </td>
+                <td class="px-4 py-3 text-xs text-slate-500 whitespace-nowrap">{formatDatum(m.updated_at)}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )}
+</Admin>

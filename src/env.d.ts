@@ -17,6 +17,11 @@ interface ImportMetaEnv {
   readonly REGISTER_CODE?: string
   readonly GUEST_ACCOUNT_EMAIL?: string
   readonly GUEST_ACCOUNT_PASSWORD?: string
+  // «Problem melden» — Mails via Resend (src/lib/mail.ts). Optional: ohne
+  // Key wird nichts gesendet, Meldungen funktionieren trotzdem.
+  readonly RESEND_API_KEY?: string
+  readonly MAIL_FROM?: string
+  readonly MELDUNGEN_EMAIL_TO?: string
 }
 
 interface ImportMeta {

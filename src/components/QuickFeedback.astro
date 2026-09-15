@@ -1,0 +1,285 @@
+---
+/**
+ * «Problem melden» — schwebender Knopf auf jeder Seite (eingebunden in Base.astro).
+ *
+ * Nur für angemeldete lp/kt1/reviewer, nie für das Gastkonto. Öffnet ein kleines
+ * Fenster: ein Textfeld, optional ein Screenshot (Ctrl+V, Ziehen oder Datei).
+ * URL, Fenstergrösse und die letzten JS-Fehler werden automatisch mitgeschickt.
+ * Der Screenshot wird im Browser auf max. 1600 px verkleinert.
+ *
+ * Zähler am Knopf: KT1 = offene Meldungen, bei denen KT1 am Zug ist;
+ * alle anderen = eigene Meldungen mit ungelesener Antwort.
+ * Backend: src/pages/api/meldungen/**, Regeln: src/lib/meldungen.ts.
+ */
+import { getRole } from '../lib/meldungen'
+import { mailAktiv } from '../lib/mail'
+
+const user = Astro.locals.user
+const role = user ? await getRole(Astro.locals) : null
+const show = !!role && role !== 'gast'
+const isKt1 = role === 'kt1'
+
+let badge = 0
+if (show && user) {
+  const q = Astro.locals.supabase.from('meldungen').select('id', { count: 'exact', head: true })
+  const { count } = isKt1
+    ? await q.eq('wartet_auf', 'kt1').neq('status', 'erledigt')
+    : await q.eq('lp_id', user.id).eq('lp_ungelesen', true)
+  badge = count ?? 0
+}
+const listHref = isKt1 ? '/admin/meldungen' : '/meine-meldungen'
+const listLabel = isKt1 ? 'Alle Meldungen' : 'Meine Meldungen'
+const badgeTitle = isKt1 ? 'offene Meldungen' : 'neue Antworten'
+---
+{show && (
+  <div class="qf-root" x-data="quickFeedback()" @paste.window="onPaste($event)" @keydown.escape.window="close()">
+    <button type="button" class="qf-fab" @click="openDialog()" title="Problem melden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 7v4"/><path d="M12 14h.01"/></svg>
+      <span class="qf-fab-label">Problem melden</span>
+      {badge > 0 && <span class="qf-badge" title={`${badge} ${badgeTitle}`}>{badge}</span>}
+    </button>
+
+    <div x-show="isOpen" x-cloak class="qf-overlay" @click.self="close()">
+      <div class="qf-dialog" role="dialog" aria-modal="true" aria-labelledby="qf-title">
+        <template x-if="!doneNr">
+          <form @submit.prevent="send()" class="space-y-4">
+            <div>
+              <h2 id="qf-title" class="text-lg font-semibold text-slate-900">Problem melden</h2>
+              <p class="text-sm text-slate-500">Kurz und formlos: Was klemmt oder nervt? Wir melden uns.</p>
+            </div>
+
+            <textarea
+              x-ref="text"
+              x-model="text"
+              class="input"
+              rows="4"
+              maxlength="5000"
+              placeholder="Was ist passiert? Was hast du erwartet?"
+            ></textarea>
+
+            <div>
+              <template x-if="!preview">
+                <div
+                  class="qf-drop"
+                  :class="dragging && 'qf-drop-active'"
+                  @dragover.prevent="dragging = true"
+                  @dragleave.prevent="dragging = false"
+                  @drop.prevent="onDrop($event)"
+                >
+                  <div class="text-sm text-slate-600">
+                    Screenshot <span class="text-slate-400">(optional)</span>: <kbd>Ctrl</kbd>+<kbd>V</kbd> einfügen,
+                    hierher ziehen oder
+                    <button type="button" class="underline font-medium" style="color: var(--brand)" @click="$refs.file.click()">Datei wählen</button>
+                  </div>
+                  <div class="text-xs text-slate-400 mt-1">Tipp: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> kopiert einen Bildschirmausschnitt.</div>
+                </div>
+              </template>
+              <template x-if="preview">
+                <div class="qf-preview">
+                  <img :src="preview" alt="Screenshot-Vorschau" />
+                  <button type="button" class="qf-remove" @click="clearShot()" title="Screenshot entfernen">✕</button>
+                </div>
+              </template>
+              <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" x-ref="file" class="hidden" @change="onPick($event)" />
+            </div>
+
+            <p class="text-xs text-slate-400">
+              Die aktuelle Seite und dein Browser werden automatisch mitgeschickt.
+              Bitte keine Lernendendaten auf dem Screenshot.
+            </p>
+
+            <div x-show="error" class="text-sm text-red-600" x-text="error"></div>
+
+            <div class="flex items-center justify-between gap-3">
+              <a href={listHref} class="text-sm text-slate-500 hover:text-slate-800 underline">
+                {listLabel}{badge > 0 && ` (${badge})`}
+              </a>
+              <div class="flex gap-2">
+                <button type="button" class="px-3 py-2 text-sm text-slate-600 hover:text-slate-900" @click="close()">Abbrechen</button>
+                <button
+                  type="submit"
+                  class="px-4 py-2 rounded-md text-sm font-medium text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  style="background: var(--brand)"
+                  :disabled="!text.trim() || sending"
+                  x-text="sending ? 'Sendet…' : 'Senden'"
+                ></button>
+              </div>
+            </div>
+          </form>
+        </template>
+
+        <template x-if="doneNr">
+          <div class="text-center py-4 space-y-3">
+            <div class="text-4xl">✅</div>
+            <h2 class="text-lg font-semibold text-slate-900">Danke! Meldung #<span x-text="doneNr"></span> ist eingegangen.</h2>
+            <p class="text-sm text-slate-500">
+              {mailAktiv()
+                ? 'Du bekommst eine E-Mail, sobald jemand antwortet.'
+                : 'Antworten siehst du unter «Meine Meldungen» — der Knopf zeigt dann eine rote Zahl.'}
+            </p>
+            <div class="flex justify-center gap-3 pt-2">
+              <a :href="'/meine-meldungen/' + doneId" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 hover:bg-slate-50">Meldung ansehen</a>
+              <button type="button" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)" @click="close()">Schliessen</button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+)}
+
+{show && (
+  <script is:inline>
+    (function () {
+      // Die letzten JS-Fehler vor dem Absenden — oft die halbe Diagnose.
+      var errs = (window.__qfErrors = window.__qfErrors || [])
+      var push = function (msg) { errs.push(String(msg).slice(0, 500)); if (errs.length > 5) errs.shift() }
+      window.addEventListener('error', function (e) {
+        var where = e.filename ? ' @ ' + e.filename.split('/').pop() + ':' + e.lineno : ''
+        push((e.message || 'Fehler') + where)
+      })
+      window.addEventListener('unhandledrejection', function (e) {
+        var r = e.reason
+        push('Promise: ' + (r && r.message ? r.message : r))
+      })
+    })()
+
+    async function qfShrink(file) {
+      if (file.type === 'image/gif') return file // Animation behalten
+      var MAX = 1600
+      var bmp = await createImageBitmap(file)
+      var scale = Math.min(1, MAX / Math.max(bmp.width, bmp.height))
+      if (scale === 1 && file.size < 1.5 * 1024 * 1024) { bmp.close && bmp.close(); return file }
+      var c = document.createElement('canvas')
+      c.width = Math.round(bmp.width * scale)
+      c.height = Math.round(bmp.height * scale)
+      c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height)
+      bmp.close && bmp.close()
+      var webp = await new Promise(function (r) { c.toBlob(r, 'image/webp', 0.9) })
+      if (webp && webp.type === 'image/webp') return webp
+      return await new Promise(function (r) { c.toBlob(r, 'image/png') })
+    }
+
+    function quickFeedback() {
+      return {
+        isOpen: false, text: '', shot: null, preview: '', dragging: false,
+        sending: false, error: '', doneNr: null, doneId: null,
+        openDialog() {
+          this.isOpen = true
+          this.error = ''
+          this.$nextTick(() => this.$refs.text && this.$refs.text.focus())
+        },
+        close() {
+          if (this.sending || !this.isOpen) return
+          this.isOpen = false
+          if (this.doneNr) this.reset()
+        },
+        reset() { this.text = ''; this.clearShot(); this.doneNr = null; this.doneId = null; this.error = '' },
+        clearShot() {
+          if (this.preview) URL.revokeObjectURL(this.preview)
+          this.shot = null
+          this.preview = ''
+        },
+        async takeFile(file) {
+          this.dragging = false
+          if (!file || !/^image\/(png|jpeg|webp|gif)$/.test(file.type)) {
+            this.error = 'Bitte ein Bild verwenden (PNG, JPG, WebP, GIF).'
+            return
+          }
+          this.error = ''
+          try {
+            var blob = await qfShrink(file)
+            this.clearShot()
+            this.shot = blob
+            this.preview = URL.createObjectURL(blob)
+          } catch (e) {
+            this.error = 'Das Bild konnte nicht gelesen werden.'
+          }
+        },
+        onPaste(e) {
+          if (!this.isOpen || this.doneNr) return
+          var items = (e.clipboardData && e.clipboardData.items) || []
+          for (var i = 0; i < items.length; i++) {
+            if (items[i].kind === 'file' && items[i].type.indexOf('image/') === 0) {
+              e.preventDefault()
+              this.takeFile(items[i].getAsFile())
+              return
+            }
+          }
+        },
+        onDrop(e) { var f = e.dataTransfer && e.dataTransfer.files[0]; if (f) this.takeFile(f); else this.dragging = false },
+        onPick(e) { var f = e.target.files[0]; if (f) this.takeFile(f); e.target.value = '' },
+        async send() {
+          if (!this.text.trim() || this.sending) return
+          this.sending = true
+          this.error = ''
+          var fd = new FormData()
+          fd.append('text', this.text)
+          fd.append('url', location.href)
+          fd.append('viewport', window.innerWidth + 'x' + window.innerHeight)
+          fd.append('js_fehler', JSON.stringify(window.__qfErrors || []))
+          if (this.shot) fd.append('screenshot', this.shot, 'screenshot.' + (this.shot.type.split('/')[1] || 'png'))
+          try {
+            var res = await fetch('/api/meldungen', { method: 'POST', body: fd })
+            var body = await res.json().catch(function () { return {} })
+            if (!res.ok) { this.error = body.error || 'Senden fehlgeschlagen.'; return }
+            this.doneNr = body.data.nr
+            this.doneId = body.data.id
+            if (window.hkoTrack) window.hkoTrack('feedback', { art: 'meldung' })
+          } catch (e) {
+            this.error = 'Netzwerkfehler — bitte nochmals versuchen.'
+          } finally {
+            this.sending = false
+          }
+        },
+      }
+    }
+  </script>
+)}
+
+<style>
+  .qf-fab {
+    position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40;
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.6rem 0.95rem; border-radius: 9999px;
+    background: white; color: var(--brand-dark);
+    border: 1px solid #cbd5e1; font-size: 0.85rem; font-weight: 600;
+    box-shadow: 0 8px 24px -10px rgba(15, 23, 42, 0.35);
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  }
+  .qf-fab:hover { border-color: var(--brand); transform: translateY(-1px); box-shadow: 0 10px 28px -10px rgba(14, 110, 58, 0.45); }
+  .qf-badge {
+    min-width: 1.25rem; height: 1.25rem; padding: 0 0.35rem; border-radius: 9999px;
+    background: #dc2626; color: white; font-size: 0.7rem; line-height: 1.25rem; text-align: center;
+  }
+  @media (max-width: 640px) {
+    .qf-fab-label { display: none; }
+    .qf-fab { padding: 0.7rem; }
+  }
+  .qf-overlay {
+    position: fixed; inset: 0; z-index: 50; background: rgba(15, 23, 42, 0.45);
+    display: flex; align-items: flex-end; justify-content: center; padding: 1rem;
+  }
+  @media (min-width: 640px) { .qf-overlay { align-items: center; } }
+  .qf-dialog {
+    width: 100%; max-width: 32rem; max-height: calc(100vh - 2rem); overflow-y: auto;
+    background: white; border-radius: 0.75rem; padding: 1.25rem;
+    box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.45);
+  }
+  .qf-drop {
+    border: 1.5px dashed #cbd5e1; border-radius: 0.5rem; padding: 0.9rem 1rem; text-align: center;
+    background: #f8fafc; transition: border-color 0.12s, background 0.12s;
+  }
+  .qf-drop-active { border-color: var(--brand); background: var(--brand-tint); }
+  .qf-preview { position: relative; border: 1px solid #e2e8f0; border-radius: 0.5rem; overflow: hidden; background: #f1f5f9; }
+  .qf-preview img { display: block; max-height: 14rem; width: 100%; object-fit: contain; }
+  .qf-remove {
+    position: absolute; top: 0.4rem; right: 0.4rem; width: 1.75rem; height: 1.75rem; border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.7); color: white; font-size: 0.8rem;
+  }
+  kbd {
+    font-family: inherit; font-size: 0.7rem; padding: 0.05rem 0.3rem; border-radius: 0.25rem;
+    border: 1px solid #cbd5e1; background: white; color: #334155;
+  }
+  @media print { .qf-root { display: none !important; } }
+</style>

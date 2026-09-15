@@ -1,0 +1,35 @@
+---
+import LP from '../../layouts/LP.astro'
+import MeldungThread from '../../components/MeldungThread.astro'
+import { getAccess, bounceKt1 } from '../../lib/auth'
+import { createAdminClient } from '../../lib/supabase'
+import type { AntwortRow, MeldungRow } from '../../lib/meldungen'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+
+const id = Astro.params.id ?? ''
+const bounce = bounceKt1(Astro, access, `/admin/meldungen/${id}`)
+if (bounce) return bounce
+if (access.role === 'gast') return Astro.redirect('/')
+
+const { data: meldung } = await Astro.locals.supabase
+  .from('meldungen').select('*').eq('id', id).eq('lp_id', access.user.id).maybeSingle()
+if (!meldung) return Astro.redirect('/meine-meldungen')
+
+const { data: antworten } = await Astro.locals.supabase
+  .from('meldung_antworten').select('*').eq('meldung_id', id).order('created_at')
+
+// Geöffnet = gelesen. Läuft vor dem Rendern, der Zähler am Knopf ist damit schon aktuell.
+if (meldung.lp_ungelesen) {
+  await createAdminClient().from('meldungen').update({ lp_ungelesen: false }).eq('id', id)
+}
+---
+<LP title={`Meldung #${meldung.nr}`}>
+  <div class="max-w-3xl mx-auto">
+    <a href="/meine-meldungen" class="text-sm text-slate-500 hover:text-slate-700">← Meine Meldungen</a>
+    <div class="mt-2">
+      <MeldungThread meldung={meldung as MeldungRow} antworten={(antworten ?? []) as AntwortRow[]} view="meldend" />
+    </div>
+  </div>
+</LP>

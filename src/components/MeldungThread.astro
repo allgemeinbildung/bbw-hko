@@ -1,0 +1,187 @@
+---
+/**
+ * Ticketansicht einer Meldung — geteilt von /meine-meldungen/[id] (view="meldend")
+ * und /admin/meldungen/[id] (view="kt1"). KT1 sieht zusätzlich Browser-Kontext,
+ * JS-Fehler und die Statussteuerung.
+ */
+import {
+  MELDUNG_STATUS,
+  STATUS_CLASS,
+  STATUS_LABEL,
+  formatDatum,
+  type AntwortRow,
+  type MeldungRow,
+} from '../lib/meldungen'
+import { mailAktiv } from '../lib/mail'
+
+interface Props {
+  meldung: MeldungRow
+  antworten: (AntwortRow & { autor?: { full_name: string | null } | null })[]
+  view: 'kt1' | 'meldend'
+  reporterName?: string
+  reporterEmail?: string | null
+}
+const { meldung: m, antworten, view, reporterName, reporterEmail } = Astro.props
+const isKt1 = view === 'kt1'
+// Ohne eingerichteten Versand nichts versprechen — Hinweis läuft dann über den Zähler am Knopf.
+const mitMail = mailAktiv()
+
+// Nur den Pfad verlinken — nie eine vom Client gelieferte absolute URL.
+let pfad: string | null = null
+try {
+  if (m.url) { const u = new URL(m.url); pfad = u.pathname + u.search + u.hash }
+} catch { pfad = null }
+
+const autorLabel = (a: Props['antworten'][number]) =>
+  a.von === 'kt1'
+    ? (isKt1 ? a.autor?.full_name || 'KT1' : 'Plattform-Team')
+    : (isKt1 ? reporterName || 'Meldende Person' : 'Du')
+---
+<div class="max-w-3xl" x-data={`meldungThread(${JSON.stringify(m.id)})`}>
+  <div class="flex flex-wrap items-center gap-3 mb-1">
+    <h1 class="text-2xl font-semibold">Meldung #{m.nr}</h1>
+    <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_CLASS[m.status]}`}>{STATUS_LABEL[m.status]}</span>
+  </div>
+  <p class="text-sm text-slate-500 mb-5">
+    {isKt1 && reporterName && <span>{reporterName}</span>}
+    {isKt1 && reporterEmail && <span> · <a href={`mailto:${reporterEmail}`} class="underline">{reporterEmail}</a></span>}
+    {isKt1 && ' · '}gemeldet am {formatDatum(m.created_at)}
+  </p>
+
+  <article class="bg-white border border-slate-200 rounded-lg p-5 mb-6">
+    <p class="whitespace-pre-wrap text-slate-800">{m.text}</p>
+
+    {m.screenshot_path && (
+      <a href={`/api/meldungen/${m.id}/screenshot`} target="_blank" rel="noopener" class="block mt-4" title="Screenshot in voller Grösse öffnen">
+        <img src={`/api/meldungen/${m.id}/screenshot`} alt="Screenshot zur Meldung" loading="lazy" class="rounded border border-slate-200 max-h-[28rem] w-auto" />
+      </a>
+    )}
+
+    <dl class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 grid grid-cols-[auto,1fr] gap-x-3 gap-y-1">
+      <dt class="font-semibold">Seite</dt>
+      <dd class="break-all">{pfad ? <a href={pfad} class="underline hover:text-slate-800">{pfad}</a> : '–'}</dd>
+      {isKt1 && (
+        <>
+          <dt class="font-semibold">Fenster</dt><dd>{m.viewport ?? '–'}</dd>
+          <dt class="font-semibold">Browser</dt><dd class="break-all">{m.user_agent ?? '–'}</dd>
+          <dt class="font-semibold">JS-Fehler</dt>
+          <dd>
+            {m.js_fehler?.length
+              ? <ul class="list-disc pl-4 font-mono text-[11px] text-red-700">{m.js_fehler.map((e) => <li class="break-all">{e}</li>)}</ul>
+              : 'keine'}
+          </dd>
+        </>
+      )}
+    </dl>
+  </article>
+
+  <h2 class="text-sm font-semibold text-slate-700 uppercase tracking-wide mb-3">Verlauf</h2>
+  {antworten.length === 0 && (
+    <p class="text-sm text-slate-500 mb-4">
+      {isKt1
+        ? 'Noch keine Antwort.'
+        : mitMail
+          ? 'Noch keine Antwort — du bekommst eine E-Mail, sobald jemand antwortet.'
+          : 'Noch keine Antwort — sobald jemand antwortet, erscheint sie hier.'}
+    </p>
+  )}
+  <ol class="space-y-3 mb-6">
+    {antworten.map((a) => (
+      <li class={`rounded-lg border p-4 ${a.von === 'kt1' ? 'bg-[var(--brand-tint)] border-emerald-200 mr-8' : 'bg-white border-slate-200 ml-8'}`}>
+        <div class="text-xs text-slate-500 mb-1"><span class="font-semibold text-slate-700">{autorLabel(a)}</span> · {formatDatum(a.created_at)}</div>
+        <p class="whitespace-pre-wrap text-sm text-slate-800">{a.text}</p>
+      </li>
+    ))}
+  </ol>
+
+  <form @submit.prevent="send()" class="bg-white border border-slate-200 rounded-lg p-4 space-y-3">
+    <label for="antwort-text" class="field-label block">Antworten</label>
+    <textarea id="antwort-text" x-model="text" class="input" rows="4" maxlength="5000"
+      placeholder={isKt1 ? 'Antwort an die meldende Person …' : 'Ergänzung oder Rückfrage …'}></textarea>
+    {isKt1 && m.status !== 'erledigt' && (
+      <label class="flex items-center gap-2 text-sm text-slate-700">
+        <input type="checkbox" x-model="erledigt" style="accent-color: var(--brand)" />
+        Mit dieser Antwort als erledigt markieren
+      </label>
+    )}
+    {!isKt1 && m.status === 'erledigt' && (
+      <p class="text-xs text-slate-500">Diese Meldung ist erledigt. Wenn du antwortest, wird sie wieder geöffnet.</p>
+    )}
+    <div x-show="error" class="text-sm text-red-600" x-text="error"></div>
+    <div class="flex justify-end">
+      <button type="submit" class="px-4 py-2 rounded-md text-sm font-medium text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        style="background: var(--brand)" :disabled="!text.trim() || busy" x-text="busy ? 'Sendet…' : 'Senden'"></button>
+    </div>
+  </form>
+
+  {isKt1 && (
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <span class="field-label mr-1">Status</span>
+      {MELDUNG_STATUS.map((s) => (
+        <button type="button" class={`radio-pill ${s === m.status ? 'selected' : ''}`} disabled={s === m.status}
+          @click={`setStatus('${s}')`}>{STATUS_LABEL[s]}</button>
+      ))}
+    </div>
+  )}
+  <p class="text-xs text-slate-400 mt-3">
+    {isKt1
+      ? (mitMail
+          ? 'Die meldende Person erhält bei jeder Antwort und beim Erledigen eine E-Mail.'
+          : 'Keine E-Mail eingerichtet: die meldende Person sieht Antwort und Status unter «Meine Meldungen» (rote Zahl am Knopf).')
+      : (mitMail
+          ? 'Du erhältst eine E-Mail, sobald das Plattform-Team antwortet.'
+          : 'Neue Antworten erkennst du an der roten Zahl am Knopf «Problem melden».')}
+  </p>
+</div>
+
+<script is:inline>
+  function meldungThread(id) {
+    return {
+      text: '', erledigt: false, busy: false, error: '',
+      async send() {
+        if (!this.text.trim() || this.busy) return
+        this.busy = true
+        this.error = ''
+        try {
+          const res = await fetch(`/api/meldungen/${id}/antworten`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: this.text, erledigt: this.erledigt }),
+          })
+          if (!res.ok) {
+            const body = await res.json().catch(() => ({}))
+            this.error = body.error || 'Senden fehlgeschlagen.'
+            return
+          }
+          location.reload()
+        } catch {
+          this.error = 'Netzwerkfehler — bitte nochmals versuchen.'
+        } finally {
+          this.busy = false
+        }
+      },
+      async setStatus(status) {
+        if (this.busy) return
+        this.busy = true
+        this.error = ''
+        try {
+          const res = await fetch(`/api/meldungen/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status }),
+          })
+          if (!res.ok) {
+            const body = await res.json().catch(() => ({}))
+            this.error = body.error || 'Status konnte nicht geändert werden.'
+            return
+          }
+          location.reload()
+        } catch {
+          this.error = 'Netzwerkfehler — bitte nochmals versuchen.'
+        } finally {
+          this.busy = false
+        }
+      },
+    }
+  }
+</script>

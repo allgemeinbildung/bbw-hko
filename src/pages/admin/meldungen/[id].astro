@@ -1,0 +1,43 @@
+---
+import Admin from '../../../layouts/Admin.astro'
+import MeldungThread from '../../../components/MeldungThread.astro'
+import { createAdminClient } from '../../../lib/supabase'
+import type { AntwortRow, MeldungRow } from '../../../lib/meldungen'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+const id = Astro.params.id ?? ''
+const { data: meldung } = await Astro.locals.supabase
+  .from('meldungen')
+  .select('*, reporter:profiles!lp_id(full_name)')
+  .eq('id', id)
+  .maybeSingle()
+if (!meldung) return Astro.redirect('/admin/meldungen')
+
+const { data: antworten } = await Astro.locals.supabase
+  .from('meldung_antworten')
+  .select('*, autor:profiles!autor_id(full_name)')
+  .eq('meldung_id', id)
+  .order('created_at')
+
+// E-Mail steht nicht in `profiles` — für den direkten Kontakt aus auth.users holen.
+const { data: authUser } = await createAdminClient().auth.admin.getUserById(meldung.lp_id)
+const reporterEmail = authUser?.user?.email ?? null
+---
+<Admin title={`Meldung #${meldung.nr}`}>
+  <a href="/admin/meldungen" class="text-sm text-slate-500 hover:text-slate-700">← Alle Meldungen</a>
+  <div class="mt-2">
+    <MeldungThread
+      meldung={meldung as MeldungRow}
+      antworten={(antworten ?? []) as AntwortRow[]}
+      view="kt1"
+      reporterName={meldung.reporter?.full_name ?? undefined}
+      reporterEmail={reporterEmail}
+    />
+  </div>
+</Admin>
