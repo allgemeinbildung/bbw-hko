@@ -64,6 +64,10 @@ const { count: meldungenOffen } = await Astro.locals.supabase
             class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
           >Einheiten →</a>
           <a
+            href="/vorlagen"
+            class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
+          >Vorlagen →</a>
+          <a
             href="/admin/eigene-materialien"
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/eigene-materialien' ? 'admin-tab-active' : 'admin-tab'}`}
           >Geteilte Materialien</a>
