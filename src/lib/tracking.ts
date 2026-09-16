@@ -89,6 +89,9 @@ export function classifyPath(path: string): { area: TrackArea; ref: string | nul
     case 'einreichen':
     case 'meine-materialien':
     case 'bearbeiten':
+    // Die Word-Vorlagen sind der Vorlauf zum Einreichen und gehoeren in dieselbe
+    // Auswertung — sonst landet die Seite unter «sonstiges».
+    case 'vorlagen':
       return { area: 'material', ref: null }
 
     case 'admin':

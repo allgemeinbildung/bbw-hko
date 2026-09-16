@@ -11,5 +11,12 @@ if (bounce) return bounce
 if (access.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material einreichen ist nur für angemeldete Lehrpersonen möglich.'))
 ---
 <LP title="Einreichen">
+  <div class="max-w-5xl mx-auto px-6 pt-6 -mb-2">
+    <p class="text-sm text-slate-500">
+      Lieber zuerst auf Papier arbeiten?
+      <a href="/vorlagen" class="text-[var(--brand)] font-medium hover:underline">Word-Vorlagen herunterladen</a>
+      — sie tragen dieselben Felder wie dieses Formular.
+    </p>
+  </div>
   <IntakeForm initialData={{ abteilung: access.abteilung ?? '' }} />
 </LP>

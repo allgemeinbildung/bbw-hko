@@ -1,0 +1,331 @@
+---
+// /vorlagen — leere Word-Vorlagen für eigenes Material.
+//
+// Die Vorlagen werden nicht als Dateien ausgeliefert, sondern im Browser
+// erzeugt (docx + JSZip, wie EinheitWorkbench). Das hat zwei Gründe: sie tragen
+// dieselbe Typografie wie alles, was die Plattform sonst ausgibt, und sie sind
+// **vorbefüllt** — wer einen Lehrplan-Ort wählt, bekommt Kompetenzversprechen,
+// Aspekte und Sprachmodi schon im Dokument stehen.
+//
+// Der Lehrplan kommt als Auszug in ein <script type="application/json"> (siehe
+// nrlp-auszug.ts); die drei vollen nRLP-Dateien bleiben aus dem Client-Bundle.
+import LP from '../layouts/LP.astro'
+import { getAccess } from '../lib/auth'
+import { vorlagenBaum } from '../lib/vorlagen/nrlp-auszug'
+import { LEHRGANG_LABEL } from '../lib/vorlagen/kontext'
+import { VORLAGEN_TYPEN } from '../lib/vorlagen/docx'
+import { TERMINOLOGIE_LABEL, TERMINOLOGIE_HINWEIS } from '../lib/vorlagen/wortschatz'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+// Kein bounceKt1: Vorlagen sind ein Werkzeug, kein LP-Workflow-Schritt — KT1
+// unterrichtet auch. Der Gast bekommt hier wie überall keine Downloads.
+if (access.role === 'gast') {
+  return Astro.redirect('/situationen?error=' + encodeURIComponent('Vorlagen stehen angemeldeten Lehrpersonen zur Verfügung.'))
+}
+
+const baum = vorlagenBaum()
+const lehrgaenge = Object.keys(baum) as (keyof typeof baum)[]
+const abteilung = access.abteilung ?? ''
+---
+<LP title="Vorlagen">
+  <main class="max-w-5xl mx-auto px-6 py-10" x-data="vorlagen()" x-cloak>
+
+    <header class="mb-8">
+      <h1 class="text-2xl font-bold text-slate-900">Vorlagen für eigenes Material</h1>
+      <p class="mt-2 text-slate-600 max-w-3xl leading-relaxed">
+        Vier Word-Dokumente im selben Layout wie die fertigen Einheiten — drei zum Ausfüllen, eines als leeres Gerüst.
+        Wählen Sie unten die Sprache der Beschriftungen und optional einen Lehrplan-Ort;
+        die Vorlage kommt dann bereits vorbefüllt heraus.
+      </p>
+    </header>
+
+    <!-- Schritt 1 — Terminologie -->
+    <section class="mb-8">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">1 · Beschriftungen</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {(['hko', 'neutral'] as const).map((t) => (
+          <button
+            type="button"
+            @click={`term = '${t}'`}
+            :class={`term === '${t}' ? 'border-[var(--brand)] ring-2 ring-[var(--brand-ring)]' : 'border-slate-200 hover:border-slate-300'`}
+            class="text-left bg-white border rounded-xl p-4 transition"
+          >
+            <span class="block font-semibold text-slate-900">{TERMINOLOGIE_LABEL[t]}</span>
+            <span class="block mt-1 text-sm text-slate-500 leading-snug">{TERMINOLOGIE_HINWEIS[t]}</span>
+          </button>
+        ))}
+      </div>
+      <p class="mt-3 text-sm text-slate-500">
+        Die Vorlage ist eine ganz normale, ungesperrte <code class="text-xs">.docx</code> — jede Überschrift
+        lässt sich in Word umbenennen, verschieben oder löschen. Die Auswahl hier bestimmt nur, womit Sie starten.
+      </p>
+    </section>
+
+    <!-- Schritt 2 — Lehrplan-Bezug -->
+    <section class="mb-8">
+      <div class="flex items-baseline justify-between mb-3">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">2 · Lehrplan-Bezug <span class="font-normal normal-case tracking-normal text-slate-400">— optional</span></h2>
+        <button type="button" @click="reset()" x-show="lehrgang" class="text-sm text-slate-500 hover:text-slate-800">Auswahl zurücksetzen</button>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">Lehrgang</label>
+          <div class="flex flex-wrap gap-2">
+            {lehrgaenge.map((lg) => (
+              <button
+                type="button"
+                @click={`pickLehrgang('${lg}')`}
+                :class={`lehrgang === '${lg}' ? 'bg-[var(--brand)] text-white border-[var(--brand)]' : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'`}
+                class="px-3.5 py-1.5 rounded-lg border text-sm font-medium transition"
+              >{LEHRGANG_LABEL[lg as keyof typeof LEHRGANG_LABEL]}</button>
+            ))}
+          </div>
+        </div>
+
+        <template x-if="lehrgang">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">Thema</label>
+              <select x-model.number="themaNr" @change="onThema()" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm">
+                <option :value="null">— wählen —</option>
+                <template x-for="t in themen()" :key="t.nr">
+                  <option :value="t.nr" x-text="`T${t.nr} · ${t.titel}`"></option>
+                </template>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1.5">Lebensbezug</label>
+              <select x-model="lebensbezugNr" @change="onLb()" :disabled="!lebensbezuege().length" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm disabled:bg-slate-50 disabled:text-slate-400">
+                <option :value="null">— wählen —</option>
+                <template x-for="l in lebensbezuege()" :key="l.nr">
+                  <option :value="l.nr" x-text="`${l.nr} · ${l.text}`"></option>
+                </template>
+              </select>
+            </div>
+          </div>
+        </template>
+
+        <template x-if="kompetenzen().length">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1.5">
+              Kompetenz(en) <span class="text-slate-400 font-normal">— mehrere möglich</span>
+            </label>
+            <div class="space-y-1.5">
+              <template x-for="k in kompetenzen()" :key="k.nr">
+                <label class="flex gap-2.5 items-start p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                  <input type="checkbox" :value="k.nr" x-model="kompetenzNrs" class="mt-0.5 accent-[var(--brand)]" />
+                  <span class="text-sm leading-snug">
+                    <span class="font-mono text-xs text-slate-500" x-text="k.nr"></span>
+                    <span class="block text-slate-700" x-text="k.text"></span>
+                  </span>
+                </label>
+              </template>
+            </div>
+          </div>
+        </template>
+
+        <template x-if="!lehrgang">
+          <p class="text-sm text-slate-500">
+            Ohne Auswahl entsteht eine komplett leere Vorlage — nichts ist vorbefüllt, der Anhang mit
+            Schlüsselkompetenzen und Sprachmodi entfällt.
+          </p>
+        </template>
+      </div>
+
+      <template x-if="kompetenzNrs.length">
+        <p class="mt-3 text-sm text-[var(--brand-dark)] bg-[var(--brand-tint)] rounded-lg px-3.5 py-2.5">
+          Vorbefüllt wird: Kompetenzversprechen, Verortung
+          <span x-show="term === 'hko'">sowie ein Anhang mit Schlüsselkompetenzen, Aspekten und Sprachmodi</span>.
+        </p>
+      </template>
+    </section>
+
+    <!-- Schritt 3 — Vorlagen -->
+    <section>
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">3 · Herunterladen</h2>
+      <div class="space-y-3">
+        {VORLAGEN_TYPEN.map((v) => (
+          <div class="bg-white border border-slate-200 rounded-xl p-5 flex gap-5 items-start hover:border-[var(--brand)] transition">
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-slate-900">{v.label}</h3>
+              <p class="mt-1 text-sm text-slate-600 leading-relaxed">{v.zweck}</p>
+            </div>
+            <button
+              type="button"
+              @click={`download('${v.key}')`}
+              :disabled="busy"
+              class="shrink-0 px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-semibold hover:bg-[var(--brand-dark)] disabled:opacity-50 transition"
+            >Word ↓</button>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          @click="downloadAll()"
+          :disabled="busy"
+          class="px-4 py-2 rounded-lg border border-[var(--brand)] text-[var(--brand-dark)] text-sm font-semibold hover:bg-[var(--brand-tint)] disabled:opacity-50 transition"
+        >Alle vier als ZIP ↓</button>
+        <span x-show="busy" class="text-sm text-slate-500">Vorlage wird erstellt …</span>
+        <span x-show="fehler" x-text="fehler" class="text-sm text-red-600"></span>
+      </div>
+
+      <p class="mt-6 text-sm text-slate-500 leading-relaxed max-w-3xl">
+        Fertig ausgefüllt? Unter <a href="/einreichen" class="text-[var(--brand)] font-medium hover:underline">Material einreichen</a>
+        hochladen — die Felder der Vorlage tragen dieselben Namen wie das Formular, und das ausgefüllte
+        Word-Dokument lässt sich gleich als Zusatzmaterial anhängen.
+      </p>
+    </section>
+
+    <script type="application/json" id="vorlagen-baum" set:html={JSON.stringify(baum)}></script>
+    <script type="application/json" id="vorlagen-abteilung" set:html={JSON.stringify(abteilung)}></script>
+
+    <!--
+      Zwei Skripte, und die Reihenfolge ist Absicht: Alpine kommt im <head> per
+      `defer` aus dem CDN und startet, sobald das Parsen fertig ist. Ein von
+      Astro gebuendeltes <script> ist ein Modul und laeuft damit NACH Alpine —
+      `alpine:init` waere dort schon vorbei. Die Komponente wird deshalb inline
+      registriert (laeuft waehrend des Parsens, also vor Alpine), und das
+      gebuendelte Modul reicht seine Bausteine ueber ein Promise nach.
+    -->
+    <script is:inline>
+      window.__hkoVorlagen = new Promise((resolve) => { window.__hkoVorlagenReady = resolve })
+
+      document.addEventListener('alpine:init', () => {
+        const readJson = (id) => {
+          const el = document.getElementById(id)
+          try { return el ? JSON.parse(el.textContent || 'null') : null } catch { return null }
+        }
+        const baum = readJson('vorlagen-baum') || {}
+        const abteilung = readJson('vorlagen-abteilung') || ''
+
+        window.Alpine.data('vorlagen', () => ({
+          term: 'hko',
+          lehrgang: null,
+          themaNr: null,
+          lebensbezugNr: null,
+          kompetenzNrs: [],
+          busy: false,
+          fehler: '',
+
+          // T7 «Schlussarbeit» hat keine Lebensbezuege — ein Thema ohne Unterebene
+          // waere eine Sackgasse in der Kaskade und wird darum nicht angeboten.
+          themen() {
+            if (!this.lehrgang) return []
+            return (baum[this.lehrgang]?.themen || []).filter((t) => (t.lebensbezuege || []).length)
+          },
+          lebensbezuege() {
+            return this.themen().find((t) => t.nr === this.themaNr)?.lebensbezuege || []
+          },
+          kompetenzen() {
+            return this.lebensbezuege().find((l) => l.nr === this.lebensbezugNr)?.kompetenzen || []
+          },
+
+          pickLehrgang(lg) {
+            this.lehrgang = this.lehrgang === lg ? null : lg
+            this.reset(true)
+          },
+          onThema() { this.lebensbezugNr = null; this.kompetenzNrs = [] },
+          onLb() { this.kompetenzNrs = [] },
+          reset(behalteLehrgang) {
+            if (!behalteLehrgang) this.lehrgang = null
+            this.themaNr = null; this.lebensbezugNr = null; this.kompetenzNrs = []
+          },
+
+          async modul() { return await window.__hkoVorlagen },
+
+          opts(m) {
+            const kontext = m.buildKontext(
+              {
+                lehrgang: this.lehrgang,
+                themaNr: this.themaNr,
+                lebensbezugNr: this.lebensbezugNr,
+                kompetenzNrs: this.kompetenzNrs,
+              },
+              this.lehrgang ? (baum[this.lehrgang] || null) : null,
+            )
+            return { kontext, terminologie: this.term, abteilung }
+          },
+
+          dateiname(m, typ, kontext) {
+            const teil = (m.VORLAGEN_TYPEN.find((v) => v.key === typ) || {}).dateiteil || 'vorlage'
+            const slug = m.kontextSlug(kontext)
+            return `BBW_vorlage_${teil}${slug === 'vorlage' ? '' : '_' + slug}.docx`
+          },
+
+          async download(typ) {
+            if (this.busy) return
+            this.busy = true; this.fehler = ''
+            try {
+              const m = await this.modul()
+              const o = Object.assign(this.opts(m), { logoPng: await m.logo() })
+              m.save(await m.toBlob(m.buildVorlage(typ, o)), this.dateiname(m, typ, o.kontext))
+            } catch (e) {
+              console.error(e)
+              this.fehler = 'Erstellen fehlgeschlagen: ' + (e?.message || e)
+            } finally { this.busy = false }
+          },
+
+          async downloadAll() {
+            if (this.busy) return
+            this.busy = true; this.fehler = ''
+            try {
+              const m = await this.modul()
+              const o = Object.assign(this.opts(m), { logoPng: await m.logo() })
+              const zip = m.neuesZip()
+              for (const v of m.VORLAGEN_TYPEN) {
+                zip.file(this.dateiname(m, v.key, o.kontext), await m.toBlob(m.buildVorlage(v.key, o)))
+              }
+              const slug = m.kontextSlug(o.kontext)
+              m.save(await zip.generateAsync({ type: 'blob' }), `BBW_vorlagen${slug === 'vorlage' ? '' : '_' + slug}.zip`)
+            } catch (e) {
+              console.error(e)
+              this.fehler = 'Erstellen fehlgeschlagen: ' + (e?.message || e)
+            } finally { this.busy = false }
+          },
+        }))
+      })
+    </script>
+  </main>
+</LP>
+
+<script>
+  // Alles, was gebuendelt werden muss (docx, JSZip, die Vorlagen selbst), und
+  // nichts weiter: die Bedienlogik sitzt im Inline-Skript oben. Uebergabe per
+  // Promise, siehe Kommentar dort.
+  import { Packer } from 'docx'
+  import JSZip from 'jszip'
+  import { buildVorlage, VORLAGEN_TYPEN } from '../lib/vorlagen/docx'
+  import { buildKontext, kontextSlug } from '../lib/vorlagen/kontext'
+
+  // Das Logo wird einmal geholt und fuer alle folgenden Dokumente wiederverwendet.
+  let logoBuf: ArrayBuffer | null = null
+  async function logo(): Promise<ArrayBuffer | null> {
+    if (logoBuf) return logoBuf
+    try { logoBuf = await fetch('/logo-bbw-doc.png').then((r) => r.arrayBuffer()) } catch { logoBuf = null }
+    return logoBuf
+  }
+
+  function save(blob: Blob, name: string) {
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = name
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    setTimeout(() => URL.revokeObjectURL(url), 1500)
+    // Statistik wie bei den Einheiten-Downloads; ein Fehler hier darf nie die Seite stoppen.
+    ;(window as any).hkoTrack?.('download', { art: 'vorlage', datei: name })
+  }
+
+  ;(window as any).__hkoVorlagenReady?.({
+    buildVorlage, VORLAGEN_TYPEN, buildKontext, kontextSlug,
+    toBlob: (doc: any) => Packer.toBlob(doc),
+    neuesZip: () => new JSZip(),
+    logo, save,
+  })
+</script>

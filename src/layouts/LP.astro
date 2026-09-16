@@ -28,6 +28,10 @@ const error = Astro.url.searchParams.get('error')
             class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/einreichen' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}
           >Einreichen</a>
           <a
+            href="/vorlagen"
+            class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/vorlagen' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}
+          >Vorlagen</a>
+          <a
             href="/meine-materialien"
             class={`px-4 py-1.5 rounded-md text-sm font-medium transition ${path === '/meine-materialien' ? 'tab-active' : 'text-slate-600 hover:text-slate-900'}`}
           >Meine Materialien</a>
