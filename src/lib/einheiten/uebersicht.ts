@@ -170,9 +170,26 @@ ${items}
   const vorschauBanner = vorschau
     ? `    <div class="banner">
       <strong>Vorschau — noch nicht freigegeben.</strong>
-      So sieht die Einheit im Download aus. ${features.length ? `Neu sind ${esc(features.map((f) => f.label).join(', ').replace(/, ([^,]*)$/, ' und $1'))} — würdest du sie einsetzen?` : ''}
+      So sieht die Einheit im Download aus. Schau dir die neuen Bausteine an und sag uns, ob du sie einsetzen würdest.
       <a class="btn btn-primary" href="#/feedback">Rückmeldung geben</a>
     </div>\n`
+    : ''
+
+  // «Was ist neu?» — nur in der Vorschau, eine Karte pro neuem Baustein dieser Einheit.
+  const entryKeysNeu = new Set(entries.map((e) => e.key))
+  const neuSection = vorschau && features.length
+    ? `      <section class="neu">
+        <h2>Was ist neu?</h2>
+        <p class="muted">Die Einheit folgt dem bekannten Aufbau — drei Herausforderungen, Kompetenznachweis, Begleitdokument. Neu dazu kommen:</p>
+        <div class="neu-grid">
+${features.map((f) => `          <article class="neu-card">
+            <h3>${esc(f.label)}</h3>
+            <p>${esc(f.was)}</p>
+            <p class="neu-wo"><strong>Wo:</strong> ${esc(f.wo)}</p>
+${f.beispiel ? `            <p class="neu-bsp"><strong>Beispiel:</strong> ${esc(f.beispiel)}</p>\n` : ''}            <div class="neu-actions">${entryKeysNeu.has(f.ansehen) ? `<a class="btn" href="#/doc/${esc(f.ansehen)}">Ansehen →</a>` : ''}<a class="btn btn-primary" href="#/feedback">Einschätzen</a></div>
+          </article>`).join('\n')}
+        </div>
+      </section>\n`
     : ''
 
   const wordHinweis = vorschau
@@ -316,6 +333,16 @@ ${vorschau ? '<meta name="robots" content="noindex, nofollow" />\n' : ''}<title>
   .steps { display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin:22px 0; padding:0; list-style:none; counter-reset:s; }
   .steps li { background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:.88rem; }
   .steps li strong { display:block; color:var(--brand-dark); margin-bottom:2px; }
+  .neu { margin:26px 0 8px; }
+  .neu h2 { font-size:1.2rem; color:var(--brand-dark); margin:0 0 4px; }
+  .neu-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin-top:12px; }
+  .neu-card { background:#fff; border:1px solid var(--line); border-top:3px solid var(--brand); border-radius:10px;
+    padding:14px 16px; display:flex; flex-direction:column; gap:6px; font-size:.88rem; }
+  .neu-card h3 { margin:0; font-size:1rem; }
+  .neu-card p { margin:0; }
+  .neu-wo, .neu-bsp { color:var(--muted); font-size:.82rem; }
+  .neu-bsp { background:var(--bg); border-radius:6px; padding:6px 8px; }
+  .neu-actions { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:6px; }
   .start-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:10px; margin:10px 0 24px; }
   .start-card { display:grid; grid-template-columns:auto 1fr; gap:2px 10px; text-decoration:none; background:#fff;
     border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:10px; padding:12px 14px; }
@@ -406,7 +433,7 @@ ${vorschau && o.zurueckUrl ? `      <a class="side-link" href="${esc(o.zurueckUr
 ${vorschauBanner}      <h1>${esc(einheitTitel)}</h1>
       <p class="meta"><strong>Abgedeckte Kompetenzen:</strong> ${esc(kompetenzList)} · <strong>Thema:</strong> ${esc(thema)}</p>
       <p class="meta"><strong>${vorschau ? 'Stand' : 'Generiert'}:</strong> ${esc(when.toLocaleString('de-CH'))} · <strong>Dateien:</strong> ${log.length}</p>
-      <ol class="steps">
+${neuSection}      <ol class="steps">
         <li><strong>Auswählen</strong>Links die Dokumente in Unterrichtsreihenfolge.</li>
         <li><strong>Ansehen</strong>Das Dokument erscheint hier im Reader.</li>
         <li><strong>Weiterarbeiten</strong>Im neuen Tab öffnen, drucken oder als Word ${vorschau ? 'herunterladen' : 'öffnen'}.</li>
