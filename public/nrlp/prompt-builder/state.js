@@ -9,7 +9,11 @@ export const S = {
   sprachmodi: [],     // strings (free mode) | {modus, detail} objects (official mode)
   schluessel: [],     // strings (free mode)
   gesellschaft: [],   // {aspekt, detail} objects
-  beispiele: [],      // array of umsetzungsbeispiel objects
+  // Die offiziellen Umsetzungsbeispiele stehen NICHT im State: sie sind eine reine
+  // Funktion der Auswahl und werden beim Prompt-Bau abgeleitet
+  // (umsetzungsbeispiele.js). Frueher wurden sie hier mitgefuehrt und nur beim
+  // Lebensbezug-Klick nachgezogen — eine spaetere Kompetenz-Auswahl verfeinerte das
+  // Beispiel darum nie.
   pruefungstyp: '',
   pruefungsdauer: '',
   hilfsmittel: '',
@@ -24,7 +28,6 @@ export function resetState() {
   S.sprachmodi = [];
   S.schluessel = [];
   S.gesellschaft = [];
-  S.beispiele = [];
   S.pruefungstyp = '';
   S.pruefungsdauer = '';
   S.hilfsmittel = '';
@@ -38,7 +41,6 @@ export function selectThema(nrlp, nr) {
   S.sprachmodi = [];
   S.schluessel = [];
   S.gesellschaft = [];
-  S.beispiele = [];
   S.pruefungstyp = '';
   S.pruefungsdauer = '';
   S.hilfsmittel = '';
@@ -66,31 +68,23 @@ export function setHandlungsprodukt(value) {
 }
 
 // Official mode: select/deselect a lebensbezug (toggles open + clears orphaned kompetenzen)
-export function selectLB(nrlp, nr) {
+export function selectLB(nr) {
   const lb = S.thema.lebensbezuege.find(x => x.nr === nr);
   if (S.lebensbezuege.some(x => x.nr === nr)) {
     S.lebensbezuege = [];
-    S.beispiele = [];
   } else {
     S.lebensbezuege = [lb];
     S.kompetenzen = S.kompetenzen.filter(k => lb.kompetenzen.find(x => x.nr === k.nr));
-    const example = nrlp.umsetzungsbeispiele?.find(b => b.thema_nr === S.thema.nr && b.variante === nr);
-    S.beispiele = example ? [example] : [];
   }
 }
 
 // Free mode: toggle open a lebensbezug for drilling into kompetenzen (no exclusive lock)
-export function toggleLBOpen(nrlp, nr) {
+export function toggleLBOpen(nr) {
   const idx = S.lebensbezuege.findIndex(x => x.nr === nr);
   if (idx >= 0) {
     S.lebensbezuege.splice(idx, 1);
-    const bIdx = S.beispiele.findIndex(b => b.thema_nr === S.thema.nr && b.variante === nr);
-    if (bIdx >= 0) S.beispiele.splice(bIdx, 1);
   } else {
-    const lb = S.thema.lebensbezuege.find(x => x.nr === nr);
-    S.lebensbezuege.push(lb);
-    const example = nrlp.umsetzungsbeispiele?.find(b => b.thema_nr === S.thema.nr && b.variante === nr);
-    if (example) S.beispiele.push(example);
+    S.lebensbezuege.push(S.thema.lebensbezuege.find(x => x.nr === nr));
   }
 }
 

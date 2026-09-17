@@ -12,6 +12,12 @@ import { fileURLToPath } from 'node:url'
 const ROOT = fileURLToPath(new URL('..', import.meta.url))
 const DATA_DIR = join(ROOT, 'src', 'data', 'einheiten')
 const OUT = join(ROOT, 'src', 'data', 'einheiten.index.json')
+// Zweite Kopie fuer die statische nRLP-Sub-App unter public/nrlp/ (Graph,
+// Prompt-Builder). Sie kann den Index nicht importieren, sie holt ihn per fetch —
+// und wurde bisher von Hand nachgezogen. Der Prompt-Builder verlinkt daraus in die
+// Werkstatt der Einheit; eine veraltete Kopie zeigt dort Einheiten, die es nicht
+// mehr gibt, oder verschweigt neue. Darum schreibt der Build beide.
+const OUT_PUBLIC = join(ROOT, 'public', 'nrlp', 'einheiten.index.json')
 
 function readJson(p) {
   return JSON.parse(readFileSync(p, 'utf8'))
@@ -196,5 +202,7 @@ function estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter, ki, 
 }
 
 index.sort((a, b) => a.id.localeCompare(b.id))
-writeFileSync(OUT, JSON.stringify(index, null, 2) + '\n')
-console.log(`einheiten.index.json: ${index.length} sets written`)
+const json = JSON.stringify(index, null, 2) + '\n'
+writeFileSync(OUT, json)
+writeFileSync(OUT_PUBLIC, json)
+console.log(`einheiten.index.json: ${index.length} sets written (src + public/nrlp)`)

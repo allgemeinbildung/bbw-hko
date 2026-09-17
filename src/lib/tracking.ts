@@ -84,6 +84,9 @@ export function classifyPath(path: string): { area: TrackArea; ref: string | nul
     case 'lehrplan':
     case 'nrlp':
     case 'umsetzungsbeispiele':
+    // Der Prompt-Builder ist eine Unter-App des nRLP-Graphen und gehoert in dieselbe
+    // Auswertung — sonst landet er unter «sonstiges».
+    case 'prompt-builder':
       return { area: 'lehrplan', ref: null }
 
     case 'einreichen':

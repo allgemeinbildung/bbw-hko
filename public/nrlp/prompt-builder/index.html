@@ -25,7 +25,7 @@
   <span id="dataset-hint" class="dataset-hint"></span>
 </div>
 
-<div class="pb-note">Offizielle Umsetzungsbeispiele folgen (~Ende Juni 2026). Bis dahin dient eine passende Einheit/Situation als Orientierung.</div>
+<div class="pb-note">Die offiziellen Umsetzungsbeispiele des Schullehrplans sind eingebunden (9 EFZ-3J &middot; 10 EFZ-4J &middot; 32 EBA). Wo es f&uuml;r Ihre Auswahl keines gibt, dient eine passende Einheit/Situation als Orientierung. <a href="/umsetzungsbeispiele" target="_top">Alle ansehen &rarr;</a></div>
 
 <div class="mode-bar">
   <button class="mode-btn active" id="btn-official" onclick="setMode('official')">A &mdash; Lehrplankonform</button>
@@ -60,6 +60,13 @@
       <button class="btn primary" onclick="copyPrompt()">Kopieren</button>
       <button class="btn" onclick="downloadPrompt()">Speichern (.txt)</button>
     </div>
+    <!--
+      Werkstatt-Br&uuml;cke: gef&uuml;llt von render.js, sobald die Auswahl auf eine bestehende
+      Einheit passt. Sitzt bewusst &uuml;ber der Vorschau &mdash; wer hier eine passende Einheit
+      sieht, soll sie sehen, bevor er den Prompt von der Wiese weg baut.
+    -->
+    <div class="wk-panel hidden" id="werkstatt-panel"></div>
+
     <div class="prompt-header">
       <span>Prompt-Vorschau</span>
       <button class="btn sm" onclick="clearAll()">Leeren</button>

@@ -5,6 +5,7 @@
 import { S } from './state.js';
 import { buildPrompt, OUTPUT_TYPES, rWertFor } from './prompts.js';
 import { skShort } from '../ext/sk-labels.js';
+import { passendeEinheiten } from './einheiten.js';
 
 // nRLP Thema-Identitaetsfarben (EFZ), Spiegel von src/lib/thema-colors.ts.
 const THEMA_COLORS = {
@@ -23,6 +24,12 @@ function rBadge(r) {
 // Escape single quotes for inline onclick attribute values
 function esc(s) { return (s || '').replace(/'/g, "\\'"); }
 function escDouble(s) { return (s || '').replace(/"/g, "&quot;"); }
+// Vollstaendiges Escaping fuer Text, der als HTML-Inhalt landet (Einheiten-Titel).
+function escHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
 function syncInputValue(inputId, value) {
   const input = document.getElementById(inputId);
   if (!input) return;
@@ -348,6 +355,50 @@ export function renderPrompt(nrlp) {
     pre.classList.remove('hidden');
     pre.textContent = prompt;
   }
+
+  renderWerkstatt(nrlp);
+}
+
+// ─── WERKSTATT-BRUECKE ────────────────────────────────────────────────────────
+// Passt die Auswahl auf eine bestehende Einheit, ist der Prompt von der Wiese weg
+// meist der Umweg: die Werkstatt dieser Einheit erzeugt Zusatzmaterial, das deren
+// Prinzip, Trade-off-Raum und Beurteilungsraster als Auflage mittraegt. Diese Liste
+// ist die Abzweigung dorthin.
+
+function einheitLabel(e) {
+  return e.einheit_titel || e.titel || e.id;
+}
+
+function werkstattZeile(e, nah) {
+  const meta = [e.kompetenz_nr, nah ? null : 'gleicher Lebensbezug'].filter(Boolean).join(' · ');
+  return `<a class="wk-row" href="/einheiten/${encodeURIComponent(e.id)}/werkstatt" target="_top" rel="noopener"
+      title="Werkstatt der Einheit &laquo;${escDouble(escHtml(einheitLabel(e)))}&raquo;">
+      <span class="wk-row-main">
+        <span class="wk-row-title">${escHtml(einheitLabel(e))}</span>
+        <span class="wk-row-meta">${escHtml(meta)}</span>
+      </span>
+      <span class="wk-row-go">Werkstatt &rarr;</span>
+    </a>`;
+}
+
+function renderWerkstatt(nrlp) {
+  const box = document.getElementById('werkstatt-panel');
+  if (!box) return;
+  const treffer = passendeEinheiten(S, nrlp && nrlp._datasetPath);
+  const zeilen = [
+    ...treffer.kompetenz.map(e => werkstattZeile(e, true)),
+    ...treffer.lebensbezug.map(e => werkstattZeile(e, false)),
+  ];
+  if (!zeilen.length) {
+    box.classList.add('hidden');
+    box.innerHTML = '';
+    return;
+  }
+  box.classList.remove('hidden');
+  box.innerHTML = `<div class="wk-head">Dazu gibt es schon eine Einheit</div>
+    <p class="wk-hint">Deren Werkstatt erzeugt Zusatzmaterial, das in die Einheit hineinpasst &mdash;
+      mit Prinzip, Trade-off-Raum und Beurteilungsraster als Auflage.</p>
+    ${zeilen.join('')}`;
 }
 
 // ─── OUTPUT TYPE SELECT ───────────────────────────────────────────────────────

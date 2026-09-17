@@ -908,6 +908,20 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           )
         )}
 
+        {/* Werkstatt steht bei den Lehrpersonen-Werkzeugen, nicht unten beim Feedback:
+            sie gehoert vor den Unterricht, nicht danach. Gaeste sehen sie nie. */}
+        {!readOnly && (
+          <a
+            className="wb-action"
+            href={`/einheiten/${d.id}/werkstatt`}
+            title="Prompt für Zusatzmaterial zu dieser Einheit — für die Lehrperson, nicht für die Lernenden"
+          >
+            <span className="wb-action-icon" aria-hidden="true">🛠</span>
+            <span className="wb-action-label">Werkstatt</span>
+            <span className="wb-action-note">Zusatzmaterial</span>
+          </a>
+        )}
+
         <nav className="wb-tree">
           <div className="wb-tree-group">
             <div className="wb-tree-head">Herausforderungen</div>
