@@ -2,6 +2,8 @@
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
 import EinheitCard from '../../components/einheiten/EinheitCard.astro'
+import { createAdminClient } from '../../lib/supabase'
+import { VORSCHAU_BUCKET } from '../../lib/vorschau'
 import { applyEinheitenFilters, einheitenIndex, emptyEinheitenFilters, visibleEinheiten, lehrgaengeOf, lehrgangLabel, isEbaLehrgang, sortLehrgaenge } from '../../lib/einheiten'
 
 const user = Astro.locals.user
@@ -47,6 +49,15 @@ const allLehrgaenge = sortLehrgaenge(Array.from(new Set(einheitenIndex.flatMap(l
 // EFZ-Karten zeigen, für welche EFZ-Varianten die Einheit gilt — seit Einheiten
 // für 3J UND 4J gültig sein können, ist das nicht mehr aus der Sektion ableitbar.
 // In der EBA-Sektion wäre der Chip redundant (dort ist alles EBA 2-jährig).
+// Vorschauen neuer Einheiten (Ordner im privaten Bucket) — nur für Lehrpersonen.
+let vorschauen: { id: string; titel: string }[] = []
+if (role !== 'gast') {
+  const { data: ordner } = await createAdminClient().storage.from(VORSCHAU_BUCKET).list('', { limit: 100 })
+  vorschauen = (ordner ?? [])
+    .filter((o) => !o.id)
+    .map((o) => ({ id: o.name, titel: einheitenIndex.find((e) => e.id === o.name)?.einheit_titel ?? '' }))
+    .filter((v) => v.titel)
+}
 const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
   lehrgaengeOf(e).filter((l) => !isEbaLehrgang(l))
 ---
@@ -63,6 +74,17 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
       — und gib im Anschluss Feedback.
     </p>
   </div>
+
+  {vorschauen.length > 0 && (
+    <div class="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span><strong>Neu in der Vorschau:</strong> So sehen die neuen Einheiten aus — wir sind gespannt auf deine Rückmeldung.</span>
+      <span class="flex flex-wrap gap-2 ml-auto">
+        {vorschauen.map((v) => (
+          <a href={`/vorschau/${v.id}/`} class="font-medium text-amber-900 border border-amber-400 bg-white rounded-md px-3 py-1 hover:bg-amber-100">{v.titel} →</a>
+        ))}
+      </span>
+    </div>
+  )}
 
   {SHOW_FILTER && (
   <form method="get" class="bg-white border border-slate-200 rounded-lg p-4 mb-6 flex flex-wrap gap-3 items-end">

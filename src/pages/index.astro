@@ -93,7 +93,7 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
         ))}
       </div>
 
-      <!-- Secondary: Jahresplanung + Situationen (list) -->
+      <!-- Secondary: Umsetzungsbeispiele, Jahresplanung, Werkzeuge (list) -->
       <div class="border-t border-slate-100 pt-5">
         <p class="text-xs text-slate-400 uppercase tracking-wider mb-4">Weitere Angebote</p>
         <div class="flex flex-col gap-3">
@@ -125,12 +125,30 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
               <path d="M5 10h10M11 5l5 5-5 5" />
             </svg>
           </a>
-          <a href="/situationen" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
-            Sammlung Herausforderungen
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-              <path d="M5 10h10M11 5l5 5-5 5" />
-            </svg>
-          </a>
+          {!isGuest && (
+            <a href="/vorschau" class="flex flex-col gap-0.5 group">
+              <span class="inline-flex items-center gap-2 text-base text-slate-600 group-hover:text-[var(--brand)] transition-colors">
+                Vorschau
+                <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-[var(--brand-tint)] text-[var(--brand-dark)] tracking-wide">Neu</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                  <path d="M5 10h10M11 5l5 5-5 5" />
+                </svg>
+              </span>
+              <span class="text-xs text-slate-400">Neue Einheiten vor der Freigabe ansehen und Rückmeldung geben</span>
+            </a>
+          )}
+          {!isGuest && (
+            <a href="/vorlagen" class="flex flex-col gap-0.5 group">
+              <span class="inline-flex items-center gap-2 text-base text-slate-600 group-hover:text-[var(--brand)] transition-colors">
+                Vorlagen Word
+                <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-[var(--brand-tint)] text-[var(--brand-dark)] tracking-wide">Neu</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                  <path d="M5 10h10M11 5l5 5-5 5" />
+                </svg>
+              </span>
+              <span class="text-xs text-slate-400">Word-Vorlagen für eigenes Material, aus dem Lehrplan vorbefüllt</span>
+            </a>
+          )}
         </div>
       </div>
     </main>

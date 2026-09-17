@@ -1,0 +1,136 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import { createAdminClient } from '../../lib/supabase'
+import { einheitById } from '../../lib/einheiten'
+import { BEWERTUNGEN, FEATURE_KEYS, FEATURE_LABEL, VORSCHAU_BUCKET } from '../../lib/vorschau'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+// Welche Vorschauen gibt es? = Ordner auf oberster Ebene im Bucket.
+const { data: ordner } = await createAdminClient().storage.from(VORSCHAU_BUCKET).list('', { limit: 1000 })
+const vorschauen = (ordner ?? []).filter((o) => !o.id).map((o) => o.name)
+
+const { data } = await Astro.locals.supabase
+  .from('vorschau_feedback')
+  .select('*, person:profiles!lp_id(full_name, abteilung)')
+  .order('updated_at', { ascending: false })
+
+type Row = {
+  id: string
+  updated_at: string
+  einheit_id: string
+  rolle: string
+  bewertungen: Record<string, { wert?: string }>
+  kommentar: string | null
+  person: { full_name: string | null; abteilung: string | null } | null
+}
+const rows = (data ?? []) as Row[]
+const einheiten = [...new Set([...vorschauen, ...rows.map((r) => r.einheit_id)])]
+
+const WERT_LABEL: Record<string, string> = Object.fromEntries(BEWERTUNGEN.map((b) => [b.key, b.label]))
+const WERT_CLASS: Record<string, string> = {
+  einsetzen: 'bg-emerald-100 text-emerald-800',
+  nicht: 'bg-slate-200 text-slate-700',
+}
+type Zaehler = { key: string; c: Record<string, number>; total: number }
+const sections = einheiten.map((id) => {
+  const eigene = rows.filter((r) => r.einheit_id === id)
+  const zaehler: Zaehler[] = FEATURE_KEYS.map((k) => {
+    const c: Record<string, number> = Object.fromEntries(BEWERTUNGEN.map((b) => [b.key, 0]))
+    for (const r of eigene) {
+      const w = r.bewertungen?.[k]?.wert
+      if (w && w in c) c[w]++
+    }
+    return { key: k, c, total: Object.values(c).reduce((a, n) => a + n, 0) }
+  }).filter((z) => z.total)
+  return { id, meta: einheitById(id), eigene, zaehler }
+})
+const datum = (iso: string) =>
+  new Date(iso).toLocaleString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' })
+---
+<Admin title="Vorschau-Feedback">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Vorschau-Feedback</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      Rückmeldungen von Lehrpersonen zu noch nicht freigegebenen Einheiten. Neue Vorschau hochladen:
+      <code class="text-xs bg-slate-100 px-1.5 py-0.5 rounded">node scripts/upload-vorschau.mjs &lt;ordner&gt; &lt;setKey&gt;</code>
+    </p>
+  </div>
+
+  {einheiten.length === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center text-slate-500">Noch keine Vorschau hochgeladen.</div>
+  )}
+
+  {sections.map(({ id, meta, eigene, zaehler }) => (
+      <section class="bg-white border border-slate-200 rounded-lg mb-6 overflow-hidden">
+        <header class="flex flex-wrap items-center justify-between gap-3 px-5 py-4 border-b border-slate-100">
+          <div>
+            <div class="text-xs font-mono text-slate-400">{id}</div>
+            <h2 class="text-lg font-semibold">{meta?.einheit_titel ?? id}</h2>
+            <div class="text-sm text-slate-500">{eigene.length} {eigene.length === 1 ? 'Rückmeldung' : 'Rückmeldungen'}</div>
+          </div>
+          {vorschauen.includes(id)
+            ? <a href={`/vorschau/${id}/`} target="_blank" class="text-sm font-medium text-emerald-800 border border-emerald-700 rounded-md px-3 py-1.5 hover:bg-emerald-50">Vorschau öffnen ↗</a>
+            : <span class="text-xs text-slate-400">Vorschau nicht mehr hochgeladen</span>}
+        </header>
+
+        {zaehler.length > 0 && (
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+              <tr>
+                <th class="px-5 py-2">Baustein</th>
+                {BEWERTUNGEN.map((b) => <th class="px-3 py-2 whitespace-nowrap">{b.label}</th>)}
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {zaehler.map((z) => (
+                <tr>
+                  <td class="px-5 py-2 font-medium">{FEATURE_LABEL[z.key]}</td>
+                  {BEWERTUNGEN.map((b) => (
+                    <td class="px-3 py-2">
+                      {z.c[b.key] > 0 ? <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${WERT_CLASS[b.key]}`}>{z.c[b.key]}</span> : <span class="text-slate-300">0</span>}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+
+        {eigene.length > 0 && (
+          <div class="divide-y divide-slate-100 border-t border-slate-100">
+            {eigene.map((r) => (
+              <details class="px-5 py-3 group">
+                <summary class="cursor-pointer flex flex-wrap items-baseline gap-x-3">
+                  <span class="font-medium">{r.person?.full_name ?? '–'}</span>
+                  <span class="text-xs text-slate-400">{r.person?.abteilung ?? ''}{r.rolle !== 'lp' ? ` · ${r.rolle}` : ''}</span>
+                  <span class="text-xs text-slate-400 ml-auto">{datum(r.updated_at)}</span>
+                </summary>
+                <dl class="mt-3 grid gap-2 text-sm">
+                  {FEATURE_KEYS.filter((k) => r.bewertungen?.[k]).map((k) => (
+                    <div class="grid sm:grid-cols-[12rem_1fr] gap-x-4">
+                      <dt class="text-slate-500">{FEATURE_LABEL[k]}</dt>
+                      <dd>
+                        {r.bewertungen[k].wert && <span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${WERT_CLASS[r.bewertungen[k].wert ?? ""]}`}>{WERT_LABEL[r.bewertungen[k].wert ?? ""]}</span>}
+                      </dd>
+                    </div>
+                  ))}
+                  {r.kommentar && (
+                    <div class="grid sm:grid-cols-[12rem_1fr] gap-x-4">
+                      <dt class="text-slate-500">Kommentar</dt>
+                      <dd class="whitespace-pre-line text-slate-700">{r.kommentar}</dd>
+                    </div>
+                  )}
+                </dl>
+              </details>
+            ))}
+          </div>
+        )}
+      </section>
+  ))}
+</Admin>

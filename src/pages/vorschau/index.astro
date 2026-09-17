@@ -1,0 +1,44 @@
+---
+// /vorschau — alle hochgeladenen Einheiten-Vorschauen (Ordner im privaten Bucket).
+import LP from '../../layouts/LP.astro'
+import { getAccess } from '../../lib/auth'
+import { createAdminClient } from '../../lib/supabase'
+import { einheitenIndex } from '../../lib/einheiten'
+import { VORSCHAU_BUCKET, VORSCHAU_ROLLEN } from '../../lib/vorschau'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+if (!VORSCHAU_ROLLEN.includes(access.role as any)) {
+  return Astro.redirect('/situationen?error=' + encodeURIComponent('Die Vorschau steht angemeldeten Lehrpersonen zur Verfügung.'))
+}
+
+const { data: ordner } = await createAdminClient().storage.from(VORSCHAU_BUCKET).list('', { limit: 100 })
+const vorschauen = (ordner ?? [])
+  .filter((o) => !o.id)
+  .map((o) => einheitenIndex.find((e) => e.id === o.name))
+  .filter((e): e is NonNullable<typeof e> => !!e)
+---
+<LP title="Vorschau">
+  <div class="max-w-3xl">
+    <h1 class="text-2xl font-semibold">Vorschau neuer Einheiten</h1>
+    <p class="text-sm text-slate-500 mt-1 mb-6">
+      Diese Einheiten sind noch nicht freigegeben. Du siehst sie so, wie sie im Download aussehen werden —
+      und kannst direkt in der Vorschau Rückmeldung zu den neuen Bausteinen geben.
+    </p>
+
+    {vorschauen.length === 0 && (
+      <div class="bg-white border border-slate-200 rounded-lg p-10 text-center text-slate-500">Zurzeit ist keine Vorschau verfügbar.</div>
+    )}
+
+    <div class="grid gap-3">
+      {vorschauen.map((e) => (
+        <a href={`/vorschau/${e.id}/`} class="block bg-white border border-slate-200 border-t-[3px] border-t-[var(--brand)] rounded-lg px-5 py-4 hover:border-[var(--brand)] transition">
+          <div class="text-xs font-mono text-slate-400">{e.id.match(/^[\d.]+/)?.[0]}</div>
+          <div class="text-lg font-semibold text-slate-900">{e.einheit_titel}</div>
+          <div class="text-sm text-slate-500">{e.titel}</div>
+          <div class="mt-2 text-sm font-semibold text-[var(--brand)]">Vorschau öffnen →</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</LP>
