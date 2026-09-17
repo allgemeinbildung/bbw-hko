@@ -1,0 +1,375 @@
+---
+// /einheiten/<slug>/werkstatt — Prompts, die an einer bestimmten Einheit hängen.
+//
+// Abgrenzung zum Prompt-Builder unter /prompt-builder: Dort wird aus dem blanken
+// Lehrplan heraus geplant, wenn es noch nichts gibt. Hier steht die Einheit bereits,
+// und der Prompt trägt sie als Auflage mit — Prinzip, Trade-off-Raum, verbrauchte
+// Personas, Beurteilungsmassstab. Das ist der Unterschied zwischen «ein ABU-Blatt»
+// und «ein Blatt, das in diese Einheit passt».
+//
+// Abgrenzung zur KI-Toolbox derselben Einheit: die richtet sich an die LERNENDEN.
+// Diese Seite richtet sich an die Lehrperson.
+//
+// Die Seite erzeugt heute nur den Prompt-Text. Der Prompt schreibt dem Modell aber
+// bereits ein festes Markdown-Skelett vor (siehe lib/werkstatt/auftraege.ts) — das ist
+// die Naht für einen späteren Rückweg ins Word-Hausformat.
+import Einheiten from '../../../layouts/Einheiten.astro'
+import { einheitById, loadEinheit, isEntwurf, stripDraftComponents } from '../../../lib/einheiten'
+import { enrichKompetenzen } from '../../../lib/einheiten/kompetenz-text'
+import { werkstattKontext } from '../../../lib/werkstatt/kontext'
+import { AUFTRAEGE, NIVEAUS, NIVEAU_LABEL } from '../../../lib/werkstatt/auftraege'
+import { ubFuerKompetenzen, ubLehrgangOf } from '../../../lib/umsetzungsbeispiele'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role, abteilung')
+  .eq('id', user.id)
+  .single()
+
+const role: 'lp' | 'kt1' | 'gast' =
+  profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
+
+const setKey = Astro.params.setKey!
+const meta = einheitById(setKey)
+const fullSet = loadEinheit(setKey)
+if (!meta || !fullSet) return new Response('Einheit nicht gefunden', { status: 404 })
+
+// Die Werkstatt erzeugt Material — das ist eine Lehrpersonen-Handlung. Gäste sehen
+// Kataloge, nie Werkzeuge.
+if (role === 'gast') {
+  return Astro.redirect(
+    `/einheiten/${setKey}?error=` + encodeURIComponent('Die Werkstatt steht angemeldeten Lehrpersonen zur Verfügung.')
+  )
+}
+// Entwurf-Einheiten sind nur für KT1 — dieselbe Schranke wie auf der Detailseite.
+if (isEntwurf(meta) && role !== 'kt1') return Astro.redirect('/einheiten')
+
+// Entwurf-Bausteine raus, bevor irgendetwas davon in einen Prompt gerät.
+const sichtbar = stripDraftComponents(fullSet, meta, role)
+const kontext = werkstattKontext(enrichKompetenzen(sichtbar), meta)
+
+// Vorauswahl der Lerngruppe aus dem Profil — spart der Lehrperson eine Eingabe.
+const abteilung = (profile?.abteilung ?? '').trim()
+
+// Offizielle Umsetzungsbeispiele des Schullehrplans zu denselben Kompetenzen.
+// Bewusst NUR als Hinweis in der Oberfläche, nicht im Prompt: die Einheit hat mit
+// `rubrik_shared` bereits ihren eigenen Massstab, und ein zweites Raster im
+// Konsistenz-Vertrag würde mit ihm konkurrieren statt ihn zu stützen. Ob das
+// offizielle Beispiel beigezogen wird, entscheidet die Lehrperson.
+const ubLehrgang = ubLehrgangOf(kontext.lehrgang)
+const offizielle = ubFuerKompetenzen(ubLehrgang, kontext.kompetenzen.map((k) => k.nr))
+const ubUrl = `/umsetzungsbeispiele?lehrgang=${encodeURIComponent(ubLehrgang)}`
+
+// Nur die anzeigbaren Teile der Auftragsdefinition; die Funktionen bleiben im Modul.
+const auftragKarten = AUFTRAEGE.map((a) => ({
+  key: a.key,
+  label: a.label,
+  zweck: a.zweck,
+  brauchtHf: a.brauchtHf,
+  richtungen: a.richtungen,
+  niveauDefault: a.niveauDefault,
+  zielgruppeLabel: a.zielgruppeLabel,
+  zielgruppeVorschlag: a.zielgruppeVorschlag,
+}))
+---
+
+<Einheiten title={`Werkstatt — ${kontext.einheitTitel}`} role={role}>
+  <div class="max-w-5xl mx-auto" x-data="werkstatt()" x-cloak>
+
+    <header class="mb-8">
+      <a href={`/einheiten/${setKey}`} class="text-sm text-slate-500 hover:text-slate-800">← Zurück zur Einheit</a>
+      <h1 class="mt-2 text-2xl font-bold text-slate-900">Werkstatt</h1>
+      <p class="mt-1 text-slate-600">
+        Zusatzmaterial zu <strong class="text-slate-800">{kontext.einheitTitel}</strong>
+        {kontext.modul && <span class="text-slate-500"> · Lebensbezug {kontext.modul}</span>}
+      </p>
+      <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">
+        Hier entsteht ein Prompt, der diese Einheit kennt: Prinzip, Trade-off-Raum, Bloom-Korridor,
+        bereits verbrauchte Personas und das Beurteilungsraster gehen als Auflagen mit. Den Prompt
+        kopieren Sie in ein Sprachmodell Ihrer Wahl — das Ergebnis bleibt bei Ihnen, es wird hier nichts gespeichert.
+      </p>
+    </header>
+
+    {offizielle.length > 0 && (
+      <aside class="mb-8 bg-[var(--brand-tint)] border border-[var(--brand)]/25 rounded-xl px-5 py-4">
+        <p class="text-sm font-semibold text-[var(--brand-dark)]">
+          Zu dieser Kompetenz gibt es {offizielle.length === 1 ? 'ein offizielles Umsetzungsbeispiel' : `${offizielle.length} offizielle Umsetzungsbeispiele`} im Schullehrplan
+        </p>
+        <ul class="mt-2 space-y-1">
+          {offizielle.map((e) => (
+            <li class="text-sm text-slate-700 leading-snug">
+              <span class="font-mono text-xs text-slate-500">{e.variant_label}</span>
+              {/* `variant_label` trägt das erweiterte Niveau oft schon im Text — sonst stünde
+                  hier «1.1 (erweitertes Niveau) · erweitertes Niveau». */}
+              {e.niveau === 'erweitert' && !/erweitert/i.test(e.variant_label) && (
+                <span class="ml-1.5 text-xs text-slate-500">· erweitertes Niveau</span>
+              )}
+              {/* Gekürzt wird per CSS, nicht per Satztrennung: «(z. B. …)» im Quelltext
+                  macht jede Punkt-basierte Heuristik falsch. Kein `block` daneben —
+                  line-clamp setzt selbst `display: -webkit-box` und verliert sonst. */}
+              <span class="text-slate-600 line-clamp-2">{e.herausforderung}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          Sie gehen bewusst <strong>nicht</strong> automatisch in den Prompt: Diese Einheit bringt ihr eigenes
+          Beurteilungsraster mit, und zwei Massstäbe nebeneinander widersprechen sich eher, als dass sie helfen.
+          <a href={ubUrl} target="_blank" rel="noopener" class="ml-1 text-[var(--brand-dark)] font-medium hover:underline">Beispiel ansehen →</a>
+        </p>
+      </aside>
+    )}
+
+    <!-- Schritt 1 — Auftrag -->
+    <section class="mb-8">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">1 · Was brauchen Sie?</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {auftragKarten.map((a) => (
+          <button
+            type="button"
+            @click={`pickAuftrag('${a.key}')`}
+            :class={`auftrag === '${a.key}' ? 'border-[var(--brand)] ring-2 ring-[var(--brand-ring)]' : 'border-slate-200 hover:border-slate-300'`}
+            class="text-left bg-white border rounded-xl p-4 transition"
+          >
+            <span class="block font-semibold text-slate-900">{a.label}</span>
+            <span class="block mt-1 text-sm text-slate-500 leading-snug">{a.zweck}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- Schritt 2 — Feinheiten -->
+    <section class="mb-8">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">2 · Genauer</h2>
+      <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-5">
+
+        <div x-show="def().brauchtHf">
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">Zu welcher Herausforderung?</label>
+          <div class="flex flex-wrap gap-2">
+            {kontext.hfs.map((h) => (
+              <button
+                type="button"
+                @click={`hf = '${h.buchstabe}'; rebuild()`}
+                :class={`hf === '${h.buchstabe}' ? 'bg-[var(--brand)] text-white border-[var(--brand)]' : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'`}
+                class="px-3.5 py-1.5 rounded-lg border text-sm font-medium transition max-w-xs text-left"
+                title={h.titel}
+              >
+                <span class="font-bold">{h.buchstabe}</span>
+                <span class="ml-1.5 font-normal opacity-90 truncate inline-block align-bottom max-w-[16rem]">{h.titel}</span>
+              </button>
+            ))}
+          </div>
+          {kontext.hfs.length === 0 && (
+            <p class="text-sm text-slate-500">Diese Einheit hat noch keine Herausforderungen.</p>
+          )}
+        </div>
+
+        <div x-show="def().richtungen.length">
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">Welche Richtung?</label>
+          <div class="flex flex-wrap gap-2">
+            <template x-for="r in def().richtungen" :key="r.key">
+              <button
+                type="button"
+                @click="richtung = r.key; rebuild()"
+                :class="richtung === r.key ? 'bg-[var(--brand)] text-white border-[var(--brand)]' : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'"
+                class="px-3.5 py-2 rounded-lg border text-sm font-medium transition text-left"
+              >
+                <span class="block" x-text="r.label"></span>
+                <span class="block text-xs font-normal opacity-80 mt-0.5" x-text="r.hinweis"></span>
+              </button>
+            </template>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="wk-niveau" class="block text-sm font-medium text-slate-700 mb-1.5">Sprachniveau</label>
+            <select id="wk-niveau" x-model="niveau" @change="rebuild()" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm">
+              {NIVEAUS.map((n) => <option value={n}>{NIVEAU_LABEL[n]}</option>)}
+            </select>
+          </div>
+          <div x-show="def().zielgruppeLabel">
+            <label for="wk-ziel" class="block text-sm font-medium text-slate-700 mb-1.5" x-text="def().zielgruppeLabel"></label>
+            <input
+              id="wk-ziel"
+              type="text"
+              x-model="zielgruppe"
+              @input.debounce.300ms="rebuild()"
+              placeholder="optional"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schritt 3 — Prompt -->
+    <section>
+      <div class="flex items-baseline justify-between mb-3">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">3 · Prompt</h2>
+        <span x-show="prompt" class="text-xs text-slate-400" x-text="`${prompt.length.toLocaleString('de-CH')} Zeichen`"></span>
+      </div>
+
+      <template x-if="blockiert">
+        <p class="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-3 text-sm" x-text="blockiert"></p>
+      </template>
+
+      <template x-if="!blockiert">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <button
+              type="button"
+              @click="kopieren()"
+              class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-semibold hover:bg-[var(--brand-dark)] transition"
+              x-text="kopiert ? 'Kopiert ✓' : 'Prompt kopieren'"
+            ></button>
+            <button
+              type="button"
+              @click="alsDatei()"
+              class="px-4 py-2 rounded-lg border border-[var(--brand)] text-[var(--brand-dark)] text-sm font-semibold hover:bg-[var(--brand-tint)] transition"
+            >Speichern (.txt)</button>
+            <span class="text-sm text-slate-500">In ChatGPT, Copilot oder Claude einfügen.</span>
+          </div>
+
+          <pre class="bg-white border border-slate-200 rounded-xl p-5 text-xs leading-relaxed text-slate-700 whitespace-pre-wrap max-h-[28rem] overflow-y-auto" x-text="prompt"></pre>
+        </div>
+      </template>
+
+      <p class="mt-6 text-sm text-slate-500 leading-relaxed max-w-3xl">
+        Der Prompt verlangt die Antwort in festen Markdown-Abschnitten — so lässt sie sich direkt in Word
+        übernehmen und später, wenn die Werkstatt den Rückweg bekommt, auch automatisch ins Hausformat setzen.
+        Prüfen Sie das Ergebnis, bevor Sie es einsetzen: Das Modell kennt die Einheit nur aus diesem Prompt.
+      </p>
+    </section>
+
+    <script type="application/json" id="wk-kontext" set:html={JSON.stringify(kontext)}></script>
+    <script type="application/json" id="wk-auftraege" set:html={JSON.stringify(auftragKarten)}></script>
+    <script type="application/json" id="wk-abteilung" set:html={JSON.stringify(abteilung)}></script>
+
+    <!--
+      Reihenfolge wie bei /vorlagen: Alpine kommt per `defer` aus dem CDN und startet
+      nach dem Parsen. Ein von Astro gebuendeltes <script> ist ein Modul und laeuft
+      damit NACH Alpine — `alpine:init` waere dort schon vorbei. Die Komponente wird
+      deshalb inline registriert, das Modul reicht seine Funktionen per Promise nach.
+    -->
+    <script is:inline>
+      window.__hkoWerkstatt = new Promise((resolve) => { window.__hkoWerkstattReady = resolve })
+
+      document.addEventListener('alpine:init', () => {
+        const readJson = (id) => {
+          const el = document.getElementById(id)
+          try { return el ? JSON.parse(el.textContent || 'null') : null } catch { return null }
+        }
+        const kontext = readJson('wk-kontext')
+        const auftraege = readJson('wk-auftraege') || []
+        const abteilung = readJson('wk-abteilung') || ''
+        const ersterHf = (kontext && kontext.hfs && kontext.hfs[0]) ? kontext.hfs[0].buchstabe : null
+
+        window.Alpine.data('werkstatt', () => ({
+          m: null,
+          auftrag: auftraege[0]?.key || '',
+          hf: ersterHf,
+          richtung: auftraege[0]?.richtungen?.[0]?.key ?? null,
+          niveau: auftraege[0]?.niveauDefault || 'B1',
+          zielgruppe: auftraege[0]?.zielgruppeVorschlag ? abteilung : '',
+          prompt: '',
+          blockiert: '',
+          kopiert: false,
+
+          init() {
+            window.__hkoWerkstatt.then((m) => { this.m = m; this.rebuild() })
+          },
+
+          def() {
+            return auftraege.find((a) => a.key === this.auftrag) || auftraege[0] || { richtungen: [] }
+          },
+
+          wahl() {
+            return {
+              auftrag: this.auftrag,
+              hf: this.hf,
+              richtung: this.richtung,
+              niveau: this.niveau,
+              zielgruppe: this.zielgruppe,
+            }
+          },
+
+          // Ein Auftragswechsel setzt die Achsen zurueck, die nur zu ihm gehoeren —
+          // sonst haengt an «Sprachniveau anpassen» noch die Richtung der Differenzierung.
+          pickAuftrag(key) {
+            this.auftrag = key
+            const d = this.def()
+            this.richtung = d.richtungen?.[0]?.key ?? null
+            this.niveau = d.niveauDefault || this.niveau
+            if (d.brauchtHf && !this.hf) this.hf = ersterHf
+            // Das Freitextfeld heisst je nach Auftrag etwas anderes. Der Vorschlag aus
+            // dem Profil darf nur stehen bleiben, wo er auch gemeint ist — und nur der
+            // Vorschlag wird weggeraeumt, nie eine eigene Eingabe.
+            if (d.zielgruppeVorschlag) {
+              if (!this.zielgruppe) this.zielgruppe = abteilung
+            } else if (this.zielgruppe === abteilung) {
+              this.zielgruppe = ''
+            }
+            this.rebuild()
+          },
+
+          rebuild() {
+            this.kopiert = false
+            if (!this.m || !kontext) return
+            const w = this.wahl()
+            const def = this.m.auftragDef(this.auftrag)
+            this.blockiert = def ? (def.blockiert(kontext, w) || '') : ''
+            this.prompt = this.blockiert ? '' : this.m.werkstattPrompt(kontext, w)
+          },
+
+          async kopieren() {
+            if (!this.prompt) return
+            try {
+              await navigator.clipboard.writeText(this.prompt)
+            } catch (e) {
+              // Kein Clipboard-Zugriff (aelterer Browser, kein HTTPS): Auswahl statt Fehler.
+              const pre = this.$el.closest('section').querySelector('pre')
+              if (pre) {
+                const r = document.createRange()
+                r.selectNodeContents(pre)
+                const sel = window.getSelection()
+                sel.removeAllRanges()
+                sel.addRange(r)
+              }
+              return
+            }
+            this.kopiert = true
+            setTimeout(() => { this.kopiert = false }, 2000)
+            window.hkoTrack?.('download', { art: 'werkstatt-prompt', wie: 'kopiert', auftrag: this.auftrag, richtung: this.richtung })
+          },
+
+          alsDatei() {
+            if (!this.prompt || !this.m) return
+            const name = this.m.promptDateiname(kontext, this.wahl())
+            const blob = new Blob([this.prompt], { type: 'text/plain;charset=utf-8' })
+            const url = URL.createObjectURL(blob)
+            const a = document.createElement('a')
+            a.href = url
+            a.download = name
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+            setTimeout(() => URL.revokeObjectURL(url), 1500)
+            window.hkoTrack?.('download', { art: 'werkstatt-prompt', wie: 'datei', auftrag: this.auftrag, richtung: this.richtung })
+          },
+        }))
+      })
+    </script>
+  </div>
+</Einheiten>
+
+<script>
+  // Nur das, was gebuendelt werden muss: die reine Prompt-Logik. Die Bedienung sitzt
+  // im Inline-Skript oben, Uebergabe per Promise (siehe Kommentar dort).
+  import { werkstattPrompt, promptDateiname } from '../../../lib/werkstatt/prompt'
+  import { auftragDef } from '../../../lib/werkstatt/auftraege'
+
+  ;(window as any).__hkoWerkstattReady?.({ werkstattPrompt, promptDateiname, auftragDef })
+</script>

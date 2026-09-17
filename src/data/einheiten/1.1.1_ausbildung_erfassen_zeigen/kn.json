@@ -28,7 +28,7 @@
       "betrieb": "eigener Lehrbetrieb",
       "ort": "eigener Wohnort"
     },
-    "text": "Ich bin im 1. Lehrjahr. Am Berufsinfo-Abend stehe ich am Stand meines Lehrbetriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Das A4-Blatt auf dem Tisch hat der Betrieb gemacht, nicht ich. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur aufgeräumt und Material eingeräumt habe. Eine Mutter fragt nach dem Ablauf der überbetrieblichen Kurse, und ich bin mir selbst nicht sicher. Ein Vater fragt, was ich nach dem EFZ mache; zu Hause habe ich diese Frage längst anders beantwortet als hier, und meine Ausbildnerin steht einen Meter weiter. Was ich an diesem Abend sage, entscheidet mit, ob sich jemand für diese Ausbildung anmeldet.",
+    "text": "Ich bin im 1. Lehrjahr. Am Berufsinfo-Abend stehe ich am Stand meines Lehrbetriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Das A4-Blatt auf dem Tisch hat der Betrieb gemacht, nicht ich — für den nächsten Berufsinfo-Abend darf ich ein eigenes Blatt beisteuern. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten»: kein Wort über die zwei Wochen, in denen ich fast nur aufgeräumt und Material eingeräumt habe. Eine Mutter fragt nach dem Ablauf der überbetrieblichen Kurse, und ich bin mir selbst nicht sicher. Ein Vater fragt, was ich nach dem EFZ mache; zu Hause habe ich diese Frage längst anders beantwortet als hier, und meine Ausbildnerin steht einen Meter weiter. Was ich an diesem Abend sage, entscheidet mit, ob sich jemand für diese Ausbildung anmeldet.",
     "leitfrage": "Was ergänze ich, was lasse ich weg — und wem gegenüber verantworte ich diese Auswahl?",
     "aktivierte_trade_offs": [
       "Was der Lehrvertrag regelt vs. was ich im Betrieb erlebe",
@@ -111,38 +111,39 @@
     {
       "typ": "mini_case_schriftlich",
       "label": "Mini Case schriftlich",
-      "format": "schriftlich, 45-60 Min.",
+      "format": "schriftlich, 60 Minuten, Präsenz, handschriftlich",
       "ablauf": [
-        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach Entscheid der Lehrperson; kein Internet.",
-        "Vier strukturierte Aufgaben steigender Komplexität."
+        "Hybrid-Herausforderung als Prüfungsblatt; Textmittel Gesetzestexte (BBG, BBV, OR — dasselbe Exemplar wie in Herausforderung A) und eigenes ausgefülltes Dossier erlaubt, dazu Wörterbuch; kein Lehrmittel, kein Internet, keine künstliche Intelligenz in jeder Form.",
+        "Vier strukturierte Aufgaben steigender Komplexität, 60 Minuten in Präsenz und handschriftlich (Richtzeiten: Lesen 4 · A1 12 · A2 14 · A3 11 · A4 15 · Schlusskontrolle 4).",
+        "Wer sein Dossier nicht ausgefüllt mitbringt, schreibt ohne diesen Teil der Hilfsmittel — das vorgängig ankündigen, nicht erst am Prüfungstag."
       ],
       "aufgaben": [
         {
           "nr": 1,
-          "typ": "Erklären",
-          "aufgabe": "Erklären Sie in drei bis fünf Sätzen, welche Aufgabe Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse haben. Nennen Sie zu jedem Lernort, wo diese Aufgabe geregelt ist.",
+          "typ": "Zuordnen",
+          "aufgabe": "Die Mutter fragt nach dem Ablauf der überbetrieblichen Kurse. Halten Sie für alle drei Lernorte fest, welche Aufgabe sie in Ihrer Ausbildung haben und wo diese Aufgabe gesetzlich geregelt ist (Textmittel Gesetzestexte). Die Fundstelle muss Erlass und Artikel nennen, wo nötig Absatz und Buchstabe — so, dass eine zweite Person die Stelle ohne Rückfrage findet.",
           "k_stufe": 2
         },
         {
           "nr": 2,
           "typ": "Unterscheiden",
-          "aufgabe": "Auf dem Blatt fehlen zwei Dinge: die zwei Wochen mit fast nur Aufräumarbeiten und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.",
+          "aufgabe": "Auf dem Blatt des Betriebs fehlen zwei Dinge: die zwei Wochen mit fast nur Aufräumarbeiten und der Ablauf der überbetrieblichen Kurse. Begründen Sie, weshalb die eine Lücke anders zu beurteilen ist als die andere.",
           "k_stufe": 3
         },
         {
           "nr": 3,
           "typ": "Entscheiden",
-          "aufgabe": "Formulieren Sie die drei Angaben, die auf dem A4-Blatt stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was das Blatt dadurch nicht mehr zeigt.",
+          "aufgabe": "Für den nächsten Berufsinfo-Abend dürfen Sie ein eigenes Blatt beisteuern. Formulieren Sie die drei Angaben, die darauf stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was Ihr Blatt dadurch nicht mehr zeigt.",
           "k_stufe": 3
         },
         {
           "nr": 4,
-          "typ": "Forderung",
-          "aufgabe": "Formulieren Sie in Ich-Form, was Sie von Ihrem Lehrbetrieb erwarten — oder von dort, wo Sie zuletzt gearbeitet haben —, damit Sie an einem solchen Abend ehrlich Auskunft geben können, und was Sie im Gegenzug zusichern.",
+          "typ": "Entscheiden",
+          "aufgabe": "Der Vater fragt Sie, was Sie nach dem EFZ machen; Ihre Ausbildnerin steht einen Meter weiter. a) Formulieren Sie Ihre Antwort in drei bis fünf Sätzen als Behauptung, Begründung, Beispiel. b) Halten Sie in einem Satz fest, welchen Teil Ihrer eigenen Antwort Sie in dieser Situation zurückhalten — und weshalb. c) Nennen Sie einen Schritt mit Datum, den Sie in diesem Schuljahr tun, damit Sie diese Frage beim nächsten Mal ohne Zögern beantworten können; der Schritt muss am Termin mit Ja oder Nein beantwortbar sein.",
           "k_stufe": 4
         }
       ],
-      "sk": [1, 6, 11],
+      "sk": [2, 6, 8],
       "aspekte": ["Recht", "Ethik", "Identität und Sozialisation"],
       "sprachmodi": [
         "Rezeption schriftlich und bildlich",

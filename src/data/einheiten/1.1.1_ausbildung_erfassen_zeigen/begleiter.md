@@ -703,7 +703,7 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 **Persona:** <!--hko:kn.hybrid_situation.persona|persona-->Lernende/r EFZ, 1. Lehrjahr — eigener Lehrbetrieb, eigener Wohnort<!--/hko-->.
 
 <!--hko:kn.hybrid_situation.text|quote-->
-> Ich bin im 1. Lehrjahr. Am Berufsinfo-Abend stehe ich am Stand meines Lehrbetriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Das A4-Blatt auf dem Tisch hat der Betrieb gemacht, nicht ich. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten» — kein Wort über die zwei Wochen, in denen ich fast nur aufgeräumt und Material eingeräumt habe. Eine Mutter fragt nach dem Ablauf der überbetrieblichen Kurse, und ich bin mir selbst nicht sicher. Ein Vater fragt, was ich nach dem EFZ mache; zu Hause habe ich diese Frage längst anders beantwortet als hier, und meine Ausbildnerin steht einen Meter weiter. Was ich an diesem Abend sage, entscheidet mit, ob sich jemand für diese Ausbildung anmeldet.
+> Ich bin im 1. Lehrjahr. Am Berufsinfo-Abend stehe ich am Stand meines Lehrbetriebs und erkläre Sekundarschülerinnen und ihren Eltern, wie meine Ausbildung läuft. Das A4-Blatt auf dem Tisch hat der Betrieb gemacht, nicht ich — für den nächsten Berufsinfo-Abend darf ich ein eigenes Blatt beisteuern. Meine Ausbildnerin hat gesagt, ich solle es «positiv halten»: kein Wort über die zwei Wochen, in denen ich fast nur aufgeräumt und Material eingeräumt habe. Eine Mutter fragt nach dem Ablauf der überbetrieblichen Kurse, und ich bin mir selbst nicht sicher. Ein Vater fragt, was ich nach dem EFZ mache; zu Hause habe ich diese Frage längst anders beantwortet als hier, und meine Ausbildnerin steht einen Meter weiter. Was ich an diesem Abend sage, entscheidet mit, ob sich jemand für diese Ausbildung anmeldet.
 <!--/hko-->
 
 **Leitfrage:** <!--hko:kn.hybrid_situation.leitfrage-->Was ergänze ich, was lasse ich weg — und wem gegenüber verantworte ich diese Auswahl?<!--/hko-->
@@ -726,7 +726,7 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 | Methode | Format | Prüft primär | Sprachmodi | Wählen Sie, wenn … |
 |---|---|---|---|---|
 | Fachgespräch | mündlich, 30–35 Min. pro Person | Begründungsfähigkeit unter Nachfrage | Rezeption schriftlich · Produktion mündlich · Interaktion mündlich | … Sie die Person wirklich kennenlernen wollen. Bei 24 Lernenden rund 4 Lektionen plus Organisation. |
-| Mini Case schriftlich | schriftlich, 45–60 Min. | Fachkorrektheit und schriftliche Argumentation | Rezeption und Produktion schriftlich | … die ganze Klasse gleichzeitig geprüft werden soll und die Vergleichbarkeit zählt. |
+| Mini Case schriftlich | schriftlich, 60 Min., Präsenz, handschriftlich | Fachkorrektheit und schriftliche Argumentation | Rezeption und Produktion schriftlich | … die ganze Klasse gleichzeitig geprüft werden soll und die Vergleichbarkeit zählt. |
 | **Werkschau + Transfer-Reflexion** | Portfolio, digital zusammengestellt | Das Prinzip über alle drei Produkte hinweg | Produktion schriftlich | … die Einheit vollständig gelaufen ist. **Der Hauptweg dieser Einheit.** |
 
 > [!coaching] Methodenwahl an Klasse und Variante koppeln
@@ -804,32 +804,38 @@ Der Austausch ist ein eigenständiges Set-Dokument, nicht Teil der Herausforderu
 
 ### 8.5 Mini Case schriftlich — Aufgaben
 
-**Aufgabe 1 — <!--hko:kn.kn_typen[1].aufgaben[0].aufgabe-->Erklären Sie in drei bis fünf Sätzen, welche Aufgabe Lehrbetrieb, Berufsfachschule und überbetriebliche Kurse haben. Nennen Sie zu jedem Lernort, wo diese Aufgabe geregelt ist.<!--/hko-->**
+**Zeit und Hilfsmittel.** 60 Minuten, Präsenz, handschriftlich. Richtzeiten: Lesen 4 · A1 12 · A2 14 · A3 11 · A4 15 · Schlusskontrolle 4. Zugelassen: Textmittel Gesetzestexte (BBG, BBV, OR — dasselbe Exemplar wie in Herausforderung A), das eigene ausgefüllte Dossier zu A/B/C, Wörterbuch. Nicht zugelassen: Lehrmittel, Internet, Mobiltelefon, Notebook, künstliche Intelligenz in jeder Form.
 
-> [!erwartungshorizont] Aufgabe 1 (Erklären, K2) — Lernorte mit Grundlage
-> **Vollständig:** drei Lernorte, drei Aufgaben, drei Grundlagen (BBG 19 / BBG 21f. / BBG 23 oder sinngemäss «Bildungsverordnung», «Schullehrplan», «üK-Reglement»).
-> **Lückenhaft:** Aufgaben ohne Grundlage — das ist der halbe Punkt. Oder die üK fehlen.
+> [!hinweis] Dossier-Regel vorgängig ankündigen
+> Wer sein Dossier nicht ausgefüllt mitbringt, schreibt ohne diesen Teil der Hilfsmittel. Diese Regel bei der Ankündigung des KN kommunizieren, nicht erst am Prüfungstag — sonst ist sie an der Notenkonferenz angreifbar. A3 und A4 setzen ausserdem auf dem eigenen Lehrbetrieb und der eigenen Zukunft auf; zwei Arbeiten können darum nicht identisch ausfallen.
 
-**Aufgabe 2 — <!--hko:kn.kn_typen[1].aufgaben[1].aufgabe-->Auf dem Blatt fehlen zwei Dinge: die zwei Wochen mit fast nur Aufräumarbeiten und der üK-Ablauf. Beides ist eine Lücke. Begründen Sie, weshalb die eine anders zu beurteilen ist als die andere.<!--/hko-->**
+**Aufgabe 1 — <!--hko:kn.kn_typen[1].aufgaben[0].aufgabe-->Die Mutter fragt nach dem Ablauf der überbetrieblichen Kurse. Halten Sie für alle drei Lernorte fest, welche Aufgabe sie in Ihrer Ausbildung haben und wo diese Aufgabe gesetzlich geregelt ist (Textmittel Gesetzestexte). Die Fundstelle muss Erlass und Artikel nennen, wo nötig Absatz und Buchstabe — so, dass eine zweite Person die Stelle ohne Rückfrage findet.<!--/hko-->**
+
+> [!erwartungshorizont] Aufgabe 1 (Zuordnen, K2) — Lernorte mit Fundstelle
+> **Vollständig:** allen drei Lernorten ihre Aufgabe zugeordnet, mit Fundstelle nach Erlass und Artikel — BBG Art. 16 Abs. 2 lit. a (Lehrbetrieb), lit. b + Art. 21 (Berufsfachschule), lit. c + Art. 23 (überbetriebliche Kurse) — so genau, dass eine zweite Person ohne Rückfrage nachschlagen kann.
+> **Lückenhaft:** «Art. 16» ohne Erlassangabe — bei drei Erlassen im selben Textmittel nicht auffindbar. Oder die üK fehlen.
+> **Häufigster Fehler:** OR Art. 344 ff. (Lehrvertrag) statt BBG für den Lehrbetrieb — der Lehrvertrag liegt im Textmittel direkt daneben und regelt das Arbeitsverhältnis, nicht den Lernort.
+
+**Aufgabe 2 — <!--hko:kn.kn_typen[1].aufgaben[1].aufgabe-->Auf dem Blatt des Betriebs fehlen zwei Dinge: die zwei Wochen mit fast nur Aufräumarbeiten und der Ablauf der überbetrieblichen Kurse. Begründen Sie, weshalb die eine Lücke anders zu beurteilen ist als die andere.<!--/hko-->**
 
 > [!erwartungshorizont] Aufgabe 2 (Unterscheiden, K3) — Auswahl gegen Wissenslücke
-> **Stufe 3 zeigt:** die Unterscheidung zwischen bewusster Auswahl und fehlendem Wissen, mit je einer Folge.
+> **Stufe 3 zeigt:** die Unterscheidung zwischen bewusster Auswahl und fehlendem Wissen, mit je einer Folge — auch für die Besuchenden: Wer nachfragen kann, merkt eine Wissenslücke; wer nichts merkt, geht mit einem zurechtgelegten Bild nach Hause und meldet sich vielleicht darauf an.
 > **Stufe 4 zeigt zusätzlich:** dass die Wissenslücke behebbar ist und die Auswahl eine Entscheidung bleibt — die eine verlangt eine Handlung, die andere eine Begründung.
 > **Nicht Stufe 4:** beide Lücken gleich behandeln und moralisch bewerten.
 
-**Aufgabe 3 — <!--hko:kn.kn_typen[1].aufgaben[2].aufgabe-->Formulieren Sie die drei Angaben, die auf dem A4-Blatt stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was das Blatt dadurch nicht mehr zeigt.<!--/hko-->**
+**Aufgabe 3 — <!--hko:kn.kn_typen[1].aufgaben[2].aufgabe-->Für den nächsten Berufsinfo-Abend dürfen Sie ein eigenes Blatt beisteuern. Formulieren Sie die drei Angaben, die darauf stehen sollen. Begründen Sie zusätzlich eine Angabe, die Sie bewusst weglassen — und benennen Sie, was Ihr Blatt dadurch nicht mehr zeigt.<!--/hko-->**
 
 > [!erwartungshorizont] Aufgabe 3 (Entscheiden, K3) — drei Angaben plus eine Weglassung
 > **Stufe 3 zeigt:** drei adressatengerechte Angaben, eine begründete Weglassung, und die Folge der Weglassung wird genannt.
 > **Stufe 4 zeigt zusätzlich:** dass die drei Angaben aufeinander abgestimmt sind — sie ergeben zusammen ein Bild, nicht drei Fakten.
 > **Nicht Stufe 4:** drei Angaben, die alle dasselbe zeigen (dreimal «wie toll der Betrieb ist»). Formal erfüllt, inhaltlich keine Auswahl.
 
-**Aufgabe 4 — <!--hko:kn.kn_typen[1].aufgaben[3].aufgabe-->Formulieren Sie in Ich-Form, was Sie von Ihrem Lehrbetrieb erwarten — oder von dort, wo Sie zuletzt gearbeitet haben —, damit Sie an einem solchen Abend ehrlich Auskunft geben können, und was Sie im Gegenzug zusichern.<!--/hko-->**
+**Aufgabe 4 — <!--hko:kn.kn_typen[1].aufgaben[3].aufgabe-->Der Vater fragt Sie, was Sie nach dem EFZ machen; Ihre Ausbildnerin steht einen Meter weiter. a) Formulieren Sie Ihre Antwort in drei bis fünf Sätzen als Behauptung, Begründung, Beispiel. b) Halten Sie in einem Satz fest, welchen Teil Ihrer eigenen Antwort Sie in dieser Situation zurückhalten — und weshalb. c) Nennen Sie einen Schritt mit Datum, den Sie in diesem Schuljahr tun, damit Sie diese Frage beim nächsten Mal ohne Zögern beantworten können; der Schritt muss am Termin mit Ja oder Nein beantwortbar sein.<!--/hko-->**
 
-> [!erwartungshorizont] Aufgabe 4 (Forderung, K4) — Erwartung und Gegenleistung
-> **Stufe 3 zeigt:** eine konkrete Erwartung in Ich-Form (nicht «man sollte») und eine konkrete Zusicherung.
-> **Stufe 4 zeigt zusätzlich:** dass die Forderung die Lage des Betriebs mitdenkt — der Betrieb wirbt an diesem Abend um Lernende, das ist ein legitimes Interesse.
-> **Nicht Stufe 4:** eine Forderung ohne Gegenleistung, oder eine Zusicherung, die nichts kostet («ich sage nichts Schlechtes»).
+> [!erwartungshorizont] Aufgabe 4 (Entscheiden, K4) — Antwort, Zurückhalten, eigener Schritt
+> **Stufe 3 zeigt:** eine adressierte Antwort in Behauptung-Begründung-Beispiel (a), eine benannte Zurückhaltung mit Bezug zur Rolle am Stand (b), und einen Schritt mit Datum in diesem Schuljahr, der nicht vom Handeln anderer abhängt (c).
+> **Stufe 4 zeigt zusätzlich:** dass (b) die Rolle explizit macht — «ich vertrete an diesem Abend meinen Betrieb, deshalb gehört das hier nicht hin» — statt eine Person zu nennen, und dass (c) an einem Termin mit Ja/Nein überprüfbar ist.
+> **Nicht Stufe 4:** «Ich sage es nicht, weil ich Angst habe, dass sie sauer ist» — die Zurückhaltung ist genannt, aber aus der Person begründet, nicht aus der Rolle. Ebenso nicht Stufe 4: ein Schritt ohne Datum oder abhängig vom Handeln einer anderen Person (z. B. «wenn meine Ausbildnerin Zeit hat»).
 
 ### 8.6 Bi-dimensionale Bewertung
 

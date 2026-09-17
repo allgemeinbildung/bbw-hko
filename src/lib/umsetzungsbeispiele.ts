@@ -172,3 +172,33 @@ export function parseRaster(md: string): Rubrik {
   }
   return { suk, ges }
 }
+
+// ---------------------------------------------------------------------------
+// Nachschlagen aus anderen Workflows (Einheiten-Werkstatt)
+// ---------------------------------------------------------------------------
+
+/** Einheiten-Lehrgang (`EFZ_3J`) → UB-Lehrgang (`EFZ-3J`). */
+export function ubLehrgangOf(einheitLehrgang: string | null | undefined): UbLehrgang {
+  const s = (einheitLehrgang || '').toUpperCase()
+  if (s.includes('EBA') || s.includes('2J')) return 'EBA'
+  if (s.includes('4J')) return 'EFZ-4J'
+  return 'EFZ-3J'
+}
+
+/**
+ * Offizielle Umsetzungsvarianten zu bestimmten Kompetenznummern.
+ *
+ * Gematcht wird über `kompetenz_nrs`, nie über `variant_label` — das Etikett aus dem
+ * SLP-PDF ist mal eine Lebensbezugs-, mal eine Kompetenznummer und mal eine Aufzählung
+ * («4.1, 4.2»). Dieselbe Regel gilt im Prompt-Builder
+ * (public/nrlp/prompt-builder/umsetzungsbeispiele.js).
+ *
+ * Grundniveau zuerst, danach die erweiterte Variante.
+ */
+export function ubFuerKompetenzen(lehrgang: UbLehrgang, kompetenzNrs: string[]): UbEntry[] {
+  const wanted = new Set(kompetenzNrs.filter(Boolean).map(String))
+  if (!wanted.size) return []
+  return raw
+    .filter((e) => e.lehrgang === lehrgang && e.kompetenz_nrs.some((n) => wanted.has(String(n))))
+    .sort((a, b) => Number(a.niveau === 'erweitert') - Number(b.niveau === 'erweitert'))
+}

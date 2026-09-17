@@ -2,6 +2,7 @@
 // Each function receives the selection state (S) and returns a prompt string.
 
 import { orientierungAusUnits } from './orientierung.js';
+import { bestesBeispiel } from './umsetzungsbeispiele.js';
 import { skShort } from '../ext/sk-labels.js';
 
 export const OUTPUT_TYPES = [
@@ -85,8 +86,31 @@ function firstLebensbezug(S) {
   return S.lebensbezuege.length ? S.lebensbezuege[0] : null;
 }
 
-function firstBeispiel(S) {
-  return S.beispiele.length ? S.beispiele[0] : null;
+// Die offizielle Variante wird hier aus der Auswahl ABGELEITET, nicht aus dem State
+// gelesen — so verfeinert sich das Beispiel, sobald eine Kompetenz gewaehlt ist.
+// Warum nicht ueber `variante` gematcht wird: siehe umsetzungsbeispiele.js.
+function firstBeispiel(S, nrlp) {
+  return bestesBeispiel(S, nrlp);
+}
+
+// Scaffolds der offiziellen Variante ({modus, detail}).
+function formatBeispielScaffolds(be) {
+  const list = (be && be.scaffolds) || [];
+  if (!list.length) return '';
+  return list.map(x => `  - ${x.modus}: ${x.detail}`).join('\n');
+}
+
+// Bewertungspositionen der offiziellen Variante, nach Dimension getrennt.
+// Das ist der Massstab des Bildungsrats — kein selbst erfundener.
+function formatBeispielBewertung(be) {
+  const list = (be && be.bewertung) || [];
+  if (!list.length) return '';
+  const suk = list.filter(x => /sprache/i.test(x.domain || ''));
+  const ges = list.filter(x => !/sprache/i.test(x.domain || ''));
+  const block = (titel, items) =>
+    items.length ? [`  ${titel}:`, ...items.map(x => `    - ${x.text}`)].join('\n') : '';
+  return [block('Sprache und Kommunikation', suk), block('Gesellschaft', ges)]
+    .filter(Boolean).join('\n');
 }
 
 function sharedBlocks(S, nrlp) {
@@ -95,9 +119,12 @@ function sharedBlocks(S, nrlp) {
 
   // Orientierungsbeispiel: offizielle umsetzungsbeispiele (sobald publiziert) haben
   // Vorrang; sonst Interim aus einer echten Einheit/Situation.
-  const offiziell = firstBeispiel(S);
+  const offiziell = firstBeispiel(S, nrlp);
   const interim = offiziell ? null : orientierungAusUnits(S, nrlp?._datasetPath);
-  const beQuelle = offiziell ? 'nRLP-Umsetzungsbeispiel' : (interim?.quelle || '—');
+  // `variante` traegt das erweiterte Niveau bereits im Etikett ("… · erw.").
+  const beQuelle = offiziell
+    ? `offizielles nRLP-Umsetzungsbeispiel ${offiziell.variante}`
+    : (interim?.quelle || '—');
 
   return {
     themaNr,
@@ -112,10 +139,18 @@ function sharedBlocks(S, nrlp) {
     sprachmodi: formatSprachmodi(S.sprachmodi, nrlp, themaNr),
     schluessel: formatSchluesselkompetenzen(S.schluessel, nrlp, themaNr),
     beispielHerausforderung: offiziell?.herausforderung || interim?.herausforderung
-      || 'Noch kein Orientierungsbeispiel — offizielle Umsetzungsbeispiele folgen (~Ende Juni 2026).',
+      || 'Kein Orientierungsbeispiel fuer diese Auswahl — arbeite ohne Vorlage.',
     beispielProdukt: offiziell?.produkt || interim?.produkt
       || 'Noch kein Produktbeispiel verfügbar.',
     beQuelle,
+    // Nur bei offiziellen Beispielen gefuellt — die Interim-Einheit hat keine
+    // SLP-Scaffolds und keine SLP-Bewertungspositionen.
+    beispielScaffolds: formatBeispielScaffolds(offiziell),
+    beispielBewertung: formatBeispielBewertung(offiziell),
+    istOffiziell: !!offiziell,
+    // Gibt es ueberhaupt eine Vorlage? Ohne das wuerde der Block als leere Huelle
+    // stehenbleiben ("ORIENTIERUNGSBEISPIEL (— — nicht 1:1 kopieren …)").
+    hatBeispiel: !!(offiziell || interim),
     lektionenThema: S.thema?.lektionen || null,
     lektionenLB: lb?.lektionen || null,
     pruefungstyp: (S.pruefungstyp || '').trim() || '[aus UI befuellen]',
@@ -148,10 +183,18 @@ function lernsituation(S, niveau, nrlp) {
     'SCHLUESSELKOMPETENZEN (2-3 für diese Einheit):',
     C.schluessel,
     '',
-    `ORIENTIERUNGSBEISPIEL (${C.beQuelle} — nicht 1:1 kopieren, nur als Massstab für Detailgrad und Tonalitaet):`,
-    `Herausforderung: ${C.beispielHerausforderung}`,
-    `Produkt: ${C.beispielProdukt}`,
-    '',
+    ...(C.hatBeispiel
+      ? [
+          `ORIENTIERUNGSBEISPIEL (${C.beQuelle} — nicht 1:1 kopieren, nur als Massstab für Detailgrad und Tonalitaet):`,
+          `Herausforderung: ${C.beispielHerausforderung}`,
+          `Produkt: ${C.beispielProdukt}`,
+          ...(C.beispielScaffolds ? ['Vorgesehene Scaffolds laut Schullehrplan:', C.beispielScaffolds] : []),
+          ...(C.beispielBewertung
+            ? ['Bewertungspositionen laut Schullehrplan — daran muss die Lernsituation messbar bleiben:', C.beispielBewertung]
+            : []),
+          '',
+        ]
+      : []),
     'DEINE AUFGABE: Erstelle eine vollständige Lernsituation mit folgenden Qualitaetskriterien:',
     '',
     '1. AUSGANGSSITUATION (ICH-Perspektive)',
@@ -227,10 +270,18 @@ function aufgabe(S, niveau, nrlp) {
     '   Mache die Beurteilungskriterien direkt in der Aufgabenstellung sichtbar.',
     '   Formuliere sie in der Du-Form für Lernende: "Deine Arbeit wird beurteilt nach..."',
     '   Kriterien müssen beobachtbar und spezifisch für dieses Produkt sein.',
+    ...(C.beispielBewertung
+      ? ['   Diese Bewertungspositionen stehen im Schullehrplan und sind die Vorgabe —',
+         '   uebersetze sie in die Du-Form, erfinde keine eigenen daneben:',
+         C.beispielBewertung]
+      : []),
     '',
     '4. SCAFFOLDING NACH SPRACHMODUS',
     '   Leite die Hilfestellungen direkt aus den gewählten Sprachmodi ab:',
     C.sprachmodi,
+    ...(C.beispielScaffolds
+      ? ['   Der Schullehrplan sieht fuer diese Umsetzung ausserdem vor:', C.beispielScaffolds]
+      : []),
     '   Pro Sprachmodus: biete 2-3 konkrete Scaffolding-Elemente an (Satzanfaenge, Leitfragen,',
     '   Strukturvorlagen, Gespraechsbausteine oder Checklisten - je nach Modus).',
     '',
@@ -266,6 +317,19 @@ function raster(S, niveau, nrlp) {
     'SCHLUESSELKOMPETENZEN:',
     C.schluessel,
     '',
+    ...(C.beispielBewertung
+      ? ['BEWERTUNGSPOSITIONEN AUS DEM SCHULLEHRPLAN — die verbindliche Grundlage',
+         `(${C.beQuelle}). Baue das Raster AUF DIESEN Positionen auf: jede wird zu einer`,
+         'Kriterienzeile. Erfinde keine zusaetzlichen Kategorien daneben; praezisiere die',
+         'Positionen nur produktspezifisch und staffle sie ueber die vier Niveaustufen.',
+         C.beispielBewertung,
+         '']
+      : []),
+    ...(C.beispielScaffolds
+      ? ['VORGESEHENE SCAFFOLDS (dieselbe Quelle) — was gestuetzt wird, muss auch beurteilt werden:',
+         C.beispielScaffolds,
+         '']
+      : []),
     'DEINE AUFGABE: Erstelle ein vollstaendiges Beurteilungsraster.',
     '',
     'STRUKTURVORGABEN:',
@@ -275,8 +339,11 @@ function raster(S, niveau, nrlp) {
     '   Kategorie B - Aspekt Sprache (Form, Ausdruck, Sprachrichtigkeit, Mediennutzung)',
     '',
     '2. KRITERIEN DIREKT AUS DEM HANDLUNGSPRODUKT ABLEITEN',
-    '   Leite die Kriterien nicht abstrakt aus den Kompetenzen ab, sondern konkret aus dem Produkt.',
-    '   Pro Kategorie: 2-3 produktspezifische, beobachtbare Kriterien.',
+    ...(C.beispielBewertung
+      ? ['   Nur fuer Kriterien, die oben NICHT vorgegeben sind: konkret aus dem Produkt ableiten,',
+         '   nicht abstrakt aus den Kompetenzen. Die SLP-Positionen haben immer Vorrang.']
+      : ['   Leite die Kriterien nicht abstrakt aus den Kompetenzen ab, sondern konkret aus dem Produkt.',
+         '   Pro Kategorie: 2-3 produktspezifische, beobachtbare Kriterien.']),
     '',
     '3. VIER NIVEAUSTUFEN (konsistent mit dem 90/100-Modell)',
     '   Stufe 1 - Nicht erfüllt (< 70%): Beschreibung was fehlt oder falsch ist.',
@@ -477,8 +544,10 @@ function comboPromptChain(S, niveau, nrlp) {
     'SCHLUESSELKOMPETENZEN:',
     C.schluessel,
     '',
-    `ORIENTIERUNGSBEISPIEL (${C.beQuelle}) - Herausforderung: ${C.beispielHerausforderung}`,
-    `ORIENTIERUNGSBEISPIEL - Produkt: ${C.beispielProdukt}`,
+    ...(C.hatBeispiel
+      ? [`ORIENTIERUNGSBEISPIEL (${C.beQuelle}) - Herausforderung: ${C.beispielHerausforderung}`,
+         `ORIENTIERUNGSBEISPIEL - Produkt: ${C.beispielProdukt}`]
+      : []),
     '',
     'Bestaetige den Kontext in 2-3 Sätzen. Generiere noch keinen Unterrichtsinhalt.',
     '',

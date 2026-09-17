@@ -157,13 +157,13 @@ function selectThema(nr) {
 }
 
 function selectLB(nr) {
-  _selectLB(nrlp, nr);
+  _selectLB(nr);
   renderLeft();
   renderPrompt();
 }
 
 function toggleLBOpen(nr) {
-  _toggleLBOpen(nrlp, nr);
+  _toggleLBOpen(nr);
   renderLeft();
   renderPrompt();
 }

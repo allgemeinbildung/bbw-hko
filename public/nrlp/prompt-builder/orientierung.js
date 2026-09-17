@@ -1,31 +1,26 @@
-// Interim-Orientierungsbeispiel aus echten bbw-hko-Units, solange
-// nrlp.umsetzungsbeispiele leer ist (offizielle folgen ~Ende Juni 2026).
-const DATASET_LEHRGANG = { '3j': 'EFZ_3J', '4j': 'EFZ_4J', '2j': 'EBA_2J' };
-
-function lehrgangArr(v) { return Array.isArray(v) ? v : (v ? [v] : []); }
+// Ersatz-Orientierungsbeispiel aus echten bbw-hko-Units fuer die Faelle, in denen
+// es KEIN offizielles Umsetzungsbeispiel gibt. Die offiziellen (51 Varianten, seit
+// Juli 2026 in den Datensaetzen) haben Vorrang und werden in prompts.js zuerst
+// gesucht — siehe umsetzungsbeispiele.js. Ungedeckt bleiben vor allem die EFZ-Themen
+// ohne SLP-Variante (u. a. T7 Schlussarbeit und T8).
+//
+// Die Suche selbst steht in einheiten.js — dasselbe Matching speist das
+// Werkstatt-Panel, das die passenden Einheiten auflistet.
+import { besteEinheit, besteSituation } from './einheiten.js';
 
 export function orientierungAusUnits(S, datasetPath) {
-  const U = window.__UNITS || { einheiten: [], situationen: [] };
-  const m = String(datasetPath).match(/nrlp_(\dj)/);
-  const want = DATASET_LEHRGANG[m ? m[1] : '3j'];
-  const kNrs = new Set((S.kompetenzen || []).map(k => k.nr));
-  const lbNr = (S.lebensbezuege || [])[0]?.nr;
-
-  // 1) passende Einheit (Kompetenz-Treffer, Lehrgang passend, nicht Entwurf für lp/gast)
-  const role = window.__NRLP_ROLE || 'lp';
-  const eh = (U.einheiten || []).find(e => {
-    const lg = lehrgangArr(e.lehrgang);
-    const lgOk = !lg.length || lg.includes(want);
-    const draftOk = (role === 'kt1' || role === 'reviewer') ? true : e.status !== 'entwurf';
-    const komp = (e.abgedeckte_kompetenzen || [e.kompetenz_nr]).some(n => kNrs.has(n));
-    return lgOk && draftOk && komp;
-  });
+  const eh = besteEinheit(S, datasetPath);
   if (eh) {
     const hf = eh.hf_titel ? Object.values(eh.hf_titel)[0] : (eh.einheit_titel || eh.titel);
     return { quelle: `Einheit ${eh.id}`, herausforderung: hf, produkt: eh.einheit_titel || eh.titel };
   }
-  // 2) sonst passende Situation über Lebensbezug
-  const sit = (U.situationen || []).find(s => s.lebensbezug_nr === lbNr || s.modul === lbNr);
-  if (sit) return { quelle: `Situation ${sit.id}`, herausforderung: sit.leitfrage || sit.titel, produkt: sit.handlungsprodukt_format || sit.handlungsprodukt_titel || '' };
+  const sit = besteSituation(S);
+  if (sit) {
+    return {
+      quelle: `Situation ${sit.id}`,
+      herausforderung: sit.leitfrage || sit.titel,
+      produkt: sit.handlungsprodukt_format || sit.handlungsprodukt_titel || '',
+    };
+  }
   return null;
 }
