@@ -25,6 +25,30 @@ const knTypen = meta.kn_typen
 // Vorauswahl aus dem zentralen /feedback-Entscheidungsbaum (?art=1zu1|angepasst)
 const preArtRaw = Astro.url.searchParams.get('art')
 const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : ''
+
+// Eigene Rückmeldungen zu dieser Einheit laden — derselbe Wiederaufnahme-Vertrag
+// wie im Situationen-Bogen: solange KT1 nicht gesichtet hat, ist der Bogen wieder
+// aufnehmbar. Ohne das war ein einmal eingereichtes Feedback für die LP
+// unerreichbar, also liessen sich auch keine Dateien nachreichen — obwohl RLS
+// (009) und der Upload-Endpunkt es bei `eingereicht` ausdrücklich erlauben.
+const { data: eigeneRaw } = await Astro.locals.supabase
+  .from('einheit_feedbacks')
+  .select('*')
+  .eq('einheit_id', setKey)
+  .eq('lp_id', user.id)
+  .order('created_at', { ascending: false })
+  .limit(10)
+
+const eigene = eigeneRaw ?? []
+// Offen = noch änderbar (RLS: entwurf/eingereicht). Sonst: die neueste gesperrte
+// Zeile, damit die Seite erklären kann, warum der Bogen leer startet.
+const offen = eigene.find((r) => r.status === 'entwurf' || r.status === 'eingereicht') ?? null
+const gesperrt = offen ? null : eigene[0] ?? null
+
+const dateFmt = new Intl.DateTimeFormat('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' })
+const offenDatum = offen ? dateFmt.format(new Date(offen.created_at)) : ''
+const gesperrtDatum = gesperrt ? dateFmt.format(new Date(gesperrt.created_at)) : ''
+const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : []
 ---
 <Einheiten title={`Feedback · ${meta.einheit_titel}`} role={role}>
   <div class="max-w-3xl mx-auto">
@@ -33,6 +57,36 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
     <p class="text-sm text-slate-500 mb-6">
       Einheit <strong>{meta.einheit_titel}</strong> — {meta.titel}
     </p>
+
+    {offen && (
+      <div class="mb-6 rounded-lg border p-4" style="border-color: var(--brand); background: var(--brand-tint)">
+        <p class="text-sm text-slate-800">
+          <strong>
+            {offen.status === 'eingereicht'
+              ? `Du hast am ${offenDatum} bereits Feedback zu dieser Einheit eingereicht.`
+              : `Du hast am ${offenDatum} einen Entwurf zu dieser Einheit gespeichert.`}
+          </strong>
+          {' '}Die Rückmeldung ist unten vorausgefüllt — du kannst sie ergänzen und Dateien
+          nachreichen, solange KT1 sie nicht gesichtet hat.
+        </p>
+        {offenDateien.length > 0 && (
+          <p class="text-xs text-slate-600 mt-2">
+            Bereits hochgeladen: {offenDateien.length} {offenDateien.length === 1 ? 'Datei' : 'Dateien'} —
+            sichtbar im Abschnitt «Deine Anpassung».
+          </p>
+        )}
+      </div>
+    )}
+
+    {gesperrt && (
+      <div class="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4">
+        <p class="text-sm text-slate-800">
+          <strong>Deine Rückmeldung vom {gesperrtDatum} ist bei KT1 in Bearbeitung</strong> und lässt sich
+          darum nicht mehr ändern. Du kannst unten eine neue erfassen — oder melde dich bei KT1,
+          wenn du der bestehenden noch etwas beilegen möchtest.
+        </p>
+      </div>
+    )}
 
     <!-- Schritt 1: Entscheidungsbaum -->
     <div id="art-step" class="mb-2">
@@ -228,7 +282,9 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
 
       <div class="flex items-center justify-end gap-3">
         <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
-        <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Feedback einreichen</button>
+        <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">
+          {offen?.status === 'eingereicht' ? 'Änderungen speichern' : 'Feedback einreichen'}
+        </button>
       </div>
     </form>
   </div>
@@ -254,7 +310,7 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
     .art-choice-desc { font-size: 0.8rem; line-height: 1.5; color: #64748b; }
   </style>
 
-  <script is:inline>
+  <script is:inline define:vars={{ existingRow: offen }}>
     // Radio-pill click behaviour
     document.querySelectorAll('.radio-pill').forEach((pill) => {
       pill.addEventListener('click', () => {
@@ -310,15 +366,51 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
     syncKn(); knCb.addEventListener('change', syncKn)
 
     // Niveau-Passung → scaffolding reveal
+    function syncScaffolding() {
+      const val = document.querySelector('input[name="niveau_passung"]:checked')?.value
+      document.getElementById('scaffolding-wrap').classList.toggle('hidden', val === 'passend' || !val)
+    }
     document.querySelectorAll('input[name="niveau_passung"]').forEach((r) => {
-      r.addEventListener('change', () => {
-        const val = document.querySelector('input[name="niveau_passung"]:checked')?.value
-        document.getElementById('scaffolding-wrap').classList.toggle('hidden', val === 'passend' || !val)
-      })
+      r.addEventListener('change', syncScaffolding)
     })
 
-    // State: feedback row id returned after first save
-    let savedFeedbackId = null
+    // State: feedback row id returned after first save — bzw. die bestehende,
+    // noch änderbare Rückmeldung aus dem Frontmatter (Wiederaufnahme).
+    let savedFeedbackId = existingRow?.id ?? null
+
+    // Bestehende Zeile in den Bogen zurückschreiben. Radios/Checkboxen tragen
+    // ihren Zustand hier auch in der Optik (.selected/.checked), weil das sonst
+    // nur der Klick-Handler tut.
+    function prefill(row) {
+      Object.entries(row).forEach(([key, value]) => {
+        if (value === null || value === undefined) return
+        const nodes = form.querySelectorAll(`[name="${key}"]`)
+        if (nodes.length === 0) return
+        const first = nodes[0]
+        if (first.type === 'radio') {
+          const wanted = String(value)
+          nodes.forEach((n) => {
+            const hit = n.value === wanted
+            n.checked = hit
+            n.closest('.radio-pill')?.classList.toggle('selected', hit)
+          })
+        } else if (first.type === 'checkbox') {
+          first.checked = !!value
+          first.closest('.check-item')?.classList.toggle('checked', !!value)
+        } else {
+          first.value = value
+        }
+      })
+    }
+
+    if (existingRow) {
+      prefill(existingRow)
+      // Die gespeicherte Nutzungsart gewinnt über ?art= — sie ist die Tatsache.
+      selectArt(existingRow.feedback_art === 'angepasst' ? 'angepasst' : '1zu1')
+      renderFileList(Array.isArray(existingRow.idee_dateien) ? existingRow.idee_dateien : [])
+      syncKn()
+      syncScaffolding()
+    }
 
     function gather(status) {
       const fd = new FormData(form)
@@ -336,6 +428,12 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
       ;['genutzt_sit_a','genutzt_sit_b','genutzt_sit_c','genutzt_kn'].forEach((k) => {
         const el = form.querySelector(`[name="${k}"]`)
         obj[k] = !!(el && el.checked)
+      })
+      // Beim Bearbeiten müssen geleerte Felder mit — PATCH übernimmt nur, was im
+      // Body steht, sonst bliebe der alte Wert stehen. '' wird serverseitig NULL.
+      form.querySelectorAll('input[name], textarea[name], select[name]').forEach((el) => {
+        if (['radio', 'checkbox', 'file', 'hidden'].includes(el.type)) return
+        if (el.value === '' && !(el.name in obj)) obj[el.name] = ''
       })
       return obj
     }
@@ -390,6 +488,7 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
       msg.textContent = 'Speichere…'
       msg.className = 'text-sm text-slate-500'
       msg.classList.remove('hidden')
+      const istAenderung = !!savedFeedbackId
 
       try {
         let res
@@ -423,7 +522,9 @@ const preArt = preArtRaw === '1zu1' || preArtRaw === 'angepasst' ? preArtRaw : '
             msg.textContent = 'Feedback gespeichert, aber der Datei-Upload ist fehlgeschlagen: ' + uploadError.message + ' Du kannst die Datei unten erneut hochladen.'
             msg.className = 'text-sm text-amber-600'
           } else {
-            window.location.href = '/einheiten?success=Feedback+eingereicht.+Danke!'
+            window.location.href = istAenderung
+              ? '/einheiten?success=Feedback+aktualisiert.+Danke!'
+              : '/einheiten?success=Feedback+eingereicht.+Danke!'
           }
         } else {
           msg.textContent = uploadError

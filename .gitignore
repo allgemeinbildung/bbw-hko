@@ -32,3 +32,11 @@ debug.log
 # Schreibrechte-Proben, die Tools in Skill-Ordnern hinterlassen
 .__wtest*
 .__probe
+
+# Fremdmaterial: SCORM-Pakete von Pascal Rusch (Mail 17.09.2026), Analysegrundlage
+# fuer einen eigenen SCORM-Export. Nicht unser Code, nicht deployen.
+_scorm-rusch/
+
+# SCORM-Pakete entstehen jederzeit neu aus scripts/build-scorm.mjs; das ZIP ist
+# ein binaeres Build-Artefakt und gehoert nicht in die Historie.
+scorm/generated/
