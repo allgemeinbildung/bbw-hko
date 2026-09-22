@@ -79,6 +79,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
   const skTexte = anker?.schluesselkompetenzen_texte || []
   const lf = ki.ki_leitfragen
   const titel = a?.titel || `KI-Auftrag ${num}`
+  const ebaClass = ki.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
 
   if (!a) {
     return (
@@ -101,7 +102,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
   )
 
   return (
-    <div style={kiVars}>
+    <div className={ebaClass} style={kiVars}>
       {/* ---------------- Page 1 — Überblick (Ziel + nRLP-Anker + Leitfragen) ---------------- */}
       <PageShell code="ÜBERBLICK" n={1}>
         <Header num={num} titel={titel} pattern={a.pattern} />

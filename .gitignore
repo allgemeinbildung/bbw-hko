@@ -32,3 +32,9 @@ debug.log
 # Schreibrechte-Proben, die Tools in Skill-Ordnern hinterlassen
 .__wtest*
 .__probe
+
+# SCORM-Experiment (Pakete, Eval-Laeufe, lokaler Proxy) — vorerst nicht versioniert.
+# Stand im Branch feat/ki-eba gesichert.
+scorm/
+_scorm-rusch/
+scripts/scorm-*.mjs

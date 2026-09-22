@@ -1,0 +1,134 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_ki",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_set",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "kn_ref": "1.1.1_lehrvertrag_orientieren_kn",
+  "anchored_situations": [
+    "1.1.1_lehrvertrag_orientieren_hf_A",
+    "1.1.1_lehrvertrag_orientieren_hf_B"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "thema": "T1",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-09-21",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: sich im Lehrvertrag orientieren und bei Fragen oder Unstimmigkeiten die passende Stelle finden.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Der Lehrvertrag als Formular: Abschnitte, Standard-Punkte und betriebsspezifische Punkte, Kontaktstellen bei Konflikten.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Die eigene Rolle als neue/r Lernende/r: etwas selbst ansprechen oder bei einer Stelle Hilfe holen.",
+        "kompetenz_anker": "1.1.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK7 — Verständnis fördern",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft Ihnen eine KI bei Ihrem Lehrvertrag? Was bleibt Ihre eigene Aufgabe?",
+    "kritisch": "Woran merken Sie, dass eine Antwort der KI nicht stimmt?",
+    "vergleichend": "Was steht in Ihrem Dossier? Was sagt die KI? Wo ist der Unterschied?",
+    "urteilend": "Senden Sie eine Nachricht der KI ab, ohne sie selbst zu prüfen? Begründen Sie."
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Die KI als Coach beim Abwägen",
+      "ziel": "Sie lassen sich von der KI durch Ihre Entscheidung führen. Entscheiden müssen Sie selbst.",
+      "bezug": "Diese Aufgabe nutzt beide Herausforderungen A und B. Aus A kommt Ihre Vertrags-Übersicht. Aus B kommen Ihre Fakten und die zwei Wege. Dazu kommt die Grundregel der Einheit: Zuerst Überblick verschaffen, dann gezielt die passende Stelle suchen. Erst dann entscheiden: selbst klären oder Hilfe holen.",
+      "auftrag": "Nehmen Sie Ihren Fall aus Herausforderung B. Legen Sie Ihre Vertrags-Übersicht aus Herausforderung A daneben. Halten Sie zuerst ohne KI Ihre erste Wahl fest (siehe Feld auf Seite 1). Geben Sie der KI danach die Rolle einer Beratungsperson. Eine Beratungsperson berät Sie nur. Sie entscheidet nicht für Sie. Die KI stellt Ihnen Fragen zu Ihrem Fall. Sie führt Sie durch die zwei Wege. Am Schluss entscheiden Sie selbst. Begründen Sie Ihre Wahl mit Ihren eigenen Fakten. Prüfen Sie jede Aussage der KI im Dossier nach.",
+      "prompt_strategie": [
+        "Geben Sie der KI zuerst eine Rolle: «Sie sind meine Beratungsperson. Sie entscheiden nicht für mich.»",
+        "Geben Sie Ihre Fakten aus Herausforderung B mit. Nennen Sie dabei keine echten Namen.",
+        "Verlangen Sie Fragen statt Antworten: «Stellen Sie mir vier Fragen zu meinem Fall.»",
+        "Fragen Sie danach nach: «Was spricht gegen meine Wahl? Nennen Sie den schwächsten Punkt in meiner Begründung.»"
+      ],
+      "ki_frei_vorher": "Halten Sie ohne KI fest: Ihre zwei wichtigsten Fakten, die passende Stelle in Ihrem Vertrag und Ihre erste Wahl. Schreiben Sie dazu einen Satz Begründung.",
+      "schritte": [
+        "Den eigenen Fall wählen und die erste Wahl ohne KI notieren.",
+        "Der KI die Rolle geben und die eigenen Fakten mitgeben.",
+        "Von der KI Fragen zu beiden Wegen verlangen, keine Antwort.",
+        "Jede Aussage der KI zum Lehrvertrag im Dossier nachschlagen.",
+        "Die eigene Wahl prüfen: Was übernehmen Sie? Was lehnen Sie ab? Begründen Sie beides."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Wahl zuerst",
+          "indikator": "Die erste Wahl steht auf dem Blatt, bevor Sie die KI fragen."
+        },
+        {
+          "kriterium": "Im Dossier geprüft",
+          "indikator": "Jede Aussage der KI zum Lehrvertrag ist im Dossier nachgeschlagen. Sie ist markiert."
+        },
+        {
+          "kriterium": "Beide Wege geprüft",
+          "indikator": "Weg 1 und Weg 2 sind je mit einem Satz bewertet."
+        },
+        {
+          "kriterium": "Begründete Wahl",
+          "indikator": "Die Begründung nennt mindestens einen eigenen Fakt aus dem Fall."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Ihnen am meisten geholfen? Warum?",
+        "Hat die KI etwas gesagt, das im Dossier nicht steht? Woran haben Sie es gemerkt?",
+        "Im Kurzgespräch müssen Sie Ihre Wahl begründen: selbst klären oder Hilfe holen. Wie hilft Ihnen diese Übung dabei?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_redaktion",
+      "titel": "Den KI-Entwurf Ihrer Nachricht prüfen und verbessern",
+      "ziel": "Sie beurteilen, was die KI beim Schreiben kann. Ton, Fakten und Aufbau prüfen Sie selbst.",
+      "bezug": "Diese Aufgabe nutzt beide Herausforderungen A und B. Aus A kommt Ihre Vertrags-Übersicht mit der passenden Stelle. Aus B kommt Ihre digitale Nachricht. Dazu kommt die Grundregel der Einheit: Zuerst Überblick verschaffen, dann gezielt die passende Stelle suchen. Erst dann entscheiden: selbst klären oder Hilfe holen.",
+      "auftrag": "Sie haben in Herausforderung B eine Nachricht geschrieben. Legen Sie sie zur Seite. Lassen Sie die KI jetzt einen eigenen Entwurf schreiben. Geben Sie ihr Ihre Fakten, Ihre Stelle im Vertrag und Ihren Wunsch. Vergleichen Sie danach beide Texte. Prüfen Sie den Entwurf der KI: Stehen nur Fakten darin? Steht irgendwo ein Vorwurf? Ein Vorwurf sagt: Du bist schuld. Stimmt die Stelle aus dem Vertrag? Ist der Ton höflich? Schreiben Sie am Schluss Ihre eigene, bessere Nachricht. Notieren Sie drei Änderungen und je einen Grund.",
+      "prompt_strategie": [
+        "Geben Sie die Rolle vor: «Sie schreiben für mich eine kurze, sachliche Nachricht.»",
+        "Geben Sie den Kontext mit: Ihre Fakten, Ihre Stelle im Vertrag und Ihren Wunsch.",
+        "Geben Sie das Format vor: «Fünf bis sieben kurze Sätze. Ein Gedanke pro Satz.»",
+        "Fragen Sie danach nach: «Welcher Satz ist am schwächsten? Wo klingt der Text wie ein Vorwurf?»"
+      ],
+      "ki_frei_vorher": "Halten Sie ohne KI fest: die drei Punkte, die in Ihrer Nachricht stehen müssen. Notieren Sie auch die Stelle im Vertrag, die Sie gewählt haben.",
+      "schritte": [
+        "Die eigene Nachricht aus Herausforderung B bereitlegen.",
+        "Der KI die Fakten, die Stelle im Vertrag und den Wunsch geben.",
+        "Den Entwurf der KI lesen und die schwachen Stellen markieren.",
+        "Die Angaben der KI im Dossier und im eigenen Vertrag nachschlagen.",
+        "Die eigene Nachricht neu schreiben: Was übernehmen Sie? Was streichen Sie? Notieren Sie je einen Grund."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Punkte zuerst",
+          "indikator": "Die drei Punkte stehen auf dem Blatt, bevor Sie die KI fragen."
+        },
+        {
+          "kriterium": "Im Dossier geprüft",
+          "indikator": "Jede Angabe der KI zum Vertrag ist nachgeschlagen. Die Quelle ist das Dossier oder der eigene Vertrag."
+        },
+        {
+          "kriterium": "Sachlich geblieben",
+          "indikator": "Die eigene Nachricht nennt nur Fakten. Sie enthält keinen Vorwurf."
+        },
+        {
+          "kriterium": "Änderungen begründet",
+          "indikator": "Die eigene Nachricht ist selbst geschrieben. Drei Änderungen am Entwurf der KI sind notiert, je mit einem Grund."
+        }
+      ],
+      "reflexion": [
+        "Was konnte die KI besser als Sie? Was konnten Sie besser als die KI?",
+        "Welchen Satz der KI wollten Sie fast übernehmen? Warum war er nicht gut?",
+        "Im «Mini Case schriftlich» schreiben Sie die Nachricht allein. Das ist die schriftliche Form der Prüfung. Was müssen Sie danach ohne KI können?"
+      ]
+    }
+  ]
+}

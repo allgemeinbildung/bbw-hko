@@ -223,7 +223,9 @@
   {
     "id": "1.1.1_lehrvertrag_orientieren",
     "status": "publiziert",
-    "entwurf_komponenten": [],
+    "entwurf_komponenten": [
+      "ki-fluency"
+    ],
     "kompetenz_nr": "1.1.1",
     "abgedeckte_kompetenzen": [
       "1.1.1"
@@ -267,9 +269,9 @@
     },
     "hat_kn": true,
     "hat_begleiter": true,
-    "hat_ki": false,
-    "hat_lernprompt": false,
-    "hat_lernbegleiter": false,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": true,
     "hybrid_situation_titel": "Ab nächstem Monat auch samstags",
@@ -287,7 +289,7 @@
         "label": "Werkschau + Transfer-Reflexion (vereinfacht)"
       }
     ],
-    "bundle_dateien": 18
+    "bundle_dateien": 26
   },
   {
     "id": "1.1.1_rechte_verstehen_nutzen",
@@ -369,7 +371,9 @@
   {
     "id": "1.1.2_unterlagen_ordnen",
     "status": "publiziert",
-    "entwurf_komponenten": [],
+    "entwurf_komponenten": [
+      "ki-fluency"
+    ],
     "kompetenz_nr": "1.1.2",
     "abgedeckte_kompetenzen": [
       "1.1.2"
@@ -412,9 +416,9 @@
     },
     "hat_kn": true,
     "hat_begleiter": true,
-    "hat_ki": false,
-    "hat_lernprompt": false,
-    "hat_lernbegleiter": false,
+    "hat_ki": true,
+    "hat_lernprompt": true,
+    "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": true,
     "hybrid_situation_titel": "Morgen ist das Gespräch",
@@ -432,7 +436,7 @@
         "label": "Werkschau + Transfer-Reflexion (vereinfacht)"
       }
     ],
-    "bundle_dateien": 18
+    "bundle_dateien": 26
   },
   {
     "id": "1.2.2_ki_kompetenznachweis_vorbereiten",
@@ -488,7 +492,7 @@
     "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": false,
-    "hybrid_situation_titel": "Drei Tage vor dem KN — wie weit lasse ich die KI ran?",
+    "hybrid_situation_titel": "Drei Tage vor dem KN — die fertige Zusammenfassung im Klassenchat",
     "kn_typen": [
       {
         "typ": "fachgespraech",
@@ -709,7 +713,7 @@
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
-    "hybrid_situation_titel": "Zwei Messschieber und eine Entsorgungsrechnung",
+    "hybrid_situation_titel": "Zwei Jacken und eine Gemeinderechnung",
     "kn_typen": [
       {
         "typ": "fachgespraech",
@@ -770,7 +774,7 @@
     ],
     "hf_titel": {
       "A": "«Gestorben wegen einem Entscheid im Ausland»",
-      "B": "Zwei Berufsbildende, zwei Rechnungen",
+      "B": "Zwei Mitarbeitende, zwei Rechnungen",
       "C": "«Muss gar nicht» oder «darf gar nicht anders»?"
     },
     "hat_kn": true,

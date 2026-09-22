@@ -1,0 +1,111 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_lernbegleiter",
+  "set_ref": "1.1.2_unterlagen_ordnen_set",
+  "prinzip_ref": "1.1.2_unterlagen_ordnen_prinzip",
+  "kn_ref": "1.1.2_unterlagen_ordnen_kn",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-09-21",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — wiederholen und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie nutzen die KI als Hilfe beim Lernen. Sie wiederholen den Stoff dieser Einheit. So bereiten Sie sich auf den Kompetenznachweis vor. Der Kompetenznachweis ist Ihre Prüfung am Schluss. Wählen Sie die Karten, die Ihnen helfen. Sie müssen nicht alle machen.",
+    "kompetenzversprechen": "Ich kann meinen digitalen Lern- und Arbeitsplatz einrichten und meine Unterlagen ordnen. So finde ich schnell, was ich brauche.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst selbst ein, ohne KI. Wie sicher sind Sie bei den drei Punkten? Geben Sie sich 1 bis 5. 1 heisst unsicher, 5 heisst sicher. Üben Sie zuerst dort, wo Ihre Zahl 1, 2 oder 3 ist.",
+      "selbsteinschaetzung": [
+        "Ich kann meinen digitalen Arbeitsplatz einrichten und Dokumente in Kategorien ordnen.",
+        "Ich kann meine Unterlagen ablegen und meine Dateien klar benennen.",
+        "Ich finde jedes Dokument in einer Minute wieder."
+      ]
+    },
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Sie wollen die Begriffe wiederholen: Kategorie, Ablageort, Ordnerstruktur und Dateiname.",
+        "prompt_basis": "Stellen Sie mir nacheinander fünf Fragen zum Ordnen von Unterlagen. Fragen Sie nach Kategorien, Gruppen, Ablageort und Dateinamen. Geben Sie mir die Lösung erst nach meiner Antwort.",
+        "prompt_fortgeschritten": "Fragen Sie mich im Wechsel ab. Zuerst eine Wissensfrage, dann eine Frage zu einem kurzen neuen Fall. Stellen Sie die nächste Frage erst, wenn ich nachgebessert habe.",
+        "warnung": "Lassen Sie sich die Lösung wirklich erst nach Ihrer Antwort geben. Sonst erkennen Sie nur wieder. Im Kurzgespräch steht die Antwort nicht vor Ihnen. Das Kurzgespräch ist die mündliche Form der Prüfung."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Sie wollen prüfen: Habe ich mein System wirklich verstanden?",
+        "prompt_basis": "Ich erkläre Ihnen mit eigenen Worten meine drei Kategorien. Sagen Sie mir nur, was in meiner Erklärung fehlt. Geben Sie mir nicht die ganze Lösung.",
+        "prompt_fortgeschritten": "Ich erkläre Ihnen den Unterschied zwischen den zwei Ablage-Arten. Stellen Sie mir danach zwei Rückfragen wie eine Lehrperson.",
+        "warnung": "Die KI gibt Ihnen gern die fertige Erklärung. Dann lernen Sie nichts dabei. Bitten Sie nur um Hinweise auf Lücken."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Neuen Übungsfall lösen",
+        "wann": "Sie üben mit einem fremden Fall: Passt Ihre Grundregel auch dort?",
+        "prompt_basis": "Erfinden Sie einen neuen Übungsfall aus einem Betrieb. Das Thema ist ein Wechsel der App: Arbeitspläne und Anleitungen kommen ab jetzt nur noch dort an. Nehmen Sie einen anderen Beruf und einen anderen Ort als in meinen zwei Aufgaben. Geben Sie mir nur die Lage. Ich löse den Fall selbst. Bewerten Sie danach meine Lösung nach diesen vier Punkten: Fachkorrektheit, Argumentation, Technologisches Prinzip, Position und Werthaltung.",
+        "prompt_fortgeschritten": "Geben Sie mir einen neuen Fall mit einer schwierigen Wahl. Ich soll wählen: alles genau anschauen oder gezielt filtern. Spielen Sie nach meiner Antwort die Gegenseite. Prüfen Sie, ob meine Begründung standhält.",
+        "warnung": "Wichtig: Der Übungsfall muss ein anderer Fall sein als Ihr Fall im Kompetenznachweis. Die KI darf Ihnen keine Musterlösung für den Kompetenznachweis geben. Sie üben den Weg, nicht eine auswendig gelernte Antwort."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Feedback auf meinen Text",
+        "wann": "Sie haben etwas geschrieben. Sie wollen wissen: Was fehlt noch?",
+        "prompt_basis": "Hier sind zwei Zeilen meines Orientierungszettels: [meine Zeilen]. Sagen Sie mir nur, was darin noch fehlt. Schreiben Sie die Zeilen nicht neu.",
+        "prompt_fortgeschritten": "Hier ist meine Checkliste: [meine Zeilen]. Prüfen Sie alle vier Spalten: Kategorie, Dokument, Ablageort und Wofür. Nennen Sie mir drei Schwächen als Fragen. Ich bessere selbst nach.",
+        "warnung": "Bitten Sie um Fragen, nicht um eine bessere Version. Sobald die KI Ihre Zeilen neu schreibt, sind es ihre Zeilen. Im Kompetenznachweis schreiben Sie allein."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan und Karteikarten",
+        "wann": "So planen Sie die letzte Lernzeit vor dem Kompetenznachweis.",
+        "prompt_basis": "Machen Sie mir einen Lernplan für drei Abende. Die Themen sind: Kategorien bilden, die Ablage wählen, den Zettel schreiben. Planen Sie pro Abend ein Thema und eine kurze Übung.",
+        "prompt_fortgeschritten": "Machen Sie mir zehn Karteikarten mit Frage und Antwort. Nehmen Sie dafür die Begriffe aus meinem Dossier. Sortieren Sie die Karten nach Schwierigkeit.",
+        "warnung": "Karteikarten von der KI sind nur ein Entwurf. Prüfen Sie jede Antwort im Dossier nach. Das gilt besonders bei den drei Kategorien und den zwei Ablage-Arten."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Kurzgespräch (Primärform)",
+        "uebungsfokus": "Mündlich erklären und begründen. Die Lehrperson fragt nach. Sie zeigen Ihre Notizen und begründen Ihre Ordnung.",
+        "prompt": "Spielen Sie mit mir ein Kurzgespräch wie in der Prüfung. Stellen Sie mir fünf Fragen zu Kategorien, zur Ablage und zu meiner Wahl. Beginnen Sie leicht und werden Sie schwerer. Stellen Sie nach meiner Antwort je eine Rückfrage."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich (vereinfacht)",
+        "uebungsfokus": "Schriftlich einen neuen Fall ordnen. Die Reihenfolge wählen. Kurze Zeilen für einen Zettel schreiben.",
+        "prompt": "Geben Sie mir einen neuen Fall mit vier kurzen Aufgaben: zuordnen, unterscheiden, entscheiden, schreiben. Ich löse die Aufgaben selbst. Nennen Sie mir danach nur meine Lücken als Fragen. Geben Sie mir keine Musterlösung."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+        "uebungsfokus": "Die eigene Grundregel in einem Satz sagen. Zeigen: Wo passt sie? Wo passt sie nicht?",
+        "prompt": "Ich erkläre Ihnen meine Grundregel aus dieser Einheit. Stellen Sie mir danach drei Fragen: Wie lautet die Regel? Wo zeigt sie sich in einem neuen Fall? Wann passt sie nicht so gut?"
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "SuK heisst Sprache und Kommunikation. Lassen Sie sich die Begriffe aus dem Dossier abfragen. Üben Sie danach Ihre Begründung an einem neuen Fall. Prüfen Sie jede Angabe zum Ordnen im Dossier nach."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Technologisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Ges heisst Gesellschaft. Wenden Sie Ihre Kategorien auf neue Dokumente an. Sagen Sie danach in der Ich-Form, was Sie wählen. Begründen Sie Ihre Wahl mit Ihrer eigenen Lage."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben. Beim Kompetenznachweis hilft sie nicht. Dort sitzen Sie allein da. Lassen Sie sich nie Ihre Lösung für den Kompetenznachweis schreiben. Üben Sie an anderen Fällen. Prüfen Sie jede Aussage der KI im Dossier nach.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt. Dann habe ich dort geübt, wo ich unsicher war.",
+      "Meine Übungsfälle waren andere Fälle als mein Fall im Kompetenznachweis.",
+      "Ich habe die KI um Hinweise auf Lücken gebeten. Fertige Lösungen wollte ich nicht.",
+      "Ich habe jede Aussage der KI zum Ordnen im Dossier nachgeschlagen.",
+      "Ich kann die Grundregel dieser Einheit in einem Satz sagen."
+    ]
+  }
+}

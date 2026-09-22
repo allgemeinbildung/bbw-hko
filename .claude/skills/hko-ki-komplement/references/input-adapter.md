@@ -31,6 +31,17 @@ Inputs für Scoring + die drei KI-Dokumente. Quelle der Wahrheit ist die
 | `anchored_situations` | `kn.anchored_situations` (Liste der hf-IDs) |
 | modul / modul_titel / thema / lehrgang | `herausforderung_A.modul` / `…modul_titel` / `nrlp.themen[0]` / `prinzip.lehrgang` |
 
+### 2a. Vertragsfeld `lehrgang` (Pflicht in allen drei JSON-Dateien)
+
+`ki.json`, `lernprompt.json` und `lernbegleiter.json` tragen **immer** ein
+**Top-Level**-Feld `"lehrgang"` — Wert **verbatim** aus `prinzip.lehrgang`
+(`"EFZ_3J"`, `"EFZ_4J"`, `"EBA_2J"`). Die Renderer (`DocKi`, `DocLernprompt`,
+`DocLernbegleiter`) lesen genau dieses Feld und schalten bei `"EBA_2J"` die
+EBA-Typografie zu (Klasse `doc-eba`: grössere Schrift, kürzere Zeilen, eigene
+Callout-Formate). Fehlt das Feld, rendert eine EBA-Unit stillschweigend im
+EFZ-Satzbild — es gibt keine Fehlermeldung, darum ist das Feld Pflicht und nicht
+optional. Derselbe Wert entscheidet, ob das **EBA-A2-Gate** greift (siehe §4).
+
 ## 3. Der entscheidende Unterschied zu hko-deploy
 
 hko-deploy (`hko-3er-to-praxis`) scort und referenziert gegen **`praxis_spec`**
@@ -55,8 +66,18 @@ Strategie-Karten) ist deckungsgleich.
   «im Dossier nachschlagen» statt «im Lehrmittel».
 - KN-Primärform ist `fachgespraech` (mündlich) → der Lernbegleiter-`fachgespraech`-
   Track ist hier besonders wichtig.
-- Sprache: A2-nah halten (kürzere Sätze) — nicht verpflichtend hart, aber der
-  Lernbegleiter ist learner-facing und sollte für EBA einfach bleiben.
+- **Sprache: A2 ist ein hartes Gate, keine Empfehlung.** Vor jedem Write eines
+  SuS-gerichteten Prosa-Felds in `ki.json`, `lernprompt.json` und
+  `lernbegleiter.json` läuft der A2-Pre-Write-Scan gegen die Regelliste des
+  EBA-Set-Generators —
+  `.claude/skills/hko-2er-EBA-set-generator/references/a2-language-rules.md`
+  (referenzieren, nicht kopieren). Blockierend: `ERR_A2_SATZ_ZU_LANG` (ein Satz
+  > 18 Wörter) und `ERR_A2_BEGRIFF_OHNE_GLOSSAR` (Fachbegriff ohne Deckung im
+  Glossar/Dossier dieser Unit). `WARN_A2_*` melden und nach Möglichkeit beheben.
+  Die Sie-Form in Aufträgen und die ICH-Form im Narrativ bleiben — A2 senkt
+  Komplexität, nicht Höflichkeit. **`ki-liesmich.md` ist ausgenommen**
+  (teacher-facing). Feldliste + Ablauf: SKILL.md, Abschnitt
+  «EBA-A2-Pre-Write-Gate».
 
 ## 5. Fehler
 

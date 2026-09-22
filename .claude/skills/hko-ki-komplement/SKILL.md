@@ -37,6 +37,16 @@ Die drei **JSON**-Dateien müssen **exakt** den Shapes in `assets/*.json` entspr
 Beispiel-Unit): `src/data/einheiten/1.1.1_konflikt_kommunizieren/{ki,lernprompt,lernbegleiter}.json`.
 Im Zweifel: an der Gold-Unit spiegeln, nicht frei erfinden.
 
+**Vertragsfeld `lehrgang` (verbindlich, alle drei JSON-Dateien).** `ki.json`,
+`lernprompt.json` und `lernbegleiter.json` tragen **immer** ein **Top-Level**-Feld
+`"lehrgang"`; der Wert wird unverändert aus `prinzip.lehrgang` übernommen
+(`"EFZ_3J"`, `"EFZ_4J"`, `"EBA_2J"`). Die Renderer `DocKi`, `DocLernprompt` und
+`DocLernbegleiter` leiten daraus die **EBA-Typografie** ab (`lehrgang === "EBA_2J"`
+→ Klasse `doc-eba`). Fehlt das Feld, rendert eine EBA-Unit stillschweigend im
+EFZ-Satzbild — der Fehler ist unsichtbar, darum ist das Feld Pflicht, nicht
+optional. Es steht bei den übrigen Meta-Feldern (`version`, `erstellt_am`), siehe
+`assets/*.json`.
+
 Die vierte Datei `ki-liesmich.md` ist **kein** Renderer-JSON, sondern **Markdown
 mit YAML-Frontmatter** — sie läuft durch dieselbe «Lies mich!»-Pipeline wie
 `begleiter.md` (Route `einheiten/[setKey]/ki-liesmich.astro`, Word-Export
@@ -66,6 +76,13 @@ PHASE 4   lernbegleiter.json (NEU)     → L1-L3 + Integritäts-Leitplanke
 PHASE 4b  ki-liesmich.md (NEU)         → Selbst-Review der 4 Docs → Lehrer-Liesmich
 PHASE 5   Validierung + Index          → Checks, dann build:einheiten-index-Hinweis
 ```
+
+> **EBA-A2-Gate (global, nur bei `lehrgang: "EBA_2J"`):** Vor JEDEM Write eines
+> SuS-gerichteten Prosa-Felds in Phase 2, 3 und 4 läuft der A2-Pre-Write-Scan gegen
+> `.claude/skills/hko-2er-EBA-set-generator/references/a2-language-rules.md` (analog
+> zum Umlaut/Eszett-Scan). `ERR_A2_SATZ_ZU_LANG` und `ERR_A2_BEGRIFF_OHNE_GLOSSAR`
+> blockieren den Write, bis behoben. **Phase 4b (`ki-liesmich.md`) ist ausgenommen**
+> — der Liesmich ist teacher-facing. Details: Abschnitt «EBA-A2-Pre-Write-Gate».
 
 ### PHASE 0 — Input laden + Adapter
 
@@ -111,8 +128,12 @@ Bestätigen? [j / ändern]
 Read `references/ki-architecture.md` + `assets/ki-template.json`. Pro Auftrag:
 `pattern, titel, ziel, bezug, auftrag, prompt_strategie[3-4], ki_frei_vorher,
 schritte[5], guetekriterien[3-4 {kriterium,indikator}], reflexion[3]`. Set-Level:
-`nrlp_anker` + `ki_leitfragen` aus dem Adapter.
+`nrlp_anker` + `ki_leitfragen` + `lehrgang` (Top-Level, verbatim aus
+`prinzip.lehrgang`) aus dem Adapter.
 
+- **EBA-A2-Gate (nur `lehrgang: "EBA_2J"`, blockierend):** `ziel`, `auftrag`,
+  `schritte[]`, `reflexion[]` und `guetekriterien[]` sind SuS-gerichtet und laufen
+  vor dem Write durch den A2-Scan (siehe Abschnitt «EBA-A2-Pre-Write-Gate»).
 - **Check P6:** `bezug` jedes Auftrags nennt **alle** vorhandenen Herausforderungen
   (A/B/C bzw. A/B bei EBA) **und** das Transfer-Prinzip.
 - **Check P5:** je >=3 `guetekriterien`, eines prüft IMMER die **Verifikation**
@@ -131,7 +152,12 @@ Immer `rollen_prompting` + `kontextualisieren`; +2 nach den Signalregeln
 (SK/Aspekt/Produkt). Volle Technik-Blöcke + `stacking_seite_1` (Technik 1+2) +
 `stacking_seite_2` (Technik 3+4; `prompt_2` baut explizit auf `prompt_1` auf) +
 `prompt_vorlage`. `erklaerung` ohne Beispiele; `thema_bezug`/`warnung`
-unit-spezifisch.
+unit-spezifisch. Top-Level `lehrgang` (verbatim aus `prinzip.lehrgang`) setzen.
+
+- **EBA-A2-Gate (nur `lehrgang: "EBA_2J"`, blockierend):** sämtliche Prompts
+  (`beispiel_basis`, `beispiel_fortgeschritten`, `baukasten.*`, `stacking_seite_1/2.
+  prompt_1/prompt_2`, `prompt_vorlage`) **und** jede `erklaerung` laufen vor dem
+  Write durch den A2-Scan (siehe Abschnitt «EBA-A2-Pre-Write-Gate»).
 
 ### PHASE 4 — lernbegleiter.json (NEU — learner-facing KN-Vorbereitung)
 
@@ -142,8 +168,15 @@ Blöcke: `titel, ziel, kompetenzversprechen` (verbatim), `ki_frei_zuerst`
 repetitionsplan — je `prompt_basis`+`prompt_fortgeschritten`+`warnung`),
 `kn_typ_tracks[]` (einer pro `kn.kn_typen`), `rubrik_fokus[]` (pro Dimension
 SuK/Ges, `kriterien` = Teilmenge von `kn.rubrik_shared`), `integritaet_warnung`,
-`selbstcheck[]`.
+`selbstcheck[]`. Top-Level `lehrgang` (verbatim aus `prinzip.lehrgang`) setzen.
 
+- **EBA-A2-Gate (nur `lehrgang: "EBA_2J"`, blockierend):** der Lernbegleiter ist
+  durchgehend learner-facing — alle Karten und Texte (`ziel`, `ki_frei_zuerst.*`,
+  `strategie_karten[].*`, `kn_typ_tracks[].*`, `rubrik_fokus[].so_uebst_du`,
+  `integritaet_warnung`, `selbstcheck[]`) laufen vor dem Write durch den A2-Scan
+  (siehe Abschnitt «EBA-A2-Pre-Write-Gate»). Ausnahme: `kompetenzversprechen` wird
+  **verbatim** aus `prinzip.kern_kompetenzversprechen` übernommen und nicht
+  umformuliert.
 - **Leitplanke (zwingend):** bereitet auf die **Kompetenz** vor, NIE auf die
   konkrete KN-Abgabe. → Checks **L1-L3**:
   - **L1:** referenziert `kompetenzversprechen` + `kn.kn_typen[]` + die
@@ -198,16 +231,73 @@ Pflicht-Abschnitte (siehe Template):
 - **Leitplanke gespiegelt:** §2/§5 wiederholen die Lernbegleiter-Integrität (kein
   KN-Produkt, üben an anderen Fällen) — der Liesmich darf der Toolbox NICHT
   widersprechen.
+- **Kein A2-Gate:** `ki-liesmich.md` ist teacher-facing und vom EBA-A2-Gate
+  **ausdrücklich ausgenommen** — auch bei einer EBA-Unit. Wörtlich zitierte
+  Lernenden-Sätze stammen aus den bereits A2-geprüften JSONs und werden nicht
+  umgeschrieben.
 
 ### PHASE 5 — Validierung + Index
 
-Pre-Write-Spellcheck (ß/Transliteration), dann schreiben. Danach Checks (unten)
+Pre-Write-Spellcheck (ß/Transliteration) **und — bei `lehrgang: "EBA_2J"` — der
+A2-Scan nach «EBA-A2-Pre-Write-Gate»**, dann schreiben. Danach Checks (unten)
 laufen lassen; bei grün den Hinweis ausgeben: **`npm run build:einheiten-index`**
 auf Windows laufen lassen (setzt `hat_ki`/`hat_lernprompt`/`hat_lernbegleiter`),
 dann `/einheiten/{slug}` im Workbench prüfen (Nav-Gruppe «KI-Toolbox»: oben der
 Link «📖 KI-Toolbox — Lies mich!», dann 4 Docs; A4-Overflow — v. a. DocKi Seite 1;
 Liesmich-Route `/einheiten/{slug}/ki-liesmich` rendert + Word-Export geht).
 Final-Summary mit Datei-Liste (jetzt **5** Dateien inkl. `ki-liesmich.md`).
+
+---
+
+## EBA-A2-Pre-Write-Gate (nur `lehrgang: "EBA_2J"`)
+
+> **Gilt ausschliesslich**, wenn `prinzip.lehrgang` den Wert `"EBA_2J"` hat. Bei
+> `EFZ_3J`/`EFZ_4J` greift dieser Abschnitt nicht und wird übersprungen.
+
+Bei EBA ist A2-Sprache **kein «nice to have», sondern ein hartes Gate** — genau wie
+im EBA-Set-Generator, der die Unit selbst erzeugt hat. Die KI-Toolbox darf das
+Sprachniveau der Unit nicht wieder anheben: die Lernenden, die das Dossier auf A2
+lesen, lesen auch die KI-Aufträge.
+
+**Regelquelle (referenzieren, NICHT hineinkopieren):**
+`.claude/skills/hko-2er-EBA-set-generator/references/a2-language-rules.md` — dort
+stehen die zählbaren Regeln A1-A8, die Mess-Konvention (was als Satz, Wort,
+Nebensatz, Fachbegriff zählt) und die Positiv/Negativ-Paare zum Kalibrieren. Diese
+Skill hält **keine** eigene Kopie der Regeln; bei Änderungen an den Regeln gilt
+automatisch die Fassung des Set-Generators.
+
+**Ablauf:** Der Scan läuft **vor** jedem Write eines SuS-gerichteten Prosa-Felds —
+also in Phase 2, 3 und 4 —, analog zum bestehenden Umlaut/Eszett-Scan. Erst alle
+ERR beheben (neu formulieren, bis bestanden), dann WARN melden und nach Möglichkeit
+beheben.
+
+**Betroffene Felder (erschöpfend):**
+
+| Datei | Felder |
+|---|---|
+| `ki.json` | `assignments[].ziel`, `assignments[].auftrag`, `assignments[].schritte[]`, `assignments[].reflexion[]`, `assignments[].guetekriterien[].{kriterium,indikator}` |
+| `lernprompt.json` | alle Prompts (`techniken[].beispiel_basis`, `…beispiel_fortgeschritten`, `techniken[].baukasten.*`, `stacking_seite_1/2.prompt_1`, `…prompt_2`, `prompt_vorlage`) **und** jede `techniken[].erklaerung` |
+| `lernbegleiter.json` | alle Karten und Texte: `ziel`, `ki_frei_zuerst.*`, `strategie_karten[].*`, `kn_typ_tracks[].*`, `rubrik_fokus[].so_uebst_du`, `integritaet_warnung`, `selbstcheck[]` (Ausnahme: `kompetenzversprechen` bleibt verbatim) |
+| `ki-liesmich.md` | **AUSGENOMMEN** — teacher-facing |
+
+**Die zwei blockierenden Codes:**
+
+| Code | Auslöser | Reaktion |
+|---|---|---|
+| `ERR_A2_SATZ_ZU_LANG` | Ein Satz im Feld hat mehr als 18 Wörter (Regel A2 der Regelliste) | Pre-Write-Block: Satz aufteilen, Feld erneut schreiben |
+| `ERR_A2_BEGRIFF_OHNE_GLOSSAR` | Ein Fachbegriff ohne Deckung im Glossar/Dossier der Unit (`dossier.json`: `glossar[].begriff`, `nuggets[].titel`) — Regel A5 | Pre-Write-Block: Begriff durch einen gedeckten ersetzen oder in A2 erklären; das Dossier wird **nicht** verändert (Scope) |
+
+**Nicht blockierend, aber melden:** die `WARN_A2_*`-Codes der Regelliste
+(Satzlängen-Schnitt, Nebensatzkette, Passiv, Nominalstil, Konjunktiv II) — im
+Final-Summary listen.
+
+**Was A2 NICHT ändert:** Die **Sie-Form** in Aufträgen und Prompts bleibt, die
+**ICH-Form** in narrativen Passagen bleibt. A2 senkt Komplexität, nicht Höflichkeit.
+
+**Scope-Grenze:** Die Skill fixt A2-Verstösse ausschliesslich in den von ihr selbst
+erzeugten Dateien. Findet der Scan einen ungedeckten Fachbegriff, wird der Begriff
+hier umformuliert — `dossier.json` und die übrigen Unit-Dateien bleiben
+unangetastet (siehe «Scope (hart)»).
 
 ---
 
@@ -226,12 +316,18 @@ Final-Summary mit Datei-Liste (jetzt **5** Dateien inkl. `ki-liesmich.md`).
 | LM1 | `ki-liesmich.md` nennt die echten `ki.assignments[].titel` UND die vier `lernprompt.techniken[].titel` (nicht generisch) |
 | LM2 | §3 hat genau vier `[!differenzieren]`-Rezepte; «eine Technik» nennt eine echte Technik, «ein Auftrag» die echten Titel |
 | LM3 | Nur erlaubte Callouts; Frontmatter mit `titel`+`untertitel`; spiegelt die Lernbegleiter-Integrität (kein KN-Stoff) |
+| A2 (nur EBA) | Bei `lehrgang: "EBA_2J"`: jedes SuS-gerichtete Prosa-Feld in `ki.json`, `lernprompt.json` und `lernbegleiter.json` hat den Pre-Write-Scan gegen `a2-language-rules.md` bestanden — kein Satz > 18 Wörter (`ERR_A2_SATZ_ZU_LANG`), kein Fachbegriff ohne Deckung im Glossar/Dossier der Unit (`ERR_A2_BEGRIFF_OHNE_GLOSSAR`). `ki-liesmich.md` ist ausgenommen (teacher-facing) |
 | SPRACHE | Kein `ß`; Umlaute echt; Gendern Schrägstrich-Form; sichtbar keine rohen SM-/SK-Codes |
-| SHAPE | Alle drei JSON-Dateien validieren gegen `assets/*.json` (Feldnamen exakt); `ki-liesmich.md` gegen `assets/ki-liesmich-template.md` |
+| SHAPE | Alle drei JSON-Dateien validieren gegen `assets/*.json` (Feldnamen exakt), inkl. Top-Level `lehrgang` aus `prinzip.lehrgang`; `ki-liesmich.md` gegen `assets/ki-liesmich-template.md` |
 
 Fehlercodes: `ERR_INPUTS`, `ERR_KI_BEZUG` (P6), `ERR_GUETE` (P5),
 `ERR_KN_BRIDGE`, `ERR_LP_SHAPE` (LP1/LP2), `ERR_LB_INTEGRITAET` (L2),
-`ERR_LB_SHAPE` (L1/L3), `ERR_LIESMICH` (LM1/LM2/LM3), `ERR_SPRACHE`, `ERR_SHAPE`.
+`ERR_LB_SHAPE` (L1/L3), `ERR_LIESMICH` (LM1/LM2/LM3), `ERR_SPRACHE`, `ERR_SHAPE`,
+sowie — nur bei `lehrgang: "EBA_2J"`, beide blockieren den Write —
+`ERR_A2_SATZ_ZU_LANG` (Satz > 18 Wörter in SuS-Prosa; Satz aufteilen und erneut
+schreiben) und `ERR_A2_BEGRIFF_OHNE_GLOSSAR` (Fachbegriff ohne Deckung im
+Glossar/Dossier der Unit; Begriff ersetzen oder in A2 erklären — das Dossier wird
+nicht verändert).
 
 ---
 
@@ -244,6 +340,7 @@ Fehlercodes: `ERR_INPUTS`, `ERR_KI_BEZUG` (P6), `ERR_GUETE` (P5),
 - `references/lernbegleiter-architecture.md` — das 4. Dokument, L1-L3, Integritäts-Leitplanke
 - `references/ki-liesmich-architecture.md` — das 5. Dokument (Markdown-Liesmich), Selbst-Review, LM1-LM3
 - `references/language-rules.md` — Umlaut/Gendern/kein-ß
+- `.claude/skills/hko-2er-EBA-set-generator/references/a2-language-rules.md` — **fremde Regelquelle, nur lesen:** die A2-Regelliste A1-A8 + Mess-Konvention für das EBA-A2-Pre-Write-Gate (nicht kopieren, referenzieren)
 - `assets/ki-template.json`, `assets/lernprompt-template.json`, `assets/lernbegleiter-template.json` — Renderer-Vertrag
 - `assets/ki-liesmich-template.md` — Markdown-Gerüst (Frontmatter + Abschnitte + Callouts) für den Liesmich
 - **Gold-Referenz:** `src/data/einheiten/1.1.1_konflikt_kommunizieren/{ki,lernprompt,lernbegleiter}.json` + `ki-liesmich.md`
