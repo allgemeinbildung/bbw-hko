@@ -83,6 +83,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
   const karten = lb.strategie_karten || []
   const tracks = lb.kn_typ_tracks || []
   const rubrik = lb.rubrik_fokus || []
+  const ebaClass = lernbegleiter.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
 
   // Page 1 carries the first 2 cards; remaining cards go 3 per page; then a final KN page.
   const firstCards = karten.slice(0, 2)
@@ -108,7 +109,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
   let pn = 0
 
   return (
-    <div style={lbVars}>
+    <div className={ebaClass} style={lbVars}>
       {/* Page 1 — Start + erste Strategien */}
       {page(++pn, 'LERNEN', (
         <>

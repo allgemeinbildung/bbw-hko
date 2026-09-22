@@ -1,0 +1,148 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_lernprompt",
+  "set_ref": "1.1.2_unterlagen_ordnen_set",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-09-21",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument gehört zur Einheit «Ordnung schaffen — Unterlagen ordnen». Ein Prompt ist Ihre Frage an die KI. Hier lernen Sie, gute Fragen zu stellen. Steht etwas in eckigen Klammern [so]? Ersetzen Sie es durch Ihren eigenen Text.",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI zuerst eine Rolle. Erst danach stellen Sie Ihre Aufgabe. Die Rolle steuert den Ton und die Sicht der Antwort.",
+        "thema_bezug": "In dieser Einheit hilft das doppelt. Die KI kann eine Person spielen, die Ihre Ablage nicht kennt. Sie kann auch eine Beratungsperson sein. Eine Beratungsperson berät Sie nur. Sie entscheidet nicht für Sie.",
+        "beispiel_basis": "Sie sind eine Kollegin aus meiner Klasse. Ich zeige Ihnen eine Zeile meiner Checkliste. Sagen Sie mir, ob Sie das Dokument damit finden.",
+        "beispiel_fortgeschritten": "Sie sind eine Beratungsperson für digitale Ordnung. Meine Lage: [meine Geräte und meine Dokumente]. Stellen Sie mir vier Fragen zu meiner Ablage. Entscheiden Sie nicht für mich.",
+        "warnung": "Eine Rolle macht die Antwort sicherer, aber nicht richtiger. Auch als Beratungsperson kann die KI eine falsche Ordnung vorschlagen. Prüfen Sie es im Dossier nach.",
+        "baukasten": {
+          "rolle": [
+            "eine Kollegin aus meiner Klasse",
+            "eine Beratungsperson für digitale Ordnung",
+            "eine Person, die meine Ablage nicht kennt"
+          ],
+          "kontext": [
+            "Lernende/r im 1. Lehrjahr",
+            "meine Dokumente von der Schule",
+            "meine Geräte: Handy und Schul-Laptop"
+          ],
+          "aufgabe": [
+            "mir vier Fragen stellen",
+            "meine Zeile prüfen",
+            "mir sagen, was fehlt"
+          ],
+          "format": [
+            "3 Sätze",
+            "kurzes Gespräch"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie geben der KI zuerst alle wichtigen Angaben. Danach antwortet sie genauer. Ohne Angaben rät die KI nur.",
+        "thema_bezug": "Ihre Lage hat immer Angaben: Ihre Geräte, Ihre Dokumente, Ihre Zeit. Genau diese Angaben braucht die KI für einen brauchbaren Vorschlag.",
+        "beispiel_basis": "Ich bin im 1. Lehrjahr. Ich habe Dokumente von der Schule, vom Betrieb und rechtliche Dokumente. Erklären Sie mir einfach, was in welche Gruppe gehört.",
+        "beispiel_fortgeschritten": "Ich bin im 1. Lehrjahr. Ich arbeite am Handy und am Schul-Laptop. Meine Dateien liegen in verschiedenen Ordnern und im Chat. Sagen Sie mir, welche Angabe für meine Ablage noch fehlt.",
+        "warnung": "Echte Namen gehören nicht in die KI. Lassen Sie den Namen vom Betrieb und von Personen weg. Schreiben Sie einfach «mein Betrieb».",
+        "baukasten": {
+          "rolle": [
+            "Beratungsperson ohne eigene Meinung",
+            "Lehrperson an der Schule"
+          ],
+          "kontext": [
+            "1. Lehrjahr, EBA",
+            "meine Geräte und meine Ablage",
+            "wie viel Zeit ich habe"
+          ],
+          "aufgabe": [
+            "meine Dokumente in Gruppen ordnen",
+            "offene Fragen auflisten",
+            "sagen, welche Angabe fehlt"
+          ],
+          "format": [
+            "Tabelle: Gruppe – Dokument",
+            "Liste mit 4 Fragen"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie bitten die KI um kleine Schritte. Die KI zeigt den Weg, nicht nur das Ergebnis. So können Sie jeden Schritt selbst prüfen.",
+        "thema_bezug": "Beim Ordnen zählt die Reihenfolge. Zuerst sammeln, dann Gruppen bilden, dann ablegen und benennen. Eine Schritt-Liste macht diesen Weg sichtbar.",
+        "beispiel_basis": "Ich will meine Unterlagen ordnen. Zeigen Sie mir den Weg in höchstens fünf Schritten. Schreiben Sie pro Schritt einen kurzen Satz.",
+        "beispiel_fortgeschritten": "Ich habe heute wenig Zeit und viele Dokumente. Planen Sie meine Zeit in Schritten. Begründen Sie die Reihenfolge der Schritte. Fragen Sie mich am Schluss, was ich zuerst mache.",
+        "warnung": "Viele Schritte sehen nach Arbeit aus, sind aber nicht immer richtig. Die KI kennt Ihre Geräte und Ihre Zeit nicht. Prüfen Sie jeden Schritt an Ihrer eigenen Lage.",
+        "baukasten": {
+          "rolle": [
+            "Person, die mir den Weg zeigt",
+            "Lehrperson an der Schule"
+          ],
+          "kontext": [
+            "viele Dokumente, wenig Zeit",
+            "meine drei Gruppen: Schule, Betrieb, rechtliche Dokumente"
+          ],
+          "aufgabe": [
+            "den Weg in Schritten zeigen",
+            "die Reihenfolge begründen",
+            "meine Zeit planen"
+          ],
+          "format": [
+            "Liste mit 5 Schritten",
+            "ein Satz pro Schritt"
+          ]
+        }
+      },
+      {
+        "key": "format_vorgeben",
+        "titel": "Format vorgeben",
+        "erklaerung": "Sie sagen der KI genau, wie die Antwort aussehen soll. Sie geben Länge, Aufbau und Form vor. So passt die Antwort zu Ihrem Blatt.",
+        "thema_bezug": "Ihre zwei Produkte haben eine feste Form. Die Checkliste hat vier Spalten: Kategorie, Dokument, Ablageort und Wofür. Der Orientierungszettel hat drei Spalten: Dokument, Ablageort und Hinweis.",
+        "beispiel_basis": "Machen Sie mir eine leere Tabelle mit vier Spalten: Kategorie, Dokument, Ablageort und Wofür. Lassen Sie die Zeilen leer.",
+        "beispiel_fortgeschritten": "Hier sind fünf meiner Dokumente: [meine Dokumente]. Machen Sie daraus eine Tabelle mit drei Spalten: Dokument, Ablageort und Hinweis. Der Hinweis ist ein kurzer Satz. Er hilft mir später beim Suchen.",
+        "warnung": "Eine schöne Tabelle macht den Inhalt nicht richtig. Prüfen Sie jede Zeile selbst. Nur Sie wissen, wo Ihre Dokumente wirklich liegen.",
+        "baukasten": {
+          "rolle": [
+            "Schreib-Hilfe",
+            "Person, die meine Tabelle ordnet"
+          ],
+          "kontext": [
+            "meine Checkliste",
+            "mein Orientierungszettel"
+          ],
+          "aufgabe": [
+            "eine leere Tabelle bauen",
+            "meine Zeilen kürzen",
+            "einen Hinweis-Satz vorschlagen"
+          ],
+          "format": [
+            "Tabelle mit 4 Spalten",
+            "Tabelle mit 3 Spalten",
+            "ein Satz pro Zeile"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Der erste Prompt gibt der KI eine Rolle und Ihre Angaben. So bekommen Sie einen Vorschlag für Ihre Ordnung. Der zweite Prompt nutzt genau diese Antwort. Er führt Sie von der Ordnung zu Ihrer Entscheidung. Der Vorschlag der KI ist nur zum Üben. Prüfen Sie jede Gruppe im Dossier. Ihre eigene Einteilung machen Sie selbst.",
+      "prompt_1": "Sie sind eine Beratungsperson für digitale Ordnung. Ich bin im 1. Lehrjahr. Ich arbeite am Handy und am Schul-Laptop. Meine Dateien liegen in verschiedenen Ordnern und im Chat. Ordnen Sie meine Unterlagen in drei Gruppen: Schule, Betrieb und rechtliche Dokumente. Sagen Sie mir, welche Angabe noch fehlt.",
+      "prompt_2": "Danke für die Ordnung. Nehmen Sie jetzt meine Gruppen von oben. Stellen Sie mir vier Fragen zu meiner Wahl: die Struktur der Schule übernehmen oder ein eigenes System bauen? Warten Sie nach jeder Frage auf meine Antwort. Entscheiden Sie nicht für mich."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "chain_of_thought",
+        "format_vorgeben"
+      ],
+      "logik_und_ziel": "Der erste Prompt holt den Weg in Schritten. So sehen Sie, was zuerst kommt. Der zweite Prompt baut aus dem geprüften Weg Ihre Form: eine Tabelle für Ihren Zettel. Der Entwurf der KI ist nur zum Üben. Vergleichen Sie ihn mit Ihrem eigenen Zettel. Geben Sie nie den Text der KI ab.",
+      "prompt_1": "Ich habe heute wenig Zeit und viele Dokumente von der Schule. Zeigen Sie mir den Weg in höchstens fünf Schritten. Begründen Sie die Reihenfolge. Schreiben Sie pro Schritt einen kurzen Satz.",
+      "prompt_2": "Ich habe Ihre Schritte im Dossier geprüft. Dieser Schritt passt zu meiner Lage: [mein Schritt]. Machen Sie daraus eine Tabelle mit drei Spalten: Dokument, Ablageort und Hinweis. Nehmen Sie diese Dokumente: [meine Dokumente]. Ein Satz pro Zeile."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]. Nehmen Sie aus jeder Baukasten-Liste einen Baustein. Machen Sie daraus kurze Sätze."
+  }
+}

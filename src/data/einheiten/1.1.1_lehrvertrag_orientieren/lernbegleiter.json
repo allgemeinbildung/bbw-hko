@@ -1,0 +1,111 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_lernbegleiter",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_set",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "kn_ref": "1.1.1_lehrvertrag_orientieren_kn",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-09-21",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — wiederholen und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie nutzen die KI als Hilfe beim Lernen. Sie wiederholen den Stoff dieser Einheit. So bereiten Sie sich auf den Kompetenznachweis vor. Der Kompetenznachweis ist Ihre Prüfung am Schluss. Wählen Sie die Karten, die Ihnen helfen. Sie müssen nicht alle machen.",
+    "kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst selbst ein, ohne KI. Wie sicher sind Sie bei den drei Punkten? Geben Sie sich 1 bis 5. 1 heisst unsicher, 5 heisst sicher. Üben Sie zuerst dort, wo Ihre Zahl 1, 2 oder 3 ist.",
+      "selbsteinschaetzung": [
+        "Ich kann meinen Lehrvertrag gliedern und die Abschnitte benennen.",
+        "Ich finde bei einer Frage die passende Stelle in meinen Unterlagen.",
+        "Ich entscheide begründet: selbst klären oder Hilfe holen."
+      ]
+    },
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Sie wollen die Begriffe wiederholen: Abschnitt, Verweis, Standard, betriebsspezifisch, Kontaktstelle.",
+        "prompt_basis": "Stellen Sie mir nacheinander fünf Fragen zum Lehrvertrag. Fragen Sie nach Abschnitten, Verweis, Standard und Kontaktstelle. Geben Sie mir die Lösung erst nach meiner Antwort.",
+        "prompt_fortgeschritten": "Fragen Sie mich im Wechsel ab. Zuerst eine Wissensfrage, dann eine Frage zu einem kurzen neuen Fall. Stellen Sie die nächste Frage erst, wenn ich nachgebessert habe.",
+        "warnung": "Lassen Sie sich die Lösung wirklich erst nach Ihrer Antwort geben. Sonst erkennen Sie nur wieder. Im Kurzgespräch steht die Antwort nicht vor Ihnen."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Sie wollen prüfen: Habe ich es wirklich verstanden?",
+        "prompt_basis": "Ich erkläre Ihnen mit eigenen Worten, wie mein Lehrvertrag aufgebaut ist. Sagen Sie mir nur, was in meiner Erklärung fehlt. Geben Sie mir nicht die ganze Lösung.",
+        "prompt_fortgeschritten": "Ich erkläre Ihnen den Unterschied zwischen Standard und betriebsspezifisch. Stellen Sie mir danach zwei Rückfragen. Fragen Sie so, wie eine Lehrperson fragen würde.",
+        "warnung": "Die KI gibt Ihnen gern die fertige Erklärung. Dann lernen Sie nichts dabei. Bitten Sie nur um Hinweise auf Lücken."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Neuen Übungsfall lösen",
+        "wann": "Sie üben mit einem fremden Fall: Passt Ihre Grundregel auch dort?",
+        "prompt_basis": "Erfinden Sie einen neuen Übungsfall aus einem Lehrbetrieb. Das Thema sind die Ferien: Der Betrieb will weniger Ferienwochen geben, als im Lehrvertrag stehen. Nehmen Sie einen anderen Beruf und einen anderen Ort als in meinen zwei Aufgaben. Geben Sie mir nur die Lage. Ich löse den Fall selbst. Bewerten Sie danach meine Lösung nach diesen vier Punkten: Fachkorrektheit, Argumentation, Rechtliches Prinzip, Position und Werthaltung.",
+        "prompt_fortgeschritten": "Geben Sie mir einen neuen Fall mit einer schwierigen Wahl. Ich soll abwägen: selbst klären oder Hilfe holen. Spielen Sie nach meiner Antwort die Gegenseite. Prüfen Sie, ob meine Begründung standhält.",
+        "warnung": "Wichtig: Der Übungsfall muss ein anderer Fall sein als Ihr Fall im Kompetenznachweis. Die KI darf Ihnen keine Musterlösung für den Kompetenznachweis geben. Sie üben den Weg, nicht eine auswendig gelernte Antwort."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Feedback auf meinen Text",
+        "wann": "Sie haben etwas geschrieben. Sie wollen wissen: Was fehlt noch?",
+        "prompt_basis": "Hier ist meine Nachricht an eine Stelle: [mein Text]. Sagen Sie mir nur, was darin noch fehlt. Schreiben Sie die Nachricht nicht neu.",
+        "prompt_fortgeschritten": "Hier ist meine Nachricht: [mein Text]. Prüfen Sie den Aufbau: wer ich bin, meine Fakten, mein Wunsch. Nennen Sie mir drei Schwächen als Fragen. Ich bessere selbst nach.",
+        "warnung": "Bitten Sie um Fragen, nicht um eine bessere Version. Sobald die KI Ihren Text neu schreibt, ist es ihr Text. Im Kompetenznachweis schreiben Sie allein."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan und Karteikarten",
+        "wann": "So planen Sie die letzte Lernzeit vor dem Kompetenznachweis.",
+        "prompt_basis": "Machen Sie mir einen Lernplan für drei Abende. Die Themen sind: Aufbau des Lehrvertrags, Fakten ordnen, die zwei Wege. Planen Sie pro Abend ein Thema und eine kurze Übung.",
+        "prompt_fortgeschritten": "Machen Sie mir zehn Karteikarten mit Frage und Antwort. Nehmen Sie dafür die Begriffe aus meinem Dossier. Sortieren Sie die Karten nach Schwierigkeit.",
+        "warnung": "Karteikarten von der KI sind nur ein Entwurf. Prüfen Sie jede Antwort im Dossier nach. Das gilt besonders bei Regeln zum Lehrvertrag."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Kurzgespräch (Primärform)",
+        "uebungsfokus": "Mündlich erklären und begründen. Die Lehrperson fragt nach. Sie zeigen Ihre Notizen und begründen Ihre Wahl.",
+        "prompt": "Spielen Sie mit mir ein Kurzgespräch wie in der Prüfung. Stellen Sie mir fünf Fragen zum Lehrvertrag und zu den zwei Wegen. Beginnen Sie leicht und werden Sie schwerer. Stellen Sie nach meiner Antwort je eine Rückfrage."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich (vereinfacht)",
+        "uebungsfokus": "Schriftlich einen neuen Fall ordnen. Den ersten Schritt wählen. Eine kurze, sachliche Nachricht schreiben.",
+        "prompt": "Geben Sie mir einen neuen Fall mit vier kurzen Aufgaben: ordnen, unterscheiden, entscheiden, schreiben. Ich löse die Aufgaben selbst. Nennen Sie mir danach nur meine Lücken als Fragen. Geben Sie mir keine Musterlösung."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+        "uebungsfokus": "Die eigene Grundregel in einem Satz sagen. Zeigen: Wo passt sie? Wo passt sie nicht?",
+        "prompt": "Ich erkläre Ihnen meine Grundregel aus dieser Einheit. Stellen Sie mir danach drei Fragen: Wie lautet die Regel? Wo zeigt sie sich in einem neuen Fall? Wann passt sie nicht so gut?"
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "SuK heisst Sprache und Kommunikation. Lassen Sie sich die Begriffe aus dem Dossier abfragen. Üben Sie danach Ihre Begründung an einem neuen Fall. Prüfen Sie jede Angabe zum Lehrvertrag im Dossier nach."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Rechtliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Ges heisst Gesellschaft. Suchen Sie in neuen Fällen die passende Stelle im Vertrag. Sagen Sie danach in der Ich-Form, was Sie wählen. Begründen Sie Ihre Wahl mit Ihren eigenen Fakten."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben. Beim Kompetenznachweis hilft sie nicht. Dort sitzen Sie allein da. Lassen Sie sich nie Ihre Lösung für den Kompetenznachweis schreiben. Üben Sie an anderen Fällen. Prüfen Sie jede Aussage der KI im Dossier nach.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt. Dann habe ich dort geübt, wo ich unsicher war.",
+      "Meine Übungsfälle waren andere Fälle als mein Fall im Kompetenznachweis.",
+      "Ich habe die KI um Hinweise auf Lücken gebeten. Fertige Lösungen wollte ich nicht.",
+      "Ich habe jede Aussage der KI zum Lehrvertrag im Dossier nachgeschlagen.",
+      "Ich kann die Grundregel dieser Einheit in einem Satz sagen."
+    ]
+  }
+}

@@ -385,6 +385,7 @@ export interface LernpromptStacking {
 }
 export interface LernpromptJson {
   id?: string
+  lehrgang?: string
   lernprompt?: {
     version?: string
     thema_kontext?: string
@@ -405,6 +406,7 @@ export interface LernbegleiterStrategie {
 }
 export interface LernbegleiterJson {
   id?: string
+  lehrgang?: string
   lernbegleiter?: {
     version?: string
     titel?: string

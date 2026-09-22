@@ -1,0 +1,134 @@
+{
+  "id": "1.1.2_unterlagen_ordnen_ki",
+  "set_ref": "1.1.2_unterlagen_ordnen_set",
+  "prinzip_ref": "1.1.2_unterlagen_ordnen_prinzip",
+  "kn_ref": "1.1.2_unterlagen_ordnen_kn",
+  "anchored_situations": [
+    "1.1.2_unterlagen_ordnen_hf_A",
+    "1.1.2_unterlagen_ordnen_hf_B"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "thema": "T1",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-09-21",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: den digitalen Arbeitsplatz einrichten und die eigenen Unterlagen so ordnen, dass sich alles schnell wiederfinden lässt.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Digitale Ordnung: Kategorien bilden, eine Ablage wählen, Dateien klar benennen, den Ablageort festhalten.",
+        "kompetenz_anker": "1.1.2"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Die eigene Rolle als neue/r Lernende/r: die vorgegebene Struktur übernehmen oder ein eigenes System bauen.",
+        "kompetenz_anker": "1.1.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK10 — Mit Wandel umgehen (Anpassung)",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft Ihnen eine KI beim Ordnen? Was bleibt Ihre eigene Aufgabe?",
+    "kritisch": "Woran merken Sie, dass ein Vorschlag der KI nicht zu Ihnen passt?",
+    "vergleichend": "Was steht im Dossier? Was sagt die KI? Wo ist der Unterschied?",
+    "urteilend": "Übernehmen Sie eine Ordnung der KI ohne eigene Prüfung? Begründen Sie."
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Die KI stellt Fragen — Sie entscheiden",
+      "ziel": "Sie lassen sich von der KI durch zwei Entscheidungen führen. Wählen müssen Sie selbst.",
+      "bezug": "Diese Aufgabe nutzt beide Herausforderungen A und B. Aus A kommt Ihre Checkliste. Aus B kommt Ihr Orientierungszettel. Dazu kommt die Grundregel der Einheit: Zuerst Überblick verschaffen, dann nach klaren Kategorien ordnen. So finden Sie später schnell, was Sie brauchen.",
+      "auftrag": "Nehmen Sie Ihre Checkliste aus Herausforderung A. Legen Sie Ihren Orientierungszettel aus Herausforderung B daneben. Halten Sie zuerst ohne KI Ihre Wahl fest (siehe Feld auf Seite 1). Geben Sie der KI danach die Rolle einer Beratungsperson. Eine Beratungsperson berät Sie nur. Sie entscheidet nicht für Sie. Die KI stellt Ihnen Fragen zu zwei Entscheidungen. Erste Entscheidung: alles genau anschauen oder gezielt filtern? Zweite Entscheidung: die Struktur der Schule übernehmen oder ein eigenes System bauen? Am Schluss entscheiden Sie selbst. Prüfen Sie jede Aussage der KI im Dossier nach.",
+      "prompt_strategie": [
+        "Geben Sie der KI zuerst eine Rolle: «Sie sind meine Beratungsperson. Sie entscheiden nicht für mich.»",
+        "Geben Sie Ihre Lage mit: Ihre Geräte, Ihre Dokumente, Ihre Zeit. Nennen Sie dabei keine echten Namen.",
+        "Verlangen Sie Fragen statt Antworten: «Stellen Sie mir vier Fragen zu meiner Wahl.»",
+        "Fragen Sie danach nach: «Was spricht gegen meine Wahl? Nennen Sie den schwächsten Satz in meiner Begründung.»"
+      ],
+      "ki_frei_vorher": "Halten Sie ohne KI fest: Ihre Wahl bei beiden Entscheidungen. Schreiben Sie zu jeder Wahl einen Satz Begründung.",
+      "schritte": [
+        "Die eigene Wahl bei beiden Entscheidungen ohne KI notieren.",
+        "Der KI die Rolle geben und die eigene Lage mitgeben.",
+        "Von der KI Fragen zu beiden Entscheidungen verlangen, keine Antwort.",
+        "Jede Aussage der KI zum Ordnen im Dossier nachschlagen.",
+        "Die eigene Wahl prüfen: Was übernehmen Sie? Was lehnen Sie ab? Begründen Sie beides."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Wahl zuerst",
+          "indikator": "Die eigene Wahl steht auf dem Blatt, bevor Sie die KI fragen."
+        },
+        {
+          "kriterium": "Im Dossier geprüft",
+          "indikator": "Jede Aussage der KI zum Ordnen ist im Dossier nachgeschlagen. Sie ist markiert."
+        },
+        {
+          "kriterium": "Beide Entscheidungen geprüft",
+          "indikator": "Zu jeder Entscheidung steht je ein Satz dafür und dagegen."
+        },
+        {
+          "kriterium": "Begründete Wahl",
+          "indikator": "Die Begründung nennt ein eigenes Beispiel aus Ihrer Checkliste oder Ihrem Zettel."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Ihnen am meisten geholfen? Warum?",
+        "Hat die KI etwas gesagt, das im Dossier nicht steht? Woran haben Sie es gemerkt?",
+        "Im Kurzgespräch begründen Sie Ihre Wahl mündlich. Das Kurzgespräch ist die mündliche Form der Prüfung. Wie hilft Ihnen diese Übung dabei?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_prompt_duell",
+      "titel": "Zwei Fragen an die KI vergleichen",
+      "ziel": "Sie stellen der KI dieselbe Aufgabe mit zwei verschiedenen Fragen. Danach beurteilen Sie, welche Antwort Ihnen mehr hilft.",
+      "bezug": "Diese Aufgabe nutzt beide Herausforderungen A und B. Aus A kommen Ihre drei Kategorien. Aus B kommt Ihre Ablage mit den Dateinamen. Dazu kommt die Grundregel der Einheit: Zuerst Überblick verschaffen, dann nach klaren Kategorien ordnen. So finden Sie später schnell, was Sie brauchen.",
+      "auftrag": "Wählen Sie eine kleine Aufgabe aus dieser Einheit. Zum Beispiel: drei Dokumente in die Kategorien einordnen. Oder: einen kurzen Hinweis-Satz für eine Zeile Ihres Orientierungszettels schreiben. Halten Sie zuerst ohne KI fest, was eine gute Antwort enthalten muss (siehe Feld auf Seite 1). Schreiben Sie dann zwei Fragen an die KI. Frage 1 ist kurz und nennt nur die Aufgabe. Frage 2 nennt auch eine Rolle, Ihre Lage und die Form. Vergleichen Sie danach die zwei Antworten. Prüfen Sie jede Aussage der KI im Dossier nach. In Ihre Checkliste und Ihren Zettel schreiben Sie nur eigene Sätze.",
+      "prompt_strategie": [
+        "Schreiben Sie Frage 1 ganz kurz: nur die Aufgabe, sonst nichts.",
+        "Schreiben Sie Frage 2 mit Rolle, Lage und Form. Nennen Sie dabei keine echten Namen.",
+        "Stellen Sie beide Fragen einzeln. Starten Sie für Frage 2 ein neues Gespräch.",
+        "Fragen Sie danach nach: «Nennen Sie den schwächsten Satz in Ihrer zweiten Antwort.»"
+      ],
+      "ki_frei_vorher": "Halten Sie ohne KI fest: Was muss eine gute Antwort enthalten? Notieren Sie zwei Punkte.",
+      "schritte": [
+        "Die kleine Aufgabe wählen. Ohne KI zwei Punkte für eine gute Antwort notieren.",
+        "Frage 1 kurz schreiben und die Antwort der KI aufbewahren.",
+        "Frage 2 mit Rolle, Lage und Form schreiben und neu stellen.",
+        "Die zwei Antworten nebeneinander legen und die Unterschiede markieren.",
+        "Entscheiden: Welche Antwort hilft mehr? Was übernehmen Sie? Was lassen Sie weg? Begründen Sie."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Eigene Punkte zuerst",
+          "indikator": "Zwei Punkte stehen auf dem Blatt, bevor Sie die KI fragen."
+        },
+        {
+          "kriterium": "Im Dossier geprüft",
+          "indikator": "Jede Aussage der KI zu Kategorien und Ablage ist im Dossier nachgeschlagen."
+        },
+        {
+          "kriterium": "Zwei echte Fragen",
+          "indikator": "Frage 1 und Frage 2 sind notiert. Der Unterschied ist markiert."
+        },
+        {
+          "kriterium": "Wahl begründet",
+          "indikator": "Die bessere Antwort ist gewählt. Die Begründung nennt ein eigenes Beispiel."
+        }
+      ],
+      "reflexion": [
+        "Was hat die Antwort am stärksten verändert: die Rolle, Ihre Lage oder die Form?",
+        "Klang eine Antwort gut, stimmte aber nicht? Woran haben Sie das gemerkt?",
+        "Im «Mini Case schriftlich» lösen Sie vier kurze Aufgaben allein. Das ist die schriftliche Form der Prüfung. Was müssen Sie dort ohne KI können?"
+      ]
+    }
+  ]
+}

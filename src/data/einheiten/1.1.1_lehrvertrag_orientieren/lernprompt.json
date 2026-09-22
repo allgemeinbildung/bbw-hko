@@ -1,0 +1,148 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_lernprompt",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_set",
+  "lehrgang": "EBA_2J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-09-21",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Dokument gehört zur Einheit «Sich im Lehrvertrag orientieren». Ein Prompt ist Ihre Frage an die KI. Hier lernen Sie, gute Fragen zu stellen. Steht etwas in eckigen Klammern [so]? Ersetzen Sie es durch Ihren eigenen Text.",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Rollen-Prompting",
+        "erklaerung": "Sie geben der KI zuerst eine Rolle. Erst danach stellen Sie Ihre Aufgabe. Die Rolle steuert den Ton und die Sicht der Antwort.",
+        "thema_bezug": "In dieser Einheit hilft das doppelt. Die KI kann Ihre Berufsbildnerin spielen. Sie kann auch eine ruhige Beratungsperson sein. Eine Beratungsperson berät Sie nur. Sie entscheidet nicht für Sie.",
+        "beispiel_basis": "Sie sind meine Berufsbildnerin. Ich frage Sie etwas zu einem Feld in meinem Lehrvertrag. Antworten Sie kurz und freundlich.",
+        "beispiel_fortgeschritten": "Sie sind meine Berufsbildnerin. Ich spreche eine Unstimmigkeit ruhig an: [mein Text]. Antworten Sie so, wie sie antworten könnte. Sagen Sie mir danach, was ich gut gemacht habe.",
+        "warnung": "Eine Rolle macht die Antwort sicherer, aber nicht richtiger. Auch als Berufsbildnerin kann die KI etwas Falsches über den Lehrvertrag sagen. Prüfen Sie es im Dossier nach.",
+        "baukasten": {
+          "rolle": [
+            "meine Berufsbildnerin",
+            "eine ruhige Beratungsperson",
+            "eine Person vom Berufsbildungsamt"
+          ],
+          "kontext": [
+            "Lernende/r im 1. Lehrjahr",
+            "mein Lehrvertrag liegt vor mir",
+            "eine Unstimmigkeit im Betrieb"
+          ],
+          "aufgabe": [
+            "kurz und freundlich antworten",
+            "mir vier Fragen stellen",
+            "mir sagen, was noch fehlt"
+          ],
+          "format": [
+            "3 Sätze",
+            "kurzes Gespräch"
+          ]
+        }
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie geben der KI zuerst alle wichtigen Fakten. Danach antwortet sie genauer. Ohne Fakten rät die KI nur.",
+        "thema_bezug": "Ihr Fall hat immer Fakten: was passiert ist, seit wann, was abgemacht war. Genau diese Fakten braucht die KI für eine brauchbare Antwort.",
+        "beispiel_basis": "Ich bin im 1. Lehrjahr. In meinem Lehrvertrag steht ein Verweis auf ein Reglement. Erklären Sie mir einfach, was ein Verweis ist.",
+        "beispiel_fortgeschritten": "Ich bin im 1. Lehrjahr. Abgemacht war: [Abmachung]. Seit [Zeit] ist es anders. In meiner Vertrags-Übersicht steht: [Stelle]. Sagen Sie mir, welche Angabe in meinem Fall noch fehlt.",
+        "warnung": "Echte Namen gehören nicht in die KI. Lassen Sie den Namen vom Betrieb und von Personen weg. Schreiben Sie einfach «mein Betrieb».",
+        "baukasten": {
+          "rolle": [
+            "Beratungsperson ohne eigene Meinung",
+            "Lehrperson an der Schule"
+          ],
+          "kontext": [
+            "1. Lehrjahr, EBA",
+            "meine zwei wichtigsten Fakten",
+            "was abgemacht war"
+          ],
+          "aufgabe": [
+            "meinen Fall ordnen",
+            "offene Fragen auflisten",
+            "sagen, welche Angabe fehlt"
+          ],
+          "format": [
+            "Tabelle: Fakt – Gefühl",
+            "Liste mit 4 Fragen"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen und Belege anfordern",
+        "erklaerung": "Sie verlangen zu jeder Aussage die Quelle. Sie sagen der KI auch, dass Sie diese Quelle prüfen. Dann wird die KI vorsichtiger.",
+        "thema_bezug": "Beim Lehrvertrag geht es um Ihre Rechte und Pflichten. Eine Aussage ohne Fundort hilft Ihnen im Gespräch nicht weiter.",
+        "beispiel_basis": "Welche Punkte gelten in jedem Lehrvertrag in der Schweiz? Nennen Sie zu jedem Punkt die Quelle. Sagen Sie mir, wo Sie unsicher sind.",
+        "beispiel_fortgeschritten": "Ich will wissen, was in meinem Fall gilt. Nennen Sie mir die Orte zum Nachlesen: mein Lehrvertrag, der Bildungsplan, berufsbildung.ch. Sagen Sie zu jedem Ort, was dort steht. Ich prüfe jede Angabe selbst.",
+        "warnung": "KI-Tools erfinden manchmal Quellen. Die Namen klingen dann echt. Prüfen Sie jede Angabe im Dossier oder in Ihrem eigenen Lehrvertrag.",
+        "baukasten": {
+          "rolle": [
+            "Person, die Fakten prüft",
+            "Beratungsperson mit Quellen"
+          ],
+          "kontext": [
+            "Schweizer Lehrvertrag",
+            "mein Beruf und mein Kanton"
+          ],
+          "aufgabe": [
+            "zu jeder Aussage die Quelle nennen",
+            "sagen, wo Sie unsicher sind",
+            "den Fundort im Vertrag nennen"
+          ],
+          "format": [
+            "Tabelle: Aussage – Quelle – sicher?",
+            "Liste mit Fundort"
+          ]
+        }
+      },
+      {
+        "key": "format_vorgeben",
+        "titel": "Format vorgeben",
+        "erklaerung": "Sie sagen der KI genau, wie die Antwort aussehen soll. Sie geben Länge, Aufbau und Form vor. So passt die Antwort zu Ihrem Blatt.",
+        "thema_bezug": "Ihre zwei Produkte haben eine feste Form. Die Vertrags-Übersicht ist eine Tabelle mit drei Spalten. Die Nachricht hat fünf bis sieben kurze Sätze.",
+        "beispiel_basis": "Machen Sie mir eine Tabelle mit drei Spalten: Abschnitt, Standard oder speziell, wichtig für mich. Lassen Sie die Zeilen leer.",
+        "beispiel_fortgeschritten": "Schreiben Sie einen Entwurf für eine Nachricht an meine Berufsbildnerin. Aufbau: wer ich bin, meine Fakten, mein Wunsch. Fünf bis sieben Sätze. Ein Gedanke pro Satz. Keine Vorwürfe.",
+        "warnung": "Eine schöne Form macht den Inhalt nicht richtig. Prüfen Sie jede Zeile der Tabelle selbst. Die Form ersetzt Ihre eigene Arbeit nicht.",
+        "baukasten": {
+          "rolle": [
+            "Schreib-Hilfe",
+            "Person, die meinen Text ordnet"
+          ],
+          "kontext": [
+            "meine Vertrags-Übersicht",
+            "meine Nachricht an eine Stelle"
+          ],
+          "aufgabe": [
+            "eine leere Tabelle bauen",
+            "den Aufbau vorgeben",
+            "meinen Text kürzen"
+          ],
+          "format": [
+            "Tabelle mit 3 Spalten",
+            "5 bis 7 kurze Sätze",
+            "Liste mit 5 Schritten"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "rollen_prompting",
+        "kontextualisieren"
+      ],
+      "logik_und_ziel": "Der erste Prompt gibt der KI eine Rolle und Ihre Fakten. So bekommen Sie eine geordnete Übersicht über Ihren Fall. Der zweite Prompt nutzt genau diese Antwort. Er führt Sie von der Ordnung zur Entscheidung.",
+      "prompt_1": "Sie sind eine ruhige Beratungsperson. Ich bin im 1. Lehrjahr. Abgemacht war: [Abmachung]. Seit [Zeit] ist es anders. In meiner Vertrags-Übersicht steht: [Stelle]. Ordnen Sie meinen Fall in Fakten und Gefühle. Sagen Sie mir, welche Angabe noch fehlt.",
+      "prompt_2": "Danke für die Ordnung. Nehmen Sie jetzt meine Fakten von oben. Stellen Sie mir vier Fragen zu meinen zwei Wegen: selbst ansprechen oder Hilfe holen. Warten Sie nach jeder Frage auf meine Antwort. Entscheiden Sie nicht für mich."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "quellen_anfordern",
+        "format_vorgeben"
+      ],
+      "logik_und_ziel": "Der erste Prompt holt die Orte zum Nachlesen. So wissen Sie, wo etwas steht, und können es prüfen. Der zweite Prompt baut aus der geprüften Stelle Ihre Form: eine kurze, sachliche Nachricht. Der Entwurf der KI ist nur zum Üben. Vergleichen Sie ihn mit Ihrem eigenen Text. Senden Sie nie den Text der KI ab.",
+      "prompt_1": "Ich bin in der Lehre im 1. Lehrjahr. Mein Fall: [mein Fall]. Ich will wissen, was in meinem Fall gilt. Nennen Sie mir die Orte zum Nachlesen. Sagen Sie zu jedem Ort, was dort steht. Sagen Sie mir auch, wo Sie unsicher sind.",
+      "prompt_2": "Ich habe Ihre Angaben im Dossier geprüft. Diese Stelle stimmt: [Stelle]. Schreiben Sie damit einen Entwurf für eine Nachricht. Aufbau: wer ich bin, meine Fakten, mein Wunsch. Fünf bis sieben kurze Sätze. Keine Vorwürfe."
+    },
+    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]. Nehmen Sie aus jeder Baukasten-Liste einen Baustein. Machen Sie daraus kurze Sätze."
+  }
+}

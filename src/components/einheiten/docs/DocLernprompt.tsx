@@ -168,6 +168,7 @@ export function DocLernprompt({ lernprompt, abteilung }: DocLernpromptProps) {
   }
   const techniken = lp.techniken || []
   const stackings = [lp.stacking_seite_1, lp.stacking_seite_2]
+  const ebaClass = lernprompt.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
 
   // 2 Technik-Karten je Block; jedem Block folgt seine Stacking-Beispiele-Seite.
   const blocks: { cards: LernpromptTechnik[]; stacking?: LernpromptStacking }[] = []
@@ -208,7 +209,7 @@ export function DocLernprompt({ lernprompt, abteilung }: DocLernpromptProps) {
   const pageTotal = pages.length || 1
 
   return (
-    <div style={lpVars}>
+    <div className={ebaClass} style={lpVars}>
       {pages.map((pg, i) => (
         <A4Page
           key={i}
