@@ -1,11 +1,13 @@
 ---
 import Base from './Base.astro'
+import { hatPasswort } from '../lib/auth'
 
 interface Props {
   title?: string
 }
 const { title } = Astro.props
 const user = Astro.locals.user
+const pwLink = hatPasswort(user)
 const path = Astro.url.pathname
 
 const success = Astro.url.searchParams.get('success')
@@ -42,7 +44,7 @@ const error = Astro.url.searchParams.get('error')
         </nav>
         <div class="flex items-center gap-3">
           <a href="/onboarding/index.html" class="text-sm text-slate-400 hover:text-slate-600 hidden sm:block" title="Einführung &amp; Rundgang">Rundgang</a>
-          <a href="/passwort" class="text-sm text-slate-500 hover:text-slate-700 hidden sm:block" title="Passwort ändern">{user?.email}</a>
+          <a href={pwLink ? "/passwort" : undefined} class="text-sm text-slate-500 hover:text-slate-700 hidden sm:block" title={pwLink ? "Passwort ändern" : undefined}>{user?.email}</a>
           <form method="POST" action="/api/auth/logout">
             <button type="submit" class="text-sm text-slate-500 hover:text-slate-700 underline">Abmelden</button>
           </form>

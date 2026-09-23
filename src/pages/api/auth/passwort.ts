@@ -1,12 +1,14 @@
 import type { APIRoute } from 'astro'
 import { createServerClient } from '@supabase/ssr'
 import ws from 'ws'
+import { hatPasswort } from '../../../lib/auth'
 
 const json = (body: unknown, status: number) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } })
 
 export const POST: APIRoute = async ({ locals, request }) => {
   if (!locals.user?.email) return json({ error: 'Nicht angemeldet.' }, 401)
+  if (!hatPasswort(locals.user)) return json({ error: 'Dein Konto meldet sich über Microsoft an — das Passwort änderst du dort.' }, 403)
 
   // The shared guest account must keep its password — otherwise one visitor
   // could lock everyone else out of the guest view.

@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'
 import GuestPrintBlock from '../components/GuestPrintBlock.astro'
-import { getAccess, bounceKt1 } from '../lib/auth'
+import { getAccess, bounceKt1, hatPasswort } from '../lib/auth'
 
 const access = await getAccess(Astro)
 if (!access) return Astro.redirect('/welcome')
@@ -11,6 +11,7 @@ const bounce = bounceKt1(Astro, access)
 if (bounce) return bounce
 
 const isGuest = access.role === 'gast'
+const pwLink = hatPasswort(access.user)
 
 const allTiles = [
   {
@@ -56,7 +57,7 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
           <a href="/onboarding/index.html" class="text-sm text-slate-400 hover:text-slate-600" title="Einführung &amp; Rundgang">Rundgang</a>
           {isGuest
             ? <span class="text-sm text-slate-500 hidden sm:block">Gast</span>
-            : <a href="/passwort" class="text-sm text-slate-500 hover:text-slate-700 hidden sm:block" title="Passwort ändern">{access.user.email}</a>}
+            : <a href={pwLink ? "/passwort" : undefined} class="text-sm text-slate-500 hover:text-slate-700 hidden sm:block" title={pwLink ? "Passwort ändern" : undefined}>{access.user.email}</a>}
           <form method="POST" action="/api/auth/logout">
             <button type="submit" class="text-sm text-slate-500 hover:text-slate-700 underline">{isGuest ? 'Verlassen' : 'Abmelden'}</button>
           </form>

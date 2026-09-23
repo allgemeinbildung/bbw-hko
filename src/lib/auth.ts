@@ -55,3 +55,14 @@ export function bounceKt1(Astro: AstroGlobal, access: Access, to = '/admin') {
   if (access.role === 'kt1' && !access.previewingAsLp) return Astro.redirect(to)
   return null
 }
+
+/**
+ * True when the account can sign in with a password (Supabase provider
+ * `email`). Microsoft/Azure-only accounts have no password here — their
+ * password lives at Microsoft — so `/passwort` is hidden and refused for them.
+ */
+export function hatPasswort(user: App.Locals['user']): boolean {
+  const meta = user?.app_metadata ?? {}
+  const providers: string[] = meta.providers ?? (meta.provider ? [meta.provider] : [])
+  return providers.includes('email')
+}

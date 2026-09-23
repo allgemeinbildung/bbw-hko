@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import { hatPasswort } from '../lib/auth'
 
 if (!Astro.locals.user) return Astro.redirect('/login')
 
@@ -13,6 +14,9 @@ const { data: profile } = await Astro.locals.supabase
 if (profile?.role === 'gast') return Astro.redirect('/')
 
 const zurueck = profile?.role === 'kt1' ? '/admin' : '/'
+
+// Microsoft sign-in: the password lives at Microsoft, not here.
+if (!hatPasswort(Astro.locals.user)) return Astro.redirect(zurueck)
 ---
 <Base title="Passwort ändern">
   <div class="min-h-screen flex items-center justify-center px-4">
