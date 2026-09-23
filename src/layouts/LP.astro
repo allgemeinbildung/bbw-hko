@@ -42,7 +42,7 @@ const error = Astro.url.searchParams.get('error')
         </nav>
         <div class="flex items-center gap-3">
           <a href="/onboarding/index.html" class="text-sm text-slate-400 hover:text-slate-600 hidden sm:block" title="Einführung &amp; Rundgang">Rundgang</a>
-          <span class="text-sm text-slate-500 hidden sm:block">{user?.email}</span>
+          <a href="/passwort" class="text-sm text-slate-500 hover:text-slate-700 hidden sm:block" title="Passwort ändern">{user?.email}</a>
           <form method="POST" action="/api/auth/logout">
             <button type="submit" class="text-sm text-slate-500 hover:text-slate-700 underline">Abmelden</button>
           </form>

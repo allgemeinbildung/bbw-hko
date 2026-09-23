@@ -39,7 +39,9 @@ const error = Astro.url.searchParams.get('error')
             <span class="text-xs font-medium px-2 py-0.5 rounded border border-amber-300 bg-amber-50 text-amber-700">Gast · nur Lesen</span>
           )}
           <a href="/onboarding/index.html" class="text-sm text-slate-400 hover:text-slate-600 hidden sm:block" title="Einführung &amp; Rundgang">Rundgang</a>
-          <span class="text-sm text-slate-500 hidden sm:block">{role === 'gast' ? 'Gast' : user?.email}</span>
+          {role === 'gast'
+            ? <span class="text-sm text-slate-500 hidden sm:block">Gast</span>
+            : <a href="/passwort" class="text-sm text-slate-500 hover:text-slate-700 hidden sm:block" title="Passwort ändern">{user?.email}</a>}
           <form method="POST" action="/api/auth/logout">
             <button type="submit" class="text-sm text-slate-500 hover:text-slate-700 underline">{role === 'gast' ? 'Verlassen' : 'Abmelden'}</button>
           </form>
