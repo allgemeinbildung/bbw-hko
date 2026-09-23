@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
-import { createClient } from '@supabase/supabase-js'
+import { createServerClient } from '@supabase/ssr'
+import ws from 'ws'
 
 const json = (body: unknown, status: number) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } })
@@ -30,8 +31,11 @@ export const POST: APIRoute = async ({ locals, request }) => {
 
   // Re-check the current password on a throwaway client, so an unattended
   // open session is not enough to take over the account.
-  const probe = createClient(import.meta.env.PUBLIC_SUPABASE_URL, import.meta.env.PUBLIC_SUPABASE_ANON_KEY, {
-    auth: { persistSession: false, autoRefreshToken: false },
+  // Same construction as createAdminClient: Vercel runs Node 18, which has no
+  // global WebSocket, so the realtime transport must be passed explicitly.
+  const probe = createServerClient(import.meta.env.PUBLIC_SUPABASE_URL, import.meta.env.PUBLIC_SUPABASE_ANON_KEY, {
+    cookies: { getAll: () => [], setAll: () => {} },
+    realtime: { transport: ws },
   })
   const { error: signInError } = await probe.auth.signInWithPassword({ email: locals.user.email, password: aktuell })
   if (signInError) return json({ error: 'Das bisherige Passwort stimmt nicht.' }, 400)

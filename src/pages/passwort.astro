@@ -39,7 +39,7 @@ const zurueck = profile?.role === 'kt1' ? '/admin' : '/'
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ aktuell, neu }),
           })
-          .then(r => r.ok ? (ok = true, saving = false) : r.json().then(b => { error = b.error || 'Fehler beim Speichern.'; saving = false }))
+          .then(r => r.ok ? (ok = true, saving = false) : r.json().catch(() => ({})).then(b => { error = b.error || `Fehler beim Speichern (${r.status}).`; saving = false }))
           .catch(() => { error = 'Netzwerkfehler.'; saving = false })
         ">
           <div>
