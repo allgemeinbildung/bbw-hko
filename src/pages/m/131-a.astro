@@ -1,0 +1,163 @@
+---
+// MOCKUP der Medienseite, auf die der QR-Code im Arbeitsblatt zeigt (Konzept
+// docs/medien-plus/KONZEPT.md §5). Bewusst OHNE Login: Lernende haben keine Konten.
+// Die Seite enthält nur öffentliche SRF-/Medienlinks, keine Personendaten.
+// Später ersetzt durch eine Route /m/[code], die aus medien_plus in herausforderung_*.json liest.
+// Ohne Base.astro: eigene, schlanke Handy-Seite, kein Alpine, keine Plattform-Chrome.
+
+type Medium = {
+  typ: 'video' | 'audio' | 'artikel'
+  label: string
+  dauer: string
+  titel: string
+  quelle: string
+  teaser: string
+  achten: string
+  embed?: string
+  direkt: string
+  direktLabel: string
+  ersatz: { titel: string; quelle: string; direkt: string }
+}
+
+const medien: Medium[] = [
+  {
+    typ: 'video',
+    label: 'Video',
+    dauer: '7 min',
+    titel: 'Influencer: Die neue Art der Werbung',
+    quelle: 'SRF ECO · 24.04.2017',
+    teaser: 'Firmen bezahlen Influencer, damit sie Produkte in ihren Alltag einbauen. Der Beitrag zeigt, wie aus einer Empfehlung ein Geschäft wird — und warum es sich nicht wie Werbung anfühlt.',
+    achten: 'Wer bezahlt wen? Zeichnen Sie die Kette vom Hersteller bis zu Ihrem Feed in drei Stichworten.',
+    embed: 'https://www.srf.ch/play/embed?urn=urn:srf:video:4a85909b-9356-40a0-a988-f8821e2b7a91&subdivisions=false',
+    direkt: 'https://www.srf.ch/play/tv/eco/video/influencer-die-neue-art-der-werbung?urn=urn:srf:video:4a85909b-9356-40a0-a988-f8821e2b7a91',
+    direktLabel: 'Auf Play SRF öffnen',
+    ersatz: {
+      titel: 'Influencer-Werbung',
+      quelle: 'SRF Kids – Clip und klar! · 4 min',
+      direkt: 'https://www.srf.ch/play/tv/srf-kids---clip-und-klar/video/influencer-werbung?urn=urn:srf:video:f3a6bf88-077d-4254-81d4-61226d5a5016',
+    },
+  },
+  {
+    typ: 'audio',
+    label: 'Audio',
+    dauer: '6 min',
+    titel: 'So erkennt man Influencer-Werbung',
+    quelle: 'SRF Ratgeber · 23.08.2023',
+    teaser: 'Influencer bekommen Geld oder Gegenleistungen, damit sie positiv über Produkte sprechen. Der Ratgeber erklärt, woran man bezahlte Beiträge erkennt, auch wenn sie nicht gekennzeichnet sind.',
+    achten: 'Notieren Sie zwei Erkennungszeichen, die Sie ab morgen in Ihrem eigenen Feed prüfen können.',
+    embed: 'https://www.srf.ch/play/embed?urn=urn:srf:audio:c6435615-4741-4d5c-9f28-92f267610f08&subdivisions=false',
+    direkt: 'https://www.srf.ch/audio/ratgeber/so-erkennt-man-influencer-werbung?id=c6435615-4741-4d5c-9f28-92f267610f08',
+    direktLabel: 'Auf srf.ch/audio öffnen',
+    ersatz: {
+      titel: 'Hype um Dubai-Schokolade: Zufall oder gezieltes Marketing?',
+      quelle: 'SRF News Plus · 15 min',
+      direkt: 'https://www.srf.ch/audio/news-plus-das-thema-des-tages-in-15-minuten/hype-um-dubai-schokolade-zufall-oder-gezieltes-marketing?id=AUDI20241115_NR_0025',
+    },
+  },
+  {
+    typ: 'artikel',
+    label: 'Artikel',
+    dauer: 'ca. 550 Wörter',
+    titel: 'Influencer treiben Online-Käufe bei Jugendlichen in die Höhe',
+    quelle: 'nau.ch · 15.06.2026',
+    teaser: 'Eine Studie zeigt: Fast die Hälfte der Jugendlichen entdeckt Produkte über Werbung in sozialen Medien, vier von zehn über Empfehlungen von Influencern. Viele kaufen danach, ohne es geplant zu haben.',
+    achten: 'Unterstreichen Sie die eine Zahl, die am besten zu Ihrem Kopfhörer-Kauf passt.',
+    direkt: 'https://www.nau.ch/news/europa/influencer-treiben-online-kaufe-bei-jugendlichen-in-die-hohe-67138867',
+    direktLabel: 'Artikel auf nau.ch lesen',
+    ersatz: {
+      titel: 'Kaufsüchtig am Black Friday: «Man soll sich ja auch mal etwas gönnen»',
+      quelle: 'watson.ch · lang, ca. 2800 Wörter',
+      direkt: 'https://www.watson.ch/leben/konsum-detailhandel/775728574-kaufsuechtig-am-black-friday-man-soll-sich-ja-auch-mal-etwas-goennen',
+    },
+  },
+]
+
+const icon = { video: '▶', audio: '♪', artikel: '≡' }
+---
+
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#C0392B" />
+    <title>Medien · 1.3.1 A · Marke oder echtes Bedürfnis?</title>
+    <link rel="icon" href="/favicon.svg" />
+    <style>
+      :root { --sit: #C0392B; --sit-light: #FADBD8; --ink: #1d1d1b; --mute: #6b6b6b; --bg: #f4f3f0; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 "Segoe UI", system-ui, -apple-system, Arial, sans-serif; }
+      .wrap { max-width: 560px; margin: 0 auto; }
+      .mock { background: #fff3cd; color: #6b5200; font-size: 12px; padding: 6px 16px; text-align: center; }
+      header { background: var(--sit); color: #fff; padding: 20px 16px 18px; }
+      header .kick { font-size: 13px; opacity: .85; }
+      header h1 { font-size: 22px; line-height: 1.25; margin: 4px 0 10px; }
+      header p { margin: 0; font-size: 15px; opacity: .95; }
+      nav.sprung { display: flex; gap: 8px; padding: 12px 16px 0; }
+      nav.sprung a { flex: 1; text-align: center; background: #fff; border: 1px solid #ddd; border-radius: 999px; padding: 8px 4px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; }
+      .karte { background: #fff; margin: 14px 12px; border-radius: 14px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.08); scroll-margin-top: 12px; }
+      .typ { display: flex; align-items: center; gap: 8px; color: var(--sit); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+      .typ .ico { width: 28px; height: 28px; border-radius: 50%; background: var(--sit-light); display: grid; place-items: center; font-size: 14px; }
+      .typ .dauer { color: var(--mute); font-weight: 400; text-transform: none; letter-spacing: 0; }
+      h2 { font-size: 18px; line-height: 1.3; margin: 8px 0 2px; }
+      .quelle { color: var(--mute); font-size: 13px; margin-bottom: 10px; }
+      .teaser { font-size: 15px; margin: 0 0 12px; }
+      iframe { display: block; width: 100%; border: 0; border-radius: 10px; background: #000; }
+      iframe.video { aspect-ratio: 16 / 9; }
+      iframe.audio { height: 170px; background: #eee; }
+      .direkt { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; }
+      .direkt.primaer { background: var(--sit); color: #fff; }
+      .direkt.sekundaer { background: #fff; color: var(--sit); border: 1.5px solid var(--sit); }
+      .achten { margin-top: 12px; background: #f6f6f4; border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+      .achten b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--mute); margin-bottom: 2px; }
+      details { margin-top: 10px; font-size: 14px; }
+      summary { cursor: pointer; color: var(--mute); }
+      details a { color: var(--sit); font-weight: 600; }
+      footer { padding: 8px 20px 40px; color: var(--mute); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="mock">Mockup · Konzept Medien-Plus · bbw-hko.ch</div>
+      <header>
+        <div class="kick">1.3.1 · Herausforderung A · Medien</div>
+        <h1>Marke oder echtes Bedürfnis?</h1>
+        <p>Drei Blicke von aussen auf die Frage: <strong>Wer weckt eigentlich meine Wünsche — und wie?</strong> Notieren Sie nur Stichworte. Danach geht es auf dem Arbeitsblatt mit der Mindmap weiter.</p>
+      </header>
+
+      <nav class="sprung" aria-label="Zu den Medien springen">
+        {medien.map((m) => <a href={`#${m.typ}`}>{icon[m.typ]} {m.label}</a>)}
+      </nav>
+
+      {medien.map((m) => (
+        <section class="karte" id={m.typ}>
+          <div class="typ"><span class="ico" aria-hidden="true">{icon[m.typ]}</span>{m.label} <span class="dauer">· {m.dauer}</span></div>
+          <h2>{m.titel}</h2>
+          <div class="quelle">{m.quelle}</div>
+          <p class="teaser">{m.teaser}</p>
+          {m.embed && (
+            <iframe
+              class={m.typ}
+              src={m.embed}
+              title={m.titel}
+              loading="lazy"
+              allow="autoplay; fullscreen; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          )}
+          <a class={`direkt ${m.embed ? 'sekundaer' : 'primaer'}`} href={m.direkt} target="_blank" rel="noopener">{m.direktLabel} ↗</a>
+          <div class="achten"><b>Achten Sie auf</b>{m.achten}</div>
+          <details>
+            <summary>Läuft nicht? Ersatz</summary>
+            <p><a href={m.ersatz.direkt} target="_blank" rel="noopener">{m.ersatz.titel} ↗</a><br />{m.ersatz.quelle}</p>
+          </details>
+        </section>
+      ))}
+
+      <footer>
+        Zurück zum Arbeitsblatt: Seite 5, Mindmap «Wer weckt meine Wünsche?». Verbinden Sie jedes Medium mit mindestens einem Begriff.
+      </footer>
+    </div>
+  </body>
+</html>
