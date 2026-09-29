@@ -66,9 +66,9 @@ export interface VorlagenKontext {
 }
 
 export const LEHRGANG_LABEL: Record<Lehrdauer, string> = {
+  'EBA': 'EBA 2-jährig',
   'EFZ-3J': 'EFZ 3-jährig',
   'EFZ-4J': 'EFZ 4-jährig',
-  'EBA': 'EBA 2-jährig',
 }
 
 export const LEERER_KONTEXT: VorlagenKontext = {

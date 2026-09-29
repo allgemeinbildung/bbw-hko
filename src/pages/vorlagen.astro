@@ -25,7 +25,8 @@ if (access.role === 'gast') {
 }
 
 const baum = vorlagenBaum()
-const lehrgaenge = Object.keys(baum) as (keyof typeof baum)[]
+// Reihenfolge EBA → EFZ 3J → EFZ 4J (Entscheid Kernteam 29.09.2026), unabhängig von der Datensatz-Reihenfolge.
+const lehrgaenge = (['EBA', 'EFZ-3J', 'EFZ-4J'] as const).filter((lg) => lg in baum)
 const abteilung = access.abteilung ?? ''
 ---
 <LP title="Vorlagen">
@@ -174,7 +175,7 @@ const abteilung = access.abteilung ?? ''
       </div>
 
       <p class="mt-6 text-sm text-slate-500 leading-relaxed max-w-3xl">
-        Fertig ausgefüllt? Unter <a href="/einreichen" class="text-[var(--brand)] font-medium hover:underline">Material einreichen</a>
+        Fertig ausgefüllt? Unter <a href="/eigenes-material" class="text-[var(--brand)] font-medium hover:underline">Eigenes Material teilen</a>
         hochladen — die Felder der Vorlage tragen dieselben Namen wie das Formular, und das ausgefüllte
         Word-Dokument lässt sich gleich als Zusatzmaterial anhängen.
       </p>

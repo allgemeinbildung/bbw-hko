@@ -83,30 +83,28 @@ const aspekteJson = JSON.stringify(declaredAspekte)
     <!-- Kontext -->
     <section class="bg-white border border-slate-200 rounded-lg p-5 space-y-3">
       <h2 class="text-base font-semibold">Kontext der Erprobung</h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         <div>
           <label class="field-label">Klasse</label>
           <input type="text" x-model="form.klasse" class="input mt-1" placeholder="z.B. FaGe24a" />
         </div>
-        <div>
-          <label class="field-label">Lehrjahr</label>
-          <select x-model="form.lehrjahr" class="input mt-1">
-            <option value="">—</option>
-            <template x-for="n in [1,2,3,4]" :key="n">
-              <option :value="n" x-text="n"></option>
-            </template>
-          </select>
-        </div>
+        {lj == null && (
+          <div>
+            <label class="field-label">Lehrjahr</label>
+            <select x-model="form.lehrjahr" class="input mt-1">
+              <option value="">—</option>
+              <template x-for="n in [1,2,3,4]" :key="n">
+                <option :value="n" x-text="n"></option>
+              </template>
+            </select>
+          </div>
+        )}
         <div>
           <label class="field-label">Abteilung</label>
           <input type="text" x-model="form.abteilung" class="input mt-1" />
         </div>
         <div>
-          <label class="field-label">Getestet am</label>
-          <input type="date" x-model="form.getestet_am" class="input mt-1" />
-        </div>
-        <div>
-          <label class="field-label">Dauer (Lektionen)</label>
+          <label class="field-label">Dauer (Lektionen) <span class="font-normal normal-case text-slate-400">— optional</span></label>
           <input type="number" step="0.5" min="0" x-model.number="form.dauer_lektionen" class="input mt-1" placeholder="z.B. 3" />
         </div>
       </div>

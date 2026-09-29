@@ -41,6 +41,8 @@ const selbstcheckLabel: Record<string, string> = {
   kriterien: 'Beurteilungskriterien',
 }
 
+const lehrgangLabel: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
+
 const eigeneCount = fb.filter((f: any) => f.feedback_art === 'eigenes').length
 const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').length
 ---
@@ -101,8 +103,16 @@ const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').len
 
             {isEigenes && (
               <div class="border-t border-slate-100 bg-slate-50 p-4 space-y-2 text-sm">
+                {row.eigen_lehrgang && (
+                  <div class="flex flex-wrap items-center gap-2 text-xs text-slate-600">
+                    <span>{lehrgangLabel[row.eigen_lehrgang] ?? row.eigen_lehrgang}</span>
+                    {row.eigen_thema_nr && <span class="thema-chip" data-thema={row.eigen_thema_nr} data-lehrgang={row.eigen_lehrgang === 'EBA' ? 'EBA' : undefined}>T{row.eigen_thema_nr}</span>}
+                    {(row.eigen_kompetenz_nrs ?? []).map((k: string) => <span class="chip-blue">{k}</span>)}
+                    {row.eigen_sprachmodus_primaer && <span>· {row.eigen_sprachmodus_primaer}</span>}
+                  </div>
+                )}
                 {row.eigen_handlungssituation && (
-                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungssituation</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungssituation}</p></div>
+                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Herausforderung</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungssituation}</p></div>
                 )}
                 {row.eigen_handlungsprodukt && (
                   <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungsprodukt</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungsprodukt}</p></div>
@@ -116,6 +126,40 @@ const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').len
                     </p>
                   </div>
                 )}
+                {Array.isArray(row.eigen_links) && row.eigen_links.length > 0 && (
+                  <div>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Links</span>
+                    <ul class="list-disc pl-5">
+                      {row.eigen_links.map((l: any) => (
+                        <li><a href={l.url} target="_blank" rel="noopener" class="underline text-slate-700 break-all">{l.titel || l.url}</a></li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {(() => {
+                  const e = row.eigen_erweitert ?? {}
+                  const kriterien = Array.isArray(e.bewertungskriterien) ? e.bewertungskriterien : []
+                  const hat = e.kompetenzversprechen || kriterien.length || e.lehrmittel_anker || e.didaktischer_kniff || (e.schluesselkompetenzen ?? []).length
+                  if (!hat) return null
+                  return (
+                    <details class="rounded border border-slate-200 bg-white px-3 py-2">
+                      <summary class="cursor-pointer text-xs font-semibold text-slate-600">Erweiterte Angaben</summary>
+                      <div class="space-y-2 mt-2">
+                        {e.kompetenzversprechen && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Kompetenzversprechen</span><p class="text-slate-700">{e.kompetenzversprechen}</p></div>}
+                        {(e.schluesselkompetenzen ?? []).length > 0 && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Schlüsselkompetenzen</span><p class="text-slate-700">{e.schluesselkompetenzen.join(' · ')}</p></div>}
+                        {(e.aspekte ?? []).length > 0 && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Aspekte</span><p class="text-slate-700">{e.aspekte.join(' · ')}</p></div>}
+                        {(e.sprachmodi_sekundaer ?? []).length > 0 && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Weitere Sprachmodi</span><p class="text-slate-700">{e.sprachmodi_sekundaer.join(' · ')}</p></div>}
+                        {kriterien.length > 0 && (
+                          <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Beurteilungskriterien</span>
+                            <ul class="list-disc pl-5 text-slate-700">{kriterien.map((k: any) => <li>{k.name} <span class="text-xs text-slate-400">({k.dimension})</span></li>)}</ul>
+                          </div>
+                        )}
+                        {e.lehrmittel_anker && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Lehrmittel-Bezug</span><p class="text-slate-700">{e.lehrmittel_anker}</p></div>}
+                        {e.didaktischer_kniff && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Didaktischer Kniff</span><p class="text-slate-700 whitespace-pre-wrap">{e.didaktischer_kniff}</p></div>}
+                      </div>
+                    </details>
+                  )
+                })()}
                 {Object.keys(selbstcheck).length > 0 && (
                   <div class="flex flex-wrap gap-2 pt-1">
                     {Object.entries(selbstcheck).map(([k, v]) => (

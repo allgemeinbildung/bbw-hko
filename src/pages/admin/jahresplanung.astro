@@ -82,10 +82,11 @@ for (const p of planSummaries) {
   cur.lps.add(p.lp)
   sliceMap.set(key, cur)
 }
+// Reihenfolge EBA → EFZ-3J → EFZ-4J (Entscheid Kernteam 29.09.2026) — ergibt sich hier alphabetisch.
 const slices = [...sliceMap.values()].sort(
   (a, b) => a.lehrgang.localeCompare(b.lehrgang) || a.lehrjahr - b.lehrjahr,
 )
-const lgLabel = (lg: string) => (lg === 'EBA' ? 'EBA 2-J' : lg === 'EFZ-4J' ? 'EFZ 4-J' : 'EFZ 3-J')
+const lgLabel = (lg: string) => (lg === 'EBA' ? 'EBA 2-jährig' : lg === 'EFZ-4J' ? 'EFZ 4-jährig' : 'EFZ 3-jährig')
 
 const totalPlans = plans.length
 const skBars = skNames.map((n) => ({ name: n, full: skFullName[n] || n, plans: skAgg[n] }))

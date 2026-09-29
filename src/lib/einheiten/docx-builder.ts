@@ -1027,7 +1027,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
     if (kopf.thema_nr) metaRows.push(['Thema', `${kopf.thema_nr}${kopf.thema_titel ? ' · ' + kopf.thema_titel : ''}`])
     if (kopf.lebensbezug_nr) metaRows.push(['Lebensbezug', `${kopf.lebensbezug_nr}${kopf.lebensbezug_text ? ' · ' + kopf.lebensbezug_text : ''}`])
     if (kopf.kompetenz_nr || komp) metaRows.push(['Kompetenz', String(kopf.kompetenz_nr || komp)])
-    metaRows.push(['Lehrgang', `EBA (2 Jahre) · Niveau ${niveau}`])
+    metaRows.push(['Lehrgang', `EBA 2-jährig · Niveau ${niveau}`])
     children.push(spacer(80))
     children.push(dataTable(['Feld', 'Wert'], metaRows, akzent, [26, 74]))
   }

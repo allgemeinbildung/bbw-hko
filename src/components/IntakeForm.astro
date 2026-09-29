@@ -30,7 +30,7 @@ const isEdit = !!materialId
         <h1 class="text-2xl font-semibold" x-text={isEdit ? "'Material bearbeiten'" : "'Eigenes Material teilen'"}></h1>
         <p class="text-sm text-slate-500 mt-1 max-w-2xl">
           Teile deine <strong>handlungskompetenzorientierte Idee</strong> in derselben Struktur wie die fertigen Einheiten:
-          Kompetenzversprechen → Handlungssituation → Kompetenznachweis.
+          Kompetenzversprechen → Herausforderung → Kompetenznachweis.
           Du musst <strong>nicht</strong> alles bis ins Detail ausfüllen — die mit <span class="text-red-500">*</span> markierten Felder genügen für einen brauchbaren Beitrag.
         </p>
       </div>
@@ -260,7 +260,7 @@ const isEdit = !!materialId
         <div class="space-y-4">
           <div class="flex items-center gap-2 pb-2 border-b-2" style="border-color: var(--brand)">
             <span class="w-5 h-5 rounded text-white text-xs flex items-center justify-center font-bold" style="background: var(--brand)">H</span>
-            <h2 class="font-semibold text-slate-800">Handlungssituation</h2>
+            <h2 class="font-semibold text-slate-800">Herausforderung</h2>
             <span class="text-xs text-slate-400">— Pflichtteil</span>
           </div>
 
@@ -312,7 +312,7 @@ const isEdit = !!materialId
 
           <!-- Checkliste Handlungssituation -->
           <div class="bg-white border border-slate-200 rounded-lg p-4">
-            <h3 class="text-sm font-semibold text-slate-700 mb-1">Checkliste Handlungssituation</h3>
+            <h3 class="text-sm font-semibold text-slate-700 mb-1">Checkliste Herausforderung</h3>
             <p class="text-xs text-slate-400 mb-3">Optional — fehlende Häkchen erscheinen als Warnung.</p>
             <div class="space-y-2">
               <label class="check-item" :class="form.selbstcheck.h.ich_perspektive ? 'checked' : ''">

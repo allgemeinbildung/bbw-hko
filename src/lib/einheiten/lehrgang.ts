@@ -17,20 +17,24 @@
 // solche Einheiten dürfen NICHT doppelt getaggt werden. Geprüft wird das bei jedem
 // Build von `scripts/sync-einheiten-nrlp.mjs` (mit `--check` bricht es ab).
 
-/** Kanonische Reihenfolge für Anzeige und Filter-Dropdowns. */
-export const LEHRGANG_ORDER = ['EFZ_3J', 'EFZ_4J', 'EBA_2J'] as const
+/**
+ * Reihenfolge für Anzeige und Filter-Dropdowns: EBA zuerst, dann EFZ 3-/4-jährig
+ * (Entscheid Kernteam 29.09.2026). Reine Anzeigereihenfolge — der kanonische
+ * `lehrgang` hängt nie an ihr.
+ */
+export const LEHRGANG_ORDER = ['EBA_2J', 'EFZ_3J', 'EFZ_4J'] as const
 
 export const LEHRGANG_LABEL: Record<string, string> = {
+  EBA_2J: 'EBA 2-jährig',
   EFZ_3J: 'EFZ 3-jährig',
   EFZ_4J: 'EFZ 4-jährig',
-  EBA_2J: 'EBA 2-jährig',
 }
 
 /** Kompaktform für Chips auf Katalogkarten. */
 const LEHRGANG_SHORT: Record<string, string> = {
-  EFZ_3J: '3J',
-  EFZ_4J: '4J',
   EBA_2J: 'EBA',
+  EFZ_3J: 'EFZ 3J',
+  EFZ_4J: 'EFZ 4J',
 }
 
 export function lehrgangLabel(code: string): string {

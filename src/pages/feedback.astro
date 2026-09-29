@@ -15,11 +15,12 @@ const units = visibleEinheiten(einheitenIndex, role)
   .slice()
   .sort((a, b) => a.id.localeCompare(b.id, 'de'))
 
-// Nach Lehrgang gruppieren (EFZ_3J / EFZ_4J → EFZ · EBA_2J → EBA), damit die
+// Nach Lehrgang gruppieren (EBA_2J → EBA · EFZ_3J / EFZ_4J → EFZ), damit die
 // Lehrperson zuerst ihren Bildungsgang sieht. Slug/Dateiname wird nicht angezeigt.
+// EBA zuerst (Entscheid Kernteam 29.09.2026).
 const gruppen = [
-  { label: 'EFZ', items: units.filter((e) => lehrgaengeOf(e).some((l) => !isEbaLehrgang(l))) },
-  { label: 'EBA', items: units.filter((e) => lehrgaengeOf(e).some(isEbaLehrgang)) },
+  { label: 'EBA 2-jährig', items: units.filter((e) => lehrgaengeOf(e).some(isEbaLehrgang)) },
+  { label: 'EFZ 3-/4-jährig', items: units.filter((e) => lehrgaengeOf(e).some((l) => !isEbaLehrgang(l))) },
 ].filter((g) => g.items.length > 0)
 ---
 <LP title="Feedback / Material einreichen">

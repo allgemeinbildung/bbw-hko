@@ -48,6 +48,8 @@ const count = materials?.length ?? 0
 // wo jeder Entwurf als vollständige Karte mit «● Entwurf · nur KT1» erscheint.
 const anzahlEntwuerfe = einheitenIndex.filter((e) => isEntwurf(e) || draftKomponenten(e).length > 0).length
 const hatEntwuerfe = anzahlEntwuerfe > 0
+// Kurzlabel für die Tabellenspalte (Wert bleibt der Code).
+const LEHRDAUER_SHORT: Record<string, string> = { 'EBA': 'EBA', 'EFZ-3J': 'EFZ 3J', 'EFZ-4J': 'EFZ 4J' }
 ---
 <Admin title="Übersicht">
   {hatEntwuerfe && (
@@ -113,7 +115,7 @@ const hatEntwuerfe = anzahlEntwuerfe > 0
                 ))}
               </div>
             </td>
-            <td class="p-3 text-slate-600">{m.lehrdauer}</td>
+            <td class="p-3 text-slate-600 whitespace-nowrap">{LEHRDAUER_SHORT[m.lehrdauer] ?? m.lehrdauer}</td>
             <td class="p-3">
               <div class="text-slate-700">{(m as any).submitter?.full_name ?? '—'}</div>
               {(m as any).submitter?.abteilung && (

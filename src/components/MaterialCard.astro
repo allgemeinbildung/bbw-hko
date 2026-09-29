@@ -8,6 +8,9 @@ interface Props {
 }
 const { material: m, showAuthor = false } = Astro.props
 
+// Anzeige-Label (Wert bleibt der Code).
+const LEHRDAUER_LABEL: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
+
 function selbstcheckCount(sc: any): number {
   if (!sc || typeof sc !== 'object') return 0
   if (sc.h !== undefined || sc.kn !== undefined) {
@@ -36,7 +39,7 @@ const KN_FORMAT_LABEL: Record<string, string> = {
     <div class="flex items-center gap-2">
       <span
         class:list={["text-xs font-medium inline-flex items-center gap-1", scCount === TOTAL_CHECKS ? "text-emerald-600" : "text-slate-500"]}
-        title={`Selbstcheck der Lehrperson: ${scCount} von ${TOTAL_CHECKS} Qualitätskriterien angehakt (Checkliste Handlungssituation + Kompetenznachweis). Optional — kein Pflichtfeld.`}
+        title={`Selbstcheck der Lehrperson: ${scCount} von ${TOTAL_CHECKS} Qualitätskriterien angehakt (Checkliste Herausforderung + Kompetenznachweis). Optional — kein Pflichtfeld.`}
       >
         <span aria-hidden="true">📋</span>{scCount}/{TOTAL_CHECKS}
       </span>
@@ -48,7 +51,7 @@ const KN_FORMAT_LABEL: Record<string, string> = {
 
   <div class="text-xs text-slate-500 mb-3 flex items-center flex-wrap gap-1.5">
     {showAuthor && m.profiles?.full_name && <span>{m.profiles.full_name} · </span>}
-    <span>{m.lehrdauer} · LJ {m.lehrjahr}</span>
+    <span>{LEHRDAUER_LABEL[m.lehrdauer] ?? m.lehrdauer} · LJ {m.lehrjahr}</span>
     {m.thema_nr != null && <span class="thema-chip" data-thema={m.thema_nr} data-lehrgang={m.lehrdauer} title={`Thema ${m.thema_nr}`}>T{m.thema_nr}</span>}
     <span>{m.thema_titel}</span>
   </div>

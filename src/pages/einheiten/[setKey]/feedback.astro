@@ -2,6 +2,8 @@
 import Einheiten from '../../../layouts/Einheiten.astro'
 import { einheitById } from '../../../lib/einheiten'
 import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
+import { lehrgaengeOf, lehrgangLabel, sortLehrgaenge } from '../../../lib/einheiten'
+import { lehrjahrFuerThema } from '../../../lib/nrlp'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -21,6 +23,14 @@ const role: 'lp' | 'kt1' = profile?.role === 'kt1' ? 'kt1' : 'lp'
 const defaultAbteilung = profile?.abteilung ?? ''
 
 const knTypen = meta.kn_typen
+
+// Lehrjahr wird nicht mehr abgefragt: das Thema legt es fest. Nur wenn die Einheit
+// für mehrere Lehrgänge gilt und das Thema dort in verschiedenen Lehrjahren liegt
+// (z. B. T3: 3J → 1., 4J → 2.), fragt der Bogen nach dem Lehrgang.
+const lehrjahrWahl = sortLehrgaenge(lehrgaengeOf(meta))
+  .map((lg) => ({ lg, lj: lehrjahrFuerThema(lg, Number(meta.thema_nr)) }))
+  .filter((x): x is { lg: string; lj: number } => x.lj !== null)
+const lehrjahrWerte = [...new Set(lehrjahrWahl.map((x) => x.lj))]
 
 // Vorauswahl aus dem zentralen /feedback-Entscheidungsbaum (?art=1zu1|angepasst)
 const preArtRaw = Astro.url.searchParams.get('art')
@@ -122,32 +132,35 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
 
       <!-- Kontext -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Wann und mit wem hast du unterrichtet?</h2>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Mit wem hast du unterrichtet?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label class="flex flex-col gap-1">
             <span class="field-label">Klasse</span>
             <input class="input" name="klasse" placeholder="z.B. FaGe24a" />
           </label>
           <label class="flex flex-col gap-1">
-            <span class="field-label">Lehrjahr</span>
-            <input class="input" type="number" name="lehrjahr" min="1" max="4" />
-          </label>
-          <label class="flex flex-col gap-1">
             <span class="field-label">Abteilung</span>
             <input class="input" name="abteilung" value={defaultAbteilung} />
           </label>
           <label class="flex flex-col gap-1">
-            <span class="field-label">Dauer (Lektionen)</span>
+            <span class="field-label">Dauer (Lektionen) <span class="font-normal normal-case text-slate-400">— optional</span></span>
             <input class="input" type="number" name="dauer_lektionen" step="0.5" min="0" />
           </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Getestet von</span>
-            <input class="input" type="date" name="getestet_von" />
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">bis</span>
-            <input class="input" type="date" name="getestet_bis" />
-          </label>
+          {lehrjahrWerte.length === 1 && (
+            <input type="hidden" name="lehrjahr" value={lehrjahrWerte[0]} />
+          )}
+          {lehrjahrWerte.length > 1 && (
+            <div class="flex flex-col gap-1">
+              <span class="field-label">Lehrgang</span>
+              <div class="radio-group">
+                {lehrjahrWahl.map((x) => (
+                  <label class="radio-pill">
+                    <input type="radio" name="lehrjahr" value={x.lj} hidden /> {lehrgangLabel(x.lg)} ({x.lj}. LJ)
+                  </label>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -163,12 +176,17 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
         {knTypen.length > 0 && (
           <label class="flex flex-col gap-1">
             <span class="field-label">KN-Typ verwendet</span>
-            <select class="input" name="kn_typ_verwendet">
+            <select class="input" name="kn_typ_verwendet" id="kn-typ-select">
               <option value="">— keine Auswahl —</option>
               {knTypen.map((t) => <option value={t.typ}>{knTypLabel(t.typ, t.label)}</option>)}
+              <option value="andere">Andere Form / anderes Produkt</option>
             </select>
           </label>
         )}
+        <label id="kn-typ-anders-wrap" class="flex flex-col gap-1 mt-3 hidden">
+          <span class="field-label">Welche Form hast du stattdessen gewählt?</span>
+          <input class="input" name="kn_typ_anders" placeholder="z.B. Erklärvideo statt Fachgespräch" />
+        </label>
       </section>
 
       <!-- Angepasst: was verändert + Upload -->
@@ -365,6 +383,13 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
     function syncKn() { knSection.classList.toggle('hidden', !knCb.checked) }
     syncKn(); knCb.addEventListener('change', syncKn)
 
+    // KN-Typ «Andere» → Freitext
+    const knTypSelect = document.getElementById('kn-typ-select')
+    function syncKnTyp() {
+      document.getElementById('kn-typ-anders-wrap').classList.toggle('hidden', knTypSelect?.value !== 'andere')
+    }
+    knTypSelect?.addEventListener('change', syncKnTyp)
+
     // Niveau-Passung → scaffolding reveal
     function syncScaffolding() {
       const val = document.querySelector('input[name="niveau_passung"]:checked')?.value
@@ -409,6 +434,7 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
       selectArt(existingRow.feedback_art === 'angepasst' ? 'angepasst' : '1zu1')
       renderFileList(Array.isArray(existingRow.idee_dateien) ? existingRow.idee_dateien : [])
       syncKn()
+      syncKnTyp()
       syncScaffolding()
     }
 

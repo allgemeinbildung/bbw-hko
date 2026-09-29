@@ -29,7 +29,7 @@ function readMaybe(p) {
 
 // Kanonische Reihenfolge — Spiegel von LEHRGANG_ORDER in src/lib/einheiten/lehrgang.ts
 // (dieses Skript ist .mjs und kann das TS-Modul nicht importieren).
-const LEHRGANG_ORDER = ['EFZ_3J', 'EFZ_4J', 'EBA_2J']
+const LEHRGANG_ORDER = ['EBA_2J', 'EFZ_3J', 'EFZ_4J']
 
 function sortLehrgaenge(list) {
   const rank = (l) => {

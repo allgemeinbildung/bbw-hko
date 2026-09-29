@@ -226,9 +226,9 @@ const Zahl = (n: number) => {
 // Bewusste Kopie — dieses Modul bleibt importfrei. Bei Änderungen auch
 // LEHRGANG_LABEL in ./lehrgang.ts nachziehen.
 const LEHRGANG_LABEL: Record<string, string> = {
+  EBA_2J: 'EBA 2-jährig',
   EFZ_3J: 'EFZ 3-jährig',
   EFZ_4J: 'EFZ 4-jährig',
-  EBA_2J: 'EBA 2-jährig',
 }
 
 const DIMENSION_LABEL: Record<string, string> = {

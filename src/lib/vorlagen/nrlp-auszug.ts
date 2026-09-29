@@ -22,6 +22,8 @@ function auszug(lehrdauer: Lehrdauer): NrlpAuszug | null {
     themen: (ds.themen as any[]).map((t) => ({
       nr: t.nr,
       titel: t.titel,
+      // Jedes Thema gehört zu genau einem Lehrjahr — Formulare leiten es ab.
+      lehrjahr: t.lehrjahr ?? null,
       schluesselkompetenzen: t.schluesselkompetenzen || [],
       // T7 «Schlussarbeit» hat keine Lebensbezüge — das Feld fehlt dort, und die
       // Kaskade zeigt das Thema dann ohne Unterebene an.

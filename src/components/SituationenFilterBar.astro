@@ -14,6 +14,8 @@ const sks = Array.from(new Set(entries.flatMap((e) => e.sk))).sort((a, b) => a -
 
 const sprachmodiList = (nrlp.zirkularitaet.sprachmodi as any[]).map((s) => s.bezeichnung)
 const aspekteList = (nrlp.zirkularitaet.gesellschaftsinhalte as any[]).map((a) => a.bezeichnung)
+// Anzeige-Labels (Werte bleiben die Codes); Reihenfolge EBA → EFZ 3J → EFZ 4J.
+const LEHRDAUER_LABEL: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
 ---
 <div class="bg-white border border-slate-200 rounded-lg p-4 mb-5">
   <form method="GET" class="space-y-3">
@@ -27,7 +29,7 @@ const aspekteList = (nrlp.zirkularitaet.gesellschaftsinhalte as any[]).map((a) =
         <select name="lehrdauer" class="input mt-1">
           <option value="" selected={!filters.lehrdauer}>Alle</option>
           {['EBA', 'EFZ-3J', 'EFZ-4J'].map((v) => (
-            <option value={v} selected={filters.lehrdauer === v}>{v}</option>
+            <option value={v} selected={filters.lehrdauer === v}>{LEHRDAUER_LABEL[v]}</option>
           ))}
         </select>
       </div>

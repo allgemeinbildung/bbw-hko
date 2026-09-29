@@ -57,3 +57,22 @@ export const nrlpGlobal: Nrlp = nrlp3j as unknown as Nrlp
 export const nrlp: Nrlp = nrlpGlobal
 
 export const supportedLehrdauer: Lehrdauer[] = Object.keys(datasets) as Lehrdauer[]
+
+/** Einheiten-Code ("EFZ_3J", "EBA_2J") oder Lehrdauer ("EFZ-3J", "EBA") → Lehrdauer. */
+export function toLehrdauer(lehrgang: string | null | undefined): Lehrdauer {
+  const s = (lehrgang ?? '').toUpperCase()
+  if (s.includes('4J')) return 'EFZ-4J'
+  if (s.includes('EBA') || s.includes('2J')) return 'EBA'
+  return 'EFZ-3J'
+}
+
+/**
+ * Lehrjahr eines Themas. Im nRLP gehört jedes Thema zu genau einem Lehrjahr —
+ * wer ein Thema kennt, muss das Lehrjahr also nicht mehr eingeben. Achtung:
+ * dieselbe Thema-Nr liegt je Lehrgang in einem anderen Lehrjahr (T3: 3J → 1, 4J → 2).
+ */
+export function lehrjahrFuerThema(lehrgang: string | null | undefined, themaNr: number | null | undefined): number | null {
+  if (!themaNr) return null
+  const t = getNrlp(toLehrdauer(lehrgang))?.themen.find((x) => x.nr === themaNr)
+  return typeof t?.lehrjahr === 'number' ? t.lehrjahr : null
+}

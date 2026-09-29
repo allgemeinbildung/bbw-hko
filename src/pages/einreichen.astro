@@ -1,22 +1,7 @@
 ---
-import LP from '../layouts/LP.astro'
-import IntakeForm from '../components/IntakeForm.astro'
-import { getAccess, bounceKt1 } from '../lib/auth'
-
-const access = await getAccess(Astro)
-if (!access) return Astro.redirect('/login')
-
-const bounce = bounceKt1(Astro, access)
-if (bounce) return bounce
-if (access.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material einreichen ist nur für angemeldete Lehrpersonen möglich.'))
+// Früher das grosse HKO-Formular (Tabelle `materials`). Seit dem Entscheid des
+// Kernteams vom 29.09.2026 gibt es für eigenes Material nur noch einen Weg:
+// /eigenes-material (schlank, mit «Erweiterte Angaben»). Alte Bookmarks und
+// Links landen dort. Bestehende `materials`-Zeilen bleiben unter /bearbeiten/[id].
+return Astro.redirect('/eigenes-material', 301)
 ---
-<LP title="Einreichen">
-  <div class="max-w-5xl mx-auto px-6 pt-6 -mb-2">
-    <p class="text-sm text-slate-500">
-      Lieber zuerst auf Papier arbeiten?
-      <a href="/vorlagen" class="text-[var(--brand)] font-medium hover:underline">Word-Vorlagen herunterladen</a>
-      — sie tragen dieselben Felder wie dieses Formular.
-    </p>
-  </div>
-  <IntakeForm initialData={{ abteilung: access.abteilung ?? '' }} />
-</LP>

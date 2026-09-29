@@ -1,9 +1,10 @@
 // wortschatz.ts — die Beschriftungen der Vorlagen, in zwei Sprachen.
 //
 // Der Grund für diese Datei: nicht jede Lehrperson will in HKO-Vokabular
-// arbeiten. «Handlungssituation», «Kompetenzversprechen», «Handlungsprodukt»
-// sind die Begriffe des nRLP und des Einreichen-Formulars — wer sie benutzt,
-// bekommt ein Dokument, das sich 1:1 in /einreichen übertragen lässt. Wer ein
+// arbeiten. «Herausforderung», «Kompetenzversprechen», «Handlungsprodukt»
+// sind die Begriffe des Schullehrplans und des Formulars «Eigenes Material» —
+// wer sie benutzt, bekommt ein Dokument, das sich 1:1 in /eigenes-material
+// übertragen lässt. Wer ein
 // schlichtes Arbeitsblatt will, wählt `neutral` und bekommt dieselbe Struktur
 // unter Alltagsnamen (Ausgangslage, Auftrag, Abgabe, Rückblick).
 //
@@ -77,7 +78,7 @@ const HKO: Wortschatz = {
 
   versprechen: 'Kompetenzversprechen',
   versprechenHint: 'Ein Satz in der ICH-Form: «Ich kann …». Das ist der Massstab, an dem am Schluss gemessen wird.',
-  situation: 'Handlungssituation',
+  situation: 'Situation',
   situationHint: 'Aus der ICH-Perspektive der lernenden Person geschrieben, konkret und mit echtem Entscheidungsdruck.',
   auftrag: 'Auftrag',
   leitfragen: 'Leitfragen',

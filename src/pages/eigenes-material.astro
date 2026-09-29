@@ -1,6 +1,20 @@
 ---
+// Eigenes Material teilen — DAS eine Formular für selbst erstelltes Material
+// (Entscheid KT 29.09.2026). Schlank im Kern, alles Weitere in «Erweiterte
+// Angaben» zum Aufklappen. Ersetzt das frühere HKO-Formular unter /einreichen
+// (das leitet hierher um; alte `materials`-Zeilen bleiben unter /bearbeiten).
+//
+// Gespeichert wird in `einheit_feedbacks` mit feedback_art = 'eigenes'
+// (Migrationen 017 + 021). Entwurf braucht nur einen Titel und lässt sich über
+// «Meine Materialien» (?id=…) wieder öffnen, bis KT1 ihn gesichtet hat.
+//
+// Der Lehrplan kommt als Auszug in ein <script type="application/json"> (siehe
+// lib/vorlagen/nrlp-auszug.ts) — dieselbe Quelle wie die Word-Vorlagen.
 import LP from '../layouts/LP.astro'
 import { getAccess, bounceKt1 } from '../lib/auth'
+import { vorlagenBaum } from '../lib/vorlagen/nrlp-auszug'
+import { nrlpGlobal } from '../lib/nrlp'
+import { skFullName } from '../lib/sk-labels'
 
 const access = await getAccess(Astro)
 if (!access) return Astro.redirect('/login')
@@ -9,77 +23,180 @@ const bounce = bounceKt1(Astro, access)
 if (bounce) return bounce
 if (access.role === 'gast') return Astro.redirect('/situationen?error=' + encodeURIComponent('Material teilen ist nur für angemeldete Lehrpersonen möglich.'))
 
-const defaultAbteilung = access.abteilung ?? ''
+// Wiederaufnahme eines eigenen Entwurfs / einer noch nicht gesichteten Einreichung.
+const id = Astro.url.searchParams.get('id')
+let row: any = null
+let gesperrt = false
+if (id) {
+  const { data } = await Astro.locals.supabase
+    .from('einheit_feedbacks')
+    .select('*')
+    .eq('id', id)
+    .eq('lp_id', access.user.id)
+    .eq('feedback_art', 'eigenes')
+    .maybeSingle()
+  if (!data) return Astro.redirect('/meine-materialien?error=' + encodeURIComponent('Material nicht gefunden.'))
+  if (data.status === 'entwurf' || data.status === 'eingereicht') row = data
+  else gesperrt = true
+}
 
-const selbstcheckItems = [
-  ['situation_ich', 'Die Ausgangssituation ist aus der ICH-Perspektive der Lernenden formuliert.'],
-  ['handlungsprodukt', 'Es gibt ein konkretes Handlungsprodukt, das die Lernenden erstellen.'],
-  ['kn_transfer', 'Der Kompetenznachweis prüft die Kompetenz in einer neuen Situation (Transfer).'],
-  ['kriterien', 'Beurteilungskriterien (SuK / Gesellschaft) sind vorhanden.'],
-]
+const baum = vorlagenBaum()
+const taxonomie = {
+  sk: nrlpGlobal.zirkularitaet.schluesselkompetenzen.map((x) => x.bezeichnung),
+  aspekte: nrlpGlobal.zirkularitaet.gesellschaftsinhalte.map((x) => x.bezeichnung),
+  sprachmodi: nrlpGlobal.zirkularitaet.sprachmodi.map((x) => x.bezeichnung),
+  skFull: skFullName,
+}
+const start = { row, abteilung: access.abteilung ?? '' }
 ---
 <LP title="Eigenes Material teilen">
-  <div class="max-w-3xl mx-auto">
-    <a href="/" class="text-sm text-slate-500 hover:text-slate-700">← Hauptplattform</a>
+  <script type="application/json" id="em-baum" set:html={JSON.stringify(baum)}></script>
+  <script type="application/json" id="em-taxonomie" set:html={JSON.stringify(taxonomie)}></script>
+  <script type="application/json" id="em-start" set:html={JSON.stringify(start)}></script>
+
+  <div class="max-w-3xl mx-auto" x-data="eigenesMaterial()">
+    <a href="/meine-materialien" class="text-sm text-slate-500 hover:text-slate-700">← Meine Materialien</a>
     <h1 class="text-2xl font-semibold mt-2 mb-1">Eigenes Material teilen</h1>
-    <p class="text-sm text-slate-500 mb-6">
-      Du hast eigenes Material erstellt und erprobt? Fülle den kurzen Selbsteinschätzungsbogen aus und lade das Material als PDF hoch.
+    <p class="text-sm text-slate-500 mb-2">
+      Du hast eigenes Material erstellt und erprobt? Beschreibe es kurz und lade es hoch oder verlinke es.
       Das Kernteam (KT1) sieht deinen Beitrag und kann ihn in die Sammlung aufnehmen.
     </p>
+    <p class="text-xs text-slate-500 mb-6">
+      Du kannst jederzeit <strong>als Entwurf speichern</strong> — dafür genügt ein Titel. Den Entwurf findest du unter «Meine Materialien».
+      Lieber zuerst auf Papier? <a href="/vorlagen" class="underline">Word-Vorlagen</a> tragen dieselben Felder.
+    </p>
 
-    <div id="fb-msg" class="text-sm mb-4 hidden"></div>
+    {gesperrt && (
+      <div class="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-slate-800">
+        Dieses Material ist bei KT1 in Bearbeitung und lässt sich nicht mehr ändern. Unten kannst du ein neues erfassen.
+      </div>
+    )}
+    <template x-if="rowStatus === 'eingereicht'">
+      <div class="mb-6 rounded-lg border p-4 text-sm text-slate-800" style="border-color: var(--brand); background: var(--brand-tint)">
+        <strong>Bereits geteilt.</strong> Du kannst es ergänzen und Dateien nachreichen, solange KT1 es nicht gesichtet hat.
+      </div>
+    </template>
 
-    <form id="em-form" class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
-      <input type="hidden" name="feedback_art" value="eigenes" />
+    <div class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
 
-      <!-- Titel + Verortung -->
+      <!-- ── Titel + Kontext ─────────────────────────────────────────────── -->
       <section>
         <label class="flex flex-col gap-1 mb-4">
           <span class="field-label">Titel des Materials <span class="text-red-500">*</span></span>
-          <input class="input" name="eigen_titel" placeholder="z.B. Mietvertrag prüfen — Fall Polymechanik" />
+          <input class="input" x-model="f.titel" placeholder="z.B. Mietvertrag prüfen — Fall Polymechanik" />
         </label>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <label class="flex flex-col gap-1">
             <span class="field-label">Klasse</span>
-            <input class="input" name="klasse" placeholder="z.B. Poly24a" />
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Lehrjahr</span>
-            <input class="input" type="number" name="lehrjahr" min="1" max="4" />
+            <input class="input" x-model="f.klasse" placeholder="z.B. Poly24a" />
           </label>
           <label class="flex flex-col gap-1">
             <span class="field-label">Abteilung</span>
-            <input class="input" name="abteilung" value={defaultAbteilung} />
+            <input class="input" x-model="f.abteilung" />
           </label>
           <label class="flex flex-col gap-1">
-            <span class="field-label">Dauer (Lektionen)</span>
-            <input class="input" type="number" name="dauer_lektionen" step="0.5" min="0" />
+            <span class="field-label">Dauer (Lektionen) <span class="font-normal normal-case text-slate-400">— optional</span></span>
+            <input class="input" type="number" step="0.5" min="0" x-model="f.dauer_lektionen" />
           </label>
         </div>
       </section>
 
-      <!-- Handlungssituation + Handlungsprodukt -->
+      <!-- ── Verortung im Lehrplan ────────────────────────────────────────── -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Handlungssituation & Handlungsprodukt</h2>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Verortung im Lehrplan</h2>
+        <div class="space-y-4">
+          <div>
+            <span class="field-label block mb-1">Lehrgang <span class="text-red-500">*</span></span>
+            <div class="radio-group">
+              <template x-for="lg in lehrgaenge" :key="lg.key">
+                <label class="radio-pill" :class="f.lehrgang === lg.key ? 'selected' : ''" @click="setLehrgang(lg.key)">
+                  <span x-text="lg.label"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+          <template x-if="f.lehrgang">
+            <label class="flex flex-col gap-1">
+              <span class="field-label">Thema <span class="text-red-500">*</span></span>
+              <select class="input" x-model.number="f.thema_nr" @change="onThema()">
+                <option value="">— wählen —</option>
+                <template x-for="t in themen" :key="t.nr">
+                  <option :value="t.nr" :selected="t.nr === f.thema_nr" x-text="'T' + t.nr + ' — ' + t.titel"></option>
+                </template>
+              </select>
+              <span class="text-xs text-slate-500" x-show="lehrjahr" x-text="'→ ' + lehrjahr + '. Lehrjahr (vom Thema vorgegeben)'"></span>
+            </label>
+          </template>
+
+          <template x-if="lebensbezuege.length">
+            <label class="flex flex-col gap-1">
+              <span class="field-label">Lebensbezug <span class="text-red-500">*</span></span>
+              <select class="input" x-model="f.lebensbezug_nr" @change="onLebensbezug()">
+                <option value="">— wählen —</option>
+                <template x-for="l in lebensbezuege" :key="l.nr">
+                  <option :value="l.nr" :selected="l.nr === f.lebensbezug_nr" x-text="l.nr + ' — ' + l.text"></option>
+                </template>
+              </select>
+            </label>
+          </template>
+
+          <template x-if="kompetenzen.length">
+            <div>
+              <span class="field-label block mb-1">Kompetenz(en) <span class="text-red-500">*</span> <span class="font-normal normal-case text-slate-400">— mehrere möglich</span></span>
+              <div class="space-y-1.5">
+                <template x-for="k in kompetenzen" :key="k.nr">
+                  <label class="check-item" :class="f.kompetenz_nrs.includes(k.nr) ? 'checked' : ''">
+                    <input type="checkbox" :value="k.nr" :checked="f.kompetenz_nrs.includes(k.nr)" @change="toggleKompetenz(k.nr)" />
+                    <span><strong x-text="k.nr"></strong> — <span x-text="k.text"></span></span>
+                  </label>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <template x-if="f.thema_nr">
+            <label class="flex flex-col gap-1">
+              <span class="field-label">Sprachmodus primär <span class="text-red-500">*</span></span>
+              <select class="input" x-model="f.sprachmodus_primaer">
+                <option value="">— wählen —</option>
+                <template x-for="m in sprachmodusOptionen" :key="m">
+                  <option :value="m" :selected="m === f.sprachmodus_primaer" x-text="m"></option>
+                </template>
+              </select>
+              <span class="text-xs text-slate-500" x-show="vorgabe.sprachmodi.length">Zur Wahl stehen die Sprachmodi, die der Lehrplan für die gewählten Kompetenzen vorgibt.</span>
+            </label>
+          </template>
+        </div>
+      </section>
+
+      <!-- ── Herausforderung + Handlungsprodukt ───────────────────────────── -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Herausforderung &amp; Handlungsprodukt</h2>
         <div class="space-y-3">
           <label class="flex flex-col gap-1">
-            <span class="field-label">Handlungssituation <span class="text-red-500">*</span></span>
-            <textarea class="input" name="eigen_handlungssituation" rows="3" placeholder="Die Ausgangssituation, in der die Lernenden handeln (ICH-Perspektive)."></textarea>
+            <span class="field-label">Herausforderung <span class="text-red-500">*</span></span>
+            <textarea class="input" rows="3" x-model="f.situation" placeholder="Die Situation, in der die Lernenden handeln — aus ihrer ICH-Perspektive."></textarea>
           </label>
           <label class="flex flex-col gap-1">
             <span class="field-label">Handlungsprodukt <span class="text-red-500">*</span></span>
-            <textarea class="input" name="eigen_handlungsprodukt" rows="2" placeholder="Was erstellen die Lernenden konkret?"></textarea>
+            <textarea class="input" rows="2" x-model="f.produkt" placeholder="Was erstellen die Lernenden konkret? (Brief, Plan, Präsentation …)"></textarea>
           </label>
         </div>
       </section>
 
-      <!-- Kompetenznachweis -->
+      <!-- ── Kompetenznachweis ────────────────────────────────────────────── -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Kompetenznachweis</h2>
+        <h2 class="text-base font-semibold text-slate-900 mb-1">Kompetenznachweis</h2>
+        <p class="text-xs text-slate-500 mb-3">
+          <strong>Nicht dasselbe wie das Handlungsprodukt:</strong> Das Handlungsprodukt entsteht beim Lernen an der Herausforderung.
+          Der Kompetenznachweis (KN) ist die Beurteilung, mit der du am Schluss feststellst, ob die Lernenden die Kompetenz beherrschen.
+          <em>Empfehlung:</em> Der KN prüft die Kompetenz in einer neuen Situation (Transfer) — das ist keine Pflicht.
+        </p>
         <div class="space-y-3">
           <label class="flex flex-col gap-1">
             <span class="field-label">KN-Format <span class="text-red-500">*</span></span>
-            <select class="input" name="eigen_kn_format">
+            <select class="input" x-model="f.kn_format">
               <option value="">— wählen —</option>
               <option value="fachgespraech">Fachgespräch</option>
               <option value="mini_case_schriftlich">Mini-Case (schriftlich)</option>
@@ -89,177 +206,397 @@ const selbstcheckItems = [
           </label>
           <label class="flex flex-col gap-1">
             <span class="field-label">KN-Aufgabe <span class="text-red-500">*</span></span>
-            <textarea class="input" name="eigen_kn_aufgabe" rows="3" placeholder="Wie prüfst du die Kompetenz? Idealerweise eine neue Transfer-Situation."></textarea>
+            <textarea class="input" rows="3" x-model="f.kn_aufgabe" placeholder="Wie prüfst du die Kompetenz?"></textarea>
           </label>
         </div>
       </section>
 
-      <!-- Selbstcheck -->
+      <!-- ── Material: Dateien + Links ─────────────────────────────────────── -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-1">Material <span class="text-red-500">*</span></h2>
+        <p class="text-xs text-slate-500 mb-3">Lade Dateien hoch, verlinke dein Material — oder beides. Mindestens eines davon braucht es zum Teilen.</p>
+
+        <span class="field-label block mb-1">Dateien</span>
+        <p class="text-xs text-slate-500 mb-2">PDF, Word, PowerPoint, Excel, Bilder, ZIP — max. 15 MB pro Datei.</p>
+        <div class="space-y-1 mb-2">
+          <template x-for="d in dateien" :key="d.path">
+            <div class="flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5">
+              <a :href="dateiUrl(d)" target="_blank" class="underline text-slate-700 truncate" x-text="d.name"></a>
+              <button type="button" class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0" @click="dateiEntfernen(d)">Entfernen</button>
+            </div>
+          </template>
+        </div>
+        <input type="file" multiple x-ref="files" accept=".pdf,.doc,.docx,.odt,.rtf,.txt,.md,.html,.htm,.ppt,.pptx,.xls,.xlsx,.csv,.png,.jpg,.jpeg,.gif,.webp,.svg,.zip" class="text-sm text-slate-600" @change="dateienGewaehlt = $event.target.files.length" />
+
+        <div class="mt-5">
+          <span class="field-label block mb-1">Links</span>
+          <p class="text-xs text-slate-500 mb-2">
+            OneNote-Seite, Teams-Ordner, SCORM-Paket … <strong>Prüfe die Freigabe:</strong> Kolleg:innen und KT1 müssen den Link öffnen können
+            (z.&nbsp;B. über das Team-OneNote).
+          </p>
+          <div class="space-y-2">
+            <template x-for="(l, i) in f.links" :key="i">
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input class="input flex-1" type="url" x-model="l.url" placeholder="https://…" />
+                <input class="input sm:w-56" x-model="l.titel" placeholder="Bezeichnung (optional)" />
+                <button type="button" class="text-xs text-red-500 hover:text-red-700 sm:self-center" @click="f.links.splice(i, 1)">Entfernen</button>
+              </div>
+            </template>
+          </div>
+          <button type="button" class="mt-2 text-sm underline text-slate-600 hover:text-slate-900" @click="f.links.push({ url: '', titel: '' })">+ Link hinzufügen</button>
+        </div>
+      </section>
+
+      <!-- ── Erweiterte Angaben ───────────────────────────────────────────── -->
+      <details class="rounded-lg border border-slate-200" :open="erweitertOffen">
+        <summary class="cursor-pointer select-none px-4 py-3 text-sm font-semibold text-slate-800">
+          Erweiterte Angaben <span class="font-normal text-slate-500">— optional: Kompetenzversprechen, Taxonomie, Beurteilungskriterien, Lehrmittel</span>
+        </summary>
+        <div class="px-4 pb-4 space-y-5">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Kompetenzversprechen</span>
+            <input class="input" x-model="f.erweitert.kompetenzversprechen" @input="kvManuell = !!f.erweitert.kompetenzversprechen" placeholder="«Ich kann …» — der Massstab des Materials" />
+            <span class="text-xs text-slate-500">Vorbefüllt mit dem Lehrplan-Satz der ersten gewählten Kompetenz.</span>
+          </label>
+
+          <div>
+            <div class="flex items-baseline justify-between gap-2 mb-1">
+              <span class="field-label">Schlüsselkompetenzen</span>
+              <span class="text-xs text-slate-500">Vom Lehrplan vorgegeben sind angekreuzt — du kannst abwählen oder ergänzen.</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              <template x-for="sk in tax.sk" :key="sk">
+                <label class="check-item" :class="f.erweitert.schluesselkompetenzen.includes(sk) ? 'checked' : ''" :title="tax.skFull[sk] || sk">
+                  <input type="checkbox" :checked="f.erweitert.schluesselkompetenzen.includes(sk)" @change="toggle(f.erweitert.schluesselkompetenzen, sk)" />
+                  <span x-text="sk"></span>
+                  <span x-show="vorgabe.sk.includes(sk)" class="ml-auto text-[10px] uppercase tracking-wide text-slate-400">Lehrplan</span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+          <div>
+            <span class="field-label block mb-1">Aspekte (Gesellschaft)</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              <template x-for="a in tax.aspekte" :key="a">
+                <label class="check-item" :class="f.erweitert.aspekte.includes(a) ? 'checked' : ''">
+                  <input type="checkbox" :checked="f.erweitert.aspekte.includes(a)" @change="toggle(f.erweitert.aspekte, a)" />
+                  <span x-text="a"></span>
+                  <span x-show="vorgabe.aspekte.includes(a)" class="ml-auto text-[10px] uppercase tracking-wide text-slate-400">Lehrplan</span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+          <div>
+            <span class="field-label block mb-1">Weitere Sprachmodi</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              <template x-for="m in tax.sprachmodi.filter((x) => x !== f.sprachmodus_primaer)" :key="m">
+                <label class="check-item" :class="f.erweitert.sprachmodi_sekundaer.includes(m) ? 'checked' : ''">
+                  <input type="checkbox" :checked="f.erweitert.sprachmodi_sekundaer.includes(m)" @change="toggle(f.erweitert.sprachmodi_sekundaer, m)" />
+                  <span x-text="m"></span>
+                  <span x-show="vorgabe.sprachmodi.includes(m)" class="ml-auto text-[10px] uppercase tracking-wide text-slate-400">Lehrplan</span>
+                </label>
+              </template>
+            </div>
+          </div>
+
+          <div>
+            <span class="field-label block mb-1">Beurteilungskriterien</span>
+            <p class="text-xs text-slate-500 mb-2">Empfohlen: 3–5 Kriterien, je Sprache &amp; Kommunikation (SuK) oder Gesellschaft (Ges).</p>
+            <div class="space-y-2">
+              <template x-for="(k, i) in f.erweitert.bewertungskriterien" :key="i">
+                <div class="flex gap-2">
+                  <input class="input flex-1" x-model="k.name" placeholder="z.B. Argumente sind begründet" />
+                  <select class="input w-24" x-model="k.dimension">
+                    <option value="SuK">SuK</option>
+                    <option value="Ges">Ges</option>
+                  </select>
+                  <button type="button" class="text-xs text-red-500 hover:text-red-700" @click="f.erweitert.bewertungskriterien.splice(i, 1)">✕</button>
+                </div>
+              </template>
+            </div>
+            <button type="button" class="mt-2 text-sm underline text-slate-600 hover:text-slate-900" @click="f.erweitert.bewertungskriterien.push({ name: '', dimension: 'Ges' })">+ Kriterium</button>
+          </div>
+
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Lehrmittel-Bezug</span>
+            <input class="input" x-model="f.erweitert.lehrmittel_anker" placeholder="z.B. Kapitel 3.2, S. 45–48" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Didaktischer Kniff</span>
+            <textarea class="input" rows="2" x-model="f.erweitert.didaktischer_kniff" placeholder="Was macht dieses Material besonders gut?"></textarea>
+          </label>
+        </div>
+      </details>
+
+      <!-- ── Selbstcheck ──────────────────────────────────────────────────── -->
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-2">Kurzer Selbstcheck</h2>
         <p class="text-xs text-slate-500 mb-3">Hake ab, was zutrifft — als schnelle Qualitätskontrolle.</p>
         <div class="space-y-2">
-          {selbstcheckItems.map(([key, label]) => (
-            <label class="check-item">
-              <input type="checkbox" data-selbstcheck={key} /> {label}
-            </label>
-          ))}
+          <label class="check-item" :class="f.selbstcheck.situation_ich ? 'checked' : ''">
+            <input type="checkbox" x-model="f.selbstcheck.situation_ich" /> Die Herausforderung ist aus der ICH-Perspektive der Lernenden formuliert.
+          </label>
+          <label class="check-item" :class="f.selbstcheck.handlungsprodukt ? 'checked' : ''">
+            <input type="checkbox" x-model="f.selbstcheck.handlungsprodukt" /> Es gibt ein konkretes Handlungsprodukt, das die Lernenden erstellen.
+          </label>
+          <label class="check-item" :class="f.selbstcheck.kn_transfer ? 'checked' : ''">
+            <input type="checkbox" x-model="f.selbstcheck.kn_transfer" /> Der Kompetenznachweis prüft die Kompetenz in einer neuen Situation (Transfer — empfohlen).
+          </label>
+          <div class="check-item" :class="hatKriterien ? 'checked' : ''" style="cursor: default">
+            <input type="checkbox" :checked="hatKriterien" disabled />
+            <span>
+              Beurteilungskriterien sind vorhanden.
+              <span class="block text-xs text-slate-500" x-show="!hatKriterien">Wird automatisch abgehakt, sobald du unter «Erweiterte Angaben» Kriterien erfasst.</span>
+            </span>
+          </div>
         </div>
       </section>
 
-      <!-- PDF-Upload -->
-      <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-2">Material hochladen (PDF) <span class="text-red-500">*</span></h2>
-        <p class="text-xs text-slate-500 mb-2">Nur PDF, max. 15 MB. Papier-Materialien bitte vorher einscannen.</p>
-        <div id="em-file-list" class="space-y-1 mb-2"></div>
-        <input type="file" id="em-files" accept="application/pdf,.pdf" class="text-sm text-slate-600" />
-      </section>
+      <div x-show="msg" class="text-sm" :class="msgClass" x-text="msg"></div>
 
       <div class="flex items-center justify-end gap-3">
-        <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
-        <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">Material teilen</button>
+        <button type="button" x-show="rowStatus !== 'eingereicht'" :disabled="busy" @click="send('entwurf')" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-50">Als Entwurf speichern</button>
+        <button type="button" :disabled="busy" @click="send('eingereicht')" class="px-4 py-2 rounded-md text-sm font-medium text-white disabled:opacity-50" style="background: var(--brand)" x-text="rowStatus === 'eingereicht' ? 'Änderungen speichern' : 'Material teilen'"></button>
       </div>
-    </form>
+    </div>
   </div>
 
   <script is:inline>
-    document.querySelectorAll('.check-item input[type=checkbox]').forEach((cb) => {
-      const apply = () => cb.closest('.check-item').classList.toggle('checked', cb.checked)
-      apply(); cb.addEventListener('change', apply)
-    })
+    function eigenesMaterial() {
+      const read = (id) => { try { return JSON.parse(document.getElementById(id).textContent || 'null') } catch { return null } }
+      const baum = read('em-baum') || {}
+      const tax = read('em-taxonomie') || { sk: [], aspekte: [], sprachmodi: [], skFull: {} }
+      const start = read('em-start') || {}
+      const row = start.row
+      const e = (row && row.eigen_erweitert) || {}
+      const sc = (row && row.eigen_selbstcheck) || {}
 
-    const form = document.getElementById('em-form')
-    let savedId = null
+      return {
+        tax,
+        lehrgaenge: [
+          { key: 'EBA', label: 'EBA 2-jährig' },
+          { key: 'EFZ-3J', label: 'EFZ 3-jährig' },
+          { key: 'EFZ-4J', label: 'EFZ 4-jährig' },
+        ],
+        savedId: row ? row.id : null,
+        rowStatus: row ? row.status : null,
+        dateien: row && Array.isArray(row.idee_dateien) ? row.idee_dateien : [],
+        dateienGewaehlt: 0,
+        erweitertOffen: !!(e.kompetenzversprechen || (e.bewertungskriterien || []).length || e.lehrmittel_anker || e.didaktischer_kniff),
+        kvManuell: !!e.kompetenzversprechen,
+        busy: false,
+        msg: '',
+        msgClass: '',
+        f: {
+          titel: row?.eigen_titel || '',
+          klasse: row?.klasse || '',
+          abteilung: row ? (row.abteilung || '') : (start.abteilung || ''),
+          dauer_lektionen: row?.dauer_lektionen ?? '',
+          lehrgang: row?.eigen_lehrgang || '',
+          thema_nr: row?.eigen_thema_nr || '',
+          lebensbezug_nr: row?.eigen_lebensbezug_nr || '',
+          kompetenz_nrs: Array.isArray(row?.eigen_kompetenz_nrs) ? [...row.eigen_kompetenz_nrs] : [],
+          sprachmodus_primaer: row?.eigen_sprachmodus_primaer || '',
+          situation: row?.eigen_handlungssituation || '',
+          produkt: row?.eigen_handlungsprodukt || '',
+          kn_format: row?.eigen_kn_format || '',
+          kn_aufgabe: row?.eigen_kn_aufgabe || '',
+          links: Array.isArray(row?.eigen_links) ? row.eigen_links.map((l) => ({ url: l.url, titel: l.titel || '' })) : [],
+          selbstcheck: { situation_ich: !!sc.situation_ich, handlungsprodukt: !!sc.handlungsprodukt, kn_transfer: !!sc.kn_transfer },
+          erweitert: {
+            kompetenzversprechen: e.kompetenzversprechen || '',
+            schluesselkompetenzen: Array.isArray(e.schluesselkompetenzen) ? [...e.schluesselkompetenzen] : [],
+            aspekte: Array.isArray(e.aspekte) ? [...e.aspekte] : [],
+            sprachmodi_sekundaer: Array.isArray(e.sprachmodi_sekundaer) ? [...e.sprachmodi_sekundaer] : [],
+            bewertungskriterien: Array.isArray(e.bewertungskriterien) ? e.bewertungskriterien.map((k) => ({ ...k })) : [],
+            lehrmittel_anker: e.lehrmittel_anker || '',
+            didaktischer_kniff: e.didaktischer_kniff || '',
+          },
+        },
 
-    function gather(status) {
-      const fd = new FormData(form)
-      const obj = { status, feedback_art: 'eigenes' }
-      for (const [k, v] of fd.entries()) {
-        if (v === '' || v == null) continue
-        if (k === 'lehrjahr') obj[k] = parseInt(v, 10)
-        else if (k === 'dauer_lektionen') obj[k] = parseFloat(v)
-        else obj[k] = v
-      }
-      const selbstcheck = {}
-      form.querySelectorAll('[data-selbstcheck]').forEach((cb) => {
-        selbstcheck[cb.dataset.selbstcheck] = cb.checked
-      })
-      obj.eigen_selbstcheck = selbstcheck
-      return obj
-    }
+        // ── Lehrplan-Kaskade ────────────────────────────────────────────
+        get themen() { return (baum[this.f.lehrgang] || {}).themen || [] },
+        get thema() { return this.themen.find((t) => t.nr === this.f.thema_nr) || null },
+        get lehrjahr() { return this.thema ? this.thema.lehrjahr : null },
+        get lebensbezuege() { return (this.thema && this.thema.lebensbezuege) || [] },
+        get lebensbezug() { return this.lebensbezuege.find((l) => l.nr === this.f.lebensbezug_nr) || null },
+        get kompetenzen() { return (this.lebensbezug && this.lebensbezug.kompetenzen) || [] },
+        get gewaehlteKompetenzen() { return this.kompetenzen.filter((k) => this.f.kompetenz_nrs.includes(k.nr)) },
 
-    function pdfQueued() {
-      const input = document.getElementById('em-files')
-      return !!(input && input.files && input.files.length > 0)
-    }
+        // Was der Lehrplan an dieser Stelle vorgibt. SK stehen im nRLP als volle
+        // Sätze auf Thema-Ebene; die Checkboxen tragen die Kurznamen.
+        get vorgabe() {
+          const full2short = {}
+          for (const [s, full] of Object.entries(tax.skFull || {})) full2short[full] = s
+          const sk = ((this.thema && this.thema.schluesselkompetenzen) || []).map((x) => full2short[x] || x)
+          const aspekte = [], sprachmodi = []
+          this.gewaehlteKompetenzen.forEach((k) => {
+            ;(k.gesellschaftliche_inhalte || []).forEach((g) => { if (g.aspekt && !aspekte.includes(g.aspekt)) aspekte.push(g.aspekt) })
+            ;(k.sprachmodi || []).forEach((s) => { if (s.modus && !sprachmodi.includes(s.modus)) sprachmodi.push(s.modus) })
+          })
+          return { sk, aspekte, sprachmodi }
+        },
+        get sprachmodusOptionen() {
+          const v = this.vorgabe.sprachmodi
+          const list = v.length ? [...v] : [...tax.sprachmodi]
+          if (this.f.sprachmodus_primaer && !list.includes(this.f.sprachmodus_primaer)) list.push(this.f.sprachmodus_primaer)
+          return list
+        },
+        get hatKriterien() { return this.f.erweitert.bewertungskriterien.some((k) => k.name && k.name.trim()) },
 
-    async function uploadPdf() {
-      const input = document.getElementById('em-files')
-      if (!input || !input.files || input.files.length === 0 || !savedId) return
-      const file = input.files[0]
-      if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
-        throw new Error('Nur PDF-Dateien sind erlaubt.')
-      }
-      const fd = new FormData()
-      fd.append('files', file)
-      const res = await fetch(`/api/einheit-feedbacks/${savedId}/files`, { method: 'POST', body: fd })
-      const body = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(body.error || 'Upload fehlgeschlagen.')
-      input.value = ''
-      renderFileList(body.data ?? [])
-    }
+        // Die Vorgabe wird bei jeder Änderung der Auswahl neu gesetzt: angekreuzt ist,
+        // was der Lehrplan verlangt; die Lehrperson kann danach abwählen/ergänzen.
+        applyVorgabe() {
+          const v = this.vorgabe
+          this.f.erweitert.schluesselkompetenzen = [...v.sk]
+          this.f.erweitert.aspekte = [...v.aspekte]
+          if (!v.sprachmodi.includes(this.f.sprachmodus_primaer)) this.f.sprachmodus_primaer = v.sprachmodi[0] || ''
+          this.f.erweitert.sprachmodi_sekundaer = v.sprachmodi.filter((m) => m !== this.f.sprachmodus_primaer)
+          // Das Versprechen folgt der ersten Kompetenz, bis die Lehrperson es
+          // selbst bearbeitet; danach bleibt ihr Satz stehen.
+          if (!this.kvManuell) this.f.erweitert.kompetenzversprechen = this.gewaehlteKompetenzen[0]?.text || ''
+        },
+        setLehrgang(key) {
+          if (this.f.lehrgang === key) return
+          this.f.lehrgang = key
+          this.f.thema_nr = ''
+          this.onThema()
+        },
+        onThema() {
+          this.f.lebensbezug_nr = ''
+          this.onLebensbezug()
+        },
+        onLebensbezug() {
+          this.f.kompetenz_nrs = []
+          this.applyVorgabe()
+        },
+        toggleKompetenz(nr) {
+          // Reihenfolge wie im Lehrplan, damit «erste Kompetenz» eindeutig ist.
+          // Neue Liste zuweisen statt .sort() an Ort: das Sortieren eines reaktiven
+          // Alpine-Arrays löst eine Effekt-Schleife aus und friert die Seite ein.
+          const order = this.kompetenzen.map((k) => k.nr)
+          const next = this.f.kompetenz_nrs.includes(nr)
+            ? this.f.kompetenz_nrs.filter((x) => x !== nr)
+            : [...this.f.kompetenz_nrs, nr]
+          this.f.kompetenz_nrs = next.sort((a, b) => order.indexOf(a) - order.indexOf(b))
+          this.applyVorgabe()
+        },
+        toggle(list, v) {
+          const i = list.indexOf(v)
+          if (i === -1) list.push(v); else list.splice(i, 1)
+        },
 
-    function renderFileList(files) {
-      const list = document.getElementById('em-file-list')
-      list.innerHTML = ''
-      files.forEach((f) => {
-        const li = document.createElement('div')
-        li.className = 'flex items-center justify-between text-sm bg-slate-50 border border-slate-200 rounded px-3 py-1.5'
-        li.innerHTML = `<a href="/api/einheit-feedbacks/${savedId}/files?path=${encodeURIComponent(f.path)}" target="_blank" class="underline text-slate-700 truncate">${f.name}</a>
-          <button class="ml-3 text-red-500 hover:text-red-700 text-xs shrink-0">Entfernen</button>`
-        li.querySelector('button').addEventListener('click', async () => {
-          const res = await fetch(`/api/einheit-feedbacks/${savedId}/files?path=${encodeURIComponent(f.path)}`, { method: 'DELETE' })
+        // ── Dateien ─────────────────────────────────────────────────────
+        dateiUrl(d) { return `/api/einheit-feedbacks/${this.savedId}/files?path=${encodeURIComponent(d.path)}` },
+        async dateiEntfernen(d) {
+          const res = await fetch(this.dateiUrl(d), { method: 'DELETE' })
           const body = await res.json().catch(() => ({}))
-          if (res.ok) renderFileList(body.data ?? [])
+          if (res.ok) this.dateien = body.data ?? []
           else alert('Fehler: ' + (body.error || res.statusText))
-        })
-        list.appendChild(li)
-      })
-    }
+        },
+        async hochladen() {
+          const input = this.$refs.files
+          if (!input || !input.files || input.files.length === 0 || !this.savedId) return
+          const fd = new FormData()
+          for (const file of input.files) fd.append('files', file)
+          const res = await fetch(`/api/einheit-feedbacks/${this.savedId}/files`, { method: 'POST', body: fd })
+          const body = await res.json().catch(() => ({}))
+          if (!res.ok) throw new Error(body.error || 'Upload fehlgeschlagen.')
+          input.value = ''
+          this.dateienGewaehlt = 0
+          this.dateien = body.data ?? []
+        },
 
-    function validate(payload, status) {
-      const req = [
-        ['eigen_titel', 'Titel'],
-        ['eigen_handlungssituation', 'Handlungssituation'],
-        ['eigen_handlungsprodukt', 'Handlungsprodukt'],
-        ['eigen_kn_format', 'KN-Format'],
-        ['eigen_kn_aufgabe', 'KN-Aufgabe'],
-      ]
-      if (status === 'eingereicht') {
-        for (const [k, label] of req) {
-          if (!payload[k] || !String(payload[k]).trim()) return `Bitte ${label} ausfüllen.`
-        }
-        if (!pdfQueued() && !savedId) return 'Bitte das Material als PDF hochladen.'
-      } else {
-        if (!payload.eigen_titel?.trim()) return 'Bitte mindestens einen Titel angeben, um zu speichern.'
-      }
-      return null
-    }
-
-    async function send(status) {
-      const msg = document.getElementById('fb-msg')
-      const payload = gather(status)
-      const err = validate(payload, status)
-      if (err) {
-        msg.textContent = err
-        msg.className = 'text-sm text-red-600'
-        msg.classList.remove('hidden')
-        return
-      }
-      msg.textContent = 'Speichere…'
-      msg.className = 'text-sm text-slate-500'
-      msg.classList.remove('hidden')
-
-      try {
-        let res
-        if (savedId) {
-          res = await fetch(`/api/einheit-feedbacks/${savedId}`, {
-            method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
-          })
-        } else {
-          res = await fetch('/api/einheit-feedbacks', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
-          })
-        }
-        const body = await res.json().catch(() => ({}))
-        if (!res.ok) throw new Error(body.error || res.statusText)
-        if (body.data?.id) savedId = body.data.id
-
-        let uploadError = null
-        if (savedId && pdfQueued()) {
-          try { await uploadPdf() } catch (e) { uploadError = e }
-        }
-
-        if (status === 'eingereicht') {
-          if (uploadError) {
-            msg.textContent = 'Material gespeichert, aber der PDF-Upload ist fehlgeschlagen: ' + uploadError.message + ' Bitte lade die PDF erneut hoch.'
-            msg.className = 'text-sm text-amber-600'
-          } else {
-            window.location.href = '/?success=Material+geteilt.+Danke!'
+        // ── Speichern ───────────────────────────────────────────────────
+        gueltigeLinks() {
+          return this.f.links.map((l) => ({ url: (l.url || '').trim(), titel: (l.titel || '').trim() })).filter((l) => l.url)
+        },
+        pruefen(status) {
+          const f = this.f
+          if (!f.titel.trim()) return 'Bitte mindestens einen Titel angeben.'
+          const falsch = this.gueltigeLinks().find((l) => !/^https?:\/\/\S+$/i.test(l.url))
+          if (falsch) return `Der Link «${falsch.url}» ist ungültig — er muss mit https:// beginnen.`
+          if (status === 'entwurf') return null
+          if (!f.lehrgang) return 'Bitte den Lehrgang wählen.'
+          if (!f.thema_nr) return 'Bitte das Thema wählen.'
+          if (this.lebensbezuege.length && !f.lebensbezug_nr) return 'Bitte den Lebensbezug wählen.'
+          if (this.kompetenzen.length && f.kompetenz_nrs.length === 0) return 'Bitte mindestens eine Kompetenz wählen.'
+          if (!f.sprachmodus_primaer) return 'Bitte den primären Sprachmodus wählen.'
+          if (!f.situation.trim()) return 'Bitte die Herausforderung beschreiben.'
+          if (!f.produkt.trim()) return 'Bitte das Handlungsprodukt beschreiben.'
+          if (!f.kn_format) return 'Bitte das KN-Format wählen.'
+          if (!f.kn_aufgabe.trim()) return 'Bitte die KN-Aufgabe beschreiben.'
+          if (this.dateien.length === 0 && this.dateienGewaehlt === 0 && this.gueltigeLinks().length === 0)
+            return 'Bitte lade eine Datei hoch oder füge einen Link hinzu.'
+          return null
+        },
+        payload(status) {
+          const f = this.f
+          const num = (v) => (v === '' || v == null ? '' : Number(v))
+          return {
+            feedback_art: 'eigenes',
+            status,
+            eigen_titel: f.titel.trim(),
+            klasse: f.klasse,
+            abteilung: f.abteilung,
+            dauer_lektionen: num(f.dauer_lektionen),
+            lehrjahr: this.lehrjahr ?? '',
+            eigen_lehrgang: f.lehrgang,
+            eigen_thema_nr: num(f.thema_nr),
+            eigen_lebensbezug_nr: f.lebensbezug_nr,
+            eigen_kompetenz_nrs: f.kompetenz_nrs,
+            eigen_sprachmodus_primaer: f.sprachmodus_primaer,
+            eigen_handlungssituation: f.situation,
+            eigen_handlungsprodukt: f.produkt,
+            eigen_kn_format: f.kn_format,
+            eigen_kn_aufgabe: f.kn_aufgabe,
+            eigen_selbstcheck: { ...f.selbstcheck, kriterien: this.hatKriterien },
+            eigen_links: this.gueltigeLinks(),
+            eigen_erweitert: f.erweitert,
           }
-        } else {
-          msg.textContent = uploadError
-            ? 'Entwurf gespeichert, aber der PDF-Upload ist fehlgeschlagen: ' + uploadError.message
-            : 'Entwurf gespeichert. Du kannst die PDF jetzt hochladen.'
-          msg.className = uploadError ? 'text-sm text-amber-600' : 'text-sm text-emerald-600'
-        }
-      } catch (err) {
-        msg.textContent = 'Fehler beim Speichern: ' + err.message
-        msg.className = 'text-sm text-red-600'
+        },
+        async send(status) {
+          const err = this.pruefen(status)
+          if (err) { this.msg = err; this.msgClass = 'text-red-600'; return }
+          this.busy = true
+          this.msg = 'Speichere…'; this.msgClass = 'text-slate-500'
+          try {
+            const res = this.savedId
+              ? await fetch(`/api/einheit-feedbacks/${this.savedId}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(this.payload(status)) })
+              : await fetch('/api/einheit-feedbacks', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(this.payload(status)) })
+            const body = await res.json().catch(() => ({}))
+            if (!res.ok) throw new Error(body.error || res.statusText)
+            if (body.data?.id && !this.savedId) {
+              this.savedId = body.data.id
+              // Neu laden = derselbe Entwurf, nicht ein leerer Bogen.
+              history.replaceState(null, '', `/eigenes-material?id=${this.savedId}`)
+            }
+            this.rowStatus = status
+
+            let uploadError = null
+            try { await this.hochladen() } catch (e) { uploadError = e }
+
+            if (status === 'eingereicht' && !uploadError) {
+              window.location.href = '/meine-materialien?success=' + encodeURIComponent('Material geteilt. Danke!')
+              return
+            }
+            if (uploadError) {
+              this.msg = 'Gespeichert, aber der Datei-Upload ist fehlgeschlagen: ' + uploadError.message + ' Bitte die Datei erneut wählen.'
+              this.msgClass = 'text-amber-600'
+            } else {
+              this.msg = 'Entwurf gespeichert. Du findest ihn unter «Meine Materialien».'
+              this.msgClass = 'text-emerald-600'
+            }
+          } catch (e) {
+            this.msg = 'Fehler beim Speichern: ' + e.message
+            this.msgClass = 'text-red-600'
+          } finally {
+            this.busy = false
+          }
+        },
       }
     }
-
-    document.getElementById('save-draft').addEventListener('click', () => send('entwurf'))
-    document.getElementById('submit-final').addEventListener('click', () => send('eingereicht'))
   </script>
 </LP>

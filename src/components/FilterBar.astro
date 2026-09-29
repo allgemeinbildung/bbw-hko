@@ -7,6 +7,8 @@ interface Props {
   filters: Record<string, string>
 }
 const { nrlp, filters } = Astro.props
+// Anzeige-Labels (Werte bleiben die Codes); Reihenfolge EBA → EFZ 3J → EFZ 4J.
+const LEHRDAUER_LABEL: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
 ---
 <div class="bg-white border border-slate-200 rounded-lg p-4 mb-5">
   <form method="GET" class="space-y-3">
@@ -24,7 +26,7 @@ const { nrlp, filters } = Astro.props
         <select name="lehrdauer" class="input mt-1">
           <option value="" selected={!filters.lehrdauer}>Alle</option>
           {['EBA', 'EFZ-3J', 'EFZ-4J'].map(v => (
-            <option value={v} selected={filters.lehrdauer === v}>{v}</option>
+            <option value={v} selected={filters.lehrdauer === v}>{LEHRDAUER_LABEL[v]}</option>
           ))}
         </select>
       </div>

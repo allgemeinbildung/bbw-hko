@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro'
+import { sanitizeEigenesPayload } from '../../../lib/eigenes-material'
 
 const LP_FIELDS = [
   'feedback_art',
@@ -8,6 +9,13 @@ const LP_FIELDS = [
   'eigen_kn_format',
   'eigen_kn_aufgabe',
   'eigen_selbstcheck',
+  'eigen_lehrgang',
+  'eigen_thema_nr',
+  'eigen_lebensbezug_nr',
+  'eigen_kompetenz_nrs',
+  'eigen_sprachmodus_primaer',
+  'eigen_links',
+  'eigen_erweitert',
   'klasse',
   'lehrjahr',
   'abteilung',
@@ -19,6 +27,7 @@ const LP_FIELDS = [
   'genutzt_sit_c',
   'genutzt_kn',
   'kn_typ_verwendet',
+  'kn_typ_anders',
   'tauglichkeit',
   'qualitaet_situation',
   'qualitaet_handlungsprodukt',
@@ -74,6 +83,7 @@ export const PATCH: APIRoute = async ({ locals, params, request }) => {
   const isKt1 = profile?.role === 'kt1'
 
   const update = isKt1 ? pick(body, KT1_FIELDS) : pick(body, LP_FIELDS)
+  sanitizeEigenesPayload(update)
   if (Object.keys(update).length === 0) {
     return new Response(JSON.stringify({ error: 'Keine änderbaren Felder.' }), { status: 400 })
   }

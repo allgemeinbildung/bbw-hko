@@ -226,7 +226,7 @@ function TitelSeite({ kopf, einleitung }: { kopf?: DossierKopf; einleitung?: Dos
           {kopf.thema_nr && <div><span>Thema</span>{kopf.thema_nr}{kopf.thema_titel ? ` · ${kopf.thema_titel}` : ''}</div>}
           {kopf.lebensbezug_nr && <div><span>Lebensbezug</span>{kopf.lebensbezug_nr}{kopf.lebensbezug_text ? ` · ${kopf.lebensbezug_text}` : ''}</div>}
           {kopf.kompetenz_nr && <div><span>Kompetenz</span>{kopf.kompetenz_nr}</div>}
-          <div><span>Lehrgang</span>EBA (2 Jahre) · Niveau {niveau}</div>
+          <div><span>Lehrgang</span>EBA 2-jährig · Niveau {niveau}</div>
         </div>
       )}
       {einleitung && (einleitung.was_ist_das || (einleitung.so_benutzt_du_es?.length || 0) > 0) && (

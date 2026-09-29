@@ -4,14 +4,14 @@ const SPOTLIGHT_PADDING = 7;
 
 const TOUR_STEPS = [
   {
-    title: 'Willkommen im NRLP-Netzwerk',
-    body: 'Hier siehst du Zusammenhaenge zwischen Themen, Kompetenzen und Bezuegen. In 60 Sekunden kennst du die wichtigsten Bedienelemente.',
+    title: 'Willkommen im nRLP-Netzwerk',
+    body: 'Hier siehst du Zusammenhänge zwischen Themen, Kompetenzen und Bezügen. In 60 Sekunden kennst du die wichtigsten Bedienelemente.',
     selector: '#header',
     placement: 'bottom'
   },
   {
-    title: 'Ansicht: Netzwerk vs. Zirkularitaet',
-    body: 'Netzwerk zeigt direkte Beziehungen. Zirkularitaet zeigt Wiederholungen und Progression ueber die Themen und Lehrjahre.',
+    title: 'Ansicht: Netzwerk vs. Zirkularität',
+    body: 'Netzwerk zeigt direkte Beziehungen. Zirkularität zeigt Wiederholungen und Progression über die Themen und Lehrjahre.',
     selector: '[data-tour="view-toggle"]',
     placement: 'bottom'
   },
@@ -23,19 +23,19 @@ const TOUR_STEPS = [
   },
   {
     title: 'Kategorien ein- und ausblenden',
-    body: 'Ueber die Kategorie-Chips blendest du Knotentypen direkt ein oder aus und reduzierst visuelle Komplexitaet.',
+    body: 'Über die Kategorie-Chips blendest du Knotentypen direkt ein oder aus und reduzierst visuelle Komplexität.',
     selector: '[data-tour="category-group"]',
     placement: 'bottom'
   },
   {
-    title: 'Zirkularitaet-Ansicht',
-    body: 'Hier siehst du die spiralförmige Progression der Konzepte ueber Themen und Lehrjahre. Wechsle die Ansicht oben zwischen Netzwerk und Zirkularitaet.',
+    title: 'Zirkularität-Ansicht',
+    body: 'Hier siehst du die spiralförmige Progression der Konzepte über Themen und Lehrjahre. Wechsle die Ansicht oben zwischen Netzwerk und Zirkularität.',
     selector: '#zirk-panel',
     placement: 'top',
     ensureView: 'zirkularitaet'
   },
   {
-    title: 'Zirkularitaet-Filter',
+    title: 'Zirkularität-Filter',
     body: 'Mit Lehrjahr und Min R filterst du die Daten. Heatmap, Swimlane und Karten zeigen dieselben Inhalte in drei unterschiedlichen Perspektiven.',
     selector: '.zirk-toolbar',
     placement: 'bottom',
@@ -43,14 +43,14 @@ const TOUR_STEPS = [
   },
   {
     title: 'Im Graph interagieren',
-    body: 'Klick auf einen Knoten fokussiert und zeigt Details. Klick auf Hintergrund oder Esc setzt zurueck. Rechtsklick blendet den Knoten aus.',
+    body: 'Klick auf einen Knoten fokussiert und zeigt Details. Klick auf Hintergrund oder Esc setzt zurück. Rechtsklick blendet den Knoten aus.',
     selector: '[data-tour="graph-area"]',
     placement: 'top',
     ensureView: 'graph'
   },
   {
-    title: 'Hilfe jederzeit oeffnen',
-    body: 'Die Tour ist immer ueber dieses ? erreichbar. Nutze sie jederzeit als schnelle Orientierung.',
+    title: 'Hilfe jederzeit öffnen',
+    body: 'Die Tour ist immer über dieses ? erreichbar. Nutze sie jederzeit als schnelle Orientierung.',
     selector: '[data-tour="help-button"]',
     placement: 'left'
   }

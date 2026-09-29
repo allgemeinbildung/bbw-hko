@@ -110,23 +110,32 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
             </span>
             <span class="text-xs text-slate-400">Offizielle Beispiele aus dem Schullehrplan — durchsuchbar oder als PDF</span>
           </a>
-          <a href="/jahresplanung/uebersicht" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
-            Jahresplanung — alle Lehrjahre
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-              <path d="M5 10h10M11 5l5 5-5 5" />
-            </svg>
+          <a href="/jahresplanung/uebersicht" class="flex flex-col gap-0.5 group">
+            <span class="inline-flex items-center gap-2 text-base text-slate-600 group-hover:text-[var(--brand)] transition-colors">
+              Jahresplanung — alle Lehrjahre
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                <path d="M5 10h10M11 5l5 5-5 5" />
+              </svg>
+            </span>
+            <span class="text-xs text-slate-400">Welche Themen wann dran sind, mit den passenden Einheiten pro Woche</span>
           </a>
-          <a href="/nrlp" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
-            nRLP-Netzwerk — Inhalte vernetzt erkunden
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-              <path d="M5 10h10M11 5l5 5-5 5" />
-            </svg>
+          <a href="/nrlp" class="flex flex-col gap-0.5 group">
+            <span class="inline-flex items-center gap-2 text-base text-slate-600 group-hover:text-[var(--brand)] transition-colors">
+              nRLP-Netzwerk — Inhalte vernetzt erkunden
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                <path d="M5 10h10M11 5l5 5-5 5" />
+              </svg>
+            </span>
+            <span class="text-xs text-slate-400">Wie Themen, Kompetenzen und Schlüsselkompetenzen im Lehrplan zusammenhängen</span>
           </a>
-          <a href="/prompt-builder" class="inline-flex items-center gap-2 text-base text-slate-600 hover:text-[var(--brand)] transition-colors">
-            Prompt-Builder — LLM-Prompts aus dem Lehrplan
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-              <path d="M5 10h10M11 5l5 5-5 5" />
-            </svg>
+          <a href="/prompt-builder" class="flex flex-col gap-0.5 group">
+            <span class="inline-flex items-center gap-2 text-base text-slate-600 group-hover:text-[var(--brand)] transition-colors">
+              Prompt-Builder — LLM-Prompts aus dem Lehrplan
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                <path d="M5 10h10M11 5l5 5-5 5" />
+              </svg>
+            </span>
+            <span class="text-xs text-slate-400">Für alle Lehrpersonen: Kompetenz wählen, fertigen Prompt kopieren und in einem KI-Tool (z. B. Copilot) eigenes Material entwerfen lassen</span>
           </a>
           {!isGuest && (
             <a href="/vorschau" class="flex flex-col gap-0.5 group">

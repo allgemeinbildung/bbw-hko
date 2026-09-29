@@ -32,7 +32,8 @@ const filters = {
 const sichtbar = visibleEinheiten(einheitenIndex, role)
 const filtered = applyEinheitenFilters(sichtbar, filters)
 
-// Aufteilung nach Grundbildungstyp: EFZ (3-/4-jährig) oben, EBA (2-jährig) unten.
+// Aufteilung nach Grundbildungstyp: EBA (2-jährig) oben, EFZ (3-/4-jährig) darunter
+// (Reihenfolge EBA → EFZ 3J → EFZ 4J, Entscheid Kernteam 29.09.2026).
 // Geprüft wird die ganze Gültigkeitsliste, nicht nur der kanonische Lehrgang.
 const efzEinheiten = filtered.filter((e) => lehrgaengeOf(e).some((l) => !isEbaLehrgang(l)))
 const ebaEinheiten = filtered.filter((e) => lehrgaengeOf(e).some((l) => isEbaLehrgang(l)))
@@ -118,26 +119,6 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
   </form>
   )}
 
-  {/* ── EFZ – Berufliche Grundbildung (3-/4-jährig) ───────────────────── */}
-  <section class="mb-10">
-    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
-      <h2 class="text-lg font-semibold text-slate-900">EFZ – Berufliche Grundbildung</h2>
-      <span class="text-xs text-slate-500">3-/4-jährig · {efzEinheiten.length} {efzEinheiten.length === 1 ? 'Einheit' : 'Einheiten'}</span>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {efzEinheiten.map((e) => (
-        <EinheitCard einheit={e} role={role} varianten={efzVarianten(e)} />
-      ))}
-    </div>
-
-    {efzEinheiten.length === 0 && (
-      <div class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500 text-sm">
-        Keine EFZ-Einheiten gefunden.
-      </div>
-    )}
-  </section>
-
   {/* ── EBA – Zweijährige Grundbildung ────────────────────────────────── */}
   <section class="mb-10">
     <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
@@ -159,7 +140,7 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
   </section>
 
   {ebaEinheiten.length === 0 && (
-    <div class="rounded-lg px-4 py-3 flex items-start gap-3 border" style="border-color: var(--brand); background: var(--brand-tint)">
+    <div class="mb-10 -mt-6 rounded-lg px-4 py-3 flex items-start gap-3 border" style="border-color: var(--brand); background: var(--brand-tint)">
       <span class="text-lg leading-none" style="color: var(--brand-dark)" aria-hidden="true">◷</span>
       <p class="text-sm text-slate-700 m-0">
         <strong style="color: var(--brand-dark)">EBA – in Vorbereitung.</strong>
@@ -167,6 +148,26 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
       </p>
     </div>
   )}
+
+  {/* ── EFZ – Berufliche Grundbildung (3-/4-jährig) ───────────────────── */}
+  <section class="mb-10">
+    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
+      <h2 class="text-lg font-semibold text-slate-900">EFZ – Berufliche Grundbildung</h2>
+      <span class="text-xs text-slate-500">3-/4-jährig · {efzEinheiten.length} {efzEinheiten.length === 1 ? 'Einheit' : 'Einheiten'}</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {efzEinheiten.map((e) => (
+        <EinheitCard einheit={e} role={role} varianten={efzVarianten(e)} />
+      ))}
+    </div>
+
+    {efzEinheiten.length === 0 && (
+      <div class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500 text-sm">
+        Keine EFZ-Einheiten gefunden.
+      </div>
+    )}
+  </section>
 
   <div class="mt-8">
     <Glossar />

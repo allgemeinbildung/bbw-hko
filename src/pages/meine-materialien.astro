@@ -17,14 +17,36 @@ const { data: materials } = await Astro.locals.supabase
   .eq('submitted_by', user.id)
   .order('created_at', { ascending: false })
 
-const count = materials?.length ?? 0
+// Eigenes Material aus dem schlanken Formular (/eigenes-material) liegt in
+// einheit_feedbacks (feedback_art = 'eigenes'); die alten HKO-Einreichungen
+// in `materials`. Beides gehört der Lehrperson, beides steht hier.
+const { data: eigeneRaw } = await Astro.locals.supabase
+  .from('einheit_feedbacks')
+  .select('id, eigen_titel, status, created_at, updated_at, eigen_thema_nr, eigen_kompetenz_nrs, idee_dateien, eigen_links')
+  .eq('lp_id', user.id)
+  .eq('feedback_art', 'eigenes')
+  .order('created_at', { ascending: false })
+const eigene = eigeneRaw ?? []
+
+const STATUS_LABEL: Record<string, { text: string; cls: string }> = {
+  entwurf:           { text: 'Entwurf',            cls: 'bg-slate-100 text-slate-700' },
+  eingereicht:       { text: 'Geteilt',            cls: 'bg-blue-100 text-blue-800' },
+  gesichtet:         { text: 'Von KT1 gesichtet',  cls: 'bg-amber-100 text-amber-800' },
+  weitergeleitet_kt2:{ text: 'An KT2 weitergeleitet', cls: 'bg-emerald-100 text-emerald-800' },
+}
+const dateFmt = new Intl.DateTimeFormat('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' })
+
+const count = (materials?.length ?? 0) + eigene.length
 ---
 <LP title="Meine Materialien">
-  <div class="mb-5">
-    <h1 class="text-2xl font-semibold">Meine Materialien</h1>
-    <p class="text-sm text-slate-500 mt-1">
-      {count} {count === 1 ? 'Einreichung' : 'Einreichungen'}
-    </p>
+  <div class="mb-5 flex items-end justify-between gap-4 flex-wrap">
+    <div>
+      <h1 class="text-2xl font-semibold">Meine Materialien</h1>
+      <p class="text-sm text-slate-500 mt-1">
+        {count} {count === 1 ? 'Einreichung' : 'Einreichungen'}
+      </p>
+    </div>
+    <a href="/eigenes-material" class="px-4 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition" style="background: var(--brand)">+ Eigenes Material teilen</a>
   </div>
 
   {count === 0 && (
@@ -32,13 +54,47 @@ const count = materials?.length ?? 0
       <div class="text-5xl mb-3">📭</div>
       <div class="text-lg font-medium text-slate-700">Noch keine Materialien</div>
       <div class="text-sm text-slate-500 mt-1 mb-4">Reiche dein erstes Material ein.</div>
-      <a href="/einreichen" class="inline-block px-5 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition" style="background: var(--brand)">
+      <a href="/eigenes-material" class="inline-block px-5 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition" style="background: var(--brand)">
         Zum Formular
       </a>
     </div>
   )}
 
-  {count > 0 && (
+  {eigene.length > 0 && (
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+      {eigene.map((m: any) => {
+        const st = STATUS_LABEL[m.status] ?? { text: m.status, cls: 'bg-slate-100 text-slate-700' }
+        const offen = m.status === 'entwurf' || m.status === 'eingereicht'
+        const anzahl = (Array.isArray(m.idee_dateien) ? m.idee_dateien.length : 0) + (Array.isArray(m.eigen_links) ? m.eigen_links.length : 0)
+        return (
+          <div class="bg-white border border-slate-200 rounded-lg p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class={`text-xs font-medium px-2 py-0.5 rounded-full ${st.cls}`}>{st.text}</span>
+              {m.eigen_thema_nr && <span class="thema-chip" data-thema={m.eigen_thema_nr}>T{m.eigen_thema_nr}</span>}
+              {(m.eigen_kompetenz_nrs ?? []).slice(0, 3).map((k: string) => <span class="chip-blue">{k}</span>)}
+            </div>
+            <div class="font-medium text-slate-900">{m.eigen_titel || 'Ohne Titel'}</div>
+            <div class="text-xs text-slate-500">
+              {dateFmt.format(new Date(m.updated_at ?? m.created_at))}
+              {anzahl > 0 && <span> · 📎 {anzahl}</span>}
+            </div>
+            {offen ? (
+              <a href={`/eigenes-material?id=${m.id}`} class="mt-auto text-center py-1.5 text-sm border border-slate-300 rounded-md hover:bg-slate-50 text-slate-600 transition">
+                {m.status === 'entwurf' ? 'Weiter bearbeiten' : 'Ergänzen'}
+              </a>
+            ) : (
+              <p class="mt-auto text-xs text-slate-400">Bei KT1 in Bearbeitung — nicht mehr änderbar.</p>
+            )}
+          </div>
+        )
+      })}
+    </div>
+  )}
+
+  {(materials?.length ?? 0) > 0 && eigene.length > 0 && (
+    <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Frühere Einreichungen (altes Formular)</h2>
+  )}
+  {(materials?.length ?? 0) > 0 && (
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="materials-grid">
       {materials!.map(m => (
         <div

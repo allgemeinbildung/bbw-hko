@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro'
+import { sanitizeEigenesPayload } from '../../../lib/eigenes-material'
 
 const ALLOWED_FIELDS = [
   'einheit_id',
@@ -9,6 +10,13 @@ const ALLOWED_FIELDS = [
   'eigen_kn_format',
   'eigen_kn_aufgabe',
   'eigen_selbstcheck',
+  'eigen_lehrgang',
+  'eigen_thema_nr',
+  'eigen_lebensbezug_nr',
+  'eigen_kompetenz_nrs',
+  'eigen_sprachmodus_primaer',
+  'eigen_links',
+  'eigen_erweitert',
   'klasse',
   'lehrjahr',
   'abteilung',
@@ -20,6 +28,7 @@ const ALLOWED_FIELDS = [
   'genutzt_sit_c',
   'genutzt_kn',
   'kn_typ_verwendet',
+  'kn_typ_anders',
   'tauglichkeit',
   'qualitaet_situation',
   'qualitaet_handlungsprodukt',
@@ -74,7 +83,8 @@ export const POST: APIRoute = async ({ locals, request }) => {
   if (!['entwurf', 'eingereicht'].includes(status)) {
     return new Response(JSON.stringify({ error: 'Ungueltiger Status fuer Erstanlage.' }), { status: 400 })
   }
-  const payload = { ...pick(body), lp_id: locals.user.id, status }
+  const payload: Record<string, unknown> = { ...pick(body), lp_id: locals.user.id, status }
+  sanitizeEigenesPayload(payload)
   const { data, error } = await locals.supabase
     .from('einheit_feedbacks')
     .insert(payload)

@@ -2,6 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Direkt aufgerufen (nicht im iframe der Plattform)? Dann in die Ansicht mit
+    // Kopfleiste und Rückweg zur Hauptplattform umleiten.
+    if (window.top === window.self) location.replace('/prompt-builder');
+  </script>
   <base href="/nrlp/prompt-builder/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prompt-Builder &mdash; NRLP ABU</title>
@@ -11,7 +16,7 @@
 <body>
 
 <header>
-  <a href="../index.html">&larr; NRLP</a>
+  <a href="/nrlp" target="_top">&larr; nRLP-Netzwerk</a>
   <h1>Prompt-Builder</h1>
 </header>
 

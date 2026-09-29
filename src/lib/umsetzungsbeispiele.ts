@@ -33,10 +33,11 @@ const raw = (index as any).entries as UbEntry[]
 
 export const umsetzungsbeispiele = raw
 
+/** Reihenfolge EBA → EFZ 3J → EFZ 4J (Entscheid Kernteam 29.09.2026). */
 export const UB_LEHRGAENGE: { key: UbLehrgang; label: string; file: string; desc: string }[] = [
+  { key: 'EBA', label: 'EBA 2-jährig', file: '/umsetzungsbeispiele/eba.pdf', desc: 'Eine Umsetzungsvariante pro Einzelkompetenz' },
   { key: 'EFZ-3J', label: 'EFZ 3-jährig', file: '/umsetzungsbeispiele/efz-3j.pdf', desc: 'Herausforderungen mit Kompetenzrastern · z.T. mehrere Kompetenzen kombiniert' },
   { key: 'EFZ-4J', label: 'EFZ 4-jährig', file: '/umsetzungsbeispiele/efz-4j.pdf', desc: 'Herausforderungen mit Kompetenzrastern · erweiterte Varianten' },
-  { key: 'EBA', label: 'EBA 2-jährig', file: '/umsetzungsbeispiele/eba.pdf', desc: 'Eine Umsetzungsvariante pro Einzelkompetenz' },
 ]
 
 /** Titles for Themen 1–8, per Lehrgang, read from the matching nRLP dataset. */

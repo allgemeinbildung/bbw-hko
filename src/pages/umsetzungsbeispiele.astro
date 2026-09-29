@@ -32,8 +32,10 @@ const efzTitles = themaTitles('EFZ-3J')
 const ebaTitles = themaTitles('EBA')
 const themaTitle = (nr: number) => efzTitles[nr] || ebaTitles[nr] || `Thema ${nr}`
 
-// Sort: Lehrgang (EFZ-3J, EFZ-4J, EBA) → Thema → Kompetenz-Nr → niveau
-const lgOrder: Record<string, number> = { 'EFZ-3J': 0, 'EFZ-4J': 1, 'EBA': 2 }
+// Sort: Lehrgang (EBA, EFZ-3J, EFZ-4J — Entscheid Kernteam 29.09.2026) → Thema → Kompetenz-Nr → niveau
+const lgOrder: Record<string, number> = { 'EBA': 0, 'EFZ-3J': 1, 'EFZ-4J': 2 }
+// Kurzlabel für den Lehrgang-Chip auf den Karten (Wert bleibt der Code).
+const LG_SHORT: Record<string, string> = { 'EBA': 'EBA', 'EFZ-3J': 'EFZ 3J', 'EFZ-4J': 'EFZ 4J' }
 const entries = [...umsetzungsbeispiele].sort((a, b) => {
   if (lgOrder[a.lehrgang] !== lgOrder[b.lehrgang]) return lgOrder[a.lehrgang] - lgOrder[b.lehrgang]
   const ta = a.thema_nrs[0] ?? 99, tb = b.thema_nrs[0] ?? 99
@@ -186,7 +188,7 @@ const total = entries.length
                   <div class="flex flex-wrap items-center gap-2 mb-1.5">
                     <span class="ub-badge-lg" data-thema={t != null ? String(t) : ''} data-lehrgang={e.lehrgang}>{e.variant_label}</span>
                     {t != null && <span class="thema-chip" data-thema={String(t)} data-lehrgang={e.lehrgang}>{`T${t} · ${themaTitle(t)}`}</span>}
-                    <span class="ub-lg-chip">{e.lehrgang}</span>
+                    <span class="ub-lg-chip">{LG_SHORT[e.lehrgang] ?? e.lehrgang}</span>
                     <span class:list={['ub-niv', e.niveau === 'erweitert' && 'ub-niv-erw']}>{niveauLabel(e.niveau)}</span>
                   </div>
                   <h3 class="ub-card-title">{e.titel}</h3>
@@ -417,9 +419,9 @@ const total = entries.length
         </div>
         <noscript>
           <p class="mt-3 text-sm">
+            <a href="/umsetzungsbeispiele/eba.pdf" class="underline">EBA 2-jährig</a> ·
             <a href="/umsetzungsbeispiele/efz-3j.pdf" class="underline">EFZ 3-jährig</a> ·
-            <a href="/umsetzungsbeispiele/efz-4j.pdf" class="underline">EFZ 4-jährig</a> ·
-            <a href="/umsetzungsbeispiele/eba.pdf" class="underline">EBA 2-jährig</a>
+            <a href="/umsetzungsbeispiele/efz-4j.pdf" class="underline">EFZ 4-jährig</a>
           </p>
         </noscript>
       </div>

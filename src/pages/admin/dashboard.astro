@@ -24,6 +24,8 @@ let query = Astro.locals.supabase
 if (lehrdauer) query = query.eq('lehrdauer', lehrdauer)
 
 const { data: materials } = await query
+// Anzeige-Labels (Werte bleiben die Codes); Reihenfolge EBA → EFZ 3J → EFZ 4J.
+const LEHRDAUER_LABEL: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
 ---
 <Admin title="Lücken-Dashboard">
   <div class="mb-5 flex items-end justify-between">
@@ -39,7 +41,7 @@ const { data: materials } = await query
       <select name="lehrdauer" class="input w-auto" onchange="this.form.submit()">
         <option value="" selected={!lehrdauer}>Alle</option>
         {['EBA', 'EFZ-3J', 'EFZ-4J'].map(v => (
-          <option value={v} selected={lehrdauer === v}>{v}</option>
+          <option value={v} selected={lehrdauer === v}>{LEHRDAUER_LABEL[v]}</option>
         ))}
       </select>
       {lehrdauer && <a href="/admin/dashboard" class="text-sm text-slate-500 hover:text-slate-700 underline">Zurücksetzen</a>}

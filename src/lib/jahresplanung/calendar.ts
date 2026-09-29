@@ -2,7 +2,7 @@
  * Jahresplanung - Kalender-Generator (ABU Reform 2030)
  * ----------------------------------------------------
  * Erzeugt einen Wochen-fuer-Woche-Schuljahresplan fuer *jedes* Lehrjahr eines
- * Lehrgangs (EFZ 3-jaehrig / EFZ 4-jaehrig / EBA 2-jaehrig) aus den nRLP-Daten.
+ * Lehrgangs (EBA 2-jährig / EFZ 3-jährig / EFZ 4-jährig) aus den nRLP-Daten.
  *
  * Einheitliche Logik:
  *   1. Schulwochen mid-Aug -> mid-Jul datieren (ISO-KW + Datumsspanne).
@@ -309,14 +309,15 @@ export function lehrjahreOf(lehrgang: Lehrgang): number {
 
 /** Anzeige-Label eines Lehrgangs. */
 export function lehrgangLabel(lehrgang: Lehrgang): string {
-  return lehrgang === 'EBA' ? 'EBA 2-Jährige' : lehrgang === 'EFZ-4J' ? 'EFZ 4-Jährige' : 'EFZ 3-Jährige'
+  return lehrgang === 'EBA' ? 'EBA 2-jährig' : lehrgang === 'EFZ-4J' ? 'EFZ 4-jährig' : 'EFZ 3-jährig'
 }
 
-/** Liste aller unterstützten Lehrgänge (für Switcher). */
+/** Liste aller unterstützten Lehrgänge (für Switcher). Reihenfolge EBA → EFZ 3J → EFZ 4J
+ *  (Entscheid Kernteam 29.09.2026); der Default bleibt EFZ-3J (parseLehrgang). */
 export const ALL_LEHRGAENGE: { value: Lehrgang; label: string }[] = [
-  { value: 'EFZ-3J', label: 'EFZ 3-Jährige' },
-  { value: 'EFZ-4J', label: 'EFZ 4-Jährige' },
-  { value: 'EBA', label: 'EBA 2-Jährige' },
+  { value: 'EBA', label: 'EBA 2-jährig' },
+  { value: 'EFZ-3J', label: 'EFZ 3-jährig' },
+  { value: 'EFZ-4J', label: 'EFZ 4-jährig' },
 ]
 
 /** Normalisiert einen rohen Query-Param zu einem gültigen Lehrgang. */

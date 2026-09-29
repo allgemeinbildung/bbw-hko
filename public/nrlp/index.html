@@ -2,6 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Direkt aufgerufen (nicht im iframe der Plattform)? Dann in die Ansicht mit
+    // Kopfleiste und Rückweg zur Hauptplattform umleiten.
+    if (window.top === window.self) location.replace('/nrlp');
+  </script>
   <base href="/nrlp/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NRLP ABU - Kompetenzmodell</title>
@@ -14,14 +19,14 @@
 
 <div id="header">
   <h1>NRLP Netzwerk</h1>
-  <span class="subtitle" id="dataset-subtitle">ABU Schullehrplan - Zuerich</span>
+  <span class="subtitle" id="dataset-subtitle">ABU-Schullehrplan · Zürich</span>
   <div class="sep"></div>
   <label class="dataset-picker">
     <span>Datensatz</span>
     <select id="dataset-select">
-      <option value="/nrlp_3j.json">EFZ 3-jaehrige Grundbildung</option>
-      <option value="/nrlp_4j.json">EFZ 4-jaehrige Grundbildung</option>
-      <option value="/nrlp_2j.json">EBA 2-jaehrige Grundbildung</option>
+      <option value="/nrlp_2j.json">EBA 2-jährig</option>
+      <option value="/nrlp_3j.json" selected>EFZ 3-jährig</option>
+      <option value="/nrlp_4j.json">EFZ 4-jährig</option>
     </select>
   </label>
   <div class="view-toggle-wrap" data-tour="view-toggle">
@@ -108,7 +113,7 @@
   </aside>
 </div><!-- /app -->
 
-<button id="tour-help-btn" class="tour-help-btn" type="button" aria-label="Hilfe und Tour oeffnen" data-tour="help-button">?</button>
+<button id="tour-help-btn" class="tour-help-btn" type="button" aria-label="Hilfe und Tour öffnen" data-tour="help-button">?</button>
 
 <div id="tour-overlay" class="tour-overlay hidden" aria-hidden="true">
   <div class="tour-backdrop"></div>
@@ -119,8 +124,8 @@
     <h2 id="tour-title" class="tour-title"></h2>
     <p id="tour-body" class="tour-body"></p>
     <div class="tour-actions">
-      <button id="tour-skip-btn" class="tour-btn ghost" type="button">Ueberspringen</button>
-      <button id="tour-prev-btn" class="tour-btn ghost" type="button">Zurueck</button>
+      <button id="tour-skip-btn" class="tour-btn ghost" type="button">Überspringen</button>
+      <button id="tour-prev-btn" class="tour-btn ghost" type="button">Zurück</button>
       <button id="tour-next-btn" class="tour-btn primary" type="button">Weiter</button>
     </div>
   </section>
