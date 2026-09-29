@@ -1,0 +1,165 @@
+---
+// Neuerungen — was aus den Rückmeldungen des Kernteams umgesetzt wurde, mit
+// Direktlinks zum Testen. Gedacht zum Teilen per Teams (Stand 29.09.2026).
+// Für alle Angemeldeten ausser dem Gastkonto; KT1 bekommt den Umschalter in die
+// LP-Ansicht, weil die LP-Formulare KT1 sonst aufs Admin-Board umleiten.
+import Base from '../layouts/Base.astro'
+import { getAccess } from '../lib/auth'
+
+const access = await getAccess(Astro)
+if (!access) return Astro.redirect('/login')
+if (access.role === 'gast') return Astro.redirect('/')
+
+const isKt1 = access.role === 'kt1'
+const lpAnsicht = access.previewingAsLp
+
+type Punkt = { wunsch: string; detail?: string; umgesetzt: string; href: string; link: string; kt1?: boolean }
+const bloecke: { titel: string; punkte: Punkt[] }[] = [
+  {
+    titel: 'Eigenes Material einreichen',
+    punkte: [
+      { wunsch: 'Zwei verschiedene Masken', detail: '«Einreichen» und «Eigenes Material einreichen»',
+        umgesetzt: 'Es gibt nur noch ein Formular: schlank, mit «Erweiterte Angaben» zum Aufklappen. Der Reiter heisst «Feedback & Material» und führt in den Entscheidungsbaum. Alte Links auf /einreichen landen im neuen Formular.',
+        href: '/feedback', link: 'Entscheidungsbaum' },
+      { wunsch: 'Entwurf speichern, auch unvollständig',
+        umgesetzt: 'Ein Entwurf braucht nur einen Titel. Er erscheint unter «Meine Materialien» und lässt sich dort weiter bearbeiten.',
+        href: '/eigenes-material', link: 'Formular' },
+      { wunsch: 'Linkfeld (OneNote, Teams, SCORM)',
+        umgesetzt: 'Beliebig viele Links, mit oder statt Dateien. Neu sind alle üblichen Dateitypen erlaubt, nicht nur PDF. Ein Hinweis erinnert daran, die Freigabe zu prüfen (z. B. im Team-OneNote).',
+        href: '/eigenes-material', link: 'Formular' },
+      { wunsch: 'Pflicht-Taxonomie statt freier Wahl', detail: 'Schlüsselkompetenzen, Sprachmodi',
+        umgesetzt: 'Nach der Wahl der Kompetenz ist angekreuzt, was der Lehrplan vorgibt, markiert mit «Lehrplan». Abwählen und ergänzen bleibt möglich. Der primäre Sprachmodus ist Pflicht und bietet nur die vorgegebenen Modi an.',
+        href: '/eigenes-material', link: 'Formular' },
+      { wunsch: 'Lehrjahr ist durch das Thema bestimmt',
+        umgesetzt: 'Das Lehrjahr wird nicht mehr abgefragt, sondern aus dem Thema abgeleitet und angezeigt.',
+        href: '/eigenes-material', link: 'Formular' },
+      { wunsch: 'Selbstcheck «Beurteilungskriterien» ohne Feld',
+        umgesetzt: 'Der Haken setzt sich von selbst, sobald unter «Erweiterte Angaben» Kriterien erfasst sind.',
+        href: '/eigenes-material', link: 'Formular' },
+    ],
+  },
+  {
+    titel: 'Begriffe',
+    punkte: [
+      { wunsch: '«Herausforderung» statt «Handlungssituation»',
+        umgesetzt: 'Wie im Schullehrplan. Angepasst in Formular, Word-Vorlagen und KT1-Ansicht.',
+        href: '/eigenes-material', link: 'Formular' },
+      { wunsch: 'Was ist mit Kompetenznachweis gemeint? Transfer Pflicht?',
+        umgesetzt: '«Kompetenznachweis» bleibt. Ein kurzer Text grenzt ihn vom Handlungsprodukt ab. Transfer ist nur noch eine Empfehlung.',
+        href: '/eigenes-material', link: 'Formular' },
+      { wunsch: 'EBA mal zuerst, mal zuletzt, verschieden benannt',
+        umgesetzt: 'Überall gilt dieselbe Reihenfolge: EBA 2-jährig · EFZ 3-jährig · EFZ 4-jährig. Im Katalog hat EBA eine eigene Farbe (Indigo), damit man EBA und EFZ auf einen Blick unterscheidet.',
+        href: '/einheiten', link: 'Katalog' },
+    ],
+  },
+  {
+    titel: 'Feedback zu Einheiten',
+    punkte: [
+      { wunsch: '«Getestet von/bis» und Lehrjahr nötig?',
+        umgesetzt: 'Der Zeitraum ist weg, die Dauer ist optional, das Lehrjahr kommt aus der Einheit. Gilt auch für die Bögen zu Situationen und zu eigenen Materialien.',
+        href: '/einheiten/1.1.1_konflikt_kommunizieren/feedback?art=angepasst', link: 'Feedbackbogen' },
+      { wunsch: 'Anpassung ergibt anderen Produkttyp',
+        umgesetzt: 'Beim KN-Typ gibt es neu «Andere Form / anderes Produkt» mit Freitext.',
+        href: '/einheiten/1.1.1_konflikt_kommunizieren/feedback?art=angepasst', link: 'Feedbackbogen' },
+      { wunsch: 'Feedbacks für Kolleg:innen lesbar, übersichtlich',
+        umgesetzt: 'Auf jeder Einheit steht «Erfahrungen von Kolleg:innen»: Mittelwerte, Weiterempfehlung und Texte, ohne Name, Klasse und Abteilung. Nur KT1 sieht Namen. Sichtbar ist nur, was beim Absenden per Häkchen freigegeben wurde. Frühere Feedbacks bleiben verborgen, deshalb ist der Abschnitt anfangs noch leer.',
+        href: '/einheiten/1.1.1_konflikt_kommunizieren', link: 'Einheit 1.1.1' },
+      { wunsch: 'Feedback später anpassen',
+        umgesetzt: 'War schon umgesetzt: Solange KT1 nicht gesichtet hat, lässt sich ein Feedback wieder öffnen und ergänzen.',
+        href: '/feedback', link: 'Entscheidungsbaum' },
+    ],
+  },
+  {
+    titel: 'Navigation und Nutzung',
+    punkte: [
+      { wunsch: '«Plötzlich bin ich hier, komme nicht weiter» · Umlaute',
+        umgesetzt: 'Das nRLP-Netzwerk öffnet sich immer mit Kopfleiste und «← Hauptplattform». Der Rundgang schreibt Umlaute richtig («Überspringen», «Zurück»).',
+        href: '/nrlp', link: 'nRLP-Netzwerk' },
+      { wunsch: 'Was ist der Prompt-Builder? Für alle?',
+        umgesetzt: 'Ja, für alle Lehrpersonen. Jeder Link unter «Weitere Angebote» auf der Startseite hat jetzt einen Erklärsatz.',
+        href: '/', link: 'Startseite' },
+      { wunsch: 'Veralteter Satz im Prompt-Builder',
+        umgesetzt: 'War bereits am 17.09. korrigiert. Die 51 offiziellen Umsetzungsbeispiele sind eingebunden.',
+        href: '/prompt-builder', link: 'Prompt-Builder' },
+      { wunsch: 'Wer nutzt die Plattform?',
+        umgesetzt: 'Die Nutzungsstatistik gibt es seit dem Tracking-Deploy: Besuche, Rollen, meistgenutzte Einheiten, Downloads.',
+        href: '/admin/statistik', link: 'Statistik', kt1: true },
+      { wunsch: 'Kurzes Feedback nach aktiver Nutzung, anonym',
+        umgesetzt: 'Die Kurzumfrage stellt zwei Fragen: «Hilft dir die Plattform?» und «Was könnte man verbessern?». Sie erscheint Lehrpersonen einmal pro Semester ab dem dritten Besuchstag und wird ohne Personenbezug gespeichert. Die Auswertung steht unten auf der Statistikseite.',
+        href: '/admin/statistik', link: 'Auswertung', kt1: true },
+    ],
+  },
+]
+---
+<Base title="Neuerungen">
+  <div class="min-h-screen" style="background:#f6f8f6">
+    <header class="bg-white border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-5 py-3 flex items-center gap-4">
+        <a href="/" class="text-sm font-medium" style="color: var(--brand-dark)">← Hauptplattform</a>
+        <span class="text-sm text-slate-400">Materialplattform ABU 2030</span>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-5 py-10 space-y-8">
+      <div class="border-t-4 pt-4" style="border-color: var(--brand)">
+        <p class="text-xs uppercase tracking-wider text-slate-500">Stand 29.09.2026</p>
+        <h1 class="text-3xl font-semibold text-slate-900 mt-1">Rückmeldungen des Kernteams: umgesetzt</h1>
+        <p class="text-slate-600 mt-2 max-w-2xl">
+          Alles, was aus der Testrunde (Mails und Word-Dokument) entschieden wurde, ist live.
+          Pro Punkt: was gewünscht war, was jetzt gilt und wo ihr es direkt ausprobieren könnt.
+        </p>
+      </div>
+
+      {isKt1 && (
+        <div class="rounded-lg border px-4 py-3 flex flex-wrap items-center gap-3" style={lpAnsicht ? 'border-color: var(--brand); background: var(--brand-tint)' : 'border-color:#f0d98a; background:#fff7e0'}>
+          {lpAnsicht ? (
+            <p class="text-sm text-slate-800 flex-1 min-w-[16rem]">
+              <strong>LP-Ansicht ist eingeschaltet.</strong> Die Testlinks öffnen die Seiten so, wie Lehrpersonen sie sehen.
+            </p>
+          ) : (
+            <p class="text-sm text-slate-800 flex-1 min-w-[16rem]">
+              <strong>Vor dem Testen:</strong> Formulare für Lehrpersonen leiten KT1-Konten aufs Admin-Board um. Schaltet zuerst die LP-Ansicht ein.
+            </p>
+          )}
+          {lpAnsicht ? (
+            <a href="/api/auth/view-as?mode=admin&to=/neuerungen" class="text-sm underline text-slate-600">Zurück zur Admin-Ansicht</a>
+          ) : (
+            <a href="/api/auth/view-as?mode=lp&to=/neuerungen" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">LP-Ansicht einschalten</a>
+          )}
+        </div>
+      )}
+
+      {bloecke.map((b) => (
+        <section>
+          <h2 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--brand)">{b.titel}</h2>
+          <div class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-200">
+            {b.punkte.filter((p) => !p.kt1 || isKt1).map((p) => (
+              <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_auto] gap-x-5 gap-y-2 px-5 py-4 items-start">
+                <div class="font-semibold text-slate-900 text-sm">
+                  {p.wunsch}
+                  {p.detail && <span class="block font-normal text-xs text-slate-500 mt-0.5">{p.detail}</span>}
+                </div>
+                <p class="text-sm text-slate-700">{p.umgesetzt}</p>
+                <a href={p.href} class="text-sm font-semibold whitespace-nowrap" style="color: var(--brand)">{p.link} →</a>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="bg-white border border-slate-200 rounded-lg p-4 text-sm text-slate-600">
+          <strong class="text-slate-900">Alte Einreichungen</strong> bleiben unter <a href="/meine-materialien" class="underline">Meine Materialien</a> sichtbar und bearbeitbar, unter «Frühere Einreichungen».
+        </div>
+        {isKt1 && (
+          <div class="bg-white border border-slate-200 rounded-lg p-4 text-sm text-slate-600">
+            <strong class="text-slate-900">Geteilte Materialien</strong> zeigen KT1 jetzt auch Verortung, Links und die erweiterten Angaben: <a href="/admin/eigene-materialien" class="underline">Admin-Ansicht</a>.
+          </div>
+        )}
+        <div class="bg-white border border-slate-200 rounded-lg p-4 text-sm text-slate-600">
+          <strong class="text-slate-900">Rückmeldungen</strong> zu diesen Änderungen bitte über «Problem melden» unten rechts auf jeder Seite.
+        </div>
+      </section>
+    </main>
+  </div>
+</Base>
