@@ -1,0 +1,111 @@
+---
+/**
+ * Anonyme Kurzumfrage — zwei Fragen, einmal pro Semester (Migration 023).
+ * Eingebunden in Base.astro; erscheint nur für angemeldete Lehrpersonen und erst
+ * ab dem dritten Besuch an verschiedenen Tagen. Besuchstage und «schon
+ * beantwortet» merkt sich der Browser (localStorage) — die Datenbank kennt
+ * keine Person. Ohne localStorage (privates Fenster) erscheint die Umfrage nie.
+ */
+import { getRole } from '../lib/meldungen'
+import { aktuellesSemester } from '../lib/kurzumfrage'
+
+const role = Astro.locals.user ? await getRole(Astro.locals) : null
+const show = role === 'lp' || role === 'reviewer'
+const semester = aktuellesSemester()
+---
+{show && (
+  <div x-data={`kurzumfrage(${JSON.stringify(semester)})`} x-show="offen" x-cloak x-transition class="ku-card" role="dialog" aria-label="Kurzumfrage">
+    <template x-if="!gesendet">
+      <div>
+        <div class="flex items-start justify-between gap-3 mb-2">
+          <p class="font-semibold text-slate-900 text-sm">Hilft dir die Plattform im Unterricht?</p>
+          <button type="button" class="text-slate-400 hover:text-slate-600 text-sm leading-none" title="Später" @click="spaeter()">✕</button>
+        </div>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <template x-for="o in optionen" :key="o.v">
+            <button type="button" class="ku-pill" :class="hilft === o.v ? 'ku-pill-on' : ''" @click="hilft = o.v" x-text="o.t"></button>
+          </template>
+        </div>
+        <label class="block text-xs text-slate-600 mb-1">Was könnte man verbessern? <span class="text-slate-400">(optional)</span></label>
+        <textarea x-model="verbessern" rows="2" maxlength="2000" class="input w-full text-sm"></textarea>
+        <p class="text-[11px] text-slate-400 mt-1">Anonym — gespeichert wird nur deine Antwort, nicht wer sie gibt.</p>
+        <p x-show="fehler" class="text-xs text-red-600 mt-1" x-text="fehler"></p>
+        <div class="flex items-center justify-between gap-2 mt-3">
+          <button type="button" class="text-xs text-slate-500 underline" @click="neinDanke()">Nicht mehr fragen</button>
+          <button type="button" class="px-3 py-1.5 rounded-md text-sm font-medium text-white disabled:opacity-50" style="background: var(--brand)" :disabled="!hilft || busy" @click="senden()">Senden</button>
+        </div>
+      </div>
+    </template>
+    <template x-if="gesendet">
+      <p class="text-sm text-slate-700">Danke! Deine Antwort hilft dem Kernteam.</p>
+    </template>
+  </div>
+)}
+
+<style>
+  .ku-card {
+    position: fixed; left: 1rem; bottom: 1rem; z-index: 40;
+    width: min(22rem, calc(100vw - 2rem));
+    background: #fff; border: 1px solid #e2e8f0; border-top: 3px solid var(--brand);
+    border-radius: 0.6rem; padding: 0.9rem 1rem;
+    box-shadow: 0 12px 32px -12px rgba(15, 23, 42, 0.35);
+  }
+  .ku-pill {
+    font-size: 0.8rem; padding: 0.25rem 0.7rem; border-radius: 999px;
+    border: 1px solid #cbd5e1; color: #334155; background: #fff;
+  }
+  .ku-pill:hover { border-color: var(--brand); }
+  .ku-pill-on { background: var(--brand); border-color: var(--brand); color: #fff; }
+  [x-cloak] { display: none !important; }
+</style>
+
+<script is:inline>
+  function kurzumfrage(semester) {
+    const KEY_TAGE = 'hko-besuchstage'
+    const KEY_SEM = 'hko-kurzumfrage-' + semester
+    const get = (s, k) => { try { return s.getItem(k) } catch { return null } }
+    const set = (s, k, v) => { try { s.setItem(k, v) } catch {} }
+    return {
+      offen: false, gesendet: false, busy: false, fehler: '',
+      hilft: '', verbessern: '',
+      optionen: [
+        { v: 'ja', t: 'Ja' }, { v: 'eher_ja', t: 'Eher ja' },
+        { v: 'eher_nein', t: 'Eher nein' }, { v: 'nein', t: 'Nein' },
+      ],
+      init() {
+        let tage = []
+        try { tage = JSON.parse(get(localStorage, KEY_TAGE) || '[]') } catch {}
+        if (!Array.isArray(tage)) tage = []
+        const heute = new Date().toISOString().slice(0, 10)
+        if (!tage.includes(heute)) tage.push(heute)
+        tage = tage.slice(-10)
+        set(localStorage, KEY_TAGE, JSON.stringify(tage))
+        // Erst prüfen, ob localStorage überhaupt schreibt — sonst nie fragen.
+        if (get(localStorage, KEY_TAGE) === null) return
+        if (tage.length < 3) return
+        if (get(localStorage, KEY_SEM)) return
+        if (get(sessionStorage, KEY_SEM)) return
+        setTimeout(() => { this.offen = true }, 2500)
+      },
+      spaeter() { set(sessionStorage, KEY_SEM, 'spaeter'); this.offen = false },
+      neinDanke() { set(localStorage, KEY_SEM, 'nein'); this.offen = false },
+      async senden() {
+        this.busy = true; this.fehler = ''
+        try {
+          const res = await fetch('/api/kurzumfrage', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ hilft: this.hilft, verbessern: this.verbessern }),
+          })
+          if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || 'Senden fehlgeschlagen.')
+          set(localStorage, KEY_SEM, 'beantwortet')
+          this.gesendet = true
+          setTimeout(() => { this.offen = false }, 2500)
+        } catch (e) {
+          this.fehler = e.message
+        } finally {
+          this.busy = false
+        }
+      },
+    }
+  }
+</script>

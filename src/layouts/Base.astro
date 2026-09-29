@@ -1,6 +1,7 @@
 ---
 import ViewAsBanner from '../components/ViewAsBanner.astro'
 import QuickFeedback from '../components/QuickFeedback.astro'
+import Kurzumfrage from '../components/Kurzumfrage.astro'
 interface Props {
   title?: string
 }
@@ -118,6 +119,7 @@ const { title = 'Materialplattform' } = Astro.props
   <ViewAsBanner />
   <slot />
   <QuickFeedback />
+  <Kurzumfrage />
 
   <!--
     Nutzungs-Tracking (eigene Erhebung, kein externer Dienst).

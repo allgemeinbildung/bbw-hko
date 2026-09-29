@@ -298,6 +298,14 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
         </label>
       </section>
 
+      <label class="check-item">
+        <input type="checkbox" name="fuer_lp_sichtbar" checked={!offen || offen.fuer_lp_sichtbar === true} />
+        <span>
+          Ohne Namen für andere Lehrpersonen sichtbar machen
+          <span class="block text-xs text-slate-500">Kolleg:innen sehen auf der Seite der Einheit deine Bewertungen und Texte — nicht deinen Namen, deine Klasse, deine Abteilung oder deine Dateien. KT1 sieht, von wem die Rückmeldung ist.</span>
+        </span>
+      </label>
+
       <div class="flex items-center justify-end gap-3">
         <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
         <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">
@@ -451,7 +459,7 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
         else obj[k] = v
       }
       // Explicit booleans for checkboxes not in FormData when unchecked
-      ;['genutzt_sit_a','genutzt_sit_b','genutzt_sit_c','genutzt_kn'].forEach((k) => {
+      ;['genutzt_sit_a','genutzt_sit_b','genutzt_sit_c','genutzt_kn','fuer_lp_sichtbar'].forEach((k) => {
         const el = form.querySelector(`[name="${k}"]`)
         obj[k] = !!(el && el.checked)
       })

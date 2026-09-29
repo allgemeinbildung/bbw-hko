@@ -3,6 +3,7 @@ import Admin from '../../layouts/Admin.astro'
 import { einheitById } from '../../lib/einheiten'
 import { situationenIndex } from '../../lib/situationen'
 import { AREA_LABEL, ROLE_LABEL, type TrackArea } from '../../lib/tracking'
+import { HILFT_LABEL } from '../../lib/kurzumfrage'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -58,6 +59,25 @@ const einheitInfo = (ref: string) => {
     href: `/einheiten/${ref}`,
   }
 }
+
+// Anonyme Kurzumfrage (Migration 023) — RLS lässt nur KT1 lesen.
+const { data: umfrageRaw } = await Astro.locals.supabase
+  .from('kurzumfrage')
+  .select('semester, hilft, verbessern, created_at')
+  .order('created_at', { ascending: false })
+  .limit(500)
+const umfrage = umfrageRaw ?? []
+const umfrageSemester = [...new Set(umfrage.map((u: any) => u.semester as string))]
+const umfrageProSemester = umfrageSemester.map((sem) => {
+  const rows = umfrage.filter((u: any) => u.semester === sem)
+  return {
+    sem,
+    n: rows.length,
+    verteilung: Object.keys(HILFT_LABEL).map((k) => ({ k, n: rows.filter((r: any) => r.hilft === k).length })),
+    texte: rows.filter((r: any) => r.verbessern).map((r: any) => r.verbessern as string),
+  }
+})
+const semLabel = (sem: string) => (sem.endsWith('HS') ? 'Herbstsemester ' : 'Frühlingssemester ') + sem.slice(0, 4)
 
 const maxVerlauf = Math.max(1, ...(stats?.verlauf ?? []).map((v) => v.aufrufe))
 const maxBereich = Math.max(1, ...(stats?.bereiche ?? []).map((b) => b.aufrufe))
@@ -306,6 +326,42 @@ const zahl = (n: number | null | undefined) => new Intl.NumberFormat('de-CH').fo
         </section>
       </>
     )}
+
+    <!-- ── Kurzumfrage ─────────────────────────────────────────────────── -->
+    <section class="bg-white rounded-lg border border-slate-200 p-5">
+      <h2 class="text-sm font-semibold text-slate-900 mb-1">Kurzumfrage «Hilft dir die Plattform?»</h2>
+      <p class="text-xs text-slate-500 mb-4">Anonym, einmal pro Semester ab dem dritten Besuchstag. Ohne Personenbezug gespeichert.</p>
+      {umfrageProSemester.length === 0 ? (
+        <p class="text-sm text-slate-500">Noch keine Antworten.</p>
+      ) : (
+        <div class="space-y-5">
+          {umfrageProSemester.map((u) => (
+            <div>
+              <div class="text-sm font-medium text-slate-800 mb-2">{semLabel(u.sem)} · {u.n} {u.n === 1 ? 'Antwort' : 'Antworten'}</div>
+              <div class="space-y-1 mb-3">
+                {u.verteilung.map((v) => (
+                  <div class="flex items-center gap-3 text-sm">
+                    <span class="w-24 text-slate-600">{HILFT_LABEL[v.k]}</span>
+                    <span class="flex-1 h-2 rounded bg-slate-100 overflow-hidden">
+                      <span class="block h-full rounded" style={`width:${u.n ? (v.n / u.n) * 100 : 0}%; background: var(--brand)`}></span>
+                    </span>
+                    <span class="w-8 text-right tabular-nums text-slate-600">{v.n}</span>
+                  </div>
+                ))}
+              </div>
+              {u.texte.length > 0 && (
+                <details>
+                  <summary class="cursor-pointer text-xs text-slate-600">Verbesserungsvorschläge ({u.texte.length})</summary>
+                  <ul class="mt-2 space-y-1.5 text-sm text-slate-700 list-disc pl-5">
+                    {u.texte.map((t) => <li class="whitespace-pre-wrap">{t}</li>)}
+                  </ul>
+                </details>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
 
     <!-- ── Was gemessen wird ──────────────────────────────────────────── -->
     <details class="bg-white rounded-lg border border-slate-200 p-5 text-sm">

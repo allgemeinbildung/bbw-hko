@@ -1,0 +1,84 @@
+---
+// «Erfahrungen von Kolleg:innen» auf der Detailseite einer Einheit — ohne Namen.
+// Daten aus src/lib/erfahrungen.ts (feste Spaltenliste, nur freigegebene Zeilen).
+import type { ErfahrungenUebersicht } from '../../lib/erfahrungen'
+import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
+
+interface Props {
+  daten: ErfahrungenUebersicht
+  feedbackUrl: string
+}
+const { daten, feedbackUrl } = Astro.props
+const { liste, mittel, empfehlung, niveau } = daten
+
+const monat = new Intl.DateTimeFormat('de-CH', { month: 'long', year: 'numeric' })
+const niveauLabel: Record<string, string> = { zu_leicht: 'zu leicht', passend: 'passend', zu_schwer: 'zu schwer' }
+const niveauN = niveau.zu_leicht + niveau.passend + niveau.zu_schwer
+const komponenten = (e: (typeof liste)[number]) =>
+  [e.genutzt_sit_a && 'A', e.genutzt_sit_b && 'B', e.genutzt_sit_c && 'C', e.genutzt_kn && 'KN'].filter(Boolean).join(' · ')
+---
+<div class="border-b border-slate-200 bg-white">
+  <details class="max-w-7xl mx-auto px-6 py-4 group">
+    <summary class="cursor-pointer select-none flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <h2 class="text-sm font-semibold text-slate-900 inline">Erfahrungen von Kolleg:innen</h2>
+      {liste.length === 0 ? (
+        <span class="text-xs text-slate-500">Noch keine Rückmeldungen freigegeben.</span>
+      ) : (
+        <span class="text-xs text-slate-500">
+          {liste.length} {liste.length === 1 ? 'Rückmeldung' : 'Rückmeldungen'}
+          {empfehlung.n > 0 && <> · {empfehlung.ja} von {empfehlung.n} empfehlen die Einheit weiter</>}
+        </span>
+      )}
+      <span class="ml-auto text-xs text-slate-400 group-open:hidden">anzeigen ▾</span>
+      <span class="ml-auto text-xs text-slate-400 hidden group-open:inline">schliessen ▴</span>
+    </summary>
+
+    <div class="mt-4">
+      <p class="text-xs text-slate-500 mb-4">
+        Ohne Namen, Klasse und Abteilung. Sichtbar ist nur, was Lehrpersonen beim Absenden freigegeben haben.
+        Selbst unterrichtet? <a href={feedbackUrl} class="underline">Deine Erfahrung teilen</a>.
+      </p>
+
+      {liste.length > 0 && (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-5">
+          {mittel.map((m) => (
+            <div class="flex items-center gap-3 text-sm">
+              <span class="w-56 shrink-0 text-slate-600">{m.label}</span>
+              <span class="flex-1 h-2 rounded bg-slate-100 overflow-hidden">
+                <span class="block h-full rounded" style={`width:${(m.wert / 5) * 100}%; background: var(--brand)`}></span>
+              </span>
+              <span class="w-16 text-right tabular-nums text-slate-700">{m.wert.toFixed(1)} / 5</span>
+            </div>
+          ))}
+          {niveauN > 0 && (
+            <div class="text-sm text-slate-600 md:col-span-2 mt-1">
+              Niveau: {(['zu_leicht', 'passend', 'zu_schwer'] as const).filter((k) => niveau[k] > 0).map((k) => `${niveau[k]}× ${niveauLabel[k]}`).join(' · ')}
+            </div>
+          )}
+        </div>
+      )}
+
+      <div class="space-y-3">
+        {liste.map((e) => (
+          <div class="rounded-lg border border-slate-200 p-3 text-sm">
+            <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 mb-1">
+              <span class={`font-medium px-2 py-0.5 rounded-full ${e.feedback_art === 'angepasst' ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'}`}>
+                {e.feedback_art === 'angepasst' ? 'Angepasst' : '1:1 übernommen'}
+              </span>
+              <span>{monat.format(new Date(e.created_at))}</span>
+              {komponenten(e) && <span>· eingesetzt: {komponenten(e)}</span>}
+              {e.kn_typ_verwendet && (
+                <span>· KN: {e.kn_typ_verwendet === 'andere' ? (e.kn_typ_anders || 'andere Form') : knTypLabel(e.kn_typ_verwendet)}</span>
+              )}
+              {e.dauer_lektionen != null && <span>· {e.dauer_lektionen} Lektionen</span>}
+              {typeof e.weiterempfehlung === 'boolean' && <span>· {e.weiterempfehlung ? 'empfiehlt weiter' : 'empfiehlt nicht weiter'}</span>}
+            </div>
+            {e.eigene_anpassungen && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Angepasst:</span> {e.eigene_anpassungen}</p>}
+            {e.noetiges_scaffolding && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Brauchte zusätzlich:</span> {e.noetiges_scaffolding}</p>}
+            {e.anmerkungen && <p class="text-slate-700 whitespace-pre-wrap">{e.anmerkungen}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </details>
+</div>

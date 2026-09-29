@@ -54,6 +54,7 @@ const LP_FIELDS = [
   'idee_titel',
   'idee_beschreibung',
   'freigabe_gemeinsamer_kn',
+  'fuer_lp_sichtbar',
   'status',
 ] as const
 
