@@ -120,9 +120,9 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
   )}
 
   {/* ── EBA – Zweijährige Grundbildung ────────────────────────────────── */}
-  <section class="mb-10">
-    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
-      <h2 class="text-lg font-semibold text-slate-900">EBA – Zweijährige Grundbildung</h2>
+  <section class="lg-eba mb-10 rounded-xl px-5 pt-4 pb-5" style="background: var(--lg-tint)">
+    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--lg)">
+      <h2 class="text-lg font-semibold" style="color: var(--lg-dark)">EBA – Zweijährige Grundbildung</h2>
       <span class="text-xs text-slate-500">2-jährig · {ebaEinheiten.length} {ebaEinheiten.length === 1 ? 'Einheit' : 'Einheiten'}</span>
     </div>
 
@@ -140,10 +140,10 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
   </section>
 
   {ebaEinheiten.length === 0 && (
-    <div class="mb-10 -mt-6 rounded-lg px-4 py-3 flex items-start gap-3 border" style="border-color: var(--brand); background: var(--brand-tint)">
-      <span class="text-lg leading-none" style="color: var(--brand-dark)" aria-hidden="true">◷</span>
+    <div class="lg-eba mb-10 -mt-6 rounded-lg px-4 py-3 flex items-start gap-3 border" style="border-color: var(--lg); background: var(--lg-tint)">
+      <span class="text-lg leading-none" style="color: var(--lg-dark)" aria-hidden="true">◷</span>
       <p class="text-sm text-slate-700 m-0">
-        <strong style="color: var(--brand-dark)">EBA – in Vorbereitung.</strong>
+        <strong style="color: var(--lg-dark)">EBA – in Vorbereitung.</strong>
         Einheiten für die zweijährige Grundbildung (EBA) entstehen gerade und werden in Kürze hier aufgeschaltet. Aktuell sind die EFZ-Einheiten sichtbar.
       </p>
     </div>
@@ -151,8 +151,8 @@ const efzVarianten = (e: { lehrgang: string; lehrgaenge?: string[] }) =>
 
   {/* ── EFZ – Berufliche Grundbildung (3-/4-jährig) ───────────────────── */}
   <section class="mb-10">
-    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--brand)">
-      <h2 class="text-lg font-semibold text-slate-900">EFZ – Berufliche Grundbildung</h2>
+    <div class="flex items-baseline gap-3 mb-4 pb-2 border-b-2" style="border-color: var(--lg)">
+      <h2 class="text-lg font-semibold" style="color: var(--lg-dark)">EFZ – Berufliche Grundbildung</h2>
       <span class="text-xs text-slate-500">3-/4-jährig · {efzEinheiten.length} {efzEinheiten.length === 1 ? 'Einheit' : 'Einheiten'}</span>
     </div>
 

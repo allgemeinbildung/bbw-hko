@@ -26,6 +26,19 @@ const { title = 'Materialplattform' } = Astro.props
       --brand-tint: #e8f3ec;
       --brand-ring: rgba(14, 110, 58, 0.18);
 
+      /* ── Lehrgang-Farbe (Entscheid KT 29.09.2026) ────────────────────────
+         EBA und EFZ müssen im Katalog auf einen Blick unterscheidbar sein.
+         EFZ behält das BBW-Grün, EBA bekommt Indigo — weit weg vom Grün, von
+         den acht Themafarben und von den Statusfarben. Zweite bewusste
+         Ausnahme zur "Single-Green"-Regel, strikt an den Lehrgang gebunden.
+         Anwenden: Klasse .lg-eba auf einen Container → --lg* wechseln. */
+      --eba: #4338CA;
+      --eba-dark: #312E81;
+      --eba-tint: #EEF2FF;
+      --lg: var(--brand);
+      --lg-dark: var(--brand-dark);
+      --lg-tint: var(--brand-tint);
+
       /* ── nRLP Thema-Identitätsfarben (Bildungsrat 2026) ──────────────────
          Quelle: SLP-PDFs EFZ 3-/4-jährig (Pascal Rusch, 10.06.2026).
          Einzige bewusste Ausnahme zur "Single-Green"-Regel.
@@ -40,6 +53,8 @@ const { title = 'Materialplattform' } = Astro.props
       --thema-7: #00A1A3; --thema-7-ink: #000000;
       --thema-8: #0076BD; --thema-8-ink: #FFFFFF;
     }
+    .lg-eba { --lg: var(--eba); --lg-dark: var(--eba-dark); --lg-tint: var(--eba-tint); }
+    .lg-eba .chip-blue { background: var(--lg-tint); color: var(--lg-dark); }
 
     /* data-thema="N" setzt die lokalen Custom-Properties --tc / --tc-ink,
        die die Thema-Utility-Klassen unten konsumieren. Fallback = Brand-Grün. */

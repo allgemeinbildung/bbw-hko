@@ -3,7 +3,7 @@
 // Genutzt vom Katalog (EFZ- und EBA-Sektion). Die Entwurf-Badges rendern nur für
 // KT1; lp/gast sehen Entwürfe gar nicht erst (visibleEinheiten filtert vorher).
 import type { EinheitIndexEntry } from '../../lib/einheiten/types'
-import { isEntwurf, draftKomponenten, KOMPONENTEN_LABEL, lehrgangLabel, lehrgangShort } from '../../lib/einheiten'
+import { isEntwurf, draftKomponenten, KOMPONENTEN_LABEL, lehrgangLabel, lehrgangShort, isEbaLehrgang } from '../../lib/einheiten'
 import type { Role } from '../../lib/einheiten'
 
 interface Props {
@@ -17,6 +17,8 @@ interface Props {
 const { einheit: e, role, varianten = [] } = Astro.props
 const kompetenzen = e.abgedeckte_kompetenzen?.length ? e.abgedeckte_kompetenzen : [e.kompetenz_nr]
 const komponenten = draftKomponenten(e)
+// EBA-Karten tragen die Lehrgang-Farbe (Indigo), EFZ-Karten das BBW-Grün.
+const eba = isEbaLehrgang(e.lehrgang)
 const zeigeEntwurf = role === 'kt1' && (isEntwurf(e) || komponenten.length > 0)
 
 // Woraus besteht dieser Entwurf? Bei einer ganzen Entwurf-Einheit ist jeder vorhandene
@@ -34,7 +36,7 @@ const bausteine = zeigeEntwurf && isEntwurf(e)
     ].filter((b) => b.da || b.pflicht)
   : []
 ---
-<div class="lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--brand)] transition flex flex-col">
+<div class:list={['lion-bg bg-white border border-slate-200 rounded-lg hover:shadow-md hover:border-[var(--lg)] transition flex flex-col', { 'lg-eba': eba }]} style="border-top: 4px solid var(--lg)">
   <a href={`/einheiten/${e.id}`} class="block p-5 flex-1">
     <h3 class="text-base font-semibold text-slate-900 leading-snug mb-1">
       {e.einheit_titel}
@@ -59,6 +61,7 @@ const bausteine = zeigeEntwurf && isEntwurf(e)
       </div>
     )}
     <div class="flex flex-wrap gap-1.5 mb-2">
+      {eba && <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full" style="background: var(--lg); color: #fff">EBA 2-jährig</span>}
       {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
       {varianten.length > 0 && (
         <span class="chip" title={`Gültig für ${varianten.map(lehrgangLabel).join(' und ')}`}>
@@ -72,7 +75,7 @@ const bausteine = zeigeEntwurf && isEntwurf(e)
     <p class="text-sm text-slate-600 leading-snug line-clamp-3">{e.titel}</p>
   </a>
   <div class="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center gap-3">
-    <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--brand)">
+    <a href={`/einheiten/${e.id}`} class="font-medium text-sm flex-1" style="color: var(--lg)">
       Öffnen →
     </a>
     {e.hat_begleiter && (
@@ -81,7 +84,7 @@ const bausteine = zeigeEntwurf && isEntwurf(e)
         target="_blank"
         rel="noopener noreferrer"
         class="text-xs font-medium px-3 py-1.5 rounded-md border transition whitespace-nowrap"
-        style="color: var(--brand-dark); border-color: var(--brand); background: var(--brand-tint);"
+        style="color: var(--lg-dark); border-color: var(--lg); background: var(--lg-tint);"
       >
         Lies mich!
       </a>
