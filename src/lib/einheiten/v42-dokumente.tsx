@@ -1,7 +1,9 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import type { Document } from 'docx'
 import { DocS } from '../../components/einheiten/docs/DocS'
+import { DocAuftragsbogen } from '../../components/einheiten/docs/DocAuftragsbogen'
 import { buildDocS } from './docx-builder'
+import { buildAuftragsbogen } from './docx-auftragsbogen-v42'
 import { SPUR_KEYS, isV42 } from './spuren'
 import type { EinheitFullSet } from './types'
 
@@ -32,7 +34,8 @@ const SPUR_TITEL = { ohne_medien: 'ohne Medien', mit_medien: 'mit Medien' } as c
 
 /**
  * Je Heft (A, dann B) und je verfügbarer Spur ein Eintrag, in der Folge
- * `heft-a-ohne-medien`, `heft-a-mit-medien`, `heft-b-ohne-medien`, `heft-b-mit-medien`.
+ * `heft-a-ohne-medien`, `heft-a-mit-medien`, `heft-b-ohne-medien`, `heft-b-mit-medien`,
+ * danach `auftragsbogen`, sofern `set.gemeinsamer_auftrag` vorhanden ist.
  * Einheiten ohne `spur_varianten` (alle Bestandseinheiten): leere Liste.
  */
 export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V42Dokument[] {
@@ -54,6 +57,17 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
         docx: () => buildDocS({ sit, set: d.set, abteilung, mode: 'fill', logoPng }),
       })
     }
+  }
+  // Auftragsbogen des gemeinsamen Auftrags (Leitfaden §7.5) — nach den Heften, in beiden Spuren derselbe.
+  const ga = d.set?.gemeinsamer_auftrag
+  if (ga) {
+    out.push({
+      datei: 'auftragsbogen',
+      titel: `Auftragsbogen · ${ga.titel ?? ''}`.trim(),
+      markup: () =>
+        renderToStaticMarkup(<DocAuftragsbogen set={d.set} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
+      docx: () => buildAuftragsbogen({ set: d.set, abteilung, logoPng }),
+    })
   }
   return out
 }
