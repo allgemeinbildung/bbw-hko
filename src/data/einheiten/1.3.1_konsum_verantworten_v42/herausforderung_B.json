@@ -90,13 +90,13 @@
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Momentaner Wunsch vs. langfristige finanzielle Sicherheit",
-    "hint": "Sparen ist nicht automatisch besser. Ein Budget ohne jeden Spielraum hält niemand lange durch — entscheidend ist, dass es bis Monatsende trägt und Sie es vertreten können."
+    "hint": "Sparen ist nicht automatisch besser. Ein Budget ohne Spielraum hält niemand durch — entscheidend ist, dass es bis Monatsende trägt und Sie es vertreten können."
   },
   "quellen_anker": [
     {
       "ref": "Kap. 2.1",
-      "titel": "Lohnbestandteile — Brutto/Netto und Sozialabzüge",
-      "unterueberschrift": "Bruttolohn, Nettolohn, obligatorische Abzüge",
+      "titel": "Lohnbestandteile — Brutto und Netto",
+      "unterueberschrift": "Sozialabzüge",
       "seiten": "Seite 46-47",
       "fuer_leitfrage": [
         2
@@ -104,8 +104,8 @@
     },
     {
       "ref": "Kap. 2.2",
-      "titel": "Budget — fixe und variable Kosten, Rückstellungen",
-      "unterueberschrift": "Budgeterstellung und Budgetpositionen",
+      "titel": "Budget — fixe und variable Kosten",
+      "unterueberschrift": "Rückstellungen, Saldo",
       "seiten": "Seite 48-49",
       "fuer_leitfrage": [
         1,
@@ -114,8 +114,8 @@
     },
     {
       "ref": "Kap. 8.2",
-      "titel": "Schulden und Betreibung — Schuldenfalle und Prävention",
-      "unterueberschrift": "Verschuldung und Tipps zur Schuldenvermeidung",
+      "titel": "Schulden und Betreibung",
+      "unterueberschrift": "Ursachen, Folgen, Vermeidung",
       "seiten": "Seite 199-200",
       "fuer_leitfrage": [
         3,
@@ -130,7 +130,7 @@
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 2.2 | S. 48",
-      "text": "Erklären Sie die drei Kostenarten eines Budgets (fix, variabel, Rückstellungen) und wie aus einer offenen Rechnung eine Schuldenspirale entstehen kann.",
+      "text": "Erklären Sie die drei Kostenarten eines Budgets (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale. Zeigen Sie an der offenen Rechnung, wie eine solche Spirale beginnen kann.",
       "liefert": "Budgetgliederung und Risikobegriffe",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 35,
@@ -175,7 +175,7 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.1 | S. 46-47 · Kap. 2.2 | S. 48 · eigener Fall",
-      "text": "Erstellen Sie Ihr Monatsbudget mit eigenen, realistischen Zahlen — geschätzte genügen. Gliedern Sie nach den drei Kostenarten, nehmen Sie Abos und offene Rechnung auf und berechnen Sie den Saldo. Ab welchem Tag wird es knapp?",
+      "text": "Erstellen Sie Ihr Monatsbudget mit realistischen Zahlen — geschätzte genügen. Gliedern Sie nach den drei Kostenarten, nehmen Sie Abos und offene Rechnung auf und berechnen Sie den Saldo. Ab welchem Tag wird es knapp?",
       "liefert": "Budget mit Saldo und Engpass",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 45,
@@ -258,7 +258,7 @@
         "Begründung nachvollziehbar und strukturiert.",
         "Schlüssig, differenziert, Gegenargumente und Folgen berücksichtigt."
       ],
-      "indikator_produkt": "Jede Anpassung hat einen Grund; im Gespräch wird der Einwand beantwortet, nicht übergangen."
+      "indikator_produkt": "Jede Anpassung ist begründet; im Gespräch wird der Einwand beantwortet, nicht übergangen."
     },
     {
       "kn_kriterium": "Wirtschaftliches Prinzip",
@@ -269,7 +269,7 @@
         "Der Zusammenhang wird korrekt auf die Situation angewendet.",
         "Das Prinzip wird auf neue Zusammenhänge übertragen (Transfer)."
       ],
-      "indikator_produkt": "Der Engpass ist rechnerisch geschlossen; die Schutzregeln setzen bei den Schuldenwegen aus LF3 an."
+      "indikator_produkt": "Engpass rechnerisch geschlossen; Schutzregeln setzen bei den Schuldenwegen aus LF3 an."
     }
   ],
   "lernfortschritt": {
@@ -401,7 +401,7 @@
   },
   "prinzip_handoff": {
     "kernkonzept": "Realistisch planen, Engpässe und Schuldenwege erkennen, Anpassungen begründet vertreten",
-    "lehrmittel_anker": "Kap. 2.1 S. 46-47, Kap. 2.2 S. 48-49, Kap. 8.2 S. 199-202.",
+    "lehrmittel_anker": "Kap. 2.1 S. 46-47, Kap. 2.2 S. 48-49, Kap. 8.2 S. 199-200.",
     "kn_aktivierung": "Im KN muss die Lernende prüfen, ob die Leasingrate in ihr Budget passt, und den Entscheid begründen — ohne dass Leasing in Heft B als Fall vorkommt.",
     "transfer_check": "Kann die Lernende ein knappes Budget mit eigenen Zahlen aufstellen, Schuldenrisiken benennen und eine Anpassung gegen einen Einwand verteidigen?"
   },
@@ -425,12 +425,12 @@
         {
           "nr": 3,
           "bloom": "Analysieren",
-          "knoten_ref": "Kap. 8.2 | S. 199–200",
+          "knoten_ref": "Kap. 8.2 | S. 199-200",
           "text": "Werten Sie Ihr Raster aus: Welche Ursachen und Folgen von Verschuldung nennt das Lehrmittel — und welche zeigt sich schon in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
           "liefert": "Schuldenwege mit Beleg",
           "antwortform": "raster",
           "raster": {
-            "knoten_ref": "Kap. 8.2 | S. 199–200",
+            "knoten_ref": "Kap. 8.2 | S. 199-200",
             "auftrag": "Lesen Sie Kap. 8.2 S. 199–200. Tragen Sie vier Aussagen ein, die Ursachen oder Folgen von Verschuldung zeigen. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
             "spalten": [
               "Absatz",
@@ -459,9 +459,9 @@
             "produkt": "Die Schuldenwege bestimmen, wo Ihre Schutzregeln ansetzen."
           },
           "loesung": {
-            "kern": "Ursachen und Folgen von Verschuldung nach Kap. 8.2, am eigenen Budget gezeigt",
-            "quelle_ref": "Kap. 8.2 | S. 199–200",
-            "quelle_stand": "2026-10-01, am Lehrmitteltext geprüft",
+            "kern": "Ursachen und Folgen von Verschuldung, am eigenen Budget",
+            "quelle_ref": "Kap. 8.2 | S. 199-200",
+            "quelle_stand": "2026-10-01",
             "zeilen": [
               {
                 "label": "Erwartet",
@@ -482,9 +482,9 @@
         {
           "nr": 4,
           "bloom": "Beurteilen",
-          "knoten_ref": "Kap. 8.2 | S. 199–200 · eigenes Budget",
+          "knoten_ref": "Kap. 8.2 | S. 199-200 · eigenes Budget",
           "pol_typ": "position_gegenposition",
-          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Prüfen Sie Ihre wichtigste Anpassung gegen den stärksten Einwand, zum Beispiel «Dann lebst du nur noch fürs Sparen». Bleiben Sie dabei — und warum?",
+          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Prüfen Sie Ihre wichtigste Anpassung gegen den stärksten Einwand, etwa «Dann lebst du nur noch fürs Sparen». Bleiben Sie dabei — und warum?",
           "liefert": "Anpassungen, Schutzregeln, Antwort auf Einwand",
           "antwortform": "schreibfeld",
           "feld_hoehe_mm": 45,
@@ -586,9 +586,9 @@
         {
           "nr": 4,
           "bloom": "Beurteilen",
-          "knoten_ref": "Kap. 8.2 | S. 199-202 · eigenes Budget",
+          "knoten_ref": "Kap. 8.2 | S. 199-200 · eigenes Budget",
           "pol_typ": "position_gegenposition",
-          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Prüfen Sie Ihre wichtigste Anpassung gegen den stärksten Einwand, zum Beispiel «Dann lebst du nur noch fürs Sparen». Bleiben Sie dabei — und warum?",
+          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Prüfen Sie Ihre wichtigste Anpassung gegen den stärksten Einwand, etwa «Dann lebst du nur noch fürs Sparen». Bleiben Sie dabei — und warum?",
           "liefert": "Anpassungen, Schutzregeln, Antwort auf Einwand",
           "antwortform": "schreibfeld",
           "feld_hoehe_mm": 60,
@@ -613,7 +613,7 @@
                 "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
                 "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
               ],
-              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und streiche Take-away unter der Woche. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regel: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.»",
+              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und kürze Kleider und Schuhe. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regel: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.»",
               "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte und lege dafür 30 Franken als Rückstellung zur Seite. Regel: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort.»",
               "nicht_tragfaehig": "Nur Rückstellungen streichen; Regeln ohne Überprüfbarkeit («Ich will sparsamer sein»); den Einwand übergehen."
             }
