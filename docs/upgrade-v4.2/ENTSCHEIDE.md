@@ -111,3 +111,57 @@ gedruckt ist: Ordner umbenennen, IDs ersetzen, Index neu bauen.
 Swissdox läuft in keinem der parallelen Worker (bekannte Ausfälle); fehlt ein
 Volltext, holt ihn ein einzelner Nachlauf.
 **Alternative:** acht Worker wie im Brief skizziert.
+
+## E7 — Heft A, LF3 ohne Medien: Lehrmittel-Abschnitt ist Kap. 2.7, S. 73–77
+
+**Befund (am lokalen Text `material/_lehrmittel/2.7_Preisbildung.md`, Marker
+`[seite: NN]`):** Einen Abschnitt «Einflüsse auf Bedürfnisse» gibt es im
+Lehrmittel nicht — weder in 2.7 noch in den Kapiteln der Crosswalk-Zeile
+(4J 1.3 = 3J 3.1: 2.1, 2.2, 2.3, 8.2, 2.6) noch in 7.1 oder 1.2. Belegt ist in
+2.7: Werbung weckt neue Bedürfnisse (S. 73), das begrenzte Einkommen zwingt zur
+Auswahl und ein tieferer Preis erhöht die nachgefragte Menge (S. 74), mehr
+verfügbares Geld dehnt die Nachfrage aus (S. 76), ein Trendprodukt steigert die
+Nachfrage, eine Krise senkt sie (S. 77).
+
+**Entscheid:** `knoten_ref` = `Kap. 2.7 | S. 73–77`. LF3 fragt, wodurch
+**Kaufwünsche und Nachfrage** beeinflusst werden, statt nach «Einflüssen auf
+Bedürfnisse». Die Beispielzeile belegt die Werbung (S. 73). Umfeld, Kollegen
+und Spontankauf gelten in der Lösung als eigene Beobachtung der Lernenden,
+nicht als Lehrmittelwissen. Formulierung übernommen aus der Fachprüfung der
+Parallelsession (E9), von mir am Text nachgeprüft (S. 73, 74, 75, 76, 77).
+**Grund:** Dasselbe Kapitel wie LF1 und LF2; vier belegbare Aussagen.
+**Alternative:** nur S. 73–74 (kürzer zu lesen, aber nur drei sichere Belege);
+Kap. 8.2 S. 199 — verworfen, weil das der Abschnitt von Heft B ist.
+**Offen für das Blindleser-Panel:** ob fünf Seiten in den zehn Leseminuten von
+Seite 3 tragen; der Strategiehinweis nennt die drei Fundseiten.
+**Rückgängig:** `spuren.ohne_medien.leitfragen[0]` in `herausforderung_A.json`.
+
+## E8 — Feedback-Kriterien: KN-Wortlaut geht vor Fall-Ausschluss
+
+**Befund:** Die Stufe 1 des KN-Kriteriums «Fachkorrektheit» lautet «Begriffe
+(Bedürfnis, Budget, Leasing/Kredit) fehlen …». Invariante 8 verlangt den
+Wortlaut des KN im Heft, Invariante 9 verbietet «Leasing» in Heft A.
+**Entscheid:** Der Wortlaut bleibt (Invariante 8). `check-v42.mjs` nimmt
+`feedback_kriterien[].stufen` vom Fall-Ausschluss aus.
+**Grund:** Der Ausschluss schützt den Fall des KN (E-Bike-Leasing), nicht das
+Wort im Raster; das Raster ist dasselbe, das die Lernenden im KN sehen.
+**Alternative:** Kriterientext im Heft kürzen — verletzt Invariante 8.
+
+## E9 — Vorarbeit der Parallelsession: was übernommen, was verworfen ist
+
+Eine zweite Session («Produktionspipeline») hat am 01.10.2026 kurz denselben Bau
+begonnen und dann übergeben (`UEBERGABE-parallelsession.md`).
+
+| Vorarbeit | Entscheid |
+|---|---|
+| `VERTRAG.md` (eigener Datenvertrag: `spuren` bleibt im Heft, Umschalten im Browser) | **verworfen**, aus dem Repo entfernt. Es gilt E3. |
+| `types.ts`: Felder `leitfragen_kern`, `methoden_kern`, `spur_aktiv`, `Quelle.karte`, `Quelle.ref`, `Spur.methode_rezeption`, Alias `Raster` | **verworfen** (gehören zum verworfenen Vertrag) |
+| `types.ts`: `Abschluss`, `Wochenplan`, `kompetenzen` pro Heft, `hat_spuren`, `hat_medien` | **übernommen** (vertragsneutral) |
+| `spur.ts`, `quellen.ts`, Änderungen in `index.ts`, Index-Flags | dem Resolver-Executor als Vorarbeit übergeben; Ergebnis muss E3 erfüllen, eine Implementierung in `spuren.ts` |
+| `check-v42.mjs`, angepasste Checks, `check:v42` in package.json | dem Prüfskript-Executor als Ausgangsstand übergeben |
+| Fachkorrekturen in `herausforderung_A.json` / `_B.json` (Kern und `spuren.ohne_medien`) | **übernommen** — es sind Sachfehler-Korrekturen am Lehrmittel: Seitenbereiche (2.7 → 73–75, 17.2 → 381–383, 8.2 → 199–200), Buchbenennungen (Dazugehörigkeit, Lebenswichtiges), Beispiele für Existenz-/Wahlbedürfnis und variable Kosten wie im Buch, Sozialabzüge erst ab dem Jahr des 18. Geburtstags, «Schuldenspirale» steht in Kap. 2.2 S. 48, «Mahnung» in Kap. 2.4 S. 62; Heft B LF3 fragt nach «Ursachen und Folgen von Verschuldung». |
+
+**Grund für die Übernahme der Daten:** Der Brief erlaubt Textänderungen bei
+Sachfehlern; jede Seitenangabe ist am Lehrmitteltext bestätigt, Stichproben
+von mir nachgeprüft (2.7 S. 73–77, 17.2 S. 381–383).
+**Rückgängig:** `git diff 7d5abd4 -- src/data/einheiten/1.3.1_konsum_verantworten_v42/`.

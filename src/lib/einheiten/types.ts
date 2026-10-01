@@ -285,6 +285,18 @@ export interface GemeinsamerAuftrag {
   bogen?: string[]
 }
 
+/** Seite 8 unten: Quer-Check und Mitnahme in den gemeinsamen Auftrag. */
+export interface Abschluss {
+  quercheck?: string[]
+  mitnahme?: string[]
+}
+
+export interface Wochenplan {
+  woche: number
+  lektionen: number
+  inhalt: string
+}
+
 export interface GlossarEintrag {
   begriff: string
   definition: string
@@ -364,7 +376,7 @@ export interface SituationJson {
   /** v4.2: genau zwei KN-Kriterien (1 SuK + 1 Ges); ersetzt `lernfortschritt.kriterien` im Rendering. */
   feedback_kriterien?: FeedbackKriterium[]
   /** v4.2: Seite 8 unten; ersetzt `reflexion_fragen` im Rendering. */
-  abschluss?: { quercheck?: string[]; mitnahme?: string[] }
+  abschluss?: Abschluss
   mindmap_zentrum?: string
   /** `transfer: true` (v4.2) markiert den einen Ast «gilt auch bei …». */
   mindmap_aeste?: { titel: string; optional?: boolean; punkte?: string[]; transfer?: boolean }[]
@@ -467,7 +479,7 @@ export interface SetJson {
    */
   spur?: SpurKey | 'wahl'
   /** v4.2: 12 Lektionen über vier Wochen. */
-  wochenplan?: { woche: number; lektionen: number; inhalt: string }[]
+  wochenplan?: Wochenplan[]
   /** v4.2: ersetzt `austausch_phase` und `dekontextualisierungs_aufgabe` im Rendering. */
   gemeinsamer_auftrag?: GemeinsamerAuftrag
   /** v4.2: Glossar der Einheit (Auftragsbogen Seite A3). */
@@ -523,7 +535,7 @@ export interface PrinzipJson {
   topic_slug?: string
   kern_kompetenzversprechen?: string
   bloom_zielprofil?: Record<string, string>
-  herausforderungen?: Record<string, { herausforderung: string; konfliktart: string; handlungsprodukt_typ?: string; transferrable?: boolean }>
+  herausforderungen?: Record<string, { herausforderung: string; konfliktart: string; handlungsprodukt_typ?: string; transferrable?: boolean; /** v4.2: Kompetenzen pro Heft */ kompetenzen?: string[] }>
   sk_pro_situation?: Record<string, number[]>
   sk_schnittmenge_kn?: { primary: number[] }
   aspekte?: Record<string, string>
@@ -693,6 +705,10 @@ export interface EinheitIndexEntry {
   hat_methoden: boolean
   /** EBA-Wissens-Dossier (dossier.json) vorhanden. */
   hat_dossier: boolean
+  /** v4.2 — mindestens eine Herausforderung führt `spuren`. */
+  hat_spuren?: boolean
+  /** v4.2 — mindestens eine Herausforderung hat die Spur `mit_medien`. */
+  hat_medien?: boolean
   hybrid_situation_titel: string | null
   kn_typen: { typ: string; label: string }[]
   bundle_dateien: number
