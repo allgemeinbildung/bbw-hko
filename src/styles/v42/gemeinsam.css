@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Heft v4.2 — gemeinsame Hülle und Bausteine (Leitfaden docs/upgrade-v4.2 §3).
+   Wird nur für Einheiten mit v4.2-Heft an das Renderer-CSS angehängt
+   (src/lib/einheiten/css-v42.ts); Bestandseinheiten sehen diese Datei nie.
+   Präfix `.v42-`. Keine neuen Farb-Token: ein Akzent (--sit-akzent) plus
+   Schwarz/Weiss (--ink …, --paper). Seitenspezifisches: heft-1-4.css / heft-5-8.css.
+   ========================================================================== */
+
+/* Seitenkörper: Blöcke stapeln, Abstand einheitlich statt je Baustein. */
+.v42-seite { gap: 3mm; }
+
+/* Seitenkopf — SectionHead mit Seitennummer, ohne Zusatzabstand oben. */
+.v42-seitenkopf .section-head { margin-bottom: 0; }
+
+/* Kasten — Akzentlinie links, sonst ungefüllt (druckt auch im Graudruck klar). */
+.v42-kasten {
+  border: 0.75pt solid var(--rule);
+  border-left: 3pt solid var(--sit-akzent);
+  padding: 2.5mm 3.5mm;
+  break-inside: avoid;
+}
+.v42-kasten-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sit-akzent);
+  margin-bottom: 1.5mm;
+}

@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react'
 import { A4Page, Badge, HandlungsFlaeche, Schreibfeld, SectionHead, sitColors } from './chrome'
 import type { SituationJson, SetJson } from '../../../lib/einheiten/types'
+import { isV42 } from '../../../lib/einheiten/spuren'
+import { DocHeftV42 } from './DocHeftV42'
 
 export interface DocSProps {
   sit: SituationJson
@@ -955,6 +957,8 @@ function DocSFill({ sit, abteilung, mode, edits, onEdit, kompetenzNr, abgedeckte
 }
 
 export function DocS(props: DocSProps) {
+  // Heft v4.2: eigene Hülle mit acht festen Seiten, in beiden Modi (Leitfaden §3).
+  if (isV42(props.sit)) return <DocHeftV42 {...props} />
   if (props.mode === 'info') return <DocSInfo {...props} />
   return <DocSFill {...props} />
 }

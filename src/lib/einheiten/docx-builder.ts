@@ -21,6 +21,8 @@ import {
   p, h, sectionHead, badgeRun, spacer, pageBreak, sourceRefRun,
   tcell, dataTable, schreibfeld, skizzeBox, callout, sectionProps,
 } from './docx-primitives'
+import { isV42 } from './spuren'
+import { buildHeftV42 } from './docx-heft-v42'
 
 
 function sitPalette(sit: SituationJson | null | undefined) {
@@ -662,7 +664,10 @@ export interface BuildDocSOpts {
   logoPng?: ArrayBuffer | Uint8Array | null
 }
 
-export function buildDocS({ sit, abteilung, mode, logoPng = null }: BuildDocSOpts): Document {
+export function buildDocS(opts: BuildDocSOpts): Document {
+  // Heft v4.2: eigener Builder mit acht festen Seiten (Leitfaden §3) — Spiegel der Weiche in DocS().
+  if (isV42(opts.sit)) return buildHeftV42(opts)
+  const { sit, abteilung, mode, logoPng = null } = opts
   const palette = sitPalette(sit)
   const akzent = palette.akzent
   const light = palette.light

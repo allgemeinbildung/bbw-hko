@@ -7,7 +7,8 @@ import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 import { ladeErfahrungen } from '../../lib/erfahrungen'
 import Erfahrungen from '../../components/einheiten/Erfahrungen.astro'
 import { skNameByNr, skTooltip } from '../../lib/sk-labels'
-import cssRenderer from '../../styles/einheiten-renderer.css?raw'
+import cssRendererBasis from '../../styles/einheiten-renderer.css?raw'
+import { cssFuerEinheit } from '../../lib/einheiten/css-v42'
 import cssBegleiter from '../../styles/einheiten-begleiter.css?raw'
 
 const user = Astro.locals.user
@@ -36,6 +37,9 @@ const fullSet = loadEinheit(setKey)
 if (!meta || !fullSet) {
   return new Response('Einheit nicht gefunden', { status: 404 })
 }
+// Heft v4.2: dessen CSS kommt nur dazu, wenn die Einheit Spuren hat — sonst bleibt
+// der String (Vorschau wie Download) Zeichen für Zeichen der bisherige.
+const cssRenderer = cssFuerEinheit(cssRendererBasis, fullSet)
 
 // Sichtbarkeit: ganze Entwurf-Einheiten sind für lp/gast nicht direkt aufrufbar.
 if (isEntwurf(meta) && role !== 'kt1') {
