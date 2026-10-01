@@ -281,3 +281,114 @@ Prüfung am Beispiel Handy». Die Rezeptionskarte ist von Pietro freigegeben,
 **Alternative:** drei Beispielkarten mit gestauchten Abständen stehen lassen.
 **Rückgängig:** `methoden[3]` in `herausforderung_A.json` (vorher
 `lm-20-3-smart`, `fuer`: «für den Massstab-Satz»).
+
+## E14 — Nach den Lese-Panels: Pflicht- und Ersatzquelle von Heft B getauscht
+
+**Gilt anstelle der zwei Zeilen `q-131b-pflicht` und `q-131b-pflicht-ersatz`
+in E11.**
+
+**Befund (Kohärenz-Audit und Blindleser Heft B mit Medien, übereinstimmend):**
+Die BFS-Grafik «Steuerrückstand 2024» zeigt, **wer** im Rückstand ist, nicht
+**wie** man in Schulden gerät. Schritt 03 («Posten markieren, die zu Schulden
+führen können») und der Indikator («Schutzregeln setzen bei den Schuldenwegen
+aus LF3 an») hatten in der Medien-Spur keine Grundlage. Dazu ist die Grafik für
+16-Jährige schwer zu lesen: Die Balken reichen bis ans Ende des
+Vertrauensbereichs, «18–24 Jahre» sieht länger aus als «25–49 Jahre», obwohl
+der Wert kleiner ist; Bildung und Erwerb gelten erst ab 18.
+
+**Entscheid:**
+
+| Karte | Neu | Vorher |
+|---|---|---|
+| `q-131b-pflicht` | Schuldenberatung Schweiz, Statistik 2025, Seite 7: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (116 Wörter) | BFS, «Steuerrückstand 2024» |
+| `q-131b-pflicht-ersatz` | BFS, «Steuerrückstand 2024», Zeilen Gesamt, Alter, Bildung, Erwerb | Schuldenberatung Schweiz, Seite 7 |
+
+Die IDs bleiben, die Inhalte der Karten und der Archivordner sind getauscht.
+LF3 der Medien-Spur fragt neu nach den **Gründen** und führt zum eigenen Budget.
+**Zugeständnisse der neuen Pflichtquelle:** ein PDF (der Link zeigt auf Seite 7,
+manche Handys öffnen trotzdem Seite 1); Ratsuchende sind meist 30–49 Jahre alt;
+die Seiten 8–9 desselben PDF nennen Kredite — ausserhalb der Verortung
+(Lesart E11). Die Tabelle ist eine Mehrfachnennung; die Prozente lassen sich
+nicht zusammenzählen.
+**Alternative:** BFS behalten und Schritt 03 samt Indikator umschreiben —
+das hätte den Kern von Heft B für eine einzige Spur verbogen (Invariante 7).
+**Rückgängig:** die zwei Karten und die zwei Archivordner zurücktauschen,
+LF3 der Medien-Spur aus `git show 7651a4e` übernehmen.
+
+## E15 — Befunde der Panels: was geändert ist, was bewusst bleibt
+
+Neun Sonnet-Worker (vier Blindleser, zwei Kohärenz-Audits, zwei Fachprüfungen
+am Lehrmittel, ein Abgrenzungs-Audit) haben am 02.10.2026 die gerenderten
+Hefte und die Daten geprüft. Keine Seitenangabe und keine Fachaussage war
+falsch; die Befunde betrafen Verständlichkeit, Kohärenz und Abgrenzung.
+
+**Geändert (Commit 53d4954 und folgende)**
+
+- *Raster ohne Medien:* Der Auftrag verlangte «vier Aussagen», das Raster hat
+  mit der Beispielzeile nur drei leere Zeilen. Neu: «drei weitere Aussagen …
+  Die erste Zeile ist ein Beispiel» (A und B). Die Spalte «Begründung», die
+  Heft A verlangte, gab es nicht — gestrichen.
+- *Heft B, LF2:* «Ab welchem Tag wird es knapp?» war aus einem Monatsbudget
+  nicht zu beantworten. Neu sammelt LF2 die Zahlen und fragt «Bei welchen
+  Posten wird es knapp?»; das saubere Budget entsteht auf Seite 7.
+- *Heft B, Schritt 04 und Abgaben:* Anpassungen «je mit Grund», die Regeln
+  «setzen bei den Posten aus Schritt 03 an», eine Anpassung gilt der offenen
+  Rechnung — damit haben beide Feedback-Kriterien und der Quer-Check einen
+  Beleg im Produkt.
+- *LF4-Beispiele (nur Lehrperson):* Heft A — beide Pole anerkennen jetzt die
+  Spannung «Wunsch jetzt, Sicherheit später», die die höchste Stufe des
+  Kriteriums verlangt; die Zusage steht unter der genannten Annahme, dass das
+  eigene Handy ersetzt werden muss; der Satzanfang «Die Quelle zeigt aber …»
+  kippte die Antwort und heisst neu «Die Quelle zeigt, dass … — bei mir heisst
+  das …». Heft B — beide Beispiele nennen zwei Schutzregeln und die offene
+  Rechnung.
+- *Markieren:* «Farbe oder Symbol» einheitlich; «Einfluss» statt des
+  dreideutigen «Quelle» in Schritt 03 von Heft A.
+- *Abgrenzung:* Das Plus-Szenario von Heft B («Zahnarztrechnung CHF 300») war
+  der Fall des gemeinsamen Auftrags — neu «Optikerrechnung CHF 250».
+  «Arbeitsweg» in der Situation von Heft A (Gegenstand des KN) heisst neu
+  «unterwegs». «Leben auf Pump» ist aus der Beispielzeile von Heft B
+  verschwunden.
+- *Methodenkarte der Rezeption:* Das Kartenbeispiel («Mehrheit kauft nach
+  Video-Empfehlung · 6 von 10 · Influencer-Marketing») sah in Heft A aus wie ein
+  Befund aus der Pflichtquelle und nannte einen Begriff, der nicht aus LF1
+  stammt. Die Hefte überschreiben das Beispiel jetzt mit einem neutralen
+  (Vereinssport), die Karte selbst ist unverändert.
+- *Lehrmittel-Zeilen, Glossar, Anker:* Titel und Untertitel nennen, was im
+  Buch steht («Bedürfnis, Bedürfnisarten, Nachfrage»; «Notiztechniken,
+  Markierungen»); Kap. 2.2 nur S. 48; Glossar «Nettolohn», «Rückstellung»,
+  «Schuldenspirale» ohne Zusätze, die nicht im Buch stehen.
+- *«Spur» in Lernenden-Texten* (Wochenplan, Plus) ist ersetzt — das Wort
+  gehört der Lehrperson.
+
+**Bewusst nicht geändert**
+
+- *Schreibfelder* LF1 35 mm, LF2 45 mm, Befund 25 mm: mehrere Blindleser finden
+  sie knapp. Die Höhen sind im Leitfaden §3.1 hart vorgegeben. → Bericht.
+- *Zeit:* Lektion 3 trägt nach den Seitenminuten 60 statt 45 Minuten
+  (Seite 5: 5, Seite 7: 40, Seite 8: 15). Das ist die Rechnung des Leitfadens
+  (135 Minuten über drei Lektionen, Produkt beginnt in Lektion 2). → Bericht.
+- *Feedback-Kriterien im KN-Wortlaut:* «Fachkorrektheit» nennt «Budget,
+  Leasing/Kredit», «Wirtschaftliches Prinzip» verlangt auf Stufe 3 «Transfer» —
+  beides kommt im einzelnen Heft nicht vor. Invariante 8 (Wortlaut) geht vor;
+  der Indikator darunter sagt, woran es im Heft zu sehen ist. → Begleiter.
+- *Mitnahme-Zeilen* «Mein Entscheid», «Meine wichtigste Anpassung», «Mir noch
+  unklar»: Der gemeinsame Auftrag braucht sie nicht wörtlich. Sie sind im
+  Leitfaden §6.3 fest vorgegeben.
+- *Kategorie «geweckt, aber berechtigt»:* bleibt (Pietros Entscheid 1).
+- *«Zug» im gemeinsamen Auftrag* («Camping, Essen und Zug»): Wortlaut des
+  Leitfadens §9.2; ein Kostenposten, nicht der Gegenstand des KN.
+- *KN übernimmt Szenenelemente aus A und B* (zwei aus dem Team, Konto vor dem
+  20. eng): so angelegt (`alignment_note`), KN unverändert.
+- *Sprache der Pflichtquelle von Heft A:* «algorithmisch», «Kaufimpulse»,
+  indirekte Rede. Kein besserer geprüfter Kandidat; der Begleiter weist darauf
+  hin.
+- *Bestehende Methodenkarten* (`lm-17-3-3b-schema`: Seite 394 statt 394–395;
+  `lm-16-2-statement`: Merksatz nicht im Kapitel): ausserhalb des Zauns
+  (Invariante 11). → Bericht.
+
+**An den Renderer gegeben** (eigener Auftrag): fehlende Schreiblinie bei der
+ersten Mitnahme-Zeile (Seite 8); Anweisung zur Mindmap sagt nicht, was beim
+Ast «gilt auch bei …» einzutragen ist und woher die Raster-Begriffe kommen;
+die Arbeitsanweisung auf Seite 1 («Markieren Sie die Fragen …») meint Stellen,
+nicht Fragen; «gemeinsamer Auftrag» wird auf Seite 8 nicht verortet.
