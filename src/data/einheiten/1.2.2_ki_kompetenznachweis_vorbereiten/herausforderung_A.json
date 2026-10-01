@@ -391,6 +391,26 @@
       ]
     }
   },
+  "methoden": [
+    {
+      "ref": "hko-prompt-schaerfen",
+      "fuer": "für die drei Prompts des Protokolls"
+    },
+    {
+      "ref": "hko-methodennotiz",
+      "fuer": "für den Kommentar zum stärksten Prompt"
+    },
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für das gekürzte Festhalten der KI-Antworten",
+      "tun": "Kürzen Sie jede KI-Antwort auf Schlüsselwörter. Das Protokoll soll Ihren Lernweg zeigen, nicht die Länge der Antworten."
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für den Kurzkommentar von zwei bis drei Sätzen",
+      "tun": "Schreiben Sie den Kommentar in drei Zügen: welcher Prompt, was er bewirkt hat, warum er stärker war als die anderen."
+    }
+  ],
   "reflexion_fragen": [
     {
       "nr": "R1",

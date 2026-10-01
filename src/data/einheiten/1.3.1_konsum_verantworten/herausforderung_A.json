@@ -273,6 +273,27 @@
 
   "bereitet_vor": {"fuer": ["B", "C"], "material": "Bedürfnis-Landkarte mit Massstab-Satz", "verbindlich": false},
 
+  "methoden": [
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für die Schlüsselwörter an der Landkarte",
+      "tun": "Schreiben Sie pro Bedürfnis nur ein Stichwort ins Feld, keinen ganzen Satz. Was nicht hineinpasst, gehört in die Legende."
+    },
+    {
+      "ref": "lm-20-1-cluster",
+      "fuer": "für das Sammeln und Ordnen der Bedürfnisse",
+      "tun": "Sammeln Sie zuerst alle Bedürfnisse ohne Zensur um das Kernwort «ich», und ordnen Sie danach nach den Kategorien aus LF1."
+    },
+    {
+      "ref": "hko-bedarf-oder-wunsch",
+      "fuer": "für die Markierung echt oder geweckt"
+    },
+    {
+      "ref": "lm-20-3-smart",
+      "fuer": "für den Massstab-Satz am Kartenrand",
+      "tun": "Formulieren Sie Ihren Massstab so, dass Sie in einem Monat mit Ja oder Nein sagen können, ob Sie ihm gefolgt sind."
+    }
+  ],
   "reflexion_fragen": [
     {"nr": "R1", "text": "Was hat mich beim Ordnen meiner Bedürfnisse überrascht?", "sub": null, "feld_hoehe_mm": 10},
     {"nr": "R2", "text": "Wo im Lehr- und Schulalltag beeinflusst mein Umfeld meine Kaufentscheidungen am stärksten?", "sub": null, "feld_hoehe_mm": 10},

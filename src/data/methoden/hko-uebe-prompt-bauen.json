@@ -1,0 +1,20 @@
+{
+  "id": "hko-uebe-prompt-bauen",
+  "name": "Übe-Prompt bauen",
+  "quelle": "hko",
+  "fuer": "für Prompts, mit denen die KI abfragt statt vorzusagen",
+  "schritte": [
+    "Thema und Stoff benennen, der geprüft werden soll.",
+    "Die KI in die Rolle der Abfragenden setzen.",
+    "Spielregeln festlegen: eine Frage nach der anderen, Rückmeldung nach jeder Antwort.",
+    "Den Prompt im Chat testen und eine Schwäche verbessern."
+  ],
+  "ankommt": "Der Prompt ist gut, wenn die KI warten muss, bis ich antworte — wenn sie sofort alles liefert, hat sie meine Arbeit übernommen.",
+  "beispiel": [
+    "Thema: Verkehrsregeln für die Theorieprüfung",
+    "«Du bist Fahrlehrer. Frag mich zu den Vortrittsregeln ab. Stell nur eine Frage, warte auf meine Antwort und sag mir danach, was noch fehlt.»",
+    "Test: Frage 1 kommt allein, die Auflösung erst nach meiner Antwort. → gelungen"
+  ],
+  "fehler": "Die KI stellt zehn Fragen mit Lösungen auf einmal. Abhilfe: Die Regel «eine Frage, dann warten» ausdrücklich in den Prompt schreiben.",
+  "merk": "Rolle: abfragen. Regel: warten. Rückmeldung: nach jeder Antwort."
+}

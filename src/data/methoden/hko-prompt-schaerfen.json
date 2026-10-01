@@ -1,0 +1,20 @@
+{
+  "id": "hko-prompt-schaerfen",
+  "name": "Einen Prompt schärfen",
+  "quelle": "hko",
+  "fuer": "für das schrittweise Verbessern einer Frage an die KI",
+  "schritte": [
+    "Ersten Prompt bewusst vage aufschreiben und die Antwort kürzen.",
+    "Vier Bausteine ergänzen: Rolle, Ziel, Kontext, Format.",
+    "Einen Prompt mit Kontrollfrage stellen: Die KI soll mich abfragen.",
+    "Vorher und nachher nebeneinander legen und die Stelle markieren, die besser wurde."
+  ],
+  "ankommt": "Der dritte Prompt verlangt nicht noch mehr Erklärung, sondern eine Kontrollfrage — erst dort wird aus Lesen ein Lernen.",
+  "beispiel": [
+    "Prompt 1: «Erklär mir Kochen.» → drei Seiten Allgemeines",
+    "Prompt 2: «Du bist meine Kochlehrerin. Ich bin Anfänger und will ein Risotto selbst kochen. Gib mir fünf Schritte.» → konkret",
+    "Prompt 3: «Frag mich nach jedem Schritt, was ich als Nächstes tue.» → eine Rückfrage, auf die ich antworten muss"
+  ],
+  "fehler": "Drei gleich vage Prompts hintereinander. Erkennbar daran, dass sich die Antworten ähneln — dann fehlt ein Baustein, am häufigsten das Ziel.",
+  "merk": "Rolle, Ziel, Kontext, Format — und am Schluss eine Frage an mich."
+}
