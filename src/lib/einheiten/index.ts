@@ -1,12 +1,16 @@
 import indexJson from '../../data/einheiten.index.json'
-import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson, MethodeRef } from './types'
+import type { EinheitIndexEntry, EinheitFullSet, SituationJson, KnJson, PrinzipJson, SetJson, BegleiterMeta, KiJson, LernpromptJson, LernbegleiterJson, DossierJson, MethodeRef, QuelleRef, SpurKey } from './types'
 import { lehrgaengeOf } from './lehrgang'
 import { resolveMethoden } from './methoden'
+import { resolveQuellen } from './quellen'
+import { SPUR_KEYS, effektiveSpur, isV42, resolveSpur, spurenVerfuegbar } from './spuren'
 import { withLeitfragenLoesungen } from './begleiter-loesungen'
 import { withFeldern } from './begleiter-felder'
 
 export * from './lehrgang'
 export { methodeKarte, alleMethodenKarten, resolveMethoden } from './methoden'
+export { quelleKarte, alleQuellenKarten, resolveQuellen } from './quellen'
+export * from './spuren'
 
 export const einheitenIndex = indexJson as EinheitIndexEntry[]
 
@@ -122,11 +126,60 @@ function withMethoden(sit: SituationJson | null): SituationJson | null {
   return { ...sit, methoden: resolveMethoden(refs) }
 }
 
-export function loadEinheit(slug: string): EinheitFullSet | null {
+/**
+ * Heft v4.2: löst `quellen` (Kürzel aus der eingesetzten Medien-Spur) gegen die
+ * Quellenkartei auf — dasselbe Muster wie `withMethoden`. Nur für v4.2-Hefte; jedes
+ * andere Heft kommt unverändert zurück, auch wenn es zufällig ein Feld `quellen` hätte.
+ */
+function withQuellen(sit: SituationJson | null): SituationJson | null {
+  if (!sit || !isV42(sit)) return sit
+  // Auf der Platte QuelleRef[], im Typ Quelle[] — wie bei `methoden`.
+  const refs = sit.quellen as unknown as QuelleRef[] | undefined
+  if (!Array.isArray(refs)) return sit
+  return { ...sit, quellen: resolveQuellen(refs) }
+}
+
+/**
+ * Ein Heft vom Rohzustand bis zur Renderer-Form (ENTSCHEIDE E3): erst die Spur
+ * einsetzen (`resolveSpur`, dabei wandert die Rezeptionskarte als Referenz an Position 2
+ * von `methoden`), dann die Karteien auflösen. Für Hefte ohne v4.2-Template gibt
+ * `resolveSpur` dasselbe Objekt zurück und `withQuellen` ebenso — übrig bleibt exakt
+ * der Bestandsweg `withMethoden`.
+ */
+function ladeHeft(sit: SituationJson | null, spur: SpurKey): SituationJson | null {
+  return withQuellen(withMethoden(resolveSpur(sit, spur)))
+}
+
+export interface LoadEinheitOptions {
+  /** v4.2: gewünschte Spur. Ohne Angabe gilt `set.spur` (falls nicht `wahl`), sonst `DEFAULT_SPUR`. */
+  spur?: SpurKey
+}
+
+export function loadEinheit(slug: string, opts?: LoadEinheitOptions): EinheitFullSet | null {
   if (!einheitById(slug)) return null
-  const hf_A = withMethoden(pickJson<SituationJson>(slug, 'herausforderung_A'))
-  const hf_B = withMethoden(pickJson<SituationJson>(slug, 'herausforderung_B'))
-  const hf_C = withMethoden(pickJson<SituationJson>(slug, 'herausforderung_C'))
+  const setRaw = pickJson<SetJson>(slug, 'set')
+  const rohA = pickJson<SituationJson>(slug, 'herausforderung_A')
+  const rohB = pickJson<SituationJson>(slug, 'herausforderung_B')
+  const rohC = pickJson<SituationJson>(slug, 'herausforderung_C')
+
+  // v4.2: jede Spur, die mindestens ein Heft führt, wird fertig aufgelöst. Die
+  // Verdopplung des Kerns entsteht erst hier, im Speicher — nie auf der Platte.
+  // Bestandseinheiten haben keine Spur: `varianten` bleibt leer, und das Ergebnis
+  // bekommt weder `spur` noch `spur_varianten`.
+  const varianten: NonNullable<EinheitFullSet['spur_varianten']> = {}
+  for (const key of SPUR_KEYS) {
+    if (![rohA, rohB].some((h) => spurenVerfuegbar(h).includes(key))) continue
+    varianten[key] = { hf_A: ladeHeft(rohA, key), hf_B: ladeHeft(rohB, key) }
+  }
+  const verfuegbar = Object.keys(varianten) as SpurKey[]
+  const wunsch = effektiveSpur(setRaw, opts?.spur)
+  // Hat keines der Hefte die gewünschte Spur, gilt die erste vorhandene (Leitfaden §4.4).
+  const spur: SpurKey | null = verfuegbar.length ? (verfuegbar.includes(wunsch) ? wunsch : verfuegbar[0]) : null
+
+  // Die wirksame Spur ist dieselbe Instanz wie in `spur_varianten` — nichts wird doppelt aufgelöst.
+  const hf_A = spur ? varianten[spur]!.hf_A : ladeHeft(rohA, wunsch)
+  const hf_B = spur ? varianten[spur]!.hf_B : ladeHeft(rohB, wunsch)
+  const hf_C = ladeHeft(rohC, spur ?? wunsch)
   const rawFile = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
   // Die Leitfragen-Lösungen leben in den Herausforderungs-JSONs (C10) und werden hier
   // einmal in den Begleiter gespiegelt — danach sehen HTML, Word und ZIP dieselbe Form.
@@ -134,8 +187,8 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
   // KN-Szene und KN-Fragen stehen kanonisch in den JSONs, der Begleiter zitiert sie nur.
   // Reihenfolge: erst Felder, dann Lösungen — letztere fügen ganze Blöcke ein und
   // sollen dabei bereits aufgelöste Marker sehen.
+  // v4.2: gespiegelt werden vorerst nur die Lösungen der wirksamen Spur (`hf_A`/`hf_B`).
   const knRaw = pickJson<KnJson>(slug, 'kn')
-  const setRaw = pickJson<SetJson>(slug, 'set')
   const prinzipRaw = pickJson<PrinzipJson>(slug, 'prinzip')
   const raw = rawFile
     ? withLeitfragenLoesungen(
@@ -160,6 +213,8 @@ export function loadEinheit(slug: string): EinheitFullSet | null {
     lernprompt: pickJson<LernpromptJson>(slug, 'lernprompt'),
     lernbegleiter: pickJson<LernbegleiterJson>(slug, 'lernbegleiter'),
     dossier: pickJson<DossierJson>(slug, 'dossier'),
+    // Nur v4.2 — bei Bestandseinheiten fehlen beide Schlüssel ganz (Invariante 4).
+    ...(spur ? { spur, spur_varianten: varianten } : {}),
   }
 }
 

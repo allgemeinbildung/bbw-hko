@@ -165,3 +165,39 @@ begonnen und dann übergeben (`UEBERGABE-parallelsession.md`).
 Sachfehlern; jede Seitenangabe ist am Lehrmitteltext bestätigt, Stichproben
 von mir nachgeprüft (2.7 S. 73–77, 17.2 S. 381–383).
 **Rückgängig:** `git diff 7d5abd4 -- src/data/einheiten/1.3.1_konsum_verantworten_v42/`.
+
+## E10 — Kürzungen wegen Zeichenbudget (§3.1) und Restpunkte der Fachprüfung
+
+`check-v42.mjs` meldete 17 Budget-Abweichungen in den Referenztexten. Alle sind
+behoben; der Sinn ist gehalten. Vollständiger Wortlaut vorher/nachher:
+`git show 49519ac`.
+
+| Heft | Feld | Änderung |
+|---|---|---|
+| A | `situation_text` (629, Soll 650–900) | ein Satz ergänzt: «Das Geld fehlt mir seither.» |
+| A | `mehrdeutigkeit.hint` (186 → 154) | gestrafft |
+| A | `quellen_anker` (100, 95 → 89, 89) | Untertitel «Maslow und Bedürfnisarten»; Titel «Dokumentieren — Notizen und Markieren» |
+| A | LF1 `text` (225 → 213) | «zwischen Bedürfnis und Gut» |
+| A | LF4 mit Medien `text` (256 → 219) | gestrafft, Frage und Entscheid bleiben |
+| A | Denkhilfe, Spaltenköpfe (44, 38 → 24, 26) | «Dafür (Bedürfnis, Stufe)», «Dagegen (Einfluss, Kosten)» |
+| B | `mehrdeutigkeit.hint` (171 → 159) | gestrafft |
+| B | `quellen_anker` (120, 114, 129 → 75, 82, 81) | Titel und Untertitel gekürzt |
+| B | LF2 `text` (225 → 216) | «mit realistischen Zahlen» |
+| B | LF4 `text`, beide Spuren (226 → 218) | «etwa» statt «zum Beispiel» |
+| B | `indikator_produkt` (91, 98 → 89, 86) | gestrafft |
+
+Dazu, aus der Übergabe der Fachprüfung (kein Budget, sondern Sachlage):
+
+- **B LF1** fragt neu nach dem **Begriff** Schuldenspirale und lässt den Anfang
+  einer Spirale an der offenen Rechnung zeigen. Vorher verlangte die Frage einen
+  Ablauf «laut Lehrmittel», den Kap. 2.2 nicht liefert.
+- **B LF4 mit Medien:** Beispiel an die Buchbeispiele angeglichen (Kleider und
+  Schuhe statt Take-away), `knoten_ref` auf S. 199-200.
+- **B `prinzip_handoff.lehrmittel_anker`:** Kap. 8.2 S. 199-200.
+- **A LF2, Lösung:** «Dazugehörigkeit» (Benennung der Stufe 3 im Buch).
+- `knoten_ref` und `quelle_ref` einheitlich mit Bindestrich («S. 73-77»), wie im
+  Bestand; `quelle_stand` ist ein reines Datum.
+- `loesung.kern` von vier Leitfragen auf höchstens 55 Zeichen gekürzt
+  (Vorgabe von `check-lf-loesung`).
+
+**Rückgängig:** `git revert 49519ac`.

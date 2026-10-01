@@ -43,13 +43,39 @@ for (const slug of targets) {
       continue
     }
 
-    const lfs = json.leitfragen ?? []
+    // Heft-Format v4.2 (`template: "heft_8page_v42"`): LF1/LF2 stehen im Kern, LF3/LF4
+    // je Spur unter `spuren`. Geprueft wird Kern + Spur, einmal je Spur. Ohne das
+    // Template: ein Durchgang wie bisher.
+    const v42 = json.template === 'heft_8page_v42'
+    const kern = json.leitfragen ?? []
+    const spuren = v42 && json.spuren && typeof json.spuren === 'object'
+      ? Object.entries(json.spuren).filter(([, s]) => s && typeof s === 'object')
+      : []
+    const durchgaenge = spuren.length
+      ? spuren.map(([key, s]) => [`${L}[${key}]`, [...kern, ...(s.leitfragen ?? [])].sort((a, b) => (a.nr ?? 0) - (b.nr ?? 0))])
+      : [[L, kern]]
+
+    for (const [marke, lfs] of durchgaenge) {
     if (!lfs.some((lf) => lf.loesung)) continue // Einheit noch ohne C10 — kein Befund
 
     for (const lf of lfs) {
-      const tag = `${slug}/${L}/LF${lf.nr}`
+      const tag = `${slug}/${marke}/LF${lf.nr}`
       const sol = lf.loesung
       geprueft++
+
+      // v4.2, LF4: `loesung.erwartungshorizont` traegt die Loesung, `zeilen` darf fehlen.
+      const eh = sol?.erwartungshorizont
+      if (v42 && lf.nr === 4 && !sol.zeilen?.length && eh && typeof eh === 'object' && Object.keys(eh).length) {
+        if ((sol.kern ?? '').length > LIMITS.kern) {
+          console.log(`WARN_LF_LOESUNG_ZU_LANG  ${tag} — kern ${sol.kern.length} Zeichen (max ${LIMITS.kern}): «${sol.kern}»`)
+          befunde++
+        }
+        if (/ß/.test(JSON.stringify(eh))) {
+          console.log(`ERR_ESZETT_FOUND  ${tag}`)
+          befunde++
+        }
+        continue
+      }
 
       if (!sol?.zeilen?.length) {
         console.log(`ERR_LF_LOESUNG_MISSING  ${tag}`)
@@ -101,6 +127,7 @@ for (const slug of targets) {
         console.log(`ERR_ESZETT_FOUND  ${tag}`)
         befunde++
       }
+    }
     }
   }
 }

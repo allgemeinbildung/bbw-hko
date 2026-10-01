@@ -21,7 +21,9 @@ type Hf = {
   leitfragen?: {
     nr: number
     bloom?: string
-    loesung?: { kern?: string; zeilen: { label?: string; text: string; quelle?: string }[] }
+    // v4.2: bei LF4 darf `zeilen` fehlen (dort trägt `erwartungshorizont`) — solche
+    // Leitfragen filtert `withLeitfragenLoesungen` weg, bevor `calloutFor` sie sieht.
+    loesung?: { kern?: string; zeilen?: { label?: string; text: string; quelle?: string }[] }
   }[]
 } | null
 
@@ -30,7 +32,7 @@ function calloutFor(lf: NonNullable<NonNullable<Hf>['leitfragen']>[number]): str
   const sol = lf.loesung!
   const kopf = [`LF ${lf.nr}`, lf.bloom, sol.kern].filter(Boolean)
   const titel = `${kopf.slice(0, 2).join(' · ')}${sol.kern ? ` — ${sol.kern}` : ''}`
-  const zeilen = sol.zeilen.map((z) => {
+  const zeilen = (sol.zeilen ?? []).map((z) => {
     const label = z.label ? `**${z.label}:** ` : ''
     const quelle = z.quelle ? ` *(${z.quelle})*` : ''
     return `> - ${label}${z.text}${quelle}`
