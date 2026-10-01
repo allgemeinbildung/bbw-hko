@@ -184,7 +184,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 
 - **LF3** arbeitet mit einer **Pflichtquelle**: Kurzeintrag mit QR auf S. 1, Quellenkarte mit Auftrag und Raster auf S. 3, **ohne** Beispielzeile.
 - **LF4** darf die Quelle einbeziehen (Heft A: Lehrmittel gegen Quelle).
-- **S. 4** zeigt im Kasten «Vertiefung» zwei weitere Quellen mit je einer Leitfrage, ohne Raster. Sie sind **freiwillig** (Plus, Hausaufgabe); das Raster dazu liegt als PDF auf der QR-Seite.
+- **S. 4** zeigt im Kasten «Vertiefung» zwei weitere Quellen mit je einer Leitfrage, ohne Raster. Sie sind **freiwillig** (Plus, Hausaufgabe); ein leeres Raster dazu lässt sich auf der QR-Seite ausdrucken.
 
 ### Welche Spur wann
 
