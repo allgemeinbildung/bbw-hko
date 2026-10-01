@@ -17,7 +17,7 @@ export interface DocSProps {
 }
 
 // C1 — Cockpit head: no Kompetenz badge, no emotion on the HF badge, herausforderung label only.
-function CockpitHead({ sit }: { sit: SituationJson }) {
+export function CockpitHead({ sit }: { sit: SituationJson }) {
   return (
     <>
       <div className="badge-row" style={{ marginBottom: '2.5mm' }}>
@@ -50,7 +50,7 @@ function CockpitHead({ sit }: { sit: SituationJson }) {
   )
 }
 
-function CockpitCards({ sit }: { sit: SituationJson }) {
+export function CockpitCards({ sit }: { sit: SituationJson }) {
   return (
     <div className="cockpit-grid">
       <div className="cockpit-card">
@@ -92,7 +92,7 @@ function isV3(sit: SituationJson): boolean {
 
 // C1 — Bewertungsraster → "Checkliste Vollständigkeit": Produkt · Kriterien · ☐ (no Abgabe/Gewicht/Total).
 // Kriterien cell shows vollstaendig_wenn[] as bullets (fallback to kriterium). Final column is an empty box.
-function ChecklisteVollstaendigkeit({ sit }: { sit: SituationJson }) {
+export function ChecklisteVollstaendigkeit({ sit }: { sit: SituationJson }) {
   if (!sit.bewertungsraster) return null
   return (
     <section style={{ marginTop: '3mm' }}>
@@ -141,7 +141,7 @@ const AUFTAKT_LABEL: Record<NonNullable<SituationJson['auftakt_typ']>, string> =
 
 // `vorbereitung` — das Intro gehört vor die Arbeit, also auf Seite 1. Schlank gehalten
 // (Linksregel statt Rahmen, 2 mm Padding): dort sind unter v3 nur ~220 px Luft.
-function AuftaktKasten({ sit }: { sit: SituationJson }) {
+export function AuftaktKasten({ sit }: { sit: SituationJson }) {
   if (sit.auftakt_typ !== 'vorbereitung' || !sit.leitfragen_intro) return null
   return (
     <section style={{
@@ -158,7 +158,7 @@ function AuftaktKasten({ sit }: { sit: SituationJson }) {
 // Intro auf Seite 2. Ohne `auftakt_typ` exakt der bisherige Absatz; `kontext`/`pfad`
 // bekommen NUR eine Beschriftungszeile davor (kein Rahmen — Seite 2 hat kaum Luft);
 // `vorbereitung` steht stattdessen als Kasten auf Seite 1 und entfällt hier.
-function LeitfragenIntro({ sit, fontSize, marginBottom }: { sit: SituationJson; fontSize: string; marginBottom: string }) {
+export function LeitfragenIntro({ sit, fontSize, marginBottom }: { sit: SituationJson; fontSize: string; marginBottom: string }) {
   if (!sit.leitfragen_intro || sit.auftakt_typ === 'vorbereitung') return null
   const label = sit.auftakt_typ ? AUFTAKT_LABEL[sit.auftakt_typ] : null
   return (
@@ -172,7 +172,7 @@ function LeitfragenIntro({ sit, fontSize, marginBottom }: { sit: SituationJson; 
 }
 
 // C1 — "Quellen" → "Ressourcen". No enrichment.
-function RessourcenList({ sit }: { sit: SituationJson }) {
+export function RessourcenList({ sit }: { sit: SituationJson }) {
   if (!sit.quellen_anker) return null
   return (
     <section style={{ marginTop: '3mm' }}>
@@ -214,7 +214,7 @@ function InfokartenAnker({ sit }: { sit: SituationJson }) {
 }
 
 // C2 — Situation block: situation_text + Leitfrage (+ Spannungsfeld). sit-meta + zahlen_tabelle removed.
-function SituationBlock({ sit }: { sit: SituationJson }) {
+export function SituationBlock({ sit }: { sit: SituationJson }) {
   // v3: Die Situation ist der narrative Kern der Seite und bekommt eine eigene
   // gerahmte Karte (weiss, Akzentrahmen, groessere Schrift) — sie steht damit
   // gleichwertig neben dem Statement-Block, statt als Fliesstext unterzugehen.
@@ -286,7 +286,7 @@ function hatRailInhalt(sc: LeitfrageScaffolding | undefined): sc is LeitfrageSca
  * diesen Denkschritt. Feld-präsenz-gesteuert: ohne `lf.scaffolding` existiert
  * die Spalte nicht und das LF-Item bleibt einspaltig wie bisher.
  */
-function LeitfrageRail({ sc }: { sc: LeitfrageScaffolding }) {
+export function LeitfrageRail({ sc }: { sc: LeitfrageScaffolding }) {
   const { strategien, satzanfaenge, produkt } = railGruppen(sc)
   return (
     <aside style={{
@@ -338,7 +338,7 @@ function LeitfrageRail({ sc }: { sc: LeitfrageScaffolding }) {
  * der Hoehe. Im Fuell-Dokument bleibt die Rail, dort stehen nur zwei Leitfragen
  * pro Seite und darunter das Schreibfeld.
  */
-function LeitfrageScaffoldUnten({ sc }: { sc: LeitfrageScaffolding }) {
+export function LeitfrageScaffoldUnten({ sc }: { sc: LeitfrageScaffolding }) {
   const { strategien, satzanfaenge, produkt } = railGruppen(sc)
   const spalten = [
     strategien.length > 0 && (
@@ -381,7 +381,7 @@ function LeitfrageScaffoldUnten({ sc }: { sc: LeitfrageScaffolding }) {
   )
 }
 
-function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '', letzteImPaar = false, scaffoldUnten = false }: LeitfrageItemProps & { letzteImPaar?: boolean; scaffoldUnten?: boolean }) {
+export function LeitfrageItem({ lf, withField, edits = {}, onEdit = () => {}, fieldHeightMm, ns = '', letzteImPaar = false, scaffoldUnten = false }: LeitfrageItemProps & { letzteImPaar?: boolean; scaffoldUnten?: boolean }) {
   const kern = (
     <>
       <div className="lf-head">
@@ -461,7 +461,7 @@ function ReflexionItem({ rf, withField, edits = {}, onEdit = () => {}, fieldHeig
 
 // C5 — Radial mindmap: central node + 4 branch lines to 4 labelled sub-nodes. 4th branch (optional) dashed/lighter.
 // Optimized for exactly 4 branches; degrades to a simple grid for N≠4.
-function MindmapRadial({ sit, full }: { sit: SituationJson; full: boolean }) {
+export function MindmapRadial({ sit, full }: { sit: SituationJson; full: boolean }) {
   const aeste = sit.mindmap_aeste || []
 
   if (aeste.length !== 4) {
@@ -514,7 +514,7 @@ function MindmapRadial({ sit, full }: { sit: SituationJson; full: boolean }) {
 }
 
 // C5/AS-2 — skeleton intro hint refined to point at Leitfragen-Antworten + Ressourcen.
-function MindmapSkelett({ sit }: { sit: SituationJson }) {
+export function MindmapSkelett({ sit }: { sit: SituationJson }) {
   return (
     <div className="mindmap">
       <p className="mindmap-hint">
@@ -527,7 +527,7 @@ function MindmapSkelett({ sit }: { sit: SituationJson }) {
 
 // Dossier — the mindmap is NOT drawn here (it's done on paper or another device).
 // Just hint at the parts to generate: the four Ast-Titel. Keeps the Dossier one page shorter.
-function MindmapHinweis({ sit }: { sit: SituationJson }) {
+export function MindmapHinweis({ sit }: { sit: SituationJson }) {
   const aeste = sit.mindmap_aeste || []
   if (!aeste.length) return null
   return (
@@ -555,7 +555,7 @@ function kompetenzList(sit: SituationJson): { nr: string; text: string }[] {
 }
 
 // C6 — replaces SusMarker: Kompetenz(en) + Lebensbezug + Sprachmodi (full labels) metadata.
-function HandlungsproduktMeta({ sit }: { sit: SituationJson }) {
+export function HandlungsproduktMeta({ sit }: { sit: SituationJson }) {
   const kompetenzen = kompetenzList(sit)
   const lebensbezug = sit.nrlp?.lebensbezug_text
   const sprachmodi = (sit.nrlp?.sprachmodi || []).filter(Boolean)
@@ -585,7 +585,7 @@ function HandlungsproduktMeta({ sit }: { sit: SituationJson }) {
 }
 
 // C6 — Gütekriterien checklist from lernfortschritt.kriterien (☐ + kriterium + indikator; gewicht ignored).
-function GuetekriterienListe({ sit }: { sit: SituationJson }) {
+export function GuetekriterienListe({ sit }: { sit: SituationJson }) {
   const kriterien = sit.lernfortschritt?.kriterien?.filter((k) => k && (k.kriterium || k.indikator)) || []
   if (!kriterien.length) return null
   return (
@@ -604,7 +604,7 @@ function GuetekriterienListe({ sit }: { sit: SituationJson }) {
 }
 
 // C6 — Scaffolding: three labelled bullet groups (Satzanfänge · Strategien · Struktur).
-function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
+export function ScaffoldingBlock({ sit }: { sit: SituationJson }) {
   const sc = sit.handlungsprodukt?.scaffolding
   if (!sc) return null
   const groups: { label: string; items?: string[] }[] = [
@@ -641,7 +641,7 @@ function istAngereichert(m: NonNullable<SituationJson['methoden']>[number]): boo
   return !!(m.beispiel?.length || m.fehler)
 }
 
-function MethodenGrid({ sit }: { sit: SituationJson }) {
+export function MethodenGrid({ sit }: { sit: SituationJson }) {
   const items = (sit.methoden || []).filter(Boolean)
     .slice()
     .sort((a, b) => Number(istAngereichert(a)) - Number(istAngereichert(b)))
@@ -716,7 +716,7 @@ function MethodenGrid({ sit }: { sit: SituationJson }) {
   )
 }
 
-function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt']> }) {
+export function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt']> }) {
   const abgaben = hp.abgaben?.filter(Boolean) || []
   if (!hp.format && !abgaben.length) return null
   return (
@@ -733,7 +733,7 @@ function AbgabeCallout({ hp }: { hp: NonNullable<SituationJson['handlungsprodukt
 }
 
 // C6 — 6a Anleitung: metadata → beschreibung → Schritte → Abgabe → Gütekriterien → Scaffolding. No write area.
-function HandlungsproduktAnleitung({ sit }: { sit: SituationJson }) {
+export function HandlungsproduktAnleitung({ sit }: { sit: SituationJson }) {
   const hp = sit.handlungsprodukt
   if (!hp) return null
   return (

@@ -25,7 +25,7 @@ import { isV42 } from './spuren'
 import { buildHeftV42 } from './docx-heft-v42'
 
 
-function sitPalette(sit: SituationJson | null | undefined) {
+export function sitPalette(sit: SituationJson | null | undefined) {
   if (!sit) return { akzent: COLOR.neutral, light: COLOR.neutralLight, mid: COLOR.neutralMid }
   const strip = (h?: string) => (h || '').replace('#', '').toUpperCase()
   return {
@@ -53,14 +53,14 @@ const AUFTAKT_LABEL: Record<NonNullable<SituationJson['auftakt_typ']>, string> =
 }
 
 // `vorbereitung` — Intro als Kasten auf der Cockpit-Seite (nach der Situation, vor der Checkliste).
-function auftaktBlock(sit: SituationJson, akzent: string, light: string): any[] {
+export function auftaktBlock(sit: SituationJson, akzent: string, light: string): any[] {
   if (sit.auftakt_typ !== 'vorbereitung' || !sit.leitfragen_intro) return []
   return [callout(AUFTAKT_LABEL.vorbereitung, sit.leitfragen_intro, akzent, light), spacer(80)]
 }
 
 // Intro auf Seite 2 — bei `vorbereitung` entfällt es hier, bei `kontext`/`pfad` bekommt
 // es nur eine Beschriftungszeile davor. Ohne das Feld: unverändert ein Absatz.
-function leitfragenIntroBlock(sit: SituationJson, akzent: string, size: number): any[] {
+export function leitfragenIntroBlock(sit: SituationJson, akzent: string, size: number): any[] {
   if (!sit.leitfragen_intro || sit.auftakt_typ === 'vorbereitung') return []
   const els: any[] = []
   if (sit.auftakt_typ) {
@@ -72,7 +72,7 @@ function leitfragenIntroBlock(sit: SituationJson, akzent: string, size: number):
 
 // C1 — Checkliste Vollständigkeit (Produkt · Kriterien); pro Kriterien-Zeile: schwarzes ✔ + Box ☐.
 // Unter v2 auf der Cockpit-Seite, unter v3 auf der Selbstcheck-Seite vor der Reflexion.
-function checklisteBlock(sit: SituationJson, akzent: string): any[] {
+export function checklisteBlock(sit: SituationJson, akzent: string): any[] {
   if (!sit.bewertungsraster) return []
   const els: any[] = []
   els.push(p('CHECKLISTE VOLLSTÄNDIGKEIT', { run: { color: akzent, bold: true, size: 14 } }))
@@ -103,7 +103,7 @@ function checklisteBlock(sit: SituationJson, akzent: string): any[] {
 // C1 + C2 — cockpit (Deckblatt) now also carries the merged situation block.
 // Order mirrors the HTML CockpitPageBody: badges/title/sub-facette → cards →
 // situation_text → Leitfrage (+ Spannungsfeld) → Checkliste Vollständigkeit → Ressourcen.
-function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] {
+export function cockpitBlock(sit: SituationJson, akzent: string, light: string): any[] {
   const els: any[] = []
   // C1 — no KOMP badge; HF badge without emotion.
   els.push(new Paragraph({
@@ -279,7 +279,7 @@ function inGuillemets(s: string): string {
   return /^«.*»$/.test(s.trim()) ? s.trim() : `«${s.trim()}»`
 }
 
-function railZelle(sc: LeitfrageScaffolding, akzent: string): TableCell {
+export function railZelle(sc: LeitfrageScaffolding, akzent: string): TableCell {
   const { strategien, satzanfaenge, produkt } = railGruppen(sc)
   const els: any[] = []
   const lab = (text: string) => p(text.toUpperCase(), {
@@ -316,7 +316,7 @@ function railZelle(sc: LeitfrageScaffolding, akzent: string): TableCell {
   })
 }
 
-function leitfrageItems(sit: SituationJson, akzent: string, withField: boolean, fieldHeightMm?: number): any[] {
+export function leitfrageItems(sit: SituationJson, akzent: string, withField: boolean, fieldHeightMm?: number): any[] {
   const els: any[] = []
   sit.leitfragen?.forEach((lf) => {
     const kern: any[] = []
@@ -391,7 +391,7 @@ function reflexionItems(sit: SituationJson, akzent: string, withField: boolean, 
 
 // C5 — DOCX mindmap as a 2×2 quadrant: center label on top, then 4 cells
 // (titel + punkte in full / titel + blank room in skeleton). 4th cell marked optional (dashed).
-function mindmapQuadrant(sit: SituationJson, akzent: string, full: boolean): any[] {
+export function mindmapQuadrant(sit: SituationJson, akzent: string, full: boolean): any[] {
   const els: any[] = []
   const aeste = sit.mindmap_aeste || []
 
@@ -448,7 +448,7 @@ function mindmapQuadrant(sit: SituationJson, akzent: string, full: boolean): any
   return els
 }
 
-function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
+export function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
   const els: any[] = []
   // C5/AS-2 — same hint string as the HTML skeleton.
   els.push(p('Bauen Sie Ihre Mindmap aus Ihren Leitfragen-Antworten und den Ressourcen auf dieser Seite. Zentrum und die vier Ast-Titel sind gesetzt — ergänzen Sie die Detail-Punkte selbst.',
@@ -459,7 +459,7 @@ function mindmapSkelettBlock(sit: SituationJson, akzent: string): any[] {
 }
 
 // Dossier mindmap — no diagram (drawn on paper/another device); just hint at the four Ast-Titel.
-function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
+export function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
   const els: any[] = []
   els.push(p('Die Mindmap erstellen Sie selbst — auf Papier oder einem Gerät. Bauen Sie sie aus dem Zentrum und diesen vier Ästen auf:',
     { run: { italics: true, color: COLOR.inkSoft, size: 16 } }))
@@ -479,7 +479,7 @@ function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
 
 // 05 · Methoden — Werkzeugseite als 2×2-Tabelle, damit sie wie im HTML auf eine Seite passt.
 // Spiegelt MethodenGrid aus DocS.tsx. Wird nur aufgerufen, wenn `sit.methoden` Daten hat.
-function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: number, akzent: string): any {
+export function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: number, akzent: string): any {
   const els: any[] = []
   els.push(new Paragraph({
     children: [
@@ -529,7 +529,7 @@ function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: num
   })
 }
 
-function methodenBlock(sit: SituationJson, akzent: string): any[] {
+export function methodenBlock(sit: SituationJson, akzent: string): any[] {
   // Gleiche Gewichtssortierung wie im HTML (MethodenGrid): leichte Karten zuerst.
   const angereichert = (m: NonNullable<SituationJson['methoden']>[number]) => !!(m.beispiel?.length || m.fehler)
   const items = (sit.methoden || []).filter(Boolean)
@@ -555,7 +555,7 @@ function methodenBlock(sit: SituationJson, akzent: string): any[] {
 
 // C6 — Handlungsprodukt Anleitung (6a): metadata → beschreibung → Schritte → Abgabe → Gütekriterien → Scaffolding.
 // No write area here; the fill-mode Arbeitsfläche (6b) is emitted in buildDocS after a page break.
-function handlungsproduktBlock(sit: SituationJson, akzent: string): any[] {
+export function handlungsproduktBlock(sit: SituationJson, akzent: string): any[] {
   const hp = sit.handlungsprodukt
   if (!hp) return []
   const els: any[] = []
