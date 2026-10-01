@@ -1,0 +1,633 @@
+{
+  "id": "1.3.1_konsum_verantworten_v42_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Marke oder echtes Bedürfnis?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Bedürfnisse ordnen"
+  },
+  "prinzip_ref": "1.3.1_konsum_verantworten_v42_prinzip",
+  "nrlp": {
+    "nr": "1.3.1",
+    "nr_primary": [
+      "1.3.1"
+    ],
+    "lebensbezug": "1.3",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      5,
+      11,
+      1
+    ],
+    "kompetenz_id": "1.3.1",
+    "lebensbezug_id": "1.3",
+    "kompetenz_text": "Ich kann verschiedene Arten von Bedürfnissen unterscheiden, meine eigenen Bedürfnisse erkennen und Einflussmöglichkeiten darauf beurteilen.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr und habe zum ersten Mal regelmässig eigenes Geld. Vor drei Wochen habe ich in der Mittagspause Kopfhörer für 250 Franken bestellt — zwei aus meiner Klasse hatten dieselben, und mein Feed zeigte sie mir tagelang. Seither liegen sie meistens in der Schublade; für den Arbeitsweg reichen meine alten. Jetzt kommt der nächste Wunsch: Ein Kollege verkauft sein Handy für 300 Franken und will bis Freitag Bescheid. Ich merke, dass ich bei beiden Käufen nicht sagen könnte, ob der Wunsch von mir kommt oder von aussen. Ich will meine Bedürfnisse ordnen und mir einen Massstab geben, bevor ich am Freitag antworte.",
+  "zahlen_tabelle": [
+    {
+      "label": "Kopfhörer (Impulskauf vor drei Wochen)",
+      "wert": "CHF 250"
+    },
+    {
+      "label": "Handy vom Kollegen (Zusage bis Freitag)",
+      "wert": "CHF 300"
+    },
+    {
+      "label": "Lernendenlohn 1. Lehrjahr (netto, ca.)",
+      "wert": "CHF 800"
+    }
+  ],
+  "leitfrage": "Welche meiner Wünsche sind echte Bedürfnisse — und nach welchem Massstab entscheide ich, welchem ich folge?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Eigener Massstab vs. sozialer Konsumdruck",
+    "hint": "Ein Wunsch kann von aussen geweckt sein und trotzdem ein echtes Bedürfnis treffen — zum Beispiel dazuzugehören. Entscheidend ist, ob Sie Ihren Entscheid vor sich selbst begründen können."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.7",
+      "titel": "Preisbildung — Bedürfnisse und Güter",
+      "unterueberschrift": "Bedürfnispyramide und Bedürfnisarten",
+      "seiten": "Seite 73-84",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 17.2",
+      "titel": "Dokumentieren — Lese- und Markierstrategien",
+      "unterueberschrift": "Markieren und Symbole",
+      "seiten": "Seite 381-387",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bauen in dieser Woche Ihre Bedürfnis-Landkarte auf: LF1 liefert die Kategorien, LF2 Ihre eigenen Einträge, LF3 die Einflüsse mit Beleg, LF4 Ihren Massstab und Ihren Entscheid zum Handy.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 73-74",
+      "text": "Erklären Sie mit der Bedürfnispyramide nach Maslow und den Begriffen Existenz- und Wahlbedürfnis, wie sich Bedürfnisse unterscheiden lassen. Zeigen Sie an einem Beispiel den Unterschied zwischen einem Bedürfnis und einem Gut.",
+      "liefert": "die Kategorien der Landkarte",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 2.7 S. 73 und trennen Sie zuerst Existenz- von Wahlbedürfnissen.",
+          "Fragen Sie bei jedem Beispiel: Ist das ein Gefühl des Mangels oder ein Ding?"
+        ],
+        "satzanfaenge": [
+          "«Ein Existenzbedürfnis ist …, weil …»",
+          "«Das Gut … befriedigt das Bedürfnis nach …»"
+        ],
+        "produkt": "Die Kategorien teilen Ihre Landkarte in Felder ein."
+      },
+      "loesung": {
+        "kern": "Bedürfnisarten, Maslow, Bedürfnis vs. Gut",
+        "zeilen": [
+          {
+            "label": "Bedürfnis",
+            "text": "Gefühl eines Mangels, verbunden mit dem Wunsch, ihn zu beheben.",
+            "quelle": "Kap. 2.7"
+          },
+          {
+            "label": "Existenzbedürfnis",
+            "text": "Lebensnotwendig und zuerst zu decken: Nahrung, Wohnen, Kleidung, Sicherheit.",
+            "quelle": "Kap. 2.7"
+          },
+          {
+            "label": "Wahlbedürfnis",
+            "text": "Nicht lebensnotwendig; man entscheidet, ob man es erfüllt: Unterhaltung, Ausgang, Ferien.",
+            "quelle": "Kap. 2.7"
+          },
+          {
+            "label": "Maslow",
+            "text": "Fünf aufeinander aufbauende Stufen: Grundbedürfnisse, Sicherheit, Zugehörigkeit, Anerkennung, Selbstverwirklichung.",
+            "quelle": "Kap. 2.7"
+          },
+          {
+            "label": "Bedürfnis ≠ Gut",
+            "text": "Das Gut ist das Mittel zur Befriedigung: Die Kopfhörer sind ein Gut, dahinter stehen Unterhaltung und Zugehörigkeit. Häufiger Fehler: Güter als Bedürfnisse eintragen."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 73-74 · eigener Fall",
+      "text": "Ordnen Sie fünf Ihrer letzten grösseren Anschaffungen oder Wünsche zu: Welches Gut ist es, welches Bedürfnis steht dahinter, und zu welcher Bedürfnisart gehört es?",
+      "liefert": "die eigenen Einträge der Landkarte",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Erst alle fünf sammeln, dann ordnen — nicht gleichzeitig.",
+          "Fragen Sie bei jedem Eintrag: Ginge es auch ohne dieses Gut?"
+        ],
+        "satzanfaenge": [
+          "«Hinter … steckt eigentlich das Bedürfnis nach …»",
+          "«Das ist ein Wahlbedürfnis, weil …»"
+        ],
+        "produkt": "Die Einträge füllen die Felder Ihrer Karte."
+      },
+      "loesung": {
+        "kern": "Gut → Bedürfnis → Art, am eigenen Beispiel",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Fünf Einträge im Dreischritt Gut → Bedürfnis → Art, z. B. Kopfhörer → Unterhaltung, Zugehörigkeit → Wahlbedürfnis."
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Hinter einem Gut werden mehrere Bedürfnisse erkannt (Handy: Kommunikation, Sicherheit, Anerkennung)."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Das Gut wird als Bedürfnis eingetragen («Bedürfnis: Handy»)."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kommentierte Bedürfnis-Landkarte (dokumentiert, Markiertechnik)",
+    "titel": "Meine Bedürfnis-Landkarte",
+    "format_detail": "Eine A4-Übersicht, auf der Sie Ihre Bedürfnisse nach Kategorien ordnen, Einflüsse mit Farbe und Quelle markieren und am Rand Ihren Massstab und Ihren Entscheid festhalten.",
+    "beschreibung": "Ich ordne meine Bedürfnisse, belege, was sie von aussen beeinflusst, und begründe meinen Massstab für den nächsten Kauf.",
+    "schritte": [
+      {
+        "label": "01 Karte einteilen",
+        "hint": "Teilen Sie das Blatt nach den Kategorien aus LF1 in Felder ein."
+      },
+      {
+        "label": "02 Einträge verdichten",
+        "hint": "Tragen Sie mindestens acht Einträge ein, je Gut → Bedürfnis, als Stichwort."
+      },
+      {
+        "label": "03 Einflüsse belegen",
+        "hint": "Markieren Sie jeden Eintrag: echt, geweckt oder geweckt, aber berechtigt. Notieren Sie bei geweckten die Quelle aus dem Raster."
+      },
+      {
+        "label": "04 Massstab entscheiden",
+        "hint": "Schreiben Sie Ihren Massstab-Satz aus LF4 an den Rand und darunter Ihren Entscheid zum Handy."
+      },
+      {
+        "label": "05 Prüfen",
+        "hint": "Schätzen Sie sich mit den zwei Feedback-Kriterien ein und verbessern Sie eine Stelle."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Bedürfnis-Landkarte A4 (mind. 8 Einträge, Legende mit drei Markierungen)",
+      "Massstab-Satz und Entscheid zum Handy am Kartenrand",
+      "Raster der Pflichtquelle (S. 3)"
+    ]
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.",
+        "Begriffe teilweise korrekt verwendet.",
+        "Begriffe korrekt und situationsangemessen verwendet.",
+        "Begriffe differenziert, kontextualisiert und eigenständig auf die Situation bezogen."
+      ],
+      "indikator_produkt": "Gut und Bedürfnis sind getrennt; Bedürfnisarten und Maslow-Stufen stimmen."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Keine erkennbare eigene Position.",
+        "Position angedeutet.",
+        "Position klar in Ich-Form formuliert.",
+        "Position begründet, Spannungsfeld zwischen Wunsch und Sicherheit anerkannt."
+      ],
+      "indikator_produkt": "Massstab-Satz in Ich-Form; der Entscheid zum Handy folgt daraus."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Vorgegebene Kategorien als Karten-Raster und eine Beispielzeile im Raster der Quelle.",
+    "scaffold_100": "Eine Vertiefungsquelle bearbeiten und ihren Befund als vierte Farbe auf der Karte eintragen."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für die Einträge auf der Landkarte",
+      "tun": "Schreiben Sie pro Bedürfnis ein Stichwort, keinen Satz. Was nicht ins Feld passt, gehört in die Legende."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-bedarf-oder-wunsch",
+      "fuer": "für die Markierung echt, geweckt oder geweckt, aber berechtigt"
+    },
+    {
+      "ref": "lm-20-3-smart",
+      "fuer": "für den Massstab-Satz",
+      "tun": "Formulieren Sie den Massstab so, dass Sie in einem Monat mit Ja oder Nein sagen können, ob Sie ihn eingehalten haben."
+    }
+  ],
+  "mindmap_zentrum": "Wunsch jetzt oder Sicherheit später",
+  "mindmap_aeste": [
+    {
+      "titel": "Bedürfnisarten",
+      "punkte": [
+        "Existenz / Wahl",
+        "Maslow-Stufen",
+        "Bedürfnis ≠ Gut"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was mich beeinflusst",
+      "punkte": [
+        "Feed und Werbung",
+        "Klasse, Kollegen",
+        "Impulskauf"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Mein Massstab",
+      "punkte": [
+        "Prüffrage",
+        "echt / geweckt",
+        "Entscheid Handy"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich jetzt, ob mein Wunsch nach dem Handy von mir kommt oder von aussen?",
+      "Kann ich dem Kollegen am Freitag zu- oder absagen — und begründen, warum?"
+    ],
+    "mitnahme": [
+      "Mein Massstab",
+      "Mein Entscheid",
+      "Mir noch unklar"
+    ]
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1 trennt Gut und Bedürfnis an einem Beispiel",
+        "LF2 hat fünf Einträge im Dreischritt",
+        "LF4 prüft beide Seiten und entscheidet"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Beleg",
+        "Jede Zeile hat einen Begriff aus LF1"
+      ]
+    },
+    {
+      "produkt": "Landkarte",
+      "vollstaendig_wenn": [
+        "Mind. 8 Einträge",
+        "Legende mit drei Markierungen angewendet",
+        "Massstab-Satz und Entscheid am Rand"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Mindmap mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "Tandem-Mitnahme notiert"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Lektion 1 · 45 min",
+      "text": "Situation lesen, LF1 und LF2",
+      "aktiv": true
+    },
+    {
+      "label": "Lektion 2 · 45 min",
+      "text": "LF3 mit Raster (Quelle der Spur), LF4, Landkarte beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Lektion 3 · 45 min",
+      "text": "Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Mindmap",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Woran erkenne ich in Zukunft, ob ein Wunsch aus mir selbst kommt oder von aussen geweckt wurde?",
+    "ziel": "Überlegte Konsumentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Echte von geweckten Bedürfnissen unterscheiden und einen eigenen Massstab begründen",
+    "lehrmittel_anker": "Kap. 2.7 S. 73-84 (Bedürfnispyramide, Bedürfnisarten).",
+    "kn_aktivierung": "Im KN muss die Lernende erkennen, welcher Anteil des E-Bike-Wunsches Bedürfnis und welcher Aussendruck ist (Team fährt dasselbe Modell).",
+    "transfer_check": "Kann die Lernende einen Konsumwunsch in Bedürfnis und Einfluss zerlegen und ihren Entscheid mit einem Massstab begründen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — zentrale Aussagen aus Text und Grafik entnehmen und belegen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] + Massstab-Satz — eigene Werthaltung zum Konsum klären"
+    },
+    {
+      "sk": 11,
+      "wo": "Kategorie «geweckt, aber berechtigt» und LF4 — beide Seiten bleiben begründbar"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "[Lehrmittel-Abschnitt zu Einflüssen auf Bedürfnisse — Seite am Buch verifizieren]",
+          "text": "Werten Sie Ihr Raster aus: Welche Einflüsse auf Bedürfnisse nennt das Lehrmittel — und welcher zeigt sich bei Ihren Kopfhörern? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Einflüsse mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "[Lehrmittel-Abschnitt zu Einflüssen auf Bedürfnisse — Seite am Buch verifizieren]",
+            "auftrag": "Lesen Sie den Abschnitt. Tragen Sie vier Aussagen ein, die zeigen, wodurch Bedürfnisse beeinflusst werden. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "Abs. 1",
+              "Werbung weckt Wünsche",
+              "[Beispiel aus dem Text]",
+              "Wahlbedürfnis"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Markieren Sie im Text zuerst nur die Wörter, die einen Einfluss nennen."
+            ],
+            "satzanfaenge": [
+              "«Das Lehrmittel nennt als Einfluss …»",
+              "«Bei meinen Kopfhörern wirkte vor allem …»"
+            ],
+            "produkt": "Die Einflüsse markieren Sie mit Farbe und Seitenangabe auf der Karte."
+          },
+          "loesung": {
+            "kern": "Einflüsse aus dem Lehrmittel, am eigenen Kauf gezeigt",
+            "quelle_ref": "[Lehrmittel-Abschnitt zu Einflüssen auf Bedürfnisse — Seite am Buch verifizieren]",
+            "quelle_stand": "[nach Verifikation am Buch]",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "[Vier Einflüsse aus dem verifizierten Lehrmittel-Abschnitt mit Seitenangabe]"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Typische Zuordnungen: Werbung, Umfeld, Herkunft, Impulskauf."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet mindestens einen Einfluss aus dem Lehrmittel mit dem eigenen Kopfhörer-Kauf."
+              }
+            ]
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.7 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Das Modell von Maslow ordnet Bedürfnisse in Stufen. Wo passt es auf Ihren Wunsch nach dem Handy, wo nicht? Entscheiden Sie: zusagen oder absagen — und mit welchem Massstab?",
+          "liefert": "Massstab-Satz und Entscheid zum Handy",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Formulieren Sie den Massstab so, dass Sie ihn beim nächsten Kauf anwenden können."
+            ],
+            "satzanfaenge": [
+              "«Nach Maslow trifft das Handy …»",
+              "«Auf meinen Fall passt das Modell nicht ganz, weil …»",
+              "«Mein Massstab lautet: Ich kaufe nur, wenn …»"
+            ],
+            "produkt": "Der Massstab-Satz steht am Rand der Landkarte, der Entscheid darunter."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ eigener Fall, begründeter Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Das Modell wird korrekt angewendet (Stufe benannt).",
+                "Eine Grenze des Modells für den eigenen Fall wird gezeigt (z. B. ein Gut trifft mehrere Stufen).",
+                "Der Massstab ist überprüfbar und der Entscheid folgt daraus."
+              ],
+              "beispiel_pol_1": "Absage: «Das Handy trifft vor allem Anerkennung (Stufe 4). Kommunikation deckt mein altes ab. Mein Massstab: Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe.»",
+              "beispiel_pol_2": "Zusage: «Maslow trennt Stufen sauber, bei mir mischen sie sich: Mein Handy ist defekt (Sicherheit) und ich will dazugehören (Zugehörigkeit). Mein Massstab: Ich kaufe, wenn ein Sicherheitsbedürfnis dahintersteht und der Preis ins Budget passt.»",
+              "nicht_tragfaehig": "Entscheid ohne Massstab oder Modell ohne Bezug zum eigenen Fall."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was spricht für das Handy (Bedürfnis, Stufe)",
+          "Was spricht dagegen (Einfluss, Kosten)",
+          "Mein Entscheid"
+        ],
+        "hinweis": "Je zwei Stichworte pro Spalte genügen. Der Entscheid muss aus den beiden ersten Spalten folgen."
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zum Lehrmittel-Abschnitt (S. 3)"
+      },
+      "scaffold_90": "Vorgegebene Kategorien als Karten-Raster, Beispielzeile im Raster und ausgefüllte erste Zeile der Denkhilfe."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Pflichtquelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Über welche Wege entstehen laut Quelle Kaufwünsche bei Jugendlichen — und welcher Weg zeigt sich bei Ihren Kopfhörern? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Einflüsse mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-131a-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Zuerst das Raster füllen, dann den Befund schreiben.",
+              "Nur Schlüsselwörter ins Raster, keine ganzen Sätze."
+            ],
+            "satzanfaenge": [
+              "«Die Quelle zeigt, dass …»",
+              "«Bei meinen Kopfhörern wirkte vor allem …»"
+            ],
+            "produkt": "Die Einflüsse markieren Sie mit Farbe und Quelle auf der Karte."
+          },
+          "loesung": {
+            "kern": "[abhängig von der Pflichtquelle]",
+            "quelle_ref": "q-131a-pflicht",
+            "quelle_stand": "[Datum der Quellenfreigabe]",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "[Vier Einflusswege aus der Quelle mit Beleg — nach Freigabe aus dem Archiv-Transkript erzeugen]"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Typische Zuordnungen: Influencer-Marketing, Werbung, Umfeld/Gruppendruck, Impulskauf."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet mindestens einen Einflussweg aus der Quelle mit dem eigenen Kopfhörer-Kauf."
+              }
+            ]
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.7 ↔ Pflichtquelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Das Lehrmittel ordnet Bedürfnisse nach Maslow; die Quelle zeigt, wie Wünsche von aussen geweckt werden. Kann ein geweckter Wunsch trotzdem ein echtes Bedürfnis treffen? Entscheiden Sie am Handy des Kollegen: zusagen oder absagen — und mit welchem Massstab?",
+          "liefert": "Massstab-Satz und Entscheid zum Handy",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Prüfen Sie zuerst beide Seiten, dann entscheiden Sie.",
+              "Formulieren Sie den Massstab so, dass Sie ihn beim nächsten Kauf anwenden können."
+            ],
+            "satzanfaenge": [
+              "«Nach Maslow trifft das Handy das Bedürfnis nach …»",
+              "«Die Quelle zeigt aber, dass …»",
+              "«Mein Massstab lautet: Ich kaufe nur, wenn …»"
+            ],
+            "produkt": "Der Massstab-Satz steht am Rand der Landkarte, der Entscheid darunter."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Spannung Modell ↔ Realität, begründeter Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Beide Seiten werden benannt: das Bedürfnis nach Maslow und der Einfluss von aussen.",
+                "Der Massstab ist überprüfbar (Wenn-dann oder Prüffrage), nicht ein Gefühl.",
+                "Der Entscheid zum Handy folgt aus dem Massstab."
+              ],
+              "beispiel_pol_1": "Absage: «Das Handy trifft vor allem Anerkennung, nicht Kommunikation — mein altes reicht. Mein Massstab: Ich kaufe nur, wenn ich den Wunsch auch ohne Feed und Klasse noch zwei Wochen später habe.»",
+              "beispiel_pol_2": "Zusage: «Der Wunsch ist geweckt, aber berechtigt: Mein Handy ist defekt, und 300 Franken liegen unter dem Neupreis. Mein Massstab: Ich kaufe, wenn ein Existenz- oder Sicherheitsbedürfnis dahintersteht und der Preis in meinem Budget Platz hat.»",
+              "nicht_tragfaehig": "Entscheid ohne Massstab («Ich will es halt») oder Massstab ohne Bezug zur Quelle."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-131a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie den Ausschnitt gemäss QR-Seite und die Grafik. Tragen Sie vier Aussagen ein, die zeigen, über welche Wege Kaufwünsche bei Jugendlichen entstehen. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-131a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Woran erkenne ich bezahlte Werbung in meinem Feed, auch wenn sie nicht gekennzeichnet ist?"
+        },
+        {
+          "ref": "q-131a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum ist Dazugehören für Jugendliche ein echtes Bedürfnis — und wann wird es zur Kostenfalle?"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster der Pflichtquelle (S. 3)"
+      },
+      "scaffold_90": "Vorgegebene Kategorien als Karten-Raster und eine Beispielzeile im Raster der Quelle."
+    }
+  }
+}

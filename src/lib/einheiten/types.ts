@@ -78,6 +78,220 @@ export interface Methode extends MethodeKarte {
   tun?: string
 }
 
+// ---------------------------------------------------------------------------
+// Heft v4.2 (template `heft_8page_v42`) — Leitfaden docs/upgrade-v4.2 §11.
+// Alles additiv und optional: Kein Feld hier wird gelesen, solange eine
+// Herausforderung nicht `template: "heft_8page_v42"` trägt.
+// ---------------------------------------------------------------------------
+
+/** Wert von `SituationJson.template`, an dem aller v4.2-Code hängt. */
+export const TEMPLATE_V42 = 'heft_8page_v42'
+
+/** Die zwei Spuren eines Hefts. `ohne_medien` = traditionell (Methoden + Scaffolding). */
+export type SpurKey = 'ohne_medien' | 'mit_medien'
+
+/** Pol-Typ von LF4 (Leitfaden §6.1). */
+export type PolTyp =
+  | 'lehrmittel_quelle'
+  | 'position_gegenposition'
+  | 'modell_eigener_fall'
+  | 'recht_praxis'
+  | 'quelle_quelle'
+
+/** Raster als Antwortfeld von LF3 (Seite 3). Letzte Spalte ist immer «→ Begriff». */
+export interface RasterSpec {
+  /** Medien-Spur: ID der Pflichtquelle (`src/data/quellen/<id>.json`). */
+  quelle_ref?: string
+  /** Spur ohne Medien: Lehrmittel-Abschnitt, am Buch verifiziert («Kap. 8.2 | S. 199-202»). */
+  knoten_ref?: string
+  /** Spur ohne Medien: Leseauftrag. In der Medien-Spur steht er auf der Pflichtquelle. */
+  auftrag?: string
+  spalten: string[]
+  zeilen: number
+  /** Nur Spur ohne Medien: vorausgefüllte erste Zeile, parallel zu `spalten`. */
+  beispielzeile?: string[]
+}
+
+/** Erwartungshorizont für LF4 und den gemeinsamen Auftrag — nur Lehrperson, nie im Heft. */
+export interface Erwartungshorizont {
+  gut_wenn?: string[]
+  beispiel_pol_1?: string
+  beispiel_pol_2?: string
+  tragfaehig?: string
+  nicht_tragfaehig?: string
+}
+
+export interface LeitfrageLoesung {
+  kern?: string
+  /** Bei LF4 darf `zeilen` fehlen — dann trägt `erwartungshorizont` die Lösung. */
+  zeilen?: { label?: string; text: string; quelle?: string }[]
+  /** v4.2: Bindung der Lösung an Quelle (ID) oder Lehrmittel-Abschnitt. */
+  quelle_ref?: string
+  /** v4.2: Datum (JJJJ-MM-TT), an dem die Lösung gegen die Quelle geprüft wurde. */
+  quelle_stand?: string
+  erwartungshorizont?: Erwartungshorizont
+}
+
+export interface Leitfrage {
+  nr: number
+  text: string
+  bloom?: string
+  knoten_ref?: string
+  /**
+   * Optional: benennt nominal (3–7 Wörter, ohne Verb), welchen Baustein des
+   * Handlungsprodukts diese Leitfrage liefert. Rein additiv — fehlt das Feld,
+   * rendern HTML und DOCX exakt wie bisher.
+   */
+  liefert?: string
+  /**
+   * Optional: Schreibhilfe für genau diese Leitfrage, gerendert als schmale
+   * rechte Spalte neben Frage und Schreibfeld (HTML wie DOCX, in beiden Modi).
+   * Bewusst dasselbe Vokabular wie `handlungsprodukt.scaffolding` — dort für
+   * das ganze Produkt, hier für den einen Denkschritt.
+   * `strategien` = «So gehen Sie vor» (knappe Liste), `satzanfaenge` =
+   * «Satzanfänge» (kursiv, in Guillemets), `produkt` = «Ins Produkt» (ein Satz).
+   * Rein additiv — fehlt das Feld, rendern HTML und DOCX exakt wie bisher.
+   */
+  scaffolding?: { strategien?: string[]; satzanfaenge?: string[]; produkt?: string }
+  feld_hoehe_mm?: number
+  /**
+   * Lehrpersonen-Lösung zu dieser Leitfrage — speist ausschliesslich die Unterfolie
+   * «Lösung der Leitfragen» im Unterrichtsdeck. Bewusst NICHT in DocS gerendert:
+   * der Schülerbogen bleibt unverändert, das Feld darf nie im ZIP für Lernende landen.
+   * `kern` ist die kurze Zeile auf dem Aufklapp-Titel, `zeilen` der Massstab selbst.
+   */
+  loesung?: LeitfrageLoesung
+  /** v4.2: `raster` nur bei LF3. Fehlend = `schreibfeld`. */
+  antwortform?: 'schreibfeld' | 'raster'
+  /** v4.2: nur bei `antwortform: 'raster'`. */
+  raster?: RasterSpec
+  /** v4.2: nur LF4. */
+  pol_typ?: PolTyp
+}
+
+/**
+ * Eine Karte der Quellenkartei (`src/data/quellen/<id>.json`) — Leitfaden §11.4.
+ * Das Repo ist öffentlich: Die Karte trägt nur Metadaten und einen eigenen
+ * Kurzbeschrieb. Transkripte und Volltexte liegen im privaten Archiv (`archiv_ref`).
+ */
+export interface QuelleKarte {
+  id: string
+  typ: 'artikel' | 'grafik' | 'video' | 'audio' | 'rechtstext' | string
+  titel: string
+  herausgeber: string
+  /** Publikationsdatum JJJJ-MM-TT (oder JJJJ, wenn die Quelle nur das Jahr nennt). */
+  datum: string
+  url: string
+  sprachmodus?: string
+  /** Welcher Ausschnitt gilt: Absätze/Grafik (Text) oder Zeitmarken mm:ss (Audio/Video). */
+  verortung?: { absaetze?: string; von?: string; bis?: string }
+  /** Länge des Ausschnitts, gemessen (Audio/Video). */
+  dauer_sek?: number
+  /** Länge des Ausschnitts, gemessen (Text). */
+  woerter?: number
+  kurzbeschrieb: string
+  /** Datum JJJJ-MM-TT, an dem Abruf, Titel, Datum und Sachlage geprüft wurden. */
+  sachlage_geprueft: string
+  /** Ordner im privaten Archiv, relativ zu `_lab/quellen-archiv/bbw-hko/` — nie ein Volltext. */
+  archiv_ref?: string
+  /** ID der Ersatzquelle. Nur gültig mit gleichem Auftrag und Raster. */
+  ersatz_ref?: string | null
+  lizenz_hinweis?: string
+  /** `true` wäre ein Fallmaterial — in der Kartei immer `false`. */
+  konstruiert: boolean
+  /** SRF: URN des Beitrags bzw. Segments (über `media_composition` bestätigt). */
+  urn?: string
+}
+
+/** Was in `spuren.mit_medien.quellen[]` auf der Platte steht: Kürzel + Einsatz im Heft. */
+export interface QuelleRef {
+  ref: string
+  rolle: 'pflicht' | 'vertiefung'
+  fuer_leitfrage?: number[]
+  /** Nur Pflichtquelle: Lese-/Seh-/Hörauftrag über dem Raster (Seite 3). */
+  auftrag?: string
+  /** Nur Pflichtquelle: Spiegel von `leitfragen[LF3].raster` (Spalten, Zeilen). */
+  raster?: Pick<RasterSpec, 'spalten' | 'zeilen'>
+  /** Nur Vertiefung: die eine Leitfrage auf der Karte (Seite 4). */
+  leitfrage_vertiefung?: string
+}
+
+/** Karte + Einsatz, wie sie die Renderer sehen (Ergebnis von `resolveQuellen`). */
+export interface Quelle extends QuelleKarte, Omit<QuelleRef, 'ref'> {
+  /** Aufgelöste Ersatzquelle (`ersatz_ref`), falls vorhanden. */
+  ersatz?: QuelleKarte
+}
+
+/** Kasten auf Seite 4: Vertiefung (Medien-Spur) oder Denkhilfe (Spur ohne Medien). */
+export interface KastenS4 {
+  typ: 'vertiefung' | 'denkhilfe'
+  titel: string
+  /** Nur Denkhilfe: 2–3 Spaltenköpfe der Tabelle. */
+  spalten?: string[]
+  hinweis?: string
+}
+
+/**
+ * Eine Spur eines Hefts — nur das, was von der Spur abhängt (Leitfaden §4.1).
+ * Der Kern (Situation, LF1, LF2, Produkt, Kriterien, Mindmap, Abschluss) steht
+ * genau einmal auf der Herausforderung selbst und wird hier nie wiederholt.
+ */
+export interface Spur {
+  /** Genau LF3 (`antwortform: 'raster'`) und LF4 (`pol_typ` gesetzt). */
+  leitfragen: Leitfrage[]
+  /**
+   * Nur Medien-Spur. Zwei Stadien wie bei `methoden`: auf der Platte {@link QuelleRef},
+   * nach `loadEinheit` {@link Quelle}. Der Typ beschreibt das aufgelöste Stadium.
+   */
+  quellen?: Quelle[]
+  kasten_s4?: KastenS4
+  /** Ersetzt den Platzhalter `{ ref: "__spur__" }` in `methoden` (Karte 2). */
+  methoden_ref_rezeption?: MethodeRef
+  /** Überschreibt `lernfortschritt.scaffold_90`. */
+  scaffold_90?: string
+}
+
+/** Feedback-Kriterium eines Hefts oder des gemeinsamen Auftrags — Wortlaut aus `kn.rubrik_shared`. */
+export interface FeedbackKriterium {
+  kn_kriterium: string
+  dimension: 'SuK' | 'Ges' | string
+  /** Die vier Stufen, wörtlich aus dem KN. */
+  stufen: string[]
+  /** «Woran sehe ich das in meinem Produkt?» */
+  indikator_produkt?: string
+}
+
+/** Gemeinsamer Auftrag (Auftragsbogen, 4 Seiten) — Leitfaden §7 und §11.2. In beiden Spuren identisch. */
+export interface GemeinsamerAuftrag {
+  titel?: string
+  lebensbereich?: string
+  persona?: Persona
+  situation_text?: string
+  zahlen_tabelle?: { label: string; wert: string }[]
+  leitfrage?: string
+  mehrdeutigkeit?: { trade_off?: string; hint?: string }
+  aktivierte_trade_offs?: string[]
+  sprachmodi?: string[]
+  sozialform?: { zulaessig?: Array<'einzel' | 'partner' | 'gruppe' | string>; empfehlung?: string }
+  auftrag?: string
+  schritte?: { label: string; hint: string }[]
+  abgaben?: string[]
+  /** Alle vier KN-Kriterien. */
+  feedback_kriterien?: FeedbackKriterium[]
+  kontext_ausschluss?: string[]
+  /** Nur Lehrperson (Begleiter) — nie auf dem Auftragsbogen. */
+  erwartungshorizont?: Erwartungshorizont
+  /** Seitenfolge des Bogens; informativ, der Renderer kennt die vier Seiten. */
+  bogen?: string[]
+}
+
+export interface GlossarEintrag {
+  begriff: string
+  definition: string
+  herkunft?: 'lehrmittel' | 'quelle' | string
+  heft?: 'A' | 'B' | string
+}
+
 export interface SituationJson {
   id?: string
   /**
@@ -87,6 +301,8 @@ export interface SituationJson {
    * Vollständigkeit steht auf Seite 1 (Cockpit).
    * `default_4page_v3`: Checkliste steht stattdessen auf der Selbstcheck-Seite,
    * vor der Reflexion.
+   * `heft_8page_v42` ({@link TEMPLATE_V42}): Heft mit zwei Spuren, Seitenfolge
+   * gemäss Leitfaden v4.2 §3. Einziger Schalter für allen v4.2-Renderer-Code.
    */
   template?: string
   modul?: string
@@ -124,38 +340,34 @@ export interface SituationJson {
    * für Variante A (alle drei nacheinander) bauen.
    */
   bereitet_vor?: { fuer: Array<'A' | 'B' | 'C'>; material: string; verbindlich: false }
-  leitfragen?: {
-    nr: number
-    text: string
-    bloom?: string
-    knoten_ref?: string
-    /**
-     * Optional: benennt nominal (3–7 Wörter, ohne Verb), welchen Baustein des
-     * Handlungsprodukts diese Leitfrage liefert. Rein additiv — fehlt das Feld,
-     * rendern HTML und DOCX exakt wie bisher.
-     */
-    liefert?: string
-    /**
-     * Optional: Schreibhilfe für genau diese Leitfrage, gerendert als schmale
-     * rechte Spalte neben Frage und Schreibfeld (HTML wie DOCX, in beiden Modi).
-     * Bewusst dasselbe Vokabular wie `handlungsprodukt.scaffolding` — dort für
-     * das ganze Produkt, hier für den einen Denkschritt.
-     * `strategien` = «So gehen Sie vor» (knappe Liste), `satzanfaenge` =
-     * «Satzanfänge» (kursiv, in Guillemets), `produkt` = «Ins Produkt» (ein Satz).
-     * Rein additiv — fehlt das Feld, rendern HTML und DOCX exakt wie bisher.
-     */
-    scaffolding?: { strategien?: string[]; satzanfaenge?: string[]; produkt?: string }
-    feld_hoehe_mm?: number
-    /**
-     * Lehrpersonen-Lösung zu dieser Leitfrage — speist ausschliesslich die Unterfolie
-     * «Lösung der Leitfragen» im Unterrichtsdeck. Bewusst NICHT in DocS gerendert:
-     * der Schülerbogen bleibt unverändert, das Feld darf nie im ZIP für Lernende landen.
-     * `kern` ist die kurze Zeile auf dem Aufklapp-Titel, `zeilen` der Massstab selbst.
-     */
-    loesung?: { kern?: string; zeilen: { label?: string; text: string; quelle?: string }[] }
-  }[]
+  /**
+   * Bestand: alle Leitfragen der Herausforderung.
+   * v4.2, zwei Stadien: Auf der Platte stehen hier nur LF1 und LF2 (Kern); LF3 und LF4
+   * liegen in `spuren.*.leitfragen`. Nach `loadEinheit` (→ `resolveSpur`) stehen alle
+   * vier hier — jeder Renderer sieht ein Heft mit vier Leitfragen.
+   */
+  leitfragen?: Leitfrage[]
+  /**
+   * v4.2, nur auf der Platte: die zwei Spuren. Eine Spur fehlt, wenn sie nicht zulässig
+   * ist (Leitfaden §4.4). `resolveSpur` setzt die gewählte Spur ein und ENTFERNT dieses
+   * Feld — ein Renderer bekommt es nie zu sehen.
+   */
+  spuren?: Partial<Record<SpurKey, Spur>>
+  /** v4.2, nur nach der Auflösung: welche Spur dieses Heft zeigt. */
+  spur?: SpurKey
+  /** v4.2, nur nach der Auflösung: welche Spuren die Herausforderung überhaupt hat. */
+  spuren_verfuegbar?: SpurKey[]
+  /** v4.2, nur nach der Auflösung und nur in der Medien-Spur: Pflicht- und Vertiefungsquellen. */
+  quellen?: Quelle[]
+  /** v4.2, nur nach der Auflösung: Kasten auf Seite 4 der gewählten Spur. */
+  kasten_s4?: KastenS4
+  /** v4.2: genau zwei KN-Kriterien (1 SuK + 1 Ges); ersetzt `lernfortschritt.kriterien` im Rendering. */
+  feedback_kriterien?: FeedbackKriterium[]
+  /** v4.2: Seite 8 unten; ersetzt `reflexion_fragen` im Rendering. */
+  abschluss?: { quercheck?: string[]; mitnahme?: string[] }
   mindmap_zentrum?: string
-  mindmap_aeste?: { titel: string; optional?: boolean; punkte?: string[] }[]
+  /** `transfer: true` (v4.2) markiert den einen Ast «gilt auch bei …». */
+  mindmap_aeste?: { titel: string; optional?: boolean; punkte?: string[]; transfer?: boolean }[]
   handlungsprodukt?: {
     format?: string
     format_detail?: string
@@ -165,6 +377,8 @@ export interface SituationJson {
     schritte?: { label: string; hint: string }[]
     schreib_label?: string
     schreib_note?: string
+    /** v4.2: Verweis auf die Methodenseite, unter den Schritten (Seite 5). */
+    hilfe_verweis?: string
     // C6 — language scaffolds for the Handlungsprodukt (additive); aligned to HP format + output Sprachmodus
     scaffolding?: { satzanfaenge?: string[]; strategien?: string[]; struktur?: string[] }
   }
@@ -245,6 +459,19 @@ export interface SetJson {
    * genannten Datensätzen nummern- und textgleich sind — siehe ./lehrgang.ts.
    */
   lehrgaenge?: string[]
+  /** Anzeige-Titel der Einheit im Katalog. */
+  einheit_titel?: string
+  /**
+   * v4.2: welche Spur die Einheit zeigt. `wahl` (Default): beide werden exportiert,
+   * die Lehrperson schaltet um; angezeigt wird zuerst `DEFAULT_SPUR`.
+   */
+  spur?: SpurKey | 'wahl'
+  /** v4.2: 12 Lektionen über vier Wochen. */
+  wochenplan?: { woche: number; lektionen: number; inhalt: string }[]
+  /** v4.2: ersetzt `austausch_phase` und `dekontextualisierungs_aufgabe` im Rendering. */
+  gemeinsamer_auftrag?: GemeinsamerAuftrag
+  /** v4.2: Glossar der Einheit (Auftragsbogen Seite A3). */
+  glossar?: GlossarEintrag[]
 }
 
 export interface KnTyp {
@@ -315,7 +542,16 @@ export interface PrinzipJson {
     must_activate_trade_offs_min?: number
     must_combine_herausforderungen?: string[]
     lehrjahr_constraint?: string
+    fall_ausschluss_hefte_und_auftrag?: string[]
   }
+  // v4.2 (Leitfaden §11.3)
+  modi_kn?: string[]
+  modi_pro_heft?: Record<string, string[]>
+  /** Berechnet: modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B), Leitfaden §7.2. */
+  modi_auftrag?: string[]
+  kn_kriterien_verteilung?: Record<string, string[]>
+  pol_typ_verteilung?: Record<string, Partial<Record<SpurKey, PolTyp>>>
+  mindmap_zentrum_kurz?: string
 }
 
 export interface BegleiterMeta {
@@ -486,4 +722,15 @@ export interface EinheitFullSet {
   lernprompt: LernpromptJson | null
   lernbegleiter: LernbegleiterJson | null
   dossier: DossierJson | null
+  /**
+   * v4.2: die Spur, in der `hf_A`/`hf_B` aufgelöst sind. Fehlt bei Einheiten ohne Spuren.
+   */
+  spur?: SpurKey
+  /**
+   * v4.2: dieselben Hefte, je verfügbarer Spur fertig aufgelöst — damit die Workbench
+   * ohne eigene Auflösungslogik umschalten und beide Spuren exportieren kann.
+   * `spur_varianten[spur]` ist identisch mit `{ hf_A, hf_B }` oben. Fehlt bei
+   * Einheiten ohne Spuren.
+   */
+  spur_varianten?: Partial<Record<SpurKey, { hf_A: SituationJson | null; hf_B: SituationJson | null }>>
 }
