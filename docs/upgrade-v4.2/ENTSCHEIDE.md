@@ -249,3 +249,22 @@ Vertiefungs-Leitfragen; die Steuerrückstand-Grafik statt einer Grafik zu
 Schuldenarten in Heft B.
 **Rückgängig:** Karte in `src/data/quellen/` ersetzen; LF3-Lösung der
 Medien-Spur aus dem Archivtext der neuen Quelle neu schreiben.
+
+## E12 — `check-einheiten`: Kontrollschritt-Regel gilt bei v4.2 nicht
+
+**Befund:** `check-einheiten` verlangt aus dem 3er-Set, dass Schritt 05 ein
+Kontrollschritt ist und nicht in den Abgaben vorkommt. Heft B macht Schritt 05
+gemäss Leitfaden §9.1 zum Budgetgespräch — das ist ein Produkt und steht in den
+Abgaben. Das Skript endete deshalb mit Exit 1 (sechs Warnungen).
+**Entscheid:** Trägt ein Heft `template: "heft_8page_v42"` und
+`feedback_kriterien`, entfallen die drei Kontrollschritt-Regeln: Die Kontrolle
+vor der Abgabe leisten die Feedback-Kriterien mit der Spalte «Selbst»
+(Leitfaden §2). Alle übrigen Regeln gelten weiter und sind erfüllt — dafür
+nennen vier Schritt-Hinweise jetzt ihre Leitfrage (A 02, A 03, B 01, B 02), und
+LF4 von Heft B trägt zwei statt drei Aufträge («Hält Ihre wichtigste Anpassung
+dem stärksten Einwand stand … — und warum?»).
+**Alternative:** Schritt 05 von Heft B in einen Prüfschritt umschreiben und das
+Gespräch in Schritt 04 ziehen — widerspricht der Verben-Tabelle §9.1.
+**Rückgängig:** die vier Zeilen `kontrolleUeberKriterien` in
+`scripts/check-einheiten.mjs`. Bestandseinheiten sind nicht betroffen
+(Ausgabe unverändert: 0 offene Befunde, 172 in der Baseline).

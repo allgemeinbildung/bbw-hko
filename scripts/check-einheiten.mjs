@@ -140,7 +140,11 @@ function pruefeHeft(sit, slug, spur) {
   })
 
   // --- Kontrollschritt schritte[4] ---------------------------------------
-  const ks = schritte[4]
+  // v4.2: Die Kontrolle vor der Abgabe leisten die Feedback-Kriterien mit der Spalte
+  // «Selbst» (Leitfaden §2, Seite 5). Schritt 05 darf darum ein Produktschritt sein —
+  // im Pilot ist es das Budgetgespräch (Leitfaden §9.1, ENTSCHEIDE E12).
+  const kontrolleUeberKriterien = sit.template === TEMPLATE_V42 && (sit.feedback_kriterien?.length ?? 0) > 0
+  const ks = kontrolleUeberKriterien ? null : schritte[4]
   if (ks) {
     const txt = `${ks.label ?? ''} ${ks.hint ?? ''}`
     if (!VERIFIKATION.test(txt)) {
