@@ -176,8 +176,11 @@ export interface Leitfrage {
  */
 export interface QuelleKarte {
   id: string
-  typ: 'artikel' | 'grafik' | 'video' | 'audio' | 'rechtstext' | string
+  typ: 'artikel' | 'grafik' | 'video' | 'audio' | 'rechtstext' | 'webseite' | string
+  /** Titel, wie er im Heft gedruckt wird (Budget §3.1). Wenn gekürzt: Original in `titel_original`. */
   titel: string
+  /** Wörtlicher Titel der Quelle, falls `titel` für den Druck gekürzt ist. */
+  titel_original?: string
   herausgeber: string
   /** Publikationsdatum JJJJ-MM-TT (oder JJJJ, wenn die Quelle nur das Jahr nennt). */
   datum: string
