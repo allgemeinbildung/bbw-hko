@@ -542,7 +542,7 @@
           "nr": 3,
           "bloom": "Analysieren",
           "knoten_ref": "Pflichtquelle · Raster",
-          "text": "Werten Sie Ihr Raster aus: Welche Gruppen liegen laut Grafik über der Gesamtbevölkerung — und wo stehen die Steuern in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "text": "Werten Sie Ihr Raster aus: Welche Gründe für Schulden nennt die Statistik — und welcher davon zeigt sich schon in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
           "liefert": "Schuldenwege mit Beleg",
           "antwortform": "raster",
           "raster": {
@@ -558,46 +558,48 @@
           "feld_hoehe_mm": 25,
           "scaffolding": {
             "strategien": [
-              "Lesen Sie zuerst Titel und Legende: Wer genau wird gezählt?",
-              "Vergleichen Sie jede Zeile mit der Zeile «Gesamtbevölkerung»."
+              "Lesen Sie zuerst die Titel genau: Wer wird gezählt, und für welches Jahr gilt der Wert?",
+              "Suchen Sie Zeilen, die zu Ihrem Fall passen, etwa zu Alter, Planung oder Fixkosten."
             ],
             "satzanfaenge": [
-              "«Über der Gesamtbevölkerung liegen …»",
-              "«Warum, zeigt die Grafik nicht; ich vermute …»",
-              "«In meinem Budget stehen die Steuern …»"
+              "«Laut Statistik nennen … % der Haushalte …»",
+              "«In meinem Budget zeigt sich das bei …»",
+              "«Die Statistik zeigt nicht, …»"
             ],
-            "produkt": "Fehlt in Ihrem Budget eine Rückstellung, setzt dort eine Schutzregel an."
+            "produkt": "Die Schuldenwege zeigen, wo Ihre Schutzregeln in LF4 ansetzen; markieren Sie die Posten im Budget."
           },
           "loesung": {
-            "kern": "Wer mit Steuern im Rückstand ist, am eigenen Budget",
+            "kern": "Gründe und Dauer der Überschuldung, am eigenen Budget",
             "quelle_ref": "q-131b-pflicht",
             "quelle_stand": "2026-10-01",
             "zeilen": [
               {
                 "label": "Erwartet",
-                "text": "Vier Werte mit Zeile, z. B.: Gesamtbevölkerung 8,8 %; 18–24 Jahre 10,4 %; obligatorische Schule 12,9 %; Arbeitslose 11,4 %."
+                "text": "2025, z. B.: Unvorsichtige Geldplanung 21 %, Hohe Fixkosten 15 % (2023: 6 %), Auszug Elternhaus 11 % (alle D. 5); Dauer ab 6 Jahren 44 % (D. 4: 20 + 24).",
+                "quelle": "q-131b-pflicht, S. 7"
               },
               {
                 "label": "Auch gültig",
-                "text": "25–49 Jahre 10,6 %; 50–64 Jahre 8,0 %; 65–74 Jahre 4,9 %; 75 Jahre oder älter 2,8 %; Sekundarstufe II 8,9 %; Tertiärstufe 6,1 %; Erwerbstätige 9,4 %."
+                "text": "Gesundheit/Unfall 29 %, Trennung/Scheidung 27 %, Arbeitslosigkeit 23 % (D. 5); Dauer 3–5 Jahre 33 % (D. 4).",
+                "quelle": "q-131b-pflicht, S. 7"
               },
               {
                 "label": "Begriffe",
-                "text": "Deutung der Lernenden, mehrere gelten: Steuern → Rückstellungen oder fixe Kosten (beides im Buch); Rückstand → Schuldenspirale; Arbeitslose → Saldo.",
+                "text": "Deutung der Lernenden, mehrere gelten: Geldplanung → Saldo; Fixkosten, Auszug → fixe Kosten; lange Dauer → Schuldenspirale.",
                 "quelle": "Kap. 2.2, S. 48"
               },
               {
                 "label": "Befund",
-                "text": "Prüft das eigene Budget: Stehen die Steuern als Rückstellung darin? Fehlt sie, wird sie ergänzt. Gründe nennt die Grafik nicht."
+                "text": "Verbindet mind. einen Grund mit dem eigenen Budget: Abos als fixe Kosten; offene Rechnung ohne Notizen = fehlende Planung."
               },
               {
                 "label": "Lesehilfe",
-                "text": "Abgesetzter Balkenteil (siehe Legende) = Vertrauensbereich (95 %); 10,4 gegen 10,6 ist keine Rangfolge. Gezählt: Personen in Haushalten mit Steuerrückstand, nicht Schuldner."
+                "text": "Mehrfachnennung: Prozente nicht addieren. Gezählt: Haushalte, die 2025 erstmals eine Schuldenberatung aufsuchen; nicht alle Verschuldeten, meist keine Jungen."
               },
               {
                 "label": "Mit Ersatzquelle",
-                "text": "Gründe 2025 (Mehrfachnennung): Gesundheit/Unfall 29 %; Unvorsichtige Geldplanung 21 % → Saldo; Hohe Fixkosten 15 % → fixe Kosten. Dauer > 10 Jahre: 24 % → Schuldenspirale.",
-                "quelle": "q-131b-pflicht-ersatz, S. 7"
+                "text": "Gesamt 8,8 %; 18–24 J. 10,4 % → Rückstellungen; oblig. Schule 12,9 % → Schuldenspirale; Arbeitslose 11,4 % → Saldo. Abgesetzter Balkenteil = Vertrauensbereich; 10,4 gegen 10,6 keine Rangfolge; zeigt wer, nicht warum.",
+                "quelle": "q-131b-pflicht-ersatz"
               }
             ]
           }
@@ -647,7 +649,7 @@
             3,
             4
           ],
-          "auftrag": "Lesen Sie die Grafik gemäss QR-Seite (Zeilen Gesamt, Alter, Bildung, Erwerb). Tragen Sie vier auffällige Werte ein und formulieren Sie je eine Aussage. Ordnen Sie jedem Wert einen Begriff aus LF1 zu.",
+          "auftrag": "Lesen Sie die Statistik (QR-Seite). Tragen Sie vier Werte mit Aussage ein, die zeigen, wie Menschen in der Schweiz in Schulden geraten oder wie lange sie darin bleiben. Ordnen Sie jedem Wert einen Begriff aus LF1 zu.",
           "raster": {
             "spalten": [
               "Was gemessen",

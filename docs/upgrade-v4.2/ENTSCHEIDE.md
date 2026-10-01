@@ -300,7 +300,7 @@ der Wert kleiner ist; Bildung und Erwerb gelten erst ab 18.
 
 | Karte | Neu | Vorher |
 |---|---|---|
-| `q-131b-pflicht` | Schuldenberatung Schweiz, Statistik 2025, Seite 7: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (116 Wörter) | BFS, «Steuerrückstand 2024» |
+| `q-131b-pflicht` | Schuldenberatung Schweiz, Statistik 2025, Seite 7: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (114 Wörter, am PDF gezählt) | BFS, «Steuerrückstand 2024» |
 | `q-131b-pflicht-ersatz` | BFS, «Steuerrückstand 2024», Zeilen Gesamt, Alter, Bildung, Erwerb | Schuldenberatung Schweiz, Seite 7 |
 
 Die IDs bleiben, die Inhalte der Karten und der Archivordner sind getauscht.
