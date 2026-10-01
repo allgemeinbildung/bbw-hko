@@ -268,3 +268,16 @@ Gespräch in Schritt 04 ziehen — widerspricht der Verben-Tabelle §9.1.
 **Rückgängig:** die vier Zeilen `kontrolleUeberKriterien` in
 `scripts/check-einheiten.mjs`. Bestandseinheiten sind nicht betroffen
 (Ausgabe unverändert: 0 offene Befunde, 172 in der Baseline).
+
+## E13 — Heft A, Methodenseite: «3B-Schema» statt «Ein Ziel SMART formulieren»
+
+**Befund:** `docs/methodenkartei.md` verlangt genau zwei Karten mit Beispiel.
+Heft A trug drei (Rezeptionskarte der Spur, «Echt oder geweckt prüfen»,
+«SMART»); Seite 6 passte nur noch mit 2,5 mm Reserve.
+**Entscheid:** Karte 4 ist neu `lm-17-3-3b-schema` (Lehrmittel Kap. 17.3,
+ohne Beispiel), mit der Übertragung «Massstab als Behauptung, Begründung,
+Prüfung am Beispiel Handy». Die Rezeptionskarte ist von Pietro freigegeben,
+«Echt oder geweckt prüfen» ist das Kernwerkzeug des Hefts — beide bleiben.
+**Alternative:** drei Beispielkarten mit gestauchten Abständen stehen lassen.
+**Rückgängig:** `methoden[3]` in `herausforderung_A.json` (vorher
+`lm-20-3-smart`, `fuer`: «für den Massstab-Satz»).

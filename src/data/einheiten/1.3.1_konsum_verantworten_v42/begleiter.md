@@ -276,11 +276,11 @@ Die fünf Schritte auf S. 5:
 - *Spur mit Medien:* Lehrmittel gegen Quelle — kann ein geweckter Wunsch ein echtes Bedürfnis treffen? Der Kasten «Vertiefung» ist freiwillig.
 
 > [!coaching] Massstab statt Gefühl
-> Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat (Methodenkarte «Ein Ziel SMART formulieren»). «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
+> Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat. Die Methodenkarte «3B-Schema» hilft beim Begründen: Behauptung, Begründung, Beispiel. «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
 
 **S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Stufe an; Schritt 05 verlangt danach eine Verbesserung.
 
-**S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «Ein Ziel SMART formulieren» für den Massstab-Satz.
+**S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite.
 
 **S. 7 — Arbeitsfläche (40 Min.).** Mindestens acht Einträge, je Gut → Bedürfnis als Stichwort. Jeder Eintrag bekommt eine von drei Markierungen: echt · geweckt · geweckt, aber berechtigt. Bei geweckten steht die Quelle aus dem Raster dabei.
 
