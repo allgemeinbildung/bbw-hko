@@ -356,8 +356,8 @@
     {
       "produkt": "Quelle",
       "vollstaendig_wenn": [
-        "Raster mit vier Werten",
-        "Jeder Wert hat einen Begriff aus LF1"
+        "Raster zur Quelle (S. 3) mit vier Zeilen",
+        "Jede Zeile hat einen Begriff aus LF1"
       ]
     },
     {
@@ -373,7 +373,7 @@
       "vollstaendig_wenn": [
         "Mindmap mit mind. 5 beschrifteten Verbindungen",
         "Quer-Check abgehakt",
-        "Tandem-Mitnahme notiert"
+        "Mitnahme notiert"
       ]
     }
   ],
@@ -530,7 +530,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zu Kap. 8.2 (S. 3)"
       },
-      "scaffold_90": "Budgetvorlage mit Kategorien, Beispielzeile im Raster und ein vorgegebener Einwand in der Denkhilfe."
+      "scaffold_90": "Budgetvorlage mit Kategorien und ein vorgegebener Einwand in der Denkhilfe."
     },
     "mit_medien": {
       "leitfragen": [
@@ -538,7 +538,7 @@
           "nr": 3,
           "bloom": "Analysieren",
           "knoten_ref": "Pflichtquelle · Raster",
-          "text": "Werten Sie Ihr Raster aus: Über welche Posten geraten junge Erwachsene laut Quelle am häufigsten in Schulden — und welcher davon steckt auch in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "text": "Werten Sie Ihr Raster aus: Welche Gruppen liegen laut Grafik über der Gesamtbevölkerung — und wo stehen die Steuern in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
           "liefert": "Schuldenwege mit Beleg",
           "antwortform": "raster",
           "raster": {
@@ -554,31 +554,46 @@
           "feld_hoehe_mm": 25,
           "scaffolding": {
             "strategien": [
-              "Lesen Sie zuerst Titel, Achsen und Legende der Grafik.",
-              "Notieren Sie nur Werte, die Sie auch erklären können."
+              "Lesen Sie zuerst Titel und Legende: Wer genau wird gezählt?",
+              "Vergleichen Sie jede Zeile mit der Zeile «Gesamtbevölkerung»."
             ],
             "satzanfaenge": [
-              "«Die Grafik zeigt, dass …»",
-              "«In meinem Budget entspricht dem …»"
+              "«Über der Gesamtbevölkerung liegen …»",
+              "«Warum, zeigt die Grafik nicht; ich vermute …»",
+              "«In meinem Budget stehen die Steuern …»"
             ],
-            "produkt": "Die Schuldenwege bestimmen, wo Ihre Schutzregeln ansetzen."
+            "produkt": "Fehlt in Ihrem Budget eine Rückstellung, setzt dort eine Schutzregel an."
           },
           "loesung": {
-            "kern": "[abhängig von der Pflichtquelle]",
+            "kern": "Wer mit Steuern im Rückstand ist, am eigenen Budget",
             "quelle_ref": "q-131b-pflicht",
-            "quelle_stand": "[Datum der Quellenfreigabe]",
+            "quelle_stand": "2026-10-01",
             "zeilen": [
               {
                 "label": "Erwartet",
-                "text": "[Vier Werte aus der Grafik mit Aussage — nach Freigabe aus der Quelle erzeugen]"
+                "text": "Vier Werte mit Zeile, z. B.: Gesamtbevölkerung 8,8 %; 18–24 Jahre 10,4 %; obligatorische Schule 12,9 %; Arbeitslose 11,4 %."
+              },
+              {
+                "label": "Auch gültig",
+                "text": "25–49 Jahre 10,6 %; 50–64 Jahre 8,0 %; 65–74 Jahre 4,9 %; 75 Jahre oder älter 2,8 %; Sekundarstufe II 8,9 %; Tertiärstufe 6,1 %; Erwerbstätige 9,4 %."
               },
               {
                 "label": "Begriffe",
-                "text": "Typische Zuordnungen: fixe Kosten, offene Rechnung, Mahnung, Schuldenspirale."
+                "text": "Deutung der Lernenden, mehrere gelten: Steuern → Rückstellungen oder fixe Kosten (beides im Buch); Rückstand → Schuldenspirale; Arbeitslose → Saldo.",
+                "quelle": "Kap. 2.2, S. 48"
               },
               {
                 "label": "Befund",
-                "text": "Verbindet mindestens einen Schuldenweg aus der Quelle mit einem Posten im eigenen Budget (Abos oder offene Rechnung)."
+                "text": "Prüft das eigene Budget: Stehen die Steuern als Rückstellung darin? Fehlt sie, wird sie ergänzt. Gründe nennt die Grafik nicht."
+              },
+              {
+                "label": "Lesehilfe",
+                "text": "Abgesetzter Balkenteil (siehe Legende) = Vertrauensbereich (95 %); 10,4 gegen 10,6 ist keine Rangfolge. Gezählt: Personen in Haushalten mit Steuerrückstand, nicht Schuldner."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Gründe 2025 (Mehrfachnennung): Gesundheit/Unfall 29 %; Unvorsichtige Geldplanung 21 % → Saldo; Hohe Fixkosten 15 % → fixe Kosten. Dauer > 10 Jahre: 24 % → Schuldenspirale.",
+                "quelle": "q-131b-pflicht-ersatz, S. 7"
               }
             ]
           }
@@ -628,7 +643,7 @@
             3,
             4
           ],
-          "auftrag": "Lesen Sie die Grafik und den Begleittext gemäss QR-Seite. Tragen Sie vier Werte ein, die zeigen, wie junge Erwachsene in Schulden geraten. Ordnen Sie jedem Wert einen Begriff aus LF1 zu.",
+          "auftrag": "Lesen Sie die Grafik gemäss QR-Seite (Zeilen Gesamt, Alter, Bildung, Erwerb). Tragen Sie vier Werte ein, die zeigen, wer in Zahlungsrückstand gerät oder warum. Ordnen Sie jedem Wert einen Begriff aus LF1 zu.",
           "raster": {
             "spalten": [
               "Was gemessen",
@@ -642,7 +657,7 @@
         {
           "ref": "q-131b-vertiefung-1",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Was rät eine Schuldenberatung jungen Erwachsenen als Erstes, wenn das Geld nicht mehr reicht?"
+          "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wo finden sie früh Hilfe?"
         },
         {
           "ref": "q-131b-vertiefung-2",
