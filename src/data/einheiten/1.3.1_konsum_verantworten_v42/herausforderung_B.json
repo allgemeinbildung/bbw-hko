@@ -106,7 +106,7 @@
       "ref": "Kap. 2.2",
       "titel": "Budget — fixe und variable Kosten",
       "unterueberschrift": "Rückstellungen, Saldo",
-      "seiten": "Seite 48-49",
+      "seiten": "Seite 48",
       "fuer_leitfrage": [
         1,
         2
@@ -175,7 +175,7 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.1 | S. 46-47 · Kap. 2.2 | S. 48 · eigener Fall",
-      "text": "Erstellen Sie Ihr Monatsbudget mit realistischen Zahlen — geschätzte genügen. Gliedern Sie nach den drei Kostenarten, nehmen Sie Abos und offene Rechnung auf und berechnen Sie den Saldo. Ab welchem Tag wird es knapp?",
+      "text": "Sammeln Sie die Zahlen für Ihr eigenes Monatsbudget — geschätzte genügen: Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung. Berechnen Sie den Saldo. Bei welchen Posten wird es knapp?",
       "liefert": "Budget mit Saldo und Engpass",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 45,
@@ -186,9 +186,9 @@
         ],
         "satzanfaenge": [
           "«Mein Saldo am Monatsende beträgt …»",
-          "«Knapp wird es ab …, weil …»"
+          "«Knapp wird es bei …, weil …»"
         ],
-        "produkt": "Das Budget ist das Herzstück Ihres Produkts."
+        "produkt": "Hier sammeln Sie die Zahlen; das saubere Budget entsteht auf S. 7."
       },
       "loesung": {
         "kern": "Realistisches Budget mit Saldo",
@@ -204,7 +204,7 @@
           },
           {
             "label": "Engpass",
-            "text": "Der Tag, ab dem der Saldo negativ würde, wird benannt (in der Situation um den 20.)."
+            "text": "Die Posten, die den Saldo ins Minus drücken, werden benannt (in der Situation: Abos und offene Rechnung; das Konto ist um den 20. leer)."
           },
           {
             "label": "Häufiger Fehler",
@@ -226,7 +226,7 @@
       },
       {
         "label": "02 Engpass markieren",
-        "hint": "Markieren Sie in Ihrem Budget aus LF2 den Posten und den Tag, an dem es knapp wird."
+        "hint": "Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird."
       },
       {
         "label": "03 Risiken belegen",
@@ -234,7 +234,7 @@
       },
       {
         "label": "04 Anpassen und Regeln setzen",
-        "hint": "Tragen Sie Anpassungen und Schutzregeln aus LF4 ein und rechnen Sie den neuen Saldo."
+        "hint": "Tragen Sie Anpassungen (je mit Grund) und Schutzregeln aus LF4 ein; die Regeln setzen bei den Posten aus Schritt 03 an. Neuen Saldo rechnen."
       },
       {
         "label": "05 Gespräch führen",
@@ -244,7 +244,7 @@
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
     "abgaben": [
       "Monatsbudget mit Saldo vor und nach den Anpassungen",
-      "2–3 Anpassungen und 2 Schutzregeln (Wenn-dann)",
+      "2–3 Anpassungen (eine für die offene Rechnung) und 2 Schutzregeln (Wenn-dann)",
       "Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand"
     ]
   },
@@ -274,7 +274,7 @@
   ],
   "lernfortschritt": {
     "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien und eine Beispielzeile im Raster der Quelle.",
-    "scaffold_100": "Ein zweites Szenario einbauen (unerwartete Zahnarztrechnung CHF 300) und das Budget mit Rückstellungen anpassen."
+    "scaffold_100": "Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen."
   },
   "methoden": [
     {
@@ -289,7 +289,7 @@
     {
       "ref": "lm-16-2-statement",
       "fuer": "für die Argumente im Budgetgespräch",
-      "tun": "Begründen Sie jede Anpassung in drei Zügen: Ausgangslage, Grund, Entscheid — je ein Satz."
+      "tun": "Begründen Sie jede Anpassung in drei Teilen wie im Kapitel: Ausgangslage, Begründung, Schluss mit Ihrem Entscheid."
     },
     {
       "ref": "lm-19-2-vier-ohren",
@@ -357,7 +357,8 @@
       "produkt": "Quelle",
       "vollstaendig_wenn": [
         "Raster zur Quelle (S. 3) mit vier Zeilen",
-        "Jede Zeile hat einen Begriff aus LF1"
+        "Jede Zeile hat einen Begriff aus LF1",
+        "Befund in zwei bis drei Sätzen"
       ]
     },
     {
@@ -386,7 +387,7 @@
     },
     {
       "label": "Lektion 2 · 45 min",
-      "text": "LF3 mit Raster (Quelle der Spur), LF4, Anpassungen und Regeln",
+      "text": "LF3 mit Raster zur Quelle, LF4, Anpassungen und Regeln",
       "aktiv": false
     },
     {
@@ -401,7 +402,7 @@
   },
   "prinzip_handoff": {
     "kernkonzept": "Realistisch planen, Engpässe und Schuldenwege erkennen, Anpassungen begründet vertreten",
-    "lehrmittel_anker": "Kap. 2.1 S. 46-47, Kap. 2.2 S. 48-49, Kap. 8.2 S. 199-200.",
+    "lehrmittel_anker": "Kap. 2.1 S. 46-47, Kap. 2.2 S. 48, Kap. 8.2 S. 199-200.",
     "kn_aktivierung": "Im KN muss die Lernende prüfen, ob die Leasingrate in ihr Budget passt, und den Entscheid begründen — ohne dass Leasing in Heft B als Fall vorkommt.",
     "transfer_check": "Kann die Lernende ein knappes Budget mit eigenen Zahlen aufstellen, Schuldenrisiken benennen und eine Anpassung gegen einen Einwand verteidigen?"
   },
@@ -431,7 +432,7 @@
           "antwortform": "raster",
           "raster": {
             "knoten_ref": "Kap. 8.2 | S. 199-200",
-            "auftrag": "Lesen Sie Kap. 8.2 S. 199–200. Tragen Sie vier Aussagen ein, die Ursachen oder Folgen von Verschuldung zeigen. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
+            "auftrag": "Suchen Sie in Kap. 8.2 (S. 199–200) drei weitere Aussagen, die Ursachen oder Folgen von Verschuldung zeigen. Die erste Zeile ist ein Beispiel. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
             "spalten": [
               "Absatz",
               "Kernaussage",
@@ -442,7 +443,7 @@
             "beispielzeile": [
               "S. 199",
               "Mehr ausgeben als haben",
-              "Leben auf Pump",
+              "viele 18- bis 24-Jährige",
               "Schuldenspirale"
             ]
           },
@@ -505,12 +506,12 @@
             "erwartungshorizont": {
               "gut_wenn": [
                 "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch.",
-                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop eine Abzahlung vereinbart.",
+                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop in Teilbeträgen geregelt.",
                 "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
                 "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
               ],
-              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und kürze Kleider und Schuhe. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regel: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.»",
-              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte und lege dafür 30 Franken als Rückstellung zur Seite. Regel: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort.»",
+              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und kürze Kleider und Schuhe; die offene Rechnung zahle ich diesen Monat zuerst. So reicht das Geld bis Monatsende. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regeln: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst. Wenn ich ein Abo abschliesse, dann nur eines, das ich monatlich kündigen kann.»",
+              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte, kündige das Fitness und lege 30 Franken als Rückstellung zur Seite; die Rechnung zahle ich in zwei Teilen, das habe ich mit dem Shop abgemacht. Regeln: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort. Wenn mein Saldo unter 50 Franken fällt, kaufe ich nichts Neues.»",
               "nicht_tragfaehig": "Nur Rückstellungen streichen; Regeln ohne Überprüfbarkeit («Ich will sparsamer sein»); den Einwand übergehen."
             }
           }
@@ -528,7 +529,10 @@
       },
       "methoden_ref_rezeption": {
         "ref": "hko-quelle-raster",
-        "fuer": "für das Raster zu Kap. 8.2 (S. 3)"
+        "fuer": "für das Raster zu Kap. 8.2 (S. 3)",
+        "beispiel": [
+          "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
       },
       "scaffold_90": "Budgetvorlage mit Kategorien und ein vorgegebener Einwand in der Denkhilfe."
     },
@@ -624,12 +628,12 @@
             "erwartungshorizont": {
               "gut_wenn": [
                 "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch.",
-                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop eine Abzahlung vereinbart.",
+                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop in Teilbeträgen geregelt.",
                 "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
                 "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
               ],
-              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und kürze Kleider und Schuhe. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regel: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.»",
-              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte und lege dafür 30 Franken als Rückstellung zur Seite. Regel: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort.»",
+              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und kürze Kleider und Schuhe; die offene Rechnung zahle ich diesen Monat zuerst. So reicht das Geld bis Monatsende. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regeln: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst. Wenn ich ein Abo abschliesse, dann nur eines, das ich monatlich kündigen kann.»",
+              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte, kündige das Fitness und lege 30 Franken als Rückstellung zur Seite; die Rechnung zahle ich in zwei Teilen, das habe ich mit dem Shop abgemacht. Regeln: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort. Wenn mein Saldo unter 50 Franken fällt, kaufe ich nichts Neues.»",
               "nicht_tragfaehig": "Nur Rückstellungen streichen; Regeln ohne Überprüfbarkeit («Ich will sparsamer sein»); den Einwand übergehen."
             }
           }
@@ -671,7 +675,10 @@
       },
       "methoden_ref_rezeption": {
         "ref": "hko-grafik-lesen",
-        "fuer": "für das Raster der Pflichtquelle (S. 3)"
+        "fuer": "für das Raster der Pflichtquelle (S. 3)",
+        "beispiel": [
+          "Was gemessen: Anteil mit Vereinssport · auffälliger Wert: «jede dritte Person» (Beispielwert) · Aussage: Vereine erreichen viele · → hier ein Begriff aus LF1"
+        ]
       },
       "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien und eine gemeinsam erarbeitete erste Rasterzeile."
     }
