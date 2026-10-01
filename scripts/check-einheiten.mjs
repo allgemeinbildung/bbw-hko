@@ -358,6 +358,10 @@ function pruefeBegleiter(slug) {
   const f = pruefeBegleiterKopien(slug, q, raw)
   for (const m of raw.matchAll(MARKER)) {
     const [, pfad, fmt, rueckfall] = m
+    // v4.2: `<!--hko:quellen|quellenstand-->` setzt die Quellentabelle beim Laden aus der
+    // Kartei (begleiter-felder.ts). Sie hat keinen Pfad in den Einheitsdateien; ob die
+    // Karten existieren und vollständig sind, prüft check-v42.mjs.
+    if (fmt === 'quellenstand') continue
     const soll = formatiere(pfadWert(q, pfad), fmt)
     const id = `${slug} begleiter.md`
     if (soll == null) {

@@ -187,13 +187,19 @@ export function loadEinheit(slug: string, opts?: LoadEinheitOptions): EinheitFul
   // KN-Szene und KN-Fragen stehen kanonisch in den JSONs, der Begleiter zitiert sie nur.
   // Reihenfolge: erst Felder, dann Lösungen — letztere fügen ganze Blöcke ein und
   // sollen dabei bereits aufgelöste Marker sehen.
-  // v4.2: gespiegelt werden vorerst nur die Lösungen der wirksamen Spur (`hf_A`/`hf_B`).
+  // v4.2: Der Begleiter darf nicht davon abhängen, welche Spur wirksam ist. Die Lösungen
+  // kommen darum aus den Rohheften (Kern + beide Spuren), der Quellen-Stand aus der
+  // aufgelösten Medien-Spur. Bestandseinheiten (`spur` null) laufen wie bisher.
   const knRaw = pickJson<KnJson>(slug, 'kn')
   const prinzipRaw = pickJson<PrinzipJson>(slug, 'prinzip')
+  const medien = varianten.mit_medien
   const raw = rawFile
     ? withLeitfragenLoesungen(
-        withFeldern(rawFile, { hf_A, hf_B, hf_C, kn: knRaw, set: setRaw, prinzip: prinzipRaw }),
-        [hf_A, hf_B, hf_C]
+        withFeldern(rawFile, {
+          hf_A, hf_B, hf_C, kn: knRaw, set: setRaw, prinzip: prinzipRaw,
+          ...(medien ? { quellen: { A: medien.hf_A?.quellen ?? [], B: medien.hf_B?.quellen ?? [] } } : {}),
+        }),
+        spur ? [rohA, rohB, rohC] : [hf_A, hf_B, hf_C]
       )
     : undefined
   const begleiter = raw ? { raw, ...parseFrontmatter(raw) } : null
