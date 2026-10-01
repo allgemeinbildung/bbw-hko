@@ -201,3 +201,51 @@ Dazu, aus der Übergabe der Fachprüfung (kein Budget, sondern Sachlage):
   (Vorgabe von `check-lf-loesung`).
 
 **Rückgängig:** `git revert 49519ac`.
+
+## E11 — Quellenwahl (Spur mit Medien)
+
+Sechs Such-Worker (plus zwei der Parallelsession) haben am 01.10.2026 je Slot
+zwei bis vier Kandidaten abgerufen und geprüft. Volltexte und Transkripte
+liegen unter `D:\OS\_lab\quellen-archiv\bbw-hko\<quellen-id>\gewaehlt\`, die
+nicht gewählten Kandidaten unter `_kandidaten\`. Jede gewählte URL und URN
+wurde danach noch einmal mechanisch abgerufen (Status, Titel, Datum).
+
+| Karte | Gewählt | Warum diese | Zugeständnis |
+|---|---|---|---|
+| `q-131a-pflicht` | nau.ch / Keystone-SDA, 15.06.2026, «Influencer treiben Online-Käufe bei Jugendlichen in die Höhe», ganzer Artikel (421 Wörter) | trifft die Frage «über welche Wege entstehen Kaufwünsche» am direktesten, mit Zahlen in fast jedem Absatz; Agenturtext über eine Studie einer Universitätsklinik | Erhebung aus **Deutschland** (10–17 Jahre); **keine Grafik** im Artikel — der Auftrag nennt darum keine Grafik mehr |
+| `q-131a-pflicht-ersatz` | watson.ch, 17.12.2025, «Influencer-Marketing gefährdet junge Leute – die Politik sollte handeln», ab «Was wurde untersucht?», 10 Absätze (287 Wörter) | Schweizer Konsumentenorganisation, gleiche Frage, gleiches Raster; anderer Host als die Pflichtquelle | wenige Zahlen; Sprache stellenweise sperrig |
+| `q-131a-vertiefung-1` | SRF Ratgeber, 23.08.2023, «So erkennt man Influencer-Werbung» (5:54) | beantwortet die Leitfrage direkt; URN bestätigt | **kein Transkript** (nicht in Swissdox, SRG-Audio hat keine Untertitel) — Kurzbeschrieb stützt sich auf den von SRF veröffentlichten Begleittext; das Audio ist nicht gegengehört |
+| `q-131a-vertiefung-2` | SRF Impact, 10.01.2024, «Designer-Fälschungen – …», Ausschnitt 00:35–06:29 (5:54) | zeigt, wie sehr junge Leute mit dem Trend mitgehen wollen, und was es kostet; Transkript (VTT) gelesen | **Leitfrage geändert**: Kein SRF-Video trägt die These «Dazugehören ist ein echtes Bedürfnis» als Kontrast-Stimme. Neu: «Welches Bedürfnis steckt hinter dem Kauf gefälschter Markenartikel — und was riskiert, wer sie bestellt?» |
+| `q-131b-pflicht` | BFS, Grafik «Steuerrückstand 2024» (SILC 2024, publiziert 16.02.2026), Datawrapper-Direktlink, Zeilen Gesamt/Alter/Bildung/Erwerb | amtlich, aktuell, eigene Zeile 18–24 Jahre, Zahlen an den Balken, auf dem Handy lesbar; **frei von Kredit und Leasing** | zeigt, **wer** im Rückstand ist, nicht **wie** man hineingerät — LF3 und Auftrag sind entsprechend umformuliert; Bezug: Gesamtbevölkerung |
+| `q-131b-pflicht-ersatz` | Schuldenberatung Schweiz, Statistik 2025 (September 2026), Seite 7 «Gründe» und «Dauer» | Fachstelle, gleicher Typ, gleiches Raster; Seite 7 ist frei von Kredit und Leasing | PDF; Ratsuchende sind meist 30–49 Jahre alt; Seiten 8–9 desselben PDF nennen Kredite (ausserhalb der Verortung) |
+| `q-131b-vertiefung-1` | SRF Regionaljournal Aargau Solothurn, 06.02.2025, «Neuer Aargauer Verein hilft jungen Leuten mit Schulden», 00:04–03:10 | einziger Kandidat mit Transkript (Swissdox), jugendbezogen, frei von Kredit | **Leitfrage geändert**: Kein Audio bis sechs Minuten lässt eine Schuldenberatung «erste Schritte» nennen. Neu: «Warum rutschen junge Leute laut Beitrag in Schulden — und wo finden sie früh Hilfe?» Mundart; nennt eine Zahl von 2021 |
+| `q-131b-vertiefung-2` | ch.ch, «Betreibung: Zahlungsbefehl, Rechtsvorschlag, Pfändung», Abschnitt «Werden Sie betrieben?» (384 Wörter) | amtlich; Fristen am SchKG geprüft (fedlex, Stand 01.01.2026) | Seite ohne Datum; Inhalt lädt nur im Browser (kein einfacher Textabruf) |
+
+**Verworfen, obwohl naheliegend**
+
+- *BFS «Zahlungsrückstände nach Art», 2024 und 2022:* je ein Balken
+  «Kreditrückzahlungen …», 2024 sogar an dritter Stelle. Das BFS zählt dazu
+  Fahrzeug-Leasing und Konsumkredit — der Gegenstand des KN (Invariante 9).
+- *cmm360.ch zum DPD-Barometer (Schweizer Daten, mit Grafik):*
+  Medienmitteilung eines Paketdienstes, Fachjargon, 18–27 Jahre. Archiviert
+  als Reserve (`q-131a-pflicht-ersatz\kandidat-cmm360`).
+- *SRF Impact «Swifties» (Zugehörigkeit ausdrücklich):* Konzertbesuch als
+  Gegenstand überschneidet sich mit dem gemeinsamen Auftrag (Openair).
+- *feel-ok.ch «Von der Mahnung zur Betreibung» (jugendnah, mit Grafik):* nennt
+  im Abschnitt zum Verlustschein «Kredit»; Reserve für Vertiefung 2 von Heft B.
+- *SRF Espresso «Schuldenfalle Corona-Pandemie» (30.12.2020):* nennt laut
+  Begleittext erste Schritte, aber kein Transkript und Corona-Rahmung.
+
+**Lesart von Invariante 9 bei Quellen:** Massgebend ist die **Verortung** — der
+Ausschnitt, den die Karte nennt. Er darf weder Leasing noch Konsumkredit,
+E-Bike oder Mobilität enthalten. Dass dasselbe PDF oder dieselbe Website an
+anderer Stelle Kredite erwähnt, lässt sich bei Schuldenstatistiken nicht
+vermeiden und ist toleriert; wo möglich, zeigt der Link direkt auf den
+Ausschnitt (BFS: Direktlink auf die eine Grafik statt auf die Themenseite).
+
+**Was Pietro prüfen sollte (Leitfaden §13: Quellen gibt Pietro frei):** die
+deutsche Erhebung als Pflichtquelle von Heft A; die zwei geänderten
+Vertiefungs-Leitfragen; die Steuerrückstand-Grafik statt einer Grafik zu
+Schuldenarten in Heft B.
+**Rückgängig:** Karte in `src/data/quellen/` ersetzen; LF3-Lösung der
+Medien-Spur aus dem Archivtext der neuen Quelle neu schreiben.
