@@ -622,7 +622,7 @@ Der gemeinsame Auftrag ist die **Generalprobe mit Rückmeldung**: ein neuer Fall
 
 ### Ablauf über drei Lektionen (Vorschlag)
 
-Der Auftragsbogen hat vier Seiten: **A1** Situation, Zahlen, Leitfrage, Spannungsfeld, Auftrag, Schritte, Abgaben, Sozialform und der Bezug auf die Hefte · **A2** Arbeitsfläche für das Entscheidungsblatt · **A3** Planung der Sprachnachricht (das Glossar steht neu in jedem Heft auf S. 8, nicht mehr auf dem Bogen) · **A4** Rückmeldung mit den vier KN-Kriterien, Spalten «Selbst» und «LP» und der Zeile «Bis zum KN verbessere ich …».
+Der Auftragsbogen hat vier Seiten: **A1** Situation, Zahlen, Leitfrage, Spannungsfeld, Auftrag, Schritte, Abgaben, Sozialform und der Bezug auf die Hefte · **A2** Arbeitsfläche für das Entscheidungsblatt · **A3** Planung der Sprachnachricht (das Glossar steht neu in jedem Heft auf S. 8, nicht mehr auf dem Bogen) · **A4** Selbsteinschätzung mit den vier KN-Kriterien, Spalten «Selbst» und «Fremd» und den Zeilen «Das verbessere ich …» und «Rückmeldung, die ich erhalten habe».
 
 | Lektion | Was geschieht | Bogen | Sozialform |
 |---|---|---|---|
@@ -662,7 +662,7 @@ Die vier Kriterien stehen auf A4 im Wortlaut des KN, mit denselben vier Stufen (
 
 ### Rückmeldung vor dem KN
 
-Zwischen der Abgabe und dem KN liegt mindestens eine Lektion mit Rückmeldung — in diesem Plan die dritte Lektion von Woche 3. Du gibst Rückmeldung auf A4 in der Spalte «LP», auf derselben Skala wie die Selbsteinschätzung. Jede Person schliesst mit einem Satz «Bis zum KN verbessere ich …». Wird diese Lektion gestrichen, verliert der Auftrag seinen Sinn; dafür gibt es den Puffer (Kap. 1).
+Zwischen der Abgabe und dem KN liegt mindestens eine Lektion mit Rückmeldung — in diesem Plan die dritte Lektion von Woche 3. Der Bogen selbst lässt offen, wer die Spalte «Fremd» ausfüllt (du, eine Partnerin, beide) und was du mit dem Auftrag machst — er nennt weder Lehrperson noch Note. Im Vorschlag gibst du Rückmeldung in der Spalte «Fremd», auf derselben Skala wie die Selbsteinschätzung, und jede Person schliesst mit einem Satz unter «Das verbessere ich …». Wird diese Lektion gestrichen, verliert der Auftrag seinen Sinn; dafür gibt es den Puffer (Kap. 1).
 
 ### Abgrenzung zum KN
 

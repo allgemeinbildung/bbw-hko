@@ -7,7 +7,7 @@ import type { GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/e
  * Auftragsbogen des gemeinsamen Auftrags v4.2 — Leitfaden docs/upgrade-v4.2 §7.5.
  *
  * Vier Seiten in fester Folge: A1 Situation und Auftrag · A2 Arbeitsfläche ·
- * A3 Sprechspur (das Glossar steht seit E17 in den Heften, S. 8) · A4 Rückmeldung. Der Auftrag ist in beiden
+ * A3 Sprechspur (das Glossar steht seit E17 in den Heften, S. 8) · A4 Selbsteinschätzung. Der Auftrag ist in beiden
  * Spuren identisch (§7.4) und braucht kein Medium — darum hängt hier nichts an `spur`.
  *
  * Muster DocAustausch.tsx: ein Set-Dokument mit eigener Hülle und eigenem
@@ -261,15 +261,16 @@ function SeiteA3({ ga, set, edits, onEdit }: SeiteProps) {
   )
 }
 
-// ---------------- A4 — Rückmeldung ----------------
+// ---------------- A4 — Selbsteinschätzung ----------------
+// Bewusst neutral (ENTSCHEIDE E18): der Bogen sagt nicht, wer Rückmeldung gibt und ob der Auftrag zählt.
 function SeiteA4({ ga, edits, onEdit }: SeiteProps) {
   const kriterien = ga.feedback_kriterien || []
   return (
     <>
-      <SectionHead num="A4">Rückmeldung</SectionHead>
+      <SectionHead num="A4">Selbsteinschätzung</SectionHead>
       <p className="v42-auftrag-klein v42-auftrag-fest">
-        Kreuzen Sie vor der Abgabe je Kriterium Ihre Stufe an (Spalte «Selbst»). Die Lehrperson gibt Ihnen Rückmeldung
-        auf derselben Skala (Spalte «LP»). Es sind die Kriterien des KN; der Auftrag zählt nicht für die Note.
+        Schätzen Sie Ihre Arbeit selbst ein: Kreuzen Sie je Kriterium die Stufe an, die zutrifft (Spalte «Selbst»).
+        Die Spalte «Fremd» ist frei für eine Rückmeldung von aussen.
       </p>
       <table className="v42-auftrag-raster">
         <colgroup>
@@ -279,7 +280,7 @@ function SeiteA4({ ga, edits, onEdit }: SeiteProps) {
           <col style={{ width: '13mm' }} />
         </colgroup>
         <thead>
-          <tr><th>Stufe</th><th>Kriterium</th><th>Selbst</th><th>LP</th></tr>
+          <tr><th>Stufe</th><th>Kriterium</th><th>Selbst</th><th>Fremd</th></tr>
         </thead>
         {kriterien.map((k, ki) => (
           <tbody key={ki}>
@@ -302,11 +303,11 @@ function SeiteA4({ ga, edits, onEdit }: SeiteProps) {
       </table>
 
       <div className="v42-auftrag-fest">
-        <div className="v42-auftrag-mikro v42-auftrag-feldlabel">Bis zum KN verbessere ich …</div>
+        <div className="v42-auftrag-mikro v42-auftrag-feldlabel">Das verbessere ich …</div>
         <Schreibfeld heightMm={17} value={edits.auftrag_verbessern || ''} onChange={(v) => onEdit('auftrag_verbessern', v)} />
       </div>
       <div className="v42-auftrag-fest">
-        <div className="v42-auftrag-mikro v42-auftrag-feldlabel">Rückmeldung meiner Partnerin / meines Partners</div>
+        <div className="v42-auftrag-mikro v42-auftrag-feldlabel">Rückmeldung, die ich erhalten habe</div>
         <Zeilen zeilen={1} value={edits.auftrag_partner || ''} onChange={(v) => onEdit('auftrag_partner', v)} />
       </div>
     </>

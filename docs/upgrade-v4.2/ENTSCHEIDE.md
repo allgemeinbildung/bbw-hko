@@ -489,3 +489,17 @@ ein Glossarbegriff des Hefts und umgekehrt) und `ERR_V42_PRODUKTBILD` (beide
 Blätter vorhanden, Markierungen in der Legende), Budgets für `heft_bezug`,
 Glossar und Produktbild.
 **Rückgängig:** `git revert` des Commits zu E17; die Datenfelder sind additiv.
+
+---
+
+## E18 — Auftragsbogen A4: «Selbsteinschätzung» statt «Rückmeldung» (Pietro, 02.10.2026)
+
+Die Seite A4 schreibt der Lehrperson nicht mehr vor, was sie mit dem Auftrag
+macht. Sie heisst «Selbsteinschätzung»; der Satz darunter nennt weder die
+Lehrperson noch den KN noch die Note. Die zweite Ankreuzspalte heisst «Fremd»
+statt «LP», die Schreibfelder «Das verbessere ich …» und «Rückmeldung, die ich
+erhalten habe» (vorher «Bis zum KN verbessere ich …» und «Rückmeldung meiner
+Partnerin / meines Partners»). Kriterien, Stufen und Wortlaut bleiben die des
+KN (Invariante 8). Der Begleiter beschreibt die Rückmeldung durch die
+Lehrperson weiter als Vorschlag. Leitfaden §7.5 (A4 «Rückmeldung», Spalten
+«Selbst» und «LP») ist damit ersetzt. **Rückgängig:** `git revert` des Commits.

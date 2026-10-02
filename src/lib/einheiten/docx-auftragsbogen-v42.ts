@@ -263,10 +263,10 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
   return out
 }
 
-// ---------------- A4 — Rückmeldung ----------------
+// ---------------- A4 — Selbsteinschätzung (neutral, ENTSCHEIDE E18) ----------------
 function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
-  const out: (Paragraph | Table)[] = [...sectionHead('A4', 'Rückmeldung', AKZENT)]
-  out.push(absatz('Kreuzen Sie vor der Abgabe je Kriterium Ihre Stufe an (Spalte «Selbst»). Die Lehrperson gibt Ihnen Rückmeldung auf derselben Skala (Spalte «LP»). Es sind die Kriterien des KN; der Auftrag zählt nicht für die Note.', 18, { after: 80 }))
+  const out: (Paragraph | Table)[] = [...sectionHead('A4', 'Selbsteinschätzung', AKZENT)]
+  out.push(absatz('Schätzen Sie Ihre Arbeit selbst ein: Kreuzen Sie je Kriterium die Stufe an, die zutrifft (Spalte «Selbst»). Die Spalte «Fremd» ist frei für eine Rückmeldung von aussen.', 18, { after: 80 }))
 
   const BREITEN = [7, 73, 10, 10]
   const linie = { ...OHNE_RAENDER, bottom: RAND(2, COLOR.rule) }
@@ -282,7 +282,7 @@ function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
 
   const rows: TableRow[] = [new TableRow({
     tableHeader: true,
-    children: ['Stufe', 'Kriterium', 'Selbst', 'LP'].map((t, i) => zelle(
+    children: ['Stufe', 'Kriterium', 'Selbst', 'Fremd'].map((t, i) => zelle(
       [p(t.toUpperCase(), { run: { size: 14, bold: true, color: AKZENT, font: 'Consolas' }, alignment: i === 1 ? undefined : AlignmentType.CENTER, spacing: { before: 0, after: 0 } })],
       i, { ...OHNE_RAENDER, bottom: RAND(12, AKZENT) },
     )),
@@ -321,9 +321,9 @@ function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
   }
   out.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows }))
 
-  out.push(p('BIS ZUM KN VERBESSERE ICH …', { run: { color: AKZENT, bold: true, size: 14, font: 'Consolas' }, spacing: { before: 160, after: 0 }, keepNext: true }))
+  out.push(p('DAS VERBESSERE ICH …', { run: { color: AKZENT, bold: true, size: 14, font: 'Consolas' }, spacing: { before: 160, after: 0 }, keepNext: true }))
   out.push(...schreibfeld(17))
-  out.push(p('RÜCKMELDUNG MEINER PARTNERIN / MEINES PARTNERS', { run: { color: AKZENT, bold: true, size: 14, font: 'Consolas' }, spacing: { before: 120, after: 0 }, keepNext: true }))
+  out.push(p('RÜCKMELDUNG, DIE ICH ERHALTEN HABE', { run: { color: AKZENT, bold: true, size: 14, font: 'Consolas' }, spacing: { before: 120, after: 0 }, keepNext: true }))
   out.push(...schreibfeld(0).slice(0, 1))
   return out
 }
