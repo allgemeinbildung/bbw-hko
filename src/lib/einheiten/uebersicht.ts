@@ -9,6 +9,12 @@
 import type { EinheitFullSet } from './types'
 import { knTypLabel } from './kn-typ-labels'
 import { BEWERTUNGEN, vorschauFeatures, type VorschauFeedbackInput } from '../vorschau'
+import { SPUR_KEYS } from './spuren'
+import { heftDatei } from './v42-dokumente'
+import { landingUrl } from './qr'
+
+/** v4.2 — Bezeichnung der Spuren im Inhaltsverzeichnis (Leitfaden §4). */
+const SPUR_NAME = { ohne_medien: 'ohne Medien', mit_medien: 'mit Medien' } as const
 
 export interface UebersichtOptions {
   prefix: string
@@ -70,6 +76,9 @@ export function buildUebersicht(o: UebersichtOptions): string {
   const thema = d.id.replace(/^[\d.]+_/, '').replace(/_/g, ' ')
   const einheitTitel = (d as any).set?.einheit_titel || (d as any).set?.titel || thema
   const has = new Set(log)
+  // v4.2 — dieselbe Bedingung wie in der Workbench. Ohne Spuren bleibt die Ausgabe
+  // Zeichen für Zeichen die bisherige (Invariante 4).
+  const istV42 = !!d.spur_varianten
 
   // Ein Eintrag erscheint nur, wenn mindestens eine seiner Dateien im Bundle liegt
   // (einzelne .docx-Builds können im Browser scheitern).
@@ -98,9 +107,22 @@ export function buildUebersicht(o: UebersichtOptions): string {
 
   // ── 2 Herausforderungen A/B/C ──────────────────────────────────────────────
   const hfAccent: Record<string, string> = { A: '#e11d48', B: '#0284c7', C: '#059669' }
+  // v4.2: je Heft beide Spuren statt Auftrag/Dossier — Dateinamen wie in v42Dokumente.
+  // Was im ZIP fehlt (Heft ohne diese Spur), fällt über `entry` von selbst weg.
+  if (istV42) {
+    for (const letter of ['A', 'B'] as const) {
+      const s = d[`hf_${letter}`]
+      if (!s) continue
+      push({ key: `hf-${letter}`, title: `Heft ${letter}${s.titel ? ` — ${s.titel}` : ''}`, accent: hfAccent[letter], fuer: 'Lernende' },
+        SPUR_KEYS.map((spur) =>
+          entry(heftDatei(letter, spur), `Heft ${letter} · ${SPUR_NAME[spur]}`, { htmlBase: `${heftDatei(letter, spur)}.html`, fill: true }),
+        ),
+      )
+    }
+  }
   for (const letter of ['A', 'B', 'C'] as const) {
     const s = d[`hf_${letter}`]
-    if (!s) continue
+    if (!s || istV42) continue
     push({ key: `hf-${letter}`, title: `Herausforderung ${letter}${s.titel ? ` — ${s.titel}` : ''}`, accent: hfAccent[letter], fuer: 'Lernende' }, [
       entry(`hf-${letter}-auftrag`, 'Auftrag (zum Ausfüllen)', { htmlBase: `${prefix}_doc-s_hf-${letter}_auftrag.html`, fill: true }),
       entry(`hf-${letter}-dossier`, 'Dossier (nur Inhalte)', { htmlBase: `${prefix}_doc-s_hf-${letter}_dossier.html` }),
@@ -108,8 +130,12 @@ export function buildUebersicht(o: UebersichtOptions): string {
   }
 
   // ── 3 Abschluss ────────────────────────────────────────────────────────────
-  push({ key: 'abschluss', title: 'Austausch & Transfer', accent: '#7c3aed', fuer: 'Lernende' }, [
-    entry('austausch', 'Set-Abschluss', { htmlBase: `${prefix}_doc-austausch.html` }),
+  // v4.2: der Auftragsbogen ersetzt den Austausch (Leitfaden §11.2).
+  const mitAuftrag = istV42 && !!d.set?.gemeinsamer_auftrag
+  push({ key: 'abschluss', title: mitAuftrag ? 'Gemeinsamer Auftrag' : 'Austausch & Transfer', accent: '#7c3aed', fuer: 'Lernende' }, [
+    mitAuftrag
+      ? entry('auftragsbogen', 'Auftragsbogen', { htmlBase: 'auftragsbogen.html', fill: true })
+      : entry('austausch', 'Set-Abschluss', { htmlBase: `${prefix}_doc-austausch.html` }),
     d.dossier ? entry('dossier-eba', 'Glossar+ (EBA)', { htmlBase: `${prefix}_doc-dossier.html` }) : null,
     d.dossier?.leseblatt ? entry('leseblatt', 'Lese-Arbeitsblatt (EBA)', { htmlBase: `${prefix}_doc-leseblatt.html` }) : null,
   ])
@@ -190,6 +216,15 @@ ${f.beispiel ? `            <p class="neu-bsp"><strong>Beispiel:</strong> ${esc(
           </article>`).join('\n')}
         </div>
       </section>\n`
+    : ''
+
+  // v4.2: zwei Spuren je Heft, dazu die Seite, auf die die QR-Codes zeigen.
+  const qrSeite = landingUrl(d.id)
+  const spurenHinweis = istV42
+    ? `      <p>Jedes Heft liegt in zwei Spuren vor: <strong>ohne Medien</strong> (Lehrmittel, mehr Gerüst) und
+      <strong>mit Medien</strong> (Pflichtquelle über QR-Code). Kern, Produkt und Feedback-Kriterien sind gleich —
+      Sie wählen pro Klasse oder pro Lernende/n.</p>
+      <p class="meta"><strong>QR-Seite der Einheit:</strong> <a href="${esc(qrSeite)}" target="_blank" rel="noopener">${esc(qrSeite)}</a></p>\n`
     : ''
 
   const wordHinweis = vorschau
@@ -433,7 +468,7 @@ ${vorschau && o.zurueckUrl ? `      <a class="side-link" href="${esc(o.zurueckUr
 ${vorschauBanner}      <h1>${esc(einheitTitel)}</h1>
       <p class="meta"><strong>Abgedeckte Kompetenzen:</strong> ${esc(kompetenzList)} · <strong>Thema:</strong> ${esc(thema)}</p>
       <p class="meta"><strong>${vorschau ? 'Stand' : 'Generiert'}:</strong> ${esc(when.toLocaleString('de-CH'))} · <strong>Dateien:</strong> ${log.length}</p>
-${neuSection}      <ol class="steps">
+${spurenHinweis}${neuSection}      <ol class="steps">
         <li><strong>Auswählen</strong>Links die Dokumente in Unterrichtsreihenfolge.</li>
         <li><strong>Ansehen</strong>Das Dokument erscheint hier im Reader.</li>
         <li><strong>Weiterarbeiten</strong>Im neuen Tab öffnen, drucken oder als Word ${vorschau ? 'herunterladen' : 'öffnen'}.</li>
