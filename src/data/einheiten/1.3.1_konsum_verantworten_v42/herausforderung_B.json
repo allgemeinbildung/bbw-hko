@@ -123,7 +123,7 @@
       ]
     }
   ],
-  "leitfragen_intro": "Sie bereiten in dieser Woche Ihr Budget und das Gespräch mit Ihrer Kollegin vor: LF1 liefert Gliederung und Risikobegriffe, LF2 Ihr Budget mit Saldo, LF3 die Schuldenwege mit Beleg, LF4 Ihre Anpassungen, Schutzregeln und Ihre Antwort auf den stärksten Einwand.",
+  "leitfragen_intro": "Sie bereiten in dieser Woche Ihr Budget und das Gespräch mit Ihrer Kollegin vor: LF1 liefert Gliederung und Risikobegriffe, LF2 die Zahlen und den Saldo Ihres Budgets, LF3 die Schuldenwege mit Beleg, LF4 Ihre Anpassungen, Schutzregeln und Ihre Antwort auf den stärksten Einwand.",
   "auftakt_typ": "pfad",
   "leitfragen": [
     {
@@ -176,7 +176,7 @@
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.1 | S. 46-47 · Kap. 2.2 | S. 48 · eigener Fall",
       "text": "Sammeln Sie die Zahlen für Ihr eigenes Monatsbudget — geschätzte genügen: Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung. Berechnen Sie den Saldo. Bei welchen Posten wird es knapp?",
-      "liefert": "Budget mit Saldo und Engpass",
+      "liefert": "Zahlen, Saldo und knappe Posten",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 45,
       "scaffolding": {
@@ -349,7 +349,7 @@
       "produkt": "Leitfragen",
       "vollstaendig_wenn": [
         "LF1 erklärt drei Kostenarten und die Schuldenspirale",
-        "LF2 hat ein Budget mit Saldo und Engpass",
+        "LF2 hat die Zahlen, den Saldo und die knappen Posten",
         "LF4 nennt Anpassungen, zwei Regeln und den Einwand"
       ]
     },

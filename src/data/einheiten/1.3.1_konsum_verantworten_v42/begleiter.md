@@ -3,8 +3,8 @@ titel: "Begleit-Dokument — Konsum verantworten, Version 4.2 (1.3)"
 untertitel: "Zwei Hefte in zwei Spuren, ein gemeinsamer Auftrag, ein Kompetenznachweis"
 kompetenz: "1.3 — Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge."
 autor: "Kernteam 1 — BBW Winterthur"
-stand: "2026-10-01"
-version: "2.1.0"
+stand: "2026-10-02"
+version: "2.2.0"
 lehrgang: "EFZ 4J"
 thema: "T1 — Ins Berufsleben einsteigen"
 lebensbezug: "1.3"
@@ -73,7 +73,7 @@ Das KN-Raster ist der Ausgangspunkt (Backward Design): Jedes Heft übt zwei der 
 | Heft | KN-Kriterium | Dim. | Indikator am Produkt |
 |---|---|---|---|
 | A | <!--hko:hf_A.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].indikator_produkt-->Gut und Bedürfnis sind getrennt; Bedürfnisarten und Maslow-Stufen stimmen.<!--/hko--> |
-| A | <!--hko:hf_A.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].indikator_produkt-->Massstab-Satz in Ich-Form; der Entscheid zum Handy folgt daraus.<!--/hko--> |
+| A | <!--hko:hf_A.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].indikator_produkt-->Massstab-Satz in Ich-Form; der Entscheid wägt Wunsch jetzt gegen Sicherheit später ab.<!--/hko--> |
 | B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->Jede Anpassung ist begründet; im Gespräch wird der Einwand beantwortet, nicht übergangen.<!--/hko--> |
 | B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Wirtschaftliches Prinzip<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Engpass rechnerisch geschlossen; Schutzregeln setzen bei den Schuldenwegen aus LF3 an.<!--/hko--> |
 
@@ -82,6 +82,9 @@ Warum diese Verteilung: Die Landkarte in Heft A steht und fällt mit korrekten B
 - Die Kriterien stehen in den Heften **im Wortlaut des KN**, mit denselben vier Stufen, und sind **in beiden Spuren identisch**.
 - Die Lernenden kreuzen vor der Abgabe ihre Stufe an (Spalte «Selbst»); du gibst Rückmeldung auf derselben Skala.
 - Bewertet wird im KN **bi-dimensional**: SuK und Ges als zwei getrennte Noten (Kap. 7).
+
+> [!coaching] KN-Wortlaut im Heft lesen
+> Die Stufentexte der Feedback-Kriterien sind wörtlich die des KN. Darum nennt «Fachkorrektheit» auf Stufe 1 Begriffe, die im einzelnen Heft nicht alle vorkommen: «Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.» Und «Wirtschaftliches Prinzip» verlangt auf Stufe 4 «Transfer» — den zeigen die Lernenden erst im gemeinsamen Auftrag und im KN. Massgebend für die Rückmeldung zum Heft ist darum die Zeile «Woran sehe ich das in meinem Produkt?» — sie sagt, woran das Kriterium im Heftprodukt zu sehen ist.
 
 > [!hinweis] Hefte und Auftrag zählen nicht
 > Beide Hefte und der gemeinsame Auftrag sind formativ. Eine Gewichtung des Auftrags wäre ein eigener Entscheid in `set.json`; für diese Einheit ist keiner getroffen. Die Note entsteht nur im KN.
@@ -112,10 +115,10 @@ Vier Wochen zu drei Lektionen, mit einer Lektion Puffer am Schluss.
 | Woche | Lektion | Was geschieht | Unterlagen |
 |---|---|---|---|
 | 1 | 1 | <!--hko:hf_A.wochen_plan[0].text-->Situation lesen, LF1 und LF2<!--/hko--> | Heft A, S. 1–2 |
-| 1 | 2 | <!--hko:hf_A.wochen_plan[1].text-->LF3 mit Raster (Quelle der Spur), LF4, Landkarte beginnen<!--/hko--> | Heft A, S. 3–7 |
+| 1 | 2 | <!--hko:hf_A.wochen_plan[1].text-->LF3 mit Raster zur Quelle, LF4, Landkarte beginnen<!--/hko--> | Heft A, S. 3–7 |
 | 1 | 3 | <!--hko:hf_A.wochen_plan[2].text-->Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Mindmap<!--/hko--> | Heft A, S. 5, 7, 8 |
 | 2 | 1 | <!--hko:hf_B.wochen_plan[0].text-->Situation lesen, LF1 und LF2 (Budget aufstellen)<!--/hko--> | Heft B, S. 1–2 |
-| 2 | 2 | <!--hko:hf_B.wochen_plan[1].text-->LF3 mit Raster (Quelle der Spur), LF4, Anpassungen und Regeln<!--/hko--> | Heft B, S. 3–7 |
+| 2 | 2 | <!--hko:hf_B.wochen_plan[1].text-->LF3 mit Raster zur Quelle, LF4, Anpassungen und Regeln<!--/hko--> | Heft B, S. 3–7 |
 | 2 | 3 | <!--hko:hf_B.wochen_plan[2].text-->Budget fertigstellen, Budgetgespräch zu zweit, Feedback-Kriterien, Abschluss<!--/hko--> | Heft B, S. 5, 7, 8 |
 | 3 | 1 | Gemeinsamer Auftrag: Situation lesen, Entscheidungsblatt schreiben | Auftragsbogen A1–A2, Hefte A und B |
 | 3 | 2 | Sprachnachricht planen und vortragen oder aufnehmen, Selbsteinschätzung | Auftragsbogen A3–A4 |
@@ -146,6 +149,9 @@ Jedes Heft besteht aus zwei Bogen A3, also acht Seiten A4. Die Doppelseite 6–7
 
 Seite 3 ist knapp gerechnet: höchstens 10 Minuten lesen, 12 Minuten Raster, 3 Minuten Befund. Die Minuten gelten pro Seite, nicht pro Lektion; wie die Seiten auf die drei Lektionen fallen, zeigt der Wochenplan oben (und im Heft auf Seite 1).
 
+> [!hinweis] Lektion 3 ist mehr als voll
+> Nach den Seitenminuten trägt Lektion 3 mehr als 45 Minuten: S. 5 (5) + S. 7 (40) + S. 8 (15) = 60 Minuten. Darum beginnt das Produkt schon in Lektion 2 (Landkarte bzw. Anpassungen und Regeln), und der Abschluss (S. 8) kann zu Beginn der nächsten Lektion stehen.
+
 ## 2. Zwei Spuren: ohne Medien und mit Medien
 
 Jedes Heft gibt es in zwei Spuren. Beide führen über denselben Kern zum selben Produkt; sie unterscheiden sich nur darin, **wie** die Lernenden die Realität in den Blick nehmen: über einen Lehrmittel-Abschnitt mit mehr Gerüst (ohne Medien) oder über eine aktuelle Quelle (mit Medien).
@@ -165,8 +171,8 @@ Jedes Heft gibt es in zwei Spuren. Beide führen über denselben Kern zum selben
 
 | Was | Heft A | Heft B |
 |---|---|---|
-| LF3, Spur ohne Medien | Lehrmittel Kap. 2.7, S. 73–77; Raster mit ausgefüllter Beispielzeile | Lehrmittel Kap. 8.2, S. 199–200; Raster mit ausgefüllter Beispielzeile |
-| LF3, Spur mit Medien | Pflichtquelle: Artikel (nau.ch / Keystone-SDA); Raster ohne Beispielzeile | Pflichtquelle: Grafik (BFS); Raster ohne Beispielzeile |
+| LF3, Spur ohne Medien | Lehrmittel Kap. 2.7, S. 73–77; Raster mit Beispielzeile, drei weitere Aussagen | Lehrmittel Kap. 8.2, S. 199–200; Raster mit Beispielzeile, drei weitere Aussagen |
+| LF3, Spur mit Medien | Pflichtquelle: Artikel (nau.ch / Keystone-SDA); Raster ohne Beispielzeile | Pflichtquelle: Statistik 2025 der Schuldenberatung Schweiz, Seite 7 (PDF); Raster ohne Beispielzeile |
 | LF4, Pol-Typ ohne Medien | Modell ↔ eigener Fall | Position ↔ Gegenposition |
 | LF4, Pol-Typ mit Medien | Lehrmittel ↔ Quelle | Position ↔ Gegenposition |
 | Kasten S. 4 | ohne: Denkhilfe · mit: Vertiefung (2 Karten) | ohne: Denkhilfe · mit: Vertiefung (2 Karten) |
@@ -176,7 +182,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 
 ### Spur ohne Medien
 
-- **LF3** arbeitet mit einem Lehrmittel-Abschnitt (Kapitel und Seite stehen auf S. 3). Das Raster ist dasselbe wie in der Medien-Spur, aber die erste Zeile ist **vorausgefüllt** — sie zeigt, wie eine Zeile aussieht.
+- **LF3** arbeitet mit einem Lehrmittel-Abschnitt (Kapitel und Seite stehen auf S. 3). Das Raster hat vier Zeilen wie in der Medien-Spur, aber die erste Zeile ist **vorausgefüllt** — sie ist das Beispiel; die Lernenden suchen **drei weitere** Aussagen. (In Heft B tragen die Spalten der Medien-Spur andere Titel, weil dort eine Statistik gelesen wird.)
 - **LF4** stellt zwei Pole ohne Medium gegenüber; auf S. 4 hilft eine **Denkhilfe** (dreispaltige Tabelle), die Lernende vor dem Schreiben ausfüllen.
 - **Warum:** Die Spur ist kein Notbehelf, sondern Differenzierung — mehr Struktur, weniger Material. Sie eignet sich für Klassen ohne Geräte und für Lernende, die mehr Gerüst brauchen.
 
@@ -198,12 +204,12 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 ### Vorbereitung der Spur mit Medien
 
 - **QR-Seite:** Die QR-Codes in den Heften führen auf `https://bbw-hko.ch/m/1.3.1_konsum_verantworten_v42` — Heft A auf den Anker `#a`, Heft B auf `#b`. Öffne die Seite vor der Lektion einmal selbst.
-- **Geräte:** Die Lernenden brauchen ein Gerät mit Internetzugang, auf dem sie die QR-Seite öffnen. Die Pflichtquellen sind ein Artikel (Heft A) und eine Grafik (Heft B), beide ohne Ton.
+- **Geräte:** Die Lernenden brauchen ein Gerät mit Internetzugang, auf dem sie die QR-Seite öffnen. Die Pflichtquellen sind ein Artikel (Heft A) und ein PDF, davon nur Seite 7 (Heft B), beide ohne Ton. Der Link öffnet das PDF auf Seite 7, manche Handys zeigen trotzdem Seite 1 — sag die Seitenzahl an.
 - **Kopfhörer:** nur für die Vertiefungen. Vertiefung A1 und B1 sind Audiobeiträge, Vertiefung A2 ist ein Video in Mundart mit hochdeutschen Untertiteln.
 - **Links:** Prüfe vor dem Einsatz die Links in Kap. 5 (Spalte «Geprüft am»).
 
 > [!warnung] Wenn ein Link nicht geht
-> Fällt die **Pflichtquelle** aus, tritt die **Ersatzquelle** an ihre Stelle: gleicher Auftrag, gleiches Raster (Kap. 5). Die Musterlösung zu LF3 der Medien-Spur nennt dafür eine eigene Zeile «Mit Ersatzquelle». Fällt eine **Vertiefung** aus, entfällt sie — sie ist freiwillig. Geht gar nichts, bleibt die Spur ohne Medien: Ihre Seiten 3 und 4 brauchen nur das Lehrmittel, Kern, Produkt und Kriterien sind gleich. Halte dafür einige Exemplare bereit.
+> Fällt die **Pflichtquelle** aus, tritt die **Ersatzquelle** an ihre Stelle: gleicher Auftrag, gleiches Raster (Kap. 5). In Heft B ist das die BFS-Grafik «Steuerrückstand 2024»; sie zeigt, wer im Rückstand ist, nicht wie man in Schulden gerät. Die Musterlösung zu LF3 der Medien-Spur nennt dafür eine eigene Zeile «Mit Ersatzquelle». Fällt eine **Vertiefung** aus, entfällt sie — sie ist freiwillig. Geht gar nichts, bleibt die Spur ohne Medien: Ihre Seiten 3 und 4 brauchen nur das Lehrmittel, Kern, Produkt und Kriterien sind gleich. Halte dafür einige Exemplare bereit.
 
 ## 3. Herausforderung A — Bedürfnisse ordnen
 
@@ -222,7 +228,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 **Die Situation**
 
 <!--hko:hf_A.situation_text|quote-->
-> Ich bin im 1. Lehrjahr und habe zum ersten Mal regelmässig eigenes Geld. Vor drei Wochen habe ich in der Mittagspause Kopfhörer für 250 Franken bestellt — zwei aus meiner Klasse hatten dieselben, und mein Feed zeigte sie mir tagelang. Seither liegen sie meistens in der Schublade; für den Arbeitsweg reichen meine alten. Das Geld fehlt mir seither. Jetzt kommt der nächste Wunsch: Ein Kollege verkauft sein Handy für 300 Franken und will bis Freitag Bescheid. Ich merke, dass ich bei beiden Käufen nicht sagen könnte, ob der Wunsch von mir kommt oder von aussen. Ich will meine Bedürfnisse ordnen und mir einen Massstab geben, bevor ich am Freitag antworte.
+> Ich bin im 1. Lehrjahr und habe zum ersten Mal regelmässig eigenes Geld. Vor drei Wochen habe ich in der Mittagspause Kopfhörer für 250 Franken bestellt — zwei aus meiner Klasse hatten dieselben, und mein Feed zeigte sie mir tagelang. Seither liegen sie meistens in der Schublade; für unterwegs reichen meine alten. Das Geld fehlt mir seither. Jetzt kommt der nächste Wunsch: Ein Kollege verkauft sein Handy für 300 Franken und will bis Freitag Bescheid. Ich merke, dass ich bei beiden Käufen nicht sagen könnte, ob der Wunsch von mir kommt oder von aussen. Ich will meine Bedürfnisse ordnen und mir einen Massstab geben, bevor ich am Freitag antworte.
 <!--/hko-->
 
 **Leitfrage:** «<!--hko:hf_A.leitfrage-->Welche meiner Wünsche sind echte Bedürfnisse — und nach welchem Massstab entscheide ich, welchem ich folge?<!--/hko-->»
@@ -238,13 +244,13 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 
 ### Produkt: <!--hko:hf_A.handlungsprodukt.titel-->Meine Bedürfnis-Landkarte<!--/hko-->
 
-**Format:** <!--hko:hf_A.handlungsprodukt.format_detail-->Eine A4-Übersicht, auf der Sie Ihre Bedürfnisse nach Kategorien ordnen, Einflüsse mit Farbe und Quelle markieren und am Rand Ihren Massstab und Ihren Entscheid festhalten.<!--/hko-->
+**Format:** <!--hko:hf_A.handlungsprodukt.format_detail-->Eine A4-Übersicht, auf der Sie Ihre Bedürfnisse nach Kategorien ordnen, Einflüsse mit Farbe oder Symbol markieren und am Rand Ihren Massstab und Ihren Entscheid festhalten.<!--/hko-->
 
 Die fünf Schritte auf S. 5:
 
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Karte einteilen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Teilen Sie das Blatt nach den Kategorien aus LF1 in Felder ein.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Karte einteilen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Teilen Sie das Blatt in Felder ein, zum Beispiel nach Existenz- und Wahlbedürfnissen oder nach den Maslow-Stufen (LF1).<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Einträge verdichten<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Tragen Sie mindestens acht Einträge ein (fünf haben Sie aus LF2), je Gut → Bedürfnis, als Stichwort.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Einflüsse belegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Markieren Sie jeden Eintrag: echt, geweckt oder geweckt, aber berechtigt. Notieren Sie bei geweckten die Quelle aus dem Raster (LF3).<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Einflüsse belegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Markieren Sie jeden Eintrag mit Farbe oder Symbol: echt, geweckt oder geweckt, aber berechtigt. Bei geweckten: Einfluss notieren (LF3).<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Massstab entscheiden<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Schreiben Sie Ihren Massstab-Satz aus LF4 an den Rand und darunter Ihren Entscheid zum Handy.<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Schätzen Sie sich mit den zwei Feedback-Kriterien ein und verbessern Sie eine Stelle.<!--/hko-->
 
@@ -267,7 +273,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 3 — Quelle (25 Min.).**
 
-- *Spur ohne Medien:* Lehrmittel Kap. 2.7, S. 73–77. Einen Abschnitt «Einflüsse auf Bedürfnisse» gibt es im Lehrmittel nicht; LF3 fragt darum, wodurch **Kaufwünsche und Nachfrage** beeinflusst werden. Die Beispielzeile belegt die Werbung (S. 73); weitere Fundstellen liegen auf S. 74, 76 und 77. Fünf Seiten in zehn Leseminuten sind knapp — verweise auf die drei Fundseiten aus der Strategie-Spalte.
+- *Spur ohne Medien:* Lehrmittel Kap. 2.7, S. 73–77. Einen Abschnitt «Einflüsse auf Bedürfnisse» gibt es im Lehrmittel nicht; LF3 fragt darum, wodurch **Kaufwünsche und Nachfrage** beeinflusst werden. Die erste Rasterzeile ist das Beispiel und belegt die Werbung (S. 73); gesucht sind **drei weitere** Aussagen. Die Fundstellen liegen auf S. 74, 76 und 77. Fünf Seiten in zehn Leseminuten sind knapp — verweise auf die drei Fundseiten, die auch die Strategien im Heft nennen.
 - *Spur mit Medien:* Pflichtquelle ist ein Agenturartikel (421 Wörter) über eine Studie mit 10- bis 17-Jährigen. Das Raster fragt nach Absatz, Kernaussage, Beleg oder Zahl und dem Begriff aus LF1.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt einen überprüfbaren Massstab und den Entscheid zum Handy.
@@ -276,13 +282,13 @@ Die fünf Schritte auf S. 5:
 - *Spur mit Medien:* Lehrmittel gegen Quelle — kann ein geweckter Wunsch ein echtes Bedürfnis treffen? Der Kasten «Vertiefung» ist freiwillig.
 
 > [!coaching] Massstab statt Gefühl
-> Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat. Die Methodenkarte «3B-Schema» hilft beim Begründen: Behauptung, Begründung, Beispiel. «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
+> Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat. Die Methodenkarte «3B-Schema» hilft beim Begründen: den Massstab als Behauptung schreiben, in einem Satz begründen und am Beispiel Handy prüfen. «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
 
 **S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Stufe an; Schritt 05 verlangt danach eine Verbesserung.
 
-**S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite.
+**S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Pflichtquelle.
 
-**S. 7 — Arbeitsfläche (40 Min.).** Mindestens acht Einträge, je Gut → Bedürfnis als Stichwort. Jeder Eintrag bekommt eine von drei Markierungen: echt · geweckt · geweckt, aber berechtigt. Bei geweckten steht die Quelle aus dem Raster dabei.
+**S. 7 — Arbeitsfläche (40 Min.).** Mindestens acht Einträge, je Gut → Bedürfnis als Stichwort. Jeder Eintrag bekommt mit Farbe oder Symbol eine von drei Markierungen: echt · geweckt · geweckt, aber berechtigt. Bei geweckten steht der Einfluss aus LF3 dabei.
 
 **S. 8 — Abschluss (15 Min.).** Die Mindmap braucht mindestens fünf beschriftete Verbindungen, eine davon zum Ast «gilt auch bei …», und mindestens zwei Begriffe aus dem Raster. Die Mitnahme — *Mein Massstab · Mein Entscheid · Mir noch unklar* — ist das Werkzeug für den gemeinsamen Auftrag in Woche 3: Das Heft bleibt bei den Lernenden.
 
@@ -318,7 +324,7 @@ Die fünf Schritte auf S. 5:
 > - Ast «<!--hko:hf_A.mindmap_aeste[2].titel-->Mein Massstab<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[2].punkte[0]-->Prüffrage<!--/hko--> · <!--hko:hf_A.mindmap_aeste[2].punkte[1]-->echt / geweckt<!--/hko--> · <!--hko:hf_A.mindmap_aeste[2].punkte[2]-->Entscheid Handy<!--/hko-->
 > - «gilt auch bei …» (Transfer-Ast): eigene Beispiele, etwa ein Abo-Abschluss oder eine Freizeitausgabe
 >
-> **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Einen weiteren Einfluss belegen (eigene Beobachtung oder, in der Spur mit Medien, eine Vertiefungsquelle) und als vierte Farbe auf der Karte zeigen.<!--/hko-->
+> **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefungsquelle, falls Ihr Heft eine nennt) und als vierte Farbe auf der Karte zeigen.<!--/hko-->
 
 ### Wann ist das Heft fertig? (Selbstcheck — formativ, nicht benotet)
 
@@ -333,6 +339,7 @@ Die fünf Schritte auf S. 5:
 <!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster mit vier Zeilen und Beleg
 ☐ Jede Zeile hat einen Begriff aus LF1
+☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
 **Landkarte**
@@ -364,7 +371,7 @@ Die fünf Schritte auf S. 5:
 | Schlüsselkompetenzen | SK2, SK6, SK11 |
 | Spannungsfeld | <!--hko:hf_B.mehrdeutigkeit.trade_off-->Momentaner Wunsch vs. langfristige finanzielle Sicherheit<!--/hko--> |
 | KN-Kriterien | Argumentation (SuK), Wirtschaftliches Prinzip (Ges) |
-| Lehrmittel | Kap. 2.1, <!--hko:hf_B.quellen_anker[0].seiten-->Seite 46-47<!--/hko-->; Kap. 2.2, <!--hko:hf_B.quellen_anker[1].seiten-->Seite 48-49<!--/hko-->; Kap. 8.2, <!--hko:hf_B.quellen_anker[2].seiten-->Seite 199-200<!--/hko--> |
+| Lehrmittel | Kap. 2.1, <!--hko:hf_B.quellen_anker[0].seiten-->Seite 46-47<!--/hko-->; Kap. 2.2, <!--hko:hf_B.quellen_anker[1].seiten-->Seite 48<!--/hko-->; Kap. 8.2, <!--hko:hf_B.quellen_anker[2].seiten-->Seite 199-200<!--/hko--> |
 
 **Zwei Kompetenzen in einem Heft.** Heft B führt 1.3.2 und 1.3.3 zusammen. Die Verben verteilen sich so:
 
@@ -401,43 +408,43 @@ Die fünf Schritte auf S. 5:
 Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Budget aufstellen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Gliedern Sie Ihr Budget aus LF2 nach den drei Kostenarten aus LF1 und schreiben Sie den Saldo darunter.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Engpass markieren<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Markieren Sie in Ihrem Budget aus LF2 den Posten und den Tag, an dem es knapp wird.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Engpass markieren<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Risiken belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Markieren Sie mit dem Raster aus LF3 die Posten, die zu Schulden führen können.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Anpassen und Regeln setzen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie Anpassungen und Schutzregeln aus LF4 ein und rechnen Sie den neuen Saldo.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Anpassen und Regeln setzen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie Anpassungen (je mit Grund) und Schutzregeln aus LF4 ein; die Regeln setzen bei den Posten aus Schritt 03 an. Neuen Saldo rechnen.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Gespräch führen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Führen Sie das Budgetgespräch zu zweit: drei Argumente, eine Rückfrage, Ihre Antwort auf den Einwand.<!--/hko-->
 
 **Abgaben**
 
 <!--hko:hf_B.handlungsprodukt.abgaben|liste-->
 - Monatsbudget mit Saldo vor und nach den Anpassungen
-- 2–3 Anpassungen und 2 Schutzregeln (Wenn-dann)
+- 2–3 Anpassungen (eine für die offene Rechnung) und 2 Schutzregeln (Wenn-dann)
 - Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand
 <!--/hko-->
 
 ### Hinweise zu jeder Seite
 
-**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf.
+**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Pflichtquelle mit QR: die Statistik 2025 der Schuldenberatung Schweiz, Seite 7.
 
-**S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) ist das eigene Monatsbudget mit Saldo und dem Tag, ab dem es knapp wird.
+**S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die Zahlen für das eigene Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
 
 > [!coaching] LF1 und LF2
 > Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer seine echten Zahlen nicht zeigen will, darf schätzen — das Heft erlaubt geschätzte Zahlen ausdrücklich. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
 
 **S. 3 — Quelle (25 Min.).**
 
-- *Spur ohne Medien:* Lehrmittel Kap. 8.2, S. 199–200. Gesucht sind vier Aussagen zu Ursachen oder Folgen von Verschuldung; die Beispielzeile («Mehr ausgeben als haben») steht schon da. Die Mahnung selbst kommt in Kap. 8.2 nicht vor — sie steht beim Zahlungsverzug (Kap. 2.4, S. 62).
-- *Spur mit Medien:* Pflichtquelle ist eine Grafik des Bundesamts für Statistik zum Steuerrückstand 2024 nach Alter, Bildung und Erwerbsstatus. Die Methodenkarte «Eine Grafik lesen» ersetzt hier das Raster-Werkzeug. Lass zuerst Titel und Legende lesen: Wer genau wird gezählt? Dann jede Zeile mit der Zeile «Gesamtbevölkerung» vergleichen.
+- *Spur ohne Medien:* Lehrmittel Kap. 8.2, S. 199–200. Die erste Rasterzeile ist das Beispiel («Mehr ausgeben als haben»); gesucht sind **drei weitere** Aussagen zu Ursachen oder Folgen von Verschuldung. Die Mahnung selbst kommt in Kap. 8.2 nicht vor — sie steht beim Zahlungsverzug (Kap. 2.4, S. 62).
+- *Spur mit Medien:* Pflichtquelle ist die Statistik 2025 der Schuldenberatung Schweiz, **Seite 7**: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (114 Wörter). Die Lernenden tragen vier Werte mit Aussage ein, die zeigen, wie Menschen in der Schweiz in Schulden geraten oder wie lange sie darin bleiben; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Die Methodenkarte «Eine Grafik lesen» ersetzt hier das Raster-Werkzeug. Lass zuerst die Titel genau lesen: Wer wird gezählt, und für welches Jahr gilt der Wert? Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören nicht zum Auftrag.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt zwei bis drei Anpassungen, zwei Schutzregeln als Wenn-dann-Satz und eine Antwort auf den stärksten Einwand. Die Aufgabe ist in beiden Spuren wortgleich.
 
 - *Spur ohne Medien:* Die Denkhilfe (Meine Anpassung · Stärkster Einwand · Meine Antwort) wird vor dem Schreiben ausgefüllt. Die Antwort darf auch lauten: Der Einwand stimmt, ich ändere die Anpassung.
 - *Spur mit Medien:* Der Kasten «Vertiefung» bietet einen Radiobeitrag (Mundart) und eine amtliche Seite zum Ablauf einer Betreibung — beides freiwillig.
 
-**S. 5 — Auftrag (5 Min.).** Schritt 05 ist in diesem Heft kein Kontrollschritt, sondern das Budgetgespräch. Die Kontrolle vor der Abgabe leisten die zwei Feedback-Kriterien mit der Spalte «Selbst».
+**S. 5 — Auftrag (5 Min.).** Schritt 04 verlangt Anpassungen **je mit Grund**, und die Schutzregeln setzen bei den Posten an, die in Schritt 03 als Schuldenrisiko markiert sind; eine der Anpassungen gilt der offenen Rechnung (Abgaben). Damit haben beide Feedback-Kriterien einen Beleg im Produkt. Schritt 05 ist in diesem Heft kein Kontrollschritt, sondern das Budgetgespräch. Die Kontrolle vor der Abgabe leisten die zwei Feedback-Kriterien mit der Spalte «Selbst».
 
-**S. 6 — Methoden.** Vier Karten: «Ein Budget aufstellen» für das Monatsbudget, das Rezeptionswerkzeug der Spur für S. 3, «Aufbau eines Statements» für die Argumente und «Die vier Ohren» für das Zuhören im Gespräch.
+**S. 6 — Methoden.** Vier Karten: «Ein Budget aufstellen» für das Monatsbudget, das Rezeptionswerkzeug der Spur für S. 3, «Aufbau eines Statements» für die Argumente und «Die vier Ohren» für das Zuhören im Gespräch. Wie in Heft A zeigt die Rezeptionskarte ein neutrales Beispiel (Vereinssport).
 
-**S. 7 — Arbeitsfläche (40 Min.).** Budget mit Saldo vor und nach den Anpassungen, darunter Anpassungen und Schutzregeln. Für das Gespräch bilden die Lernenden Paare; das Gegenüber spielt die Kollegin, danach werden die Rollen getauscht, damit jede Person ihr eigenes Budget vertritt. Pro Gespräch 3–4 Minuten.
+**S. 7 — Arbeitsfläche (40 Min.).** Hier entsteht das saubere Budget aus den Zahlen von LF2, mit Saldo vor und nach den Anpassungen. Darunter stehen zwei bis drei Anpassungen, je mit Grund — eine davon für die offene Rechnung —, und zwei Schutzregeln. Für das Gespräch bilden die Lernenden Paare; das Gegenüber spielt die Kollegin, danach werden die Rollen getauscht, damit jede Person ihr eigenes Budget vertritt. Pro Gespräch 3–4 Minuten.
 
 > [!coaching] Das Budgetgespräch
 > Gib vor dem Gespräch eine klare Struktur: drei Argumente, eine Rückfrage, eine Antwort auf den Einwand. Die Person in der Rolle der Kollegin bringt mindestens einen echten Einwand — etwa «Dann lebst du nur noch fürs Sparen». Wer zuhört, hört mit allen vier Ohren hin, bevor er antwortet. Die Gesprächsnotiz ist Teil der Abgabe.
@@ -455,8 +462,10 @@ Die fünf Schritte auf S. 5:
 > [!warnung] Was nicht tragfähig ist (LF4)
 > Nur die Rückstellungen streichen; Regeln, die sich nicht überprüfen lassen («Ich will sparsamer sein»); den Einwand übergehen.
 
-> [!warnung] Die Grafik überlesen (Spur mit Medien)
-> Gezählt werden Personen, die in einem Haushalt mit mindestens einem Steuerrückstand leben — nicht Schuldnerinnen und Schuldner. Der abgesetzte Teil eines Balkens ist ein Vertrauensbereich: Werte, die so nah beieinanderliegen wie 10,4 und 10,6 %, ergeben keine Rangfolge. Die Grafik zeigt, **wer** im Rückstand ist, nicht **warum** — Gründe sind Vermutungen der Lernenden und als solche zu kennzeichnen.
+> [!warnung] Die Statistik überlesen (Spur mit Medien)
+> Die Gründe sind eine **Mehrfachnennung**: Die Prozente lassen sich nicht zusammenzählen. Gezählt sind Haushalte, die 2025 erstmals eine Schuldenberatung aufsuchen — nicht alle Verschuldeten und meist keine jungen Leute. Ob ein Grund auch auf die Lernenden zutrifft, zeigt erst der Blick ins eigene Budget, den LF3 verlangt — nicht die Prozentzahl.
+>
+> Kommt die **Ersatzquelle** zum Einsatz (BFS-Grafik «Steuerrückstand 2024»): Gezählt werden Personen, die in einem Haushalt mit mindestens einem Steuerrückstand leben — nicht Schuldnerinnen und Schuldner. Der abgesetzte Teil eines Balkens ist ein Vertrauensbereich: Werte, die so nah beieinanderliegen wie 10,4 und 10,6 %, ergeben keine Rangfolge. Die Grafik zeigt, **wer** im Rückstand ist, nicht **warum** — Gründe sind dann Vermutungen der Lernenden und als solche zu kennzeichnen.
 
 > [!troubleshooting] Herausforderung B — «Ich kann nirgends sparen»
 > Wenn eine Lernende blockiert, weil scheinbar alles nötig ist: spiegeln. «Welche Ausgabe würdest du als Erste streichen, wenn du müsstest — und was würde dir dann fehlen?» Das öffnet die Priorisierung, ohne eine Lösung vorzugeben.
@@ -476,14 +485,14 @@ Die fünf Schritte auf S. 5:
 > - Ast «<!--hko:hf_B.mindmap_aeste[2].titel-->Anpassen und schützen<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[2].punkte[0]-->Anpassungen<!--/hko--> · <!--hko:hf_B.mindmap_aeste[2].punkte[1]-->Wenn-dann-Regeln<!--/hko--> · <!--hko:hf_B.mindmap_aeste[2].punkte[2]-->Einwand<!--/hko-->
 > - «gilt auch bei …» (Transfer-Ast): eigene Beispiele, in denen geplant werden muss, bevor Geld ausgegeben wird
 >
-> **Optionale Vertiefung (für 100 %):** <!--hko:hf_B.lernfortschritt.scaffold_100-->Ein zweites Szenario einbauen (unerwartete Zahnarztrechnung CHF 300) und das Budget mit Rückstellungen anpassen.<!--/hko-->
+> **Optionale Vertiefung (für 100 %):** <!--hko:hf_B.lernfortschritt.scaffold_100-->Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen.<!--/hko-->
 
 ### Wann ist das Heft fertig? (Selbstcheck — formativ, nicht benotet)
 
 **Leitfragen**
 <!--hko:hf_B.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ LF1 erklärt drei Kostenarten und die Schuldenspirale
-☐ LF2 hat ein Budget mit Saldo und Engpass
+☐ LF2 hat die Zahlen, den Saldo und die knappen Posten
 ☐ LF4 nennt Anpassungen, zwei Regeln und den Einwand
 <!--/hko-->
 
@@ -491,6 +500,7 @@ Die fünf Schritte auf S. 5:
 <!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster zur Quelle (S. 3) mit vier Zeilen
 ☐ Jede Zeile hat einen Begriff aus LF1
+☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
 **Budget und Gespräch**
@@ -521,8 +531,8 @@ Die Tabelle wird beim Laden aus der Quellenkartei erzeugt; sie zeigt den Stand, 
 | A · Ersatz zur Pflicht (q-131a-pflicht-ersatz) | Influencer-Marketing gefährdet junge Leute – die Politik sollte handeln | watson.ch | 17.12.2025 | ab «Was wurde untersucht?», 10 Absätze | 287 Wörter | 01.10.2026 | [watson.ch](https://www.watson.ch/schweiz/digital/630368385-influencer-marketing-gefaehrdet-junge-leute-die-politik-sollte-handeln) |
 | A · Vertiefung 1 (q-131a-vertiefung-1) | So erkennt man Influencer-Werbung | SRF Ratgeber | 23.08.2023 | 00:00–05:54 | 5:54 Min. | 01.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:c6435615-4741-4d5c-9f28-92f267610f08&subdivisions=false) |
 | A · Vertiefung 2 (q-131a-vertiefung-2) | Designer-Fälschungen – So funktioniert das illegale Business mit Fakes | SRF Impact | 10.01.2024 | 00:35–06:29 | 5:54 Min. | 01.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:7b5768ea-7783-4f3d-baa7-e7982a23c61d&subdivisions=false) |
-| B · Pflicht (q-131b-pflicht) | Steuerrückstand 2024 nach Alter, Bildung, Erwerbsstatus | Bundesamt für Statistik (BFS) | 16.02.2026 | Zeilen Gesamt, Alter, Bildung, Erwerb | 86 Wörter | 01.10.2026 | [datawrapper.dwcdn.net](https://datawrapper.dwcdn.net/40f7c046d3a53ef1f82d93a4e1b420cf/2/) |
-| B · Ersatz zur Pflicht (q-131b-pflicht-ersatz) | Statistik 2025 der Schuldenberatungen: Gründe der Überschuldung | Schuldenberatung Schweiz | 09.2026 | Seite 7, Darstellung 4 und 5 | 92 Wörter | 01.10.2026 | [schulden.ch](https://schulden.ch/wp-content/uploads/2026/09/sbs-statistik-2025-web.pdf#page=7) |
+| B · Pflicht (q-131b-pflicht) | Statistik 2025 der Schuldenberatungen: Gründe der Überschuldung | Schuldenberatung Schweiz | 09.2026 | Seite 7, Darstellung 4 und 5 | 114 Wörter | 01.10.2026 | [schulden.ch](https://schulden.ch/wp-content/uploads/2026/09/sbs-statistik-2025-web.pdf#page=7) |
+| B · Ersatz zur Pflicht (q-131b-pflicht-ersatz) | Steuerrückstand 2024 nach Alter, Bildung, Erwerbsstatus | Bundesamt für Statistik (BFS) | 16.02.2026 | Zeilen Gesamt, Alter, Bildung, Erwerb | 86 Wörter | 01.10.2026 | [datawrapper.dwcdn.net](https://datawrapper.dwcdn.net/40f7c046d3a53ef1f82d93a4e1b420cf/2/) |
 | B · Vertiefung 1 (q-131b-vertiefung-1) | Neuer Aargauer Verein hilft jungen Leuten mit Schulden | SRF Regionaljournal AG/SO | 06.02.2025 | 00:04–03:10 | 3:06 Min. | 01.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:8e303064-455e-330b-bf96-45e5449aecf8&subdivisions=false) |
 | B · Vertiefung 2 (q-131b-vertiefung-2) | Betreibung: Zahlungsbefehl, Rechtsvorschlag, Pfändung | ch.ch – Bund, Kantone, Gemeinden | o. D. | Abschnitt «Werden Sie betrieben?» | 384 Wörter | 01.10.2026 | [ch.ch](https://www.ch.ch/de/steuern-und-finanzen/schulden--betreibungen-und-konkurs/betreibungen/) |
 <!--/hko-->
@@ -532,8 +542,9 @@ Die Tabelle wird beim Laden aus der Quellenkartei erzeugt; sie zeigt den Stand, 
 - **Pflichtquelle A** beruht auf einer Erhebung in **Deutschland** mit 10- bis 17-Jährigen. Die Wege, über die Kaufwünsche entstehen, sind übertragbar; die Prozentzahlen sind keine Schweizer Werte.
 - **Vertiefung A1** ist nicht gegengehört: Es gibt kein Transkript, der Kurzbeschrieb stützt sich auf den von SRF veröffentlichten Begleittext. Hör den Beitrag vor dem Einsatz selbst an.
 - **Vertiefung A2** ist in Mundart, mit hochdeutschen Untertiteln.
-- **Pflichtquelle B** zählt **Personen in Haushalten** mit mindestens einem Steuerrückstand, nicht Schuldnerinnen und Schuldner. Der abgesetzte Teil eines Balkens ist ein **Vertrauensbereich**. Die Grafik enthält auch Zeilen zu Nationalität und Sprachregion: Sie gehören **nicht zum Auftrag** (verortet sind Gesamt, Alter, Bildung, Erwerb) und sollen nicht als Erklärung gelesen werden.
-- **Ersatzquelle B** gilt nur mit ihrer Seite 7. Die Ratsuchenden der Schuldenberatungen sind meist zwischen 30 und 49 Jahre alt — anders als die Lernenden.
+- **Pflichtquelle B** gilt nur mit ihrer **Seite 7** («Gründe für die Überschuldung», «Dauer der Verschuldung»). Die Gründe sind eine **Mehrfachnennung** — die Prozente nicht zusammenzählen. Gezählt sind Haushalte, die erstmals eine Schuldenberatung aufsuchen; die Ratsuchenden sind meist zwischen 30 und 49 Jahre alt, also meist nicht junge Leute wie die Lernenden.
+- Der Link zeigt auf **Seite 7 eines PDF**; manche Handys öffnen trotzdem Seite 1 — sag die Seitenzahl an. Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören **nicht zum Auftrag**.
+- **Ersatzquelle B** (BFS-Grafik «Steuerrückstand 2024») — falls sie zum Einsatz kommt: Sie zählt **Personen in Haushalten** mit mindestens einem Steuerrückstand, nicht Schuldnerinnen und Schuldner. Der abgesetzte Teil eines Balkens ist ein **Vertrauensbereich**. Die Grafik enthält auch Zeilen zu Nationalität und Sprachregion: Sie gehören **nicht zum Auftrag** (verortet sind Gesamt, Alter, Bildung, Erwerb) und sollen nicht als Erklärung gelesen werden. Sie zeigt, wer im Rückstand ist, nicht wie man in Schulden gerät; die Lösung zu LF3 nennt dafür die Zeile «Mit Ersatzquelle».
 - **Vertiefung B1** nennt eine Zahl von **2021** und ist in **Mundart**.
 - **Vertiefung B2** ist eine amtliche Seite ohne Datum; die Fristen darin sind am Gesetz geprüft (Stand 1. Januar 2026). Sie lädt nur im Browser vollständig.
 
