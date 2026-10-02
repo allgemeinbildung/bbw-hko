@@ -146,8 +146,19 @@ function withQuellen(sit: SituationJson | null): SituationJson | null {
  * `resolveSpur` dasselbe Objekt zurück und `withQuellen` ebenso — übrig bleibt exakt
  * der Bestandsweg `withMethoden`.
  */
-function ladeHeft(sit: SituationJson | null, spur: SpurKey): SituationJson | null {
-  return withQuellen(withMethoden(resolveSpur(sit, spur)))
+function ladeHeft(sit: SituationJson | null, spur: SpurKey, set?: SetJson | null): SituationJson | null {
+  return withGlossar(withQuellen(withMethoden(resolveSpur(sit, spur))), set, spur)
+}
+
+/**
+ * Heft v4.2: setzt das Glossar des Hefts ein — die Einträge aus `set.glossar` mit dem
+ * Buchstaben des Hefts, ohne `spur` oder mit der eingesetzten Spur. Eine Quelle für
+ * beide Verwendungen (Begriffsnetz und Glossar auf S. 8). Bestandshefte bleiben unberührt.
+ */
+function withGlossar(sit: SituationJson | null, set: SetJson | null | undefined, spur: SpurKey): SituationJson | null {
+  if (!sit || !isV42(sit) || !set?.glossar?.length) return sit
+  const glossar = set.glossar.filter((g) => g.heft === sit.buchstabe && (!g.spur || g.spur === spur))
+  return glossar.length ? { ...sit, glossar } : sit
 }
 
 export interface LoadEinheitOptions {
@@ -169,7 +180,7 @@ export function loadEinheit(slug: string, opts?: LoadEinheitOptions): EinheitFul
   const varianten: NonNullable<EinheitFullSet['spur_varianten']> = {}
   for (const key of SPUR_KEYS) {
     if (![rohA, rohB].some((h) => spurenVerfuegbar(h).includes(key))) continue
-    varianten[key] = { hf_A: ladeHeft(rohA, key), hf_B: ladeHeft(rohB, key) }
+    varianten[key] = { hf_A: ladeHeft(rohA, key, setRaw), hf_B: ladeHeft(rohB, key, setRaw) }
   }
   const verfuegbar = Object.keys(varianten) as SpurKey[]
   const wunsch = effektiveSpur(setRaw, opts?.spur)

@@ -62,9 +62,9 @@ try {
       pngDataUrl,
       docKey: `${slug}_${dok.datei}`,
       fontsCss,
-      // Wie im ZIP der Workbench: Schreibprotokoll in den Heften (Auftragsfassung),
-      // nicht im Auftragsbogen — der ist wie der Austausch davon ausgenommen.
-      protokoll: dok.datei !== 'auftragsbogen',
+      // Wie im ZIP der Workbench: Schreibprotokoll nur in den Heften (Auftragsfassung),
+      // nicht im Auftragsbogen und nicht im Lösungsblatt — das sagt die Liste selbst.
+      protokoll: dok.protokoll,
     })
     const htmlPfad = join(OUT, `${dok.datei}.html`)
     writeFileSync(htmlPfad, html, 'utf8')

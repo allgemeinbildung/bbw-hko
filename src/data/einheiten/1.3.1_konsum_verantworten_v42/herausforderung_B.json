@@ -123,7 +123,7 @@
       ]
     }
   ],
-  "leitfragen_intro": "Sie bereiten in dieser Woche Ihr Budget und das Gespräch mit Ihrer Kollegin vor: LF1 liefert Gliederung und Risikobegriffe, LF2 die Zahlen und den Saldo Ihres Budgets, LF3 die Schuldenwege mit Beleg, LF4 Ihre Anpassungen, Schutzregeln und Ihre Antwort auf den stärksten Einwand.",
+  "leitfragen_intro": "Sie bereiten Schritt für Schritt Ihr Budget und das Gespräch mit Ihrer Kollegin vor: LF1 liefert Gliederung und Risikobegriffe, LF2 die Zahlen und den Saldo Ihres Budgets, LF3 die Schuldenwege mit Beleg, LF4 Ihre Anpassungen, Schutzregeln und Ihre Antwort auf den stärksten Einwand.",
   "auftakt_typ": "pfad",
   "leitfragen": [
     {
@@ -246,7 +246,301 @@
       "Monatsbudget mit Saldo vor und nach den Anpassungen",
       "2–3 Anpassungen (eine für die offene Rechnung) und 2 Schutzregeln (Wenn-dann)",
       "Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand"
-    ]
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Nettolohn CHF 950, Nachzahlung fürs Handy offen",
+      "legende": [
+        {
+          "key": "knapp",
+          "text": "wird knapp"
+        },
+        {
+          "key": "risiko",
+          "text": "Schuldenrisiko"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Monatsbudget (CHF)",
+          "kopf": [
+            "Posten",
+            "vorher",
+            "nachher"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Nettolohn",
+                "950",
+                "950"
+              ],
+              "stark": true
+            },
+            {
+              "zellen": [
+                "Fix: Haushaltsbeitrag",
+                "200",
+                "200"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Handy-Abo, Musik",
+                "52",
+                "52"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Verpflegung auswärts",
+                "180",
+                "180"
+              ]
+            },
+            {
+              "zellen": [
+                "Variabel: Kleider",
+                "140",
+                "90"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Ausgang",
+                "190",
+                "140"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Hobby, Geschenke",
+                "100",
+                "100"
+              ]
+            },
+            {
+              "zellen": [
+                "Rückstellung: Ferien, Sparen",
+                "50",
+                "70"
+              ]
+            },
+            {
+              "zellen": [
+                "Nachzahlung Handy (Roaming)",
+                "90",
+                "90"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Saldo",
+                "−52",
+                "+28"
+              ],
+              "stark": true
+            }
+          ]
+        },
+        {
+          "titel": "Anpassungen und Schutzregeln",
+          "eintraege": [
+            {
+              "text": "Nachzahlung am Zahltag zuerst überweisen — sonst folgt eine Mahnung."
+            },
+            {
+              "text": "Ausgang und Kleider je CHF 50 tiefer — das steuere ich selbst."
+            },
+            {
+              "text": "Regel 1: Wenn ich ins Ausland fahre, schalte ich das Roaming aus."
+            },
+            {
+              "text": "Regel 2: Wenn der Lohn kommt, lege ich zuerst CHF 70 zur Seite."
+            }
+          ]
+        },
+        {
+          "titel": "Gesprächsnotiz",
+          "eintraege": [
+            {
+              "text": "Argument 1: Der Saldo ist plus 28 statt minus 52."
+            },
+            {
+              "text": "Argument 2: Die Nachzahlung ist diesen Monat erledigt."
+            },
+            {
+              "text": "Argument 3: Ausgang bleibt, nur kleiner."
+            },
+            {
+              "text": "Rückfrage: «Wo würdest du zuerst kürzen?»"
+            },
+            {
+              "text": "Einwand «Du sparst dich kaputt» — Antwort: «CHF 140 für Ausgang bleiben mir.»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Nettolohn CHF 800, Rechnung mit Mahngebühr CHF 200 offen",
+      "hinweis": "Eine mögliche Lösung mit den Zahlen der Situation; die Lernenden arbeiten mit eigenen Zahlen. Erst zeigen, wenn das eigene Budget steht. Ein Saldo von 0 genügt, wenn die Rechnung bezahlt ist und eine Rückstellung beginnt.",
+      "legende": [
+        {
+          "key": "knapp",
+          "text": "wird knapp"
+        },
+        {
+          "key": "risiko",
+          "text": "Schuldenrisiko"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Monatsbudget (CHF)",
+          "kopf": [
+            "Posten",
+            "vorher",
+            "nachher"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Nettolohn",
+                "800",
+                "800"
+              ],
+              "stark": true
+            },
+            {
+              "zellen": [
+                "Fix: Haushaltsbeitrag",
+                "150",
+                "150"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Handy-Abo",
+                "45",
+                "45"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Streaming",
+                "20",
+                "0"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Fix: Fitness (Jahresabo)",
+                "65",
+                "65"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Fix: Verpflegung auswärts",
+                "160",
+                "160"
+              ]
+            },
+            {
+              "zellen": [
+                "Variabel: Kleider, Schuhe",
+                "120",
+                "60"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Ausgang",
+                "140",
+                "60"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Coiffeur, Hobby",
+                "40",
+                "40"
+              ]
+            },
+            {
+              "zellen": [
+                "Rückstellung: Sparen",
+                "0",
+                "20"
+              ]
+            },
+            {
+              "zellen": [
+                "Offene Rechnung + Mahngebühr",
+                "200",
+                "200"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Saldo",
+                "−140",
+                "0"
+              ],
+              "stark": true
+            }
+          ]
+        },
+        {
+          "titel": "Anpassungen und Schutzregeln",
+          "eintraege": [
+            {
+              "text": "Offene Rechnung diesen Monat zuerst zahlen — sonst kommt die nächste Gebühr."
+            },
+            {
+              "text": "Ausgang und Kleider je auf CHF 60 — variable Kosten steuere ich selbst."
+            },
+            {
+              "text": "Streaming sofort kündigen, Fitness auf Vertragsende — Abos summieren sich."
+            },
+            {
+              "text": "Regel 1: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst."
+            },
+            {
+              "text": "Regel 2: Wenn ich ein Abo abschliesse, dann nur eines, das ich monatlich kündigen kann."
+            }
+          ]
+        },
+        {
+          "titel": "Gesprächsnotiz",
+          "eintraege": [
+            {
+              "text": "Argument 1: Mit den Anpassungen ist der Saldo 0 statt minus 140."
+            },
+            {
+              "text": "Argument 2: Die Rechnung ist bezahlt, bevor weitere Gebühren dazukommen."
+            },
+            {
+              "text": "Argument 3: CHF 60 für Ausgang bleiben — ich streiche nicht alles."
+            },
+            {
+              "text": "Rückfrage: «Was würdest du an meiner Stelle zuerst kürzen?»"
+            },
+            {
+              "text": "Einwand «Dann lebst du nur noch fürs Sparen» — Antwort: «Nein, Ausgang bleibt. Und nächsten Monat ist die Rechnung weg.»"
+            }
+          ]
+        }
+      ]
+    }
   },
   "feedback_kriterien": [
     {
@@ -273,7 +567,7 @@
     }
   ],
   "lernfortschritt": {
-    "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien und eine Beispielzeile im Raster der Quelle.",
+    "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine Beispielzeile im Raster der Quelle.",
     "scaffold_100": "Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen."
   },
   "methoden": [
@@ -302,17 +596,19 @@
     {
       "titel": "Mein Budget",
       "punkte": [
-        "fix / variabel",
-        "Rückstellungen",
-        "Saldo, Engpass"
+        "Nettolohn",
+        "Fixe Kosten",
+        "Variable Kosten",
+        "Rückstellung",
+        "Saldo"
       ],
       "optional": false
     },
     {
       "titel": "Wege in die Schulden",
       "punkte": [
-        "Abos summieren",
-        "Rechnung, Mahnung",
+        "Engpass",
+        "Mahnung",
         "Schuldenspirale"
       ],
       "optional": false
@@ -320,9 +616,8 @@
     {
       "titel": "Anpassen und schützen",
       "punkte": [
-        "Anpassungen",
-        "Wenn-dann-Regeln",
-        "Einwand"
+        "Anpassung",
+        "Schutzregel"
       ],
       "optional": false
     },
@@ -372,26 +667,26 @@
     {
       "produkt": "Abschluss",
       "vollstaendig_wenn": [
-        "Mindmap mit mind. 5 beschrifteten Verbindungen",
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
         "Quer-Check abgehakt",
-        "Mitnahme notiert"
+        "«Das nehme ich mit» ausgefüllt"
       ]
     }
   ],
   "wochen": 1,
   "wochen_plan": [
     {
-      "label": "Lektion 1 · 45 min",
+      "label": "Teil 1",
       "text": "Situation lesen, LF1 und LF2 (Budget aufstellen)",
       "aktiv": true
     },
     {
-      "label": "Lektion 2 · 45 min",
+      "label": "Teil 2",
       "text": "LF3 mit Raster zur Quelle, LF4, Anpassungen und Regeln",
       "aktiv": false
     },
     {
-      "label": "Lektion 3 · 45 min",
+      "label": "Teil 3",
       "text": "Budget fertigstellen, Budgetgespräch zu zweit, Feedback-Kriterien, Abschluss",
       "aktiv": false
     }
@@ -534,7 +829,7 @@
           "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
         ]
       },
-      "scaffold_90": "Budgetvorlage mit Kategorien und ein vorgegebener Einwand in der Denkhilfe."
+      "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und die ausgefüllte Beispielzeile im Raster (S. 3)."
     },
     "mit_medien": {
       "leitfragen": [
@@ -663,12 +958,12 @@
         {
           "ref": "q-131b-vertiefung-1",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wo finden sie früh Hilfe?"
+          "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wie will der Verein früh helfen?"
         },
         {
           "ref": "q-131b-vertiefung-2",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und ab wann droht sie bei einer unbezahlten Rechnung?"
+          "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und was können Sie tun, wenn ein Zahlungsbefehl kommt?"
         }
       ],
       "kasten_s4": {
@@ -682,7 +977,7 @@
           "Was gemessen: Anteil mit Vereinssport · auffälliger Wert: «jede dritte Person» (Beispielwert) · Aussage: Vereine erreichen viele · → hier ein Begriff aus LF1"
         ]
       },
-      "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien und eine gemeinsam erarbeitete erste Rasterzeile."
+      "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
     }
   }
 }

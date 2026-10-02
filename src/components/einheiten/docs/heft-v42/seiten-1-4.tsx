@@ -471,7 +471,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
 
       {(sit.wochen_plan?.length ?? 0) > 0 && (
         <section className="v42-s1-woche">
-          <Mini>Ihre Woche</Mini>
+          <Mini>Übersicht</Mini>
           <table className="v42-woche">
             <tbody>
               {sit.wochen_plan!.map((w, i) => (

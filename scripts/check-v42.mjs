@@ -240,9 +240,13 @@ function budgetKern(datei, sit) {
   anzahl(datei, 'mindmap_aeste', sit.mindmap_aeste, 4, 4, 'Aeste')
   ;(sit.mindmap_aeste ?? []).forEach((a, i) => {
     max(datei, `mindmap_aeste[${i}].titel`, a?.titel, 30)
-    anzahl(datei, `mindmap_aeste[${i}].punkte`, a?.punkte, 0, 3, 'Punkte')
+    // Begriffsnetz (E17): jeder Punkt ist ein Knoten und ein Glossarbegriff; bis fünf je Ast.
+    anzahl(datei, `mindmap_aeste[${i}].punkte`, a?.punkte, 0, 5, 'Punkte')
     ;(a?.punkte ?? []).forEach((p, j) => max(datei, `mindmap_aeste[${i}].punkte[${j}]`, p, 25))
   })
+  anzahl(datei, 'mindmap_aeste (Knoten gesamt)', (sit.mindmap_aeste ?? []).flatMap((a) => a?.punkte ?? []), 0, 10, 'Knoten')
+  budgetProduktBild(datei, 'handlungsprodukt.beispielbild', hp.beispielbild, { eintraege: 5, text: 105 })
+  budgetProduktBild(datei, 'handlungsprodukt.loesungsbild', hp.loesungsbild, { eintraege: 7, text: 130 })
   anzahl(datei, 'abschluss.quercheck', sit.abschluss?.quercheck, 2, 2)
   ;(sit.abschluss?.quercheck ?? []).forEach((q, i) => max(datei, `abschluss.quercheck[${i}]`, q, 110))
   anzahl(datei, 'abschluss.mitnahme', sit.abschluss?.mitnahme, 3, 3)
@@ -288,6 +292,13 @@ function budgetAuftrag(ga) {
   })
   anzahl(datei, `${b}.abgaben`, ga.abgaben, 0, 3)
   ;(ga.abgaben ?? []).forEach((a, i) => max(datei, `${b}.abgaben[${i}]`, a, 80))
+  // Bezug auf die Hefte (Auftragsbogen A1): je Heft höchstens drei kurze Verweise.
+  anzahl(datei, `${b}.heft_bezug`, ga.heft_bezug, 0, 2)
+  ;(ga.heft_bezug ?? []).forEach((h, i) => {
+    max(datei, `${b}.heft_bezug[${i}].titel`, h?.titel, 60)
+    anzahl(datei, `${b}.heft_bezug[${i}].inhalte`, h?.inhalte, 1, 3)
+    ;(h?.inhalte ?? []).forEach((t, j) => max(datei, `${b}.heft_bezug[${i}].inhalte[${j}]`, t, 60))
+  })
 }
 
 /** §3.1 Seiten 1/3/4, Quellenkarte. `rolle` aus dem Heft, das sie einbindet. */
@@ -509,6 +520,65 @@ function regel6(hefte, set, kn) {
   }
 }
 
+/**
+ * Produkt als Bild (E17): drei Blöcke nebeneinander, Liste oder Tabelle. Das Beispielbild
+ * steht im Heft auf S. 6 und ist darum enger als das Lösungsblatt der Lehrperson.
+ */
+function budgetProduktBild(datei, basis, bild, grenze) {
+  if (!bild) {
+    add('regel', 'ERR_V42_PRODUKTBILD', datei, basis, 'Entscheid E17', 'fehlt', 'vorhanden (Beispiel im Heft und Lösungsblatt)')
+    return
+  }
+  max(datei, `${basis}.titel`, bild.titel, 90)
+  anzahl(datei, `${basis}.legende`, bild.legende, 0, 3)
+  ;(bild.legende ?? []).forEach((l, i) => max(datei, `${basis}.legende[${i}].text`, l?.text, 28))
+  const keys = new Set((bild.legende ?? []).map((l) => l?.key))
+  anzahl(datei, `${basis}.bloecke`, bild.bloecke, 2, 3, 'Bloecke')
+  ;(bild.bloecke ?? []).forEach((b, i) => {
+    max(datei, `${basis}.bloecke[${i}].titel`, b?.titel, 32)
+    anzahl(datei, `${basis}.bloecke[${i}].eintraege`, b?.eintraege, 0, grenze.eintraege)
+    ;(b?.eintraege ?? []).forEach((e, j) => {
+      max(datei, `${basis}.bloecke[${i}].eintraege[${j}].text`, e?.text, grenze.text)
+      max(datei, `${basis}.bloecke[${i}].eintraege[${j}].notiz`, e?.notiz, 60)
+    })
+    anzahl(datei, `${basis}.bloecke[${i}].zeilen`, b?.zeilen, 0, 12, 'Zeilen')
+    ;(b?.zeilen ?? []).forEach((z, j) => max(datei, `${basis}.bloecke[${i}].zeilen[${j}].zellen[0]`, z?.zellen?.[0], 30))
+    for (const [liste, name] of [[b?.eintraege, 'eintraege'], [b?.zeilen, 'zeilen']]) {
+      ;(liste ?? []).forEach((e, j) => {
+        if (e?.marke && !keys.has(e.marke)) {
+          add('regel', 'ERR_V42_PRODUKTBILD', datei, `${basis}.bloecke[${i}].${name}[${j}].marke`, 'Entscheid E17', zeige(e.marke), 'ein key aus legende')
+        }
+      })
+    }
+  })
+}
+
+/**
+ * Glossar je Heft und Begriffsnetz (E17): Die Knoten der Mindmap sind Glossarbegriffe des
+ * Hefts, die in beiden Spuren gelten; jeder solche Begriff ist auch ein Knoten.
+ */
+function regelGlossar(set, hefte) {
+  const glossar = Array.isArray(set?.glossar) ? set.glossar : []
+  glossar.forEach((g, i) => {
+    max('set.json', `glossar[${i}].begriff`, g?.begriff, 25)
+    max('set.json', `glossar[${i}].definition`, g?.definition, 90)
+  })
+  for (const [L, sit] of Object.entries(hefte)) {
+    const kern = glossar.filter((g) => g?.heft === L && !g?.spur).map((g) => g.begriff)
+    const knoten = (sit.mindmap_aeste ?? []).filter((a) => !a?.transfer).flatMap((a) => a?.punkte ?? [])
+    if (!kern.length) add('regel', 'ERR_V42_GLOSSAR', 'set.json', 'glossar', 'Entscheid E17', `kein Eintrag für Heft ${L}`, 'Glossar je Heft')
+    for (const k of knoten) {
+      if (!kern.includes(k)) add('regel', 'ERR_V42_GLOSSAR', `herausforderung_${L}.json`, 'mindmap_aeste', 'Entscheid E17', `Knoten ${zeige(k)} steht nicht im Glossar von Heft ${L}`, 'jeder Knoten ist ein Glossarbegriff (ohne spur)')
+    }
+    for (const b of kern) {
+      if (!knoten.includes(b)) add('regel', 'ERR_V42_GLOSSAR', 'set.json', 'glossar', 'Entscheid E17', `Begriff ${zeige(b)} (Heft ${L}) ist kein Knoten der Mindmap`, 'jeder Glossarbegriff ohne spur ist ein Knoten')
+    }
+    for (const spur of ['ohne_medien', 'mit_medien']) {
+      anzahl('set.json', `glossar (Heft ${L}, nur ${spur})`, glossar.filter((g) => g?.heft === L && g?.spur === spur), 0, 2)
+    }
+  }
+}
+
 /** Nr. 7: Mindmap-Zentrum gleich in A und B; genau ein Transfer-Ast je Heft. */
 function regel7(hefte) {
   const { A, B: Bh } = hefte
@@ -727,6 +797,7 @@ for (const [id, k] of [...quellenDerEinheit]) {
 regel5(hefte)
 regel6(hefte, set, kn)
 regel7(hefte)
+regelGlossar(set, hefte)
 regel8(set, prinzip)
 regel9Kontext(set, FALL_BEGRIFFE)
 

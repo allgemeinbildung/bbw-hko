@@ -15,6 +15,8 @@ import { COLOR, p, skizzeBox, tcell } from './docx-primitives'
 import { kastenDocx, seitenKopfDocx, type HeftDocxKontext } from './docx-heft-v42-gemeinsam'
 import { checklisteBlock, methodenBlock } from './docx-builder'
 import { RUBRIK_PUNKTE_LABELS } from './rubrik-skala'
+import { begriffsnetzTabelle, checklisteZweispaltigDocx, glossarBlock } from './docx-begriffsnetz-v42'
+import { beispielBandDocx } from './docx-produkt-bild-v42'
 import type { SituationJson } from './types'
 
 type Block = Paragraph | Table
@@ -184,7 +186,13 @@ export function seite5Docx(ctx: HeftDocxKontext): Block[] {
 // ---------------------------------------------------------------------------
 
 export function seite6Docx(ctx: HeftDocxKontext): Block[] {
-  return [...seitenKopfDocx(6, 'Methoden', ctx), ...methodenBlock(ctx.sit, ctx.akzent)]
+  // Mit Beispielbild: das Band als Tabelle unter den Methodenkarten (wie im HTML).
+  const bild = ctx.sit.handlungsprodukt?.beispielbild
+  return [
+    ...seitenKopfDocx(6, 'Methoden', ctx),
+    ...methodenBlock(ctx.sit, ctx.akzent),
+    ...(bild ? beispielBandDocx(bild, ctx.akzent) : []),
+  ]
 }
 
 // ---------------------------------------------------------------------------
@@ -263,8 +271,16 @@ function mindmapTabelle(sit: SituationJson, ctx: HeftDocxKontext): Table {
 export function seite8Docx(ctx: HeftDocxKontext): Block[] {
   const { sit } = ctx
   const els: Block[] = [...seitenKopfDocx(8, 'Abschluss', ctx)]
+  // Begriffsnetz + Glossar (E17), sobald das Heft ein Glossar trägt; sonst die Mindmap.
+  const netz = (sit.glossar?.length ?? 0) > 0 && (sit.mindmap_aeste?.length ?? 0) > 0
 
-  if ((sit.mindmap_aeste?.length ?? 0) > 0) {
+  if (netz) {
+    const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
+    els.push(anweisung(
+      `Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «${transferTitel}». Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).`,
+    ))
+    els.push(begriffsnetzTabelle(sit, ctx), abstand(60), ...glossarBlock(sit, ctx), abstand(60))
+  } else if ((sit.mindmap_aeste?.length ?? 0) > 0) {
     const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
     els.push(anweisung(
       `Verbinden Sie die Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen. Ergänzen Sie mindestens zwei Begriffe aus Ihrem Raster (S. 3). Tragen Sie im Feld «${transferTitel}» ein, wo dasselbe sonst noch gilt, und führen Sie eine Verbindung dorthin.`,
@@ -285,8 +301,9 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
 
   const mitnahme = (sit.abschluss?.mitnahme || []).filter(Boolean)
   if (mitnahme.length) {
-    els.push(label('Mitnahme in den gemeinsamen Auftrag (Woche 3)', ctx))
-    els.push(anweisung('Diese drei Zeilen brauchen Sie in Woche 3 wieder.'))
+    els.push(label('Das nehme ich mit', ctx))
+    // Mit Begriffsnetz fehlt der Platz für die Anweisung — wie im HTML.
+    if (!netz) els.push(anweisung('Halten Sie in drei Zeilen fest, was Sie aus diesem Heft weiterverwenden.'))
     // Beschriftung unten in der Zelle, ohne Innenabstand unten: die Grundlinie sitzt
     // bündig auf der eigenen Schreiblinie (Unterkante der rechten Zelle), nicht mittig
     // zwischen zwei Linien — wie .v42-mitnahme-zeile im HTML.
@@ -295,7 +312,7 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
       width: pct(100),
       rows: mitnahme.map((m) => new TableRow({
         cantSplit: true,
-        height: { value: Math.round(9 * 56.6929), rule: HeightRule.ATLEAST },
+        height: { value: Math.round((netz ? 7.5 : 9) * 56.6929), rule: HeightRule.ATLEAST },
         children: [
           tcell(p(m, { run: { bold: true, size: 19 }, spacing: { before: 0, after: 0 } }), { width: pct(30), verticalAlign: VerticalAlign.BOTTOM, margins: unten, borders: { top: KEIN, left: KEIN, right: KEIN, bottom: KEIN } }),
           tcell(p('', { spacing: { before: 0, after: 0 } }), { width: pct(70), verticalAlign: VerticalAlign.BOTTOM, margins: { ...unten, right: 0 }, borders: { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 6, color: COLOR.inkSoft } } }),
@@ -304,7 +321,7 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
     }), abstand(60))
   }
 
-  // Bestand: Checkliste Vollständigkeit (Produkt · Kriterien, ✔ … ☐) — wie im HTML.
-  els.push(...checklisteBlock(sit, ctx.akzent))
+  // Checkliste Vollständigkeit (✔ … ☐): mit Begriffsnetz im 2×2-Raster, sonst der Bestand.
+  els.push(...(netz ? checklisteZweispaltigDocx(sit, ctx) : checklisteBlock(sit, ctx.akzent)))
   return els
 }

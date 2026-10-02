@@ -79,16 +79,55 @@
       "heft": "A"
     },
     {
+      "begriff": "Werbung",
+      "definition": "Botschaften von Firmen, die Wünsche wecken und zum Kauf bewegen sollen.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
       "begriff": "Impulskauf",
       "definition": "Kauf aus spontanem Wunsch, ohne Planung oder Vergleich.",
-      "herkunft": "quelle",
+      "herkunft": "heft",
       "heft": "A"
+    },
+    {
+      "begriff": "Konsumdruck",
+      "definition": "Druck aus dem Umfeld, etwas zu kaufen, um dazuzugehören.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Geweckter Wunsch",
+      "definition": "Wunsch, der von aussen entsteht, etwa durch Werbung oder das Umfeld.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Massstab",
+      "definition": "Eigene, überprüfbare Regel, nach der ich über einen Kauf entscheide.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Nachfrage",
+      "definition": "Was Käuferinnen und Käufer von einem Gut kaufen wollen.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
     },
     {
       "begriff": "Influencer-Marketing",
       "definition": "Werbung, bei der Firmen Personen mit vielen Followern bezahlen oder beschenken.",
       "herkunft": "quelle",
-      "heft": "A"
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Algorithmus",
+      "definition": "Rechenregel, nach der eine Plattform auswählt, was im Feed erscheint.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
     },
     {
       "begriff": "Nettolohn",
@@ -97,14 +136,20 @@
       "heft": "B"
     },
     {
-      "begriff": "Fixe / variable Kosten",
-      "definition": "Gleichbleibende bzw. durch eigenes Verhalten veränderbare Ausgaben.",
+      "begriff": "Fixe Kosten",
+      "definition": "Ausgaben, die jeden Monat gleich bleiben und sich kurzfristig nicht ändern lassen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Variable Kosten",
+      "definition": "Ausgaben, die ich durch mein Verhalten beeinflussen kann.",
       "herkunft": "lehrmittel",
       "heft": "B"
     },
     {
       "begriff": "Rückstellung",
-      "definition": "Geld, das für spätere, grössere Ausgaben zur Seite gelegt wird (z. B. Zahnarzt, Steuern).",
+      "definition": "Geld, das für spätere, grössere Ausgaben zur Seite gelegt wird.",
       "herkunft": "lehrmittel",
       "heft": "B"
     },
@@ -115,6 +160,12 @@
       "heft": "B"
     },
     {
+      "begriff": "Engpass",
+      "definition": "Zeitpunkt oder Posten, bei dem das Geld nicht mehr reicht.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
       "begriff": "Mahnung",
       "definition": "Zahlungsaufforderung nach Ablauf der Zahlungsfrist.",
       "herkunft": "lehrmittel",
@@ -122,9 +173,35 @@
     },
     {
       "begriff": "Schuldenspirale",
-      "definition": "Dauernd über den eigenen Verhältnissen leben, sodass die Schulden immer weiter wachsen.",
+      "definition": "Dauernd über den eigenen Verhältnissen leben, sodass die Schulden weiter wachsen.",
       "herkunft": "lehrmittel",
       "heft": "B"
+    },
+    {
+      "begriff": "Anpassung",
+      "definition": "Änderung an einem Budgetposten, damit der Saldo aufgeht.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Schutzregel",
+      "definition": "Wenn-dann-Regel, die mich vor neuen Schulden schützt.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Betreibung",
+      "definition": "Amtliches Verfahren, mit dem offenes Geld eingefordert wird.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Überschuldung",
+      "definition": "Schulden, die sich aus dem Einkommen nicht mehr in absehbarer Zeit abzahlen lassen.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
     }
   ],
   "spur": "wahl",
@@ -204,6 +281,26 @@
       "Sprachnachricht 60–90 Sekunden: live oder als Aufnahme direkt an die Lehrperson",
       "Selbsteinschätzung auf den 4 KN-Kriterien"
     ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Marke oder echtes Bedürfnis?",
+        "inhalte": [
+          "Bedürfnisarten und Maslow-Stufen (S. 2)",
+          "Ihr Massstab-Satz (S. 4 und S. 8)",
+          "Begriffe und Glossar (S. 8)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Am 20. ist das Konto leer",
+        "inhalte": [
+          "Budget mit Saldo und Rückstellungen (S. 2, S. 7)",
+          "Ihre Schutzregeln (S. 4 und S. 8)",
+          "Begriffe und Glossar (S. 8)"
+        ]
+      }
+    ],
     "feedback_kriterien": [
       {
         "kn_kriterium": "Fachkorrektheit",
@@ -267,7 +364,7 @@
     "bogen": [
       "situation_auftrag",
       "arbeitsflaeche",
-      "sprechspur_glossar",
+      "sprechspur",
       "rueckmeldung"
     ]
   }

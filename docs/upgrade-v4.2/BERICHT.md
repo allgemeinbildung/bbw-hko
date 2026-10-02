@@ -3,7 +3,7 @@
 Gebaut am 01./02.10.2026 auf dem Branch `v42-gold-1.3.1` (Ausgang `4ed2bee`).
 **Nichts ist gepusht, nichts deployt, `main` ist unberührt.**
 
-Auftrag: `docs/ORCHESTRATION.md` · Entscheide im Einzelnen: `ENTSCHEIDE.md` (E1–E15).
+Auftrag: `docs/ORCHESTRATION.md` · Entscheide im Einzelnen: `ENTSCHEIDE.md` (E1–E17).
 
 ---
 
@@ -16,6 +16,8 @@ Beide sind als Entwurf unter `/einheiten/1.3.1_konsum_verantworten_v42`
 umschaltbar, als HTML und Word exportierbar und ohne Platzhalter.
 
 **Nachtrag 02.10.2026 — Pietros Rückmeldung (E16) ist eingearbeitet:** QR-Code nur noch auf Seite 3; «Quelle» statt «Pflichtquelle»; die Schreibfelder füllen die Seiten 2–4 (die Höhen des Leitfadens gelten als Minimum); die Vertiefungskarten auf Seite 4 haben Hinweis, Kurzbeschrieb und ein Feld «Meine Antwort». Gates, Messung, Word-Seitenzahl und Bestandsvergleich sind danach erneut gelaufen.
+
+**Zweiter Nachtrag 02.10.2026 — zweite Rückmeldung und Lückenprüfung (E17):** Seite 1 zeigt eine «Übersicht» ohne Woche und Zeit; Seite 8 heisst «Das nehme ich mit», der Verweis auf die Hefte steht neu auf dem Auftragsbogen (A1); Seite 6 trägt unter den Methodenkarten ein ausgefülltes Beispiel des Produkts an einem anderen Fall, die Lehrperson hat je Heft ein Lösungsblatt; Seite 8 zeigt ein Begriffsnetz aus den Glossarbegriffen des Hefts und darunter das Glossar (auf dem Auftragsbogen entfällt es). Dazu die Korrekturen aus der Lückenprüfung (Punkteskala im Begleiter, Erwartungen zu den Vertiefungsfragen, Stützen-Hinweise). Gates, Messung (jetzt 38 Seiten: 4 Hefte × 8, Auftragsbogen 4, 2 Lösungsblätter), Word-Seitenzahl und Bestandsvergleich sind danach erneut gelaufen.
 
 **Gates am Schluss (02.10.2026):**
 
@@ -66,7 +68,7 @@ umschaltbar, als HTML und Word exportierbar und ohne Platzhalter.
 | Prüfen und Exportieren | `scripts/check-v42.mjs`, `export-v42.mjs`, `messen-v42.mjs`, `bestand-v42.mjs`, `v42-ssr.mjs`; `check-einheiten` und `check-lf-loesung` prüfen v4.2-Hefte je Spur |
 
 **Exporte** in `docs/upgrade-v4.2/gold/`: je Heft und Spur `.html` und `.docx`,
-`auftragsbogen.html/.docx`, `begleiter.docx`.
+`auftragsbogen.html/.docx`, `loesungsblatt-a/-b.html/.docx` (nur Lehrperson), `begleiter.docx`.
 
 ---
 
@@ -120,11 +122,13 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
    Schuldenarten führen alle einen Balken «Kredit» (Gegenstand des KN). Die
    zuerst gewählte BFS-Grafik «Steuerrückstand» trug den Auftrag nicht und ist
    jetzt Ersatz (E11, E14). Zugeständnis: ein PDF, Ratsuchende meist 30–49.
-3. **Zwei Vertiefungs-Leitfragen sind umformuliert**, weil kein Beitrag die
-   ursprüngliche trägt: A2 («Welches Bedürfnis steckt hinter gefälschten
-   Markenartikeln — und was riskiert, wer sie bestellt?») und B1 («Warum
-   rutschen junge Leute laut Beitrag in Schulden — und wo finden sie früh
-   Hilfe?»).
+3. **Drei Vertiefungs-Leitfragen sind umformuliert**, weil der Ausschnitt die
+   ursprüngliche nicht trägt: A2 («Welches Bedürfnis steckt hinter gefälschten
+   Markenartikeln — und was riskiert, wer sie bestellt?»), B1 («Warum
+   rutschen junge Leute laut Beitrag in Schulden — und wie will der Verein
+   früh helfen?») und B2 («Wie läuft eine Betreibung ab — und was können Sie
+   tun, wenn ein Zahlungsbefehl kommt?»). Die Erwartungen dazu stehen im
+   Begleiter (E17).
 4. **LF3 ohne Medien, Heft A:** Das Lehrmittel hat keinen Abschnitt
    «Einflüsse auf Bedürfnisse». LF3 fragt nach Einflüssen auf Kaufwünsche und
    Nachfrage, Kap. 2.7 S. 73–77 (E7).
@@ -133,7 +137,14 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
    Methodenkarte 4 von Heft A (E13). `git diff 7d5abd4 -- src/data/einheiten/1.3.1_konsum_verantworten_v42`
    zeigt alles.
 6. **KN und Prinzip** sprechen von zwei statt drei Herausforderungen (E2).
-7. **Ordnername und Kurzlink** `…_v42` sind nach dem ersten Druck fest (E5).
+7. **Inhalt der vier Produktbilder** (E17): die neutralen Beispiele auf Seite 6
+   (Landkarte zur Spielkonsole; Budget mit Nettolohn CHF 950) und die zwei
+   Lösungsblätter. Die Budgets sind nachgerechnet, die Zuordnungen folgen den
+   Lösungen von LF1; freigegeben hat sie niemand ausser mir.
+8. **Glossar je Heft** (E17): zehn Begriffe je Heft, davon je drei bis vier
+   «heft-eigene» ohne Lehrmittelbeleg (Konsumdruck, Geweckter Wunsch, Massstab;
+   Engpass, Anpassung, Schutzregel) mit selbst formulierten Definitionen.
+9. **Ordnername und Kurzlink** `…_v42` sind nach dem ersten Druck fest (E5).
    Soll die Einheit die publizierte ersetzen, vorher umbenennen.
 
 ---
@@ -157,6 +168,11 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
   Stand 2023, «klare Regeln fehlen»).
 - **Der Verein «Finanz fit»** (Vertiefung B1): ob er heute noch so besteht.
 - **Übersicht_LP im ZIP** ist per Skript geprüft, nicht im Browser angesehen.
+- **Arbeitsansicht nach E17** (neue Gruppe «Lösungsblätter», ausgeblendete
+  Präsentation und Werkstatt, ZIP mit Lösungsblättern): nur über Export,
+  Typprüfung und Build geprüft, nicht im Browser geklickt.
+- **Begriffsnetz mit anderen Daten:** Die Platzierung ist für 1–5 Knoten je
+  Ast durchgerechnet, gerendert aber nur mit dieser Einheit.
 
 ---
 
@@ -176,6 +192,12 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
 - **Word-Höhen sind an dieser Einheit gemessen:** Die Zuschläge der Schreibflächen in Word sind
   feste Werte; am knappsten ist Seite 3 ohne Medien (rund 4 mm). Längere Texte in einer anderen
   Einheit können eine neunte Seite auslösen — nach jedem Export die Seiten zählen.
+- **Beispiel auf Seite 6 ist klein:** 7 pt in Schreibschrift (Segoe Print). In
+  Heft B bleibt unter dem Blatt knapp 1 mm; auf einem Rechner ohne Segoe Print
+  (Mac) bricht der Text anders um und kann abgeschnitten werden. Für die
+  Karten auf Seite 6 sind nur Abstände verkleinert, nicht die Schrift.
+- **Leere Knoten und «gilt auch bei …» sind am Bildschirm nicht beschreibbar**
+  (wie die bisherige Mindmap: fürs Papier gedacht).
 - **Zwei bestehende Methodenkarten** sind ungenau (`lm-17-3-3b-schema`: Seite
   394 statt 394–395; `lm-16-2-statement`: Merksatz nicht im Kapitel).
   Ausserhalb des Zauns.
@@ -184,6 +206,32 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
 - **404 der Landing-Seite** hängt an einem internen Astro-Header
   (`X-Astro-Reroute`); nach einem Astro-Upgrade prüfen.
 - **Build-Warnung** «chunks larger than 500 kB» (Workbench 794 kB).
+
+---
+
+## 7a. Nicht gebaut oder gegenüber dem Bestand weggelassen
+
+Der Brief stellt diese Punkte ausdrücklich zurück oder der Leitfaden sieht sie
+nicht mehr vor; hier stehen sie, damit sie nicht untergehen.
+
+- **Präsentation (Deck) und Werkstatt** für v4.2: nicht angepasst, bei
+  v4.2-Einheiten ausgeblendet (E17).
+- **KI-Toolbox** (`ki.json`, Lernprompt, Lernbegleiter): gibt es für die neue
+  Einheit nicht.
+- **Feedback-Formular** der Einheit: fragt noch nach «Herausforderung C» und
+  kennt weder Spur noch Auftragsbogen.
+- **Katalogkarte:** zeigt keinen Hinweis auf Spuren oder Auftragsbogen
+  (`hat_spuren`, `hat_medien` stehen im Index, werden aber nicht gelesen).
+- **Dossier-Fassung des Hefts** (Info-Modus): entfällt bei v4.2.
+- **Begleiter-Kapitel des Bestands**, die der neue Begleiter nicht mehr führt:
+  Ressourcenanalyse, Bloom-Zielprofil, Zirkularität, KI-Einsatz, «Wo welche SK
+  geübt wird», Perspektivenwechsel. Die Daten dazu (`sk_anker`,
+  `dekontextualisierung`, `prinzip_handoff`) sind erhalten, werden aber
+  nirgends gedruckt.
+- **Link-Prüfung in der CI** (Leitfaden §5): nicht gebaut, es gibt keine CI;
+  der Begleiter verlangt eine Handprüfung.
+- **EBA** (Leitfaden §10), **Migration** der übrigen Einheiten (§12),
+  `CLAUDE.md` und `docs/methodenkartei.md` nachführen.
 
 ---
 
@@ -207,10 +255,17 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
    `check-einheiten` braucht für v4.2 eine eigene Regelliste.
 7. **Audio braucht einen Transkriptweg.** Ohne Whisper-Freigabe bleiben
    SRF-Audiobeiträge ungeprüft.
-8. **Werkzeuge stehen:** `export-v42.mjs`, `messen-v42.mjs` und
+8. **Vertiefungsfragen an der Quelle prüfen:** Auch nach der ersten Runde
+   waren zwei von vier Fragen vom Ausschnitt nur halb getragen. Der Generator
+   braucht je Vertiefung einen Erwartungshorizont mit Fundstelle — wo keiner
+   zu schreiben ist, stimmt die Frage nicht.
+9. **Produktbild und Glossar sind Daten, kein Handwerk:** `beispielbild`,
+   `loesungsbild` und das Glossar je Heft gehören in den Generator;
+   `check-v42.mjs` prüft sie bereits (E17).
+10. **Werkzeuge stehen:** `export-v42.mjs`, `messen-v42.mjs` und
    `bestand-v42.mjs` laufen für jede v4.2-Einheit; `v42-dokumente.tsx` ist die
    eine Liste der Dokumente.
-9. **Rollen:** Bewährt haben sich getrennte Dateien je Executor und ein
+11. **Rollen:** Bewährt haben sich getrennte Dateien je Executor und ein
    Gerüst-Auftrag vor den Seiten-Aufträgen; kurze gemeinsame CSS-Klassennamen
    über verkettete Dateien haben einmal kollidiert.
 
@@ -228,6 +283,10 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
   offene Dokumente beendet und kann nicht ausschliessen, dass es eine fremde
   war. Ein verstecktes `WINWORD.EXE` (PID 84212, gestartet 01.10., 23:29) lief
   danach weiter — bitte im Task-Manager prüfen.
+- **Word, 02.10.:** Das fremde `WINWORD.EXE` (PID 84212) läuft nicht mehr. Beim
+  Seitenzählen ist eine eigene, versteckte Automations-Instanz hängen
+  geblieben (PID 36132, gestartet 15:37); ich durfte sie nicht beenden —
+  bitte im Task-Manager schliessen.
 - **Unversioniert geblieben:** `docs/ORCHESTRATION.md`,
   `docs/pipeline-review-2026-10-01.md`, `docs/upgrade-v4.1/` (E1).
 - **Defekte Skripte** aus dem Brief (`build:deck`, `sync-einheiten-nrlp --check`,

@@ -1686,7 +1686,9 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
   }
 
   children.push(pageBreak())
-  children.push(...sectionHead('01 · Herausforderungen A·B·C', 'Was die drei Herausforderungen versprechen', akzent))
+  // v4.2 (zwei Hefte, gemeinsamer Auftrag): Wortlaut für zwei Herausforderungen — wie DocKnLp.tsx.
+  const zweiHefte = !!set?.gemeinsamer_auftrag
+  children.push(...sectionHead(zweiHefte ? '01 · Herausforderungen A·B' : '01 · Herausforderungen A·B·C', zweiHefte ? 'Was die zwei Herausforderungen versprechen' : 'Was die drei Herausforderungen versprechen', akzent))
   if (prinzip?.herausforderungen) {
     ;['A', 'B', 'C'].forEach((letter) => {
       const sf = prinzip.herausforderungen![letter]
@@ -1719,7 +1721,7 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
   }
 
   if (set?.konzept_progression) {
-    children.push(...sectionHead('03 · Konzeptbogen', 'Progression A → B → C', akzent))
+    children.push(...sectionHead('03 · Konzeptbogen', zweiHefte ? 'Progression A → B' : 'Progression A → B → C', akzent))
     children.push(dataTable(
       ['#', 'Konzept'],
       set.konzept_progression.map((kp) => [

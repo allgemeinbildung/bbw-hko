@@ -4,6 +4,8 @@ import { ChecklisteVollstaendigkeit, MethodenGrid } from '../DocS'
 import { RUBRIK_PUNKTE_LABELS } from '../../../../lib/einheiten/rubrik-skala'
 import type { SituationJson } from '../../../../lib/einheiten/types'
 import { Kasten, SeitenKopf, type HeftSeiteProps } from './gemeinsam'
+import { Begriffsnetz, ChecklisteZweispaltig, GlossarStreifen } from './begriffsnetz'
+import { BeispielBand } from './produkt-bild'
 
 /**
  * Heft v4.2, Seiten 5–8 (Leitfaden §3): Auftrag · Methoden · Arbeitsfläche ·
@@ -49,7 +51,7 @@ function Kaestchen({ an, onToggle, label }: { an: boolean; onToggle?: () => void
 }
 
 /**
- * Eine Schreibzeile (Mitnahme, S. 8). Trägt die Klasse `.feld`, damit die
+ * Eine Schreibzeile («Das nehme ich mit», S. 8). Trägt die Klasse `.feld`, damit die
  * Standalone-Shell sie wie jedes Schreibfeld speichert; heft-5-8.css macht aus dem
  * Karokasten eine einzelne Linie. Muster: Schreibfeld in chrome.tsx.
  */
@@ -195,8 +197,13 @@ export function Seite5(props: HeftSeiteProps) {
  * Bestehende Methodenseite, unverändert (docs/methodenkartei.md): vier Karten,
  * Gewichtssortierung und Kontur macht MethodenGrid. Karte 2 ist bereits die
  * Rezeptionskarte der Spur (loadEinheit → resolveSpur).
+ *
+ * Mit `handlungsprodukt.beispielbild` nehmen die Karten ihre natürliche Höhe und darunter
+ * steht das Beispielblatt (produkt-bild.tsx, Stil produkt-bild.css). Ohne bleibt die Seite
+ * wie bisher.
  */
 export function Seite6({ sit }: HeftSeiteProps) {
+  const bild = sit.handlungsprodukt?.beispielbild
   return (
     <>
       <SeitenKopf nr={6} titel="Methoden" />
@@ -204,7 +211,14 @@ export function Seite6({ sit }: HeftSeiteProps) {
         Vier Werkzeuge, vier Felder. Wo ein Kapitel steht, schlagen Sie im Lehrmittel nach —
         hier steht, was Sie damit für diese Abgabe machen. Die übrigen Felder stehen für sich.
       </p>
-      <MethodenGrid sit={sit} />
+      {bild ? (
+        <div className="v42-pb-s6">
+          <MethodenGrid sit={sit} />
+          <BeispielBand bild={bild} />
+        </div>
+      ) : (
+        <MethodenGrid sit={sit} />
+      )}
     </>
   )
 }
@@ -277,10 +291,23 @@ export function Seite8(props: HeftSeiteProps) {
   const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
   const quercheck = (sit.abschluss?.quercheck || []).filter(Boolean)
   const mitnahme = (sit.abschluss?.mitnahme || []).filter(Boolean)
+  // Begriffsnetz + Glossar (E17), sobald das Heft ein Glossar trägt; sonst die Mindmap.
+  const netz = (sit.glossar?.length ?? 0) > 0 && (sit.mindmap_aeste?.length ?? 0) > 0
   return (
     <>
       <SeitenKopf nr={8} titel="Abschluss" />
-      {(sit.mindmap_aeste?.length ?? 0) > 0 && (
+      {netz && (
+        <>
+          <p className="v42-arbeitsanweisung">
+            Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe
+            zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «{transferTitel}».
+            Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).
+          </p>
+          <Begriffsnetz sit={sit} />
+          <GlossarStreifen sit={sit} />
+        </>
+      )}
+      {!netz && (sit.mindmap_aeste?.length ?? 0) > 0 && (
         <>
           <p className="v42-arbeitsanweisung">
             Verbinden Sie die Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei
@@ -309,8 +336,9 @@ export function Seite8(props: HeftSeiteProps) {
       )}
       {mitnahme.length > 0 && (
         <section className="v42-mitnahme">
-          <div className="v42-kasten-label">Mitnahme in den gemeinsamen Auftrag (Woche 3)</div>
-          <p className="v42-arbeitsanweisung">Diese drei Zeilen brauchen Sie in Woche 3 wieder.</p>
+          <div className="v42-kasten-label">Das nehme ich mit</div>
+          {/* Mit Begriffsnetz fehlt der Platz für die Anweisung — Label und Zeilen reichen. */}
+          {!netz && <p className="v42-arbeitsanweisung">Halten Sie in drei Zeilen fest, was Sie aus diesem Heft weiterverwenden.</p>}
           {mitnahme.map((m, i) => {
             const [wert, setze] = eingabe(props, `mitnahme_${i}`)
             return (
@@ -322,9 +350,13 @@ export function Seite8(props: HeftSeiteProps) {
           })}
         </section>
       )}
-      <div className="v42-checkliste">
-        <ChecklisteVollstaendigkeit sit={sit} />
-      </div>
+      {netz ? (
+        <ChecklisteZweispaltig sit={sit} />
+      ) : (
+        <div className="v42-checkliste">
+          <ChecklisteVollstaendigkeit sit={sit} />
+        </div>
+      )}
     </>
   )
 }

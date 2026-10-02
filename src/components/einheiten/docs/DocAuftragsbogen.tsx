@@ -7,7 +7,7 @@ import type { GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/e
  * Auftragsbogen des gemeinsamen Auftrags v4.2 — Leitfaden docs/upgrade-v4.2 §7.5.
  *
  * Vier Seiten in fester Folge: A1 Situation und Auftrag · A2 Arbeitsfläche ·
- * A3 Sprechspur + Glossar der Einheit · A4 Rückmeldung. Der Auftrag ist in beiden
+ * A3 Sprechspur (das Glossar steht seit E17 in den Heften, S. 8) · A4 Rückmeldung. Der Auftrag ist in beiden
  * Spuren identisch (§7.4) und braucht kein Medium — darum hängt hier nichts an `spur`.
  *
  * Muster DocAustausch.tsx: ein Set-Dokument mit eigener Hülle und eigenem
@@ -67,16 +67,19 @@ export function sprechDauer(hint: string | undefined): string {
   return m ? `${m[1]}–${m[2]} Sekunden` : '60–90 Sekunden'
 }
 
-/** Glossar nach Heft gruppiert, Reihenfolge des ersten Auftretens. */
-export function glossarGruppen(glossar: GlossarEintrag[]): { heft: string; eintraege: GlossarEintrag[] }[] {
-  const out: { heft: string; eintraege: GlossarEintrag[] }[] = []
-  for (const g of glossar) {
-    const heft = g.heft || ''
-    let gruppe = out.find((x) => x.heft === heft)
-    if (!gruppe) out.push((gruppe = { heft, eintraege: [] }))
-    gruppe.eintraege.push(g)
-  }
-  return out
+/** Schreibzeilen je Station der Sprechspur (A3), HTML und Word gleich. */
+export const SPRECHSPUR_ZEILEN = 6
+
+/**
+ * Fusszeile von A3: das Glossar steht seit E17 in den Heften (je S. 8), nicht mehr hier.
+ * Hefte aus `set.glossar` in der Reihenfolge des ersten Auftretens; ohne Glossar keine Zeile.
+ */
+export function glossarVerweis(glossar: GlossarEintrag[] | undefined): string | null {
+  const hefte = [...new Set((glossar || []).map((g) => g.heft).filter(Boolean))] as string[]
+  if (!hefte.length) return null
+  const namen = hefte.map((h) => `Heft ${h}`)
+  const liste = namen.length < 2 ? namen[0] : `${namen.slice(0, -1).join(', ')} und ${namen[namen.length - 1]}`
+  return `Begriffe nachschlagen: Glossar in ${liste}, je Seite 8.`
 }
 
 /**
@@ -180,7 +183,23 @@ function SeiteA1({ ga }: SeiteProps) {
         )}
       </div>
 
-      <p className="v42-auftrag-hefte">Ihre Hefte A und B dürfen Sie benutzen.</p>
+      {/* Bezug auf die Hefte: der Auftrag sagt, was er braucht — das Heft nennt keine Woche. */}
+      {(ga.heft_bezug?.length ?? 0) > 0 ? (
+        <Kasten label="Das brauchen Sie aus Ihren Heften" className="v42-auftrag-kasten">
+          <div className="v42-auftrag-bezug">
+            {ga.heft_bezug!.map((h, i) => (
+              <div key={i}>
+                <div className="v42-auftrag-bezug-kopf"><strong>Heft {h.heft}</strong>{h.titel ? ` · ${h.titel}` : ''}</div>
+                <ul className="v42-auftrag-bezug-liste">
+                  {(h.inhalte || []).map((t, j) => <li key={j}>{t}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Kasten>
+      ) : (
+        <p className="v42-auftrag-hefte">Ihre Hefte A und B dürfen Sie benutzen.</p>
+      )}
     </>
   )
 }
@@ -204,14 +223,12 @@ function SeiteA2({ ga, edits, onEdit }: SeiteProps) {
   )
 }
 
-// ---------------- A3 — Sprechspur + Glossar der Einheit ----------------
+// ---------------- A3 — Sprechspur, am Fuss der Verweis aufs Glossar der Hefte ----------------
 function SeiteA3({ ga, set, edits, onEdit }: SeiteProps) {
   const s = ga.schritte?.[4]
   const [nr, label] = s ? schrittTeile(s.label, 4) : ['05', 'Sprachnachricht']
   const dauer = sprechDauer(s?.hint)
-  const gruppen = glossarGruppen(set.glossar || [])
-  // Zwei Hefte → je eine Spalte mit Kopf; sonst eine Liste in zwei Spalten.
-  const proHeft = gruppen.length === 2 && gruppen.every((g) => g.heft)
+  const verweis = glossarVerweis(set.glossar)
   return (
     <>
       <SectionHead num="A3">{label} planen</SectionHead>
@@ -227,7 +244,7 @@ function SeiteA3({ ga, set, edits, onEdit }: SeiteProps) {
               <span className="v42-auftrag-nr">{i + 1}</span>
               <strong>{station}</strong>
             </div>
-            <Zeilen zeilen={2} value={edits[`auftrag_sprechspur_${i + 1}`] || ''} onChange={(v) => onEdit(`auftrag_sprechspur_${i + 1}`, v)} />
+            <Zeilen zeilen={SPRECHSPUR_ZEILEN} value={edits[`auftrag_sprechspur_${i + 1}`] || ''} onChange={(v) => onEdit(`auftrag_sprechspur_${i + 1}`, v)} />
           </div>
         ))}
         <div className="v42-auftrag-station-ende">
@@ -239,31 +256,7 @@ function SeiteA3({ ga, set, edits, onEdit }: SeiteProps) {
         </div>
       </div>
 
-      {gruppen.length > 0 && (
-        <section className="v42-auftrag-glossar">
-          <h3 className="v42-auftrag-zwischenkopf">Glossar der Einheit</h3>
-          {proHeft ? (
-            <div className="v42-auftrag-glossar-hefte">
-              {gruppen.map((g) => (
-                <div key={g.heft}>
-                  <div className="v42-auftrag-mikro">Heft {g.heft}</div>
-                  <dl className="v42-auftrag-glossar-liste">
-                    {g.eintraege.map((e, i) => (
-                      <div key={i}><dt>{e.begriff}</dt><dd>{e.definition}</dd></div>
-                    ))}
-                  </dl>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <dl className="v42-auftrag-glossar-liste v42-auftrag-glossar-spalten">
-              {(set.glossar || []).map((e, i) => (
-                <div key={i}><dt>{e.begriff}{e.heft && <span className="v42-auftrag-heft"> · Heft {e.heft}</span>}</dt><dd>{e.definition}</dd></div>
-              ))}
-            </dl>
-          )}
-        </section>
-      )}
+      {verweis && <p className="v42-auftrag-klein v42-auftrag-verweis">{verweis}</p>}
     </>
   )
 }

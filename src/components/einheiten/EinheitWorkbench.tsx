@@ -21,7 +21,8 @@ import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../lib/einhei
 import { buildUebersicht, einheitPrefix } from '../../lib/einheiten/uebersicht'
 import { buildStandaloneHtml } from '../../lib/einheiten/standalone-shell'
 import { DocAuftragsbogen } from './docs/DocAuftragsbogen'
-import { heftDatei, v42Dokumente } from '../../lib/einheiten/v42-dokumente'
+import { DocLoesungsblattV42 } from './docs/DocLoesungsblattV42'
+import { heftDatei, loesungsblattDatei, v42Dokumente } from '../../lib/einheiten/v42-dokumente'
 import { DEFAULT_SPUR, SPUR_KEYS, isV42 } from '../../lib/einheiten/spuren'
 import type { SpurKey } from '../../lib/einheiten/types'
 
@@ -114,7 +115,7 @@ interface Props {
   readOnly?: boolean
 }
 
-type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt' | 'doc-auftragsbogen'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt' | 'doc-auftragsbogen' | 'doc-loesungsblatt'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -151,11 +152,12 @@ function triggerDownload(blob: Blob, filename: string, meta?: Record<string, unk
 }
 
 // Gast-Sperre: statt des Dokuments erscheint ein Hinweis mit mailto-Kontakt.
-function GatePanel({ kind }: { kind: 'kn' | 'begleiter' | 'ki' }) {
+function GatePanel({ kind }: { kind: 'kn' | 'begleiter' | 'ki' | 'loesung' }) {
   const titles: Record<string, string> = {
     kn: 'Kompetenznachweis — nur für Lehrpersonen',
     begleiter: 'Begleitdokument «Lies mich!» — nur für Lehrpersonen',
     ki: 'KI-Toolbox — nur für Lehrpersonen',
+    loesung: 'Lösungsblatt — nur für Lehrpersonen',
   }
   const subject = encodeURIComponent('Lehrpersonen-Zugang zur ABU-Materialplattform BBW')
   const body = encodeURIComponent(
@@ -229,7 +231,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   const [fitWidth, setFitWidth] = useState(zoomPref.fit)
   const pagesRef = useRef<HTMLElement | null>(null)
   // Gast-Gate für die Lies-mich-Buttons (KN/KI-Sperre läuft über die doc-Auswahl selbst).
-  const [guestGate, setGuestGate] = useState<null | 'kn' | 'begleiter' | 'ki'>(null)
+  const [guestGate, setGuestGate] = useState<null | 'kn' | 'begleiter' | 'ki' | 'loesung'>(null)
   const [dling, setDling] = useState(false)
   const [templateDling, setTemplateDling] = useState(false)
   const [templatePrefilledDling, setTemplatePrefilledDling] = useState(false)
@@ -240,7 +242,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
   // Unterrichtsdeck wird vollständig aus den JSONs + begleiter.md generiert.
   // Aktuell nur EFZ — EBA hat eine eigene Logik und folgt separat.
-  const deckSource = useMemo(() => deckSourceFromFullSet(d), [d])
+  // v4.2: Präsentation und Werkstatt kennen das neue Modell noch nicht (zwei Hefte,
+  // gemeinsamer Auftrag statt Austausch und Transfer) — sie würden Folien bzw. einen
+  // Prompt im alten 3er-Format erzeugen. Bis sie nachgezogen sind, gibt es beides bei
+  // v4.2-Einheiten nicht (ENTSCHEIDE E17).
+  const deckSource = useMemo(() => (istV42 ? null : deckSourceFromFullSet(d)), [d, istV42])
   const deckAvailable = !!deckSource
   // Das Deck führt die Lösungen der Leitfragen nur, wo sie gepflegt sind (C10) —
   // der Knopf sagt es deshalb datengesteuert, statt es pauschal zu behaupten.
@@ -362,6 +368,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
     if (doc === 'doc-auftragsbogen') {
       return <DocAuftragsbogen set={d.set} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
+    if (doc === 'doc-loesungsblatt') {
+      // v4.2, nur Lehrperson: spur-unabhängig, das Handlungsprodukt ist in beiden Spuren gleich.
+      if (!sit?.handlungsprodukt?.loesungsbild) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Kein Lösungsblatt für Heft {situation}.</p></div>
+      return <DocLoesungsblattV42 sit={sit} abteilung={abteilung} />
+    }
     if (doc === 'doc-austausch') {
       if (!d.set) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Set fehlt.</p></div>
       return <DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={edits} onEdit={onEdit} />
@@ -438,8 +449,10 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
     const p = prefix
     // v4.2: Heft und Auftragsbogen kommen aus derselben Liste wie im ZIP — immer die
     // auszufüllende Fassung (`fill`), Dateiname der Spur, die das Heft tatsächlich trägt.
-    if (istV42 && (doc === 'doc-s' || doc === 'doc-auftragsbogen')) {
-      const datei = doc === 'doc-auftragsbogen' ? 'auftragsbogen' : sit && isV42(sit) ? heftDatei(situation, sit.spur ?? spur) : null
+    if (istV42 && (doc === 'doc-s' || doc === 'doc-auftragsbogen' || doc === 'doc-loesungsblatt')) {
+      const datei = doc === 'doc-auftragsbogen' ? 'auftragsbogen'
+        : doc === 'doc-loesungsblatt' ? loesungsblattDatei(situation)
+        : sit && isV42(sit) ? heftDatei(situation, sit.spur ?? spur) : null
       const dok = datei ? v42Dokumente(d, { abteilung, logoPng: pngBuf }).find((x) => x.datei === datei) : undefined
       if (dok) return { baseName: `${p}_${dok.datei}`, title: dok.titel, markup: dok.markup(), docx: dok.docx }
     }
@@ -638,27 +651,30 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       // `prefix` stammt aus dem Component-Scope (useMemo).
 
       // v4.2: beide Spuren, unabhängig vom Umschalter — welche Dateien es gibt, sagt
-      // allein v42Dokumente (vier Hefte + Auftragsbogen). Schreibprotokoll nur in den
-      // Heften, wie bei den Herausforderungs-Aufträgen; der Auftragsbogen ist wie der
-      // Austausch davon ausgenommen. docKey mit Präfix, damit er über Einheiten eindeutig bleibt.
+      // allein v42Dokumente (vier Hefte + Auftragsbogen + Lösungsblätter). Schreibprotokoll
+      // nur in den Heften (dok.protokoll), wie bei den Herausforderungs-Aufträgen. Was nur
+      // der Lehrperson gehört (Lösungsblatt), liegt wie der Begleiter unter Material_LP/,
+      // nicht zwischen den Heften. docKey mit Präfix, damit er über Einheiten eindeutig bleibt.
       if (istV42) {
         for (const dok of v42Dokumente(dRoh, { abteilung, logoPng: pngArrayBuffer })) {
           const filename = `${dok.datei}.html`
-          zip.file(`html/${filename}`, buildStandaloneHtml({
+          const htmlPfad = dok.lehrperson ? `Material_LP/${filename}` : `html/${filename}`
+          const wordPfad = dok.lehrperson ? `Material_LP/${dok.datei}.docx` : `word/${dok.datei}.docx`
+          zip.file(htmlPfad, buildStandaloneHtml({
             cssRenderer,
             title: dok.titel,
             bodyMarkup: dok.markup(),
             pngDataUrl,
             docKey: `${prefix}_${dok.datei}`,
             fontsCss: fontsCss || null,
-            protokoll: dok.datei !== 'auftragsbogen',
+            protokoll: dok.protokoll,
           }))
-          log.push(`html/${filename}`)
+          log.push(htmlPfad)
           try {
             const docx = dok.docx()
             if (docx) {
-              zip.file(`word/${dok.datei}.docx`, await docToBlob(docx))
-              log.push(`word/${dok.datei}.docx`)
+              zip.file(wordPfad, await docToBlob(docx))
+              log.push(wordPfad)
             }
           } catch (e) { console.warn('docx v4.2 failed', dok.datei, e) }
         }
@@ -866,6 +882,9 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   } else if (doc === 'doc-auftragsbogen') {
     docKicker = 'Gemeinsamer Auftrag'
     docName = d.set?.gemeinsamer_auftrag?.titel || 'Auftragsbogen'
+  } else if (doc === 'doc-loesungsblatt') {
+    docKicker = `Lösungsblatt Heft ${situation} · Lehrperson`
+    docName = sit?.handlungsprodukt?.titel || 'Lösungsblatt'
   } else if (doc === 'doc-austausch') {
     docKicker = 'Set-Abschluss'
     docName = 'Austausch & Transfer'
@@ -895,6 +914,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   }
 
   const selectSit = (s: SitLetter) => { setGuestGate(null); setDoc('doc-s'); setSituation(s); setNavOpen(false) }
+  const selectLoesung = (s: SitLetter) => { setGuestGate(null); setDoc('doc-loesungsblatt'); setSituation(s); setNavOpen(false) }
   const selectKnTyp = (t: string) => { setGuestGate(null); setDoc('doc-kn-s'); setKnTyp(t); setNavOpen(false) }
   const pick = (target: DocSel) => { setGuestGate(null); setDoc(target); setNavOpen(false) }
 
@@ -902,7 +922,9 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
   // Gast-Gate: gesperrte doc-Auswahl → Gate; zusätzlich die Lies-mich-Buttons via guestGate.
   const docLocked = readOnly && !GUEST_ALLOWED.includes(doc)
-  const gateKind: null | 'kn' | 'begleiter' | 'ki' = guestGate ?? (docLocked ? (isKiDoc ? 'ki' : 'kn') : null)
+  const gateKind: null | 'kn' | 'begleiter' | 'ki' | 'loesung' = guestGate ?? (docLocked ? (isKiDoc ? 'ki' : doc === 'doc-loesungsblatt' ? 'loesung' : 'kn') : null)
+  // v4.2: Hefte mit Lösungsblatt (handlungsprodukt.loesungsbild) — nur Lehrperson.
+  const loesungsHefte = istV42 ? (['A', 'B'] as SitLetter[]).filter((s) => !!classifySit(d, s)?.handlungsprodukt?.loesungsbild) : []
   const lockBadge = readOnly ? <span className="wb-lock" title="Nur für Lehrpersonen" aria-hidden="true">🔒</span> : null
 
   return (
@@ -982,7 +1004,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
         {/* Werkstatt steht bei den Lehrpersonen-Werkzeugen, nicht unten beim Feedback:
             sie gehoert vor den Unterricht, nicht danach. Gaeste sehen sie nie. */}
-        {!readOnly && (
+        {!readOnly && !istV42 && (
           <a
             className="wb-action"
             href={`/einheiten/${d.id}/werkstatt`}
@@ -1123,6 +1145,26 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
                 <span className="wb-item-title">Lehrperson + Bewertung</span>
                 {lockBadge}
               </button>
+            </div>
+          )}
+
+          {/* v4.2: Lösungsblatt Produkt je Heft — nur Lehrperson, für Gäste gesperrt. */}
+          {loesungsHefte.length > 0 && (
+            <div className="wb-tree-group">
+              <div className="wb-tree-head">Lösungsblätter</div>
+              <div className="wb-tree-sub">Lehrperson</div>
+              {loesungsHefte.map((s) => (
+                <button
+                  key={s}
+                  className={`wb-item nested${doc === 'doc-loesungsblatt' && situation === s ? ' active' : ''}${readOnly ? ' locked' : ''}`}
+                  onClick={() => selectLoesung(s)}
+                  title={`Lösungsblatt Heft ${s} · ${classifySit(d, s)?.handlungsprodukt?.titel || ''}`}
+                >
+                  <span className={`wb-letter wb-letter-${s}`}>{s}</span>
+                  <span className="wb-item-title">Lösungsblatt · {classifySit(d, s)?.handlungsprodukt?.titel || `Heft ${s}`}</span>
+                  {lockBadge}
+                </button>
+              ))}
             </div>
           )}
 

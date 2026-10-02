@@ -279,6 +279,11 @@ export interface GemeinsamerAuftrag {
   auftrag?: string
   schritte?: { label: string; hint: string }[]
   abgaben?: string[]
+  /**
+   * Was der Auftrag aus den Heften braucht, mit Seitenverweis (Auftragsbogen A1).
+   * Ersetzt den Verweis vom Heft auf den Auftrag: das Heft nennt keine Woche.
+   */
+  heft_bezug?: { heft: string; titel?: string; inhalte: string[] }[]
   /** Alle vier KN-Kriterien. */
   feedback_kriterien?: FeedbackKriterium[]
   kontext_ausschluss?: string[]
@@ -288,7 +293,7 @@ export interface GemeinsamerAuftrag {
   bogen?: string[]
 }
 
-/** Seite 8 unten: Quer-Check und Mitnahme in den gemeinsamen Auftrag. */
+/** Seite 8 unten: Quer-Check und «Das nehme ich mit» (drei feste Zeilen). */
 export interface Abschluss {
   quercheck?: string[]
   mitnahme?: string[]
@@ -303,8 +308,37 @@ export interface Wochenplan {
 export interface GlossarEintrag {
   begriff: string
   definition: string
-  herkunft?: 'lehrmittel' | 'quelle' | string
+  /** Woher der Begriff stammt: Lehrmittel, Quelle (S. 3) oder das Heft selbst. */
+  herkunft?: 'lehrmittel' | 'quelle' | 'heft' | string
   heft?: 'A' | 'B' | string
+  /** Nur in dieser Spur (Begriff aus deren Quelle). Fehlt das Feld, gilt der Eintrag in beiden. */
+  spur?: SpurKey
+}
+
+/**
+ * v4.2: ausgefülltes Handlungsprodukt als «Bild» — aus Daten gezeichnet (HTML und Word),
+ * kein Pixelbild. Zwei Verwendungen am Handlungsprodukt: `beispielbild` (neutraler Fall,
+ * im Heft auf S. 6) und `loesungsbild` (Lösung zum Fall des Hefts, nur Lehrperson).
+ */
+export interface ProduktBild {
+  /** Kopfzeile des Blatts, nennt den Fall. */
+  titel: string
+  /** Nur Lehrperson: wann zeigen, worauf achten. Nie im Heft. */
+  hinweis?: string
+  /**
+   * Markierungen. Die Position in der Liste bestimmt das Zeichen (Kontur statt Farbe):
+   * 1. gefüllter Kreis, 2. leerer Kreis, 3. halb gefüllter Kreis.
+   */
+  legende?: { key: string; text: string }[]
+  bloecke: ProduktBildBlock[]
+}
+
+/** Ein Block des Blatts: entweder Liste (`eintraege`) oder Tabelle (`kopf` + `zeilen`). */
+export interface ProduktBildBlock {
+  titel: string
+  eintraege?: { text: string; marke?: string; notiz?: string }[]
+  kopf?: string[]
+  zeilen?: { zellen: string[]; marke?: string; stark?: boolean }[]
 }
 
 export interface SituationJson {
@@ -383,6 +417,13 @@ export interface SituationJson {
   mindmap_zentrum?: string
   /** `transfer: true` (v4.2) markiert den einen Ast «gilt auch bei …». */
   mindmap_aeste?: { titel: string; optional?: boolean; punkte?: string[]; transfer?: boolean }[]
+  /**
+   * v4.2: Glossar dieses Hefts in der eingesetzten Spur. Steht NICHT in der Heft-Datei:
+   * `loadEinheit` setzt es aus `set.glossar` ein (Einträge mit passendem `heft`, ohne
+   * `spur` oder mit der wirksamen Spur). Die Punkte der Mindmap-Äste sind Begriffe daraus —
+   * das Begriffsnetz auf S. 8 zeigt die Begriffe als Knoten, das Glossar darunter erklärt sie.
+   */
+  glossar?: GlossarEintrag[]
   handlungsprodukt?: {
     format?: string
     format_detail?: string
@@ -394,6 +435,10 @@ export interface SituationJson {
     schreib_note?: string
     /** v4.2: Verweis auf die Methodenseite, unter den Schritten (Seite 5). */
     hilfe_verweis?: string
+    /** v4.2: neutrales Beispiel des Produkts an einem anderen Fall — im Heft auf S. 6. */
+    beispielbild?: ProduktBild
+    /** v4.2: mögliche Lösung zum Fall des Hefts — nur Lehrperson (Lösungsblatt, Begleiter). */
+    loesungsbild?: ProduktBild
     // C6 — language scaffolds for the Handlungsprodukt (additive); aligned to HP format + output Sprachmodus
     scaffolding?: { satzanfaenge?: string[]; strategien?: string[]; struktur?: string[] }
   }

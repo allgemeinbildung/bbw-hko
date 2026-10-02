@@ -204,6 +204,12 @@ Dazu, aus der Übergabe der Fachprüfung (kein Budget, sondern Sachlage):
 
 ## E11 — Quellenwahl (Spur mit Medien)
 
+> **Stand 02.10.2026:** Für Heft B gilt E14 (Statistik der Schuldenberatung
+> statt BFS-Grafik «Steuerrückstand»); die Zeilen zu Heft B in der Tabelle
+> unten und der Prüfhinweis «Steuerrückstand-Grafik» am Schluss sind damit
+> überholt. Die Leitfragen der Vertiefungen B1 und B2 sind in E17 nochmals
+> angepasst.
+
 Sechs Such-Worker (plus zwei der Parallelsession) haben am 01.10.2026 je Slot
 zwei bis vier Kandidaten abgerufen und geprüft. Volltexte und Transkripte
 liegen unter `D:\OS\_lab\quellen-archiv\bbw-hko\<quellen-id>\gewaehlt\`, die
@@ -417,3 +423,69 @@ Diese vier Punkte hat Pietro selbst entschieden; sie gehen dem Leitfaden vor.
 
 **Folge für `check-v42.mjs`:** `feld_hoehe_mm` bleibt als Mindesthöhe in den
 Daten und wird weiter geprüft. **Rückgängig:** `git revert` des Commits zu E16.
+
+---
+
+## E17 — Zweite Rückmeldung Pietro vom 02.10.2026 und Lückenprüfung
+
+Die Punkte 1–4 hat Pietro entschieden; sie gehen dem Leitfaden vor. Punkt 5
+ist das Ergebnis einer Lückenprüfung gegen Leitfaden, Brief und Bestand.
+
+1. **Keine Woche, keine Zeit im Heft.** Seite 1 zeigt statt «Ihre Woche»
+   (Lektion 1 · 45 min …) eine «Übersicht» in drei Teilen. Das Feld heisst
+   weiter `wochen_plan`, die Labels sind «Teil 1–3». Der Zeitplan im Begleiter
+   ist als Vorschlag bezeichnet (Leitfaden §3 und §8 sahen feste Wochen vor).
+2. **Kein Verweis vom Heft auf den Auftrag.** Seite 8 heisst «Das nehme ich
+   mit» statt «Mitnahme in den gemeinsamen Auftrag (Woche 3)»; die
+   Anweisungszeile darunter ist entfallen (Platz). Dafür nennt der
+   Auftragsbogen auf A1 im Kasten «Das brauchen Sie aus Ihren Heften» je Heft,
+   was er braucht, mit Seitenzahl (`gemeinsamer_auftrag.heft_bezug`). Ob und
+   wann der Auftrag folgt, entscheidet die Lehrperson.
+3. **Produkt als Bild.** Jedes Handlungsprodukt hat zwei gezeichnete Blätter
+   (Typ `ProduktBild`): `beispielbild` — ein neutrales Beispiel an einem
+   anderen Fall, im Heft auf Seite 6 unter den vier Methodenkarten, in beiden
+   Spuren — und `loesungsbild` — eine mögliche Lösung zum Fall des Hefts, nur
+   für die Lehrperson als «Lösungsblatt» (Arbeitsansicht, ZIP unter
+   `Material_LP/`, Export). «Bild» heisst: aus den Daten gezeichnet, in HTML
+   und Word, mit Schreibschrift aus lokal vorhandenen Schriften (Segoe Print);
+   kein Pixelbild und kein Bildgenerator, damit es in der Serie ohne
+   Zusatzwerkzeug entsteht und in Word bearbeitbar bleibt. Die Methodenkarten
+   bleiben zu viert; die untere Seitenhälfte war vorher leer.
+4. **Begriffsnetz und Glossar je Heft.** Seite 8 zeigt statt der Mindmap mit
+   vier Kästen ein Begriffsnetz: jeder Begriff ein eigener Knoten um das
+   Zentrum, zwei leere Knoten «aus meinem Raster», das offene Feld «gilt auch
+   bei …», keine vorgezeichneten Linien. Die Knoten sind die Glossarbegriffe
+   des Hefts (`mindmap_aeste[].punkte`, bis fünf je Ast, zehn im Ganzen);
+   darunter steht das Glossar des Hefts (zehn Begriffe plus ein bis zwei aus
+   der Quelle der Spur). Quelle bleibt `set.glossar` mit `heft` und neu `spur`;
+   `loadEinheit` setzt `sit.glossar` ein. Das Glossar auf dem Auftragsbogen
+   (A3, Leitfaden §7.5) entfällt; A3 hat dafür mehr Schreibzeilen. Die
+   Checkliste auf Seite 8 ist zweispaltig. Budget §3.1 für die Mindmap
+   (3 Punkte je Ast) ist damit ersetzt.
+5. **Lückenprüfung — behoben:**
+   - Begleiter sprach von «Stufe 1–4», Heft, Auftragsbogen und KN von
+     «0–3 Punkten»: der Begleiter ist auf Punkte umgestellt.
+   - Die vier Vertiefungsfragen (Seite 4, Feld «Meine Antwort» seit E16) hatten
+     keinen Erwartungshorizont: steht jetzt im Begleiter, belegt aus den
+     Archivtexten. Vertiefung A1 stützt sich nur auf den Begleittext von SRF
+     (Audio nicht gehört).
+   - Zwei Vertiefungsfragen von Heft B waren vom Ausschnitt nur halb getragen
+     (der Radiobeitrag nennt keine Anlaufstelle, die ch.ch-Seite keine Frist ab
+     Rechnung). Neu: «… und wie will der Verein früh helfen?» und «… und was
+     können Sie tun, wenn ein Zahlungsbefehl kommt?».
+   - Der Begleiter und `scaffold_90` nannten Stützen, die es nicht gab
+     («Karten-Raster», «Budgetvorlage», vorausgefüllte Denkhilfe): sie nennen
+     jetzt das Beispiel auf Seite 6 und die Beispielzeile im Raster.
+   - «in dieser Woche» in `leitfragen_intro`; QR-Hinweis zu Heft B, Seite 1;
+     `prinzip.bloom_zielprofil` (LF3 und LF4 = K4 wie Leitfaden §6.1); KN-Seite
+     der Lehrperson («zwei» statt «drei Herausforderungen», nur bei v4.2).
+   - Präsentation und Werkstatt kennen das neue Modell nicht (laut Brief
+     ausserhalb des Umfangs) und hätten Folien bzw. einen Prompt im alten
+     3er-Format erzeugt: beide sind bei v4.2-Einheiten ausgeblendet, bis sie
+     nachgezogen sind.
+
+**Folgen für `check-v42.mjs`:** neue Regeln `ERR_V42_GLOSSAR` (jeder Knoten ist
+ein Glossarbegriff des Hefts und umgekehrt) und `ERR_V42_PRODUKTBILD` (beide
+Blätter vorhanden, Markierungen in der Legende), Budgets für `heft_bezug`,
+Glossar und Produktbild.
+**Rückgängig:** `git revert` des Commits zu E17; die Datenfelder sind additiv.

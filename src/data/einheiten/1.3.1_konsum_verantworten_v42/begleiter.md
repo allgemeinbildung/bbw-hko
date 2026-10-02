@@ -20,7 +20,7 @@ quellen_json:
 > Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden.
 > Die Lernenden erhalten Heft A und Heft B (je acht Seiten, in der Spur ohne oder mit
 > Medien), den Auftragsbogen zum gemeinsamen Auftrag (vier Seiten) und das KN-Blatt.
-> Hier steht, **wie** du die Einheit führst: Wochenplan, Einsatz der zwei Spuren,
+> Hier steht, **wie** du die Einheit führst: Zeitplan als Vorschlag, Einsatz der zwei Spuren,
 > Hinweise zu jeder Heftseite, Musterlösungen pro Spur mit Erwartungshorizonten,
 > Quellen-Stand und Bewertung — ohne dass du anderswo nachschlagen musst.
 
@@ -34,7 +34,7 @@ quellen_json:
 
 > «<!--hko:prinzip.dekontextualisierungs_anker.anker_statement-->Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann.<!--/hko-->»
 
-Beide Hefte enden mit einer Mindmap um dasselbe Zentrum: «<!--hko:prinzip.mindmap_zentrum_kurz-->Wunsch jetzt oder Sicherheit später<!--/hko-->». Von dort führt der Weg über den gemeinsamen Auftrag in einen neuen Lebensbereich (Freizeit) und im KN in einen weiteren. Das Prinzip wird so Schritt für Schritt auf neue Fälle übertragen, nie bloss wiederholt.
+Beide Hefte enden mit einem Begriffsnetz um dasselbe Zentrum: «<!--hko:prinzip.mindmap_zentrum_kurz-->Wunsch jetzt oder Sicherheit später<!--/hko-->». Von dort führt der Weg über den gemeinsamen Auftrag in einen neuen Lebensbereich (Freizeit) und im KN in einen weiteren. Das Prinzip wird so Schritt für Schritt auf neue Fälle übertragen, nie bloss wiederholt.
 
 **Die Bausteine**
 
@@ -84,7 +84,7 @@ Warum diese Verteilung: Die Landkarte in Heft A steht und fällt mit korrekten B
 - Bewertet wird im KN **bi-dimensional**: SuK und Ges als zwei getrennte Noten (Kap. 7).
 
 > [!coaching] KN-Wortlaut im Heft lesen
-> Die Stufentexte der Feedback-Kriterien sind wörtlich die des KN. Darum nennt «Fachkorrektheit» auf Stufe 1 Begriffe, die im einzelnen Heft nicht alle vorkommen: «Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.» Und «Wirtschaftliches Prinzip» verlangt auf Stufe 4 «Transfer» — den zeigen die Lernenden erst im gemeinsamen Auftrag und im KN. Massgebend für die Rückmeldung zum Heft ist darum die Zeile «Woran sehe ich das in meinem Produkt?» — sie sagt, woran das Kriterium im Heftprodukt zu sehen ist.
+> Die Stufentexte der Feedback-Kriterien sind wörtlich die des KN. Darum nennt «Fachkorrektheit» bei 0 Punkten Begriffe, die im einzelnen Heft nicht alle vorkommen: «Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.» Und «Wirtschaftliches Prinzip» verlangt für 3 Punkte «Transfer» — den zeigen die Lernenden erst im gemeinsamen Auftrag und im KN. Massgebend für die Rückmeldung zum Heft ist darum die Zeile «Woran sehe ich das in meinem Produkt?» — sie sagt, woran das Kriterium im Heftprodukt zu sehen ist.
 
 > [!hinweis] Hefte und Auftrag zählen nicht
 > Beide Hefte und der gemeinsame Auftrag sind formativ. Eine Gewichtung des Auftrags wäre ein eigener Entscheid in `set.json`; für diese Einheit ist keiner getroffen. Die Note entsteht nur im KN.
@@ -99,9 +99,9 @@ Warum diese Verteilung: Die Landkarte in Heft A steht und fällt mit korrekten B
 > [!mehrdeutigkeit] Der Grundsatz
 > Es gibt keinen allgemein «richtigen» Konsumentscheid, nur einen, den die Lernenden für ihre eigene Lebenssituation begründen und verantworten können. Beide Seiten eines Spannungsfelds bleiben begründbar. Wer eine Seite vorschnell für falsch erklärt, hat das Spannungsfeld nicht gehalten, sondern aufgelöst.
 
-## 1. Wochenplan: zwölf Lektionen
+## 1. Zeitplan: ein Vorschlag für zwölf Lektionen
 
-Vier Wochen zu drei Lektionen, mit einer Lektion Puffer am Schluss.
+Die Hefte und der Auftragsbogen nennen weder Woche noch Lektion — die Zeit teilst du selbst ein. Der folgende Plan ist ein Vorschlag: vier Wochen zu drei Lektionen, mit einer Lektion Puffer am Schluss.
 
 | Woche | Lektionen | Inhalt |
 |---|---|---|
@@ -110,13 +110,13 @@ Vier Wochen zu drei Lektionen, mit einer Lektion Puffer am Schluss.
 | <!--hko:set.wochenplan[2].woche-->3<!--/hko--> | <!--hko:set.wochenplan[2].lektionen-->3<!--/hko--> | <!--hko:set.wochenplan[2].inhalt-->Gemeinsamer Auftrag (2) + Rückmeldung (1)<!--/hko--> |
 | <!--hko:set.wochenplan[3].woche-->4<!--/hko--> | <!--hko:set.wochenplan[3].lektionen-->3<!--/hko--> | <!--hko:set.wochenplan[3].inhalt-->KN (2) + Puffer (1)<!--/hko--> |
 
-### Lektion für Lektion
+### Lektion für Lektion (Vorschlag)
 
 | Woche | Lektion | Was geschieht | Unterlagen |
 |---|---|---|---|
 | 1 | 1 | <!--hko:hf_A.wochen_plan[0].text-->Situation lesen, LF1 und LF2<!--/hko--> | Heft A, S. 1–2 |
 | 1 | 2 | <!--hko:hf_A.wochen_plan[1].text-->LF3 mit Raster zur Quelle, LF4, Landkarte beginnen<!--/hko--> | Heft A, S. 3–7 |
-| 1 | 3 | <!--hko:hf_A.wochen_plan[2].text-->Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Mindmap<!--/hko--> | Heft A, S. 5, 7, 8 |
+| 1 | 3 | <!--hko:hf_A.wochen_plan[2].text-->Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Begriffsnetz<!--/hko--> | Heft A, S. 5, 7, 8 |
 | 2 | 1 | <!--hko:hf_B.wochen_plan[0].text-->Situation lesen, LF1 und LF2 (Budget aufstellen)<!--/hko--> | Heft B, S. 1–2 |
 | 2 | 2 | <!--hko:hf_B.wochen_plan[1].text-->LF3 mit Raster zur Quelle, LF4, Anpassungen und Regeln<!--/hko--> | Heft B, S. 3–7 |
 | 2 | 3 | <!--hko:hf_B.wochen_plan[2].text-->Budget fertigstellen, Budgetgespräch zu zweit, Feedback-Kriterien, Abschluss<!--/hko--> | Heft B, S. 5, 7, 8 |
@@ -143,11 +143,11 @@ Jedes Heft besteht aus zwei Bogen A3, also acht Seiten A4. Die Doppelseite 6–7
 | 3 | Quelle | lesen, Raster füllen, Befund schreiben | LF3: Quelle (Medien) oder Lehrmittel-Abschnitt mit Beispielzeile (ohne) | 25 |
 | 4 | Wissensecke II | LF4 schriftlich | Kasten: Vertiefung (Medien) oder Denkhilfe (ohne) | 15 |
 | 5 | Auftrag | Auftrag lesen; vor der Abgabe Stufe ankreuzen | — | 5 |
-| 6 | Methoden | nachschlagen | Karte 2: Rezeptionswerkzeug der Spur | — |
+| 6 | Methoden und Beispiel | nachschlagen; Beispiel des Produkts ansehen | Karte 2: Rezeptionswerkzeug der Spur | — |
 | 7 | Arbeitsfläche | Produkt herstellen | — | 40 |
-| 8 | Abschluss | Mindmap, Quer-Check, Mitnahme, Checkliste | — | 15 |
+| 8 | Abschluss | Begriffsnetz, Glossar, Quer-Check, «Das nehme ich mit», Checkliste | Glossar: Begriffe der Quelle | 15 |
 
-Seite 3 ist knapp gerechnet: höchstens 10 Minuten lesen, 12 Minuten Raster, 3 Minuten Befund. Die Minuten gelten pro Seite, nicht pro Lektion; wie die Seiten auf die drei Lektionen fallen, zeigt der Wochenplan oben (und im Heft auf Seite 1).
+Seite 3 ist knapp gerechnet: höchstens 10 Minuten lesen, 12 Minuten Raster, 3 Minuten Befund. Die Minuten gelten pro Seite, nicht pro Lektion; wie die Seiten auf drei Lektionen fallen können, zeigt der Vorschlag oben. Im Heft steht auf Seite 1 nur die Übersicht in drei Teilen, ohne Woche und ohne Zeitangabe.
 
 > [!hinweis] Lektion 3 ist mehr als voll
 > Nach den Seitenminuten trägt Lektion 3 mehr als 45 Minuten: S. 5 (5) + S. 7 (40) + S. 8 (15) = 60 Minuten. Darum beginnt das Produkt schon in Lektion 2 (Landkarte bzw. Anpassungen und Regeln), und der Abschluss (S. 8) kann zu Beginn der nächsten Lektion stehen.
@@ -164,7 +164,7 @@ Jedes Heft gibt es in zwei Spuren. Beide führen über denselben Kern zum selben
 | LF1 und LF2 mit Scaffolds und Lösungen | LF4: Pol-Typ, Text, Scaffold, Lösung |
 | Produkt, Schritte, Abgaben, Feedback-Kriterien | Quellen (nur Spur mit Medien) |
 | Methodenkarten 1, 3 und 4 | Methodenkarte 2 (Rezeptionswerkzeug) |
-| Mindmap, Abschluss, Checkliste | Kasten auf S. 4: Vertiefung bzw. Denkhilfe |
+| Begriffsnetz, Glossar-Kern, Abschluss, Checkliste | Kasten auf S. 4: Vertiefung bzw. Denkhilfe · ein bis zwei Glossarbegriffe aus der Quelle |
 | Gemeinsamer Auftrag, KN | die Stütze für die Grundanforderung (80 %) |
 
 ### Die Spuren in dieser Einheit
@@ -178,7 +178,7 @@ Jedes Heft gibt es in zwei Spuren. Beide führen über denselben Kern zum selben
 | Kasten S. 4 | ohne: Denkhilfe · mit: Vertiefung (2 Karten) | ohne: Denkhilfe · mit: Vertiefung (2 Karten) |
 | Methodenkarte 2 | ohne und mit: «Raster aus einer Quelle füllen» | ohne: «Raster aus einer Quelle füllen» · mit: «Eine Grafik lesen» |
 
-In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; die Spuren unterscheiden sich dort im Scaffold und im Kasten auf S. 4 (Denkhilfe mit vorgegebenem Einwand bzw. Vertiefung).
+In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; die Spuren unterscheiden sich dort im Kasten auf S. 4 (Denkhilfe bzw. Vertiefung). Der Einwand, an dem die Lernenden ihre Anpassung prüfen, steht in beiden Spuren in der Leitfrage selbst.
 
 ### Spur ohne Medien
 
@@ -190,7 +190,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 
 - **LF3** arbeitet mit einer **Quelle**: Kurzeintrag auf S. 1, Quellenkarte mit QR-Code, Auftrag und Raster auf S. 3, **ohne** Beispielzeile.
 - **LF4** darf die Quelle einbeziehen (Heft A: Lehrmittel gegen Quelle).
-- **S. 4** zeigt im Kasten «Vertiefung» zwei weitere Quellen mit je einer Leitfrage, ohne Raster. Sie sind **freiwillig** (Plus, Hausaufgabe); ein leeres Raster dazu lässt sich auf der QR-Seite ausdrucken.
+- **S. 4** zeigt im Kasten «Vertiefung» zwei weitere Quellen. Jede Karte nennt, was zu hören, zu sehen oder zu lesen ist, stellt eine Leitfrage und hat ein Feld «Meine Antwort». Die Karten sind **freiwillig** (Plus, Hausaufgabe); ein leeres Raster dazu lässt sich auf der QR-Seite ausdrucken.
 
 ### Welche Spur wann
 
@@ -199,7 +199,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 - Die Plattform zeigt bei dieser Einheit zuerst die Spur ohne Medien; der Export enthält beide.
 
 > [!coaching] Zwei Spuren in einem Zimmer
-> Bespreche im Plenum, was beide Spuren teilen: Situation, LF1 und LF2, Produkt, Feedback-Kriterien, Mindmap. LF3 und LF4 besprichst du in zwei Gruppen nach Spur — die Lösungen in Kap. 3 und 4 sind dafür getrennt aufgeführt. Die Rückmeldung bleibt vergleichbar, weil die Kriterien in beiden Spuren dieselben sind.
+> Bespreche im Plenum, was beide Spuren teilen: Situation, LF1 und LF2, Produkt, Feedback-Kriterien, Begriffsnetz. LF3 und LF4 besprichst du in zwei Gruppen nach Spur — die Lösungen in Kap. 3 und 4 sind dafür getrennt aufgeführt. Die Rückmeldung bleibt vergleichbar, weil die Kriterien in beiden Spuren dieselben sind.
 
 ### Vorbereitung der Spur mit Medien
 
@@ -281,6 +281,14 @@ Die fünf Schritte auf S. 5:
 - *Spur ohne Medien:* Modell gegen eigenen Fall — wo passt Maslow auf den Wunsch nach dem Handy, wo nicht? Die Denkhilfe (Dafür · Dagegen · Mein Entscheid) wird vor dem Schreiben ausgefüllt.
 - *Spur mit Medien:* Lehrmittel gegen Quelle — kann ein geweckter Wunsch ein echtes Bedürfnis treffen? Der Kasten «Vertiefung» ist freiwillig.
 
+> [!erwartungshorizont] Vertiefung 1 (Spur mit Medien, Audio) — bezahlte Werbung erkennen
+> Erwartet sind zwei bis drei Merkmale: Kennzeichnungswörter wie Werbung, Ad oder gesponsert, oft versteckt · ein Rabattcode oder ein Produkt, das auffällig im Mittelpunkt steht · nur Positives, kein Nachteil · die Prüffrage vor dem Kauf (Vertraue ich der Person, brauche ich das?).
+> Stand: aus dem Begleittext von SRF zum Beitrag. Das Audio selbst ist nicht gegengehört.
+
+> [!erwartungshorizont] Vertiefung 2 (Spur mit Medien, Video 00:35–06:29) — gefälschte Markenartikel
+> Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten, der Zoll hält Pakete zurück; Verfahren und Kosten gehen vom Markeninhaber aus.
+> Weitere Risiken (etwa Gesundheit oder Zahlungsdaten) nennt der Ausschnitt nicht; wer sie anführt, geht über den Ausschnitt hinaus.
+
 > [!coaching] Massstab statt Gefühl
 > Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat. Die Methodenkarte «3B-Schema» hilft beim Begründen: den Massstab als Behauptung schreiben, in einem Satz begründen und am Beispiel Handy prüfen. «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
 
@@ -288,9 +296,11 @@ Die fünf Schritte auf S. 5:
 
 **S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Quelle.
 
+**S. 6 unten — «So kann Ihr Produkt aussehen».** Unter den Karten steht eine ausgefüllte Landkarte **an einem anderen Fall** (Spielkonsole). Sie zeigt die Form — Felder, Einträge im Muster Gut → Bedürfnis, Legende mit drei Zeichen, Massstab und Entscheid am Rand —, nicht die Lösung zum eigenen Fall. Die mögliche Lösung zum Fall des Hefts liegt als **Lösungsblatt** bei den Unterlagen der Lehrperson; zeig sie erst, wenn die eigene Karte steht.
+
 **S. 7 — Arbeitsfläche (40 Min.).** Mindestens acht Einträge, je Gut → Bedürfnis als Stichwort. Jeder Eintrag bekommt mit Farbe oder Symbol eine von drei Markierungen: echt · geweckt · geweckt, aber berechtigt. Bei geweckten steht der Einfluss aus LF3 dabei.
 
-**S. 8 — Abschluss (15 Min.).** Die Mindmap braucht mindestens fünf beschriftete Verbindungen, eine davon zum Ast «gilt auch bei …», und mindestens zwei Begriffe aus dem Raster. Die Mitnahme — *Mein Massstab · Mein Entscheid · Mir noch unklar* — ist das Werkzeug für den gemeinsamen Auftrag in Woche 3: Das Heft bleibt bei den Lernenden.
+**S. 8 — Abschluss (15 Min.).** Oben steht das **Begriffsnetz**: Jeder Begriff des Hefts ist ein eigener Knoten um das Zentrum. Die Lernenden ziehen mindestens fünf Linien, beschriften jede mit dem Zusammenhang, führen eine davon zum Feld «gilt auch bei …» und tragen in die zwei leeren Knoten je einen Begriff aus ihrem Raster ein. Darunter erklärt das **Glossar des Hefts** dieselben Begriffe, dazu die Begriffe aus der Quelle der Spur. Die drei Zeilen «Das nehme ich mit» — *Mein Massstab · Mein Entscheid · Mir noch unklar* — fassen das Heft zusammen. Der gemeinsame Auftrag greift darauf zurück (Kasten «Das brauchen Sie aus Ihren Heften» auf A1); das Heft bleibt darum bei den Lernenden. Wann der Auftrag folgt, entscheidest du — das Heft nennt keinen Zeitpunkt.
 
 ### Typische Stolpersteine
 
@@ -313,16 +323,19 @@ Die fünf Schritte auf S. 5:
 > Leitsatz im Heft: «<!--hko:hf_A.mehrdeutigkeit.hint-->Ein von aussen geweckter Wunsch kann ein echtes Bedürfnis treffen, etwa dazuzugehören. Entscheidend ist, ob Sie Ihren Entscheid vor sich begründen können.<!--/hko-->»
 > Darum ist die Markierung «geweckt, aber berechtigt» kein Ausweg, sondern der Kern der Sache. Wenn jemand «alle haben es» als Begründung nennt, frag zurück: «Und was spricht aus deiner Sicht dafür oder dagegen?»
 
-### Tafelbild — Meine Bedürfnis-Landkarte
+### Tafelbild — Begriffsnetz Heft A
 
-> [!tafelbild] Erwartungsbild — Mindmap um das gemeinsame Zentrum
+> [!tafelbild] Erwartungsbild — Begriffsnetz um das gemeinsame Zentrum
 > **Zentrum:** «<!--hko:hf_A.mindmap_zentrum-->Wunsch jetzt oder Sicherheit später<!--/hko-->»
 >
-> **Pflicht-Äste (alle finden):**
-> - Ast «<!--hko:hf_A.mindmap_aeste[0].titel-->Bedürfnisarten<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[0].punkte[0]-->Existenz / Wahl<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[1]-->Maslow-Stufen<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[2]-->Bedürfnis ≠ Gut<!--/hko-->
-> - Ast «<!--hko:hf_A.mindmap_aeste[1].titel-->Was mich beeinflusst<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[1].punkte[0]-->Feed und Werbung<!--/hko--> · <!--hko:hf_A.mindmap_aeste[1].punkte[1]-->Klasse, Kollegen<!--/hko--> · <!--hko:hf_A.mindmap_aeste[1].punkte[2]-->Impulskauf<!--/hko-->
-> - Ast «<!--hko:hf_A.mindmap_aeste[2].titel-->Mein Massstab<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[2].punkte[0]-->Prüffrage<!--/hko--> · <!--hko:hf_A.mindmap_aeste[2].punkte[1]-->echt / geweckt<!--/hko--> · <!--hko:hf_A.mindmap_aeste[2].punkte[2]-->Entscheid Handy<!--/hko-->
-> - «gilt auch bei …» (Transfer-Ast): eigene Beispiele, etwa ein Abo-Abschluss oder eine Freizeitausgabe
+> **Vorgegebene Knoten (zugleich das Glossar des Hefts):**
+> - «<!--hko:hf_A.mindmap_aeste[0].titel-->Bedürfnisarten<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[0].punkte[0]-->Bedürfnis<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[1]-->Gut<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[2]-->Existenzbedürfnis<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[3]-->Wahlbedürfnis<!--/hko--> · <!--hko:hf_A.mindmap_aeste[0].punkte[4]-->Bedürfnispyramide<!--/hko-->
+> - «<!--hko:hf_A.mindmap_aeste[1].titel-->Was mich beeinflusst<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[1].punkte[0]-->Werbung<!--/hko--> · <!--hko:hf_A.mindmap_aeste[1].punkte[1]-->Impulskauf<!--/hko--> · <!--hko:hf_A.mindmap_aeste[1].punkte[2]-->Konsumdruck<!--/hko-->
+> - «<!--hko:hf_A.mindmap_aeste[2].titel-->Mein Massstab<!--/hko-->»: <!--hko:hf_A.mindmap_aeste[2].punkte[0]-->Geweckter Wunsch<!--/hko--> · <!--hko:hf_A.mindmap_aeste[2].punkte[1]-->Massstab<!--/hko-->
+> - Zwei leere Knoten: Begriffe aus dem eigenen Raster, in der Spur mit Medien etwa Influencer-Marketing oder Algorithmus, in der Spur ohne Medien etwa Nachfrage.
+> - «gilt auch bei …» (offenes Feld): eigene Beispiele, etwa ein Abo-Abschluss oder eine Freizeitausgabe
+>
+> **Tragfähige Verbindungen, zum Beispiel:** Werbung → Geweckter Wunsch («weckt») · Bedürfnis → Gut («wird befriedigt durch») · Konsumdruck → Impulskauf («führt zu») · Massstab → Impulskauf («bremst») · Wahlbedürfnis → Zentrum («kann warten»). Es zählt, dass die Beschriftung den Zusammenhang nennt, nicht welche fünf Linien gewählt werden.
 >
 > **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefungsquelle, falls Ihr Heft eine nennt) und als vierte Farbe auf der Karte zeigen.<!--/hko-->
 
@@ -351,13 +364,13 @@ Die fünf Schritte auf S. 5:
 
 **Abschluss**
 <!--hko:hf_A.bewertungsraster[3].vollstaendig_wenn|checkliste-->
-☐ Mindmap mit mind. 5 beschrifteten Verbindungen
+☐ Begriffsnetz mit mind. 5 beschrifteten Verbindungen
 ☐ Quer-Check abgehakt
-☐ Mitnahme notiert
+☐ «Das nehme ich mit» ausgefüllt
 <!--/hko-->
 
 > [!differenzieren] 80 vs. 100 — Herausforderung A
-> **80 % (alle):** Landkarte mit mindestens acht Einträgen, Legende mit drei Markierungen, Massstab-Satz und Entscheid. Als Stütze geben beide Spuren Kategorien als Karten-Raster vor. **100 % (Vertiefung):** ein weiterer belegter Einfluss als vierte Farbe auf der Karte (siehe Tafelbild).
+> **80 % (alle):** Landkarte mit mindestens acht Einträgen, Legende mit drei Markierungen, Massstab-Satz und Entscheid. Als Stütze dient das Beispiel auf S. 6 («So kann Ihr Produkt aussehen»): eine ausgefüllte Landkarte an einem anderen Fall. **100 % (Vertiefung):** ein weiterer belegter Einfluss als vierte Farbe auf der Karte (siehe Tafelbild).
 
 ## 4. Herausforderung B — Budget planen und Schulden vermeiden
 
@@ -423,7 +436,7 @@ Die fünf Schritte auf S. 5:
 
 ### Hinweise zu jeder Seite
 
-**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Quelle mit QR: die Statistik 2025 der Schuldenberatung Schweiz, Seite 7.
+**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Quelle (die Statistik 2025 der Schuldenberatung Schweiz, Seite 7); der QR-Code steht auf S. 3.
 
 **S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die Zahlen für das eigene Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
 
@@ -440,6 +453,14 @@ Die fünf Schritte auf S. 5:
 - *Spur ohne Medien:* Die Denkhilfe (Meine Anpassung · Stärkster Einwand · Meine Antwort) wird vor dem Schreiben ausgefüllt. Die Antwort darf auch lauten: Der Einwand stimmt, ich ändere die Anpassung.
 - *Spur mit Medien:* Der Kasten «Vertiefung» bietet einen Radiobeitrag (Mundart) und eine amtliche Seite zum Ablauf einer Betreibung — beides freiwillig.
 
+> [!erwartungshorizont] Vertiefung 1 (Spur mit Medien, Audio 00:04–03:10) — junge Leute und Schulden
+> Gründe: Druck durch soziale Medien (man sieht, was andere kaufen, und will mithalten), Konsumgesellschaft und steigende Preise, der Umgang mit Geld wird zu Hause nicht immer gelernt. Hilfe: Der Verein will Junge früh an bestehende Stellen verweisen und arbeitet mit Unterlagen für Schulen, Gemeinden und Lehrbetriebe sowie mit Berichten von Betroffenen.
+> Eine konkrete Anlaufstelle nennt der Ausschnitt nicht. Der Beitrag ist in Mundart.
+
+> [!erwartungshorizont] Vertiefung 2 (Spur mit Medien, Webseite) — Ablauf einer Betreibung
+> Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag kann fortgesetzt werden, bis zur Lohnpfändung. Eine Mahnung ist üblich, aber keine Voraussetzung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt.
+> Massgebend ist der Abschnitt «Werden Sie betrieben?» der Seite; die Sicht der Gläubigerin darunter gehört nicht zur Aufgabe.
+
 **S. 5 — Auftrag (5 Min.).** Schritt 04 verlangt Anpassungen **je mit Grund**, und die Schutzregeln setzen bei den Posten an, die in Schritt 03 als Schuldenrisiko markiert sind; eine der Anpassungen gilt der offenen Rechnung (Abgaben). Damit haben beide Feedback-Kriterien einen Beleg im Produkt. Schritt 05 ist in diesem Heft kein Kontrollschritt, sondern das Budgetgespräch. Die Kontrolle vor der Abgabe leisten die zwei Feedback-Kriterien mit der Spalte «Selbst».
 
 **S. 6 — Methoden.** Vier Karten: «Ein Budget aufstellen» für das Monatsbudget, das Rezeptionswerkzeug der Spur für S. 3, «Aufbau eines Statements» für die Argumente und «Die vier Ohren» für das Zuhören im Gespräch. Wie in Heft A zeigt die Rezeptionskarte ein neutrales Beispiel (Vereinssport).
@@ -449,7 +470,7 @@ Die fünf Schritte auf S. 5:
 > [!coaching] Das Budgetgespräch
 > Gib vor dem Gespräch eine klare Struktur: drei Argumente, eine Rückfrage, eine Antwort auf den Einwand. Die Person in der Rolle der Kollegin bringt mindestens einen echten Einwand — etwa «Dann lebst du nur noch fürs Sparen». Wer zuhört, hört mit allen vier Ohren hin, bevor er antwortet. Die Gesprächsnotiz ist Teil der Abgabe.
 
-**S. 8 — Abschluss (15 Min.).** Mindmap mit mindestens fünf beschrifteten Verbindungen, eine davon zum Ast «gilt auch bei …». Die Mitnahme — *Meine wichtigste Anpassung · Meine Schutzregel · Mir noch unklar* — brauchen die Lernenden in Woche 3 für den gemeinsamen Auftrag.
+**S. 8 — Abschluss (15 Min.).** Begriffsnetz mit mindestens fünf beschrifteten Verbindungen, eine davon zum Feld «gilt auch bei …», und zwei eigenen Begriffen aus dem Raster in den leeren Knoten; darunter das Glossar des Hefts. Die drei Zeilen «Das nehme ich mit» — *Meine wichtigste Anpassung · Meine Schutzregel · Mir noch unklar* — fassen das Heft zusammen; der gemeinsame Auftrag greift darauf zurück.
 
 ### Typische Stolpersteine
 
@@ -474,16 +495,19 @@ Die fünf Schritte auf S. 5:
 > Leitsatz im Heft: «<!--hko:hf_B.mehrdeutigkeit.hint-->Sparen ist nicht automatisch besser. Ein Budget ohne Spielraum hält niemand durch — entscheidend ist, dass es bis Monatsende trägt und Sie es vertreten können.<!--/hko-->»
 > Eingriff: Wenn jemand nur radikal spart, frage nach der Lebensqualität — ein tragbares Budget ist keines, das man nach einer Woche bricht.
 
-### Tafelbild — Mein Budget, meine Regeln
+### Tafelbild — Begriffsnetz Heft B
 
-> [!tafelbild] Erwartungsbild — Mindmap um das gemeinsame Zentrum
+> [!tafelbild] Erwartungsbild — Begriffsnetz um das gemeinsame Zentrum
 > **Zentrum:** «<!--hko:hf_B.mindmap_zentrum-->Wunsch jetzt oder Sicherheit später<!--/hko-->»
 >
-> **Pflicht-Äste (alle finden):**
-> - Ast «<!--hko:hf_B.mindmap_aeste[0].titel-->Mein Budget<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[0].punkte[0]-->fix / variabel<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[1]-->Rückstellungen<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[2]-->Saldo, Engpass<!--/hko-->
-> - Ast «<!--hko:hf_B.mindmap_aeste[1].titel-->Wege in die Schulden<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[1].punkte[0]-->Abos summieren<!--/hko--> · <!--hko:hf_B.mindmap_aeste[1].punkte[1]-->Rechnung, Mahnung<!--/hko--> · <!--hko:hf_B.mindmap_aeste[1].punkte[2]-->Schuldenspirale<!--/hko-->
-> - Ast «<!--hko:hf_B.mindmap_aeste[2].titel-->Anpassen und schützen<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[2].punkte[0]-->Anpassungen<!--/hko--> · <!--hko:hf_B.mindmap_aeste[2].punkte[1]-->Wenn-dann-Regeln<!--/hko--> · <!--hko:hf_B.mindmap_aeste[2].punkte[2]-->Einwand<!--/hko-->
-> - «gilt auch bei …» (Transfer-Ast): eigene Beispiele, in denen geplant werden muss, bevor Geld ausgegeben wird
+> **Vorgegebene Knoten (zugleich das Glossar des Hefts):**
+> - «<!--hko:hf_B.mindmap_aeste[0].titel-->Mein Budget<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[0].punkte[0]-->Nettolohn<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[1]-->Fixe Kosten<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[2]-->Variable Kosten<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[3]-->Rückstellung<!--/hko--> · <!--hko:hf_B.mindmap_aeste[0].punkte[4]-->Saldo<!--/hko-->
+> - «<!--hko:hf_B.mindmap_aeste[1].titel-->Wege in die Schulden<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[1].punkte[0]-->Engpass<!--/hko--> · <!--hko:hf_B.mindmap_aeste[1].punkte[1]-->Mahnung<!--/hko--> · <!--hko:hf_B.mindmap_aeste[1].punkte[2]-->Schuldenspirale<!--/hko-->
+> - «<!--hko:hf_B.mindmap_aeste[2].titel-->Anpassen und schützen<!--/hko-->»: <!--hko:hf_B.mindmap_aeste[2].punkte[0]-->Anpassung<!--/hko--> · <!--hko:hf_B.mindmap_aeste[2].punkte[1]-->Schutzregel<!--/hko-->
+> - Zwei leere Knoten: Begriffe aus dem eigenen Raster, in der Spur mit Medien etwa Überschuldung, in der Spur ohne Medien etwa Betreibung.
+> - «gilt auch bei …» (offenes Feld): eigene Beispiele, in denen geplant werden muss, bevor Geld ausgegeben wird
+>
+> **Tragfähige Verbindungen, zum Beispiel:** Fixe Kosten → Engpass («lassen wenig Spielraum») · Mahnung → Schuldenspirale («ist der erste Schritt») · Anpassung → Saldo («verbessert») · Schutzregel → Mahnung («verhindert») · Rückstellung → Zentrum («Sicherheit später»).
 >
 > **Optionale Vertiefung (für 100 %):** <!--hko:hf_B.lernfortschritt.scaffold_100-->Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen.<!--/hko-->
 
@@ -512,13 +536,13 @@ Die fünf Schritte auf S. 5:
 
 **Abschluss**
 <!--hko:hf_B.bewertungsraster[3].vollstaendig_wenn|checkliste-->
-☐ Mindmap mit mind. 5 beschrifteten Verbindungen
+☐ Begriffsnetz mit mind. 5 beschrifteten Verbindungen
 ☐ Quer-Check abgehakt
-☐ Mitnahme notiert
+☐ «Das nehme ich mit» ausgefüllt
 <!--/hko-->
 
 > [!differenzieren] 80 vs. 100 — Herausforderung B
-> **80 % (alle):** vollständiges Budget mit Saldo vor und nach den Anpassungen, zwei überprüfbare Schutzregeln, Gespräch geführt. Als Stütze gibt es eine Budgetvorlage mit vorgegebenen Kategorien. **100 % (Vertiefung):** ein zweites Szenario mit einer unerwarteten Ausgabe einbauen und das Budget mit Rückstellungen anpassen (siehe Tafelbild).
+> **80 % (alle):** vollständiges Budget mit Saldo vor und nach den Anpassungen, zwei überprüfbare Schutzregeln, Gespräch geführt. Als Stütze dient das Beispiel auf S. 6 («So kann Ihr Produkt aussehen»): ein ausgefülltes Budget mit Anpassungen, Regeln und Gesprächsnotiz an einem anderen Fall. **100 % (Vertiefung):** ein zweites Szenario mit einer unerwarteten Ausgabe einbauen und das Budget mit Rückstellungen anpassen (siehe Tafelbild).
 
 ## 5. Quellen-Stand
 
@@ -559,7 +583,7 @@ Der gemeinsame Auftrag ist die **Generalprobe mit Rückmeldung**: ein neuer Fall
 
 - **Gleiche Anforderung, anderer Fall:** Der Auftrag kombiniert A und B auf demselben Niveau wie der KN (K3–K4). Er ist weder ein vereinfachter noch ein vorweggenommener KN.
 - **In beiden Spuren identisch:** Hier laufen die Spuren zusammen. Der Auftrag braucht kein Medium; alle Angaben stehen in der Situation.
-- **Hefte erlaubt und erwünscht:** Die Mitnahme-Zeilen von S. 8 beider Hefte sind das Werkzeug dafür.
+- **Hefte erlaubt und erwünscht:** Der Kasten «Das brauchen Sie aus Ihren Heften» auf A1 nennt je Heft, was der Auftrag braucht, mit Seitenzahl. Der Verweis steht bewusst auf dem Auftragsbogen und nicht im Heft: So bleibt offen, wann und ob du den Auftrag einsetzt.
 - **Sprachmodi:** Der Auftrag trägt genau die KN-Modi, die keines der Hefte abdeckt: <!--hko:set.gemeinsamer_auftrag.sprachmodi[0]-->Produktion mündlich<!--/hko--> und <!--hko:set.gemeinsamer_auftrag.sprachmodi[1]-->Produktion schriftlich und bildlich<!--/hko-->.
 
 ### Die Situation
@@ -596,9 +620,9 @@ Der gemeinsame Auftrag ist die **Generalprobe mit Rückmeldung**: ein neuer Fall
 > [!coaching] Die Rechnung hat eine offene Stelle
 > Ganz hinzugehen kostet 260 + 180 = 440 Franken — mehr als die 300 Franken auf dem Sparkonto. Für den Tagespass nennt die Situation nur den Pass selbst (110 Franken); Zug und Essen für einen Tag schätzen die Lernenden. Eine begründete Schätzung genügt, sie muss aber auf dem Entscheidungsblatt stehen.
 
-### Ablauf über drei Lektionen
+### Ablauf über drei Lektionen (Vorschlag)
 
-Der Auftragsbogen hat vier Seiten: **A1** Situation, Zahlen, Leitfrage, Spannungsfeld, Auftrag, Schritte, Abgaben und Sozialform · **A2** Arbeitsfläche für das Entscheidungsblatt · **A3** Planung der Sprachnachricht und das Glossar der Einheit · **A4** Rückmeldung mit den vier KN-Kriterien, Spalten «Selbst» und «LP» und der Zeile «Bis zum KN verbessere ich …».
+Der Auftragsbogen hat vier Seiten: **A1** Situation, Zahlen, Leitfrage, Spannungsfeld, Auftrag, Schritte, Abgaben, Sozialform und der Bezug auf die Hefte · **A2** Arbeitsfläche für das Entscheidungsblatt · **A3** Planung der Sprachnachricht (das Glossar steht neu in jedem Heft auf S. 8, nicht mehr auf dem Bogen) · **A4** Rückmeldung mit den vier KN-Kriterien, Spalten «Selbst» und «LP» und der Zeile «Bis zum KN verbessere ich …».
 
 | Lektion | Was geschieht | Bogen | Sozialform |
 |---|---|---|---|
@@ -707,14 +731,14 @@ Ablauf: 15 Minuten Vorbereitung (Hybrid-Herausforderung lesen, Notizen auf A4, L
 > Lückenhaft: nennt nur «ich will es» oder «89 Franken» ohne Bedürfnis- oder Kostenbegriff.
 
 > [!erwartungshorizont] Frage 3 (Beurteilen, K3) — echt oder geweckt
-> Stufe 3 zeigt: unterscheidet begründet, welcher Anteil des Wunsches echt und welcher durch Team und Umfeld geweckt ist.
-> Stufe 4 zeigt zusätzlich: hält den Zielkonflikt offen (das E-Bike kann sinnvoll und zugleich sozial getrieben sein) und leitet daraus den Entscheid ab.
-> Nicht Stufe 4: «Es ist reiner Gruppendruck, also nein» — klingt souverän, löst den Zielkonflikt aber vorschnell auf.
+> 2 Punkte: unterscheidet begründet, welcher Anteil des Wunsches echt und welcher durch Team und Umfeld geweckt ist.
+> 3 Punkte zusätzlich: hält den Zielkonflikt offen (das E-Bike kann sinnvoll und zugleich sozial getrieben sein) und leitet daraus den Entscheid ab.
+> Nicht 3 Punkte: «Es ist reiner Gruppendruck, also nein» — klingt souverän, löst den Zielkonflikt aber vorschnell auf.
 
 > [!erwartungshorizont] Frage 5 (Werthaltung, K4) — Verantwortung
-> Stufe 3 zeigt: benennt, dass die Lernende selbst die Rate tragen muss.
-> Stufe 4 zeigt zusätzlich: erkennt die Eigenverantwortung und die Rolle von Verkäuferdruck und Bonitätsprüfung, ohne die Verantwortung abzuschieben.
-> Nicht Stufe 4: schiebt die Schuld allein auf den Verkäufer oder die Bank.
+> 2 Punkte: benennt, dass die Lernende selbst die Rate tragen muss.
+> 3 Punkte zusätzlich: erkennt die Eigenverantwortung und die Rolle von Verkäuferdruck und Bonitätsprüfung, ohne die Verantwortung abzuschieben.
+> Nicht 3 Punkte: schiebt die Schuld allein auf den Verkäufer oder die Bank.
 
 **Mini Case schriftlich — Aufgaben** (Hybrid-Herausforderung als Prüfungsblatt, Lehrmittel nach deinem Entscheid, kein Internet)
 
@@ -737,16 +761,16 @@ Die drei Reflexionsfragen:
 2. «<!--hko:kn.kn_typen[2].reflexionsfragen[1]-->Erklären Sie, wie dieses Prinzip im Leasingangebot der Hybrid-Herausforderung sichtbar wird. Was ist gleich, was ist anders?<!--/hko-->»
 3. «<!--hko:kn.kn_typen[2].reflexionsfragen[2]-->Wann versagt das Prinzip — und was haben Sie durch die beiden Herausforderungen insgesamt über überlegte Konsumentscheidungen gelernt?<!--/hko-->»
 
-**Bi-dimensionale Bewertung** (Skala 1–4, 1 = tiefste — rubrik-interne Kriteriumsskala, nicht die nRLP-Gütestufe 0–3)
+**Bi-dimensionale Bewertung** (0 bis 3 Punkte je Kriterium — dieselbe Skala wie in den Heften und im Auftragsbogen)
 
-| Kriterium | Stufe 1 | Stufe 2 | Stufe 3 | Stufe 4 |
+| Kriterium | 0 Punkte | 1 Punkt | 2 Punkte | 3 Punkte |
 |---|---|---|---|---|
 | **Fachkorrektheit** (SuK) | <!--hko:kn.rubrik_shared.kriterien[0].stufen[0]-->Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[0].stufen[1]-->Begriffe teilweise korrekt verwendet.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[0].stufen[2]-->Begriffe korrekt und situationsangemessen verwendet.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[0].stufen[3]-->Begriffe differenziert, kontextualisiert und eigenständig auf die Situation bezogen.<!--/hko--> |
 | **Argumentation** (SuK) | <!--hko:kn.rubrik_shared.kriterien[1].stufen[0]-->Keine Begründung für die Entscheidung erkennbar.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[1].stufen[1]-->Begründung ansatzweise vorhanden.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[1].stufen[2]-->Begründung nachvollziehbar und strukturiert.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[1].stufen[3]-->Schlüssig, differenziert, Gegenargumente und Folgen berücksichtigt.<!--/hko--> |
 | **Wirtschaftliches Prinzip** (Ges) | <!--hko:kn.rubrik_shared.kriterien[2].stufen[0]-->Der Zusammenhang von Budget, Bedürfnis und Verschuldungsrisiko wird nicht angewendet.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[2].stufen[1]-->Der Zusammenhang wird teilweise erkennbar.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[2].stufen[2]-->Der Zusammenhang wird korrekt auf die Situation angewendet.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[2].stufen[3]-->Das Prinzip wird auf neue Zusammenhänge übertragen (Transfer).<!--/hko--> |
 | **Position / Werthaltung** (Ges) | <!--hko:kn.rubrik_shared.kriterien[3].stufen[0]-->Keine erkennbare eigene Position.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[3].stufen[1]-->Position angedeutet.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[3].stufen[2]-->Position klar in Ich-Form formuliert.<!--/hko--> | <!--hko:kn.rubrik_shared.kriterien[3].stufen[3]-->Position begründet, Spannungsfeld zwischen Wunsch und Sicherheit anerkannt.<!--/hko--> |
 
-Niveaubänder: **unter 60 %** (Stufen 1–2 dominant) · **80 %** (mehrheitlich Stufe 3) · **100 %** (Stufe 4 in mindestens 3 von 4 Kriterien).
+Niveaubänder: **unter 60 %** (0–1 Punkte dominant) · **80 %** (mehrheitlich 2 Punkte) · **100 %** (3 Punkte in mindestens 3 von 4 Kriterien).
 
 ```
 Endnote SuK = Mittel(Fachkorrektheit, Argumentation)
@@ -758,4 +782,4 @@ Endnote Ges = Mittel(Wirtschaftliches Prinzip, Position/Werthaltung)
 > Trage SuK und Ges als zwei Noten ein. Eine sprachlich schwache, aber inhaltlich starke Arbeit soll das sichtbar machen — genau dafür ist die Doppelspur da.
 
 > [!mehrdeutigkeit] Der häufigste Bewertungsfehler
-> «Klarste Lösung = höchste Note» ist falsch. Wer den Zielkonflikt (Wunsch gegen Sicherheit) vorschnell auflöst, erreicht in «Position / Werthaltung» gerade nicht Stufe 4 — Stufe 4 verlangt, das Spannungsfeld anzuerkennen.
+> «Klarste Lösung = höchste Note» ist falsch. Wer den Zielkonflikt (Wunsch gegen Sicherheit) vorschnell auflöst, erreicht in «Position / Werthaltung» gerade nicht 3 Punkte — dafür muss das Spannungsfeld anerkannt sein.

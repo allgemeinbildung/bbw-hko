@@ -3,7 +3,7 @@
 // jede in einem eigenen Abschnitt wie in docx-heft-v42.ts; Kopf/Fuss wie buildAustausch.
 //
 // Die kleinen Ableitungen (Schrittnummer, Sozialform-Zeile, Sprechdauer, Glossar-
-// Gruppen, Stationen der Sprechspur) kommen aus der Komponente — eine Quelle, damit
+// Verweis, Stationen und Zeilen der Sprechspur) kommen aus der Komponente — eine Quelle, damit
 // HTML und Word nie auseinanderlaufen. Nie gedruckt: `erwartungshorizont`,
 // `kontext_ausschluss`, `aktivierte_trade_offs`, `lebensbereich`, `bogen`.
 
@@ -14,7 +14,7 @@ import {
 import type { GemeinsamerAuftrag, SetJson } from './types'
 import { BBW_GRUEN, COLOR, p, schreibfeld, sectionHead, sectionProps, skizzeBox, tcell } from './docx-primitives'
 import {
-  SPRECHSPUR_STATIONEN, glossarGruppen, schrittTeile, sozialformZeile, sprechDauer,
+  SPRECHSPUR_STATIONEN, SPRECHSPUR_ZEILEN, glossarVerweis, schrittTeile, sozialformZeile, sprechDauer,
 } from '../../components/einheiten/docs/DocAuftragsbogen'
 
 export interface BuildAuftragsbogenOpts {
@@ -162,11 +162,30 @@ function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
       sozial.length ? [kasten('Sozialform', sozial)] : [],
     ))
   }
-  out.push(p('Ihre Hefte A und B dürfen Sie benutzen.', {
-    run: { size: 19, bold: true },
-    spacing: { before: 120, after: 0 },
-    border: { top: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 3 } },
-  }))
+  // Bezug auf die Hefte: der Auftrag sagt, was er braucht — das Heft nennt keine Woche.
+  const bezug = (ga.heft_bezug || []).filter((h) => h && h.inhalte?.length)
+  if (bezug.length) {
+    const spalte = (h: (typeof bezug)[number]): Paragraph[] => [
+      p([new TextRun({ text: `Heft ${h.heft}`, bold: true, size: 18 }), new TextRun({ text: h.titel ? ` · ${h.titel}` : '', size: 18 })], { spacing: { before: 0, after: 30 } }),
+      ...h.inhalte.map((t) => new Paragraph({
+        children: [new TextRun({ text: '•  ', size: 18 }), new TextRun({ text: t, size: 18 })],
+        indent: { left: 240, hanging: 240 },
+        spacing: { before: 0, after: 20, line: 260, lineRule: LineRuleType.AUTO },
+      })),
+    ]
+    out.push(luecke(140), kasten('Das brauchen Sie aus Ihren Heften', [
+      bezug.length === 2 ? zweiSpalten(spalte(bezug[0]), spalte(bezug[1])) : new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [new TableRow({ children: [tcell(bezug.flatMap(spalte), { borders: OHNE_RAENDER })] })],
+      }),
+    ]))
+  } else {
+    out.push(p('Ihre Hefte A und B dürfen Sie benutzen.', {
+      run: { size: 19, bold: true },
+      spacing: { before: 120, after: 0 },
+      border: { top: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 3 } },
+    }))
+  }
   return out
 }
 
@@ -182,7 +201,19 @@ function seiteA2(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
   ]
 }
 
-// ---------------- A3 — Sprechspur + Glossar ----------------
+// ---------------- A3 — Sprechspur, am Fuss der Verweis aufs Glossar der Hefte ----------------
+
+/** Eine Schreiblinie im Raster der HTML-Zeilen (8.5 mm, .feld) — schreibfeld() setzt sie weiter. */
+function schreibzeile(): Paragraph {
+  return new Paragraph({
+    children: [new TextRun({ text: '' })],
+    spacing: { before: 0, after: 0, line: Math.round(8.5 * 56.6929), lineRule: LineRuleType.EXACT },
+    // `between` auch setzen: Word fasst gleich umrandete Folgeabsätze zusammen und
+    // zöge sonst nur unter dem letzten eine Linie.
+    border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: COLOR.line }, between: { style: BorderStyle.SINGLE, size: 4, color: COLOR.line } },
+  })
+}
+
 function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
   const s = ga.schritte?.[4]
   const [nr, label] = s ? schrittTeile(s.label, 4) : ['05', 'Sprachnachricht']
@@ -190,7 +221,7 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
   if (s?.hint) out.push(p([new TextRun({ text: `Schritt ${nr}: `, bold: true, size: 18 }), new TextRun({ text: s.hint, size: 18 })], { spacing: { before: 0, after: 40 } }))
   out.push(absatz('Notieren Sie Stichworte, keinen ganzen Text. Sprechen Sie frei und stoppen Sie die Zeit. Ihre Sprachnachricht geben Sie der Lehrperson direkt ab: live oder als Aufnahme.', 18, { after: 80 }))
 
-  // Die Spur: Linie links, Stationen mit zwei Schreiblinien — wie .v42-auftrag-spur.
+  // Die Spur: Linie links, Stationen mit gleich vielen Schreiblinien — wie .v42-auftrag-spur.
   const spur: Paragraph[] = []
   SPRECHSPUR_STATIONEN.forEach((station, i) => {
     spur.push(new Paragraph({
@@ -198,18 +229,17 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
         new TextRun({ text: `${i + 1}   `, color: AKZENT, bold: true, size: 18, font: 'Consolas' }),
         new TextRun({ text: station, bold: true, size: 20 }),
       ],
-      spacing: { before: i ? 120 : 0, after: 0 },
+      spacing: { before: i ? 160 : 0, after: 0 },
       keepNext: true,
     }))
-    // schreibfeld() rechnet mindestens drei Linien; die Spur braucht zwei.
-    spur.push(...schreibfeld(0).slice(0, 2))
+    for (let z = 0; z < SPRECHSPUR_ZEILEN; z++) spur.push(schreibzeile())
   })
   spur.push(new Paragraph({
     children: [
       new TextRun({ text: 'ENDE   ', color: AKZENT, bold: true, size: 16, font: 'Consolas' }),
       new TextRun({ text: `Ziel ${sprechDauer(s?.hint)} · Probelauf:  ☐ zu kurz   ☐ passt   ☐ zu lang`, size: 18 }),
     ],
-    spacing: { before: 120, after: 0 },
+    spacing: { before: 160, after: 0 },
   }))
   out.push(new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
@@ -221,40 +251,13 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
     })],
   }))
 
-  const glossar = set.glossar || []
-  if (glossar.length) {
-    out.push(p('Glossar der Einheit', {
-      run: { size: 24, bold: true },
-      spacing: { before: 200, after: 60 },
+  // Das Glossar steht seit E17 in den Heften (je S. 8); hier nur der Verweis.
+  const verweis = glossarVerweis(set.glossar)
+  if (verweis) {
+    out.push(p(verweis, {
+      run: { size: 18, color: COLOR.inkSoft },
+      spacing: { before: 280, after: 0 },
       border: { top: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 4 } },
-      keepNext: true,
-    }))
-    const gruppen = glossarGruppen(glossar)
-    // Zwei Hefte → je eine Spalte; sonst die Liste halbiert. Echte Tabelle, Zeile = Paar.
-    const [l, r] = gruppen.length === 2 && gruppen.every((g) => g.heft)
-      ? [gruppen[0].eintraege, gruppen[1].eintraege]
-      : [glossar.slice(0, Math.ceil(glossar.length / 2)), glossar.slice(Math.ceil(glossar.length / 2))]
-    const kopf = gruppen.length === 2 && gruppen.every((g) => g.heft) ? [`Heft ${gruppen[0].heft}`, `Heft ${gruppen[1].heft}`] : ['Begriffe', '']
-    const eintrag = (e?: (typeof glossar)[number]) => e
-      ? [
-          p(e.begriff, { run: { size: 18, bold: true }, spacing: { before: 0, after: 0 } }),
-          p(e.definition, { run: { size: 18, color: COLOR.inkSoft }, spacing: { before: 0, after: 0, line: 252, lineRule: LineRuleType.AUTO } }),
-        ]
-      : [p('')]
-    const zelle = (inhalt: Paragraph[], links: boolean, istKopf = false) => tcell(inhalt, {
-      width: { size: 50, type: WidthType.PERCENTAGE },
-      borders: istKopf
-        ? { ...OHNE_RAENDER, bottom: RAND(12, AKZENT) }
-        : { ...OHNE_RAENDER, bottom: RAND(2, COLOR.rule) },
-      margins: { top: 30, bottom: 30, left: links ? 0 : 160, right: links ? 160 : 0 },
-    })
-    out.push(new Table({
-      width: { size: 100, type: WidthType.PERCENTAGE },
-      rows: [
-        new TableRow({ tableHeader: true, children: kopf.map((k, i) => zelle([mikro(k, 0)], i === 0, true)) }),
-        ...Array.from({ length: Math.max(l.length, r.length) }, (_, i) =>
-          new TableRow({ cantSplit: true, children: [zelle(eintrag(l[i]), true), zelle(eintrag(r[i]), false)] })),
-      ],
     }))
   }
   return out

@@ -2,8 +2,10 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import type { Document } from 'docx'
 import { DocS } from '../../components/einheiten/docs/DocS'
 import { DocAuftragsbogen } from '../../components/einheiten/docs/DocAuftragsbogen'
+import { DocLoesungsblattV42 } from '../../components/einheiten/docs/DocLoesungsblattV42'
 import { buildDocS } from './docx-builder'
 import { buildAuftragsbogen } from './docx-auftragsbogen-v42'
+import { buildLoesungsblatt } from './docx-produkt-bild-v42'
 import { SPUR_KEYS, isV42 } from './spuren'
 import type { EinheitFullSet, SpurKey } from './types'
 
@@ -22,6 +24,10 @@ export interface V42Dokument {
   /** `renderToStaticMarkup` des Dokuments, Modus `fill` (die auszufüllende Fassung). */
   markup: () => string
   docx: () => Document | null
+  /** Einfüge-Sperre + Schreibprotokoll im eigenständigen HTML — nur die Hefte. */
+  protokoll: boolean
+  /** Nur für die Lehrperson (Lösungsblatt): im ZIP unter `Material_LP/`, für Gäste gesperrt. */
+  lehrperson: boolean
 }
 
 export interface V42DokumenteOpts {
@@ -37,10 +43,17 @@ export function heftDatei(buchstabe: string, spur: SpurKey): string {
   return `heft-${buchstabe.toLowerCase()}-${SPUR_DATEI[spur]}`
 }
 
+/** Dateiname (ohne Endung) des Lösungsblatts eines Hefts, z. B. `loesungsblatt-a`. */
+export function loesungsblattDatei(buchstabe: string): string {
+  return `loesungsblatt-${buchstabe.toLowerCase()}`
+}
+
 /**
  * Je Heft (A, dann B) und je verfügbarer Spur ein Eintrag, in der Folge
  * `heft-a-ohne-medien`, `heft-a-mit-medien`, `heft-b-ohne-medien`, `heft-b-mit-medien`,
- * danach `auftragsbogen`, sofern `set.gemeinsamer_auftrag` vorhanden ist.
+ * danach `auftragsbogen`, sofern `set.gemeinsamer_auftrag` vorhanden ist, danach je Heft
+ * mit `handlungsprodukt.loesungsbild` das Lösungsblatt der Lehrperson (`loesungsblatt-a`,
+ * `loesungsblatt-b`) — spur-unabhängig, das Produkt ist in beiden Spuren dasselbe.
  * Einheiten ohne `spur_varianten` (alle Bestandseinheiten): leere Liste.
  */
 export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V42Dokument[] {
@@ -60,6 +73,8 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
         markup: () =>
           renderToStaticMarkup(<DocS sit={sit} set={d.set} abteilung={abteilung} mode="fill" edits={{}} onEdit={() => {}} />),
         docx: () => buildDocS({ sit, set: d.set, abteilung, mode: 'fill', logoPng }),
+        protokoll: true,
+        lehrperson: false,
       })
     }
   }
@@ -72,6 +87,21 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
       markup: () =>
         renderToStaticMarkup(<DocAuftragsbogen set={d.set} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
       docx: () => buildAuftragsbogen({ set: d.set, abteilung, logoPng }),
+      protokoll: false,
+      lehrperson: false,
+    })
+  }
+  // Lösungsblatt Produkt (nur Lehrperson) — nach dem Auftragsbogen, je Heft eines.
+  for (const L of ['A', 'B'] as const) {
+    const sit = SPUR_KEYS.map((spur) => varianten[spur]?.[`hf_${L}`]).find((s) => !!s && isV42(s))
+    if (!sit?.handlungsprodukt?.loesungsbild) continue
+    out.push({
+      datei: loesungsblattDatei(L),
+      titel: `Lösungsblatt ${L} · ${sit.handlungsprodukt.titel ?? ''}`.trim(),
+      markup: () => renderToStaticMarkup(<DocLoesungsblattV42 sit={sit} abteilung={abteilung} />),
+      docx: () => buildLoesungsblatt({ sit, abteilung, logoPng }),
+      protokoll: false,
+      lehrperson: true,
     })
   }
   return out

@@ -464,20 +464,20 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
     els.push(spacer(40))
   }
 
-  // Wochenplan
+  // Übersicht (Feld wochen_plan): drei Teile, ohne Woche und ohne Zeitangabe
   if (sit.wochen_plan?.length) {
-    els.push(mini('Ihre Woche', ctx))
+    els.push(mini('Übersicht', ctx))
     els.push(new Table({
       width: { size: 100, type: WidthType.PERCENTAGE },
       rows: sit.wochen_plan.map((w, i) => new TableRow({
         children: [
           tcell(p(w.label, { run: { size: 17, font: 'Consolas', color: COLOR.inkSoft }, spacing: { after: 0 } }), {
-            width: { size: 26, type: WidthType.PERCENTAGE },
+            width: { size: 12, type: WidthType.PERCENTAGE },
             margins: { top: 100, bottom: 100, left: 0, right: 100 },
             borders: { ...OHNE_RAND, bottom: linie(COLOR.rule), ...(i === 0 ? { top: linie(COLOR.rule) } : {}) },
           }),
           tcell(p(w.text, { run: { size: 19 }, spacing: { after: 0 } }), {
-            width: { size: 74, type: WidthType.PERCENTAGE },
+            width: { size: 88, type: WidthType.PERCENTAGE },
             margins: { top: 100, bottom: 100, left: 0, right: 0 },
             borders: { ...OHNE_RAND, bottom: linie(COLOR.rule), ...(i === 0 ? { top: linie(COLOR.rule) } : {}) },
           }),

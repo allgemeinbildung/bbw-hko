@@ -76,6 +76,11 @@
 .v42-auftrag-liste li { display: flex; gap: 1.8mm; align-items: baseline; margin-bottom: 0.8mm; }
 .v42-auftrag-liste .check-box { font-size: 10pt; }
 
+.v42-auftrag-bezug { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; font-size: 9pt; line-height: 1.35; }
+.v42-auftrag-bezug-kopf { margin-bottom: 0.8mm; }
+.v42-auftrag-bezug-liste { margin: 0; padding-left: 4mm; }
+.v42-auftrag-bezug-liste li { margin-bottom: 0.5mm; }
+
 .v42-auftrag-hefte {
   font-size: 9.5pt;
   font-weight: 600;
@@ -103,21 +108,13 @@
 .v42-auftrag-station-ende { display: flex; gap: 3mm; align-items: baseline; font-size: 9pt; }
 .v42-auftrag-station-ende .check-box { font-size: 10pt; margin-left: 1.5mm; }
 
-.v42-auftrag-glossar { display: flex; flex-direction: column; gap: 1.5mm; margin-top: 2.5mm; }
-.v42-auftrag-zwischenkopf {
-  font-size: 12pt;
-  font-weight: 600;
-  color: var(--ink);
+/* Verweis aufs Glossar der Hefte (S. 8) — am Fuss der Seite, unter einer feinen Linie. */
+.v42-auftrag-a3 > .v42-auftrag-verweis {
+  margin-top: auto;
   border-top: 0.75pt solid var(--rule);
-  padding-top: 2mm;
+  padding-top: 1.5mm;
+  color: var(--ink-soft);
 }
-.v42-auftrag-glossar-hefte { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
-.v42-auftrag-glossar-liste { margin: 0; font-size: 9pt; line-height: 1.3; }
-.v42-auftrag-glossar-liste > div { padding: 1mm 0; border-top: 0.5pt solid var(--rule); break-inside: avoid; }
-.v42-auftrag-glossar-liste dt { font-weight: 600; }
-.v42-auftrag-glossar-liste dd { margin: 0; color: var(--ink-soft); }
-.v42-auftrag-glossar-spalten { column-count: 2; column-gap: 6mm; }
-.v42-auftrag-heft { font-weight: 400; color: var(--ink-mute); }
 
 /* ---------- A4: Rückmeldung ---------- */
 .v42-auftrag-raster { width: 100%; border-collapse: collapse; table-layout: fixed; }

@@ -97,7 +97,7 @@
       ]
     }
   ],
-  "leitfragen_intro": "Sie bauen in dieser Woche Ihre Bedürfnis-Landkarte auf: LF1 liefert die Kategorien, LF2 Ihre eigenen Einträge, LF3 die Einflüsse mit Beleg, LF4 Ihren Massstab und Ihren Entscheid zum Handy.",
+  "leitfragen_intro": "Sie bauen Schritt für Schritt Ihre Bedürfnis-Landkarte auf: LF1 liefert die Kategorien, LF2 Ihre eigenen Einträge, LF3 die Einflüsse mit Beleg, LF4 Ihren Massstab und Ihren Entscheid zum Handy.",
   "auftakt_typ": "pfad",
   "leitfragen": [
     {
@@ -220,7 +220,163 @@
       "Bedürfnis-Landkarte A4 (mind. 8 Einträge, Legende mit drei Markierungen)",
       "Massstab-Satz und Entscheid zum Handy am Kartenrand",
       "Raster zur Quelle (S. 3)"
-    ]
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Kaufe ich die Spielkonsole für CHF 450?",
+      "legende": [
+        {
+          "key": "echt",
+          "text": "echt"
+        },
+        {
+          "key": "geweckt",
+          "text": "geweckt"
+        },
+        {
+          "key": "berechtigt",
+          "text": "geweckt, aber berechtigt"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Existenzbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "echt",
+              "text": "Znüni und Mittagessen → Nahrung"
+            },
+            {
+              "marke": "echt",
+              "text": "Regenjacke → Kleidung"
+            },
+            {
+              "marke": "echt",
+              "text": "Neue Brille → medizinische Versorgung"
+            }
+          ]
+        },
+        {
+          "titel": "Wahlbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "geweckt",
+              "text": "Spielkonsole → Unterhaltung, Dazugehörigkeit",
+              "notiz": "Einfluss: Kollegen spielen online"
+            },
+            {
+              "marke": "echt",
+              "text": "Vereinsbeitrag Unihockey → Dazugehörigkeit"
+            },
+            {
+              "marke": "geweckt",
+              "text": "Trikot der Lieblingsmannschaft → Anerkennung",
+              "notiz": "Einfluss: Werbung im Stadion"
+            },
+            {
+              "marke": "berechtigt",
+              "text": "Kinoabend → Unterhaltung",
+              "notiz": "Einfluss: Trailer im Feed; ich gehe aber gern"
+            },
+            {
+              "marke": "echt",
+              "text": "Gitarrensaiten → Selbstverwirklichung"
+            }
+          ]
+        },
+        {
+          "titel": "Am Rand",
+          "eintraege": [
+            {
+              "text": "Mein Massstab: Ich kaufe erst, wenn das Geld gespart ist und der Wunsch nach einem Monat noch da ist."
+            },
+            {
+              "text": "Mein Entscheid: Konsole noch nicht — ich spare zwei Monate und prüfe dann nochmals."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Kopfhörer gekauft — Handy für CHF 300 bis Freitag?",
+      "hinweis": "Eine mögliche, vollständige Landkarte, keine Vorlage: Die Einträge der Lernenden sind persönlich und dürfen ganz anders aussehen. Erst zeigen, wenn die eigene Karte steht.",
+      "legende": [
+        {
+          "key": "echt",
+          "text": "echt"
+        },
+        {
+          "key": "geweckt",
+          "text": "geweckt"
+        },
+        {
+          "key": "berechtigt",
+          "text": "geweckt, aber berechtigt"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Existenzbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "echt",
+              "text": "Mittagessen im Betrieb → Nahrung"
+            },
+            {
+              "marke": "echt",
+              "text": "Winterjacke → Kleidung"
+            },
+            {
+              "marke": "echt",
+              "text": "Zahnarztkontrolle → medizinische Versorgung"
+            }
+          ]
+        },
+        {
+          "titel": "Wahlbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "geweckt",
+              "text": "Kopfhörer → Unterhaltung, Dazugehörigkeit",
+              "notiz": "Einfluss: Feed, zwei aus der Klasse"
+            },
+            {
+              "marke": "geweckt",
+              "text": "Handy vom Kollegen → Anerkennung",
+              "notiz": "Einfluss: Angebot mit Frist, Klasse"
+            },
+            {
+              "marke": "echt",
+              "text": "Fussballtraining → Dazugehörigkeit"
+            },
+            {
+              "marke": "geweckt",
+              "text": "Markenpulli → Anerkennung",
+              "notiz": "Einfluss: Klasse"
+            },
+            {
+              "marke": "berechtigt",
+              "text": "Konzertticket → Unterhaltung",
+              "notiz": "Einfluss: Kollegin fragt; die Band höre ich seit Jahren"
+            },
+            {
+              "marke": "echt",
+              "text": "Gitarrenstunden → Selbstverwirklichung"
+            }
+          ]
+        },
+        {
+          "titel": "Am Rand",
+          "eintraege": [
+            {
+              "text": "Mein Massstab: Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe."
+            },
+            {
+              "text": "Mein Entscheid: Ich sage dem Kollegen ab. Kommunikation deckt mein altes Handy, und das Geld fehlt mir schon seit den Kopfhörern."
+            }
+          ]
+        }
+      ]
+    }
   },
   "feedback_kriterien": [
     {
@@ -247,7 +403,7 @@
     }
   ],
   "lernfortschritt": {
-    "scaffold_90": "Vorgegebene Kategorien als Karten-Raster und eine Beispielzeile im Raster der Quelle.",
+    "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und eine Beispielzeile im Raster der Quelle.",
     "scaffold_100": "Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefungsquelle, falls Ihr Heft eine nennt) und als vierte Farbe auf der Karte zeigen."
   },
   "methoden": [
@@ -275,27 +431,28 @@
     {
       "titel": "Bedürfnisarten",
       "punkte": [
-        "Existenz / Wahl",
-        "Maslow-Stufen",
-        "Bedürfnis ≠ Gut"
+        "Bedürfnis",
+        "Gut",
+        "Existenzbedürfnis",
+        "Wahlbedürfnis",
+        "Bedürfnispyramide"
       ],
       "optional": false
     },
     {
       "titel": "Was mich beeinflusst",
       "punkte": [
-        "Feed und Werbung",
-        "Klasse, Kollegen",
-        "Impulskauf"
+        "Werbung",
+        "Impulskauf",
+        "Konsumdruck"
       ],
       "optional": false
     },
     {
       "titel": "Mein Massstab",
       "punkte": [
-        "Prüffrage",
-        "echt / geweckt",
-        "Entscheid Handy"
+        "Geweckter Wunsch",
+        "Massstab"
       ],
       "optional": false
     },
@@ -345,27 +502,27 @@
     {
       "produkt": "Abschluss",
       "vollstaendig_wenn": [
-        "Mindmap mit mind. 5 beschrifteten Verbindungen",
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
         "Quer-Check abgehakt",
-        "Mitnahme notiert"
+        "«Das nehme ich mit» ausgefüllt"
       ]
     }
   ],
   "wochen": 1,
   "wochen_plan": [
     {
-      "label": "Lektion 1 · 45 min",
+      "label": "Teil 1",
       "text": "Situation lesen, LF1 und LF2",
       "aktiv": true
     },
     {
-      "label": "Lektion 2 · 45 min",
+      "label": "Teil 2",
       "text": "LF3 mit Raster zur Quelle, LF4, Landkarte beginnen",
       "aktiv": false
     },
     {
-      "label": "Lektion 3 · 45 min",
-      "text": "Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Mindmap",
+      "label": "Teil 3",
+      "text": "Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Begriffsnetz",
       "aktiv": false
     }
   ],
@@ -511,7 +668,7 @@
           "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
         ]
       },
-      "scaffold_90": "Vorgegebene Kategorien als Karten-Raster und ausgefüllte erste Zeile der Denkhilfe."
+      "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und die ausgefüllte Beispielzeile im Raster (S. 3)."
     },
     "mit_medien": {
       "leitfragen": [
@@ -657,7 +814,7 @@
           "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
         ]
       },
-      "scaffold_90": "Vorgegebene Kategorien als Karten-Raster und eine gemeinsam erarbeitete erste Rasterzeile."
+      "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
     }
   }
 }
