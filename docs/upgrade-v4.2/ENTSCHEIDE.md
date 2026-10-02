@@ -532,3 +532,177 @@ ich mit».
   eine von vielen; das Dokument sagt es im Kopf.
 
 **Rückgängig:** `git revert` des Commits zu E19; die Datenfelder sind additiv.
+
+---
+
+# Entscheide — Generator-Skill v4.2 (Auftrag: `docs/ORCHESTRATION-skill-v42.md`)
+
+Ab hier: Entscheide der Skill-Session vom 02.10.2026 (Branch `v42-skill`).
+
+## E20 — Name und Standard: `bbw-hko-heft-v42` ist die Skill für neue EFZ-Einheiten
+
+**Entscheid:** Die neue Skill heisst `bbw-hko-heft-v42` (wie das Template
+`heft_8page_v42`) und liegt unter `.claude/skills/bbw-hko-heft-v42/`. Sie ist
+der Standard für jede neue EFZ-Einheit («mach eine Einheit zu 2.1.2», «neue
+Einheit», «Heft», «Spur mit Medien»). Die alte Skill `bbw-hko-3er-set` bleibt
+bytegleich und ist für ausdrückliche Nennung da («3er-Set», «alte Methode»,
+«drei Herausforderungen A/B/C»).
+
+**Wie die Trennung entsteht:** Die Beschreibung der alten Skill darf nicht
+angefasst werden (Invariante 3). Die Abgrenzung steht darum allein in der
+Beschreibung der neuen Skill (sie nennt, wofür sie **nicht** da ist: 3er-Set,
+EBA, KI-Toolbox) und in `CLAUDE.md`.
+**Alternative:** alte Skill als Standard lassen, neue nur auf «v4.2» — verworfen,
+weil neue Einheiten nicht mehr im 3er-Format entstehen sollen.
+**Rückgängig:** Ordner `.claude/skills/bbw-hko-heft-v42/` löschen, die zwei
+Absätze in `CLAUDE.md` und die Zeile in `docs/cloud-run/RUN.md` zurücknehmen.
+
+## E21 — Ableitungsregeln für alles, was nach dem ersten Druck fest ist
+
+Die Skill leitet ab und fragt nicht (Invariante 6). Im Auto-Modus stehen die
+Werte schon im Bauplan; sie müssen dieser Regel entsprechen.
+
+| Was | Regel |
+|---|---|
+| Ordner | `<X.Y.Z>_<slug>` unter `src/data/einheiten/`. `X.Y.Z` = erste Kompetenz von Heft A im kanonischen Lehrgang. `slug` = zwei bis drei Wörter aus dem Fokus (Gegenstand + Verb in der Grundform, wie `konsum_verantworten`), Kleinbuchstaben, `ä→ae ö→oe ü→ue`, nur `[a-z0-9_]`. |
+| Lehrgang-Suffix | `_3j` bzw. `_4j` genau dann, wenn die Einheit nur für einen Lehrgang gilt **und** dieselbe Nummer im anderen EFZ-Lehrgang mit anderem Text existiert. Sonst kein Suffix. Kein `_v42` (das trug nur die Gold-Einheit, weil der Name vergeben war). |
+| Ordner existiert schon | Nie überschreiben. Der slug wird um das nächste Kernwort des Fokus verlängert; existiert auch dieser Ordner, gilt die Einheit als nicht erzeugbar (Meldung, kein Schreiben). |
+| IDs | `<ordner>_hf_A`, `<ordner>_hf_B`, `<ordner>_set`, `<ordner>_kn`, `<ordner>_prinzip` |
+| Kurzlink / QR | `/m/<ordner>`, Anker `#a` und `#b`; QR-Inhalt `https://bbw-hko.ch/m/<ordner>#a` bzw. `#b` |
+| Quellen-IDs | `q-<n><h>-pflicht`, `-pflicht-ersatz`, `-vertiefung-1`, `-vertiefung-2`. `<n>` = Ziffern der Ordnernummer ohne Punkte (`2.1.2` → `212`), auch für Heft B, das andere Kompetenzen trägt (Gold: `q-131b-…`). `<h>` = `a` oder `b`. |
+| Quellen-ID vergeben | Gehört `q-<n><h>-pflicht` (Karte **oder** Archivordner) schon einer anderen Einheit, heisst der ganze Satz `q-<n>.<k><h>-…` mit der kleinsten freien Zahl `k ≥ 2` (`q-212.2a-pflicht`). Ein Satz, ein Muster — nie gemischt. |
+| Archiv | `D:\OS\_lab\quellen-archiv\bbw-hko\<quellen-id>\gewaehlt\quelle.md`, verworfene Kandidaten daneben unter `kandidat-N\`. Nie im Repo. |
+| `status` | exakt `"entwurf"` in `set.json` |
+| `einheit_titel` | der Fokus als Titel, ohne Versionszusatz; nur wenn im Katalog schon eine gleichnamige Einheit steht, mit Zusatz in Klammern |
+
+**Grund:** Eine Regel, die ohne Rückfrage dasselbe Ergebnis liefert, ist die
+einzige, die in der Serie hält. Nichts im Code liest das Muster der
+Quellen-IDs (geprüft: kein Treffer in `src/`), die Regel ist also frei wählbar.
+**Rückgängig (solange nichts gedruckt ist):** Ordner umbenennen, IDs ersetzen,
+Karten und Archivordner umbenennen, Index neu bauen.
+
+## E22 — Probe: zwei T2-Baupläne, lokal vorbereitet, erzeugt je in einer Cloud-Session
+
+**Vorgabe Pietro (02.10.2026, im Gespräch):** Getestet wird die Skill an zwei
+Bauplänen aus Thema 2, je in einer eigenen Cloud-Session. Die Recherche über
+SRG-API und Swissdox geschieht lokal in der Vorbereitung, vor der Übergabe.
+
+| Probe | Lehrgang | Lebensbezug | Warum |
+|---|---|---|---|
+| 1 | EFZ 3J | 2.3 (2.3.1 Anliegen formulieren, 2.3.2 Meinung in Diskussionen) | andere Produkte (Statement, Diskussion), Interaktion mündlich, andere SK — prüft die Flexibilität nach dem Leitprinzip |
+| 2 | EFZ 4J | 2.1 (2.1.1 mündliche Beiträge, 2.1.2 Desinformation) | 2.1.1 verlangt Rezeption mündlich und audiovisuell: Heft A hat nur die Medien-Spur (§4.4) — ein Fall, den der Renderer noch nie gesehen hat |
+
+**Diese Session liefert:** die Skill, die Rückwärtsprobe an 1.3.1 (Wegwerf-Ordner),
+die zwei geöffneten Renderer-Stellen verallgemeinert (E25, E26), und für beide
+Proben die Phasen 0, 1 und Q lokal: Bauplan mit «Freigabe: offen», Quellenkarten
+im Repo, Volltexte im Archiv. Erzeugt werden die Einheiten in der Cloud
+(Auto-Modus), nach Pietros Freigabe der Baupläne. Der Vergleich Gold gegen Probe
+(Leitprinzip, Punkt 5) folgt nach dem Cloud-Lauf; der Bericht dieser Session
+enthält das Raster dafür und die Spalte Gold.
+**Rückgängig:** nichts zu tun; ein anderer Bauplan genügt.
+
+## E23 — Was die Skill tut, wenn eine Voraussetzung fehlt
+
+| Es fehlt | Die Skill |
+|---|---|
+| ein Kapitel aus dem Bauplan bzw. der Crosswalk-Zeile unter `material/_lehrmittel/` | schreibt nichts; Einheit «nicht erzeugbar», Grund im Bericht |
+| Quellenkarte **oder** Archiv-Volltext für einen Slot der Medien-Spur | erzeugt für dieses Heft nur `ohne_medien` und meldet es; erfindet keine Quelle, keine Karte, keinen Kurzbeschrieb |
+| nur eine Vertiefung | Medien-Spur mit der Quelle und den vorhandenen Vertiefungen (0–2 sind zulässig); Meldung |
+| die Spur `ohne_medien` ist nach §4.4 unzulässig (Heft verlangt Rezeption mündlich oder audiovisuell) **und** die Quelle fehlt | lokal: zuerst die Quellensuche (Phase Q); unbeaufsichtigt: Einheit «nicht erzeugbar» — ein Heft ohne Spur gibt es nicht |
+| Transkript eines Audio- oder Videobeitrags | der Beitrag ist als Quelle mit Raster nicht zulässig (keine Lösung mit Fundstelle möglich, Invariante 10); als Vertiefung nur, wenn ein vom Herausgeber veröffentlichter Begleittext im Archiv liegt, und dann mit dem Vermerk «nicht gegengehört» in `erwartung` |
+| ein Erwartungshorizont mit Fundstelle zu einer Leitfrage | Frage wird umformuliert, bis einer zu schreiben ist; nie umgekehrt |
+| ein Entscheid, den weder Bauplan noch Regel deckt | die Variante mit dem engsten Bezug zum Wortlaut der nRLP-Kompetenz; Entscheid, Grund und Alternativen in den Bericht |
+
+**Grund:** Invarianten 9 und 10; BERICHT §8 Punkte 1, 2, 7, 8.
+
+## E24 — `check-v42.mjs` führt die Fall-Begriffe des Piloten fest im Code (nicht geändert)
+
+**Befund:** `scripts/check-v42.mjs`, Zeilen 768–771: Zum Fall-Ausschluss aus
+`prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` kommen fest
+sechs Wörter des Piloten 1.3.1 hinzu — `leasing`, `konsumkredit`,
+`kleinkredit`, `e-bike`, `ebike`, `mobilität`. Sie gelten damit für **jede**
+v4.2-Einheit: Ein Heft zum Klima (4J 2.5) darf «Mobilität» nicht nennen, eine
+Einheit zu Finanzierungsarten (8.4.2) weder «Leasing» noch «Konsumkredit».
+**Entscheid:** Das Skript bleibt unverändert (Scope-Zaun; der Brief verlangt
+bei Skriptfehlern die Eskalation). Die Skill kennt die sechs Wörter als
+«gesperrt, bis das Skript korrigiert ist» und meldet eine Einheit, deren
+Gegenstand eines davon braucht, als nicht erzeugbar.
+**Empfehlung an Pietro:** die sechs festen Wörter streichen; die Gold-Einheit
+führt vier davon ohnehin in ihrer eigenen Liste und bleibt grün.
+**Folge für den T2-Test:** 2.1–2.4 sind nicht betroffen; 4J 2.5 (Klima) erst
+nach der Korrektur.
+
+## E25 — Auftragsbogen A2/A3 richten sich nach den Produkten des Auftrags (Zaun geöffnet durch das Leitprinzip)
+
+**Befund:** `DocAuftragsbogen.tsx` und `docx-auftragsbogen-v42.ts` nehmen
+Schritt 04 fest als schriftliches Produkt (A2, Arbeitsfläche «schriftlich und
+bildlich») und Schritt 05 fest als Sprachnachricht (A3, drei Stationen im Code,
+Satz zur Abgabe der Sprachnachricht). Ein Auftrag mit anderen Sprachmodi
+(Leitfaden §7.2) passt nicht hinein.
+
+**Entscheid:** neues optionales Feld `gemeinsamer_auftrag.produkte` — genau
+zwei Einträge, der erste belegt A2, der zweite A3:
+
+| Feld | Bedeutung |
+|---|---|
+| `schritt` | Nummer des Schritts (1–5), dessen Produkt die Seite trägt; Titel und Hint kommen von dort |
+| `form` | `"flaeche"` (freie Arbeitsfläche: alles Schriftliche und Bildliche) oder `"spur"` (Stationen mit Schreibzeilen: Planung eines mündlichen Beitrags, Gesprächs oder einer Diskussion) |
+| `modus` | der Sprachmodus dieses Produkts, wörtlich einer aus `gemeinsamer_auftrag.sprachmodi`; zwei Einträge dürfen denselben tragen |
+| `stationen` | nur `spur`: zwei bis vier Stationen in Ich-Form |
+| `hinweis` | nur `spur`: der Satz über den Stationen (wie vorgehen, wie abgeben) |
+| `dauer` | nur `spur`, optional: Zieldauer («3–4 Minuten»); ohne Angabe entfällt die Zeile «Ziel … · Probelauf» |
+
+**Fehlt das Feld, rendert der Bogen genau wie bisher** (Gold: Schritt 04 Fläche,
+Schritt 05 Sprechspur mit den drei festen Stationen). Regel für die Skill und
+für `check-v42.mjs` (`ERR_V42_AUFTRAG_PRODUKTE`): genau zwei Einträge;
+`schritt` 1–5 und verschieden; `form` einer der zwei Werte; jeder Modus aus
+`sprachmodi` ist `modus` mindestens eines Eintrags, und jeder `modus` steht in
+`sprachmodi` (Abdeckung; trägt der Auftrag nur einen Modus, haben beide
+Einträge denselben — etwa Entwurf und Reinschrift, Planung und Durchführung); `spur` verlangt
+`stationen` (2–4, je ≤ 60 Zeichen) und `hinweis` (≤ 260 Zeichen).
+**Warum zwei Formen und nicht je Modus eine:** Was sich unterscheidet, ist die
+Arbeitsweise auf dem Papier — frei gestalten oder einen Ablauf planen. Ein
+Gespräch, ein Statement und eine Sprachnachricht planen sich alle über
+Stationen; ein Brief, ein Plakat und ein Entscheidungsblatt brauchen eine
+Fläche. Eine dritte Form wäre ein zweiter Sonderfall.
+**Bedingung erfüllt, wenn:** Export der Gold-Einheit vor und nach dem Eingriff
+— HTML bytegleich, Word gleiche Seitenzahl; `bestand-v42 --pruefen` unverändert.
+**Rückgängig:** `git revert` des Commits; das Feld ist additiv.
+
+## E26 — Produktbild: zwei weitere Blockarten (Zaun geöffnet durch das Leitprinzip)
+
+**Befund:** `ProduktBildBlock` kennt Liste (`eintraege`) und Tabelle (`kopf`,
+`zeilen`). Ein Brief, ein Statement oder ein Gespräch lässt sich damit nicht
+zeigen, ohne es als Stichwortliste zu verbiegen.
+
+**Entscheid:** zwei neue optionale Felder an `ProduktBildBlock`:
+
+| Feld | Form | Wofür |
+|---|---|---|
+| `text` | `string[]` — Absätze in Schreibschrift | Fliesstext: Brief, Statement, Kommentar, Leserbrief |
+| `wechsel` | `{ wer: string; text: string; marke?: string }[]` | Wechselrede: Gespräch, Diskussion, Interview — Sprecher links, Beitrag rechts |
+
+Ein Block trägt genau eine der vier Arten (`eintraege` · `kopf`/`zeilen` ·
+`text` · `wechsel`). Liste und Tabelle bleiben unverändert; ein Blatt hat
+weiter zwei oder drei Blöcke, Titel und Legende wie bisher. Budgets für die
+neuen Arten werden am gerenderten Blatt gemessen (S. 6 des Hefts ist eng) und
+stehen danach in `check-v42.mjs` (`ERR_V42_PRODUKTBILD`).
+**Gemessen (02.10.2026, an einer Wegwerf-Kopie der Gold-Einheit; in  als ), Zeichen je Block über alle Absätze bzw. Beiträge:**
+
+| Blockart | Blatt | bei 2 Blöcken | bei 3 Blöcken |
+|---|---|---|---|
+|  | Beispiel im Heft (S. 6) | ≤ 4 Absätze, ≤ 520 Zeichen | ≤ 3 Absätze, ≤ 320 Zeichen |
+|  | Beispiel im Heft (S. 6) | ≤ 5 Beiträge, ≤ 360 Zeichen | ≤ 5 Beiträge, ≤ 180 Zeichen |
+|  | Lösungsbild | ≤ 5 Absätze, ≤ 1100 Zeichen | ≤ 5 Absätze, ≤ 750 Zeichen |
+|  | Lösungsbild | ≤ 8 Beiträge, ≤ 550 Zeichen | ≤ 6 Beiträge, ≤ 240 Zeichen |
+
+ ≤ 12 Zeichen. Gemischte Blätter (Text neben Tabelle oder Liste)
+sind nicht abgetastet — dort entscheidet . Zu E25 kam dazu:
+ ≤ 30 Zeichen.
+**Ergebnis der Bedingung (E25 und E26):** Gold-Export vorher und nachher — neun
+von neun HTML-Dateien bytegleich,  der Hefte, Lösungen und
+des Auftragsbogens gleich;  «26 Dokumente unverändert»;
+ auf Gold grün; Build Exit 0. Das Stylesheet ist nicht angefasst
+(es steckt in jedem exportierten HTML); die neuen Arten tragen Inline-Stile.
+**Nicht geprüft:** Aussehen in Word (nur Seiten gezählt), Workbench im Browser.
+**Rückgängig:** `git revert` des Commits; die Felder sind additiv.

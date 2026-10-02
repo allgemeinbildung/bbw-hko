@@ -1,0 +1,24 @@
+{
+  "id": "{{QUELLEN-ID = Dateiname ohne .json, nach references/ableitungsregeln.md}}",
+  "typ": "{{artikel|grafik|datensatz|video|audio|rechtstext — webseite nur für eine Vertiefung}}",
+  "titel": "{{TITEL, wie er im Heft gedruckt wird — ≤ 80 Zeichen, Vertiefung ≤ 70}}",
+  "titel_original": "{{WÖRTLICHER TITEL der Quelle — nur wenn titel gekürzt ist, sonst Schlüssel weglassen}}",
+  "herausgeber": "{{HERAUSGEBER — mit datum zusammen ≤ 40 Zeichen}}",
+  "datum": "{{JJJJ-MM-TT der Publikation; JJJJ-MM oder JJJJ, wenn die Quelle nicht mehr nennt; o. D., wenn sie kein Datum trägt}}",
+  "url": "{{ADRESSE, am Tag von sachlage_geprueft abgerufen}}",
+  "urn": "{{URN des SRF-Beitrags — nur SRF-Audio oder -Video, sonst Schlüssel weglassen}}",
+  "sprachmodus": "{{Rezeption schriftlich und bildlich|Rezeption mündlich|Rezeption audiovisuell}}",
+  "verortung": {
+    "absaetze": "{{AUSSCHNITT bei Text und Grafik: Absätze, Abschnitt oder Seite — ≤ 40 Zeichen; bei Audio und Video Schlüssel weglassen}}",
+    "von": "{{mm:ss — nur Audio und Video, sonst Schlüssel weglassen}}",
+    "bis": "{{mm:ss — nur Audio und Video, sonst Schlüssel weglassen}}"
+  },
+  "dauer_sek": "{{LÄNGE des Ausschnitts in Sekunden als Zahl — nur Audio und Video: Quelle ≤ 240, Vertiefung ≤ 360; sonst Schlüssel weglassen}}",
+  "woerter": "{{WÖRTER des Ausschnitts als Zahl, gezählt — nur Text: Artikel ≤ 450, Grafik oder Datensatz ≤ 250; sonst Schlüssel weglassen}}",
+  "kurzbeschrieb": "{{WAS die Quelle zeigt, eigene Worte, kein Satz aus der Quelle — ≤ 180 Zeichen}}",
+  "sachlage_geprueft": "{{JJJJ-MM-TT heute}}",
+  "archiv_ref": "{{QUELLEN-ID}}/gewaehlt",
+  "ersatz_ref": "{{ID der Ersatzquelle oder null (ohne Anführungszeichen), wenn es keine gibt}}",
+  "lizenz_hinweis": "{{Nur Link. Kein Text der Quelle im Repo. — dazu, was sonst zu Rechten oder Prüfung gilt}}",
+  "konstruiert": false
+}

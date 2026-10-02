@@ -1,0 +1,243 @@
+{
+  "id": "{{ORDNER}}_set",
+  "modul": "{{X.Y — Nummer des Lebensbezugs, wie in den Heften}}",
+  "modul_titel": "{{= modul_titel der Hefte}}",
+  "einheit_titel": "{{FOKUS als Titel, ohne Versionszusatz}}",
+  "lehrgang": "{{EFZ_3J|EFZ_4J — wie in den Heften}}",
+  "thema": "{{T<Nummer des Themas>}}",
+  "version": "2.1.0",
+  "status": "entwurf",
+  "prinzip_ref": "{{ORDNER}}_prinzip",
+  "kn_ref": "{{ORDNER}}_kn",
+  "herausforderungen": [
+    "{{ORDNER}}_hf_A",
+    "{{ORDNER}}_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "{{ORDNER}}_hf_A",
+      "konzept": "{{KERNKONZEPT von Heft A = dessen prinzip_handoff.kernkonzept}}"
+    },
+    {
+      "position": 2,
+      "herausforderung": "{{ORDNER}}_hf_B",
+      "konzept": "{{KERNKONZEPT von Heft B = dessen prinzip_handoff.kernkonzept}}"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "{{BEGRIFF = ein Knoten in mindmap_aeste[].punkte von Heft A — ≤ 25 Zeichen}}",
+      "definition": "{{DEFINITION in eigenen Worten, ohne Begriff des KN-Falls — ≤ 90 Zeichen}}",
+      "herkunft": "{{lehrmittel|heft}}",
+      "heft": "A"
+    },
+    {
+      "begriff": "{{BEGRIFF nur für eine Spur von Heft A, aus deren Raster — ≤ 25 Zeichen; je Heft und Spur höchstens 2}}",
+      "definition": "{{DEFINITION — ≤ 90 Zeichen}}",
+      "herkunft": "{{lehrmittel bei ohne_medien|quelle bei mit_medien}}",
+      "heft": "A",
+      "spur": "{{ohne_medien|mit_medien}}"
+    },
+    {
+      "begriff": "{{BEGRIFF = ein Knoten in mindmap_aeste[].punkte von Heft B — ≤ 25 Zeichen}}",
+      "definition": "{{DEFINITION — ≤ 90 Zeichen}}",
+      "herkunft": "{{lehrmittel|heft}}",
+      "heft": "B"
+    },
+    {
+      "begriff": "{{BEGRIFF nur für eine Spur von Heft B — ≤ 25 Zeichen}}",
+      "definition": "{{DEFINITION — ≤ 90 Zeichen}}",
+      "herkunft": "{{lehrmittel bei ohne_medien|quelle bei mit_medien}}",
+      "heft": "B",
+      "spur": "{{ohne_medien|mit_medien}}"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "{{TITEL des Auftrags}}",
+    "lebensbereich": "{{= prinzip.auftrag_lebensbereich — anders als Heft A, Heft B und KN}}",
+    "persona": {
+      "beruf": "Lernende/r EFZ, {{N}}. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "{{NEUE SITUATION in Ich-Form, braucht kein Medium, alle Angaben stehen im Text, kein Gegenstand aus A, B oder KN — ≤ 900 Zeichen}}",
+    "zahlen_tabelle": [
+      {
+        "label": "{{ZAHL der Situation, Bezeichnung; höchstens 4 Zeilen}}",
+        "wert": "{{WERT}}"
+      }
+    ],
+    "leitfrage": "{{LEITFRAGE des Auftrags in Ich-Form}}",
+    "mehrdeutigkeit": {
+      "trade_off": "{{SPANNUNGSFELD in der Form X vs. Y}}",
+      "hint": "{{HINWEIS in Sie-Form}}"
+    },
+    "aktivierte_trade_offs": [
+      "{{EINTRAG wörtlich aus prinzip.mehrdeutigkeits_architektur.trade_off_raum}}",
+      "{{ZWEITER EINTRAG wörtlich aus trade_off_raum — mindestens zwei}}"
+    ],
+    "sprachmodi": [
+      "{{= prinzip.modi_auftrag, als Menge gleich}}"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "{{einzel|partner|gruppe — einzel nur, wenn sprachmodi keinen Interaktionsmodus enthalten}}"
+      ],
+      "empfehlung": "{{VORSCHLAG für die Lehrperson, wie gearbeitet und wie rückgemeldet wird}}"
+    },
+    "auftrag": "{{AUFTRAG in einem Satz, Sie-Form}}",
+    "schritte": [
+      {
+        "label": "01 {{TÄTIGKEIT oder PRODUKT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS in Sie-Form — ≤ 140 Zeichen; über die fünf Schritte kommen die Werkzeuge aus Heft A und aus Heft B vor}}"
+      },
+      {
+        "label": "02 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS — ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "03 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS — ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "04 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS — ≤ 140 Zeichen; zwei der fünf Schritte tragen je ein Produkt}}"
+      },
+      {
+        "label": "05 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS — ≤ 140 Zeichen}}"
+      }
+    ],
+    "abgaben": [
+      "{{ABGABE je Sprachmodus des Auftrags — ≤ 80 Zeichen; höchstens 3 Einträge}}"
+    ],
+    "produkte": [
+      {
+        "schritt": "{{ZAHL 1–5: Schritt, dessen Produkt Seite A2 trägt}}",
+        "form": "{{flaeche ODER spur — aus dem Modus hergeleitet, references/phase-7-set.md}}",
+        "modus": "{{wörtlich ein Eintrag aus sprachmodi}}",
+        "stationen": [
+          "{{nur bei form spur: 2–4 Stationen in Ich-Form, je ≤ 60 — sonst Feld weglassen}}"
+        ],
+        "hinweis": "{{nur bei form spur: Satz über den Stationen, ≤ 260 — sonst Feld weglassen}}",
+        "dauer": "{{nur bei form spur, optional: Zieldauer, ≤ 30 — sonst Feld weglassen}}"
+      },
+      {
+        "schritt": "{{ZAHL 1–5, anderer Schritt: Produkt der Seite A3}}",
+        "form": "{{flaeche ODER spur}}",
+        "modus": "{{wörtlich ein Eintrag aus sprachmodi}}",
+        "stationen": [
+          "{{nur bei form spur — sonst Feld weglassen}}"
+        ],
+        "hinweis": "{{nur bei form spur — sonst Feld weglassen}}",
+        "dauer": "{{nur bei form spur, optional — sonst Feld weglassen}}"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "{{= titel von Heft A — ≤ 60 Zeichen}}",
+        "inhalte": [
+          "{{WAS der Auftrag aus Heft A braucht, mit Seite (S. n) — ≤ 60 Zeichen; 1 bis 3 Einträge}}"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "{{= titel von Heft B — ≤ 60 Zeichen}}",
+        "inhalte": [
+          "{{WAS der Auftrag aus Heft B braucht, mit Seite (S. n) — ≤ 60 Zeichen; 1 bis 3 Einträge}}"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "{{= kn.rubrik_shared.kriterien[0].name, zeichengenau}}",
+        "dimension": "SuK",
+        "stufen": [
+          "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+        ],
+        "indikator_produkt": "{{WORAN das Kriterium am Produkt des Auftrags zu sehen ist}}"
+      },
+      {
+        "kn_kriterium": "{{= kn.rubrik_shared.kriterien[1].name, zeichengenau}}",
+        "dimension": "SuK",
+        "stufen": [
+          "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+        ],
+        "indikator_produkt": "{{WORAN das Kriterium am Produkt des Auftrags zu sehen ist}}"
+      },
+      {
+        "kn_kriterium": "{{= kn.rubrik_shared.kriterien[2].name, zeichengenau}}",
+        "dimension": "Ges",
+        "stufen": [
+          "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+        ],
+        "indikator_produkt": "{{WORAN das Kriterium am Produkt des Auftrags zu sehen ist}}"
+      },
+      {
+        "kn_kriterium": "{{= kn.rubrik_shared.kriterien[3].name, zeichengenau}}",
+        "dimension": "Ges",
+        "stufen": [
+          "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+          "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+        ],
+        "indikator_produkt": "{{WORAN das Kriterium am Produkt des Auftrags zu sehen ist}}"
+      }
+    ],
+    "kontext_ausschluss": [
+      "{{GEGENSTÄNDE von Heft A, durch Komma getrennt}} (Heft A)",
+      "{{GEGENSTÄNDE von Heft B, durch Komma getrennt}} (Heft B)",
+      "{{BEGRIFFE des KN-Falls, durch Komma getrennt}} (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "{{MERKMAL 1 einer guten Lösung}}",
+        "{{MERKMAL 2}}",
+        "{{MERKMAL 3}}"
+      ],
+      "tragfaehig": "{{BEISPIEL einer tragfähigen Lösung}}",
+      "nicht_tragfaehig": "{{WAS nicht genügt}}"
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}

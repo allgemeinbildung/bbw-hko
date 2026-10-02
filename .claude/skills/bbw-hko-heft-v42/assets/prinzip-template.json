@@ -1,0 +1,141 @@
+{
+  "id": "{{ORDNER}}_prinzip",
+  "modul": "{{X.Y — Nummer des Lebensbezugs, wie in den Heften}}",
+  "kompetenz_nr": "{{X.Y.Z — erste Kompetenz von Heft A, wie im Ordnernamen}}",
+  "topic_slug": "{{SLUG des Ordners ohne Nummer und ohne Lehrgang-Suffix}}",
+  "lehrgang": "{{EFZ_3J|EFZ_4J — wie in den Heften}}",
+  "version": "2.1.0",
+  "erstellt_am": "{{JJJJ-MM-TT heute}}",
+  "kern_kompetenzversprechen": "{{Ich kann … — ein Satz mit Verb auf K3/K4, trägt beide Hefte}}",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "{{HERAUSFORDERUNG von Heft A: Gegenstand + Verb in der Grundform}}",
+      "konfliktart": "{{KONFLIKTART von Heft A in der Form X vs. Y}}",
+      "handlungsprodukt_typ": "{{PRODUKT von Heft A: Typ und Format}}",
+      "kompetenzen": [
+        "{{X.Y.Z — = nrlp.nr_primary von Heft A}}"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "{{HERAUSFORDERUNG von Heft B: Gegenstand + Verb in der Grundform}}",
+      "konfliktart": "{{KONFLIKTART von Heft B in der Form X vs. Y}}",
+      "handlungsprodukt_typ": "{{PRODUKT von Heft B: Typ und Format}}",
+      "kompetenzen": [
+        "{{X.Y.Z — = nrlp.nr_primary von Heft B}}"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      "{{SK-NUMMERN als Zahlen = nrlp.sk von Heft A}}"
+    ],
+    "B": [
+      "{{SK-NUMMERN als Zahlen = nrlp.sk von Heft B}}"
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      "{{SK-NUMMERN als Zahlen, die der KN prüft — Auswahl aus A und B}}"
+    ]
+  },
+  "aspekte": {
+    "{{ASPEKT wörtlich wie im Datensatz — je Aspekt der Einheit ein Schlüssel}}": "{{R-STUFE dieses Aspekts für das Thema}}"
+  },
+  "modi_units": [
+    "{{= modi_pro_heft.A ∪ modi_pro_heft.B, je Modus ein Eintrag}}"
+  ],
+  "modi_kn": [
+    "{{SPRACHMODI, die der KN über seine drei Formen verlangt, wörtlich wie im Datensatz}}"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "{{SPANNUNGSFELD in der Form X vs. Y — je Spannungsfeld ein Eintrag}}"
+    ],
+    "verbindlich": "{{SATZ: beide Seiten bleiben begründbar, bezogen auf den Gegenstand der Einheit}}"
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "{{PRINZIP der Einheit in einem Satz, ohne Fall}}",
+    "transferfeld": "{{WORAUF das Prinzip übertragbar ist, mit Beispielen, keines davon aus A, B, Auftrag oder KN}}"
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "{{R-STUFE der Einheit im Thema}}",
+    "r2_voraussicht": "{{THEMA, in dem der Gegenstand das nächste Mal vorkommt, mit Stichwort}}",
+    "r3_voraussicht": "{{THEMA danach, mit Stichwort}}"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "{{Kap. X.Y}}",
+        "titel": "{{KAPITELTITEL — Stichworte in eigenen Worten}}",
+        "seiten": "{{Seite aa-bb — am Kapiteltext geprüft}}"
+      }
+    ],
+    "konzepte": [
+      "{{FACHBEGRIFF aus den Kapiteln — je Begriff ein Eintrag}}"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, N. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "{{BEGRIFF des KN-Falls, der in keinem Heft, im Auftrag, im Glossar und in keiner Quellenkarte stehen darf — je Begriff ein Eintrag, lang und eindeutig genug, dass er in keinem anderen Wort steckt}}"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "{{= nrlp.sprachmodi von Heft A}}"
+    ],
+    "B": [
+      "{{= nrlp.sprachmodi von Heft B}}"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "{{NAME eines SuK-Kriteriums aus kn.rubrik_shared}}",
+      "{{NAME eines Ges-Kriteriums aus kn.rubrik_shared}}"
+    ],
+    "B": [
+      "{{NAME des anderen SuK-Kriteriums}}",
+      "{{NAME des anderen Ges-Kriteriums}}"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "{{position_gegenposition|modell_eigener_fall|recht_praxis — Schlüssel nur, wenn Heft A die Spur hat}}",
+      "mit_medien": "{{lehrmittel_quelle|position_gegenposition|modell_eigener_fall|recht_praxis|quelle_quelle — Schlüssel nur, wenn Heft A die Spur hat}}"
+    },
+    "B": {
+      "ohne_medien": "{{wie A, aber anderer Wert als A in derselben Spur}}",
+      "mit_medien": "{{wie A, aber anderer Wert als A in derselben Spur}}"
+    }
+  },
+  "mindmap_zentrum_kurz": "{{KURZFORM des anker_statement — ≤ 40 Zeichen, wird mindmap_zentrum in A und B}}",
+  "modi_auftrag": [
+    "{{= modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B); höchstens zwei}}"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)",
+  "auftrag_lebensbereich": "{{LEBENSBEREICH des gemeinsamen Auftrags — anders als Heft A, Heft B und KN}}"
+}
