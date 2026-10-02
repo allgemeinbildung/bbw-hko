@@ -392,3 +392,28 @@ ersten Mitnahme-Zeile (Seite 8); Anweisung zur Mindmap sagt nicht, was beim
 Ast «gilt auch bei …» einzutragen ist und woher die Raster-Begriffe kommen;
 die Arbeitsanweisung auf Seite 1 («Markieren Sie die Fragen …») meint Stellen,
 nicht Fragen; «gemeinsamer Auftrag» wird auf Seite 8 nicht verortet.
+
+## E16 — Rückmeldung Pietro vom 02.10.2026 (nach der ersten Durchsicht der Gold-Hefte)
+
+Diese vier Punkte hat Pietro selbst entschieden; sie gehen dem Leitfaden vor.
+
+1. **QR-Code nur einmal.** Er steht auf Seite 3 in der Quellenkarte, wo die
+   Quelle gebraucht wird, nicht mehr zusätzlich auf Seite 1 (Leitfaden §3 sah
+   beide vor). Seite 1 nennt die Quelle nur noch in einer Zeile mit Verweis auf
+   Seite 3.
+2. **«Pflichtquelle» heisst «Quelle».** Alles ist Pflicht, ausser es ist als
+   freiwillig bezeichnet. Im Heft, auf der QR-Seite, in der Übersicht und im
+   Begleiter steht «Quelle», daneben «Ersatzquelle» und «Vertiefung
+   (freiwillig)». Intern bleiben `rolle: "pflicht"` und die IDs
+   `q-131a-pflicht` … (nach dem ersten Druck ohnehin fest, E5).
+3. **Schreibfelder füllen die Seite.** Die Höhen aus Leitfaden §3.1
+   (`feld_hoehe_mm`: 35 / 45 / 25 / 60 bzw. 45) gelten als Mindesthöhe; der
+   freie Platz der Seiten 2, 3 und 4 geht an die Schreibflächen und an höhere
+   Rasterzeilen. Damit ist der Befund aller vier Blindleser («Felder zu klein»,
+   E15) erledigt.
+4. **Vertiefungen zum Arbeiten.** Die zwei Vertiefungskarten auf Seite 4
+   bekommen je einen Hinweis, was genau zu lesen, hören oder sehen ist, den
+   Kurzbeschrieb und ein Schreibfeld für die Antwort auf die Leitfrage.
+
+**Folge für `check-v42.mjs`:** `feld_hoehe_mm` bleibt als Mindesthöhe in den
+Daten und wird weiter geprüft. **Rückgängig:** `git revert` des Commits zu E16.

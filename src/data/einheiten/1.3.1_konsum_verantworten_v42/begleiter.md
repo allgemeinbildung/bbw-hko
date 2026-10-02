@@ -138,9 +138,9 @@ Jedes Heft besteht aus zwei Bogen A3, also acht Seiten A4. Die Doppelseite 6–7
 
 | S. | Titel | Lernende tun | Spur-abhängig | Min. |
 |---|---|---|---|---|
-| 1 | Herausforderung | Situation lesen, offene Fragen markieren | Medien: Kurzeintrag der Pflichtquelle mit QR | 8 |
+| 1 | Herausforderung | Situation lesen, offene Fragen markieren | Medien: Kurzeintrag der Quelle (QR auf S. 3) | 8 |
 | 2 | Wissensecke I | LF1 und LF2 schriftlich | — | 27 |
-| 3 | Quelle | lesen, Raster füllen, Befund schreiben | LF3: Pflichtquelle (Medien) oder Lehrmittel-Abschnitt mit Beispielzeile (ohne) | 25 |
+| 3 | Quelle | lesen, Raster füllen, Befund schreiben | LF3: Quelle (Medien) oder Lehrmittel-Abschnitt mit Beispielzeile (ohne) | 25 |
 | 4 | Wissensecke II | LF4 schriftlich | Kasten: Vertiefung (Medien) oder Denkhilfe (ohne) | 15 |
 | 5 | Auftrag | Auftrag lesen; vor der Abgabe Stufe ankreuzen | — | 5 |
 | 6 | Methoden | nachschlagen | Karte 2: Rezeptionswerkzeug der Spur | — |
@@ -172,7 +172,7 @@ Jedes Heft gibt es in zwei Spuren. Beide führen über denselben Kern zum selben
 | Was | Heft A | Heft B |
 |---|---|---|
 | LF3, Spur ohne Medien | Lehrmittel Kap. 2.7, S. 73–77; Raster mit Beispielzeile, drei weitere Aussagen | Lehrmittel Kap. 8.2, S. 199–200; Raster mit Beispielzeile, drei weitere Aussagen |
-| LF3, Spur mit Medien | Pflichtquelle: Artikel (nau.ch / Keystone-SDA); Raster ohne Beispielzeile | Pflichtquelle: Statistik 2025 der Schuldenberatung Schweiz, Seite 7 (PDF); Raster ohne Beispielzeile |
+| LF3, Spur mit Medien | Quelle: Artikel (nau.ch / Keystone-SDA); Raster ohne Beispielzeile | Quelle: Statistik 2025 der Schuldenberatung Schweiz, Seite 7 (PDF); Raster ohne Beispielzeile |
 | LF4, Pol-Typ ohne Medien | Modell ↔ eigener Fall | Position ↔ Gegenposition |
 | LF4, Pol-Typ mit Medien | Lehrmittel ↔ Quelle | Position ↔ Gegenposition |
 | Kasten S. 4 | ohne: Denkhilfe · mit: Vertiefung (2 Karten) | ohne: Denkhilfe · mit: Vertiefung (2 Karten) |
@@ -188,7 +188,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 
 ### Spur mit Medien
 
-- **LF3** arbeitet mit einer **Pflichtquelle**: Kurzeintrag mit QR auf S. 1, Quellenkarte mit Auftrag und Raster auf S. 3, **ohne** Beispielzeile.
+- **LF3** arbeitet mit einer **Quelle**: Kurzeintrag auf S. 1, Quellenkarte mit QR-Code, Auftrag und Raster auf S. 3, **ohne** Beispielzeile.
 - **LF4** darf die Quelle einbeziehen (Heft A: Lehrmittel gegen Quelle).
 - **S. 4** zeigt im Kasten «Vertiefung» zwei weitere Quellen mit je einer Leitfrage, ohne Raster. Sie sind **freiwillig** (Plus, Hausaufgabe); ein leeres Raster dazu lässt sich auf der QR-Seite ausdrucken.
 
@@ -204,12 +204,12 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso der Erwartungshorizont; di
 ### Vorbereitung der Spur mit Medien
 
 - **QR-Seite:** Die QR-Codes in den Heften führen auf `https://bbw-hko.ch/m/1.3.1_konsum_verantworten_v42` — Heft A auf den Anker `#a`, Heft B auf `#b`. Öffne die Seite vor der Lektion einmal selbst.
-- **Geräte:** Die Lernenden brauchen ein Gerät mit Internetzugang, auf dem sie die QR-Seite öffnen. Die Pflichtquellen sind ein Artikel (Heft A) und ein PDF, davon nur Seite 7 (Heft B), beide ohne Ton. Der Link öffnet das PDF auf Seite 7, manche Handys zeigen trotzdem Seite 1 — sag die Seitenzahl an.
+- **Geräte:** Die Lernenden brauchen ein Gerät mit Internetzugang, auf dem sie die QR-Seite öffnen. Die Quellen sind ein Artikel (Heft A) und ein PDF, davon nur Seite 7 (Heft B), beide ohne Ton. Der Link öffnet das PDF auf Seite 7, manche Handys zeigen trotzdem Seite 1 — sag die Seitenzahl an.
 - **Kopfhörer:** nur für die Vertiefungen. Vertiefung A1 und B1 sind Audiobeiträge, Vertiefung A2 ist ein Video in Mundart mit hochdeutschen Untertiteln.
 - **Links:** Prüfe vor dem Einsatz die Links in Kap. 5 (Spalte «Geprüft am»).
 
 > [!warnung] Wenn ein Link nicht geht
-> Fällt die **Pflichtquelle** aus, tritt die **Ersatzquelle** an ihre Stelle: gleicher Auftrag, gleiches Raster (Kap. 5). In Heft B ist das die BFS-Grafik «Steuerrückstand 2024»; sie zeigt, wer im Rückstand ist, nicht wie man in Schulden gerät. Die Musterlösung zu LF3 der Medien-Spur nennt dafür eine eigene Zeile «Mit Ersatzquelle». Fällt eine **Vertiefung** aus, entfällt sie — sie ist freiwillig. Geht gar nichts, bleibt die Spur ohne Medien: Ihre Seiten 3 und 4 brauchen nur das Lehrmittel, Kern, Produkt und Kriterien sind gleich. Halte dafür einige Exemplare bereit.
+> Fällt die **Quelle** aus, tritt die **Ersatzquelle** an ihre Stelle: gleicher Auftrag, gleiches Raster (Kap. 5). In Heft B ist das die BFS-Grafik «Steuerrückstand 2024»; sie zeigt, wer im Rückstand ist, nicht wie man in Schulden gerät. Die Musterlösung zu LF3 der Medien-Spur nennt dafür eine eigene Zeile «Mit Ersatzquelle». Fällt eine **Vertiefung** aus, entfällt sie — sie ist freiwillig. Geht gar nichts, bleibt die Spur ohne Medien: Ihre Seiten 3 und 4 brauchen nur das Lehrmittel, Kern, Produkt und Kriterien sind gleich. Halte dafür einige Exemplare bereit.
 
 ## 3. Herausforderung A — Bedürfnisse ordnen
 
@@ -264,7 +264,7 @@ Die fünf Schritte auf S. 5:
 
 ### Hinweise zu jeder Seite
 
-**S. 1 — Herausforderung (8 Min.).** Die Lernenden markieren beim Lesen, was offen ist. Genau diese Fragen hakt der Quer-Check auf S. 8 wieder ab — lass sie darum nicht überspringen. In der Medien-Spur steht hier der Kurzeintrag der Pflichtquelle mit QR.
+**S. 1 — Herausforderung (8 Min.).** Die Lernenden markieren beim Lesen, was offen ist. Genau diese Fragen hakt der Quer-Check auf S. 8 wieder ab — lass sie darum nicht überspringen. In der Medien-Spur steht hier der Kurzeintrag der Quelle; der QR-Code steht auf S. 3, wo sie gebraucht wird.
 
 **S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) liefert die Kategorien der Landkarte: Existenz- und Wahlbedürfnis, die fünf Stufen nach Maslow und den Unterschied zwischen Bedürfnis und Gut (Kap. 2.7, S. 73–75). LF2 (Anwenden) verlangt fünf eigene Anschaffungen oder Wünsche im Dreischritt Gut → Bedürfnis → Art.
 
@@ -274,7 +274,7 @@ Die fünf Schritte auf S. 5:
 **S. 3 — Quelle (25 Min.).**
 
 - *Spur ohne Medien:* Lehrmittel Kap. 2.7, S. 73–77. Einen Abschnitt «Einflüsse auf Bedürfnisse» gibt es im Lehrmittel nicht; LF3 fragt darum, wodurch **Kaufwünsche und Nachfrage** beeinflusst werden. Die erste Rasterzeile ist das Beispiel und belegt die Werbung (S. 73); gesucht sind **drei weitere** Aussagen. Die Fundstellen liegen auf S. 74, 76 und 77. Fünf Seiten in zehn Leseminuten sind knapp — verweise auf die drei Fundseiten, die auch die Strategien im Heft nennen.
-- *Spur mit Medien:* Pflichtquelle ist ein Agenturartikel (421 Wörter) über eine Studie mit 10- bis 17-Jährigen. Das Raster fragt nach Absatz, Kernaussage, Beleg oder Zahl und dem Begriff aus LF1.
+- *Spur mit Medien:* Quelle ist ein Agenturartikel (421 Wörter) über eine Studie mit 10- bis 17-Jährigen. Das Raster fragt nach Absatz, Kernaussage, Beleg oder Zahl und dem Begriff aus LF1.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt einen überprüfbaren Massstab und den Entscheid zum Handy.
 
@@ -286,7 +286,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Stufe an; Schritt 05 verlangt danach eine Verbesserung.
 
-**S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Pflichtquelle.
+**S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Quelle.
 
 **S. 7 — Arbeitsfläche (40 Min.).** Mindestens acht Einträge, je Gut → Bedürfnis als Stichwort. Jeder Eintrag bekommt mit Farbe oder Symbol eine von drei Markierungen: echt · geweckt · geweckt, aber berechtigt. Bei geweckten steht der Einfluss aus LF3 dabei.
 
@@ -301,7 +301,7 @@ Die fünf Schritte auf S. 5:
 > In LF3 stammen Klasse, Kollegen und Spontankauf aus der eigenen Beobachtung, nicht aus dem Lehrmittel bzw. dem Artikel. Beides ist erlaubt, aber im Raster muss erkennbar sein, was belegt und was beobachtet ist. Auch die Zuordnung zu einem LF1-Begriff ist eine begründete Deutung der Lernenden; mehrere Zuordnungen sind gültig.
 
 > [!warnung] Prozente als Schweizer Werte lesen (Spur mit Medien)
-> Die Studie hinter der Pflichtquelle stammt aus Deutschland und befragte 10- bis 17-Jährige. Die Wege, über die Kaufwünsche entstehen, lassen sich übertragen, die Prozentzahlen nicht.
+> Die Studie hinter der Quelle stammt aus Deutschland und befragte 10- bis 17-Jährige. Die Wege, über die Kaufwünsche entstehen, lassen sich übertragen, die Prozentzahlen nicht.
 
 > [!warnung] Werbung erkannt, Umfeld übersehen
 > Lernende benennen Werbung schnell als Einfluss, blenden aber den Druck aus dem eigenen Umfeld aus — in dieser Situation ist er mindestens so wichtig (zwei aus der Klasse hatten dieselben Kopfhörer).
@@ -423,7 +423,7 @@ Die fünf Schritte auf S. 5:
 
 ### Hinweise zu jeder Seite
 
-**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Pflichtquelle mit QR: die Statistik 2025 der Schuldenberatung Schweiz, Seite 7.
+**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Quelle mit QR: die Statistik 2025 der Schuldenberatung Schweiz, Seite 7.
 
 **S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die Zahlen für das eigene Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
 
@@ -433,7 +433,7 @@ Die fünf Schritte auf S. 5:
 **S. 3 — Quelle (25 Min.).**
 
 - *Spur ohne Medien:* Lehrmittel Kap. 8.2, S. 199–200. Die erste Rasterzeile ist das Beispiel («Mehr ausgeben als haben»); gesucht sind **drei weitere** Aussagen zu Ursachen oder Folgen von Verschuldung. Die Mahnung selbst kommt in Kap. 8.2 nicht vor — sie steht beim Zahlungsverzug (Kap. 2.4, S. 62).
-- *Spur mit Medien:* Pflichtquelle ist die Statistik 2025 der Schuldenberatung Schweiz, **Seite 7**: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (114 Wörter). Die Lernenden tragen vier Werte mit Aussage ein, die zeigen, wie Menschen in der Schweiz in Schulden geraten oder wie lange sie darin bleiben; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Die Methodenkarte «Eine Grafik lesen» ersetzt hier das Raster-Werkzeug. Lass zuerst die Titel genau lesen: Wer wird gezählt, und für welches Jahr gilt der Wert? Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören nicht zum Auftrag.
+- *Spur mit Medien:* Quelle ist die Statistik 2025 der Schuldenberatung Schweiz, **Seite 7**: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (114 Wörter). Die Lernenden tragen vier Werte mit Aussage ein, die zeigen, wie Menschen in der Schweiz in Schulden geraten oder wie lange sie darin bleiben; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Die Methodenkarte «Eine Grafik lesen» ersetzt hier das Raster-Werkzeug. Lass zuerst die Titel genau lesen: Wer wird gezählt, und für welches Jahr gilt der Wert? Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören nicht zum Auftrag.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt zwei bis drei Anpassungen, zwei Schutzregeln als Wenn-dann-Satz und eine Antwort auf den stärksten Einwand. Die Aufgabe ist in beiden Spuren wortgleich.
 
@@ -539,17 +539,17 @@ Die Tabelle wird beim Laden aus der Quellenkartei erzeugt; sie zeigt den Stand, 
 
 **Was du über die Quellen wissen musst**
 
-- **Pflichtquelle A** beruht auf einer Erhebung in **Deutschland** mit 10- bis 17-Jährigen. Die Wege, über die Kaufwünsche entstehen, sind übertragbar; die Prozentzahlen sind keine Schweizer Werte.
+- **Quelle A** beruht auf einer Erhebung in **Deutschland** mit 10- bis 17-Jährigen. Die Wege, über die Kaufwünsche entstehen, sind übertragbar; die Prozentzahlen sind keine Schweizer Werte.
 - **Vertiefung A1** ist nicht gegengehört: Es gibt kein Transkript, der Kurzbeschrieb stützt sich auf den von SRF veröffentlichten Begleittext. Hör den Beitrag vor dem Einsatz selbst an.
 - **Vertiefung A2** ist in Mundart, mit hochdeutschen Untertiteln.
-- **Pflichtquelle B** gilt nur mit ihrer **Seite 7** («Gründe für die Überschuldung», «Dauer der Verschuldung»). Die Gründe sind eine **Mehrfachnennung** — die Prozente nicht zusammenzählen. Gezählt sind Haushalte, die erstmals eine Schuldenberatung aufsuchen; die Ratsuchenden sind meist zwischen 30 und 49 Jahre alt, also meist nicht junge Leute wie die Lernenden.
+- **Quelle B** gilt nur mit ihrer **Seite 7** («Gründe für die Überschuldung», «Dauer der Verschuldung»). Die Gründe sind eine **Mehrfachnennung** — die Prozente nicht zusammenzählen. Gezählt sind Haushalte, die erstmals eine Schuldenberatung aufsuchen; die Ratsuchenden sind meist zwischen 30 und 49 Jahre alt, also meist nicht junge Leute wie die Lernenden.
 - Der Link zeigt auf **Seite 7 eines PDF**; manche Handys öffnen trotzdem Seite 1 — sag die Seitenzahl an. Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören **nicht zum Auftrag**.
 - **Ersatzquelle B** (BFS-Grafik «Steuerrückstand 2024») — falls sie zum Einsatz kommt: Sie zählt **Personen in Haushalten** mit mindestens einem Steuerrückstand, nicht Schuldnerinnen und Schuldner. Der abgesetzte Teil eines Balkens ist ein **Vertrauensbereich**. Die Grafik enthält auch Zeilen zu Nationalität und Sprachregion: Sie gehören **nicht zum Auftrag** (verortet sind Gesamt, Alter, Bildung, Erwerb) und sollen nicht als Erklärung gelesen werden. Sie zeigt, wer im Rückstand ist, nicht wie man in Schulden gerät; die Lösung zu LF3 nennt dafür die Zeile «Mit Ersatzquelle».
 - **Vertiefung B1** nennt eine Zahl von **2021** und ist in **Mundart**.
 - **Vertiefung B2** ist eine amtliche Seite ohne Datum; die Fristen darin sind am Gesetz geprüft (Stand 1. Januar 2026). Sie lädt nur im Browser vollständig.
 
 > [!hinweis] Links pflegen
-> Prüfe die Links **halbjährlich** und vor jedem Einsatz der Medien-Spur. Fällt eine Pflichtquelle dauerhaft aus, wird die Karte in der Quellenkartei ersetzt und die Lösung zu LF3 neu geschrieben — die Tabelle hier zieht dann von selbst nach.
+> Prüfe die Links **halbjährlich** und vor jedem Einsatz der Medien-Spur. Fällt eine Quelle dauerhaft aus, wird die Karte in der Quellenkartei ersetzt und die Lösung zu LF3 neu geschrieben — die Tabelle hier zieht dann von selbst nach.
 
 ## 6. Gemeinsamer Auftrag «Alle kommen ans Openair»
 
