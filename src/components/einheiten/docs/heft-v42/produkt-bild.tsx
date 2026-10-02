@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { Fragment, type CSSProperties } from 'react'
 import type { ProduktBild, ProduktBildBlock } from '../../../../lib/einheiten/types'
 
 /**
@@ -38,7 +38,19 @@ export function istZahl(s: string): boolean {
 function blockZeichen(b: ProduktBildBlock): number {
   const liste = (b.eintraege || []).reduce((n, e) => n + (e.text || '').length + (e.notiz || '').length * 0.8, 0)
   const tabelle = (b.zeilen || []).reduce((n, z) => n + z.zellen.join('  ').length, 0)
-  return liste + tabelle + (b.titel || '').length
+  // E26: Fliesstext und Wechselrede zählen wie Listentext. Ohne diese Felder bleibt die Summe, wie sie war.
+  const text = (b.text || []).reduce((n, t) => n + (t || '').length, 0)
+  const wechsel = (b.wechsel || []).reduce((n, w) => n + (w?.wer || '').length + (w?.text || '').length, 0)
+  return liste + tabelle + text + wechsel + (b.titel || '').length
+}
+
+/** Die vier Blockarten (E26). Tabelle vor Wechselrede vor Fliesstext; sonst Liste — wie bisher. */
+export type BlockArt = 'tabelle' | 'wechsel' | 'text' | 'liste'
+export function blockArt(b: ProduktBildBlock): BlockArt {
+  if (b.kopf?.length || b.zeilen?.length) return 'tabelle'
+  if (b.wechsel?.length) return 'wechsel'
+  if (b.text?.length) return 'text'
+  return 'liste'
 }
 
 /**
@@ -64,10 +76,11 @@ export function tabellenBonus(groesse: 'klein' | 'gross'): number {
 }
 
 /** Kreis als kleines Inline-SVG — Kontur in Tintenfarbe, Füllung nach Form. */
-export function MarkeSvg({ form, label }: { form: MarkeForm; label?: string }) {
+export function MarkeSvg({ form, label, style }: { form: MarkeForm; label?: string; style?: CSSProperties }) {
   return (
     <svg
       className="v42-pb-marke"
+      style={style}
       viewBox="0 0 10 10"
       role={label ? 'img' : undefined}
       aria-label={label || undefined}
@@ -96,6 +109,50 @@ function Liste({ bild, block }: { bild: ProduktBild; block: ProduktBildBlock }) 
         )
       })}
     </ul>
+  )
+}
+
+/**
+ * Abstände der Blockarten `text` und `wechsel` (E26) je Grösse. Inline statt in
+ * produkt-bild.css: das Stylesheet ist in jedes exportierte HTML eingebettet — eine neue
+ * Regel dort änderte die Datei jeder bestehenden Einheit. Klassen (`v42-pb-text`,
+ * `v42-pb-notiz`) sind die der Liste: gleiche Schrift, im Dokument «Lösungen» grün.
+ */
+const E26_ABSTAND: Record<'klein' | 'gross', { absatz: string; beitrag: string; spalte: string }> = {
+  klein: { absatz: '0.7mm', beitrag: '0.35mm', spalte: '1.2mm' },
+  gross: { absatz: '1.8mm', beitrag: '1.6mm', spalte: '2.5mm' },
+}
+
+/** Fliesstext: Absätze in derselben Schreibschrift wie die Listen. */
+function Fliesstext({ block, groesse }: { block: ProduktBildBlock; groesse: 'klein' | 'gross' }) {
+  const absaetze = (block.text || []).filter(Boolean)
+  return (
+    <div>
+      {absaetze.map((t, i) => (
+        <p key={i} className="v42-pb-text" style={{ margin: i < absaetze.length - 1 ? `0 0 ${E26_ABSTAND[groesse].absatz}` : 0 }}>{t}</p>
+      ))}
+    </div>
+  )
+}
+
+/** Wechselrede: je Beitrag der Sprecher links (fett, klein), der Beitrag rechts; Markierung wie bei Listen. */
+function Wechsel({ bild, block, groesse }: { bild: ProduktBild; block: ProduktBildBlock; groesse: 'klein' | 'gross' }) {
+  const beitraege = (block.wechsel || []).filter((w) => w && w.text)
+  const mitMarke = beitraege.some((w) => markeForm(bild, w.marke))
+  const a = E26_ABSTAND[groesse]
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: `${mitMarke ? '0.95em ' : ''}max-content 1fr`, columnGap: a.spalte, rowGap: a.beitrag, alignItems: 'start' }}>
+      {beitraege.map((w, i) => {
+        const form = markeForm(bild, w.marke)
+        return (
+          <Fragment key={i}>
+            {mitMarke && <span>{form && <MarkeSvg form={form} label={markeText(bild, w.marke)} style={{ marginTop: '0.22em' }} />}</span>}
+            <span className="v42-pb-notiz" style={{ fontWeight: 700 }}>{w.wer}</span>
+            <span className="v42-pb-text">{w.text}</span>
+          </Fragment>
+        )
+      })}
+    </div>
   )
 }
 
@@ -164,7 +221,13 @@ export function ProduktBildBlatt({ bild, groesse, loesung = false }: { bild: Pro
         {bloecke.map((b, i) => (
           <section className="v42-pb-block" key={i}>
             <div className="v42-pb-blocktitel">{b.titel}</div>
-            {b.kopf?.length || b.zeilen?.length ? <Tabelle bild={bild} block={b} /> : <Liste bild={bild} block={b} />}
+            {(() => {
+              const art = blockArt(b)
+              if (art === 'tabelle') return <Tabelle bild={bild} block={b} />
+              if (art === 'wechsel') return <Wechsel bild={bild} block={b} groesse={groesse} />
+              if (art === 'text') return <Fliesstext block={b} groesse={groesse} />
+              return <Liste bild={bild} block={b} />
+            })()}
           </section>
         ))}
       </div>

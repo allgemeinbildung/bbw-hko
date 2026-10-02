@@ -11,10 +11,11 @@ import {
   Document, Paragraph, TextRun, Table, TableRow, TableCell,
   AlignmentType, BorderStyle, LineRuleType, TabStopType, WidthType, VerticalAlign,
 } from 'docx'
-import type { GemeinsamerAuftrag, SetJson } from './types'
+import type { AuftragProdukt, GemeinsamerAuftrag, SetJson } from './types'
 import { BBW_GRUEN, COLOR, p, schreibfeld, sectionHead, sectionProps, skizzeBox, tcell } from './docx-primitives'
 import {
-  SPRECHSPUR_STATIONEN, SPRECHSPUR_ZEILEN, glossarVerweis, schrittTeile, sozialformZeile, sprechDauer,
+  SPRECHSPUR_STATIONEN, SPRECHSPUR_ZEILEN, auftragProdukt, glossarVerweis, produktSchritt, produktStationen,
+  schrittTeile, sozialformZeile, spurZeilen, sprechDauer,
 } from '../../components/einheiten/docs/DocAuftragsbogen'
 
 export interface BuildAuftragsbogenOpts {
@@ -190,7 +191,9 @@ function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
 }
 
 // ---------------- A2 — Arbeitsfläche (Schritt 04) ----------------
-function seiteA2(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
+function seiteA2(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
+  const produkt = auftragProdukt(ga, 0)
+  if (produkt) return produktSeite(ga, set, 2, produkt)
   const s = ga.schritte?.[3]
   const [nr, label] = s ? schrittTeile(s.label, 3) : ['04', 'Entscheidungsblatt']
   return [
@@ -214,7 +217,77 @@ function schreibzeile(): Paragraph {
   })
 }
 
+/** Fusszeile von A3: Verweis aufs Glossar der Hefte, unter einer feinen Linie. */
+function verweisAbsatz(verweis: string): Paragraph {
+  return p(verweis, {
+    run: { size: 18, color: COLOR.inkSoft },
+    spacing: { before: 280, after: 0 },
+    border: { top: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 4 } },
+  })
+}
+
+/**
+ * A2/A3 mit `produkte` (E25) — Spiegel von <ProduktSeite>: Fläche oder Spur, je nach Form.
+ * Stationen, Zeilenzahl und Schritt kommen aus der Komponente.
+ */
+function produktSeite(ga: GemeinsamerAuftrag, set: SetJson, nr: 2 | 3, produkt: AuftragProdukt): (Paragraph | Table)[] {
+  const s = produktSchritt(ga, produkt)
+  const verweis = nr === 3 ? glossarVerweis(set.glossar) : null
+  const hint = (after: number) => s.hint
+    ? [p([new TextRun({ text: `Schritt ${s.nr}: `, bold: true, size: 18 }), new TextRun({ text: s.hint, size: 18 })], { spacing: { before: 0, after } })]
+    : []
+  if (produkt.form === 'flaeche') {
+    return [
+      ...sectionHead(`A${nr}`, s.label, AKZENT),
+      ...hint(100),
+      // Wie A2 bisher (226 mm); auf A3 nimmt der Glossar-Verweis am Fuss seinen Platz weg.
+      skizzeBox(verweis ? 212 : 226, `SCHRITT ${s.nr} · ${s.label.toUpperCase()} · ${(produkt.modus || '').toUpperCase()}`, AKZENT),
+      ...(verweis ? [verweisAbsatz(verweis)] : []),
+    ]
+  }
+  const out: (Paragraph | Table)[] = [...sectionHead(`A${nr}`, `${s.label} planen`, AKZENT), ...hint(40)]
+  if (produkt.hinweis) out.push(absatz(produkt.hinweis, 18, { after: 80 }))
+  const stationen = produktStationen(produkt)
+  const zeilen = spurZeilen(stationen.length)
+  const spur: Paragraph[] = []
+  stationen.forEach((station, i) => {
+    spur.push(new Paragraph({
+      children: [
+        new TextRun({ text: `${i + 1}   `, color: AKZENT, bold: true, size: 18, font: 'Consolas' }),
+        new TextRun({ text: station, bold: true, size: 20 }),
+      ],
+      spacing: { before: i ? 160 : 0, after: 0 },
+      keepNext: true,
+    }))
+    for (let z = 0; z < zeilen[i]; z++) spur.push(schreibzeile())
+  })
+  if (produkt.dauer) {
+    spur.push(new Paragraph({
+      children: [
+        new TextRun({ text: 'ENDE   ', color: AKZENT, bold: true, size: 16, font: 'Consolas' }),
+        new TextRun({ text: `Ziel ${produkt.dauer} · Probelauf:  ☐ zu kurz   ☐ passt   ☐ zu lang`, size: 18 }),
+      ],
+      spacing: { before: 160, after: 0 },
+    }))
+  }
+  if (spur.length) {
+    out.push(new Table({
+      width: { size: 100, type: WidthType.PERCENTAGE },
+      rows: [new TableRow({
+        children: [tcell(spur, {
+          borders: { ...OHNE_RAENDER, left: RAND(12, AKZENT) },
+          margins: { top: 0, bottom: 0, left: 240, right: 0 },
+        })],
+      })],
+    }))
+  }
+  if (verweis) out.push(verweisAbsatz(verweis))
+  return out
+}
+
 function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
+  const produkt = auftragProdukt(ga, 1)
+  if (produkt) return produktSeite(ga, set, 3, produkt)
   const s = ga.schritte?.[4]
   const [nr, label] = s ? schrittTeile(s.label, 4) : ['05', 'Sprachnachricht']
   const out: (Paragraph | Table)[] = [...sectionHead('A3', `${label} planen`, AKZENT)]
@@ -333,7 +406,7 @@ export function buildAuftragsbogen({ set, abteilung, logoPng = null }: BuildAuft
   const ga = set?.gemeinsamer_auftrag
   if (!set || !ga) return null
   const docTitel = `Auftragsbogen · ${ga.titel ?? ''}`.trim()
-  const seiten = [seiteA1(ga), seiteA2(ga), seiteA3(ga, set), seiteA4(ga)]
+  const seiten = [seiteA1(ga), seiteA2(ga, set), seiteA3(ga, set), seiteA4(ga)]
   return new Document({
     creator: 'HKO Renderer',
     title: docTitel,

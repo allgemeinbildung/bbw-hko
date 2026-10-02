@@ -245,8 +245,8 @@ function budgetKern(datei, sit) {
     ;(a?.punkte ?? []).forEach((p, j) => max(datei, `mindmap_aeste[${i}].punkte[${j}]`, p, 25))
   })
   anzahl(datei, 'mindmap_aeste (Knoten gesamt)', (sit.mindmap_aeste ?? []).flatMap((a) => a?.punkte ?? []), 0, 10, 'Knoten')
-  budgetProduktBild(datei, 'handlungsprodukt.beispielbild', hp.beispielbild, { eintraege: 5, text: 105 })
-  budgetProduktBild(datei, 'handlungsprodukt.loesungsbild', hp.loesungsbild, { eintraege: 7, text: 130 })
+  budgetProduktBild(datei, 'handlungsprodukt.beispielbild', hp.beispielbild, { eintraege: 5, text: 105, e26: PB_E26.klein })
+  budgetProduktBild(datei, 'handlungsprodukt.loesungsbild', hp.loesungsbild, { eintraege: 7, text: 130, e26: PB_E26.gross })
   anzahl(datei, 'abschluss.quercheck', sit.abschluss?.quercheck, 2, 2)
   ;(sit.abschluss?.quercheck ?? []).forEach((q, i) => max(datei, `abschluss.quercheck[${i}]`, q, 110))
   anzahl(datei, 'abschluss.mitnahme', sit.abschluss?.mitnahme, 3, 3)
@@ -299,6 +299,48 @@ function budgetAuftrag(ga) {
     anzahl(datei, `${b}.heft_bezug[${i}].inhalte`, h?.inhalte, 1, 3)
     ;(h?.inhalte ?? []).forEach((t, j) => max(datei, `${b}.heft_bezug[${i}].inhalte[${j}]`, t, 60))
   })
+}
+
+/**
+ * E25: `gemeinsamer_auftrag.produkte` — die zwei Produkte des Auftrags, das erste auf A2,
+ * das zweite auf A3 des Auftragsbogens. Geprueft nur, wenn das Feld vorhanden ist; ohne
+ * das Feld rendert der Bogen wie bisher.
+ */
+function regelAuftragProdukte(ga) {
+  const pr = ga?.produkte
+  if (pr === undefined) return
+  const datei = 'set.json'
+  const b = 'gemeinsamer_auftrag.produkte'
+  const E = 'Entscheid E25'
+  const err = (pfad, ist, soll, kat = 'regel') => add(kat, 'ERR_V42_AUFTRAG_PRODUKTE', datei, pfad, E, ist, soll)
+  if (!Array.isArray(pr) || pr.length !== 2) {
+    err(b, Array.isArray(pr) ? `${pr.length} Eintraege` : zeige(pr), 'genau 2 Eintraege (A2, A3)')
+    return
+  }
+  const modi = Array.isArray(ga.sprachmodi) ? ga.sprachmodi : []
+  pr.forEach((x, i) => {
+    const p = `${b}[${i}]`
+    if (!Number.isInteger(x?.schritt) || x.schritt < 1 || x.schritt > 5) err(`${p}.schritt`, zeige(x?.schritt), 'ganze Zahl 1–5')
+    if (x?.form !== 'flaeche' && x?.form !== 'spur') err(`${p}.form`, zeige(x?.form), '"flaeche" oder "spur"')
+    if (!modi.includes(x?.modus)) err(`${p}.modus`, zeige(x?.modus), `woertlich einer aus sprachmodi [${modi.join(' · ')}]`)
+    if (x?.form === 'spur') {
+      const st = x.stationen
+      if (!Array.isArray(st) || st.length < 2 || st.length > 4 || !st.every(istText)) err(`${p}.stationen`, Array.isArray(st) ? `${st.length} Stationen` : zeige(st), '2–4 Stationen, keine leer')
+      ;(Array.isArray(st) ? st : []).forEach((t, j) => {
+        if (len(t) > 60) err(`${p}.stationen[${j}]`, `${len(t)} Zeichen «${kurz(t)}»`, '≤ 60 Zeichen', 'budget')
+      })
+      if (!istText(x.hinweis)) err(`${p}.hinweis`, zeige(x.hinweis), 'gesetzt (Satz ueber den Stationen)')
+      else if (len(x.hinweis) > 260) err(`${p}.hinweis`, `${len(x.hinweis)} Zeichen`, '≤ 260 Zeichen', 'budget')
+      // Die Zeile «Ziel … · Probelauf» ist einzeilig bemessen.
+      if (x.dauer !== undefined && (!istText(x.dauer) || len(x.dauer) > 30)) err(`${p}.dauer`, zeige(x.dauer), 'Text ≤ 30 Zeichen oder weglassen', 'budget')
+    }
+  })
+  if (Number.isInteger(pr[0]?.schritt) && pr[0].schritt === pr[1]?.schritt) err(b, `beide schritt ${pr[0].schritt}`, 'zwei verschiedene Schritte')
+  // Abdeckung: zwei Eintraege duerfen denselben Modus tragen (Auftrag mit nur einem Sprachmodus).
+  for (const m of [...new Set(modi)]) {
+    const n = pr.filter((x) => x?.modus === m).length
+    if (n < 1) err(b, `«${m}» ist modus keines Eintrags`, 'jeder Modus aus sprachmodi ist modus mindestens eines Eintrags')
+  }
 }
 
 /** §3.1 Seiten 1/3/4, Quellenkarte. `rolle` aus dem Heft, das sie einbindet. */
@@ -524,6 +566,26 @@ function regel6(hefte, set, kn) {
  * Produkt als Bild (E17): drei Blöcke nebeneinander, Liste oder Tabelle. Das Beispielbild
  * steht im Heft auf S. 6 und ist darum enger als das Blatt im Dokument «Lösungen» der Lehrperson.
  */
+// Budgets der Blockarten `text` und `wechsel` (E26), gemessen am gerenderten Blatt
+// (messen-v42.mjs fuer das HTML, Seitenzahl in Word fuer das .docx; Gold-Einheit als Traeger,
+// je das engere der beiden Hefte und das engere der beiden Formate): `klein` = Heft
+// S. 6 unter den Methodenkarten, `gross` = Dokument «Lösungen». Zeichen zaehlen je Block,
+// ueber alle Absaetze bzw. Beitraege. Die Spalten sind bei drei Bloecken schmaler als bei
+// zwei — darum je Blockzahl eine Grenze. Gemessen an Blaettern mit lauter gleichen Bloecken;
+// ein gemischtes Blatt (Text neben Tabelle) zusaetzlich mit messen-v42.mjs pruefen.
+const PB_E26 = {
+  klein: {
+    2: { absaetze: 4, textZeichen: 520, beitraege: 5, wechselZeichen: 360 },
+    3: { absaetze: 3, textZeichen: 320, beitraege: 5, wechselZeichen: 180 },
+  },
+  gross: {
+    2: { absaetze: 5, textZeichen: 1100, beitraege: 8, wechselZeichen: 550 },
+    3: { absaetze: 5, textZeichen: 750, beitraege: 6, wechselZeichen: 240 },
+  },
+}
+/** Sprecher der Wechselrede: die Spalte ist so breit wie der laengste Name. */
+const PB_WER = 12
+
 function budgetProduktBild(datei, basis, bild, grenze) {
   if (!bild) {
     add('regel', 'ERR_V42_PRODUKTBILD', datei, basis, 'Entscheid E17', 'fehlt', 'vorhanden (Beispiel im Heft und Blatt im Dokument «Lösungen»)')
@@ -534,6 +596,7 @@ function budgetProduktBild(datei, basis, bild, grenze) {
   ;(bild.legende ?? []).forEach((l, i) => max(datei, `${basis}.legende[${i}].text`, l?.text, 28))
   const keys = new Set((bild.legende ?? []).map((l) => l?.key))
   anzahl(datei, `${basis}.bloecke`, bild.bloecke, 2, 3, 'Bloecke')
+  const e26 = grenze.e26[(bild.bloecke ?? []).length === 2 ? 2 : 3]
   ;(bild.bloecke ?? []).forEach((b, i) => {
     max(datei, `${basis}.bloecke[${i}].titel`, b?.titel, 32)
     anzahl(datei, `${basis}.bloecke[${i}].eintraege`, b?.eintraege, 0, grenze.eintraege)
@@ -543,7 +606,35 @@ function budgetProduktBild(datei, basis, bild, grenze) {
     })
     anzahl(datei, `${basis}.bloecke[${i}].zeilen`, b?.zeilen, 0, 12, 'Zeilen')
     ;(b?.zeilen ?? []).forEach((z, j) => max(datei, `${basis}.bloecke[${i}].zeilen[${j}].zellen[0]`, z?.zellen?.[0], 30))
-    for (const [liste, name] of [[b?.eintraege, 'eintraege'], [b?.zeilen, 'zeilen']]) {
+    // E26: genau eine Blockart je Block.
+    const voll = (x) => Array.isArray(x) && x.length > 0
+    const arten = [
+      voll(b?.eintraege) && 'eintraege', (voll(b?.kopf) || voll(b?.zeilen)) && 'kopf/zeilen',
+      b?.text !== undefined && 'text', b?.wechsel !== undefined && 'wechsel',
+    ].filter(Boolean)
+    if (arten.length !== 1) {
+      add('regel', 'ERR_V42_PRODUKTBILD', datei, `${basis}.bloecke[${i}]`, 'Entscheid E26', arten.length ? `${arten.length} Blockarten (${arten.join(' + ')})` : 'keine Blockart', 'genau eine von eintraege · kopf/zeilen · text · wechsel')
+    }
+    if (b?.text !== undefined) {
+      const pfad = `${basis}.bloecke[${i}].text`
+      if (!Array.isArray(b.text) || !b.text.every(istText)) add('regel', 'ERR_V42_PRODUKTBILD', datei, pfad, 'Entscheid E26', zeige(b.text), 'Liste nicht-leerer Absaetze')
+      else {
+        anzahl(datei, pfad, b.text, 1, e26.absaetze, 'Absaetze')
+        const summe = b.text.reduce((n, t) => n + len(t), 0)
+        if (summe > e26.textZeichen) add('budget', 'ERR_V42_BUDGET', datei, `${pfad} (alle Absaetze)`, B, `${summe} Zeichen`, `≤ ${e26.textZeichen} Zeichen je Block`)
+      }
+    }
+    if (b?.wechsel !== undefined) {
+      const pfad = `${basis}.bloecke[${i}].wechsel`
+      if (!Array.isArray(b.wechsel) || !b.wechsel.every((w) => istText(w?.wer) && istText(w?.text))) add('regel', 'ERR_V42_PRODUKTBILD', datei, pfad, 'Entscheid E26', kurz(zeige(b.wechsel), 80), 'Liste von Beitraegen mit wer und text')
+      else {
+        anzahl(datei, pfad, b.wechsel, 2, e26.beitraege, 'Beitraege')
+        b.wechsel.forEach((w, j) => max(datei, `${pfad}[${j}].wer`, w.wer, PB_WER))
+        const summe = b.wechsel.reduce((n, w) => n + len(w.text), 0)
+        if (summe > e26.wechselZeichen) add('budget', 'ERR_V42_BUDGET', datei, `${pfad} (alle Beitraege)`, B, `${summe} Zeichen`, `≤ ${e26.wechselZeichen} Zeichen je Block`)
+      }
+    }
+    for (const [liste, name] of [[b?.eintraege, 'eintraege'], [b?.zeilen, 'zeilen'], [Array.isArray(b?.wechsel) ? b.wechsel : [], 'wechsel']]) {
       ;(liste ?? []).forEach((e, j) => {
         if (e?.marke && !keys.has(e.marke)) {
           add('regel', 'ERR_V42_PRODUKTBILD', datei, `${basis}.bloecke[${i}].${name}[${j}].marke`, 'Entscheid E17', zeige(e.marke), 'ein key aus legende')
@@ -858,6 +949,7 @@ regel9Kontext(set, FALL_BEGRIFFE)
 
 if (set) {
   if (set.gemeinsamer_auftrag) budgetAuftrag(set.gemeinsamer_auftrag)
+  regelAuftragProdukte(set.gemeinsamer_auftrag)
   fallAusschluss('set.json', set.gemeinsamer_auftrag ?? {}, 'gemeinsamer_auftrag', FALL_BEGRIFFE, FALL_AUSNAHME)
   fallAusschluss('set.json', set.glossar ?? [], 'glossar', FALL_BEGRIFFE, FALL_AUSNAHME)
 }

@@ -10,10 +10,10 @@
 
 import {
   Paragraph, TextRun, Table, TableRow, TableCell,
-  AlignmentType, BorderStyle, LineRuleType, VerticalAlign, WidthType,
+  AlignmentType, BorderStyle, LineRuleType, TabStopType, VerticalAlign, WidthType,
 } from 'docx'
 import { COLOR, p, tcell } from './docx-primitives'
-import { blockGewichte, istZahl, markeForm, tabellenBonus, type MarkeForm } from '../../components/einheiten/docs/heft-v42/produkt-bild'
+import { blockArt, blockGewichte, istZahl, markeForm, tabellenBonus, type MarkeForm } from '../../components/einheiten/docs/heft-v42/produkt-bild'
 import type { ProduktBild, ProduktBildBlock } from './types'
 
 type Block = Paragraph | Table
@@ -102,6 +102,46 @@ function listeDocx(bild: ProduktBild, b: ProduktBildBlock, g: Groesse, tinte: st
   return out
 }
 
+/** E26 — Fliesstext: Absätze in der Schreibschrift der Listen. */
+function textDocx(b: ProduktBildBlock, g: Groesse, tinte: string): Paragraph[] {
+  const m = MASS[g]
+  const absaetze = (b.text || []).filter(Boolean)
+  return absaetze.map((t, i) => new Paragraph({
+    children: [hand(t, m.text, { color: tinte })],
+    spacing: { before: 0, after: i < absaetze.length - 1 ? (g === 'klein' ? 40 : 100) : m.luft, line: m.zeile, lineRule: LineRuleType.EXACT },
+  }))
+}
+
+/**
+ * E26 — Wechselrede: je Beitrag ein Absatz, Sprecher links (fett, klein), Beitrag hängend
+ * daneben. Die Sprecherspalte ist so breit wie der längste Name (Segoe Print, geschätzt);
+ * mit Markierungen steht davor eine Spalte für den Kreis.
+ */
+function wechselDocx(bild: ProduktBild, b: ProduktBildBlock, g: Groesse, tinte: string): Paragraph[] {
+  const m = MASS[g]
+  const beitraege = (b.wechsel || []).filter((w) => w && w.text)
+  const mitMarke = beitraege.some((w) => markeForm(bild, w.marke))
+  const marke = mitMarke ? (g === 'klein' ? 170 : 260) : 0
+  const laengster = Math.max(0, ...beitraege.map((w) => (w.wer || '').length))
+  // Zeichenbreite ≈ 0.68 em (fett); m.klein ist in halben Punkten, 1 pt = 20 Twips.
+  const links = marke + Math.round((laengster + 1) * (m.klein / 2) * 0.68 * 20)
+  const farbeWer = tinte === COLOR.ink ? COLOR.inkSoft : tinte
+  return beitraege.map((w) => {
+    const form = markeForm(bild, w.marke)
+    return new Paragraph({
+      children: [
+        ...(mitMarke ? [...(form ? [zeichen(form, m.text, tinte)] : []), hand('\t', m.klein)] : []),
+        hand(w.wer || '', m.klein, { bold: true, color: farbeWer }),
+        hand('\t', m.text),
+        hand(w.text, m.text, { color: tinte }),
+      ],
+      tabStops: [...(mitMarke ? [{ type: TabStopType.LEFT, position: marke }] : []), { type: TabStopType.LEFT, position: links }],
+      indent: { left: links, hanging: links },
+      spacing: { before: 0, after: m.luft, line: m.zeile, lineRule: LineRuleType.EXACT },
+    })
+  })
+}
+
 function tabelleDocx(bild: ProduktBild, b: ProduktBildBlock, g: Groesse, tinte: string): Table {
   const m = MASS[g]
   const zeilen = (b.zeilen || []).filter((z) => z && z.zellen?.length)
@@ -157,7 +197,11 @@ function blockZelle(bild: ProduktBild, b: ProduktBildBlock, g: Groesse, akzent: 
     border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: akzent, space: 1 } },
     keepNext: true,
   })
-  const inhalt: Block[] = b.kopf?.length || b.zeilen?.length ? [tabelleDocx(bild, b, g, tinte), p('', { spacing: { before: 0, after: 0, line: 20, lineRule: LineRuleType.EXACT } })] : listeDocx(bild, b, g, tinte)
+  const art = blockArt(b)
+  const inhalt: Block[] = art === 'tabelle' ? [tabelleDocx(bild, b, g, tinte), p('', { spacing: { before: 0, after: 0, line: 20, lineRule: LineRuleType.EXACT } })]
+    : art === 'wechsel' ? wechselDocx(bild, b, g, tinte)
+    : art === 'text' ? textDocx(b, g, tinte)
+    : listeDocx(bild, b, g, tinte)
   return tcell([titel, ...inhalt], {
     width: pct(breite),
     borders: OHNE,

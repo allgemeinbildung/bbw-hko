@@ -299,6 +299,28 @@ export interface GemeinsamerAuftrag {
   erwartungshorizont?: Erwartungshorizont
   /** Seitenfolge des Bogens; informativ, der Renderer kennt die vier Seiten. */
   bogen?: string[]
+  /**
+   * v4.2 (E25), optional: die zwei Produkte des Auftrags — `produkte[0]` belegt A2,
+   * `produkte[1]` belegt A3 des Auftragsbogens. Fehlt das Feld, rendert der Bogen wie
+   * bisher (Schritt 04 als Fläche, Schritt 05 als Sprechspur mit drei festen Stationen).
+   */
+  produkte?: AuftragProdukt[]
+}
+
+/** Ein Produkt des gemeinsamen Auftrags und die Seite, die es auf dem Auftragsbogen trägt (E25). */
+export interface AuftragProdukt {
+  /** Nummer des Schritts (1–5), dessen Produkt die Seite trägt; Titel und Hint kommen von dort. */
+  schritt: number
+  /** `flaeche`: freie Arbeitsfläche (Schriftliches, Bildliches) · `spur`: Stationen mit Schreibzeilen (Mündliches planen). */
+  form: 'flaeche' | 'spur'
+  /** Sprachmodus dieses Produkts, wörtlich einer aus `gemeinsamer_auftrag.sprachmodi`. */
+  modus: string
+  /** Nur `spur`: zwei bis vier Stationen in Ich-Form. */
+  stationen?: string[]
+  /** Nur `spur`: der Satz über den Stationen (wie vorgehen, wie abgeben). */
+  hinweis?: string
+  /** Nur `spur`, optional: Zieldauer («3–4 Minuten»). Ohne Angabe entfällt die Zeile «Ziel … · Probelauf». */
+  dauer?: string
 }
 
 /** Seite 8 unten: Quer-Check und «Das nehme ich mit» (drei feste Zeilen). */
@@ -357,12 +379,19 @@ export interface ProduktBild {
   bloecke: ProduktBildBlock[]
 }
 
-/** Ein Block des Blatts: entweder Liste (`eintraege`) oder Tabelle (`kopf` + `zeilen`). */
+/**
+ * Ein Block des Blatts — genau eine von vier Arten: Liste (`eintraege`), Tabelle
+ * (`kopf` + `zeilen`), Fliesstext (`text`, E26) oder Wechselrede (`wechsel`, E26).
+ */
 export interface ProduktBildBlock {
   titel: string
   eintraege?: { text: string; marke?: string; notiz?: string }[]
   kopf?: string[]
   zeilen?: { zellen: string[]; marke?: string; stark?: boolean }[]
+  /** E26: Absätze in Schreibschrift — Brief, Statement, Kommentar, Leserbrief. */
+  text?: string[]
+  /** E26: Wechselrede — Gespräch, Diskussion, Interview; Sprecher links, Beitrag rechts. `marke` wie bei Listen. */
+  wechsel?: { wer: string; text: string; marke?: string }[]
 }
 
 export interface SituationJson {

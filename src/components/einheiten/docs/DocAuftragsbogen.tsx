@@ -1,7 +1,7 @@
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { A4Page, HandlungsFlaeche, Schreibfeld, SectionHead } from './chrome'
 import { Kasten } from './heft-v42/gemeinsam'
-import type { GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/einheiten/types'
+import type { AuftragProdukt, GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/einheiten/types'
 
 /**
  * Auftragsbogen des gemeinsamen Auftrags v4.2 — Leitfaden docs/upgrade-v4.2 §7.5.
@@ -69,6 +69,41 @@ export function sprechDauer(hint: string | undefined): string {
 
 /** Schreibzeilen je Station der Sprechspur (A3), HTML und Word gleich. */
 export const SPRECHSPUR_ZEILEN = 6
+
+/**
+ * E25: das Produkt, das A2 (`i` = 0) bzw. A3 (`i` = 1) trägt. `null` ohne `produkte` oder
+ * ohne gültige Form — dann rendert die Seite wie bisher (Schritt 04 Fläche, Schritt 05 Sprechspur).
+ * Einziger Schalter für das neue Verhalten, in HTML und Word.
+ */
+export function auftragProdukt(ga: GemeinsamerAuftrag, i: 0 | 1): AuftragProdukt | null {
+  const p = Array.isArray(ga.produkte) ? ga.produkte[i] : null
+  return p && (p.form === 'flaeche' || p.form === 'spur') ? p : null
+}
+
+/** Nummer, Label und Hint des Schritts, dessen Produkt die Seite trägt. */
+export function produktSchritt(ga: GemeinsamerAuftrag, p: AuftragProdukt): { nr: string; label: string; hint: string } {
+  const i = Math.max(0, (Number(p.schritt) || 1) - 1)
+  const s = ga.schritte?.[i]
+  const [nr, label] = s ? schrittTeile(s.label, i) : [String(i + 1).padStart(2, '0'), p.modus || '']
+  return { nr, label, hint: s?.hint || '' }
+}
+
+/** Stationen einer Spur-Seite: zwei bis vier, leere fallen weg. */
+export function produktStationen(p: AuftragProdukt): string[] {
+  return (p.stationen || []).filter(Boolean).slice(0, 4)
+}
+
+/**
+ * Schreibzeilen je Station, sodass die Seite gefüllt ist wie bei drei Stationen à sechs
+ * Zeilen: ein Stationskopf ist etwa so hoch wie eine Zeile — eine Station mehr kostet
+ * eine Zeile, eine weniger gibt eine frei. Der Rest geht an die ersten Stationen.
+ */
+export function spurZeilen(n: number): number[] {
+  if (n < 1) return []
+  const total = SPRECHSPUR_STATIONEN.length * SPRECHSPUR_ZEILEN + (SPRECHSPUR_STATIONEN.length - n)
+  const basis = Math.floor(total / n)
+  return Array.from({ length: n }, (_, i) => basis + (i < total - basis * n ? 1 : 0))
+}
 
 /**
  * Fusszeile von A3: das Glossar steht seit E17 in den Heften (je S. 8), nicht mehr hier.
@@ -204,8 +239,70 @@ function SeiteA1({ ga }: SeiteProps) {
   )
 }
 
+// ---------------- A2/A3 mit `produkte` (E25): Fläche oder Spur, je nach Form ----------------
+// Eingaben: `auftrag_a<Seite>_flaeche` bzw. `auftrag_a<Seite>_spur_<N>` — aus Seite und Form,
+// nie aus dem Inhalt, damit ein umbenannter Schritt keine Eingabe verwaist.
+function ProduktSeite({ nr, produkt, ga, set, edits, onEdit }: SeiteProps & { nr: 2 | 3; produkt: AuftragProdukt }) {
+  const s = produktSchritt(ga, produkt)
+  const key = `auftrag_a${nr}_${produkt.form}`
+  // Der Verweis aufs Glossar bleibt am Fuss von A3, gleich welche Form die Seite hat.
+  const verweis = nr === 3 ? glossarVerweis(set.glossar) : null
+  const hint = s.hint ? <p className="v42-auftrag-klein v42-auftrag-fest"><strong>Schritt {s.nr}:</strong> {s.hint}</p> : null
+  const fuss = verweis ? <p className="v42-auftrag-klein v42-auftrag-verweis">{verweis}</p> : null
+  if (produkt.form === 'flaeche') {
+    return (
+      <>
+        <SectionHead num={`A${nr}`}>{s.label}</SectionHead>
+        {hint}
+        {/* Inline, weil die Regel in auftragsbogen.css an .v42-auftrag-a2 hängt: die Fläche füllt den Rest der Seite. */}
+        <div className="v42-auftrag-flaeche" style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', paddingTop: '2mm' }}>
+          <HandlungsFlaeche
+            label={`Schritt ${s.nr} · ${s.label} · ${produkt.modus}`}
+            value={edits[key] || ''}
+            onChange={(v) => onEdit(key, v)}
+          />
+        </div>
+        {fuss}
+      </>
+    )
+  }
+  const stationen = produktStationen(produkt)
+  const zeilen = spurZeilen(stationen.length)
+  return (
+    <>
+      <SectionHead num={`A${nr}`}>{s.label} planen</SectionHead>
+      {hint}
+      {produkt.hinweis && <p className="v42-auftrag-klein v42-auftrag-fest">{produkt.hinweis}</p>}
+      <div className="v42-auftrag-spur">
+        {stationen.map((station, i) => (
+          <div className="v42-auftrag-station" key={i}>
+            <div className="v42-auftrag-station-kopf">
+              <span className="v42-auftrag-nr">{i + 1}</span>
+              <strong>{station}</strong>
+            </div>
+            <Zeilen zeilen={zeilen[i]} value={edits[`${key}_${i + 1}`] || ''} onChange={(v) => onEdit(`${key}_${i + 1}`, v)} />
+          </div>
+        ))}
+        {produkt.dauer && (
+          <div className="v42-auftrag-station-ende">
+            <span className="v42-auftrag-nr">Ende</span>
+            <span>
+              Ziel {produkt.dauer} · Probelauf: <span className="check-box">☐</span> zu kurz{' '}
+              <span className="check-box">☐</span> passt <span className="check-box">☐</span> zu lang
+            </span>
+          </div>
+        )}
+      </div>
+      {fuss}
+    </>
+  )
+}
+
 // ---------------- A2 — Arbeitsfläche (Schritt 04) ----------------
-function SeiteA2({ ga, edits, onEdit }: SeiteProps) {
+function SeiteA2(props: SeiteProps) {
+  const { ga, edits, onEdit } = props
+  const produkt = auftragProdukt(ga, 0)
+  if (produkt) return <ProduktSeite {...props} nr={2} produkt={produkt} />
   const s = ga.schritte?.[3]
   const [nr, label] = s ? schrittTeile(s.label, 3) : ['04', 'Entscheidungsblatt']
   return (
@@ -224,7 +321,10 @@ function SeiteA2({ ga, edits, onEdit }: SeiteProps) {
 }
 
 // ---------------- A3 — Sprechspur, am Fuss der Verweis aufs Glossar der Hefte ----------------
-function SeiteA3({ ga, set, edits, onEdit }: SeiteProps) {
+function SeiteA3(props: SeiteProps) {
+  const { ga, set, edits, onEdit } = props
+  const produkt = auftragProdukt(ga, 1)
+  if (produkt) return <ProduktSeite {...props} nr={3} produkt={produkt} />
   const s = ga.schritte?.[4]
   const [nr, label] = s ? schrittTeile(s.label, 4) : ['05', 'Sprachnachricht']
   const dauer = sprechDauer(s?.hint)
