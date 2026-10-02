@@ -172,7 +172,7 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
   indirekte Rede).
 - **Word-Schreibfelder:** Auf den Seiten 1–4 zeichnet das Heft jetzt jede Linie selbst. Auf den
   Seiten 5–8, im Auftragsbogen und in allen Bestandseinheiten zeigt der bestehende Baustein
-   in  weiterhin nur die unterste Linie. Nicht angefasst.
+  `schreibfeld` in `docx-primitives.ts` weiterhin nur die unterste Linie. Nicht angefasst.
 - **Word-Höhen sind an dieser Einheit gemessen:** Die Zuschläge der Schreibflächen in Word sind
   feste Werte; am knappsten ist Seite 3 ohne Medien (rund 4 mm). Längere Texte in einer anderen
   Einheit können eine neunte Seite auslösen — nach jedem Export die Seiten zählen.
