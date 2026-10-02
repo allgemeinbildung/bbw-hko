@@ -44,6 +44,8 @@ if (existsSync(cw) && kapitel.length) {
   pruefe(fehlt.length === 0, `Crosswalk-Kapitel vorhanden (${genannt.size})`, `im Crosswalk genannt, aber ohne Datei: ${fehlt.join(', ')}`)
 }
 
+const archiv = join(ROOT, 'material/_quellen-archiv')
+console.log(existsSync(archiv) ? `  ok      Quellenarchiv: ${readdirSync(archiv).filter((d) => d.startsWith('q-')).length} Quellen mit Volltext` : '  HINWEIS Quellenarchiv fehlt — Medien-Spur ist in diesem Klon nicht erzeugbar')
 pruefe(existsSync(join(ROOT, 'CLAUDE.md')), 'CLAUDE.md', 'fehlt — Architektur- und Designregeln sind der Session unbekannt')
 pruefe(existsSync(join(ROOT, '.claude/skills/bbw-hko-3er-set/SKILL.md')), 'Skill bbw-hko-3er-set', 'fehlt')
 pruefe(existsSync(join(ROOT, 'node_modules/astro')), 'node_modules', 'fehlt — zuerst `npm ci`')

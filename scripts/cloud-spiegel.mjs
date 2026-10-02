@@ -15,7 +15,7 @@
  * Zurueck ins oeffentliche Repo geht es nie per merge, nur per
  * scripts/cloud-import.mjs (pfadweise). Ablauf: docs/cloud-run/README.md
  */
-import { existsSync, cpSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
+import { existsSync, cpSync, readFileSync, writeFileSync, rmSync, statSync, readdirSync } from 'node:fs'
 import { join, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
@@ -25,6 +25,9 @@ const argv = process.argv.slice(2)
 const zielArg = argv.indexOf('--ziel')
 const ZIEL = resolve(zielArg >= 0 ? argv[zielArg + 1] : join(ROOT, '..', 'bbw-hko-produktion'))
 const PUSH = argv.includes('--push')
+// Volltexte der Quellen (Transkripte, Artikel). Liegt ausserhalb des Repos.
+const ARCHIV = process.env.QUELLEN_ARCHIV || 'D:/OS/_lab/quellen-archiv/bbw-hko'
+const ARCHIV_TYPEN = /.(md|txt|pdf)$/i
 const OEFFENTLICH = /allgemeinbildung\/bbw-hko(\.git)?\/?$/
 
 function git(cwd, ...a) {
@@ -58,13 +61,21 @@ git(ZIEL, 'checkout', '-B', 'cloud', `quelle/${branch}`)
 rmSync(join(ZIEL, 'material/_lehrmittel'), { recursive: true, force: true })
 cpSync(join(ROOT, 'material/_lehrmittel'), join(ZIEL, 'material/_lehrmittel'), { recursive: true })
 cpSync(join(ROOT, 'CLAUDE.md'), join(ZIEL, 'CLAUDE.md'))
+rmSync(join(ZIEL, 'material/_quellen-archiv'), { recursive: true, force: true })
+if (existsSync(ARCHIV)) {
+  // Nur die Quellenordner (q-…) und nur Text: Arbeitsnotizen, Bildschirmfotos
+  // und Tabellen der Recherche braucht der Lauf nicht.
+  for (const d of readdirSync(ARCHIV).filter((d) => d.startsWith('q-'))) {
+    cpSync(join(ARCHIV, d), join(ZIEL, 'material/_quellen-archiv', d), { recursive: true, filter: (src) => statSync(src).isDirectory() || ARCHIV_TYPEN.test(src) })
+  }
+} else console.log(`HINWEIS: Quellenarchiv nicht gefunden (${ARCHIV}) — Spiegel ohne Volltexte.`)
 const gi = join(ZIEL, '.gitignore')
 writeFileSync(gi, readFileSync(gi, 'utf8').split('\n')
-  .filter((l) => l.trim() !== 'CLAUDE.md' && l.trim() !== 'material/_lehrmittel*/').join('\n'))
+  .filter((l) => !['CLAUDE.md', 'material/_lehrmittel*/', 'material/_quellen-archiv*/'].includes(l.trim())).join('\n'))
 
-git(ZIEL, 'add', '-A', '.gitignore', 'CLAUDE.md', 'material/_lehrmittel')
+git(ZIEL, 'add', '-A', '.gitignore', 'CLAUDE.md', 'material')
 git(ZIEL, '-c', 'user.name=cloud-spiegel', '-c', 'user.email=noreply@bbw-hko.ch', 'commit', '-q', '-m',
-  `PRIVAT: Lehrmittel + CLAUDE.md auf ${branch}@${kopf} — nie ins oeffentliche Repo`)
+  `PRIVAT: Lehrmittel + Quellenarchiv + CLAUDE.md auf ${branch}@${kopf} — nie ins oeffentliche Repo`)
 console.log(`Branch cloud = ${branch}@${kopf} + Privat-Schicht (${git(ZIEL, 'rev-parse', '--short', 'HEAD')})`)
 
 const origin = gitOk(ZIEL, 'remote', 'get-url', 'origin')

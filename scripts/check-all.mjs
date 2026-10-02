@@ -22,7 +22,8 @@
  *   SPRACHE    kein «ß», keine stehengebliebenen Platzhalter
  *   LECK       keine woertliche Lehrmittelpassage in den Daten — das Repo ist
  *              oeffentlich, das Lehrmittel nicht. Verglichen wird gegen
- *              material/_lehrmittel/ (gitignored); fehlt der Ordner, ist die
+ *              material/_lehrmittel/ (gitignored) und das Quellenarchiv
+ *              (Transkripte, Artikel); fehlt das Lehrmittel, ist die
  *              Pruefung nicht moeglich: HINWEIS, unter --cloud ein Fehler.
  *
  * Reines Node, keine Abhaengigkeiten, nur lesend. Exit 0 nur ohne FEHLER.
@@ -36,6 +37,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const EINHEITEN = join(ROOT, 'src/data/einheiten')
 const METHODEN = join(ROOT, 'src/data/methoden')
 const MATERIAL = join(ROOT, 'material')
+// Volltexte der Quellen: im privaten Spiegel unter material/_quellen-archiv/, lokal ausserhalb des Repos.
+const ARCHIV = [join(MATERIAL, '_quellen-archiv'), process.env.QUELLEN_ARCHIV || 'D:/OS/_lab/quellen-archiv/bbw-hko'].find((p) => existsSync(p))
 
 const LEHRGAENGE = ['EBA_2J', 'EFZ_3J', 'EFZ_4J']
 const STATUS_OK = [undefined, 'entwurf', 'publiziert']
@@ -94,7 +97,8 @@ if (wunsch.length) {
 
 // ------------------------------------------------------------- Lehrmittel
 
-const wörter = (s) => s.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []
+// Links und URNs sind keine Uebernahme — sie stehen in Karte und Quelle zwangslaeufig gleich.
+const wörter = (s) => s.toLowerCase().replace(/https?:\/\/\S+|urn:\S+/g, ' ').match(/[\p{L}\p{N}]+/gu) ?? []
 
 function ladeLehrmittel() {
   if (!existsSync(MATERIAL)) return null
@@ -109,7 +113,22 @@ function ladeLehrmittel() {
       for (let i = 0; i + SHINGLE <= w.length; i++) set.add(w.slice(i, i + SHINGLE).join(' '))
     }
   }
-  return dateien ? { set, dateien } : null
+  let quellen = 0
+  const lies = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const p = join(dir, e.name)
+      if (e.isDirectory()) lies(p)
+      else if (/.(md|txt)$/i.test(e.name)) {
+        quellen++
+        const w = wörter(readFileSync(p, 'utf8'))
+        for (let i = 0; i + SHINGLE <= w.length; i++) set.add(w.slice(i, i + SHINGLE).join(' '))
+      }
+    }
+  }
+  // Nur die Quellenordner (q-…). Arbeitsnotizen daneben (_pruefung, _briefs)
+  // zitieren die Einheit selbst und wuerden jede Zeile als Leck melden.
+  if (ARCHIV) for (const d of readdirSync(ARCHIV)) if (d.startsWith('q-')) lies(join(ARCHIV, d))
+  return dateien ? { set, dateien, quellen } : null
 }
 
 /** Laengste woertliche Uebernahme in `text`, als { woerter, auszug }. */
@@ -197,7 +216,7 @@ function pruefeEinheit(slug) {
     if (m) err('ERR_PLATZHALTER', wo, m[0])
     if (lehrmittel && s.length > 80) {
       const u = laengsteUebernahme(s, lehrmittel)
-      if (u && u.woerter >= LECK_ERR) err('ERR_LEHRMITTEL_WOERTLICH', wo, `${u.woerter} Woerter am Stueck aus dem Lehrmittel: «${u.auszug}»`)
+      if (u && u.woerter >= LECK_ERR) err('ERR_LEHRMITTEL_WOERTLICH', wo, `${u.woerter} Woerter am Stueck aus Lehrmittel oder Quellenarchiv: «${u.auszug}»`)
       else if (u && u.woerter >= LECK_WARN) warn('WARN_LEHRMITTEL_NAH', wo, `${u.woerter} Woerter am Stueck: «${u.auszug}»`)
     }
   }
@@ -220,7 +239,7 @@ const zeile = (ok, name, detail = '') => console.log(`  ${ok ? 'ok    ' : 'FEHLE
 if (!lehrmittel) {
   if (CLOUD) { rot++; zeile(false, 'Lehrmittel', 'material/_lehrmittel/ fehlt — ohne Quelltext darf kein Lauf starten (scripts/cloud-preflight.mjs)') }
   else console.log('  HINWEIS Lehrmittel fehlt lokal — die Leck-Pruefung (LECK) ist NICHT gelaufen.')
-} else zeile(true, 'Lehrmittel', `${lehrmittel.dateien} Kapitel fuer die Leck-Pruefung geladen`)
+} else zeile(true, 'Lehrmittel', `${lehrmittel.dateien} Kapitel und ${lehrmittel.quellen} Quellentexte fuer die Leck-Pruefung geladen`)
 
 const nrlp = lauf('check-nrlp-consistency.mjs', [])
 zeile(nrlp.ok, 'nRLP-Datensaetze')

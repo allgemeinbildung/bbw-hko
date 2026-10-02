@@ -14,7 +14,7 @@ private Dateien gibt es nicht.
 
 Darum läuft die Produktion in einem **privaten Spiegel**
 `allgemeinbildung/bbw-hko-produktion`: derselbe Code, plus eine Privat-Schicht
-(Lehrmittel LM-26 + `CLAUDE.md`) als oberster Commit auf dem Branch `cloud`.
+(Lehrmittel LM-26, Quellenarchiv mit Transkripten und Artikeltexten, `CLAUDE.md`) als oberster Commit auf dem Branch `cloud`.
 
 Das löst nebenbei zwei weitere Risiken:
 
@@ -75,11 +75,14 @@ Vercel verändern. Wenn gewünscht, ist es eine Zeile.
 
 ## Was die Cloud nicht kann
 
-- **Medien-Spur.** Swissdox (Login), die SRG-API-Skills und das Quellenarchiv
-  `D:\OS\_lab\quellen-archiv\` sind lokal. Quellenkarten mit geprüften Beiträgen
-  entstehen nicht in der Cloud. `check-v42` verlangt heute gefüllte Karten —
-  **wie eine in der Cloud erzeugte Einheit ihre Quellen-Slots offen lässt, muss
-  die neue Skill (v4.2/4.3) festlegen**, und das Tor muss diesen Zustand kennen.
+- **Quellen recherchieren.** Swissdox (Login) und die SRG-API-Skills sind
+  lokal. Die Recherche gehört zum Bauplan: Karten liegen vor dem Lauf unter
+  `src/data/quellen/`, die Volltexte spiegelt `cloud-spiegel.mjs` aus
+  `D:\OS\_lab\quellen-archiv\bbw-hko\` nach `material/_quellen-archiv/` (nur
+  `.md`, `.txt`, `.pdf`). Damit kann die Cloud die Medien-Spur ausformulieren.
+  Bleibt ein Slot im Bauplan offen, verlangt `check-v42` trotzdem gefüllte
+  Karten — **wie eine Einheit Quellen-Slots offen lässt, muss die neue Skill
+  (v4.2/4.3) festlegen**, und das Tor muss diesen Zustand kennen.
 - **NotebookLM-Gegenlesung** des Crosswalks. Lebensbezüge ohne Zeile oder ohne
   Kernkapitel gehören nicht auf die Auftragsliste (in `abdeckung.md` mit ⚠).
 - **Browser-Messung des Seitenüberlaufs.** Die Zeichenbudgets in `check-v42`

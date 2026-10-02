@@ -32,6 +32,10 @@ Lies danach `CLAUDE.md`, `docs/cloud-run/auftragsliste.md` und
    Fachaussage, Zahl, Seitenangabe und jeden Rechtsstand ist ausschliesslich das
    Kapitel aus `material/_lehrmittel/`, das der Crosswalk der Skill nennt, und
    der nRLP-Datensatz des Lehrgangs. Nichts aus dem Gedächtnis.
+   Für alles, was von einer Quelle abhängt (Lösungen und Beispielwerte der
+   Medien-Spur), gilt der Volltext unter `material/_quellen-archiv/<quellen-id>/gewaehlt/`
+   — und nur für Quellen, deren Karte in `src/data/quellen/` liegt. Fehlt Karte
+   oder Volltext: nur die Spur ohne Medien erzeugen, im Bericht melden.
 2. Wo die Skill trotzdem auf eine Eingabe wartet, die der Bauplan nicht deckt: die Variante nehmen, die sie selbst
    empfiehlt; fehlt eine Empfehlung, die mit dem engsten Bezug zum Wortlaut der
    nRLP-Kompetenz. Entscheid, Grund und die verworfenen Alternativen in
@@ -49,7 +53,8 @@ aufzuhören. Die Übernahme und das Tor prüfst du selbst nach.
 
 1. **`status: "entwurf"`** in jeder `set.json`, exakt so geschrieben. Jeder
    andere Wert gilt als veröffentlicht.
-2. **Kein Lehrmitteltext in den Daten.** Die Einheiten gehen in ein
+2. **Kein Lehrmitteltext und kein Quellentext in den Daten** (Transkripte,
+   Artikel). Die Einheiten gehen in ein
    öffentliches Repo. Eigene Formulierungen, Kapitel und Seite als Verweis. Das
    Tor meldet wörtliche Übernahmen; eine Warnung dazu ist ebenfalls zu beheben.
 3. **Keine erfundenen Quellen, Zahlen, Zitate, Links.** Was sich am Lehrmittel
