@@ -45,9 +45,11 @@ Lehrperson.
 | «45 min», «in zehn Minuten», «15 Minuten Lesezeit» | keine Angabe |
 | «Mitnahme in den gemeinsamen Auftrag (Woche 3)» | «Das nehme ich mit» — das Heft verweist nicht auf den Auftrag |
 
-Gemeint sind Angaben zum **Unterricht**. Zeit, die zum Fall oder zum Produkt
-gehört, bleibt: eine Frist im Fall («bis Freitag»), die Länge eines Produkts
-(«ein Statement von einer Minute»). Der Zeitplan steht als Vorschlag im
+Gemeint sind Angaben zum **Unterricht** — verboten ist Unterrichtszeit, nicht
+jede Zeitangabe. Zeit, die zum Fall oder zum Produkt gehört, bleibt: eine
+Frist im Fall («bis Freitag»), **die Dauer eines Produkts** («ein Statement
+von zwei Minuten», `produkte[].dauer`), die Länge eines Ausschnitts der Quelle
+(ENTSCHEIDE E27). Der Zeitplan steht als Vorschlag im
 Begleiter und in `set.wochenplan`, nie im Heft.
 
 ## 3. Kein Wort «Spur» in Texten für Lernende (E15)
@@ -366,7 +368,7 @@ Nicht still korrigiert, sondern neu geschrieben und im Bericht vermerkt:
 □ persona wörtlich wie im Skelett; keine erfundene Person, kein Betrieb, kein Ort
 □ Situation in Ich-Form; Aufträge, Leitfragen, Hinweise in Sie-Form (kein du/dein)
 □ Begleiter in Du-Form
-□ Im Heft keine Woche, keine Lektion, keine Minuten
+□ Im Heft keine Woche, keine Lektion, keine Minuten Unterrichtszeit (die Dauer eines Produkts ist erlaubt)
 □ Kein «Spur» in Texten für Lernende
 □ «Quelle» statt «Pflichtquelle»; «Punkte» statt «Stufe»
 □ Auftragsbogen ohne Vorgabe an die Lehrperson

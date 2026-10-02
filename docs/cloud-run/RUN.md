@@ -18,7 +18,11 @@ Antwort und stoppe. Eine Einheit ohne Lehrmittel-Quelltext ist wertlos, auch
 wenn sie gut aussieht.
 
 Lies danach `CLAUDE.md`, `docs/cloud-run/auftragsliste.md` und
-`.claude/skills/bbw-hko-3er-set/SKILL.md`.
+`.claude/skills/bbw-hko-heft-v42/SKILL.md` samt `references/auto-modus.md` und
+`references/kohaerenz.md`. Erzeugt wird im Format v4.2 (zwei Hefte, zwei
+Spuren, gemeinsamer Auftrag). Die alte Skill `bbw-hko-3er-set` ist nur noch
+für ausdrücklich so bestellte 3er-Sets da; der Preflight prüft ihre Dateien
+aus historischen Gründen weiter.
 
 ## 2. Pro Zeile der Auftragsliste
 
@@ -26,9 +30,12 @@ Lies danach `CLAUDE.md`, `docs/cloud-run/auftragsliste.md` und
    Ordnername, Versprechen, Herausforderungen, Hybrid-Fall, Kapitel und Quellen
    daraus übernehmen — **kein Entscheid des Bauplans wird geändert.** Fehlt der
    Bauplan oder ist er nicht freigegeben: Zeile gilt als nicht erzeugbar.
-1. Einheit mit der Skill `bbw-hko-3er-set` erzeugen. Die Phasen, die der
-   Bauplan bereits entscheidet (Prinzip, Auswahl der Herausforderungen,
-   Hybrid-Freigabe), nicht neu aufrollen, sondern mit seinen Werten füllen. Grundlage für jede
+1. Einheit mit der Skill `bbw-hko-heft-v42` im **Auto-Modus** erzeugen
+   (Phasen 2 bis 9; die Phasen 0, 1 und Q sind lokal gelaufen und stehen im
+   Bauplan). Kein Entscheid des Bauplans wird neu aufgerollt; Ausnahmen, die
+   der Bauplan in §9 nennt, gelten. Sprachmodi, Schlüsselkompetenzen und
+   Produkte kommen aus dem Bauplan und dem nRLP-Datensatz, nie aus der
+   Gold-Einheit oder einem Skelett (`references/kohaerenz.md`). Grundlage für jede
    Fachaussage, Zahl, Seitenangabe und jeden Rechtsstand ist ausschliesslich das
    Kapitel aus `material/_lehrmittel/`, das der Crosswalk der Skill nennt, und
    der nRLP-Datensatz des Lehrgangs. Nichts aus dem Gedächtnis.
@@ -40,9 +47,15 @@ Lies danach `CLAUDE.md`, `docs/cloud-run/auftragsliste.md` und
    empfiehlt; fehlt eine Empfehlung, die mit dem engsten Bezug zum Wortlaut der
    nRLP-Kompetenz. Entscheid, Grund und die verworfenen Alternativen in
    `docs/cloud-run/laeufe/<datum>/ENTSCHEIDE.md` festhalten.
-3. `node scripts/check-all.mjs <ordner> --cloud` — bis grün. Befunde in den
-   Daten beheben, nie im Skript, nie über `--baseline`.
-4. `npm run build:einheiten-index` und `npm run build` müssen durchlaufen.
+3. Tor gemäss `references/phase-9-tor.md` der Skill:
+   `node scripts/check-all.mjs <ordner> --cloud` — bis grün, höchstens drei
+   Reparaturrunden. Befunde in den Daten beheben, nie im Skript, nie über
+   `--baseline`. Dazu `node scripts/export-v42.mjs <ordner> --out <tmp>` und
+   `node scripts/messen-v42.mjs <tmp>`; meldet die Messung Exit 2 (kein
+   Browser im Container), steht «nicht gemessen» im Bericht — die lokale
+   Abnahme holt sie nach.
+4. `npm run build:einheiten-index`, `node scripts/bestand-v42.mjs --pruefen`
+   und `npm run build` müssen durchlaufen.
 5. Ein Commit pro Einheit: `Lauf <datum>: <ordner>`.
 
 Bis zu drei Einheiten parallel über Subagenten; jeder Subagent bekommt genau
@@ -80,6 +93,9 @@ aufzuhören. Die Übernahme und das Tor prüfst du selbst nach.
 
 - je Zeile: Ordnername, Tor-Ergebnis (letzte Ausgabe von `check-all`), Kapitel
   und Seiten, auf denen die Einheit steht;
+- je Einheit die Abdeckungstabelle und den Vergleich mit der Gold-Einheit
+  (`references/kohaerenz.md` §3 und §4): das Gerüst Zeile für Zeile gleich,
+  Sprachmodi, SK und Produkte nebeneinander mit der Herleitung;
 - alle Entscheide, die sonst ein Mensch getroffen hätte;
 - was nicht belegt, nicht geprüft oder nicht erzeugbar war;
 - Fehler in Skill, Skripten oder Daten, die aufgefallen sind.

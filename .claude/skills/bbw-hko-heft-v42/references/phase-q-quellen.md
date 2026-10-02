@@ -33,7 +33,7 @@ Je Heft vier Slots. IDs nach `references/ableitungsregeln.md` (ENTSCHEIDE E21):
 | Slot | ID | Rolle im Heft | Pflicht für die Medien-Spur |
 |---|---|---|---|
 | Quelle | `q-<n><h>-pflicht` | `pflicht`, mit Raster (S. 3) | ja |
-| Ersatzquelle | `q-<n><h>-pflicht-ersatz` | tritt an die Stelle der Quelle, wenn sie ausfällt | nein, aber gesucht |
+| Ersatzquelle | `q-<n><h>-pflicht-ersatz` | tritt an die Stelle der Quelle, wenn sie ausfällt | nein, aber gesucht — **ja bei einem Heft mit nur der Medien-Spur** (Abschnitt 3) |
 | Vertiefung 1 | `q-<n><h>-vertiefung-1` | `vertiefung`, ohne Raster (S. 4) | nein (0–2 sind zulässig) |
 | Vertiefung 2 | `q-<n><h>-vertiefung-2` | `vertiefung` | nein |
 
@@ -47,12 +47,17 @@ Ausweichregel aus E21 für den ganzen Satz. Nie eine vorhandene Karte
 
 Die Gold-Einheit liefert die Form der Karte, nicht den Typ der Quelle.
 
-1. **Rezeptionsmodus des Hefts:** die Rezeptions-Einträge aus den Sprachmodi
-   der Kompetenz(en) des Hefts im nRLP-Datensatz des Lehrgangs — dieselben, die
-   später in `nrlp.sprachmodi` des Hefts und `prinzip.modi_pro_heft` stehen
-   (aus beiden liest `regel4`). Nennt die Kompetenz keinen Rezeptionsmodus,
-   gilt der des Themas (Leitfaden §5: T1/T4/T8 schriftlich, T2/T6 mündlich,
-   T3/T5 audiovisuell).
+1. **Rezeptionsmodus — nach der Kompetenz, sonst nach dem Thema (E27):**
+   - **Geführt:** die Rezeptions-Einträge aus den Sprachmodi der
+     Kompetenz(en) des Hefts im nRLP-Datensatz des Lehrgangs — dieselben, die
+     in `nrlp.sprachmodi` des Hefts und `prinzip.modi_pro_heft` stehen (aus
+     beiden liest `regel4`). Der Typ der Quelle folgt diesem Modus.
+   - **Geübt, nicht geführt:** Nennt die Kompetenz keinen Rezeptionsmodus,
+     folgt der Typ dem Modus des Themas (Leitfaden §5: T1/T4/T8 schriftlich,
+     T2/T6 mündlich, T3/T5 audiovisuell) mit der **Ausweichfolge Audio →
+     Video mit Untertiteln → Artikel**: der nächste Typ erst, wenn für den
+     vorherigen kein Kandidat mit Transkript genügt. Der Modus wird damit
+     nicht geführt — er steht nicht in `nrlp.sprachmodi`.
 2. **Typ der Quelle** aus dem Modus:
 
    | Rezeptionsmodus (`sprachmodus` der Karte) | `typ` der Quelle | Längenfeld |
@@ -64,15 +69,26 @@ Die Gold-Einheit liefert die Form der Karte, nicht den Typ der Quelle.
    Die drei Wege sind gleichwertig; keiner ist der Normalfall. `webseite` ist
    nur für eine Vertiefung zulässig (`regel2Laenge` lehnt den Typ in der Rolle
    der Quelle ab).
-3. **Abdeckung prüfen:** Der `sprachmodus` der gewählten Quelle ist ein
-   Rezeptionsmodus, den das Heft führt. Verlangt das Heft mündlich **und**
-   audiovisuell, trägt die Quelle den Modus, den die Kompetenz zuerst nennt;
-   der andere steht im Bauplan als Lücke (§8 «Abdeckung»).
+3. **Abdeckung prüfen:** Führt das Heft einen Rezeptionsmodus, ist der
+   `sprachmodus` der gewählten Quelle dieser Modus. Führt es keinen, muss die
+   Karte keinen geführten Modus tragen; die Abdeckung weist die Rezeption als
+   «geübt» aus (Bauplan §8, Zeile A3). **Zwei Rezeptionsmodi in einer
+   Kompetenz** (mündlich **und** audiovisuell): Beide werden geführt. Die
+   Quelle trägt den Modus, den die Kompetenz zuerst nennt; der andere bekommt
+   seine Stelle über eine Vertiefung des anderen Typs und steht in §8 als
+   «freiwillig geübt» — nicht als Lücke.
 4. **A und B möglichst verschieden** im Typ (Leitfaden §5) — soweit die Modi
    beider Hefte es zulassen. Gleicher Typ ist ein Zugeständnis und steht im
    Bauplan.
-5. **Vertiefungen** dürfen einen anderen Modus tragen als die Quelle; sie
-   decken keinen Modus des Hefts ab (freiwillig).
+5. **Vertiefungen** dürfen einen anderen Modus tragen als die Quelle. Sie
+   decken keinen Modus des Hefts ab (freiwillig) — mit der einen Ausnahme aus
+   Punkt 3 (zweiter Rezeptionsmodus der Kompetenz).
+6. **Heft mit nur der Medien-Spur** (Spur `ohne_medien` unzulässig): Die
+   **Ersatzquelle ist Pflicht** — es gibt keinen Rückfall auf die Spur ohne
+   Medien —, und sie hat denselben Typ oder Sprachmodus wie die Quelle. Die
+   Situation des Hefts bleibt im Bauplan-Entwurf **themenneutral bis Phase
+   Q**; das Thema trägt die Quellensuche nach, bevor der Bauplan vorgelegt
+   wird.
 
 ## 4. Werkzeuge der lokalen Session
 
@@ -264,10 +280,13 @@ Erwartungen sind eigene Formulierungen mit Fundstelle, keine Abschrift.
 ## 10. Bauplan nachführen und Freigabe
 
 Im Abschnitt «Quellen» des Bauplans (`docs/cloud-run/bauplaene/_VORLAGE.md`,
-§7) je Slot eine Zeile: **Slot · Quellen-ID · Stand** (Typ, Titel ·
-Herausgeber · Datum, Ausschnitt, Länge, Karte ja/nein, Archivtext ja/nein) ·
+§7) je Slot eine Zeile: **Slot · Quellen-ID · Typ (gesucht)** · Titel ·
+Herausgeber · Datum · Ausschnitt · Länge · Karte ja/nein · Archivtext ja/nein ·
 **Zugeständnis** (anderes Land, älterer Beitrag, Ausschnitt, gleicher Typ in A
-und B, eine an die Quelle angepasste Frage). Ein nicht abgedeckter Modus
+und B, eine an die Quelle angepasste Frage) · **Stand** («offen» oder «geprüft
+am JJJJ-MM-TT»). Dazu die Zeile «Rasterspalten je Heft und Spur»; der
+Unterabschnitt «Suchaufträge» des Entwurfs entfällt, wenn alle Slots gefüllt
+sind. Ein nicht abgedeckter Modus
 steht in §8, was nicht geprüft werden konnte in §9. Kein Text der Quelle im
 Bauplan.
 
@@ -281,7 +300,7 @@ gab, nennt §9 die beste verworfene Alternative mit Grund.
 |---|---|
 | keine Quelle (Karte oder Archivtext fehlt) | Slot «offen»; das Heft bekommt nur `ohne_medien`; Meldung im Bauplan |
 | dasselbe, und `ohne_medien` ist unzulässig | Bauplan meldet das Heft als «nicht erzeugbar» mit den geprüften Suchwegen — ein Heft ohne Spur gibt es nicht |
-| keine Ersatzquelle | `ersatz_ref: null`; Meldung |
+| keine Ersatzquelle | `ersatz_ref: null`; Meldung. Hat das Heft nur die Medien-Spur: Bauplan meldet das Heft als «nicht erzeugbar» (Ersatzquelle ist dort Pflicht) |
 | nur eine oder keine Vertiefung | Medien-Spur mit den vorhandenen (0–2); Meldung |
 | Audio oder Video ohne Transkript | als Quelle unzulässig; als Vertiefung nur mit Begleittext im Archiv |
 
@@ -308,8 +327,10 @@ Ablauf: `docs/cloud-run/README.md` und `docs/cloud-run/START.md`.
 
 - [ ] je Slot entweder Karte **und** `gewaehlt\quelle.md` vorliegen oder der
       Slot im Bauplan «offen» ist — nie nur eines von beiden
-- [ ] Typ und `sprachmodus` jeder Quelle aus dem Rezeptionsmodus des Hefts
-      hergeleitet sind und der Bauplan die Herleitung nennt
+- [ ] Typ und `sprachmodus` jeder Quelle aus dem Rezeptionsmodus der
+      Kompetenz — sonst des Themas, mit Ausweichfolge — hergeleitet sind und
+      der Bauplan die Herleitung nennt
+- [ ] ein Heft mit nur der Medien-Spur Quelle **und** Ersatzquelle hat
 - [ ] das Kohärenz-Audit (Abschnitt 7) für jede Quelle und Vertiefung
       bestanden ist
 - [ ] jede Länge gezählt bzw. gemessen ist und unter der Grenze liegt

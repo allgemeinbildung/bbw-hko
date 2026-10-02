@@ -108,7 +108,7 @@ unter `spuren` (Abschnitte 3 und 4).
 | `leitfragen` | object[2] | LF1 und LF2. | — | `ERR_V42_R1`: genau `nr` 1 und 2 |
 | `leitfragen[].nr` | number | Nummer der Leitfrage. | KONSTANT `1`, `2` | `ERR_V42_R1` |
 | `leitfragen[].bloom` | string | Denkstufe als Wort. | KONSTANT LF1 `Verstehen`, LF2 `Anwenden` | — |
-| `leitfragen[].knoten_ref` | string `Kap. X.Y \| S. aa-bb` | Fundstelle im Lehrmittel; bei LF2 mit Zusatz «· eigener Fall». Bindestrich zwischen den Seiten. | GENERIERT Phase 4 ← Verortung Phase 0 | — |
+| `leitfragen[].knoten_ref` | string `Kap. X.Y \| S. aa-bb` | Fundstelle im Lehrmittel; bei LF2 mit Zusatz «· eigener Fall». Stützt sich LF2 auf zwei Kapitel: «Kap. X.Y \| S. NN · Kap. A.B \| S. NN · eigener Fall» (kein Skript erzwingt ein Muster). Bindestrich zwischen den Seiten. | GENERIERT Phase 4 ← Verortung Phase 0 | — |
 | `leitfragen[].text` | string | Die Frage, Sie-Form. LF1: Begriffe und Kategorien. LF2: auf den eigenen Fall anwenden. | GENERIERT Phase 4 | `ERR_V42_BUDGET` ≤ 220 · `WARN_LF_MEHRFACHAUFTRAG`: höchstens zwei Aufträge der Form «Verb Sie» |
 | `leitfragen[].liefert` | string | Baustein des Produkts, den die Antwort liefert. Nominal, ohne «Sie» und ohne «Ihr/Ihre». | GENERIERT Phase 4 | `ERR_V42_BUDGET` ≤ 50 und 3–7 Wörter · `ERR_LF_LIEFERT_MISSING` · `WARN_LIEFERT_LAENGE` · `WARN_LIEFERT_VERBFORM` |
 | `leitfragen[].antwortform` | string | Art des Antwortfelds. | KONSTANT `schreibfeld` | — |
@@ -147,7 +147,7 @@ unter `spuren` (Abschnitte 3 und 4).
 | `methoden[].tun` | string | Übertragung der Methode auf diese Abgabe. Nur bei Lehrmittel-Karten (`lm-…`); bei `hko-…`-Karten und beim Platzhalter fehlt der Schlüssel. | GENERIERT Phase 4 | — |
 | `handlungsprodukt.beispielbild` | object | Ausgefülltes Produkt an einem **anderen** Fall, im Heft unter den Methodenkarten, in beiden Spuren. Der Fall kommt weder im Heft noch im Auftrag noch im KN vor. | GENERIERT Phase 6 | `ERR_V42_PRODUKTBILD`: muss vorhanden sein |
 | `handlungsprodukt.beispielbild.titel` | string | Kopfzeile, nennt den Fall. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 90 |
-| `handlungsprodukt.beispielbild.legende` · `handlungsprodukt.beispielbild.legende[].key` · `handlungsprodukt.beispielbild.legende[].text` | object[0–3] · string · string | Markierungen. Die Position bestimmt das Zeichen: gefüllter, leerer, halb gefüllter Kreis. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 3 · Text ≤ 28 |
+| `handlungsprodukt.beispielbild.legende` · `handlungsprodukt.beispielbild.legende[].key` · `handlungsprodukt.beispielbild.legende[].text` | object[0–3] · string · string | Markierungen. Die Position bestimmt das Zeichen: gefüllter, leerer, halb gefüllter Kreis. `key` ist ein frei wählbares kurzes Kennwort in Kleinbuchstaben. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 3 · Text ≤ 28 |
 | `handlungsprodukt.beispielbild.bloecke` · `handlungsprodukt.beispielbild.bloecke[].titel` | object[2–3] · string | Blöcke nebeneinander; je Block genau eine Blockart (2.7 und Abschnitt 12). | GENERIERT Phase 6 | `ERR_V42_BUDGET` 2–3 Blöcke · Titel ≤ 32 · `ERR_V42_PRODUKTBILD`: genau eine Blockart je Block |
 | `handlungsprodukt.beispielbild.bloecke[].eintraege` · `handlungsprodukt.beispielbild.bloecke[].eintraege[].text` · `handlungsprodukt.beispielbild.bloecke[].eintraege[].marke` · `handlungsprodukt.beispielbild.bloecke[].eintraege[].notiz` | object[0–5] · string · string · string | Listenform. `marke` und `notiz` nur, wo der Eintrag eine Markierung oder Randnotiz trägt. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 5 Einträge · Text ≤ 105 · Notiz ≤ 60 · `ERR_V42_PRODUKTBILD`: `marke` ist ein `key` der Legende |
 | `handlungsprodukt.beispielbild.bloecke[].kopf` · `handlungsprodukt.beispielbild.bloecke[].zeilen` · `handlungsprodukt.beispielbild.bloecke[].zeilen[].zellen` · `handlungsprodukt.beispielbild.bloecke[].zeilen[].marke` · `handlungsprodukt.beispielbild.bloecke[].zeilen[].stark` | string[] · object[0–12] · string[] · string · boolean | Tabellenform (2.7). `stark: true` setzt eine Zeile fett (Kopf- oder Summenzeile); sonst fehlt der Schlüssel. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 12 Zeilen · erste Zelle ≤ 30 · `ERR_V42_PRODUKTBILD` wie oben |
@@ -178,7 +178,7 @@ unter `spuren` (Abschnitte 3 und 4).
 |---|---|---|---|---|
 | `handlungsprodukt.loesungsbild` | object | Mögliche Lösung zum Fall **des Hefts**, nur LP (Dokument «Lösungen»). Gleiche Blöcke und gleiche Legende wie das Beispielbild. | GENERIERT Phase 6 | `ERR_V42_PRODUKTBILD`: muss vorhanden sein · `ERR_V42_R9_FALL` gilt auch hier |
 | `handlungsprodukt.loesungsbild.titel` | string | Kopfzeile, nennt den Fall des Hefts. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 90 |
-| `handlungsprodukt.loesungsbild.hinweis` | string | An die Lehrperson: eine mögliche Lösung, keine Vorlage; wann zeigen. Nur im Lösungsbild. | GENERIERT Phase 6 | — |
+| `handlungsprodukt.loesungsbild.hinweis` | string | An die Lehrperson: eine mögliche Lösung, keine Vorlage; wann zeigen. Angenommene Posten oder Zahlen, die die Situation nicht nennt, sind hier als Annahme gekennzeichnet. Nur im Lösungsbild. | GENERIERT Phase 6 | — |
 | `handlungsprodukt.loesungsbild.legende` · `handlungsprodukt.loesungsbild.legende[].key` · `handlungsprodukt.loesungsbild.legende[].text` | object[0–3] · string · string | Wie im Beispielbild. | ABGELEITET ← Beispielbild | `ERR_V42_BUDGET` ≤ 3 · Text ≤ 28 |
 | `handlungsprodukt.loesungsbild.bloecke` · `handlungsprodukt.loesungsbild.bloecke[].titel` | object[2–3] · string | Wie im Beispielbild. | GENERIERT Phase 6 | `ERR_V42_BUDGET` 2–3 · Titel ≤ 32 |
 | `handlungsprodukt.loesungsbild.bloecke[].eintraege` · `handlungsprodukt.loesungsbild.bloecke[].eintraege[].text` · `handlungsprodukt.loesungsbild.bloecke[].eintraege[].marke` · `handlungsprodukt.loesungsbild.bloecke[].eintraege[].notiz` | object[0–7] · string × 3 | Listenform. Das Blatt der Lehrperson ist grösser als die halbe Heftseite, darum die weiteren Grenzen. | GENERIERT Phase 6 | `ERR_V42_BUDGET` ≤ 7 Einträge · Text ≤ 130 · Notiz ≤ 60 · `ERR_V42_PRODUKTBILD` |
@@ -222,7 +222,7 @@ denselben Aufbau: gleiche Blocktitel, gleiche Legende, je Block dieselbe Art.
 | `dekontextualisierung` · `dekontextualisierung.frage` · `dekontextualisierung.ziel` | object · string · string | Frage, die vom Fall wegführt, und das Prinzip des Hefts in einem Satz. | GENERIERT Phase 4 ← `prinzip.dekontextualisierungs_anker` | — |
 | `prinzip_handoff` · `prinzip_handoff.kernkonzept` · `prinzip_handoff.lehrmittel_anker` · `prinzip_handoff.transfer_check` | object · string × 3 | Was das Heft zum Prinzip beiträgt: Kernkonzept (= `set.konzept_progression[].konzept`), alle Kapitel und Seiten, Prüffrage für den Transfer. | GENERIERT Phase 4 | `ERR_QUERVERWEIS_ALS_BEDINGUNG` (`lehrmittel_anker`) |
 | `prinzip_handoff.kn_aktivierung` | string | Was der KN aus diesem Heft verlangt. Einziges Feld des Hefts, das den Fall des KN nennen darf. | GENERIERT Phase 4 ← `kn.json` | vom Fall-Ausschluss ausgenommen |
-| `sk_anker` · `sk_anker[].sk` · `sk_anker[].wo` | object[] · number · string | Je Schlüsselkompetenz aus `nrlp.sk`, wo im Heft sie geübt wird. | GENERIERT Phase 4 | — |
+| `sk_anker` · `sk_anker[].sk` · `sk_anker[].wo` | object[] · number · string | Je Schlüsselkompetenz aus `nrlp.sk`, wo im Heft sie geübt wird. Form von `wo`: «<Feldpfad oder Seite> — <was dort geübt wird>», etwa «leitfragen[3] + Produkt — …». | GENERIERT Phase 4 | — |
 | `spuren` | object | Die Spuren des Hefts: `ohne_medien` und/oder `mit_medien`. Eine Spur fehlt, wenn sie nicht zulässig ist oder ihre Voraussetzung fehlt. | — | `ERR_V42_R4`: mindestens eine Spur |
 
 ## 3. spuren.ohne_medien
@@ -237,7 +237,7 @@ oder audiovisuell verlangt (`ERR_V42_R4`). Sie hat keine `quellen`
 | `spuren.ohne_medien` · `spuren.ohne_medien.leitfragen` | object · object[2] | LF3 und LF4 dieser Spur. | — | `ERR_V42_R1`: genau `nr` 3 und 4 |
 | `spuren.ohne_medien.leitfragen[].nr` | number | Nummer. | KONSTANT `3`, `4` | `ERR_V42_R1` |
 | `spuren.ohne_medien.leitfragen[].bloom` | string | Denkstufe. | KONSTANT LF3 `Analysieren`, LF4 `Beurteilen` | — |
-| `spuren.ohne_medien.leitfragen[].knoten_ref` | string | LF3: der Lehrmittel-Abschnitt `Kap. X.Y \| S. aa-bb`, gleich wie im Raster. LF4: die zwei Pole, etwa `Kap. X.Y ↔ eigener Fall`. | GENERIERT Phase 5 | — |
+| `spuren.ohne_medien.leitfragen[].knoten_ref` | string | LF3: der Lehrmittel-Abschnitt `Kap. X.Y \| S. aa-bb`, gleich wie im Raster. LF4: die zwei Pole in der Form des Pol-Typs (`references/phase-5-spuren.md` §6), etwa `Kap. X.Y ↔ eigener Fall` oder `Kap. X.Y · <Position> ↔ <Gegenposition>`. | GENERIERT Phase 5 | — |
 | `spuren.ohne_medien.leitfragen[].text` | string | LF3: Raster auswerten und Befund in zwei bis drei Sätzen festhalten. LF4: Spannung zwischen zwei Polen beurteilen und entscheiden. Erst schreiben, wenn am Kapiteltext geprüft ist, was auf den Seiten steht. | GENERIERT Phase 5 | `ERR_V42_BUDGET` ≤ 220 · `WARN_LF_MEHRFACHAUFTRAG` |
 | `spuren.ohne_medien.leitfragen[].liefert` | string | Baustein des Produkts. In beiden Spuren gleich, weil der Kern (Schritte, Intro) darauf verweist. | GENERIERT Phase 5 | `ERR_V42_BUDGET` ≤ 50, 3–7 Wörter · `WARN_LIEFERT_VERBFORM` |
 | `spuren.ohne_medien.leitfragen[].antwortform` | string | Art des Antwortfelds. | KONSTANT LF3 `raster`, LF4 `schreibfeld` | `ERR_V42_R1` |
@@ -277,7 +277,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `spuren.mit_medien` · `spuren.mit_medien.leitfragen` | object · object[2] | LF3 und LF4 dieser Spur. | — | `ERR_V42_R1`: genau `nr` 3 und 4 |
 | `spuren.mit_medien.leitfragen[].nr` | number | Nummer. | KONSTANT `3`, `4` | `ERR_V42_R1` |
 | `spuren.mit_medien.leitfragen[].bloom` | string | Denkstufe. | KONSTANT LF3 `Analysieren`, LF4 `Beurteilen` | — |
-| `spuren.mit_medien.leitfragen[].knoten_ref` | string | LF3 fest; LF4 die zwei Pole, etwa `Kap. X.Y ↔ Quelle`. | KONSTANT LF3 `Quelle · Raster` · LF4 GENERIERT Phase 5 | — |
+| `spuren.mit_medien.leitfragen[].knoten_ref` | string | LF3 fest; LF4 die zwei Pole in der Form des Pol-Typs (`references/phase-5-spuren.md` §6), etwa `Kap. X.Y ↔ Quelle`. | KONSTANT LF3 `Quelle · Raster` · LF4 GENERIERT Phase 5 | — |
 | `spuren.mit_medien.leitfragen[].text` | string | Wie in Abschnitt 3, bezogen auf die Quelle. Erst schreiben, wenn die Quelle gewählt und gelesen ist. | GENERIERT Phase 5 | `ERR_V42_BUDGET` ≤ 220 · `WARN_LF_MEHRFACHAUFTRAG` |
 | `spuren.mit_medien.leitfragen[].liefert` | string | Gleich wie in der Spur ohne Medien. | GENERIERT Phase 5 | `ERR_V42_BUDGET` ≤ 50, 3–7 Wörter |
 | `spuren.mit_medien.leitfragen[].antwortform` | string | Art des Antwortfelds. | KONSTANT LF3 `raster`, LF4 `schreibfeld` | `ERR_V42_R1` |
@@ -289,7 +289,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `spuren.mit_medien.leitfragen[].scaffolding` · `spuren.mit_medien.leitfragen[].scaffolding.strategien` · `spuren.mit_medien.leitfragen[].scaffolding.satzanfaenge` · `spuren.mit_medien.leitfragen[].scaffolding.produkt` | object · string[2] · string[2–3] · string | Wie im Kern. | GENERIERT Phase 5 | `ERR_V42_BUDGET` genau 2 × ≤ 90 · 2–3 × ≤ 60 · ≤ 110 |
 | `spuren.mit_medien.leitfragen[].loesung` · `spuren.mit_medien.leitfragen[].loesung.kern` | object · string | Lösung, nur LP. | GENERIERT Phase 5 | `WARN_LF_LOESUNG_ZU_LANG` kern ≤ 55 |
 | `spuren.mit_medien.leitfragen[].loesung.quelle_ref` | string | Nur LF3: ID der Quelle, an der die Lösung geprüft ist. | ABGELEITET ← `raster.quelle_ref` | `ERR_V42_KARTE_FEHLT_QUELLE` |
-| `spuren.mit_medien.leitfragen[].loesung.quelle_stand` | string `JJJJ-MM-TT` | Nur LF3: Tag, an dem die Lösung am Archivtext geprüft wurde. | GENERIERT Phase 5 | — |
+| `spuren.mit_medien.leitfragen[].loesung.quelle_stand` | string `JJJJ-MM-TT` | Nur LF3: Tag, an dem die Lösung am Archivtext geschrieben wurde (heute) — nicht `sachlage_geprueft` der Karte. | GENERIERT Phase 5 | — |
 | `spuren.mit_medien.leitfragen[].loesung.zeilen` · `spuren.mit_medien.leitfragen[].loesung.zeilen[].label` · `spuren.mit_medien.leitfragen[].loesung.zeilen[].text` · `spuren.mit_medien.leitfragen[].loesung.zeilen[].quelle` | object[3–6] · string × 3 | Nur LF3: Massstab in Zeilen, je mit Fundstelle im Ausschnitt (Absatz, Zeitmarke). Hat die Karte ein `ersatz_ref`, trägt eine Zeile «Mit Ersatzquelle» die Lösung für die Ersatzquelle. Eigene Worte, kein Satz der Quelle. | GENERIERT Phase 5 ← Archivtext | `WARN_LF_LOESUNG_ZU_LANG` wie Abschnitt 3 |
 | `spuren.mit_medien.leitfragen[].loesung.raster_zeilen` | string[4][4] | Nur LF3: das ausgefüllte Raster. | GENERIERT Phase 5 ← Archivtext | `ERR_V42_LOESUNG`: 4 Zeilen, Zellen = Spalten |
 | `spuren.mit_medien.leitfragen[].loesung.befund` | string | Nur LF3: möglicher Befund. | GENERIERT Phase 5 | `ERR_V42_LOESUNG` |
@@ -297,7 +297,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `spuren.mit_medien.quellen` | object[1–3] | Einsatz der Quellenkarten: genau eine mit `rolle: "pflicht"`, null bis zwei mit `rolle: "vertiefung"`. | BAUPLAN (Quellen-IDs) | `ERR_V42_R2` |
 | `spuren.mit_medien.quellen[].ref` | string | ID einer Karte in `src/data/quellen/`. | ABGELEITET ← `references/ableitungsregeln.md` | `ERR_V42_KARTE_FEHLT_QUELLE` |
 | `spuren.mit_medien.quellen[].rolle` | string | Einsatz. | KONSTANT erster Eintrag `pflicht`, die übrigen `vertiefung` | `ERR_V42_R2` |
-| `spuren.mit_medien.quellen[].fuer_leitfrage` | number[] | Nur bei `pflicht`. | KONSTANT `[3, 4]` | — |
+| `spuren.mit_medien.quellen[].fuer_leitfrage` | number[] | Nur bei `pflicht`: `[3, 4]`, wenn LF4 die Quelle einbezieht, sonst `[3]`. | ABGELEITET ← LF4 der Spur | — |
 | `spuren.mit_medien.quellen[].auftrag` | string | Nur bei `pflicht`: Lese-, Seh- oder Hörauftrag über dem Raster. | GENERIERT Phase 5 | `ERR_V42_BUDGET` ≤ 220 |
 | `spuren.mit_medien.quellen[].raster` · `spuren.mit_medien.quellen[].raster.spalten` · `spuren.mit_medien.quellen[].raster.zeilen` | object · string[4] · number | Nur bei `pflicht`: Spiegel des Rasters von LF3 — gleiche Spalten, gleiche Zeilenzahl. | ABGELEITET ← `leitfragen[LF3].raster` | `ERR_V42_BUDGET` genau 4 × ≤ 18 · = 4 |
 | `spuren.mit_medien.quellen[].leitfrage_vertiefung` | string | Nur bei `vertiefung`: die eine Frage auf der Karte (Seite 4). Der Ausschnitt muss sie ganz tragen. | GENERIERT Phase 5 ← Archivtext | `ERR_V42_BUDGET` ≤ 100 |
@@ -314,7 +314,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 |---|---|---|---|---|
 | `id` | string `<ordner>_set` | Kennung. | ABGELEITET ← Ordner | — |
 | `modul` · `modul_titel` | string · string | Wie in den Heften. Nur Gold, nicht in `types.ts`. | ABGELEITET ← Hefte | — |
-| `einheit_titel` | string | Titel der Einheit im Katalog. | ABGELEITET ← `references/ableitungsregeln.md` | — |
+| `einheit_titel` | string | Titel der Einheit im Katalog. Gleichnamigkeit wird im Index geprüft (`src/data/einheiten.index.json`, Feld `einheit_titel`). | ABGELEITET ← `references/ableitungsregeln.md` §7 | — |
 | `lehrgang` | string | Kanonischer Lehrgang, wie in den Heften. | BAUPLAN | — |
 | `thema` | string `T<n>` | Thema. Nur Gold, nicht in `types.ts`. | ABGELEITET ← Kompetenznummer | — |
 | `version` | string | Formatstand der Datei. Nur Gold, nicht in `types.ts`. | KONSTANT `2.1.0` | — |
@@ -326,7 +326,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `glossar` | object[] | Glossar der Einheit, je Heft. Speist das Glossar auf Seite 8 des Hefts. | GENERIERT Phase 7 | `ERR_V42_GLOSSAR`: je Heft mindestens ein Eintrag · `ERR_V42_R9_FALL` |
 | `glossar[].begriff` | string | Der Begriff. Einträge ohne `spur` sind genau die Knoten in `mindmap_aeste[].punkte` des Hefts, gleiche Schreibweise. | GENERIERT Phase 7 ← Phase 6 | `ERR_V42_BUDGET` ≤ 25 · `ERR_V42_GLOSSAR` |
 | `glossar[].definition` | string | Erklärung in eigenen Worten; nichts, was nicht im Lehrmittel oder in der Quelle steht. | GENERIERT Phase 7 | `ERR_V42_BUDGET` ≤ 90 |
-| `glossar[].herkunft` | string `lehrmittel` · `heft` · `quelle` | Woher der Begriff stammt. | GENERIERT Phase 7 | — |
+| `glossar[].herkunft` | string `lehrmittel` · `heft` · `quelle` | Woher der Begriff stammt. `lehrmittel` gilt auch, wenn der Begriff in einem Lehrmittelkapitel ausserhalb der Heft-Kapitel belegt ist (Kapitel und Seite in den Bericht). | GENERIERT Phase 7 | — |
 | `glossar[].heft` | string `A` oder `B` | Zu welchem Heft der Eintrag gehört. | GENERIERT Phase 7 | `ERR_V42_GLOSSAR` |
 | `glossar[].spur` | string `ohne_medien` oder `mit_medien` | Nur bei Begriffen, die allein aus dem Raster einer Spur stammen. Fehlt der Schlüssel, gilt der Eintrag in beiden Spuren. | GENERIERT Phase 7 | `ERR_V42_BUDGET`: je Heft und Spur ≤ 2 |
 | `spur` | string | Welche Spur die Einheit zeigt; `wahl` = beide werden exportiert, die Lehrperson schaltet um. | KONSTANT `wahl` | — |
@@ -341,7 +341,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `gemeinsamer_auftrag.aktivierte_trade_offs` | string[≥ 2] | Spannungsfelder, wörtlich aus `prinzip.mehrdeutigkeits_architektur.trade_off_raum`. | ABGELEITET ← `prinzip.json` (Auswahl) | — |
 | `gemeinsamer_auftrag.sprachmodi` | string[] | Sprachmodi des Auftrags; als Menge gleich `prinzip.modi_auftrag`. | ABGELEITET ← `prinzip.json` | `ERR_V42_R8` |
 | `gemeinsamer_auftrag.sozialform` · `gemeinsamer_auftrag.sozialform.zulaessig` | object · string[] aus `einzel`, `partner`, `gruppe` | Zulässige Sozialformen. Enthält `sprachmodi` einen Modus, der mit «Interaktion» beginnt: ohne `einzel`. Sonst alle drei. | ABGELEITET ← `sprachmodi` (Leitfaden §7.3) | `ERR_V42_R8` |
-| `gemeinsamer_auftrag.sozialform.empfehlung` | string | Vorschlag an die Lehrperson. Steht nicht auf dem Bogen als Vorgabe (E18). | GENERIERT Phase 7 | — |
+| `gemeinsamer_auftrag.sozialform.empfehlung` | string | Wird auf A1 gedruckt: ein Vorschlag, an die Lernenden lesbar formuliert — kein Auftrag an die Lehrperson (E18, `references/phase-7-set.md` §4.2). | GENERIERT Phase 7 | — |
 | `gemeinsamer_auftrag.auftrag` | string | Der Auftrag in einem Satz, Sie-Form. | GENERIERT Phase 7 | `ERR_V42_R9` |
 | `gemeinsamer_auftrag.schritte` · `gemeinsamer_auftrag.schritte[].label` · `gemeinsamer_auftrag.schritte[].hint` | object[5] · string · string | Fünf Schritte; Label beginnt mit `01` bis `05`. | GENERIERT Phase 7 | `ERR_V42_BUDGET` genau 5 · Label ≤ 30 · Hint ≤ 140 · `ERR_V42_R9` |
 | `gemeinsamer_auftrag.abgaben` | string[0–3] | Abgaben; je Sprachmodus des Auftrags eine. | GENERIERT Phase 7 | `ERR_V42_BUDGET` ≤ 3 × ≤ 80 · `ERR_V42_R9` |
@@ -353,7 +353,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `gemeinsamer_auftrag.bogen` | string[4] | Seitenfolge des Bogens; informativ — der Wert bleibt, auch wenn `produkte` (Abschnitt 12) die Seiten 2 und 3 anders belegt. Seite 4 heisst «Selbsteinschätzung» (E18). | KONSTANT `situation_auftrag`, `arbeitsflaeche`, `sprechspur`, `selbsteinschaetzung` | — |
 
 Dazu trägt `gemeinsamer_auftrag` in jeder neuen Einheit das Feld `produkte`
-(E25). Es steht nicht in Gold und nicht im Skelett: Abschnitt 12.1.
+(E25). Es steht nicht in Gold; im Skelett steht es nach `abgaben`: Abschnitt 12.1.
 
 ## 6. kn.json
 
@@ -383,7 +383,7 @@ steht ja hier. Felder mit «nur Gold» stehen nicht in `types.ts`.
 | `hybrid_situation.emotion_tag` | string | Altfeld. | KONSTANT leerer String | — |
 | `hybrid_situation.text` | string | Die Szene in Ich-Form; endet mit der Leitfrage. Gegenstand, Beteiligte und Lebensbereich kommen in keinem Heft, im Auftrag und in keiner Quelle vor. | GENERIERT Phase 3 (Fall: BAUPLAN) | höchstens `prinzip.hybrid_situation_spec.max_woerter` Wörter (kein Skript) |
 | `hybrid_situation.leitfrage` | string | Letzter Satz der Szene. | GENERIERT Phase 3 | — |
-| `hybrid_situation.aktivierte_trade_offs` | string[≥ 1] | Wörtlich aus `prinzip.mehrdeutigkeits_architektur.trade_off_raum`. | ABGELEITET ← `prinzip.json` (Auswahl) | — |
+| `hybrid_situation.aktivierte_trade_offs` | string[≥ 2] | Mindestens zwei, wörtlich aus `prinzip.mehrdeutigkeits_architektur.trade_off_raum` (die Gold-Konstante `must_activate_trade_offs_min` bleibt `1`). | ABGELEITET ← `prinzip.json` (Auswahl) | — |
 | `hybrid_situation.definition_kurz` | string | Erklärt den Lernenden den Begriff bei der ersten Verwendung. | KONSTANT (Skelett) | — |
 | `hybrid_situation.definition_lang` | string | Erklärung für die Lehrperson. | GENERIERT Phase 3 | — |
 | `hybrid_situation.alignment_note` · `hybrid_situation.alignment_note.herausforderungen_mapping` · `hybrid_situation.alignment_note.herausforderungen_mapping[].hf_letter` · `hybrid_situation.alignment_note.herausforderungen_mapping[].scene_element` | object · object[2] · string · string | Welches Element der Szene welches Heft aktiviert. | KONSTANT `hf_letter`: `A`, `B` · Rest GENERIERT Phase 3 | — |
@@ -431,10 +431,10 @@ nicht in `types.ts`.
 | `modi_kn` | string[] | Sprachmodi, die der KN über seine drei Formen verlangt: die Vereinigung von `kn.kn_typen[].sprachmodi`. In Phase 2 aus den drei Formen gesetzt, nach Phase 3 gegen `kn.json` geprüft. | ABGELEITET ← `kn.kn_typen[].sprachmodi` | — |
 | `mehrdeutigkeits_architektur` · `mehrdeutigkeits_architektur.trade_off_raum` · `mehrdeutigkeits_architektur.verbindlich` | object · string[] «X vs. Y» · string | Die Spannungsfelder der Einheit und der Satz, dass beide Seiten begründbar bleiben. | BAUPLAN · `verbindlich` GENERIERT Phase 2 | — |
 | `dekontextualisierungs_anker` · `dekontextualisierungs_anker.anker_statement` · `dekontextualisierungs_anker.transferfeld` | object · string · string | Das Prinzip in einem Satz ohne Fall, und worauf es übertragbar ist. | BAUPLAN (Transfer-Anker) · `transferfeld` GENERIERT Phase 2 | — |
-| `zirkularitaet` · `zirkularitaet.r1_aktuell` · `zirkularitaet.r2_voraussicht` · `zirkularitaet.r3_voraussicht` | object · string · string · string | Wo der Gegenstand im Lehrplan steht und wo er wiederkommt. | GENERIERT Phase 2 ← Datensatz (`zirkularitaet`) | — |
-| `quellen_anker` · `quellen_anker.chapters` · `quellen_anker.chapters[].ref` · `quellen_anker.chapters[].titel` · `quellen_anker.chapters[].seiten` · `quellen_anker.konzepte` | object · object[] · string `Kap. X.Y` · string · string `Seite aa-bb` · string[] | Alle Lehrmittel-Kapitel der Einheit und ihre Fachbegriffe. Hier ein Objekt, im Heft eine Liste. Nur Gold. | GENERIERT Phase 2 ← Verortung Phase 0 | — |
+| `zirkularitaet` · `zirkularitaet.r1_aktuell` · `zirkularitaet.r2_voraussicht` · `zirkularitaet.r3_voraussicht` | object · string · string · string | Wo der Gegenstand im Lehrplan steht und wo er wiederkommt. Form: `r1_aktuell` «R<n>» (Iteration des dominanten Aspekts im Thema der Einheit); `r2_voraussicht`, `r3_voraussicht` «T<n> '<Titel>' — <Stichwort>» oder «—». | GENERIERT Phase 2 ← Datensatz (`zirkularitaet`) | — |
+| `quellen_anker` · `quellen_anker.chapters` · `quellen_anker.chapters[].ref` · `quellen_anker.chapters[].titel` · `quellen_anker.chapters[].seiten` · `quellen_anker.konzepte` | object · object[] · string `Kap. X.Y` · string · string `Seite aa-bb` · string[] | Die Kapitel aus Bauplan §2, dazu jedes Kapitel, aus dem eine Lösung eine Fundstelle zitiert, und ihre Fachbegriffe; Methodenkarten-Kapitel gehören nicht hinein. Hier ein Objekt, im Heft eine Liste. Nur Gold. | GENERIERT Phase 2 ← Verortung Phase 0 | — |
 | `hybrid_situation_spec` · `hybrid_situation_spec.max_woerter` · `hybrid_situation_spec.perspektive` · `hybrid_situation_spec.must_activate_trade_offs_min` · `hybrid_situation_spec.must_combine_herausforderungen` · `hybrid_situation_spec.lehrjahr_constraint` | object · number · string · number · string[2] · string | Vorgaben für den Fall des KN. | KONSTANT `120` · `ICH` · `1` · `A`, `B` · `match_units` | — |
-| `hybrid_situation_spec.persona_neutral` · `hybrid_situation_spec.endet_mit_leitfrage` · `hybrid_situation_spec.qualitaetskriterien` | string · boolean · string[5] | Weitere Vorgaben. Nur Gold. | KONSTANT (Skelett) | — |
+| `hybrid_situation_spec.persona_neutral` · `hybrid_situation_spec.endet_mit_leitfrage` · `hybrid_situation_spec.qualitaetskriterien` | string · boolean · string[5] | Weitere Vorgaben. Nur Gold. In `persona_neutral` wird «{{N}}. Lehrjahr» durch das Lehrjahr der Einheit ersetzt (wie `persona.beruf`). | KONSTANT (Skelett) | — |
 | `hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` | string[] | Begriffe des KN-Falls. Jeder ist in beiden Heften, im Auftrag, im Glossar und in jeder Quellenkarte verboten — als Teilwort, ohne Rücksicht auf Gross- und Kleinschreibung. Darum nur Begriffe, die lang und eindeutig genug sind, dass sie in keinem anderen Wort stecken. | BAUPLAN («dem KN vorbehalten») | `ERR_V42_R9`: nicht leer · speist `ERR_V42_R9_FALL` |
 | `modi_pro_heft` · `modi_pro_heft.A` · `modi_pro_heft.B` | object · string[] × 2 | Sprachmodi je Heft; gleich wie `nrlp.sprachmodi` des Hefts. | ABGELEITET ← Datensatz (Kompetenz-Ebene) | `ERR_V42_R4` (zusammen mit `nrlp.sprachmodi`) |
 | `kn_kriterien_verteilung` · `kn_kriterien_verteilung.A` · `kn_kriterien_verteilung.B` | object · string[2] × 2 | Welche zwei KN-Kriterien welches Heft übt: je eines SuK und eines Ges; A und B zusammen alle vier. Namen wie in `kn.rubrik_shared`. | GENERIERT Phase 2 und 3 (Entscheid gehört in den Bauplan, wenn er dort geführt ist) | über die Hefte `ERR_V42_R6` |
@@ -650,8 +650,8 @@ Feld. Das Skelett `assets/set-template.json` führt es nicht.
 
 Zwei Entscheide haben nach der Gold-Einheit Felder hinzugefügt. Sie stehen in
 `ENTSCHEIDE.md`, in `types.ts` und in `check-v42.mjs`, aber nicht in den
-Gold-Dateien und darum nicht in den Skeletten. Ohne sie zeichnet der Renderer
-die Gold-Form — für jede andere Einheit falsch.
+Gold-Dateien. Ohne sie zeichnet der Renderer die Gold-Form — für jede andere
+Einheit falsch.
 
 ### 12.1 `gemeinsamer_auftrag.produkte` (E25) — die Skill setzt es immer
 
@@ -659,7 +659,8 @@ Die zwei Produkte des Auftrags und die Seite des Auftragsbogens, die jedes
 trägt: der erste Eintrag belegt Seite A2, der zweite Seite A3. Fehlt das Feld,
 druckt der Bogen den Sonderfall der Gold-Einheit (Schritt 04 als freie Fläche,
 Schritt 05 als Sprachnachricht mit drei festen Stationen). Platz in der Datei:
-in `gemeinsamer_auftrag`, nach `bogen`.
+in `gemeinsamer_auftrag`, nach `abgaben` — wie im Skelett
+`assets/set-template.json`.
 
 | Feldpfad (unter `gemeinsamer_auftrag`) | Typ / Wertform | Bedeutung | Herkunft | Budget / Regel (`ERR_V42_AUFTRAG_PRODUKTE`) |
 |---|---|---|---|---|
@@ -691,13 +692,12 @@ Arten; `titel`, Legende und die Zahl der Blöcke (2–3) bleiben wie in 2.5.
 { "titel": "…", "wechsel": [ { "wer": "…", "text": "…" }, { "wer": "…", "text": "…", "marke": "<key>" } ] }
 ```
 
-**Die Grenzen stehen im Skript, nicht hier.** `check-v42.mjs` führt sie in der
+**Beide Blockarten sind verwendbar.** Die Grenzen sind am gerenderten Blatt
+gemessen und stehen im Skript, nicht hier: `check-v42.mjs` führt sie in der
 Konstante `PB_E26` — `klein` für das Beispielbild (Heft, Seite 6), `gross` für
-das Lösungsbild. E26 legt fest, dass sie am gerenderten Blatt gemessen und
-danach dort eingetragen werden. Vor dem Schreiben eines solchen Blocks die
-Konstante lesen. **Stehen dort Nullen, sind die Blockarten noch nicht gemessen:
-Jeder Block mit `text` oder `wechsel` ist dann ein Budget-Befund** (am
-02.10.2026 war das so). In diesem Fall die Blockart nicht verwenden, das
-Produkt nicht in eine Liste verbiegen und die Einheit nach `SKILL.md` §5
-Regel 12 melden.
+das Lösungsbild, je für zwei und für drei Blöcke; die Tabelle dazu steht in
+ENTSCHEIDE E26. Vor dem Schreiben eines solchen Blocks die Konstante lesen,
+keine Zahl aus dem Gedächtnis. Gemischte Blätter (Fliesstext oder Wechselrede
+neben Tabelle oder Liste) sind nicht abgetastet — dort entscheidet
+`messen-v42.mjs` (`references/phase-9-tor.md`).
 

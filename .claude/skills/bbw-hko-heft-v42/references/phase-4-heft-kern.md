@@ -48,7 +48,7 @@ korrigiert und der Entscheid steht im Bericht — nie ein Anker, der nur behaupt
 |---|---|
 | `id` | `<ordner>_hf_A` bzw. `_hf_B` (`references/ableitungsregeln.md`). Der Renderer leitet den Ordner für den QR-Code aus der `id` ab. |
 | `template` | `"heft_8page_v42"` |
-| `modul` / `modul_titel` | Nummer des Lebensbezugs `X.Y` / Titel des Themas aus dem Datensatz, Gedankenstrich, Kurzform des Lebensbezugs. In A, B und `set.json` gleich. |
+| `modul` / `modul_titel` | Nummer des Lebensbezugs `X.Y` / `modul_titel` aus Bauplan §1: «<Titel des Themas> — <Fokus in zwei bis vier Wörtern, Kleinschreibung nach dem Gedankenstrich>». In A, B und `set.json` gleich. |
 | `lehrgang` | `EFZ_3J` oder `EFZ_4J`, einwertig, in A und B gleich |
 | `buchstabe` | `"A"` bzw. `"B"` — gleich wie der Buchstabe im Dateinamen |
 | `sit_farbe` / `sit_farbe_light` / `sit_farbe_mid` | Heft A `#C0392B` / `#FADBD8` / `#E74C3C` · Heft B `#2471A3` / `#D6EAF8` / `#3498DB`. Fest je Buchstabe, nie je Thema. Beleg: Gold A und B. (Die alte Skill führt für B `#1A5276` / `#2E86C1`; es gilt die Form der Gold-Einheit.) |
@@ -127,7 +127,7 @@ von LF3 und LF4 stehen hier so, dass sie in **beiden** Spuren stimmen; Phase 5 �
 |---|---|---|
 | `nr` / `bloom` | `1` / `"Verstehen"` | `2` / `"Anwenden"` |
 | Funktion | Begriffe und Kategorien aus dem Lehrmittel | diese auf den eigenen Fall anwenden |
-| `knoten_ref` | «Kap. X.Y \| S. aa-bb» | «Kap. X.Y \| S. aa-bb · eigener Fall» |
+| `knoten_ref` | «Kap. X.Y \| S. aa-bb» | «Kap. X.Y \| S. aa-bb · eigener Fall»; stützt sich LF2 auf zwei Kapitel: «Kap. X.Y \| S. NN · Kap. A.B \| S. NN · eigener Fall» (kein Skript erzwingt ein Muster; der Wert beginnt mit dem `ref` eines `quellen_anker`) |
 | `antwortform` | `"schreibfeld"` | `"schreibfeld"` |
 | `feld_hoehe_mm` | `35` | `45` |
 
@@ -225,7 +225,10 @@ Rezeptionskarte. Die drei übrigen: `ref` (Karten-ID), `fuer` («für …», bez
 Abgabe), `tun`.
 
 **Auswahl:** zuerst `src/data/methoden/` auflisten und die Karten lesen, dann wählen — nicht aus
-dem Gedächtnis: (1) eine Karte für die **Form des Produkts** (Typ aus §1), (2) eine für den
+dem Gedächtnis. `lm-…`-Karten der Methodenkapitel 16–20 sind zulässig, auch wenn die
+Crosswalk-Zeile des Lebensbezugs das Kapitel nicht nennt (ENTSCHEIDE E27): Die Karte ist die
+Fundstelle; Fachaussagen des Hefts kommen weiter nur aus den Kapiteln der Zeile. Im Auto-Modus
+gelten die Karten aus Bauplan §4. Gewählt wird: (1) eine Karte für die **Form des Produkts** (Typ aus §1), (2) eine für den
 **Modus der Durchführung** (zuhören, fragen, rückmelden, gemeinsam schreiben; bei rein
 schriftlichen Produkten für die Darstellung), (3) eine für den **Denkschritt von LF4** (begründen,
 abwägen, entscheiden).
@@ -260,7 +263,7 @@ geändert. Jede neue Karte steht im Bericht.
 | `wochen` | `1` |
 | `dekontextualisierung` | `frage`: Ich-Form, wo dasselbe sonst noch gilt · `ziel`: `prinzip.dekontextualisierungs_anker.anker_statement`, wörtlich oder auf den Gegenstand des Hefts verengt |
 | `prinzip_handoff` | `kernkonzept` (das Kernkonzept des Hefts in einer Zeile) · `lehrmittel_anker` (Kapitel und geprüfte Seiten dieses Hefts) · `kn_aktivierung` (was das Heft für den KN vorbereitet — **das einzige Feld, das den KN-Fall nennen darf**) · `transfer_check` (eine Ja-Nein-Frage an die Lehrperson) |
-| `sk_anker` | je SK in `nrlp.sk` genau ein Eintrag mit `sk` (Zahl) und `wo` («Stelle — was dort getan wird»). Stelle wie in Gold: `leitfragen[i]` (nullbasiert im zusammengesetzten Heft: `leitfragen[2]` = LF3), ein Schritt, ein Feld. Liegt die Stelle in LF3 oder LF4, muss sie in beiden Spuren gelten. |
+| `sk_anker` | je SK in `nrlp.sk` genau ein Eintrag mit `sk` (Zahl) und `wo` in der Form «<Feldpfad oder Seite> — <was dort geübt wird>», zum Beispiel «leitfragen[3] + Produkt — zwei Sichtweisen gegeneinander abwägen» oder «S. 7 — den eigenen Standpunkt begründen». Feldpfad: `leitfragen[i]` (nullbasiert im zusammengesetzten Heft: `leitfragen[2]` = LF3), `handlungsprodukt.schritte[i]`, «Produkt» oder ein anderes Feld; mehrere Stellen mit « + » verbunden. Liegt die Stelle in LF3 oder LF4, muss sie in beiden Spuren gelten. |
 
 ## 10. Der Kern setzt nichts voraus — und nennt den KN-Fall nicht
 

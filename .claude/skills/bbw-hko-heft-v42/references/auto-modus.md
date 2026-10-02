@@ -77,7 +77,8 @@ Früher ein Stopp, jetzt eine Regel:
 | Hybrid-Fall freigeben | steht im Bauplan §5 |
 | Lehrmittel-Abschnitt für LF3 ohne Medien länger als drei Seiten | zulässig, wenn der Bauplan §2 die Seiten nennt; sonst der kürzeste zusammenhängende Abschnitt, der vier belegbare Rasterzeilen trägt; Länge und Fundseiten in den Bericht |
 | zweite Kompetenz eines Hefts | steht im Bauplan §1 (Zuschnitt); nichts hinzufügen |
-| Kapitel ausserhalb der Crosswalk-Zeile | nur, wenn der Bauplan §2 es nennt |
+| Kapitel ausserhalb der Crosswalk-Zeile (für Fachaussagen) | zulässig, wenn der Bauplan §2 es nennt («Kapitel ausserhalb der Crosswalk-Zeile»); sonst nicht verwenden |
+| Methodenkarte aus den Kapiteln 16–20, die die Crosswalk-Zeile nicht nennt | zulässig ohne Eintrag: Die Karte ist die Fundstelle (E27) |
 | neue Methodenkarte | nur, wenn der Bauplan §9 «neue Karte nötig» sagt; sonst die nächstpassende vorhandene |
 
 ## 5. Voraussetzung fehlt → Verhalten (ENTSCHEIDE E23)
@@ -97,7 +98,7 @@ Dazu, aus anderen Entscheiden und aus `docs/cloud-run/RUN.md`:
 | Es fehlt oder trifft zu | Die Skill |
 |---|---|
 | Bauplan fehlt oder ist nicht freigegeben | «nicht erzeugbar» |
-| Bauplan entspricht E21 nicht (Abschnitt 7) | «nicht erzeugbar», nichts schreiben |
+| Bauplan entspricht E21 nicht und Bauplan §9 nennt die Abweichung nicht als Ausnahme (Abschnitt 7) | «nicht erzeugbar», nichts schreiben |
 | Ordner existiert bereits | nie überschreiben; «nicht erzeugbar» |
 | Gegenstand braucht eines der Wörter Leasing, Konsumkredit, Kleinkredit, E-Bike, Mobilität (E24) | «nicht erzeugbar», bis `check-v42.mjs` korrigiert ist |
 | Fehler in Renderer oder Skript | nicht reparieren, nicht umgehen (`--baseline` ist verboten); in den Bericht; «nicht erzeugbar», wenn das Tor sonst nicht grün wird |
@@ -142,8 +143,21 @@ zutrifft:
 - Zuschnitt, Kompetenztexte, Modi je Kompetenz und Spuren stimmen mit dem
   Datensatz überein (`references/phase-0-verortung.md`).
 
-Besteht er nicht: «nicht erzeugbar». Ein Ordnername wird nicht «verbessert» —
-er ist ein freigegebener Entscheid und nach dem Druck fest.
+**Ausnahme aus Bauplan §9.** Nennt Bauplan §9 eine Abweichung von einer
+dieser Regeln **ausdrücklich** — mit der Regel, dem abweichenden Wert und dem
+Grund —, gilt der Wert des Bauplans, und der Bauplan besteht. Beispiele:
+abweichender Ordnername · Quellen-IDs, die einer anderen Einheit gehören
+(deren Karten und Archivtexte werden dann verwendet, nicht überschrieben) ·
+eine SK ausserhalb des Themas · ein Kapitel ausserhalb der Crosswalk-Zeile
+(dieses steht in §2). Die Ausnahme ist ein freigegebener Entscheid wie jeder
+andere (Abschnitt 3) und kommt mit ihrem Grund in den Bericht. Dem Datensatz
+kann §9 nicht widersprechen: Kompetenztexte, Nummern und die Regel zu
+weiteren Lehrgängen gelten immer. Auch ein vorhandener Ordner wird nie
+überschrieben.
+
+Besteht er nicht und steht die Abweichung nicht in §9: «nicht erzeugbar». Ein
+Ordnername wird nicht «verbessert» — er ist ein freigegebener Entscheid und
+nach dem Druck fest.
 
 ## 8. Reparaturrunden
 

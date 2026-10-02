@@ -93,9 +93,18 @@ Die neun zulässigen Bezeichnungen und ihre IDs stehen in
 `references/sprachmodus-ids.md`. Ein leeres `modus` (kommt im Datensatz vor)
 zählt als «kein Modus» und wird im Verortungsblatt als Lücke vermerkt.
 
-**Modi je Heft (Ausgangswert):** die Vereinigung der `modus`-Werte aller
-Kompetenzen des Hefts. Phase 1 legt daraus fest, welche das Heft führt
-(`nrlp.sprachmodi` = `prinzip.modi_pro_heft[L]`).
+**Modi je Heft — «geführt» (ENTSCHEIDE E27):** die Vereinigung der
+`modus`-Werte aller Kompetenzen des Hefts, sonst nichts. Das Heft führt sie
+(`nrlp.sprachmodi` = `prinzip.modi_pro_heft[L]`); nur geführte Modi gehen in
+die Formel des Auftrags.
+
+**«Geübt, nicht geführt»:** Seite 3 übt in jedem Heft Rezeption (LF3
+analysiert eine Quelle). Nennt keine Kompetenz des Hefts einen
+Rezeptionsmodus, wird diese Rezeption geübt, aber nicht geführt: Sie steht
+nicht in `nrlp.sprachmodi`, und der Typ der Quelle folgt dem Modus des Themas
+(`references/phase-q-quellen.md` §3). Das Verortungsblatt nennt sie in der
+Zeile «S. 3 geübt». Nennt eine Kompetenz zwei Rezeptionsmodi (mündlich und
+audiovisuell), führt das Heft beide.
 
 **Zulässige Spuren je Heft** — nach `regel4` in `scripts/check-v42.mjs`:
 
@@ -115,8 +124,9 @@ das Heft führt**. Daraus folgen zwei Regeln:
 2. Das Verortungsblatt nennt je Heft die Spuren **mit Grund**: den Modus und
    die Kompetenz, aus der er stammt.
 
-Hat ein Heft nur `mit_medien`, braucht es zwingend eine Quelle (Phase Q). Das
-steht im Verortungsblatt als Voraussetzung.
+Hat ein Heft nur `mit_medien`, braucht es zwingend eine Quelle **und eine
+Ersatzquelle** (Phase Q; es gibt keinen Rückfall auf die Spur ohne Medien).
+Das steht im Verortungsblatt als Voraussetzung.
 
 ## 5. Schlüsselkompetenzen und Aspekte des Themas
 
@@ -165,10 +175,14 @@ Verortungsblatt «keine Iteration im Datensatz» — keine Stufe erfinden.
    Satz aus dem Lehrmittel. Eine Seite, die nicht am Marker geprüft ist, wird
    nicht genannt.
 5. **Methodenkapitel** (16.x–20.x) nur aufführen, wenn sie zu einem Modus der
-   Kompetenzen passen; sie liefern später die Methodenkarten.
-6. **Kapitel ausserhalb der Zeile:** lokal mit Begründung in den Bauplan §2
-   und den Crosswalk nachführen, bevor es verwendet wird. Unbeaufsichtigt:
-   nicht verwenden.
+   Kompetenzen passen; sie liefern später die Methodenkarten. **Methodenkarten
+   dürfen aus den Kapiteln 16–20 stammen, auch wenn die Crosswalk-Zeile des
+   Lebensbezugs das Kapitel nicht nennt** (E27): Die Karte ist die Fundstelle.
+   Fachaussagen der Hefte kommen weiter nur aus den Kapiteln der Zeile.
+6. **Kapitel ausserhalb der Zeile** (für Fachaussagen): lokal mit Begründung
+   in den Bauplan §2 («Kapitel ausserhalb der Crosswalk-Zeile») und den
+   Crosswalk nachführen, bevor es verwendet wird. Unbeaufsichtigt: zulässig,
+   wenn der Bauplan §2 es nennt; sonst nicht verwenden.
 
 Trägt das Lehrmittel eine Kompetenz nicht wörtlich (das kommt vor), wird das
 hier festgestellt und nicht in Phase 5 entdeckt: Das Verortungsblatt nennt,
@@ -227,10 +241,12 @@ Weitere Lehrgänge:    … | keiner — Grund
 Thema:                T<X> — <titel> · Lehrjahr <n>
 Lebensbezug:          <X.Y> — <text wörtlich>
 Heft A:  <X.Y.Z> — <text wörtlich>
-         Modi: … (je Modus die Kompetenz)   Spuren: … — Grund
+         Modi geführt: … (je Modus die Kompetenz)   Spuren: … — Grund
+         S. 3 geübt: — | Rezeption … (Modus des Themas)
          Aspekte: <aspekt> (<Iteration>) …
 Heft B:  <X.Y.Z> [+ <X.Y.Z>] — <text wörtlich>
-         Modi: …                              Spuren: … — Grund
+         Modi geführt: …                      Spuren: … — Grund
+         S. 3 geübt: — | …
          Aspekte: …
 Nicht abgedeckte Kompetenzen des Lebensbezugs: … | keine
 SK des Themas: <Nr> <bezeichnung> (<Iteration>) · …   Gegenprobe: gleich | abweichend
@@ -250,6 +266,6 @@ Gesperrte Wörter (E24): kein Treffer | Treffer: …
 | Kapiteldatei fehlt | nicht erzeugbar, nichts schreiben |
 | gesperrtes Wort im Gegenstand | nicht erzeugbar bis zur Korrektur des Skripts |
 | Ordner existiert, auch mit verlängertem slug | nicht erzeugbar (E21) |
-| Heft hat nur `mit_medien` und es gibt keine Quelle | lokal: Phase Q zuerst; unbeaufsichtigt: nicht erzeugbar |
+| Heft hat nur `mit_medien` und es gibt keine Quelle oder keine Ersatzquelle | lokal: Phase Q zuerst; unbeaufsichtigt: nicht erzeugbar |
 
 Alles andere ist kein Abbruch, sondern ein Eintrag im Verortungsblatt.

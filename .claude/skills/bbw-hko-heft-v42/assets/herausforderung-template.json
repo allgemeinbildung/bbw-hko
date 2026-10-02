@@ -118,7 +118,7 @@
     {
       "nr": 2,
       "bloom": "Anwenden",
-      "knoten_ref": "{{Kap. X.Y | S. aa-bb · eigener Fall}}",
+      "knoten_ref": "{{Kap. X.Y | S. aa-bb · eigener Fall — bei zwei Kapiteln: Kap. X.Y | S. NN · Kap. A.B | S. NN · eigener Fall}}",
       "text": "{{LF2: auf den eigenen Fall anwenden, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
       "liefert": "{{BAUSTEIN des Produkts, nominal, ohne Anrede — 3–7 Wörter, ≤ 50 Zeichen}}",
       "antwortform": "schreibfeld",
@@ -188,7 +188,7 @@
       "titel": "{{Beispiel an einem anderen Fall: FALL, der weder im Heft noch im Auftrag noch im KN vorkommt — ≤ 90 Zeichen}}",
       "legende": [
         {
-          "key": "{{SCHLÜSSEL der Markierung, ein Wort in Kleinbuchstaben}}",
+          "key": "{{KENNWORT der Markierung: frei wählbar, kurz, in Kleinbuchstaben}}",
           "text": "{{BEDEUTUNG der Markierung — ≤ 28 Zeichen; höchstens 3 Einträge}}"
         }
       ],
@@ -464,7 +464,7 @@
   "sk_anker": [
     {
       "sk": "{{SK-NUMMER als Zahl, aus nrlp.sk}}",
-      "wo": "{{WO im Heft diese SK geübt wird}}"
+      "wo": "{{<Feldpfad oder Seite> — <was dort geübt wird>, z. B. leitfragen[3] + Produkt — …}}"
     }
   ],
   "spuren": {
@@ -562,7 +562,7 @@
         {
           "nr": 4,
           "bloom": "Beurteilen",
-          "knoten_ref": "{{Kap. X.Y ↔ ZWEITER POL}}",
+          "knoten_ref": "{{DIE ZWEI POLE in der Form des Pol-Typs (references/phase-5-spuren.md §6), z. B. Kap. X.Y ↔ eigener Fall · Kap. X.Y · <Position> ↔ <Gegenposition>}}",
           "pol_typ": "{{position_gegenposition|modell_eigener_fall|recht_praxis — = prinzip.pol_typ_verteilung.<A|B>.ohne_medien, A ≠ B}}",
           "text": "{{LF4: Spannung zwischen zwei Polen beurteilen und entscheiden, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
           "liefert": "{{BAUSTEIN des Produkts, in beiden Spuren gleich — 3–7 Wörter, ≤ 50 Zeichen}}",
@@ -713,7 +713,7 @@
         {
           "nr": 4,
           "bloom": "Beurteilen",
-          "knoten_ref": "{{Kap. X.Y ↔ Quelle, oder die zwei Pole}}",
+          "knoten_ref": "{{DIE ZWEI POLE in der Form des Pol-Typs (references/phase-5-spuren.md §6), z. B. Kap. X.Y ↔ Quelle · Kap. X.Y · <Position> ↔ <Gegenposition>}}",
           "pol_typ": "{{lehrmittel_quelle|position_gegenposition|modell_eigener_fall|recht_praxis|quelle_quelle — = prinzip.pol_typ_verteilung.<A|B>.mit_medien, A ≠ B}}",
           "text": "{{LF4: Spannung zwischen zwei Polen beurteilen und entscheiden, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
           "liefert": "{{BAUSTEIN des Produkts, in beiden Spuren gleich — 3–7 Wörter, ≤ 50 Zeichen}}",
@@ -751,8 +751,7 @@
           "ref": "{{ID der Quellenkarte: q-<n><a|b>-pflicht}}",
           "rolle": "pflicht",
           "fuer_leitfrage": [
-            3,
-            4
+            "{{ZAHLEN: 3 und 4, wenn LF4 die Quelle einbezieht — sonst nur 3}}"
           ],
           "auftrag": "{{LESE-, SEH- oder HÖRAUFTRAG zur Quelle, nennt sie Quelle, nie Pflichtquelle — ≤ 220 Zeichen}}",
           "raster": {

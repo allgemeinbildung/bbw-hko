@@ -1,6 +1,6 @@
 ---
 name: bbw-hko-heft-v42
-description: "Standard-Generator für neue EFZ-Einheiten in bbw-hko (Format v4.2, Template heft_8page_v42): erzeugt aus einer nRLP-Kompetenz und dem Lehrmittelkapitel eine Einheit mit zwei Heften A/B (je acht Seiten, je in den Spuren ohne Medien und mit Medien), gemeinsamem Auftrag, Kompetenznachweis, Begleiter, Glossar mit Begriffsnetz, Beispielbild und Lösungen für alle Felder — und schreibt sie nach src/data/einheiten/{X.Y.Z}_{slug}/ (dazu Quellenkarten nach src/data/quellen/). Nutze diese Skill immer, wenn Pietro eine neue Einheit will: 'mach eine Einheit zu 2.1.2', 'neue Einheit für EFZ 3J/4J', 'Heft generieren', 'Einheit mit Medien-Spur', 'v4.2-Einheit', 'Bauplan für X.Y.Z', 'Einheit aus dem Bauplan erzeugen', 'Produktionslauf'. Arbeitet mit einem Bauplan (ein gebündelter Stopp zur Freigabe) und läuft danach ohne Rückfrage bis zum grünen Tor. NICHT für: das alte 3er-Set mit drei Herausforderungen A/B/C ('3er-Set', 'alte Methode', 'wie früher' → bbw-hko-3er-set), EBA-Einheiten (→ hko-2er-EBA-set-generator), die KI-Toolbox einer fertigen Einheit (→ hko-ki-komplement)."
+description: "Standard-Generator für neue EFZ-Einheiten in bbw-hko (Format v4.2, Template heft_8page_v42): erzeugt aus einer nRLP-Kompetenz und dem Lehrmittelkapitel eine Einheit mit zwei Heften A/B (je acht Seiten, je in den Spuren ohne Medien und mit Medien), gemeinsamem Auftrag, Kompetenznachweis, Begleiter, Glossar mit Begriffsnetz, Beispielbild und Lösungen für alle Felder — und schreibt sie nach src/data/einheiten/{X.Y.Z}_{slug}/ (dazu Quellenkarten nach src/data/quellen/). Nutze diese Skill immer, wenn Pietro eine neue Einheit will: 'mach eine Einheit zu 2.1.2', 'neue Einheit für EFZ 3J/4J', 'Heft generieren', 'Einheit mit Medien-Spur', 'v4.2-Einheit', 'Bauplan für X.Y.Z', 'Einheit aus dem Bauplan erzeugen', 'Produktionslauf'. Auch bei allgemeinen oder englischen Aufträgen wie 'create the new HKO Einheit for X.Y.Z', 'neue HKO-Einheit erstellen' oder 'Lehrmittelkapitel X.Y → Lernsituationen für ABU Reform 2030': Ein Lehrmittelkapitel plus HKO/ABU ohne das Wort '3er-Set' heisst immer v4.2, also diese Skill. Arbeitet mit einem Bauplan (ein gebündelter Stopp zur Freigabe) und läuft danach ohne Rückfrage bis zum grünen Tor. NICHT für: das alte 3er-Set mit drei Herausforderungen A/B/C ('3er-Set', 'alte Methode', 'wie früher' → bbw-hko-3er-set), EBA-Einheiten (→ hko-2er-EBA-set-generator), die KI-Toolbox einer fertigen Einheit (→ hko-ki-komplement)."
 ---
 
 # bbw-hko Heft v4.2 — Generator
@@ -98,7 +98,7 @@ Reihenfolge ist eine Abhängigkeitsfolge und wird nicht umgestellt.
 | 5 | **Spuren** je Heft | LF3 und LF4 je Spur **mit** Lösung an der Quelle, Kasten S. 4, Quellenbindung | `references/phase-5-spuren.md` | (im Heft-Skelett) |
 | 6 | **Abschluss und Bilder** je Heft | Begriffsnetz, Abschluss mit Lösung, Checkliste, Übersicht, Beispielbild, Lösungsbild | `references/phase-6-abschluss.md` | (im Heft-Skelett) |
 | 7 | **Set** | `set.json`: Glossar, gemeinsamer Auftrag mit `heft_bezug`, Wochenplan, `status: "entwurf"` | `references/phase-7-set.md` | `assets/set-template.json` |
-| 8 | **Begleiter** | `begleiter.md` | `references/phase-8-begleiter.md` | `assets/begleiter-template.md` |
+| 8 | **Begleiter** | `begleiter.md`; die Marker füllt `scripts/begleiter-marker.mjs` der Skill, nie die Hand | `references/phase-8-begleiter.md` | `assets/begleiter-template.md` |
 | 9 | **Tor und Bericht** | alle Gates grün, Bericht | `references/phase-9-tor.md` | — |
 
 Querschnitt, für jede Phase: `references/kohaerenz.md` (fest gegen hergeleitet,
@@ -172,7 +172,9 @@ Exit-Code. Zeichen zählen, nicht schätzen.
 11. **Sprache.** Schweizer Hochdeutsch, kein «ß», echte Umlaute. Situationen in
     Ich-Form, Aufträge an Lernende in Sie-Form, Begleiter in Du-Form, neutrale
     Persona (wörtlich wie im Skelett). Im Heft keine Woche, keine Lektion,
-    keine Minuten, kein Wort «Spur», «Pflichtquelle» heisst «Quelle»; auf dem
+    keine Unterrichtszeit in Minuten (die Dauer eines Produkts — «Statement
+    von zwei Minuten» — ist erlaubt), kein Wort «Spur», «Pflichtquelle»
+    heisst «Quelle»; auf dem
     Auftragsbogen keine Vorgabe an die Lehrperson. Einzelheiten:
     `references/sprache.md`.
 12. **Scope.** Nicht anfassen: `src/lib/`, `src/components/`, `src/styles/`,

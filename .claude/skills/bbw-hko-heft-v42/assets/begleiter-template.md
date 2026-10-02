@@ -48,7 +48,7 @@ quellen_json:
 |---|---|---|
 | A | {{X.Y.Z}} | <!--hko:hf_A.nrlp.kompetenz_text-->{{= hf_A.nrlp.kompetenz_text}}<!--/hko--> |
 | B | {{X.Y.Z}} | <!--hko:hf_B.nrlp.kompetenz_text-->{{= hf_B.nrlp.kompetenz_text}}<!--/hko--> |
-| {{A oder B}} | {{X.Y.Z}} | <!--hko:hf_B.nrlp.kompetenzen[1].text-->{{NUR WENN ein Heft zwei Kompetenzen trägt UND das Feld nrlp.kompetenzen in der fertigen Datei steht: = …kompetenzen[1].text — sonst diese Zeile löschen (Regel in phase-8-begleiter.md §3.2)}}<!--/hko--> |
+| {{A oder B}} | {{X.Y.Z}} | {{NUR WENN ein Heft zwei Kompetenzen trägt: der Satz der zweiten Kompetenz, zeichengenau aus dem nRLP-Datensatz des Lehrgangs, OHNE Marker (nrlp.kompetenzen wird nicht geschrieben) — sonst diese Zeile löschen (Regel in phase-8-begleiter.md §3.2)}} |
 
 Lebensbezug: «<!--hko:hf_A.nrlp.lebensbezug_text-->{{= hf_A.nrlp.lebensbezug_text}}<!--/hko-->» {{EIN SATZ zum Lektionenrahmen, nur wenn im nRLP-Datensatz belegt — sonst weglassen}}
 
@@ -331,6 +331,8 @@ Die fünf Schritte auf S. 5:
 > Leitsatz im Heft: «<!--hko:hf_A.mehrdeutigkeit.hint-->{{= hf_A.mehrdeutigkeit.hint}}<!--/hko-->»
 > {{1–2 Sätze: dein Eingriff, wenn jemand eine Seite vorschnell für falsch erklärt}}
 
+{{NUR WENN Heft A nur eine Spur hat: EIN SATZ — das Heft hat nur diese Spur; wo die folgenden Lösungen «in beiden Spuren» sagen, heisst das für dieses Heft «in dieser Spur» (phase-8-begleiter.md §7.1). Sonst diese Zeile löschen}}
+
 ### Tafelbild — Begriffsnetz Heft A
 
 > [!tafelbild] {{TITEL: Erwartungsbild — Begriffsnetz um das gemeinsame Zentrum}}
@@ -390,7 +392,7 @@ Die fünf Schritte auf S. 5:
 
 {{WIEDERHOLEN wie in Kap. 3: je Array-Eintrag ein Marker mit Index [1], [2] …}}
 
-{{NUR WENN das Heft zwei Kompetenzen trägt: Absatz und Tabelle «Verb aus dem nRLP | Wo im Heft»}}
+{{NUR WENN das Heft zwei Kompetenzen trägt: Absatz und Tabelle «Verb aus dem nRLP | Wo im Heft», je Verb der Kompetenzen eine Zeile mit Leitfrage oder Schritt}}
 
 **Die Situation**
 
@@ -481,6 +483,8 @@ Die fünf Schritte auf S. 5:
 > [!mehrdeutigkeit] Herausforderung B
 > Leitsatz im Heft: «<!--hko:hf_B.mehrdeutigkeit.hint-->{{= hf_B.mehrdeutigkeit.hint}}<!--/hko-->»
 > {{1–2 Sätze: dein Eingriff}}
+
+{{NUR WENN Heft B nur eine Spur hat: EIN SATZ wie bei Heft A. Sonst diese Zeile löschen}}
 
 ### Tafelbild — Begriffsnetz Heft B
 

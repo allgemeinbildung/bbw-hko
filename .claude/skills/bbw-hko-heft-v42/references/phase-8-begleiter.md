@@ -132,14 +132,27 @@ endet bei jedem offenen Befund mit Exit 1 — auch bei Warnungen —, und
 `check-all` wertet das als Fehler der Zeile «Kopplung · Autarkie ·
 Begleiter-Marker».
 
-**Ein Skript, das Marker synchronisiert, gibt es nicht** (weder unter
-`scripts/` noch in `package.json`; `sync:einheiten-nrlp` gleicht nRLP-Texte in
-den JSON ab, nicht den Begleiter). Darum dieses Vorgehen:
+**Marker nie von Hand füllen.** Das Füllskript der Skill schreibt jeden
+Rückfalltext aus den fertigen Dateien — mit denselben Formatierern wie Loader
+und `check-einheiten`:
 
-1. Prosa und Gerüst schreiben; Marker stehen mit Platzhalter, wie im Skelett.
-2. **Zuletzt** jeden Marker aus der fertigen Datei füllen: Wert lesen, nicht
-   aus dem Gedächtnis tippen — auch Anführungszeichen und Striche.
-3. Ändert sich danach ein JSON-Feld, den Marker neu füllen; Prüfbefehl in §8.
+```
+node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner>
+```
+
+Pflichtschritt, in dieser Folge:
+
+1. Prosa und Gerüst schreiben; Marker stehen mit Platzhalter, wie im Skelett
+   (Pfad und Format stimmen, der Text dazwischen ist gleichgültig).
+2. **Zuletzt** das Füllskript laufen lassen. Es liest
+   `herausforderung_A.json`, `herausforderung_B.json`, `set.json`, `kn.json`
+   und `prinzip.json`, füllt jeden Marker und den Quellen-Stand (§4.2, aus den
+   Karten unter `src/data/quellen/`). Exit 1 und die Zeile `UNAUFLOESBAR`
+   heissen: Der Pfad zeigt ins Leere oder auf den falschen Typ — Pfad im
+   Markdown korrigieren (§3.2), nie den Text von Hand einsetzen.
+3. Ändert sich danach ein JSON-Feld, das Skript erneut laufen lassen. Mit
+   `--check` schreibt es nichts und meldet jede Abweichung (Exit 1); so läuft
+   es im Tor (`references/phase-9-tor.md`).
 
 ### 3.2 Variable Längen — Wiederholungsregel
 
@@ -158,10 +171,12 @@ Index fortlaufend, kein Marker über das Array-Ende hinaus (sonst
 | Fest | Schritte (5), Feedback-Kriterien (2 je Heft, 4 im Auftrag), Checklisten (4), Fachgespräch (5 Fragen), Mini Case (4), Reflexionsfragen (3), Rubrik (4 × 4), Mapping (2) | im Skelett ausgeschrieben |
 
 **Kompetenztexte:** Die erste Kompetenz eines Hefts steht in
-`hf_X.nrlp.kompetenz_text`. Trägt ein Heft zwei Kompetenzen, gilt
-`hf_X.nrlp.kompetenzen[1].text` **nur, wenn die fertige Datei das Feld
-`nrlp.kompetenzen` führt**; sonst steht der Satz ohne Marker, zeichengenau aus
-dem nRLP-Datensatz des Lehrgangs (er steht nicht auf der Positivliste).
+`hf_X.nrlp.kompetenz_text`. Trägt ein Heft zwei Kompetenzen, steht der Satz
+der zweiten **ohne Marker**, zeichengenau aus dem nRLP-Datensatz des
+Lehrgangs: `nrlp.kompetenzen` wird nicht auf die Platte geschrieben
+(`references/phase-4-heft-kern.md` §3), ein Marker auf
+`hf_X.nrlp.kompetenzen[1].text` wäre unauflösbar. Der Satz steht nicht auf der
+Positivliste, die Kopie ist also kein Befund.
 
 ## 4. Was nicht von Hand geschrieben wird
 
@@ -193,7 +208,8 @@ soll trotzdem lesbar sein und hat die Form des Loaders (`zeileQuelle`): acht
 Spalten wie im Skelett; Rolle `A · Quelle (<id>)`, `A · Ersatzquelle (<id>)`,
 `A · Vertiefung 1 (<id>)`; Daten `TT.MM.JJJJ` aus `datum` und
 `sachlage_geprueft`; Länge `m:ss Min.` oder `n Wörter`; Link `[host](url)`;
-fehlendes Feld `—`. Die Gold-Datei schreibt im Rückfall noch «Pflicht» — nicht
+fehlendes Feld `—`. Diesen Rückfall schreibt das Füllskript (§3.1) aus den
+Karten; fehlt eine Karte, lässt es ihn stehen und meldet es. Die Gold-Datei schreibt im Rückfall noch «Pflicht» — nicht
 übernehmen (E16).
 
 ## 5. Callouts
@@ -286,8 +302,12 @@ Heft-Kapitel haben S. 3 und S. 4 nur **eine** Zeile, ohne Spur-Vorsatz. Der
 Heft beide Spuren hat. Die `warnung` zum Linkausfall nennt den Rückweg «Spur
 ohne Medien» nur, wenn das Heft sie hat — sonst Ersatzquelle oder Lektion
 verschieben. Der eingespiegelte Lösungsblock zeigt nur die vorhandene Spur;
-sein fester Satz spricht dennoch von «beiden Spuren» (Text im Code) — darum
-sagt es §2.
+sein fester Text spricht dennoch von «beiden Spuren» (Massstab-Satz und
+Überschrift «Kern — gilt in beiden Spuren» stehen im Renderer und werden
+nicht geändert). Darum stellt der Begleiter es **in einem Satz davor** klar:
+Als letzter Absatz vor `### Tafelbild …` im Kapitel dieses Hefts steht, dass
+das Heft nur die eine Spur hat und «in beiden Spuren» in den folgenden
+Lösungen für dieses Heft «in dieser Spur» heisst. §2 nennt den Grund.
 
 **7.2 Die Einheit hat keine Medien-Spur.** Frontmatter: letzte
 `quellen_json`-Zeile löschen. §2: `Spur mit Medien` und `Vorbereitung der Spur
@@ -328,9 +348,13 @@ und 7 aus §6 · keine Überschrift «Lösungen der Leitfragen», kein
 `ki_einsatz`-Callout.
 
 ```
+node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner>
 node scripts/check-einheiten.mjs <ordner>
 node scripts/check-all.mjs <ordner>
 ```
+
+Der erste Befehl füllt die Marker (§3.1) und muss mit Exit 0 enden, bevor die
+Prüfungen laufen.
 
 `check-einheiten` muss für die Einheit **0 offene Befunde** melden (auch keine
 Warnung). `check-all` meldet zusätzlich `ERR_PLATZHALTER`, `ERR_ESZETT` und die

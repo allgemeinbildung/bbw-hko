@@ -23,7 +23,7 @@ Abdeckungstabelle) und **am Schluss** (Phase 9, der Vergleich).
 | F7 | Begriffsnetz aus dem Glossar des Hefts, gleiches Zentrum in A und B, ein Transfer-Ast | `regel7`, `regelGlossar` |
 | F8 | Abschluss: zwei Quer-Check-Fragen, drei Zeilen «Das nehme ich mit», vier Checklisten-Zeilen | Budgets |
 | F9 | Gemeinsamer Auftrag: neuer Fall in neuem Lebensbereich, fünf Schritte, zwei Produkte, Bogen mit vier Seiten | `budgetAuftrag`, `regel8`, `regel9Kontext` |
-| F10 | KN: eine Hybrid-Situation, drei Formen, ein Raster mit vier Kriterien | Schlüsselmenge von `kn.json` |
+| F10 | KN: eine Hybrid-Situation, drei Formen **mit ihren Sprachmodi** (`prinzip.modi_kn`, `kn.kn_typen[].sprachmodi` — die Formen sind fest, also auch ihre Modi), ein Raster mit vier Kriterien | Schlüsselmenge von `kn.json`; `modi_kn` = Vereinigung der Modi der drei Formen |
 | F11 | Lösung zu jedem Feld, mit Fundstelle | `regelLoesungen`, `check-lf-loesung` |
 | F12 | Benennung, IDs, Kurzlink, Quellen-IDs | `references/ableitungsregeln.md` |
 | F13 | Sprache und Anrede; neutrale Persona; ein Akzent | `references/sprache.md` |
@@ -35,16 +35,27 @@ Inhalt nicht hinein, ist der Inhalt falsch geschnitten — nicht das Gerüst.
 
 | # | Was | Woraus | Wo es landet |
 |---|---|---|---|
-| H1 | **Sprachmodi je Heft** | Modi der Kompetenz(en) des Hefts im nRLP-Datensatz (Kompetenz-Ebene); davon die, die das Heft wirklich übt | `nrlp.sprachmodi` = `prinzip.modi_pro_heft[L]`; bestimmt die zulässigen Spuren |
-| H2 | **Sprachmodi des KN** | die drei KN-Formen | `prinzip.modi_kn`, `kn.kn_typen[].sprachmodi` |
-| H3 | **Sprachmodi des Auftrags** | `modi_kn − (A ∪ B)`, Leitfaden §7.2 mit beiden Sonderfällen | `prinzip.modi_auftrag`, `gemeinsamer_auftrag.sprachmodi`, `produkte[].modus` |
-| H4 | **Schlüsselkompetenzen** | SK des nRLP-Themas mit ihrer Iteration; je Heft drei, KN-Schnittmenge drei | `nrlp.sk`, `sk_anker`, `prinzip.sk_pro_situation`, `sk_schnittmenge_kn`, `kn_typen[].sk` |
-| H5 | **Handlungsprodukt je Heft**: Typ und Format | Produktions- oder Interaktionsmodus des Hefts und die Verben der Kompetenz | `handlungsprodukt.*`, Schritte, Abgaben, Checkliste, Beispiel- und Lösungsbild (Blockart) |
-| H6 | **Produkte des Auftrags** und ihre Form auf dem Bogen | H3 | `gemeinsamer_auftrag.schritte`, `abgaben`, `produkte` (Form `flaeche` oder `spur`), `sozialform` |
-| H7 | Typ der Quelle, Spalten des Rasters | Rezeptionsmodus des Hefts | Quellenkarte `typ`, `raster.spalten` |
-| H8 | Pol-Typ von LF4 je Heft und Spur | die Spannung des Hefts und was als zweiter Pol verfügbar ist | `pol_typ`, `prinzip.pol_typ_verteilung` |
-| H9 | Aspekte, dominanter Aspekt, Name des zweiten Ges-Kriteriums | nRLP-Datensatz | `prinzip.aspekte`, `kn.dominanter_aspekt`, `rubrik_shared` |
-| H10 | Fall, Zahlen, Lebensbereiche, Methodenkarten, Glossar | Lehrmittelkapitel, Bauplan | überall |
+| H1 | **Sprachmodi je Heft — «geführt»** | die Modi der Kompetenz(en) des Hefts im nRLP-Datensatz, **Kompetenz-Ebene**; nichts von der Themen-Ebene (`regel4` würde sonst jede Spur ohne Medien sperren) | `nrlp.sprachmodi` = `prinzip.modi_pro_heft[L]`; bestimmt die zulässigen Spuren; nur geführte Modi gehen in die Formel des Auftrags |
+| H2 | **Sprachmodi des Auftrags** | `modi_kn − (A geführt ∪ B geführt)`, Leitfaden §7.2 mit beiden Sonderfällen. Ergibt die Formel einen Rezeptionsmodus: Das Produkt ist die sichtbare Auswertung eines Dokuments, das vollständig in der Situation steht (Form `flaeche`) | `prinzip.modi_auftrag`, `gemeinsamer_auftrag.sprachmodi`, `produkte[].modus` |
+| H3 | **Schlüsselkompetenzen** | SK des nRLP-Themas mit ihrer Iteration, auf A und B verteilt: je drei, so viele verschiedene wie möglich, mindestens eine gemeinsam. Der KN trägt die gemeinsame(n), ergänzt auf drei aus A und B. Eine SK des Themas ohne Platz nennt der Bauplan als Lücke | `nrlp.sk`, `sk_anker`, `prinzip.sk_pro_situation`, `sk_schnittmenge_kn`, `kn_typen[].sk` |
+| H4 | **Handlungsprodukt je Heft**: Typ und Format | Produktions- oder Interaktionsmodus des Hefts und die Verben der Kompetenz | `handlungsprodukt.*`, Schritte, Abgaben, Checkliste, Beispiel- und Lösungsbild (Blockart) |
+| H5 | **Produkte des Auftrags** und ihre Form auf dem Bogen | H2 | `gemeinsamer_auftrag.schritte`, `abgaben`, `produkte` (Form `flaeche` oder `spur`), `sozialform` |
+| H6 | Typ der Quelle, Spalten des Rasters | Rezeptionsmodus der Kompetenz des Hefts (geführt). Nennt sie keinen: Modus des Themas (Leitfaden §5) mit der Ausweichfolge Audio → Video mit Untertiteln → Artikel — die Rezeption ist dann «geübt, nicht geführt» | Quellenkarte `typ`, `raster.spalten` |
+| H7 | Pol-Typ von LF4 je Heft und Spur | die Spannung des Hefts und was als zweiter Pol verfügbar ist | `pol_typ`, `prinzip.pol_typ_verteilung` |
+| H8 | Aspekte, dominanter Aspekt, Name des zweiten Ges-Kriteriums | nRLP-Datensatz | `prinzip.aspekte`, `kn.dominanter_aspekt`, `rubrik_shared` |
+| H9 | Fall, Zahlen, Lebensbereiche, Methodenkarten, Glossar | Lehrmittelkapitel, Bauplan | überall |
+
+**«Geführt» und «geübt» (ENTSCHEIDE E27).** *Geführt* heisst: Der Modus steht
+in `nrlp.sprachmodi` des Hefts und in `prinzip.modi_pro_heft` — das sind die
+Modi der Kompetenz(en), sonst keine. *Geübt* heisst: Das Heft übt den Modus,
+ohne ihn zu führen. Seite 3 übt in jedem Heft Rezeption (LF3 analysiert eine
+Quelle; das gehört zum Gerüst). Nennt die Kompetenz keinen Rezeptionsmodus, ist
+diese Rezeption «geübt, nicht geführt» — sie steht in keinem der zwei Felder,
+geht nicht in die Formel des Auftrags, und die Abdeckungstabelle weist sie als
+«geübt» aus, nicht als Lücke. Nennt eine Kompetenz **zwei** Rezeptionsmodi
+(mündlich und audiovisuell), werden beide geführt: Die Quelle trägt den zuerst
+genannten, der andere bekommt seine Stelle über eine Vertiefung des anderen
+Typs und steht in der Abdeckung als «freiwillig geübt».
 
 **Regel:** Kein Wert der rechten Spalte wird aus der Gold-Einheit oder aus
 einem Skelett übernommen. Jede Phase, die einen dieser Werte schreibt, nennt
@@ -55,30 +66,46 @@ im Bauplan bzw. im Bericht die Herleitung in einem Satz.
 Jede Zeile muss sich füllen lassen. Eine leere Zelle ist ein Befund, kein
 Schönheitsfehler.
 
-| Prüfung | Soll |
-|---|---|
-| Jeder Modus aus `modi_kn` | steht in Heft A, Heft B oder im Auftrag — mit der Stelle, an der er geübt wird |
-| Jeder Modus des Auftrags | ist `modus` mindestens eines Eintrags in `produkte` (bei nur einem Modus tragen ihn beide) |
-| Jeder Modus eines Hefts | hat eine benannte Stelle im Heft (Rezeption: S. 3; Produktion/Interaktion: Produkt) |
-| Jede SK des Themas, die für das Lehrjahr gilt | steht in A, B oder im KN — sonst im Bauplan als Lücke genannt |
-| Jede SK eines Hefts | hat einen `sk_anker` mit der Stelle |
-| Produkttyp A, Produkttyp B, Produkte des Auftrags | paarweise verschieden in der Form |
-| Lebensbereich A, B, Auftrag, KN | paarweise verschieden |
-| Alle vier KN-Kriterien | A ∪ B = alle; Auftrag = alle |
+Bauplan §8 (`docs/cloud-run/bauplaene/_VORLAGE.md`) führt dieselben vierzehn
+Zeilen mit den Spalten «Befund» und «Lücke».
+
+| # | Prüfung | Soll |
+|---|---|---|
+| A1 | jeder Modus aus `modi_kn` → Heft A, Heft B oder Auftrag | mit der Stelle, an der er geführt oder geübt wird |
+| A2 | jeder geführte Modus eines Hefts → S. 3 (Rezeption) oder Produkt | eine benannte Stelle im Heft |
+| A3 | Rezeption auf S. 3, die das Heft nicht führt → «geübt»; zweiter Rezeptionsmodus einer Kompetenz → «freiwillig geübt» | Modus und Typ der Quelle bzw. der Vertiefung genannt; keine Lücke |
+| A4 | jeder Modus des Auftrags → mindestens ein Produkt | `modus` mindestens eines Eintrags in `produkte` (bei nur einem Modus tragen ihn beide) |
+| A5 | jeder Kompetenz-Modus des Lebensbezugs → geführt | in dem Heft, das die Kompetenz trägt — sonst Lücke |
+| A6 | jede SK des Themas → A, B oder KN | sonst im Bauplan als Lücke genannt |
+| A7 | jede SK eines Hefts → Stelle im Heft | ein `sk_anker` mit der Stelle |
+| A8 | Produkttyp A ≠ B; jedes Produkt des Auftrags ≠ A, ≠ B | verschieden in der Form |
+| A9 | Lebensbereiche A, B, Auftrag, KN paarweise verschieden | sechs Paare |
+| A10 | KN-Kriterien: je Heft 1 SuK + 1 Ges, zusammen alle vier; Auftrag alle vier | A ∪ B = alle; Auftrag = alle |
+| A11 | Pol-Typ A ≠ B je Spur; Medien-Typen nur mit Medien | `lehrmittel_quelle`, `quelle_quelle` nur in `mit_medien` |
+| A12 | je Heft mindestens eine Spur; nur Medien-Spur → Quelle und Ersatzquelle vorhanden | Karte **und** Archivtext für beide |
+| A13 | Fall-Begriffe: kein Treffer in §4, §6, §7 | Situationen, Produkte, Quellen-Ausschnitte; Bauplan §5 selbst ist ausgenommen |
+| A14 | Vergleich mit 1.3.1: Modi des Auftrags, Produkttypen, SK nicht alle gleich (`modi_kn` zählt nicht) | sonst Herleitung nachprüfen (Abschnitt 4) |
+
+Hart sind A8–A13: Scheitert eine davon, wird der Entscheid geändert, bevor
+gestoppt wird.
 
 ## 4. Der Vergleich mit der Gold-Einheit (Phase 9, im Bericht)
 
 Zwei Tabellen, Gold links, die neue Einheit rechts:
 
 1. **Fest (F1–F13):** je Zeile «gleich» mit dem Beleg (Feld, Skript, Zahl).
-   Eine Abweichung ist ein Fehler der Skill.
-2. **Hergeleitet (H1–H10):** je Zeile beide Werte nebeneinander und ein Satz
+   Eine Abweichung ist ein Fehler der Skill. Dazu gehört `modi_kn` (F10): Die
+   drei KN-Formen sind fest, also auch ihre Modi — **Gleichheit mit Gold ist
+   hier kein Befund.**
+2. **Hergeleitet (H1–H9):** je Zeile beide Werte nebeneinander und ein Satz
    zur Herleitung. Gleichheit ist hier kein Ziel: Stimmen Modi des Auftrags,
    Produkttypen **und** SK mit Gold überein, obwohl Thema und Kompetenz andere
    sind, ist das ein Hinweis, dass kopiert statt hergeleitet wurde — dann die
    Herleitung nachprüfen.
 
-Zum Vergleich die Werte der Gold-Einheit (nur als Messlatte, nie als Vorlage):
+Zum Vergleich die Werte der Gold-Einheit (nur als Messlatte, nie als Vorlage;
+diese Kurzliste ist die einzige Vergleichsgrundlage — die Gold-Dateien werden
+dafür nicht gelesen):
 Modi A = Rezeption schriftlich und bildlich; Modi B = dasselbe + Interaktion
 und Kollaboration mündlich; Auftrag = Produktion mündlich + Produktion
 schriftlich und bildlich; SK A = 5, 11, 1; SK B = 2, 6, 11; KN = 5, 11, 6;

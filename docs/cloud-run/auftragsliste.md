@@ -8,5 +8,5 @@ Nicht aufnehmen: Lebensbezüge mit ⚠ (kein Kernkapitel), T7, EBA.
 
 | Ordnername | Lehrgang | Kompetenz | Bemerkung |
 |---|---|---|---|
-
-Noch leer — wird von Pietro vor dem ersten Lauf gefüllt.
+| `2.3.1_anliegen_vertreten` | EFZ_3J (+ EFZ_4J) | 2.3.1, 2.3.2 | Probe 1 der Skill bbw-hko-heft-v42 (E22); eigene Session |
+| `2.1.1_informationen_hinterfragen` | EFZ_4J (+ EFZ_3J) | 2.1.1, 2.1.2 | Probe 2 (E22); Heft A nur Medien-Spur; eigene Session |

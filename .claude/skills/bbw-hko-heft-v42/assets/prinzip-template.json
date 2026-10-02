@@ -66,14 +66,14 @@
     "transferfeld": "{{WORAUF das Prinzip übertragbar ist, mit Beispielen, keines davon aus A, B, Auftrag oder KN}}"
   },
   "zirkularitaet": {
-    "r1_aktuell": "{{R-STUFE der Einheit im Thema}}",
-    "r2_voraussicht": "{{THEMA, in dem der Gegenstand das nächste Mal vorkommt, mit Stichwort}}",
-    "r3_voraussicht": "{{THEMA danach, mit Stichwort}}"
+    "r1_aktuell": "{{R<n> — Iteration des dominanten Aspekts im Thema der Einheit, sonst nichts}}",
+    "r2_voraussicht": "{{T<n> '<Titel>' — <Stichwort>: nächstes Thema, das denselben Aspekt führt; gibt es keines: —}}",
+    "r3_voraussicht": "{{T<n> '<Titel>' — <Stichwort>: das Thema danach; gibt es keines: —}}"
   },
   "quellen_anker": {
     "chapters": [
       {
-        "ref": "{{Kap. X.Y}}",
+        "ref": "{{Kap. X.Y — Kapitel aus Bauplan §2 und jedes Kapitel, aus dem eine Lösung eine Fundstelle zitiert; kein Methodenkarten-Kapitel}}",
         "titel": "{{KAPITELTITEL — Stichworte in eigenen Worten}}",
         "seiten": "{{Seite aa-bb — am Kapiteltext geprüft}}"
       }
@@ -90,7 +90,7 @@
       "A",
       "B"
     ],
-    "persona_neutral": "Lernende/r EFZ, N. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "persona_neutral": "Lernende/r EFZ, {{N}}. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
     "endet_mit_leitfrage": true,
     "lehrjahr_constraint": "match_units",
     "qualitaetskriterien": [

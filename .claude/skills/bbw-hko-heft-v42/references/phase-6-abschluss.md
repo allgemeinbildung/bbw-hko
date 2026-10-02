@@ -47,7 +47,11 @@ Ast 4 lautet immer `{ "titel": "gilt auch bei …", "punkte": [], "optional": fa
 wirklich benutzen (Leitfrage, ihre Lösung, ein Schritt, die `abgaben`).
 
 1. Begriffe aus LF1 und LF2 sammeln, dann die aus dem Produkt. Sind es mehr als
-   zehn, fällt weg, was nur einmal vorkommt.
+   zehn, fällt weg, was nur einmal vorkommt. **Bei genau zehn Knoten ist das
+   Netz voll:** Jeder weitere Fachbegriff kommt nur als Spur-Eintrag ins
+   Glossar (über `abschluss.loesung.eigene_knoten`, zwei je Spur) oder gar
+   nicht — ein Glossarbegriff ohne `spur`, der kein Knoten ist, ist
+   `ERR_V42_GLOSSAR`.
 2. Auf drei Äste verteilen. Ein Ast ist eine Frage des Hefts (Was ist es? Was
    wirkt darauf? Was tue ich damit?), kein Kapiteltitel. Jeder der drei Äste
    hat mindestens einen Knoten — ein leerer Ast wird nicht gedruckt.
@@ -164,7 +168,7 @@ Zwei gezeichnete Blätter vom Typ `ProduktBild` (E17); fehlt eines: `ERR_V42_PRO
 | `titel` | ≤ 90; nennt den Fall |
 | `hinweis` | nur `loesungsbild`; wird im Heft nie gedruckt |
 | `legende` | 0–3 Einträge; nur wenn das Produkt Markierungen verlangt |
-| `legende[].key` | kurzes Kennwort in Kleinbuchstaben |
+| `legende[].key` | frei wählbares kurzes Kennwort in Kleinbuchstaben (etwa «fest», «offen»); es wird nicht gedruckt und verbindet nur `marke` und Legende |
 | `legende[].text` | ≤ 28 |
 | `bloecke` | 2–3 |
 | `bloecke[].titel` | ≤ 32 |
@@ -177,8 +181,8 @@ Zwei gezeichnete Blätter vom Typ `ProduktBild` (E17); fehlt eines: `ERR_V42_PRO
 | `bloecke[].zeilen[].zellen` | `zellen`: so viele wie `kopf`; die erste Zelle ≤ 30 |
 | `bloecke[].zeilen[].marke` | optional; ein `key` der Legende |
 | `bloecke[].zeilen[].stark` | optional `true`: Zeile fett (Ausgangswert, Summe, Ergebnis) |
-| `bloecke[].text` | Fliesstext (E26): Absätze als `string[]` — Budget gemäss `budgetProduktBild` in `scripts/check-v42.mjs`, vor dem Schreiben dort nachlesen |
-| `bloecke[].wechsel` | Wechselrede (E26): Einträge `{ wer, text, marke? }` — Budget gemäss `budgetProduktBild` in `scripts/check-v42.mjs`, vor dem Schreiben dort nachlesen |
+| `bloecke[].text` | Fliesstext (E26): Absätze als `string[]` — Budget: Konstante `PB_E26` in `scripts/check-v42.mjs`, vor dem Schreiben dort nachlesen |
+| `bloecke[].wechsel` | Wechselrede (E26): Einträge `{ wer, text, marke? }` — Budget: Konstante `PB_E26` in `scripts/check-v42.mjs`, vor dem Schreiben dort nachlesen |
 
 - **Je Block genau eine Blockart.** Der Renderer zeichnet eine Tabelle, sobald
   `kopf` oder `zeilen` steht, und ignoriert dann `eintraege`.
@@ -187,10 +191,15 @@ Zwei gezeichnete Blätter vom Typ `ProduktBild` (E17); fehlt eines: `ERR_V42_PRO
   `marke` ist ein `key` der Legende, sonst `ERR_V42_PRODUKTBILD`.
 - **Beide Bilder haben denselben Aufbau:** gleiche Blocktitel, Legende,
   Spaltenköpfe und Blockarten. Nur der Fall ist ein anderer.
-- **Vor `text` oder `wechsel`** in `scripts/check-v42.mjs` und in
-  `src/components/einheiten/docs/heft-v42/produkt-bild.tsx` nachsehen, ob beide
-  die Blockart kennen. Wenn nicht: Blockart nicht verwenden, das Produkt nicht
-  als Liste verbiegen, Einheit nach SKILL.md §5 Regel 12 melden.
+- **`text` und `wechsel` sind verwendbar** (ENTSCHEIDE E26): Renderer und
+  `check-v42.mjs` kennen beide Blockarten; die Budgets stehen in der Konstante
+  `PB_E26` (`klein` für das Beispielbild, `gross` für das Lösungsbild, je für
+  zwei und drei Blöcke) — dort vor dem Schreiben nachlesen, nicht abschreiben.
+- **Doppelprodukt** (etwa Tabelle + Gespräch): Das Bild zeigt den
+  schriftlichen Träger im Hauptblock und das Gespräch als Wechselrede-Block,
+  wenn der Platz reicht — sonst als Liste «Gesprächsnotiz». Gemischte Blätter
+  (Text oder Wechselrede neben Tabelle oder Liste) sind nicht abgetastet:
+  **immer mit `messen-v42` prüfen** (`references/phase-9-tor.md`).
 
 ### 5.2 Blockart aus dem Produkttyp herleiten
 
@@ -230,7 +239,9 @@ Lösungsbild:
 2. Es stimmt mit den Lösungen von LF1–LF4 und mit `abschluss.loesung` überein:
    gleiche Begriffe, gleiche Zahlen (`situation_text`, `zahlen_tabelle`),
    gleicher Entscheid wie einer der Pole im `erwartungshorizont`.
-3. `hinweis`: zwei bis drei Sätze für die Lehrperson.
+3. `hinweis`: zwei bis drei Sätze für die Lehrperson. Nennt das Lösungsbild
+   Posten oder Zahlen, die die Situation nicht nennt, kennzeichnet der
+   `hinweis` sie als Annahme («Annahme: …»).
 
 ### 5.4 Vier Blöcke als Formbeispiele
 

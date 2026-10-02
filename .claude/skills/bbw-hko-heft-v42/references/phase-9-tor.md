@@ -10,6 +10,7 @@ Aus dem Repo-Root, `<ordner>` = Ordnername der Einheit:
 
 ```
 npm run build:einheiten-index
+node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner> --check
 node scripts/check-all.mjs <ordner>
 node scripts/export-v42.mjs <ordner> --out <tmp>
 node scripts/messen-v42.mjs <tmp>
@@ -18,13 +19,14 @@ npm run build
 git status --short
 ```
 
-Im unbeaufsichtigten Lauf heisst der zweite Befehl
+Im unbeaufsichtigten Lauf heisst der dritte Befehl
 `node scripts/check-all.mjs <ordner> --cloud` (das Lehrmittel **muss** dann da
 sein, `status` **muss** `"entwurf"` sein).
 
 | Befehl | Soll | Wenn nicht |
 |---|---|---|
 | `build:einheiten-index` | läuft durch; schreibt `src/data/einheiten.index.json` und die Kopie unter `public/nrlp/` | JSON-Fehler in der Einheit beheben. Den Index nie von Hand ändern. |
+| `begleiter-marker --check` | «0 abweichend · 0 unaufloesbar», Exit 0 | ohne `--check` laufen lassen (füllt die Marker); bei `UNAUFLOESBAR` den Pfad im Begleiter korrigieren (`references/phase-8-begleiter.md` §3.1) |
 | `check-all` | letzte Zeile «GRUEN — keine Fehler.», Exit 0 | Abschnitt 2 |
 | `export-v42` | schreibt je vorhandener Spur und Heft `heft-<a\|b>-<spur>.html/.docx`, `loesungen-<a\|b>-<spur>.html/.docx`, dazu `auftragsbogen.*` und `begleiter.docx` | Fehlermeldung lesen: meist ein Feld, das der Renderer erwartet und das fehlt. Kein Workaround im Skript. |
 | `messen-v42` | Exit 0: keine Seite läuft über. Erwartet: 8 Seiten je Heft, 4 im Auftragsbogen, 5 je Dokument «Lösungen» | Exit 1: das Feld kürzen, das auf der gemeldeten Seite steht, auch wenn das Zeichenbudget eingehalten ist (die Budgets sind an einer Einheit gemessen). Exit 2: kein Browser — im Bericht als «nicht gemessen» führen; die Messung holt die lokale Abnahme nach. |
@@ -73,7 +75,14 @@ Tor-Ausgabe in den Bericht. Eine halbe Einheit bleibt nie liegen.
    `<tmp>/auftragsbogen.html` nach einem markanten Satz aus `loesung.befund`,
    `erwartung` und `loesungsbild` suchen — kein Treffer.
 4. **Anrede:** Situationen Ich-Form, Aufträge Sie-Form, Begleiter Du-Form;
-   in den Heft-HTML kein «Spur», «Pflichtquelle», «Woche», «Lektion», «Minuten».
+   im **sichtbaren Text** der Heft-HTML (Tags, Stile und Skripte entfernt)
+   kein «Spur», «Pflichtquelle», «Woche», «Lektion» und keine Unterrichtszeit
+   in «Minuten» (die Dauer eines Produkts ist erlaubt). Einzeiler, je Datei
+   die Treffer mit 40 Zeichen Umfeld:
+
+   ```
+   node -e "const fs=require('fs');for(const f of fs.readdirSync(process.argv[1]).filter(n=>/^heft-.*\.html$/.test(n))){const t=fs.readFileSync(process.argv[1]+'/'+f,'utf8').replace(/<(script|style)[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ');for(const m of t.matchAll(/Spur|Pflichtquelle|Woche|Lektion|Minute/g))console.log(f,'…'+t.slice(Math.max(0,m.index-40),m.index+50)+'…')}" <tmp>
+   ```
 5. **Umlaute:** Suche nach Transliterationen (`references/umlaute.md`).
 6. **Der Fall des KN** kommt in Heften, Auftrag, Glossar und im genannten
    Ausschnitt der Quellen nicht vor (über die Fall-Begriffe hinaus: gleicher
@@ -81,8 +90,11 @@ Tor-Ausgabe in den Bericht. Eine halbe Einheit bleibt nie liegen.
 7. **Es liest sich wie eine Einheit:** LF1 → LF2 → LF3 → LF4 → Produkt ist in
    jedem Heft und jeder Spur ein Weg; A und B führen zum selben Zentrum; der
    Auftrag braucht beide Hefte wirklich.
-8. **Kein Inhalt der Gold-Einheit:** Suche nach deren Fallwörtern in der neuen
-   Einheit (ausser wo das Thema sie selbst verlangt).
+8. **Kein hergeleiteter Wert stammt aus einem Skelett oder aus
+   `references/kohaerenz.md` §4.** Einzige Vergleichsgrundlage ist die
+   Gold-Kurzliste dort (Modi A und B, Modi des Auftrags, SK, Produkte): Jeden
+   dieser Werte der neuen Einheit daneben stellen und die Herleitung nennen.
+   Die Gold-Dateien werden dafür nicht gelesen.
 
 ## 4. Bericht
 

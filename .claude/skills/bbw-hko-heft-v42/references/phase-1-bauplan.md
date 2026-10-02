@@ -15,7 +15,8 @@ obwohl Thema und Kompetenz andere sind, ist die Herleitung nachzuprüfen.
 ## 1. Ablauf
 
 1. **Bauplan-Entwurf** aus dem Verortungsblatt (Phase 0): §1–§6 und §8
-   gefüllt, §7 nennt je Slot nur Typ und was die Quelle zeigen muss.
+   gefüllt; §7 nennt je Slot den gesuchten Typ, Stand «offen», und im
+   Unterabschnitt «Suchaufträge», was die Quelle zeigen muss.
 2. **Phase Q** (nur lokal, nur für Hefte mit `mit_medien`):
    `references/phase-q-quellen.md`. Danach ist §7 gefüllt. Passt eine geprüfte
    Quelle nicht zum Entwurf, wird der **Entwurf** angepasst (Pol-Typ, Raster,
@@ -34,6 +35,13 @@ Verb der Kompetenz, Seite, Regel) · **Alternativen** (höchstens zwei, oder
 
 ## 3. Die Entscheide — Auswahlregel, Default, Herleitung
 
+### 3.0 Titel und Kennungen (§1)
+Ordnername, IDs und `topic_slug` nach `references/ableitungsregeln.md`.
+`einheit_titel`: der Fokus als Titel (Prüfung auf Gleichnamigkeit dort, §7).
+`modul_titel`, Kurzform: «<Titel des Themas> — <Fokus in zwei bis vier
+Wörtern, Kleinschreibung nach dem Gedankenstrich>». Der Titel des Themas
+steht wörtlich im Datensatz (`themen[].titel`).
+
 ### 3.1 Kern-Kompetenzversprechen (§3)
 Intern drei Kandidaten: je ein Satz, Ich-Form, Verb auf K3 oder K4, trägt
 beide Hefte. **Empfohlen** wird der Kandidat mit dem engsten Bezug zu den
@@ -48,30 +56,52 @@ der Verben aus A **und** B verbindet. Die zwei anderen sind die Alternativen.
   in einem neuen Fall zugleich aufspannen (Auftrag und Hybrid-Fall, Leitfaden
   §7.1). Default bei mehr Kandidaten: die am Kapiteltext belegbaren.
 - **Anker:** das Prinzip der Einheit in einem Satz, ohne Fall.
+- **`verbindlich`:** ein Satz, der die Spannung offen hält (beide Seiten
+  bleiben begründbar); er wird `mehrdeutigkeits_pflicht` im KN.
 - **`mindmap_zentrum_kurz`:** Kurzform des Ankers, **≤ 40 Zeichen, gezählt**,
   identisch in A und B. Default: die zwei Pole des Spannungsfelds, das beide
   Hefte teilen, als «X oder Y».
 
-### 3.3 Konfliktart je Heft (§4)
-Form «X vs. Y», je Heft eine, A ≠ B. Herleitung: die Verben der
+### 3.3 Label, Konfliktart und Spannungsfeld je Heft (§4)
+`herausforderung.label`: eine Tätigkeit (Gegenstand + Verb in der Grundform),
+kein Thema. `mehrdeutigkeit.trade_off` des Hefts: **genau ein** Eintrag aus
+dem Trade-off-Raum (§3), wörtlich — der, den die Konfliktart des Hefts trägt.
+
+Konfliktart: Form «X vs. Y», je Heft eine, A ≠ B. Herleitung: die Verben der
 Heft-Kompetenz(en) und das, was die geprüften Seiten tragen. Aspekte der
 Einheit = Aspekte der Kompetenzen aus Phase 0; ein weiterer nur, wenn eine
 Konfliktart ihn ausdrücklich trägt — dann mit Grund.
 
-### 3.4 Situation in zwei Sätzen (§4)
-Ich-Form, neutrale Persona, ein Lebensbereich, die Konfliktart spürbar, ohne
-sie zu benennen. Erfundene Fallzahlen sind erlaubt, Zahlen über die Welt
-nicht. Kein Fall-Begriff aus §5, kein gesperrtes Wort.
+### 3.4 Situation, Fallzahlen, Leitfrage (§4)
+Situation in zwei Sätzen: Ich-Form, neutrale Persona, ein Lebensbereich, die
+Konfliktart spürbar, ohne sie zu benennen. Erfundene Fallzahlen sind erlaubt
+(bei einem Fall mit Zahlen im Bauplan ausgeschrieben und nachgerechnet,
+höchstens vier Zeilen), Zahlen über die Welt nicht. Kein Fall-Begriff aus §5,
+kein gesperrtes Wort. Dazu die **Leitfrage der Situation**: Ich-Form, benennt
+die Spannung, gibt keine Antwort vor.
 
-### 3.5 Sprachmodi je Heft (§4)
-Ausgangswert ist die Vereinigung der Kompetenz-Modi des Hefts (Phase 0). Das
-Heft **führt** davon die Modi, die es wirklich übt: einen Rezeptionsmodus
-übt es auf S. 3 an der Quelle des passenden Typs, einen Produktions- oder
-Interaktionsmodus am Handlungsprodukt. **Default: alle Kompetenz-Modi.**
-Gestrichen wird ein Modus nur, wenn das Produkt ihn nicht tragen kann; er
-steht dann in §8 als Lücke. Rezeption mündlich und audiovisuell werden nicht
-gestrichen (Phase 0, Abschnitt 4). Was das Heft führt, bestimmt die Spuren
-(`regel4`); nach diesem Entscheid die Spuren neu ablesen.
+**Heft mit nur der Medien-Spur:** Die Situation bleibt im Entwurf
+themenneutral (sie nennt die Lage, nicht das Thema der Quelle); das Thema
+trägt Phase Q nach, bevor der Bauplan vorgelegt wird (E27).
+
+### 3.5 Sprachmodi je Heft — geführt und geübt (§4, E27)
+Das Heft **führt** die Sprachmodi seiner Kompetenz(en) von der Kompetenz-Ebene
+des Datensatzes (Phase 0) — nichts von der Themen-Ebene. Einen
+Rezeptionsmodus übt es auf S. 3 an der Quelle des passenden Typs, einen
+Produktions- oder Interaktionsmodus am Handlungsprodukt. **Default: alle
+Kompetenz-Modi.** Gestrichen wird ein Modus nur, wenn das Produkt ihn nicht
+tragen kann; er steht dann in §8 als Lücke und in §9 als Ausnahme. Rezeption
+mündlich und audiovisuell werden nicht gestrichen (Phase 0, Abschnitt 4). Was
+das Heft führt, bestimmt die Spuren (`regel4`); nach diesem Entscheid die
+Spuren neu ablesen.
+
+- **Kein Rezeptionsmodus in der Kompetenz:** Die Rezeption auf S. 3 ist
+  «geübt, nicht geführt». Sie steht nicht unter den Modi des Hefts; §4 nennt
+  sie in derselben Zeile als «geübt», §8 in Zeile A3.
+- **Zwei Rezeptionsmodi in einer Kompetenz** (mündlich und audiovisuell):
+  beide werden geführt. Die Quelle trägt den zuerst genannten; der andere
+  bekommt seine Stelle über eine Vertiefung des anderen Typs und steht in §8
+  als «freiwillig geübt».
 
 ### 3.6 Handlungsprodukt je Heft — Typ, Format, Produktbild (§4, E26)
 Der **Typ folgt dem Produktions- oder Interaktionsmodus** des Hefts und den
@@ -92,7 +122,10 @@ Zeile (formulieren → Brief oder Stellungnahme; vergleichen → Tabelle;
 vertreten → Statement oder Diskussion; planen → Ablaufplan). Jedes Produkt
 entsteht auf der Arbeitsfläche oder wird dort geplant. Format nennen (Umfang,
 Adressat, Dauer). Default bei mehreren passenden Typen: der, den `detail`
-nennt; sonst der mit dem engsten Bezug zum Verb.
+nennt; sonst der mit dem engsten Bezug zum Verb. `handlungsprodukt_typ` steht
+im Bauplan als eine Zeile (Typ und Format, kein «oder»), dazu die **Schritte
+01–05** und die **Abgaben** in Stichworten — Schritt 03 nimmt auf, was LF3
+liefert, Schritt 04, was LF4 liefert.
 
 **Produktbild-Art** (Beispiel- und Lösungsbild) folgt dem Produkttyp; der
 Bauplan nennt die Art des Hauptblocks:
@@ -103,6 +136,9 @@ Bauplan nennt die Art des Hauptblocks:
 | Vergleich, Rechnung, Raster, Prüfbericht | Tabelle (`kopf`, `zeilen`) |
 | Brief, Stellungnahme, Leserbrief, Statement | Fliesstext (`text`) |
 | Gespräch, Diskussion, Interview, Beratung | Wechselrede (`wechsel`) |
+
+Verlangt das Produkt Markierungen, nennt der Bauplan die **Legende** (höchstens
+drei Einträge: `key` als kurzes Kennwort in Kleinbuchstaben, Text ≤ 28).
 
 ### 3.7 Pol-Typ je Heft und Spur (§4, Leitfaden §6.1, `regel5`)
 Zulässig: `lehrmittel_quelle` · `position_gegenposition` ·
@@ -134,12 +170,16 @@ bei Gleichstand: das Ges-Kriterium des dominanten Aspekts in das Heft, dessen
 Kompetenz diesen Aspekt trägt.
 
 ### 3.9 `modi_kn` (§5)
-Vereinigung der Sprachmodi der drei KN-Formen — hergeleitet aus dem, was jede
-Form vorlegt und verlangt (`references/phase-2-3-prinzip-kn.md`), wörtlich wie
-im Datensatz. Ein Modus eines Hefts muss nicht in `modi_kn` stehen.
+Vereinigung der Sprachmodi der drei KN-Formen — aus dem, was jede Form vorlegt
+und verlangt (`references/phase-2-3-prinzip-kn.md`), wörtlich wie im
+Datensatz. **`modi_kn` gehört zum Gerüst** (E27): Die drei Formen sind fest,
+also auch ihre Modi; der Wert ist in jeder Einheit derselbe, und Gleichheit
+mit Gold ist hier kein Befund. Ein Modus eines Hefts muss nicht in `modi_kn`
+stehen.
 
 ### 3.10 `modi_auftrag`, Produkte, Sozialform (§6, Leitfaden §7.2–§7.3, E25)
-**Formel:** `modi_auftrag = modi_kn − (modi_heft_A ∪ modi_heft_B)`.
+**Formel:** `modi_auftrag = modi_kn − (modi_heft_A ∪ modi_heft_B)` — mit den
+**geführten** Modi der Hefte (3.5). Was ein Heft auf S. 3 nur übt, zählt nicht.
 
 - **Sonderfall leer:** Der Auftrag trägt den einen KN-Modus mit dem geringsten
   Gewicht in den Heften — der in weniger Heften steht; bei Gleichstand der,
@@ -155,32 +195,47 @@ erste belegt A2, der zweite A3): `schritt` (1–5, verschieden), `modus`
 (wörtlich aus den Modi des Auftrags; jeder Modus mindestens einmal), `form`.
 Typ je Modus nach der Tabelle in 3.6, **verschieden von den Produkttypen der
 Hefte**. Trägt der Auftrag nur einen Modus, zeigen die zwei Seiten zwei
-Arbeitsschritte desselben Produkts. Ist ein Rezeptionsmodus dabei, ist das
-Produkt die sichtbare Auswertung eines Dokuments, das in der Situation steht
-(der Auftrag braucht kein Medium, Leitfaden §7.4).
+Arbeitsschritte desselben Produkts. Ist ein Rezeptionsmodus dabei (die Formel
+ergibt ihn, wenn kein Heft ihn führt), ist das Produkt die sichtbare
+Auswertung eines Dokuments, das **vollständig** in der Situation steht (der
+Auftrag braucht kein Medium, Leitfaden §7.4); Form `flaeche`.
 
 | Produkt | `form` |
 |---|---|
+| Auswertung eines Dokuments aus der Situation (Rezeptionsmodus) | `flaeche` |
 | schriftlich, bildlich, multimedial; Interaktion schriftlich oder digital | `flaeche` |
 | mündlicher Beitrag, Gespräch, Diskussion (Planung über Stationen) | `spur` — mit `stationen` (2–4, je ≤ 60 Zeichen), `hinweis` (≤ 260), `dauer` optional |
 
 **Sozialform:** Enthält `modi_auftrag` einen Interaktionsmodus → Partner- oder
 Gruppenarbeit, keine Einzelarbeit, jede Person mit ausgewiesenem Anteil. Sonst
-frei; das Produkt bleibt individuell. Dazu eine Empfehlung an die Lehrperson.
+frei; das Produkt bleibt individuell. Dazu eine Empfehlung: Sie wird auf A1
+gedruckt und ist an die Lernenden lesbar formuliert, kein Auftrag an die
+Lehrperson.
+
+**Dazu im Bauplan §6:** Titel des Auftrags · `mehrdeutigkeit.trade_off` des
+Auftrags (die Spannung dieses Falls, «X vs. Y») · die fünf Schritte und die
+Abgaben in Stichworten · `kontext_ausschluss` (drei Einträge, Gegenstände der
+Fälle von A, B und KN — keine Werkzeuge, keine Fachbegriffe;
+`references/phase-7-set.md` §4.4).
 
 ### 3.11 SK je Heft und KN-Schnittmenge (§3)
-Grundlage ist allein die SK-Liste des Themas aus Phase 0. **Je Heft drei:**
-eine für das, was LF3 an der Quelle tut, eine für das, was LF4 entscheidet,
-eine für das Produkt — je SK ein Halbsatz mit der Stelle. **KN-Schnittmenge =
-die SK, die A und B gemeinsam haben, ergänzt auf drei** mit je der SK von A
-und von B, die der Hybrid-Fall am stärksten verlangt (stehen schon drei in
-beiden, sind es diese). Danach **jede** SK des Themas prüfen: steht sie in A,
-B oder KN? Nicht abgedeckte nennt §8. Hat das Thema weniger als drei SK,
-trägt jedes Heft alle.
+Grundlage ist allein die SK-Liste des Themas aus Phase 0. Die SK des Themas
+werden auf A und B **verteilt** (E27): **je Heft drei, so viele verschiedene
+wie möglich, mindestens eine gemeinsam** — je eine für das, was LF3 an der
+Quelle tut, für das, was LF4 entscheidet, und für das Produkt; je SK ein
+Halbsatz mit der Stelle. **Der KN trägt die gemeinsame(n) SK, ergänzt auf
+drei** mit je der SK von A und von B, die der Hybrid-Fall am stärksten
+verlangt (stehen schon drei in beiden, sind es diese). Danach **jede** SK des
+Themas prüfen: steht sie in A, B oder KN? Eine SK des Themas, die nirgends
+Platz hat, nennt §8 als Lücke. Hat das Thema weniger als drei SK, trägt jedes
+Heft alle. Eine SK ausserhalb des Themas ist eine Ausnahme und steht in §9.
 
 ### 3.12 Hybrid-Fall des KN und Fall-Begriffe (§5)
-Drei Sätze: eine Szene, die beide Konfliktarten verbindet, mindestens ein
-Spannungsfeld aufspannt, neu ist (anderer Gegenstand, andere Beteiligte,
+Dazu der **Titel des KN-Falls** (nennt den Fall, nicht die Lösung). Bauplan §5
+ist die eine Stelle des Bauplans, an der Fall und Fall-Begriffe stehen dürfen:
+**§5 selbst ist vom Fall-Ausschluss ausgenommen.**
+
+Drei Sätze: eine Szene, die beide Konfliktarten verbindet, mindestens zwei Spannungsfelder aufspannt, neu ist (anderer Gegenstand, andere Beteiligte,
 anderer Lebensbereich als A, B und Auftrag). Default: der Fall, der die
 wenigsten Wörter mit Heften und Quellen teilt.
 
@@ -204,33 +259,20 @@ der Quellenkarten. Darum:
 | Entscheid | Regel und Default |
 |---|---|
 | **Lebensbereiche** (§4–§6) | Vier, **paarweise verschieden**: Heft A, Heft B, Auftrag, KN. Herleitung: `leitidee` und `lebensbezuege[].text` nennen die Bereiche, in denen die Kompetenz gebraucht wird. Default: A und B in den zwei Bereichen, die den Kompetenztexten am nächsten sind; KN dort, wo beide Konfliktarten in eine Szene passen; Auftrag im verbleibenden — er muss ohne Medium spielbar sein. |
-| **Methodenkarten** (§4; `docs/methodenkartei.md`, E13) | Je Heft vier Einträge: drei feste Karten und der Platz der Rezeptionskarte, die je Spur gesetzt wird. Nur **vorhandene** Refs aus `src/data/methoden/`: zuerst `lm-…`-Karten der Methodenkapitel aus der Crosswalk-Zeile, die zu Modus und Produkttyp passen, dann `hko-…`-Karten. Rezeptionskarte nach Quellentyp der Spur. **Genau zwei angereicherte Karten** (mit `beispiel` oder `fehler`) — die Rezeptionskarte zählt mit. Passt keine vorhandene Karte: §9 «neue Karte nötig» mit Grund. |
-| **«Das nehme ich mit»** (§4) | Drei Zeilen je Heft, je ≤ 50 Zeichen: zwei benennen, was das Produkt des Hefts dem gemeinsamen Auftrag als Werkzeug mitgibt; die dritte hält fest, was noch offen ist. |
-| **Quellen-Slots** (§7) | Je Heft mit `mit_medien`: Quelle, Ersatz, Vertiefung 1, Vertiefung 2; IDs nach `references/ableitungsregeln.md`. **Typ** = Rezeptionsmodus der Heft-Kompetenz, sonst des Themas (Leitfaden §5); A und B möglichst verschieden. Der Entwurf nennt, was die Quelle zeigen muss — die Fragen entstehen erst nach der Wahl. Nach Phase Q je Slot: Titel, Herausgeber, Datum, Ausschnitt, Länge, Karte, Archivtext, Zugeständnis. |
+| **Methodenkarten** (§4; `docs/methodenkartei.md`, E13) | Je Heft vier Einträge: drei feste Karten und der Platz der Rezeptionskarte, die je Spur gesetzt wird. Nur **vorhandene** Refs aus `src/data/methoden/`: zuerst `lm-…`-Karten der Methodenkapitel 16–20, die zu Modus und Produkttyp passen — auch wenn die Crosswalk-Zeile des Lebensbezugs das Kapitel nicht nennt (E27: die Karte ist die Fundstelle) —, dann `hko-…`-Karten. Rezeptionskarte nach Quellentyp der Spur. **Genau zwei angereicherte Karten** (mit `beispiel` oder `fehler`) — die Rezeptionskarte zählt mit. Passt keine vorhandene Karte: §9 «neue Karte nötig» mit Grund. |
+| **«Das nehme ich mit»** (§4) | Drei Zeilen je Heft, je ≤ 50 Zeichen: zwei benennen, was das Produkt des Hefts dem gemeinsamen Auftrag als Werkzeug mitgibt; die dritte lautet immer «Mir noch unklar». |
+| **Quellen-Slots** (§7) | Je Heft mit `mit_medien`: Quelle, Ersatz, Vertiefung 1, Vertiefung 2; IDs nach `references/ableitungsregeln.md`. **Typ** = Rezeptionsmodus der Heft-Kompetenz; nennt sie keinen, der Modus des Themas (Leitfaden §5) mit der Ausweichfolge Audio → Video mit Untertiteln → Artikel (`references/phase-q-quellen.md` §3); A und B möglichst verschieden. Im Entwurf: Spalte «Typ (gesucht)», Stand «offen», und im Unterabschnitt «Suchaufträge», was die Quelle zeigen muss — die Fragen entstehen erst nach der Wahl. Nach Phase Q je Slot: Titel, Herausgeber, Datum, Ausschnitt, Länge, Karte, Archivtext, Zugeständnis, Stand. Dazu die Zeile **«Rasterspalten je Heft und Spur»** (`references/phase-5-spuren.md` §4). **Heft mit nur der Medien-Spur:** Die Ersatzquelle ist Pflicht, mit demselben Typ oder Sprachmodus. |
 
 ## 4. Abdeckungsprüfung vor dem Stopp
 
-Tabelle im Bauplan §8 (Form: `references/kohaerenz.md`, Teil 3). Jede Zeile
+Tabelle im Bauplan §8. Die Zeilen A1–A14 und ihr Soll stehen **nur** in
+`references/kohaerenz.md` §3; die Vorlage führt dieselben Zeilen. Jede Zeile
 füllt sich oder steht als **Lücke** da — eine Lücke ist erlaubt, eine
 verschwiegene nicht.
 
-| Prüfung | Soll |
-|---|---|
-| jeder Modus aus `modi_kn` | Heft A, Heft B oder Auftrag — mit der Stelle |
-| jeder Modus eines Hefts | S. 3 (Rezeption) oder Produkt (Produktion, Interaktion) |
-| jeder Modus des Auftrags | `modus` mindestens eines Produkts |
-| jeder Kompetenz-Modus des Lebensbezugs | geführt — sonst Lücke |
-| jede SK des Themas | A, B oder KN — sonst Lücke |
-| Produkttyp A, B, Auftrag | A ≠ B; Auftrag ≠ A und ≠ B |
-| Lebensbereich A, B, Auftrag, KN | paarweise verschieden |
-| KN-Kriterien | je Heft 1 SuK + 1 Ges; A ∪ B = alle vier |
-| Pol-Typ | A ≠ B je Spur; Medien-Typen nur mit Medien |
-| Spuren | je Heft mindestens eine; nur `mit_medien` → Quelle vorhanden |
-| Fall-Begriffe | kein Treffer in Situationen, Produkten, Quellen-Ausschnitten des Bauplans |
-| Vergleich mit Gold | Modi des Auftrags, Produkttypen, SK: nicht alle drei gleich — sonst Herleitung nachprüfen |
-
-Scheitert eine harte Zeile (Produkttyp, Lebensbereich, Kriterien, Pol-Typ,
-Spuren, Fall-Begriffe), wird der Entscheid geändert, bevor gestoppt wird.
+Scheitert eine harte Zeile (A8–A13: Produkttyp, Lebensbereich, Kriterien,
+Pol-Typ, Spuren, Fall-Begriffe), wird der Entscheid geändert, bevor gestoppt
+wird.
 
 ## 5. Der Stopp
 
@@ -258,3 +300,8 @@ zuoberst; (5) Ausnahmen (§9) und alles, was nicht belegt ist; (6) ein Satz:
 
 Die Freigabe-Zeile setzt die Skill nur auf Pietros Antwort hin, nie von sich
 aus. `scripts/cloud-preflight.mjs` liest genau diese Zeile.
+
+**Davon getrennt — der Bauplan trägt die Freigabe schon** (Auto-Modus,
+`references/auto-modus.md` §1): Dann findet dieser Stopp nicht statt. Die
+Skill setzt und ändert die Zeile nicht, legt nichts vor und beginnt nach der
+Prüfung des Bauplans (dort §7) mit Phase 2.

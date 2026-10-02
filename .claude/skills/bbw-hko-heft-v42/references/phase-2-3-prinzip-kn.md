@@ -10,7 +10,7 @@ Fest in jeder Einheit sind Schlüssel, Reihenfolge der Bausteine, Konstanten der
 
 | Hergeleitet | Woraus | Feld |
 |---|---|---|
-| Sprachmodi je Heft | `sprachmodi[].modus` der Kompetenz(en) des Hefts im Datensatz, eingeschränkt auf das, was Quelle und Handlungsprodukt wirklich üben | `modi_pro_heft` |
+| Sprachmodi je Heft («geführt») | `sprachmodi[].modus` der Kompetenz(en) des Hefts im Datensatz (Kompetenz-Ebene) — wie im Bauplan §4 | `modi_pro_heft` |
 | Sprachmodi des Auftrags | Formel Leitfaden §7.2 aus `modi_kn` und `modi_pro_heft` | `modi_auftrag` |
 | Schlüsselkompetenzen | `schluesselkompetenzen` des Themas im Datensatz; Verteilung nach dem, was das Produkt des Hefts verlangt | `sk_pro_situation`, `sk_schnittmenge_kn` |
 | Typ des Handlungsprodukts | Verb der Kompetenz und Produktionsmodus des Hefts (Bauplan §4) | `handlungsprodukt_typ` |
@@ -38,9 +38,9 @@ Beispiele in dieser Datei sind erfunden und stammen aus drei Feldern (Politik un
 
 Genau zwei Einträge, `A` und `B`. Je Eintrag fünf Felder:
 
-- `herausforderung` — Titel aus Bauplan §4, eine Tätigkeit («Anliegen vertreten»), kein Thema.
+- `herausforderung` — `herausforderung.label` aus Bauplan §4, eine Tätigkeit («Anliegen vertreten»), kein Thema.
 - `konfliktart` — «X vs. Y» aus Bauplan §4. A und B tragen verschiedene Konflikte. Aspekte, die nicht in der Kompetenz stehen, gelten nur als aktiviert, wenn das Signal in diesem String steht (2.5).
-- `handlungsprodukt_typ` — Typ und Format aus Bauplan §4. **Herleitung:** Das Produkt ist die Form, in der das Verb der Kompetenz sichtbar wird, im Produktions- oder Interaktionsmodus des Hefts (2.4). Verlangt die Kompetenz «sich mündlich einbringen», ist das Produkt ein Gesprächsbeitrag, kein Blatt. Ein Format, kein «oder».
+- `handlungsprodukt_typ` — die Zeile `handlungsprodukt_typ` aus Bauplan §4 (Typ und Format). **Herleitung:** Das Produkt ist die Form, in der das Verb der Kompetenz sichtbar wird, im Produktions- oder Interaktionsmodus des Hefts (2.4). Verlangt die Kompetenz «sich mündlich einbringen», ist das Produkt ein Gesprächsbeitrag, kein Blatt. Ein Format, kein «oder».
 - `kompetenzen` — Liste der Kompetenznummern des Hefts. Jede Nummer existiert im Datensatz des Lehrgangs; A und B überschneiden sich nicht.
 - `transferrable` — `true`.
 
@@ -48,30 +48,31 @@ Genau zwei Einträge, `A` und `B`. Je Eintrag fünf Felder:
 
 Nummern 1–12 = Position in `zirkularitaet.schluesselkompetenzen[]` des Datensatzes. Das Thema führt seine SK als ganze Sätze (`themen[].schluesselkompetenzen`); die Nummer zu einem Satz steht in `src/lib/sk-labels.generated.ts` (`skFullName` → `skShortByNr`). Nie aus dem Gedächtnis nummerieren.
 
-- `sk_pro_situation.A` und `.B`: je **drei** Nummern, alle aus den SK des Themas. Gewählt wird, was das Heft wirklich verlangt: eine SK für das, was LF3 an der Quelle tut, eine für das, was LF4 entscheidet, eine für das Produkt. Steht im Bauplan §3 eine Verteilung, gilt sie, sofern sie diese Bedingungen erfüllt.
-- `sk_schnittmenge_kn.primary`: drei Nummern. **Regel für zwei Hefte:** zuerst die SK, die in beiden Heften stehen; dann ergänzt auf drei mit je der SK von A und von B, die der Hybrid-Fall am stärksten verlangt. Stehen schon drei in beiden, sind es diese drei. Kein `secondary`.
+- `sk_pro_situation.A` und `.B`: je **drei** Nummern, alle aus den SK des Themas. Die SK des Themas werden auf A und B **verteilt** (E27): so viele verschiedene wie möglich, **mindestens eine gemeinsam**. Gewählt wird, was das Heft wirklich verlangt: eine SK für das, was LF3 an der Quelle tut, eine für das, was LF4 entscheidet, eine für das Produkt. Steht im Bauplan §3 eine Verteilung, gilt sie, sofern sie diese Bedingungen erfüllt. Eine SK ausserhalb des Themas gilt nur, wenn Bauplan §9 sie ausdrücklich als Ausnahme nennt.
+- `sk_schnittmenge_kn.primary`: drei Nummern. **Der KN trägt die gemeinsame(n) SK, ergänzt auf drei aus A und B:** zuerst die SK, die in beiden Heften stehen; dann je die SK von A und von B, die der Hybrid-Fall am stärksten verlangt. Stehen schon drei in beiden, sind es diese drei. Kein `secondary`.
 
 Beispiel (Arbeit, erfunden): A = [2, 6, 8], B = [4, 6, 2]. In beiden: 2, 6. Fehlt eine dritte: der Hybrid-Fall (ein Gespräch im Team über einen Einsatzplan) verlangt aus B die 4 stärker als aus A die 8 → `primary` = [2, 6, 4].
 
-**Abdeckung SK:** Jede SK des Themas steht in A oder B, soweit die Zahl es zulässt (sechs Plätze, bei Überschneidung weniger). Was offen bleibt, steht im Bericht mit Nummer.
+**Abdeckung SK:** Jede SK des Themas steht in A oder B, soweit die Zahl es zulässt (sechs Plätze, bei der einen gemeinsamen SK fünf verschiedene). Eine SK des Themas, die nirgends Platz hat, nennt der Bauplan §8 als Lücke; sie steht mit Nummer im Bericht.
 
 ### 2.4 Sprachmodi: `modi_pro_heft`, `modi_units`, `modi_kn`, `modi_auftrag`
 
 Bezeichnungen wörtlich wie in `references/sprachmodus-ids.md` (SM1–SM9).
 
-**`modi_pro_heft.A` / `.B`** — die Modi, die das Heft wirklich übt, als Teilmenge der Modi seiner Kompetenz(en) auf Kompetenz-Ebene (`kompetenzen[].sprachmodi[].modus`; nicht die Liste des Themas):
+**`modi_pro_heft.A` / `.B`** — die Modi, die das Heft **führt** (E27): die Sprachmodi seiner Kompetenz(en) auf Kompetenz-Ebene (`kompetenzen[].sprachmodi[].modus`), nichts von der Themen-Ebene. Der Wert steht im Bauplan §4 und wird übernommen.
 
-- Rezeptionsmodus = Modus der Quelle (Spur mit Medien) bzw. des Lehrmittel-Abschnitts (Spur ohne Medien): Text und Grafik → «Rezeption schriftlich und bildlich», Audio → «Rezeption mündlich», Video → «Rezeption audiovisuell».
-- Produktions- oder Interaktionsmodus = Modus des Handlungsprodukts: Brief, Plakat, Tabelle → «Produktion schriftlich und bildlich»; Statement, Vortrag → «Produktion mündlich»; Gespräch, Diskussion → «Interaktion und Kollaboration mündlich»; analog schriftlich, digital, multimedial.
-- Ein Modus der Kompetenz, den weder Quelle noch Produkt trägt, wird nicht geführt. Ein Modus, der nicht in der Kompetenz steht, auch nicht.
+- Ein geführter Rezeptionsmodus hat seine Stelle auf S. 3 an der Quelle des passenden Typs: Text und Grafik → «Rezeption schriftlich und bildlich», Audio → «Rezeption mündlich», Video → «Rezeption audiovisuell». Nennt eine Kompetenz zwei Rezeptionsmodi, werden beide geführt (die Quelle trägt den zuerst genannten, eine Vertiefung den anderen).
+- Ein geführter Produktions- oder Interaktionsmodus hat seine Stelle am Handlungsprodukt: Brief, Plakat, Tabelle → «Produktion schriftlich und bildlich»; Statement, Vortrag → «Produktion mündlich»; Gespräch, Diskussion → «Interaktion und Kollaboration mündlich»; analog schriftlich, digital, multimedial.
+- **Geübt, nicht geführt:** Seite 3 übt in jedem Heft Rezeption. Nennt die Kompetenz keinen Rezeptionsmodus, steht der Modus der Quelle **nicht** in `modi_pro_heft` (und nicht in `nrlp.sprachmodi`) und geht nicht in die Formel von `modi_auftrag`. Ein Modus, der nicht in der Kompetenz steht, wird nie geführt.
+- Einen Modus der Kompetenz streicht nur der Bauplan (§4 «gestrichen», §8 Lücke, §9 Ausnahme) — nie diese Phase.
 
 `modi_pro_heft[L]` ist **identisch** mit `nrlp.sprachmodi` des Hefts (Phase 4): `regel4` in `check-v42.mjs` liest beide vereint. **Folge:** Führt ein Heft «Rezeption mündlich» oder «Rezeption audiovisuell», darf es keine Spur `ohne_medien` haben (`ERR_V42_R4`) — das muss zu den zulässigen Spuren aus Phase 0 passen. Passt es nicht, ist der Modus falsch hergeleitet oder die Spur unzulässig; nie den Modus weglassen, um die Spur zu retten.
 
 **`modi_units`** = `modi_pro_heft.A` ∪ `modi_pro_heft.B`, ohne Doppel.
 
-**`modi_kn`** = Vereinigung der `sprachmodi` der drei KN-Typen (3.4). Das Feld wird in Phase 2 vorläufig aus den Formen der drei Typen gesetzt und nach Phase 3 gegen `kn.json` geprüft (3.7).
+**`modi_kn`** = Vereinigung der `sprachmodi` der drei KN-Typen (3.4). **Das Feld gehört zum Gerüst** (E27): Die drei Formen sind fest, also auch ihre Modi — der Wert ist in jeder Einheit derselbe, und Gleichheit mit Gold ist hier kein Befund. Es wird in Phase 2 aus den Formen der drei Typen gesetzt und nach Phase 3 gegen `kn.json` geprüft (3.7).
 
-**`modi_auftrag`** nach Leitfaden §7.2:
+**`modi_auftrag`** nach Leitfaden §7.2 — abgezogen werden nur die **geführten** Modi der Hefte:
 
 ```
 modi_auftrag = modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)
@@ -82,7 +83,7 @@ modi_auftrag = modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)
 
 `modi_auftrag_herleitung` — ein String: die Formel, und bei einem Sonderfall dahinter, was gewählt wurde und welche Modi als Lücke bleiben. Ohne Sonderfall steht nur die Formel.
 
-`gemeinsamer_auftrag.sprachmodi` in `set.json` muss später dieselbe Menge tragen (`regel8`, `ERR_V42_R8`); enthält sie einen Interaktionsmodus, schliesst das Einzelarbeit aus. Ein Auftrag mit nur einem Modus: siehe `references/phase-7-set.md` zum Feld `produkte`.
+`gemeinsamer_auftrag.sprachmodi` in `set.json` muss später dieselbe Menge tragen (`regel8`, `ERR_V42_R8`); enthält sie einen Interaktionsmodus, schliesst das Einzelarbeit aus. Ergibt die Formel einen Rezeptionsmodus (weil kein Heft ihn führt), ist das Produkt die sichtbare Auswertung eines Dokuments, das vollständig in der Situation des Auftrags steht (Form `flaeche`, `references/phase-7-set.md` §4.1). Ein Auftrag mit nur einem Modus: siehe `references/phase-7-set.md` zum Feld `produkte`.
 
 *Beispiel 1 — leere Differenz (Wohnen, erfunden).* Heft A übt an einem Abrechnungsblatt eine mündliche Stellungnahme: [Rezeption schriftlich und bildlich, Produktion mündlich]. Heft B verfasst eine Mängelmeldung und handelt sie in der Wohngemeinschaft aus: [Rezeption schriftlich und bildlich, Produktion schriftlich und bildlich, Interaktion und Kollaboration mündlich]. `modi_kn` = dieselben vier. Differenz leer. Gewicht: Rezeption schriftlich steht in zwei Heften, die drei anderen in je einem. Gleichstand → KN-Typen: «Produktion schriftlich und bildlich» führen zwei Typen, die beiden anderen je einer → `modi_auftrag` = [Produktion schriftlich und bildlich]; Herleitung: «modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B) = leer → KN-Modus mit dem geringsten Gewicht in den Heften».
 
@@ -110,19 +111,19 @@ Die Verteilung der Kriterien folgt dem Produkt: Das SuK-Kriterium liegt in dem H
 ### 2.7 `mehrdeutigkeits_architektur`, `dekontextualisierungs_anker`, `zirkularitaet`
 
 - `trade_off_raum` — drei bis vier Einträge «X vs. Y» aus Bauplan §3. Jedes Heft aktiviert später mindestens einen wörtlich, Auftrag und KN mindestens zwei. In sichtbarer Prosa heisst es «Spannungsfeld» oder «Zielkonflikt».
-- `verbindlich` — ein Satz, der die Spannung offen hält (beide Seiten bleiben begründbar). Er wird `mehrdeutigkeits_pflicht` im KN.
+- `verbindlich` — aus Bauplan §3: ein Satz, der die Spannung offen hält (beide Seiten bleiben begründbar). Er wird `mehrdeutigkeits_pflicht` im KN.
 - `anker_statement` — das Prinzip in einem Satz, ohne Fall, ohne Gegenstand eines Hefts (Bauplan §3 «Transfer-Anker»). Aus ihm ist `mindmap_zentrum_kurz` gekürzt.
 - `transferfeld` — ein Satz: auf welche Art von Situation das Prinzip übertragbar ist, mit zwei bis drei Beispielen, die weder A, B, Auftrag noch KN vorwegnehmen.
-- `r1_aktuell` — die Iteration des dominanten Aspekts im Thema (wie in `aspekte`). `r2_voraussicht`, `r3_voraussicht` — Thema und Stichwort der nächsten zwei Themen, in denen `wiederholungen` denselben Aspekt führt; gibt es keines, steht «—».
+- `zirkularitaet`, Form der drei Werte: `r1_aktuell` = «R<n>» — die Iteration des dominanten Aspekts im Thema der Einheit (wie in `aspekte`), sonst nichts. `r2_voraussicht` und `r3_voraussicht` = «T<n> '<Titel>' — <Stichwort>» für die nächsten zwei Themen, in denen `wiederholungen` denselben Aspekt führt (Titel des Themas wörtlich aus dem Datensatz, in einfachen Anführungszeichen; Stichwort in eigenen Worten); gibt es keines, steht «—». Erfundenes Beispiel: `"R1"` · `"T5 '<Titel von T5>' — Regeln aushandeln"` · `"—"`.
 
 ### 2.8 `quellen_anker`
 
-- `chapters` — je Kapitel `ref` («Kap. N.N»), `titel`, `seiten` («Seite NN-NN»). Nur Kapitel aus Bauplan §2, und nur mit Seiten, die in Phase 0 am Text der Kapiteldatei geprüft sind. Kein Kapitel aus einem Inhaltsverzeichnis oder aus dem Gedächtnis.
+- `chapters` — je Kapitel `ref` («Kap. N.N»), `titel`, `seiten` («Seite NN-NN»). Die Kapitel aus Bauplan §2, **dazu** jedes Kapitel, aus dem eine Lösung eine Fundstelle zitiert (nach Phase 5 nachführen) — und nur mit Seiten, die am Text der Kapiteldatei geprüft sind. **Methodenkarten-Kapitel gehören nicht hinein** (ein Kapitel 16–20, das nur eine Methodenkarte liefert). Kein Kapitel aus einem Inhaltsverzeichnis oder aus dem Gedächtnis.
 - `konzepte` — Fachbegriffe, die in diesen Kapiteln stehen, in der Schreibweise des Lehrmittels. Was dort nicht steht, ist kein Konzept der Einheit. Kein Satz aus dem Lehrmittel — nur Begriffe.
 
 ### 2.9 `hybrid_situation_spec`
 
-Konstanten wie im Skelett: `max_woerter` 120 · `perspektive` `"ICH"` · `must_activate_trade_offs_min` 1 · `must_combine_herausforderungen` `["A","B"]` · `persona_neutral` (wörtlich) · `endet_mit_leitfrage` `true` · `lehrjahr_constraint` `"match_units"` · `qualitaetskriterien` (fünf Sätze, wörtlich). Die Zahl 1 ist die Konstante der Form; die Arbeitsregel verlangt zwei (3.2).
+Konstanten wie im Skelett: `max_woerter` 120 · `perspektive` `"ICH"` · `must_activate_trade_offs_min` 1 · `must_combine_herausforderungen` `["A","B"]` · `persona_neutral` (wörtlich wie im Skelett; nur «{{N}}. Lehrjahr» wird durch das Lehrjahr der Einheit ersetzt, wie in `persona.beruf`) · `endet_mit_leitfrage` `true` · `lehrjahr_constraint` `"match_units"` · `qualitaetskriterien` (fünf Sätze, wörtlich). Die Zahl 1 ist die Konstante der Form; die Arbeitsregel verlangt zwei (3.2).
 
 Je Einheit hergeleitet wird nur `fall_ausschluss_hefte_und_auftrag`: die Begriffe, die den KN-Fall ausmachen (Bauplan §5 «Dem KN vorbehalten»). `fallAusschluss` in `check-v42.mjs` sucht jeden Begriff **als Teilzeichenkette, in Kleinbuchstaben**, in allen Strings der Hefte, des gemeinsamen Auftrags, des Glossars und der Quellenkarten. Ausgenommen sind nur `feedback_kriterien[].stufen`, `kontext_ausschluss` und `prinzip_handoff.kn_aktivierung` (`FALL_AUSNAHME`); für Quellenkarten gibt es keine Ausnahme. Darum:
 
@@ -147,7 +148,7 @@ Vor den Heften, weil `rubrik_shared` den Wortlaut der Feedback-Kriterien liefert
 
 ### 3.2 `hybrid_situation`
 
-- `titel` — kurz, nennt den Fall, nicht die Lösung.
+- `titel` — aus Bauplan §5 («Titel des KN-Falls»): kurz, nennt den Fall, nicht die Lösung.
 - `persona` — `beruf`, `betrieb`, `ort` wörtlich wie im Skelett; die Zahl des Lehrjahrs ist `themen[].lehrjahr` des Themas im Datensatz und gleich wie in den Heften.
 - `emotion_tag` — leerer String (Konstante).
 - `text` — höchstens 120 Wörter (zählen: Leerzeichen-getrennt, Leitfrage inbegriffen); Ich-Form; eine Szene, nicht zwei Teile hintereinander; die Konfliktart von A und von B ist sichtbar, ohne benannt zu werden; konkret macht den Fall das Äussere (ein Schreiben, ein Angebot, Zahlen, eine Frist), nicht ein Beruf. Erfundene Fallzahlen sind erlaubt, Aussagen über die Welt nur belegt. Letzter Satz = `leitfrage`.
@@ -202,7 +203,7 @@ Name von Kriterium 3, Muster «<Adjektiv zum Aspekt>es Prinzip»: Wirtschaft →
 - einen Begriff aus `fall_ausschluss_hefte_und_auftrag` oder ein fest gesperrtes Wort (2.9),
 - ein Fachwort, das nur in einem der zwei Hefte vorkommt.
 
-Die Stufen beschreiben die Leistung, nicht den Stoff: «Fachbegriffe der Einheit korrekt und zur Situation passend verwendet», nicht eine Liste von Begriffen in Klammern. Den Stoff trägt im Heft `indikator_produkt`. Stufe 3 von Kriterium 3 heisst «übertragen» nur, wenn auch die Hefte eine Übertragung verlangen (das tun sie über den Ast «gilt auch bei …»); sonst bleibt sie bei «verbindet … eigenständig». Die Ausnahme des Skripts für `stufen` (E8) ist ein Notbehelf der Gold-Einheit, keine Erlaubnis.
+Die Stufen beschreiben die Leistung, nicht den Stoff: «Fachbegriffe der Einheit korrekt und zur Situation passend verwendet», nicht eine Liste von Begriffen in Klammern. Den Stoff trägt im Heft `indikator_produkt`. Stufe 3 von Kriterium 3 darf «übertragen» heissen: Die Übertragung ist in jedem Heft über den Transfer-Ast des Begriffsnetzes gedeckt (S. 8, Ast «gilt auch bei …», `mindmap_aeste[3]` und `abschluss.loesung.transfer`) — diese Stelle nennt der Bericht als Beleg. Die Ausnahme des Skripts für `stufen` (E8) ist ein Notbehelf der Gold-Einheit, keine Erlaubnis.
 
 **Anderes SuK-Kriterium.** Nur wenn der Bauplan es nennt — mit dem neuen Namen **und** dem der beiden festen SuK-Namen, den es ersetzt — und wenn alle drei Bedingungen gelten: (1) es bleibt bei 2 SuK + 2 Ges; (2) das Kriterium ist in jedem der drei KN-Typen beobachtbar, auch im schriftlichen (also «Adressatenbezug» oder «Verständlichkeit», nicht «Gesprächsführung»); (3) es ist im Produkt des Hefts beobachtbar, dem `kn_kriterien_verteilung` es zuteilt. Fehlt eine Bedingung oder die Angabe, was ersetzt wird: feste Namen, Meldung im Bericht. «Position / Werthaltung» und Kriterium 3 werden nie ersetzt.
 
@@ -214,15 +215,19 @@ Szene → Mapping → Rubrik → drei Typen → Kopf. Dann `modi_kn` und `kn_kri
 
 ### 3.7 Selbstprüfung nach Phase 3 (kein Skript prüft das)
 
-Jede Zeile wird ausgeführt und mit Ergebnis in den Bericht übernommen.
+Jede Zeile wird ausgeführt und mit Ergebnis in den Bericht übernommen. Eine
+Abweichung, die Bauplan §9 ausdrücklich als Ausnahme nennt (etwa eine SK
+ausserhalb des Themas, ein Kapitel ausserhalb der Crosswalk-Zeile), ist kein
+Fehlschlag der Zeile: Sie wird mit dem Verweis auf §9 als «Ausnahme laut
+Bauplan» vermerkt. Ohne Eintrag in §9 schlägt die Zeile fehl.
 
 1. **Fall neu.** Gegenstand, Beteiligte, Zahlen und Dokument der Szene kommen in Bauplan §4 (A, B) und §6 (Auftrag) nicht vor.
 2. **Lebensbereiche paarweise verschieden:** A, B, `auftrag_lebensbereich`, KN-Fall — sechs Paare, jedes einzeln.
 3. **Fall-Ausschluss tragfähig:** jeder Begriff ≥ 5 Zeichen, in keinem `konzepte`-Eintrag, in keiner Karte der gewählten Quellen, in keinem Stufentext; kein fest gesperrtes Wort in Titeln und Produkten des Bauplans.
 4. **`modi_kn`** = Vereinigung der `sprachmodi` der drei `kn_typen`, als Menge.
-5. **Abdeckung Modi:** Jeder Modus aus `modi_kn` steht in `modi_pro_heft.A`, `modi_pro_heft.B` oder `modi_auftrag`. Ausnahme nur der Sonderfall «mehr als zwei», und dann steht die Lücke in `modi_auftrag_herleitung` und im Bericht.
-6. **Modi der Hefte:** jedes Element von `modi_pro_heft[L]` steht in den `sprachmodi` einer Kompetenz dieses Hefts; kein Rezeptionsmodus mündlich oder audiovisuell bei einem Heft mit Spur `ohne_medien`.
-7. **Abdeckung SK:** Jede SK aus `primary` steht im `sk` mindestens eines KN-Typs; jedes `sk` eines Typs ⊆ A ∪ B; jede Nummer in `sk_pro_situation` gehört zu den SK des Themas.
+5. **Abdeckung Modi:** `modi_kn` ist der Gerüst-Wert (2.4). Jeder Modus aus `modi_kn` steht in `modi_pro_heft.A`, `modi_pro_heft.B` oder `modi_auftrag`. Ausnahme nur der Sonderfall «mehr als zwei», und dann steht die Lücke in `modi_auftrag_herleitung` und im Bericht.
+6. **Modi der Hefte:** jedes Element von `modi_pro_heft[L]` steht in den `sprachmodi` einer Kompetenz dieses Hefts (geführt); ein Rezeptionsmodus, den das Heft auf S. 3 nur übt, steht nicht darin; kein Rezeptionsmodus mündlich oder audiovisuell bei einem Heft mit Spur `ohne_medien`.
+7. **Abdeckung SK:** Jede SK aus `primary` steht im `sk` mindestens eines KN-Typs; jedes `sk` eines Typs ⊆ A ∪ B; jede Nummer in `sk_pro_situation` gehört zu den SK des Themas (oder ist in Bauplan §9 als Ausnahme genannt); A und B haben mindestens eine SK gemeinsam.
 8. **Spannungen:** `aktivierte_trade_offs` ≥ 2, jeder Eintrag zeichengleich in `trade_off_raum`; `mehrdeutigkeits_pflicht` = `verbindlich`.
 9. **Rubrik:** vier Kriterien, 2 + 2, je vier Stufen ≤ 120 Zeichen; die Namen sind genau die vier aus `kn_kriterien_verteilung`; je Heft 1 SuK + 1 Ges.
 10. **Zählwörter:** Suche in `kn.json` und `prinzip.json` nach «drei», «dritt», «A, B und C», «hf_C», «Stufe 1», «Stufe 4» — kein Treffer ausser den drei KN-Typen, den drei Reflexionsfragen und «3 Punkte».

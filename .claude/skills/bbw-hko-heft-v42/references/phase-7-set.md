@@ -41,7 +41,7 @@ Reihenfolge einhalten; jeder Schritt liest eine Datei, keiner das Gedächtnis.
 |---|---|
 | `id` | `<ordner>_set` (E21) |
 | `modul`, `modul_titel` | wie in den Heften (der Index liest beide aus Heft A, nicht aus dem Set) |
-| `einheit_titel` | der Fokus als Titel, ohne Versionszusatz; Zusatz in Klammern nur, wenn im Katalog schon eine gleichnamige Einheit steht (E21, E5) |
+| `einheit_titel` | aus Bauplan §1: der Fokus als Titel, ohne Versionszusatz; Zusatz in Klammern nur, wenn im Index (`src/data/einheiten.index.json`, Feld `einheit_titel`) schon eine gleichnamige Einheit steht (E21, `references/ableitungsregeln.md` §7) |
 | `lehrgang` | kanonisch, einwertig, wie in den Heften |
 | `thema` | `T<n>` wie `nrlp.themen[0]` der Hefte |
 | `version` | `"2.1.0"` (Konstante des Skeletts) |
@@ -77,7 +77,7 @@ Heft A in der Reihenfolge der Äste, Spur-Einträge Heft A, dann dasselbe für B
 |---|---|
 | `begriff` | ≤ 25 Zeichen; zeichengleich mit dem Knoten |
 | `definition` | ≤ 90 Zeichen, eigene Formulierung — nie der Satz aus Lehrmittel oder Quelle |
-| `herkunft` | `lehrmittel` nur, wenn der Begriff im Kapitel steht (am Text geprüft) · `heft` für Begriffe, die das Heft selbst einführt · `quelle` für Begriffe aus der Quelle der Medien-Spur |
+| `herkunft` | `lehrmittel` nur, wenn der Begriff im Lehrmittel steht (am Text geprüft) — das gilt auch, wenn er in einem Lehrmittelkapitel ausserhalb der Heft-Kapitel belegt ist; Kapitel und Seite stehen dann im Bericht · `heft` für Begriffe, die das Heft selbst einführt · `quelle` für Begriffe aus der Quelle der Medien-Spur |
 | `heft` | `A` oder `B` |
 | `spur` | nur bei Spur-Einträgen: `ohne_medien` oder `mit_medien`; fehlt das Feld, gilt der Eintrag in beiden Spuren |
 
@@ -111,6 +111,7 @@ Stationen) — für jede andere Einheit falsch.
 | Produktion mündlich | Statement, Kurzvortrag, Sprachnachricht | `spur` — Stationen = Aufbau des Beitrags |
 | Interaktion und Kollaboration mündlich | Gespräch, Diskussion, Verhandlung | `spur` — Stationen = eigene Position, erwarteter Einwand, Antwort, Abschluss; eigener Anteil je Person ausgewiesen |
 | Interaktion und Kollaboration schriftlich / digital | Chatverlauf, Mailwechsel | `flaeche` |
+| ein Rezeptionsmodus (ergibt die Formel, wenn kein Heft ihn führt — E27) | sichtbare Auswertung eines Dokuments, das **vollständig in der Situation steht**: kommentierte Tabelle, Prüfnotiz mit Markierungen | `flaeche` |
 
 | Feld | Regel |
 |---|---|
@@ -134,7 +135,7 @@ denselben `modus`. Die zwei Seiten tragen dann zwei Arbeitsschritte desselben
 Produkts — Entwurf und Reinschrift, Planung und Durchführung —, weiterhin in
 zwei verschiedenen Schritten.
 
-**Vier erfundene Beispiele** (nur die Form zeigen; nie übernehmen):
+**Fünf erfundene Beispiele** (nur die Form zeigen; nie übernehmen):
 
 ```json
 "produkte": [
@@ -176,6 +177,20 @@ Quartier, Umnutzung eines Platzes: Plakat früh im Ablauf, Diskussionsrunde dana
 ```
 Nur ein Modus — Einsprache gegen eine Parkbusse: Schritt 04 «Entwurf» (Argumente
 ordnen), Schritt 05 «Brief» (Reinschrift). `sprachmodi` hat einen Eintrag.
+
+```json
+"produkte": [
+  { "schritt": 3, "form": "spur", "modus": "Produktion mündlich",
+    "stationen": ["Worum es mir geht", "Mein wichtigster Grund", "Was ich von der Runde möchte"],
+    "hinweis": "Planen Sie Ihr Statement in Stichworten. Sprechen Sie es einer Person aus der Klasse vor und stoppen Sie die Zeit.",
+    "dauer": "1 Minute" },
+  { "schritt": 5, "form": "spur", "modus": "Interaktion und Kollaboration mündlich",
+    "stationen": ["Der Vorschlag der anderen Seite", "Meine Rückfrage dazu", "Worauf wir uns einigen", "Wer was übernimmt"],
+    "hinweis": "Bereiten Sie die Runde zu dritt vor. Jede Person bringt ihren Vorschlag ein und stellt mindestens eine Rückfrage." }
+]
+```
+Zweimal `spur` — Jugendtreff, neue Öffnungszeiten: Kurzstatement in Schritt 03,
+Aushandlung zu dritt in Schritt 05. Zwei mündliche Modi, keine Fläche.
 
 ### 4.2 Felder
 

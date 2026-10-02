@@ -18,7 +18,7 @@ Prüfskripte `scripts/check-v42.mjs`, `scripts/check-einheiten.mjs`,
 | Was | Woraus | Abdeckung prüfen |
 |---|---|---|
 | welche Spuren das Heft hat | Phase 0: Rezeptionsmodi des Hefts (`nrlp.sprachmodi`, `prinzip.modi_pro_heft`) | verlangt das Heft «Rezeption mündlich» oder «Rezeption audiovisuell», gibt es `ohne_medien` nicht (`ERR_V42_R4`) |
-| Typ der Quelle | `typ` und `sprachmodus` der Karte (in Phase Q aus dem Rezeptionsmodus hergeleitet) | der `sprachmodus` der Karte ist ein Rezeptionsmodus, den das Heft führt |
+| Typ der Quelle | `typ` und `sprachmodus` der Karte (in Phase Q hergeleitet: Rezeptionsmodus der Kompetenz, sonst des Themas) | **nur wenn das Heft einen Rezeptionsmodus führt:** der `sprachmodus` der Karte ist dieser geführte Modus. Führt das Heft keinen (die Rezeption auf S. 3 ist «geübt, nicht geführt», ENTSCHEIDE E27), muss die Karte keinen geführten Modus tragen |
 | Lehrmittel-Abschnitt (ohne Medien) | Kapitel des Bauplans, am Text der Kapiteldatei geprüft | der Abschnitt trägt vier belegbare Aussagen zur Frage; `ohne_medien` deckt nur «Rezeption schriftlich und bildlich» |
 | Spalten des Rasters | Tabelle in Abschnitt 4, nach Typ der Quelle | letzte Spalte «→ Begriff»; jeder Begriff dort stammt aus LF1 |
 | Pol-Typ von LF4 | `prinzip.pol_typ_verteilung` (je Heft und Spur) | Abschnitt 6 |
@@ -78,7 +78,7 @@ Die Ersatzquelle trägt dieselben Spalten (gleicher Auftrag, gleiches Raster).
 | `befund` | ein möglicher Befund in zwei bis drei Sätzen, der die Frage von LF3 beantwortet und zum eigenen Fall führt | `ERR_V42_LOESUNG`: nicht leer |
 | `kern` | Überschrift der Lösung | ≤ 55 |
 | `quelle_ref` | Medien: ID der Karte · ohne Medien: derselbe Text wie `raster.knoten_ref` | Medien: Karte muss existieren |
-| `quelle_stand` | Medien: `sachlage_geprueft` der Karte · ohne Medien: Tag, an dem der Kapiteltext geprüft wurde (`JJJJ-MM-TT`) | — |
+| `quelle_stand` | Medien: Tag, an dem die Lösung am Archivtext geschrieben wurde (heute, `JJJJ-MM-TT`) — nicht `sachlage_geprueft` der Karte · ohne Medien: Tag, an dem die Lösung am Kapiteltext geprüft wurde | — |
 | `zeilen[]` | je `label`, `text`, wo belegt `quelle` | 3–6 Zeilen; `text` zusammen ≤ 900; `label` ≤ 24; `quelle` ≤ 30 (`check-lf-loesung`) |
 
 Labels von `zeilen[]`, in dieser Folge:
@@ -93,6 +93,16 @@ Labels von `zeilen[]`, in dieser Folge:
 
 Eine weitere Zeile ist frei für einen Hinweis an die Lehrperson (Lesehilfe,
 Einordnung der Quelle); im Ganzen bleiben es höchstens sechs.
+
+**Längen.** Die Lösungszeilen von LF3 (`zeilen[].text`) sind **zusammen**
+≤ 900 Zeichen, sonst `WARN_LF_LOESUNG_ZU_LANG` (`scripts/check-lf-loesung.mjs`,
+Konstante `LIMITS`: `textMax` 900, `kern` 55, `label` 24, `quelle` 30, drei
+bis sechs Zeilen) — bei fünf Zeilen also rund 170 Zeichen je Zeile; `kern`
+≤ 55. Für die Zellen von `raster_zeilen` der Medien-Spur gibt es kein
+Skript-Budget; Richtwert wie bei der Beispielzeile: ≤ 25 Zeichen in den
+kurzen Spalten (Fundstelle, «→ Begriff»), die Kernaussage-Spalte kurz halten.
+Ob das Raster im Dokument «Lösungen» hält, zeigt die Messung
+(`messen-v42`, `references/phase-9-tor.md`).
 
 Erfundenes Beispiel einer Lösungszeile zu einem Audio-Ausschnitt (Lärm an einem Quartierfest):
 `["01:10 · Anwohnerin", "Musik bis nach Mitternacht", "will Ruhezeiten erreichen", "Interesse"]`.
@@ -149,7 +159,7 @@ Bauplan; im Auto-Modus nach `references/auto-modus.md`.
 |---|---|---|
 | `nr` | `4` | `ERR_V42_R1` |
 | `bloom` | `Beurteilen` | — |
-| `knoten_ref` | die zwei Pole, Form «Kap. X.Y ↔ eigener Fall» bzw. «Kap. X.Y ↔ Quelle» | — |
+| `knoten_ref` | die zwei Pole, je Pol-Typ eine Form: `lehrmittel_quelle` «Kap. X.Y ↔ Quelle» · `position_gegenposition` «Kap. X.Y · <Position> ↔ <Gegenposition>» · `modell_eigener_fall` «Kap. X.Y ↔ eigener Fall» · `recht_praxis` «Kap. X.Y · Regel ↔ Praxis im Fall» · `quelle_quelle` «Quelle ↔ Ersatzquelle» bzw. «Quelle ↔ Vertiefung N» | — |
 | `pol_typ` | aus dem Prinzip | `ERR_V42_R1`, `ERR_V42_R5` |
 | `text` | nennt beide Pole und verlangt einen Entscheid | ≤ 220; höchstens zwei «Verb Sie» |
 | `liefert` | 3–7 Wörter, ≤ 50 — **gleich in beiden Spuren** | `ERR_V42_BUDGET` |
@@ -304,7 +314,9 @@ Auch `WARN_*` aus `check-einheiten` lassen das Tor rot. Folgen für das Schreibe
 **Wörter, die in Texten für Lernende nicht stehen** (alles ausser `loesung`,
 `loesung_zeilen`, `erwartung`): «Spur», «Pflichtquelle» (heisst «Quelle»; dazu
 «Ersatzquelle», «Vertiefung (freiwillig)»), Woche, Lektion, Minuten. Kein
-Verweis auf den gemeinsamen Auftrag. Sie-Form. Mehr: `references/sprache.md`.
+Verweis auf den gemeinsamen Auftrag. Sie-Form. Gemeint ist Unterrichtszeit: Die Dauer
+eines Produkts oder eines Ausschnitts («Statement von zwei Minuten») darf stehen
+(`references/sprache.md` §2). Mehr: `references/sprache.md`.
 
 ## 14. Prüfen nach jeder Datei
 

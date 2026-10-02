@@ -11,7 +11,9 @@ Ordnername steht im QR-Code jedes gedruckten Hefts. Darum gilt:
   Karte, noch einen vorhandenen Archivordner.
 - Im Auto-Modus stehen die Werte schon im Bauplan. Sie werden nicht neu
   erfunden, sondern gegen diese Regeln geprüft; weicht einer ab, ist der
-  Bauplan nicht ausführbar (`references/auto-modus.md`).
+  Bauplan nicht ausführbar — ausser Bauplan §9 nennt die Abweichung
+  ausdrücklich als Ausnahme: Dann gilt der Wert des Bauplans
+  (`references/auto-modus.md` §7).
 
 Die Beispiele auf dieser Seite sind erfunden. Die Kompetenznummern darin sind
 am Datensatz geprüft (Stand 02.10.2026), die Einheiten gibt es nicht.
@@ -177,6 +179,13 @@ Prüfschritt, für `q-<n>a-pflicht` **und** `q-<n>b-pflicht`:
 **Ein Satz, ein Muster — nie gemischt.** Eine Einheit trägt entweder nur IDs
 ohne `.<k>` oder nur IDs mit demselben `.<k>`.
 
+**Ausnahme aus Bauplan §9.** Nennt Bauplan §9 ausdrücklich, dass die Einheit
+die Quellen-IDs (Karten und Archivtexte) einer anderen Einheit verwendet,
+gelten diese IDs — auch im Auto-Modus; der Bauplan ist deswegen nicht «nicht
+erzeugbar». Die fremden Karten werden gelesen, nie geändert. Ohne Eintrag in
+§9 bleibt es bei der Tabelle oben, und ein Bauplan, der eine vergebene ID
+führt, ist nicht erzeugbar.
+
 Beispiel: Eine frühere Einheit führt schon `q-212a-pflicht`. Die neue Einheit
 `2.1.2_quellen_pruefen_teilen` bekommt `q-212.2a-pflicht`,
 `q-212.2a-pflicht-ersatz`, `q-212.2a-vertiefung-1`, `q-212.2a-vertiefung-2`
@@ -230,8 +239,8 @@ Der Fokus als Titel, in normaler Schreibweise mit Umlauten, **ohne
 Versionszusatz**.
 
 Prüfschritt: Trägt schon eine andere Einheit denselben `einheit_titel`?
-Nachsehen in `set.json` aller Ordner unter `src/data/einheiten/` (nicht nur im
-Index — der kann veraltet sein).
+Nachsehen im Index `src/data/einheiten.index.json` (je Einheit das Feld
+`einheit_titel`) — nicht durch Lesen fremder `set.json`.
 
 | Befund | `einheit_titel` |
 |---|---|

@@ -706,3 +706,53 @@ des Auftragsbogens gleich; `bestand-v42 --pruefen` «26 Dokumente unverändert»
 (es steckt in jedem exportierten HTML); die neuen Arten tragen Inline-Stile.
 **Nicht geprüft:** Aussehen in Word (nur Seiten gezählt), Workbench im Browser.
 **Rückgängig:** `git revert` des Commits; die Felder sind additiv.
+
+## E27 — Befunde der zwei T2-Bauplan-Entwürfe: «geführt» und «geübt», und sieben kleine Regeln
+
+Die Entwürfe für `2.3.1_anliegen_vertreten` (EFZ 3J) und
+`2.1.1_informationen_hinterfragen` (EFZ 4J) haben Stellen gezeigt, an denen
+die References der Skill sich widersprachen oder schwiegen. Entschieden:
+
+1. **Geführt.** Ein Heft führt (`nrlp.sprachmodi` = `prinzip.modi_pro_heft`)
+   die Sprachmodi seiner Kompetenz(en) von der Kompetenz-Ebene des Datensatzes
+   — nichts von der Themen-Ebene (`regel4` würde sonst jede Spur ohne Medien
+   sperren). Nur geführte Modi gehen in die Formel des Auftrags (§7.2).
+2. **Geübt.** Seite 3 übt in jedem Heft Rezeption — das gehört zum Gerüst
+   (LF3 analysiert eine Quelle). Nennt die Kompetenz keinen Rezeptionsmodus,
+   ist diese Rezeption «geübt, nicht geführt»: Der Typ der Quelle folgt dann
+   dem Modus des Themas (Leitfaden §5) mit der Ausweichfolge Audio → Video mit
+   Untertiteln → Artikel, und die Karte muss keinen geführten Modus tragen.
+   Die Abdeckungstabelle weist das als «geübt» aus, nicht als Lücke.
+3. **Zwei Rezeptionsmodi in einer Kompetenz** (2.1.1: mündlich und
+   audiovisuell): beide werden geführt. Die Quelle trägt den zuerst genannten;
+   der andere bekommt seine Stelle über eine Vertiefung des anderen Typs und
+   steht in der Abdeckung als «freiwillig geübt».
+4. **Rezeptionsmodus im Auftrag** (ergibt die Formel, wenn kein Heft ihn
+   führt): Das Produkt ist die sichtbare Auswertung eines Dokuments, das
+   vollständig in der Situation des Auftrags steht (§7.4: kein Medium); Form
+   `flaeche`.
+5. **`modi_kn` gehört zum Gerüst.** Die drei KN-Formen sind fest, also auch
+   ihre Modi. Im Vergleich mit Gold ist Gleichheit hier kein Befund.
+6. **SK:** Die SK des Themas werden auf A und B verteilt (je drei, so viele
+   verschiedene wie möglich, mindestens eine gemeinsam); der KN trägt die
+   gemeinsame(n), ergänzt auf drei aus A und B. Eine SK des Themas, die
+   nirgends Platz hat, nennt der Bauplan als Lücke.
+7. **Methodenkarten** dürfen aus den Methodenkapiteln 16–20 stammen, auch wenn
+   die Crosswalk-Zeile des Lebensbezugs sie nicht nennt: Die Karte ist die
+   Fundstelle. Fachaussagen der Hefte kommen weiter nur aus den Kapiteln der
+   Zeile.
+8. **Heft mit nur einer Spur:** Die Ersatzquelle ist dort Pflicht (kein
+   Rückfall auf die Spur ohne Medien), und sie hat denselben Typ oder
+   Sprachmodus. Die Situation bleibt im Entwurf themenneutral; das Thema trägt
+   die Quellensuche nach, bevor der Bauplan vorgelegt wird.
+9. **Kleines:** Die dritte Zeile «Das nehme ich mit» lautet immer «Mir noch
+   unklar». Die Dauer eines Produkts («Statement von zwei Minuten») darf im
+   Heft stehen — verboten ist Unterrichtszeit (E17). Die Bauplan-Vorlage
+   bekommt Felder für Titel (Einheit, Modul, Auftrag, KN-Fall), Leitfrage und
+   Schritte je Heft, Schritte und Abgaben des Auftrags, Rasterspalten, und in
+   §7 den Entwurfsstand mit Suchauftrag. «Stufe 1 oder 2» entfällt.
+
+**Grund:** Leitprinzip (herleiten statt kopieren) und `regel4`; Leitfaden §5
+und §7.2. **Rückgängig:** die betroffenen Absätze in den References
+(`phase-0`, `phase-1`, `phase-2-3`, `phase-5`, `phase-7`, `phase-q`,
+`kohaerenz.md`) und in `_VORLAGE.md`.
