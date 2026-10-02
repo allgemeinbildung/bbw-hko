@@ -5,12 +5,13 @@ import type { ProduktBild, ProduktBildBlock } from '../../../../lib/einheiten/ty
  * Heft v4.2 — das Handlungsprodukt als «Bild»: ein von Hand ausgefülltes Blatt, aus den
  * Daten gezeichnet (kein Pixelbild). Zwei Verwendungen am Handlungsprodukt:
  *  - `beispielbild` → Heft S. 6 unter den Methodenkarten, Grösse `klein` ({@link BeispielBand}),
- *  - `loesungsbild` → Lösungsblatt der Lehrperson, Grösse `gross` (DocLoesungsblattV42.tsx).
+ *  - `loesungsbild` → Dokument «Lösungen» der Lehrperson, Grösse `gross`, Einträge grün
+ *    (`loesung`, DocLoesungenV42.tsx).
  * Spiegel in src/lib/einheiten/docx-produkt-bild-v42.ts, Stil in src/styles/v42/produkt-bild.css.
  *
  * Schreibschrift-Anmutung über lokal vorhandene Schriften (kein Webfont). Markierungen sind
  * Konturen, keine Farben — die Hefte werden schwarz-weiss kopiert. `hinweis` wird hier nie
- * gedruckt; das Lösungsblatt setzt ihn selbst in den Lehrpersonen-Kasten.
+ * gedruckt; das Dokument «Lösungen» setzt ihn selbst über das Blatt.
  */
 
 /** Zeichen einer Markierung, bestimmt durch die Position in `legende`. */
@@ -134,16 +135,18 @@ function Tabelle({ bild, block }: { bild: ProduktBild; block: ProduktBildBlock }
 
 /**
  * Das Blatt: Kopfzeile (Titel + Legende), darunter die Blöcke nebeneinander.
- * `klein` für die Heftseite, `gross` für das Lösungsblatt.
+ * `klein` für die Heftseite, `gross` für das Dokument «Lösungen». `loesung`: die
+ * Einträge (Text, Notizen, Zellen, Markierungen) in Lösungsgrün — Titel, Legende und
+ * Spaltenköpfe bleiben, wie sie sind. Das Beispielblatt im Heft (S. 6) setzt es nie.
  */
-export function ProduktBildBlatt({ bild, groesse }: { bild: ProduktBild; groesse: 'klein' | 'gross' }) {
+export function ProduktBildBlatt({ bild, groesse, loesung = false }: { bild: ProduktBild; groesse: 'klein' | 'gross'; loesung?: boolean }) {
   const bloecke = (bild.bloecke || []).filter(Boolean)
   const legende = (bild.legende || []).slice(0, FORMEN.length)
   const gewichte = blockGewichte(bloecke, tabellenBonus(groesse))
   // Höchstens drei Spalten; mehr Blöcke brechen in die nächste Zeile um.
   const spalten = bloecke.length > 3 ? '1fr 1fr 1fr' : gewichte.map((g) => `${g}fr`).join(' ')
   return (
-    <div className={`v42-pb-blatt v42-pb-${groesse}`}>
+    <div className={`v42-pb-blatt v42-pb-${groesse}${loesung ? ' v42-pb-loesung' : ''}`}>
       <div className="v42-pb-kopf">
         <div className="v42-pb-titel">{bild.titel}</div>
         {legende.length > 0 && (

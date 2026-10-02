@@ -3,7 +3,7 @@
 Gebaut am 01./02.10.2026 auf dem Branch `v42-gold-1.3.1` (Ausgang `4ed2bee`).
 **Nichts ist gepusht, nichts deployt, `main` ist unberührt.**
 
-Auftrag: `docs/ORCHESTRATION.md` · Entscheide im Einzelnen: `ENTSCHEIDE.md` (E1–E17).
+Auftrag: `docs/ORCHESTRATION.md` · Entscheide im Einzelnen: `ENTSCHEIDE.md` (E1–E19).
 
 ---
 
@@ -18,6 +18,8 @@ umschaltbar, als HTML und Word exportierbar und ohne Platzhalter.
 **Nachtrag 02.10.2026 — Pietros Rückmeldung (E16) ist eingearbeitet:** QR-Code nur noch auf Seite 3; «Quelle» statt «Pflichtquelle»; die Schreibfelder füllen die Seiten 2–4 (die Höhen des Leitfadens gelten als Minimum); die Vertiefungskarten auf Seite 4 haben Hinweis, Kurzbeschrieb und ein Feld «Meine Antwort». Gates, Messung, Word-Seitenzahl und Bestandsvergleich sind danach erneut gelaufen.
 
 **Zweiter Nachtrag 02.10.2026 — zweite Rückmeldung und Lückenprüfung (E17):** Seite 1 zeigt eine «Übersicht» ohne Woche und Zeit; Seite 8 heisst «Das nehme ich mit», der Verweis auf die Hefte steht neu auf dem Auftragsbogen (A1); Seite 6 trägt unter den Methodenkarten ein ausgefülltes Beispiel des Produkts an einem anderen Fall, die Lehrperson hat je Heft ein Lösungsblatt; Seite 8 zeigt ein Begriffsnetz aus den Glossarbegriffen des Hefts und darunter das Glossar (auf dem Auftragsbogen entfällt es). Dazu die Korrekturen aus der Lückenprüfung (Punkteskala im Begleiter, Erwartungen zu den Vertiefungsfragen, Stützen-Hinweise). Gates, Messung (jetzt 38 Seiten: 4 Hefte × 8, Auftragsbogen 4, 2 Lösungsblätter), Word-Seitenzahl und Bestandsvergleich sind danach erneut gelaufen.
+
+**Dritter Nachtrag 02.10.2026 (E18, E19):** Die Seite A4 des Auftragsbogens heisst «Selbsteinschätzung» und nennt weder Lehrperson noch KN noch Note. Neu gibt es je Heft und Spur ein Dokument «Lösungen» (nur Lehrperson, je fünf Seiten, HTML und Word) mit einer möglichen Lösung zu jedem Feld des Hefts in Grün; es ersetzt das Lösungsblatt aus E17. Gates, Messung (jetzt 56 Seiten: 4 Hefte × 8, Auftragsbogen 4, 4 Lösungen × 5) und Bestandsvergleich sind danach erneut gelaufen.
 
 **Gates am Schluss (02.10.2026):**
 
@@ -68,7 +70,7 @@ umschaltbar, als HTML und Word exportierbar und ohne Platzhalter.
 | Prüfen und Exportieren | `scripts/check-v42.mjs`, `export-v42.mjs`, `messen-v42.mjs`, `bestand-v42.mjs`, `v42-ssr.mjs`; `check-einheiten` und `check-lf-loesung` prüfen v4.2-Hefte je Spur |
 
 **Exporte** in `docs/upgrade-v4.2/gold/`: je Heft und Spur `.html` und `.docx`,
-`auftragsbogen.html/.docx`, `loesungsblatt-a/-b.html/.docx` (nur Lehrperson), `begleiter.docx`.
+`auftragsbogen.html/.docx`, `loesungen-<a|b>-<spur>.html/.docx` (nur Lehrperson), `begleiter.docx`.
 
 ---
 
@@ -137,9 +139,10 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
    Methodenkarte 4 von Heft A (E13). `git diff 7d5abd4 -- src/data/einheiten/1.3.1_konsum_verantworten_v42`
    zeigt alles.
 6. **KN und Prinzip** sprechen von zwei statt drei Herausforderungen (E2).
-7. **Inhalt der vier Produktbilder** (E17): die neutralen Beispiele auf Seite 6
-   (Landkarte zur Spielkonsole; Budget mit Nettolohn CHF 950) und die zwei
-   Lösungsblätter. Die Budgets sind nachgerechnet, die Zuordnungen folgen den
+7. **Inhalt der vier Produktbilder** (E17) und der Lösungen (E19): die neutralen
+   Beispiele auf Seite 6 (Landkarte zur Spielkonsole; Budget mit Nettolohn
+   CHF 950), die zwei Produktlösungen und alle Einträge der Dokumente
+   «Lösungen» (ausgefüllte Raster, Befunde, Denkhilfen, Verbindungen). Die Budgets sind nachgerechnet, die Zuordnungen folgen den
    Lösungen von LF1; freigegeben hat sie niemand ausser mir.
 8. **Glossar je Heft** (E17): zehn Begriffe je Heft, davon je drei bis vier
    «heft-eigene» ohne Lehrmittelbeleg (Konsumdruck, Geweckter Wunsch, Massstab;
@@ -168,8 +171,8 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
   Stand 2023, «klare Regeln fehlen»).
 - **Der Verein «Finanz fit»** (Vertiefung B1): ob er heute noch so besteht.
 - **Übersicht_LP im ZIP** ist per Skript geprüft, nicht im Browser angesehen.
-- **Arbeitsansicht nach E17** (neue Gruppe «Lösungsblätter», ausgeblendete
-  Präsentation und Werkstatt, ZIP mit Lösungsblättern): nur über Export,
+- **Arbeitsansicht nach E17/E19** (neue Gruppe «Lösungen · Lehrperson»,
+  ausgeblendete Präsentation und Werkstatt, ZIP mit den Lösungen): nur über Export,
   Typprüfung und Build geprüft, nicht im Browser geklickt.
 - **Begriffsnetz mit anderen Daten:** Die Platzierung ist für 1–5 Knoten je
   Ast durchgerechnet, gerendert aber nur mit dieser Einheit.

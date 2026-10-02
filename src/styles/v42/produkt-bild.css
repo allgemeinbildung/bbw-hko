@@ -1,7 +1,7 @@
 /* Heft v4.2 — Produktbild: das Handlungsprodukt als von Hand ausgefülltes Blatt.
    Markup: src/components/einheiten/docs/heft-v42/produkt-bild.tsx (Blatt, Band S. 6) und
-   DocLoesungsblattV42.tsx (Lösungsblatt). Präfix .v42-pb-. Ein Akzent (--sit-akzent) plus
-   Schwarz/Weiss; Markierungen tragen die Kontur, nicht die Farbe (Graudruck).
+   DocLoesungenV42.tsx (Dokument «Lösungen», Variante .v42-pb-loesung). Präfix .v42-pb-.
+   Ein Akzent (--sit-akzent) plus Schwarz/Weiss; Markierungen tragen die Kontur, nicht die Farbe (Graudruck).
    Schreibschrift nur über lokal vorhandene Schriften — kein Webfont.
    Wird nach heft-5-8.css angehängt (alphabetisch, css-v42.ts). */
 
@@ -94,8 +94,9 @@
 .v42-pb-bandkopf .v42-pb-label { margin-bottom: 0; }
 .v42-pb-unterzeile { font-size: 8pt; font-style: italic; color: var(--ink-soft); }
 
-/* ---------- Lösungsblatt (nur Lehrperson) ---------- */
-.v42-lb-seite { gap: 4mm; }
-.v42-lb-seite .v42-kasten.v42-lb-lp { border: 0.75pt dashed var(--ink-soft); border-left: 3pt solid var(--sit-akzent); }
-.v42-lb-seite .v42-lb-lp p { font-size: 9.5pt; line-height: 1.4; margin: 0; }
-.v42-lb-seite > .v42-pb-blatt { flex: 0 0 auto; }
+/* ---------- Dokument «Lösungen» (nur Lehrperson): Einträge in Lösungsgrün ---------- */
+/* Grün nur, was eingetragen ist — Titel, Legende, Blocktitel und Spaltenköpfe bleiben. */
+.v42-pb-loesung .v42-pb-text,
+.v42-pb-loesung .v42-pb-notiz,
+.v42-pb-loesung .v42-pb-tabelle td,
+.v42-pb-loesung .v42-pb-bloecke .v42-pb-marke { color: var(--brand, #0E6E3A); }

@@ -2,10 +2,11 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import type { Document } from 'docx'
 import { DocS } from '../../components/einheiten/docs/DocS'
 import { DocAuftragsbogen } from '../../components/einheiten/docs/DocAuftragsbogen'
-import { DocLoesungsblattV42 } from '../../components/einheiten/docs/DocLoesungsblattV42'
+import { DocLoesungenV42 } from '../../components/einheiten/docs/DocLoesungenV42'
 import { buildDocS } from './docx-builder'
 import { buildAuftragsbogen } from './docx-auftragsbogen-v42'
-import { buildLoesungsblatt } from './docx-produkt-bild-v42'
+import { buildLoesungen } from './docx-loesungen-v42'
+import { loesungenModell, loesungenTitel } from './loesungen-v42'
 import { SPUR_KEYS, isV42 } from './spuren'
 import type { EinheitFullSet, SpurKey } from './types'
 
@@ -26,7 +27,7 @@ export interface V42Dokument {
   docx: () => Document | null
   /** Einfüge-Sperre + Schreibprotokoll im eigenständigen HTML — nur die Hefte. */
   protokoll: boolean
-  /** Nur für die Lehrperson (Lösungsblatt): im ZIP unter `Material_LP/`, für Gäste gesperrt. */
+  /** Nur für die Lehrperson (Lösungen): im ZIP unter `Material_LP/`, für Gäste gesperrt. */
   lehrperson: boolean
 }
 
@@ -43,17 +44,17 @@ export function heftDatei(buchstabe: string, spur: SpurKey): string {
   return `heft-${buchstabe.toLowerCase()}-${SPUR_DATEI[spur]}`
 }
 
-/** Dateiname (ohne Endung) des Lösungsblatts eines Hefts, z. B. `loesungsblatt-a`. */
-export function loesungsblattDatei(buchstabe: string): string {
-  return `loesungsblatt-${buchstabe.toLowerCase()}`
+/** Dateiname (ohne Endung) der Lösungen eines Hefts in einer Spur, z. B. `loesungen-a-ohne-medien`. */
+export function loesungenDatei(buchstabe: string, spur: SpurKey): string {
+  return `loesungen-${buchstabe.toLowerCase()}-${SPUR_DATEI[spur]}`
 }
 
 /**
  * Je Heft (A, dann B) und je verfügbarer Spur ein Eintrag, in der Folge
  * `heft-a-ohne-medien`, `heft-a-mit-medien`, `heft-b-ohne-medien`, `heft-b-mit-medien`,
- * danach `auftragsbogen`, sofern `set.gemeinsamer_auftrag` vorhanden ist, danach je Heft
- * mit `handlungsprodukt.loesungsbild` das Lösungsblatt der Lehrperson (`loesungsblatt-a`,
- * `loesungsblatt-b`) — spur-unabhängig, das Produkt ist in beiden Spuren dasselbe.
+ * danach `auftragsbogen`, sofern `set.gemeinsamer_auftrag` vorhanden ist, danach je Heft und
+ * Spur die Lösungen der Lehrperson (E19) in derselben Folge (`loesungen-a-ohne-medien`,
+ * `loesungen-a-mit-medien`, `loesungen-b-…`) — nur, wo das Heft Lösungen trägt.
  * Einheiten ohne `spur_varianten` (alle Bestandseinheiten): leere Liste.
  */
 export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V42Dokument[] {
@@ -91,18 +92,20 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
       lehrperson: false,
     })
   }
-  // Lösungsblatt Produkt (nur Lehrperson) — nach dem Auftragsbogen, je Heft eines.
+  // Lösungen (nur Lehrperson, E19) — nach dem Auftragsbogen, je Heft und Spur eines.
   for (const L of ['A', 'B'] as const) {
-    const sit = SPUR_KEYS.map((spur) => varianten[spur]?.[`hf_${L}`]).find((s) => !!s && isV42(s))
-    if (!sit?.handlungsprodukt?.loesungsbild) continue
-    out.push({
-      datei: loesungsblattDatei(L),
-      titel: `Lösungsblatt ${L} · ${sit.handlungsprodukt.titel ?? ''}`.trim(),
-      markup: () => renderToStaticMarkup(<DocLoesungsblattV42 sit={sit} abteilung={abteilung} />),
-      docx: () => buildLoesungsblatt({ sit, abteilung, logoPng }),
-      protokoll: false,
-      lehrperson: true,
-    })
+    for (const spur of SPUR_KEYS) {
+      const sit = varianten[spur]?.[`hf_${L}`]
+      if (!sit || !isV42(sit) || sit.spur !== spur || !loesungenModell(sit)) continue
+      out.push({
+        datei: loesungenDatei(L, spur),
+        titel: `${loesungenTitel(L, spur)} · ${sit.titel ?? ''}`.replace(/ · $/, ''),
+        markup: () => renderToStaticMarkup(<DocLoesungenV42 sit={sit} abteilung={abteilung} />),
+        docx: () => buildLoesungen({ sit, abteilung, logoPng }),
+        protokoll: false,
+        lehrperson: true,
+      })
+    }
   }
   return out
 }

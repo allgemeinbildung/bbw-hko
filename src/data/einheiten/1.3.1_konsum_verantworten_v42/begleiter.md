@@ -20,6 +20,7 @@ quellen_json:
 > Dieses Dokument richtet sich an die **Lehrperson**, nicht an die Lernenden.
 > Die Lernenden erhalten Heft A und Heft B (je acht Seiten, in der Spur ohne oder mit
 > Medien), den Auftragsbogen zum gemeinsamen Auftrag (vier Seiten) und das KN-Blatt.
+> Zu jedem Heft gibt es je Spur ein Dokument **«Lösungen»** (nur für dich): eine mögliche Lösung zu jedem Feld des Hefts, in Grün — Leitfragen, ausgefülltes Raster mit Befund, Denkhilfe bzw. Vertiefungen, Produkt und Abschluss.
 > Hier steht, **wie** du die Einheit führst: Zeitplan als Vorschlag, Einsatz der zwei Spuren,
 > Hinweise zu jeder Heftseite, Musterlösungen pro Spur mit Erwartungshorizonten,
 > Quellen-Stand und Bewertung — ohne dass du anderswo nachschlagen musst.
@@ -296,7 +297,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Quelle.
 
-**S. 6 unten — «So kann Ihr Produkt aussehen».** Unter den Karten steht eine ausgefüllte Landkarte **an einem anderen Fall** (Spielkonsole). Sie zeigt die Form — Felder, Einträge im Muster Gut → Bedürfnis, Legende mit drei Zeichen, Massstab und Entscheid am Rand —, nicht die Lösung zum eigenen Fall. Die mögliche Lösung zum Fall des Hefts liegt als **Lösungsblatt** bei den Unterlagen der Lehrperson; zeig sie erst, wenn die eigene Karte steht.
+**S. 6 unten — «So kann Ihr Produkt aussehen».** Unter den Karten steht eine ausgefüllte Landkarte **an einem anderen Fall** (Spielkonsole). Sie zeigt die Form — Felder, Einträge im Muster Gut → Bedürfnis, Legende mit drei Zeichen, Massstab und Entscheid am Rand —, nicht die Lösung zum eigenen Fall. Die mögliche Lösung zum Fall des Hefts steht im Dokument **«Lösungen»** bei deinen Unterlagen; zeig sie erst, wenn die eigene Karte steht.
 
 **S. 7 — Arbeitsfläche (40 Min.).** Mindestens acht Einträge, je Gut → Bedürfnis als Stichwort. Jeder Eintrag bekommt mit Farbe oder Symbol eine von drei Markierungen: echt · geweckt · geweckt, aber berechtigt. Bei geweckten steht der Einfluss aus LF3 dabei.
 

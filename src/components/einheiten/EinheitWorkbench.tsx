@@ -21,8 +21,9 @@ import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../lib/einhei
 import { buildUebersicht, einheitPrefix } from '../../lib/einheiten/uebersicht'
 import { buildStandaloneHtml } from '../../lib/einheiten/standalone-shell'
 import { DocAuftragsbogen } from './docs/DocAuftragsbogen'
-import { DocLoesungsblattV42 } from './docs/DocLoesungsblattV42'
-import { heftDatei, loesungsblattDatei, v42Dokumente } from '../../lib/einheiten/v42-dokumente'
+import { DocLoesungenV42 } from './docs/DocLoesungenV42'
+import { heftDatei, loesungenDatei, v42Dokumente } from '../../lib/einheiten/v42-dokumente'
+import { loesungenModell } from '../../lib/einheiten/loesungen-v42'
 import { DEFAULT_SPUR, SPUR_KEYS, isV42 } from '../../lib/einheiten/spuren'
 import type { SpurKey } from '../../lib/einheiten/types'
 
@@ -115,7 +116,7 @@ interface Props {
   readOnly?: boolean
 }
 
-type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt' | 'doc-auftragsbogen' | 'doc-loesungsblatt'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt' | 'doc-auftragsbogen' | 'doc-loesungen'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -157,7 +158,7 @@ function GatePanel({ kind }: { kind: 'kn' | 'begleiter' | 'ki' | 'loesung' }) {
     kn: 'Kompetenznachweis — nur für Lehrpersonen',
     begleiter: 'Begleitdokument «Lies mich!» — nur für Lehrpersonen',
     ki: 'KI-Toolbox — nur für Lehrpersonen',
-    loesung: 'Lösungsblatt — nur für Lehrpersonen',
+    loesung: 'Lösungen — nur für Lehrpersonen',
   }
   const subject = encodeURIComponent('Lehrpersonen-Zugang zur ABU-Materialplattform BBW')
   const body = encodeURIComponent(
@@ -368,10 +369,10 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
     if (doc === 'doc-auftragsbogen') {
       return <DocAuftragsbogen set={d.set} abteilung={abteilung} edits={edits} onEdit={onEdit} />
     }
-    if (doc === 'doc-loesungsblatt') {
-      // v4.2, nur Lehrperson: spur-unabhängig, das Handlungsprodukt ist in beiden Spuren gleich.
-      if (!sit?.handlungsprodukt?.loesungsbild) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Kein Lösungsblatt für Heft {situation}.</p></div>
-      return <DocLoesungsblattV42 sit={sit} abteilung={abteilung} />
+    if (doc === 'doc-loesungen') {
+      // v4.2, nur Lehrperson (E19): je Heft und Spur — `sit` folgt dem Spur-Umschalter wie das Heft.
+      if (!sit || !isV42(sit) || !loesungenModell(sit)) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Keine Lösungen für Heft {situation}.</p></div>
+      return <DocLoesungenV42 sit={sit} abteilung={abteilung} />
     }
     if (doc === 'doc-austausch') {
       if (!d.set) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Set fehlt.</p></div>
@@ -449,10 +450,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
     const p = prefix
     // v4.2: Heft und Auftragsbogen kommen aus derselben Liste wie im ZIP — immer die
     // auszufüllende Fassung (`fill`), Dateiname der Spur, die das Heft tatsächlich trägt.
-    if (istV42 && (doc === 'doc-s' || doc === 'doc-auftragsbogen' || doc === 'doc-loesungsblatt')) {
+    if (istV42 && (doc === 'doc-s' || doc === 'doc-auftragsbogen' || doc === 'doc-loesungen')) {
       const datei = doc === 'doc-auftragsbogen' ? 'auftragsbogen'
-        : doc === 'doc-loesungsblatt' ? loesungsblattDatei(situation)
-        : sit && isV42(sit) ? heftDatei(situation, sit.spur ?? spur) : null
+        : !sit || !isV42(sit) ? null
+        : doc === 'doc-loesungen' ? loesungenDatei(situation, sit.spur ?? spur)
+        : heftDatei(situation, sit.spur ?? spur)
       const dok = datei ? v42Dokumente(d, { abteilung, logoPng: pngBuf }).find((x) => x.datei === datei) : undefined
       if (dok) return { baseName: `${p}_${dok.datei}`, title: dok.titel, markup: dok.markup(), docx: dok.docx }
     }
@@ -651,9 +653,9 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       // `prefix` stammt aus dem Component-Scope (useMemo).
 
       // v4.2: beide Spuren, unabhängig vom Umschalter — welche Dateien es gibt, sagt
-      // allein v42Dokumente (vier Hefte + Auftragsbogen + Lösungsblätter). Schreibprotokoll
+      // allein v42Dokumente (vier Hefte + Auftragsbogen + Lösungen je Heft und Spur). Schreibprotokoll
       // nur in den Heften (dok.protokoll), wie bei den Herausforderungs-Aufträgen. Was nur
-      // der Lehrperson gehört (Lösungsblatt), liegt wie der Begleiter unter Material_LP/,
+      // der Lehrperson gehört (Lösungen), liegt wie der Begleiter unter Material_LP/,
       // nicht zwischen den Heften. docKey mit Präfix, damit er über Einheiten eindeutig bleibt.
       if (istV42) {
         for (const dok of v42Dokumente(dRoh, { abteilung, logoPng: pngArrayBuffer })) {
@@ -882,9 +884,9 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   } else if (doc === 'doc-auftragsbogen') {
     docKicker = 'Gemeinsamer Auftrag'
     docName = d.set?.gemeinsamer_auftrag?.titel || 'Auftragsbogen'
-  } else if (doc === 'doc-loesungsblatt') {
-    docKicker = `Lösungsblatt Heft ${situation} · Lehrperson`
-    docName = sit?.handlungsprodukt?.titel || 'Lösungsblatt'
+  } else if (doc === 'doc-loesungen') {
+    docKicker = `Lösungen Heft ${situation} · Lehrperson`
+    docName = sit?.titel || `Heft ${situation}`
   } else if (doc === 'doc-austausch') {
     docKicker = 'Set-Abschluss'
     docName = 'Austausch & Transfer'
@@ -914,7 +916,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   }
 
   const selectSit = (s: SitLetter) => { setGuestGate(null); setDoc('doc-s'); setSituation(s); setNavOpen(false) }
-  const selectLoesung = (s: SitLetter) => { setGuestGate(null); setDoc('doc-loesungsblatt'); setSituation(s); setNavOpen(false) }
+  const selectLoesung = (s: SitLetter) => { setGuestGate(null); setDoc('doc-loesungen'); setSituation(s); setNavOpen(false) }
   const selectKnTyp = (t: string) => { setGuestGate(null); setDoc('doc-kn-s'); setKnTyp(t); setNavOpen(false) }
   const pick = (target: DocSel) => { setGuestGate(null); setDoc(target); setNavOpen(false) }
 
@@ -922,9 +924,12 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
   // Gast-Gate: gesperrte doc-Auswahl → Gate; zusätzlich die Lies-mich-Buttons via guestGate.
   const docLocked = readOnly && !GUEST_ALLOWED.includes(doc)
-  const gateKind: null | 'kn' | 'begleiter' | 'ki' | 'loesung' = guestGate ?? (docLocked ? (isKiDoc ? 'ki' : doc === 'doc-loesungsblatt' ? 'loesung' : 'kn') : null)
-  // v4.2: Hefte mit Lösungsblatt (handlungsprodukt.loesungsbild) — nur Lehrperson.
-  const loesungsHefte = istV42 ? (['A', 'B'] as SitLetter[]).filter((s) => !!classifySit(d, s)?.handlungsprodukt?.loesungsbild) : []
+  const gateKind: null | 'kn' | 'begleiter' | 'ki' | 'loesung' = guestGate ?? (docLocked ? (isKiDoc ? 'ki' : doc === 'doc-loesungen' ? 'loesung' : 'kn') : null)
+  // v4.2: Hefte mit Lösungen (E19) in der gewählten Spur — nur Lehrperson.
+  const loesungsHefte = istV42 ? (['A', 'B'] as SitLetter[]).filter((s) => {
+    const x = classifySit(d, s)
+    return !!x && isV42(x) && !!loesungenModell(x)
+  }) : []
   const lockBadge = readOnly ? <span className="wb-lock" title="Nur für Lehrpersonen" aria-hidden="true">🔒</span> : null
 
   return (
@@ -1148,20 +1153,19 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             </div>
           )}
 
-          {/* v4.2: Lösungsblatt Produkt je Heft — nur Lehrperson, für Gäste gesperrt. */}
+          {/* v4.2: Lösungen je Heft (E19) — folgen dem Spur-Umschalter, nur Lehrperson, für Gäste gesperrt. */}
           {loesungsHefte.length > 0 && (
             <div className="wb-tree-group">
-              <div className="wb-tree-head">Lösungsblätter</div>
-              <div className="wb-tree-sub">Lehrperson</div>
+              <div className="wb-tree-head">Lösungen · Lehrperson</div>
               {loesungsHefte.map((s) => (
                 <button
                   key={s}
-                  className={`wb-item nested${doc === 'doc-loesungsblatt' && situation === s ? ' active' : ''}${readOnly ? ' locked' : ''}`}
+                  className={`wb-item nested${doc === 'doc-loesungen' && situation === s ? ' active' : ''}${readOnly ? ' locked' : ''}`}
                   onClick={() => selectLoesung(s)}
-                  title={`Lösungsblatt Heft ${s} · ${classifySit(d, s)?.handlungsprodukt?.titel || ''}`}
+                  title={`Lösungen Heft ${s} · ${SPUR_LABEL[spur]} · ${classifySit(d, s)?.titel || ''}`}
                 >
                   <span className={`wb-letter wb-letter-${s}`}>{s}</span>
-                  <span className="wb-item-title">Lösungsblatt · {classifySit(d, s)?.handlungsprodukt?.titel || `Heft ${s}`}</span>
+                  <span className="wb-item-title">Lösungen · {classifySit(d, s)?.titel || `Heft ${s}`}</span>
                   {lockBadge}
                 </button>
               ))}
@@ -1310,7 +1314,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             {/* v4.2: Auftrag/Dossier entfällt — das Heft hat in beiden Modi dieselben
                 8 Seiten, `mode` bleibt darum beim Startwert `fill`. An seiner Stelle
                 steht der Spur-Umschalter, sofern es mehr als eine Spur gibt. */}
-            {doc === 'doc-s' && !gateKind && istV42 && spurenDa.length > 1 && (
+            {(doc === 'doc-s' || doc === 'doc-loesungen') && !gateKind && istV42 && spurenDa.length > 1 && (
               <div className="wb-mode" role="group" aria-label="Spur">
                 {spurenDa.map((k) => (
                   <button key={k} className={spur === k ? 'on' : ''} onClick={() => setSpur(k)}>{SPUR_LABEL[k]}</button>

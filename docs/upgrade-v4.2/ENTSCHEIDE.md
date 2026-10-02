@@ -503,3 +503,32 @@ Partnerin / meines Partners»). Kriterien, Stufen und Wortlaut bleiben die des
 KN (Invariante 8). Der Begleiter beschreibt die Rückmeldung durch die
 Lehrperson weiter als Vorschlag. Leitfaden §7.5 (A4 «Rückmeldung», Spalten
 «Selbst» und «LP») ist damit ersetzt. **Rückgängig:** `git revert` des Commits.
+
+---
+
+## E19 — Lösungen für alle Felder des Hefts (Pietro, 02.10.2026)
+
+Zu jedem Heft gibt es je Spur ein Dokument **«Lösungen»** für die Lehrperson
+(`loesungen-<a|b>-<spur>`, HTML und Word, je fünf Seiten). Es zeigt zu jedem
+Feld des Hefts eine mögliche Lösung: LF1 und LF2, das ausgefüllte Raster von
+LF3 mit Befund, LF4 mit beiden Beispielantworten, die Denkhilfe (ohne Medien)
+bzw. die Erwartungen zu den Vertiefungen (mit Medien), das Produkt, das
+Begriffsnetz als Liste beschrifteter Verbindungen, Quer-Check und «Das nehme
+ich mit».
+
+- **Farbe statt Layout:** Lösungen stehen in Grün, Aufgaben und Hinweise in
+  Schwarz und Grau. Das Layout folgt nicht dem Heft der Lernenden, und in Word
+  gibt es keine Schreiblinien (so von Pietro vorgegeben).
+- **Ersetzt das Lösungsblatt** aus E17: Das Produktblatt ist ein Teil des
+  neuen Dokuments.
+- **Neue Datenfelder** (nur Lehrperson, nie im Heft und nie auf der QR-Seite):
+  `leitfragen[LF3].loesung.raster_zeilen` und `.befund`,
+  `kasten_s4.loesung_zeilen`, `quellen[].erwartung`, `abschluss.loesung`
+  (`verbindungen`, `transfer`, `eigene_knoten` je Spur, `quercheck`,
+  `mitnahme`). `check-v42.mjs` verlangt sie mit `ERR_V42_LOESUNG`.
+- **Herkunft:** Raster und Befund sind aus den am 01.10. geprüften Lösungen
+  von LF3 umgeformt, nicht neu recherchiert. Wo Lernende mit eigenen
+  Beispielen arbeiten (LF2, LF4, Produkt, «Das nehme ich mit»), ist die Lösung
+  eine von vielen; das Dokument sagt es im Kopf.
+
+**Rückgängig:** `git revert` des Commits zu E19; die Datenfelder sind additiv.

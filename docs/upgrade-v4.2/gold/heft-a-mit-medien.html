@@ -2951,10 +2951,104 @@ p.v42-q-meta { font-size: 9pt; color: var(--ink-soft); margin-top: 1mm; }
 .v42-s8:has(> .v42-bn) .v42-quercheck li { padding: 0.5mm 0; }
 .v42-s8:has(> .v42-bn) .feld.v42-zeile { min-height: 7.5mm; line-height: 6mm; padding-top: 0.6mm; }
 
+/* Heft v4.2 — Dokument «Lösungen» (E19, nur Lehrperson), je Heft und Spur.
+   Markup: src/components/einheiten/docs/DocLoesungenV42.tsx. Präfix .v42-ls-.
+   Grün (Plattform-Grün) = mögliche Lösung; Aufgaben, Spaltenköpfe schwarz, Hinweise für
+   die Lehrperson grau und kleiner. Nie unter 8,5 pt. Das grüne Produktblatt steht in
+   produkt-bild.css (.v42-pb-loesung). */
+
+.v42-loesungen { --ls-gruen: var(--brand, #0E6E3A); }
+
+.v42-ls-seite { gap: 3.2mm; font-size: 10pt; line-height: 1.4; }
+.v42-ls-seite p { margin: 0; }
+.v42-ls-l { color: var(--ls-gruen); }
+
+/* ---------- Kopf (erste Seite) ---------- */
+.v42-ls-kopf {
+  display: flex; flex-direction: column; gap: 1mm;
+  padding: 0 0 2.4mm;
+  border-bottom: 0.75pt solid var(--rule);
+}
+.v42-ls-kopf-zeile { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2mm 4mm; }
+.v42-ls-seite .v42-ls-titel { font-size: 16pt; line-height: 1.2; font-weight: 700; margin: 0; color: var(--ink); }
+.v42-ls-nurlp {
+  font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink); border: 1.2pt solid var(--ink); border-radius: 1mm;
+  padding: 0.6mm 2mm; white-space: nowrap;
+}
+.v42-ls-hefttitel { color: var(--ink-soft); font-size: 10pt; }
+.v42-ls-legende { display: flex; align-items: center; gap: 2mm; font-size: 9pt; color: var(--ink-soft); }
+.v42-ls-muster { flex: 0 0 auto; width: 4mm; height: 4mm; border-radius: 0.8mm; background: var(--ls-gruen); }
+
+/* ---------- Bausteine ---------- */
+.v42-ls-block { display: flex; flex-direction: column; gap: 1mm; break-inside: avoid; }
+.v42-ls-frage { font-weight: 600; color: var(--ink); }
+.v42-ls-lf {
+  display: inline-block; margin-right: 1.8mm;
+  font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; font-weight: 700;
+  color: var(--sit-akzent);
+}
+.v42-ls-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft);
+}
+.v42-ls-meta, .v42-ls-quelle-zeile { font-size: 8.5pt; color: var(--ink-soft); }
+.v42-ls-text { color: var(--ink); }
+
+/* Zeilen: Label fett links, Text rechts, Quelle klein dahinter. */
+.v42-ls-zeilen { margin: 0; display: flex; flex-direction: column; gap: 1mm; }
+.v42-ls-zeile { display: grid; grid-template-columns: 34mm 1fr; column-gap: 3mm; }
+.v42-ls-zeile dt { font-weight: 700; color: var(--ink); }
+.v42-ls-zeile dd { margin: 0; }
+.v42-ls-quelle { margin-left: 1.6mm; font-size: 8.5pt; color: var(--ink-mute); white-space: nowrap; }
+
+/* Hinweise für die Lehrperson: normale Farbe, kleiner, Kasten gestrichelt. */
+.v42-ls-lpbox { border: 0.75pt dashed var(--ink-mute); border-radius: 1mm; padding: 1.6mm 2.4mm; }
+.v42-ls-hinweise { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); gap: 0.8mm; }
+.v42-ls-hinweise .v42-ls-zeile { grid-template-columns: 26mm 1fr; }
+.v42-ls-hinweise .v42-ls-zeile dt { color: var(--ink-soft); }
+
+/* Listen */
+.v42-ls-liste { margin: 0; padding-left: 4.5mm; display: flex; flex-direction: column; gap: 0.6mm; }
+.v42-ls-netz { list-style: none; padding-left: 0; }
+
+/* Tabellen (Raster S. 3, Denkhilfe S. 4): Köpfe schwarz, Zellen grün. */
+.v42-ls-tabelle { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.v42-ls-tabelle th {
+  text-align: left; vertical-align: bottom; font-weight: 700; color: var(--ink);
+  border-bottom: 1pt solid var(--ink); padding: 0.6mm 2mm 0.8mm 0;
+}
+.v42-ls-tabelle td { vertical-align: top; padding: 1.2mm 2mm 1.2mm 0; border-bottom: 0.5pt solid var(--rule); }
+.v42-ls-tabelle th:last-child, .v42-ls-tabelle td:last-child { padding-right: 0; }
+.v42-ls-beispiel td { color: var(--ink-soft); font-style: italic; }
+.v42-ls-bsp-marke {
+  display: block; margin-top: 0.4mm; white-space: nowrap;
+  font-size: 8.5pt; font-style: normal; font-weight: 600; color: var(--ink-mute);
+}
+
+/* Vertiefung (Spur mit Medien): zwei Karten nebeneinander. */
+.v42-ls-vertiefungen { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+.v42-ls-vertiefung {
+  display: flex; flex-direction: column; gap: 0.8mm;
+  border: 0.75pt solid var(--rule); border-radius: 1mm; padding: 1.6mm 2.2mm;
+}
+.v42-ls-v-titel { font-weight: 700; }
+.v42-ls-v-frage { font-style: italic; }
+
+/* Quer-Check: Frage schwarz, Antwort grün darunter. */
+.v42-ls-paare { margin: 0; display: flex; flex-direction: column; gap: 1.4mm; }
+.v42-ls-paare dt { color: var(--ink); }
+.v42-ls-paare dd { margin: 0 0 0 4mm; }
+
+/* Produkt (S. 7): Hinweis grau, Blatt in natürlicher Höhe. */
+.v42-ls-produkt-hinweis { color: var(--ink-soft); }
+.v42-ls-seite > .v42-pb-blatt { flex: 0 0 auto; }
+
 /* Heft v4.2 — Produktbild: das Handlungsprodukt als von Hand ausgefülltes Blatt.
    Markup: src/components/einheiten/docs/heft-v42/produkt-bild.tsx (Blatt, Band S. 6) und
-   DocLoesungsblattV42.tsx (Lösungsblatt). Präfix .v42-pb-. Ein Akzent (--sit-akzent) plus
-   Schwarz/Weiss; Markierungen tragen die Kontur, nicht die Farbe (Graudruck).
+   DocLoesungenV42.tsx (Dokument «Lösungen», Variante .v42-pb-loesung). Präfix .v42-pb-.
+   Ein Akzent (--sit-akzent) plus Schwarz/Weiss; Markierungen tragen die Kontur, nicht die Farbe (Graudruck).
    Schreibschrift nur über lokal vorhandene Schriften — kein Webfont.
    Wird nach heft-5-8.css angehängt (alphabetisch, css-v42.ts). */
 
@@ -3047,11 +3141,12 @@ p.v42-q-meta { font-size: 9pt; color: var(--ink-soft); margin-top: 1mm; }
 .v42-pb-bandkopf .v42-pb-label { margin-bottom: 0; }
 .v42-pb-unterzeile { font-size: 8pt; font-style: italic; color: var(--ink-soft); }
 
-/* ---------- Lösungsblatt (nur Lehrperson) ---------- */
-.v42-lb-seite { gap: 4mm; }
-.v42-lb-seite .v42-kasten.v42-lb-lp { border: 0.75pt dashed var(--ink-soft); border-left: 3pt solid var(--sit-akzent); }
-.v42-lb-seite .v42-lb-lp p { font-size: 9.5pt; line-height: 1.4; margin: 0; }
-.v42-lb-seite > .v42-pb-blatt { flex: 0 0 auto; }
+/* ---------- Dokument «Lösungen» (nur Lehrperson): Einträge in Lösungsgrün ---------- */
+/* Grün nur, was eingetragen ist — Titel, Legende, Blocktitel und Spaltenköpfe bleiben. */
+.v42-pb-loesung .v42-pb-text,
+.v42-pb-loesung .v42-pb-notiz,
+.v42-pb-loesung .v42-pb-tabelle td,
+.v42-pb-loesung .v42-pb-bloecke .v42-pb-marke { color: var(--brand, #0E6E3A); }
 
 
 .standalone-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#1d2026;color:#e8eaee;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;}

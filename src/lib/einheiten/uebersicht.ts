@@ -10,7 +10,7 @@ import type { EinheitFullSet } from './types'
 import { knTypLabel } from './kn-typ-labels'
 import { BEWERTUNGEN, vorschauFeatures, type VorschauFeedbackInput } from '../vorschau'
 import { SPUR_KEYS } from './spuren'
-import { heftDatei, loesungsblattDatei } from './v42-dokumente'
+import { heftDatei, loesungenDatei } from './v42-dokumente'
 import { landingUrl } from './qr'
 
 /** v4.2 — Bezeichnung der Spuren im Inhaltsverzeichnis (Leitfaden §4). */
@@ -103,12 +103,14 @@ export function buildUebersicht(o: UebersichtOptions): string {
   push({ key: 'vorbereitung', title: 'Vorbereitung', accent: '#0E6E3A', fuer: 'Lehrperson' }, [
     entry('begleiter', d.begleiter?.meta?.titel || 'Begleitdokument', { wordPath: `Material_LP/${prefix}_begleiter.docx` }),
     entry('deck', mitLoesungen ? 'Unterrichtsdeck (mit Lösungen)' : 'Unterrichtsdeck', { htmlPath: `Material_LP/${prefix}_unterrichtsdeck.html` }),
-    // v4.2: Lösungsblatt Produkt je Heft — Dateinamen wie in v42Dokumente, im ZIP unter Material_LP/.
+    // v4.2: Lösungen je Heft und Spur (E19) — Dateinamen wie in v42Dokumente, im ZIP unter Material_LP/.
     ...(istV42
-      ? (['A', 'B'] as const).map((letter) => {
-          const datei = loesungsblattDatei(letter)
-          return entry(datei, `Lösungsblatt Heft ${letter}`, { htmlPath: `Material_LP/${datei}.html`, wordPath: `Material_LP/${datei}.docx` })
-        })
+      ? (['A', 'B'] as const).flatMap((letter) =>
+          SPUR_KEYS.map((spur) => {
+            const datei = loesungenDatei(letter, spur)
+            return entry(datei, `Lösungen Heft ${letter} · ${SPUR_NAME[spur]}`, { htmlPath: `Material_LP/${datei}.html`, wordPath: `Material_LP/${datei}.docx` })
+          }),
+        )
       : []),
   ])
 

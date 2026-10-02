@@ -472,7 +472,56 @@
       "Mein Massstab",
       "Mein Entscheid",
       "Mir noch unklar"
-    ]
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Werbung",
+          "nach": "Geweckter Wunsch",
+          "text": "weckt"
+        },
+        {
+          "von": "Bedürfnis",
+          "nach": "Gut",
+          "text": "wird befriedigt durch"
+        },
+        {
+          "von": "Konsumdruck",
+          "nach": "Impulskauf",
+          "text": "führt zu"
+        },
+        {
+          "von": "Massstab",
+          "nach": "Impulskauf",
+          "text": "bremst"
+        },
+        {
+          "von": "Massstab",
+          "nach": "gilt auch bei …",
+          "text": "hilft auch dort beim Entscheiden"
+        }
+      ],
+      "transfer": "Abo abschliessen, Ausgang am Wochenende, Ferien mit Kollegen",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Nachfrage",
+          "Trendprodukt"
+        ],
+        "mit_medien": [
+          "Influencer-Marketing",
+          "Algorithmus"
+        ]
+      },
+      "quercheck": [
+        "Eher von aussen: Angebot mit Frist und die Klasse.",
+        "Ja: Ich sage ab, mein Massstab ist nicht erfüllt."
+      ],
+      "mitnahme": [
+        "Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe.",
+        "Ich sage dem Kollegen ab.",
+        "Wie ich merke, ob ein Wunsch von mir kommt, wenn alle dasselbe haben."
+      ]
+    }
   },
   "bewertungsraster": [
     {
@@ -612,7 +661,34 @@
                 "label": "Befund",
                 "text": "Verbindet mindestens einen Einfluss aus dem Lehrmittel mit dem eigenen Kopfhörer-Kauf, z. B. Werbung (S. 73) oder Trendprodukt (S. 77). Klasse, Kollegen und Spontankauf sind eigene Beobachtungen der Lernenden, nicht aus dem Lehrmittel."
               }
-            ]
+            ],
+            "raster_zeilen": [
+              [
+                "S. 73, Abs. 1",
+                "Werbung weckt Wünsche",
+                "neue Bedürfnisse",
+                "Wahlbedürfnis"
+              ],
+              [
+                "S. 74",
+                "Begrenztes Einkommen zwingt zur Auswahl",
+                "nicht alle Wünsche lassen sich erfüllen",
+                "Existenz- vor Wahlbedürfnis"
+              ],
+              [
+                "S. 76",
+                "Mehr verfügbares Geld dehnt die Nachfrage aus",
+                "höheres Einkommen, mehr Käufe",
+                "Wahlbedürfnis"
+              ],
+              [
+                "S. 77",
+                "Ein Trendprodukt steigert die Nachfrage",
+                "viele wollen es gleichzeitig",
+                "Dazugehörigkeit (Stufe 3)"
+              ]
+            ],
+            "befund": "Laut Lehrmittel beeinflussen Werbung, das verfügbare Einkommen und Trends, was wir kaufen wollen. Bei meinen Kopfhörern waren es die Werbung im Feed und der Trend in der Klasse. Die Klasse ist meine eigene Beobachtung, nicht aus dem Buch."
           }
         },
         {
@@ -659,7 +735,19 @@
           "Dagegen (Einfluss, Kosten)",
           "Mein Entscheid"
         ],
-        "hinweis": "Je zwei Stichworte pro Spalte genügen. Der Entscheid muss aus den beiden ersten Spalten folgen."
+        "hinweis": "Je zwei Stichworte pro Spalte genügen. Der Entscheid muss aus den beiden ersten Spalten folgen.",
+        "loesung_zeilen": [
+          [
+            "Anerkennung (Stufe 4)",
+            "Angebot mit Frist, Druck aus der Klasse",
+            "Absagen: Der Wunsch ist geweckt"
+          ],
+          [
+            "Dazugehörigkeit (Stufe 3)",
+            "CHF 300 bei CHF 800 Lohn",
+            "Massstab: zwei Wochen warten"
+          ]
+        ]
       },
       "methoden_ref_rezeption": {
         "ref": "hko-quelle-raster",
@@ -734,7 +822,34 @@
                 "text": "Studie aus Deutschland, 10- bis 17-Jährige: Lehrperson ordnet Wege als übertragbar ein, Prozente nicht als Schweizer Werte.",
                 "quelle": "Quelle, Abs. 2, 8"
               }
-            ]
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 2",
+                "Werbung in sozialen Medien weckt Kaufwünsche",
+                "47 %",
+                "Wahlbedürfnis"
+              ],
+              [
+                "Abs. 2",
+                "Influencer empfehlen Produkte",
+                "40 %",
+                "Dazugehörigkeit, Anerkennung"
+              ],
+              [
+                "Abs. 4",
+                "Algorithmen wecken Wünsche und Impulse",
+                "Feed zeigt passende Angebote",
+                "Bedürfnis ≠ Gut"
+              ],
+              [
+                "Abs. 6",
+                "Billigplattformen locken mit tiefen Preisen",
+                "Glücksspielelemente",
+                "Wahlbedürfnis"
+              ]
+            ],
+            "befund": "Laut Quelle entstehen Kaufwünsche bei Jugendlichen vor allem über Werbung in sozialen Medien, über Influencer und über Algorithmen. Bei meinen Kopfhörern war es die Werbung im Feed (Abs. 2 und 4). Dass zwei aus meiner Klasse sie hatten, ist meine eigene Beobachtung."
           }
         },
         {
@@ -795,12 +910,14 @@
         {
           "ref": "q-131a-vertiefung-1",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Woran erkenne ich bezahlte Werbung in meinem Feed, auch wenn sie nicht gekennzeichnet ist?"
+          "leitfrage_vertiefung": "Woran erkenne ich bezahlte Werbung in meinem Feed, auch wenn sie nicht gekennzeichnet ist?",
+          "erwartung": "Zwei bis drei Merkmale: Kennzeichnungswörter wie Werbung, Ad oder gesponsert, oft versteckt · Rabattcode oder ein Produkt, das auffällig im Mittelpunkt steht · nur Positives, kein Nachteil · Prüffrage vor dem Kauf: Vertraue ich der Person, brauche ich das? (Stand: Begleittext von SRF, Audio nicht gegengehört.)"
         },
         {
           "ref": "q-131a-vertiefung-2",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Welches Bedürfnis steckt hinter gefälschten Markenartikeln — und was riskiert, wer sie bestellt?"
+          "leitfrage_vertiefung": "Welches Bedürfnis steckt hinter gefälschten Markenartikeln — und was riskiert, wer sie bestellt?",
+          "erwartung": "Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten, der Zoll hält Pakete zurück; Verfahren und Kosten gehen vom Markeninhaber aus."
         }
       ],
       "kasten_s4": {

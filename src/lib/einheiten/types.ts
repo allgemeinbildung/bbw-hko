@@ -130,6 +130,10 @@ export interface LeitfrageLoesung {
   /** v4.2: Datum (JJJJ-MM-TT), an dem die Lösung gegen die Quelle geprüft wurde. */
   quelle_stand?: string
   erwartungshorizont?: Erwartungshorizont
+  /** v4.2 (E19), nur LF3: das ausgefüllte Raster — eine Zeile je Rasterzeile, eine Zelle je Spalte. */
+  raster_zeilen?: string[][]
+  /** v4.2 (E19), nur LF3: ein möglicher Befund in zwei bis drei Sätzen. */
+  befund?: string
 }
 
 export interface Leitfrage {
@@ -217,6 +221,8 @@ export interface QuelleRef {
   raster?: Pick<RasterSpec, 'spalten' | 'zeilen'>
   /** Nur Vertiefung: die eine Leitfrage auf der Karte (Seite 4). */
   leitfrage_vertiefung?: string
+  /** v4.2 (E19), nur Vertiefung und nur Lehrperson: was eine tragfähige Antwort enthält. */
+  erwartung?: string
 }
 
 /** Karte + Einsatz, wie sie die Renderer sehen (Ergebnis von `resolveQuellen`). */
@@ -232,6 +238,8 @@ export interface KastenS4 {
   /** Nur Denkhilfe: 2–3 Spaltenköpfe der Tabelle. */
   spalten?: string[]
   hinweis?: string
+  /** v4.2 (E19), nur Denkhilfe und nur Lehrperson: mögliche Einträge, eine Zelle je Spalte. */
+  loesung_zeilen?: string[][]
 }
 
 /**
@@ -296,6 +304,22 @@ export interface GemeinsamerAuftrag {
 /** Seite 8 unten: Quer-Check und «Das nehme ich mit» (drei feste Zeilen). */
 export interface Abschluss {
   quercheck?: string[]
+  mitnahme?: string[]
+  /** v4.2 (E19), nur Lehrperson: mögliche Lösung der Seite 8. */
+  loesung?: AbschlussLoesung
+}
+
+/** Mögliche Lösung des Abschlusses (S. 8) — Begriffsnetz, Quer-Check, «Das nehme ich mit». */
+export interface AbschlussLoesung {
+  /** Beschriftete Verbindungen im Begriffsnetz; `von`/`nach` sind Knoten oder der Titel des Transfer-Felds. */
+  verbindungen?: { von: string; nach: string; text: string }[]
+  /** Eintrag im Feld «gilt auch bei …». */
+  transfer?: string
+  /** Begriffe für die zwei leeren Knoten, je Spur (aus dem Raster von S. 3). */
+  eigene_knoten?: Partial<Record<SpurKey, string[]>>
+  /** Antworten auf die Quer-Check-Fragen, gleiche Reihenfolge. */
+  quercheck?: string[]
+  /** Einträge zu den drei Zeilen «Das nehme ich mit», gleiche Reihenfolge. */
   mitnahme?: string[]
 }
 
@@ -437,7 +461,7 @@ export interface SituationJson {
     hilfe_verweis?: string
     /** v4.2: neutrales Beispiel des Produkts an einem anderen Fall — im Heft auf S. 6. */
     beispielbild?: ProduktBild
-    /** v4.2: mögliche Lösung zum Fall des Hefts — nur Lehrperson (Lösungsblatt, Begleiter). */
+    /** v4.2: mögliche Lösung zum Fall des Hefts — nur Lehrperson (Dokument «Lösungen»). */
     loesungsbild?: ProduktBild
     // C6 — language scaffolds for the Handlungsprodukt (additive); aligned to HP format + output Sprachmodus
     scaffolding?: { satzanfaenge?: string[]; strategien?: string[]; struktur?: string[] }

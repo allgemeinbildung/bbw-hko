@@ -63,7 +63,7 @@ try {
       docKey: `${slug}_${dok.datei}`,
       fontsCss,
       // Wie im ZIP der Workbench: Schreibprotokoll nur in den Heften (Auftragsfassung),
-      // nicht im Auftragsbogen und nicht im Lösungsblatt — das sagt die Liste selbst.
+      // nicht im Auftragsbogen und nicht in den Lösungen — das sagt die Liste selbst.
       protokoll: dok.protokoll,
     })
     const htmlPfad = join(OUT, `${dok.datei}.html`)

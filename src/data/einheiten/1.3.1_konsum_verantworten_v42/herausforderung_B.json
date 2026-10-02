@@ -637,7 +637,56 @@
       "Meine wichtigste Anpassung",
       "Meine Schutzregel",
       "Mir noch unklar"
-    ]
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Fixe Kosten",
+          "nach": "Engpass",
+          "text": "lassen wenig Spielraum"
+        },
+        {
+          "von": "Mahnung",
+          "nach": "Schuldenspirale",
+          "text": "ist der erste Schritt"
+        },
+        {
+          "von": "Anpassung",
+          "nach": "Saldo",
+          "text": "verbessert"
+        },
+        {
+          "von": "Schutzregel",
+          "nach": "Mahnung",
+          "text": "verhindert"
+        },
+        {
+          "von": "Rückstellung",
+          "nach": "gilt auch bei …",
+          "text": "braucht es auch dort"
+        }
+      ],
+      "transfer": "Ferien planen, Steuern, erste eigene Wohnung",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Betreibung",
+          "Zahlungsrückstand"
+        ],
+        "mit_medien": [
+          "Überschuldung",
+          "Geldplanung"
+        ]
+      },
+      "quercheck": [
+        "Ja: Der Saldo ist 0 statt minus 140.",
+        "Ja: Ich zahle sie diesen Monat zuerst."
+      ],
+      "mitnahme": [
+        "Ausgang von CHF 140 auf 60.",
+        "Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.",
+        "Was passiert, wenn ich eine Rechnung wirklich nicht zahlen kann."
+      ]
+    }
   },
   "bewertungsraster": [
     {
@@ -772,7 +821,34 @@
                 "label": "Befund",
                 "text": "Benennt die offene Rechnung oder die Abos als Ursache oder absehbare Folge im eigenen Budget. Die Mahnung selbst steht nicht in Kap. 8.2, sondern beim Zahlungsverzug (Kap. 2.4, S. 62)."
               }
-            ]
+            ],
+            "raster_zeilen": [
+              [
+                "S. 199",
+                "Mehr ausgeben als haben",
+                "viele 18- bis 24-Jährige",
+                "Schuldenspirale"
+              ],
+              [
+                "S. 199",
+                "Wünsche wachsen mit Alter und Einkommen",
+                "Konsumgesellschaft",
+                "Variable Kosten"
+              ],
+              [
+                "S. 200",
+                "Zahlungsrückstände häufen sich",
+                "Steuern, Krankenkasse, Miete",
+                "Fixe Kosten, Rückstellung"
+              ],
+              [
+                "S. 200",
+                "Nach der Nachfrist droht die Betreibung",
+                "Betreibungsamt fordert das Geld ein",
+                "Schuldenspirale"
+              ]
+            ],
+            "befund": "Das Lehrmittel nennt als Ursachen wachsende Wünsche und Ausgaben über dem Einkommen, als Folgen Zahlungsrückstände und die Betreibung. In meinem Budget zeigt sich die erste Folge schon: eine offene Rechnung mit Mahngebühr."
           }
         },
         {
@@ -820,7 +896,24 @@
           "Stärkster Einwand",
           "Meine Antwort"
         ],
-        "hinweis": "Eine Zeile pro Anpassung. Die Antwort darf auch heissen: «Der Einwand stimmt — ich ändere die Anpassung so: …»"
+        "hinweis": "Eine Zeile pro Anpassung. Die Antwort darf auch heissen: «Der Einwand stimmt — ich ändere die Anpassung so: …»",
+        "loesung_zeilen": [
+          [
+            "Ausgang von CHF 140 auf 60",
+            "«Dann lebst du nur noch fürs Sparen»",
+            "Nein: CHF 60 bleiben, und die Rechnung ist weg"
+          ],
+          [
+            "Offene Rechnung zuerst zahlen",
+            "«Das kann doch warten»",
+            "Nein: sonst kommt die nächste Gebühr"
+          ],
+          [
+            "Streaming und Fitness kündigen",
+            "«Dann hast du gar nichts mehr»",
+            "Fitness läuft bis Vertragsende, dann entscheide ich neu"
+          ]
+        ]
       },
       "methoden_ref_rezeption": {
         "ref": "hko-quelle-raster",
@@ -871,12 +964,12 @@
               {
                 "label": "Erwartet",
                 "text": "2025, z. B.: Unvorsichtige Geldplanung 21 %, Hohe Fixkosten 15 % (2023: 6 %), Auszug Elternhaus 11 % (alle D. 5); Dauer ab 6 Jahren 44 % (D. 4: 20 + 24).",
-                "quelle": "q-131b-pflicht, S. 7"
+                "quelle": "Quelle, S. 7"
               },
               {
                 "label": "Auch gültig",
                 "text": "Gesundheit/Unfall 29 %, Trennung/Scheidung 27 %, Arbeitslosigkeit 23 % (D. 5); Dauer 3–5 Jahre 33 % (D. 4).",
-                "quelle": "q-131b-pflicht, S. 7"
+                "quelle": "Quelle, S. 7"
               },
               {
                 "label": "Begriffe",
@@ -894,9 +987,36 @@
               {
                 "label": "Mit Ersatzquelle",
                 "text": "Gesamt 8,8 %; 18–24 J. 10,4 % → Rückstellungen; oblig. Schule 12,9 % → Schuldenspirale; Arbeitslose 11,4 % → Saldo. Abgesetzter Balkenteil = Vertrauensbereich; 10,4 gegen 10,6 keine Rangfolge; zeigt wer, nicht warum.",
-                "quelle": "q-131b-pflicht-ersatz"
+                "quelle": "Ersatzquelle"
               }
-            ]
+            ],
+            "raster_zeilen": [
+              [
+                "Grund: unvorsichtige Geldplanung",
+                "21 %",
+                "Rund jeder fünfte Haushalt nennt fehlende Planung",
+                "Saldo"
+              ],
+              [
+                "Grund: hohe Fixkosten",
+                "15 % (2023: 6 %)",
+                "Fixkosten als Grund nehmen stark zu",
+                "Fixe Kosten"
+              ],
+              [
+                "Grund: Auszug aus dem Elternhaus",
+                "11 %",
+                "Der erste eigene Haushalt ist ein Risiko",
+                "Fixe Kosten"
+              ],
+              [
+                "Dauer der Überschuldung",
+                "44 % ab 6 Jahren",
+                "Wer Schulden hat, bleibt oft lange darin",
+                "Schuldenspirale"
+              ]
+            ],
+            "befund": "Die Statistik nennt unvorsichtige Geldplanung, hohe Fixkosten und den Auszug von zu Hause als Gründe; viele bleiben sechs Jahre oder länger überschuldet. In meinem Budget sind es die Abos als fixe Kosten und die Rechnung, die ich nicht eingeplant habe."
           }
         },
         {
@@ -958,12 +1078,14 @@
         {
           "ref": "q-131b-vertiefung-1",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wie will der Verein früh helfen?"
+          "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wie will der Verein früh helfen?",
+          "erwartung": "Gründe: Druck durch soziale Medien (man sieht, was andere kaufen, und will mithalten), Konsumgesellschaft und steigende Preise, der Umgang mit Geld wird zu Hause nicht immer gelernt. Hilfe: Der Verein verweist Junge früh an bestehende Stellen und arbeitet mit Unterlagen für Schulen, Gemeinden und Lehrbetriebe. Eine konkrete Anlaufstelle nennt der Ausschnitt nicht."
         },
         {
           "ref": "q-131b-vertiefung-2",
           "rolle": "vertiefung",
-          "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und was können Sie tun, wenn ein Zahlungsbefehl kommt?"
+          "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und was können Sie tun, wenn ein Zahlungsbefehl kommt?",
+          "erwartung": "Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag Fortsetzung bis zur Lohnpfändung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt."
         }
       ],
       "kasten_s4": {

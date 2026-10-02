@@ -522,11 +522,11 @@ function regel6(hefte, set, kn) {
 
 /**
  * Produkt als Bild (E17): drei Blöcke nebeneinander, Liste oder Tabelle. Das Beispielbild
- * steht im Heft auf S. 6 und ist darum enger als das Lösungsblatt der Lehrperson.
+ * steht im Heft auf S. 6 und ist darum enger als das Blatt im Dokument «Lösungen» der Lehrperson.
  */
 function budgetProduktBild(datei, basis, bild, grenze) {
   if (!bild) {
-    add('regel', 'ERR_V42_PRODUKTBILD', datei, basis, 'Entscheid E17', 'fehlt', 'vorhanden (Beispiel im Heft und Lösungsblatt)')
+    add('regel', 'ERR_V42_PRODUKTBILD', datei, basis, 'Entscheid E17', 'fehlt', 'vorhanden (Beispiel im Heft und Blatt im Dokument «Lösungen»)')
     return
   }
   max(datei, `${basis}.titel`, bild.titel, 90)
@@ -576,6 +576,60 @@ function regelGlossar(set, hefte) {
     for (const spur of ['ohne_medien', 'mit_medien']) {
       anzahl('set.json', `glossar (Heft ${L}, nur ${spur})`, glossar.filter((g) => g?.heft === L && g?.spur === spur), 0, 2)
     }
+  }
+}
+
+/**
+ * Lösungen für alle Felder (E19): Das Dokument «Lösungen» der Lehrperson braucht je Heft
+ * und Spur ein ausgefülltes Raster mit Befund, die Denkhilfe bzw. die Erwartungen zu den
+ * Vertiefungen und eine Lösung des Abschlusses.
+ */
+function regelLoesungen(hefte) {
+  const E = 'Entscheid E19'
+  for (const [L, sit] of Object.entries(hefte)) {
+    const datei = `herausforderung_${L}.json`
+    for (const [key, spur] of Object.entries(sit.spuren ?? {})) {
+      const basis = `spuren.${key}`
+      const lf3 = (spur?.leitfragen ?? []).find((l) => l?.antwortform === 'raster')
+      const r = lf3?.raster ?? {}
+      const zeilen = lf3?.loesung?.raster_zeilen
+      const soll = Number(r.zeilen) || 0
+      const spalten = (r.spalten ?? []).length || ((spur?.quellen ?? []).find((q) => q?.rolle === 'pflicht')?.raster?.spalten ?? []).length
+      if (!Array.isArray(zeilen) || zeilen.length !== soll || zeilen.some((z) => !Array.isArray(z) || z.length !== spalten)) {
+        add('regel', 'ERR_V42_LOESUNG', datei, `${basis}.leitfragen[LF3].loesung.raster_zeilen`, E, Array.isArray(zeilen) ? `${zeilen.length} Zeilen` : 'fehlt', `${soll} Zeilen mit je ${spalten} Zellen`)
+      } else if (Array.isArray(r.beispielzeile) && JSON.stringify(zeilen[0]) !== JSON.stringify(r.beispielzeile)) {
+        add('regel', 'ERR_V42_LOESUNG', datei, `${basis}.leitfragen[LF3].loesung.raster_zeilen[0]`, E, zeige(zeilen[0].join(' | ')), 'gleich wie raster.beispielzeile')
+      }
+      if (!istText(lf3?.loesung?.befund)) add('regel', 'ERR_V42_LOESUNG', datei, `${basis}.leitfragen[LF3].loesung.befund`, E, 'fehlt', 'ein möglicher Befund')
+      const k = spur?.kasten_s4
+      if (k?.typ === 'denkhilfe') {
+        const n = (k.spalten ?? []).length
+        const lz = k.loesung_zeilen
+        if (!Array.isArray(lz) || !lz.length || lz.some((z) => !Array.isArray(z) || z.length !== n)) {
+          add('regel', 'ERR_V42_LOESUNG', datei, `${basis}.kasten_s4.loesung_zeilen`, E, Array.isArray(lz) ? `${lz.length} Zeilen` : 'fehlt', `mindestens 1 Zeile mit je ${n} Zellen`)
+        }
+      }
+      ;(spur?.quellen ?? []).forEach((q, i) => {
+        if (q?.rolle === 'vertiefung' && !istText(q.erwartung)) add('regel', 'ERR_V42_LOESUNG', datei, `${basis}.quellen[${i}].erwartung`, E, 'fehlt', 'Erwartung zur Leitfrage der Vertiefung')
+      })
+      const eigene = sit.abschluss?.loesung?.eigene_knoten?.[key]
+      if (!Array.isArray(eigene) || eigene.length !== 2) add('regel', 'ERR_V42_LOESUNG', datei, `abschluss.loesung.eigene_knoten.${key}`, E, zeige(eigene), '2 Begriffe für die leeren Knoten')
+    }
+    const lo = sit.abschluss?.loesung
+    if (!lo) { add('regel', 'ERR_V42_LOESUNG', datei, 'abschluss.loesung', E, 'fehlt', 'vorhanden'); continue }
+    const transferTitel = (sit.mindmap_aeste ?? []).find((a) => a?.transfer)?.titel
+    const knoten = new Set((sit.mindmap_aeste ?? []).flatMap((a) => a?.punkte ?? []))
+    const v = lo.verbindungen ?? []
+    if (v.length < 5) add('regel', 'ERR_V42_LOESUNG', datei, 'abschluss.loesung.verbindungen', E, `${v.length} Verbindungen`, 'mindestens 5')
+    if (!v.some((x) => x?.nach === transferTitel || x?.von === transferTitel)) add('regel', 'ERR_V42_LOESUNG', datei, 'abschluss.loesung.verbindungen', E, 'keine Verbindung zum Transfer-Feld', `eine zu ${zeige(transferTitel)}`)
+    v.forEach((x, i) => {
+      for (const ende of [x?.von, x?.nach]) {
+        if (ende !== transferTitel && !knoten.has(ende)) add('regel', 'ERR_V42_LOESUNG', datei, `abschluss.loesung.verbindungen[${i}]`, E, zeige(ende), 'ein Knoten des Begriffsnetzes oder das Transfer-Feld')
+      }
+    })
+    if (!istText(lo.transfer)) add('regel', 'ERR_V42_LOESUNG', datei, 'abschluss.loesung.transfer', E, 'fehlt', 'Eintrag für das Transfer-Feld')
+    if ((lo.quercheck ?? []).length !== (sit.abschluss?.quercheck ?? []).length) add('regel', 'ERR_V42_LOESUNG', datei, 'abschluss.loesung.quercheck', E, `${(lo.quercheck ?? []).length} Antworten`, 'eine je Quer-Check-Frage')
+    if ((lo.mitnahme ?? []).length !== (sit.abschluss?.mitnahme ?? []).length) add('regel', 'ERR_V42_LOESUNG', datei, 'abschluss.loesung.mitnahme', E, `${(lo.mitnahme ?? []).length} Einträge`, 'einer je Zeile')
   }
 }
 
@@ -798,6 +852,7 @@ regel5(hefte)
 regel6(hefte, set, kn)
 regel7(hefte)
 regelGlossar(set, hefte)
+regelLoesungen(hefte)
 regel8(set, prinzip)
 regel9Kontext(set, FALL_BEGRIFFE)
 
