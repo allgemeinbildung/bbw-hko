@@ -20,6 +20,13 @@ import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../lib/einheiten/deck-builder'
 import { buildUebersicht, einheitPrefix } from '../../lib/einheiten/uebersicht'
 import { buildStandaloneHtml } from '../../lib/einheiten/standalone-shell'
+import { DocAuftragsbogen } from './docs/DocAuftragsbogen'
+import { heftDatei, v42Dokumente } from '../../lib/einheiten/v42-dokumente'
+import { DEFAULT_SPUR, SPUR_KEYS, isV42 } from '../../lib/einheiten/spuren'
+import type { SpurKey } from '../../lib/einheiten/types'
+
+/** v4.2 — Beschriftung des Spur-Umschalters (Leitfaden §4). */
+const SPUR_LABEL: Record<SpurKey, string> = { ohne_medien: 'Ohne Medien', mit_medien: 'Mit Medien' }
 
 /** Eingebettete IBM-Plex-Schnitte; erst beim ersten Download geladen (≈180 KB). */
 const FONTS_EMBED_URL = '/einheiten-assets/fonts-embed.css'
@@ -107,7 +114,7 @@ interface Props {
   readOnly?: boolean
 }
 
-type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt'
+type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt' | 'doc-auftragsbogen'
 type SitLetter = 'A' | 'B' | 'C'
 
 function classifySit(d: EinheitFullSet, letter: SitLetter) {
@@ -116,7 +123,8 @@ function classifySit(d: EinheitFullSet, letter: SitLetter) {
 
 // Dokumente, die ein Gast sehen darf. Alles andere (Kompetenznachweise, Lies-mich,
 // KI-Toolbox) wird gelistet, aber beim Anklicken durch das Gate-Panel ersetzt.
-const GUEST_ALLOWED: DocSel[] = ['doc-s', 'doc-austausch', 'doc-dossier', 'doc-leseblatt']
+// Der Auftragsbogen (v4.2) tritt an die Stelle von Austausch & Transfer und ist darum gleich offen.
+const GUEST_ALLOWED: DocSel[] = ['doc-s', 'doc-austausch', 'doc-dossier', 'doc-leseblatt', 'doc-auftragsbogen']
 const GATE_MAIL = 'pietro.rossi@bbw.ch'
 
 /**
@@ -130,7 +138,7 @@ function trackDownload(meta: Record<string, unknown>) {
   } catch {}
 }
 
-function triggerDownload(blob: Blob, filename: string) {
+function triggerDownload(blob: Blob, filename: string, meta?: Record<string, unknown>) {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
@@ -139,7 +147,7 @@ function triggerDownload(blob: Blob, filename: string) {
   a.click()
   document.body.removeChild(a)
   setTimeout(() => URL.revokeObjectURL(url), 1000)
-  trackDownload({ art: 'einzeldokument', datei: filename.slice(0, 120) })
+  trackDownload({ art: 'einzeldokument', datei: filename.slice(0, 120), ...meta })
 }
 
 // Gast-Sperre: statt des Dokuments erscheint ein Hinweis mit mailto-Kontakt.
@@ -175,7 +183,25 @@ function GatePanel({ kind }: { kind: 'kn' | 'begleiter' | 'ki' }) {
   )
 }
 
-export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, defaultAbteilung = '', readOnly = false }: Props) {
+export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, defaultAbteilung = '', readOnly = false }: Props) {
+  // v4.2 — Einheit mit Spuren (ENTSCHEIDE E3). Einziger Schalter für alles Spur-
+  // Abhängige in dieser Datei. Ohne `spur_varianten` ist `d` dasselbe Objekt wie
+  // `dRoh`, und jede Zeile unten läuft wie bisher (Invariante 4).
+  const istV42 = !!dRoh.spur_varianten
+  const spurenDa = istV42 ? SPUR_KEYS.filter((k) => !!dRoh.spur_varianten![k]) : []
+  // Startwert ist die Spur, in der loadEinheit die Hefte aufgelöst hat (E4: zuerst
+  // `ohne_medien`). Nur im Zustand — wie Auftrag/Dossier und die Dokumentwahl.
+  const [spur, setSpur] = useState<SpurKey>(() => dRoh.spur ?? DEFAULT_SPUR)
+  // Umschalten heisst: Heft A und B aus `spur_varianten` nehmen — keine eigene
+  // Auflösung im Client. Alles, was unten `d.hf_A`/`d.hf_B` liest (Vorschau,
+  // Einzeldownload, KN-LP, Deck), sieht damit die gewählte Spur.
+  const d = useMemo(() => {
+    const v = istV42 ? dRoh.spur_varianten![spur] : undefined
+    return v ? { ...dRoh, hf_A: v.hf_A, hf_B: v.hf_B, spur } : dRoh
+  }, [dRoh, istV42, spur])
+  // v4.2: der Auftragsbogen ersetzt das Set-Dokument «Austausch» (Leitfaden §11.2).
+  const ersetztAustausch = istV42 && !!d.set?.gemeinsamer_auftrag
+
   // B1/B2 — Union aller abgedeckten Kompetenzen der Einheit (für die README-Übersicht).
   // Die DocS-Fusszeilen verwenden bewusst die PRO-Herausforderung-Werte (sit.nrlp.nr_primary),
   // damit z.B. nur die Kanal-Herausforderung «(+1.1.3)» trägt, nicht jede Seite der Einheit.
@@ -333,6 +359,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       if (!sit) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Herausforderung {situation} fehlt.</p></div>
       return <DocS sit={sit} set={d.set} abteilung={abteilung} mode={mode} edits={edits} onEdit={onEdit} />
     }
+    if (doc === 'doc-auftragsbogen') {
+      return <DocAuftragsbogen set={d.set} abteilung={abteilung} edits={edits} onEdit={onEdit} />
+    }
     if (doc === 'doc-austausch') {
       if (!d.set) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Set fehlt.</p></div>
       return <DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={edits} onEdit={onEdit} />
@@ -407,6 +436,13 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     pngBuf: ArrayBuffer,
   ): { baseName: string; title: string; compact?: boolean; markup: string; docx: () => any } | null => {
     const p = prefix
+    // v4.2: Heft und Auftragsbogen kommen aus derselben Liste wie im ZIP — immer die
+    // auszufüllende Fassung (`fill`), Dateiname der Spur, die das Heft tatsächlich trägt.
+    if (istV42 && (doc === 'doc-s' || doc === 'doc-auftragsbogen')) {
+      const datei = doc === 'doc-auftragsbogen' ? 'auftragsbogen' : sit && isV42(sit) ? heftDatei(situation, sit.spur ?? spur) : null
+      const dok = datei ? v42Dokumente(d, { abteilung, logoPng: pngBuf }).find((x) => x.datei === datei) : undefined
+      if (dok) return { baseName: `${p}_${dok.datei}`, title: dok.titel, markup: dok.markup(), docx: dok.docx }
+    }
     if (doc === 'doc-s') {
       if (!sit || !d.set) return null
       const suffix = mode === 'fill' ? 'auftrag' : 'dossier'
@@ -495,6 +531,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
     return null
   }
 
+  // v4.2: die Download-Zählung trägt die gewählte Spur mit; sonst bleibt das Meta-Objekt wie bisher.
+  const spurMeta = istV42 ? { spur } : undefined
+
   // Einzeldownload des aktuell angezeigten Dokuments als HTML oder Word.
   const downloadCurrent = async (kind: 'html' | 'word') => {
     if (dling) return
@@ -516,12 +555,12 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
           // und dort nur die auszufüllende Auftragsversion.
           protokoll: doc === 'doc-s' && mode === 'fill',
         })
-        triggerDownload(new Blob([html], { type: 'text/html;charset=utf-8' }), `${art.baseName}.html`)
+        triggerDownload(new Blob([html], { type: 'text/html;charset=utf-8' }), `${art.baseName}.html`, spurMeta)
       } else {
         const docx = art.docx()
         if (!docx) { showToast('Word-Version für dieses Dokument nicht verfügbar.', 'error'); return }
         const blob = await docToBlob(docx)
-        triggerDownload(blob, `${art.baseName}.docx`)
+        triggerDownload(blob, `${art.baseName}.docx`, spurMeta)
       }
     } catch (e: any) {
       console.error(e)
@@ -598,9 +637,38 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       const log: string[] = []
       // `prefix` stammt aus dem Component-Scope (useMemo).
 
+      // v4.2: beide Spuren, unabhängig vom Umschalter — welche Dateien es gibt, sagt
+      // allein v42Dokumente (vier Hefte + Auftragsbogen). Schreibprotokoll nur in den
+      // Heften, wie bei den Herausforderungs-Aufträgen; der Auftragsbogen ist wie der
+      // Austausch davon ausgenommen. docKey mit Präfix, damit er über Einheiten eindeutig bleibt.
+      if (istV42) {
+        for (const dok of v42Dokumente(dRoh, { abteilung, logoPng: pngArrayBuffer })) {
+          const filename = `${dok.datei}.html`
+          zip.file(`html/${filename}`, buildStandaloneHtml({
+            cssRenderer,
+            title: dok.titel,
+            bodyMarkup: dok.markup(),
+            pngDataUrl,
+            docKey: `${prefix}_${dok.datei}`,
+            fontsCss: fontsCss || null,
+            protokoll: dok.datei !== 'auftragsbogen',
+          }))
+          log.push(`html/${filename}`)
+          try {
+            const docx = dok.docx()
+            if (docx) {
+              zip.file(`word/${dok.datei}.docx`, await docToBlob(docx))
+              log.push(`word/${dok.datei}.docx`)
+            }
+          } catch (e) { console.warn('docx v4.2 failed', dok.datei, e) }
+        }
+      }
+
       for (const letter of ['A', 'B', 'C'] as SitLetter[]) {
         const s = classifySit(d, letter)
         if (!s || !d.set) continue
+        // v4.2-Hefte stehen schon oben (beide Spuren); hier nur Bestandshefte.
+        if (istV42 && isV42(s)) continue
         for (const m of ['info', 'fill'] as const) {
           const markup = renderToStaticMarkup(<DocS sit={s} set={d.set} abteilung={abteilung} mode={m} edits={{}} onEdit={() => {}} />)
           const suffix = m === 'fill' ? 'auftrag' : 'dossier'
@@ -619,7 +687,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       }
 
       // C8 — set-level Austausch & Transfer doc (once per set; no longer embedded in the 6 DocS)
-      if (d.set) {
+      if (d.set && !ersetztAustausch) {
         const markup = renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />)
         const filename = `${prefix}_doc-austausch.html`
         zip.file(`html/${filename}`, wrap(filename, 'DOC-AUSTAUSCH · Set-Abschluss', markup))
@@ -778,7 +846,8 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
       a.click()
       document.body.removeChild(a)
       setTimeout(() => URL.revokeObjectURL(url), 1000)
-      trackDownload({ art: 'bundle', dateien: log.length, kn_typ: knTyp, abteilung: abteilung || null })
+      // Der ZIP enthält immer beide Spuren; `spur` ist die beim Download gewählte.
+      trackDownload({ art: 'bundle', dateien: log.length, kn_typ: knTyp, abteilung: abteilung || null, ...spurMeta })
       showToast(`${log.length} Dateien als Zip exportiert.`)
     } catch (e: any) {
       console.error(e)
@@ -794,6 +863,9 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
   if (doc === 'doc-s') {
     docKicker = `Herausforderung ${situation}`
     docName = sit?.titel || `Herausforderung ${situation}`
+  } else if (doc === 'doc-auftragsbogen') {
+    docKicker = 'Gemeinsamer Auftrag'
+    docName = d.set?.gemeinsamer_auftrag?.titel || 'Auftragsbogen'
   } else if (doc === 'doc-austausch') {
     docKicker = 'Set-Abschluss'
     docName = 'Austausch & Transfer'
@@ -940,6 +1012,16 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
             )}
           </div>
 
+          {ersetztAustausch ? (
+            <button
+              className={`wb-item solo${doc === 'doc-auftragsbogen' ? ' active' : ''}`}
+              onClick={() => pick('doc-auftragsbogen')}
+              title="Auftragsbogen · gemeinsamer Auftrag"
+            >
+              <span className="wb-dot">🤝</span>
+              <span className="wb-item-title">Auftragsbogen</span>
+            </button>
+          ) : (
           <button
             className={`wb-item solo${doc === 'doc-austausch' ? ' active' : ''}`}
             onClick={() => pick('doc-austausch')}
@@ -948,6 +1030,7 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
             <span className="wb-dot">🔄</span>
             <span className="wb-item-title">Austausch &amp; Transfer</span>
           </button>
+          )}
 
           {d.dossier && (
             <button
@@ -1182,7 +1265,17 @@ export default function EinheitWorkbench({ set: d, cssRenderer, logoUrl, feedbac
             <span className="wb-dochead-name">{gateKind ? 'Zugriff eingeschränkt' : docName}</span>
           </div>
           <div className="wb-dochead-actions">
-            {doc === 'doc-s' && !gateKind && (
+            {/* v4.2: Auftrag/Dossier entfällt — das Heft hat in beiden Modi dieselben
+                8 Seiten, `mode` bleibt darum beim Startwert `fill`. An seiner Stelle
+                steht der Spur-Umschalter, sofern es mehr als eine Spur gibt. */}
+            {doc === 'doc-s' && !gateKind && istV42 && spurenDa.length > 1 && (
+              <div className="wb-mode" role="group" aria-label="Spur">
+                {spurenDa.map((k) => (
+                  <button key={k} className={spur === k ? 'on' : ''} onClick={() => setSpur(k)}>{SPUR_LABEL[k]}</button>
+                ))}
+              </div>
+            )}
+            {doc === 'doc-s' && !gateKind && !istV42 && (
               <div className="wb-mode">
                 <button className={mode === 'fill' ? 'on' : ''} onClick={() => setMode('fill')}>Auftrag</button>
                 <button className={mode === 'info' ? 'on' : ''} onClick={() => setMode('info')}>Dossier</button>

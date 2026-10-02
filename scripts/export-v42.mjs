@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // export-v42.mjs — schreibt alle v4.2-Dokumente einer Einheit als eigenständige
-// HTML- und Word-Dateien, so wie sie der ZIP der Workbench enthalten wird.
+// HTML- und Word-Dateien, so wie sie der ZIP der Workbench enthält, dazu den
+// Begleiter als `begleiter.docx`.
 //
 //   node scripts/export-v42.mjs <slug> [--out <dir>]
 //   node scripts/export-v42.mjs 1.3.1_konsum_verantworten_v42 --out C:/temp/v42
@@ -41,6 +42,7 @@ try {
   const cssRendererBasis = (await server.ssrLoadModule('/src/styles/einheiten-renderer.css?raw')).default
   // Packer aus derselben docx-Instanz wie die Builder (ESM über Vite, nicht das CJS-Paket).
   const { Packer } = await server.ssrLoadModule('docx')
+  const { buildBegleiterBuffer } = await server.ssrLoadModule('/src/lib/einheiten/begleiter-builder.ts')
 
   const roh = loadEinheit(slug)
   if (!roh) throw new Error(`Einheit «${slug}» nicht im Index`)
@@ -60,8 +62,9 @@ try {
       pngDataUrl,
       docKey: `${slug}_${dok.datei}`,
       fontsCss,
-      // Wie die Herausforderungen im ZIP: Auftragsfassung mit Schreibprotokoll.
-      protokoll: true,
+      // Wie im ZIP der Workbench: Schreibprotokoll in den Heften (Auftragsfassung),
+      // nicht im Auftragsbogen — der ist wie der Austausch davon ausgenommen.
+      protokoll: dok.datei !== 'auftragsbogen',
     })
     const htmlPfad = join(OUT, `${dok.datei}.html`)
     writeFileSync(htmlPfad, html, 'utf8')
@@ -73,6 +76,14 @@ try {
       writeFileSync(docxPfad, await Packer.toBuffer(doc))
       geschrieben.push(docxPfad)
     }
+  }
+
+  // Begleiter als Word, damit die Übergabe vollständig ist — derselbe Builder wie im
+  // ZIP der Workbench (dort unter Material_LP/).
+  if (d.begleiter?.raw) {
+    const begleiterPfad = join(OUT, 'begleiter.docx')
+    writeFileSync(begleiterPfad, await buildBegleiterBuffer(d.begleiter.raw, new Uint8Array(logoBytes)))
+    geschrieben.push(begleiterPfad)
   }
 } finally {
   await server.close()

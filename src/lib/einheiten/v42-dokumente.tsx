@@ -5,7 +5,7 @@ import { DocAuftragsbogen } from '../../components/einheiten/docs/DocAuftragsbog
 import { buildDocS } from './docx-builder'
 import { buildAuftragsbogen } from './docx-auftragsbogen-v42'
 import { SPUR_KEYS, isV42 } from './spuren'
-import type { EinheitFullSet } from './types'
+import type { EinheitFullSet, SpurKey } from './types'
 
 /**
  * Welche v4.2-Dokumente es zu einer Einheit gibt — EINE Liste für alle Abnehmer:
@@ -32,6 +32,11 @@ export interface V42DokumenteOpts {
 const SPUR_DATEI = { ohne_medien: 'ohne-medien', mit_medien: 'mit-medien' } as const
 const SPUR_TITEL = { ohne_medien: 'ohne Medien', mit_medien: 'mit Medien' } as const
 
+/** Dateiname (ohne Endung) eines Hefts in einer Spur, z. B. `heft-a-ohne-medien`. */
+export function heftDatei(buchstabe: string, spur: SpurKey): string {
+  return `heft-${buchstabe.toLowerCase()}-${SPUR_DATEI[spur]}`
+}
+
 /**
  * Je Heft (A, dann B) und je verfügbarer Spur ein Eintrag, in der Folge
  * `heft-a-ohne-medien`, `heft-a-mit-medien`, `heft-b-ohne-medien`, `heft-b-mit-medien`,
@@ -50,7 +55,7 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
       // (Leitfaden §4.4) — das wäre ein Doppel der anderen Datei, kein eigenes Heft.
       if (!sit || !isV42(sit) || sit.spur !== spur) continue
       out.push({
-        datei: `heft-${L.toLowerCase()}-${SPUR_DATEI[spur]}`,
+        datei: heftDatei(L, spur),
         titel: `Heft ${L} · ${SPUR_TITEL[spur]} · ${sit.titel ?? ''}`.trim(),
         markup: () =>
           renderToStaticMarkup(<DocS sit={sit} set={d.set} abteilung={abteilung} mode="fill" edits={{}} onEdit={() => {}} />),
