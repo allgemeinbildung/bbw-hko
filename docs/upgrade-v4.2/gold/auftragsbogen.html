@@ -2355,6 +2355,18 @@ body.aesthetic-editorial .niveau-legende .niv {
    Überlauf gemessen — darum gilt es für jedes Kind der vier Seitenkörper. */
 .v42-s1 > *, .v42-s2 > *, .v42-s3 > *, .v42-s4 > * { flex-shrink: 0; }
 
+/* Schreibflächen wachsen (Rückmeldung Pietro 02.10.2026): `feld_hoehe_mm` ist die
+   Mindesthöhe. Der Leitfrage-Block wächst mit seinem flex-grow (inline: 35/45 auf S. 2,
+   1 auf S. 3 und 4) in den freien Platz, darin das Schreibfeld; die Scaffold-Spalte
+   bleibt oben und so hoch wie ihr Inhalt. Unten bleibt eine Reserve von rund 5 mm
+   (3 mm Abstand + 2 mm Leerblock), damit ein Wort mehr die Seite nicht kippt. */
+:is(.v42-s2, .v42-s3, .v42-s4)::after { content: ''; flex: 0 0 2mm; }
+:is(.v42-s2, .v42-s3, .v42-s4) > .v42-lf-waechst { align-items: stretch; }
+:is(.v42-s2, .v42-s3, .v42-s4) .v42-lf-waechst > .v42-lf-haupt { display: flex; flex-direction: column; }
+:is(.v42-s2, .v42-s3, .v42-s4) .v42-lf-waechst > .v42-lf-haupt > * { flex-shrink: 0; }
+:is(.v42-s2, .v42-s3, .v42-s4) .v42-lf-waechst > .v42-lf-haupt > .v42-feld-waechst { flex: 1 1 auto; }
+:is(.v42-s2, .v42-s3, .v42-s4) .v42-lf-waechst > .v42-scaffold { align-self: flex-start; }
+
 /* ---------- Gemeinsam für S. 1–4 ---------- */
 .v42-mini {
   font-family: 'IBM Plex Mono', monospace;
@@ -2484,15 +2496,15 @@ p.v42-hinweis { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); margi
 .v42-kompetenz + .v42-kompetenz { margin-top: 0.8mm; }
 .v42-kompetenz strong { color: var(--sit-akzent); }
 
-.v42-situation-text { font-size: 10pt; line-height: 1.42; }
+.v42-s1 .v42-situation-text { font-size: 10.5pt; line-height: 1.55; }
 .v42-zahlen {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 2mm;
-  font-size: 9pt;
+  margin-top: 3mm;
+  font-size: 9.5pt;
 }
 .v42-zahlen td {
-  padding: 0.8mm 0;
+  padding: 1.6mm 0;
   border-bottom: 0.5pt solid var(--rule);
   vertical-align: baseline;
 }
@@ -2519,24 +2531,29 @@ p.v42-spannung-hint { font-size: 9pt; line-height: 1.35; color: var(--ink-soft);
 .v42-s1-ressourcen ul { margin: 0; padding-left: 4mm; font-size: 9pt; line-height: 1.4; }
 .v42-s1-ressourcen li span { color: var(--ink-soft); }
 
-.v42-s1-pflicht-zeile { display: flex; gap: 5mm; align-items: center; }
-.v42-s1-pflicht .v42-mini { margin-bottom: 1.5mm; }
-.v42-s1-pflicht-text { flex: 1; font-size: 10pt; line-height: 1.35; }
-.v42-qr {
+/* S. 1, Medien-Spur: flacher Kurzeintrag der Quelle, der QR steht auf S. 3. */
+.v42-s1 .v42-s1-quelle { padding: 2mm 3.5mm; }
+.v42-s1 .v42-s1-quelle .v42-mini { margin-bottom: 0.8mm; }
+.v42-s1 .v42-s1-quelle-zeile { display: flex; gap: 5mm; align-items: baseline; font-size: 10pt; line-height: 1.35; }
+.v42-s1 .v42-s1-quelle-zeile > p:first-child { flex: 1; }
+.v42-s1 p.v42-s1-quelle-verweis { flex: 0 0 auto; font-size: 9pt; font-style: italic; color: var(--ink-soft); }
+
+/* S. 3, Quellenkarte: der einzige QR des Hefts, 25 mm, Adresse darunter. */
+.v42-s3 .v42-qr {
   flex: 0 0 auto;
-  width: 64mm;
+  width: 54mm;
   display: flex; flex-direction: column; align-items: center; gap: 1mm;
 }
-.v42-kurzadresse {
+.v42-s3 .v42-kurzadresse {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 9pt; line-height: 1.25;
+  font-size: 8pt; line-height: 1.25;
   text-align: center;
   color: var(--ink);
   overflow-wrap: anywhere;
 }
 
-.v42-woche { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
-.v42-woche td { padding: 1mm 3mm 1mm 0; border-bottom: 0.5pt solid var(--rule); vertical-align: top; }
+.v42-woche { width: 100%; border-collapse: collapse; font-size: 10pt; }
+.v42-woche td { padding: 2.2mm 3mm 2.2mm 0; border-bottom: 0.5pt solid var(--rule); vertical-align: top; }
 .v42-woche tr:first-child td { border-top: 0.5pt solid var(--rule); }
 .v42-woche-label {
   width: 38mm;
@@ -2545,13 +2562,6 @@ p.v42-spannung-hint { font-size: 9pt; line-height: 1.35; color: var(--ink-soft);
   color: var(--ink-soft);
   white-space: nowrap;
 }
-
-/* Spur ohne Medien: der Platz des Quellen-Kurzeintrags geht an Situation und Wochenplan. */
-.v42-s1-ohne .v42-situation-text { font-size: 10.5pt; line-height: 1.55; }
-.v42-s1-ohne .v42-zahlen { margin-top: 3mm; font-size: 9.5pt; }
-.v42-s1-ohne .v42-zahlen td { padding-top: 1.6mm; padding-bottom: 1.6mm; }
-.v42-s1-ohne.v42-s1-woche .v42-woche { font-size: 10pt; }
-.v42-s1-ohne.v42-s1-woche .v42-woche td { padding: 2.2mm 3mm 2.2mm 0; }
 
 p.v42-anweisung {
   padding-top: 2mm;
@@ -2571,19 +2581,31 @@ p.v42-q-meta { font-size: 9pt; color: var(--ink-soft); margin-top: 1mm; }
 .v42-q-meta strong { color: var(--ink); font-weight: 600; }
 .v42-quellenkarte-zeile { display: flex; gap: 4mm; align-items: flex-start; }
 .v42-quellenkarte-text { flex: 1; min-width: 0; }
-.v42-qr-klein {
-  flex: 0 0 24mm;
-  display: flex; flex-direction: column; align-items: center; gap: 0.8mm;
-  font-size: 7.5pt; line-height: 1.2; text-align: center; color: var(--ink-mute);
-}
 .v42-auftrag p { font-size: 10pt; line-height: 1.38; }
+/* S. 3: breitere Scaffold-Spalte — sie ist hier die längste und bestimmte sonst die
+   Höhe des Befund-Blocks; breiter wird sie kürzer und lässt Platz für höhere Rasterzeilen. */
+.v42-s3 .v42-scaffold { flex-basis: 62mm; }
+/* Knappste Seite (Heft B mit Medien): Blockabstand 2.5 statt 3 mm, Reserve unten 4.5 mm. */
+.v42-seite.v42-s3 { gap: 2.5mm; }
 /* Verweis auf die Methodenkarte (S. 6) — Rahmenschrift wie der Verweis auf S. 5. */
 .v42-s3 .v42-auftrag p.v42-s3-hilfe { font-size: 9pt; line-height: 1.3; font-style: italic; color: var(--ink-soft); margin-top: 1mm; }
 
 /* ---------- S. 4 · Wissensecke II ---------- */
 .v42-denkhilfe { margin-top: 2mm; }
-.v42-vertiefung-raster { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
-.v42-vertiefung-karte {
+/* Zwei Karten nebeneinander, gleich hoch: jede Karte teilt über subgrid dieselben sieben
+   Zeilen (Etikett · Titel · Hinweis · Kurzbeschrieb · Leitfrage · «Meine Antwort» · Feld),
+   die Felder stehen also auf gleicher Höhe und sind gleich hoch (mindestens 30 mm). */
+.v42-s4 .v42-vertiefung-raster {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto) 1fr;
+  column-gap: 4mm;
+}
+.v42-s4 .v42-vertiefung-karte {
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+  row-gap: 0;
   border: 0.75pt solid var(--ink-soft);
   padding: 2mm 3mm;
 }
@@ -2594,13 +2616,18 @@ p.v42-q-meta { font-size: 9pt; color: var(--ink-soft); margin-top: 1mm; }
   color: var(--ink-soft);
   margin-bottom: 0.8mm;
 }
-p.v42-vertiefung-frage {
+.v42-s4 p.v42-vertiefung-hinweis { font-size: 9pt; line-height: 1.3; font-weight: 600; margin-top: 1.2mm; }
+.v42-s4 p.v42-vertiefung-kurz { font-size: 8.5pt; line-height: 1.3; color: var(--ink-soft); margin-top: 0.8mm; }
+.v42-s4 p.v42-vertiefung-frage {
   font-size: 9.5pt; line-height: 1.35;
   font-style: italic;
   margin-top: 1.2mm;
   padding-top: 1.2mm;
   border-top: 0.5pt dotted var(--ink-mute);
 }
+.v42-s4 .v42-vertiefung-karte > .v42-mini { margin: 1.5mm 0 0; }
+.v42-s4 .v42-vertiefung-karte > .feld.v42-feld { margin-top: 1mm; }
+
 
 /* Heft v4.2 — Seiten 5–8 (Auftrag · Methoden · Arbeitsfläche · Abschluss). Präfix .v42-, Bausteine in gemeinsam.css.
    Markup: src/components/einheiten/docs/heft-v42/seiten-5-8.tsx. Ein Akzent (--sit-akzent)

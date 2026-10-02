@@ -15,7 +15,9 @@ Die Einheit 1.3.1 (EFZ 4J) liegt in zwei vollständigen Fassungen vor: Spur
 Beide sind als Entwurf unter `/einheiten/1.3.1_konsum_verantworten_v42`
 umschaltbar, als HTML und Word exportierbar und ohne Platzhalter.
 
-**Gates am Schluss (02.10.2026, 05:20):**
+**Nachtrag 02.10.2026 — Pietros Rückmeldung (E16) ist eingearbeitet:** QR-Code nur noch auf Seite 3; «Quelle» statt «Pflichtquelle»; die Schreibfelder füllen die Seiten 2–4 (die Höhen des Leitfadens gelten als Minimum); die Vertiefungskarten auf Seite 4 haben Hinweis, Kurzbeschrieb und ein Feld «Meine Antwort». Gates, Messung, Word-Seitenzahl und Bestandsvergleich sind danach erneut gelaufen.
+
+**Gates am Schluss (02.10.2026):**
 
 | Gate | Ergebnis |
 |---|---|
@@ -32,7 +34,7 @@ umschaltbar, als HTML und Word exportierbar und ohne Platzhalter.
 | Platzhalter | `grep` gemäss Brief über den neuen Ordner und `src/data/quellen/` | nichts |
 | Volltext-Leck | Wortfolgen-Abgleich (ab 8 Wörtern) aller Datenfelder, Karten und des Begleiters gegen Archivtexte und neun Lehrmittelkapitel | Treffer nur bei URLs, URNs und Titeln; Fachprüfung am Lehrmittel: längste Übereinstimmung 6 Wörter |
 | Bestand unverändert (Invariante 4) | `scripts/bestand-v42.mjs --pruefen`: 26 Fingerabdrücke (HTML, Word, CSS) von `1.3.1_konsum_verantworten` und `1.1.1_konflikt_kommunizieren`, aufgenommen vor dem ersten Renderer-Eingriff; dazu ZIP der Bestandseinheit mit alter und neuer Workbench verglichen | 26 von 26 gleich; ZIP: gleiche 34 Dateinamen, alle Dokument-HTML bytegleich; `loadEinheit`, Begleiter und Übersicht zeichengleich |
-| Word | alle sechs `.docx` in Word geöffnet und gezählt | Hefte je 8 Seiten / 8 Abschnitte, Auftragsbogen 4, Begleiter 43; QR als eingebettetes PNG in beiden Medien-Heften (S. 1 und S. 3) |
+| Word | alle sechs `.docx` in Word geöffnet und gezählt | Hefte je 8 Seiten / 8 Abschnitte, Auftragsbogen 4, Begleiter 43; QR als eingebettetes PNG in beiden Medien-Heften (S. 3) |
 
 ---
 
@@ -160,8 +162,6 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
 
 ## 7. Bekannte Schwächen, bewusst stehen gelassen
 
-- **Schreibfelder sind knapp** (LF1 35 mm, LF2 45 mm, Befund 25 mm): Alle vier
-  Blindleser melden es. Die Höhen stehen hart im Leitfaden §3.1.
 - **Lektion 3 ist überfüllt:** Seite 5, 7 und 8 ergeben 60 Minuten. Der
   Begleiter sagt es und schlägt vor, den Abschluss in die nächste Lektion zu
   nehmen.
@@ -170,9 +170,12 @@ entschieden, damit der Bau fertig wird — jede Stelle ist umkehrbar
   der Begleiter erklärt es.
 - **Sprache der Pflichtquelle A** ist anspruchsvoll («algorithmisch»,
   indirekte Rede).
-- **Word-Schreibfelder** zeigen nur die unterste Linie und sind höher als im
-  HTML — das liegt am bestehenden Baustein `schreibfeld` in
-  `docx-primitives.ts` und betrifft alle Einheiten. Nicht angefasst.
+- **Word-Schreibfelder:** Auf den Seiten 1–4 zeichnet das Heft jetzt jede Linie selbst. Auf den
+  Seiten 5–8, im Auftragsbogen und in allen Bestandseinheiten zeigt der bestehende Baustein
+   in  weiterhin nur die unterste Linie. Nicht angefasst.
+- **Word-Höhen sind an dieser Einheit gemessen:** Die Zuschläge der Schreibflächen in Word sind
+  feste Werte; am knappsten ist Seite 3 ohne Medien (rund 4 mm). Längere Texte in einer anderen
+  Einheit können eine neunte Seite auslösen — nach jedem Export die Seiten zählen.
 - **Zwei bestehende Methodenkarten** sind ungenau (`lm-17-3-3b-schema`: Seite
   394 statt 394–395; `lm-16-2-statement`: Merksatz nicht im Kapitel).
   Ausserhalb des Zauns.

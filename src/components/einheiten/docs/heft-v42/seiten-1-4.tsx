@@ -79,8 +79,41 @@ function verortung(q: Quelle): string {
   return v.von && v.bis ? `${v.von}–${v.bis}` : ''
 }
 
+/** «05:54» → 354 Sekunden; unlesbar → NaN. */
+function sekunden(t: string): number {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(t.trim())
+  return m ? Number(m[1]) * 60 + Number(m[2]) : NaN
+}
+
+/**
+ * Was genau zu hören, zu sehen oder zu lesen ist (Vertiefungskarte, S. 4), aus `verortung`:
+ * «Hören Sie 00:04–03:10», «Schauen Sie 00:35–06:29», «Lesen Sie: Abschnitt …».
+ * Beginnt der Ausschnitt bei 00:00 und deckt die ganze Länge: «… den ganzen Beitrag».
+ */
+function vertiefungHinweis(q: Quelle): string {
+  const v = q.verortung
+  if (!v) return ''
+  if (v.absaetze) return `Lesen Sie: ${v.absaetze}`
+  if (!v.von || !v.bis) return ''
+  const verb = q.typ === 'video' ? 'Schauen Sie' : q.typ === 'audio' ? 'Hören Sie' : 'Lesen Sie'
+  const ganz = sekunden(v.von) === 0 && (!q.dauer_sek || sekunden(v.bis) === q.dauer_sek)
+  return ganz ? `${verb} den ganzen Beitrag` : `${verb} ${v.von}–${v.bis}`
+}
+
 function herausgeberDatum(q: Quelle): string {
   return [q.herausgeber, datumCh(q.datum)].filter(Boolean).join(', ')
+}
+
+/**
+ * Spaltenbreiten des Rasters (S. 3) in %: die Spalte «Aussage»/«Kernaussage» breit (38),
+ * die letzte («→ Begriff») 22, die übrigen 18 und 22 — Rückmeldung Pietro 02.10.2026.
+ * Ohne Aussage-Spalte oder bei anderer Spaltenzahl: gleich breit.
+ */
+function rasterBreiten(spalten: string[]): number[] | undefined {
+  const a = spalten.findIndex((s) => /aussage/i.test(s))
+  if (spalten.length !== 4 || a < 0 || a === 3) return undefined
+  const rest = [18, 22]
+  return spalten.map((_, i) => (i === a ? 38 : i === 3 ? 22 : rest.shift()!))
 }
 
 function pflichtQuelle(sit: SituationJson): Quelle | undefined {
@@ -109,6 +142,11 @@ function ankerZu(sit: SituationJson, knotenRef?: string) {
   return sit.quellen_anker?.find((a) => a.ref && knotenRef.startsWith(a.ref))
 }
 
+/** Zeilenhöhe des Rasters (S. 3): eine Aussage in Handschrift passt in die Zelle. */
+const RASTER_ZEILE_MM = 18
+/** Zeilenhöhe der Denkhilfe (S. 4, Spur ohne Medien). */
+const DENKHILFE_ZEILE_MM = 17
+
 // ── Bausteine ──────────────────────────────────────────────────────────────
 
 function Mini({ children }: { children: ReactNode }) {
@@ -121,8 +159,10 @@ function Mini({ children }: { children: ReactNode }) {
  * zählt die Sollhöhe. Klasse `feld` bleibt, damit Speichern und Schreibprotokoll der
  * Standalone-Datei das Feld finden. Nur im Modus `fill` editierbar.
  */
-function Feld({ hoeheMm, wert, onChange, editierbar, className }: {
+function Feld({ hoeheMm, minMm, wert, onChange, editierbar, className }: {
   hoeheMm?: number
+  /** Mindesthöhe; das Feld wächst in den freien Platz seines Blocks (`.v42-feld-waechst`). */
+  minMm?: number
   wert: string
   onChange: (v: string) => void
   editierbar: boolean
@@ -132,11 +172,12 @@ function Feld({ hoeheMm, wert, onChange, editierbar, className }: {
   useEffect(() => {
     if (ref.current && ref.current.innerText !== wert) ref.current.innerText = wert || ''
   }, [wert])
+  const basis = className ? `feld ${className}` : 'feld v42-feld'
   return (
     <div
       ref={ref}
-      className={className ? `feld ${className}` : 'feld v42-feld'}
-      style={hoeheMm ? { height: `${hoeheMm}mm` } : undefined}
+      className={minMm ? `${basis} v42-feld-waechst` : basis}
+      style={minMm ? { minHeight: `${minMm}mm` } : hoeheMm ? { height: `${hoeheMm}mm` } : undefined}
       {...(editierbar
         ? {
             contentEditable: true,
@@ -183,15 +224,18 @@ function ScaffoldSpalte({ sc }: { sc?: Leitfrage['scaffolding'] }) {
  * Eine Leitfrage: links Frage, Meta-Zeile, optional ein Block vor dem Feld (Denkhilfe)
  * und das Schreibfeld; rechts die Scaffold-Spalte. Muster: LeitfrageItem in DocS.tsx.
  */
-function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld }: {
+function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
   lf: Leitfrage
   feldKey: string
+  /** Mindesthöhe des Schreibfelds (`feld_hoehe_mm`); das Feld wächst in den Block. */
   hoeheMm: number
   props: HeftSeiteProps
   vorFeld?: ReactNode
+  /** Anteil am freien Platz der Seite (flex-grow des Blocks), z. B. 35 und 45 auf S. 2. */
+  wachsen: number
 }) {
   return (
-    <section className="v42-lf">
+    <section className="v42-lf v42-lf-waechst" style={{ flexGrow: wachsen }}>
       <div className="v42-lf-haupt">
         <div className="v42-lf-kopf">
           <span className="v42-lf-nr">LF{lf.nr}</span>
@@ -204,7 +248,7 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld }: {
         </div>
         {vorFeld}
         <Feld
-          hoeheMm={hoeheMm}
+          minMm={hoeheMm}
           wert={props.edits[feldKey] || ''}
           onChange={(v) => props.onEdit(feldKey, v)}
           editierbar={props.mode === 'fill'}
@@ -221,7 +265,7 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld }: {
  * Zeile vor und kennzeichnet sie — gestrichelt und kursiv, weil das Heft
  * schwarz-weiss kopiert wird.
  */
-function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, className }: {
+function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, className, breiten }: {
   spalten: string[]
   leer: number
   zeileMm: number
@@ -229,11 +273,13 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, c
   keyPrefix: string
   props: HeftSeiteProps
   className: string
+  /** Spaltenbreiten in %; ohne Angabe gleich breit. */
+  breiten?: number[]
 }) {
   const editierbar = props.mode === 'fill'
   return (
     <table className={`v42-tabelle ${className}`}>
-      <colgroup>{spalten.map((_, i) => <col key={i} />)}</colgroup>
+      <colgroup>{spalten.map((_, i) => <col key={i} style={breiten ? { width: `${breiten[i]}%` } : undefined} />)}</colgroup>
       <thead>
         <tr>{spalten.map((s, i) => <th key={i}>{s}</th>)}</tr>
       </thead>
@@ -270,12 +316,16 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, c
   )
 }
 
-/** Quellenkarte der Pflichtquelle (S. 3): Etikett, Titel, Herausgeber + Datum, Kurzbeschrieb, Verortung, Länge, kleiner QR. */
+/**
+ * Quellenkarte der Medien-Spur (S. 3): Etikett, Titel, Herausgeber + Datum, Kurzbeschrieb,
+ * Verortung, Länge — und der einzige QR-Code des Hefts (25 mm) mit der Adresse darunter.
+ */
 function Quellenkarte({ q, sit }: { q: Quelle; sit: SituationJson }) {
   const ort = verortung(q)
   const { etikett, wert: lang } = laengeZeile(q)
+  const url = qrInhalt(sit)
   return (
-    <Kasten label={`Pflichtquelle · ${typEtikett(q)}`} className="v42-quellenkarte">
+    <Kasten label={`Quelle · ${typEtikett(q)}`} className="v42-quellenkarte">
       <div className="v42-quellenkarte-zeile">
         <div className="v42-quellenkarte-text">
           <p className="v42-q-titel">{q.titel}</p>
@@ -287,24 +337,42 @@ function Quellenkarte({ q, sit }: { q: Quelle; sit: SituationJson }) {
             {lang && <><strong>{etikett}:</strong> {lang}</>}
           </p>
         </div>
-        <div className="v42-qr-klein">
-          <QrCode text={qrInhalt(sit)} groesseMm={17} titel={`QR-Code zur Quelle: ${qrInhalt(sit)}`} />
-          <div>Gleicher Code wie auf S. 1</div>
+        <div className="v42-qr">
+          <QrCode text={url} groesseMm={25} titel={`QR-Code zur Quelle: ${url}`} />
+          <div className="v42-kurzadresse">{/* Umbruchstelle nach «/m/» (Nullbreite), damit die Adresse nicht mitten im Wort bricht. */}
+            {kurzadresse(url).replace('/m/', '/m/​')}</div>
         </div>
       </div>
     </Kasten>
   )
 }
 
-/** Kompakte Karte einer Vertiefungsquelle (S. 4, Medien-Spur). */
-function VertiefungKarte({ q }: { q: Quelle }) {
+/**
+ * Karte einer Vertiefungsquelle (S. 4, Medien-Spur): Etikett, Titel, Herkunft, was genau
+ * zu hören/sehen/lesen ist, Kurzbeschrieb, Leitfrage, Schreibfeld «Meine Antwort».
+ * Die sieben Teile stehen immer (leer, wenn ein Wert fehlt): die Karten teilen sich über
+ * `grid-template-rows: subgrid` dieselben Zeilen — gleich hoch, Felder auf gleicher Höhe.
+ */
+function VertiefungKarte({ q, feldKey, props }: { q: Quelle; feldKey: string; props: HeftSeiteProps }) {
   const lang = laenge(q)
   return (
     <div className="v42-vertiefung-karte">
       <div className="v42-etikett">{typEtikett(q)}{lang && ` · ${lang}`}</div>
-      <p className="v42-q-titel">{q.titel}</p>
-      <p className="v42-q-herkunft">{herausgeberDatum(q)}</p>
-      {q.leitfrage_vertiefung && <p className="v42-vertiefung-frage">{q.leitfrage_vertiefung}</p>}
+      <div>
+        <p className="v42-q-titel">{q.titel}</p>
+        <p className="v42-q-herkunft">{herausgeberDatum(q)}</p>
+      </div>
+      <p className="v42-vertiefung-hinweis">{vertiefungHinweis(q)}</p>
+      <p className="v42-vertiefung-kurz">{q.kurzbeschrieb}</p>
+      <p className="v42-vertiefung-frage">{q.leitfrage_vertiefung}</p>
+      <Mini>Meine Antwort</Mini>
+      <Feld
+        minMm={30}
+        className="v42-feld"
+        wert={props.edits[feldKey] || ''}
+        onChange={(v) => props.onEdit(feldKey, v)}
+        editierbar={props.mode === 'fill'}
+      />
     </div>
   )
 }
@@ -313,13 +381,11 @@ function VertiefungKarte({ q }: { q: Quelle }) {
 
 export function Seite1({ sit }: HeftSeiteProps) {
   const pflicht = pflichtQuelle(sit)
-  // Ohne Kurzeintrag bleibt Platz frei — er geht an Situation und Wochenplan (grössere
-  // Zeilen), der Rest verteilt sich auf die Abstände (heft-1-4.css), nie als Loch unten.
-  // Der Inhalt bleibt in beiden Spuren gleich.
-  const ohne = pflicht ? '' : ' v42-s1-ohne'
+  // Der QR-Code steht nur auf S. 3 (Rückmeldung Pietro 02.10.2026); hier bleibt in der
+  // Medien-Spur ein flacher Kurzeintrag. Situation und Wochenplan stehen in beiden Spuren
+  // gleich gross, der Rest verteilt sich auf die Abstände (heft-1-4.css).
   const komp = kompetenzen(sit)
   const p = sit.persona
-  const url = pflicht ? qrInhalt(sit) : ''
   const zahlen = sit.zahlen_tabelle ?? []
   const zahlenPaare: (typeof zahlen)[] = []
   for (let i = 0; i < zahlen.length; i += 2) zahlenPaare.push(zahlen.slice(i, i + 2))
@@ -348,7 +414,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
         </div>
       </header>
 
-      <section className={`v42-s1-situation${ohne}`}>
+      <section className="v42-s1-situation">
         <p className="v42-situation-text">{sit.situation_text}</p>
         {zahlenPaare.length > 0 && (
           // Zwei Paare pro Zeile: halbiert die Höhe der Tabelle, Label ≤ 45 Zeichen passt.
@@ -393,28 +459,18 @@ export function Seite1({ sit }: HeftSeiteProps) {
       )}
 
       {pflicht && (
-        // Beschriftung in der Textspalte statt über dem Kasten: die Höhe bestimmt der QR.
-        <Kasten className="v42-s1-pflicht">
-          <div className="v42-s1-pflicht-zeile">
-            <div className="v42-s1-pflicht-text">
-              <Mini>{`Pflichtquelle für Seite 3 · ${typEtikett(pflicht)}`}</Mini>
-              <p><strong>{pflicht.titel}</strong> · {herausgeberDatum(pflicht)}</p>
-              <p className="v42-hinweis">
-                Scannen Sie den Code oder tippen Sie die Adresse ein — dort finden Sie den Link
-                zur Quelle. Bearbeitet wird sie auf Seite 3.
-              </p>
-            </div>
-            <div className="v42-qr">
-              <QrCode text={url} groesseMm={25} titel={`QR-Code zur Quelle: ${url}`} />
-              <div className="v42-kurzadresse">{/* Umbruchstelle nach \u00ab/m/\u00bb (Nullbreite), damit die Adresse nicht mitten im Wort bricht. */}
-                {kurzadresse(url).replace('/m/', '/m/\u200b')}</div>
-            </div>
+        // Flacher Kurzeintrag ohne QR: Titel, Herausgeber, Datum und der Verweis auf S. 3.
+        <Kasten className="v42-s1-quelle">
+          <Mini>{`Quelle für Seite 3 · ${typEtikett(pflicht)}`}</Mini>
+          <div className="v42-s1-quelle-zeile">
+            <p><strong>{pflicht.titel}</strong> · {herausgeberDatum(pflicht)}</p>
+            <p className="v42-s1-quelle-verweis">→ QR-Code auf Seite 3</p>
           </div>
         </Kasten>
       )}
 
       {(sit.wochen_plan?.length ?? 0) > 0 && (
-        <section className={`v42-s1-woche${ohne}`}>
+        <section className="v42-s1-woche">
           <Mini>Ihre Woche</Mini>
           <table className="v42-woche">
             <tbody>
@@ -452,7 +508,10 @@ export function Seite2(props: HeftSeiteProps) {
       {[1, 2].map((nr) => {
         const lf = leitfrage(sit, nr)
         if (!lf) return null
-        return <LfBlock key={nr} lf={lf} feldKey={`${kern}lf_${nr}`} hoeheMm={lf.feld_hoehe_mm || (nr === 1 ? 35 : 45)} props={props} />
+        // feld_hoehe_mm ist die Mindesthöhe; LF1 und LF2 teilen den freien Platz im
+        // Verhältnis ihrer Mindesthöhen (35 : 45).
+        const min = lf.feld_hoehe_mm || (nr === 1 ? 35 : 45)
+        return <LfBlock key={nr} lf={lf} feldKey={`${kern}lf_${nr}`} hoeheMm={min} wachsen={min} props={props} />
       })}
     </>
   )
@@ -498,16 +557,18 @@ export function Seite3(props: HeftSeiteProps) {
           <AusfuellTabelle
             spalten={spalten}
             leer={zeilen - (beispiel ? 1 : 0)}
-            zeileMm={13}
+            zeileMm={RASTER_ZEILE_MM}
             beispiel={beispiel}
             keyPrefix={`${ns}lf_3_raster_`}
             props={props}
             className="v42-raster"
+            breiten={rasterBreiten(spalten)}
           />
         </section>
       )}
 
-      {lf && <LfBlock lf={lf} feldKey={`${ns}lf_${lf.nr}`} hoeheMm={25} props={props} />}
+      {/* Befund: mindestens 25 mm, nimmt den Rest der Seite. */}
+      {lf && <LfBlock lf={lf} feldKey={`${ns}lf_${lf.nr}`} hoeheMm={lf.feld_hoehe_mm || 25} wachsen={1} props={props} />}
     </>
   )
 }
@@ -522,7 +583,7 @@ function Denkhilfe({ k, props }: { k: KastenS4; props: HeftSeiteProps }) {
         <AusfuellTabelle
           spalten={spalten}
           leer={3}
-          zeileMm={11}
+          zeileMm={DENKHILFE_ZEILE_MM}
           keyPrefix={`${props.ns}denkhilfe_`}
           props={props}
           className="v42-denkhilfe-tabelle"
@@ -533,16 +594,16 @@ function Denkhilfe({ k, props }: { k: KastenS4; props: HeftSeiteProps }) {
   )
 }
 
-function Vertiefung({ k, sit }: { k: KastenS4; sit: SituationJson }) {
-  const quellen = sit.quellen?.filter((q) => q.rolle === 'vertiefung').slice(0, 2) ?? []
+function Vertiefung({ k, props }: { k: KastenS4; props: HeftSeiteProps }) {
+  const quellen = props.sit.quellen?.filter((q) => q.rolle === 'vertiefung').slice(0, 2) ?? []
   if (!quellen.length) return null
   return (
     <Kasten label={k.titel} className="v42-vertiefung">
       <div className="v42-vertiefung-raster">
-        {quellen.map((q) => <VertiefungKarte key={q.id} q={q} />)}
+        {quellen.map((q, i) => <VertiefungKarte key={q.id} q={q} feldKey={`${props.ns}vertiefung_${i}`} props={props} />)}
       </div>
       <p className="v42-hinweis">
-        {k.hinweis || 'Die Links zu beiden Quellen stehen auf der QR-Seite (Code auf Seite 1).'}
+        {k.hinweis || 'Die Links zu beiden Quellen stehen auf der QR-Seite (Code auf Seite 3).'}
       </p>
     </Kasten>
   )
@@ -561,13 +622,14 @@ export function Seite4(props: HeftSeiteProps) {
           lf={lf}
           feldKey={`${ns}lf_${lf.nr}`}
           hoeheMm={hoehe}
+          wachsen={1}
           props={props}
           // Denkhilfe VOR dem Schreibfeld: erst füllen, dann schreiben.
           vorFeld={k?.typ === 'denkhilfe' ? <Denkhilfe k={k} props={props} /> : undefined}
         />
       )}
       {/* Vertiefung NACH dem Schreibfeld — freiwillig. */}
-      {k?.typ === 'vertiefung' && <Vertiefung k={k} sit={sit} />}
+      {k?.typ === 'vertiefung' && <Vertiefung k={k} props={props} />}
     </>
   )
 }

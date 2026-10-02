@@ -222,7 +222,7 @@ ${f.beispiel ? `            <p class="neu-bsp"><strong>Beispiel:</strong> ${esc(
   const qrSeite = landingUrl(d.id)
   const spurenHinweis = istV42
     ? `      <p>Jedes Heft liegt in zwei Spuren vor: <strong>ohne Medien</strong> (Lehrmittel, mehr Gerüst) und
-      <strong>mit Medien</strong> (Pflichtquelle über QR-Code). Kern, Produkt und Feedback-Kriterien sind gleich —
+      <strong>mit Medien</strong> (Quelle über QR-Code). Kern, Produkt und Feedback-Kriterien sind gleich —
       Sie wählen pro Klasse oder pro Lernende/n.</p>
       <p class="meta"><strong>QR-Seite der Einheit:</strong> <a href="${esc(qrSeite)}" target="_blank" rel="noopener">${esc(qrSeite)}</a></p>\n`
     : ''

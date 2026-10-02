@@ -147,8 +147,8 @@ function alsQuellenStand(v: unknown): string | null {
     for (const q of liste as StandQuelle[]) {
       if (!q || typeof q !== 'object') continue
       if (q.rolle === 'pflicht') {
-        zeilen.push(zeileQuelle(`${heft} · Pflicht`, q))
-        if (q.ersatz) zeilen.push(zeileQuelle(`${heft} · Ersatz zur Pflicht`, q.ersatz))
+        zeilen.push(zeileQuelle(`${heft} · Quelle`, q))
+        if (q.ersatz) zeilen.push(zeileQuelle(`${heft} · Ersatzquelle`, q.ersatz))
       } else {
         zeilen.push(zeileQuelle(`${heft} · Vertiefung ${++vertiefung}`, q))
       }
