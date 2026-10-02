@@ -22,11 +22,17 @@ Lies danach `CLAUDE.md`, `docs/cloud-run/auftragsliste.md` und
 
 ## 2. Pro Zeile der Auftragsliste
 
-1. Einheit mit der Skill `bbw-hko-3er-set` erzeugen. Grundlage für jede
+0. Bauplan lesen: `docs/cloud-run/bauplaene/<ordner>.md`. Er muss «freigegeben» tragen.
+   Ordnername, Versprechen, Herausforderungen, Hybrid-Fall, Kapitel und Quellen
+   daraus übernehmen — **kein Entscheid des Bauplans wird geändert.** Fehlt der
+   Bauplan oder ist er nicht freigegeben: Zeile gilt als nicht erzeugbar.
+1. Einheit mit der Skill `bbw-hko-3er-set` erzeugen. Die Phasen, die der
+   Bauplan bereits entscheidet (Prinzip, Auswahl der Herausforderungen,
+   Hybrid-Freigabe), nicht neu aufrollen, sondern mit seinen Werten füllen. Grundlage für jede
    Fachaussage, Zahl, Seitenangabe und jeden Rechtsstand ist ausschliesslich das
    Kapitel aus `material/_lehrmittel/`, das der Crosswalk der Skill nennt, und
    der nRLP-Datensatz des Lehrgangs. Nichts aus dem Gedächtnis.
-2. Wo die Skill auf eine Eingabe wartet: die Variante nehmen, die sie selbst
+2. Wo die Skill trotzdem auf eine Eingabe wartet, die der Bauplan nicht deckt: die Variante nehmen, die sie selbst
    empfiehlt; fehlt eine Empfehlung, die mit dem engsten Bezug zum Wortlaut der
    nRLP-Kompetenz. Entscheid, Grund und die verworfenen Alternativen in
    `docs/cloud-run/laeufe/<datum>/ENTSCHEIDE.md` festhalten.
@@ -58,8 +64,8 @@ aufzuhören. Die Übernahme und das Tor prüfst du selbst nach.
    Force-Push, kein Pull Request in ein anderes Repo.
 6. Schweizer Hochdeutsch, kein «ß», echte Umlaute, Aufträge in Sie-Form,
    Situationen in Ich-Form, neutrale Persona.
-7. Eine Zeile gilt als **nicht erzeugbar**, wenn der Crosswalk keine Zeile oder
-   kein Kernkapitel für den Lebensbezug hat, oder das Tor nach drei
+7. Eine Zeile gilt als **nicht erzeugbar**, wenn der Bauplan fehlt oder nicht
+   freigegeben ist, ein im Bauplan genanntes Kapitel fehlt, oder das Tor nach drei
    Reparaturrunden noch rot ist. Dann: Ordner entfernen, Grund in den Bericht,
    nächste Zeile.
 

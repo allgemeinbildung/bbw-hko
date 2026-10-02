@@ -28,7 +28,11 @@ Der private Spiegel existiert seit 02.10.2026:
 
 1. **Alles committen**, was der Lauf sehen soll — Skill, Renderer, Checks.
    Uncommittetes geht nicht in den Spiegel.
-2. **Auftragsliste füllen:** `docs/cloud-run/auftragsliste.md`. Vorschlag:
+2. **Baupläne vorbereiten und freigeben:** pro Einheit eine Datei unter
+   `docs/cloud-run/bauplaene/` nach `_VORLAGE.md` — lokal, mit Lehrmittel und
+   Quellenrecherche, in einer Sitzung für alle Einheiten des Laufs. Erst wenn
+   «freigegeben am …» drinsteht, nimmt die Cloud die Zeile an.
+2a. **Auftragsliste füllen:** `docs/cloud-run/auftragsliste.md`. Vorschlag:
 
    ```bash
    npm run --silent abdeckung > docs/cloud-run/abdeckung.md
@@ -56,9 +60,8 @@ Der private Spiegel existiert seit 02.10.2026:
 
 1. <https://claude.ai/code> → Repo `bbw-hko-produktion`, Branch `cloud`, die
    Umgebung aus A.2.
-2. Als erste Nachricht den **ganzen Inhalt von `docs/cloud-run/RUN.md`**
-   einfügen. Darunter eine Zeile mit dem Datum:
-   > Datum des Laufs: 2026-10-02
+2. Als erste Nachricht den Block aus `docs/cloud-run/HANDOFF.md` einfügen
+   (vier Zeilen, Datum anpassen). Konnektoren abwählen, vor allem Supabase.
 
 3. Laufen lassen. Die Session meldet am Ende den Branch `lauf/<datum>`, die
    Anzahl grüner und nicht erzeugbarer Einheiten und drei Punkte für die Abnahme.

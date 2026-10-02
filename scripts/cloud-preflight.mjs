@@ -48,6 +48,20 @@ pruefe(existsSync(join(ROOT, 'CLAUDE.md')), 'CLAUDE.md', 'fehlt — Architektur-
 pruefe(existsSync(join(ROOT, '.claude/skills/bbw-hko-3er-set/SKILL.md')), 'Skill bbw-hko-3er-set', 'fehlt')
 pruefe(existsSync(join(ROOT, 'node_modules/astro')), 'node_modules', 'fehlt — zuerst `npm ci`')
 
+// Jede Zeile der Auftragsliste braucht einen freigegebenen Bauplan.
+const liste = join(ROOT, 'docs/cloud-run/auftragsliste.md')
+if (existsSync(liste)) {
+  const ordner = readFileSync(liste, 'utf8').split('\n')
+    .map((l) => /^\|\s*`?(\d+\.\d+\.\d+_[a-z0-9_]+)`?\s*\|/.exec(l)?.[1]).filter(Boolean)
+  pruefe(ordner.length > 0, `Auftragsliste: ${ordner.length} Zeile(n)`, 'leer — nichts zu produzieren')
+  for (const o of ordner) {
+    const bp = join(ROOT, 'docs/cloud-run/bauplaene', o + '.md')
+    const text = existsSync(bp) ? readFileSync(bp, 'utf8') : ''
+    pruefe(/\*\*Freigabe:\*\*\s*freigegeben am \d{4}-\d{2}-\d{2}/.test(text), `Bauplan ${o}`, text ? 'nicht freigegeben' : 'fehlt')
+    pruefe(!existsSync(join(ROOT, 'src/data/einheiten', o)), `Ordner ${o} ist frei`, 'existiert bereits unter src/data/einheiten/')
+  }
+}
+
 const branch = git('rev-parse', '--abbrev-ref', 'HEAD')
 pruefe(branch !== 'main', `Branch ${branch}`, 'auf main wird nicht produziert')
 
