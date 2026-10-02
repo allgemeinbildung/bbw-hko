@@ -13,6 +13,8 @@
     "check:nrlp": "node scripts/check-nrlp-consistency.mjs",
     "check:einheiten": "node scripts/check-einheiten.mjs",
     "check:v42": "node scripts/check-v42.mjs",
+    "check:all": "node scripts/check-all.mjs",
+    "abdeckung": "node scripts/abdeckung.mjs",
     "build:sk-labels": "node scripts/build-sk-labels.mjs",
     "sync:situationen": "node scripts/sync-situationen.mjs",
     "build:einheiten-index": "node scripts/build-einheiten-index.mjs",
