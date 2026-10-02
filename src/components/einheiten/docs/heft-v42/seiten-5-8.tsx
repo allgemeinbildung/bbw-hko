@@ -283,9 +283,10 @@ export function Seite8(props: HeftSeiteProps) {
       {(sit.mindmap_aeste?.length ?? 0) > 0 && (
         <>
           <p className="v42-arbeitsanweisung">
-            Verbinden Sie die Begriffe mit Linien und beschriften Sie jede Verbindung — mindestens
-            fünf. Eine Verbindung führt zum Ast «{transferTitel}», und mindestens zwei Begriffe
-            stammen aus Ihrem Raster auf S. 3.
+            Verbinden Sie die Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei
+            Begriffe zusammenhängen — mindestens fünf Verbindungen. Ergänzen Sie mindestens zwei
+            Begriffe aus Ihrem Raster (S. 3). Tragen Sie im Feld «{transferTitel}» ein, wo dasselbe
+            sonst noch gilt, und führen Sie eine Verbindung dorthin.
           </p>
           <Mindmap sit={sit} />
         </>
@@ -308,7 +309,8 @@ export function Seite8(props: HeftSeiteProps) {
       )}
       {mitnahme.length > 0 && (
         <section className="v42-mitnahme">
-          <div className="v42-kasten-label">Mitnahme in den gemeinsamen Auftrag</div>
+          <div className="v42-kasten-label">Mitnahme in den gemeinsamen Auftrag (Woche 3)</div>
+          <p className="v42-arbeitsanweisung">Diese drei Zeilen brauchen Sie in Woche 3 wieder.</p>
           {mitnahme.map((m, i) => {
             const [wert, setze] = eingabe(props, `mitnahme_${i}`)
             return (

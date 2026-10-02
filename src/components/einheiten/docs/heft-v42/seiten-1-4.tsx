@@ -62,6 +62,15 @@ function laenge(q: Quelle): string {
   return ''
 }
 
+/**
+ * Zeile «Länge» der Quellenkarte (S. 3). Eine Grafik hat keine Länge im Sinn von
+ * «114 Wörter» — dort steht der Umfang: «1 Seite, rund 114 Wörter Text».
+ */
+function laengeZeile(q: Quelle): { etikett: string; wert: string } {
+  if (q.typ === 'grafik') return { etikett: 'Umfang', wert: `1 Seite${q.woerter ? `, rund ${q.woerter} Wörter Text` : ''}` }
+  return { etikett: 'Länge', wert: laenge(q) }
+}
+
 /** Absätze (Text) oder «mm:ss–mm:ss» (Audio/Video). */
 function verortung(q: Quelle): string {
   const v = q.verortung
@@ -264,7 +273,7 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, c
 /** Quellenkarte der Pflichtquelle (S. 3): Etikett, Titel, Herausgeber + Datum, Kurzbeschrieb, Verortung, Länge, kleiner QR. */
 function Quellenkarte({ q, sit }: { q: Quelle; sit: SituationJson }) {
   const ort = verortung(q)
-  const lang = laenge(q)
+  const { etikett, wert: lang } = laengeZeile(q)
   return (
     <Kasten label={`Pflichtquelle · ${typEtikett(q)}`} className="v42-quellenkarte">
       <div className="v42-quellenkarte-zeile">
@@ -275,7 +284,7 @@ function Quellenkarte({ q, sit }: { q: Quelle; sit: SituationJson }) {
           <p className="v42-q-meta">
             {ort && <><strong>Ausschnitt:</strong> {ort}</>}
             {ort && lang && ' · '}
-            {lang && <><strong>Länge:</strong> {lang}</>}
+            {lang && <><strong>{etikett}:</strong> {lang}</>}
           </p>
         </div>
         <div className="v42-qr-klein">
@@ -418,8 +427,8 @@ export function Seite1({ sit }: HeftSeiteProps) {
       )}
 
       <p className="v42-anweisung">
-        <strong>So starten Sie:</strong> Lesen Sie die Situation genau. Markieren Sie die Fragen,
-        die darin noch offen sind — am Ende des Hefts haken Sie sie ab.
+        <strong>So starten Sie:</strong> Lesen Sie die Situation genau. Markieren Sie, was Sie noch
+        nicht wissen oder können — am Ende des Hefts prüfen Sie es im Quer-Check (S. 8).
       </p>
     </>
   )
@@ -479,6 +488,7 @@ export function Seite3(props: HeftSeiteProps) {
         <section className="v42-auftrag">
           <Mini>Auftrag</Mini>
           <p>{auftrag}</p>
+          {spalten.length > 0 && <p className="v42-s3-hilfe">→ Hilfe: Methodenkarte zum Raster auf S. 6</p>}
         </section>
       )}
 

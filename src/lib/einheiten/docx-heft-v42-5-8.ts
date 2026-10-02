@@ -267,9 +267,9 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
   if ((sit.mindmap_aeste?.length ?? 0) > 0) {
     const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
     els.push(anweisung(
-      `Verbinden Sie die Begriffe mit Linien und beschriften Sie jede Verbindung — mindestens fünf. Eine Verbindung führt zum Ast «${transferTitel}», und mindestens zwei Begriffe stammen aus Ihrem Raster auf S. 3.`,
+      `Verbinden Sie die Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen. Ergänzen Sie mindestens zwei Begriffe aus Ihrem Raster (S. 3). Tragen Sie im Feld «${transferTitel}» ein, wo dasselbe sonst noch gilt, und führen Sie eine Verbindung dorthin.`,
     ))
-    els.push(mindmapTabelle(sit, ctx), abstand(140))
+    els.push(mindmapTabelle(sit, ctx), abstand(60))
   }
 
   const quercheck = (sit.abschluss?.quercheck || []).filter(Boolean)
@@ -280,23 +280,28 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
       spacing: { before: 20, after: 40 },
       border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 2 } },
     })))
-    els.push(abstand())
+    els.push(abstand(60))
   }
 
   const mitnahme = (sit.abschluss?.mitnahme || []).filter(Boolean)
   if (mitnahme.length) {
-    els.push(label('Mitnahme in den gemeinsamen Auftrag', ctx))
+    els.push(label('Mitnahme in den gemeinsamen Auftrag (Woche 3)', ctx))
+    els.push(anweisung('Diese drei Zeilen brauchen Sie in Woche 3 wieder.'))
+    // Beschriftung unten in der Zelle, ohne Innenabstand unten: die Grundlinie sitzt
+    // bündig auf der eigenen Schreiblinie (Unterkante der rechten Zelle), nicht mittig
+    // zwischen zwei Linien — wie .v42-mitnahme-zeile im HTML.
+    const unten = { top: 0, bottom: 20, left: 0, right: 100 }
     els.push(new Table({
       width: pct(100),
       rows: mitnahme.map((m) => new TableRow({
         cantSplit: true,
         height: { value: Math.round(9 * 56.6929), rule: HeightRule.ATLEAST },
         children: [
-          tcell(p(m, { run: { bold: true, size: 19 }, spacing: { after: 0 } }), { width: pct(30), verticalAlign: VerticalAlign.BOTTOM, borders: { top: KEIN, left: KEIN, right: KEIN, bottom: KEIN } }),
-          tcell(p(''), { width: pct(70), borders: { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 6, color: COLOR.inkSoft } } }),
+          tcell(p(m, { run: { bold: true, size: 19 }, spacing: { before: 0, after: 0 } }), { width: pct(30), verticalAlign: VerticalAlign.BOTTOM, margins: unten, borders: { top: KEIN, left: KEIN, right: KEIN, bottom: KEIN } }),
+          tcell(p('', { spacing: { before: 0, after: 0 } }), { width: pct(70), verticalAlign: VerticalAlign.BOTTOM, margins: { ...unten, right: 0 }, borders: { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 6, color: COLOR.inkSoft } } }),
         ],
       })),
-    }), abstand())
+    }), abstand(60))
   }
 
   // Bestand: Checkliste Vollständigkeit (Produkt · Kriterien, ✔ … ☐) — wie im HTML.

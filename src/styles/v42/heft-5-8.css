@@ -162,13 +162,15 @@
 
 /* Mitnahme: Beschriftung links, eine Schreiblinie rechts. Die Zeile ist ein .feld (die
    Shell speichert sie), aber ohne Karo und Rahmen. Die Linie ist ein Hintergrundverlauf,
-   kein Rand: der Druck-CSS des Renderers nimmt jedem .feld den Rand weg. */
+   kein Rand: der Druck-CSS des Renderers nimmt jedem .feld den Rand weg.
+   Die Beschriftung sitzt mit der Grundlinie auf der Höhe ihrer eigenen Linie (bündig),
+   nicht mittig zwischen zwei Linien — sonst liest man die Linie als die der nächsten Zeile. */
 .v42-s8 .v42-mitnahme-zeile { display: grid; grid-template-columns: 50mm 1fr; column-gap: 3mm; align-items: end; }
-.v42-s8 .v42-mitnahme-label { font-size: 9.5pt; font-weight: 600; padding-bottom: 1mm; }
+.v42-s8 .v42-mitnahme-label { font-size: 9.5pt; font-weight: 600; line-height: 1.1; padding-bottom: 0.6mm; }
 .v42-s8 .feld.v42-zeile {
   margin-top: 0;
-  min-height: 8.5mm;
-  padding: 1mm 1mm 0.8mm;
+  min-height: 9mm;
+  padding: 1mm 1mm 0.6mm;
   border: 0; border-radius: 0;
   background: linear-gradient(to top, var(--ink-soft) 0 0.75pt, transparent 0.75pt);
   font-size: 10.5pt; line-height: 6.5mm;

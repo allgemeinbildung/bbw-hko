@@ -61,6 +61,12 @@ function laenge(q: Quelle): string {
   return ''
 }
 
+/** Zeile «Länge» der Quellenkarte; bei einer Grafik der Umfang (wie laengeZeile() im HTML). */
+function laengeZeile(q: Quelle): { etikett: string; wert: string } {
+  if (q.typ === 'grafik') return { etikett: 'Umfang', wert: `1 Seite${q.woerter ? `, rund ${q.woerter} Wörter Text` : ''}` }
+  return { etikett: 'Länge', wert: laenge(q) }
+}
+
 function verortung(q: Quelle): string {
   const v = q.verortung
   if (!v) return ''
@@ -441,7 +447,7 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
   els.push(new Paragraph({
     children: [
       new TextRun({ text: 'So starten Sie: ', bold: true, size: 19 }),
-      new TextRun({ text: 'Lesen Sie die Situation genau. Markieren Sie die Fragen, die darin noch offen sind — am Ende des Hefts haken Sie sie ab.', size: 19 }),
+      new TextRun({ text: 'Lesen Sie die Situation genau. Markieren Sie, was Sie noch nicht wissen oder können — am Ende des Hefts prüfen Sie es im Quer-Check (S. 8).', size: 19 }),
     ],
     border: { top: { style: BorderStyle.SINGLE, size: 6, color: COLOR.ink, space: 4 } },
     spacing: { before: 120, after: 0 },
@@ -478,11 +484,11 @@ export function seite3Docx(ctx: HeftDocxKontext): Block[] {
 
   if (pflicht) {
     const ort = verortung(pflicht)
-    const lang = laenge(pflicht)
+    const { etikett, wert: lang } = laengeZeile(pflicht)
     const meta: TextRun[] = []
     if (ort) meta.push(new TextRun({ text: 'Ausschnitt: ', bold: true, size: 18 }), new TextRun({ text: ort, size: 18, color: COLOR.inkSoft }))
     if (ort && lang) meta.push(new TextRun({ text: ' · ', size: 18, color: COLOR.inkSoft }))
-    if (lang) meta.push(new TextRun({ text: 'Länge: ', bold: true, size: 18 }), new TextRun({ text: lang, size: 18, color: COLOR.inkSoft }))
+    if (lang) meta.push(new TextRun({ text: `${etikett}: `, bold: true, size: 18 }), new TextRun({ text: lang, size: 18, color: COLOR.inkSoft }))
     els.push(kasten(`Pflichtquelle · ${typEtikett(pflicht)}`, [zweiSpalten(
       [
         p(pflicht.titel, { run: { bold: true, size: 21 }, spacing: { after: 20 } }),
@@ -506,12 +512,14 @@ export function seite3Docx(ctx: HeftDocxKontext): Block[] {
     els.push(spacer(60))
   }
 
+  const spalten = raster?.spalten ?? []
   if (auftrag) {
     els.push(mini('Auftrag', ctx))
-    els.push(p(auftrag, { run: { size: 20 }, spacing: { after: 120 } }))
+    els.push(p(auftrag, { run: { size: 20 }, spacing: { after: spalten.length ? 40 : 120 } }))
+    // Verweis auf die Methodenkarte (S. 6) — Rahmenschrift wie der Verweis auf S. 5.
+    if (spalten.length) els.push(p('→ Hilfe: Methodenkarte zum Raster auf S. 6', { run: { italics: true, size: 18, color: COLOR.inkSoft }, spacing: { after: 120 } }))
   }
 
-  const spalten = raster?.spalten ?? []
   if (spalten.length) {
     els.push(mini(`Raster${beispiel ? ' · die erste Zeile ist ein Beispiel' : ''}`, ctx))
     els.push(ausfuellTabelle(spalten, (raster?.zeilen ?? 4) - (beispiel ? 1 : 0), 13, ctx, beispiel))
