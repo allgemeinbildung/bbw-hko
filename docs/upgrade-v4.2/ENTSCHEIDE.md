@@ -687,22 +687,22 @@ Ein Block trägt genau eine der vier Arten (`eintraege` · `kopf`/`zeilen` ·
 weiter zwei oder drei Blöcke, Titel und Legende wie bisher. Budgets für die
 neuen Arten werden am gerenderten Blatt gemessen (S. 6 des Hefts ist eng) und
 stehen danach in `check-v42.mjs` (`ERR_V42_PRODUKTBILD`).
-**Gemessen (02.10.2026, an einer Wegwerf-Kopie der Gold-Einheit; in  als ), Zeichen je Block über alle Absätze bzw. Beiträge:**
+**Gemessen (02.10.2026, an einer Wegwerf-Kopie der Gold-Einheit; in `check-v42.mjs` als `PB_E26`), Zeichen je Block über alle Absätze bzw. Beiträge:**
 
 | Blockart | Blatt | bei 2 Blöcken | bei 3 Blöcken |
 |---|---|---|---|
-|  | Beispiel im Heft (S. 6) | ≤ 4 Absätze, ≤ 520 Zeichen | ≤ 3 Absätze, ≤ 320 Zeichen |
-|  | Beispiel im Heft (S. 6) | ≤ 5 Beiträge, ≤ 360 Zeichen | ≤ 5 Beiträge, ≤ 180 Zeichen |
-|  | Lösungsbild | ≤ 5 Absätze, ≤ 1100 Zeichen | ≤ 5 Absätze, ≤ 750 Zeichen |
-|  | Lösungsbild | ≤ 8 Beiträge, ≤ 550 Zeichen | ≤ 6 Beiträge, ≤ 240 Zeichen |
+| `text` | Beispiel im Heft (S. 6) | ≤ 4 Absätze, ≤ 520 Zeichen | ≤ 3 Absätze, ≤ 320 Zeichen |
+| `wechsel` | Beispiel im Heft (S. 6) | ≤ 5 Beiträge, ≤ 360 Zeichen | ≤ 5 Beiträge, ≤ 180 Zeichen |
+| `text` | Lösungsbild | ≤ 5 Absätze, ≤ 1100 Zeichen | ≤ 5 Absätze, ≤ 750 Zeichen |
+| `wechsel` | Lösungsbild | ≤ 8 Beiträge, ≤ 550 Zeichen | ≤ 6 Beiträge, ≤ 240 Zeichen |
 
- ≤ 12 Zeichen. Gemischte Blätter (Text neben Tabelle oder Liste)
-sind nicht abgetastet — dort entscheidet . Zu E25 kam dazu:
- ≤ 30 Zeichen.
+`wechsel[].wer` ≤ 12 Zeichen. Gemischte Blätter (Text neben Tabelle oder Liste)
+sind nicht abgetastet — dort entscheidet `messen-v42.mjs`. Zu E25 kam dazu:
+`dauer` ≤ 30 Zeichen.
 **Ergebnis der Bedingung (E25 und E26):** Gold-Export vorher und nachher — neun
-von neun HTML-Dateien bytegleich,  der Hefte, Lösungen und
-des Auftragsbogens gleich;  «26 Dokumente unverändert»;
- auf Gold grün; Build Exit 0. Das Stylesheet ist nicht angefasst
+von neun HTML-Dateien bytegleich, `word/document.xml` der Hefte, Lösungen und
+des Auftragsbogens gleich; `bestand-v42 --pruefen` «26 Dokumente unverändert»;
+`check-all` auf Gold grün; Build Exit 0. Das Stylesheet ist nicht angefasst
 (es steckt in jedem exportierten HTML); die neuen Arten tragen Inline-Stile.
 **Nicht geprüft:** Aussehen in Word (nur Seiten gezählt), Workbench im Browser.
 **Rückgängig:** `git revert` des Commits; die Felder sind additiv.
