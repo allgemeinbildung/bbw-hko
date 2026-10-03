@@ -1,0 +1,925 @@
+{
+  "id": "2.2.1_meinungsfreiheit_reflektieren_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten — Meinungsfreiheit reflektieren",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Wer gehört dazu – und wer bestimmt mit?",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Standpunkt zur Einbürgerung vertreten"
+  },
+  "prinzip_ref": "2.2.1_meinungsfreiheit_reflektieren_prinzip",
+  "nrlp": {
+    "nr": "2.2.2",
+    "nr_primary": [
+      "2.2.2"
+    ],
+    "lebensbezug": "2.2",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM4",
+      "SM5"
+    ],
+    "sk": [
+      7,
+      6,
+      12
+    ],
+    "kompetenz_id": "2.2.2",
+    "lebensbezug_id": "2.2",
+    "kompetenz_text": "Ich kann aus Gesprächen und Medienbeiträgen unterschiedliche (politische) Perspektiven nachvollziehen, daraus eigene Standpunkte entwickeln und diese sprachlich klar und nachvollziehbar ausdrücken.",
+    "lebensbezug_text": "Ich erlebe Diskussionen über Ungleichbehandlung und Ausgrenzung und frage mich, was gesagt werden darf und wie ich mich dabei verhalte."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Am Samstag sitzen wir zu viert bei einer Kollegin, die gerade 18 geworden ist. Auf dem Tisch liegt ihr erstes Stimmcouvert. Ein Kollege aus unserer Runde, auch schon 18, ist hier geboren und mit uns zur Schule gegangen; er bekommt keines, weil er nicht eingebürgert ist. Die Kollegin findet: Wer hier aufgewachsen ist, soll ohne grosse Hürden dazugehören und mitbestimmen. Ein anderer aus der Runde hält dagegen: Den Schweizer Pass muss man sich verdienen, er steht am Schluss und nicht am Anfang. Der Kollege, um den es geht, sagt nichts. Dann fragen beide mich, was ich denke. Ich verstehe beide ein Stück weit und will trotzdem nicht ausweichen. Wir machen ab: Am nächsten Samstag sagt jede und jeder in einer Minute, wie sie oder er dazu steht. Bis dann will ich klären, was heute für eine Einbürgerung gilt, was hinter den zwei Sichtweisen steckt und wo ich selbst stehe.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Soll der Weg zum Schweizer Pass leichter werden — und wie sage ich meine Meinung, wenn einer, den es betrifft, mit am Tisch sitzt?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Zugehörigkeit als Recht vs. Zugehörigkeit als Leistung",
+    "hint": "Wer hier lebt, soll mitbestimmen – oder der Pass steht am Ende eines Wegs, den man gehen muss. Beides lässt sich begründen. Wo stehen Sie?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Einbürgerung",
+      "seiten": "Seite 112 und 115",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 18.2",
+      "titel": "Werte, Normen, Moral und Ethik",
+      "unterueberschrift": "Wert, Norm, Dilemma",
+      "seiten": "Seite 413-415",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 18.3",
+      "titel": "Perspektivenwechsel",
+      "unterueberschrift": "Empathie",
+      "seiten": "Seite 419",
+      "fuer_leitfrage": [
+        2
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Schluss steht Ihre Stellungnahme, die Sie als Votum vortragen. LF1 liefert die Begriffe und Regeln für die Einleitung, LF2 die zwei Sichtweisen mit Wert und Interesse, LF3 die Belege für den Hauptteil, LF4 Ihren Standpunkt mit der Antwort auf den stärksten Einwand.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.4 | S. 112 und 115",
+      "text": "Erklären Sie mit S. 112 den Unterschied zwischen Assimilation und Integration. Nennen Sie mit S. 115 die vier Voraussetzungen, die der Bund für eine Einbürgerung verlangt.",
+      "liefert": "Begriffe und Regeln für die Einleitung",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie auf S. 112 die zwei Definitionen und markieren Sie, was sie trennt.",
+          "Die vier Voraussetzungen stehen auf S. 115 im Kasten – notieren Sie Stichworte."
+        ],
+        "satzanfaenge": [
+          "«Bei der Assimilation …, bei der Integration dagegen …»",
+          "«Für eine Einbürgerung verlangt der Bund erstens …»"
+        ],
+        "produkt": "Für die Einleitung genügt ein Satz zur Sachlage – wählen Sie aus, was Ihre Frage erklärt."
+      },
+      "loesung": {
+        "kern": "Zwei Begriffe der Anpassung, vier Voraussetzungen",
+        "zeilen": [
+          {
+            "label": "Assimilation",
+            "text": "Wer aus einer anderen Kultur kommt, gleicht sich der neuen ganz an und gibt die Bindung an die Herkunft auf.",
+            "quelle": "Kap. 3.4, S. 112"
+          },
+          {
+            "label": "Integration",
+            "text": "Anpassung an das neue Umfeld, aber Teile der eigenen Kultur bleiben erhalten.",
+            "quelle": "Kap. 3.4, S. 112"
+          },
+          {
+            "label": "Unterschied",
+            "text": "Er liegt im Mass: ganz oder teilweise. Die Seite hält fest, dass umstritten ist, wie weit die Anpassung gehen muss – daran hängt der Streit der Runde.",
+            "quelle": "Kap. 3.4, S. 112"
+          },
+          {
+            "label": "Voraussetzungen",
+            "text": "Zehn Jahre Aufenthalt; erfolgreiche Integration (Landessprache können, Sicherheit und Ordnung beachten, die Verfassung respektieren, arbeiten oder sich bilden); mit den Lebensverhältnissen im Land vertraut sein; keine Gefahr für die Sicherheit des Landes.",
+            "quelle": "Kap. 3.4, S. 115"
+          },
+          {
+            "label": "Auch gültig",
+            "text": "Eingebürgert wird in der Gemeinde: Wer das Gemeindebürgerrecht erwirbt, ist damit Schweizerin oder Schweizer.",
+            "quelle": "Kap. 3.4, S. 115"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Integration und Assimilation werden gleichgesetzt, oder «zehn Jahre» steht als einzige Voraussetzung da."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 18.2 | S. 413-415 · Kap. 18.3 | S. 419 · eigener Fall",
+      "text": "Beschreiben Sie die zwei Sichtweisen aus der Runde so, dass beide zustimmen könnten: Welcher Wert (S. 413) steht hinter jeder, und wer hat welches Interesse daran? Wo geraten dabei zwei Werte in Konflikt (S. 415)?",
+      "liefert": "zwei Sichtweisen mit Wert und Interesse",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Versetzen Sie sich in jede der zwei Personen (Empathie, S. 419): Was ist ihr wichtig?",
+          "Wert: Ziel, das jemand anstrebt (S. 413). Interesse: was jemand gewinnt oder verliert."
+        ],
+        "satzanfaenge": [
+          "«Wer sagt, …, dem ist … wichtig, weil …»",
+          "«Von dieser Regelung hätte … etwas; verlieren würde …»",
+          "«Für mich stossen hier … und … zusammen.»"
+        ],
+        "produkt": "Die zwei Beschreibungen werden die Behauptungen der zwei Sichtweisen im Hauptteil."
+      },
+      "loesung": {
+        "kern": "Zwei Sichtweisen, je mit Wert und Interesse",
+        "zeilen": [
+          {
+            "label": "Sicht «dazugehören»",
+            "text": "Wert zum Beispiel Gerechtigkeit oder Gleichheit: Wer hier aufgewachsen ist, soll gleich behandelt werden. Interesse (Fallüberlegung): Wer hier lebt und keinen Pass hat, könnte mitbestimmen.",
+            "quelle": "Kap. 18.2, S. 413-414"
+          },
+          {
+            "label": "Sicht «verdienen»",
+            "text": "Wert zum Beispiel Fleiss oder Treue; «Einsatz» ist eigene Benennung. Der Pass schliesst einen Weg ab. Interesse (Fallüberlegung): Wer schon dazugehört, will, dass das Bürgerrecht geprüft wird und etwas bedeutet.",
+            "quelle": "Kap. 18.2, S. 413"
+          },
+          {
+            "label": "Konflikt der Werte",
+            "text": "Dilemma: Wer dem einen Wert folgt, verletzt den anderen – hier etwa Gleichbehandlung gegen Einsatz. Dass verschiedene Wertvorstellungen nebeneinander gelten, heisst Wertepluralismus.",
+            "quelle": "Kap. 18.2, S. 413 und 415"
+          },
+          {
+            "label": "Norm",
+            "text": "Auch gültig: Die Voraussetzungen aus LF1 sind Normen – Regeln, die einen Wert umsetzen.",
+            "quelle": "Kap. 18.2, S. 414"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Beide Personen würden ihrer Beschreibung zustimmen; das verlangt, sich in ihre Gedanken und Gefühle hineinzuversetzen.",
+            "quelle": "Kap. 18.3, S. 419"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Die andere Seite erscheint als Zerrbild oder Vorwurf. «Interesse» ist im Lehrmittel nicht definiert."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Stellungnahme zu einer strittigen Frage (110–130 Wörter) mit zwei Sichtweisen und eigenem Standpunkt im Schluss, vorgetragen als Votum von einer Minute",
+    "titel": "Meine Stellungnahme – und mein Votum in der Runde",
+    "format_detail": "Sie schreiben eine Stellungnahme von 110 bis 130 Wörtern: Titel als Entscheidungsfrage, Einleitung (worum es geht), Hauptteil mit zwei Sichtweisen – je Behauptung, Begründung und Beispiel, die stärkere zuletzt –, Schluss mit Ihrem Standpunkt in Ich-Form und einem Satz dazu, was die andere Seite richtig sieht. Dazu schreiben Sie einen Stichwortzettel und tragen Ihren Standpunkt in einer Runde zu viert als Votum von einer Minute vor; auf eine Rückfrage antworten Sie einmal.",
+    "beschreibung": "Ich schreibe meine Stellungnahme für die drei anderen in der Runde, trage sie als Votum von einer Minute vor und antworte auf eine Rückfrage – so, dass auch der zuhören kann, den es betrifft.",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "LF1: Wählen Sie aus Begriffen und Voraussetzungen, was die Frage erklärt – ein Satz zur Sachlage wird Ihre Einleitung."
+      },
+      {
+        "label": "02 Sichtweisen beschreiben",
+        "hint": "LF2: Beschreiben Sie beide Stimmen der Runde mit Wert und Interesse – das werden die zwei Behauptungen im Hauptteil."
+      },
+      {
+        "label": "03 Hauptteil belegen",
+        "hint": "LF3: Je Sichtweise genügen zwei bis drei kurze Sätze: Behauptung, Begründung, Beispiel oder Beleg aus dem Raster."
+      },
+      {
+        "label": "04 Standpunkt festlegen",
+        "hint": "LF4: Schreiben Sie den Schluss in Ich-Form: Standpunkt, Antwort auf den stärksten Einwand, ein Satz zur anderen Seite."
+      },
+      {
+        "label": "05 Votum halten und prüfen",
+        "hint": "Stichwortzettel auf S. 7; Votum in der Runde zu viert in der Klasse, eine Person fragt zurück. Die zwei Kriterien gelten der Stellungnahme."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Stellungnahme (110–130 Wörter): Frage, 2 Sichtweisen, eigener Standpunkt",
+      "Votum von 1 Minute in der Runde, mit Antwort auf eine Rückfrage"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel, gekürzt: nur 1 von 2 Sichtweisen – Ihre hat beide und 110–130 Wörter",
+      "legende": [
+        {
+          "key": "sichtweise",
+          "text": "Sichtweise"
+        },
+        {
+          "key": "argument",
+          "text": "Argument"
+        },
+        {
+          "key": "standpunkt",
+          "text": "Standpunkt"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Stellungnahme",
+          "text": [
+            "Sportplatz am Abend: offen für alle oder zu? Die Gemeinde will ihn ab 20 Uhr abschliessen.",
+            "Die einen wollen ihn offen lassen: Jugendliche brauchen am Abend einen Treffpunkt, der nichts kostet. Im Sommer spielen dort jeden Abend zwei Gruppen.",
+            "Ich bin dafür, dass er offen bleibt, aber nur bis 22 Uhr. Die andere Seite hat recht: Wer daneben wohnt, braucht nachts Ruhe."
+          ]
+        },
+        {
+          "titel": "Stichwortzettel fürs Votum",
+          "eintraege": [
+            {
+              "marke": "sichtweise",
+              "text": "offen lassen · ab 20 Uhr zu"
+            },
+            {
+              "marke": "argument",
+              "text": "Treffpunkt ohne Kosten – zwei Gruppen jeden Abend"
+            },
+            {
+              "marke": "standpunkt",
+              "text": "Ich: offen bis 22 Uhr; Nachtruhe zählt"
+            },
+            {
+              "text": "Rückfrage: «Wer schliesst ab?» – der Platzwart"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Soll der Weg zum Schweizer Pass leichter werden?",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Der Standpunkt «bleiben, wie es ist» ist ebenso tragfähig (zweites Beispiel bei LF4). Zeigen Sie das Bild erst nach den Voten. Die Sachaussagen zur Einbürgerung stützen sich nur auf Kap. 3.4, S. 115, die Werte auf Kap. 18.2; der Text passt darum zu jeder Fassung des Hefts; wer mit der Quelle arbeitet, belegt zusätzlich mit Zeitmarken. Das Beispiel nennt bewusst niemanden aus der Runde. Annahme: Die erwartete Rückfrage auf dem Stichwortzettel ist erfunden.",
+      "legende": [
+        {
+          "key": "sichtweise",
+          "text": "Sichtweise"
+        },
+        {
+          "key": "argument",
+          "text": "Argument"
+        },
+        {
+          "key": "standpunkt",
+          "text": "Standpunkt"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Stellungnahme",
+          "text": [
+            "Soll der Weg zum Schweizer Pass leichter werden?",
+            "Heute verlangt der Bund für die Einbürgerung zehn Jahre Aufenthalt und erfolgreiche Integration.",
+            "Die einen sagen: Den Pass muss man sich verdienen. Er schliesst die Integration ab. Wer die Sprache spricht und arbeitet oder eine Lehre macht, zeigt seinen Einsatz.",
+            "Die anderen sagen: Wer hier aufgewachsen ist, gehört schon dazu. Wer mit uns zur Schule ging, lebt, arbeitet und lernt hier und bekommt trotzdem kein Stimmcouvert.",
+            "Ich finde, der Weg soll für alle leichter werden, die hier aufgewachsen sind. Dem Einwand, der Pass verliere so an Wert, antworte ich: Geprüft wird weiter, aber was jemand getan hat, nicht die Wartezeit. So wartet niemand auf ein Recht, das er längst lebt. Recht hat die andere Seite darin, dass Dazugehören Einsatz verlangt."
+          ]
+        },
+        {
+          "titel": "Stichwortzettel fürs Votum",
+          "eintraege": [
+            {
+              "marke": "sichtweise",
+              "text": "Sicht 1: Pass verdienen, Abschluss der Integration · Sicht 2: wer hier aufwächst, gehört dazu"
+            },
+            {
+              "marke": "argument",
+              "text": "Sicht 1 – Wert: Einsatz; Beispiel: Sprache, Arbeit oder Lehre (S. 115)",
+              "notiz": "Behauptung, Begründung, Beispiel"
+            },
+            {
+              "marke": "argument",
+              "text": "Sicht 2 – Wert: Gleichbehandlung; Beispiel: lebt, arbeitet und lernt hier, kein Stimmcouvert"
+            },
+            {
+              "marke": "standpunkt",
+              "text": "Ich: leichter für hier Aufgewachsene; Einwand «Pass verliert an Wert» – geprüft wird weiter"
+            },
+            {
+              "marke": "standpunkt",
+              "text": "Recht hat die andere Seite: Dazugehören verlangt Einsatz"
+            },
+            {
+              "text": "Rückfrage erwartet: «Ab wann ist jemand hier aufgewachsen?» – Antwort: wer hier die Schule besucht hat"
+            },
+            {
+              "text": "Im Votum: über die Regel reden, niemanden aus der Runde als Beispiel nennen"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Keine Begründung erkennbar; Behauptungen stehen ohne Beleg da.",
+        "Begründung ansatzweise vorhanden; Beleg oder Beispiel fehlt weitgehend.",
+        "Begründung nachvollziehbar aufgebaut, mit Beleg oder Beispiel; eine andere Sichtweise ist genannt.",
+        "Begründung schlüssig; der stärkste Einwand ist beantwortet, Folgen sind bedacht."
+      ],
+      "indikator_produkt": "Zwei Sichtweisen, je mit Begründung und Beispiel; der stärkste Einwand ist beantwortet"
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Keine eigene Position erkennbar.",
+        "Eigene Position angedeutet, aber nicht klar formuliert oder nicht begründet.",
+        "Eigene Position klar in Ich-Form formuliert und begründet.",
+        "Eigene Position in Ich-Form begründet; das Spannungsfeld ist anerkannt, die andere Sicht fair gewürdigt."
+      ],
+      "indikator_produkt": "Der Standpunkt steht in Ich-Form und nennt, was die andere Sicht richtig sieht"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine gekürzte Stellungnahme mit Stichwortzettel; die Satzanfänge bei den Leitfragen helfen beim Formulieren.",
+    "scaffold_100": "Halten Sie Ihr Votum ein zweites Mal vom Standpunkt der Gegenseite aus – so überzeugend, dass diese zustimmen würde."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-3-stellungnahme",
+      "fuer": "für den Bau der Stellungnahme: Frage, Einleitung, Hauptteil, Schluss",
+      "tun": "Setzen Sie Ihre Entscheidungsfrage als Titel. Die Einleitung sagt, worum es geht; Ihr Standpunkt steht erst im Schluss."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für jede der zwei Sichtweisen im Hauptteil und für das Votum",
+      "tun": "Bauen Sie jede Sichtweise aus Behauptung, Begründung und Beispiel – auch die, die Sie nicht teilen."
+    },
+    {
+      "ref": "lm-16-1-diskussion",
+      "fuer": "für das Votum in der Runde und die Antwort auf die Rückfrage",
+      "tun": "Sprechen Sie in der Ich-Form, greifen Sie die Sache an, nicht die Person, und gehen Sie auf die Rückfrage ein, bevor Sie weiterreden."
+    }
+  ],
+  "mindmap_zentrum": "Meinung aushalten oder Grenze ziehen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wer gehört dazu?",
+      "punkte": [
+        "Integration",
+        "Assimilation",
+        "Einbürgerung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was steckt hinter einer Sicht?",
+      "punkte": [
+        "Wert",
+        "Norm",
+        "Interesse",
+        "Dilemma",
+        "Empathie"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie sage ich es?",
+      "punkte": [
+        "Stellungnahme",
+        "3B-Schema"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Kann ich beide Sichtweisen so beschreiben, dass beide Seiten zustimmen würden (LF2)?",
+      "Steht im Schluss, wo ich stehe – und habe ich im Votum niemanden zum Beispiel gemacht?"
+    ],
+    "mitnahme": [
+      "Zwei Sichtweisen fair wiedergeben",
+      "Standpunkt erst nach dem Abwägen, dann klar",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Integration",
+          "nach": "Einbürgerung",
+          "text": "ist Voraussetzung für"
+        },
+        {
+          "von": "Assimilation",
+          "nach": "Integration",
+          "text": "geht weiter als"
+        },
+        {
+          "von": "Wert",
+          "nach": "Norm",
+          "text": "wird umgesetzt durch"
+        },
+        {
+          "von": "Wert",
+          "nach": "Dilemma",
+          "text": "gerät mit einem anderen Wert in Konflikt: das ist ein"
+        },
+        {
+          "von": "Empathie",
+          "nach": "Interesse",
+          "text": "hilft zu erkennen"
+        },
+        {
+          "von": "3B-Schema",
+          "nach": "Stellungnahme",
+          "text": "baut die Argumente der"
+        },
+        {
+          "von": "Dilemma",
+          "nach": "Stellungnahme",
+          "text": "verlangt einen Entscheid im Schluss der"
+        },
+        {
+          "von": "Stellungnahme",
+          "nach": "gilt auch bei …",
+          "text": "passt zu jeder strittigen Frage"
+        }
+      ],
+      "transfer": "Jede Abstimmungsfrage, zu der ich mir eine Meinung bilden muss; ein Streit in der Klasse über eine Regel für alle; eine Entscheidung in der Familie, die alle betrifft.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Gemeindebürgerrecht",
+          "Landessprache"
+        ],
+        "mit_medien": [
+          "Teilhabe",
+          "Bürgerrecht"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn die Beschreibung aus LF2 je einen Wert und ein Interesse nennt und ohne Vorwurf auskommt – im Lösungsbild die Absätze 3 und 4 der Stellungnahme («Die einen sagen …», «Die anderen sagen …»).",
+        "Ja, wenn der Schluss in Ich-Form «leichter» oder «bleiben» sagt und den Einwand beantwortet (LF4) und das Votum über die Regel spricht, nicht über eine Person in der Runde (Schritt 05)."
+      ],
+      "mitnahme": [
+        "Erst Wert und Interesse beider Seiten beschreiben, dann urteilen",
+        "Standpunkt im Schluss, in Ich-Form, mit Antwort auf den stärksten Einwand",
+        "Zum Beispiel: Wie antworte ich, wenn die Rückfrage persönlich wird?"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: zwei Begriffe, vier Voraussetzungen",
+        "LF2: zwei Sichtweisen mit Wert und Interesse",
+        "LF4: Standpunkt, Einwand, Antwort"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Stellungnahme und Votum",
+      "vollstaendig_wenn": [
+        "Stellungnahme, 110–130 Wörter, 2 Sichtweisen",
+        "Stichwortzettel fürs Votum (S. 7)",
+        "Votum von 1 Minute, Rückfrage beantwortet"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Begriffe klären (LF1), zwei Sichtweisen beschreiben (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Raster zur Quelle (LF3), Standpunkt festlegen (LF4), Stellungnahme beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Stellungnahme fertig schreiben, Votum halten, Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich zwei Sichtweisen fair wiedergeben, bevor ich sage, wo ich stehe – auch wenn jemand zuhört, den die Frage persönlich trifft?",
+    "ziel": "Die Meinungsfreiheit schützt auch Meinungen, die mir nicht passen; bevor ich meine eigene begründe, muss ich die andere Sichtweise aushalten, prüfen und fair wiedergeben."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Zugehörigkeit als Recht oder als Leistung: zwei Sichtweisen fair wiedergeben, dann den eigenen Standpunkt begründen",
+    "lehrmittel_anker": "Kap. 3.4 S. 112 (Assimilation, Integration) und S. 115 (Einbürgerung, Voraussetzungen); Kap. 18.2 S. 413-415 (Wert, Wertepluralismus, Norm, Dilemma); Kap. 18.3 S. 419 (Empathie); Methoden: Kap. 17.3 S. 393-394 und 396 (Stellungnahme, 3B-Schema, Kommentar), Kap. 16.1 S. 366-367 (Diskussion)",
+    "kn_aktivierung": "Der KN verlangt aus diesem Heft, den Vorschlag der Hausversammlung zur Mitbestimmung über den Gemeinschaftsraum als Frage der Zugehörigkeit zu lesen: beide Sichtweisen mit ihrem Wert beschreiben und in Ich-Form Stellung nehmen, mit einem Satz dazu, was die andere Seite richtig sieht.",
+    "transfer_check": "Kann die Lernende zu einer neuen strittigen Frage zwei Sichtweisen mit Wert und Interesse beschreiben und ihren Standpunkt in Ich-Form begründen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "leitfragen[1] + leitfragen[2] — zwei Sichtweisen so beschreiben und belegen, dass die Person, die sie vertritt, zustimmen würde"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — den eigenen Standpunkt gegen den stärksten Einwand begründen"
+    },
+    {
+      "sk": 12,
+      "wo": "handlungsprodukt.schritte[4] + Produkt — mit Stellungnahme und Votum einen eigenen Beitrag zu einer politischen Frage leisten"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 3.4 | S. 115",
+          "text": "Werten Sie Ihr Raster zu S. 115 aus: Welche Aussage stützt eher «dazugehören ohne grosse Hürden», welche eher «den Pass verdienen»? Halten Sie in zwei bis drei Sätzen fest, was Sie daraus für Ihren Hauptteil ableiten.",
+          "liefert": "Belege für beide Sichtweisen im Hauptteil",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 3.4 | S. 115",
+            "auftrag": "Lesen Sie Kap. 3.4, S. 115 (Text, Kasten und Bildlegende). Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen zur Einbürgerung und ordnen Sie je einen Begriff aus LF1 oder dem Glossar (S. 8) zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 115, Abs. 1",
+              "Gemeinde bürgert ein",
+              "«Gemeindebürgerrecht»",
+              "Einbürgerung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Für «dazugehören»: Lesen Sie, was bei einer Ablehnung gilt und was unter dem Bild steht."
+            ],
+            "satzanfaenge": [
+              "«Laut S. 115 gilt heute …»",
+              "«Das stützt die Sicht …, weil …»",
+              "«In meinen Hauptteil nehme ich …»"
+            ],
+            "produkt": "Je Sichtweise ein Beleg mit Seite geht als Beispiel in den Hauptteil (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Was S. 115 regelt – und welche Sicht es stützt",
+            "quelle_ref": "Kap. 3.4 | S. 115",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Die Gemeinde vollzieht die Einbürgerung im Rahmen von Bund und Kanton (Abs. 1). Eine Ablehnung braucht eine Begründung und darf weder diskriminieren noch willkürlich sein (Abs. 1). Der Bund verlangt unter anderem zehn Jahre Aufenthalt und erfolgreiche Integration (Kasten). Die Bildlegende nennt die Hürden relativ hoch.",
+                "quelle": "Kap. 3.4, S. 115"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Geprüft wird durch Gemeinderat, Kommission oder Gemeindeversammlung (Abs. 1); Vertrautheit mit den Lebensverhältnissen, keine Gefährdung der Sicherheit (Kasten).",
+                "quelle": "Kap. 3.4, S. 115"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Einbürgerung und Integration (LF1), Norm (LF2, Glossar). Welche Aussage welche Sichtweise stützt, ist Deutung der Lernenden: Die Seite nimmt nicht Stellung, ausser mit den Worten «relativ hoch»."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet mindestens zwei Aussagen mit Seite je mit einer Sichtweise aus LF2 und sagt, was davon in den Hauptteil kommt."
+              },
+              {
+                "label": "Hinweis",
+                "text": "S. 115 beschreibt das geltende Recht; Vorschläge, es zu ändern, stehen nicht im Lehrmittel."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 115, Abs. 1",
+                "Gemeinde bürgert ein",
+                "«Gemeindebürgerrecht»",
+                "Einbürgerung"
+              ],
+              [
+                "S. 115, Abs. 1",
+                "Ablehnung nur mit Begründung",
+                "nicht diskriminierend, nicht willkürlich",
+                "Norm"
+              ],
+              [
+                "S. 115, Kasten",
+                "Bund: zehn Jahre, erfolgreiche Integration",
+                "Landessprache, Arbeit oder Bildung",
+                "Integration"
+              ],
+              [
+                "S. 115, Bildlegende",
+                "Hürden gelten als relativ hoch",
+                "Wortlaut «relativ hoch»",
+                "Einbürgerung"
+              ]
+            ],
+            "befund": "Die Gemeinde vollzieht die Einbürgerung nach Vorgaben von Bund und Kanton; der Bund verlangt zehn Jahre Aufenthalt und erfolgreiche Integration (S. 115, Kasten). Das stützt für mich die Sicht, dass der Pass am Ende eines Wegs steht. Dass eine Ablehnung begründet sein muss und die Hürden als relativ hoch gelten, lese ich als Stütze der anderen Sicht – das ist meine Deutung, die Seite sagt es nicht. Beides nehme ich in meinen Hauptteil."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.4 · eigener Standpunkt ↔ stärkster Einwand",
+          "pol_typ": "position_gegenposition",
+          "text": "Soll der Weg zum Pass leichter werden – oder bleiben, wie S. 115 ihn beschreibt? Legen Sie Ihren Standpunkt fest und antworten Sie auf den stärksten Einwand der Sichtweise aus LF2, die Sie nicht teilen.",
+          "liefert": "eigener Standpunkt mit beantwortetem Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Wählen Sie den Einwand, der Sie am meisten zweifeln lässt – nicht den schwächsten."
+            ],
+            "satzanfaenge": [
+              "«Ich finde, der Weg zum Pass soll …, weil …»",
+              "«Der stärkste Einwand dagegen lautet: …»",
+              "«Darauf antworte ich: … Recht hat die andere Seite bei …»"
+            ],
+            "produkt": "Standpunkt, Einwand und Antwort werden der Schluss der Stellungnahme (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Standpunkt ↔ Einwand, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Der Standpunkt steht in Ich-Form und ist eine der zwei Möglichkeiten: leichter oder bleiben.",
+                "Der Einwand ist der stärkste der Gegenseite, kein Zerrbild.",
+                "Die Antwort geht auf den Einwand ein und stützt sich auf einen Begriff oder eine Regel mit Seite (LF1 bis LF3).",
+                "Ein Satz sagt, was die andere Sicht richtig sieht."
+              ],
+              "beispiel_pol_1": "Ich finde, der Weg zum Pass soll für alle leichter werden, die hier aufgewachsen sind, weil sie hier zur Schule gegangen sind und die Sprache können – was der Bund mit erfolgreicher Integration meint (S. 115), erfüllen sie längst. Der stärkste Einwand dagegen: Wenn es fast von selbst geht, bedeutet der Pass weniger. Darauf antworte ich: Leichter heisst nicht ohne Prüfung; geprüft wird, was jemand getan hat, und nicht, wie lange er gewartet hat. Recht hat die andere Seite darin, dass Dazugehören auch Einsatz verlangt.",
+              "beispiel_pol_2": "Ich finde, der Weg soll bleiben, wie er ist, weil der Pass für mich am Schluss der Integration steht: Mitentscheiden soll, wer die Sprache kann, arbeitet oder sich bildet und das Leben hier kennt – das sind die Voraussetzungen der Einbürgerung (S. 115). Der stärkste Einwand dagegen: Wer hier aufgewachsen ist, erfüllt das alles und darf trotzdem nicht abstimmen. Darauf antworte ich: Dann soll er das Gesuch stellen, sobald er die Voraussetzungen erfüllt – die Regel bleibt, aber sie soll niemanden unnötig aufhalten. Recht hat die andere Seite darin, dass es stossend ist, wenn jemand mit uns aufwächst und nicht mitbestimmen darf. Annahme: Die Person lebt lange genug hier, um das Gesuch zu stellen.",
+              "nicht_tragfaehig": "Ein Standpunkt ohne Einwand, ein Einwand, den niemand vertritt, oder ein «beide haben recht» ohne eigenen Entscheid."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Mein Standpunkt und Grund",
+          "Stärkster Einwand",
+          "Meine Antwort darauf"
+        ],
+        "hinweis": "Eine Zeile für Ihren Standpunkt genügt; die übrigen sind für weitere Einwände. Schreiben Sie den Einwand so, wie die Gegenseite ihn sagt.",
+        "loesung_zeilen": [
+          [
+            "Leichter für hier Aufgewachsene: Sie erfüllen die Integration schon",
+            "Der Pass bedeutet weniger, wenn er fast von selbst kommt",
+            "Leichter heisst nicht ohne Prüfung: geprüft wird, was jemand getan hat"
+          ],
+          [
+            "Bleiben wie heute: Der Pass schliesst die Integration ab",
+            "Wer hier aufgewachsen ist, erfüllt alles und darf nicht abstimmen",
+            "Gesuch stellen, sobald die Voraussetzungen erfüllt sind; die Regel bleibt"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 3.4 (S. 3)",
+        "beispiel": [
+          "Reglement der Bibliothek, Abschnitt 3 · Ausleihe dauert 28 Tage · «einmal verlängern» (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt eine gekürzte Stellungnahme mit Stichwortzettel; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Welche Sichtweisen zur Einbürgerung zeigt die Quelle, und womit werden sie begründet? Werten Sie Ihr Raster aus und halten Sie in zwei bis drei Sätzen fest, was Sie davon in Ihren Hauptteil übernehmen.",
+          "liefert": "Belege für beide Sichtweisen im Hauptteil",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-221.2b-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst ganz ansehen, dann beim zweiten Durchgang das Raster füllen: Stichworte, keine Sätze.",
+              "Schreiben Sie den Befund erst nach dem Raster – mit Zeitmarke als Beleg."
+            ],
+            "satzanfaenge": [
+              "«Die Quelle zeigt bei … die Sicht, dass …»",
+              "«Begründet wird das mit …»",
+              "«In meinen Hauptteil nehme ich …»"
+            ],
+            "produkt": "Je Sichtweise ein Beleg mit Zeitmarke geht als Beispiel in den Hauptteil (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Zwei Sichtweisen im Rat und ihre Begründungen",
+            "quelle_ref": "q-221.2b-pflicht",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Vorhaben: fünf statt zehn Jahre, einheitliche Regeln; kürzere Freiheitsstrafen kein Hindernis (00:45). Dagegen: geht zu weit, auch Kriminelle könnten eingebürgert werden (01:08). Dafür: Recht auf Teilhabe für dauerhaft hier Lebende; dagegen: Bürgerrecht muss man sich verdienen (ab 01:28).",
+                "quelle": "Quelle, Abs. 3–5"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Pflichten ohne Rechte (01:49); Rat empfiehlt Ablehnung, Volk entscheidet später (bis 02:28).",
+                "quelle": "Quelle, Abs. 6–7"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Frist, Regeln → Einbürgerung oder Norm; «Teilhabe», «verdienen» → Wert. Zuordnung: Deutung der Lernenden."
+              },
+              {
+                "label": "Befund",
+                "text": "Nennt beide Sichtweisen mit Grund und Zeitmarke."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Studie: mehr gut Ausgebildete eingebürgert (00:00). Mitautorin: selektiver, Ärmere im Nachteil (00:43–01:04). Gemeindepräsident: fair, Gemeinde prüft die Integration (01:25–01:47). Sichtweisen: «selektiv», «fair»; «Teilhabe» fällt nicht, es tragen Integration und Wert.",
+                "quelle": "Ersatzquelle, Abs. 1 und 3–6"
+              },
+              {
+                "label": "Hinweis",
+                "text": "Vorlage offen (Stand 03.10.2026). Zeitmarken und «Bild» nach Untertiteln, nicht gegengesehen."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:45 · Erklärteil",
+                "Sprecher",
+                "fünf statt zehn Jahre; gleiche Regeln im ganzen Land",
+                "Einbürgerung"
+              ],
+              [
+                "01:08 · Ratsdebatte",
+                "Stimme dagegen",
+                "geht zu weit: auch Kriminelle könnten eingebürgert werden",
+                "Norm"
+              ],
+              [
+                "01:28 · Ratsdebatte",
+                "Stimme dafür",
+                "wer dauerhaft hier lebt: Recht auf Teilhabe",
+                "Wert"
+              ],
+              [
+                "nach 01:28 · Ratsdebatte",
+                "Stimme dagegen",
+                "Bürgerrecht muss man sich verdienen",
+                "Wert"
+              ]
+            ],
+            "befund": "Die eine Seite sagt, wer dauerhaft hier lebt, habe ein Recht mitzubestimmen (01:28); die andere, das Bürgerrecht müsse man sich verdienen (nach 01:28). Auf meinen Fall bezogen: Es sind dieselben zwei Haltungen wie in unserer Runde. In den Hauptteil nehme ich die Frist von zehn Jahren (00:45) und die Pflichten ohne Rechte (01:49)."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.4 · eigener Standpunkt ↔ stärkster Einwand",
+          "pol_typ": "position_gegenposition",
+          "text": "Soll der Weg zum Pass leichter werden – oder bleiben, wie er ist? Legen Sie Ihren Standpunkt fest und antworten Sie auf den stärksten Einwand der Gegenseite aus Ihrem Raster oder aus LF2.",
+          "liefert": "eigener Standpunkt mit beantwortetem Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Suchen Sie im Raster die Aussage, die Ihren Standpunkt am härtesten trifft.",
+              "Schreiben Sie in der Reihenfolge der Satzanfänge: Standpunkt, Einwand, Antwort."
+            ],
+            "satzanfaenge": [
+              "«Ich finde, der Weg zum Pass soll …, weil …»",
+              "«Der stärkste Einwand dagegen lautet: …»",
+              "«Darauf antworte ich: … Recht hat die andere Seite bei …»"
+            ],
+            "produkt": "Standpunkt, Einwand und Antwort werden der Schluss der Stellungnahme (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Standpunkt ↔ Einwand, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Der Standpunkt steht in Ich-Form und ist eine der zwei Möglichkeiten: leichter oder bleiben.",
+                "Der Einwand ist der stärkste der Gegenseite und im Raster oder in LF2 belegt.",
+                "Die Antwort geht auf den Einwand ein, statt den Standpunkt nur zu wiederholen.",
+                "Ein Satz sagt, was die andere Sicht richtig sieht."
+              ],
+              "beispiel_pol_1": "Ich finde, der Weg zum Pass soll für alle leichter werden, die hier aufgewachsen sind, weil sie alle Pflichten haben und trotzdem nicht mitbestimmen (Quelle, 01:49). Der stärkste Einwand dagegen: Das Bürgerrecht muss man sich verdienen (nach 01:28). Darauf antworte ich: Wer hier zur Schule geht und eine Lehre macht, verdient es sich jeden Tag; geprüft werden soll das, nicht die Wartezeit. Recht hat die andere Seite darin, dass Dazugehören Einsatz verlangt und nicht jede Lockerung richtig ist.",
+              "beispiel_pol_2": "Ich finde, der Weg soll bleiben, wie er ist, weil der Pass für mich am Schluss der Integration steht und zehn Jahre zeigen, dass jemand bleibt (Quelle, 00:45; Kap. 3.4, S. 115). Der stärkste Einwand dagegen: Es gibt Menschen mit allen Pflichten und ohne Rechte (01:49). Darauf antworte ich: Das ist stossend, aber die Antwort ist ein Gesuch, sobald die Voraussetzungen erfüllt sind, nicht eine kürzere Frist für alle. Recht hat die andere Seite darin, dass niemand, der hier aufgewachsen ist, auf Dauer nur zuschauen soll.",
+              "nicht_tragfaehig": "Ein Standpunkt ohne Einwand, ein Einwand, den niemand vertritt, oder ein «beide haben recht» ohne eigenen Entscheid."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-221.2b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie auf der QR-Seite den Beitrag zur Einbürgerung an. Gesucht: zwei Sichtweisen mit Begründung. Je Zeile Bild (mit Zeitmarke), Ton (wer spricht oder für welche Seite), Aussage und Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-221.2b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Steht die Einbürgerung am Anfang oder am Ende der Integration — wer antwortet wie?",
+          "erwartung": "Die Frage stellt ein Mitte-Nationalrat zu Beginn der Debatte (Abs. 1–2). Ausdrücklich beantwortet nur er sie: Die Einbürgerung schliesse eine gelungene Integration ab, stehe also am Ende (Abs. 18). Bürgerliche stützen das: Die Gemeinde beurteile die Integration am besten, die Einbürgerung sei kein blosser Verwaltungsakt (Abs. 16–17). Die Ratslinke antwortet nur indirekt: Sie nennt das Verfahren restriktiv, teuer, hürdenreich und stellenweise willkürlich (Abs. 13–14). Auch gültig: Drei Parteien wollten die erleichterte Einbürgerung auf die zweite Generation ausdehnen; die Mehrheit lehnte ab (Abs. 19–20). Absätze nach der Zählung im Archiv: Einstieg und Teil zu den Parteien nach dem Kasten. Vorlage offen, Stand 03.10.2026."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Bild: 00:40, Baustelle am Bahnhof · Ton: Anwohner · Aussage: Lärm bis spät am Abend (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt eine gekürzte Stellungnahme mit Stichwortzettel; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}

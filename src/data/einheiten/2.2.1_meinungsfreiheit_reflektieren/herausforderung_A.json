@@ -1,0 +1,784 @@
+{
+  "id": "2.2.1_meinungsfreiheit_reflektieren_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten — Meinungsfreiheit reflektieren",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Was am Pausentisch gesagt werden darf",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Aussagen an der Meinungsfreiheit messen"
+  },
+  "prinzip_ref": "2.2.1_meinungsfreiheit_reflektieren_prinzip",
+  "nrlp": {
+    "nr": "2.2.1",
+    "nr_primary": [
+      "2.2.1"
+    ],
+    "lebensbezug": "2.2",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell"
+    ],
+    "sprachmodus_ids": [
+      "SM1",
+      "SM2"
+    ],
+    "sk": [
+      1,
+      5,
+      6
+    ],
+    "kompetenz_id": "2.2.1",
+    "lebensbezug_id": "2.2",
+    "kompetenz_text": "Ich kann Beispiele von Ausgrenzung und Diskriminierung in Gesprächen und Medienbeiträgen analysieren und dabei die Bedeutung von Meinungsfreiheit reflektieren.",
+    "lebensbezug_text": "Ich erlebe Diskussionen über Ungleichbehandlung und Ausgrenzung und frage mich, was gesagt werden darf und wie ich mich dabei verhalte."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Znünipause in meinem Lehrbetrieb, ich bin im ersten Lehrjahr. Im Pausenraum läuft der Fernseher: ein Beitrag über den Schutz von Lesben, Schwulen und Bisexuellen vor Hass. Ein Mitarbeiter, seit vielen Jahren im Betrieb, schüttelt den Kopf: «So ein Gesetz braucht es nicht.» Gleich darauf erzählt er von einem Kunden von gestern und nennt ihn spöttisch «den Schwulen mit dem Täschchen». Zwei lachen, die anderen schauen auf ihr Handy. Ich lache nicht. Ich weiss, dass einer am Tisch mit seinem Freund zusammenlebt und es im Betrieb niemandem gesagt hat; er rührt in seinem Kaffee und schweigt. Morgen sitzen wir alle wieder am selben Tisch, und der Mitarbeiter redet gern. Ich will klären, was von dem Gesagten eine Meinung ist, die ich stehen lassen muss, und was ich ihm sage, wenn er wieder so über jemanden spricht.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Was davon ist eine Meinung, die ich stehen lassen muss — und wo sage ich etwas, obwohl ich hier im ersten Lehrjahr bin?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Kritik an einer Sache vs. Herabsetzung von Menschen",
+    "hint": "Ein Gesetz ablehnen ist etwas anderes, als über einen Menschen zu spotten. Wo liegt für Sie die Grenze – und ab wann sagen Sie etwas?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Vorurteil, Strafnorm",
+      "seiten": "Seite 116-118",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 18.3",
+      "titel": "Perspektivenwechsel",
+      "unterueberschrift": "Vorurteile prüfen, Ausgrenzung",
+      "seiten": "Seite 418-418",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 7.1",
+      "titel": "Medien",
+      "unterueberschrift": "Meinungs- und Informationsfreiheit, Schranken",
+      "seiten": "Seite 186-186",
+      "fuer_leitfrage": [
+        2,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Schluss haben Sie eine Vergleichstabelle zu drei Aussagen und drei Sätze zur Meinungsfreiheit. LF1 liefert die Begriffe für die Prüffragen, LF2 die Einordnung der zwei Aussagen vom Tisch, LF3 zwei Aussagen der Quelle mit Beleg, LF4 Ihr Urteil und Ihren Entscheid.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.4 | S. 116 · Kap. 18.3 | S. 418",
+      "text": "Erklären Sie mit Kap. 3.4 (S. 116), wie aus einem Stereotyp ein Vorurteil und daraus Diskriminierung wird. Beschreiben Sie mit Kap. 18.3 (S. 418), was Ausgrenzung ist und wie ein Vorurteil verallgemeinert.",
+      "liefert": "Begriffe für die Prüffragen der Tabelle",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Zeichnen Sie die Kette mit zwei Pfeilen: Stereotyp → Vorurteil → Diskriminierung.",
+          "Zum Thema des Falls: Kap. 12.1 (S. 296–297) erklärt sexuelle Orientierung und Coming-out."
+        ],
+        "satzanfaenge": [
+          "«Ein Stereotyp ist …; daraus wird ein Vorurteil, wenn …»",
+          "«Von Diskriminierung spricht man, sobald …»",
+          "«Ausgrenzung heisst, dass …»"
+        ],
+        "produkt": "Die Begriffe brauchen Sie für die Prüffragen «Verallgemeinert?» und «Kritik oder Herabsetzung?»."
+      },
+      "loesung": {
+        "kern": "Zuschreibung → Urteil → Handlung; Ausgrenzung",
+        "zeilen": [
+          {
+            "label": "Stereotyp",
+            "text": "Eine feste Zuschreibung an eine Gruppe, die sich nicht begründen lässt; im Alltag verbreitet und vom Umfeld übernommen.",
+            "quelle": "Kap. 3.4, S. 116"
+          },
+          {
+            "label": "Vorurteil",
+            "text": "Aus dem Etikett für eine Gruppe wird ein Urteil über eine Person, bevor man sie kennt. Es greift ein Merkmal heraus, verallgemeinert es und ordnet Menschen deswegen einer Gruppe zu.",
+            "quelle": "Kap. 3.4, S. 116; 18.3, S. 418"
+          },
+          {
+            "label": "Diskriminierung",
+            "text": "Aus dem Denken wird Handeln: Wer jemanden wegen eines Vorurteils schlechter behandelt, ausgrenzt oder angreift, diskriminiert.",
+            "quelle": "Kap. 3.4, S. 116"
+          },
+          {
+            "label": "Ausgrenzung",
+            "text": "Menschen werden wegen eines Vorurteils über ein Merkmal aus einer Gruppe ausgeschlossen oder gar nicht zugelassen. Das wertet sie ab und nützt meist der Mehrheit.",
+            "quelle": "Kap. 18.3, S. 418"
+          },
+          {
+            "label": "Zum Thema des Falls",
+            "text": "Sexuelle Orientierung: zu wem sich jemand hingezogen fühlt. Coming-out: zu den eigenen Gefühlen stehen und darüber sprechen. Wer anders empfindet, muss laut Lehrmittel Diskriminierung fürchten.",
+            "quelle": "Kap. 12.1, S. 296-297"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Antwort zeigt die Kette als Folge und trennt Denken von Handeln."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 7.1 | S. 186 · Kap. 3.4 | S. 117-118 · eigener Fall",
+      "text": "Messen Sie die zwei Aussagen des Mitarbeiters an der Meinungsfreiheit und ihren Schranken (Kap. 7.1, S. 186; Kap. 3.4, S. 117–118). Begründen Sie je Aussage: Kritik an einer Sache oder Herabsetzung eines Menschen?",
+      "liefert": "Einordnung der zwei Aussagen vom Tisch",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie beide Aussagen zuerst wörtlich hin; prüfen Sie dann jede für sich.",
+          "Fragen Sie je Aussage: Worüber urteilt sie – über eine Sache oder über einen Menschen?"
+        ],
+        "satzanfaenge": [
+          "«Die erste Aussage urteilt über …, deshalb …»",
+          "«Die zweite Aussage trifft …, weil …»",
+          "«Die Seiten lassen offen, ob …»"
+        ],
+        "produkt": "Eine der zwei Aussagen kommt wörtlich in die Tabelle, in die Spalte «Aussage im Gespräch»."
+      },
+      "loesung": {
+        "kern": "Kritik am Gesetz: Meinung · Spott: Herabsetzung",
+        "zeilen": [
+          {
+            "label": "Das Recht",
+            "text": "Die Schweiz garantiert, dass alle ihre Meinung frei äussern dürfen. Genannte Schranken: Schutz der Persönlichkeit, das Gesetz gegen Rassismus, der Jugendschutz.",
+            "quelle": "Kap. 7.1, S. 186"
+          },
+          {
+            "label": "Die Strafnorm",
+            "text": "Das Strafrecht schreibt keine Moral vor. Die Strafnorm greift erst, wo Menschen öffentlich das gleichberechtigte Dasein abgesprochen wird, auch wegen der sexuellen Orientierung. Privat: Familie und Freundeskreis.",
+            "quelle": "Kap. 3.4, S. 117-118"
+          },
+          {
+            "label": "Aussage 1 (Gesetz)",
+            "text": "Sie urteilt über eine Sache. Das ist eine Meinung, die das Recht schützt, auch wenn sie mir nicht passt."
+          },
+          {
+            "label": "Aussage 2 (Spott)",
+            "text": "Sie macht einen Menschen wegen eines Merkmals lächerlich: Herabsetzung. Gemessen an S. 117–118 spricht sie niemandem das gleichberechtigte Dasein ab und bleibt unter der dort beschriebenen Schwelle.",
+            "quelle": "Kap. 3.4, S. 117-118"
+          },
+          {
+            "label": "Offen",
+            "text": "Ob ein Pausenraum als öffentlich gilt und ob der Spott den Schutz der Persönlichkeit berührt, entscheiden die Seiten nicht; kein rechtliches Urteil.",
+            "quelle": "Kap. 3.4, S. 118"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Alles Unangenehme für verboten oder alles Gesagte für in Ordnung halten."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Vergleichstabelle zu drei Aussagen (eine aus dem Gespräch, zwei aus der Quelle) mit vier Prüffragen, darunter drei Sätze zur Meinungsfreiheit",
+    "titel": "Vergleichstabelle: drei Aussagen, vier Prüffragen",
+    "format_detail": "Sie erstellen auf einer Seite eine Tabelle mit vier Spalten: Prüffrage, Aussage im Gespräch, Aussage 1 der Quelle, Aussage 2 der Quelle. Zuoberst steht jede Aussage im Wortlaut. Darunter folgen vier Zeilen: «Über wen?», «Verallgemeinert?», «Kritik oder Herabsetzung?», «Gedeckt?» (mit Beleg: Seite im Lehrmittel oder Stelle der Quelle). Unter die Tabelle schreiben Sie drei Sätze: was die Meinungsfreiheit hier schützt, wo sie für Sie endet, was Sie am Tisch tun. Die Tabelle ist für Sie selbst und für die Person, die am Tisch gesprochen hat.",
+    "beschreibung": "Ich stelle eine Aussage vom Tisch und zwei aus der Quelle nebeneinander, prüfe jede mit denselben vier Fragen und halte in drei Sätzen fest, was ich dem Mitarbeiter sage oder warum ich schweige.",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "Notieren Sie aus LF1 die Kette vom Stereotyp zur Diskriminierung und den Begriff Ausgrenzung. Sie brauchen sie für die Prüffragen."
+      },
+      {
+        "label": "02 Aussage vom Tisch prüfen",
+        "hint": "Übernehmen Sie aus LF2 eine der zwei Aussagen wörtlich und prüfen Sie: Über wen? Verallgemeinert? Kritik oder Herabsetzung? Gedeckt?"
+      },
+      {
+        "label": "03 Aussagen der Quelle prüfen",
+        "hint": "Übernehmen Sie aus dem Raster von LF3 zwei Aussagen mit Beleg in die Tabelle und prüfen Sie beide mit denselben vier Fragen."
+      },
+      {
+        "label": "04 Urteilen und entscheiden",
+        "hint": "Prüfen Sie mit LF4 die Zeile «Gedeckt?» (von der Meinungsfreiheit gedeckt?) für alle drei Aussagen, mit Beleg. Dann entscheiden Sie."
+      },
+      {
+        "label": "05 Drei Sätze, dann prüfen",
+        "hint": "Schreiben Sie die drei Sätze unter die Tabelle. Prüfen Sie alles mit den zwei Feedback-Kriterien: Einordnung belegt? Recht und Schranke da?"
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Vergleichstabelle: 3 Aussagen, je 4 Prüffragen, mit Beleg",
+      "3 Sätze: was die Meinungsfreiheit schützt, wo sie endet, was ich tue"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Familienfest und Radiobeitrag über «die Jungen von heute»",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Vergleichstabelle",
+          "kopf": [
+            "Prüffrage",
+            "Aussage im Gespräch",
+            "Aussage 1 der Quelle",
+            "Aussage 2 der Quelle"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Wortlaut",
+                "Onkel: «Die Jungen wollen nicht arbeiten.»",
+                "Chefin: «Die Schule bereitet schlecht vor.»",
+                "Meister: «Meiner ist faul wie alle.»"
+              ],
+              "stark": true
+            },
+            {
+              "zellen": [
+                "Über wen?",
+                "alle Jungen",
+                "niemanden, die Schule",
+                "seinen Lernenden"
+              ]
+            },
+            {
+              "zellen": [
+                "Verallgemeinert?",
+                "ja: «die Jungen»",
+                "nein",
+                "ja: «wie alle»"
+              ]
+            },
+            {
+              "zellen": [
+                "Kritik oder Herabsetzung?",
+                "Herabsetzung",
+                "Kritik an einer Sache",
+                "Herabsetzung"
+              ]
+            },
+            {
+              "zellen": [
+                "Gedeckt?",
+                "ja (S. 186)",
+                "ja (00:40)",
+                "Grenzfall (01:10; S. 186)"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Drei Sätze zur Meinungsfreiheit",
+          "text": [
+            "Die Meinungsfreiheit schützt die Sätze von Onkel und Chefin.",
+            "Sie endet für mich am Schutz der Persönlichkeit (S. 186): Der Meister macht einen Einzelnen schlecht – Grenzfall.",
+            "Dem Onkel sage ich: Über die Schule rede ich gern, aber «die Jungen» gibt es nicht."
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Znünipause – Spott über den Kunden, zwei Aussagen der Quelle",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage; zeigen, wenn die eigenen Tabellen stehen. Gewählt ist der Spott als «Aussage im Gespräch»; wer die Kritik am Gesetz wählt, kommt in der Zeile «Kritik oder Herabsetzung?» zu «Kritik an einer Sache», das ist ebenso richtig. Die zwei Aussagen der Quelle sind sinngemäss wiedergegeben; die Lernenden notieren den Wortlaut. Mit der Ersatzquelle stehen andere Aussagen und Zeitmarken da. Die Zeile «Gedeckt?» wendet die Seiten des Lehrmittels an und ist kein rechtliches Urteil. Die drei Sätze folgen dem Entscheid «ansprechen» aus LF4; «stehen lassen» ist gleichwertig, wenn es begründet ist. Annahme: Der Satz über die Berufsfachschule ist eine erfundene Übertragung, die Situation nennt sie nicht.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Vergleichstabelle",
+          "kopf": [
+            "Prüffrage",
+            "Aussage im Gespräch",
+            "Aussage 1 der Quelle",
+            "Aussage 2 der Quelle"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Wortlaut",
+                "Mitarbeiter über einen Kunden: «der Schwule mit dem Täschchen»",
+                "Gegner des Gesetzes (nach dem Zusammenhang): Die freie Rede ist dadurch bedroht.",
+                "Befürworter: Hetze im Netz gegen die Gruppe bleibt ohne Folgen."
+              ],
+              "stark": true
+            },
+            {
+              "zellen": [
+                "Über wen?",
+                "einen Kunden, der nicht da ist",
+                "niemanden, über ein Gesetz",
+                "niemanden, über eine Lücke im Recht"
+              ]
+            },
+            {
+              "zellen": [
+                "Verallgemeinert?",
+                "ja: Etikett statt Person, ein Merkmal steht für den Menschen",
+                "nein",
+                "nein"
+              ]
+            },
+            {
+              "zellen": [
+                "Kritik oder Herabsetzung?",
+                "Herabsetzung eines Menschen",
+                "Kritik an einer Sache",
+                "Kritik an einer Sache"
+              ]
+            },
+            {
+              "zellen": [
+                "Gedeckt?",
+                "Herabsetzung; gemessen an Kap. 3.4, S. 117–118 unter der Schwelle der Strafnorm. Offen: Ist der Pausenraum öffentlich?",
+                "ja, Meinung (Kap. 7.1, S. 186; Quelle 02:58)",
+                "ja, Meinung (Kap. 7.1, S. 186; Quelle 01:51)"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Drei Sätze zur Meinungsfreiheit",
+          "text": [
+            "Die Meinungsfreiheit schützt hier die Kritik am Gesetz, am Tisch wie in der Quelle, wo sogar ein Betroffener das Gesetz ablehnt (02:15). Der Spott setzt einen Menschen herab; gemessen an Kap. 3.4, S. 117–118 spricht er aber niemandem das gleichberechtigte Dasein ab.",
+            "Für mich endet sie trotzdem dort, wo ein Mensch wegen eines Merkmals lächerlich gemacht wird; als Schranke nennt das Lehrmittel den Schutz der Persönlichkeit (Kap. 7.1, S. 186). Dieselbe Grenze ziehe ich in der Berufsfachschule, wenn über eine Mitschülerin gespottet wird.",
+            "Ich sage dem Mitarbeiter unter vier Augen: Über das Gesetz streite ich gern mit dir, Sprüche über Kunden will ich am Tisch nicht mehr hören."
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe fehlen oder sind falsch verwendet; Aussagen sind nicht oder falsch eingeordnet.",
+        "Einzelne Fachbegriffe sind korrekt verwendet; die Einordnung bleibt lückenhaft oder ungenau.",
+        "Fachbegriffe der Einheit sind korrekt und zur Situation passend verwendet; die Einordnung stimmt.",
+        "Fachbegriffe sind differenziert und eigenständig verwendet; Einordnungen sind belegt, Grenzfälle benannt."
+      ],
+      "indikator_produkt": "Jede Aussage ist bei allen vier Fragen richtig eingeordnet und belegt"
+    },
+    {
+      "kn_kriterium": "Politisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Das Prinzip, dass ein Recht gilt und zugleich Grenzen hat, ist nicht angewendet.",
+        "Recht oder Grenze ist genannt, aber nur teilweise auf die Situation angewendet.",
+        "Recht und Grenze sind korrekt auf die Situation angewendet: was geschützt ist und wo der Schutz endet.",
+        "Recht und Grenze sind korrekt angewendet und auf eine weitere Situation übertragen."
+      ],
+      "indikator_produkt": "Die drei Sätze nennen, was das Grundrecht schützt und wo seine Schranke liegt"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel der Tabelle an einem anderen Fall (S. 6), die Satzanfänge bei den Leitfragen und eine gemeinsam erarbeitete erste Rasterzeile.",
+    "scaffold_100": "Prüfen Sie eine vierte Aussage mit denselben vier Fragen, etwa aus einer Vertiefung, falls Ihr Heft eine nennt. Ändert sie Ihr Urteil?"
+  },
+  "methoden": [
+    {
+      "ref": "hko-woertlich-zitieren",
+      "fuer": "für die oberste Zeile der Tabelle: was gesagt wurde, nicht Ihre Deutung"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für das Mitschreiben im Raster zur Quelle (S. 3)",
+      "tun": "Schreiben Sie im Raster Stichworte statt Sätze und setzen Sie den Beleg vorn hin. Ausformuliert wird erst im Befund."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für die Prüffrage «Kritik oder Herabsetzung?»",
+      "tun": "Fragen Sie je Aussage: Was sagt sie zur Sache – und was über die Beziehung zu den Menschen, von denen sie spricht? Das trennt Kritik von Herabsetzung."
+    }
+  ],
+  "mindmap_zentrum": "Meinung aushalten oder Grenze ziehen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie Ausgrenzung entsteht",
+      "punkte": [
+        "Stereotyp",
+        "Vorurteil",
+        "Verallgemeinerung",
+        "Diskriminierung",
+        "Ausgrenzung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was das Recht sagt",
+      "punkte": [
+        "Meinungsfreiheit",
+        "Schranke",
+        "Anti-Rassismus-Strafnorm"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was ich an Aussagen prüfe",
+      "punkte": [
+        "Kritik an einer Sache",
+        "Herabsetzung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, welche Aussage vom Tisch eine Meinung ist, die ich stehen lassen muss (LF2, Zeile «Gedeckt?»)?",
+      "Steht in meinen drei Sätzen, was ich dem Mitarbeiter sage – oder warum ich nichts sage?"
+    ],
+    "mitnahme": [
+      "Kritik an einer Sache ist keine Herabsetzung",
+      "Meinungsfreiheit gilt – und hat Schranken",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Stereotyp",
+          "nach": "Vorurteil",
+          "text": "wird zu"
+        },
+        {
+          "von": "Verallgemeinerung",
+          "nach": "Vorurteil",
+          "text": "macht aus einem Merkmal ein"
+        },
+        {
+          "von": "Vorurteil",
+          "nach": "Diskriminierung",
+          "text": "führt zu"
+        },
+        {
+          "von": "Herabsetzung",
+          "nach": "Ausgrenzung",
+          "text": "kann führen zu"
+        },
+        {
+          "von": "Meinungsfreiheit",
+          "nach": "Kritik an einer Sache",
+          "text": "schützt"
+        },
+        {
+          "von": "Meinungsfreiheit",
+          "nach": "Schranke",
+          "text": "hat"
+        },
+        {
+          "von": "Anti-Rassismus-Strafnorm",
+          "nach": "Schranke",
+          "text": "ist eine"
+        },
+        {
+          "von": "Herabsetzung",
+          "nach": "gilt auch bei …",
+          "text": "braucht eine Grenze, auch"
+        }
+      ],
+      "transfer": "Fangesänge im Stadion, die Kommentarspalte einer Zeitung, ein Plakat im Abstimmungskampf: überall, wo über Menschen geurteilt wird und ich entscheide, ob ich es stehen lasse.",
+      "eigene_knoten": {
+        "mit_medien": [
+          "Hassrede",
+          "Sonderrecht"
+        ]
+      },
+      "quercheck": [
+        "Ja: Die Kritik am Gesetz urteilt über eine Sache und ist als Meinung geschützt (Kap. 7.1, S. 186). Der Spott ist eine Herabsetzung; gemessen an Kap. 3.4, S. 117–118 bleibt er unter der Schwelle der Strafnorm, ob der Pausenraum öffentlich ist, lassen die Seiten offen. Aushalten oder widersprechen ist mein Entscheid (LF4).",
+        "Ja: im Lösungsbild das Gespräch unter vier Augen (LF4, Entscheid «ansprechen»). Ebenso gültig ist begründetes Stehenlassen mit einer Grenze für das nächste Mal."
+      ],
+      "mitnahme": [
+        "Wer ein Gesetz ablehnt, greift niemanden an; wer einen Menschen verspottet, schon.",
+        "Sie schützt auch Meinungen, die mir nicht passen; Schranken sind der Schutz der Persönlichkeit, die Strafnorm und der Jugendschutz.",
+        "Zum Beispiel: Gilt ein Pausenraum als öffentlich? Das Lehrmittel entscheidet es nicht."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1 erklärt die Kette bis zur Diskriminierung und Ausgrenzung",
+        "LF2 ordnet beide Aussagen vom Tisch ein, mit Seite",
+        "LF4 nennt Recht, Schranke und einen Entscheid"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle mit vier Zeilen und Beleg",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Vergleichstabelle",
+      "vollstaendig_wenn": [
+        "3 Aussagen im Wortlaut, je 4 Prüffragen beantwortet",
+        "Zeile «Gedeckt?» mit Beleg: Seite oder Stelle der Quelle",
+        "3 Sätze: was geschützt ist, wo es endet, was ich tue"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Tabelle beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Tabelle und drei Sätze fertigstellen, Feedback-Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich entscheiden, ob ich eine Aussage über Menschen stehen lasse oder ihr widerspreche?",
+    "ziel": "Die Meinungsfreiheit schützt auch Meinungen, die mir nicht passen; sie endet dort, wo Menschen herabgesetzt oder ausgeschlossen werden."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Aussagen prüfen: Kritik an einer Sache von Herabsetzung trennen und an der Meinungsfreiheit messen",
+    "lehrmittel_anker": "Kap. 3.4 S. 116-118 (Stereotyp, Vorurteil, Diskriminierung, Anti-Rassismus-Strafnorm); Kap. 18.3 S. 418 (Vorurteil, Ausgrenzung); Kap. 7.1 S. 186 (Meinungs- und Informationsfreiheit, Schranken); Kap. 12.1 S. 296-297 (sexuelle Orientierung, Coming-out).",
+    "kn_aktivierung": "Im KN prüft die Lernende den Aushang im Treppenhaus mit denselben Prüffragen: was daran Kritik an einem Verhalten ist, was die Familie herabsetzt und ausschliesst, und was die Meinungsfreiheit deckt.",
+    "transfer_check": "Kann die Lernende an einer neuen Aussage zeigen, worüber sie urteilt, ob sie verallgemeinert und ob die Meinungsfreiheit sie deckt?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] (Raster, S. 3) — die Aussagen der Quelle, die für die Frage zählen, von Anmoderation und Nebensache trennen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] — die eigene Grenze zwischen Meinung und Herabsetzung festlegen und prüfen, woher sie kommt"
+    },
+    {
+      "sk": 6,
+      "wo": "Produkt (drei Sätze unter der Tabelle, S. 7) — begründen, was ich am Tisch tue"
+    }
+  ],
+  "spuren": {
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Von welcher Hetze gegen eine Gruppe berichtet die Quelle, und wer sieht die Meinungsfreiheit bedroht, wer nicht? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Zwei Aussagen der Quelle mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-221.2a-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Je Aussage eine Zeile, nur Stichworte.",
+              "«Bild»: Zeitmarke, was Sie sehen. «→ Begriff»: aus LF1 oder Glossar."
+            ],
+            "satzanfaenge": [
+              "«Als Beispiel nennt die Quelle …»",
+              "«Zur freien Rede sagt …, dagegen …»",
+              "«Für den Tisch heisst das …»"
+            ],
+            "produkt": "Zwei Rasterzeilen werden Spalten der Tabelle; Beleg ist die Zeitmarke."
+          },
+          "loesung": {
+            "kern": "Hetze gegen die Gruppe; freie Rede: zwei Antworten",
+            "quelle_ref": "q-221.2a-pflicht",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Befürworter: zu wenig Schutz (01:05). Streit, ob Hetze gegen die ganze Gruppe schon strafbar ist (01:28–02:15). Freie Rede: Der Gegner (nach dem Zusammenhang) sieht sie bedroht (02:58), eine Stimme in der Showpause nicht (03:20).",
+                "quelle": "Quelle, 01:05–03:40"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Gegner: als schwach dargestellt (02:15), Sonderrecht wirft zurück (02:37). Eine Stimme: Betroffene fühlen sich aufgefangen (03:40).",
+                "quelle": "Quelle, 02:15–04:23"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Ausgrenzung oder Diskriminierung bei der Hetze; Meinungsfreiheit bei 02:58; Strafnorm beim Gesetz. Hassrede, Sonderrecht: Wörter der Quelle."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet das Beispiel mit den zwei Antworten zur freien Rede; der Schluss für den Tisch ist Deutung. «Bild» und Sprecher sind aus den Untertiteln erschlossen."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Bundesrätin: Hass hat keinen Platz, die freie Meinung bleibt (00:20). Aktivistin: verdeckte Ablehnung (01:46), Fahnen heruntergerissen (02:08). Die Gegenseite ist nur referiert (02:30): Der Befund hat dann eine Stimme zur freien Rede.",
+                "quelle": "Ersatzquelle, 00:20–02:52"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "01:05 · Theater",
+                "Befürworter",
+                "zu wenig geschützt, Strafnorm erweitern",
+                "Diskriminierung"
+              ],
+              [
+                "01:28 · Flyer verteilen",
+                "Gegner / Befürworter",
+                "Hetze gegen die Gruppe nicht einklagbar",
+                "Ausgrenzung"
+              ],
+              [
+                "02:37 · Lokal",
+                "Gegner",
+                "Sonderrecht wirft uns zurück",
+                "Anti-Rassismus-Strafnorm"
+              ],
+              [
+                "02:58 · Lokal, Showpause",
+                "Gegner / Stimme in der Pause",
+                "freie Rede bedroht? ja – nein, nur Hassrede",
+                "Meinungsfreiheit"
+              ]
+            ],
+            "befund": "Die Quelle berichtet von Aufrufen zu Hass im Netz gegen Schwule, Lesben und Bisexuelle als Gruppe (01:51). Ob das Gesetz die Meinungsfreiheit bedroht, wird verschieden beantwortet: Ein Gegner sieht sie in Gefahr, eine Stimme in der Showpause nicht. Für den Tisch heisst das: Die Kritik am Gesetz ist eine vertretbare Meinung, der Spott über den Kunden etwas anderes."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 7.1 | S. 186 · Kap. 3.4 | S. 117-118 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 7.1 (S. 186) und Kap. 3.4 (S. 117–118) sagen, was die Meinungsfreiheit schützt und wo sie endet; Ihr Raster zeigt, wie Stimmen der Quelle das sehen. Beurteilen Sie den Spott am Tisch: stehen lassen oder ansprechen?",
+          "liefert": "Urteil zur Meinungsfreiheit und eigener Entscheid",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie Ihre Antwort zu LF2 und die Rasterzeile zur freien Rede nochmals.",
+              "Trennen Sie zwei Fragen: Was sagen die Seiten zur Grenze? Und was tun Sie selbst?"
+            ],
+            "satzanfaenge": [
+              "«Nach dem Lehrmittel ist der Spott …, weil …»",
+              "«In der Quelle sagt … dazu, dass …»",
+              "«Ich entscheide mich für …, weil …»"
+            ],
+            "produkt": "Mit Ihrem Urteil prüfen Sie die Zeile «Gedeckt?»; Ihr Entscheid steht in den drei Sätzen."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Recht ↔ Stimmen, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt, was die Meinungsfreiheit schützt, und eine Schranke, je mit Seite",
+                "zieht eine Aussage der Quelle mit Zeitmarke heran",
+                "trennt, was die Seiten zur Grenze sagen, von der eigenen Grenze und entscheidet: stehen lassen oder ansprechen",
+                "überträgt die eigene Grenze auf eine weitere Situation"
+              ],
+              "beispiel_pol_1": "Das Recht garantiert die freie Meinung (Kap. 7.1, S. 186); die Strafnorm greift erst, wo Menschen öffentlich das gleichberechtigte Dasein abgesprochen wird (Kap. 3.4, S. 117–118). Gemessen daran bleibt der Spott unter dieser Schwelle, und eine Stimme in der Showpause will Witze erlaubt lassen (03:20). Ich lasse den Satz in der Runde stehen: Ein Streit vor allen hilft dem Kollegen nicht, der sich nicht zeigen will. Ich lache aber nicht mit, und wird jemand direkt angegangen, sage ich etwas. So halte ich es auch im Bus, wenn Fremde über andere herziehen.",
+              "beispiel_pol_2": "Die Kritik am Gesetz ist eine geschützte Meinung (Kap. 7.1, S. 186); sogar ein Betroffener in der Quelle lehnt das Gesetz ab (02:15). Der Spott bleibt, gemessen an Kap. 3.4, S. 117–118, unter der Schwelle der Strafnorm, macht aber einen Menschen wegen eines Merkmals lächerlich, und einer am Tisch ist mitgemeint. Meine Grenze liegt früher: Ich sage dem Mitarbeiter unter vier Augen, dass ich solche Sprüche nicht hören will. Annahme: Er hört mir zu. Dieselbe Grenze ziehe ich in der Berufsfachschule, wenn über eine Mitschülerin gespottet wird.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Recht und Schranke («das geht gar nicht», «man darf alles sagen») oder ein rechtliches Urteil über den Mitarbeiter, das die Seiten nicht hergeben."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-221.2a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle (QR-Code oben) zweimal an; schreiben Sie erst beim zweiten Mal. Je Zeile eine Aussage zu Ausgrenzung oder freier Rede. In «Bild» steht die Zeitmarke, in «Ton», wer spricht oder für welche Seite.",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-221.2a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Hat die Strafnorm die freie Rede eingeschränkt, wie Kritiker befürchteten?",
+          "erwartung": "Kritiker warnten vor einem Maulkorb, bei der Einführung und wieder vor der Erweiterung (Begleittext, Abs. 2). Der Begleittext antwortet: Die Norm wird nicht übermässig angewendet (Abs. 3), die Strafen sind in der Regel mild (Abs. 5; Zahlen mit Stand Januar 2020). Wirkung hat sie laut der befragten Juristin als Signal: Nicht alles ist erlaubt, von Rassismus Betroffene werden gestärkt (Abs. 6). Ob die Befürchtung damit widerlegt ist, folgern die Lernenden selbst. (Stand: Begleittext des Herausgebers, Audio nicht gegengehört.)"
+        },
+        {
+          "ref": "q-221.2a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welche Handlungen nennt der Beitrag als strafbar?",
+          "erwartung": "Vier Handlungen: Menschen an einem öffentlichen Ort wegen ihrer sexuellen Orientierung so herabsetzen, dass ihre Menschenwürde verletzt wird – Beispiel im Beitrag: eine pauschale, derbe Beschimpfung aller Schwulen (00:01); Hetzschriften verbreiten (00:25); verleumderische Ideologien verbreiten (00:25); einer Kundin deswegen nichts verkaufen (00:25). Zusatz: Die Polizei muss solche Fälle untersuchen (00:50). Der Beitrag spricht von einem Vorhaben; es gilt seit dem 1. Juli 2020 (Karte der Quelle)."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "00:40 (Beispielwert), leere Sporthalle · Hauswart · Halle am Abend oft ungenutzt · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Beispiel der Tabelle an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
+    }
+  }
+}

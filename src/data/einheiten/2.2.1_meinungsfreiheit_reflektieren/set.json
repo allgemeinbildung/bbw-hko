@@ -1,0 +1,378 @@
+{
+  "id": "2.2.1_meinungsfreiheit_reflektieren_set",
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten — Meinungsfreiheit reflektieren",
+  "einheit_titel": "Meinungsfreiheit reflektieren",
+  "lehrgang": "EFZ_4J",
+  "thema": "T2",
+  "version": "2.1.0",
+  "status": "entwurf",
+  "prinzip_ref": "2.2.1_meinungsfreiheit_reflektieren_prinzip",
+  "kn_ref": "2.2.1_meinungsfreiheit_reflektieren_kn",
+  "herausforderungen": [
+    "2.2.1_meinungsfreiheit_reflektieren_hf_A",
+    "2.2.1_meinungsfreiheit_reflektieren_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "2.2.1_meinungsfreiheit_reflektieren_hf_A",
+      "konzept": "Aussagen prüfen: Kritik an einer Sache von Herabsetzung trennen und an der Meinungsfreiheit messen"
+    },
+    {
+      "position": 2,
+      "herausforderung": "2.2.1_meinungsfreiheit_reflektieren_hf_B",
+      "konzept": "Zugehörigkeit als Recht oder als Leistung: zwei Sichtweisen fair wiedergeben, dann den eigenen Standpunkt begründen"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Stereotyp",
+      "definition": "Eigenschaft, die man einer Gruppe zuschreibt, ohne sagen zu können, warum.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Vorurteil",
+      "definition": "Urteil über Menschen, bevor man sie kennt: Ein Merkmal wird verallgemeinert.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Verallgemeinerung",
+      "definition": "Von einem Merkmal auf alle Menschen einer Gruppe schliessen.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Diskriminierung",
+      "definition": "Jemanden wegen eines Vorurteils schlechter behandeln, ausgrenzen oder angreifen.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Ausgrenzung",
+      "definition": "Ausschluss aus einer Gruppe wegen eines Merkmals; wertet Menschen ab.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Meinungsfreiheit",
+      "definition": "Garantiertes Recht, die eigene Meinung frei zu äussern.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Schranke",
+      "definition": "Grenze eines Rechts, etwa Schutz der Persönlichkeit, Strafnorm, Jugendschutz.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Anti-Rassismus-Strafnorm",
+      "definition": "Bestraft, wer Menschen öffentlich das gleichberechtigte Dasein abspricht.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Kritik an einer Sache",
+      "definition": "Urteil über ein Gesetz, eine Regel oder ein Verhalten, nicht über Menschen.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Herabsetzung",
+      "definition": "Aussage, die einen Menschen wegen eines Merkmals kleinmacht oder verspottet.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Hassrede",
+      "definition": "Im Beitrag «Hate Speech»: Hass und Hetze gegen eine Gruppe, nicht blosse Kritik.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Sonderrecht",
+      "definition": "Recht nur für eine bestimmte Gruppe; im Beitrag ein Einwand der Gegner.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Integration",
+      "definition": "Anpassung an das neue Umfeld; Teile der eigenen Kultur bleiben erhalten.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Assimilation",
+      "definition": "Völlige Anpassung an die neue Kultur; die Bindung an die Herkunft geht verloren.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Einbürgerung",
+      "definition": "Erwerb des Gemeindebürgerrechts; die Gemeinde vollzieht, Bund und Kanton geben Regeln vor.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Wert",
+      "definition": "Ziel oder Überzeugung, die jemand für wichtig und erstrebenswert hält.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Norm",
+      "definition": "Verhaltensregel, die sagt, was man tun soll, um einen Wert umzusetzen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Interesse",
+      "definition": "Was jemand von einer Regelung hat oder durch sie verliert.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Dilemma",
+      "definition": "Konflikt zweier Werte: Wer dem einen folgt, verletzt den anderen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Empathie",
+      "definition": "Sich in Gedanken, Gefühle und Weltbild einer anderen Person einfühlen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Stellungnahme",
+      "definition": "Text zu einer strittigen Frage: Sachlage, Für und Wider, am Schluss die eigene Sicht.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "3B-Schema",
+      "definition": "Bau eines Arguments: Behauptung, Begründung, Beispiel.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Gemeindebürgerrecht",
+      "definition": "Bürgerrecht der Gemeinde; wer es erhält, ist damit Schweizerin oder Schweizer.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Landessprache",
+      "definition": "Wer eine Landessprache kann, erfüllt für den Bund einen Teil der Integration.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Teilhabe",
+      "definition": "Politisch und gesellschaftlich mitmachen und mitbestimmen können.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Bürgerrecht",
+      "definition": "Der Schweizer Pass; ohne ihn sind eidgenössische Abstimmungen und Wahlen nicht möglich.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "Sperre im Spielteam – was empfehlen wir?",
+    "lebensbereich": "Freizeit im Netz (Spielgemeinschaft)",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "Die Moderation unserer Spielgemeinschaft im Netz hat ein Mitglied für zwei Wochen gesperrt und bittet uns drei aus dem Kernteam um eine Empfehlung. Das Protokoll liegt vor mir. Meldung des neuen Mitspielers, der stottert: «Er hat mich im Sprachkanal mehrmals nachgemacht, andere haben gelacht. Im Chat schrieb er: ‹So einer bremst das Team und gehört nicht in die erste Mannschaft.›» Antwort des Gesperrten: «Ich habe nur gesagt, was ich denke. Wir verlieren, weil seine Ansagen zu spät kommen. Das Nachmachen war ein Witz.» Regel 3 der Gemeinschaft: «Wir gehen respektvoll miteinander um. Kritik am Spiel ist erlaubt, persönliche Angriffe sind es nicht.» Die einen im Team finden die Sperre übertrieben, Kritik müsse man aushalten; die anderen zu mild, er habe einen Mitspieler blossgestellt. Morgen spielen wir wieder zusammen.",
+    "zahlen_tabelle": [],
+    "leitfrage": "Was empfehle ich der Moderation – und wie vertrete ich das vor beiden Lagern im Team?",
+    "mehrdeutigkeit": {
+      "trade_off": "Freie Rede im Team vs. Schutz eines Mitspielers",
+      "hint": "Offen reden hält ein Team ehrlich, Schutz hält es zusammen. Beides lässt sich begründen."
+    },
+    "aktivierte_trade_offs": [
+      "Meinung aushalten vs. Grenze ziehen",
+      "Widersprechen vs. den Frieden in der Runde wahren"
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "partner",
+        "gruppe"
+      ],
+      "empfehlung": "Zu dritt: das Befundblatt je für sich, im Gespräch jede Person mit eigener Position."
+    },
+    "auftrag": "Werten Sie das Protokoll mit Heft A und Heft B aus und handeln Sie zu dritt aus: Sperre bestätigen, verkürzen, verlängern oder etwas anderes?",
+    "schritte": [
+      {
+        "label": "01 Aussagen einordnen",
+        "hint": "Ordnen Sie die Aussagen mit den vier Prüffragen aus Heft A ein; Stichworte auf Seite A2."
+      },
+      {
+        "label": "02 Sichtweisen beschreiben",
+        "hint": "Notieren Sie mit Heft B Wert und Interesse hinter jedem Lager: auf A2, für die Stationen auf A3."
+      },
+      {
+        "label": "03 Befundblatt zum Protokoll",
+        "hint": "Halten Sie fest, was belegt ist, was strittig ist und was fehlt – je mit Stelle und Folge."
+      },
+      {
+        "label": "04 Schlichtungsgespräch",
+        "hint": "Jede Person vertritt ihre Position und antwortet auf einen Einwand; dann einigen Sie sich."
+      },
+      {
+        "label": "05 Ergebnis festhalten",
+        "hint": "Seite A3 mit Empfehlung und offenem Punkt ist Ihre Gesprächsnotiz. Schätzen Sie sich dann selbst ein."
+      }
+    ],
+    "abgaben": [
+      "Befundblatt zum Protokoll: 3 Befunde mit Fundstelle",
+      "Gesprächsnotiz: Empfehlung, Begründung, offener Punkt",
+      "Selbsteinschätzung auf den vier Kriterien"
+    ],
+    "produkte": [
+      {
+        "schritt": 3,
+        "form": "flaeche",
+        "modus": "Rezeption schriftlich und bildlich"
+      },
+      {
+        "schritt": 4,
+        "form": "spur",
+        "modus": "Interaktion und Kollaboration mündlich",
+        "stationen": [
+          "Was für mich Meinung ist und was Herabsetzung",
+          "Welche Sicht ich nachvollziehe, ohne sie zu teilen",
+          "Was ich der Moderation empfehle und warum",
+          "Worauf wir uns einigen und was offen bleibt"
+        ],
+        "hinweis": "Planen Sie Ihren eigenen Anteil in Stichworten. Jede Person sagt zuerst, was sie am Protokoll überzeugt und was nicht, und antwortet einmal auf einen Einwand. Halten Sie am Schluss eine gemeinsame Empfehlung fest und notieren Sie, was offen bleibt.",
+        "dauer": "6–8 Minuten"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Was am Pausentisch gesagt werden darf",
+        "inhalte": [
+          "Die vier Prüffragen (S. 5 und S. 7)",
+          "Meinungsfreiheit und Schranken (S. 2)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Wer gehört dazu – und wer bestimmt mit?",
+        "inhalte": [
+          "Sichtweisen mit Wert und Interesse (S. 2)",
+          "Standpunkt gegen den Einwand (S. 4, S. 7)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe fehlen oder sind falsch verwendet; Aussagen sind nicht oder falsch eingeordnet.",
+          "Einzelne Fachbegriffe sind korrekt verwendet; die Einordnung bleibt lückenhaft oder ungenau.",
+          "Fachbegriffe der Einheit sind korrekt und zur Situation passend verwendet; die Einordnung stimmt.",
+          "Fachbegriffe sind differenziert und eigenständig verwendet; Einordnungen sind belegt, Grenzfälle benannt."
+        ],
+        "indikator_produkt": "Befundblatt: Befunde belegt, Kritik und Herabsetzung getrennt"
+      },
+      {
+        "kn_kriterium": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung erkennbar; Behauptungen stehen ohne Beleg da.",
+          "Begründung ansatzweise vorhanden; Beleg oder Beispiel fehlt weitgehend.",
+          "Begründung nachvollziehbar aufgebaut, mit Beleg oder Beispiel; eine andere Sichtweise ist genannt.",
+          "Begründung schlüssig; der stärkste Einwand ist beantwortet, Folgen sind bedacht."
+        ],
+        "indikator_produkt": "Gespräch: Empfehlung begründet, Einwand beantwortet"
+      },
+      {
+        "kn_kriterium": "Politisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Das Prinzip, dass ein Recht gilt und zugleich Grenzen hat, ist nicht angewendet.",
+          "Recht oder Grenze ist genannt, aber nur teilweise auf die Situation angewendet.",
+          "Recht und Grenze sind korrekt auf die Situation angewendet: was geschützt ist und wo der Schutz endet.",
+          "Recht und Grenze sind korrekt angewendet und auf eine weitere Situation übertragen."
+        ],
+        "indikator_produkt": "Ich zeige, was freie Rede schützt und wo das endet"
+      },
+      {
+        "kn_kriterium": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine eigene Position erkennbar.",
+          "Eigene Position angedeutet, aber nicht klar formuliert oder nicht begründet.",
+          "Eigene Position klar in Ich-Form formuliert und begründet.",
+          "Eigene Position in Ich-Form begründet; das Spannungsfeld ist anerkannt, die andere Sicht fair gewürdigt."
+        ],
+        "indikator_produkt": "Gespräch: Position in Ich-Form, andere Sicht gewürdigt"
+      }
+    ],
+    "kontext_ausschluss": [
+      "Znünipause, Pausenraum (Heft A)",
+      "Stimmcouvert, Einbürgerung (Heft B)",
+      "Aushang, Treppenhaus, Hausversammlung, Gemeinschaftsraum (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Das Befundblatt trennt am Wortlaut des Protokolls die Kritik an der Spielleistung von der Herabsetzung des Mitspielers (das Nachmachen, «so einer … gehört nicht») und benennt, was fehlt: wie oft, wer dabei war, ob es eine frühere Verwarnung gab.",
+        "Beide Lager sind mit ihrem Wert und ihrem Interesse beschrieben (offen reden dürfen und gewinnen wollen; ohne Spott mitspielen können), und die Regel ist als unscharf erkannt: Sie sagt nicht, wo ein persönlicher Angriff beginnt.",
+        "Im Gespräch hat jede Person einen eigenen Anteil (Position, Antwort auf einen Einwand); die Gesprächsnotiz hält eine begründete gemeinsame Empfehlung und einen offenen Punkt fest."
+      ],
+      "tragfaehig": "Vertretbar ist zum Beispiel: Die Sperre bleibt, weil das Nachmachen und der Satz über «so einen» den Menschen treffen und nicht sein Spiel; die Kritik an späten Ansagen darf der Gesperrte weiter äussern, und die Regel wird um ein Beispiel ergänzt. Ebenso vertretbar: die Sperre verkürzen, wenn sich der Gesperrte beim Mitspieler entschuldigt, oder sie verlängern, wenn es nicht das erste Mal war – solange die Empfehlung beide Aussagen auseinanderhält und die andere Sicht ernst nimmt.",
+      "nicht_tragfaehig": "Eine Empfehlung, die nur ein Lager wiedergibt («er hat nur seine Meinung gesagt» oder «so jemand gehört ausgeschlossen»), die Kritik am Spiel und den Spott über das Stottern nicht trennt, sich auf ein Gesetz beruft, das den Fall nicht entscheidet, oder ohne Bezug zum Wortlaut des Protokolls und zur Regel auskommt."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}
