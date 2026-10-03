@@ -774,3 +774,11 @@ und §7.2. **Rückgängig:** die betroffenen Absätze in den References
    ist hingenommen.** Er entsteht nur lokal (Schreibschrift Segoe Print); im
    Linux-Container der Cloud misst dieselbe Seite ohne Überlauf. Die Einheit
    bleibt, wie der Lauf sie geschrieben hat.
+3. **Arbeitsansicht sagt, wenn ein Heft nur eine Spur hat.** Bei einem Heft mit
+   nur einer Spur (2.1.1 Heft A: nur mit Medien, Leitfaden §4.4) zeigte der
+   Umschalter «Ohne Medien» als gewählt und darunter trotzdem die Medien-Spur.
+   Neu ist die fehlende Stellung durchgestrichen und gesperrt, die vorhandene
+   ist markiert, und daneben steht «Heft A gibt es nur mit Medien»
+   (`EinheitWorkbench.tsx`, gelesen aus `spuren_verfuegbar`; Inline-Stile, das
+   Stylesheet ist nicht angefasst). Hefte mit beiden Spuren und alle
+   Bestandseinheiten sind unverändert.

@@ -214,6 +214,15 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
   const [doc, setDoc] = useState<DocSel>('doc-s')
   const [situation, setSituation] = useState<SitLetter>('A')
+  // v4.2: Spuren, die das gerade gezeigte Heft wirklich hat (`spuren_verfuegbar` setzt
+  // resolveSpur). Fehlt die Angabe, gelten alle Spuren der Einheit — wie bisher.
+  const heftSpuren: SpurKey[] = (() => {
+    if (!istV42 || (situation !== 'A' && situation !== 'B')) return spurenDa
+    const heft = situation === 'A' ? d.hf_A : d.hf_B
+    const da = heft?.spuren_verfuegbar?.filter((k) => spurenDa.includes(k))
+    return da && da.length ? da : spurenDa
+  })()
+  const heftNurEineSpur = istV42 && spurenDa.length > 1 && heftSpuren.length === 1
   const [mode, setMode] = useState<'info' | 'fill'>('fill')
   const [abteilung, setAbteilung] = useState(defaultAbteilung || '')
   // client:only — kein SSR, localStorage steht beim ersten Render bereits zur
@@ -1315,11 +1324,32 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
                 8 Seiten, `mode` bleibt darum beim Startwert `fill`. An seiner Stelle
                 steht der Spur-Umschalter, sofern es mehr als eine Spur gibt. */}
             {(doc === 'doc-s' || doc === 'doc-loesungen') && !gateKind && istV42 && spurenDa.length > 1 && (
-              <div className="wb-mode" role="group" aria-label="Spur">
-                {spurenDa.map((k) => (
-                  <button key={k} className={spur === k ? 'on' : ''} onClick={() => setSpur(k)}>{SPUR_LABEL[k]}</button>
-                ))}
-              </div>
+              <>
+                {/* Ein Heft kann nur eine Spur haben (Leitfaden §4.4: die Kompetenz verlangt
+                    Rezeption mündlich oder audiovisuell). Dann zeigt der Schalter die Spur, die
+                    es gibt, und sagt es — sonst sähe «Ohne Medien» aus wie ein Fehler.
+                    Inline-Stile, weil das Stylesheet in jedem exportierten HTML steckt. */}
+                {heftNurEineSpur && (
+                  <span style={{ fontSize: 12, color: '#d5d9e0', marginRight: 8, whiteSpace: 'nowrap' }}>
+                    Heft {situation} gibt es nur {heftSpuren[0] === 'mit_medien' ? 'mit Medien' : 'ohne Medien'}
+                  </span>
+                )}
+                <div className="wb-mode" role="group" aria-label="Spur">
+                  {spurenDa.map((k) => {
+                    const gibtEs = heftSpuren.includes(k)
+                    return (
+                      <button
+                        key={k}
+                        className={(heftNurEineSpur ? gibtEs : spur === k) ? 'on' : ''}
+                        disabled={!gibtEs}
+                        style={gibtEs ? undefined : { opacity: 0.45, cursor: 'not-allowed', textDecoration: 'line-through' }}
+                        title={gibtEs ? undefined : `Heft ${situation} gibt es nur in der Spur «${SPUR_LABEL[heftSpuren[0]]}»`}
+                        onClick={() => setSpur(k)}
+                      >{SPUR_LABEL[k]}</button>
+                    )
+                  })}
+                </div>
+              </>
             )}
             {doc === 'doc-s' && !gateKind && !istV42 && (
               <div className="wb-mode">
