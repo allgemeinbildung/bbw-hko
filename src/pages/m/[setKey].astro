@@ -108,6 +108,20 @@ function verortungText(k: QuelleKarte): string {
   return v.absaetze ?? v.von ?? ''
 }
 
+/**
+ * Audio und Video direkt auf der Seite (ENTSCHEIDE E28): SRF-Beiträge mit URN laufen im
+ * eingebetteten Player von SRF, Start bei `verortung.von`. Alles andere (Artikel, Grafik,
+ * fremde Hosts) bleibt ein Link. Der Link unter dem Player bleibt als Ausweg stehen.
+ */
+function embedSrc(k: QuelleKarte): string | null {
+  if (k.typ !== 'audio' && k.typ !== 'video') return null
+  const urn = (k as { urn?: string }).urn || /[?&]urn=([^&]+)/.exec(k.url || '')?.[1]
+  if (!urn || !/^urn:srf:(audio|video):[\w-]+$/.test(urn)) return null
+  const m = /^(?:(\d+):)?(\d{1,2}):(\d{2})$/.exec(k.verortung?.von ?? '')
+  const start = m ? (+(m[1] ?? 0)) * 3600 + +m[2] * 60 + +m[3] : 0
+  return `https://www.srf.ch/play/embed?urn=${urn}&subdivisions=false${start > 0 ? `&startTime=${start}` : ''}`
+}
+
 // Raster-Spalten je Quellentyp (Leitfaden §5); letzte Spalte immer «→ Begriff».
 const RASTER: Record<string, string[]> = {
   video: ['Bild', 'Ton', 'Aussage'],
@@ -139,7 +153,7 @@ const RASTER_ZEILEN = 4
       <header class="kopf">
         <p class="kick">Quellen zum Heft</p>
         <h1>{einheitTitel}</h1>
-        <p>Hier finden Sie die Quellen zu Ihrem Heft. Ein Tippen auf «Quelle öffnen» öffnet die Quelle in einem neuen Tab.</p>
+        <p>Hier finden Sie die Quellen zu Ihrem Heft. Audio und Video spielen Sie direkt auf dieser Seite ab; Texte und Grafiken öffnen sich in einem neuen Tab.</p>
       </header>
 
       {hefte.length > 1 && (
@@ -171,8 +185,14 @@ const RASTER_ZEILEN = 4
                     <p>{h.pflicht.auftrag}</p>
                   </div>
                 )}
+                {embedSrc(h.pflicht) && (
+                  <div class={`player ${h.pflicht.typ}`}>
+                    <iframe src={embedSrc(h.pflicht)} title={`${typLabel(h.pflicht.typ)}: ${h.pflicht.titel}`} loading="lazy"
+                      allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                  </div>
+                )}
                 <a class="knopf gross" href={h.pflicht.url} target="_blank" rel="noopener noreferrer">
-                  Quelle öffnen <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
+                  {embedSrc(h.pflicht) ? 'Bei SRF öffnen' : 'Quelle öffnen'} <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
                 </a>
 
                 {h.pflicht.ersatz && (
@@ -189,8 +209,14 @@ const RASTER_ZEILEN = 4
                         <p class="verortung klein"><span>{verortungVerb(h.pflicht.ersatz.typ)}:</span> {verortungText(h.pflicht.ersatz)}</p>
                       )}
                       <p class="kurz">{h.pflicht.ersatz.kurzbeschrieb}</p>
+                      {embedSrc(h.pflicht.ersatz) && (
+                        <div class={`player ${h.pflicht.ersatz.typ}`}>
+                          <iframe src={embedSrc(h.pflicht.ersatz)} title={`${typLabel(h.pflicht.ersatz.typ)}: ${h.pflicht.ersatz.titel}`} loading="lazy"
+                            allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                      )}
                       <a class="knopf zweit" href={h.pflicht.ersatz.url} target="_blank" rel="noopener noreferrer">
-                        Ersatzquelle öffnen <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
+                        {embedSrc(h.pflicht.ersatz) ? 'Bei SRF öffnen' : 'Ersatzquelle öffnen'} <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
                       </a>
                     </div>
                   </details>
@@ -215,8 +241,14 @@ const RASTER_ZEILEN = 4
                     {q.leitfrage_vertiefung && (
                       <p class="leitfrage"><span>Leitfrage</span>{q.leitfrage_vertiefung}</p>
                     )}
+                    {embedSrc(q) && (
+                      <div class={`player ${q.typ}`}>
+                        <iframe src={embedSrc(q)} title={`${typLabel(q.typ)}: ${q.titel}`} loading="lazy"
+                          allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                      </div>
+                    )}
                     <a class="knopf zweit" href={q.url} target="_blank" rel="noopener noreferrer">
-                      Quelle öffnen <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
+                      {embedSrc(q) ? 'Bei SRF öffnen' : 'Quelle öffnen'} <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
                     </a>
                   </article>
                 ))}
@@ -351,6 +383,11 @@ const RASTER_ZEILEN = 4
   .verortung.klein { font-size: 16px; padding: 8px 12px; border-left-width: 4px; }
 
   .kurz { margin: 0 0 12px; font-size: 16px; }
+  .player { margin: 0 0 12px; border-radius: 10px; overflow: hidden; background: #000; }
+  /* Der Player von SRF ist auch bei Audio ein 16:9-Bild; eine kleinere Höhe gibt einen Rollbalken im Rahmen. */
+  .player { aspect-ratio: 16 / 9; }
+  .player iframe { display: block; width: 100%; height: 100%; border: 0; }
+  @media print { .player { display: none; } }
   .auftrag { margin: 0 0 14px; padding: 12px 14px; border: 1px dashed var(--brand); border-radius: 10px; }
   .auftrag-titel { margin: 0 0 4px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--brand-dark); }
   .auftrag p:last-child { margin: 0; font-size: 16px; }

@@ -756,3 +756,21 @@ die References der Skill sich widersprachen oder schwiegen. Entschieden:
 und §7.2. **Rückgängig:** die betroffenen Absätze in den References
 (`phase-0`, `phase-1`, `phase-2-3`, `phase-5`, `phase-7`, `phase-q`,
 `kohaerenz.md`) und in `_VORLAGE.md`.
+
+## E28 — Nach dem Cloud-Lauf: Player auf der QR-Seite, Überlauf hingenommen (Pietro, 03.10.2026)
+
+1. **Audio und Video spielen direkt auf der QR-Seite** `/m/<Ordner>`. Für
+   SRF-Beiträge mit URN bettet `src/pages/m/[setKey].astro` den Player von SRF
+   ein (Start bei `verortung.von`), für Quelle, Ersatzquelle und Vertiefungen.
+   Der Knopf darunter heisst dann «Bei SRF öffnen» und bleibt als Ausweg.
+   Artikel, Grafiken, Webseiten und Medien anderer Anbieter bleiben ein Link.
+   Kein neues Datenfeld; die Seite liest `typ`, `urn` bzw. `url` und
+   `verortung.von` der Karte. Gilt auch für die Gold-Einheit.
+   **Nicht geprüft:** der Player auf der Produktions-Domain und im Schulnetz
+   (geprüft ist localhost, Desktop- und Handybreite); ob der Player bei `bis`
+   stoppt (er tut es nicht — das Heft nennt die Zeitmarken).
+   **Rückgängig:** `git revert` des Commits.
+2. **Der Überlauf von 1,8 px auf Seite 6 von Heft A (`2.3.1_anliegen_vertreten`)
+   ist hingenommen.** Er entsteht nur lokal (Schreibschrift Segoe Print); im
+   Linux-Container der Cloud misst dieselbe Seite ohne Überlauf. Die Einheit
+   bleibt, wie der Lauf sie geschrieben hat.

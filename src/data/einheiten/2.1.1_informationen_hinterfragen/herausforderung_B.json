@@ -1,0 +1,957 @@
+{
+  "id": "2.1.1_informationen_hinterfragen_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "2.1",
+  "modul_titel": "Meinungen bilden und mitgestalten — Informationen hinterfragen",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Dreimal im Feed – und jetzt weiterleiten?",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Inhalte vor dem Weiterleiten prüfen"
+  },
+  "prinzip_ref": "2.1.1_informationen_hinterfragen_prinzip",
+  "nrlp": {
+    "nr": "2.1.2",
+    "nr_primary": [
+      "2.1.2"
+    ],
+    "lebensbezug": "2.1",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM5"
+    ],
+    "sk": [
+      1,
+      5,
+      12
+    ],
+    "kompetenz_id": "2.1.2",
+    "lebensbezug_id": "2.1",
+    "kompetenz_text": "Ich kann grundlegende Merkmale von Manipulation und Desinformation anhand von Medienbeiträgen erkennen und meinen Umgang mit digitalen Kommunikationsräumen reflektieren.",
+    "lebensbezug_text": "Ich hinterfrage Informationen aus verschiedenen Quellen und erkenne, warum mir bestimmte Inhalte angezeigt werden."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. Am Morgen taucht in meinem Feed ein kurzer Clip auf: Ein Mann im Anzug sagt in die Kamera, Lernende hätten ab dem nächsten Sommer fünf Ferientage weniger, beschlossen sei das schon. Unten läuft ein Logo, das amtlich aussieht, dazu wütende Musik. Am Mittag sehe ich denselben Clip wieder, am Abend ein drittes Mal, diesmal von einem anderen Konto geteilt. Im Gruppenchat unserer Klasse haben ihn zwei schon weitergeleitet. Einer schreibt «Frechheit, schickt das allen!», eine Kollegin fragt, wer das eigentlich sagt. Niemand antwortet ihr. Ich will den Clip meiner Freundin schicken, die auch in der Lehre ist. Dann stutze ich: Ich weiss nicht, wer der Mann ist, woher das Logo kommt und warum gerade ich den Clip so oft sehe. Bevor ich weiterleite, will ich klären, ob ich ihm glauben kann – und was ich künftig mit solchen Inhalten tue.",
+  "zahlen_tabelle": [
+    {
+      "label": "Clip in meinem Feed gesehen",
+      "wert": "3-mal am Tag"
+    },
+    {
+      "label": "Im Klassenchat schon weitergeleitet von",
+      "wert": "2 Personen"
+    },
+    {
+      "label": "Behauptung im Clip: Ferientage weniger",
+      "wert": "5"
+    },
+    {
+      "label": "Absender und Datum des Clips",
+      "wert": "unbekannt"
+    }
+  ],
+  "leitfrage": "Leite ich weiter, was alle weiterleiten — oder prüfe ich zuerst?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Schnell weitergeben vs. zuerst prüfen",
+    "hint": "Wer sofort weiterleitet, warnt andere vielleicht rechtzeitig. Wer zuerst prüft, braucht Zeit, verbreitet aber nichts Falsches. Was gilt wann?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 7.1",
+      "titel": "Medien",
+      "unterueberschrift": "Manipulation und Schutz davor",
+      "seiten": "Seite 187-189",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 20.7",
+      "titel": "Medienkompetenz",
+      "unterueberschrift": "Nutzung Jugendlicher, Fake News erkennen",
+      "seiten": "Seite 446-447",
+      "fuer_leitfrage": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie halten Ihre Mediennutzung in einem Protokoll mit Reflexion fest: LF1 liefert die Merkmale von Manipulation, LF2 Herkunft und Check für fünf Inhalte, LF3 einen Befund zum Vergleich mit dem Protokoll, LF4 Ihre eigene Regel mit Begründung und Grenze.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 7.1 | S. 187-189",
+      "text": "Erklären Sie, mit welchen vier Mitteln Medien lenken, was wir wahrnehmen, und was Fake News sind. Nennen Sie zwei Wege, wie Sie sich als Nutzerin oder Nutzer selbst schützen.",
+      "liefert": "Merkmale von Manipulation und Schutzwege",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Erste Tabelle auf S. 188: «Selektion» heisst hier Auswahl, «Sprache» heisst Wortwahl.",
+          "Fake News: S. 189 und S. 447. Was Sie selbst tun können: S. 189, «Selbstschutz»."
+        ],
+        "satzanfaenge": [
+          "«Medien lenken meine Wahrnehmung, indem sie …»",
+          "«Fake News sind …»",
+          "«Ich schütze mich, wenn ich …»"
+        ],
+        "produkt": "Die vier Mittel sind Wörter für die Spalte «Merkmal»; dort steht auch, was ein Check zeigt (LF2)."
+      },
+      "loesung": {
+        "kern": "Vier Mittel der Manipulation, Schutz davor",
+        "zeilen": [
+          {
+            "label": "Auswahl (Selektion)",
+            "text": "Redaktionen entscheiden, welche Themen überhaupt vorkommen; vermittelt wird, was sie für wichtig oder einträglich halten.",
+            "quelle": "Kap. 7.1, S. 188"
+          },
+          {
+            "label": "Gewichtung, Wortwahl",
+            "text": "Wie gross und ausführlich ein Ereignis erscheint, steuert seine Bedeutung; unausgewogen platziert heisst tendenziös. Wortwahl (im Buch «Sprache»): Beschönigende oder stark abwertende Wörter ergreifen Partei.",
+            "quelle": "Kap. 7.1, S. 188"
+          },
+          {
+            "label": "Bildmanipulation",
+            "text": "Bilder werden inszeniert, bei der Aufnahme verändert oder danach retuschiert; sie zeigen dann etwas, das so nie geschah.",
+            "quelle": "Kap. 7.1, S. 188"
+          },
+          {
+            "label": "Fake News",
+            "text": "Absichtlich eingestreute Fehler, die sich nur schwer aufdecken lassen (7.1). S. 447: Falschmeldungen und manipulierte Bilder sind im Netz häufig.",
+            "quelle": "Kap. 7.1 S. 189; 20.7 S. 447"
+          },
+          {
+            "label": "Selbstschutz",
+            "text": "Beiträge zum selben Thema in mehreren unabhängigen Medien vergleichen; die Quelle auf Vertrauenswürdigkeit prüfen. Warum der Feed einen Clip oft zeigt: Das Kapitel sagt dazu nichts; Fallüberlegung (siehe Vertiefung 1 in der Medien-Fassung).",
+            "quelle": "Kap. 7.1, S. 189"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 20.7 | S. 447 · eigener Fall",
+      "text": "Beschreiben Sie, wie Sie den Clip mit den drei Checks von S. 447 prüfen würden: Was klärt jeder Check, was bleibt offen? Notieren Sie vier weitere Inhalte, die Ihnen zuletzt angezeigt oder geschickt wurden, mit Herkunft.",
+      "liefert": "Herkunft und Check für fünf Inhalte",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Fragen Sie beim Clip: Wer steht dahinter? Wo lässt es sich nachfragen? Wer meldet es noch?",
+          "Fakt: lässt sich nachprüfen, auch wenn noch ungeprüft. Meinung: persönliche Einschätzung."
+        ],
+        "satzanfaenge": [
+          "«Der Quellen-Check zeigt beim Clip, dass …»",
+          "«Offen bleibt, …»",
+          "«Inhalt Nr. … ist ein Fakt / eine Meinung, weil …»"
+        ],
+        "produkt": "Clip und vier Inhalte stehen damit mit «Woher» und «Fakt/Meinung» im Protokoll."
+      },
+      "loesung": {
+        "kern": "Drei Checks am Clip, fünf eigene Inhalte",
+        "zeilen": [
+          {
+            "label": "Quellen-Check",
+            "text": "Klärt: kein bekannter Absender, kein Nachrichtenportal, keine Behördenseite; das amtlich wirkende Logo ersetzt keinen Absender. Offen: wer der Mann ist und wem das Logo gehört.",
+            "quelle": "Kap. 20.7, S. 447"
+          },
+          {
+            "label": "Fakten-Check",
+            "text": "Klärt: Die Behauptung lässt sich bei einer betroffenen Stelle nachfragen, etwa Berufsfachschule oder Lehrbetrieb. Offen: ob sie stimmt, bis eine Antwort kommt; das Heft entscheidet es nicht.",
+            "quelle": "Kap. 20.7, S. 447"
+          },
+          {
+            "label": "Google-Check",
+            "text": "Klärt: ob seriöse Portale die Behauptung melden; fehlen sie, ist es wohl falsch. Offen: Ein fehlender Treffer ist kein Beweis, und woher die Bilder stammen, zeigt erst die Bildersuche.",
+            "quelle": "Kap. 20.7, S. 447"
+          },
+          {
+            "label": "Erwartet",
+            "text": "Clip plus vier eigene Inhalte mit Herkunft (Feed, Chat, Konto, Portal), je als Fakt oder Meinung eingeordnet; mindestens einer ohne erkennbaren Absender."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Den Clip für falsch erklären, ohne einen Check zu beschreiben; Fakt mit «stimmt» verwechseln."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Mediennutzungs-Protokoll mit Reflexion: Tabelle mit fünf Inhalten aus Feed und Chat, darunter eine Reflexion mit eigener Regel",
+    "titel": "Mein Mediennutzungs-Protokoll mit Reflexion",
+    "format_detail": "Eine Seite: eine Tabelle mit fünf Inhalten, die Ihnen zuletzt angezeigt oder geschickt wurden, darunter der Clip aus der Situation, in den Spalten Inhalt · Woher · Fakt/Meinung · Merkmal · Was ich tue. In «Merkmal» steht eines der vier Mittel aus LF1 oder was ein Check zeigt, etwa «kein Absender». Darunter eine Reflexion in drei bis vier Sätzen, die eine eigene Regel für zweifelhafte Inhalte begründet. Adressat: Sie selbst und eine Person aus dem Gruppenchat.",
+    "beschreibung": "Ich trage den Clip und vier weitere Inhalte in fünf Spalten ein: Inhalt · Woher · Fakt/Meinung · Merkmal · Was ich tue. Darunter lege ich meine Regel für zweifelhafte Inhalte fest.",
+    "schritte": [
+      {
+        "label": "01 Merkmale klären",
+        "hint": "Halten Sie mit LF1 die vier Mittel fest. In «Merkmal» steht eines davon oder was ein Check zeigt, etwa «kein Absender»."
+      },
+      {
+        "label": "02 Fünf Inhalte eintragen",
+        "hint": "Tragen Sie den Clip und die vier Inhalte aus LF2 mit «Woher» und «Fakt/Meinung» ein."
+      },
+      {
+        "label": "03 Befund vergleichen",
+        "hint": "Vergleichen Sie den Befund aus LF3 mit Ihrem Protokoll: Was zeigt sich auch bei Ihnen? Ergänzen Sie «Was ich tue»."
+      },
+      {
+        "label": "04 Regel entscheiden",
+        "hint": "Schreiben Sie Ihre Regel aus LF4 als Reflexion unter die Tabelle: drei bis vier Sätze, Ich-Form, mit Begründung."
+      },
+      {
+        "label": "05 Mit Kriterien prüfen",
+        "hint": "Prüfen Sie Protokoll und Reflexion mit den zwei Feedback-Kriterien: Ist die Regel begründet? Steht, was Sie künftig tun?"
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Protokoll (1 Seite): Tabelle mit 5 Inhalten aus Feed und Chat",
+      "Reflexion in 3–4 Sätzen mit 1 eigenen Regel"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Inhalte zu Training und Ernährung",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Protokoll: 5 Inhalte",
+          "kopf": [
+            "Inhalt",
+            "Woher",
+            "Fakt/Meinung",
+            "Merkmal",
+            "Was ich tue"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Video: 5 kg weniger",
+                "fremdes Konto",
+                "Meinung",
+                "Wortwahl",
+                "nicht teilen"
+              ]
+            },
+            {
+              "zellen": [
+                "Trainingsplan",
+                "Trainerin",
+                "Fakt",
+                "Absender klar",
+                "nutzen"
+              ]
+            },
+            {
+              "zellen": [
+                "Foto: Profi mit Drink",
+                "Werbung",
+                "Meinung",
+                "Bildmanipulation?",
+                "Bildersuche"
+              ]
+            },
+            {
+              "zellen": [
+                "Bericht: Schlaf",
+                "Zeitung online",
+                "Fakt",
+                "Quelle genannt",
+                "behalten"
+              ]
+            },
+            {
+              "zellen": [
+                "Gerücht: Halle zu",
+                "Kollege im Chat",
+                "Fakt, ungeprüft",
+                "kein Absender",
+                "nachfragen"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Reflexion mit Regel",
+          "text": [
+            "Zwei von fünf Inhalten hatten keinen Absender. Meine Regel: Verspricht mir ein Inhalt viel und finde ich keinen Absender, teile ich ihn nicht. Das kostet manchmal einen guten Tipp."
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Clip über weniger Ferientage, dreimal im Feed",
+      "hinweis": "Eine mögliche Lösung; nur der Clip stammt aus der Situation. Annahme: Die übrigen vier Inhalte sind erfunden, die Lernenden tragen eigene ein. Erst zeigen, wenn das eigene Protokoll steht; die Regel darf anders ausfallen, solange sie begründet ist (LF4).",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Protokoll: 5 Inhalte",
+          "kopf": [
+            "Inhalt",
+            "Woher",
+            "Fakt/Meinung",
+            "Merkmal",
+            "Was ich tue"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Clip: 5 Ferientage weniger",
+                "fremdes Konto, 3-mal",
+                "Fakt, ungeprüft",
+                "kein Absender; Logo amtlich; «schon beschlossen»",
+                "nicht weiterleiten, nachfragen"
+              ]
+            },
+            {
+              "zellen": [
+                "Meme über Prüfungen",
+                "Gruppenchat",
+                "Meinung",
+                "Witz, kein Beleg",
+                "lachen, liegen lassen"
+              ]
+            },
+            {
+              "zellen": [
+                "Sturmwarnung",
+                "Wetter-App",
+                "Fakt",
+                "Absender klar",
+                "beachten"
+              ]
+            },
+            {
+              "zellen": [
+                "Foto: Star im Spital",
+                "Fan-Konto",
+                "Fakt, ungeprüft",
+                "Bildmanipulation?",
+                "Bildersuche, nicht teilen"
+              ]
+            },
+            {
+              "zellen": [
+                "Video: Creme gegen Pickel",
+                "Influencerin",
+                "Meinung",
+                "Auswahl: nur Erfolge",
+                "nicht teilen"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Reflexion mit Regel",
+          "text": [
+            "Drei meiner fünf Inhalte kamen aus dem Chat oder von fremden Konten, geprüft hatte ich keinen.",
+            "Meine Regel: Wenn ein Inhalt etwas über Regeln, Geld oder Gesundheit behauptet und ich keinen Absender finde, leite ich ihn nicht weiter und frage im Chat, wer das sagt.",
+            "Das kostet Zeit, und manchmal wirke ich misstrauisch gegenüber Freunden. Ich nehme das in Kauf, weil ein falscher Clip, den ich weiterleite, auch unter meinem Namen läuft."
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Es ist keine Begründung für den Entscheid zu erkennen.",
+        "Eine Begründung ist angedeutet, bleibt aber lückenhaft.",
+        "Die Begründung ist nachvollziehbar und geordnet.",
+        "Die Begründung ist schlüssig; ein Gegenargument und die Folgen des Entscheids sind berücksichtigt."
+      ],
+      "indikator_produkt": "Die Regel ist begründet und nennt, was sie mich kostet."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position fehlt.",
+        "Eine Position ist angedeutet, bleibt aber unklar.",
+        "Die eigene Position ist klar in Ich-Form formuliert.",
+        "Die Position ist begründet; das Spannungsfeld zwischen Vertrauen und Prüfen ist anerkannt."
+      ],
+      "indikator_produkt": "Die Reflexion sagt in Ich-Form, was ich künftig tue und was nicht."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel des Protokolls an einem anderen Fall (S. 6) und die Satzanfänge zu jeder Leitfrage.",
+    "scaffold_100": "Prüfen Sie einen Inhalt aus Ihrem Protokoll ganz mit allen drei Checks und notieren Sie, ob Ihre Regel danach noch passt."
+  },
+  "methoden": [
+    {
+      "ref": "lm-20-7-fake-news-check",
+      "fuer": "für «Merkmal» und «Was ich tue»",
+      "tun": "Was ein Check zeigt (etwa kein Absender), gehört in «Merkmal»; in «Was ich tue»: weitergeben, nachfragen, melden, widersprechen."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für die Einträge in der Tabelle",
+      "tun": "In jede Zelle Stichworte, höchstens fünf Wörter; ganze Sätze nur in der Reflexion."
+    },
+    {
+      "ref": "lm-17-3-stellungnahme",
+      "fuer": "für die Reflexion und LF4",
+      "tun": "Bauen Sie die Reflexion wie eine Stellungnahme: Ausgangslage, Gründe, am Schluss Ihre Regel."
+    }
+  ],
+  "mindmap_zentrum": "Aussage oder Absicht dahinter",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie Medien lenken",
+      "punkte": [
+        "Auswahl",
+        "Gewichtung",
+        "Wortwahl",
+        "Bildmanipulation"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Woran ich Falsches erkenne",
+      "punkte": [
+        "Fake News",
+        "Quellen-Check",
+        "Fakten-Check",
+        "Google-Check"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was ich damit tue",
+      "punkte": [
+        "Fakt oder Meinung",
+        "Eigene Regel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, ob ich den Clip weiterleite, und warum?",
+      "Habe ich eine Regel für den nächsten zweifelhaften Inhalt?"
+    ],
+    "mitnahme": [
+      "Drei Checks, bevor ich etwas weitergebe",
+      "Meine Regel für zweifelhafte Inhalte",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Wortwahl",
+          "nach": "Fakt oder Meinung",
+          "text": "verrät eine Meinung"
+        },
+        {
+          "von": "Gewichtung",
+          "nach": "Auswahl",
+          "text": "ist wie diese eine Entscheidung der Redaktion"
+        },
+        {
+          "von": "Bildmanipulation",
+          "nach": "Fake News",
+          "text": "kann Teil sein von"
+        },
+        {
+          "von": "Google-Check",
+          "nach": "Fake News",
+          "text": "findet alte Bilder in neuem Zusammenhang bei"
+        },
+        {
+          "von": "Fake News",
+          "nach": "Quellen-Check",
+          "text": "fallen auf, wenn der Absender fehlt, beim"
+        },
+        {
+          "von": "Fakten-Check",
+          "nach": "Eigene Regel",
+          "text": "geht im Alltag nicht immer, darum braucht es eine"
+        },
+        {
+          "von": "Eigene Regel",
+          "nach": "gilt auch bei …",
+          "text": "hilft auch bei"
+        }
+      ],
+      "transfer": "Werbung einer Firma im Feed, Bewertungen eines Produkts im Netz, ein Wahlplakat",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Medienkompetenz",
+          "Selbstschutz"
+        ],
+        "mit_medien": [
+          "Absender",
+          "Vergleich mehrerer Medien"
+        ]
+      },
+      "quercheck": [
+        "Ja: Ich leite ihn nicht weiter, solange kein Absender auffindbar ist; im Chat frage ich, wer das sagt.",
+        "Ja: Behauptet ein Inhalt etwas über Regeln, Geld oder Gesundheit und fehlt der Absender, frage ich nach, bevor ich ihn weiterleite."
+      ],
+      "mitnahme": [
+        "Quellen-Check: Wer steht dahinter? Fakten-Check: bei der Stelle nachfragen. Google-Check: Melden es seriöse Portale?",
+        "Ohne Absender leite ich nichts weiter; im Chat frage ich, wer das sagt.",
+        "Warum mir ein Inhalt so oft angezeigt wird."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1, LF2: Merkmale, drei Checks, fünf Inhalte",
+        "LF4: Grenze der Checks und eigene Regel"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster: 4 Zeilen, je Begriff aus LF1 oder LF2",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Protokoll und Reflexion",
+      "vollstaendig_wenn": [
+        "5 Inhalte, alle Spalten ausgefüllt",
+        "Jeder Inhalt: Fakt oder Meinung",
+        "Reflexion: 3–4 Sätze, 1 eigene Regel"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2 (Merkmale, drei Checks, fünf Inhalte)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 mit eigener Regel, Protokoll beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Protokoll und Reflexion fertigstellen, Feedback-Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst bekomme ich Inhalte, die jemand mit einer Absicht gemacht hat – und woran merke ich, dass ich zuerst prüfen sollte?",
+    "ziel": "Jeder Inhalt im Feed hat einen Absender mit einem Interesse; wer Absender und Machart prüft, kann ihn einordnen, statt ihn nur zu glauben und weiterzuleiten oder ihn ungeprüft abzulehnen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Merkmale von Manipulation erkennen, Inhalte vor dem Weiterleiten prüfen, eine eigene Regel begründen",
+    "lehrmittel_anker": "Kap. 7.1 S. 187-189 (Manipulation, Selbstschutz, Fake News), Kap. 20.7 S. 446-447 (Mediennutzung Jugendlicher, drei Checks).",
+    "kn_aktivierung": "Im KN prüft die Lernende ein Bild ohne Absender und Datum, das im Chat ihres Lehrbetriebs herumgeht, mit den drei Checks und entscheidet begründet, ob sie es weiterleitet.",
+    "transfer_check": "Kann die Lernende an einem neuen Inhalt Merkmale von Manipulation benennen, die drei Checks anwenden und eine begründete Regel für den eigenen Umgang formulieren?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[1] + leitfragen[2] — Quellen-Check am Clip; im Raster zur Quelle Wichtiges von Nebensächlichem trennen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] — die eigene Gewohnheit «Was Freunde schicken, stimmt» am Modell der drei Checks messen"
+    },
+    {
+      "sk": 12,
+      "wo": "handlungsprodukt.schritte[3] + Produkt — festlegen, was ich mit einem zweifelhaften Inhalt tue: nicht weitergeben, nachfragen, melden, widersprechen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 20.7 | S. 446-447",
+          "text": "Werten Sie Ihr Raster aus: Was sagt das Lehrmittel über die Mediennutzung Jugendlicher und über Fake News — und was davon zeigt sich in Ihrem Protokoll? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Befund zum Vergleich mit dem Protokoll",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 20.7 | S. 446-447",
+            "auftrag": "Lesen Sie Kap. 20.7, S. 446–447, bis zur Tabelle der Checks. Suchen Sie drei weitere Aussagen zu Mediennutzung und Fake News. Die erste Zeile ist ein Beispiel. Ordnen Sie jeder Zeile einen Begriff aus LF1 oder LF2 zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 446, Medienkompetenz",
+              "Medien kritisch nutzen",
+              "Schlüsselqualifikation",
+              "Selbstschutz"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Suchen Sie auf S. 447 unter «Chancen und Gefahren» und unter «Fake News»."
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel nutzen Jugendliche …»",
+              "«In meinem Protokoll zeigt sich das bei …»"
+            ],
+            "produkt": "Der Befund zeigt, wo Ihr Protokoll dem Lehrmittel gleicht; er ergänzt die Spalte «Was ich tue»."
+          },
+          "loesung": {
+            "kern": "Mediennutzung und Fake News, am eigenen Protokoll",
+            "quelle_ref": "Kap. 20.7 | S. 446-447",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Medienkompetenz heisst auch kritischer Umgang (S. 446); Gefahren wie Sucht, Mobbing, Datenmissbrauch, darum den eigenen Umgang prüfen (S. 447); Falschmeldungen sind im Netz häufig, unter anderem wegen des Kampfs um Aufmerksamkeit (S. 447); Wahrheitsgehalt von Text, Bild und Video einschätzen (S. 447).",
+                "quelle": "Kap. 20.7, S. 446-447"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Fast alle haben ein eigenes Smartphone (S. 446); im Schnitt über drei Stunden täglich am Smartphone (S. 447); die Mehrheit ist in sozialen Netzwerken, vor allem bei Inhalten von Freunden (S. 447). Werte des Balkendiagramms auf S. 446 gelten nicht als Beleg.",
+                "quelle": "Kap. 20.7, S. 446-447"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Aus LF1 oder LF2, Deutung: kritischer Umgang, Gefahren → Selbstschutz; Falschmeldungen → Fake News; Echtheit einschätzen → Google-Check oder Bildmanipulation.",
+                "quelle": "Kap. 7.1; 20.7, S. 447"
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet eine Aussage mit dem eigenen Protokoll (z. B. Inhalte von Freunden ungeprüft). Warum der Feed einen Clip oft zeigt, sagt der Abschnitt nicht: Fallüberlegung."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 446, Medienkompetenz",
+                "Medien kritisch nutzen",
+                "Schlüsselqualifikation",
+                "Selbstschutz"
+              ],
+              [
+                "S. 447, Gefahren",
+                "Netz birgt auch Risiken",
+                "Sucht, Mobbing, Datenmissbrauch",
+                "Selbstschutz"
+              ],
+              [
+                "S. 447, Fake News",
+                "viele Falschmeldungen im Netz",
+                "u. a. Kampf um Aufmerksamkeit",
+                "Fake News"
+              ],
+              [
+                "S. 447, Fake News",
+                "Echtheit selbst einschätzen",
+                "Text, Bild, Video",
+                "Google-Check"
+              ]
+            ],
+            "befund": "Laut Lehrmittel sind Jugendliche täglich lange am Handy, und Falschmeldungen sind im Netz häufig, unter anderem weil alle um Aufmerksamkeit kämpfen. In meinem Protokoll kommen drei von fünf Inhalten aus dem Chat, geprüft habe ich keinen. Die kritische Haltung, die das Lehrmittel verlangt, fehlt mir noch."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.7 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Nehmen Sie die drei Checks als Modell: Wo passen sie zu Ihrem Alltag im Gruppenchat, wo nicht? Entscheiden Sie, welche eigene Regel künftig für zweifelhafte Inhalte gilt.",
+          "liefert": "Eigene Regel mit Begründung und Grenze",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Prüfen Sie Ihre Gewohnheit «Was Freunde schicken, stimmt» an einem Inhalt im Protokoll."
+            ],
+            "satzanfaenge": [
+              "«Die drei Checks verlangen, dass ich …»",
+              "«In meinem Alltag geht das nicht immer, weil …»",
+              "«Meine Regel: Wenn …, dann …»"
+            ],
+            "produkt": "Ihre Regel und ihre Begründung bilden den Kern der Reflexion unter der Tabelle."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: drei Checks ↔ Alltag, Regel",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die drei Checks sind mit Namen genannt, und mindestens einer ist an einem Inhalt angewendet (am Clip oder an einem Inhalt des Protokolls).",
+                "Eine Grenze des Modells im eigenen Alltag ist konkret genannt (Zeit, Vertrauen in Freunde, kein Absender auffindbar).",
+                "Die Regel ist ein Wenn-dann-Satz und sagt, was ich mit einem zweifelhaften Inhalt tue: nicht weitergeben, nachfragen, melden oder widersprechen.",
+                "Die Begründung nennt, was die Regel kostet, und erkennt an, dass Vertrauen und Prüfen beide begründbar sind."
+              ],
+              "beispiel_pol_1": "Quellen-, Fakten- und Google-Check passen zu meinem Fall: Beim Clip über die Ferientage zeigt schon der Quellen-Check, dass kein Absender genannt ist. Grenze: Den Fakten-Check schaffe ich nicht bei jedem Inhalt. Meine Regel: Wenn ein Inhalt mich wütend macht und keinen Absender hat, leite ich ihn erst weiter, wenn ich einen Check gemacht habe. Das kostet Zeit, und manchmal erfahre ich etwas als Letzte. Ich nehme das in Kauf, weil ich meiner Freundin nichts Falsches schicken will, auch wenn ich dem Chat sonst vertraue.",
+              "beispiel_pol_2": "Quellen-, Fakten- und Google-Check schaffe ich im Alltag nicht bei allem, der Chat ist zu schnell: Das ist die Grenze des Modells. Beim Clip hätte ich mit dem Google-Check nachsehen können, ob seriöse Portale die Ferientage melden. Meine Regel: Wenn ein Inhalt etwas über Regeln oder Geld behauptet, frage ich im Chat, wer das sagt, und leite ihn erst weiter, wenn jemand einen Absender nennt. So prüfe ich nicht alles, aber das, was mir oder anderen schaden kann, und vertraue meinen Leuten beim Rest.",
+              "nicht_tragfaehig": "Nur «Ich prüfe künftig alles» ohne Grenze und Begründung, oder «Freunde schicken nichts Falsches» ohne Bezug zu den drei Checks."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was die drei Checks verlangen",
+          "Wo es in meinem Alltag hakt",
+          "Meine Regel"
+        ],
+        "hinweis": "Zwei Zeilen genügen. Die Regel in der dritten Spalte antwortet auf das, was in der zweiten Spalte hakt.",
+        "loesung_zeilen": [
+          [
+            "Absender des Clips suchen",
+            "Clip kam von einem fremden Konto, niemand kennt es",
+            "Ohne Absender leite ich nicht weiter"
+          ],
+          [
+            "Bei der Stelle nachfragen",
+            "Kostet Zeit; der Chat ist schneller",
+            "Ich frage im Chat, wer das sagt"
+          ],
+          [
+            "Seriöse Portale suchen",
+            "Bei Witzen lohnt es sich nicht",
+            "Prüfen, wenn es um Regeln oder Geld geht"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 20.7 (S. 3)",
+        "beispiel": [
+          "Absatz 2 · Bibliothek Musterdorf öffnet länger · «bis 20 Uhr» (Beispielwert) · → hier ein Begriff aus LF1 oder LF2"
+        ]
+      },
+      "scaffold_90": "Beispiel des Protokolls an einem anderen Fall (S. 6) und die ausgefüllte Beispielzeile im Raster (S. 3)."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Wie prüfen die Befragten, ob eine Nachricht stimmt — und welche Prüfwege nutzen nur wenige? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Befund zum Vergleich mit dem Protokoll",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-211b-pflicht",
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Wer wurde wann befragt? Mehrfachnennungen: nicht zusammenzählen.",
+              "Nehmen Sie zwei häufige und zwei seltene Prüfwege."
+            ],
+            "satzanfaenge": [
+              "«Laut Quelle prüfen … % der Befragten, indem sie …»",
+              "«Nur wenige …»",
+              "«In meinem Protokoll mache ich es wie …»"
+            ],
+            "produkt": "Den Befund vergleichen Sie mit der Spalte «Was ich tue»; Belege sind Wert und Reihe der Grafik."
+          },
+          "loesung": {
+            "kern": "Prüfwege der Befragten und die Lücken darin",
+            "quelle_ref": "q-211b-pflicht",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Häufig: Eltern 69 %, Freunde 64 % (R. 1–2), seriöse Medien 51 %, eigenes Wissen 48 %, mehrere Webseiten 47 % (R. 3–5). Selten: Internetadresse 10 %, Lehrperson 8 %, Factcheck-Website 3 % (R. 10–12).",
+                "quelle": "Quelle, Abb. 10"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Absender 37 % (R. 6); je 13 % teilen und warten ab oder prüfen nicht (R. 8–9); 39 % glaubten, eine falsche Nachricht gesehen zu haben (Abs. 1).",
+                "quelle": "Quelle, Abs. 1 und Abb. 10"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Aus LF1 oder LF2: Vergleich mehrerer Medien, Quellen-Check, Fake News. Gespräch mit Eltern, Freunden: Deutung der Lernenden.",
+                "quelle": "Kap. 7.1 S. 189; 20.7 S. 447"
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet häufige und seltene Prüfwege mit dem eigenen Protokoll (im Chat fragen, Absender nie prüfen)."
+              },
+              {
+                "label": "Lesehilfe",
+                "text": "Selbstauskunft 12- bis 19-Jähriger, Erhebung 2018; Mehrfachnennungen; zeigt Prüfwege, nicht Kanäle."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Darst. 33 (alle Online-Nutzenden 2025, «würden»): offizielle Quelle 40 % → Quellen-Check, Suchmaschine 38 % → Google-Check; selten Social Media 12 %, KI-Chatbot 11 %. Mind. zwei Quellen-Typen (Abs. 1) → Vergleich mehrerer Medien.",
+                "quelle": "Ersatzquelle, Abs. 1-2"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "R. 1 · Gespräch mit Eltern",
+                "69 %",
+                "am häufigsten",
+                "(eigene Deutung)"
+              ],
+              [
+                "R. 3 · seriöse Medien",
+                "51 %",
+                "etwa die Hälfte vergleicht",
+                "Vergleich mehrerer Medien"
+              ],
+              [
+                "R. 10 · Adresse des Absenders",
+                "10 %",
+                "kaum jemand prüft sie",
+                "Quellen-Check"
+              ],
+              [
+                "R. 12 · Factcheck-Website",
+                "3 %",
+                "fast niemand nutzt sie",
+                "Fake News"
+              ]
+            ],
+            "befund": "Am häufigsten prüfen die Befragten im Gespräch mit Eltern oder Freunden, etwa die Hälfte vergleicht mit seriösen Medien. Kaum jemand prüft die Internetadresse (10 %), fragt eine Lehrperson (8 %) oder nutzt eine Factcheck-Website (3 %). Ich mache es wie die Mehrheit: Ich frage im Chat, aber wer einen Clip gemacht hat, schaue ich nie nach."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.7 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Nehmen Sie die drei Checks als Modell: Wo passen sie zu Ihrem Alltag im Gruppenchat, wo nicht? Entscheiden Sie, welche eigene Regel künftig für zweifelhafte Inhalte gilt.",
+          "liefert": "Eigene Regel mit Begründung und Grenze",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Nehmen Sie die kleinen Werte aus Ihrem Raster: Was tun auch Sie selten?",
+              "Formulieren Sie Ihre Regel als Wenn-dann-Satz."
+            ],
+            "satzanfaenge": [
+              "«Die drei Checks verlangen, dass ich …»",
+              "«In meinem Alltag geht das nicht immer, weil …»",
+              "«Meine Regel: Wenn …, dann …»"
+            ],
+            "produkt": "Ihre Regel und ihre Begründung bilden den Kern der Reflexion unter der Tabelle."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: drei Checks ↔ Alltag, Regel",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die drei Checks sind mit Namen genannt, und mindestens einer ist an einem Inhalt angewendet (am Clip oder an einem Inhalt des Protokolls).",
+                "Eine Grenze des Modells im eigenen Alltag ist konkret genannt (Zeit, Vertrauen in Freunde, kein Absender auffindbar).",
+                "Die Regel ist ein Wenn-dann-Satz und sagt, was ich mit einem zweifelhaften Inhalt tue: nicht weitergeben, nachfragen, melden oder widersprechen.",
+                "Die Begründung nennt, was die Regel kostet, und erkennt an, dass Vertrauen und Prüfen beide begründbar sind."
+              ],
+              "beispiel_pol_1": "Quellen-, Fakten- und Google-Check passen zu meinem Fall: Beim Clip über die Ferientage zeigt schon der Quellen-Check, dass kein Absender genannt ist. Grenze: Den Fakten-Check schaffe ich nicht bei jedem Inhalt. Meine Regel: Wenn ein Inhalt mich wütend macht und keinen Absender hat, leite ich ihn erst weiter, wenn ich einen Check gemacht habe. Das kostet Zeit, und manchmal erfahre ich etwas als Letzte. Ich nehme das in Kauf, weil ich meiner Freundin nichts Falsches schicken will, auch wenn ich dem Chat sonst vertraue.",
+              "beispiel_pol_2": "Quellen-, Fakten- und Google-Check schaffe ich im Alltag nicht bei allem, der Chat ist zu schnell: Das ist die Grenze des Modells. Beim Clip hätte ich mit dem Google-Check nachsehen können, ob seriöse Portale die Ferientage melden. Meine Regel: Wenn ein Inhalt etwas über Regeln oder Geld behauptet, frage ich im Chat, wer das sagt, und leite ihn erst weiter, wenn jemand einen Absender nennt. So prüfe ich nicht alles, aber das, was mir oder anderen schaden kann, und vertraue meinen Leuten beim Rest.",
+              "nicht_tragfaehig": "Nur «Ich prüfe künftig alles» ohne Grenze und Begründung, oder «Freunde schicken nichts Falsches» ohne Bezug zu den drei Checks."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-211b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3
+          ],
+          "auftrag": "Lesen Sie Grafik und Text (QR-Seite). Vier Zeilen: zwei häufige, zwei seltene Prüfwege. Hinten je ein Begriff aus LF1 oder LF2.",
+          "raster": {
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-211b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum zeigt mir eine Plattform gerade diese Inhalte – und was ist eine Filterblase?",
+          "erwartung": "Plattformen filtern mit festen Schritten (Algorithmus), was jemand sieht (Abs. 1); mit hinein spielen Gerät, Surfverhalten, Likes und Teilen, Standort, Tageszeit und die Kontakte (Abs. 2–7). Filterblase: Man sieht vor allem, was zu den eigenen Ansichten passt, ohne es zu merken (Abs. 10). Gegenmittel: auch anderen folgen, regelmässig hinterfragen (Abs. 11–12)."
+        },
+        {
+          "ref": "q-211b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Woran erkennt der Moderator, dass das Video gefälscht ist – und was rät die Polizei?",
+          "erwartung": "Erkennen (01:16–01:41): Die Stimme klingt künstlich, die Aussprache passt nicht zu ihm. Studio und Sendung sind echt, das macht die Fälschung überzeugend. Polizei (04:10–04:31): Alarm, wenn Promis für hohe Renditen werben; mit jemandem reden; bei Bank oder Polizei nachfragen."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-grafik-lesen",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Was gemessen: Anteil, der täglich ein Buch liest · auffälliger Wert: «jede vierte Person» (Beispielwert) · Aussage: Lesen ist eher selten · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Beispiel des Protokolls an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
+    }
+  }
+}

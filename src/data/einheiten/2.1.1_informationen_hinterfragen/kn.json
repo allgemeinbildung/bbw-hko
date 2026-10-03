@@ -1,0 +1,251 @@
+{
+  "id": "2.1.1_informationen_hinterfragen_kn",
+  "modul": "2.1",
+  "kompetenz_nr": "2.1.1",
+  "topic_slug": "informationen_hinterfragen",
+  "lehrgang": "EFZ_4J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-10-03",
+  "set_ref": "2.1.1_informationen_hinterfragen_set",
+  "prinzip_ref": "2.1.1_informationen_hinterfragen_prinzip",
+  "anchored_situations": [
+    "2.1.1_informationen_hinterfragen_hf_A",
+    "2.1.1_informationen_hinterfragen_hf_B"
+  ],
+  "dominanter_aspekt": "Politik",
+  "kern_kompetenzversprechen": "Ich kann in gehörten Beiträgen und in Inhalten aus meinem Feed die Interessen und Werte dahinter identifizieren, Merkmale von Manipulation erkennen und begründet entscheiden, ob ich einer Aussage vertraue oder sie zuerst prüfe.",
+  "mehrdeutigkeits_pflicht": "Beide Seiten bleiben begründbar — ob ich einer Aussage vertraue oder sie zuerst prüfe, hängt davon ab, was für mich und für andere auf dem Spiel steht und was ich über Absender und Interesse weiss.",
+  "hybrid_situation": {
+    "titel": "Kantine neu vergeben — und ein Bild macht die Runde",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Ich bin im 1. Lehrjahr. In meinem Lehrbetrieb will die Geschäftsleitung die Kantine an einen auswärtigen Anbieter vergeben. An der Betriebsversammlung sagte die Geschäftsführerin: «Wir sparen Kosten, und alle bekommen eine grössere Auswahl.» Ein Mitglied der Personalkommission hielt dagegen: «Das Essen wird teurer, und unser Küchenteam verliert seine Stellen.» Am selben Abend geht im Betriebs-Chat ein Bild einer Preisliste herum: Das Mittagsmenü soll künftig 18 statt 9 Franken kosten — ohne Absender, ohne Datum. Drei aus meinem Team haben es schon weitergeleitet, und morgen liegt eine Unterschriftenliste gegen den Plan auf. Unterschreibe ich gegen den Plan und leite das Bild weiter?",
+    "leitfrage": "Unterschreibe ich gegen den Plan und leite das Bild weiter?",
+    "aktivierte_trade_offs": [
+      "Eigenes Interesse vs. Anliegen der anderen Betroffenen",
+      "Einer Aussage vertrauen vs. die Absicht dahinter prüfen",
+      "Schnell weitergeben vs. zuerst prüfen"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Hybrid-Herausforderung verbindet in einer einzigen Entscheidung zwei Stimmen mit verschiedenen Interessen und Werten und ein Bild, das ohne Absender weitergeleitet wird. Neu ist nicht die Person, sondern der Fall: ein Entscheid im eigenen Lehrbetrieb, der in keiner der beiden Herausforderungen vorkam. In A ordnen die Lernenden die Stimmen eines politischen Beitrags, in B prüfen sie Inhalte aus dem eigenen Feed; hier müssen sie beides zugleich tun und dazu selbst entscheiden, ob sie unterschreiben und weiterleiten. Gezeigt wird, dass sie das gemeinsame Prinzip übertragen — Absender, Interesse und Machart einer Aussage klären —, nicht eine der beiden Aufgaben wiederholen.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Die Geschäftsführerin und das Mitglied der Personalkommission sagen zur selben Frage das Gegenteil — hinter jeder Aussage steht ein Interesse (Kosten sparen, Stellen und Preise schützen) und ein Wert, die es herauszuhören gilt."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Das Bild der Preisliste ohne Absender und ohne Datum, das schon weitergeleitet wird — ein Inhalt mit Merkmalen von Manipulation, der vor dem Weiterleiten geprüft werden müsste."
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, welches Interesse die Geschäftsführerin und welches das Mitglied der Personalkommission mit ihrer Aussage vertreten.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Prüfen Sie das Bild der Preisliste mit den drei Checks: Was lässt sich über Absender, Zahl und eine zweite Fundstelle herausfinden — und was nicht?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Beurteilen Sie, wie viel Vertrauen das Bild im Vergleich zu den beiden Aussagen an der Versammlung verdient. Woran machen Sie das fest?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie den Fall mit einer Ihrer beiden Herausforderungen: Was hilft Ihnen von dort, und was ist hier anders?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Unterschreiben Sie, und leiten Sie das Bild weiter? Begründen Sie Ihren Entscheid und sagen Sie, was er für die anderen im Betrieb bedeutet.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        5,
+        6,
+        1
+      ],
+      "aspekte": [
+        "Politik",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie in zwei bis drei Sätzen, welche Interessen und welche Werte hinter den beiden Aussagen an der Versammlung stehen.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Unterscheiden Sie in der Szene Fakten, Meinungen und unbelegte Behauptungen. Nennen Sie je ein Beispiel und woran Sie es erkennen.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Sie können das Bild sofort weiterleiten oder es zuerst prüfen. Entscheiden Sie sich, begründen Sie den Entscheid und nennen Sie die Folgen beider Möglichkeiten.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form zwei Regeln, nach denen Sie im Betrieb mit Aussagen und Bildern zu einem umstrittenen Entscheid umgehen.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        5,
+        6,
+        1
+      ],
+      "aspekte": [
+        "Politik",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben (Interessen-Übersicht, Mediennutzungs-Protokoll mit Reflexion).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Zeigen Sie, wo dieses Prinzip im Fall der Hybrid-Herausforderung wirkt: Was ist dort gleich wie in Ihrem Produkt, was ist anders?",
+        "Wo stösst das Prinzip an Grenzen — und was zeigen Ihnen die beiden Herausforderungen zusammen darüber, wann Sie einer Aussage vertrauen können?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        5,
+        6,
+        1
+      ],
+      "aspekte": [
+        "Politik",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder werden falsch verwendet.",
+          "Einzelne Fachbegriffe stimmen, andere sind falsch zugeordnet.",
+          "Fachbegriffe sind korrekt und passend zur Situation verwendet.",
+          "Fachbegriffe sind genau unterschieden und eigenständig auf die Situation bezogen."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Es ist keine Begründung für den Entscheid zu erkennen.",
+          "Eine Begründung ist angedeutet, bleibt aber lückenhaft.",
+          "Die Begründung ist nachvollziehbar und geordnet.",
+          "Die Begründung ist schlüssig; ein Gegenargument und die Folgen des Entscheids sind berücksichtigt."
+        ]
+      },
+      {
+        "name": "Politisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Dass hinter Aussagen Interessen und Werte stehen, wird nicht sichtbar.",
+          "Interessen hinter Aussagen sind teilweise erkannt; Werte fehlen oder sind falsch zugeordnet.",
+          "Interessen und Werte hinter den Aussagen sind korrekt erkannt und belegt.",
+          "Das Prinzip ist übertragen: Absender, Interesse und Machart einer neuen Aussage sind eingeordnet."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position fehlt.",
+          "Eine Position ist angedeutet, bleibt aber unklar.",
+          "Die eigene Position ist klar in Ich-Form formuliert.",
+          "Die Position ist begründet; das Spannungsfeld zwischen Vertrauen und Prüfen ist anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

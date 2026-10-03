@@ -1,0 +1,200 @@
+{
+  "id": "2.3.1_anliegen_vertreten_prinzip",
+  "modul": "2.3",
+  "kompetenz_nr": "2.3.1",
+  "topic_slug": "anliegen_vertreten",
+  "lehrgang": "EFZ_3J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-10-03",
+  "kern_kompetenzversprechen": "Ich kann ein politisches Anliegen formulieren, den Weg der Mitwirkung aufzeigen, der dazu passt, und meine begründete Meinung in einer Diskussion respektvoll vertreten — auch wenn andere es anders sehen.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Anliegen formulieren und einbringen",
+      "konfliktart": "Offener Weg ohne Anspruch auf Antwort vs. verbindlicher Weg mit Hürden",
+      "handlungsprodukt_typ": "Factsheet zum eigenen Anliegen mit Begründung, Wegen der Mitwirkung und gewähltem Weg",
+      "kompetenzen": [
+        "2.3.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Meinung begründen und vertreten",
+      "konfliktart": "Klare eigene Position vs. Verständnis für die Gegenseite",
+      "handlungsprodukt_typ": "Gruppendiskussion mit Diskussionskarte und Ergebnisnotiz",
+      "kompetenzen": [
+        "2.3.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      1,
+      12,
+      6
+    ],
+    "B": [
+      7,
+      5,
+      6
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      6,
+      12,
+      7
+    ]
+  },
+  "aspekte": {
+    "Politik": "R1",
+    "Ethik": "R2"
+  },
+  "modi_units": [
+    "Produktion schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Eigenes Anliegen durchsetzen vs. andere dafür gewinnen",
+      "Offener Weg ohne Anspruch auf Antwort vs. verbindlicher Weg mit Hürden",
+      "Klare eigene Position vs. Verständnis für die Gegenseite",
+      "Schnelle Wirkung vs. breite Abstützung"
+    ],
+    "verbindlich": "Ob Druck oder Verständigung weiter führt, hängt vom Anliegen, vom Zeitpunkt und von den Beteiligten ab; beide Wege bleiben begründbar."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Wer mitgestalten will, braucht ein begründetes Anliegen, einen Weg, der zum Anliegen und zu den eigenen Rechten passt, und die Bereitschaft, andere Sichtweisen einzubeziehen — Wirkung entsteht selten durch Durchsetzen allein.",
+    "transferfeld": "Übertragbar auf jede Lage, in der ich bei einer Stelle, die über mich mitentscheidet, etwas erreichen will und andere dafür brauche — etwa bei einer Busverbindung, die gestrichen werden soll, bei einer neuen Regel in einer Online-Gruppe oder bei einem Bauprojekt im Quartier."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T5 'Mich im Staat orientieren' — Staatsebenen, Behörden und die eigenen politischen Rechte vertiefen",
+    "r3_voraussicht": "—"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 3.2",
+        "titel": "Mitwirkungsrechte und Pflichten — Stufen der Rechte, Stimm- und Wahlrecht",
+        "seiten": "Seite 93-95"
+      },
+      {
+        "ref": "Kap. 6.4",
+        "titel": "Referendum und Initiative — Volksrechte und Petitionsrecht",
+        "seiten": "Seite 168-170"
+      },
+      {
+        "ref": "Kap. 6.6",
+        "titel": "Interessengruppen — Verbände und ihr Einfluss auf die Politik",
+        "seiten": "Seite 177-179"
+      },
+      {
+        "ref": "Kap. 6.5",
+        "titel": "Entstehung eines Gesetzes — Vernehmlassung und Referendumsfrist",
+        "seiten": "Seite 171"
+      },
+      {
+        "ref": "Kap. 17.3",
+        "titel": "Argumentieren — Stellungnahme und 3B-Schema",
+        "seiten": "Seite 393-395"
+      },
+      {
+        "ref": "Kap. 16.1",
+        "titel": "Diskussion — Ziel, Regeln und Killerphrasen",
+        "seiten": "Seite 366-367"
+      }
+    ],
+    "konzepte": [
+      "Menschenrechte",
+      "staatsbürgerliche Rechte",
+      "politische Rechte",
+      "Stimmrecht",
+      "aktives und passives Wahlrecht",
+      "obligatorisches und fakultatives Referendum",
+      "Volksinitiative",
+      "Gesetzesinitiative",
+      "Petitionsrecht",
+      "Vernehmlassung",
+      "Verbände",
+      "Lobby",
+      "Abstimmungsparolen",
+      "Stellungnahme",
+      "3B-Schema",
+      "Konsens, Kompromiss, Dissens",
+      "Diskussionsregeln",
+      "Killerphrasen"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Sommerlager",
+      "Lagerbeitrag",
+      "Leiterrunde"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "B": [
+      "Interaktion und Kollaboration mündlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Politisches Prinzip"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "recht_praxis",
+      "mit_medien": "lehrmittel_quelle"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition",
+      "mit_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Durchsetzen oder andere gewinnen",
+  "modi_auftrag": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)",
+  "auftrag_lebensbereich": "Lehrbetrieb und Berufsverband"
+}

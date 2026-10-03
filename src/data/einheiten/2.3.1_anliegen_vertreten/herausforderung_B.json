@@ -1,0 +1,908 @@
+{
+  "id": "2.3.1_anliegen_vertreten_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "2.3",
+  "modul_titel": "Meinungen bilden und mitgestalten — mitreden und mitgestalten",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Meine Meinung in der Runde vertreten",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Meinung begründen und vertreten"
+  },
+  "prinzip_ref": "2.3.1_anliegen_vertreten_prinzip",
+  "nrlp": {
+    "nr": "2.3.2",
+    "nr_primary": [
+      "2.3.2"
+    ],
+    "lebensbezug": "2.3",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodus_ids": [
+      "SM7"
+    ],
+    "sk": [
+      7,
+      5,
+      6
+    ],
+    "kompetenz_id": "2.3.2",
+    "lebensbezug_id": "2.3",
+    "kompetenz_text": "Ich kann eine begründete Meinung zu einem aktuellen gesellschaftlichen Thema entwickeln und diese in Diskussionen nachvollziehbar und respektvoll vertreten.",
+    "lebensbezug_text": "Ich möchte mitreden, mitgestalten und ernst genommen werden bei Themen, die mich direkt oder indirekt betreffen."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "An meiner Berufsfachschule findet in vierzehn Tagen ein Podium zum Stimmrechtsalter 16 statt. Jede Klasse soll dort eine gemeinsame Haltung einbringen, und was wir vertreten, entscheiden wir in Gruppen zu viert. Ich habe dazu eine klare Meinung. Mein Banknachbar sieht es genau umgekehrt, die zwei anderen in unserer Gruppe sind noch unentschieden. Als wir das Thema neulich in der Pause besprachen, wurde es schnell laut: Jeder wiederholte seinen Satz, einer rief «Das ist doch einfach so!», und überzeugt war am Ende niemand. Diesmal soll es anders laufen. Ich will meine Meinung so begründen, dass die anderen sie nachvollziehen können, und ich will verstehen, was mein Banknachbar wirklich meint. Am Ende braucht unsere Gruppe ein Ergebnis für die Klasse, auch wenn wir uns nicht einig werden. Ich will klären, wie ich bei meiner Meinung bleibe, ohne dass die Runde wieder im Streit endet.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie vertrete ich meine Meinung klar, wenn mein Gegenüber es genau umgekehrt sieht – und bleibe trotzdem im Gespräch?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Klare eigene Position vs. Verständnis für die Gegenseite",
+    "hint": "Wer fest bei der eigenen Meinung bleibt, wirkt klar. Wer auf die Gegenseite eingeht, wird eher gehört. Wie viel von beidem wollen Sie?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 17.3",
+      "titel": "Argumentieren",
+      "unterueberschrift": "3B-Schema, Satzanfänge",
+      "seiten": "Seite 393-395",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 16.1",
+      "titel": "Diskussion",
+      "unterueberschrift": "Ziel, Regeln, Killerphrasen",
+      "seiten": "Seite 366-367",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 3.2",
+      "titel": "Mitwirkungsrechte",
+      "unterueberschrift": "Voraussetzungen des Stimmrechts",
+      "seiten": "Seite 95",
+      "fuer_leitfrage": [
+        2
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Ende führen Sie eine Diskussion in der Gruppe und halten das Ergebnis fest. LF1 liefert den Aufbau eines Arguments und das Ziel der Diskussion, LF2 Ihr erstes Argument, LF3 einen belegten Befund zur Gegenseite, LF4 Ihre Position mit einer Antwort auf den stärksten Einwand.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 17.3 | S. 394 · Kap. 16.1 | S. 366-367",
+      "text": "Erklären Sie die drei Teile eines Arguments nach dem 3B-Schema und was eine Killerphrase davon unterscheidet. Nennen Sie die drei möglichen Ergebnisse einer Diskussion.",
+      "liefert": "Aufbau eines Arguments und Ziel der Diskussion",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie auf S. 394 die Tabelle zum 3B-Schema und notieren Sie je Teil ein Stichwort.",
+          "Suchen Sie auf S. 366 das Ziel einer Diskussion, auf S. 367 die Killerphrasen."
+        ],
+        "satzanfaenge": [
+          "«Ein Argument besteht aus …»",
+          "«Eine Killerphrase will nicht überzeugen, sondern …»",
+          "«Am Ende einer Diskussion steht …»"
+        ],
+        "produkt": "Die drei Teile ordnen jedes Argument auf der Diskussionskarte; die drei Ergebnisse brauchen Sie für die Notiz."
+      },
+      "loesung": {
+        "kern": "3B-Schema, Killerphrase, drei Ergebnisse",
+        "zeilen": [
+          {
+            "label": "Behauptung",
+            "text": "Ein Satz, der festhält, was ich vertrete.",
+            "quelle": "Kap. 17.3, S. 394"
+          },
+          {
+            "label": "Begründung",
+            "text": "Mehrere Sätze, die zeigen, weshalb die Behauptung stimmt.",
+            "quelle": "Kap. 17.3, S. 394"
+          },
+          {
+            "label": "Beispiel",
+            "text": "Ein Beleg, der die Begründung stützt und anschaulich macht.",
+            "quelle": "Kap. 17.3, S. 394"
+          },
+          {
+            "label": "Killerphrase",
+            "text": "Eine Aussage, die nur scheinbar ein Argument ist: Sie soll Widerspruch abwürgen und will nicht überzeugen – das unterscheidet sie vom echten Argument.",
+            "quelle": "Kap. 16.1, S. 367"
+          },
+          {
+            "label": "Drei Ergebnisse",
+            "text": "Konsens: Das Problem ist gemeinsam gelöst. Kompromiss: eine Lösung, die alle Beteiligten annehmen können. Dissens: Alle erkennen, dass die Meinungen verschieden bleiben.",
+            "quelle": "Kap. 16.1, S. 366"
+          },
+          {
+            "label": "Auch beim Dissens",
+            "text": "Auch ohne Einigung lohnt sich das Gespräch: Ich erfahre, wie andere denken, und sehe die Frage mit neuen Augen.",
+            "quelle": "Kap. 16.1, S. 366"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.3 | S. 394-395 · Kap. 3.2 | S. 95 · eigener Fall",
+      "text": "Formulieren Sie Ihre Meinung zum Stimmrechtsalter 16 als Behauptung. Stützen Sie sie mit einer Begründung und einem Beispiel aus Ihrem eigenen Alltag.",
+      "liefert": "eigene Meinung als begründetes Argument",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie auf S. 95, welche Voraussetzungen das Lehrmittel für das Stimmrecht nennt.",
+          "Entscheiden Sie zuerst dafür oder dagegen, dann suchen Sie den Grund."
+        ],
+        "satzanfaenge": [
+          "«Ich bin der Meinung, dass …»",
+          "«Denn …»",
+          "«Das zeigt sich zum Beispiel, wenn …»"
+        ],
+        "produkt": "Behauptung, Begründung und Beispiel kommen als erstes Argument auf Ihre Diskussionskarte (S. 7)."
+      },
+      "loesung": {
+        "kern": "Eigene Meinung nach 3B, im eigenen Alltag verankert",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Eine Behauptung in einem Satz (dafür oder dagegen), eine Begründung in zwei bis drei Sätzen und ein Beispiel aus dem eigenen Alltag."
+          },
+          {
+            "label": "Sachgrundlage",
+            "text": "Die Voraussetzungen nennt S. 95: Schweizer Bürgerrecht und mindestens 18 Jahre. Als Ausnahme nennt die Seite für einen Kanton das aktive Wahlrecht ab 16 auf Kantons- und Gemeindeebene. Eine Aussage zum heutigen Stand wird nicht verlangt.",
+            "quelle": "Kap. 3.2, S. 95"
+          },
+          {
+            "label": "Gründe",
+            "text": "Gründe für oder gegen das Stimmrechtsalter 16 sind Fallüberlegung, nicht aus dem Lehrmittel. Tragfähig ist jeder Grund, der die Behauptung wirklich stützt."
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Das Beispiel stammt aus dem eigenen Leben (Lehre, Familie, Freizeit) und stützt genau diese Begründung."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur eine Behauptung ohne Begründung, oder das Beispiel ist eine zweite Behauptung statt eines Belegs."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Gruppendiskussion mit Diskussionskarte und Ergebnisnotiz",
+    "titel": "Meine Diskussionskarte und Ergebnisnotiz",
+    "format_detail": "Sie diskutieren zu viert rund zehn Minuten über das Stimmrechtsalter 16. Auf S. 7 bereiten Sie die Diskussionskarte vor: zwei Argumente nach dem 3B-Schema, eine Regel, Wendung oder einen Grund, mit dem Sie auf die Gegenseite eingehen, Ihre Position in einem Satz, den stärksten Einwand und Ihre Antwort darauf. In der Runde eröffnet jede Person kurz (Methodenkarte Statement), dann werden Argumente vorgetragen und Einwände beantwortet; eine Person fasst am Schluss zusammen. Danach hält jede Person ihre Ergebnisnotiz fest (Konsens, Kompromiss oder Dissens und ein Punkt der Gegenseite, den sie gelten lässt) und holt aus der Gruppe eine Rückmeldung in einem Satz ein.",
+    "beschreibung": "Ich bereite meine Position mit zwei Argumenten und einer Antwort auf den stärksten Einwand vor, vertrete sie in der Gruppe und halte fest, wo wir am Ende stehen.",
+    "schritte": [
+      {
+        "label": "01 Argument und Ziel klären",
+        "hint": "Notieren Sie aus LF1 oben auf der Diskussionskarte die drei Teile eines Arguments und die drei möglichen Ergebnisse."
+      },
+      {
+        "label": "02 Meine Meinung begründen",
+        "hint": "Schreiben Sie Ihr Argument aus LF2 auf die Karte. Ergänzen Sie ein zweites nach demselben Schema, aus Ihrem Alltag oder dem Raster."
+      },
+      {
+        "label": "03 Auf Gegenseite eingehen",
+        "hint": "Notieren Sie aus dem Befund von LF3, womit Sie auf die Gegenseite eingehen, mit Beleg. Den stärksten Einwand nehmen Sie erst in Schritt 04."
+      },
+      {
+        "label": "04 Position festlegen",
+        "hint": "Tragen Sie aus LF4 Ihre Position in einem Satz, den stärksten Einwand und Ihre Antwort darauf ein."
+      },
+      {
+        "label": "05 Diskussion führen",
+        "hint": "Diskutieren Sie zu viert rund zehn Minuten: Eröffnung je Person, Argument, Antwort auf Einwand; eine Person fasst zusammen. Dann die Notiz."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Karte: zwei Argumente, Bezug zur Gegenseite, Position, Einwand, Antwort",
+      "Ergebnisnotiz: Konsens, Kompromiss oder Dissens, ein Punkt der Gegenseite",
+      "Eine Rückmeldung aus der Gruppe in einem Satz"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Familienrat – Abendessen ohne Handy?",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Ausschnitt aus der Diskussion",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich bin dafür. Beim Essen reden wir sonst kaum: Gestern erzählte niemand vom Tag."
+            },
+            {
+              "wer": "Bruder",
+              "text": "Das ist doch nur eine Phase."
+            },
+            {
+              "wer": "Ich",
+              "text": "Warum sagst du das?"
+            },
+            {
+              "wer": "Vater",
+              "text": "Ich warte abends oft auf Anrufe vom Geschäft."
+            },
+            {
+              "wer": "Ich",
+              "text": "Verstehe. Dann liegt dein Handy laut auf der Kommode, nicht am Tisch."
+            }
+          ]
+        },
+        {
+          "titel": "Ergebnisnotiz",
+          "eintraege": [
+            {
+              "text": "Ergebnis: Kompromiss – Handys weg vom Tisch, das des Vaters bleibt hörbar."
+            },
+            {
+              "text": "Das lasse ich gelten: Wer auf einen Anruf wartet, braucht eine Ausnahme."
+            },
+            {
+              "text": "Rückmeldung Vater: «Du hast zugehört, bevor du geantwortet hast.»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung: Diskussion in der Gruppe zum Stimmrechtsalter 16",
+      "hinweis": "Eine mögliche Lösung von vielen, keine Vorlage. Erst zeigen, wenn die Gruppen diskutiert haben, und mit den Kriterien Argumentation und Position / Werthaltung besprechen. Die Gründe sind Fallüberlegungen, nicht aus dem Lehrmittel. Annahme: Die Gruppe einigt sich auf einen Kompromiss (Kap. 16.1, S. 366); bleibt sie uneinig, ist ein Dissens mit gleich guter Notiz ebenso tragfähig.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Ausschnitt aus der Diskussion",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich bin für Stimmrecht ab 16. Wer mit 16 eine Lehre beginnt, entscheidet schon über sein Leben."
+            },
+            {
+              "wer": "Banknachbar",
+              "text": "Mit 16 ist man halt noch ein Kind, fertig."
+            },
+            {
+              "wer": "Ich",
+              "text": "Warum sagst du das? Was fehlt dir mit 16 genau?"
+            },
+            {
+              "wer": "Banknachbar",
+              "text": "Die volle Verantwortung kommt erst mit 18."
+            },
+            {
+              "wer": "Ich",
+              "text": "Ein berechtigter Punkt. Trotzdem: Mit den Folgen vieler Abstimmungen leben wir Jungen am längsten."
+            },
+            {
+              "wer": "Mitschülerin",
+              "text": "Ich fasse zusammen: Beim Alter seid ihr euch nicht einig, beide Gründe sind ernst gemeint."
+            },
+            {
+              "wer": "Ich",
+              "text": "Vorschlag: Die Klasse stellt am Podium beide Sichtweisen mit je einem Grund vor."
+            },
+            {
+              "wer": "Banknachbar",
+              "text": "Damit kann ich leben."
+            }
+          ]
+        },
+        {
+          "titel": "Ergebnisnotiz",
+          "eintraege": [
+            {
+              "text": "Ergebnis: Kompromiss – alle vier tragen ihn mit: Die Klasse stellt am Podium beide Sichtweisen mit je einem Grund vor."
+            },
+            {
+              "text": "Das lasse ich gelten: Mit 18 trägt man die volle Verantwortung, und Rechte und Pflichten gehören zusammen."
+            },
+            {
+              "text": "Meine Position bleibt: Stimmrecht ab 16, weil Junge von politischen Entscheiden am längsten betroffen sind."
+            },
+            {
+              "text": "Rückmeldung aus der Gruppe: «Du hast den Einwand aufgenommen, statt ihn wegzuwischen.»"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Aussagen stehen ohne Begründung nebeneinander.",
+        "Begründungen sind angedeutet, aber lückenhaft oder ohne Beispiel.",
+        "Behauptungen sind nachvollziehbar begründet und mit einem Beispiel gestützt.",
+        "Schlüssig begründet; ein Gegenargument wird aufgenommen und beantwortet, Folgen werden genannt."
+      ],
+      "indikator_produkt": "Man hört eine Begründung mit Beispiel, und der Einwand wird beantwortet, nicht übergangen."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Keine eigene Position erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder unbegründet.",
+        "Klare Position in Ich-Form, nachvollziehbar begründet.",
+        "Begründete Position in Ich-Form; das Spannungsfeld und berechtigte Punkte der Gegenseite werden anerkannt."
+      ],
+      "indikator_produkt": "Karte und Notiz nennen die eigene Haltung in Ich-Form und einen Punkt der Gegenseite."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine Diskussion mit Einwand und Antwort; die Satzanfänge helfen beim Formulieren.",
+    "scaffold_100": "Plus: Übernehmen Sie in der Runde einmal die Gegenseite und vertreten Sie deren stärkstes Argument nach dem 3B-Schema."
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-1-diskussion",
+      "fuer": "für die Diskussion in der Gruppe: Regeln, Killerphrasen, Wendungen",
+      "tun": "Achten Sie auf zwei Regeln von S. 367: Fragen Sie zurück, und greifen Sie die Sache an, nicht die Person."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für den Eröffnungsbeitrag: die eigene Position in drei Zügen vorstellen",
+      "tun": "Nutzen Sie die drei Züge für Ihre Eröffnung in Schritt 05: Frage, Aussage mit Begründung, Wunsch an die Gruppe."
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für jedes Argument auf der Diskussionskarte und die Antwort auf den Einwand (LF4)",
+      "tun": "Bauen Sie beide Argumente und die Antwort auf den Einwand aus Behauptung, Begründung, Beispiel."
+    }
+  ],
+  "mindmap_zentrum": "Durchsetzen oder andere gewinnen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie baue ich meine Position?",
+      "punkte": [
+        "Position",
+        "Behauptung",
+        "Begründung",
+        "Beispiel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was hilft im Streit?",
+      "punkte": [
+        "Einwand",
+        "Killerphrase",
+        "Diskussionsregel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wo stehen wir am Ende?",
+      "punkte": [
+        "Konsens",
+        "Kompromiss",
+        "Dissens"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Kann ich meine Meinung mit Behauptung, Begründung und Beispiel vertreten?",
+      "Weiss ich, wie ich auf eine Killerphrase reagiere?"
+    ],
+    "mitnahme": [
+      "Mein stärkstes Argument",
+      "Meine Antwort auf den Einwand",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Behauptung",
+          "nach": "Begründung",
+          "text": "wird gestützt durch"
+        },
+        {
+          "von": "Begründung",
+          "nach": "Beispiel",
+          "text": "wird belegt mit"
+        },
+        {
+          "von": "Position",
+          "nach": "Einwand",
+          "text": "muss sich messen am"
+        },
+        {
+          "von": "Einwand",
+          "nach": "Begründung",
+          "text": "wird beantwortet mit einer"
+        },
+        {
+          "von": "Killerphrase",
+          "nach": "Diskussionsregel",
+          "text": "wird gebremst durch"
+        },
+        {
+          "von": "Einwand",
+          "nach": "Kompromiss",
+          "text": "kann führen zu"
+        },
+        {
+          "von": "Dissens",
+          "nach": "Position",
+          "text": "lässt bestehen"
+        },
+        {
+          "von": "Position",
+          "nach": "gilt auch bei …",
+          "text": "vertreten, ohne abzuwerten"
+        }
+      ],
+      "transfer": "Familienrat über die Aufteilung der Hausarbeit; Klassenrat über eine neue Handyregel; Gespräch in einer WG über Ruhezeiten.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Ich-Form",
+          "Rückfrage"
+        ],
+        "mit_medien": [
+          "Volljährigkeit",
+          "passives Wahlrecht"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn die Karte eine Position in einem Satz und zwei Argumente mit Behauptung, Begründung und Beispiel trägt (LF2, Karte S. 7).",
+        "Ja, wenn ich eine Killerphrase ansprechen, zurückfragen («Warum sagst du das?») und zusammenfassen kann (LF1 und Kap. 16.1, S. 367)."
+      ],
+      "mitnahme": [
+        "Wer mit 16 eine Lehre beginnt, entscheidet schon über sein Leben – darum soll er mitreden (Fallüberlegung; das Gegenargument mit 18 ist ebenso möglich).",
+        "Ich lasse gelten, dass Rechte und Verantwortung zusammengehören (Fallüberlegung), und antworte mit Begründung und Beispiel.",
+        "Zum Beispiel: wie ich reagiere, wenn die Gruppe gar kein Ergebnis findet."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: drei Teile eines Arguments, drei Ergebnisse",
+        "LF2: eigene Meinung nach dem 3B-Schema",
+        "LF4: Position, Einwand, Entscheid"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff aus LF1",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Diskussion",
+      "vollstaendig_wenn": [
+        "Karte: zwei Argumente, Bezug zur Gegenseite, Einwand, Antwort",
+        "Notiz: Ergebnis und ein Punkt der Gegenseite",
+        "Rückmeldung aus der Gruppe in einem Satz"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Aufbau eines Arguments, eigene Meinung",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster und Befund, LF4: Position und Einwand, Karte beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Diskussion in der Gruppe, Ergebnisnotiz, Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo muss ich sonst noch meine Meinung vertreten, obwohl jemand es genau umgekehrt sieht?",
+    "ziel": "Wer mitgestalten will, braucht eine begründete Meinung und die Bereitschaft, andere Sichtweisen einzubeziehen — Wirkung entsteht selten durch Durchsetzen allein."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Eine begründete Meinung in der Diskussion vertreten: 3B-Schema, Einwand, Ergebnis",
+    "lehrmittel_anker": "Kap. 17.3 S. 393-395 (Stellungnahme, 3B-Schema, Satzanfänge) · Kap. 16.1 S. 366-367 (Ziel, Regeln, Killerphrasen, Wendungen) · Kap. 3.2 S. 95 (Voraussetzungen Stimm- und Wahlrecht) · Kap. 16.2 S. 368 (Statement, über die Methodenkarte)",
+    "kn_aktivierung": "Im KN vertritt die Lernende/der Lernende einen eigenen Vorschlag gegenüber Skeptischen in der eigenen Gruppe (Fachgespräch Frage 5, Mini Case Aufgaben 2 und 4): Argument nach dem 3B-Schema, Einwand aufnehmen und beantworten, berechtigten Punkt der Gegenseite anerkennen.",
+    "transfer_check": "Kann die Lernende/der Lernende in einer neuen Runde eine Position nach dem 3B-Schema vertreten, den stärksten Einwand beantworten und einen Punkt der Gegenseite gelten lassen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "leitfragen[2] + handlungsprodukt.schritte[2] — nachvollziehen, was die Gegenseite meint und wie man auf sie eingeht, und das im Befund festhalten"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] — die eigene Position am stärksten Einwand prüfen und festlegen, ob sie bleibt oder sich ändert"
+    },
+    {
+      "sk": 6,
+      "wo": "handlungsprodukt.schritte[4] + Produkt — die eigene Position in der Diskussion mit Argumenten nach dem 3B-Schema vertreten"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 16.1 | S. 367",
+          "text": "Werten Sie Ihr Raster zu S. 367 im Lehrmittel aus: Welche Regeln und Wendungen helfen, wenn zwei Meinungen hart aufeinandertreffen? Halten Sie in zwei bis drei Sätzen fest, was Sie davon in Ihrer Runde einsetzen.",
+          "liefert": "belegter Befund zum Umgang mit der Gegenseite",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 16.1 | S. 367",
+            "auftrag": "Lesen Sie im Lehrmittel Kap. 16.1, S. 367. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen zu Regeln, Killerphrasen oder Wendungen und ordnen Sie je einen Begriff aus LF1 oder dem Glossar (S. 8) zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 367, Killerphrasen",
+              "stoppt Widerspruch",
+              "«Das ist eben so!»",
+              "Killerphrase"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Suchen Sie auf S. 367 in den Regeln, bei den Reaktionen und bei den Wendungen."
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel hilft es, wenn …»",
+              "«In unserer Runde setze ich … ein, weil …»"
+            ],
+            "produkt": "Für Schritt 03: eine Regel oder Wendung mit Seite, mit der Sie auf die Gegenseite eingehen."
+          },
+          "loesung": {
+            "kern": "S. 367: Killerphrasen, Reaktionen, Regeln, Wendungen",
+            "quelle_ref": "Kap. 16.1 | S. 367",
+            "quelle_stand": "2026-10-02",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Killerphrasen sind Scheinargumente ohne Absicht zu überzeugen; Reaktion: sie ansprechen oder mit Fragen präzisieren lassen («Warum sagen Sie das?»). Regeln: zurückfragen, in der Ich-Form sprechen, die Sache angreifen statt die Person. Wendungen: auf Beiträge eingehen.",
+                "quelle": "Kap. 16.1, S. 367"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Genau zuhören, nicht unterbrechen, beim Thema bleiben; Verständnis sichern (Gesagtes in eigenen Worten wiederholen); klären, wenn es unübersichtlich wird («Ich fasse zusammen»); Wort ergreifen, behalten, abgeben.",
+                "quelle": "Kap. 16.1, S. 367"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Killerphrase steht in LF1; die Regel «Fragen Sie zurück» (→ Rückfrage) und die acht Diskussionsregeln stehen auf S. 367 und zählen als Glossarbegriffe. «denn» → Begründung ist Deutung der Lernenden; sie gilt, wenn sie erklärt ist."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er mindestens eine Regel oder Wendung mit Seite nennt und sagt, wann sie in der eigenen Runde zum Einsatz kommt, etwa bei einer Killerphrase des Gegenübers."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 367, Killerphrasen",
+                "stoppt Widerspruch",
+                "«Das ist eben so!»",
+                "Killerphrase"
+              ],
+              [
+                "S. 367, Reaktionen",
+                "Killerphrase ansprechen, nachfragen",
+                "«Warum sagen Sie das?»",
+                "Rückfrage"
+              ],
+              [
+                "S. 367, Regeln",
+                "Ich-Form, Sache statt Person",
+                "Regeln 5 und 8 von 8",
+                "Diskussionsregel"
+              ],
+              [
+                "S. 367, Wendungen",
+                "auf Beiträge eingehen",
+                "«leuchtet mir nicht ein, denn»",
+                "Begründung"
+              ]
+            ],
+            "befund": "Laut S. 367 spreche ich eine Killerphrase an oder frage nach: «Warum sagen Sie das?» Ich spreche in der Ich-Form und greife die Sache an, nicht meinen Banknachbarn. Auf seine Beiträge gehe ich mit «… leuchtet mir nicht ein, denn» ein."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 17.3 · meine Position ↔ stärkster Einwand",
+          "pol_typ": "position_gegenposition",
+          "text": "Halten Sie Ihre Position zum Stimmrechtsalter 16 und den stärksten Einwand dagegen fest. Entscheiden Sie, ob Sie bleiben oder anpassen, und begründen Sie Ihre Antwort auf den Einwand.",
+          "liefert": "Position mit Antwort auf den Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Nehmen Sie als Einwand den Grund, der Ihnen selbst am meisten zu denken gibt."
+            ],
+            "satzanfaenge": [
+              "«Ich bin der Meinung, dass …»",
+              "«Der stärkste Einwand dagegen ist …»",
+              "«Darum bleibe ich dabei / passe ich an: …»"
+            ],
+            "produkt": "Position, Einwand und Ihre Antwort kommen in Schritt 04 auf die Diskussionskarte (S. 7)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Position ↔ Einwand, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Position steht in einem Satz in Ich-Form.",
+                "Der Einwand ist der stärkste der Gegenseite, nicht einer, der leicht zu widerlegen ist.",
+                "Die Antwort auf den Einwand hat Begründung und Beispiel (3B-Schema, Kap. 17.3, S. 394).",
+                "Der Entscheid (bleiben oder anpassen) ist begründet, und ein berechtigter Punkt der Gegenseite wird anerkannt. Die Gründe zum Stimmrechtsalter sind Fallüberlegung, nicht aus dem Lehrmittel."
+              ],
+              "beispiel_pol_1": "Ich bin für das Stimmrechtsalter 16. Der stärkste Einwand: Die volle Verantwortung kommt erst mit 18. Das ist ein berechtigter Punkt, denn Rechte und Pflichten gehören zusammen. Meine Antwort: Abstimmen heisst mitentscheiden über Fragen, deren Folgen wir Jungen lange tragen. Ein Beispiel: Ich habe meinen Beruf mit 15 gewählt und lebe jahrelang mit dieser Wahl. Darum bleibe ich dabei. (Gründe: Fallüberlegung, nicht aus dem Lehrmittel.)",
+              "beispiel_pol_2": "Ich bin gegen das Stimmrechtsalter 16, weil für mich das Stimmrecht zur vollen Verantwortung mit 18 gehört. Der stärkste Einwand: Wer mit 16 eine Lehre macht, trägt schon Verantwortung und ist lange betroffen. Diesen Punkt lasse ich gelten und passe an: Ich trage mit, dass die Klasse beide Sichtweisen vorstellt, denn so wird auch die Sicht der 16-Jährigen gehört. Ein Beispiel: Mein Banknachbar hat seine Lehre mit 16 begonnen. Annahme: Wir einigen uns sonst nicht. (Gründe: Fallüberlegung; Voraussetzungen: Kap. 3.2, S. 95.)",
+              "nicht_tragfaehig": "Eine Position ohne Einwand, oder ein Einwand, der nur abgewertet wird («Das ist doch Unsinn»), genügt nicht."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Meine Position",
+          "Stärkster Einwand",
+          "Meine Antwort und Entscheid"
+        ],
+        "hinweis": "Ein Eintrag je Spalte genügt. Aus der dritten Spalte muss hervorgehen, ob Sie bei Ihrer Position bleiben oder sie anpassen.",
+        "loesung_zeilen": [
+          [
+            "Für 16: Wer eine Lehre beginnt, entscheidet schon viel (Fallüberlegung).",
+            "Die volle Verantwortung kommt erst mit 18 (Fallüberlegung).",
+            "Bleibe dabei; lasse gelten, dass Rechte und Pflichten zusammengehören."
+          ],
+          [
+            "Gegen 16: Stimmrecht gehört zur vollen Verantwortung mit 18 (Fallüberlegung).",
+            "Wer mit 16 eine Lehre macht, ist lange betroffen (Fallüberlegung).",
+            "Passe an: Kompromiss, die Klasse stellt beide Sichtweisen vor."
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 16.1 (S. 3)",
+        "beispiel": [
+          "Merkblatt Hausordnung, Abschnitt 2 · Velos gehören in den Unterstand · «ab 22 Uhr Ruhe» (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt eine Diskussion mit Einwand und Antwort; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster zur Quelle aus: Welche Standpunkte zum Stimmrechtsalter 16 werden mit welchen Gründen vertreten, und was will, wer so spricht? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "belegter Befund zum Umgang mit der Gegenseite",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-231b-pflicht",
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst das Raster in Stichworten, dann schreiben Sie den Befund.",
+              "Notieren Sie zu jeder Zeile die Zeitmarke und wer gerade spricht."
+            ],
+            "satzanfaenge": [
+              "«Bei … sagt die Befürworter-/Gegnerseite, dass …»",
+              "«Für meine Runde heisst das: …»"
+            ],
+            "produkt": "Für Schritt 03: ein Grund der Gegenseite mit Zeitmarke, auf den Sie eingehen."
+          },
+          "loesung": {
+            "kern": "Zwei Standpunkte, ihre Gründe und die Einwände",
+            "quelle_ref": "q-231b-pflicht",
+            "quelle_stand": "2026-10-02",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "07:53 Befürworter: Wer mit 16 den Beruf wählt, soll mitentscheiden. 08:44 Gegner: volle Verantwortung erst mit 18; aktives und passives Wahlrecht gehören zusammen. 09:46 Moderator: Studie zur Reife. 10:05 Gegner: Studien uneinig, eine Grenze braucht es.",
+                "quelle": "Quelle, 07:53–10:05"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "07:42 Moderator: mit 16 Schulpflicht vorbei. 10:40 Moderator: Glarus kenne das Alter 16 seit fast 20 Jahren, die Beteiligung Junger sei tief (Aussagen des Sprechers, nicht geprüft).",
+                "quelle": "Quelle, 07:42 und 10:40"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Gründe beider Seiten → Begründung; Studie und Beteiligung → Beispiel. Dass 10:05 auf den Einwand eingeht, ist Deutung der Lernenden."
+              },
+              {
+                "label": "Befund",
+                "text": "Nennt beide Standpunkte mit Grund und Zeitmarke, die Absicht und den schwersten Grund der Gegenseite."
+              },
+              {
+                "label": "Hinweis",
+                "text": "Studie (09:46), Abgaben (07:53), Glarus und Beteiligung (10:40): Aussagen der Sprechenden, nicht geprüft. Bündner Abstimmung vom 27.09.2026: Nein (Begleittext SRF)."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "07:53 · Befürworter",
+                "Berufswahl mit 16, also mitentscheiden",
+                "Mitsprache für Betroffene",
+                "Begründung"
+              ],
+              [
+                "08:44 · Gegner",
+                "Volljährigkeit mit 18; aktives und passives Wahlrecht zusammen",
+                "Rechte an Pflichten binden",
+                "Begründung"
+              ],
+              [
+                "09:46 · Moderator",
+                "Studie zur Reife",
+                "prüft das Argument",
+                "Beispiel"
+              ],
+              [
+                "10:05 · Gegner",
+                "Studien uneinig, Grenze nötig",
+                "verteidigt die Altersgrenze",
+                "Begründung"
+              ]
+            ],
+            "befund": "Der Befürworter will Mitsprache für Junge, die mit 16 ihren Beruf wählen (07:53); der Gegner bindet das Stimmrecht an Volljährigkeit und passives Wahlrecht (08:44). Auf den Einwand mit der Studie geht der Gegner ein (10:05). Ich bin für 16 und muss auf den Grund Volljährigkeit antworten."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 17.3 · meine Position ↔ stärkster Einwand aus der Quelle",
+          "pol_typ": "position_gegenposition",
+          "text": "Wählen Sie aus Ihrem Raster den stärksten Einwand gegen Ihre Position. Entscheiden Sie, ob Sie bei Ihrer Position bleiben oder sie anpassen, und antworten Sie auf den Einwand nach dem 3B-Schema.",
+          "liefert": "Position mit Antwort auf den Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Nehmen Sie den Einwand, der Ihre Position am stärksten trifft, mit Zeitmarke.",
+              "Prüfen Sie, welcher Teil des Einwands berechtigt ist, bevor Sie antworten."
+            ],
+            "satzanfaenge": [
+              "«Ich bin für/gegen das Stimmrechtsalter 16, weil …»",
+              "«Der stärkste Einwand (Zeitmarke) lautet …»",
+              "«Darum bleibe ich dabei / passe ich an: …»"
+            ],
+            "produkt": "Position, Einwand mit Zeitmarke und Ihre Antwort kommen in Schritt 04 auf die Diskussionskarte (S. 7)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Position ↔ Einwand, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Position steht in einem Satz in Ich-Form.",
+                "Der Einwand ist mit Zeitmarke belegt: dafür etwa 08:44 oder 10:40, dagegen etwa 07:53 oder 09:46.",
+                "Die Antwort auf den Einwand hat Begründung und Beispiel (3B-Schema, Kap. 17.3, S. 394).",
+                "Der Entscheid (bleiben oder anpassen) ist begründet, und ein berechtigter Punkt der Gegenseite wird anerkannt."
+              ],
+              "beispiel_pol_1": "Ich bin für das Stimmrechtsalter 16. Der stärkste Einwand (08:44): Die volle Verantwortung beginnt mit 18. Den berechtigten Punkt anerkenne ich. Meine Antwort: Abstimmen ist Mitsprache bei Fragen, deren Folgen wir Jungen lange tragen. Ein Beispiel: Meine Berufswahl mit 15 begleitet mich jahrelang. Darum bleibe ich dabei. (Gründe: Fallüberlegung.)",
+              "beispiel_pol_2": "Ich bin für das Stimmrechtsalter 16, aber nur wegen der Betroffenheit. Der stärkste Einwand (10:40): Junge beteiligen sich wenig. Den Punkt lasse ich gelten und passe an: Ich behaupte nicht mehr, das Alter 16 begeistere. Denn wer betroffen ist, soll mitreden dürfen, auch wenn nicht alle es nutzen. Ein Beispiel: Nicht alle reden am Podium, aber jede Klasse darf. Annahme: 10:40 stimmt (nicht geprüft; Gründe: Fallüberlegung).",
+              "nicht_tragfaehig": "Eine Position ohne Einwand aus der Quelle, oder ein Einwand, der nur abgewertet wird, genügt nicht."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-231b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Hören Sie über den QR-Code auf S. 3 das Streitgespräch vor der Abstimmung in Graubünden (Ausgang: Nein), 07:42–11:18. Vier Zeilen: Zeitmarke, wer spricht, Grund, Absicht (was die Person erreichen will).",
+          "raster": {
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-231b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welche Gründe nennen beide Seiten im Nationalrat, und welcher ist am schwersten zu entkräften?",
+          "erwartung": "Dagegen: Mehrheit der Kantone in der Vernehmlassung ablehnend (Abs. 7); Stimmrecht nicht von der Mündigkeit mit 18 lösen, aktives und passives Wahlrecht nicht trennen (Abs. 8). Dafür: Junge nicht abhängen, Nachbarland mit 16, hohes Medianalter (Abs. 9); Engagement gestiegen, lange betroffen (Abs. 10). Der schwerste Grund ist eigene Begründung, tragfähig mit Absatz. Zahlen: Stand 2024."
+        },
+        {
+          "ref": "q-231b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "An welcher Stelle geht jemand auf einen Einwand ein, und an welcher wird er übergangen?",
+          "erwartung": "Eingegangen: 06:39–07:17 (Einwand, auch 18-Jährige wählten selten, wird aufgenommen und gewendet) und 08:28–09:02 (Bild des Gegners vom löchrigen Käse wird gegen ihn gedreht). Übergangen: 06:21–06:34 (statt einer Antwort ein neuer Punkt) und 07:20–07:30 (nach Statistik gefragt, Wechsel zu Grundsätzen). Zwei Stellen genügen; vgl. Kap. 16.1, S. 367. Zahlen nicht geprüft."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "02:15 · Wer spricht: Platzwart · Kernaussage: Rasen braucht zwei Ruhetage · Absicht: will den Platz schonen (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt eine Diskussion mit Einwand und Antwort; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}
