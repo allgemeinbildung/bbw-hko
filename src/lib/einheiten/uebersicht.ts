@@ -103,6 +103,10 @@ export function buildUebersicht(o: UebersichtOptions): string {
   push({ key: 'vorbereitung', title: 'Vorbereitung', accent: '#0E6E3A', fuer: 'Lehrperson' }, [
     entry('begleiter', d.begleiter?.meta?.titel || 'Begleitdokument', { wordPath: `Material_LP/${prefix}_begleiter.docx` }),
     entry('deck', mitLoesungen ? 'Unterrichtsdeck (mit Lösungen)' : 'Unterrichtsdeck', { htmlPath: `Material_LP/${prefix}_unterrichtsdeck.html` }),
+    // v4.2 (E29): ein Deck je Spur; was im ZIP fehlt, fällt über `entry` von selbst weg.
+    ...(istV42
+      ? SPUR_KEYS.map((spur) => entry(`deck-${spur}`, `Unterrichtsdeck mit Lösungen · ${SPUR_NAME[spur]}`, { htmlPath: `Material_LP/${prefix}_unterrichtsdeck_${spur}.html` }))
+      : []),
     // v4.2: Lösungen je Heft und Spur (E19) — Dateinamen wie in v42Dokumente, im ZIP unter Material_LP/.
     ...(istV42
       ? (['A', 'B'] as const).flatMap((letter) =>

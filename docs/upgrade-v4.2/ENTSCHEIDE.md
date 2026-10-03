@@ -782,3 +782,38 @@ und §7.2. **Rückgängig:** die betroffenen Absätze in den References
    (`EinheitWorkbench.tsx`, gelesen aus `spuren_verfuegbar`; Inline-Stile, das
    Stylesheet ist nicht angefasst). Hefte mit beiden Spuren und alle
    Bestandseinheiten sind unverändert.
+
+## E29 — Präsentation und Werkstatt für v4.2-Einheiten (Pietro, 03.10.2026)
+
+**Auftrag Pietro:** Präsentation (mit Lösungen) und Werkstatt sollen auch für
+v4.2-Einheiten da sein; die KI-Toolbox bleibt vorerst zurückgestellt. Damit ist
+der Zaun für `src/lib/einheiten/deck-builder.ts`, `src/lib/werkstatt/`, die
+zwei Unterseiten `deck.astro` und `werkstatt.astro` und die zwei Schalter in
+`EinheitWorkbench.tsx` geöffnet.
+
+**Regeln:**
+
+- Beides rechnet zur Laufzeit aus den vorhandenen Daten der Einheit. **Kein
+  neues Datenfeld**, keine Änderung an einer Einheit oder an der Skill.
+- Alles Neue hängt am v4.2-Format (`spur_varianten` bzw. `heft_8page_v42`).
+  Für jede alte Einheit bleiben Präsentation und Werkstatt-Prompts
+  **zeichengleich** — vorher und nachher verglichen, wie bei E25/E26.
+- **Präsentation:** je Spur eine Fassung (wie die Hefte), auch für ein Heft
+  mit nur einer Spur. Sie zeigt je Heft Situation, Leitfragen, Quelle und
+  Raster, Produkt mit Schritten und Kriterien, das Beispielbild, das
+  Begriffsnetz — und die Lösungen, die seit E19 in den Daten liegen
+  (LF1/LF2, gelöstes Raster mit Befund, Erwartungshorizont zu LF4,
+  Lösungsbild, Verbindungen). Anstelle von «Austausch» und «Transfer» steht
+  der gemeinsame Auftrag. Die Präsentation ist Material der Lehrperson; die
+  Schranken von `deck.astro` (kein Gast, Entwurf nur KT1) gelten unverändert.
+- **Werkstatt:** Der Konsistenz-Vertrag liest bei v4.2 zwei Hefte in der
+  gewählten Spur, den Fall-Ausschluss des KN (statt der Persona-Pools), den
+  gemeinsamen Auftrag mit `kontext_ausschluss` und die Quellen der Spur.
+  Die Aufträge Differenzierung, Sprachniveau und KN-Übungsfall bleiben.
+  **«Vierte Herausforderung D» heisst bei v4.2 «Weiteres Heft C»** — ein
+  drittes Heft im selben Gerüst zum selben Prinzip, in der Spur ohne Medien
+  (ein erzeugtes Heft kann keine geprüfte Quelle mitbringen). Von mir
+  entschieden, weil Pietro die Frage offen liess; Alternative wäre «eine
+  weitere Quelle mit Raster».
+**Rückgängig:** `git revert` des Commits; die zwei Schalter in der
+Arbeitsansicht blenden beides bei v4.2 wieder aus.

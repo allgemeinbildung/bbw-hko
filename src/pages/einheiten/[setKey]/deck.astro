@@ -2,6 +2,9 @@
 import { loadEinheit, einheitById, isEntwurf } from '../../../lib/einheiten'
 import { guestGateHtml } from '../../../lib/einheiten/guest-gate'
 import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../../lib/einheiten/deck-builder'
+import { buildStandaloneDeckHtmlV42, deckSourceV42, istV42Einheit } from '../../../lib/einheiten/deck-v42'
+import { SPUR_KEYS } from '../../../lib/einheiten/spuren'
+import type { SpurKey } from '../../../lib/einheiten/types'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -33,6 +36,25 @@ if (gateProfile?.role === 'gast') {
 // selbst ziehen, sonst liesse sich ein unveröffentlichtes Deck am Katalog vorbei öffnen.
 if (isEntwurf(meta) && gateProfile?.role !== 'kt1') {
   return Astro.redirect('/einheiten')
+}
+
+// v4.2 (E29): je Spur eine Fassung. `?spur=ohne_medien|mit_medien` wählt sie; ohne Angabe
+// oder bei einem unbekannten Wert gilt die Spur, in der `loadEinheit` aufgelöst hat
+// (`set.spur`, sonst `DEFAULT_SPUR`). Einheiten ohne Spuren laufen unten wie bisher.
+if (istV42Einheit(fullSet)) {
+  const wunsch = Astro.url.searchParams.get('spur')
+  const spur = (SPUR_KEYS as readonly string[]).includes(wunsch ?? '') ? (wunsch as SpurKey) : undefined
+  const srcV42 = deckSourceV42(fullSet, spur)
+  if (!srcV42) {
+    return new Response(
+      'Für diese Einheit gibt es noch kein Unterrichtsdeck — es fehlen Bausteine (Prinzip, KN oder Hefte).',
+      { status: 404 }
+    )
+  }
+  // Die Spur gehört zur Kennung: zwei offene Fassungen sollen sich nicht gegenseitig steuern.
+  return new Response(buildStandaloneDeckHtmlV42(srcV42, `${setKey}-${srcV42.spur}`), {
+    headers: { 'Content-Type': 'text/html; charset=utf-8' },
+  })
 }
 
 const src = deckSourceFromFullSet(fullSet)

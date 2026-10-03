@@ -119,14 +119,14 @@ const CALLOUT_LABEL: Record<string, string> = {
   erwartungshorizont: 'ERWARTUNGSHORIZONT',
 }
 
-function fmtCallout(c: Callout): string {
+export function fmtCallout(c: Callout): string {
   const label = CALLOUT_LABEL[c.type] || c.type.toUpperCase()
   const head = c.title ? `${label} — ${c.title}` : label
   return `${head}\n${c.body}`
 }
 
 /** All callouts of the given types in a section, in document order. */
-function pick(sec: Section | undefined, types: string[]): Callout[] {
+export function pick(sec: Section | undefined, types: string[]): Callout[] {
   if (!sec) return []
   return sec.callouts.filter((c) => types.includes(c.type))
 }
@@ -135,7 +135,7 @@ function findTable(sec: Section | undefined, headMatch: RegExp): MdTable | undef
   return sec?.tables.find((t) => t.head.some((h) => headMatch.test(h)))
 }
 
-function notesFrom(first: string, parts: (string | null | undefined)[]): string {
+export function notesFrom(first: string, parts: (string | null | undefined)[]): string {
   return [first, ...parts.filter((p): p is string => !!p && p.trim().length > 0)].join('\n\n')
 }
 
@@ -157,6 +157,8 @@ export type Block =
       hinweis?: string
       abschnitte: { titel: string; zeilen: { label?: string; text: string; quelle?: string }[] }[]
     }
+  /** Fertiges Markup — nur das v4.2-Deck (deck-v42.ts) erzeugt solche Blöcke (E29). */
+  | { t: 'raw'; html: string }
 
 export type DeckCard = {
   k?: string
@@ -197,6 +199,8 @@ export type DeckOptions = {
   logoSrc?: string
   /** Lion watermark — same asset the /einheiten catalog cards use (`.lion-bg`). */
   lionSrc?: string
+  /** Zusätzliches CSS hinter dem Deck-CSS — nur das v4.2-Deck setzt es (E29). */
+  extraCss?: string
 }
 
 const DEFAULT_LOGO = '/logo-bbw-doc.png'
@@ -217,21 +221,21 @@ export type EinheitSource = {
 /* ------------------------------------------------------------------ */
 
 const ZAHLWORT = ['null', 'eine', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht']
-const zahl = (n: number) => ZAHLWORT[n] ?? String(n)
-const Zahl = (n: number) => {
+export const zahl = (n: number) => ZAHLWORT[n] ?? String(n)
+export const Zahl = (n: number) => {
   const w = zahl(n)
   return w.charAt(0).toUpperCase() + w.slice(1)
 }
 
 // Bewusste Kopie — dieses Modul bleibt importfrei. Bei Änderungen auch
 // LEHRGANG_LABEL in ./lehrgang.ts nachziehen.
-const LEHRGANG_LABEL: Record<string, string> = {
+export const LEHRGANG_LABEL: Record<string, string> = {
   EBA_2J: 'EBA 2-jährig',
   EFZ_3J: 'EFZ 3-jährig',
   EFZ_4J: 'EFZ 4-jährig',
 }
 
-const DIMENSION_LABEL: Record<string, string> = {
+export const DIMENSION_LABEL: Record<string, string> = {
   SuK: 'Sprache und Kommunikation',
   Ges: 'Gesellschaft',
 }
@@ -240,16 +244,16 @@ const DIMENSION_LABEL: Record<string, string> = {
  *  Austausch und Kompetenznachweis haben im Renderer keine eigene Farbe (A4Page bekommt
  *  `sit={null}` → neutrales Slate), und set.json/kn.json führen kein Farbfeld. Sie erben
  *  deshalb die Deck-Grundfarbe, statt eine dritte Farbwelt zu erfinden. */
-const BRAND: Palette = { acc: '#0e6e3a', dark: '#094d28', soft: '#e8f3ec' }
+export const BRAND: Palette = { acc: '#0e6e3a', dark: '#094d28', soft: '#e8f3ec' }
 
 /** Accent trio for a Herausforderung, straight from its JSON (`sit_farbe*`). */
-function paletteOf(hf: any): Palette {
+export function paletteOf(hf: any): Palette {
   const acc = hf?.sit_farbe || BRAND.acc
   return { acc, dark: darken(acc), soft: hf?.sit_farbe_light || BRAND.soft }
 }
 
 /** Darker variant for text on light backgrounds — the JSON only ships a *lighter* mid tone. */
-function darken(hex: string, f = 0.74): string {
+export function darken(hex: string, f = 0.74): string {
   const m = /^#?([0-9a-f]{6})$/i.exec(String(hex).trim())
   if (!m) return BRAND.dark
   const v = parseInt(m[1], 16)
@@ -280,7 +284,7 @@ function quellenOf(hf: any): string {
 /** Redaktionelle `_kommentar`-Schlüssel gehören nicht auf die Folie.
  *  `prinzip.aspekte` führt sie in den EBA-Sets — ungefiltert erschiene ein 266 Zeichen
  *  langer Fliesstext als Chip neben den zwei echten Aspekten. */
-function ohneKommentare<T>(obj: Record<string, T> | null | undefined): [string, T][] {
+export function ohneKommentare<T>(obj: Record<string, T> | null | undefined): [string, T][] {
   return Object.entries(obj ?? {}).filter(([k]) => !k.startsWith('_'))
 }
 
@@ -950,7 +954,7 @@ export function buildDeck(src: EinheitSource): Deck {
 
 const SLIDE_SECONDS = 10
 
-const esc = (s: unknown) =>
+export const esc = (s: unknown) =>
   String(s ?? '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -1084,6 +1088,8 @@ function renderBlock(b: Block): string {
       // `hinweis` steht bewusst nur in den Notizen — er richtet sich an die Lehrperson.
       return `<div class="ms-group" data-accordion>${secs}</div>`
     }
+    case 'raw':
+      return b.html
   }
 }
 
@@ -1398,7 +1404,7 @@ export function renderStandaloneDeckHtml(deck: Deck, deckId: string, opts: DeckO
 ${DECK_CSS}
 .logo { background-image: url("${logo}") }
       .lionmark { background-image: url("${lion}") }
-${SHELL_CSS}
+${SHELL_CSS}${opts.extraCss ?? ''}
 </style>
 </head>
 <body>

@@ -18,6 +18,7 @@ import type { EinheitFullSet } from '../../lib/einheiten/types'
 import { buildDocS, buildAustausch, buildKnS, buildKnLp, buildKi, buildLernprompt, buildLernbegleiter, buildDossier, buildLeseblatt, buildInfokartenTemplate, buildInfokartenTemplatePrefilled, docToBlob } from '../../lib/einheiten/docx-builder'
 import { buildBegleiterDocx } from '../../lib/einheiten/begleiter-builder'
 import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../lib/einheiten/deck-builder'
+import { buildStandaloneDeckHtmlV42, deckSourceV42, deckV42HatLoesungen } from '../../lib/einheiten/deck-v42'
 import { buildUebersicht, einheitPrefix } from '../../lib/einheiten/uebersicht'
 import { buildStandaloneHtml } from '../../lib/einheiten/standalone-shell'
 import { DocAuftragsbogen } from './docs/DocAuftragsbogen'
@@ -252,20 +253,22 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
   // Unterrichtsdeck wird vollständig aus den JSONs + begleiter.md generiert.
   // Aktuell nur EFZ — EBA hat eine eigene Logik und folgt separat.
-  // v4.2: Präsentation und Werkstatt kennen das neue Modell noch nicht (zwei Hefte,
-  // gemeinsamer Auftrag statt Austausch und Transfer) — sie würden Folien bzw. einen
-  // Prompt im alten 3er-Format erzeugen. Bis sie nachgezogen sind, gibt es beides bei
-  // v4.2-Einheiten nicht (ENTSCHEIDE E17).
+  // v4.2: Präsentation und Werkstatt haben ein eigenes Modell (zwei Hefte, gemeinsamer
+  // Auftrag, je Spur) — deck-v42.ts bzw. der v42-Zweig der Werkstatt (ENTSCHEIDE E29).
+  // Das alte Deck bleibt den 3er-Sets vorbehalten.
   const deckSource = useMemo(() => (istV42 ? null : deckSourceFromFullSet(d)), [d, istV42])
-  const deckAvailable = !!deckSource
+  // v4.2 (ENTSCHEIDE E29): eigenes Deck je Spur; `d` steht bereits auf der gewählten Spur.
+  const deckSourceV42Akt = useMemo(() => (istV42 ? deckSourceV42(d) : null), [d, istV42])
+  const deckAvailable = !!deckSource || !!deckSourceV42Akt
   // Das Deck führt die Lösungen der Leitfragen nur, wo sie gepflegt sind (C10) —
   // der Knopf sagt es deshalb datengesteuert, statt es pauschal zu behaupten.
   const deckHasLoesungen = useMemo(
     () =>
+      deckV42HatLoesungen(deckSourceV42Akt) ||
       !!deckSource?.herausforderungen.some((hf: any) =>
         (hf.leitfragen ?? []).some((lf: any) => lf.loesung?.zeilen?.length)
       ),
-    [deckSource]
+    [deckSource, deckSourceV42Akt]
   )
 
   useEffect(() => {
@@ -804,6 +807,20 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
           log.push(path)
         } catch (e) { console.warn('deck failed', e) }
       }
+      // v4.2 (E29): je vorhandener Spur ein Deck — wie die Hefte und die Lösungen.
+      if (istV42) {
+        const lionSvg = await fetch('/lion-only.svg').then((r) => r.text()).catch(() => '')
+        const lionSrc = lionSvg ? 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(lionSvg))) : undefined
+        for (const k of spurenDa) {
+          try {
+            const src = deckSourceV42(dRoh, k)
+            if (!src) continue
+            const path = `Material_LP/${prefix}_unterrichtsdeck_${k}.html`
+            zip.file(path, buildStandaloneDeckHtmlV42(src, `${d.id}-${k}`, { logoSrc: pngDataUrl, lionSrc }))
+            log.push(path)
+          } catch (e) { console.warn('deck v42 failed', e) }
+        }
+      }
 
       // KI-Toolbox-Dokumente (additiv) — nur wenn die jeweilige Datei existiert.
       if (d.ki) {
@@ -1004,7 +1021,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
           ) : (
             <a
               className="wb-action deck"
-              href={`/einheiten/${d.id}/deck`}
+              href={`/einheiten/${d.id}/deck${istV42 ? `?spur=${spur}` : ''}`}
               target="_blank"
               rel="noopener noreferrer"
               title="Präsentation"
@@ -1018,10 +1035,10 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
         {/* Werkstatt steht bei den Lehrpersonen-Werkzeugen, nicht unten beim Feedback:
             sie gehoert vor den Unterricht, nicht danach. Gaeste sehen sie nie. */}
-        {!readOnly && !istV42 && (
+        {!readOnly && (
           <a
             className="wb-action"
-            href={`/einheiten/${d.id}/werkstatt`}
+            href={`/einheiten/${d.id}/werkstatt${istV42 ? `?spur=${spur}` : ''}`}
             title="Prompt für Zusatzmaterial zu dieser Einheit — für die Lehrperson, nicht für die Lernenden"
           >
             <span className="wb-action-icon" aria-hidden="true">🛠</span>
