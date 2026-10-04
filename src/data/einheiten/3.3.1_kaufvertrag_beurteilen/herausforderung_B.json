@@ -1,0 +1,908 @@
+{
+  "id": "3.3.1_kaufvertrag_beurteilen_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "3.3",
+  "modul_titel": "Bewusst konsumieren und handeln — beim Einkaufen Rechte einfordern",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Nach fünf Monaten defekt – was fordere ich, und wie?",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Mangel rügen und Forderung vertreten"
+  },
+  "prinzip_ref": "3.3.1_kaufvertrag_beurteilen_prinzip",
+  "nrlp": {
+    "nr": "3.3.2",
+    "nr_primary": [
+      "3.3.2"
+    ],
+    "lebensbezug": "3.3",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich",
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "sprachmodus_ids": [
+      "SM7",
+      "SM8"
+    ],
+    "sk": [
+      1,
+      9,
+      3
+    ],
+    "kompetenz_id": "3.3.2",
+    "lebensbezug_id": "3.3",
+    "kompetenz_text": "Ich kann bei Problemen mit einem gekauften Produkt meine Forderung begründen und mein Anliegen zielgruppengerecht formulieren.",
+    "lebensbezug_text": "Ich habe beim Einkaufen Pflichten, aber auch Rechte, die ich einfordern kann."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Vor fünf Monaten habe ich im Fachgeschäft an meinem Wohnort ein Smartphone für CHF 420 gekauft. Quittung und Garantieschein habe ich noch. Seit gestern lädt das Gerät nicht mehr; fallen gelassen oder nass gemacht habe ich es nicht. Im Laden zeigt der Verkäufer auf den Garantieschein: Bei einem Defekt werde nur repariert. Das dauere vier bis sechs Wochen, ein Leihgerät gebe es nicht. Ich brauche das Smartphone aber jeden Tag für Lehrbetrieb und Schule. Eine Kollegin meint, ich könne ein neues Gerät oder mein Geld verlangen. Der Verkäufer sagt, darüber entscheide die Geschäftsleitung: Ich solle ihr schreiben, sie lade mich dann zum Gespräch ein. Zuerst will ich klären, was mir zusteht, was der Garantieschein daran ändert und wie ich meine Forderung vorbringe, damit das Geschäft darauf eingeht.",
+  "zahlen_tabelle": [
+    {
+      "label": "Kaufpreis des Smartphones",
+      "wert": "CHF 420"
+    },
+    {
+      "label": "Gekauft (Quittung vorhanden)",
+      "wert": "vor 5 Monaten"
+    },
+    {
+      "label": "Defekt bemerkt",
+      "wert": "gestern"
+    },
+    {
+      "label": "Reparatur laut Geschäft, ohne Leihgerät",
+      "wert": "4–6 Wochen"
+    }
+  ],
+  "leitfrage": "Bestehe ich auf Ersatz oder Geld zurück, oder gewinne ich das Geschäft für eine Lösung, mit der ich leben kann?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Bestimmt fordern vs. das Gegenüber für eine Lösung gewinnen",
+    "hint": "Bestimmt fordern zeigt, dass es Ihnen ernst ist. Entgegenkommen bringt vielleicht schneller ein Gerät. Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.4",
+      "titel": "Kaufvertragsarten Teil 1",
+      "unterueberschrift": "Mangel, Forderungen, Garantie",
+      "seiten": "Seite 61-62",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 17.4",
+      "titel": "Korrespondenz",
+      "unterueberschrift": "Aufbau eines Geschäftsbriefs",
+      "seiten": "Seite 398-399",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 19.2",
+      "titel": "Konflikte",
+      "unterueberschrift": "Punkte für eine Aussprache",
+      "seiten": "Seite 429",
+      "fuer_leitfrage": [
+        1
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Schluss stehen Ihre Mängelrüge (der Brief, der einen Mangel meldet), die Antwort des Geschäfts und ein Gespräch. LF1 liefert Pflichten und Forderungen, LF2 den Plan des Briefs, LF3 einen Beleg und seine Grenze, LF4 Forderung, Ton und Antwort auf den Einwand.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.4 | S. 61-62 · Kap. 19.2 | S. 429",
+      "text": "Erklären Sie mit Kap. 2.4 (S. 61–62): Welche Pflichten haben Sie bei einem Mangel, was können Sie fordern, wie lange haftet das Geschäft? Nennen Sie zwei Regeln für eine Aussprache (Kap. 19.2, S. 429).",
+      "liefert": "Pflichten, Forderungen und Regeln fürs Gespräch",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 61: nur die Kästen zu den Pflichten und zu den Forderungen bei einer Mängelrüge.",
+          "S. 62: nur der erste Absatz zur Garantie. S. 429: nur die Liste zur Aussprache."
+        ],
+        "satzanfaenge": [
+          "«Eine Mängelrüge ist …; zuerst muss ich …»",
+          "«Ersatz heisst …; Minderung heisst …; Wandelung heisst …»",
+          "«Gewährleistung heisst: Das Geschäft haftet …»"
+        ],
+        "produkt": "Die Forderung kommt in Ihren Brief; die Regeln brauchen Sie im Reklamationsgespräch."
+      },
+      "loesung": {
+        "kern": "Pflichten, drei Forderungen, Haftung, Aussprache",
+        "zeilen": [
+          {
+            "label": "Mängelrüge",
+            "text": "Meldung an die Verkäuferin, dass die Ware einen Mangel hat, am besten eingeschrieben; mit ihr stellt man die Forderung.",
+            "quelle": "Kap. 2.4, S. 61"
+          },
+          {
+            "label": "Drei Pflichten",
+            "text": "Ware gleich nach Erhalt prüfen (Prüfungspflicht), den Mangel unverzüglich melden (Meldepflicht), die Ware aufbewahren und nicht mehr benutzen.",
+            "quelle": "Kap. 2.4, S. 61"
+          },
+          {
+            "label": "Drei Forderungen",
+            "text": "Ersatzlieferung (einwandfreie Ware), Minderung (tieferer Preis) oder Wandelung (Kauf rückgängig). Eine Reparatur nennt das Lehrmittel nicht.",
+            "quelle": "Kap. 2.4, S. 61"
+          },
+          {
+            "label": "Haftung",
+            "text": "Gewährleistung: Die Verkäuferin haftet für Mängel, auch für versteckte und ohne Verschulden (S. 61); ohne andere Abmachung zwei Jahre (S. 62, Absatz 1).",
+            "quelle": "Kap. 2.4, S. 61-62"
+          },
+          {
+            "label": "Aussprache",
+            "text": "Zwei aus: früh das Gespräch suchen, das Gegenüber ernst nehmen, ohne Wertung schildern, Ich-Botschaften, Lösung statt Schuldige suchen.",
+            "quelle": "Kap. 19.2, S. 429"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Garantie und Gewährleistung trennen: S. 61 nennt die Haftung «Gewährleistung oder Garantie»; erst S. 62 trennt gesetzliche und vertragliche Garantie."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.4 | S. 61 · Kap. 17.4 | S. 398 · eigener Fall",
+      "text": "Ordnen Sie Ihren Fall: Was ist der Mangel, seit wann, welche Pflichten sind erfüllt, welche offen? Planen Sie Ihre Mängelrüge in Stichworten mit den vier Teilen eines Geschäftsbriefs (Kap. 17.4, S. 398).",
+      "liefert": "geordneter Fall und Plan des Briefs",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Vergleichen Sie Ihren Fall Punkt für Punkt mit den drei Pflichten von S. 61.",
+          "Vier Teile (S. 398): Anlass, Absicht, Begründung, Schluss – je ein Stichwort."
+        ],
+        "satzanfaenge": [
+          "«Der Mangel: Seit … lädt …; gekauft habe ich es …»",
+          "«Erfüllt habe ich …; noch offen ist …»",
+          "«Anlass: … Absicht: … Begründung: … Schluss: …»"
+        ],
+        "produkt": "Aus dem Stichwort zum Anlass wird der erste Absatz Ihres Briefs; die Quittung ist Ihr erster Beleg."
+      },
+      "loesung": {
+        "kern": "Mangel, erfüllte Pflichten, Plan in vier Teilen",
+        "zeilen": [
+          {
+            "label": "Mangel und Daten",
+            "text": "Das Smartphone lädt seit gestern nicht mehr; gekauft vor fünf Monaten für CHF 420, Quittung vorhanden; kein Sturz, keine Nässe."
+          },
+          {
+            "label": "Pflichten",
+            "text": "Annahme aus der Situation: gemeldet am Tag nach der Entdeckung, mündlich im Laden; die schriftliche Mängelrüge ist offen. Aufbewahren, ohne zu benutzen: offen und heikel, weil ich das Gerät täglich brauche; wer die Spannung benennt, antwortet richtig. Deutung: Beim Prüfen nach dem Kauf war der Mangel nicht zu sehen.",
+            "quelle": "Kap. 2.4, S. 61"
+          },
+          {
+            "label": "Plan des Briefs",
+            "text": "Anlass: Kauf und Defekt. Absicht: die Forderung, mit Frist. Begründung: zwei Gründe mit Beleg (die Quittung; eine Regel folgt aus LF3). Schluss: Bitte um Antwort bis zu einem genannten Datum.",
+            "quelle": "Kap. 17.4, S. 398"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Forderung ist hier erst ein Stichwort; entschieden wird sie in LF4. Der Brieftitel nennt die Sache.",
+            "quelle": "Kap. 17.4, S. 399"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Schon hier Ersatz oder Geld zurück als sicher annehmen und den Garantieschein übersehen."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Mängelrüge als Geschäftsbrief mit schriftlicher Antwort aus der Gegenrolle und Reklamationsgespräch zu zweit mit Ergebnisnotiz",
+    "titel": "Meine Mängelrüge – Antwort, Gespräch und Ergebnisnotiz",
+    "format_detail": "Sie schreiben auf S. 7 eine Mängelrüge an die Geschäftsleitung des Fachgeschäfts: Brieftitel, Anlass, Forderung mit Frist, Begründung mit zwei Belegen (einer aus dem Fall, etwa die Quittung, und eine Regel aus dem Raster in Ihren Worten; die Fundstelle steht im Raster, nicht im Brief) und Schluss. Gezählt werden 80 bis 100 Wörter vom Brieftitel bis zum Schluss; Absender, Empfänger, Datum, Anrede und Gruss kommen dazu. Neben dem Brief notieren Sie in Stichworten, was Sie auf den erwartbaren Einwand aus der Situation antworten (laut Garantieschein wird nur repariert), welche Folge das Angebot des Geschäfts für Sie hat, und Ihren Lösungsvorschlag. Dann geht es in dieser Reihenfolge weiter: Erstens geben Sie Ihren Brief der Partnerperson; sie schreibt unter Ihren Brief in zwei bis drei Sätzen die Antwort des Geschäfts mit einem Einwand aus der Situation auf S. 1. Zweitens bekommen Sie ihren Brief und antworten ebenso. Drittens führen Sie zwei Gespräche von je rund vier Minuten: zu Ihrem Brief spielt die Partnerperson die Geschäftsleitung und bringt ihren Einwand, Sie antworten darauf und machen einen Lösungsvorschlag; zum Brief der Partnerperson spielen Sie die Geschäftsleitung. Viertens schreibt jede Person unter den eigenen Brief die Ergebnisnotiz in zwei Sätzen: was nun gilt oder offen bleibt, und was das Geschäft zu Recht einwendet. Abgegeben wird S. 7 mit Brief, Stichworten, Antwort der Partnerperson und Ergebnisnotiz.",
+    "beschreibung": "Ich schreibe der Geschäftsleitung eine Mängelrüge; meine Partnerperson antwortet darunter als Geschäft. Im Gespräch zu meinem Brief (rund vier Minuten) ist sie das Geschäft, dann tauschen wir.",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "LF1: Markieren Sie die Forderungen, die für Sie in Frage kommen, und zwei Regeln für das Gespräch."
+      },
+      {
+        "label": "02 Meinen Fall ordnen",
+        "hint": "LF2: Schreiben Sie auf S. 7 Brieftitel und Anlass. Ihr erster Beleg ist die Quittung."
+      },
+      {
+        "label": "03 Forderung belegen",
+        "hint": "LF3: Eine Rasterzeile wird Ihr zweiter Beleg: die Regel in Ihren Worten. Die Fundstelle bleibt im Raster. Die Grenze: fürs Gespräch."
+      },
+      {
+        "label": "04 Forderung, Ton entscheiden",
+        "hint": "LF4: Forderung mit Frist (bis wann) in Ich-Form in den Brief. Daneben Stichworte: Antwort auf «nur Reparatur», Folge für mich, Vorschlag."
+      },
+      {
+        "label": "05 Brief, Antwort, Gespräch",
+        "hint": "Jede Person schreibt unter den Brief der anderen die Antwort des Geschäfts. Dann je Brief ein Gespräch; die Notiz gehört zum eigenen Brief."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Mängelrüge (80–100 Wörter, Frist, 2 Belege); daneben Antwort auf «nur Reparatur»",
+      "Unter Ihrem Brief: Antwort als Geschäft, 2–3 Sätze, Einwand «nur Reparatur»",
+      "Ergebnisnotiz zum eigenen Brief, zwei Sätze: Ergebnis und berechtigter Einwand"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel, gekürzt: Wanderrucksack, Naht gerissen – ohne Antwort und Ergebnisnotiz",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Mängelrüge",
+          "text": [
+            "Mängelrüge: Wanderrucksack, Naht gerissen",
+            "Vor drei Wochen habe ich bei Ihnen den Rucksack bestellt. Nach der zweiten Tour riss die Naht am Träger.",
+            "Ich verlange bis Ende Monat einen neuen Rucksack: Erstens ist er laut Rechnung drei Wochen alt, zweitens haften Sie nach Gesetz für Mängel."
+          ]
+        },
+        {
+          "titel": "Aus dem Gespräch",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich möchte einen neuen Rucksack."
+            },
+            {
+              "wer": "Versand",
+              "text": "Wir nähen nur nach, das dauert drei Wochen."
+            },
+            {
+              "wer": "Ich",
+              "text": "In zwei Wochen wandere ich. Vorschlag: nachnähen in einer Woche."
+            },
+            {
+              "wer": "Versand",
+              "text": "Einverstanden."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Smartphone lädt nach fünf Monaten nicht mehr",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage; erst zeigen, wenn die Gespräche geführt sind. Die Mängelrüge zählt vom Brieftitel bis zum Schluss 90 Wörter; Absender, Empfänger, Datum, Anrede und Gruss sind nicht gezeigt. Sie verlangt Ersatz (erstes Beispiel bei LF4); wer von Anfang an die Reparatur zu besseren Bedingungen verlangt, liegt ebenso richtig (zweites Beispiel). Der Brief stützt sich auf die Quittung und auf Kap. 2.4, S. 62 und passt darum zu jeder Fassung des Hefts; wer mit dem Video gearbeitet hat, nennt als zweiten Beleg das Recht auf Preisnachlass oder Rücktritt. Der Brief nennt die Regel ohne Fundstelle; die Fundstelle (Kap. 2.4, S. 62, bzw. die Zeitmarke) steht im Raster, so verlangt es Schritt 03. Das Bild zeigt zwei der vier Teile. Die anderen zwei könnten so lauten. Antwort der Partnerperson als Geschäft: «Besten Dank für Ihr Schreiben. Laut Garantieschein reparieren wir defekte Geräte; ein Ersatzgerät ist nicht vorgesehen. Die Reparatur dauert vier bis sechs Wochen.» Ergebnisnotiz: «Wir haben vereinbart, dass das Geschäft repariert und mir für diese Zeit ein Leihgerät gibt. Zu Recht wendet das Geschäft ein, dass der Garantieschein zum Vertrag gehört und nur die Reparatur vorsieht.» Annahme: Die Geschäftsleitung gibt beim Leihgerät nach; die Situation sagt, es gebe keines. Reparatur und Leihgerät sind Fallüberlegungen, nicht aus dem Lehrmittel. Neben dem Brief stehen auf S. 7 in Stichworten die Antwort auf den erwartbaren Einwand aus der Situation («nur Reparatur»), die Folge für die Lernenden (vier bis sechs Wochen ohne Gerät) und der Lösungsvorschlag (Schritt 04); der Einwand der Partnerperson folgt erst nach dem Brief. Jede Person schreibt die Antwort des Geschäfts unter den Brief der anderen und die Ergebnisnotiz unter den eigenen. Achten Sie im Gespräch darauf, dass der Einwand zuerst anerkannt und dann beantwortet wird.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Mängelrüge",
+          "text": [
+            "Mängelrüge: Smartphone lädt nicht mehr",
+            "Vor fünf Monaten habe ich bei Ihnen ein Smartphone für CHF 420 gekauft. Seit gestern lädt es nicht mehr; fallen gelassen oder nass gemacht habe ich es nicht.",
+            "Ich verlange innert zehn Tagen ein einwandfreies Ersatzgerät.",
+            "Erstens ist das Gerät laut Quittung erst fünf Monate alt. Zweitens haften Sie nach Gesetz zwei Jahre für Mängel. Vier bis sechs Wochen Reparatur ohne Leihgerät kann ich nicht überbrücken, denn ich brauche das Gerät täglich für Lehrbetrieb und Schule.",
+            "Ich danke Ihnen für eine Antwort bis Ende Woche."
+          ]
+        },
+        {
+          "titel": "Aus dem Gespräch",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich verlange ein Ersatzgerät."
+            },
+            {
+              "wer": "Geschäft",
+              "text": "Laut Garantieschein reparieren wir nur."
+            },
+            {
+              "wer": "Ich",
+              "text": "Das stimmt. Sechs Wochen ohne Gerät gehen aber nicht. Mein Vorschlag: Reparatur mit Leihgerät."
+            },
+            {
+              "wer": "Geschäft",
+              "text": "Einverstanden, Sie bekommen ein Leihgerät."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Urteil oder Forderung steht ohne Begründung da.",
+        "Eine Begründung ist ansatzweise da, bleibt aber lückenhaft oder ohne Beleg.",
+        "Urteil oder Forderung ist nachvollziehbar begründet und mit einem Beleg gestützt.",
+        "Schlüssig begründet; der Einwand des Gegenübers ist aufgenommen und beantwortet, Folgen sind benannt."
+      ],
+      "indikator_produkt": "Brief: Forderung, 2 Belege. 3 Punkte: Stichworte beantworten «nur Reparatur», nennen Folge"
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position ist nicht erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder unbegründet.",
+        "Die Position steht klar in Ich-Form und sagt, was ich will oder verlange.",
+        "Begründete Position in Ich-Form; das Spannungsfeld ist anerkannt, ebenso, was die Gegenseite zu Recht einwendet."
+      ],
+      "indikator_produkt": "Forderung in Ich-Form. Für 3 Punkte: Notiz sagt, was das Geschäft zu Recht einwendet"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Auf S. 6 stehen eine gekürzte Mängelrüge und ein Gesprächsausschnitt zu einem anderen Fall; die Satzanfänge der Leitfragen geben den Einstieg in jeden Teil.",
+    "scaffold_100": "Freiwillig: Schreiben Sie nach dem Gespräch in zwei bis drei Sätzen die Bestätigung an das Geschäft: was vereinbart ist und bis wann."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-4-geschaeftsbrief",
+      "fuer": "für die Mängelrüge: vier Teile und ein Titel, der die Sache nennt",
+      "tun": "Titel: «Mängelrüge» plus Gerät. Dann Anlass, Forderung mit Frist (die Absicht), zwei Belege, Schluss. Gezählt wird vom Titel bis zum Schluss."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Begründung der Forderung in Brief und Gespräch",
+      "tun": "Behauptung ist Ihre Forderung. Zwei Belege begründen sie: einer aus dem Fall (Quittung), eine Regel. Die Antwort auf den Einwand folgt im Gespräch."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für das Zuhören im Reklamationsgespräch",
+      "tun": "Ihre Partnerperson bringt als Geschäftsleitung den Einwand aus ihrer Antwort. Hören Sie: Was sagt sie zur Sache, was will sie? Erst dann antworten Sie."
+    }
+  ],
+  "mindmap_zentrum": "Rechtslage oder Verhandlungssache",
+  "mindmap_aeste": [
+    {
+      "titel": "Was ich bei einem Mangel tue",
+      "punkte": [
+        "Prüfungspflicht",
+        "Meldepflicht",
+        "Mängelrüge"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was ich fordern kann",
+      "punkte": [
+        "Ersatzlieferung",
+        "Minderung",
+        "Wandelung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was gilt – und wie ich rede",
+      "punkte": [
+        "Gewährleistung",
+        "vertragliche Garantie",
+        "Geschäftsbedingungen",
+        "Ich-Botschaft"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Steht in meinem Raster (S. 3), was gilt – Gesetz oder Garantieschein –, und habe ich danach entschieden?",
+      "Sagt meine Ergebnisnotiz, was nun gilt und was das Geschäft zu Recht einwendet?"
+    ],
+    "mitnahme": [
+      "Meine Forderung in einem Satz, mit Beleg",
+      "Erst schriftlich rügen, dann reden",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Prüfungspflicht",
+          "nach": "Meldepflicht",
+          "text": "bringt den Mangel ans Licht; dann greift die"
+        },
+        {
+          "von": "Meldepflicht",
+          "nach": "Mängelrüge",
+          "text": "erfülle ich schriftlich mit der"
+        },
+        {
+          "von": "Mängelrüge",
+          "nach": "Ersatzlieferung",
+          "text": "nennt meine Forderung, zum Beispiel die"
+        },
+        {
+          "von": "Minderung",
+          "nach": "Wandelung",
+          "text": "senkt nur den Preis; den Kauf hebt erst auf: die"
+        },
+        {
+          "von": "Gewährleistung",
+          "nach": "Ersatzlieferung",
+          "text": "ist der Grund, weshalb ich fordern kann: die"
+        },
+        {
+          "von": "vertragliche Garantie",
+          "nach": "Gewährleistung",
+          "text": "darf abweichen von der gesetzlichen"
+        },
+        {
+          "von": "Geschäftsbedingungen",
+          "nach": "vertragliche Garantie",
+          "text": "gehören zum Vertrag wie die"
+        },
+        {
+          "von": "Ich-Botschaft",
+          "nach": "Mängelrüge",
+          "text": "hält den Ton sachlich, im Gespräch nach der"
+        },
+        {
+          "von": "Mängelrüge",
+          "nach": "gilt auch bei …",
+          "text": "passt zu jedem Kauf, bei dem die Ware einen Mangel hat"
+        }
+      ],
+      "transfer": "Schuhe, deren Sohle sich nach zwei Monaten löst; eine Kaffeemaschine, die nach einem Monat tropft; eine Jacke, deren Reissverschluss nach drei Wochen klemmt.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "gesetzliche Garantie",
+          "Garantiefrist"
+        ],
+        "mit_medien": [
+          "Preisnachlass",
+          "Rücktritt"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn das Raster eine Zeile dazu hat, dass eine Regelung im Vertrag vom Gesetz abweichen darf (Kap. 2.4, S. 62, Absatz 2, bzw. Quelle, 00:35; die Übertragung auf den Garantieschein ist Deutung), und die Antwort auf LF4 eine der zwei Möglichkeiten in Ich-Form begründet. Im Lösungsbild: Ersatz innert zehn Tagen.",
+        "Ja, wenn die Notiz zwei Sätze hat: erstens das Ergebnis des Gesprächs, zweitens das, was das Geschäft zu Recht einwendet (Schritt 05, dritte Abgabe). Ein Beispiel steht im Hinweis zum Lösungsbild."
+      ],
+      "mitnahme": [
+        "Ich verlange ein Ersatzgerät innert zehn Tagen: Das Gerät ist laut Quittung fünf Monate alt, und das Geschäft haftet zwei Jahre (Kap. 2.4, S. 62).",
+        "Der Brief hält fest, was ich wann verlangt habe, und kann als Beweis dienen (Kap. 17.4, S. 398); die Lösung suche ich danach im Gespräch.",
+        "Zum Beispiel: Was tue ich, wenn das Geschäft auch im Gespräch bei seinem Garantieschein bleibt?"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Pflichten, Forderungen, Dauer der Haftung, zwei Regeln",
+        "LF2: Fall geordnet, vier Teile des Briefs geplant",
+        "LF4: Entscheid mit Begründung, Ton, erwarteter Einwand"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle mit vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Mängelrüge und Gespräch",
+      "vollstaendig_wenn": [
+        "Brief: 80–100 Wörter, Frist, 2 Belege; Stichworte daneben",
+        "Antwort der Partnerperson: 2–3 Sätze mit einem Einwand",
+        "Gespräch geführt, Ergebnisnotiz in zwei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Begriffe klären (LF1), Fall ordnen und Brief planen (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Raster zur Quelle (LF3), Forderung und Ton entscheiden (LF4), Brief beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Brief fertig, Antwort und Gespräch zu zweit, Notiz, Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich zuerst klären, was Gesetz und Vertrag festlegen, bevor ich etwas fordere – und wo hilft mir nur noch Verhandeln?",
+    "ziel": "Wer einen Mangel rügt, klärt zuerst, was Gesetz und Vertrag festlegen, fordert dann rasch, mit Belegen und im passenden Ton, was ihm zusteht — und erkennt, wo nur noch Verhandeln weiterhilft."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Einen Mangel schriftlich rügen, die Forderung mit Belegen begründen und sie im Gespräch gegen den Einwand des Gegenübers vertreten",
+    "lehrmittel_anker": "Kap. 2.4 S. 61 (Pflichten bei einer Mängelrüge, drei Forderungen, Haftung) und S. 62 (gesetzliche und vertragliche Garantie, Geschäftsbedingungen; nur der Abschnitt zur Garantie); Kap. 17.4 S. 398-399 (Gliederung und formale Teile des Geschäftsbriefs); Kap. 19.2 S. 429 (Punkte für eine Aussprache). Methodenkarten: Kap. 17.3 S. 394-395 (3B-Schema), Kap. 19.2 S. 427-429 (vier Ohren). Kein Lehrmittelbeleg: Reparatur als Mängelrecht, Leihgerät, Ton nach dem Gegenüber.",
+    "kn_aktivierung": "Im KN begründet die Lernende gegenüber einer Privatperson, von der sie ein gebrauchtes Gerät gekauft hat, ihre Forderung mit Belegen aus dem Fall, setzt eine Frist und sagt in einem Satz, was die Gegenseite zu Recht einwendet.",
+    "transfer_check": "Kann die Lernende bei einem neuen Mangel eine Forderung mit Frist und Beleg formulieren und auf den Einwand des Gegenübers antworten, ohne den sachlichen Ton zu verlieren?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — aus dem Abschnitt bzw. der Quelle herausnehmen, was die eigene Forderung stützt oder begrenzt, und weglassen, was nur den dort gezeigten Fall betrifft"
+    },
+    {
+      "sk": 9,
+      "wo": "leitfragen[3] — Reparatur, Ersatz und Geld zurück nach ihren Folgen abwägen (für mich, für das Geschäft, für den Verbrauch an Geräten)"
+    },
+    {
+      "sk": 3,
+      "wo": "handlungsprodukt.schritte[3] + handlungsprodukt.schritte[4] + Produkt — für das Gespräch einen eigenen Lösungsvorschlag planen und ihn dort einbringen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 2.4 | S. 62",
+          "text": "Werten Sie Ihr Raster zu Kap. 2.4 (S. 62) aus: Was legt das Gesetz zur Garantie fest, was darf ein Vertrag daran ändern? Notieren Sie in zwei bis drei Sätzen, was Ihre Forderung stützt und was sie begrenzt.",
+          "liefert": "Beleg und Grenze für die Forderung",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 2.4 | S. 62",
+            "auftrag": "Lesen Sie in Kap. 2.4 auf S. 62 nur den Abschnitt zur Garantie (2 Absätze, 1 Kasten). Zeile 1 ist ein Beispiel; füllen Sie drei weitere. Letzte Spalte: der Begriff aus LF1 oder Glossar (S. 8), zu dem die Aussage gehört.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 62, Absatz 1",
+              "Haftung für Mängel",
+              "zwei Jahre",
+              "Gewährleistung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Absatz 2 trägt zwei Aussagen. Der Abschnitt «Zahlung» weiter unten gehört nicht dazu."
+            ],
+            "satzanfaenge": [
+              "«Laut S. 62 gilt nach Gesetz, dass …»",
+              "«Eine Garantie im Vertrag darf vom Gesetz …»",
+              "«Meine Forderung stützt …; begrenzt wird sie durch …»"
+            ],
+            "produkt": "Eine Zeile wird der zweite Beleg im Brief: die Regel in Ihren Worten. Die Fundstelle bleibt im Raster."
+          },
+          "loesung": {
+            "kern": "Gesetz: zwei Jahre – der Vertrag darf abweichen",
+            "quelle_ref": "Kap. 2.4 | S. 62",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Ohne Garantieschein oder andere Abmachung: Haftung für Mängel während zwei Jahren; bei Neuware nicht verkürzbar (Absatz 1). Eine vertragliche Garantie darf vom Gesetz abweichen und die Garantie ganz ausschliessen; Geschäftsbedingungen gehören zum Vertrag und gehen dem Gesetz vor (Absatz 2).",
+                "quelle": "Kap. 2.4, S. 62"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Kasten: Die Ratschläge gelten dem Vertragsabschluss; für den Fall nach dem Kauf passt nur: an die Geschäftsleitung gelangen.",
+                "quelle": "Kap. 2.4, S. 62, Kasten"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Gewährleistung: LF1. Vertragliche Garantie, Geschäftsbedingungen, gesetzliche Garantie: Glossar. Die Zuordnung ist Deutung."
+              },
+              {
+                "label": "Befund",
+                "text": "Nennt, was stützt (zwei Jahre) und was begrenzt (Vertrag geht vor), je mit Absatz. «Nur Reparatur» ist Angabe des Falls; das Lehrmittel nennt keine Reparatur."
+              },
+              {
+                "label": "Zählweise",
+                "text": "Absatz 1 und 2: die zwei Textabsätze unter dem Titel zur Garantie, dann der Kasten. «Zahlung» gehört nicht dazu."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 62, Absatz 1",
+                "Haftung für Mängel",
+                "zwei Jahre",
+                "Gewährleistung"
+              ],
+              [
+                "S. 62, Absatz 1",
+                "Garantiefrist lässt sich nicht verkürzen",
+                "gilt bei Neuware",
+                "gesetzliche Garantie"
+              ],
+              [
+                "S. 62, Absatz 2",
+                "Garantie im Vertrag darf vom Gesetz abweichen",
+                "kann sie ganz ausschliessen",
+                "vertragliche Garantie"
+              ],
+              [
+                "S. 62, Absatz 2",
+                "Bedingungen des Geschäfts gehören zum Vertrag",
+                "gehen dem Gesetz vor",
+                "Geschäftsbedingungen"
+              ]
+            ],
+            "befund": "Nach Gesetz haftet das Geschäft zwei Jahre für Mängel, und bei Neuware lässt sich diese Frist nicht verkürzen (S. 62, Absatz 1): Das stützt meine Forderung, denn mein Gerät ist fünf Monate alt. Eine vertragliche Garantie darf aber vom Gesetz abweichen und geht ihm als Teil des Vertrags vor (Absatz 2): Das begrenzt meine Forderung, weil mein Garantieschein nur die Reparatur vorsieht. Diesen letzten Schluss ziehe ich selbst; zu Reparaturen sagt der Abschnitt nichts."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.4 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Gesetz: drei Forderungen (S. 61). Garantieschein: nur Reparatur, und der Vertrag geht vor (S. 62). Bestehen Sie trotzdem auf Ersatz oder Geld zurück, oder verhandeln Sie über die Reparatur? Begründen Sie.",
+          "liefert": "Forderung, Ton und Antwort auf den Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Vergleichen Sie die Folgen: für Sie, das Geschäft und die Umwelt (reparieren statt neu)."
+            ],
+            "satzanfaenge": [
+              "«Nach Gesetz könnte ich …, denn …»",
+              "«Der Garantieschein sagt dagegen …; das gilt, weil …»",
+              "«Ich entscheide mich für …; im Ton bleibe ich …»"
+            ],
+            "produkt": "Forderung mit Frist in den Brief; die Antwort auf den Einwand in Stichworten daneben (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Gesetz ↔ Garantieschein, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Regel steht mit Fundstelle da: drei Forderungen (Kap. 2.4, S. 61), Haftung während zwei Jahren (S. 62).",
+                "Die Abweichung im Fall ist benannt: Der Garantieschein sieht nur die Reparatur vor, und die vertragliche Garantie geht dem Gesetz vor (S. 62).",
+                "Der Entscheid steht in Ich-Form und ist eine der zwei Möglichkeiten: auf Ersatz oder Geld zurück bestehen, oder über die Reparatur verhandeln.",
+                "Ein Satz sagt, was das Geschäft zu Recht einwendet, und mindestens eine Folge ist abgewogen. Reparatur, Leihgerät und die Abwägung nach Folgen sind Fallüberlegungen, nicht aus dem Lehrmittel."
+              ],
+              "beispiel_pol_1": "Ich bestehe auf einem Ersatzgerät innert zehn Tagen. Ersatz ist eine der drei Forderungen (Kap. 2.4, S. 61), das Geschäft haftet zwei Jahre (S. 62), und mein Gerät ist fünf Monate alt. Zu Recht wendet das Geschäft ein, dass der Garantieschein nur die Reparatur vorsieht und als Teil des Vertrags vorgeht (S. 62). Ich bleibe trotzdem dabei, weil ich vier bis sechs Wochen ohne Gerät nicht überbrücken kann; im Ton bleibe ich sachlich (Kap. 19.2, S. 429) und schreibe der Geschäftsleitung (S. 62, Kasten). Mein Mindestziel im Gespräch ist die Reparatur mit Leihgerät. Eigene Folgerung: Weil der Vertrag vorgeht (S. 62), ist der Ersatz kaum durchsetzbar; ich setze auf Entgegenkommen.",
+              "beispiel_pol_2": "Ich nehme die Reparatur an und verhandle über die Bedingungen: ein Leihgerät und eine feste Frist von zwei Wochen. Das Geschäft hat recht damit, dass der Garantieschein zum Vertrag gehört und dem Gesetz vorgeht (S. 62). Nach Gesetz könnte ich zwar Ersatz oder Geld zurück verlangen (S. 61), doch so bleibt ein fast neues Gerät in Gebrauch, und das Geschäft kann leichter zustimmen. Bestimmt bleibe ich bei der Frist: Ist das Gerät dann nicht zurück, verlange ich mein Geld. Fallüberlegung, nicht aus dem Lehrmittel: Reparatur, Leihgerät und die Abwägung nach Folgen. Annahme: Das Geschäft kann ein Leihgerät beschaffen.",
+              "nicht_tragfaehig": "Eine Forderung ohne Blick auf den Garantieschein, ein Nachgeben ohne eigene Bedingung oder ein Entscheid ohne Fundstelle."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was ich verlange",
+          "Gesetz oder Garantieschein?",
+          "Folgen"
+        ],
+        "hinweis": "Zeilen: Ersatz · weniger zahlen (Minderung) oder Geld zurück (Wandelung) · Reparatur (Angebot des Geschäfts). Dann entscheiden Sie.",
+        "loesung_zeilen": [
+          [
+            "Ersatz",
+            "Gesetz (S. 61); nicht im Garantieschein",
+            "Ich: rasch wieder erreichbar · Geschäft: Kosten · Umwelt: ein fast neues Gerät wird ersetzt (Fallüberlegung)"
+          ],
+          [
+            "Minderung oder Geld zurück",
+            "Gesetz (S. 61); nicht im Garantieschein",
+            "Minderung hilft nicht, das Gerät lädt nicht · Geld zurück: ich kaufe neu, das Geschäft verliert den Verkauf (Fallüberlegung)"
+          ],
+          [
+            "Reparatur",
+            "Garantieschein (Angebot des Geschäfts); im Lehrmittel keine Forderung",
+            "Ich: vier bis sechs Wochen ohne Gerät · Geschäft: kleinster Aufwand · Umwelt: das Gerät bleibt in Gebrauch (Fallüberlegung)"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 2.4 (S. 3)",
+        "beispiel": [
+          "S. 88, Absatz 2 · Hallenbad schliesst im Sommer · «acht Wochen» (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Auf S. 6 stehen eine gekürzte Mängelrüge und ein Gesprächsausschnitt zu einem anderen Fall; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Welche Rechte nennt die Juristin bei mangelhafter Ware, was schränkt sie ein, wozu rät sie? Notieren Sie in zwei bis drei Sätzen, was Ihre Forderung stützt und was sie begrenzt.",
+          "liefert": "Beleg und Grenze für die Forderung",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-331b-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst ganz ansehen; dann in Stichworten notieren, was für jeden Kauf gilt.",
+              "Letzte Spalte: der Begriff aus LF1 oder Glossar, zu dem die Aussage gehört."
+            ],
+            "satzanfaenge": [
+              "«Laut Juristin gibt das Gesetz … (Zeitmarke)»",
+              "«Eingeschränkt wird das durch …»",
+              "«Meine Forderung stützt …; begrenzt wird sie durch …»"
+            ],
+            "produkt": "Eine Zeile wird der zweite Beleg im Brief: die Regel in Ihren Worten. Die Fundstelle bleibt im Raster."
+          },
+          "loesung": {
+            "kern": "Gesetz gibt Rechte – Geschäfte dürfen abweichen",
+            "quelle_ref": "q-331b-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Juristin: Gesetz gibt Preisnachlass oder Rücktritt (00:26–00:33), aber nicht zwingend: Anbieter machen eigene Regeln (00:35–00:42); das Unternehmen der Sendung wählt laut seinen Bedingungen Reparatur oder Rücknahme (00:50–01:00). Rat: dranbleiben, Lösungen vorschlagen (01:52–02:02). Auch: 01:30–01:42 (hinnehmen), 02:16 (Klage), 02:31 (Bedingungen lesen).",
+                "quelle": "Quelle, 00:26–02:43"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Preisnachlass = Minderung, Rücktritt = Wandelung. Juristin: zwei Forderungen (00:26); Lehrmittel: drei, dazu Ersatz (S. 61). Beide gelten. Rest, auch der Schluss auf den Garantieschein: Deutung.",
+                "quelle": "Kap. 2.4, S. 61"
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Frage des Hefts (kein Zitat): «wenn ein Kauf nicht klappt». Kundin: bezahlt, nichts erhalten (00:57). Juristin: Vertrag gilt (02:07); Lieferverzug: Nachfrist, dann Rücktritt (02:14); Reparatur: nicht endlos warten (04:01). Mängelrechte: nur Lehrmittel (S. 61).",
+                "quelle": "Ersatzquelle, 00:57–04:08"
+              },
+              {
+                "label": "Stand",
+                "text": "19.05.2026 und 03.03.2026. Zeitmarken und «Bild» nach Untertiteln; nicht gegengehört."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:26 · Studio",
+                "Juristin",
+                "Gesetz: Preisnachlass oder Rücktritt",
+                "Minderung · Wandelung"
+              ],
+              [
+                "00:35 · Studio",
+                "Juristin",
+                "nicht zwingend, Anbieter mit eigenen Regeln",
+                "Geschäftsbedingungen"
+              ],
+              [
+                "00:50 · Studio",
+                "Juristin",
+                "Unternehmen der Sendung wählt: Reparatur oder Rücknahme",
+                "vertragliche Garantie"
+              ],
+              [
+                "01:52 · Studio",
+                "Juristin",
+                "standhaft bleiben, Lösungen vorschlagen",
+                "Mängelrüge"
+              ]
+            ],
+            "befund": "Laut Juristin gibt das Gesetz bei einem Mangel Preisnachlass oder Rücktritt (00:26): Das stützt meine Forderung. Geschäfte dürfen aber eigene Regeln aufstellen (00:35): Das begrenzt sie, denn mein Garantieschein sieht nur die Reparatur vor (eigener Schluss)."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.4 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Gesetz: Rechte bei Mangel (S. 61; Quelle). Garantieschein: nur Reparatur. Bestehen Sie trotzdem auf Ersatz oder Geld zurück, oder verhandeln Sie über die Reparatur? Begründen Sie mit einer Zeile aus dem Raster.",
+          "liefert": "Forderung, Ton und Antwort auf den Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Suchen Sie im Raster je eine Zeile, die Ihre Forderung stützt und begrenzt.",
+              "Vergleichen Sie die Folgen: für Sie, das Geschäft und die Umwelt (reparieren statt neu)."
+            ],
+            "satzanfaenge": [
+              "«Nach Gesetz könnte ich …, denn …»",
+              "«In der Praxis gilt aber …; das zeigt …»",
+              "«Ich entscheide mich für …; im Ton bleibe ich …»"
+            ],
+            "produkt": "Forderung mit Frist in den Brief; die Antwort auf den Einwand in Stichworten daneben (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Gesetz ↔ Praxis, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Regel steht mit Fundstelle da: Rechte bei einem Mangel (Kap. 2.4, S. 61; Quelle, 00:26).",
+                "Die Abweichung ist benannt: Geschäfte dürfen eigene Regeln aufstellen (Quelle, 00:35), und der Garantieschein des Falls sieht nur die Reparatur vor.",
+                "Der Entscheid steht in Ich-Form und ist eine der zwei Möglichkeiten: auf Ersatz oder Geld zurück bestehen, oder über die Reparatur verhandeln.",
+                "Ein Satz sagt, was das Geschäft zu Recht einwendet; eine Folge ist abgewogen. Mit der Ersatzquelle zählt als Praxis: Niemand muss endlos auf eine Reparatur warten (04:01)."
+              ],
+              "beispiel_pol_1": "Ich bestehe auf einem Ersatzgerät innert zehn Tagen. Das Gesetz gibt mir bei einem Mangel Rechte (Quelle, 00:26); den Ersatz nennt das Lehrmittel (Kap. 2.4, S. 61), die Juristin nennt Preisnachlass und Rücktritt. Zu Recht wendet das Geschäft ein, dass es eigene Regeln aufstellen darf (00:35) und mein Garantieschein nur die Reparatur vorsieht. Ich bleibe trotzdem standhaft, wie die Juristin rät (01:52), weil ich vier bis sechs Wochen ohne Gerät nicht überbrücken kann. Mindestziel im Gespräch: Reparatur mit Leihgerät (Fallüberlegung).",
+              "beispiel_pol_2": "Ich nehme die Reparatur an und verhandle über die Bedingungen: ein Leihgerät und eine feste Frist von zwei Wochen. Das Geschäft hat recht damit, dass das Gesetz nicht zwingend ist (Quelle, 00:35); dass darum sein Garantieschein gilt, ist meine Deutung. Die Juristin rät, selbst Lösungen vorzuschlagen (01:52–02:02). So bleibt ein fast neues Gerät in Gebrauch, und das Geschäft kann leichter zustimmen. Bestimmt bleibe ich bei der Frist: Ist das Gerät dann nicht zurück, verlange ich mein Geld. Fallüberlegung, nicht aus Lehrmittel oder Quelle: Reparatur, Leihgerät, Abwägung nach Folgen. Annahme: Das Geschäft kann ein Leihgerät beschaffen.",
+              "nicht_tragfaehig": "Eine Forderung ohne Blick auf den Garantieschein, ein Nachgeben ohne eigene Bedingung oder ein Entscheid ohne Fundstelle."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-331b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Video (QR-Seite) zu einem Möbelkauf; die Regeln gelten auch für Ihren Fall. Gesucht: Rechte, Grenzen, Rat der Juristin. Vier Zeilen: Bild (Zeitmarke, wer zu sehen ist), Ton (wer spricht), Aussage, Begriff (LF1, Glossar).",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-331b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was verlangt das Gesetz von mir, bevor ich etwas fordern kann – und was kann ich dann fordern?",
+          "erwartung": "Zuerst prüfen und den Mangel sofort anzeigen (Art. 201 Abs. 1), sonst gilt die Sache als genehmigt (Abs. 2); später entdeckte Mängel sofort melden (Abs. 3). Dann: Kauf rückgängig machen oder Minderwert ersetzen lassen (Art. 205 Abs. 1); Ersatz nur bei vertretbaren Sachen (Art. 206 Abs. 1) – ob ein Smartphone dazu zählt, ist Deutung. Frist: zwei Jahre (Art. 210 Abs. 1 und 4). Das Lehrmittel nennt den Ersatz ohne Einschränkung (Kap. 2.4, S. 61); beide Fassungen gelten. Stand: 1. Oktober 2026."
+        },
+        {
+          "ref": "q-331b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was dürfen Geschäftsbedingungen an meinen Rechten ändern – und was nicht?",
+          "erwartung": "Zählung: Zwischentitel «Sachmängel» = Abs. 1. Ändern dürfen sie die Rechte bei einem Mangel: Das Gesetz ist hier nicht bindend, die Geschäftsbedingungen sind massgebend (Abs. 5). Nicht ändern dürfen sie die Frist von zwei Jahren bei neuer Ware (Abs. 4–5). Auch gültig: drei Möglichkeiten (Abs. 4), sofort melden (Abs. 3). Es spricht die Behörde. Stand: ohne Datum, gelesen am 2026-10-04."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Bild: 00:40 · Backstube am Morgen · Ton: Bäckerin · Aussage: Brot vom Vortag: halber Preis (Beispielwert) · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Auf S. 6 stehen eine gekürzte Mängelrüge und ein Gesprächsausschnitt zu einem anderen Fall; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}
