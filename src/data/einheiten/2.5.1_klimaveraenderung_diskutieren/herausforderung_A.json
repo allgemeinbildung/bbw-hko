@@ -1,0 +1,929 @@
+{
+  "id": "2.5.1_klimaveraenderung_diskutieren_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "2.5",
+  "modul_titel": "Meinungen bilden und mitgestalten — Umweltfragen diskutieren",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Was heute Hitze heisst – und was morgen kommt",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Lage beschreiben und Zukunft begründen"
+  },
+  "prinzip_ref": "2.5.1_klimaveraenderung_diskutieren_prinzip",
+  "nrlp": {
+    "nr": "2.5.1",
+    "nr_primary": [
+      "2.5.1"
+    ],
+    "lebensbezug": "2.5",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM5"
+    ],
+    "sk": [
+      1,
+      6,
+      12
+    ],
+    "kompetenz_id": "2.5.1",
+    "lebensbezug_id": "2.5",
+    "kompetenz_text": "Ich kann analysieren, wie ich selbst und die Gesellschaft aktuell von der Klimaveränderung betroffen sind und daraus begründete Aussagen zu zukünftigen Auswirkungen ableiten.",
+    "lebensbezug_text": "Ich diskutiere Umweltfragen, die meinen Alltag und meine Zukunft betreffen."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. In meinem Lehrbetrieb galt diesen Sommer an neun Tagen der Hitzeplan: Arbeitsbeginn um sechs statt um halb acht, und schwere Arbeiten wurden auf den Morgen gelegt. In der Pause wird seither darüber gestritten. Ein Kollege findet, ein heisser Sommer sei noch lange kein Beweis, heiss sei es früher auch gewesen. Eine Kollegin sagt, es werde jedes Jahr schlimmer. Die Betriebsleitung plant nun den nächsten Sommer, und die Betriebszeitung geht bald in Druck. Für sie soll ich in 100 bis 130 Wörtern sachlich beschreiben, wie uns die Klimaveränderung heute betrifft und womit wir rechnen müssen – mit Belegen und ohne eigene Wertung. Ich weiss noch nicht, was davon gemessen ist und was nur mein Eindruck. Ich will klären, was ich als belegt hinschreiben darf, was als erwartet und was nur eine Vermutung ist.",
+  "zahlen_tabelle": [
+    {
+      "label": "Tage mit Hitzeplan diesen Sommer",
+      "wert": "9"
+    },
+    {
+      "label": "Arbeitsbeginn mit Hitzeplan",
+      "wert": "06.00 Uhr"
+    },
+    {
+      "label": "Arbeitsbeginn sonst",
+      "wert": "07.30 Uhr"
+    },
+    {
+      "label": "Umfang der Beschreibung",
+      "wert": "100–130 Wörter"
+    }
+  ],
+  "leitfrage": "Wie beschreibe ich, was uns heute trifft und was morgen kommt – ohne aus einem Sommer zu viel zu schliessen oder Gemessenes kleinzureden?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Eigenes Erleben vs. gemessene Entwicklung",
+    "hint": "Ein heisser Sommer ist erlebt, aber noch keine Entwicklung. Eine lange Messreihe zeigt die Entwicklung, aber nicht Ihren Betrieb. Was zählt wofür?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 9.1",
+      "titel": "Klima",
+      "unterueberschrift": "Klimawandel und Folgen für die Schweiz",
+      "seiten": "Seite 222-223",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 9.1",
+      "titel": "Klima",
+      "unterueberschrift": "Treibhauseffekt",
+      "seiten": "Seite 220",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 17.2",
+      "titel": "Dokumentieren",
+      "unterueberschrift": "Bericht und W-Fragen",
+      "seiten": "Seite 386",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie schreiben eine sachliche Beschreibung für die Betriebszeitung. LF1 liefert Ursache und Folgen der Erwärmung, LF2 Erlebtes und Gemessenes in Ihrem Fall, LF3 belegte Aussagen zu heute und künftig, LF4 Ihre begründete Aussage zur Zukunft.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.1 | S. 220-222",
+      "text": "Erklären Sie mit Kap. 9.1 (S. 220), was der natürliche Treibhauseffekt ist und wodurch der Mensch ihn verstärkt. Halten Sie fest, welche Folgen die Erwärmung weltweit hat und wen sie am stärksten trifft (S. 222).",
+      "liefert": "Ursache und Folgen der Erwärmung",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Skizzieren Sie zuerst: Sonne, Erde, Treibhausgase – und wohin die Wärme geht.",
+          "Ordnen Sie die Folgen auf S. 222 in zwei Gruppen: Wetter und Meer."
+        ],
+        "satzanfaenge": [
+          "«Der natürliche Treibhauseffekt bewirkt, dass …»",
+          "«Der Mensch verstärkt ihn, indem …»",
+          "«Am stärksten betroffen sind …, weil …»"
+        ],
+        "produkt": "Ursache und Folgen kommen mit Seitenangabe in Absatz 2 der Beschreibung."
+      },
+      "loesung": {
+        "kern": "Treibhauseffekt, Verstärkung durch den Menschen, Folgen",
+        "zeilen": [
+          {
+            "label": "Natürlicher Effekt",
+            "text": "Treibhausgase und Wasserdampf halten einen Teil der Wärme zurück, die die Erde abstrahlt. Ohne diesen Effekt wäre es auf der Erde weit unter null Grad; er macht Leben erst möglich.",
+            "quelle": "Kap. 9.1, S. 220"
+          },
+          {
+            "label": "Vom Menschen verstärkt",
+            "text": "Seit der Industrialisierung stösst der Mensch zusätzlich Treibhausgase aus. Die Wissenschaft ist sich weitgehend einig: Das ist die wichtigste Ursache der weltweiten Erwärmung.",
+            "quelle": "Kap. 9.1, S. 220"
+          },
+          {
+            "label": "Folgen weltweit",
+            "text": "Mehr Wetterextreme, etwa Starkregen und lange Trockenperioden; wärmere Ozeane begünstigen Stürme; das Polareis schmilzt, der Meeresspiegel steigt, es kommt zu Überflutungen.",
+            "quelle": "Kap. 9.1, S. 222"
+          },
+          {
+            "label": "Am stärksten betroffen",
+            "text": "Ärmere Länder. Reiche Länder wie die Schweiz kommen mit den Folgen besser zurecht, weil sie Infrastruktur und Geld haben – betroffen sind sie trotzdem.",
+            "quelle": "Kap. 9.1, S. 222"
+          },
+          {
+            "label": "Nicht verwechseln",
+            "text": "Der Abbau der Ozonschicht ist ein anderes Thema und gehört nicht in die Antwort.",
+            "quelle": "Kap. 9.1, S. 221"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.1 | S. 222 · eigener Fall",
+      "text": "Ordnen Sie Ihren Fall ein: Welche Folge für die Schweiz aus Kap. 9.1 (S. 222) passt zum Hitzeplan in Ihrem Betrieb? Notieren Sie getrennt, was Sie selbst erlebt haben und was laut Lehrmittel gemessen ist.",
+      "liefert": "Erlebtes und Gemessenes im eigenen Fall",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Legen Sie zwei Spalten an: «selbst erlebt» und «gemessen» (mit Seite).",
+          "Notieren Sie zum Erlebten die W-Fragen: Was, wann, wo, wer war betroffen?"
+        ],
+        "satzanfaenge": [
+          "«In unserem Betrieb habe ich erlebt, dass …»",
+          "«Gemessen ist laut Kap. 9.1 (S. 222), dass …»",
+          "«Aus einem einzelnen Sommer lässt sich …»"
+        ],
+        "produkt": "Das Erlebte kommt in Absatz 1, das Gemessene mit Seitenangabe in Absatz 2 der Beschreibung."
+      },
+      "loesung": {
+        "kern": "Fall eingeordnet: erlebt und gemessen getrennt",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Nennt als passende Folge die häufigeren Trocken- und Hitzeperioden und führt Erlebtes und Gemessenes getrennt auf.",
+            "quelle": "Kap. 9.1, S. 222"
+          },
+          {
+            "label": "Erlebt",
+            "text": "Neun Tage mit Hitzeplan in diesem Sommer, Arbeitsbeginn um 06.00 statt 07.30 Uhr, schwere Arbeiten am Morgen. Das sind Angaben aus dem Fall, keine Messung der Entwicklung."
+          },
+          {
+            "label": "Gemessen",
+            "text": "In der Schweiz ist die Temperatur seit 1864 um zwei Grad gestiegen; das Land gilt als stark betroffen.",
+            "quelle": "Kap. 9.1, S. 222"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Antwort sagt, dass ein Sommer die Entwicklung nicht belegt, aber zu ihr passt. Dass Hitze die Arbeit im Betrieb erschwert, ist Fallüberlegung, nicht aus dem Lehrmittel."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Aus den neun Tagen direkt auf den Klimawandel schliessen – oder die Messung abtun, weil es früher auch heisse Sommer gab."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Faktenorientierte Beschreibung in drei Absätzen mit Fundstellen und einer begründeten Aussage zur Zukunft",
+    "titel": "Beschreibung: Was uns heute trifft und was kommt",
+    "format_detail": "Ein Sachtext von 100 bis 130 Wörtern in drei Absätzen (S. 7) für die Mitarbeitenden Ihres Lehrbetriebs: 1 was uns im Betrieb heute trifft · 2 was die Gesellschaft heute trifft · 3 was für die Zukunft zu erwarten ist, wovon es abhängt und wo der Betrieb Spielraum hat. Setzen Sie hinter jede Sachaussage aus Lehrmittel oder Quelle die Fundstelle, schreiben Sie Erlebtes als Erlebtes, kennzeichnen Sie Vermutungen als solche und verzichten Sie auf eigene Wertung. Führen Sie auf S. 7 unter der Beschreibung die Liste «Belege» und markieren Sie darin nach der Legende auf S. 6 zwei Belege und die eine Aussage zur Zukunft.",
+    "beschreibung": "Ich beschreibe für die Betriebszeitung in drei Absätzen, was uns und die Gesellschaft heute trifft und was zu erwarten ist – Sachaussagen mit Fundstelle, Erlebtes als Erlebtes, Vermutungen benannt.",
+    "schritte": [
+      {
+        "label": "01 Ursache und Folgen klären",
+        "hint": "Halten Sie aus LF1 in Stichworten fest, was die Erwärmung antreibt und welche Folgen sie hat – Stoff für Absatz 2."
+      },
+      {
+        "label": "02 Meinen Fall einordnen",
+        "hint": "Übernehmen Sie aus LF2, was Sie im Betrieb erlebt haben und was gemessen ist – das Erlebte wird Absatz 1."
+      },
+      {
+        "label": "03 Aussagen belegen",
+        "hint": "Tragen Sie zwei Aussagen mit Fundstelle aus dem Raster von LF3 und den Befund in die Liste «Belege» ein (S. 7, unter der Beschreibung)."
+      },
+      {
+        "label": "04 Zukunftsaussage festlegen",
+        "hint": "Formulieren Sie aus LF4 die eine Aussage zur Zukunft für Absatz 3: mit Begründung und mit dem, wovon sie abhängt."
+      },
+      {
+        "label": "05 Beschreibung schreiben",
+        "hint": "Schreiben Sie die Absätze auf S. 7, markieren Sie zwei Belege und die Zukunftsaussage (Legende S. 6), prüfen Sie mit den Feedback-Kriterien."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Beschreibung in drei Absätzen (100–130 Wörter), Sachaussagen mit Fundstelle",
+      "Liste «Belege» unter der Beschreibung: zwei Belege, Zukunftsaussage markiert"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall (gekürzt): Steinschlag an der Zufahrt zum Wohnquartier",
+      "legende": [
+        {
+          "key": "belegt",
+          "text": "heute belegt"
+        },
+        {
+          "key": "erwartet",
+          "text": "für morgen erwartet"
+        },
+        {
+          "key": "vermutet",
+          "text": "meine Vermutung"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Beschreibung",
+          "text": [
+            "Die Zufahrt zu unserem Quartier am Hang war diesen Sommer zweimal wegen Steinschlag gesperrt. Betroffen waren alle, die dort wohnen.",
+            "In den Alpen gibt es dauerhaft gefrorenen Boden. Taut er wegen der Erwärmung, wird der Hang instabil (Kap. 9.1, S. 223).",
+            "Zu erwarten ist, dass es weiter wärmer wird (S. 222). Ich vermute, dass die Zufahrt künftig öfter gesperrt ist. Ob unser Hang gefroren ist, weiss ich nicht."
+          ]
+        },
+        {
+          "titel": "Belege",
+          "eintraege": [
+            {
+              "marke": "belegt",
+              "text": "Tauender Permafrost macht den Boden instabil",
+              "notiz": "Kap. 9.1, S. 223"
+            },
+            {
+              "marke": "belegt",
+              "text": "Bergstürze und Erdrutsche sind eine Folge",
+              "notiz": "Kap. 9.1, S. 223"
+            },
+            {
+              "marke": "erwartet",
+              "text": "Bis 2060 könnte es ein bis drei Grad wärmer werden",
+              "notiz": "Kap. 9.1, S. 222"
+            },
+            {
+              "marke": "vermutet",
+              "text": "Die Zufahrt ist künftig öfter gesperrt",
+              "notiz": "kein Beleg für unseren Hang"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Neun Tage Hitzeplan – Beschreibung für die Betriebszeitung",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Zeigen Sie sie erst nach Schritt 05, wenn die Lernenden ihre Beschreibung geprüft haben. Die Belege stammen aus Kap. 9.1; wer mit der Quelle gearbeitet hat, setzt Zeitmarken und deren Angaben ein. Der Entscheid in Absatz 3 (Aussage für den Betrieb als Vermutung) entspricht einem der zwei Beispiele im Erwartungshorizont von LF4; als «erwartet» ist er ebenso gültig, wenn er begründet ist. Absatz 2 überträgt die Kette von der Ursache zur Folge vom Betrieb auf die Gesellschaft. Hitze am Arbeitsplatz ist Fallüberlegung, nicht aus dem Lehrmittel. Annahme, nicht in der Situation: Alle Mitarbeitenden waren betroffen.",
+      "legende": [
+        {
+          "key": "belegt",
+          "text": "heute belegt"
+        },
+        {
+          "key": "erwartet",
+          "text": "für morgen erwartet"
+        },
+        {
+          "key": "vermutet",
+          "text": "meine Vermutung"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Beschreibung",
+          "text": [
+            "In unserem Betrieb galt diesen Sommer an neun Tagen der Hitzeplan. Die Arbeit begann um 06.00 Uhr statt um 07.30 Uhr, schwere Arbeiten wurden auf den Morgen gelegt. Betroffen waren alle Mitarbeitenden.",
+            "Auch die Gesellschaft ist betroffen: In der Schweiz ist die Temperatur seit 1864 um zwei Grad gestiegen (Kap. 9.1, S. 222). Die Pollensaison dauert länger, mehr Menschen leiden an Allergien (S. 222). Ursache sind Treibhausgase, die der Mensch ausstösst (S. 220).",
+            "Zu erwarten ist, dass Hitzeperioden häufiger werden; bis 2060 könnte es ein bis drei Grad wärmer werden (S. 222). Wie stark, hängt vom Ausstoss der Treibhausgase ab (Folgerung aus S. 220 und S. 222). Ich vermute, dass der Hitzeplan bei uns künftig öfter gilt; ein einzelner Sommer belegt das nicht. Spielraum hat der Betrieb beim Arbeitsbeginn."
+          ]
+        },
+        {
+          "titel": "Belege",
+          "eintraege": [
+            {
+              "marke": "belegt",
+              "text": "Temperatur in der Schweiz seit 1864 um zwei Grad gestiegen",
+              "notiz": "Kap. 9.1, S. 222"
+            },
+            {
+              "marke": "belegt",
+              "text": "Pollensaison länger und stärker, mehr Allergien",
+              "notiz": "Kap. 9.1, S. 222"
+            },
+            {
+              "text": "Treibhausgase aus menschlichem Ausstoss sind die wichtigste Ursache",
+              "notiz": "Kap. 9.1, S. 220"
+            },
+            {
+              "marke": "erwartet",
+              "text": "Hitzeperioden werden häufiger; bis 2060 ein bis drei Grad mehr möglich",
+              "notiz": "Kap. 9.1, S. 222"
+            },
+            {
+              "marke": "vermutet",
+              "text": "Der Hitzeplan gilt bei uns künftig öfter",
+              "notiz": "Fallüberlegung, nicht aus dem Lehrmittel"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe fehlen oder sind falsch verwendet; Aussagen stehen ohne Beleg da.",
+        "Einzelne Fachbegriffe sind korrekt verwendet; Belege fehlen teilweise oder passen nicht zur Aussage.",
+        "Fachbegriffe sind korrekt und zur Situation passend verwendet; die Aussagen sind belegt.",
+        "Fachbegriffe sind differenziert verwendet; Belegtes, Erwartetes und Vermutetes sind eigenständig getrennt."
+      ],
+      "indikator_produkt": "Sachaussagen tragen eine Fundstelle; Erlebtes und Vermutung stehen als solche da."
+    },
+    {
+      "kn_kriterium": "Ökologisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Der Zusammenhang von Ursache, Folge und Betroffenen ist nicht hergestellt.",
+        "Ursache oder Folge ist genannt; der Zusammenhang bis zu den Betroffenen bleibt lückenhaft.",
+        "Ursache, Folge und Betroffene sind korrekt verbunden; heutige und künftige Folgen sind auseinandergehalten.",
+        "Der Zusammenhang ist korrekt hergestellt und auf eine weitere Situation übertragen."
+      ],
+      "indikator_produkt": "Der Text führt von den Treibhausgasen über die Erwärmung zu den Menschen, die es trifft."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine fertige Beschreibung; die Satzanfänge auf S. 2 helfen beim ersten Satz.",
+    "scaffold_100": "Plus: Ergänzen Sie einen Satz dazu, wie sicher Ihre Aussage zur Zukunft ist und welche Angabe Sie bräuchten, um sie zu erhärten."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für den Aufbau der Beschreibung: was, wer, wo, wann, wie, warum – ohne Wertung",
+      "tun": "Beantworten Sie in Absatz 1 Was, Wer, Wo und Wann für Ihren Betrieb, in Absatz 2 und 3 das Wie und das Warum. Schreiben Sie ohne Wertung und kennzeichnen Sie Vermutungen als solche."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-wirkungskette",
+      "fuer": "für LF2 und LF4: von der Ursache über die Folge zu den Betroffenen, jeder Schritt mit Beleg",
+      "tun": "Zeichnen Sie die Kette für Ihre Beschreibung: Treibhausgase, Temperaturanstieg, Hitzeperioden, Betroffene im Betrieb. Wo der Beleg fehlt, schreiben Sie «Vermutung» an den Pfeil."
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Aussage zur Zukunft: Behauptung, Begründung, Beispiel",
+      "tun": "Bauen Sie die Aussage zur Zukunft in Absatz 3 so: Behauptung (was zu erwarten ist), Begründung (Beleg mit Fundstelle), Beispiel (was das im Betrieb heisst)."
+    }
+  ],
+  "mindmap_zentrum": "Heute zahlen oder morgen Schäden tragen",
+  "mindmap_aeste": [
+    {
+      "titel": "Was treibt die Erwärmung an?",
+      "punkte": [
+        "Treibhauseffekt",
+        "Treibhausgas",
+        "Temperaturanstieg"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was folgt daraus?",
+      "punkte": [
+        "Wetterextreme",
+        "Hitzeperiode",
+        "Pollensaison",
+        "Gletscher",
+        "Permafrost"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie sicher ist die Aussage?",
+      "punkte": [
+        "Messreihe",
+        "Vermutung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Kann ich sagen, was ein heisser Sommer zeigt und was erst die lange Messreihe belegt (LF2)?",
+      "Steht in Absatz 3 meiner Beschreibung, was zu erwarten ist, wovon es abhängt und was Vermutung ist?"
+    ],
+    "mitnahme": [
+      "Was heute belegt ist",
+      "Meine begründete Aussage zu morgen",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Treibhausgas",
+          "nach": "Treibhauseffekt",
+          "text": "verstärkt den"
+        },
+        {
+          "von": "Treibhauseffekt",
+          "nach": "Temperaturanstieg",
+          "text": "führt zum"
+        },
+        {
+          "von": "Temperaturanstieg",
+          "nach": "Hitzeperiode",
+          "text": "macht häufiger"
+        },
+        {
+          "von": "Temperaturanstieg",
+          "nach": "Wetterextreme",
+          "text": "begünstigt"
+        },
+        {
+          "von": "Temperaturanstieg",
+          "nach": "Pollensaison",
+          "text": "verlängert die"
+        },
+        {
+          "von": "Temperaturanstieg",
+          "nach": "Gletscher",
+          "text": "lässt schmelzen"
+        },
+        {
+          "von": "Temperaturanstieg",
+          "nach": "Permafrost",
+          "text": "lässt tauen"
+        },
+        {
+          "von": "Messreihe",
+          "nach": "Temperaturanstieg",
+          "text": "belegt den"
+        },
+        {
+          "von": "Vermutung",
+          "nach": "Messreihe",
+          "text": "wird geprüft an der"
+        },
+        {
+          "von": "Hitzeperiode",
+          "nach": "gilt auch bei …",
+          "text": "trifft auch"
+        }
+      ],
+      "transfer": "Wohnen im Dachgeschoss im Sommer; Wandern im Gebirge, wo der Boden taut; Heuschnupfen im Frühling.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Trockenperiode",
+          "Allergie"
+        ],
+        "mit_medien": [
+          "Nullgradgrenze",
+          "Starkniederschlag"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn ich trenne: Neun Tage mit Hitzeplan sind erlebt und zeigen einen Sommer; die Entwicklung belegt erst die Messung über viele Jahre (Kap. 9.1, S. 222).",
+        "Ja, wenn Absatz 3 die Erwartung mit Fundstelle nennt, den Ausstoss der Treibhausgase als das, wovon sie abhängt (Folgerung aus S. 220 und S. 222), und die Aussage zum eigenen Betrieb als erwartet oder als Vermutung kennzeichnet (LF4)."
+      ],
+      "mitnahme": [
+        "Die Temperatur in der Schweiz ist seit 1864 um zwei Grad gestiegen; Pollensaison und Gletscher zeigen die Folgen (Kap. 9.1, S. 222–223).",
+        "Hitzeperioden werden häufiger (Kap. 9.1, S. 222); dass der Hitzeplan bei uns öfter gilt, ist meine Vermutung.",
+        "Zum Beispiel, wie viele Hitzetage an unserem Standort zu erwarten sind – dazu sagt das Lehrmittel nichts."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Ursache und zwei Folgen mit Seite",
+        "LF2: Erlebtes und Gemessenes getrennt",
+        "LF4: Aussage zur Zukunft mit Fundstelle"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Fundstellen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Beschreibung",
+      "vollstaendig_wenn": [
+        "Drei Absätze (100–130 Wörter), Sachaussagen mit Fundstelle",
+        "Zwei Belege und die Aussage zur Zukunft markiert"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt, «Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Ursache, Folgen und mein Fall",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Beschreibung beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Beschreibung fertigstellen, mit den Feedback-Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich trennen, was ich selbst erlebt habe, von dem, was über lange Zeit gemessen ist – bevor ich etwas über die Zukunft sage?",
+    "ziel": "Wer über die Klimaveränderung mitreden will, trennt, was heute belegt ist, von dem, was für morgen zu erwarten ist — und kennzeichnet, was nur Vermutung bleibt."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Belegtes, Erwartetes und Vermutetes trennen und die Kette von der Ursache über die Folge zu den Betroffenen beschreiben",
+    "lehrmittel_anker": "Kap. 9.1 S. 220 (natürlicher und vom Menschen verstärkter Treibhauseffekt) · Kap. 9.1 S. 222-223 (Folgen weltweit und für die Schweiz) · Kap. 17.2 S. 386 (Bericht, W-Fragen, Vermutungen kennzeichnen)",
+    "kn_aktivierung": "Der KN verlangt darzulegen, was sich aus zwei trockenen Sommern schliessen lässt: das eigene Erleben von der gemessenen Entwicklung trennen und eine vorsichtige, begründete Aussage über die Zukunft machen – genau das übt die Beschreibung.",
+    "transfer_check": "Kann die Lernende in einem neuen Fall sagen, was belegt, was erwartet und was nur vermutet ist – je mit Fundstelle?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — nur Aussagen mit Fundstelle ins Raster nehmen und jede als heute oder künftig einordnen"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — die Aussage zur Zukunft mit dem Belegten begründen und sagen, wie sicher sie ist"
+    },
+    {
+      "sk": 12,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — mit einer sachlichen Beschreibung im Betrieb mitreden; Absatz 3 nennt, wo der Betrieb Spielraum hat"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 9.1 | S. 222-223",
+          "text": "Welche Folgen der Erwärmung nennt Kap. 9.1 (S. 222–223) als schon eingetreten, welche erwartet es für die Zukunft? Halten Sie im Befund fest, was Sie daraus für Ihren Betrieb ableiten.",
+          "liefert": "Belegte Aussagen zu heute und künftig",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 9.1 | S. 222-223",
+            "auftrag": "Lesen Sie Kap. 9.1, S. 222–223. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Folgen für die Schweiz, ordnen Sie jede als heute oder künftig ein und geben Sie ihr einen Begriff aus LF1 oder dem Glossar.",
+            "spalten": [
+              "Seite / Absatz",
+              "Folge",
+              "heute / künftig",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 222, Schweiz",
+              "2 Grad wärmer seit 1864",
+              "heute",
+              "Temperaturanstieg"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 222: Hitze und Pollen; S. 223: Gletscher und Permafrost. Achten Sie auf die Zeitform."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 9.1 ist schon heute … (Seite)»",
+              "«Für die Zukunft erwartet das Lehrmittel, dass …»",
+              "«Für unseren Betrieb leite ich daraus ab, dass …»"
+            ],
+            "produkt": "Zwei Aussagen mit Seite und der Befund kommen in die Liste «Belege» (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Folgen für die Schweiz: eingetreten und erwartet",
+            "quelle_ref": "Kap. 9.1 | S. 222-223",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Temperatur seit 1864 um zwei Grad höher (heute); bis 2060 ein bis drei Grad mehr möglich, Trocken- und Hitzeperioden häufiger (künftig); Pollensaison länger und stärker, mehr Allergien (S. 222). Alpengletscher stark geschrumpft, die meisten dürften noch in diesem Jahrhundert verschwinden (S. 223, Abs. 1).",
+                "quelle": "Kap. 9.1, S. 222-223"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Permafrost taut, der Boden wird instabil, Bergstürze und Erdrutsche drohen (S. 223, Abs. 2). Weltweit: mehr Wetterextreme, Starkregen und Trockenperioden schon heute (S. 222, Abs. 1).",
+                "quelle": "Kap. 9.1, S. 222-223"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Temperaturanstieg, Hitzeperiode, Pollensaison, Gletscher, Permafrost und Wetterextreme stehen im Glossar. «heute und künftig» in einer Zelle gilt, wenn die Stelle beides nennt."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er Eingetretenes und Erwartetes trennt, je eine Seite nennt und erst dann auf den Betrieb schliesst. Hitze am Arbeitsplatz ist Fallüberlegung, nicht aus dem Lehrmittel."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 222, Schweiz",
+                "2 Grad wärmer seit 1864",
+                "heute",
+                "Temperaturanstieg"
+              ],
+              [
+                "S. 222, Schweiz",
+                "bis 2060 1 bis 3 Grad mehr möglich; mehr Trockenperioden und Hitze",
+                "künftig",
+                "Hitzeperiode"
+              ],
+              [
+                "S. 222, Pollen",
+                "Pollensaison länger und stärker, mehr Menschen mit Allergie",
+                "heute und künftig",
+                "Pollensaison"
+              ],
+              [
+                "S. 223, Abs. 1",
+                "Gletscher verlieren Eis; die meisten dürften in diesem Jahrhundert verschwinden (laut Gletscherforschung)",
+                "heute und künftig",
+                "Gletscher"
+              ]
+            ],
+            "befund": "Laut Kap. 9.1 ist die Temperatur in der Schweiz seit 1864 um zwei Grad gestiegen; Pollensaison und Gletscher zeigen die Folgen schon heute (S. 222–223). Für die Zukunft hält das Lehrmittel bis 2060 weitere ein bis drei Grad für möglich und erwartet häufigere Trocken- und Hitzeperioden (S. 222). Fallüberlegung, nicht aus dem Lehrmittel: In unserem Betrieb dürften Tage mit Hitzeplan eher zunehmen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 9.1 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 9.1 (S. 220, 222–223) zeigt die Kette Ursache – Folge – Betroffene. Prüfen Sie, wo sie auf Ihren Betrieb passt und wo nicht. Entscheiden Sie: «Der Hitzeplan gilt künftig öfter» – erwartet oder Vermutung?",
+          "liefert": "Begründete Aussage zur Zukunft",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Wirkungskette (S. 6): Setzen Sie hinter jeden Pfeil die Seite – oder das Wort «Vermutung»."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 9.1 führt … zu … (Seite)»",
+              "«Auf unseren Betrieb passt das (nicht), weil …»",
+              "«Darum schreibe ich es als …, denn …»"
+            ],
+            "produkt": "Die Aussage zur Zukunft kommt mit Begründung in Absatz 3 und markiert in die Liste «Belege» (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Kette ↔ eigener Betrieb, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Kette mit Fundstelle: Treibhausgase aus menschlichem Ausstoss (Kap. 9.1, S. 220), Temperaturanstieg, häufigere Trocken- und Hitzeperioden (S. 222)",
+                "nennt eine Grenze im eigenen Fall: Das Lehrmittel sagt nichts zu Arbeitsplätzen oder einzelnen Betrieben, und neun Tage in einem Sommer sind keine Messreihe",
+                "entscheidet, ob die Aussage zum Betrieb als erwartet oder als Vermutung in Absatz 3 kommt, und sagt, wovon sie abhängt",
+                "hält heute und künftig auseinander und zeigt dieselbe Kette an einer weiteren Situation"
+              ],
+              "beispiel_pol_1": "Die Kette aus Kap. 9.1 passt auf unseren Betrieb: Der Mensch stösst Treibhausgase aus und verstärkt den Treibhauseffekt (S. 220); in der Schweiz ist es seit 1864 zwei Grad wärmer geworden, und Trocken- und Hitzeperioden werden häufiger (S. 222). Betroffen sind bei uns alle, die schwer arbeiten – das ist Fallüberlegung, das Lehrmittel nennt keine Arbeitsplätze. Die neun Tage mit Hitzeplan belegen allein nichts, sie passen aber zur gemessenen Entwicklung. Darum schreibe ich als erwartet: Der Hitzeplan gilt künftig öfter, weil Hitzeperioden häufiger werden (S. 222). Wie stark, hängt vom Ausstoss der Treibhausgase ab (Folgerung aus S. 220 und S. 222). Dieselbe Kette führt im Gebirge vom Temperaturanstieg zum tauenden Permafrost und zu Erdrutschen, die Dörfer treffen (S. 223).",
+              "beispiel_pol_2": "Kap. 9.1 belegt die Kette bis zu den häufigeren Hitzeperioden in der Schweiz (S. 220, S. 222). Auf unseren Betrieb passt sie nur zum Teil: Das Lehrmittel nennt keine Zahl von Hitzetagen und nichts zu Arbeitsplätzen, und neun Tage in einem Sommer sind keine Messreihe. Darum trenne ich in Absatz 3: Als erwartet schreibe ich, dass Hitzeperioden häufiger werden (S. 222). Dass deshalb bei uns der Hitzeplan öfter gilt, kennzeichne ich als Vermutung; dafür bräuchte ich Angaben über mehrere Sommer. Wovon es abhängt: vom Ausstoss der Treibhausgase (Folgerung aus S. 220 und S. 222). Dieselbe Vorsicht gilt bei den Pollen: Belegt ist die längere Saison (S. 222), nicht, wie viele in unserem Betrieb darunter leiden.",
+              "nicht_tragfaehig": "Eine Aussage zur Zukunft ohne Fundstelle; ein Schluss direkt von den neun Tagen auf die Entwicklung; oder ein Text, der Erwartetes und Vermutetes nicht unterscheidet."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was das Lehrmittel belegt",
+          "Was in meinem Betrieb gilt",
+          "Erwartet oder Vermutung?"
+        ],
+        "hinweis": "Ein bis zwei Einträge je Spalte genügen. Aus den Spalten 1 und 2 muss folgen, was Sie in Spalte 3 entscheiden.",
+        "loesung_zeilen": [
+          [
+            "Trocken- und Hitzeperioden werden häufiger (S. 222)",
+            "Neun Tage mit Hitzeplan in einem Sommer; keine Zahlen über mehrere Jahre",
+            "Erwartet: mehr Hitzeperioden. Vermutung: Hitzeplan gilt bei uns öfter"
+          ],
+          [
+            "Ursache sind Treibhausgase aus menschlichem Ausstoss (S. 220)",
+            "Das Lehrmittel nennt keine Arbeitsplätze; betroffen sind bei uns alle, die schwer arbeiten",
+            "Wovon es abhängt: vom Ausstoss – als Folgerung (S. 220, S. 222) in Absatz 3"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 9.1 (S. 3)",
+        "beispiel": [
+          "S. 48, Abs. 2 (Beispielwert) · Dorfladen schliesst, Weg zum Einkauf wird länger · heute · → Grundversorgung"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Zeile und eine fertige Beschreibung aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Welche Veränderungen nennt die Quelle als schon eingetreten, welche erwartet sie für die Zukunft – und wovon hängt ab, wie stark sie ausfallen? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Belegte Aussagen zu heute und künftig",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-251a-pflicht",
+            "spalten": [
+              "Zeit / wer spricht",
+              "Aussage",
+              "heute / künftig",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Zuerst ganz ansehen, dann je Zeile Stichworte notieren.",
+              "Signalwörter: «seit» für heute; «dürfte», «wenn» für künftig."
+            ],
+            "satzanfaenge": [
+              "«Laut Quelle ist schon heute … (Zeitmarke)»",
+              "«Bis Ende Jahrhundert erwartet sie …, falls …»",
+              "«Für unseren Betrieb leite ich daraus ab, dass …»"
+            ],
+            "produkt": "Zwei Aussagen mit Zeitmarke und der Befund kommen in die Liste «Belege» (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Eingetreten, erwartet und die Bedingung dafür",
+            "quelle_ref": "q-251a-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Höchsttemperatur in den Städten schon über drei Grad höher (00:42); Hitzetage in einer grossen Stadt bis Ende Jahrhundert doppelt bis dreifach (00:54); Nullgradgrenze seit 1900 um 500 m gestiegen, bis 2100 nochmals so viel (01:06); mehr Starkniederschläge, falls nicht mehr Klimaschutz kommt (01:17).",
+                "quelle": "Quelle, 00:42-01:25"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Schon heute Veränderungen bei Trockenheit und Hitzewellen; vieles wäre vermeidbar, wenn der Ausstoss jetzt sinkt (01:29–01:43). Bis 2100 fast fünf Grad Erwärmung (00:15).",
+                "quelle": "Quelle, 00:15-01:43"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Nullgradgrenze → Gletscher ist Deutung. Wer bei 00:42 spricht, nennen die Untertitel nicht."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er Eingetretenes und Erwartetes mit Zeitmarke trennt und die Bedingung nennt (01:17, 01:40)."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Bei 1,5 Grad weltweit 2,9 Grad in der Schweiz (00:23); Hitzewellen häufiger (00:59–01:09); warme Nächte gemessen und erwartet (01:35–01:53); Todesfälle durch Hitze, meist ab 75 (02:12–02:30); Arbeit im Freien anstrengend (00:45).",
+                "quelle": "Ersatzquelle, 00:23-02:30"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:42 · Fachperson",
+                "Höchsttemperatur in den Städten schon über 3 Grad höher",
+                "heute",
+                "Temperaturanstieg"
+              ],
+              [
+                "00:54 · Reporter",
+                "Hitzetage in einer grossen Stadt doppelt bis dreifach bis Ende Jahrhundert",
+                "künftig",
+                "Hitzeperiode"
+              ],
+              [
+                "01:06 · Reporter",
+                "Nullgradgrenze seit 1900 um 500 m höher, bis 2100 nochmals 500 m",
+                "heute und künftig",
+                "Gletscher (Deutung)"
+              ],
+              [
+                "01:17 · Reporter",
+                "mehr Starkniederschlag und Unwetterschäden, wenn Klimaschutz nicht zunimmt",
+                "künftig, mit Bedingung",
+                "Wetterextreme"
+              ]
+            ],
+            "befund": "Laut Quelle sind die Höchsttemperaturen in den Städten schon um über drei Grad gestiegen (00:42), und die Nullgradgrenze liegt 500 Meter höher als 1900 (01:06). Bis Ende Jahrhundert erwartet sie in einer grossen Stadt zwei- bis dreimal so viele Hitzetage (00:54); künftig mehr Starkniederschläge (01:17). Wie stark es kommt, hängt davon ab, ob der Ausstoss jetzt sinkt (01:40). Folgerung für uns: Tage mit Hitzeplan dürften häufiger werden."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 9.1 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 9.1 (S. 222) sagt, was bis 2060 zu erwarten ist; die Quelle nennt den Stand von 2025 bis 2100. Vergleichen Sie beide. Entscheiden Sie, ob Ihre Aussage zur Zukunft sich auf das Lehrmittel oder auf die Quelle stützt.",
+          "liefert": "Begründete Aussage zur Zukunft",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Notieren Sie je einen Satz mit Fundstelle: Seite im Lehrmittel, Zeitmarke in der Quelle.",
+              "Prüfen Sie, ob beide dasselbe messen: Welcher Ort, welcher Zeitraum, welche Bedingung?"
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel ist bis 2060 … (S. 222)»",
+              "«Die Quelle berichtet, dass … (Zeitmarke)»",
+              "«Darum stütze ich mich auf …, und schreibe vorsichtig: …»"
+            ],
+            "produkt": "Die Aussage zur Zukunft kommt mit Begründung in Absatz 3 und markiert in die Liste «Belege» (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt aus Kap. 9.1, S. 222 den Anstieg seit 1864 und die Erwartung bis 2060",
+                "nennt aus der Quelle den Stand von 2025 (00:15, 00:54) und dessen Bedingung (01:17 oder 01:40)",
+                "entscheidet, worauf sich die Aussage in Absatz 3 stützt, nennt Zeitraum und Bedingung und sagt, was für den eigenen Betrieb nur Vermutung ist",
+                "verbindet Ursache, Folge und Betroffene und zeigt die Kette an einer weiteren Situation"
+              ],
+              "beispiel_pol_1": "Ich stütze meine Aussage auf Kap. 9.1 (S. 222): Seit 1864 ist es in der Schweiz zwei Grad wärmer geworden, bis 2060 könnten ein bis drei Grad dazukommen, und Hitzeperioden werden häufiger. Die Quelle misst anderes: Stand 2025, bis 2100 (00:15, 00:54), und nur, falls nicht rasch mehr Klimaschutz kommt (01:17). Für die Planung unseres Betriebs zählen die nächsten Jahrzehnte. Darum schreibe ich als erwartet, dass Hitzeperioden häufiger werden (S. 222), und als Ausblick, dass die Szenarien von 2025 bis Ende Jahrhundert in einer grossen Stadt deutlich mehr Hitzetage erwarten (00:54). Dass der Hitzeplan bei uns öfter gilt, bleibt Vermutung. Ursache ist der Ausstoss von Treibhausgasen (S. 220); dieselbe Kette trifft laut Quelle auch den Wintertourismus (01:02).",
+              "beispiel_pol_2": "Ich stütze mich auf die Quelle, weil sie den Stand der Szenarien von 2025 berichtet: Die Höchsttemperaturen in den Städten sind schon um über drei Grad gestiegen (00:42), die Hitzetage in einer grossen Stadt dürften sich bis Ende Jahrhundert verdoppeln bis verdreifachen (00:54). Kap. 9.1 (S. 222) reicht nur bis 2060 und nennt eine Spanne von einem bis drei Grad. Ich schreibe vorsichtig, mit «dürften» und Zeitmarke, und nenne die Bedingung: Vieles liesse sich vermeiden, wenn der Ausstoss jetzt sinkt (01:40). Die Angabe gilt für eine grosse Stadt; für unseren Standort kennzeichne ich sie als Vermutung. Ursache ist der Ausstoss von Treibhausgasen (S. 220); dieselbe Kette führt über die steigende Nullgradgrenze zum Wintertourismus (01:02–01:12).",
+              "nicht_tragfaehig": "Ein Entscheid ohne Seite oder Zeitmarke; ein Vergleich, der Zahlen gegeneinander ausspielt, die Verschiedenes messen (Anstieg im Land seit 1864, Höchsttemperaturen in Städten, Erwärmung bis 2060 und bis 2100)."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-251a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle gemäss QR-Seite an. Tragen Sie vier Aussagen zu Verändertem und Erwartetem ein: vorn Zeitmarke und wer spricht, dann Aussage, heute / künftig und ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Zeit / wer spricht",
+              "Aussage",
+              "heute / künftig",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-251a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was ist an den Szenarien von 2025 neu, und was bleibt gleich wie bisher?",
+          "erwartung": "Gleich bleibt der Kern: mehr Hitze, weniger Schnee, trockenere Sommer, häufiger starker Niederschlag (Einleitung). Neu sind die Stufen der weltweiten Erwärmung: bei drei Grad weltweit rund 4,9 Grad in der Schweiz (erster Abschnitt). Die berechnete Erwärmung ist etwas grösser als bisher, weil sauberere Luft mehr Sonnenlicht durchlässt (zweiter Abschnitt). Erstmals: Aussagen zu Hagel und Waldbrandgefahr (dritter Abschnitt)."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "01:10 (Beispielwert) · Hauswartin · Lift fällt jede Woche aus · heute · → Unterhalt"
+        ]
+      },
+      "scaffold_90": "Sehen Sie den Anfang gemeinsam an und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt eine fertige Beschreibung."
+    }
+  }
+}
