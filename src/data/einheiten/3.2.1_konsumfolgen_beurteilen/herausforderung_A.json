@@ -1,0 +1,976 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "3.2",
+  "modul_titel": "Bewusst konsumieren und handeln — folgen und preise beurteilen",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Billig bestellt – was hängt an meinem Kauf?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Konsumgewohnheit prüfen und Alternativen zeigen"
+  },
+  "prinzip_ref": "3.2.1_konsumfolgen_beurteilen_prinzip",
+  "nrlp": {
+    "nr": "3.2.1",
+    "nr_primary": [
+      "3.2.1"
+    ],
+    "lebensbezug": "3.2",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion multimedial"
+    ],
+    "sprachmodus_ids": [
+      "SM6"
+    ],
+    "sk": [
+      1,
+      5,
+      9
+    ],
+    "kompetenz_id": "3.2.1",
+    "lebensbezug_id": "3.2",
+    "kompetenz_text": "Ich kann die Konsumgewohnheiten in unserer Gesellschaft reflektieren und Möglichkeiten der nachhaltigen Konsumation beschreiben.",
+    "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "In unserem Gruppenchat läuft seit gestern eine Sammelbestellung bei einer Billigplattform: Kopfhörer für CHF 6, eine Lichterkette für CHF 4, eine Sporttasche für CHF 9. Ab CHF 30 ist die Lieferung gratis. Bis heute Abend soll ich schreiben, was ich nehme. In meinem Warenkorb liegen schon alle drei Dinge, zusammen CHF 19. Ein Kollege schreibt: «Dir fehlen nur CHF 11, nimm noch etwas dazu.» Dabei brauche ich eigentlich nichts davon, und die letzten Kopfhörer von dort lagen nach zwei Monaten im Abfall. Andererseits ist mein Lohn knapp, und so günstig bekomme ich die Sachen sonst nirgends. In der Klasse zeigen wir uns bald kurze Bildfolgen zum Einkaufen im Netz; meine soll zeigen, was an so einer Bestellung hängt. Ich will klären, welche Folgen mein Kauf für Umwelt und Menschen hat und was ich stattdessen tun könnte.",
+  "zahlen_tabelle": [
+    {
+      "label": "Kopfhörer · Lichterkette · Sporttasche",
+      "wert": "CHF 6 · 4 · 9"
+    },
+    {
+      "label": "Mein Warenkorb",
+      "wert": "CHF 19"
+    },
+    {
+      "label": "Lieferung gratis ab",
+      "wert": "CHF 30"
+    },
+    {
+      "label": "Bis zur Gratislieferung fehlen",
+      "wert": "CHF 11"
+    }
+  ],
+  "leitfrage": "Bestelle ich mit, weil es fast nichts kostet – oder lasse ich es, weil ich weiss, was an so einem Kauf hängt?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Günstig und sofort haben vs. weniger kaufen und länger nutzen",
+    "hint": "Günstig bestellen schont Ihr Budget und erfüllt einen Wunsch sofort. Weniger kaufen spart Abfall, verlangt aber Verzicht. Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 9.3",
+      "titel": "Nachhaltigkeit",
+      "unterueberschrift": "drei Aspekte der Nachhaltigkeit",
+      "seiten": "Seite 231",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Kap. 9.2",
+      "titel": "Energie",
+      "unterueberschrift": "graue Energie, Weg eines Produkts",
+      "seiten": "Seite 230",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 1.5",
+      "titel": "Ökologie im Umfeld",
+      "unterueberschrift": "nachhaltiger Konsum, Abfall",
+      "seiten": "Seite 37-41",
+      "fuer_leitfrage": [
+        3,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie planen eine Bildfolge aus sechs Bildern mit Sprechtext. LF1 liefert die Begriffe, mit denen Sie Folgen benennen, LF2 den Weg Ihres Kaufs und zwei Möglichkeiten, anders zu handeln, LF3 Belege zu Gewohnheit und Folgen, LF4 Ihre begründete Haltung für das Schlussbild.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.3 | S. 231 · Kap. 9.2 | S. 230",
+      "text": "Erklären Sie mit Kap. 9.3 (S. 231), was Nachhaltigkeit heisst und welche drei Dimensionen sie hat (das Lehrmittel nennt sie «Aspekte»). Halten Sie mit Kap. 9.2 (S. 230) fest, was graue Energie ist.",
+      "liefert": "Dimensionen der Nachhaltigkeit und graue Energie",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 231, Übersicht «Aspekte der Nachhaltigkeit»: je Dimension ein Stichwort notieren.",
+          "S. 230, erster Absatz: «graue Energie» in einem eigenen Satz erklären."
+        ],
+        "satzanfaenge": [
+          "«Nachhaltig heisst, dass …»",
+          "«Die drei Dimensionen sind …»",
+          "«Graue Energie ist die Energie, die …»"
+        ],
+        "produkt": "Mit den Dimensionen benennen Sie die Folgen in Bild 3 und 4; «graue Energie» passt in Bild 3."
+      },
+      "loesung": {
+        "kern": "Nachhaltigkeit, drei Dimensionen, graue Energie",
+        "zeilen": [
+          {
+            "label": "Nachhaltigkeit",
+            "text": "Nicht mehr verbrauchen, als auf Dauer wieder bereitsteht: ein schonender Umgang mit Ressourcen, der auch an kommende Generationen denkt.",
+            "quelle": "Kap. 9.3, S. 231"
+          },
+          {
+            "label": "Ökologisch",
+            "text": "Natur und Umwelt bleiben für die Nachkommenden erhalten, etwa durch Klimaschutz und Artenvielfalt.",
+            "quelle": "Kap. 9.3, S. 231"
+          },
+          {
+            "label": "Ökonomisch",
+            "text": "Die Wirtschaft trägt auf Dauer Erwerb und Wohlstand: Ressourcen werden nicht ausgebeutet, Arbeitsplätze entstehen.",
+            "quelle": "Kap. 9.3, S. 231"
+          },
+          {
+            "label": "Sozial",
+            "text": "Alle in der Gesellschaft können an der Entwicklung teilhaben, etwa durch sozialen Ausgleich.",
+            "quelle": "Kap. 9.3, S. 231"
+          },
+          {
+            "label": "Graue Energie",
+            "text": "Energie, die ein Gut für Herstellung und Transport braucht, also nicht erst beim Gebrauch. Sie macht zum Teil mehr aus als die Energie im Betrieb.",
+            "quelle": "Kap. 9.2, S. 230"
+          },
+          {
+            "label": "Wortwahl",
+            "text": "Das Lehrmittel sagt «Aspekte»; «Dimensionen» ist das Wort des Hefts und des Lehrplans. Beides gilt."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 9.2 | S. 230 · eigener Fall",
+      "text": "Zeichnen Sie den Lebensweg eines Gegenstands aus dem Warenkorb mit den fünf Stationen aus Kap. 9.2 (S. 230). Notieren Sie, auf welche zwei Stationen Ihr Kaufentscheid wirkt – und was Sie anders machen könnten.",
+      "liefert": "Weg meines Kaufs und zwei Möglichkeiten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Fünf Kästchen: Rohstoff, Produktion, Transport, Gebrauch, Entsorgung oder Recycling.",
+          "Je Kästchen ein Stichwort; zwei einkreisen, auf die Ihr Entscheid wirkt."
+        ],
+        "satzanfaenge": [
+          "«Bevor der Gegenstand bei mir ankommt, …»",
+          "«Nach dem Gebrauch …»",
+          "«Mein Entscheid wirkt auf …; anders wäre: …»"
+        ],
+        "produkt": "Ihr Kauf kommt in Bild 1; was Sie anders machen könnten, wird zu den zwei Möglichkeiten in Bild 5."
+      },
+      "loesung": {
+        "kern": "Fünf Stationen am eigenen Kauf, zwei Möglichkeiten",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Nennt die fünf Stationen – Rohstoff, Produktion, Transport, Gebrauch, Entsorgung oder Recycling – und zu jeder ein Stichwort zum gewählten Gegenstand.",
+            "quelle": "Kap. 9.2, S. 230"
+          },
+          {
+            "label": "Zum Fall",
+            "text": "Beispiel Kopfhörer: Rohstoffe für Kunststoff und Metall, Herstellung in einer Fabrik, langer Transportweg, zwei Monate Gebrauch, dann Abfall. Nur Gebrauch und Abfall stehen in der Situation; der Rest ist Fallüberlegung, nicht aus dem Lehrmittel."
+          },
+          {
+            "label": "Zwei Möglichkeiten",
+            "text": "Der Entscheid wirkt meist auf Gebrauch und Entsorgung: nur kaufen, was ich brauche (vermeiden, S. 41); erneut verwenden (vermindern, S. 41); richtig trennen (S. 39). «Länger nutzen» steht in keinem der Kapitel und ist Deutung. Auch gültig: gar nicht kaufen – dann entfallen alle Stationen.",
+            "quelle": "Kap. 1.5, S. 39 und 41"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Antwort verbindet die Stationen vor dem Gebrauch mit dem Begriff «graue Energie».",
+            "quelle": "Kap. 9.2, S. 230"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur Gebrauch und Abfall nennen; oder Zahlen zum Weg erfinden. Zum Onlinehandel nennt das Lehrmittel keine Zahlen."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Faktenorientierte Bildfolge mit Sprechtext: sechs Bilder, 60 bis 90 Sekunden",
+    "titel": "Storyboard zur Bildfolge: Was an meinem Kauf hängt",
+    "format_detail": "Eine Bildfolge aus sechs Bildern (Foto, Zeichnung oder Folie) mit je einem gesprochenen Satz, 60 bis 90 Sekunden, für Ihre Klasse. Bild 1 und 2 zeigen die Kaufgewohnheit. Bild 3 und 4 tragen je genau eine Folge mit ihrer Dimension und ihrem Beleg: Bild 3 die ökologische, Bild 4 eine ökonomische oder eine soziale – je nachdem, was Ihr Material belegt. Bild 5 zeigt zwei nachhaltigere Möglichkeiten, Bild 6 Ihre Schlussaussage in Ich-Form – mit Grund und mit dem, was für die andere Seite spricht. Sie planen auf S. 7 als Storyboard (S. 7 ist Ihr Blatt): sechs Felder, je mit Bildidee und Sprechsatz. Darunter führen Sie die Faktenliste «Woher die Fakten stammen» mit zwei bis drei Fakten und ihrer Fundstelle (Seite oder Zeitmarke). Markieren Sie je Bild mit den Zeichen der Legende von S. 6: ● wenn der Sprechsatz einen Fakt mit Beleg trägt, ○ wenn er Ihre eigene Aussage ist. Aufnehmen können Sie mit dem Handy; ohne Gerät zeigen Sie die Bilder vor der Klasse und sprechen die Sätze dazu.",
+    "beschreibung": "Ich zeige meiner Klasse in sechs Bildern (Foto, Zeichnung oder Folie) mit je einem gesprochenen Satz, was an einer Billigbestellung hängt, welche zwei Möglichkeiten es gibt und wie ich entscheide.",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "S. 7 ist Ihr Blatt: Legen Sie sechs Felder an (Bildidee, Sprechsatz), darunter die Faktenliste. Aus LF1: die Dimensionen für Bild 3 und 4."
+      },
+      {
+        "label": "02 Weg meines Kaufs zeichnen",
+        "hint": "Tragen Sie aus LF2 Ihren Kauf in Bild 1 ein und zwei Möglichkeiten, anders zu handeln, in Bild 5."
+      },
+      {
+        "label": "03 Folgen belegen",
+        "hint": "Bild 2: Gewohnheit (LF3). Bild 3: ökologische Folge (LF3 oder graue Energie, LF1). Bild 4: ökonomische oder soziale. Belege in die Liste."
+      },
+      {
+        "label": "04 Haltung festlegen",
+        "hint": "Schreiben Sie aus LF4 Ihren Entscheid als Sprechsatz in Bild 6: in Ich-Form, mit Grund und mit dem, was für die andere Seite spricht."
+      },
+      {
+        "label": "05 Bildfolge aufnehmen",
+        "hint": "Markieren Sie je Bild (Legende S. 6): ● Satz mit Fakt und Beleg, ○ Ihre eigene Aussage. Aufnehmen: Handy genügt – oder zeigen und sprechen."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Storyboard (S. 7): sechs Bilder mit Bildidee und Sprechsatz, markiert",
+      "Faktenliste «Woher die Fakten stammen»: zwei bis drei Fakten mit Fundstelle",
+      "Bildfolge, 60 bis 90 Sekunden: als Datei oder vor der Klasse gezeigt"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Geräte im Standby bei uns zu Hause",
+      "legende": [
+        {
+          "key": "fakt",
+          "text": "Fakt mit Beleg"
+        },
+        {
+          "key": "aussage",
+          "text": "meine Aussage"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Storyboard: Bild 1 bis 3",
+          "eintraege": [
+            {
+              "text": "«Bei uns zu Hause leuchten nachts drei rote Lämpchen.»",
+              "notiz": "Bild 1: dunkle Stube, drei Lämpchen"
+            },
+            {
+              "text": "«Fernseher, Konsole und Lautsprecher bleiben im Standby – aus Gewohnheit.»",
+              "notiz": "Bild 2: Steckerleiste, alles eingesteckt"
+            },
+            {
+              "marke": "fakt",
+              "text": "«Ökologische Folge: So brauchen wir über dreimal so viel Energie, wie uns zusteht.»",
+              "notiz": "Bild 3: Balken 6500 neben 2000 Watt"
+            }
+          ]
+        },
+        {
+          "titel": "Storyboard: Bild 4 bis 6",
+          "eintraege": [
+            {
+              "marke": "fakt",
+              "text": "«Ökonomische Folge: Damit leben wir von der Substanz – das trägt keinen Wohlstand auf Dauer.»",
+              "notiz": "Bild 4: Sparschwein, das leerer wird"
+            },
+            {
+              "marke": "fakt",
+              "text": "«Zwei Möglichkeiten: nachts ganz ausschalten – oder beim Neukauf die beste Effizienzklasse.»",
+              "notiz": "Bild 5: Schalter und Energieetikette"
+            },
+            {
+              "marke": "aussage",
+              "text": "«Ich schalte nachts ab, weil es Strom spart – auch wenn Standby bequemer ist.»",
+              "notiz": "Bild 6: meine Hand am Schalter"
+            }
+          ]
+        },
+        {
+          "titel": "Woher die Fakten stammen",
+          "eintraege": [
+            {
+              "marke": "fakt",
+              "text": "Pro Kopf über das Dreifache an Energie: 6500 statt 2000 Watt",
+              "notiz": "Kap. 9.3, S. 235"
+            },
+            {
+              "marke": "fakt",
+              "text": "Vom Ertrag leben, nicht von der Substanz; Wohlstand auf Dauer",
+              "notiz": "Kap. 9.3, S. 231"
+            },
+            {
+              "marke": "fakt",
+              "text": "Standby vermeiden, beste Effizienzklasse",
+              "notiz": "Kap. 9.3, S. 233"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Sammelbestellung für CHF 19 – was an meinem Kauf hängt",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Sie ist für die Fassung ohne Medien geschrieben: Belege sind Seiten des Lehrmittels, Zahlen Stand Lehrmittel (2025). In der Fassung mit Medien stehen dort Zeitmarken der Quelle (etwa 00:12 in Bild 2, 02:49 in Bild 3, 01:35 oder 02:25 in Bild 4) und Zahlen als Stand Oktober 2025; mit der Ersatzquelle kommt Bild 3 aus Kap. 9.2, S. 230 (graue Energie). Bild 4 zeigt hier die ökonomische Folge, weil S. 39–41 eine soziale kaum belegt. Der Entscheid in Bild 6 entspricht einem der zwei Beispiele von LF4; «mitbestellen» ist ebenso gültig, wenn es begründet ist und die andere Seite anerkennt. Grenze, die Lernende nennen können: Zum Onlinehandel sagt das Lehrmittel nichts; dass die eigene Bestellung zu dieser Gewohnheit gehört, ist Fallüberlegung. Die Bildideen sind Vorschläge.",
+      "legende": [
+        {
+          "key": "fakt",
+          "text": "Fakt mit Beleg"
+        },
+        {
+          "key": "aussage",
+          "text": "meine Aussage"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Storyboard: Bild 1 bis 3",
+          "eintraege": [
+            {
+              "text": "«In unserem Gruppenchat läuft eine Sammelbestellung: Kopfhörer, Lichterkette und Sporttasche für zusammen CHF 19.»",
+              "notiz": "Bild 1: Foto vom Warenkorb"
+            },
+            {
+              "marke": "fakt",
+              "text": "«Unser Konsum zeigt sich im Abfall: Der Siedlungsabfall in der Schweiz hat sich in 30 Jahren verdoppelt.»",
+              "notiz": "Bild 2: voller Abfallsack, obenauf Kopfhörer"
+            },
+            {
+              "marke": "fakt",
+              "text": "«Ökologische Folge: Beim Verbrennen des Abfalls entsteht CO₂ – rund 5 % der Treibhausgase der Schweiz.»",
+              "notiz": "Bild 3: Abfallsack, darüber eine Rauchwolke"
+            }
+          ]
+        },
+        {
+          "titel": "Storyboard: Bild 4 bis 6",
+          "eintraege": [
+            {
+              "marke": "fakt",
+              "text": "«Ökonomische Folge: Die Entsorgung kostet jede Person in der Schweiz rund einen Franken pro Tag.»",
+              "notiz": "Bild 4: Abfallsack mit Preisschild"
+            },
+            {
+              "text": "«Zwei Möglichkeiten: nur bestellen, was ich wirklich brauche – oder Dinge kaufen, die halten, und sie länger nutzen.»",
+              "notiz": "Bild 5: Wegweiser mit zwei Pfeilen"
+            },
+            {
+              "marke": "aussage",
+              "text": "«Ich bestelle heute nicht mit. So günstig bekomme ich die Sachen sonst nicht, das stimmt – aber ich brauche sie nicht.»",
+              "notiz": "Bild 6: leerer Warenkorb"
+            }
+          ]
+        },
+        {
+          "titel": "Woher die Fakten stammen",
+          "eintraege": [
+            {
+              "marke": "fakt",
+              "text": "Siedlungsabfall in 30 Jahren verdoppelt",
+              "notiz": "Kap. 1.5, S. 39"
+            },
+            {
+              "marke": "fakt",
+              "text": "CO₂ aus der Abfallverbrennung: rund 5 % der Treibhausgase",
+              "notiz": "Kap. 1.5, S. 40 (Stand Lehrmittel 2025)"
+            },
+            {
+              "marke": "fakt",
+              "text": "Entsorgung kostet jede Person rund einen Franken pro Tag",
+              "notiz": "Kap. 1.5, S. 40 (Stand Lehrmittel 2025)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe der Einheit fehlen oder werden falsch gebraucht.",
+        "Einige Fachbegriffe stimmen, andere sind ungenau oder vertauscht.",
+        "Die Fachbegriffe der Einheit sind richtig gebraucht und mit einem Beleg gestützt.",
+        "Fachbegriffe sind richtig, belegt und selbstständig verbunden; auch ihre Grenzen sind benannt."
+      ],
+      "indikator_produkt": "Bild 3 und 4 nennen je eine Folge mit ihrer Dimension; die Belege stehen in der Liste."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position ist nicht erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+        "Die Position steht klar in Ich-Form und ist nachvollziehbar begründet.",
+        "Begründete Position in Ich-Form; auch was für die andere Seite spricht, ist anerkannt."
+      ],
+      "indikator_produkt": "Bild 6 sagt in Ich-Form, was ich tue und warum – und was für die andere Seite spricht."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt ein fertiges Storyboard; die Satzanfänge auf S. 2 helfen beim ersten Satz.",
+    "scaffold_100": "Plus: Sprechen Sie Ihre Bildfolge einer Person vor, die anders entschieden hat, und nehmen Sie ihren stärksten Einwand in Bild 6 auf."
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-3-praesentation",
+      "fuer": "für den Aufbau der Bildfolge: Einstieg, Hauptteil, Schluss",
+      "tun": "Bild 1 und 2 sind Ihr Einstieg, Bild 3 bis 5 der Hauptteil, Bild 6 der Schluss. Prüfen Sie: Trägt jedes Bild genau einen Gedanken?"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-storyboard",
+      "fuer": "für die Planung der sechs Bilder; Ihr Blatt ist S. 7"
+    },
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für die Bilder selbst: Stichworte, leere Fläche, wenig Farbe",
+      "tun": "Setzen Sie auf jedes Bild höchstens ein Stichwort oder eine Zahl – den Satz sprechen Sie."
+    }
+  ],
+  "mindmap_zentrum": "Günstiger Preis oder faire Folgen",
+  "mindmap_aeste": [
+    {
+      "titel": "Was heisst nachhaltig?",
+      "punkte": [
+        "Nachhaltigkeit",
+        "ökologische Dimension",
+        "ökonomische Dimension",
+        "soziale Dimension"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was hängt an einem Kauf?",
+      "punkte": [
+        "Konsumgewohnheit",
+        "Lebensweg",
+        "graue Energie"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was kann ich tun?",
+      "punkte": [
+        "nachhaltiger Konsum",
+        "Abfall vermeiden"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Nennen Bild 3 und 4 je eine Folge mit ihrer Dimension, und steht ihr Beleg in der Faktenliste?",
+      "Sagt Bild 6, ob ich mitbestelle – mit Grund und mit dem, was für die andere Seite spricht?"
+    ],
+    "mitnahme": [
+      "Folgen eines Kaufs in drei Dimensionen",
+      "Zwei Wege, nachhaltiger zu konsumieren",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Nachhaltigkeit",
+          "nach": "ökologische Dimension",
+          "text": "umfasst die"
+        },
+        {
+          "von": "Nachhaltigkeit",
+          "nach": "ökonomische Dimension",
+          "text": "umfasst die"
+        },
+        {
+          "von": "Nachhaltigkeit",
+          "nach": "soziale Dimension",
+          "text": "umfasst die"
+        },
+        {
+          "von": "Konsumgewohnheit",
+          "nach": "Lebensweg",
+          "text": "setzt immer wieder in Gang"
+        },
+        {
+          "von": "Lebensweg",
+          "nach": "graue Energie",
+          "text": "braucht an jeder Station"
+        },
+        {
+          "von": "graue Energie",
+          "nach": "ökologische Dimension",
+          "text": "belastet die"
+        },
+        {
+          "von": "Abfall vermeiden",
+          "nach": "nachhaltiger Konsum",
+          "text": "ist ein Weg zum"
+        },
+        {
+          "von": "nachhaltiger Konsum",
+          "nach": "Konsumgewohnheit",
+          "text": "verändert die"
+        },
+        {
+          "von": "nachhaltiger Konsum",
+          "nach": "gilt auch bei …",
+          "text": "ist möglich bei jedem Kauf, auch bei"
+        }
+      ],
+      "transfer": "Kaffee unterwegs im Einwegbecher; neue Möbel für das eigene Zimmer; Geschenke, die niemand braucht.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Siedlungsabfall",
+          "Littering"
+        ],
+        "mit_medien": [
+          "schlechtes Gewissen",
+          "Wegwerfmentalität"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn Bild 3 und 4 je genau eine Folge mit ihrer Dimension nennen («Ökologische Folge: …») und die Faktenliste den Beleg dazu führt (Seite oder Zeitmarke).",
+        "Ja, wenn Bild 6 den Entscheid in Ich-Form nennt (mitbestellen oder nicht), einen Grund gibt und sagt, was für die andere Seite spricht – wie in den zwei Beispielen von LF4."
+      ],
+      "mitnahme": [
+        "Ökologisch: CO₂ aus der Abfallverbrennung (Kap. 1.5, S. 40), graue Energie (Kap. 9.2, S. 230); ökonomisch: Entsorgung kostet alle Geld (S. 40). Sozial heisst laut S. 231 Teilhabe aller; Arbeitsbedingungen bei der Herstellung (S. 37, beim nachhaltigen Konsum genannt) hier zuzuordnen, ist Deutung.",
+        "Nur kaufen, was ich brauche (vermeiden, Kap. 1.5, S. 41); Dinge wählen, die halten, und sie länger nutzen (Deutung, so in keinem der Kapitel).",
+        "Zum Beispiel, wie ich bei einem Angebot im Netz prüfe, wie es hergestellt wurde – das Lehrmittel nennt dafür nur Labels als Orientierung (Kap. 1.5, S. 37)."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: drei Dimensionen und graue Energie erklärt",
+        "LF2: fünf Stationen, zwei Möglichkeiten",
+        "LF4: Entscheid mit Grund und Gegenseite"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Fundstellen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Bildfolge",
+      "vollstaendig_wenn": [
+        "Sechs Felder mit Bildidee und Sprechsatz, markiert",
+        "Faktenliste: zwei bis drei Fakten mit Fundstelle",
+        "Bildfolge (60 bis 90 Sekunden) abgegeben oder gezeigt"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt, «Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Begriffe und der Weg meines Kaufs",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Storyboard beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Storyboard fertigstellen, Bildfolge aufnehmen, Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst kaufe ich etwas, weil es fast nichts kostet – und wer trägt dort die Folgen?",
+    "ziel": "Jeder Kauf hat einen Preis, den ich zahle, und Folgen, die andere tragen — bewusst konsumiert, wer die Folgen kennt und weiss, was sich stattdessen tun lässt."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Folgen einer Kaufgewohnheit mit den Dimensionen der Nachhaltigkeit belegen und zwei nachhaltigere Möglichkeiten beschreiben",
+    "lehrmittel_anker": "Kap. 9.3 S. 231 (Nachhaltigkeit, drei Aspekte) · Kap. 9.2 S. 230 (graue Energie, Stationen eines Produkts) · Kap. 1.5 S. 37 (worauf nachhaltiger Konsum achtet) und S. 39-41 (Abfall, Folgen, vermeiden) · Kap. 2.7 S. 74 (Bedürfnisse, Nutzen) · Beispielbild: Kap. 9.3 S. 233 (Appell zum Standby)",
+    "kn_aktivierung": "Der KN verlangt, die Kaufgewohnheit eines Vereins («billig wie immer») an ihren Folgen in den drei Dimensionen zu messen und in Ich-Form einen Vorschlag zu vertreten, der anerkennt, was die andere Seite richtig sieht – genau das üben die Bilder 3 bis 6.",
+    "transfer_check": "Kann die Lernende an einem neuen Kauf zwei Folgen mit ihrer Dimension nennen, sie belegen und sagen, was sie stattdessen tut?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — nur Aussagen ins Raster nehmen, die eine Gewohnheit oder eine Folge belegen, je mit Fundstelle"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — die eigene Kaufgewohnheit an der Gegenseite prüfen und festlegen, was bleibt"
+    },
+    {
+      "sk": 9,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — Folgen mit ihrer Dimension benennen und belegen und zwei nachhaltigere Möglichkeiten beschreiben"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 1.5 | S. 39-41",
+          "text": "Was sagt Kap. 1.5 (S. 39–41) darüber, wie sich unser Konsum im Abfall zeigt und welche Folgen das hat? Notieren Sie als Befund in zwei bis drei Sätzen, was Sie daraus für Ihre Bestellung ableiten.",
+          "liefert": "Belege zu Gewohnheit und Folgen",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 1.5 | S. 39-41",
+            "auftrag": "Lesen Sie Kap. 1.5, S. 39–41. Zeile 1 ist ein Beispiel und zählt mit. Suchen Sie drei weitere Aussagen: Absatz mit Seite, Kernaussage, Beleg / Beispiel und ein Begriff aus LF1 oder dem Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 39, Siedlungsabfall",
+              "Abfall spiegelt Konsum",
+              "in 30 Jahren verdoppelt",
+              "Konsumgewohnheit"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 39: Gründe für mehr Abfall. S. 40: Folgen und Kosten. S. 41: was sich tun lässt."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 1.5 zeigt der Abfall, dass … (S. …)»",
+              "«Eine Folge davon ist … (S. …)»",
+              "«Für meine Bestellung leite ich ab, dass …»"
+            ],
+            "produkt": "«Kernaussage» wird Sprechsatz, «Beleg / Beispiel» Bildidee (Bild 2 bis 4); die Seite kommt in die Faktenliste."
+          },
+          "loesung": {
+            "kern": "Abfall als Spiegel des Konsums: Gewohnheit und Folgen",
+            "quelle_ref": "Kap. 1.5 | S. 39-41",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Abfall spiegelt den Konsum: Der Siedlungsabfall hat sich in 30 Jahren verdoppelt (S. 39). Folgen: Beim Verbrennen entsteht CO₂, rund 5 % der Treibhausgase der Schweiz; die Entsorgung kostet jede Person rund einen Franken pro Tag (S. 40). Was sich tun lässt: vermeiden vor vermindern vor verwerten (S. 41).",
+                "quelle": "Kap. 1.5, S. 39-41"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Gründe: häufiger gewechselte Kleider, Einweggeschirr, mehr Kunststoff (S. 39). Littering kostet rund 200 Mio. Fr. im Jahr und senkt die Lebensqualität (S. 40). Verursacherprinzip (S. 41). Stand Lehrmittel 2025.",
+                "quelle": "Kap. 1.5, S. 39-41"
+              },
+              {
+                "label": "Begriffe",
+                "text": "S. 40 nennt «ökologische» und «ökonomische» Folgen ausdrücklich (beim Littering); CO₂ und Entsorgungskosten so einzuordnen, liegt nahe. «Sozial» nennt der Abschnitt nicht: Lebensqualität → sozial ist Deutung."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: Gewohnheit und eine Folge je mit Seite, erst dann der Schluss auf die Bestellung. Dieser Schluss ist Fallüberlegung: Zum Onlinehandel sagt der Abschnitt nichts."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 39, Siedlungsabfall",
+                "Abfall spiegelt Konsum",
+                "in 30 Jahren verdoppelt",
+                "Konsumgewohnheit"
+              ],
+              [
+                "S. 40, Abfallverbrennung",
+                "Verbrennen setzt CO₂ frei",
+                "5 % der Treibhausgase",
+                "ökologische Dimension"
+              ],
+              [
+                "S. 40, Littering",
+                "Abfall kostet alle Geld",
+                "1 Franken pro Tag",
+                "ökonomische Dimension"
+              ],
+              [
+                "S. 41, Übersicht",
+                "zuerst vermeiden",
+                "bester Abfall: keiner",
+                "Abfall vermeiden"
+              ]
+            ],
+            "befund": "Laut Kap. 1.5 zeigt sich unser Konsum im Abfall: Der Siedlungsabfall hat sich in 30 Jahren verdoppelt (S. 39). Das hat Folgen: Beim Verbrennen entsteht CO₂, und die Entsorgung kostet alle Geld (S. 40). Fallüberlegung, nicht aus dem Lehrmittel: Meine Kopfhörer, die nach zwei Monaten im Abfall lagen, gehören zu dieser Gewohnheit; am wenigsten Abfall entsteht, wenn ich nur bestelle, was ich brauche (S. 41)."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 1.5 · weniger kaufen ↔ Kap. 2.7 · mitbestellen",
+          "pol_typ": "position_gegenposition",
+          "text": "Kap. 2.7 (S. 74): Bedürfnisse fast unbegrenzt, Einkommen begrenzt, Wahl nach Nutzen. Kap. 1.5 (S. 41): Umgang mit Abfall. Mitbestellen oder weniger kaufen? Antworten Sie auch auf den stärksten Einwand der Gegenseite.",
+          "liefert": "Begründete Haltung zum eigenen Kauf",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Der stärkste Einwand: das beste Argument für die Seite, die Sie nicht gewählt haben."
+            ],
+            "satzanfaenge": [
+              "«Für Mitbestellen spricht, dass … (Kap. 2.7, S. 74)»",
+              "«Für weniger kaufen spricht, dass … (Kap. 1.5, S. 41)»",
+              "«Ich entscheide mich für …, obwohl …, denn …»"
+            ],
+            "produkt": "Ihr Entscheid wird der Sprechsatz von Bild 6 – mit Grund und mit dem, was für die andere Seite spricht."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: mitbestellen ↔ weniger kaufen",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt, was für das Mitbestellen spricht: Die Wünsche sind fast unbegrenzt, das Geld ist es nicht; gewählt wird nach dem Nutzen (Kap. 2.7, S. 74)",
+                "nennt, was für weniger kaufen spricht: Am besten ist der Abfall, der nicht anfällt (Kap. 1.5, S. 41); in jedem Gegenstand steckt graue Energie (Kap. 9.2, S. 230)",
+                "entscheidet in Ich-Form für den eigenen Fall (CHF 19, drei Dinge, Frist heute Abend) und begründet",
+                "nimmt den stärksten Einwand der anderen Seite auf und sagt, was daran stimmt"
+              ],
+              "beispiel_pol_1": "Ich bestelle mit: die drei Dinge für CHF 19, aber ich fülle nicht auf CHF 30 auf. Mein Lohn ist knapp, und ich wähle, was mir für wenig Geld am meisten nützt (Kap. 2.7, S. 74). Der stärkste Einwand: Am besten ist der Abfall, der gar nicht anfällt (Kap. 1.5, S. 41), und meine letzten Kopfhörer hielten zwei Monate. Das stimmt. Darum bestelle ich nichts dazu, nur um die Lieferung gratis zu bekommen, und nutze die Dinge, solange sie halten.",
+              "beispiel_pol_2": "Ich bestelle heute nicht mit. In jedem der drei Dinge steckt graue Energie (Kap. 9.2, S. 230), und am besten ist der Abfall, der nicht anfällt (Kap. 1.5, S. 41) – meine letzten Kopfhörer lagen nach zwei Monaten im Abfall. Der stärkste Einwand: So günstig bekomme ich die Sachen sonst nicht, und mein Lohn ist knapp (Kap. 2.7, S. 74). Das stimmt. Aber CHF 19 für Dinge, die ich nicht brauche, bringen mir keinen Nutzen. Annahme: Ich brauche wirklich keines der drei Dinge; bräuchte ich eine Tasche, würde ich eine suchen, die länger hält.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Fundstelle; eine Antwort, die nur eine Seite kennt; oder ein Urteil über andere («wer dort bestellt, ist selber schuld») statt einer eigenen Haltung."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was für Mitbestellen spricht",
+          "Was für weniger kaufen spricht"
+        ],
+        "hinweis": "Je Spalte Stichworte mit Seite. Kreisen Sie in der Spalte, die Sie nicht wählen, den stärksten Einwand ein: Darauf antworten Sie.",
+        "loesung_zeilen": [
+          [
+            "Wünsche fast unbegrenzt, Geld begrenzt: Ich wähle nach Nutzen (Kap. 2.7, S. 74)",
+            "Am besten ist der Abfall, der nicht anfällt (Kap. 1.5, S. 41)"
+          ],
+          [
+            "Drei Dinge für CHF 19, so günstig sonst nirgends (Situation)",
+            "Graue Energie in jedem Gegenstand (Kap. 9.2, S. 230)"
+          ],
+          [
+            "Mein Lohn ist knapp (Situation)",
+            "Letzte Kopfhörer lagen nach zwei Monaten im Abfall (Situation)"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 1.5 (Heft, S. 3)",
+        "beispiel": [
+          "S. 88, Fahrplan · Nachtbus fährt seltener · «nur noch stündlich» · → Grundangebot (erfundenes Beispiel)"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und ein fertiges Storyboard aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Wie verbreitet ist das Bestellen bei Billigplattformen, welche Folgen nennt oder erwartet die Quelle – und für wen? Notieren Sie als Befund in zwei bis drei Sätzen, was Sie für Ihre Bestellung ableiten.",
+          "liefert": "Belege zu Gewohnheit und Folgen",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-321a-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "«Bild»: Zeitmarke, was zu sehen ist, wer spricht. «Ton»: was gesagt wird, als Stichwort.",
+              "«Aussage»: was das über Gewohnheit oder Folge heisst – in Ihren Worten."
+            ],
+            "satzanfaenge": [
+              "«Laut Quelle bestellen viele: … (Zeitmarke)»",
+              "«Eine Folge für … ist … (Zeitmarke)»",
+              "«Für meine Bestellung leite ich ab, dass …»"
+            ],
+            "produkt": "«Aussage» wird Sprechsatz, «Bild» die Bildidee (Bild 2 bis 4); Zeitmarke in die Faktenliste."
+          },
+          "loesung": {
+            "kern": "Verbreitung, Folgen – und für wen",
+            "quelle_ref": "q-321a-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Über die Hälfte kaufte im Vorjahr mindestens einmal dort (00:12). Mehrheit hält die Qualität für gering (01:11), 47 % der Befragten mit schlechtem Gewissen (01:20); gekauft wird trotzdem (00:33). Folgen: Herstellende (01:35), Umwelt (02:49).",
+                "quelle": "Quelle, 00:12-02:55"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Läden schliessen (02:25, ökonomisch). Kurz- und langfristige Motive im Konflikt (01:40). Ausweg: innehalten (02:08), einen Tag warten (02:14).",
+                "quelle": "Quelle, 01:40-02:38"
+              },
+              {
+                "label": "Einordnung",
+                "text": "Stand Oktober 2025. 01:35, 02:25, 02:49: Stimmen Befragter, keine Messung; 02:49 nur, falls mehr bestellt wird. «Bild» aus dem Ton erschlossen; Dimensionen, «für wen»: Deutung."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: Verbreitung, eine Folge und für wen, je mit Zeitmarke."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Stand April 2024. Umsatz in neun Monaten (00:12, Verbreitung nur so); Lohn, Arbeitszeit in einer Fabrik (00:50–01:21, sozial); Produkt unter der Sicherheitsnorm (01:38–02:01, Kundschaft); giftige Weichmacher in Kinderprodukten (02:03–02:21). Ökologisch aus Kap. 9.2, S. 230.",
+                "quelle": "Ersatzquelle, 00:12-02:21"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:12 · Studio, Moderation",
+                "über die Hälfte kaufte im Vorjahr mindestens einmal dort",
+                "Bestellen dort ist verbreitet",
+                "Konsumgewohnheit (Deutung)"
+              ],
+              [
+                "01:11 · Bericht, Umfrage",
+                "Mehrheit: Qualität gering, Nachhaltigkeit fehlt; 01:20: 47 % mit schlechtem Gewissen",
+                "Zweifel – gekauft wird trotzdem (00:33)",
+                "Nachhaltigkeit"
+              ],
+              [
+                "01:35 · Befragte",
+                "bereut Kauf: hat von Kinderarbeit gehört",
+                "mögliche Folge für Herstellende (Sorge, kein Beleg)",
+                "soziale Dimension"
+              ],
+              [
+                "02:49 · Bericht",
+                "acht von zehn: Plattformen bald häufiger genutzt, damit mehr Abfall",
+                "erwartete Folge für die Umwelt",
+                "ökologische Dimension"
+              ]
+            ],
+            "befund": "Laut Quelle hat über die Hälfte der Bevölkerung im Vorjahr mindestens einmal bei Billigplattformen bestellt (00:12, Stand Oktober 2025). In einer Umfrage hält eine Mehrheit die Qualität für gering (01:11), und 47 % der Befragten hatten schon ein schlechtes Gewissen (01:20). Als Folgen nennen Befragte unfaire Herstellung (01:35) und, falls noch mehr bestellt wird, mehr Abfall (02:49). Meine Ableitung: Tragen müssten das die Herstellenden und die Umwelt; meine Bestellung gehört dazu – die letzten Kopfhörer lagen nach zwei Monaten im Abfall."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 1.5 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 1.5 (S. 37, S. 41) beschreibt, worauf nachhaltiger Konsum achtet; die Quelle zeigt, wie tatsächlich gekauft wird und was daran hängt. Vergleichen Sie beides. Entscheiden Sie: mitbestellen oder weniger kaufen?",
+          "liefert": "Begründete Haltung zum eigenen Kauf",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Schreiben Sie zwei Sätze: einen mit Seite (Lehrmittel), einen mit Zeitmarke (Quelle).",
+              "Prüfen Sie: Was davon trifft auf Ihren Warenkorb zu – und was nicht?"
+            ],
+            "satzanfaenge": [
+              "«Nachhaltig wäre laut Kap. 1.5, … (Seite)»",
+              "«Die Quelle zeigt dagegen, dass … (Zeitmarke)»",
+              "«Für meine Bestellung entscheide ich: …, denn …»"
+            ],
+            "produkt": "Ihr Entscheid wird der Sprechsatz von Bild 6 – mit Grund und mit dem, was für die andere Seite spricht."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt aus Kap. 1.5, worauf nachhaltiger Konsum achtet (S. 37: Herstellung, Arbeitsbedingungen, Transportwege) oder was zuerst kommt (S. 41: vermeiden)",
+                "nennt aus der Quelle mit Zeitmarke, dass trotz Zweifeln (01:11, 01:20) weiter gekauft wird (00:33) oder dass kurz- und langfristige Motive im Konflikt stehen (01:40)",
+                "entscheidet in Ich-Form für den eigenen Fall, begründet und sagt, was für die andere Seite spricht",
+                "mit Ersatzquelle (Stand April 2024): sehr tiefe Preise (00:42) und wer dafür bezahlt (00:50); einen Ausweg nennt sie nicht"
+              ],
+              "beispiel_pol_1": "Ich bestelle mit: die drei Dinge für CHF 19, ohne auf CHF 30 aufzufüllen. Nachhaltiger Konsum würde auf Herstellung, Arbeitsbedingungen und Transportwege achten (Kap. 1.5, S. 37); das kann ich hier nicht prüfen. Die Quelle zeigt, dass es vielen so geht: Sie zweifeln (01:11, 01:20) und kaufen trotzdem (00:33). Für die andere Seite spricht: Am besten ist der Abfall, der nicht anfällt (S. 41). Darum bestelle ich nichts dazu und nutze die Dinge, solange sie halten.",
+              "beispiel_pol_2": "Ich bestelle heute nicht mit. Laut Kap. 1.5 kommt Vermeiden zuerst (S. 41), und ob die Dinge fair hergestellt sind, weiss ich nicht (S. 37). Die Quelle erklärt das schlechte Gewissen: Der Wunsch nach dem Schnäppchen steht im Konflikt mit dem nach Qualität (01:40). Die Frist heute Abend stärkt den schnellen Wunsch – meine Deutung. Darum warte ich einen Tag, wie der Beitrag vorschlägt (02:14). Für die andere Seite spricht: So günstig bekomme ich die Sachen sonst nicht, und mein Lohn ist knapp. Annahme: Ich brauche keines der drei Dinge wirklich.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Seite oder Zeitmarke; Zahlen der Quelle ohne Stand (Oktober 2025); oder ein Urteil über die Kundschaft der Plattformen statt einer eigenen Haltung."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-321a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle (QR-Seite) zweimal an. Tragen Sie vier Aussagen ein: in «Bild» zuerst die Zeitmarke, dann Ton, Aussage und ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-321a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum gewinnt beim Bestellen oft der schnelle Wunsch – und welche zwei Schritte bremsen ihn?",
+          "erwartung": "Kurzfristige Motive kommen zusammen: tiefer Preis, grosse Auswahl, schnelle Lieferung, Schnäppchengefühl, Belohnung, Zugehörigkeit (Abs. 4). Beim Kauf gewinnen sie oft gegen langfristige Wünsche wie Qualität; danach kommt das schlechte Gewissen (Abs. 6). Zwei Schritte: innehalten und einen Tag warten; Reize verringern, etwa App löschen oder Meldungen ausschalten (Abs. 10). Auch gültig: wer sich leicht verleiten lässt (Abs. 8)."
+        },
+        {
+          "ref": "q-321a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wer will die Paketflut womit bremsen – und was spricht laut Beitrag dagegen?",
+          "erwartung": "Die EU plant eine Gebühr auf Kleinpakete, weil die Bearbeitungskosten steigen (00:38–00:53); der Handelsverband will sie auch für die Schweiz, sonst drohe sie Umschlagplatz zu werden (01:03–01:15). Dagegen: Der Konsumentenschutz hält sie für unnötig; Hauptproblem sei die Produktsicherheit, nötig seien Kontrollen (01:35–02:00). Stand 30.03.2026, Ausgang offen. Bezug: Kap. 9.3, S. 233. (Video nicht gegengesehen.)"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "00:45 Bahnhofhalle, Reporterin · «jeder fünfte Zug verspätet» · Pünktlichkeit sinkt · → Verlässlichkeit (erfundenes Beispiel)"
+        ]
+      },
+      "scaffold_90": "Sehen Sie den Anfang gemeinsam an und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt ein fertiges Storyboard."
+    }
+  }
+}

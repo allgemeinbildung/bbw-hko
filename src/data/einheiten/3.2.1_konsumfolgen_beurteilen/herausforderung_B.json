@@ -1,0 +1,920 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "3.2",
+  "modul_titel": "Bewusst konsumieren und handeln — folgen und preise beurteilen",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Rosen für die Klassenkasse – welcher Preis ist richtig?",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Preis beurteilen und gemeinsam begründen"
+  },
+  "prinzip_ref": "3.2.1_konsumfolgen_beurteilen_prinzip",
+  "nrlp": {
+    "nr": "3.2.2",
+    "nr_primary": [
+      "3.2.2"
+    ],
+    "lebensbezug": "3.2",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "sprachmodus_ids": [
+      "SM8"
+    ],
+    "sk": [
+      9,
+      3,
+      5
+    ],
+    "kompetenz_id": "3.2.2",
+    "lebensbezug_id": "3.2",
+    "kompetenz_text": "Ich kann den Preis und die Wirtschaftlichkeit eines Produkts oder einer Dienstleistung anhand von Herstellung, Transport sowie Angebot und Nachfrage beurteilen.",
+    "lebensbezug_text": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Unsere Klasse will am Valentinstag in der Mensa 120 Rosen verkaufen; der Gewinn geht in die Klassenkasse für die Abschlussreise. Mit einer Kollegin bin ich für den Preis zuständig. Der Grosshändler verlangt diese Woche CHF 1.80 pro Rose statt wie sonst CHF 0.90. Er schreibt: «Jetzt wollen alle Rosen, und liefern kann ich kaum mehr als sonst.» Seine Rosen kommen per Luftfracht aus Übersee. Fairtrade-Rosen kosten CHF 2.30. In der Klasse sagen die einen: «CHF 5, an diesem Tag zahlen das alle.» Die anderen: «Mehr als CHF 3 ist Abzocke, unsere Kundschaft sind Lernende wie wir.» Bis Freitag schlagen wir der Klasse schriftlich vor, welchen Preis wir verlangen und welche Rose wir bestellen. Ich will klären, warum die Rosen gerade jetzt das Doppelte kosten, was hinter dem Preis steckt und welchen Preis wir begründen können.",
+  "zahlen_tabelle": [
+    {
+      "label": "Rosen, die wir verkaufen wollen",
+      "wert": "120 Stück"
+    },
+    {
+      "label": "Einkauf je Rose: sonst · diese Woche",
+      "wert": "CHF 0.90 · 1.80"
+    },
+    {
+      "label": "Einkauf je Fairtrade-Rose",
+      "wert": "CHF 2.30"
+    },
+    {
+      "label": "Verkaufspreis je Rose: Vorschläge der Klasse",
+      "wert": "CHF 3 · CHF 5"
+    }
+  ],
+  "leitfrage": "Welchen Preis verlangen wir – den, der an diesem Tag möglich ist, oder den, den alle fair finden?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Preis, den der Markt hergibt vs. Preis, den alle fair finden",
+    "hint": "CHF 5 nutzt, was der Tag hergibt, und füllt die Kasse. CHF 3 schont die Kundschaft, bringt aber weniger ein. Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.7",
+      "titel": "Preisbildung",
+      "unterueberschrift": "Nachfrage, Angebot, Markt",
+      "seiten": "Seite 74-77",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 11.2",
+      "titel": "Globalisierung",
+      "unterueberschrift": "Ursachen und Folgen",
+      "seiten": "Seite 272-274",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 1.2",
+      "titel": "Grundlagen BWL",
+      "unterueberschrift": "Anspruchsgruppen, Zielkonflikt",
+      "seiten": "Seite 16-17",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie schreiben zu zweit eine Preisbeurteilung und beantworten eine Rückmeldung. LF1 liefert die Begriffe zu Nachfrage, Angebot und Preis, LF2 die Erklärung für den doppelten Einkaufspreis, LF3 Belege zu Herstellung und Transport, LF4 Ihren begründeten Preis mit Rose und Gewinn.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 74-76",
+      "text": "Erklären Sie mit Kap. 2.7 (S. 74–76), was Nachfrage und Angebot sind und wie auf dem Markt ein Preis entsteht (Preisbildung). Halten Sie fest, was Marktgleichgewicht heisst.",
+      "liefert": "Begriffe zu Nachfrage, Angebot und Preis",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 74 unten («Nachfragekurve») und S. 75: je ein Satz, wie Käufer und Anbieter reagieren.",
+          "S. 76: «Preisbildung» und «Marktgleichgewicht» in eigenen Worten notieren."
+        ],
+        "satzanfaenge": [
+          "«Sinkt der Preis, dann … die nachgefragte Menge.»",
+          "«Steigt der Preis, dann … die Anbieter …»",
+          "«Im Marktgleichgewicht …»"
+        ],
+        "produkt": "Mit diesen Begriffen schreiben Sie den Grund «Nachfrage» und Ihr Urteil im Text (S. 7)."
+      },
+      "loesung": {
+        "kern": "Nachfrage, Angebot, Preisbildung, Marktgleichgewicht",
+        "zeilen": [
+          {
+            "label": "Nachfrage",
+            "text": "Was Käuferinnen und Käufer haben wollen. Gesetz der Nachfrage: Je tiefer der Preis, desto mehr wird gekauft – und umgekehrt.",
+            "quelle": "Kap. 2.7, S. 74"
+          },
+          {
+            "label": "Angebot",
+            "text": "Was Anbieter verkaufen wollen. Steigt der Preis, lohnt es sich, mehr anzubieten: Die angebotene Menge steigt mit.",
+            "quelle": "Kap. 2.7, S. 75"
+          },
+          {
+            "label": "Preisbildung",
+            "text": "Auf dem Markt treffen Angebot und Nachfrage zusammen; daraus ergibt sich der Preis. Was knapp ist, kostet mehr.",
+            "quelle": "Kap. 2.7, S. 76"
+          },
+          {
+            "label": "Signal",
+            "text": "Der Preis wirkt zurück: Wird etwas teurer, wird weniger davon gekauft; wollen mehr Leute etwas, das nur beschränkt vorhanden ist, wird es teurer.",
+            "quelle": "Kap. 2.7, S. 76"
+          },
+          {
+            "label": "Marktgleichgewicht",
+            "text": "Angebotene und nachgefragte Menge sind gleich gross: Der Bedarf ist gedeckt, und niemand bleibt auf Ware sitzen.",
+            "quelle": "Kap. 2.7, S. 76"
+          },
+          {
+            "label": "Grenze",
+            "text": "Das Lehrmittel zeigt Nachfrage und Angebot als Kurven, ohne Definition; die Umschreibung oben ist Deutung. Die Einteilung der Güter (S. 75) ist nicht verlangt."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 77 · eigener Fall",
+      "text": "Kap. 2.7 (S. 77) beschreibt vier Fälle, in denen sich Nachfrage oder Angebot verschiebt. Welcher Fall passt zum Valentinstag? Erklären Sie damit, warum Ihr Einkaufspreis von CHF 0.90 auf CHF 1.80 steigt.",
+      "liefert": "Erklärung für den doppelten Einkaufspreis",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie auf S. 77 die vier Texte unter den Grafiken: Was ändert sich, was folgt daraus?",
+          "Prüfen Sie an der Situation: Was ändert sich am Valentinstag – Nachfrage oder Angebot?"
+        ],
+        "satzanfaenge": [
+          "«Am Valentinstag verschiebt sich …, weil …»",
+          "«Bei fast gleichem Angebot heisst das für den Preis: …»",
+          "«Darum zahlen wir im Einkauf …»"
+        ],
+        "produkt": "Ihre Erklärung wird der Grund «Nachfrage» in Ihrem Text (S. 7), mit der Seite in Klammern."
+      },
+      "loesung": {
+        "kern": "Nachfrage dehnt sich aus, Angebot fast gleich",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Nennt den ersten Fall: Die Nachfrage dehnt sich bei gleichem Angebot aus. Folgen: Der Preis steigt, und es wird mehr verkauft.",
+            "quelle": "Kap. 2.7, S. 77"
+          },
+          {
+            "label": "Zum Fall",
+            "text": "An diesem Tag wollen viel mehr Leute Rosen, der Grosshändler kann kaum mehr liefern. Darum steigt der Einkaufspreis von CHF 0.90 auf CHF 1.80, das Doppelte. Beides ist Fallangabe, nicht aus dem Lehrmittel: Zu Rosen sagt das Kapitel nichts."
+          },
+          {
+            "label": "Auch gültig",
+            "text": "Die Erklärung über das Signal: Wollen mehr Leute etwas, das nur beschränkt vorhanden ist, steigt der Preis.",
+            "quelle": "Kap. 2.7, S. 76"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Antwort trennt Einkaufspreis (zahlen wir) und Verkaufspreis (legen wir fest) und folgert: Auch unsere Kundschaft will an diesem Tag Rosen."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Den Fall mit dem kleineren Angebot wählen: Dort sinkt die verkaufte Menge, am Valentinstag steigt sie. Oder «weil Valentinstag ist», ohne das Modell."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Gemeinsam verfasste Preisbeurteilung mit schriftlicher Rückmeldung und Antwort",
+    "titel": "Preisbeurteilung zu zweit: unser Preis für die Rosen",
+    "format_detail": "Sie schreiben zu zweit (als Tandem) einen Text von sechs bis acht Sätzen an Ihre Klasse, in einem Ihrer zwei Hefte auf S. 7, mit beiden Namen. Der Text beurteilt den Preis anhand von Nachfrage, Herstellung und Transport: Satz 1 nennt die Ausgangslage; der Grund «Nachfrage» (aus LF2) erklärt, warum der Einkauf das Doppelte kostet; dann nennen Sie je eine Aussage zu Herstellung und Transport (aus dem Raster von LF3) und sagen, was Sie daraus für Ihr Urteil folgern – das ist Ihre eigene Überlegung. Jeder der drei Gründe hat Behauptung und Begründung in einem Satz und den Beleg in Klammern (Seite, Zeitmarke oder Fallangabe). Dann folgt, was gegen Ihren Preis spricht, und am Schluss Ihr Urteil mit Preis, Rose und Gewinn. Ein anderes Tandem schreibt darunter (Teil 2) zwei bis drei Sätze Rückmeldung: eine Stelle, die trägt, und eine Rückfrage. Sie antworten in Teil 3 in zwei Sätzen und sagen, was Sie am Text ändern. Ebenso schreiben Sie dem anderen Tandem eine Rückmeldung in dessen Heft.",
+    "beschreibung": "Ich schreibe mit meiner Kollegin der Klasse, welchen Preis wir verlangen und warum, hole die Rückmeldung eines anderen Tandems ein und antworte darauf schriftlich.",
+    "schritte": [
+      {
+        "label": "01 Markt klären",
+        "hint": "Sie arbeiten zu zweit (Tandem) in einem Heft. Legen Sie auf S. 7 drei Teile an: 1 unser Text, 2 Rückmeldung, 3 Antwort. LF1: die Begriffe."
+      },
+      {
+        "label": "02 Modell anwenden",
+        "hint": "Schreiben Sie Satz 1 (Ausgangslage), dann aus LF2 den Grund «Nachfrage» mit Seite. Eine Rasterzeile zur Nachfrage darf als Beleg dazukommen."
+      },
+      {
+        "label": "03 Preisfaktoren belegen",
+        "hint": "Schreiben Sie aus dem Raster (LF3) je eine Aussage zu Herstellung und Transport mit Fundstelle – und was Sie daraus für Ihr Urteil folgern."
+      },
+      {
+        "label": "04 Preis festlegen",
+        "hint": "Einigen Sie sich mit LF4 auf einen Preis. An den Schluss: was dagegen spricht, dann Ihr Urteil mit Preis, Rose und Gewinn."
+      },
+      {
+        "label": "05 Rückmelden und antworten",
+        "hint": "Tauschen Sie das Heft mit einem anderen Tandem: Jedes schreibt in Teil 2, was trägt, und eine Rückfrage. Antwort in Teil 3: zwei Sätze."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Preisbeurteilung zu zweit (S. 7): sechs bis acht Sätze, Urteil am Schluss",
+      "Rückmeldung eines anderen Tandems und unsere Antwort in zwei Sätzen",
+      "Unsere Rückmeldung an ein Tandem (in dessen Heft): zwei bis drei Sätze"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Quartierflohmarkt – Preis für selbst gemachte Karten",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Entwurf, Rückmeldung, Antwort",
+          "wechsel": [
+            {
+              "wer": "Wir",
+              "text": "Entwurf, Schluss: «Dagegen: Für CHF 2 kauften mehr. Unser Preis: CHF 4.»"
+            },
+            {
+              "wer": "Tandem 2",
+              "text": "Das trägt: Ihr rechnet das Material genau vor. Rückfrage: Zahlt jemand CHF 4 für eine Karte?"
+            },
+            {
+              "wer": "Wir",
+              "text": "Die Rückfrage trifft: Am Flohmarkt sind tiefe Preise üblich. Neu CHF 3; wir ändern den Schluss."
+            }
+          ]
+        },
+        {
+          "titel": "Unser Preis und drei Gründe",
+          "eintraege": [
+            {
+              "text": "Ausgangslage: Wir verkaufen 40 selbst gemachte Karten am Flohmarkt im Quartier."
+            },
+            {
+              "text": "Nachfrage: Vor dem Muttertag suchen viele eine Karte (letztes Jahr am Mittag ausverkauft)."
+            },
+            {
+              "text": "Herstellung: Material CHF 1.10 je Karte (Kassenzettel) – darunter verkaufen wir nicht."
+            },
+            {
+              "text": "Transport: zu Fuss (eigene Angabe) – das fällt bei uns kaum ins Gewicht."
+            },
+            {
+              "text": "Dagegen: CHF 4 zahlt dort kaum jemand (Rückfrage). Unser Preis: CHF 3, Gewinn 40 × 1.90 = CHF 76.",
+              "notiz": "nach der Rückmeldung geändert"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: 120 Rosen für die Klassenkasse – unser Preis mit Rückmeldung",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Sie ist zugleich das Mass für den Umfang: sechs Sätze, der Beleg hier als Randnotiz (im Heft in Klammern). Den Preissprung erklärt nur die Nachfrage; Herstellung und Transport begründen das Urteil. Aus dem Lehrmittel belegt: das Modell (Kap. 2.7, S. 77), die Aussagen zu Herstellung und Transport (Kap. 11.2, S. 272–274) und der faire Handel (Kap. 1.5, S. 38). Fallangabe der Situation: Herkunft und Luftfracht der Rosen, alle Preise. Eigene Überlegung der Lernenden: was sie aus Herstellung und Transport für ihr Urteil folgern – das Lehrmittel sagt nichts zur Wahl der Rose. Annahmen: dass die Aussagen des Lehrmittels auf diese Rosen zutreffen, dass beide Rosen gleich reisen und dass die Rose für CHF 2.30 den Produzierenden einen fairen Preis sichert. Wer mit der Quelle gearbeitet hat, setzt Zeitmarken ein (06:50 Nachfrage, 05:28 Energie der Herstellung, 04:22 Transport) und nennt sie als Aussagen von 2014. Der Entscheid entspricht dem zweiten Beispiel von LF4; CHF 5 ist ebenso gültig. Rechnung zum Fall, Annahme: alle 120 Rosen verkauft – 120 × (3 − 1.80) = 144; 120 × (3 − 2.30) = 84; 120 × (5 − 1.80) = 384. Zweite Rechnung, Beispielannahme 80 verkaufte Rosen (alle 120 sind bezahlt): bei CHF 5 80 × 5 − 216 = 184, mit Fairtrade 400 − 276 = 124; bei CHF 3 240 − 216 = 24. Bei CHF 5 reichen mit der üblichen Rose 72 Stück für CHF 144.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Entwurf, Rückmeldung, Antwort",
+          "wechsel": [
+            {
+              "wer": "Wir",
+              "text": "Entwurf, Schluss: «Dagegen spricht: Für CHF 5 bliebe der Kasse mehr. Unser Preis: CHF 3 mit der üblichen Rose, Gewinn CHF 144.»"
+            },
+            {
+              "wer": "Tandem 2",
+              "text": "Das trägt: Ihr erklärt den doppelten Einkaufspreis mit Nachfrage und Angebot und nennt die Seite. Rückfrage: Ihr wollt fair sein – warum kauft ihr nicht die Fairtrade-Rose?"
+            },
+            {
+              "wer": "Wir",
+              "text": "Die Rückfrage trifft: Fair zur Kundschaft ist noch nicht fair zu den Produzierenden. Wir bleiben bei der üblichen Rose, weil sonst nur CHF 84 bleiben, und schreiben das als Gegengrund in den Text."
+            }
+          ]
+        },
+        {
+          "titel": "Unser Preis und drei Gründe",
+          "eintraege": [
+            {
+              "text": "Ausgangslage: Für unsere 120 Rosen zahlen wir diese Woche CHF 1.80 je Stück statt CHF 0.90.",
+              "notiz": "Satz 1 · Situation"
+            },
+            {
+              "text": "Nachfrage: Der Einkauf kostet das Doppelte, weil am Valentinstag viel mehr Leute Rosen wollen und das Angebot kaum wächst.",
+              "notiz": "Kap. 2.7, S. 77 · erklärt den Preissprung"
+            },
+            {
+              "text": "Herstellung: Produziert wird, wo es günstig ist, und tiefe Preise drücken auf Löhne; darum zählt für uns, wie die Rose entsteht.",
+              "notiz": "Kap. 11.2, S. 273–274 · Folgerung: eigene Überlegung"
+            },
+            {
+              "text": "Transport: Unsere Rosen kommen per Luftfracht aus Übersee; das belastet die Umwelt, gilt aber für beide Rosen, entscheidet nichts.",
+              "notiz": "Fallangabe · Kap. 11.2, S. 274 · Gewichtung: eigene"
+            },
+            {
+              "text": "Dagegen spricht: Fair zu den Produzierenden wäre die Fairtrade-Rose; mit ihr bleiben bei CHF 3 aber nur CHF 84 statt CHF 144.",
+              "notiz": "nach der Rückmeldung ergänzt · Kap. 1.5, S. 38 (Annahme)"
+            },
+            {
+              "text": "Unser Preis: CHF 3 mit der üblichen Rose, denn unsere Kundschaft sind Lernende wie wir; der Gewinn ist 120 × CHF 1.20 = CHF 144.",
+              "notiz": "Urteil am Schluss · gerechnet mit 120 verkauften Rosen"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Behauptungen stehen ohne Begründung da.",
+        "Eine Begründung ist angedeutet, bleibt aber lückenhaft oder ohne Beleg.",
+        "Das Urteil ist nachvollziehbar begründet und mit einem Beleg oder Beispiel gestützt.",
+        "Schlüssig begründet; ein Einwand oder eine Rückmeldung ist aufgenommen und beantwortet."
+      ],
+      "indikator_produkt": "Jeder Grund hat Begründung und Beleg; die Antwort geht auf die Rückfrage ein."
+    },
+    {
+      "kn_kriterium": "Wirtschaftliches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Nicht erkennbar, wie ein Preis entsteht und wer die Kosten eines Kaufs trägt.",
+        "Preis oder Folgen sind genannt, aber nicht mit Angebot, Nachfrage und Kosten verbunden.",
+        "Angebot, Nachfrage und Kosten sind richtig auf den Fall angewendet; der Preis ist erklärt.",
+        "Das wirtschaftliche Prinzip ist auf einen neuen Fall übertragen; Folgen für Beteiligte sind benannt."
+      ],
+      "indikator_produkt": "Nachfrage erklärt den Preissprung; Herstellung und Transport sind belegt und gewichtet."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt Text, Rückmeldung und Antwort; die Satzanfänge auf S. 2 helfen beim ersten Satz.",
+    "scaffold_100": "Plus: Rechnen Sie einen dritten Preis durch (etwa CHF 4) und schreiben Sie in einem Satz, für wen er besser und für wen er schlechter wäre."
+  },
+  "methoden": [
+    {
+      "ref": "hko-gemeinsam-schreiben",
+      "fuer": "für den Text zu zweit: Teile aufteilen, kommentieren statt überschreiben"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für jeden der drei Gründe: Behauptung, Begründung, Beleg",
+      "tun": "Behauptung und Begründung kommen in einen Satz; als Beispiel dient der Beleg in Klammern (Seite, Zeitmarke oder Fallangabe)."
+    },
+    {
+      "ref": "lm-17-3-stellungnahme",
+      "fuer": "für den Aufbau: Ausgangslage, drei Gründe, Urteil am Schluss",
+      "tun": "Die Frage ist die Leitfrage von S. 1. Satz 1 nennt die Ausgangslage, dann folgen die drei Gründe und was dagegen spricht; Ihr Preis steht am Schluss."
+    }
+  ],
+  "mindmap_zentrum": "Günstiger Preis oder faire Folgen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie entsteht ein Preis?",
+      "punkte": [
+        "Nachfrage",
+        "Angebot",
+        "Preisbildung",
+        "Marktgleichgewicht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was steckt im Preis?",
+      "punkte": [
+        "Herstellung",
+        "Transport",
+        "fairer Handel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer will was vom Preis?",
+      "punkte": [
+        "Anspruchsgruppe",
+        "Zielkonflikt",
+        "Gewinn"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Beurteilt unser Text den Preis mit den drei Fragen: Nachfrage? Herstellung? Transport?",
+      "Nennt der letzte Satz Preis, Rose und Gewinn, und geht unsere Antwort auf die Rückfrage ein?"
+    ],
+    "mitnahme": [
+      "Drei Fragen an jeden Preis",
+      "So begründe ich ein Preisurteil",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Nachfrage",
+          "nach": "Preisbildung",
+          "text": "bestimmt zusammen mit dem Angebot die"
+        },
+        {
+          "von": "Angebot",
+          "nach": "Preisbildung",
+          "text": "bestimmt zusammen mit der Nachfrage die"
+        },
+        {
+          "von": "Preisbildung",
+          "nach": "Marktgleichgewicht",
+          "text": "bildet den Preis dort, wo sich Angebot und Nachfrage treffen: im"
+        },
+        {
+          "von": "Herstellung",
+          "nach": "Angebot",
+          "text": "liefert die Ware für das"
+        },
+        {
+          "von": "Transport",
+          "nach": "Herstellung",
+          "text": "verbindet uns mit dem Ort der"
+        },
+        {
+          "von": "fairer Handel",
+          "nach": "Herstellung",
+          "text": "verlangt faire Bedingungen bei der"
+        },
+        {
+          "von": "Anspruchsgruppe",
+          "nach": "Zielkonflikt",
+          "text": "will anderes als die nächste – das führt zum"
+        },
+        {
+          "von": "Zielkonflikt",
+          "nach": "Gewinn",
+          "text": "zeigt sich am"
+        },
+        {
+          "von": "Nachfrage",
+          "nach": "gilt auch bei …",
+          "text": "treibt den Preis auch bei"
+        }
+      ],
+      "transfer": "Konzertbillette kurz vor dem Anlass; Hotelzimmer in der Ferienzeit; Skimiete in den Sportferien.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Globalisierung",
+          "Produktionsfaktoren"
+        ],
+        "mit_medien": [
+          "graue Energie",
+          "Marge"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn die Nachfrage den Preissprung erklärt (LF2, mit Seite) und je eine Aussage zu Herstellung und Transport mit Fundstelle dasteht – samt dem, was das Tandem daraus für sein Urteil folgert (eigene Überlegung).",
+        "Ja, wenn der letzte Satz Preis, Rose und Gewinn nennt und die zwei Sätze der Antwort sagen, was an der Rückfrage stimmt und was am Text geändert wird – wie im Lösungsbild."
+      ],
+      "mitnahme": [
+        "Wie stehen Angebot und Nachfrage gerade? Wo und wie wurde es hergestellt? Wie kam es zu mir?",
+        "Ausgangslage, je Grund Behauptung, Begründung und Beleg, was dagegen spricht, Urteil am Schluss – und eine Rückfrage beantworten.",
+        "Zum Beispiel, wie viel vom Preis einer Rose bei den Produzierenden ankommt – dazu sagt das Lehrmittel nichts."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Nachfrage, Angebot, Marktgleichgewicht erklärt",
+        "LF2: passender Fall genannt, Einkaufspreis erklärt",
+        "LF4: Preis, Rose und Gewinn mit Fundstelle"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Fundstellen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Preisbeurteilung",
+      "vollstaendig_wenn": [
+        "Sechs bis acht Sätze: drei Gründe mit Beleg, Urteil am Schluss",
+        "Erhaltene Rückmeldung, unsere Antwort in zwei Sätzen",
+        "Unsere Rückmeldung an ein Tandem: zwei bis drei Sätze"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt, «Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Markt klären, Einkaufspreis erklären",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Text zu zweit beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Text fertigstellen, Rückmeldung geben und beantworten, Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst steigt ein Preis, weil gerade alle dasselbe wollen – und wer verdient dann daran?",
+    "ziel": "Jeder Kauf hat einen Preis, den ich zahle, und Folgen, die andere tragen — einen Preis beurteilt, wer weiss, wie er aus Herstellung, Transport, Angebot und Nachfrage entsteht."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Einen Preis anhand von Herstellung, Transport, Angebot und Nachfrage beurteilen und begründet festlegen, was fair ist",
+    "lehrmittel_anker": "Kap. 2.7 S. 74-77 (Nachfrage, Angebot, Markt, Marktgleichgewicht, vier Fälle) · Kap. 11.2 S. 272-274 (Ursachen und Folgen weltweiter Produktion) · Kap. 1.2 S. 16-17 (Anspruchsgruppen, Zielkonflikt) · Kap. 1.5 S. 38 (fairer Handel) · Kap. 9.2 S. 230 (Transport braucht Energie)",
+    "kn_aktivierung": "Der KN verlangt, den Preisanstieg kurz vor Saisonbeginn (CHF 14 statt CHF 9) mit Angebot und Nachfrage zu erklären, zwei Angebote je Saison durchzurechnen und das Urteil gegen eine andere Sicht zu begründen – genau das üben LF2, LF4 und der gemeinsame Text mit Rückmeldung.",
+    "transfer_check": "Kann die Lernende an einem neuen Preis sagen, was Herstellung, Transport, Angebot und Nachfrage dazu beitragen, und ihr Urteil gegen einen Einwand halten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 9,
+      "wo": "leitfragen[2] — Herstellung, Transport und Nachfrage als zusammenhängendes System lesen: was den Preissprung erklärt und was für das Urteil zählt"
+    },
+    {
+      "sk": 3,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — als Verkaufende einen Preis festlegen, der Kosten, Nachfrage und Fairness zusammenbringt"
+    },
+    {
+      "sk": 5,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — im gemeinsamen Text und in der Antwort auf die Rückmeldung begründen, was «fair» hier heisst"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 11.2 | S. 272-274",
+          "text": "Was sagt Kap. 11.2 (S. 272–274) darüber, wo Waren hergestellt werden und wie sie zu uns kommen? Halten Sie im Befund (zwei bis drei Sätze) fest, was davon den Preissprung Ihrer Rosen erklärt und was nicht.",
+          "liefert": "Belege zu Herstellung und Transport",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 11.2 | S. 272-274",
+            "auftrag": "Lesen Sie Kap. 11.2, S. 272–274. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen zu Herstellung und Transport: Absatz mit Seite, Kernaussage, Beleg / Beispiel und ein Begriff aus LF1 oder dem Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 272, Einstieg",
+              "Ein Produkt reist weit",
+              "Jeans: Weg über 8 Länder",
+              "Transport"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 272: Ursachen. S. 273: wo produziert wird (dritter Absatz). S. 274: Folgen."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 11.2 wird dort hergestellt, wo … (S. …)»",
+              "«Der Transport wurde …, darum … (S. …)»",
+              "«Den Preissprung erklärt das (nicht), denn …»"
+            ],
+            "produkt": "In den Text: je eine Aussage zu Herstellung und Transport mit Seite – und was Sie daraus folgern."
+          },
+          "loesung": {
+            "kern": "Wo hergestellt wird, wie es reist, wer die Folgen trägt",
+            "quelle_ref": "Kap. 11.2 | S. 272-274",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Transport und Kommunikation wurden billiger und schneller (S. 272, Ursachen). Hergestellt wird, wo Produktionsfaktoren günstig sind (S. 273, Abs. 3). Folgen: Produkte werden billiger, Löhne schlecht Ausgebildeter geraten unter Druck (S. 274).",
+                "quelle": "Kap. 11.2, S. 272-274"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Mehr Warentransporte belasten die Umwelt stärker (S. 274). Zölle wurden gesenkt, Handelsschranken abgebaut (S. 273; passt zu «Angebot»). Transport braucht Energie (Kap. 9.2, S. 230).",
+                "quelle": "Kap. 11.2, S. 273-274"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Die Zuordnung zu «Herstellung» und «Transport» ist Deutung der Lernenden. Auch gültig: «Produktionsfaktoren», «Globalisierung» (Glossar)."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er je eine Aussage zu Herstellung und Transport mit Seite nennt und sagt, dass sie den Preissprung nicht erklären (das tut die Nachfrage, LF2). Jeder Schluss auf die Rosen ist Fallüberlegung: Zu Schnittblumen sagt das Lehrmittel nichts."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 272, Einstieg",
+                "Ein Produkt reist weit",
+                "Jeans: Weg über 8 Länder",
+                "Transport"
+              ],
+              [
+                "S. 272, Ursachen",
+                "Transport und Kommunikation wurden billiger und schneller",
+                "weniger Kosten, weniger Zeit",
+                "Transport"
+              ],
+              [
+                "S. 273, Abs. 3",
+                "Hergestellt wird, wo es günstig ist",
+                "günstige Produktionsfaktoren, gute Infrastruktur, Wissen",
+                "Herstellung"
+              ],
+              [
+                "S. 274, Folgen",
+                "Tiefe Preise, aber Druck auf Löhne",
+                "Produkte verbilligt; Löhne schlecht Ausgebildeter unter Druck",
+                "Herstellung (Deutung)"
+              ]
+            ],
+            "befund": "Laut Kap. 11.2 werden Waren dort hergestellt, wo es günstig ist (S. 273), und der Transport wurde billiger und schneller (S. 272); als Folgen nennt das Kapitel verbilligte Produkte, Druck auf Löhne und mehr Umweltbelastung (S. 274). Den Sprung von CHF 0.90 auf CHF 1.80 erklärt das nicht, eher das Gegenteil; ihn erklärt die Nachfrage (LF2). Fallüberlegung, nicht aus dem Lehrmittel: Herstellung und Transport erklären höchstens den Sockel des Preises – und sie zählen für die Frage, welche Rose fair ist."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.7 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 2.7 (S. 76–77) erklärt, wie Nachfrage und Preis aufeinander wirken; Kap. 1.2 (S. 16–17) und 1.5 (S. 38) nennen, wer was erwartet. Was, wenn bei CHF 5 weniger gekauft wird? Entscheiden Sie: CHF 5 oder CHF 3?",
+          "liefert": "Begründeter Preis mit Rose und Gewinn",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Gewinn = verkaufte Rosen × Preis − 120 bezahlte × CHF 1.80 (2.30); mit 120 und mit 80."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 2.7 wäre CHF 5 möglich, weil … (S. …)»",
+              "«Zielkonflikt: Die Kundschaft will …, die Kasse … (S. …)»",
+              "«Ich schlage CHF … mit der … Rose vor, denn …»"
+            ],
+            "produkt": "Ihr Entscheid wird der Schluss des Texts: was dagegen spricht, dann Preis, Rose und Gewinn."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ eigener Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "wendet Kap. 2.7, S. 77 an: Die Nachfrage steigt bei fast gleichem Angebot, darum steigt der Preis – CHF 5 wären möglich",
+                "nennt die Grenze: Ein höherer Preis senkt die nachgefragte Menge (Kap. 2.7, S. 74 und 76); rechnet mit 120 und mit einer zweiten Annahme (etwa 80 verkaufte Rosen), beide als Annahme gekennzeichnet",
+                "entscheidet Preis und Rose, rechnet den Gewinn (Rechnung zum Fall) und nennt den Zielkonflikt (Kap. 1.2, S. 17) oder eine Folge für zwei Anspruchsgruppen (Kap. 1.2, S. 16–17; Kap. 1.5, S. 38)",
+                "auch gültig: ein dritter Preis wie CHF 4 mit Rechnung (120 × 2.20 = 264); «Lernende haben wenig Geld» ist Annahme, die Situation sagt nur «Lernende wie wir»"
+              ],
+              "beispiel_pol_1": "Ich schlage CHF 5 vor, mit der Fairtrade-Rose. An diesem Tag wollen viel mehr Leute Rosen, das Angebot wächst kaum, also steigt der Preis (Kap. 2.7, S. 77). Verkaufen wir alle 120, bleiben 120 × CHF 2.70 = CHF 324; bei nur 80 verkauften noch 80 × 5 − 120 × 2.30 = CHF 124 (Rechnung zum Fall, beides Annahmen). Dass bei CHF 5 weniger kaufen (S. 76), nehme ich in Kauf. Annahme: Der Aufpreis der Fairtrade-Rose kommt den Produzierenden zugute (fairer Handel, Kap. 1.5, S. 38).",
+              "beispiel_pol_2": "Ich schlage CHF 3 vor, mit der üblichen Rose. Laut Kap. 2.7 (S. 77) wäre mehr möglich; CHF 5 brächte selbst bei nur 80 verkauften Rosen 80 × 5 − 120 × 1.80 = CHF 184 (Annahme). Aber die Kundschaft erwartet ein gutes Preis-Leistungs-Verhältnis (Kap. 1.2, S. 16). Mit 120 verkauften Rosen bleiben 120 × CHF 1.20 = CHF 144 (Rechnung zum Fall, Annahme) – weniger für die Reise, das ist der Zielkonflikt (Kap. 1.2, S. 17). Dagegen spricht auch: Mit der Fairtrade-Rose blieben nur CHF 84; fair zur Kundschaft ist noch nicht fair zu den Produzierenden.",
+              "nicht_tragfaehig": "Ein Preis ohne Modell und ohne Rechnung («CHF 5 ist Abzocke»); ein Entscheid, der nur eine Gruppe sieht; oder eine Aussage über Rosen als Lehrmittelwissen – zu Rosen sagt das Lehrmittel nichts."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was das Modell sagt",
+          "Was Anspruchsgruppen wollen",
+          "Mein Entscheid: Preis, Rose"
+        ],
+        "hinweis": "Stichworte mit Seite genügen. Anspruchsgruppen: Kundschaft, Klasse, Lieferant, Produzierende (Kap. 1.2, S. 16–17; Kap. 1.5, S. 38).",
+        "loesung_zeilen": [
+          [
+            "Mehr Nachfrage bei fast gleichem Angebot: Der Preis steigt (Kap. 2.7, S. 77) – CHF 5 wären möglich",
+            "Kundschaft: gutes Preis-Leistungs-Verhältnis (Kap. 1.2, S. 16); Annahme: Lernende haben wenig Geld. Klasse: viel Gewinn für die Reise",
+            "CHF 3, übliche Rose: 120 × 3 − 120 × 1.80 = CHF 144; bei 80 verkauften nur 240 − 216 = CHF 24 (Rechnung zum Fall, beides Annahmen)"
+          ],
+          [
+            "Ein höherer Preis senkt die nachgefragte Menge (Kap. 2.7, S. 74 und 76): Bei CHF 5 bleiben vielleicht Rosen übrig",
+            "Grosshändler als Lieferant: fairer Preis, pünktliche Zahlung (Kap. 1.2, S. 17). Produzierende: stabile, faire Preise (Kap. 1.5, S. 38); Annahme: Die Rose für CHF 2.30 sichert das",
+            "oder: CHF 5, Fairtrade-Rose: 600 − 276 = CHF 324 bei 120 verkauften, 400 − 276 = CHF 124 bei 80 (Annahmen)"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 11.2 (Heft S. 3)",
+        "beispiel": [
+          "S. 120, Lehrstellen · weniger offene Stellen · «ein Drittel weniger» · → Arbeitsmarkt (erfundenes Beispiel)"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und ein Text mit Rückmeldung und Antwort aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Was sagt die Quelle über Herstellung, Transport und Nachfrage der Rosen? Halten Sie im Befund (zwei bis drei Sätze) fest, was davon den Preissprung erklärt und was nicht.",
+          "liefert": "Belege zu Herstellung und Transport",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-321b-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "«Bild»: zuerst die Zeit im Player (mm:ss), dann was zu sehen ist und wer spricht.",
+              "«Ton»: was gesagt wird, in Stichworten. «Aussage»: was Sie daraus schliessen."
+            ],
+            "satzanfaenge": [
+              "«Zur Herstellung sagt die Quelle … (Zeitmarke)»",
+              "«Den Preissprung erklärt …, nicht aber …»"
+            ],
+            "produkt": "In den Text: je eine Aussage zu Herstellung und Transport mit Zeitmarke – und was Sie folgern."
+          },
+          "loesung": {
+            "kern": "Herstellung, Transport, Nachfrage – und der Preis",
+            "quelle_ref": "q-321b-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Aussagen von 2014: Preise drei- bis viermal so hoch (03:39), Produktion fast gleich (03:42, ein Produzent). Lastwagen über Nacht, aus Übersee Flugzeug (04:09–04:30). Trotz Luftfracht weniger Energie als geheizte Treibhäuser (05:28, Kommentar). Nachfrage bestimmt den Preis, Einkauf das Doppelte oder mehr (06:50).",
+                "quelle": "Quelle, 03:39-06:56"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Keine normale Marge, verdient wird an der Menge (06:58–07:10). Zeile 3 gilt auch mit «Herstellung».",
+                "quelle": "Quelle, 06:58-07:16"
+              },
+              {
+                "label": "Einordnung",
+                "text": "Spalte «Bild» ganz aus dem Ton erschlossen, ebenso der Sprecher bei 06:50. Keine Mengen, keine Namen. 03:42 gilt für einen Betrieb."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: Die Nachfrage erklärt den Preissprung (06:50); Herstellung und Transport nicht, sie zählen für das Urteil."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Grosses Geschäft (00:59; «Nachfrage» ist Deutung); Rosen meist aus dem Ausland (01:23, Transport); Energie, Arbeit, Wasser (01:33–02:00, Herstellung); Kundschaft spart (02:15). Preis nicht erklärt: Schluss mit Kap. 2.7, S. 77.",
+                "quelle": "Ersatzquelle, 00:59-02:30"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "03:30 · Gewächshaus, Produzent",
+                "wichtigster Tag; Preise drei- bis viermal so hoch (03:39), Produktion fast gleich (03:42)",
+                "Sein Angebot wächst kaum mit (Deutung; 2014)",
+                "Angebot"
+              ],
+              [
+                "04:09 · Lastwagen; 04:22 Flugzeug",
+                "per Lastwagen über Nacht; aus Übersee im Flugzeug, viel aufwendiger",
+                "Zwei Wege mit verschiedenem Aufwand",
+                "Transport"
+              ],
+              [
+                "05:00 · Farm in Übersee",
+                "gleichmässiges Klima; trotz Luftfracht weniger Energie als geheizte Treibhäuser (05:28, Kommentar)",
+                "Energie: Herkunft zählt mehr als der Weg (nur dieser Vergleich)",
+                "graue Energie"
+              ],
+              [
+                "06:50 · Blumenbörse, Händler",
+                "Nachfrage bestimmt den Preis; Einkauf das Doppelte oder mehr; keine normale Marge",
+                "Nachfrage erklärt den Sprung (Aussage von 2014)",
+                "Nachfrage"
+              ]
+            ],
+            "befund": "Laut Quelle (Beitrag von 2014) bestimmt an diesem Tag die Nachfrage den Preis: Der Einkauf kostet das Doppelte oder mehr (06:50), während ein Produzent kaum mehr produziert (03:42). Herstellung und Transport erklären den Sprung nicht (mein Schluss), sagen aber, was an der Rose hängt: Flug aus Übersee (04:22), Energie der Treibhäuser (05:28). Fallüberlegung: Unser Einkaufspreis von CHF 1.80 passt dazu."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.7 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 2.7 (S. 76–77) erklärt, wie die Nachfrage den Preis bewegt, die Quelle zeigt den Rosenhandel; Kap. 1.2 (S. 16–17) nennt, wer was erwartet. Was, wenn bei CHF 5 weniger gekauft wird? Entscheiden Sie: CHF 5 oder CHF 3?",
+          "liefert": "Begründeter Preis mit Rose und Gewinn",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Vor dem Vorschlag je ein Satz zu Kap. 2.7, zur Quelle und zum Zielkonflikt (Kap. 1.2).",
+              "Gewinn = verkaufte Rosen × Preis − 120 bezahlte × CHF 1.80 (2.30); mit 120 und mit 80."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 2.7 und Quelle wäre CHF 5 möglich, weil …»",
+              "«Fair ist für mich …, weil … (Kap. 1.2 oder 1.5, S. 38)»",
+              "«Ich schlage CHF … mit der … Rose vor, denn …»"
+            ],
+            "produkt": "Ihr Entscheid wird der Schluss des Texts: was dagegen spricht, dann Preis, Rose und Gewinn."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ eigener Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "wendet Kap. 2.7, S. 77 an und belegt es: Nachfrage bestimmt den Preis (06:50), ein Produzent produziert kaum mehr (03:42) – Aussagen von 2014",
+                "nennt die Grenze: Ein höherer Preis senkt die nachgefragte Menge (Kap. 2.7, S. 74 und 76); rechnet mit 120 und mit einer zweiten Annahme (etwa 80 verkaufte Rosen), beide als Annahme gekennzeichnet",
+                "entscheidet Preis und Rose, rechnet den Gewinn (Rechnung zum Fall), nennt den Zielkonflikt oder eine Folge für zwei Anspruchsgruppen (Kap. 1.2, S. 16–17; Kap. 1.5, S. 38)",
+                "mit Ersatzquelle: grosses Geschäft (00:59; «Nachfrage» ist Deutung), Kundschaft spart (02:15); Preiserklärung nur aus Kap. 2.7, S. 77"
+              ],
+              "beispiel_pol_1": "Ich schlage CHF 5 vor, mit der Fairtrade-Rose. Die Nachfrage bestimmt den Preis (06:50, Aussage von 2014), also steigt er (Kap. 2.7, S. 77). Verkaufen wir alle 120, bleiben 120 × CHF 2.70 = CHF 324; bei nur 80 verkauften noch 80 × 5 − 120 × 2.30 = CHF 124 (Rechnung zum Fall, beides Annahmen). Das nehme ich in Kauf. Annahme: Der Aufpreis der Fairtrade-Rose kommt den Produzierenden zugute (fairer Handel, Kap. 1.5, S. 38).",
+              "beispiel_pol_2": "Ich schlage CHF 3 vor, mit der üblichen Rose. Laut Kap. 2.7 (S. 77) wäre mehr möglich; CHF 5 brächte selbst bei nur 80 verkauften Rosen 80 × 5 − 120 × 1.80 = CHF 184 (Annahme). Aber auch der Handel rechnet an diesem Tag ohne normale Marge (06:58, Aussage von 2014), und unsere Kundschaft sind Lernende wie wir. Mit 120 verkauften Rosen bleiben 120 × CHF 1.20 = CHF 144 (Rechnung zum Fall, Annahme). Dagegen spricht auch: Mit der Fairtrade-Rose blieben nur CHF 84; fair zur Kundschaft ist noch nicht fair zu den Produzierenden.",
+              "nicht_tragfaehig": "Ein Preis ohne Seite, Zeitmarke und Rechnung; Mengen oder Namen von 2014 als heutige Tatsache; ein Entscheid, der nur eine Gruppe sieht."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-321b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle gemäss QR-Seite zweimal an. Tragen Sie vier Aussagen zu Herstellung, Transport und Nachfrage ein: vorn Zeitmarke und Bild, dann Ton, Aussage und ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-321b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was spricht bei Rosen aus Kenia für den Kauf, was dagegen – bei Klima, Wasser und Arbeit?",
+          "erwartung": "Dafür: Laut Studie verursachen Fairtrade-Rosen aus Kenia trotz Flug deutlich weniger CO₂ als Rosen aus Gewächshäusern (Abs. 3–4); am Anbau hängen viele Arbeitsplätze (Abs. 2). Dagegen, im Artikel als Berichte wiedergegeben: hoher Wasserverbrauch, belastetes Wasser (Abs. 5); tiefe Löhne, fehlender Schutz (Abs. 6). Einordnung: Auftraggeber der Studie sind ein Detailhändler und eine Fairtrade-Organisation (Abs. 3); Stand Februar 2024. Das Urteil ist eigene Begründung."
+        },
+        {
+          "ref": "q-321b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum wird der Einkauf vor dem Valentinstag teurer, und warum gibt der Handel das nicht ganz weiter?",
+          "erwartung": "Weil an einem einzigen Tag weltweit sehr viele Rosen gefragt sind, steigt der Preis; damit der Umsatz trotzdem stimmt, verzichtet die ganze Kette auf einen Teil ihrer Marge (Abs. 1). Auch gültig: Der Jahresumsatz entsteht mit saisonalen, nachhaltig produzierten Blumen, nicht an den Spitzentagen (Abs. 3). Text von 2017: ein Mechanismus, keine Zahlen. Deckt sich mit der Quelle (06:50–07:10)."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (Heft S. 3)",
+        "beispiel": [
+          "05:10 Werkstatt, Lehrmeister · «uns fehlen zwei Lernende» · Lehrstellen bleiben offen · → Arbeitsmarkt (erfundenes Beispiel)"
+        ]
+      },
+      "scaffold_90": "Sehen Sie den Anfang gemeinsam an und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt Text, Rückmeldung und Antwort."
+    }
+  }
+}

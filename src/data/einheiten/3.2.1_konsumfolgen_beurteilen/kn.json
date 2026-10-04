@@ -1,0 +1,252 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_kn",
+  "modul": "3.2",
+  "kompetenz_nr": "3.2.1",
+  "topic_slug": "konsumfolgen_beurteilen",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-10-04",
+  "set_ref": "3.2.1_konsumfolgen_beurteilen_set",
+  "prinzip_ref": "3.2.1_konsumfolgen_beurteilen_prinzip",
+  "anchored_situations": [
+    "3.2.1_konsumfolgen_beurteilen_hf_A",
+    "3.2.1_konsumfolgen_beurteilen_hf_B"
+  ],
+  "dominanter_aspekt": "Wirtschaft",
+  "kern_kompetenzversprechen": "Ich kann Konsumgewohnheiten in unserer Gesellschaft reflektieren, Möglichkeiten nachhaltigen Konsums beschreiben und den Preis eines Produkts anhand von Herstellung, Transport, Angebot und Nachfrage beurteilen — auch wenn günstig und fair sich widersprechen.",
+  "mehrdeutigkeits_pflicht": "Ob der günstige oder der nachhaltigere Kauf richtig ist, hängt vom Bedarf, vom Budget und von den Folgen ab; beide Entscheide bleiben begründbar.",
+  "hybrid_situation": {
+    "titel": "Neue Bälle für den Verein – billig wie immer?",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Mein Volleyballverein kauft vor jeder Saison 40 neue Bälle beim billigsten Anbieter im Netz; nach einer Saison ist die Hälfte kaputt und landet im Abfall. Dieses Jahr verlangt der Anbieter kurz vor Saisonbeginn CHF 14 statt CHF 9 pro Ball und liefert per Luftfracht aus Asien. Ein fair hergestellter Ball kostet CHF 32 und hält laut Hersteller drei Saisons. Der Kassier will «billig wie immer», die Trainerin will Qualität. Als Materialwart/in soll ich bis zur Vorstandssitzung vorschlagen, was wir kaufen. Kaufe ich so günstig wie möglich – oder zahle ich mehr für Bälle, die länger halten und fair hergestellt sind?",
+    "leitfrage": "Kaufe ich so günstig wie möglich – oder zahle ich mehr für Bälle, die länger halten und fair hergestellt sind?",
+    "aktivierte_trade_offs": [
+      "Günstig und sofort haben vs. weniger kaufen und länger nutzen",
+      "Preis, den der Markt hergibt vs. Preis, den alle fair finden",
+      "Tiefer Preis für mich vs. faire Bedingungen für die Herstellenden",
+      "Mein Nutzen heute vs. Kosten für Umwelt und Gesellschaft später"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Szene bündelt beide Lernaufgaben: Aus Heft A kommt die Frage, was an einer Kaufgewohnheit hängt — Folgen in den Dimensionen der Nachhaltigkeit und die Möglichkeit, weniger zu kaufen und länger zu nutzen; aus Heft B die Aufgabe, einen Preis mit Herstellung, Transport, Angebot und Nachfrage zu beurteilen und das Urteil gegenüber anderen zu begründen. Neu sind Gegenstand (Sportmaterial), Beteiligte (ein Vorstand mit zwei Lagern) und Lebensbereich (der Verein). Übertragen werden müssen beide Werkzeuge zugleich: die Gewohnheit «billig wie immer» an ihren Folgen messen und die zwei Angebote je Saison durchrechnen und erklären, warum der Preis gerade jetzt steigt.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "vor jeder Saison 40 neue beim billigsten Anbieter; nach einer Saison ist die Hälfte kaputt und landet im Abfall"
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "kurz vor Saisonbeginn CHF 14 statt CHF 9, Luftfracht aus Asien; fair hergestellt CHF 32 für mehrere Saisons"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, was Nachhaltigkeit heisst, und nennen Sie zu jeder ihrer Dimensionen eine Folge der bisherigen Kaufgewohnheit des Vereins.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Der Preis ist kurz vor Saisonbeginn von CHF 9 auf CHF 14 gestiegen. Erklären Sie das mit Angebot und Nachfrage.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Beurteilen Sie die zwei Angebote: Was kostet jedes je Saison, und was steckt bei Herstellung und Transport hinter dem Preis?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie den Fall mit einer Ihrer beiden Herausforderungen: Was erkennen Sie wieder, was ist hier neu, und welches Werkzeug hilft Ihnen jetzt?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Der Kassier will «billig wie immer». Was ist Ihnen bei diesem Kauf wichtiger, und was sehen Sie an seiner Sicht als berechtigt?",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        5,
+        9,
+        3
+      ],
+      "aspekte": [
+        "Ökologie",
+        "Wirtschaft"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie mit zwei Fachbegriffen der Einheit, welche Folgen die bisherige Kaufgewohnheit des Vereins hat.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Unterscheiden Sie bei beiden Angeboten: Was gehört zur Herstellung, was zum Transport, und was erklärt sich aus Angebot und Nachfrage?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie, was der Verein kauft. Rechnen Sie beide Möglichkeiten je Saison, stellen Sie ihre Folgen einander gegenüber und begründen Sie Ihre Wahl.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form Ihren Vorschlag an den Vorstand: was Sie kaufen wollen, zwei Gründe und einen Satz dazu, was die andere Seite richtig sieht.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        5,
+        9,
+        3
+      ],
+      "aspekte": [
+        "Ökologie",
+        "Wirtschaft"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben (Bildfolge mit Storyboard; Preisbeurteilung mit Rückmeldung und Antwort).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Wie zeigt sich dieses Prinzip im Fall des Vereins, der sein Material neu einkauft? Was ist gleich wie in Ihrer Herausforderung, was ist anders?",
+        "Wann versagt das Prinzip — wann hilft es nicht, Preis und Folgen zu kennen? Was haben Ihnen die beiden Herausforderungen zusammen dazu gezeigt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        5,
+        9,
+        3
+      ],
+      "aspekte": [
+        "Ökologie",
+        "Wirtschaft"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder werden falsch gebraucht.",
+          "Einige Fachbegriffe stimmen, andere sind ungenau oder vertauscht.",
+          "Die Fachbegriffe der Einheit sind richtig gebraucht und mit einem Beleg gestützt.",
+          "Fachbegriffe sind richtig, belegt und selbstständig verbunden; auch ihre Grenzen sind benannt."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Behauptungen stehen ohne Begründung da.",
+          "Eine Begründung ist angedeutet, bleibt aber lückenhaft oder ohne Beleg.",
+          "Das Urteil ist nachvollziehbar begründet und mit einem Beleg oder Beispiel gestützt.",
+          "Schlüssig begründet; ein Einwand oder eine Rückmeldung ist aufgenommen und beantwortet."
+        ]
+      },
+      {
+        "name": "Wirtschaftliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Nicht erkennbar, wie ein Preis entsteht und wer die Kosten eines Kaufs trägt.",
+          "Preis oder Folgen sind genannt, aber nicht mit Angebot, Nachfrage und Kosten verbunden.",
+          "Angebot, Nachfrage und Kosten sind richtig auf den Fall angewendet; der Preis ist erklärt.",
+          "Das wirtschaftliche Prinzip ist auf einen neuen Fall übertragen; Folgen für Beteiligte sind benannt."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position ist nicht erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+          "Die Position steht klar in Ich-Form und ist nachvollziehbar begründet.",
+          "Begründete Position in Ich-Form; auch was für die andere Seite spricht, ist anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}
