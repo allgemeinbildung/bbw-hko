@@ -1,0 +1,780 @@
+{
+  "id": "2.2.1_ausgrenzung_analysieren_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten — Ausgrenzung analysieren",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Nur ein Spruch – oder schon Ausgrenzung?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Aussagen auf Ausgrenzung prüfen"
+  },
+  "prinzip_ref": "2.2.1_ausgrenzung_analysieren_prinzip",
+  "nrlp": {
+    "nr": "2.2.1",
+    "nr_primary": [
+      "2.2.1"
+    ],
+    "lebensbezug": "2.2",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      },
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell"
+    ],
+    "sprachmodus_ids": [
+      "SM1",
+      "SM2"
+    ],
+    "sk": [
+      1,
+      5,
+      7
+    ],
+    "kompetenz_id": "2.2.1",
+    "lebensbezug_id": "2.2",
+    "kompetenz_text": "Ich kann Beispiele von Ausgrenzung und Diskriminierung in Gesprächen und Medienbeiträgen analysieren und dabei die Bedeutung von Meinungsfreiheit reflektieren.",
+    "lebensbezug_text": "Ich erlebe Diskussionen über Ungleichbehandlung und Ausgrenzung und frage mich, was gesagt werden darf und wie ich mich dabei verhalte."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. Am Samstagabend sitzen wir zu fünft bei einem Kollegen zu Hause, im Hintergrund läuft ein Radiobeitrag. Einer von uns macht dazu einen Spruch über die Menschen, um die es im Beitrag geht. Alle lachen, ich auch. Am Sonntag steht derselbe Satz von ihm öffentlich in der Kommentarspalte unter dem Beitrag. Als jemand widerspricht, schreibt er: «Das wird man ja wohl noch sagen dürfen.» Mir schickt er den Link und fragt, ob ich das auch so sehe. Ich weiss nicht, was ich antworten soll: Am Samstag fand ich den Spruch lustig, jetzt ist mir unwohl dabei. Ist es dasselbe, ob er das unter uns sagt oder für alle sichtbar schreibt? Und wie kommt der Satz bei denen an, über die er redet? Am nächsten Samstag sehen wir uns wieder. Bis dann will ich den Beitrag genau anhören, prüfen, was darin über diese Menschen gesagt wird, und wissen, wo für mich die Grenze liegt.",
+  "zahlen_tabelle": [
+    {
+      "label": "Personen am Samstagabend",
+      "wert": "5"
+    },
+    {
+      "label": "Im Freundeskreis gesagt am",
+      "wert": "Samstag"
+    },
+    {
+      "label": "Öffentlich gepostet am",
+      "wert": "Sonntag"
+    },
+    {
+      "label": "Wir sehen uns wieder am",
+      "wert": "Samstag"
+    }
+  ],
+  "leitfrage": "Lasse ich den Satz als Meinung stehen — oder sage ich etwas, auch wenn ich selbst mitgelacht habe?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Rechtlich erlaubt vs. menschlich verletzend",
+    "hint": "Ein Satz kann erlaubt sein und trotzdem Menschen treffen. Wer widerspricht, riskiert die gute Stimmung. Wo liegt für Sie die Grenze?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Stereotyp bis Rassismus",
+      "seiten": "Seite 116-117",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Strafnorm, Grundrechte",
+      "seiten": "Seite 117-119",
+      "fuer_leitfrage": [
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 18.3",
+      "titel": "Perspektivenwechsel",
+      "unterueberschrift": "Vorurteil, Ausgrenzung",
+      "seiten": "Seite 418",
+      "fuer_leitfrage": [
+        1
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bauen einen Prüfbericht zu drei Aussagen auf: LF1 liefert die drei Stufen der Kette, LF2 das Schema für «gesagt» und «gepostet», LF3 drei Aussagen mit Stufe und Beleg, LF4 Ihre eigene Grenze und was Sie das nächste Mal tun.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.4 | S. 116-117 · Kap. 18.3 | S. 418",
+      "text": "Erklären Sie die Kette vom Stereotyp über das Vorurteil zur Diskriminierung (Kap. 3.4, S. 116). Zeigen Sie, was Rassismus und Ausgrenzung damit zu tun haben (S. 116–117; Kap. 18.3, S. 418).",
+      "liefert": "die drei Stufen der Kette",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 3.4, S. 116, und unterstreichen Sie die drei Stufen der Kette.",
+          "Fragen Sie je Stufe: Ist es ein Bild im Kopf, ein Urteil oder eine Handlung?"
+        ],
+        "satzanfaenge": [
+          "«Ein Stereotyp ist …; ein Vorurteil wird daraus, wenn …»",
+          "«Von Diskriminierung spreche ich erst, wenn …»",
+          "«Ausgrenzung heisst, dass …»"
+        ],
+        "produkt": "Die drei Stufen stehen über der Tabelle und füllen später die Spalte «Stufe»."
+      },
+      "loesung": {
+        "kern": "Stereotyp → Vorurteil → Diskriminierung; Ausgrenzung",
+        "zeilen": [
+          {
+            "label": "Stereotyp",
+            "text": "Ein fertiges Bild im Kopf: Einer Gruppe wird eine Eigenschaft zugeschrieben, ohne dass man sagen könnte, warum. Im Alltag verbreitet, vom Umfeld übernommen.",
+            "quelle": "Kap. 3.4, S. 116"
+          },
+          {
+            "label": "Vorurteil",
+            "text": "Aus dem Bild wird ein Urteil über eine Person, bevor man sie kennt: Ein Merkmal wird verallgemeinert, die Person einer Gruppe zugeordnet.",
+            "quelle": "Kap. 3.4, S. 116; 18.3, S. 418"
+          },
+          {
+            "label": "Diskriminierung",
+            "text": "Aus dem Urteil wird eine Handlung: Menschen werden wegen eines Merkmals angefeindet, ausgeschlossen oder schlechter behandelt.",
+            "quelle": "Kap. 3.4, S. 116"
+          },
+          {
+            "label": "Rassismus",
+            "text": "Eine Form der Diskriminierung: Aus Hautfarbe oder Herkunft wird abgeleitet, was jemand kann oder ob er gefährlich ist. Geschieht absichtlich, oft auch unabsichtlich.",
+            "quelle": "Kap. 3.4, S. 116"
+          },
+          {
+            "label": "Ausgrenzung",
+            "text": "Menschen bleiben wegen eines Vorurteils aus einer Gruppe oder Gemeinschaft ausgeschlossen. Das wertet sie ab und nützt meist der Mehrheit.",
+            "quelle": "Kap. 18.3, S. 418"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Stereotyp und Diskriminierung gleichsetzen. Ein Bild im Kopf ist noch keine Handlung; die Kette sagt, was daraus werden kann, nicht, was daraus werden muss."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 3.4 | S. 117-119 · eigener Fall",
+      "text": "Wenden Sie das Schema der Strafnorm (Kap. 3.4, S. 117–118) auf die zwei Lagen der Situation an: am Samstag im Freundeskreis gesagt, am Sonntag öffentlich gepostet. Was ändert sich – und was beantwortet das Schema nicht?",
+      "liefert": "Schema für gesagt und gepostet",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Prüfen Sie je Lage: öffentlich? Wird jemandem das gleichberechtigte Dasein abgesprochen?",
+          "Annahme: Der Spruch drückt ein Vorurteil aus, spricht aber niemandem das Dasein ab."
+        ],
+        "satzanfaenge": [
+          "«Im Freundeskreis gesagt, ist der Satz …, weil …»",
+          "«Öffentlich gepostet ändert sich, dass …»",
+          "«Nicht beantwortet ist, ob der Satz die Menschenwürde …»"
+        ],
+        "produkt": "Das Ergebnis wird Satz 1 unter der Tabelle: was nach dem Schema erlaubt ist."
+      },
+      "loesung": {
+        "kern": "Privat keine Straftat; öffentlich zählt der Inhalt",
+        "zeilen": [
+          {
+            "label": "Zweck der Norm",
+            "text": "Die Strafnorm sagt nicht, was anständig ist; sie greift erst, wenn das Zusammenleben dauerhaft gefährdet ist.",
+            "quelle": "Kap. 3.4, S. 117"
+          },
+          {
+            "label": "Samstag (privat)",
+            "text": "Im Familien- und Freundeskreis gesagt: kein Verstoss gegen die Strafnorm, gleich was der Satz sagt.",
+            "quelle": "Kap. 3.4, S. 118"
+          },
+          {
+            "label": "Sonntag (öffentlich)",
+            "text": "Öffentlich. Nach der Anti-Rassismus-Strafnorm strafbar nur, wenn der Satz Menschen wegen Hautfarbe, Ethnie, Religion oder sexueller Orientierung das gleichberechtigte Dasein abspricht.",
+            "quelle": "Kap. 3.4, S. 117-118"
+          },
+          {
+            "label": "Annahme im Heft",
+            "text": "Wortlaut unbekannt. Mit der Annahme (Vorurteil, niemandem wird das Dasein abgesprochen) wäre die Schwelle nicht erreicht. Das Heft fällt kein rechtliches Urteil."
+          },
+          {
+            "label": "Meinungsfreiheit",
+            "text": "Das Glossar nennt freie Meinungsäusserung und Menschenwürde als Grundrechte (S. 119). Dass die Strafnorm der ersten eine Grenze setzt, ist Ableitung aus S. 117–118; ausdrücklich nur in Vertiefung 2, Sicht der Kommission.",
+            "quelle": "Kap. 3.4, S. 117-119"
+          },
+          {
+            "label": "Was offen bleibt",
+            "text": "Erlaubt heisst nicht: in Ordnung. Ob der Satz Menschen abwertet, sagt das Schema nicht. Fehler: öffentlich = strafbar."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Prüfbericht zu drei Aussagen aus der Quelle (1 Seite: Tabelle mit Einordnung und Beleg, darunter drei Sätze zur eigenen Grenze)",
+    "titel": "Mein Prüfbericht zu drei Aussagen",
+    "format_detail": "Eine Seite mit einer Tabelle von drei Zeilen und fünf Spalten: Aussage in Stichworten · über wen · Stufe (Stereotyp, Vorurteil oder Diskriminierung) · wie es ankommt · Beleg (Zeitmarke). Darunter schreiben Sie drei Sätze: was nach dem Schema aus LF2 erlaubt ist, wo für Sie die Grenze liegt und was Sie das nächste Mal tun. Sie schreiben für die Person aus dem Freundeskreis, die den Satz gesagt hat.",
+    "beschreibung": "Ich prüfe drei Aussagen aus der Quelle: über wen sie gehen, auf welcher Stufe sie stehen und wie sie ankommen. Darunter halte ich fest, wo für mich die Grenze liegt und was ich tue.",
+    "schritte": [
+      {
+        "label": "01 Kette klären",
+        "hint": "Zeichnen Sie auf S. 7 eine Tabelle (5 Spalten, 3 Zeilen). Darüber die drei Stufen aus LF1 mit Merkwort: Bild, Urteil, Handlung."
+      },
+      {
+        "label": "02 Schema anwenden",
+        "hint": "Schreiben Sie unter die Tabelle Satz 1: was nach dem Schema aus LF2 gilt, wenn der Satz gesagt und wenn er gepostet wird."
+      },
+      {
+        "label": "03 Aussagen einordnen",
+        "hint": "Übernehmen Sie aus dem Raster von LF3 drei Zeilen: Aussage, Stufe, Beleg. Ergänzen Sie selbst «über wen» und «wie es ankommt»."
+      },
+      {
+        "label": "04 Grenze festlegen",
+        "hint": "Schreiben Sie aus LF4 die Sätze 2 und 3 dazu: wo für Sie die Grenze liegt und was Sie das nächste Mal tun."
+      },
+      {
+        "label": "05 Prüfen",
+        "hint": "Schätzen Sie sich mit den zwei Feedback-Kriterien ein und verbessern Sie eine Stelle des Prüfberichts."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Prüfbericht (1 Seite): 3 Aussagen mit Stufe, Wirkung und Beleg",
+      "3 Sätze: wo für mich die Grenze liegt und was ich nächstes Mal tue"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Radiogespräch über Jugendliche, gehört am Familientisch",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Drei Aussagen geprüft",
+          "kopf": [
+            "Aussage",
+            "über wen",
+            "Stufe",
+            "wie es ankommt",
+            "Beleg"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "hängen nur am Handy",
+                "Jugendliche",
+                "Stereotyp",
+                "nervt, trifft kaum",
+                "00:40"
+              ]
+            },
+            {
+              "zellen": [
+                "nicht ernst zu nehmen",
+                "Jugendliche",
+                "Vorurteil",
+                "ich zähle nicht",
+                "01:25"
+              ]
+            },
+            {
+              "zellen": [
+                "Wirt bedient Gruppen nicht",
+                "Jugendliche",
+                "Diskriminierung",
+                "ausgeschlossen",
+                "02:10"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Sätze",
+          "text": [
+            "Am Tisch gesagt oder öffentlich: Strafbar ist keine der Aussagen, die Strafnorm schützt das Alter nicht.",
+            "Meine Grenze liegt bei Aussage 3: Dort wird aus einem Urteil eine Handlung, die Menschen ausschliesst.",
+            "Nächstes Mal sage ich am Tisch, dass mich Aussage 2 trifft, statt nur die Augen zu verdrehen."
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: drei Aussagen aus der Quelle und der Spruch vom Samstag",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Mit der Ersatzquelle stehen andere Aussagen in der Tabelle (LF3, Zeile «Mit Ersatzquelle»), und der Entscheid darf auch «stehen lassen» heissen (LF4). Erst zeigen, wenn der eigene Prüfbericht steht. Die Zeitmarken sind aus dem Transkript berechnet (±10 Sekunden). Annahme: Der Spruch drückt ein Vorurteil aus und spricht niemandem das gleichberechtigte Dasein ab; den Wortlaut nennt die Situation nicht. Die Stufe «Stereotyp» ist in der Quelle nur indirekt belegt. Die Spalte «wie es ankommt» ist Deutung der Lernenden, gestützt auf 01:12, 01:59 und 02:28.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Drei Aussagen geprüft",
+          "kopf": [
+            "Aussage",
+            "über wen",
+            "Stufe",
+            "wie es ankommt",
+            "Beleg"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Bild: alle leben im Wohnwagen",
+                "Jenische, Sinti",
+                "Stereotyp (indirekt)",
+                "passt für die meisten nicht",
+                "01:17"
+              ]
+            },
+            {
+              "zellen": [
+                "Bezeichnung gilt als abwertend",
+                "Jenische, Sinti",
+                "Vorurteil",
+                "für die einen Abwertung, für andere Herkunft",
+                "01:59"
+              ]
+            },
+            {
+              "zellen": [
+                "Wort als Beschimpfung",
+                "Jenische, Sinti",
+                "Diskriminierung",
+                "verletzt und setzt herab",
+                "02:28"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Sätze",
+          "text": [
+            "Nach dem Schema aus LF2 war der Spruch am Samstag im Freundeskreis keine Straftat; öffentlich wäre er es nach der Anti-Rassismus-Strafnorm nur, wenn er Menschen das gleichberechtigte Dasein abspricht.",
+            "Meine Grenze liegt früher: dort, wo ein Satz Menschen wegen ihrer Herkunft abwertet. Die Quelle zeigt, dass dasselbe Wort Stolz oder Beschimpfung sein kann, je nachdem, wie es gebraucht wird.",
+            "Dir sage ich: Das nächste Mal lache ich nicht mit, und deinen Kommentar sehe ich heute anders als am Samstag."
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe der Einheit fehlen oder werden falsch gebraucht.",
+        "Einige Fachbegriffe stimmen, andere sind ungenau oder vertauscht.",
+        "Die Fachbegriffe der Einheit sind richtig gebraucht und passen zum Fall.",
+        "Fachbegriffe sind richtig, passend und selbstständig verbunden; auch ihre Grenzen sind benannt."
+      ],
+      "indikator_produkt": "Jede Aussage ist der richtigen Stufe zugeordnet und mit Zeitmarke belegt."
+    },
+    {
+      "kn_kriterium": "Ethisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Nicht erkennbar, wen eine Aussage oder ein Beitrag trifft und wessen Würde berührt ist.",
+        "Die Wirkung auf Betroffene ist erwähnt, aber nicht vom Erlaubten oder Gemeinten getrennt.",
+        "Erlaubtes, Gemeintes und Wirkung sind getrennt; Massstab ist die Würde der Betroffenen.",
+        "Das ethische Prinzip ist auf einen neuen Fall übertragen; Folgen für Betroffene und Zusammenleben sind benannt."
+      ],
+      "indikator_produkt": "Die drei Sätze trennen, was erlaubt ist, von dem, was Menschen abwertet."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel eines Prüfberichts an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile.",
+    "scaffold_100": "Ordnen Sie eine vierte Aussage ein, etwa aus einer Vertiefung, falls Ihr Heft eine nennt, und zeigen Sie, wo die Kette an ihre Grenze kommt."
+  },
+  "methoden": [
+    {
+      "ref": "hko-woertlich-zitieren",
+      "fuer": "für «Aussage»: Kern notieren, Abwertendes als Stichwort",
+      "beispiel": [
+        "Gehört: «Am Mäntig isch d Halle wider zue gsi.»",
+        "Notiert: 00:50 · Halle am Montag wieder zu",
+        "Nicht: «Der Verein ist schlecht organisiert.» — das ist Ihre Deutung, nicht die Aussage."
+      ]
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für das Mitschreiben beim Hören",
+      "tun": "Schreiben Sie beim zweiten Hören nur Schlüsselwörter ins Raster und lassen Sie Platz für Nachträge."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für die Spalte «Wie es ankommt»",
+      "tun": "Hören Sie mit dem Beziehungs-Ohr: Was sagt die Aussage darüber, wie über die Betroffenen gedacht wird?"
+    }
+  ],
+  "mindmap_zentrum": "Sagen dürfen oder ausgrenzen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie Ausgrenzung entsteht",
+      "punkte": [
+        "Stereotyp",
+        "Vorurteil",
+        "Diskriminierung",
+        "Rassismus",
+        "Ausgrenzung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was das Recht regelt",
+      "punkte": [
+        "Anti-Rassismus-Strafnorm",
+        "Öffentlichkeit",
+        "Meinungsfreiheit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Woran ich messe",
+      "punkte": [
+        "Menschenwürde",
+        "Wirkung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, was sich ändert, wenn derselbe Satz öffentlich steht statt unter uns fällt?",
+      "Steht in meinen drei Sätzen, wo für mich die Grenze liegt und was ich das nächste Mal tue?"
+    ],
+    "mitnahme": [
+      "Kette: Stereotyp, Vorurteil, Diskriminierung",
+      "Erlaubt heisst noch nicht: in Ordnung",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Stereotyp",
+          "nach": "Vorurteil",
+          "text": "kann werden zu"
+        },
+        {
+          "von": "Vorurteil",
+          "nach": "Diskriminierung",
+          "text": "kann führen zu"
+        },
+        {
+          "von": "Rassismus",
+          "nach": "Diskriminierung",
+          "text": "ist eine Form von"
+        },
+        {
+          "von": "Vorurteil",
+          "nach": "Ausgrenzung",
+          "text": "ist der Grund für"
+        },
+        {
+          "von": "Anti-Rassismus-Strafnorm",
+          "nach": "Öffentlichkeit",
+          "text": "greift nur in der"
+        },
+        {
+          "von": "Meinungsfreiheit",
+          "nach": "Anti-Rassismus-Strafnorm",
+          "text": "wird begrenzt durch die (Ableitung, im Lehrmittel nicht ausdrücklich)"
+        },
+        {
+          "von": "Menschenwürde",
+          "nach": "Wirkung",
+          "text": "ist im Heft der Massstab für die (Setzung: Kriterium «Ethisches Prinzip»)"
+        },
+        {
+          "von": "Wirkung",
+          "nach": "gilt auch bei …",
+          "text": "zählt auch dort, wo etwas erlaubt ist"
+        }
+      ],
+      "transfer": "Spruch am Familientisch, Fasnachtskostüm, Songtext an einem Fest",
+      "eigene_knoten": {
+        "mit_medien": [
+          "Selbstbezeichnung",
+          "Beschimpfung"
+        ]
+      },
+      "quercheck": [
+        "Ja: Im Freundeskreis ist der Satz keine Straftat; öffentlich kommt es darauf an, ob er Menschen das gleichberechtigte Dasein abspricht (LF2). Ob er in Ordnung ist, sagt das Schema nicht.",
+        "Ja, wenn Satz 2 die Grenze nennt (erlaubt, aber abwertend) und Satz 3 den nächsten Schritt: etwas sagen oder stehen lassen, mit Grund (LF4)."
+      ],
+      "mitnahme": [
+        "Bild im Kopf, Urteil, Handlung: Ich frage zuerst, auf welcher Stufe eine Aussage steht.",
+        "Das Schema sagt, was strafbar ist; ob ein Satz Menschen abwertet, muss ich selbst beurteilen.",
+        "Wie ich widerspreche, ohne dass die anderen mich für humorlos halten."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1 erklärt Stereotyp, Vorurteil und Diskriminierung",
+        "LF2 prüft beide Lagen: gesagt und gepostet",
+        "LF4 nennt Regel, Wirkung und Entscheid"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle mit vier Zeilen und Zeitmarke",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Prüfbericht",
+      "vollstaendig_wenn": [
+        "3 Aussagen mit Stufe, Wirkung und Beleg",
+        "Satz 1: was nach dem Schema erlaubt ist",
+        "Sätze 2 und 3: meine Grenze, was ich nächstes Mal tue"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Prüfbericht beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Prüfbericht fertigstellen, Feedback-Kriterien, Abschluss mit Begriffsnetz",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Woran erkenne ich bei der nächsten Aussage über andere Menschen, ob sie nur erlaubt oder auch in Ordnung ist?",
+    "ziel": "Nicht alles, was gesagt werden darf, ist deshalb in Ordnung: Zwischen dem, was das Recht verbietet, und dem, was Menschen ausgrenzt, liegt ein Raum, in dem ich selbst verantworte, was ich sage und wozu ich schweige."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Aussagen über Menschen auf der Kette vom Stereotyp zur Diskriminierung einordnen und Erlaubtes von Abwertendem trennen",
+    "lehrmittel_anker": "Kap. 3.4 S. 116-117 (Stereotyp, Vorurteil, Diskriminierung, Rassismus und weitere Formen); Kap. 3.4 S. 117-119 (Anti-Rassismus-Strafnorm, keine Straftat im Privaten, Grundrechte im Glossar); Kap. 18.3 S. 418 (Vorurteil, Ausgrenzung).",
+    "kn_aktivierung": "Im KN ordnet die Lernende die Szene mit dem neuen Kollegen einer Stufe der Kette zu und zeigt, was sich ändert, wenn ein Beitrag aus dem kleinen Kreis an die Öffentlichkeit geht.",
+    "transfer_check": "Kann die Lernende eine neue Aussage über Menschen einer Stufe zuordnen, belegen und sagen, ob sie erlaubt und ob sie in Ordnung ist?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] + Raster (S. 3) — Aussagen, die ein Beispiel von Ausgrenzung sind, von Einordnung und Nebensache trennen und mit Zeitmarke belegen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] — die eigene Grenze zwischen «erlaubt» und «in Ordnung» festlegen und prüfen, woher sie kommt"
+    },
+    {
+      "sk": 7,
+      "wo": "Produkt (Spalte «Wie es ankommt») — die Sicht der Betroffenen auf eine Aussage nachvollziehen"
+    }
+  ],
+  "spuren": {
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Welche Aussagen über die Gruppe nennt die Quelle – und auf welcher Stufe der Kette stehen sie? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "drei Aussagen mit Stufe und Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-221a-pflicht",
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst das Raster füllen, dann den Befund schreiben. Stichworte, keine ganzen Sätze.",
+              "Fragen Sie je Zeile: Bild im Kopf, Urteil oder Handlung? Das ergibt die Stufe."
+            ],
+            "satzanfaenge": [
+              "«In der Quelle sagt … über die Gruppe, dass …»",
+              "«Auf der Stufe … steht das, weil …»",
+              "«Für den Spruch vom Samstag heisst das: …»"
+            ],
+            "produkt": "Drei Zeilen übernehmen: Kernaussage → Aussage, Zeitmarke → Beleg; Stufe nach LF1."
+          },
+          "loesung": {
+            "kern": "Ein Wort, zwei Lesarten: Herkunft oder Abwertung",
+            "quelle_ref": "q-221a-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "01:17 meist sesshaft · 01:59 Dachverbände in den Nachbarländern meiden die Bezeichnung · 02:28 Beschimpfung oder Selbstbezeichnung · 03:31 jenische Kinder weggenommen (Sicht der Schriftstellerin).",
+                "quelle": "Quelle, 01:17–03:31"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Bezeichnung umstritten, die Betroffenen hier wollen sie behalten (00:00) · ohne den Namen fehlte ein Stück Identität (01:12) · ein Verbot wäre falsch (02:47).",
+                "quelle": "Quelle, 00:00, 01:12, 02:47"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Diskriminierung ist direkt belegt (02:28, 03:31). Vorurteil (01:59: gilt als abwertend und mit Vorurteilen behaftet) und Stereotyp (01:17, Rückschluss) sind Deutung.",
+                "quelle": "Kap. 3.4, S. 116"
+              },
+              {
+                "label": "Befund",
+                "text": "Mind. zwei Aussagen mit Stufe und Zeitmarke. Der Spruch vom Samstag: eigene Übertragung."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Blicke, Flüstern im Bus (01:05; Diskriminierung ist Deutung, sie spricht von kleinen Rassismen) · ihr Tun gilt für alle Frauen mit Kopftuch (01:25, Stereotyp) · feste Bilder, Verdacht der Nähe zu Gewalt (02:20–02:31, Vorurteil) · Debatte über sie, nicht mit ihnen (02:50, Ausgrenzung).",
+                "quelle": "Ersatzquelle, 01:05–02:50"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "01:17 · Reporter",
+                "nur wenige reisen im Wohnwagen, die meisten sind sesshaft",
+                "Rückschluss: rückt ein Bild zurecht",
+                "Stereotyp"
+              ],
+              [
+                "01:59 · Reporter",
+                "Dachverbände der Nachbarländer meiden die Bezeichnung: abwertend",
+                "zeigt die Gegenposition",
+                "Vorurteil"
+              ],
+              [
+                "02:28 · Präsident Kulturverein",
+                "als Beschimpfung rassistisch, als Selbstbezeichnung nicht",
+                "will die Bezeichnung behalten",
+                "Diskriminierung · Rassismus"
+              ],
+              [
+                "03:31 · Reporter, Sicht der Schriftstellerin",
+                "jenische Kinder bis in die 1970er-Jahre weggenommen",
+                "lenkt auf das, was der Gruppe angetan wurde",
+                "Diskriminierung"
+              ]
+            ],
+            "befund": "Die Quelle nennt keine Reihe von Sprüchen, sondern den Streit um eine Bezeichnung: Für die Betroffenen im Beitrag ist sie Herkunft (01:12, 02:28), in den Nachbarländern gilt sie als abwertend (01:59). Auf der Stufe Diskriminierung stehen die Beschimpfung (02:28) und das, was der Gruppe angetan wurde (03:31). Für den Spruch vom Samstag schliesse ich: Es kommt darauf an, wie ein Wort gebraucht wird und über wen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.4 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Das Schema aus LF2 sagt, was strafbar ist (Kap. 3.4, S. 117–118); die Quelle zeigt, wie Aussagen bei Betroffenen ankommen. Wo liegt Ihre Grenze: Lassen Sie den Satz als Meinung stehen – oder sagen Sie etwas?",
+          "liefert": "eigene Grenze und nächster Schritt",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Hören Sie nochmals, was die Betroffenen selbst sagen: was sie trifft und was nicht.",
+              "Fragen Sie sich, woher Ihre Grenze kommt: Erziehung, Freundeskreis, eigene Erfahrung?"
+            ],
+            "satzanfaenge": [
+              "«Nach dem Schema ist der Satz …, weil …»",
+              "«Bei den Betroffenen kommt an, dass … (Zeitmarke …)»",
+              "«Meine Grenze: Ich lasse ihn stehen / sage etwas, weil …»"
+            ],
+            "produkt": "Grenze und Entscheid werden die Sätze 2 und 3 unter der Tabelle."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Regel mit Fundstelle: privat keine Straftat; öffentlich nach der Anti-Rassismus-Strafnorm nur, wenn das gleichberechtigte Dasein abgesprochen wird (S. 117–118).",
+                "Praxis mit Zeitmarke, als Sicht Betroffener: Es kommt darauf an, wie das Wort gebraucht wird (02:28); ein Verbot wäre falsch (02:47).",
+                "Grenze in Ich-Form; erlaubt, gemeint und Wirkung getrennt; Entscheid genannt.",
+                "Mit der Ersatzquelle: Blicke, Flüstern und eine Debatte über die Betroffenen treffen (01:05, 02:50); dass sie erlaubt sind, ist Fallüberlegung."
+              ],
+              "beispiel_pol_1": "Etwas sagen: «Am Samstag war der Satz privat und keine Straftat; öffentlich wäre er es nach der Anti-Rassismus-Strafnorm nur, wenn er Menschen das gleichberechtigte Dasein abspricht (S. 117–118). Für einen Betroffenen in der Quelle kommt es darauf an, wie ein Wort gebraucht wird (02:28). Meine Grenze: wo ein Satz abwertet, auch wenn er erlaubt ist. Ich sage ihm, dass ich es heute anders sehe; das trifft Menschen und vergiftet unser Zusammensein.»",
+              "beispiel_pol_2": "Stehen lassen (Annahme: Der Spruch drückt ein Vorurteil aus, spricht aber niemandem das gleichberechtigte Dasein ab): «Der Satz ist erlaubt (S. 117–118), und in der Quelle hält eine Betroffene ein Verbot für falsch, weil mit dem Wort auch die Geschichte der Gruppe verschwände (02:47). Ich lasse ihn als Meinung stehen. Meine Grenze bleibt: Wird daraus eine Beschimpfung (02:28), sage ich etwas, weil das Menschen trifft.»",
+              "nicht_tragfaehig": "Nur «ist erlaubt» oder nur «ist verletzend» ohne die andere Seite; eine Grenze ohne Beleg; ein rechtliches Urteil über den Kollegen."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-221a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Hören Sie die Quelle (QR-Code oben) zweimal. Je Zeile eine Aussage über die Gruppe, Abwertendes nur als Stichwort. Vier Zeilen: wer spricht, Kernaussage, Absicht. Vorn Zeitmarke, hinten Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-221a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welche Sätze hört der Pflegefachmann im Spital – und was lösen sie bei ihm aus?",
+          "erwartung": "Bemerkungen zu seiner Hautfarbe hört er täglich (02:22–02:29). Ein Kollege «beruhigt» Patienten mit Sätzen über ihn; das stört ihn, weil sie dann an seinem Können zweifeln (02:34–02:56). Er spricht es an, es hört kurz auf und beginnt wieder (03:09–03:15). Seine Betreuerin verallgemeinert auf alle Menschen seiner Herkunft; das trifft ihn schwer (04:44–04:57). Die Stufe der Kette ist Deutung. (Bild nicht gesichtet.)"
+        },
+        {
+          "ref": "q-221a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum gilt die Meinungsfreiheit laut der Kommission nicht ohne Grenze – und was schützt die Norm?",
+          "erwartung": "Sicht der Kommission, keine neutrale Rechtsauskunft: Die Meinungsfreiheit lässt sich einschränken, wenn ein öffentliches Interesse überwiegt oder Grundrechte anderer zu schützen sind (Abs. 5); im Einzelfall wägt ein Gericht ab (Abs. 6). Die Norm will nicht Meinungen verhindern, sondern Würde und öffentlichen Frieden schützen (Abs. 2); die Menschenwürde gilt als Kern aller Grundrechte (Abs. 8, 10). Abs. 3 erwähnt die Gegner der Norm."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "00:50 (Beispielwert) · Hauswartin · Velos versperren den Eingang · will einen Unterstand · → hier ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Beispiel eines Prüfberichts an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
+    }
+  }
+}
