@@ -1,0 +1,918 @@
+{
+  "id": "1.1.1_ausbildung_kommunizieren_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen — in der Ausbildung kommunizieren",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Ferien gestrichen – wie sage ich es im Betrieb?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Ferienwunsch klären und ansprechen"
+  },
+  "prinzip_ref": "1.1.1_ausbildung_kommunizieren_prinzip",
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM7"
+    ],
+    "sk": [
+      8,
+      6,
+      2
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann Informationen zu meiner Ausbildung aus analogen und digitalen Quellen entnehmen und gezielt nutzen, um in Konfliktsituationen angemessen zu kommunizieren.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Seit August bin ich im ersten Lehrjahr. Schon im Mai hat meine Familie für die zweite Woche der Herbstferien eine Reise gebucht. In meinen ersten Tagen im Betrieb habe ich das erwähnt; man hat genickt, eingetragen wurde nichts. Heute hängt der neue Ferienplan im Pausenraum: Wegen eines Grossauftrags gilt im ganzen Oktober eine Feriensperre. Mir ist stattdessen die dritte Novemberwoche eingetragen – mitten in der Schulzeit, mit einem Schultag darin. Meine Eltern fragen, ob sie die Reise absagen müssen. Ein Kollege im dritten Lehrjahr meint, da könne man nichts machen. Ich bin verärgert, aber ich will es mir im Betrieb nicht verderben. Am Freitag kann ich mit meiner Berufsbildnerin oder meinem Berufsbildner darüber reden. Bis dahin will ich klären, was für meine Ferien gilt, was ich erreichen will und wie ich es sage.",
+  "zahlen_tabelle": [
+    {
+      "label": "Reise mit der Familie gebucht",
+      "wert": "im Mai"
+    },
+    {
+      "label": "Gewünschte Woche in den Herbstferien",
+      "wert": "zweite Woche"
+    },
+    {
+      "label": "Feriensperre im Betrieb",
+      "wert": "ganzer Oktober"
+    },
+    {
+      "label": "Eingetragene Woche, mit einem Schultag",
+      "wert": "3. Nov.-Woche"
+    }
+  ],
+  "leitfrage": "Bestehe ich auf meiner Ferienwoche, oder suche ich eine Lösung, mit der auch mein Betrieb leben kann?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Auf dem Anspruch bestehen vs. eine Lösung für beide suchen",
+    "hint": "Wer auf der Woche besteht, riskiert Streit; wer sofort nachgibt, verliert die Reise. Für beides gibt es Gründe – welche wiegen in Ihrem Fall schwerer?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 1.4",
+      "titel": "Der Lehrvertrag",
+      "unterueberschrift": "Rechte, Ferien, Konflikte im Betrieb",
+      "seiten": "Seite 32-36",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 19.2",
+      "titel": "Konflikte",
+      "unterueberschrift": "Strategien, vier Botschaften, Aussprache",
+      "seiten": "Seite 426-429",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 19.1",
+      "titel": "Feedback",
+      "unterueberschrift": "Regeln für Rückmeldungen",
+      "seiten": "Seite 425",
+      "fuer_leitfrage": [
+        1
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Ende führen Sie ein Klärungsgespräch mit Plan und Notiz. LF1 liefert die Begriffe für Zuhören und Strategie, LF2 die strittigen Punkte und die Ziele beider Seiten, LF3 die Belege dafür, was für Ferien gilt, LF4 Ihren Entscheid mit Ziel und Mindestziel.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 1.4 | S. 35-36 · Kap. 19.2 | S. 426-429",
+      "text": "Erklären Sie in eigenen Worten die vier Botschaften einer Äusserung und die vier Arten, auf einen Konflikt zu reagieren. Nennen Sie drei Punkte, die eine Aussprache gelingen lassen.",
+      "liefert": "Begriffe für Zuhören und Strategie",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Vier Arten zu reagieren: Kap. 1.4, S. 35 – nicht die vier Strategien in Kap. 19.2, S. 426.",
+          "Erklären Sie jeden Begriff in einem kurzen eigenen Satz, ohne abzuschreiben."
+        ],
+        "satzanfaenge": [
+          "«Jede Äusserung sagt etwas zur Sache und …»",
+          "«Auf einen Konflikt kann ich reagieren, indem ich …»",
+          "«Eine Aussprache gelingt, wenn …»"
+        ],
+        "produkt": "Die vier Botschaften brauchen Sie beim Zuhören im Gespräch, Ich-Botschaft und offene Fragen im Plan (S. 7)."
+      },
+      "loesung": {
+        "kern": "Vier Botschaften, vier Reaktionen, Aussprache",
+        "zeilen": [
+          {
+            "label": "Vier Botschaften",
+            "text": "Sachinhalt (worüber jemand informiert), Selbstkundgabe (was die Person von sich zeigt), Beziehung (wie sie zum Gegenüber steht), Appell (was sie erreichen will). Wer zuhört, nimmt dieselben vier Botschaften auf («vier Ohren»).",
+            "quelle": "Kap. 19.2, S. 427-428"
+          },
+          {
+            "label": "Vier Arten zu reagieren",
+            "text": "Ausweichen, nachgeben, bekämpfen, verhandeln. Keine ist für sich gut oder schlecht; auf Dauer trägt das Gespräch am weitesten.",
+            "quelle": "Kap. 1.4, S. 35"
+          },
+          {
+            "label": "Auch gültig",
+            "text": "Die vier Strategien nach Gewinner und Verlierer: Dauerhaft ist nur eine Lösung, bei der beide gewinnen.",
+            "quelle": "Kap. 19.2, S. 426"
+          },
+          {
+            "label": "Aussprache",
+            "text": "Drei der Punkte genügen: früh ansprechen, schriftlich vorbereiten, Ich-Botschaften statt Vorwürfe, offene Fragen, gemeinsame Lösung suchen (Kap. 1.4, S. 36); wertfrei schildern (Kap. 19.2, S. 429); Ich-Botschaft auch Kap. 19.1, S. 425.",
+            "quelle": "Kap. 1.4, S. 36"
+          },
+          {
+            "label": "Reihenfolge",
+            "text": "Wer weiter geht: zuerst Selbstkritik, dann eine Vertrauensperson, dann das vorbereitete Gespräch, zuletzt das Amt für Berufsbildung.",
+            "quelle": "Kap. 1.4, S. 35"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.4 | S. 36 · Kap. 19.2 | S. 427-428 · eigener Fall",
+      "text": "Ordnen Sie Ihren Fall: Was ist strittig, was wollen Sie, was will vermutlich Ihr Betrieb? Notieren Sie dann die vier Botschaften, die Sie im Satz des Kollegen hören: «Da kann man nichts machen.»",
+      "liefert": "strittige Punkte und Ziele beider Seiten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Trennen Sie, was der Kollege sagt, von dem, was Sie hineinlesen.",
+          "Schreiben Sie beim Betrieb «vermutlich» dazu – ob es stimmt, zeigt erst das Gespräch."
+        ],
+        "satzanfaenge": [
+          "«Strittig ist nicht …, sondern …»",
+          "«Ich will …; mein Betrieb will vermutlich …»",
+          "«Im Satz des Kollegen höre ich, dass …»"
+        ],
+        "produkt": "Strittiges und Ziele beider Seiten sind Vorarbeit: Daraus leiten Sie Ihr Ziel und Mindestziel ab (LF4)."
+      },
+      "loesung": {
+        "kern": "Strittig ist der Zeitpunkt, nicht der Anspruch",
+        "zeilen": [
+          {
+            "label": "Strittig",
+            "text": "Nicht der Anspruch auf Ferien, sondern der Zeitpunkt: die gewünschte zweite Herbstferienwoche gegen Sperre und Novemberwoche mit Schultag. Ob die nur erwähnte Woche als abgemacht gilt, ist eine offene Frage des Falls.",
+            "quelle": "Kap. 1.4, S. 36"
+          },
+          {
+            "label": "Ziele",
+            "text": "Ich: die Reise mit der Familie, ernst genommen werden. Betrieb (Vermutung): den Grossauftrag schaffen, ein Plan für alle.",
+            "quelle": "Kap. 1.4, S. 36"
+          },
+          {
+            "label": "Vier Botschaften",
+            "text": "Satz des Kollegen. Sachinhalt: Am Plan lässt sich nichts ändern. Selbstkundgabe: Er hat es so erlebt oder aufgegeben. Beziehung: Er erklärt mir als Neuling die Lage. Appell: Finde dich damit ab. Alles ausser dem Sachinhalt ist Deutung; ob er stimmt, klärt LF3.",
+            "quelle": "Kap. 19.2, S. 427-428"
+          },
+          {
+            "label": "Rolle",
+            "text": "S. 412: Rollen, die man übernimmt, prägen die Identität. Folgerung (nicht aus dem Lehrmittel): Als Lernende/r rede ich mit der Person, die mich ausbildet und den Plan macht. Gutes Zeichen, wenn die Antwort das sieht.",
+            "quelle": "Kap. 18.1, S. 412"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur die eigene Sicht; eine Deutung gilt als Tatsache («Der will mich kleinhalten»)."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Klärungsgespräch zu zweit mit Gesprächsplan und Vereinbarungsnotiz",
+    "titel": "Mein Gesprächsplan und unsere Vereinbarung",
+    "format_detail": "Sie führen mit einer Partnerin oder einem Partner ein Gespräch von rund fünf Minuten. Ihr Gegenüber spielt die Berufsbildnerin oder den Berufsbildner und bringt mindestens einen Einwand, auf den Sie antworten. Auf S. 7 steht Ihr Gesprächsplan: Ihr Ziel und Ihr Mindestziel, zwei Belege mit Fundstelle, Ihr erster Satz als Ich-Botschaft, zwei offene Fragen und Ihr Vorschlag. Nach dem Gespräch notieren Sie dort die Vereinbarung in zwei Sätzen und die Rückmeldung Ihres Gegenübers in einem Satz.",
+    "beschreibung": "Ich plane das Gespräch über meine Ferienwoche, führe es mit einem Gegenüber, das den Betrieb spielt und Einwände bringt, und halte fest, was wir vereinbart haben.",
+    "schritte": [
+      {
+        "label": "01 Konflikt, Strategie klären",
+        "hint": "Vorarbeit mit LF1: Welche der vier Arten zu reagieren streben Sie an? Halten Sie die vier Botschaften für das Zuhören bereit."
+      },
+      {
+        "label": "02 Meinen Fall ordnen",
+        "hint": "Vorarbeit mit LF2: Was ist strittig, was wollen beide Seiten? Daraus wird in Schritt 04 Ihr Ziel."
+      },
+      {
+        "label": "03 Rechtslage belegen",
+        "hint": "Schreiben Sie aus Raster und Befund von LF3 zwei Belege mit Fundstelle auf S. 7: einen für Ihren Wunsch, einen für den Betrieb."
+      },
+      {
+        "label": "04 Vorgehen entscheiden",
+        "hint": "Schreiben Sie mit LF4 auf S. 7: Ziel und Mindestziel, ersten Satz als Ich-Botschaft, zwei offene Fragen, Ihren Vorschlag."
+      },
+      {
+        "label": "05 Gespräch führen, notieren",
+        "hint": "Ihr Gegenüber spielt den Betrieb und bringt mindestens einen Einwand. Gespräch rund fünf Minuten; notieren Sie Vereinbarung und Rückmeldung."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Gesprächsplan auf S. 7",
+      "Vereinbarungsnotiz in zwei Sätzen, auf S. 7 unter dem Plan",
+      "Rückmeldung des Gegenübers in einem Satz, auf S. 7 unter dem Plan"
+    ],
+    "beispielbild": {
+      "titel": "Wer hütet den Bruder? Gespräch und Vereinbarung – Ihr Plan entsteht auf S. 7 (Liste S. 5)",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Ausschnitt aus dem Gespräch",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich bin enttäuscht: Am Samstag ist mein Konzert, und im Plan stehe ich zum Hüten."
+            },
+            {
+              "wer": "Mutter",
+              "text": "Ich muss arbeiten, sonst ist niemand da."
+            },
+            {
+              "wer": "Ich",
+              "text": "Wie lange dauert deine Schicht?"
+            },
+            {
+              "wer": "Mutter",
+              "text": "Bis vier."
+            },
+            {
+              "wer": "Ich",
+              "text": "Dann hüte ich bis vier und gehe danach. Am Sonntag koche ich dafür."
+            }
+          ]
+        },
+        {
+          "titel": "Vereinbarung",
+          "eintraege": [
+            {
+              "text": "Ich hüte am Samstag bis 16 Uhr, danach gehe ich ans Konzert."
+            },
+            {
+              "text": "Am Sonntag koche ich dafür für alle.",
+              "notiz": "Rückmeldung: «Du hast zuerst gefragt, das half.»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Gespräch über die gestrichene Ferienwoche",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage; erst zeigen, wenn die Gespräche geführt sind. Das Gespräch folgt dem Entscheid «auf der Woche bestehen» mit einem Angebot und endet beim Mindestziel. Annahme: Der Betrieb kann drei Tage freigeben und die Novemberwoche verlegen – beides nennt die Situation nicht. Ob die nur erwähnte Woche als abgemacht galt, bleibt offen. Achten Sie auf Ich-Botschaft, offene Frage, die benannte Grenze der Regel und den begründeten Vorschlag.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Ausschnitt aus dem Gespräch",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich bin erschrocken, als ich den Plan sah: Meine Familie hat die Reise im Mai gebucht, und ich habe sie hier erwähnt."
+            },
+            {
+              "wer": "Betrieb",
+              "text": "Im Oktober brauche ich wegen des Grossauftrags alle. Du hast dafür die Woche im November."
+            },
+            {
+              "wer": "Ich",
+              "text": "Ich weiss, dass Sie den Zeitpunkt bestimmen. Ferien sollen aber in der schulfreien Zeit liegen, und im November habe ich Schule. Wie könnten wir das lösen?"
+            },
+            {
+              "wer": "Betrieb",
+              "text": "Die ganze Woche geht nicht."
+            },
+            {
+              "wer": "Ich",
+              "text": "Mein Vorschlag: Ich fehle nur von Mittwoch bis Freitag und arbeite in der ersten Herbstferienwoche voll mit."
+            },
+            {
+              "wer": "Betrieb",
+              "text": "Einverstanden."
+            }
+          ]
+        },
+        {
+          "titel": "Vereinbarung",
+          "eintraege": [
+            {
+              "text": "Ich habe von Mittwoch bis Freitag der zweiten Herbstferienwoche frei und arbeite in der ersten Woche voll mit."
+            },
+            {
+              "text": "Die Novemberwoche wird in die schulfreie Zeit verlegt; neue Ferienwünsche trage ich sofort in den Plan ein.",
+              "notiz": "Rückmeldung: «Du hast meinen Einwand aufgenommen.»"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Keine Begründung; die Aussagen stehen unverbunden nebeneinander.",
+        "Begründung in Ansätzen; ein Einwand der Gegenseite bleibt ohne Antwort.",
+        "Nachvollziehbar begründet; ein Einwand der Gegenseite wird beantwortet.",
+        "Schlüssig begründet; Einwand beantwortet, Folgen für beide Seiten bedacht."
+      ],
+      "indikator_produkt": "Im Gespräch wird ein Einwand des Betriebs beantwortet und der eigene Vorschlag begründet."
+    },
+    {
+      "kn_kriterium": "Rechtliches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Was gilt, wird nicht genannt oder falsch wiedergegeben.",
+        "Eine Regel oder Pflicht ist genannt, aber nicht auf den Fall bezogen.",
+        "Regel oder Pflicht korrekt auf den Fall angewendet, mit Fundstelle.",
+        "Korrekt angewendet und auf eine neue Lage übertragen; die Grenze der Regel ist benannt."
+      ],
+      "indikator_produkt": "Der Plan nennt zwei Belege mit Fundstelle und wendet sie richtig auf die Ferienwoche an."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Nutzen Sie das Beispiel auf S. 6, die Satzanfänge bei den Leitfragen und die Methodenkarten.",
+    "scaffold_100": "Führen Sie das Gespräch ein zweites Mal mit getauschten Rollen. Notieren Sie, welcher Satz Sie in der Rolle des Betriebs überzeugt hat."
+  },
+  "methoden": [
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für das Zuhören im Gespräch",
+      "tun": "Hören Sie hin: Was sagt Ihr Gegenüber zur Sache, über sich, über Sie beide – und was will es von Ihnen?"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-19-1-feedback",
+      "fuer": "für den ersten Satz und die Rückmeldung",
+      "tun": "Beginnen Sie mit «Ich …» statt «Sie haben …». Nennen Sie nach dem Gespräch eine Stelle, die geholfen hat."
+    },
+    {
+      "ref": "lm-16-4-fragearten",
+      "fuer": "für die zwei offenen Fragen im Plan",
+      "tun": "Fragen Sie offen mit «Wie …?» statt «Warum …?» (Kap. 1.4, S. 36) – das bringt Vorschläge."
+    }
+  ],
+  "mindmap_zentrum": "Klar sagen oder Rücksicht nehmen",
+  "mindmap_aeste": [
+    {
+      "titel": "Was gilt für Ferien?",
+      "punkte": [
+        "Ferienanspruch",
+        "schulfreie Zeit",
+        "Rücksichtnahme"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was höre ich heraus?",
+      "punkte": [
+        "Sachinhalt",
+        "Selbstkundgabe",
+        "Beziehung",
+        "Appell"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie kläre ich es?",
+      "punkte": [
+        "Ich-Botschaft",
+        "offene Frage",
+        "Verhandeln"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, was für meine Ferien gilt, und kann ich es mit einer Fundstelle belegen (S. 3)?",
+      "Habe ich entschieden, ob ich auf meiner Woche bestehe oder eine Lösung für beide suche (LF4)?"
+    ],
+    "mitnahme": [
+      "Mein erster Satz als Ich-Botschaft",
+      "Erst klären, was gilt – dann reden",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Ferienanspruch",
+          "nach": "schulfreie Zeit",
+          "text": "soll bezogen werden in"
+        },
+        {
+          "von": "Ferienanspruch",
+          "nach": "Rücksichtnahme",
+          "text": "Zeitpunkt hängt ab von"
+        },
+        {
+          "von": "Sachinhalt",
+          "nach": "Ferienanspruch",
+          "text": "wird belegt mit"
+        },
+        {
+          "von": "Beziehung",
+          "nach": "Ich-Botschaft",
+          "text": "wird geschont durch"
+        },
+        {
+          "von": "Appell",
+          "nach": "offene Frage",
+          "text": "wird geprüft mit"
+        },
+        {
+          "von": "Rücksichtnahme",
+          "nach": "Verhandeln",
+          "text": "macht nötig"
+        },
+        {
+          "von": "Verhandeln",
+          "nach": "gilt auch bei …",
+          "text": "hilft auch bei"
+        }
+      ],
+      "transfer": "Dienstplan im Nebenjob, Abmachung in der Wohngemeinschaft, Terminstreit mit einer Behörde – überall zuerst klären, was gilt, dann reden.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Arbeitszeit",
+          "Erholung"
+        ],
+        "mit_medien": [
+          "Lehrjahr",
+          "Pflichtunterricht"
+        ]
+      },
+      "quercheck": [
+        "Ja: mindestens fünf Wochen, Bezug in der schulfreien Zeit, der Betrieb bestimmt den Zeitpunkt und nimmt Rücksicht (Kap. 1.4, S. 33; in der Fassung mit Medien: Quelle, Abs. 1–3).",
+        "Ja. Im Lösungsbild: auf der Woche bestehen, mit Angebot und Mindestziel. Ebenso gültig ist der Tausch gegen eine andere schulfreie Woche (LF4)."
+      ],
+      "mitnahme": [
+        "«Ich bin erschrocken, als ich den Plan sah …» – Ich-Form statt «Sie haben …»",
+        "Zuerst nachlesen und belegen, dann das Gespräch planen",
+        "Gilt eine nur erwähnte Ferienwoche als abgemacht? (offene Frage des Falls)"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: vier Botschaften, vier Arten zu reagieren",
+        "LF2: Strittiges und Ziele beider Seiten notiert",
+        "LF4: Entscheid mit Ziel und Mindestziel"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Gespräch",
+      "vollstaendig_wenn": [
+        "Plan: Ziel/Mindestziel, 2 Belege, 1. Satz, 2 Fragen, Vorschlag",
+        "Vereinbarungsnotiz in zwei Sätzen",
+        "Rückmeldung des Gegenübers in einem Satz"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Begriffe klären (LF1), den eigenen Fall ordnen (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Raster zur Quelle füllen (LF3), Vorgehen entscheiden (LF4), Plan beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Gespräch führen, Vereinbarung notieren, Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich zuerst klären, was gilt, bevor ich etwas anspreche, das mich ärgert?",
+    "ziel": "Wer in der Ausbildung etwas klären will, holt zuerst die Information, die gilt, und wählt dann Weg und Ton, die zum Gegenüber und zur eigenen Rolle passen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Erst klären, was gilt, dann im Gespräch mit Ich-Botschaft, offenen Fragen und einem Vorschlag eine Lösung für beide Seiten suchen",
+    "lehrmittel_anker": "Kap. 1.4 S. 32-34 (Rechte der Lernenden, Ferien, Pflichten der Berufsbildenden) · Kap. 1.4 S. 35-36 (Konflikte im Lehrbetrieb, Aussprache) · Kap. 19.2 S. 426-429 (Strategien, vier Botschaften, Aussprache) · Kap. 19.1 S. 425 (Regeln für Rückmeldungen) · Kap. 18.1 S. 412 (Rollen und Identität, Hintergrund)",
+    "kn_aktivierung": "Der KN verlangt aus diesem Heft, zuerst zu klären, was gilt (Kosten für den überbetrieblichen Kurs, Anordnungen der Kursleitung — Kap. 1.4, S. 31 und S. 34), und das Materialgeld im Gespräch mit Ich-Botschaft, offener Frage und begründetem Vorschlag anzusprechen.",
+    "transfer_check": "Kann die oder der Lernende in einer neuen Lage zuerst nennen, was gilt, und daraus ein Ziel, ein Mindestziel und einen ersten Satz für das Gespräch ableiten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 8,
+      "wo": "leitfragen[2] — herauslesen, nach welchen Regeln die freie Zeit im ersten Lehrjahr geplant wird, wenn etwas dazwischenkommt"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — entscheiden, worauf ich bestehe, und es mit dem begründen, was gilt"
+    },
+    {
+      "sk": 2,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — Ziel und Mindestziel im Gesprächsplan festlegen und im Gespräch anpassen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 1.4 | S. 32-34",
+          "text": "Was legt Kap. 1.4 zu Anspruch und Zeitpunkt der Ferien fest? Werten Sie Ihr Raster aus: Was spricht für Ihren Wunsch, was für den Betrieb? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Belege mit Fundstelle zur Ferienregel",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 1.4 | S. 32-34",
+            "auftrag": "Lesen Sie im Lehrmittel Kap. 1.4, S. 32–34. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen dazu, was für Ferien und Schultage gilt. Ordnen Sie je einen Begriff aus LF1 oder dem Glossar (S. 8) zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 33, Ferien",
+              "fünf Wochen bis 20",
+              "bezahlt, pro Jahr",
+              "Ferienanspruch"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Suchen Sie auf S. 32–34 die Absätze zu Ferien, Arbeitszeit und Unterricht."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 1.4, S. … gilt für Ferien, dass …»",
+              "«Für meinen Wunsch spricht …; für den Betrieb spricht …»"
+            ],
+            "produkt": "Zwei Zeilen mit Seite werden Ihre Belege im Gesprächsplan: eine für Ihren Wunsch, eine für den Betrieb."
+          },
+          "loesung": {
+            "kern": "Raster zu Kap. 1.4: Anspruch, Zeitpunkt, Rücksicht",
+            "quelle_ref": "Kap. 1.4 | S. 32-34",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Mindestens fünf Wochen bezahlte Ferien bis 20; Ferien sollen in der schulfreien Zeit liegen und werden nicht mit Geld abgegolten; den Zeitpunkt bestimmt der Betrieb und nimmt auf Wünsche Rücksicht, soweit sie zu seinen Interessen passen.",
+                "quelle": "Kap. 1.4, S. 33"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Der Pflichtunterricht zählt als Arbeitszeit (S. 32); zwei Ferienwochen am Stück für die Erholung (S. 34); Freigabe für den Unterricht ohne Lohnabzug (S. 34).",
+                "quelle": "Kap. 1.4, S. 32 und S. 34"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Ferienanspruch, schulfreie Zeit, Rücksichtnahme: Glossar. Arbeitszeit und Erholung kommen aus dem Raster. Die Zuordnung ist Deutung; sie muss zur Kernaussage passen."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet Anspruch, Soll (schulfreie Zeit) und Bestimmungsrecht: Für den Wunsch spricht das Soll, für den Betrieb das Bestimmungsrecht. Nicht aus dem Lehrmittel: ob eine nur erwähnte Woche als abgemacht gilt (offene Frage des Falls) und was mit dem Schultag in den Ferien geschieht."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 33, Ferien",
+                "fünf Wochen bis 20",
+                "bezahlt, pro Jahr",
+                "Ferienanspruch"
+              ],
+              [
+                "S. 33, Ferien",
+                "Bezug in der schulfreien Zeit",
+                "kein Ersatz durch Geld",
+                "schulfreie Zeit"
+              ],
+              [
+                "S. 33, Ferien",
+                "Betrieb bestimmt den Zeitpunkt",
+                "Rücksicht, soweit für Betrieb möglich",
+                "Rücksichtnahme"
+              ],
+              [
+                "S. 32, Arbeitszeit",
+                "Pflichtunterricht ist Arbeitszeit",
+                "gilt für die Berufsfachschule",
+                "Arbeitszeit"
+              ]
+            ],
+            "befund": "Mir stehen fünf Wochen Ferien zu, und sie sollen in der schulfreien Zeit liegen (S. 33) – die eingetragene Novemberwoche liegt in der Schulzeit. Den Zeitpunkt bestimmt aber mein Betrieb; auf meinen Wunsch nimmt er nur so weit Rücksicht, wie es zu seinen Interessen passt (S. 33). Ein festes Recht auf meine Woche habe ich nicht, aber einen guten Grund für eine andere Lösung."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 1.4 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Kap. 1.4, S. 33: Ferien sollen in der schulfreien Zeit liegen; der Ferienplan im Betrieb legt sie in die Schulzeit. Was folgt: auf der Herbstferienwoche bestehen oder die Novemberwoche gegen eine andere tauschen?",
+          "liefert": "Entscheid mit Ziel und Mindestziel",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Nennen Sie zum Entscheid ein Mindestziel: Was wollen Sie auf jeden Fall erreichen?"
+            ],
+            "satzanfaenge": [
+              "«Die Regel sieht vor, dass …»",
+              "«In meinem Fall läuft es anders, denn …»",
+              "«Ich entscheide mich für …, weil …»"
+            ],
+            "produkt": "Ihr Entscheid wird im Gesprächsplan zu Ziel, Mindestziel und Vorschlag (S. 7)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Regel mit Seite (Kap. 1.4, S. 33)",
+                "benennt die Abweichung im Fall und die Grenze der Regel",
+                "entscheidet und nennt Ziel und Mindestziel"
+              ],
+              "beispiel_pol_1": "Ich bestehe auf meiner Woche: Ferien sollen in der schulfreien Zeit liegen (Kap. 1.4, S. 33), der November liegt in der Schulzeit. Die Grenze: Den Zeitpunkt bestimmt der Betrieb. Darum biete ich Ersatz an; mein Mindestziel sind drei freie Tage.",
+              "beispiel_pol_2": "Ich schlage einen Tausch vor: Der Betrieb bestimmt den Zeitpunkt (Kap. 1.4, S. 33), der Grossauftrag geht vor. Die Regel nutze ich trotzdem: Die Novemberwoche soll in die schulfreie Zeit. Annahme: Die Reise lässt sich verschieben.",
+              "nicht_tragfaehig": "Nur «Ich habe ein Recht auf meine Woche» oder nur «Der Betrieb bestimmt» – ohne Seite, ohne die andere Seite des Konflikts, ohne Mindestziel."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was die Regel vorsieht",
+          "Wie es im Fall läuft",
+          "Was ich daraus mache"
+        ],
+        "hinweis": "Zwei Zeilen genügen. Notieren Sie links die Regel mit Seite, in der Mitte die Abweichung im Fall, rechts, was Sie daraus folgern.",
+        "loesung_zeilen": [
+          [
+            "Ferien sollen in schulfreier Zeit liegen (S. 33)",
+            "Novemberwoche liegt in der Schulzeit",
+            "Grund, eine andere Woche zu verlangen"
+          ],
+          [
+            "Betrieb bestimmt, nimmt Rücksicht (S. 33)",
+            "Wunsch war erwähnt, nicht eingetragen",
+            "ein Angebot machen, nicht nur fordern"
+          ],
+          [
+            "Fünf Wochen Ferien (S. 33)",
+            "Der Anspruch selbst ist nicht strittig",
+            "Es geht nur um den Zeitpunkt"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 1.4 (S. 3)",
+        "beispiel": [
+          "Hausordnung, Abschnitt 4 · Velos gehören in den Veloraum · Treppenhaus bleibt frei · Fluchtweg"
+        ]
+      },
+      "scaffold_90": "Nutzen Sie das Beispiel auf S. 6 und die ausgefüllte Beispielzeile im Raster (S. 3)."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Was legt die Quelle zu Anspruch und Zeitpunkt der Ferien fest? Werten Sie Ihr Raster aus: Was spricht für Ihren Wunsch, was für den Betrieb? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Belege mit Fundstelle zur Ferienregel",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-111a-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst das Raster, schreiben Sie dann den Befund.",
+              "Notieren Sie Stichworte und den Absatz, keine ganzen Sätze."
+            ],
+            "satzanfaenge": [
+              "«Die Quelle legt in Abs. … fest, dass …»",
+              "«Für meinen Wunsch spricht …; für den Betrieb spricht …»"
+            ],
+            "produkt": "Zwei Zeilen mit Absatz werden Ihre Belege im Gesprächsplan: eine für Ihren Wunsch, eine für den Betrieb."
+          },
+          "loesung": {
+            "kern": "Raster zur Quelle: Anspruch, Zeitpunkt, zwei Grenzen",
+            "quelle_ref": "q-111a-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Mindestens fünf Wochen bezahlte Ferien bis 20, danach vier (Abs. 1); der Betrieb bestimmt den Zeitpunkt, Rücksicht nimmt er, soweit seine Interessen und der Schulbesuch es zulassen (Abs. 2); bei Ferien in der Schulzeit bleibt der Unterricht Pflicht (Abs. 3).",
+                "quelle": "Quelle, Abs. 1–3"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Je Lehrjahr gerechnet (Abs. 1); zwei Wochen am Stück (Abs. 2); Schultage in den Ferien sind Arbeitszeit (Abs. 3).",
+                "quelle": "Quelle, Abs. 1–3"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Ferienanspruch, Rücksichtnahme: Glossar. Lehrjahr, Pflichtunterricht: aus dem Raster."
+              },
+              {
+                "label": "Befund",
+                "text": "Für den Wunsch: Rücksicht (Abs. 2), Schultag im November (Abs. 3). Für den Betrieb: Er bestimmt, seine Interessen zählen (Abs. 2). Offen: ob die erwähnte Woche abgemacht war."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Fünf Wochen bis 20, zwei am Stück (Abs. 4); Ferien gehören in die Unterrichtsferien, der Betrieb plant und berücksichtigt Wünsche (Abs. 8). Keine Regel zu Ferien in der Schulzeit, keine Grenze «Schulbesuch»: «Schultag im November» trägt nicht; Abs. 8 ist strenger.",
+                "quelle": "Ersatzquelle, Abs. 4–8"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 1",
+                "fünf Wochen bezahlte Ferien bis 20",
+                "danach vier Wochen",
+                "Ferienanspruch"
+              ],
+              [
+                "Abs. 1",
+                "Anspruch je Lehrjahr gerechnet",
+                "nicht je Kalenderjahr",
+                "Lehrjahr"
+              ],
+              [
+                "Abs. 2",
+                "Betrieb bestimmt, nimmt Rücksicht",
+                "zwei Grenzen: Betrieb, Schulbesuch",
+                "Rücksichtnahme"
+              ],
+              [
+                "Abs. 3",
+                "Ferien ausserhalb der Schulferien",
+                "Unterricht bleibt Pflicht",
+                "Pflichtunterricht"
+              ]
+            ],
+            "befund": "Mir stehen fünf Wochen Ferien zu, den Zeitpunkt bestimmt aber mein Betrieb (Abs. 1–2). Auf meinen Wunsch muss er so weit Rücksicht nehmen, wie es seine Interessen und der Schulbesuch zulassen. Für mich spricht, dass die Novemberwoche einen Schultag hat, den ich trotzdem besuchen müsste (Abs. 3); für den Betrieb spricht der Grossauftrag."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 1.4 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 1.4, S. 33 sagt, wann Ferien sein sollen; die Quelle, wie weit Rücksicht reicht und wie Ferien zur Schulzeit passen. Was folgt: auf der Herbstferienwoche bestehen oder die Novemberwoche gegen eine andere tauschen?",
+          "liefert": "Entscheid mit Ziel und Mindestziel",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Legen Sie Kap. 1.4, S. 33 neben Ihr Raster: Wo sagt die Quelle mehr oder anderes?",
+              "Nennen Sie zum Entscheid ein Mindestziel: Was wollen Sie auf jeden Fall erreichen?"
+            ],
+            "satzanfaenge": [
+              "«Das Lehrmittel sagt, dass …»",
+              "«Die Quelle ergänzt, dass …»",
+              "«Ich entscheide mich für …, weil …»"
+            ],
+            "produkt": "Ihr Entscheid wird im Gesprächsplan zu Ziel, Mindestziel und Vorschlag (S. 7)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt beide Pole mit Fundstelle (Kap. 1.4, S. 33; Quelle)",
+                "benennt die Grenze der Regel: Der Betrieb bestimmt",
+                "entscheidet und nennt Ziel und Mindestziel"
+              ],
+              "beispiel_pol_1": "Ich bestehe auf meiner Woche: Kap. 1.4, S. 33 will Ferien in der schulfreien Zeit, und laut Quelle (Abs. 3) müsste ich im November trotzdem zur Schule. Die Grenze: Der Betrieb bestimmt (Abs. 2). Darum biete ich Ersatz an; Mindestziel: drei freie Tage.",
+              "beispiel_pol_2": "Ich schlage einen Tausch vor: Laut Quelle (Abs. 2) zählen die Interessen des Betriebs, der Grossauftrag geht vor. Kap. 1.4, S. 33 nutze ich trotzdem: Die Novemberwoche soll in die schulfreie Zeit. Annahme: Die Reise lässt sich verschieben.",
+              "nicht_tragfaehig": "Nur «Ich habe ein Recht auf meine Woche» oder nur «Der Betrieb bestimmt» – ohne Fundstelle, ohne die andere Seite, ohne Mindestziel."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-111a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie über die QR-Seite den Ausschnitt der Quelle. Füllen Sie vier Zeilen dazu, was für Anspruch und Zeitpunkt der Ferien gilt: vorn der Absatz, dann Kernaussage, Beleg und ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-111a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "An wen wende ich mich der Reihe nach, wenn das Gespräch im Betrieb nichts bringt?",
+          "erwartung": "Nicht lange warten; zuerst das direkte Gespräch im Betrieb, dann eine Vertrauensperson oder Lehrperson (Abs. 9), zuletzt die Lehraufsicht des Kantons (Abs. 10). Kap. 1.4, S. 35 reiht anders: Selbstkritik, Vertrauensperson, Gespräch, zuletzt das Amt."
+        },
+        {
+          "ref": "q-111a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was steht im Gesetz selbst zum Zeitpunkt der Ferien – und was steht dort nicht?",
+          "erwartung": "Der Arbeitgeber bestimmt den Zeitpunkt und nimmt Rücksicht, soweit es die Interessen des Betriebs zulassen (Art. 329c Abs. 2); zwei Wochen am Stück (Art. 329c Abs. 1); fünf Wochen je Lehrjahr bis 20 (Art. 345a Abs. 3). Zu den Schulferien steht dort nichts."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Absatz 4 · Velos gehören in den Veloraum · «höchstens zwei pro Wohnung» · Hausordnung"
+        ]
+      },
+      "scaffold_90": "Nutzen Sie das Beispiel auf S. 6; die erste Rasterzeile (S. 3) können Sie gemeinsam erarbeiten."
+    }
+  }
+}
