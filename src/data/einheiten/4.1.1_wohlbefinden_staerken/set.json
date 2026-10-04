@@ -1,0 +1,414 @@
+{
+  "id": "4.1.1_wohlbefinden_staerken_set",
+  "modul": "4.1",
+  "modul_titel": "Verantwortung für mich und andere übernehmen — Selbstbild und Wohlbefinden stärken",
+  "einheit_titel": "Wohlbefinden stärken",
+  "lehrgang": "EFZ_3J",
+  "lehrgaenge": [
+    "EFZ_3J",
+    "EFZ_4J"
+  ],
+  "thema": "T4",
+  "version": "2.1.0",
+  "status": "entwurf",
+  "prinzip_ref": "4.1.1_wohlbefinden_staerken_prinzip",
+  "kn_ref": "4.1.1_wohlbefinden_staerken_kn",
+  "herausforderungen": [
+    "4.1.1_wohlbefinden_staerken_hf_A",
+    "4.1.1_wohlbefinden_staerken_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "4.1.1_wohlbefinden_staerken_hf_A",
+      "konzept": "Erwartungen als Normen mit Wert und Sanktion lesen und zeigen, wie sie das Selbstbild prägen"
+    },
+    {
+      "position": 2,
+      "herausforderung": "4.1.1_wohlbefinden_staerken_hf_B",
+      "konzept": "Ergebnisse einer Umfrage auswerten und daraus begründete, überprüfbare Massnahmen für das Wohlbefinden ableiten"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Identität",
+      "definition": "Wer ich bin: wofür ich mich halte und wofür andere mich halten.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Selbstbild",
+      "definition": "Im Lehrmittel: die Person, für die ich mich selbst halte.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Fremdbild",
+      "definition": "Im Lehrmittel: die Person, für die mich die anderen halten.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Selbstwert",
+      "definition": "Wie ich mich selbst bewerte; entsteht im Abgleich mit dem Urteil anderer.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Wert",
+      "definition": "Was einem Menschen oder einer Gruppe wichtig ist und ihr Handeln leitet.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Norm",
+      "definition": "Verhaltensregel: Sie sagt, was man tun soll, damit ein Wert gelebt wird.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Sanktion",
+      "definition": "Strafe für eine verletzte Norm, durch Mitmenschen oder Personen mit Macht.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Rolle",
+      "definition": "Platz in einer Gruppe mit Erwartungen daran; gewählt oder aufgezwungen.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Erwartung",
+      "definition": "Was andere oder ich selbst von mir verlangen, oft ohne es auszusprechen.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Eigener Massstab",
+      "definition": "Woran ich selbst messe, was für mich gut und wichtig ist.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Verinnerlichung",
+      "definition": "Ein Wert ist so selbstverständlich, dass man ihn nicht mehr bemerkt.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Rollenerwartung",
+      "definition": "Was andere von jemandem in einer bestimmten Rolle erwarten.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Idealbild",
+      "definition": "Bild davon, wie man sein sollte; oft bearbeitet und kaum zu erreichen.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Aufwärtsvergleich",
+      "definition": "Sich mit Bildern vergleichen, die idealisiert und kaum erreichbar sind.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Gesundheit",
+      "definition": "Wohlbefinden in drei Bereichen; sie muss täglich neu erworben werden.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Wohlbefinden",
+      "definition": "Körperlich, geistig und sozial; im Text des Lehrmittels «Wohlergehen».",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Lebensstil",
+      "definition": "Gewohnheiten im Alltag, die die Gesundheit stärken oder schwächen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Belastung",
+      "definition": "Was Druck macht, etwa Zeit- oder Erwartungsdruck.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Stress",
+      "definition": "Reaktion des Körpers, wenn man unter zu viel Druck steht.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Gleichgewicht",
+      "definition": "Ausgleich zwischen Arbeit, Körper, Kontakten und Sinn.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Gesundheitsförderung",
+      "definition": "Die Gesundheit täglich stärken, statt erst den Schaden zu beheben.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Befund",
+      "definition": "Ein Satz, der sagt, was eine Zahl zeigt und wie sie einzuordnen ist.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Massnahme",
+      "definition": "Was ich ab wann genau tue, damit sich etwas ändert; überprüfbar.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Eigenverantwortung",
+      "definition": "Selbst für die eigene Gesundheit sorgen, auch gegen die Bequemlichkeit.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Stressor",
+      "definition": "Auslöser von Stress, etwa Zeitdruck oder ein Konflikt.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Erholung",
+      "definition": "Zeit, in der Körper und Kopf neue Kraft sammeln, etwa im Schlaf.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Sitzdauer",
+      "definition": "Zeit, die jemand pro Tag im Sitzen verbringt.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Bewegungsempfehlung",
+      "definition": "Angabe, wie viel Bewegung pro Woche mindestens empfohlen wird.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "30 Tage ohne Ruhetag – mache ich mit?",
+    "lebensbereich": "Verein und Freizeit",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "In der Trainingsgruppe meines Turnvereins hängt seit Montag ein Aushang: «30 Tage – wer dazugehört, zieht durch.» Darunter stehen vier Regeln: 1. Jeden Tag um 5.30 Uhr aufstehen. 2. Täglich 45 Minuten Training, kein Ruhetag. 3. Jeden Tag auf der Liste am Anschlagbrett abhaken, für alle sichtbar. 4. Wer einen Tag auslässt, beginnt wieder bei Tag 1. Fast alle haben unterschrieben. Ich mag die Gruppe und will fitter werden. Für die Lehre stehe ich aber schon früh auf, und abends bin ich müde. Am Donnerstag soll ich vor der Gruppe sagen, ob ich mitmache. (Der Fall ist erfunden.)",
+    "zahlen_tabelle": [
+      {
+        "label": "Dauer",
+        "wert": "30 Tage"
+      },
+      {
+        "label": "Aufstehen",
+        "wert": "5.30 Uhr"
+      },
+      {
+        "label": "Training",
+        "wert": "45 Minuten täglich"
+      },
+      {
+        "label": "Auslassen",
+        "wert": "zurück auf Tag 1"
+      }
+    ],
+    "leitfrage": "Mache ich mit, um dazuzugehören – oder setze ich meine eigene Grenze?",
+    "mehrdeutigkeit": {
+      "trade_off": "Bei allen 30 Tagen mitziehen vs. eigene Grenzen setzen",
+      "hint": "Im Fall spricht eine erfundene Person. Sie antworten für sie, nicht über sich. Jeder Weg ist vertretbar."
+    },
+    "aktivierte_trade_offs": [
+      "Dazugehören vs. mir selbst treu bleiben",
+      "Leistung bringen vs. Erholung zulassen"
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion mündlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "einzel",
+        "partner",
+        "gruppe"
+      ],
+      "empfehlung": "Kommentieren Sie den Aushang allein. Tragen Sie Ihr Statement zwei Personen vor und lassen Sie sich zu ‹Argumentation› und ‹Position / Werthaltung› eine Rückmeldung geben."
+    },
+    "auftrag": "Prüfen Sie den Aushang mit Heft A und Heft B, kommentieren Sie ihn und sagen Sie im Statement, was die Person im Fall tut.",
+    "schritte": [
+      {
+        "label": "01 Erwartungen benennen",
+        "hint": "Heft A (S. 2), nur Vorarbeit: Welche Erwartung steckt in jeder Regel, welche Sanktion droht?"
+      },
+      {
+        "label": "02 Gesundheit prüfen",
+        "hint": "Heft B (S. 2), nur Vorarbeit: Was stärkt, was belastet im Fall Körper, Kopf, Kontakte?"
+      },
+      {
+        "label": "03 Kommentierter Aushang",
+        "hint": "A2: Regeln abschreiben; Rand je: Erwartung, Sanktion (01), Wirkung (02); eine zum Ändern markieren."
+      },
+      {
+        "label": "04 Entscheid",
+        "hint": "Mitmachen, mit eigener Regel oder absagen? Ein Satz der Person unter dem Aushang (A2), mit Preis."
+      },
+      {
+        "label": "05 Statement vor der Gruppe",
+        "hint": "Stichworte zu den vier Stationen (A3), bei Station 2 mit einem Einwand; sprechen Sie frei."
+      }
+    ],
+    "abgaben": [
+      "Kommentierter Aushang (A2): vier Regeln, Randkommentare, Markierung, Entscheid",
+      "Stichworte zum Statement (A3)",
+      "Selbsteinschätzung auf den vier Kriterien"
+    ],
+    "produkte": [
+      {
+        "schritt": 3,
+        "form": "flaeche",
+        "modus": "Rezeption schriftlich und bildlich"
+      },
+      {
+        "schritt": 5,
+        "form": "spur",
+        "modus": "Produktion mündlich",
+        "stationen": [
+          "Was ich an der Idee gut finde",
+          "Welche Regel ich für mich ändere – und warum",
+          "Was ich stattdessen zusage",
+          "Was ich mir von der Gruppe wünsche"
+        ],
+        "hinweis": "Planen Sie Ihr Statement in Stichworten, keinen ganzen Text. Sprechen Sie frei vor zwei Personen und stoppen Sie die Zeit. Geben Sie diese Seite mit Ihren Stichworten ab.",
+        "dauer": "1–2 Minuten"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Alle zeigen sich perfekt – und wer bin ich?",
+        "inhalte": [
+          "Wert, Norm und Sanktion (S. 2)",
+          "Raster: wie Erwartungen wirken (S. 3)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Was die Umfrage zeigt – und was ich daraus mache",
+        "inhalte": [
+          "Drei Bereiche der Gesundheit (S. 2)",
+          "Belastungen und Reaktionen aus LF2 (S. 2)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder sind falsch verwendet.",
+          "Einzelne Fachbegriffe verwendet, teils ungenau oder falsch zugeordnet.",
+          "Fachbegriffe korrekt verwendet und der Situation passend zugeordnet.",
+          "Fachbegriffe genau verwendet, verbunden und eigenständig auf die Situation bezogen."
+        ],
+        "indikator_produkt": "Die Randkommentare nennen je Regel Erwartung, Sanktion und Wirkung richtig."
+      },
+      {
+        "kn_kriterium": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung; Aussagen stehen ohne Beleg da.",
+          "Begründung in Ansätzen; Belege fehlen oder passen nicht.",
+          "Aussagen nachvollziehbar begründet, mit passenden Belegen.",
+          "Schlüssig begründet und belegt; Einwand der Gegenseite und Folgen aufgenommen."
+        ],
+        "indikator_produkt": "Station 2 begründet mit Beleg aus dem Kommentar und nimmt einen Einwand auf."
+      },
+      {
+        "kn_kriterium": "Identitätskonstrukt",
+        "dimension": "Ges",
+        "stufen": [
+          "Nicht erkannt, dass das Bild von sich im Austausch mit anderen entsteht.",
+          "Einfluss anderer auf das Bild von sich genannt, aber nicht gezeigt.",
+          "Gezeigt, wie Erwartungen anderer das Bild von sich und das Verhalten prägen.",
+          "Einfluss gezeigt, eigener Anteil benannt und auf eine neue Situation übertragen."
+        ],
+        "indikator_produkt": "Rand zu Regel 3 und Entscheid zeigen, wie Erwartungen das Bild von sich prägen."
+      },
+      {
+        "kn_kriterium": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine eigene Position erkennbar.",
+          "Position angedeutet, bleibt unklar oder ohne Bezug zu einem Wert.",
+          "Klare Position in Ich-Form, mit dem Wert, der dahintersteht.",
+          "Position in Ich-Form begründet; Spannungsfeld und Preis des Entscheids anerkannt."
+        ],
+        "indikator_produkt": "Entscheid und Statement sagen in Ich-Form, was die Person zusagt und was es kostet."
+      }
+    ],
+    "kontext_ausschluss": [
+      "Freundeskreis-Gruppe, bearbeitete Bilder (Heft A)",
+      "Lernendenumfrage, Lernendentreffen (Heft B)",
+      "Marktstand, Wochenmarkt, Markttag (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Der kommentierte Aushang liest jede der vier Regeln als Norm, nennt die Sanktion (zurück auf Tag 1; die Liste, die alle sehen) und sagt, was die Regel für Körper, Kopf und Kontakte bedeutet; eine Regel ist markiert.",
+        "Der Entscheid wählt einen der drei Wege und nennt den Preis in der Gruppe. Beide Spannungen sind sichtbar: dazugehören und bei sich bleiben, leisten und sich erholen.",
+        "Das Statement ist frei gesprochen, folgt den vier Stationen, steht in Ich-Form und begründet die geänderte Regel mit einem Beleg aus dem Kommentar."
+      ],
+      "tragfaehig": "Ich finde gut, dass wir uns gemeinsam etwas vornehmen. Regel 2 ändere ich für mich: Ohne Ruhetag fehlt mir die Erholung, und für die Lehre stehe ich schon früh auf (Heft B: Belastung, Gleichgewicht). Ich sage fünf Trainings pro Woche zu und hake sie ab. Von der Gruppe wünsche ich mir, dass ein Ruhetag nicht zurück auf Tag 1 führt. Das kostet mich vielleicht, dass einige finden, ich ziehe nicht durch. Ebenso tragfähig: ganz mitmachen oder absagen, wenn Norm, Sanktion und Preis benannt sind; wer ganz mitmacht, sagt an der zweiten Station, welche Regel am meisten kostet.",
+      "nicht_tragfaehig": "Regeln nur abgeschrieben oder pauschal gut oder schlecht genannt; ein Entscheid ohne Preis; ein Statement, das abgelesen wird oder die Gruppe beurteilt, statt die eigene Zusage zu nennen. Bewertet wird die Analyse am Fall, nie eine Lebensweise; Auskunft über sich selbst ist nicht verlangt."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}
