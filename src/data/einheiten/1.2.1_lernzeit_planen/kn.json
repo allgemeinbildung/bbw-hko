@@ -1,0 +1,251 @@
+{
+  "id": "1.2.1_lernzeit_planen_kn",
+  "modul": "1.2",
+  "kompetenz_nr": "1.2.1",
+  "topic_slug": "lernzeit_planen",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-10-03",
+  "set_ref": "1.2.1_lernzeit_planen_set",
+  "prinzip_ref": "1.2.1_lernzeit_planen_prinzip",
+  "anchored_situations": [
+    "1.2.1_lernzeit_planen_hf_A",
+    "1.2.1_lernzeit_planen_hf_B"
+  ],
+  "dominanter_aspekt": "Technologische und digitale Transformation",
+  "kern_kompetenzversprechen": "Ich kann meine Lern- und Arbeitszeit für eine Woche strukturiert planen, den Plan anpassen, wenn etwas dazwischenkommt, und mich gezielt und wirksam auf den nächsten Kompetenznachweis vorbereiten.",
+  "mehrdeutigkeits_pflicht": "Wie viel Plan und wie viel Spielraum, wie viel Breite und wie viel Tiefe richtig sind, hängt von Termin, Stoff und Lebenslage ab; beide Seiten bleiben begründbar.",
+  "hybrid_situation": {
+    "titel": "Fünf Wochen bis zur Regelprüfung – wie plane und lerne ich?",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Ich mache für meinen Verein den Grundkurs als Schiedsrichter/in. In fünf Wochen ist die Regelprüfung, das Regelheft hat sechzig Seiten, und ich habe mir jeden Abend eine halbe Stunde zum Lernen eingeplant. Jetzt bin ich an einem Turnierwochenende als Helfer/in eingeteilt, und zwei Abende fallen weg. Eine Kollegin aus dem Kurs schickt mir eine Kurzfassung des Regelhefts, die ein KI-Werkzeug erstellt hat, und meint, mehr brauche es nicht. Wie passe ich meinen Plan an, was lerne ich gründlich – und wofür brauche ich das Werkzeug?",
+    "leitfrage": "Wie passe ich meinen Plan an, was lerne ich gründlich – und wofür brauche ich das Werkzeug?",
+    "aktivierte_trade_offs": [
+      "Fester Plan vs. Spielraum für Unvorhergesehenes",
+      "Stoff schnell durchgehen vs. Stoff gründlich verarbeiten",
+      "Alles abdecken vs. Schwerpunkte setzen"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Szene bündelt beide Lernaufgaben: Aus Heft A kommt die Frage, wie ein Plan ohne Reserve angepasst wird, wenn Zeit wegfällt; aus Heft B die Frage, ob ein schneller Durchgang durch eine fertige Kurzfassung genügt oder ob der Stoff selbst verarbeitet werden muss und wofür ein KI-Werkzeug dabei taugt. Neu sind Gegenstand (ein Kurs im Verein mit einer Prüfung am Schluss), Beteiligte (eine Kollegin aus dem Kurs) und Lebensbereich (Verein und Freizeit statt Lehrbetrieb, Berufsfachschule oder überbetrieblicher Kurs). Übertragen werden müssen beide Werkzeuge zugleich: Zeit mit Reserve planen und nach Wichtigkeit ordnen, und den Stoff so verarbeiten, dass er ohne Hilfsmittel erklärt werden kann. Dazu kommt das Spannungsfeld zwischen Breite und Schwerpunkt.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "jeden Abend eine halbe Stunde eingeplant – und jetzt fallen zwei Abende weg"
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "eine Kollegin schickt mir eine Kurzfassung, die ein KI-Werkzeug erstellt hat, und meint, mehr brauche es nicht"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, wozu eine Reserve im Plan dient und was es heisst, Aufgaben nach muss, soll und kann zu ordnen.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Wenden Sie beides auf den Fall an: Wie viel Lernzeit bleibt Ihnen, was davon verplanen Sie fest, und was lassen Sie offen?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Beurteilen Sie den Vorschlag der Kollegin: Was leistet die Kurzfassung, was leistet sie nicht – gemessen an dem, was Sie über wirksames Lernen wissen?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie den Fall mit einer Ihrer beiden Herausforderungen: Welches Vorgehen übernehmen Sie, und was müssen Sie hier anders machen?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Die Kollegin sagt, mehr als die Kurzfassung brauche es nicht. Wie stehen Sie dazu – und was sind Sie bereit aufzugeben: Zeit, Breite oder Gründlichkeit?",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        2,
+        4,
+        6
+      ],
+      "aspekte": [
+        "Technologische und digitale Transformation",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie zwei Grundsätze der Planung und zwei Lernstrategien, die im Fall helfen, und sagen Sie je, was sie bewirken.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Unterscheiden Sie im Fall, was fest ist, was sich verschieben lässt und was wegfallen kann. Ordnen Sie den Stoff nach muss, soll und kann.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie, wie Sie Ihren Plan anpassen. Stellen Sie zwei Möglichkeiten mit ihren Folgen einander gegenüber und begründen Sie Ihre Wahl.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form Regeln für Ihre Vorbereitung: eine zur Reserve im Plan, eine zum Verarbeiten des Stoffs und eine dazu, wofür Sie das KI-Werkzeug einsetzen und wie Sie seine Antworten prüfen.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        2,
+        4,
+        6
+      ],
+      "aspekte": [
+        "Technologische und digitale Transformation",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben (Wochenplan mit Anpassungsnotiz; Abfrageprotokoll mit Lernstand-Notiz).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Wie zeigt sich dieses Prinzip im Fall mit der Regelprüfung in fünf Wochen? Was ist gleich wie in Ihrer Herausforderung, was ist anders?",
+        "Wann versagt das Prinzip – wann hilft mehr Planung nicht weiter, wann genügt ein schneller Durchgang? Was haben Ihnen die beiden Herausforderungen zusammen dazu gezeigt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        6,
+        2,
+        4
+      ],
+      "aspekte": [
+        "Technologische und digitale Transformation",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe aus Planung und Lernen fehlen oder sind falsch verwendet.",
+          "Einzelne Begriffe sind richtig verwendet, andere ungenau oder verwechselt.",
+          "Begriffe sind korrekt und zur Situation passend verwendet; Aussagen sind geprüft.",
+          "Begriffe sind korrekt und eigenständig verknüpft; die Grenzen eines Verfahrens werden genannt."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Entscheide stehen ohne Begründung da.",
+          "Begründungen sind angedeutet, bleiben aber lückenhaft oder ohne Bezug zur Situation.",
+          "Entscheide sind nachvollziehbar begründet und an der Situation belegt.",
+          "Schlüssig begründet; ein Einwand wird aufgenommen und beantwortet, die Folgen des Entscheids werden genannt."
+        ]
+      },
+      {
+        "name": "Technologisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Nicht erkennbar, wofür ein digitales Werkzeug beim Planen oder Lernen taugt.",
+          "Nutzen oder Grenze des Werkzeugs teilweise erkannt; sein Ergebnis wird ungeprüft übernommen.",
+          "Das Werkzeug ist gezielt eingesetzt: Es stützt die eigene Arbeit, sein Ergebnis ist geprüft.",
+          "Der Umgang mit dem Werkzeug wird auf einen neuen Fall übertragen und begründet."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position ist nicht erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder ohne Begründung.",
+          "Klare Position in Ich-Form, nachvollziehbar begründet.",
+          "Begründete Position in Ich-Form; das Spannungsfeld wird anerkannt, und es wird gesagt, was der Entscheid kostet."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}
