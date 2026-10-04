@@ -1,0 +1,972 @@
+{
+  "id": "4.2.1_risiken_absichern_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "4.2",
+  "modul_titel": "Verantwortung für mich und andere übernehmen — Risiken erkennen und absichern",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Ich bin doch versichert – wofür hafte ich trotzdem?",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Haftung erkennen und Massnahmen ergreifen"
+  },
+  "prinzip_ref": "4.2.1_risiken_absichern_prinzip",
+  "nrlp": {
+    "nr": "4.2.2",
+    "nr_primary": [
+      "4.2.2"
+    ],
+    "lebensbezug": "4.2",
+    "themen": [
+      "T4"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R4"
+      },
+      {
+        "aspekt": "Recht",
+        "iteration": "R3"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      7,
+      11,
+      5
+    ],
+    "kompetenz_id": "4.2.2",
+    "lebensbezug_id": "4.2",
+    "kompetenz_text": "Ich kann Situationen erkennen, in denen ich haftbar bin und Massnahmen ergreifen, um mich vor Schäden an Dritten finanziell abzusichern.",
+    "lebensbezug_text": "Ich bin im Alltag gesundheitlichen und finanziellen Risiken ausgesetzt."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Seit einem halben Jahr fahre ich mit dem Roller zur Arbeit. Vor drei Monaten habe ich auf dem Heimweg kurz aufs Handy geschaut und eine Velofahrerin gestreift. Sie stürzte, konnte zwei Wochen nicht arbeiten, ihr Velo ist kaputt. Meine Versicherung hat ihr CHF 14'000 bezahlt und schreibt mir jetzt: Wegen «grober Fahrlässigkeit» fordere sie 20 Prozent zurück, also CHF 2'800; dazu schulde ich der Versicherung den Selbstbehalt von CHF 1'000 aus meiner Police. Bis Ende Monat soll ich mich melden. So viel habe ich nicht auf dem Konto. Ein Kollege meint: «Du bist doch versichert, die spinnen.» Ich will klären, wofür ich selbst geradestehe, obwohl ich versichert bin, wo das in meinem Alltag sonst noch gilt und was ich ändere, damit es nicht wieder so weit kommt.",
+  "zahlen_tabelle": [
+    {
+      "label": "Von der Versicherung bezahlter Schaden",
+      "wert": "CHF 14'000"
+    },
+    {
+      "label": "Rückforderung laut Schreiben (20 %)",
+      "wert": "CHF 2'800"
+    },
+    {
+      "label": "Selbstbehalt laut meiner Police",
+      "wert": "CHF 1'000"
+    },
+    {
+      "label": "Forderung an mich im Ganzen",
+      "wert": "CHF 3'800"
+    }
+  ],
+  "leitfrage": "Wofür stehe ich selbst gerade, obwohl ich versichert bin – und was ändere ich, damit es nicht wieder so weit kommt?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Schutz durch die Versicherung vs. Verantwortung für mein Verhalten",
+    "hint": "Die Versicherung zahlt der Velofahrerin und holt einen Teil bei Ihnen zurück. Besser absichern oder anders fahren? Beides hat Gründe."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 5.2",
+      "titel": "Haftpflichtversicherungen",
+      "unterueberschrift": "Haftung und Regress",
+      "seiten": "Seite 150-152",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 5.3",
+      "titel": "Verantwortung",
+      "unterueberschrift": "Risiken junger Lenkender, Glossar",
+      "seiten": "Seite 154-155",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 4.1",
+      "titel": "Versicherungswesen",
+      "unterueberschrift": "drei Ebenen, Übersicht",
+      "seiten": "Seite 122, 126-127",
+      "fuer_leitfrage": [
+        2,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie erstellen eine Haftungs-Übersicht für Ihren Alltag. LF1 liefert die Begriffe, LF2 vier eingeordnete Situationen, LF3 Belege dafür, was die Versicherung zahlt und was sie zurückfordert, LF4 Ihre drei begründeten Massnahmen.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 5.2 | S. 150-152 · Kap. 5.3 | S. 155",
+      "text": "Erklären Sie mit Kap. 5.2 (S. 150–152) und dem Glossar S. 155: Haftpflicht, Drittperson, Verschuldens- und Kausalhaftung. Was bedeuten grobe Fahrlässigkeit, Regress und Selbstbehalt?",
+      "liefert": "Begriffe zu Haftung und Regress",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 150: Drittperson, Selbstbehalt, «grob» (nur Beispiele). S. 151: Haftungsarten.",
+          "Regress heisst auch Rückgriff: Die Versicherung holt Geld bei Ihnen zurück."
+        ],
+        "satzanfaenge": [
+          "«Haftpflicht heisst, dass ich …»",
+          "«Eine Drittperson ist …, nicht aber …»",
+          "«Grob fahrlässig ist zum Beispiel …»"
+        ],
+        "produkt": "Mit diesen Begriffen schreiben Sie auf S. 7 zu jeder Situation die Notiz."
+      },
+      "loesung": {
+        "kern": "Haftung, Drittperson, zwei Haftungsarten, Regress",
+        "zeilen": [
+          {
+            "label": "Haftpflicht",
+            "text": "Pflicht, einen Schaden zu ersetzen, den ich jemand anderem zugefügt habe (OR 41).",
+            "quelle": "Kap. 5.2, S. 150; 5.3, S. 155"
+          },
+          {
+            "label": "Drittperson",
+            "text": "Alle ausser mir (Erstperson), Angehörigen und Personen im selben Haushalt (Zweitpersonen).",
+            "quelle": "Kap. 5.2, S. 150"
+          },
+          {
+            "label": "Zwei Arten Haftung",
+            "text": "Verschuldenshaftung: Ich hafte, weil ich schuld bin. Kausalhaftung: auch ohne eigenes direktes Verschulden (vier Fälle, S. 151); laut S. 150 auch im Strassenverkehr.",
+            "quelle": "Kap. 5.2, S. 150-151"
+          },
+          {
+            "label": "Grobe Fahrlässigkeit",
+            "text": "Fahrlässig: nötige Sorgfalt ausser Acht lassen (S. 155). Für «grob» nur Beispiele (S. 150): ohne Gurt, abgefahrene Pneus, betrunken, Rotlicht.",
+            "quelle": "Kap. 5.2, S. 150; 5.3, S. 155"
+          },
+          {
+            "label": "Regress",
+            "text": "Die Versicherung zahlt und darf bei grober Fahrlässigkeit einen Teil zurückfordern. Das Wort «Rückgriff» setzt das Heft.",
+            "quelle": "Kap. 5.2, S. 150; 5.3, S. 155"
+          },
+          {
+            "label": "Selbstbehalt",
+            "text": "Unter 25 in der Regel 1000 Franken (S. 150); die Umschreibung stammt vom Heft.",
+            "quelle": "Kap. 5.2, S. 150"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 5.2 | S. 150-151 · Kap. 4.1 | S. 127 · eigener Fall",
+      "text": "Ordnen Sie vier Situationen aus Ihrem Alltag ein (etwa Velo, Sport, Geliehenes), eine davon der Unfall: Welche Haftung gilt (Kap. 5.2, S. 150–151), welche Versicherung ist zuständig (Kap. 4.1, S. 127)?",
+      "liefert": "Vier eingeordnete Situationen",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Im Strassenverkehr haften Sie auch ohne Schuld (S. 150); beim Unfall kommt Schuld dazu.",
+          "S. 127: Welche Versicherung? Pflicht oder freiwillig? Zu Hause in der Police nachsehen."
+        ],
+        "satzanfaenge": [
+          "«Wenn ich …, hafte ich, weil …»",
+          "«Zuständig wäre die …; sie ist …»",
+          "«Ohne eigene Schuld hafte ich, wenn …»"
+        ],
+        "produkt": "Die vier Situationen kommen auf S. 7, je mit Notiz: Art der Haftung, Versicherung."
+      },
+      "loesung": {
+        "kern": "Vier Situationen: Haftung und zuständige Versicherung",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Vier Situationen, eine davon der Unfall; je: wem der Schaden entsteht, Art der Haftung, zuständige Versicherung."
+          },
+          {
+            "label": "Zum Fall",
+            "text": "Roller: laut S. 150 Kausalhaftung im Strassenverkehr; Motorfahrzeughaftpflicht, obligatorisch (S. 127).",
+            "quelle": "Kap. 5.2, S. 150; 4.1, S. 127"
+          },
+          {
+            "label": "Weitere, möglich",
+            "text": "Mit dem Velo jemanden anfahren, bei Bekannten etwas zerbrechen: Verschuldenshaftung (S. 151); Privathaftpflicht, freiwillig (S. 127, 152). Eigener Hund: Kausalhaftung (S. 151); Privathaftpflicht für Tierhalterinnen und Tierhalter (S. 127).",
+            "quelle": "Kap. 5.2, S. 151; 4.1, S. 127"
+          },
+          {
+            "label": "Grenze",
+            "text": "Ob eine Privathaftpflicht besteht, steht nur in der eigenen Police. Selber Haushalt: keine Drittperson (S. 150); dass dann keine Versicherung zahlt, ist Deutung."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "«Versichert» mit «kostet mich nichts» gleichsetzen; Fälle von S. 151 auf sich beziehen, in denen Eltern oder Arbeitgeber haften."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kommentierte Haftungs-Übersicht für meinen Alltag mit drei Massnahmen",
+    "titel": "Meine Haftungs-Übersicht mit drei Massnahmen",
+    "format_detail": "Sie erstellen auf S. 7 eine Übersicht für sich selbst, mit drei Feldern und einer Legende. Feld «Vier Situationen»: vier Situationen aus Ihrem eigenen Alltag, in denen Sie haften könnten, eine davon der Unfall mit dem Roller. Jede Situation trägt eine Marke aus der Legende (Versicherung zahlt · Lücke – nicht gedeckt · zahle ich selbst) und eine Notiz in Stichworten: Art der Haftung, zuständige Versicherung, was an Ihnen hängen bleibt. Feld «Meine drei Massnahmen»: eine Massnahme, die das Risiko vermeidet, eine, die es vermindert, und eine, die die Folgen absichert – je mit einem Satz Begründung; darunter ein Satz, der auf den Einwand des Kollegen antwortet. Feld «Was bei mir bleibt»: zwei Zeilen aus dem Raster S. 3 mit Fundstelle als Belege dafür, was trotz Versicherung zu Ihnen zurückkommt.",
+    "beschreibung": "Je Situation eine Marke: «Versicherung zahlt» (gedeckt): Sie fordert nichts zurück. «Lücke»: Keine Versicherung zahlt. «Zahle ich selbst»: Sie zahlt zuerst, ich einen Teil (Selbstbehalt, Regress).",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "LF1 klärt die Begriffe. Felder auf S. 7: «Vier Situationen», «Meine drei Massnahmen», «Was bei mir bleibt»; dazu die Legende (drei Marken)."
+      },
+      {
+        "label": "02 Vier Situationen einordnen",
+        "hint": "Aus LF2: ins Feld «Vier Situationen» vier Situationen aus Ihrem Alltag, eine davon der Unfall. Notiz: Art der Haftung, Versicherung."
+      },
+      {
+        "label": "03 Lücken belegen",
+        "hint": "Aus LF3: je Notiz ergänzen, was an Ihnen hängen bleibt, und Marke setzen. «Was bei mir bleibt»: zwei Rasterzeilen (S. 3) mit Fundstelle."
+      },
+      {
+        "label": "04 Massnahmen entscheiden",
+        "hint": "Aus LF4: «Meine drei Massnahmen» (vermeiden, vermindern, absichern), die wichtigste zuerst, je begründet. Darunter ein Satz an den Kollegen."
+      },
+      {
+        "label": "05 Übersicht prüfen",
+        "hint": "Prüfen Sie Ihre Übersicht mit den zwei Feedback-Kriterien, verbessern Sie die Stelle mit den wenigsten Punkten und geben Sie Seite 7 ab."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Übersicht: vier markierte Situationen, zwei Belege im Feld «Was bei mir bleibt»",
+      "Drei Massnahmen, je begründet, und ein Satz an den Kollegen"
+    ],
+    "beispielbild": {
+      "titel": "Anderer Fall: Unihockey (drei von vier Situationen)",
+      "legende": [
+        {
+          "key": "gedeckt",
+          "text": "Versicherung zahlt"
+        },
+        {
+          "key": "luecke",
+          "text": "Lücke – nicht gedeckt"
+        },
+        {
+          "key": "selbst",
+          "text": "zahle ich selbst"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Vier Situationen",
+          "eintraege": [
+            {
+              "marke": "gedeckt",
+              "text": "Ich stosse ein fremdes Handy zu Boden.",
+              "notiz": "Verschulden · Privathaftpflicht · nichts"
+            },
+            {
+              "marke": "luecke",
+              "text": "Ich zerreisse das Trikot meines Bruders.",
+              "notiz": "Verschulden · keine zahlt · alles"
+            },
+            {
+              "marke": "selbst",
+              "text": "Mein Schuss zerschlägt die Hallenlampe.",
+              "notiz": "Verschulden · Privathaftpflicht · Selbstbehalt"
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Massnahmen",
+          "eintraege": [
+            {
+              "text": "Vermeiden: Stock unten – nichts geht kaputt."
+            },
+            {
+              "text": "Vermindern: Handys ins Fach – weniger fällt."
+            },
+            {
+              "text": "Absichern: Privathaftpflicht – zahlt Fremden."
+            },
+            {
+              "text": "An Trainer («nur ein Spiel»): Auch da hafte ich."
+            }
+          ]
+        },
+        {
+          "titel": "Was bei mir bleibt",
+          "eintraege": [
+            {
+              "text": "Selbstbehalt CHF 200 (Police, Ziff. 5)."
+            },
+            {
+              "text": "Bruder: keine Drittperson (Kap. 5.2, S. 150)."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Unfall mit dem Roller – meine Haftungs-Übersicht",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Die Situationen 2 bis 4 sind erfunden; die Lernenden setzen ihre eigenen ein. Annahme: Es besteht eine eigene Privathaftpflicht (Situation 2) – ob das zutrifft, steht nur in der eigenen Police. Situation 4 nimmt ein Risiko aus Kap. 5.3, S. 154 auf (Einfluss von Gleichaltrigen). Deutung, nicht Lehrmittelaussage: dass bei Personen im selben Haushalt keine Haftpflichtversicherung zahlt (S. 150 sagt nur, wer Drittperson ist). Fallangaben aus dem Schreiben: 20 Prozent, CHF 2'800, CHF 1'000 – die 20 Prozent sind keine Regel. Die Fundstellen sind hier Seiten aus Kap. 5.2; wer mit der Quelle gearbeitet hat, nennt Absätze (Rückforderung: Abs. 5 und 19; Opfer erhält alles: Abs. 23) und hat für den Selbstbehalt nur die Police als Beleg. Kap. 4.1, S. 122 nennt drei Ebenen: erkennen · vermeiden oder vermindern · absichern. Das Heft teilt die zweite Ebene in zwei Massnahmen; das Erkennen leisten die vier Situationen. Fallangabe und Deutung: Situation 1 (Marke «zahle ich selbst», CHF 3'800) und der Beleg zur Rückforderung übernehmen die Sicht des Schreibens, der Blick aufs Handy sei grob fahrlässig; S. 150 nennt das Handy nicht, die Quelle nennt Ablenkung nur als mögliches Beispiel (Abs. 14). Der Satz an den Kollegen steht wie in Schritt 04 verlangt unter den Massnahmen. Der Entscheid entspricht dem zweiten Beispiel von LF4; mit Gewicht auf dem Absichern ist die Übersicht ebenso gültig.",
+      "legende": [
+        {
+          "key": "gedeckt",
+          "text": "Versicherung zahlt"
+        },
+        {
+          "key": "luecke",
+          "text": "Lücke – nicht gedeckt"
+        },
+        {
+          "key": "selbst",
+          "text": "zahle ich selbst"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Vier Situationen",
+          "eintraege": [
+            {
+              "marke": "selbst",
+              "text": "Roller, Heimweg: Blick aufs Handy, Velofahrerin gestreift (der Unfall).",
+              "notiz": "Kausalhaftung · Motorfahrzeughaftpflicht · CHF 3'800"
+            },
+            {
+              "marke": "gedeckt",
+              "text": "Velo: Beim Abbiegen streife ich ein parkiertes Auto.",
+              "notiz": "Verschulden · Privathaftpflicht (Annahme) · nichts"
+            },
+            {
+              "marke": "luecke",
+              "text": "Ich lasse das Handy meiner Schwester fallen; wir wohnen zusammen.",
+              "notiz": "keine Drittperson (S. 150) · alles bei mir (Deutung)"
+            },
+            {
+              "marke": "selbst",
+              "text": "Roller, Ausgang: Kollegen drängen, ich fahre bei Rot und streife ein Auto.",
+              "notiz": "Kausalhaftung · Rotlicht: grob (S. 150) · Regress"
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Massnahmen",
+          "eintraege": [
+            {
+              "text": "Vermeiden: Vor dem Losfahren kommt das Handy in die Tasche. Gegen die Rückforderung hilft keine Prämie."
+            },
+            {
+              "text": "Vermindern: Neben Velos fahre ich langsamer und mit Abstand; so bleibt ein Schaden kleiner."
+            },
+            {
+              "text": "Absichern: Police lesen (Selbstbehalt, Ausschlüsse), CHF 1'000 zurücklegen – ein Schaden an Dritten wird teuer."
+            },
+            {
+              "text": "An den Kollegen: Ja, versichert – darum hat die Velofahrerin ihr Geld. Mein Verhalten zahle ich selbst."
+            }
+          ]
+        },
+        {
+          "titel": "Was bei mir bleibt",
+          "eintraege": [
+            {
+              "text": "Selbstbehalt CHF 1'000: laut meiner Police; unter 25 die Regel (Kap. 5.2, S. 150)."
+            },
+            {
+              "text": "Rückforderung CHF 2'800: bei grober Fahrlässigkeit erlaubt (Kap. 5.2, S. 150)."
+            },
+            {
+              "text": "Alle Versicherten zahlen meinen Schaden mit (Kap. 4.1, S. 126); ich fahre so, dass das selten nötig ist."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Aussagen stehen ohne Begründung da.",
+        "Eine Begründung ist angedeutet, bleibt aber lückenhaft.",
+        "Die Aussagen sind nachvollziehbar begründet und mit einem Beleg gestützt.",
+        "Schlüssig begründet; ein Einwand ist beantwortet, Folgen sind benannt."
+      ],
+      "indikator_produkt": "Jede Notiz sagt, warum ich hafte; je Aussage in «Was bei mir bleibt» ein Beleg."
+    },
+    {
+      "kn_kriterium": "Ethisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Verantwortung für sich und für andere kommt nicht vor.",
+        "Verantwortung ist genannt, aber nicht auf die Situation bezogen.",
+        "Eigene Verantwortung und die gegenüber anderen sind auf die Situation angewendet.",
+        "Eigenverantwortung und Solidarität sind abgewogen und auf Neues übertragen."
+      ],
+      "indikator_produkt": "Sichtbar: wofür ich selbst einstehe und was ich Geschädigten und Mitversicherten schulde."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine fertige Übersicht an einem anderen Fall; die Satzanfänge auf S. 2 helfen bei den ersten Notizen.",
+    "scaffold_100": "Zeichnen Sie die Wirkungskette vom Blick aufs Handy bis zur Forderung und markieren Sie, an welcher Stelle Ihre erste Massnahme ansetzt."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-1-sq3r",
+      "fuer": "für S. 3: mit einer Frage lesen, Belege finden",
+      "tun": "Vor dem Lesen eine Frage notieren. Am Schluss: Wer schreibt, wozu?"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-wirkungskette",
+      "fuer": "für das Plus (S. 5): Kette vom Blick aufs Handy bis zur Forderung",
+      "beispiel": [
+        "Trockenheit → Ernte fällt aus",
+        "→ Weltmarktpreis steigt → Brot wird teurer",
+        "→ wer wenig Geld hat, spart beim Essen"
+      ]
+    },
+    {
+      "ref": "hko-gezielt-suchen",
+      "fuer": "zu Hause: in der Police die zuständige Versicherung prüfen"
+    }
+  ],
+  "mindmap_zentrum": "Eigenverantwortung oder Solidarität",
+  "mindmap_aeste": [
+    {
+      "titel": "Wann hafte ich?",
+      "punkte": [
+        "Haftpflicht",
+        "Drittperson",
+        "Verschuldenshaftung",
+        "Kausalhaftung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer zahlt den Schaden?",
+      "punkte": [
+        "Motorfahrzeughaftpflicht",
+        "Privathaftpflicht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was bleibt an mir hängen?",
+      "punkte": [
+        "grobe Fahrlässigkeit",
+        "Regress",
+        "Selbstbehalt",
+        "Bonus-Malus"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Steht bei jeder meiner vier Situationen, wie ich hafte und welche Versicherung zuständig ist?",
+      "Sagen meine drei Massnahmen, was ich künftig ändere – je mit einem Satz Begründung?"
+    ],
+    "mitnahme": [
+      "Meine Prüffragen: haftbar, gedeckt, Lücke?",
+      "Meine drei Massnahmen mit Begründung",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Haftpflicht",
+          "nach": "Drittperson",
+          "text": "gilt für Schäden an einer"
+        },
+        {
+          "von": "Verschuldenshaftung",
+          "nach": "Privathaftpflicht",
+          "text": "ist im Alltag ein Fall für die"
+        },
+        {
+          "von": "Kausalhaftung",
+          "nach": "Motorfahrzeughaftpflicht",
+          "text": "gilt im Strassenverkehr; darum ist Pflicht die"
+        },
+        {
+          "von": "grobe Fahrlässigkeit",
+          "nach": "Regress",
+          "text": "erlaubt der Versicherung den"
+        },
+        {
+          "von": "Motorfahrzeughaftpflicht",
+          "nach": "Selbstbehalt",
+          "text": "zahlt der geschädigten Person; bei mir bleibt der"
+        },
+        {
+          "von": "Motorfahrzeughaftpflicht",
+          "nach": "Bonus-Malus",
+          "text": "wird nach einem Unfall teurer durch"
+        },
+        {
+          "von": "Regress",
+          "nach": "gilt auch bei …",
+          "text": "droht (Deutung) auch"
+        }
+      ],
+      "transfer": "Deutung, nicht Lehrmittelaussage: überall, wo ich einer Drittperson grob unvorsichtig schade – beim Skifahren, beim Sport im Verein, mit einer Drohne (Haftpflicht dafür: Kap. 5.2, S. 152). Das Lehrmittel nennt den Regress nur bei der Motorfahrzeughaftpflicht (S. 150). Zur Privathaftpflicht sagt S. 151, sie übernehme den Schaden, sofern weder Absicht noch grobe Fahrlässigkeit vorliegt; ob sie dann kürzt, zurückfordert oder nicht zahlt, lässt die Seite offen. Gültig ist darum auch: «Bei grober Fahrlässigkeit kann ich dort ganz ohne Deckung dastehen.»",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Junglenker",
+          "Obligatorium"
+        ],
+        "mit_medien": [
+          "Leistungskürzung",
+          "Ablenkung"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn jede Notiz die Art der Haftung (Verschuldens- oder Kausalhaftung) und die zuständige Versicherung nennt – so verlangt es Schritt 02; beim Unfall: Kausalhaftung, Motorfahrzeughaftpflicht (Kap. 5.2, S. 150).",
+        "Ja, wenn je eine Massnahme vermeidet, vermindert und absichert, jede einen Satz Begründung hat und darunter ein Satz dem Kollegen antwortet (Schritt 04) – wie im Lösungsbild."
+      ],
+      "mitnahme": [
+        "Hafte ich – und wie? Zahlt eine Versicherung, und habe ich sie? Was bleibt trotzdem bei mir: Selbstbehalt, Rückforderung, höhere Prämie?",
+        "Handy in die Tasche (vermeiden), langsamer und mit Abstand (vermindern), Police lesen und CHF 1'000 zurücklegen (absichern) – je mit Begründung.",
+        "Zum Beispiel, ob ich eine Privathaftpflicht habe und was sie ausschliesst – das steht nur in der eigenen Police."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Im Heft: LF1 Begriffe von Haftpflicht bis Selbstbehalt",
+        "LF2: vier Situationen mit Haftung und Versicherung",
+        "LF4: Regel, Praxis im Fall und Entscheid"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Im Heft: Raster S. 3 voll (alle vier Zeilen)",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Abgabe: Haftungs-Übersicht (S. 7)",
+      "vollstaendig_wenn": [
+        "Vier Situationen mit Marke und Notiz, eine davon der Unfall",
+        "Dazu zwei Belege im Feld «Was bei mir bleibt»",
+        "Drei Massnahmen, je begründet, und ein Satz an den Kollegen"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Im Heft: Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation, LF1 und LF2: Begriffe klären, vier Situationen einordnen",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Übersicht auf S. 7 beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Übersicht fertigstellen, mit den Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst verlasse ich mich auf eine Versicherung – und was bliebe dort trotzdem an mir hängen?",
+    "ziel": "Versichern heisst, ein Risiko gemeinsam zu tragen: Die Versicherung schützt die geschädigte Person – für mein Verhalten bleibe ich verantwortlich."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Erkennen, wo ich hafte, was eine Versicherung deckt und was trotzdem an mir hängen bleibt – und daraus Massnahmen ableiten",
+    "lehrmittel_anker": "Kap. 5.2 S. 150-152 (Haftung, Drittperson, Motorfahrzeug- und Privathaftpflicht, Selbstbehalt, grobe Fahrlässigkeit, Regress, Bonus-Malus) · Kap. 5.3 S. 154-155 (Risiken junger Lenkender, Glossar) · Kap. 4.1 S. 122, 126-127 (drei Ebenen im Umgang mit Risiken, Solidaritätsprinzip, Übersicht der Versicherungen)",
+    "kn_aktivierung": "Der KN verlangt, den Rat «alles abschliessen, dann kannst du machen, was du willst» zu beurteilen: was sich in der Zeit zwischen Lehre und neuer Stelle vermeiden, vermindern oder absichern lässt – und was auch mit Versicherung die eigene Verantwortung bleibt. Genau das üben LF4 und die drei Massnahmen.",
+    "transfer_check": "Kann die Lernende an einer neuen Situation sagen, ob sie haftet, was eine Versicherung deckt und was trotzdem an ihr hängen bleibt?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "leitfragen[2] — die Lage der geschädigten Person nachvollziehen (dass sie ihre berechtigte Forderung in jedem Fall geltend machen kann) und fragen, was der gelesene Text will"
+    },
+    {
+      "sk": 11,
+      "wo": "leitfragen[3] — beurteilen, wo Unachtsamkeit endet und grobe Fahrlässigkeit beginnt, obwohl die Grenze nicht fest ist"
+    },
+    {
+      "sk": 5,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[3] — Massnahmen wählen und begründen, die zeigen, wofür ich selbst einstehe"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 5.2 | S. 150-151",
+          "text": "Warum ist die Motorfahrzeughaftpflicht laut Kap. 5.2 (S. 150–151) Pflicht, und was bleibt trotzdem bei der Person, die den Schaden verursacht? Befund: Was heisst das für Ihren Unfall?",
+          "liefert": "Belege zu Zahlung und Rückforderung",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 5.2 | S. 150-151",
+            "auftrag": "Lesen Sie Kap. 5.2, S. 150–151. Zeile 1 ist ein Beispiel. Füllen Sie drei weitere: Absatz, Kernaussage, Beleg / Beispiel und ein Begriff aus LF1 oder Glossar (für Ihre Notiz auf S. 7).",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 150, Selbstbehalte",
+              "Junglenker zahlen mit",
+              "meist CHF 1'000",
+              "Selbstbehalt"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 150: Das fette Stichwort am Absatzanfang ist Ihre Fundstelle."
+            ],
+            "satzanfaenge": [
+              "«Die Versicherung ist Pflicht, damit … (S. …)»",
+              "«Bei mir bleibt …, wenn … (S. …)»",
+              "«Für meinen Unfall leite ich ab: …»"
+            ],
+            "produkt": "Feld «Was bei mir bleibt»: zwei Rasterzeilen mit Seite. Die drei Marken sind auf S. 5 oben erklärt."
+          },
+          "loesung": {
+            "kern": "Versicherung zahlt – drei Dinge bleiben bei mir",
+            "quelle_ref": "Kap. 5.2 | S. 150-151",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Motorfahrzeughaftpflicht obligatorisch, damit Geschädigte berechtigte Forderungen in jedem Fall geltend machen können; sie übernimmt die Folgen. Bei grober Fahrlässigkeit zahlt sie und darf einen Teil zurückfordern (S. 150). Höhere Prämie nach einem Unfall (S. 151).",
+                "quelle": "Kap. 5.2, S. 150-151"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Kausalhaftung im Strassenverkehr; Nummernschild nur mit Versicherung (S. 150). Das Rechenbeispiel S. 151 ist ein Einzelfall, keine Regel.",
+                "quelle": "Kap. 5.2, S. 150-151"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Zuordnung ist Deutung; gültig ist jeder passende Begriff aus LF1 oder Glossar."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: warum die Motorfahrzeughaftpflicht Pflicht ist und was bei der verursachenden Person bleibt, mit Seite. Das Handy fehlt auf S. 150 (Fallüberlegung)."
+              },
+              {
+                "label": "Stand",
+                "text": "Geprüft 2026-10-04. Selbstbehalte laut S. 150 nur in der Regel; massgebend ist die Police."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 150, Selbstbehalte",
+                "Junglenker zahlen mit",
+                "meist CHF 1'000",
+                "Selbstbehalt"
+              ],
+              [
+                "S. 150, Schäden an Dritten",
+                "Obligatorium: Die Versicherung für Motorfahrzeuge ist Pflicht",
+                "damit Geschädigte berechtigte Forderungen in jedem Fall geltend machen können",
+                "Motorfahrzeughaftpflicht"
+              ],
+              [
+                "S. 150, Fahrlässigkeit, Regress",
+                "Bei grober Fahrlässigkeit zahlt die Versicherung und darf einen Teil zurückfordern",
+                "Beispiele: ohne Gurt, abgefahrene Pneus, betrunken, Rotlicht",
+                "grobe Fahrlässigkeit, Regress"
+              ],
+              [
+                "S. 151, nach der Tabelle",
+                "Wer einen Unfall verursacht, zahlt danach mehr Prämie",
+                "höhere Stufe; kleine Schäden zu melden lohnt sich oft nicht",
+                "Bonus-Malus"
+              ]
+            ],
+            "befund": "Laut Kap. 5.2 ist die Motorfahrzeughaftpflicht Pflicht, damit Geschädigte berechtigte Forderungen in jedem Fall geltend machen können (S. 150). Bei der Person, die den Schaden verursacht, bleiben der Selbstbehalt, bei grober Fahrlässigkeit eine Rückforderung (S. 150) und eine höhere Prämie (S. 151). Fallüberlegung: Für meinen Unfall heisst das, dass die Versicherung zu Recht bezahlt hat; ob mein Blick aufs Handy grob fahrlässig war, sagt das Lehrmittel nicht – es nennt andere Beispiele."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 5.2 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Regel: Die Versicherung zahlt (S. 150). Praxis: Ein Teil kommt zu Ihnen zurück (S. 150–151). War Ihr Blick aufs Handy grob fahrlässig (Beispiele S. 150, Definition S. 155)? Was zuerst: absichern oder anders fahren?",
+          "liefert": "Entscheid für drei begründete Massnahmen",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Die Grenze ist nicht fest: Messen Sie das Handy an den Beispielen S. 150 und an S. 155."
+            ],
+            "satzanfaenge": [
+              "«Die Regel sagt: … (S. …)»",
+              "«Bei mir kommt zurück: …, weil …»",
+              "«Ich setze zuerst auf …, denn …»"
+            ],
+            "produkt": "Ideen: Kap. 5.3, S. 154 (Risiken, Regeln) · Kap. 4.1, S. 122 (drei Ebenen) · Kap. 5.2, S. 151–152 · Police"
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Regel mit Seite: Die Motorfahrzeughaftpflicht ist Pflicht, damit Geschädigte berechtigte Forderungen in jedem Fall geltend machen können, und übernimmt die Folgen (Kap. 5.2, S. 150)",
+                "nennt, was zurückkommt: Selbstbehalt, Rückforderung (S. 150), höhere Prämie (S. 151); 20 Prozent ist keine Regel",
+                "sagt, dass die Grenze nicht fest ist (S. 150 nennt Beispiele ohne das Handy), entscheidet und wägt eigene Verantwortung gegen die Versicherten ab (Kap. 4.1, S. 126)"
+              ],
+              "beispiel_pol_1": "Ich setze zuerst auf Absichern. Die Versicherung hat der Velofahrerin CHF 14'000 bezahlt, wie es die Regel vorsieht (Kap. 5.2, S. 150) – ohne sie stünde ich allein da. Ein kurzer Blick aufs Handy ist für mich Unachtsamkeit; S. 150 nennt als grob fahrlässig anderes (Deutung). Darum frage ich nach, wie die 20 Prozent zustande kommen, lese meine Police und lege CHF 1'000 zurück. Dagegen spricht: Am Ende zahlen alle Versicherten mit (Kap. 4.1, S. 126). Das Handy bleibt darum in der Tasche – auch auf dem Velo.",
+              "beispiel_pol_2": "Ich setze zuerst auf anderes Fahren. Die Versicherung zahlt (Kap. 5.2, S. 150), aber laut Schreiben kommen CHF 3'800 zu mir zurück; dazu kann die Prämie steigen (S. 151). Wer beim Fahren aufs Handy schaut, lässt selbstverständliche Vorsicht weg – für mich grob fahrlässig, auch wenn S. 150 das Handy nicht nennt (Deutung). Die anderen Versicherten sollen nicht für meinen Leichtsinn zahlen (Kap. 4.1, S. 126). Dagegen spricht: Fehler passieren, darum lese ich meine Police. Auch auf dem Velo und zu Fuss bleibt das Handy weg.",
+              "nicht_tragfaehig": "«Die Versicherung zahlt ja» ohne Regel, ohne das, was zurückkommt, und ohne Seite; 20 Prozent als feste Regel; das Handy als Beispiel des Lehrmittels."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was die Regel vorsieht",
+          "Was im Fall geschieht",
+          "Was ich daraus mache"
+        ],
+        "hinweis": "Zwei Zeilen genügen, Stichworte mit Seite. Aus der dritten Spalte folgt, worauf Sie zuerst setzen: Das wird Ihre erste Massnahme (S. 7).",
+        "loesung_zeilen": [
+          [
+            "Die Motorfahrzeughaftpflicht ist Pflicht, damit Geschädigte berechtigte Forderungen in jedem Fall geltend machen können; sie übernimmt die Folgen (Kap. 5.2, S. 150)",
+            "Die Velofahrerin hat CHF 14'000 erhalten (Fallangabe)",
+            "Ohne Versicherung stünde ich allein da: Absichern bleibt nötig"
+          ],
+          [
+            "Bei grober Fahrlässigkeit darf sie einen Teil zurückfordern (S. 150); nach dem Unfall steigt die Prämie (S. 151)",
+            "Schreiben: CHF 2'800 und Selbstbehalt CHF 1'000 (Fallangaben; 20 Prozent ist keine Regel)",
+            "Handy weg beim Fahren; ob grob fahrlässig, bleibt mein Urteil (Deutung)"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 5.2 (S. 3)",
+        "beispiel": [
+          "S. 88 · Bibliothek kürzt · «17 statt 19 Uhr» (erfunden) · Öffnungszeit"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und eine fertige Übersicht aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Wann fordert eine Versicherung laut Quelle Geld zurück, wer erhält trotzdem alles, und wovon hängt die Höhe ab? Befund: Was leiten Sie für Ihren Unfall ab?",
+          "liefert": "Belege zu Zahlung und Rückforderung",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-421b-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst das Raster, dann der Befund. Erste Spalte: Absatznummer oder Zwischentitel.",
+              "Spalte «→ Begriff»: das Wort für Ihre Notiz auf S. 7, etwa «Regress»."
+            ],
+            "satzanfaenge": [
+              "«Die Versicherung fordert zurück, wenn … (Abs. …)»",
+              "«Trotzdem erhält … alles (Abs. …)»",
+              "«Für meinen Unfall leite ich ab: …»"
+            ],
+            "produkt": "Feld «Was bei mir bleibt»: zwei Rasterzeilen mit Absatz. Die drei Marken sind auf S. 5 oben erklärt."
+          },
+          "loesung": {
+            "kern": "Regress meist bei grobem Fehler; Opfer erhält alles",
+            "quelle_ref": "q-421b-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Regress setzt meist grobe Fahrlässigkeit voraus; die Haftpflicht zahlt zuerst (Abs. 4–5, 19). Grob fahrlässig: etwa Ablenkung (Abs. 12–15). Höhe je nach Fehler und Umständen (Abs. 20–22). Opfer erhält alles (Abs. 23).",
+                "quelle": "Quelle, Abs. 4-23"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Abs. 9: Art. 65 Abs. 3 SVG, Art. 14 VVG. Abs. 6, 10: Leistungskürzung auch bei der Unfallversicherung (Artikel nicht gegengelesen).",
+                "quelle": "Quelle, Abs. 6-10"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Die Quelle sagt für Regress auch «Rückgriff». «Drittperson» zu Abs. 23 ist Deutung."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Abs. 23–24 Polizei; Abs. 26 Ausweisentzug; Abs. 29 Regress, ganz oder teilweise; Abs. 33 Beispiel. Anders: Auslöser Alkohol; Opfer und Höhe fehlen.",
+                "quelle": "Ersatzquelle, Abs. 23-33"
+              },
+              {
+                "label": "Stand, Zählweise",
+                "text": "Abruf 2026-10-04, Seiten ohne Datum. Alle Quellen gezählt wie im Archiv: Titel = 1, Zwischentitel und Aufzählungspunkte zählen."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 4–5, «in Kürze»",
+                "Regress und Leistungskürzung setzen meist grobe Fahrlässigkeit voraus; die Haftpflicht zahlt zuerst",
+                "«meist» – keine feste Regel",
+                "Regress"
+              ],
+              [
+                "Abs. 12–15, «Was ist Grobfahrlässigkeit?»",
+                "Selbstverständliche Vorsicht missachtet",
+                "drei Beispiele: viel zu schnell, Ablenkung, Alkohol oder Drogen",
+                "grobe Fahrlässigkeit"
+              ],
+              [
+                "Abs. 19–22, «Wie läuft ein Rückgriff …?»",
+                "Erst zahlt die Versicherung dem Opfer, dann kann sie einen Teil zurückfordern",
+                "Höhe je nach Schwere des Fehlers und Umständen; keine Zahl",
+                "Regress"
+              ],
+              [
+                "Abs. 23, «Wichtig»",
+                "Das Opfer erhält alles; die Forderung trifft nur, wer verantwortlich ist",
+                "«vollständig»",
+                "Haftpflicht, Drittperson (Deutung)"
+              ]
+            ],
+            "befund": "Laut Quelle zahlt die Motorfahrzeughaftpflicht zuerst dem Opfer und kann bei grober Fahrlässigkeit einen Teil zurückfordern (Abs. 5, 19); das Opfer erhält alles (Abs. 23). Als Beispiel nennt sie Ablenkung (Abs. 14); die Höhe hängt von Fehler und Umständen ab (Abs. 20–22). Fallüberlegung: Mein Blick aufs Handy kann darunter fallen; die 20 Prozent stehen nur im Schreiben."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 5.2 und Quelle · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Regel: Das Gesetz erlaubt den Regress (Abs. 9). Praxis: Beispiele für grobe Fahrlässigkeit (Abs. 12–15), Höhe je nach Fall (Abs. 20–22). War es Ihr Blick aufs Handy? Was zuerst: absichern oder anders fahren?",
+          "liefert": "Entscheid für drei begründete Massnahmen",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Je ein Satz zu Regel und Praxis, dann Ihr Urteil: Es wird die erste Massnahme auf S. 7.",
+              "Wo «grob fahrlässig» beginnt, zeigt der Fall: Abs. 12–15, Definition und Beispiele."
+            ],
+            "satzanfaenge": [
+              "«Die Regel sagt: … (Abs. …)»",
+              "«Bei mir kommt zurück: …, weil …»",
+              "«Ich setze zuerst auf …, denn …»"
+            ],
+            "produkt": "Ideen: Kap. 5.3, S. 154 (Risiken, Regeln) · Kap. 4.1, S. 122 (drei Ebenen) · Kap. 5.2, S. 151–152 · Police"
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Regel mit Absatz: Regress bei grober Fahrlässigkeit (Abs. 9; Art. 65 Abs. 3 SVG, Stand 1.4.2025); das Opfer erhält alles (Abs. 23)",
+                "nennt die Praxis: was als grob fahrlässig gilt (Abs. 12–15), wovon die Höhe abhängt (Abs. 20–22); 20 Prozent ist keine Regel",
+                "sagt, dass die Grenze nicht fest ist (Ablenkung als mögliches Beispiel), entscheidet und wägt eigene Verantwortung gegen die Versicherten ab (Kap. 4.1, S. 126)",
+                "mit Ersatzquelle: Regel Abs. 29, Praxis Abs. 23–26 und 33; Grenze mit Kap. 5.2, S. 150"
+              ],
+              "beispiel_pol_1": "Ich setze zuerst auf Absichern. Die Versicherung darf zurückfordern, wenn ich grob fahrlässig war (Abs. 9). Ob mein kurzer Blick aufs Handy dazu zählt, ist nicht eindeutig: Ablenkung ist nur ein mögliches Beispiel (Abs. 12–14). Darum frage ich nach, wie die 20 Prozent zustande kommen, lese meine Police und lege CHF 1'000 zurück. Dagegen spricht: Die Velofahrerin hat alles erhalten (Abs. 23) – aus dem Topf, in den alle einzahlen (Kap. 4.1, S. 126). Das Handy bleibt darum in der Tasche – auch auf dem Velo.",
+              "beispiel_pol_2": "Ich setze zuerst auf anderes Fahren. Das Opfer erhält alles (Abs. 23), ein Teil kommt bei grober Fahrlässigkeit zu mir zurück (Abs. 9, 19). Ablenkung steht als Beispiel da (Abs. 14); ich nehme die CHF 3'800 an, auch wenn die Grenze nicht fest ist. Mehr Schutz ändert nichts daran, dass eine Frau gestürzt ist, und die anderen Versicherten sollen nicht für meinen Leichtsinn zahlen (Kap. 4.1, S. 126). Dagegen spricht: Fehler passieren, darum lese ich meine Police. Auch auf dem Velo und zu Fuss bleibt das Handy weg.",
+              "nicht_tragfaehig": "«Die Versicherung zahlt ja» ohne Regel, Praxis und Absatz; 20 Prozent als feste Regel; ein Entscheid ohne Blick auf das Opfer oder die anderen Versicherten."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-421b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Quelle (QR-Seite) bis zum Ende des Abschnitts «Wie läuft ein Rückgriff … ab?». Je Zeile: Absatznummer oder Zwischentitel, Kernaussage, Beleg (auch Artikelnummer oder Beispiel), Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-421b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was will dieser Text von mir, und an welchen Stellen erkenne ich das?",
+          "erwartung": "Der Text informiert und verkauft. Information: Leistungskürzung oder Regress bei grober Fahrlässigkeit (Abs. 18, 21). Verkauf: ein Zusatzbaustein, mit dem die Versicherung darauf verzichtet (Abs. 23), für alle empfohlen (Abs. 29); Ausnahmen Alkohol, Drogen, Rasen (Abs. 24). Die Absicht zeigt sich an Wertungen und am Absender (Deutung). Nicht übernehmen: Abs. 27 stellt den Regress teils als Pflicht dar; das Gesetz kennt nur ein Recht dazu."
+        },
+        {
+          "ref": "q-421b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wer haftet laut Gesetz, an wen halten sich Geschädigte, wann wird die Leistung gekürzt?",
+          "erwartung": "Haftung: Wer widerrechtlich schadet, mit Absicht oder fahrlässig, ersetzt den Schaden (OR 41 Abs. 1). Geschädigte fordern direkt beim Versicherer; dessen Vertrag mit der versicherten Person hält sie nicht auf (SVG 65 Abs. 1–2). Regress, soweit eine Leistungskürzung zulässig wäre (SVG 65 Abs. 3). Bei Absicht keine Leistung, bei grober Fahrlässigkeit Leistungskürzung nach Verschulden, bei leichter volle Leistung (VVG 14 Abs. 1, 2, 4). Fassungen: OR 1.1.2026, SVG 1.4.2025, VVG 1.1.2024."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Abs. 3 · Bibliothek kürzt · «17 statt 19 Uhr» (erfunden) · Öffnungszeit"
+        ]
+      },
+      "scaffold_90": "Lesen Sie den Kasten «in Kürze» der Quelle gemeinsam und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt eine fertige Übersicht."
+    }
+  }
+}

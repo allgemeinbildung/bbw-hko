@@ -1,0 +1,251 @@
+{
+  "id": "4.2.1_risiken_absichern_kn",
+  "modul": "4.2",
+  "kompetenz_nr": "4.2.1",
+  "topic_slug": "risiken_absichern",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-10-04",
+  "set_ref": "4.2.1_risiken_absichern_set",
+  "prinzip_ref": "4.2.1_risiken_absichern_prinzip",
+  "anchored_situations": [
+    "4.2.1_risiken_absichern_hf_A",
+    "4.2.1_risiken_absichern_hf_B"
+  ],
+  "dominanter_aspekt": "Ethik",
+  "kern_kompetenzversprechen": "Ich kann Risiken für meine Gesundheit und Situationen, in denen ich hafte, erkennen und beurteilen und daraus ableiten, wie ich mich absichere – und was ich trotz Versicherung selbst verantworte.",
+  "mehrdeutigkeits_pflicht": "Wie viel Risiko jemand selbst trägt und wie viel er absichert, hängt von Geld, Lebenslage und Haltung ab; mehr selbst tragen und mehr absichern bleiben beide begründbar.",
+  "hybrid_situation": {
+    "titel": "Zwischen Lehre und neuer Stelle – was sichere ich ab?",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Mein Lehrvertrag endet Ende Juli, der Stellenantritt im neuen Betrieb ist am 1. November. Zur Überbrückung helfe ich an zwei Wochenenden im Monat an einem Marktstand aus, rund sechs Stunden pro Woche. Im September fahre ich drei Wochen mit Interrail durch Europa, will klettern und viel Velo fahren; mein Erspartes von CHF 2'400 reicht dafür knapp. Mein Bruder rät, bis November bei den Versicherungen zu sparen: «Dir passiert schon nichts.» Eine Kollegin sagt, ich solle alles abschliessen, dann könne ich unterwegs machen, was ich will. Was sichere ich für diese Zeit ab, was trage ich selbst – und was bleibt auch mit Versicherung meine Verantwortung?",
+    "leitfrage": "Was sichere ich für diese Zeit ab, was trage ich selbst – und was bleibt auch mit Versicherung meine Verantwortung?",
+    "aktivierte_trade_offs": [
+      "Tiefe Prämie heute vs. tragbare Kosten im Ernstfall",
+      "Schutz durch die Versicherung vs. Verantwortung für mein Verhalten",
+      "Risiko vermeiden vs. Folgen absichern"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Szene bündelt beide Lernaufgaben: Aus Heft A kommt die Frage, wie viel Risiko für die eigene Gesundheit jemand mit wenig Geld selbst tragen kann und was abgesichert sein muss; aus Heft B die Einsicht, dass eine Versicherung die Verantwortung für das eigene Verhalten nicht abnimmt. Neu sind der Gegenstand (eine Zeit zwischen zwei Anstellungen mit einer Reise), die Beteiligten (ein Bruder und eine Kollegin mit zwei gegensätzlichen Ratschlägen) und der Lebensbereich. Übertragen werden müssen beide Werkzeuge zugleich: prüfen, welche Deckung in dieser Zeit wegfällt und was ihr Ersatz kostet, und unterscheiden, was sich vermeiden, vermindern oder absichern lässt und was auch dann an der eigenen Person hängen bleibt.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "bis November bei den Versicherungen sparen, obwohl das Ersparte knapp reicht und die Arbeit am Marktstand nur rund sechs Stunden pro Woche umfasst"
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "alles abschliessen, dann könne ich unterwegs machen, was ich will"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, welche Versicherungen in Ihrer Lage zwischen Ende Juli und dem 1. November eine Rolle spielen und wovor jede schützt.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Sie arbeiten in dieser Zeit rund sechs Stunden pro Woche. Zeigen Sie am Fall, was das für Ihre Deckung bei einem Unfall bedeutet und was Sie tun können.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Beurteilen Sie den Rat des Bruders und den Rat der Kollegin: Was stimmt an jedem, und wo führt er Sie in ein Risiko?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie den Fall mit einer Ihrer beiden Herausforderungen: Was erkennen Sie wieder, was ist hier neu, und welches Werkzeug hilft Ihnen jetzt?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Wie viel Risiko tragen Sie in dieser Zeit selbst, und wofür stehen Sie ein, auch wenn eine Versicherung zahlt? Begründen Sie Ihre Haltung.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        5,
+        11,
+        10
+      ],
+      "aspekte": [
+        "Ethik",
+        "Recht"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie mit zwei Fachbegriffen der Einheit, welche Risiken in dieser Zeit bei Ihnen bleiben, wenn Sie nichts unternehmen.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Unterscheiden Sie am Fall: Welches Risiko können Sie vermeiden oder vermindern, welches absichern – und was bleibt Ihre Verantwortung, auch wenn Sie versichert sind?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie, was Sie bis November abschliessen oder verlängern. Stellen Sie zwei Möglichkeiten mit ihren Folgen einander gegenüber und begründen Sie Ihre Wahl.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form zwei Regeln, an die Sie sich unterwegs halten, und antworten Sie in einem Satz auf «dann kannst du machen, was du willst».",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        5,
+        11,
+        10
+      ],
+      "aspekte": [
+        "Ethik",
+        "Recht"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben (Vergleichstabelle zu zwei Franchisen; Haftungs-Übersicht mit Massnahmen).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Wie zeigt sich dieses Prinzip im Fall der Zeit zwischen Lehre und neuer Stelle? Was ist gleich wie in Ihrer Herausforderung, was ist anders?",
+        "Wann versagt das Prinzip — wann hilft es nicht, sich abzusichern? Was haben Ihnen die beiden Herausforderungen zusammen dazu gezeigt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        5,
+        10,
+        11
+      ],
+      "aspekte": [
+        "Ethik",
+        "Recht"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder sind falsch gebraucht.",
+          "Einige Fachbegriffe stimmen, andere sind ungenau oder verwechselt.",
+          "Fachbegriffe und Angaben sind richtig und passen zur Situation.",
+          "Fachbegriffe richtig und selbstständig verbunden; ihre Grenzen sind benannt."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Aussagen stehen ohne Begründung da.",
+          "Eine Begründung ist angedeutet, bleibt aber lückenhaft.",
+          "Die Aussagen sind nachvollziehbar begründet und mit einem Beleg gestützt.",
+          "Schlüssig begründet; ein Einwand ist beantwortet, Folgen sind benannt."
+        ]
+      },
+      {
+        "name": "Ethisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Verantwortung für sich und für andere kommt nicht vor.",
+          "Verantwortung ist genannt, aber nicht auf die Situation bezogen.",
+          "Eigene Verantwortung und die gegenüber anderen sind auf die Situation angewendet.",
+          "Eigenverantwortung und Solidarität sind abgewogen und auf Neues übertragen."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position ist nicht erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+          "Die Position steht klar in Ich-Form und ist begründet.",
+          "Begründete Position in Ich-Form; was für die andere Lösung spricht, ist anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

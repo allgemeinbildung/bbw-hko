@@ -1,0 +1,922 @@
+{
+  "id": "4.2.1_risiken_absichern_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "4.2",
+  "modul_titel": "Verantwortung für mich und andere übernehmen — Risiken erkennen und absichern",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Meine erste eigene Police – welche Franchise wähle ich?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Gesundheitsrisiken beurteilen und absichern"
+  },
+  "prinzip_ref": "4.2.1_risiken_absichern_prinzip",
+  "nrlp": {
+    "nr": "4.2.1",
+    "nr_primary": [
+      "4.2.1"
+    ],
+    "lebensbezug": "4.2",
+    "themen": [
+      "T4"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ethik",
+        "iteration": "R4"
+      },
+      {
+        "aspekt": "Recht",
+        "iteration": "R3"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      10,
+      11,
+      5
+    ],
+    "kompetenz_id": "4.2.1",
+    "lebensbezug_id": "4.2",
+    "kompetenz_text": "Ich kann mögliche gesundheitliche Risiken erkennen, beurteilen und eine geeignete finanzielle Absicherung ableiten.",
+    "lebensbezug_text": "Ich bin im Alltag gesundheitlichen und finanziellen Risiken ausgesetzt."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Im Sommer bin ich 18 geworden. Die Offerte meiner Krankenkasse für das neue Jahr liegt vor mir: Die Kinderprämie fällt weg, ich zahle neu selbst. Ich muss ankreuzen, welche Franchise ich will – den Betrag, den ich im Jahr zuerst selbst zahle, bevor die Kasse etwas übernimmt. Mit CHF 300 kostet die Prämie CHF 352 im Monat, mit CHF 2'500 nur CHF 262. Aber ich verdiene CHF 1'050, trainiere im Verein und habe CHF 900 gespart. Meine Mutter rät: «Rechne drei Fälle: ohne Arzt, mit CHF 1'500 Behandlungskosten, mit CHF 5'000.» In der Prämie stecken CHF 24 im Monat für die Unfalldeckung; laut meiner Berufsbildnerin bin ich über den Betrieb gegen Unfälle versichert, auch in der Freizeit. In zehn Tagen muss die Offerte zurück. Ich will klären, welche Franchise zu mir passt.",
+  "zahlen_tabelle": [
+    {
+      "label": "Prämie im Monat mit Franchise CHF 300",
+      "wert": "CHF 352"
+    },
+    {
+      "label": "Prämie im Monat mit Franchise CHF 2'500",
+      "wert": "CHF 262"
+    },
+    {
+      "label": "Unfalldeckung im Monat (in beiden drin)",
+      "wert": "CHF 24"
+    },
+    {
+      "label": "Mein Erspartes · mein Lohn im Monat",
+      "wert": "CHF 900 · 1'050"
+    }
+  ],
+  "leitfrage": "Welche Franchise wähle ich, wenn ich heute sparen will und nicht weiss, ob ich nächstes Jahr gesund bleibe?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Tiefe Prämie heute vs. tragbare Kosten im Ernstfall",
+    "hint": "Die hohe Franchise spart jeden Monat Prämie. Die tiefe schützt, wenn Sie krank werden. Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 4.2",
+      "titel": "Kranken- und Unfallversicherung",
+      "unterueberschrift": "Franchise, Unfall",
+      "seiten": "Seite 128-131",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 4.1",
+      "titel": "Versicherungswesen allgemein",
+      "unterueberschrift": "Risiken, Solidarität",
+      "seiten": "Seite 122, 126",
+      "fuer_leitfrage": [
+        1
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie erstellen eine Vergleichstabelle zu zwei Franchisen und entscheiden sich für eine. LF1 liefert die Begriffe, LF2 die Zahlen für beide Spalten, LF3 zwei Belege zu Ihrer Lage, LF4 Ihren begründeten Entscheid.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 4.2 | S. 128-129 · Kap. 4.1 | S. 126",
+      "text": "Erklären Sie mit Kap. 4.2 (S. 128–129) in je einem Satz: Prämie, Franchise, Selbstbehalt und Police. Halten Sie mit Kap. 4.1 (S. 126) fest, was das Solidaritätsprinzip bedeutet.",
+      "liefert": "Begriffe für Tabelle und Entscheid",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 128–129: je Begriff ein Satz. Franchise + Selbstbehalt = Kostenbeteiligung.",
+          "S. 126, «Zweck der Versicherung»: Wer zahlt ein, wer bekommt Geld?"
+        ],
+        "satzanfaenge": [
+          "«Die Prämie ist der Betrag, den …»",
+          "«Die Franchise zahle ich …; danach …»",
+          "«Solidarität heisst hier, dass …»"
+        ],
+        "produkt": "Prämie, Kostenbeteiligung: Zeilen der Tabelle. Police: im Entscheid (Unfalldeckung). Solidarität: Netz S. 8."
+      },
+      "loesung": {
+        "kern": "Prämie, Franchise, Selbstbehalt, Police, Solidarität",
+        "zeilen": [
+          {
+            "label": "Prämie",
+            "text": "Monatlicher Betrag an die Krankenkasse für die Grundversicherung; je nach Kasse verschieden. Wer mehr Kosten selbst trägt, zahlt weniger.",
+            "quelle": "Kap. 4.2, S. 128"
+          },
+          {
+            "label": "Franchise",
+            "text": "Betrag im Kalenderjahr, den ich zuerst ganz selbst zahle. Erwachsene: 300 bis 2500 Franken (Stand 2026). Hohe Franchise, tiefe Prämie.",
+            "quelle": "Kap. 4.2, S. 129"
+          },
+          {
+            "label": "Selbstbehalt",
+            "text": "10 Prozent der Kosten über der Franchise, höchstens 700 Franken im Jahr (Stand 2026). Mit der Franchise zusammen: Kostenbeteiligung.",
+            "quelle": "Kap. 4.2, S. 128-129"
+          },
+          {
+            "label": "Police",
+            "text": "Urkunde der Versicherung über den abgeschlossenen Vertrag.",
+            "quelle": "Kap. 4.2, S. 128"
+          },
+          {
+            "label": "Solidaritätsprinzip",
+            "text": "Alle zahlen Prämien in einen Topf; wer einen Schaden hat, erhält daraus Geld (Gefahrengemeinschaft).",
+            "quelle": "Kap. 4.1, S. 126"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 4.2 | S. 129 · eigener Fall",
+      "text": "Rechnen Sie für beide Franchisen nach dem Schema von S. 129 (Prämien: Offerte): Prämie im Jahr, höchste Kostenbeteiligung, Gesamtkosten ohne Behandlung, bei CHF 1'500, bei CHF 5'000. Wann ist welche günstiger?",
+      "liefert": "Zahlen für beide Spalten der Tabelle",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Kostenbeteiligung höchstens = Franchise + CHF 700 (2026). Prämien S. 129: nur Beispiele.",
+          "Gesamtkosten = Jahresprämie + Kosten bis zur Franchise + 10 % der Kosten darüber."
+        ],
+        "satzanfaenge": [
+          "«Ohne Behandlung ist … um CHF … günstiger.»",
+          "«Bei CHF 1'500 kosten die beiden …»",
+          "«Bei CHF 5'000 ist … günstiger, weil …»"
+        ],
+        "produkt": "Diese zehn Zahlen füllen Ihre Tabelle auf S. 7 (Schritt 02)."
+      },
+      "loesung": {
+        "kern": "Zehn Zahlen, drei Fälle, ein Gleichstand",
+        "zeilen": [
+          {
+            "label": "Prämie im Jahr",
+            "text": "300: 12 × 352 = CHF 4'224. 2'500: 12 × 262 = CHF 3'144. Unterschied CHF 1'080."
+          },
+          {
+            "label": "Kostenbeteiligung",
+            "text": "Franchise plus höchstens CHF 700: CHF 1'000 bzw. CHF 3'200 (Stand 2026).",
+            "quelle": "Kap. 4.2, S. 129"
+          },
+          {
+            "label": "Drei Fälle",
+            "text": "Ohne Behandlung: 4'224 gegen 3'144. Bei 1'500: 4'224 + 300 + 120 = 4'644 gegen 3'144 + 1'500 = 4'644. Bei 5'000: 4'224 + 300 + 470 = 4'994 gegen 3'144 + 2'500 + 250 = 5'894."
+          },
+          {
+            "label": "Wann welche",
+            "text": "Unter CHF 1'500 ist die hohe Franchise günstiger, bei CHF 1'500 beide gleich, darüber die tiefe. Schlimmster Fall: 6'344 gegen 5'224."
+          },
+          {
+            "label": "Herkunft",
+            "text": "Die drei Kostenfälle sind Rechenweg des Hefts; das Lehrmittel rechnet nur das «maximale Risiko».",
+            "quelle": "Kap. 4.2, S. 129"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Bei CHF 1'500 die ganze Franchise von CHF 2'500 einsetzen; Selbstbehalt von den ganzen Kosten rechnen."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Vergleichstabelle zu zwei Franchisen mit begründetem Entscheid",
+    "titel": "Zwei Franchisen im Vergleich – mein Entscheid",
+    "format_detail": "Eine Tabelle auf S. 7 (S. 7 ist Ihr Blatt, ohne Linien): zwei Spalten – Franchise CHF 300 und Franchise CHF 2'500 – und fünf Zeilen: Prämie im Jahr, höchste Kostenbeteiligung, Gesamtkosten ohne Behandlung, bei CHF 1'500 und bei CHF 5'000 Behandlungskosten. Unter der Tabelle stehen zwei Belege aus dem Raster (LF3), je mit Fundstelle, und Ihr Entscheid in zwei bis drei Sätzen in Ich-Form: welche Franchise Sie wählen und was für die andere spricht, ob Sie die Unfalldeckung in der Police lassen und woher das Geld kommt, wenn Sie krank werden. Sie schreiben für sich selbst und für die Person, die zu Hause mitentscheidet.",
+    "beschreibung": "Ich rechne zwei Franchisen in drei Fällen durch und entscheide, welche ich ankreuze, ob ich die Unfalldeckung brauche und woher das Geld kommt, wenn ich krank werde.",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "Zeichnen Sie auf S. 7 eine Tabelle: links fünf Zeilennamen (LF2), daneben je eine Spalte für CHF 300 und CHF 2'500. LF1 klärt die Begriffe."
+      },
+      {
+        "label": "02 Franchisen durchrechnen",
+        "hint": "Tragen Sie die zehn Zahlen aus LF2 in die Zeilen 1–5 ein. Rechnen Sie mit CHF 352 und 262 – die Unfalldeckung ist darin enthalten."
+      },
+      {
+        "label": "03 Meine Lage belegen",
+        "hint": "Zwei eigene Rasterzeilen (LF3) mit Fundstelle unter die Tabelle schreiben. Welche: S. 3, «Ins Produkt». Die Beispielzeile zählt nicht."
+      },
+      {
+        "label": "04 Franchise entscheiden",
+        "hint": "Entscheid (LF4), zwei bis drei Sätze: 1 Franchise mit Grund, 2 was für die andere spricht, 3 Unfalldeckung ja/nein und woher das Geld kommt."
+      },
+      {
+        "label": "05 Tabelle prüfen",
+        "hint": "Prüfen Sie beides mit den zwei Feedback-Kriterien, geben Sie S. 7 ab. Leitfragen, Raster, Begriffsnetz bleiben im Heft."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Vergleichstabelle (S. 7): zwei Franchisen, drei Kostenfälle",
+      "Entscheid in zwei bis drei Sätzen, mit zwei Belegen aus dem Raster"
+    ],
+    "beispielbild": {
+      "titel": "Anderer Fall: Hallenbad (Beispielwerte, nur 3 Zeilen)",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Zwei Angebote im Vergleich",
+          "kopf": [
+            "CHF im Jahr",
+            "Abo (420)",
+            "Einzeln (7)"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "20 Besuche",
+                "420",
+                "140"
+              ]
+            },
+            {
+              "zellen": [
+                "60 Besuche",
+                "420",
+                "420"
+              ]
+            },
+            {
+              "zellen": [
+                "100 Besuche",
+                "420",
+                "700"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Mein Entscheid",
+          "eintraege": [
+            {
+              "text": "Ich zahle einzeln: Bei 20 Besuchen spare ich CHF 280. Über 60 wäre das Abo günstiger."
+            },
+            {
+              "text": "Bei 100 Besuchen zahle ich CHF 280 mehr – aus dem Ersparten."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Offerte der Krankenkasse – Franchise 300 oder 2'500",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Der Entscheid entspricht dem zweiten Beispiel von LF4; CHF 2'500 ist ebenso gültig, wenn begründet. Belege hier aus der Fassung ohne Medien; mit Medien stehen dort Werte der Quelle (Grafik, Abs. 2; Stand 2023). Die Tabelle rechnet mit Unfalldeckung; ohne sie sinken beide Prämien um CHF 288 im Jahr. Fallüberlegung, nicht aus dem Lehrmittel: Dass die Unfalldeckung der Kasse wegfallen kann, sagt S. 131 nicht ausdrücklich; es gilt nur, solange die Anstellung dauert. Franchise und Selbstbehalt: Stand 2026, vor dem Druck prüfen.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Zwei Franchisen im Vergleich",
+          "kopf": [
+            "Kosten im Jahr (CHF)",
+            "Franchise 300",
+            "Franchise 2'500"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Prämie im Jahr",
+                "4'224",
+                "3'144"
+              ]
+            },
+            {
+              "zellen": [
+                "Höchste Kostenbeteiligung",
+                "1'000",
+                "3'200"
+              ]
+            },
+            {
+              "zellen": [
+                "Gesamtkosten ohne Behandlung",
+                "4'224",
+                "3'144"
+              ]
+            },
+            {
+              "zellen": [
+                "Gesamtkosten bei CHF 1'500",
+                "4'644",
+                "4'644"
+              ]
+            },
+            {
+              "zellen": [
+                "Gesamtkosten bei CHF 5'000",
+                "4'994",
+                "5'894"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Mein Entscheid",
+          "eintraege": [
+            {
+              "text": "Ich wähle die Franchise CHF 300: Bis CHF 2'500 selbst zahlen kann ich mit CHF 900 nicht – obwohl die hohe CHF 1'080 spart.",
+              "notiz": "Beleg: S. 130 – Krankheit: Grundversicherung zahlt"
+            },
+            {
+              "text": "Unfalldeckung in der Police streiche ich (CHF 288 im Jahr): Der Betrieb versichert mich, auch in der Freizeit.",
+              "notiz": "Beleg: S. 131 – ab 8 Std. pro Woche, ohne Franchise"
+            },
+            {
+              "text": "Reserve: Höchstens CHF 1'000 decke ich mit Erspartem und Lohn. Ob ich krank werde, zeigt keine Rechnung."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe der Einheit fehlen oder sind falsch gebraucht.",
+        "Einige Fachbegriffe stimmen, andere sind ungenau oder verwechselt.",
+        "Fachbegriffe und Angaben sind richtig und passen zur Situation.",
+        "Fachbegriffe richtig und selbstständig verbunden; ihre Grenzen sind benannt."
+      ],
+      "indikator_produkt": "Prämie, Franchise, Kostenbeteiligung richtig verwendet; alle zehn Zahlen stimmen."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position ist nicht erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+        "Die Position steht klar in Ich-Form und ist begründet.",
+        "Begründete Position in Ich-Form; was für die andere Lösung spricht, ist anerkannt."
+      ],
+      "indikator_produkt": "Entscheid in Ich-Form mit Grund – und was für die andere Franchise spricht."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine fertige Tabelle mit Entscheid; die Satzanfänge auf S. 2 helfen beim Rechnen.",
+    "scaffold_100": "Plus: Ordnen Sie Ihren Entscheid mit Kap. 4.1 (S. 122) ein: Was vermeiden oder vermindern Sie selbst, was sichern Sie ab?"
+  },
+  "methoden": [
+    {
+      "ref": "hko-gezielt-suchen",
+      "fuer": "für Prämie, Franchise und Unfalldeckung: auf S. 1 und in Ihrer Police"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-verzichten-abwaegen",
+      "fuer": "für Schritt 04 – tiefe Franchise, Unfalldeckung: muss, soll oder kann weg?",
+      "beispiel": [
+        "Klassenreise, Kasse 600.— für 3 Wünsche:",
+        "Unterkunft 400.— → A, muss sein",
+        "Schifffahrt 120.— → B, verschieben",
+        "Museum 80.— → C, streichen: sonntags gratis"
+      ]
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Begründung Ihres Entscheids",
+      "tun": "Schreiben Sie: welche Franchise, warum, mit einer Zahl."
+    }
+  ],
+  "mindmap_zentrum": "Eigenverantwortung oder Solidarität",
+  "mindmap_aeste": [
+    {
+      "titel": "Was zahle ich?",
+      "punkte": [
+        "Prämie",
+        "Franchise",
+        "Selbstbehalt",
+        "Kostenbeteiligung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer trägt das Risiko?",
+      "punkte": [
+        "Solidaritätsprinzip",
+        "Unfalldeckung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was entscheide ich?",
+      "punkte": [
+        "Police",
+        "Reserve"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Stehen in meiner Tabelle alle zehn Zahlen, und weiss ich, wann welche Franchise günstiger ist?",
+      "Nennt mein Entscheid die Franchise, die Unfalldeckung (ja oder nein) und woher das Geld kommt?"
+    ],
+    "mitnahme": [
+      "Meine Rechnung: zwei Franchisen im Vergleich",
+      "Mein Massstab: was ich selbst tragen kann",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Franchise",
+          "nach": "Prämie",
+          "text": "je höher, desto tiefer die"
+        },
+        {
+          "von": "Franchise",
+          "nach": "Kostenbeteiligung",
+          "text": "ist der erste Teil der"
+        },
+        {
+          "von": "Selbstbehalt",
+          "nach": "Kostenbeteiligung",
+          "text": "ist der zweite Teil der"
+        },
+        {
+          "von": "Kostenbeteiligung",
+          "nach": "Reserve",
+          "text": "muss gedeckt sein durch die"
+        },
+        {
+          "von": "Solidaritätsprinzip",
+          "nach": "Prämie",
+          "text": "funktioniert über die"
+        },
+        {
+          "von": "Police",
+          "nach": "Unfalldeckung",
+          "text": "zeigt (Folgerung, nicht im Lehrmittel), ob eingeschlossen ist: die"
+        },
+        {
+          "von": "Franchise",
+          "nach": "gilt auch bei …",
+          "text": "als eigener Anteil am Schaden (Übertragung, nicht belegt) auch bei"
+        }
+      ],
+      "transfer": "Garantieverlängerung für ein neues Handy; Annullationsversicherung für ein Konzertbillett; Zusatzversicherung für Zahnbehandlungen.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Grundversicherung",
+          "Zusatzversicherung"
+        ],
+        "mit_medien": [
+          "ordentliche Franchise",
+          "Zwischenstufe"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn alle zehn Zahlen stehen (Lösungsbild): ohne Behandlung die hohe um CHF 1'080 günstiger, bei CHF 1'500 gleich, bei CHF 5'000 die tiefe um CHF 900.",
+        "Ja, wenn die drei Punkte in zwei bis drei Sätzen in Ich-Form stehen – wie im Lösungsbild oder mit CHF 2'500, begründet wie in LF4."
+      ],
+      "mitnahme": [
+        "Prämie im Jahr plus eigene Kosten in drei Fällen: bis CHF 1'500 lohnt sich die hohe Franchise, darüber die tiefe.",
+        "Ich trage nur, was ich zahlen kann: mit Erspartem (CHF 900) und Lohn CHF 1'000, nicht CHF 3'200.",
+        "Zum Beispiel, ob ich eine Prämienverbilligung beantragen kann (Kap. 4.2, S. 130)."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Im Heft – LF1: fünf Begriffe erklärt",
+        "LF2: zehn Zahlen, drei Fälle verglichen",
+        "LF4: Entscheid für eine Franchise mit Grund"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Im Heft – Raster S. 3: alle vier Zeilen gefüllt",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Vergleichstabelle (Abgabe)",
+      "vollstaendig_wenn": [
+        "Tabelle: zwei Spalten, fünf Zeilen, zehn Zahlen",
+        "Zwei Belege aus dem Raster mit Fundstelle",
+        "Entscheid in zwei bis drei Sätzen, Ich-Form"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Im Heft – Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation, LF1, LF2: Begriffe klären, Tabelle (S. 7) anlegen und füllen",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Belege unter die Tabelle",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Tabelle und Entscheid fertig, mit den Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst entscheide ich, wie viel Risiko ich selbst trage und wie viel ich gegen Geld abgebe?",
+    "ziel": "Versichern heisst, ein Risiko gemeinsam zu tragen: Wer eine Franchise wählt, entscheidet, wie viel er selbst trägt und wie viel die Gemeinschaft."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Kosten und Risiko zweier Absicherungen durchrechnen und entscheiden, wie viel ich selbst trage",
+    "lehrmittel_anker": "Kap. 4.2 S. 128-129 (Prämie, Police, Franchise, Selbstbehalt, Rechenschema) und S. 130-131 (Leistungen, Sparmöglichkeiten, Unfallversicherung) · Kap. 4.1 S. 126 (Solidaritätsprinzip) und S. 122 (drei Ebenen im Umgang mit Risiken, Plus-Aufgabe)",
+    "kn_aktivierung": "Der KN verlangt, für die Zeit zwischen Lehre und neuer Stelle zu entscheiden, was abgesichert wird und was eine Person mit knappem Erspartem selbst trägt – dieselbe Abwägung von Prämie und tragbaren Kosten wie in der Vergleichstabelle; dazu die Frage, was mit der Unfalldeckung über den Betrieb nach dem Austritt geschieht.",
+    "transfer_check": "Kann die Lernende an einer neuen Absicherung ausrechnen, was sie im besten und im schlimmsten Fall kostet, und begründen, wie viel Risiko sie selbst trägt?"
+  },
+  "sk_anker": [
+    {
+      "sk": 10,
+      "wo": "leitfragen[2] — die neue Lage einordnen: was ich ab jetzt selbst trage und wo ich mit meinen Zahlen stehe"
+    },
+    {
+      "sk": 11,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — eine Franchise wählen, ohne zu wissen, ob das Jahr gesund verläuft"
+    },
+    {
+      "sk": 5,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — im Entscheid begründen, wie viel Risiko ich selbst trage"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 4.2 | S. 130-131",
+          "text": "Wer zahlt laut Kap. 4.2 (S. 130–131) bei Krankheit, wer bei Unfall – und was ist nicht gedeckt? Notieren Sie als Befund in zwei bis drei Sätzen, was Sie für Ihre Lage ableiten.",
+          "liefert": "Zwei Belege zur eigenen Lage",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 4.2 | S. 130-131",
+            "auftrag": "Lesen Sie Kap. 4.2, S. 130–131. Zeile 1 ist ein Beispiel. Füllen Sie drei eigene Zeilen, zu Krankheit und zu Unfall: Absatz mit Seite, Kernaussage, Beleg und Begriff (LF1 oder Glossar).",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 131, Unfall",
+              "Betrieb versichert Unfall",
+              "ab 8 Std./Woche: Freizeit",
+              "Unfalldeckung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 130: Krankheit. S. 131: Unfall. «→ Begriff»: das Fachwort zur Zeile."
+            ],
+            "satzanfaenge": [
+              "«Bei einem Unfall zahlt … (S. …)»",
+              "«Bei Krankheit zahlt …; nicht gedeckt ist … (S. …)»",
+              "«Für meine Lage leite ich ab, dass …»"
+            ],
+            "produkt": "Je eine eigene Zeile zu Krankheit und zu Unfall wird Ihr Beleg unter der Tabelle (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Wer zahlt bei Krankheit, wer bei Unfall, was fehlt",
+            "quelle_ref": "Kap. 4.2 | S. 130-131",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Unfall: Ab acht Stunden Arbeit pro Woche über den Betrieb auch in der Freizeit versichert; ohne Franchise und Selbstbehalt (S. 131). Krankheit: Grundversicherung deckt Arzt, Medikamente, Spital (S. 130). Bei Krankheit nicht gedeckt: Zahn, Brille, Transport – nur mit Zusatzversicherung (S. 130); bei Unfall zahlt die Unfallversicherung Transport und Rettung (S. 131).",
+                "quelle": "Kap. 4.2, S. 130-131"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Lohnersatz; Deckung endet kurz nach dem Austritt (S. 131). Sparmöglichkeiten, Prämienverbilligung (S. 130).",
+                "quelle": "Kap. 4.2, S. 130-131"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Unfalldeckung, Kostenbeteiligung (LF1, Glossar); Grundversicherung, Zusatzversicherung (Abschnitt). Franchise bei Krankheit: S. 129."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: je eine Aussage zu Krankheit und Unfall mit Seite, dann der Schluss. Fallüberlegung, nicht im Lehrmittel: Unfalldeckung der Kasse kann wegfallen; Sport zählt für die Franchise wenig."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 131, Unfall",
+                "Betrieb versichert Unfall",
+                "ab 8 Std./Woche: Freizeit",
+                "Unfalldeckung"
+              ],
+              [
+                "S. 131, Leistungen",
+                "Unfall: keine Kosten für mich",
+                "ohne Franchise, ohne Selbstbehalt",
+                "Kostenbeteiligung"
+              ],
+              [
+                "S. 130, Grundversicherung",
+                "Krankheit: Arzt, Medikamente, Spital gedeckt",
+                "Spital: allgemeine Abteilung",
+                "Grundversicherung"
+              ],
+              [
+                "S. 130, Zusatzversicherung",
+                "Krankheit: Zahn, Brille, Transport nicht gedeckt",
+                "nur mit freiwilliger Zusatzversicherung",
+                "Zusatzversicherung"
+              ]
+            ],
+            "befund": "Bei einem Unfall zahlt die Unfallversicherung meines Betriebs, auch in der Freizeit, ohne Franchise und Selbstbehalt (S. 131). Bei Krankheit zahlt die Grundversicherung Arzt, Medikamente und Spital; Zahnarzt und Brille nicht (S. 130). Fallüberlegung: Die Franchise trifft mich bei Krankheit, nicht beim Sport – die Unfalldeckung der Kasse brauche ich nicht, solange ich im Betrieb arbeite."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 4.2 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Berechnen Sie wie in Kap. 4.2 (S. 129) das «maximale Risiko» der hohen Franchise. Was sagt diese Zahl über Ihre Lage – und was nicht? Entscheiden Sie: Franchise CHF 300 oder CHF 2'500?",
+          "liefert": "Begründeter Entscheid für eine Franchise",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "S. 129: «maximales Risiko» = CHF 2'200 mehr Kostenbeteiligung − CHF 1'080 gesparte Prämie."
+            ],
+            "satzanfaenge": [
+              "«Nach der Rechnung von S. 129 ist mein Risiko …»",
+              "«Die Rechnung sagt nicht, dass ich …»",
+              "«Ich wähle …, obwohl …, denn … Das Geld käme von …»"
+            ],
+            "produkt": "Entscheid unter die Tabelle (Schritt 04). Unfalldeckung: Nein spart 24 × 12 im Jahr; die Tabelle bleibt."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Rechenmodell ↔ meine Lage",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "rechnet nach S. 129 mit den Fallzahlen: CHF 2'200 mehr Kostenbeteiligung minus CHF 1'080 Prämie = CHF 1'120",
+                "nennt eine Grenze der Rechnung (Fallüberlegung): CHF 900 Erspartes gegen bis zu CHF 3'200; ob ich krank werde, zeigt sie nicht",
+                "entscheidet in Ich-Form, sagt, woher das Geld käme, und anerkennt die andere Franchise"
+              ],
+              "beispiel_pol_1": "Ich wähle CHF 2'500. Nach S. 129 ist mein grösstes Risiko CHF 1'120 im Jahr (2'200 − 1'080). Die Rechnung sagt nicht, dass ich nur CHF 900 habe; darum lege ich die gesparten CHF 90 im Monat zurück. Für die tiefe spricht: Im ersten Jahr könnte ich eine grosse Rechnung nicht zahlen. Annahme: Ich war kaum beim Arzt.",
+              "beispiel_pol_2": "Ich wähle CHF 300. Die hohe spart CHF 1'080, das grösste Risiko wäre CHF 1'120 (S. 129). Die Rechnung sagt nicht, ob ich das Geld habe: Mit CHF 900 könnte ich CHF 1'500 nicht auf einmal zahlen. Höchstens CHF 1'000 decke ich mit Erspartem und Lohn. Für die hohe spricht: Bleibe ich gesund, zahle ich CHF 1'080 mehr. Ende Jahr rechne ich neu (S. 129).",
+              "nicht_tragfaehig": "Entscheid ohne Zahl aus der Tabelle, «immer besser», oder ohne Angabe, woher das Geld kommt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was die Rechnung zeigt",
+          "Was sie über mich nicht sagt",
+          "Was daraus folgt"
+        ],
+        "hinweis": "Je Spalte zwei bis drei Stichworte, wo möglich mit Zahl. Dritte Spalte zuletzt; dort auch: Unfalldeckung ja/nein, woher das Geld kommt.",
+        "loesung_zeilen": [
+          [
+            "Hohe Franchise spart CHF 1'080 Prämie (LF2)",
+            "Ich habe CHF 900; bis CHF 2'500 zahle ich alles selbst",
+            "Hohe nur, wenn ich die Ersparnis zurücklege"
+          ],
+          [
+            "«Maximales Risiko»: 2'200 − 1'080 = CHF 1'120 (S. 129)",
+            "Ob ich krank werde, zeigt keine Rechnung",
+            "Tiefe, wenn Sicherheit mehr zählt als CHF 90 im Monat"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 4.2 (S. 3): zweimal lesen",
+        "beispiel": [
+          "S. 52 · Bücher vier Wochen · «einmal verlängern» · → Frist (erfunden)"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und eine fertige Tabelle mit Entscheid aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Wie verteilen sich die Versicherten laut Quelle auf die Franchisen, und für wen lohnt sich welche? Notieren Sie als Befund in zwei bis drei Sätzen, was Sie für Ihre Lage ableiten.",
+          "liefert": "Zwei Belege zur eigenen Lage",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-421a-pflicht",
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Zuerst die Grafik: Titel, Jahr, grösster und kleinster Wert. Dann der Text.",
+              "«→ Begriff»: das Fachwort, mit dem Sie die Zeile im Befund benennen."
+            ],
+            "satzanfaenge": [
+              "«Laut Grafik haben … Prozent die Franchise …»",
+              "«Laut Abs. 2 lohnt sich die hohe Franchise, wenn …»",
+              "«Für meine Lage leite ich ab, dass …»"
+            ],
+            "produkt": "Die Zeile zu Abs. 2 und eine zur Grafik werden Ihre Belege unter der Tabelle (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Zwei Randstufen vorn; Schwelle je nach Kosten",
+            "quelle_ref": "q-421a-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Grafik (Zahlen 2023): 45 % ordentliche Franchise 300, 37 % höchste Stufe; Stufen 1000 und 2000: 3 % und 2 %; 500 und 1500: 9 % und 5 %. Abs. 2: höchste Stufe spart bis rund 1500 Franken Prämie, passt zu Gesunden; ab rund 2000 Franken Kosten ist die tiefste günstiger.",
+                "quelle": "Quelle, Abs. 2 und Grafik"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Über 80 % auf den zwei Randstufen (Abs. 1).",
+                "quelle": "Quelle, Abs. 1"
+              },
+              {
+                "label": "Einordnung",
+                "text": "Alle erwachsenen Versicherten, nicht eigens junge. Zahlen vom Branchenverband (Abs. 1–2): Herkunft, kein Vorwurf."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: zwei Werte, Schwelle aus Abs. 2, Vergleich mit LF2 (gleich teuer bei CHF 1'500). Der Vergleich ist Deutung."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Zahlen 2022, 19- bis 25-Jährige, Total: 47,0 % ordentliche, 41,3 % höchste Franchise, 4,6 % Stufe 1500; 19,5 % Standardmodell, 80,5 % andere Formen. Für wen sich welche Stufe lohnt, fehlt: Frageteil entfällt, Schwelle aus LF2.",
+                "quelle": "Ersatzquelle, Grafik G 7e"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Grafik: ordentliche Franchise 300",
+                "45 %, rund 3,27 Mio.",
+                "fast die Hälfte bleibt bei der tiefsten Stufe",
+                "Franchise"
+              ],
+              [
+                "Grafik: Franchise 2500",
+                "37 %",
+                "gut ein Drittel trägt das grösste eigene Risiko (Deutung; Kap. 4.2, S. 129)",
+                "Kostenbeteiligung"
+              ],
+              [
+                "Grafik: Stufen 1000 und 2000",
+                "3 % und 2 %",
+                "diese zwei werden kaum gewählt (500: 9 %, 1500: 5 %)",
+                "Zwischenstufe"
+              ],
+              [
+                "Abs. 2: wann welche Stufe",
+                "bis rund 1500 Fr. gespart; ab rund 2000 Fr. Kosten",
+                "hohe Stufe für Gesunde, tiefe bei hohen Kosten",
+                "Prämie"
+              ]
+            ],
+            "befund": "Laut Quelle hatten 2023 45 % die tiefste und 37 % die höchste Franchise; die Stufen 1000 und 2000 wählt kaum jemand (3 % und 2 %; 500 und 1500: 9 % und 5 %; Grafik). Die hohe lohnt sich laut Branchenverband für Gesunde, ab rund 2000 Franken Kosten die tiefe (Abs. 2). Fallüberlegung: Bei mir sind beide schon bei CHF 1'500 gleich teuer (LF2); ich brauche einen eigenen Grund."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 4.2 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 4.2 (S. 130) nennt Wege, Prämie zu sparen; die Quelle zeigt, wie Versicherte wählen. Vergleichen Sie beides mit Ihrer Rechnung. Entscheiden Sie: Franchise CHF 300 oder CHF 2'500?",
+          "liefert": "Begründeter Entscheid für eine Franchise",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "S. 130, «Sparmöglichkeiten»: Welchen Weg lässt Ihnen die Offerte offen?",
+              "Quelle: Schwelle rund 2'000, bei Ihnen 1'500. Beides stimmt: andere Prämien."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 4.2 kann ich … (S. …)»",
+              "«Die Quelle zeigt dazu, dass … (Grafik / Abs. …)»",
+              "«Ich wähle …, obwohl …, denn … Das Geld käme von …»"
+            ],
+            "produkt": "Entscheid unter die Tabelle (Schritt 04). Unfalldeckung: Nein spart 24 × 12 im Jahr; die Tabelle bleibt."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt aus Kap. 4.2: höhere Franchise als Sparmöglichkeit (S. 130), höhere Kostenbeteiligung (S. 129)",
+                "nennt aus der Quelle mit Stand: 45 % tiefste, 37 % höchste Stufe (Grafik, 2023); Schwelle je nach Kosten (Abs. 2)",
+                "vergleicht mit LF2 (Fallüberlegung), entscheidet in Ich-Form, anerkennt die andere Franchise",
+                "mit Ersatzquelle (2022): 47,0 % und 41,3 %; Schwelle nur aus LF2"
+              ],
+              "beispiel_pol_1": "Ich wähle CHF 2'500. Kap. 4.2 nennt die höhere Franchise als Sparweg (S. 130); bei mir CHF 1'080 im Jahr. Laut Quelle wählen 37 % so, es lohnt sich für Gesunde (Grafik, Abs. 2; 2023). Für die tiefe spricht: Mit CHF 900 könnte ich eine grosse Rechnung nicht zahlen. Darum lege ich CHF 90 im Monat zurück. Annahme: Ich war kaum beim Arzt.",
+              "beispiel_pol_2": "Ich wähle CHF 300. Sparen über die Franchise geht (S. 130), aber die Kostenbeteiligung steigt auf CHF 3'200 (S. 129). Laut Quelle bleiben 45 % bei der tiefsten Stufe; ab rund 2000 Franken Kosten ist sie günstiger (Grafik, Abs. 2; 2023). Bei mir sind beide schon bei CHF 1'500 gleich teuer, und ich habe CHF 900. Für die hohe spricht: Gesund zahle ich CHF 1'080 mehr.",
+              "nicht_tragfaehig": "Entscheid, der nur der Mehrheit folgt; Zahlen ohne Stand oder Fundstelle; kein Wert aus der eigenen Tabelle."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-421a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Quelle (QR-Seite), Text und Grafik. Füllen Sie vier eigene Zeilen: erste Spalte «Grafik» oder Absatznummer, dann auffälliger Wert, Aussage und ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-421a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was zahle ich im Jahr höchstens selbst, und was ändert eine höhere Franchise daran?",
+          "erwartung": "Franchise plus Selbstbehalt (Abs. 9–10, 14): mit der ordentlichen Franchise höchstens 1000 Franken im Jahr (Abs. 17). Eine höhere Franchise heisst mehr eigenes Risiko, weniger Prämie (Abs. 19). 2500 + 700 = 3200 ist Rechnung, nicht auf der Seite. Ohne Spitalbeitrag gerechnet (Abs. 11: 15 Franken je Tag; junge Erwachsene in Ausbildung sind befreit). Seite ohne Datum, gelesen 2026-10-04."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-grafik-lesen",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Grafik Schulweg (erfunden) · 34 % der Lernenden: Velo · am häufigsten · → Verkehrsmittel"
+        ]
+      },
+      "scaffold_90": "Lesen Sie die Grafik gemeinsam und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt eine fertige Tabelle mit Entscheid."
+    }
+  }
+}
