@@ -264,17 +264,17 @@ Zur Zeile «Aspekte»: Die Einheit führt den Aspekt Ökologie als erste Begegnu
 
 Die fünf Schritte auf S. 5:
 
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Ursache und Folgen klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Halten Sie aus LF1 in Stichworten fest, was die Erwärmung antreibt und welche Folgen sie hat – Stoff für Absatz 2.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Meinen Fall einordnen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Übernehmen Sie aus LF2, was Sie im Betrieb erlebt haben und was gemessen ist – das Erlebte wird Absatz 1.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Aussagen belegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Tragen Sie zwei Aussagen mit Fundstelle aus dem Raster von LF3 und den Befund in die Liste «Belege» ein (S. 7, unter der Beschreibung).<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Zukunftsaussage festlegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Formulieren Sie aus LF4 die eine Aussage zur Zukunft für Absatz 3: mit Begründung und mit dem, wovon sie abhängt.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Beschreibung schreiben<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Schreiben Sie die Absätze auf S. 7, markieren Sie zwei Belege und die Zukunftsaussage (Legende S. 6), prüfen Sie mit den Feedback-Kriterien.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Ursache und Folgen klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Unterstreichen Sie in Ihrer Antwort zu LF1 (S. 2), was die Erwärmung antreibt und welche Folgen sie hat – Stoff für Absatz 2.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Meinen Fall einordnen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Unterstreichen Sie in Ihrer Antwort zu LF2 (S. 2), was Sie im Betrieb erlebt haben und was gemessen ist – das Erlebte wird Absatz 1.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Aussagen belegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Tragen Sie zwei Aussagen mit Fundstelle aus dem Raster (LF3) in die Liste «Belege» ein (S. 7, unter dem Text). Der Befund stützt Absatz 3.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Aussage zur Zukunft<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Formulieren Sie aus LF4 die eine Aussage zur Zukunft für Absatz 3: mit Begründung und mit dem, wovon sie abhängt.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Beschreibung schreiben<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Schreiben Sie die Absätze auf S. 7, markieren Sie zwei Belege und die Aussage zur Zukunft (Legende S. 6), prüfen Sie mit den Kriterien.<!--/hko-->
 
 **Abgaben**
 
 <!--hko:hf_A.handlungsprodukt.abgaben|liste-->
 - Beschreibung in drei Absätzen (100–130 Wörter), Sachaussagen mit Fundstelle
-- Liste «Belege» unter der Beschreibung: zwei Belege, Zukunftsaussage markiert
+- Liste «Belege» unter der Beschreibung: zwei Belege, Aussage zur Zukunft markiert
 <!--/hko-->
 
 ### Hinweise zu jeder Seite
@@ -412,11 +412,11 @@ Die fünf Schritte auf S. 5:
 
 Die fünf Schritte auf S. 5:
 
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Lösungsansätze ordnen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Halten Sie aus LF1 fest, was Einzelne beitragen können und welche Ziele für alle gelten – Stoff für Ihre Begründungen.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Lösungsansätze ordnen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Unterstreichen Sie in Ihrer Antwort zu LF1 (S. 2), was Einzelne beitragen können und welche Ziele für alle gelten – Stoff für Begründungen.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Meine Position begründen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Übernehmen Sie aus LF2 Ihre Position und das erste Argument als Stichworte auf die Karte (S. 7).<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Gegenseite belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Hier entsteht Ihr zweites Argument: Stützen Sie es und den stärksten Einwand der Gegenseite auf je eine Rasterzeile aus LF3, mit Fundstelle.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Position festlegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie aus LF4 Ihre Position, den erwarteten Einwand und Ihre Antwort darauf ein. Planen Sie den Schluss mit einer Bitte.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Statement halten, erwidern<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Sprechen Sie rund zwei Minuten frei vor zwei bis drei Zuhörenden. Antworten Sie auf einen Einwand und notieren Sie eine Rückmeldung.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Zweites Argument belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Stützen Sie Ihr zweites Argument auf eine Rasterzeile aus LF3, mit Fundstelle. Markieren Sie die Zeile, die gegen Ihre Position spricht.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Position festlegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie aus LF4 Position, erwarteten Einwand und Antwort auf der Karte ein – mit dem Punkt, den Sie gelten lassen. Schluss: eine Bitte.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Statement halten, erwidern<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Sprechen Sie rund zwei Minuten frei vor zwei bis drei Mitlernenden. Antworten Sie auf einen Einwand, notieren Sie eine Rückmeldung (Karte).<!--/hko-->
 
 **Abgaben**
 
@@ -474,7 +474,7 @@ Die fünf Schritte auf S. 5:
 > Das Heft behauptet nichts darüber, wie viel eine Kaufpause in Zahlen bringt; belegt ist nur das Prinzip der grauen Energie (Kap. 9.2, S. 230). Nennt jemand eine Zahl, frag nach der Fundstelle. Ohne sie gehört die Aussage als eigene Einschätzung gekennzeichnet.
 
 > [!warnung] Abstimmungssendung zu einer abgelehnten Vorlage (Spur mit Medien)
-> Die Vorlage, über die im Ausschnitt gestritten wird, ist seit dem 9. Februar 2025 abgelehnt — so steht es im Heft; prüfe den Ausgang vor dem Druck an einer amtlichen Quelle. Die Aufgabe fragt nach den Gründen beider Seiten, nicht nach der Vorlage. Zwei Angaben im Ausschnitt sind ungeprüfte Behauptungen der Sprechenden und dürfen nicht als Tatsache auf die Karte: die zu den Lebensmittelpreisen (16:07) und die zum Anteil von Unternehmen am Ausstoss (16:42–16:49). Wer spricht, ist nur aus Anrede und Inhalt erschlossen; die Untertitel markieren den Wechsel nicht. Sieh den Ausschnitt an und prüfe, ob 15:10 und 18:51 im Player stimmen.
+> Die Vorlage, über die im Ausschnitt gestritten wird, ist seit dem 9. Februar 2025 abgelehnt (69,8 Prozent Nein; amtlich bestätigt auf uvek.admin.ch/de/uvi, abgerufen am 5.10.2026) — so steht es im Heft, ohne die Prozentzahl. Die Aufgabe fragt nach den Gründen beider Seiten, nicht nach der Vorlage. Zwei Angaben im Ausschnitt sind ungeprüfte Behauptungen der Sprechenden und dürfen nicht als Tatsache auf die Karte: die zu den Lebensmittelpreisen (16:07) und die zum Anteil von Unternehmen am Ausstoss (16:42–16:49). Wer spricht, ist nur aus Anrede und Inhalt erschlossen; die Untertitel markieren den Wechsel nicht. Sieh den Ausschnitt an und prüfe, ob 15:10 und 18:51 im Player stimmen.
 
 > [!troubleshooting] Herausforderung B — «Ich habe dazu keine Meinung.»
 > Das ist ein ehrlicher Anfang; die Person im Heft ist auch unsicher. Frag: «Welche der zwei Stimmen am Tisch würdest du eher unterschreiben — und was müsste die andere sagen, damit du wechselst?» Die Antwort ist die vorläufige Position samt Einwand.
@@ -540,7 +540,7 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt den Prüfstand j
 | A · Quelle (q-251a-pflicht) | Schweizer Klimaszenarien 2025 | SRF Tagesschau | 04.11.2025 | 00:00–02:16 | 2:16 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:8136bb83-fc31-406b-8733-e22013e1db6c&subdivisions=false) |
 | A · Ersatzquelle (q-251a-pflicht-ersatz) | Schweizer Klimazukunft wird heiss | SRF 10 vor 10 | 04.11.2025 | 00:02–03:16 | 3:14 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:9256b166-fe24-4d2a-8cee-f492dd5d032f&subdivisions=false) |
 | A · Vertiefung 1 (q-251a-vertiefung-1) | Schweizer Klimaszenarien CH2025: Wie trifft es uns? | SRF Meteo | 14.11.2025 | ganzer Artikel | 383 Wörter | 03.10.2026 | [srf.ch](https://www.srf.ch/meteo/meteo-stories/schweizer-klimaszenarien-die-wichtigsten-neuerungen-in-den-klimaszenarien) |
-| B · Quelle (q-251b-pflicht) | «Abstimmungs-Arena» zur Umweltverantwortungsinitiative | SRF Arena | 24.01.2025 | 15:10–18:51 | 3:41 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:0affffee-5616-4921-b6af-354dd1817551&subdivisions=false) |
+| B · Quelle (q-251b-pflicht) | «Abstimmungs-Arena» zur Umweltverantwortungsinitiative | SRF Arena | 24.01.2025 | 15:10–18:51 | 3:41 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:0affffee-5616-4921-b6af-354dd1817551&subdivisions=false) |
 | B · Vertiefung 1 (q-251b-vertiefung-1) | Erklärvideo: Das will die Umweltverantwortungsinitiative | SRF Arena | 24.01.2025 | 00:00–01:14 | 1:14 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:09ef8764-b1e9-40fe-b47b-a85142f10b66&subdivisions=false) |
 <!--/hko-->
 
@@ -551,7 +551,7 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt den Prüfstand j
 - **Heft A, Quelle:** ein Nachrichtenbeitrag zu den Klimaszenarien des Bundes. Seine Zahlen haben den Stand der Szenarien vom November 2025 und gelten zum Teil nur für Städte oder bis Ende Jahrhundert; sie gehören mit Zeitmarke und als «laut Beitrag» ins Heft. Der Bezug zum Arbeitsalltag fehlt.
 - **Heft A, Ersatzquelle:** ein Ausschnitt aus einem längeren Beitrag vom selben Tag zum selben Ereignis. Sie ersetzt die Quelle, ergänzt sie aber nicht um einen zweiten Blick.
 - **Heft A, Vertiefung:** ein kurzer Artikel; kein Zugeständnis. Heft A hat nur diese eine Vertiefung.
-- **Heft B, Quelle:** ein Ausschnitt aus einer Abstimmungssendung von über einer Stunde. Die Vorlage ist seit dem 9. Februar 2025 abgelehnt; prüfe den Ausgang vor dem Druck an einer amtlichen Quelle. Zahlen im Ausschnitt sind Aussagen der Sprechenden; zwei davon sind ausdrücklich ungeprüft (16:07 und 16:42–16:49). In den Unterlagen stehen Rollen, keine Namen.
+- **Heft B, Quelle:** ein Ausschnitt aus einer Abstimmungssendung von über einer Stunde. Die Vorlage ist seit dem 9. Februar 2025 abgelehnt (69,8 Prozent Nein; uvek.admin.ch/de/uvi, abgerufen am 5.10.2026). Zahlen im Ausschnitt sind Aussagen der Sprechenden; zwei davon sind ausdrücklich ungeprüft (16:07 und 16:42–16:49). In den Unterlagen stehen Rollen, keine Namen.
 - **Heft B, keine Ersatzquelle:** Fällt die Quelle aus, arbeitet Heft B ohne Medien.
 - **Heft B, Vertiefung:** ein Erklärvideo aus derselben Sendung wie die Quelle. Heft B hat nur diese eine Vertiefung.
 - **Lehrmittel:** Die Zahlen aus Kap. 9.1, S. 222 und die Klimaziele aus Kap. 9.3, S. 232 tragen den Stand des Lehrmittels. Der Verkehr als Verursacher kommt in den Heften nicht vor; das Kapitel 9.4 des Lehrmittels ist bewusst nicht verwendet. Willst du ihn ergänzen, tu es im Plenum.
@@ -588,16 +588,16 @@ Der Auftrag ist die Generalprobe vor dem KN: ein neuer Fall in einem anderen Leb
 
 **Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Werten Sie das Schreiben mit den Werkzeugen aus Heft A und Heft B aus und handeln Sie in der Gruppe eine gemeinsame Rückmeldung an die Schulleitung aus.<!--/hko-->
 
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Auswertung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->A2: die vier Vorschläge (zwei je Variante), je mit Art (Appell = Bitte, Anreiz = Belohnung, Vorschrift = Pflicht) und Folge für Ihre Klasse.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Belegtes und Vermutetes<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Prüfen Sie wie in Heft A: Was ist belegt, erwartet oder vermutet? Notieren Sie auf Seite A2 unter der Tabelle, was Sie nachfragen würden.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Position und Einwand<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Bauen Sie wie in Heft B ein Argument im 3B-Schema. Notieren Sie auf Seite A2 unter der Tabelle den erwarteten Einwand und Ihre Antwort.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Aushandlung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Bringen Sie Ihre Position in zwei Sätzen ein, gehen Sie auf die anderen ein und füllen Sie die vier Felder auf Seite A3 aus.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Rückmeldung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Halten Sie in zwei Sätzen fest, worauf sich die Gruppe einigt und was offen bleibt. Schätzen Sie sich dann auf Seite A4 selbst ein.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Auswertung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->A2, Tabelle mit vier Zeilen: je Vorschlag (zwei je Variante) Art (Appell = Bitte, Anreiz = Belohnung, Vorschrift = Pflicht) und Folge.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Belegtes und Vermutetes<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Markieren Sie in der Tabelle wie in Heft A, was belegt, erwartet oder vermutet ist. Notieren Sie darunter, was Sie nachfragen würden.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Position und Einwand<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Bauen Sie wie in Heft B ein Argument (3B), das Energieverbrauch, Folge und Betroffene verbindet. Auf A2: Argument, Einwand, Antwort.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Aushandlung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Bringen Sie Ihre Position in zwei Sätzen ein, gehen Sie auf die anderen ein und füllen Sie die Felder 1 bis 3 auf Seite A3 aus.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Rückmeldung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Schreiben Sie in Feld 4 (A3) in zwei Sätzen, worauf sich die Gruppe einigt und was offen bleibt. Schätzen Sie sich dann auf A4 selbst ein.<!--/hko-->
 
 **Abgaben**
 
 <!--hko:set.gemeinsamer_auftrag.abgaben|liste-->
-- Auswertung des Schreibens: Tabelle mit vier Zeilen
+- A2: Tabelle mit vier Zeilen; darunter Nachfrage, Argument, Einwand, Antwort
 - Die vier Felder auf Seite A3 mit der gemeinsamen Rückmeldung in zwei Sätzen
 - Selbsteinschätzung auf den vier Kriterien
 <!--/hko-->
@@ -611,12 +611,12 @@ Der Bogen hat vier Seiten: A1 Situation und Auftrag · A2 Auswertung des Schreib
 
 | Lektion | Was geschieht | Bogen | Sozialform |
 |---|---|---|---|
-| 1 | Schreiben lesen, die vier Punkte in der Tabelle auswerten, Belegtes und Vermutetes trennen, Position mit erwartetem Einwand notieren | A1–A2 | einzeln, in der Gruppe sitzend |
+| 1 | Schreiben lesen, die vier Vorschläge in der Tabelle auswerten, Belegtes und Vermutetes trennen, Position mit erwartetem Einwand notieren | A1–A2 | einzeln, in der Gruppe sitzend |
 | 2 | Aushandlung in der Gruppe, Rückmeldung in zwei Sätzen festhalten, Selbsteinschätzung | A3–A4 | zu dritt oder zu viert |
 | 3 | Rückmeldung auf den vier Kriterien, Verbesserung von Auswertung oder Rückmeldung | A4 | nach deiner Wahl |
 
 > [!hinweis] Sozialform
-> Der Auftrag führt einen Interaktionsmodus; Einzelarbeit allein genügt darum nicht. Zulässig sind Paare oder Gruppen, und jede Person braucht einen ausgewiesenen eigenen Anteil. Empfehlung: <!--hko:set.gemeinsamer_auftrag.sozialform.empfehlung-->Werten Sie das Schreiben zuerst allein aus. Handeln Sie die Rückmeldung danach zu dritt oder zu viert aus; jede Person bringt ihre Position ein und füllt eines der vier Felder auf Seite A3 aus.<!--/hko-->
+> Der Auftrag führt einen Interaktionsmodus; Einzelarbeit allein genügt darum nicht. Zulässig sind Paare oder Gruppen, und jede Person braucht einen ausgewiesenen eigenen Anteil. Empfehlung: <!--hko:set.gemeinsamer_auftrag.sozialform.empfehlung-->Werten Sie das Schreiben zuerst allein aus. Handeln Sie die Rückmeldung danach zu dritt oder zu viert aus; jede Person bringt ihre Position ein und füllt mindestens eines der Felder auf Seite A3 aus.<!--/hko-->
 
 ### Die Aushandlung in der Gruppe
 
@@ -627,7 +627,7 @@ Die Aushandlung richtet sich an die Schulleitung, der die Klasse eine Rückmeldu
 - Lässt du Gespräche aufnehmen, gehen die Aufnahmen direkt an dich. Auf die Plattform wird nichts geladen.
 
 > [!coaching] Der eigene Anteil muss sichtbar sein
-> Lass vor dem Gespräch jede Person ihre zwei Sätze notieren und eine Station übernehmen, die sie festhält. Im Gespräch gilt wie in Heft B: zuerst sagen, was an der anderen Position stimmt, dann antworten. So kannst du «Argumentation» und «Position / Werthaltung» jeder Person zuordnen, auch wenn die Rückmeldung gemeinsam ist.
+> Lass vor dem Gespräch jede Person ihre zwei Sätze notieren und mindestens ein Feld auf A3 übernehmen, das sie festhält (Feld 4 formuliert die Gruppe gemeinsam). Im Gespräch gilt wie in Heft B: zuerst sagen, was an der anderen Position stimmt, dann antworten. So kannst du «Argumentation» und «Position / Werthaltung» jeder Person zuordnen, auch wenn die Rückmeldung gemeinsam ist.
 
 ### Kriterien und Indikatoren
 
@@ -635,19 +635,19 @@ Die vier Kriterien stehen auf A4 im Wortlaut des KN, mit 0 bis 3 Punkten (Kap. 7
 
 | Kriterium | Dim. | Indikator im Auftrag |
 |---|---|---|
-| <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].indikator_produkt-->Auswertung: Art jedes Punkts stimmt; Belegtes und Vermutetes sind getrennt<!--/hko--> |
+| <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].indikator_produkt-->Auswertung: Art jedes Vorschlags stimmt; Belegtes und Vermutetes sind getrennt<!--/hko--> |
 | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[1].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[1].dimension-->SuK<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[1].indikator_produkt-->Aushandlung: Position begründet, auf einen Einwand sachlich geantwortet<!--/hko--> |
-| <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].kn_kriterium-->Ökologisches Prinzip<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].dimension-->Ges<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].indikator_produkt-->Ich verbinde Energieverbrauch, Folge und Betroffene – heute und künftig<!--/hko--> |
+| <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].kn_kriterium-->Ökologisches Prinzip<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].dimension-->Ges<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].indikator_produkt-->Argument (Schritt 03) verbindet Energieverbrauch, Folge und Betroffene – heute und künftig<!--/hko--> |
 | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].dimension-->Ges<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].indikator_produkt-->Aushandlung: Position in Ich-Form, ein Punkt der anderen Seite anerkannt<!--/hko--> |
 
 ### Erwartungshorizont
 
 > [!erwartungshorizont] Gemeinsamer Auftrag — mehrere Rückmeldungen sind vertretbar
-> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[0]-->Die Auswertung ordnet alle vier Punkte des Schreibens zu: 20 statt 22 Grad und das Ausschalten der Geräte über Nacht als Vorschrift, das freiwillige Sparen als Appell, den Beitrag an die Klassenkasse als Anreiz (Kap. 9.3, S. 233) – je mit einer Folge für die eigene Klasse.<!--/hko-->
+> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[0]-->Die Auswertung ordnet alle vier Vorschläge des Schreibens zu: 20 statt 22 Grad und das Ausschalten der Geräte über Nacht als Vorschrift, das freiwillige Sparen als Appell, den Beitrag an die Klassenkasse als Anreiz (Kap. 9.3, S. 233) – je mit einer Folge für die eigene Klasse.<!--/hko-->
 > - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[1]-->Belegtes und Vermutetes sind getrennt: Belegt ist nur, was im Schreiben steht (Temperaturen, Frist, Beitrag ohne Betrag). Wie viel die Massnahmen sparen und ob freiwilliges Sparen genügt, ist Annahme und als solche bezeichnet.<!--/hko-->
-> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[2]-->In der Aushandlung hat jede Person einen eigenen Anteil (Position in zwei Sätzen, eine Station); die Rückmeldung in zwei Sätzen nennt, worauf sich die Gruppe einigt, was offen bleibt und warum.<!--/hko-->
+> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[2]-->In der Aushandlung hat jede Person einen eigenen Anteil (Position in zwei Sätzen, mindestens ein Feld auf Seite A3); die Rückmeldung in zwei Sätzen nennt, worauf sich die Gruppe einigt, was offen bleibt und warum.<!--/hko-->
 > - **Tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.tragfaehig-->Vertretbar ist zum Beispiel: Die Gruppe spricht sich für die gleiche Vorgabe aus, weil sonst nur die sparen, die ohnehin mitmachen, und schlägt vor, mit den Geräten sofort zu beginnen und die Temperatur schrittweise zu senken. Ebenso vertretbar: zuerst einen Winter lang freiwillig sparen und die Vorgabe erst einführen, wenn das nicht genügt; oder ein Dissens, der beide Positionen mit ihren Gründen nennt – solange die Rückmeldung Belegtes von Angenommenem trennt und die andere Seite würdigt.<!--/hko-->
-> - **Nicht tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.nicht_tragfaehig-->Eine Rückmeldung, die nur eine Seite wiedergibt («Vorschriften bringen nichts» oder «wer nicht spart, ist selber schuld»), Zahlen zur Einsparung behauptet, die im Schreiben nicht stehen, die vier Punkte nicht auseinanderhält oder ohne erkennbaren Anteil der einzelnen Personen zustande kommt.<!--/hko-->
+> - **Nicht tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.nicht_tragfaehig-->Eine Rückmeldung, die nur eine Seite wiedergibt («Vorschriften bringen nichts» oder «wer nicht spart, ist selber schuld»), Zahlen zur Einsparung behauptet, die im Schreiben nicht stehen, die vier Vorschläge nicht auseinanderhält oder ohne erkennbaren Anteil der einzelnen Personen zustande kommt.<!--/hko-->
 
 ### Rückmeldung vor dem KN
 
