@@ -817,3 +817,57 @@ zwei Unterseiten `deck.astro` und `werkstatt.astro` und die zwei Schalter in
   weitere Quelle mit Raster».
 **Rückgängig:** `git revert` des Commits; die zwei Schalter in der
 Arbeitsansicht blenden beides bei v4.2 wieder aus.
+
+## E30 — Die sechs fest gesperrten Wörter aus E24 sind aufgehoben (Pietro, 04.10.2026)
+
+**Entscheid Pietro:** Gesperrte Wörter sollen eine neue Einheit nicht
+verhindern, die sich grundsätzlich von den bestehenden unterscheidet — etwa
+weil derselbe Gegenstand für einen anderen Lehrgang gebraucht wird (3J 3.1
+neben 4J 1.3) oder weil ein anderes Thema dasselbe Wort trägt (Klima,
+Finanzierungsarten).
+**Umsetzung:** `scripts/check-v42.mjs` führt `leasing`, `konsumkredit`,
+`kleinkredit`, `e-bike`, `ebike`, `mobilität` nicht mehr fest im Code — die
+Empfehlung aus E24. Der Fall-Ausschluss kommt nur noch aus
+`prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` der
+jeweiligen Einheit. Die Prüfung wird damit nur weiter, nie enger: Keine
+bestehende Einheit kann dadurch rot werden.
+**Skill: noch nicht nachgeführt.** `SKILL.md`, `references/auto-modus.md`,
+`references/sprache.md` §7.2, `references/phase-0-verortung.md` §9 und die
+Phasen 2–3, 4, 6, 7, Q und Gegenleser nennen die sechs Wörter weiter als
+gesperrt. Bis das nachgeführt ist, gilt dieser Entscheid vor dem Text der
+Skill; Baupläne halten es in §9 als Ausnahme fest.
+**Folge:** 4J 2.5, 3J 3.1 und 8.4 sind nicht mehr «nicht erzeugbar».
+Der Bauplan `2.5.1_klimaveraenderung_diskutieren` hat den Verkehr wegen E24
+ausgespart; er bleibt, wie er freigegeben ist.
+**Rückgängig:** die sechs Wörter in `FALL_BEGRIFFE` wieder eintragen.
+
+## E31 — Abschlussrunden vor der Freigabe: Karten, `tun`, Gegenleser, alte 1.3.1 (Pietro, 05.10.2026)
+
+1. **Gegenleser ohne Profil b.** Lernende mit Deutsch als Zweitsprache (Profil b)
+   gehören nicht mehr zur Besetzung; Befunde, die nur Sprachlast oder Zeitbedarf
+   für B1 betreffen, werden nicht bearbeitet. **Skill noch nicht nachgeführt:**
+   `references/gegenleser.md` §1 nennt Profil b weiter.
+2. **`tun` wird bei `hko-`Karten nicht gedruckt** — es bleibt beim Renderer, wie
+   er ist. Seite 6 hat in fast allen Einheiten 0 px Reserve. Die Übertragung
+   einer eigenen Karte auf die Abgabe läuft über `fuer` und ausnahmsweise über
+   `beispiel` in der Methoden-Referenz (`docs/methodenkartei.md`).
+3. **Methodenkarten, zwei Gruppen.** *Fehler* werden in der Karte behoben, auch
+   wenn eine publizierte Einheit sie verwendet: `lm-20-6-lernstrategien` (Satz
+   stand nicht auf S. 444; Seite), `lm-2-2-budget` (Beispiel mit Saldo null über
+   dem Hinweis, Saldo null sei verdächtig). *Passungsfragen* bleiben in der
+   Karte, die Einheit überschreibt: `lm-16-2-statement`, `hko-gezielt-suchen`,
+   `hko-verzichten-abwaegen`, `hko-bedarf-oder-wunsch`.
+   `lm-17-2-stichwortnotizen` ist nicht geändert: «S. 381–382» stimmt (S. 383
+   sind die Markierungen); abweichend ist der `quellen_anker` der Hefte.
+   **Folge:** `bestand-vorher.json` ist am 05.10.2026 neu geschrieben. Vorher
+   wichen vier Dokumente von `1.3.1_konsum_verantworten` ab (HF B und C, je
+   HTML und Word, nur Modus `fill`) — alle durch Kartentexte
+   (`lm-2-2-budget`; `lm-16-1-diskussion`, `lm-16-3-gestaltung` aus der
+   Korrektur von 2.3.1), keine durch den Renderer.
+4. **Die alte `1.3.1_konsum_verantworten` wird archiviert, sobald
+   `1.3.1_konsum_verantworten_v42` freigegeben ist.** Bis dahin bleibt sie
+   publiziert. Offen: was «archiviert» technisch heisst — `set.status` kennt
+   nur `entwurf` und `publiziert`; jeder andere Wert gilt im Index-Builder als
+   live.
+**Rückgängig:** Karten per `git revert` des Commits; danach
+`bestand-v42.mjs --schreiben`.

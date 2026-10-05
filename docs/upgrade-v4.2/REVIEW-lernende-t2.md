@@ -281,3 +281,159 @@ Nicht in der Rangliste, weil klein und schon bekannt: «Wissensecke II», «Wort
 
 Die neun Befunddateien der Lesenden und die Textfassungen der Dokumente liegen im Scratchpad der Sitzung
 (nicht im Repo). Die Exporte liegen unter `docs/upgrade-v4.2/probe/` (nicht eingecheckt).
+
+## 8. Nachtrag 03.10.2026: Herkunft der schwersten Einheitsfehler und was geändert wurde
+
+Auftrag Pietro nach dem Bericht: die Fehler in den Einheiten beheben und dafür sorgen, dass sie
+nicht mehr vorkommen. Die Abschnitte 1–7 beschreiben den Stand **vor** diesen Änderungen.
+
+### 8.1 Woher die Fehler kamen
+
+| Fehler | Entstanden in | Ursache |
+|---|---|---|
+| 2.3.1 A: LF4 nimmt den Entscheid vorweg (B20) | Bauplan §4 und `phase-5-spuren.md` §6 | Regel «`text` nennt beide Pole»: Pol 1 stand als Ergebnis in der Frage. Der Fall lässt nur die Petition offen; der echte Entscheid (allein oder mit Verbündeten) stand nur in den Lösungsbeispielen. |
+| 2.3.1 A ohne Medien: Kap. 6.6 trägt LF3 nicht (B23) | Bauplan §2 und `phase-5-spuren.md` | Geprüft wurde nur «vier belegbare Aussagen». Wegen «`liefert` gleich in beiden Spuren» wurde der Fallbezug angehängt. Das Kohärenz-Audit des Bauplans gab es nur für Medienquellen. |
+| 2.3.1 B mit Medien: Auftrag nennt andere Spalten (B26) | Executor Heft B, Phase 5 | Spalten je Quellentyp fest, Auftrag frei formuliert; kein Skript verglich beides. |
+| 2.1.1 A: LF2 vor dem Hören (B34) | `phase-4-heft-kern.md` §10, Entscheid 9 des Laufs | «Der Kern setzt nichts voraus, was nur eine Spur liefert» — die Bindung an die Quelle wurde darum verworfen, die Zuordnung blieb als feste Aufgabe stehen. |
+| 2.1.1 B: Beispiel S. 6 widerspricht sich (B19) | Korrektur- und Kürzungsrunden nach den Gegenlesern (wahrscheinlich; nur ein Import-Commit, nicht belegbar) | Nach den Änderungen lief nur noch das Skript-Tor, kein Gegenleser. |
+| 2.1.1 B: Quer-Check zum Clip (B38) | `phase-6-abschluss.md` und Bauplan §4 | Der Quer-Check folgt der Leitfrage der Situation; keine Regel verlangte, dass ein Auftrag sie beantwortet. |
+
+### 8.2 Geändert in den Einheiten
+
+- **2.3.1 Heft A:** LF4 beider Spuren nennt die Pole als Fundstellen und fragt «Petition allein – oder
+  zusätzlich …?»; die Akteurskarte ist eine «Notiz am Rand», die unbeantwortbare Frage «Kommt eine
+  Antwort vor dem Entscheid?» ist weg. LF3 ohne Medien fragt, was Kap. 6.6 trägt (Mittel und was
+  ihnen Gewicht gibt), der Fallbezug ist eine Ableitung. Auftrag S. 3: «wer spricht» statt «Rolle».
+- **2.3.1 Heft B:** Auftrag S. 3 nennt die Spaltenköpfe wörtlich.
+- **2.1.1 Heft A:** LF2 verlangt eine begründete Vermutung; ein Satzanfang von LF3 prüft sie an der
+  Quelle. Checkliste und Begleiter entsprechend.
+- **2.1.1 Heft B:** Beispiel S. 6: Fliesstext passt zur Tabelle («Bei zwei von fünf … weiss ich nicht,
+  wer dahintersteht»), «5 kg weniger» ist «Fakt, ungeprüft». Quer-Check nennt die Spalte «Was ich
+  tue»; Schritt 03 sagt «auch beim Clip».
+- **Raster-Begriff (B01):** Checkliste in 2.3.1 A/B und 2.1.1 A: «Jede Zeile hat einen Begriff (LF1
+  oder Glossar)»; Karte `hko-quelle-raster`, Schritt 4: «… aus den Leitfragen oder dem Glossar
+  zuordnen», der Satz «Passt keiner, ist die Aussage … nicht wichtig» ist gestrichen (gilt für alle
+  Einheiten mit dieser Karte, auch Gold v4.2).
+- **Arbeitsfläche (B02):** Hinweiszeile auf S. 7 in HTML und Word: «Auftrag und Schritte stehen auf
+  S. 5. Die Methoden auf S. 6 stehen Ihnen für Ihr Produkt frei zur Verfügung.» (Renderer, alle
+  v4.2-Einheiten).
+
+### 8.3 Damit es nicht wieder vorkommt
+
+- `phase-5-spuren.md`: jeder Teil von LF3 muss in beiden Spuren aus dem Gelesenen beantwortbar sein;
+  LF4 nennt Pole als Fundstellen und zwei wählbare Möglichkeiten; der Auftrag nennt Spaltenköpfe
+  wörtlich.
+- `phase-4-heft-kern.md`: LF2 verlangt nichts, was erst die Quelle zeigt — sonst als Vermutung, die
+  LF3 wieder aufnimmt.
+- `phase-6-abschluss.md`: jede Quer-Check-Frage hat eine Stelle im Heft; ein Produktbild stimmt mit
+  sich selbst, den Definitionen des Hefts und «Das geben Sie ab» überein.
+- `phase-9-tor.md` §3 Nr. 9: Sinnprobe mit sechs Fragen am exportierten Text **nach der letzten
+  Änderung**.
+- `scripts/check-v42.mjs`: neuer Befund `ERR_V42_AUFTRAG_SPALTEN`.
+
+### 8.4 Nicht geändert, offen
+
+- Kriterien Stufe 3 und «SuK»/«Ges» (B03, B04), Schritte ohne Abgabe und Abschreiben (B08, B09,
+  B49), Widersprüche zwischen Methodenkarten und Auftrag (B12): brauchen einen Entscheid.
+- Übrige Einheitsfehler der Tabelle (B17, B18, B21 teils, B22, B24, B27–B32, B35–B37, B39–B48, B52,
+  B55–B57).
+- Messung lokal: 2.3.1 Heft A, S. 6 ragt in beiden Spuren 1,8 px über — schon vor diesen Änderungen.
+
+### 8.5 Nachtrag 05.10.2026: Abschluss 2.3.1
+
+Jeder in 8.4 offene Befund zu 2.3.1 am heutigen Text nachgeprüft. Tor danach grün
+(`check-all`), Messung unverändert (nur die hingenommenen 1,8 px, E28 Punkt 2).
+
+**Behoben**
+
+| Befund | Änderung |
+|---|---|
+| B01, B11, B16 | Rasterauftrag nennt in beiden Heften und beiden Spuren «Begriff aus LF1 oder dem Glossar (S. 8)» — Heft B mit Medien sagte nur «ein Begriff». Die Beispielzeilen der Rasterkarte in Heft B enden auf einem Begriff statt auf «→ hier ein Begriff aus LF1». |
+| B13, B14 | Karte `lm-16-3-gestaltung`: S. 369–371 (Folienregeln stehen auf S. 371); «Höchstens zwei Schriftarten» stand nicht im Lehrmittel, jetzt «Schrift gross und kontrastreich». Karte `lm-16-1-diskussion`: «Acht Diskussionsregeln, darunter: …». Beide Karten gelten für alle Einheiten, die sie führen. |
+| B17 | Checkliste Factsheet: «Anliegen mit Begründung nach 3B» statt «Alle vier Teile ausgefüllt» (das Beispiel hat drei Überschriften); Beleg im Beispiel «mit Fundstelle». |
+| B22 | LF2, Hinweis: «Kap. 6.4 zeigt den Bund. Für Sie zählt je Weg die Voraussetzung …»; Begleiter mit Stolperstein «Bund im Lehrmittel, Gemeinde im Fall». |
+| B25 | LF4, Satzanfang beider Spuren: «…; die Grenze ist …» — die Grenze, die Schritt 04 und Stufe 3 verlangen, wird jetzt erfragt. |
+| B27 | Heft B, Schritt 03: «wie Sie zeigen, dass Sie die Gegenseite verstehen»; der Einwand bleibt Schritt 04. |
+| B28 | Heft B, Indikator: «Die Karte trägt Begründung und Beispiel …» statt «Man hört …». |
+| B29 | Heft B, Schritt 05: Verweis auf Karte 1 (S. 6) für die Eröffnung; Notiz und Rückmeldung auf S. 7. |
+| B31 | Heft B mit Medien, LF3 endet auf dem, was `liefert` verspricht: auf welchen Grund der Gegenseite Sie eingehen müssen. |
+| B51, B52, B55 | Auftragsbogen: Schritt 01 fragt «wer entscheidet»; Schritt 02 «Wege, die das Schreiben offenlässt»; Schritt 05 «bis zur Bitte an die Runde». |
+| QR-Adresse | Das Nullbreite-Zeichen stand nicht in den Daten, sondern im Renderer (`seiten-1-4.tsx`); jetzt `<wbr>`. Gilt für alle v4.2-Hefte. |
+
+**Schon durch 8.2 erledigt:** B20, B21, B23, B26.
+
+**Stehen gelassen**
+
+- B18 (Beispiel zeigt die Diskussionskarte nicht): Mit einem dritten Block fällt die Wechselrede auf
+  180 Zeichen (BERICHT §10). Die Karte ist in den Schritten 01–04 und in «Das geben Sie ab» benannt.
+- B24 (Kap. 6.6 unter «Im Lehrmittel» auch in der Spur mit Medien): `quellen_anker` liegt im Kern und
+  gilt für beide Spuren; der Renderer filtert nicht.
+- B30, B32 (Spur ohne Medien von Heft B hat keinen Stoff zum Stimmrechtsalter): so angelegt; die Gründe
+  sind Fallüberlegung, der Begleiter sagt es.
+- B59 (Netz-Zentrum ≠ Spannungsfeld): das Zentrum ist das Prinzip der Einheit und in A und B gleich.
+- B03, B04, B07–B10, B12, B49, B50: Skill oder Renderer, brauchen einen Entscheid (wie 8.4).
+- B33: Mundart-Quelle; die Lehrperson hört den Anfang mit der Klasse (Begleiter).
+
+**Fakten**
+
+- Graubünden, 27.09.2026, «Teilrevision der Verfassung (Stimmrechtsalter 16)»: abgelehnt mit 43 049 Nein
+  zu 20 803 Ja (67,42 %), Beteiligung 45,09 %, 100 von 100 Gemeinden — amtlich,
+  <https://abstimmungen.gr.ch/vote/2026-09-27-k1>. Das Transkript ohne Karte ist nicht mehr der Beleg.
+- Luzern nach Juni 2023: kein Vorstossrecht für das Jugendparlament belegt; es reicht weiter Petitionen
+  ein (jukalu.ch, 12. Jugendsession am 13.11.2026). Am 09.02.2025 lehnte der Kanton das Stimmrechtsalter
+  16 mit 79,1 % ab (SRF). Was die Regierung aus dem Prüfauftrag vom Juni 2023 machte, ist nicht belegt.
+- «Vorstoss» kommt in Kap. 3.2, 6.4, 6.5, 6.6 nicht vor (Volltextsuche) — der Begleiter sagt es richtig.
+
+**Offen:** beide Audios gegenhören (Zeitmarken, Rollen, Ende des A-Ausschnitts bei ca. 03:25).
+`bestand-v42 --pruefen` meldet `1.3.1_konsum_verantworten · HF C` — die Einheit führt die korrigierten Karten; vorher/nachher nicht getrennt gemessen.
+
+## 9. Nachtrag 05.10.2026: Abschluss 2.1.1_informationen_hinterfragen
+
+Gegenstand nur 2.1.1. Nach den Änderungen lasen sechs Gegenleser (Sonnet) den neuen Stand: Lernende a
+an Heft A mit Medien, Heft B ohne und mit Medien, am Auftragsbogen; zwei Lösungs-Audits (A; B beide
+Fassungen). Profil b und Sweep liefen nicht. Die danach geänderten Stellen hat kein Gegenleser mehr
+gelesen, nur der Orchestrator (Textvergleich der Exporte). Tor und Messung am Schluss grün.
+
+### 9.1 Behoben (Einheit)
+
+| Befund | Was |
+|---|---|
+| B34-Folge | LF2 ist Vermutung: Intro, `liefert`, «Ins Produkt», Schritt 02, Lösung LF3 (Befund) nachgezogen; der verwaiste «Familientisch» in der Lösung ist weg |
+| B35, B36 | Schritt 01: «oben auf S. 7», dazu welche Art von Beteiligten im Beitrag fehlt; Schritt 05 nennt, was zu verbessern ist |
+| B37 | «Heiratsstrafe» neu gefasst (Vergleich mit Unverheirateten), bleibt unter «So gehen Sie vor» |
+| B11, B01, B16 | Auftrag S. 3 aller drei Hefte und Checklisten: Begriff aus LF1, LF2 oder Glossar (S. 8); Kartenbeispiele A und B ohne Medien enden auf einem Begriff |
+| B12 (211 A) | Der Renderer druckt `tun` bei eigenen Karten nicht. Akteurskarte: `fuer` und Kartenbeispiel zeigen jetzt Interesse, Wert, Beleg. Kartentext «Vier bis fünf Akteure … Mittel, Kosten» steht weiter |
+| B61 | Zahlentabelle A: Abstimmungsdatum statt «Personen am Familientisch» |
+| B39, B25 | Schritt 04 und Satzanfang LF4 verlangen, was die Regel kostet; `liefert` LF4: «Grenze der Checks, eigene Regel mit Begründung» |
+| B40 | Spannungsfeld B nennt «vertraut»; Indikatoren Position (Heft B, Bogen) schlagen die Brücke zu «Vertrauen und Prüfen». Wortlaut der Stufe (KN) unverändert |
+| B41 | Beispielzeile: Begriff «Medienkompetenz» |
+| B42, B45 | LF3 und Satzanfänge beziehen sich auf «Ihre fünf Inhalte aus LF2», nicht auf das Protokoll von S. 7; die Gewohnheit ist eine Frage |
+| B46 | Karte `lm-20-7-fake-news-check`, «Typischer Fehler» neu gefasst (gilt auch für 1.1.1_ausbildung, 1.2.2) |
+| B56, B57, B49 | Bogen: Checks heissen wie in Heft B; Schritte 01–05 und Abgaben nennen Seite bzw. Station; Station 4 «Nach der Diskussion: Einigung und was offen bleibt» |
+| neu (Gegenleser) | A: Raster → Übersicht (auch Betroffene, über die nur gesprochen wird), Zielkonflikt als Zeile «… vs. …», «freie Tage» statt «Freitage». B: Beispiel S. 6 (Herkunft eindeutig, Fakt/Meinung passend zu S. 2), «Zwei der drei Zeilen», zweiter Schutzweg unter «Vertrauliche Quellen». Bogen: Station 1, «Empfehlung: Vorschlag:» |
+| neu (Audits) | A: «berufen sich auf ‹liberal›» statt «nennen sich liberal»; «Wirtschaftsgemeinschaft»; Vertiefung 1 (Folgen sagt die Reporterin; Ausgang als Zusatz); NGO-Beispiel Amnesty; Allianz F. B: Befund gegen Lösungsbild, Gewichtung nach S. 188, Vertiefung 2 (04:28, Wortlaut) |
+| Renderer | Bedienzeile der Standalone-Datei in Sie-Form (`standalone-shell.ts`) |
+
+### 9.2 Quellen Heft A
+
+- `q-211a-vertiefung-2`: Link hält. admin.ch/de/individualbesteuerung führt das PDF unter dieser Adresse
+  (12.02.2026); nur der Abruf ohne Browser gibt 403. Das PDF wird als Datei geladen, der Sprung auf S. 59
+  gelingt nicht überall.
+- Sprechende gegen zweite Quellen: Bürgin (Fraktionspräsidentin Mitte), Bertschy (GLP, Co-Präsidentin
+  alliance F), Vincenz-Stauffacher (Co-Präsidentin FDP), Redaktor Stüdli. Nicht nachgeschlagen: Herzog, Zybach.
+- Ja-Anteil: EFD 54,23 % (Abstimmungstag), Swissvotes 54,26 %; Resultatseite der Bundeskanzlei nicht
+  auslesbar. In Lösung (Vertiefung 1) und Begleiter: «rund 54 %».
+- Nicht geprüft: Audio (Zeitmarken, Verständlichkeit).
+
+### 9.3 Stehen gelassen
+
+- Entscheid nötig: B03, B04 (Stufe 3, «SuK»/«Ges»), B08, B09 (Schritte ohne Abgabe, Abschreiben), B02
+  (leere Arbeitsfläche), B12 allgemein (`tun` bei eigenen Karten drucken?).
+- Renderer: B05, B06, B26, B44, B48, B60, B62, «Zahlen | Betrag».
+- B43 (LF2 von Heft B, drei Aufträge in einem Feld): Text am Budget von 220 Zeichen.
+- B47 (Karte Stichwortnotizen): `tun` gibt ihr die Verwendung; der Merksatz zum Zuhören bleibt.
+- Ersatzquelle A: nur Befürworterinnen, andere Personen und Zeitmarken (Bauplan); LF4 hängt dann an Vertiefung 2.
+- «Beim Bisherigen bleiben» (Situation A): Die Mitte will die gemeinsame Besteuerung behalten, wirbt aber
+  für eine eigene Initiative (02:30).
+- `bestand-v42 --pruefen`: Abweichung bei 1.3.1 HF C (fill), aus den uncommitteten Änderungen an
+  `lm-16-1-diskussion` und `lm-16-3-gestaltung`, nicht aus diesem Lauf.
