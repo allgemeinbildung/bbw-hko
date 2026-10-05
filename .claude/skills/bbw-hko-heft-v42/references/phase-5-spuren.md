@@ -45,7 +45,15 @@ Jede Leitfrage einer Spur: `nr`, `bloom`, `knoten_ref`, `text`, `liefert`,
 2. **Raster als Lösung schreiben** (Abschnitt 4): vier Zeilen mit Fundstelle,
    dann Befund, dann die Lösungszeilen.
 3. **Erst daraus** `text` von LF3, `raster`, `scaffolding`, `liefert`
-   (Abschnitt 5).
+   (Abschnitt 5). **Jeder Teil der Frage muss aus dem Gelesenen beantwortbar
+   sein** — in beiden Spuren, nicht nur an der Medienquelle. Fragt LF3 nach dem
+   eigenen Fall, dann als Ableitung («Was leiten Sie daraus für … ab?»), nie so,
+   als stünde die Antwort im Abschnitt. Trägt der Lehrmittel-Abschnitt die Frage
+   der Medien-Spur nicht, bekommt die Spur ohne Medien eine eigene Frage; gleich
+   bleibt nur `liefert`. Probe: die Frage Teil für Teil neben die vier
+   Rasterzeilen legen — bleibt ein Teil ohne Zeile, wird die Frage geändert
+   (Fall 2.3.1 A: Kap. 6.6 sagt, wie Verbände Einfluss nehmen, aber nicht,
+   welche Mittel einer 16-Jährigen offenstehen).
 4. **LF4** mit Erwartungshorizont (Abschnitt 6).
 5. **Kasten S. 4** (Abschnitt 7).
 6. **`quellen[]`** der Medien-Spur (Abschnitt 8).
@@ -161,7 +169,7 @@ Bauplan; im Auto-Modus nach `references/auto-modus.md`.
 | `bloom` | `Beurteilen` | — |
 | `knoten_ref` | die zwei Pole, je Pol-Typ eine Form: `lehrmittel_quelle` «Kap. X.Y ↔ Quelle» · `position_gegenposition` «Kap. X.Y · <Position> ↔ <Gegenposition>» · `modell_eigener_fall` «Kap. X.Y ↔ eigener Fall» · `recht_praxis` «Kap. X.Y · Regel ↔ Praxis im Fall» · `quelle_quelle` «Quelle ↔ Ersatzquelle» bzw. «Quelle ↔ Vertiefung N» | — |
 | `pol_typ` | aus dem Prinzip | `ERR_V42_R1`, `ERR_V42_R5` |
-| `text` | nennt beide Pole und verlangt einen Entscheid | ≤ 220; höchstens zwei «Verb Sie» |
+| `text` | nennt beide Pole **als Fundstellen** und verlangt einen Entscheid zwischen **zwei wählbaren Möglichkeiten** (siehe unten) | ≤ 220; höchstens zwei «Verb Sie» |
 | `liefert` | 3–7 Wörter, ≤ 50 — **gleich in beiden Spuren** | `ERR_V42_BUDGET` |
 | `antwortform` | `schreibfeld` | — |
 | `feld_hoehe_mm` | ohne Medien `45`, mit Medien `60` | `ERR_V42_BUDGET` |
@@ -173,6 +181,19 @@ Bauplan; im Auto-Modus nach `references/auto-modus.md`.
 | `loesung.erwartungshorizont.beispiel_pol_1` | ausformulierte Beispielantwort, die zu Pol 1 entscheidet | siehe unten |
 | `loesung.erwartungshorizont.beispiel_pol_2` | dasselbe für Pol 2; eine Annahme, unter der der Entscheid gilt, wird genannt | siehe unten |
 | `loesung.erwartungshorizont.nicht_tragfaehig` | ein Satz: welche Antwort nicht genügt | — |
+
+**Die Frage nimmt den Entscheid nicht vorweg.** Ein Pol wird genannt, indem die
+Frage sagt, **wo** er steht und **wovon** er handelt («Kap. 6.4 regelt, was eine
+Behörde mit einer Petition tun muss»), nicht, indem sie sein Ergebnis hinschreibt
+(«Laut Kap. 6.4 steht Ihnen die Petition offen») — das Ergebnis ist die Arbeit
+von LF1 bis LF3. Ausnahme `recht_praxis`: Regel und Abweichung dürfen dastehen,
+weil erst der Umgang damit der Entscheid ist. Und der Entscheid muss echt sein:
+Die zwei Möglichkeiten aus `beispiel_pol_1` und `beispiel_pol_2` stehen beide
+in der Frage («Petition allein – oder zusätzlich …?»). Lässt der Fall nur eine
+Möglichkeit zu, ist das ein Fehler des Bauplans (Fall oder Pol-Typ), kein
+Formulierungsproblem. Eine `strategie`, die eine Methodenkarte verlangt, sagt,
+wo die Notiz hinkommt («Notiz am Rand»), und stellt keine Frage, die das
+Material nicht beantwortet.
 
 LF4 trägt **kein** `loesung.zeilen`; der Erwartungshorizont ist die Lösung
 (`check-lf-loesung` lässt das bei LF4 zu). Jede Leitfrage braucht ein
@@ -216,6 +237,15 @@ vorhandene Karte. Die Ersatzquelle steht **nicht** in `quellen[]`; sie hängt
 
 Verb im `auftrag` nach Typ: lesen (Artikel, Grafik, Rechtstext), hören (Audio),
 ansehen (Video).
+
+**Der `auftrag` nennt die Spalten mit ihren Köpfen, wörtlich.** Zählt er auf,
+was in eine Zeile gehört, dann nur mit den Wörtern aus `raster.spalten`
+(«Kernaussage», nicht «Grund»; «wer spricht», nicht «Rolle»). Die Fundstelle
+hat keine eigene Spalte: «vorn Zeitmarke und wer spricht». Letzte Spalte: «ein
+Begriff aus LF1 oder dem Glossar» — so auch in der Checkliste auf S. 8
+(`bewertungsraster`, Zeile zum Raster: «Jede Zeile hat einen Begriff (LF1 oder
+Glossar)») und auf der Karte `hko-quelle-raster`. `check-v42` prüft die
+Aufzählung nach dem Doppelpunkt (`ERR_V42_AUFTRAG_SPALTEN`).
 
 **Vertiefung ohne Transkript** (nur Begleittext des Herausgebers im Archiv,
 E23): Die `erwartung` stützt sich auf den Begleittext und endet mit dem Vermerk

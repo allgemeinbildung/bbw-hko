@@ -91,7 +91,13 @@ nie im Heft, nur im Dokument «Lösungen» (E19).
 | `abschluss.loesung.mitnahme` | gleich viele Einträge wie `abschluss.mitnahme`, gleiche Reihenfolge | `ERR_V42_LOESUNG` |
 
 **Quer-Check.** Jede Frage nimmt eine der offenen Fragen der Situation auf und
-lässt sich nach der Arbeit am Heft abhaken. Die Antwort in `loesung.quercheck`
+lässt sich nach der Arbeit am Heft abhaken. **Abhaken kann man nur, was ein
+Auftrag verlangt hat:** Zu jeder Quer-Check-Frage gibt es eine Stelle im Heft
+(Leitfrage, Schritt oder Spalte des Produkts), an der die Antwort entsteht, und
+die Frage nennt diese Stelle, wo sie nicht offensichtlich ist («Steht beim Clip
+in «Was ich tue», ob ich ihn weiterleite …?»). Verlangt das Heft die Antwort auf
+die Leitfrage der Situation nirgends, wird der Schritt ergänzt, nicht der
+Quer-Check gestrichen (Fall 2.1.1 B). Die Antwort in `loesung.quercheck`
 ist kurz und nennt den Grund aus dem Lösungsbild oder aus LF4.
 
 **«Das nehme ich mit».** Zeilen 1 und 2 nennen je ein Werkzeug oder Ergebnis
@@ -160,6 +166,15 @@ Zwei gezeichnete Blätter vom Typ `ProduktBild` (E17); fehlt eines: `ERR_V42_PRO
 | Fall | ein **anderer** Lebensbereich als Heft, Auftrag und KN | der Fall des Hefts, mit den Zahlen der Situation |
 | `hinweis` | fehlt | Pflicht: wann zeigen, worauf achten; sagt, dass es eine von vielen Lösungen ist |
 | Grenze | eng: `{ eintraege: 5, text: 105 }` | weiter: `{ eintraege: 7, text: 130 }` |
+
+**Ein Produktbild stimmt mit sich selbst und mit dem Heft überein.** Nach jeder
+Änderung — auch nach dem Kürzen wegen Überlauf — neu lesen: (1) Jede Zahl und
+jede Aussage im Fliesstext lässt sich an der Tabelle oder Liste desselben Bilds
+nachzählen («zwei von fünf» heisst zwei Zeilen). (2) Jeder Eintrag folgt den
+Definitionen, die das Heft selbst gibt (S. 2 «Fakt: lässt sich nachprüfen» →
+ein Versprechen im Video ist «Fakt, ungeprüft», nicht «Meinung»). (3) Das Bild
+zeigt **jeden** Teil, den «Das geben Sie ab» nennt, mit denselben Überschriften
+und in derselben Zahl wie die Checkliste («Alle vier Teile»).
 
 ### 5.1 Felder (für beide Bilder gleich)
 

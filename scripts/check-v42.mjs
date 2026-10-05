@@ -268,6 +268,7 @@ function budgetSpur(datei, spurKey, spur) {
   })
   ;(spur.quellen ?? []).forEach((q, i) => {
     max(datei, `${basis}.quellen[${i}].auftrag`, q?.auftrag, 220)
+    auftragSpalten(datei, `${basis}.quellen[${i}].auftrag`, q?.auftrag, q?.raster?.spalten)
     budgetRaster(datei, `${basis}.quellen[${i}].raster`, q?.raster)
     max(datei, `${basis}.quellen[${i}].leitfrage_vertiefung`, q?.leitfrage_vertiefung, 100)
   })
@@ -277,6 +278,35 @@ function budgetSpur(datei, spurKey, spur) {
     ;(ks.spalten ?? []).forEach((s, i) => max(datei, `${basis}.kasten_s4.spalten[${i}]`, s, 30))
     max(datei, `${basis}.kasten_s4.hinweis`, ks.hinweis, 140)
   }
+}
+
+/**
+ * Zaehlt der Auftrag ueber dem Raster nach einem Doppelpunkt auf, was in die Zeile
+ * gehoert, muss jedes Glied ein Spaltenkopf sein (oder die Fundstelle, die vorn in
+ * der ersten Zelle steht). Sonst suchen Lernende eine Spalte, die es nicht gibt
+ * (REVIEW-lernende-t2.md, B26: «Zeitmarke, wer spricht, Grund, Absicht» ueber
+ * «Wer spricht · Kernaussage · Absicht · → Begriff»). Greift erst, wenn mindestens
+ * zwei Glieder Spaltenkoepfe sind — eine Aufzaehlung von Inhalten («zwei haeufige,
+ * zwei seltene Pruefwege») ist keine Spaltenliste.
+ */
+function auftragSpalten(datei, pfad, auftrag, spalten) {
+  if (!istText(auftrag) || !Array.isArray(spalten)) return
+  const i = auftrag.lastIndexOf(': ')
+  if (i < 0) return
+  const koepfe = spalten.flatMap((s) => String(s).replace(/^→\s*/, '').toLowerCase().split(/\s*\/\s*/)).filter(Boolean)
+  const glieder = auftrag
+    .slice(i + 2)
+    .split(/[.;]/)[0]
+    .replace(/\([^)]*\)/g, ' ')
+    .split(/,| und | dann | sowie /)
+    .map((g) => g.toLowerCase().replace(/[«»]/g, '').replace(/(^|\s)(vorn|hinten|dann|je|ein|eine|einen|die|der|das)(?=\s|$)/g, ' ').replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+  const fundstelle = /zeitmarke|seite|absatz|fundstelle|abschnitt/
+  const istKopf = (g) => koepfe.some((k) => g.includes(k) || k.includes(g))
+  const treffer = glieder.filter(istKopf)
+  const fremd = glieder.filter((g) => !istKopf(g) && !fundstelle.test(g))
+  if (treffer.length >= 2 && fremd.length)
+    add('regel', 'ERR_V42_AUFTRAG_SPALTEN', datei, pfad, 'phase-5-spuren.md §8', `nennt «${fremd.join('», «')}»`, `nur Spaltenkoepfe woertlich: ${spalten.join(' · ')} (Fundstelle vorn in der ersten Zelle)`)
 }
 
 /** §3.1 Gemeinsamer Auftrag (Auftragsbogen). */
@@ -858,7 +888,6 @@ if (prinzip && (!Array.isArray(fallListe) || !fallListe.length)) {
 }
 const FALL_BEGRIFFE = [...new Set([
   ...(Array.isArray(fallListe) ? fallListe : []).map((s) => String(s).toLowerCase().trim()).filter(Boolean),
-  'leasing', 'konsumkredit', 'kleinkredit', 'e-bike', 'ebike', 'mobilität',
 ])]
 
 /** Rolle, unter der eine Quellenkarte eingebunden ist (Budget, §5). Pflicht schlaegt Vertiefung. */

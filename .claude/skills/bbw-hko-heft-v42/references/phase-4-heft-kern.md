@@ -147,6 +147,12 @@ von LF3 und LF4 stehen hier so, dass sie in **beiden** Spuren stimmen; Phase 5 �
 - LF2: Die Antwort ist persönlich — die Zeilen beschreiben, was eine vollständige Antwort enthält,
   ein gutes Zeichen und den häufigen Fehler; `quelle` nur dort, wo eine Fundstelle gilt.
 - Keine Lösung mit Fundstelle möglich: Frage umformulieren, nie die Lösung weglassen.
+- **LF2 steht vor der Quelle** (S. 2 vor S. 3) und gehört zum Kern (§10). Sie verlangt darum
+  nichts über Personen oder Stimmen, die die Lernenden erst auf S. 3 kennenlernen. Stützt sie sich
+  auf einen Satz der Situation über solche Stimmen, dann als **Vermutung** («Welche Grundhaltung
+  vermuten Sie dahinter?»), und ein Satzanfang von LF3 nimmt die Vermutung in **jeder** Spur wieder
+  auf («Meine Vermutung aus LF2 trifft (nicht) zu, denn …»). Eine Zuordnung, die die Quelle später
+  widerlegt, ist nur als Vermutung fair (Fall 2.1.1 A: beide Politikerinnen nennen sich «liberal»).
 
 ## 6. Seite 5: Produkt, Schritte, Abgaben
 

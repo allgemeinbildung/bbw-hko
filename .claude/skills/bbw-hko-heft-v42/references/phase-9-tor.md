@@ -96,6 +96,24 @@ Tor-Ausgabe in den Bericht. Eine halbe Einheit bleibt nie liegen.
    dieser Werte der neuen Einheit daneben stellen und die Herleitung nennen.
    Die Gold-Dateien werden dafür nicht gelesen.
 
+9. **Sinnprobe am exportierten Text, nach der letzten Änderung.** Die Skripte
+   prüfen Längen und Struktur, nicht Sinn. Darum wird der exportierte Text jedes
+   Hefts und jeder Spur **nach der letzten Reparatur- oder Kürzungsrunde** noch
+   einmal als Lernende/r gelesen — Besetzung, Paket und Aufträge stehen in
+   `references/gegenleser.md`. Ein Gegenlesen **vor** den Korrekturen ersetzt
+   das nicht. Sechs Fragen, je mit Ja oder mit Seite und Wortlaut:
+   1. LF2 verlangt nichts, was erst die Quelle auf S. 3 zeigt (phase-4 §5).
+   2. Jeder Teil von LF3 ist aus Quelle bzw. Lehrmittel-Abschnitt beantwortbar
+      (phase-5 §3).
+   3. Der Auftrag über dem Raster nennt nur Spaltenköpfe; Auftrag, Karte auf
+      S. 6 und Checkliste auf S. 8 sagen dasselbe über den Begriff (phase-5 §8).
+   4. LF4 lässt zwei Möglichkeiten offen und verrät keine davon (phase-5 §6).
+   5. Das Beispiel auf S. 6 stimmt mit sich selbst, mit den Definitionen des
+      Hefts und mit «Das geben Sie ab» überein (phase-6 §5).
+   6. Jede Quer-Check-Frage hat eine Stelle im Heft, an der ihre Antwort
+      entsteht (phase-6, Quer-Check).
+   Herkunft: `docs/upgrade-v4.2/REVIEW-lernende-t2.md`, Abschnitt 8.
+
 ## 4. Bericht
 
 Lokal: als Antwort. Im Produktionslauf: gemäss `docs/cloud-run/RUN.md`.
@@ -107,6 +125,8 @@ Lokal: als Antwort. Im Produktionslauf: gemäss `docs/cloud-run/RUN.md`.
 - die Abdeckungstabelle und der Vergleich mit Gold (`references/kohaerenz.md`)
 - alle Entscheide, die sonst ein Mensch getroffen hätte, mit Grund und
   verworfener Alternative
+- die Gegenleser (`references/gegenleser.md` §6): Befunde je Leser, was
+  übernommen wurde, was wegfiel, in welcher Runde zuletzt gelesen wurde
 - was nicht belegt, nicht geprüft oder nicht erzeugbar war
 - Fehler in Skill, Skripten oder Renderer, die aufgefallen sind (nicht repariert)
 

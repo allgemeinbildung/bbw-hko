@@ -99,7 +99,7 @@ Reihenfolge ist eine Abhängigkeitsfolge und wird nicht umgestellt.
 | 6 | **Abschluss und Bilder** je Heft | Begriffsnetz, Abschluss mit Lösung, Checkliste, Übersicht, Beispielbild, Lösungsbild | `references/phase-6-abschluss.md` | (im Heft-Skelett) |
 | 7 | **Set** | `set.json`: Glossar, gemeinsamer Auftrag mit `heft_bezug`, Wochenplan, `status: "entwurf"` | `references/phase-7-set.md` | `assets/set-template.json` |
 | 8 | **Begleiter** | `begleiter.md`; die Marker füllt `scripts/begleiter-marker.mjs` der Skill, nie die Hand | `references/phase-8-begleiter.md` | `assets/begleiter-template.md` |
-| 9 | **Tor und Bericht** | alle Gates grün, Bericht | `references/phase-9-tor.md` | — |
+| 9 | **Tor und Bericht** | alle Gates grün, Gegenleser nach der letzten Änderung, Bericht | `references/phase-9-tor.md`, `references/gegenleser.md` | — |
 
 Querschnitt, für jede Phase: `references/kohaerenz.md` (fest gegen hergeleitet,
 Abdeckungstabelle, Vergleich mit Gold), `references/datenvertrag.md` (jedes

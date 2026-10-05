@@ -46,12 +46,16 @@ C. Erzeugung im Auto-Modus, je Einheit (die zwei Einheiten dürfen parallel
    - Executor A und Executor B (Opus, parallel): je ein Heft vollständig
      (Phasen 4, 5, 6). Dann Executor Set (Phase 7), dann Executor Begleiter
      (Phase 8, Marker nur mit scripts/begleiter-marker.mjs der Skill).
-   - Nach dem ersten grünen Tor Sonnet-Gegenleser, nur berichten: je Heft und
-     vorhandener Spur ein Blindleser (exportierter Text, als Lernende/r, ohne
-     Begleiter und Lösungen) und ein Lösungs-Audit (jede Lösung gegen
-     Kapiteldatei bzw. Archivtext, mit Fundstelle); ein Sweep über Sprache und
-     Anrede. Was zutrifft, geht als genauer Auftrag an den Executor der Datei
-     zurück; danach das Tor neu. Höchstens drei Reparaturrunden.
+   - Gegenleser (Sonnet, nur berichten) nach references/gegenleser.md der
+     Skill: je Heft und vorhandener Spur ein/e Lernende/r Profil a und ein
+     Lösungs-Audit; je Heft ein/e Lernende/r Profil b (Deutsch als
+     Zweitsprache, B1); ein/e Lernende/r am Auftragsbogen; ein Sweep. Die
+     Lernenden bearbeiten das Dokument wirklich (Paket mit seitentext.mjs,
+     Auftrag wörtlich aus §4.1). Du prüfst jeden Befund am Dokument nach,
+     bevor er als genauer Auftrag an den Executor der Datei geht; danach das
+     Tor neu. Hat eine Runde sichtbaren Text geändert — auch nur gekürzt —,
+     lesen die Lernenden die geänderten Seiten noch einmal. Höchstens drei
+     Runden.
 D. Tor je Einheit (du selbst, nacheinander, nie zwei Tore gleichzeitig):
    npm run build:einheiten-index
    node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner> --check
