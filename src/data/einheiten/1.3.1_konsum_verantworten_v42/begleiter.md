@@ -76,7 +76,7 @@ Das KN-Raster ist der Ausgangspunkt (Backward Design): Jedes Heft übt zwei der 
 | A | <!--hko:hf_A.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].indikator_produkt-->Gut und Bedürfnis sind getrennt; Bedürfnisarten und Maslow-Stufen stimmen.<!--/hko--> |
 | A | <!--hko:hf_A.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].indikator_produkt-->Massstab-Satz in Ich-Form; der Entscheid wägt Wunsch jetzt gegen Sicherheit später ab.<!--/hko--> |
 | B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->Jede Anpassung ist begründet; im Gespräch wird der Einwand beantwortet, nicht übergangen.<!--/hko--> |
-| B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Wirtschaftliches Prinzip<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Engpass rechnerisch geschlossen; Schutzregeln setzen bei den Schuldenwegen aus LF3 an.<!--/hko--> |
+| B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Wirtschaftliches Prinzip<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Engpass geschlossen oder mehr Spielraum; Schutzregeln setzen bei Schuldenwegen (LF3) an.<!--/hko--> |
 
 Warum diese Verteilung: Die Landkarte in Heft A steht und fällt mit korrekten Begriffen (Bedürfnisarten, Maslow, Gut), und Massstab-Satz und Entscheid zum Handy sind eine Ich-Position. Das Budgetgespräch in Heft B verlangt begründete Anpassungen gegen einen Einwand, und Budget, Engpass und Schuldenrisiko werden im eigenen Budget verbunden.
 
@@ -275,7 +275,7 @@ Die fünf Schritte auf S. 5:
 **S. 3 — Quelle (25 Min.).**
 
 - *Spur ohne Medien:* Lehrmittel Kap. 2.7, S. 73–77. Einen Abschnitt «Einflüsse auf Bedürfnisse» gibt es im Lehrmittel nicht; LF3 fragt darum, wodurch **Kaufwünsche und Nachfrage** beeinflusst werden. Die erste Rasterzeile ist das Beispiel und belegt die Werbung (S. 73); gesucht sind **drei weitere** Aussagen. Die Fundstellen liegen auf S. 74, 76 und 77. Fünf Seiten in zehn Leseminuten sind knapp — verweise auf die drei Fundseiten, die auch die Strategien im Heft nennen.
-- *Spur mit Medien:* Quelle ist ein Agenturartikel (421 Wörter) über eine Studie mit 10- bis 17-Jährigen. Das Raster fragt nach Absatz, Kernaussage, Beleg oder Zahl und dem Begriff aus LF1.
+- *Spur mit Medien:* Quelle ist ein Agenturartikel (421 Wörter) über eine Studie mit 10- bis 17-Jährigen. Das Raster fragt nach Absatz, Kernaussage, Beleg oder Zahl und einem Begriff aus LF1 oder dem Glossar.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt einen überprüfbaren Massstab und den Entscheid zum Handy.
 
@@ -309,7 +309,7 @@ Die fünf Schritte auf S. 5:
 > Der häufigste Fehler in LF1 und LF2: Das Gut wird als Bedürfnis eingetragen («Bedürfnis: Handy»). Frag zurück: «Was fehlt dir, wenn du das Handy nicht hast?» Hinter einem Gut stehen oft mehrere Bedürfnisse — das ist ein gutes Zeichen, kein Fehler.
 
 > [!warnung] Lehrmittel und eigene Beobachtung vermischen
-> In LF3 stammen Klasse, Kollegen und Spontankauf aus der eigenen Beobachtung, nicht aus dem Lehrmittel bzw. dem Artikel. Beides ist erlaubt, aber im Raster muss erkennbar sein, was belegt und was beobachtet ist. Auch die Zuordnung zu einem LF1-Begriff ist eine begründete Deutung der Lernenden; mehrere Zuordnungen sind gültig.
+> In LF3 stammen Klasse, Kollegen und Spontankauf aus der eigenen Beobachtung, nicht aus dem Lehrmittel bzw. dem Artikel. Beides ist erlaubt, aber im Raster muss erkennbar sein, was belegt und was beobachtet ist. Auch die Zuordnung zu einem Begriff aus LF1 oder dem Glossar ist eine begründete Deutung der Lernenden; mehrere Zuordnungen sind gültig.
 
 > [!warnung] Prozente als Schweizer Werte lesen (Spur mit Medien)
 > Die Studie hinter der Quelle stammt aus Deutschland und befragte 10- bis 17-Jährige. Die Wege, über die Kaufwünsche entstehen, lassen sich übertragen, die Prozentzahlen nicht.
@@ -352,7 +352,7 @@ Die fünf Schritte auf S. 5:
 **Quelle**
 <!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster mit vier Zeilen und Beleg
-☐ Jede Zeile hat einen Begriff aus LF1
+☐ Jede Zeile hat einen Begriff (LF1 oder Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
@@ -422,7 +422,7 @@ Die fünf Schritte auf S. 5:
 Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Budget aufstellen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Gliedern Sie Ihr Budget aus LF2 nach den drei Kostenarten aus LF1 und schreiben Sie den Saldo darunter.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Engpass markieren<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Engpass markieren<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird — geht es auf, die mit dem kleinsten Spielraum.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Risiken belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Markieren Sie die Posten, die zu Schulden führen können — Ihr Befund aus LF3 zeigt, worauf Sie achten.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Anpassen und Regeln setzen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie Anpassungen (je mit Grund) und Schutzregeln aus LF4 ein; die Regeln setzen bei den Posten aus Schritt 03 an. Neuen Saldo rechnen.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Gespräch führen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Führen Sie das Budgetgespräch zu zweit: drei Argumente, eine Rückfrage, Ihre Antwort auf den Einwand.<!--/hko-->
@@ -431,23 +431,23 @@ Die fünf Schritte auf S. 5:
 
 <!--hko:hf_B.handlungsprodukt.abgaben|liste-->
 - Monatsbudget mit Saldo vor und nach den Anpassungen
-- 2–3 Anpassungen (eine für die offene Rechnung) und 2 Schutzregeln (Wenn-dann)
+- 2–3 Anpassungen (offene Rechnung zuerst, falls vorhanden) und 2 Schutzregeln
 - Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand
 <!--/hko-->
 
 ### Hinweise zu jeder Seite
 
-**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Quelle (die Statistik 2025 der Schuldenberatung Schweiz, Seite 7); der QR-Code steht auf S. 3.
+**S. 1 — Herausforderung (8 Min.).** Die Zahlen sind nachrechenbar: Die Abos ergeben 45 + 20 + 65 = 130 Franken, die offene Rechnung 180 Franken plus 20 Franken Mahngebühr = 200 Franken. Diese Zahlen sind der Fall: LF1 zeigt daran die Schuldenspirale, und die Lösungen rechnen damit als **Beispielrechnung**. Ab LF2 arbeiten die Lernenden mit ihren **eigenen** Zahlen, nicht mit denen der Situation. Offene Fragen markieren lassen — der Quer-Check auf S. 8 nimmt sie wieder auf. In der Medien-Spur steht hier der Kurzeintrag der Quelle (die Statistik 2025 der Schuldenberatung Schweiz, Seite 7); der QR-Code steht auf S. 3.
 
-**S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die Zahlen für das eigene Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
+**S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die eigenen Zahlen für ein Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, offene Rechnungen —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
 
 > [!coaching] LF1 und LF2
-> Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer einen Betrag nicht genau weiss oder nicht zeigen will, schätzt realistisch — LF2 erlaubt das («wo nötig realistisch geschätzt»). Für das saubere Budget auf S. 7 verlangt die Methodenkarte, Schätzungen wo möglich durch echte Beträge zu ersetzen. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
+> Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer einen Betrag nicht genau weiss oder nicht zeigen will, schätzt realistisch — LF2 erlaubt das («wo nötig realistisch geschätzt»). Die Zahlen der Situation abzuschreiben, ist nicht gemeint. Für das saubere Budget auf S. 7 verlangt die Methodenkarte, Schätzungen wo möglich durch echte Beträge zu ersetzen. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
 
 **S. 3 — Quelle (25 Min.).**
 
 - *Spur ohne Medien:* Lehrmittel Kap. 8.2, S. 199–200. Die erste Rasterzeile ist das Beispiel («Mehr ausgeben als haben»); gesucht sind **drei weitere** Aussagen zu Ursachen oder Folgen von Verschuldung. Die Mahnung selbst kommt in Kap. 8.2 nicht vor — sie steht beim Zahlungsverzug (Kap. 2.4, S. 62).
-- *Spur mit Medien:* Quelle ist die Statistik 2025 der Schuldenberatung Schweiz, **Seite 7**: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (114 Wörter). Die Lernenden tragen vier Werte mit Aussage ein, die zeigen, wie Menschen in der Schweiz in Schulden geraten oder wie lange sie darin bleiben; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Die Methodenkarte «Eine Grafik lesen» ersetzt hier das Raster-Werkzeug. Lass zuerst die Titel genau lesen: Wer wird gezählt, und für welches Jahr gilt der Wert? Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören nicht zum Auftrag.
+- *Spur mit Medien:* Quelle ist die Statistik 2025 der Schuldenberatung Schweiz, **Seite 7**: «Gründe für die Überschuldung» und «Dauer der Verschuldung» (114 Wörter). Die Lernenden tragen vier Werte mit Aussage ein, die zeigen, wie Menschen in Schulden geraten oder wie lange sie darin bleiben; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Die Methodenkarte «Eine Grafik lesen» ersetzt hier das Raster-Werkzeug. Lass zuerst die Titel genau lesen: Wer wird gezählt, und für welches Jahr gilt der Wert? Die Seiten 8–9 desselben PDF behandeln Gläubigerarten und gehören nicht zum Auftrag.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt zwei bis drei Anpassungen, zwei Schutzregeln als Wenn-dann-Satz und eine Antwort auf den stärksten Einwand. Die Aufgabe ist in beiden Spuren wortgleich.
 
@@ -462,11 +462,11 @@ Die fünf Schritte auf S. 5:
 > Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder sofort bzw. innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag kann der Gläubiger die Betreibung fortsetzen, bis zur Lohnpfändung. Eine Mahnung ist üblich, aber keine Voraussetzung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt.
 > Massgebend ist der Abschnitt «Werden Sie betrieben?» der Seite; die Sicht der Gläubigerin darunter gehört nicht zur Aufgabe.
 
-**S. 5 — Auftrag (5 Min.).** Schritt 04 verlangt Anpassungen **je mit Grund**, und die Schutzregeln setzen bei den Posten an, die in Schritt 03 als Schuldenrisiko markiert sind; eine der Anpassungen gilt der offenen Rechnung (Abgaben). Damit haben beide Feedback-Kriterien einen Beleg im Produkt. Schritt 05 ist in diesem Heft kein Kontrollschritt, sondern das Budgetgespräch. Die Kontrolle vor der Abgabe leisten die zwei Feedback-Kriterien mit der Spalte «Selbst».
+**S. 5 — Auftrag (5 Min.).** Schritt 04 verlangt Anpassungen **je mit Grund**, und die Schutzregeln setzen bei den Posten an, die in Schritt 03 als Schuldenrisiko markiert sind; hat jemand eine offene Rechnung, gilt ihr die erste Anpassung (Abgaben). Damit haben beide Feedback-Kriterien einen Beleg im Produkt. Geht ein eigenes Budget schon auf, markieren die Lernenden in Schritt 02 die Posten mit dem kleinsten Spielraum und vergrössern ihn mit den Anpassungen. Die offene Rechnung in LF1 und die gemahnte Rechnung im Quer-Check sind die der Situation; beide Fragen lassen sich auch ohne eigene Mahnung beantworten. Schritt 05 ist in diesem Heft kein Kontrollschritt, sondern das Budgetgespräch. Die Kontrolle vor der Abgabe leisten die zwei Feedback-Kriterien mit der Spalte «Selbst».
 
 **S. 6 — Methoden.** Vier Karten: «Ein Budget aufstellen» für das Monatsbudget, das Rezeptionswerkzeug der Spur für S. 3, «Aufbau eines Statements» für die Argumente und «Die vier Ohren» für das Zuhören im Gespräch. Wie in Heft A zeigt die Rezeptionskarte ein neutrales Beispiel (Vereinssport).
 
-**S. 7 — Arbeitsfläche (40 Min.).** Hier entsteht das saubere Budget aus den Zahlen von LF2, mit Saldo vor und nach den Anpassungen. Darunter stehen zwei bis drei Anpassungen, je mit Grund — eine davon für die offene Rechnung —, und zwei Schutzregeln. Für das Gespräch bilden die Lernenden Paare; das Gegenüber spielt die Kollegin, danach werden die Rollen getauscht, damit jede Person ihr eigenes Budget vertritt. Pro Gespräch 3–4 Minuten.
+**S. 7 — Arbeitsfläche (40 Min.).** Hier entsteht das saubere Budget aus den Zahlen von LF2, mit Saldo vor und nach den Anpassungen. Darunter stehen zwei bis drei Anpassungen, je mit Grund — zuerst für eine offene Rechnung, falls vorhanden —, und zwei Schutzregeln. Für das Gespräch bilden die Lernenden Paare; das Gegenüber spielt die Kollegin, danach werden die Rollen getauscht, damit jede Person ihr eigenes Budget vertritt. Pro Gespräch 3–4 Minuten.
 
 > [!coaching] Das Budgetgespräch
 > Gib vor dem Gespräch eine klare Struktur: drei Argumente, eine Rückfrage, eine Antwort auf den Einwand. Die Person in der Rolle der Kollegin bringt mindestens einen echten Einwand — etwa «Dann lebst du nur noch fürs Sparen». Wer zuhört, hört mit allen vier Ohren hin, bevor er antwortet. Die Gesprächsnotiz ist Teil der Abgabe.
@@ -517,14 +517,14 @@ Die fünf Schritte auf S. 5:
 **Leitfragen**
 <!--hko:hf_B.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ LF1 erklärt drei Kostenarten und die Schuldenspirale
-☐ LF2 hat die Zahlen, den Saldo und die knappen Posten
+☐ LF2 hat eigene Zahlen, den Saldo und die knappen Posten
 ☐ LF4 nennt Anpassungen, zwei Regeln und den Einwand
 <!--/hko-->
 
 **Quelle**
 <!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster zur Quelle (S. 3) mit vier Zeilen
-☐ Jede Zeile hat einen Begriff aus LF1
+☐ Jede Zeile hat einen Begriff (LF1 oder Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 

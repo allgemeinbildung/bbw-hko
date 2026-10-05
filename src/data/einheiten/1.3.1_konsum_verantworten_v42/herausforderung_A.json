@@ -543,7 +543,7 @@
       "produkt": "Quelle",
       "vollstaendig_wenn": [
         "Raster mit vier Zeilen und Beleg",
-        "Jede Zeile hat einen Begriff aus LF1",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
         "Befund in zwei bis drei Sätzen"
       ]
     },
@@ -618,7 +618,7 @@
           "antwortform": "raster",
           "raster": {
             "knoten_ref": "Kap. 2.7 | S. 73-77",
-            "auftrag": "Suchen Sie in Kap. 2.7 (S. 73–77) drei weitere Aussagen, die zeigen, wodurch Kaufwünsche und Nachfrage beeinflusst werden. Die erste Zeile ist ein Beispiel. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
+            "auftrag": "Suchen Sie in Kap. 2.7 (S. 73–77) drei weitere Aussagen dazu, wodurch Kaufwünsche und Nachfrage beeinflusst werden. Die erste Zeile ist ein Beispiel. Ordnen Sie jeder Aussage einen Begriff aus LF1 oder dem Glossar zu.",
             "spalten": [
               "Absatz",
               "Kernaussage",
@@ -643,7 +643,7 @@
               "«Laut Lehrmittel beeinflusst … die Nachfrage, weil …»",
               "«Bei meinen Kopfhörern wirkte vor allem …»"
             ],
-            "produkt": "Die Einflüsse markieren Sie mit Farbe oder Symbol und Seitenangabe auf der Karte."
+            "produkt": "Die Einflüsse notieren Sie auf der Karte bei den geweckten Einträgen (Schritt 03)."
           },
           "loesung": {
             "kern": "Einflüsse auf Kaufwünsche, am eigenen Kauf gezeigt",
@@ -662,7 +662,7 @@
               },
               {
                 "label": "Begriffe",
-                "text": "Die Zuordnung zu einem LF1-Begriff (Wahlbedürfnis, Maslow-Stufe) steht nicht im Lehrmittel; sie ist eine begründete Deutung der Lernenden. Mehrere Zuordnungen gelten, z. B. Trendprodukt → Dazugehörigkeit oder Anerkennung."
+                "text": "Die Zuordnung zu einem Begriff aus LF1 oder dem Glossar (Wahlbedürfnis, Maslow-Stufe, Werbung, Konsumdruck) steht nicht im Lehrmittel; sie ist eine begründete Deutung der Lernenden. Mehrere Zuordnungen gelten, z. B. Trendprodukt → Dazugehörigkeit oder Anerkennung."
               },
               {
                 "label": "Befund",
@@ -760,7 +760,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zum Lehrmittel-Abschnitt (S. 3)",
         "beispiel": [
-          "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
+          "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → Begriff aus LF1 oder Glossar"
         ]
       },
       "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und die ausgefüllte Beispielzeile im Raster (S. 3)."
@@ -794,7 +794,7 @@
               "«Die Quelle zeigt, dass …»",
               "«Bei meinen Kopfhörern wirkte vor allem …»"
             ],
-            "produkt": "Die Einflüsse markieren Sie mit Farbe oder Symbol und Absatz auf der Karte."
+            "produkt": "Die Einflüsse notieren Sie auf der Karte bei den geweckten Einträgen (Schritt 03)."
           },
           "loesung": {
             "kern": "Wege zu Kaufwünschen, am eigenen Kauf gezeigt",
@@ -813,7 +813,7 @@
               },
               {
                 "label": "Begriffe",
-                "text": "Deutung der Lernenden, mehrere gelten: Influencer → Dazugehörigkeit, Anerkennung; Werbung, tiefer Preis → Wahlbedürfnis; Impuls → Bedürfnis ≠ Gut."
+                "text": "Deutung, mehrere gelten, auch Glossarbegriffe: Influencer → Dazugehörigkeit, Anerkennung; Werbung, tiefer Preis → Wahlbedürfnis; Impuls → Bedürfnis ≠ Gut."
               },
               {
                 "label": "Befund",
@@ -903,7 +903,7 @@
             3,
             4
           ],
-          "auftrag": "Lesen Sie den Artikel gemäss QR-Seite. Tragen Sie vier Aussagen ein, die zeigen, über welche Wege Kaufwünsche bei Jugendlichen entstehen. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
+          "auftrag": "Lesen Sie den Artikel gemäss QR-Seite. Tragen Sie vier Aussagen ein, die zeigen, über welche Wege Kaufwünsche bei Jugendlichen entstehen. Ordnen Sie jeder Aussage einen Begriff aus LF1 oder dem Glossar zu.",
           "raster": {
             "spalten": [
               "Absatz",
@@ -935,7 +935,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zur Quelle (S. 3)",
         "beispiel": [
-          "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
+          "Absatz 2 · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → Begriff aus LF1 oder Glossar"
         ]
       },
       "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."

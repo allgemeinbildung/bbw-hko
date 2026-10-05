@@ -230,3 +230,117 @@ Keine Untertitel. Die Datei dauert 5:04; nach 03:10 folgen andere Themen der Sen
 - Lösungen der Spur ohne Medien gegen das Lehrmittel (nicht geändert; Fachprüfung
   vom 01.10.2026).
 - `bestand-v42 --pruefen`, `npm run build`, Index.
+
+## 8. Entscheide 05.10.2026 (Pietro) — umgesetzt
+
+Die drei offenen Punkte aus §6 sind entschieden und in Gold umgesetzt, je in
+beiden Spuren. Geändert: `herausforderung_A.json`, `herausforderung_B.json`,
+`begleiter.md` im Ordner der Einheit. Keine Karte, keine geteilte Datei, kein
+Commit, kein Index-Build.
+
+Tor nach der letzten Änderung: `check-all 1.3.1_konsum_verantworten_v42` →
+«GRUEN — keine Fehler.» · `begleiter-marker`: 223 Marker, 0 unauflösbar ·
+`export-v42` + `messen-v42`: Exit 0, kein Überlauf (S. 1, 6, 7 der vier Hefte
+weiter bei 0 px Reserve).
+
+### 8.1 Raster-Begriff: «LF1 oder Glossar»
+
+| Stelle | Alt | Neu |
+|---|---|---|
+| Heft A ohne Medien, Rasterauftrag | «… drei weitere Aussagen, die zeigen, wodurch … Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.» | «… drei weitere Aussagen dazu, wodurch … einen Begriff aus LF1 oder dem Glossar zu.» (217 Zeichen) |
+| Heft A mit Medien, Auftrag zur Quelle | «… einen Begriff aus LF1 zu.» | «… einen Begriff aus LF1 oder dem Glossar zu.» (205) |
+| Heft B ohne Medien, Rasterauftrag | «… einen Begriff aus LF1 zu.» | «… einen Begriff aus LF1 oder dem Glossar zu.» (210) |
+| Heft B mit Medien, Auftrag zur Quelle | «… wie Menschen in der Schweiz in Schulden geraten … jedem Wert einen Begriff aus LF1 zu.» | «… wie Menschen in Schulden geraten … jedem Wert einen Begriff aus LF1 oder dem Glossar zu.» (218; «in der Schweiz» fiel dem Budget von 220 zum Opfer — der Titel der Quelle nennt die Schweiz) |
+| Checkliste S. 8, beide Hefte | «Jede Zeile hat einen Begriff aus LF1» | «Jede Zeile hat einen Begriff (LF1 oder Glossar)» |
+| Beispiel der Rezeptionskarte S. 6, vier Fassungen | «… → hier ein Begriff aus LF1» | «… → Begriff aus LF1 oder Glossar» |
+| Lösungen LF3, Zeile «Begriffe» | nur LF1-Begriffe | A ohne Medien: «Begriff aus LF1 oder dem Glossar (Wahlbedürfnis, Maslow-Stufe, Werbung, Konsumdruck)» · A mit Medien: «Deutung, mehrere gelten, auch Glossarbegriffe: …» · B ohne Medien: «… aus dem Glossar auch Mahnung, Engpass» · B mit Medien: «… Glossar: Engpass» (alle vier ≤ 900 Zeichen) |
+| Begleiter | «dem Begriff aus LF1», «LF1-Begriff», zwei Checklisten, Zitat des Auftrags Heft B | nachgeführt |
+
+Die ausgefüllten Lösungsraster selbst sind unverändert; ihre Begriffe (z. B.
+Schuldenspirale, fixe Kosten) stehen in LF1 **und** im Glossar.
+
+### 8.2 Heft A, S. 3: kein Beleg auf der Landkarte
+
+| Stelle | Alt | Neu |
+|---|---|---|
+| LF3 «Ins Produkt», ohne Medien | «Die Einflüsse markieren Sie mit Farbe oder Symbol und Seitenangabe auf der Karte.» | «Die Einflüsse notieren Sie auf der Karte bei den geweckten Einträgen (Schritt 03).» |
+| LF3 «Ins Produkt», mit Medien | «… mit Farbe oder Symbol und Absatz auf der Karte.» | derselbe Satz — wortgleich mit 3.1.1 |
+
+Schritt 03 («Bei geweckten: Einfluss notieren»), Beispielbild, Lösungsbild und
+Checkliste («Legende mit drei Markierungen angewendet») verlangten und zeigten
+schon nur den Einfluss; sie sind unverändert. Der Begleiter nannte die
+Seitenangabe nirgends.
+
+### 8.3 Heft B: eigene Zahlen
+
+| Stelle | Alt | Neu |
+|---|---|---|
+| LF2 (S. 2) | «Sammeln Sie die Zahlen für Ihr eigenes Monatsbudget, wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung. Berechnen Sie den Saldo. Bei welchen Posten wird es knapp?» | «Sammeln Sie Ihre eigenen Zahlen für ein Monatsbudget — nicht die der Situation; wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, offene Rechnungen. Berechnen Sie den Saldo. Wo wird es knapp?» (220 Zeichen; «Abos» entfällt — sie sind fixe Kosten) |
+| Abgaben (S. 5) | «2–3 Anpassungen (eine für die offene Rechnung) und 2 Schutzregeln (Wenn-dann)» | «2–3 Anpassungen (offene Rechnung zuerst, falls vorhanden) und 2 Schutzregeln» |
+| Checkliste (S. 8) | «LF2 hat die Zahlen, den Saldo und die knappen Posten» | «LF2 hat eigene Zahlen, den Saldo und die knappen Posten» |
+| Lösung LF2, «Erwartet» | «… die Abos als fixe Kosten, die offene Rechnung samt Gebühr als eigene Zeile …» | «Alle drei Kostenarten mit eigenen Zahlen (nicht denen der Situation), Abos als fixe Kosten, eine offene Rechnung — falls vorhanden — samt Gebühr als eigene Zeile …» |
+| Lösung LF4, «gut wenn» (beide Spuren) | «Die offene Rechnung wird zuerst bezahlt oder mit dem Shop in Teilbeträgen geregelt.» | «Eine offene Rechnung (falls vorhanden) wird zuerst bezahlt oder in Teilbeträgen geregelt.» |
+| Lösungsbild, Hinweis | «Eine mögliche Lösung mit den Zahlen der Situation; …» | «Beispielrechnung mit den Zahlen der Situation; die Lernenden arbeiten mit eigenen Zahlen. …» |
+| Lösung Abschluss (Quer-Check, «Das nehme ich mit») | «Ja: Der Saldo ist 0 statt minus 140.» · «Ausgang von CHF 140 auf 60.» | «Beispielrechnung: Ja, Saldo 0 statt minus 140.» · «Beispielrechnung: Ausgang von CHF 140 auf 60.» |
+| Begleiter S. 1, S. 2, Coaching LF2, S. 5, S. 7, Abgaben | Zahlen der Situation und eigene Zahlen nicht getrennt | S. 1: Die Zahlen der Situation sind der Fall — LF1 zeigt daran die Schuldenspirale, die Lösungen rechnen damit als **Beispielrechnung**; ab LF2 eigene Zahlen. Die Situation abzuschreiben, ist nicht gemeint. Offene Rechnung überall «falls vorhanden» |
+
+Schon vorher einheitlich und unverändert: Methodenkarte S. 6 (`tun`: «mit
+Ihren eigenen Zahlen»), Produktbeschrieb («Ich plane mein Geld mit eigenen
+Zahlen»), Schritte 01–04 («Ihr Budget aus LF2»), Beispielbild («an einem
+anderen Fall»). Nicht gekennzeichnet sind die Beispielsätze der Lösung LF4
+(`beispiel_pol_1/2`) und die Denkhilfe-Zeilen der Spur ohne Medien: Sie
+rechnen ebenfalls mit den Zahlen der Situation und heissen im Dokument schon
+«Beispiel».
+
+**Abweichung zu 3.1.1 (dort nichts geändert).** `3.1.1_konsum_verantworten_3j`,
+Heft B, lautet in diesem Punkt noch wie Gold vor dem Entscheid: LF2 «… für Ihr
+eigenes Monatsbudget, wo nötig realistisch geschätzt: …, Abos, offene
+Rechnung.» (ohne «nicht die der Situation»), Abgabe «(eine für die offene
+Rechnung)», Checkliste «LF2 hat die Zahlen …», Lösungsbild-Hinweis «Eine
+mögliche Lösung …», Lösung Abschluss ohne «Beispielrechnung», Begleiter ohne
+den Satz zu S. 1. Die Punkte 8.1 und 8.2 stimmen in 3.1.1 bereits mit Gold
+überein (dort «LF1 oder Glossar» und derselbe «Ins Produkt»-Satz).
+
+### 8.4 Gegenleser nach den Entscheiden
+
+Zwei Lernende, Profil a, Modell Sonnet, im Vordergrund; je ein Heft, Fassung
+mit Medien ganz und S. 3, 4, 6 der Fassung ohne Medien. Danach nichts mehr
+geändert.
+
+| Heft | Zu den drei Entscheiden | Offen |
+|---|---|---|
+| A | Auftrag (beide Fassungen), Karte und Checkliste sagen dasselbe über den Begriff; mit Medien findet sich je Zeile einer. «Ins Produkt», Schritt 03 und Beispiel sagen dasselbe über die Einflüsse | ohne Medien: Der Tipp «je eine Stelle zu Einkommen, Geld oder Trend» führt zu Aussagen, für die auch das Glossar keinen genau passenden Begriff hat · LF3 «liefert: Einflüsse mit Beleg» — der Beleg steht jetzt nur im Raster · Schritt 03 sagt nicht, ob bei «geweckt, aber berechtigt» der Einfluss dazugehört (das Beispiel zeigt es) · Kriterien-Wortlaut des KN |
+| B | LF2, Schritte 01–04, Abgaben, Karte und Checkliste sind eindeutig «eigene Zahlen»; «falls vorhanden» trägt, wenn es keine offene Rechnung gibt. Begriff: überall gleich | **LF1** «Zeigen Sie an der offenen Rechnung, wie eine solche Spirale beginnen kann» — gemeint ist die der Situation; direkt danach verlangt LF2 «nicht die der Situation» · **Quer-Check S. 8** «Weiss ich, was ich mit der gemahnten Rechnung tue …» — steht unter «die offenen Fragen der Situation», ist aber ohne eigene Mahnung nicht aus dem eigenen Budget zu beantworten · Kriterium «Engpass rechnerisch geschlossen», wenn das eigene Budget aufgeht · für Gesundheit, Trennung, Arbeitslosigkeit passt kein Begriff (die Zeilen wählt man selbst) |
+
+**Vorschlag für die zwei Stellen in Heft B (nicht umgesetzt, weil nach dem
+Lesen nichts mehr geändert wird):** LF1 «Zeigen Sie an der offenen Rechnung
+der Situation, …»; Quer-Check «Weiss ich, was ich mit einer gemahnten Rechnung
+tue, bevor daraus mehr wird?». Beide bleiben im Zeichenbudget.
+
+## 9. Nacharbeit «eigene Zahlen» (05.10.2026, nach §8)
+
+Auftrag: die zwei Stellen aus §8.4 einsetzen und klären, was gilt, wenn das
+eigene Budget aufgeht. Geändert: `herausforderung_B.json`, `begleiter.md`
+(Kern-Felder, gelten in beiden Spuren). Dieselben Texte stehen jetzt in
+`3.1.1_konsum_verantworten_3j` (dortiger Nachtrag §8).
+
+| Stelle | Alt | Neu |
+|---|---|---|
+| LF1 (S. 2) | «Zeigen Sie an der offenen Rechnung, wie eine solche Spirale beginnen kann.» | «Zeigen Sie an der offenen Rechnung der Situation, wie …» (201 Zeichen) |
+| Quer-Check (S. 8) | «… mit der gemahnten Rechnung tue …» | «… mit einer gemahnten Rechnung tue, bevor daraus mehr wird?» |
+| Lösung Quer-Check | «Ja: Ich zahle sie diesen Monat zuerst.» | «Ja: zuerst zahlen — oder mit dem Shop Teilbeträge abmachen.» |
+| Schritt 02 (S. 5) | «Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird.» | «… bei denen es knapp wird — geht es auf, die mit dem kleinsten Spielraum.» |
+| Kriterium «Wirtschaftliches Prinzip», Zeile «Woran sehe ich das in meinem Produkt?» (`indikator_produkt`; der Wortlaut des KN ist unverändert) | «Engpass rechnerisch geschlossen; Schutzregeln setzen bei den Schuldenwegen aus LF3 an.» | «Engpass geschlossen oder mehr Spielraum; Schutzregeln setzen bei Schuldenwegen (LF3) an.» (88 Zeichen) |
+| Lösung LF4, «gut wenn» (beide Spuren) | «… und schliessen den Engpass rechnerisch.» | «… und schliessen den Engpass rechnerisch; geht das eigene Budget schon auf, vergrössern sie den Spielraum.» |
+| Begleiter, S. 5 Heft B | — | drei Sätze: Budget geht auf → Schritt 02 markiert den kleinsten Spielraum; die Rechnung in LF1 und im Quer-Check ist die der Situation; beides ist ohne eigene Mahnung beantwortbar. Die Marker (Schritt 02, Indikator, Quer-Check) sind nachgeführt |
+
+Tor: `check-all 1.3.1_konsum_verantworten_v42 3.1.1_konsum_verantworten_3j` →
+«GRUEN — keine Fehler.» · `messen-v42` Gold: Exit 0, kein Überlauf.
+
+**Gegenleser** (Lernende/r Profil a, Sonnet, Heft B mit Medien; Rolle ohne
+offene Rechnung, eigenes Budget geht knapp auf): **keine störende Stelle.**
+Eigene und Situationszahlen ab S. 2 eindeutig; Schritt 02 deckt den Fall;
+beide Kriterien einschätzbar. Kleine Unsicherheiten: S. 1 liest sich in
+Ich-Form zuerst wie die eigene Lage (so gewollt); bei LF2 «offene Rechnungen»
+schreibt man «keine»; Schritt 05 sagt nicht, mit wem (Begleiter: Paare). Danach
+nichts mehr geändert.

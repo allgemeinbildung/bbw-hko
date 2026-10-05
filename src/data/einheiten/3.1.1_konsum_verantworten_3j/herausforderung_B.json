@@ -128,7 +128,7 @@
       "nr": 1,
       "bloom": "Verstehen",
       "knoten_ref": "Kap. 2.2 | S. 48",
-      "text": "Erklären Sie die drei Kostenarten eines Budgets (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale. Zeigen Sie an der offenen Rechnung, wie eine solche Spirale beginnen kann.",
+      "text": "Erklären Sie die drei Kostenarten eines Budgets (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale. Zeigen Sie an der offenen Rechnung der Situation, wie eine solche Spirale beginnen kann.",
       "liefert": "Budgetgliederung und Risikobegriffe",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 35,
@@ -173,7 +173,7 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.1 | S. 46-47 · Kap. 2.2 | S. 48 · eigener Fall",
-      "text": "Sammeln Sie die Zahlen für Ihr eigenes Monatsbudget, wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung. Berechnen Sie den Saldo. Bei welchen Posten wird es knapp?",
+      "text": "Sammeln Sie Ihre eigenen Zahlen für ein Monatsbudget — nicht die der Situation; wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, offene Rechnungen. Berechnen Sie den Saldo. Wo wird es knapp?",
       "liefert": "Zahlen, Saldo und knappe Posten",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 45,
@@ -198,7 +198,7 @@
           },
           {
             "label": "Erwartet",
-            "text": "Alle drei Kostenarten mit eigenen Zahlen, die Abos als fixe Kosten, die offene Rechnung samt Gebühr als eigene Zeile, Saldo ausgerechnet."
+            "text": "Alle drei Kostenarten mit eigenen Zahlen (nicht denen der Situation), Abos als fixe Kosten, eine offene Rechnung — falls vorhanden — samt Gebühr als eigene Zeile, Saldo ausgerechnet."
           },
           {
             "label": "Engpass",
@@ -224,7 +224,7 @@
       },
       {
         "label": "02 Engpass markieren",
-        "hint": "Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird."
+        "hint": "Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird — geht es auf, die mit dem kleinsten Spielraum."
       },
       {
         "label": "03 Risiken belegen",
@@ -242,7 +242,7 @@
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
     "abgaben": [
       "Monatsbudget mit Saldo vor und nach den Anpassungen",
-      "2–3 Anpassungen (eine für die offene Rechnung) und 2 Schutzregeln (Wenn-dann)",
+      "2–3 Anpassungen (offene Rechnung zuerst, falls vorhanden) und 2 Schutzregeln",
       "Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand"
     ],
     "beispielbild": {
@@ -384,7 +384,7 @@
     },
     "loesungsbild": {
       "titel": "Mögliche Lösung zum Fall: Nettolohn CHF 800, Rechnung mit Mahngebühr CHF 200 offen",
-      "hinweis": "Eine mögliche Lösung mit den Zahlen der Situation; die Lernenden arbeiten mit eigenen Zahlen. Erst zeigen, wenn das eigene Budget steht. Ein Saldo von 0 genügt, wenn die Rechnung bezahlt ist und eine Rückstellung beginnt.",
+      "hinweis": "Beispielrechnung mit den Zahlen der Situation; die Lernenden arbeiten mit eigenen Zahlen. Erst zeigen, wenn das eigene Budget steht. Ein Saldo von 0 genügt, wenn die Rechnung bezahlt ist und eine Rückstellung beginnt.",
       "legende": [
         {
           "key": "knapp",
@@ -561,7 +561,7 @@
         "Der Zusammenhang wird korrekt auf die Situation angewendet.",
         "Das Prinzip wird auf neue Zusammenhänge übertragen (Transfer)."
       ],
-      "indikator_produkt": "Engpass rechnerisch geschlossen; Schutzregeln setzen bei den Schuldenwegen aus LF3 an."
+      "indikator_produkt": "Engpass geschlossen oder mehr Spielraum; Schutzregeln setzen bei Schuldenwegen (LF3) an."
     }
   ],
   "lernfortschritt": {
@@ -629,7 +629,7 @@
   "abschluss": {
     "quercheck": [
       "Reicht mein Geld mit den Anpassungen bis Monatsende?",
-      "Weiss ich, was ich mit der gemahnten Rechnung tue, bevor daraus mehr wird?"
+      "Weiss ich, was ich mit einer gemahnten Rechnung tue, bevor daraus mehr wird?"
     ],
     "mitnahme": [
       "Meine wichtigste Anpassung",
@@ -672,11 +672,11 @@
         ]
       },
       "quercheck": [
-        "Ja: Der Saldo ist 0 statt minus 140.",
-        "Ja: Ich zahle sie diesen Monat zuerst."
+        "Beispielrechnung: Ja, Saldo 0 statt minus 140.",
+        "Ja: zuerst zahlen — oder mit dem Shop Teilbeträge abmachen."
       ],
       "mitnahme": [
-        "Ausgang von CHF 140 auf 60.",
+        "Beispielrechnung: Ausgang von CHF 140 auf 60.",
         "Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.",
         "Was passiert, wenn ich eine Rechnung wirklich nicht zahlen kann."
       ]
@@ -687,7 +687,7 @@
       "produkt": "Leitfragen",
       "vollstaendig_wenn": [
         "LF1 erklärt drei Kostenarten und die Schuldenspirale",
-        "LF2 hat die Zahlen, den Saldo und die knappen Posten",
+        "LF2 hat eigene Zahlen, den Saldo und die knappen Posten",
         "LF4 nennt Anpassungen, zwei Regeln und den Einwand"
       ]
     },
@@ -879,8 +879,8 @@
             "kern": "Erwartungshorizont: Entscheid gegen Einwand",
             "erwartungshorizont": {
               "gut_wenn": [
-                "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch.",
-                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop in Teilbeträgen geregelt.",
+                "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch; geht das eigene Budget schon auf, vergrössern sie den Spielraum.",
+                "Eine offene Rechnung (falls vorhanden) wird zuerst bezahlt oder in Teilbeträgen geregelt.",
                 "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
                 "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
               ],

@@ -261,3 +261,47 @@ Ganzer Film (50 Min.), Untertitel vorhanden. Protagonistinnen vermutlich Mundart
   bleibt bei 0 px Reserve).
 - `bestand-v42 --pruefen`, `npm run build`, Index.
 - Die Lehrmittelseiten (Fachprüfung von Gold).
+
+## 8. Nachzug «eigene Zahlen» in Heft B (05.10.2026, nach dem Commit 3acb277)
+
+Entscheid Pietro zu Gold: Heft B arbeitet mit den **eigenen** Zahlen der
+Lernenden, nicht mit denen der Situation. Hier nachgezogen, damit die
+Anpassung nicht von Gold abweicht — wortgleich mit
+`1.3.1_konsum_verantworten_v42` (Nachtrag dort, §8.3 und §9). Geändert:
+`herausforderung_B.json`, `begleiter.md`; sonst nichts.
+
+| Stelle | Neu |
+|---|---|
+| LF1 (S. 2) | «Zeigen Sie an der offenen Rechnung der Situation, wie eine solche Spirale beginnen kann.» |
+| LF2 (S. 2) | «Sammeln Sie Ihre eigenen Zahlen für ein Monatsbudget — nicht die der Situation; wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, offene Rechnungen. Berechnen Sie den Saldo. Wo wird es knapp?» (220 Zeichen) |
+| Schritt 02 (S. 5) | «… bei denen es knapp wird — geht es auf, die mit dem kleinsten Spielraum.» |
+| Abgabe (S. 5) | «2–3 Anpassungen (offene Rechnung zuerst, falls vorhanden) und 2 Schutzregeln» |
+| Kriterium «Wirtschaftliches Prinzip», Zeile «Woran sehe ich das …» (KN-Wortlaut unverändert) | «Engpass geschlossen oder mehr Spielraum; Schutzregeln setzen bei Schuldenwegen (LF3) an.» |
+| Quer-Check (S. 8) | «Weiss ich, was ich mit einer gemahnten Rechnung tue, bevor daraus mehr wird?» |
+| Checkliste (S. 8) | «LF2 hat eigene Zahlen, den Saldo und die knappen Posten» |
+| Lösungen | LF2 «Erwartet»: eigene Zahlen, offene Rechnung «falls vorhanden»; LF4 «gut wenn»: offene Rechnung «falls vorhanden», Budget geht auf → Spielraum vergrössern; Lösungsbild-Hinweis, Quer-Check und «Das nehme ich mit» als «Beispielrechnung» gekennzeichnet; Quer-Check 2: «zuerst zahlen — oder mit dem Shop Teilbeträge abmachen» |
+| Begleiter | S. 1: Zahlen der Situation sind der Fall, die Lösungen rechnen damit als Beispielrechnung, ab LF2 eigene Zahlen; S. 2, Coaching LF2, S. 5, S. 7 und Abgaben nachgeführt; Marker neu gefüllt |
+
+Tor: `check-all 3.1.1_konsum_verantworten_3j` → «GRUEN — keine Fehler.» ·
+`export-v42` + `messen-v42`: Exit 0, kein Überlauf.
+
+**Gegenleser** (Lernende/r Profil a, Sonnet, Heft B; Rolle ohne offene
+Rechnung, eigenes Budget geht knapp auf): eigene und Situationszahlen an jeder
+Stelle klar; nichts unlösbar. Danach nichts mehr geändert. Offen:
+
+1. **Schritt 03/04 gegen das Kriterium:** Schritt 03 lässt «Posten» markieren,
+   die zu Schulden führen können, und Schritt 04 setzt die Regeln «bei den
+   Posten aus Schritt 03» an; die Zeile beim Kriterium sagt «bei Schuldenwegen
+   (LF3)». In diesem Heft sind die Schuldenwege der Quelle Verhalten (Post
+   liegen lassen, kein Überblick), keine Budgetposten — wer kein
+   Schuldenrisiko im Budget hat, findet in Schritt 03 keinen Ausweg wie in
+   Schritt 02. In Gold fällt das weniger auf (Statistik: Fixkosten, Planung).
+2. **Quer-Check 2:** Was man mit einer gemahnten Rechnung tut, steht im
+   Pflichtteil nur indirekt (LF1, Beispiel S. 6 «sonst folgt eine Mahnung»);
+   ausdrücklich nur in der freiwilligen Vertiefung (ch.ch).
+3. LF3 «welcher davon zeigt sich schon in Ihrem Budget?» setzt voraus, dass
+   sich einer zeigt; der Satzanfang «Die Quelle zeigt nicht, …» ist der Ausweg.
+4. Kriterium «Wirtschaftliches Prinzip», 3 Punkte («Transfer») — KN-Wortlaut,
+   im Heft nicht einzuschätzen (der Begleiter sagt es).
+
+Die offenen Punkte aus §4 (Musterlösung LF3 Heft B) gelten weiter.
