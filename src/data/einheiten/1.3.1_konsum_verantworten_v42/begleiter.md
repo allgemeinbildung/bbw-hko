@@ -80,8 +80,8 @@ Das KN-Raster ist der Ausgangspunkt (Backward Design): Jedes Heft übt zwei der 
 
 Warum diese Verteilung: Die Landkarte in Heft A steht und fällt mit korrekten Begriffen (Bedürfnisarten, Maslow, Gut), und Massstab-Satz und Entscheid zum Handy sind eine Ich-Position. Das Budgetgespräch in Heft B verlangt begründete Anpassungen gegen einen Einwand, und Budget, Engpass und Schuldenrisiko werden im eigenen Budget verbunden.
 
-- Die Kriterien stehen in den Heften **im Wortlaut des KN**, mit denselben vier Stufen, und sind **in beiden Spuren identisch**.
-- Die Lernenden kreuzen vor der Abgabe ihre Stufe an (Spalte «Selbst»); du gibst Rückmeldung auf derselben Skala.
+- Die Kriterien stehen in den Heften **im Wortlaut des KN**, mit denselben 0 bis 3 Punkten, und sind **in beiden Spuren identisch**.
+- Die Lernenden kreuzen vor der Abgabe ihre Punkte an (Spalte «Selbst»); du gibst Rückmeldung auf derselben Skala.
 - Bewertet wird im KN **bi-dimensional**: SuK und Ges als zwei getrennte Noten (Kap. 7).
 
 > [!coaching] KN-Wortlaut im Heft lesen
@@ -143,7 +143,7 @@ Jedes Heft besteht aus zwei Bogen A3, also acht Seiten A4. Die Doppelseite 6–7
 | 2 | Wissensecke I | LF1 und LF2 schriftlich | — | 27 |
 | 3 | Quelle | lesen, Raster füllen, Befund schreiben | LF3: Quelle (Medien) oder Lehrmittel-Abschnitt mit Beispielzeile (ohne) | 25 |
 | 4 | Wissensecke II | LF4 schriftlich | Kasten: Vertiefung (Medien) oder Denkhilfe (ohne) | 15 |
-| 5 | Auftrag | Auftrag lesen; vor der Abgabe Stufe ankreuzen | — | 5 |
+| 5 | Auftrag | Auftrag lesen; vor der Abgabe Punkte ankreuzen | — | 5 |
 | 6 | Methoden und Beispiel | nachschlagen; Beispiel des Produkts ansehen | Karte 2: Rezeptionswerkzeug der Spur | — |
 | 7 | Arbeitsfläche | Produkt herstellen | — | 40 |
 | 8 | Abschluss | Begriffsnetz, Glossar, Quer-Check, «Das nehme ich mit», Checkliste | Glossar: Begriffe der Quelle | 15 |
@@ -287,13 +287,13 @@ Die fünf Schritte auf S. 5:
 > Stand: aus dem Begleittext von SRF zum Beitrag. Das Audio selbst ist nicht gegengehört.
 
 > [!erwartungshorizont] Vertiefung 2 (Spur mit Medien, Video 00:35–06:29) — gefälschte Markenartikel
-> Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten, der Zoll hält Pakete zurück; Verfahren und Kosten gehen vom Markeninhaber aus.
+> Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten; verdächtige Pakete werden kontrolliert, und Strafverfahren oder Bussen können vom Markeninhaber kommen, nicht vom Zoll.
 > Weitere Risiken (etwa Gesundheit oder Zahlungsdaten) nennt der Ausschnitt nicht; wer sie anführt, geht über den Ausschnitt hinaus.
 
 > [!coaching] Massstab statt Gefühl
 > Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat. Die Methodenkarte «3B-Schema» hilft beim Begründen: den Massstab als Behauptung schreiben, in einem Satz begründen und am Beispiel Handy prüfen. «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
 
-**S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Stufe an; Schritt 05 verlangt danach eine Verbesserung.
+**S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Punkte an; Schritt 05 verlangt danach eine Verbesserung.
 
 **S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Quelle.
 
@@ -336,7 +336,7 @@ Die fünf Schritte auf S. 5:
 > - Zwei leere Knoten: Begriffe aus dem eigenen Raster, in der Spur mit Medien etwa Influencer-Marketing oder Algorithmus, in der Spur ohne Medien etwa Nachfrage.
 > - «gilt auch bei …» (offenes Feld): eigene Beispiele, etwa ein Abo-Abschluss oder eine Freizeitausgabe
 >
-> **Tragfähige Verbindungen, zum Beispiel:** Werbung → Geweckter Wunsch («weckt») · Bedürfnis → Gut («wird befriedigt durch») · Konsumdruck → Impulskauf («führt zu») · Massstab → Impulskauf («bremst») · Wahlbedürfnis → Zentrum («kann warten»). Es zählt, dass die Beschriftung den Zusammenhang nennt, nicht welche fünf Linien gewählt werden.
+> **Tragfähige Verbindungen, zum Beispiel:** Werbung → Geweckter Wunsch («weckt») · Bedürfnis → Gut («wird befriedigt durch») · Konsumdruck → Impulskauf («führt zu») · Massstab → Impulskauf («bremst») · Massstab → «gilt auch bei …» («hilft auch dort beim Entscheiden»). Es zählt, dass die Beschriftung den Zusammenhang nennt, nicht welche fünf Linien gewählt werden.
 >
 > **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefungsquelle, falls Ihr Heft eine nennt) und als vierte Farbe auf der Karte zeigen.<!--/hko-->
 
@@ -423,7 +423,7 @@ Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Budget aufstellen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Gliedern Sie Ihr Budget aus LF2 nach den drei Kostenarten aus LF1 und schreiben Sie den Saldo darunter.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Engpass markieren<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Risiken belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Markieren Sie mit dem Raster aus LF3 die Posten, die zu Schulden führen können.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Risiken belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Markieren Sie die Posten, die zu Schulden führen können — Ihr Befund aus LF3 zeigt, worauf Sie achten.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Anpassen und Regeln setzen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie Anpassungen (je mit Grund) und Schutzregeln aus LF4 ein; die Regeln setzen bei den Posten aus Schritt 03 an. Neuen Saldo rechnen.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Gespräch führen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Führen Sie das Budgetgespräch zu zweit: drei Argumente, eine Rückfrage, Ihre Antwort auf den Einwand.<!--/hko-->
 
@@ -442,7 +442,7 @@ Die fünf Schritte auf S. 5:
 **S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die Zahlen für das eigene Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
 
 > [!coaching] LF1 und LF2
-> Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer seine echten Zahlen nicht zeigen will, darf schätzen — das Heft erlaubt geschätzte Zahlen ausdrücklich. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
+> Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer einen Betrag nicht genau weiss oder nicht zeigen will, schätzt realistisch — LF2 erlaubt das («wo nötig realistisch geschätzt»). Für das saubere Budget auf S. 7 verlangt die Methodenkarte, Schätzungen wo möglich durch echte Beträge zu ersetzen. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
 
 **S. 3 — Quelle (25 Min.).**
 
@@ -459,7 +459,7 @@ Die fünf Schritte auf S. 5:
 > Eine konkrete Anlaufstelle nennt der Ausschnitt nicht. Der Beitrag ist in Mundart.
 
 > [!erwartungshorizont] Vertiefung 2 (Spur mit Medien, Webseite) — Ablauf einer Betreibung
-> Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag kann fortgesetzt werden, bis zur Lohnpfändung. Eine Mahnung ist üblich, aber keine Voraussetzung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt.
+> Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder sofort bzw. innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag kann der Gläubiger die Betreibung fortsetzen, bis zur Lohnpfändung. Eine Mahnung ist üblich, aber keine Voraussetzung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt.
 > Massgebend ist der Abschnitt «Werden Sie betrieben?» der Seite; die Sicht der Gläubigerin darunter gehört nicht zur Aufgabe.
 
 **S. 5 — Auftrag (5 Min.).** Schritt 04 verlangt Anpassungen **je mit Grund**, und die Schutzregeln setzen bei den Posten an, die in Schritt 03 als Schuldenrisiko markiert sind; eine der Anpassungen gilt der offenen Rechnung (Abgaben). Damit haben beide Feedback-Kriterien einen Beleg im Produkt. Schritt 05 ist in diesem Heft kein Kontrollschritt, sondern das Budgetgespräch. Die Kontrolle vor der Abgabe leisten die zwei Feedback-Kriterien mit der Spalte «Selbst».
@@ -508,7 +508,7 @@ Die fünf Schritte auf S. 5:
 > - Zwei leere Knoten: Begriffe aus dem eigenen Raster, in der Spur mit Medien etwa Überschuldung, in der Spur ohne Medien etwa Betreibung.
 > - «gilt auch bei …» (offenes Feld): eigene Beispiele, in denen geplant werden muss, bevor Geld ausgegeben wird
 >
-> **Tragfähige Verbindungen, zum Beispiel:** Fixe Kosten → Engpass («lassen wenig Spielraum») · Mahnung → Schuldenspirale («ist der erste Schritt») · Anpassung → Saldo («verbessert») · Schutzregel → Mahnung («verhindert») · Rückstellung → Zentrum («Sicherheit später»).
+> **Tragfähige Verbindungen, zum Beispiel:** Fixe Kosten → Engpass («lassen wenig Spielraum») · Mahnung → Schuldenspirale («ist der erste Schritt») · Anpassung → Saldo («verbessert») · Schutzregel → Mahnung («verhindert») · Rückstellung → «gilt auch bei …» («braucht es auch dort»).
 >
 > **Optionale Vertiefung (für 100 %):** <!--hko:hf_B.lernfortschritt.scaffold_100-->Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen.<!--/hko-->
 
@@ -552,12 +552,12 @@ Die Tabelle wird beim Laden aus der Quellenkartei erzeugt; sie zeigt den Stand, 
 <!--hko:quellen|quellenstand-->
 | Rolle | Titel | Herausgeber | Datum | Verortung | Länge | Geprüft am | Link |
 |---|---|---|---|---|---|---|---|
-| A · Pflicht (q-131a-pflicht) | Influencer treiben Online-Käufe bei Jugendlichen in die Höhe | nau.ch / Keystone-SDA | 15.06.2026 | ganzer Artikel, Absätze 1–8 | 421 Wörter | 01.10.2026 | [nau.ch](https://www.nau.ch/news/europa/influencer-treiben-online-kaufe-bei-jugendlichen-in-die-hohe-67138867) |
-| A · Ersatz zur Pflicht (q-131a-pflicht-ersatz) | Influencer-Marketing gefährdet junge Leute – die Politik sollte handeln | watson.ch | 17.12.2025 | ab «Was wurde untersucht?», 10 Absätze | 287 Wörter | 01.10.2026 | [watson.ch](https://www.watson.ch/schweiz/digital/630368385-influencer-marketing-gefaehrdet-junge-leute-die-politik-sollte-handeln) |
+| A · Quelle (q-131a-pflicht) | Influencer treiben Online-Käufe bei Jugendlichen in die Höhe | nau.ch / Keystone-SDA | 15.06.2026 | ganzer Artikel, Absätze 1–8 | 421 Wörter | 01.10.2026 | [nau.ch](https://www.nau.ch/news/europa/influencer-treiben-online-kaufe-bei-jugendlichen-in-die-hohe-67138867) |
+| A · Ersatzquelle (q-131a-pflicht-ersatz) | Influencer-Marketing gefährdet junge Leute – die Politik sollte handeln | watson.ch | 17.12.2025 | ab «Was wurde untersucht?», 10 Absätze | 287 Wörter | 01.10.2026 | [watson.ch](https://www.watson.ch/schweiz/digital/630368385-influencer-marketing-gefaehrdet-junge-leute-die-politik-sollte-handeln) |
 | A · Vertiefung 1 (q-131a-vertiefung-1) | So erkennt man Influencer-Werbung | SRF Ratgeber | 23.08.2023 | 00:00–05:54 | 5:54 Min. | 01.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:c6435615-4741-4d5c-9f28-92f267610f08&subdivisions=false) |
 | A · Vertiefung 2 (q-131a-vertiefung-2) | Designer-Fälschungen – So funktioniert das illegale Business mit Fakes | SRF Impact | 10.01.2024 | 00:35–06:29 | 5:54 Min. | 01.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:7b5768ea-7783-4f3d-baa7-e7982a23c61d&subdivisions=false) |
-| B · Pflicht (q-131b-pflicht) | Statistik 2025 der Schuldenberatungen: Gründe der Überschuldung | Schuldenberatung Schweiz | 09.2026 | Seite 7, Darstellung 4 und 5 | 114 Wörter | 01.10.2026 | [schulden.ch](https://schulden.ch/wp-content/uploads/2026/09/sbs-statistik-2025-web.pdf#page=7) |
-| B · Ersatz zur Pflicht (q-131b-pflicht-ersatz) | Steuerrückstand 2024 nach Alter, Bildung, Erwerbsstatus | Bundesamt für Statistik (BFS) | 16.02.2026 | Zeilen Gesamt, Alter, Bildung, Erwerb | 86 Wörter | 01.10.2026 | [datawrapper.dwcdn.net](https://datawrapper.dwcdn.net/40f7c046d3a53ef1f82d93a4e1b420cf/2/) |
+| B · Quelle (q-131b-pflicht) | Statistik 2025 der Schuldenberatungen: Gründe der Überschuldung | Schuldenberatung Schweiz | 09.2026 | Seite 7, Darstellung 4 und 5 | 114 Wörter | 01.10.2026 | [schulden.ch](https://schulden.ch/wp-content/uploads/2026/09/sbs-statistik-2025-web.pdf#page=7) |
+| B · Ersatzquelle (q-131b-pflicht-ersatz) | Steuerrückstand 2024 nach Alter, Bildung, Erwerbsstatus | Bundesamt für Statistik (BFS) | 16.02.2026 | Zeilen Gesamt, Alter, Bildung, Erwerb | 86 Wörter | 01.10.2026 | [datawrapper.dwcdn.net](https://datawrapper.dwcdn.net/40f7c046d3a53ef1f82d93a4e1b420cf/2/) |
 | B · Vertiefung 1 (q-131b-vertiefung-1) | Neuer Aargauer Verein hilft jungen Leuten mit Schulden | SRF Regionaljournal AG/SO | 06.02.2025 | 00:04–03:10 | 3:06 Min. | 01.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:8e303064-455e-330b-bf96-45e5449aecf8&subdivisions=false) |
 | B · Vertiefung 2 (q-131b-vertiefung-2) | Betreibung: Zahlungsbefehl, Rechtsvorschlag, Pfändung | ch.ch – Bund, Kantone, Gemeinden | o. D. | Abschnitt «Werden Sie betrieben?» | 384 Wörter | 01.10.2026 | [ch.ch](https://www.ch.ch/de/steuern-und-finanzen/schulden--betreibungen-und-konkurs/betreibungen/) |
 <!--/hko-->
@@ -643,7 +643,7 @@ Die Sprachnachricht richtet sich an die Gruppe im Chat: 60–90 Sekunden, der En
 
 ### Kriterien und Indikatoren
 
-Die vier Kriterien stehen auf A4 im Wortlaut des KN, mit denselben vier Stufen (Kap. 7). Woran du sie im Auftrag erkennst:
+Die vier Kriterien stehen auf A4 im Wortlaut des KN, mit denselben 0 bis 3 Punkten (Kap. 7). Woran du sie im Auftrag erkennst:
 
 | Kriterium | Dim. | Indikator im Auftrag |
 |---|---|---|
@@ -670,7 +670,7 @@ Zwischen der Abgabe und dem KN liegt mindestens eine Lektion mit Rückmeldung �
 | | Gemeinsamer Auftrag | KN |
 |---|---|---|
 | Zweck | Übung mit Rückmeldung | Nachweis |
-| Kriterien | dieselben vier KN-Kriterien, gleicher Wortlaut, gleiche Stufen | vier KN-Kriterien |
+| Kriterien | dieselben vier KN-Kriterien, gleicher Wortlaut, gleiche Punkte | vier KN-Kriterien |
 | Situation | neu, verbindet A und B, Lebensbereich Freizeit | neu, verbindet A und B, anderer Lebensbereich |
 | Produkt | Entscheidungsblatt und Sprachnachricht | eine der drei KN-Formen |
 | Rückmeldung | Lehrperson und Selbsteinschätzung, vor dem KN | Note |
