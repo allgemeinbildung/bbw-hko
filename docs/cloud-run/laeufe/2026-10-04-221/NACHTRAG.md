@@ -3,11 +3,11 @@
 Zum Bericht `BERICHT.md` desselben Laufs. Kein Lehrmittel-, Transkript- oder
 Artikeltext in dieser Datei.
 
-**Stand:** `check-all` grün, Messung ohne Überlauf (43 Seiten ok), beides nach
-der letzten Änderung. Zwei Gegenleser-Runden, alle Berichte ausgewertet (§4).
-Urteil: **freigabereif nach Gegenhören: ja, mit Vorbehalt für Heft A** — dort
-hängen drei Lösungen an einem Mundart-O-Ton (02:28), den niemand gehört hat;
-trägt er beim Gegenhören nicht, ist der Tausch (§5.1) nötig.
+**Stand (nach dem Tausch, §9):** `check-all` grün, Messung ohne Überlauf (43
+Seiten ok), beides nach der letzten Änderung. Gegenleser: zwei Runden vor dem
+Tausch (§4), danach für Heft A eine Runde und ein Nachlesen (§9); alle Berichte
+ausgewertet. Urteil: **freigabereif nach Gegenhören: ja.** Der Vorbehalt zum
+Mundart-O-Ton 02:28 betrifft seit dem Tausch nur noch die Ersatzquelle.
 
 ## 1. Befunde
 
@@ -51,29 +51,46 @@ Probelauf» (Renderer); Merksätze der Lehrmittelkarten.
 
 Alle Zeitmarken sind aus Transkripten berechnet (±10 Sek.).
 
-**A · Quelle `q-221a-pflicht`** — `https://www.srf.ch/play/embed?urn=urn:srf:audio:c5ea99d8-8522-371a-af33-de1ddf4af8c5&subdivisions=false`
+**A · Quelle `q-221a-pflicht` (seit dem Tausch: Musliminnen)** — `https://www.srf.ch/play/embed?urn=urn:srf:audio:c6c018ea-fe9e-3547-9e10-195b169eded4&subdivisions=false`
+
+Marken ab Beginn des Beitrags bei 34:37 der Sendung gerechnet (Swissdox-Uhr
+je Sprecherwechsel; Themenregister 34:37 = Ende 40:08 minus 331 Sek. laut
+SRG-API). Erwartete Abweichung wenige Sekunden. Liegen alle Marken gleich
+daneben, ist nur der Beginn falsch — dann sagen, um wie viel.
 
 | ☐ | Marke | Erwartet | Wer | Hängt daran |
 |---|---|---|---|---|
-| ☐ | 00:00 | Anmoderation: umstrittene Bezeichnung, Betroffene wollen sie behalten; beginnt der Player hier? | Moderation | Lösung LF3 «Auch gültig» |
-| ☐ | 01:12 | O-Ton Mundart: ohne den Namen fehlte ihm ein Stück Identität | Präsident Kulturverein | LF3 «Auch gültig», Befund |
-| ☐ | 01:17 | nur ein kleiner Teil reist, die meisten sesshaft; Wort «Vorurteile abbauen» | Reporter | Rasterzeile 1 (Stereotyp, Rückschluss), Lösungsbild Zeile 1 |
-| ☐ | 01:48 | O-Ton Mundart, im Transkript unverständlich | Präsident | nichts im Heft; nur prüfen, ob etwas Heikles fällt |
-| ☐ | 01:59 | Dachverbände in D/A meiden die Bezeichnung als abwertend, «mit Vorurteilen behaftet» | Reporter | Rasterzeile 2 (Vorurteil), Lösungsbild Zeile 2 |
-| ☐ | **02:28** | O-Ton Mundart: als Beschimpfung rassistisch (er nennt ein Schimpfwort als Beispiel), als Name für die eigene Herkunft keine Schande | Präsident | **Rasterzeile 3, LF4 (beide Beispiele), Lösungsbild Zeile 3 und Satz 2, Glossar «Selbstbezeichnung»/«Beschimpfung», Begleiter-Callout «Die sagen es ja selbst»** |
-| ☐ | 02:47 | mit dem Wort verschwände die Geschichte; Verbot wäre falsch | Reporter, Sicht der Schriftstellerin | LF4 Beispiel 2, LF3 «Auch gültig» |
-| ☐ | 03:31 | Aufarbeitung; **Jahreszahl 1973**, Kinder weggenommen; Entschuldigung des Bundesrats reiche nicht | Reporter, Sicht der Schriftstellerin | Rasterzeile 4, Befund |
-| ☐ | 03:51 | Ende des Ausschnitts — lässt es sich ansagen? | | Karte, Begleiter |
+| ☐ | 00:00 | Anmoderation; die Wörter «Vorurteile» und «Diskriminierung» fallen; beginnt der Player hier? | Moderation | LF3 «Begriffe» |
+| ☐ | 00:29 | zwei junge Frauen mit Kopftuch; das genüge manchen für negative Reaktionen; kleine Rassismen im Alltag | Reporter | LF3 «Auch gültig», Glossar «Alltagsrassismus» |
+| ☐ | **00:57** | schiefer Blick, Flüstern im Bus, gemustert werden | jüngere Betroffene | **Rasterzeile 1, Lösungsbild Zeile 3, LF4 (gut_wenn, beide Beispiele)** |
+| ☐ | 01:13 | solche Erlebnisse prägen ihr Handeln | Reporter | LF4 gut_wenn |
+| ☐ | **01:17** | sie ist vorsichtiger; was sie tut, wird allen Frauen mit Kopftuch zugeschrieben | jüngere Betroffene | **Rasterzeile 2 (Stereotyp), Lösungsbild Zeile 1, LF4 Beispiel 1, Befund** |
+| ☐ | 01:56 | Basel ist Heimat; oft Erlebnisse mit Rassismus | ältere Betroffene | LF3 «Auch gültig» |
+| ☐ | **02:12** | feste Bilder: herrschende Männer, unterdrückte Frauen, Verdacht der Nähe zu Extremismus; Wort «Vorurteile» | Reporter | **Rasterzeile 3 (Vorurteil), Lösungsbild Zeile 2, Befund** |
+| ☐ | 02:23 | mit Gewalt in Verbindung gebracht, das macht es schwer | ältere Betroffene | Lösungsbild Zeile 2 (zweite Marke), LF4 gut_wenn, Befund |
+| ☐ | 02:28 | Politik diskutiert ein Kopftuchverbot an Schulen | Reporter | Begleiter (Ansage zur Debatte, «etwa 02:28–03:15») |
+| ☐ | **02:42** | Debatte läuft von oben nach unten, die Betroffenen werden nicht einbezogen | jüngere Betroffene | **Rasterzeile 4 (Ausgrenzung)**, LF3 «Erwartet» |
+| ☐ | 02:54 | über statt mit ihnen; Religionsfreiheit; macht wütend | Reporter | Glossar «Religionsfreiheit» |
+| ☐ | 03:04 | Angriff auf eine Minderheit in der Minderheit (Transkript unklar: «eine» oder «keine» Schande) | jüngere Betroffene | nichts im Heft |
+| ☐ | 03:19 | gehören zur Schweiz, nicht verdrängen, friedlich zusammenleben | ältere Betroffene | LF3 «Auch gültig» |
+| ☐ | **03:37** | Ende des Ausschnitts: danach wechselt der Beitrag zu Engagement, Verein und einer Studie — lässt sich das Ende ansagen? | | Karte (Verortung, 217 Sek.), Heft S. 3 |
 
-**A · Ersatzquelle `q-221a-pflicht-ersatz`** — `…urn:srf:audio:c6c018ea-fe9e-3547-9e10-195b169eded4…`
+Dazu: ☐ welche der zwei Frauen jeweils spricht (jünger/älter) · ☐ ob Mundart-Anteile für die Klasse verständlich sind.
+
+**A · Ersatzquelle `q-221a-pflicht-ersatz` (seit dem Tausch: Jenische und Sinti)** — `https://www.srf.ch/play/embed?urn=urn:srf:audio:c5ea99d8-8522-371a-af33-de1ddf4af8c5&subdivisions=false`
+
+Marken wie im Archivtext, **nicht** neu gerechnet (±10 Sek.; möglich, dass auch
+hier alle Marken rund 8 Sek. zu spät liegen).
 
 | ☐ | Marke | Erwartet | Wer | Hängt daran |
 |---|---|---|---|---|
-| ☐ | 01:05 | Blicke, Flüstern im Bus | jüngere Betroffene | LF3 «Mit Ersatzquelle», LF4 gut_wenn |
-| ☐ | 01:25 | ihr Tun gilt als Aushängeschild für alle | dieselbe | Stereotyp |
-| ☐ | 02:20–02:31 | feste Bilder; Verdacht der Nähe zu Gewalt | Reporter, dann ältere Betroffene | Vorurteil |
-| ☐ | 02:50 | Debatte über sie, nicht mit ihnen | jüngere Betroffene | Ausgrenzung, LF4 |
-| ☐ | 03:45 | Ende | | Karte |
+| ☐ | 00:00 | Anmoderation nennt die umstrittene Bezeichnung mehrfach | Moderation | Begleiter (Ansage) |
+| ☐ | 01:17 | nur ein kleiner Teil reist, die meisten sesshaft | Reporter | LF3 «Mit Ersatzquelle» (Stereotyp, erschlossen) |
+| ☐ | 01:59 | Dachverbände in Deutschland und Österreich meiden die Bezeichnung als abwertend | Reporter | LF3 «Mit Ersatzquelle» (Vorurteil) |
+| ☐ | **02:28** | Mundart: rassistisch, wenn jemand damit beschimpft (Beispiel mit Schimpfwort); als Name für die eigene Herkunft keine Schande | Präsident Kulturverein | LF3 «Mit Ersatzquelle», LF4 gut_wenn, Begleiter-Kasten «Die sagen es ja selbst» |
+| ☐ | 02:47 | ein Verbot wäre falsch, die Geschichte verschwände mit | Reporter, Sicht der Schriftstellerin | LF4 gut_wenn |
+| ☐ | 03:31 | Jahreszahl 1973, Kinder weggenommen | Reporter | LF3 «Mit Ersatzquelle», Begleiter-Hintergrund |
+| ☐ | 03:51 | Ende | | Karte |
 
 **A · Vertiefung 1 `q-221a-vertiefung-1`** (Video, Player beginnt am Anfang der Sendung) — `…urn:srf:video:cd101d6d-3302-49d2-b9f6-f4c349410341…`
 
@@ -132,7 +149,7 @@ Kein Gegenleser konnte prüfen: Ton, Bild, Seitenbild.
 
 ## 5. Entscheide für Pietro
 
-### 5.1 Quelle und Ersatzquelle von Heft A tauschen?
+### 5.1 Quelle und Ersatzquelle von Heft A tauschen? — **entschieden 05.10.2026: getauscht (§9)**
 
 | | A: so lassen (Jenische/Sinti) | B: tauschen (Musliminnen wird Quelle) |
 |---|---|---|
@@ -209,4 +226,73 @@ Berliner Hochschule (403); Zwischentitel im gedruckten Buch Kap. 12.1.
 `src/data/einheiten/2.2.1_ausgrenzung_analysieren/herausforderung_A.json`,
 `herausforderung_B.json`, `set.json`, `begleiter.md`;
 `src/data/quellen/q-221b-pflicht.json`, `q-221b-vertiefung-1.json`; diese Datei.
-`kn.json`, `prinzip.json` und die übrigen sechs Karten unverändert.
+`kn.json`, `prinzip.json` und die übrigen Karten unverändert. Beim Tausch (§9)
+zusätzlich: `src/data/quellen/q-221a-pflicht.json`, `q-221a-pflicht-ersatz.json`.
+
+## 9. Tausch 05.10.2026
+
+Entscheid Pietro: In Heft A werden Quelle und Ersatzquelle getauscht (§5.1,
+Variante B). Ausgeführt nach dem Commit der Abschlussrunde.
+
+**Wie getauscht wurde.** Die **Karten-IDs bleiben**, die Inhalte der zwei
+Karten sind getauscht: `q-221a-pflicht` ist jetzt der Beitrag über zwei
+Musliminnen (SRF Echo der Zeit, 22.04.2026, Ausschnitt 00:00–03:37),
+`q-221a-pflicht-ersatz` der Beitrag über Jenische und Sinti (16.05.2025,
+00:00–03:51). Das Heft referenziert weiter `q-221a-pflicht`. **Am Archiv ist
+nichts geändert**; die `archiv_ref` der zwei Karten zeigen darum über Kreuz
+(`q-221a-pflicht` → Ordner `q-221a-pflicht-ersatz` und umgekehrt), die
+`lizenz_hinweis` sagen es. Kein Skript prüft `archiv_ref`. Wer später
+aufräumt, benennt die zwei Ordner um und stellt die zwei Verweise zurück.
+
+**Was sich geändert hat**
+
+| Ort | Änderung |
+|---|---|
+| Heft A S. 1, S. 3 | Kurzeintrag und Quellenkarte kommen aus der Karte: neuer Titel, Datum, Kurzbeschrieb, Ausschnitt 00:00–03:37 |
+| Heft A S. 3, Auftrag | «Je Zeile: was die Gruppe trifft (Bild, Urteil, Verhalten), Abwertendes als Stichwort. … hinten Begriff (Stufe oder Glossar).» — die Quelle nennt keine Sprüche im Wortlaut, darum «was die Gruppe trifft» statt «eine Aussage über die Gruppe» |
+| Heft A S. 4, LF4 | erste Strategie: «… was sie trifft, was es auslöst.» (vorher «… und was nicht» — passte zur alten Quelle) |
+| Heft A S. 8 | Glossar der Spur: «Alltagsrassismus», «Religionsfreiheit» statt «Selbstbezeichnung», «Beschimpfung»; «Rassismus» nennt neu auch die Religion (der Beitrag spricht von antimuslimischem Rassismus) |
+| Lösungen Heft A | LF3 ganz neu (Erwartet, Auch gültig, Begriffe, Rasterzeilen, Befund; Zeile «Mit Ersatzquelle» jetzt für den Beitrag über Jenische und Sinti); LF4 neu (Praxis mit drei Zeitmarken; **«stehen lassen» als Fallüberlegung ohne Beleg aus der Quelle**); Lösungsbild (drei Zeilen, Satz 2, Hinweis); eigene Knoten des Begriffsnetzes |
+| `set.json` | zwei Glossareinträge der Spur, Definition «Rassismus». `kontext_ausschluss` unverändert — es nannte schon beide Gruppen |
+| Begleiter §2 | Warnung vor dem Hören neu: Betroffene im Zimmer, **keine Gegenstimme, laufende Debatte über ein Kopftuchverbot an Schulen** (was vorher anzusagen ist; das Heft entscheidet die Debatte nicht; Stand der Debatte nicht geprüft); Angebot, den Prüfbericht aus der Sicht Betroffener zu schreiben; Kasten «Wenn ein Link nicht geht» für die neue Ersatzquelle |
+| Begleiter §3 | S. 3 neu; Stolperstein «Die Quelle liefert Erfahrungen, keine Sprüche im Wortlaut»; neuer Stolperstein «Die Klasse streitet über das Kopftuch statt über die Aussagen»; die zwei Kästen zu Jenischen und Sinti bleiben, überschrieben «Nur mit der Ersatzquelle»; Tafelbild |
+| Begleiter §5 | Tabelle (aus den Karten), «Was du über die Quellen wissen musst», «Vor dem Druck gegenhören» |
+
+Nicht berührt: Situation, LF1, LF2, Schritte, Kriterien, Heft B, Auftrag, KN.
+
+**Zeitmarken der neuen Quelle.** Der Archivtext führt je Sprecherwechsel die
+Sendungsuhr von Swissdox (15 Marken im Ausschnitt, keine Blöcke) und rechnete
+ab 34:29 — ein geschätzter Beginn. Zwei unabhängige Angaben legen 34:37 nahe:
+das Themenregister der Sendung und das sichere Ende des Beitrags (40:08)
+minus die Länge laut SRG-API (331 Sek.). Heft, Lösungen, Begleiter und Karte
+rechnen darum ab 34:37; **jede Marke liegt 8 Sek. früher als im Archivtext**
+(dort 01:05 → hier 00:57 usw.). Vom Audit an fünf Absätzen nachgerechnet.
+Untertitel gibt es für Audio nicht; gehört ist nichts.
+
+**Gegenleser nach dem Tausch** (Sonnet, im Vordergrund)
+
+| Gegenleser | Befunde | übernommen | nicht übernommen |
+|---|---|---|---|
+| Lernende/r a, Heft A ganz | 3 Stellen + ca. 20 Hänger. Die Quelle trägt LF3; drei Zeilen mit Stufe gefunden | Auftrag S. 3 («was die Gruppe trifft»); LF4-Strategie; Glossar «Rassismus» mit Religion; Begleiter: Sicht Betroffener, Bedeutung von «Wer spricht» und «Absicht» | Satz 1 des Prüfberichts fehlt in «Das geben Sie ab» und das Beispiel S. 6 bezieht ihn auf die Aussagen (V, Bauplan; nicht Teil des Tauschs); Schritt 05 ohne Abgabe (V); Karte 3 gegen Karten 1 und 4 (S); Beitrag vom Mittwoch läuft am Samstag (V); Zeitmarke ohne eigene Spalte (S) |
+| Lösungs-Audit | Umrechnung richtig; 5 Punkte, kein falsches Zitat, keine falsche Zuschreibung, keine Namen | Ersatzzeile «Dachverbände der Nachbarländer»; 02:42 genauer; Lösungsbild Zeile 2 mit zwei Marken; «prägen» mit 01:13 | «Alltagsrassismus» ist nicht Wortlaut der Quelle (dort «kleine Rassismen»; als Begriff gewählt); «meist sesshaft → Stereotyp» in der Ersatzzeile dünn (so gekennzeichnet) |
+| Sweep | kein Treffer; Rollen überall neu; Glossar und eigene Knoten stimmen überein | — | — |
+| Nachlesen S. 3, 4, 8 | LF4, Glossar, Ausschnitt: klar | — | **offen:** Spalte «Absicht» ist bei Betroffenen, die schildern, unklar (wessen Absicht?); «Wer spricht»/«Absicht» stammen aus dem Bauplan. Der Begleiter erklärt es; im Heft nicht geändert, weil nach dem Nachlesen nichts mehr geändert wird. Vorschlag: Spalte «Absicht» in Heft A durch «Wozu gesagt» ersetzen |
+
+Zeitschätzung Heft A nach dem Tausch: ca. 121 Min. ohne Vertiefung (vorher
+ca. 155; Seitenplan 135).
+
+**Was der Tausch nicht löst.** Karte 3 auf S. 6 (geteilte Datei; Schritt 4 ist
+inzwischen korrigiert, der Widerspruch «Wortwahl und Satzbau lassen» gegen
+«nur Stichworte» bleibt). Der Gegenleser in der Rolle einer Betroffenen: Die
+Situation ist aus der Sicht von jemandem geschrieben, der mitgelacht hat; wer
+selbst gemeint ist, kommt nicht vor — der Begleiter gibt der Lehrperson dafür
+eine Anweisung, das Heft bleibt (Situation war vom Tausch ausgenommen).
+
+**Tor nach der letzten Änderung:** `check-all`: «GRUEN — keine Fehler.» ·
+`begleiter-marker`: 282 Marker, 0 abweichend · `messen-v42`: 43 Seiten ok, kein
+Überlauf (Heft A S. 3: 17 px, S. 8: 16,2 px; Lösungen A S. 3: 46 px).
+
+**Nicht geprüft:** Ton beider Audios; ob der Player der neuen Quelle bei 00:00
+mit der Anmoderation beginnt; Abspielen auf dem Handy; QR-Seite im Browser
+(sie liest die Karten, kein Dev-Server gestartet); Stand der Debatte über ein
+Kopftuchverbot an Schulen nach April 2026.
