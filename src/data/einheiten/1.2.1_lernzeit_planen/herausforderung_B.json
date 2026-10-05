@@ -227,7 +227,7 @@
       },
       {
         "label": "04 Einsatz des Werkzeugs",
-        "hint": "Halten Sie Ihren Entscheid aus LF4 fest: was Sie mit jedem der zwei Kapitel tun und wofür Sie das KI-Werkzeug nehmen."
+        "hint": "Halten Sie Ihren Entscheid aus LF4 fest: was Sie selbst verarbeiten, was Sie nur durchgehen und wofür Sie das KI-Werkzeug nehmen."
       },
       {
         "label": "05 Abfragerunde führen, prüfen",
@@ -751,7 +751,7 @@
           "bloom": "Beurteilen",
           "knoten_ref": "Kap. 20.6 · selbst verarbeiten ↔ Zusammenfassung durchgehen",
           "pol_typ": "position_gegenposition",
-          "text": "Zusammenfassung der Kollegin durchgehen oder Stoff selbst verarbeiten (Kap. 17.1, Kap. 20.6)? Entscheiden Sie je Kapitel aus der Situation, auch wofür Sie das KI-Werkzeug nehmen, und nennen Sie einen Einwand.",
+          "text": "Zusammenfassung durchgehen oder selbst verarbeiten (Kap. 17.1, Kap. 20.6)? Entscheiden Sie getrennt für das, was Sie beim Abfragen wussten und was nicht. Wofür das KI-Werkzeug – und was spricht gegen Ihren Entscheid?",
           "liefert": "Entscheid zum Einsatz des Werkzeugs",
           "antwortform": "schreibfeld",
           "feld_hoehe_mm": 45,
@@ -763,7 +763,7 @@
             "satzanfaenge": [
               "«Für die fertige Zusammenfassung spricht, dass …»",
               "«Für das eigene Verarbeiten spricht, dass …»",
-              "«Ich entscheide: Das eine Kapitel …, das andere …»"
+              "«Ich entscheide: Was ich wusste, …; was ich nicht wusste, …»"
             ],
             "produkt": "Ihr Entscheid sagt, wofür Sie das KI-Werkzeug nehmen; er bestimmt den nächsten Schritt in der Lernstand-Notiz."
           },
@@ -772,12 +772,12 @@
             "erwartungshorizont": {
               "gut_wenn": [
                 "Beide Wege sind mit einem Grund genannt: die Zeit bis zum Termin (Fall) und die Wirkung des eigenen Verarbeitens (Kap. 17.1, S. 380; Kap. 20.6, S. 444).",
-                "Der Entscheid sagt für jedes der zwei Kapitel aus der Situation, ob es gründlich verarbeitet oder nur durchgegangen wird.",
+                "Der Entscheid sagt für beide Teile des Stoffs – beim Abfragen gewusst, nicht gewusst –, ob gründlich verarbeitet oder nur durchgegangen wird.",
                 "Ein Einwand gegen die eigene Wahl ist genannt und beantwortet; es steht da, was der Entscheid kostet.",
                 "Wofür das KI-Werkzeug dient, ist als eigene Überlegung zum Fall begründet (Fallüberlegung, nicht aus dem Lehrmittel)."
               ],
-              "beispiel_pol_1": "Ich verarbeite beide Kapitel selbst: in fünf Schritten lesen und die Hauptgedanken in eigenen Worten festhalten (Kap. 17.1, S. 380). Das Abfragen durch meinen Bruder hat gezeigt, dass Durchlesen nicht reicht. Einwand: Zehn Tage sind knapp. Darum gehe ich Abschnitte, die ich schon erklären kann, nur noch durch. Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Zusammenfassen – das ist meine Überlegung zum Fall; jede Rückmeldung prüfe ich an meiner Unterlage. So halte ich es auch im Lehrbetrieb, wenn ich einen neuen Ablauf lernen muss: erst selbst erarbeiten, dann abfragen lassen. Das kostet mich Abende, die ich sonst frei hätte.",
-              "beispiel_pol_2": "Für das Kapitel, das ich schon erklären kann, gehe ich die Zusammenfassung der Kollegin durch und spare Abende. Einwand: Ich weiss nicht, ob sie vollständig ist, und beim Abfragen wusste ich die Hälfte nicht. Darum verarbeite ich das zweite Kapitel selbst (Kap. 20.6, S. 444: nur Verstandenes lernen) und vergleiche die Zusammenfassung Abschnitt für Abschnitt mit dem Lehrmittel. Annahme: Das erste Kapitel sitzt wirklich – das prüfe ich mit einer Abfragerunde am KI-Werkzeug (Fallüberlegung). Der Preis: Lücken im ersten Kapitel entdecke ich vielleicht spät. Bei jeder fertigen Unterlage, die ich künftig bekomme, gehe ich gleich vor: erst prüfen, dann lernen.",
+              "beispiel_pol_1": "Ich verarbeite den ganzen Stoff selbst: in fünf Schritten lesen und die Hauptgedanken in eigenen Worten festhalten (Kap. 17.1, S. 380). Das Abfragen durch meinen Bruder hat gezeigt, dass Durchlesen nicht reicht. Einwand: Zehn Tage sind knapp. Darum gehe ich Abschnitte, die ich schon erklären kann, nur noch durch. Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Zusammenfassen – das ist meine Überlegung zum Fall; jede Rückmeldung prüfe ich an meiner Unterlage. So halte ich es auch im Lehrbetrieb, wenn ich einen neuen Ablauf lernen muss: erst selbst erarbeiten, dann abfragen lassen. Das kostet mich Abende, die ich sonst frei hätte.",
+              "beispiel_pol_2": "Was ich beim Abfragen wusste, gehe ich mit der Zusammenfassung der Kollegin durch und spare Abende. Einwand: Ich weiss nicht, ob sie vollständig ist. Darum verarbeite ich das, was ich nicht wusste, selbst (Kap. 20.6, S. 444: nur Verstandenes lernen) und vergleiche die Zusammenfassung Abschnitt für Abschnitt mit dem Lehrmittel. Annahme: Was ich wusste, sitzt wirklich – das prüfe ich mit einer Abfragerunde am KI-Werkzeug (Fallüberlegung). Der Preis: Lücken dort entdecke ich vielleicht spät. Bei jeder fertigen Unterlage, die ich künftig bekomme, gehe ich gleich vor: erst prüfen, dann lernen.",
               "nicht_tragfaehig": "Ein Entscheid ohne Einwand («Selbst lernen ist immer besser», «Die Zusammenfassung reicht») oder einer, der Aussagen über das KI-Werkzeug als Wissen aus dem Lehrmittel ausgibt."
             }
           }
@@ -791,17 +791,17 @@
           "Stoff selbst verarbeiten",
           "Mein Entscheid"
         ],
-        "hinweis": "Zwei Zeilen genügen: je ein Grund pro Weg, dazu das Kapitel aus der Situation, für das er gilt. Die dritte Spalte sagt, was Sie tun.",
+        "hinweis": "Zwei Zeilen genügen: je ein Grund pro Weg und der Teil des Stoffs, für den er gilt (gewusst, nicht gewusst). Dritte Spalte: was Sie tun.",
         "loesung_zeilen": [
           [
             "geht schnell: zwei Seiten statt vierzehn (Fall)",
             "Hauptgedanken selbst wiederholen hilft behalten (Kap. 17.1, S. 380)",
-            "Kapitel 2 verarbeite ich selbst"
+            "Was ich nicht wusste, verarbeite ich selbst"
           ],
           [
             "genügt für Stoff, den ich schon erklären kann (Fallüberlegung)",
             "nur Verstandenes lässt sich wiederfinden (Kap. 20.6, S. 444)",
-            "Kapitel 1 gehe ich durch und lasse mich abfragen"
+            "Was ich wusste, gehe ich durch und lasse mich abfragen"
           ],
           [
             "ob sie vollständig ist, weiss ich nicht (Fallüberlegung, nicht aus dem Lehrmittel)",
@@ -915,19 +915,19 @@
           "bloom": "Beurteilen",
           "knoten_ref": "Kap. 20.6 ↔ Quelle",
           "pol_typ": "lehrmittel_quelle",
-          "text": "Kap. 20.6, S. 444 sagt, wie Stoff bleibt; die Quelle (Abs. 6, 8), wann ein KI-Werkzeug hilft. Entscheiden Sie je Kapitel aus der Situation: Zusammenfassung durchgehen oder selbst verarbeiten – und wofür das Werkzeug?",
+          "text": "Kap. 20.6, S. 444 sagt, wie Stoff bleibt; die Quelle (Abs. 6, 8), wann ein KI-Werkzeug hilft. Entscheiden Sie getrennt für das, was Sie beim Abfragen wussten und was nicht – und wofür das Werkzeug dient.",
           "liefert": "Entscheid zum Einsatz des Werkzeugs",
           "antwortform": "schreibfeld",
           "feld_hoehe_mm": 60,
           "scaffolding": {
             "strategien": [
               "Notieren Sie zuerst je eine Fundstelle: Kap. 20.6, S. 444 und einen Absatz der Quelle.",
-              "Überlegen Sie je Kapitel: Was ändert sich, wenn Sie es schon erklären können?"
+              "Überlegen Sie für beide Teile: Was ändert sich, wenn Sie etwas schon erklären können?"
             ],
             "satzanfaenge": [
               "«Kap. 20.6 sagt zum Verarbeiten, dass …»",
               "«Die Quelle zeigt in Abs. …, dass …»",
-              "«Ich entscheide: Das eine Kapitel …, das andere …»"
+              "«Ich entscheide: Was ich wusste, …; was ich nicht wusste, …»"
             ],
             "produkt": "Ihr Entscheid sagt, wofür Sie das KI-Werkzeug nehmen; er bestimmt den nächsten Schritt in der Lernstand-Notiz."
           },
@@ -937,11 +937,11 @@
               "gut_wenn": [
                 "Der Pol des Lehrmittels steht mit Fundstelle da: nur Verstandenes lernen; in eigenen Worten wiederholen und jemandem erklären (Kap. 20.6, S. 444).",
                 "Der Pol der Quelle steht mit Absatz da: erst selbst, dann vergleichen (Abs. 6); kein Lerneffekt, wenn das Werkzeug die Aufgabe löst (Abs. 8).",
-                "Der Entscheid sagt für jedes der zwei Kapitel, was damit geschieht, und wofür das Werkzeug dient und wofür nicht.",
+                "Der Entscheid sagt für beide Teile des Stoffs (beim Abfragen gewusst, nicht gewusst), was damit geschieht, und wofür das Werkzeug dient und wofür nicht.",
                 "Es steht da, was der Entscheid kostet (Zeit oder das Risiko einer Lücke)."
               ],
-              "beispiel_pol_1": "Ich verarbeite beide Kapitel selbst und fasse sie in eigenen Worten zusammen, denn nur Verstandenes finde ich wieder (Kap. 20.6, S. 444). Die Zusammenfassung der Kollegin vergleiche ich erst danach mit meiner (Quelle, Abs. 6). Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Lösen – sonst bleibt laut der Quelle der Lerneffekt aus (Abs. 8); jede Rückmeldung prüfe ich an meiner Unterlage. Das kostet mich mehrere Abende. So lerne ich auch im Lehrbetrieb einen neuen Ablauf: erst selbst erarbeiten, dann abfragen lassen.",
-              "beispiel_pol_2": "Das Kapitel, das ich schon erklären kann, gehe ich mit der Zusammenfassung der Kollegin durch und spare Abende; das zweite verarbeite ich selbst, weil ich dort beim Abfragen keine Antwort wusste. Kap. 20.6, S. 444 nennt das Wiederholen in eigenen Worten; ich folgere daraus, dass eine fremde Zusammenfassung es nicht ersetzt – darum lasse ich mich auch zum ersten Kapitel abfragen. Das Werkzeug nehme ich erst nach der eigenen Arbeit zum Vergleichen (Quelle, Abs. 6). Annahme: Das erste Kapitel sitzt wirklich. Der Preis: Lücken dort entdecke ich vielleicht spät. Künftig halte ich es mit jeder fertigen Unterlage so: erst prüfen, dann lernen.",
+              "beispiel_pol_1": "Ich verarbeite den ganzen Stoff selbst und fasse ihn in eigenen Worten zusammen, denn nur Verstandenes finde ich wieder (Kap. 20.6, S. 444). Die Zusammenfassung der Kollegin vergleiche ich erst danach mit meiner (Quelle, Abs. 6). Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Lösen – sonst bleibt laut der Quelle der Lerneffekt aus (Abs. 8); jede Rückmeldung prüfe ich an meiner Unterlage. Das kostet mich mehrere Abende. So lerne ich auch im Lehrbetrieb einen neuen Ablauf: erst selbst erarbeiten, dann abfragen lassen.",
+              "beispiel_pol_2": "Was ich beim Abfragen wusste, gehe ich mit der Zusammenfassung der Kollegin durch und spare Abende; den Rest verarbeite ich selbst, weil ich dort keine Antwort wusste. Kap. 20.6, S. 444 nennt das Wiederholen in eigenen Worten; ich folgere daraus, dass eine fremde Zusammenfassung es nicht ersetzt – darum lasse ich mich auch zum ersten Teil abfragen. Das Werkzeug nehme ich erst nach der eigenen Arbeit zum Vergleichen (Quelle, Abs. 6). Annahme: Was ich wusste, sitzt wirklich. Der Preis: Lücken dort entdecke ich vielleicht spät. Künftig halte ich es mit jeder fertigen Unterlage so: erst prüfen, dann lernen.",
               "nicht_tragfaehig": "Ein Entscheid, der nur einen Pol nennt («KI ist verboten», «Die Zusammenfassung reicht») oder weder das Lehrmittel noch einen Absatz der Quelle anführt."
             }
           }
