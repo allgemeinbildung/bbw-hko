@@ -78,7 +78,7 @@
   },
   {
     "id": "1.1.1_ausbildung_kommunizieren",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "1.1.1",
     "abgedeckte_kompetenzen": [
@@ -521,7 +521,7 @@
   },
   {
     "id": "1.2.1_lernzeit_planen",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "1.2.1",
     "abgedeckte_kompetenzen": [
@@ -668,7 +668,7 @@
   },
   {
     "id": "1.3.1_konsum_verantworten",
-    "status": "publiziert",
+    "status": "entwurf",
     "entwurf_komponenten": [],
     "kompetenz_nr": "1.3.1",
     "abgedeckte_kompetenzen": [
@@ -744,7 +744,7 @@
   },
   {
     "id": "1.3.1_konsum_verantworten_v42",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "1.3.1",
     "abgedeckte_kompetenzen": [
@@ -819,7 +819,7 @@
   },
   {
     "id": "2.1.1_informationen_hinterfragen",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "2.1.1",
     "abgedeckte_kompetenzen": [
@@ -895,7 +895,7 @@
   },
   {
     "id": "2.2.1_ausgrenzung_analysieren",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "2.2.1",
     "abgedeckte_kompetenzen": [
@@ -972,7 +972,7 @@
   },
   {
     "id": "2.2.1_meinungsfreiheit_reflektieren",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "2.2.1",
     "abgedeckte_kompetenzen": [
@@ -1047,7 +1047,7 @@
   },
   {
     "id": "2.3.1_anliegen_vertreten",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "2.3.1",
     "abgedeckte_kompetenzen": [
@@ -1121,7 +1121,7 @@
   },
   {
     "id": "2.4.1_haltung_zeigen",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "2.4.1",
     "abgedeckte_kompetenzen": [
@@ -1192,7 +1192,7 @@
   },
   {
     "id": "2.5.1_klimaveraenderung_diskutieren",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "2.5.1",
     "abgedeckte_kompetenzen": [
@@ -1265,7 +1265,7 @@
   },
   {
     "id": "3.1.1_konsum_verantworten_3j",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "3.1.1",
     "abgedeckte_kompetenzen": [
@@ -1412,7 +1412,7 @@
   },
   {
     "id": "3.2.1_konsumfolgen_beurteilen",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "3.2.1",
     "abgedeckte_kompetenzen": [
@@ -1562,7 +1562,7 @@
   },
   {
     "id": "3.3.1_kaufvertrag_beurteilen",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "3.3.1",
     "abgedeckte_kompetenzen": [
@@ -1635,7 +1635,7 @@
   },
   {
     "id": "4.1.1_wohlbefinden_staerken",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "4.1.1",
     "abgedeckte_kompetenzen": [
@@ -1708,7 +1708,7 @@
   },
   {
     "id": "4.2.1_risiken_absichern",
-    "status": "entwurf",
+    "status": "publiziert",
     "entwurf_komponenten": [],
     "kompetenz_nr": "4.2.1",
     "abgedeckte_kompetenzen": [
@@ -1762,6 +1762,153 @@
     "hat_spuren": true,
     "hat_medien": true,
     "hybrid_situation_titel": "Zwischen Lehre und neuer Stelle – was sichere ich ab?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "4.3.1_vielfalt_untersuchen",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "4.3.1",
+    "abgedeckte_kompetenzen": [
+      "4.3.1",
+      "4.3.2"
+    ],
+    "slug": "vielfalt_untersuchen",
+    "titel": "Ich kann die Vielfalt in meinem Umfeld beschreiben, ihre Chancen und Herausforderungen im Gespräch untersuchen und an Beispielen erklären, warum Menschen wandern und was das für sie und für die Gesellschaft bedeutet — auch wenn sich dazu mehr als eine Haltung begründen lässt.",
+    "einheit_titel": "Vielfalt untersuchen",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "4.3",
+    "modul_titel": "Verantwortung für mich und andere übernehmen — vielfalt und migration untersuchen",
+    "thema_nr": 4,
+    "themen": [
+      "T4"
+    ],
+    "aspekte": [
+      "Identität und Sozialisation",
+      "Recht",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Identität und Sozialisation",
+    "sk": [
+      5,
+      7,
+      10,
+      11
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich",
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Unser Team im Porträt – was frage ich, was lasse ich?",
+      "B": "Wer kommt, wer bleibt? Mein Leserbrief zur Zuwanderung",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": false,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Ein starker Mitspieler ohne sicheren Aufenthalt",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 17
+  },
+  {
+    "id": "5.2.1_gesetze_veraendern",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "5.2.1",
+    "abgedeckte_kompetenzen": [
+      "5.2.1",
+      "5.2.2"
+    ],
+    "slug": "gesetze_veraendern",
+    "titel": "Ich kann an einem Beispiel aus meinem Alltag und an einem aktuellen Ereignis aufzeigen, wie der Rechtsstaat Macht teilt und kontrolliert, und ein eigenes politisches Anliegen so ausarbeiten und erläutern, dass es den Weg durch Gesetzgebung und Abstimmung bestehen kann — auch wenn es dabei nicht bleibt, wie ich es zuerst wollte.",
+    "einheit_titel": "Gesetze verändern",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "5.2",
+    "modul_titel": "Mich im Staat orientieren — Gesetze und Entscheide verändern",
+    "thema_nr": 5,
+    "themen": [
+      "T5"
+    ],
+    "aspekte": [
+      "Politik"
+    ],
+    "dominanter_aspekt": "Politik",
+    "sk": [
+      2,
+      9,
+      11,
+      12
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital",
+      "Produktion mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Durchgreifen – und wer kontrolliert das?",
+      "B": "Vom Ärger zum Anliegen – und wie es Gesetz wird",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Acht Franken pro Tag – wer darf das beschliessen?",
     "kn_typen": [
       {
         "typ": "fachgespraech",

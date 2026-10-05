@@ -877,8 +877,10 @@ for (const L of ['A', 'B']) {
   if (sit) hefte[L] = sit
 }
 
-if (set && set.status !== 'entwurf') {
-  add('regel', 'ERR_V42_STATUS', 'set.json', 'status', 'Pilot', zeige(set.status), '"entwurf"')
+// Seit der Freigabe vom 05.10.2026 (E32) darf eine v4.2-Einheit publiziert sein. Dass ein
+// frisch erzeugter Ordner «entwurf» trägt, erzwingt check-all unter --neu und --cloud.
+if (set && set.status !== 'entwurf' && set.status !== 'publiziert') {
+  add('regel', 'ERR_V42_STATUS', 'set.json', 'status', 'E32', zeige(set.status), '"entwurf" oder "publiziert"')
 }
 
 // Fall-Begriffe: aus dem Prinzip, plus Wortformen. Vergleich in Kleinbuchstaben.

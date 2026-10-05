@@ -871,3 +871,29 @@ ausgespart; er bleibt, wie er freigegeben ist.
    live.
 **Rückgängig:** Karten per `git revert` des Commits; danach
 `bestand-v42.mjs --schreiben`.
+
+## E32 — Freigabe der v4.2-Einheiten für Lehrpersonen (Pietro, 05.10.2026)
+
+**Entscheid Pietro:** Vierzehn Einheiten im Format v4.2 werden für alle
+Lehrpersonen freigegeben; KT1 macht kein Review. Vorher liefen je Einheit eine
+Abschlussrunde (Befunde aus den Laufberichten, Fakten an amtlichen Quellen,
+Gegenleser Profil a, Tor, Messung — `docs/cloud-run/laeufe/*/NACHTRAG.md`) und
+das Gegenhören der Audios und Videos durch Pietro.
+**Freigegeben:** `1.1.1_ausbildung_kommunizieren`, `1.2.1_lernzeit_planen`,
+`1.3.1_konsum_verantworten_v42`, `2.1.1_informationen_hinterfragen`,
+`2.2.1_ausgrenzung_analysieren`, `2.2.1_meinungsfreiheit_reflektieren`,
+`2.3.1_anliegen_vertreten`, `2.4.1_haltung_zeigen`,
+`2.5.1_klimaveraenderung_diskutieren`, `3.1.1_konsum_verantworten_3j`,
+`3.2.1_konsumfolgen_beurteilen`, `3.3.1_kaufvertrag_beurteilen`,
+`4.1.1_wohlbefinden_staerken`, `4.2.1_risiken_absichern`.
+**Archiviert:** `1.3.1_konsum_verantworten` (altes Format) steht wieder auf
+`entwurf` — nur noch für KT1 sichtbar (E31 Punkt 4).
+**Skript:** `check-v42.mjs` verlangte `status: "entwurf"` (Pilot-Regel). Neu
+sind `entwurf` und `publiziert` zulässig; dass ein frisch erzeugter Ordner
+`entwurf` trägt, erzwingt weiterhin `check-all` unter `--neu` und `--cloud`.
+**Nicht im Index:** `4.3.1_vielfalt_untersuchen` und `5.2.1_gesetze_veraendern`
+entstehen noch und sind nicht committet; der Index dieses Commits führt sie
+nicht. Der nächste `build:einheiten-index` nimmt sie wieder auf.
+**Offen je Einheit:** steht im jeweiligen NACHTRAG unter «offen» bzw.
+«Entscheide».
+**Rückgängig:** `status` in `set.json` zurück auf `entwurf`, Index bauen, deployen.
