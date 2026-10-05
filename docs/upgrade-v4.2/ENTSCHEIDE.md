@@ -845,8 +845,8 @@ ausgespart; er bleibt, wie er freigegeben ist.
 
 1. **Gegenleser ohne Profil b.** Lernende mit Deutsch als Zweitsprache (Profil b)
    gehören nicht mehr zur Besetzung; Befunde, die nur Sprachlast oder Zeitbedarf
-   für B1 betreffen, werden nicht bearbeitet. **Skill noch nicht nachgeführt:**
-   `references/gegenleser.md` §1 nennt Profil b weiter.
+   für B1 betreffen, werden nicht bearbeitet. In `references/gegenleser.md` §1
+   und in den Lauf-Prompts nachgeführt (05.10.2026).
 2. **`tun` wird bei `hko-`Karten nicht gedruckt** — es bleibt beim Renderer, wie
    er ist. Seite 6 hat in fast allen Einheiten 0 px Reserve. Die Übertragung
    einer eigenen Karte auf die Abgabe läuft über `fuer` und ausnahmsweise über
