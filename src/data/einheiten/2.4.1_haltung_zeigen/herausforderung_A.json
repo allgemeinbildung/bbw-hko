@@ -1,0 +1,944 @@
+{
+  "id": "2.4.1_haltung_zeigen_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "2.4",
+  "modul_titel": "Meinungen bilden und mitgestalten — mit Kunst Haltung zeigen",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Mein Plakat – wie deutlich zeige ich meine Haltung?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Haltung im eigenen Beitrag ausdrücken"
+  },
+  "prinzip_ref": "2.4.1_haltung_zeigen_prinzip",
+  "nrlp": {
+    "nr": "2.4.1",
+    "nr_primary": [
+      "2.4.1"
+    ],
+    "lebensbezug": "2.4",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Kultur",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM5"
+    ],
+    "sk": [
+      7,
+      5,
+      12
+    ],
+    "kompetenz_id": "2.4.1",
+    "lebensbezug_id": "2.4",
+    "kompetenz_text": "Ich kann Meinungen und Haltungen in künstlerischen Beiträgen erkennen und beschreiben und deren Wirkung auf mich reflektieren sowie meine eigene Haltung entwickeln und in einem künstlerischen Beitrag zum Ausdruck bringen.",
+    "lebensbezug_text": "Ich entdecke, wie in verschiedenen Kunstformen Meinungen und Haltungen sichtbar werden und werde selbst kreativ tätig."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. In drei Wochen ist Kulturtag an meiner Berufsfachschule. Jede Klasse hängt Plakate zum Motto «Das bewegt mich» in den Gang, und alle Lernenden und Lehrpersonen gehen daran vorbei. Jedes Plakat ist A3 hoch. Es hat ein Bild und eine Schlagzeile: Das ist ein kurzer Satz in grosser Schrift, höchstens acht Wörter. Dazu schreiben wir einen Werkkommentar. Das sind vier Sätze, die erklären, was wir zeigen wollen. Mein Thema habe ich schon: Mich stört, dass in unserer Pause kaum noch jemand redet, weil alle aufs Handy schauen. Ich weiss nicht, wie ich das zeige. Sage ich es klar, mit einem Satz, den alle sofort verstehen? Dann fühlen sich vielleicht einige angegriffen. Oder zeige ich ein Bild, das zum Nachdenken bringt? Dann versteht vielleicht niemand, was ich meine. Ich will herausfinden, womit ein Plakat eine Haltung zeigt, und entscheiden, wie deutlich meines wird.",
+  "zahlen_tabelle": [
+    {
+      "label": "Kulturtag in",
+      "wert": "3 Wochen"
+    },
+    {
+      "label": "Format des Plakats",
+      "wert": "A3 hoch"
+    },
+    {
+      "label": "Schlagzeile, höchstens",
+      "wert": "8 Wörter"
+    }
+  ],
+  "leitfrage": "Wie deutlich zeige ich auf meinem Plakat, was ich denke – und wie viel überlasse ich denen, die es ansehen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Deutlich Stellung beziehen vs. Raum für eigene Deutung lassen",
+    "hint": "Ein klarer Satz wird sofort verstanden, kann aber anecken. Ein offenes Bild regt zum Nachdenken an, kann aber missverstanden werden. Wo stehen Sie?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 7.1",
+      "titel": "Medien",
+      "unterueberschrift": "Mittel, die lenken",
+      "seiten": "Seite 187-188",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 12.1",
+      "titel": "Werte",
+      "unterueberschrift": "Werte, Rollen, zwei Plakate",
+      "seiten": "Seite 292-294",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 17.2",
+      "titel": "Dokumentieren",
+      "unterueberschrift": "Beschreibung",
+      "seiten": "Seite 389",
+      "fuer_leitfrage": [
+        2
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie entwerfen ein Plakat zu Ihrer Haltung und schreiben einen Werkkommentar dazu. LF1 liefert drei Mittel und zwei Werte, LF2 Ihre Haltung als Ich-Satz und die Bildidee, LF3 belegte Mittel und ihre Wirkung, LF4 den Entscheid, wie deutlich Ihr Plakat wird.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 7.1 | S. 187-188 · Kap. 12.1 | S. 292",
+      "text": "Kap. 7.1 (S. 188) nennt vier Mittel, darunter die Sprache und das Bild. Erklären Sie für Ihr Plakat: Wortwahl (Zeile «Sprache»), Bildaufbau und Symbol (Zeile zum Bild). Dazu aus Kap. 12.1 (S. 292): zwei innere Werte.",
+      "liefert": "Drei Mittel und zwei Werte",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Bildaufbau = Anordnung der Teile im Bild. Symbol = Zeichen, das für etwas steht.",
+          "S. 292 handelt von Partnerschaft. Für Sie zählt: Hinter jeder Haltung steht ein Wert."
+        ],
+        "satzanfaenge": [
+          "«Ein Wort ergreift Partei, wenn …»",
+          "«Der Bildaufbau zeigt, was wichtig ist, indem …»",
+          "«Innere Werte sind zum Beispiel …»"
+        ],
+        "produkt": "Vorarbeit: Die drei Namen brauchen Sie für die drei markierten Stellen (S. 7), die Werte für LF2."
+      },
+      "loesung": {
+        "kern": "Drei Mittel fürs Plakat und zwei innere Werte",
+        "zeilen": [
+          {
+            "label": "Vier Mittel",
+            "text": "Auswahl der Themen, Gewichtung, Sprache und Bild. Auswahl: was vorkommt und was wegbleibt. Gewichtung: wie viel Platz und Bedeutung etwas bekommt.",
+            "quelle": "Kap. 7.1, S. 188"
+          },
+          {
+            "label": "Wortwahl",
+            "text": "Zeile «Sprache»: Ein beschönigendes oder ein abwertendes Wort ergreift Partei.",
+            "quelle": "Kap. 7.1, S. 188"
+          },
+          {
+            "label": "Bildaufbau, Symbol",
+            "text": "Das Lehrmittel nennt Bildaufbau, Symbolisierung und Retusche als Arten der Bildmanipulation in Medien und erklärt nur die Retusche. Was Bildaufbau und Symbol heissen, erklärt das Heft (S. 2, Glossar). Dass sie auf einem Plakat erlaubte Mittel sind, ist eigene Übertragung, nicht aus dem Lehrmittel.",
+            "quelle": "Kap. 7.1, S. 188"
+          },
+          {
+            "label": "Innere Werte",
+            "text": "Genannt sind Treue und Vertrauen, dort als Erwartung an eine Partnerin oder einen Partner. Dass ein Wert hinter einer Haltung steht, ist eigene Übertragung, nicht aus dem Lehrmittel.",
+            "quelle": "Kap. 12.1, S. 292"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.2 | S. 389 · eigener Fall",
+      "text": "Was bewegt oder stört Sie, und welcher Wert steht dahinter? Schreiben Sie Ihre Haltung als Ich-Satz mit «weil». Beschreiben Sie Ihre Bildidee geordnet: von oben nach unten oder von vorn nach hinten (Kap. 17.2, S. 389).",
+      "liefert": "Haltung als Ich-Satz und Bildidee",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Sie dürfen ein eigenes Thema wählen. Das Handy in der Pause ist nur ein Beispiel.",
+          "Motiv = was Ihr Bild zeigt. S. 389 nennt die Reihenfolge für das Beschreiben von Bildern."
+        ],
+        "satzanfaenge": [
+          "«Ich finde, …, weil mir … wichtig ist.»",
+          "«Mein Motiv ist …»",
+          "«Vorn sieht man …, dahinter …»"
+        ],
+        "produkt": "Der Ich-Satz wird Satz 1 des Werkkommentars. Die Bildidee zeichnen Sie als Bildskizze (Schritt 02)."
+      },
+      "loesung": {
+        "kern": "Haltung als Ich-Satz mit Wert, Bildidee geordnet",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Ein Ich-Satz, der sagt, wie ich zu meinem Thema stehe und welcher Wert dahintersteht. Zum Fall der Situation etwa: «Ich finde, in der Pause sollten wir miteinander reden, weil mir Gemeinschaft wichtig ist.» Dazu die Bildidee mit einem Motiv, in geordneter Folge. Ein eigenes Thema ist ebenso gültig."
+          },
+          {
+            "label": "Beschreibung",
+            "text": "Genau beobachten, anschaulich und geordnet darstellen; bei einem Bild etwa von oben nach unten oder vom Vorder- zum Hintergrund; kurze Sätze, treffende Wörter, Gegenwart.",
+            "quelle": "Kap. 17.2, S. 389"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Bildidee nennt ein Motiv und sagt, wo es steht und wie gross es ist. Der Wert ist ein eigener Wert der Lernenden und muss nicht im Lehrmittel stehen."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur ein Thema nennen («Handys») statt einer Haltung; oder Einfälle aufzählen, ohne zu sagen, was vorn und was hinten steht."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Plakat-Entwurf zur eigenen Haltung mit Schlagzeile, Bildskizze und Werkkommentar",
+    "titel": "Plakat-Entwurf mit Werkkommentar: meine Haltung",
+    "format_detail": "Eine Seite (S. 7, leere Fläche) mit drei Teilen: Bildskizze mit Motiv und Aufbau · Schlagzeile (höchstens acht Wörter) · Werkkommentar in vier Sätzen (Satz 1 meine Haltung · Satz 2 meine Mittel · Satz 3 die Wirkung, die ich will · Satz 4 was ich offen lasse). Markieren Sie im Entwurf drei Stellen mit einem Kreis wie im Beispiel auf S. 6: voll = Bildaufbau, leer = Symbol, halb = Wortwahl. Sie gestalten für Lernende und Lehrpersonen, die im Gang am Plakat vorbeigehen. Das Thema der Situation ist ein Beispiel; ein eigenes Thema ist erlaubt.",
+    "beschreibung": "Ich entwerfe auf S. 7 mein Plakat: Bildskizze, Schlagzeile (höchstens 8 Wörter), Werkkommentar in vier Sätzen. Satz 2: was meine Mittel im Bild leisten. Satz 3: was das Plakat bei den Leuten auslöst.",
+    "schritte": [
+      {
+        "label": "01 Mittel klären",
+        "hint": "Vorarbeit, keine Abgabe: Halten Sie aus LF1 die drei Mittel bereit: Bildaufbau, Symbol, Wortwahl. Sie brauchen sie in Schritt 05."
+      },
+      {
+        "label": "02 Haltung und Bildidee",
+        "hint": "Zeichnen Sie auf S. 7 die Bildskizze mit Motiv und Aufbau. Darunter Satz 1 des Werkkommentars (meine Haltung): Ihr Ich-Satz aus LF2."
+      },
+      {
+        "label": "03 Mittel belegen",
+        "hint": "Satz 2 (meine Mittel): Schreiben Sie mit dem Befund aus LF3, welche Mittel Sie einsetzen. Für 3 Punkte: auch, was jedes bewirkt."
+      },
+      {
+        "label": "04 Deutlichkeit entscheiden",
+        "hint": "Nach LF4: Schlagzeile, dann Satz 3 (die Wirkung, die ich will) und Satz 4 (was ich offen lasse; für 3 Punkte auch, was andere anders sehen)."
+      },
+      {
+        "label": "05 Plakat-Entwurf prüfen",
+        "hint": "Markieren Sie drei Stellen mit einem Kreis (Beispiel S. 6): voll = Bildaufbau, leer = Symbol, halb = Wortwahl. Prüfen Sie mit den Kriterien."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Plakat-Entwurf (S. 7): Bildskizze, Schlagzeile, drei markierte Stellen",
+      "Werkkommentar in vier Sätzen (S. 7)"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Plakat für den Hauseingang – Nachbarn kennen sich kaum",
+      "legende": [
+        {
+          "key": "aufbau",
+          "text": "Bildaufbau"
+        },
+        {
+          "key": "symbol",
+          "text": "Symbol"
+        },
+        {
+          "key": "wort",
+          "text": "Wortwahl"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Meine Haltung",
+          "eintraege": [
+            {
+              "text": "Thema: In unserem Wohnblock kennt man sich kaum."
+            },
+            {
+              "text": "Wert dahinter: einander helfen."
+            }
+          ]
+        },
+        {
+          "titel": "Bild und Schlagzeile",
+          "eintraege": [
+            {
+              "marke": "symbol",
+              "text": "Motiv: zehn Briefkästen, an einem klebt ein Zettel «Hallo, ich bin neu».",
+              "notiz": "Briefkasten steht für die Menschen dahinter"
+            },
+            {
+              "marke": "aufbau",
+              "text": "Aufbau: Briefkästen klein in einer Reihe, der Zettel gross vorn.",
+              "notiz": "gross und vorn: das zählt für mich"
+            },
+            {
+              "marke": "wort",
+              "text": "Schlagzeile: «Wer wohnt eigentlich neben dir?»",
+              "notiz": "Frage statt Vorwurf"
+            }
+          ]
+        },
+        {
+          "titel": "Werkkommentar",
+          "eintraege": [
+            {
+              "text": "1 Meine Haltung: Ich finde, Nachbarn sollten sich kennen, weil man sich dann hilft."
+            },
+            {
+              "text": "2 Meine Mittel: Der Briefkasten steht für die Nachbarn, der Zettel vorn fällt auf, die Schlagzeile fragt."
+            },
+            {
+              "text": "3 Die Wirkung, die ich will: Wer vorbeigeht, überlegt, wen er im Haus kennt."
+            },
+            {
+              "text": "4 Was ich offen lasse: was man tun soll, denn wer seine Ruhe will, hat auch recht."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Plakat zum Kulturtag – Handy in der Pause",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Zeigen Sie sie erst nach Schritt 05. Sie folgt dem zweiten Beispiel im Erwartungshorizont von LF4 (Schlagzeile als Frage); ein Entwurf mit einer Schlagzeile, die klar sagt, was die Person denkt, ist ebenso gültig. Lernende mit eigenem Thema werden an den drei Teilen und den drei markierten Stellen gemessen, nicht am Handy-Thema. Annahmen, nicht aus der Situation: Pausentisch mit vier Stühlen als Motiv, der Wert «Gemeinschaft». Dass Bildaufbau, Symbol und Zuspitzen auf einem Plakat erlaubte Mittel sind, ist eigene Übertragung; das Lehrmittel nennt sie als Beeinflussung in Medien (Kap. 7.1, S. 188).",
+      "legende": [
+        {
+          "key": "aufbau",
+          "text": "Bildaufbau"
+        },
+        {
+          "key": "symbol",
+          "text": "Symbol"
+        },
+        {
+          "key": "wort",
+          "text": "Wortwahl"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Meine Haltung",
+          "eintraege": [
+            {
+              "text": "Thema: In unserer Pause redet kaum noch jemand, weil alle aufs Handy schauen."
+            },
+            {
+              "text": "Wert dahinter: Gemeinschaft – miteinander reden."
+            }
+          ]
+        },
+        {
+          "titel": "Bild und Schlagzeile",
+          "eintraege": [
+            {
+              "marke": "symbol",
+              "text": "Motiv: Pausentisch mit vier Stühlen; auf drei Plätzen liegt ein leuchtendes Handy, der vierte Stuhl ist leer.",
+              "notiz": "leerer Stuhl: wer fehlt, wenn niemand redet"
+            },
+            {
+              "marke": "aufbau",
+              "text": "Aufbau: Tisch von oben gesehen, der leere Stuhl gross vorn, die Handys klein am Rand, viel freie Fläche.",
+              "notiz": "vorn und gross: das wiegt für mich am meisten"
+            },
+            {
+              "marke": "wort",
+              "text": "Schlagzeile: «Wer sitzt hier eigentlich noch?»",
+              "notiz": "Frage statt Vorwurf, kein abwertendes Wort"
+            }
+          ]
+        },
+        {
+          "titel": "Werkkommentar",
+          "eintraege": [
+            {
+              "text": "1 Meine Haltung: Ich finde, in der Pause sollten wir miteinander reden, weil mir Gemeinschaft wichtig ist."
+            },
+            {
+              "text": "2 Meine Mittel: Der leere Stuhl als Symbol zeigt, wer fehlt; gross vorn fällt er zuerst auf, und die Schlagzeile fragt nur."
+            },
+            {
+              "text": "3 Die Wirkung, die ich will: Wer vorbeigeht, soll kurz stehen bleiben und sich fragen, mit wem er heute geredet hat."
+            },
+            {
+              "text": "4 Was ich offen lasse: ob Handys schlecht sind, denn wer in der Pause Ruhe braucht, hat auch recht."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Begriffe der Einheit fehlen oder sind falsch gebraucht.",
+        "Einzelne Begriffe stimmen, andere sind ungenau oder verwechselt.",
+        "Die Begriffe der Einheit sind richtig gebraucht und passen zum Werk oder Beitrag.",
+        "Begriffe sind richtig und passend; gesagt ist auch, welches Mittel was bewirkt."
+      ],
+      "indikator_produkt": "Markierte Stellen: Begriffe richtig, passend (2). Satz 2: welches Mittel was bewirkt (3)."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Haltung ist nicht erkennbar.",
+        "Eine Haltung ist angedeutet, bleibt aber unklar oder unbegründet.",
+        "Die eigene Haltung ist klar erkennbar und in Ich-Form benannt.",
+        "Begründete Haltung in Ich-Form; das Spannungsfeld ist anerkannt, ebenso, was andere zu Recht anders sehen."
+      ],
+      "indikator_produkt": "Satz 1: Haltung in Ich-Form (2), mit Grund (3). Satz 4: auch, was andere anders sehen (3)."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt einen fertigen Plakat-Entwurf mit Werkkommentar; die Satzanfänge auf S. 2 helfen beim Ich-Satz.",
+    "scaffold_100": "Setzen Sie Ihren Entwurf digital um oder beschreiben Sie Ihr Bild einer Bild-KI. Prüfen Sie: Zeigt das Ergebnis noch Ihre Haltung?"
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für die Form des Plakats: wenig Text, leere Fläche, sparsame Farbe",
+      "tun": "Die Karte gilt für Folien. Auf Ihrem Plakat ist die Schlagzeile die Ausnahme: ein Satz, höchstens acht Wörter. Sonst: viel freie Fläche, wenig Farbe."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-20-1-cluster",
+      "fuer": "für Schritt 02: Einfälle zur eigenen Haltung sammeln, dann die Bildidee ordnen",
+      "tun": "Schreiben Sie Ihr Thema in die Mitte und sammeln Sie Einfälle. Wählen Sie danach ein Motiv und ordnen Sie, was vorn und was hinten steht."
+    },
+    {
+      "ref": "hko-was-zeige-ich",
+      "fuer": "für LF4: Schritt 1 (wer sieht das Plakat?) und Schritt 4 (wer darauf erkennbar ist, wird zuerst gefragt)"
+    }
+  ],
+  "mindmap_zentrum": "Was es zeigt oder wie es wirkt",
+  "mindmap_aeste": [
+    {
+      "titel": "Was will ich zeigen?",
+      "punkte": [
+        "Haltung",
+        "Wert"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Womit zeige ich es?",
+      "punkte": [
+        "Auswahl",
+        "Gewichtung",
+        "Wortwahl",
+        "Bildaufbau",
+        "Symbol"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie kommt es an?",
+      "punkte": [
+        "Wirkung",
+        "Raum für Deutung",
+        "Werkkommentar"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Sind drei Stellen markiert, und nennt Satz 2 meine Mittel?",
+      "Habe ich entschieden, wie deutlich mein Plakat wird, und sagt Satz 4, was ich offen lasse?"
+    ],
+    "mitnahme": [
+      "Mittel, die eine Haltung sichtbar machen",
+      "Wie deutlich ich etwas zeige – und warum",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Wert",
+          "nach": "Haltung",
+          "text": "steht hinter"
+        },
+        {
+          "von": "Haltung",
+          "nach": "Werkkommentar",
+          "text": "steht in Satz 1 im"
+        },
+        {
+          "von": "Symbol",
+          "nach": "Haltung",
+          "text": "macht sichtbar"
+        },
+        {
+          "von": "Bildaufbau",
+          "nach": "Gewichtung",
+          "text": "zeigt die (eigene Übertragung: gross und vorn wiegt mehr)"
+        },
+        {
+          "von": "Wortwahl",
+          "nach": "Wirkung",
+          "text": "verändert die"
+        },
+        {
+          "von": "Auswahl",
+          "nach": "Raum für Deutung",
+          "text": "Weglassen schafft"
+        },
+        {
+          "von": "Raum für Deutung",
+          "nach": "Wirkung",
+          "text": "lässt offen, welche"
+        },
+        {
+          "von": "Wirkung",
+          "nach": "gilt auch bei …",
+          "text": "zählt ebenso"
+        }
+      ],
+      "transfer": "Eine Rede an einer Abschlussfeier; ein Kurzvideo für den Kanal eines Vereins; ein Beitrag im Klassenchat.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Rollenbild",
+          "Gleichstellung"
+        ],
+        "mit_medien": [
+          "Ort",
+          "Wandbild"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn je eine Stelle für Bildaufbau, Symbol und Wortwahl markiert ist und Satz 2 die Mittel nennt, im Lösungsbild: leerer Stuhl als Symbol, gross vorn, Schlagzeile als Frage (Schritt 03 und 05).",
+        "Ja, wenn der Entscheid aus LF4 an der Schlagzeile sichtbar ist (klare Aussage oder Frage) und Satz 4 sagt, was offen bleibt, im Lösungsbild: kein Urteil über Handys; wer Ruhe braucht, hat auch recht (Schritt 04)."
+      ],
+      "mitnahme": [
+        "Bildaufbau, Symbol und Wortwahl (LF1). Eigene Übertragung: Gross und vorn steht, was mir wichtig ist; ein Wort kann Partei ergreifen (Kap. 7.1, S. 188).",
+        "Im Lösungsbild: eine Frage als Schlagzeile, weil ich zum Nachdenken bringen und niemanden angreifen will; der Preis ist, dass es nicht alle sofort verstehen (LF4).",
+        "Zum Beispiel, wie ich merke, ob andere mein Symbol so lesen, wie ich es meine."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: drei Mittel erklärt, zwei Werte notiert",
+        "LF2: Haltung als Ich-Satz, Bildidee geordnet",
+        "LF4: Entscheid zur Deutlichkeit begründet"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster S. 3: alle leeren Zeilen gefüllt, mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Plakat-Entwurf (Abgabe)",
+      "vollstaendig_wenn": [
+        "Bildskizze und Schlagzeile (höchstens 8 Wörter)",
+        "Drei Stellen markiert: Bildaufbau, Symbol, Wortwahl",
+        "Werkkommentar in vier Sätzen"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Mittel, Werte, meine Haltung und Bildidee",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Plakat-Entwurf beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Plakat-Entwurf fertigstellen, mit den Feedback-Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo zeige ich sonst etwas, das viele sehen – und wie deutlich will ich dort sagen, was ich denke?",
+    "ziel": "Ein Werk zeigt etwas, und es löst etwas aus — wer gestaltet, entscheidet, wie deutlich er wird, und rechnet damit, dass andere es anders sehen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Eine Haltung mit Bild und Wort zeigen und entscheiden, wie deutlich sie wird",
+    "lehrmittel_anker": "Kap. 7.1 S. 187-188 (Mittel, mit denen ein Beitrag lenkt: Auswahl, Gewichtung, Sprache, Bild) · Kap. 12.1 S. 292-294 (innere Werte; zwei Abstimmungsplakate, Rollenbild und Gleichstellung) · Kap. 17.2 S. 389 (Beschreibung, auch von Bildern)",
+    "kn_aktivierung": "Der KN verlangt, bei einem Spottvers mit Zeichnung über eine einzelne Person zu sagen, mit welchen Mitteln er seine Haltung zeigt und ob er so gebracht, geschärft oder zurückgenommen wird – der Entscheid über die Deutlichkeit und seine Begründung sind das Werkzeug dieses Hefts.",
+    "transfer_check": "Kann die Lernende bei einem neuen gestalteten Beitrag sagen, mit welchen Mitteln er eine Haltung zeigt, und begründen, wie deutlich er sein soll?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "leitfragen[2] — aus den Plakaten im Lehrmittel bzw. aus der Quelle herauslesen, welche Haltung jemand zeigt und mit welchen Mitteln, auch wenn es nicht die eigene ist"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — die eigene Haltung klären und festlegen, wie deutlich das Plakat sie zeigt und was es offen lässt"
+    },
+    {
+      "sk": 12,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — mit einem gestalteten Beitrag an einem Ort mitreden, an dem viele vorbeigehen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 12.1 | S. 293-294",
+          "text": "Welche Haltung zeigen die zwei Plakate (im Buch, S. 293), und was sagt der Text (S. 293–294) über ihre Zeit? Befund in zwei bis drei Sätzen: Mit welchen Mitteln arbeiten die Plakate, und was leiten Sie für Ihr Plakat ab?",
+          "liefert": "Belegte Mittel und ihre Wirkung",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 12.1 | S. 293-294",
+            "auftrag": "Lesen Sie Kap. 12.1, S. 293–294; die Plakate stehen auf S. 293. Zeile 1 ist ein Beispiel. Füllen Sie drei Zeilen: Plakat rechts, zwei Aussagen aus dem Text. «Absatz» = Seite und Stelle. «→ Begriff»: LF1 oder Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 293, Plakat links",
+              "ist gegen das Stimmrecht",
+              "Plakat von 1946",
+              "Haltung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 293: zwei Plakate und der Text darüber. S. 294, oben: Rollen früher, Artikel von 1981."
+            ],
+            "satzanfaenge": [
+              "«Das Plakat von … zeigt die Haltung, dass …»",
+              "«Als Mittel sehe ich auf dem Plakat im Buch …»",
+              "«Für mein Plakat übernehme ich …, weil …»"
+            ],
+            "produkt": "Der Befund sagt, welche Mittel Sie einsetzen: Daraus wird Satz 2 des Werkkommentars (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Zwei Plakate, zwei Haltungen, geprägt von ihrer Zeit",
+            "quelle_ref": "Kap. 12.1 | S. 293-294",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Zwei Abstimmungsplakate zum Frauenstimmrecht; die Bildlegende nennt nur die Jahre (links 1946, rechts 1953). Laut Bildbeschreibung lehnt das linke ab, das rechte wirbt dafür: am Buch prüfen. Text: Stimmrecht im Bund erst 1971, im letzten Kanton 1990.",
+                "quelle": "Kap. 12.1, S. 293"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Früher: Mann als Oberhaupt und Verdiener, Frau als Hausfrau und Mutter. Im 20. Jahrhundert infrage gestellt; seit 1981 steht der Gleichstellungsartikel in der Bundesverfassung.",
+                "quelle": "Kap. 12.1, S. 294"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Haltung: LF2. Rollenbild, Gleichstellung: Glossar. Mittel der Plakate (etwa Figur als Symbol, wenige Wörter als Wortwahl): eigene Beobachtung am Buch; gilt, wenn die Stelle gezeigt wird."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er beide Haltungen nennt, sie mit ihrer Zeit verbindet (Deutung), ein Mittel nennt und eine Folge fürs eigene Plakat zieht (eigene Übertragung)."
+              },
+              {
+                "label": "Am Buch prüfen",
+                "text": "Bildbeschreibung der Kapiteldatei maschinell erzeugt; darum kein Plakattext. Zahlen von S. 294 nicht ins Raster."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 293, Plakat links",
+                "ist gegen das Stimmrecht",
+                "Plakat von 1946",
+                "Haltung"
+              ],
+              [
+                "S. 293, Plakat rechts",
+                "wirbt für das Stimmrecht (laut Bildbeschreibung, am Buch prüfen)",
+                "Plakat von 1953 (Bildlegende)",
+                "Haltung; Mittel nach eigener Beobachtung am Buch"
+              ],
+              [
+                "S. 293, Text über den Plakaten",
+                "Stimmrecht für Frauen kam spät",
+                "im Bund 1971, im letzten Kanton 1990",
+                "Gleichstellung"
+              ],
+              [
+                "S. 294, oben",
+                "früher feste Rollen für Mann und Frau",
+                "Mann verdient, Frau führt den Haushalt",
+                "Rollenbild"
+              ]
+            ],
+            "befund": "Laut Bildbeschreibung (am Buch prüfen) zeigen die Plakate zwei Haltungen zur selben Frage: 1946 dagegen, 1953 dafür. Deutung: Hinter beiden steht ein Rollenbild ihrer Zeit, das sich geändert hat (S. 294). Eigene Beobachtung am Buch: Beide arbeiten mit einer Figur und wenigen Wörtern. Eigene Übertragung: Für mein Plakat wähle ich ein Symbol, das Lernende und Lehrpersonen heute sofort lesen können."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 7.1 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 7.1 (S. 188) nennt diese Mittel als Beeinflussung in Medien. Wo passt das für Ihr Plakat, wo nicht? Sagt Ihre Schlagzeile klar, was Sie denken – oder lässt Ihr Plakat Raum für eigene Deutung, etwa mit einer Frage?",
+          "liefert": "Entscheid zur Deutlichkeit mit Begründung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Karte «Auswählen, was ich zeige» (S. 6): Ihr Gegenüber ist, wer im Gang vorbeigeht."
+            ],
+            "satzanfaenge": [
+              "«Das Lehrmittel sagt über die Mittel, dass …»",
+              "«Bei meinem Plakat passt das nicht ganz, weil …»",
+              "«Ich entscheide mich für …, weil …; offen lasse ich …»"
+            ],
+            "produkt": "Der Entscheid bestimmt die Schlagzeile und wird zu Satz 3 und 4 des Werkkommentars (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ eigenes Plakat, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "wendet das Modell an: nennt mindestens ein Mittel aus Kap. 7.1, S. 188 und sagt, wie es auf dem eigenen Plakat wirkt",
+                "nennt eine Grenze des Modells: Das Lehrmittel meint Nachrichten, die ausgewogen sein sollen; auf einem Plakat ist Zuspitzen gewollt und für alle sichtbar (eigene Übertragung, nicht aus dem Lehrmittel)",
+                "entscheidet in Ich-Form für eine der zwei Möglichkeiten (klare Aussage oder Frage) und begründet mit dem Ort (Gang) und dem Gegenüber",
+                "anerkennt, was für die andere Möglichkeit spricht und was andere zu Recht anders sehen"
+              ],
+              "beispiel_pol_1": "Ich finde, in der Pause sollten wir miteinander reden, weil mir Gemeinschaft wichtig ist. Kap. 7.1 (S. 188) zeigt, dass schon ein Wort Partei ergreift. Das passt: Ich will Partei ergreifen. Es passt nicht ganz, denn das Lehrmittel meint Nachrichten; ein Plakat darf zuspitzen, und alle sehen, dass es meine Sicht ist (eigene Übertragung). Ich entscheide mich für eine Schlagzeile, die klar sagt, was ich denke: «Schau auf, wir sind auch noch da.» Im Gang gehen alle rasch vorbei, da bleibt nur ein klarer Satz hängen. Einige fühlen sich vielleicht angegriffen. Sie haben recht damit, dass das Handy in der Pause auch Erholung ist; darum zeigt mein Bild niemanden aus der Klasse.",
+              "beispiel_pol_2": "Ich finde, in der Pause sollten wir miteinander reden, weil mir Gemeinschaft wichtig ist. Kap. 7.1 (S. 188) nennt Bildaufbau und Symbolisierung als Arten der Bildmanipulation in Medien. Das passt nur halb: Mein Bild täuscht nicht; dass beides auf einem Plakat erlaubte Mittel sind, ist eigene Übertragung. Ich entscheide mich für eine Schlagzeile, die fragt und die Antwort offen lässt: «Wer sitzt hier eigentlich noch?», dazu ein leerer Stuhl am Pausentisch. So greife ich niemanden an. Der Preis: Wer rasch vorbeigeht, versteht es vielleicht nicht. Wer in der Pause Ruhe braucht, hat auch recht. Annahme: Im Gang bleiben einige vor den Plakaten stehen.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Bezug auf ein Mittel aus Kap. 7.1, ohne Grenze des Modells oder ohne einen Satz dazu, was für die andere Möglichkeit spricht."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was Kap. 7.1 sagt",
+          "Wo es bei mir nicht passt",
+          "Mein Entscheid und warum"
+        ],
+        "hinweis": "Füllen Sie mindestens zwei Zeilen; die dritte ist frei. Aus Spalte 1 und 2 muss folgen, was Sie in Spalte 3 entscheiden.",
+        "loesung_zeilen": [
+          [
+            "Ein Wort kann Partei ergreifen (S. 188)",
+            "Auf meinem Plakat will ich Partei ergreifen, und alle sehen das (eigene Übertragung)",
+            "Schlagzeile, die klar sagt, was ich denke: Im Gang bleibt nur ein klarer Satz hängen"
+          ],
+          [
+            "Bildaufbau und Symbolisierung sind dort Arten der Bildmanipulation in Medien (S. 188)",
+            "Mein Bild täuscht nicht, es deutet an; auf einem Plakat sind das erlaubte Mittel (eigene Übertragung)",
+            "Schlagzeile als Frage, die Antwort bleibt offen: So greife ich niemanden an"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 12.1 (S. 3)",
+        "beispiel": [
+          "Erfunden: S. 12, Abs. 2 · Verein wählt neues Logo · altes Logo von 1980 · → Symbol"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Zeile und ein Plakat-Entwurf aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Mit welchen Mitteln zeigen die Werke in der Quelle eine Haltung, und was lösen sie bei den Menschen vor Ort aus? Halten Sie im Befund in zwei bis drei Sätzen fest, was Sie daraus für Ihr Plakat ableiten.",
+          "liefert": "Belegte Mittel und ihre Wirkung",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-241a-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Vier Zeilen: je ein Werk oder eine Aussage über ein Werk.",
+              "Begriff: auch Wirkung, Ort, Raum für Deutung. Wortwahl: nicht im Video."
+            ],
+            "satzanfaenge": [
+              "«Das Werk bei … (Zeitmarke) zeigt seine Haltung durch …»",
+              "«Die Menschen vor Ort sagen dazu, dass …»",
+              "«Für mein Plakat übernehme ich …, weil …»"
+            ],
+            "produkt": "Der Befund sagt, welche Mittel Sie einsetzen: Daraus wird Satz 2 des Werkkommentars (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Symbol, Ort und Motiv – und was sie auslösen",
+            "quelle_ref": "q-241a-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Symbol: Wandbild, im Ort nach einem ungleichen Zweikampf benannt (00:33); eine Stimme vor Ort sagt, alle verstünden das Zeichen (00:50–00:53). Ort: Standort gehört zur Aussage (01:28). Motiv: Menschen, die weiterleben (01:56–02:05).",
+                "quelle": "Quelle, 00:33–02:05"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Deutung: Wirkung hängt am Ort; der Bürgermeister plant, ein Bild auf einem Platz aufzustellen (02:38–02:43). Den Sinn eines Werks nennt der Reporter (03:21–03:35).",
+                "quelle": "Quelle, 02:17–03:35"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Symbol: Wort der Quelle (00:50). Auswahl, Bildaufbau, Raum für Deutung: Deutung. Ort, Wandbild: Glossar. Wortwahl: kein Beispiel."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: zwei Mittel mit Zeitmarke, ihre Wirkung, eine Folge fürs eigene Plakat."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Gorilla hält scheinbar einen Rollladen hoch, Tiere entkommen (00:39). Zoo-Mitarbeiterin freut sich (01:08). Orte: Hauswand, Brücke, Imbiss (01:23–01:48). Alle rätseln (03:01–03:07).",
+                "quelle": "Ersatzquelle, 00:39–03:07"
+              },
+              {
+                "label": "Stand",
+                "text": "Quelle 09.05.2023, Ersatz 13.08.2024. «Bild» aus dem Ton erschlossen, nicht gesehen."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:33 · Wandbild an einer Ruine",
+                "00:50 Stimme vor Ort (Kulturleiterin): Alle verstünden das Zeichen",
+                "klare Haltung: der Kleine steht für das eigene Land",
+                "Symbol"
+              ],
+              [
+                "01:05 · Werk zwischen Ruinen",
+                "01:28 Stimme vor Ort: Der Standort gehört dazu",
+                "der Ort trägt die Aussage mit",
+                "Ort; Bildaufbau (Deutung)"
+              ],
+              [
+                "01:56 · mehrere Werke in der Region",
+                "Reporter: Jedes erzählt von Menschen, die weiterleben",
+                "die Haltung liegt in der Wahl des Motivs",
+                "Auswahl (Deutung)"
+              ],
+              [
+                "03:21 · Werk auf dem zentralen Platz (Bild nicht gesehen)",
+                "Reporter sagt, woran es erinnern soll",
+                "den Sinn nennt der Bericht (Deutung durch den Reporter)",
+                "Raum für Deutung (Deutung)"
+              ]
+            ],
+            "befund": "Die Quelle nennt drei Mittel: ein Symbol, das laut einer Stimme vor Ort alle verstehen (00:50–00:53), den Ort (01:28) und die Wahl des Motivs (01:56). Die Menschen vor Ort lesen das erste Werk als Zeichen für ihr Land und sind uneins, ob es am Ort bleiben soll (01:18–01:33). Eigene Übertragung: Für mein Plakat wähle ich ein Symbol, das im Gang alle sofort verstehen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 7.1 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 7.1: Mittel, die lenken. Quelle: ein Zeichen, das laut einer Frau dort alle verstehen, und Werke, die der Bericht erklärt. Sagt Ihre Schlagzeile klar, was Sie denken – oder lässt Ihr Plakat Raum für eigene Deutung?",
+          "liefert": "Entscheid zur Deutlichkeit mit Begründung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Notieren Sie je einen Satz mit Fundstelle: zum Lehrmittel (Seite), zur Quelle (Zeitmarke).",
+              "Karte «Auswählen, was ich zeige» (S. 6): Ihr Gegenüber ist, wer im Gang vorbeigeht."
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel lenkt ein Beitrag durch …»",
+              "«Die Quelle zeigt bei … (Zeitmarke), dass …»",
+              "«Ich entscheide mich für …, weil …; offen lasse ich …»"
+            ],
+            "produkt": "Der Entscheid bestimmt die Schlagzeile und wird zu Satz 3 und 4 des Werkkommentars (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt aus Kap. 7.1, S. 188 ein Mittel und was es bewirkt (etwa: ein Wort ergreift Partei)",
+                "nennt aus der Quelle mit Zeitmarke das Werk, dessen Zeichen laut einer Stimme vor Ort alle verstehen (00:50–00:53), oder ein Werk, dessen Sinn der Reporter benennt (03:21–03:35)",
+                "entscheidet in Ich-Form für eine der zwei Möglichkeiten (klare Aussage oder Frage) und begründet mit Ort und Gegenüber",
+                "anerkennt, was für die andere Möglichkeit spricht und was andere zu Recht anders sehen"
+              ],
+              "beispiel_pol_1": "Ich finde, in der Pause sollten wir miteinander reden, weil mir Gemeinschaft wichtig ist. Nach Kap. 7.1 (S. 188) ergreift schon ein Wort Partei. Die Quelle nennt ein Werk, dessen Zeichen laut einer Stimme vor Ort alle verstehen (00:50). So klar soll mein Plakat sein: Meine Schlagzeile sagt, was ich denke: «Schau auf, wir sind auch noch da.» Im Gang gehen alle rasch vorbei. Einige fühlen sich vielleicht angegriffen; sie haben recht damit, dass das Handy auch Erholung ist. Darum zeigt mein Bild niemanden aus der Klasse.",
+              "beispiel_pol_2": "Ich finde, in der Pause sollten wir miteinander reden, weil mir Gemeinschaft wichtig ist. Kap. 7.1 (S. 188) nennt Bildaufbau und Symbolisierung als Arten der Bildmanipulation in Medien; auf einem Plakat sind es erlaubte Mittel (eigene Übertragung). In der Quelle nennt bei einem Werk erst der Reporter den Sinn (03:21–03:35; Deutung durch den Reporter, Bild nicht gesehen). Meine Schlagzeile fragt und lässt die Antwort offen: «Wer sitzt hier eigentlich noch?», dazu ein leerer Stuhl am Pausentisch. So greife ich niemanden an. Der Preis: Wer rasch vorbeigeht, versteht es vielleicht nicht. Wer Ruhe braucht, hat auch recht.",
+              "nicht_tragfaehig": "Ein Entscheid, der nur eine Seite nennt, ohne Fundstelle (Seite oder Zeitmarke) auskommt oder nicht sagt, was für die andere Möglichkeit spricht."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-241a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie das Video an (QR-Seite = Seite hinter dem QR-Code). Vier Zeilen: Bild (vorn Zeitmarke mm:ss, dann was zu sehen ist), Ton (wer spricht und was), Aussage (was das Werk damit zeigt), Begriff (LF1 oder Glossar).",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-241a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wie zeigt ein Plakat eine Haltung, indem es etwas weglässt oder zurücknimmt?",
+          "erwartung": "Gezählt sind die Absätze des Abschnitts zum Hodler-Plakat. Einschätzung des Befragten: Der Name des Künstlers steht nicht gross vorn, er ist ins Bild eingefügt (2. Absatz). Die nötigen Angaben stehen geordnet am Fuss; das Zurücknehmen ist selbst das Mittel (3. Absatz). Die Haltung dahinter: Das Werk zählt, nicht die Person (4. Absatz). Erste Antwort des Interviews, am Schluss: Auch Plakate mit sehr wenig Mitteln machen eine starke Aussage. (Stand: Text gelesen am 05.10.2026.)"
+        },
+        {
+          "ref": "q-241a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was lässt die Künstlerin in ihren Bildern bewusst offen – und was löst das beim Hinsehen aus?",
+          "erwartung": "Aus der Ferne erscheint ein Raum oder Körper, aus der Nähe bleiben Einzelteile (Beginn, Reporterin). Dieses Kippen reizt die Künstlerin (ca. 00:46). Offen bleibt, ob etwas eine Figur ist oder etwas anderes wird (ca. 01:39). Beim Hinsehen: Man liest dieselben Teile einmal so, einmal anders (ca. 01:59, Reporterin). (Stand: Transkript der Mittagsausgabe, Audio nicht gegengehört.)"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Erfunden: 00:40 Trikot am Zaun · Trainerin: «Für Lena» · Team hält zusammen · → Symbol"
+        ]
+      },
+      "scaffold_90": "Sehen Sie den Anfang gemeinsam an und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt einen fertigen Plakat-Entwurf."
+    }
+  }
+}

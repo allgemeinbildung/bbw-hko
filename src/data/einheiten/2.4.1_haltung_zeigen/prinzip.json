@@ -1,0 +1,193 @@
+{
+  "id": "2.4.1_haltung_zeigen_prinzip",
+  "modul": "2.4",
+  "kompetenz_nr": "2.4.1",
+  "topic_slug": "haltung_zeigen",
+  "lehrgang": "EFZ_4J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-10-05",
+  "kern_kompetenzversprechen": "Ich kann in einem Werk erkennen und beschreiben, welche Haltung es zeigt und wie es auf mich wirkt, meine eigene Haltung in einem gestalteten Beitrag zum Ausdruck bringen und ein Werk begründet und respektvoll rezensieren — auch wenn andere es anders sehen.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Haltung im eigenen Beitrag ausdrücken",
+      "konfliktart": "Deutlich Stellung beziehen vs. Raum für eigene Deutung lassen",
+      "handlungsprodukt_typ": "Plakat-Entwurf zur eigenen Haltung mit Schlagzeile, Bildskizze und Werkkommentar",
+      "kompetenzen": [
+        "2.4.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Werk rezensieren",
+      "konfliktart": "Klares Urteil über das Werk vs. Respekt vor den Menschen dahinter",
+      "handlungsprodukt_typ": "Rezension zu einem selbst gewählten Werk mit Beschreibung, begründetem Urteil und anderer Sicht",
+      "kompetenzen": [
+        "2.4.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      7,
+      5,
+      12
+    ],
+    "B": [
+      1,
+      7,
+      6
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      7,
+      5,
+      6
+    ]
+  },
+  "aspekte": {
+    "Kultur": "R1"
+  },
+  "modi_units": [
+    "Produktion schriftlich und bildlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Was ein Werk zeigt vs. wie es auf mich wirkt",
+      "Deutlich Stellung beziehen vs. Raum für eigene Deutung lassen",
+      "Klares Urteil über das Werk vs. Respekt vor den Menschen dahinter",
+      "Aufrütteln und anecken vs. Rücksicht auf Betroffene"
+    ],
+    "verbindlich": "Wie deutlich ein Werk oder ein Urteil sein darf, hängt davon ab, wen es trifft, wer es sieht und was es auslösen soll; Zuspitzen und Zurücknehmen bleiben beide begründbar."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Ein Werk zeigt etwas, und es löst etwas aus — wer gestaltet oder urteilt, entscheidet, wie deutlich er wird, legt offen, was Beschreibung und was eigene Sicht ist, und rechnet damit, dass andere es anders sehen.",
+    "transferfeld": "Übertragbar auf jede Lage, in der jemand etwas Gestaltetes öffentlich zeigt oder beurteilt — etwa bei einer Rede an einer Abschlussfeier, bei einem Kurzvideo für den Kanal eines Vereins oder bei einer Bewertung im Netz zu einem Konzert."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T5 'Mich im Staat orientieren' — Ausdrucksformen und ihre Zeit",
+    "r3_voraussicht": "—"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 7.1",
+        "titel": "Medien — Mittel, mit denen ein Beitrag lenkt, wie ein Thema ankommt",
+        "seiten": "Seite 187-188"
+      },
+      {
+        "ref": "Kap. 12.1",
+        "titel": "Werte — Erwartungen und Rollen, zwei Abstimmungsplakate, Gleichstellung",
+        "seiten": "Seite 292-294"
+      },
+      {
+        "ref": "Kap. 17.2",
+        "titel": "Dokumentieren — Inhaltsangabe und Beschreibung",
+        "seiten": "Seite 388-389"
+      },
+      {
+        "ref": "Kap. 17.3",
+        "titel": "Argumentieren — Stellungnahme, 3B-Schema, meinungsbetonter Text",
+        "seiten": "Seite 393-396"
+      },
+      {
+        "ref": "Kap. 18.3",
+        "titel": "Perspektivenwechsel — Vorurteil, Emotionen, Empathie",
+        "seiten": "Seite 418-419"
+      }
+    ],
+    "konzepte": [
+      "Manipulation",
+      "Gewichtung",
+      "Bildaufbau",
+      "Symbolisierung",
+      "Retusche",
+      "Geschlechterrollen",
+      "Gleichstellung",
+      "Frauenstimmrecht",
+      "Inhaltsangabe",
+      "Beschreibung",
+      "Stellungnahme",
+      "3B-Schema",
+      "Behauptung",
+      "Begründung",
+      "Kommentar",
+      "Vorurteil",
+      "Emotionen",
+      "Empathie"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Schnitzelbank",
+      "Fasnacht",
+      "Dorfrestaurant"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "B": [
+      "Produktion schriftlich und bildlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Position / Werthaltung"
+    ],
+    "B": [
+      "Argumentation",
+      "Kulturelles Prinzip"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "modell_eigener_fall",
+      "mit_medien": "lehrmittel_quelle"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition",
+      "mit_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Was es zeigt oder wie es wirkt",
+  "modi_auftrag": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B) = drei Modi → Rezeption schriftlich und bildlich (zwei KN-Formen); bei Gleichstand der zwei mündlichen Modi Interaktion statt Produktion (Ausnahme, Bauplan §9: eigener Auftrag gegenüber 2.3.1); Lücke: Produktion mündlich",
+  "auftrag_lebensbereich": "Lehrbetrieb"
+}
