@@ -213,7 +213,7 @@
       },
       {
         "label": "03 Auf Gegenseite eingehen",
-        "hint": "Notieren Sie aus dem Befund von LF3, womit Sie auf die Gegenseite eingehen, mit Beleg. Den stärksten Einwand nehmen Sie erst in Schritt 04."
+        "hint": "Notieren Sie aus LF3 mit Beleg, wie Sie zeigen, dass Sie die Gegenseite verstehen. Deren stärksten Einwand beantworten Sie in Schritt 04."
       },
       {
         "label": "04 Position festlegen",
@@ -221,7 +221,7 @@
       },
       {
         "label": "05 Diskussion führen",
-        "hint": "Diskutieren Sie zu viert rund zehn Minuten: Eröffnung je Person, Argument, Antwort auf Einwand; eine Person fasst zusammen. Dann die Notiz."
+        "hint": "Zu viert, rund zehn Minuten: Eröffnung je Person (Karte 1, S. 6), Argument, Antwort; jemand fasst zusammen. Notiz und Rückmeldung: S. 7."
       }
     ],
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
@@ -347,7 +347,7 @@
         "Behauptungen sind nachvollziehbar begründet und mit einem Beispiel gestützt.",
         "Schlüssig begründet; ein Gegenargument wird aufgenommen und beantwortet, Folgen werden genannt."
       ],
-      "indikator_produkt": "Man hört eine Begründung mit Beispiel, und der Einwand wird beantwortet, nicht übergangen."
+      "indikator_produkt": "Die Karte trägt Begründung und Beispiel; der Einwand wird beantwortet, nicht übergangen."
     },
     {
       "kn_kriterium": "Position / Werthaltung",
@@ -511,7 +511,7 @@
       "produkt": "Quelle",
       "vollstaendig_wenn": [
         "Raster mit vier Zeilen, je mit Fundstelle",
-        "Jede Zeile hat einen Begriff aus LF1",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
         "Befund in zwei bis drei Sätzen"
       ]
     },
@@ -729,7 +729,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zu Kap. 16.1 (S. 3)",
         "beispiel": [
-          "Merkblatt Hausordnung, Abschnitt 2 · Velos gehören in den Unterstand · «ab 22 Uhr Ruhe» (Beispielwert) · → hier ein Begriff aus LF1"
+          "Merkblatt Hausordnung, Abschnitt 2 · Velos gehören in den Unterstand · «ab 22 Uhr Ruhe» (Beispielwert) · → Hausregel"
         ]
       },
       "scaffold_90": "Das Beispiel auf S. 6 zeigt eine Diskussion mit Einwand und Antwort; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
@@ -740,7 +740,7 @@
           "nr": 3,
           "bloom": "Analysieren",
           "knoten_ref": "Quelle · Raster",
-          "text": "Werten Sie Ihr Raster zur Quelle aus: Welche Standpunkte zum Stimmrechtsalter 16 werden mit welchen Gründen vertreten, und was will, wer so spricht? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "text": "Werten Sie Ihr Raster aus: Welche Gründe nennen beide Seiten zum Stimmrechtsalter 16, und was will, wer so spricht? Halten Sie in zwei bis drei Sätzen fest, auf welchen Grund der Gegenseite Sie eingehen müssen.",
           "liefert": "belegter Befund zum Umgang mit der Gegenseite",
           "antwortform": "raster",
           "raster": {
@@ -790,7 +790,7 @@
               },
               {
                 "label": "Hinweis",
-                "text": "Studie (09:46), Abgaben (07:53), Glarus und Beteiligung (10:40): Aussagen der Sprechenden, nicht geprüft. Bündner Abstimmung vom 27.09.2026: Nein (Begleittext SRF)."
+                "text": "Studie (09:46), Abgaben (07:53), Glarus und Beteiligung (10:40): Aussagen der Sprechenden, nicht geprüft. Bündner Abstimmung vom 27.09.2026: Nein mit 67,4 % (abstimmungen.gr.ch, geprüft 05.10.2026)."
               }
             ],
             "raster_zeilen": [
@@ -867,7 +867,7 @@
             3,
             4
           ],
-          "auftrag": "Hören Sie über den QR-Code auf S. 3 das Streitgespräch vor der Abstimmung in Graubünden (Ausgang: Nein), 07:42–11:18. Vier Zeilen: Zeitmarke, wer spricht, Grund, Absicht (was die Person erreichen will).",
+          "auftrag": "Hören Sie über die QR-Seite das Streitgespräch vor der Bündner Abstimmung (Ausgang: Nein), 07:42–11:18. Vier Zeilen: vorn Zeitmarke und wer spricht, dann Kernaussage, Absicht, ein Begriff aus LF1 oder dem Glossar (S. 8).",
           "raster": {
             "spalten": [
               "Wer spricht",
@@ -899,7 +899,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zur Quelle (S. 3)",
         "beispiel": [
-          "02:15 · Wer spricht: Platzwart · Kernaussage: Rasen braucht zwei Ruhetage · Absicht: will den Platz schonen (Beispielwert) · → hier ein Begriff aus LF1"
+          "02:15 · Wer spricht: Platzwart · Kernaussage: Rasen braucht zwei Ruhetage · Absicht: will den Platz schonen (Beispielwert) · → Platzordnung"
         ]
       },
       "scaffold_90": "Das Beispiel auf S. 6 zeigt eine Diskussion mit Einwand und Antwort; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."

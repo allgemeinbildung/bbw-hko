@@ -84,7 +84,7 @@ Woran das Kriterium am Heftprodukt sichtbar wird, steht auf S. 5 jedes Hefts:
 |---|---|---|---|
 | A | <!--hko:hf_A.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].indikator_produkt-->Jeder Weg trägt die richtige Voraussetzung, etwa wer eine Petition einreichen darf.<!--/hko--> |
 | A | <!--hko:hf_A.feedback_kriterien[1].kn_kriterium-->Politisches Prinzip<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].indikator_produkt-->Das Factsheet sagt, wer entscheidet und warum der gewählte Weg dort Gewicht hat.<!--/hko--> |
-| B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->Man hört eine Begründung mit Beispiel, und der Einwand wird beantwortet, nicht übergangen.<!--/hko--> |
+| B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->Die Karte trägt Begründung und Beispiel; der Einwand wird beantwortet, nicht übergangen.<!--/hko--> |
 | B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Karte und Notiz nennen die eigene Haltung in Ich-Form und einen Punkt der Gegenseite.<!--/hko--> |
 
 Warum so verteilt: Ein Factsheet über Wege der Mitwirkung ist nur brauchbar, wenn Voraussetzungen und Wirkung stimmen und klar ist, wer entscheidet — darum Fachkorrektheit und Politisches Prinzip in Heft A. In der Diskussion von Heft B hört man am deutlichsten, ob ein Einwand beantwortet wird und ob jemand eine eigene Haltung hat, ohne die Gegenseite abzuwerten.
@@ -304,7 +304,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Schritt 05 ist hier der Prüfschritt: Stimmen Wege und Voraussetzungen, und ist klar, wer entscheidet? Erst danach kreuzen sie in der Spalte «Selbst» an.
 
-**S. 6 — Methoden.** Vier Karten: «Gestaltungsregeln» für die Form des Factsheets, die Rezeptionskarte der Spur für das Raster, «3B-Schema» für die Begründung des Anliegens und «Akteurskarte bauen» für den Entscheid in LF4. Ein Beispiel tragen die Rezeptionskarte und die Akteurskarte; das Beispiel der Rezeptionskarte hat bewusst einen neutralen Gegenstand mit Beispielwert, damit es nicht wie ein Befund aussieht. Die Karte «Gestaltungsregeln» nennt S. 369–370; die Regeln für Folien, auf die sie sich stützt, stehen im Kapitel aber auf S. 371 — prüf die Seitenangabe, bevor du auf die Karte verweist.
+**S. 6 — Methoden.** Vier Karten: «Gestaltungsregeln» für die Form des Factsheets, die Rezeptionskarte der Spur für das Raster, «3B-Schema» für die Begründung des Anliegens und «Akteurskarte bauen» für den Entscheid in LF4. Ein Beispiel tragen die Rezeptionskarte und die Akteurskarte; das Beispiel der Rezeptionskarte hat bewusst einen neutralen Gegenstand mit Beispielwert, damit es nicht wie ein Befund aussieht. Die Regeln für Folien, auf die sich die Karte «Gestaltungsregeln» stützt, stehen im Kapitel auf S. 371. Ihr Merksatz («Steht ein ganzer Satz darauf, ist es zu viel») gilt für Folien; im Factsheet stehen Anliegen und Begründung in kurzen Sätzen, nur die Wege in Stichworten — so sagt es «Damit tun Sie».
 
 **S. 6 unten — «So kann Ihr Produkt aussehen».** Das Beispiel ist ein fertiges Factsheet zu einem anderen Anliegen (Tempo 30 in einer Wohnstrasse). Es zeigt die Form: drei Blöcke als Liste und eine Legende mit drei Konturen — gewählt, möglich, mir verschlossen. Die mögliche Lösung zum Freibad steht im Dokument «Lösungen»; sie zeigt höchstens drei Wege und wählt die Petition, gestützt durch Stimmberechtigte. Ein Factsheet mit der Petition allein ist ebenso gültig, wenn es deren Grenze nennt; die Annahmen der Lösung (Wunschzeit, Unterstützung) stehen nicht in der Situation.
 
@@ -324,10 +324,13 @@ Die fünf Schritte auf S. 5:
 > Das Raster zu Kap. 6.6 zeigt, wie viel Gewicht organisierte Gruppen haben. Manche schliessen daraus, auch sie könnten «Parolen herausgeben» oder «im Parlament mitarbeiten». Der Befund muss gerade umgekehrt festhalten, was davon einer einzelnen Person ohne Stimmrecht bleibt.
 
 > [!warnung] «Vorstoss» ist ein Wort der Quelle (Spur mit Medien)
-> Das Lehrmittel führt den Begriff in den Kapiteln dieser Einheit nicht; das Heft erklärt ihn in einem Halbsatz und im Glossar. Einreichen können ihn nur gewählte Ratsmitglieder — wer im Factsheet «Vorstoss» als eigenen Weg markiert, hat die Quelle überlesen. Der Beitrag zeigt zudem den Stand vom Juni 2023 im Kanton Luzern, nicht den von heute.
+> Das Lehrmittel führt den Begriff in den Kapiteln dieser Einheit nicht; das Heft erklärt ihn in einem Halbsatz und im Glossar. Einreichen können ihn nur gewählte Ratsmitglieder — wer im Factsheet «Vorstoss» als eigenen Weg markiert, hat die Quelle überlesen. Der Beitrag zeigt zudem den Stand vom Juni 2023 im Kanton Luzern. Daran hat sich, soweit auffindbar, nichts geändert (geprüft 05.10.2026): Das Jugendparlament reicht weiter Petitionen ein, ein Vorstossrecht hat es nicht.
 
 > [!warnung] Begriff aus LF1 oder aus dem Glossar
-> Der Auftrag zum Raster auf S. 3 lässt in der letzten Spalte einen Begriff aus LF1 **oder** aus dem Glossar zu; die Checkliste auf S. 8 nennt mit ihrem festen Wortlaut nur LF1. Ein Glossarbegriff wie «Vorstoss» oder «Verband» gilt trotzdem — sag das der Klasse, bevor jemand eine gute Zeile streicht. Dasselbe gilt in Heft B.
+> Der Auftrag zum Raster auf S. 3 lässt in der letzten Spalte einen Begriff aus LF1 **oder** aus dem Glossar zu; die Checkliste auf S. 8 sagt dasselbe. Die Methodenkarte zum Raster auf S. 6 nennt die Leitfragen und das Glossar. Ein Glossarbegriff wie «Vorstoss» oder «Verband» gilt also — sag das der Klasse, bevor jemand eine gute Zeile streicht. Dasselbe gilt in Heft B.
+
+> [!warnung] Bund im Lehrmittel, Gemeinde im Fall
+> Kap. 6.4 beschreibt Referendum und Initiative mit den Zahlen des Bundes; der Fall spielt in einer Gemeinde. Ob gegen einen Entscheid des Gemeinderats ein Referendum möglich ist, regelt das Recht von Kanton und Gemeinde — das Lehrmittel sagt dazu nichts, und das Heft verlangt es nicht. Für LF2 zählt nur die Voraussetzung: Wer nicht stimmberechtigt ist, dem sind diese Wege auf jeder Ebene verschlossen. Fragt jemand nach, verweis auf die Gemeindeordnung der eigenen Wohngemeinde.
 
 > [!troubleshooting] Herausforderung A — «Ich bin noch nicht 18, ich kann eh nichts machen»
 > Nicht widersprechen, sondern den Fall zurückgeben: «Wer darf in deinem Fall unterschreiben — und wer in deinem Umfeld darf abstimmen?» Aus der Antwort entstehen meist schon zwei Wege, einer offen, einer über andere.
@@ -364,13 +367,13 @@ Die fünf Schritte auf S. 5:
 **<!--hko:hf_A.bewertungsraster[1].produkt-->Quelle<!--/hko-->**
 <!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster mit vier Zeilen und Fundstellen
-☐ Jede Zeile hat einen Begriff aus LF1
+☐ Jede Zeile hat einen Begriff (LF1 oder Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
 **<!--hko:hf_A.bewertungsraster[2].produkt-->Factsheet<!--/hko-->**
 <!--hko:hf_A.bewertungsraster[2].vollstaendig_wenn|checkliste-->
-☐ Alle vier Teile ausgefüllt
+☐ Anliegen mit Begründung nach 3B
 ☐ Zwei bis drei Wege mit Voraussetzung
 ☐ Gewählter Weg mit nächstem Schritt
 <!--/hko-->
@@ -418,9 +421,9 @@ Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Argument und Ziel klären<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Notieren Sie aus LF1 oben auf der Diskussionskarte die drei Teile eines Arguments und die drei möglichen Ergebnisse.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Meine Meinung begründen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Schreiben Sie Ihr Argument aus LF2 auf die Karte. Ergänzen Sie ein zweites nach demselben Schema, aus Ihrem Alltag oder dem Raster.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Auf Gegenseite eingehen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Notieren Sie aus dem Befund von LF3, womit Sie auf die Gegenseite eingehen, mit Beleg. Den stärksten Einwand nehmen Sie erst in Schritt 04.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Auf Gegenseite eingehen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Notieren Sie aus LF3 mit Beleg, wie Sie zeigen, dass Sie die Gegenseite verstehen. Deren stärksten Einwand beantworten Sie in Schritt 04.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Position festlegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie aus LF4 Ihre Position in einem Satz, den stärksten Einwand und Ihre Antwort darauf ein.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Diskussion führen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Diskutieren Sie zu viert rund zehn Minuten: Eröffnung je Person, Argument, Antwort auf Einwand; eine Person fasst zusammen. Dann die Notiz.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Diskussion führen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Zu viert, rund zehn Minuten: Eröffnung je Person (Karte 1, S. 6), Argument, Antwort; jemand fasst zusammen. Notiz und Rückmeldung: S. 7.<!--/hko-->
 
 **Abgaben**
 
@@ -485,7 +488,7 @@ Die fünf Schritte auf S. 5:
 > Manche nehmen als Einwand einen, den sie leicht widerlegen können, oder wischen ihn mit «Das ist doch Unsinn» weg — genau das, was in der Pause schiefging. Für 3 Punkte in Argumentation muss ein Gegenargument aufgenommen und beantwortet sein.
 
 > [!warnung] Aussagen aus dem Gespräch als geprüfte Tatsachen (Spur mit Medien)
-> Die Studie (09:46), die Abgaben (07:53) und die tiefe Beteiligung in Glarus (10:40) sind Aussagen der Sprechenden, nicht geprüft. Zudem ist die Abstimmung, um die es geht, vorbei: Graubünden hat am 27.09.2026 Nein gesagt. Wer so tut, als stehe sie noch aus, hat den Auftrag auf S. 3 überlesen.
+> Die Studie (09:46), die Abgaben (07:53) und die tiefe Beteiligung in Glarus (10:40) sind Aussagen der Sprechenden, nicht geprüft. Zudem ist die Abstimmung, um die es geht, vorbei: Graubünden hat am 27.09.2026 mit 67,4 % Nein gesagt, in allen 100 Gemeinden (amtliches Ergebnis). Wer so tut, als stehe sie noch aus, hat den Auftrag auf S. 3 überlesen.
 
 > [!troubleshooting] Herausforderung B — «Er hört ja eh nicht zu»
 > Spiegeln statt schlichten: «Was müsste er sagen, damit du ihm in einem Punkt recht gibst?» Die Antwort zeigt meist, welchen Einwand die Person schon kennt — und damit den Anfang ihrer Antwort.
@@ -522,7 +525,7 @@ Die fünf Schritte auf S. 5:
 **<!--hko:hf_B.bewertungsraster[1].produkt-->Quelle<!--/hko-->**
 <!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster mit vier Zeilen, je mit Fundstelle
-☐ Jede Zeile hat einen Begriff aus LF1
+☐ Jede Zeile hat einen Begriff (LF1 oder Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
@@ -561,10 +564,10 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt, wann Abruf, Tit
 **Was du über die Quellen wissen musst**
 
 - **Keine Ersatzquelle:** Weder Heft A noch Heft B hat eine. Fällt eine Quelle aus, ist die Spur ohne Medien der Rückweg (Kap. 2).
-- **Quelle A** ist ein Radiobeitrag in Mundart vom Juni 2023 über den Kanton Luzern. Das Transkript im Archiv ist maschinell, ohne Sprecherkennung; die Rollen sind aus dem Inhalt erschlossen, das Ende (ca. 03:25) ist geschätzt. Der Beitrag endet damit, dass die Regierung andere Wege prüfen soll — was daraus wurde, ist **nicht geprüft**; das Heft stellt nur den Stand vom Juni 2023 dar. Am Rand fällt einmal das Stimmrechtsalter (Thema von Heft B), gegen Ende ist von «Jugendsession» die Rede, gemeint ist das Jugendparlament. Das Stimmenverhältnis am Schluss nicht verlangen.
+- **Quelle A** ist ein Radiobeitrag in Mundart vom Juni 2023 über den Kanton Luzern. Das Transkript im Archiv ist maschinell, ohne Sprecherkennung; die Rollen sind aus dem Inhalt erschlossen, das Ende (ca. 03:25) ist geschätzt. Der Beitrag endet damit, dass die Regierung andere Wege prüfen soll. Stand 05.10.2026: Ein Vorstossrecht für das Jugendparlament ist nirgends belegt; es bringt die Forderungen seiner Jugendsession weiterhin als Petition in den Kantonsrat (jukalu.ch). Am 09.02.2025 lehnten die Luzerner Stimmberechtigten zudem das Stimmrechtsalter 16 mit 79,1 % ab (SRF). Was die Regierung aus dem Prüfauftrag gemacht hat, liess sich nicht belegen; das Heft stellt nur den Stand vom Juni 2023 dar. Am Rand fällt einmal das Stimmrechtsalter (Thema von Heft B), gegen Ende ist von «Jugendsession» die Rede, gemeint ist das Jugendparlament. Das Stimmenverhältnis am Schluss nicht verlangen.
 - **Vertiefung A1** ist eine amtliche Seite ohne Datum; massgebend ist der Abruftag. Der Text lädt nur im Browser vollständig.
 - **Vertiefung A2** ist ein Bericht von 2021 auf Hochdeutsch; die Forderungen darin sind Beispiele.
-- **Quelle B** ist ein Ausschnitt (07:42–11:18) aus einer Sendung von rund 24 Minuten, in Mundart, Transkript maschinell ohne Sprecherkennung. Zeitmarken und Rollen vor dem Einsatz gegenhören. Das Gespräch fand vor der Abstimmung in Graubünden statt; laut Begleittext von SRF ging sie am 27.09.2026 mit **Nein** aus — vor dem Druck an einer amtlichen Quelle prüfen.
+- **Quelle B** ist ein Ausschnitt (07:42–11:18) aus einer Sendung von rund 24 Minuten, in Mundart, Transkript maschinell ohne Sprecherkennung. Zeitmarken und Rollen vor dem Einsatz gegenhören. Das Gespräch fand vor der Abstimmung in Graubünden statt; sie ging am 27.09.2026 mit **Nein** aus: 20 803 Ja zu 43 049 Nein (67,42 %), Stimmbeteiligung 45,09 %, alle 100 Gemeinden ausgezählt (amtlich: [abstimmungen.gr.ch](https://abstimmungen.gr.ch/vote/2026-09-27-k1), geprüft 05.10.2026).
 - **Vertiefung B1** gibt den Stand auf Bundesebene wieder: Der Nationalrat hat das Vorhaben am 28.02.2024 beendet. Die Zahlen darin stammen aus dieser Debatte.
 - **Vertiefung B2** stammt von 2020; der damalige Vorstoss ist erledigt. Mehr zum Stand des Stimmrechtsalters sagt die Einheit nicht.
 
@@ -599,11 +602,11 @@ Der gemeinsame Auftrag ist die **Generalprobe mit Rückmeldung**: ein neuer Fall
 
 **Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Werten Sie das Schreiben aus, prüfen Sie Wege und Position mit Heft A und Heft B, und halten Sie ein Statement.<!--/hko-->
 
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Auswertung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Halten Sie in drei Spalten fest: was das Schreiben sagt, was es für uns heisst, wo wir ansetzen.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Wege prüfen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Sammeln Sie wie in Heft A (S. 7) zwei bis drei Wege mit Voraussetzung und Wirkung.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Auswertung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Halten Sie in drei Spalten fest: was das Schreiben sagt, was es für uns heisst, wer entscheidet und wo wir ansetzen.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Wege prüfen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Sammeln Sie wie in Heft A (S. 7) zwei bis drei Wege, die das Schreiben offenlässt, je mit Voraussetzung und Wirkung.<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Position und Einwand<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Notieren Sie wie in Heft B (S. 7) Ihr Argument nach 3B, den stärksten Einwand und Ihre Antwort.<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Vorschlag festlegen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Wählen Sie einen Weg und begründen Sie, warum er mehr bewirkt und wer ihn mittragen kann.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Statement<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Planen Sie das Statement in Stichworten und sprechen Sie es frei.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Statement<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Planen Sie das Statement in Stichworten, bis zur Bitte an die Runde, und sprechen Sie es frei.<!--/hko-->
 
 **Abgaben**
 
