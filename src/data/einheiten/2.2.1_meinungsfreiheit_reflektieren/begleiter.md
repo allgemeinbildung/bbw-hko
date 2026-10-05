@@ -3,7 +3,7 @@ titel: "Begleit-Dokument — Meinungsfreiheit reflektieren (2.2)"
 untertitel: "Zwei Hefte (A nur mit Medien, B ohne und mit Medien), gemeinsamer Auftrag und Kompetenznachweis"
 kompetenz: "2.2 — Ich kann an Aussagen aus Gesprächen und Medienbeiträgen analysieren, wo eine Meinung endet und Ausgrenzung beginnt, andere Perspektiven nachvollziehen und meinen eigenen Standpunkt dazu entwickeln und nachvollziehbar ausdrücken."
 autor: "Kernteam 1 — BBW Winterthur"
-stand: "2026-10-03"
+stand: "2026-10-05"
 version: "2.1.0"
 lehrgang: "EFZ 4J"
 thema: "T2 — Meinungen bilden und mitgestalten"
@@ -234,7 +234,7 @@ In Heft B verlangt LF4 in beiden Spuren dasselbe; nur der Beleg wechselt (Seite 
 | Schlüsselkompetenzen | SK<!--hko:hf_A.nrlp.sk[0]-->1<!--/hko--> · SK<!--hko:hf_A.nrlp.sk[1]-->5<!--/hko--> · SK<!--hko:hf_A.nrlp.sk[2]-->6<!--/hko--> |
 | Spannungsfeld | <!--hko:hf_A.mehrdeutigkeit.trade_off-->Kritik an einer Sache vs. Herabsetzung von Menschen<!--/hko--> |
 | KN-Kriterien | Fachkorrektheit (SuK), Politisches Prinzip (Ges) |
-| Lehrmittel | Kap. 3.4, <!--hko:hf_A.quellen_anker[0].seiten-->Seite 116-118<!--/hko--> · Kap. 18.3, <!--hko:hf_A.quellen_anker[1].seiten-->Seite 418-418<!--/hko--> · Kap. 7.1, <!--hko:hf_A.quellen_anker[2].seiten-->Seite 186-186<!--/hko--> · als Lesehilfe Kap. 12.1, S. 296–297 |
+| Lehrmittel | Kap. 3.4, <!--hko:hf_A.quellen_anker[0].seiten-->Seite 116-118<!--/hko--> · Kap. 18.3, <!--hko:hf_A.quellen_anker[1].seiten-->Seite 418<!--/hko--> · Kap. 7.1, <!--hko:hf_A.quellen_anker[2].seiten-->Seite 186<!--/hko--> · als Lesehilfe Kap. 12.1, S. 296–297 |
 
 **Die Situation**
 
@@ -257,9 +257,9 @@ In Heft B verlangt LF4 in beiden Spuren dasselbe; nur der Beleg wechselt (Seite 
 Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Begriffe klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Notieren Sie aus LF1 die Kette vom Stereotyp zur Diskriminierung und den Begriff Ausgrenzung. Sie brauchen sie für die Prüffragen.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Aussage vom Tisch prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Übernehmen Sie aus LF2 eine der zwei Aussagen wörtlich und prüfen Sie: Über wen? Verallgemeinert? Kritik oder Herabsetzung? Gedeckt?<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Aussagen der Quelle prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Übernehmen Sie aus dem Raster von LF3 zwei Aussagen mit Beleg in die Tabelle und prüfen Sie beide mit denselben vier Fragen.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Urteilen und entscheiden<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Prüfen Sie mit LF4 die Zeile «Gedeckt?» (von der Meinungsfreiheit gedeckt?) für alle drei Aussagen, mit Beleg. Dann entscheiden Sie.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Aussage vom Tisch prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Übernehmen Sie aus LF2 eine der zwei Aussagen wörtlich. Beantworten Sie drei Fragen: Über wen? Verallgemeinert? Kritik oder Herabsetzung?<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Aussagen der Quelle prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Übernehmen Sie aus dem Raster (LF3) zwei Aussagen mit Zeitmarke; hören Sie den Wortlaut nach. Für beide dieselben drei Fragen.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Urteilen und entscheiden<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Füllen Sie nach LF4 die Zeile «Gedeckt?» für alle drei Aussagen: von der Meinungsfreiheit geschützt – ja, nein, Grenzfall? Mit Beleg.<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Drei Sätze, dann prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Schreiben Sie die drei Sätze unter die Tabelle. Prüfen Sie alles mit den zwei Feedback-Kriterien: Einordnung belegt? Recht und Schranke da?<!--/hko-->
 
 **Abgaben**
@@ -271,14 +271,14 @@ Die fünf Schritte auf S. 5:
 
 ### Hinweise zu jeder Seite
 
-**S. 1 — Herausforderung (8 Min.).** Die Lernenden lesen die Situation und unterstreichen die zwei Aussagen des Mitarbeiters. Kläre, dass der Fernsehbeitrag am Tisch von einer Abstimmung handelt, die entschieden ist: Die Erweiterung der Strafnorm um die sexuelle Orientierung wurde am 9. Februar 2020 angenommen (63,1 Prozent Ja, so die Ersatzquelle) und gilt seit dem 1. Juli 2020. S. 1 nennt die Quelle nur kurz; der QR-Code folgt auf S. 3.
+**S. 1 — Herausforderung (8 Min.).** Die Lernenden lesen die Situation und unterstreichen die zwei Aussagen des Mitarbeiters. Kläre, dass der Fernsehbeitrag am Tisch von einer Abstimmung handelt, die entschieden ist: Die Erweiterung der Strafnorm um die sexuelle Orientierung wurde am 9. Februar 2020 angenommen (63,1 Prozent Ja; Bundesamt für Statistik) und gilt seit dem 1. Juli 2020 (Art. 261bis StGB, geprüft auf Fedlex am 05.10.2026). S. 1 nennt die Quelle nur kurz; der QR-Code folgt auf S. 3.
 
 **S. 2 — Wissensecke I (27 Min.).** LF1 baut die Begriffskette vom Stereotyp über das Vorurteil zur Diskriminierung auf (Kap. 3.4, S. 116) und ergänzt Ausgrenzung und Verallgemeinerung (Kap. 18.3, S. 418). LF2 misst die zwei Aussagen vom Tisch am Recht: was garantiert ist und welche Schranken das Lehrmittel nennt (Kap. 7.1, S. 186), und wo die Strafnorm beginnt (Kap. 3.4, S. 117–118). Wer zum Thema des Falls Begriffe braucht, findet sie in Kap. 12.1, S. 296–297.
 
 > [!coaching] LF2 fällt kein rechtliches Urteil
-> Besteh darauf, dass jede Aussage für sich geprüft wird, und frag bei jeder: «Worüber urteilt der Satz — über eine Sache oder über einen Menschen?» Ob der Pausenraum eines Betriebs als öffentlich gilt, lassen die Lehrmittelseiten offen; als privat nennen sie nur Familie und Freundeskreis (S. 118). Eine gute Antwort sagt genau das: Die Kritik am Gesetz ist eine Meinung; der Spott ist herabsetzend und bleibt, gemessen an Kap. 3.4, S. 117–118, unter der Schwelle der Strafnorm. Ein rechtliches Urteil fällt das Heft nicht. Wer den Mitarbeiter für «strafbar» oder für «völlig im Recht» erklärt, behauptet mehr, als die Seiten hergeben.
+> Besteh darauf, dass jede Aussage für sich geprüft wird, und frag bei jeder: «Worüber urteilt der Satz — über eine Sache oder über einen Menschen?» Ob der Pausenraum eines Betriebs als öffentlich gilt, lassen die Lehrmittelseiten offen; als privat nennen sie nur Familie und Freundeskreis (S. 118). Eine gute Antwort sagt genau das: Die Kritik am Gesetz ist eine Meinung; der Spott ist herabsetzend, spricht aber niemandem das gleichberechtigte Dasein ab (Kap. 3.4, S. 117–118). Ein rechtliches Urteil ist das nicht, und das Heft fällt keines. Wer den Mitarbeiter für «strafbar» oder für «völlig im Recht» erklärt, behauptet mehr, als die Seiten hergeben.
 
-**S. 3 — Quelle (25 Min.).** Ein Fernsehbeitrag von SRF 10 vor 10 vom 20. Dezember 2019, also vor der Abstimmung. Der Ausschnitt läuft von 01:05 bis 04:23, gut drei Minuten: Zwei schwule Männer begründen ihr Ja und ihr Nein. LF3 fragt, wo die Quelle zeigt, wie gegen eine Gruppe gehetzt wird, und wer die Meinungsfreiheit bedroht sieht und wer nicht. Die Untertitel nennen nicht jede Person: Wer bei 03:20 spricht, heisst in der Lösung «eine Stimme in der Showpause»; das Wort «Sonderrecht» fällt bei 02:37. Das Raster fragt je Zeile nach Zeitmarke und Bild, nach der Person im Ton, nach der Aussage und nach einem Begriff aus LF1 oder dem Glossar. Als Werkzeug gilt Methodenkarte 2; die erste Zeile erarbeitet ihr gemeinsam, eine Beispielzeile ist nicht vorgedruckt.
+**S. 3 — Quelle (25 Min.).** Ein Fernsehbeitrag von SRF 10 vor 10 vom 20. Dezember 2019, also vor der Abstimmung. Der Ausschnitt läuft von 01:05 bis 04:23, gut drei Minuten: Zwei schwule Männer begründen ihr Ja und ihr Nein. LF3 fragt, wo die Quelle zeigt, wie gegen eine Gruppe gehetzt wird, und wer die Meinungsfreiheit bedroht sieht und wer nicht. Die Untertitel nennen nicht jede Person: Wer bei 03:18 spricht, heisst in der Lösung «eine Stimme in der Showpause»; das Wort «Sonderrecht» fällt bei 02:46. Die Zeitmarken der Lösung folgen den Untertiteln; bei den Lernenden gelten Abweichungen von einigen Sekunden. Das Raster fragt je Zeile nach Zeitmarke und Bild, nach der Person im Ton, nach der Aussage und nach einem Begriff aus LF1 oder dem Glossar. Als Werkzeug gilt Methodenkarte 2; die erste Zeile erarbeitet ihr gemeinsam, eine Beispielzeile ist nicht vorgedruckt.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 stellt gegenüber, was das Lehrmittel über Recht und Schranke sagt und wie Betroffene in der Quelle das sehen, und verlangt einen Entscheid für den Tisch: stehen lassen oder ansprechen. Der Kasten «Vertiefung (freiwillig)» bietet zwei Karten: einen Radiobeitrag und ein kurzes Erklärstück.
 
@@ -287,8 +287,8 @@ Die fünf Schritte auf S. 5:
 > Grenze: Der Beitrag handelt von der Strafnorm gegen Rassismus allgemein, nicht von der Erweiterung. Seine Zahlen haben den Stand Januar 2020. Er ist **nicht gegengehört** — die Erwartung stützt sich nur auf den Begleittext des Herausgebers, Zeitmarken gibt es keine. Hör ihn an, bevor du ihn einsetzt.
 
 > [!erwartungshorizont] Vertiefung 2 (Video, 00:00–01:02) — welche Handlungen strafbar werden
-> Erwartet sind vier Handlungen; die Leitfrage nennt keine Zahl. Eine öffentliche Herabsetzung wegen der sexuellen Orientierung, die die Menschenwürde verletzt (00:01); das Verbreiten von Hetzschriften (00:25); das Verbreiten verleumderischer Ideologien (00:25); jemandem deswegen nichts verkaufen (00:25). Zusatz: Die Polizei muss solchen Verstössen von sich aus nachgehen (00:50).
-> Grenze: Das Stück spricht von einem Vorhaben; es gilt seit dem 1. Juli 2020. Es erklärt nicht, was als «öffentlich» gilt. Das Beispiel bei 00:01 ist derb — die Lernenden umschreiben es, sie schreiben es nicht ab.
+> Erwartet sind vier Handlungen; die Leitfrage nennt keine Zahl. Eine öffentliche Herabsetzung wegen der sexuellen Orientierung, die die Menschenwürde verletzt (00:05, Beispiel bei 00:17); das Verbreiten von Hetzschriften (00:25); das Verbreiten verleumderischer Ideologien (00:31); jemandem deswegen nichts verkaufen (00:41). Zusatz: Die Polizei muss solchen Verstössen von sich aus nachgehen (00:50).
+> Grenze: Das Stück spricht von einem Vorhaben; es gilt seit dem 1. Juli 2020. Es erklärt nicht, was als «öffentlich» gilt. Das Beispiel bei 00:17 ist derb — die Lernenden umschreiben es, sie schreiben es nicht ab.
 
 > [!coaching] Die Grenze der Seiten ist nicht die eigene Grenze
 > Eine gute Antwort auf LF4 trennt zwei Fragen: Was sagen die Lehrmittelseiten zur Grenze, und wo ziehe ich meine eigene? Hilfreich ist die Karte «Die vier Ohren»: Was sagt der Satz zur Sache, was über die Beziehung zu den Menschen, von denen er spricht? Schwach ist ein Entscheid ohne Recht und ohne Schranke («so etwas sagt man nicht»). Gelungen ist ein Entscheid, der Seite und Zeitmarke nennt und dann begründet, warum die Person schweigt oder unter vier Augen etwas sagt — beides ist gleichwertig.
@@ -299,7 +299,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 6 unten — «So kann Ihr Produkt aussehen».** Das Beispiel steht an einem anderen Fall: ein Familienfest und ein Radiobeitrag über «die Jungen von heute». Es zeigt die Form — Tabelle mit vier Prüffragen, darunter drei Sätze —, nicht die Lösung. Eine mögliche Lösung zum Fall des Hefts liegt im Dokument «Lösungen»; zeig sie erst, wenn die eigenen Tabellen stehen.
 
-**S. 7 — Arbeitsfläche (40 Min.).** Hier entsteht die Tabelle: eine Aussage vom Tisch und zwei aus der Quelle, zuoberst im Wortlaut, darunter die vier Prüffragen aus Schritt 02 (Über wen? · Verallgemeinert? · Kritik oder Herabsetzung? · Gedeckt?). Die Zeile «Gedeckt?» braucht einen Beleg, eine Lehrmittelseite oder eine Zeitmarke. Unter der Tabelle stehen die drei Sätze. Welche der zwei Aussagen vom Tisch jemand wählt, ist frei; beide führen zu einer richtigen Tabelle.
+**S. 7 — Arbeitsfläche (40 Min.).** Hier entsteht die Tabelle: eine Aussage vom Tisch und zwei aus der Quelle, zuoberst im Wortlaut, darunter die vier Prüffragen (Über wen? · Verallgemeinert? · Kritik oder Herabsetzung? · Gedeckt?). Die ersten drei beantworten die Lernenden in den Schritten 02 und 03; die Zeile «Gedeckt?» füllen sie erst in Schritt 04, nach LF4, für alle drei Aussagen. Sie braucht einen Beleg, eine Lehrmittelseite oder eine Zeitmarke. Unter der Tabelle stehen die drei Sätze. Welche der zwei Aussagen vom Tisch jemand wählt, ist frei; beide führen zu einer richtigen Tabelle. Wer die Kritik am Gesetz wählt, hat den Spott nicht in der Tabelle: Das Urteil dazu steht dann in LF4 und in den drei Sätzen. Für die Aussagen der Quelle hören die Lernenden die Stelle nach, denn im Raster stehen nur Stichworte.
 
 **S. 8 — Abschluss (15 Min.).** Im Begriffsnetz ziehen die Lernenden Linien zwischen den vorgegebenen Knoten und beschriften sie; zwei Knoten sind leer, einer heisst «gilt auch bei …». Das Glossar des Hefts erklärt die Knoten, dazu zwei Wörter der Quelle. «Das nehme ich mit» hat drei Zeilen: «Kritik an einer Sache ist keine Herabsetzung», «Meinungsfreiheit gilt – und hat Schranken» und «Mir noch unklar». Der Auftragsbogen greift auf die vier Prüffragen von S. 7 und auf LF2 zurück.
 
@@ -433,7 +433,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 3 — Quelle (25 Min.).**
 
-- *Spur ohne Medien:* Kap. 3.4, S. 115 — Fliesstext, Kasten und Bildlegende. Die Beispielzeile belegt, wer einbürgert. Weitere Fundstellen: dass eine Ablehnung begründet sein muss, die Voraussetzungen im Kasten, das Urteil der Bildlegende über die Höhe der Hürden. Die Seite beschreibt das geltende Recht; Vorschläge, es zu ändern, stehen nicht im Lehrmittel. Welche Aussage welche Sichtweise stützt, ist Deutung der Lernenden.
+- *Spur ohne Medien:* Kap. 3.4, S. 115 — Fliesstext, Kasten und Bildlegende. Die Beispielzeile belegt, wer einbürgert. Weitere Fundstellen: dass eine Ablehnung begründet sein muss, die Voraussetzungen im Kasten, das Urteil der Bildlegende über die Höhe der Hürden. Die Seite beschreibt das geltende Recht; Vorschläge, es zu ändern, stehen nicht im Lehrmittel. LF3 fragt zweierlei: was die Seite verlangt (Beleg für «den Pass verdienen») und was davon längst erfüllt, wer hier aufgewachsen ist (Beleg für «dazugehören»). Einen Satz, der für leichtere Einbürgerung spricht, enthält die Seite nicht; der Beleg der zweiten Sicht entsteht erst, wenn die Lernenden den Kasten am Kollegen aus der Situation prüfen. Das ist ihre Deutung.
 - *Spur mit Medien:* Ein Fernsehbeitrag der SRF Tagesschau vom 30. April 2026, 00:00–02:28: Der Nationalrat berät eine Initiative, die die Einbürgerung erleichtern will. Das Raster fragt nach zwei Sichtweisen mit Begründung, Spalten Bild, Ton, Aussage und Begriff. Die Untertitel nennen die Rednerinnen und Redner nicht beim Namen; «Stimme dafür» und «Stimme dagegen» genügen. Die erste Zeile erarbeitet ihr gemeinsam (Methodenkarte 2).
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt einen Standpunkt — leichter oder bleiben — und eine Antwort auf den stärksten Einwand der Gegenseite.
@@ -443,7 +443,7 @@ Die fünf Schritte auf S. 5:
 
 > [!erwartungshorizont] Vertiefung 1 (Spur mit Medien, Artikel; Einstieg und Abschnitt zu den Parteien, im Archiv Abs. 1–2 und 13–20) — Anfang oder Ende der Integration
 > Erwartet: Die Frage stellt ein Nationalrat der Mitte zu Beginn (Abs. 1–2). Drei Antworten: Die Linke hält das Verfahren für zu streng und will früher einbürgern (Abs. 13–14); bürgerliche Stimmen wollen den Entscheid bei der Gemeinde lassen (Abs. 16–17); die Mitte sieht die Einbürgerung als Abschluss, also am Ende (Abs. 18). Auch gültig: der Vorschlag für die zweite Generation, den die Mehrheit ablehnte (Abs. 19–20).
-> Grenze: Der Kasten mit Kostenangaben gehört nicht zum Ausschnitt und ist nicht geprüft. Die Vorlage ist offen (Stand 03.10.2026); der Artikel sagt nichts über den Ausgang. Auf dem Handy ist er nicht geprüft.
+> Grenze: Der Kasten mit Kostenangaben gehört nicht zum Ausschnitt und ist nicht geprüft. Die Vorlage ist offen: Das Parlament empfiehlt die Ablehnung (Schlussabstimmung am 2. Oktober 2026), die Volksabstimmung steht aus (Stand 05.10.2026); der Artikel sagt nichts über den Ausgang. Auf dem Handy ist er nicht geprüft.
 
 **S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und die zwei Kriterien; die Spalte «Selbst» füllen sie nach dem Votum aus. Schritt 05 heisst in diesem Heft: Stichwortzettel schreiben, Votum halten, eine Rückfrage beantworten, die Stellungnahme mit den zwei Kriterien prüfen — sie gelten dem Text, nicht dem Votum.
 
@@ -467,7 +467,7 @@ Die fünf Schritte auf S. 5:
 > Wer beide Seiten versteht, weicht gern aus. Der Schluss der Stellungnahme verlangt einen Entscheid in Ich-Form und danach den Satz zur anderen Seite, nicht umgekehrt. Ebenfalls nicht tragfähig: ein Einwand, den niemand vertritt.
 
 > [!warnung] Die Vorlage ist offen (Spur mit Medien)
-> Der Beitrag zeigt eine Beratung im Nationalrat vom April 2026; entschieden hat das Volk noch nicht (Stand 03.10.2026). Lernende halten die Empfehlung des Rats für das Ergebnis. Sag es an. Nach der Abstimmung brauchst du nur einen Satz zum Ausgang; das Heft bleibt gültig, weil es nach Sichtweisen und Begründungen fragt.
+> Der Beitrag zeigt eine Beratung im Nationalrat vom April 2026; entschieden hat das Volk noch nicht (Stand 05.10.2026; inzwischen empfehlen beide Räte die Ablehnung). Lernende halten die Empfehlung des Rats für das Ergebnis. Sag es an. Nach der Abstimmung brauchst du nur einen Satz zum Ausgang; das Heft bleibt gültig, weil es nach Sichtweisen und Begründungen fragt.
 
 > [!warnung] Zeitmarken und Bild sind nicht gegengesehen (Spur mit Medien)
 > Auch hier stammen die Zeitmarken und die Spalte «Bild» der Rasterlösung aus den Untertiteln. Sieh den Beitrag vor dem Druck an und korrigiere die Lösung, wo es nötig ist.
@@ -535,13 +535,13 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt den Prüfstand j
 <!--hko:quellen|quellenstand-->
 | Rolle | Titel | Herausgeber | Datum | Verortung | Länge | Geprüft am | Link |
 |---|---|---|---|---|---|---|---|
-| A · Quelle (q-221.2a-pflicht) | Anti-Rassismus-Strafnorm: Warum Homosexuelle dagegen sind | SRF 10 vor 10 | 20.12.2019 | 01:05–04:23 | 3:18 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:b92bf389-0cc6-49fe-8511-84c752308fcc&subdivisions=false) |
-| A · Ersatzquelle (q-221.2a-pflicht-ersatz) | Deutliches Ja zum Anti-Diskriminierungs-Gesetz | SRF Tagesschau | 09.02.2020 | 00:00–03:50 | 3:50 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:19b7b29c-61a4-493d-80e8-6f457b8fc736&subdivisions=false) |
-| A · Vertiefung 1 (q-221.2a-vertiefung-1) | Strafnorm hat vor allem Signalwirkung | SRF HeuteMorgen | 14.01.2020 | 00:00–02:14 | 2:14 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:ec8c2eb4-837d-4507-a986-da48e9e9d803&subdivisions=false) |
-| A · Vertiefung 2 (q-221.2a-vertiefung-2) | Anti-Diskriminierungs-Gesetz: Das ändert sich | SRF Arena | 24.01.2020 | 00:00–01:02 | 1:02 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:2cc3b70c-0e58-4bee-8227-a6032310441d&subdivisions=false) |
-| B · Quelle (q-221.2b-pflicht) | Nationalrat empfiehlt Demokratie-Initiative zur Ablehnung | SRF Tagesschau | 30.04.2026 | 00:00–02:28 | 2:28 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:b2d3f124-3002-4638-ad5b-1bc212203d0e&subdivisions=false) |
-| B · Ersatzquelle (q-221.2b-pflicht-ersatz) | Neue EKM-Studie: Einbürgerung als Privileg | SRF Tagesschau | 23.05.2024 | 00:00–02:39 | 2:39 Min. | 03.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:ddd8053c-5266-4cbc-9542-a1e5a15c5abd&subdivisions=false) |
-| B · Vertiefung 1 (q-221.2b-vertiefung-1) | «Wollen Sie hier im Bundeshaus Schweizermacher spielen?» | SRF News | 30.04.2026 | Einstieg und Positionen der Parteien | 349 Wörter | 03.10.2026 | [srf.ch](https://www.srf.ch/news/schweiz/einfachere-einbuergerung-wollen-sie-hier-im-bundeshaus-schweizermacher-spielen) |
+| A · Quelle (q-221.2a-pflicht) | Anti-Rassismus-Strafnorm: Warum Homosexuelle dagegen sind | SRF 10 vor 10 | 20.12.2019 | 01:05–04:23 | 3:18 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:b92bf389-0cc6-49fe-8511-84c752308fcc&subdivisions=false) |
+| A · Ersatzquelle (q-221.2a-pflicht-ersatz) | Deutliches Ja zum Anti-Diskriminierungs-Gesetz | SRF Tagesschau | 09.02.2020 | 00:00–03:50 | 3:50 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:19b7b29c-61a4-493d-80e8-6f457b8fc736&subdivisions=false) |
+| A · Vertiefung 1 (q-221.2a-vertiefung-1) | Strafnorm hat vor allem Signalwirkung | SRF HeuteMorgen | 14.01.2020 | 00:00–02:14 | 2:14 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:ec8c2eb4-837d-4507-a986-da48e9e9d803&subdivisions=false) |
+| A · Vertiefung 2 (q-221.2a-vertiefung-2) | Anti-Diskriminierungs-Gesetz: Das ändert sich | SRF Arena | 24.01.2020 | 00:00–01:02 | 1:02 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:2cc3b70c-0e58-4bee-8227-a6032310441d&subdivisions=false) |
+| B · Quelle (q-221.2b-pflicht) | Nationalrat empfiehlt Demokratie-Initiative zur Ablehnung | SRF Tagesschau | 30.04.2026 | 00:00–02:28 | 2:28 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:b2d3f124-3002-4638-ad5b-1bc212203d0e&subdivisions=false) |
+| B · Ersatzquelle (q-221.2b-pflicht-ersatz) | Neue EKM-Studie: Einbürgerung als Privileg | SRF Tagesschau | 23.05.2024 | 00:00–02:39 | 2:39 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:ddd8053c-5266-4cbc-9542-a1e5a15c5abd&subdivisions=false) |
+| B · Vertiefung 1 (q-221.2b-vertiefung-1) | «Wollen Sie hier im Bundeshaus Schweizermacher spielen?» | SRF News | 30.04.2026 | Einstieg und Positionen der Parteien | 349 Wörter | 05.10.2026 | [srf.ch](https://www.srf.ch/news/schweiz/einfachere-einbuergerung-wollen-sie-hier-im-bundeshaus-schweizermacher-spielen) |
 <!--/hko-->
 
 **Was du über die Quellen wissen musst**
@@ -550,11 +550,11 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt den Prüfstand j
 - **Heft A, Ersatzquelle:** ein Nachbericht vom Abstimmungstag. Die Gegenseite spricht nicht selbst. Der erste Satz gehört noch zum Thema davor, und am Schluss fällt ein weiteres politisches Ziel, dessen heutiger Stand nicht geprüft ist — nicht in die Aufgabe ziehen.
 - **Heft A, Vertiefung 1:** Radiobeitrag ohne Transkript, **nicht gegengehört**; die Erwartung stützt sich auf den Begleittext. Zahlen mit Stand Januar 2020. Thema ist die Strafnorm gegen Rassismus allgemein.
 - **Heft A, Vertiefung 2:** spricht von einem Vorhaben, das seit 2020 gilt, und nennt ein derbes Beispiel. Der Titel trägt beim Herausgeber einen Tippfehler; im Heft steht er korrigiert.
-- **Heft B, Quelle:** Die Vorlage ist offen. Der Nationalrat hat die Initiative am 30. April 2026 zur Ablehnung empfohlen; der Stand im Ständerat und der Termin der Volksabstimmung sind nicht an der Quelle des Parlaments geprüft (Prüfdatum 03.10.2026). Die Frist von zehn Jahren, die der Beitrag als geltend nennt, stimmt mit Kap. 3.4, S. 115 überein.
+- **Heft B, Quelle:** Die Vorlage ist offen. Der Nationalrat hat die Initiative am 30. April 2026 zur Ablehnung empfohlen; der Ständerat folgte am 24. September 2026, die Schlussabstimmung war am 2. Oktober 2026 (Geschäft 25.081, Datenbank des Parlaments, geprüft am 05.10.2026). Die Initiative kommt ohne Gegenvorschlag vors Volk; ein Termin war am Prüftag nicht bekannt. Die Frist von zehn Jahren, die der Beitrag als geltend nennt, stimmt mit Kap. 3.4, S. 115 überein.
 - **Heft B, Ersatzquelle:** anderer Anlass, eine Studie zum geltenden Verfahren; ihre Zahlen haben den Stand Mai 2024. Die zwei Sichtweisen sind dort «selektiv» und «fair».
 - **Heft B, Vertiefung 1:** Artikel; der Titel ist für den Druck gekürzt. Der Kasten mit Kostenangaben gehört nicht zum Ausschnitt.
-- **Rechtsstand:** Die Angaben zur Strafnorm stammen aus dem Lehrmittel (Kap. 3.4, S. 117–118), den Beiträgen und zwei Fachseiten. Am Gesetzestext sind sie nicht geprüft.
-- **Alle Videos:** Zeitmarken und die Spalte «Bild» der Lösungen folgen den Untertiteln. Sieh die Beiträge vor dem Druck an.
+- **Rechtsstand:** Die Angaben zur Strafnorm stammen aus dem Lehrmittel (Kap. 3.4, S. 117–118) und den Beiträgen. Am Gesetzestext geprüft (Fedlex, Fassung vom 1. Oktober 2026, geprüft am 05.10.2026): Art. 261bis StGB nennt Rasse, Ethnie, Religion und sexuelle Orientierung und gilt in dieser Fassung seit dem 1. Juli 2020. Das Gesetz spricht von Herabsetzung «in einer gegen die Menschenwürde verstossenden Weise»; die Formel vom abgesprochenen gleichberechtigten Dasein ist die Umschreibung des Lehrmittels. Ob ein Pausenraum als öffentlich gilt, entscheidet weder das Lehrmittel noch das Heft — das Heft fällt kein rechtliches Urteil über den Mitarbeiter. Die Voraussetzungen der Einbürgerung in Heft B stimmen mit Art. 9, 11 und 12 des Bürgerrechtsgesetzes überein; das Gesetz verlangt zusätzlich die Niederlassungsbewilligung C.
+- **Alle Videos:** Die Zeitmarken der Lösungen sind am 05.10.2026 an den einzelnen Untertitelzeilen nachgeführt; die Spalte «Bild» und die Zuordnung der Stimmen sind daraus erschlossen, nicht gesehen. Sieh die Beiträge vor dem Druck an.
 
 > [!hinweis] Links pflegen
 > Prüfe die Links vor jedem Einsatz der Medien-Spur und sonst halbjährlich; eine automatische Prüfung gibt es nicht. Fällt eine Quelle dauerhaft aus, rückt die Ersatzquelle nach, und es braucht eine neue Ersatzquelle — für Heft A zwingend, weil es ohne Medien nicht geht. Trag nach der Volksabstimmung zur Einbürgerung das Ergebnis hier nach.
@@ -588,9 +588,9 @@ Der Auftrag ist die Generalprobe vor dem KN: ein neuer Fall in einem anderen Leb
 
 **Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Werten Sie das Protokoll mit Heft A und Heft B aus und handeln Sie zu dritt aus: Sperre bestätigen, verkürzen, verlängern oder etwas anderes?<!--/hko-->
 
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Aussagen einordnen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Ordnen Sie die Aussagen mit den vier Prüffragen aus Heft A ein; Stichworte auf Seite A2.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Sichtweisen beschreiben<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Notieren Sie mit Heft B Wert und Interesse hinter jedem Lager: auf A2, für die Stationen auf A3.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Befundblatt zum Protokoll<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Halten Sie fest, was belegt ist, was strittig ist und was fehlt – je mit Stelle und Folge.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Aussagen einordnen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Ordnen Sie die Aussagen im Protokoll mit den vier Prüffragen aus Heft A ein. Stichworte: zuoberst ins Feld auf Seite A2.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Sichtweisen beschreiben<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Notieren Sie mit Heft B Wert und Interesse hinter jedem Lager, im selben Feld auf A2. Sie brauchen das für Station 2 auf A3.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Befundblatt zum Protokoll<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Unter den Stichworten aus 01 und 02: was belegt ist, was strittig ist, was fehlt – je mit Stelle im Protokoll und Folge für die Empfehlung.<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Schlichtungsgespräch<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Jede Person vertritt ihre Position und antwortet auf einen Einwand; dann einigen Sie sich.<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Ergebnis festhalten<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Seite A3 mit Empfehlung und offenem Punkt ist Ihre Gesprächsnotiz. Schätzen Sie sich dann selbst ein.<!--/hko-->
 
@@ -627,7 +627,7 @@ Das Schlichtungsgespräch richtet sich an die Moderation der Spielgemeinschaft, 
 - Lässt du Gespräche aufnehmen, gehen die Aufnahmen direkt an dich. Auf die Plattform wird nichts geladen.
 
 > [!coaching] Der eigene Anteil muss sichtbar sein
-> Lass vor dem Gespräch jede Person ihren Anteil in Stichworten auf A3 planen. Im Gespräch gilt: zuerst sagen, was am Protokoll überzeugt und was nicht, dann auf einen Einwand eingehen, bevor der eigene Punkt wiederholt wird. Wer zuhört, notiert den Einwand, auf den geantwortet wurde. So kannst du die Kriterien «Argumentation» und «Position / Werthaltung» jeder Person zuordnen.
+> Lass vor dem Gespräch jede Person die Stationen 1 bis 3 auf A3 in Stichworten ausfüllen; Station 4 füllt die Gruppe am Schluss gemeinsam aus. Im Gespräch gilt: zuerst die eigenen drei Stationen vortragen, dann auf einen Einwand eingehen, bevor der eigene Punkt wiederholt wird. Wer zuhört, notiert den Einwand, auf den geantwortet wurde. So kannst du die Kriterien «Argumentation» und «Position / Werthaltung» jeder Person zuordnen.
 
 ### Kriterien und Indikatoren
 
