@@ -296,3 +296,45 @@ eine Anweisung, das Heft bleibt (Situation war vom Tausch ausgenommen).
 mit der Anmoderation beginnt; Abspielen auf dem Handy; QR-Seite im Browser
 (sie liest die Karten, kein Dev-Server gestartet); Stand der Debatte über ein
 Kopftuchverbot an Schulen nach April 2026.
+
+## 10. Entscheide 05.10.2026 (nach dem Tausch)
+
+Zwei Entscheide von Pietro, umgesetzt nach dem Commit des Tauschs.
+
+**1. Heft A, S. 3: Spalte «Absicht» heisst «Wozu gesagt».** Geändert in
+`herausforderung_A.json` (Raster von LF3 und Raster der Quelle; Auftrag der
+Quelle: «… wer spricht, Kernaussage, wozu gesagt. …», 220 Zeichen) und im
+Begleiter (S. 3, Stolperstein «Erfahrungen, keine Sprüche»). Schritte,
+Checkliste und Lösungs-Rasterzeilen nennen den Spaltenkopf nicht wörtlich.
+`ERR_V42_AUFTRAG_SPALTEN`: kein Befund. Heft B hat andere Spalten.
+
+**2. Heft B: Kommentar 120–150 Wörter statt 100–120**, beide Spuren (die
+Stellen liegen im Kern): Zahlentabelle S. 1, `format`, `format_detail`,
+«Das geben Sie ab» S. 5, Checkliste S. 8; `prinzip.json`
+(`handlungsprodukt_typ`, gekoppelt); Begleiter (vier Marker, S. 7). Die
+mögliche Lösung (Lösungsbild) hat neu 127 Wörter (vorher 119), der Hinweis
+nennt die Zahl. Das Beispiel S. 6 nennt keine Länge (laut Titel gekürzt).
+Schritte, Kriterien und Indikatoren nennen keine Wortzahl. **KN und
+Auftragsbogen nennen keine Länge des Kommentars** (KN: Transfer-Reflexion
+200–250 Wörter, etwas anderes) — nichts zu melden.
+
+**Arbeitsfläche S. 7:** eine freie Seite für die Notiz zu den zwei Werten,
+den Kommentar und den Stichwortzettel. 150 Wörter von Hand sind rund eine
+halbe bis zwei Drittel Seite; es reicht knapp. Geschätzt, nicht am Papier
+gemessen; die Seite sagt nicht, wo was steht (Renderer).
+
+**Gegenleser** (Sonnet, Profil a, im Vordergrund, Heft B ohne Medien S. 1, 4–8):
+hat den Kommentar geschrieben — 141 Wörter, alles Verlangte drin; «passt, aber
+knapp». Alle drei Stellen nennen dieselbe Länge. Offen, nicht geändert:
+
+- Ob ein Titel mitzählt, sagt das Heft nicht (Karte «Stellungnahme» nennt einen
+  Titel als Frage; der Auftrag verlangt keinen).
+- Die Plus-Aufgabe (dritte Möglichkeit, Vorschlag an die Schulleitung) passt
+  nicht mehr in 150 Wörter; sie hat keine eigene Längenangabe.
+- Stufe 3 der Kriterien («Folgen benannt», «was die andere Sicht richtig
+  sieht») ist in der Länge schwer unterzubringen (KN-Wortlaut).
+- Beispiel S. 6 zeigt Einwand und Antwort nur im Stichwortzettel (bekannt).
+
+**Tor nach der letzten Änderung:** `check-all`: «GRUEN — keine Fehler.» ·
+`messen-v42`: 43 Seiten ok, kein Überlauf; Heft B ohne Medien S. 8 weiter
+0,8 px, S. 5: 58,6 px, S. 1: 0 px (voll, kein Überlauf).
