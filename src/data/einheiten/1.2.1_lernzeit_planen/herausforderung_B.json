@@ -227,7 +227,7 @@
       },
       {
         "label": "04 Einsatz des Werkzeugs",
-        "hint": "Halten Sie Ihren Entscheid aus LF4 fest: welches der zwei Kapitel Sie selbst verarbeiten, welches Sie nur durchgehen, wofür das KI-Werkzeug."
+        "hint": "Halten Sie Ihren Entscheid aus LF4 fest: was Sie mit jedem der zwei Kapitel tun und wofür Sie das KI-Werkzeug nehmen."
       },
       {
         "label": "05 Abfragerunde führen, prüfen",
@@ -294,7 +294,7 @@
                 "Wie heiss der Ofen?",
                 "200 Grad",
                 "richtig",
-                "falsch: Karte 180 Grad"
+                "falsch, Schritt 6: 180°"
               ],
               "marke": "offen"
             }
@@ -360,7 +360,7 @@
               "zellen": [
                 "Wozu mehrere Eingangskanäle?",
                 "damit es schneller geht",
-                "ungenau: mehr Abrufwege",
+                "falsch: mehr Abrufwege",
                 "stimmt, S. 444"
               ],
               "marke": "offen"
@@ -562,7 +562,7 @@
       },
       "quercheck": [
         "Ja, wenn die vier Zeilen des Probelaufs als «sitzt» markiert sind; sonst nennt die Lernstand-Notiz, was offen ist und was als Nächstes folgt (siehe Lösungsbild).",
-        "Ja – etwa: zum Abfragen nach der eigenen Arbeit, nicht anstelle der eigenen Arbeit. Ob die fertige Zusammenfassung für einen Teil des Stoffs genügt, begründet LF4; beide Beispielantworten dort sind möglich."
+        "Ja – etwa: zum Abfragen nach der eigenen Arbeit, nicht anstelle der eigenen Arbeit (Fallüberlegung). Ob die fertige Zusammenfassung für einen Teil des Stoffs genügt, begründet LF4; beide Beispielantworten dort sind möglich."
       ],
       "mitnahme": [
         "Die vier Sätze aus dem Raster von S. 3, je mit Seite oder Absatz (siehe Lösung zu LF3).",
@@ -772,7 +772,7 @@
             "erwartungshorizont": {
               "gut_wenn": [
                 "Beide Wege sind mit einem Grund genannt: die Zeit bis zum Termin (Fall) und die Wirkung des eigenen Verarbeitens (Kap. 17.1, S. 380; Kap. 20.6, S. 444).",
-                "Der Entscheid unterscheidet die zwei Kapitel aus der Situation: welches gründlich verarbeitet, welches nur durchgegangen wird.",
+                "Der Entscheid sagt für jedes der zwei Kapitel aus der Situation, ob es gründlich verarbeitet oder nur durchgegangen wird.",
                 "Ein Einwand gegen die eigene Wahl ist genannt und beantwortet; es steht da, was der Entscheid kostet.",
                 "Wofür das KI-Werkzeug dient, ist als eigene Überlegung zum Fall begründet (Fallüberlegung, nicht aus dem Lehrmittel)."
               ],
@@ -902,12 +902,12 @@
               ],
               [
                 "Abs. 8",
-                "Wirkung von KI auf den Lerneffekt bei Jugendlichen noch wenig bekannt",
+                "Wirkung von KI auf den Lerneffekt bei Kindern und Jugendlichen noch wenig bekannt",
                 "Aussage eines Dozenten, Stand 2024",
                 "Lernstrategie"
               ]
             ],
-            "befund": "Die Quelle zeigt: Ein KI-Werkzeug hilft, wenn ich zuerst selbst arbeite und danach vergleiche oder überprüfen lasse. Lasse ich es die Lernaufgabe lösen, habe ich laut der Quelle keinen Lerneffekt. Für meine Vorbereitung heisst das: Ich fasse selbst zusammen und nehme das Werkzeug erst danach zum Vergleichen. Dass ich mich auch abfragen lasse, folgere ich selbst; die Quelle nennt es nicht."
+            "befund": "Laut der Quelle kann ein KI-Werkzeug helfen, wenn ich zuerst selbst arbeite und danach vergleiche oder überprüfen lasse (Abs. 6; Vorschlag eines Dozenten, Stand 2024). Lasse ich es die Lernaufgabe lösen, bleibt laut der Quelle der Lerneffekt aus (Abs. 8). Für meine Vorbereitung heisst das: Ich fasse selbst zusammen und nehme das Werkzeug erst danach; dass ich mich auch abfragen lasse, folgere ich selbst."
           }
         },
         {
@@ -937,7 +937,7 @@
               "gut_wenn": [
                 "Der Pol des Lehrmittels steht mit Fundstelle da: nur Verstandenes lernen; in eigenen Worten wiederholen und jemandem erklären (Kap. 20.6, S. 444).",
                 "Der Pol der Quelle steht mit Absatz da: erst selbst, dann vergleichen (Abs. 6); kein Lerneffekt, wenn das Werkzeug die Aufgabe löst (Abs. 8).",
-                "Der Entscheid unterscheidet die zwei Kapitel und sagt, wofür das Werkzeug dient und wofür nicht.",
+                "Der Entscheid sagt für jedes der zwei Kapitel, was damit geschieht, und wofür das Werkzeug dient und wofür nicht.",
                 "Es steht da, was der Entscheid kostet (Zeit oder das Risiko einer Lücke)."
               ],
               "beispiel_pol_1": "Ich verarbeite beide Kapitel selbst und fasse sie in eigenen Worten zusammen, denn nur Verstandenes finde ich wieder (Kap. 20.6, S. 444). Die Zusammenfassung der Kollegin vergleiche ich erst danach mit meiner (Quelle, Abs. 6). Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Lösen – sonst bleibt laut der Quelle der Lerneffekt aus (Abs. 8); jede Rückmeldung prüfe ich an meiner Unterlage. Das kostet mich mehrere Abende. So lerne ich auch im Lehrbetrieb einen neuen Ablauf: erst selbst erarbeiten, dann abfragen lassen.",
@@ -976,7 +976,7 @@
           "ref": "q-121b-vertiefung-2",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Warum lässt sich das Lernen laut dem Beitrag nicht auslagern, und was folgt daraus für KI-Antworten?",
-          "erwartung": "Lernen baut laut dem Beitrag die Strukturen im Gehirn erst auf und lässt sich darum nicht abgeben (21:56–22:12); erst danach kann man Ergebnisse kritisch hinterfragen (22:25–22:29). Klassen übernahmen die Ausgabe der KI oft ungeprüft (21:31–21:46). Folgerung: KI-Antworten prüfen und erst nutzen, wenn ich den Stoff selbst erarbeitet habe. Die Aussagen betreffen Schulkinder. (Stand: nur Untertitel gelesen, nicht gesichtet.)"
+          "erwartung": "Lernen baut laut dem Beitrag die Strukturen im Gehirn erst auf und lässt sich darum nicht abgeben (21:56–22:12); erst danach kann man Ergebnisse kritisch hinterfragen (22:25–22:33). Klassen übernahmen die Ausgabe der KI oft ungeprüft (21:31–21:49). Folgerung: KI-Antworten prüfen und erst nutzen, wenn ich den Stoff selbst erarbeitet habe. Die Aussagen betreffen Schulkinder. (Stand: nur Untertitel gelesen, nicht gesichtet.)"
         }
       ],
       "kasten_s4": {

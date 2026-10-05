@@ -188,7 +188,7 @@
           },
           {
             "label": "P nach Richtwert",
-            "text": "Rund 60 Prozent verplanen: 0,6 × 15 = 9 Std.; rund 40 Prozent Pufferzeit: 6 Std. Das ist ein Richtwert des Lehrmittels für die Tagesplanung, hier auf die Woche übertragen.",
+            "text": "Rund 60 Prozent verplanen: 0,6 × 15 = 9 Std.; rund 40 Prozent Pufferzeit: 6 Std. Das Lehrmittel nennt den Richtwert für die tägliche Arbeitszeit; das Heft überträgt ihn auf die freien Abendstunden einer Woche.",
             "quelle": "Kap. 20.5, S. 443"
           },
           {
@@ -215,7 +215,7 @@
   "handlungsprodukt": {
     "format": "Planungsgespräch zu zweit mit Wochenplan und Anpassungsnotiz",
     "titel": "Mein Wochenplan mit Anpassungsnotiz",
-    "format_detail": "Sie planen alle 15 Abendstunden der Woche neu und besprechen den Plan zu zweit. Probe danach: Hält der Plan, wenn Mittwoch und Freitag je 2 Stunden wegfallen, wie es der neue Einsatzplan aus der Situation verlangt? Auf S. 7 steht Ihr Wochenplan für die Abende von Montag bis Freitag, je drei Stunden: die festen Termine, die Aufgaben mit Priorität A, B oder C und die Reserve. Jede Zeile trägt eine Marke aus der Legende: fest (Termin, der sich nicht verschieben lässt), verschiebbar (Aufgabe, die auch an einem anderen Abend Platz hat), Reserve (frei gelassen). Danach führen Sie mit Ihrer Lernpartnerin oder Ihrem Lernpartner ein Gespräch von je rund fünf Minuten pro Plan: Sie stellen Ihren Plan vor, Ihr Gegenüber gibt zwei Rückmeldungen nach den Feedbackregeln (eine Stelle, die trägt; eine, die nachfragt), Sie fragen nach und halten unter dem Plan in der Anpassungsnotiz fest, was Sie ändern, was Sie beibehalten und warum. Dann tauschen Sie die Rollen; eine der zwei Rückmeldungen, die Sie selbst gegeben haben, notieren Sie in einem Satz.",
+    "format_detail": "Sie planen alle 15 Abendstunden der Woche neu, als wäre wieder Sonntag, und besprechen den Plan zu zweit. Probe danach: Hält der Plan, wenn Mittwoch und Freitag je 2 Stunden wegfallen, wie es der neue Einsatzplan aus der Situation verlangt? Auf S. 7 steht Ihr Wochenplan für die Abende von Montag bis Freitag, je drei Stunden: die festen Termine, die Aufgaben mit Priorität A, B oder C und die Reserve. Jede Zeile trägt eine Marke aus der Legende: fest (Termin, der sich nicht verschieben lässt), verschiebbar (Aufgabe, die auch an einem anderen Abend Platz hat), Reserve (frei gelassen). Danach führen Sie mit Ihrer Lernpartnerin oder Ihrem Lernpartner ein Gespräch von je rund fünf Minuten pro Plan: Sie stellen Ihren Plan vor, Ihr Gegenüber gibt zwei Rückmeldungen nach den Feedbackregeln (eine Stelle, die trägt; eine, die nachfragt), Sie fragen nach und halten unter dem Plan in der Anpassungsnotiz fest, was Sie ändern, was Sie beibehalten und warum. Dann tauschen Sie die Rollen; eine der zwei Rückmeldungen, die Sie selbst gegeben haben, notieren Sie in einem Satz.",
     "beschreibung": "Ich plane die 15 Abendstunden meiner Woche neu, stelle den Plan meinem Gegenüber vor, nehme zwei Rückmeldungen an und halte fest, was ich ändere, was ich beibehalte und warum.",
     "schritte": [
       {
@@ -232,7 +232,7 @@
       },
       {
         "label": "04 Reserve und ABC festlegen",
-        "hint": "Planen Sie nach LF4 alle 15 Abendstunden neu, mit Legende. Probe danach: Hält der Plan, wenn Mittwoch und Freitag je 2 Stunden wegfallen?"
+        "hint": "Planen Sie nach LF4 alle 15 Abendstunden neu, als wäre wieder Sonntag. Probe danach: Hält der Plan, wenn Mi und Fr je 2 Stunden wegfallen?"
       },
       {
         "label": "05 Plan besprechen, anpassen",
@@ -267,18 +267,18 @@
           "eintraege": [
             {
               "marke": "fest",
-              "text": "Do: Lied proben mit Cousin, 2 Std."
+              "text": "Mi: Lied proben mit Cousin, 2 Std."
             },
             {
               "marke": "verschiebbar",
-              "text": "Mo: Rede 2 Std. (A) · Di: Fotos (B), Tischkarten (C), je 1 Std."
+              "text": "Mo: Rede 2 Std. (A) · Fr: Fotos (B), Tischkarten (C), je 1 Std."
             },
             {
               "marke": "reserve",
-              "text": "Mi und Fr: 4 von 10 Std. frei"
+              "text": "Di und Do: 4 von 10 Std. frei"
             },
             {
-              "text": "Notiz: 1) Rede früh – behalte ich. 2) Di eng: Zuerst streiche ich die Tischkarten, darauf verzichte ich."
+              "text": "Notiz: 1) Rede früh – behalte ich. 2) Fr eng: Zuerst streiche ich die Tischkarten, darauf verzichte ich."
             },
             {
               "text": "Meine Rückmeldung: «Für den Kuchen steht kein Abend.»"
@@ -290,7 +290,7 @@
           "wechsel": [
             {
               "wer": "Schwester",
-              "text": "Mir fällt auf: Die Rede steht früh. Am Dienstag stehen zwei Aufgaben – was, wenn die Fotos länger dauern?"
+              "text": "Mir fällt auf: Die Rede steht früh. Am Freitag stehen zwei Aufgaben – was, wenn die Fotos länger dauern?"
             },
             {
               "wer": "Ich",
@@ -634,7 +634,7 @@
           "antwortform": "raster",
           "raster": {
             "knoten_ref": "Kap. 20.4 | S. 440-441",
-            "auftrag": "Lesen Sie im Lehrmittel Kap. 20.4, S. 440–441. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen zu Änderungen im Plan und zum Rückblick. Ordnen Sie je einen Begriff aus LF1 oder dem Glossar (S. 8) zu.",
+            "auftrag": "Lesen Sie Kap. 20.4, S. 440–441. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen – eine zum Zeitplan (Grafik, S. 440), zwei zum Rückblick (S. 441). Hinten je ein Begriff aus LF1 oder dem Glossar.",
             "spalten": [
               "Absatz",
               "Kernaussage",
@@ -716,7 +716,7 @@
                 "Rückmeldung"
               ]
             ],
-            "befund": "Laut Kap. 20.4 muss ein Plan Änderungen zulassen und sie sofort aufnehmen (S. 440); wer vom Termin rückwärts rechnet, sieht, was zuerst fertig sein muss. Ein Rückblick nach jeder Arbeitsphase zeigt, was gut lief und was nicht (S. 441). Für meinen Wochenplan leite ich ab: Ich lasse Platz für Änderungen, trage sie sofort ein und schaue am Freitag zurück."
+            "befund": "Laut Kap. 20.4 muss ein Plan Änderungen zulassen und sie sofort aufnehmen (S. 440); die Grafik rechnet Meilensteine vom Abgabetermin rückwärts. Ein Rückblick nach jeder Arbeitsphase zeigt, was gut lief und was nicht (S. 441). Für meinen Wochenplan leite ich ab: Ich lasse Platz für Änderungen, trage sie sofort ein und schaue am Freitag zurück."
           }
         },
         {
@@ -844,7 +844,7 @@
               },
               {
                 "label": "Mit Ersatzquelle",
-                "text": "Ablehnen, mit Bedenkzeit (Abs. 9–10); klären, was verlangt ist (Abs. 13–14); zerlegen (Abs. 20–21); abgeben (Abs. 26). Befund dann: Am Sonntag war nichts zum Verschieben vorgesehen (Abs. 23–24); Reserve belegt sie nicht. Abs. 17 (Zahl) nicht nahelegen.",
+                "text": "Ablehnen, mit Bedenkzeit (Abs. 9–10); klären, was verlangt ist (Abs. 13–14); zerlegen (Abs. 20–21); abgeben (Abs. 26). Befund dann: Verschieben (Abs. 23–24) sah der Plan nicht vor (Annahme); Reserve belegt sie nicht. Abs. 17 (Zahl) nicht nahelegen.",
                 "quelle": "Ersatzquelle, Abs. 9–26"
               }
             ],
@@ -858,7 +858,7 @@
               [
                 "Abs. 16–19",
                 "jede Aufgabe mit vier Fragen prüfen",
-                "wichtig? verzichtbar? abgebbar?",
+                "wichtig? verzichtbar? schneller? abgebbar?",
                 "ABC-Analyse"
               ],
               [
@@ -943,7 +943,7 @@
           "ref": "q-121a-vertiefung-2",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Welche Strategien gegen das Aufschieben nennt der Beitrag, und welche passt zu meinem Wochenplan?",
-          "erwartung": "Strategien: Grosses in kleine Pakete teilen (08:05–08:23); gemeinsam anpacken (08:28–08:38); früh planen, wann ich mich hinsetze (09:09–09:23); Listen abhaken (09:43–09:47). Ablenkung nennt der Beitrag als Ursache des Aufschiebens: Handy, Lärm, E-Mails (08:42–09:04); «Ablenkung ausschalten» ist eigene Folgerung. Zwei Strategien mit Zeitmarke genügen; die Wahl ist eigene Begründung. Vgl. Kap. 20.5, S. 442. (Stand: nur Untertitel gelesen, nicht gesichtet.)"
+          "erwartung": "Strategien: Grosses in kleine Pakete teilen (08:05–08:23); gemeinsam anpacken (08:28–08:42); früh planen, wann ich mich hinsetze (09:09–09:23); Listen abhaken (09:43–09:47). Ablenkung nennt der Beitrag als Ursache des Aufschiebens: Handy, Lärm, E-Mails (08:42–09:04); «Ablenkung ausschalten» ist eigene Folgerung. Zwei Strategien mit Zeitmarke genügen; die Wahl ist eigene Begründung. Vgl. Kap. 20.5, S. 442. (Stand: nur Untertitel gelesen, nicht gesichtet.)"
         }
       ],
       "kasten_s4": {
