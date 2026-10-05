@@ -1,0 +1,197 @@
+{
+  "id": "4.2.1_risiken_absichern_prinzip",
+  "modul": "4.2",
+  "kompetenz_nr": "4.2.1",
+  "topic_slug": "risiken_absichern",
+  "lehrgang": "EFZ_3J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-10-04",
+  "kern_kompetenzversprechen": "Ich kann Risiken für meine Gesundheit und Situationen, in denen ich hafte, erkennen und beurteilen und daraus ableiten, wie ich mich absichere – und was ich trotz Versicherung selbst verantworte.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Gesundheitsrisiken beurteilen und absichern",
+      "konfliktart": "Tiefe Prämie heute vs. tragbare Kosten im Ernstfall",
+      "handlungsprodukt_typ": "Vergleichstabelle zu zwei Franchisen mit begründetem Entscheid",
+      "kompetenzen": [
+        "4.2.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Haftung erkennen und Massnahmen ergreifen",
+      "konfliktart": "Schutz durch die Versicherung vs. Verantwortung für mein Verhalten",
+      "handlungsprodukt_typ": "Kommentierte Haftungs-Übersicht für meinen Alltag mit drei Massnahmen",
+      "kompetenzen": [
+        "4.2.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      10,
+      11,
+      5
+    ],
+    "B": [
+      7,
+      11,
+      5
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      5,
+      11,
+      10
+    ]
+  },
+  "aspekte": {
+    "Ethik": "R4",
+    "Recht": "R3"
+  },
+  "modi_units": [
+    "Rezeption schriftlich und bildlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Eigenverantwortung vs. Solidarität der Versicherten",
+      "Tiefe Prämie heute vs. tragbare Kosten im Ernstfall",
+      "Schutz durch die Versicherung vs. Verantwortung für mein Verhalten",
+      "Risiko vermeiden vs. Folgen absichern"
+    ],
+    "verbindlich": "Wie viel Risiko jemand selbst trägt und wie viel er absichert, hängt von Geld, Lebenslage und Haltung ab; mehr selbst tragen und mehr absichern bleiben beide begründbar."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Versichern heisst, ein Risiko gemeinsam zu tragen: Wer sich absichert, entscheidet, wie viel er selbst trägt und wie viel die Gemeinschaft – und bleibt für sein Verhalten verantwortlich.",
+    "transferfeld": "Übertragbar auf jede Lage, in der ein möglicher Schaden und der Preis seiner Absicherung gegeneinander stehen – etwa beim Ausleihen teurer Geräte eines Vereins, bei der Garantieverlängerung für ein neues Handy oder bei der Annullationsversicherung für ein Festival-Ticket."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R4",
+    "r2_voraussicht": "—",
+    "r3_voraussicht": "—"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 4.1",
+        "titel": "Versicherungswesen allgemein — Umgang mit Risiken, Solidaritätsprinzip, Versicherungsarten",
+        "seiten": "Seite 122, 126-127"
+      },
+      {
+        "ref": "Kap. 4.2",
+        "titel": "Kranken- und Unfallversicherung — Grundversicherung, Franchise, Selbstbehalt, Unfalldeckung",
+        "seiten": "Seite 128-132"
+      },
+      {
+        "ref": "Kap. 5.2",
+        "titel": "Haftpflichtversicherungen — Haftung, grobe Fahrlässigkeit, Regress, Privathaftpflicht",
+        "seiten": "Seite 150-152"
+      },
+      {
+        "ref": "Kap. 5.3",
+        "titel": "Verantwortung — Risiken junger Lenkender, Glossar Haftpflicht",
+        "seiten": "Seite 154-155"
+      }
+    ],
+    "konzepte": [
+      "Riskmanagement",
+      "Solidaritätsprinzip",
+      "Gefahrengemeinschaft",
+      "Personenversicherung",
+      "Haftpflichtversicherung",
+      "Grundversicherung",
+      "Zusatzversicherung",
+      "Police",
+      "Prämie",
+      "Franchise",
+      "Selbstbehalt",
+      "Prämienverbilligung",
+      "Krankentaggeldversicherung",
+      "Unfallversicherung",
+      "Berufsunfall",
+      "Nichtberufsunfall",
+      "Abredeversicherung",
+      "Haftpflicht",
+      "Drittperson",
+      "Verschuldenshaftung",
+      "Kausalhaftung",
+      "Motorfahrzeughaftpflichtversicherung",
+      "Privathaftpflichtversicherung",
+      "Fahrlässigkeit",
+      "Regress",
+      "Bonus-Malus"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, 2. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Interrail",
+      "Stellenantritt",
+      "Überbrückung"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "B": [
+      "Rezeption schriftlich und bildlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Position / Werthaltung"
+    ],
+    "B": [
+      "Argumentation",
+      "Ethisches Prinzip"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "modell_eigener_fall",
+      "mit_medien": "lehrmittel_quelle"
+    },
+    "B": {
+      "ohne_medien": "recht_praxis",
+      "mit_medien": "recht_praxis"
+    }
+  },
+  "mindmap_zentrum_kurz": "Eigenverantwortung oder Solidarität",
+  "modi_auftrag": [
+    "Produktion schriftlich und bildlich",
+    "Produktion mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B) = drei Modi → die zwei mit mehr KN-Formen bzw. Produktion vor Interaktion; Lücke: Interaktion und Kollaboration mündlich",
+  "auftrag_lebensbereich": "Lehrbetrieb (erster Tag der neuen Lernenden)"
+}

@@ -1,0 +1,955 @@
+{
+  "id": "3.3.1_kaufvertrag_beurteilen_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "3.3",
+  "modul_titel": "Bewusst konsumieren und handeln — beim Einkaufen Rechte einfordern",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Geklickt und bereut – bin ich an den Kauf gebunden?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Kaufvertrag prüfen und Folgen beurteilen"
+  },
+  "prinzip_ref": "3.3.1_kaufvertrag_beurteilen_prinzip",
+  "nrlp": {
+    "nr": "3.3.1",
+    "nr_primary": [
+      "3.3.1"
+    ],
+    "lebensbezug": "3.3",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      1,
+      5,
+      3
+    ],
+    "kompetenz_id": "3.3.1",
+    "lebensbezug_id": "3.3",
+    "kompetenz_text": "Ich kann die rechtlichen Folgen von Kaufverträgen beurteilen und auf eine konkrete Einkaufssituation anwenden.",
+    "lebensbezug_text": "Ich habe beim Einkaufen Pflichten, aber auch Rechte, die ich einfordern kann."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin 17 und in der Lehre. Vorgestern Abend habe ich in einem Schweizer Onlineshop ein Snowboard-Set für CHF 590 bestellt und gleich mit dem Handy bezahlt. Die Bestätigung kam sofort per E-Mail, geliefert wird in einer Woche. Jetzt reut es mich: Das ist der grösste Teil meines Monatslohns von CHF 780. Ein Kollege winkt ab: «Mit 17 gilt so ein Kauf sowieso nicht. Und 14 Tage Rückgabe hast du immer.» Ich bin nicht sicher, ob das stimmt. In den Geschäftsbedingungen des Shops, dem Kleingedruckten zur Bestellung, steht nur: Rückgabe innert 14 Tagen, ungeöffnet, gegen einen Gutschein. Noch ist das Paket nicht unterwegs. Bevor es kommt, will ich klären, ob der Kauf gilt, was das Gesetz mir erlaubt, was der Shop von sich aus anbietet und was ich jetzt tue.",
+  "zahlen_tabelle": [
+    {
+      "label": "Preis des Snowboard-Sets",
+      "wert": "CHF 590"
+    },
+    {
+      "label": "Mein Lohn im Monat",
+      "wert": "CHF 780"
+    },
+    {
+      "label": "Mein Alter",
+      "wert": "17 Jahre"
+    },
+    {
+      "label": "Rückgabe ungeöffnet, gegen Gutschein",
+      "wert": "14 Tage"
+    }
+  ],
+  "leitfrage": "Halte ich mich an den Kauf, oder suche ich einen Weg heraus – und welcher steht mir überhaupt offen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Am Vertrag festhalten vs. einen Ausweg suchen",
+    "hint": "Am Kauf festhalten heisst, zum eigenen Wort stehen. Einen Ausweg suchen schont Ihr Geld. Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.4",
+      "titel": "Kaufvertragsarten Teil 1",
+      "unterueberschrift": "Vertrag, Widerruf",
+      "seiten": "Seite 55-60",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 2.4",
+      "titel": "Kaufvertragsarten Teil 1",
+      "unterueberschrift": "Internetkauf",
+      "seiten": "Seite 63-64",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 1.3",
+      "titel": "Rechtsgrundlagen",
+      "unterueberschrift": "Handlungsfähigkeit, Rechtsfall",
+      "seiten": "Seite 25-27",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Auf S. 7 entsteht Ihr Prüfbericht: vier Zeilen (je eine Prüffrage, S. 5), daneben die Spalten Tatbestand · Rechtslage · Rechtsfolge, darunter der Entscheid. LF1 liefert Regeln zu Vertrag und Alter, LF2 den Tatbestand (was war), LF3 Belege zur Rechtslage (was gilt), LF4 die Rechtsfolge (was folgt).",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.4 | S. 55-60",
+      "text": "Erklären Sie mit Kap. 2.4: Wie entsteht ein Kaufvertrag, wer darf ihn schliessen (S. 55)? Was heisst «anfechtbar» (S. 56–57)? Wann darf man eine Bestellung widerrufen, also zurückziehen (S. 60)?",
+      "liefert": "Regeln zu Vertrag und Alter",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "«Bindend» heisst: Beide müssen den Vertrag einhalten. Ab wann gilt das?",
+          "Zum Alter: Kap. 1.3, S. 25–27 (Handlungsfähigkeit, Faustregel zum Lohn)."
+        ],
+        "satzanfaenge": [
+          "«Ein Kaufvertrag entsteht, sobald …»",
+          "«Unter 18 darf ich allein kaufen, wenn …»",
+          "«Widerrufen darf man nur, wenn …»"
+        ],
+        "produkt": "Auf S. 7 in «Rechtslage»: Regel zum Vertrag und zum Alter, mit Seite. Widerruf, «anfechtbar»: für Prüffrage 3."
+      },
+      "loesung": {
+        "kern": "Vertrag, Alter, anfechtbar, Widerruf",
+        "zeilen": [
+          {
+            "label": "Kaufvertrag",
+            "text": "Entsteht, wenn beide dasselbe wollen und über Gegenstand, Menge und Preis einig sind. Wer auf ein verbindliches Angebot hin bestellt, nimmt es an (S. 60); im Onlineshop ist erst die Bestellung das Angebot, der Shop nimmt an (S. 63). Auch mündliche Zusagen binden.",
+            "quelle": "Kap. 2.4, S. 55, 60, 63"
+          },
+          {
+            "label": "Wer schliessen darf",
+            "text": "Handlungsfähig: volljährig und urteilsfähig. Unter 18 gilt ohne Zustimmung der Eltern, was sich mit Lohn, Erspartem oder Taschengeld erfüllen lässt; Faustregel: bis zwei Monatslöhne.",
+            "quelle": "2.4, S. 55; 1.3, S. 25-27"
+          },
+          {
+            "label": "Anfechtbar",
+            "text": "Der Vertrag gilt, lässt sich aber innert eines Jahres anfechten: wesentlicher Irrtum, absichtliche Täuschung, Drohung, Übervorteilung. Reue: nein (Folgerung).",
+            "quelle": "Kap. 2.4, S. 56-57"
+          },
+          {
+            "label": "Widerruf",
+            "text": "14 Tage, über 100 Franken, privater Gebrauch; Haustür, Strasse, Arbeitsplatz, Werbeanlass, Telefon. Form: S. 60 verlangt Einschreiben; nach OR Art. 40e formfrei, es dient dem Beweis. Kein Widerruf: Markt-, Messestand, gewünschte Verhandlung (Art. 40c).",
+            "quelle": "Kap. 2.4, S. 60; OR 40a–40e"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Widerruf (Gesetz) und Rückgabe gleichsetzen."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 1.3 | S. 27 · Kap. 2.4 | S. 58 · eigener Fall",
+      "text": "Ordnen Sie Ihren Kauf mit dem ersten Arbeitsschritt aus Kap. 1.3 (S. 27), dem Tatbestand: Wer ist beteiligt, was liegt vor, wer will was? Wo steht Ihr Kauf im Ablauf von Kap. 2.4 (S. 58)?",
+      "liefert": "Tatbestand des eigenen Kaufs",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie nur auf, was geschehen ist – noch kein Urteil.",
+          "Gehen Sie das Schema auf S. 58 durch: Welche Stationen sind schon vorbei?"
+        ],
+        "satzanfaenge": [
+          "«Beteiligt sind … und …»",
+          "«Geschehen ist bisher: bestellt am …, bezahlt …»",
+          "«Ich will …; der Shop will vermutlich …»"
+        ],
+        "produkt": "Daraus füllen Sie auf S. 7 die Spalte «Tatbestand»: je Prüffrage ein Stichwort."
+      },
+      "loesung": {
+        "kern": "Tatbestand: wer, was, wer will was",
+        "zeilen": [
+          {
+            "label": "Beteiligte",
+            "text": "Ich (17, in der Lehre, Lohn CHF 780) und ein Schweizer Onlineshop."
+          },
+          {
+            "label": "Was vorliegt",
+            "text": "Vorgestern online ein Snowboard-Set für CHF 590 bestellt und sofort bezahlt; Bestätigung per E-Mail; Lieferung in einer Woche. Geschäftsbedingungen: Rückgabe innert 14 Tagen, ungeöffnet, gegen Gutschein. Alles Angaben des Falls."
+          },
+          {
+            "label": "Wer will was",
+            "text": "Ich möchte vom Kauf loskommen oder mein Geld zurück. Der Shop hat sich nicht geäussert; vermutlich will er liefern (Vermutung)."
+          },
+          {
+            "label": "Ablauf",
+            "text": "Im Schema sind Bestellung und Bezahlung vorbei, die Lieferung steht aus.",
+            "quelle": "Kap. 2.4, S. 58"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die drei Fragen des Tatbestands sind beantwortet; was der Kollege sagt, steht als Behauptung da, nicht als Tatsache.",
+            "quelle": "Kap. 1.3, S. 27"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Schon urteilen («gilt nicht»), statt den Sachverhalt festzuhalten."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Prüfbericht zum eigenen Kauf als Tabelle mit Tatbestand, Rechtslage und Rechtsfolge und einem Entscheid",
+    "titel": "Prüfbericht zu meinem Kauf",
+    "format_detail": "Sie zeichnen auf S. 7 eine Tabelle mit vier Zeilen (je eine Prüffrage), daneben die Spalten Tatbestand · Rechtslage · Rechtsfolge. Die vier Prüffragen: 1 Ist ein Vertrag entstanden? 2 Bindet er mich in meinem Alter? 3 Gibt mir das Gesetz einen Ausweg (Widerruf, Rücktritt, Anfechtung)? 4 Was sagen die Geschäftsbedingungen? Die Spalten heissen Tatbestand (was war), Rechtslage mit Fundstelle (was gilt und wo es steht) und Rechtsfolge (was daraus für mich folgt). Unter der Tabelle steht Ihr Entscheid in zwei Sätzen mit dem nächsten Schritt. Der Bericht ist für Sie selbst und für den Kollegen, der es anders sieht.",
+    "beschreibung": "Ich prüfe meinen Kauf mit vier Fragen: 1 Vertrag entstanden? 2 Bindet er mich mit 17? 3 Ausweg laut Gesetz (Widerruf, anfechtbar)? 4 Was sagen die Geschäftsbedingungen? Darunter: mein Entscheid.",
+    "schritte": [
+      {
+        "label": "01 Begriffe klären",
+        "hint": "LF1: Vertrag und Alter klären. Zeichnen Sie auf S. 7 die Tabelle: vier Zeilen (Prüffragen), Spalten Tatbestand · Rechtslage · Rechtsfolge."
+      },
+      {
+        "label": "02 Tatbestand ordnen",
+        "hint": "LF2: Füllen Sie «Tatbestand»: je Prüffrage ein Stichwort. Ist eine Frage nicht entscheidbar: kein Fehler – «offen» und wovon es abhängt."
+      },
+      {
+        "label": "03 Rechtslage belegen",
+        "hint": "«Rechtslage» füllen: LF1 liefert die Regel zu Prüffrage 1 und 2, das Raster (LF3) je eine Zeile zu Prüffrage 3 und 4. Immer mit Fundstelle."
+      },
+      {
+        "label": "04 Rechtsfolge beurteilen",
+        "hint": "LF4: Füllen Sie die Spalte «Rechtsfolge». Darunter Ihr Entscheid in zwei Sätzen: Ihr Weg und der nächste Schritt."
+      },
+      {
+        "label": "05 Bericht fertigstellen",
+        "hint": "Prüfen Sie mit den zwei Kriterien: Stimmen die Regeln? Sind sie auf Ihren Kauf angewendet? Bessern Sie nach."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Prüfbericht mit vier Prüfzeilen (Tabelle auf S. 7)",
+      "Entscheid in zwei Sätzen mit nächstem Schritt",
+      "Sie geben das ganze Heft ab; was sonst dazugehört, zeigt die Checkliste (S. 8)"
+    ],
+    "beispielbild": {
+      "titel": "Anderer Fall mit anderen Prüffragen: unbestelltes Buch im Briefkasten",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Prüfung",
+          "kopf": [
+            "Prüffrage",
+            "Tatbestand",
+            "Rechtslage",
+            "Rechtsfolge"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "1 Vertrag?",
+                "nie bestellt",
+                "kein Angebot, S. 60",
+                "kein Vertrag"
+              ]
+            },
+            {
+              "zellen": [
+                "2 Zahlen?",
+                "Rechnung CHF 29",
+                "Wille fehlt, S. 55",
+                "nein"
+              ]
+            },
+            {
+              "zellen": [
+                "3 Zurückgeben?",
+                "Buch ist bei mir",
+                "keine Pflicht, S. 60",
+                "nein"
+              ]
+            },
+            {
+              "zellen": [
+                "4 Ausnahme?",
+                "mein Name stimmt",
+                "nur bei Irrtum, S. 60",
+                "keine"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Entscheid",
+          "eintraege": [
+            {
+              "text": "Ich zahle nicht und schicke nichts zurück: Es gibt keinen Vertrag."
+            },
+            {
+              "text": "Nächster Schritt: Rechnung ablegen."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Snowboard-Set im Onlineshop bestellt und bereut",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: «Zum Kauf stehen» ist ebenso tragfähig (erstes Beispiel bei LF4). Erst zeigen, wenn die Prüfberichte stehen. Die Spalte «Rechtslage» stützt sich nur auf das Lehrmittel und passt darum zu jeder Fassung des Hefts; mit der Quelle kommen bei Frage 3 und 4 die Absätze aus dem Raster dazu. Seiten ohne Kapitel meinen Kap. 2.4; S. 62 (Abschnitt Garantie) liegt ausserhalb der Seiten, die das Heft nennt. Aus dem Lehrmittel belegt: Vertrag, Alter, kein Rücktritt. Aus den Geschäftsbedingungen des Falls, nicht aus dem Lehrmittel: die Rückgabe gegen Gutschein. Der Klick bindet mich an mein Angebot (S. 63); ob der Shop mit der Bestätigung per E-Mail schon angenommen hat, lässt S. 63 offen, das Heft entscheidet es nicht: Den Eingang der Bestellung zu bestätigen, ist Pflicht des Shops (UWG Art. 3 Abs. 1 Bst. s) und sagt allein noch nicht, dass er annimmt; es kommt auf den Wortlaut und die Geschäftsbedingungen an. Dass es online keinen gesetzlichen Widerruf gibt, deckt sich mit OR Art. 40b (Stand 1. Oktober 2026): Der Onlinekauf steht nicht in der Liste. Annahmen: Der Shop storniert auf Anfrage vielleicht freiwillig, verpflichtet ist er nicht; die 14 Tage laufen ab Erhalt (der Fall nennt keinen Fristbeginn).",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Prüfung",
+          "kopf": [
+            "Prüffrage",
+            "Tatbestand",
+            "Rechtslage",
+            "Rechtsfolge"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "1 Vertrag entstanden?",
+                "bestellt, bezahlt, Bestätigung per E-Mail",
+                "Bestellung = Angebot, Klick bindet mich; Shop nimmt an (S. 63)",
+                "an mein Angebot gebunden; Vertrag, sobald der Shop annimmt (E-Mail: offen)"
+              ]
+            },
+            {
+              "zellen": [
+                "2 Bindet er mich mit 17?",
+                "17, Lohn CHF 780, Preis CHF 590",
+                "Lohn reicht (S. 55); unter zwei Monatslöhnen (Kap. 1.3, S. 27)",
+                "ja, ohne Zustimmung der Eltern"
+              ]
+            },
+            {
+              "zellen": [
+                "3 Ausweg laut Gesetz?",
+                "online gekauft, nicht an der Haustür",
+                "Widerruf nur Haustür, Telefon usw. (S. 60); online in der Regel kein Rücktritt (S. 63); nicht anfechtbar: Reue ist kein Irrtum (Folgerung aus S. 56–57)",
+                "nein"
+              ]
+            },
+            {
+              "zellen": [
+                "4 Geschäftsbedingungen?",
+                "14 Tage, ungeöffnet, gegen Gutschein",
+                "Regel des Shops, nicht Gesetz (Angabe des Falls); Teil des Vertrags: S. 62, Abschnitt Garantie",
+                "Rückgabe ja, Geld zurück nein"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Entscheid",
+          "eintraege": [
+            {
+              "text": "Ich suche einen Ausweg beim Shop: Das Gesetz gibt mir keinen, die Geschäftsbedingungen nur den Gutschein."
+            },
+            {
+              "text": "Nächster Schritt: heute schriftlich um Stornierung bitten; sonst Paket ungeöffnet zurück (Annahme: 14 Tage ab Erhalt)."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Begriffe und Regeln der Einheit fehlen oder sind falsch wiedergegeben.",
+        "Einzelne Begriffe und Regeln stimmen, andere sind ungenau oder verwechselt.",
+        "Begriffe und Regeln der Einheit sind korrekt wiedergegeben und passen zum Fall.",
+        "Begriffe und Regeln sind korrekt, passend und eigenständig verknüpft; Ausnahmen und Grenzen sind genannt."
+      ],
+      "indikator_produkt": "Begriffe und Regeln in «Rechtslage» sind korrekt und passen zur Prüffrage"
+    },
+    {
+      "kn_kriterium": "Rechtliches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Nicht erkennbar, welche Regel aus Gesetz oder Vertrag für den Fall gilt.",
+        "Eine Regel ist genannt, aber nicht oder nur teilweise auf den Fall bezogen.",
+        "Die passende Regel ist richtig auf den Fall angewendet; Gesetz und Vertrag sind auseinandergehalten.",
+        "Das rechtliche Prinzip ist auf einen neuen Fall übertragen; benannt ist auch, wo es keine klare Antwort gibt."
+      ],
+      "indikator_produkt": "Regel auf den Kauf angewendet; Gesetz und Vertrag auseinandergehalten"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Auf S. 6 steht ein ausgefüllter Prüfbericht zu einem anderen Fall; die Satzanfänge der Leitfragen geben den Einstieg in jede Spalte.",
+    "scaffold_100": "Prüfen Sie eine fünfte Frage: Was wäre anders bei einer Bestellung an der Haustür? Ergänzen Sie eine Zeile."
+  },
+  "methoden": [
+    {
+      "ref": "lm-1-3-rechtsfall",
+      "fuer": "für den Prüfbericht",
+      "tun": "Je Prüffrage: erst was war, dann die Regel mit Seite, dann was für Sie folgt.",
+      "beispiel": [
+        "Tatbestand: Am Marktstand sage ich zu, einen Korb für CHF 40 zu nehmen. Eine Stunde später will ich ihn nicht mehr.",
+        "Rechtslage: Mündliche Zusagen binden; widerrufen lassen sich nur bestimmte Käufe über 100 Franken (Kap. 2.4, S. 60).",
+        "Rechtsfolge: Der Kauf gilt. Ich nehme den Korb und zahle, oder ich frage, ob die Händlerin mich freiwillig entlässt."
+      ]
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-gezielt-suchen",
+      "fuer": "für das Finden einer Regel in Geschäftsbedingungen oder Lehrmittel"
+    },
+    {
+      "ref": "lm-17-1-sq3r",
+      "fuer": "für das Lesen des Textes zum Raster (S. 3)",
+      "tun": "Fragen Sie vor dem Lesen: Was gilt für meinen Kauf? Markieren Sie nur, was das beantwortet."
+    }
+  ],
+  "mindmap_zentrum": "Rechtslage oder Verhandlungssache",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie ein Kauf mich bindet",
+      "punkte": [
+        "Kaufvertrag",
+        "Bestellung",
+        "Handlungsfähigkeit",
+        "Internetkauf"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Welche Auswege es gibt",
+      "punkte": [
+        "Widerrufsrecht",
+        "anfechtbarer Vertrag",
+        "Geschäftsbedingungen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie ich den Fall prüfe",
+      "punkte": [
+        "Tatbestand",
+        "Rechtslage",
+        "Rechtsfolge"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Steht in meinem Prüfbericht bei Frage 2, ob der Kauf mit 17 gilt – mit Regel und Seite?",
+      "Nennt mein Entscheid den Weg und den nächsten Schritt, gestützt auf die Prüffragen 3 und 4?"
+    ],
+    "mitnahme": [
+      "Mein Schema: Tatbestand, Rechtslage, Folge",
+      "Wann ein Widerruf gilt – und wann nicht",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Bestellung",
+          "nach": "Kaufvertrag",
+          "text": "führt, sobald sie angenommen ist, zum"
+        },
+        {
+          "von": "Handlungsfähigkeit",
+          "nach": "Kaufvertrag",
+          "text": "ist Voraussetzung für den"
+        },
+        {
+          "von": "Internetkauf",
+          "nach": "Widerrufsrecht",
+          "text": "gehört nicht zu den Fällen mit"
+        },
+        {
+          "von": "Kaufvertrag",
+          "nach": "anfechtbarer Vertrag",
+          "text": "wird bei wesentlichem Irrtum, Täuschung oder Drohung zum"
+        },
+        {
+          "von": "Geschäftsbedingungen",
+          "nach": "Kaufvertrag",
+          "text": "sind Teil des"
+        },
+        {
+          "von": "Tatbestand",
+          "nach": "Rechtslage",
+          "text": "wird gemessen an der"
+        },
+        {
+          "von": "Rechtslage",
+          "nach": "Rechtsfolge",
+          "text": "ergibt für meinen Fall die"
+        },
+        {
+          "von": "Rechtsfolge",
+          "nach": "gilt auch bei …",
+          "text": "lässt sich bei jedem Vertrag so herleiten"
+        }
+      ],
+      "transfer": "Fitnessvertrag, der sich verlängert; online gebuchte Reise; im Laden bestellte Möbel; Zeitschrift, an der Haustür bestellt",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Annahme",
+          "Bestellbestätigung"
+        ],
+        "mit_medien": [
+          "Haustürgeschäft",
+          "Umtausch"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn bei Frage 2 steht: Mein Alter steht dem Kauf nicht entgegen, weil ich ihn mit meinem Lohn erfüllen kann (Kap. 2.4, S. 55) und CHF 590 unter zwei Monatslöhnen liegen (Kap. 1.3, S. 27). Die Behauptung des Kollegen zum Alter stimmt also nicht.",
+        "Ja, wenn der Entscheid «zum Kauf stehen» oder «Ausweg beim Shop suchen» sagt, den nächsten Schritt nennt und trennt: kein gesetzlicher Widerruf (Frage 3), Rückgabe gegen Gutschein nur laut Geschäftsbedingungen des Falls (Frage 4)."
+      ],
+      "mitnahme": [
+        "Erst festhalten, was war, dann die Regel mit Fundstelle suchen, dann sagen, was für mich folgt",
+        "Nur bei Geschäften an Haustür, Strasse, Arbeitsplatz, Werbeanlass, Telefon (14 Tage, über 100 Franken; S. 60); im Onlineshop in der Regel nicht (S. 63). Mit der Quelle: auch im Geschäft nicht (Abs. 2, 9).",
+        "Zum Beispiel: Ab wann genau hat der Shop meine Bestellung angenommen – mit der E-Mail oder erst mit dem Versand? (Offene Frage des Falls, Kap. 2.4, S. 63.)"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Vertrag, Alter, anfechtbar und Widerruf erklärt",
+        "LF2: Tatbestand notiert – wer, was, wer will was",
+        "LF4: Rechtsfolge genannt, ein Weg gewählt"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster S. 3: keine Zeile leer, jede mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Prüfbericht",
+      "vollstaendig_wenn": [
+        "Je Prüffrage: Tatbestand, Rechtslage, Rechtsfolge",
+        "«Rechtslage» nennt je Prüffrage eine Fundstelle",
+        "Entscheid in zwei Sätzen mit nächstem Schritt"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Regeln klären (LF1), Tatbestand ordnen (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Raster zur Quelle (LF3), Weg abwägen (LF4), Prüfbericht beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Prüfbericht fertigstellen, Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst habe ich etwas zugesagt und muss zuerst klären, was gilt, bevor ich einen Ausweg suche?",
+    "ziel": "Wer kauft, schliesst einen Vertrag: Zuerst klären, was Gesetz und Vertrag festlegen – und erkennen, wo nur noch Verhandeln weiterhilft."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Einen Kauf in Tatbestand, Rechtslage und Rechtsfolge prüfen und trennen, was das Gesetz gibt und was der Vertrag gewährt",
+    "lehrmittel_anker": "Kap. 2.4 S. 55-57 (Entstehung, Vertragsfähigkeit unter 18, anfechtbare Verträge), S. 58-60 (Ablauf, Angebot, Bestellung, unbestellte Ware, Widerruf), S. 63-64 (Internetkauf); Kap. 1.3 S. 25-27 (Handlungsfähigkeit, Faustregel, drei Arbeitsschritte). Für eine Zeile des Lösungsbilds zitiert: Kap. 2.4 S. 62 (Geschäftsbedingungen als Teil des Vertrags; Abschnitt Garantie, ausserhalb der Heftseiten). Methoden: Kap. 1.3 S. 27, Kap. 17.1 S. 380. Nicht aus dem Lehrmittel: die freiwillige Rückgabe eines Schweizer Onlineshops (Angabe des Falls).",
+    "kn_aktivierung": "Im KN ordnet die Lernende einen Kauf unter Privatpersonen in Tatbestand, Rechtslage und Rechtsfolge und hält auseinander, was die Quittung festlegt («ohne Garantie») und was das Gesetz bei einer falschen Zusage im Inserat erlaubt (anfechtbarer Vertrag).",
+    "transfer_check": "Kann die Lernende bei einem neuen Kauf sagen, was geschehen ist, welche Regel gilt und was daraus folgt – und Gesetz und Vertrag auseinanderhalten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — aus dem Abschnitt bzw. der Quelle nur die Aussagen ins Raster nehmen, die für den eigenen Kauf im Onlineshop zählen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — die eigene Haltung zu «gekauft ist gekauft» prüfen, bevor der Weg gewählt wird"
+    },
+    {
+      "sk": 3,
+      "wo": "handlungsprodukt.schritte[3] + handlungsprodukt.schritte[4] + Produkt (S. 7) — im Prüfbericht einen gangbaren Weg und den nächsten Schritt festlegen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 2.4 | S. 63-64",
+          "text": "Werten Sie Ihr Raster zu Kap. 2.4 aus: Was gilt im Onlineshop für Vertrag, Rücktritt und Geschäftsbedingungen? Halten Sie in zwei bis drei Sätzen fest, was Sie für Ihren Kauf ableiten.",
+          "liefert": "Belege zur Rechtslage mit Fundstelle",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 2.4 | S. 63-64",
+            "auftrag": "Lesen Sie Kap. 2.4, S. 63–64 (Internetkauf). Zeile 1 ist ein Beispiel; suchen Sie drei weitere Aussagen zu Ihrem Kauf. Letzte Spalte: Begriff (LF1, Glossar S. 8), zu dem die Aussage gehört.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 63, Internetkauf",
+              "keine Formvorschrift",
+              "Mausklick, E-Mail",
+              "Kaufvertrag"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "«Internetkauf» beginnt mitten auf S. 63. «Rücktritt» = vom Kauf zurücktreten."
+            ],
+            "satzanfaenge": [
+              "«Laut S. … gilt beim Kauf im Onlineshop, dass …»",
+              "«Nichts sagt der Abschnitt dazu, ob …»",
+              "«Für meinen Kauf leite ich ab: …»"
+            ],
+            "produkt": "In «Rechtslage»: eine Zeile zu Prüffrage 3 (Gesetz), eine zu Prüffrage 4 (Geschäftsbedingungen)."
+          },
+          "loesung": {
+            "kern": "Klick bindet, in der Regel kein Rücktritt",
+            "quelle_ref": "Kap. 2.4 | S. 63-64",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Erst die Bestellung ist das Angebot, der Shop nimmt an, etwa durch Versand · der Klick bindet, in der Regel kein Rücktritt (beide S. 63) · Bestellung ist sofort zu bestätigen, Geschäftsbedingungen dürfen nicht missbräuchlich sein (S. 64).",
+                "quelle": "Kap. 2.4, S. 63-64"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Preis direkt bei der Ware · Shops im Ausland: andere Regeln, Rückgabe an Bedingungen geknüpft, Zoll und Mehrwertsteuer (S. 64).",
+                "quelle": "Kap. 2.4, S. 64"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Aus LF1 und Glossar. Zuordnung ist Deutung: Der Abschnitt sagt «Rücktrittsrecht», nicht «Widerruf»."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet «Klick bindet» und «in der Regel kein Rücktritt», mit Seite. Die Rückgabe gegen Gutschein ist Angabe des Falls, nicht aus dem Lehrmittel."
+              },
+              {
+                "label": "Offene Frage",
+                "text": "Ob die Bestätigung per E-Mail schon die Annahme ist, sagt S. 63 nicht eindeutig: offene Frage des Falls, ein Grund, den Shop früh anzuschreiben.",
+                "quelle": "Kap. 2.4, S. 63"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 63, Internetkauf",
+                "keine Formvorschrift",
+                "Mausklick, E-Mail",
+                "Kaufvertrag"
+              ],
+              [
+                "S. 63, Onlineläden",
+                "erst die Bestellung ist das Angebot",
+                "Annahme z. B. durch Versand",
+                "Bestellung"
+              ],
+              [
+                "S. 63, Onlineläden",
+                "Klick bindet, in der Regel kein Rücktritt",
+                "Kauf «per Klick»",
+                "Widerrufsrecht"
+              ],
+              [
+                "S. 64, oben",
+                "Shop bestätigt; Bedingungen nicht missbräuchlich",
+                "Bestellbestätigung",
+                "Geschäftsbedingungen"
+              ]
+            ],
+            "befund": "Im Onlineshop bindet mich schon der Klick; zurücktreten kann ich laut Lehrmittel in der Regel nicht (S. 63). Der Shop muss die Bestellung bestätigen, und seine Geschäftsbedingungen dürfen mich nicht missbräuchlich benachteiligen (S. 64). Für meinen Kauf leite ich ab: Einen Rücktritt gibt mir das Gesetz hier nicht; mir bleibt, was der Shop von sich aus anbietet (Angabe des Falls, nicht aus dem Lehrmittel)."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 1.3 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Wenden Sie die drei Arbeitsschritte (Kap. 1.3, S. 27) auf Ihren Kauf an: Was folgt rechtlich, und wozu sagt das Schema nichts? Entscheiden Sie: zum Kauf stehen oder Ausweg beim Shop suchen?",
+          "liefert": "Rechtsfolge und begründeter Weg",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Das Sprichwort «gekauft ist gekauft»: Gilt es für Sie auch, wenn Sie der Kauf reut?"
+            ],
+            "satzanfaenge": [
+              "«Nach dem Schema folgt für meinen Kauf: …»",
+              "«Nichts sagt das Schema dazu, ob …»",
+              "«Ich wähle …, weil mir wichtig ist, dass …»"
+            ],
+            "produkt": "Die Rechtsfolge kommt in die Spalte «Rechtsfolge», Ihr Weg in den Entscheid unter der Tabelle."
+          },
+          "loesung": {
+            "kern": "Erwartung: Schema ↔ mein Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Rechtsfolge aus Tatbestand und Regel hergeleitet: Die Bestellung bindet mich (S. 63), mein Alter steht dem nicht entgegen (eigener Lohn, unter zwei Monatslöhnen; Kap. 2.4, S. 55; Kap. 1.3, S. 27); kein gesetzlicher Widerruf oder Rücktritt (S. 60, S. 63).",
+                "Gesetz und Vertrag getrennt: Die Rückgabe gegen Gutschein folgt aus den Geschäftsbedingungen des Falls, nicht aus dem Lehrmittel.",
+                "Grenze des Schemas benannt: Es sagt, was gilt, nicht, welchen Weg ich wähle; offen bleibt, ob der Shop mit der Bestätigung per E-Mail schon angenommen hat (S. 63).",
+                "Der Entscheid ist einer der zwei Wege und nennt die Haltung zu «gekauft ist gekauft»."
+              ],
+              "beispiel_pol_1": "Nach dem Schema bindet mich mein Klick (S. 63): Mit 17 darf ich mit meinem Lohn kaufen, und CHF 590 liegen unter zwei Monatslöhnen (Kap. 2.4, S. 55; Kap. 1.3, S. 27). Einen Widerruf gibt mir das Gesetz nicht (S. 60, S. 63). Offen lässt das Schema, was ich daraus mache, und ob der Shop schon angenommen hat. Ich stehe zum Kauf: Mein Wort gilt für mich auch, wenn es mich reut.",
+              "beispiel_pol_2": "Mein Klick bindet mich, das Gesetz gibt mir weder Widerruf noch Rücktritt (S. 60, S. 63). Das Schema zeigt aber nicht, was der Shop freiwillig tut; ob er mit der E-Mail schon angenommen hat, lässt S. 63 offen. Darum bitte ich ihn heute schriftlich um Stornierung; sonst gebe ich das Paket ungeöffnet zurück und nehme den Gutschein (Geschäftsbedingungen des Falls). «Gekauft ist gekauft» gilt, aber fragen darf ich.",
+              "nicht_tragfaehig": "«Mit 17 gilt der Kauf nicht» oder «14 Tage Rückgabe immer» ohne Regel und Seite; Gesetz und Geschäftsbedingungen nicht getrennt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was das Schema ergibt",
+          "Wozu es nichts sagt",
+          "Mein Weg – und warum"
+        ],
+        "hinweis": "Je eine Zeile für «zum Kauf stehen» und «Ausweg beim Shop suchen»; die dritte ist frei für einen weiteren Weg. Dann entscheiden Sie sich.",
+        "loesung_zeilen": [
+          [
+            "Klick bindet mich; Lohn reicht",
+            "ob ich das Set will",
+            "Zum Kauf stehen: Mein Wort gilt"
+          ],
+          [
+            "Kein Widerruf laut Gesetz",
+            "was der Shop freiwillig gewährt",
+            "Ausweg: um Stornierung bitten, sonst Gutschein"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 2.4 (S. 3)",
+        "beispiel": [
+          "Erfunden: S. 12 · Waschküche nur mit Eintrag · «2 Stunden» · → ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Auf S. 6 steht ein ausgefüllter Prüfbericht zu einem anderen Fall; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Was sagt die Quelle zu Rückgabe, Umtausch und Widerruf, und was gilt davon im Onlineshop? Halten Sie in zwei bis drei Sätzen fest, was Sie für Ihren Kauf ableiten.",
+          "liefert": "Belege zur Rechtslage mit Fundstelle",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-331a-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst ganz lesen, dann das Raster füllen: Stichworte, keine Sätze.",
+              "Schreiben Sie den Befund erst nach dem Raster, mit dem Absatz als Beleg."
+            ],
+            "satzanfaenge": [
+              "«Laut Abs. … gibt das Gesetz …»",
+              "«Freiwillig gewähren Geschäfte dagegen …»",
+              "«Für meinen Kauf leite ich ab: …»"
+            ],
+            "produkt": "In «Rechtslage»: eine Zeile zu Prüffrage 3 (Gesetz), eine zu Prüffrage 4 (Geschäftsbedingungen)."
+          },
+          "loesung": {
+            "kern": "Gesetz gibt wenig, das Geschäft regelt den Rest",
+            "quelle_ref": "q-331a-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Abs. 2: kein gesetzliches Recht auf Rückgabe oder Umtausch · Abs. 3: Geschäfte gewähren freiwillig 14 Tage oder mehr · Abs. 4–7: Widerruf nur bei Haustür- und Telefongeschäften, 14 Tage, über 100 Franken · Abs. 9: online wie im Laden.",
+                "quelle": "Quelle, Abs. 2–7 und 9"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Abs. 13–15: Quittung, Originalverpackung, Zusage auf dem Beleg · Abs. 16: reduzierte Ware.",
+                "quelle": "Quelle, Abs. 13–16"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Aus LF1 und Glossar; Zuordnung ist Deutung. Abs. 3 nennt auch die freiwillige Frist «Widerrufsrecht»."
+              },
+              {
+                "label": "Befund",
+                "text": "Trennt Gesetz (Abs. 4–7) und freiwillige Regel (Abs. 3); Abs. 9: online wie im Geschäft, darum Geschäftsbedingungen lesen. Zum Alter: nichts."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Abs. 1: ohne Mangel kein Anspruch · Abs. 6: Entgegenkommen, ausser vorher zugesagt · Abs. 10–18: Widerruf, sechs Orte · Abs. 19: nicht im Internet, nicht im Laden.",
+                "quelle": "Ersatzquelle, Abs. 1–19"
+              },
+              {
+                "label": "Zählweise und Stand",
+                "text": "Wie im Archivtext, Zwischentitel und Listenpunkte mitgezählt (Titel: Abs. 1, 8, 12). Quelle ohne Datum, Abruf 2026-10-05; Ersatzquelle: 2026-02-24."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 2",
+                "kein gesetzliches Recht auf Rückgabe, Umtausch",
+                "jedes Geschäft: eigene Regeln",
+                "Kaufvertrag"
+              ],
+              [
+                "Abs. 3",
+                "manche Geschäfte gewähren freiwillig eine Frist",
+                "14 Tage oder mehr",
+                "Geschäftsbedingungen"
+              ],
+              [
+                "Abs. 4–7",
+                "Gesetz regelt nur Haustürgeschäft und Telefonkauf",
+                "14 Tage, über 100 Franken",
+                "Widerrufsrecht"
+              ],
+              [
+                "Abs. 9",
+                "online gelten dieselben Regeln wie im Laden",
+                "darum Bedingungen lesen",
+                "Internetkauf"
+              ]
+            ],
+            "befund": "Ein gesetzliches Recht auf Rückgabe oder Umtausch gibt es nicht (Abs. 2); widerrufen kann man nur Haustür- und Telefongeschäfte (Abs. 4–7). Online gilt dasselbe wie im Laden (Abs. 9). Für meinen Kauf leite ich ab: Das Gesetz hilft mir nicht; es zählt, was der Shop in seinen Geschäftsbedingungen freiwillig gewährt (Abs. 3)."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.4 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 2.4 (S. 60, 63) regelt, wann ein Kauf bindet; die Quelle zeigt, was Geschäfte darüber hinaus tun. Was folgt für Ihren Kauf? Entscheiden Sie: zum Kauf stehen oder Ausweg beim Shop suchen?",
+          "liefert": "Rechtsfolge und begründeter Weg",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Legen Sie LF1 neben das Raster: Wo sagt die Quelle mehr als das Lehrmittel?",
+              "Das Sprichwort «gekauft ist gekauft»: Gilt es für Sie auch, wenn Sie der Kauf reut?"
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel (S. …) gilt für meinen Kauf: …»",
+              "«Die Quelle (Abs. …) zeigt dazu, dass …»",
+              "«Ich wähle …, weil mir wichtig ist, dass …»"
+            ],
+            "produkt": "Die Rechtsfolge kommt in die Spalte «Rechtsfolge», Ihr Weg in den Entscheid unter der Tabelle."
+          },
+          "loesung": {
+            "kern": "Erwartung: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Pol Lehrmittel mit Seite: Der Klick bindet, in der Regel kein Rücktritt (Kap. 2.4, S. 63); Widerruf nur in bestimmten Fällen (S. 60).",
+                "Pol Quelle mit Absatz: Geschäfte dürfen freiwillig mehr gewähren (Abs. 3), darum zählen die Geschäftsbedingungen (Abs. 9). Mit Ersatzquelle: Abs. 6.",
+                "Gesetz und Vertrag getrennt; Rückgabe gegen Gutschein als Regel des Shops erkannt (Angabe des Falls).",
+                "Der Entscheid ist einer der zwei Wege, nennt die Haltung zu «gekauft ist gekauft» und was offen bleibt (etwa: Hat der Shop schon angenommen? S. 63)."
+              ],
+              "beispiel_pol_1": "Laut Lehrmittel bindet mich der Klick, zurücktreten kann ich in der Regel nicht (Kap. 2.4, S. 63); ein Widerruf gilt nur bei Geschäften wie an der Haustür (S. 60). Die Quelle bestätigt: Online gilt dasselbe wie im Laden (Abs. 9). Mein Shop gewährt freiwillig eine Rückgabe (Abs. 3), aber nur gegen Gutschein. Ich stehe zum Kauf: Mein Wort gilt für mich auch, wenn es mich reut. Offen bleibt, ob der Shop schon angenommen hat.",
+              "beispiel_pol_2": "Das Gesetz gibt mir keinen Ausweg: Der Klick bindet mich (Kap. 2.4, S. 63), ein Widerruf gilt für meinen Kauf nicht (S. 60; Quelle, Abs. 4–7). Geschäfte gewähren aber freiwillig mehr (Abs. 3); es kommt auf die Geschäftsbedingungen an (Abs. 9). Ich bitte den Shop heute schriftlich um Stornierung; sonst gebe ich das Paket ungeöffnet zurück und nehme den Gutschein. Ob er mit der Bestätigung schon angenommen hat, lässt S. 63 offen; darum schreibe ich früh. Annahme: Der Shop kommt mir entgegen.",
+              "nicht_tragfaehig": "«14 Tage Rückgabe immer» ohne Fundstelle; die freiwillige Regel des Shops als gesetzliches Recht ausgegeben."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-331a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Quelle (QR-Seite); Zwischentitel und Listenpunkte zählen als Absatz. Vier Aussagen zu Ihrem Kauf, je mit dem Begriff (LF1, Glossar), zu dem sie gehört. Je Zeile: Absatz, Kernaussage, Beleg / Zahl.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-331a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wann gibt das Gesetz ein Widerrufsrecht – und warum fällt mein Kauf nicht darunter?",
+          "erwartung": "Das Angebot muss am Arbeitsplatz, in Wohnräumen, im öffentlichen Verkehr, auf Strassen und Plätzen, an einer Werbeveranstaltung mit Ausflugsfahrt oder Ähnlichem, am Telefon oder über vergleichbare gleichzeitige mündliche Telekommunikation gemacht sein (Art. 40b Bst. a–d); ein Onlineshop fehlt. Dazu: persönlicher Gebrauch, gewerblicher Anbieter, über 100 Franken (Art. 40a Abs. 1). Frist 14 Tage (Art. 40e Abs. 2); gewahrt, wenn der Widerruf am letzten Tag mitgeteilt oder der Post übergeben wird (Abs. 4). Form: nach Art. 40e Abs. 1 keine; Kap. 2.4, S. 60 verlangt noch das Einschreiben, es dient nur dem Beweis. Stand: 2026-10-01."
+        },
+        {
+          "ref": "q-331a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum gilt der Kauf, obwohl die Käuferin noch nicht 18 ist – und was bleibt ihr?",
+          "erwartung": "Gezählt wie im Archivtext, Zwischentitel mit (Abs. 1, 4, 8). Vor 18 keine Verpflichtung ohne Einwilligung der Eltern (Abs. 2–3); Ausnahme: selbst verdientes Geld und Taschengeld (Abs. 5). Der Vertrag gilt, weil der Betrag im Rahmen des Lohns liegt; ohne Abmachung kein Rücktritt (Abs. 9). Ihr bleibt: zahlen und weiterverkaufen (Abs. 10). Stand: 2022-09-29; deckt sich mit Kap. 2.4, S. 55, 63, und Kap. 1.3, S. 25–27."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Erfunden: Abs. 4 · Badi länger offen · «bis 21 Uhr» · → ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Auf S. 6 steht ein ausgefüllter Prüfbericht zu einem anderen Fall; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}

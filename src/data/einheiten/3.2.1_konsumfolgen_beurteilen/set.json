@@ -1,0 +1,400 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_set",
+  "modul": "3.2",
+  "modul_titel": "Bewusst konsumieren und handeln — folgen und preise beurteilen",
+  "einheit_titel": "Konsumfolgen beurteilen",
+  "lehrgang": "EFZ_3J",
+  "lehrgaenge": [
+    "EFZ_3J",
+    "EFZ_4J"
+  ],
+  "thema": "T3",
+  "version": "2.1.0",
+  "status": "publiziert",
+  "prinzip_ref": "3.2.1_konsumfolgen_beurteilen_prinzip",
+  "kn_ref": "3.2.1_konsumfolgen_beurteilen_kn",
+  "herausforderungen": [
+    "3.2.1_konsumfolgen_beurteilen_hf_A",
+    "3.2.1_konsumfolgen_beurteilen_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "3.2.1_konsumfolgen_beurteilen_hf_A",
+      "konzept": "Folgen einer Kaufgewohnheit mit den Dimensionen der Nachhaltigkeit belegen und zwei nachhaltigere Möglichkeiten beschreiben"
+    },
+    {
+      "position": 2,
+      "herausforderung": "3.2.1_konsumfolgen_beurteilen_hf_B",
+      "konzept": "Einen Preis anhand von Herstellung, Transport, Angebot und Nachfrage beurteilen und begründet festlegen, was fair ist"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Nachhaltigkeit",
+      "definition": "Nicht mehr verbrauchen, als auf Dauer wieder bereitsteht.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "ökologische Dimension",
+      "definition": "Natur und Umwelt bleiben für spätere Generationen erhalten.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "ökonomische Dimension",
+      "definition": "Die Wirtschaft sichert auf Dauer Arbeit und Wohlstand; hierher gehören auch Kosten.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "soziale Dimension",
+      "definition": "Alle Menschen können an der Entwicklung teilhaben.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Konsumgewohnheit",
+      "definition": "Was ich immer wieder gleich kaufe, ohne neu zu überlegen.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Lebensweg",
+      "definition": "Weg eines Produkts vom Rohstoff bis zur Entsorgung (Lebenszyklus).",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "graue Energie",
+      "definition": "Energie für Herstellung und Transport, die im Produkt steckt.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "nachhaltiger Konsum",
+      "definition": "Beim Kaufen auf Herstellung, Arbeitsbedingungen und Wege achten.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Abfall vermeiden",
+      "definition": "Dafür sorgen, dass Abfall gar nicht erst entsteht.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Siedlungsabfall",
+      "definition": "Abfall, der in Haushalten und Büros anfällt.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Littering",
+      "definition": "Abfall im öffentlichen Raum liegen lassen, statt ihn zu entsorgen.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "schlechtes Gewissen",
+      "definition": "Unbehagen, wenn ich anders handle, als ich es richtig finde.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Wegwerfmentalität",
+      "definition": "Haltung, Dinge nur kurz zu nutzen und rasch wegzuwerfen.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Nachfrage",
+      "definition": "Was Kundinnen und Kunden zu einem Preis kaufen wollen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Angebot",
+      "definition": "Was Verkaufende zu einem Preis verkaufen wollen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Preisbildung",
+      "definition": "Der Preis entsteht auf dem Markt aus Angebot und Nachfrage.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Marktgleichgewicht",
+      "definition": "Preis, bei dem angebotene und nachgefragte Menge gleich sind.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Herstellung",
+      "definition": "Alles, was es braucht, bis ein Produkt fertig ist.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Transport",
+      "definition": "Weg der Ware vom Ort der Herstellung bis zum Verkauf.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "fairer Handel",
+      "definition": "Handel mit stabilen, fairen Preisen für die Produzierenden.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Anspruchsgruppe",
+      "definition": "Gruppe, die von einem Unternehmen etwas erwartet.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Zielkonflikt",
+      "definition": "Wer das eine Ziel erreicht, erschwert oder verhindert das andere.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Gewinn",
+      "definition": "Einnahmen aus dem Verkauf minus Einkauf aller bestellten Ware (Rechnung zum Fall).",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Globalisierung",
+      "definition": "Herstellung und Handel sind weltweit miteinander verflochten.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Produktionsfaktoren",
+      "definition": "Was es zum Herstellen braucht: Boden, Arbeit und Kapital.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "graue Energie",
+      "definition": "Energie für Herstellung und Transport, die im Produkt steckt.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Marge",
+      "definition": "Unterschied zwischen Einkaufs- und Verkaufspreis einer Ware.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "Herbstferien – fliegen oder Zug fahren?",
+    "lebensbereich": "Familie",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "Meine Familie plant vier Tage Städteferien im Herbst. Im Familienchat liegt die Angebotsübersicht für uns vier: Der Flug kostet CHF 89 pro Person und dauert knapp 2 Stunden; vor drei Wochen kostete er noch CHF 59. Der Zug kostet CHF 164 pro Person und braucht gut 10 Stunden; sein Preis ist unverändert. Für uns vier sind das CHF 356 mit dem Flug und CHF 656 mit dem Zug, also CHF 300 mehr. Meine Schwester schreibt: «Wir fliegen doch jedes Jahr.» Bis Sonntag soll ich schreiben, was ich vorschlage. Ich will klären, was an unserer Gewohnheit hängt und warum der Flug so rasch teurer wurde.",
+    "zahlen_tabelle": [
+      {
+        "label": "Flug pro Person: heute · vor drei Wochen",
+        "wert": "CHF 89 · 59"
+      },
+      {
+        "label": "Zug pro Person (Preis unverändert)",
+        "wert": "CHF 164"
+      },
+      {
+        "label": "Reisezeit: Flug · Zug",
+        "wert": "knapp 2 · gut 10 Stunden"
+      },
+      {
+        "label": "Für uns vier: Flug · Zug",
+        "wert": "CHF 356 · 656"
+      }
+    ],
+    "leitfrage": "Schlage ich den günstigen, schnellen Flug vor – oder den teureren, langen Zug?",
+    "mehrdeutigkeit": {
+      "trade_off": "Günstig und schnell fliegen vs. teurer und länger Zug fahren",
+      "hint": "Fliegen spart Geld und Zeit, der Zug kostet beides. Je nach Folgen, die Sie mitzählen, ist beides vertretbar."
+    },
+    "aktivierte_trade_offs": [
+      "Mein Nutzen heute vs. Kosten für Umwelt und Gesellschaft später",
+      "Preis, den der Markt hergibt vs. Preis, den alle fair finden"
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "einzel",
+        "partner",
+        "gruppe"
+      ],
+      "empfehlung": "Auswertung zu zweit vergleichen, Empfehlung allein schreiben und mit jemandem tauschen, der anders entschieden hat."
+    },
+    "auftrag": "Werten Sie die Angebotsübersicht mit den Werkzeugen aus Heft A und Heft B aus und schreiben Sie Ihrer Familie eine Empfehlung.",
+    "schritte": [
+      {
+        "label": "01 Auswertung",
+        "hint": "A2: Tabelle mit drei Spalten (Angabe · hinter dem Preis · Folge). Tragen Sie drei bis vier Angaben der Übersicht ein."
+      },
+      {
+        "label": "02 Gewohnheit und Folgen",
+        "hint": "Notieren Sie in «Folge» je Zeile eine Folge mit ihrer Dimension (Heft A, S. 2 und S. 3). Was die Übersicht nicht belegt: «Annahme» dazu."
+      },
+      {
+        "label": "03 Preis erklären",
+        "hint": "Erklären Sie in «hinter dem Preis» (nur beim Flug) mit dem Modell aus Heft B (S. 2), warum er teurer wurde – als Vermutung, nicht belegt."
+      },
+      {
+        "label": "04 Vorschlag festlegen",
+        "hint": "Notieren Sie unter der Tabelle auf A2: Ihr Vorschlag, zwei Gründe, ein Zugeständnis."
+      },
+      {
+        "label": "05 Empfehlung",
+        "hint": "Schreiben Sie auf A3 die Nachricht an Ihre Familie: 100 bis 130 Wörter, in Ich-Form, mit zwei Gründen und einem Zugeständnis."
+      }
+    ],
+    "abgaben": [
+      "Auswertung der Angebotsübersicht (A2): Tabelle mit drei Spalten, dazu Stichworte",
+      "Empfehlung an die Familie (A3): Nachricht von 100 bis 130 Wörtern",
+      "Selbsteinschätzung auf den vier Kriterien"
+    ],
+    "produkte": [
+      {
+        "schritt": 1,
+        "form": "flaeche",
+        "modus": "Rezeption schriftlich und bildlich"
+      },
+      {
+        "schritt": 5,
+        "form": "flaeche",
+        "modus": "Produktion schriftlich und bildlich"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Billig bestellt – was hängt an meinem Kauf?",
+        "inhalte": [
+          "Dimensionen und fünf Stationen eines Produkts (S. 2)",
+          "Folgen mit Beleg im Raster (S. 3)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Rosen für die Klassenkasse – welcher Preis ist richtig?",
+        "inhalte": [
+          "Mehr Nachfrage, gleiches Angebot: der Preis steigt (S. 2)",
+          "Preis beurteilen: wer erwartet was? (S. 4)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder werden falsch gebraucht.",
+          "Einige Fachbegriffe stimmen, andere sind ungenau oder vertauscht.",
+          "Die Fachbegriffe der Einheit sind richtig gebraucht und mit einem Beleg gestützt.",
+          "Fachbegriffe sind richtig, belegt und selbstständig verbunden; auch ihre Grenzen sind benannt."
+        ],
+        "indikator_produkt": "Tabelle: je Folge die passende Dimension; Unbelegtes steht als Annahme da (Grenze)."
+      },
+      {
+        "kn_kriterium": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Behauptungen stehen ohne Begründung da.",
+          "Eine Begründung ist angedeutet, bleibt aber lückenhaft oder ohne Beleg.",
+          "Das Urteil ist nachvollziehbar begründet und mit einem Beleg oder Beispiel gestützt.",
+          "Schlüssig begründet; ein Einwand oder eine Rückmeldung ist aufgenommen und beantwortet."
+        ],
+        "indikator_produkt": "Empfehlung: zwei Gründe aus Übersicht oder Tabelle, ein Zugeständnis."
+      },
+      {
+        "kn_kriterium": "Wirtschaftliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Nicht erkennbar, wie ein Preis entsteht und wer die Kosten eines Kaufs trägt.",
+          "Preis oder Folgen sind genannt, aber nicht mit Angebot, Nachfrage und Kosten verbunden.",
+          "Angebot, Nachfrage und Kosten sind richtig auf den Fall angewendet; der Preis ist erklärt.",
+          "Das wirtschaftliche Prinzip ist auf einen neuen Fall übertragen; Folgen für Beteiligte sind benannt."
+        ],
+        "indikator_produkt": "Tabelle: Flugpreis mit Angebot und Nachfrage erklärt – das Modell aus Heft B am neuen Fall."
+      },
+      {
+        "kn_kriterium": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position ist nicht erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+          "Die Position steht klar in Ich-Form und ist nachvollziehbar begründet.",
+          "Begründete Position in Ich-Form; auch was für die andere Seite spricht, ist anerkannt."
+        ],
+        "indikator_produkt": "Empfehlung sagt in Ich-Form, was ich vorschlage und warum."
+      }
+    ],
+    "kontext_ausschluss": [
+      "Sammelbestellung, Billigplattform, Kopfhörer (Heft A)",
+      "Rosen, Valentinstag, Klassenkasse (Heft B)",
+      "Volleyball, Bälle, Materialwart (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Die Tabelle wertet drei bis vier Angaben der Übersicht aus (Flugpreis, sein Anstieg um CHF 30 in drei Wochen, Zugpreis, Reisezeit) und nennt je Zeile eine Folge mit der richtigen Dimension. Belegt ist dazu nur der Verkehr insgesamt (Kap. 9.4, S. 236–237): 2023 rund 38 Prozent der Endenergie, fast ganz aus Erdölprodukten; 2022 41 Prozent der CO₂-Emissionen der Schweiz, ohne den internationalen Flugverkehr, der dazukommt. Eine Zahl je Flug, je Fahrt oder je Person ist weder verlangt noch belegt; dass der Zug die Umwelt weniger belastet als der Flug, steht in keinem Kapitel und in der Übersicht – Lernende schreiben es als Annahme. Als Grössenordnung für die Lehrperson (Umweltbundesamt Deutschland, Bezugsjahr 2024, abgerufen 5.10.2026): Inlandflug rund 255 g, Bahn im Fernverkehr rund 14 g Treibhausgase je Personenkilometer – Durchschnittswerte, nicht für diese Strecke.",
+        "Der Anstieg von CHF 59 auf CHF 89 ist mit dem Modell aus Heft B erklärt (Kap. 2.7, S. 77): Vor den Ferien wollen mehr Leute fliegen, die Zahl der Plätze bleibt gleich, der Preis steigt. Das ist eine Fallüberlegung mit dem Modell, für diesen Flug nicht belegt. Lernende kennzeichnen es als Vermutung. Warum der Zugpreis gleich blieb, ist nicht verlangt.",
+        "Die Empfehlung (100 bis 130 Wörter) nennt in Ich-Form einen Vorschlag, zwei Gründe mit einer Angabe aus der Übersicht und ein Zugeständnis an die andere Seite; die Rechnung stimmt (4 × 89 = 356, 4 × 164 = 656, Unterschied CHF 300)."
+      ],
+      "tragfaehig": "Ich schlage den Zug vor. Erstens: «Wir fliegen jedes Jahr» ist eine Gewohnheit, kein Grund; der Verkehr gehört zu den grössten Energieverbrauchern, und die Folgen tragen später andere. Zweitens: Der Flug wurde in drei Wochen CHF 30 teurer, weil vor den Ferien viele buchen; er kann weiter steigen, der Zugpreis blieb gleich. Ich gebe zu: Der Zug kostet uns CHF 300 mehr und fast einen Ferientag. — Ebenso tragfähig: den Flug vorschlagen, weil CHF 300 für eine Familie viel Geld sind, mit dem Zugeständnis, dass ein Teil der Kosten bei Umwelt und Gesellschaft anfällt, und mit einem eigenen Beitrag (etwa nächstes Jahr ein näheres Ziel).",
+      "nicht_tragfaehig": "Eine Tabelle, die die Angaben nur abschreibt; eine Preiserklärung ohne Angebot und Nachfrage («die wollen halt mehr verdienen»); eine Empfehlung ohne Grund oder ohne Zugeständnis; erfundene Emissionszahlen je Flug; eine Lösung, die einen der zwei Wege als einzig richtigen darstellt."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}

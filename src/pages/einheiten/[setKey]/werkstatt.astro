@@ -16,8 +16,9 @@
 import Einheiten from '../../../layouts/Einheiten.astro'
 import { einheitById, loadEinheit, isEntwurf, stripDraftComponents } from '../../../lib/einheiten'
 import { enrichKompetenzen } from '../../../lib/einheiten/kompetenz-text'
-import { werkstattKontext } from '../../../lib/werkstatt/kontext'
-import { AUFTRAEGE, NIVEAUS, NIVEAU_LABEL } from '../../../lib/werkstatt/auftraege'
+import { werkstattKontext, SPUR_LABEL } from '../../../lib/werkstatt/kontext'
+import { AUFTRAEGE, NIVEAUS, NIVEAU_LABEL, auftragAnzeige } from '../../../lib/werkstatt/auftraege'
+import type { SpurKey } from '../../../lib/einheiten/types'
 import { ubFuerKompetenzen, ubLehrgangOf } from '../../../lib/umsetzungsbeispiele'
 
 const user = Astro.locals.user
@@ -34,7 +35,13 @@ const role: 'lp' | 'kt1' | 'gast' =
 
 const setKey = Astro.params.setKey!
 const meta = einheitById(setKey)
-const fullSet = loadEinheit(setKey)
+// v4.2: Die Werkstatt arbeitet in EINER Spur — der, die in der Arbeitsansicht gewählt war
+// (`?spur=`). Ohne Angabe gilt dieselbe Regel wie in `loadEinheit` (set.spur, sonst die
+// Spur ohne Medien). Bestandseinheiten haben keine Spur; der Parameter bleibt wirkungslos.
+const spurParam = Astro.url.searchParams.get('spur')
+const spurWunsch: SpurKey | undefined =
+  spurParam === 'ohne_medien' || spurParam === 'mit_medien' ? spurParam : undefined
+const fullSet = loadEinheit(setKey, spurWunsch ? { spur: spurWunsch } : undefined)
 if (!meta || !fullSet) return new Response('Einheit nicht gefunden', { status: 404 })
 
 // Die Werkstatt erzeugt Material — das ist eine Lehrpersonen-Handlung. Gäste sehen
@@ -64,16 +71,28 @@ const offizielle = ubFuerKompetenzen(ubLehrgang, kontext.kompetenzen.map((k) => 
 const ubUrl = `/umsetzungsbeispiele?lehrgang=${encodeURIComponent(ubLehrgang)}`
 
 // Nur die anzeigbaren Teile der Auftragsdefinition; die Funktionen bleiben im Modul.
-const auftragKarten = AUFTRAEGE.map((a) => ({
-  key: a.key,
-  label: a.label,
-  zweck: a.zweck,
-  brauchtHf: a.brauchtHf,
-  richtungen: a.richtungen,
-  niveauDefault: a.niveauDefault,
-  zielgruppeLabel: a.zielgruppeLabel,
-  zielgruppeVorschlag: a.zielgruppeVorschlag,
-}))
+// `auftragAnzeige` liefert bei v4.2 die dortigen Namen («Weiteres Heft C»), sonst
+// unverändert die des alten Formats.
+const auftragKarten = AUFTRAEGE.map((a) => {
+  const z = auftragAnzeige(a, kontext)
+  return {
+    key: a.key,
+    label: z.label,
+    zweck: z.zweck,
+    brauchtHf: a.brauchtHf,
+    richtungen: z.richtungen,
+    niveauDefault: a.niveauDefault,
+    zielgruppeLabel: z.zielgruppeLabel,
+    zielgruppeVorschlag: z.zielgruppeVorschlag,
+  }
+})
+
+// v4.2: Spur-Hinweis. Die andere Spur ist eine eigene Fassung dieser Seite.
+const v42 = kontext.v42 ?? null
+const spurName = (k: string) => SPUR_LABEL[k] ?? k
+const andereSpuren = v42
+  ? (Object.keys(fullSet.spur_varianten ?? {}) as SpurKey[]).filter((k) => k !== v42.spur)
+  : []
 ---
 
 <Einheiten title={`Werkstatt — ${kontext.einheitTitel}`} role={role}>
@@ -86,12 +105,49 @@ const auftragKarten = AUFTRAEGE.map((a) => ({
         Zusatzmaterial zu <strong class="text-slate-800">{kontext.einheitTitel}</strong>
         {kontext.modul && <span class="text-slate-500"> · Lebensbezug {kontext.modul}</span>}
       </p>
+      {v42 ? (
+        <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">
+          Hier entsteht ein Prompt, der diese Einheit kennt: Prinzip, Trade-off-Raum, die zwei Hefte in der
+          gewählten Spur, der gemeinsame Auftrag, die verbrauchten Fälle und Lebensbereiche, die dem
+          Kompetenznachweis vorbehaltenen Fall-Begriffe und das Beurteilungsraster gehen als Auflagen mit. Den Prompt
+          kopieren Sie in ein Sprachmodell Ihrer Wahl — das Ergebnis bleibt bei Ihnen, es wird hier nichts gespeichert.
+        </p>
+      ) : (
       <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">
         Hier entsteht ein Prompt, der diese Einheit kennt: Prinzip, Trade-off-Raum, Bloom-Korridor,
         bereits verbrauchte Personas und das Beurteilungsraster gehen als Auflagen mit. Den Prompt
         kopieren Sie in ein Sprachmodell Ihrer Wahl — das Ergebnis bleibt bei Ihnen, es wird hier nichts gespeichert.
       </p>
+      )}
     </header>
+
+    {v42 && (
+      <aside class="mb-8 bg-white border border-slate-200 rounded-xl px-5 py-4">
+        <p class="text-sm font-semibold text-slate-900">
+          Spur: {spurName(v42.spur)}
+          {andereSpuren.map((k) => (
+            <a href={`/einheiten/${setKey}/werkstatt?spur=${k}`} class="ml-3 font-medium text-[var(--brand-dark)] hover:underline">
+              zur Spur {spurName(k)} wechseln →
+            </a>
+          ))}
+        </p>
+        <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+          Der Prompt zitiert die Hefte so, wie sie in dieser Spur gedruckt werden
+          {v42.spur === 'mit_medien'
+            ? ' — mit den Angaben zur Quelle (Titel, Herausgeber, Datum, Ausschnitt), nie mit ihrem Inhalt.'
+            : ' — mit dem Lehrmittel-Abschnitt, dem Raster samt Beispielzeile und der Denkhilfe.'}
+        </p>
+        {v42.einspurig.map((e) => (
+          <p class="mt-2 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 leading-relaxed">
+            Heft {e.heft} gibt es nur in der Spur {spurName(e.spur)}.
+            {e.spur !== v42.spur && ` Es geht darum in dieser Spur in den Prompt, auch wenn Sie ${spurName(v42.spur)} gewählt haben.`}
+          </p>
+        ))}
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+          «Weiteres Heft C» entsteht immer in der Spur ohne Medien: Ein erzeugtes Heft kann keine geprüfte Quelle mitbringen.
+        </p>
+      </aside>
+    )}
 
     {offizielle.length > 0 && (
       <aside class="mb-8 bg-[var(--brand-tint)] border border-[var(--brand)]/25 rounded-xl px-5 py-4">
@@ -146,7 +202,7 @@ const auftragKarten = AUFTRAEGE.map((a) => ({
       <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-5">
 
         <div x-show="def().brauchtHf">
-          <label class="block text-sm font-medium text-slate-700 mb-1.5">Zu welcher Herausforderung?</label>
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">{v42 ? 'Zu welchem Heft?' : 'Zu welcher Herausforderung?'}</label>
           <div class="flex flex-wrap gap-2">
             {kontext.hfs.map((h) => (
               <button
@@ -162,7 +218,7 @@ const auftragKarten = AUFTRAEGE.map((a) => ({
             ))}
           </div>
           {kontext.hfs.length === 0 && (
-            <p class="text-sm text-slate-500">Diese Einheit hat noch keine Herausforderungen.</p>
+            <p class="text-sm text-slate-500">{v42 ? 'Diese Einheit hat noch keine Hefte.' : 'Diese Einheit hat noch keine Herausforderungen.'}</p>
           )}
         </div>
 

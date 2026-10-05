@@ -1,0 +1,196 @@
+{
+  "id": "2.2.1_meinungsfreiheit_reflektieren_prinzip",
+  "modul": "2.2",
+  "kompetenz_nr": "2.2.1",
+  "topic_slug": "meinungsfreiheit_reflektieren",
+  "lehrgang": "EFZ_4J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-10-03",
+  "kern_kompetenzversprechen": "Ich kann an Aussagen aus Gesprächen und Medienbeiträgen analysieren, wo eine Meinung endet und Ausgrenzung beginnt, andere Perspektiven nachvollziehen und meinen eigenen Standpunkt dazu entwickeln und nachvollziehbar ausdrücken.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Aussagen an der Meinungsfreiheit messen",
+      "konfliktart": "Eine Meinung äussern dürfen vs. Menschen nicht herabsetzen",
+      "handlungsprodukt_typ": "Vergleichstabelle zu drei Aussagen (eine aus dem Gespräch, zwei aus der Quelle) mit vier Prüffragen, darunter drei Sätze zur Meinungsfreiheit",
+      "kompetenzen": [
+        "2.2.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Standpunkt zur Einbürgerung vertreten",
+      "konfliktart": "Mitbestimmen als Recht aller, die hier leben vs. Bürgerrecht als Abschluss der Integration",
+      "handlungsprodukt_typ": "Stellungnahme zu einer strittigen Frage (110–130 Wörter) mit zwei Sichtweisen und eigenem Standpunkt im Schluss, vorgetragen als Votum von einer Minute",
+      "kompetenzen": [
+        "2.2.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      1,
+      5,
+      6
+    ],
+    "B": [
+      7,
+      6,
+      12
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      6,
+      5,
+      7
+    ]
+  },
+  "aspekte": {
+    "Ethik": "R2",
+    "Politik": "R1"
+  },
+  "modi_units": [
+    "Rezeption mündlich",
+    "Rezeption audiovisuell",
+    "Produktion mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Meinung aushalten vs. Grenze ziehen",
+      "Kritik an einer Sache vs. Herabsetzung von Menschen",
+      "Zugehörigkeit als Recht vs. Zugehörigkeit als Leistung",
+      "Widersprechen vs. den Frieden in der Runde wahren"
+    ],
+    "verbindlich": "Beide Seiten bleiben begründbar — ob eine Aussage stehen bleiben darf oder eine Grenze braucht, hängt davon ab, worüber sie urteilt, wen sie trifft und was für das Zusammenleben auf dem Spiel steht."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Die Meinungsfreiheit schützt auch Meinungen, die mir nicht passen; sie endet dort, wo Menschen herabgesetzt oder ausgeschlossen werden — und dazwischen muss ich andere Sichtweisen aushalten, prüfen und meine eigene begründen.",
+    "transferfeld": "Übertragbar auf jede Situation, in der über Menschen geurteilt wird und ich entscheiden muss, ob ich eine Aussage stehen lasse oder ihr widerspreche — etwa bei Fangesängen im Stadion, in der Kommentarspalte einer Zeitung oder vor einem Plakat im Abstimmungskampf."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T5 'Mich im Staat orientieren' — Grundrechte und politische Mitsprache im Staat",
+    "r3_voraussicht": "—"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 3.4",
+        "titel": "Migration, Integration und Rassismus — Integration und Assimilation, Einbürgerung, Vorurteil und Diskriminierung, Strafnorm, Grundrechte",
+        "seiten": "Seite 112-119"
+      },
+      {
+        "ref": "Kap. 7.1",
+        "titel": "Medien — Meinungs- und Informationsfreiheit und ihre Schranken",
+        "seiten": "Seite 186-186"
+      },
+      {
+        "ref": "Kap. 12.1",
+        "titel": "Werte — sexuelle Orientierung, Coming-out",
+        "seiten": "Seite 296-297"
+      },
+      {
+        "ref": "Kap. 18.2",
+        "titel": "Werte, Normen, Moral und Ethik — Wert, Wertepluralismus, Norm, Dilemma",
+        "seiten": "Seite 413-415"
+      },
+      {
+        "ref": "Kap. 18.3",
+        "titel": "Perspektivenwechsel — Vorurteil, Ausgrenzung, Empathie",
+        "seiten": "Seite 418-419"
+      }
+    ],
+    "konzepte": [
+      "Stereotyp",
+      "Vorurteil",
+      "Diskriminierung",
+      "Ausgrenzung",
+      "Meinungs- und Informationsfreiheit",
+      "Anti-Rassismus-Strafnorm",
+      "sexuelle Orientierung",
+      "Integration",
+      "Assimilation",
+      "Einbürgerung",
+      "Wert",
+      "Norm",
+      "Wertepluralismus",
+      "Dilemma",
+      "Empathie"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Aushang",
+      "Treppenhaus",
+      "Hausversammlung",
+      "Gemeinschaftsraum"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell"
+    ],
+    "B": [
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Politisches Prinzip"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "mit_medien": "lehrmittel_quelle"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition",
+      "mit_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Meinung aushalten oder Grenze ziehen",
+  "modi_auftrag": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)",
+  "auftrag_lebensbereich": "Freizeit im Netz (Spielgemeinschaft)"
+}

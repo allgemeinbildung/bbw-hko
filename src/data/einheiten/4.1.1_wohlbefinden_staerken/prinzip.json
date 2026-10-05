@@ -1,0 +1,196 @@
+{
+  "id": "4.1.1_wohlbefinden_staerken_prinzip",
+  "modul": "4.1",
+  "kompetenz_nr": "4.1.1",
+  "topic_slug": "wohlbefinden_staerken",
+  "lehrgang": "EFZ_3J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-10-04",
+  "kern_kompetenzversprechen": "Ich kann analysieren, wie Erwartungen und Normen mein Selbstbild prägen, Merkmale eines gesunden Lebensstils auswerten und daraus begründete Massnahmen für mein Wohlbefinden ableiten.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Erwartungen an mein Selbstbild besprechen und festhalten",
+      "konfliktart": "Dazugehören vs. mir selbst treu bleiben",
+      "handlungsprodukt_typ": "Strukturierte Notiz nach einem Gespräch zu zweit über Erwartungen",
+      "kompetenzen": [
+        "4.1.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Umfrage auswerten und Massnahmen ableiten",
+      "konfliktart": "Leistung bringen vs. Erholung zulassen",
+      "handlungsprodukt_typ": "Auswertung einer Umfrage als Tabelle mit Balken und zwei begründeten Massnahmen",
+      "kompetenzen": [
+        "4.1.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      11,
+      5,
+      7
+    ],
+    "B": [
+      10,
+      11,
+      5
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      5,
+      11,
+      7
+    ]
+  },
+  "aspekte": {
+    "Identität und Sozialisation": "R3",
+    "Ethik": "R4"
+  },
+  "modi_units": [
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Dazugehören vs. mir selbst treu bleiben",
+      "Leistung bringen vs. Erholung zulassen",
+      "Eigene Verantwortung vs. Einfluss des Umfelds",
+      "Heute bequem vs. auf Dauer gesund"
+    ],
+    "verbindlich": "Wie weit ich mich anpasse und wie weit ich bei mir bleibe, wie viel ich leiste und wie viel ich mich erhole, hängt von Lage, Zeitpunkt und den Menschen um mich ab; beide Seiten bleiben begründbar."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Wie ich mich sehe und wie ich lebe, wird von Erwartungen anderer mitgeprägt — für mein Wohlbefinden sorge ich, wenn ich diese Erwartungen erkenne, an Belegen prüfe und selbst entscheide, was ich übernehme.",
+    "transferfeld": "Übertragbar auf jede Lage, in der eine Gruppe vorgibt, was als normal gilt, und ich entscheiden muss, wie weit ich mitgehe — etwa wenn in der Klasse gilt, wer viel lernt, sei ein Streber, wenn in einer Wohngemeinschaft alle bis spät am Bildschirm sitzen oder wenn in einer Partnerschaft feste Rollen erwartet werden."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R3",
+    "r2_voraussicht": "T6 'Mein eigenes Zuhause' — selbstständig wohnen und für sich sorgen",
+    "r3_voraussicht": "T8 'Arbeiten in der Zukunft' — berufliche Identität und Laufbahn"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 18.1",
+        "titel": "Identität: das Ich, die zwei Teile der Identität, Rollen, Selbstwert und Selbstvertrauen",
+        "seiten": "Seite 412"
+      },
+      {
+        "ref": "Kap. 18.2",
+        "titel": "Werte und Normen: Wert als Zielorientierung, Norm als Verhaltensregel, Strafen, Verhältnis von Norm und Wert",
+        "seiten": "Seite 413-414"
+      },
+      {
+        "ref": "Kap. 18.2",
+        "titel": "Zusammenspiel von Wert, Norm, Moral und Ethik (Schaubild)",
+        "seiten": "Seite 417"
+      },
+      {
+        "ref": "Kap. 4.3",
+        "titel": "Gesundheit: drei Bereiche des Wohlergehens, Gesundheitsförderung, Stress erkennen und bewältigen",
+        "seiten": "Seite 133-137"
+      },
+      {
+        "ref": "Kap. 18.4",
+        "titel": "Motivationsstrategien: Ziele in kleine Teilziele teilen",
+        "seiten": "Seite 421"
+      }
+    ],
+    "konzepte": [
+      "Identität",
+      "Rolle",
+      "Selbstwert",
+      "Selbstvertrauen",
+      "Wert",
+      "Norm",
+      "Sanktion",
+      "Wertewandel",
+      "Moral",
+      "Ethik",
+      "Gesundheit",
+      "körperliches, geistiges und soziales Wohlergehen",
+      "Gesundheitsförderung",
+      "Eigenverantwortung",
+      "Stress",
+      "Stressoren",
+      "Gleichgewicht",
+      "Teilziele"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, 2. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Marktstand",
+      "Wochenmarkt",
+      "Markttag"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Interaktion und Kollaboration mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "B": [
+      "Produktion schriftlich und bildlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Identitätskonstrukt"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "modell_eigener_fall",
+      "mit_medien": "lehrmittel_quelle"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition",
+      "mit_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Eigene Wahl oder Einfluss des Umfelds",
+  "modi_auftrag": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)",
+  "auftrag_lebensbereich": "Verein und Freizeit"
+}

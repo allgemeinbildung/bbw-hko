@@ -1,0 +1,996 @@
+{
+  "id": "1.2.1_lernzeit_planen_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "1.2",
+  "modul_titel": "Ins Berufsleben einsteigen — effektiv lernen und planen",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Vor dem Kompetenznachweis: lesen, verarbeiten, abfragen",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Stoff verarbeiten und abfragen lassen"
+  },
+  "prinzip_ref": "1.2.1_lernzeit_planen_prinzip",
+  "nrlp": {
+    "nr": "1.2.2",
+    "nr_primary": [
+      "1.2.2"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration digital"
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM9"
+    ],
+    "sk": [
+      4,
+      6,
+      2
+    ],
+    "kompetenz_id": "1.2.2",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann mich auf den nächsten Kompetenznachweis zielgerichtet und effektiv vorbereiten.",
+    "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im ersten Lehrjahr, und in zehn Tagen ist mein nächster Kompetenznachweis an der Berufsfachschule: zwei Kapitel, zusammen vierzehn Seiten. Ich habe sie schon zweimal durchgelesen und mit dem Leuchtstift fast Zeile für Zeile markiert. Gestern hat mich mein Bruder abgefragt – bei der Hälfte der Fragen wusste ich keine Antwort, obwohl mir beim Lesen alles bekannt vorkam. Eine Kollegin sagt, sie lasse sich den Stoff von einem KI-Werkzeug zusammenfassen, das gehe am schnellsten. Ihre Zusammenfassung hat sie mir geschickt: zwei Seiten statt vierzehn. Ich könnte sie durchlesen und hätte den Stoff schnell durch. Oder ich fange noch einmal an und verarbeite die Kapitel selbst – das braucht mehr Abende, und ich weiss nicht, ob zehn Tage dafür reichen. Ich will klären, wie ich mich so vorbereite, dass ich den Stoff selbst erklären kann, und wofür mir ein KI-Werkzeug dabei hilft.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie bereite ich mich so vor, dass ich den Stoff selbst erklären kann – und wofür nehme ich das KI-Werkzeug zu Hilfe?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Stoff schnell durchgehen vs. Stoff gründlich verarbeiten",
+    "hint": "Schnell durchgehen spart Abende, gründlich verarbeiten kostet sie. Welcher Teil Ihres Stoffs braucht was – und was reicht bis zum Termin?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 20.6",
+      "titel": "Lern- und Prüfungsstrategien",
+      "unterueberschrift": "Lernstrategien und ihre Wirkung",
+      "seiten": "Seite 444",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 17.1",
+      "titel": "Lesetechnik",
+      "unterueberschrift": "Lesen in fünf Schritten",
+      "seiten": "Seite 380",
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 18.4",
+      "titel": "Motivation",
+      "unterueberschrift": "Antrieb und Störungen beim Lernen",
+      "seiten": "Seite 420-421",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Ende haben Sie ein Abfrageprotokoll mit Lernstand-Notiz. LF1 liefert vier Lernstrategien mit ihrer Wirkung, LF2 Ihr Lernziel und Ihr Lesevorgehen, LF3 vier Kernaussagen in eigenen Worten, LF4 Ihren Entscheid, wofür Sie das KI-Werkzeug einsetzen.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 20.6 | S. 444",
+      "text": "Kap. 20.6, S. 444 nennt Lernstrategien. Erklären Sie vier davon in eigenen Worten – verteilt lernen, mehrere Eingangskanäle, nur Verstandenes lernen, gegenseitig abfragen – und sagen Sie je, was die Strategie bewirkt.",
+      "liefert": "vier Lernstrategien mit ihrer Wirkung",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Suchen Sie die vier Strategien in der Tabelle auf S. 444; die Wirkung steht dahinter.",
+          "Schreiben Sie je Strategie zwei Teile: was ich tue – was es bewirkt."
+        ],
+        "satzanfaenge": [
+          "«Verteilt lernen heisst, dass ich …»",
+          "«Das bewirkt, dass …»",
+          "«Mehrere Eingangskanäle nutze ich, indem ich …»"
+        ],
+        "produkt": "Die vier Strategien gehören zu den acht Punkten des Probelaufs (S. 7) und helfen im Raster auf S. 3."
+      },
+      "loesung": {
+        "kern": "Vier Lernstrategien: was ich tue, was es bewirkt",
+        "zeilen": [
+          {
+            "label": "Verteilt lernen",
+            "text": "Den Stoff in Portionen teilen und an mehreren Tagen zu festen Zeiten lernen. Wirkung laut Lehrmittel: Wer mehrmals lernt, behält deutlich mehr.",
+            "quelle": "Kap. 20.6, S. 444"
+          },
+          {
+            "label": "Eingangskanäle",
+            "text": "Lesen, anstreichen, herausschreiben, in eigenen Worten wiederholen, jemandem erklären. Wirkung: Der Stoff ist auf mehreren Wegen gespeichert und lässt sich auf mehreren Wegen wiederfinden.",
+            "quelle": "Kap. 20.6, S. 444"
+          },
+          {
+            "label": "Nur Verstandenes",
+            "text": "Zuerst Zusammenhänge und Abläufe verstehen, dann einprägen. Wirkung: Was ohne Verständnis auswendig gelernt ist, findet man laut Lehrmittel schwer wieder.",
+            "quelle": "Kap. 20.6, S. 444"
+          },
+          {
+            "label": "Gegenseitig abfragen",
+            "text": "Mit einer Lernpartnerin oder einem Lernpartner einander den Stoff erklären und Fragen stellen. Wirkung: Das festigt den Stoff.",
+            "quelle": "Kap. 20.6, S. 444"
+          },
+          {
+            "label": "Auch gültig",
+            "text": "Weitere Strategien der Seite mit Wirkung, etwa Stoff strukturieren, Pausen oder die Lernkartei für das, was noch nicht sitzt.",
+            "quelle": "Kap. 20.6, S. 444"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Die Wirkung fehlt; oder «nochmals durchlesen» gilt als Strategie – die Seite nennt das Wiederholen in eigenen Worten."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.1 | S. 380 · Kap. 20.3 | S. 438 · eigener Fall",
+      "text": "Formulieren Sie Ihr Lernziel für den Kompetenznachweis in zehn Tagen nach den fünf SMART-Kriterien (Kap. 20.3, S. 438). Planen Sie dann, wann Sie die fünf Leseschritte (Kap. 17.1, S. 380) an den zwei Kapiteln tun.",
+      "liefert": "Lernziel und Lesevorgehen in fünf Schritten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Prüfen Sie Ihr Ziel Buchstabe für Buchstabe: S, M, A, R, T (Kap. 20.3, S. 438).",
+          "Notieren Sie zu jedem der fünf Leseschritte, an welchen Tagen Sie ihn tun."
+        ],
+        "satzanfaenge": [
+          "«Bis zum … kann ich …»",
+          "«Messen kann ich das daran, dass …»",
+          "«Den Überblick verschaffe ich mir am …»"
+        ],
+        "produkt": "Das Lernziel steht zuoberst auf S. 7. Ihr Plan gilt den zwei Kapiteln; geübt wird am Text, den S. 3 nennt."
+      },
+      "loesung": {
+        "kern": "Lernziel nach SMART, fünf Leseschritte auf zehn Tage",
+        "zeilen": [
+          {
+            "label": "Lernziel",
+            "text": "Ein Satz mit Stoff, Massstab und Termin, etwa: Bis am Abend vor dem Kompetenznachweis beantworte ich zu jedem der zwei Kapitel acht Fragen ohne Unterlage, sechs davon richtig."
+          },
+          {
+            "label": "SMART",
+            "text": "Spezifisch (welcher Stoff), messbar (woran ich es merke), anspruchsvoll (mehr als wiedererkennen), realistisch (in zehn Tagen machbar), terminiert (bis wann). Das A steht im Lehrmittel für anspruchsvoll.",
+            "quelle": "Kap. 20.3, S. 438"
+          },
+          {
+            "label": "Leseschritte",
+            "text": "Zu Beginn Überblick über beide Kapitel und Fragen an den Text; an den folgenden Tagen abschnittweise lesen mit Randnotizen und die Hauptgedanken wiederholen; an den letzten Tagen den Inhalt ohne Text in Erinnerung rufen.",
+            "quelle": "Kap. 17.1, S. 380"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Das Ziel nennt etwas, das sich abfragen lässt; der Plan lässt Tage für das Abrufen ohne Text frei."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "«Ich lese alles nochmals» ist nicht messbar; alle fünf Schritte liegen am letzten Tag."
+          },
+          {
+            "label": "Hinweis",
+            "text": "Das Lehrmittel führt die SMART-Kriterien bei Projektarbeiten ein; das Heft überträgt sie auf ein Lernziel.",
+            "quelle": "Kap. 20.3, S. 438"
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Abfrageprotokoll einer Übungsrunde mit einem KI-Werkzeug mit Lernstand-Notiz",
+    "titel": "Abfrageprotokoll mit Lernstand-Notiz",
+    "format_detail": "Ihr Produkt hat vier Teile auf S. 7: (1) Ihr Lernziel in einem Satz – es gilt dem Kompetenznachweis aus der Situation (zwei Kapitel); (2) Ihr Übe-Prompt – Rolle: abfragen; Regel: eine Frage, dann warten; Rückmeldung nach jeder Antwort; (3) das Protokoll von vier Fragen als Tabelle mit den Spalten Frage · Meine Antwort · Rückmeldung · Geprüft (stimmt oder stimmt nicht, mit Seite oder Absatz Ihrer Unterlage); (4) die Lernstand-Notiz: was sitzt, was noch offen ist, Ihr nächster Schritt. Die Abfragerunde ist ein Probelauf: Stoff der Runde sind genau acht Punkte – die vier Lernstrategien aus LF1 und Ihre vier Kernaussagen aus dem Raster von LF3 (S. 3). Im Prompt verlangen Sie, dass das Werkzeug daraus vier Fragen wählt. Der nächste Schritt in der Lernstand-Notiz führt zu den zwei Kapiteln aus der Situation zurück. Sie arbeiten mit einem KI-Werkzeug, das an Ihrer Schule zugelassen ist. Das Protokoll ist für Sie selbst bestimmt.",
+    "beschreibung": "Im Probelauf fragt mich ein KI-Werkzeug, das an meiner Schule zugelassen ist, zu acht Punkten ab: vier Lernstrategien, vier Kernaussagen. Ich prüfe jede Rückmeldung und notiere, was sitzt.",
+    "schritte": [
+      {
+        "label": "01 Lernstrategien klären",
+        "hint": "Halten Sie aus LF1 fest, was jede der vier Lernstrategien bewirkt. Das sind vier der acht Punkte Ihres Probelaufs."
+      },
+      {
+        "label": "02 Lernziel, Lesevorgehen",
+        "hint": "Übernehmen Sie Ihr Lernziel aus LF2 in einem Satz auf S. 7. Das Lesen in fünf Schritten üben Sie am Text, den S. 3 nennt."
+      },
+      {
+        "label": "03 Kernaussagen festhalten",
+        "hint": "Formulieren Sie die vier Kernaussagen aus dem Raster von LF3 je in einem eigenen Satz. Das sind die anderen vier Punkte Ihres Probelaufs."
+      },
+      {
+        "label": "04 Einsatz des Werkzeugs",
+        "hint": "Halten Sie Ihren Entscheid aus LF4 fest: was Sie selbst verarbeiten, was Sie nur durchgehen und wofür Sie das KI-Werkzeug nehmen."
+      },
+      {
+        "label": "05 Abfragerunde führen, prüfen",
+        "hint": "Probelauf: Übe-Prompt mit acht Punkten bauen, vier Fragen verlangen. Tabelle: Frage · Meine Antwort · Rückmeldung · Geprüft. Dann Lernstand."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Lernziel in einem Satz und Übe-Prompt (S. 7)",
+      "Abfrageprotokoll mit vier Zeilen, jede an der Unterlage geprüft",
+      "Lernstand-Notiz mit dem nächsten Schritt"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: die sechs Schritte eines Zopfrezepts auswendig können",
+      "legende": [
+        {
+          "key": "sitzt",
+          "text": "sitzt"
+        },
+        {
+          "key": "offen",
+          "text": "noch offen"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Abfrageprotokoll",
+          "kopf": [
+            "Frage",
+            "Meine Antwort",
+            "Rückmeldung",
+            "Geprüft"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Was kommt zuerst?",
+                "Hefe in Milch lösen",
+                "richtig",
+                "stimmt, Schritt 1"
+              ],
+              "marke": "sitzt"
+            },
+            {
+              "zellen": [
+                "Wie lange ruht der Teig?",
+                "halbe Stunde",
+                "zu kurz: 1 Stunde",
+                "stimmt, Schritt 3"
+              ],
+              "marke": "offen"
+            },
+            {
+              "zellen": [
+                "Wozu das Ei?",
+                "zum Bestreichen",
+                "richtig",
+                "stimmt, Schritt 5"
+              ],
+              "marke": "sitzt"
+            },
+            {
+              "zellen": [
+                "Wie heiss der Ofen?",
+                "200 Grad",
+                "richtig",
+                "falsch, Schritt 6: 180°"
+              ],
+              "marke": "offen"
+            }
+          ]
+        },
+        {
+          "titel": "Ziel, Prompt, Lernstand",
+          "eintraege": [
+            {
+              "text": "Ziel: Bis Samstag sage ich alle sechs Schritte ohne Karte auf."
+            },
+            {
+              "text": "Prompt: «Frag mich die sechs Schritte ab: eine Frage, warten, Rückmeldung.»"
+            },
+            {
+              "marke": "sitzt",
+              "text": "Erster Schritt, Ei zum Bestreichen"
+            },
+            {
+              "marke": "offen",
+              "text": "Ruhezeit, Ofen"
+            },
+            {
+              "text": "Nächster Schritt: Schritt 3 und 6 auf Lernkarten, morgen neue Runde"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Abfragerunde zehn Tage vor dem Kompetenznachweis",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage; erst nach der eigenen Runde zeigen. Stoff des Probelaufs sind acht Punkte; hier sind vier Fragen daraus angenommen: Die Zeilen 1 und 2 fragen Lernstrategien aus LF1 ab, die Zeilen 3 und 4 Kernaussagen aus dem Raster zu Kap. 18.4; im Heft mit der Quelle stehen dort deren Kernaussagen, geprüft am Absatz. Fragen und Rückmeldungen des KI-Werkzeugs sind angenommen – was es fragt und zurückmeldet, zeigt erst die Runde der Lernenden. Zeile 4 ist ein angenommenes Beispiel dafür, wozu die Spalte «Geprüft» dient, keine Aussage darüber, wie das Werkzeug arbeitet. Auch das Lernziel (acht Fragen, sechs richtig) ist eine Annahme.",
+      "legende": [
+        {
+          "key": "sitzt",
+          "text": "sitzt"
+        },
+        {
+          "key": "offen",
+          "text": "noch offen"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Abfrageprotokoll",
+          "kopf": [
+            "Frage",
+            "Meine Antwort",
+            "Rückmeldung",
+            "Geprüft"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Was heisst verteilt lernen?",
+                "in Portionen, an mehreren Tagen",
+                "richtig",
+                "stimmt, S. 444"
+              ],
+              "marke": "sitzt"
+            },
+            {
+              "zellen": [
+                "Wozu mehrere Eingangskanäle?",
+                "damit es schneller geht",
+                "falsch: mehr Abrufwege",
+                "stimmt, S. 444"
+              ],
+              "marke": "offen"
+            },
+            {
+              "zellen": [
+                "Was trägt beim Lernen weiter?",
+                "eigener Antrieb, nicht Zwang",
+                "richtig",
+                "stimmt, S. 420"
+              ],
+              "marke": "sitzt"
+            },
+            {
+              "zellen": [
+                "Was tun gegen Ablenker?",
+                "vor dem Lernen aufräumen",
+                "richtig; Musik hilft dabei",
+                "stimmt nicht, S. 421: Musik lenkt ab"
+              ],
+              "marke": "offen"
+            }
+          ]
+        },
+        {
+          "titel": "Ziel, Prompt, Lernstand",
+          "eintraege": [
+            {
+              "text": "Ziel: Bis am Abend vor dem Kompetenznachweis beantworte ich je Kapitel acht Fragen ohne Unterlage, sechs davon richtig."
+            },
+            {
+              "text": "Prompt: «Du fragst mich ab. Stoff: die acht Punkte, die ich dir nenne. Stell dazu vier Fragen: eine Frage, warten, Rückmeldung.»"
+            },
+            {
+              "marke": "sitzt",
+              "text": "Verteilt lernen; eigener Antrieb trägt laut Lehrmittel weiter"
+            },
+            {
+              "marke": "offen",
+              "text": "Wirkung der Eingangskanäle; Umgang mit Ablenkern – erkennen und beseitigen"
+            },
+            {
+              "text": "Nächster Schritt: die zwei offenen Punkte in die Lernkartei, morgen neue Runde; dann dieselbe Runde mit dem ersten Kapitel."
+            },
+            {
+              "text": "Mein Umgang mit dem Werkzeug: Es fragt, ich antworte; jede Rückmeldung prüfe ich an der Unterlage – auch bei jedem neuen Stoff."
+            },
+            {
+              "text": "Grenze: Vier Fragen zeigen nur einen Ausschnitt; was nicht gefragt wurde, ist nicht geprüft."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Begriffe aus Planung und Lernen fehlen oder sind falsch verwendet.",
+        "Einzelne Begriffe sind richtig verwendet, andere ungenau oder verwechselt.",
+        "Begriffe sind korrekt und zur Situation passend verwendet; Aussagen sind geprüft.",
+        "Begriffe sind korrekt und eigenständig verknüpft; die Grenzen eines Verfahrens werden genannt."
+      ],
+      "indikator_produkt": "Jede Zeile nennt in «Geprüft» die Seite oder den Absatz, an dem sie geprüft ist."
+    },
+    {
+      "kn_kriterium": "Technologisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Nicht erkennbar, wofür ein digitales Werkzeug beim Planen oder Lernen taugt.",
+        "Nutzen oder Grenze des Werkzeugs teilweise erkannt; sein Ergebnis wird ungeprüft übernommen.",
+        "Das Werkzeug ist gezielt eingesetzt: Es stützt die eigene Arbeit, sein Ergebnis ist geprüft.",
+        "Der Umgang mit dem Werkzeug wird auf einen neuen Fall übertragen und begründet."
+      ],
+      "indikator_produkt": "Der Übe-Prompt lässt das Werkzeug fragen und warten; keine Rückmeldung bleibt ungeprüft."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt ein ausgefülltes Protokoll an einem anderen Stoff; die Satzanfänge neben den Leitfragen und die Karte «Übe-Prompt bauen» helfen beim Einstieg.",
+    "scaffold_100": "Führen Sie eine zweite Runde mit vier neuen Fragen zu den acht Punkten. Was sitzt jetzt, was noch nicht? Ergänzen Sie Ihre Lernstand-Notiz."
+  },
+  "methoden": [
+    {
+      "ref": "lm-20-6-lernstrategien",
+      "fuer": "für die Wahl, wie Sie den Stoff verarbeiten",
+      "tun": "Wählen Sie für die zwei Kapitel aus der Situation eine Strategie zum Verarbeiten (in eigenen Worten wiederholen, jemandem erklären). Was im Probelauf offen bleibt, kommt in Ihre Lernkartei."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-uebe-prompt-bauen",
+      "fuer": "für den Übe-Prompt der Abfragerunde",
+      "tun": "Nennen Sie im Prompt die acht Punkte: vier Lernstrategien (LF1), vier Kernaussagen (LF3). Verlangen Sie daraus vier Fragen. Geben Sie nichts Persönliches ein."
+    },
+    {
+      "ref": "lm-17-1-sq3r",
+      "fuer": "für das Lesen in fünf Schritten am Text, den S. 3 nennt",
+      "tun": "Üben Sie am Text, den S. 3 nennt: Überblick, Frage aus LF3 als Lesefrage, lesen und markieren, Kernaussage ins Raster; Schritt fünf ist der Probelauf. Für die zwei Kapitel planen Sie in LF2."
+    }
+  ],
+  "mindmap_zentrum": "Mehr Zeit oder die Zeit besser nutzen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie bleibt der Stoff?",
+      "punkte": [
+        "Lernstrategie",
+        "Eingangskanal",
+        "verteilt lernen",
+        "nur Verstandenes lernen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie gehe ich vor?",
+      "punkte": [
+        "Lernziel (SMART)",
+        "Lesen in fünf Schritten"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie prüfe ich, was sitzt?",
+      "punkte": [
+        "abfragen",
+        "Übe-Prompt",
+        "Lernkartei"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Kann ich, wonach im Probelauf gefragt wurde, ohne Unterlage erklären – zeigt das «Meine Antwort»?",
+      "Habe ich in LF4 entschieden, wofür ich das KI-Werkzeug nehme und wofür nicht?"
+    ],
+    "mitnahme": [
+      "Meine vier Kernaussagen in eigenen Worten",
+      "Mein Übe-Prompt zum Abfragen",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Lernstrategie",
+          "nach": "Eingangskanal",
+          "text": "nutzt mehrere"
+        },
+        {
+          "von": "Lesen in fünf Schritten",
+          "nach": "nur Verstandenes lernen",
+          "text": "führt zu"
+        },
+        {
+          "von": "verteilt lernen",
+          "nach": "Lernziel (SMART)",
+          "text": "teilt den Weg zum"
+        },
+        {
+          "von": "Lernziel (SMART)",
+          "nach": "abfragen",
+          "text": "wird messbar durch"
+        },
+        {
+          "von": "Übe-Prompt",
+          "nach": "abfragen",
+          "text": "lässt das Werkzeug"
+        },
+        {
+          "von": "abfragen",
+          "nach": "Lernkartei",
+          "text": "zeigt, was hineingehört"
+        },
+        {
+          "von": "nur Verstandenes lernen",
+          "nach": "gilt auch bei …",
+          "text": "gilt für alles, was ich erklären muss"
+        }
+      ],
+      "transfer": "ein neuer Arbeitsablauf im Lehrbetrieb, Vokabeln vor einer Reise, die Bedienung eines neuen Geräts",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Motivation von innen",
+          "Motivationsstörung"
+        ],
+        "mit_medien": [
+          "Lerneffekt",
+          "KI-Zusammenfassung"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn die vier Zeilen des Probelaufs als «sitzt» markiert sind; sonst nennt die Lernstand-Notiz, was offen ist und was als Nächstes folgt (siehe Lösungsbild).",
+        "Ja – etwa: zum Abfragen nach der eigenen Arbeit, nicht anstelle der eigenen Arbeit (Fallüberlegung). Ob die fertige Zusammenfassung für einen Teil des Stoffs genügt, begründet LF4; beide Beispielantworten dort sind möglich."
+      ],
+      "mitnahme": [
+        "Die vier Sätze aus dem Raster von S. 3, je mit Seite oder Absatz (siehe Lösung zu LF3).",
+        "Rolle: abfragen. Regel: eine Frage, dann warten. Rückmeldung nach jeder Antwort – mit den acht Punkten im Prompt.",
+        "Zum Beispiel: Wie prüfe ich eine Rückmeldung, wenn die Stelle nicht in meiner Unterlage steht?"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: vier Lernstrategien, je mit Wirkung",
+        "LF2: Lernziel in einem Satz, fünf Leseschritte geplant",
+        "LF4: Entscheid, wofür das KI-Werkzeug dient und wofür nicht"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle: vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Abfrageprotokoll",
+      "vollstaendig_wenn": [
+        "Lernziel in einem Satz und Übe-Prompt",
+        "Vier Zeilen, jede in «Geprüft» mit Seite oder Absatz",
+        "Lernstand-Notiz: sitzt, noch offen, nächster Schritt"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Lernstrategien klären (LF1), Lernziel und Leseplan (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Text, den S. 3 nennt, in fünf Schritten lesen; Raster und Befund (LF3); LF4",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Übe-Prompt bauen, Probelauf der Abfragerunde führen und prüfen, Lernstand",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich bis zu einem Termin etwas können – und woran merke ich dort, ob ich es wirklich kann oder nur wiedererkenne?",
+    "ziel": "Wirksam lernt, wer den Stoff selbst verarbeitet und prüft, ob er ihn ohne Hilfe erklären kann — Werkzeuge und andere Menschen helfen dabei, nehmen es einem aber nicht ab."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Stoff selbst verarbeiten und sich abfragen lassen: Was ich ohne Unterlage erklären kann, sitzt.",
+    "lehrmittel_anker": "Kap. 20.6 S. 444 (Lernstrategien); Kap. 17.1 S. 380 (Lesen in fünf Schritten); Kap. 20.3 S. 438 (SMART-Kriterien); Kap. 18.4 S. 420-421 (Motivation, Störungen)",
+    "kn_aktivierung": "Im Fall des KN schickt eine Kollegin eine Kurzfassung des Regelhefts, die ein KI-Werkzeug erstellt hat. Verlangt ist, was LF4 und das Abfrageprotokoll üben: entscheiden, was gründlich gelernt wird, wofür das Werkzeug dient und wie sein Ergebnis geprüft wird.",
+    "transfer_check": "Kann die/der Lernende an einem neuen Stoff sagen, was sie/er selbst verarbeitet, wofür ein Werkzeug hilft und wie sie/er dessen Ergebnis prüft?"
+  },
+  "sk_anker": [
+    {
+      "sk": 4,
+      "wo": "leitfragen[2] (zweite Strategie, in beiden Fassungen des Hefts) — das gefüllte Raster mit einer Lernpartnerin oder einem Lernpartner abgleichen und einander je eine Aussage erklären (Kap. 20.6, S. 444)"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[3] — begründen, welchen Teil des Stoffs ich gründlich verarbeite und wofür ich das KI-Werkzeug einsetze"
+    },
+    {
+      "sk": 2,
+      "wo": "leitfragen[1] + handlungsprodukt.schritte[4] + Produkt — Lernziel setzen, Lernstand nach der Abfragerunde festhalten, nächsten Schritt festlegen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 18.4 | S. 420-421",
+          "text": "Was treibt laut Kap. 18.4 beim Lernen an, und was stört? Werten Sie Ihr Raster aus und halten Sie in zwei bis drei Sätzen fest, was Sie daraus für Ihre Vorbereitung ableiten.",
+          "liefert": "vier Kernaussagen in eigenen Worten",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 18.4 | S. 420-421",
+            "auftrag": "Lesen Sie Kap. 18.4, S. 420–421 in fünf Schritten. Suchen Sie drei weitere Aussagen dazu, was beim Lernen antreibt und was stört. Die erste Zeile ist ein Beispiel. Hinten je ein Begriff aus LF1 oder dem Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 420, Anstrengung",
+              "Stoff aktiv aneignen",
+              "Eroberer statt Opfer",
+              "Eingangskanal"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Gleichen Sie Ihr Raster zu zweit ab; erklären Sie einander je eine Aussage ohne Text."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 18.4 treibt beim Lernen an, dass …»",
+              "«Gestört werde ich, wenn …»",
+              "«Für meine Vorbereitung heisst das: …»"
+            ],
+            "produkt": "Ihre vier Kernaussagen gehören zu den acht Punkten des Probelaufs (S. 7): Sie kommen in den Übe-Prompt."
+          },
+          "loesung": {
+            "kern": "Antrieb von innen, Teilziele, Ablenker beseitigen",
+            "quelle_ref": "Kap. 18.4 | S. 420-421",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Antrieb: Eigener Antrieb (Neugier, Interesse, Anerkennung) trägt laut Lehrmittel weiter als Druck von aussen (S. 420); Ziele in kleine Teilziele teilen (S. 421). Störung: Ablenker erkennen und beseitigen, Lernen von anderen Aufgaben trennen (S. 421).",
+                "quelle": "Kap. 18.4, S. 420-421"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Aufgaben, die zu schaffen sind und doch fordern (S. 420); Erfolge schaffen, sich belohnen; bei Ärger zuerst zur Ruhe kommen (S. 421).",
+                "quelle": "Kap. 18.4, S. 420-421"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Aktiv aneignen → Eingangskanal oder nur Verstandenes lernen; Teilziele → Lernziel (SMART) oder verteilt lernen; Ablenker → Lernstrategie (S. 444: Lernzeiten ohne Störung). Die Zuordnung ist Deutung der Lernenden.",
+                "quelle": "Kap. 20.6, S. 444"
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet je eine Aussage zu Antrieb und Störung mit einer Folgerung für die eigene Vorbereitung. Die Folgerung ist eigene Ableitung, sie steht nicht im Abschnitt."
+              },
+              {
+                "label": "Hinweis",
+                "text": "Dass der eigene Antrieb tragfähiger sei, nennt das Lehrmittel als erwiesen, ohne Beleg – es gilt als Aussage des Lehrmittels.",
+                "quelle": "Kap. 18.4, S. 420"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 420, Anstrengung",
+                "Stoff aktiv aneignen",
+                "Eroberer statt Opfer",
+                "Eingangskanal"
+              ],
+              [
+                "S. 420, eigener Antrieb",
+                "Motivation von innen trägt laut Lehrmittel weiter",
+                "Neugier, Interesse, Anerkennung",
+                "Lernstrategie"
+              ],
+              [
+                "S. 421, Tipps",
+                "Ziel in kleine Teilziele teilen",
+                "kleines, konkretes Ziel",
+                "Lernziel (SMART)"
+              ],
+              [
+                "S. 421, nach den Tipps",
+                "Motivationsstörung erkennen und beseitigen",
+                "Musik, TV; Hunger, etwas suchen",
+                "Lernstrategie"
+              ]
+            ],
+            "befund": "Laut Lehrmittel trägt mich der eigene Antrieb weiter als Druck von aussen, und kleine Teilziele helfen mir dranzubleiben. Gestört werde ich durch offene und versteckte Ablenker; die räume ich weg, bevor ich lerne. Für meine Vorbereitung heisst das: Ich teile die zwei Kapitel in kleine Ziele und arbeite aktiv am Stoff, statt ihn nur zu lesen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.6 · selbst verarbeiten ↔ Zusammenfassung durchgehen",
+          "pol_typ": "position_gegenposition",
+          "text": "Zusammenfassung durchgehen oder selbst verarbeiten (Kap. 17.1, Kap. 20.6)? Entscheiden Sie getrennt für das, was Sie beim Abfragen wussten und was nicht. Wofür das KI-Werkzeug – und was spricht gegen Ihren Entscheid?",
+          "liefert": "Entscheid zum Einsatz des Werkzeugs",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Antworten Sie auf Ihren Einwand: Bleiben Sie bei Ihrer Wahl, oder ändern Sie etwas?"
+            ],
+            "satzanfaenge": [
+              "«Für die fertige Zusammenfassung spricht, dass …»",
+              "«Für das eigene Verarbeiten spricht, dass …»",
+              "«Ich entscheide: Was ich wusste, …; was ich nicht wusste, …»"
+            ],
+            "produkt": "Ihr Entscheid sagt, wofür Sie das KI-Werkzeug nehmen; er bestimmt den nächsten Schritt in der Lernstand-Notiz."
+          },
+          "loesung": {
+            "kern": "Selbst verarbeiten ↔ Zusammenfassung, Entscheid je Teil",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Beide Wege sind mit einem Grund genannt: die Zeit bis zum Termin (Fall) und die Wirkung des eigenen Verarbeitens (Kap. 17.1, S. 380; Kap. 20.6, S. 444).",
+                "Der Entscheid sagt für beide Teile des Stoffs – beim Abfragen gewusst, nicht gewusst –, ob gründlich verarbeitet oder nur durchgegangen wird.",
+                "Ein Einwand gegen die eigene Wahl ist genannt und beantwortet; es steht da, was der Entscheid kostet.",
+                "Wofür das KI-Werkzeug dient, ist als eigene Überlegung zum Fall begründet (Fallüberlegung, nicht aus dem Lehrmittel)."
+              ],
+              "beispiel_pol_1": "Ich verarbeite den ganzen Stoff selbst: in fünf Schritten lesen und die Hauptgedanken in eigenen Worten festhalten (Kap. 17.1, S. 380). Das Abfragen durch meinen Bruder hat gezeigt, dass Durchlesen nicht reicht. Einwand: Zehn Tage sind knapp. Darum gehe ich Abschnitte, die ich schon erklären kann, nur noch durch. Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Zusammenfassen – das ist meine Überlegung zum Fall; jede Rückmeldung prüfe ich an meiner Unterlage. So halte ich es auch im Lehrbetrieb, wenn ich einen neuen Ablauf lernen muss: erst selbst erarbeiten, dann abfragen lassen. Das kostet mich Abende, die ich sonst frei hätte.",
+              "beispiel_pol_2": "Was ich beim Abfragen wusste, gehe ich mit der Zusammenfassung der Kollegin durch und spare Abende. Einwand: Ich weiss nicht, ob sie vollständig ist. Darum verarbeite ich das, was ich nicht wusste, selbst (Kap. 20.6, S. 444: nur Verstandenes lernen) und vergleiche die Zusammenfassung Abschnitt für Abschnitt mit dem Lehrmittel. Annahme: Was ich wusste, sitzt wirklich – das prüfe ich mit einer Abfragerunde am KI-Werkzeug (Fallüberlegung). Der Preis: Lücken dort entdecke ich vielleicht spät. Bei jeder fertigen Unterlage, die ich künftig bekomme, gehe ich gleich vor: erst prüfen, dann lernen.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Einwand («Selbst lernen ist immer besser», «Die Zusammenfassung reicht») oder einer, der Aussagen über das KI-Werkzeug als Wissen aus dem Lehrmittel ausgibt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Zusammenfassung durchgehen",
+          "Stoff selbst verarbeiten",
+          "Mein Entscheid"
+        ],
+        "hinweis": "Zwei Zeilen genügen: je ein Grund pro Weg und der Teil des Stoffs, für den er gilt (gewusst, nicht gewusst). Dritte Spalte: was Sie tun.",
+        "loesung_zeilen": [
+          [
+            "geht schnell: zwei Seiten statt vierzehn (Fall)",
+            "Hauptgedanken selbst wiederholen hilft behalten (Kap. 17.1, S. 380)",
+            "Was ich nicht wusste, verarbeite ich selbst"
+          ],
+          [
+            "genügt für Stoff, den ich schon erklären kann (Fallüberlegung)",
+            "nur Verstandenes lässt sich wiederfinden (Kap. 20.6, S. 444)",
+            "Was ich wusste, gehe ich durch und lasse mich abfragen"
+          ],
+          [
+            "ob sie vollständig ist, weiss ich nicht (Fallüberlegung, nicht aus dem Lehrmittel)",
+            "braucht mehr Abende; zehn Tage sind knapp (Fall)",
+            "KI-Werkzeug zum Abfragen; Rückmeldungen prüfe ich an der Unterlage"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 18.4 (S. 3)",
+        "beispiel": [
+          "S. 12, Absatz 2 · Veloweg am Fluss wird verlängert · «um zwei Kilometer» (Beispielwert) · → hier ein Begriff aus LF1 oder dem Glossar"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt ein ausgefülltes Protokoll an einem anderen Stoff; im Raster auf S. 3 ist die erste Zeile als Beispiel ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Wofür taugt ein KI-Werkzeug beim Lernen laut der Quelle, wofür nicht? Werten Sie Ihr Raster aus und halten Sie in zwei bis drei Sätzen fest, was Sie daraus für Ihre Vorbereitung ableiten.",
+          "liefert": "vier Kernaussagen in eigenen Worten",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-121b-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie erst das Raster in Stichworten, dann schreiben Sie den Befund in Sätzen.",
+              "Gleichen Sie Ihr Raster zu zweit ab; erklären Sie einander je eine Aussage ohne Text."
+            ],
+            "satzanfaenge": [
+              "«Laut der Quelle (Abs. …) taugt das Werkzeug für …»",
+              "«Nichts bringt es laut der Quelle, wenn …»",
+              "«Für meine Vorbereitung heisst das: …»"
+            ],
+            "produkt": "Ihre vier Kernaussagen gehören zu den acht Punkten des Probelaufs (S. 7): Sie kommen in den Übe-Prompt."
+          },
+          "loesung": {
+            "kern": "Erst selbst, dann vergleichen; nicht lösen lassen",
+            "quelle_ref": "q-121b-pflicht",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Taugt: erst selbst zusammenfassen, dann mit der KI-Zusammenfassung vergleichen (Abs. 6). Taugt nicht: Lernaufgabe vom Werkzeug lösen lassen – kein Lerneffekt (Abs. 8, Vergleich mit dem Training). Wer KI beim Lernen nutzt, muss das eigene Lernen steuern können (Abs. 8).",
+                "quelle": "Quelle, Abs. 6 und 8"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Text überarbeiten, Lösungsweg überprüfen lassen (Abs. 6); Wirkung von KI auf den Lerneffekt bei Kindern und Jugendlichen laut Quelle noch wenig bekannt (Abs. 8, Stand 2024).",
+                "quelle": "Quelle, Abs. 6 und 8"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Selbst zusammenfassen → Eingangskanal; kein Lerneffekt → nur Verstandenes lernen; Lernen steuern → Lernstrategie (Deutung der Lernenden).",
+                "quelle": "Kap. 20.6, S. 444"
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet «taugt» und «taugt nicht» mit einer Folgerung für die Vorbereitung; das Abfragen ist als eigene Folgerung erkennbar."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Helfer wie ein Rechner, keine Quelle für Fakten (Abs. 11); soll Wege zeigen, nicht die Lösung; irrt beim Rechnen und bei Fakten; am Schluss selbst können (Abs. 12); nicht alles stimmt (Abs. 9).",
+                "quelle": "Ersatzquelle, Abs. 9–12"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 6",
+                "erst selbst zusammenfassen, dann mit der KI-Zusammenfassung vergleichen",
+                "schrittweise fällt der kritische Blick leichter",
+                "Eingangskanal"
+              ],
+              [
+                "Abs. 8",
+                "wer KI beim Lernen nutzt, muss das eigene Lernen steuern können",
+                "verlangt eigene Strategien",
+                "Lernstrategie"
+              ],
+              [
+                "Abs. 8",
+                "Lernaufgabe vom Werkzeug lösen lassen: kein Lerneffekt",
+                "Vergleich: Training lässt sich nicht abgeben",
+                "nur Verstandenes lernen"
+              ],
+              [
+                "Abs. 8",
+                "Wirkung von KI auf den Lerneffekt bei Kindern und Jugendlichen noch wenig bekannt",
+                "Aussage eines Dozenten, Stand 2024",
+                "Lernstrategie"
+              ]
+            ],
+            "befund": "Laut der Quelle kann ein KI-Werkzeug helfen, wenn ich zuerst selbst arbeite und danach vergleiche oder überprüfen lasse (Abs. 6; Vorschlag eines Dozenten, Stand 2024). Lasse ich es die Lernaufgabe lösen, bleibt laut der Quelle der Lerneffekt aus (Abs. 8). Für meine Vorbereitung heisst das: Ich fasse selbst zusammen und nehme das Werkzeug erst danach; dass ich mich auch abfragen lasse, folgere ich selbst."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.6 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 20.6, S. 444 sagt, wie Stoff bleibt; die Quelle (Abs. 6, 8), wann ein KI-Werkzeug hilft. Entscheiden Sie getrennt für das, was Sie beim Abfragen wussten und was nicht – und wofür das Werkzeug dient.",
+          "liefert": "Entscheid zum Einsatz des Werkzeugs",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Notieren Sie zuerst je eine Fundstelle: Kap. 20.6, S. 444 und einen Absatz der Quelle.",
+              "Überlegen Sie für beide Teile: Was ändert sich, wenn Sie etwas schon erklären können?"
+            ],
+            "satzanfaenge": [
+              "«Kap. 20.6 sagt zum Verarbeiten, dass …»",
+              "«Die Quelle zeigt in Abs. …, dass …»",
+              "«Ich entscheide: Was ich wusste, …; was ich nicht wusste, …»"
+            ],
+            "produkt": "Ihr Entscheid sagt, wofür Sie das KI-Werkzeug nehmen; er bestimmt den nächsten Schritt in der Lernstand-Notiz."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Kap. 20.6 ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Der Pol des Lehrmittels steht mit Fundstelle da: nur Verstandenes lernen; in eigenen Worten wiederholen und jemandem erklären (Kap. 20.6, S. 444).",
+                "Der Pol der Quelle steht mit Absatz da: erst selbst, dann vergleichen (Abs. 6); kein Lerneffekt, wenn das Werkzeug die Aufgabe löst (Abs. 8).",
+                "Der Entscheid sagt für beide Teile des Stoffs (beim Abfragen gewusst, nicht gewusst), was damit geschieht, und wofür das Werkzeug dient und wofür nicht.",
+                "Es steht da, was der Entscheid kostet (Zeit oder das Risiko einer Lücke)."
+              ],
+              "beispiel_pol_1": "Ich verarbeite den ganzen Stoff selbst und fasse ihn in eigenen Worten zusammen, denn nur Verstandenes finde ich wieder (Kap. 20.6, S. 444). Die Zusammenfassung der Kollegin vergleiche ich erst danach mit meiner (Quelle, Abs. 6). Das KI-Werkzeug nehme ich zum Abfragen, nicht zum Lösen – sonst bleibt laut der Quelle der Lerneffekt aus (Abs. 8); jede Rückmeldung prüfe ich an meiner Unterlage. Das kostet mich mehrere Abende. So lerne ich auch im Lehrbetrieb einen neuen Ablauf: erst selbst erarbeiten, dann abfragen lassen.",
+              "beispiel_pol_2": "Was ich beim Abfragen wusste, gehe ich mit der Zusammenfassung der Kollegin durch und spare Abende; den Rest verarbeite ich selbst, weil ich dort keine Antwort wusste. Kap. 20.6, S. 444 nennt das Wiederholen in eigenen Worten; ich folgere daraus, dass eine fremde Zusammenfassung es nicht ersetzt – darum lasse ich mich auch zum ersten Teil abfragen. Das Werkzeug nehme ich erst nach der eigenen Arbeit zum Vergleichen (Quelle, Abs. 6). Annahme: Was ich wusste, sitzt wirklich. Der Preis: Lücken dort entdecke ich vielleicht spät. Künftig halte ich es mit jeder fertigen Unterlage so: erst prüfen, dann lernen.",
+              "nicht_tragfaehig": "Ein Entscheid, der nur einen Pol nennt («KI ist verboten», «Die Zusammenfassung reicht») oder weder das Lehrmittel noch einen Absatz der Quelle anführt."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-121b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Quelle (QR-Seite) in fünf Schritten. Vier Zeilen dazu, wofür ein KI-Werkzeug beim Lernen taugt und wofür nicht. Vorn der Absatz, dann Kernaussage und Beleg, hinten ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-121b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was erzeugt generative KI, und warum muss ich ihre Antworten prüfen?",
+          "erwartung": "Generative KI erstellt selbst Texte, Bilder, Videos oder Musik; Chatbots antworten so, dass es menschlich wirkt (Abs. 1). Prüfen muss ich, weil solche Werkzeuge Fehler machen und Inhalte erfinden (Abs. 6) und Erfundenes als wahr hinstellen, etwa Fakten oder Zitate (Abs. 12). Eingaben werden unter Umständen weiterverwendet (Abs. 6). Folgerung: jede Rückmeldung an der Unterlage prüfen, nichts Persönliches eingeben."
+        },
+        {
+          "ref": "q-121b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum lässt sich das Lernen laut dem Beitrag nicht auslagern, und was folgt daraus für KI-Antworten?",
+          "erwartung": "Lernen baut laut dem Beitrag die Strukturen im Gehirn erst auf und lässt sich darum nicht abgeben (21:56–22:12); erst danach kann man Ergebnisse kritisch hinterfragen (22:25–22:33). Klassen übernahmen die Ausgabe der KI oft ungeprüft (21:31–21:49). Folgerung: KI-Antworten prüfen und erst nutzen, wenn ich den Stoff selbst erarbeitet habe. Die Aussagen betreffen Schulkinder. (Stand: nur Untertitel gelesen, nicht gesichtet.)"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Absatz 4 · Hallenbad Musterwil öffnet früher · «ab 6 Uhr» (Beispielwert) · → hier ein Begriff aus LF1 oder dem Glossar"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt ein ausgefülltes Protokoll an einem anderen Stoff; die erste Rasterzeile zur Quelle können Sie zu zweit oder in der Klasse gemeinsam erarbeiten."
+    }
+  }
+}

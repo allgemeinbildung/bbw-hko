@@ -1,0 +1,794 @@
+{
+  "id": "{{ORDNER}}_hf_{{A|B}}",
+  "template": "heft_8page_v42",
+  "modul": "{{X.Y — Nummer des Lebensbezugs}}",
+  "modul_titel": "{{THEMA-TITEL aus dem Datensatz — KURZFORM des Lebensbezugs; in A, B und set.json gleich}}",
+  "lehrgang": "{{EFZ_3J|EFZ_4J — kanonisch, in A und B gleich}}",
+  "buchstabe": "{{A|B}}",
+  "sit_farbe": "{{Heft A: #C0392B · Heft B: #2471A3}}",
+  "sit_farbe_light": "{{Heft A: #FADBD8 · Heft B: #D6EAF8}}",
+  "sit_farbe_mid": "{{Heft A: #E74C3C · Heft B: #3498DB}}",
+  "titel": "{{TITEL des Hefts — ≤ 60 Zeichen}}",
+  "herausforderung": {
+    "buchstabe": "{{A|B}}",
+    "label": "{{= prinzip.herausforderungen.<A|B>.herausforderung}}"
+  },
+  "prinzip_ref": "{{ORDNER}}_prinzip",
+  "nrlp": {
+    "nr": "{{X.Y.Z — erste Kompetenz des Hefts}}",
+    "nr_primary": [
+      "{{X.Y.Z — je Kompetenz des Hefts ein Eintrag, erster = nrlp.nr, höchstens zwei}}"
+    ],
+    "lebensbezug": "{{X.Y}}",
+    "themen": [
+      "{{T<Nummer des Themas>}}"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "{{ASPEKT wörtlich aus kompetenzen[].gesellschaftliche_inhalte[].aspekt}}",
+        "iteration": "{{R-STUFE aus zirkularitaet.gesellschaftsinhalte[].wiederholungen für dieses Thema}}"
+      }
+    ],
+    "sprachmodi": [
+      "{{MODUS wörtlich aus kompetenzen[].sprachmodi[].modus der Kompetenzen dieses Hefts — nie von der Themen-Ebene}}"
+    ],
+    "sprachmodus_ids": [
+      "{{SM1–SM9 gemäss references/sprachmodus-ids.md — gleiche Reihenfolge und Länge wie sprachmodi}}"
+    ],
+    "sk": [
+      "{{SK-NUMMER als Zahl 1–12 — je Eintrag ein sk_anker}}"
+    ],
+    "kompetenz_id": "{{= nrlp.nr}}",
+    "lebensbezug_id": "{{= nrlp.lebensbezug}}",
+    "kompetenz_text": "{{KOMPETENZ-SATZ von nrlp.nr, zeichengenau aus dem Datensatz des Lehrgangs}}",
+    "lebensbezug_text": "{{LEBENSBEZUG-SATZ, zeichengenau aus dem Datensatz des Lehrgangs}}"
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, {{N}}. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "{{SITUATION in Ich-Form, voraussetzungsfrei, ohne Begriff des KN-Falls — 650–900 Zeichen}}",
+  "zahlen_tabelle": [
+    {
+      "label": "{{ZAHL der Situation, Bezeichnung — ≤ 45 Zeichen; höchstens 4 Zeilen}}",
+      "wert": "{{WERT — ≤ 15 Zeichen}}"
+    }
+  ],
+  "leitfrage": "{{LEITFRAGE des Hefts in Ich-Form — ≤ 140 Zeichen}}",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "{{SPANNUNGSFELD in der Form X vs. Y, ein Eintrag aus prinzip.mehrdeutigkeits_architektur.trade_off_raum — ≤ 70 Zeichen}}",
+    "hint": "{{HINWEIS, der beide Pole konkret benennt, Sie-Form — ≤ 160 Zeichen}}"
+  },
+  "quellen_anker": [
+    {
+      "ref": "{{Kap. X.Y — Lehrmittelkapitel}}",
+      "titel": "{{KAPITELTITEL}}",
+      "unterueberschrift": "{{WAS auf den Seiten steht, eigene Worte}}",
+      "seiten": "{{Seite aa-bb — am Kapiteltext geprüft; höchstens 3 Einträge, gedruckte Zeile aus Titel · Unterüberschrift · Ref · Seiten ≤ 90 Zeichen}}",
+      "fuer_leitfrage": [
+        "{{LF-NUMMER als Zahl}}"
+      ]
+    }
+  ],
+  "leitfragen_intro": "{{PFAD: was LF1 bis LF4 je zum Produkt beitragen, Sie-Form, ohne Woche und Zeit — ≤ 300 Zeichen}}",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "{{Kap. X.Y | S. aa-bb — am Kapiteltext geprüft}}",
+      "text": "{{LF1: Begriffe und Kategorien, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
+      "liefert": "{{BAUSTEIN des Produkts, nominal, ohne Anrede — 3–7 Wörter, ≤ 50 Zeichen}}",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "{{STRATEGIE 1 — ≤ 90 Zeichen}}",
+          "{{STRATEGIE 2 — ≤ 90 Zeichen}}"
+        ],
+        "satzanfaenge": [
+          "«{{SATZANFANG 1 — mit Guillemets ≤ 60 Zeichen}}»",
+          "«{{SATZANFANG 2 — mit Guillemets ≤ 60 Zeichen; 2 bis 3 Einträge}}»"
+        ],
+        "produkt": "{{WAS aus dieser Antwort ins Produkt geht — ≤ 110 Zeichen}}"
+      },
+      "loesung": {
+        "kern": "{{KERN der Lösung — ≤ 55 Zeichen}}",
+        "zeilen": [
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG in eigenen Worten; 3 bis 6 Zeilen, alle text zusammen ≤ 900 Zeichen}}",
+            "quelle": "{{Kap. X.Y, S. aa — ≤ 30 Zeichen}}"
+          },
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG}}",
+            "quelle": "{{Kap. X.Y, S. aa — ≤ 30 Zeichen}}"
+          },
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG}}",
+            "quelle": "{{Kap. X.Y, S. aa — ≤ 30 Zeichen}}"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "{{Kap. X.Y | S. aa-bb · eigener Fall — bei zwei Kapiteln: Kap. X.Y | S. NN · Kap. A.B | S. NN · eigener Fall}}",
+      "text": "{{LF2: auf den eigenen Fall anwenden, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
+      "liefert": "{{BAUSTEIN des Produkts, nominal, ohne Anrede — 3–7 Wörter, ≤ 50 Zeichen}}",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "{{STRATEGIE 1 — ≤ 90 Zeichen}}",
+          "{{STRATEGIE 2 — ≤ 90 Zeichen}}"
+        ],
+        "satzanfaenge": [
+          "«{{SATZANFANG 1 — mit Guillemets ≤ 60 Zeichen}}»",
+          "«{{SATZANFANG 2 — mit Guillemets ≤ 60 Zeichen; 2 bis 3 Einträge}}»"
+        ],
+        "produkt": "{{WAS aus dieser Antwort ins Produkt geht — ≤ 110 Zeichen}}"
+      },
+      "loesung": {
+        "kern": "{{KERN der Lösung — ≤ 55 Zeichen}}",
+        "zeilen": [
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{WAS eine vollständige Antwort enthält; 3 bis 6 Zeilen, alle text zusammen ≤ 900 Zeichen; quelle nur, wo eine Fundstelle gilt}}"
+          },
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG}}"
+          },
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG}}"
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "{{FORMAT des Produkts in einer Zeile, = prinzip.herausforderungen.<A|B>.handlungsprodukt_typ oder dessen Kurzform}}",
+    "titel": "{{TITEL des Produkts — ≤ 60 Zeichen}}",
+    "format_detail": "{{WAS das Produkt ist und woraus es besteht, Sie-Form}}",
+    "beschreibung": "{{WAS ich mit dem Produkt tue, Ich-Form — ≤ 200 Zeichen}}",
+    "schritte": [
+      {
+        "label": "01 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS, nennt LF1 wörtlich — ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "02 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS, nennt LF2 wörtlich — ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "03 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS, nennt LF3 wörtlich — ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "04 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS, nennt LF4 wörtlich — ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "05 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{HINWEIS: Prüfschritt mit den zwei Feedback-Kriterien oder letzter Produktschritt — ≤ 140 Zeichen}}"
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "{{ABGABE — ≤ 80 Zeichen; höchstens 3 Einträge}}"
+    ],
+    "beispielbild": {
+      "titel": "{{Beispiel an einem anderen Fall: FALL, der weder im Heft noch im Auftrag noch im KN vorkommt — ≤ 90 Zeichen}}",
+      "legende": [
+        {
+          "key": "{{KENNWORT der Markierung: frei wählbar, kurz, in Kleinbuchstaben}}",
+          "text": "{{BEDEUTUNG der Markierung — ≤ 28 Zeichen; höchstens 3 Einträge}}"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "{{BLOCK 1 — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "marke": "{{ein key aus legende, sonst Schlüssel weglassen}}",
+              "text": "{{EINTRAG wie von Hand geschrieben — ≤ 105 Zeichen; höchstens 5 Einträge je Block}}",
+              "notiz": "{{RANDNOTIZ, sonst Schlüssel weglassen — ≤ 60 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 2 — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 105 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 3 — ≤ 32 Zeichen; 2 bis 3 Blöcke}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 105 Zeichen}}"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "{{Mögliche Lösung zum Fall: FALL des Hefts in Kurzform — ≤ 90 Zeichen}}",
+      "hinweis": "{{HINWEIS an die Lehrperson: eine mögliche Lösung, keine Vorlage; wann zeigen}}",
+      "legende": [
+        {
+          "key": "{{dieselben Schlüssel wie im beispielbild}}",
+          "text": "{{BEDEUTUNG — ≤ 28 Zeichen}}"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "{{BLOCK 1 wie im beispielbild — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "marke": "{{ein key aus legende, sonst Schlüssel weglassen}}",
+              "text": "{{EINTRAG zum Fall des Hefts — ≤ 130 Zeichen; höchstens 7 Einträge je Block}}",
+              "notiz": "{{RANDNOTIZ, sonst Schlüssel weglassen — ≤ 60 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 2 wie im beispielbild — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 130 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 3 wie im beispielbild — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 130 Zeichen}}"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "{{NAME zeichengenau aus kn.rubrik_shared.kriterien, eines mit dimension SuK, gemäss prinzip.kn_kriterien_verteilung}}",
+      "dimension": "SuK",
+      "stufen": [
+        "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+      ],
+      "indikator_produkt": "{{WORAN das Kriterium an diesem Produkt zu sehen ist — ≤ 90 Zeichen}}"
+    },
+    {
+      "kn_kriterium": "{{NAME zeichengenau aus kn.rubrik_shared.kriterien, eines mit dimension Ges, gemäss prinzip.kn_kriterien_verteilung}}",
+      "dimension": "Ges",
+      "stufen": [
+        "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+      ],
+      "indikator_produkt": "{{WORAN das Kriterium an diesem Produkt zu sehen ist — ≤ 90 Zeichen}}"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "{{STÜTZE, die es im Heft wirklich gibt: Beispiel auf S. 6, Beispielzeile im Raster}}",
+    "scaffold_100": "{{PLUS-AUFGABE, Sie-Form, ohne das Wort Spur — ≤ 150 Zeichen}}"
+  },
+  "methoden": [
+    {
+      "ref": "{{ID einer Karte in src/data/methoden/}}",
+      "fuer": "{{WOFÜR in dieser Abgabe}}",
+      "tun": "{{ÜBERTRAGUNG auf diese Abgabe — nur bei Lehrmittel-Karten lm-…, sonst Schlüssel weglassen}}"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "{{ID einer Karte in src/data/methoden/}}",
+      "fuer": "{{WOFÜR in dieser Abgabe}}",
+      "tun": "{{ÜBERTRAGUNG auf diese Abgabe — nur bei Lehrmittel-Karten lm-…, sonst Schlüssel weglassen}}"
+    },
+    {
+      "ref": "{{ID einer Karte in src/data/methoden/}}",
+      "fuer": "{{WOFÜR in dieser Abgabe}}",
+      "tun": "{{ÜBERTRAGUNG auf diese Abgabe — nur bei Lehrmittel-Karten lm-…, sonst Schlüssel weglassen}}"
+    }
+  ],
+  "mindmap_zentrum": "{{= prinzip.mindmap_zentrum_kurz, in A und B identisch — ≤ 40 Zeichen}}",
+  "mindmap_aeste": [
+    {
+      "titel": "{{AST 1 — ≤ 30 Zeichen}}",
+      "punkte": [
+        "{{BEGRIFF = ein glossar[].begriff dieses Hefts ohne spur — ≤ 25 Zeichen; höchstens 5 je Ast, 10 im Heft}}"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "{{AST 2 — ≤ 30 Zeichen}}",
+      "punkte": [
+        "{{BEGRIFF — ≤ 25 Zeichen}}"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "{{AST 3 — ≤ 30 Zeichen}}",
+      "punkte": [
+        "{{BEGRIFF — ≤ 25 Zeichen}}"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "{{OFFENE FRAGE 1 der Situation als Ja/Nein-Frage in Ich-Form — ≤ 110 Zeichen}}",
+      "{{OFFENE FRAGE 2 der Situation — ≤ 110 Zeichen}}"
+    ],
+    "mitnahme": [
+      "{{ZEILE 1: was ich aus diesem Heft mitnehme, in Ich-Form — ≤ 50 Zeichen}}",
+      "{{ZEILE 2 — ≤ 50 Zeichen}}",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "{{KNOTEN aus mindmap_aeste[].punkte}}",
+          "nach": "{{KNOTEN aus mindmap_aeste[].punkte}}",
+          "text": "{{BESCHRIFTUNG der Verbindung, Verb}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "{{KNOTEN}}",
+          "text": "{{BESCHRIFTUNG}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "{{KNOTEN}}",
+          "text": "{{BESCHRIFTUNG}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "{{KNOTEN}}",
+          "text": "{{BESCHRIFTUNG}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "gilt auch bei …",
+          "text": "{{BESCHRIFTUNG der Verbindung zum Transfer-Feld}}"
+        }
+      ],
+      "transfer": "{{EINTRAG für das Feld gilt auch bei …: zwei bis drei andere Situationen, keine davon aus Auftrag oder KN}}",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "{{BEGRIFF 1 aus dem Raster dieser Spur = glossar-Eintrag mit spur ohne_medien, falls einer geführt ist}}",
+          "{{BEGRIFF 2 — genau 2 Einträge; Schlüssel nur, wenn das Heft die Spur hat}}"
+        ],
+        "mit_medien": [
+          "{{BEGRIFF 1 aus dem Raster dieser Spur = glossar-Eintrag mit spur mit_medien, falls einer geführt ist}}",
+          "{{BEGRIFF 2 — genau 2 Einträge; Schlüssel nur, wenn das Heft die Spur hat}}"
+        ]
+      },
+      "quercheck": [
+        "{{ANTWORT auf Quer-Check-Frage 1}}",
+        "{{ANTWORT auf Quer-Check-Frage 2}}"
+      ],
+      "mitnahme": [
+        "{{MÖGLICHER EINTRAG zu Zeile 1}}",
+        "{{MÖGLICHER EINTRAG zu Zeile 2}}",
+        "{{MÖGLICHER EINTRAG zu Mir noch unklar}}"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "{{WORAN LF1 als vollständig gilt — ≤ 70 Zeichen}}",
+        "{{WORAN LF2 als vollständig gilt — ≤ 70 Zeichen}}",
+        "{{WORAN LF4 als vollständig gilt, in beiden Spuren wahr — ≤ 70 Zeichen}}"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "{{RASTER mit vier Zeilen, in beiden Spuren wahr — ≤ 70 Zeichen}}",
+        "Jede Zeile hat einen Begriff aus LF1",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "{{KURZNAME des Produkts}}",
+      "vollstaendig_wenn": [
+        "{{MERKMAL 1 des fertigen Produkts — ≤ 70 Zeichen}}",
+        "{{MERKMAL 2 — ≤ 70 Zeichen}}",
+        "{{MERKMAL 3 — ≤ 70 Zeichen; höchstens 3 Punkte}}"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "{{WAS in Teil 1 geschieht, ohne Woche, Lektion, Minuten — ≤ 80 Zeichen}}",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "{{WAS in Teil 2 geschieht — ≤ 80 Zeichen}}",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "{{WAS in Teil 3 geschieht — ≤ 80 Zeichen}}",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "{{FRAGE in Ich-Form, die vom Fall wegführt}}",
+    "ziel": "{{PRINZIP dieses Hefts in einem Satz, angelehnt an prinzip.dekontextualisierungs_anker.anker_statement}}"
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "{{= set.konzept_progression[].konzept dieses Hefts}}",
+    "lehrmittel_anker": "{{Kap. X.Y S. aa-bb (Stichworte); alle Kapitel und Seiten, auf die das Heft sich stützt}}",
+    "kn_aktivierung": "{{WAS der KN aus diesem Heft verlangt — einziges Feld des Hefts, das den KN-Fall nennen darf}}",
+    "transfer_check": "{{PRÜFFRAGE: Kann die Lernende …?}}"
+  },
+  "sk_anker": [
+    {
+      "sk": "{{SK-NUMMER als Zahl, aus nrlp.sk}}",
+      "wo": "{{<Feldpfad oder Seite> — <was dort geübt wird>, z. B. leitfragen[3] + Produkt — …}}"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "{{Kap. X.Y | S. aa-bb — = raster.knoten_ref}}",
+          "text": "{{LF3: Raster auswerten und Befund in zwei bis drei Sätzen festhalten, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
+          "liefert": "{{BAUSTEIN des Produkts, in beiden Spuren gleich — 3–7 Wörter, ≤ 50 Zeichen}}",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "{{Kap. X.Y | S. aa-bb — Lehrmittel-Abschnitt, am Kapiteltext geprüft}}",
+            "auftrag": "{{LESEAUFTRAG: drei weitere Aussagen suchen, die erste Zeile ist ein Beispiel, je einen Begriff aus LF1 zuordnen — ≤ 220 Zeichen}}",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "{{FUNDSTELLE — ≤ 25 Zeichen}}",
+              "{{KERNAUSSAGE in eigenen Worten — ≤ 25 Zeichen}}",
+              "{{BELEG — ≤ 25 Zeichen}}",
+              "{{BEGRIFF aus LF1 — ≤ 25 Zeichen}}"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "{{STRATEGIE 2: wo im Abschnitt zu suchen ist — ≤ 90 Zeichen}}"
+            ],
+            "satzanfaenge": [
+              "«{{SATZANFANG 1 — mit Guillemets ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG 2 — mit Guillemets ≤ 60 Zeichen; 2 bis 3 Einträge}}»"
+            ],
+            "produkt": "{{WAS aus dem Raster ins Produkt geht — ≤ 110 Zeichen}}"
+          },
+          "loesung": {
+            "kern": "{{KERN der Lösung — ≤ 55 Zeichen}}",
+            "quelle_ref": "{{= raster.knoten_ref}}",
+            "quelle_stand": "{{JJJJ-MM-TT heute}}",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "{{AUSSAGEN mit Seite, eigene Worte; 3 bis 6 Zeilen, alle text zusammen ≤ 900 Zeichen}}",
+                "quelle": "{{Kap. X.Y — ≤ 30 Zeichen}}"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "{{WEITERE AUSSAGEN mit Seite}}",
+                "quelle": "{{Kap. X.Y — ≤ 30 Zeichen}}"
+              },
+              {
+                "label": "Begriffe",
+                "text": "{{WELCHE Zuordnungen zu LF1-Begriffen gelten}}"
+              },
+              {
+                "label": "Befund",
+                "text": "{{WAS ein tragfähiger Befund verbindet; was eigene Beobachtung der Lernenden ist}}"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "{{= raster.beispielzeile[0]}}",
+                "{{= raster.beispielzeile[1]}}",
+                "{{= raster.beispielzeile[2]}}",
+                "{{= raster.beispielzeile[3]}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{KERNAUSSAGE}}",
+                "{{BELEG}}",
+                "{{BEGRIFF aus LF1}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{KERNAUSSAGE}}",
+                "{{BELEG}}",
+                "{{BEGRIFF aus LF1}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{KERNAUSSAGE}}",
+                "{{BELEG}}",
+                "{{BEGRIFF aus LF1}}"
+              ]
+            ],
+            "befund": "{{MÖGLICHER BEFUND in zwei bis drei Sätzen, Ich-Form}}"
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "{{DIE ZWEI POLE in der Form des Pol-Typs (references/phase-5-spuren.md §6), z. B. Kap. X.Y ↔ eigener Fall · Kap. X.Y · <Position> ↔ <Gegenposition>}}",
+          "pol_typ": "{{position_gegenposition|modell_eigener_fall|recht_praxis — = prinzip.pol_typ_verteilung.<A|B>.ohne_medien, A ≠ B}}",
+          "text": "{{LF4: Spannung zwischen zwei Polen beurteilen und entscheiden, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
+          "liefert": "{{BAUSTEIN des Produkts, in beiden Spuren gleich — 3–7 Wörter, ≤ 50 Zeichen}}",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "{{STRATEGIE 2 — ≤ 90 Zeichen}}"
+            ],
+            "satzanfaenge": [
+              "«{{SATZANFANG für Pol 1 — mit Guillemets ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG für Pol 2 — mit Guillemets ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG für den Entscheid — mit Guillemets ≤ 60 Zeichen}}»"
+            ],
+            "produkt": "{{WAS aus dieser Antwort ins Produkt geht — ≤ 110 Zeichen}}"
+          },
+          "loesung": {
+            "kern": "{{Erwartungshorizont: POL ↔ POL, Entscheid — ≤ 55 Zeichen}}",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "{{MERKMAL 1 einer guten Antwort}}",
+                "{{MERKMAL 2}}",
+                "{{MERKMAL 3}}"
+              ],
+              "beispiel_pol_1": "{{BEISPIELANTWORT für den einen Entscheid, Ich-Form, erkennt die Spannung an}}",
+              "beispiel_pol_2": "{{BEISPIELANTWORT für den anderen Entscheid, Ich-Form, erkennt die Spannung an}}",
+              "nicht_tragfaehig": "{{WAS nicht genügt}}"
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "{{SPALTE 1 — ≤ 30 Zeichen}}",
+          "{{SPALTE 2 — ≤ 30 Zeichen}}",
+          "{{SPALTE 3 — ≤ 30 Zeichen; 2 bis 3 Spalten}}"
+        ],
+        "hinweis": "{{HINWEIS zum Ausfüllen — ≤ 140 Zeichen}}",
+        "loesung_zeilen": [
+          [
+            "{{MÖGLICHER EINTRAG Spalte 1}}",
+            "{{MÖGLICHER EINTRAG Spalte 2}}",
+            "{{MÖGLICHER EINTRAG Spalte 3 — je Zeile so viele Zellen wie spalten, mindestens 1 Zeile}}"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "{{für das Raster zu … (S. 3)}}",
+        "beispiel": [
+          "{{NEUTRALES BEISPIEL einer Rasterzeile, Sujet weder aus dem Heft noch aus der Quelle, im Muster der Karte}}"
+        ]
+      },
+      "scaffold_90": "{{STÜTZE dieser Spur: Beispiel auf S. 6 und die ausgefüllte Beispielzeile im Raster (S. 3)}}"
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "{{LF3: Raster zur Quelle auswerten und Befund in zwei bis drei Sätzen festhalten; erst formulieren, wenn die Quelle gelesen ist — ≤ 220 Zeichen}}",
+          "liefert": "{{BAUSTEIN des Produkts, in beiden Spuren gleich — 3–7 Wörter, ≤ 50 Zeichen}}",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "{{ID der Quelle mit rolle pflicht}}",
+            "spalten": [
+              "{{SPALTE 1 nach Typ der Quelle — ≤ 18 Zeichen}}",
+              "{{SPALTE 2 nach Typ der Quelle — ≤ 18 Zeichen}}",
+              "{{SPALTE 3 nach Typ der Quelle — ≤ 18 Zeichen}}",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "{{STRATEGIE 1 — ≤ 90 Zeichen}}",
+              "{{STRATEGIE 2 — ≤ 90 Zeichen}}"
+            ],
+            "satzanfaenge": [
+              "«{{SATZANFANG 1 — mit Guillemets ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG 2 — mit Guillemets ≤ 60 Zeichen; 2 bis 3 Einträge}}»"
+            ],
+            "produkt": "{{WAS aus dem Raster ins Produkt geht — ≤ 110 Zeichen}}"
+          },
+          "loesung": {
+            "kern": "{{KERN der Lösung — ≤ 55 Zeichen}}",
+            "quelle_ref": "{{= raster.quelle_ref}}",
+            "quelle_stand": "{{JJJJ-MM-TT heute}}",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "{{AUSSAGEN mit Fundstelle im Ausschnitt, eigene Worte; 3 bis 6 Zeilen, alle text zusammen ≤ 900 Zeichen}}",
+                "quelle": "{{Quelle, Abs. n–m oder Zeitmarke — ≤ 30 Zeichen}}"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "{{WEITERE AUSSAGEN mit Fundstelle}}",
+                "quelle": "{{Quelle, Fundstelle — ≤ 30 Zeichen}}"
+              },
+              {
+                "label": "Begriffe",
+                "text": "{{WELCHE Zuordnungen zu LF1-Begriffen gelten}}"
+              },
+              {
+                "label": "Befund",
+                "text": "{{WAS ein tragfähiger Befund verbindet; was eigene Beobachtung der Lernenden ist}}"
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "{{AUSSAGEN mit Fundstelle aus der Ersatzquelle; Zeile entfällt, wenn die Karte kein ersatz_ref hat}}",
+                "quelle": "{{Ersatzquelle, Fundstelle — ≤ 30 Zeichen}}"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "{{FUNDSTELLE}}",
+                "{{ZELLE Spalte 2}}",
+                "{{ZELLE Spalte 3}}",
+                "{{BEGRIFF aus LF1}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{ZELLE Spalte 2}}",
+                "{{ZELLE Spalte 3}}",
+                "{{BEGRIFF aus LF1}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{ZELLE Spalte 2}}",
+                "{{ZELLE Spalte 3}}",
+                "{{BEGRIFF aus LF1}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{ZELLE Spalte 2}}",
+                "{{ZELLE Spalte 3}}",
+                "{{BEGRIFF aus LF1}}"
+              ]
+            ],
+            "befund": "{{MÖGLICHER BEFUND in zwei bis drei Sätzen, Ich-Form}}"
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "{{DIE ZWEI POLE in der Form des Pol-Typs (references/phase-5-spuren.md §6), z. B. Kap. X.Y ↔ Quelle · Kap. X.Y · <Position> ↔ <Gegenposition>}}",
+          "pol_typ": "{{lehrmittel_quelle|position_gegenposition|modell_eigener_fall|recht_praxis|quelle_quelle — = prinzip.pol_typ_verteilung.<A|B>.mit_medien, A ≠ B}}",
+          "text": "{{LF4: Spannung zwischen zwei Polen beurteilen und entscheiden, höchstens zwei Aufträge — ≤ 220 Zeichen}}",
+          "liefert": "{{BAUSTEIN des Produkts, in beiden Spuren gleich — 3–7 Wörter, ≤ 50 Zeichen}}",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "{{STRATEGIE 1 — ≤ 90 Zeichen}}",
+              "{{STRATEGIE 2 — ≤ 90 Zeichen}}"
+            ],
+            "satzanfaenge": [
+              "«{{SATZANFANG für Pol 1 — mit Guillemets ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG für Pol 2 — mit Guillemets ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG für den Entscheid — mit Guillemets ≤ 60 Zeichen}}»"
+            ],
+            "produkt": "{{WAS aus dieser Antwort ins Produkt geht — ≤ 110 Zeichen}}"
+          },
+          "loesung": {
+            "kern": "{{Erwartungshorizont: POL ↔ POL, Entscheid — ≤ 55 Zeichen}}",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "{{MERKMAL 1 einer guten Antwort}}",
+                "{{MERKMAL 2}}",
+                "{{MERKMAL 3}}"
+              ],
+              "beispiel_pol_1": "{{BEISPIELANTWORT für den einen Entscheid, Ich-Form, erkennt die Spannung an}}",
+              "beispiel_pol_2": "{{BEISPIELANTWORT für den anderen Entscheid, Ich-Form, erkennt die Spannung an}}",
+              "nicht_tragfaehig": "{{WAS nicht genügt}}"
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "{{ID der Quellenkarte: q-<n><a|b>-pflicht}}",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            "{{ZAHLEN: 3 und 4, wenn LF4 die Quelle einbezieht — sonst nur 3}}"
+          ],
+          "auftrag": "{{LESE-, SEH- oder HÖRAUFTRAG zur Quelle, nennt sie Quelle, nie Pflichtquelle — ≤ 220 Zeichen}}",
+          "raster": {
+            "spalten": [
+              "{{= leitfragen[LF3].raster.spalten[0]}}",
+              "{{= leitfragen[LF3].raster.spalten[1]}}",
+              "{{= leitfragen[LF3].raster.spalten[2]}}",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "{{ID der Quellenkarte: q-<n><a|b>-vertiefung-1}}",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "{{EINE FRAGE, die der Ausschnitt ganz trägt — ≤ 100 Zeichen}}",
+          "erwartung": "{{WAS eine tragfähige Antwort enthält, aus dem Archivtext belegt}}"
+        },
+        {
+          "ref": "{{ID der Quellenkarte: q-<n><a|b>-vertiefung-2; Eintrag entfällt, wenn es die Karte nicht gibt}}",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "{{EINE FRAGE, die der Ausschnitt ganz trägt — ≤ 100 Zeichen}}",
+          "erwartung": "{{WAS eine tragfähige Antwort enthält, aus dem Archivtext belegt}}"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "{{ID der Rezeptionskarte in src/data/methoden/, passend zum Typ der Quelle}}",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "{{NEUTRALES BEISPIEL einer Rasterzeile, Sujet weder aus dem Heft noch aus der Quelle, im Muster der Karte}}"
+        ]
+      },
+      "scaffold_90": "{{STÜTZE dieser Spur: Beispiel auf S. 6 und eine gemeinsam erarbeitete erste Rasterzeile}}"
+    }
+  }
+}

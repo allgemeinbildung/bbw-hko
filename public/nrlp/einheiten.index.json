@@ -57,6 +57,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Der Stand am Berufsinfo-Abend",
     "kn_typen": [
       {
@@ -73,6 +75,83 @@
       }
     ],
     "bundle_dateien": 30
+  },
+  {
+    "id": "1.1.1_ausbildung_kommunizieren",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "1.1.1",
+    "abgedeckte_kompetenzen": [
+      "1.1.1",
+      "1.1.2",
+      "1.1.3"
+    ],
+    "slug": "ausbildung_kommunizieren",
+    "titel": "Ich kann Informationen zu meiner Ausbildung aus Quellen entnehmen und nutzen, um in einem Konflikt angemessen zu kommunizieren, und meine digitalen Werkzeuge sicher und zielgruppengerecht einsetzen — auch wenn der schnelle Weg ein anderer wäre.",
+    "einheit_titel": "In der Ausbildung kommunizieren",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "1.1",
+    "modul_titel": "Ins Berufsleben einsteigen — in der Ausbildung kommunizieren",
+    "thema_nr": 1,
+    "themen": [
+      "T1"
+    ],
+    "aspekte": [
+      "Recht",
+      "Ethik",
+      "Identität und Sozialisation",
+      "Technologische und digitale Transformation"
+    ],
+    "dominanter_aspekt": "Recht",
+    "sk": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich",
+      "Interaktion und Kollaboration digital"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Ferien gestrichen – wie sage ich es im Betrieb?",
+      "B": "Schnell geteilt – aber sicher und im richtigen Ton?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Materialgeld bar, Fotos in den Kurschat – was sage ich wem?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
   },
   {
     "id": "1.1.1_einstieg_interview",
@@ -125,6 +204,8 @@
     "hat_lernbegleiter": false,
     "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Critical Incident — die neue Kollegin in der Frühschicht",
     "kn_typen": [
       {
@@ -201,6 +282,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Critical Incident — der Brief vom Lehrlingsverantwortlichen",
     "kn_typen": [
       {
@@ -270,6 +353,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": true,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Ab nächstem Monat auch samstags",
     "kn_typen": [
       {
@@ -345,6 +430,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Mini Case — die Lohnabzug-Anfrage um 21 Uhr",
     "kn_typen": [
       {
@@ -413,6 +500,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": false,
     "hat_dossier": true,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Morgen ist das Gespräch",
     "kn_typen": [
       {
@@ -429,6 +518,80 @@
       }
     ],
     "bundle_dateien": 26
+  },
+  {
+    "id": "1.2.1_lernzeit_planen",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "1.2.1",
+    "abgedeckte_kompetenzen": [
+      "1.2.1",
+      "1.2.2"
+    ],
+    "slug": "lernzeit_planen",
+    "titel": "Ich kann meine Lern- und Arbeitszeit für eine Woche strukturiert planen, den Plan anpassen, wenn etwas dazwischenkommt, und mich gezielt und wirksam auf den nächsten Kompetenznachweis vorbereiten.",
+    "einheit_titel": "Lernzeit planen",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "1.2",
+    "modul_titel": "Ins Berufsleben einsteigen — effektiv lernen und planen",
+    "thema_nr": 1,
+    "themen": [
+      "T1"
+    ],
+    "aspekte": [
+      "Technologische und digitale Transformation",
+      "Identität und Sozialisation"
+    ],
+    "dominanter_aspekt": "Technologische und digitale Transformation",
+    "sk": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich",
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration digital"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Meine Woche planen – und umplanen, wenn sie kippt",
+      "B": "Vor dem Kompetenznachweis: lesen, verarbeiten, abfragen",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Fünf Wochen bis zur Regelprüfung – wie plane und lerne ich?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
   },
   {
     "id": "1.2.2_ki_kompetenznachweis_vorbereiten",
@@ -482,8 +645,10 @@
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
-    "hat_methoden": false,
+    "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Drei Tage vor dem KN — die fertige Zusammenfassung im Klassenchat",
     "kn_typen": [
       {
@@ -503,7 +668,7 @@
   },
   {
     "id": "1.3.1_konsum_verantworten",
-    "status": "publiziert",
+    "status": "entwurf",
     "entwurf_komponenten": [],
     "kompetenz_nr": "1.3.1",
     "abgedeckte_kompetenzen": [
@@ -556,8 +721,10 @@
     "hat_ki": true,
     "hat_lernprompt": true,
     "hat_lernbegleiter": true,
-    "hat_methoden": false,
+    "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "0 Prozent — heute unterschreiben",
     "kn_typen": [
       {
@@ -574,6 +741,600 @@
       }
     ],
     "bundle_dateien": 30
+  },
+  {
+    "id": "1.3.1_konsum_verantworten_v42",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "1.3.1",
+    "abgedeckte_kompetenzen": [
+      "1.3.1",
+      "1.3.2",
+      "1.3.3"
+    ],
+    "slug": "konsum_verantworten_v42",
+    "titel": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+    "einheit_titel": "Konsum verantworten (v4.2)",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_4J"
+    ],
+    "modul": "1.3",
+    "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+    "thema_nr": 1,
+    "themen": [
+      "T1"
+    ],
+    "aspekte": [
+      "Wirtschaft",
+      "Identität und Sozialisation",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Wirtschaft",
+    "sk": [
+      1,
+      2,
+      5,
+      6,
+      11
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Marke oder echtes Bedürfnis?",
+      "B": "Am 20. ist das Konto leer",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "0 Prozent — heute unterschreiben",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "2.1.1_informationen_hinterfragen",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "2.1.1",
+    "abgedeckte_kompetenzen": [
+      "2.1.1",
+      "2.1.2"
+    ],
+    "slug": "informationen_hinterfragen",
+    "titel": "Ich kann in gehörten Beiträgen und in Inhalten aus meinem Feed die Interessen und Werte dahinter identifizieren, Merkmale von Manipulation erkennen und begründet entscheiden, ob ich einer Aussage vertraue oder sie zuerst prüfe.",
+    "einheit_titel": "Informationen hinterfragen",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "2.1",
+    "modul_titel": "Meinungen bilden und mitgestalten — Informationen hinterfragen",
+    "thema_nr": 2,
+    "themen": [
+      "T2"
+    ],
+    "aspekte": [
+      "Politik",
+      "Technologische und digitale Transformation"
+    ],
+    "dominanter_aspekt": "Politik",
+    "sk": [
+      1,
+      5,
+      6,
+      7,
+      12
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell",
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Wer will hier was – und wem glaube ich?",
+      "B": "Dreimal im Feed – und jetzt weiterleiten?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Kantine neu vergeben — und ein Bild macht die Runde",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "2.2.1_ausgrenzung_analysieren",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "2.2.1",
+    "abgedeckte_kompetenzen": [
+      "2.2.1",
+      "2.2.2",
+      "2.2.3"
+    ],
+    "slug": "ausgrenzung_analysieren",
+    "titel": "Ich kann Beispiele von Ausgrenzung in Gesprächen, Medienbeiträgen und künstlerischen Beiträgen analysieren, unterschiedliche Perspektiven darauf nachvollziehen und meinen eigenen Standpunkt dazu entwickeln und klar ausdrücken — auch dort, wo etwas gesagt werden darf und trotzdem verletzt.",
+    "einheit_titel": "Ausgrenzung analysieren",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J"
+    ],
+    "modul": "2.2",
+    "modul_titel": "Meinungen bilden und mitgestalten — Ausgrenzung analysieren",
+    "thema_nr": 2,
+    "themen": [
+      "T2"
+    ],
+    "aspekte": [
+      "Ethik",
+      "Politik",
+      "Kultur"
+    ],
+    "dominanter_aspekt": "Ethik",
+    "sk": [
+      1,
+      5,
+      6,
+      7,
+      12
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell",
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Nur ein Spruch – oder schon Ausgrenzung?",
+      "B": "Das Plakat im Gang – soll es hängen bleiben?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Der Film vom Jahresessen soll online gehen",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "2.2.1_meinungsfreiheit_reflektieren",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "2.2.1",
+    "abgedeckte_kompetenzen": [
+      "2.2.1",
+      "2.2.2"
+    ],
+    "slug": "meinungsfreiheit_reflektieren",
+    "titel": "Ich kann an Aussagen aus Gesprächen und Medienbeiträgen analysieren, wo eine Meinung endet und Ausgrenzung beginnt, andere Perspektiven nachvollziehen und meinen eigenen Standpunkt dazu entwickeln und nachvollziehbar ausdrücken.",
+    "einheit_titel": "Meinungsfreiheit reflektieren",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_4J"
+    ],
+    "modul": "2.2",
+    "modul_titel": "Meinungen bilden und mitgestalten — Meinungsfreiheit reflektieren",
+    "thema_nr": 2,
+    "themen": [
+      "T2"
+    ],
+    "aspekte": [
+      "Ethik",
+      "Politik"
+    ],
+    "dominanter_aspekt": "Politik",
+    "sk": [
+      1,
+      5,
+      6,
+      7,
+      12
+    ],
+    "sprachmodi": [
+      "Rezeption mündlich",
+      "Rezeption audiovisuell",
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Was am Pausentisch gesagt werden darf",
+      "B": "Wer gehört dazu – und wer bestimmt mit?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Ein Aushang im Treppenhaus – und wer im Haus mitbestimmt",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "2.3.1_anliegen_vertreten",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "2.3.1",
+    "abgedeckte_kompetenzen": [
+      "2.3.1",
+      "2.3.2"
+    ],
+    "slug": "anliegen_vertreten",
+    "titel": "Ich kann ein politisches Anliegen formulieren, den Weg der Mitwirkung aufzeigen, der dazu passt, und meine begründete Meinung in einer Diskussion respektvoll vertreten — auch wenn andere es anders sehen.",
+    "einheit_titel": "Anliegen vertreten",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "2.3",
+    "modul_titel": "Meinungen bilden und mitgestalten — mitreden und mitgestalten",
+    "thema_nr": 2,
+    "themen": [
+      "T2"
+    ],
+    "aspekte": [
+      "Politik",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Politik",
+    "sk": [
+      1,
+      5,
+      6,
+      7,
+      12
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Mein Anliegen – auf welchem Weg bringe ich es ein?",
+      "B": "Meine Meinung in der Runde vertreten",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Der Kanton kürzt – was schlägt unser Verein vor?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "2.4.1_haltung_zeigen",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "2.4.1",
+    "abgedeckte_kompetenzen": [
+      "2.4.1",
+      "2.4.2"
+    ],
+    "slug": "haltung_zeigen",
+    "titel": "Ich kann in einem Werk erkennen und beschreiben, welche Haltung es zeigt und wie es auf mich wirkt, meine eigene Haltung in einem gestalteten Beitrag zum Ausdruck bringen und ein Werk begründet und respektvoll rezensieren — auch wenn andere es anders sehen.",
+    "einheit_titel": "Haltung zeigen",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_4J"
+    ],
+    "modul": "2.4",
+    "modul_titel": "Meinungen bilden und mitgestalten — mit Kunst Haltung zeigen",
+    "thema_nr": 2,
+    "themen": [
+      "T2"
+    ],
+    "aspekte": [
+      "Kultur"
+    ],
+    "dominanter_aspekt": "Kultur",
+    "sk": [
+      1,
+      5,
+      6,
+      7,
+      12
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Mein Plakat – wie deutlich zeige ich meine Haltung?",
+      "B": "Meine Rezension – klar urteilen und fair bleiben",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Der Vers über den Wirt – bringen wir ihn so?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "2.5.1_klimaveraenderung_diskutieren",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "2.5.1",
+    "abgedeckte_kompetenzen": [
+      "2.5.1",
+      "2.5.2"
+    ],
+    "slug": "klimaveraenderung_diskutieren",
+    "titel": "Ich kann sachlich beschreiben, wie die Klimaveränderung mich und die Gesellschaft heute betrifft, daraus begründete Aussagen über die Zukunft ableiten und meine Position zu Lösungsansätzen in einer Diskussion begründet und respektvoll einbringen.",
+    "einheit_titel": "Klimaveränderung beschreiben und diskutieren",
+    "lehrgang": "EFZ_4J",
+    "lehrgaenge": [
+      "EFZ_4J"
+    ],
+    "modul": "2.5",
+    "modul_titel": "Meinungen bilden und mitgestalten — Umweltfragen diskutieren",
+    "thema_nr": 2,
+    "themen": [
+      "T2"
+    ],
+    "aspekte": [
+      "Ökologie",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Ökologie",
+    "sk": [
+      1,
+      5,
+      6,
+      7,
+      12
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich",
+      "Produktion mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Was heute Hitze heisst – und was morgen kommt",
+      "B": "Verzicht oder Regeln – meine Position in der Runde",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Zwei trockene Sommer – was beschliesst unser Verein?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "3.1.1_konsum_verantworten_3j",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "3.1.1",
+    "abgedeckte_kompetenzen": [
+      "3.1.1",
+      "3.1.2",
+      "3.1.3"
+    ],
+    "slug": "konsum_verantworten_3j",
+    "titel": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+    "einheit_titel": "Konsum verantworten (EFZ 3J)",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J"
+    ],
+    "modul": "3.1",
+    "modul_titel": "Bewusst konsumieren und handeln — überlegt entscheiden",
+    "thema_nr": 3,
+    "themen": [
+      "T3"
+    ],
+    "aspekte": [
+      "Wirtschaft",
+      "Identität und Sozialisation",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Wirtschaft",
+    "sk": [
+      1,
+      3,
+      5,
+      9
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Marke oder echtes Bedürfnis?",
+      "B": "Am 20. ist das Konto leer",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "0 Prozent — heute unterschreiben",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
   },
   {
     "id": "3.2.1_ernaehrung_nachhaltig_gestalten",
@@ -630,6 +1391,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Der Automat und die 40 Prozent",
     "kn_typen": [
       {
@@ -646,6 +1409,79 @@
       }
     ],
     "bundle_dateien": 30
+  },
+  {
+    "id": "3.2.1_konsumfolgen_beurteilen",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "3.2.1",
+    "abgedeckte_kompetenzen": [
+      "3.2.1",
+      "3.2.2"
+    ],
+    "slug": "konsumfolgen_beurteilen",
+    "titel": "Ich kann Konsumgewohnheiten in unserer Gesellschaft reflektieren, Möglichkeiten nachhaltigen Konsums beschreiben und den Preis eines Produkts anhand von Herstellung, Transport, Angebot und Nachfrage beurteilen — auch wenn günstig und fair sich widersprechen.",
+    "einheit_titel": "Konsumfolgen beurteilen",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "3.2",
+    "modul_titel": "Bewusst konsumieren und handeln — folgen und preise beurteilen",
+    "thema_nr": 3,
+    "themen": [
+      "T3"
+    ],
+    "aspekte": [
+      "Ökologie",
+      "Wirtschaft"
+    ],
+    "dominanter_aspekt": "Wirtschaft",
+    "sk": [
+      1,
+      3,
+      5,
+      9
+    ],
+    "sprachmodi": [
+      "Produktion multimedial",
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Billig bestellt – was hängt an meinem Kauf?",
+      "B": "Rosen für die Klassenkasse – welcher Preis ist richtig?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Neue Bälle für den Verein – billig wie immer?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
   },
   {
     "id": "3.2.1_wahre_kosten",
@@ -705,6 +1541,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Zwei Jacken und eine Gemeinderechnung",
     "kn_typen": [
       {
@@ -721,6 +1559,371 @@
       }
     ],
     "bundle_dateien": 30
+  },
+  {
+    "id": "3.3.1_kaufvertrag_beurteilen",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "3.3.1",
+    "abgedeckte_kompetenzen": [
+      "3.3.1",
+      "3.3.2"
+    ],
+    "slug": "kaufvertrag_beurteilen",
+    "titel": "Ich kann die rechtlichen Folgen eines Kaufvertrags beurteilen, auf meinen eigenen Kauf anwenden und bei einem Problem meine Forderung so begründen und formulieren, dass mein Gegenüber darauf eingeht — auch wenn Gesetz und Vertrag nicht dasselbe sagen.",
+    "einheit_titel": "Kaufvertrag beurteilen",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "3.3",
+    "modul_titel": "Bewusst konsumieren und handeln — beim Einkaufen Rechte einfordern",
+    "thema_nr": 3,
+    "themen": [
+      "T3"
+    ],
+    "aspekte": [
+      "Recht"
+    ],
+    "dominanter_aspekt": "Recht",
+    "sk": [
+      1,
+      3,
+      5,
+      9
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich",
+      "Interaktion und Kollaboration schriftlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Geklickt und bereut – bin ich an den Kauf gebunden?",
+      "B": "Nach fünf Monaten defekt – was fordere ich, und wie?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Gebraucht gekauft, Schaden entdeckt – was fordere ich?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "4.1.1_wohlbefinden_staerken",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "4.1.1",
+    "abgedeckte_kompetenzen": [
+      "4.1.1",
+      "4.1.2"
+    ],
+    "slug": "wohlbefinden_staerken",
+    "titel": "Ich kann analysieren, wie Erwartungen und Normen mein Selbstbild prägen, Merkmale eines gesunden Lebensstils auswerten und daraus begründete Massnahmen für mein Wohlbefinden ableiten.",
+    "einheit_titel": "Wohlbefinden stärken",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "4.1",
+    "modul_titel": "Verantwortung für mich und andere übernehmen — Selbstbild und Wohlbefinden stärken",
+    "thema_nr": 4,
+    "themen": [
+      "T4"
+    ],
+    "aspekte": [
+      "Identität und Sozialisation",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Identität und Sozialisation",
+    "sk": [
+      5,
+      7,
+      10,
+      11
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Alle zeigen sich perfekt – und wer bin ich?",
+      "B": "Was die Umfrage zeigt – und was ich daraus mache",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Samstag am Marktstand – und wann erhole ich mich?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "4.2.1_risiken_absichern",
+    "status": "publiziert",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "4.2.1",
+    "abgedeckte_kompetenzen": [
+      "4.2.1",
+      "4.2.2"
+    ],
+    "slug": "risiken_absichern",
+    "titel": "Ich kann Risiken für meine Gesundheit und Situationen, in denen ich hafte, erkennen und beurteilen und daraus ableiten, wie ich mich absichere – und was ich trotz Versicherung selbst verantworte.",
+    "einheit_titel": "Risiken absichern",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "4.2",
+    "modul_titel": "Verantwortung für mich und andere übernehmen — Risiken erkennen und absichern",
+    "thema_nr": 4,
+    "themen": [
+      "T4"
+    ],
+    "aspekte": [
+      "Ethik",
+      "Recht"
+    ],
+    "dominanter_aspekt": "Ethik",
+    "sk": [
+      5,
+      7,
+      10,
+      11
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Meine erste eigene Police – welche Franchise wähle ich?",
+      "B": "Ich bin doch versichert – wofür hafte ich trotzdem?",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Zwischen Lehre und neuer Stelle – was sichere ich ab?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
+  },
+  {
+    "id": "4.3.1_vielfalt_untersuchen",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "4.3.1",
+    "abgedeckte_kompetenzen": [
+      "4.3.1",
+      "4.3.2"
+    ],
+    "slug": "vielfalt_untersuchen",
+    "titel": "Ich kann die Vielfalt in meinem Umfeld beschreiben, ihre Chancen und Herausforderungen im Gespräch untersuchen und an Beispielen erklären, warum Menschen wandern und was das für sie und für die Gesellschaft bedeutet — auch wenn sich dazu mehr als eine Haltung begründen lässt.",
+    "einheit_titel": "Vielfalt untersuchen",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "4.3",
+    "modul_titel": "Verantwortung für mich und andere übernehmen — vielfalt und migration untersuchen",
+    "thema_nr": 4,
+    "themen": [
+      "T4"
+    ],
+    "aspekte": [
+      "Identität und Sozialisation",
+      "Recht",
+      "Ethik"
+    ],
+    "dominanter_aspekt": "Identität und Sozialisation",
+    "sk": [
+      5,
+      7,
+      10,
+      11
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich",
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Unser Team im Porträt – was frage ich, was lasse ich?",
+      "B": "Wer kommt, wer bleibt? Mein Leserbrief zur Zuwanderung",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": false,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Ein starker Mitspieler ohne sicheren Aufenthalt",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 17
+  },
+  {
+    "id": "5.2.1_gesetze_veraendern",
+    "status": "entwurf",
+    "entwurf_komponenten": [],
+    "kompetenz_nr": "5.2.1",
+    "abgedeckte_kompetenzen": [
+      "5.2.1",
+      "5.2.2"
+    ],
+    "slug": "gesetze_veraendern",
+    "titel": "Ich kann an einem Beispiel aus meinem Alltag und an einem aktuellen Ereignis aufzeigen, wie der Rechtsstaat Macht teilt und kontrolliert, und ein eigenes politisches Anliegen so ausarbeiten und erläutern, dass es den Weg durch Gesetzgebung und Abstimmung bestehen kann — auch wenn es dabei nicht bleibt, wie ich es zuerst wollte.",
+    "einheit_titel": "Gesetze verändern",
+    "lehrgang": "EFZ_3J",
+    "lehrgaenge": [
+      "EFZ_3J",
+      "EFZ_4J"
+    ],
+    "modul": "5.2",
+    "modul_titel": "Mich im Staat orientieren — Gesetze und Entscheide verändern",
+    "thema_nr": 5,
+    "themen": [
+      "T5"
+    ],
+    "aspekte": [
+      "Politik"
+    ],
+    "dominanter_aspekt": "Politik",
+    "sk": [
+      2,
+      9,
+      11,
+      12
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital",
+      "Produktion mündlich"
+    ],
+    "herausforderungen": [
+      "A",
+      "B"
+    ],
+    "hf_titel": {
+      "A": "Durchgreifen – und wer kontrolliert das?",
+      "B": "Vom Ärger zum Anliegen – und wie es Gesetz wird",
+      "C": null
+    },
+    "hat_kn": true,
+    "hat_begleiter": true,
+    "hat_ki": false,
+    "hat_lernprompt": false,
+    "hat_lernbegleiter": false,
+    "hat_methoden": true,
+    "hat_dossier": false,
+    "hat_spuren": true,
+    "hat_medien": true,
+    "hybrid_situation_titel": "Acht Franken pro Tag – wer darf das beschliessen?",
+    "kn_typen": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch"
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich"
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion"
+      }
+    ],
+    "bundle_dateien": 18
   },
   {
     "id": "5.4.2_internationale_entscheide_wirken_4j",
@@ -776,6 +1979,8 @@
     "hat_lernbegleiter": true,
     "hat_methoden": true,
     "hat_dossier": false,
+    "hat_spuren": false,
+    "hat_medien": false,
     "hybrid_situation_titel": "Ein Nachweis, den niemand hier beschlossen hat",
     "kn_typen": [
       {

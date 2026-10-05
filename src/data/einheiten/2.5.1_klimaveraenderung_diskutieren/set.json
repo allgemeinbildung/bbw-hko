@@ -1,0 +1,405 @@
+{
+  "id": "2.5.1_klimaveraenderung_diskutieren_set",
+  "modul": "2.5",
+  "modul_titel": "Meinungen bilden und mitgestalten — Umweltfragen diskutieren",
+  "einheit_titel": "Klimaveränderung beschreiben und diskutieren",
+  "lehrgang": "EFZ_4J",
+  "thema": "T2",
+  "version": "2.1.0",
+  "status": "publiziert",
+  "prinzip_ref": "2.5.1_klimaveraenderung_diskutieren_prinzip",
+  "kn_ref": "2.5.1_klimaveraenderung_diskutieren_kn",
+  "herausforderungen": [
+    "2.5.1_klimaveraenderung_diskutieren_hf_A",
+    "2.5.1_klimaveraenderung_diskutieren_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "2.5.1_klimaveraenderung_diskutieren_hf_A",
+      "konzept": "Belegtes, Erwartetes und Vermutetes trennen und die Kette von der Ursache über die Folge zu den Betroffenen beschreiben"
+    },
+    {
+      "position": 2,
+      "herausforderung": "2.5.1_klimaveraenderung_diskutieren_hf_B",
+      "konzept": "Abwägen, was der eigene Beitrag leistet und was nur Regeln für alle erreichen, und die Position mit Argument und Antwort auf den stärksten Einwand einbringen"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Treibhauseffekt",
+      "definition": "Gase in der Lufthülle halten Wärme zurück; der Mensch verstärkt das durch seinen Ausstoss.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Treibhausgas",
+      "definition": "Gas in der Lufthülle, das Wärme zurückhält, etwa Kohlenstoffdioxid oder Methan.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Temperaturanstieg",
+      "definition": "Zunahme der gemessenen Temperatur über viele Jahre hinweg.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Wetterextreme",
+      "definition": "Ungewöhnlich heftiges Wetter wie starker Regen oder lange Trockenheit; nimmt zu.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Hitzeperiode",
+      "definition": "Mehrere sehr heisse Tage hintereinander; wird in der Schweiz laut Lehrmittel häufiger.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Pollensaison",
+      "definition": "Zeit im Jahr, in der Blütenstaub fliegt; mit der Erwärmung wird sie länger und stärker.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Gletscher",
+      "definition": "Eismasse im Gebirge; die Gletscher der Alpen haben viel Eis verloren und schmelzen weiter.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Permafrost",
+      "definition": "Untergrund, der das ganze Jahr gefroren bleibt; taut er, verliert der Boden den Halt.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Messreihe",
+      "definition": "Arbeitsbegriff im Heft: Messungen derselben Grösse über viele Jahre, zum Vergleichen.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Vermutung",
+      "definition": "Aussage ohne Beleg; in einem Bericht ist sie erlaubt, wenn sie als solche bezeichnet ist.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Trockenperiode",
+      "definition": "Längere Zeit mit zu wenig Regen; kommt in der Schweiz laut Lehrmittel häufiger vor.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Allergie",
+      "definition": "Leiden, das etwa Pollen auslösen (Heuschnupfen); trifft laut Lehrmittel immer mehr Leute.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Nullgradgrenze",
+      "definition": "Höhe, über der es friert; laut Beitrag (01:06) liegt sie höher als früher und steigt.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Starkniederschlag",
+      "definition": "Sehr viel Regen oder Schnee in kurzer Zeit; laut Beitrag (01:17) droht das künftig öfter.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Nachhaltigkeit",
+      "definition": "Nur so viel verbrauchen, wie auf Dauer wieder bereitsteht, damit es auch später reicht.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Netto-Null-Ziel",
+      "definition": "Schweizer Ziel ab 2050: nur so viel Treibhausgas, wie Speicher aufnehmen (Stand 2025).",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Graue Energie",
+      "definition": "Energie, die in Herstellung und Transport eines Produkts steckt, nicht in seinem Gebrauch.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Verzicht",
+      "definition": "Etwas bewusst nicht kaufen oder nutzen; im 2000-Watt-Modell ein Weg neben der Technik.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Regel für alle",
+      "definition": "Arbeitsbegriff im Heft: Vorgabe, die nicht nur für Freiwillige gilt, sondern für alle.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Verursacherprinzip",
+      "definition": "Wer mit seinem Handeln Kosten auslöst, soll sie selbst tragen, etwa über eine Abgabe.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "3B-Schema",
+      "definition": "Drei Teile eines Arguments: behaupten, begründen, mit einem Beispiel belegen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Einwand",
+      "definition": "Arbeitsbegriff im Heft: der Grund, den die andere Seite gegen meine Position vorbringt.",
+      "herkunft": "heft",
+      "heft": "B"
+    },
+    {
+      "begriff": "Killerphrase",
+      "definition": "Scheinargument, das Widerspruch abwürgen soll, statt zu überzeugen; unsachlich.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Kompromiss",
+      "definition": "Ergebnis einer Diskussion, mit dem alle Beteiligten leben können.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Lenkungsabgabe",
+      "definition": "Abgabe, die umweltbelastendes Verhalten verteuert; so zahlen die Verursachenden.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Nachsorge",
+      "definition": "Der Staat lässt die Belastung zu und räumt die Schäden erst danach auf, etwa mit Steuern.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Rahmenbedingung",
+      "definition": "Im Beitrag (18:37): Vorgabe der Politik, innerhalb der die Unternehmen handeln.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Technischer Fortschritt",
+      "definition": "Im Beitrag (17:44): neue Technik, die laut Bundesrat viel ersetzt, wenn man ihr Zeit gibt.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "20 Grad im Schulzimmer – was meldet unsere Klasse zurück?",
+    "lebensbereich": "Berufsfachschule (Klasse)",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "Die Schulleitung hat allen Klassen ein Schreiben vorgelegt. Variante 1, Vorgabe für alle: Ab dem Winter werden die Schulzimmer auf 20 statt 22 Grad geheizt, und alle Geräte sind über Nacht ganz aus. Variante 2, freiwillig: Die Klassen sparen von sich aus, die sparsamste erhält einen Beitrag an die Klassenkasse. Der Grund: Energie sparen gegen die Klimaveränderung; wie viel das bringt, steht nicht darin. In drei Wochen gibt unsere Klasse eine Rückmeldung ab. Meine Gruppe ist uneins: Die einen wollen die Vorgabe für alle, die anderen niemandem etwas vorschreiben. Einige möchten sofort umstellen, andere erst einen Winter lang freiwillig sparen. Was vertrete ich?",
+    "zahlen_tabelle": [
+      {
+        "label": "Raumtemperatur heute",
+        "wert": "22 Grad"
+      },
+      {
+        "label": "Raumtemperatur nach Variante 1",
+        "wert": "20 Grad"
+      },
+      {
+        "label": "Frist für die Rückmeldung",
+        "wert": "drei Wochen"
+      }
+    ],
+    "leitfrage": "Gleiche Vorgabe für alle oder freiwillig sparen – was melde ich mit meiner Gruppe zurück?",
+    "mehrdeutigkeit": {
+      "trade_off": "Freiwillig sparen vs. gleiche Vorgabe für alle Klassen",
+      "hint": "Freiwillig sparen lässt jeder Klasse die Wahl, erreicht aber nicht alle. Die gleiche Vorgabe erreicht alle, fragt aber niemanden. Beides lässt sich begründen."
+    },
+    "aktivierte_trade_offs": [
+      "Eigener Verzicht vs. Regeln für alle",
+      "Schnell handeln vs. Schritt für Schritt"
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "partner",
+        "gruppe"
+      ],
+      "empfehlung": "Werten Sie das Schreiben zuerst allein aus. Handeln Sie die Rückmeldung danach zu dritt oder zu viert aus; jede Person bringt ihre Position ein und füllt mindestens eines der Felder auf Seite A3 aus."
+    },
+    "auftrag": "Werten Sie das Schreiben mit den Werkzeugen aus Heft A und Heft B aus und handeln Sie in der Gruppe eine gemeinsame Rückmeldung an die Schulleitung aus.",
+    "schritte": [
+      {
+        "label": "01 Auswertung",
+        "hint": "A2, Tabelle mit vier Zeilen: je Vorschlag (zwei je Variante) Art (Appell = Bitte, Anreiz = Belohnung, Vorschrift = Pflicht) und Folge."
+      },
+      {
+        "label": "02 Belegtes und Vermutetes",
+        "hint": "Markieren Sie in der Tabelle wie in Heft A, was belegt, erwartet oder vermutet ist. Notieren Sie darunter, was Sie nachfragen würden."
+      },
+      {
+        "label": "03 Position und Einwand",
+        "hint": "Bauen Sie wie in Heft B ein Argument (3B), das Energieverbrauch, Folge und Betroffene verbindet. Auf A2: Argument, Einwand, Antwort."
+      },
+      {
+        "label": "04 Aushandlung",
+        "hint": "Bringen Sie Ihre Position in zwei Sätzen ein, gehen Sie auf die anderen ein und füllen Sie die Felder 1 bis 3 auf Seite A3 aus."
+      },
+      {
+        "label": "05 Rückmeldung",
+        "hint": "Schreiben Sie in Feld 4 (A3) in zwei Sätzen, worauf sich die Gruppe einigt und was offen bleibt. Schätzen Sie sich dann auf A4 selbst ein."
+      }
+    ],
+    "abgaben": [
+      "A2: Tabelle mit vier Zeilen; darunter Nachfrage, Argument, Einwand, Antwort",
+      "Die vier Felder auf Seite A3 mit der gemeinsamen Rückmeldung in zwei Sätzen",
+      "Selbsteinschätzung auf den vier Kriterien"
+    ],
+    "produkte": [
+      {
+        "schritt": 1,
+        "form": "flaeche",
+        "modus": "Rezeption schriftlich und bildlich"
+      },
+      {
+        "schritt": 4,
+        "form": "spur",
+        "modus": "Interaktion und Kollaboration mündlich",
+        "stationen": [
+          "Was im Schreiben für und gegen die Vorgabe spricht",
+          "Wo wir uns nicht einig sind – und warum",
+          "Worauf wir uns einigen können",
+          "Was wir der Schulleitung zurückmelden"
+        ],
+        "hinweis": "Jede Person bringt zuerst ihre Position in zwei Sätzen ein. Halten Sie danach in Stichworten fest, wo Sie sich einig sind und wo nicht. Formulieren Sie die Rückmeldung gemeinsam und geben Sie diese Seite ab.",
+        "dauer": "rund 10 Minuten"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Was heute Hitze heisst – und was morgen kommt",
+        "inhalte": [
+          "Wirkungskette: Ursache, Folge, Betroffene (S. 6)",
+          "Belegt, erwartet, vermutet: die Legende (S. 6)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Verzicht oder Regeln – meine Position in der Runde",
+        "inhalte": [
+          "Argument nach dem 3B-Schema (S. 2)",
+          "Position, Einwand und Antwort (S. 4 und S. 7)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe fehlen oder sind falsch verwendet; Aussagen stehen ohne Beleg da.",
+          "Einzelne Fachbegriffe sind korrekt verwendet; Belege fehlen teilweise oder passen nicht zur Aussage.",
+          "Fachbegriffe sind korrekt und zur Situation passend verwendet; die Aussagen sind belegt.",
+          "Fachbegriffe sind differenziert verwendet; Belegtes, Erwartetes und Vermutetes sind eigenständig getrennt."
+        ],
+        "indikator_produkt": "Auswertung: Art jedes Vorschlags stimmt; Belegtes und Vermutetes sind getrennt"
+      },
+      {
+        "kn_kriterium": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung erkennbar; Behauptungen stehen für sich.",
+          "Begründung ansatzweise vorhanden; ein Beispiel oder Beleg fehlt weitgehend.",
+          "Begründung nachvollziehbar aufgebaut, mit Beispiel oder Beleg; eine andere Sichtweise ist genannt.",
+          "Begründung schlüssig; der stärkste Einwand ist sachlich beantwortet, Folgen sind bedacht."
+        ],
+        "indikator_produkt": "Aushandlung: Position begründet, auf einen Einwand sachlich geantwortet"
+      },
+      {
+        "kn_kriterium": "Ökologisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Der Zusammenhang von Ursache, Folge und Betroffenen ist nicht hergestellt.",
+          "Ursache oder Folge ist genannt; der Zusammenhang bis zu den Betroffenen bleibt lückenhaft.",
+          "Ursache, Folge und Betroffene sind korrekt verbunden; heutige und künftige Folgen sind auseinandergehalten.",
+          "Der Zusammenhang ist korrekt hergestellt und auf eine weitere Situation übertragen."
+        ],
+        "indikator_produkt": "Argument (Schritt 03) verbindet Energieverbrauch, Folge und Betroffene – heute und künftig"
+      },
+      {
+        "kn_kriterium": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine eigene Position erkennbar.",
+          "Eigene Position angedeutet, aber nicht klar formuliert oder nicht begründet.",
+          "Eigene Position klar in Ich-Form formuliert und begründet.",
+          "Eigene Position in Ich-Form begründet; das Spannungsfeld ist anerkannt, die andere Seite respektvoll gewürdigt."
+        ],
+        "indikator_produkt": "Aushandlung: Position in Ich-Form, ein Punkt der anderen Seite anerkannt"
+      }
+    ],
+    "kontext_ausschluss": [
+      "Hitzeplan (Heft A)",
+      "Kaufpause (Heft B)",
+      "Familiengarten, Regenwassertank, Bewässerungsverbot, Parzelle (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Die Auswertung ordnet alle vier Vorschläge des Schreibens zu: 20 statt 22 Grad und das Ausschalten der Geräte über Nacht als Vorschrift, das freiwillige Sparen als Appell, den Beitrag an die Klassenkasse als Anreiz (Kap. 9.3, S. 233) – je mit einer Folge für die eigene Klasse.",
+        "Belegtes und Vermutetes sind getrennt: Belegt ist nur, was im Schreiben steht (Temperaturen, Frist, Beitrag ohne Betrag). Wie viel die Massnahmen sparen und ob freiwilliges Sparen genügt, ist Annahme und als solche bezeichnet.",
+        "In der Aushandlung hat jede Person einen eigenen Anteil (Position in zwei Sätzen, mindestens ein Feld auf Seite A3); die Rückmeldung in zwei Sätzen nennt, worauf sich die Gruppe einigt, was offen bleibt und warum."
+      ],
+      "tragfaehig": "Vertretbar ist zum Beispiel: Die Gruppe spricht sich für die gleiche Vorgabe aus, weil sonst nur die sparen, die ohnehin mitmachen, und schlägt vor, mit den Geräten sofort zu beginnen und die Temperatur schrittweise zu senken. Ebenso vertretbar: zuerst einen Winter lang freiwillig sparen und die Vorgabe erst einführen, wenn das nicht genügt; oder ein Dissens, der beide Positionen mit ihren Gründen nennt – solange die Rückmeldung Belegtes von Angenommenem trennt und die andere Seite würdigt.",
+      "nicht_tragfaehig": "Eine Rückmeldung, die nur eine Seite wiedergibt («Vorschriften bringen nichts» oder «wer nicht spart, ist selber schuld»), Zahlen zur Einsparung behauptet, die im Schreiben nicht stehen, die vier Vorschläge nicht auseinanderhält oder ohne erkennbaren Anteil der einzelnen Personen zustande kommt."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}

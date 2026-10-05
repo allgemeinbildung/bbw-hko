@@ -31,6 +31,9 @@ function LpPage({ kn, abteilung, docCode, pageNum, pageTotal, docTitel, children
 }
 
 function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { kn: KnJson; prinzip: PrinzipJson | null; set: SetJson | null; abteilung?: string; pageNum: number; pageTotal: number }) {
+  // v4.2 (zwei Hefte, gemeinsamer Auftrag): Wortlaut für zwei statt drei Herausforderungen.
+  // Jede andere Einheit behält ihren Text Zeichen für Zeichen.
+  const zwei = !!set?.gemeinsamer_auftrag
   return (
     <LpPage kn={kn} abteilung={abteilung} docCode="DOC-KN-LP · KONTEXT"
             docTitel={`KN ${kn.kompetenz_nr} ${kn.topic_slug}`}
@@ -46,9 +49,9 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
       <p className="cockpit-sub" style={{ fontStyle: 'italic', fontSize: '10pt', marginBottom: '5mm' }}>
         {kn.mehrdeutigkeits_pflicht}
       </p>
-      <SectionHead num="01 · Herausforderungen A · B · C">Was die drei Herausforderungen versprechen</SectionHead>
+      <SectionHead num={zwei ? '01 · Herausforderungen A · B' : '01 · Herausforderungen A · B · C'}>{zwei ? 'Was die zwei Herausforderungen versprechen' : 'Was die drei Herausforderungen versprechen'}</SectionHead>
       {prinzip?.herausforderungen && (
-        <div className="cockpit-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr', gap: '4mm 5mm' }}>
+        <div className="cockpit-grid" style={{ gridTemplateColumns: zwei ? '1fr 1fr' : '1fr 1fr 1fr', gap: '4mm 5mm' }}>
           {['A', 'B', 'C'].map((letter) => {
             const sf = prinzip.herausforderungen![letter]
             if (!sf) return null
@@ -85,7 +88,7 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
       )}
       {set?.konzept_progression && (
         <>
-          <SectionHead num="03 · Konzeptbogen">Progression A → B → C</SectionHead>
+          <SectionHead num="03 · Konzeptbogen">{zwei ? 'Progression A → B' : 'Progression A → B → C'}</SectionHead>
           <table className="alignment-table">
             <thead>
               <tr>
@@ -103,7 +106,9 @@ function DocKnLpKontext({ kn, prinzip, set, abteilung, pageNum, pageTotal }: { k
             </tbody>
           </table>
           <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginTop: '2.5mm', maxWidth: '160mm', lineHeight: 1.4 }}>
-            Der Bogen zeigt den inhaltlichen Aufbau A → B → C. Die Reihenfolge im Unterricht ist frei wählbar — du kannst Herausforderungen weglassen oder umstellen. Im KN wird nur geprüft, was tatsächlich geübt wurde.
+            {zwei
+              ? 'Der Bogen zeigt den inhaltlichen Aufbau A → B. Beide Hefte führen zum gemeinsamen Auftrag und zum KN; im KN wird nur geprüft, was tatsächlich geübt wurde.'
+              : 'Der Bogen zeigt den inhaltlichen Aufbau A → B → C. Die Reihenfolge im Unterricht ist frei wählbar — du kannst Herausforderungen weglassen oder umstellen. Im KN wird nur geprüft, was tatsächlich geübt wurde.'}
           </p>
         </>
       )}

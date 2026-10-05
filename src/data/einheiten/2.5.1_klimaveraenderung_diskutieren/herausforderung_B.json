@@ -1,0 +1,906 @@
+{
+  "id": "2.5.1_klimaveraenderung_diskutieren_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "2.5",
+  "modul_titel": "Meinungen bilden und mitgestalten — Umweltfragen diskutieren",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Verzicht oder Regeln – meine Position in der Runde",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Position begründen und einbringen"
+  },
+  "prinzip_ref": "2.5.1_klimaveraenderung_diskutieren_prinzip",
+  "nrlp": {
+    "nr": "2.5.2",
+    "nr_primary": [
+      "2.5.2"
+    ],
+    "lebensbezug": "2.5",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Ökologie",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion mündlich"
+    ],
+    "sprachmodus_ids": [
+      "SM4"
+    ],
+    "sk": [
+      7,
+      5,
+      6
+    ],
+    "kompetenz_id": "2.5.2",
+    "lebensbezug_id": "2.5",
+    "kompetenz_text": "Ich kann in einer Diskussion über gesellschaftliche und persönliche Lösungsansätze zur Klimaveränderung meine eigene Position sachlich und begründet einbringen, auf andere Perspektiven eingehen und respektvoll argumentieren.",
+    "lebensbezug_text": "Ich diskutiere Umweltfragen, die meinen Alltag und meine Zukunft betreffen."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr und wohne bei meiner Familie. Bei uns zu Hause steht eine Kaufpause zur Diskussion: ein Jahr lang keine neuen Geräte und keine neuen Kleider, solange die alten noch gehen. Die Idee kam von meinem Vater. Meine Schwester findet, das bringe nichts, solange nicht Regeln für alle gelten; verzichten würden dann nur wir, während alle anderen weiterkaufen. Mein Vater sagt, jemand müsse anfangen. Beim letzten Mal endete das Gespräch im Streit, und am Schluss hörte niemand mehr zu. Am Sonntag entscheiden wir zu viert. Abgemacht ist: Jede Person sagt zuerst rund zwei Minuten lang, was sie denkt, erst danach wird geantwortet. Ich bin unsicher, auf welcher Seite ich stehe. Ich will klären, was ein einzelner Haushalt beitragen kann, was nur Regeln für alle erreichen – und wie ich meine Position so einbringe, dass die anderen zuhören.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Bringt es etwas, wenn wir bei uns anfangen – oder braucht es Regeln für alle? Und wie sage ich es so, dass die anderen zuhören?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Eigener Verzicht vs. Regeln für alle",
+    "hint": "Der eigene Verzicht beginnt sofort, erreicht aber nur einen Haushalt. Regeln für alle erreichen viele, gelten aber erst nach einem Beschluss. Was zählt mehr?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 9.3",
+      "titel": "Nachhaltigkeit",
+      "unterueberschrift": "Klimaziele, Instrumente, Verzicht",
+      "seiten": "Seite 231-235",
+      "fuer_leitfrage": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 17.3",
+      "titel": "Argumentieren",
+      "unterueberschrift": "Stellungnahme und 3B-Schema",
+      "seiten": "Seite 393-395",
+      "fuer_leitfrage": [
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 16.1",
+      "titel": "Diskussion",
+      "unterueberschrift": "Ziel, Regeln, Wendungen",
+      "seiten": "Seite 366-367",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bereiten ein Statement von rund zwei Minuten vor und beantworten danach einen Einwand. LF1 liefert Begriffe und zwei Arten von Lösungsansatz, LF2 Ihre vorläufige Position mit einem Argument, LF3 Belege für beide Seiten, LF4 Ihre Position mit der Antwort auf den Einwand.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 9.3 | S. 231-235 · Kap. 9.2 | S. 230",
+      "text": "Erklären Sie mit Kap. 9.3 (S. 231–232), was Nachhaltigkeit bedeutet und welche zwei Klimaziele die Schweiz hat. Halten Sie fest, was graue Energie ist (Kap. 9.2, S. 230) und wodurch der Verbrauch laut S. 235 sinken soll.",
+      "liefert": "Begriffe und zwei Arten von Lösungsansatz",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Markieren Sie auf S. 231 die drei Seiten der Nachhaltigkeit, auf S. 232 zwei Klimaziele.",
+          "Suchen Sie auf S. 235 die zwei Wege, auf denen der Verbrauch pro Kopf sinken soll."
+        ],
+        "satzanfaenge": [
+          "«Nachhaltig heisst, dass …»",
+          "«Die Schweiz will bis 2030 … und ab 2050 …»",
+          "«Graue Energie steckt in …»"
+        ],
+        "produkt": "Die Begriffe stützen die Begründungen auf Ihrer Stichwortkarte – je mit Seite."
+      },
+      "loesung": {
+        "kern": "Nachhaltigkeit, Klimaziele, graue Energie, zwei Wege",
+        "zeilen": [
+          {
+            "label": "Nachhaltigkeit",
+            "text": "Nur so viel verbrauchen, wie auf Dauer wieder nachkommt. Drei Seiten gehören zusammen: die Umwelt erhalten (ökologisch), tragfähig wirtschaften (ökonomisch), alle teilhaben lassen (sozial).",
+            "quelle": "Kap. 9.3, S. 231"
+          },
+          {
+            "label": "Klimaziele",
+            "text": "Die Schweiz will den Ausstoss von Treibhausgasen bis 2030 mindestens halbieren (Vergleichsjahr 1990) und ab 2050 nur noch so viel ausstossen, wie Speicher aufnehmen: das Netto-Null-Ziel. Stand laut Lehrmittel: 2025.",
+            "quelle": "Kap. 9.3, S. 232"
+          },
+          {
+            "label": "Graue Energie",
+            "text": "Energie, die in Herstellung, Transport und Entsorgung eines Produkts steckt. Beim Durchschnittshaushalt ist das der grössere Teil des Verbrauchs; bei elektronischen Geräten ist der Unterschied zum Betrieb besonders gross.",
+            "quelle": "Kap. 9.2, S. 230"
+          },
+          {
+            "label": "Zwei Wege",
+            "text": "Das Modell der 2000-Watt-Gesellschaft will den Verbrauch pro Kopf senken – durch technische Entwicklung und durch persönlichen Verzicht.",
+            "quelle": "Kap. 9.3, S. 235"
+          },
+          {
+            "label": "Nicht verlangt",
+            "text": "Die Instrumente des Staats (S. 233) gehören noch nicht in diese Antwort; sie folgen bei LF3 bzw. LF4.",
+            "quelle": "Kap. 9.3, S. 233"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.3 | S. 393-394 · eigener Fall",
+      "text": "Formulieren Sie Ihre vorläufige Position zur Kaufpause in einem Satz. Begründen Sie sie mit einem Argument nach dem 3B-Schema (Kap. 17.3, S. 394): Behauptung, Begründung und ein Beispiel aus Ihrem Haushalt.",
+      "liefert": "Vorläufige Position mit erstem Argument",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie zuerst nur die Behauptung: einen Satz in der Ich-Form.",
+          "Prüfen Sie: Sagt die Begründung, warum? Zeigt das Beispiel einen bestimmten Gegenstand?"
+        ],
+        "satzanfaenge": [
+          "«Ich bin vorläufig für / gegen die Kaufpause, weil …»",
+          "«Das zeigt sich bei uns zum Beispiel an …»",
+          "«Unsicher bin ich noch, ob …»"
+        ],
+        "produkt": "Position und Argument kommen als Stichworte auf die Stichwortkarte (S. 7)."
+      },
+      "loesung": {
+        "kern": "Vorläufige Position, ein Argument mit drei Teilen",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Eine Position in einem Satz in der Ich-Form – dafür, dagegen oder noch offen mit Tendenz – und ein Argument mit allen drei Teilen: Behauptung, Begründung, Beispiel.",
+            "quelle": "Kap. 17.3, S. 394"
+          },
+          {
+            "label": "Mögliche Begründung",
+            "text": "Dafür: In neuen Geräten und Kleidern steckt graue Energie; wer Altes länger nutzt, braucht keine neue Herstellung (Folgerung aus der Seite). Dagegen: Ein Haushalt allein ändert wenig – das ist Fallüberlegung, nicht aus dem Lehrmittel.",
+            "quelle": "Kap. 9.2, S. 230"
+          },
+          {
+            "label": "Beispiel",
+            "text": "Stammt aus dem eigenen Haushalt, etwa ein Handy, das noch läuft. Eine Zahl zur Wirkung der Kaufpause ist nicht verlangt und im Lehrmittel nicht belegt."
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Antwort nennt die Position ausdrücklich als vorläufig; sie darf sich nach LF3 und LF4 ändern."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Eine Behauptung ohne Begründung – oder ein Beispiel, das nur die Begründung wiederholt."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Statement von zwei Minuten mit Stichwortkarte und Erwiderung auf einen Einwand",
+    "titel": "Stichwortkarte: Mein Statement zur Kaufpause",
+    "format_detail": "Ein frei gesprochenes Statement von rund zwei Minuten vor zwei bis drei Zuhörenden, danach Ihre Erwiderung auf einen Einwand aus der Runde. Auf S. 7 steht Ihre Stichwortkarte: Position in einem Satz · zwei Argumente nach dem 3B-Schema · erwarteter Einwand · meine Antwort darauf · Schluss mit Bitte an die Runde. Sprechen Sie frei und in der Ich-Form; die Karte trägt Stichworte, keine ganzen Sätze. Notieren Sie nach dem Statement eine Rückmeldung aus der Runde in einem Satz und einen Punkt der Gegenseite, den Sie gelten lassen.",
+    "beschreibung": "Ich halte vor zwei bis drei Zuhörenden ein Statement von rund zwei Minuten zur Kaufpause, gestützt auf meine Stichwortkarte, und antworte danach sachlich auf einen Einwand aus der Runde.",
+    "schritte": [
+      {
+        "label": "01 Lösungsansätze ordnen",
+        "hint": "Unterstreichen Sie in Ihrer Antwort zu LF1 (S. 2), was Einzelne beitragen können und welche Ziele für alle gelten – Stoff für Begründungen."
+      },
+      {
+        "label": "02 Meine Position begründen",
+        "hint": "Übernehmen Sie aus LF2 Ihre Position und das erste Argument als Stichworte auf die Karte (S. 7)."
+      },
+      {
+        "label": "03 Zweites Argument belegen",
+        "hint": "Stützen Sie Ihr zweites Argument auf eine Rasterzeile aus LF3, mit Fundstelle. Markieren Sie die Zeile, die gegen Ihre Position spricht."
+      },
+      {
+        "label": "04 Position festlegen",
+        "hint": "Tragen Sie aus LF4 Position, erwarteten Einwand und Antwort auf der Karte ein – mit dem Punkt, den Sie gelten lassen. Schluss: eine Bitte."
+      },
+      {
+        "label": "05 Statement halten, erwidern",
+        "hint": "Sprechen Sie rund zwei Minuten frei vor zwei bis drei Mitlernenden. Antworten Sie auf einen Einwand, notieren Sie eine Rückmeldung (Karte)."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Stichwortkarte (S. 7): Position, zwei Argumente, Einwand, Antwort, Schluss",
+      "Eine Rückmeldung aus der Runde in einem Satz",
+      "Ein Punkt der Gegenseite, den ich gelten lasse"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Wer räumt nach dem Grillabend im Freundeskreis auf?",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Ausschnitt aus der Runde",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich bin für eine feste Regel: Wer kommt, nimmt einen Sack Abfall mit. Das ist fair, alle tragen gleich viel. Letztes Mal räumten nur zwei auf."
+            },
+            {
+              "wer": "Freundin",
+              "text": "Regeln unter Freunden? Bisher ging es auch ohne."
+            },
+            {
+              "wer": "Ich",
+              "text": "Stimmt, meistens klappt es – letztes Mal nicht. Testen wir die Regel zweimal, dann entscheiden wir neu?"
+            }
+          ]
+        },
+        {
+          "titel": "Stichwortkarte",
+          "eintraege": [
+            {
+              "text": "Position: Ich bin für eine feste Regel – jede Person nimmt einen Sack Abfall mit"
+            },
+            {
+              "text": "Argumente: 1 fair – alle tragen gleich – zuletzt nur zwei · 2 schneller – kein Streit – zuletzt 20 Min."
+            },
+            {
+              "text": "Erwarteter Einwand: «Bisher ging es auch ohne Regel»"
+            },
+            {
+              "text": "Meine Antwort: meistens ja (lasse ich gelten) – zuletzt nicht"
+            },
+            {
+              "text": "Schluss: Bitte an alle – zweimal testen, dann neu entscheiden",
+              "notiz": "Rückmeldung: «klar, aber etwas schnell»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Kaufpause zu Hause – Statement, Einwand und Erwiderung",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Zeigen Sie sie erst nach Schritt 05. Die Fundstellen stammen aus dem Lehrmittel; wer mit der Quelle gearbeitet hat, setzt beim Einwand eine Zeitmarke ein. Der Entscheid (für die Kaufpause) entspricht einem der zwei Beispiele im Erwartungshorizont von LF4; eine Position dagegen ist ebenso gültig, wenn sie begründet ist und die andere Seite würdigt. Die Karte ist hier ausformuliert, im Heft genügen Stichworte. Annahme, nicht in der Situation: die Ausnahme bei einem Defekt, das Handy als Beispiel und der Wortlaut der Rückmeldung. Eine Zahl zur Wirkung der Kaufpause fehlt bewusst – das Lehrmittel nennt keine (Kap. 9.2, S. 230: nur zur grauen Energie). «Regeln erreichen mehr Leute» ist Folgerung der sprechenden Person, kein Lehrmittelsatz.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Ausschnitt aus der Runde",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Ich bin für die Kaufpause. In jedem neuen Gerät steckt Energie aus Herstellung und Transport. Nutzen wir das Alte weiter, fällt sie nicht an. Mein Handy läuft noch, also behalte ich es."
+            },
+            {
+              "wer": "Schwester",
+              "text": "Das bringt nichts, solange nicht Regeln für alle gelten. Alle anderen kaufen weiter."
+            },
+            {
+              "wer": "Ich",
+              "text": "Du hast recht: Eine Regel erreicht mehr Leute als wir vier. Darüber entscheiden wir am Sonntag aber nicht, über unsere Käufe schon. Mein Vorschlag: ein Jahr, mit Ausnahme, wenn etwas kaputtgeht."
+            }
+          ]
+        },
+        {
+          "titel": "Stichwortkarte",
+          "eintraege": [
+            {
+              "text": "Position: Ich bin für die Kaufpause – ein Jahr, mit Ausnahme bei einem Defekt"
+            },
+            {
+              "text": "Argument 1: Neues kostet graue Energie – sie steckt in Herstellung und Transport – Beispiel: Mein Handy läuft noch",
+              "notiz": "Kap. 9.2, S. 230"
+            },
+            {
+              "text": "Argument 2: Verzicht gehört zum Weg – der Verbrauch soll durch Technik und Verzicht sinken – Beispiel: Kleider austragen",
+              "notiz": "Kap. 9.3, S. 235"
+            },
+            {
+              "text": "Erwarteter Einwand: Ein Appell verpflichtet niemanden, der Druck ist klein – es braucht Regeln für alle",
+              "notiz": "Kap. 9.3, S. 233; «es braucht Regeln» ist Folgerung"
+            },
+            {
+              "text": "Meine Antwort: Stimmt, Regeln erreichen mehr – aber am Sonntag entscheiden wir über unsere Käufe, nicht über Gesetze",
+              "notiz": "Ich lasse gelten (Folgerung): Regeln erreichen mehr Leute"
+            },
+            {
+              "text": "Schluss: Bitte an die Runde – probieren wir es ein Jahr; wer dagegen ist, nennt die Ausnahme, die ihm wichtig ist"
+            },
+            {
+              "text": "Rückmeldung aus der Runde: «Klar begründet; beim Einwand hast du zuerst gesagt, was daran stimmt.»",
+              "notiz": "nach dem Statement notiert"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Keine Begründung erkennbar; Behauptungen stehen für sich.",
+        "Begründung ansatzweise vorhanden; ein Beispiel oder Beleg fehlt weitgehend.",
+        "Begründung nachvollziehbar aufgebaut, mit Beispiel oder Beleg; eine andere Sichtweise ist genannt.",
+        "Begründung schlüssig; der stärkste Einwand ist sachlich beantwortet, Folgen sind bedacht."
+      ],
+      "indikator_produkt": "Jede Behauptung hat Grund und Beispiel; der Einwand wird beantwortet, nicht übergangen."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Keine eigene Position erkennbar.",
+        "Eigene Position angedeutet, aber nicht klar formuliert oder nicht begründet.",
+        "Eigene Position klar in Ich-Form formuliert und begründet.",
+        "Eigene Position in Ich-Form begründet; das Spannungsfeld ist anerkannt, die andere Seite respektvoll gewürdigt."
+      ],
+      "indikator_produkt": "Die Karte beginnt mit «Ich bin für / gegen …» und nennt, was an der Gegenseite stimmt."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine fertige Stichwortkarte mit Einwand und Erwiderung; die Satzanfänge auf S. 2 helfen beim ersten Satz.",
+    "scaffold_100": "Plus: Bereiten Sie die Antwort auf einen zweiten Einwand vor und sagen Sie, unter welcher Bedingung Sie Ihre Position ändern würden."
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für den Aufbau Ihres Statements",
+      "tun": "Sie haben rund zwei Minuten, nicht eine: ein Satz zur Ausgangslage, Position, zwei Argumente, am Schluss die Bitte. Frei sprechen, mit Karte."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-16-1-diskussion",
+      "fuer": "für die Erwiderung auf den Einwand",
+      "tun": "Geben Sie den Einwand in eigenen Worten wieder. Sagen Sie zuerst, was daran stimmt, dann Ihre Antwort in der Ich-Form. Am Schluss steht ein Kompromiss – oder dass Sie sich nicht einig sind (S. 366).",
+      "beispiel": [
+        "Frage: Darf auf dem Pausenplatz Fussball gespielt werden?",
+        "Wiedergeben — «Sie meinen also, der Platz sei zu klein.»",
+        "Was stimmt — «Eng ist es, das sehe ich auch.»",
+        "Antworten — «Ich finde trotzdem: Mit den Toren am Rand geht es.»"
+      ]
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für jedes Argument und die Antwort auf den Einwand",
+      "tun": "Notieren Sie je Argument drei Stichworte: Behauptung, Begründung, Beispiel aus Ihrem Haushalt. Ebenso die Antwort auf den Einwand: was, warum, woran man es sieht."
+    }
+  ],
+  "mindmap_zentrum": "Heute zahlen oder morgen Schäden tragen",
+  "mindmap_aeste": [
+    {
+      "titel": "Worum geht es?",
+      "punkte": [
+        "Nachhaltigkeit",
+        "Netto-Null-Ziel",
+        "Graue Energie"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wo setzt die Lösung an?",
+      "punkte": [
+        "Verzicht",
+        "Regel für alle",
+        "Verursacherprinzip"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie bringe ich es ein?",
+      "punkte": [
+        "3B-Schema",
+        "Einwand",
+        "Killerphrase",
+        "Kompromiss"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Kann ich sagen, was unser Haushalt beitragen kann und was nur Regeln für alle erreichen (LF3, LF4)?",
+      "Steht auf meiner Karte ein Einwand der Gegenseite – und eine Antwort, die zuerst sagt, was daran stimmt?"
+    ],
+    "mitnahme": [
+      "Mein stärkstes Argument",
+      "Meine Antwort auf den Einwand",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Graue Energie",
+          "nach": "Verzicht",
+          "text": "wird vermieden durch"
+        },
+        {
+          "von": "Verzicht",
+          "nach": "Nachhaltigkeit",
+          "text": "trägt bei zur"
+        },
+        {
+          "von": "Regel für alle",
+          "nach": "Netto-Null-Ziel",
+          "text": "soll erreichen helfen"
+        },
+        {
+          "von": "Verursacherprinzip",
+          "nach": "Regel für alle",
+          "text": "wird umgesetzt durch eine"
+        },
+        {
+          "von": "Verzicht",
+          "nach": "Regel für alle",
+          "text": "ersetzt nicht die"
+        },
+        {
+          "von": "3B-Schema",
+          "nach": "Einwand",
+          "text": "hilft beantworten"
+        },
+        {
+          "von": "Killerphrase",
+          "nach": "Einwand",
+          "text": "ist kein begründeter"
+        },
+        {
+          "von": "Einwand",
+          "nach": "Kompromiss",
+          "text": "kann führen zum"
+        },
+        {
+          "von": "Verzicht",
+          "nach": "gilt auch bei …",
+          "text": "steht auch zur Wahl"
+        }
+      ],
+      "transfer": "Strom sparen in der Wohngemeinschaft; Abfall trennen im Mehrfamilienhaus; Essensreste vermeiden in der Kantine des Lehrbetriebs.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Lenkungsabgabe",
+          "Nachsorge"
+        ],
+        "mit_medien": [
+          "Rahmenbedingung",
+          "Technischer Fortschritt"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn ich trenne: Unser Haushalt kann graue Energie vermeiden, indem er Altes länger nutzt (Kap. 9.2, S. 230, Folgerung); dass erst Regeln für alle viele erreichen, ist ebenfalls Folgerung. Wie viel die Kaufpause bringt, lässt sich nicht beziffern: S. 230 nennt Zahlen zur grauen Energie, keine zur Wirkung einer Kaufpause.",
+        "Ja, wenn die Karte den stärksten Einwand mit Fundstelle nennt und die Antwort mit dem beginnt, was daran stimmt (LF4)."
+      ],
+      "mitnahme": [
+        "Zum Beispiel: In neuen Geräten steckt graue Energie; nutzen wir Altes weiter, fällt sie nicht an (Kap. 9.2, S. 230).",
+        "Zum Beispiel: Regeln für alle erreichen mehr Leute (Folgerung) – über unsere Käufe entscheiden wir aber selbst, und zwar jetzt.",
+        "Zum Beispiel, wie viel eine Kaufpause in Zahlen bringt – dazu sagt das Lehrmittel nichts."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Nachhaltigkeit und zwei Klimaziele mit Seite",
+        "LF2: Position und ein Argument nach 3B",
+        "LF4: Einwand mit Fundstelle und Antwort darauf"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Fundstellen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Statement",
+      "vollstaendig_wenn": [
+        "Karte: Position, zwei Argumente, Einwand, Antwort, Schluss",
+        "Eine Rückmeldung in einem Satz; ein Punkt, den ich gelten lasse"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt, «Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Begriffe und meine vorläufige Position",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Stichwortkarte beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Statement halten und erwidern, mit den Feedback-Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich abwägen, ob ich selbst anfange oder auf eine Regel für alle warte – und meine Haltung vor anderen vertreten?",
+    "ziel": "Wer über die Klimaveränderung mitreden will, wägt ab, was Einzelne tun können und was nur gemeinsame Regeln erreichen — und beantwortet den stärksten Einwand der anderen Seite."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Abwägen, was der eigene Beitrag leistet und was nur Regeln für alle erreichen, und die Position mit Argument und Antwort auf den stärksten Einwand einbringen",
+    "lehrmittel_anker": "Kap. 9.3 S. 231-232 (Nachhaltigkeit, Klimaziele) · Kap. 9.3 S. 233 (vier umweltpolitische Instrumente) · Kap. 9.3 S. 235 (2000-Watt-Gesellschaft: Technik und Verzicht) · Kap. 9.2 S. 230 (graue Energie) · Kap. 17.3 S. 393-395 (Stellungnahme, 3B-Schema) · Kap. 16.1 S. 366-367 (Ziel und Regeln der Diskussion, Killerphrasen) · Kap. 16.2 S. 368 (Statement, über die Methodenkarte)",
+    "kn_aktivierung": "Der KN verlangt einen Vorschlag an die Versammlung: sich zwischen dem Sparen der Einzelnen und einer Pflicht für alle positionieren und auf den stärksten Einwand der anderen Seite eingehen – genau das übt das Statement mit Erwiderung.",
+    "transfer_check": "Kann die Lernende in einem neuen Fall ihre Position in der Ich-Form begründen und den stärksten Einwand beantworten, ohne die Gegenseite abzuwerten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "leitfragen[2] — im Raster nachvollziehen, wo eine andere Seite ansetzt und warum"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] — die eigene Haltung zu Verzicht und Regeln am stärksten Einwand prüfen"
+    },
+    {
+      "sk": 6,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — das Statement nach dem 3B-Schema aufbauen und den Einwand beantworten"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 9.3 | S. 233",
+          "text": "Wie stark bindet jedes der vier Instrumente des Staats (Kap. 9.3, S. 233) die Einzelnen: bitten, über Geld lenken, vorschreiben, nachher aufräumen? Befund (zwei, drei Sätze): Was leiten Sie daraus für die Kaufpause ab?",
+          "liefert": "Instrumente als Belege für beide Seiten",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 9.3 | S. 233",
+            "auftrag": "Lesen Sie Kap. 9.3, S. 233. Die erste Zeile ist ein Beispiel. Tragen Sie die drei weiteren Instrumente des Staats ein: Instrument, So wirkt es, Beispiel und ein Begriff aus LF1 oder dem Glossar.",
+            "spalten": [
+              "Instrument",
+              "So wirkt es",
+              "Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "Appell · S. 233",
+              "bittet, ohne Pflicht",
+              "Geräte ganz ausschalten",
+              "Verzicht"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 233: je Instrument ein Feld der Tabelle. Wählen Sie Beispiele aus Haushalt und Abfall."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 9.3 (S. 233) wirkt … so: …»",
+              "«Am wenigsten bindet …; am stärksten bindet …»",
+              "«Für die Kaufpause leite ich daraus ab, dass …»"
+            ],
+            "produkt": "Ein Instrument stützt Ihr zweites Argument (mit Seite auf die Karte), eines spricht dagegen: Schritt 03."
+          },
+          "loesung": {
+            "kern": "Vier Instrumente: von der Bitte bis zum Verbot",
+            "quelle_ref": "Kap. 9.3 | S. 233",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Appell: bittet, verpflichtet niemanden, der Druck bleibt klein. Anreiz: Wer die Umwelt schont, spart Geld; bei der Lenkungsabgabe zahlt nach dem Verursacherprinzip, wer den Schaden verursacht. Verbot: untersagt Stoffe oder schränkt Tätigkeiten ein. Nachsorge: lässt den Schaden zu und beseitigt ihn nachher, etwa mit Steuergeld.",
+                "quelle": "Kap. 9.3, S. 233"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Weitere Beispiele der Seite: Heizkosten je Wohnung abrechnen (Anreiz), Abgabe auf Brennstoffen mit Rückerstattung (Lenkungsabgabe), Kläranlage (Nachsorge); auch jene aus dem Verkehr.",
+                "quelle": "Kap. 9.3, S. 233"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Appell → Verzicht und Verbot → Regel für alle sind Deutung; das Lehrmittel nennt nur die Instrumente. Dass bei der Nachsorge das Verursacherprinzip nicht gilt, ist Folgerung."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er für alle vier Instrumente sagt, wie stark sie binden, und die Seite nennt. Der Schluss auf den eigenen Haushalt ist Ableitung, nicht aus dem Lehrmittel."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Appell · S. 233",
+                "bittet, ohne Pflicht",
+                "Geräte ganz ausschalten",
+                "Verzicht"
+              ],
+              [
+                "Anreiz · S. 233",
+                "wer schont, spart; Verursachende zahlen (Lenkungsabgabe)",
+                "Abfallsack mit Gebühr",
+                "Verursacherprinzip"
+              ],
+              [
+                "Verbot · S. 233",
+                "untersagt Stoffe, schränkt Tätigkeiten ein",
+                "keine stromhungrigen Glühlampen mehr",
+                "Regel für alle"
+              ],
+              [
+                "Nachsorge · S. 233",
+                "Schaden zulassen, nachher beseitigen, mit Steuergeld",
+                "Kehricht verbrennen",
+                "Verursacherprinzip (gilt nicht – Folgerung)"
+              ]
+            ],
+            "befund": "Laut Kap. 9.3 (S. 233) bittet der Appell nur, der Anreiz lenkt über Geld (sparen oder, bei der Lenkungsabgabe, als Verursacher zahlen), das Verbot schreibt vor, die Nachsorge beseitigt den Schaden nachher. Meine Folgerung: Anreiz und Verbot binden stärker als eine Bitte. Für die Kaufpause leite ich ab: Sie ist ein freiwilliger Beitrag wie nach einem Appell – sie wirkt in unserem Haushalt, ersetzt aber keine Regel für alle."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 9.3 · Eigener Beitrag ↔ Regeln für alle",
+          "pol_typ": "position_gegenposition",
+          "text": "Für die Kaufpause stimmen – oder dagegen, solange keine Regeln für alle gelten? Formulieren Sie selbst den stärksten Einwand der Gegenseite, gestützt auf ein Instrument aus dem Raster (S. 233), und antworten Sie darauf.",
+          "liefert": "Position mit Antwort auf den Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Machen Sie aus «Das bringt nichts» ein Argument: Welcher Grund steckt dahinter?"
+            ],
+            "satzanfaenge": [
+              "«Ich bin für / gegen die Kaufpause, weil …»",
+              "«Der stärkste Einwand lautet: … (Seite)»",
+              "«Daran stimmt, dass … Trotzdem / Darum …»"
+            ],
+            "produkt": "Position, erwarteter Einwand und Antwort kommen als Stichworte auf die Karte (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Position ↔ Einwand, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die eigene Position in einem Satz in der Ich-Form und begründet sie mit Behauptung, Begründung und Beispiel",
+                "formuliert den stärksten Einwand der Gegenseite selbst und stützt ihn auf ein Instrument (Kap. 9.3, S. 233) – nicht den schwächsten",
+                "sagt, was am Einwand stimmt, antwortet darauf und entscheidet: bleiben oder ändern",
+                "bedenkt eine Folge des Entscheids für die Familie und behauptet keine Zahl zur Wirkung der Kaufpause"
+              ],
+              "beispiel_pol_1": "Ich bin für die Kaufpause. Behauptung: Unser Haushalt kann sofort etwas beitragen. Begründung: In neuen Geräten und Kleidern steckt graue Energie aus Herstellung und Transport (Kap. 9.2, S. 230); nutzen wir das Alte weiter, fällt sie nicht an – das ist meine Folgerung. Beispiel: Mein Handy läuft noch. Der stärkste Einwand ist der meiner Schwester, und ich stütze ihn auf das Lehrmittel: Ein Appell verpflichtet niemanden, der Druck bleibt klein (Kap. 9.3, S. 233). Das lasse ich gelten; meine Folgerung: Anreize und Verbote erreichen mehr Leute als vier Personen. Ich bleibe trotzdem dabei: Über Regeln für alle entscheiden wir am Sonntag nicht, über unsere Käufe schon, und der persönliche Verzicht gehört laut S. 235 zum Weg. Wie viel die Pause bringt, kann ich nicht beziffern. Damit sie für alle tragbar ist, schlage ich eine Ausnahme vor, wenn etwas kaputtgeht.",
+              "beispiel_pol_2": "Ich bin gegen die Kaufpause, solange keine Regeln für alle gelten. Behauptung: Ein freiwilliger Verzicht von vier Personen ändert wenig – das ist meine Einschätzung, keine Zahl aus dem Lehrmittel. Begründung: Ein Appell verpflichtet niemanden (Kap. 9.3, S. 233); meine Folgerung: Stärker binden Verbote und die Lenkungsabgabe, bei der zahlt, wer den Schaden verursacht. Beispiel: Die Gebühr auf dem Abfallsack trifft jeden Haushalt, nicht nur die Einsichtigen. Der stärkste Einwand ist der meines Vaters: Jemand muss anfangen. Ich stütze ihn auf den Appell – dort kann jede Person etwas beitragen (Kap. 9.3, S. 233) –, und der persönliche Verzicht gehört laut S. 235 zum Weg; zudem steckt in Neuem graue Energie (Kap. 9.2, S. 230). Das lasse ich gelten. Ich ändere meine Position darum in einem Punkt: keine Pflicht für alle vier, aber ich kaufe freiwillig kein neues Handy, solange das alte läuft. Annahme: Niemand in der Familie braucht dringend etwas Neues.",
+              "nicht_tragfaehig": "Eine Position ohne Begründung; ein Einwand, der nur als Killerphrase abgetan wird; oder eine Antwort, die die Gegenseite abwertet, statt auf sie einzugehen."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Meine Position und mein Grund",
+          "Stärkster Einwand (mit Seite)",
+          "Antwort: bleiben oder ändern?"
+        ],
+        "hinweis": "Ein Eintrag je Spalte genügt. Schreiben Sie in Spalte 3 zuerst, was am Einwand stimmt – dann, ob Sie bei Ihrer Position bleiben.",
+        "loesung_zeilen": [
+          [
+            "Für die Kaufpause: In Neuem steckt graue Energie (Kap. 9.2, S. 230)",
+            "Ein Appell verpflichtet niemanden, der Druck bleibt klein (S. 233)",
+            "Stimmt (Folgerung): Regeln erreichen mehr. Ich bleibe: Über unsere Käufe entscheiden wir selbst"
+          ],
+          [
+            "Gegen die Kaufpause: Ein Appell verpflichtet niemanden (S. 233); Folgerung: Anreize und Verbote binden stärker",
+            "Appell: Jede Person kann beitragen (S. 233); Verzicht gehört zum Weg (S. 235)",
+            "Stimmt zum Teil. Ich ändere: keine Pflicht für alle vier, aber freiwillig kein neues Handy"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 9.3 (Heft, S. 3)",
+        "beispiel": [
+          "Hausordnung · S. 12 (Beispielwert) · legt Ruhezeiten fest · keine Waschmaschine nach 22 Uhr · → Rücksicht"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Zeile und eine fertige Stichwortkarte aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Wo setzen die zwei Seiten in der Quelle an, um die Klimaveränderung zu bremsen – bei den Einzelnen oder bei Regeln für alle –, und wie begründen sie es? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Belege für beide Seiten mit Fundstelle",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-251b-pflicht",
+            "spalten": [
+              "Zeit / wer spricht",
+              "Kernaussage",
+              "Ansatz bei wem",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst ansehen, dann stoppen. Zahlen der Sprechenden: mit «laut …».",
+              "Fragen Sie: Wer soll etwas ändern – Unternehmen, Staat, Haushalte?"
+            ],
+            "satzanfaenge": [
+              "«Der Befürworter setzt bei … an, denn … (Zeitmarke)»",
+              "«Der Bundesrat hält dagegen, dass … (Zeitmarke)»",
+              "«Für die Kaufpause leite ich daraus ab, dass …»"
+            ],
+            "produkt": "Eine Aussage stützt Ihr zweites Argument (mit Zeitmarke auf die Karte), eine spricht dagegen: Schritt 03."
+          },
+          "loesung": {
+            "kern": "Zwei Seiten: Regeln für Hersteller, Last der Haushalte",
+            "quelle_ref": "q-251b-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Befürworter: Ziel gesetzt, Weg beim Parlament (15:29–15:36); behauptet, Nichtstun koste schon jetzt, die Leute zahlten (16:17–16:26). Bundesrat: Unternehmen stellen her, was wir kaufen; kurze Frist träfe die Haushalte (16:55–17:42). Befürworter: sauberere Herstellung statt weniger Konsum, dafür Rahmenbedingungen (18:18–18:42).",
+                "quelle": "Quelle, 15:29-18:42"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Bundesrat: Technischer Fortschritt braucht Zeit (17:44–17:47); am Ziel netto null bis 2050 hält er fest (17:06–17:08).",
+                "quelle": "Quelle, 17:06-17:47"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Ansatz und Begriff sind Deutung; die Sprechenden nennen beides nicht."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er beide Seiten mit Zeitmarke nennt und sagt, wo jede ansetzt."
+              },
+              {
+                "label": "Hinweis",
+                "text": "Wer spricht, ergibt sich nur aus Anrede und Gesagtem. Die Angaben zu Lebensmittelpreisen (16:07–16:19) und zum Anteil von Unternehmen am Ausstoss (16:42–16:49) sind ungeprüfte Behauptungen. Abgelehnt am 09.02.2025 mit 69,8 % Nein: nicht im Ausschnitt; laut UVEK (uvek.admin.ch/de/uvi, Abruf 2026-10-05)."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "15:29 · Befürworter",
+                "Vorlage setzt nur das Ziel; den Weg bestimmt das Parlament",
+                "bei allen, über Regeln (Deutung)",
+                "Regel für alle"
+              ],
+              [
+                "16:17 · Befürworter",
+                "behauptet: Nichtstun kostet bereits; Leute zahlen, grosse Unternehmen profitieren",
+                "bei den Unternehmen (Deutung)",
+                "Verursacherprinzip"
+              ],
+              [
+                "17:37 · Bundesrat",
+                "warnt: kurze Frist träfe die Haushalte stark; technischer Fortschritt braucht Zeit",
+                "bei Technik und Zeit; Haushalte nur als Warnung",
+                "Verzicht (Deutung)"
+              ],
+              [
+                "18:18 · Befürworter",
+                "nicht weniger Konsum, sondern sauberere Herstellung; dafür Rahmenbedingungen",
+                "bei den Unternehmen",
+                "Regel für alle"
+              ]
+            ],
+            "befund": "Der Befürworter setzt bei Regeln für die Herstellung an: Die Vorlage gebe ein Ziel vor, das Parlament den Weg (15:29), und die Unternehmen bräuchten Rahmenbedingungen (18:37). Der Bundesrat hält dagegen, eine kurze Frist zwinge die Haushalte zum Verzicht, während die Technik Zeit brauche (17:37–17:47). Für die Kaufpause leite ich ab: Die zwei streiten im Grossen über dieselbe Frage wie wir zu Hause – wer anfangen muss."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 9.3 · Eigener Beitrag ↔ Regeln für alle",
+          "pol_typ": "position_gegenposition",
+          "text": "Für die Kaufpause stimmen – oder dagegen, solange keine Regeln für alle gelten? Nennen Sie die Aussage der Quelle, die am stärksten gegen Ihre Position spricht (Zeitmarke), und antworten Sie mit Kap. 9.3 (S. 233, 235).",
+          "liefert": "Position mit Antwort auf den Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Notieren Sie den Einwand in eigenen Worten – mit Zeitmarke und wer ihn vorbringt.",
+              "Prüfen Sie Ihre Antwort mit dem 3B-Schema (S. 6): Behauptung, Begründung, Beispiel."
+            ],
+            "satzanfaenge": [
+              "«Ich bin für / gegen die Kaufpause, weil …»",
+              "«In der Quelle hält … dagegen, dass … (Zeitmarke)»",
+              "«Daran stimmt, dass … Trotzdem / Darum …»"
+            ],
+            "produkt": "Position, erwarteter Einwand und Antwort kommen als Stichworte auf die Karte (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Position ↔ Einwand, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Position in einem Satz in der Ich-Form und begründet sie mit Behauptung, Begründung, Beispiel",
+                "nennt die Aussage der Quelle, die am stärksten gegen die eigene Position spricht – mit Zeitmarke und Rolle",
+                "sagt, was am Einwand stimmt, antwortet mit Kap. 9.3 (S. 233 oder S. 235), entscheidet: bleiben oder ändern",
+                "übernimmt keine Zahl der Sprechenden als Tatsache und behauptet keine Zahl zur Wirkung der Kaufpause"
+              ],
+              "beispiel_pol_1": "Ich bin für die Kaufpause. Behauptung: Unser Haushalt kann sofort etwas beitragen. Begründung: In Neuem steckt graue Energie aus Herstellung und Transport (Kap. 9.2, S. 230); nutzen wir das Alte weiter, fällt sie nicht an – meine Folgerung. Beispiel: Mein Handy läuft noch. Der stärkste Einwand kommt vom Befürworter: Es gehe nicht um weniger Konsum, sondern um sauberere Herstellung; dafür brauche es Rahmenbedingungen (18:18–18:40). Das lasse ich gelten – meine Folgerung: Regeln erreichen mehr als wir vier. Ich bleibe dabei: Über Regeln entscheiden wir am Sonntag nicht, über unsere Käufe schon; laut Bundesrat stellen Unternehmen her, was wir kaufen (16:55; ich folgere: Unsere Käufe zählen), und der persönliche Verzicht gehört zum Weg (Kap. 9.3, S. 235). Beziffern kann ich die Wirkung nicht. Mein Vorschlag: eine Ausnahme bei einem Defekt.",
+              "beispiel_pol_2": "Ich bin gegen die Kaufpause, solange keine Regeln für alle gelten. Behauptung: Ein freiwilliger Verzicht von vier Personen ändert wenig – meine Einschätzung, keine belegte Zahl. Begründung: Ein Appell verpflichtet niemanden (Kap. 9.3, S. 233); stärker wirken, folgere ich, Anreize und Verbote, und der Befürworter verlangt Rahmenbedingungen für die Herstellung (18:37). Beispiel: Die Gebühr auf dem Abfallsack trifft jeden Haushalt. Der stärkste Einwand kommt vom Bundesrat: Unternehmen stellen her, was wir kaufen (16:55) – wir sind, folgere ich, Teil der Ursache, und das Lehrmittel zählt den persönlichen Verzicht zum Weg (S. 235). Das lasse ich gelten; mein Vater sagt es so: Jemand muss anfangen. Ich ändere in einem Punkt: keine Pflicht für alle vier, aber ich kaufe freiwillig kein neues Handy, solange das alte läuft. Annahme: Niemand braucht dringend Neues.",
+              "nicht_tragfaehig": "Eine Position ohne Begründung; ein Einwand ohne Zeitmarke oder einer, der nur als Killerphrase abgetan wird; oder eine Antwort, die eine Zahl aus der Sendung als Tatsache übernimmt (16:07, 16:42–16:49)."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-251b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle gemäss QR-Seite an; die Initiative wurde am 9.2.2025 abgelehnt. Vier Aussagen, von beiden Sprechern: Zeitmarke und Wer spricht, Kernaussage, Ansatz bei wem, Begriff (LF1, Glossar).",
+          "raster": {
+            "spalten": [
+              "Zeit / wer spricht",
+              "Kernaussage",
+              "Ansatz bei wem",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-251b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was verlangte die Initiative, und was liess sie offen?",
+          "erwartung": "Verlangt: Die Wirtschaft verbraucht nur so viel und gibt nur so viele Schadstoffe ab, wie die Natur auf Dauer erträgt (00:03–00:09). Ziel bis 2035: Der Konsum im Land belastet die Umwelt höchstens gemäss dem Anteil der Schweiz an der Weltbevölkerung (00:50–01:01). Offen blieb der Weg (01:04); fest stand nur: sozial tragbare Massnahmen (01:07). Abgelehnt am 09.02.2025 (nicht im Ausschnitt; siehe Hinweis LF3)."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "02:15 (Beispielwert) · Bibliothekarin · Bücher kommen oft zu spät zurück · bei den Ausleihenden · → Leihfrist"
+        ]
+      },
+      "scaffold_90": "Sehen Sie den Anfang gemeinsam an und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt eine fertige Stichwortkarte."
+    }
+  }
+}

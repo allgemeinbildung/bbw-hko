@@ -824,7 +824,7 @@ export function buildStandaloneHtml({
   // Offen deklariert — steht in der Leiste, die nie gedruckt wird.
   const hint = protokoll
     ? 'Einfügen ist deaktiviert · der Schreibprozess wird protokolliert'
-    : 'Tippe in die Felder — «Speichern» sichert deine Eingaben in der Datei.'
+    : 'Tippen Sie in die Felder — «Speichern» sichert Ihre Eingaben in der Datei.'
 
   const logButton = protokoll
     ? `      <button type="button" id="hko-log-btn">Schreibprotokoll</button>\n`

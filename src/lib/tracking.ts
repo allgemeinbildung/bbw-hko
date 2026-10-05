@@ -70,7 +70,8 @@ export function classifyPath(path: string): { area: TrackArea; ref: string | nul
   switch (seg[0]) {
     case 'einheiten':
       // /einheiten · /einheiten/<slug> · /einheiten/<slug>/feedback
-      return { area: 'einheiten', ref: seg[1] ?? null }
+      // /einheiten/neues-format ist eine Erklärseite, keine Einheit — kein ref.
+      return { area: 'einheiten', ref: seg[1] && seg[1] !== 'neues-format' ? seg[1] : null }
 
     case 'situationen':
       // /situationen/admin/** ist KT1-Verwaltung, kein Katalogaufruf

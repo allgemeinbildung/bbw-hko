@@ -36,6 +36,12 @@ export type FeldQuellen = {
   kn?: unknown
   set?: unknown
   prinzip?: unknown
+  /**
+   * v4.2: aufgelöste Quellen der Medien-Spur je Heft (`{ A: Quelle[], B: Quelle[] }`),
+   * für den Quellen-Stand. Kommt aus `spur_varianten.mit_medien` — unabhängig davon,
+   * welche Spur gerade wirksam ist.
+   */
+  quellen?: unknown
 }
 
 const MARKER = /<!--\s*hko:([^|\s>]+?)(?:\s*\|\s*([a-z]+))?\s*-->([\s\S]*?)<!--\s*\/hko\s*-->/g
@@ -70,6 +76,92 @@ function alsQuote(s: string): string {
   return s.split('\n').map((z) => `> ${z}`.trimEnd()).join('\n')
 }
 
+/** Eine Quelle, soweit der Quellen-Stand sie braucht (Karte + Einsatz, aufgelöst). */
+type StandQuelle = {
+  id?: string
+  rolle?: string
+  titel?: string
+  herausgeber?: string
+  datum?: string
+  url?: string
+  verortung?: { absaetze?: string; von?: string; bis?: string }
+  dauer_sek?: number
+  woerter?: number
+  sachlage_geprueft?: string
+  ersatz?: StandQuelle
+}
+
+/** `2026-06-15` → `15.06.2026`, `2026-09` → `09.2026`; Freitext («o. D.») bleibt. */
+function datumCh(s: string | undefined): string {
+  if (!s) return '—'
+  const t = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s)
+  if (t) return `${t[3]}.${t[2]}.${t[1]}`
+  const m = /^(\d{4})-(\d{2})$/.exec(s)
+  return m ? `${m[2]}.${m[1]}` : s
+}
+
+/** Tabellenzelle: Pipes und Zeilenumbrüche würden die Markdown-Tabelle sprengen. */
+const zelle = (s: string | undefined) => (s ? s.replace(/\|/g, '\\|').replace(/\s*\n\s*/g, ' ') : '—')
+
+function zeileQuelle(rolle: string, q: StandQuelle): string {
+  const v = q.verortung
+  const verortung = v?.absaetze ?? (v?.von && v?.bis ? `${v.von}–${v.bis}` : undefined)
+  const laenge = q.dauer_sek
+    ? `${Math.floor(q.dauer_sek / 60)}:${String(q.dauer_sek % 60).padStart(2, '0')} Min.`
+    : q.woerter
+      ? `${q.woerter} Wörter`
+      : undefined
+  let link = '—'
+  if (q.url) {
+    let host = q.url
+    try {
+      host = new URL(q.url).hostname.replace(/^www\./, '')
+    } catch {
+      // kaputte URL: dann eben die URL selbst als Linktext
+    }
+    link = `[${host}](${q.url})`
+  }
+  return `| ${[
+    `${rolle}${q.id ? ` (${q.id})` : ''}`,
+    zelle(q.titel),
+    zelle(q.herausgeber),
+    datumCh(q.datum),
+    zelle(verortung),
+    zelle(laenge),
+    datumCh(q.sachlage_geprueft),
+    link,
+  ].join(' | ')} |`
+}
+
+/**
+ * v4.2: Quellen-Stand als Tabelle — je Heft die Pflichtquelle, direkt darunter ihre
+ * Ersatzquelle, dann die Vertiefungen in Heftreihenfolge. Gespeist aus der Kartei,
+ * nie von Hand abgeschrieben: eine geänderte Karte ändert den Begleiter mit.
+ */
+function alsQuellenStand(v: unknown): string | null {
+  if (!v || typeof v !== 'object') return null
+  const zeilen: string[] = []
+  for (const [heft, liste] of Object.entries(v as Record<string, unknown>)) {
+    if (!Array.isArray(liste)) continue
+    let vertiefung = 0
+    for (const q of liste as StandQuelle[]) {
+      if (!q || typeof q !== 'object') continue
+      if (q.rolle === 'pflicht') {
+        zeilen.push(zeileQuelle(`${heft} · Quelle`, q))
+        if (q.ersatz) zeilen.push(zeileQuelle(`${heft} · Ersatzquelle`, q.ersatz))
+      } else {
+        zeilen.push(zeileQuelle(`${heft} · Vertiefung ${++vertiefung}`, q))
+      }
+    }
+  }
+  if (!zeilen.length) return null
+  return [
+    '| Rolle | Titel | Herausgeber | Datum | Verortung | Länge | Geprüft am | Link |',
+    '|---|---|---|---|---|---|---|---|',
+    ...zeilen,
+  ].join('\n')
+}
+
 /** Der Wert eines Markers, fertig formatiert — oder null, wenn er nicht auflösbar ist. */
 export function feldWert(quellen: FeldQuellen, pfadStr: string, fmt?: string): string | null {
   const roh = pfad(quellen, pfadStr)
@@ -86,6 +178,9 @@ export function feldWert(quellen: FeldQuellen, pfadStr: string, fmt?: string): s
     // abwichen, erscheinen wieder vollständig — die Liste kann nicht mehr lückenhaft sein.
     case 'checkliste':
       return Array.isArray(roh) ? roh.map((x) => `☐ ${String(x)}`).join('\n') : null
+    // v4.2: `<!--hko:quellen|quellenstand-->` — die ganze Quellentabelle aus einem Marker.
+    case 'quellenstand':
+      return alsQuellenStand(roh)
     default:
       return typeof roh === 'string' || typeof roh === 'number' ? String(roh) : null
   }

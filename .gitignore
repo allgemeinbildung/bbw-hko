@@ -19,6 +19,8 @@ index.html
 # Lehrmittel-Quelltexte (urheberrechtlich, nicht-öffentlich, nicht deployt)
 # Wildcard deckt auch die abgelegten Vorgängerausgaben ab (_lehrmittel_2025/ usw.)
 material/_lehrmittel*/
+# Volltexte der Quellen (Transkripte, Artikel) — nur im privaten Spiegel versioniert
+material/_quellen-archiv*/
 
 # Video-Deck (HyperFrames-Projekt unter videos/deck-uebersicht/).
 # Reines Produktionsmaterial: Renders, Audio-Samples, Frame-Packets, Waveform-Cache
@@ -38,3 +40,6 @@ debug.log
 scorm/
 _scorm-rusch/
 scripts/scorm-*.mjs
+
+# Auszuege mit Personendaten (z. B. Mailverteiler aus Supabase) — nie ins Repo
+exports/

@@ -71,9 +71,45 @@ function walk(obj, path, fn) {
 
 // ------------------------------------------------------------------ Checks
 
-function pruefe(sit, slug) {
+/**
+ * Heft-Format v4.2 (`template: "heft_8page_v42"`): auf der Platte stehen nur die
+ * Kern-Leitfragen (LF1, LF2); LF3 und LF4 liegen je Spur unter `spuren`. Geprueft
+ * wird das Heft, wie es die Lernenden bekommen — Kern + Spur, einmal je Spur.
+ * Kleines Spiegelbild von `resolveSpur` (docs/upgrade-v4.2/VERTRAG.md). Ohne das
+ * Template bleibt alles beim Alten. Fehlende herausforderung_C.json,
+ * `reflexion_fragen`, `lernfortschritt.kriterien` und `austausch_phase` prueft
+ * dieses Skript nicht — bei v4.2 sind sie ersetzt (abschluss, feedback_kriterien,
+ * gemeinsamer_auftrag), die v4.2-Regeln selbst prueft scripts/check-v42.mjs.
+ */
+const TEMPLATE_V42 = 'heft_8page_v42'
+
+function varianten(sit) {
+  const spuren = sit.template === TEMPLATE_V42 && sit.spuren && typeof sit.spuren === 'object'
+    ? Object.entries(sit.spuren)
+    : []
+  if (!spuren.length) return [[null, sit]]
+  return spuren.filter(([, spur]) => spur && typeof spur === 'object').map(([key, spur]) => {
+    const { spuren: _weg, ...kern } = sit
+    return [key, {
+      ...kern,
+      leitfragen: [...(sit.leitfragen ?? []), ...(spur.leitfragen ?? [])]
+        .sort((a, b) => (a.nr ?? 0) - (b.nr ?? 0)),
+      ...(spur.quellen ? { quellen: spur.quellen } : {}),
+      ...(spur.kasten_s4 ? { kasten_s4: spur.kasten_s4 } : {}),
+      ...(spur.scaffold_90
+        ? { lernfortschritt: { ...(sit.lernfortschritt ?? {}), scaffold_90: spur.scaffold_90 } }
+        : {}),
+    }]
+  })
+}
+
+function pruefe(roh, slug) {
+  return varianten(roh).flatMap(([spur, sit]) => pruefeHeft(sit, slug, spur))
+}
+
+function pruefeHeft(sit, slug, spur) {
   const f = []
-  const id = `${slug} ${sit.buchstabe ?? '?'}`
+  const id = `${slug} ${sit.buchstabe ?? '?'}${spur ? ` [Spur ${spur}]` : ''}`
   const add = (code, feld, detail) => f.push({ id, slug, hf: sit.buchstabe, code, feld, detail })
 
   const lfs = sit.leitfragen ?? []
@@ -104,7 +140,11 @@ function pruefe(sit, slug) {
   })
 
   // --- Kontrollschritt schritte[4] ---------------------------------------
-  const ks = schritte[4]
+  // v4.2: Die Kontrolle vor der Abgabe leisten die Feedback-Kriterien mit der Spalte
+  // «Selbst» (Leitfaden §2, Seite 5). Schritt 05 darf darum ein Produktschritt sein —
+  // im Pilot ist es das Budgetgespräch (Leitfaden §9.1, ENTSCHEIDE E12).
+  const kontrolleUeberKriterien = sit.template === TEMPLATE_V42 && (sit.feedback_kriterien?.length ?? 0) > 0
+  const ks = kontrolleUeberKriterien ? null : schritte[4]
   if (ks) {
     const txt = `${ks.label ?? ''} ${ks.hint ?? ''}`
     if (!VERIFIKATION.test(txt)) {
@@ -318,6 +358,10 @@ function pruefeBegleiter(slug) {
   const f = pruefeBegleiterKopien(slug, q, raw)
   for (const m of raw.matchAll(MARKER)) {
     const [, pfad, fmt, rueckfall] = m
+    // v4.2: `<!--hko:quellen|quellenstand-->` setzt die Quellentabelle beim Laden aus der
+    // Kartei (begleiter-felder.ts). Sie hat keinen Pfad in den Einheitsdateien; ob die
+    // Karten existieren und vollständig sind, prüft check-v42.mjs.
+    if (fmt === 'quellenstand') continue
     const soll = formatiere(pfadWert(q, pfad), fmt)
     const id = `${slug} begleiter.md`
     if (soll == null) {

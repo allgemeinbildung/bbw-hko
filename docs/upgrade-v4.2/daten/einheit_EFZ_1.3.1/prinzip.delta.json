@@ -1,0 +1,103 @@
+{
+  "$hinweis": "Nur die Felder, die sich gegenüber prinzip.json v1.0.0 ändern. Alle übrigen Felder bleiben.",
+  "version": "2.1.0",
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Bedürfnisse ordnen",
+      "konfliktart": "Sofortiger Konsumwunsch vs. Selbstbild und Zugehörigkeit",
+      "handlungsprodukt_typ": "Kommentierte Bedürfnis-Landkarte mit Massstab und Entscheid",
+      "kompetenzen": [
+        "1.3.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Budget planen und Schulden vermeiden",
+      "konfliktart": "Fixe Verpflichtungen und offene Rechnungen vs. Konsumwünsche im knappen Budget",
+      "handlungsprodukt_typ": "Monatsbudget mit Schutzregeln + Budgetgespräch im Tandem",
+      "kompetenzen": [
+        "1.3.2",
+        "1.3.3"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      5,
+      11,
+      1
+    ],
+    "B": [
+      2,
+      6,
+      11
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      5,
+      11,
+      6
+    ]
+  },
+  "aspekte": {
+    "Wirtschaft": "R1",
+    "Identität und Sozialisation": "R1",
+    "Ethik": "R1"
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "B": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Position / Werthaltung"
+    ],
+    "B": [
+      "Argumentation",
+      "Wirtschaftliches Prinzip"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "modell_eigener_fall",
+      "mit_medien": "lehrmittel_quelle"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition",
+      "mit_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Wunsch jetzt oder Sicherheit später",
+  "hybrid_situation_spec": {
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Leasing",
+      "Konsumkredit",
+      "E-Bike",
+      "Mobilität"
+    ]
+  },
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "modi_auftrag": [
+    "Produktion mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)",
+  "auftrag_lebensbereich": "Freizeit und Freundeskreis"
+}

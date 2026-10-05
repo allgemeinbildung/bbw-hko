@@ -1,0 +1,241 @@
+{
+  "id": "{{ORDNER}}_kn",
+  "modul": "{{X.Y — Nummer des Lebensbezugs, wie in den Heften}}",
+  "kompetenz_nr": "{{X.Y.Z — erste Kompetenz von Heft A, wie im Ordnernamen}}",
+  "topic_slug": "{{SLUG des Ordners ohne Nummer und ohne Lehrgang-Suffix}}",
+  "lehrgang": "{{EFZ_3J|EFZ_4J — wie in den Heften}}",
+  "version": "1.0.0",
+  "erstellt_am": "{{JJJJ-MM-TT heute}}",
+  "set_ref": "{{ORDNER}}_set",
+  "prinzip_ref": "{{ORDNER}}_prinzip",
+  "anchored_situations": [
+    "{{ORDNER}}_hf_A",
+    "{{ORDNER}}_hf_B"
+  ],
+  "dominanter_aspekt": "{{ASPEKT, der die Einheit trägt, wörtlich wie im Datensatz}}",
+  "kern_kompetenzversprechen": "{{= prinzip.kern_kompetenzversprechen}}",
+  "mehrdeutigkeits_pflicht": "{{= prinzip.mehrdeutigkeits_architektur.verbindlich}}",
+  "hybrid_situation": {
+    "titel": "{{TITEL des KN-Falls}}",
+    "persona": {
+      "beruf": "Lernende/r EFZ, {{N}}. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "{{EINE SZENE in Ich-Form, neuer Fall, verlangt beide Hefte zugleich, endet mit der Leitfrage — höchstens prinzip.hybrid_situation_spec.max_woerter Wörter}}",
+    "leitfrage": "{{LEITFRAGE, letzter Satz von text, gibt keine Antwort vor}}",
+    "aktivierte_trade_offs": [
+      "{{EINTRAG wörtlich aus prinzip.mehrdeutigkeits_architektur.trade_off_raum}}",
+      "{{ZWEITER EINTRAG wörtlich aus trade_off_raum — mindestens zwei}}"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "{{ERKLÄRUNG für die Lehrperson: was die Szene bündelt, was am Fall neu ist, was übertragen werden muss}}",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "{{ELEMENT der Szene, das das Prinzip von Heft A aktiviert}}"
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "{{ELEMENT der Szene, das das Prinzip von Heft B aktiviert}}"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "{{FRAGE 1 zum KN-Fall, Sie-Form}}",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "{{FRAGE 2 zum KN-Fall, Sie-Form}}",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "{{FRAGE 3 zum KN-Fall, Sie-Form}}",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "{{FRAGE 4: Vergleich mit einer der beiden Herausforderungen, Sie-Form}}",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "{{FRAGE 5 zur Verantwortung oder Haltung, Sie-Form}}",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        "{{SK-NUMMERN als Zahlen, höchstens drei, aus den SK der zwei Hefte — Regel je Form in references/phase-2-3-prinzip-kn.md}}"
+      ],
+      "aspekte": [
+        "{{ASPEKTE = Schlüssel von prinzip.aspekte}}"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "{{AUFGABE 1 zum KN-Fall, Sie-Form}}",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "{{AUFGABE 2 zum KN-Fall, Sie-Form}}",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "{{AUFGABE 3: Entscheid mit Begründung, zwei Optionen und ihre Folgen, Sie-Form}}",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "{{AUFGABE 4: Regeln oder Forderung in Ich-Form formulieren lassen, Sie-Form}}",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        "{{SK-NUMMERN als Zahlen, höchstens drei, aus den SK der zwei Hefte — Regel je Form in references/phase-2-3-prinzip-kn.md}}"
+      ],
+      "aspekte": [
+        "{{ASPEKTE = Schlüssel von prinzip.aspekte}}"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben ({{PRODUKT von Heft A}}, {{PRODUKT von Heft B}}).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "{{FRAGE 2: wie das Prinzip im KN-Fall sichtbar wird, was gleich und was anders ist, Sie-Form}}",
+        "{{FRAGE 3: wann das Prinzip versagt und was die beiden Herausforderungen zusammen gezeigt haben, Sie-Form}}"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        "{{SK-NUMMERN als Zahlen, höchstens drei, aus den SK der zwei Hefte — Regel je Form in references/phase-2-3-prinzip-kn.md}}"
+      ],
+      "aspekte": [
+        "{{ASPEKTE = Schlüssel von prinzip.aspekte}}"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "{{KRITERIUM 1, Dimension SuK}}",
+        "dimension": "SuK",
+        "stufen": [
+          "{{0 Punkte: was fehlt — ≤ 120 Zeichen, kein Begriff, der nur im KN-Fall vorkommt, wenn es sich vermeiden lässt}}",
+          "{{1 Punkt — ≤ 120 Zeichen}}",
+          "{{2 Punkte — ≤ 120 Zeichen}}",
+          "{{3 Punkte — ≤ 120 Zeichen}}"
+        ]
+      },
+      {
+        "name": "{{KRITERIUM 2, Dimension SuK}}",
+        "dimension": "SuK",
+        "stufen": [
+          "{{0 Punkte — ≤ 120 Zeichen}}",
+          "{{1 Punkt — ≤ 120 Zeichen}}",
+          "{{2 Punkte — ≤ 120 Zeichen}}",
+          "{{3 Punkte — ≤ 120 Zeichen}}"
+        ]
+      },
+      {
+        "name": "{{KRITERIUM 3, Dimension Ges}}",
+        "dimension": "Ges",
+        "stufen": [
+          "{{0 Punkte — ≤ 120 Zeichen}}",
+          "{{1 Punkt — ≤ 120 Zeichen}}",
+          "{{2 Punkte — ≤ 120 Zeichen}}",
+          "{{3 Punkte — ≤ 120 Zeichen}}"
+        ]
+      },
+      {
+        "name": "{{KRITERIUM 4, Dimension Ges}}",
+        "dimension": "Ges",
+        "stufen": [
+          "{{0 Punkte — ≤ 120 Zeichen}}",
+          "{{1 Punkt — ≤ 120 Zeichen}}",
+          "{{2 Punkte — ≤ 120 Zeichen}}",
+          "{{3 Punkte — ≤ 120 Zeichen}}"
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

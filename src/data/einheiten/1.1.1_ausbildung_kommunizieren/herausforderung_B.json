@@ -1,0 +1,888 @@
+{
+  "id": "1.1.1_ausbildung_kommunizieren_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen — in der Ausbildung kommunizieren",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Schnell geteilt – aber sicher und im richtigen Ton?",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Digitale Kanäle sicher und passend nutzen"
+  },
+  "prinzip_ref": "1.1.1_ausbildung_kommunizieren_prinzip",
+  "nrlp": {
+    "nr": "1.1.2",
+    "nr_primary": [
+      "1.1.2",
+      "1.1.3"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration digital"
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM9"
+    ],
+    "sk": [
+      8,
+      6,
+      4
+    ],
+    "kompetenz_id": "1.1.2",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann die ausbildungsrelevanten IT-Infrastrukturen und digitalen Werkzeuge einrichten und sicher nutzen.",
+    "lebensbezug_text": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "An der Berufsfachschule stellen wir zu viert unsere Arbeitsplätze im Lehrbetrieb vor; in zwei Tagen ist Abgabe. Damit es schnell geht, will die Gruppe alle Fotos über eine Gratis-Seite teilen, die jemand gefunden hat – mit einem einzigen Konto für alle. Im Klassenchat steht schon: «Passwort ist einfach unser Klassenname, ladet eure Bilder heute noch hoch!» Wer hinter der Seite steht, weiss niemand von uns. Ich bin im 1. Lehrjahr und will es mir mit der Gruppe nicht verderben. Aber auf zwei meiner Fotos ist im Hintergrund der Einsatzplan zu lesen, mit den Namen von Kundinnen und Kunden. Dazu kommt: Wir werden nicht rechtzeitig fertig und müssen die Lehrperson um einen Tag mehr Zeit bitten; die anderen finden, ein kurzer Satz im Chat reiche dafür. Ich will klären, welchen Weg ich für die Fotos vorschlage, was ich der Gruppe schreibe und wie ich die Lehrperson frage.",
+  "zahlen_tabelle": [],
+  "leitfrage": "Mache ich es so schnell und bequem, wie die Gruppe es will, oder so sicher und korrekt, wie es meine Kanäle und meine Pflichten verlangen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Schnell und bequem vs. sicher und korrekt",
+    "hint": "Ein Konto für alle spart Zeit und hält die Gruppe zusammen; ein sicherer Weg schützt, was nicht allen gehört. Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 17.4",
+      "titel": "Korrespondenz",
+      "unterueberschrift": "E-Mail: Aufbau, Stil, CC und BCC",
+      "seiten": "Seite 400-401",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 20.8",
+      "titel": "Recherchieren",
+      "unterueberschrift": "Webseiten prüfen, Endungen",
+      "seiten": "Seite 449-450",
+      "fuer_leitfrage": [
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 1.4",
+      "titel": "Der Lehrvertrag",
+      "unterueberschrift": "Sorgfalts- und Treuepflicht",
+      "seiten": "Seite 31",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Schluss stehen zwei Nachrichten: eine an die Gruppe, eine an die Lehrperson. LF1 liefert die Regeln der E-Mail und zwei Pflichten, LF2 die Ordnung Ihrer Kanäle, LF3 zwei Belege zur Sicherheit, LF4 den Entscheid über Weg und Ton.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 17.4 | S. 400-401 · Kap. 1.4 | S. 31",
+      "text": "Was regelt das Lehrmittel für die E-Mail (Kap. 17.4, S. 400–401: Aufbau, Sprache und Stil, CC und BCC), und was verlangen Sorgfalts- und Treuepflicht (Kap. 1.4, S. 31)? Erklären Sie die Begriffe in eigenen Worten.",
+      "liefert": "Regeln der E-Mail und zwei Pflichten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie zuerst die Tabelle zum Aufbau (S. 400), dann den Absatz zu CC und BCC (S. 401).",
+          "Der Begriff Medienkompetenz (Kap. 20.7, S. 446) fasst zusammen, was Sie hier üben."
+        ],
+        "satzanfaenge": [
+          "«Eine E-Mail besteht aus …»",
+          "«CC heisst …, BCC heisst …»",
+          "«Die Sorgfaltspflicht verlangt von mir …»"
+        ],
+        "produkt": "Aufbau und Stil brauchen Sie für die E-Mail an die Lehrperson, die Pflichten für die Chat-Nachricht."
+      },
+      "loesung": {
+        "kern": "E-Mail-Regeln, CC und BCC, zwei Pflichten",
+        "zeilen": [
+          {
+            "label": "Aufbau der E-Mail",
+            "text": "Drei Teile: Betreff (kurz, sagt, worum es geht), Inhalt (Anrede, knapp, in Abschnitten, Gruss) und Signatur mit den Angaben zum Absender.",
+            "quelle": "Kap. 17.4, S. 400"
+          },
+          {
+            "label": "Sprache und Stil",
+            "text": "Auf die Adressatin oder den Adressaten abgestimmt und korrekt geschrieben; nicht alles gross oder alles klein, keine Abkürzungen, im Geschäftlichen keine Emoticons. Für Vertrauliches eignet sich die E-Mail nicht.",
+            "quelle": "Kap. 17.4, S. 400"
+          },
+          {
+            "label": "CC und BCC",
+            "text": "CC: Kopie zur Kenntnis; alle sehen, wer sie erhält. BCC: Blindkopie; die Empfänger sehen einander nicht, das schützt ihre Privatsphäre, etwa bei einem Versand an viele.",
+            "quelle": "Kap. 17.4, S. 401"
+          },
+          {
+            "label": "Sorgfaltspflicht",
+            "text": "Zu Geräten, Material und technischen Einrichtungen, die mir der Betrieb anvertraut, trage ich Sorge.",
+            "quelle": "Kap. 1.4, S. 31"
+          },
+          {
+            "label": "Treuepflicht",
+            "text": "Geschäftsgeheimnisse wahren, keine Schwarzarbeit. Was als Geschäftsgeheimnis zählt, sagt die Seite nicht.",
+            "quelle": "Kap. 1.4, S. 31"
+          },
+          {
+            "label": "Medienkompetenz",
+            "text": "Digitale Medien bedienen können und verantwortungsbewusst und kritisch damit umgehen. Regeln für Chat und Messenger nennt das Lehrmittel nicht.",
+            "quelle": "Kap. 20.7, S. 446"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.4 | S. 400-401 · Kap. 1.4 | S. 31 · eigener Fall",
+      "text": "Ordnen Sie die Kanäle Ihres Falls – Klassenchat, E-Mail, die vorgeschlagene Seite: Wofür taugt jeder, für wen ist er gedacht, und was gehört nicht hinein? Begründen Sie mit einer Regel oder Pflicht aus LF1.",
+      "liefert": "Ordnung der Kanäle mit Begründung",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Legen Sie eine kleine Tabelle an: Kanal · wofür · für wen · was nicht hinein gehört.",
+          "Für den Chat nennt das Lehrmittel keine Regeln: Übertragen Sie die Regeln der E-Mail."
+        ],
+        "satzanfaenge": [
+          "«Der Klassenchat taugt für …, aber nicht für …»",
+          "«Eine E-Mail schreibe ich, wenn …»",
+          "«Nicht hinein gehört …, weil …»"
+        ],
+        "produkt": "Die Ordnung sagt Ihnen, welche Nachricht über welchen Kanal geht und was Sie darin weglassen."
+      },
+      "loesung": {
+        "kern": "Drei Kanäle: wofür, für wen, was nicht hinein",
+        "zeilen": [
+          {
+            "label": "Klassenchat",
+            "text": "Für kurze Absprachen in der Gruppe (wer macht was bis wann). Nicht hinein: ein Passwort, Fotos mit Namen Dritter, die Bitte an die Lehrperson. Übertragung der E-Mail-Regeln durch die Lernenden, keine Lehrmittelaussage."
+          },
+          {
+            "label": "E-Mail",
+            "text": "Für die Bitte an die Lehrperson: Betreff, Anrede, kurz, Gruss, im Ton auf sie abgestimmt. Nichts Vertrauliches.",
+            "quelle": "Kap. 17.4, S. 400"
+          },
+          {
+            "label": "Vorgeschlagene Seite",
+            "text": "Höchstens für Fotos ohne heikle Angaben; offen bleibt, wer dahintersteht. Überlegungen zu Passwort und gemeinsamem Konto: Fallüberlegung, nicht aus dem Lehrmittel."
+          },
+          {
+            "label": "Die zwei Fotos",
+            "text": "Gehören in keinen der drei Kanäle: Die Treuepflicht verlangt, Geschäftsgeheimnisse zu wahren. Ob ein Einsatzplan mit Kundennamen dazu zählt, ist Deutung; im Zweifel im Betrieb fragen.",
+            "quelle": "Kap. 1.4, S. 31"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Jeder Kanal hat Zweck, Adressatenkreis und Grenze; mindestens eine Regel oder Pflicht aus LF1 ist genannt."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Nur «sicher» oder «unsicher» ohne Grund; die Lehrperson im Ton der Gruppe anschreiben."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Zwei Nachrichten zum selben Anlass für zwei Adressaten mit Antwort aus der Gegenrolle",
+    "titel": "Zwei Nachrichten: an die Gruppe und an die Lehrperson",
+    "format_detail": "Sie schreiben auf S. 7 zwei Nachrichten zum selben Anlass: eine Chat-Nachricht an die Gruppe (höchstens 40 Wörter), die sagt, welchen Weg Sie für die Fotos vorschlagen und was nicht hinein darf, und eine E-Mail an die Lehrperson (Betreff, Anrede, 50 bis 70 Wörter, Gruss) mit der Bitte um einen Tag mehr Zeit. Eine Partnerin oder ein Partner antwortet auf beide in der Rolle des Adressaten in je einem Satz. Danach überarbeiten Sie eine Stelle und markieren sie. Die zwei Belege aus LF3 notieren Sie neben den Nachrichten; in der Chat-Nachricht steht höchstens ein Grund in eigenen Worten.",
+    "beschreibung": "Ich schreibe der Gruppe im Chat und der Lehrperson per E-Mail, lasse mir aus beiden Rollen antworten und überarbeite danach eine Stelle – so sehe ich, ob Kanal und Ton ankommen.",
+    "schritte": [
+      {
+        "label": "01 Kanäle und Pflichten klären",
+        "hint": "Vorarbeit auf S. 2 (LF1): Was gilt für die E-Mail, was verlangen Sorgfalts- und Treuepflicht?"
+      },
+      {
+        "label": "02 Meine Kanäle ordnen",
+        "hint": "Vorarbeit auf S. 2 (LF2): je Kanal – wofür er taugt, für wen er gedacht ist, was nicht hinein gehört."
+      },
+      {
+        "label": "03 Sicherheit belegen",
+        "hint": "LF3: Notieren Sie auf S. 7 neben den Nachrichten zwei Belege mit Fundstelle. In den Chat kommt höchstens ein Grund in eigenen Worten."
+      },
+      {
+        "label": "04 Weg und Ton entscheiden",
+        "hint": "Vorarbeit auf S. 4 (LF4): Welchen Weg schlagen Sie für die Fotos vor, in welchem Ton schreiben Sie wem?"
+      },
+      {
+        "label": "05 Schreiben und überarbeiten",
+        "hint": "Schreiben Sie beide auf S. 7. Eine Partnerin oder ein Partner antwortet als Gruppe und als Lehrperson, je ein Satz. Dann eine Stelle ändern."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Chat (höchstens 40 Wörter), E-Mail (50–70 Wörter), zwei Belege – auf S. 7",
+      "Zwei Antworten der Partnerin oder des Partners, je ein Satz, auf S. 7",
+      "Eine überarbeitete Stelle, markiert"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall (Hoffest); E-Mail gekürzt – Ihre hat 50–70 Wörter",
+      "legende": [
+        {
+          "key": "neu",
+          "text": "nach der Antwort geändert"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Chat an die Gruppe",
+          "text": [
+            "Hoffest am Samstag: Am schnellsten wäre der Türcode hier im Chat – das mache ich nicht. Tragt euch auf der Liste im Treppenhaus ein, dann gebe ich ihn euch.",
+            "Antwort: «Bin bis Freitag weg.»",
+            "Satz 2 neu: «Tragt euch ein oder ruft mich an, dann gebe ich ihn euch.»"
+          ]
+        },
+        {
+          "titel": "E-Mail an die Verwaltung",
+          "text": [
+            "Betreff: Hoffest am Samstag im Hof",
+            "Guten Tag. Dürfen wir Mieterinnen und Mieter am Samstag von 16 bis 21 Uhr im Hof feiern? Freundliche Grüsse, Lea, Haus 12",
+            "Antwort: «Ja, Musik bis 20 Uhr.»"
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Fotos teilen und die Lehrperson um einen Tag bitten",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Auch «die Seite unter Bedingungen nutzen» ist tragfähig (erstes Beispiel bei LF4). Zeigen Sie das Bild erst nach der Überarbeitung. Annahmen: Die Schule stellt eine Ablage mit persönlichem Login bereit; die Namen und die Antworten der Gegenrolle sind erfunden. Der Satz zum gemeinsamen Konto ist in beiden Fassungen eine Fallüberlegung der Lernenden: Weder das Lehrmittel noch die Quelle sagen etwas dazu. Die geänderte Stelle steht als eigener Absatz («Geändert: …»), weil ein Fliesstext-Block keine Markierung tragen kann.",
+      "legende": [
+        {
+          "key": "neu",
+          "text": "nach der Antwort geändert"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Chat an die Gruppe",
+          "text": [
+            "Hallo zusammen, schnell fertig werden will ich auch. Aber ein Konto für alle mit Passwort im Chat mache ich nicht mit. Vorschlag: Ablage der Schule, eigenes Login. Meine zwei Fotos mit dem Einsatzplan lasse ich weg.",
+            "Antwort (aus der Rolle der Gruppe): «Und wer richtet das ein? Dafür haben wir keine Zeit.»",
+            "Geändert (Nachricht jetzt 40 Wörter): «Vorschlag: Ablage der Schule, eigenes Login – ich richte sie ein.»",
+            "Notiz daneben, zwei Belege: Treuepflicht (Kap. 1.4, S. 31); wer hinter der Seite steht, ist offen (Kap. 20.8, S. 450) – mit Quelle stattdessen: Passwort wechseln, sobald Dritte es kennen könnten (Abs. 5)."
+          ]
+        },
+        {
+          "titel": "E-Mail an die Lehrperson",
+          "text": [
+            "Betreff: Arbeit «Unsere Arbeitsplätze» – Bitte um einen Tag mehr Zeit",
+            "Guten Tag Frau Keller. Unsere Gruppe stellt zu viert die Arbeitsplätze im Lehrbetrieb vor. Wir arbeiten alle daran, werden aber bis zur Abgabe in zwei Tagen leider nicht ganz fertig, weil noch Fotos fehlen. Dürfen wir die Arbeit einen Tag später abgeben? So können wir Ihnen eine vollständige Arbeit zeigen. Besten Dank für Ihre Antwort.",
+            "Freundliche Grüsse, Vorname Name, für die Gruppe",
+            "Antwort (aus der Rolle der Lehrperson): «Einverstanden, einen Tag später. Geben Sie dann bitte alles zusammen ab.»"
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe und Regeln der Einheit fehlen oder sind falsch verwendet.",
+        "Einzelne Begriffe und Regeln stimmen; Kanal, Form oder Ton passen nur teilweise.",
+        "Begriffe und Regeln korrekt; Kanal, Form und Ton passen zu Anlass und Gegenüber.",
+        "Korrekt und eigenständig: Kanal, Form, Ton und Schutz sind begründet gewählt."
+      ],
+      "indikator_produkt": "Chat kurz, E-Mail mit Betreff, Anrede und Gruss; nichts Schützenswertes steht im Chat"
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Keine eigene Position erkennbar.",
+        "Position angedeutet; es bleibt offen, wofür die Person einsteht.",
+        "Klare Position in Ich-Form, mit Rücksicht auf Rolle und Gegenüber.",
+        "Position begründet; das Spannungsfeld ist anerkannt, beide Seiten sind ernst genommen."
+      ],
+      "indikator_produkt": "Chat-Nachricht: klare Haltung in Ich-Form; anerkennt, warum der schnelle Weg bequem ist"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt zwei Nachrichten mit Antwort und geänderter Stelle; die Satzanfänge bei den Leitfragen helfen beim Formulieren.",
+    "scaffold_100": "Senden Sie beide Nachrichten nach dem Überarbeiten über den echten Kanal an Ihre Partnerin oder Ihren Partner und lassen Sie sich dort antworten."
+  },
+  "methoden": [
+    {
+      "ref": "lm-20-7-fake-news-check",
+      "fuer": "für die Prüfung der vorgeschlagenen Seite",
+      "tun": "Wer steht dahinter? Anderswo nachprüfbar?",
+      "beispiel": [
+        "Behauptung: «Schokolade stärkt das Gedächtnis.»",
+        "Quelle: Blog ohne Autor · Fakten: keine Studie",
+        "Urteil: nicht verwenden, bis es nachprüfbar ist."
+      ]
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-gezielt-suchen",
+      "fuer": "für eine Angabe auf einer Webseite oder im Reglement"
+    },
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für vollständige Nachrichten",
+      "tun": "Je Nachricht: wer, was, bis wann, warum?"
+    }
+  ],
+  "mindmap_zentrum": "Klar sagen oder Rücksicht nehmen",
+  "mindmap_aeste": [
+    {
+      "titel": "Was verlangt meine Rolle?",
+      "punkte": [
+        "Sorgfaltspflicht",
+        "Treuepflicht",
+        "Geschäftsgeheimnis"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Welcher Kanal für wen?",
+      "punkte": [
+        "E-Mail",
+        "Betreff",
+        "CC",
+        "BCC",
+        "Adressat/in"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie gehe ich damit um?",
+      "punkte": [
+        "Medienkompetenz",
+        "Privatsphäre"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Steht in meiner Chat-Nachricht, welchen Weg ich für die Fotos vorschlage und was nicht hinein darf?",
+      "Hat meine E-Mail an die Lehrperson Betreff, Anrede und Gruss – und passt der Ton zu ihr?"
+    ],
+    "mitnahme": [
+      "Welcher Kanal für wen und in welchem Ton",
+      "Was nie in einen Chat gehört",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Treuepflicht",
+          "nach": "Geschäftsgeheimnis",
+          "text": "verlangt, es zu wahren"
+        },
+        {
+          "von": "Geschäftsgeheimnis",
+          "nach": "E-Mail",
+          "text": "ist vertraulich und gehört darum nicht in eine (eigene Deutung; S. 400: nicht für Vertrauliches)"
+        },
+        {
+          "von": "Adressat/in",
+          "nach": "E-Mail",
+          "text": "bestimmt Ton und Inhalt der"
+        },
+        {
+          "von": "Betreff",
+          "nach": "E-Mail",
+          "text": "sagt kurz, worum es geht in der"
+        },
+        {
+          "von": "CC",
+          "nach": "BCC",
+          "text": "zeigt allen die Empfänger, anders als"
+        },
+        {
+          "von": "BCC",
+          "nach": "Privatsphäre",
+          "text": "schützt die"
+        },
+        {
+          "von": "Medienkompetenz",
+          "nach": "Sorgfaltspflicht",
+          "text": "hilft mir bei Geräten und Einrichtungen, sie zu erfüllen (eigene Deutung)"
+        },
+        {
+          "von": "Medienkompetenz",
+          "nach": "gilt auch bei …",
+          "text": "brauche ich bei jedem neuen Werkzeug"
+        }
+      ],
+      "transfer": "Eine Gruppe für ein Familienfest, in die jemand alle Adressen stellen will; eine Anfrage per E-Mail an eine Behörde; ein neues Konto für einen Ferienjob.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Endung",
+          "Belegbarkeit"
+        ],
+        "mit_medien": [
+          "Passwort",
+          "Zweiter Faktor"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn die Nachricht einen Weg nennt (im Lösungsbild: Ablage der Schule mit eigenem Login) und sagt, was wegbleibt (die zwei Fotos mit dem Einsatzplan, kein Passwort im Chat) – der Entscheid aus LF4.",
+        "Ja, wenn die Teile aus Kap. 17.4, S. 400 da sind und die E-Mail höflich, knapp und ohne Abkürzungen oder Emoticons geschrieben ist."
+      ],
+      "mitnahme": [
+        "Chat für kurze Absprachen in der Gruppe; E-Mail mit Betreff, Anrede und Gruss für die Lehrperson",
+        "Ein Passwort und Fotos mit Namen von Kundinnen und Kunden",
+        "Zum Beispiel: Zählt ein Einsatzplan als Geschäftsgeheimnis, und wen frage ich im Betrieb?"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Aufbau der E-Mail, CC und BCC, zwei Pflichten",
+        "LF2: drei Kanäle mit Zweck, Adressat/in und Grenze",
+        "LF4: Entscheid für einen Weg, mit Ton"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Zwei Nachrichten",
+      "vollstaendig_wenn": [
+        "Chat (höchstens 40 Wörter) und E-Mail (50–70 Wörter)",
+        "Zwei Antworten (je ein Satz), eine Stelle geändert und markiert",
+        "Zwei Belege mit Fundstelle neben den Nachrichten (S. 7)"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Regeln und Pflichten klären (LF1), Kanäle ordnen (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Raster zur Quelle (LF3), Weg und Ton entscheiden (LF4), Nachrichten beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Nachrichten fertig schreiben, Antwort einholen, überarbeiten, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich entscheiden, über welchen Kanal und in welchem Ton ich wem etwas mitteile – und was dabei nicht für alle sichtbar sein darf?",
+    "ziel": "Wer in der Ausbildung etwas mitteilen will, klärt zuerst, was gilt, wählt dann Kanal und Ton, die zum Gegenüber und zur eigenen Rolle passen, und schützt dabei, was nicht allen gehört."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Kanal, Ton und Schutz passend wählen: was für wen über welchen Weg – und was nicht hinein gehört",
+    "lehrmittel_anker": "Kap. 17.4 S. 400-401 (E-Mail: Aufbau, Sprache und Stil, CC und BCC); Kap. 1.4 S. 31 (Sorgfalts- und Treuepflicht); Kap. 20.8 S. 449-450 (Prüffragen für Webseiten, Endungen); Kap. 20.7 S. 446-447 (Medienkompetenz, Chancen und Gefahren); Methoden: Kap. 20.7 S. 447 (Fake News erkennen), Kap. 17.2 (W-Fragen)",
+    "kn_aktivierung": "Der KN verlangt aus diesem Heft, den offenen Kurschat der Kursgruppe zu beurteilen – was hineingehört und was nicht (Fotos mit Namen, Bewertungen) – und für das Materialgeld wie für den Chat je Kanal und Ton zu wählen: eine Nachricht an die Kursleitung, eine an die Berufsbildnerin oder den Berufsbildner.",
+    "transfer_check": "Kann die Lernende für einen neuen Anlass entscheiden, was sie wem über welchen Kanal und in welchem Ton mitteilt und was sie dabei schützt?"
+  },
+  "sk_anker": [
+    {
+      "sk": 8,
+      "wo": "leitfragen[2] — aus Abschnitt oder Quelle herauslesen, was ich prüfe und einrichte, bevor ich in der neuen Ausbildung ein Werkzeug nutze, damit Unerwartetes keinen Schaden anrichtet"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — gegenüber der Gruppe begründen, welchen Weg und welchen Ton ich wähle"
+    },
+    {
+      "sk": 4,
+      "wo": "handlungsprodukt.schritte[4] + Produkt — Nachrichten an Gruppe und Lehrperson schreiben, Antwort aus der Gegenrolle einholen, eine Stelle überarbeiten"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 20.8 | S. 449-450",
+          "text": "Werten Sie Ihr Raster aus: Welche Prüffragen muss eine Seite bestehen, bevor man ihr traut? Kap. 20.8 meint Seiten, die informieren. Übertragen Sie in zwei bis drei Sätzen auf die Seite, der Ihre Gruppe Fotos anvertraut.",
+          "liefert": "zwei Belege zur Sicherheit",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 20.8 | S. 449-450",
+            "auftrag": "Lesen Sie Kap. 20.8, S. 449–450 (Prüffragen, Tabelle der Endungen). Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen dazu, woran man eine Webseite prüft, je mit Begriff aus LF1 oder Glossar (S. 8).",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 449, Liste",
+              "nichts Unnötiges?",
+              "Links, Bilder, Animation",
+              "Medienkompetenz"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Die Prüffragen stehen S. 449 unten und S. 450 oben, die Endungen in der Tabelle S. 450."
+            ],
+            "satzanfaenge": [
+              "«Laut S. 449–450 prüfe ich bei einer Webseite zuerst …»",
+              "«Für die Seite meiner Gruppe heisst das: …»"
+            ],
+            "produkt": "Zwei Prüffragen mit Seite notieren Sie auf S. 7; in den Chat kommt höchstens ein Grund in eigenen Worten."
+          },
+          "loesung": {
+            "kern": "Prüffragen für Webseiten – und was offen bleibt",
+            "quelle_ref": "Kap. 20.8 | S. 449-450",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Prüfen, bevor man eine Seite nutzt: übersichtlich, aktuell und gepflegt, keine ungültigen Links, keine zwielichtige Werbung (S. 449); vertrauenswürdige Stellen oder Fachpersonen dahinter, Webmaster genannt, Angaben anderswo belegbar (S. 450).",
+                "quelle": "Kap. 20.8, S. 449-450"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Im Netz kann jede und jeder publizieren. Die Endung gibt einen ersten Hinweis auf Art und Herkunft, etwa .com für kommerzielle Seiten, .gov für den Staat.",
+                "quelle": "Kap. 20.8, S. 450"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Medienkompetenz (kritisch nutzen); Belegbarkeit, Endung (Glossar). Sorgfalts- oder Treuepflicht hier zuzuordnen ist Deutung: S. 31 meint anvertraute Geräte und Geschäftsgeheimnisse, nicht Webseiten.",
+                "quelle": "Kap. 20.7, S. 446"
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet mindestens zwei Prüffragen mit Seite mit der Angabe der Situation, dass niemand weiss, wer hinter der Seite steht."
+              },
+              {
+                "label": "Hinweis",
+                "text": "Zu Passwort, gemeinsamem Konto und Ablage in einer Cloud sagt das Lehrmittel nichts: Fallüberlegung, nicht aus dem Lehrmittel."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 449, Liste",
+                "nichts Unnötiges?",
+                "Links, Bilder, Animation",
+                "Medienkompetenz"
+              ],
+              [
+                "S. 449, Liste",
+                "Werbung auf der Seite?",
+                "zwielichtige Werbung als Warnzeichen",
+                "Medienkompetenz"
+              ],
+              [
+                "S. 450, Liste oben",
+                "Wer steht dahinter?",
+                "Fachperson, Webmaster; Belegbarkeit",
+                "Belegbarkeit"
+              ],
+              [
+                "S. 450, Tabelle",
+                "Endung zeigt Art und Herkunft",
+                ".com kommerziell, .gov Staat",
+                "Endung"
+              ]
+            ],
+            "befund": "Einer Webseite traue ich erst, wenn sie gepflegt ist, keine zwielichtige Werbung zeigt und klar ist, wer dahintersteht (S. 449–450). Bei der Seite, die meine Gruppe vorschlägt, weiss niemand, wer dahintersteht – diese Prüffrage besteht sie nicht. Daraus leite ich ab (meine Übertragung; das Kapitel handelt vom Beurteilen von Informationen): Fotos mit Namen aus meinem Lehrbetrieb lade ich dort nicht hoch."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.8 · Kap. 17.4 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 20.8 gibt Prüffragen, Kap. 17.4 Regeln für die E-Mail. Wo passen sie auf Ihren Fall, wo schweigen sie? Entscheiden Sie: die Seite der Gruppe nur unter Bedingungen nutzen oder einen anderen Weg vorschlagen?",
+          "liefert": "Entscheid über Weg und Ton",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Zum Entscheid gehört der Ton: Wie sagen Sie es der Gruppe, wie der Lehrperson?"
+            ],
+            "satzanfaenge": [
+              "«Die Regeln passen auf meinen Fall bei …»",
+              "«Nichts sagen sie zu …; da überlege ich selbst: …»",
+              "«Ich entscheide mich für … und schreibe es so: …»"
+            ],
+            "produkt": "Der Entscheid wird der Kern der Chat-Nachricht; der Ton zeigt sich in beiden Nachrichten (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regeln ↔ eigener Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Nennt, wo Prüffragen (S. 449–450) oder E-Mail-Regeln (S. 400–401) auf den Fall passen.",
+                "Nennt eine Grenze: wozu das Lehrmittel schweigt (Passwort, Konto für alle, Ton im Chat).",
+                "Entscheidet sich: Seite nur unter Bedingungen nutzen oder anderer Weg – und sagt, in welchem Ton."
+              ],
+              "beispiel_pol_1": "Wer hinter der Seite steht, wissen wir nicht (S. 450); zum Konto für alle schweigt das Lehrmittel. Ich nutze die Seite nur für Fotos ohne Namen und lasse meine zwei mit dem Einsatzplan weg (Treuepflicht, S. 31). Das sage ich freundlich: Schnell soll es bleiben.",
+              "beispiel_pol_2": "Die Seite besteht die Prüffrage nicht, wer dahintersteht (S. 450). Zum Passwort schweigt das Lehrmittel; meine Überlegung: Was alle kennen, schützt nichts. Ich schlage die Ablage der Schule vor, ohne Vorwurf – schnell sein wollen wir alle. Annahme: Die Schule hat eine Ablage.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Regel mit Seite oder ein blosses «verboten» bzw. «egal», das die andere Seite nicht ernst nimmt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Regel mit Seite",
+          "Passt auf meinen Fall bei …",
+          "Sagt nichts zu …"
+        ],
+        "hinweis": "Zwei Zeilen genügen: eine Prüffrage, eine E-Mail-Regel. Aus der dritten Spalte folgt, was Sie selbst entscheiden müssen.",
+        "loesung_zeilen": [
+          [
+            "Wer steht hinter der Webseite? (Kap. 20.8, S. 450)",
+            "Gratis-Seite: Niemand von uns weiss es",
+            "Konto für alle, Passwort im Chat (Fallüberlegung, nicht aus dem Lehrmittel)"
+          ],
+          [
+            "Ton auf das Gegenüber abstimmen (Kap. 17.4, S. 400)",
+            "E-Mail an die Lehrperson: Betreff, Anrede, Gruss",
+            "Ton im Chat (Übertragung durch die Lernenden)"
+          ],
+          [
+            "Geschäftsgeheimnisse wahren (Kap. 1.4, S. 31)",
+            "Fotos mit Kundennamen bleiben weg",
+            "ob ein Einsatzplan ein Geschäftsgeheimnis ist"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 20.8 (S. 3)",
+        "beispiel": [
+          "Abs. 3 · Kinder nur in Begleitung · «unter 8 Jahren» · → Aufsicht"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt zwei Nachrichten mit Antwort und geänderter Stelle; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Welche Schutzregeln nennt die Quelle – und gegen welche verstösst der Vorschlag Ihrer Gruppe? Werten Sie Ihr Raster aus und halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "zwei Belege zur Sicherheit",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-111b-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst alle drei Abschnitte lesen, dann das Raster füllen: Stichworte, keine Sätze.",
+              "Schreiben Sie den Befund erst nach dem Raster – mit dem Absatz als Beleg."
+            ],
+            "satzanfaenge": [
+              "«Die Quelle verlangt für Konten, dass …»",
+              "«Der Vorschlag meiner Gruppe verstösst dagegen, weil …»"
+            ],
+            "produkt": "Zwei Regeln mit Absatz notieren Sie auf S. 7; in den Chat kommt höchstens ein Grund in eigenen Worten."
+          },
+          "loesung": {
+            "kern": "Schutzregeln der Quelle – und zwei Verstösse im Fall",
+            "quelle_ref": "q-111b-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Konten: Zugangsdaten nie über einen Link aus einer Nachricht eingeben; je Dienst ein eigenes Passwort, mindestens zwölf Zeichen; zweiter Faktor; wechseln, sobald Dritte es kennen könnten (Abs. 5). Geräte: Abs. 9.",
+                "quelle": "Quelle, Abs. 5 und 9"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Nur zeigen, was auch Fremde sehen dürfen; Vorsicht bei Direktnachrichten mit Links oder Anhängen (Abs. 7).",
+                "quelle": "Quelle, Abs. 7"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Passwort, Zweiter Faktor (Glossar), Privatsphäre; Sorgfaltspflicht (Kap. 1.4, S. 31) ist Deutung."
+              },
+              {
+                "label": "Befund",
+                "text": "Zwei Verstösse gegen Abs. 5: Das Passwort ist der Klassenname (keine zwölf Zeichen) und steht im Klassenchat. Ein Konto für mehrere nennt die Quelle nicht: Fallüberlegung. Fotos mit Kundennamen: Treuepflicht (Kap. 1.4, S. 31); Abs. 7 nur als Analogie."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Trägt nur «Konten»: Ein mehrfach genutztes Passwort wird nach einem Leck anderswo ausprobiert (Abs. 2–3); zwölf Zeichen, zweiter Faktor (Abs. 11). Nichts zu Nachrichten und Geräten.",
+                "quelle": "Ersatzquelle, Abs. 2–11"
+              },
+              {
+                "label": "Hinweis",
+                "text": "Nichts zu Geschäftsgeheimnissen und zum Ton."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 5",
+                "je Dienst ein eigenes Passwort",
+                "mindestens zwölf Zeichen, gemischt",
+                "Passwort"
+              ],
+              [
+                "Abs. 5",
+                "wechseln, sobald Dritte es kennen",
+                "dazu zweiter Faktor, Passwortmanager",
+                "Zweiter Faktor"
+              ],
+              [
+                "Abs. 7",
+                "nur zeigen, was Fremde sehen dürfen",
+                "Vorsicht bei Links in Direktnachrichten",
+                "Privatsphäre"
+              ],
+              [
+                "Abs. 9",
+                "Geräte aktuell halten und sperren",
+                "Updates, PIN; nur nötige Programme",
+                "Sorgfaltspflicht"
+              ]
+            ],
+            "befund": "Die Quelle verlangt ein langes Passwort aus gemischten Zeichen und einen Wechsel, sobald Dritte es kennen könnten (Abs. 5). Unser Vorschlag verstösst gegen beides: Der Klassenname ist kein solches Passwort, und er steht im Klassenchat, wo ihn alle lesen. Zu meinen zwei Fotos mit dem Einsatzplan sagt die Quelle nichts Direktes; dafür gilt die Treuepflicht (Kap. 1.4, S. 31)."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Quelle · Kap. 17.4 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Die Quelle gibt Schutzregeln, Kap. 17.4 Regeln für die E-Mail. Wo passen sie auf Ihren Fall, wo schweigen sie? Entscheiden Sie: die Seite der Gruppe nur unter Bedingungen nutzen oder einen anderen Weg vorschlagen?",
+          "liefert": "Entscheid über Weg und Ton",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Markieren Sie im Raster die Regel, gegen die der Vorschlag am deutlichsten verstösst.",
+              "Zum Entscheid gehört der Ton: Wie sagen Sie es der Gruppe, wie der Lehrperson?"
+            ],
+            "satzanfaenge": [
+              "«Die Regeln passen auf meinen Fall bei …»",
+              "«Nichts sagen sie zu …; da überlege ich selbst: …»",
+              "«Ich entscheide mich für … und schreibe es so: …»"
+            ],
+            "produkt": "Der Entscheid wird der Kern der Chat-Nachricht; der Ton zeigt sich in beiden Nachrichten (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regeln ↔ eigener Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Wendet eine Regel der Quelle mit Absatz auf den Fall an.",
+                "Nennt eine Grenze: wozu die Quelle schweigt (Konto für alle, Geschäftsgeheimnis, Ton).",
+                "Entscheidet sich: nur unter Bedingungen nutzen oder anderer Weg; nennt den Ton."
+              ],
+              "beispiel_pol_1": "Die Regeln zum Passwort (Abs. 5: lang, gemischt, Dritten nicht bekannt) passen. Zum Einsatzplan schweigt die Quelle; da gilt die Treuepflicht (S. 31). Ich nutze die Seite nur für Fotos ohne Namen, mit neuem Passwort, das nicht im Chat steht – so bleibt es schnell, und ich sage es freundlich.",
+              "beispiel_pol_2": "Das Passwort im Klassenchat verstösst gegen Abs. 5; zum Konto für alle und zum Ton schweigt die Quelle. Meine Fotos schützt die Treuepflicht (S. 31). Ich schlage die Ablage der Schule mit eigenem Login vor, ohne Vorwurf: Schnell sein wollen wir alle. Annahme: Die Schule hat eine Ablage.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Regel mit Fundstelle oder ein blosses «verboten» bzw. «egal», das die andere Seite nicht ernst nimmt."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-111b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie auf der QR-Seite die Abschnitte zu Passwörtern, sozialen Medien und Geräteschutz. Gesucht sind vier Schutzmassnahmen. Je Zeile: Absatz, Kernaussage, Beleg / Zahl und Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-111b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Woran erkenne ich eine falsche Aufforderung zum Einloggen, und was gebe ich über einen Link nie ein?",
+          "erwartung": "Absender angeblich Bank, Kartenfirma oder Telefonanbieter; Vorwand: doppelt bezahlt, Konto gesperrt, Daten aktualisieren. Echte Anbieter verlangen Zugangsdaten nie per Nachricht oder Anruf (Abs. 4). Nie über einen Link eingeben: Passwort, Kartennummer (Abs. 6)."
+        },
+        {
+          "ref": "q-111b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was nimmt mir ein Passwortmanager ab, und wo bleibt die Schwachstelle?",
+          "erwartung": "Er erzeugt starke Passwörter, merkt sie sich, füllt sie ein (Abs. 4); jedes Konto hat so ein eigenes (Abs. 5). Schwachstelle: das Hauptpasswort – lang, zufällig, mit zweitem Faktor (Abs. 6). Im Browser speichern geht, ein eigener Manager ist meist besser (Abs. 8)."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Abs. 4 · Hallenbad im Sommer zu · «1. bis 20. Juli» · → Betriebsferien"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt zwei Nachrichten mit Antwort und geänderter Stelle; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}

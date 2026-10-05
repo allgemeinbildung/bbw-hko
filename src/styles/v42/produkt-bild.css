@@ -1,0 +1,102 @@
+/* Heft v4.2 — Produktbild: das Handlungsprodukt als von Hand ausgefülltes Blatt.
+   Markup: src/components/einheiten/docs/heft-v42/produkt-bild.tsx (Blatt, Band S. 6) und
+   DocLoesungenV42.tsx (Dokument «Lösungen», Variante .v42-pb-loesung). Präfix .v42-pb-.
+   Ein Akzent (--sit-akzent) plus Schwarz/Weiss; Markierungen tragen die Kontur, nicht die Farbe (Graudruck).
+   Schreibschrift nur über lokal vorhandene Schriften — kein Webfont.
+   Wird nach heft-5-8.css angehängt (alphabetisch, css-v42.ts). */
+
+/* ---------- Blatt ---------- */
+.v42-pb-blatt {
+  --pb-schrift: 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', cursive;
+  font-family: var(--pb-schrift);
+  color: var(--ink);
+  background: var(--paper);
+  border: 0.75pt solid var(--ink-mute);
+  border-radius: 1.5mm;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+}
+/* Klein (Heft S. 6): 7 pt ist die Untergrenze für Lesbarkeit im Graudruck — keine Regel
+   darunter. Segoe Print hat eine grosse x-Höhe; 7 pt liest sich wie 8 pt Plex Sans. */
+.v42-pb-klein { font-size: 7pt; line-height: 1.12; padding: 1mm 2.4mm 1.2mm; gap: 0.7mm; }
+.v42-pb-klein .v42-pb-notiz, .v42-pb-klein .v42-pb-legende { font-size: 7pt; }
+.v42-pb-klein .v42-pb-titel, .v42-pb-klein .v42-pb-blocktitel { font-size: 7.3pt; }
+.v42-pb-klein .v42-pb-tabelle { line-height: 1.08; }
+.v42-pb-gross { font-size: 10pt; line-height: 1.3; padding: 4mm 5mm 5mm; gap: 3.5mm; }
+.v42-pb-gross .v42-pb-tabelle { font-size: 9.5pt; }
+
+.v42-pb-kopf {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  column-gap: 4mm; row-gap: 0.4mm;
+  padding-bottom: 0.6mm;
+  border-bottom: 0.75pt solid var(--ink-soft);
+}
+.v42-pb-titel { font-weight: 700; font-size: 1.07em; flex: 1 1 auto; min-width: 0; }
+.v42-pb-legende {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; column-gap: 3mm; row-gap: 0.2mm;
+  font-size: 0.93em; color: var(--ink-soft);
+}
+.v42-pb-legende li { display: inline-flex; align-items: center; gap: 0.9mm; white-space: nowrap; }
+
+/* Kreis: Kontur in Tintenfarbe, Grösse an der Schrift. */
+.v42-pb-marke { width: 0.95em; height: 0.95em; flex: 0 0 auto; color: var(--ink); overflow: visible; }
+
+.v42-pb-bloecke { display: grid; column-gap: 3mm; row-gap: 2mm; align-items: start; }
+.v42-pb-gross .v42-pb-bloecke { column-gap: 5mm; row-gap: 4mm; }
+.v42-pb-block { min-width: 0; }
+.v42-pb-blocktitel {
+  font-weight: 700; color: var(--sit-akzent);
+  border-bottom: 0.5pt solid var(--sit-akzent);
+  margin-bottom: 0.5mm; padding-bottom: 0.2mm;
+}
+.v42-pb-gross .v42-pb-blocktitel { margin-bottom: 1.5mm; padding-bottom: 0.5mm; }
+
+/* Liste: Kreis vor dem Eintrag, Notiz kleiner darunter. */
+.v42-pb-liste { list-style: none; margin: 0; padding: 0; }
+.v42-pb-liste li { margin: 0 0 0.35mm; }
+.v42-pb-gross .v42-pb-liste li { margin-bottom: 1.6mm; }
+.v42-pb-liste li.mit-marke { display: flex; align-items: flex-start; gap: 1mm; }
+.v42-pb-liste li.mit-marke .v42-pb-marke { margin-top: 0.22em; }
+.v42-pb-text { min-width: 0; }
+.v42-pb-notiz { display: block; font-size: 0.93em; color: var(--ink-soft); }
+
+/* Tabelle: Zahlen rechtsbündig, «stark» fett mit Linie darüber. */
+.v42-pb-tabelle { width: 100%; border-collapse: collapse; }
+.v42-pb-tabelle th {
+  text-align: left; font-weight: 700; color: var(--ink-soft);
+  border-bottom: 0.5pt solid var(--ink-soft);
+  padding: 0 1mm 0.2mm 0;
+}
+.v42-pb-tabelle td { padding: 0 1mm 0 0; vertical-align: top; border-bottom: 0.4pt dotted var(--ink-mute); }
+.v42-pb-gross .v42-pb-tabelle td { padding: 0.5mm 1.5mm 0.5mm 0; }
+.v42-pb-tabelle .zahl { text-align: right; white-space: nowrap; }
+.v42-pb-tabelle th:last-child, .v42-pb-tabelle td:last-child { padding-right: 0; }
+.v42-pb-tabelle .v42-pb-mspalte { width: 1.3em; padding-right: 0.5mm; }
+.v42-pb-tabelle td.v42-pb-mspalte .v42-pb-marke { vertical-align: -0.12em; }
+.v42-pb-tabelle tr.stark td { font-weight: 700; }
+.v42-pb-tabelle tbody tr.stark:last-child td { border-top: 0.75pt solid var(--ink-soft); border-bottom: 0; }
+
+/* ---------- Heft S. 6: Band unter den Methodenkarten ---------- */
+/* Nur mit Beispielbild: Seite6 legt Raster und Band in .v42-pb-s6. Die Karten nehmen ihre
+   natürliche Höhe (statt min-content/1fr über den ganzen Rest), das Band bekommt den Rest.
+   Die Karten selbst bleiben, wie sie sind — nur das Raster wächst nicht mehr. */
+.v42-s6 > .v42-pb-s6 { flex: 1 0 auto; display: flex; flex-direction: column; gap: 1.5mm; min-height: 0; margin-top: -1mm; }
+.v42-s6 .v42-pb-s6 > .methoden-grid { flex: 0 0 auto; grid-template-rows: auto auto; gap: 1.5mm; }
+/* Nur Abstände, nie Schrift oder Inhalt der Karten: so viel Luft, wie das Band braucht. */
+.v42-s6 .v42-pb-s6 .methode-box { padding-top: 1.5mm; padding-bottom: 1.5mm; }
+.v42-s6 .v42-pb-s6 .methode-merk { padding-top: 0.6mm; }
+.v42-s6 .methoden-intro:has(+ .v42-pb-s6) { line-height: 1.3; }
+.v42-s6 .v42-pb-band { flex: 1 0 auto; display: flex; flex-direction: column; gap: 0.5mm; }
+.v42-s6 .v42-pb-band > .v42-pb-blatt { flex: 1 0 auto; }
+.v42-pb-bandkopf { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 3mm; line-height: 1.2; }
+.v42-pb-bandkopf .v42-pb-label { margin-bottom: 0; }
+.v42-pb-unterzeile { font-size: 8pt; font-style: italic; color: var(--ink-soft); }
+
+/* ---------- Dokument «Lösungen» (nur Lehrperson): Einträge in Lösungsgrün ---------- */
+/* Grün nur, was eingetragen ist — Titel, Legende, Blocktitel und Spaltenköpfe bleiben. */
+.v42-pb-loesung .v42-pb-text,
+.v42-pb-loesung .v42-pb-notiz,
+.v42-pb-loesung .v42-pb-tabelle td,
+.v42-pb-loesung .v42-pb-bloecke .v42-pb-marke { color: var(--brand, #0E6E3A); }

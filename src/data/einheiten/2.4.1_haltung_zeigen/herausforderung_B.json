@@ -1,0 +1,874 @@
+{
+  "id": "2.4.1_haltung_zeigen_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "2.4",
+  "modul_titel": "Meinungen bilden und mitgestalten — mit Kunst Haltung zeigen",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Meine Rezension – klar urteilen und fair bleiben",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Werk rezensieren"
+  },
+  "prinzip_ref": "2.4.1_haltung_zeigen_prinzip",
+  "nrlp": {
+    "nr": "2.4.2",
+    "nr_primary": [
+      "2.4.2"
+    ],
+    "lebensbezug": "2.4",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Kultur",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM5"
+    ],
+    "sk": [
+      1,
+      7,
+      6
+    ],
+    "kompetenz_id": "2.4.2",
+    "lebensbezug_id": "2.4",
+    "kompetenz_text": "Ich kann in einer Rezension ein Werk beschreiben, meine Sichtweise begründen, andere Perspektiven einbeziehen und respektvoll kommentieren.",
+    "lebensbezug_text": "Ich entdecke, wie in verschiedenen Kunstformen Meinungen und Haltungen sichtbar werden und werde selbst kreativ tätig."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. Das Jugendmagazin meiner Region sucht Rezensionen von Lernenden: Texte, die ein Werk beschreiben und beurteilen – einen Film, eine Serie, einen Song, ein Game, ein Buch oder eine Ausstellung. Ich habe den Kurzfilm «Drei Runden» einer Jugendfilmgruppe aus meiner Region gewählt. Er zeigt in zehn Minuten eine Lernende, die dreimal dieselbe Runde durchs Quartier läuft, fast ohne Worte und mit Musik. In meinem Freundeskreis finden ihn alle grossartig. Mich hat er nicht überzeugt. Wer am Film mitgearbeitet hat, könnte meinen Text lesen. Die Redaktion will vier Abschnitte: eine Beschreibung ohne Wertung, also ohne eigenes Urteil, mein Urteil mit zwei Argumenten, eine andere Sicht und einen Schlusssatz, für wen sich das Werk lohnt. (Der Kurzfilm ist für dieses Heft erfunden. Sie schreiben über ein Werk, das Sie selbst wählen.)",
+  "zahlen_tabelle": [
+    {
+      "label": "Umfang der Rezension (Wörter)",
+      "wert": "150–200"
+    },
+    {
+      "label": "Abgabe an die Redaktion in",
+      "wert": "2 Wochen"
+    },
+    {
+      "label": "Ihr Werk für die Rezension",
+      "wert": "frei gewählt"
+    },
+    {
+      "label": "Rückmeldung unter der Rezension",
+      "wert": "1 Satz"
+    }
+  ],
+  "leitfrage": "Wie sage ich klar, was mich am Werk nicht überzeugt, ohne die Menschen abzuwerten, die es gemacht haben oder mögen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Klares Urteil über das Werk vs. Respekt vor den Menschen dahinter",
+    "hint": "Ein klares Urteil hilft allen, die das Werk nicht kennen. Ein hartes Wort trifft die, die es gemacht haben oder mögen. Wie deutlich werden Sie?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 17.2",
+      "titel": "Dokumentieren",
+      "unterueberschrift": "Inhaltsangabe, Beschreibung",
+      "seiten": "Seite 388-389",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 17.3",
+      "titel": "Argumentieren",
+      "unterueberschrift": "Stellungnahme, 3B-Schema, fairer Ton",
+      "seiten": "Seite 393-396",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 18.3",
+      "titel": "Perspektivenwechsel",
+      "unterueberschrift": "Vorurteil, Empathie",
+      "seiten": "Seite 418-419",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie schreiben über ein eigenes Werk; der Kurzfilm der Situation ist nur ein Beispiel. LF1 liefert Begriffe, LF2 Ihr Urteil, LF3 Prüfpunkte für die Beschreibung, LF4 die andere Sicht. Sie klären zuerst Ihr Urteil. In der fertigen Rezension auf S. 7 kommt die Beschreibung trotzdem vor dem Urteil.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 17.3 | S. 393-396 · Kap. 18.3 | S. 418-419",
+      "text": "Erklären Sie: Womit beginnt und endet eine Stellungnahme (S. 393)? Woraus besteht ein Argument (S. 394)? Was vermeidet ein Kommentar, ein Meinungstext wie Ihr Urteil (S. 396)? Dazu: Vorurteil, Empathie (S. 418–419).",
+      "liefert": "Bausteine einer fairen Rezension als Begriffe",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Rezension heisst: ein Werk beschreiben und begründet beurteilen. Wertung: eigenes Urteil.",
+          "Kap. 18.3: auf S. 418 nur der Absatz zum Vorurteil, auf S. 419 Emotionen und Empathie."
+        ],
+        "satzanfaenge": [
+          "«Eine Stellungnahme beginnt mit …; sie endet mit …»",
+          "«Ein Argument besteht aus Behauptung, … und …»",
+          "«Ein Vorurteil ist …; Empathie heisst …»"
+        ],
+        "produkt": "Sie brauchen die Begriffe für alle vier Abschnitte: Beschreibung, Urteil, andere Sicht, Schlusssatz."
+      },
+      "loesung": {
+        "kern": "Stellungnahme, Argument, Ton, Vorurteil, Empathie",
+        "zeilen": [
+          {
+            "label": "Stellungnahme",
+            "text": "Text zu einer umstrittenen Frage: Er legt zuerst die Tatsachen dar und hält am Schluss die eigene Meinung fest – vorn sachlich, hinten wertend.",
+            "quelle": "Kap. 17.3, S. 393"
+          },
+          {
+            "label": "Argument (3B)",
+            "text": "Drei Teile: Behauptung (ein Satz, der etwas feststellt), Begründung (warum das gilt), Beispiel (ein Beleg, der die Begründung stützt).",
+            "quelle": "Kap. 17.3, S. 394"
+          },
+          {
+            "label": "Kommentar: Ton",
+            "text": "Klarer Standpunkt, aber nichts Überhebliches oder Beleidigendes, keine Verallgemeinerung; Fragen regen eher zum Nachdenken an als Behauptungen. Das Heft überträgt das auf die Rezension.",
+            "quelle": "Kap. 17.3, S. 396"
+          },
+          {
+            "label": "Vorurteil",
+            "text": "Ein Urteil, das feststeht, bevor man genau hingesehen hat: Ein Merkmal wird verallgemeinert. Prüffrage: Wird verallgemeinert?",
+            "quelle": "Kap. 18.3, S. 418"
+          },
+          {
+            "label": "Empathie",
+            "text": "Sich in Gedanken, Gefühle und Weltbild eines anderen hineinversetzen. Dazu: Emotionen lenken, wie jemand handelt.",
+            "quelle": "Kap. 18.3, S. 419"
+          },
+          {
+            "label": "Rezension, Wertung",
+            "text": "Erklärt das Heft, nicht das Lehrmittel. Rezension nach dem Wortlaut der Kompetenz 2.4.2: beschreiben, Sicht begründen, andere Sichten einbeziehen, respektvoll kommentieren. Wertung: eigenes Urteil."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 17.3 | S. 394 · eigener Fall",
+      "text": "Wählen Sie Ihr Werk: eines, zu dem Sie ein klares Urteil haben und das andere anders sehen. Begründen Sie Ihr Urteil mit zwei Argumenten nach dem 3B-Schema (S. 394): je Behauptung, Begründung, Beispiel aus dem Werk.",
+      "liefert": "Urteil mit zwei Argumenten nach 3B",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Notieren Sie zuerst: Titel, wer es gemacht hat, was man sieht oder hört.",
+          "Fragen Sie sich: Wie wirkt das Werk auf mich – und an welcher Stelle merke ich das?"
+        ],
+        "satzanfaenge": [
+          "«Mich überzeugt das Werk (nicht), weil …»",
+          "«Das merke ich an der Stelle, wo …»",
+          "«Mein zweites Argument: …»"
+        ],
+        "produkt": "Daraus wird auf S. 7 der Abschnitt Urteil: Ihr Urteil mit zwei Argumenten (Schritt 02)."
+      },
+      "loesung": {
+        "kern": "Urteil in Ich-Form, zwei Argumente nach 3B",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Das Werk ist genannt (Titel, wer es gemacht hat). Das Urteil steht in einem Satz in Ich-Form. Zwei Argumente, je mit Behauptung, Begründung und Beispiel. Als Beispiel gilt hier eine Stelle im Werk: Übertragung des Hefts; im Lehrmittel ist das Beispiel ein Beleg.",
+            "quelle": "Kap. 17.3, S. 394"
+          },
+          {
+            "label": "Beispiel (erfunden)",
+            "text": "Zum erfundenen Kurzfilm «Drei Runden»: Der Film vertraut seinen Bildern nicht (Behauptung), weil die Musik vorgibt, was ich fühlen soll (Begründung); in der Regenszene übertönt sie sogar die Schritte (Beispiel; die Szene ist eine Annahme)."
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Das Beispiel zeigt auf eine Stelle im Werk, nicht auf die Menschen dahinter (Setzung des Hefts; S. 396 verlangt nur einen Ton ohne Beleidigung). Die Wirkung ist als eigene benannt: «auf mich».",
+            "quelle": "Kap. 17.3, S. 396"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Geschmack statt Grund («langweilig», «mega»): Behauptung ohne Begründung und Beispiel (Setzung des Hefts). Ein Urteil über alle Werke dieser Art wäre ein Vorurteil (Kap. 18.3, S. 418)."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Rezension zu einem selbst gewählten Werk mit Beschreibung, begründetem Urteil und anderer Sicht",
+    "titel": "Meine Rezension für das Jugendmagazin",
+    "format_detail": "Sie schreiben für Leserinnen und Leser, die das Werk nicht kennen, auf S. 7 eine Rezension von 150 bis 200 Wörtern. Als Titel genügt der Name des Werks; er zählt nicht mit. Sie hat vier Abschnitte in dieser Reihenfolge: Beschreibung ohne Wertung in zwei bis drei Sätzen (Titel, wer es gemacht hat, was man sieht oder hört); Ihr Urteil mit zwei Argumenten nach dem 3B-Schema; eine andere Sicht und was Sie davon gelten lassen; ein Schlusssatz, für wen sich das Werk lohnt. Unter die Rezension schreibt eine Person aus Ihrer Klasse einen Satz Rückmeldung, der eine Stelle Ihres Textes nennt; er zählt nicht zu den 150 bis 200 Wörtern.",
+    "beschreibung": "Ich schreibe für das Jugendmagazin eine Rezension von 150 bis 200 Wörtern zu einem Werk, das ich selbst wähle: Ich beschreibe es, begründe mein Urteil, nehme eine andere Sicht auf und bleibe fair.",
+    "schritte": [
+      {
+        "label": "01 Bausteine klären",
+        "hint": "Vorarbeit mit LF1: Teilen Sie S. 7 in vier Abschnitte (Beschreibung, Urteil, andere Sicht, Schlusssatz). Titel: Name des Werks, zählt nicht."
+      },
+      {
+        "label": "02 Urteil begründen",
+        "hint": "LF2: Schreiben Sie zuerst den Abschnitt Urteil: zwei Argumente, je mit Behauptung, Begründung und Beispiel aus dem Werk."
+      },
+      {
+        "label": "03 Beschreibung absichern",
+        "hint": "LF3: Schreiben Sie die Beschreibung an den Anfang, vor das Urteil, ohne Wertung. Prüfen Sie sie mit Ihrem Befund aus dem Raster."
+      },
+      {
+        "label": "04 Andere Sicht einbauen",
+        "hint": "LF4: Schreiben Sie den Abschnitt andere Sicht: warum das Werk auf andere anders wirkt und was Sie davon gelten lassen."
+      },
+      {
+        "label": "05 Rezension prüfen",
+        "hint": "Schreiben Sie den Schlusssatz und prüfen Sie Wortzahl und beide Kriterien. Zuletzt schreibt jemand aus Ihrer Klasse einen Satz darunter."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Rezension von 150 bis 200 Wörtern in vier Abschnitten (S. 7)",
+      "Wenn sie fertig ist: ein Satz Rückmeldung einer Person aus Ihrer Klasse darunter"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel, gekürzt (erfundenes Hörspiel): ein Argument statt zwei, rund 100 Wörter",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Was das Werk zeigt",
+          "text": [
+            "Beschreibung: «Stellwerk» ist ein Hörspiel von 20 Minuten, aufgenommen von der Hörspielgruppe der Gemeindebibliothek. Man hört eine Nacht im Stellwerk eines kleinen Bahnhofs: Funksprüche, Regen, zwei Stimmen. Ein Güterzug bleibt stehen, und niemand weiss, warum."
+          ]
+        },
+        {
+          "titel": "Mein Urteil, eine andere Sicht",
+          "text": [
+            "Urteil: Mich hat das Hörspiel nicht gepackt, weil es sein Rätsel zu früh verrät. Schon in der fünften Minute sagt eine Stimme, wo der Fehler liegt; danach habe ich nur noch gewartet.",
+            "Andere Sicht: Meine Schwester mag es: Es gehe um die Stimmung, nicht ums Rätsel. Für die Geräusche stimmt das: Den Regen auf dem Dach höre ich noch. Sie hat es mit Kopfhörern gehört, ich nebenbei.",
+            "Schlusssatz: Es lohnt sich für alle, die gern genau hinhören."
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Rezension zum Kurzfilm «Drei Runden» (erfundenes Werk)",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage; erst zeigen, wenn die Rezensionen geschrieben sind. Die Lernenden rezensieren ein eigenes Werk, vergleichen lässt sich darum nur der Bau: Beschreibung in drei Sätzen ohne wertendes Wort; Urteil mit zwei Argumenten (je Behauptung, Begründung und eine Stelle im Werk als Beispiel); andere Sicht mit dem, was davon gilt, dem Grund, warum der Film auf andere anders wirkt, und der Festlegung, ob das Urteil bleibt; Schlusssatz, für wen sich das Werk lohnt. Die Rezension hat 190 Wörter (gezählt ohne die vier Vermerke vor dem Doppelpunkt). Film und Filmgruppe sind erfunden. Annahmen über die Situation hinaus: Regen, Dämmerung und Morgen; die Zeitlupe; die Regenszene mit den Schritten; der Satz «Noch einmal»; der Schluss (Lauf, letzter Platz, Lächeln, keine Musik); Filmabend im Saal und Laptop; die sorgfältige Kamera. «Urteil bleibt» entspricht dem ersten Beispiel bei LF4; «Urteil wird enger» ist ebenso tragfähig. Dass Saal und Laptop die Wirkung prägen, ist eigene Übertragung, nicht aus dem Lehrmittel. Die Rückmeldung steht nicht im Bild; ein möglicher Satz: «Bei der Regenszene verstehe ich sofort, was dich stört; beim Schluss wüsste ich gern, warum er für dich wirkt.»",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Was das Werk zeigt",
+          "text": [
+            "Beschreibung: «Drei Runden» ist ein Kurzfilm von zehn Minuten, gedreht von einer Jugendfilmgruppe aus der Region. Er zeigt eine Lernende, die dreimal dieselbe Runde durchs Quartier läuft: im Regen, in der Dämmerung und am frühen Morgen, fast ohne Worte, mit Musik und vielen Bildern in Zeitlupe. Am Schluss kommt sie bei einem Lauf als Letzte ins Ziel und lächelt."
+          ]
+        },
+        {
+          "titel": "Mein Urteil, eine andere Sicht",
+          "text": [
+            "Urteil: Mich hat der Film nicht überzeugt. Erstens vertraut er seinen Bildern nicht, weil die Musik fast durchgehend vorgibt, was ich fühlen soll: In der Regenszene übertönt sie sogar die Schritte. Zweitens bleibt mir die Läuferin fremd, weil ich nie erfahre, warum sie läuft: Ihr einziger Satz, vor der dritten Runde, lautet «Noch einmal».",
+            "Andere Sicht: In meinem Freundeskreis heisst es, gerade die Bilder ohne Worte machten den Film stark. Das lasse ich für den Schluss gelten: Dort schweigt die Musik, und das Lächeln wirkt. Die anderen haben ihn am Filmabend im vollen Saal gesehen, ich allein am Laptop; das erklärt einen Teil. Bei meinem Urteil bleibe ich, sage aber auch: Die Kamera ist sorgfältig geführt.",
+            "Schlusssatz: Der Film lohnt sich für alle, die selbst filmen oder gern Bildern zusehen; wer eine Geschichte erwartet, findet wenig."
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Urteil oder Entscheid steht ohne Begründung da.",
+        "Eine Begründung ist ansatzweise da, bleibt aber lückenhaft oder ohne Beispiel.",
+        "Urteil oder Entscheid ist nachvollziehbar begründet und mit einem Beispiel gestützt.",
+        "Schlüssig begründet, mit Beispiel; eine andere Sicht ist aufgenommen und beantwortet."
+      ],
+      "indikator_produkt": "2 Punkte: Urteil mit Grund und Beispiel. 3 Punkte: beantwortet auch die andere Sicht"
+    },
+    {
+      "kn_kriterium": "Kulturelles Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Nicht erkennbar, was ein Werk zeigt und wie es wirkt.",
+        "Was das Werk zeigt oder wie es wirkt, ist genannt; beides ist aber vermischt oder ungenau.",
+        "Was das Werk zeigt und wie es wirkt, ist beschrieben und auseinandergehalten.",
+        "Zeigen und Wirken sind getrennt; gesagt ist auch, warum das Werk auf andere anders wirken kann."
+      ],
+      "indikator_produkt": "2 Punkte: Beschreibung zeigt, Urteil sagt Wirkung. 3 Punkte: sagt, warum auf andere anders"
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Auf S. 6 steht eine gekürzte Rezension zu einem anderen, erfundenen Werk; die Satzanfänge der Leitfragen geben den Einstieg in jeden Teil.",
+    "scaffold_100": "Schreiben Sie den Abschnitt andere Sicht ein zweites Mal: aus der Sicht einer Person, die am Werk mitgearbeitet hat. Was würde sie antworten?"
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-3-stellungnahme",
+      "fuer": "für den Aufbau: vorn sachlich beschreiben, danach urteilen",
+      "tun": "Der Merksatz unten («Titel ist eine Frage») gilt für Stellungnahmen. Ihre Rezension hat keinen Titel als Frage, und das Urteil steht schon im zweiten Abschnitt. Gleich bleibt: vorn sachlich beschreiben."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die zwei Argumente Ihres Urteils (LF2)",
+      "tun": "Der Merksatz unten nennt drei Argumente; für Ihre 150 bis 200 Wörter sind zwei verlangt. Als Beispiel dient eine Stelle im Werk."
+    },
+    {
+      "ref": "lm-19-1-feedback",
+      "fuer": "für faire Kritik in der Rezension (LF4) und für die Rückmeldung",
+      "tun": "Faire Kritik heisst hier: eine Stelle im Werk nennen, in Ich-Form schreiben, auch Gelungenes nennen. So schreibt auch jemand aus Ihrer Klasse einen Satz unter Ihre Rezension; er zählt nicht zu den Wörtern."
+    }
+  ],
+  "mindmap_zentrum": "Was es zeigt oder wie es wirkt",
+  "mindmap_aeste": [
+    {
+      "titel": "Beschreiben und werten",
+      "punkte": [
+        "Rezension",
+        "Beschreibung",
+        "Wirkung",
+        "Wertung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Urteil begründen",
+      "punkte": [
+        "Stellungnahme",
+        "Argument",
+        "Behauptung",
+        "Begründung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Fair bleiben",
+      "punkte": [
+        "Vorurteil",
+        "Empathie"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Steht in meiner Beschreibung nur, was das Werk zeigt – ohne ein wertendes Wort?",
+      "Nennt meine Kritik eine Stelle im Werk – und kein Urteil über die Menschen dahinter?"
+    ],
+    "mitnahme": [
+      "Beschreiben und Urteilen getrennt halten",
+      "Eine andere Sicht fair aufnehmen",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Rezension",
+          "nach": "Beschreibung",
+          "text": "beginnt mit einer (Übertragung des Hefts)"
+        },
+        {
+          "von": "Beschreibung",
+          "nach": "Wertung",
+          "text": "kommt aus ohne (Kap. 17.2, S. 388, zur Inhaltsangabe)"
+        },
+        {
+          "von": "Wirkung",
+          "nach": "Wertung",
+          "text": "auf mich führt zu meiner (Übertragung des Hefts)"
+        },
+        {
+          "von": "Wertung",
+          "nach": "Argument",
+          "text": "braucht mindestens ein (Übertragung des Hefts)"
+        },
+        {
+          "von": "Argument",
+          "nach": "Behauptung",
+          "text": "beginnt mit einer (Kap. 17.3, S. 394)"
+        },
+        {
+          "von": "Behauptung",
+          "nach": "Begründung",
+          "text": "trägt erst mit einer (Kap. 17.3, S. 394)"
+        },
+        {
+          "von": "Stellungnahme",
+          "nach": "Rezension",
+          "text": "leiht ihren Anfang der (Übertragung des Hefts)"
+        },
+        {
+          "von": "Vorurteil",
+          "nach": "Wertung",
+          "text": "ist eine vorschnelle (Kap. 18.3, S. 418)"
+        },
+        {
+          "von": "Empathie",
+          "nach": "Rezension",
+          "text": "macht fair: die (Übertragung des Hefts)"
+        },
+        {
+          "von": "Rezension",
+          "nach": "gilt auch bei …",
+          "text": "ist ein Muster für jedes begründete Urteil (Übertragung des Hefts)"
+        }
+      ],
+      "transfer": "Rückmeldung zum Vortrag einer Kollegin, Bewertung eines Konzerts im Netz, Urteil über das Projekt einer anderen Gruppe",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Inhaltsangabe",
+          "Beobachtung"
+        ],
+        "mit_medien": [
+          "Inszenierung",
+          "Ensemble"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn die Beschreibung nur nennt, was man sieht oder hört (Titel, wer es gemacht hat, Inhalt), und Wörter wie «stark» oder «langweilig» erst im Urteil stehen. Geprüft wird das in Schritt 03 mit dem Befund aus LF3; im Lösungsbild der erste Block.",
+        "Ja, wenn jedes Argument auf eine Stelle im Werk zeigt und kein Satz über die Menschen urteilt, die es gemacht haben oder mögen (LF4 und Karte zum Feedback, S. 6). Im Lösungsbild: Regenszene und der Satz «Noch einmal»; über die Filmgruppe steht nur «Die Kamera ist sorgfältig geführt»."
+      ],
+      "mitnahme": [
+        "Erst sagen, was das Werk zeigt, dann, wie es auf mich wirkt; kein wertendes Wort in der Beschreibung",
+        "Die stärkste andere Sicht nennen, sagen, was daran stimmt, und dann festlegen, ob mein Urteil bleibt",
+        "Zum Beispiel: Wie schreibe ich über ein Werk, das mir gefällt, ohne nur zu loben?"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Begriffe und fairer Ton erklärt",
+        "LF2: Werk gewählt, Urteil mit zwei Argumenten",
+        "LF4: andere Sicht; Urteil bleibt, oder ich schränke es ein"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster (S. 3): vier Zeilen voll, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Rezension",
+      "vollstaendig_wenn": [
+        "150 bis 200 Wörter in vier Abschnitten (S. 7)",
+        "Urteil mit zwei Argumenten; andere Sicht mit Antwort",
+        "Darunter ein Satz Rückmeldung aus der Klasse"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, eigenes Werk wählen, Begriffe (LF1), Urteil begründen (LF2)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Raster zur Quelle (LF3), andere Sicht (LF4), Rezension beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Rezension fertig schreiben, Kriterien prüfen, Rückmeldung holen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst muss ich trennen, was etwas zeigt und wie es auf mich wirkt, bevor ich darüber urteile – und fair bleiben gegenüber denen, die es gemacht haben?",
+    "ziel": "Ein Werk zeigt etwas, und es löst etwas aus — wer urteilt, legt offen, was Beschreibung und was eigene Sicht ist, entscheidet, wie deutlich er wird, und rechnet damit, dass andere es anders sehen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Ein Werk beschreiben, das eigene Urteil begründen und eine andere Sicht fair aufnehmen",
+    "lehrmittel_anker": "Kap. 17.2 S. 388-389 (Inhaltsangabe, Beschreibung); Kap. 17.3 S. 393-394 und 396 (Stellungnahme, 3B-Schema, Ton des Kommentars); Kap. 18.3 S. 418-419 (Vorurteil mit Prüffragen, Emotionen, Empathie; ohne die Abschnitte zu Ausgrenzung und Arbeitslosigkeit). Methodenkarte aus Kap. 19.1 S. 424-425 (Feedback). Das Wort Rezension und Kunst als Gegenstand sind im Lehrmittel nicht belegt.",
+    "kn_aktivierung": "Im KN beschreibt die Lernende zuerst, was Vers und Zeichnung über den Wirt zeigen, trennt davon, wie sie wirken, und begründet ihren Vorschlag an die Gruppe mit zwei Argumenten und einem Satz dazu, was die andere Seite richtig sieht.",
+    "transfer_check": "Kann die Lernende bei einem neuen Werk Beschreibung und Urteil trennen, ihr Urteil mit einem Beispiel begründen und eine andere Sicht aufnehmen und beantworten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] + handlungsprodukt.schritte[2] — unterscheiden, welche Angaben in die Beschreibung gehören und was Wertung ist (Raster und Befund, S. 3)"
+    },
+    {
+      "sk": 7,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — die Sicht derer ernst nehmen, die das Werk mögen oder gemacht haben, und sie im Abschnitt andere Sicht aufnehmen"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[1] + Produkt — das eigene Urteil mit zwei Argumenten nach dem 3B-Schema begründen (Abschnitt Urteil, S. 7)"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 17.2 | S. 388-389",
+          "text": "Werten Sie Ihr Raster zu Kap. 17.2 (S. 388–389) aus: Was gehört in eine Inhaltsangabe und in eine Beschreibung – und was nicht? Halten Sie in zwei bis drei Sätzen fest, was Sie daraus für Ihre Beschreibung ableiten.",
+          "liefert": "Prüfpunkte für die Beschreibung ohne Wertung",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 17.2 | S. 388-389",
+            "auftrag": "Lesen Sie Kap. 17.2, S. 388–389: Inhaltsangabe (kurzer Bericht über ein Werk) und Beschreibung. Zeile 1 ist ausgefüllt, füllen Sie drei weitere. «Absatz»: Seite und Zwischentitel. Rechts: Begriff aus LF1 oder Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 388, Aufbau",
+              "Einleitung nennt das Werk",
+              "Titel, Autor, Ort, Zeit",
+              "Beschreibung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Der Begriff rechts ordnet die Zeile ein, z. B. Beschreibung oder Wertung."
+            ],
+            "satzanfaenge": [
+              "«Laut S. … gehört in eine Inhaltsangabe …»",
+              "«Nicht hinein gehört …»",
+              "«Für meine Beschreibung leite ich ab: …»"
+            ],
+            "produkt": "Der Befund ist Ihre Prüfliste für die Beschreibung ohne Wertung (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Was in eine Beschreibung gehört – und was nicht",
+            "quelle_ref": "Kap. 17.2 | S. 388-389",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Einleitung: Titel, Autor oder Regisseurin, Personen, Ort und Zeit der Handlung; Schluss: Merkmale der Gestaltung · Inhaltsangabe: kurz, in eigenen Worten · nicht hinein: eigene Wertung, Interpretation, ausschmückende Einzelheiten (alle S. 388) · Beschreibung: genaue Beobachtung, anschaulich (S. 389).",
+                "quelle": "Kap. 17.2, S. 388-389"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Dritte Person, Gegenwart, keine direkte Rede (S. 388) · Ordnung, kurze Sätze, treffende Wörter (S. 389).",
+                "quelle": "Kap. 17.2, S. 388-389"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Wertung, Beschreibung, Wirkung: LF1 und Glossar; Inhaltsangabe, Beobachtung: aus dem Raster. Zuordnung ist Deutung der Lernenden."
+              },
+              {
+                "label": "Befund",
+                "text": "Nennt, was hineingehört und was nicht, je mit Seite, und leitet Prüfpunkte ab. Die Seiten handeln nicht von Rezensionen: Die Ableitung ist eigene Übertragung."
+              },
+              {
+                "label": "Hinweis",
+                "text": "Lücke: Was nicht in eine Beschreibung gehört, sagt S. 389 nicht; dort zählen auch Gedanken und Gefühle zum Beschreibbaren. Setzung des Hefts: Die Beschreibung zeigt, die Wirkung steht im Urteil."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 388, Aufbau",
+                "Einleitung nennt das Werk",
+                "Titel, Autor, Ort, Zeit",
+                "Beschreibung"
+              ],
+              [
+                "S. 388, Vorbereitung",
+                "Inhaltsangabe: kurz, in eigenen Worten, ohne eigene Wertung",
+                "ausschmückende Einzelheiten streichen",
+                "Wertung"
+              ],
+              [
+                "S. 389, Beschreibung",
+                "genaue Beobachtung, anschaulich",
+                "so entsteht eine genaue Vorstellung",
+                "Beschreibung"
+              ],
+              [
+                "S. 389, Beispiele",
+                "auch Gedanken und Gefühle lassen sich beschreiben",
+                "z. B. zu einer Kinoszene",
+                "Wirkung"
+              ]
+            ],
+            "befund": "Eine Inhaltsangabe ist kurz, steht in eigenen Worten und kommt ohne eigene Wertung und ohne Ausschmückung aus; die Einleitung nennt Titel, wer das Werk gemacht hat, Ort und Zeit der Handlung (S. 388). Eine Beschreibung braucht genaue Beobachtung (S. 389). Für meine Beschreibung leite ich ab: Ich nenne Titel und wer es gemacht hat, sage in zwei bis drei Sätzen, was man sieht oder hört, und streiche jedes wertende Wort."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 18.3 · eigenes Urteil ↔ andere Sicht",
+          "pol_typ": "position_gegenposition",
+          "text": "Ihr Urteil steht (LF2). Versetzen Sie sich in eine Person, die Ihr Werk mag oder gemacht hat (Kap. 18.3, S. 419): Was ist ihr stärkster Grund? Was lassen Sie davon gelten – bleibt Ihr Urteil, oder schränken Sie es ein?",
+          "liefert": "andere Sicht mit eigener Antwort darauf",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Prüfen Sie Ihr Urteil mit S. 418: Verallgemeinere ich? Dann wäre es ein Vorurteil."
+            ],
+            "satzanfaenge": [
+              "«Mein Urteil: … überzeugt mich (nicht), weil …»",
+              "«Auf andere wirkt es anders, weil sie …»",
+              "«Davon lasse ich gelten: … Mein Urteil bleibt / wird enger.»"
+            ],
+            "produkt": "In Schritt 04 übernehmen Sie daraus den Abschnitt andere Sicht auf S. 7."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Urteil ↔ andere Sicht, Antwort",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Das eigene Urteil steht in Ich-Form und gilt dem Werk, nicht den Menschen.",
+                "Die andere Sicht ist die stärkste, die jemand wirklich vertreten kann, der das Werk mag oder gemacht hat (Empathie, Kap. 18.3, S. 419), kein Zerrbild.",
+                "Ein Satz sagt, was davon gilt; dann ist festgelegt: Das Urteil bleibt, oder es wird eingeschränkt.",
+                "Für die höchste Punktzahl beim Kulturellen Prinzip ist gesagt, warum das Werk auf andere anders wirkt (wann, wo, mit wem sie es erleben). Das ist eine Übertragung des Hefts auf Kunst, nicht aus dem Lehrmittel."
+              ],
+              "beispiel_pol_1": "(Am erfundenen Kurzfilm «Drei Runden»; alle Einzelheiten zu Film, Saal und Laptop sind Annahmen.) Mich überzeugt der Film nicht, weil die laute Musik mir vorgibt, was ich fühlen soll. In meinem Freundeskreis heisst es: Gerade die Bilder ohne Worte machen ihn stark. Auf die anderen wirkt er anders, weil sie ihn zusammen im vollen Saal gesehen haben, ich allein am Laptop. Davon lasse ich gelten: Der Schluss ohne Musik wirkt. Mein Urteil bleibt: Über zehn Minuten nimmt die Musik den Bildern die Ruhe.",
+              "beispiel_pol_2": "(Am erfundenen Kurzfilm «Drei Runden»; alle Einzelheiten zu Film, Saal und Laptop sind Annahmen.) Mich hat der Film nicht überzeugt, weil mir die Läuferin fremd bleibt: Sie sagt fast nichts. Wer mitgearbeitet hat, kann antworten: Das ist gewollt, man soll ihr zusehen statt zuhören. Auf Leute, die selbst filmen, wirkt das anders als auf mich. Das lasse ich gelten: Ohne Worte zu erzählen ist eine Wahl, kein Fehler. Mein Urteil wird enger: Mich hat der Film nicht erreicht, weil ich eine Geschichte erwarte.",
+              "nicht_tragfaehig": "Ein Urteil ohne andere Sicht; eine andere Sicht, die niemand vertritt («die finden halt alles gut»); «Geschmackssache» ohne Festlegung; ein Satz über die Menschen statt über das Werk."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Mein Urteil und mein Grund",
+          "Stärkster Grund der anderen",
+          "Was ich davon gelten lasse"
+        ],
+        "hinweis": "Füllen Sie eine Zeile aus. Die Antwort auf LF4 schreiben Sie ins Schreibfeld dieser Seite; in Schritt 04 übernehmen Sie sie auf S. 7.",
+        "loesung_zeilen": [
+          [
+            "(Erfundener Kurzfilm «Drei Runden»; Einzelheiten sind Annahmen) Überzeugt mich nicht: Die Musik gibt vor, was ich fühlen soll",
+            "Freundeskreis: Die Bilder ohne Worte sind seine Stärke; im vollen Saal trägt die Musik",
+            "Der Schluss ohne Musik wirkt. Mein Urteil bleibt"
+          ],
+          [
+            "Die Läuferin bleibt mir fremd: Sie sagt fast nichts",
+            "Filmgruppe: Das ist gewollt, zusehen statt zuhören (Annahme)",
+            "Ohne Worte zu erzählen ist eine Wahl, kein Fehler. Mein Urteil wird enger: Mich hat er nicht erreicht"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 17.2 (S. 3)",
+        "beispiel": [
+          "Erfunden: S. 40, Hausordnung · Waschküche nur werktags offen · «bis 21 Uhr» · → Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Auf S. 6 steht eine gekürzte Rezension zu einem anderen, erfundenen Werk; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie das Raster aus: Wo beschreibt die Kritik in der Quelle, wo wertet, womit begründet sie? Die Kritik ist nur ein Muster für Ihr eigenes Werk. Notieren Sie in zwei, drei Sätzen, was für Ihre Beschreibung folgt.",
+          "liefert": "Prüfpunkte für die Beschreibung ohne Wertung",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-241b-pflicht",
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst ganz hören. Der Begriff rechts ordnet die Zeile ein, z. B. Beschreibung oder Wertung.",
+              "«Absicht»: beschreibt, wertet, begründet, fragt. Frage nach dem Urteil: Begriff Wertung."
+            ],
+            "satzanfaenge": [
+              "«Bei … (Zeitmarke) beschreibt sie …; bei … wertet sie …»",
+              "«Ihr Urteil begründet sie damit, dass …»",
+              "«Für meine Beschreibung leite ich ab: …»"
+            ],
+            "produkt": "Der Befund ist Ihre Prüfliste für die Beschreibung ohne Wertung (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Beschreiben und Werten auseinanderhalten",
+            "quelle_ref": "q-241b-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "07:15 Theaterredaktorin beschreibt Bühne, Kostüme, Bewegung: prächtig statt ärmlich. 08:09 wertet und begründet: Die Lieder reissen mit, aber die Musik, nicht der Inhalt. 09:00 lobt das Orchester. 09:16 wägt ab: erste Hälfte angespannt, Ensemble überzeugt, der Zwiespalt des Stücks bleibt.",
+                "quelle": "Quelle, 07:15–09:59"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "06:52 Gesprächsleitung ordnet ein, fragt nach der Balance; 08:07 fragt nach. 08:43–09:00: nur Musik.",
+                "quelle": "Quelle, 06:52–09:00"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Zuordnung ist Deutung. Die Kritik mischt: Schon bei 07:15 stehen wertende Wörter in der Beschreibung."
+              },
+              {
+                "label": "Befund",
+                "text": "Je eine Zeitmarke für Beschreiben, Werten, Begründen; die Folge fürs eigene Werk: Ableitung."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "01:21 Filmredaktorin beschreibt. 01:56 Frage nach dem Urteil. 02:03 sie wertet in Ich-Form, begründet am Inhalt. Knapp, nur zustimmend: keine andere Sicht, kein Muster für LF4.",
+                "quelle": "Ersatzquelle, 01:21–02:43"
+              },
+              {
+                "label": "Stand",
+                "text": "Zeitmarken ±10 Sek. (Position in der ganzen Sendung, Transkript, nicht gegengehört); Rollen erschlossen. Quelle 21.09.2026, Ersatz 25.09.2026."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "07:15 · Theaterredaktorin",
+                "Inszenierung prächtig statt ärmlich: Bühne, Kostüme, Bewegung",
+                "beschreibt",
+                "Beschreibung"
+              ],
+              [
+                "08:09 · Theaterredaktorin",
+                "Lieder reissen mit, aber die Musik, nicht der Inhalt",
+                "begründet",
+                "Begründung"
+              ],
+              [
+                "09:00 · Theaterredaktorin",
+                "Orchester im Saal: der Aufwand lohnt sich",
+                "wertet",
+                "Behauptung"
+              ],
+              [
+                "09:16 · Theaterredaktorin",
+                "erste Hälfte angespannt, Ensemble überzeugt",
+                "wertet",
+                "Wertung"
+              ]
+            ],
+            "befund": "Die Theaterredaktorin sagt bei 07:15, wie die Aufführung aussieht, mischt aber schon wertende Wörter hinein. Ihr Urteil begründet sie bei 08:09: Die Lieder reissen mit, aber wegen der Musik, nicht wegen des Inhalts. Bei 09:00 nennt sie Gelungenes. Für meine Rezension leite ich ab: In der Beschreibung steht nur, was man sieht oder hört; jedes wertende Wort verschiebe ich ins Urteil."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 18.3 · eigenes Urteil ↔ andere Sicht",
+          "pol_typ": "position_gegenposition",
+          "text": "Ihr Urteil steht (LF2). Versetzen Sie sich in eine Person, die Ihr Werk mag oder gemacht hat (Kap. 18.3, S. 419): Was ist ihr stärkster Grund? Was lassen Sie davon gelten – bleibt Ihr Urteil, oder schränken Sie es ein?",
+          "liefert": "andere Sicht mit eigener Antwort darauf",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Muster in der Quelle: Kritik bei 08:09, Anerkennung bei 09:00, beides ab 09:16.",
+              "Prüfen Sie Ihr Urteil mit S. 418: Verallgemeinere ich? Dann wäre es ein Vorurteil."
+            ],
+            "satzanfaenge": [
+              "«Mein Urteil: … überzeugt mich (nicht), weil …»",
+              "«Auf andere wirkt es anders, weil sie …»",
+              "«Davon lasse ich gelten: … Mein Urteil bleibt / wird enger.»"
+            ],
+            "produkt": "In Schritt 04 übernehmen Sie daraus den Abschnitt andere Sicht auf S. 7."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Urteil ↔ andere Sicht, Antwort",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Das Urteil steht in Ich-Form und gilt dem Werk, nicht den Menschen.",
+                "Die andere Sicht ist die stärkste, kein Zerrbild; ein Satz sagt, was davon gilt, dann ist festgelegt: Das Urteil bleibt oder wird enger.",
+                "Gesagt ist, warum das Werk auf andere anders wirkt (höchste Punktzahl Kulturelles Prinzip; Übertragung des Hefts, nicht aus dem Lehrmittel). Die Quelle ist Muster für den Ton (08:09 Kritik, 09:00 Anerkennung, ab 09:16 beides), kein Pol."
+              ],
+              "beispiel_pol_1": "(Am erfundenen Kurzfilm «Drei Runden»; alle Einzelheiten zu Film, Saal und Laptop sind Annahmen.) Mich überzeugt der Film nicht, weil die Musik vorgibt, was ich fühlen soll. Im Freundeskreis heisst es: Die Bilder ohne Worte machen ihn stark. Auf die anderen wirkt er anders, weil sie ihn im vollen Saal gesehen haben, ich allein am Laptop. Ich lasse gelten: Der Schluss ohne Musik wirkt. Mein Urteil bleibt.",
+              "beispiel_pol_2": "(Am erfundenen Kurzfilm «Drei Runden»; alle Einzelheiten zu Film, Saal und Laptop sind Annahmen.) Mir bleibt die Läuferin fremd: Sie sagt fast nichts. Wer mitgearbeitet hat, kann antworten: Das ist gewollt. Auf Leute, die selbst filmen, wirkt das anders. Ich lasse gelten: Ohne Worte zu erzählen ist eine Wahl, kein Fehler. Mein Urteil wird enger: Mich hat er nicht erreicht.",
+              "nicht_tragfaehig": "Urteil ohne andere Sicht, eine Sicht, die niemand vertritt, «Geschmackssache» ohne Festlegung oder ein Satz über die Menschen statt über das Werk."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-241b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Hören Sie die Theaterkritik (QR-Seite), 06:19–09:59 ab Beginn der Sendung. Vier Zeilen: in «Wer spricht» Zeitmarke mit Rolle (wer fragt, wer urteilt), dann Kernaussage, Absicht, Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-241b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wo beschreibt die Kritik das Spiel, wo urteilt sie – und was schränkt ihr Lob am Schluss ein?",
+          "erwartung": "Die ersten zwei Absätze sagen, worum es geht und wie gespielt wird, im Ton aber schon wertend. Absätze 3 und 4 schildern, wie Bild und Ton wirken, und werten mit Vergleichen. Das Fazit empfiehlt das Spiel klar und schränkt ein: Beim Umfang der Geschichte liegt es hinter zwei bekannten Spielfiguren. (Kritik von 2018.)"
+        },
+        {
+          "ref": "q-241b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Erzählung: Ein Mensch erwacht als Tier. Womit begründen die zwei ihr Urteil – und bleiben sie fair?",
+          "erwartung": "Kritiker: gealtert (06:25); seine Kunstgriffe kennt man heute, und was im Zimmer geschieht, bekäme heute halb so viel Platz (06:33–06:45). Kritikerin: nicht gealtert (07:27); viele Junge lesen es freiwillig, seine Fragen bleiben (07:31–08:08). Fair (Deutung): Er würdigt zuerst die Bedeutung des Werks (05:46–06:15); beide reden in Ich-Form über das Werk, nicht übereinander. (Rollen erschlossen; Stand: Untertitel von SRF, Video nicht gegengesehen.)"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Erfunden: 02:10, Bademeisterin · Becken abends überfüllt · beschreibt · → Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Auf S. 6 steht eine gekürzte Rezension zu einem anderen, erfundenen Werk; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}

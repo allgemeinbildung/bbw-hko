@@ -1,0 +1,664 @@
+{
+  "id": "1.3.1_konsum_verantworten_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "lehrgang": "EFZ_4J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Am 20. ist das Konto leer",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Budget planen und Schulden vermeiden"
+  },
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "nrlp": {
+    "nr": "1.3.2",
+    "nr_primary": [
+      "1.3.2",
+      "1.3.3"
+    ],
+    "lebensbezug": "1.3",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM7"
+    ],
+    "sk": [
+      2,
+      6,
+      11
+    ],
+    "kompetenz_id": "1.3.2",
+    "lebensbezug_id": "1.3",
+    "kompetenz_text": "Ich kann mein Budget realistisch planen, Abweichungen und Risiken identifizieren und entsprechende Anpassungen vornehmen sowie mich mit anderen darüber austauschen.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen.",
+    "kompetenzen": [
+      {
+        "nr": "1.3.2",
+        "text": "Ich kann mein Budget realistisch planen, Abweichungen und Risiken identifizieren und entsprechende Anpassungen vornehmen sowie mich mit anderen darüber austauschen."
+      },
+      {
+        "nr": "1.3.3",
+        "text": "Ich kann Risiken der Verschuldung erkennen, mein eigenes Konsumverhalten kritisch reflektieren, Wege zur Vermeidung von Schulden entwickeln und diese mit anderen diskutieren."
+      }
+    ]
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. Mein Lohn kommt einmal im Monat, und rund um den 20. ist das Konto leer. Jeden Monat gehen 130 Franken für Abos weg: Handy, Streaming und das Fitness, das ich im Januar für ein Jahr unterschrieben habe und kaum nutze. Letzten Monat habe ich Sneakers für 180 Franken auf Rechnung bestellt. Heute kam die erste Mahnung, mit 20 Franken Gebühr. Wohin der Rest meines Geldes geht, weiss ich nicht genau; ich schreibe nichts auf. Eine Kollegin aus dem Betrieb kommt mit weniger Lohn über die Runden und bietet an, am Freitag mein Budget mit mir durchzugehen. Bis dahin will ich ein realistisches Budget haben, wissen, wie ich aus der Rechnung herauskomme, und meine Anpassungen begründen können.",
+  "zahlen_tabelle": [
+    {
+      "label": "Nettolohn pro Monat (ca.)",
+      "wert": "CHF 800"
+    },
+    {
+      "label": "Abos (Handy 45, Streaming 20, Fitness 65)",
+      "wert": "CHF 130"
+    },
+    {
+      "label": "Offene Rechnung Sneakers + Mahngebühr",
+      "wert": "CHF 200"
+    },
+    {
+      "label": "Konto leer ab",
+      "wert": "ca. 20."
+    }
+  ],
+  "leitfrage": "Wie plane ich mein Geld so, dass es bis Monatsende reicht und ich nicht in Schulden rutsche — und wie begründe ich meine Anpassungen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Momentaner Wunsch vs. langfristige finanzielle Sicherheit",
+    "hint": "Sparen ist nicht automatisch besser. Ein Budget ohne jeden Spielraum hält niemand lange durch — entscheidend ist, dass es bis Monatsende trägt und Sie es vertreten können."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.1",
+      "titel": "Lohnbestandteile — Brutto/Netto und Sozialabzüge",
+      "unterueberschrift": "Bruttolohn, Nettolohn, obligatorische Abzüge",
+      "seiten": "Seite 46-47",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 2.2",
+      "titel": "Budget — fixe und variable Kosten, Rückstellungen",
+      "unterueberschrift": "Budgeterstellung und Budgetpositionen",
+      "seiten": "Seite 48-49",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 8.2",
+      "titel": "Schulden und Betreibung — Schuldenfalle und Prävention",
+      "unterueberschrift": "Verschuldung und Tipps zur Schuldenvermeidung",
+      "seiten": "Seite 199-202",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bereiten in dieser Woche Ihr Budget und das Gespräch mit Ihrer Kollegin vor: LF1 liefert Gliederung und Risikobegriffe, LF2 Ihr Budget mit Saldo, LF3 die Schuldenwege mit Beleg, LF4 Ihre Anpassungen, Schutzregeln und Ihre Antwort auf den stärksten Einwand.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.2 | S. 48 · Kap. 8.2 | S. 199",
+      "text": "Erklären Sie die drei Kostenarten eines Budgets (fix, variabel, Rückstellungen) und wie aus einer offenen Rechnung eine Schuldenspirale entstehen kann.",
+      "liefert": "Budgetgliederung und Risikobegriffe",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Ordnen Sie jedem Kostenart-Begriff ein Beispiel aus Ihrem Alltag zu.",
+          "Zeichnen Sie die Schuldenspirale als drei bis vier Pfeile."
+        ],
+        "satzanfaenge": [
+          "«Fixe Kosten sind …, zum Beispiel …»",
+          "«Eine Schuldenspirale beginnt, wenn …»"
+        ],
+        "produkt": "Die drei Kostenarten gliedern Ihr Budget."
+      },
+      "loesung": {
+        "kern": "Drei Kostenarten und die Schuldenspirale",
+        "zeilen": [
+          {
+            "label": "Fixe Kosten",
+            "text": "Jeden Monat gleich und kurzfristig kaum veränderbar: Krankenkasse, Handy-Abo, Haushaltsbeitrag; auch Jahresabos wie das Fitness.",
+            "quelle": "Kap. 2.2"
+          },
+          {
+            "label": "Variable Kosten",
+            "text": "Durch eigenes Verhalten veränderbar: Ausgang, Kleider, Take-away, Hobby.",
+            "quelle": "Kap. 2.2"
+          },
+          {
+            "label": "Rückstellungen",
+            "text": "Für unregelmässige Ausgaben zurückgelegt: Zahnarzt, Ferien, Unvorhergesehenes.",
+            "quelle": "Kap. 2.2"
+          },
+          {
+            "label": "Schuldenspirale",
+            "text": "Entsteht, wenn regelmässig mehr ausgegeben als eingenommen wird: Rechnungen bleiben offen, Gebühren kommen dazu, neue Ausgaben werden mit Geld bezahlt, das schon verplant ist.",
+            "quelle": "Kap. 8.2"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.1 | S. 46 · Kap. 2.2 | S. 48 · eigener Fall",
+      "text": "Erstellen Sie Ihr Monatsbudget mit eigenen, realistischen Zahlen — geschätzte genügen. Gliedern Sie nach den drei Kostenarten, nehmen Sie Abos und offene Rechnung auf und berechnen Sie den Saldo. Ab welchem Tag wird es knapp?",
+      "liefert": "Budget mit Saldo und Engpass",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Beginnen Sie mit der Einnahmenzeile (Nettolohn, Kap. 2.1).",
+          "Tragen Sie zuerst die fixen Kosten ein — sie sind am sichersten."
+        ],
+        "satzanfaenge": [
+          "«Mein Saldo am Monatsende beträgt …»",
+          "«Knapp wird es ab …, weil …»"
+        ],
+        "produkt": "Das Budget ist das Herzstück Ihres Produkts."
+      },
+      "loesung": {
+        "kern": "Realistisches Budget mit Saldo",
+        "zeilen": [
+          {
+            "label": "Einnahmen",
+            "text": "Nettolohn = Bruttolohn minus Sozialabzüge (AHV, IV, EO, ALV und NBU). Beispiel: rund CHF 860 brutto ergeben rund CHF 800 netto.",
+            "quelle": "Kap. 2.1"
+          },
+          {
+            "label": "Erwartet",
+            "text": "Alle drei Kostenarten mit eigenen Zahlen, die Abos als fixe Kosten, die offene Rechnung samt Gebühr als eigene Zeile, Saldo ausgerechnet."
+          },
+          {
+            "label": "Engpass",
+            "text": "Der Tag, ab dem der Saldo negativ würde, wird benannt (in der Situation um den 20.)."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Wunschzahlen statt eigene Zahlen — das Budget geht auf dem Papier auf, nicht auf dem Konto. Rückstellungen fehlen ganz."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Realistisches Monatsbudget mit Schutzregeln + Budgetgespräch",
+    "titel": "Mein Budget, meine Regeln, mein Budgetgespräch",
+    "format_detail": "Ein ausgefülltes Monatsbudget mit Saldo vor und nach den Anpassungen, zwei Schutzregeln gegen Schulden und ein Budgetgespräch von 3–4 Minuten zu zweit: Ihr Gegenüber spielt die Kollegin.",
+    "beschreibung": "Ich plane mein Geld mit eigenen Zahlen, erkenne, wo es knapp wird und wo Schulden drohen, und vertrete meine Anpassungen im Gespräch mit Argumenten.",
+    "schritte": [
+      {
+        "label": "01 Budget aufstellen",
+        "hint": "Gliedern Sie Ihr Budget aus LF2 nach den drei Kostenarten und schreiben Sie den Saldo darunter."
+      },
+      {
+        "label": "02 Engpass markieren",
+        "hint": "Markieren Sie den Posten und den Tag, an dem es knapp wird."
+      },
+      {
+        "label": "03 Risiken belegen",
+        "hint": "Markieren Sie mit dem Raster aus LF3 die Posten, die zu Schulden führen können."
+      },
+      {
+        "label": "04 Anpassen und Regeln setzen",
+        "hint": "Tragen Sie Anpassungen und Schutzregeln aus LF4 ein und rechnen Sie den neuen Saldo."
+      },
+      {
+        "label": "05 Gespräch führen",
+        "hint": "Führen Sie das Budgetgespräch zu zweit: drei Argumente, eine Rückfrage, Ihre Antwort auf den Einwand."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Monatsbudget mit Saldo vor und nach den Anpassungen",
+      "2–3 Anpassungen und 2 Schutzregeln (Wenn-dann)",
+      "Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand"
+    ]
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Keine Begründung für die Entscheidung erkennbar.",
+        "Begründung ansatzweise vorhanden.",
+        "Begründung nachvollziehbar und strukturiert.",
+        "Schlüssig, differenziert, Gegenargumente und Folgen berücksichtigt."
+      ],
+      "indikator_produkt": "Jede Anpassung hat einen Grund; im Gespräch wird der Einwand beantwortet, nicht übergangen."
+    },
+    {
+      "kn_kriterium": "Wirtschaftliches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Der Zusammenhang von Budget, Bedürfnis und Verschuldungsrisiko wird nicht angewendet.",
+        "Der Zusammenhang wird teilweise erkennbar.",
+        "Der Zusammenhang wird korrekt auf die Situation angewendet.",
+        "Das Prinzip wird auf neue Zusammenhänge übertragen (Transfer)."
+      ],
+      "indikator_produkt": "Der Engpass ist rechnerisch geschlossen; die Schutzregeln setzen bei den Schuldenwegen aus LF3 an."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien und eine Beispielzeile im Raster der Quelle.",
+    "scaffold_100": "Ein zweites Szenario einbauen (unerwartete Zahnarztrechnung CHF 300) und das Budget mit Rückstellungen anpassen."
+  },
+  "methoden": [
+    {
+      "ref": "lm-2-2-budget",
+      "fuer": "für das Monatsbudget mit Saldo",
+      "tun": "Gehen Sie in der Reihenfolge des Kapitels vor: Einnahmen, fixe Kosten, variable Kosten, Rückstellungen, Saldo — mit Ihren eigenen Zahlen."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für die Argumente im Budgetgespräch",
+      "tun": "Begründen Sie jede Anpassung in drei Zügen: Ausgangslage, Grund, Entscheid — je ein Satz."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für das Zuhören im Budgetgespräch",
+      "tun": "Hören Sie auf den Einwand Ihres Gegenübers mit allen vier Ohren, bevor Sie antworten."
+    }
+  ],
+  "mindmap_zentrum": "Wunsch jetzt oder Sicherheit später",
+  "mindmap_aeste": [
+    {
+      "titel": "Mein Budget",
+      "punkte": [
+        "fix / variabel",
+        "Rückstellungen",
+        "Saldo, Engpass"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wege in die Schulden",
+      "punkte": [
+        "Abos summieren",
+        "Rechnung, Mahnung",
+        "Schuldenspirale"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Anpassen und schützen",
+      "punkte": [
+        "Anpassungen",
+        "Wenn-dann-Regeln",
+        "Einwand"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Reicht mein Geld mit den Anpassungen bis Monatsende?",
+      "Weiss ich, was ich mit der gemahnten Rechnung tue, bevor daraus mehr wird?"
+    ],
+    "mitnahme": [
+      "Meine wichtigste Anpassung",
+      "Meine Schutzregel",
+      "Mir noch unklar"
+    ]
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1 erklärt drei Kostenarten und die Schuldenspirale",
+        "LF2 hat ein Budget mit Saldo und Engpass",
+        "LF4 nennt Anpassungen, zwei Regeln und den Einwand"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Werten",
+        "Jeder Wert hat einen Begriff aus LF1"
+      ]
+    },
+    {
+      "produkt": "Budget und Gespräch",
+      "vollstaendig_wenn": [
+        "Saldo vor und nach den Anpassungen",
+        "Zwei überprüfbare Schutzregeln",
+        "Gespräch geführt, Notiz mit Argumenten, Rückfrage, Antwort auf Einwand"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Mindmap mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "Tandem-Mitnahme notiert"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Lektion 1 · 45 min",
+      "text": "Situation lesen, LF1 und LF2 (Budget aufstellen)",
+      "aktiv": true
+    },
+    {
+      "label": "Lektion 2 · 45 min",
+      "text": "LF3 mit Raster (Quelle der Spur), LF4, Anpassungen und Regeln",
+      "aktiv": false
+    },
+    {
+      "label": "Lektion 3 · 45 min",
+      "text": "Budget fertigstellen, Budgetgespräch zu zweit, Feedback-Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst in meinem Leben muss ich etwas planen, bevor ich es ausgebe — und woran erkenne ich früh, dass es knapp wird?",
+    "ziel": "Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Realistisch planen, Engpässe und Schuldenwege erkennen, Anpassungen begründet vertreten",
+    "lehrmittel_anker": "Kap. 2.1 S. 46-47, Kap. 2.2 S. 48-49, Kap. 8.2 S. 199-202.",
+    "kn_aktivierung": "Im KN muss die Lernende prüfen, ob die Leasingrate in ihr Budget passt, und den Entscheid begründen — ohne dass Leasing in Heft B als Fall vorkommt.",
+    "transfer_check": "Kann die Lernende ein knappes Budget mit eigenen Zahlen aufstellen, Schuldenrisiken benennen und eine Anpassung gegen einen Einwand verteidigen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "leitfragen[1] + Budget — eigenes finanzielles Ziel setzen und planen"
+    },
+    {
+      "sk": 6,
+      "wo": "leitfragen[3] + Budgetgespräch — Anpassungen gegen einen Einwand begründen"
+    },
+    {
+      "sk": 11,
+      "wo": "mehrdeutigkeit.trade_off und LF4 — Sparen und Spielraum bleiben abzuwägen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 8.2 | S. 199-202",
+          "text": "Werten Sie Ihr Raster aus: Wie entsteht laut Lehrmittel eine Schuldenspirale — und welcher Schritt zeigt sich schon in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Schuldenwege mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 8.2 | S. 199-202",
+            "auftrag": "Lesen Sie Kap. 8.2 S. 199–202. Tragen Sie vier Aussagen ein, die zeigen, wie eine Schuldenspirale entsteht. Ordnen Sie jeder Aussage einen Begriff aus LF1 zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 199",
+              "Mehr ausgeben als einnehmen",
+              "«Leben auf Pump»",
+              "Schuldenspirale"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Suchen Sie im Text nach Wörtern wie Rechnung, Abo, Mahnung, Betreibung."
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel beginnt eine Schuldenspirale, wenn …»",
+              "«In meinem Budget zeigt sich das bei …»"
+            ],
+            "produkt": "Die Schuldenwege bestimmen, wo Ihre Schutzregeln ansetzen."
+          },
+          "loesung": {
+            "kern": "Schuldenspirale nach Kap. 8.2, am eigenen Budget gezeigt",
+            "quelle_ref": "Kap. 8.2 | S. 199-202",
+            "quelle_stand": "Lehrmittel, aktuelle Auflage",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Vier Aussagen aus Kap. 8.2: regelmässig mehr ausgeben als einnehmen, offene Rechnungen und Gebühren, Abos und Verpflichtungen summieren sich, Betreibung als Folge.",
+                "quelle": "Kap. 8.2"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Schuldenspirale, fixe Kosten, Mahnung, Betreibung."
+              },
+              {
+                "label": "Befund",
+                "text": "Benennt die gemahnte Rechnung oder die Abos als ersten Schritt einer möglichen Spirale im eigenen Budget."
+              }
+            ]
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 8.2 | S. 199-202 · eigenes Budget",
+          "pol_typ": "position_gegenposition",
+          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Prüfen Sie Ihre wichtigste Anpassung gegen den stärksten Einwand, zum Beispiel «Dann lebst du nur noch fürs Sparen». Bleiben Sie dabei — und warum?",
+          "liefert": "Anpassungen, Schutzregeln, Antwort auf Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Formulieren Sie Regeln als Wenn-dann-Satz."
+            ],
+            "satzanfaenge": [
+              "«Ich passe … an, weil …»",
+              "«Der stärkste Einwand ist …»",
+              "«Ich bleibe dabei, weil … / Ich ändere es, weil …»"
+            ],
+            "produkt": "Anpassungen und Regeln stehen unter dem Budget; die Antwort auf den Einwand brauchen Sie im Gespräch."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Entscheid gegen Einwand",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch.",
+                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop eine Abzahlung vereinbart.",
+                "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
+                "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
+              ],
+              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und streiche Take-away unter der Woche. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regel: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.»",
+              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte und lege dafür 30 Franken als Rückstellung zur Seite. Regel: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort.»",
+              "nicht_tragfaehig": "Nur Rückstellungen streichen; Regeln ohne Überprüfbarkeit («Ich will sparsamer sein»); den Einwand übergehen."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Meine Anpassung",
+          "Stärkster Einwand",
+          "Meine Antwort"
+        ],
+        "hinweis": "Eine Zeile pro Anpassung. Die Antwort darf auch heissen: «Der Einwand stimmt — ich ändere die Anpassung so: …»"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 8.2 (S. 3)"
+      },
+      "scaffold_90": "Budgetvorlage mit Kategorien, Beispielzeile im Raster und ein vorgegebener Einwand in der Denkhilfe."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Pflichtquelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Über welche Posten geraten junge Erwachsene laut Quelle am häufigsten in Schulden — und welcher davon steckt auch in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Schuldenwege mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-131b-pflicht",
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie zuerst Titel, Achsen und Legende der Grafik.",
+              "Notieren Sie nur Werte, die Sie auch erklären können."
+            ],
+            "satzanfaenge": [
+              "«Die Grafik zeigt, dass …»",
+              "«In meinem Budget entspricht dem …»"
+            ],
+            "produkt": "Die Schuldenwege bestimmen, wo Ihre Schutzregeln ansetzen."
+          },
+          "loesung": {
+            "kern": "[abhängig von der Pflichtquelle]",
+            "quelle_ref": "q-131b-pflicht",
+            "quelle_stand": "[Datum der Quellenfreigabe]",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "[Vier Werte aus der Grafik mit Aussage — nach Freigabe aus der Quelle erzeugen]"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Typische Zuordnungen: fixe Kosten, offene Rechnung, Mahnung, Schuldenspirale."
+              },
+              {
+                "label": "Befund",
+                "text": "Verbindet mindestens einen Schuldenweg aus der Quelle mit einem Posten im eigenen Budget (Abos oder offene Rechnung)."
+              }
+            ]
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 8.2 | S. 199-202 · eigenes Budget",
+          "pol_typ": "position_gegenposition",
+          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Prüfen Sie Ihre wichtigste Anpassung gegen den stärksten Einwand, zum Beispiel «Dann lebst du nur noch fürs Sparen». Bleiben Sie dabei — und warum?",
+          "liefert": "Anpassungen, Schutzregeln, Antwort auf Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Kürzen Sie dort, wo Sie für Ihr Geld am wenigsten zurückbekommen.",
+              "Formulieren Sie Regeln als Wenn-dann-Satz."
+            ],
+            "satzanfaenge": [
+              "«Ich passe … an, weil …»",
+              "«Der stärkste Einwand ist …»",
+              "«Ich bleibe dabei, weil … / Ich ändere es, weil …»"
+            ],
+            "produkt": "Anpassungen und Regeln stehen unter dem Budget; die Antwort auf den Einwand brauchen Sie im Gespräch."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Entscheid gegen Einwand",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch.",
+                "Die offene Rechnung wird zuerst bezahlt oder mit dem Shop eine Abzahlung vereinbart.",
+                "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
+                "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
+              ],
+              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und streiche Take-away unter der Woche. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regel: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.»",
+              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte und lege dafür 30 Franken als Rückstellung zur Seite. Regel: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort.»",
+              "nicht_tragfaehig": "Nur Rückstellungen streichen; Regeln ohne Überprüfbarkeit («Ich will sparsamer sein»); den Einwand übergehen."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-131b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Grafik und den Begleittext gemäss QR-Seite. Tragen Sie vier Werte ein, die zeigen, wie junge Erwachsene in Schulden geraten. Ordnen Sie jedem Wert einen Begriff aus LF1 zu.",
+          "raster": {
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-131b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was rät eine Schuldenberatung jungen Erwachsenen als Erstes, wenn das Geld nicht mehr reicht?"
+        },
+        {
+          "ref": "q-131b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und ab wann droht sie bei einer unbezahlten Rechnung?"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-grafik-lesen",
+        "fuer": "für das Raster der Pflichtquelle (S. 3)"
+      },
+      "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien und eine Beispielzeile im Raster der Quelle."
+    }
+  }
+}

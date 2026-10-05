@@ -1,0 +1,257 @@
+{
+  "id": "1.1.1_ausbildung_kommunizieren_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "ausbildung_kommunizieren",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-10-04",
+  "set_ref": "1.1.1_ausbildung_kommunizieren_set",
+  "prinzip_ref": "1.1.1_ausbildung_kommunizieren_prinzip",
+  "anchored_situations": [
+    "1.1.1_ausbildung_kommunizieren_hf_A",
+    "1.1.1_ausbildung_kommunizieren_hf_B"
+  ],
+  "dominanter_aspekt": "Recht",
+  "kern_kompetenzversprechen": "Ich kann Informationen zu meiner Ausbildung aus Quellen entnehmen und nutzen, um in einem Konflikt angemessen zu kommunizieren, und meine digitalen Werkzeuge sicher und zielgruppengerecht einsetzen — auch wenn der schnelle Weg ein anderer wäre.",
+  "mehrdeutigkeits_pflicht": "Ob es weiter führt, auf dem eigenen Anspruch und dem schnellen Weg zu bestehen oder Rücksicht zu nehmen und den aufwendigeren Weg zu gehen, hängt von der Lage, vom Gegenüber und von dem ab, was auf dem Spiel steht; beide Seiten bleiben begründbar.",
+  "hybrid_situation": {
+    "titel": "Materialgeld bar, Fotos in den Kurschat – was sage ich wem?",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Erster Tag im überbetrieblichen Kurs. Die Kursleitung verlangt von allen CHF 60 Materialgeld, bar bis morgen. Dazu richtet sie für die Kursgruppe einen offenen Kurschat ein: Jeden Abend sollen wir Fotos unserer Arbeiten mit Namen hineinstellen, und auch die Bewertungen will sie dort bekannt geben. Mein Lehrbetrieb weiss von beidem nichts. Zwei aus der Kursgruppe zahlen sofort und finden, ich solle keinen Aufstand machen. Ich will es mir mit der Kursleitung nicht verderben, aber einfach zahlen und alles hineinstellen will ich auch nicht. Bis zum nächsten Kurstag muss ich mich entscheiden. Worauf bestehe ich, wo gebe ich nach – und was sage ich wem über welchen Kanal?",
+    "leitfrage": "Worauf bestehe ich, wo gebe ich nach – und was sage ich wem über welchen Kanal?",
+    "aktivierte_trade_offs": [
+      "Auf dem Anspruch bestehen vs. eine Lösung für beide suchen",
+      "Schnell und bequem vs. sicher und korrekt",
+      "Klar sagen, was ich will vs. Rücksicht auf Rolle und Gegenüber"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Szene bündelt beide Hefte in einer Lage: Aus Heft A kommt die Frage, was gilt und wie ich es im Gespräch vertrete (Kosten für den überbetrieblichen Kurs gegen die Pflicht, Anordnungen der Kursleitung zu befolgen — Kap. 1.4, S. 31 und S. 34); aus Heft B die Frage, welcher Kanal wofür taugt und was nicht für alle sichtbar sein soll. Neu sind Gegenstand, Beteiligte und Lebensbereich: nicht der Lehrbetrieb und nicht die Klasse, sondern ein Kurs mit einer Leitung, die etwas anordnet. Übertragen werden muss das Vorgehen — zuerst klären, was gilt, dann Weg und Ton wählen und schützen, was nicht allen gehört. Ob Bewertungen in einem offenen Chat zulässig sind, sagt das Lehrmittel nicht; verlangt ist dazu eine begründete Haltung und ein passender Kanal, kein Rechtsurteil.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Die Kursleitung verlangt CHF 60 in bar, der Lehrbetrieb weiss nichts davon: Anspruch und Anordnung stehen sich gegenüber, und ich muss entscheiden, worauf ich bestehe und wie ich es anspreche."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Fotos mit Namen und Bewertungen in einem offenen Chat: der bequeme Kanal für alle gegen den Schutz dessen, was nicht alle sehen sollen — und die Wahl, wem ich über welchen Kanal schreibe."
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, was im überbetrieblichen Kurs für Sie gilt: Welche Pflicht haben Sie gegenüber der Kursleitung, und was gilt bei den Kosten für den Kurs? Nennen Sie die Fundstelle im Lehrmittel.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Wenden Sie das auf den Fall an: Mit wem klären Sie das Materialgeld zuerst, über welchen Kanal, und wie lautet Ihr erster Satz?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Beurteilen Sie den offenen Kurschat: Was gehört aus Ihrer Sicht hinein, was nicht, und über welchen Kanal sollte die Kursleitung Bewertungen mitteilen? Begründen Sie.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie den Fall mit einer Ihrer beiden Herausforderungen: Welches Vorgehen von dort hilft Ihnen hier, und was ist hier anders?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Zwei aus der Kursgruppe finden, Sie sollten keinen Aufstand machen. Wofür stehen Sie ein, worauf verzichten Sie notfalls, und warum?",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        6,
+        8,
+        2
+      ],
+      "aspekte": [
+        "Recht",
+        "Ethik",
+        "Identität und Sozialisation",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie in wenigen Sätzen, was im überbetrieblichen Kurs für Anordnungen der Kursleitung und für die Kosten des Kurses gilt. Nennen Sie je die Fundstelle im Lehrmittel.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Unterscheiden Sie: Was an der Lage ist eine Frage dessen, was gilt, und was eine Frage von Kanal, Ton und Schutz? Ordnen Sie das Materialgeld, die Fotos mit Namen und die Bewertungen zu.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie, worauf Sie bestehen und wo Sie nachgeben. Stellen Sie zwei Möglichkeiten mit ihren Folgen gegenüber und begründen Sie Ihre Wahl.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Schreiben Sie in Ich-Form zwei kurze Nachrichten: eine an die Kursleitung und eine an Ihre Berufsbildnerin oder Ihren Berufsbildner. Nennen Sie je den Kanal und begründen Sie ihn in einem Satz.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        6,
+        8,
+        2
+      ],
+      "aspekte": [
+        "Recht",
+        "Ethik",
+        "Identität und Sozialisation",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben (Gesprächsplan mit Vereinbarungsnotiz, zwei Nachrichten mit Antwort).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Wie zeigt sich dieses Prinzip im Fall des überbetrieblichen Kurses? Nennen Sie, was gleich ist wie in Ihrer Herausforderung und was anders.",
+        "In welcher Lage hilft das Prinzip nicht weiter, und was haben Ihnen die beiden Herausforderungen zusammen gezeigt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        6,
+        8,
+        2
+      ],
+      "aspekte": [
+        "Recht",
+        "Ethik",
+        "Identität und Sozialisation",
+        "Technologische und digitale Transformation"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe und Regeln der Einheit fehlen oder sind falsch verwendet.",
+          "Einzelne Begriffe und Regeln stimmen; Kanal, Form oder Ton passen nur teilweise.",
+          "Begriffe und Regeln korrekt; Kanal, Form und Ton passen zu Anlass und Gegenüber.",
+          "Korrekt und eigenständig: Kanal, Form, Ton und Schutz sind begründet gewählt."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Keine Begründung; die Aussagen stehen unverbunden nebeneinander.",
+          "Begründung in Ansätzen; ein Einwand der Gegenseite bleibt ohne Antwort.",
+          "Nachvollziehbar begründet; ein Einwand der Gegenseite wird beantwortet.",
+          "Schlüssig begründet; Einwand beantwortet, Folgen für beide Seiten bedacht."
+        ]
+      },
+      {
+        "name": "Rechtliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Was gilt, wird nicht genannt oder falsch wiedergegeben.",
+          "Eine Regel oder Pflicht ist genannt, aber nicht auf den Fall bezogen.",
+          "Regel oder Pflicht korrekt auf den Fall angewendet, mit Fundstelle.",
+          "Korrekt angewendet und auf eine neue Lage übertragen; die Grenze der Regel ist benannt."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine eigene Position erkennbar.",
+          "Position angedeutet; es bleibt offen, wofür die Person einsteht.",
+          "Klare Position in Ich-Form, mit Rücksicht auf Rolle und Gegenüber.",
+          "Position begründet; das Spannungsfeld ist anerkannt, beide Seiten sind ernst genommen."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

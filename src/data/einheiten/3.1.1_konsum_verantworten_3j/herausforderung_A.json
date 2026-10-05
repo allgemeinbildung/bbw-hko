@@ -1,0 +1,782 @@
+{
+  "id": "3.1.1_konsum_verantworten_3j_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln — überlegt entscheiden",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Marke oder echtes Bedürfnis?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Bedürfnisse ordnen"
+  },
+  "prinzip_ref": "3.1.1_konsum_verantworten_3j_prinzip",
+  "nrlp": {
+    "nr": "3.1.1",
+    "nr_primary": [
+      "3.1.1"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sprachmodus_ids": [
+      "SM2"
+    ],
+    "sk": [
+      5,
+      3,
+      1
+    ],
+    "kompetenz_id": "3.1.1",
+    "lebensbezug_id": "3.1",
+    "kompetenz_text": "Ich kann verschiedene Arten von Bedürfnissen unterscheiden, meine eigenen Bedürfnisse erkennen und beurteilen.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr und habe zum ersten Mal regelmässig eigenes Geld. Vor drei Wochen habe ich in der Mittagspause Kopfhörer für 250 Franken bestellt — zwei aus meiner Klasse hatten dieselben, und mein Feed zeigte sie mir tagelang. Seither liegen sie meistens in der Schublade; für unterwegs reichen meine alten. Das Geld fehlt mir seither. Jetzt kommt der nächste Wunsch: Ein Kollege verkauft sein Handy für 300 Franken und will bis Freitag Bescheid. Ich merke, dass ich bei beiden Käufen nicht sagen könnte, ob der Wunsch von mir kommt oder von aussen. Ich will meine Bedürfnisse ordnen und mir einen Massstab geben, bevor ich am Freitag antworte.",
+  "zahlen_tabelle": [
+    {
+      "label": "Kopfhörer (Impulskauf vor drei Wochen)",
+      "wert": "CHF 250"
+    },
+    {
+      "label": "Handy vom Kollegen (Zusage bis Freitag)",
+      "wert": "CHF 300"
+    },
+    {
+      "label": "Lernendenlohn 1. Lehrjahr (netto, ca.)",
+      "wert": "CHF 800"
+    }
+  ],
+  "leitfrage": "Welche meiner Wünsche sind echte Bedürfnisse — und nach welchem Massstab entscheide ich, welchem ich folge?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Eigener Massstab vs. sozialer Konsumdruck",
+    "hint": "Ein von aussen geweckter Wunsch kann ein echtes Bedürfnis treffen, etwa dazuzugehören. Entscheidend ist, ob Sie Ihren Entscheid vor sich begründen können."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.7",
+      "titel": "Preisbildung",
+      "unterueberschrift": "Bedürfnis, Bedürfnisarten, Nachfrage",
+      "seiten": "Seite 73-77",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 17.2",
+      "titel": "Dokumentieren",
+      "unterueberschrift": "Notiztechniken, Markierungen",
+      "seiten": "Seite 381-383",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bauen Schritt für Schritt Ihre Bedürfnis-Landkarte auf: LF1 liefert die Kategorien, LF2 Ihre eigenen Einträge, LF3 die Einflüsse mit Beleg, LF4 Ihren Massstab und Ihren Entscheid zum Handy.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.7 | S. 73-75",
+      "text": "Erklären Sie mit der Bedürfnispyramide nach Maslow und den Begriffen Existenz- und Wahlbedürfnis, wie sich Bedürfnisse unterscheiden lassen. Zeigen Sie an einem Beispiel den Unterschied zwischen Bedürfnis und Gut.",
+      "liefert": "die Kategorien der Landkarte",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie Kap. 2.7 S. 73–75 und trennen Sie zuerst Existenz- von Wahlbedürfnissen.",
+          "Fragen Sie bei jedem Beispiel: Ist das ein Gefühl des Mangels oder ein Ding?"
+        ],
+        "satzanfaenge": [
+          "«Ein Existenzbedürfnis ist …, weil …»",
+          "«Das Gut … befriedigt das Bedürfnis nach …»"
+        ],
+        "produkt": "Die Kategorien teilen Ihre Landkarte in Felder ein."
+      },
+      "loesung": {
+        "kern": "Bedürfnisarten, Maslow, Bedürfnis vs. Gut",
+        "zeilen": [
+          {
+            "label": "Bedürfnis",
+            "text": "Verlangen, einen Mangel zu beheben; praktisch unbegrenzt.",
+            "quelle": "Kap. 2.7, S. 73"
+          },
+          {
+            "label": "Existenzbedürfnis",
+            "text": "Lebensnotwendig: Nahrung, Wohnung, Kleidung, medizinische Versorgung.",
+            "quelle": "Kap. 2.7, S. 74"
+          },
+          {
+            "label": "Wahlbedürfnis",
+            "text": "Nicht lebensnotwendig; gewählt wird erst, wenn die Existenz gesichert ist: Heimelektronik, Bücher, Ferien.",
+            "quelle": "Kap. 2.7, S. 74"
+          },
+          {
+            "label": "Maslow",
+            "text": "Fünf Stufen, nach oben immer weniger überlebenswichtig: 1 Lebenswichtiges, 2 Sicherheit, 3 Dazugehörigkeit, 4 Anerkennung, 5 Selbstverwirklichung.",
+            "quelle": "Kap. 2.7, S. 73"
+          },
+          {
+            "label": "Bedürfnis ≠ Gut",
+            "text": "Bedürfnisse werden mit Gütern befriedigt. Am Fall: Die Kopfhörer sind ein Gut, dahinter stehen Unterhaltung und Dazugehörigkeit. Häufiger Fehler: Güter als Bedürfnisse eintragen.",
+            "quelle": "Kap. 2.7, S. 75"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.7 | S. 73-74 · eigener Fall",
+      "text": "Ordnen Sie fünf Ihrer letzten grösseren Anschaffungen oder Wünsche zu: Welches Gut ist es, welches Bedürfnis steht dahinter, und zu welcher Bedürfnisart gehört es?",
+      "liefert": "die eigenen Einträge der Landkarte",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Erst alle fünf sammeln, dann ordnen — nicht gleichzeitig.",
+          "Fragen Sie bei jedem Eintrag: Ginge es auch ohne dieses Gut?"
+        ],
+        "satzanfaenge": [
+          "«Hinter … steckt eigentlich das Bedürfnis nach …»",
+          "«Das ist ein Wahlbedürfnis, weil …»"
+        ],
+        "produkt": "Die Einträge füllen die Felder Ihrer Karte."
+      },
+      "loesung": {
+        "kern": "Gut → Bedürfnis → Art, am eigenen Beispiel",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Fünf Einträge im Dreischritt Gut → Bedürfnis → Art, z. B. Kopfhörer → Unterhaltung, Dazugehörigkeit → Wahlbedürfnis."
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Hinter einem Gut werden mehrere Bedürfnisse erkannt (Handy: Kommunikation, Sicherheit, Anerkennung)."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Das Gut wird als Bedürfnis eingetragen («Bedürfnis: Handy»)."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kommentierte Bedürfnis-Landkarte (dokumentiert, Markiertechnik)",
+    "titel": "Meine Bedürfnis-Landkarte",
+    "format_detail": "Eine A4-Übersicht, auf der Sie Ihre Bedürfnisse nach Kategorien ordnen, Einflüsse mit Farbe oder Symbol markieren und am Rand Ihren Massstab und Ihren Entscheid festhalten.",
+    "beschreibung": "Ich ordne meine Bedürfnisse, belege, was sie von aussen beeinflusst, und begründe meinen Massstab für den nächsten Kauf.",
+    "schritte": [
+      {
+        "label": "01 Karte einteilen",
+        "hint": "Teilen Sie das Blatt in Felder ein, zum Beispiel nach Existenz- und Wahlbedürfnissen oder nach den Maslow-Stufen (LF1)."
+      },
+      {
+        "label": "02 Einträge verdichten",
+        "hint": "Tragen Sie mindestens acht Einträge ein (fünf haben Sie aus LF2), je Gut → Bedürfnis, als Stichwort."
+      },
+      {
+        "label": "03 Einflüsse belegen",
+        "hint": "Markieren Sie jeden Eintrag mit Farbe oder Symbol: echt, geweckt oder geweckt, aber berechtigt. Bei geweckten: Einfluss notieren (LF3)."
+      },
+      {
+        "label": "04 Massstab entscheiden",
+        "hint": "Schreiben Sie Ihren Massstab-Satz aus LF4 an den Rand und darunter Ihren Entscheid zum Handy."
+      },
+      {
+        "label": "05 Prüfen",
+        "hint": "Schätzen Sie sich mit den zwei Feedback-Kriterien ein und verbessern Sie eine Stelle."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Bedürfnis-Landkarte A4 (mind. 8 Einträge, Legende mit drei Markierungen)",
+      "Massstab-Satz und Entscheid zum Handy am Kartenrand",
+      "Raster zur Quelle (S. 3)"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Kaufe ich die Spielkonsole für CHF 450?",
+      "legende": [
+        {
+          "key": "echt",
+          "text": "echt"
+        },
+        {
+          "key": "geweckt",
+          "text": "geweckt"
+        },
+        {
+          "key": "berechtigt",
+          "text": "geweckt, aber berechtigt"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Existenzbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "echt",
+              "text": "Znüni und Mittagessen → Nahrung"
+            },
+            {
+              "marke": "echt",
+              "text": "Regenjacke → Kleidung"
+            },
+            {
+              "marke": "echt",
+              "text": "Neue Brille → medizinische Versorgung"
+            }
+          ]
+        },
+        {
+          "titel": "Wahlbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "geweckt",
+              "text": "Spielkonsole → Unterhaltung, Dazugehörigkeit",
+              "notiz": "Einfluss: Kollegen spielen online"
+            },
+            {
+              "marke": "echt",
+              "text": "Vereinsbeitrag Unihockey → Dazugehörigkeit"
+            },
+            {
+              "marke": "geweckt",
+              "text": "Trikot der Lieblingsmannschaft → Anerkennung",
+              "notiz": "Einfluss: Werbung im Stadion"
+            },
+            {
+              "marke": "berechtigt",
+              "text": "Kinoabend → Unterhaltung",
+              "notiz": "Einfluss: Trailer im Feed; ich gehe aber gern"
+            },
+            {
+              "marke": "echt",
+              "text": "Gitarrensaiten → Selbstverwirklichung"
+            }
+          ]
+        },
+        {
+          "titel": "Am Rand",
+          "eintraege": [
+            {
+              "text": "Mein Massstab: Ich kaufe erst, wenn das Geld gespart ist und der Wunsch nach einem Monat noch da ist."
+            },
+            {
+              "text": "Mein Entscheid: Konsole noch nicht — ich spare zwei Monate und prüfe dann nochmals."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Kopfhörer gekauft — Handy für CHF 300 bis Freitag?",
+      "hinweis": "Eine mögliche, vollständige Landkarte, keine Vorlage: Die Einträge der Lernenden sind persönlich und dürfen ganz anders aussehen. Erst zeigen, wenn die eigene Karte steht.",
+      "legende": [
+        {
+          "key": "echt",
+          "text": "echt"
+        },
+        {
+          "key": "geweckt",
+          "text": "geweckt"
+        },
+        {
+          "key": "berechtigt",
+          "text": "geweckt, aber berechtigt"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Existenzbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "echt",
+              "text": "Mittagessen im Betrieb → Nahrung"
+            },
+            {
+              "marke": "echt",
+              "text": "Winterjacke → Kleidung"
+            },
+            {
+              "marke": "echt",
+              "text": "Zahnarztkontrolle → medizinische Versorgung"
+            }
+          ]
+        },
+        {
+          "titel": "Wahlbedürfnisse",
+          "eintraege": [
+            {
+              "marke": "geweckt",
+              "text": "Kopfhörer → Unterhaltung, Dazugehörigkeit",
+              "notiz": "Einfluss: Feed, zwei aus der Klasse"
+            },
+            {
+              "marke": "geweckt",
+              "text": "Handy vom Kollegen → Anerkennung",
+              "notiz": "Einfluss: Angebot mit Frist, Klasse"
+            },
+            {
+              "marke": "echt",
+              "text": "Fussballtraining → Dazugehörigkeit"
+            },
+            {
+              "marke": "geweckt",
+              "text": "Markenpulli → Anerkennung",
+              "notiz": "Einfluss: Klasse"
+            },
+            {
+              "marke": "berechtigt",
+              "text": "Konzertticket → Unterhaltung",
+              "notiz": "Einfluss: Kollegin fragt; die Band höre ich seit Jahren"
+            },
+            {
+              "marke": "echt",
+              "text": "Gitarrenstunden → Selbstverwirklichung"
+            }
+          ]
+        },
+        {
+          "titel": "Am Rand",
+          "eintraege": [
+            {
+              "text": "Mein Massstab: Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe."
+            },
+            {
+              "text": "Mein Entscheid: Ich sage dem Kollegen ab. Kommunikation deckt mein altes Handy, und das Geld fehlt mir schon seit den Kopfhörern."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Begriffe (Bedürfnis, Budget, Leasing/Kredit) fehlen oder werden falsch verwendet.",
+        "Begriffe teilweise korrekt verwendet.",
+        "Begriffe korrekt und situationsangemessen verwendet.",
+        "Begriffe differenziert, kontextualisiert und eigenständig auf die Situation bezogen."
+      ],
+      "indikator_produkt": "Gut und Bedürfnis sind getrennt; Bedürfnisarten und Maslow-Stufen stimmen."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Keine erkennbare eigene Position.",
+        "Position angedeutet.",
+        "Position klar in Ich-Form formuliert.",
+        "Position begründet, Spannungsfeld zwischen Wunsch und Sicherheit anerkannt."
+      ],
+      "indikator_produkt": "Massstab-Satz in Ich-Form; der Entscheid wägt Wunsch jetzt gegen Sicherheit später ab."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile.",
+    "scaffold_100": "Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefung von S. 4) und als vierte Farbe auf der Karte zeigen."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für die Einträge auf der Landkarte",
+      "tun": "Schreiben Sie pro Bedürfnis ein Stichwort, keinen Satz. Was nicht ins Feld passt, gehört in die Legende."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-bedarf-oder-wunsch",
+      "fuer": "für die Markierung echt, geweckt oder geweckt, aber berechtigt",
+      "beispiel": [
+        "«Ich will einen Hund.»",
+        "Quelle: Seit dem Video einer Influencerin.",
+        "Wegdenk-Test: Ohne das Video wäre der Wunsch jetzt nicht da. → geweckt",
+        "Aber: Ich bin gern draussen und habe Zeit für ein Tier. → berechtigt",
+        "Markierung: geweckt, aber berechtigt · Einfluss: Video"
+      ]
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für den Massstab-Satz und den Entscheid",
+      "tun": "Schreiben Sie Ihren Massstab als Behauptung, begründen Sie ihn in einem Satz und prüfen Sie ihn am Beispiel Handy."
+    }
+  ],
+  "mindmap_zentrum": "Wunsch jetzt oder Sicherheit später",
+  "mindmap_aeste": [
+    {
+      "titel": "Bedürfnisarten",
+      "punkte": [
+        "Bedürfnis",
+        "Gut",
+        "Existenzbedürfnis",
+        "Wahlbedürfnis",
+        "Bedürfnispyramide"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was mich beeinflusst",
+      "punkte": [
+        "Werbung",
+        "Impulskauf",
+        "Konsumdruck"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Mein Massstab",
+      "punkte": [
+        "Geweckter Wunsch",
+        "Massstab"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich jetzt, ob mein Wunsch nach dem Handy von mir kommt oder von aussen?",
+      "Kann ich dem Kollegen am Freitag zu- oder absagen — und begründen, warum?"
+    ],
+    "mitnahme": [
+      "Mein Massstab",
+      "Mein Entscheid",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Werbung",
+          "nach": "Geweckter Wunsch",
+          "text": "weckt"
+        },
+        {
+          "von": "Bedürfnis",
+          "nach": "Gut",
+          "text": "wird befriedigt durch"
+        },
+        {
+          "von": "Konsumdruck",
+          "nach": "Impulskauf",
+          "text": "führt zu"
+        },
+        {
+          "von": "Massstab",
+          "nach": "Impulskauf",
+          "text": "bremst"
+        },
+        {
+          "von": "Massstab",
+          "nach": "gilt auch bei …",
+          "text": "hilft auch dort beim Entscheiden"
+        }
+      ],
+      "transfer": "Abo abschliessen, Ausgang am Wochenende, Ferien mit Kollegen",
+      "eigene_knoten": {
+        "mit_medien": [
+          "Trend",
+          "Blind-Box"
+        ]
+      },
+      "quercheck": [
+        "Eher von aussen: Angebot mit Frist und die Klasse.",
+        "Ja: Ich sage ab, mein Massstab ist nicht erfüllt."
+      ],
+      "mitnahme": [
+        "Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe.",
+        "Ich sage dem Kollegen ab.",
+        "Wie ich merke, ob ein Wunsch von mir kommt, wenn alle dasselbe haben."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1 trennt Gut und Bedürfnis an einem Beispiel",
+        "LF2 hat fünf Einträge im Dreischritt",
+        "LF4 prüft beide Seiten und entscheidet"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Beleg",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Landkarte",
+      "vollstaendig_wenn": [
+        "Mind. 8 Einträge",
+        "Legende mit drei Markierungen angewendet",
+        "Massstab-Satz und Entscheid am Rand"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Landkarte beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Landkarte fertigstellen, Feedback-Kriterien, Abschluss mit Begriffsnetz",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Woran erkenne ich in Zukunft, ob ein Wunsch aus mir selbst kommt oder von aussen geweckt wurde?",
+    "ziel": "Überlegte Konsumentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Echte von geweckten Bedürfnissen unterscheiden und einen eigenen Massstab begründen",
+    "lehrmittel_anker": "Kap. 2.7 S. 73-77 (Bedürfnis, Bedürfnisarten, Bedürfnis und Gut, Nachfrage); Kap. 17.2 S. 381-383 (Notizen, Markieren).",
+    "kn_aktivierung": "Im KN muss die Lernende erkennen, welcher Anteil des E-Bike-Wunsches Bedürfnis und welcher Aussendruck ist (Team fährt dasselbe Modell).",
+    "transfer_check": "Kann die Lernende einen Konsumwunsch in Bedürfnis und Einfluss zerlegen und ihren Entscheid mit einem Massstab begründen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — zentrale Aussagen aus der Quelle entnehmen und belegen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[3] + Massstab-Satz — eigene Werthaltung zum Konsum klären"
+    },
+    {
+      "sk": 3,
+      "wo": "leitfragen[3] + Schritt 04 — einen überprüfbaren Massstab für den nächsten Kauf entwickeln"
+    }
+  ],
+  "spuren": {
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Über welche Wege entstehen laut Quelle Kaufwünsche — und welcher Weg zeigt sich bei Ihren Kopfhörern? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Einflüsse mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-311a-pflicht",
+            "spalten": [
+              "Zeitmarke",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Zuerst das Raster füllen, dann den Befund schreiben.",
+              "Sehen Sie das Video zweimal an; notieren Sie beim zweiten Mal Zeitmarke und Stichwort."
+            ],
+            "satzanfaenge": [
+              "«Die Quelle zeigt, dass …»",
+              "«Bei meinen Kopfhörern wirkte vor allem …»"
+            ],
+            "produkt": "Die Einflüsse notieren Sie auf der Karte bei den geweckten Einträgen (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Wege zu Kaufwünschen, am eigenen Kauf gezeigt",
+            "quelle_ref": "q-311a-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Überall zu sehen, vor allem bei Jüngeren (00:06); Andrang, begrenzte Stückzahl (00:43, 01:22); Prominente tragen die Figur (01:32); Verkauf in Überraschungsboxen (02:08).",
+                "quelle": "Quelle, 00:06–02:08"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Auspack-Videos in sozialen Medien (02:36); der Beitrag spricht von einer Marketingstrategie (02:05); Trend aus Asien (00:32).",
+                "quelle": "Quelle, 00:32–02:36"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Deutung der Lernenden, mehrere gelten: überall zu sehen → Konsumdruck; Prominente, Videos → Werbung; Überraschungsbox → Impulskauf; die Figur → Wahlbedürfnis, Gut."
+              },
+              {
+                "label": "Befund",
+                "text": "Mind. ein Weg am Kopfhörer-Kauf, z. B. die zwei aus der Klasse (wie 00:06), der Feed (wie 02:36)."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Die meisten in der Klasse machen mit (01:32–01:41); Trend über Freundinnen und Internet (01:50); Videos heizen an, Jüngere ahmen Influencer nach (03:06–03:34); Marken zielen auf Jüngere, Stars werben (03:51–04:02).",
+                "quelle": "Ersatzquelle, 01:32–04:02"
+              },
+              {
+                "label": "Hinweis",
+                "text": "Unterhaltungsmagazin, Juni 2025; nicht nur Jugendliche. Übertragbar sind die Wege, nicht der Gegenstand.",
+                "quelle": "Quelle, 00:08, 01:32"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:06",
+                "Die Figur hängt überall, vor allem bei Jüngeren",
+                "an Taschen und Koffern",
+                "Konsumdruck"
+              ],
+              [
+                "00:43",
+                "Grosser Andrang beim Verkaufsstart",
+                "Schlange bis auf die Strasse",
+                "Geweckter Wunsch"
+              ],
+              [
+                "01:32",
+                "Prominente zeigen die Figur",
+                "zwei bekannte Sängerinnen tragen sie",
+                "Werbung"
+              ],
+              [
+                "02:08",
+                "Verkauf in Überraschungsboxen",
+                "Vorfreude; wie Glücksspiel (02:26–02:30)",
+                "Impulskauf"
+              ]
+            ],
+            "befund": "Die Quelle zeigt: Die Figur ist überall zu sehen, Prominente tragen sie, der Andrang ist gross, und in sozialen Medien packen Leute sie vor der Kamera aus. Ich schliesse daraus, dass ein Kaufwunsch über solche Wege entsteht. Bei meinen Kopfhörern waren es die zwei aus meiner Klasse und mein Feed — ähnlich wie bei 00:06 und 02:36."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 2.7 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Das Lehrmittel ordnet Bedürfnisse nach Maslow; die Quelle zeigt, wie Wünsche geweckt werden. Kann ein geweckter Wunsch ein echtes Bedürfnis treffen? Entscheiden Sie beim Handy: zusagen oder absagen, mit welchem Massstab?",
+          "liefert": "Massstab-Satz und Entscheid zum Handy",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Prüfen Sie zuerst beide Seiten, dann entscheiden Sie.",
+              "Formulieren Sie den Massstab so, dass Sie ihn beim nächsten Kauf anwenden können."
+            ],
+            "satzanfaenge": [
+              "«Nach Maslow trifft das Handy das Bedürfnis nach …»",
+              "«Laut Quelle …; bei mir heisst das …»",
+              "«Mein Massstab lautet: Ich kaufe nur, wenn …»"
+            ],
+            "produkt": "Der Massstab-Satz steht am Rand der Landkarte, der Entscheid darunter."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ Realität, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Beide Seiten werden benannt: das Bedürfnis nach Maslow und der Einfluss von aussen.",
+                "Der Massstab ist überprüfbar (Wenn-dann oder Prüffrage), nicht ein Gefühl.",
+                "Der Entscheid zum Handy folgt aus dem Massstab."
+              ],
+              "beispiel_pol_1": "Absage: «Das Handy trifft vor allem Anerkennung, nicht Kommunikation — mein altes reicht. Ich will es jetzt, aber das Geld brauche ich später. Mein Massstab: Ich kaufe nur, wenn ich den Wunsch auch ohne Feed und Klasse noch zwei Wochen später habe.»",
+              "beispiel_pol_2": "Zusage (wenn das eigene Handy ersetzt werden muss): «Der Wunsch ist geweckt — in meinem Feed tauchen Videos auf, die Lust auf Neues machen, ähnlich wie die Auspack-Videos in der Quelle —, aber berechtigt: Ich brauche ein Handy, das zuverlässig läuft. 300 Franken fehlen mir dann anderswo, das nehme ich in Kauf. Mein Massstab: Ich kaufe, wenn ein Existenz- oder Sicherheitsbedürfnis dahintersteht und der Preis in meinem Budget Platz hat.»",
+              "nicht_tragfaehig": "Entscheid ohne Massstab («Ich will es halt») oder Massstab ohne Bezug zur Quelle."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-311a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie das Video gemäss QR-Seite zweimal an. Tragen Sie vier Aussagen mit Zeitmarke ein, die zeigen, über welche Wege Kaufwünsche entstehen. Ordnen Sie jeder Aussage einen Begriff aus LF1 oder dem Glossar zu.",
+          "raster": {
+            "spalten": [
+              "Zeitmarke",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-131a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Woran erkenne ich bezahlte Werbung in meinem Feed, auch wenn sie nicht gekennzeichnet ist?",
+          "erwartung": "Zwei bis drei Merkmale: Kennzeichnungswörter wie Werbung, Ad oder gesponsert, oft versteckt · Rabattcode oder ein Produkt, das auffällig im Mittelpunkt steht · nur Positives, kein Nachteil · Prüffrage vor dem Kauf: Vertraue ich der Person, brauche ich das? (Stand: Begleittext von SRF, Audio nicht gegengehört.)"
+        },
+        {
+          "ref": "q-131a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welches Bedürfnis steckt hinter gefälschten Markenartikeln — und was riskiert, wer sie bestellt?",
+          "erwartung": "Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten; verdächtige Pakete werden kontrolliert, und Strafverfahren oder Bussen können vom Markeninhaber kommen, nicht vom Zoll."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "00:40 (Beispielwert) · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → Begriff aus LF1 oder Glossar"
+        ]
+      },
+      "scaffold_90": "Beispiel der Landkarte an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
+    }
+  }
+}

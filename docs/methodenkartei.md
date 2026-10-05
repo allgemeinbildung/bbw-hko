@@ -185,6 +185,8 @@ farbcodierte Unterscheidung wäre genau dort weg, wo sie zählt.
 4. Bei `quelle: "hko"` muss die Karte vollständig sein: `schritte` (nummeriert, vier
    genügen), `ankommt`, `merk`. Dahinter kommt kein Kapitel.
 5. In der Herausforderung referenzieren, mit `fuer` und — bei Lehrmittel-Karten — `tun`.
+   Bei `hko-`Karten wird `tun` **nicht gedruckt** (Entscheid E31): Die Übertragung
+   auf die Abgabe steht dort in `fuer`, ausnahmsweise in einem überschriebenen `beispiel`.
 6. Rendern prüfen (Workbench, Reiter «Auftrag», Seite 6): keine Box darf abgeschnitten sein.
 
 Kein Index-Rebuild nötig — `methoden` ist kein Index-Feld.

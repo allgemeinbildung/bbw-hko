@@ -1,0 +1,251 @@
+{
+  "id": "2.3.1_anliegen_vertreten_kn",
+  "modul": "2.3",
+  "kompetenz_nr": "2.3.1",
+  "topic_slug": "anliegen_vertreten",
+  "lehrgang": "EFZ_3J",
+  "version": "1.0.0",
+  "erstellt_am": "2026-10-03",
+  "set_ref": "2.3.1_anliegen_vertreten_set",
+  "prinzip_ref": "2.3.1_anliegen_vertreten_prinzip",
+  "anchored_situations": [
+    "2.3.1_anliegen_vertreten_hf_A",
+    "2.3.1_anliegen_vertreten_hf_B"
+  ],
+  "dominanter_aspekt": "Politik",
+  "kern_kompetenzversprechen": "Ich kann ein politisches Anliegen formulieren, den Weg der Mitwirkung aufzeigen, der dazu passt, und meine begründete Meinung in einer Diskussion respektvoll vertreten — auch wenn andere es anders sehen.",
+  "mehrdeutigkeits_pflicht": "Ob Druck oder Verständigung weiter führt, hängt vom Anliegen, vom Zeitpunkt und von den Beteiligten ab; beide Wege bleiben begründbar.",
+  "hybrid_situation": {
+    "titel": "Der Kanton kürzt – was schlägt unser Verein vor?",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "In meiner Freizeit leite ich Gruppen in einem Jugendverein. Der Kanton will die Beiträge an die Sommerlager der Jugendvereine ab dem nächsten Jahr um einen Drittel kürzen; unser Verein hat das Schreiben vor einer Woche erhalten, das Kantonsparlament entscheidet in drei Monaten. In unserer Leiterrunde will die eine Hälfte sofort Unterschriften für eine Petition sammeln, die andere zusammen mit anderen Vereinen eine kantonale Initiative vorbereiten – und zwei finden, Sparen sei grundsätzlich richtig. Ich soll bis zur nächsten Sitzung vorschlagen, was wir tun und wie wir die Skeptischen mitnehmen. Schlage ich den schnellen, offenen Weg vor oder den verbindlichen mit Hürden – und wie vertrete ich ihn so, dass auch die Skeptischen mitkommen?",
+    "leitfrage": "Schlage ich den schnellen, offenen Weg vor oder den verbindlichen mit Hürden – und wie vertrete ich ihn so, dass auch die Skeptischen mitkommen?",
+    "aktivierte_trade_offs": [
+      "Offener Weg ohne Anspruch auf Antwort vs. verbindlicher Weg mit Hürden",
+      "Klare eigene Position vs. Verständnis für die Gegenseite",
+      "Schnelle Wirkung vs. breite Abstützung"
+    ],
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation, die beide Lernaufgaben gleichzeitig verlangt.",
+    "definition_lang": "Die Szene bündelt beide Lernaufgaben: Aus Heft A kommt die Frage, welcher Weg der Mitwirkung zum Anliegen, zu den eigenen Rechten und zum Zeitpunkt passt; aus Heft B die Aufgabe, die eigene Meinung in einer Runde zu vertreten, in der nicht alle gleich denken. Neu sind Gegenstand (eine kantonale Kürzung), Beteiligte (eine Gruppe im eigenen Verein) und Staatsebene (Kanton statt Gemeinde oder Klasse). Übertragen werden müssen beide Werkzeuge zugleich: Wege nach Verbindlichkeit, Hürden und Wirkung abwägen und den eigenen Vorschlag so begründen, dass er auch die Skeptischen erreicht. Dazu kommt das Spannungsfeld zwischen schneller Wirkung und breiter Abstützung.",
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "die eine Hälfte will sofort Unterschriften für eine Petition sammeln, die andere eine kantonale Initiative vorbereiten"
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "zwei finden, Sparen sei grundsätzlich richtig – und ich soll die Skeptischen mitnehmen"
+        }
+      ],
+      "new_dimensions": []
+    }
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Fachgespräch",
+      "format": "mündlich, 30-35 Min. total pro Lernende/r",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Lehrmittel erlaubt, kein Internet).",
+        "15-20 Min. Gespräch mit Lehrperson: 5 Fragen steigender Komplexität."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "frage": "Erklären Sie, worin sich eine Petition und eine Initiative unterscheiden: Wer darf sie unterschreiben, und was muss die Behörde damit tun?",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Prüfen Sie für die Beteiligten im Fall, wer bei welchem der zwei Wege mitmachen darf. Was folgt daraus für Ihren Vorschlag?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Beurteilen Sie die zwei Vorschläge aus der Leiterrunde: Was spricht für die Petition, was für die Initiative – gemessen am Zeitpunkt des Entscheids?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie den Fall mit einer Ihrer beiden Herausforderungen: Was ist gleich, was ist hier anders, und was übernehmen Sie daraus?",
+          "k_stufe": 4
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Zwei Mitglieder finden das Sparen richtig. Wie nehmen Sie diesen Einwand ernst, ohne Ihre eigene Position aufzugeben – und wo ziehen Sie für sich die Grenze?",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        6,
+        12,
+        7
+      ],
+      "aspekte": [
+        "Politik",
+        "Ethik"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich",
+      "format": "schriftlich, 45-60 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt; Lehrmittel erlaubt nach LP-Entscheid; kein Internet.",
+        "Vier strukturierte Aufgaben steigender Komplexität."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklären",
+          "aufgabe": "Erklären Sie die zwei Wege, die in der Leiterrunde vorgeschlagen werden: Wer darf sie nutzen, und wie verbindlich ist jeder für das Kantonsparlament?",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Unterscheiden Sie die Haltungen in der Leiterrunde: Welche Gründe hat jede Seite, und welcher Einwand ist am schwersten zu entkräften?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Entscheiden Sie sich für einen Vorschlag. Stellen Sie zwei Optionen mit ihren Folgen einander gegenüber und begründen Sie Ihre Wahl.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Formulieren Sie in Ich-Form Ihren Vorschlag an die Leiterrunde: das Anliegen in einem Satz, eine Begründung nach dem 3B-Schema und einen Satz an die Skeptischen.",
+          "k_stufe": 4
+        }
+      ],
+      "sk": [
+        6,
+        12,
+        7
+      ],
+      "aspekte": [
+        "Politik",
+        "Ethik"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer beiden Handlungsprodukte aus den Lernaufgaben (Factsheet; Diskussionskarte mit Ergebnisnotiz).",
+        "Werkwahl-Begründung (2-3 Sätze): Warum genau dieses Handlungsprodukt?",
+        "Transfer-Reflexion (200-250 Wörter): drei Fragen schriftlich beantworten."
+      ],
+      "reflexionsfragen": [
+        "Welches Grundprinzip haben Sie in Ihrer Herausforderung gelernt — formulieren Sie es in einem Satz.",
+        "Wie zeigt sich dieses Prinzip im Fall des Vereins, dem der Kanton die Beiträge kürzt? Was ist gleich wie in Ihrer Herausforderung, was ist anders?",
+        "Wann versagt das Prinzip – wann führt Druck weiter als Verständigung, wann umgekehrt? Was haben Ihnen die beiden Herausforderungen zusammen dazu gezeigt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        5,
+        6,
+        12
+      ],
+      "aspekte": [
+        "Politik",
+        "Ethik"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder sind falsch verwendet.",
+          "Einzelne Fachbegriffe sind korrekt, andere ungenau oder verwechselt.",
+          "Fachbegriffe der Einheit sind korrekt und zur Situation passend verwendet.",
+          "Fachbegriffe sind korrekt, passend und eigenständig verknüpft; Voraussetzungen und Grenzen werden genannt."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Aussagen stehen ohne Begründung nebeneinander.",
+          "Begründungen sind angedeutet, aber lückenhaft oder ohne Beispiel.",
+          "Behauptungen sind nachvollziehbar begründet und mit einem Beispiel gestützt.",
+          "Schlüssig begründet; ein Gegenargument wird aufgenommen und beantwortet, Folgen werden genannt."
+        ]
+      },
+      {
+        "name": "Politisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Nicht erkennbar, wer entscheidet und wie man darauf Einfluss nehmen kann.",
+          "Wer entscheidet oder wie man Einfluss nehmen kann, wird teilweise erkannt.",
+          "Zuständigkeit, eigene Rechte und ein passender Weg der Einflussnahme sind korrekt verbunden.",
+          "Das politische Prinzip wird auf einen neuen Fall übertragen, mit Folgen für Wirkung und Abstützung."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Keine eigene Position erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder unbegründet.",
+          "Klare Position in Ich-Form, nachvollziehbar begründet.",
+          "Begründete Position in Ich-Form; das Spannungsfeld und berechtigte Punkte der Gegenseite werden anerkannt."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_3er_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

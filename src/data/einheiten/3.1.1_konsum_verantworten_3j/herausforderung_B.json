@@ -1,0 +1,940 @@
+{
+  "id": "3.1.1_konsum_verantworten_3j_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln — überlegt entscheiden",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Am 20. ist das Konto leer",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Budget planen und Schulden vermeiden"
+  },
+  "prinzip_ref": "3.1.1_konsum_verantworten_3j_prinzip",
+  "nrlp": {
+    "nr": "3.1.2",
+    "nr_primary": [
+      "3.1.2",
+      "3.1.3"
+    ],
+    "lebensbezug": "3.1",
+    "themen": [
+      "T3"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Wirtschaft",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R3"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption audiovisuell"
+    ],
+    "sprachmodus_ids": [
+      "SM2"
+    ],
+    "sk": [
+      3,
+      5,
+      9
+    ],
+    "kompetenz_id": "3.1.2",
+    "lebensbezug_id": "3.1",
+    "kompetenz_text": "Ich kann mein Budget realistisch planen, Abweichungen und Risiken identifizieren und entsprechende Anpassungen vornehmen.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen.",
+    "kompetenzen": [
+      {
+        "nr": "3.1.2",
+        "text": "Ich kann mein Budget realistisch planen, Abweichungen und Risiken identifizieren und entsprechende Anpassungen vornehmen."
+      },
+      {
+        "nr": "3.1.3",
+        "text": "Ich kann Risiken der Verschuldung erkennen, mein eigenes Konsumverhalten kritisch reflektieren und Wege finden, Schulden zu vermeiden."
+      }
+    ]
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr. Mein Lohn kommt einmal im Monat, und rund um den 20. ist das Konto leer. Jeden Monat gehen 130 Franken für Abos weg: Handy, Streaming und das Fitness, das ich im Januar für ein Jahr unterschrieben habe und kaum nutze. Letzten Monat habe ich Sneakers für 180 Franken auf Rechnung bestellt. Heute kam die erste Mahnung, mit 20 Franken Gebühr. Wohin der Rest meines Geldes geht, weiss ich nicht genau; ich schreibe nichts auf. Eine Kollegin aus dem Betrieb kommt mit weniger Lohn über die Runden und bietet an, am Freitag mein Budget mit mir durchzugehen. Bis dahin will ich ein realistisches Budget haben, wissen, wie ich aus der Rechnung herauskomme, und meine Anpassungen begründen können.",
+  "zahlen_tabelle": [
+    {
+      "label": "Nettolohn pro Monat (ca.)",
+      "wert": "CHF 800"
+    },
+    {
+      "label": "Abos (Handy 45, Streaming 20, Fitness 65)",
+      "wert": "CHF 130"
+    },
+    {
+      "label": "Offene Rechnung Sneakers + Mahngebühr",
+      "wert": "CHF 200"
+    },
+    {
+      "label": "Konto leer ab",
+      "wert": "ca. 20."
+    }
+  ],
+  "leitfrage": "Wie plane ich mein Geld so, dass es bis Monatsende reicht und ich nicht in Schulden rutsche — und wie begründe ich meine Anpassungen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Momentaner Wunsch vs. langfristige finanzielle Sicherheit",
+    "hint": "Sparen ist nicht automatisch besser. Ein Budget ohne Spielraum hält niemand durch — entscheidend ist, dass es bis Monatsende trägt und Sie es vertreten können."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 2.1",
+      "titel": "Lohnbestandteile — Brutto und Netto",
+      "unterueberschrift": "Sozialabzüge",
+      "seiten": "Seite 46-47",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 2.2",
+      "titel": "Budget — fixe und variable Kosten",
+      "unterueberschrift": "Rückstellungen, Saldo",
+      "seiten": "Seite 48",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 8.2",
+      "titel": "Schulden und Betreibung",
+      "unterueberschrift": "Ursachen, Folgen, Vermeidung",
+      "seiten": "Seite 199-200",
+      "fuer_leitfrage": [
+        3,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bereiten Schritt für Schritt Ihr Budget und das Gespräch mit Ihrer Kollegin vor: LF1 liefert Gliederung und Risikobegriffe, LF2 die Zahlen und den Saldo Ihres Budgets, LF3 die Schuldenwege mit Beleg, LF4 Ihre Anpassungen, Schutzregeln und Ihre Antwort auf den stärksten Einwand.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.2 | S. 48",
+      "text": "Erklären Sie die drei Kostenarten eines Budgets (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale. Zeigen Sie an der offenen Rechnung der Situation, wie eine solche Spirale beginnen kann.",
+      "liefert": "Budgetgliederung und Risikobegriffe",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Ordnen Sie jedem Kostenart-Begriff ein Beispiel aus Ihrem Alltag zu.",
+          "Zeichnen Sie die Schuldenspirale als drei bis vier Pfeile."
+        ],
+        "satzanfaenge": [
+          "«Fixe Kosten sind …, zum Beispiel …»",
+          "«Eine Schuldenspirale beginnt, wenn …»"
+        ],
+        "produkt": "Die drei Kostenarten gliedern Ihr Budget."
+      },
+      "loesung": {
+        "kern": "Drei Kostenarten und die Schuldenspirale",
+        "zeilen": [
+          {
+            "label": "Fixe Kosten",
+            "text": "Bleiben gleich und lassen sich nicht beeinflussen: Krankenkasse, Handy-Abo, Haushaltsbeitrag, auswärtige Verpflegung. Fallwissen, nicht aus dem Lehrmittel: Das Fitness-Jahresabo ist vertraglich gebunden und darum fix, obwohl das Buch Sport bei den variablen Kosten führt.",
+            "quelle": "Kap. 2.2, S. 48"
+          },
+          {
+            "label": "Variable Kosten",
+            "text": "Durch eigenes Verhalten beeinflussbar: Taschengeld, Kleider, Schuhe, Coiffeur, Hobby.",
+            "quelle": "Kap. 2.2, S. 48"
+          },
+          {
+            "label": "Rückstellungen",
+            "text": "Dritte Ausgabengruppe der Budgetliste, im Buch nur aufgezählt: Zahnarzt, Optiker, Ferien, Sparen, Steuern, Diverses — Geld, das für spätere Ausgaben zur Seite gelegt wird.",
+            "quelle": "Kap. 2.2, S. 48"
+          },
+          {
+            "label": "Schuldenspirale",
+            "text": "Das Lehrmittel nennt den Begriff ohne Ablauf: Wer über seinen Verhältnissen lebt, gerät hinein; dagegen helfen Saldo-Kontrolle und ein angepasster Lebensstil. Fallüberlegung der Lernenden: offene Rechnung plus Mahngebühr bei leerem Konto.",
+            "quelle": "Kap. 2.2, S. 48"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.1 | S. 46-47 · Kap. 2.2 | S. 48 · eigener Fall",
+      "text": "Sammeln Sie Ihre eigenen Zahlen für ein Monatsbudget — nicht die der Situation; wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, offene Rechnungen. Berechnen Sie den Saldo. Wo wird es knapp?",
+      "liefert": "Zahlen, Saldo und knappe Posten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Beginnen Sie mit der Einnahmenzeile (Nettolohn, Kap. 2.1).",
+          "Tragen Sie zuerst die fixen Kosten ein — sie sind am sichersten."
+        ],
+        "satzanfaenge": [
+          "«Mein Saldo am Monatsende beträgt …»",
+          "«Knapp wird es bei …, weil …»"
+        ],
+        "produkt": "Hier sammeln Sie die Zahlen; das saubere Budget entsteht auf S. 7."
+      },
+      "loesung": {
+        "kern": "Realistisches Budget mit Saldo",
+        "zeilen": [
+          {
+            "label": "Einnahmen",
+            "text": "Nettolohn laut eigener Lohnabrechnung. AHV, IV, EO und ALV werden erst ab dem 1. Januar des Jahres abgezogen, in dem Lernende 18 werden; NBU und weitere Abzüge je nach Betrieb. Die CHF 800 der Situation sind bereits netto.",
+            "quelle": "Kap. 2.1, S. 46-47"
+          },
+          {
+            "label": "Erwartet",
+            "text": "Alle drei Kostenarten mit eigenen Zahlen (nicht denen der Situation), Abos als fixe Kosten, eine offene Rechnung — falls vorhanden — samt Gebühr als eigene Zeile, Saldo ausgerechnet."
+          },
+          {
+            "label": "Engpass",
+            "text": "Die Posten, die den Saldo ins Minus drücken, werden benannt (in der Situation: Abos und offene Rechnung; das Konto ist um den 20. leer)."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Wunschzahlen statt eigene Zahlen — das Budget geht auf dem Papier auf, nicht auf dem Konto. Rückstellungen fehlen ganz."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Realistisches Monatsbudget mit Schutzregeln + Budgetgespräch",
+    "titel": "Mein Budget, meine Regeln, mein Budgetgespräch",
+    "format_detail": "Ein ausgefülltes Monatsbudget mit Saldo vor und nach den Anpassungen, zwei Schutzregeln gegen Schulden und ein Budgetgespräch von 3–4 Minuten zu zweit: Ihr Gegenüber spielt die Kollegin.",
+    "beschreibung": "Ich plane mein Geld mit eigenen Zahlen, erkenne, wo es knapp wird und wo Schulden drohen, und vertrete meine Anpassungen im Gespräch mit Argumenten.",
+    "schritte": [
+      {
+        "label": "01 Budget aufstellen",
+        "hint": "Gliedern Sie Ihr Budget aus LF2 nach den drei Kostenarten aus LF1 und schreiben Sie den Saldo darunter."
+      },
+      {
+        "label": "02 Engpass markieren",
+        "hint": "Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird — geht es auf, die mit dem kleinsten Spielraum."
+      },
+      {
+        "label": "03 Risiken belegen",
+        "hint": "Markieren Sie die Posten, die zu Schulden führen können — Ihr Befund aus LF3 zeigt, worauf Sie achten."
+      },
+      {
+        "label": "04 Anpassen und Regeln setzen",
+        "hint": "Tragen Sie Anpassungen (je mit Grund) und Schutzregeln aus LF4 ein; die Regeln setzen bei den Posten aus Schritt 03 an. Neuen Saldo rechnen."
+      },
+      {
+        "label": "05 Gespräch führen",
+        "hint": "Führen Sie das Budgetgespräch zu zweit: drei Argumente, eine Rückfrage, Ihre Antwort auf den Einwand."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Monatsbudget mit Saldo vor und nach den Anpassungen",
+      "2–3 Anpassungen (offene Rechnung zuerst, falls vorhanden) und 2 Schutzregeln",
+      "Gesprächsnotiz: 3 Argumente, 1 Rückfrage, Antwort auf den Einwand"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Nettolohn CHF 950, Nachzahlung fürs Handy offen",
+      "legende": [
+        {
+          "key": "knapp",
+          "text": "wird knapp"
+        },
+        {
+          "key": "risiko",
+          "text": "Schuldenrisiko"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Monatsbudget (CHF)",
+          "kopf": [
+            "Posten",
+            "vorher",
+            "nachher"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Nettolohn",
+                "950",
+                "950"
+              ],
+              "stark": true
+            },
+            {
+              "zellen": [
+                "Fix: Haushaltsbeitrag",
+                "200",
+                "200"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Handy-Abo, Musik",
+                "52",
+                "52"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Verpflegung auswärts",
+                "180",
+                "180"
+              ]
+            },
+            {
+              "zellen": [
+                "Variabel: Kleider",
+                "140",
+                "90"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Ausgang",
+                "190",
+                "140"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Hobby, Geschenke",
+                "100",
+                "100"
+              ]
+            },
+            {
+              "zellen": [
+                "Rückstellung: Ferien, Sparen",
+                "50",
+                "70"
+              ]
+            },
+            {
+              "zellen": [
+                "Nachzahlung Handy (Roaming)",
+                "90",
+                "90"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Saldo",
+                "−52",
+                "+28"
+              ],
+              "stark": true
+            }
+          ]
+        },
+        {
+          "titel": "Anpassungen und Schutzregeln",
+          "eintraege": [
+            {
+              "text": "Nachzahlung am Zahltag zuerst überweisen — sonst folgt eine Mahnung."
+            },
+            {
+              "text": "Ausgang und Kleider je CHF 50 tiefer — das steuere ich selbst."
+            },
+            {
+              "text": "Regel 1: Wenn ich ins Ausland fahre, schalte ich das Roaming aus."
+            },
+            {
+              "text": "Regel 2: Wenn der Lohn kommt, lege ich zuerst CHF 70 zur Seite."
+            }
+          ]
+        },
+        {
+          "titel": "Gesprächsnotiz",
+          "eintraege": [
+            {
+              "text": "Argument 1: Der Saldo ist plus 28 statt minus 52."
+            },
+            {
+              "text": "Argument 2: Die Nachzahlung ist diesen Monat erledigt."
+            },
+            {
+              "text": "Argument 3: Ausgang bleibt, nur kleiner."
+            },
+            {
+              "text": "Rückfrage: «Wo würdest du zuerst kürzen?»"
+            },
+            {
+              "text": "Einwand «Du sparst dich kaputt» — Antwort: «CHF 140 für Ausgang bleiben mir.»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Nettolohn CHF 800, Rechnung mit Mahngebühr CHF 200 offen",
+      "hinweis": "Beispielrechnung mit den Zahlen der Situation; die Lernenden arbeiten mit eigenen Zahlen. Erst zeigen, wenn das eigene Budget steht. Ein Saldo von 0 genügt, wenn die Rechnung bezahlt ist und eine Rückstellung beginnt.",
+      "legende": [
+        {
+          "key": "knapp",
+          "text": "wird knapp"
+        },
+        {
+          "key": "risiko",
+          "text": "Schuldenrisiko"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Monatsbudget (CHF)",
+          "kopf": [
+            "Posten",
+            "vorher",
+            "nachher"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Nettolohn",
+                "800",
+                "800"
+              ],
+              "stark": true
+            },
+            {
+              "zellen": [
+                "Fix: Haushaltsbeitrag",
+                "150",
+                "150"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Handy-Abo",
+                "45",
+                "45"
+              ]
+            },
+            {
+              "zellen": [
+                "Fix: Streaming",
+                "20",
+                "0"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Fix: Fitness (Jahresabo)",
+                "65",
+                "65"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Fix: Verpflegung auswärts",
+                "160",
+                "160"
+              ]
+            },
+            {
+              "zellen": [
+                "Variabel: Kleider, Schuhe",
+                "120",
+                "60"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Ausgang",
+                "140",
+                "60"
+              ],
+              "marke": "knapp"
+            },
+            {
+              "zellen": [
+                "Variabel: Coiffeur, Hobby",
+                "40",
+                "40"
+              ]
+            },
+            {
+              "zellen": [
+                "Rückstellung: Sparen",
+                "0",
+                "20"
+              ]
+            },
+            {
+              "zellen": [
+                "Offene Rechnung + Mahngebühr",
+                "200",
+                "200"
+              ],
+              "marke": "risiko"
+            },
+            {
+              "zellen": [
+                "Saldo",
+                "−140",
+                "0"
+              ],
+              "stark": true
+            }
+          ]
+        },
+        {
+          "titel": "Anpassungen und Schutzregeln",
+          "eintraege": [
+            {
+              "text": "Offene Rechnung diesen Monat zuerst zahlen — sonst kommt die nächste Gebühr."
+            },
+            {
+              "text": "Ausgang und Kleider je auf CHF 60 — variable Kosten steuere ich selbst."
+            },
+            {
+              "text": "Streaming sofort kündigen, Fitness auf Vertragsende — Abos summieren sich."
+            },
+            {
+              "text": "Regel 1: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst."
+            },
+            {
+              "text": "Regel 2: Wenn ich ein Abo abschliesse, dann nur eines, das ich monatlich kündigen kann."
+            }
+          ]
+        },
+        {
+          "titel": "Gesprächsnotiz",
+          "eintraege": [
+            {
+              "text": "Argument 1: Mit den Anpassungen ist der Saldo 0 statt minus 140."
+            },
+            {
+              "text": "Argument 2: Die Rechnung ist bezahlt, bevor weitere Gebühren dazukommen."
+            },
+            {
+              "text": "Argument 3: CHF 60 für Ausgang bleiben — ich streiche nicht alles."
+            },
+            {
+              "text": "Rückfrage: «Was würdest du an meiner Stelle zuerst kürzen?»"
+            },
+            {
+              "text": "Einwand «Dann lebst du nur noch fürs Sparen» — Antwort: «Nein, Ausgang bleibt. Und nächsten Monat ist die Rechnung weg.»"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Keine Begründung für die Entscheidung erkennbar.",
+        "Begründung ansatzweise vorhanden.",
+        "Begründung nachvollziehbar und strukturiert.",
+        "Schlüssig, differenziert, Gegenargumente und Folgen berücksichtigt."
+      ],
+      "indikator_produkt": "Jede Anpassung ist begründet; im Gespräch wird der Einwand beantwortet, nicht übergangen."
+    },
+    {
+      "kn_kriterium": "Wirtschaftliches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Der Zusammenhang von Budget, Bedürfnis und Verschuldungsrisiko wird nicht angewendet.",
+        "Der Zusammenhang wird teilweise erkennbar.",
+        "Der Zusammenhang wird korrekt auf die Situation angewendet.",
+        "Das Prinzip wird auf neue Zusammenhänge übertragen (Transfer)."
+      ],
+      "indikator_produkt": "Engpass geschlossen oder mehr Spielraum; Schutzregeln setzen bei Schuldenwegen (LF3) an."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile.",
+    "scaffold_100": "Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen."
+  },
+  "methoden": [
+    {
+      "ref": "lm-2-2-budget",
+      "fuer": "für das Monatsbudget mit Saldo",
+      "tun": "Gehen Sie in der Reihenfolge des Kapitels vor: Einnahmen, fixe Kosten, variable Kosten, Rückstellungen, Saldo — mit Ihren eigenen Zahlen."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für die Argumente im Budgetgespräch",
+      "tun": "Begründen Sie jede Anpassung in drei Teilen wie im Kapitel: Ausgangslage, Begründung, Schluss mit Ihrem Entscheid."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für das Zuhören im Budgetgespräch",
+      "tun": "Hören Sie auf den Einwand Ihres Gegenübers mit allen vier Ohren, bevor Sie antworten."
+    }
+  ],
+  "mindmap_zentrum": "Wunsch jetzt oder Sicherheit später",
+  "mindmap_aeste": [
+    {
+      "titel": "Mein Budget",
+      "punkte": [
+        "Nettolohn",
+        "Fixe Kosten",
+        "Variable Kosten",
+        "Rückstellung",
+        "Saldo"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wege in die Schulden",
+      "punkte": [
+        "Engpass",
+        "Mahnung",
+        "Schuldenspirale"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Anpassen und schützen",
+      "punkte": [
+        "Anpassung",
+        "Schutzregel"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Reicht mein Geld mit den Anpassungen bis Monatsende?",
+      "Weiss ich, was ich mit einer gemahnten Rechnung tue, bevor daraus mehr wird?"
+    ],
+    "mitnahme": [
+      "Meine wichtigste Anpassung",
+      "Meine Schutzregel",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Fixe Kosten",
+          "nach": "Engpass",
+          "text": "lassen wenig Spielraum"
+        },
+        {
+          "von": "Mahnung",
+          "nach": "Schuldenspirale",
+          "text": "ist der erste Schritt"
+        },
+        {
+          "von": "Anpassung",
+          "nach": "Saldo",
+          "text": "verbessert"
+        },
+        {
+          "von": "Schutzregel",
+          "nach": "Mahnung",
+          "text": "verhindert"
+        },
+        {
+          "von": "Rückstellung",
+          "nach": "gilt auch bei …",
+          "text": "braucht es auch dort"
+        }
+      ],
+      "transfer": "Ferien planen, Steuern, erste eigene Wohnung",
+      "eigene_knoten": {
+        "mit_medien": [
+          "Überschuldung",
+          "Lohnpfändung"
+        ]
+      },
+      "quercheck": [
+        "Beispielrechnung: Ja, Saldo 0 statt minus 140.",
+        "Ja: zuerst zahlen — oder mit dem Shop Teilbeträge abmachen."
+      ],
+      "mitnahme": [
+        "Beispielrechnung: Ausgang von CHF 140 auf 60.",
+        "Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst.",
+        "Was passiert, wenn ich eine Rechnung wirklich nicht zahlen kann."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1 erklärt drei Kostenarten und die Schuldenspirale",
+        "LF2 hat eigene Zahlen, den Saldo und die knappen Posten",
+        "LF4 nennt Anpassungen, zwei Regeln und den Einwand"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle (S. 3) mit vier Zeilen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Budget und Gespräch",
+      "vollstaendig_wenn": [
+        "Saldo vor und nach den Anpassungen",
+        "Zwei überprüfbare Schutzregeln",
+        "Gespräch geführt, Notiz mit Argumenten, Rückfrage, Antwort auf Einwand"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2 (Budget aufstellen)",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Anpassungen und Regeln",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Budget fertigstellen, Budgetgespräch zu zweit, Feedback-Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst in meinem Leben muss ich etwas planen, bevor ich es ausgebe — und woran erkenne ich früh, dass es knapp wird?",
+    "ziel": "Überlegte Konsum- und Geldentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Realistisch planen, Engpässe und Schuldenwege erkennen, Anpassungen begründet vertreten",
+    "lehrmittel_anker": "Kap. 2.1 S. 46-47, Kap. 2.2 S. 48, Kap. 8.2 S. 199-200.",
+    "kn_aktivierung": "Im KN muss die Lernende prüfen, ob die Leasingrate in ihr Budget passt, und den Entscheid begründen — ohne dass Leasing in Heft B als Fall vorkommt.",
+    "transfer_check": "Kann die Lernende ein knappes Budget mit eigenen Zahlen aufstellen, Schuldenrisiken benennen und eine Anpassung gegen einen Einwand verteidigen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 3,
+      "wo": "leitfragen[3] + Schritt 04 — Anpassungen und Wenn-dann-Regeln entwickeln, bevor Schulden entstehen"
+    },
+    {
+      "sk": 5,
+      "wo": "leitfragen[1] + leitfragen[3] — das eigene Konsumverhalten an den eigenen Zahlen prüfen"
+    },
+    {
+      "sk": 9,
+      "wo": "leitfragen[0] + Begriffsnetz — Kostenarten, Engpass und Schuldenspirale als Zusammenhang sehen; Rückstellung für später"
+    }
+  ],
+  "spuren": {
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster aus: Welche Gründe für Schulden nennt die Quelle — und welcher davon zeigt sich schon in Ihrem Budget? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Schuldenwege mit Beleg",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-311b-pflicht",
+            "spalten": [
+              "Zeitmarke",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Sehen Sie das Video zweimal an; notieren Sie beim zweiten Mal Zeitmarke und Stichwort.",
+              "Achten Sie auf Stellen, an denen jemand sagt, wie die Schulden begannen."
+            ],
+            "satzanfaenge": [
+              "«Laut Quelle entstehen Schulden, wenn …»",
+              "«In meinem Budget zeigt sich das bei …»",
+              "«Die Quelle zeigt nicht, …»"
+            ],
+            "produkt": "Die Schuldenwege zeigen, wo Ihre Schutzregeln in LF4 ansetzen; markieren Sie die Posten im Budget."
+          },
+          "loesung": {
+            "kern": "Wege in die Schulden, am eigenen Budget",
+            "quelle_ref": "q-311b-pflicht",
+            "quelle_stand": "2026-10-04",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Wenig Lohn, Einteilen fällt schwer (01:35); mit 18 allein zuständig (02:08–02:18); nicht gewusst, wo sie steht (02:21); Post bleibt liegen (03:17).",
+                "quelle": "Quelle, 01:35–03:17"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Zweite Frau: Versicherung zu spät bezahlt, Lebensstandard zu hoch (04:40–05:01); verschärft: Steuern, Krankenkasse offen. Folgen, nicht Gründe: Miete offen, Kündigung, Lohnpfändung, Betreibungsamt (01:41–02:04).",
+                "quelle": "Quelle, 01:41–05:01"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Deutung: Überblick → Saldo; Steuern → Rückstellung; Lebensstandard → Schuldenspirale; Post bleibt liegen → Überschuldung. Knoten S. 8: Überschuldung, Lohnpfändung.",
+                "quelle": "Kap. 2.2, S. 48 · Kap. 8.2"
+              },
+              {
+                "label": "Befund",
+                "text": "Mind. ein Weg am eigenen Budget, z. B. nichts aufgeschrieben; gemahnte Rechnung."
+              },
+              {
+                "label": "Lesehilfe",
+                "text": "Zwei Einzelfälle, keine Statistik; nicht verallgemeinern."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Gründe: mit 18 Abos und Bestellungen auf ihren Namen (02:47); temporär gearbeitet, verdrängt (03:14–03:26). Verschärft: Mahnkosten verdoppeln Rechnungen (03:36); Steuern, Krankenkasse offen (03:58); Briefe nicht mehr angesehen (04:44).",
+                "quelle": "Ersatzquelle, 02:47–04:59"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "01:35",
+                "Wenig Lohn, das Einteilen fällt schwer",
+                "laut Erzählstimme bei vielen Jungen (01:38)",
+                "Saldo"
+              ],
+              [
+                "02:21",
+                "Nie verstanden, wie wichtig der Überblick ist",
+                "sie hat sich nicht darum gekümmert",
+                "Saldo"
+              ],
+              [
+                "03:17",
+                "Post bleibt liegen (verschärft die Lage)",
+                "Briefe im Milchkasten, bis er überfüllt ist",
+                "Überschuldung"
+              ],
+              [
+                "05:01",
+                "Zu hoher Lebensstandard",
+                "Steuern, Krankenkasse nicht bezahlt (04:55)",
+                "Schuldenspirale"
+              ]
+            ],
+            "befund": "Die Quelle zeigt an zwei Frauen, wie es begann: mit 18 allein zuständig, kein Überblick über die eigenen Finanzen, zu hoher Lebensstandard; liegen gelassene Post und unbezahlte Rechnungen verschärften es. Die Folgen waren Post vom Betreibungsamt und Lohnpfändung. Ich schliesse daraus: In meinem Budget zeigt sich dasselbe daran, dass ich nichts aufschreibe, und an der Rechnung, die schon gemahnt ist."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 8.2 | S. 199-200 · eigenes Budget",
+          "pol_typ": "position_gegenposition",
+          "text": "Legen Sie zwei bis drei Anpassungen und zwei Schutzregeln gegen Schulden fest. Hält Ihre wichtigste Anpassung dem stärksten Einwand stand, etwa «Dann lebst du nur noch fürs Sparen» — und warum?",
+          "liefert": "Anpassungen, Schutzregeln, Antwort auf Einwand",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Kürzen Sie dort, wo Sie für Ihr Geld am wenigsten zurückbekommen.",
+              "Formulieren Sie Regeln als Wenn-dann-Satz."
+            ],
+            "satzanfaenge": [
+              "«Ich passe … an, weil …»",
+              "«Der stärkste Einwand ist …»",
+              "«Ich bleibe dabei, weil … / Ich ändere es, weil …»"
+            ],
+            "produkt": "Anpassungen und Regeln stehen unter dem Budget; die Antwort auf den Einwand brauchen Sie im Gespräch."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Entscheid gegen Einwand",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Die Anpassungen setzen bei variablen Kosten oder kündbaren Abos an und schliessen den Engpass rechnerisch; geht das eigene Budget schon auf, vergrössern sie den Spielraum.",
+                "Eine offene Rechnung (falls vorhanden) wird zuerst bezahlt oder in Teilbeträgen geregelt.",
+                "Die Schutzregeln sind konkret und in einem Monat überprüfbar (Wenn-dann).",
+                "Der Einwand wird ernst genommen; der Entscheid bleibt begründet."
+              ],
+              "beispiel_pol_1": "Dabei bleiben: «Ich kündige das Fitness auf Dezember und kürze Kleider und Schuhe; die offene Rechnung zahle ich diesen Monat zuerst. So reicht das Geld bis Monatsende. Der Einwand stimmt nicht, weil mir 60 Franken für Ausgang bleiben. Regeln: Wenn eine Rechnung kommt, zahle ich sie am Zahltag zuerst. Wenn ich ein Abo abschliesse, dann nur eines, das ich monatlich kündigen kann.»",
+              "beispiel_pol_2": "Anpassen: «Der Einwand trifft: Wenn ich Ausgang ganz streiche, halte ich das nicht durch. Ich kürze ihn auf die Hälfte, kündige das Fitness und lege 30 Franken als Rückstellung zur Seite; die Rechnung zahle ich in zwei Teilen, das habe ich mit dem Shop abgemacht. Regeln: Wenn ich auf Rechnung bestelle, notiere ich das Zahlungsdatum sofort. Wenn mein Saldo unter 50 Franken fällt, kaufe ich nichts Neues.»",
+              "nicht_tragfaehig": "Nur Rückstellungen streichen; Regeln ohne Überprüfbarkeit («Ich will sparsamer sein»); den Einwand übergehen."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-311b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie den Ausschnitt gemäss QR-Seite zweimal an. Tragen Sie vier Aussagen mit Zeitmarke ein, die zeigen, wie junge Leute in Schulden geraten. Ordnen Sie jeder Aussage einen Begriff aus LF1 oder dem Glossar zu.",
+          "raster": {
+            "spalten": [
+              "Zeitmarke",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-131b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wie will der Verein früh helfen?",
+          "erwartung": "Gründe: Druck durch soziale Medien (man sieht, was andere kaufen, und will mithalten), Konsumgesellschaft und steigende Preise, der Umgang mit Geld wird zu Hause nicht immer gelernt. Hilfe: Der Verein verweist Junge früh an bestehende Stellen und arbeitet mit Unterlagen für Schulen, Gemeinden und Lehrbetriebe; Betroffene sollen selbst berichten. Eine konkrete Anlaufstelle nennt der Ausschnitt nicht."
+        },
+        {
+          "ref": "q-131b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und was können Sie tun, wenn ein Zahlungsbefehl kommt?",
+          "erwartung": "Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder sofort bzw. innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag kann der Gläubiger die Betreibung fortsetzen, bis zur Lohnpfändung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "00:40 (Beispielwert) · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → Begriff aus LF1 oder Glossar"
+        ]
+      },
+      "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
+    }
+  }
+}

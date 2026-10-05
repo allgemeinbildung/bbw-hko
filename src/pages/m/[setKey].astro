@@ -1,0 +1,454 @@
+---
+// Landing-Seite des QR-Codes im Heft v4.2 (Spur «mit Medien»).
+// Spec: docs/upgrade-v4.2/ENTSCHEIDE.md E5 (Adresse /m/<Ordnername>, Anker #a/#b — nach
+// dem ersten Druck nicht mehr änderbar) und E11; Leitfaden v4.2 §5.
+//
+// Bewusst OHNE Base.astro: kein Tracking-Beacon, kein «Problem melden», kein Alpine,
+// keine Plattform-Chrome. Lernende haben keine Konten — die Seite verlangt kein Login,
+// setzt keine Cookies und lädt nichts von aussen. Sie gibt nur aus, was auf den
+// Quellenkarten und im Heft steht (Titel, Link, Verortung, eigener Kurzbeschrieb,
+// Auftrag, Leitfrage) — keinen Quellentext, nichts vom übrigen Heft.
+//
+// Der Entwurf-Status der Einheit sperrt die Seite absichtlich NICHT: gedruckte Hefte
+// müssen funktionieren. Die statische Route /m/131-a (altes Mockup) hat Vorrang.
+import { loadEinheit } from '../../lib/einheiten'
+import type { Quelle, QuelleKarte, SituationJson } from '../../lib/einheiten/types'
+
+const setKey = Astro.params.setKey ?? ''
+const einheit = loadEinheit(setKey, { spur: 'mit_medien' })
+
+type Heft = {
+  anker: 'a' | 'b'
+  buchstabe: 'A' | 'B'
+  titel: string
+  pflicht: Quelle | null
+  vertiefungen: Quelle[]
+}
+
+function heftAus(sit: SituationJson | null | undefined, anker: 'a' | 'b'): Heft | null {
+  if (!sit || sit.spur !== 'mit_medien' || !Array.isArray(sit.quellen) || !sit.quellen.length) return null
+  const pflicht = sit.quellen.find((q) => q.rolle === 'pflicht') ?? null
+  const vertiefungen = sit.quellen.filter((q) => q.rolle === 'vertiefung')
+  if (!pflicht && !vertiefungen.length) return null
+  return {
+    anker,
+    buchstabe: anker === 'a' ? 'A' : 'B',
+    titel: sit.titel ?? '',
+    pflicht,
+    vertiefungen,
+  }
+}
+
+const hefte: Heft[] =
+  einheit && einheit.spur === 'mit_medien'
+    ? [heftAus(einheit.hf_A, 'a'), heftAus(einheit.hf_B, 'b')].filter((h): h is Heft => !!h)
+    : []
+
+const gefunden = hefte.length > 0
+if (!gefunden) {
+  Astro.response.status = 404
+  // Ohne diesen Header ersetzt Astro 4 jede 404-Antwort durch die Fehlerseite des
+  // Projekts — es gibt keine src/pages/404.astro, in Produktion bliebe ein leerer Body.
+  // `X-Astro-Reroute: no` ist Astros eigener Schalter dafür (core/constants.js) und wird
+  // vor dem Senden wieder entfernt. Bei einem Astro-Upgrade prüfen.
+  Astro.response.headers.set('X-Astro-Reroute', 'no')
+}
+
+// Katalogtitel trägt für KT1 ein Versions-Suffix («Konsum verantworten (v4.2)», E5) —
+// Lernende sehen nur den Einheitstitel.
+const einheitTitel = (einheit?.set?.einheit_titel ?? einheit?.hf_A?.modul_titel ?? '')
+  .replace(/\s*\(v\d+(?:\.\d+)*\)\s*$/, '')
+  .trim()
+
+// ---------------------------------------------------------------------------
+// Anzeige-Helfer
+// ---------------------------------------------------------------------------
+
+const TYP_LABEL: Record<string, string> = {
+  artikel: 'Artikel',
+  grafik: 'Grafik',
+  video: 'Video',
+  audio: 'Audio',
+  rechtstext: 'Rechtstext',
+  webseite: 'Webseite',
+}
+const typLabel = (t: string) => TYP_LABEL[t] ?? (t ? t.charAt(0).toUpperCase() + t.slice(1) : 'Quelle')
+
+const MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
+function datumText(d: string | undefined): string {
+  const s = (d ?? '').trim()
+  let m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s)
+  if (m) return `${m[3]}.${m[2]}.${m[1]}`
+  m = /^(\d{4})-(\d{2})$/.exec(s)
+  if (m && +m[2] >= 1 && +m[2] <= 12) return `${MONATE[+m[2] - 1]} ${m[1]}`
+  if (/^\d{4}$/.test(s)) return s
+  if (!s || /^o\.\s*D\.?$/i.test(s)) return 'ohne Datum'
+  return s
+}
+
+function laengeText(k: QuelleKarte): string {
+  if (typeof k.dauer_sek === 'number' && k.dauer_sek > 0) {
+    const min = Math.floor(k.dauer_sek / 60)
+    const sek = String(k.dauer_sek % 60).padStart(2, '0')
+    return `${min}:${sek} min`
+  }
+  if (typeof k.woerter === 'number' && k.woerter > 0) return `${k.woerter} Wörter`
+  return ''
+}
+
+function verortungVerb(t: string): string {
+  if (t === 'audio') return 'Hören Sie'
+  if (t === 'video') return 'Schauen Sie'
+  return 'Lesen Sie'
+}
+function verortungText(k: QuelleKarte): string {
+  const v = k.verortung
+  if (!v) return ''
+  if (v.von && v.bis) return `${v.von}–${v.bis}`
+  return v.absaetze ?? v.von ?? ''
+}
+
+/**
+ * Audio und Video direkt auf der Seite (ENTSCHEIDE E28): SRF-Beiträge mit URN laufen im
+ * eingebetteten Player von SRF, Start bei `verortung.von`. Alles andere (Artikel, Grafik,
+ * fremde Hosts) bleibt ein Link. Der Link unter dem Player bleibt als Ausweg stehen.
+ */
+function embedSrc(k: QuelleKarte): string | null {
+  if (k.typ !== 'audio' && k.typ !== 'video') return null
+  const urn = (k as { urn?: string }).urn || /[?&]urn=([^&]+)/.exec(k.url || '')?.[1]
+  if (!urn || !/^urn:srf:(audio|video):[\w-]+$/.test(urn)) return null
+  const m = /^(?:(\d+):)?(\d{1,2}):(\d{2})$/.exec(k.verortung?.von ?? '')
+  const start = m ? (+(m[1] ?? 0)) * 3600 + +m[2] * 60 + +m[3] : 0
+  return `https://www.srf.ch/play/embed?urn=${urn}&subdivisions=false${start > 0 ? `&startTime=${start}` : ''}`
+}
+
+// Raster-Spalten je Quellentyp (Leitfaden §5); letzte Spalte immer «→ Begriff».
+const RASTER: Record<string, string[]> = {
+  video: ['Bild', 'Ton', 'Aussage'],
+  audio: ['Wer spricht', 'Kernaussage', 'Absicht'],
+  artikel: ['Absatz', 'Kernaussage', 'Beleg/Zahl'],
+  webseite: ['Absatz', 'Kernaussage', 'Beleg/Zahl'],
+  grafik: ['Was gemessen', 'auffälliger Wert', 'Aussage'],
+  rechtstext: ['Art./Abs.', 'Voraussetzung', 'Folge'],
+}
+const rasterSpalten = (t: string) => [...(RASTER[t] ?? RASTER.artikel), '→ Begriff']
+const RASTER_ZEILEN = 4
+---
+
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#0E6E3A" />
+    <title>{gefunden ? `Quellen · ${einheitTitel}` : 'Seite nicht gefunden'}</title>
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+  {gefunden ? (
+    <>
+    <div class="seite">
+      <header class="kopf">
+        <p class="kick">Quellen zum Heft</p>
+        <h1>{einheitTitel}</h1>
+        <p>Hier finden Sie die Quellen zu Ihrem Heft. Audio und Video spielen Sie direkt auf dieser Seite ab; Texte und Grafiken öffnen sich in einem neuen Tab.</p>
+      </header>
+
+      {hefte.length > 1 && (
+        <nav class="sprung" aria-label="Zum Heft springen">
+          {hefte.map((h) => <a href={`#${h.anker}`}>Heft {h.buchstabe}</a>)}
+        </nav>
+      )}
+
+      <main>
+        {hefte.map((h) => (
+          <section class="heft" id={h.anker} aria-labelledby={`titel-${h.anker}`}>
+            <h2 id={`titel-${h.anker}`}>Heft {h.buchstabe} · {h.titel}</h2>
+
+            {h.pflicht && (
+              <article class="karte pflicht" aria-labelledby={`pflicht-${h.anker}`}>
+                <p class="etikett">
+                  <span class="rolle">Quelle</span>
+                  <span>{typLabel(h.pflicht.typ)}{laengeText(h.pflicht) && ` · ${laengeText(h.pflicht)}`}</span>
+                </p>
+                <h3 id={`pflicht-${h.anker}`}>{h.pflicht.titel}</h3>
+                <p class="meta">{h.pflicht.herausgeber} · {datumText(h.pflicht.datum)}</p>
+                {verortungText(h.pflicht) && (
+                  <p class="verortung"><span>{verortungVerb(h.pflicht.typ)}:</span> {verortungText(h.pflicht)}</p>
+                )}
+                <p class="kurz">{h.pflicht.kurzbeschrieb}</p>
+                {h.pflicht.auftrag && (
+                  <div class="auftrag">
+                    <p class="auftrag-titel">Ihr Auftrag aus dem Heft</p>
+                    <p>{h.pflicht.auftrag}</p>
+                  </div>
+                )}
+                {embedSrc(h.pflicht) && (
+                  <div class={`player ${h.pflicht.typ}`}>
+                    <iframe src={embedSrc(h.pflicht)} title={`${typLabel(h.pflicht.typ)}: ${h.pflicht.titel}`} loading="lazy"
+                      allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                  </div>
+                )}
+                <a class="knopf gross" href={h.pflicht.url} target="_blank" rel="noopener noreferrer">
+                  {embedSrc(h.pflicht) ? 'Bei SRF öffnen' : 'Quelle öffnen'} <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
+                </a>
+
+                {h.pflicht.ersatz && (
+                  <details class="ersatz">
+                    <summary>Falls der Link oben nicht geht</summary>
+                    <div class="ersatz-inhalt">
+                      <p class="hinweis">Ersatzquelle: gleicher Auftrag, gleiches Raster.</p>
+                      <p class="etikett">
+                        <span>{typLabel(h.pflicht.ersatz.typ)}{laengeText(h.pflicht.ersatz) && ` · ${laengeText(h.pflicht.ersatz)}`}</span>
+                      </p>
+                      <h4>{h.pflicht.ersatz.titel}</h4>
+                      <p class="meta">{h.pflicht.ersatz.herausgeber} · {datumText(h.pflicht.ersatz.datum)}</p>
+                      {verortungText(h.pflicht.ersatz) && (
+                        <p class="verortung klein"><span>{verortungVerb(h.pflicht.ersatz.typ)}:</span> {verortungText(h.pflicht.ersatz)}</p>
+                      )}
+                      <p class="kurz">{h.pflicht.ersatz.kurzbeschrieb}</p>
+                      {embedSrc(h.pflicht.ersatz) && (
+                        <div class={`player ${h.pflicht.ersatz.typ}`}>
+                          <iframe src={embedSrc(h.pflicht.ersatz)} title={`${typLabel(h.pflicht.ersatz.typ)}: ${h.pflicht.ersatz.titel}`} loading="lazy"
+                            allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                      )}
+                      <a class="knopf zweit" href={h.pflicht.ersatz.url} target="_blank" rel="noopener noreferrer">
+                        {embedSrc(h.pflicht.ersatz) ? 'Bei SRF öffnen' : 'Ersatzquelle öffnen'} <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
+                      </a>
+                    </div>
+                  </details>
+                )}
+              </article>
+            )}
+
+            {h.vertiefungen.length > 0 && (
+              <div class="vertiefung">
+                <h3 class="zwischen">Vertiefung (freiwillig)</h3>
+                {h.vertiefungen.map((q, i) => (
+                  <article class="karte klein" aria-labelledby={`vt-${h.anker}-${i + 1}`}>
+                    <p class="etikett">
+                      <span>{typLabel(q.typ)}{laengeText(q) && ` · ${laengeText(q)}`}</span>
+                    </p>
+                    <h4 id={`vt-${h.anker}-${i + 1}`}>{q.titel}</h4>
+                    <p class="meta">{q.herausgeber} · {datumText(q.datum)}</p>
+                    {verortungText(q) && (
+                      <p class="verortung klein"><span>{verortungVerb(q.typ)}:</span> {verortungText(q)}</p>
+                    )}
+                    <p class="kurz">{q.kurzbeschrieb}</p>
+                    {q.leitfrage_vertiefung && (
+                      <p class="leitfrage"><span>Leitfrage</span>{q.leitfrage_vertiefung}</p>
+                    )}
+                    {embedSrc(q) && (
+                      <div class={`player ${q.typ}`}>
+                        <iframe src={embedSrc(q)} title={`${typLabel(q.typ)}: ${q.titel}`} loading="lazy"
+                          allow="autoplay; encrypted-media; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                      </div>
+                    )}
+                    <a class="knopf zweit" href={q.url} target="_blank" rel="noopener noreferrer">
+                      {embedSrc(q) ? 'Bei SRF öffnen' : 'Quelle öffnen'} <span aria-hidden="true">↗</span><span class="sr"> (neuer Tab)</span>
+                    </a>
+                  </article>
+                ))}
+                <button type="button" class="drucken" data-druck-heft={h.anker} hidden>
+                  Raster für die Vertiefung drucken
+                </button>
+              </div>
+            )}
+          </section>
+        ))}
+      </main>
+
+      <footer class="fuss">
+        Diese Seite braucht kein Konto und speichert nichts. Die Quellen liegen bei ihren Herausgebern.
+      </footer>
+    </div>
+
+    {/* Nur im Druck sichtbar: je Vertiefungsquelle ein leeres Raster auf einer A4-Seite. */}
+    <div class="druckbereich" aria-hidden="true">
+      {hefte.filter((h) => h.vertiefungen.length).map((h) => (
+        <div class={`druck-heft druck-${h.anker}`} data-heft={h.anker}>
+          {h.vertiefungen.map((q, i) => (
+            <div class="blatt">
+              <p class="blatt-kick">{einheitTitel} · Heft {h.buchstabe} · Vertiefung {i + 1}</p>
+              <p class="blatt-titel">{q.titel}</p>
+              <p class="blatt-meta">
+                {typLabel(q.typ)} · {q.herausgeber} · {datumText(q.datum)}{verortungText(q) && ` · ${verortungVerb(q.typ)}: ${verortungText(q)}`}
+              </p>
+              {q.leitfrage_vertiefung && <p class="blatt-leitfrage">Leitfrage: {q.leitfrage_vertiefung}</p>}
+              <table class="raster">
+                <thead>
+                  <tr>{rasterSpalten(q.typ).map((s) => <th>{s}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {Array.from({ length: RASTER_ZEILEN }).map(() => (
+                    <tr>{rasterSpalten(q.typ).map(() => <td></td>)}</tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <script is:inline>
+      (function () {
+        var knoepfe = document.querySelectorAll('[data-druck-heft]')
+        for (var i = 0; i < knoepfe.length; i++) {
+          var b = knoepfe[i]
+          b.hidden = false
+          b.addEventListener('click', function (e) {
+            document.body.setAttribute('data-druck', e.currentTarget.getAttribute('data-druck-heft'))
+            window.print()
+          })
+        }
+        window.addEventListener('afterprint', function () {
+          document.body.removeAttribute('data-druck')
+        })
+      })()
+    </script>
+    </>
+  ) : (
+    <div class="seite">
+      <header class="kopf">
+        <p class="kick">Quellen zum Heft</p>
+        <h1>Diese Seite gibt es nicht.</h1>
+        <p>Prüfen Sie die Adresse oder scannen Sie den QR-Code im Heft noch einmal.</p>
+      </header>
+    </div>
+  )}
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --brand: #0E6E3A;
+    --brand-dark: #094d28;
+    --brand-tint: #e8f3ec;
+    --ink: #111;
+    --mute: #444;
+    --linie: #c8c8c8;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--ink);
+    font: 17px/1.5 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    overflow-wrap: anywhere;
+  }
+  .seite { max-width: 600px; margin: 0 auto; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--brand-dark);
+    outline-offset: 2px;
+  }
+
+  .kopf { background: var(--brand); color: #fff; padding: 20px 16px 22px; }
+  .kopf .kick { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: .03em; }
+  .kopf h1 { margin: 4px 0 10px; font-size: 26px; line-height: 1.2; font-weight: 700; }
+  .kopf p { margin: 0; font-size: 16px; }
+
+  .sprung { display: flex; gap: 10px; padding: 14px 16px 0; }
+  .sprung a {
+    flex: 1; display: flex; align-items: center; justify-content: center; min-height: 44px;
+    border: 2px solid var(--brand); border-radius: 999px; color: var(--brand-dark);
+    font-weight: 700; text-decoration: none; background: #fff;
+  }
+  .sprung a:hover { background: var(--brand-tint); }
+
+  .heft { padding: 8px 16px 12px; scroll-margin-top: 8px; }
+  .heft + .heft { border-top: 4px solid var(--brand); margin-top: 18px; padding-top: 14px; }
+  .heft > h2 { margin: 16px 0 12px; font-size: 22px; line-height: 1.25; font-weight: 700; color: var(--brand-dark); }
+
+  .karte { border: 1px solid var(--linie); border-radius: 12px; padding: 16px; background: #fff; margin-bottom: 14px; }
+  .karte.pflicht { border: 2px solid var(--brand); }
+  .karte h3 { margin: 6px 0 4px; font-size: 21px; line-height: 1.3; font-weight: 700; }
+  .karte h4, .ersatz h4 { margin: 6px 0 4px; font-size: 18px; line-height: 1.3; font-weight: 700; }
+
+  .etikett { margin: 0; display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; font-size: 14px; font-weight: 700; color: var(--brand-dark); }
+  .etikett .rolle { background: var(--brand); color: #fff; border-radius: 999px; padding: 2px 10px; }
+  .meta { margin: 0 0 10px; font-size: 15px; color: var(--mute); }
+
+  .verortung {
+    margin: 0 0 12px; padding: 12px 14px; border-radius: 10px;
+    background: var(--brand-tint); border-left: 6px solid var(--brand);
+    font-size: 20px; line-height: 1.35; font-weight: 700; color: var(--ink);
+  }
+  .verortung span { color: var(--brand-dark); }
+  .verortung.klein { font-size: 16px; padding: 8px 12px; border-left-width: 4px; }
+
+  .kurz { margin: 0 0 12px; font-size: 16px; }
+  .player { margin: 0 0 12px; border-radius: 10px; overflow: hidden; background: #000; }
+  /* Der Player von SRF ist auch bei Audio ein 16:9-Bild; eine kleinere Höhe gibt einen Rollbalken im Rahmen. */
+  .player { aspect-ratio: 16 / 9; }
+  .player iframe { display: block; width: 100%; height: 100%; border: 0; }
+  @media print { .player { display: none; } }
+  .auftrag { margin: 0 0 14px; padding: 12px 14px; border: 1px dashed var(--brand); border-radius: 10px; }
+  .auftrag-titel { margin: 0 0 4px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--brand-dark); }
+  .auftrag p:last-child { margin: 0; font-size: 16px; }
+
+  .knopf {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    min-height: 48px; padding: 12px 16px; border-radius: 10px;
+    font-weight: 700; font-size: 17px; text-decoration: none; text-align: center;
+  }
+  .knopf.gross { background: var(--brand); color: #fff; min-height: 56px; font-size: 19px; }
+  .knopf.gross:hover { background: var(--brand-dark); }
+  .knopf.zweit { background: #fff; color: var(--brand-dark); border: 2px solid var(--brand); }
+  .knopf.zweit:hover { background: var(--brand-tint); }
+
+  .ersatz { margin-top: 14px; border-top: 1px solid var(--linie); padding-top: 4px; }
+  .ersatz summary {
+    display: flex; align-items: center; min-height: 44px; cursor: pointer;
+    font-size: 15px; font-weight: 600; color: var(--brand-dark); list-style: none;
+  }
+  .ersatz summary::-webkit-details-marker { display: none; }
+  .ersatz summary::before { content: '▸'; margin-right: 8px; }
+  .ersatz[open] summary::before { content: '▾'; }
+  .ersatz-inhalt { font-size: 15px; padding-bottom: 4px; }
+  .ersatz .hinweis { margin: 0 0 8px; font-weight: 600; }
+
+  .vertiefung { margin-top: 22px; }
+  .zwischen { margin: 0 0 10px; font-size: 18px; font-weight: 700; }
+  .karte.klein { padding: 14px; }
+  .leitfrage { margin: 0 0 12px; padding: 10px 12px; background: var(--brand-tint); border-radius: 10px; font-size: 16px; font-weight: 600; }
+  .leitfrage span { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--brand-dark); margin-bottom: 2px; }
+
+  .drucken {
+    display: flex; align-items: center; justify-content: center; width: 100%;
+    min-height: 44px; margin: 4px 0 0; padding: 10px 14px;
+    background: none; border: none; color: var(--brand-dark);
+    font: inherit; font-size: 16px; font-weight: 600; text-decoration: underline; cursor: pointer;
+  }
+  .drucken[hidden] { display: none; }
+
+  .fuss { padding: 18px 16px 40px; font-size: 14px; color: var(--mute); }
+
+  .druckbereich { display: none; }
+
+  @media print {
+    @page { size: A4 portrait; margin: 14mm; }
+    body { font-size: 11pt; color: #000; background: #fff; }
+    .seite, script { display: none !important; }
+    .druckbereich { display: block; }
+    body[data-druck="a"] .druck-b,
+    body[data-druck="b"] .druck-a { display: none; }
+    body:not([data-druck]) .druck-heft + .druck-heft { break-before: page; page-break-before: always; }
+    .blatt + .blatt { break-before: page; page-break-before: always; }
+    .blatt-kick { margin: 0 0 2mm; font-size: 9pt; font-weight: 600; }
+    .blatt-titel { margin: 0 0 1mm; font-size: 15pt; font-weight: 700; line-height: 1.25; }
+    .blatt-meta { margin: 0 0 3mm; font-size: 9.5pt; }
+    .blatt-leitfrage { margin: 0 0 5mm; font-size: 11.5pt; font-weight: 700; border-left: 2mm solid #000; padding-left: 3mm; }
+    .raster { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .raster th, .raster td { border: 0.4mm solid #000; vertical-align: top; text-align: left; }
+    .raster th { padding: 2mm; font-size: 10pt; font-weight: 700; background: #fff; }
+    .raster td { height: 48mm; }
+    .raster th:first-child { width: 22%; }
+    .raster th:last-child { width: 18%; }
+  }
+</style>

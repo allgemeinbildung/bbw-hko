@@ -1,0 +1,955 @@
+{
+  "id": "2.3.1_anliegen_vertreten_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "2.3",
+  "modul_titel": "Meinungen bilden und mitgestalten — mitreden und mitgestalten",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Mein Anliegen – auf welchem Weg bringe ich es ein?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Anliegen formulieren und einbringen"
+  },
+  "prinzip_ref": "2.3.1_anliegen_vertreten_prinzip",
+  "nrlp": {
+    "nr": "2.3.1",
+    "nr_primary": [
+      "2.3.1"
+    ],
+    "lebensbezug": "2.3",
+    "themen": [
+      "T2"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Politik",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM5"
+    ],
+    "sk": [
+      1,
+      12,
+      6
+    ],
+    "kompetenz_id": "2.3.1",
+    "lebensbezug_id": "2.3",
+    "kompetenz_text": "Ich kann persönliche politische Anliegen formulieren und Möglichkeiten zur Mitwirkung aufzeigen.",
+    "lebensbezug_text": "Ich möchte mitreden, mitgestalten und ernst genommen werden bei Themen, die mich direkt oder indirekt betreffen."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr und arbeite jeden Tag bis halb sechs. Im Sommer gehe ich danach fast immer mit zwei Kolleginnen ins Freibad meiner Wohngemeinde. Jetzt lese ich in der Gemeindezeitung: Um Geld zu sparen, soll das Freibad ab dem nächsten Sommer schon um 18 Uhr schliessen. Der Gemeinderat entscheidet in sechs Wochen. Für alle, die wie ich bis halb sechs arbeiten, wäre das Bad damit praktisch zu. Ich bin noch nicht 18 und darf nicht abstimmen. Trotzdem will ich, dass unser Anliegen gehört wird, bevor entschieden ist. Eine Kollegin meint, ich solle einfach Unterschriften sammeln und sie der Gemeinde schicken. Ihr Bruder winkt ab: Das bringe nichts, niemand müsse darauf antworten. Ich weiss nicht, welche Wege mir offenstehen und wie verbindlich sie vor dem Entscheid sind. Ich will mein Anliegen klar formulieren und den Weg finden, auf dem ich es einbringe.",
+  "zahlen_tabelle": [
+    {
+      "label": "Neue Schliesszeit des Freibads",
+      "wert": "18 Uhr"
+    },
+    {
+      "label": "Entscheid des Gemeinderats in",
+      "wert": "6 Wochen"
+    },
+    {
+      "label": "Mein Arbeitsschluss",
+      "wert": "17.30 Uhr"
+    }
+  ],
+  "leitfrage": "Auf welchem Weg bringe ich mein Anliegen ein, solange ich nicht abstimmen darf – offen und schnell oder verbindlich mit Hürden?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Offener Weg ohne Anspruch auf Antwort vs. verbindlicher Weg mit Hürden",
+    "hint": "Unterschriften sind schnell gesammelt, verpflichten aber niemanden zu einer Antwort. Ein verbindlicher Weg hat Gewicht, braucht aber Rechte oder Verbündete."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.2",
+      "titel": "Mitwirkungsrechte und Pflichten",
+      "unterueberschrift": "Rechte, Stimm- und Wahlrecht",
+      "seiten": "Seite 93-95",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 6.4",
+      "titel": "Referendum und Initiative",
+      "unterueberschrift": "Volksrechte und Petition",
+      "seiten": "Seite 168-170",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 6.6",
+      "titel": "Interessengruppen",
+      "unterueberschrift": "Wie Verbände Einfluss nehmen",
+      "seiten": "Seite 177-179",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie erstellen ein Factsheet zu Ihrem Anliegen. LF1 liefert die Wege der Mitwirkung mit Voraussetzungen, LF2 Ihr Anliegen und die Wege, die Ihnen offenstehen, LF3 belegte Mittel und ihr Gewicht, LF4 den gewählten Weg mit Begründung.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.2 | S. 93-95 · Kap. 6.4 | S. 168-170",
+      "text": "Unterscheiden Sie die Rechte aller Menschen von den politischen Rechten (Kap. 3.2). Halten Sie zu Petition, Referendum und Initiative fest, wer sie nutzen darf und was daraus folgt (Kap. 6.4).",
+      "liefert": "Wege der Mitwirkung mit Voraussetzungen",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Ordnen Sie zuerst in drei Stufen: alle Menschen · Staatsbürger/innen · Stimmberechtigte.",
+          "Notieren Sie je Weg drei Stichworte: Wer darf? Was braucht es? Was muss geschehen?"
+        ],
+        "satzanfaenge": [
+          "«Alle Menschen haben …»",
+          "«Nur Stimmberechtigte können …»",
+          "«Eine Petition verpflichtet die Behörde …»"
+        ],
+        "produkt": "Die Wege mit ihren Voraussetzungen kommen in den Teil «Wege der Mitwirkung» des Factsheets."
+      },
+      "loesung": {
+        "kern": "Stufen der Rechte und drei Wege mit Voraussetzung",
+        "zeilen": [
+          {
+            "label": "Stufen der Rechte",
+            "text": "Menschenrechte gelten für alle, staatsbürgerliche Rechte für Staatsbürger/innen, politische Rechte nur handlungsfähigen Schweizer/innen.",
+            "quelle": "Kap. 3.2, S. 93-94"
+          },
+          {
+            "label": "Stimm- und Wahlrecht",
+            "text": "Stimmrecht: zu einer Sachvorlage Ja oder Nein sagen. Wahlrecht: aktiv jemanden wählen, passiv selbst gewählt werden. Voraussetzung Bürgerrecht und 18 Jahre (kantonale Ausnahme auf S. 95); gilt auf allen Ebenen.",
+            "quelle": "Kap. 3.2, S. 95"
+          },
+          {
+            "label": "Referendum",
+            "text": "Stimmberechtigte entscheiden an der Urne über einen Beschluss des Parlaments; das fakultative braucht 50 000 Unterschriften innert 100 Tagen, das Volksmehr genügt.",
+            "quelle": "Kap. 6.4, S. 168"
+          },
+          {
+            "label": "Initiative",
+            "text": "Mit 100 000 Unterschriften innert 18 Monaten verlangen Stimmberechtigte eine Abstimmung über eine Verfassungsänderung; doppeltes Mehr nötig. Kantone kennen auch Gesetzesinitiativen.",
+            "quelle": "Kap. 6.4, S. 169-170"
+          },
+          {
+            "label": "Petition",
+            "text": "Alle Urteilsfähigen, nicht nur Stimmberechtigte, dürfen Behörden schriftlich bitten oder etwas anregen. Die Behörde muss davon Kenntnis nehmen; eine Antwort schuldet sie nicht, gibt sie aber in der Praxis.",
+            "quelle": "Kap. 6.4, S. 170"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 3.2 | S. 94-95 · Kap. 6.4 | S. 168-170 · eigener Fall",
+      "text": "Formulieren Sie Ihr Anliegen in einem Satz. Prüfen Sie dann, welche Wege aus LF1 Ihnen in Ihrem Fall offenstehen und welche verschlossen sind – je mit Grund.",
+      "liefert": "Anliegen und offene Wege im Fall",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Ein Anliegen sagt, was sich ändern soll und für wen – nicht nur, was stört.",
+          "Kap. 6.4 zeigt den Bund. Für Sie zählt je Weg die Voraussetzung: ja, nein, über andere?"
+        ],
+        "satzanfaenge": [
+          "«Ich möchte erreichen, dass …»",
+          "«Offen steht mir …, weil …»",
+          "«Verschlossen ist mir …, weil …»"
+        ],
+        "produkt": "Das Anliegen wird der erste Satz des Factsheets, die offenen Wege kommen in den Teil «Wege»."
+      },
+      "loesung": {
+        "kern": "Anliegen in einem Satz, Wege nach Rechten geordnet",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Ein Satz mit Ziel und Betroffenen, etwa: Das Freibad soll an Werktagen länger offen bleiben, damit Berufstätige es nutzen können. Dazu jeder Weg aus LF1 als offen oder verschlossen, je mit Grund."
+          },
+          {
+            "label": "Offen",
+            "text": "Die Petition: Sie steht allen Urteilsfähigen offen, unabhängig vom Alter.",
+            "quelle": "Kap. 6.4, S. 170"
+          },
+          {
+            "label": "Verschlossen",
+            "text": "Stimm- und Wahlrecht, Referendum und Initiative sind politische Rechte mit Bürgerrecht und 18 Jahren als Voraussetzung (Ausnahme S. 95 beachten); unterschreiben dürfen nur Stimmberechtigte (Kap. 6.4, S. 168–170).",
+            "quelle": "Kap. 3.2, S. 94-95"
+          },
+          {
+            "label": "Gutes Zeichen",
+            "text": "Die Antwort sieht, dass andere mittragen können, was ich selbst nicht darf: Stimmberechtigte im Umfeld. Das ist Fallüberlegung, nicht aus dem Lehrmittel."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Initiative oder Referendum als eigenen Weg nennen, obwohl Alter oder Bürgerrecht fehlen; oder das Anliegen nur als Klage formulieren, ohne Ziel."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Factsheet zum eigenen Anliegen mit Begründung, Wegen der Mitwirkung und gewähltem Weg",
+    "titel": "Factsheet: mein Anliegen und mein Weg",
+    "format_detail": "Eine Seite (S. 7) in vier Teilen: 1 Anliegen mit Begründung nach dem 3B-Schema · 2 Wege der Mitwirkung (zwei bis drei), je mit Voraussetzung und einem Beleg aus dem Raster · 3 gewählter Weg mit Grenze · 4 nächster Schritt. Schreiben Sie für Personen, die Ihr Anliegen mittragen sollen, und für die Behörde, die entscheidet.",
+    "beschreibung": "Ich halte auf einer Seite fest: mein Anliegen mit Begründung, die Wege der Mitwirkung mit Voraussetzung und Beleg, den gewählten Weg und den nächsten Schritt.",
+    "schritte": [
+      {
+        "label": "01 Rechte und Wege klären",
+        "hint": "Tragen Sie aus LF1 die Wege der Mitwirkung mit ihren Voraussetzungen zusammen."
+      },
+      {
+        "label": "02 Meine Lage einordnen",
+        "hint": "Schreiben Sie Ihr Anliegen aus LF2 als ersten Satz, begründen Sie es nach dem 3B-Schema und markieren Sie die offenen Wege."
+      },
+      {
+        "label": "03 Mittel belegen",
+        "hint": "Übernehmen Sie aus LF3 den Befund und zwei Rasterzeilen als Beleg in den Teil «Wege der Mitwirkung»."
+      },
+      {
+        "label": "04 Weg entscheiden",
+        "hint": "Halten Sie aus LF4 den gewählten Weg mit Begründung und Grenze fest, markieren Sie ihn und notieren Sie den nächsten Schritt."
+      },
+      {
+        "label": "05 Factsheet prüfen",
+        "hint": "Prüfen Sie das Factsheet mit den zwei Feedback-Kriterien: Stimmen Wege und Voraussetzungen? Ist klar, wer entscheidet?"
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Factsheet: Anliegen mit Begründung, Wege, gewählter Weg, nächster Schritt",
+      "Gewählter Weg markiert, mit dem nächsten Schritt"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Tempo 30 in unserer Wohnstrasse",
+      "legende": [
+        {
+          "key": "gewaehlt",
+          "text": "gewählt"
+        },
+        {
+          "key": "moeglich",
+          "text": "möglich"
+        },
+        {
+          "key": "verschlossen",
+          "text": "mir verschlossen"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Anliegen und Begründung",
+          "eintraege": [
+            {
+              "text": "Anliegen: In unserer Wohnstrasse soll Tempo 30 gelten."
+            },
+            {
+              "text": "Behauptung: Die Strasse ist für Kinder gefährlich."
+            },
+            {
+              "text": "Begründung: Viele Autos nehmen die Abkürzung und fahren schnell."
+            },
+            {
+              "text": "Beispiel: Vor unserem Hauseingang spielen jeden Tag Kinder."
+            }
+          ]
+        },
+        {
+          "titel": "Wege der Mitwirkung",
+          "eintraege": [
+            {
+              "marke": "gewaehlt",
+              "text": "Petition an den Gemeinderat",
+              "notiz": "alle Urteilsfähigen; keine Antwortpflicht"
+            },
+            {
+              "marke": "moeglich",
+              "text": "Stimmberechtigte Nachbarinnen sprechen vor",
+              "notiz": "mehr Gewicht, braucht Verbündete"
+            },
+            {
+              "marke": "verschlossen",
+              "text": "Initiative",
+              "notiz": "erst ab 18 mit Bürgerrecht"
+            },
+            {
+              "text": "Beleg (Raster, mit Fundstelle): Gewicht hat, wer viele hinter sich hat."
+            }
+          ]
+        },
+        {
+          "titel": "Gewählter Weg, nächster Schritt",
+          "eintraege": [
+            {
+              "text": "Petition: steht mir offen; Grenze: keine Antwortpflicht."
+            },
+            {
+              "text": "Bis Ende Monat 40 Unterschriften im Quartier sammeln."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Das Freibad soll schon um 18 Uhr schliessen",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: Zeigen Sie sie erst nach Schritt 05, wenn die Lernenden ihr Factsheet geprüft haben. Der gewählte Weg entspricht dem zweiten Beispiel im Erwartungshorizont von LF4; ein Factsheet mit der Petition allein ist ebenso gültig, wenn es die Grenze nennt. Annahmen, nicht aus dem Lehrmittel: Wunschzeit 19 Uhr, Unterschriften für die Petition sammeln, Eltern oder ein Ratsmitglied als Unterstützung.",
+      "legende": [
+        {
+          "key": "gewaehlt",
+          "text": "gewählt"
+        },
+        {
+          "key": "moeglich",
+          "text": "möglich"
+        },
+        {
+          "key": "verschlossen",
+          "text": "mir verschlossen"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Anliegen und Begründung",
+          "eintraege": [
+            {
+              "text": "Anliegen: Das Freibad soll an Werktagen bis 19 Uhr offen bleiben, damit Berufstätige es nutzen können."
+            },
+            {
+              "text": "Behauptung: Mit Schluss um 18 Uhr ist das Bad für Berufstätige praktisch zu."
+            },
+            {
+              "text": "Begründung: Wer bis halb sechs arbeitet, kommt frühestens kurz vor sechs an."
+            },
+            {
+              "text": "Beispiel: Ich und zwei Kolleginnen gehen im Sommer nach der Arbeit fast immer schwimmen."
+            }
+          ]
+        },
+        {
+          "titel": "Wege der Mitwirkung",
+          "eintraege": [
+            {
+              "marke": "gewaehlt",
+              "text": "Petition an den Gemeinderat, unterstützt von Stimmberechtigten (etwa Eltern)",
+              "notiz": "alle Urteilsfähigen; nur Kenntnisnahme (6.4, S. 170)"
+            },
+            {
+              "marke": "moeglich",
+              "text": "Ein Mitglied des Gemeinderats ansprechen, das das Anliegen einbringt",
+              "notiz": "Fallüberlegung; Annahme: ansprechbar"
+            },
+            {
+              "marke": "verschlossen",
+              "text": "Stimm- und Wahlrecht, Referendum, Initiative",
+              "notiz": "ab 18 mit Bürgerrecht (3.2, S. 94–95; Ausnahme S. 95)"
+            },
+            {
+              "text": "Beleg aus dem Raster S. 3: Gewicht hat, wer viele hinter sich hat oder gewählt ist."
+            }
+          ]
+        },
+        {
+          "titel": "Gewählter Weg, nächster Schritt",
+          "eintraege": [
+            {
+              "text": "Gewählt: Petition plus Stimmberechtigte – schnell, breiter abgestützt. Grenze: keine Antwortpflicht; der Gemeinderat entscheidet."
+            },
+            {
+              "text": "Zuerst: Unterschriftenbogen mit Titel und Anliegen in einem Satz entwerfen (Annahme)."
+            },
+            {
+              "text": "Vor dem Entscheid in sechs Wochen: Petition einreichen und Eltern um Unterstützung bitten."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe der Einheit fehlen oder sind falsch verwendet.",
+        "Einzelne Fachbegriffe sind korrekt, andere ungenau oder verwechselt.",
+        "Fachbegriffe der Einheit sind korrekt und zur Situation passend verwendet.",
+        "Fachbegriffe sind korrekt, passend und eigenständig verknüpft; Voraussetzungen und Grenzen werden genannt."
+      ],
+      "indikator_produkt": "Jeder Weg trägt die richtige Voraussetzung, etwa wer eine Petition einreichen darf."
+    },
+    {
+      "kn_kriterium": "Politisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Nicht erkennbar, wer entscheidet und wie man darauf Einfluss nehmen kann.",
+        "Wer entscheidet oder wie man Einfluss nehmen kann, wird teilweise erkannt.",
+        "Zuständigkeit, eigene Rechte und ein passender Weg der Einflussnahme sind korrekt verbunden.",
+        "Das politische Prinzip wird auf einen neuen Fall übertragen, mit Folgen für Wirkung und Abstützung."
+      ],
+      "indikator_produkt": "Das Factsheet sagt, wer entscheidet und warum der gewählte Weg dort Gewicht hat."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt ein fertiges Factsheet; die Satzanfänge auf S. 2 helfen beim ersten Satz.",
+    "scaffold_100": "Plus: Setzen Sie Ihr Factsheet digital um, damit Sie es teilen können – nach den Regeln der Karte «Gestaltungsregeln»."
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für die Form des Factsheets",
+      "tun": "Schreiben Sie Anliegen und Begründung in kurzen Sätzen, die Wege in Stichworten; lassen Sie Platz zwischen den Teilen und heben Sie nur den gewählten Weg hervor."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Begründung des Anliegens im Factsheet",
+      "tun": "Begründen Sie Ihr Anliegen mit einem Argument: Behauptung, Begründung und ein Beispiel aus Ihrem eigenen Alltag."
+    },
+    {
+      "ref": "hko-akteurskarte",
+      "fuer": "für den Entscheid in LF4: wer entscheidet, wer betroffen ist, welches Mittel wem offensteht"
+    }
+  ],
+  "mindmap_zentrum": "Durchsetzen oder andere gewinnen",
+  "mindmap_aeste": [
+    {
+      "titel": "Welche Rechte habe ich?",
+      "punkte": [
+        "Menschenrecht",
+        "politisches Recht",
+        "Stimmrecht",
+        "Wahlrecht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Welche Wege gibt es?",
+      "punkte": [
+        "Petition",
+        "Referendum",
+        "Initiative"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was gibt einem Weg Gewicht?",
+      "punkte": [
+        "Anliegen",
+        "Kenntnisnahme",
+        "Verbindlichkeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, welche Wege mir offenstehen, obwohl ich noch nicht abstimmen darf?",
+      "Weiss ich, wie verbindlich mein Weg ist, bevor der Gemeinderat entscheidet?"
+    ],
+    "mitnahme": [
+      "Mein Anliegen in einem Satz",
+      "Mein Weg und der nächste Schritt",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Wahlrecht",
+          "nach": "politisches Recht",
+          "text": "gehört zu"
+        },
+        {
+          "von": "Stimmrecht",
+          "nach": "Referendum",
+          "text": "ist Voraussetzung für"
+        },
+        {
+          "von": "Stimmrecht",
+          "nach": "Initiative",
+          "text": "ist Voraussetzung für"
+        },
+        {
+          "von": "Anliegen",
+          "nach": "Petition",
+          "text": "lässt sich einbringen als"
+        },
+        {
+          "von": "Petition",
+          "nach": "Kenntnisnahme",
+          "text": "verpflichtet nur zur"
+        },
+        {
+          "von": "Initiative",
+          "nach": "Verbindlichkeit",
+          "text": "schafft – mit Hürden"
+        },
+        {
+          "von": "Menschenrecht",
+          "nach": "politisches Recht",
+          "text": "gilt für mehr Menschen als"
+        },
+        {
+          "von": "Verbindlichkeit",
+          "nach": "gilt auch bei …",
+          "text": "zählt ebenso"
+        }
+      ],
+      "transfer": "Eine Busverbindung im Dorf soll gestrichen werden; in einer Online-Gruppe gilt plötzlich eine neue Regel; ein Bauprojekt im Quartier wird geplant.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Verband",
+          "Abstimmungsparole"
+        ],
+        "mit_medien": [
+          "Vorstoss",
+          "Interessengruppe"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn ich die Petition als offenen Weg nenne und Stimmrecht, Referendum und Initiative als verschlossen begründe (Kap. 3.2, S. 94–95; Kap. 6.4, S. 168–170).",
+        "Ja, wenn ich weiss: Die Behörde muss eine Petition nur zur Kenntnis nehmen, eine Antwort vor dem Entscheid ist nicht vorgeschrieben (Kap. 6.4, S. 170). Darum gewinne ich zusätzlich Unterstützung oder begründe, warum die Petition genügt (LF4)."
+      ],
+      "mitnahme": [
+        "Das Freibad soll an Werktagen bis 19 Uhr offen bleiben, damit Berufstätige es nutzen können.",
+        "Petition einreichen und Stimmberechtigte gewinnen; nächster Schritt (Fallüberlegung): Unterschriftenbogen entwerfen.",
+        "Zum Beispiel, ob es in der Gemeinde weitere Wege gibt, die mir offenstehen, und wer im Gemeinderat zuständig ist."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: drei Wege mit Voraussetzung",
+        "LF2: Anliegen, Wege offen/verschlossen",
+        "LF4: Weg gewählt, mit Fundstelle"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen und Fundstellen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Factsheet",
+      "vollstaendig_wenn": [
+        "Anliegen mit Begründung nach 3B",
+        "Zwei bis drei Wege mit Voraussetzung",
+        "Gewählter Weg mit nächstem Schritt"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Rechte, Wege und mein Anliegen",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 entscheiden, Factsheet beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Factsheet fertigstellen, mit den Feedback-Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo will ich sonst etwas erreichen, worüber andere entscheiden – und welcher Weg steht mir dort offen?",
+    "ziel": "Wer mitgestalten will, braucht ein begründetes Anliegen und einen Weg, der zum Anliegen und zu den eigenen Rechten passt — Wirkung entsteht selten durch Durchsetzen allein."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Ein Anliegen formulieren und den Weg der Mitwirkung nach Rechten, Verbindlichkeit und Wirkung wählen",
+    "lehrmittel_anker": "Kap. 3.2 S. 93-95 (Stufen der Rechte, Stimm- und Wahlrecht, Voraussetzungen) · Kap. 6.4 S. 168-170 (Referendum, Initiative, Petitionsrecht) · Kap. 6.6 S. 177-179 (Verbände und ihre Mittel)",
+    "kn_aktivierung": "Der KN verlangt, in der Leiterrunde zwischen Petition und kantonaler Initiative zu wählen: Wer darf welchen Weg nutzen, wie verbindlich ist er, was bewirkt er bis zum Entscheid des Kantonsparlaments – genau das ordnet das Factsheet.",
+    "transfer_check": "Kann die Lernende für ein neues Anliegen sagen, welcher Weg ihr offensteht, wie verbindlich er ist und wer entscheidet?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "leitfragen[2] — aus dem Abschnitt bzw. der Quelle nur die Aussagen ins Raster nehmen, die für das eigene Anliegen zählen"
+    },
+    {
+      "sk": 12,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — den eigenen Spielraum bestimmen und einen Weg der Mitwirkung wählen"
+    },
+    {
+      "sk": 6,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — das Anliegen im Factsheet nach dem 3B-Schema begründen und prüfen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 6.6 | S. 177-179",
+          "text": "Mit welchen Mitteln nehmen Verbände Einfluss, und was gibt ihnen Gewicht (Kap. 6.6)? Halten Sie im Befund fest, was Sie daraus für Ihr Anliegen ableiten: Was gäbe ihm mehr Gewicht?",
+          "liefert": "Belegte Mittel und ihr Gewicht",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 6.6 | S. 177-179",
+            "auftrag": "Lesen Sie Kap. 6.6, S. 177–179. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen dazu, wie Verbände Einfluss nehmen; ordnen Sie jeder einen Begriff aus LF1 oder dem Glossar (S. 8) zu.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 179, Funktion",
+              "lancieren Initiativen",
+              "Initiativen, Referenden",
+              "Initiative, Referendum"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Die meisten Mittel stehen auf S. 179; S. 178 zeigt Amnesty und WWF."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 6.6 nehmen Verbände Einfluss, indem …»",
+              "«Mein Anliegen bekäme mehr Gewicht, wenn …»"
+            ],
+            "produkt": "Zwei belegte Mittel und der Befund kommen in den Teil «Wege der Mitwirkung» (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Mittel der Verbände und ihr Gewicht",
+            "quelle_ref": "Kap. 6.6 | S. 177-179",
+            "quelle_stand": "2026-10-02",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Verbände lancieren und unterstützen Initiativen und Referenden, geben Abstimmungsparolen (Empfehlungen) heraus und haben Vertreter im National- oder Ständerat. Ihren Einfluss begründet S. 179 mit Mitgliederzahl und Finanzkraft.",
+                "quelle": "Kap. 6.6, S. 179"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Stellungnahme in der Vernehmlassung, Mitarbeit in Kommissionen, Lobbyarbeit in den Räten, enge Kontakte zu Parteien (S. 179); Brief- und Unterschriftenaktionen von Amnesty (S. 178); Verbände vertreten die Interessen ihrer Mitglieder (S. 177).",
+                "quelle": "Kap. 6.6, S. 177-179"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Initiative, Referendum, Stimmrecht und Wahlrecht stammen aus LF1. Unterschriftenaktion → Petition ist Deutung der Lernenden. Vernehmlassung hat keinen Begriff aus LF1; die Zeile gilt, wenn sie als Weg der Mitwirkung notiert ist.",
+                "quelle": "Kap. 3.2, 6.4"
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er die Gründe für den Einfluss (Mitgliederzahl, Finanzkraft, S. 179) mit der eigenen Lage verbindet. Was im eigenen Fall wirkt, ist Fallüberlegung, nicht Lehrmittel."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 179, Funktion",
+                "lancieren Initiativen",
+                "Initiativen, Referenden",
+                "Initiative, Referendum"
+              ],
+              [
+                "S. 179, Funktion",
+                "geben Abstimmungsparolen heraus",
+                "Empfehlung vor Abstimmungen",
+                "Stimmrecht (Deutung)"
+              ],
+              [
+                "S. 179, Funktion",
+                "Verband hat eigene Leute im Parlament",
+                "Spitzenvertreter im Rat",
+                "Wahlrecht (passiv, Deutung)"
+              ],
+              [
+                "S. 178, Amnesty",
+                "sammeln Unterschriften",
+                "Brief- und Unterschriftenaktionen",
+                "Petition (Deutung)"
+              ]
+            ],
+            "befund": "Verbände haben laut S. 179 grossen Einfluss, weil sie viele Mitglieder und viel Geld haben; sie lancieren Initiativen und Referenden, geben Abstimmungsparolen heraus und sitzen im Parlament. Fallüberlegung: Mir allein steht davon nur die Petition offen; mehr Gewicht bekäme ich mit anderen, die abstimmen dürfen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 6.4 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Laut Kap. 6.4 (S. 170) muss die Behörde auf eine Petition nicht antworten, in der Praxis tut sie es. Beurteilen Sie, was das für Ihren Fall heisst. Entscheiden Sie: Petition allein – oder erst Stimmberechtigte gewinnen?",
+          "liefert": "Gewählter Weg mit Begründung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Akteurskarte (S. 6), Notiz am Rand: Wer entscheidet, wer könnte Ihr Anliegen mittragen?"
+            ],
+            "satzanfaenge": [
+              "«Die Regel sieht vor, dass …»",
+              "«In meinem Fall läuft es so: …»",
+              "«Darum wähle ich …, weil …; die Grenze ist …»"
+            ],
+            "produkt": "Der gewählte Weg mit Begründung kommt markiert in den Teil «Gewählter Weg» (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Regel mit Fundstelle: Kenntnisnahme ja, Antwort nicht vorgeschrieben (Kap. 6.4, S. 170), und was ohne 18 Jahre und Bürgerrecht verschlossen ist (Kap. 3.2, S. 94–95)",
+                "nennt, wie es im Fall läuft: in der Praxis kommt eine Antwort, offen ist, ob vor dem Entscheid in sechs Wochen",
+                "entscheidet sich für einen Weg und sagt, wer entscheidet und warum der Weg dort wirkt",
+                "nennt ausdrücklich eine Grenze des gewählten Wegs"
+              ],
+              "beispiel_pol_1": "Die Regel verlangt vom Gemeinderat nur, meine Petition zur Kenntnis zu nehmen; antworten muss er nicht (Kap. 6.4, S. 170). Stimm- und Wahlrecht, Referendum und Initiative bleiben mir ohne 18 Jahre und Bürgerrecht verschlossen (Kap. 3.2, S. 94–95). In der Praxis wird eine Petition aber beantwortet (S. 170). Ich wähle sie, weil ich sie sofort selbst einreichen kann und alle Urteilsfähigen sie mittragen dürfen. Fallüberlegung: Tragen viele mit, sieht der Gemeinderat vor dem Entscheid, wie viele betroffen sind; das ist meine Abstützung. Grenze: Eine Antwort vor dem Entscheid ist nicht garantiert, und ändern muss er nichts. So würde ich überall vorgehen, wo eine Behörde bald entscheidet.",
+              "beispiel_pol_2": "Die Regel gibt mir mit der Petition keinen Anspruch auf eine Antwort (Kap. 6.4, S. 170), und abstimmen darf ich ohne 18 Jahre und Bürgerrecht nicht (Kap. 3.2, S. 94–95). Ob eine Antwort vor dem Entscheid in sechs Wochen kommt, ist offen. Darum reiche ich die Petition ein und gewinne zusätzlich Stimmberechtigte, etwa Eltern, die beim Gemeinderat vorsprechen (Fallüberlegung). Das braucht mehr Zeit, ist aber breiter abgestützt. Grenze: Entscheiden wird allein der Gemeinderat, und Verbündete zu finden kann misslingen. Dasselbe gilt überall, wo ich selbst noch nicht abstimmen darf.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Regel und Fundstelle oder eine Antwort, die nur «Petition ist gut» sagt, ohne zu klären, ob sie vor dem Entscheid wirkt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was die Regel vorsieht",
+          "Wie es in meinem Fall läuft",
+          "Mein Weg und warum"
+        ],
+        "hinweis": "Ein bis zwei Einträge je Spalte genügen. Aus den Spalten 1 und 2 muss folgen, was Sie in Spalte 3 entscheiden.",
+        "loesung_zeilen": [
+          [
+            "Petition: Kenntnisnahme Pflicht, Antwort nicht (S. 170)",
+            "Antwort kommt in der Praxis, vielleicht aber erst nach dem Entscheid",
+            "Petition einreichen und Stimmberechtigte gewinnen"
+          ],
+          [
+            "Stimm- und Wahlrecht erst ab 18, mit Bürgerrecht (S. 94–95; Ausnahme S. 95 beachten)",
+            "Ich kann weder wählen noch abstimmen",
+            "Andere, die abstimmen dürfen, tragen das Anliegen mit"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 6.6 (S. 3)",
+        "beispiel": [
+          "S. 12, Abs. 2 (Beispielwert) · Quartierladen verkauft Gemüse vom Hof · «3 Höfe» (Beispielwert) · → Direktverkauf"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Zeile und ein Factsheet aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Welche Wege nennt die Quelle, um ein Anliegen vor ein Parlament zu bringen, wie verbindlich ist jeder – und welcher davon steht Ihnen in Ihrem Fall offen? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "liefert": "Belegte Mittel und ihr Gewicht",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-231a-pflicht",
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Zuerst ganz hören, dann Zeile für Zeile: Zeitmarke, Rolle, Stichworte.",
+              "Achten Sie auf zwei Wege, Petition und Vorstoss: Wer darf sie nutzen, was tut der Rat?"
+            ],
+            "satzanfaenge": [
+              "«In der Quelle sagt … (Zeitmarke), dass …»",
+              "«In meinem Fall steht mir … offen, weil …»"
+            ],
+            "produkt": "Zwei Zeilen mit Zeitmarke und der Befund kommen in den Teil «Wege der Mitwirkung» (Schritt 03)."
+          },
+          "loesung": {
+            "kern": "Petition und Vorstoss: offen gegen verbindlich",
+            "quelle_ref": "q-231a-pflicht",
+            "quelle_stand": "2026-10-02",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Petition des Jugendparlaments, nur zur Kenntnis genommen (00:44); ein Kantonsrat will, dass der Rat abstimmt (01:19), gefordert ist ein Vorstossrecht (01:29, Reporter); Vorstoss nur für Gewählte (01:40); Jugendparlament ungewählt, eine Interessengruppe unter vielen (02:41).",
+                "quelle": "Quelle, 00:44-02:41"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Petitionen haben weniger Gewicht (00:13); Wertschätzung der Engagierten (01:57); der Rat beauftragt die Regierung, andere Wege zu suchen (02:59).",
+                "quelle": "Quelle, 00:13-02:59"
+              },
+              {
+                "label": "Begriffe",
+                "text": "«Wahlrecht» und «politische Rechte» sind Deutung. «Vorstoss» und «Interessengruppe» sind Wörter der Quelle (Glossar)."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig, wenn er die zwei Wege nach Verbindlichkeit unterscheidet und sagt, welcher im eigenen Fall offensteht. Ein gewähltes Mitglied zu gewinnen, ist Folgerung; dass die Petition offensteht, sagt Kap. 6.4, S. 170."
+              },
+              {
+                "label": "Hinweis",
+                "text": "Mundart, Stand Juni 2023, Luzern. Rollen statt Namen; Stimmenverhältnis nicht verlangen."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:44 · Reporter",
+                "Forderung kommt als Petition, Rat nimmt sie nur zur Kenntnis",
+                "ordnet ein",
+                "Petition"
+              ],
+              [
+                "01:19 · Kantonsrat Grüne (01:29 Reporter)",
+                "Rat soll abstimmen müssen; Forderung: Recht auf Vorstoss",
+                "will Verbindlichkeit",
+                "politische Rechte (Deutung)"
+              ],
+              [
+                "01:40 · Kantonsrätin SVP",
+                "Vorstoss nur für vom Volk Gewählte",
+                "will die Grenze halten",
+                "Wahlrecht (Deutung)"
+              ],
+              [
+                "02:41 · Kantonsrat FDP",
+                "Jugendparlament nicht gewählt, eine Interessengruppe unter vielen",
+                "will keine Sonderbehandlung",
+                "Wahlrecht (Deutung)"
+              ]
+            ],
+            "befund": "Die Quelle zeigt: Die Petition des Jugendparlaments nimmt der Rat nur zur Kenntnis (00:44); ein Kantonsrat fordert, dass der Rat über solche Anliegen abstimmen muss (01:19), doch Vorstösse bleiben den Gewählten vorbehalten (01:40). Dass mir die Petition offensteht, sagt Kap. 6.4, S. 170. Folgerung: Mehr Gewicht bekäme mein Anliegen über ein gewähltes Mitglied."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 6.4 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 6.4 (S. 170) regelt, was eine Behörde mit einer Petition tun muss. Die Quelle zeigt, was erst ein Vorstoss bewirkt. Entscheiden Sie: Petition allein – oder zusätzlich jemanden gewinnen, der Ihr Anliegen einbringt?",
+          "liefert": "Gewählter Weg mit Begründung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Notieren Sie je Seite des Spannungsfelds einen Satz mit Fundstelle (Seite, Zeitmarke).",
+              "Akteurskarte (S. 6), Notiz am Rand: Wer entscheidet, wer könnte Ihr Anliegen einbringen?"
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel steht mir … offen, aber …»",
+              "«Die Quelle zeigt, dass … (Zeitmarke)»",
+              "«Darum wähle ich …, weil …; die Grenze ist …»"
+            ],
+            "produkt": "Der gewählte Weg mit Begründung kommt markiert in den Teil «Gewählter Weg» (Schritt 04)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt aus Kap. 6.4, S. 170 und Kap. 3.2, S. 94–95, was mir offensteht (Petition) und was nicht (Stimm- und Wahlrecht)",
+                "nennt aus der Quelle mit Zeitmarke, dass der Rat eine Petition nur zur Kenntnis nimmt (00:44) und Vorstösse Gewählten vorbehalten sind (01:40)",
+                "entscheidet für den eigenen Fall: Petition allein oder zusätzlich eine gewählte Person gewinnen, mit Folge für Wirkung und Abstützung",
+                "nennt ausdrücklich eine Grenze des gewählten Wegs"
+              ],
+              "beispiel_pol_1": "Kap. 6.4, S. 170 gibt mir die Petition, obwohl ich noch nicht 18 bin; Stimm- und Wahlrecht bleiben mir verschlossen (Kap. 3.2, S. 94–95). Die Quelle zeigt, dass ein Rat eine Petition nur zur Kenntnis nimmt (00:44) und Vorstösse den Gewählten vorbehalten sind (01:40). Ich wähle trotzdem die Petition, weil ich sie selbst und sofort einreichen kann und alle Urteilsfähigen sie mittragen dürfen. Fallüberlegung: Tragen viele mit, sieht der Gemeinderat vor dem Entscheid, wie viele es trifft; das stützt mein Anliegen ab. Grenze: Er muss weder antworten noch etwas ändern. So würde ich überall vorgehen, wo ein Entscheid bald fällt.",
+              "beispiel_pol_2": "Laut Kap. 6.4, S. 170 muss niemand auf meine Petition antworten, und wählen oder abstimmen darf ich noch nicht (Kap. 3.2, S. 94–95). Die Quelle zeigt: Eine Petition wird nur zur Kenntnis genommen (00:44), einen Vorstoss dürfen nur Gewählte einreichen (01:40). Darum reiche ich die Petition ein und gewinne zusätzlich ein Mitglied des Gemeinderats, das mein Anliegen vor dem Entscheid in sechs Wochen anspricht (Fallüberlegung). Das ist aufwendiger, aber besser abgestützt. Grenze: Ob jemand mitmacht, ist offen, und entscheiden wird der ganze Gemeinderat. Das gilt überall, wo ich selbst noch nicht wählen darf.",
+              "nicht_tragfaehig": "Ein Entscheid, der nur eine Seite nennt, ohne Fundstelle (Seite oder Zeitmarke) auskommt oder den Vorstoss als eigenen Weg wählt, obwohl er Gewählten vorbehalten ist."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-231a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Hören Sie die Quelle gemäss QR-Seite. Tragen Sie vier Aussagen zu Petition und Vorstoss ein: vorn Zeitmarke und wer spricht, dann Kernaussage, Absicht und ein Begriff aus LF1 oder dem Glossar (S. 8).",
+          "raster": {
+            "spalten": [
+              "Wer spricht",
+              "Kernaussage",
+              "Absicht",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-231a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wer darf eine Petition einreichen, und was muss die Behörde damit tun?",
+          "erwartung": "Jede Person darf, unabhängig von Alter, Staatsangehörigkeit und Wohnort (Abs. 2), bei Gemeinde, Kanton oder Bund (Abs. 6); ohne Frist und ohne Mindestzahl an Unterschriften (Abs. 9). Die Behörde muss davon Kenntnis nehmen, aber nicht antworten; in der Praxis antwortet sie fast immer (Abs. 11). Deckt sich im Kern mit Kap. 6.4, S. 170; ch.ch sagt «fast immer», das Lehrmittel «jede»."
+        },
+        {
+          "ref": "q-231a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was erreicht die Jugendsession mit ihren Forderungen, und wovon hängt ab, was daraus wird?",
+          "erwartung": "Die Jugendlichen beraten ihre Forderungen und übergeben sie dem Nationalratspräsidenten (00:14–00:18). Was eine Mehrheit findet, geht als Forderung an die Politik, ohne Verbindlichkeit (01:31–01:35). Eine teilnehmende Person fühlt sich ernst genommen (02:49). Ob mehr daraus wird, entscheiden die Politikerinnen und Politiker, die sonst im Saal sitzen (02:58–03:04)."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "01:10 (Beispielwert) · Platzwartin · Rasen nach Regen gesperrt · will Schäden verhindern · → Platzordnung"
+        ]
+      },
+      "scaffold_90": "Hören Sie den Anfang gemeinsam und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt ein fertiges Factsheet."
+    }
+  }
+}

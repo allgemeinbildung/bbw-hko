@@ -174,6 +174,10 @@ for (const slug of slugs) {
     // (die Seite ist pro Bogen datengesteuert — siehe docs/methodenkartei.md).
     hat_methoden: alleHf.some((s) => Array.isArray(s?.methoden) && s.methoden.length > 0),
     hat_dossier: !!dossier,
+    // Heft v4.2: Spuren (docs/upgrade-v4.2/ENTSCHEIDE.md, E3). `hat_medien` = die Spur
+    // «mit Medien» existiert in mindestens einem Heft.
+    hat_spuren: alleHf.some((s) => s?.spuren && typeof s.spuren === 'object' && Object.keys(s.spuren).length > 0),
+    hat_medien: alleHf.some((s) => !!s?.spuren?.mit_medien),
     hybrid_situation_titel: kn?.hybrid_situation?.titel || null,
     kn_typen: (kn?.kn_typen || []).map((t) => ({ typ: t.typ, label: t.label })),
     bundle_dateien: estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter: existsSync(begleiterPath), ki, lernprompt, lernbegleiter }),

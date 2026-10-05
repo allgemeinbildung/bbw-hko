@@ -1,0 +1,398 @@
+{
+  "id": "4.2.1_risiken_absichern_set",
+  "modul": "4.2",
+  "modul_titel": "Verantwortung für mich und andere übernehmen — Risiken erkennen und absichern",
+  "einheit_titel": "Risiken absichern",
+  "lehrgang": "EFZ_3J",
+  "lehrgaenge": [
+    "EFZ_3J",
+    "EFZ_4J"
+  ],
+  "thema": "T4",
+  "version": "2.1.0",
+  "status": "publiziert",
+  "prinzip_ref": "4.2.1_risiken_absichern_prinzip",
+  "kn_ref": "4.2.1_risiken_absichern_kn",
+  "herausforderungen": [
+    "4.2.1_risiken_absichern_hf_A",
+    "4.2.1_risiken_absichern_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "4.2.1_risiken_absichern_hf_A",
+      "konzept": "Kosten und Risiko zweier Absicherungen durchrechnen und entscheiden, wie viel ich selbst trage"
+    },
+    {
+      "position": 2,
+      "herausforderung": "4.2.1_risiken_absichern_hf_B",
+      "konzept": "Erkennen, wo ich hafte, was eine Versicherung deckt und was trotzdem an mir hängen bleibt – und daraus Massnahmen ableiten"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Prämie",
+      "definition": "Betrag, den ich der Versicherung regelmässig für meinen Schutz zahle.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Franchise",
+      "definition": "Betrag im Jahr, den ich zuerst selbst zahle, bevor die Krankenkasse zahlt.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Selbstbehalt",
+      "definition": "Krankenkasse: 10 % der Kosten über der Franchise, max. CHF 700 (Stand 2026).",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Kostenbeteiligung",
+      "definition": "Mein Anteil an den Behandlungskosten, vor allem Franchise und Selbstbehalt.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Solidaritätsprinzip",
+      "definition": "Alle zahlen Prämien in einen Topf; wer einen Schaden hat, erhält Geld daraus.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Unfalldeckung",
+      "definition": "Schutz bei Unfall: Betrieb (ab 8 Std./Woche auch Freizeit) oder Krankenkasse.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Police",
+      "definition": "Urkunde der Versicherung; sie zeigt, was ich abgeschlossen habe.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Reserve",
+      "definition": "Geld, das ich zurücklege, damit ich meine Kostenbeteiligung zahlen kann.",
+      "herkunft": "heft",
+      "heft": "A"
+    },
+    {
+      "begriff": "Grundversicherung",
+      "definition": "Pflichtteil der Krankenkasse; die Leistungen sind bei allen Kassen gleich.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Zusatzversicherung",
+      "definition": "Freiwillige Versicherung für das, was die Grundversicherung nicht zahlt.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "ordentliche Franchise",
+      "definition": "Tiefste Franchise für Erwachsene: CHF 300 im Jahr (Stand 2026).",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Zwischenstufe",
+      "definition": "Wählbare Franchise zwischen der tiefsten und der höchsten Stufe.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Haftpflicht",
+      "definition": "Pflicht, einen Schaden zu ersetzen, den ich jemand anderem zugefügt habe.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Drittperson",
+      "definition": "Jede Person ausser mir, meinen Angehörigen und den Leuten in meinem Haushalt.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Verschuldenshaftung",
+      "definition": "Ich hafte, weil ich den Schaden verschuldet habe.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Kausalhaftung",
+      "definition": "Ich hafte auch ohne eigenes Verschulden – etwa für mein Motorfahrzeug oder meinen Hund.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Motorfahrzeughaftpflicht",
+      "definition": "Pflichtversicherung; zahlt Schäden, die ich mit dem Fahrzeug anderen zufüge.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Privathaftpflicht",
+      "definition": "Freiwillige Versicherung für Schäden, die ich anderen im Alltag zufüge.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "grobe Fahrlässigkeit",
+      "definition": "Die nötige Sorgfalt klar ausser Acht lassen, etwa betrunken oder bei Rot fahren.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Regress",
+      "definition": "Rückgriff: Die Versicherung fordert einen Teil des bezahlten Schadens von mir zurück.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Selbstbehalt",
+      "definition": "Haftpflicht: Betrag laut Police, den ich bei einem Schaden selbst zahle.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Bonus-Malus",
+      "definition": "Prämienstufen: unfallfrei zahle ich weniger, nach einem Unfall mehr.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Junglenker",
+      "definition": "Wer ein Fahrzeug lenkt und noch nicht 25 Jahre alt ist.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Obligatorium",
+      "definition": "Vom Staat vorgeschriebene Pflicht, eine Versicherung abzuschliessen.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Leistungskürzung",
+      "definition": "Meine Versicherung zahlt mir weniger, weil ich grob fahrlässig war.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Ablenkung",
+      "definition": "Beim Fahren nicht auf den Verkehr achten; die Quelle nennt sie als Beispiel.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "Neu im Betrieb – was müssen die Neuen wissen?",
+    "lebensbereich": "Lehrbetrieb (erster Tag der neuen Lernenden)",
+    "persona": {
+      "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "In meinem Lehrbetrieb beginnen im August drei neue Lernende. Sie sind 15 oder 16 Jahre alt und arbeiten rund 32 Stunden pro Woche im Betrieb. Zwei kommen mit dem Velo, einer mit dem Mofa. Bei der Arbeit haben wir täglich Material und Geräte in der Hand, die Kundinnen und Kunden gehören. Meine Berufsbildnerin bittet mich, für den ersten Tag ein Merkblatt zu schreiben und es in zwei Minuten vorzustellen: «Nicht alles, was passieren kann – nur, was sie wissen müssen und was sie selbst in der Hand haben.» Ich will klären, wer zahlt, wenn jemand von ihnen krank wird, verunfallt oder etwas kaputt macht – und was sie selbst dagegen tun können.",
+    "zahlen_tabelle": [
+      {
+        "label": "Alter der drei neuen Lernenden",
+        "wert": "15 oder 16 Jahre"
+      },
+      {
+        "label": "Arbeit im Betrieb pro Woche",
+        "wert": "rund 32 Stunden"
+      },
+      {
+        "label": "Arbeitsweg",
+        "wert": "2 mit dem Velo, 1 mit dem Mofa"
+      }
+    ],
+    "leitfrage": "Erkläre ich den Neuen vor allem, wer im Schadenfall zahlt – oder wie sie Unfälle und Schäden verhindern?",
+    "mehrdeutigkeit": {
+      "trade_off": "Unfälle verhindern vs. erklären, wer im Schadenfall zahlt",
+      "hint": "Auf eine Seite passt nicht alles. Mehr zum Verhindern oder mehr zum Absichern: Beides lässt sich begründen."
+    },
+    "aktivierte_trade_offs": [
+      "Risiko vermeiden vs. Folgen absichern",
+      "Schutz durch die Versicherung vs. Verantwortung für mein Verhalten"
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich",
+      "Produktion mündlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "einzel",
+        "partner",
+        "gruppe"
+      ],
+      "empfehlung": "Schreiben Sie das Merkblatt allein. Proben Sie die Kurzerklärung zu zweit oder zu dritt und lassen Sie sich zu «Fachkorrektheit» und «Ethisches Prinzip» eine Rückmeldung geben."
+    },
+    "auftrag": "Schreiben Sie mit den Werkzeugen aus Heft A und Heft B ein Merkblatt für die Neuen und stellen Sie es in einer Kurzerklärung vor.",
+    "schritte": [
+      {
+        "label": "01 Risiken ordnen",
+        "hint": "Eigenes Blatt (nicht abgeben): Wer zahlt bei Krankheit, bei Unfall, was bleibt bei den Neuen? Werkzeug: Heft A, S. 2, 8."
+      },
+      {
+        "label": "02 Haftung prüfen",
+        "hint": "Eigenes Blatt: Wer haftet für kaputtes Material der Kundschaft (Kap. 5.2, S. 151)? Was offen bleibt: als Frage notieren. Heft B, S. 2, 8."
+      },
+      {
+        "label": "03 Auswahl treffen",
+        "hint": "Eigenes Blatt: Wählen Sie aus 01 und 02 je eine Aussage für Abschnitt 1 und 2. Für Abschnitt 3: etwas, das die Neuen selbst tun können."
+      },
+      {
+        "label": "04 Merkblatt",
+        "hint": "A2: Teilen Sie das Feld in drei Abschnitte, Stichworte: krank oder verunfallt · etwas kaputt gemacht · was ihr selbst tun könnt."
+      },
+      {
+        "label": "05 Kurzerklärung",
+        "hint": "A3: Stichworte je Station (2: Abschnitte 1 und 2 · 3: Abschnitt 3). Nach Station 4 der Schluss: «Am wichtigsten ist mir …, weil …»"
+      }
+    ],
+    "abgaben": [
+      "Merkblatt (A2): eine Seite, drei Abschnitte in Stichworten",
+      "Stichworte zur Kurzerklärung (A3)",
+      "Selbsteinschätzung auf den vier Kriterien"
+    ],
+    "produkte": [
+      {
+        "schritt": 4,
+        "form": "flaeche",
+        "modus": "Produktion schriftlich und bildlich"
+      },
+      {
+        "schritt": 5,
+        "form": "spur",
+        "modus": "Produktion mündlich",
+        "stationen": [
+          "Was ich euch heute mitgebe",
+          "Was der Betrieb deckt – und was nicht",
+          "Was ihr selbst in der Hand habt",
+          "Wo ihr nachfragen könnt"
+        ],
+        "hinweis": "Planen Sie Ihre Erklärung in Stichworten, keinen ganzen Text. Sprechen Sie frei vor zwei bis drei Personen und stoppen Sie die Zeit. Geben Sie diese Seite mit Ihren Stichworten ab.",
+        "dauer": "2 Minuten"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Meine erste eigene Police – welche Franchise wähle ich?",
+        "inhalte": [
+          "Kostenbeteiligung; was ich selbst trage (S. 2, 4)",
+          "Begriffsnetz: Unfalldeckung, Police, Reserve (S. 8)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Ich bin doch versichert – wofür hafte ich trotzdem?",
+        "inhalte": [
+          "Haftung; was an mir hängen bleibt (S. 2, 4)",
+          "Prüffragen zu Haftung und Deckung (S. 8)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachbegriffe der Einheit fehlen oder sind falsch gebraucht.",
+          "Einige Fachbegriffe stimmen, andere sind ungenau oder verwechselt.",
+          "Fachbegriffe und Angaben sind richtig und passen zur Situation.",
+          "Fachbegriffe richtig und selbstständig verbunden; ihre Grenzen sind benannt."
+        ],
+        "indikator_produkt": "Merkblatt: Wer bei Krankheit, Unfall und Schaden zahlt, stimmt."
+      },
+      {
+        "kn_kriterium": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Aussagen stehen ohne Begründung da.",
+          "Eine Begründung ist angedeutet, bleibt aber lückenhaft.",
+          "Die Aussagen sind nachvollziehbar begründet und mit einem Beleg gestützt.",
+          "Schlüssig begründet; ein Einwand ist beantwortet, Folgen sind benannt."
+        ],
+        "indikator_produkt": "Auswahl mit Alter, Pensum, Arbeitsweg begründet; Einwand «Betrieb zahlt alles» beantwortet."
+      },
+      {
+        "kn_kriterium": "Ethisches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Verantwortung für sich und für andere kommt nicht vor.",
+          "Verantwortung ist genannt, aber nicht auf die Situation bezogen.",
+          "Eigene Verantwortung und die gegenüber anderen sind auf die Situation angewendet.",
+          "Eigenverantwortung und Solidarität sind abgewogen und auf Neues übertragen."
+        ],
+        "indikator_produkt": "Abschnitt 3: von meinen Heften auf die Neuen übertragen – was sie für sich und andere tun."
+      },
+      {
+        "kn_kriterium": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position ist nicht erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+          "Die Position steht klar in Ich-Form und ist begründet.",
+          "Begründete Position in Ich-Form; was für die andere Lösung spricht, ist anerkannt."
+        ],
+        "indikator_produkt": "Kurzerklärung, Schlusssatz in Ich-Form: was mir für die Neuen am wichtigsten ist, warum."
+      }
+    ],
+    "kontext_ausschluss": [
+      "Kinderprämie (Heft A)",
+      "Rollerfahrt, Velofahrerin (Heft B)",
+      "Interrail, Stellenantritt, Überbrückung (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Das Merkblatt (A2) hat drei Abschnitte in Stichworten und stimmt in der Sache. Krank oder verunfallt: Unfälle bei der Arbeit sind über den Betrieb versichert; wer mindestens acht Stunden pro Woche arbeitet – die Neuen arbeiten rund 32 –, ist es auch in der Freizeit, ohne Franchise und Selbstbehalt (Kap. 4.2, S. 131). Bei Krankheit zahlt die Krankenkasse; für Kinder und Jugendliche bis 18 liegt die Franchise je nach Police zwischen 0 und 600 Franken (S. 129). Wie hoch der Selbstbehalt für Jugendliche ist und ob der Arbeitsweg als Berufs- oder Nichtberufsunfall zählt, sagt das Lehrmittel nicht; beides ist nicht verlangt (Gesetz: höchstens CHF 350 im Jahr, KVV Art. 103; ab acht Wochenstunden ist beides versichert, UVV Art. 13).",
+        "Etwas kaputt gemacht: Für Schäden, die Lernende bei der Arbeit an Sachen der Kundschaft verursachen, haftet gegenüber der Kundschaft der Betrieb (Kausalhaftung des Arbeitgebers, Kap. 5.2, S. 151; OR Art. 55). Ob der Schaden gedeckt ist, hängt von der Haftpflichtversicherung des Betriebs ab; sie ist freiwillig (Kap. 4.1, S. 127) – tragfähig ist «im Betrieb nachfragen». Ob der Betrieb danach etwas von den Lernenden verlangen kann, steht nicht in den Kapiteln der Einheit und ist nicht verlangt; wer es nennt, hat recht mit: Lernende haften dem Betrieb nur bei Absicht oder Fahrlässigkeit, gemessen an Ausbildungsstand und Erfahrung (Kap. 1.4, S. 31; OR Art. 321e). Für Schäden an Dritten auf dem Arbeitsweg gilt: Wer schuld ist, haftet; eine Privathaftpflicht ist freiwillig (S. 151–152). Zum Mofa sagt das Lehrmittel nichts Eigenes (S. 150 nennt Auto und Motorrad), zur Mitversicherung über die Eltern ebenfalls nichts – tragfähig ist der Hinweis «in der eigenen Police oder der der Eltern nachsehen».",
+        "Abschnitt 3 und die Kurzerklärung (A3: zwei Minuten, vier Stationen in Stichworten) nennen mindestens eine Sache, die die Neuen selbst in der Hand haben – ein Risiko vermeiden oder vermindern, bevor eine Versicherung zahlen muss (Kap. 4.1, S. 122) –, und machen klar, dass eine Versicherung die eigene Verantwortung nicht ersetzt. Die Auswahl ist begründet: drei Dinge, die die Neuen wissen müssen, nicht alles, was passieren kann."
+      ],
+      "tragfaehig": "Merkblatt: (1) Krank oder verunfallt – Unfall bei der Arbeit oder in der Freizeit: über den Betrieb versichert, sofort melden; krank: eure Krankenkasse, Police zu Hause ansehen. (2) Etwas kaputt gemacht – Schaden an Sachen der Kundschaft sofort der Berufsbildnerin melden; gegenüber der Kundschaft haftet der Betrieb. (3) Was ihr selbst tun könnt – bei Geräten nachfragen statt ausprobieren, auf dem Arbeitsweg das Handy in der Tasche lassen (eigene Überlegungen, nicht aus dem Lehrmittel). Kurzerklärung: «Ich gebe euch heute drei Dinge mit … Am wichtigsten ist mir, dass ihr einen Schaden sofort meldet, denn der Betrieb kann nur decken, was er weiss.» — Ebenso tragfähig: ein Merkblatt, das den grössten Teil dem Verhindern widmet und die Versicherungen nur in je einer Zeile nennt, oder eines, das vor allem erklärt, wer zahlt; beides lässt sich mit dem Fall begründen.",
+      "nicht_tragfaehig": "Ein Merkblatt, das alle Versicherungen aufzählt, ohne auszuwählen; eines, das Krankheit und Unfall verwechselt (etwa eine Franchise beim Unfall); die Aussage «der Betrieb zahlt alles, euch kann nichts passieren»; pauschale Behauptungen dazu, was Lernende dem Betrieb zurückzahlen müssen oder dass sie über die Eltern mitversichert sind (hängt vom Einzelfall und von der Police ab); ein Abschnitt 3 ohne etwas, das die Neuen selbst tun können; eine Kurzerklärung, die das Merkblatt nur vorliest."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}

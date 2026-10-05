@@ -1,0 +1,963 @@
+{
+  "id": "1.2.1_lernzeit_planen_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "1.2",
+  "modul_titel": "Ins Berufsleben einsteigen — effektiv lernen und planen",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Meine Woche planen – und umplanen, wenn sie kippt",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Wochenplan besprechen und anpassen"
+  },
+  "prinzip_ref": "1.2.1_lernzeit_planen_prinzip",
+  "nrlp": {
+    "nr": "1.2.1",
+    "nr_primary": [
+      "1.2.1"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sprachmodus_ids": [
+      "SM7"
+    ],
+    "sk": [
+      8,
+      2,
+      4
+    ],
+    "kompetenz_id": "1.2.1",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann meine Lern- und Arbeitszeit in Hinblick auf meine neue Lebenssituation strukturiert planen und meine Planung bei Bedarf anpassen.",
+    "lebensbezug_text": "Ich lerne effektiv und setze meine Ressourcen effizient ein."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Seit dem Lehrbeginn gehe ich um halb sieben aus dem Haus und bin um halb sieben wieder daheim. Mir bleiben die Abende: von Montag bis Freitag je drei Stunden, zusammen fünfzehn. Am Sonntag habe ich jeden Abend durchgeplant: drei Stunden Hausaufgaben, drei Stunden Lernen für die Prüfung in Berufskunde, zwei Stunden Lerndokumentation, am Donnerstag drei Stunden Bandprobe, am Freitag drei Stunden mit meinen Freunden. Vierzehn Stunden waren vergeben, eine blieb frei. Am Dienstag hat mein Lehrbetrieb den Einsatzplan geändert: Am Mittwoch und am Freitag dauert die Arbeit je zwei Stunden länger. Vier Stunden fallen weg, und mein Plan stimmt nicht mehr. Die Hausaufgaben muss ich abgeben, die Band zählt auf mich, und meine Freunde habe ich seit zwei Wochen nicht gesehen. Ich will klären, wie ich eine Woche so plane, dass sie eine solche Änderung aushält – und was zuerst weicht, wenn es eng wird.",
+  "zahlen_tabelle": [
+    {
+      "label": "Freie Abendstunden Mo–Fr (5 × 3 Std.)",
+      "wert": "15 Std."
+    },
+    {
+      "label": "Davon am Sonntag verplant",
+      "wert": "14 Std."
+    },
+    {
+      "label": "Am Sonntag frei gelassen",
+      "wert": "1 Std."
+    },
+    {
+      "label": "Fallen mit dem neuen Einsatzplan weg (2 × 2)",
+      "wert": "4 Std."
+    }
+  ],
+  "leitfrage": "Wie plane ich meine Woche so, dass sie hält – und wie viel lasse ich offen für das, was dazwischenkommt?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Fester Plan vs. Spielraum für Unvorhergesehenes",
+    "hint": "Ein voller Plan bringt alles unter, solange nichts dazwischenkommt. Reserve fängt Änderungen auf, kostet aber Platz für Aufgaben. Wie viel lassen Sie offen?"
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 20.5",
+      "titel": "Lernplanung",
+      "unterueberschrift": "Wochenplanung, ALPEN, ABC-Analyse",
+      "seiten": "Seite 442-443",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 20.4",
+      "titel": "Arbeitsplanung und Lernjournal",
+      "unterueberschrift": "Änderungen, Rückblick",
+      "seiten": "Seite 440-441",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 20.3",
+      "titel": "Zielformulierung",
+      "unterueberschrift": "SMART-Kriterien",
+      "seiten": "Seite 438",
+      "fuer_leitfrage": [
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Am Ende besprechen Sie Ihren neuen Wochenplan zu zweit und passen ihn an. LF1 liefert die Grundsätze der Planung und die drei Prioritäten, LF2 die Rechnung zu verplanter Zeit und Reserve, LF3 einen belegten Befund für den neuen Wochenplan, LF4 Ihren Entscheid zu Reserve und Prioritäten.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 20.5 | S. 442-443",
+      "text": "Erklären Sie drei Grundsätze der Wochenplanung und was die Buchstaben A, B und C in der ABC-Analyse bedeuten. Nennen Sie einen Vorteil, den eine Planung am Bildschirm gegenüber Papier hat.",
+      "liefert": "Grundsätze der Wochenplanung und drei Prioritäten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie auf S. 442 die Grundsätze der Wochenplanung und wählen Sie drei aus.",
+          "Die ABC-Analyse steht auf S. 443 unten, der Hinweis zur Software auf S. 442."
+        ],
+        "satzanfaenge": [
+          "«Ein Grundsatz der Wochenplanung lautet …»",
+          "«A-Aufgaben sind solche, die …»",
+          "«Am Bildschirm kann ich …»"
+        ],
+        "produkt": "Grundsätze und Prioritäten brauchen Sie für jede Zeile Ihres Wochenplans (S. 7)."
+      },
+      "loesung": {
+        "kern": "Sechs Grundsätze, drei Prioritäten, Vorteil Software",
+        "zeilen": [
+          {
+            "label": "Zweck",
+            "text": "Wer das Lernen plant, lernt mit mehr Erfolg, muss weniger im Kopf behalten und vergisst seltener etwas.",
+            "quelle": "Kap. 20.5, S. 442"
+          },
+          {
+            "label": "Grundsätze",
+            "text": "Sechs stehen zur Wahl, drei genügen: alle Termine und Aufgaben eintragen · nach Priorität und Dringlichkeit auswählen, was in die Woche gehört · Grosses aufteilen und Pausen einplanen · mit Leichtem beginnen · Erledigtes streichen und Offenes neu ansetzen · mit Bleistift schreiben, damit sich der Plan korrigieren lässt.",
+            "quelle": "Kap. 20.5, S. 442"
+          },
+          {
+            "label": "ABC-Analyse",
+            "text": "A: was getan werden muss. B: was getan werden soll. C: was getan werden kann. Die Priorität ist entsprechend hoch, mittel oder niedrig.",
+            "quelle": "Kap. 20.5, S. 443"
+          },
+          {
+            "label": "Am Bildschirm",
+            "text": "Aufgaben lassen sich mit einer Erinnerung versehen, und die Aufgaben eines Projekts werden automatisch in Kategorien gebündelt – das erleichtert die Übersicht.",
+            "quelle": "Kap. 20.5, S. 442"
+          },
+          {
+            "label": "Nicht verlangt",
+            "text": "Was Dringlichkeit von Priorität unterscheidet, erklärt das Lehrmittel nicht; eine Erklärung dazu ist eigene Überlegung der Lernenden."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 20.5 | S. 443 · eigener Fall",
+      "text": "Wenden Sie die ALPEN-Methode (S. 443) auf Ihre Woche an: Wie viele der 15 Stunden dürften nach dem Richtwert des Lehrmittels verplant sein, wie viele blieben Reserve? Vergleichen Sie mit Ihrem Plan vom Sonntag.",
+      "liefert": "Rechnung zu verplanter Zeit und Reserve",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Gehen Sie die fünf Buchstaben der Methode der Reihe nach durch; gerechnet wird bei P.",
+          "Zählen Sie zuerst zusammen, was der Plan vom Sonntag vergibt (Situation, S. 1)."
+        ],
+        "satzanfaenge": [
+          "«Nach dem Richtwert wären … Stunden verplant und …»",
+          "«In meinem Plan vom Sonntag sind es dagegen …»",
+          "«Fallen vier Stunden weg, dann …»"
+        ],
+        "produkt": "Die zwei Zahlen (verplant, Reserve) sind der Massstab für Ihren neuen Wochenplan auf S. 7."
+      },
+      "loesung": {
+        "kern": "Richtwert 9 Std. verplant, 6 Reserve – im Plan 14 und 1",
+        "zeilen": [
+          {
+            "label": "A und L",
+            "text": "Aufgaben mit Dauer im Plan vom Sonntag: Hausaufgaben 3, Lernen für die Prüfung 3, Lerndokumentation 2, Bandprobe 3, Abend mit Freunden 3 – zusammen 14 Std. von 15."
+          },
+          {
+            "label": "P nach Richtwert",
+            "text": "Rund 60 Prozent verplanen: 0,6 × 15 = 9 Std.; rund 40 Prozent Pufferzeit: 6 Std. Das Lehrmittel nennt den Richtwert für die tägliche Arbeitszeit; das Heft überträgt ihn auf die freien Abendstunden einer Woche.",
+            "quelle": "Kap. 20.5, S. 443"
+          },
+          {
+            "label": "Plan vom Sonntag",
+            "text": "14 von 15 Std. verplant (rund 93 Prozent), 1 Std. frei – 5 Std. weniger Reserve, als der Richtwert vorsieht (6 − 1)."
+          },
+          {
+            "label": "Die Änderung",
+            "text": "2 × 2 Std. = 4 Std. fallen weg. 1 Std. Reserve fängt das nicht auf, es fehlen 3 Std.; 6 Std. Reserve hätten gereicht."
+          },
+          {
+            "label": "E und N",
+            "text": "Entscheidungen heisst Prioritäten vergeben (A, B, C) – das folgt in LF4. Nachkontrolle: Erledigtes streichen, Unerledigtes übertragen.",
+            "quelle": "Kap. 20.5, S. 443"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "60 Prozent von 14 statt von 15 rechnen; oder Reserve mit Freizeit verwechseln: Der Abend mit Freunden ist eine Aufgabe im Plan, keine Reserve."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Planungsgespräch zu zweit mit Wochenplan und Anpassungsnotiz",
+    "titel": "Mein Wochenplan mit Anpassungsnotiz",
+    "format_detail": "Sie planen alle 15 Abendstunden der Woche neu, als wäre wieder Sonntag, und besprechen den Plan zu zweit. Probe danach: Hält der Plan, wenn Mittwoch und Freitag je 2 Stunden wegfallen, wie es der neue Einsatzplan aus der Situation verlangt? Auf S. 7 steht Ihr Wochenplan für die Abende von Montag bis Freitag, je drei Stunden: die festen Termine, die Aufgaben mit Priorität A, B oder C und die Reserve. Jede Zeile trägt eine Marke aus der Legende: fest (Termin, der sich nicht verschieben lässt), verschiebbar (Aufgabe, die auch an einem anderen Abend Platz hat), Reserve (frei gelassen). Danach führen Sie mit Ihrer Lernpartnerin oder Ihrem Lernpartner ein Gespräch von je rund fünf Minuten pro Plan: Sie stellen Ihren Plan vor, Ihr Gegenüber gibt zwei Rückmeldungen nach den Feedbackregeln (eine Stelle, die trägt; eine, die nachfragt), Sie fragen nach und halten unter dem Plan in der Anpassungsnotiz fest, was Sie ändern, was Sie beibehalten und warum. Dann tauschen Sie die Rollen; eine der zwei Rückmeldungen, die Sie selbst gegeben haben, notieren Sie in einem Satz.",
+    "beschreibung": "Ich plane die 15 Abendstunden meiner Woche neu, stelle den Plan meinem Gegenüber vor, nehme zwei Rückmeldungen an und halte fest, was ich ändere, was ich beibehalte und warum.",
+    "schritte": [
+      {
+        "label": "01 Grundsätze und ABC klären",
+        "hint": "Notieren Sie aus LF1 oben auf S. 7 drei Grundsätze, an die Sie sich halten, und was A, B und C bedeuten."
+      },
+      {
+        "label": "02 Meine Woche durchrechnen",
+        "hint": "Übernehmen Sie aus LF2 die zwei Zahlen: wie viele der 15 Stunden verplant sein dürften und wie viele Reserve blieben."
+      },
+      {
+        "label": "03 Befund in den Plan holen",
+        "hint": "Notieren Sie aus dem Befund von LF3 einen Punkt mit Fundstelle, den Sie in Ihrem neuen Wochenplan umsetzen."
+      },
+      {
+        "label": "04 Reserve und ABC festlegen",
+        "hint": "Planen Sie nach LF4 alle 15 Abendstunden neu, als wäre wieder Sonntag. Probe danach: Hält der Plan, wenn Mi und Fr je 2 Stunden wegfallen?"
+      },
+      {
+        "label": "05 Plan besprechen, anpassen",
+        "hint": "Zu zweit, je rund fünf Minuten pro Plan: vorstellen, zwei Rückmeldungen erhalten, nachfragen, Anpassungsnotiz schreiben. Dann Rollentausch."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Wochenplan mit Legende (fest · verschiebbar · Reserve)",
+      "Anpassungsnotiz mit zwei erhaltenen Rückmeldungen und dem eigenen Entscheid",
+      "Eine der zwei Rückmeldungen, die Sie gegeben haben, in einem Satz"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: die Woche vor dem Familienfest am Samstag",
+      "legende": [
+        {
+          "key": "fest",
+          "text": "fest"
+        },
+        {
+          "key": "verschiebbar",
+          "text": "verschiebbar"
+        },
+        {
+          "key": "reserve",
+          "text": "Reserve"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Wochenplan mit Anpassungsnotiz",
+          "eintraege": [
+            {
+              "marke": "fest",
+              "text": "Mi: Lied proben mit Cousin, 2 Std."
+            },
+            {
+              "marke": "verschiebbar",
+              "text": "Mo: Rede 2 Std. (A) · Fr: Fotos (B), Tischkarten (C), je 1 Std."
+            },
+            {
+              "marke": "reserve",
+              "text": "Di und Do: 4 von 10 Std. frei"
+            },
+            {
+              "text": "Notiz: 1) Rede früh – behalte ich. 2) Fr eng: Zuerst streiche ich die Tischkarten, darauf verzichte ich."
+            },
+            {
+              "text": "Meine Rückmeldung: «Für den Kuchen steht kein Abend.»"
+            }
+          ]
+        },
+        {
+          "titel": "Ausschnitt aus dem Gespräch",
+          "wechsel": [
+            {
+              "wer": "Schwester",
+              "text": "Mir fällt auf: Die Rede steht früh. Am Freitag stehen zwei Aufgaben – was, wenn die Fotos länger dauern?"
+            },
+            {
+              "wer": "Ich",
+              "text": "Meinst du, die Reserve reicht nicht?"
+            },
+            {
+              "wer": "Schwester",
+              "text": "Doch. Aber was fällt zuerst weg?"
+            },
+            {
+              "wer": "Ich",
+              "text": "Die Tischkarten. Die Rede bleibt am Montag."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung: meine Woche neu geplant, mit Reserve nach dem Richtwert",
+      "hinweis": "Eine mögliche Lösung von vielen, keine Vorlage. Erst zeigen, wenn die Gespräche geführt sind, und mit den Kriterien Argumentation und Position / Werthaltung besprechen. Der Plan folgt dem Richtwert des Lehrmittels (Kap. 20.5, S. 443, dort für die Tagesplanung, hier auf die Woche übertragen: 9 von 15 Std. verplant, 6 Std. Reserve); ebenso tragfähig ist ein Plan mit mehr verplanter Zeit, wenn er sagt, was zuerst weicht. Annahmen: die Verteilung der Aufgaben auf die Abende, die Prioritäten A, B und C (Fallüberlegung), die zwei Rückmeldungen des Gegenübers und dass sich Lerndokumentation und der Abend mit Freunden aufs Wochenende legen lassen.",
+      "legende": [
+        {
+          "key": "fest",
+          "text": "fest"
+        },
+        {
+          "key": "verschiebbar",
+          "text": "verschiebbar"
+        },
+        {
+          "key": "reserve",
+          "text": "Reserve"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Wochenplan mit Anpassungsnotiz",
+          "eintraege": [
+            {
+              "marke": "fest",
+              "text": "Do: Bandprobe, 3 Std."
+            },
+            {
+              "marke": "verschiebbar",
+              "text": "Mo: Hausaufgaben 2 Std. (A) · Di: Lernen für die Prüfung 2 Std. (A) · Mi: je 1 Std. Hausaufgaben und Lernen (A)",
+              "notiz": "A-Aufgaben 6 Std., mit der Bandprobe 9 Std. verplant"
+            },
+            {
+              "marke": "reserve",
+              "text": "Mo, Di und Mi je 1 Std., Fr 3 Std.: zusammen 6 Std. Reserve",
+              "notiz": "Richtwert: 0,6 × 15 = 9 verplant, 6 Reserve"
+            },
+            {
+              "marke": "verschiebbar",
+              "text": "Lerndokumentation 2 Std. (B), Abend mit Freunden 3 Std. (C): nicht im Plan, nur aus der Reserve; wird sie knapp, entfällt zuerst C"
+            },
+            {
+              "text": "Probe: Mi und Fr fallen je 2 Std. weg. Die 9 verplanten Std. halten: 1 Std. Lernen rückt von Mi auf Di. Reserve: noch 2 von 6 Std."
+            },
+            {
+              "text": "Anpassungsnotiz: 1) Die verteilte Reserve behalte ich, sie hielt die Probe. 2) Die Lerndokumentation mache ich spätestens Samstag.",
+              "notiz": "Dafür verzichte ich wohl auf den Abend mit Freunden (C)."
+            },
+            {
+              "text": "Meine Rückmeldung: «Mir fällt auf, dass dein Donnerstag vier Aufgaben hat – was ist, wenn eine länger dauert?»"
+            }
+          ]
+        },
+        {
+          "titel": "Ausschnitt aus dem Gespräch",
+          "wechsel": [
+            {
+              "wer": "Ich",
+              "text": "Von 15 Stunden verplane ich 9: Bandprobe, Hausaufgaben, Lernen für die Prüfung. 6 bleiben Reserve."
+            },
+            {
+              "wer": "Gegenüber",
+              "text": "Mir fällt auf, dass die Reserve auf vier Abende verteilt ist. Die Lerndokumentation steht nirgends – wann machst du sie?"
+            },
+            {
+              "wer": "Ich",
+              "text": "Meinst du, ich soll sie einplanen – oder nur sagen, wann sie spätestens drankommt?"
+            },
+            {
+              "wer": "Gegenüber",
+              "text": "Das Zweite. Sonst ist deine Reserve gleich wieder weg."
+            },
+            {
+              "wer": "Ich",
+              "text": "Dann bleibt die Reserve bei 6 Stunden, auch wenn ein voller Plan mehr unterbringt. Zuerst weicht der Abend mit Freunden."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Entscheide stehen ohne Begründung da.",
+        "Begründungen sind angedeutet, bleiben aber lückenhaft oder ohne Bezug zur Situation.",
+        "Entscheide sind nachvollziehbar begründet und an der Situation belegt.",
+        "Schlüssig begründet; ein Einwand wird aufgenommen und beantwortet, die Folgen des Entscheids werden genannt."
+      ],
+      "indikator_produkt": "Die Notiz nimmt eine Rückmeldung auf, begründet den Entscheid und nennt seine Folge."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position ist nicht erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder ohne Begründung.",
+        "Klare Position in Ich-Form, nachvollziehbar begründet.",
+        "Begründete Position in Ich-Form; das Spannungsfeld wird anerkannt, und es wird gesagt, was der Entscheid kostet."
+      ],
+      "indikator_produkt": "Die Notiz sagt in Ich-Form, was ich ändere, was bleibt und worauf ich dafür verzichte."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt einen Wochenplan mit Legende und einen Gesprächsausschnitt; die Satzanfänge helfen beim Formulieren.",
+    "scaffold_100": "Plus: Planen Sie Ihre wirkliche nächste Woche nach demselben Muster. Setzen Sie für die wichtigste Aufgabe ein Ziel nach SMART (Kap. 20.3, S. 438)."
+  },
+  "methoden": [
+    {
+      "ref": "lm-20-5-lernplanung",
+      "fuer": "für den Wochenplan auf S. 7: eintragen, Länge schätzen, Reserve lassen",
+      "tun": "Tragen Sie zuerst die festen Termine ein, schätzen Sie je Aufgabe die Dauer und lassen Sie die Reserve frei."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-19-1-feedback",
+      "fuer": "für die zwei Rückmeldungen zum Plan des Gegenübers",
+      "tun": "Zeigen Sie auf eine Zeile, die trägt, und auf eine, zu der Sie eine Frage haben – als Ich-Botschaft, ohne zu werten."
+    },
+    {
+      "ref": "lm-16-4-fragearten",
+      "fuer": "für das Nachfragen, wenn Sie eine Rückmeldung annehmen",
+      "tun": "Fragen Sie offen nach («Was genau meinst du mit …?»), statt sich zu rechtfertigen. Was Sie ändern, entscheiden Sie selbst."
+    }
+  ],
+  "mindmap_zentrum": "Mehr Zeit oder die Zeit besser nutzen",
+  "mindmap_aeste": [
+    {
+      "titel": "Womit plane ich?",
+      "punkte": [
+        "Wochenplan",
+        "ALPEN-Methode",
+        "ABC-Analyse"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was hält den Plan beweglich?",
+      "punkte": [
+        "Priorität",
+        "Pufferzeit",
+        "Nachkontrolle"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer hilft mir beim Anpassen?",
+      "punkte": [
+        "Rückmeldung",
+        "Ich-Botschaft"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Hält mein neuer Plan für alle 15 Abendstunden die Probe: Mittwoch und Freitag je 2 Stunden weg (Schritt 04)?",
+      "Weiss ich, wie viele Stunden ich offen lasse und was zuerst weicht, wenn es eng wird (LF4)?"
+    ],
+    "mitnahme": [
+      "Mein Wochenplan mit Reserve",
+      "Die Rückmeldung, die ich umsetze",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "ALPEN-Methode",
+          "nach": "Pufferzeit",
+          "text": "plant ein"
+        },
+        {
+          "von": "ABC-Analyse",
+          "nach": "Priorität",
+          "text": "vergibt"
+        },
+        {
+          "von": "Wochenplan",
+          "nach": "Pufferzeit",
+          "text": "hält nur mit"
+        },
+        {
+          "von": "Priorität",
+          "nach": "Wochenplan",
+          "text": "bestimmt, was zuerst weicht im"
+        },
+        {
+          "von": "Nachkontrolle",
+          "nach": "Wochenplan",
+          "text": "passt an"
+        },
+        {
+          "von": "Rückmeldung",
+          "nach": "Wochenplan",
+          "text": "zeigt Lücken im"
+        },
+        {
+          "von": "Ich-Botschaft",
+          "nach": "Rückmeldung",
+          "text": "macht annehmbar"
+        },
+        {
+          "von": "Pufferzeit",
+          "nach": "gilt auch bei …",
+          "text": "fängt Unvorhergesehenes auf"
+        }
+      ],
+      "transfer": "Eine Ferienreise vorbereiten, einen Umzug neben der Arbeit organisieren, ein Musikstück bis zu einem Auftritt einüben – überall, wo ein Termin feststeht und die Zeit begrenzt ist.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Meilenstein",
+          "Lernjournal"
+        ],
+        "mit_medien": [
+          "Ist-Analyse",
+          "Salami-Taktik"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn nach der Probe der feste Termin und alle A-Aufgaben Platz haben: mindestens vier Stunden Reserve, oder der Plan sagt, was weicht. Im Lösungsbild: 6 Std. Reserve, nach der Probe bleiben 2 (Probe: Schritt 04, S. 5; Plan: S. 7).",
+        "Ja, wenn der Entscheid aus LF4 Stunden und Reihenfolge nennt. Im Lösungsbild: 6 von 15 Std. offen; Lerndokumentation (B) und Abend mit Freunden (C) stehen nicht im Plan und kommen nur aus der Reserve dran – wird sie knapp, entfällt zuerst C. Fallüberlegung; Richtwert aus Kap. 20.5, S. 443, vom Tag auf die Woche übertragen."
+      ],
+      "mitnahme": [
+        "9 Std. verplant, 6 Std. Reserve auf vier Abende verteilt; jede Aufgabe ausser dem festen Termin mit A, B oder C (Richtwert, vom Tag auf die Woche übertragen, und ABC-Analyse: Kap. 20.5, S. 443).",
+        "«Die Lerndokumentation steht nirgends – wann machst du sie?» Ich lege fest: spätestens am Samstag (Fallüberlegung).",
+        "Zum Beispiel: wie ich plane, wenn schon die A-Aufgaben mehr als 60 Prozent meiner Zeit brauchen."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: drei Grundsätze, dazu A, B und C erklärt",
+        "LF2: verplante Stunden und Reserve gerechnet",
+        "LF4: Entscheid mit Stunden und mit dem, was zuerst weicht"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster mit vier Zeilen, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Wochenplan",
+      "vollstaendig_wenn": [
+        "Plan Montag bis Freitag mit Legende und Reserve",
+        "Anpassungsnotiz: zwei Rückmeldungen und mein Entscheid",
+        "Eine der zwei gegebenen Rückmeldungen in einem Satz"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, LF1 und LF2: Grundsätze, Prioritäten, Woche durchrechnen",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster und Befund, LF4: Reserve entscheiden, Wochenplan zeichnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Plan zu zweit besprechen, Anpassungsnotiz, Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo muss ich sonst noch planen, obwohl ich weiss, dass etwas dazwischenkommen kann?",
+    "ziel": "Wirksam plant, wer seine Zeit mit Reserve einteilt, den Plan an der Wirklichkeit prüft und ihn anpasst — andere Menschen helfen dabei, nehmen einem den Entscheid aber nicht ab."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Eine Woche mit Reserve planen und den Plan anpassen: ALPEN-Methode, ABC-Analyse, Rückmeldung",
+    "lehrmittel_anker": "Kap. 20.5 S. 442-443 (Wochenplanung, ALPEN-Methode, ABC-Analyse) · Kap. 20.4 S. 440-441 (Arbeitsplanung, Lernjournal; im Lehrmittel für Projektarbeiten, hier übertragen) · Kap. 20.3 S. 438 (SMART-Kriterien, Plus-Aufgabe) · Kap. 19.1 S. 424-425 (Feedback geben und empfangen) · Kap. 16.4 S. 373 (Fragearten, über die Methodenkarte)",
+    "kn_aktivierung": "Im KN fallen vor der Regelprüfung zwei eingeplante Abende weg (Fachgespräch Fragen 1 und 2, Mini Case Aufgaben 2 und 3): Die Lernende/der Lernende erklärt, wozu eine Reserve dient, ordnet nach muss, soll und kann, passt den Plan an und sagt, was der Entscheid kostet.",
+    "transfer_check": "Kann die Lernende/der Lernende in einer neuen Lage sagen, wie viel Zeit verplant wird, wie viel Reserve bleibt und was zuerst weicht – und den Entscheid begründen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 8,
+      "wo": "leitfragen[2] — am Lehrmittel-Abschnitt bzw. an der Quelle herausarbeiten, wie ein Plan mit Unvorhergesehenem umgeht, und daraus etwas für die eigene Woche ableiten"
+    },
+    {
+      "sk": 2,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — festlegen, wie viel verplant wird und wie viel Reserve bleibt, und den Plan danach anpassen"
+    },
+    {
+      "sk": 4,
+      "wo": "handlungsprodukt.schritte[4] + Produkt — Planungsgespräch zu zweit: Rückmeldung geben, annehmen und in der Anpassungsnotiz verarbeiten"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 20.4 | S. 440-441",
+          "text": "Werten Sie Ihr Raster zu Kap. 20.4 im Lehrmittel aus: Wie geht ein Plan mit Änderungen um, und wie lernt man aus der eigenen Arbeitsweise? Halten Sie in zwei bis drei Sätzen fest, was Sie für Ihren Wochenplan ableiten.",
+          "liefert": "belegter Befund für den neuen Wochenplan",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 20.4 | S. 440-441",
+            "auftrag": "Lesen Sie Kap. 20.4, S. 440–441. Die erste Zeile ist ein Beispiel. Suchen Sie drei weitere Aussagen – eine zum Zeitplan (Grafik, S. 440), zwei zum Rückblick (S. 441). Hinten je ein Begriff aus LF1 oder dem Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 440, Arbeitsplanung",
+              "Änderungen sofort in Plan",
+              "Arbeit verzögert sich",
+              "Pufferzeit"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Suchen Sie auf S. 440 im Text und in der Grafik, auf S. 441 bei Lernjournal und Reflexion."
+            ],
+            "satzanfaenge": [
+              "«Laut Lehrmittel muss ein Plan …»",
+              "«Für meinen Wochenplan leite ich daraus ab, dass …»"
+            ],
+            "produkt": "Für Schritt 03: eine Aussage mit Seite, die Sie in Ihrem neuen Wochenplan umsetzen."
+          },
+          "loesung": {
+            "kern": "Kap. 20.4: Änderungen aufnehmen, Rückblick halten",
+            "quelle_ref": "Kap. 20.4 | S. 440-441",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Ein Plan zeigt, was wann wo zu tun ist; er muss Änderungen und Verzögerungen zulassen und sofort aufnehmen (S. 440). Vom Abgabetermin rückwärts rechnen, Meilensteine setzen, Risiken beachten (S. 440, Grafik). Lernjournal: am Ende jeder Arbeitsphase über das eigene Arbeiten berichten (S. 441).",
+                "quelle": "Kap. 20.4, S. 440-441"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Wer sich selbstkritisch beurteilt, findet Ansatzpunkte, um besser zu werden; Fragen der Reflexion: was gut war, welche Probleme auftraten, was folgt; das Journal ist Grundlage für Gespräche.",
+                "quelle": "Kap. 20.4, S. 441"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Änderungen → Pufferzeit oder Wochenplan; rückwärts rechnen → Priorität; Rückblick → Nachkontrolle; Gespräche → Rückmeldung. Deutung der Lernenden.",
+                "quelle": "Kap. 20.5, S. 442-443"
+              },
+              {
+                "label": "Befund",
+                "text": "Je eine Aussage zu Änderungen und zum Rückblick, mit Seite. Die Folgerung für den eigenen Plan ist Ableitung der Lernenden."
+              },
+              {
+                "label": "Übertragung",
+                "text": "Übertragen, im Lehrmittel für Projektarbeiten: Kap. 20.4 meint Projekt- und Vertiefungsarbeiten."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 440, Arbeitsplanung",
+                "Änderungen sofort in Plan",
+                "Arbeit verzögert sich",
+                "Pufferzeit"
+              ],
+              [
+                "S. 440, Grafik",
+                "vom Abgabetermin rückwärts rechnen",
+                "Zwischentermine, Risiken beachten",
+                "Meilenstein"
+              ],
+              [
+                "S. 441, Lernjournal",
+                "Lernjournal: nach jeder Arbeitsphase berichten",
+                "selbstkritisch: Ansatzpunkte finden",
+                "Nachkontrolle"
+              ],
+              [
+                "S. 441, Reflexion",
+                "aus Problemen und Erfolgen lernen",
+                "Was war gut? Nächste Schritte?",
+                "Rückmeldung"
+              ]
+            ],
+            "befund": "Laut Kap. 20.4 muss ein Plan Änderungen zulassen und sie sofort aufnehmen (S. 440); die Grafik rechnet Meilensteine vom Abgabetermin rückwärts. Ein Rückblick nach jeder Arbeitsphase zeigt, was gut lief und was nicht (S. 441). Für meinen Wochenplan leite ich ab: Ich lasse Platz für Änderungen, trage sie sofort ein und schaue am Freitag zurück."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.5 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 20.5, S. 443 nennt einen Richtwert für die Reserve; LF2 zeigt, wie Ihre Woche dazu steht. Entscheiden Sie: dem Richtwert folgen und Aufgaben zurückstellen – oder mehr verplanen und festlegen, was zuerst weicht?",
+          "liefert": "Entscheid zu Reserve und Prioritäten",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Rechnen Sie für beide Möglichkeiten nach, ob der Plan hält, wenn vier Stunden wegfallen."
+            ],
+            "satzanfaenge": [
+              "«Nach dem Richtwert (S. 443) würde ich …»",
+              "«In meiner Woche spricht dagegen, dass …»",
+              "«Ich lasse … Stunden offen. Zuerst weicht …, weil …»"
+            ],
+            "produkt": "Ihr Entscheid (Stunden Reserve, Priorität je Aufgabe, was zuerst weicht) bestimmt den Wochenplan auf S. 7."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Richtwert ↔ meine Woche, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Der Entscheid nennt Stunden: wie viele der 15 verplant sind und wie viele Reserve bleiben.",
+                "Der Richtwert ist mit Fundstelle genannt (rund 60 Prozent verplanen, Kap. 20.5, S. 443; dort für den Tag, hier auf die Woche übertragen) und als Richtwert behandelt, nicht als Gesetz.",
+                "Jede Aufgabe hat eine Priorität A, B oder C (der feste Termin Bandprobe braucht keine), und es steht da, was zuerst weicht.",
+                "Die Antwort sagt in Ich-Form, was der Entscheid kostet, und anerkennt, was für die andere Möglichkeit spricht."
+              ],
+              "beispiel_pol_1": "Ich folge dem Richtwert: Von 15 Stunden verplane ich 9 und lasse 6 als Reserve. In die 9 Stunden gehören die Bandprobe und meine A-Aufgaben, Hausaufgaben und Lernen für die Prüfung (je 3 Std.). Die Lerndokumentation (B) und den Abend mit Freunden (C) stelle ich zurück; sie kommen nur dran, wenn Reserve übrig bleibt. Mir ist klar, dass ein voller Plan mehr unterbringt – aber er hat am Dienstag nicht gehalten. Das kostet mich wohl den Abend mit meinen Freunden; dafür fangen 6 Stunden Reserve die 4 Stunden auf, die wegfallen. (Prioritäten: Fallüberlegung; Richtwert: Kap. 20.5, S. 443.)",
+              "beispiel_pol_2": "Ich verplane mehr, als der Richtwert vorsieht: 12 von 15 Stunden, 3 bleiben Reserve. Verplant sind die Bandprobe (fester Termin), Hausaufgaben und Lernen für die Prüfung (A) und der Abend mit meinen Freunden (für mich B; je 3 Std.) – ich habe sie zwei Wochen nicht gesehen. Zuerst weicht die Lerndokumentation (C): Sie geht aufs Wochenende (Annahme: das ist möglich). Danach weicht eine Stunde vom Abend mit Freunden, zuletzt die Lernzeit. Fallen 4 Stunden weg, fehlt mir 1 Stunde, und der Abend wird kürzer. Der Richtwert gäbe mehr Sicherheit; mein Entscheid kostet sie: Kommt noch etwas dazu, trifft es eine A-Aufgabe.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Zahl («ich lasse etwas Luft») oder ohne Aussage, was zuerst weicht, genügt nicht; ebenso wenig ein Plan, der wieder 14 von 15 Stunden vergibt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was der Richtwert sagt",
+          "Wie es in meiner Woche ist",
+          "Mein Entscheid"
+        ],
+        "hinweis": "Zwei Zeilen genügen: eine zur Reserve, eine zu den Prioritäten. Dritte Spalte: wie viele Stunden Sie offen lassen und was zuerst weicht.",
+        "loesung_zeilen": [
+          [
+            "Rund 60 Prozent verplanen: 9 von 15 Std., 6 Std. Reserve (Kap. 20.5, S. 443; dort für den Tag, hier auf die Woche übertragen).",
+            "Am Sonntag 14 Std. verplant, 1 Std. frei; 4 Std. fallen weg.",
+            "9 Std. verplant, 6 Reserve – oder 12 verplant, 3 Reserve und eine Reihenfolge, was weicht."
+          ],
+          [
+            "Aufgaben ordnen: muss (A), soll (B), kann (C) (Kap. 20.5, S. 443).",
+            "Ein fester Termin (Bandprobe) und vier Aufgaben: Hausaufgaben, Lernen für die Prüfung, Lerndokumentation, Abend mit Freunden.",
+            "A: Hausaufgaben, Lernen; B: Lerndokumentation; C: Abend mit Freunden weicht zuerst (Fallüberlegung)."
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 20.4 (S. 3)",
+        "beispiel": [
+          "Merkblatt Gartenverein, Abschnitt 2 · Beete im Frühling zuerst jäten · «ab Mitte März» (Beispielwert) · → hier ein Begriff aus LF1 oder dem Glossar"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt einen Wochenplan mit Legende und einen Gesprächsausschnitt; im Raster auf S. 3 ist die erste Zeile schon ausgefüllt."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Werten Sie Ihr Raster zur Quelle aus: Welche Schritte schlägt sie vor, um mit zu vielen Aufgaben umzugehen? Halten Sie in zwei bis drei Sätzen fest, welcher davon in Ihrem Plan vom Sonntag fehlt.",
+          "liefert": "belegter Befund für den neuen Wochenplan",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-121a-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst das Raster in Stichworten, dann schreiben Sie den Befund.",
+              "Notieren Sie zu jeder Zeile den Absatz. Die Quelle nennt keine Zahlen: Der Beleg genügt."
+            ],
+            "satzanfaenge": [
+              "«Die Quelle schlägt in Abs. … vor, dass …»",
+              "«In meinem Plan vom Sonntag fehlt …, denn …»"
+            ],
+            "produkt": "Für Schritt 03: ein Schritt der Quelle mit Absatz, den Sie in Ihrem neuen Wochenplan umsetzen."
+          },
+          "loesung": {
+            "kern": "Erfassen, prüfen, teilen, Reserve vorsehen",
+            "quelle_ref": "q-121a-pflicht",
+            "quelle_stand": "2026-10-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Erfassen, was ich tue und wie lange (Abs. 15); jede Aufgabe mit vier Fragen prüfen (Abs. 16–19); Grosses in kleine Schritte teilen (Abs. 23); Zeit für Pausen und Unvorhergesehenes vorsehen (Abs. 35).",
+                "quelle": "Quelle, Abs. 15–35"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Zeitplan ändern (Abs. 20); Prioritäten setzen (Abs. 26); klären, wie viel Zeit da ist und was darin machbar ist (Abs. 32–33).",
+                "quelle": "Quelle, Abs. 20–33"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Erfassen → Nachkontrolle; vier Fragen → ABC-Analyse; teilen → Wochenplan; Unvorhergesehenes → Pufferzeit; Abs. 26 → Priorität. Deutung der Lernenden.",
+                "quelle": "Kap. 20.5, S. 442-443"
+              },
+              {
+                "label": "Befund",
+                "text": "Zwei Schritte mit Absatz; belegt fehlt die Reserve (1 von 15 Std., Abs. 35). Fehlender Verzicht (Abs. 17) ist nur Annahme. Keine Zahl in der Quelle: Spalte 3 trägt den Beleg."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Ablehnen, mit Bedenkzeit (Abs. 9–10); klären, was verlangt ist (Abs. 13–14); zerlegen (Abs. 20–21); abgeben (Abs. 26). Befund dann: Verschieben (Abs. 23–24) sah der Plan nicht vor (Annahme); Reserve belegt sie nicht. Abs. 17 (Zahl) nicht nahelegen.",
+                "quelle": "Ersatzquelle, Abs. 9–26"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 15",
+                "erfassen, was ich tue und wie lange",
+                "eine Woche lang; Ist-Analyse",
+                "Nachkontrolle"
+              ],
+              [
+                "Abs. 16–19",
+                "jede Aufgabe mit vier Fragen prüfen",
+                "wichtig? verzichtbar? schneller? abgebbar?",
+                "ABC-Analyse"
+              ],
+              [
+                "Abs. 23",
+                "Grosses in kleine Schritte teilen",
+                "«Salami-Taktik»",
+                "Wochenplan"
+              ],
+              [
+                "Abs. 35",
+                "Zeit für Unvorhergesehenes vorsehen",
+                "notieren, was wann drankommt",
+                "Pufferzeit"
+              ]
+            ],
+            "befund": "Die Quelle schlägt vor, zuerst festzuhalten, wofür die Zeit draufgeht (Abs. 15), jede Aufgabe zu prüfen (Abs. 16–19), Grosses zu teilen (Abs. 23) und Zeit für Unvorhergesehenes vorzusehen (Abs. 35). In meinem Plan vom Sonntag fehlt der letzte Schritt: Von 15 Stunden blieb eine frei. Ob ich je gefragt habe, worauf ich verzichten kann (Abs. 17), sagt die Situation nicht – das wäre eine Annahme."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 20.5 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Kap. 20.5, S. 443 nennt einen Richtwert für die Reserve; LF2 und Ihr Raster zeigen, wo Ihre Woche steht. Entscheiden Sie: dem Richtwert folgen und Aufgaben zurückstellen – oder mehr verplanen und festlegen, was weicht?",
+          "liefert": "Entscheid zu Reserve und Prioritäten",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Nehmen Sie die zwei Zahlen aus LF2 und einen Beleg aus Ihrem Raster, mit Absatz.",
+              "Rechnen Sie für beide Möglichkeiten nach, ob der Plan hält, wenn vier Stunden wegfallen."
+            ],
+            "satzanfaenge": [
+              "«Nach dem Richtwert (S. 443) würde ich …»",
+              "«In meiner Woche spricht dagegen, dass …»",
+              "«Ich lasse … Stunden offen. Zuerst weicht …, weil …»"
+            ],
+            "produkt": "Ihr Entscheid (Stunden Reserve, Priorität je Aufgabe, was zuerst weicht) bestimmt den Wochenplan auf S. 7."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Richtwert ↔ meine Woche, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Der Entscheid nennt Stunden: wie viele der 15 verplant sind, wie viele Reserve bleiben.",
+                "Der Richtwert ist mit Fundstelle genannt (rund 60 Prozent verplanen, Kap. 20.5, S. 443; dort für den Tag) und gilt als Richtwert, nicht als Gesetz.",
+                "Ein Beleg aus dem Raster stützt den Entscheid, mit Absatz: etwa Abs. 17 (verzichten), Abs. 32–33 (machbar in der Zeit) oder Abs. 35 (Unvorhergesehenes).",
+                "Ich-Form: was der Entscheid kostet, was zuerst weicht, was für die andere Möglichkeit spricht."
+              ],
+              "beispiel_pol_1": "Ich folge dem Richtwert: Von 15 Stunden verplane ich 9 – Bandprobe, Hausaufgaben, Lernen für die Prüfung (je 3 Std.) – und lasse 6 als Reserve. Die Quelle fragt, worauf ich verzichten kann (Abs. 17): Lerndokumentation (B) und Abend mit Freunden (C) kommen nur dran, wenn Reserve bleibt. Ein voller Plan bringt mehr unter, hat aber am Dienstag nicht gehalten. Das kostet mich wohl den Abend mit Freunden; dafür fangen 6 Stunden Reserve die 4 auf, die wegfallen. (Prioritäten: Fallüberlegung.)",
+              "beispiel_pol_2": "Ich verplane mehr als der Richtwert: 12 von 15 Stunden, 3 bleiben Reserve. Machbar in der verfügbaren Zeit (Abs. 32–33) sind Bandprobe (fester Termin), Hausaufgaben, Lernen für die Prüfung (A) und der Abend mit Freunden (für mich B; je 3 Std.). Zuerst weicht die Lerndokumentation (C) aufs Wochenende (Annahme: das geht), dann eine Stunde vom Abend mit Freunden, zuletzt die Lernzeit. Fallen 4 Stunden weg, fehlt mir 1 Stunde. Der Richtwert gäbe mehr Sicherheit; mein Entscheid kostet sie: Kommt noch etwas dazu, trifft es eine A-Aufgabe.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Zahl, ohne Reihenfolge, was weicht, oder ohne Beleg aus dem Raster; ebenso ein Plan, der wieder 14 von 15 Stunden vergibt."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-121a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie über die QR-Seite den Ratgebertext, Abs. 12–35. Füllen Sie vier Zeilen zu Schritten, die gegen zu viele Aufgaben helfen: vorn der Absatz, dann Kernaussage, Beleg und ein Begriff aus LF1 oder dem Glossar.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-121a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welche Sorgen hatten Lernende vor Lehrbeginn am häufigsten, und welche davon betrifft meine Zeit?",
+          "erwartung": "Am häufigsten genannt (PDF-Seite 14, Abs. 3): Überforderung bei schulischen Aufgaben (63 Prozent), lange Arbeitszeiten und weniger Ferien (63 Prozent), wenig Verständnis für Fehler (60 Prozent). Die Zeit betreffen Schulaufgaben und Arbeitszeiten (eigene Begründung). Abs. 2: worauf sich Lernende gefreut haben. Zahlen: Befragung Ende 2024."
+        },
+        {
+          "ref": "q-121a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welche Strategien gegen das Aufschieben nennt der Beitrag, und welche passt zu meinem Wochenplan?",
+          "erwartung": "Strategien: Grosses in kleine Pakete teilen (08:05–08:23); gemeinsam anpacken (08:28–08:42); früh planen, wann ich mich hinsetze (09:09–09:23); Listen abhaken (09:43–09:47). Ablenkung nennt der Beitrag als Ursache des Aufschiebens: Handy, Lärm, E-Mails (08:42–09:04); «Ablenkung ausschalten» ist eigene Folgerung. Zwei Strategien mit Zeitmarke genügen; die Wahl ist eigene Begründung. Vgl. Kap. 20.5, S. 442. (Stand: nur Untertitel gelesen, nicht gesichtet.)"
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Absatz 2 · Beete im Frühling zuerst jäten · «ab Mitte März» (Beispielwert) · → hier ein Begriff aus LF1 oder dem Glossar"
+        ]
+      },
+      "scaffold_90": "Das Beispiel auf S. 6 zeigt einen Wochenplan mit Legende und einen Gesprächsausschnitt; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."
+    }
+  }
+}

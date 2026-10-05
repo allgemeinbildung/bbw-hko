@@ -1,0 +1,411 @@
+{
+  "id": "3.3.1_kaufvertrag_beurteilen_set",
+  "modul": "3.3",
+  "modul_titel": "Bewusst konsumieren und handeln — beim Einkaufen Rechte einfordern",
+  "einheit_titel": "Kaufvertrag beurteilen",
+  "lehrgang": "EFZ_3J",
+  "lehrgaenge": [
+    "EFZ_3J",
+    "EFZ_4J"
+  ],
+  "thema": "T3",
+  "version": "2.1.0",
+  "status": "publiziert",
+  "prinzip_ref": "3.3.1_kaufvertrag_beurteilen_prinzip",
+  "kn_ref": "3.3.1_kaufvertrag_beurteilen_kn",
+  "herausforderungen": [
+    "3.3.1_kaufvertrag_beurteilen_hf_A",
+    "3.3.1_kaufvertrag_beurteilen_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Gemeinsamer Auftrag (2) + Rückmeldung (1)"
+    },
+    {
+      "woche": 4,
+      "lektionen": 3,
+      "inhalt": "KN (2) + Puffer (1)"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "3.3.1_kaufvertrag_beurteilen_hf_A",
+      "konzept": "Einen Kauf in Tatbestand, Rechtslage und Rechtsfolge prüfen und trennen, was das Gesetz gibt und was der Vertrag gewährt"
+    },
+    {
+      "position": 2,
+      "herausforderung": "3.3.1_kaufvertrag_beurteilen_hf_B",
+      "konzept": "Einen Mangel schriftlich rügen, die Forderung mit Belegen begründen und sie im Gespräch gegen den Einwand des Gegenübers vertreten"
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Kaufvertrag",
+      "definition": "Abmachung über Ware und Preis: Die eine Seite liefert, die andere zahlt.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Bestellung",
+      "definition": "Ich erkläre, eine Ware zum genannten Preis zu kaufen; daran bin ich gebunden.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Handlungsfähigkeit",
+      "definition": "Selbst Verträge schliessen können: ab 18; vorher mit Lohn, Taschengeld oder Ja der Eltern.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Internetkauf",
+      "definition": "Kauf im Onlineshop: Ein Klick genügt, und in der Regel gibt es keinen Rücktritt.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Widerrufsrecht",
+      "definition": "Gesetz: nur Haustür- und Telefonkauf, 14 Tage. Shops nennen freiwillige Fristen auch so.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "anfechtbarer Vertrag",
+      "definition": "Gültiger Vertrag, den die benachteiligte Seite innert eines Jahres aufheben kann.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Geschäftsbedingungen",
+      "definition": "Regeln des Geschäfts (AGB), Teil des Vertrags; gehen vor, wo kein Gesetz zwingend ist.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Tatbestand",
+      "definition": "Was geschehen ist: wer beteiligt ist, was vorliegt und wer was fordert.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Rechtslage",
+      "definition": "Was Gesetz und Vertrag zum Fall sagen: welche Regel passt und wo sie steht.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Rechtsfolge",
+      "definition": "Was aus der Regel für den Fall folgt: das Ergebnis der Prüfung.",
+      "herkunft": "lehrmittel",
+      "heft": "A"
+    },
+    {
+      "begriff": "Annahme",
+      "definition": "Ja zu einem Angebot; im Onlineshop nimmt der Anbieter an, etwa mit dem Versand.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Bestellbestätigung",
+      "definition": "Meldung des Onlineshops, dass die Bestellung eingegangen ist; sie ist Pflicht.",
+      "herkunft": "lehrmittel",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Haustürgeschäft",
+      "definition": "Kauf, bei dem ich überrumpelt werde, etwa an der Haustür oder auf der Strasse.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Umtausch",
+      "definition": "Ware gegen eine andere tauschen; ohne Mangel nur, wenn das Geschäft es gewährt.",
+      "herkunft": "quelle",
+      "heft": "A",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Prüfungspflicht",
+      "definition": "Pflicht, die Ware nach Erhalt sofort auf Mängel zu prüfen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Meldepflicht",
+      "definition": "Pflicht, einen Mangel unverzüglich zu melden, am besten eingeschrieben.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Mängelrüge",
+      "definition": "Meldung eines Mangels an das Geschäft; mit ihr stelle ich meine Forderung.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Ersatzlieferung",
+      "definition": "Forderung bei einem Mangel: einwandfreie Ware anstelle der mangelhaften.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Minderung",
+      "definition": "Forderung bei einem Mangel: Der Preis wird angemessen herabgesetzt.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Wandelung",
+      "definition": "Forderung bei einem Mangel: Der Kauf wird rückgängig gemacht.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Gewährleistung",
+      "definition": "Das Geschäft steht für Mängel der Ware ein, auch für versteckte und ohne Schuld.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "vertragliche Garantie",
+      "definition": "Im Vertrag vereinbarte Garantie; sie weicht oft vom Gesetz ab und gilt dann.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Geschäftsbedingungen",
+      "definition": "Regeln des Geschäfts (AGB), Teil des Vertrags; gehen vor, wo kein Gesetz zwingend ist.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "Ich-Botschaft",
+      "definition": "Aussage in Ich-Form: Ich sage, was mich stört, statt dem Gegenüber Vorwürfe zu machen.",
+      "herkunft": "lehrmittel",
+      "heft": "B"
+    },
+    {
+      "begriff": "gesetzliche Garantie",
+      "definition": "Ohne andere Abmachung haftet das Geschäft laut Gesetz zwei Jahre für Mängel.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Garantiefrist",
+      "definition": "Zeit, in der die Garantie gilt; bei Neuware darf sie nicht verkürzt werden.",
+      "herkunft": "lehrmittel",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Preisnachlass",
+      "definition": "Ich behalte die Ware und zahle weniger; im Lehrmittel heisst das Minderung.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    },
+    {
+      "begriff": "Rücktritt",
+      "definition": "Kauf rückgängig: Ware zurück, Geld zurück; im Lehrmittel heisst das Wandelung.",
+      "herkunft": "quelle",
+      "heft": "B",
+      "spur": "mit_medien"
+    }
+  ],
+  "spur": "wahl",
+  "gemeinsamer_auftrag": {
+    "titel": "Am Telefon zugesagt – kommt Grossmutter da heraus?",
+    "lebensbereich": "Familie",
+    "persona": {
+      "beruf": "Lernende/r EFZ",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "situation_text": "Meine Grossmutter hat vor neun Tagen am Telefon einem freundlichen Verkäufer ein «Vital-Paket» für CHF 348 zugesagt. Gestern kamen die Ware, die Rechnung und ein Vertragsdoppel. Darauf stehen das Datum der Zusage, der Betrag und klein gedruckt ein Hinweis: Widerruf innert 14 Tagen, an die Adresse der Firma. Grossmutter schämt sich und will keinen Ärger. Mein Onkel findet, sie solle einfach zahlen. Ich habe ihr versprochen, bis morgen aufzuschreiben, was bis wann zu tun ist, und es ihr in Ruhe zu erklären.",
+    "zahlen_tabelle": [
+      {
+        "label": "Zusage am Telefon",
+        "wert": "vor neun Tagen"
+      },
+      {
+        "label": "Betrag laut Rechnung",
+        "wert": "CHF 348"
+      },
+      {
+        "label": "Widerruf laut Vertragsdoppel",
+        "wert": "innert 14 Tagen"
+      }
+    ],
+    "leitfrage": "Rate ich Grossmutter zum Widerruf, solange die Frist läuft – oder zählt der Frieden in der Familie mehr?",
+    "mehrdeutigkeit": {
+      "trade_off": "Fristgerecht widerrufen vs. den Frieden in der Familie wahren",
+      "hint": "Sie können mehrere Wege begründen: widerrufen, zahlen oder zuerst reden. Die Frist läuft dabei weiter."
+    },
+    "aktivierte_trade_offs": [
+      "Am Vertrag festhalten vs. einen Ausweg suchen",
+      "Sofort schriftlich reagieren vs. zuerst das Gespräch suchen"
+    ],
+    "sprachmodi": [
+      "Produktion mündlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "einzel",
+        "partner",
+        "gruppe"
+      ],
+      "empfehlung": "Arbeiten Sie den Fristenplan allein aus. Erklären Sie ihn danach einer Person, die zuhört wie die Grossmutter, und lassen Sie sich sagen, was unklar geblieben ist."
+    },
+    "auftrag": "Prüfen Sie den Fall mit dem Schema aus Heft A, klären Sie Forderung und Ton mit Heft B und halten Sie für die Grossmutter fest, was bis wann zu tun ist; die Frist rechnen Sie vorsichtig ab der Zusage.",
+    "schritte": [
+      {
+        "label": "01 Fall prüfen",
+        "hint": "Prüfen Sie mit Heft A (S. 7): Tatbestand, Rechtslage, Rechtsfolge. Das wird Station 1 und 2 (A3)."
+      },
+      {
+        "label": "02 Forderung und Ton klären",
+        "hint": "Wie in Heft B (S. 7): Was verlangen Sie von der Firma, mit welchem Beleg? Das kommt in den Plan (A2), der Ton in die Erklärung (A3)."
+      },
+      {
+        "label": "03 Weg entscheiden",
+        "hint": "Widerrufen, zahlen oder zuerst reden? Ihr Entscheid und Ihre Antwort an den Onkel stehen zuoberst im Plan (A2)."
+      },
+      {
+        "label": "04 Fristenplan",
+        "hint": "Zuoberst: Entscheid als Ich-Satz, Antwort an den Onkel. Dann 3–5 Schritte: Tag (heute + n), Form, Beleg (etwa Postquittung). Nach der Frist?"
+      },
+      {
+        "label": "05 Erklärung",
+        "hint": "Notieren Sie Stichworte, erklären Sie frei. Station 4: Den Widerruf schreiben und verschicken Sie nur mit ihrem Ja. Danach A4."
+      }
+    ],
+    "abgaben": [
+      "Fristenplan",
+      "Stichworte zur Erklärung",
+      "Selbsteinschätzung auf den vier Kriterien"
+    ],
+    "produkte": [
+      {
+        "schritt": 4,
+        "form": "flaeche",
+        "modus": "Produktion schriftlich und bildlich"
+      },
+      {
+        "schritt": 5,
+        "form": "spur",
+        "modus": "Produktion mündlich",
+        "stationen": [
+          "Was am Telefon rechtlich geschehen ist",
+          "Welches Recht sie hat und bis wann",
+          "Was wir zusammen tun, Schritt für Schritt",
+          "Wozu ich ihr Einverständnis brauche"
+        ],
+        "hinweis": "Notieren Sie je Station zwei bis drei Stichworte, keine ganzen Sätze. Erklären Sie es einer Person, die die Grossmutter spielt, in einfachen Worten; Fachbegriffe übersetzen Sie. Diese Seite mit Ihren Stichworten ist die Abgabe.",
+        "dauer": "2 Minuten"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Geklickt und bereut – bin ich an den Kauf gebunden?",
+        "inhalte": [
+          "Prüfschema: Tatbestand, Rechtslage, Rechtsfolge (S. 7)",
+          "Widerruf: wann er gilt (S. 2; Kap. 2.4, S. 60)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Nach fünf Monaten defekt – was fordere ich, und wie?",
+        "inhalte": [
+          "Forderung mit Frist und Beleg (S. 7)",
+          "Forderung und Ton entscheiden (S. 4)",
+          "Regeln für eine Aussprache (S. 2)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "kn_kriterium": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Begriffe und Regeln der Einheit fehlen oder sind falsch wiedergegeben.",
+          "Einzelne Begriffe und Regeln stimmen, andere sind ungenau oder verwechselt.",
+          "Begriffe und Regeln der Einheit sind korrekt wiedergegeben und passen zum Fall.",
+          "Begriffe und Regeln sind korrekt, passend und eigenständig verknüpft; Ausnahmen und Grenzen sind genannt."
+        ],
+        "indikator_produkt": "Plan: Frist, Grenze von 100 Franken, Form stimmen. Erklärung: einfach, sachlich richtig."
+      },
+      {
+        "kn_kriterium": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Urteil oder Forderung steht ohne Begründung da.",
+          "Eine Begründung ist ansatzweise da, bleibt aber lückenhaft oder ohne Beleg.",
+          "Urteil oder Forderung ist nachvollziehbar begründet und mit einem Beleg gestützt.",
+          "Schlüssig begründet; der Einwand des Gegenübers ist aufgenommen und beantwortet, Folgen sind benannt."
+        ],
+        "indikator_produkt": "Mein Weg ist begründet; der Einwand «einfach zahlen» ist beantwortet."
+      },
+      {
+        "kn_kriterium": "Rechtliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Nicht erkennbar, welche Regel aus Gesetz oder Vertrag für den Fall gilt.",
+          "Eine Regel ist genannt, aber nicht oder nur teilweise auf den Fall bezogen.",
+          "Die passende Regel ist richtig auf den Fall angewendet; Gesetz und Vertrag sind auseinandergehalten.",
+          "Das rechtliche Prinzip ist auf einen neuen Fall übertragen; benannt ist auch, wo es keine klare Antwort gibt."
+        ],
+        "indikator_produkt": "Regel auf den Fall angewendet; Gesetz und Vertrag auseinandergehalten."
+      },
+      {
+        "kn_kriterium": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Position ist nicht erkennbar.",
+          "Eine Position ist angedeutet, bleibt aber unklar oder unbegründet.",
+          "Die Position steht klar in Ich-Form und sagt, was ich will oder verlange.",
+          "Begründete Position in Ich-Form; das Spannungsfeld ist anerkannt, ebenso, was die Gegenseite zu Recht einwendet."
+        ],
+        "indikator_produkt": "Entscheid im Plan in Ich-Form: wozu ich rate – und was der Onkel zu Recht einwendet."
+      }
+    ],
+    "kontext_ausschluss": [
+      "Snowboard-Set (Heft A)",
+      "Smartphone, Garantieschein (Heft B)",
+      "Systemkamera, Sturzschaden, neuwertig (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Der Fall ist richtig geprüft (Kap. 2.4, S. 60; OR Art. 40a, 40b): Auch die mündliche Zusage bindet; weil am Telefon verkauft wurde und der Betrag über 100 Franken liegt, gilt das Widerrufsrecht von 14 Tagen. Gerechnet ab der Zusage vor neun Tagen bleiben fünf Tage. Das ist die vorsichtige Rechnung, die der Auftrag vorgibt. Nach OR Art. 40e Abs. 2 beginnt die Frist erst, wenn die Kundin zugesagt hat und die Angaben zum Widerruf schriftlich kennt (Art. 40d) – im Fall frühestens gestern, mit dem Vertragsdoppel. Wer so rechnet und es begründet, liegt ebenfalls richtig; im Plan zählt dann trotzdem der frühere Termin als sicherer.",
+        "Der Fristenplan beginnt mit dem Entscheid in Ich-Form und der Antwort an den Onkel und nennt darunter drei bis fünf Schritte in der richtigen Reihenfolge, je mit Tag, Form und Beleg — bei einem Widerruf etwa den eingeschriebenen Brief an die Adresse auf dem Vertragsdoppel mit Kopie und Postquittung — und sagt in einem Satz, dass der Kauf nach Ablauf der Frist gilt und die Rechnung zu zahlen ist.",
+        "Die Erklärung übersetzt Fachbegriffe in einfache Worte, folgt den vier Stationen, begründet den gewählten Weg, nimmt den Einwand des Onkels auf und lässt der Grossmutter den Entscheid."
+      ],
+      "tragfaehig": "Ich rate zum Widerruf, weil die Frist in fünf Tagen abläuft und danach nur noch Zahlen bleibt. Plan: heute Vertragsdoppel und Rechnung bereitlegen und mit Grossmutter reden; morgen unterschreibt sie den Widerruf; spätestens übermorgen geht er eingeschrieben an die Adresse der Firma, Kopie und Postquittung bewahren wir auf; danach klären wir mit der Firma die Rücksendung der Ware. Der Onkel hat recht damit, dass eine Zusage bindet und ein Brief Mühe macht — aber das Gesetz gibt hier ausdrücklich Bedenkzeit. Ebenso vertretbar: Grossmutter behält das Paket und zahlt, wenn sie es nach dem Gespräch wirklich will und weiss, dass sie bis zum 14. Tag widerrufen könnte. Wer den Widerruf anders als eingeschrieben plant, liegt richtig, wenn der Plan zeigt, wie der Versand belegt wird: Nach OR Art. 40e Abs. 1 ist der Widerruf an keine Form gebunden, beweisen muss ihn die Kundin; der eingeschriebene Brief ist der sichere Weg (Kap. 2.4, S. 60). Nach dem Widerruf geben beide Seiten zurück, was sie erhalten haben (OR Art. 40f Abs. 1); das Lehrmittel sagt dazu nichts.",
+      "nicht_tragfaehig": "Ein Plan ohne Datum oder mit einem Widerruf nach dem 14. Tag; die Behauptung, eine Zusage am Telefon gelte ohnehin nicht oder man könne jeden Kauf 14 Tage lang zurückgeben; ein Plan, der die Frist dem Gespräch mit dem Onkel opfert, ohne das zu benennen; eine Erklärung, die abgelesen wird, Fachbegriffe aneinanderreiht oder über den Kopf der Grossmutter hinweg entscheidet."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}

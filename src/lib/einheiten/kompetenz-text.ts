@@ -82,10 +82,22 @@ function enrichHf(hf: SituationJson | null, lehrgang?: string | null): Situation
 // `client:only`-Island serialisiert wird.
 export function enrichKompetenzen(set: EinheitFullSet): EinheitFullSet {
   const lehrgang = set.hf_A?.lehrgang || set.hf_B?.lehrgang || set.hf_C?.lehrgang
-  return {
+  const out: EinheitFullSet = {
     ...set,
     hf_A: enrichHf(set.hf_A, lehrgang),
     hf_B: enrichHf(set.hf_B, lehrgang),
     hf_C: enrichHf(set.hf_C, lehrgang),
   }
+  // v4.2: die Workbench schaltet über `spur_varianten` um und der ZIP rendert beide
+  // Spuren daraus — ohne diese Zeilen fehlten dort die Kompetenz-Klartexte, die
+  // `hf_A`/`hf_B` tragen. Bestandseinheiten haben den Schlüssel nicht (Invariante 4).
+  if (set.spur_varianten) {
+    out.spur_varianten = Object.fromEntries(
+      Object.entries(set.spur_varianten).map(([k, v]) => [
+        k,
+        v && { hf_A: enrichHf(v.hf_A, lehrgang), hf_B: enrichHf(v.hf_B, lehrgang) },
+      ]),
+    ) as EinheitFullSet['spur_varianten']
+  }
+  return out
 }
