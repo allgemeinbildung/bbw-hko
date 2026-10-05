@@ -237,11 +237,11 @@
       },
       {
         "label": "04 Entscheiden, wo ansetzen",
-        "hint": "LF4: eine Haltung wählen, dazu zwei Zeilen der Umfrage, bei denen die Person im Fall etwas ändert. S. 7 unten, 2 Sätze: Einwand, Verzicht."
+        "hint": "LF4: Haltung wählen. S. 7 unten, 2 Sätze in Ich-Form: Antwort auf den Einwand, Verzicht. Dazu 2 Zeilen der Umfrage wählen (für Schritt 05)."
       },
       {
         "label": "05 Massnahmen ableiten",
-        "hint": "S. 7 Mitte, je Massnahme zwei Zeilen in Ich-Form der Person: was, ab wann, woran die Wirkung zu merken ist; dann Beleg. Zeichen wie S. 6."
+        "hint": "S. 7 Mitte: je gewählte Zeile eine Massnahme, klein wie ein Teilziel (Kap. 18.4, S. 421): was, ab wann, Wirkung; dann Beleg. Kreise: S. 6."
       }
     ],
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
@@ -311,7 +311,7 @@
             },
             {
               "marke": "beleg",
-              "text": "Weil 9 von 20 oft knapp ankommen und 14 von 20 umsteigen (Tabelle, Zeilen 3 und 4)."
+              "text": "Weil 9 von 20 oft knapp oder zu spät ankommen (Tabelle, Zeile 4)."
             },
             {
               "marke": "ziel",
@@ -445,7 +445,13 @@
   "methoden": [
     {
       "ref": "hko-befund-kachel",
-      "fuer": "für den Befund je Zeile: Zahl = Anteil der Umfrage, Bild = Ihr Balken; kein Foto, kein eigenes Blatt"
+      "fuer": "für den Befund je Zeile: Aussage und Einordnung in einem Satz; Zahl = Anteil, Bild = Ihr Balken; kein Foto",
+      "beispiel": [
+        "Aussage: «Die meisten in der Klasse lesen Nachrichten auf dem Handy.»",
+        "Zahl: 15 von 20, das sind 75 %",
+        "Bild: Balken von 30 mm (2 mm je Person)",
+        "Einordnung: Eine Zeitung auf Papier lesen nur 2 von 20."
+      ]
     },
     {
       "ref": "__spur__",
@@ -601,7 +607,7 @@
       "vollstaendig_wenn": [
         "Tabelle: vier Zeilen mit Anteil, Balken, Befund je Zeile",
         "Zwei Massnahmen, je überprüfbar und mit Beleg",
-        "Entscheid in zwei Sätzen: Einwand, Verzicht"
+        "Entscheid in zwei Sätzen: Antwort auf den Einwand, Verzicht"
       ]
     },
     {
@@ -770,7 +776,7 @@
               "«Für «jetzt ändern» spricht, dass …»",
               "«Ich entscheide: …; zum Einwand: …; ich verzichte auf …»"
             ],
-            "produkt": "S. 7 unten: Antwort auf den Einwand, Verzicht. Massnahmen klein wie Teilziele (Kap. 18.4, S. 421)."
+            "produkt": "S. 7 unten: zwei Sätze in Ich-Form der Person – Antwort auf den Einwand, Verzicht (Schritt 04)."
           },
           "loesung": {
             "kern": "Erwartungshorizont: Lehre zuerst ↔ jetzt ändern",
@@ -841,11 +847,11 @@
           "feld_hoehe_mm": 25,
           "scaffolding": {
             "strategien": [
-              "QR-Seite zählt so: Abs. 2, 4, 8 (= Fussnote 1). G14: zwei Werte der Reihe zusammenzählen.",
+              "G14, Reihe 15–24: beide Werte addieren. Sitzen fehlt in der Umfrage, taugt aber als Beleg.",
               "Spalte «→ Begriff»: ein Begriff aus LF1 oder dem Glossar (S. 8), der die Zeile einordnet."
             ],
             "satzanfaenge": [
-              "«Laut Erhebung 2022 … (erster Absatz / G14).»",
+              "«Laut Erhebung 2022 … (PDF S. 16 bzw. G14).»",
               "«Quelle und Umfrage fragen nicht gleich; ich leite ab: …»"
             ],
             "produkt": "Ein Wert mit Fundstelle dient als Vergleich in einem Befund oder als Beleg einer Massnahme."
@@ -880,7 +886,7 @@
               },
               {
                 "label": "Stand",
-                "text": "Quelle: BFS; Absätze wie im Archivtext, Titel mitgezählt. Ersatzquelle: für eine Krankenkasse (Abs. 13)."
+                "text": "Quelle: BFS; Absätze wie im Archivtext. Nicht in der Quelle: 150/75 Min. gelten für Erwachsene; bis 17 Jahre Ø 60 Min. pro Tag (hepa.ch, 2023)."
               }
             ],
             "raster_zeilen": [
@@ -931,7 +937,7 @@
               "«Für «jetzt ändern» spricht, dass …»",
               "«Ich entscheide: …; zum Einwand: …; ich verzichte auf …»"
             ],
-            "produkt": "S. 7 unten: Antwort auf den Einwand, Verzicht. Massnahmen klein wie Teilziele (Kap. 18.4, S. 421)."
+            "produkt": "S. 7 unten: zwei Sätze in Ich-Form der Person – Antwort auf den Einwand, Verzicht (Schritt 04)."
           },
           "loesung": {
             "kern": "Erwartungshorizont: Lehre zuerst ↔ jetzt ändern",
@@ -989,7 +995,7 @@
         "ref": "hko-grafik-lesen",
         "fuer": "für das Raster zur Quelle (S. 3)",
         "beispiel": [
-          "Was gemessen: G3, Reihe Januar · Ausleihen einer Bibliothek · Wert: 240 (erfundenes Beispiel) · Aussage: im Winter wird am meisten ausgeliehen · → Freizeit"
+          "Was gemessen: G3, Reihe Januar · Ausleihen einer Bibliothek je Monat · Wert: 240 Ausleihen (erfunden) · Aussage: im Januar wird am meisten ausgeliehen · → Freizeit"
         ]
       },
       "scaffold_90": "Auf S. 6 steht eine ausgefüllte Auswertung zu einem anderen Fall; die erste Rasterzeile zur Quelle erarbeiten Sie gemeinsam."

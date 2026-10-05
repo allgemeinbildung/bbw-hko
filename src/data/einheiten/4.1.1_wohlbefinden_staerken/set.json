@@ -290,15 +290,15 @@
       },
       {
         "label": "03 Kommentierter Aushang",
-        "hint": "A2: Regeln abschreiben; Rand je: Erwartung, Sanktion (01), Wirkung (02); eine zum Ändern markieren."
+        "hint": "A2: Regeln abschreiben; Rand je: Erwartung, Sanktion (01), Folge für die Gesundheit (02). Regel 3 auch: Wirkung auf das Bild von sich."
       },
       {
         "label": "04 Entscheid",
-        "hint": "Mitmachen, mit eigener Regel oder absagen? Ein Satz der Person unter dem Aushang (A2), mit Preis."
+        "hint": "Mitmachen, mit eigener Regel oder absagen? Regel markieren, an der es hängt. Ein Ich-Satz der Person unter dem Aushang (A2), mit Preis."
       },
       {
         "label": "05 Statement vor der Gruppe",
-        "hint": "Stichworte zu den vier Stationen (A3), bei Station 2 mit einem Einwand; sprechen Sie frei."
+        "hint": "Stichworte zu den vier Stationen (A3); Station 2 mit Beleg aus Ihrem Kommentar, Station 3 mit Einwand. Sprechen Sie frei."
       }
     ],
     "abgaben": [
@@ -318,9 +318,9 @@
         "modus": "Produktion mündlich",
         "stationen": [
           "Was ich an der Idee gut finde",
-          "Welche Regel ich für mich ändere – und warum",
-          "Was ich stattdessen zusage",
-          "Was ich mir von der Gruppe wünsche"
+          "Mein Entscheid – und die Regel, an der er hängt",
+          "Ein Einwand aus der Gruppe – und meine Antwort",
+          "Was ich zusage oder absage und was ich mir wünsche"
         ],
         "hinweis": "Planen Sie Ihr Statement in Stichworten, keinen ganzen Text. Sprechen Sie frei vor zwei Personen und stoppen Sie die Zeit. Geben Sie diese Seite mit Ihren Stichworten ab.",
         "dauer": "1–2 Minuten"
@@ -354,7 +354,7 @@
           "Fachbegriffe korrekt verwendet und der Situation passend zugeordnet.",
           "Fachbegriffe genau verwendet, verbunden und eigenständig auf die Situation bezogen."
         ],
-        "indikator_produkt": "Die Randkommentare nennen je Regel Erwartung, Sanktion und Wirkung richtig."
+        "indikator_produkt": "Die Randkommentare nennen je Regel Erwartung, Sanktion und Folge für die Gesundheit."
       },
       {
         "kn_kriterium": "Argumentation",
@@ -365,7 +365,7 @@
           "Aussagen nachvollziehbar begründet, mit passenden Belegen.",
           "Schlüssig begründet und belegt; Einwand der Gegenseite und Folgen aufgenommen."
         ],
-        "indikator_produkt": "Station 2 begründet mit Beleg aus dem Kommentar und nimmt einen Einwand auf."
+        "indikator_produkt": "Station 2 begründet mit Beleg aus dem Kommentar; Station 3 beantwortet einen Einwand."
       },
       {
         "kn_kriterium": "Identitätskonstrukt",
@@ -397,11 +397,11 @@
     ],
     "erwartungshorizont": {
       "gut_wenn": [
-        "Der kommentierte Aushang liest jede der vier Regeln als Norm, nennt die Sanktion (zurück auf Tag 1; die Liste, die alle sehen) und sagt, was die Regel für Körper, Kopf und Kontakte bedeutet; eine Regel ist markiert.",
+        "Der kommentierte Aushang liest jede der vier Regeln als Norm, nennt die Sanktion (zurück auf Tag 1; die Liste, die alle sehen) und sagt, was die Regel für Körper, Kopf und Kontakte bedeutet; bei Regel 3 steht, was die Liste mit dem Bild von sich macht; eine Regel ist markiert.",
         "Der Entscheid wählt einen der drei Wege und nennt den Preis in der Gruppe. Beide Spannungen sind sichtbar: dazugehören und bei sich bleiben, leisten und sich erholen.",
-        "Das Statement ist frei gesprochen, folgt den vier Stationen, steht in Ich-Form und begründet die geänderte Regel mit einem Beleg aus dem Kommentar."
+        "Das Statement ist frei gesprochen, folgt den vier Stationen, steht in Ich-Form, begründet den Entscheid mit einem Beleg aus dem Kommentar und beantwortet einen Einwand."
       ],
-      "tragfaehig": "Ich finde gut, dass wir uns gemeinsam etwas vornehmen. Regel 2 ändere ich für mich: Ohne Ruhetag fehlt mir die Erholung, und für die Lehre stehe ich schon früh auf (Heft B: Belastung, Gleichgewicht). Ich sage fünf Trainings pro Woche zu und hake sie ab. Von der Gruppe wünsche ich mir, dass ein Ruhetag nicht zurück auf Tag 1 führt. Das kostet mich vielleicht, dass einige finden, ich ziehe nicht durch. Ebenso tragfähig: ganz mitmachen oder absagen, wenn Norm, Sanktion und Preis benannt sind; wer ganz mitmacht, sagt an der zweiten Station, welche Regel am meisten kostet.",
+      "tragfaehig": "Ich finde gut, dass wir uns gemeinsam etwas vornehmen. Ich mache mit, aber mit eigener Regel; es hängt an Regel 2: Ohne Ruhetag fehlt mir die Erholung, und für die Lehre stehe ich schon früh auf (mein Randkommentar zu Regel 2: Belastung, das Gleichgewicht fehlt). Ihr sagt vielleicht, wer dazugehört, zieht durch. Ich antworte: Mit Ruhetagen bleibe ich eher die ganzen 30 Tage dabei (Fallüberlegung). Ich sage fünf Trainings pro Woche zu und hake sie ab; ich wünsche mir, dass ein Ruhetag nicht zurück auf Tag 1 führt. Das kostet mich vielleicht, dass einige finden, ich ziehe nicht durch. Ebenso tragfähig: ganz mitmachen oder absagen, wenn Norm, Sanktion und Preis benannt sind – auch dann nennt Station 2 die Regel, an der der Entscheid hängt.",
       "nicht_tragfaehig": "Regeln nur abgeschrieben oder pauschal gut oder schlecht genannt; ein Entscheid ohne Preis; ein Statement, das abgelesen wird oder die Gruppe beurteilt, statt die eigene Zusage zu nennen. Bewertet wird die Analyse am Fall, nie eine Lebensweise; Auskunft über sich selbst ist nicht verlangt."
     },
     "bogen": [

@@ -234,7 +234,7 @@
       },
       {
         "label": "03 Wirkung belegen",
-        "hint": "LF3: Rubrik 2 – zwei Wirkungen auf das Selbstbild der Person. Dahinter je eine Rasterzeile als Beleg: Begriff, Fundstelle (1. Spalte)."
+        "hint": "LF3: Rubrik 2 – zwei Wirkungen auf das Selbstbild der Person. Hinter jede: woher sie stammt – Fundstelle (1. Rasterspalte) und Begriff."
       },
       {
         "label": "04 Entscheid treffen",
@@ -284,7 +284,7 @@
             {
               "marke": "aussen",
               "text": "Wirkung · Norm: Ich halte meine eigenen Kleider für unpassend",
-              "notiz": "Beleg: Raster, Zeile 3 (S. 40, Abs. 2)"
+              "notiz": "Beleg: S. 40, Abs. 2 (Fundstelle aus dem Raster)"
             },
             {
               "marke": "offen",
@@ -440,7 +440,13 @@
     {
       "ref": "hko-stille-aushalten",
       "fuer": "für das Gespräch zu zweit: Impuls setzen, ausreden lassen",
-      "tun": "Das Beispiel zeigt nur die Form. Ihr Impuls gilt dem Fall: «Erzähl, warum die Person das Bild löschte.»"
+      "tun": "Ihr Impuls gilt dem Fall, nicht dem Gegenüber selbst.",
+      "beispiel": [
+        "Impuls: «Erzähl, warum die Person im Fall das Bild wohl gelöscht hat.»",
+        "— vier Sekunden Stille —",
+        "«Also … ich glaube, das fing schon früher an.»",
+        "Nicht: «War das dumm von ihr?» — damit ist die Überlegung weg."
+      ]
     },
     {
       "ref": "lm-17-2-stichwortnotizen",
@@ -682,7 +688,7 @@
             "satzanfaenge": [
               "«Laut S. … übernehmen wir Werte durch …»",
               "«Normen geben Halt, weil …; sie machen Druck, weil …»",
-              "«Für den Fall leite ich ab: …»"
+              "«Für den Fall leite ich ab: Die Regel wirkt, weil …»"
             ],
             "produkt": "Für Rubrik 2 leiten Sie ab, wie die Erwartung auf das Selbstbild wirkt; zwei Zeilen belegen es (Schritt 03)."
           },
@@ -838,7 +844,7 @@
           "feld_hoehe_mm": 25,
           "scaffolding": {
             "strategien": [
-              "Erst alle vier Antworten lesen, dann das Raster füllen: Stichworte, keine Sätze.",
+              "Erst alle vier Antworten lesen. Der gross gesetzte Satz dazwischen ist nur ein Zitat.",
               "Die Quelle sagt «Körperbild»; im Heft geht es allgemeiner um das Selbstbild."
             ],
             "satzanfaenge": [
@@ -907,7 +913,7 @@
                 "Selbstbild"
               ]
             ],
-            "befund": "Laut Quelle zeigen die Bilder kaum erreichbare Ideale; der Vergleich kann belasten (Antwort 1). Die Absender wirken nah und spontan, obwohl oft Bearbeitung dahintersteht; das weckt den Eindruck «so muss ich sein» (Antwort 2). Der Vergleich nach oben schadet dem Bild von sich (Antwort 4). Für den Fall leite ich ab: Auch in meiner Gruppe zeigen alle nur das Beste, und ich messe mich daran."
+            "befund": "Laut Quelle zeigen die Bilder kaum erreichbare Ideale; der Vergleich kann belasten (Antwort 1). Die Absender wirken nah und spontan, obwohl oft Bearbeitung dahintersteht; das weckt den Eindruck «so muss ich aussehen» (Antwort 2). Der Vergleich nach oben schadet dem Bild von sich (Antwort 4). Für den Fall leite ich ab: Auch in meiner Gruppe zeigen alle nur das Beste, und ich messe mich daran."
           }
         },
         {
@@ -940,7 +946,7 @@
                 "Der Entscheid ist eine der zwei Möglichkeiten, in Ich-Form der Person im Fall, mit dem, was er kostet, und dem Wert dahinter.",
                 "Der eigene Anteil ist benannt; für 3 Punkte beim zweiten Kriterium ist der Gedanke auf eine andere Gruppe übertragen."
               ],
-              "beispiel_pol_1": "Besser erklärt das Lehrmittel den Fall: Die Gruppe hat eine Regel, und wer sie verletzt, wird bestraft – kaum jemand reagierte (S. 414). Zur Quelle passt, dass es niemand verlangt hat: Der Eindruck «so muss ich sein» genügt (Antwort 2). Mein Anteil: Ich bearbeite und lösche selbst. Ich entscheide: Am Samstag teile ich wieder ein bearbeitetes Bild; die Gruppe ist mir wichtig (Wert: Zugehörigkeit). Das kostet mich, dass sie mich anders sieht, als ich bin. So ist es auch in einer Klasse, in der niemand zeigt, dass er lernt.",
+              "beispiel_pol_1": "Besser erklärt das Lehrmittel den Fall: Die Gruppe hat eine Regel, und wer sie verletzt, wird bestraft – kaum jemand reagierte (S. 414). Zur Quelle passt, dass es niemand verlangt hat: Der Eindruck «so muss ich aussehen» genügt (Antwort 2). Mein Anteil: Ich bearbeite und lösche selbst. Ich entscheide: Am Samstag teile ich wieder ein bearbeitetes Bild; die Gruppe ist mir wichtig (Wert: Zugehörigkeit). Das kostet mich, dass sie mich anders sieht, als ich bin. So ist es auch in einer Klasse, in der niemand zeigt, dass er lernt.",
               "beispiel_pol_2": "Besser erklärt die Quelle den Fall: Bei mir hat niemand etwas verlangt, alle zeigen nur das Beste. Laut Quelle wirkt das nah und spontan und weckt den Eindruck, man müsse auch so sein (Antwort 2); der Vergleich belastet (Antwort 4). Das Lehrmittel sieht richtig: Es gibt eine Strafe, kaum Reaktionen (S. 414). Mein Anteil: Ich bearbeite selbst. Ich entscheide: Am Samstag teile ich ein unbearbeitetes Bild von der Arbeit (Wert: Ehrlichkeit). Das kostet mich vielleicht Reaktionen. In einer neuen Gruppe prüfe ich zuerst, ob eine Regel wirklich gilt.",
               "nicht_tragfaehig": "Nur einen Pol nennen, die Gruppe oder soziale Medien pauschal verurteilen oder «beides stimmt» ohne Entscheid für den Samstag."
             }
@@ -955,7 +961,7 @@
             3,
             4
           ],
-          "auftrag": "Lesen Sie in der Quelle (QR-Seite) die ersten vier Fragen mit Antworten. Gesucht: wie Druck entsteht und wirkt. In die Spalte «Absatz» kommt die Nummer der Antwort, 1–4. Letzte Spalte: Begriff aus LF1 oder Glossar.",
+          "auftrag": "Lesen Sie auf der QR-Seite die ersten vier Fragen mit Antworten (bis vor die Empfehlungen). Gesucht: wie Druck entsteht und wirkt. Spalte «Absatz»: Nummer der Antwort, 1–4. Letzte Spalte: Begriff aus LF1 oder Glossar.",
           "raster": {
             "spalten": [
               "Absatz",
