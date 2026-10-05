@@ -86,7 +86,7 @@ Im Heft stehen die zwei Kriterien auf S. 5, je mit einer Indikator-Zeile, die sa
 |---|---|---|---|
 | A | <!--hko:hf_A.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].indikator_produkt-->Begriffe und Regeln in «Rechtslage» sind korrekt und passen zur Prüffrage<!--/hko--> |
 | A | <!--hko:hf_A.feedback_kriterien[1].kn_kriterium-->Rechtliches Prinzip<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].indikator_produkt-->Regel auf den Kauf angewendet; Gesetz und Vertrag auseinandergehalten<!--/hko--> |
-| B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->Brief: Forderung, 2 Belege. 3 Punkte: Stichworte beantworten «nur Reparatur», nennen Folge<!--/hko--> |
+| B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->2 Punkte: Forderung mit mind. einem Beleg. 3 Punkte: dazu Einwand beantwortet, Folge<!--/hko--> |
 | B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Forderung in Ich-Form. Für 3 Punkte: Notiz sagt, was das Geschäft zu Recht einwendet<!--/hko--> |
 
 Die Verteilung folgt den Produkten. Am Prüfbericht von Heft A sieht man am deutlichsten, ob Begriffe und Regeln stimmen und ob die Regel auf den eigenen Kauf angewendet ist — die Spalten «Rechtslage» und «Rechtsfolge» zeigen genau das. An Brief, Gespräch und Ergebnisnotiz von Heft B sieht man, ob eine Forderung begründet ist und ob jemand klar sagt, was er will, und trotzdem anerkennt, was die Gegenseite einwendet.
@@ -225,7 +225,7 @@ In Heft B hat LF4 in beiden Spuren denselben Pol-Typ und denselben Entscheid; de
 - **Links:** Prüfe vor jedem Einsatz die Links in Kap. 5 (Spalte «Geprüft am»). Eine automatische Link-Prüfung gibt es nicht.
 
 > [!warnung] Vor dem Druck: Videos einmal abspielen, Textseiten am Handy öffnen
-> **Heft B — nicht gegengehört.** Die Zeitmarken im Raster und in den Lösungen stammen aus den Untertiteln; der Ton ist nicht gehört, und ob der Player wirklich bei 00:00 des Ausschnitts beginnt, ist nicht am Player geprüft. Spiel darum **vor dem Druck** beide Videos einmal ab und kontrolliere die Marken. Quelle: 00:26, 00:35, 00:50, 01:26, 01:52, 02:16, 02:31. Ersatzquelle: 00:57, 02:07, 02:14, 04:01 — sie ist ein Ausschnitt (00:52–04:22) aus einem längeren Beitrag, die Lernenden müssen zur Startmarke springen; wer bei 02:07 spricht, ist nicht gesichert. Verschieben sich die Marken, korrigierst du sie im Dokument «Lösungen» von Hand und sagst es der Klasse an.
+> **Heft B — nicht gegengehört.** Die Zeitmarken im Raster und in den Lösungen stammen aus den Untertiteln; der Ton ist nicht gehört, und ob der Player wirklich bei 00:00 des Ausschnitts beginnt, ist nicht am Player geprüft. Spiel darum **vor dem Druck** beide Videos einmal ab und kontrolliere die Marken. Quelle: 00:26, 00:35, 00:50–01:02 (im Raster 00:55), 01:30–01:42, 01:52–02:02, 02:16, 02:31. Ersatzquelle: 00:57, 01:03, 02:07, 02:14, 04:01 — sie ist ein Ausschnitt (00:52–04:22) aus einem längeren Beitrag, die Lernenden müssen zur Startmarke springen; wer bei 02:07 und bei 04:01 spricht (Juristin oder Sprecherstimme), ist nicht gesichert. Verschieben sich die Marken, korrigierst du sie im Dokument «Lösungen» von Hand und sagst es der Klasse an.
 > **Textquellen — nicht am Bildschirm geprüft.** Die Quelle von Heft A und Vertiefung 2 von Heft B tragen kein Datum; es zählt der Abruf vom 4. Oktober 2026. Auf der Seite der Quelle von Heft A sind die Abschnitte eingeklappt: zuerst alle öffnen, sonst fehlen Absätze. Das Raster zählt Zwischentitel und Listenpunkte als Absatz — prüf an einem Handy, ob die Zählung der Lösung dort aufgeht. Die zwei Gesetzestexte (Vertiefung 1 in beiden Heften) laden nur in einem Browser, nicht in jeder App-Vorschau.
 
 > [!warnung] Wenn ein Link nicht geht
@@ -239,7 +239,7 @@ In Heft B hat LF4 in beiden Spuren denselben Pol-Typ und denselben Entscheid; de
 |---|---|
 | Titel | <!--hko:hf_A.titel-->Geklickt und bereut – bin ich an den Kauf gebunden?<!--/hko--> |
 | Herausforderung | <!--hko:hf_A.herausforderung.label-->Kaufvertrag prüfen und Folgen beurteilen<!--/hko--> (3.3.1) |
-| Persona | <!--hko:hf_A.persona.beruf-->Lernende/r EFZ, 1. Lehrjahr<!--/hko--> — <!--hko:hf_A.persona.betrieb-->eigener Lehrbetrieb<!--/hko-->, <!--hko:hf_A.persona.ort-->eigener Wohnort<!--/hko--> |
+| Persona | <!--hko:hf_A.persona.beruf-->Lernende/r EFZ<!--/hko--> — <!--hko:hf_A.persona.betrieb-->eigener Lehrbetrieb<!--/hko-->, <!--hko:hf_A.persona.ort-->eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | <!--hko:hf_A.nrlp.gesellschaft[0].aspekt-->Recht<!--/hko--> (<!--hko:hf_A.nrlp.gesellschaft[0].iteration-->R2<!--/hko-->) |
 | Sprachmodi | <!--hko:hf_A.nrlp.sprachmodi[0]-->Rezeption schriftlich und bildlich<!--/hko--> |
 | Schlüsselkompetenzen | SK<!--hko:hf_A.nrlp.sk[0]-->1<!--/hko--> · SK<!--hko:hf_A.nrlp.sk[1]-->5<!--/hko--> · SK<!--hko:hf_A.nrlp.sk[2]-->3<!--/hko--> |
@@ -267,13 +267,13 @@ In Heft B hat LF4 in beiden Spuren denselben Pol-Typ und denselben Entscheid; de
 
 ### Produkt: <!--hko:hf_A.handlungsprodukt.titel-->Prüfbericht zu meinem Kauf<!--/hko-->
 
-**Format:** <!--hko:hf_A.handlungsprodukt.format_detail-->Sie zeichnen auf S. 7 eine Tabelle mit vier Zeilen (je eine Prüffrage), daneben die Spalten Tatbestand · Rechtslage · Rechtsfolge. Die vier Prüffragen: 1 Ist ein Vertrag entstanden? 2 Bindet er mich in meinem Alter? 3 Gibt mir das Gesetz einen Widerruf oder Rücktritt? 4 Was sagen die Geschäftsbedingungen? Die Spalten heissen Tatbestand (was war), Rechtslage mit Fundstelle (was gilt und wo es steht) und Rechtsfolge (was daraus für mich folgt). Unter der Tabelle steht Ihr Entscheid in zwei Sätzen mit dem nächsten Schritt. Der Bericht ist für Sie selbst und für den Kollegen, der es anders sieht.<!--/hko-->
+**Format:** <!--hko:hf_A.handlungsprodukt.format_detail-->Sie zeichnen auf S. 7 eine Tabelle mit vier Zeilen (je eine Prüffrage), daneben die Spalten Tatbestand · Rechtslage · Rechtsfolge. Die vier Prüffragen: 1 Ist ein Vertrag entstanden? 2 Bindet er mich in meinem Alter? 3 Gibt mir das Gesetz einen Ausweg (Widerruf, Rücktritt, Anfechtung)? 4 Was sagen die Geschäftsbedingungen? Die Spalten heissen Tatbestand (was war), Rechtslage mit Fundstelle (was gilt und wo es steht) und Rechtsfolge (was daraus für mich folgt). Unter der Tabelle steht Ihr Entscheid in zwei Sätzen mit dem nächsten Schritt. Der Bericht ist für Sie selbst und für den Kollegen, der es anders sieht.<!--/hko-->
 
 Die fünf Schritte auf S. 5:
 
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Begriffe klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Klären Sie mit LF1 Vertrag und Alter. Tabelle auf S. 7: vier Zeilen (je eine Prüffrage), Spalten Tatbestand · Rechtslage · Rechtsfolge.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Begriffe klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->LF1: Vertrag und Alter klären. Zeichnen Sie auf S. 7 die Tabelle: vier Zeilen (Prüffragen), Spalten Tatbestand · Rechtslage · Rechtsfolge.<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Tatbestand ordnen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->LF2: Füllen Sie «Tatbestand»: je Prüffrage ein Stichwort. Ist eine Frage nicht entscheidbar: kein Fehler – «offen» und wovon es abhängt.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Rechtslage belegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->LF3: Tragen Sie bei Prüffrage 3 und 4 je eine Zeile aus dem Raster in «Rechtslage» ein, mit Fundstelle.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Rechtslage belegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->«Rechtslage» füllen: LF1 liefert die Regel zu Prüffrage 1 und 2, das Raster (LF3) je eine Zeile zu Prüffrage 3 und 4. Immer mit Fundstelle.<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Rechtsfolge beurteilen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->LF4: Füllen Sie die Spalte «Rechtsfolge». Darunter Ihr Entscheid in zwei Sätzen: Ihr Weg und der nächste Schritt.<!--/hko-->
 - Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Bericht fertigstellen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Prüfen Sie mit den zwei Kriterien: Stimmen die Regeln? Sind sie auf Ihren Kauf angewendet? Bessern Sie nach.<!--/hko-->
 
@@ -282,6 +282,7 @@ Die fünf Schritte auf S. 5:
 <!--hko:hf_A.handlungsprodukt.abgaben|liste-->
 - Prüfbericht mit vier Prüfzeilen (Tabelle auf S. 7)
 - Entscheid in zwei Sätzen mit nächstem Schritt
+- Sie geben das ganze Heft ab; was sonst dazugehört, zeigt die Checkliste (S. 8)
 <!--/hko-->
 
 ### Hinweise zu jeder Seite
@@ -305,7 +306,7 @@ Die fünf Schritte auf S. 5:
 
 > [!erwartungshorizont] Vertiefung 1 (Spur mit Medien, Gesetzestext, Art. 40a, 40b und 40e) — Wann das Gesetz einen Widerruf gibt
 > Erwartet: Das Gesetz knüpft den Widerruf an den **Ort**, an dem das Angebot gemacht wurde (Art. 40b) — ein Onlineshop ist nicht dabei —, an einen gewerblichen Anbieter und an einen Wert über 100 Franken (Art. 40a). Die Frist beträgt 14 Tage (Art. 40e).
-> Grenze: Der Text ist Gesetzessprache; er sagt nichts zu freiwilligen Rückgaben. In einem Punkt weicht er vom Lehrmittel ab: Nach Art. 40e ist für den Widerruf keine Form vorgeschrieben, den Nachweis muss aber erbringen, wer widerruft; das Lehrmittel (Kap. 2.4, S. 60) verlangt den eingeschriebenen Brief. Lass beide Fassungen gelten.
+> Grenze: Der Text ist Gesetzessprache; er sagt nichts zu freiwilligen Rückgaben. In einem Punkt weicht er vom Lehrmittel ab: Nach Art. 40e ist für den Widerruf keine Form vorgeschrieben, den Nachweis muss aber erbringen, wer widerruft; das Lehrmittel (Kap. 2.4, S. 60) verlangt den eingeschriebenen Brief. Massgebend ist das Gesetz (Stand 1. Oktober 2026): Der Widerruf ist formfrei; der eingeschriebene Brief ist der sichere Beleg, keine Pflicht. Lass beide Antworten gelten und sag der Klasse, warum. Nicht im Ausschnitt: Art. 40c (kein Widerruf, wenn die Kundin die Verhandlungen ausdrücklich gewünscht hat oder am Markt- oder Messestand kauft; das Lehrmittel zieht beide Fälle in einen Satz zusammen) und Art. 40d (der Anbieter muss schriftlich über das Widerrufsrecht informieren; erst dann läuft die Frist).
 
 > [!erwartungshorizont] Vertiefung 2 (Spur mit Medien, Artikel, Absätze 1–10) — Warum der Kauf trotz Alter gilt
 > Erwartet: Grundsätzlich braucht es vor dem 18. Geburtstag das Einverständnis der Eltern (Abs. 2–3); die Ausnahme ist selbst verdientes Geld und Taschengeld (Abs. 5). Darum gilt der Kauf im Beispiel, und ohne Abmachung gibt es keinen Rücktritt (Abs. 9). Es bleibt, zu zahlen und weiterzuverkaufen (Abs. 10).
@@ -333,7 +334,10 @@ Die fünf Schritte auf S. 5:
 > Viele übernehmen den Satz des Kollegen. Das Lehrmittel sagt das Gegenteil für Käufe, die sich mit dem eigenen Lohn erfüllen lassen (Kap. 2.4, S. 55), und nennt eine Faustregel zur Höhe (Kap. 1.3, S. 27). Verlang bei Prüffrage 2 die Rechnung mit den Zahlen des Falls, nicht nur ein Ja oder Nein.
 
 > [!warnung] Wann der Vertrag im Onlineshop zustande kommt, bleibt offen
-> Kap. 2.4, S. 63 sagt zweierlei: Erst die Bestellung sei das Angebot, das der Shop annimmt — und der Klick binde. Ob die Bestätigung per E-Mail im Fall schon die Annahme ist, entscheidet weder das Lehrmittel noch das Heft. Wer das als offene Frage notiert und daraus den Schluss zieht, den Shop früh anzuschreiben, hat mehr verstanden als jemand mit einer glatten Antwort. An anderer Stelle (S. 60) heisst es zudem, wer bestelle, nehme ein Angebot an — das gilt für den Kauf im Laden oder ab Prospekt, nicht für den Onlineshop. Stell keine der Lesarten als die einzig richtige dar.
+> Kap. 2.4, S. 63 sagt zweierlei: Erst die Bestellung sei das Angebot, das der Shop annimmt — und der Klick binde. Ob die Bestätigung per E-Mail im Fall schon die Annahme ist, entscheidet weder das Lehrmittel noch das Heft. Wer das als offene Frage notiert und daraus den Schluss zieht, den Shop früh anzuschreiben, hat mehr verstanden als jemand mit einer glatten Antwort. An anderer Stelle (S. 60) heisst es zudem, wer bestelle, nehme ein Angebot an — das gilt, wo das Geschäft ein verbindliches Angebot gemacht hat, etwa mit Ware und Preisschild im Laden (OR Art. 7 Abs. 3), nicht für den Onlineshop. Das Gesetz entscheidet die Frage für den Fall nicht: Die Bestätigung des Eingangs ist Pflicht des Shops (UWG Art. 3 Abs. 1 Bst. s) und für sich noch keine Annahme; es kommt auf ihren Wortlaut und die Geschäftsbedingungen an. Darum bleibt «offen, hängt von der Bestätigung ab» die richtige Antwort.
+
+> [!warnung] Markt- und Messestand: Karte auf S. 6 und Lehrmittel S. 60
+> Das Beispiel der Karte «Einen Rechtsfall in drei Schritten lösen» spielt am Marktstand (Korb für CHF 40). Im Heft begründet es den fehlenden Widerruf mit dem Betrag unter 100 Franken — das steht so in Kap. 2.4, S. 60 und im Gesetz. Zum Marktstand selbst sagen Lehrmittel und Gesetz nicht dasselbe: OR Art. 40c (Stand 1. Oktober 2026) schliesst den Widerruf aus, wenn die Kundin die Verhandlungen ausdrücklich gewünscht **oder** am Markt- oder Messestand gekauft hat; Kap. 2.4, S. 60 fasst die zwei Fälle in einem Satz zusammen, der sich wie eine Bedingung liest. Fragt jemand nach: Es gilt das Gesetz.
 
 > [!warnung] Absätze zählen (Spur mit Medien)
 > Das Raster verlangt die Absatznummer, und die Lösung zählt Zwischentitel und Listenpunkte mit. Auf dem Handy sind die Abschnitte der Seite zunächst eingeklappt. Zähl die ersten vier Absätze gemeinsam am Beamer; danach stimmen die Nummern der Klasse mit denen der Lösung überein.
@@ -372,7 +376,7 @@ Die fünf Schritte auf S. 5:
 
 **<!--hko:hf_A.bewertungsraster[1].produkt-->Quelle<!--/hko-->**
 <!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
-☐ Raster S. 3: vier Zeilen gefüllt, je mit Fundstelle
+☐ Raster S. 3: keine Zeile leer, jede mit Fundstelle
 ☐ Jede Zeile hat einen Begriff (LF1 oder Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
@@ -400,7 +404,7 @@ Die fünf Schritte auf S. 5:
 |---|---|
 | Titel | <!--hko:hf_B.titel-->Nach fünf Monaten defekt – was fordere ich, und wie?<!--/hko--> |
 | Herausforderung | <!--hko:hf_B.herausforderung.label-->Mangel rügen und Forderung vertreten<!--/hko--> (3.3.2) |
-| Persona | <!--hko:hf_B.persona.beruf-->Lernende/r EFZ, 1. Lehrjahr<!--/hko--> — <!--hko:hf_B.persona.betrieb-->eigener Lehrbetrieb<!--/hko-->, <!--hko:hf_B.persona.ort-->eigener Wohnort<!--/hko--> |
+| Persona | <!--hko:hf_B.persona.beruf-->Lernende/r EFZ<!--/hko--> — <!--hko:hf_B.persona.betrieb-->eigener Lehrbetrieb<!--/hko-->, <!--hko:hf_B.persona.ort-->eigener Wohnort<!--/hko--> |
 | Aspekte (Ges) | <!--hko:hf_B.nrlp.gesellschaft[0].aspekt-->Recht<!--/hko--> (<!--hko:hf_B.nrlp.gesellschaft[0].iteration-->R2<!--/hko-->) |
 | Sprachmodi | <!--hko:hf_B.nrlp.sprachmodi[0]-->Interaktion und Kollaboration mündlich<!--/hko--> · <!--hko:hf_B.nrlp.sprachmodi[1]-->Interaktion und Kollaboration schriftlich<!--/hko--> |
 | Schlüsselkompetenzen | SK<!--hko:hf_B.nrlp.sk[0]-->1<!--/hko--> · SK<!--hko:hf_B.nrlp.sk[1]-->9<!--/hko--> · SK<!--hko:hf_B.nrlp.sk[2]-->3<!--/hko--> |
@@ -432,17 +436,17 @@ Die fünf Schritte auf S. 5:
 
 Die fünf Schritte auf S. 5:
 
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Begriffe klären<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->LF1: Markieren Sie die Forderungen, die für Sie in Frage kommen, und zwei Regeln für das Gespräch.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Begriffe klären<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Markieren Sie in Ihrer Antwort auf LF1 (S. 2) die Forderungen, die für Sie in Frage kommen, und zwei Regeln für das Gespräch.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Meinen Fall ordnen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->LF2: Schreiben Sie auf S. 7 Brieftitel und Anlass. Ihr erster Beleg ist die Quittung.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Forderung belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->LF3: Eine Rasterzeile wird Ihr zweiter Beleg: die Regel in Ihren Worten. Die Fundstelle bleibt im Raster. Die Grenze: fürs Gespräch.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Forderung, Ton entscheiden<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->LF4: Forderung mit Frist (bis wann) in Ich-Form in den Brief. Daneben Stichworte: Antwort auf «nur Reparatur», Folge für mich, Vorschlag.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Brief, Antwort, Gespräch<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Jede Person schreibt unter den Brief der anderen die Antwort des Geschäfts. Dann je Brief ein Gespräch; die Notiz gehört zum eigenen Brief.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Brief, Antwort, Gespräch<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Schluss schreiben. Dann schreibt jede Person unter den Brief der anderen die Antwort des Geschäfts; je Brief ein Gespräch, dann Notiz.<!--/hko-->
 
 **Abgaben**
 
 <!--hko:hf_B.handlungsprodukt.abgaben|liste-->
 - Mängelrüge (80–100 Wörter, Frist, 2 Belege); daneben Antwort auf «nur Reparatur»
-- Unter Ihrem Brief: Antwort als Geschäft, 2–3 Sätze, Einwand «nur Reparatur»
+- Unter Ihrem Brief: Antwort der Partnerperson als Geschäft, 2–3 Sätze mit Einwand
 - Ergebnisnotiz zum eigenen Brief, zwei Sätze: Ergebnis und berechtigter Einwand
 <!--/hko-->
 
@@ -502,7 +506,7 @@ Alle Paare arbeiten gleichzeitig; du gehst herum. Abgegeben wird das Heft mit Br
 > Das Gegenstück: «Dann halt reparieren.» Das ist kein Verhandeln. Tragfähig wird der Weg erst mit einer eigenen Bedingung — einer festen Frist, einem Leihgerät — und einem Satz dazu, was geschieht, wenn sie nicht eingehalten wird. Frist und Leihgerät sind Überlegungen zum Fall, kein Lehrmittelstoff; die Lösungen kennzeichnen sie so.
 
 > [!warnung] Zwei oder drei Forderungen? (Spur mit Medien)
-> Das Lehrmittel nennt drei Forderungen (S. 61), die Juristin im Video nennt zwei, und das Gesetz gibt den Ersatz nur unter einer Bedingung (Vertiefung 1). Lernende fragen, was nun stimmt. Die Antwort der Einheit: Die Fassungen widersprechen sich nicht in der Sache, sie sind verschieden vollständig; im Brief gilt, was belegt ist — mit Seite oder mit Zeitmarke. Stell keine als die einzig richtige dar.
+> Das Lehrmittel nennt drei Forderungen (S. 61), die Juristin im Video nennt zwei. Lernende fragen, was nun stimmt. Die Antwort am Gesetz (Stand 1. Oktober 2026): Wandelung und Minderung gibt es bei jedem Kauf (OR Art. 205); den Ersatz zusätzlich, wenn die Ware eine vertretbare Sache ist, also in gleicher Art mehrfach vorkommt (OR Art. 206) — bei einem neuen Seriengerät wie dem Smartphone des Falls trifft das nach üblicher Auslegung zu. Die Juristin nennt die zwei Rechte, die immer gelten; das Lehrmittel alle drei. Beides stimmt; im Brief gilt, was belegt ist — mit Seite oder mit Zeitmarke. Eine Reparatur gibt das Kaufrecht nicht; sie kann im Vertrag vereinbart sein, und der Vertrag darf die gesetzlichen Rechte ersetzen (Kap. 2.4, S. 62; SECO, Vertiefung 2).
 
 > [!warnung] Die Abwägung nach Folgen ist dünn belegt
 > LF4 lässt Reparatur, Ersatz und Geld zurück auch nach ihren Folgen vergleichen — für die Person, das Geschäft und das Gerät. Das ist die Stelle für SK 9 und zugleich die schwächste SK-Zuordnung der Einheit: Lehrmittel und Quelle liefern dazu nichts, die Lernenden überlegen selbst. Erwarte einen Satz («so bleibt ein fast neues Gerät in Gebrauch»), keine Abhandlung, und bewerte ihn nicht als Fachwissen.
@@ -570,14 +574,14 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt, wann jede Quell
 <!--hko:quellen|quellenstand-->
 | Rolle | Titel | Herausgeber | Datum | Verortung | Länge | Geprüft am | Link |
 |---|---|---|---|---|---|---|---|
-| A · Quelle (q-331a-pflicht) | Waren zurückgeben oder umtauschen | ch.ch (Bundeskanzlei) | o. D. | Abs. 1–16 (bis und mit den Tipps) | 244 Wörter | 04.10.2026 | [ch.ch](https://www.ch.ch/de/sicherheit-und-recht/waren-zuruckgeben-oder-umtauschen/) |
-| A · Ersatzquelle (q-331a-pflicht-ersatz) | Rückgabe oder Umtausch – welche Rechte habe ich beim Kauf? | Konsumentenschutz | 24.02.2026 | Abs. 1–19 (bis und mit Merke) | 278 Wörter | 04.10.2026 | [konsumentenschutz.ch](https://www.konsumentenschutz.ch/online-ratgeber/rueckgabe-oder-umtausch/) |
-| A · Vertiefung 1 (q-331a-vertiefung-1) | Obligationenrecht: Art. 40a, 40b und 40e | Fedlex (Bundesrecht) | 01.10.2026 | Art. 40a, 40b, 40e | 287 Wörter | 04.10.2026 | [fedlex.admin.ch](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_40_b) |
-| A · Vertiefung 2 (q-331a-vertiefung-2) | Darf eine 16-Jährige ein Ticket für 300 Franken kaufen? | SRF Kassensturz Espresso | 29.09.2022 | ganzer Text, Abs. 1–10 | 232 Wörter | 04.10.2026 | [srf.ch](https://www.srf.ch/sendungen/kassensturz-espresso/rechtsfragen/kaufrecht/gekauft-ist-gekauft-darf-eine-16-jaehrige-ein-ticket-fuer-300-franken-kaufen) |
-| B · Quelle (q-331b-pflicht) | XXXLutz – «Kassensturz»-Juristin beantwortet Rechtsfragen | SRF Kassensturz | 19.05.2026 | 00:00–02:53 | 2:53 Min. | 04.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:b348bb7b-4e77-4937-8f6a-af2612460f88&subdivisions=false) |
-| B · Ersatzquelle (q-331b-pflicht-ersatz) | Mangelhaft – Dyson-Kundendienst | SRF Kassensturz | 03.03.2026 | 00:52–04:22 | 3:30 Min. | 04.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:2a511d6a-d862-4a7f-8ae6-6321cfcf7344&subdivisions=false) |
-| B · Vertiefung 1 (q-331b-vertiefung-1) | Obligationenrecht: Art. 201, 205, 206 und 210 | Fedlex (Bundesrecht) | 01.10.2026 | Art. 201, 205, 206, 210 | 545 Wörter | 04.10.2026 | [fedlex.admin.ch](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_201) |
-| B · Vertiefung 2 (q-331b-vertiefung-2) | Probleme nach dem Kauf: Sachmängel | SECO | o. D. | Abschnitt Sachmängel (Abs. 1–5) | 234 Wörter | 04.10.2026 | [seco.admin.ch](https://www.seco.admin.ch/de/probleme-nach-dem-kauf) |
+| A · Quelle (q-331a-pflicht) | Waren zurückgeben oder umtauschen | ch.ch (Bundeskanzlei) | o. D. | Abs. 1–16 (bis und mit den Tipps) | 244 Wörter | 05.10.2026 | [ch.ch](https://www.ch.ch/de/sicherheit-und-recht/waren-zuruckgeben-oder-umtauschen/) |
+| A · Ersatzquelle (q-331a-pflicht-ersatz) | Rückgabe oder Umtausch – welche Rechte habe ich beim Kauf? | Konsumentenschutz | 24.02.2026 | Abs. 1–19 (bis und mit Merke) | 278 Wörter | 05.10.2026 | [konsumentenschutz.ch](https://www.konsumentenschutz.ch/online-ratgeber/rueckgabe-oder-umtausch/) |
+| A · Vertiefung 1 (q-331a-vertiefung-1) | Obligationenrecht: Art. 40a, 40b und 40e | Fedlex (Bundesrecht) | 01.10.2026 | Art. 40a, 40b, 40e | 287 Wörter | 05.10.2026 | [fedlex.admin.ch](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_40_b) |
+| A · Vertiefung 2 (q-331a-vertiefung-2) | Darf eine 16-Jährige ein Ticket für 300 Franken kaufen? | SRF Kassensturz Espresso | 29.09.2022 | ganzer Text, Abs. 1–10 | 232 Wörter | 05.10.2026 | [srf.ch](https://www.srf.ch/sendungen/kassensturz-espresso/rechtsfragen/kaufrecht/gekauft-ist-gekauft-darf-eine-16-jaehrige-ein-ticket-fuer-300-franken-kaufen) |
+| B · Quelle (q-331b-pflicht) | XXXLutz – «Kassensturz»-Juristin beantwortet Rechtsfragen | SRF Kassensturz | 19.05.2026 | 00:00–02:53 | 2:53 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:b348bb7b-4e77-4937-8f6a-af2612460f88&subdivisions=false) |
+| B · Ersatzquelle (q-331b-pflicht-ersatz) | Mangelhaft – Dyson-Kundendienst | SRF Kassensturz | 03.03.2026 | 00:52–04:22 | 3:30 Min. | 05.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:2a511d6a-d862-4a7f-8ae6-6321cfcf7344&subdivisions=false) |
+| B · Vertiefung 1 (q-331b-vertiefung-1) | Obligationenrecht: Art. 201, 205, 206 und 210 | Fedlex (Bundesrecht) | 01.10.2026 | Art. 201, 205, 206, 210 | 545 Wörter | 05.10.2026 | [fedlex.admin.ch](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_201) |
+| B · Vertiefung 2 (q-331b-vertiefung-2) | Probleme nach dem Kauf: Sachmängel | SECO | o. D. | Abschnitt Sachmängel (Abs. 1–5) | 234 Wörter | 05.10.2026 | [seco.admin.ch](https://www.seco.admin.ch/de/probleme-nach-dem-kauf) |
 <!--/hko-->
 
 **Was du über die Quellen wissen musst**
@@ -622,12 +626,12 @@ Der Auftrag ist die Generalprobe mit Rückmeldung: ein neuer Fall in einem ander
 - Sofort schriftlich reagieren vs. zuerst das Gespräch suchen
 <!--/hko-->
 
-**Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Prüfen Sie den Fall mit dem Schema aus Heft A, klären Sie Forderung und Ton mit Heft B und halten Sie für die Grossmutter fest, was bis wann zu tun ist; die Frist rechnen Sie ab dem Tag der Zusage.<!--/hko-->
+**Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Prüfen Sie den Fall mit dem Schema aus Heft A, klären Sie Forderung und Ton mit Heft B und halten Sie für die Grossmutter fest, was bis wann zu tun ist; die Frist rechnen Sie vorsichtig ab der Zusage.<!--/hko-->
 
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Fall prüfen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Prüfen Sie mit Heft A (S. 7): Tatbestand, Rechtslage, Rechtsfolge. Das wird Station 1 und 2 (A3).<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Forderung und Ton klären<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Wie in Heft B (S. 7): Was verlangen Sie von der Firma, mit welchem Beleg? Das kommt in den Plan (A2), der Ton in die Erklärung (A3).<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Weg entscheiden<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Widerrufen, zahlen oder zuerst reden? Ihr Entscheid und Ihre Antwort an den Onkel stehen zuoberst im Plan (A2).<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Fristenplan<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Ihr Entscheid als Ich-Satz; darunter drei bis fünf Schritte: Tag (heute + n), Form (z. B. eingeschrieben), Beleg. Was gilt nach der Frist?<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Fristenplan<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Zuoberst: Entscheid als Ich-Satz, Antwort an den Onkel. Dann 3–5 Schritte: Tag (heute + n), Form, Beleg (etwa Postquittung). Nach der Frist?<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Erklärung<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Notieren Sie Stichworte, erklären Sie frei. Station 4: Den Widerruf schreiben und verschicken Sie nur mit ihrem Ja. Danach A4.<!--/hko-->
 
 **Abgaben**
@@ -639,7 +643,7 @@ Der Auftrag ist die Generalprobe mit Rückmeldung: ein neuer Fall in einem ander
 <!--/hko-->
 
 > [!coaching] Ab wann die Frist läuft — eine Annahme, die die Lernenden treffen müssen
-> Die Situation nennt den Tag der Zusage und die Frist; ab welchem Tag sie läuft, sagt das Lehrmittel nicht (Kap. 2.4, S. 60). Der Auftrag rechnet ab der Zusage — die für die Grossmutter strengere Lesart —, dann bleiben fünf Tage. Wer ab dem Erhalt der Ware rechnet, liegt nicht falsch, muss die Annahme aber hinschreiben. Dasselbe gilt für die Form: Das Lehrmittel verlangt den eingeschriebenen Brief; wer einen anderen Weg plant, zeigt, wie er den Versand belegt. Wie die Ware zurückgeht, ist ebenfalls eine Überlegung zum Fall, kein Lehrmittelstoff.
+> Die Situation nennt den Tag der Zusage und die Frist; ab welchem Tag sie läuft, sagt das Lehrmittel nicht (Kap. 2.4, S. 60). Der Auftrag lässt vorsichtig ab der Zusage rechnen — die für die Grossmutter strengere Lesart —, dann bleiben fünf Tage. Nach Gesetz beginnt die Frist erst, wenn die Kundin zugesagt hat **und** die Angaben zum Widerrufsrecht schriftlich kennt (OR Art. 40e Abs. 2, Art. 40d; Stand 1. Oktober 2026) — im Fall also frühestens mit dem Vertragsdoppel von gestern. Wer so rechnet, liegt richtig, muss die Überlegung aber hinschreiben; im Plan bleibt der frühere Termin der sichere. Zur Form: Das Lehrmittel verlangt den eingeschriebenen Brief, das Gesetz keine Form (Art. 40e Abs. 1), den Beweis trägt aber die Kundin; wer einen anderen Weg plant, zeigt, wie er den Versand belegt. Nach dem Widerruf geben beide Seiten zurück, was sie erhalten haben (Art. 40f Abs. 1) — die Ware geht also zurück; das steht nicht im Lehrmittel.
 
 ### Ablauf über drei Lektionen (Vorschlag)
 
@@ -656,7 +660,7 @@ Der Bogen hat vier Seiten: A1 mit Situation, Zahlen und Auftrag, A2 mit der Flä
 
 ### Die Erklärung für die Grossmutter
 
-Das zweite Produkt richtet sich an eine bestimmte Person: die Grossmutter, die sich schämt und keinen Ärger will. Die Erklärung dauert rund zwei Minuten, wird frei gesprochen und folgt vier Stationen — was am Telefon rechtlich geschehen ist, welches Recht sie hat und bis wann, was gemeinsam zu tun ist und wozu es ihr Einverständnis braucht. Sie kommt ohne Fachbegriffe aus. Sie ist kein Vortrag vor der Klasse und kein abgelesener Text.
+Das zweite Produkt richtet sich an eine bestimmte Person: die Grossmutter, die sich schämt und keinen Ärger will. Die Erklärung dauert rund zwei Minuten, wird frei gesprochen und folgt vier Stationen — was am Telefon rechtlich geschehen ist, welches Recht sie hat und bis wann, was gemeinsam zu tun ist und wozu es ihr Einverständnis braucht. Fachbegriffe werden in einfache Worte übersetzt. Sie ist kein Vortrag vor der Klasse und kein abgelesener Text.
 
 - Gezeigt wird sie **live zu zweit**: Eine Person erklärt, die andere hört zu wie die Grossmutter und sagt danach, was unklar geblieben ist. Dann wird gewechselt. Alle Paare arbeiten gleichzeitig.
 - **Abgegeben** wird die Seite A3 mit den Stichworten, zwei bis drei je Station, keine ganzen Sätze. Willst du einzelne Erklärungen selbst hören, tust du das beim Herumgehen.
@@ -679,10 +683,10 @@ Die vier Kriterien stehen auf A4 im Wortlaut des KN (Kap. 7), je mit einem Indik
 ### Erwartungshorizont
 
 > [!erwartungshorizont] Gemeinsamer Auftrag — widerrufen, zahlen oder zuerst reden: mehrere Wege sind vertretbar
-> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[0]-->Der Fall ist richtig geprüft (Kap. 2.4, S. 60): Auch die mündliche Zusage bindet; weil am Telefon verkauft wurde und der Betrag über 100 Franken liegt, gilt das Widerrufsrecht von 14 Tagen. Gerechnet ab der Zusage vor neun Tagen bleiben fünf Tage.<!--/hko-->
+> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[0]-->Der Fall ist richtig geprüft (Kap. 2.4, S. 60; OR Art. 40a, 40b): Auch die mündliche Zusage bindet; weil am Telefon verkauft wurde und der Betrag über 100 Franken liegt, gilt das Widerrufsrecht von 14 Tagen. Gerechnet ab der Zusage vor neun Tagen bleiben fünf Tage. Das ist die vorsichtige Rechnung, die der Auftrag vorgibt. Nach OR Art. 40e Abs. 2 beginnt die Frist erst, wenn die Kundin zugesagt hat und die Angaben zum Widerruf schriftlich kennt (Art. 40d) – im Fall frühestens gestern, mit dem Vertragsdoppel. Wer so rechnet und es begründet, liegt ebenfalls richtig; im Plan zählt dann trotzdem der frühere Termin als sicherer.<!--/hko-->
 > - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[1]-->Der Fristenplan beginnt mit dem Entscheid in Ich-Form und der Antwort an den Onkel und nennt darunter drei bis fünf Schritte in der richtigen Reihenfolge, je mit Tag, Form und Beleg — bei einem Widerruf etwa den eingeschriebenen Brief an die Adresse auf dem Vertragsdoppel mit Kopie und Postquittung — und sagt in einem Satz, dass der Kauf nach Ablauf der Frist gilt und die Rechnung zu zahlen ist.<!--/hko-->
-> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[2]-->Die Erklärung kommt ohne Fachbegriffe aus, folgt den vier Stationen, begründet den gewählten Weg, nimmt den Einwand des Onkels auf und lässt der Grossmutter den Entscheid.<!--/hko-->
-> - **Tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.tragfaehig-->Ich rate zum Widerruf, weil die Frist in fünf Tagen abläuft und danach nur noch Zahlen bleibt. Plan: heute Vertragsdoppel und Rechnung bereitlegen und mit Grossmutter reden; morgen unterschreibt sie den Widerruf; spätestens übermorgen geht er eingeschrieben an die Adresse der Firma, Kopie und Postquittung bewahren wir auf; danach klären wir mit der Firma die Rücksendung der Ware. Der Onkel hat recht damit, dass eine Zusage bindet und ein Brief Mühe macht — aber das Gesetz gibt hier ausdrücklich Bedenkzeit. Ebenso vertretbar: Grossmutter behält das Paket und zahlt, wenn sie es nach dem Gespräch wirklich will und weiss, dass sie bis zum 14. Tag widerrufen könnte. Wer den Widerruf anders als eingeschrieben plant, liegt nicht falsch, wenn der Plan zeigt, wie der Versand belegt wird; der eingeschriebene Brief ist der sichere Weg (Kap. 2.4, S. 60). Wie die Ware zurückgeht, sagt das Lehrmittel nicht — das ist eine Fallüberlegung.<!--/hko-->
+> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[2]-->Die Erklärung übersetzt Fachbegriffe in einfache Worte, folgt den vier Stationen, begründet den gewählten Weg, nimmt den Einwand des Onkels auf und lässt der Grossmutter den Entscheid.<!--/hko-->
+> - **Tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.tragfaehig-->Ich rate zum Widerruf, weil die Frist in fünf Tagen abläuft und danach nur noch Zahlen bleibt. Plan: heute Vertragsdoppel und Rechnung bereitlegen und mit Grossmutter reden; morgen unterschreibt sie den Widerruf; spätestens übermorgen geht er eingeschrieben an die Adresse der Firma, Kopie und Postquittung bewahren wir auf; danach klären wir mit der Firma die Rücksendung der Ware. Der Onkel hat recht damit, dass eine Zusage bindet und ein Brief Mühe macht — aber das Gesetz gibt hier ausdrücklich Bedenkzeit. Ebenso vertretbar: Grossmutter behält das Paket und zahlt, wenn sie es nach dem Gespräch wirklich will und weiss, dass sie bis zum 14. Tag widerrufen könnte. Wer den Widerruf anders als eingeschrieben plant, liegt richtig, wenn der Plan zeigt, wie der Versand belegt wird: Nach OR Art. 40e Abs. 1 ist der Widerruf an keine Form gebunden, beweisen muss ihn die Kundin; der eingeschriebene Brief ist der sichere Weg (Kap. 2.4, S. 60). Nach dem Widerruf geben beide Seiten zurück, was sie erhalten haben (OR Art. 40f Abs. 1); das Lehrmittel sagt dazu nichts.<!--/hko-->
 > - **Nicht tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.nicht_tragfaehig-->Ein Plan ohne Datum oder mit einem Widerruf nach dem 14. Tag; die Behauptung, eine Zusage am Telefon gelte ohnehin nicht oder man könne jeden Kauf 14 Tage lang zurückgeben; ein Plan, der die Frist dem Gespräch mit dem Onkel opfert, ohne das zu benennen; eine Erklärung, die abgelesen wird, Fachbegriffe aneinanderreiht oder über den Kopf der Grossmutter hinweg entscheidet.<!--/hko-->
 
 ### Rückmeldung vor dem KN
@@ -753,7 +757,7 @@ Ablauf: eine Viertelstunde Vorbereitung mit dem Fall und Notizen auf einem Blatt
 
 > [!erwartungshorizont] Frage 2 (Anwenden, K3) — Welche Regel stützt wen?
 > 2 Punkte: Für den Verkäufer spricht, dass eine vertragliche Abmachung die Garantie ändern und ganz ausschliessen darf (Kap. 2.4, S. 62). Für die Käuferseite spricht, dass ein Vertrag anfechtbar ist, wenn jemand absichtlich getäuscht wurde (S. 56–57).
-> 3 Punkte zusätzlich: Die Antwort nennt die Grenze beider Regeln: Täuschung setzt voraus, dass der Verkäufer vom Schaden wusste — das steht im Fall nicht fest; und ob der Ausschluss einen verschwiegenen Mangel deckt, lässt das Lehrmittel offen.
+> 3 Punkte zusätzlich: Die Antwort nennt die Grenze beider Regeln: Täuschung setzt voraus, dass der Verkäufer vom Schaden wusste — das steht im Fall nicht fest; und ob der Ausschluss einen verschwiegenen Mangel deckt, lässt das Lehrmittel offen (nach OR Art. 199 ist der Ausschluss ungültig, wenn der Verkäufer den Mangel arglistig verschwiegen hat — für dich, nicht als Erwartung an die Lernenden).
 > Nicht 3 Punkte: eine Antwort, die eine der zwei Regeln als die allein gültige ausgibt.
 
 > [!erwartungshorizont] Frage 3 (Beurteilen, K3) — Was kann ich verlangen, und womit belege ich es?

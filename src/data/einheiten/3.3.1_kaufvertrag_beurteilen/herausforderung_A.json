@@ -46,7 +46,7 @@
     "lebensbezug_text": "Ich habe beim Einkaufen Pflichten, aber auch Rechte, die ich einfordern kann."
   },
   "persona": {
-    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "beruf": "Lernende/r EFZ",
     "betrieb": "eigener Lehrbetrieb",
     "ort": "eigener Wohnort"
   },
@@ -128,14 +128,14 @@
           "«Unter 18 darf ich allein kaufen, wenn …»",
           "«Widerrufen darf man nur, wenn …»"
         ],
-        "produkt": "Auf S. 7 in «Rechtslage»: Regel zum Vertrag und zum Alter, mit Seite. Den Widerruf brauchen Sie in LF3."
+        "produkt": "Auf S. 7 in «Rechtslage»: Regel zum Vertrag und zum Alter, mit Seite. Widerruf, «anfechtbar»: für Prüffrage 3."
       },
       "loesung": {
         "kern": "Vertrag, Alter, anfechtbar, Widerruf",
         "zeilen": [
           {
             "label": "Kaufvertrag",
-            "text": "Entsteht, wenn beide dasselbe wollen und über Gegenstand, Menge und Preis einig sind; formlos gültig. Wer bestellt, nimmt ein Angebot an (S. 60); im Onlineshop umgekehrt: Die Bestellung ist das Angebot, der Shop nimmt an (S. 63). Auch mündliche Zusagen binden.",
+            "text": "Entsteht, wenn beide dasselbe wollen und über Gegenstand, Menge und Preis einig sind. Wer auf ein verbindliches Angebot hin bestellt, nimmt es an (S. 60); im Onlineshop ist erst die Bestellung das Angebot, der Shop nimmt an (S. 63). Auch mündliche Zusagen binden.",
             "quelle": "Kap. 2.4, S. 55, 60, 63"
           },
           {
@@ -145,13 +145,13 @@
           },
           {
             "label": "Anfechtbar",
-            "text": "Der Vertrag gilt, lässt sich aber innert eines Jahres anfechten: wesentlicher Irrtum, absichtliche Täuschung, Drohung, Übervorteilung. Reue zählt nicht (Folgerung, nicht im Lehrmittel).",
+            "text": "Der Vertrag gilt, lässt sich aber innert eines Jahres anfechten: wesentlicher Irrtum, absichtliche Täuschung, Drohung, Übervorteilung. Reue: nein (Folgerung).",
             "quelle": "Kap. 2.4, S. 56-57"
           },
           {
             "label": "Widerruf",
-            "text": "14 Tage, Wert über 100 Franken, privater Gebrauch, nur an Haustür, Strasse, Arbeitsplatz, Werbeanlass, Telefon; eingeschrieben. Ausgenommen: Markt- oder Messestand, wenn man selbst auf Verhandlungen bestand.",
-            "quelle": "Kap. 2.4, S. 60"
+            "text": "14 Tage, über 100 Franken, privater Gebrauch; Haustür, Strasse, Arbeitsplatz, Werbeanlass, Telefon. Form: S. 60 verlangt Einschreiben; nach OR Art. 40e formfrei, es dient dem Beweis. Kein Widerruf: Markt-, Messestand, gewünschte Verhandlung (Art. 40c).",
+            "quelle": "Kap. 2.4, S. 60; OR 40a–40e"
           },
           {
             "label": "Häufiger Fehler",
@@ -216,12 +216,12 @@
   "handlungsprodukt": {
     "format": "Prüfbericht zum eigenen Kauf als Tabelle mit Tatbestand, Rechtslage und Rechtsfolge und einem Entscheid",
     "titel": "Prüfbericht zu meinem Kauf",
-    "format_detail": "Sie zeichnen auf S. 7 eine Tabelle mit vier Zeilen (je eine Prüffrage), daneben die Spalten Tatbestand · Rechtslage · Rechtsfolge. Die vier Prüffragen: 1 Ist ein Vertrag entstanden? 2 Bindet er mich in meinem Alter? 3 Gibt mir das Gesetz einen Widerruf oder Rücktritt? 4 Was sagen die Geschäftsbedingungen? Die Spalten heissen Tatbestand (was war), Rechtslage mit Fundstelle (was gilt und wo es steht) und Rechtsfolge (was daraus für mich folgt). Unter der Tabelle steht Ihr Entscheid in zwei Sätzen mit dem nächsten Schritt. Der Bericht ist für Sie selbst und für den Kollegen, der es anders sieht.",
-    "beschreibung": "Ich prüfe meinen Kauf mit vier Fragen: 1 Vertrag entstanden? 2 Bindet er mich mit 17? 3 Widerruf laut Gesetz? 4 Was sagen die Geschäftsbedingungen? Darunter: mein Entscheid.",
+    "format_detail": "Sie zeichnen auf S. 7 eine Tabelle mit vier Zeilen (je eine Prüffrage), daneben die Spalten Tatbestand · Rechtslage · Rechtsfolge. Die vier Prüffragen: 1 Ist ein Vertrag entstanden? 2 Bindet er mich in meinem Alter? 3 Gibt mir das Gesetz einen Ausweg (Widerruf, Rücktritt, Anfechtung)? 4 Was sagen die Geschäftsbedingungen? Die Spalten heissen Tatbestand (was war), Rechtslage mit Fundstelle (was gilt und wo es steht) und Rechtsfolge (was daraus für mich folgt). Unter der Tabelle steht Ihr Entscheid in zwei Sätzen mit dem nächsten Schritt. Der Bericht ist für Sie selbst und für den Kollegen, der es anders sieht.",
+    "beschreibung": "Ich prüfe meinen Kauf mit vier Fragen: 1 Vertrag entstanden? 2 Bindet er mich mit 17? 3 Ausweg laut Gesetz (Widerruf, anfechtbar)? 4 Was sagen die Geschäftsbedingungen? Darunter: mein Entscheid.",
     "schritte": [
       {
         "label": "01 Begriffe klären",
-        "hint": "Klären Sie mit LF1 Vertrag und Alter. Tabelle auf S. 7: vier Zeilen (je eine Prüffrage), Spalten Tatbestand · Rechtslage · Rechtsfolge."
+        "hint": "LF1: Vertrag und Alter klären. Zeichnen Sie auf S. 7 die Tabelle: vier Zeilen (Prüffragen), Spalten Tatbestand · Rechtslage · Rechtsfolge."
       },
       {
         "label": "02 Tatbestand ordnen",
@@ -229,7 +229,7 @@
       },
       {
         "label": "03 Rechtslage belegen",
-        "hint": "LF3: Tragen Sie bei Prüffrage 3 und 4 je eine Zeile aus dem Raster in «Rechtslage» ein, mit Fundstelle."
+        "hint": "«Rechtslage» füllen: LF1 liefert die Regel zu Prüffrage 1 und 2, das Raster (LF3) je eine Zeile zu Prüffrage 3 und 4. Immer mit Fundstelle."
       },
       {
         "label": "04 Rechtsfolge beurteilen",
@@ -243,7 +243,8 @@
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
     "abgaben": [
       "Prüfbericht mit vier Prüfzeilen (Tabelle auf S. 7)",
-      "Entscheid in zwei Sätzen mit nächstem Schritt"
+      "Entscheid in zwei Sätzen mit nächstem Schritt",
+      "Sie geben das ganze Heft ab; was sonst dazugehört, zeigt die Checkliste (S. 8)"
     ],
     "beispielbild": {
       "titel": "Anderer Fall mit anderen Prüffragen: unbestelltes Buch im Briefkasten",
@@ -307,7 +308,7 @@
     },
     "loesungsbild": {
       "titel": "Mögliche Lösung zum Fall: Snowboard-Set im Onlineshop bestellt und bereut",
-      "hinweis": "Eine mögliche Lösung, keine Vorlage: «Zum Kauf stehen» ist ebenso tragfähig (erstes Beispiel bei LF4). Erst zeigen, wenn die Prüfberichte stehen. Die Spalte «Rechtslage» stützt sich nur auf das Lehrmittel und passt darum zu jeder Fassung des Hefts; mit der Quelle kommen bei Frage 3 und 4 die Absätze aus dem Raster dazu. Seiten ohne Kapitel meinen Kap. 2.4; S. 62 (Abschnitt Garantie) liegt ausserhalb der Seiten, die das Heft nennt. Aus dem Lehrmittel belegt: Vertrag, Alter, kein Rücktritt. Aus den Geschäftsbedingungen des Falls, nicht aus dem Lehrmittel: die Rückgabe gegen Gutschein. Der Klick bindet mich an mein Angebot (S. 63); ob der Shop mit der Bestätigung per E-Mail schon angenommen hat, lässt S. 63 offen, das Heft entscheidet es nicht. Annahmen: Der Shop storniert auf Anfrage vielleicht freiwillig, verpflichtet ist er nicht; die 14 Tage laufen ab Erhalt (der Fall nennt keinen Fristbeginn).",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: «Zum Kauf stehen» ist ebenso tragfähig (erstes Beispiel bei LF4). Erst zeigen, wenn die Prüfberichte stehen. Die Spalte «Rechtslage» stützt sich nur auf das Lehrmittel und passt darum zu jeder Fassung des Hefts; mit der Quelle kommen bei Frage 3 und 4 die Absätze aus dem Raster dazu. Seiten ohne Kapitel meinen Kap. 2.4; S. 62 (Abschnitt Garantie) liegt ausserhalb der Seiten, die das Heft nennt. Aus dem Lehrmittel belegt: Vertrag, Alter, kein Rücktritt. Aus den Geschäftsbedingungen des Falls, nicht aus dem Lehrmittel: die Rückgabe gegen Gutschein. Der Klick bindet mich an mein Angebot (S. 63); ob der Shop mit der Bestätigung per E-Mail schon angenommen hat, lässt S. 63 offen, das Heft entscheidet es nicht: Den Eingang der Bestellung zu bestätigen, ist Pflicht des Shops (UWG Art. 3 Abs. 1 Bst. s) und sagt allein noch nicht, dass er annimmt; es kommt auf den Wortlaut und die Geschäftsbedingungen an. Dass es online keinen gesetzlichen Widerruf gibt, deckt sich mit OR Art. 40b (Stand 1. Oktober 2026): Der Onlinekauf steht nicht in der Liste. Annahmen: Der Shop storniert auf Anfrage vielleicht freiwillig, verpflichtet ist er nicht; die 14 Tage laufen ab Erhalt (der Fall nennt keinen Fristbeginn).",
       "legende": [],
       "bloecke": [
         {
@@ -324,7 +325,7 @@
                 "1 Vertrag entstanden?",
                 "bestellt, bezahlt, Bestätigung per E-Mail",
                 "Bestellung = Angebot, Klick bindet mich; Shop nimmt an (S. 63)",
-                "ich bin gebunden; Annahme per E-Mail: offen"
+                "an mein Angebot gebunden; Vertrag, sobald der Shop annimmt (E-Mail: offen)"
               ]
             },
             {
@@ -337,9 +338,9 @@
             },
             {
               "zellen": [
-                "3 Widerruf laut Gesetz?",
+                "3 Ausweg laut Gesetz?",
                 "online gekauft, nicht an der Haustür",
-                "Widerruf nur Haustür, Telefon usw. (S. 60); online in der Regel kein Rücktritt (S. 63)",
+                "Widerruf nur Haustür, Telefon usw. (S. 60); online in der Regel kein Rücktritt (S. 63); nicht anfechtbar: Reue ist kein Irrtum (Folgerung aus S. 56–57)",
                 "nein"
               ]
             },
@@ -399,7 +400,12 @@
     {
       "ref": "lm-1-3-rechtsfall",
       "fuer": "für den Prüfbericht",
-      "tun": "Je Prüffrage: erst was war, dann die Regel mit Seite, dann was für Sie folgt."
+      "tun": "Je Prüffrage: erst was war, dann die Regel mit Seite, dann was für Sie folgt.",
+      "beispiel": [
+        "Tatbestand: Am Marktstand sage ich zu, einen Korb für CHF 40 zu nehmen. Eine Stunde später will ich ihn nicht mehr.",
+        "Rechtslage: Mündliche Zusagen binden; widerrufen lassen sich nur bestimmte Käufe über 100 Franken (Kap. 2.4, S. 60).",
+        "Rechtsfolge: Der Kauf gilt. Ich nehme den Korb und zahle, oder ich frage, ob die Händlerin mich freiwillig entlässt."
+      ]
     },
     {
       "ref": "__spur__",
@@ -482,7 +488,7 @@
         {
           "von": "Kaufvertrag",
           "nach": "anfechtbarer Vertrag",
-          "text": "wird bei Irrtum, Täuschung oder Drohung zum"
+          "text": "wird bei wesentlichem Irrtum, Täuschung oder Drohung zum"
         },
         {
           "von": "Geschäftsbedingungen",
@@ -539,7 +545,7 @@
     {
       "produkt": "Quelle",
       "vollstaendig_wenn": [
-        "Raster S. 3: vier Zeilen gefüllt, je mit Fundstelle",
+        "Raster S. 3: keine Zeile leer, jede mit Fundstelle",
         "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
         "Befund in zwei bis drei Sätzen"
       ]
@@ -646,7 +652,7 @@
           "loesung": {
             "kern": "Klick bindet, in der Regel kein Rücktritt",
             "quelle_ref": "Kap. 2.4 | S. 63-64",
-            "quelle_stand": "2026-10-04",
+            "quelle_stand": "2026-10-05",
             "zeilen": [
               {
                 "label": "Erwartet",
@@ -698,7 +704,7 @@
                 "Geschäftsbedingungen"
               ]
             ],
-            "befund": "Im Onlineshop bindet mich schon der Klick; zurücktreten kann ich laut Lehrmittel in der Regel nicht (S. 63). Der Shop muss die Bestellung bestätigen, und seine Geschäftsbedingungen dürfen mich nicht missbräuchlich benachteiligen (S. 64). Für meinen Kauf leite ich ab: Das Gesetz gibt mir keinen Ausweg; mir bleibt, was der Shop von sich aus anbietet (Angabe des Falls, nicht aus dem Lehrmittel)."
+            "befund": "Im Onlineshop bindet mich schon der Klick; zurücktreten kann ich laut Lehrmittel in der Regel nicht (S. 63). Der Shop muss die Bestellung bestätigen, und seine Geschäftsbedingungen dürfen mich nicht missbräuchlich benachteiligen (S. 64). Für meinen Kauf leite ich ab: Einen Rücktritt gibt mir das Gesetz hier nicht; mir bleibt, was der Shop von sich aus anbietet (Angabe des Falls, nicht aus dem Lehrmittel)."
           }
         },
         {
@@ -713,7 +719,7 @@
           "scaffolding": {
             "strategien": [
               "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
-              "Fragen Sie sich: Was heisst «gekauft ist gekauft» für mich – und warum?"
+              "Das Sprichwort «gekauft ist gekauft»: Gilt es für Sie auch, wenn Sie der Kauf reut?"
             ],
             "satzanfaenge": [
               "«Nach dem Schema folgt für meinen Kauf: …»",
@@ -804,7 +810,7 @@
           "loesung": {
             "kern": "Gesetz gibt wenig, das Geschäft regelt den Rest",
             "quelle_ref": "q-331a-pflicht",
-            "quelle_stand": "2026-10-04",
+            "quelle_stand": "2026-10-05",
             "zeilen": [
               {
                 "label": "Erwartet",
@@ -831,7 +837,7 @@
               },
               {
                 "label": "Zählweise und Stand",
-                "text": "Wie im Archivtext, Zwischentitel und Listenpunkte mitgezählt (Titel: Abs. 1, 8, 12). Quelle ohne Datum, Abruf 2026-10-04; Ersatzquelle: 2026-02-24."
+                "text": "Wie im Archivtext, Zwischentitel und Listenpunkte mitgezählt (Titel: Abs. 1, 8, 12). Quelle ohne Datum, Abruf 2026-10-05; Ersatzquelle: 2026-02-24."
               }
             ],
             "raster_zeilen": [
@@ -875,7 +881,7 @@
           "scaffolding": {
             "strategien": [
               "Legen Sie LF1 neben das Raster: Wo sagt die Quelle mehr als das Lehrmittel?",
-              "Fragen Sie sich: Was heisst «gekauft ist gekauft» für mich – und warum?"
+              "Das Sprichwort «gekauft ist gekauft»: Gilt es für Sie auch, wenn Sie der Kauf reut?"
             ],
             "satzanfaenge": [
               "«Laut Lehrmittel (S. …) gilt für meinen Kauf: …»",
@@ -923,7 +929,7 @@
           "ref": "q-331a-vertiefung-1",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Wann gibt das Gesetz ein Widerrufsrecht – und warum fällt mein Kauf nicht darunter?",
-          "erwartung": "Das Angebot muss am Arbeitsplatz, in Wohnräumen, im öffentlichen Verkehr, auf Strassen und Plätzen, an einer Werbeveranstaltung mit Ausflugsfahrt oder Ähnlichem, am Telefon oder über vergleichbare gleichzeitige mündliche Telekommunikation gemacht sein (Art. 40b Bst. a–d); ein Onlineshop fehlt. Dazu: persönlicher Gebrauch, gewerblicher Anbieter, über 100 Franken (Art. 40a Abs. 1). Frist 14 Tage (Art. 40e Abs. 2); gewahrt, wenn der Widerruf am letzten Tag mitgeteilt oder der Post übergeben wird (Abs. 4). Abweichung: Art. 40e Abs. 1 verlangt keine Form, Kap. 2.4, S. 60 den eingeschriebenen Brief; beides gelten lassen. Stand: 2026-10-01."
+          "erwartung": "Das Angebot muss am Arbeitsplatz, in Wohnräumen, im öffentlichen Verkehr, auf Strassen und Plätzen, an einer Werbeveranstaltung mit Ausflugsfahrt oder Ähnlichem, am Telefon oder über vergleichbare gleichzeitige mündliche Telekommunikation gemacht sein (Art. 40b Bst. a–d); ein Onlineshop fehlt. Dazu: persönlicher Gebrauch, gewerblicher Anbieter, über 100 Franken (Art. 40a Abs. 1). Frist 14 Tage (Art. 40e Abs. 2); gewahrt, wenn der Widerruf am letzten Tag mitgeteilt oder der Post übergeben wird (Abs. 4). Form: nach Art. 40e Abs. 1 keine; Kap. 2.4, S. 60 verlangt noch das Einschreiben, es dient nur dem Beweis. Stand: 2026-10-01."
         },
         {
           "ref": "q-331a-vertiefung-2",
