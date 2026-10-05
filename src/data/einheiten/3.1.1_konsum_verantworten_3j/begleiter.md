@@ -80,8 +80,8 @@ Das KN-Raster ist der Ausgangspunkt (Backward Design): Jedes Heft übt zwei der 
 
 Warum diese Verteilung: Die Landkarte in Heft A steht und fällt mit korrekten Begriffen (Bedürfnisarten, Maslow, Gut), und Massstab-Satz und Entscheid zum Handy sind eine Ich-Position. Das Budgetgespräch in Heft B verlangt begründete Anpassungen gegen einen Einwand, und Budget, Engpass und Schuldenrisiko werden im eigenen Budget verbunden.
 
-- Die Kriterien stehen in den Heften **im Wortlaut des KN**, mit denselben vier Stufen.
-- Die Lernenden kreuzen vor der Abgabe ihre Stufe an (Spalte «Selbst»); du gibst Rückmeldung auf derselben Skala.
+- Die Kriterien stehen in den Heften **im Wortlaut des KN**, mit denselben 0 bis 3 Punkten.
+- Die Lernenden kreuzen vor der Abgabe ihre Punkte an (Spalte «Selbst»); du gibst Rückmeldung auf derselben Skala.
 - Bewertet wird im KN **bi-dimensional**: SuK und Ges als zwei getrennte Noten (Kap. 7).
 
 > [!coaching] KN-Wortlaut im Heft lesen
@@ -143,7 +143,7 @@ Jedes Heft besteht aus zwei Bogen A3, also acht Seiten A4. Die Doppelseite 6–7
 | 2 | Wissensecke I | LF1 und LF2 schriftlich | — | 27 |
 | 3 | Quelle | Video zweimal ansehen, Raster füllen, Befund schreiben | LF3: Quelle (Video) mit Raster | 25 |
 | 4 | Wissensecke II | LF4 schriftlich | Kasten: Vertiefung (freiwillig) | 15 |
-| 5 | Auftrag | Auftrag lesen; vor der Abgabe Stufe ankreuzen | — | 5 |
+| 5 | Auftrag | Auftrag lesen; vor der Abgabe Punkte ankreuzen | — | 5 |
 | 6 | Methoden und Beispiel | nachschlagen; Beispiel des Produkts ansehen | Karte 2: «Raster aus einer Quelle füllen» | — |
 | 7 | Arbeitsfläche | Produkt herstellen | — | 40 |
 | 8 | Abschluss | Begriffsnetz, Glossar, Quer-Check, «Das nehme ich mit», Checkliste | Glossar: Begriffe der Quelle | 15 |
@@ -263,7 +263,7 @@ Die fünf Schritte auf S. 5:
 > [!coaching] LF1 und LF2
 > Lass die Lernenden zuerst eigene Beispiele in die Pyramide einordnen, bevor du die Fachbegriffe abfragst — so wird die Theorie am eigenen Konsum verankert. Bestehe bei LF2 auf echten, eigenen Beispielen. Wer nur «Essen, Wohnen» nennt, wird aufgefordert, auch die Wahlbedürfnisse offen zu benennen.
 
-**S. 3 — Quelle (25 Min.).** Quelle ist ein Beitrag von 195 Sekunden aus einem Unterhaltungsmagazin (2025) über eine Plüschfigur, die zum Trend wurde. Das Raster fragt nach Zeitmarke, Kernaussage, Beleg oder Beispiel und dem Begriff aus LF1. Lass den Beitrag zweimal ansehen: beim ersten Mal nur zuschauen, beim zweiten Mal Zeitmarke und Stichwort notieren.
+**S. 3 — Quelle (25 Min.).** Quelle ist ein Beitrag von 195 Sekunden aus einem Unterhaltungsmagazin (2025) über eine Plüschfigur, die zum Trend wurde. Das Raster fragt nach Zeitmarke, Kernaussage, Beleg oder Beispiel und einem Begriff aus LF1 oder dem Glossar. Lass den Beitrag zweimal ansehen: beim ersten Mal nur zuschauen, beim zweiten Mal Zeitmarke und Stichwort notieren.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt einen überprüfbaren Massstab und den Entscheid zum Handy: Lehrmittel gegen Quelle — kann ein geweckter Wunsch ein echtes Bedürfnis treffen? Der Kasten «Vertiefung» ist freiwillig.
 
@@ -272,13 +272,13 @@ Die fünf Schritte auf S. 5:
 > Stand: aus dem Begleittext von SRF zum Beitrag. Das Audio selbst ist nicht gegengehört.
 
 > [!erwartungshorizont] Vertiefung 2 (Spur mit Medien, Video 00:35–06:29) — gefälschte Markenartikel
-> Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten, der Zoll hält Pakete zurück; Verfahren und Kosten gehen vom Markeninhaber aus.
+> Bedürfnis: dazugehören und beim Trend mitgehen, Markenlook trotz knappem Geld (Dazugehörigkeit, Anerkennung). Risiko: Die Einfuhr ist auch für den Eigengebrauch verboten; verdächtige Pakete werden kontrolliert, und Strafverfahren oder Bussen können vom Markeninhaber kommen, nicht vom Zoll.
 > Weitere Risiken (etwa Gesundheit oder Zahlungsdaten) nennt der Ausschnitt nicht; wer sie anführt, geht über den Ausschnitt hinaus.
 
 > [!coaching] Massstab statt Gefühl
 > Ein Massstab ist dann gut, wenn die Lernende in einem Monat mit Ja oder Nein sagen kann, ob sie ihn eingehalten hat. Die Methodenkarte «3B-Schema» hilft beim Begründen: den Massstab als Behauptung schreiben, in einem Satz begründen und am Beispiel Handy prüfen. «Ich kaufe nur, was ich wirklich brauche» ist noch keiner; «Ich kaufe nur, wenn ich den Wunsch zwei Wochen später noch habe» schon.
 
-**S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Stufe an; Schritt 05 verlangt danach eine Verbesserung.
+**S. 5 — Auftrag (5 Min.).** Die Lernenden lesen Produkt, Schritte und Abgaben und sehen die zwei Feedback-Kriterien. Vor der Abgabe kreuzen sie in der Spalte «Selbst» ihre Punkte an; Schritt 05 verlangt danach eine Verbesserung.
 
 **S. 6 — Methoden.** Vier Karten: «Stichwortnotizen» für die Einträge, das Rezeptionswerkzeug der Spur für das Raster, «Echt oder geweckt prüfen» für die Markierung und «3B-Schema» für den Massstab-Satz und den Entscheid. Genau zwei Karten tragen ein Beispiel (Rezeptionswerkzeug und «Echt oder geweckt prüfen») — so verlangt es die Methodenseite. Die Rezeptionskarte zeigt in den Heften ein **neutrales** Beispiel (Vereinssport, mit Beispielwert) — so wirkt es nicht wie ein Befund aus der Quelle.
 
@@ -323,9 +323,9 @@ Heft A hat in dieser Einheit nur die Spur mit Medien. Wo die folgenden Lösungen
 > - Zwei leere Knoten: Begriffe aus dem eigenen Raster, etwa Trend oder Blind-Box.
 > - «gilt auch bei …» (offenes Feld): eigene Beispiele, etwa ein Abo-Abschluss oder eine Freizeitausgabe
 >
-> **Tragfähige Verbindungen, zum Beispiel:** Werbung → Geweckter Wunsch («weckt») · Bedürfnis → Gut («wird befriedigt durch») · Konsumdruck → Impulskauf («führt zu») · Massstab → Impulskauf («bremst») · Wahlbedürfnis → Zentrum («kann warten»). Es zählt, dass die Beschriftung den Zusammenhang nennt, nicht welche fünf Linien gewählt werden.
+> **Tragfähige Verbindungen, zum Beispiel:** Werbung → Geweckter Wunsch («weckt») · Bedürfnis → Gut («wird befriedigt durch») · Konsumdruck → Impulskauf («führt zu») · Massstab → Impulskauf («bremst») · Massstab → «gilt auch bei …» («hilft auch dort beim Entscheiden»). Es zählt, dass die Beschriftung den Zusammenhang nennt, nicht welche fünf Linien gewählt werden.
 >
-> **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefungsquelle, falls Ihr Heft eine nennt) und als vierte Farbe auf der Karte zeigen.<!--/hko-->
+> **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Einen weiteren Einfluss belegen (eigene Beobachtung oder eine Vertiefung von S. 4) und als vierte Farbe auf der Karte zeigen.<!--/hko-->
 
 ### Wann ist das Heft fertig? (Selbstcheck — formativ, nicht benotet)
 
@@ -410,7 +410,7 @@ Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Budget aufstellen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Gliedern Sie Ihr Budget aus LF2 nach den drei Kostenarten aus LF1 und schreiben Sie den Saldo darunter.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Engpass markieren<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Markieren Sie in Ihrem Budget aus LF2 die Posten, bei denen es knapp wird.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Risiken belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Markieren Sie mit dem Raster aus LF3 die Posten, die zu Schulden führen können.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Risiken belegen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Markieren Sie die Posten, die zu Schulden führen können — Ihr Befund aus LF3 zeigt, worauf Sie achten.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Anpassen und Regeln setzen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Tragen Sie Anpassungen (je mit Grund) und Schutzregeln aus LF4 ein; die Regeln setzen bei den Posten aus Schritt 03 an. Neuen Saldo rechnen.<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Gespräch führen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Führen Sie das Budgetgespräch zu zweit: drei Argumente, eine Rückfrage, Ihre Antwort auf den Einwand.<!--/hko-->
 
@@ -429,9 +429,9 @@ Die fünf Schritte auf S. 5:
 **S. 2 — Wissensecke I (27 Min.).** LF1 (Verstehen) klärt die drei Kostenarten (fix, variabel, Rückstellungen) und den Begriff Schuldenspirale (Kap. 2.2, S. 48); LF2 (Anwenden) sammelt die Zahlen für das eigene Monatsbudget — Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung —, berechnet den Saldo und fragt, **bei welchen Posten** es knapp wird. Das saubere Budget entsteht erst auf S. 7.
 
 > [!coaching] LF1 und LF2
-> Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer seine echten Zahlen nicht zeigen will, darf schätzen — das Heft erlaubt geschätzte Zahlen ausdrücklich. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
+> Bestehe in LF2 auf realistischen Zahlen. Runde Fantasiezahlen zurückweisen: «Was zahlst du wirklich fürs Handy?» Wer einen Betrag nicht genau weiss oder nicht zeigen will, schätzt realistisch — LF2 erlaubt das («wo nötig realistisch geschätzt»). Für das saubere Budget auf S. 7 verlangt die Methodenkarte, Schätzungen wo möglich durch echte Beträge zu ersetzen. Für die Einnahmenzeile hilft eine echte, anonymisierte Lohnabrechnung als Anschauung (Kap. 2.1).
 
-**S. 3 — Quelle (25 Min.).** Quelle ist ein Ausschnitt von 211 Sekunden aus einem Dokumentarfilm, in dem zwei Frauen erzählen, wie sie mit 18 in Schulden gerieten. Die Lernenden tragen vier Aussagen mit Zeitmarke ein, die zeigen, wie junge Leute in Schulden geraten; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Lass den Ausschnitt zweimal ansehen und sag an, dass er bei 05:03 endet.
+**S. 3 — Quelle (25 Min.).** Quelle ist ein Ausschnitt von 211 Sekunden aus einem Dokumentarfilm, in dem zwei Frauen erzählen, wie sie mit 18 in Schulden gerieten. Die Lernenden tragen vier Aussagen mit Zeitmarke ein, die zeigen, wie junge Leute in Schulden geraten; LF3 fragt danach, welcher Grund sich schon im eigenen Budget zeigt. Lass den Ausschnitt zweimal ansehen und sag an, dass er bei 05:03 endet (die Quellenkarte auf S. 3 nennt den Ausschnitt). Der Player stoppt dort nicht: Unmittelbar danach erzählt die zweite Frau von Kleinkrediten — das berührt den Fall des KN (Leasing, Kredit). Stoppe selbst oder lass bei 05:03 anhalten. Lohnpfändung, Kündigung und Post vom Betreibungsamt sind im Ausschnitt Folgen, nicht Gründe; als Rasterzeile gelten sie, wenn die Lernenden sie so benennen.
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 verlangt zwei bis drei Anpassungen, zwei Schutzregeln als Wenn-dann-Satz und eine Antwort auf den stärksten Einwand. Der Kasten «Vertiefung» bietet einen Radiobeitrag (Mundart) und eine amtliche Seite zum Ablauf einer Betreibung — beides freiwillig.
 
@@ -489,7 +489,7 @@ Heft B hat in dieser Einheit nur die Spur mit Medien. Wo die folgenden Lösungen
 > - Zwei leere Knoten: Begriffe aus dem eigenen Raster, etwa Überschuldung oder Lohnpfändung.
 > - «gilt auch bei …» (offenes Feld): eigene Beispiele, in denen geplant werden muss, bevor Geld ausgegeben wird
 >
-> **Tragfähige Verbindungen, zum Beispiel:** Fixe Kosten → Engpass («lassen wenig Spielraum») · Mahnung → Schuldenspirale («ist der erste Schritt») · Anpassung → Saldo («verbessert») · Schutzregel → Mahnung («verhindert») · Rückstellung → Zentrum («Sicherheit später»).
+> **Tragfähige Verbindungen, zum Beispiel:** Fixe Kosten → Engpass («lassen wenig Spielraum») · Mahnung → Schuldenspirale («ist der erste Schritt») · Anpassung → Saldo («verbessert») · Schutzregel → Mahnung («verhindert») · Rückstellung → «gilt auch bei …» («braucht es auch dort»).
 >
 > **Optionale Vertiefung (für 100 %):** <!--hko:hf_B.lernfortschritt.scaffold_100-->Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen.<!--/hko-->
 
@@ -549,9 +549,9 @@ Die Tabelle wird beim Laden aus der Quellenkartei erzeugt; sie zeigt den Stand, 
 - **Ersatzquelle A** ist der Ausschnitt 00:59–04:16 aus einem Beitrag von elf Minuten, übernommen aus der Westschweiz. Die Hauptperson ist zwölfjährig, der Gegenstand ist Kosmetik.
 - **Vertiefung A1** ist nicht gegengehört: Es gibt kein Transkript, der Kurzbeschrieb stützt sich auf den von SRF veröffentlichten Begleittext. Hör den Beitrag vor dem Einsatz selbst an.
 - **Vertiefung A2** ist in Mundart, mit hochdeutschen Untertiteln.
-- **Quelle B** ist der Ausschnitt 01:32–05:03 aus einem Film von 50 Minuten. Der Player läuft nach dem Ausschnitt weiter — sag an, wo Schluss ist.
+- **Quelle B** ist der Ausschnitt 01:32–05:03 aus einem Film von 50 Minuten. Der Player läuft nach dem Ausschnitt weiter — sag an, wo Schluss ist: Ab 05:03 geht es um Kleinkredite, das liegt nahe am Fall des KN.
 - **Ersatzquelle B** ist der Ausschnitt 02:30–05:05 aus einer Reportage von 17 Minuten (2021). Auch hier läuft der Player nach dem Ausschnitt weiter.
-- **Die vier Videos der Quellen und Ersatzquellen** sind an den Untertiteln geprüft; Bild und Ton hat niemand gegengesehen. Sieh dir jedes vor dem Einsatz einmal selbst an — auch wegen der Sprache des Tons und der Zeitmarken.
+- **Die vier Videos der Quellen und Ersatzquellen** sind an den Untertiteln geprüft; Bild und Ton hat niemand gegengesehen. Sieh dir jedes vor dem Einsatz einmal selbst an — auch wegen der Sprache des Tons und der Zeitmarken. Der Ton ist vermutlich mindestens teilweise Mundart (nicht gegengehört). Laut SRG-Metadaten (05.10.2026) lassen sich bei Quelle A, Ersatzquelle A und Quelle B im Player deutsche Untertitel einschalten; **Ersatzquelle B hat im SRF-Player keine Untertitel**. Zeig den Lernenden, wie man die Untertitel einschaltet.
 - **Vertiefung B1** nennt eine Zahl von **2021** und ist in **Mundart**.
 - **Vertiefung B2** ist eine amtliche Seite ohne Datum; die Fristen darin sind am Gesetz geprüft (Stand 1. Januar 2026). Sie lädt nur im Browser vollständig.
 
@@ -625,7 +625,7 @@ Die Sprachnachricht richtet sich an die Gruppe im Chat: 60–90 Sekunden, der En
 
 ### Kriterien und Indikatoren
 
-Die vier Kriterien stehen auf A4 im Wortlaut des KN, mit denselben vier Stufen (Kap. 7). Woran du sie im Auftrag erkennst:
+Die vier Kriterien stehen auf A4 im Wortlaut des KN, mit denselben 0 bis 3 Punkten (Kap. 7). Woran du sie im Auftrag erkennst:
 
 | Kriterium | Dim. | Indikator im Auftrag |
 |---|---|---|
@@ -652,7 +652,7 @@ Zwischen der Abgabe und dem KN liegt mindestens eine Lektion mit Rückmeldung �
 | | Gemeinsamer Auftrag | KN |
 |---|---|---|
 | Zweck | Übung mit Rückmeldung | Nachweis |
-| Kriterien | dieselben vier KN-Kriterien, gleicher Wortlaut, gleiche Stufen | vier KN-Kriterien |
+| Kriterien | dieselben vier KN-Kriterien, gleicher Wortlaut, gleiche Punkte | vier KN-Kriterien |
 | Situation | neu, verbindet A und B, Lebensbereich Freizeit | neu, verbindet A und B, anderer Lebensbereich |
 | Produkt | Entscheidungsblatt und Sprachnachricht | eine der drei KN-Formen |
 | Rückmeldung | Lehrperson und Selbsteinschätzung, vor dem KN | Note |

@@ -173,7 +173,7 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 2.1 | S. 46-47 · Kap. 2.2 | S. 48 · eigener Fall",
-      "text": "Sammeln Sie die Zahlen für Ihr eigenes Monatsbudget — geschätzte genügen: Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung. Berechnen Sie den Saldo. Bei welchen Posten wird es knapp?",
+      "text": "Sammeln Sie die Zahlen für Ihr eigenes Monatsbudget, wo nötig realistisch geschätzt: Einnahmen, Ausgaben nach den drei Kostenarten, Abos, offene Rechnung. Berechnen Sie den Saldo. Bei welchen Posten wird es knapp?",
       "liefert": "Zahlen, Saldo und knappe Posten",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 45,
@@ -228,7 +228,7 @@
       },
       {
         "label": "03 Risiken belegen",
-        "hint": "Markieren Sie mit dem Raster aus LF3 die Posten, die zu Schulden führen können."
+        "hint": "Markieren Sie die Posten, die zu Schulden führen können — Ihr Befund aus LF3 zeigt, worauf Sie achten."
       },
       {
         "label": "04 Anpassen und Regeln setzen",
@@ -565,7 +565,7 @@
     }
   ],
   "lernfortschritt": {
-    "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine Beispielzeile im Raster der Quelle.",
+    "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile.",
     "scaffold_100": "Ein zweites Szenario einbauen (unerwartete Optikerrechnung CHF 250) und das Budget mit Rückstellungen anpassen."
   },
   "methoden": [
@@ -798,17 +798,17 @@
             "zeilen": [
               {
                 "label": "Erwartet",
-                "text": "Wenig Lohn, Einteilen fällt schwer (01:35); mit 18 Post vom Betreibungsamt, Eltern helfen nicht mehr (02:04); nicht gewusst, wo sie steht (02:21); Post bleibt liegen (03:17).",
+                "text": "Wenig Lohn, Einteilen fällt schwer (01:35); mit 18 allein zuständig (02:08–02:18); nicht gewusst, wo sie steht (02:21); Post bleibt liegen (03:17).",
                 "quelle": "Quelle, 01:35–03:17"
               },
               {
                 "label": "Auch gültig",
-                "text": "Miete offen, Kündigung, Lohnpfändung (01:41–01:55); zweite Frau: Steuern, Krankenkasse offen, Lebensstandard zu hoch (04:55–05:01); Ausweg: Überblick, Plan (02:45–03:02).",
+                "text": "Zweite Frau: Versicherung zu spät bezahlt, Lebensstandard zu hoch (04:40–05:01); verschärft: Steuern, Krankenkasse offen. Folgen, nicht Gründe: Miete offen, Kündigung, Lohnpfändung, Betreibungsamt (01:41–02:04).",
                 "quelle": "Quelle, 01:41–05:01"
               },
               {
                 "label": "Begriffe",
-                "text": "Deutung, mehrere gelten: Überblick → Saldo; Miete, Krankenkasse → fixe Kosten; Steuern → Rückstellung; Post bleibt liegen → Mahnung, Schuldenspirale.",
+                "text": "Deutung: Überblick → Saldo; Steuern → Rückstellung; Lebensstandard → Schuldenspirale; Post bleibt liegen → Überschuldung. Knoten S. 8: Überschuldung, Lohnpfändung.",
                 "quelle": "Kap. 2.2, S. 48 · Kap. 8.2"
               },
               {
@@ -821,7 +821,7 @@
               },
               {
                 "label": "Mit Ersatzquelle",
-                "text": "Mit 18 Abos und Bestellungen auf eigenen Namen (02:47); nur temporär gearbeitet, Rechnungen verdrängt (03:14–03:26); Mahnkosten können eine Rechnung verdoppeln (03:36); Steuern, Krankenkasse offen (03:58); Lohnpfändung (04:22); Briefe nicht mehr angesehen (04:44).",
+                "text": "Gründe: mit 18 Abos und Bestellungen auf ihren Namen (02:47); temporär gearbeitet, verdrängt (03:14–03:26). Verschärft: Mahnkosten verdoppeln Rechnungen (03:36); Steuern, Krankenkasse offen (03:58); Briefe nicht mehr angesehen (04:44).",
                 "quelle": "Ersatzquelle, 02:47–04:59"
               }
             ],
@@ -829,14 +829,8 @@
               [
                 "01:35",
                 "Wenig Lohn, das Einteilen fällt schwer",
-                "vielen Jungen geht es so",
+                "laut Erzählstimme bei vielen Jungen (01:38)",
                 "Saldo"
-              ],
-              [
-                "02:04",
-                "Mit 18 kommt erste Post vom Betreibungsamt",
-                "die Eltern helfen nicht mehr",
-                "Mahnung (Stufe davor)"
               ],
               [
                 "02:21",
@@ -846,12 +840,18 @@
               ],
               [
                 "03:17",
-                "Post bleibt liegen",
+                "Post bleibt liegen (verschärft die Lage)",
                 "Briefe im Milchkasten, bis er überfüllt ist",
+                "Überschuldung"
+              ],
+              [
+                "05:01",
+                "Zu hoher Lebensstandard",
+                "Steuern, Krankenkasse nicht bezahlt (04:55)",
                 "Schuldenspirale"
               ]
             ],
-            "befund": "Die Quelle zeigt, wie es bei zwei Frauen begann: nicht gewusst, wo sie finanziell stehen, Post liegen gelassen, Steuern und Krankenkasse nicht bezahlt, zu hoher Lebensstandard; später kamen Post vom Betreibungsamt und Lohnpfändung. Ich schliesse daraus: In meinem Budget zeigt sich dasselbe daran, dass ich nichts aufschreibe, und an der Rechnung, die schon gemahnt ist."
+            "befund": "Die Quelle zeigt an zwei Frauen, wie es begann: mit 18 allein zuständig, kein Überblick über die eigenen Finanzen, zu hoher Lebensstandard; liegen gelassene Post und unbezahlte Rechnungen verschärften es. Die Folgen waren Post vom Betreibungsamt und Lohnpfändung. Ich schliesse daraus: In meinem Budget zeigt sich dasselbe daran, dass ich nichts aufschreibe, und an der Rechnung, die schon gemahnt ist."
           }
         },
         {
@@ -914,13 +914,13 @@
           "ref": "q-131b-vertiefung-1",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Warum rutschen junge Leute laut Beitrag in Schulden — und wie will der Verein früh helfen?",
-          "erwartung": "Gründe: Druck durch soziale Medien (man sieht, was andere kaufen, und will mithalten), Konsumgesellschaft und steigende Preise, der Umgang mit Geld wird zu Hause nicht immer gelernt. Hilfe: Der Verein verweist Junge früh an bestehende Stellen und arbeitet mit Unterlagen für Schulen, Gemeinden und Lehrbetriebe. Eine konkrete Anlaufstelle nennt der Ausschnitt nicht."
+          "erwartung": "Gründe: Druck durch soziale Medien (man sieht, was andere kaufen, und will mithalten), Konsumgesellschaft und steigende Preise, der Umgang mit Geld wird zu Hause nicht immer gelernt. Hilfe: Der Verein verweist Junge früh an bestehende Stellen und arbeitet mit Unterlagen für Schulen, Gemeinden und Lehrbetriebe; Betroffene sollen selbst berichten. Eine konkrete Anlaufstelle nennt der Ausschnitt nicht."
         },
         {
           "ref": "q-131b-vertiefung-2",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Wie läuft eine Betreibung ab — und was können Sie tun, wenn ein Zahlungsbefehl kommt?",
-          "erwartung": "Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag Fortsetzung bis zur Lohnpfändung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt."
+          "erwartung": "Ablauf: Begehren beim Betreibungsamt → Zahlungsbefehl → 20 Tage zum Zahlen oder sofort bzw. innert 10 Tagen Rechtsvorschlag → ohne Rechtsvorschlag kann der Gläubiger die Betreibung fortsetzen, bis zur Lohnpfändung. Was tun: zahlen, eine Ratenvereinbarung suchen, sich beraten lassen — oder Rechtsvorschlag erheben, wenn die Forderung nicht stimmt."
         }
       ],
       "kasten_s4": {
@@ -931,7 +931,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zur Quelle (S. 3)",
         "beispiel": [
-          "00:40 (Beispielwert) · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → hier ein Begriff aus LF1"
+          "00:40 (Beispielwert) · Vereinssport ist beliebt · «jede dritte Person» (Beispielwert) · → Begriff aus LF1 oder Glossar"
         ]
       },
       "scaffold_90": "Beispiel des Budgets an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
