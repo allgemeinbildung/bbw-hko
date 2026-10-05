@@ -221,7 +221,7 @@
   "handlungsprodukt": {
     "format": "Faktenorientierte Bildfolge mit Sprechtext: sechs Bilder, 60 bis 90 Sekunden",
     "titel": "Storyboard zur Bildfolge: Was an meinem Kauf hängt",
-    "format_detail": "Eine Bildfolge aus sechs Bildern (Foto, Zeichnung oder Folie) mit je einem gesprochenen Satz, 60 bis 90 Sekunden, für Ihre Klasse. Bild 1 und 2 zeigen die Kaufgewohnheit. Bild 3 und 4 tragen je genau eine Folge mit ihrer Dimension und ihrem Beleg: Bild 3 die ökologische, Bild 4 eine ökonomische oder eine soziale – je nachdem, was Ihr Material belegt. Bild 5 zeigt zwei nachhaltigere Möglichkeiten, Bild 6 Ihre Schlussaussage in Ich-Form – mit Grund und mit dem, was für die andere Seite spricht. Sie planen auf S. 7 als Storyboard (S. 7 ist Ihr Blatt): sechs Felder, je mit Bildidee und Sprechsatz. Darunter führen Sie die Faktenliste «Woher die Fakten stammen» mit zwei bis drei Fakten und ihrer Fundstelle (Seite oder Zeitmarke). Markieren Sie je Bild mit den Zeichen der Legende von S. 6: ● wenn der Sprechsatz einen Fakt mit Beleg trägt, ○ wenn er Ihre eigene Aussage ist. Aufnehmen können Sie mit dem Handy; ohne Gerät zeigen Sie die Bilder vor der Klasse und sprechen die Sätze dazu.",
+    "format_detail": "Eine Bildfolge aus sechs Bildern (Foto, Zeichnung oder Folie) mit je einem gesprochenen Satz, 60 bis 90 Sekunden, für Ihre Klasse. Bild 1 und 2 zeigen die Kaufgewohnheit. Bild 3 und 4 tragen je genau eine Folge mit ihrer Dimension und ihrem Beleg: Bild 3 die ökologische, Bild 4 eine ökonomische oder eine soziale – je nachdem, was Ihr Material belegt. Bild 5 zeigt zwei nachhaltigere Möglichkeiten, Bild 6 Ihre Schlussaussage in Ich-Form – mit Grund und mit dem, was für die andere Seite spricht. Sie planen auf S. 7 als Storyboard (S. 7 ist Ihr Blatt): sechs Felder, je mit Bildidee und Sprechsatz. Darunter führen Sie die Faktenliste «Woher die Fakten stammen» mit zwei bis drei Fakten und ihrer Fundstelle (Seite oder Zeitmarke). Markieren Sie je Bild mit den Zeichen der Legende von S. 6: ● wenn der Sprechsatz einen Fakt aus Ihrer Faktenliste enthält, sonst ○ (Ihre eigene Aussage). Aufnehmen können Sie mit dem Handy; ohne Gerät zeigen Sie die Bilder vor der Klasse und sprechen die Sätze dazu.",
     "beschreibung": "Ich zeige meiner Klasse in sechs Bildern (Foto, Zeichnung oder Folie) mit je einem gesprochenen Satz, was an einer Billigbestellung hängt, welche zwei Möglichkeiten es gibt und wie ich entscheide.",
     "schritte": [
       {
@@ -234,7 +234,7 @@
       },
       {
         "label": "03 Folgen belegen",
-        "hint": "Bild 2: Gewohnheit (LF3). Bild 3: ökologische Folge (LF3 oder graue Energie, LF1). Bild 4: ökonomische oder soziale. Belege in die Liste."
+        "hint": "Bild 2: Gewohnheit. Bild 3: ökologische Folge (LF3 – oder LF1: Energie im Kauf). Bild 4: ökonomische oder soziale. Belege in die Liste."
       },
       {
         "label": "04 Haltung festlegen",
@@ -242,7 +242,7 @@
       },
       {
         "label": "05 Bildfolge aufnehmen",
-        "hint": "Markieren Sie je Bild (Legende S. 6): ● Satz mit Fakt und Beleg, ○ Ihre eigene Aussage. Aufnehmen: Handy genügt – oder zeigen und sprechen."
+        "hint": "Markieren Sie je Bild (Legende S. 6): ● wenn der Satz einen Fakt aus Ihrer Liste enthält, sonst ○. Aufnehmen: Handy genügt – oder zeigen."
       }
     ],
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
@@ -268,17 +268,19 @@
           "titel": "Storyboard: Bild 1 bis 3",
           "eintraege": [
             {
-              "text": "«Bei uns zu Hause leuchten nachts drei rote Lämpchen.»",
-              "notiz": "Bild 1: dunkle Stube, drei Lämpchen"
+              "marke": "aussage",
+              "text": "«Bei uns zu Hause leuchten nachts zwei Lämpchen.»",
+              "notiz": "Bild 1: dunkle Stube, zwei Lämpchen"
             },
             {
-              "text": "«Fernseher, Konsole und Lautsprecher bleiben im Standby – aus Gewohnheit.»",
+              "marke": "aussage",
+              "text": "«Router und TV-Box bleiben Tag und Nacht am Netz – aus Gewohnheit.»",
               "notiz": "Bild 2: Steckerleiste, alles eingesteckt"
             },
             {
               "marke": "fakt",
-              "text": "«Ökologische Folge: So brauchen wir über dreimal so viel Energie, wie uns zusteht.»",
-              "notiz": "Bild 3: Balken 6500 neben 2000 Watt"
+              "text": "«Ökologische Folge: Jedes der zwei Geräte braucht so 25 bis 70 kWh Strom im Jahr, den niemand nutzt.»",
+              "notiz": "Bild 3: Stromzähler, der nachts läuft"
             }
           ]
         },
@@ -287,8 +289,8 @@
           "eintraege": [
             {
               "marke": "fakt",
-              "text": "«Ökonomische Folge: Damit leben wir von der Substanz – das trägt keinen Wohlstand auf Dauer.»",
-              "notiz": "Bild 4: Sparschwein, das leerer wird"
+              "text": "«Ökonomische Folge: Das kostet uns je Gerät 5 bis 14 Franken im Jahr – für nichts.»",
+              "notiz": "Bild 4: Stromrechnung, eine Zeile rot"
             },
             {
               "marke": "fakt",
@@ -307,17 +309,17 @@
           "eintraege": [
             {
               "marke": "fakt",
-              "text": "Pro Kopf über das Dreifache an Energie: 6500 statt 2000 Watt",
-              "notiz": "Kap. 9.3, S. 235"
+              "text": "Vernetztes Gerät im Standby: 25 bis 70 kWh pro Jahr",
+              "notiz": "energieschweiz.ch, Stand 5.10.2026"
             },
             {
               "marke": "fakt",
-              "text": "Vom Ertrag leben, nicht von der Substanz; Wohlstand auf Dauer",
-              "notiz": "Kap. 9.3, S. 231"
+              "text": "Das sind 5 bis 14 Franken pro Gerät und Jahr",
+              "notiz": "energieschweiz.ch, Stand 5.10.2026"
             },
             {
               "marke": "fakt",
-              "text": "Standby vermeiden, beste Effizienzklasse",
+              "text": "Appell des Staates: Standby vermeiden, beste Effizienzklasse",
               "notiz": "Kap. 9.3, S. 233"
             }
           ]
@@ -326,7 +328,7 @@
     },
     "loesungsbild": {
       "titel": "Mögliche Lösung zum Fall: Sammelbestellung für CHF 19 – was an meinem Kauf hängt",
-      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Sie ist für die Fassung ohne Medien geschrieben: Belege sind Seiten des Lehrmittels, Zahlen Stand Lehrmittel (2025). In der Fassung mit Medien stehen dort Zeitmarken der Quelle (etwa 00:12 in Bild 2, 02:49 in Bild 3, 01:35 oder 02:25 in Bild 4) und Zahlen als Stand Oktober 2025; mit der Ersatzquelle kommt Bild 3 aus Kap. 9.2, S. 230 (graue Energie). Bild 4 zeigt hier die ökonomische Folge, weil S. 39–41 eine soziale kaum belegt. Der Entscheid in Bild 6 entspricht einem der zwei Beispiele von LF4; «mitbestellen» ist ebenso gültig, wenn es begründet ist und die andere Seite anerkennt. Grenze, die Lernende nennen können: Zum Onlinehandel sagt das Lehrmittel nichts; dass die eigene Bestellung zu dieser Gewohnheit gehört, ist Fallüberlegung. Die Bildideen sind Vorschläge.",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Sie ist für die Fassung ohne Medien geschrieben: Belege sind Seiten des Lehrmittels, Zahlen Stand Lehrmittel (2025). In der Fassung mit Medien stehen dort Zeitmarken der Quelle (etwa 00:12 in Bild 2, 02:49 in Bild 3, 01:35 oder 02:25 in Bild 4) und Zahlen als Stand Oktober 2025; mit der Ersatzquelle kommt Bild 3 aus Kap. 9.2, S. 230 (graue Energie). Bild 4 zeigt hier die ökonomische Folge, weil S. 39–41 eine soziale kaum belegt. Der Entscheid in Bild 6 entspricht einem der zwei Beispiele von LF4; «mitbestellen» ist ebenso gültig, wenn es begründet ist und die andere Seite anerkennt. Grenze, die Lernende nennen können: Zum Onlinehandel sagt das Lehrmittel nichts; dass die eigene Bestellung zu dieser Gewohnheit gehört, ist Fallüberlegung. Die Bildideen sind Vorschläge. Markiert ist nach der Regel von Schritt 05: ● nur, wo der Satz einen Fakt aus der Liste enthält. Das Beispiel auf S. 6 des Hefts (Standby) belegt mit energieschweiz.ch, abgerufen am 5.10.2026: vernetzte Geräte 25 bis 70 kWh, 5 bis 14 Franken pro Jahr.",
       "legende": [
         {
           "key": "fakt",
@@ -342,6 +344,7 @@
           "titel": "Storyboard: Bild 1 bis 3",
           "eintraege": [
             {
+              "marke": "aussage",
               "text": "«In unserem Gruppenchat läuft eine Sammelbestellung: Kopfhörer, Lichterkette und Sporttasche für zusammen CHF 19.»",
               "notiz": "Bild 1: Foto vom Warenkorb"
             },
@@ -366,6 +369,7 @@
               "notiz": "Bild 4: Abfallsack mit Preisschild"
             },
             {
+              "marke": "aussage",
               "text": "«Zwei Möglichkeiten: nur bestellen, was ich wirklich brauche – oder Dinge kaufen, die halten, und sie länger nutzen.»",
               "notiz": "Bild 5: Wegweiser mit zwei Pfeilen"
             },
@@ -425,13 +429,13 @@
   ],
   "lernfortschritt": {
     "scaffold_90": "Das Beispiel auf S. 6 zeigt ein fertiges Storyboard; die Satzanfänge auf S. 2 helfen beim ersten Satz.",
-    "scaffold_100": "Plus: Sprechen Sie Ihre Bildfolge einer Person vor, die anders entschieden hat, und nehmen Sie ihren stärksten Einwand in Bild 6 auf."
+    "scaffold_100": "Plus, für 3 Punkte bei «Fachkorrektheit»: unter die Faktenliste ein Satz dazu, was Ihre Belege nicht zeigen – etwa: Gilt die Zahl für meinen Kauf?"
   },
   "methoden": [
     {
       "ref": "lm-16-3-praesentation",
       "fuer": "für den Aufbau der Bildfolge: Einstieg, Hauptteil, Schluss",
-      "tun": "Bild 1 und 2 sind Ihr Einstieg, Bild 3 bis 5 der Hauptteil, Bild 6 der Schluss. Prüfen Sie: Trägt jedes Bild genau einen Gedanken?"
+      "tun": "Bild 1 und 2 sind Ihr Einstieg, Bild 3 bis 5 der Hauptteil, Bild 6 der Schluss. Prüfen Sie: Hat jedes Bild genau eine Aufgabe?"
     },
     {
       "ref": "__spur__",
@@ -439,7 +443,7 @@
     },
     {
       "ref": "hko-storyboard",
-      "fuer": "für die Planung der sechs Bilder; Ihr Blatt ist S. 7"
+      "fuer": "für die Planung – hier gilt: sechs Bilder, 60 bis 90 Sekunden, auf S. 7"
     },
     {
       "ref": "lm-16-3-gestaltung",
@@ -557,7 +561,7 @@
         "Ja, wenn Bild 6 den Entscheid in Ich-Form nennt (mitbestellen oder nicht), einen Grund gibt und sagt, was für die andere Seite spricht – wie in den zwei Beispielen von LF4."
       ],
       "mitnahme": [
-        "Ökologisch: CO₂ aus der Abfallverbrennung (Kap. 1.5, S. 40), graue Energie (Kap. 9.2, S. 230); ökonomisch: Entsorgung kostet alle Geld (S. 40). Sozial heisst laut S. 231 Teilhabe aller; Arbeitsbedingungen bei der Herstellung (S. 37, beim nachhaltigen Konsum genannt) hier zuzuordnen, ist Deutung.",
+        "Ökologisch: CO₂ aus der Abfallverbrennung (Kap. 1.5, S. 40), graue Energie (Kap. 9.2, S. 230; die Zuordnung zu «ökologisch» ist Deutung); ökonomisch: Entsorgung kostet alle Geld (S. 40). Sozial heisst laut S. 231 Teilhabe aller; Arbeitsbedingungen bei der Herstellung (S. 37, beim nachhaltigen Konsum genannt) hier zuzuordnen, ist Deutung.",
         "Nur kaufen, was ich brauche (vermeiden, Kap. 1.5, S. 41); Dinge wählen, die halten, und sie länger nutzen (Deutung, so in keinem der Kapitel).",
         "Zum Beispiel, wie ich bei einem Angebot im Netz prüfe, wie es hergestellt wurde – das Lehrmittel nennt dafür nur Labels als Orientierung (Kap. 1.5, S. 37)."
       ]
@@ -685,7 +689,7 @@
             "zeilen": [
               {
                 "label": "Erwartet",
-                "text": "Abfall spiegelt den Konsum: Der Siedlungsabfall hat sich in 30 Jahren verdoppelt (S. 39). Folgen: Beim Verbrennen entsteht CO₂, rund 5 % der Treibhausgase der Schweiz; die Entsorgung kostet jede Person rund einen Franken pro Tag (S. 40). Was sich tun lässt: vermeiden vor vermindern vor verwerten (S. 41).",
+                "text": "Abfall spiegelt den Konsum: Der Siedlungsabfall hat sich in 30 Jahren verdoppelt (S. 39). Folgen: Beim Verbrennen entsteht CO₂, rund 5 % der Treibhausgase der Schweiz; die Entsorgung kostet jede Person rund einen Franken pro Tag (S. 40). Was sich tun lässt: Am besten ist der Abfall, der nicht anfällt (S. 41).",
                 "quelle": "Kap. 1.5, S. 39-41"
               },
               {
@@ -826,7 +830,7 @@
               "«Aussage»: was das über Gewohnheit oder Folge heisst – in Ihren Worten."
             ],
             "satzanfaenge": [
-              "«Laut Quelle bestellen viele: … (Zeitmarke)»",
+              "«Laut Quelle (gesendet am …) bestellen viele: … (Zeitmarke)»",
               "«Eine Folge für … ist … (Zeitmarke)»",
               "«Für meine Bestellung leite ich ab, dass …»"
             ],
@@ -887,7 +891,7 @@
                 "ökologische Dimension"
               ]
             ],
-            "befund": "Laut Quelle hat über die Hälfte der Bevölkerung im Vorjahr mindestens einmal bei Billigplattformen bestellt (00:12, Stand Oktober 2025). In einer Umfrage hält eine Mehrheit die Qualität für gering (01:11), und 47 % der Befragten hatten schon ein schlechtes Gewissen (01:20). Als Folgen nennen Befragte unfaire Herstellung (01:35) und, falls noch mehr bestellt wird, mehr Abfall (02:49). Meine Ableitung: Tragen müssten das die Herstellenden und die Umwelt; meine Bestellung gehört dazu – die letzten Kopfhörer lagen nach zwei Monaten im Abfall."
+            "befund": "Laut Quelle hat über die Hälfte der Bevölkerung im Vorjahr mindestens einmal bei Billigplattformen bestellt (00:12, Stand Oktober 2025). In einer Umfrage hält eine Mehrheit die Qualität für gering (01:11), und 47 % der Befragten hatten schon ein schlechtes Gewissen (01:20). Eine Befragte sorgt sich um unfaire Herstellung (01:35); erwartet wird, falls mehr bestellt wird, mehr Abfall (02:49). Meine Ableitung: Tragen müssten das die Herstellenden und die Umwelt; meine Bestellung gehört dazu – die letzten Kopfhörer lagen nach zwei Monaten im Abfall."
           }
         },
         {
@@ -956,7 +960,7 @@
           "ref": "q-321a-vertiefung-2",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Wer will die Paketflut womit bremsen – und was spricht laut Beitrag dagegen?",
-          "erwartung": "Die EU plant eine Gebühr auf Kleinpakete, weil die Bearbeitungskosten steigen (00:38–00:53); der Handelsverband will sie auch für die Schweiz, sonst drohe sie Umschlagplatz zu werden (01:03–01:15). Dagegen: Der Konsumentenschutz hält sie für unnötig; Hauptproblem sei die Produktsicherheit, nötig seien Kontrollen (01:35–02:00). Stand 30.03.2026, Ausgang offen. Bezug: Kap. 9.3, S. 233. (Video nicht gegengesehen.)"
+          "erwartung": "Die EU plant eine Gebühr auf Kleinpakete wegen steigender Kosten (00:38–00:53); der Handelsverband will sie auch für die Schweiz, sonst werde sie Umschlagplatz (01:03–01:15). Dagegen der Konsumentenschutz: unnötig; Hauptproblem sei die Produktsicherheit, nötig seien Kontrollen (01:35–02:00). Stand 30.03.2026; seither Vernehmlassung zu einer Aufsichtsabgabe (bis 28.09.2026), nichts entschieden. Bezug: Kap. 9.3, S. 233."
         }
       ],
       "kasten_s4": {
