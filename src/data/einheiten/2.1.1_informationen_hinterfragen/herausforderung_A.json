@@ -55,8 +55,8 @@
   "situation_text": "Ich bin im 1. Lehrjahr und wohne noch zu Hause. Meine ältere Schwester will im Sommer heiraten, und seither wird am Familientisch gestritten, ob die Individualbesteuerung, die das Volk im März 2026 angenommen hat, gerecht ist. Mein Vater und meine Schwester werden dabei laut, meine Mutter hört meist nur zu. Am letzten Sonntag spielt uns meine Schwester einen Radiobeitrag aus der Zeit vor der Abstimmung vor: Zwei Politikerinnen sagen das Gegenteil. Die eine will beim Bisherigen bleiben, die andere will den Wechsel, und beide klingen überzeugend. Danach fragt mich meine Mutter, wem ich glaube. Ich merke, dass ich nicht sagen kann, wer hier eigentlich was will und für wen. Am nächsten Sonntag essen wir wieder zusammen. Bis dann will ich ordnen, wer im Beitrag welches Interesse vertritt und welcher Wert dahinter steht, und meinen eigenen Standort finden.",
   "zahlen_tabelle": [
     {
-      "label": "Personen am Familientisch",
-      "wert": "4"
+      "label": "Abstimmung über die Individualbesteuerung",
+      "wert": "8. März 2026"
     },
     {
       "label": "Politikerinnen im Radiobeitrag",
@@ -95,7 +95,7 @@
       ]
     }
   ],
-  "leitfragen_intro": "Sie bauen eine Übersicht der Beteiligten auf: LF1 liefert die Begriffe für die Beteiligten, LF2 die Grundhaltung der zwei Stimmen, LF3 Aussage, Interesse und Beleg je Person, LF4 den Zielkonflikt und Ihren eigenen Standort.",
+  "leitfragen_intro": "Sie bauen eine Übersicht der Beteiligten auf: LF1 liefert die Begriffe für die Beteiligten, LF2 die vermutete Grundhaltung der zwei Stimmen, LF3 Aussage, Interesse und Beleg je Person, LF4 den Zielkonflikt und Ihren eigenen Standort.",
   "auftakt_typ": "pfad",
   "leitfragen": [
     {
@@ -137,7 +137,7 @@
           },
           {
             "label": "NGO",
-            "text": "Nichtregierungsorganisation, die Werte wie Menschenrechte oder Umweltstandards durchsetzen will, etwa mit Lobbyarbeit oder Unterschriftenaktionen.",
+            "text": "Nichtregierungsorganisation, die Werte wie Menschenrechte oder Umweltstandards durchsetzen will; Beispiel Amnesty: Lobbyarbeit, Unterschriften.",
             "quelle": "Kap. 6.6, S. 178"
           },
           {
@@ -156,8 +156,8 @@
       "nr": 2,
       "bloom": "Anwenden",
       "knoten_ref": "Kap. 6.6 | S. 172-173 · eigener Fall",
-      "text": "Laut Situation will die eine Politikerin beim Bisherigen bleiben, die andere den Wechsel. Ordnen Sie jede einer Grundhaltung zu (liberal, links, rechts, konservativ) und begründen Sie mit einem Merkmal.",
-      "liefert": "Grundhaltung der zwei Stimmen",
+      "text": "Laut Situation will die eine Politikerin beim Bisherigen bleiben, die andere den Wechsel. Welche Grundhaltung (liberal, links, rechts, konservativ) vermuten Sie je dahinter? Begründen Sie mit einem Merkmal von S. 172.",
+      "liefert": "vermutete Grundhaltung der zwei Stimmen",
       "antwortform": "schreibfeld",
       "feld_hoehe_mm": 45,
       "scaffolding": {
@@ -166,10 +166,10 @@
           "Vergleichen Sie mit S. 172; S. 173 sagt, dass nicht jede Person ins Schema passt."
         ],
         "satzanfaenge": [
-          "«Die Stimme, die … will, passt zu …, weil …»",
+          "«Hinter der Stimme, die … will, vermute ich …, weil …»",
           "«Nicht ganz ins Schema passt …, denn …»"
         ],
-        "produkt": "Die Grundhaltung steht in der Übersicht als Begriff neben der Person."
+        "produkt": "Die Grundhaltung steht in der Übersicht neben der Person – nach dem Hören geprüft (LF3)."
       },
       "loesung": {
         "kern": "Bewahren eher konservativ, Wechsel eher liberal",
@@ -181,7 +181,7 @@
           },
           {
             "label": "Gutes Zeichen",
-            "text": "Die Antwort sieht, dass das Schema nur eine Orientierung ist und nicht jede Person hineinpasst. Im Beitrag nennen beide Politikerinnen ihre eigene Sicht liberal (Quelle, 02:07 und 03:15).",
+            "text": "Die Antwort sieht, dass das Schema nur eine Orientierung ist und nicht jede Person hineinpasst. Im Beitrag berufen sich beide Politikerinnen auf «liberal» (Quelle, 02:07 und 03:15).",
             "quelle": "Kap. 6.6, S. 173"
           },
           {
@@ -200,23 +200,23 @@
     "schritte": [
       {
         "label": "01 Interessengruppen klären",
-        "hint": "Notieren Sie oben auf der Seite die Begriffe aus LF1, mit denen Sie die Beteiligten einordnen: Partei, Verband, NGO."
+        "hint": "Notieren Sie oben auf S. 7 die Begriffe aus LF1 (Partei, Verband, NGO) – und welche Art von Beteiligten im Beitrag nicht zu Wort kommt."
       },
       {
         "label": "02 Grundhaltungen zuordnen",
-        "hint": "Tragen Sie auf S. 7 die zwei Stimmen der Situation ein (sie zählen zu den 3–4 Beteiligten) und notieren Sie die Grundhaltung aus LF2."
+        "hint": "Tragen Sie auf S. 7 die zwei Stimmen der Situation ein (sie zählen zu den 3–4 Beteiligten), je mit der Grundhaltung aus LF2, an LF3 geprüft."
       },
       {
         "label": "03 Beteiligte übernehmen",
-        "hint": "Ergänzen Sie aus dem Raster von LF3 Beteiligte, bis es 3–4 sind: je Aussage in Stichworten, Interesse, Wert und Beleg."
+        "hint": "Ergänzen Sie aus dem Raster von LF3 bis auf 3–4 Beteiligte (auch Betroffene, über die nur gesprochen wird): Aussage, Interesse, Wert, Beleg."
       },
       {
         "label": "04 Standort festlegen",
-        "hint": "Markieren Sie den Zielkonflikt und schreiben Sie Ihren Standort aus LF4 in zwei Sätzen «Mein Standort» darunter."
+        "hint": "Schreiben Sie den Zielkonflikt als Zeile «… vs. …», markieren Sie ihn und setzen Sie Ihren Standort aus LF4 in zwei Sätzen darunter."
       },
       {
         "label": "05 Prüfen",
-        "hint": "Schätzen Sie sich mit den zwei Feedback-Kriterien ein und verbessern Sie eine Stelle der Übersicht."
+        "hint": "Schätzen Sie sich mit den zwei Feedback-Kriterien ein. Fehlt bei einer Person Wert oder Beleg, ergänzen Sie ihn."
       }
     ],
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
@@ -256,7 +256,7 @@
             },
             {
               "marke": "interesse",
-              "text": "Verkäuferin (betroffen, ohne Organisation): will planbare Freitage",
+              "text": "Verkäuferin (betroffen, ohne Organisation): will freie Tage planen",
               "notiz": "Beleg: 02:40"
             }
           ]
@@ -324,7 +324,7 @@
             {
               "marke": "interesse",
               "text": "Nationalrätin GLP (Partei): Ehe ist nicht gefährdet → will den Wechsel zur Individualbesteuerung",
-              "notiz": "Beleg: 01:10, 03:15"
+              "notiz": "Beleg: 00:27, 01:10"
             },
             {
               "marke": "interesse",
@@ -343,7 +343,7 @@
           "eintraege": [
             {
               "marke": "wert",
-              "text": "Mitte → Ehe als Gemeinschaft; Steuern sollen kein Lebensmodell vorgeben",
+              "text": "Mitte → Ehe als Wirtschaftsgemeinschaft; Steuern sollen kein Lebensmodell vorgeben",
               "notiz": "Beleg: 00:49, 02:07"
             },
             {
@@ -400,12 +400,18 @@
   ],
   "lernfortschritt": {
     "scaffold_90": "Beispiel der Übersicht an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile.",
-    "scaffold_100": "Ordnen Sie eine weitere Stimme ein, etwa aus einer Vertiefung, falls Ihr Heft eine nennt, und zeigen Sie, wie sie den Zielkonflikt verschiebt."
+    "scaffold_100": "Ordnen Sie eine weitere Stimme ein, etwa die Kantone aus der Vertiefung (S. 4), und zeigen Sie, wie sie den Zielkonflikt verschiebt."
   },
   "methoden": [
     {
       "ref": "hko-akteurskarte",
-      "fuer": "für die Form der Übersicht: Beteiligte, Interesse, Zielkonflikt",
+      "fuer": "für die Übersicht: 3–4 Beteiligte mit Interesse, Wert, Beleg",
+      "beispiel": [
+        "Vermieterin — Interesse: verlässliche Miete · Wert: Eigentum · Beleg: 00:35",
+        "Mieter — Interesse: bezahlbarer Wohnraum · Wert: Sicherheit · Beleg: 01:10",
+        "Gemeinde — Interesse: durchmischtes Quartier · Wert: Zusammenhalt · Beleg: 02:05",
+        "Zielkonflikt: Die Sanierung macht die Wohnungen teurer und verdrängt die Mieterschaft."
+      ],
       "tun": "Statt vier bis fünf Akteure: drei bis vier Beteiligte aus der Quelle. Statt Mittel und Kosten notieren Sie Interesse, Wert und Beleg."
     },
     {
@@ -521,12 +527,12 @@
         ]
       },
       "quercheck": [
-        "Ja: Die Mitte will die Ehe als Gemeinschaft erhalten (daraus: Paare mit einem Einkommen schonen), die GLP den Wechsel (Wert: Eigenständigkeit der Frauen).",
+        "Ja: Die Mitte will die Ehe als Wirtschaftsgemeinschaft erhalten (daraus: Paare mit einem Einkommen schonen), die GLP den Wechsel (Wert: Eigenständigkeit der Frauen).",
         "Ja, wenn mein Standort den stärksten Einwand der Gegenseite nennt und beantwortet (LF4)."
       ],
       "mitnahme": [
         "Bevor ich glaube, frage ich: Wer spricht, für wen und mit welchem Ziel?",
-        "Mitte: Ehe als Gemeinschaft · GLP: Eigenständigkeit der Frauen · Betroffene: zwei Gruppen, je mit Zeitmarke",
+        "Mitte: Ehe als Wirtschaftsgemeinschaft · GLP: Eigenständigkeit der Frauen · Betroffene: zwei Gruppen, je mit Zeitmarke",
         "Wie ich ein Interesse erkenne, wenn jemand seine Partei nicht nennt."
       ]
     }
@@ -536,7 +542,7 @@
       "produkt": "Leitfragen",
       "vollstaendig_wenn": [
         "LF1 erklärt Partei, Verband, NGO und Lobby",
-        "LF2 ordnet beide Stimmen einer Grundhaltung zu",
+        "LF2: je Stimme eine vermutete Grundhaltung",
         "LF4 nennt Neigung, Einwand und Standort"
       ]
     },
@@ -544,7 +550,7 @@
       "produkt": "Quelle",
       "vollstaendig_wenn": [
         "Raster zur Quelle mit vier Zeilen und Beleg",
-        "Jede Zeile hat einen Begriff aus LF1",
+        "Jede Zeile hat einen Begriff (LF1, LF2 oder Glossar)",
         "Befund in zwei bis drei Sätzen"
       ]
     },
@@ -630,14 +636,14 @@
           "feld_hoehe_mm": 25,
           "scaffolding": {
             "strategien": [
-              "Heiratsstrafe: Heute zählt man die zwei Einkommen eines Ehepaars zusammen; es zahlt mehr.",
-              "Paare mit einem Einkommen profitieren heute davon. Erst Raster füllen, dann Befund."
+              "Vorab: Heiratsstrafe = Ehepaare mit zwei Einkommen zahlen mehr Steuern als Unverheiratete.",
+              "Paare mit nur einem Einkommen fahren heute besser. Erst Raster füllen, dann Befund."
             ],
             "satzanfaenge": [
               "«In der Quelle will … erreichen, dass …»",
-              "«Bei uns am Familientisch erinnert mich das an …»"
+              "«Meine Vermutung aus LF2 trifft (nicht) zu, denn …»"
             ],
-            "produkt": "Jede Rasterzeile wird eine Person der Übersicht; die Zeitmarke ist der Beleg."
+            "produkt": "Rasterzeilen werden Beteiligte der Übersicht – auch solche, über die nur gesprochen wird. Beleg: Zeitmarke."
           },
           "loesung": {
             "kern": "Zwei Parteistimmen, zwei betroffene Gruppen",
@@ -656,15 +662,15 @@
               },
               {
                 "label": "Begriffe",
-                "text": "Partei (Kap. 6.6, S. 172). Grundhaltung ist Deutung (LF2): Mitte eher bewahrend, GLP liberal; beide nennen sich liberal (02:07, 03:15). 01:26: Betroffene ohne Organisation."
+                "text": "Partei (Kap. 6.6, S. 172). Grundhaltung ist Deutung (LF2): Mitte eher bewahrend, GLP liberal; beide berufen sich auf «liberal» (02:07, 03:15). 01:26: Betroffene ohne Organisation."
               },
               {
                 "label": "Befund",
-                "text": "Mind. zwei Interessen mit Zeitmarke, dazu die Betroffenen. Familientisch: eigene Übertragung."
+                "text": "Mind. zwei Interessen mit Zeitmarke, dazu die Betroffenen; Vermutung aus LF2 geprüft."
               },
               {
                 "label": "Mit Ersatzquelle",
-                "text": "FDP-Frauen-Initiative mit Frauendachverband, GLP, Grünen, SP (00:00) · FDP: Gleichstellung, Wohlstand (01:22) · Dachverband: Bündnis über Parteien (01:45) · SP: Kompromiss im Parlament (01:55). Nur Befürworterinnen.",
+                "text": "FDP-Frauen-Initiative mit Allianz F, GLP, Grünen, SP (00:00) · FDP: Gleichstellung, Wohlstand (01:22) · Allianz F (Frauendachverband): Bündnis über Parteien (01:45) · SP: Kompromiss im Parlament (01:55). Nur Befürworterinnen.",
                 "quelle": "Ersatzquelle, 00:00–01:55"
               }
             ],
@@ -694,7 +700,7 @@
                 "Interessenkonflikt"
               ]
             ],
-            "befund": "Die Mitte will die Ehe als Wirtschaftsgemeinschaft erhalten (00:49) und lehnt ab, dass Steuern das Lebensmodell vorgeben (02:07); daraus folgt, dass sie Paare mit einem Einkommen schonen will, die laut Redaktor mehr zahlen würden (01:26). Die GLP will den Wechsel und die wirtschaftliche Eigenständigkeit der Frauen (01:10, 03:15). An unserem Familientisch stehen sich ähnliche Anliegen gegenüber."
+            "befund": "Die Mitte will die Ehe als Wirtschaftsgemeinschaft erhalten (00:49) und lehnt ab, dass Steuern das Lebensmodell vorgeben (02:07); daraus lässt sich folgern, dass sie Paare mit einem Einkommen schonen will, die laut Redaktor mehr zahlen würden (01:26). Die GLP will den Wechsel und die wirtschaftliche Eigenständigkeit der Frauen (01:10, 03:15). Vermutung aus LF2 stimmt nur halb: Beide berufen sich auf «liberal»."
           }
         },
         {
@@ -709,7 +715,7 @@
           "scaffolding": {
             "strategien": [
               "Hören Sie die Stelle mit dem Einwand nochmals und notieren Sie ihn in einem Satz.",
-              "Prüfen Sie: Wer trägt den Preis, wenn Ihr Standort gilt?"
+              "Zielkonflikt: Welche zwei Ziele gehen nicht zugleich? Wer trägt den Preis Ihres Standorts?"
             ],
             "satzanfaenge": [
               "«Ich neige zu …, weil mir … wichtig ist.»",
@@ -727,7 +733,7 @@
                 "Antwort nennt, wer den Preis trägt, und endet mit dem Standort: bleiben oder ändern.",
                 "Mit der Ersatzquelle (dort nur Befürworterinnen) kommt der Einwand aus Vertiefung 2: S. 59, Abs. 2, Argument der Komitees."
               ],
-              "beispiel_pol_1": "Bleiben: «Ich neige zur GLP: Mir ist wichtig, dass Frauen wirtschaftlich eigenständig sind (03:15). Laut Redaktor zahlen Paare mit einem Einkommen eher mehr (01:26); die Mitte kritisiert, dass Steuern so das Lebensmodell vorgeben (02:07). Mein Standort: Ich bleibe dabei, weil jede Person wählen kann, wie viel sie arbeitet. Beide nennen sich liberal; ich schaue auf das Interesse dahinter.»",
+              "beispiel_pol_1": "Bleiben: «Ich neige zur GLP: Mir ist wichtig, dass Frauen wirtschaftlich eigenständig sind (03:15). Laut Redaktor zahlen Paare mit einem Einkommen eher mehr (01:26); die Mitte kritisiert, dass Steuern so das Lebensmodell vorgeben (02:07). Mein Standort: Ich bleibe dabei, weil jede Person wählen kann, wie viel sie arbeitet. Beide berufen sich auf «liberal»; ich schaue auf das Interesse dahinter.»",
               "beispiel_pol_2": "Ändern (Annahme: meine Schwester will nach der Heirat Teilzeit arbeiten): «Zuerst neigte ich zur GLP (03:15). Laut Redaktor zahlt ein Paar mit einem Einkommen eher mehr (01:26); die Mitte sagt, so lenken Steuern das Lebensmodell (02:07). Mein Standort: jetzt eher Mitte. Ich halte fest, dass sie zugleich für ihre eigene Initiative wirbt (02:30).»",
               "nicht_tragfaehig": "Ein Standort ohne Einwand, ein Einwand ohne Beleg oder «beide haben ein bisschen recht» ohne Entscheid."
             }
@@ -742,7 +748,7 @@
             3,
             4
           ],
-          "auftrag": "Hören Sie die Quelle (QR-Code oben auf dieser Seite) zweimal. Je Zeile eine Aussage; eine Person darf zweimal vorkommen. Zeitmarke vorn in die Spalte «Wer spricht», hinten ein Begriff aus LF1.",
+          "auftrag": "Hören Sie die Quelle (QR-Code oben) zweimal. Je Zeile eine Aussage; eine Person darf zweimal vorkommen. Zeitmarke vorn in die Spalte «Wer spricht», hinten ein Begriff aus LF1, LF2 oder dem Glossar (S. 8).",
           "raster": {
             "spalten": [
               "Wer spricht",
@@ -757,7 +763,7 @@
           "ref": "q-211a-vertiefung-1",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Warum wehren sich die Kantone gegen die Reform – und was entgegnet die Befürworterin?",
-          "erwartung": "Kantone: grundlegender Systemwechsel, Eingriff in ihre Steuerhoheit, grosse Gesetzesanpassungen (00:57–01:17); mehr Steuererklärungen, weniger Einnahmen (01:25–01:39). FDP-Co-Präsidentin: Das Zweiteinkommen wird nicht mehr bestraft, davon profitieren auch die Kantone (02:04–02:21). Zusatz: Wallis dagegen, Basel-Stadt dafür (02:33–03:12). Deutung, nicht aus dem Lehrmittel: Die Kantone sind Beteiligte mit eigenem Interesse, weder Partei noch Verband."
+          "erwartung": "Kantone: grundlegender Systemwechsel, Eingriff in ihre Steuerhoheit, grosse Gesetzesanpassungen (00:57–01:17). Folgen laut Beitrag: mehr Steuererklärungen, weniger Einnahmen (01:25–01:39). FDP-Co-Präsidentin: Das Zweiteinkommen wird nicht mehr bestraft, davon profitieren auch die Kantone (02:04–02:21). Zusatz: Wallis dagegen, Basel-Stadt dafür (02:33–03:12). Deutung, nicht aus dem Lehrmittel: Die Kantone sind Beteiligte mit eigenem Interesse, weder Partei noch Verband. Zusatz, nicht aus dem Beitrag (EFD): am 8. März 2026 mit rund 54 % Ja angenommen; die Umfrage im Beitrag (64 % dafür, 00:18) ist überholt."
         },
         {
           "ref": "q-211a-vertiefung-2",
@@ -774,7 +780,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zur Quelle (S. 3)",
         "beispiel": [
-          "00:40 (Beispielwert) · Platzwart · Rasen braucht Ruhe · will weniger Spiele am Abend · → hier ein Begriff aus LF1"
+          "00:40 (Beispielwert) · Platzwart · Rasen braucht Ruhe · will weniger Spiele am Abend · → Interesse (Glossar)"
         ]
       },
       "scaffold_90": "Beispiel der Übersicht an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."

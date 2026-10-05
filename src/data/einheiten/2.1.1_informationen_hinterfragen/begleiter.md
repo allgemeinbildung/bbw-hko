@@ -85,7 +85,7 @@ Auf S. 5 jedes Hefts steht zu jedem Kriterium eine Zeile, woran es am Produkt zu
 | A | <!--hko:hf_A.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_A.feedback_kriterien[0].indikator_produkt-->Jede Person richtig eingeordnet: Partei, Verband, NGO oder Betroffene ohne Organisation.<!--/hko--> |
 | A | <!--hko:hf_A.feedback_kriterien[1].kn_kriterium-->Politisches Prinzip<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_A.feedback_kriterien[1].indikator_produkt-->Zu jeder Person stehen Interesse und Wert, je mit Beleg aus der Quelle.<!--/hko--> |
 | B | <!--hko:hf_B.feedback_kriterien[0].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:hf_B.feedback_kriterien[0].indikator_produkt-->Die Regel ist begründet und nennt, was sie mich kostet.<!--/hko--> |
-| B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Die Reflexion sagt in Ich-Form, was ich künftig tue und was nicht.<!--/hko--> |
+| B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Die Reflexion sagt in Ich-Form, was ich künftig prüfe, bevor ich einem Inhalt vertraue.<!--/hko--> |
 
 Warum diese Verteilung: Die Interessen-Übersicht in Heft A steht und fällt damit, ob jede Person richtig eingeordnet ist (Partei, Verband, NGO oder Betroffene ohne Organisation) — das ist Fachkorrektheit; und ihr ganzer Zweck ist, hinter jeder Aussage ein Interesse und einen Wert zu zeigen — das ist das politische Prinzip der Einheit. In Heft B entsteht eine eigene Regel: Sie braucht eine Begründung, die auch nennt, was sie kostet (Argumentation), und eine klare Ich-Aussage, was ich künftig tue (Position / Werthaltung).
 
@@ -249,7 +249,7 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso ihr Erwartungshorizont; di
 
 | Zahl | Wert |
 |---|---|
-| <!--hko:hf_A.zahlen_tabelle[0].label-->Personen am Familientisch<!--/hko--> | <!--hko:hf_A.zahlen_tabelle[0].wert-->4<!--/hko--> |
+| <!--hko:hf_A.zahlen_tabelle[0].label-->Abstimmung über die Individualbesteuerung<!--/hko--> | <!--hko:hf_A.zahlen_tabelle[0].wert-->8. März 2026<!--/hko--> |
 | <!--hko:hf_A.zahlen_tabelle[1].label-->Politikerinnen im Radiobeitrag<!--/hko--> | <!--hko:hf_A.zahlen_tabelle[1].wert-->2<!--/hko--> |
 | <!--hko:hf_A.zahlen_tabelle[2].label-->Nächstes Familienessen<!--/hko--> | <!--hko:hf_A.zahlen_tabelle[2].wert-->Sonntag<!--/hko--> |
 
@@ -262,11 +262,11 @@ In Heft B ist LF4 in beiden Spuren wortgleich, ebenso ihr Erwartungshorizont; di
 
 Die fünf Schritte auf S. 5:
 
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Interessengruppen klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Notieren Sie oben auf der Seite die Begriffe aus LF1, mit denen Sie die Beteiligten einordnen: Partei, Verband, NGO.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Grundhaltungen zuordnen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Tragen Sie auf S. 7 die zwei Stimmen der Situation ein (sie zählen zu den 3–4 Beteiligten) und notieren Sie die Grundhaltung aus LF2.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Beteiligte übernehmen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Ergänzen Sie aus dem Raster von LF3 Beteiligte, bis es 3–4 sind: je Aussage in Stichworten, Interesse, Wert und Beleg.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Standort festlegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Markieren Sie den Zielkonflikt und schreiben Sie Ihren Standort aus LF4 in zwei Sätzen «Mein Standort» darunter.<!--/hko-->
-- Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Schätzen Sie sich mit den zwei Feedback-Kriterien ein und verbessern Sie eine Stelle der Übersicht.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[0].label-->01 Interessengruppen klären<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[0].hint-->Notieren Sie oben auf S. 7 die Begriffe aus LF1 (Partei, Verband, NGO) – und welche Art von Beteiligten im Beitrag nicht zu Wort kommt.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[1].label-->02 Grundhaltungen zuordnen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[1].hint-->Tragen Sie auf S. 7 die zwei Stimmen der Situation ein (sie zählen zu den 3–4 Beteiligten), je mit der Grundhaltung aus LF2, an LF3 geprüft.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[2].label-->03 Beteiligte übernehmen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[2].hint-->Ergänzen Sie aus dem Raster von LF3 bis auf 3–4 Beteiligte (auch Betroffene, über die nur gesprochen wird): Aussage, Interesse, Wert, Beleg.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[3].label-->04 Standort festlegen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[3].hint-->Schreiben Sie den Zielkonflikt als Zeile «… vs. …», markieren Sie ihn und setzen Sie Ihren Standort aus LF4 in zwei Sätzen darunter.<!--/hko-->
+- Schritt <!--hko:hf_A.handlungsprodukt.schritte[4].label-->05 Prüfen<!--/hko-->: <!--hko:hf_A.handlungsprodukt.schritte[4].hint-->Schätzen Sie sich mit den zwei Feedback-Kriterien ein. Fehlt bei einer Person Wert oder Beleg, ergänzen Sie ihn.<!--/hko-->
 
 **Abgaben**
 
@@ -279,7 +279,7 @@ Die fünf Schritte auf S. 5:
 
 **S. 1 — Herausforderung (8 Min.).** Die Lernenden markieren beim Lesen, was offen bleibt — etwa, wer die zwei Politikerinnen sind und was die Vorlage überhaupt ändert. Der Quer-Check auf S. 8 nimmt diese Fragen wieder auf. Unten auf der Seite steht der Kurzeintrag des Radiobeitrags; der QR-Code folgt auf S. 3.
 
-**S. 2 — Wissensecke I (27 Min.).** LF1 klärt, warum in der Politik dauernd um Einfluss gerungen wird und wer Interessen vertritt: Parteien, Verbände mit Gewerkschaften, NGO, dazu die Lobby (Kap. 6.6, S. 172 und 177–179). LF2 verlangt, die zwei Stimmen der Situation je einer der vier Grundhaltungen zuzuordnen und zu sagen, wo eine nicht ins Schema passt (S. 172–173). Verbände und NGO kommen im Radiobeitrag nicht vor — LF1 braucht sie trotzdem, damit die Lernenden sehen, welche Art von Beteiligten **fehlt**.
+**S. 2 — Wissensecke I (27 Min.).** LF1 klärt, warum in der Politik dauernd um Einfluss gerungen wird und wer Interessen vertritt: Parteien, Verbände mit Gewerkschaften, NGO, dazu die Lobby (Kap. 6.6, S. 172 und 177–179). LF2 verlangt eine begründete Vermutung: Welche der vier Grundhaltungen steht hinter der Stimme, die beim Bisherigen bleiben will, und welche hinter der Stimme für den Wechsel (S. 172–173)? Die Lernenden kennen die zwei Politikerinnen hier noch nicht; geprüft wird die Vermutung erst an der Quelle (S. 3, Satzanfang zu LF3). Verbände und NGO kommen im Radiobeitrag nicht vor — LF1 braucht sie trotzdem, damit die Lernenden sehen, welche Art von Beteiligten **fehlt**.
 
 > [!coaching] LF1 und LF2
 > Bei LF1 hilft die Rückfrage: «Wer ist Mitglied, und was will die Gruppe erreichen?» Damit trennen die Lernenden Partei, Verband und NGO, statt Definitionen abzuschreiben. Bei LF2 bestehst du darauf, dass die Grundhaltung aus der **Forderung** abgeleitet wird, nicht aus dem Parteinamen: Was will die Stimme bewahren, was ändern? Wer merkt, dass eine Stimme nicht sauber passt, hat die Grenze des Schemas erkannt, die das Lehrmittel auf S. 173 selbst nennt.
@@ -315,7 +315,7 @@ Die fünf Schritte auf S. 5:
 > Die Lernenden machen aus den zwei Gruppen von Ehepaaren einen Verband oder eine Partei. Wer nur betroffen ist, vertritt keine Organisation; die Spalte «→ Begriff» bleibt dort bei «betroffen, ohne Organisation». Frag zurück: «Wer spricht im Beitrag **für** diese Paare — und wer nur **über** sie?»
 
 > [!warnung] Grundhaltung aus dem Parteinamen
-> Liberal wird mit «für Neues» gleichgesetzt, konservativ mit «dagegen», und die Zuordnung folgt dem Parteinamen. Im Beitrag bezeichnen beide Politikerinnen ihre eigene Sicht als liberal. Das ist kein Fehler im Heft, sondern der Kern von LF2: Die Grundhaltung zeigt sich an der Forderung, und das Schema ist eine Orientierung, die nicht jede Person fasst (Kap. 6.6, S. 173).
+> Liberal wird mit «für Neues» gleichgesetzt, konservativ mit «dagegen», und die Zuordnung folgt dem Parteinamen. Im Beitrag berufen sich beide Politikerinnen auf «liberal». Das ist kein Fehler im Heft: Wer in LF2 «konservativ» und «liberal» vermutet hat, korrigiert sich im Befund von LF3. Die Grundhaltung zeigt sich an der Forderung, und das Schema ist eine Orientierung, die nicht jede Person fasst (Kap. 6.6, S. 173).
 
 > [!warnung] Aussage und Absicht verwechselt
 > In der Spalte «Absicht» steht dasselbe wie in «Kernaussage», nur anders gesagt. Die Absicht ist, was die Person **erreichen** will — etwa eine Änderung verhindern oder Bedenken entkräften. Lass die Lernenden die Zeile mit «… will erreichen, dass …» zu Ende sprechen.
@@ -346,21 +346,21 @@ Heft A hat nur die Spur mit Medien. Wo die Lösungen unten «in beiden Spuren» 
 >
 > **Tragfähige Verbindungen, zum Beispiel:** Partei → Interesse («vertritt») · Verband → Lobby («wirkt im Parlament als») · NGO → Wert («setzt sich ein für») · Interesse → Wert («stützt sich auf») · Einwand → Zielkonflikt («macht sichtbar»). Es zählt, dass die Beschriftung den Zusammenhang nennt, nicht welche fünf Linien gezogen werden.
 >
-> **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Ordnen Sie eine weitere Stimme ein, etwa aus einer Vertiefung, falls Ihr Heft eine nennt, und zeigen Sie, wie sie den Zielkonflikt verschiebt.<!--/hko-->
+> **Optionale Vertiefung (für 100 %):** <!--hko:hf_A.lernfortschritt.scaffold_100-->Ordnen Sie eine weitere Stimme ein, etwa die Kantone aus der Vertiefung (S. 4), und zeigen Sie, wie sie den Zielkonflikt verschiebt.<!--/hko-->
 
 ### Wann ist das Heft fertig? (Selbstcheck — formativ, nicht benotet)
 
 **<!--hko:hf_A.bewertungsraster[0].produkt-->Leitfragen<!--/hko-->**
 <!--hko:hf_A.bewertungsraster[0].vollstaendig_wenn|checkliste-->
 ☐ LF1 erklärt Partei, Verband, NGO und Lobby
-☐ LF2 ordnet beide Stimmen einer Grundhaltung zu
+☐ LF2: je Stimme eine vermutete Grundhaltung
 ☐ LF4 nennt Neigung, Einwand und Standort
 <!--/hko-->
 
 **<!--hko:hf_A.bewertungsraster[1].produkt-->Quelle<!--/hko-->**
 <!--hko:hf_A.bewertungsraster[1].vollstaendig_wenn|checkliste-->
 ☐ Raster zur Quelle mit vier Zeilen und Beleg
-☐ Jede Zeile hat einen Begriff aus LF1
+☐ Jede Zeile hat einen Begriff (LF1, LF2 oder Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
@@ -422,9 +422,9 @@ Die fünf Schritte auf S. 5:
 
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[0].label-->01 Merkmale klären<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[0].hint-->Halten Sie mit LF1 die vier Mittel fest. In «Merkmal» steht eines davon oder was ein Check zeigt, etwa «kein Absender».<!--/hko-->
 - Schritt <!--hko:hf_B.handlungsprodukt.schritte[1].label-->02 Fünf Inhalte eintragen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[1].hint-->Tragen Sie den Clip und die vier Inhalte aus LF2 mit «Woher» und «Fakt/Meinung» ein.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Befund vergleichen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Vergleichen Sie den Befund aus LF3 mit Ihrem Protokoll: Was zeigt sich auch bei Ihnen? Ergänzen Sie «Was ich tue».<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Regel entscheiden<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Schreiben Sie Ihre Regel aus LF4 als Reflexion unter die Tabelle: drei bis vier Sätze, Ich-Form, mit Begründung.<!--/hko-->
-- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Mit Kriterien prüfen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Prüfen Sie Protokoll und Reflexion mit den zwei Feedback-Kriterien: Ist die Regel begründet? Steht, was Sie künftig tun?<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[2].label-->03 Befund vergleichen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[2].hint-->Vergleichen Sie den Befund aus LF3 mit Ihrem Protokoll: Was zeigt sich auch bei Ihnen? Ergänzen Sie «Was ich tue» – auch beim Clip.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[3].label-->04 Regel entscheiden<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[3].hint-->Schreiben Sie Ihre Regel aus LF4 als Reflexion unter die Tabelle: drei bis vier Sätze, Ich-Form, mit Begründung und dem, was sie Sie kostet.<!--/hko-->
+- Schritt <!--hko:hf_B.handlungsprodukt.schritte[4].label-->05 Mit Kriterien prüfen<!--/hko-->: <!--hko:hf_B.handlungsprodukt.schritte[4].hint-->Prüfen Sie Protokoll und Reflexion mit den zwei Feedback-Kriterien: Ist die Regel begründet? Steht, was Sie künftig zuerst prüfen?<!--/hko-->
 
 **Abgaben**
 
@@ -445,7 +445,7 @@ Die fünf Schritte auf S. 5:
 **S. 3 — Quelle (25 Min.).**
 
 - *Spur ohne Medien:* Lehrmittel Kap. 20.7, S. 446–447, bis vor die Tabelle der drei Checks (die gehört zu LF2). Die ausgefüllte erste Zeile belegt den Begriff Medienkompetenz (S. 446); weitere Aussagen finden die Lernenden auf S. 447 bei den Gefahren digitaler Medien und im Abschnitt zu Fake News. Die Werte im Balkendiagramm auf S. 446 zählen nicht als Beleg, nur der Fliesstext. Algorithmus und Filterblase stehen nicht im Lehrmittel.
-- *Spur mit Medien:* Quelle ist eine Grafik aus JAMESfocus (ZHAW, PDF-Seite 20): die Abbildung mit zwei Absätzen dazu, rund 220 Wörter. Das Raster fragt, was gemessen wurde, welcher Wert auffällt, was er aussagt und welcher Begriff aus LF1 passt; Werkzeug ist die Karte «Eine Grafik lesen». Lass zuerst Titel und Text lesen: Wer wurde wann befragt, und wofür steht die Prozentzahl?
+- *Spur mit Medien:* Quelle ist eine Grafik aus JAMESfocus (ZHAW, PDF-Seite 20): die Abbildung mit zwei Absätzen dazu, rund 220 Wörter. Das Raster fragt, was gemessen wurde, welcher Wert auffällt, was er aussagt und welcher Begriff aus LF1, LF2 oder dem Glossar passt; Werkzeug ist die Karte «Eine Grafik lesen». Lass zuerst Titel und Text lesen: Wer wurde wann befragt, und wofür steht die Prozentzahl?
 
 **S. 4 — Wissensecke II (15 Min.).** LF4 nimmt die drei Checks als Modell und misst sie am eigenen Alltag im Gruppenchat; am Ende steht eine eigene Regel. Die Frage ist in beiden Spuren wortgleich.
 
@@ -493,7 +493,7 @@ Die fünf Schritte auf S. 5:
 > Spiegeln: «Was hast du heute als Letztes geschickt bekommen — und woher wusste die Person das?» Das Protokoll braucht keine Politik; jeder Inhalt mit einer Behauptung lässt sich einordnen.
 
 > [!mehrdeutigkeit] Herausforderung B
-> Leitsatz im Heft: «<!--hko:hf_B.mehrdeutigkeit.hint-->Wer sofort weiterleitet, warnt andere vielleicht rechtzeitig. Wer zuerst prüft, braucht Zeit, verbreitet aber nichts Falsches. Was gilt wann?<!--/hko-->»
+> Leitsatz im Heft: «<!--hko:hf_B.mehrdeutigkeit.hint-->Wer sofort weiterleitet, vertraut und warnt andere vielleicht rechtzeitig. Wer zuerst prüft, braucht Zeit, verbreitet aber nichts Falsches. Was gilt wann?<!--/hko-->»
 > Wenn jemand Weiterleiten grundsätzlich für falsch erklärt, frag nach einem Fall, in dem eine schnelle Warnung jemanden schützt. Die gute Regel unterscheidet Fälle, statt eine Seite zu verbieten.
 
 ### Tafelbild — Begriffsnetz Heft B
@@ -522,7 +522,7 @@ Die fünf Schritte auf S. 5:
 
 **<!--hko:hf_B.bewertungsraster[1].produkt-->Quelle<!--/hko-->**
 <!--hko:hf_B.bewertungsraster[1].vollstaendig_wenn|checkliste-->
-☐ Raster: 4 Zeilen, je Begriff aus LF1 oder LF2
+☐ Raster: 4 Zeilen, je ein Begriff (LF1, LF2, Glossar)
 ☐ Befund in zwei bis drei Sätzen
 <!--/hko-->
 
@@ -553,7 +553,7 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt, wann Abruf, Tit
 | A · Quelle (q-211a-pflicht) | Pro und Contra zur Individualbesteuerung | SRF Rendez-vous | 15.01.2026 | 00:00–03:53 | 3:53 Min. | 02.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:0a5f5262-293a-3556-bdf1-9ede96808d61&subdivisions=false) |
 | A · Ersatzquelle (q-211a-pflicht-ersatz) | Individualbesteuerung: Linke Hilfe als Zünglein an der Waage | SRF Echo der Zeit | 09.03.2026 | 00:00–03:27 | 3:27 Min. | 02.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:audio:023c3993-c2cc-3f58-b476-74fa8643fbc1&subdivisions=false) |
 | A · Vertiefung 1 (q-211a-vertiefung-1) | Abstimmung Individualbesteuerung: Folgen für die Kantone | SRF 10 vor 10 | 30.01.2026 | 00:00–04:46 | 4:46 Min. | 02.10.2026 | [srf.ch](https://www.srf.ch/play/embed?urn=urn:srf:video:d725d62d-cda6-4417-9c00-7ee29d6e3482&subdivisions=false) |
-| A · Vertiefung 2 (q-211a-vertiefung-2) | Individualbesteuerung: Argumente der Komitees und des Bundesrates | Bundesrat / Bundeskanzlei | 12.02.2026 | Seiten 59–60 (Argumente) | 422 Wörter | 02.10.2026 | [admin.ch](https://www.admin.ch/dam/de/sd-web/HVLCEOToQKoA/new%20BAR_ErlMaerz26_de_.pdf#page=59) |
+| A · Vertiefung 2 (q-211a-vertiefung-2) | Individualbesteuerung: Argumente der Komitees und des Bundesrates | Bundesrat / Bundeskanzlei | 12.02.2026 | Seiten 59–60 (Argumente) | 422 Wörter | 05.10.2026 | [admin.ch](https://www.admin.ch/dam/de/sd-web/HVLCEOToQKoA/new%20BAR_ErlMaerz26_de_.pdf#page=59) |
 | B · Quelle (q-211b-pflicht) | JAMESfocus «News und Fake News»: Überprüfung des Wahrheitsgehalts | ZHAW Medienpsychologie | 2019 | PDF-Seite 20: Abbildung 10 mit Text | 219 Wörter | 02.10.2026 | [zhaw.ch](https://www.zhaw.ch/storage/psychologie/upload/forschung/medienpsychologie/james/jamesfocus/2019/JAMESfocus_News_und_Fake_News_de.pdf#page=20) |
 | B · Ersatzquelle (q-211b-pflicht-ersatz) | Digital News Report 2025: Überprüfung möglicher Falschinformation | fög, Universität Zürich | 2025 | Seite 27: Darstellung 33 mit Text | 191 Wörter | 02.10.2026 | [foeg.uzh.ch](https://www.foeg.uzh.ch/dam/jcr:e51f7798-28c9-420e-80e5-e15e091fd76d/DNR_25_Schweiz.pdf#page=27) |
 | B · Vertiefung 1 (q-211b-vertiefung-1) | Was ist ein Algorithmus und wie entstehen Filterblasen? | Saferinternet.at | o. D. | Teile zu Algorithmus und Filterblase | 347 Wörter | 02.10.2026 | [saferinternet.at](https://www.saferinternet.at/was-ist-ein-algorithmus-und-wie-entstehen-filterblasen) |
@@ -564,7 +564,7 @@ Die Tabelle entsteht beim Laden aus der Quellenkartei und zeigt, wann Abruf, Tit
 
 - **Quelle A** ist ein **Vorbericht**: gesendet am 15.01.2026, also vor der Abstimmung vom 08.03.2026. Die Vorlage ist inzwischen angenommen. Das berührt die Aufgabe nicht, denn sie fragt nach Interessen und Werten der Sprechenden, nicht nach dem Ausgang; die Situation des Hefts spielt deshalb ausdrücklich nach der Abstimmung. Es sprechen nur Parteien, kein Verband.
 - Die **Zeitmarken** in den Lösungen von Heft A sind aus dem automatischen Transkript **berechnet**, nicht gehört — **hör den Beitrag vor dem Einsatz gegen**. Prüfe dabei auch **Namen und Funktionen** am Audio; das Transkript enthält Hörfehler. Das Heft nennt darum nur Funktion und Partei, keinen Namen.
-- Zur Vorlage stehen im Heft **kein Ja-Anteil, kein Betrag und kein Datum des Inkrafttretens**. Was das Heft über die Steuer sagt, stammt aus der Quelle und aus Vertiefung 2. Fragt jemand nach solchen Zahlen: Sie gehören nicht zur Aufgabe.
+- Zur Vorlage stehen im Heft **kein Ja-Anteil, kein Betrag und kein Datum des Inkrafttretens**. Was das Heft über die Steuer sagt, stammt aus der Quelle und aus Vertiefung 2. Fragt jemand nach solchen Zahlen: Sie gehören nicht zur Aufgabe. Für dich zur Orientierung: angenommen am 8. März 2026 mit rund 54 % Ja bei knapp 56 % Stimmbeteiligung (EFD am Abstimmungstag: 54,23 %; Swissvotes: 54,26 %).
 - **Ersatzquelle A** ist ein Nachbericht vom Tag nach der Abstimmung. Es sprechen **nur Befürworterinnen** (FDP, ein Frauendachverband, SP); der Einwand für LF4 kommt dann aus Vertiefung 2 (Kap. 2, Warnung zum Linkausfall). Das Transkript ist stellenweise unsauber; auch hier gilt: gegenhören.
 - **Vertiefung A1** enthält Umfragewerte vom Januar 2026, die durch das Ergebnis überholt sind; die Untertitel nennen die Namen der Kantonsvertreter nicht.
 - **Vertiefung A2** ist ein PDF; der Text auf S. 59 stammt von den Komitees selbst. Der mechanische Abruf des Links wurde beim Prüfen abgewiesen — **öffne ihn vor dem Einsatz im Browser**.
@@ -606,18 +606,18 @@ Der gemeinsame Auftrag ist die **Generalprobe mit Rückmeldung**: ein neuer Fall
 
 **Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Ordnen Sie die Stimmen mit Heft A, prüfen Sie das Flugblatt mit Heft B und vertreten Sie Ihren Rat mündlich.<!--/hko-->
 
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Beteiligte ordnen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Ordnen Sie die drei Stimmen mit der Interessen-Übersicht aus Heft A: wer, welches Interesse, welcher Wert?<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Flugblatt prüfen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Prüfen Sie das Flugblatt mit den drei Checks aus Heft B: Absender, Herkunft der Zahl, zweite Fundstelle.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Statement<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Notieren Sie Ihren Rat in drei Stationen auf der Stichwortkarte und sprechen Sie ihn frei.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Beteiligte ordnen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[0].hint-->Ordnen Sie die drei Stimmen wie in der Interessen-Übersicht aus Heft A: wer, welches Interesse, welcher Wert? Stichworte: Station 1 (S. 2).<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[1].label-->02 Flugblatt prüfen<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[1].hint-->Prüfen Sie das Flugblatt mit den drei Checks aus Heft B (Quellen-, Fakten-, Google-Check). Stichworte: Station 2 (S. 2).<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[2].label-->03 Statement<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[2].hint-->Notieren Sie Ihren Rat als Station 3 (S. 2) und sprechen Sie alle drei Stationen frei.<!--/hko-->
 - Schritt <!--hko:set.gemeinsamer_auftrag.schritte[3].label-->04 Diskussion<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[3].hint-->Vertreten Sie Ihre eigene Position, antworten Sie auf einen Einwand, suchen Sie eine Einigung.<!--/hko-->
-- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Ergebnis festhalten<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Notieren Sie, worauf sich die Gruppe einigt und was offen bleibt; schätzen Sie sich selbst ein.<!--/hko-->
+- Schritt <!--hko:set.gemeinsamer_auftrag.schritte[4].label-->05 Ergebnis festhalten<!--/hko-->: <!--hko:set.gemeinsamer_auftrag.schritte[4].hint-->Notieren Sie auf S. 3, worauf sich die Gruppe einigt und was offen bleibt; schätzen Sie sich selbst ein (S. 4).<!--/hko-->
 
 **Abgaben**
 
 <!--hko:set.gemeinsamer_auftrag.abgaben|liste-->
-- Stichwortkarte zum Statement (60–90 Sekunden, frei gesprochen)
-- Notiz zur Diskussion: Einwand, Antwort, Ergebnis der Gruppe
-- Selbsteinschätzung auf den vier Kriterien
+- Stichwortkarte zum Statement (S. 2; 60–90 Sekunden, frei gesprochen)
+- Notiz zur Diskussion (S. 3): Einwand, Antwort, Ergebnis der Gruppe
+- Selbsteinschätzung auf den vier Kriterien (S. 4)
 <!--/hko-->
 
 > [!coaching] Das Flugblatt lässt sich im Zimmer nicht klären
@@ -634,7 +634,7 @@ Der Auftragsbogen hat vier Seiten: **A1** Situation, Zahlen, Leitfrage, Spannung
 | 3 | Rückmeldung, Verbesserung der Stichwortkarte oder der Notiz | A4 | zu dritt, dann allein |
 
 > [!hinweis] Sozialform
-> Der Auftrag führt einen Interaktionsmodus; darum ist **Einzelarbeit hier ausgeschlossen** — er läuft zu zweit oder in Gruppen, und der Anteil jeder Person bleibt sichtbar: eigenes Statement, eigene Position in der Diskussion. Empfehlung: <!--hko:set.gemeinsamer_auftrag.sozialform.empfehlung-->Vorschlag: zu dritt. Jede Person hält ihr eigenes Statement und vertritt in der Diskussion ihre eigene Position.<!--/hko-->
+> Der Auftrag führt einen Interaktionsmodus; darum ist **Einzelarbeit hier ausgeschlossen** — er läuft zu zweit oder in Gruppen, und der Anteil jeder Person bleibt sichtbar: eigenes Statement, eigene Position in der Diskussion. Empfehlung: <!--hko:set.gemeinsamer_auftrag.sozialform.empfehlung-->Zu dritt. Jede Person hält ihr eigenes Statement und vertritt in der Diskussion ihre eigene Position.<!--/hko-->
 
 ### Statement und Diskussion
 
@@ -656,7 +656,7 @@ Auf A4 stehen die vier Kriterien im Wortlaut des KN, mit denselben vier Abstufun
 | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].kn_kriterium-->Fachkorrektheit<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].dimension-->SuK<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[0].indikator_produkt-->Interesse, Wert, Absender und die drei Checks sind im Statement treffend verwendet.<!--/hko--> |
 | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[1].kn_kriterium-->Argumentation<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[1].dimension-->SuK<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[1].indikator_produkt-->Der Rat an die Gruppe ist begründet; in der Diskussion wird auf einen Einwand geantwortet.<!--/hko--> |
 | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].kn_kriterium-->Politisches Prinzip<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].dimension-->Ges<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[2].indikator_produkt-->Interesse und Wert hinter den drei Stimmen und dem Flugblatt sind erkannt und belegt.<!--/hko--> |
-| <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].dimension-->Ges<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].indikator_produkt-->Eigener Rat in Ich-Form; Ruhe der Anwohnenden und Raum für die Jugendlichen anerkannt.<!--/hko--> |
+| <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].dimension-->Ges<!--/hko--> | <!--hko:set.gemeinsamer_auftrag.feedback_kriterien[3].indikator_produkt-->Eigener Rat in Ich-Form: wem ich glaube, was ich prüfe; beide Anliegen anerkannt.<!--/hko--> |
 
 ### Erwartungshorizont
 

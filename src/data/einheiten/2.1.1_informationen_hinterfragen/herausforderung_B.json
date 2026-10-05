@@ -79,7 +79,7 @@
   "mehrdeutigkeit": {
     "explizit": true,
     "trade_off": "Schnell weitergeben vs. zuerst prüfen",
-    "hint": "Wer sofort weiterleitet, warnt andere vielleicht rechtzeitig. Wer zuerst prüft, braucht Zeit, verbreitet aber nichts Falsches. Was gilt wann?"
+    "hint": "Wer sofort weiterleitet, vertraut und warnt andere vielleicht rechtzeitig. Wer zuerst prüft, braucht Zeit, verbreitet aber nichts Falsches. Was gilt wann?"
   },
   "quellen_anker": [
     {
@@ -103,7 +103,7 @@
       ]
     }
   ],
-  "leitfragen_intro": "Sie halten Ihre Mediennutzung in einem Protokoll mit Reflexion fest: LF1 liefert die Merkmale von Manipulation, LF2 Herkunft und Check für fünf Inhalte, LF3 einen Befund zum Vergleich mit dem Protokoll, LF4 Ihre eigene Regel mit Begründung und Grenze.",
+  "leitfragen_intro": "Sie halten Ihre Mediennutzung in einem Protokoll mit Reflexion fest: LF1 liefert die Merkmale von Manipulation, LF2 Herkunft und Check für fünf Inhalte, LF3 einen Befund zum Vergleich mit dem Protokoll, LF4 die Grenze der Checks und Ihre eigene Regel mit Begründung.",
   "auftakt_typ": "pfad",
   "leitfragen": [
     {
@@ -117,7 +117,7 @@
       "scaffolding": {
         "strategien": [
           "Erste Tabelle auf S. 188: «Selektion» heisst hier Auswahl, «Sprache» heisst Wortwahl.",
-          "Fake News: S. 189 und S. 447. Was Sie selbst tun können: S. 189, «Selbstschutz»."
+          "Fake News: S. 189, S. 447. Selbst tun: S. 189, «Selbstschutz», «Vertrauliche Quellen»."
         ],
         "satzanfaenge": [
           "«Medien lenken meine Wahrnehmung, indem sie …»",
@@ -136,7 +136,7 @@
           },
           {
             "label": "Gewichtung, Wortwahl",
-            "text": "Wie gross und ausführlich ein Ereignis erscheint, steuert seine Bedeutung; unausgewogen platziert heisst tendenziös. Wortwahl (im Buch «Sprache»): Beschönigende oder stark abwertende Wörter ergreifen Partei.",
+            "text": "Medienschaffende entscheiden, wie ausführlich sie über ein Ereignis berichten; unausgewogen platziert heisst tendenziös. Wortwahl (im Buch «Sprache»): Beschönigende oder stark abwertende Wörter ergreifen Partei.",
             "quelle": "Kap. 7.1, S. 188"
           },
           {
@@ -151,7 +151,7 @@
           },
           {
             "label": "Selbstschutz",
-            "text": "Beiträge zum selben Thema in mehreren unabhängigen Medien vergleichen; die Quelle auf Vertrauenswürdigkeit prüfen. Warum der Feed einen Clip oft zeigt: Das Kapitel sagt dazu nichts; Fallüberlegung (siehe Vertiefung 1 in der Medien-Fassung).",
+            "text": "Beiträge zum selben Thema in mehreren unabhängigen Medien vergleichen; die Quelle auf Vertrauenswürdigkeit prüfen (Abschnitt «Vertrauliche Quellen»). Warum der Feed einen Clip oft zeigt: Das Kapitel sagt dazu nichts; Fallüberlegung (siehe Vertiefung 1 in der Medien-Fassung).",
             "quelle": "Kap. 7.1, S. 189"
           }
         ]
@@ -223,15 +223,15 @@
       },
       {
         "label": "03 Befund vergleichen",
-        "hint": "Vergleichen Sie den Befund aus LF3 mit Ihrem Protokoll: Was zeigt sich auch bei Ihnen? Ergänzen Sie «Was ich tue»."
+        "hint": "Vergleichen Sie den Befund aus LF3 mit Ihrem Protokoll: Was zeigt sich auch bei Ihnen? Ergänzen Sie «Was ich tue» – auch beim Clip."
       },
       {
         "label": "04 Regel entscheiden",
-        "hint": "Schreiben Sie Ihre Regel aus LF4 als Reflexion unter die Tabelle: drei bis vier Sätze, Ich-Form, mit Begründung."
+        "hint": "Schreiben Sie Ihre Regel aus LF4 als Reflexion unter die Tabelle: drei bis vier Sätze, Ich-Form, mit Begründung und dem, was sie Sie kostet."
       },
       {
         "label": "05 Mit Kriterien prüfen",
-        "hint": "Prüfen Sie Protokoll und Reflexion mit den zwei Feedback-Kriterien: Ist die Regel begründet? Steht, was Sie künftig tun?"
+        "hint": "Prüfen Sie Protokoll und Reflexion mit den zwei Feedback-Kriterien: Ist die Regel begründet? Steht, was Sie künftig zuerst prüfen?"
       }
     ],
     "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
@@ -257,14 +257,14 @@
               "zellen": [
                 "Video: 5 kg weniger",
                 "fremdes Konto",
-                "Meinung",
+                "Fakt, ungeprüft",
                 "Wortwahl",
                 "nicht teilen"
               ]
             },
             {
               "zellen": [
-                "Trainingsplan",
+                "Trainingszeiten",
                 "Trainerin",
                 "Fakt",
                 "Absender klar",
@@ -273,8 +273,8 @@
             },
             {
               "zellen": [
-                "Foto: Profi mit Drink",
-                "Werbung",
+                "Foto: Profi lobt Drink",
+                "Markenwerbung",
                 "Meinung",
                 "Bildmanipulation?",
                 "Bildersuche"
@@ -292,7 +292,7 @@
             {
               "zellen": [
                 "Gerücht: Halle zu",
-                "Kollege im Chat",
+                "weitergeleitet",
                 "Fakt, ungeprüft",
                 "kein Absender",
                 "nachfragen"
@@ -303,7 +303,7 @@
         {
           "titel": "Reflexion mit Regel",
           "text": [
-            "Zwei von fünf Inhalten hatten keinen Absender. Meine Regel: Verspricht mir ein Inhalt viel und finde ich keinen Absender, teile ich ihn nicht. Das kostet manchmal einen guten Tipp."
+            "Bei zwei von fünf Inhalten weiss ich nicht, wer dahintersteht. Meine Regel: Verspricht mir ein Inhalt viel und finde ich keinen Absender, teile ich ihn nicht. Das kostet manchmal einen guten Tipp."
           ]
         }
       ]
@@ -361,8 +361,8 @@
             },
             {
               "zellen": [
-                "Video: Creme gegen Pickel",
-                "Influencerin",
+                "Video: «Beste Creme!»",
+                "Konto, dem ich folge",
                 "Meinung",
                 "Auswahl: nur Erfolge",
                 "nicht teilen"
@@ -402,7 +402,7 @@
         "Die eigene Position ist klar in Ich-Form formuliert.",
         "Die Position ist begründet; das Spannungsfeld zwischen Vertrauen und Prüfen ist anerkannt."
       ],
-      "indikator_produkt": "Die Reflexion sagt in Ich-Form, was ich künftig tue und was nicht."
+      "indikator_produkt": "Die Reflexion sagt in Ich-Form, was ich künftig prüfe, bevor ich einem Inhalt vertraue."
     }
   ],
   "lernfortschritt": {
@@ -469,7 +469,7 @@
   ],
   "abschluss": {
     "quercheck": [
-      "Weiss ich, ob ich den Clip weiterleite, und warum?",
+      "Steht beim Clip in «Was ich tue», ob ich ihn weiterleite – und kann ich es begründen?",
       "Habe ich eine Regel für den nächsten zweifelhaften Inhalt?"
     ],
     "mitnahme": [
@@ -548,7 +548,7 @@
     {
       "produkt": "Quelle",
       "vollstaendig_wenn": [
-        "Raster: 4 Zeilen, je Begriff aus LF1 oder LF2",
+        "Raster: 4 Zeilen, je ein Begriff (LF1, LF2, Glossar)",
         "Befund in zwei bis drei Sätzen"
       ]
     },
@@ -618,12 +618,12 @@
           "nr": 3,
           "bloom": "Analysieren",
           "knoten_ref": "Kap. 20.7 | S. 446-447",
-          "text": "Werten Sie Ihr Raster aus: Was sagt das Lehrmittel über die Mediennutzung Jugendlicher und über Fake News — und was davon zeigt sich in Ihrem Protokoll? Halten Sie den Befund in zwei bis drei Sätzen fest.",
+          "text": "Werten Sie Ihr Raster aus: Was sagt das Lehrmittel über die Mediennutzung Jugendlicher und über Fake News — und was davon zeigt sich an Ihren fünf Inhalten aus LF2? Halten Sie den Befund in zwei bis drei Sätzen fest.",
           "liefert": "Befund zum Vergleich mit dem Protokoll",
           "antwortform": "raster",
           "raster": {
             "knoten_ref": "Kap. 20.7 | S. 446-447",
-            "auftrag": "Lesen Sie Kap. 20.7, S. 446–447, bis zur Tabelle der Checks. Suchen Sie drei weitere Aussagen zu Mediennutzung und Fake News. Die erste Zeile ist ein Beispiel. Ordnen Sie jeder Zeile einen Begriff aus LF1 oder LF2 zu.",
+            "auftrag": "Lesen Sie Kap. 20.7, S. 446–447, bis zur Tabelle der Checks. Suchen Sie drei weitere Aussagen zu Mediennutzung und Fake News (Zeile 1 ist ein Beispiel). Je Zeile ein Begriff aus LF1, LF2 oder dem Glossar (S. 8).",
             "spalten": [
               "Absatz",
               "Kernaussage",
@@ -635,7 +635,7 @@
               "S. 446, Medienkompetenz",
               "Medien kritisch nutzen",
               "Schlüsselqualifikation",
-              "Selbstschutz"
+              "Medienkompetenz"
             ]
           },
           "feld_hoehe_mm": 25,
@@ -646,7 +646,7 @@
             ],
             "satzanfaenge": [
               "«Laut Lehrmittel nutzen Jugendliche …»",
-              "«In meinem Protokoll zeigt sich das bei …»"
+              "«Bei meinen fünf Inhalten zeigt sich das bei …»"
             ],
             "produkt": "Der Befund zeigt, wo Ihr Protokoll dem Lehrmittel gleicht; er ergänzt die Spalte «Was ich tue»."
           },
@@ -667,12 +667,12 @@
               },
               {
                 "label": "Begriffe",
-                "text": "Aus LF1 oder LF2, Deutung: kritischer Umgang, Gefahren → Selbstschutz; Falschmeldungen → Fake News; Echtheit einschätzen → Google-Check oder Bildmanipulation.",
+                "text": "Deutung: kritischer Umgang → Medienkompetenz; Gefahren → Selbstschutz; Falschmeldungen → Fake News; Echtheit einschätzen → Google-Check oder Bildmanipulation.",
                 "quelle": "Kap. 7.1; 20.7, S. 447"
               },
               {
                 "label": "Befund",
-                "text": "Verbindet eine Aussage mit dem eigenen Protokoll (z. B. Inhalte von Freunden ungeprüft). Warum der Feed einen Clip oft zeigt, sagt der Abschnitt nicht: Fallüberlegung."
+                "text": "Verbindet eine Aussage mit den eigenen fünf Inhalten (z. B. Inhalte von Freunden ungeprüft). Warum der Feed einen Clip oft zeigt, sagt der Abschnitt nicht: Fallüberlegung."
               }
             ],
             "raster_zeilen": [
@@ -680,7 +680,7 @@
                 "S. 446, Medienkompetenz",
                 "Medien kritisch nutzen",
                 "Schlüsselqualifikation",
-                "Selbstschutz"
+                "Medienkompetenz"
               ],
               [
                 "S. 447, Gefahren",
@@ -701,7 +701,7 @@
                 "Google-Check"
               ]
             ],
-            "befund": "Laut Lehrmittel sind Jugendliche täglich lange am Handy, und Falschmeldungen sind im Netz häufig, unter anderem weil alle um Aufmerksamkeit kämpfen. In meinem Protokoll kommen drei von fünf Inhalten aus dem Chat, geprüft habe ich keinen. Die kritische Haltung, die das Lehrmittel verlangt, fehlt mir noch."
+            "befund": "Laut Lehrmittel sind Jugendliche täglich lange am Handy, und Falschmeldungen sind im Netz häufig, unter anderem weil alle um Aufmerksamkeit kämpfen. Von meinen fünf Inhalten kommen drei aus dem Chat oder von fremden Konten, geprüft habe ich keinen. Die kritische Haltung, die das Lehrmittel verlangt, fehlt mir noch."
           }
         },
         {
@@ -710,18 +710,18 @@
           "knoten_ref": "Kap. 20.7 ↔ eigener Fall",
           "pol_typ": "modell_eigener_fall",
           "text": "Nehmen Sie die drei Checks als Modell: Wo passen sie zu Ihrem Alltag im Gruppenchat, wo nicht? Entscheiden Sie, welche eigene Regel künftig für zweifelhafte Inhalte gilt.",
-          "liefert": "Eigene Regel mit Begründung und Grenze",
+          "liefert": "Grenze der Checks, eigene Regel mit Begründung",
           "antwortform": "schreibfeld",
           "feld_hoehe_mm": 45,
           "scaffolding": {
             "strategien": [
               "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
-              "Prüfen Sie Ihre Gewohnheit «Was Freunde schicken, stimmt» an einem Inhalt im Protokoll."
+              "Gilt bei Ihnen «Was Freunde schicken, stimmt»? Prüfen Sie es an einem Ihrer fünf Inhalte."
             ],
             "satzanfaenge": [
               "«Die drei Checks verlangen, dass ich …»",
               "«In meinem Alltag geht das nicht immer, weil …»",
-              "«Meine Regel: Wenn …, dann …»"
+              "«Meine Regel: Wenn …, dann … Das kostet mich …»"
             ],
             "produkt": "Ihre Regel und ihre Begründung bilden den Kern der Reflexion unter der Tabelle."
           },
@@ -749,7 +749,7 @@
           "Wo es in meinem Alltag hakt",
           "Meine Regel"
         ],
-        "hinweis": "Zwei Zeilen genügen. Die Regel in der dritten Spalte antwortet auf das, was in der zweiten Spalte hakt.",
+        "hinweis": "Zwei der drei Zeilen genügen. Die Regel in der dritten Spalte antwortet auf das, was in der zweiten Spalte hakt.",
         "loesung_zeilen": [
           [
             "Absender des Clips suchen",
@@ -772,7 +772,7 @@
         "ref": "hko-quelle-raster",
         "fuer": "für das Raster zu Kap. 20.7 (S. 3)",
         "beispiel": [
-          "Absatz 2 · Bibliothek Musterdorf öffnet länger · «bis 20 Uhr» (Beispielwert) · → hier ein Begriff aus LF1 oder LF2"
+          "Absatz 2 · Bibliothek Musterdorf öffnet länger · «bis 20 Uhr» (Beispielwert) · → Fakt oder Meinung (Glossar)"
         ]
       },
       "scaffold_90": "Beispiel des Protokolls an einem anderen Fall (S. 6) und die ausgefüllte Beispielzeile im Raster (S. 3)."
@@ -805,7 +805,7 @@
             "satzanfaenge": [
               "«Laut Quelle prüfen … % der Befragten, indem sie …»",
               "«Nur wenige …»",
-              "«In meinem Protokoll mache ich es wie …»"
+              "«Bei meinen fünf Inhalten mache ich es wie …»"
             ],
             "produkt": "Den Befund vergleichen Sie mit der Spalte «Was ich tue»; Belege sind Wert und Reihe der Grafik."
           },
@@ -826,7 +826,7 @@
               },
               {
                 "label": "Begriffe",
-                "text": "Aus LF1 oder LF2: Vergleich mehrerer Medien, Quellen-Check, Fake News. Gespräch mit Eltern, Freunden: Deutung der Lernenden.",
+                "text": "LF1, LF2, Glossar: Vergleich mehrerer Medien, Quellen-Check, Fake News. Gespräch mit Eltern, Freunden: Deutung der Lernenden.",
                 "quelle": "Kap. 7.1 S. 189; 20.7 S. 447"
               },
               {
@@ -853,7 +853,7 @@
               [
                 "R. 3 · seriöse Medien",
                 "51 %",
-                "etwa die Hälfte vergleicht",
+                "etwa die Hälfte prüft dort nach",
                 "Vergleich mehrerer Medien"
               ],
               [
@@ -869,7 +869,7 @@
                 "Fake News"
               ]
             ],
-            "befund": "Am häufigsten prüfen die Befragten im Gespräch mit Eltern oder Freunden, etwa die Hälfte vergleicht mit seriösen Medien. Kaum jemand prüft die Internetadresse (10 %), fragt eine Lehrperson (8 %) oder nutzt eine Factcheck-Website (3 %). Ich mache es wie die Mehrheit: Ich frage im Chat, aber wer einen Clip gemacht hat, schaue ich nie nach."
+            "befund": "Am häufigsten prüfen die Befragten im Gespräch mit Eltern oder Freunden, etwa die Hälfte prüft in seriösen Medien nach. Kaum jemand prüft die Internetadresse (10 %), fragt eine Lehrperson (8 %) oder nutzt eine Factcheck-Website (3 %). Ich mache es wie die Mehrheit: Ich frage im Chat, aber wer einen Clip gemacht hat, schaue ich nie nach."
           }
         },
         {
@@ -878,7 +878,7 @@
           "knoten_ref": "Kap. 20.7 ↔ eigener Fall",
           "pol_typ": "modell_eigener_fall",
           "text": "Nehmen Sie die drei Checks als Modell: Wo passen sie zu Ihrem Alltag im Gruppenchat, wo nicht? Entscheiden Sie, welche eigene Regel künftig für zweifelhafte Inhalte gilt.",
-          "liefert": "Eigene Regel mit Begründung und Grenze",
+          "liefert": "Grenze der Checks, eigene Regel mit Begründung",
           "antwortform": "schreibfeld",
           "feld_hoehe_mm": 60,
           "scaffolding": {
@@ -889,7 +889,7 @@
             "satzanfaenge": [
               "«Die drei Checks verlangen, dass ich …»",
               "«In meinem Alltag geht das nicht immer, weil …»",
-              "«Meine Regel: Wenn …, dann …»"
+              "«Meine Regel: Wenn …, dann … Das kostet mich …»"
             ],
             "produkt": "Ihre Regel und ihre Begründung bilden den Kern der Reflexion unter der Tabelle."
           },
@@ -916,7 +916,7 @@
           "fuer_leitfrage": [
             3
           ],
-          "auftrag": "Lesen Sie Grafik und Text (QR-Seite). Vier Zeilen: zwei häufige, zwei seltene Prüfwege. Hinten je ein Begriff aus LF1 oder LF2.",
+          "auftrag": "Lesen Sie Grafik und Text (QR-Seite). Vier Zeilen: zwei häufige, zwei seltene Prüfwege. Hinten je ein Begriff aus LF1, LF2 oder dem Glossar (S. 8).",
           "raster": {
             "spalten": [
               "Was gemessen",
@@ -937,7 +937,7 @@
           "ref": "q-211b-vertiefung-2",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Woran erkennt der Moderator, dass das Video gefälscht ist – und was rät die Polizei?",
-          "erwartung": "Erkennen (01:16–01:41): Die Stimme klingt künstlich, die Aussprache passt nicht zu ihm. Studio und Sendung sind echt, das macht die Fälschung überzeugend. Polizei (04:10–04:31): Alarm, wenn Promis für hohe Renditen werben; mit jemandem reden; bei Bank oder Polizei nachfragen."
+          "erwartung": "Erkennen (01:16–01:41): Die Stimme klingt künstlich, die Aussprache passt nicht zu ihm. Studio und Sendung sind echt; ihm macht Angst, wie nah die Fälschung am Original ist (01:43). Polizei (04:10–04:28): Alarm, wenn Promis für hohe Renditen werben; mit jemandem reden; bei Bank oder Polizei nachfragen."
         }
       ],
       "kasten_s4": {
@@ -948,7 +948,7 @@
         "ref": "hko-grafik-lesen",
         "fuer": "für das Raster zur Quelle (S. 3)",
         "beispiel": [
-          "Was gemessen: Anteil, der täglich ein Buch liest · auffälliger Wert: «jede vierte Person» (Beispielwert) · Aussage: Lesen ist eher selten · → hier ein Begriff aus LF1"
+          "Was gemessen: Anteil, der täglich ein Buch liest · auffälliger Wert: «jede vierte Person» (Beispielwert) · Aussage: Lesen ist eher selten · → hier ein Begriff (LF1, LF2, Glossar)"
         ]
       },
       "scaffold_90": "Beispiel des Protokolls an einem anderen Fall (S. 6) und eine gemeinsam erarbeitete erste Rasterzeile."
