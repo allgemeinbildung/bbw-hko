@@ -117,8 +117,6 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
       </p>
     </div>
 
-    <div id="fb-msg" class="text-sm mb-4 hidden"></div>
-
     <!-- Schritt 2: schlanker Feedback-Bogen (erst nach Auswahl sichtbar) -->
     <form id="fb-form" data-pre-art={preArt} class="space-y-6 bg-white border border-slate-200 rounded-lg p-6 hidden">
       <input type="hidden" name="einheit_id" value={setKey} />
@@ -306,8 +304,12 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
         </span>
       </label>
 
+      <!-- Rückmeldung steht bei den Knöpfen: oben über dem Bogen sieht sie nach dem Klick niemand. -->
       <div class="flex items-center justify-end gap-3">
-        <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
+        <div id="fb-msg" role="status" aria-live="polite" class="text-sm mr-auto hidden"></div>
+        {offen?.status !== 'eingereicht' && (
+          <button type="button" id="save-draft" class="px-4 py-2 rounded-md text-sm font-medium border border-slate-300 text-slate-700 hover:bg-slate-50">Als Entwurf speichern</button>
+        )}
         <button type="button" id="submit-final" class="px-4 py-2 rounded-md text-sm font-medium text-white" style="background: var(--brand)">
           {offen?.status === 'eingereicht' ? 'Änderungen speichern' : 'Feedback einreichen'}
         </button>
@@ -512,16 +514,13 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
       const payload = gather(status)
 
       if (payload.feedback_art === 'angepasst' && !payload.eigene_anpassungen?.trim()) {
-        msg.textContent = 'Bitte beschreibe kurz, was du angepasst hast.'
-        msg.className = 'text-sm text-red-600'
-        msg.classList.remove('hidden')
-        angepasstSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        msg.textContent = 'Bitte beschreibe oben unter «Deine Anpassung» kurz, was du angepasst hast.'
+        msg.className = 'text-sm mr-auto text-red-600'
         return
       }
 
       msg.textContent = 'Speichere…'
-      msg.className = 'text-sm text-slate-500'
-      msg.classList.remove('hidden')
+      msg.className = 'text-sm mr-auto text-slate-500'
       const istAenderung = !!savedFeedbackId
 
       try {
@@ -554,7 +553,7 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
         if (status === 'eingereicht') {
           if (uploadError) {
             msg.textContent = 'Feedback gespeichert, aber der Datei-Upload ist fehlgeschlagen: ' + uploadError.message + ' Du kannst die Datei unten erneut hochladen.'
-            msg.className = 'text-sm text-amber-600'
+            msg.className = 'text-sm mr-auto text-amber-600'
           } else {
             window.location.href = istAenderung
               ? '/einheiten?success=Feedback+aktualisiert.+Danke!'
@@ -564,15 +563,15 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
           msg.textContent = uploadError
             ? 'Entwurf gespeichert, aber der Datei-Upload ist fehlgeschlagen: ' + uploadError.message
             : 'Entwurf gespeichert.'
-          msg.className = uploadError ? 'text-sm text-amber-600' : 'text-sm text-emerald-600'
+          msg.className = uploadError ? 'text-sm mr-auto text-amber-600' : 'text-sm mr-auto text-emerald-600'
         }
       } catch (err) {
         msg.textContent = 'Fehler beim Speichern: ' + err.message
-        msg.className = 'text-sm text-red-600'
+        msg.className = 'text-sm mr-auto text-red-600'
       }
     }
 
-    document.getElementById('save-draft').addEventListener('click', () => send('entwurf'))
+    document.getElementById('save-draft')?.addEventListener('click', () => send('entwurf'))
     document.getElementById('submit-final').addEventListener('click', () => send('eingereicht'))
   </script>
 </Einheiten>
