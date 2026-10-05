@@ -48,8 +48,7 @@ C. Erzeugung im Auto-Modus, je Einheit (die zwei Einheiten dürfen parallel
      (Phase 8, Marker nur mit scripts/begleiter-marker.mjs der Skill).
    - Gegenleser (Sonnet, nur berichten) nach references/gegenleser.md der
      Skill: je Heft und vorhandener Spur ein/e Lernende/r Profil a und ein
-     Lösungs-Audit; je Heft ein/e Lernende/r Profil b (Deutsch als
-     Zweitsprache, B1); ein/e Lernende/r am Auftragsbogen; ein Sweep. Die
+     Lösungs-Audit; ein/e Lernende/r am Auftragsbogen; ein Sweep. Die
      Lernenden bearbeiten das Dokument wirklich (Paket mit seitentext.mjs,
      Auftrag wörtlich aus §4.1). Du prüfst jeden Befund am Dokument nach,
      bevor er als genauer Auftrag an den Executor der Datei geht; danach das

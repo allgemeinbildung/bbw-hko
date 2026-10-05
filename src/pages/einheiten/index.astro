@@ -11,8 +11,6 @@
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
 import EinheitCard from '../../components/einheiten/EinheitCard.astro'
-import { createAdminClient } from '../../lib/supabase'
-import { VORSCHAU_BUCKET } from '../../lib/vorschau'
 import { einheitenIndex, visibleEinheiten, lehrgaengeOf, lehrgangShort, isEbaLehrgang, isEntwurf, draftKomponenten, isKomponenteSichtbar, KOMPONENTEN_LABEL, LEHRGANG_ORDER, LEHRGANG_LABEL } from '../../lib/einheiten'
 import { getNrlp, toLehrdauer } from '../../lib/nrlp'
 
@@ -82,15 +80,6 @@ const auch = (e: E, lg: string) => {
   return rest.length ? `auch ${rest.map(lehrgangShort).join(', ')}` : ''
 }
 
-// Vorschauen neuer Einheiten (Ordner im privaten Bucket) — nur für Lehrpersonen.
-let vorschauen: { id: string; titel: string }[] = []
-if (role !== 'gast') {
-  const { data: ordner } = await createAdminClient().storage.from(VORSCHAU_BUCKET).list('', { limit: 100 })
-  vorschauen = (ordner ?? [])
-    .filter((o) => !o.id)
-    .map((o) => ({ id: o.name, titel: einheitenIndex.find((e) => e.id === o.name)?.einheit_titel ?? '' }))
-    .filter((v) => v.titel)
-}
 ---
 <Einheiten title="Unterrichtseinheiten" role={role}>
   <div x-data="einheitenKatalog()" x-cloak>
@@ -106,17 +95,6 @@ if (role !== 'gast') {
       <button type="button" class="px-3 py-1.5 border-l border-slate-300" :class="ansicht === 'karten' ? 'bg-slate-900 text-white' : 'bg-white'" @click="ansicht = 'karten'">Karten</button>
     </div>
   </div>
-
-  {vorschauen.length > 0 && (
-    <div class="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm flex flex-wrap items-center gap-x-4 gap-y-2">
-      <span><strong>Neu in der Vorschau:</strong> So sehen die neuen Einheiten aus — wir sind gespannt auf deine Rückmeldung.</span>
-      <span class="flex flex-wrap gap-2 ml-auto">
-        {vorschauen.map((v) => (
-          <a href={`/vorschau/${v.id}/`} class="font-medium text-amber-900 border border-amber-400 bg-white rounded-md px-3 py-1 hover:bg-amber-100">{v.titel} →</a>
-        ))}
-      </span>
-    </div>
-  )}
 
   {sichtbar.some((e) => e.hat_spuren) && (
     <div class="mb-6 rounded-lg px-4 py-3 text-sm flex flex-wrap items-center gap-x-4 gap-y-2" style="background:var(--brand-tint);color:var(--brand-dark)">

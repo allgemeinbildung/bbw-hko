@@ -18,15 +18,16 @@ und ein Blick aufs Papier; Zeiten sind Schätzungen. Der Bericht sagt das.
 | Gegenleser | Anzahl | Bekommt | Fängt |
 |---|---|---|---|
 | **Lernende/r, Profil a** (stark, schnell, liest genau) | je Heft und vorhandener Spur | Seitentext des Hefts; Spur mit Medien: QR-Seite und Quelle; die genannten Lehrmittelseiten | Widersprüche zwischen Seiten, Aufträge, die das Material nicht trägt, vorweggenommene Entscheide |
-| **Lernende/r, Profil b** (Deutsch als Zweitsprache, B1, liest langsam, schlägt nichts nach) | je Heft einmal, in der Spur mit Medien (fehlt sie: ohne Medien) | wie oben | Sprachlast, unerklärte Wörter, Zeitbedarf |
 | **Lernende/r am Auftragsbogen**, Profil a | 1 je Einheit | Seitentext des Auftragsbogens, dazu S. 4 und 8 beider Hefte | Schritte ohne Abgabe, Kriterien ohne Auftrag, Fall passt nicht zu den Heften |
 | **Lösungs-Audit** | je Heft und vorhandener Spur | Dokument «Lösungen», Kapiteldatei bzw. Archivtext | falsche Fundstellen, Zeitmarken, Fakten |
 | **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, gesperrte Wörter, Anrede |
 
-Bei zwei Heften mit je zwei Spuren sind das vier Lernende a, zwei Lernende b,
-ein Bogen-Leser, vier Audits und ein Sweep: zwölf. Modell: Sonnet. Das Profil
-«wenig Lust, macht das Minimum» gehört nicht zur festen Besetzung; es lohnt sich
-für eine Stichprobe, wenn die Frage ist, was übersprungen wird.
+Bei zwei Heften mit je zwei Spuren sind das vier Lernende a,
+ein Bogen-Leser, vier Audits und ein Sweep: zehn. Modell: Sonnet. Nicht zur
+festen Besetzung gehören das Profil «Deutsch als Zweitsprache, B1» (Entscheid
+E31: Befunde zu Sprachlast und Zeitbedarf für B1 werden nicht bearbeitet) und
+das Profil «wenig Lust, macht das Minimum»; dieses lohnt sich für eine
+Stichprobe, wenn die Frage ist, was übersprungen wird.
 
 ## 2. Zeitpunkt
 
