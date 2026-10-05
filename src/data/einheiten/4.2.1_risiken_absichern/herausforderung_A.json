@@ -54,7 +54,7 @@
     "betrieb": "eigener Lehrbetrieb",
     "ort": "eigener Wohnort"
   },
-  "situation_text": "Im Sommer bin ich 18 geworden. Die Offerte meiner Krankenkasse für das neue Jahr liegt vor mir: Die Kinderprämie fällt weg, ich zahle neu selbst. Ich muss ankreuzen, welche Franchise ich will – den Betrag, den ich im Jahr zuerst selbst zahle, bevor die Kasse etwas übernimmt. Mit CHF 300 kostet die Prämie CHF 352 im Monat, mit CHF 2'500 nur CHF 262. Aber ich verdiene CHF 1'050, trainiere im Verein und habe CHF 900 gespart. Meine Mutter rät: «Rechne drei Fälle: ohne Arzt, mit CHF 1'500 Behandlungskosten, mit CHF 5'000.» In der Prämie stecken CHF 24 im Monat für die Unfalldeckung; laut meiner Berufsbildnerin bin ich über den Betrieb gegen Unfälle versichert, auch in der Freizeit. In zehn Tagen muss die Offerte zurück. Ich will klären, welche Franchise zu mir passt.",
+  "situation_text": "Im Sommer bin ich 18 geworden. Die Offerte meiner Krankenkasse für das neue Jahr liegt vor mir: Die Kinderprämie fällt weg, ich zahle neu selbst. Ich muss ankreuzen, welche Franchise ich will – den Betrag, den ich im Jahr zuerst selbst zahle, bevor die Kasse etwas übernimmt. Mit CHF 300 kostet die Prämie CHF 352 im Monat, mit CHF 2'500 nur CHF 262. Aber ich verdiene CHF 1'050, trainiere im Verein und habe CHF 900 gespart. Meine Mutter rät: «Rechne drei Fälle: ohne Arzt, mit CHF 1'500 Behandlungskosten, mit CHF 5'000.» In der Prämie stecken CHF 18 im Monat für die Unfalldeckung; laut meiner Berufsbildnerin bin ich über den Betrieb gegen Unfälle versichert, auch in der Freizeit. In zehn Tagen muss die Offerte zurück. Ich will klären, welche Franchise zu mir passt.",
   "zahlen_tabelle": [
     {
       "label": "Prämie im Monat mit Franchise CHF 300",
@@ -66,7 +66,7 @@
     },
     {
       "label": "Unfalldeckung im Monat (in beiden drin)",
-      "wert": "CHF 24"
+      "wert": "CHF 18"
     },
     {
       "label": "Mein Erspartes · mein Lohn im Monat",
@@ -194,7 +194,7 @@
           },
           {
             "label": "Wann welche",
-            "text": "Unter CHF 1'500 ist die hohe Franchise günstiger, bei CHF 1'500 beide gleich, darüber die tiefe. Schlimmster Fall: 6'344 gegen 5'224."
+            "text": "Unter CHF 1'500 ist die hohe Franchise günstiger, bei CHF 1'500 beide gleich, darüber die tiefe. Schlimmster Fall: 5'224 (Franchise 300) gegen 6'344."
           },
           {
             "label": "Herkunft",
@@ -225,7 +225,7 @@
       },
       {
         "label": "03 Meine Lage belegen",
-        "hint": "Zwei eigene Rasterzeilen (LF3) mit Fundstelle unter die Tabelle schreiben. Welche: S. 3, «Ins Produkt». Die Beispielzeile zählt nicht."
+        "hint": "Schreiben Sie zwei eigene Rasterzeilen (LF3) mit Fundstelle unter die Tabelle. Welche zwei, steht auf S. 3 unter «Ins Produkt»."
       },
       {
         "label": "04 Franchise entscheiden",
@@ -291,7 +291,7 @@
     },
     "loesungsbild": {
       "titel": "Mögliche Lösung zum Fall: Offerte der Krankenkasse – Franchise 300 oder 2'500",
-      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Der Entscheid entspricht dem zweiten Beispiel von LF4; CHF 2'500 ist ebenso gültig, wenn begründet. Belege hier aus der Fassung ohne Medien; mit Medien stehen dort Werte der Quelle (Grafik, Abs. 2; Stand 2023). Die Tabelle rechnet mit Unfalldeckung; ohne sie sinken beide Prämien um CHF 288 im Jahr. Fallüberlegung, nicht aus dem Lehrmittel: Dass die Unfalldeckung der Kasse wegfallen kann, sagt S. 131 nicht ausdrücklich; es gilt nur, solange die Anstellung dauert. Franchise und Selbstbehalt: Stand 2026, vor dem Druck prüfen.",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Der Entscheid entspricht dem zweiten Beispiel von LF4; CHF 2'500 ist ebenso gültig, wenn begründet. Belege hier aus der Fassung ohne Medien; mit Medien stehen dort Werte der Quelle (Grafik, Abs. 2; Stand 2023). Die Tabelle rechnet mit Unfalldeckung; ohne sie sinken beide Prämien um CHF 216 im Jahr (höchstens 7 Prozent der Prämie, KVV Art. 91a). Nicht auf S. 131, aber im Gesetz: Wer über den Betrieb voll gegen Unfälle versichert ist, kann die Unfalldeckung der Kasse auf Antrag ruhen lassen; endet diese Deckung, gilt die der Kasse wieder – der Kasse melden (KVG Art. 8). Franchise und Selbstbehalt: KVV Art. 93 und 103, geprüft am 5.10.2026. Eine Erhöhung der tiefsten Franchise auf CHF 400 ist seit März 2026 in der Vernehmlassung, nicht beschlossen (BAG, Mitteilung vom 13.3.2026).",
       "legende": [],
       "bloecke": [
         {
@@ -347,7 +347,7 @@
               "notiz": "Beleg: S. 130 – Krankheit: Grundversicherung zahlt"
             },
             {
-              "text": "Unfalldeckung in der Police streiche ich (CHF 288 im Jahr): Der Betrieb versichert mich, auch in der Freizeit.",
+              "text": "Unfalldeckung in der Police streiche ich (CHF 216 im Jahr): Der Betrieb versichert mich, auch in der Freizeit.",
               "notiz": "Beleg: S. 131 – ab 8 Std. pro Woche, ohne Franchise"
             },
             {
@@ -389,7 +389,7 @@
   "methoden": [
     {
       "ref": "hko-gezielt-suchen",
-      "fuer": "für Prämie, Franchise und Unfalldeckung: auf S. 1 und in Ihrer Police"
+      "fuer": "für Prämie, Franchise und Unfalldeckung: in der Offerte (S. 1) und in Kap. 4.2"
     },
     {
       "ref": "__spur__",
@@ -397,7 +397,7 @@
     },
     {
       "ref": "hko-verzichten-abwaegen",
-      "fuer": "für Schritt 04 – tiefe Franchise, Unfalldeckung: muss, soll oder kann weg?",
+      "fuer": "für Schritt 04 – Ihre Posten: tiefe Franchise, Unfalldeckung. Muss, soll oder kann weg?",
       "beispiel": [
         "Klassenreise, Kasse 600.— für 3 Wünsche:",
         "Unterkunft 400.— → A, muss sein",
@@ -510,8 +510,8 @@
         "Ja, wenn die drei Punkte in zwei bis drei Sätzen in Ich-Form stehen – wie im Lösungsbild oder mit CHF 2'500, begründet wie in LF4."
       ],
       "mitnahme": [
-        "Prämie im Jahr plus eigene Kosten in drei Fällen: bis CHF 1'500 lohnt sich die hohe Franchise, darüber die tiefe.",
-        "Ich trage nur, was ich zahlen kann: mit Erspartem (CHF 900) und Lohn CHF 1'000, nicht CHF 3'200.",
+        "Prämie im Jahr plus eigene Kosten in drei Fällen: unter CHF 1'500 lohnt sich die hohe Franchise, darüber die tiefe.",
+        "Ich trage nur, was ich zahlen kann: mit Erspartem (CHF 900) und etwas Lohn höchstens CHF 1'000, nicht CHF 3'200.",
         "Zum Beispiel, ob ich eine Prämienverbilligung beantragen kann (Kap. 4.2, S. 130)."
       ]
     }
@@ -639,7 +639,7 @@
             "zeilen": [
               {
                 "label": "Erwartet",
-                "text": "Unfall: Ab acht Stunden Arbeit pro Woche über den Betrieb auch in der Freizeit versichert; ohne Franchise und Selbstbehalt (S. 131). Krankheit: Grundversicherung deckt Arzt, Medikamente, Spital (S. 130). Bei Krankheit nicht gedeckt: Zahn, Brille, Transport – nur mit Zusatzversicherung (S. 130); bei Unfall zahlt die Unfallversicherung Transport und Rettung (S. 131).",
+                "text": "Unfall: Ab acht Stunden Arbeit pro Woche über den Betrieb auch in der Freizeit versichert; ohne Franchise und Selbstbehalt (S. 131). Krankheit: Grundversicherung deckt Arzt, Medikamente, Spital (S. 130). Bei Krankheit nicht gedeckt: Zahn, Brille, Transport – nur mit Zusatzversicherung (S. 130); bei Unfall zahlt die Unfallversicherung Transport und Rettung (S. 131). Gesetz: Hälfte nötiger Transporte, höchstens CHF 500 im Jahr (KLV Art. 26).",
                 "quelle": "Kap. 4.2, S. 130-131"
               },
               {
@@ -653,7 +653,7 @@
               },
               {
                 "label": "Befund",
-                "text": "Tragfähig: je eine Aussage zu Krankheit und Unfall mit Seite, dann der Schluss. Fallüberlegung, nicht im Lehrmittel: Unfalldeckung der Kasse kann wegfallen; Sport zählt für die Franchise wenig."
+                "text": "Tragfähig: je eine Aussage zu Krankheit und Unfall mit Seite, dann der Schluss. Gesetz, nicht Lehrmittel: Die Unfalldeckung der Kasse kann ruhen (KVG Art. 8). Fallüberlegung: Sport zählt für die Franchise wenig."
               }
             ],
             "raster_zeilen": [
@@ -697,14 +697,14 @@
           "scaffolding": {
             "strategien": [
               "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
-              "S. 129: «maximales Risiko» = CHF 2'200 mehr Kostenbeteiligung − CHF 1'080 gesparte Prämie."
+              "Wie S. 129, mit Ihren Zahlen: CHF 2'200 mehr Kostenbeteiligung − CHF 1'080 Prämie gespart."
             ],
             "satzanfaenge": [
               "«Nach der Rechnung von S. 129 ist mein Risiko …»",
               "«Die Rechnung sagt nicht, dass ich …»",
               "«Ich wähle …, obwohl …, denn … Das Geld käme von …»"
             ],
-            "produkt": "Entscheid unter die Tabelle (Schritt 04). Unfalldeckung: Nein spart 24 × 12 im Jahr; die Tabelle bleibt."
+            "produkt": "Entscheid unter die Tabelle (Schritt 04). Unfalldeckung: Nein spart 18 × 12 im Jahr; die Tabelle bleibt."
           },
           "loesung": {
             "kern": "Erwartungshorizont: Rechenmodell ↔ meine Lage",
@@ -714,7 +714,7 @@
                 "nennt eine Grenze der Rechnung (Fallüberlegung): CHF 900 Erspartes gegen bis zu CHF 3'200; ob ich krank werde, zeigt sie nicht",
                 "entscheidet in Ich-Form, sagt, woher das Geld käme, und anerkennt die andere Franchise"
               ],
-              "beispiel_pol_1": "Ich wähle CHF 2'500. Nach S. 129 ist mein grösstes Risiko CHF 1'120 im Jahr (2'200 − 1'080). Die Rechnung sagt nicht, dass ich nur CHF 900 habe; darum lege ich die gesparten CHF 90 im Monat zurück. Für die tiefe spricht: Im ersten Jahr könnte ich eine grosse Rechnung nicht zahlen. Annahme: Ich war kaum beim Arzt.",
+              "beispiel_pol_1": "Ich wähle CHF 2'500. Nach dem Schema von S. 129 ist mein grösstes Risiko CHF 1'120 im Jahr (2'200 − 1'080). Die Rechnung sagt nicht, dass ich nur CHF 900 habe; darum lege ich die gesparten CHF 90 im Monat zurück. Für die tiefe spricht: Im ersten Jahr könnte ich eine grosse Rechnung nicht zahlen. Annahme: Ich war kaum beim Arzt.",
               "beispiel_pol_2": "Ich wähle CHF 300. Die hohe spart CHF 1'080, das grösste Risiko wäre CHF 1'120 (S. 129). Die Rechnung sagt nicht, ob ich das Geld habe: Mit CHF 900 könnte ich CHF 1'500 nicht auf einmal zahlen. Höchstens CHF 1'000 decke ich mit Erspartem und Lohn. Für die hohe spricht: Bleibe ich gesund, zahle ich CHF 1'080 mehr. Ende Jahr rechne ich neu (S. 129).",
               "nicht_tragfaehig": "Entscheid ohne Zahl aus der Tabelle, «immer besser», oder ohne Angabe, woher das Geld kommt."
             }
@@ -737,7 +737,7 @@
             "Hohe nur, wenn ich die Ersparnis zurücklege"
           ],
           [
-            "«Maximales Risiko»: 2'200 − 1'080 = CHF 1'120 (S. 129)",
+            "«Maximales Risiko»: 2'200 − 1'080 = CHF 1'120 (Schema S. 129, Fallzahlen)",
             "Ob ich krank werde, zeigt keine Rechnung",
             "Tiefe, wenn Sicherheit mehr zählt als CHF 90 im Monat"
           ]
@@ -816,7 +816,7 @@
             "raster_zeilen": [
               [
                 "Grafik: ordentliche Franchise 300",
-                "45 %, rund 3,27 Mio.",
+                "45 % von 7,2 Mio. Erwachsenen",
                 "fast die Hälfte bleibt bei der tiefsten Stufe",
                 "Franchise"
               ],
@@ -854,14 +854,14 @@
           "scaffolding": {
             "strategien": [
               "S. 130, «Sparmöglichkeiten»: Welchen Weg lässt Ihnen die Offerte offen?",
-              "Quelle: Schwelle rund 2'000, bei Ihnen 1'500. Beides stimmt: andere Prämien."
+              "Tiefe lohnt sich über Behandlungskosten von: Quelle ca. 2'000, Sie 1'500 – andere Prämien."
             ],
             "satzanfaenge": [
               "«Laut Kap. 4.2 kann ich … (S. …)»",
               "«Die Quelle zeigt dazu, dass … (Grafik / Abs. …)»",
               "«Ich wähle …, obwohl …, denn … Das Geld käme von …»"
             ],
-            "produkt": "Entscheid unter die Tabelle (Schritt 04). Unfalldeckung: Nein spart 24 × 12 im Jahr; die Tabelle bleibt."
+            "produkt": "Entscheid unter die Tabelle (Schritt 04). Unfalldeckung: Nein spart 18 × 12 im Jahr; die Tabelle bleibt."
           },
           "loesung": {
             "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Entscheid",
@@ -887,7 +887,7 @@
             3,
             4
           ],
-          "auftrag": "Lesen Sie die Quelle (QR-Seite), Text und Grafik. Füllen Sie vier eigene Zeilen: erste Spalte «Grafik» oder Absatznummer, dann auffälliger Wert, Aussage und ein Begriff aus LF1 oder dem Glossar.",
+          "auftrag": "Lesen Sie die Quelle (QR-Seite), Text und Grafik. Füllen Sie vier eigene Zeilen; die Grafik darf mehrere füllen. «Was gemessen» heisst hier: welcher Teil der Grafik (etwa «Grafik, Franchise 300») oder welcher Absatz.",
           "raster": {
             "spalten": [
               "Was gemessen",
@@ -902,7 +902,13 @@
           "ref": "q-421a-vertiefung-1",
           "rolle": "vertiefung",
           "leitfrage_vertiefung": "Was zahle ich im Jahr höchstens selbst, und was ändert eine höhere Franchise daran?",
-          "erwartung": "Franchise plus Selbstbehalt (Abs. 9–10, 14): mit der ordentlichen Franchise höchstens 1000 Franken im Jahr (Abs. 17). Eine höhere Franchise heisst mehr eigenes Risiko, weniger Prämie (Abs. 19). 2500 + 700 = 3200 ist Rechnung, nicht auf der Seite. Ohne Spitalbeitrag gerechnet (Abs. 11: 15 Franken je Tag; junge Erwachsene in Ausbildung sind befreit). Seite ohne Datum, gelesen 2026-10-04."
+          "erwartung": "Franchise plus Selbstbehalt (Abs. 9–10, 14): mit der ordentlichen Franchise höchstens 1000 Franken im Jahr (Abs. 17). Eine höhere Franchise heisst mehr eigenes Risiko, weniger Prämie (Abs. 19). 2500 + 700 = 3200 ist Rechnung, nicht auf der Seite. Ohne Spitalbeitrag gerechnet (Abs. 11: 15 Franken je Tag; junge Erwachsene in Ausbildung sind befreit). Seite ohne Datum, gelesen 2026-10-05; Beträge gleich in KVV Art. 93, 103 und 104."
+        },
+        {
+          "ref": "q-421a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wann darf ich die Unfalldeckung bei der Krankenkasse ruhen lassen, und für wen geht das nicht?",
+          "erwartung": "Ruhen lassen (sistieren) darf, wer nach UVG voll gegen Berufs- und Nichtberufsunfälle versichert ist: mindestens acht Stunden pro Woche bei einem Arbeitgeber (Abs. 2, 5). Nicht möglich ohne Anstellung oder unter acht Stunden; dann braucht es die Unfalldeckung der Krankenkasse (Abs. 6). Verfahren: Antrag mit Nachweis, frühestens ab dem folgenden Monat, die Prämie sinkt (Abs. 8). Für den Fall: Ich darf streichen, solange ich im Betrieb arbeite; danach gehört die Deckung zurück in die Police. Zählweise wie im Archiv: Titel = 1. Seite ohne Datum, gelesen 2026-10-05."
         }
       ],
       "kasten_s4": {
@@ -911,7 +917,7 @@
       },
       "methoden_ref_rezeption": {
         "ref": "hko-grafik-lesen",
-        "fuer": "für das Raster zur Quelle (S. 3)",
+        "fuer": "für das Raster zur Quelle (S. 3) – Kreisdiagramm: statt Achsen die Anteile lesen",
         "beispiel": [
           "Grafik Schulweg (erfunden) · 34 % der Lernenden: Velo · am häufigsten · → Verkehrsmittel"
         ]
