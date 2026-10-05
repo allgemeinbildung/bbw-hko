@@ -3,12 +3,13 @@
   "type": "module",
   "version": "0.1.0",
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "astro dev",
     "prebuild": "npm run check:nrlp && npm run build:sk-labels && npm run sync:einheiten-nrlp && npm run build:einheiten-index && npm run build:umsetzungsbeispiele-nrlp && npm run sync:nrlp-indexes",
     "build": "astro build",
+    "postbuild": "node scripts/patch-vercel-runtime.mjs",
     "preview": "astro preview",
     "check:nrlp": "node scripts/check-nrlp-consistency.mjs",
     "check:einheiten": "node scripts/check-einheiten.mjs",
