@@ -37,7 +37,7 @@ function kurzadresse(url: string): string {
 }
 
 const TYP_ETIKETT: Record<string, string> = {
-  artikel: 'Artikel', grafik: 'Grafik', video: 'Video', audio: 'Audio', rechtstext: 'Rechtstext', webseite: 'Webseite',
+  artikel: 'Artikel', grafik: 'Grafik', video: 'Video', audio: 'Audio', rechtstext: 'Rechtstext', webseite: 'Webseite', datensatz: 'Datensatz',
 }
 
 function typEtikett(q: Quelle): string {
@@ -331,6 +331,7 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
   // Kopf: zwei Zeilen mit Beschriftung links — Persona, dann Kompetenz(en).
   const pers = sit.persona
   const komp = kompetenzen(sit)
+  const modi = sit.nrlp?.sprachmodi ?? []
   // Trennlinie unter dem Kopf: Unterkante der Zellen der letzten Zeile.
   const kopfRand = (letzte: boolean) => (letzte ? { ...OHNE_RAND, bottom: linie(COLOR.rule) } : OHNE_RAND)
   const labelZelle = (text: string, letzte: boolean) => tcell(mini(text, ctx, 0), {
@@ -345,27 +346,36 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
   })
   const kopfZeilen = [new TableRow({
     children: [
-      labelZelle('Persona', !komp.length),
+      labelZelle('Persona', !komp.length && !modi.length),
       textZelle([new Paragraph({
         children: [
           new TextRun({ text: pers?.beruf || '', bold: true, size: 19 }),
           ...((pers?.betrieb || pers?.ort) ? [new TextRun({ text: ` · ${[pers?.betrieb, pers?.ort].filter(Boolean).join(', ')}`, size: 19, color: COLOR.inkSoft })] : []),
         ],
         spacing: { after: 0 },
-      })], !komp.length),
+      })], !komp.length && !modi.length),
     ],
   })]
   if (komp.length) {
     kopfZeilen.push(new TableRow({
       children: [
-        labelZelle(komp.length > 1 ? 'Kompetenzen' : 'Kompetenz', true),
+        labelZelle(komp.length > 1 ? 'Kompetenzen' : 'Kompetenz', !modi.length),
         textZelle(komp.map((k) => new Paragraph({
           children: [
             ...(k.nr ? [new TextRun({ text: `${k.nr} `, bold: true, color: ctx.akzent, size: 18 })] : []),
             new TextRun({ text: k.text, size: 18 }),
           ],
           spacing: { after: 20 },
-        })), true),
+        })), !modi.length),
+      ],
+    }))
+  }
+  // Sprachmodi dieses Hefts — wie im HTML unter der Kompetenz.
+  if (modi.length) {
+    kopfZeilen.push(new TableRow({
+      children: [
+        labelZelle(modi.length > 1 ? 'Sprachmodi' : 'Sprachmodus', true),
+        textZelle([new Paragraph({ children: [new TextRun({ text: modi.join(' · '), size: 18 })], spacing: { after: 20 } })], true),
       ],
     }))
   }

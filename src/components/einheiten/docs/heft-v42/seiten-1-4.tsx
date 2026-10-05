@@ -36,7 +36,7 @@ function kurzadresse(url: string): string {
 }
 
 const TYP_ETIKETT: Record<string, string> = {
-  artikel: 'Artikel', grafik: 'Grafik', video: 'Video', audio: 'Audio', rechtstext: 'Rechtstext', webseite: 'Webseite',
+  artikel: 'Artikel', grafik: 'Grafik', video: 'Video', audio: 'Audio', rechtstext: 'Rechtstext', webseite: 'Webseite', datensatz: 'Datensatz',
 }
 
 function typEtikett(q: Quelle): string {
@@ -339,8 +339,10 @@ function Quellenkarte({ q, sit }: { q: Quelle; sit: SituationJson }) {
         </div>
         <div className="v42-qr">
           <QrCode text={url} groesseMm={25} titel={`QR-Code zur Quelle: ${url}`} />
-          <div className="v42-kurzadresse">{/* Umbruchstelle nach «/m/» (Nullbreite), damit die Adresse nicht mitten im Wort bricht. */}
-            {kurzadresse(url).replace('/m/', '/m/​')}</div>
+          <div className="v42-kurzadresse">{/* Umbruchstelle nach «/m/» als <wbr>: kein Zeichen im Text, die Adresse bleibt kopierbar. */}
+            {kurzadresse(url).split('/m/').map((teil, i) => (
+              <span key={i}>{i > 0 && <>/m/<wbr /></>}{teil}</span>
+            ))}</div>
         </div>
       </div>
     </Kasten>
@@ -385,6 +387,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
   // Medien-Spur ein flacher Kurzeintrag. Situation und Wochenplan stehen in beiden Spuren
   // gleich gross, der Rest verteilt sich auf die Abstände (heft-1-4.css).
   const komp = kompetenzen(sit)
+  const modi = sit.nrlp?.sprachmodi ?? []
   const p = sit.persona
   const zahlen = sit.zahlen_tabelle ?? []
   const zahlenPaare: (typeof zahlen)[] = []
@@ -409,6 +412,13 @@ export function Seite1({ sit }: HeftSeiteProps) {
                   <p key={i} className="v42-kompetenz">{k.nr && <strong>{k.nr} </strong>}{k.text}</p>
                 ))}
               </div>
+            </>
+          )}
+          {/* Sprachmodi dieses Hefts (`nrlp.sprachmodi`) — dieselbe Quelle wie die Kompetenz darüber. */}
+          {modi.length > 0 && (
+            <>
+              <Mini>{modi.length > 1 ? 'Sprachmodi' : 'Sprachmodus'}</Mini>
+              <p className="v42-kompetenz">{modi.join(' · ')}</p>
             </>
           )}
         </div>

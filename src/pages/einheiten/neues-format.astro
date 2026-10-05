@@ -1,0 +1,215 @@
+---
+// Erklärseite für Lehrpersonen: was an den Einheiten im Format v4.2 neu ist und warum
+// es zwei Herausforderungen sind statt drei. Reiner Text, keine Daten — verlinkt aus dem
+// Katalog und aus dem Kopf jeder Einheit mit Spuren (`hat_spuren`).
+// Die Gründe sind die des Kernteams 1 (Oktober 2026); Sachstand: docs/upgrade-v4.2/.
+import Einheiten from '../../layouts/Einheiten.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+const role: 'lp' | 'kt1' | 'gast' =
+  profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
+
+const vergleich = [
+  {
+    was: 'Herausforderungen',
+    bisher: 'Drei (A, B, C). Die Klasse teilt sich auf, jede Person bearbeitet eine.',
+    neu: 'Zwei Hefte (A, B). Alle Lernenden bearbeiten beide, nacheinander.',
+  },
+  {
+    was: 'Danach',
+    bisher: 'Austausch & Transfer: Die Gruppen tragen zusammen, was sie einzeln erarbeitet haben.',
+    neu: 'Ein gemeinsamer Auftrag: neue Situation, ein Produkt, Selbsteinschätzung an den vier Kriterien des Kompetenznachweises.',
+  },
+  {
+    was: 'Quellen',
+    bisher: 'Lehrmittel.',
+    neu: 'Zwei Spuren je Heft: «ohne Medien» (Lehrmittel, mehr Gerüst) und «mit Medien» (ein geprüfter Beitrag oder Artikel per QR-Code).',
+  },
+  {
+    was: 'Kompetenznachweis',
+    bisher: 'Neue Situation, drei Formen zur Wahl, ein Raster.',
+    neu: 'Unverändert — neue Situation, drei Formen zur Wahl, ein Raster.',
+  },
+]
+
+const gruende = [
+  {
+    titel: 'Alle machen alles',
+    text: 'Im 3er-Set hat jede Person eine von drei Herausforderungen selbst bearbeitet. Die anderen zwei kannte sie nur aus dem Austausch — also aus zweiter Hand, und so gut, wie die Gruppe sie erklären konnte. Im Kompetenznachweis kam dann eine Situation, die alle drei verbindet. Jetzt bearbeitet jede Person beide Hefte selbst. Was im Kompetenznachweis verlangt wird, hat sie vorher mit eigenen Händen gemacht.',
+  },
+  {
+    titel: 'Tiefe statt Breite',
+    text: 'Zwei Hefte lassen Platz für das, was in drei nicht hineinging: vier Leitfragen, die aufeinander aufbauen, eine Quelle mit Raster, eine Methodenseite gegenüber der Arbeitsfläche, ein Begriffsnetz zum Schluss. Jedes Heft hat acht Seiten und ist in jeder Einheit gleich aufgebaut — wer eines kennt, findet sich im nächsten zurecht.',
+  },
+  {
+    titel: 'Eine gerade Linie zum Kompetenznachweis',
+    text: 'Das Raster des Kompetenznachweises hat vier Kriterien. Heft A übt zwei davon, Heft B die anderen zwei, der gemeinsame Auftrag alle vier, der Kompetenznachweis weist sie nach. Die Kriterien stehen überall im selben Wortlaut. Mit drei Herausforderungen ging diese Rechnung nicht auf.',
+  },
+  {
+    titel: 'Es passt in vier Wochen',
+    text: 'Drei Herausforderungen, Austausch und Kompetenznachweis liessen sich in vier Wochen zu drei Lektionen nicht verlässlich unterbringen. Der neue Vorschlag rechnet mit zwölf Lektionen und lässt eine davon frei.',
+  },
+]
+
+const dazu = [
+  ['Lösungen', 'Zu jedem Heft und jeder Spur ein Dokument mit einer möglichen Lösung für jedes Feld — Leitfragen, ausgefülltes Raster, Produkt, Begriffsnetz. Nur für Lehrpersonen.'],
+  ['Präsentation', 'Je Spur eine Fassung zum Zeigen im Unterricht, mit den Lösungen.'],
+  ['Glossar und Begriffsnetz', 'Die Begriffe der Einheit auf einer Seite; am Ende jedes Hefts verbinden die Lernenden sie zu einem Netz.'],
+  ['Beispielbild', 'Zeigt, wie ein fertiges Produkt aussehen kann — an einem anderen Fall, damit es nicht abgeschrieben wird.'],
+  ['QR-Seite', 'In der Spur mit Medien führt der QR-Code im Heft auf eine Seite, auf der Beiträge von SRF direkt abspielen.'],
+  ['Werkstatt', 'Erzeugt wie bisher einen Prompt für Zusatzmaterial — bei den neuen Einheiten auch für ein weiteres Heft C.'],
+]
+---
+<Einheiten title="Neues Format" role={role}>
+  <article class="max-w-3xl mx-auto text-slate-700 leading-relaxed">
+    <a href="/einheiten" class="text-sm text-slate-500 hover:text-slate-700">← Katalog</a>
+
+    <h1 class="text-2xl font-semibold text-slate-900 mt-3">Die neuen Einheiten: zwei Hefte und ein gemeinsamer Auftrag</h1>
+    <p class="mt-3 text-lg text-slate-600">
+      Neue EFZ-Einheiten haben zwei Herausforderungen statt drei. Dafür bearbeitet jede Lernende
+      und jeder Lernende beide — und danach einen gemeinsamen Auftrag, der auf den Kompetenznachweis vorbereitet.
+    </p>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Was sich ändert</h2>
+    <div class="bg-white border border-slate-200 rounded-lg overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-xs uppercase tracking-wider text-slate-500 border-b border-slate-200">
+            <th class="px-4 py-2.5 font-semibold w-36"></th>
+            <th class="px-4 py-2.5 font-semibold">Bisher (3er-Set)</th>
+            <th class="px-4 py-2.5 font-semibold" style="color:var(--brand-dark)">Neu</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          {vergleich.map((z) => (
+            <tr class="align-top">
+              <th class="px-4 py-3 text-left font-semibold text-slate-900">{z.was}</th>
+              <td class="px-4 py-3 text-slate-500">{z.bisher}</td>
+              <td class="px-4 py-3">{z.neu}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Warum zwei statt drei</h2>
+    <ol class="space-y-4">
+      {gruende.map((g, i) => (
+        <li class="bg-white border border-slate-200 rounded-lg p-4 flex gap-4" style="border-left:4px solid var(--brand)">
+          <span class="text-2xl font-semibold tabular-nums shrink-0" style="color:var(--brand)">{i + 1}</span>
+          <div>
+            <h3 class="font-semibold text-slate-900">{g.titel}</h3>
+            <p class="mt-1 text-sm">{g.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Was aus «Austausch & Transfer» geworden ist</h2>
+    <p>
+      In der Seitenleiste der Einheit steht «Austausch & Transfer» am gewohnten Platz. Dahinter
+      liegt jetzt der <strong>Auftragsbogen</strong> mit dem gemeinsamen Auftrag (vier Seiten).
+      Beides ist noch da, aber anders:
+    </p>
+    <ul class="mt-3 space-y-2 list-disc pl-5">
+      <li>
+        <strong>Austausch:</strong> Niemand muss mehr weitergeben, was die anderen nicht bearbeitet
+        haben. Die Lernenden bringen aus beiden Heften ihre eigenen Ergebnisse mit und arbeiten
+        damit an einem neuen Fall. Ob allein, zu zweit oder in Gruppen, entscheidest du; verlangt
+        der Auftrag ein Gespräch, braucht es mindestens zwei.
+      </li>
+      <li>
+        <strong>Transfer:</strong> Der Auftrag spielt in einem anderen Lebensbereich als die Hefte
+        und als der Kompetenznachweis. Die Lernenden wenden also an, was sie gelernt haben, ohne
+        dass der Fall des Kompetenznachweises vorweggenommen wird.
+      </li>
+      <li>
+        <strong>Selbsteinschätzung:</strong> Die letzte Seite trägt die vier Kriterien des
+        Kompetenznachweises mit ihren Stufen, eine Spalte «Selbst» und eine Spalte «Fremd». Der
+        Auftrag wird nicht benotet. Er ist die Generalprobe — sein Wert liegt in der Rückmeldung,
+        die vor dem Kompetenznachweis ankommt.
+      </li>
+    </ul>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Zwei Spuren</h2>
+    <p>
+      Jedes Heft gibt es <strong>ohne Medien</strong> und <strong>mit Medien</strong>. Situation,
+      Produkt, Kriterien und der gemeinsame Auftrag sind in beiden gleich; es unterscheiden sich
+      nur die dritte und vierte Leitfrage und was daran hängt. Darum können beide Spuren im selben
+      Zimmer laufen, und du kannst pro Klasse oder pro Person wählen.
+    </p>
+    <p class="mt-3">
+      Die Spur ohne Medien ist kein Notbehelf: Sie arbeitet mit einem Abschnitt aus dem Lehrmittel
+      und gibt mehr Gerüst (eine vorausgefüllte Beispielzeile im Raster, eine Denkhilfe). Die Spur
+      mit Medien arbeitet mit einem kurzen, geprüften Beitrag oder Artikel und bietet zwei
+      freiwillige Vertiefungen. Verlangt die Kompetenz ausdrücklich Hören oder Sehen, gibt es das
+      Heft nur mit Medien — die Einheit sagt es dann an.
+    </p>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Zeit: ein Vorschlag für zwölf Lektionen</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-sm">
+      {[['Heft A', '3'], ['Heft B', '3'], ['Gemeinsamer Auftrag', '3'], ['Kompetenznachweis', '2'], ['Puffer', '1']].map(([was, l]) => (
+        <div class="bg-white border border-slate-200 rounded-lg px-3 py-2.5">
+          <div class="text-xl font-semibold text-slate-900 tabular-nums">{l} <span class="text-xs font-normal text-slate-500">L.</span></div>
+          <div class="text-xs text-slate-600 leading-tight mt-0.5">{was}</div>
+        </div>
+      ))}
+    </div>
+    <p class="mt-3">
+      In den Heften und auf dem Auftragsbogen steht weder eine Woche noch eine Lektion — wie du
+      die Zeit einteilst, bleibt bei dir. Die Lektion Puffer ist mit Absicht frei: Fehlt sie, fällt
+      bei der ersten Absenz meist die Rückmeldung zum Auftrag weg. Den Vorschlag Lektion für
+      Lektion findest du im «Lies mich!» jeder Einheit.
+    </p>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Was dazukommt</h2>
+    <dl class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-100 text-sm">
+      {dazu.map(([was, text]) => (
+        <div class="px-4 py-3 sm:flex sm:gap-4">
+          <dt class="font-semibold text-slate-900 sm:w-44 shrink-0">{was}</dt>
+          <dd>{text}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <h2 class="text-lg font-semibold text-slate-900 mt-10 mb-3">Was bleibt</h2>
+    <ul class="space-y-2 list-disc pl-5">
+      <li>Der <strong>Kompetenznachweis</strong> mit seinen drei Formen und einem Raster, und das Begleitdokument «Lies mich!».</li>
+      <li>Der <strong>Download</strong> als ZIP mit HTML und Word, und der Feedback-Bogen nach dem Unterricht.</li>
+      <li>
+        Die <strong>bisherigen 3er-Sets</strong> bleiben im Katalog und lassen sich weiter
+        unterrichten. Neue Einheiten erscheinen nur noch im neuen Format.
+      </li>
+      <li>
+        Das <strong>erste Lehrjahr</strong> ist im neuen Format vollständig, für EFZ 3-jährig
+        und 4-jährig: zu jedem Lebensbezug gibt es eine Einheit. Die weiteren Lehrjahre folgen.
+      </li>
+      <li>Die <strong>EBA-Einheiten</strong> sind nicht betroffen.</li>
+      <li>
+        Der <strong>Katalog</strong> ist neu nach dem Lehrplan geordnet: Lehrgang wählen, dann
+        Thema und Lebensbezug — so siehst du auf einen Blick, wozu es eine Einheit gibt und wo noch keine.
+      </li>
+    </ul>
+    <p class="mt-3 text-sm text-slate-500">
+      Die KI-Toolbox gibt es für die neuen Einheiten vorerst nicht.
+    </p>
+
+    <div class="mt-10 rounded-lg px-5 py-4 text-sm" style="background:var(--brand-tint);color:var(--brand-dark)">
+      <strong>Deine Erfahrung zählt.</strong> Das Format ist neu, und ob es im Unterricht hält, zeigt
+      sich bei dir im Zimmer. Gib nach der Einheit über den Feedback-Bogen Rückmeldung — oder
+      gleich über «Problem melden» unten rechts, wenn etwas nicht stimmt.
+    </div>
+
+    <p class="mt-8">
+      <a href="/einheiten" class="inline-block px-4 py-2 rounded-md text-sm font-medium text-white" style="background:var(--brand)">Zum Katalog →</a>
+    </p>
+  </article>
+</Einheiten>

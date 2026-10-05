@@ -131,14 +131,14 @@ p.v42-hinweis { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); margi
 .v42-titel {
   font-size: 18pt; font-weight: 600;
   letter-spacing: -0.015em; line-height: 1.15;
-  margin-bottom: 2mm;
+  margin-bottom: 1.5mm;
 }
 .v42-s1-meta {
   display: grid;
   grid-template-columns: 27mm 1fr;
-  gap: 1.2mm 3mm;
+  gap: 0.8mm 3mm;
   align-items: baseline;
-  padding-bottom: 2mm;
+  padding-bottom: 1.2mm;
   border-bottom: 0.75pt solid var(--rule);
 }
 .v42-s1-meta .v42-mini { margin-bottom: 0; }

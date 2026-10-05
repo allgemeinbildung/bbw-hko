@@ -1069,10 +1069,12 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             <button
               className={`wb-item solo${doc === 'doc-auftragsbogen' ? ' active' : ''}`}
               onClick={() => pick('doc-auftragsbogen')}
-              title="Auftragsbogen · gemeinsamer Auftrag"
+              title="Austausch & Transfer · gemeinsamer Auftrag"
             >
-              <span className="wb-dot">🤝</span>
-              <span className="wb-item-title">Auftragsbogen</span>
+              {/* Lehrpersonen kennen den Platz aus dem 3er-Set unter diesem Namen — das Dokument
+                  selbst heisst weiter «Auftragsbogen». */}
+              <span className="wb-dot">🔄</span>
+              <span className="wb-item-title">Austausch &amp; Transfer</span>
             </button>
           ) : (
           <button

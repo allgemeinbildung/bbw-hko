@@ -94,7 +94,7 @@ function FeedbackKriterien(props: HeftSeiteProps) {
   return (
     <section className="v42-kriterien">
       <div className="v42-kasten-label">Feedback-Kriterien</div>
-      <p className="v42-arbeitsanweisung">Kreuzen Sie vor der Abgabe in der Spalte «Selbst» Ihre Stufe an.</p>
+      <p className="v42-arbeitsanweisung">Kreuzen Sie vor der Abgabe in der Spalte «Selbst» Ihre Punkte an.</p>
       <table className="v42-krit-tabelle">
         <colgroup>
           <col className="v42-krit-punkte" />
@@ -103,7 +103,7 @@ function FeedbackKriterien(props: HeftSeiteProps) {
         </colgroup>
         <thead>
           <tr>
-            <th>Stufe</th>
+            <th>Punkte</th>
             <th>Beschreibung (Wortlaut Kompetenznachweis)</th>
             <th>Selbst</th>
           </tr>
@@ -227,13 +227,18 @@ export function Seite6({ sit }: HeftSeiteProps) {
 // Seite 7 — Arbeitsfläche
 // ---------------------------------------------------------------------------
 
-/** Freie Fläche über den ganzen Rest der Seite; Beschriftung = Produkttitel. */
+/** Hinweis über der Arbeitsfläche — gleicher Wortlaut im Word (docx-heft-v42-5-8.ts). */
+export const ARBEITSFLAECHE_HINWEIS =
+  'Auftrag und Schritte stehen auf S. 5. Die Methoden auf S. 6 stehen Ihnen für Ihr Produkt frei zur Verfügung.'
+
+/** Freie Fläche über den Rest der Seite; Beschriftung = Produkttitel, darüber der Verweis auf S. 5 und 6. */
 export function Seite7(props: HeftSeiteProps) {
   const label = props.sit.handlungsprodukt?.titel || 'Hier erarbeiten'
   const [wert, setze] = eingabe(props, 'produkt')
   return (
     <>
       <SeitenKopf nr={7} titel="Arbeitsfläche" />
+      <p className="methoden-intro">{ARBEITSFLAECHE_HINWEIS}</p>
       {setze ? (
         <HandlungsFlaeche label={label} value={wert} onChange={setze} />
       ) : (
@@ -300,7 +305,7 @@ export function Seite8(props: HeftSeiteProps) {
         <>
           <p className="v42-arbeitsanweisung">
             Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe
-            zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «{transferTitel}».
+            zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «{transferTitel}»: eine andere Lage, in der dasselbe gilt.
             Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).
           </p>
           <Begriffsnetz sit={sit} />

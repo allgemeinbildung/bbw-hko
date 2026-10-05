@@ -86,7 +86,7 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
   const kopfRand = { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 12, color: ctx.akzent } }
   const kopf = new TableRow({
     tableHeader: true,
-    children: ['Stufe', 'Beschreibung (Wortlaut Kompetenznachweis)', 'Selbst'].map((t, i) => tcell(
+    children: ['Punkte', 'Beschreibung (Wortlaut Kompetenznachweis)', 'Selbst'].map((t, i) => tcell(
       p(t.toUpperCase(), { run: { bold: true, size: 13, color: ctx.akzent }, spacing: { after: 0 }, alignment: i === 2 ? AlignmentType.CENTER : undefined }),
       { width: pct(breite[i]), borders: kopfRand, margins: { top: 20, bottom: 40, left: 0, right: 80 } },
     )),
@@ -130,7 +130,7 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
   }
   return [
     label('Feedback-Kriterien', ctx),
-    anweisung('Kreuzen Sie vor der Abgabe in der Spalte «Selbst» Ihre Stufe an.'),
+    anweisung('Kreuzen Sie vor der Abgabe in der Spalte «Selbst» Ihre Punkte an.'),
     new Table({ width: pct(100), rows: zeilen }),
   ]
 }
@@ -199,12 +199,20 @@ export function seite6Docx(ctx: HeftDocxKontext): Block[] {
 // Seite 7 — Arbeitsfläche
 // ---------------------------------------------------------------------------
 
+const ARBEITSFLAECHE_HINWEIS =
+  'Auftrag und Schritte stehen auf S. 5. Die Methoden auf S. 6 stehen Ihnen für Ihr Produkt frei zur Verfügung.'
+
 export function seite7Docx(ctx: HeftDocxKontext): Block[] {
-  // Wie der Bestand (skizzeBox, 235 mm → 40 Leerzeilen); passt auch unter dem
-  // Seitenkopf noch auf die Seite (in Word nachgezählt). Beschriftung = Produkttitel
-  // (im HTML per CSS in Versalien, hier ausgeschrieben).
+  // Wie der Bestand (skizzeBox), um die Hinweiszeile gekürzt (235 → 223 mm), damit
+  // Kopf, Hinweis und Fläche auf einer Seite bleiben. Beschriftung = Produkttitel
+  // (im HTML per CSS in Versalien, hier ausgeschrieben). Wortlaut des Hinweises wie
+  // im HTML (ARBEITSFLAECHE_HINWEIS in heft-v42/seiten-5-8.tsx).
   const titel = ctx.sit.handlungsprodukt?.titel || 'Hier erarbeiten'
-  return [...seitenKopfDocx(7, 'Arbeitsfläche', ctx), skizzeBox(235, titel.toUpperCase(), ctx.akzent)]
+  return [
+    ...seitenKopfDocx(7, 'Arbeitsfläche', ctx),
+    p(ARBEITSFLAECHE_HINWEIS, { run: { size: 18, color: COLOR.inkSoft } }),
+    skizzeBox(223, titel.toUpperCase(), ctx.akzent),
+  ]
 }
 
 // ---------------------------------------------------------------------------
@@ -277,7 +285,7 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
   if (netz) {
     const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
     els.push(anweisung(
-      `Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «${transferTitel}». Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).`,
+      `Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «${transferTitel}»: eine andere Lage, in der dasselbe gilt. Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).`,
     ))
     els.push(begriffsnetzTabelle(sit, ctx), abstand(60), ...glossarBlock(sit, ctx), abstand(60))
   } else if ((sit.mindmap_aeste?.length ?? 0) > 0) {

@@ -1,11 +1,13 @@
 ---
 // DUMMY — Vorschlag für einen skalierbaren Einheiten-Katalog (KT1-only, noch nicht live).
-// Zeigt die echten Einheiten aus dem Index PLUS erfundene T2-Platzhalter, damit sichtbar
-// wird, wie die Seite aussieht, wenn die nächsten zwei Wochen T2 dazukommen.
-// Nichts hier schreibt etwas; /einheiten bleibt unverändert.
+// Soll /einheiten für Lehrpersonen ablösen. Nichts hier schreibt etwas; /einheiten bleibt unverändert.
+//
+// Aufbau: Lehrgang ist ein Modus (Tabs, gemerkt), kein Filter. Darunter der Lehrplan dieses
+// Lehrgangs als Landkarte — Thema → Lebensbezug → Einheiten — mit einer Themen-Leiste links
+// als Sprungmarken. Lebensbezüge ohne Einheit bleiben sichtbar («noch keine Einheit»).
 import Admin from '../../layouts/Admin.astro'
-import { einheitenIndex, lehrgaengeOf, lehrgangShort } from '../../lib/einheiten'
-import { THEMA_COLORS } from '../../lib/thema-colors'
+import { einheitenIndex, lehrgaengeOf, LEHRGANG_ORDER, LEHRGANG_LABEL } from '../../lib/einheiten'
+import { getNrlp, toLehrdauer } from '../../lib/nrlp'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -20,9 +22,8 @@ if (profile?.role !== 'kt1') return Astro.redirect('/')
 
 const NEU = new Set(['1.3.1_konsum_verantworten', '1.2.2_ki_kompetenznachweis_vorbereiten'])
 
-const echt = einheitenIndex.map((e: any) => ({
+const alle = einheitenIndex.map((e: any) => ({
   id: e.id,
-  dummy: false,
   titel: e.einheit_titel,
   kompetenz: e.kompetenz_nr,
   modul: e.modul,
@@ -38,219 +39,307 @@ const echt = einheitenIndex.map((e: any) => ({
   href: `/einheiten/${e.id}`,
 }))
 
-// Erfundene Platzhalter für T2 — nur zur Anschauung.
-const t2 = (
-  [
-    ['2.1.1', '2.1', 'Informationen einordnen', 'Nachrichten prüfen, bevor ich sie teile', ['EFZ_3J', 'EFZ_4J'], 3, true, false],
-    ['2.1.2', '2.1', 'Informationen einordnen', 'Desinformation erkennen', ['EFZ_3J', 'EFZ_4J'], 3, true, true],
-    ['2.1.2', '2.1', 'Informationen einordnen', 'Was ist wahr? (EBA)', ['EBA_2J'], 2, true, false],
-    ['2.2.1', '2.2', 'Meinungen vertreten', 'Meine Haltung begründen', ['EFZ_3J'], 3, true, false],
-    ['2.2.2', '2.2', 'Meinungen vertreten', 'In der Diskussion bestehen', ['EFZ_4J'], 3, true, false],
-    ['2.2.2', '2.2', 'Meinungen vertreten', 'Meine Meinung sagen (EBA)', ['EBA_2J'], 2, true, false],
-    ['2.3.1', '2.3', 'Mitgestalten', 'Abstimmen und wählen', ['EFZ_3J', 'EFZ_4J'], 3, true, true],
-    ['2.3.2', '2.3', 'Mitgestalten', 'Eine Petition starten', ['EFZ_4J'], 3, true, false],
-    ['2.3.2', '2.3', 'Mitgestalten', 'Mitreden im Betrieb', ['EFZ_3J'], 3, false, false],
-    ['2.3.3', '2.3', 'Mitgestalten', 'Mitbestimmen in der Gemeinde (EBA)', ['EBA_2J'], 2, true, false],
-  ] as const
-).map(([k, m, mt, titel, lg, hf, kn, ki], i) => ({
-  id: `dummy-t2-${i}`,
-  dummy: true,
-  titel,
-  kompetenz: k,
-  modul: m,
-  modul_titel: mt,
-  thema: 2,
-  lehrgaenge: [...lg],
-  entwurf: i > 6,
-  neu: false,
-  hf,
-  kn,
-  ki,
-  methoden: i % 3 === 0,
-  href: '',
-}))
-
-const alle = [...echt, ...t2]
-const themen = Object.values(THEMA_COLORS).map((t) => ({ nr: t.nr, titel: t.titel }))
-const lehrgangKurz = Object.fromEntries(
-  ['EBA_2J', 'EFZ_3J', 'EFZ_4J'].map((l) => [l, lehrgangShort(l)]),
+// Lehrplan je Lehrgang: Themen und Lebensbezüge. Die Nummern gelten nur innerhalb
+// eines Lehrgangs (3J 3.1 ≠ 4J 3.1) — darum ein Gerüst pro Tab, nie ein gemeinsames.
+const lehrplan = Object.fromEntries(
+  LEHRGANG_ORDER.map((lg) => [
+    lg,
+    ((getNrlp(toLehrdauer(lg))?.themen ?? []) as any[]).map((t) => ({
+      nr: t.nr,
+      titel: t.titel,
+      lehrjahr: t.lehrjahr ?? null,
+      lbs: ((t.lebensbezuege ?? []) as any[]).map((lb) => ({ nr: lb.nr, text: lb.text })),
+    })),
+  ]),
 )
+const lehrgaenge = LEHRGANG_ORDER.map((lg) => ({ v: lg, t: LEHRGANG_LABEL[lg] }))
 ---
 
 <Admin title="Katalog-Vorschlag (Dummy)">
-  <main class="max-w-7xl mx-auto px-6 py-6 w-full" x-data="katalog()" x-cloak>
+  <main
+    class="max-w-7xl mx-auto px-6 py-6 w-full"
+    x-data="katalog()"
+    x-cloak
+    :class="lg === 'EBA_2J' ? 'lg-eba' : ''"
+    :data-lehrgang="lg === 'EBA_2J' ? 'EBA' : null"
+  >
     <div class="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm mb-5">
-      <strong>Dummy-Vorschlag.</strong> Die ersten Einheiten sind echt, die mit «Platzhalter» markierten T2-Einheiten sind
-      erfunden und zeigen nur, wie die Seite mit mehr Inhalt aussieht. Der echte Katalog unter
+      <strong>Dummy-Vorschlag.</strong> Zeigt die echten Einheiten aus dem Index, inklusive Entwürfe. Der echte Katalog unter
       <a href="/einheiten" class="underline">/einheiten</a> ist unverändert.
     </div>
 
     <div class="flex flex-wrap items-end justify-between gap-3 mb-4">
-      <div>
-        <h1 class="text-2xl font-semibold">Unterrichtseinheiten</h1>
-        <p class="text-sm text-slate-500 mt-1">
-          <span x-text="treffer"></span> von <span x-text="alle.length"></span> Einheiten
-        </p>
-      </div>
+      <h1 class="text-2xl font-semibold">Unterrichtseinheiten</h1>
       <div class="inline-flex rounded-md border border-slate-300 overflow-hidden text-sm" role="group" aria-label="Ansicht">
         <button type="button" class="px-3 py-1.5" :class="ansicht === 'liste' ? 'bg-slate-900 text-white' : 'bg-white'" @click="ansicht = 'liste'">Liste</button>
         <button type="button" class="px-3 py-1.5 border-l border-slate-300" :class="ansicht === 'karten' ? 'bg-slate-900 text-white' : 'bg-white'" @click="ansicht = 'karten'">Karten</button>
       </div>
     </div>
 
-    <!-- Filterleiste: bleibt beim Scrollen sichtbar -->
-    <div class="sticky top-[88px] z-10 bg-white border border-slate-200 rounded-lg p-3 mb-6 shadow-sm space-y-3">
-      <div class="flex flex-wrap gap-3 items-center">
-        <input type="search" x-model="q" placeholder="Suche nach Titel oder Kompetenz …" class="input" style="min-width:16rem" />
-        <div class="inline-flex rounded-md border border-slate-300 overflow-hidden text-sm" role="group" aria-label="Lehrgang">
-          <template x-for="l in lehrgangOptionen" :key="l.v">
-            <button type="button" class="px-3 py-1.5 border-r border-slate-300 last:border-r-0" :class="lehrgang === l.v ? 'bg-slate-900 text-white' : 'bg-white'" @click="lehrgang = l.v" x-text="l.t"></button>
-          </template>
-        </div>
-        <label class="text-sm flex items-center gap-1.5"><input type="checkbox" x-model="nurKi" /> mit KI-Toolbox</label>
-        <label class="text-sm flex items-center gap-1.5"><input type="checkbox" x-model="nurMethoden" /> mit Methoden-Karten</label>
-        <label class="text-sm flex items-center gap-1.5"><input type="checkbox" x-model="nurNeu" /> nur neu</label>
-        <button type="button" class="text-sm text-slate-500 underline ml-auto" @click="reset()">Zurücksetzen</button>
-      </div>
-      <div class="flex flex-wrap gap-1.5">
-        <button type="button" class="px-2.5 py-1 rounded-full text-xs font-medium border" :class="thema === 0 ? 'bg-slate-900 text-white border-slate-900' : 'bg-white border-slate-300'" @click="thema = 0">Alle Themen</button>
-        <template x-for="t in themen" :key="t.nr">
-          <button
-            type="button"
-            class="thema-chip"
-            :data-thema="t.nr"
-            :style="'cursor:pointer;opacity:' + (zaehlerThema(t.nr) === 0 ? .35 : 1) + ';outline:' + (thema === t.nr ? '2px solid #0f172a' : 'none') + ';outline-offset:2px'"
-            :disabled="zaehlerThema(t.nr) === 0"
-            :title="t.titel"
-            @click="thema = (thema === t.nr ? 0 : t.nr)"
-          >T<span x-text="t.nr"></span> · <span x-text="zaehlerThema(t.nr)"></span></button>
+    <!-- Lehrgang: Modus, nicht Filter. Die Wahl wird gemerkt. -->
+    <div class="flex flex-wrap gap-2 mb-6" role="tablist" aria-label="Lehrgang">
+      <template x-for="l in lehrgaenge" :key="l.v">
+        <button
+          type="button"
+          role="tab"
+          class="px-4 py-2 rounded-lg border text-sm font-semibold transition"
+          :class="l.v === 'EBA_2J' ? 'lg-eba' : ''"
+          :style="lg === l.v ? 'background:var(--lg);border-color:var(--lg);color:#fff' : 'background:#fff;border-color:#cbd5e1;color:#334155'"
+          :aria-selected="lg === l.v"
+          @click="lg = l.v"
+        >
+          <span x-text="l.t"></span>
+          <span class="font-normal opacity-75 ml-1" x-text="anzahlLg(l.v)"></span>
+        </button>
+      </template>
+    </div>
+
+    <!-- Zuletzt geöffnet (nur dieses Gerät) -->
+    <div x-show="zuletztItems.length" class="mb-6">
+      <h2 class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1.5">Zuletzt geöffnet</h2>
+      <div class="flex flex-wrap gap-2">
+        <template x-for="e in zuletztItems" :key="e.id">
+          <a :href="e.href" @click="merke(e)" class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm hover:shadow-sm" style="max-width:22rem">
+            <span class="chip chip-blue shrink-0" x-text="e.kompetenz"></span>
+            <span class="font-medium text-slate-900 truncate" x-text="e.titel"></span>
+            <span class="text-[11px] text-slate-500 shrink-0" x-text="e.lehrgaenge.map(kurz).join(' · ')"></span>
+          </a>
         </template>
       </div>
     </div>
 
-    <p x-show="treffer === 0" class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500 text-sm">
-      Keine Einheit passt zu diesen Filtern.
-    </p>
+    <div class="grid grid-cols-1 lg:grid-cols-[16rem_minmax(0,1fr)] gap-6 items-start">
+      <!-- Themen-Leiste: Suche, Themenwahl (zeigt nur dieses Thema), Zusatzfilter -->
+      <aside class="lg:sticky lg:top-[100px] bg-white border border-slate-200 rounded-lg p-3 space-y-3 lg:max-h-[calc(100vh-116px)] lg:overflow-y-auto">
+        <input type="search" x-model="q" placeholder="Suche Titel oder Kompetenz …" class="input w-full" />
 
-    <!-- Gruppen: Thema → Lebensbezug -->
-    <template x-for="g in gruppen" :key="g.thema">
-      <section class="mb-5" :data-thema="g.thema">
-        <button
-          type="button"
-          class="thema-fill w-full flex items-center gap-3 rounded-lg px-4 py-2.5 text-left"
-          :aria-expanded="offen(g.thema)"
-          @click="toggle(g.thema)"
-        >
-          <span class="font-semibold">T<span x-text="g.thema"></span> · <span x-text="titelThema(g.thema)"></span></span>
-          <span class="text-xs opacity-80" x-text="g.anzahl + (g.anzahl === 1 ? ' Einheit' : ' Einheiten')"></span>
-          <span class="ml-auto text-lg leading-none" x-text="offen(g.thema) ? '−' : '+'"></span>
-        </button>
-
-        <div x-show="offen(g.thema)" x-collapse class="pt-3 pl-1 md:pl-3">
-          <template x-for="m in g.module" :key="m.modul">
-            <div class="mb-4">
-              <h3 class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1.5">
-                <span x-text="m.modul"></span> · <span x-text="m.modul_titel"></span>
-              </h3>
-
-              <!-- Liste -->
-              <div x-show="ansicht === 'liste'" class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-100">
-                <template x-for="e in m.items" :key="e.id">
-                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2 text-sm">
-                    <span class="chip chip-blue shrink-0" x-text="e.kompetenz"></span>
-                    <a x-show="!e.dummy" :href="e.href" class="font-medium text-slate-900 hover:underline flex-1 min-w-[12rem]" x-text="e.titel"></a>
-                    <span x-show="e.dummy" class="font-medium text-slate-500 flex-1 min-w-[12rem]"><span x-text="e.titel"></span> <em class="text-[11px] not-italic px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">Platzhalter</em></span>
-                    <span class="flex gap-1 shrink-0">
-                      <template x-for="l in e.lehrgaenge" :key="l"><span class="chip" x-text="lehrgangKurz[l]"></span></template>
-                    </span>
-                    <span class="flex gap-1 shrink-0 text-[11px] text-slate-500">
-                      <span x-text="e.hf + ' HF'"></span>
-                      <span x-show="e.kn">· KN</span>
-                      <span x-show="e.ki">· KI</span>
-                      <span x-show="e.methoden">· Methoden</span>
-                    </span>
-                    <span x-show="e.neu" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Neu</span>
-                    <span x-show="e.entwurf" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">Entwurf</span>
-                  </div>
-                </template>
-              </div>
-
-              <!-- Karten -->
-              <div x-show="ansicht === 'karten'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                <template x-for="e in m.items" :key="e.id">
-                  <div class="bg-white border border-slate-200 rounded-lg p-4 thema-top" :data-thema="e.thema">
-                    <div class="flex flex-wrap gap-1.5 mb-1.5">
-                      <span class="chip chip-blue" x-text="e.kompetenz"></span>
-                      <template x-for="l in e.lehrgaenge" :key="l"><span class="chip" x-text="lehrgangKurz[l]"></span></template>
-                      <span x-show="e.neu" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Neu</span>
-                      <span x-show="e.entwurf" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Entwurf</span>
-                    </div>
-                    <a x-show="!e.dummy" :href="e.href" class="font-semibold text-slate-900 leading-snug hover:underline block" x-text="e.titel"></a>
-                    <p x-show="e.dummy" class="font-semibold text-slate-500 leading-snug"><span x-text="e.titel"></span> · Platzhalter</p>
-                    <p class="text-[11px] text-slate-500 mt-2">
-                      <span x-text="e.hf + ' Herausforderungen'"></span>
-                      <span x-show="e.kn"> · KN</span><span x-show="e.ki"> · KI-Toolbox</span><span x-show="e.methoden"> · Methoden-Karten</span>
-                    </p>
-                  </div>
-                </template>
-              </div>
-            </div>
+        <nav aria-label="Themen" class="space-y-0.5">
+          <button
+            type="button"
+            class="w-full flex items-center gap-2 rounded-md px-2 py-1.5 text-sm leading-tight text-left hover:bg-slate-50"
+            :class="thema === null ? 'bg-slate-100 font-semibold' : ''"
+            :aria-pressed="thema === null"
+            @click="thema = null"
+          >
+            <span class="flex-1">Alle Themen</span>
+            <span class="text-xs tabular-nums text-slate-600" x-text="treffer"></span>
+          </button>
+          <template x-for="t in themen" :key="t.nr">
+            <button
+              type="button"
+              class="w-full flex items-center gap-2 rounded-md px-2 py-1.5 text-sm leading-tight text-left hover:bg-slate-50"
+              :class="[thema === t.nr ? 'bg-slate-100 font-semibold' : '', filterAktiv && t.anzahl === 0 ? 'opacity-40 pointer-events-none' : '']"
+              :aria-pressed="thema === t.nr"
+              @click="thema = (thema === t.nr ? null : t.nr)"
+            >
+              <span class="thema-fill shrink-0 rounded text-[11px] font-semibold text-center" :data-thema="t.nr" style="width:1.75rem;padding:.15rem 0">T<span x-text="t.nr"></span></span>
+              <span class="flex-1" x-text="t.titel"></span>
+              <span class="text-xs tabular-nums" :class="t.anzahl ? 'text-slate-600' : 'text-slate-300'" x-text="t.anzahl"></span>
+            </button>
           </template>
+        </nav>
+
+        <div class="border-t border-slate-100 pt-3 space-y-1.5 text-sm">
+          <label class="flex items-center gap-1.5"><input type="checkbox" x-model="nurKi" /> mit KI-Toolbox</label>
+          <label class="flex items-center gap-1.5"><input type="checkbox" x-model="nurMethoden" /> mit Methoden-Karten</label>
+          <label class="flex items-center gap-1.5"><input type="checkbox" x-model="nurNeu" /> nur neu</label>
+          <button x-show="filterAktiv" type="button" class="text-slate-500 underline" @click="reset()">Filter zurücksetzen</button>
         </div>
-      </section>
-    </template>
+      </aside>
+
+      <!-- Lehrplan-Landkarte: Thema → Lebensbezug → Einheiten, alles offen -->
+      <div>
+        <p class="text-sm text-slate-500 mb-3">
+          <span x-text="trefferSichtbar"></span> <span x-text="trefferSichtbar === 1 ? 'Einheit' : 'Einheiten'"></span> für <span x-text="label(lg)"></span><span x-show="thema !== null"> · T<span x-text="thema"></span></span><span x-show="filterAktiv"> mit diesen Filtern</span>
+        </p>
+
+        <p x-show="trefferSichtbar === 0 && filterAktiv" class="bg-white border border-slate-200 rounded-lg p-8 text-center text-slate-500 text-sm">
+          Keine Einheit passt zu diesen Filtern.
+        </p>
+
+        <template x-for="t in sichtbareThemen" :key="lg + '-' + t.nr">
+          <section class="mb-8" :id="'t' + t.nr" :data-thema="t.nr">
+            <div class="thema-fill flex items-baseline gap-3 rounded-lg px-4 py-2.5">
+              <h2 class="font-semibold">T<span x-text="t.nr"></span> · <span x-text="t.titel"></span></h2>
+              <span class="text-xs opacity-80" x-show="t.lehrjahr" x-text="t.lehrjahr + '. Lehrjahr'"></span>
+              <span class="ml-auto text-xs opacity-80" x-text="t.anzahl + (t.anzahl === 1 ? ' Einheit' : ' Einheiten')"></span>
+            </div>
+
+            <p x-show="t.lbs.length === 0" class="text-sm text-slate-400 px-1 pt-3">Projektthema ohne Lebensbezüge.</p>
+
+            <template x-for="m in t.lbs" :key="m.nr">
+              <div class="mt-4" :id="'lb-' + m.nr" style="scroll-margin-top:100px">
+                <h3 class="flex gap-2 text-sm mb-1.5 px-1" :class="m.items.length ? 'text-slate-700' : 'text-slate-400'">
+                  <span class="font-semibold tabular-nums shrink-0" x-text="m.nr"></span>
+                  <span x-text="m.text"></span>
+                </h3>
+
+                <p x-show="m.items.length === 0" class="border border-dashed border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-400">
+                  noch keine Einheit
+                </p>
+
+                <!-- Liste -->
+                <div x-show="m.items.length && ansicht === 'liste'" class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-100">
+                  <template x-for="e in m.items" :key="e.id">
+                    <a :href="e.href" @click="merke(e)" class="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2 text-sm hover:bg-slate-50">
+                      <span class="chip chip-blue shrink-0" x-text="e.kompetenz"></span>
+                      <span class="font-medium text-slate-900 flex-1 min-w-[12rem]" x-text="e.titel"></span>
+                      <span x-show="auch(e)" class="text-[11px] text-slate-500 shrink-0" x-text="auch(e)"></span>
+                      <span class="flex gap-1 shrink-0 text-[11px] text-slate-500">
+                        <span x-text="e.hf + ' HF'"></span>
+                        <span x-show="e.kn">· KN</span>
+                        <span x-show="e.ki">· KI</span>
+                        <span x-show="e.methoden">· Methoden</span>
+                      </span>
+                      <span x-show="e.neu" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Neu</span>
+                      <span x-show="e.entwurf" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">Entwurf</span>
+                    </a>
+                  </template>
+                </div>
+
+                <!-- Karten -->
+                <div x-show="m.items.length && ansicht === 'karten'" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                  <template x-for="e in m.items" :key="e.id">
+                    <a :href="e.href" @click="merke(e)" class="lion-bg block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md transition" style="border-top:4px solid var(--lg)">
+                      <div class="flex flex-wrap gap-1.5 mb-1.5">
+                        <span class="chip chip-blue" x-text="e.kompetenz"></span>
+                        <span x-show="e.neu" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Neu</span>
+                        <span x-show="e.entwurf" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Entwurf</span>
+                      </div>
+                      <p class="font-semibold text-slate-900 leading-snug" x-text="e.titel"></p>
+                      <p class="text-[11px] text-slate-500 mt-2">
+                        <span x-text="e.hf + ' Herausforderungen'"></span>
+                        <span x-show="e.kn"> · KN</span><span x-show="e.ki"> · KI-Toolbox</span><span x-show="e.methoden"> · Methoden-Karten</span>
+                        <span x-show="auch(e)"> · <span x-text="auch(e)"></span></span>
+                      </p>
+                    </a>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </section>
+        </template>
+      </div>
+    </div>
   </main>
 
-  <script is:inline define:vars={{ alle, themen, lehrgangKurz }}>
+  <script is:inline define:vars={{ alle, lehrplan, lehrgaenge }}>
     document.addEventListener('alpine:init', () => {
+      const LS_LG = 'hko.katalog.lehrgang'
+      const LS_ZULETZT = 'hko.katalog.zuletzt'
+      const lesen = (k) => { try { return localStorage.getItem(k) } catch { return null } }
+      const schreiben = (k, v) => { try { localStorage.setItem(k, v) } catch {} }
+      const gueltig = (lg) => lehrgaenge.some((l) => l.v === lg)
+
       Alpine.data('katalog', () => ({
-        alle, themen, lehrgangKurz,
-        q: '', lehrgang: '', thema: 0,
-        nurKi: false, nurMethoden: false, nurNeu: false,
+        alle, lehrplan, lehrgaenge,
+        lg: 'EFZ_3J',
+        q: '', nurKi: false, nurMethoden: false, nurNeu: false,
         ansicht: 'liste',
-        zu: {},
-        lehrgangOptionen: [
-          { v: '', t: 'Alle' },
-          { v: 'EBA_2J', t: 'EBA' },
-          { v: 'EFZ_3J', t: 'EFZ 3J' },
-          { v: 'EFZ_4J', t: 'EFZ 4J' },
-        ],
-        passt(e, ohneThema) {
+        thema: null, // null = alle Themen; sonst nur dieses
+        zuletzt: [],
+
+        init() {
+          // Zustand: URL schlägt gemerkten Lehrgang schlägt Standard.
+          const p = new URLSearchParams(location.search)
+          const lg = p.get('lg') || lesen(LS_LG)
+          if (gueltig(lg)) this.lg = lg
+          this.q = p.get('q') || ''
+          this.nurKi = p.has('ki')
+          this.nurMethoden = p.has('methoden')
+          this.nurNeu = p.has('neu')
+          if (p.get('ansicht') === 'karten') this.ansicht = 'karten'
+          const th = Number(p.get('thema'))
+          if (this.themen.some((t) => t.nr === th)) this.thema = th
+          try { this.zuletzt = JSON.parse(lesen(LS_ZULETZT) || '[]').filter((x) => typeof x === 'string') } catch {}
+
+          for (const k of ['lg', 'thema', 'q', 'nurKi', 'nurMethoden', 'nurNeu', 'ansicht']) this.$watch(k, () => this.urlSchreiben())
+          // Themennummern gelten nur innerhalb eines Lehrgangs — beim Wechsel verfällt die Wahl.
+          this.$watch('lg', (v) => { schreiben(LS_LG, v); this.thema = null })
+
+          // Sprungmarke (#lb-2.1) erst anspringen, wenn Alpine die Ziele gerendert hat.
+          this.$nextTick(() => {
+            const ziel = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)))
+            if (ziel) ziel.scrollIntoView()
+          })
+        },
+
+        urlSchreiben() {
+          const p = new URLSearchParams()
+          p.set('lg', this.lg)
+          if (this.thema !== null) p.set('thema', this.thema)
+          if (this.q.trim()) p.set('q', this.q.trim())
+          if (this.nurKi) p.set('ki', '1')
+          if (this.nurMethoden) p.set('methoden', '1')
+          if (this.nurNeu) p.set('neu', '1')
+          if (this.ansicht === 'karten') p.set('ansicht', 'karten')
+          history.replaceState(null, '', location.pathname + '?' + p + location.hash)
+        },
+
+
+        label(l) { return (this.lehrgaenge.find((x) => x.v === l) || {}).t || l },
+        kurz(l) { return { EBA_2J: 'EBA', EFZ_3J: 'EFZ 3J', EFZ_4J: 'EFZ 4J' }[l] || l },
+        // Hinweis, wenn die Einheit auch für einen anderen Lehrgang gilt.
+        auch(e) {
+          const rest = e.lehrgaenge.filter((l) => l !== this.lg)
+          return rest.length ? 'auch ' + rest.map((l) => this.kurz(l)).join(', ') : ''
+        },
+        anzahlLg(l) { return this.alle.filter((e) => e.lehrgaenge.includes(l)).length },
+
+        get filterAktiv() { return !!(this.q.trim() || this.nurKi || this.nurMethoden || this.nurNeu) },
+        passt(e) {
           const q = this.q.trim().toLowerCase()
           if (q && !(e.titel + ' ' + e.kompetenz + ' ' + e.modul_titel).toLowerCase().includes(q)) return false
-          if (this.lehrgang && !e.lehrgaenge.includes(this.lehrgang)) return false
           if (this.nurKi && !e.ki) return false
           if (this.nurMethoden && !e.methoden) return false
           if (this.nurNeu && !e.neu) return false
-          if (!ohneThema && this.thema && e.thema !== this.thema) return false
           return true
         },
-        get gefiltert() { return this.alle.filter((e) => this.passt(e)) },
+        get gefiltert() { return this.alle.filter((e) => e.lehrgaenge.includes(this.lg) && this.passt(e)) },
         get treffer() { return this.gefiltert.length },
-        zaehlerThema(nr) { return this.alle.filter((e) => e.thema === nr && this.passt(e, true)).length },
-        titelThema(nr) { return (this.themen.find((t) => t.nr === nr) || {}).titel || '' },
-        get gruppen() {
-          const out = []
-          for (const e of this.gefiltert) {
-            let g = out.find((x) => x.thema === e.thema)
-            if (!g) { g = { thema: e.thema, anzahl: 0, module: [] }; out.push(g) }
-            g.anzahl++
-            let m = g.module.find((x) => x.modul === e.modul)
-            if (!m) { m = { modul: e.modul, modul_titel: e.modul_titel, items: [] }; g.module.push(m) }
-            m.items.push(e)
+
+        // Gerüst = Lehrplan des gewählten Lehrgangs; die Einheiten werden eingehängt.
+        get themen() {
+          const hits = this.gefiltert
+          const verortet = new Set()
+          const sort = (x, y) => x.kompetenz.localeCompare(y.kompetenz, 'de', { numeric: true }) || x.titel.localeCompare(y.titel, 'de')
+          const out = (this.lehrplan[this.lg] || []).map((t) => ({
+            nr: t.nr, titel: t.titel, lehrjahr: t.lehrjahr, anzahl: 0,
+            lbs: t.lbs.map((lb) => {
+              const items = hits.filter((e) => e.thema === t.nr && e.modul === lb.nr).sort(sort)
+              items.forEach((e) => verortet.add(e.id))
+              return { nr: lb.nr, text: lb.text, items }
+            }),
+          }))
+          // Einheiten, deren Lebensbezug im Lehrplan fehlt, gehen nicht verloren.
+          for (const e of hits) {
+            if (verortet.has(e.id)) continue
+            const t = out.find((x) => x.nr === e.thema)
+            if (!t) continue
+            let lb = t.lbs.find((x) => x.nr === e.modul)
+            if (!lb) { lb = { nr: e.modul, text: e.modul_titel, items: [] }; t.lbs.push(lb) }
+            lb.items.push(e)
           }
-          out.sort((a, b) => a.thema - b.thema)
-          out.forEach((g) => g.module.sort((a, b) => a.modul.localeCompare(b.modul, 'de', { numeric: true })))
+          out.forEach((t) => {
+            t.anzahl = t.lbs.reduce((n, lb) => n + lb.items.length, 0)
+            // Beim Filtern zählen nur Treffer; die Lücken gehören zur ungefilterten Landkarte.
+            if (this.filterAktiv) t.lbs = t.lbs.filter((lb) => lb.items.length)
+          })
           return out
         },
-        // Standard: ein einzelnes Thema ist offen, sobald gefiltert wird sind alle Treffer offen.
-        gefiltertAktiv() { return !!(this.q || this.lehrgang || this.thema || this.nurKi || this.nurMethoden || this.nurNeu) },
-        offen(nr) {
-          if (nr in this.zu) return !this.zu[nr]
-          return this.gefiltertAktiv() || nr === 1
+        get sichtbareThemen() {
+          if (this.thema !== null) return this.themen.filter((t) => t.nr === this.thema)
+          return this.filterAktiv ? this.themen.filter((t) => t.anzahl) : this.themen
         },
-        toggle(nr) { this.zu[nr] = this.offen(nr) },
-        reset() { this.q = ''; this.lehrgang = ''; this.thema = 0; this.nurKi = this.nurMethoden = this.nurNeu = false; this.zu = {} },
+        get trefferSichtbar() { return this.sichtbareThemen.reduce((n, t) => n + t.anzahl, 0) },
+
+        get zuletztItems() { return this.zuletzt.map((id) => this.alle.find((e) => e.id === id)).filter(Boolean) },
+        merke(e) {
+          this.zuletzt = [e.id, ...this.zuletzt.filter((id) => id !== e.id)].slice(0, 4)
+          schreiben(LS_ZULETZT, JSON.stringify(this.zuletzt))
+        },
+
+        reset() { this.q = ''; this.nurKi = this.nurMethoden = this.nurNeu = false },
       }))
     })
   </script>
