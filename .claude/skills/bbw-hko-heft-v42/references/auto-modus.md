@@ -100,7 +100,6 @@ Dazu, aus anderen Entscheiden und aus `docs/cloud-run/RUN.md`:
 | Bauplan fehlt oder ist nicht freigegeben | «nicht erzeugbar» |
 | Bauplan entspricht E21 nicht und Bauplan §9 nennt die Abweichung nicht als Ausnahme (Abschnitt 7) | «nicht erzeugbar», nichts schreiben |
 | Ordner existiert bereits | nie überschreiben; «nicht erzeugbar» |
-| Gegenstand braucht eines der Wörter Leasing, Konsumkredit, Kleinkredit, E-Bike, Mobilität (E24) | «nicht erzeugbar», bis `check-v42.mjs` korrigiert ist |
 | Fehler in Renderer oder Skript | nicht reparieren, nicht umgehen (`--baseline` ist verboten); in den Bericht; «nicht erzeugbar», wenn das Tor sonst nicht grün wird |
 | Tor nach drei Reparaturrunden rot (Abschnitt 8) | Ordner und neue Karten entfernen, Grund in den Bericht |
 

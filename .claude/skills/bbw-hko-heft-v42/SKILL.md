@@ -103,7 +103,7 @@ Reihenfolge ist eine Abhängigkeitsfolge und wird nicht umgestellt.
 
 Querschnitt, für jede Phase: `references/kohaerenz.md` (fest gegen hergeleitet,
 Abdeckungstabelle, Vergleich mit Gold), `references/datenvertrag.md` (jedes
-Feld, Budget, Regel), `references/sprache.md` (Anrede, Umlaute, gesperrte Wörter),
+Feld, Budget, Regel), `references/sprache.md` (Anrede, Umlaute, Fall-Begriffe),
 `references/nrlp-lehrmittel-crosswalk.md`, `references/sprachmodus-ids.md`,
 `references/ableitungsregeln.md` (Ordner, IDs, Kurzlink, Quellen-IDs — E21),
 `references/auto-modus.md` (Regel für jeden früheren Stopp, Verhalten bei
@@ -194,7 +194,6 @@ Kurzfassung; vollständig in `references/auto-modus.md`.
 | Karte oder Archivtext für die Quelle eines Hefts | nur `ohne_medien` für dieses Heft |
 | `ohne_medien` ist unzulässig (Kompetenz des Hefts verlangt Rezeption mündlich oder audiovisuell) **und** die Quelle fehlt | lokal: Phase Q zuerst; Auto: «nicht erzeugbar» |
 | Transkript eines Audio- oder Videobeitrags | nicht als Quelle mit Raster verwendbar |
-| Gegenstand braucht eines der Wörter Leasing, Konsumkredit, Kleinkredit, E-Bike, Mobilität | «nicht erzeugbar», bis `check-v42.mjs` korrigiert ist (ENTSCHEIDE E24) |
 | Tor nach drei Reparaturrunden rot | Ordner und neue Karten entfernen, Grund in den Bericht |
 
 ## 7. Fertig ist die Einheit, wenn

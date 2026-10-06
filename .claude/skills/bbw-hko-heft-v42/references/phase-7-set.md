@@ -93,8 +93,7 @@ Heft A in der Reihenfolge der Äste, Spur-Einträge Heft A, dann dasselbe für B
   `"quelle"`. Für eine Spur, die das Heft nicht hat, gibt es keinen Eintrag.
 - **Fall-Ausschluss gilt auch hier:** kein Begriff aus
   `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` in `begriff`
-  oder `definition` (`ERR_V42_R9_FALL`, Teilzeichenkette, Kleinschreibung), dazu
-  die sechs fest gesperrten Wörter aus E24.
+  oder `definition` (`ERR_V42_R9_FALL`, Teilzeichenkette, Kleinschreibung).
 
 ## 4. `gemeinsamer_auftrag`
 
@@ -265,8 +264,8 @@ Der **Fall-Ausschluss** (`fallAusschluss`, `ERR_V42_R9_FALL`) läuft zusätzlich
 **alle** Texte von `gemeinsamer_auftrag` — auch `produkte`, `heft_bezug`,
 `indikator_produkt`, `erwartungshorizont`, `sozialform` — und über `glossar`.
 Ausgenommen sind nur `feedback_kriterien[].stufen[]` und `kontext_ausschluss`.
-Gesucht wird jeder Begriff aus `fall_ausschluss_hefte_und_auftrag` und die sechs
-festen Wörter aus E24.
+Gesucht wird jeder Begriff aus `fall_ausschluss_hefte_und_auftrag` — nur diese
+Liste (E30).
 
 ## 5. Prüfungen, die kein Skript macht
 

@@ -108,30 +108,12 @@ Rücksicht auf Gross- und Kleinschreibung (`ERR_V42_R9_FALL`). Ein Begriff
 `feedback_kriterien[].stufen[]` (Wortlaut des KN, E8),
 `gemeinsamer_auftrag.kontext_ausschluss`, `prinzip_handoff.kn_aktivierung`.
 
-### 7.2 Sechs Wörter, die für jede Einheit gesperrt sind (E24)
+### 7.2 Keine fest gesperrten Wörter mehr (E30)
 
-`scripts/check-v42.mjs` führt sechs Wörter des Piloten fest im Code. Sie gelten
-für **jede** v4.2-Einheit, gleich welchen Themas, an denselben Orten wie 7.1:
-
-| Gesperrt (als Teilwort, klein oder gross) | trifft zum Beispiel auch |
-|---|---|
-| `leasing` | Leasingvertrag, Autoleasing |
-| `konsumkredit` | Konsumkreditgesetz |
-| `kleinkredit` | Kleinkredite |
-| `e-bike` | E-Bikes |
-| `ebike` | — |
-| `mobilität` | Elektromobilität, Mobilitätskosten |
-
-Folgen:
-
-- Kein Heft, kein Auftrag, kein Glossareintrag und keine Quellenkarte nennt
-  eines dieser Wörter — auch nicht in `url`, `titel` oder `titel_original`
-  einer Karte.
-- Braucht der **Gegenstand** der Einheit eines davon, ist die Einheit nicht
-  erzeugbar, bis das Skript korrigiert ist. Nicht umschreiben («Velo mit
-  Motor»), nicht umgehen: melden.
-- Kommt ein Wort nur am Rand vor, den Satz so schreiben, dass er es nicht
-  braucht.
+Bis 04.10.2026 führte `scripts/check-v42.mjs` sechs Wörter des Piloten fest im
+Code; sie galten für jede Einheit (E24). E30 hat sie aufgehoben. Gesperrt ist
+in einer Einheit nur noch, was ihr eigener Fall-Ausschluss nennt (7.1). Kein
+Wort macht eine Einheit von sich aus «nicht erzeugbar».
 
 ### 7.3 Wendungen, die ein Skript als Fehler liest
 
@@ -357,8 +339,9 @@ Nicht still korrigiert, sondern neu geschrieben und im Bericht vermerkt:
 
 - Verletzung der Ich- oder Sie-Form
 - Füllsel und distanzierende Wendungen
-- ein gesperrtes Wort (Abschnitt 7) — nie durch ein Synonym «retten», wenn es
-  der Gegenstand ist
+- ein Begriff des KN-Falls (Abschnitt 7.1) — nie durch ein Synonym «retten»:
+  derselbe Gegenstand unter anderem Wort bleibt der Fall des KN
+  (`references/phase-9-tor.md` §3 Nr. 6)
 
 ## 16. Kurzprüfung vor jedem Schreiben
 
@@ -372,7 +355,7 @@ Nicht still korrigiert, sondern neu geschrieben und im Bericht vermerkt:
 □ Kein «Spur» in Texten für Lernende
 □ «Quelle» statt «Pflichtquelle»; «Punkte» statt «Stufe»
 □ Auftragsbogen ohne Vorgabe an die Lehrperson
-□ Kein Begriff des KN-Falls und keines der sechs gesperrten Wörter in Heft, Auftrag, Glossar, Quellenkarte
+□ Kein Begriff des KN-Falls in Heft, Auftrag, Glossar, Quellenkarte
 □ Kein «im Voraus», kein «bringen Sie … mit», kein «aus Herausforderung A»
 □ Höchstens zwei Aufträge je Leitfrage; `liefert` ohne Anrede
 □ Kein «Trade-off» im sichtbaren Text

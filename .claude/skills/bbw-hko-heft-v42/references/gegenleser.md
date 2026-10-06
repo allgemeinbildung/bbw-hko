@@ -20,7 +20,7 @@ und ein Blick aufs Papier; Zeiten sind Schätzungen. Der Bericht sagt das.
 | **Lernende/r, Profil a** (stark, schnell, liest genau) | je Heft und vorhandener Spur | Seitentext des Hefts; Spur mit Medien: QR-Seite und Quelle; die genannten Lehrmittelseiten | Widersprüche zwischen Seiten, Aufträge, die das Material nicht trägt, vorweggenommene Entscheide |
 | **Lernende/r am Auftragsbogen**, Profil a | 1 je Einheit | Seitentext des Auftragsbogens, dazu S. 4 und 8 beider Hefte | Schritte ohne Abgabe, Kriterien ohne Auftrag, Fall passt nicht zu den Heften |
 | **Lösungs-Audit** | je Heft und vorhandener Spur | Dokument «Lösungen», Kapiteldatei bzw. Archivtext | falsche Fundstellen, Zeitmarken, Fakten |
-| **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, gesperrte Wörter, Anrede |
+| **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, Fall-Begriffe, Anrede |
 
 Bei zwei Heften mit je zwei Spuren sind das vier Lernende a,
 ein Bogen-Leser, vier Audits und ein Sweep: zehn. Modell: Sonnet. Nicht zur
@@ -108,8 +108,8 @@ Fallüberlegung ist. Je Befund: Feld, Wortlaut, was die Grundlage wirklich sagt.
 ### 4.3 Sweep
 
 Über alle Dateien: «ß», Platzhalter, Transliterationen
-(`references/umlaute.md`), gesperrte Wörter und Anrede
-(`references/sprache.md`).
+(`references/umlaute.md`), Fall-Begriffe (`references/sprache.md` §7.1) und
+Anrede (`references/sprache.md`).
 
 ## 5. Nachprüfung — jeder Befund, bevor er zum Auftrag wird
 

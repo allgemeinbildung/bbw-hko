@@ -285,10 +285,8 @@ des Hefts enthält einen Begriff aus
 Kleinbuchstaben und als **Teilwort** (ein kurzer Begriff trifft auch Zusammensetzungen). Das
 gilt für jedes Feld, auch `loesung`, `tun`, `sk_anker`, `dekontextualisierung`, `id`.
 Ausgenommen sind nur `feedback_kriterien[].stufen[]` (KN-Wortlaut, E8) und
-`prinzip_handoff.kn_aktivierung`. **Gesperrte Wörter (E24):** Zusätzlich sperrt das Skript für jede Einheit fest `leasing`,
-`konsumkredit`, `kleinkredit`, `e-bike`, `ebike`, `mobilität`. Braucht der Gegenstand eines
-davon, ist die Einheit nicht erzeugbar (`references/auto-modus.md`); umschreiben nur, wenn der
-Sinn hält.
+`prinzip_handoff.kn_aktivierung`. Fest im Skript gesperrte Wörter gibt es seit E30 nicht
+mehr; gesucht wird nur diese Liste.
 
 ## 11. Regeln der Skripte, die den Kern treffen
 

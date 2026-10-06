@@ -11,7 +11,7 @@ Bei Zweifel nachlesen, nie aus dem Gedächtnis schreiben: `scripts/check-v42.mjs
 (`budgetKern` ab `mindmap_zentrum`, `budgetProduktBild`, `regelGlossar`,
 `regelLoesungen`, `regel7`), `scripts/check-einheiten.mjs`,
 `src/lib/einheiten/types.ts` (`ProduktBild`, `ProduktBildBlock`, `Abschluss`,
-`AbschlussLoesung`), `docs/upgrade-v4.2/ENTSCHEIDE.md` (E15, E17, E19, E24, E26).
+`AbschlussLoesung`), `docs/upgrade-v4.2/ENTSCHEIDE.md` (E15, E17, E19, E26, E30).
 
 ## Fest und herzuleiten
 
@@ -58,9 +58,7 @@ wirklich benutzen (Leitfrage, ihre Lösung, ein Schritt, die `abgaben`).
 3. Schreibweise festlegen (Nominativ Singular, ohne Artikel). Dieselbe
    Zeichenfolge steht später im Glossar und in `verbindungen`.
 4. Ausschliessen: jeden Begriff aus
-   `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` und die
-   gesperrten Wörter aus E24 (Leasing, Konsumkredit, Kleinkredit, E-Bike, Ebike,
-   Mobilität).
+   `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag`.
 
 **Übergabe an Phase 7.** `regelGlossar` verlangt beide Richtungen: Jeder Knoten
 ist ein Glossarbegriff des Hefts ohne `spur`, und umgekehrt. Phase 6 hält darum
@@ -115,7 +113,7 @@ vorkommen und noch kein Knoten sind, je ≤ 25 Zeichen — Phase 7 nimmt aus ihn
 die ein bis zwei Glossareinträge der Spur. **Nur eine Spur:** `eigene_knoten`
 trägt nur deren Schlüssel; das Skript geht die vorhandenen Schlüssel von
 `spuren` durch. Alle übrigen Felder von `loesung` gelten unverändert.
-`loesung.transfer` nennt weder den Fall des KN noch ein gesperrtes Wort.
+`loesung.transfer` nennt den Fall des KN nicht (kein Begriff aus dem Fall-Ausschluss).
 
 ## 3. Checkliste — `bewertungsraster`
 
@@ -241,7 +239,7 @@ Beispielbild:
 1. Es zeigt die **Form vollständig**: jeden Teil, den die Schritte 01–04 und
    die `abgaben` verlangen — auch Legende, Entscheid, Begründung.
 2. Der Fall kommt aus einem anderen Lebensbereich als Heft, Auftrag und KN,
-   ohne Begriff des KN-Falls und ohne gesperrtes Wort.
+   ohne Begriff des KN-Falls.
 3. Zahlen sind erfundene Fallzahlen und **nachgerechnet** (jede Summe, jede
    Differenz), nicht geschätzt.
 4. Fasst die enge Grenze nicht alle verlangten Einträge, zeigt es je Block die
@@ -300,7 +298,7 @@ Vor dem Prüfbefehl, je Heft:
 
 - [ ] `mindmap_zentrum` zeichengleich mit `prinzip.mindmap_zentrum_kurz` und dem anderen Heft
 - [ ] vier Äste, Ast 4 wie in §1; Äste 1–3 je ≥ 1 Knoten; ≤ 5 je Ast, ≤ 10 im Ganzen, je ≤ 25 Zeichen
-- [ ] jeder Knoten kommt in LF1–LF4 oder im Produkt vor; kein Begriff des KN-Falls, kein gesperrtes Wort
+- [ ] jeder Knoten kommt in LF1–LF4 oder im Produkt vor; kein Begriff des KN-Falls
 - [ ] Begriffsliste für Phase 7 notiert (Begriff, Heft, Herkunft, Fundstelle)
 - [ ] zwei Quer-Check-Fragen aus der Situation; drei Mitnahme-Zeilen, die dritte «Mir noch unklar», ohne Wort über den Auftrag; Lösung je Frage und Zeile
 - [ ] ≥ 5 Verbindungen, alle Enden zeichengenau Knoten oder Transfer-Titel, eine zum Transfer-Feld

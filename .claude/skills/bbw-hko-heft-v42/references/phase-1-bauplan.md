@@ -76,8 +76,8 @@ Konfliktart ihn ausdrücklich trägt — dann mit Grund.
 Situation in zwei Sätzen: Ich-Form, neutrale Persona, ein Lebensbereich, die
 Konfliktart spürbar, ohne sie zu benennen. Erfundene Fallzahlen sind erlaubt
 (bei einem Fall mit Zahlen im Bauplan ausgeschrieben und nachgerechnet,
-höchstens vier Zeilen), Zahlen über die Welt nicht. Kein Fall-Begriff aus §5,
-kein gesperrtes Wort. Dazu die **Leitfrage der Situation**: Ich-Form, benennt
+höchstens vier Zeilen), Zahlen über die Welt nicht. Kein Fall-Begriff aus §5.
+Dazu die **Leitfrage der Situation**: Ich-Form, benennt
 die Spannung, gibt keine Antwort vor.
 
 **Heft mit nur der Medien-Spur:** Die Situation bleibt im Entwurf

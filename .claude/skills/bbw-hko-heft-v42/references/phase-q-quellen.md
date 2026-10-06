@@ -10,7 +10,7 @@ des Bauplans). Phase Q fragt nicht nach; was offen bleibt, steht im Bauplan.
 Phase Q nie: Dort gilt, was als Karte **und** als Archivtext vorliegt.
 
 Grundlagen dieser Datei: `docs/upgrade-v4.2/ENTSCHEIDE.md` (E6, E11, E14, E16,
-E21, E23, E24), `docs/upgrade-v4.2/01_Leitfaden_v4.2.md` (§4.4, §5, §11.4, §13),
+E21, E23, E30), `docs/upgrade-v4.2/01_Leitfaden_v4.2.md` (§4.4, §5, §11.4, §13),
 `docs/upgrade-v4.2/BERICHT.md` (§8), `scripts/check-v42.mjs`,
 `scripts/check-all.mjs`. Bei Widerspruch gilt die Reihenfolge aus `SKILL.md` §1.
 
@@ -129,8 +129,8 @@ Einsatz: Lernende im <N>. Lehrjahr, auf dem Handy, ohne Konto.
 
 Harte Regeln
 1. Nichts erfinden. Jeder Kandidat ist in dieser Session abgerufen.
-2. Fall-Ausschluss: kein Kandidat mit <Fall-Begriffe aus Bauplan §5
-   und die gesperrten Wörter aus E24>. Am Rand vorkommend: mit Fundstelle melden.
+2. Fall-Ausschluss: kein Kandidat mit <Fall-Begriffe aus Bauplan §5>.
+   Am Rand vorkommend: mit Fundstelle melden.
 3. Frei zugänglich: Abruf ohne Cookies, keine Paywall, kein Login, keine App.
 4. Nichts ins Repo schreiben. Keine Karte. Nur Kandidaten.
 5. Kein Swissdox. Fehlt ein Volltext: «Volltext fehlt — Swissdox nötig».
@@ -194,8 +194,7 @@ Bauplan; wo möglich, zeigt die `url` direkt auf den Ausschnitt. Das Skript
 liest dagegen **jedes Feld der Karte** ohne Ausnahme (auch `titel`,
 `titel_original`, `url`, `lizenz_hinweis`): Steht ein Begriff dort, scheidet
 der Kandidat aus. Begriffe in Phase Q: die Fall-Begriffe aus §5 des
-Bauplans (später `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag`)
-und die sechs fest gesperrten Wörter aus E24.
+Bauplans (später `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag`).
 
 ## 7. Kohärenz-Audit nach der Wahl
 

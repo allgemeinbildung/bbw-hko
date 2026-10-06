@@ -522,11 +522,9 @@ gewollt. Und: Eine eckige Klammer, auf die «nach », «abhängig», «Datum» o
 ohne Rücksicht auf Gross- und Kleinschreibung, in: beiden Heften ganz,
 `set.gemeinsamer_auftrag`, `set.glossar`, jeder Quellenkarte der Einheit
 (Ersatzkarten eingeschlossen, alle Felder, auch `url`). Die Begriffe sind die
-Liste `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` **und**
-sechs im Skript fest eingebaute Wörter: `leasing`, `konsumkredit`,
-`kleinkredit`, `e-bike`, `ebike`, `mobilität`. Die sechs gelten für jede
-Einheit, gleich welchen Themas; braucht der Gegenstand eines davon, ist die
-Einheit nicht erzeugbar (E24). Ausgenommen sind genau drei Feldarten:
+Liste `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` —
+nur sie; fest im Skript eingebaute Wörter gibt es seit E30 nicht mehr.
+Ausgenommen sind genau drei Feldarten:
 `feedback_kriterien[].stufen[]` (KN-Wortlaut, E8), `kontext_ausschluss` und
 `prinzip_handoff.kn_aktivierung`. Nicht geprüft werden `kn.json`,
 `prinzip.json`, `begleiter.md` und die übrigen Felder von `set.json`.
