@@ -1,0 +1,955 @@
+{
+  "id": "5.2.1_gesetze_veraendern_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "5.2",
+  "modul_titel": "Mich im Staat orientieren — Gesetze und Entscheide verändern",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Durchgreifen – und wer kontrolliert das?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Rechtsstaat am Beispiel aufzeigen"
+  },
+  "prinzip_ref": "5.2.1_gesetze_veraendern_prinzip",
+  "nrlp": {
+    "nr": "5.2.1",
+    "nr_primary": [
+      "5.2.1"
+    ],
+    "lebensbezug": "5.2",
+    "themen": [
+      "T5"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Politik",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital"
+    ],
+    "sprachmodus_ids": [
+      "SM9"
+    ],
+    "sk": [
+      9,
+      11,
+      2
+    ],
+    "kompetenz_id": "5.2.1",
+    "lebensbezug_id": "5.2",
+    "kompetenz_text": "Ich kann anhand alltäglicher Beispiele und aktueller Ereignisse aufzeigen, wie rechtsstaatliche Prinzipien in der Schweiz umgesetzt werden und begründet erläutern, was einen Rechtsstaat von einem Unrechtsstaat unterscheidet.",
+    "lebensbezug_text": "Ich erlebe, dass Gesetze und politische Entscheidungen verändert werden können."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "In meiner Wohngemeinde wurden am Bahnhofplatz mehrmals Scheiben eingeschlagen und Wände versprayt. Vor zwei Wochen hat der Gemeinderat darum beschlossen: Wer unter 18 ist, darf sich ab 22 Uhr nicht mehr auf dem Bahnhofplatz aufhalten. Ich bin 17. Letzten Freitag wartete ich dort nach dem Training auf den Zug. Um 22.20 Uhr wurde ich weggeschickt, obwohl ich nichts getan hatte. Im Gruppenchat schreiben die einen: «Endlich greift jemand durch.» Die anderen: «Die machen einfach, was sie wollen.» Eine Kollegin schlägt vor, dass wir zwei bis Sonntag für den Chat aufschreiben, was Sache ist. Ich will darum klären: Wer hat die Regel beschlossen und gestützt worauf, gilt sie für alle gleich, und wer kann sie überprüfen oder ändern?",
+  "zahlen_tabelle": [
+    {
+      "label": "Die Regel gilt ab",
+      "wert": "22 Uhr"
+    },
+    {
+      "label": "Die Regel betrifft Personen",
+      "wert": "unter 18"
+    },
+    {
+      "label": "Ich wurde weggeschickt um",
+      "wert": "22.20 Uhr"
+    },
+    {
+      "label": "Beschluss des Gemeinderats",
+      "wert": "vor 2 Wochen"
+    }
+  ],
+  "leitfrage": "Darf eine Behörde durchgreifen, wenn es schnell gehen soll – und wer sorgt dafür, dass sie dabei nicht allein bestimmt?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Rasch durchgreifen vs. Macht teilen und kontrollieren",
+    "hint": "Rasch durchgreifen schafft sofort Ruhe. Macht teilen und kontrollieren schützt vor Fehlern, kostet aber Zeit. Beides ist begründbar."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.1",
+      "titel": "Entwicklung der modernen Schweiz",
+      "unterueberschrift": "drei Gewalten, drei Ebenen",
+      "seiten": "Seite 91",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 6.2",
+      "titel": "Bundesstaat Schweiz",
+      "unterueberschrift": "Demokratie und Diktatur",
+      "seiten": "Seite 162",
+      "fuer_leitfrage": [
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 1.3",
+      "titel": "Rechtsgrundlagen",
+      "unterueberschrift": "Stufen des Rechts, Rechtsgleichheit",
+      "seiten": "Seite 21-24",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie schreiben zu zweit in einem geteilten Dokument einen Rechtsstaat-Check zu Ihrem Fall. LF1 liefert die Begriffe, LF2 die Zuordnung Ihres Falls an drei Prüfpunkten, LF3 zwei Belege für Teil 2, LF4 Ihr Urteil für Teil 3.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.1 | S. 91 · Kap. 1.3 | S. 22-24",
+      "text": "Erklären Sie mit Kap. 3.1 (S. 91) die drei Staatsgewalten und wozu sie getrennt sind. Halten Sie mit Kap. 1.3 (S. 22, 24) fest, was eine Verordnung braucht und was Rechtsgleichheit heisst.",
+      "liefert": "Begriffe für alle drei Teile",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 91: je Gewalt Aufgabe und Behörde. Dieses Heft nennt die Diktatur dort «Unrechtsstaat».",
+          "S. 22: die Stufen des Rechts von oben nach unten. S. 24: der erste Rechtsgrundsatz."
+        ],
+        "satzanfaenge": [
+          "«Die Legislative …, die Exekutive …, die Judikative …»",
+          "«Getrennt sind die drei Gewalten, damit …»",
+          "«Eine Verordnung braucht …; Rechtsgleichheit heisst …»"
+        ],
+        "produkt": "Die Begriffe brauchen Sie in allen drei Teilen des Dokuments und im Begriffsnetz (S. 8)."
+      },
+      "loesung": {
+        "kern": "Drei Gewalten, ihr Zweck, zwei Regeln für das Recht",
+        "zeilen": [
+          {
+            "label": "Legislative",
+            "text": "Gesetzgebende Gewalt: erlässt Gesetze und kontrolliert die Ausführung. Gemeinde: Gemeindeversammlung oder Gemeindeparlament (S. 91: «Einwohnerrat»).",
+            "quelle": "Kap. 3.1, S. 91"
+          },
+          {
+            "label": "Exekutive",
+            "text": "Ausführende Gewalt: führt Gesetze aus, regiert und verwaltet. Gemeinde: Gemeinderat oder Stadtrat.",
+            "quelle": "Kap. 3.1, S. 91"
+          },
+          {
+            "label": "Judikative",
+            "text": "Richterliche Gewalt: Gerichte urteilen. Gemeinde laut S. 91: Bezirks-, Amts- oder Kreisgericht, Friedensrichter. Verwaltungsgericht (S. 167): siehe LF2.",
+            "quelle": "Kap. 3.1, S. 91 · 6.3, S. 167"
+          },
+          {
+            "label": "Wozu getrennt",
+            "text": "Damit sich Macht nicht ballt und nicht missbraucht wird: Die drei kontrollieren einander und sind voneinander unabhängig. In der Diktatur fehlt die Trennung; «Unrechtsstaat» sagt nur das Heft.",
+            "quelle": "Kap. 3.1, S. 91"
+          },
+          {
+            "label": "Verordnung",
+            "text": "Stufen: Verfassung, Gesetz, Verordnung, Reglement. Nichts darf der Verfassung widersprechen; eine Verordnung braucht ein Gesetz (Ausnahme Notverordnung: nicht im Lehrmittel).",
+            "quelle": "Kap. 1.3, S. 22"
+          },
+          {
+            "label": "Rechtsgleichheit",
+            "text": "Alle sind vor dem Gesetz gleich; niemand darf diskriminiert werden, auch nicht wegen des Alters. Zum Jugendschutz sagt die Seite nichts.",
+            "quelle": "Kap. 1.3, S. 24"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 3.1 | S. 91 · Kap. 1.3 | S. 22-24 · eigener Fall",
+      "text": "Ordnen Sie Ihren Fall zu: Welche Staatsgewalt auf welcher Ebene hat die Regel beschlossen (Kap. 3.1, S. 91)? Notieren Sie zu den drei Prüfpunkten (siehe unten), was Sie wissen und was offen bleibt.",
+      "liefert": "Zuordnung des Falls an drei Prüfpunkten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Prüfpunkte: 1 Wer, gestützt worauf? 2 Für alle gleich? 3 Wer überprüft oder ändert?",
+          "W-Fragen (S. 6). Zu 3: Kap. 6.3 (S. 167) – welches Gericht bei Privatperson gegen Staat?"
+        ],
+        "satzanfaenge": [
+          "«Beschlossen hat …; das ist die … der Gemeinde.»",
+          "«Die Regel gilt (nicht) für alle gleich, denn …»",
+          "«Offen bleibt, worauf … und wer …»"
+        ],
+        "produkt": "Ihre Notizen kommen ins Feld «Stichworte» (S. 7) und in Teil 1 «Unser Check» (Schritt 02)."
+      },
+      "loesung": {
+        "kern": "Exekutive der Gemeinde; Grundlage und Kontrolle offen",
+        "zeilen": [
+          {
+            "label": "Zuordnung",
+            "text": "Der Gemeinderat ist nach der Tabelle die Exekutive der Gemeinde. Die Legislative der Gemeinde kommt in der Situation nicht vor.",
+            "quelle": "Kap. 3.1, S. 91"
+          },
+          {
+            "label": "1 Wer, gestützt worauf",
+            "text": "Wer: der Gemeinderat. Worauf: Die Situation sagt es nicht; das gehört als offene Frage in die Antwort. Massstab: Eine Verordnung braucht ein Gesetz. Dass das für diese Regel gilt, ist Fallüberlegung, keine Lehrmittelaussage.",
+            "quelle": "Kap. 1.3, S. 22"
+          },
+          {
+            "label": "2 Für alle gleich",
+            "text": "Nein: Die Regel trifft nur unter 18-Jährige. Fachbegriff: Rechtsgleichheit; das Lehrmittel nennt dort das Alter. Ob das hier Diskriminierung ist, sagt es nicht – offen.",
+            "quelle": "Kap. 1.3, S. 24"
+          },
+          {
+            "label": "3 Wer überprüft",
+            "text": "Fallüberlegung, keine Aussage über den Rechtsweg: Die Legislative kontrolliert die Ausführung (S. 91); bei Privatperson gegen Staat urteilt ein Verwaltungsgericht (S. 167: kantonal, zweite Instanz; S. 91 nennt für die Gemeinde andere). Frist und Stelle: nicht verlangt.",
+            "quelle": "Kap. 3.1, S. 91 · 6.3, S. 167"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Ein fertiges «erlaubt» oder «verboten» statt offener Punkte; die Gemeinde mit Kanton oder Bund verwechseln."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Gemeinsam geführtes Online-Dokument zu zweit: Rechtsstaat-Check zu einem Fall aus dem Alltag, mit Gegenbild, Urteil, Kommentaren und Antworten",
+    "titel": "Rechtsstaat-Check zu zweit: Plan und geteiltes Dokument",
+    "format_detail": "Sie schreiben zu zweit in einem geteilten Dokument, das Ihre Schule bereitstellt. Teil 1 «Unser Check» (Person 1): die drei Prüfpunkte am Fall, je ein bis zwei Sätze – 1 Wer hat die Regel beschlossen und gestützt worauf? 2 Gilt sie für alle gleich? 3 Wer kann sie überprüfen oder ändern? Teil 2 «Gegenbild» (Person 2): dieselben drei Prüfpunkte in einem Staat ohne geteilte Macht, je ein Satz, dazu zwei Zeilen aus dem Raster (LF3) mit Fundstelle – woher das Gegenbild kommt und welche Zeilen es sind, steht auf S. 3 bei «Ins Produkt». Teil 3 «Unser Urteil» (gemeinsam): drei bis vier Sätze – vertretbar oder nicht, mit Grund und mit der Kontrolle, die Sie verlangen. Jede Person setzt zwei Kommentare zum Teil der anderen, beantwortet die zwei erhaltenen und passt ihren Text an; Kommentare und Antworten bleiben sichtbar. Sie schreiben für die Kolleginnen und Kollegen aus dem Gruppenchat. S. 7 ist Ihr Plan, ohne Linien: drei Felder – «Aufteilung», «Stichworte» zu den drei Prüfpunkten, «Kommentare» im Entwurf.",
+    "beschreibung": "Ich prüfe zu zweit in einem geteilten Dokument, ob in meinem Fall Macht geteilt und kontrolliert ist, stelle das Gegenbild daneben und kommentiere den anderen Teil.",
+    "schritte": [
+      {
+        "label": "01 Gewalten und Ebenen klären",
+        "hint": "LF1 klärt die Begriffe. Zeichnen Sie auf S. 7 drei Felder: Aufteilung, Stichworte, Kommentare. Wer schreibt welchen Teil?"
+      },
+      {
+        "label": "02 Meinen Fall zuordnen",
+        "hint": "«Stichworte»: je Prüfpunkt eine Notiz. Teil 1 «Unser Check»: Ihr Fall (LF2). Teil 2 «Gegenbild»: dieselben Prüfpunkte ohne geteilte Macht."
+      },
+      {
+        "label": "03 Merkmale belegen",
+        "hint": "LF3 liefert die Belege. Schreiben Sie Ihren Teil (1 oder 2) ins Dokument; was in Teil 2 gehört, steht auf S. 3 bei «Ins Produkt»."
+      },
+      {
+        "label": "04 Urteil fällen",
+        "hint": "Teil 3 «Unser Urteil» gemeinsam, drei bis vier Sätze: Entscheid aus LF4 und die Kontrolle, die Sie verlangen. Uneins? Dann steht beides da."
+      },
+      {
+        "label": "05 Kommentieren und anpassen",
+        "hint": "Feld «Kommentare» (S. 7): Entwerfen Sie zwei zum anderen Teil, dann ins Dokument. Antworten Sie und passen Sie Ihren Text an."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Geteiltes Dokument: Teil 1 und 2 mit vier Kommentaren, vier Antworten",
+      "Teil 3 «Unser Urteil» in drei bis vier Sätzen",
+      "Plan (S. 7): Aufteilung, Stichworte, zwei Kommentare im Entwurf"
+    ],
+    "beispielbild": {
+      "titel": "Bibliothek: abends erst ab 16 Jahren – Ausschnitt: Teil 1, zwei Kommentare",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Unser Check",
+          "eintraege": [
+            {
+              "text": "1 Wer, gestützt worauf? Die Leiterin (Exekutive der Gemeinde). Reglement Art. 4: nur Öffnungszeiten."
+            },
+            {
+              "text": "2 Für alle gleich? Nein, nur unter 16 (Rechtsgleichheit). Grund: offen."
+            },
+            {
+              "text": "3 Wer überprüft oder ändert? Die Kommission der Gemeinde; im Streit ein Gericht (Judikative)."
+            }
+          ]
+        },
+        {
+          "titel": "Kommentare und Antworten",
+          "wechsel": [
+            {
+              "wer": "Person 2",
+              "text": "Kommentar zu 1: Woher weisst du, was im Reglement steht?"
+            },
+            {
+              "wer": "Person 1",
+              "text": "Antwort: Ich habe Art. 4 gelesen. Ich schreibe ihn dazu."
+            },
+            {
+              "wer": "Person 1",
+              "text": "Text neu: «… Reglement Art. 4: nur Öffnungszeiten.»"
+            },
+            {
+              "wer": "Person 2",
+              "text": "Kommentar zu 3: Und wenn die Kommission nichts ändert?"
+            },
+            {
+              "wer": "Person 1",
+              "text": "Antwort: Dann bleibt ein Gericht. Ich ergänze «Judikative»."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: unter 18 ab 22 Uhr nicht mehr auf dem Bahnhofplatz",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. «Unser Check» zeigt alle drei Teile, das Beispiel auf S. 6 nur Teil 1; Teil 3 steht knapp da, ausformuliert im ersten Beispiel von LF4 (das zweite gilt ebenso). Weder Lehrmittel noch Heft sagen, ob ein solches Aufenthaltsverbot rechtens wäre: «offen» ist bei Prüfpunkt 1 (Grundlage) und 2 (ob zulässig) richtig. Annahmen: keine Grundlage genannt; die Gemeinde hat eine Gemeindeversammlung (sonst: Gemeindeparlament). Prüfpunkt 3 ist Fallüberlegung (siehe LF2), keine Aussage über den Rechtsweg. Teil 2: Die Gegenbilder deuten Kap. 3.1, S. 91 (Diktatur: Gewalten nicht getrennt) für die drei Prüfpunkte, ohne Medien dazu die Diktatur-Spalte von S. 162; unabhängige Gerichte nennt keine der zwei Seiten (S. 162: wer herrscht, verurteilt selbst), ungleiche Regeln auch nicht. Mit Medien stehen in Teil 2 zusätzlich zwei Rasterzeilen als Vergleich: «00:01 · sechs Wochen allein, per Notrecht · die Regierung entscheidet allein · Exekutive», «00:18 · Parlament kann korrigieren, teils abhängig · die Kontrolle hat Grenzen · Legislative». Plan (S. 7): drei Felder – Aufteilung, Stichworte je Prüfpunkt wie in Teil 1, zwei Kommentare im Entwurf wie die ersten zwei unten. Plus (S. 5): erwartet «Parlament, also Legislative» – das Referendum zielt auf Beschlüsse des Parlaments (Kap. 6.4, S. 168; «Legislative» ist Ableitung). Falle: Das Gesetz auf der Liste (S. 169) handelt von Verordnungen der Regierung und verleitet zu «Exekutive».",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Unser Check",
+          "eintraege": [
+            {
+              "text": "Teil 1 · 1 Wer, gestützt worauf? Der Gemeinderat (Exekutive der Gemeinde), soweit wir wissen allein. Grundlage: offen."
+            },
+            {
+              "text": "Teil 1 · 2 Für alle gleich? Nein: nur unter 18-Jährige, ab 22 Uhr. Das berührt die Rechtsgleichheit; wie, bleibt offen.",
+              "notiz": "Kap. 1.3, S. 24"
+            },
+            {
+              "text": "Teil 1 · 3 Wer überprüft oder ändert? Die Gemeindeversammlung (Legislative); im Streit wohl ein Verwaltungsgericht (Judikative).",
+              "notiz": "Kap. 3.1, S. 91 · Kap. 6.3, S. 167 (Fallüberlegung)"
+            },
+            {
+              "text": "Teil 2 · Gegenbild 1: Die Gewalten sind nicht getrennt; eine Person oder wenige machen die Regeln selbst.",
+              "notiz": "S. 91; ohne Medien auch S. 162, «Gewaltenteilung»"
+            },
+            {
+              "text": "Teil 2 · Gegenbild 2: Ob Regeln für alle gleich gelten, sichert niemand (Deutung); ohne Medien: Rechte sind nicht garantiert.",
+              "notiz": "ohne Medien: S. 162, «Menschenrechte»; sonst Deutung"
+            },
+            {
+              "text": "Teil 2 · Gegenbild 3: Niemand von aussen überprüft; ein Missbrauch der Macht ist nicht begrenzt.",
+              "notiz": "S. 91; ohne Medien auch S. 162, «Gewaltenteilung»"
+            },
+            {
+              "text": "Teil 3 · Urteil: Vertretbar. Dagegen: trifft nur unter 18-Jährige. Wir verlangen: Grundlage nennen, Gemeindeversammlung prüft."
+            }
+          ]
+        },
+        {
+          "titel": "Kommentare und Antworten",
+          "wechsel": [
+            {
+              "wer": "Person 2",
+              "text": "Kommentar zu Teil 1, Punkt 1: Woher wissen wir, dass er allein beschloss?"
+            },
+            {
+              "wer": "Person 1",
+              "text": "Antwort: Die Situation nennt nur ihn. Text neu: «… soweit wir wissen allein.»"
+            },
+            {
+              "wer": "Person 2",
+              "text": "Kommentar zu Punkt 3: Welches Gericht? Bitte mit Seite."
+            },
+            {
+              "wer": "Person 1",
+              "text": "Antwort: S. 167 nennt das Verwaltungsgericht; ob es hier gilt, ist offen. Text neu: «wohl»."
+            },
+            {
+              "wer": "Person 1",
+              "text": "Kommentar zu Gegenbild 2: Wo steht das? Der Beleg fehlt."
+            },
+            {
+              "wer": "Person 2",
+              "text": "Antwort: Mit Seite nicht belegt. Ich schreibe «Deutung» dazu."
+            },
+            {
+              "wer": "Person 1",
+              "text": "Kommentar zu Gegenbild 3: Gibt es dort keine Gerichte?"
+            },
+            {
+              "wer": "Person 2",
+              "text": "Antwort: Keine unabhängigen – wer herrscht, verurteilt selbst (S. 162)."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe der Einheit fehlen oder sind falsch verwendet.",
+        "Einzelne Fachbegriffe stimmen, andere sind ungenau oder falsch zugeordnet.",
+        "Fachbegriffe und Zuordnungen sind richtig und passen zur Situation.",
+        "Fachbegriffe richtig und eigenständig verknüpft; wo sie nicht weiterhelfen, ist gesagt."
+      ],
+      "indikator_produkt": "Gewalt und Ebene stimmen; je Prüfpunkt ein Fachbegriff; Offenes ist benannt."
+    },
+    {
+      "kn_kriterium": "Politisches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Politische Grundsätze kommen nicht vor.",
+        "Ein Grundsatz ist genannt, aber nicht auf die Situation bezogen.",
+        "Geteilte Macht, gleiche Regeln für alle und Mitsprache sind auf die Situation angewendet.",
+        "Die Grundsätze sind gegeneinander abgewogen und auf eine neue Situation übertragen."
+      ],
+      "indikator_produkt": "Fall und Gegenbild stehen an denselben drei Prüfpunkten; das Urteil wägt ab."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt drei Prüfpunkte und einen Wechsel von Kommentar und Antwort; die Satzanfänge auf S. 2 helfen beim Zuordnen.",
+    "scaffold_100": "Plus: Kap. 6.4 (S. 168–169) – Unterschriftenliste eines Referendums. Wessen Beschluss kommt so vors Volk, und welche Gewalt ist das?"
+  },
+  "methoden": [
+    {
+      "ref": "hko-gemeinsam-schreiben",
+      "fuer": "für das geteilte Dokument (Schritt 05)",
+      "beispiel": [
+        "Kommentar: «Für alle Teams? Präzisieren.»",
+        "Antwort: «Stimmt – nur für die Junioren.»",
+        "Text neu: «… gilt für die Junioren.»"
+      ]
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für Ihr Urteil in LF4 und Teil 3",
+      "tun": "Schreiben Sie: Behauptung (vertretbar oder nicht), Begründung mit Seite, Beispiel aus Ihrem Fall."
+    },
+    {
+      "ref": "lm-17-2-w-fragen",
+      "fuer": "für das Zuordnen in LF2",
+      "tun": "Fragen Sie: Wer hat was beschlossen, wo, wann – und gestützt worauf?"
+    }
+  ],
+  "mindmap_zentrum": "Allein entscheiden oder Macht teilen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wer hat welche Macht?",
+      "punkte": [
+        "Gewaltenteilung",
+        "Legislative",
+        "Exekutive",
+        "Judikative"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Woran ist Macht gebunden?",
+      "punkte": [
+        "Verfassung",
+        "Verordnung",
+        "Rechtsgleichheit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was unterscheidet, wer prüft?",
+      "punkte": [
+        "Rechtsstaat",
+        "Unrechtsstaat",
+        "Verwaltungsgericht"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Sagt unser Teil 1, wer gestützt worauf beschloss, ob die Regel für alle gleich gilt und wer sie prüft?",
+      "Sagt unser Urteil (Teil 3), ob das Durchgreifen vertretbar ist und welche Kontrolle wir verlangen?"
+    ],
+    "mitnahme": [
+      "Drei Prüfpunkte für jede Regel",
+      "Wer kontrolliert wen – mein Merksatz",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Gewaltenteilung",
+          "nach": "Rechtsstaat",
+          "text": "gehört zum (Kap. 3.1, S. 91 unterscheidet im Rechtsstaat drei Gewalten)"
+        },
+        {
+          "von": "Legislative",
+          "nach": "Exekutive",
+          "text": "kontrolliert die"
+        },
+        {
+          "von": "Judikative",
+          "nach": "Verwaltungsgericht",
+          "text": "dazu gehört das"
+        },
+        {
+          "von": "Verfassung",
+          "nach": "Verordnung",
+          "text": "steht über Gesetz und"
+        },
+        {
+          "von": "Rechtsgleichheit",
+          "nach": "Rechtsstaat",
+          "text": "gilt im (Deutung; im Lehrmittel ein Rechtsgrundsatz)"
+        },
+        {
+          "von": "Unrechtsstaat",
+          "nach": "Gewaltenteilung",
+          "text": "kennt keine (S. 91 sagt das von der Diktatur; gleichgesetzt hat sie das Heft)"
+        },
+        {
+          "von": "Verwaltungsgericht",
+          "nach": "Exekutive",
+          "text": "prüft im Streit, ob Behörden Gesetze missachtet haben (S. 167) – «Behörden» hier gedeutet als Verwaltung der"
+        },
+        {
+          "von": "Gewaltenteilung",
+          "nach": "gilt auch bei …",
+          "text": "als Frage «wer kontrolliert wen?» (Übertragung, nicht belegt) auch bei"
+        }
+      ],
+      "transfer": "Hausordnung einer Wohnsiedlung; neue Regeln in einem Jugendtreff; Platzordnung eines Skateparks.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Menschenrechte",
+          "Pressefreiheit"
+        ],
+        "mit_medien": [
+          "Notrecht",
+          "Motion"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn Teil 1 alle drei Prüfpunkte beantwortet wie im Lösungsbild: Gemeinderat als Exekutive der Gemeinde, Grundlage offen; nur unter 18-Jährige betroffen (Rechtsgleichheit); Kontrolle durch die Legislative der Gemeinde und im Streit durch ein Gericht. «Verwaltungsgericht» ist dabei Fallüberlegung aus Kap. 6.3, S. 167, keine Aussage über den Rechtsweg.",
+        "Ja, wenn Teil 3 sagt, ob das Durchgreifen vertretbar ist (mit Grund), und die verlangte Kontrolle nennt – etwa: Der Gemeinderat nennt die Grundlage, die Legislative der Gemeinde überprüft. Beide Urteile gelten, begründet wie in LF4; sind die zwei uneins, stehen beide da."
+      ],
+      "mitnahme": [
+        "Wer hat beschlossen und gestützt worauf? Gilt es für alle gleich? Wer kann es überprüfen oder ändern?",
+        "Zum Beispiel: Die Exekutive handelt, die Legislative kontrolliert sie, Gerichte urteilen im Streit – keine Gewalt bestimmt allein.",
+        "Zum Beispiel, wie man sich gegen einen Entscheid der Gemeinde wehrt (Frist und Stelle stehen nicht im Lehrmittel)."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: drei Gewalten, Zweck, Verordnung, Rechtsgleichheit",
+        "LF2: Fall zugeordnet, drei Prüfpunkte mit Offenem",
+        "LF4: Urteil mit Beleg und verlangter Kontrolle"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster S. 3: alle vier Zeilen gefüllt, je mit Fundstelle",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Rechtsstaat-Check (Dokument)",
+      "vollstaendig_wenn": [
+        "Teil 1, 2 und 3 stehen; in Teil 2 zwei Rasterzeilen",
+        "Vier Kommentare und vier Antworten sind sichtbar",
+        "Plan (S. 7): Aufteilung, Stichworte, zwei Kommentare"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Etappe 1",
+      "text": "Situation, LF1, LF2: Begriffe klären, Fall zuordnen, Plan (S. 7) anlegen",
+      "aktiv": true
+    },
+    {
+      "label": "Etappe 2",
+      "text": "LF3 mit Raster zur Quelle, LF4 beurteilen, eigenen Teil ins Dokument",
+      "aktiv": false
+    },
+    {
+      "label": "Etappe 3",
+      "text": "Urteil, Kommentare und Antworten, Text anpassen, Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst setzt jemand rasch eine Regel für mich und andere – und wer kann sie dort überprüfen oder ändern?",
+    "ziel": "In einem Rechtsstaat ist Macht geteilt und an das Recht gebunden: Wer eine Regel setzt, muss sagen können, worauf sie sich stützt, und sich von anderen kontrollieren lassen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "An drei Prüfpunkten aufzeigen, ob Macht geteilt, an das Recht gebunden und kontrolliert ist",
+    "lehrmittel_anker": "Kap. 3.1 S. 91 (drei Gewalten, Zweck der Trennung, drei Ebenen, Gegenbild Diktatur) · Kap. 6.2 S. 162 (Demokratie und Diktatur an vier Merkmalen) · Kap. 1.3 S. 22 (Stufen des Rechts), S. 23 (Allgemeininteresse, nur LF4) und S. 24 (Rechtsgleichheit) · Kap. 6.3 S. 167 (Verwaltungsgericht) · Kap. 6.4 S. 168–169 (Referendum, Unterschriftenliste; Plus-Aufgabe)",
+    "kn_aktivierung": "Der KN verlangt, den Entscheid einer Kantonsregierung an denselben drei Prüfpunkten zu prüfen – wer hat beschlossen und gestützt worauf, gilt es für alle gleich, wer kann überprüfen oder ändern –, ohne zu urteilen, ob der Entscheid rechtens ist.",
+    "transfer_check": "Kann die Lernende an einer neuen Regel zeigen, welche Gewalt welcher Ebene sie gesetzt hat, und die drei Prüfpunkte anwenden, ohne ein Rechtsurteil zu behaupten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 9,
+      "wo": "leitfragen[2] — im Raster die Merkmale als System lesen: welche Gewalt wen kontrolliert und was wegfällt, wenn die Kontrolle fehlt"
+    },
+    {
+      "sk": 11,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — beurteilen, ob das Durchgreifen vertretbar ist, obwohl beide Seiten Gründe haben"
+    },
+    {
+      "sk": 2,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — Aufteilung und Ziel im Plan festlegen, nach den Kommentaren den eigenen Teil prüfen und anpassen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 6.2 | S. 162",
+          "text": "Woran unterscheidet Kap. 6.2 (S. 162) Demokratie und Diktatur, und was fällt ohne getrennte Gewalten weg? Notieren Sie als Befund in zwei bis drei Sätzen, was Sie für Ihren Fall ableiten.",
+          "liefert": "Zwei Belege mit Fundstelle, ein Befund",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 6.2 | S. 162",
+            "auftrag": "Lesen Sie die Tabelle in Kap. 6.2 (S. 162); Zeile 1 ist ein Beispiel. Drei weitere: Absatz, Kernaussage, Beleg / Beispiel und ein Begriff aus LF1 oder dem Glossar. Zwei der vier (Ihre Wahl) belegen Teil 2.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 162, Gewaltenteilung",
+              "Macht ist aufgeteilt",
+              "Diktatur: in einer Hand",
+              "Gewaltenteilung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "Absatz = Seite und Zeilenname. Kernaussage: Demokratie. Beleg / Beispiel: Diktatur."
+            ],
+            "satzanfaenge": [
+              "«Kap. 6.2 unterscheidet die beiden an … (S. 162)»",
+              "«Ohne getrennte Gewalten fällt weg, dass …»",
+              "«Für meinen Fall leite ich ab, dass …»"
+            ],
+            "produkt": "Teil 2 «Gegenbild»: die drei Prüfpunkte für die Diktatur (Spalte 3), zwei Zeilen mit Begriff und S. 162."
+          },
+          "loesung": {
+            "kern": "Vier Merkmale; ohne Trennung fehlt die Kontrolle",
+            "quelle_ref": "Kap. 6.2 | S. 162",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Vier Merkmale, je Demokratie gegen Diktatur: Gewaltenteilung – drei Gewalten kontrollieren einander; sonst alle Staatsgewalt bei einer Person oder wenigen. Menschenrechte – garantiert; sonst missachtet. Wahlen und Abstimmungen – frei; sonst Scheinwahlen. Meinungs- und Pressefreiheit – freie Medien; sonst staatlich gelenkt.",
+                "quelle": "Kap. 6.2, S. 162"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Zeile «Ausprägungen». Die Länderbeispiele der Tabelle sind nicht verlangt und gehören nicht ins Dokument.",
+                "quelle": "Kap. 6.2, S. 162"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Gewaltenteilung (LF1); Menschenrechte, Pressefreiheit (Glossar). Zur Zeile «Wahlen und Abstimmungen» passt kein Begriff genau: «Legislative» ist Deutung (das Volk wählt sie, Kap. 3.1, S. 91). Auch gültig: Rechtsstaat, Unrechtsstaat."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: zwei Merkmale mit Seite; was ohne Trennung wegfällt (dieselbe Stelle macht die Gesetze, kontrolliert und urteilt); eine Ableitung für den Fall – Fallüberlegung, keine Lehrmittelaussage. Sie fliesst in LF4 und Teil 3."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 162, Gewaltenteilung",
+                "Macht ist aufgeteilt",
+                "Diktatur: in einer Hand",
+                "Gewaltenteilung"
+              ],
+              [
+                "S. 162, Menschenrechte",
+                "Rechte sind garantiert",
+                "Diktatur: Andersdenkende verfolgt",
+                "Menschenrechte"
+              ],
+              [
+                "S. 162, Wahlen und Abstimmungen",
+                "frei; die Mehrheit entscheidet",
+                "Diktatur: Scheinwahlen",
+                "Legislative"
+              ],
+              [
+                "S. 162, Meinungs- und Pressefreiheit",
+                "freie Medien, mehrere Parteien",
+                "Diktatur: Medien staatlich kontrolliert",
+                "Pressefreiheit"
+              ]
+            ],
+            "befund": "Kap. 6.2 unterscheidet Demokratie und Diktatur an vier Merkmalen: geteilte Gewalten, garantierte Rechte, freie Wahlen, freie Medien (S. 162). Sind die Gewalten nicht getrennt, macht dieselbe Stelle die Gesetze, kontrolliert sie und urteilt; niemand hält sie auf. Fallüberlegung: In meinem Fall nennt die Situation nur eine Gewalt, die Exekutive – darum frage ich, welche andere sie kontrollieren kann."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 1.3 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Kap. 1.3 (S. 22–24) und Kap. 3.1 (S. 91) sagen, woran Staatsmacht gebunden ist; im Fall greift eine Behörde rasch durch. Entscheiden Sie: Ist das Durchgreifen vertretbar oder nicht – und welche Kontrolle verlangen Sie?",
+          "liefert": "Begründetes Urteil mit verlangter Kontrolle",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "3B-Schema (S. 6). Für «vertretbar»: Kap. 3.1 (S. 91, Exekutive), Kap. 1.3 (S. 23)."
+            ],
+            "satzanfaenge": [
+              "«Für das rasche Durchgreifen spricht, dass … (S. …)»",
+              "«Nach S. … gilt aber …; im Fall ist …»",
+              "«Ich halte es für (nicht) vertretbar, denn … Ich verlange …»"
+            ],
+            "produkt": "Ihr Urteil kommt in Teil 3 «Unser Urteil» (Schritt 04); der Befund (LF3) stützt es."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Urteil",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt eine Regel mit Seite: gegenseitige Kontrolle (Kap. 3.1, S. 91), Verordnung nur mit Gesetz (Kap. 1.3, S. 22), Rechtsgleichheit (S. 24) – für «vertretbar»: Aufgabe der Exekutive (S. 91), Allgemeininteresse (S. 23)",
+                "stellt den Fall daneben: Die Situation nennt nur den Gemeinderat, die Regel trifft nur eine Altersgruppe; worauf sie sich stützt, ist offen",
+                "urteilt in Ich-Form (vertretbar oder nicht), sagt, was für die andere Seite spricht, und nennt die Kontrolle, die verlangt wird",
+                "kein Rechtsurteil («erlaubt», «verboten») – beide Urteile gelten. Zusatz, in LF4 nicht verlangt: Übertragung auf eine neue Lage (drei Punkte beim Politischen Prinzip); sie entsteht im Begriffsnetz bei «gilt auch bei …»"
+              ],
+              "beispiel_pol_1": "Ich halte das Durchgreifen für vertretbar. Für Ruhe am Bahnhofplatz zu sorgen, lese ich als Aufgabe der Exekutive: Sie führt aus und verwaltet (Kap. 3.1, S. 91), und im öffentlichen Recht geht das Allgemeininteresse vor (Kap. 1.3, S. 23) – das ist meine Deutung, kein Rechtsurteil. Dagegen spricht: Die Regel trifft nur unter 18-Jährige (Rechtsgleichheit, S. 24), und worauf sie sich stützt, weiss ich nicht (S. 22). Darum verlange ich diese Kontrolle: Der Gemeinderat nennt die Grundlage, und die Legislative der Gemeinde überprüft die Regel. Das gilt auch anderswo: Wer rasch eine Hausordnung für andere setzt, muss sie danach prüfen lassen. Annahme: Die Schäden hören sonst nicht auf.",
+              "beispiel_pol_2": "Ich halte das Durchgreifen so nicht für vertretbar. Die Situation nennt nur den Gemeinderat; dass eine andere Gewalt mitentschieden oder geprüft hat, sehe ich nicht. Die Regel trifft nur eine Altersgruppe – auch mich, obwohl ich nur auf den Zug wartete (Rechtsgleichheit, Kap. 1.3, S. 24). Die Gewalten sollen einander kontrollieren, damit Macht nicht missbraucht wird (Kap. 3.1, S. 91). Für die andere Seite spricht: Die Schäden sind echt, und der längere Weg hilft den Anwohnern heute nicht. Ich verlange darum diese Kontrolle: Zuerst entscheidet die Legislative der Gemeinde mit, und der Gemeinderat nennt die Grundlage. Dasselbe würde ich in einem Jugendtreff fragen, wenn die Leitung über Nacht Regeln nur für die Jüngsten setzt.",
+              "nicht_tragfaehig": "Ein Urteil «erlaubt» oder «verboten» ohne Regel mit Seite; ein Urteil, das nur die eigene Betroffenheit nennt; eine Antwort, die der Gegenseite keinen Grund lässt oder keine Kontrolle nennt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was das Recht verlangt",
+          "Wie es im Fall läuft",
+          "Was ich daraus schliesse"
+        ],
+        "hinweis": "Drei Zeilen, links je mit Seite – auch etwas, das für «vertretbar» spricht. Rechts: mein Schluss – und welche Kontrolle verlange ich?",
+        "loesung_zeilen": [
+          [
+            "Gewalten kontrollieren einander (Kap. 3.1, S. 91)",
+            "Die Situation nennt nur den Gemeinderat (Exekutive)",
+            "Legislative der Gemeinde soll die Regel überprüfen"
+          ],
+          [
+            "Niemand wird wegen des Alters diskriminiert (Kap. 1.3, S. 24); Verordnung nur mit Gesetz (S. 22)",
+            "Regel trifft nur unter 18-Jährige; Grundlage nicht genannt",
+            "Begründung und Grundlage verlangen; beides bleibt offen (Fallüberlegung)"
+          ],
+          [
+            "Exekutive führt aus und verwaltet (Kap. 3.1, S. 91); Allgemeininteresse vor Eigeninteresse (Kap. 1.3, S. 23)",
+            "Schäden am Bahnhofplatz; der Gemeinderat handelt rasch",
+            "Spricht für «vertretbar» – Deutung, kein Rechtsurteil"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster auf S. 3 (zu Kap. 6.2)",
+        "beispiel": [
+          "S. 12, Zeile 2 · Hallenbad schliesst früher · «neu um 20 Uhr» · → Öffnungszeit (erfunden)"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und ein Check mit Kommentar und Antwort aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Welche Staatsgewalt handelt in der Quelle, welche kontrolliert sie – und wie weit reicht diese Kontrolle? Notieren Sie als Befund in zwei bis drei Sätzen, was Sie für Ihren Fall ableiten.",
+          "liefert": "Zwei Belege mit Fundstelle, ein Befund",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-521a-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst ganz ansehen. Dann je Aussage eine Zeile in Stichworten, Zeitmarke vorn.",
+              "«Notrecht»: Verordnungen für eine Krise, ohne den üblichen Weg der Gesetzgebung."
+            ],
+            "satzanfaenge": [
+              "«In der Quelle handelt …; das ist die … (Zeitmarke …)»",
+              "«Kontrolliert wird sie von …, aber nur so weit, dass …»",
+              "«Für meinen Fall leite ich ab, dass …»"
+            ],
+            "produkt": "Teil 2: Gegenbild Diktatur (Kap. 3.1, S. 91); dazu als Vergleich Ihre zwei Zeilen mit Zeitmarke (Schweiz)."
+          },
+          "loesung": {
+            "kern": "Exekutive handelt, Legislative kontrolliert begrenzt",
+            "quelle_ref": "q-521a-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Exekutive handelt: Regierung regiert seit sechs Wochen allein, per Notrecht (00:01–00:07). Legislative kontrolliert die Exekutive: Parlament kann korrigieren, teils abhängig von der Regierung (00:18–00:24). Reichweite: kann selbst verordnen (01:56–02:07), stimmt faktisch zu (02:11–02:16).",
+                "quelle": "Quelle, Zeitmarken"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Politologe (Einschätzung): Auftrag zu langsam, ein bis zwei Jahre (01:09–01:27); dagegen ein Ratsmitglied (01:31–01:52). Regierung stellt Weichen, Parlament verfeinert (02:26–02:41), bestimmt ab Mai wieder mit (02:43).",
+                "quelle": "Quelle, Zeitmarken"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Exekutive, Legislative, auch Gewaltenteilung (LF1); Notrecht, Motion (Glossar)."
+              },
+              {
+                "label": "Einordnung",
+                "text": "Stand April 2020. Bild, Sprecher/in: erschlossen. 01:34: Rolle statt Name. 00:52–01:06 (Hilfen 2020): nicht verwenden."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Falsche Angabe in den Abstimmungsunterlagen (01:19–01:24); oberstes Gericht hebt die ganze Abstimmung auf (00:06, 01:41–01:48); Weiteres entscheidet die Regierung (01:51). Judikative. Keine Zahl.",
+                "quelle": "Ersatzquelle, Zeitmarken"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:01 · Sprecher/in",
+                "sechs Wochen allein, per Notrecht",
+                "die Regierung entscheidet allein",
+                "Exekutive"
+              ],
+              [
+                "00:18 · Sprecher/in",
+                "Parlament kann korrigieren, teils abhängig",
+                "die Kontrolle hat Grenzen",
+                "Legislative"
+              ],
+              [
+                "01:14 · Politologe",
+                "beide Räte, bis zwei Jahre",
+                "für ihn zu langsam",
+                "Motion"
+              ],
+              [
+                "01:56 · Sprecher/in",
+                "Parlament kann selbst verordnen",
+                "faktisch stimmt es zu (02:11)",
+                "Notrecht"
+              ]
+            ],
+            "befund": "In der Quelle handelt die Exekutive: Die Regierung regiert seit sechs Wochen weitgehend allein, per Notrecht (00:01). Die Legislative kontrolliert die Exekutive, aber mit Grenzen: Das Parlament kann korrigieren, ist dabei teils auf die Regierung angewiesen (00:18) und stimmt den wichtigen Entscheiden faktisch zu (02:11). Fallüberlegung: Auch in meinem Fall nennt die Situation nur die Exekutive – ich frage, wer sie wann kontrolliert."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.1 ↔ Quelle",
+          "pol_typ": "lehrmittel_quelle",
+          "text": "Kap. 3.1 (S. 91) sagt, wie sich die Gewalten kontrollieren; die Quelle zeigt eine Regierung in der Krise. Ihr Fall: Ist das Durchgreifen vertretbar oder nicht – und welche Kontrolle verlangen Sie?",
+          "liefert": "Begründetes Urteil mit verlangter Kontrolle",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Befund aus LF3: Wer handelte, wer kontrollierte, wie weit reichte das?",
+              "3B-Schema (S. 6): Behauptung, Begründung mit Seite oder Zeitmarke, Beispiel."
+            ],
+            "satzanfaenge": [
+              "«Laut Kap. 3.1 (S. 91) sollen die Gewalten …»",
+              "«Die Quelle zeigt, dass … (Zeitmarke …)»",
+              "«Ich halte es für (nicht) vertretbar, denn … Ich verlange …»"
+            ],
+            "produkt": "Ihr Urteil kommt in Teil 3 «Unser Urteil» (Schritt 04); der Befund (LF3) stützt es."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Lehrmittel ↔ Quelle, Urteil",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt aus Kap. 3.1 (S. 91): Die Gewalten kontrollieren einander und sind voneinander unabhängig",
+                "nennt aus der Quelle mit Zeitmarke (Stand April 2020): Die Regierung regiert wochenlang allein (00:01); die Kontrolle des Parlaments hat Grenzen (00:18, 02:11) und setzt ab Mai wieder ein (02:43)",
+                "urteilt in Ich-Form über den eigenen Fall (Fallüberlegung: Die Situation nennt nur die Exekutive der Gemeinde), sagt, was für die andere Seite spricht, und nennt die verlangte Kontrolle; kein Rechtsurteil – beide Urteile gelten",
+                "mit Ersatzquelle: Die Quelle zeigt dann einen Fall, in dem die Kontrolle greift – das oberste Gericht rügt die Regierung (03:17–03:42)"
+              ],
+              "beispiel_pol_1": "Ich halte das Durchgreifen für vertretbar, wenn die Kontrolle rasch folgt. Laut Kap. 3.1 kontrollieren die Gewalten einander (S. 91). In der Quelle stellt die Regierung in der Krise zuerst die Weichen (02:26–02:41), ab Mai bestimmt das Parlament wieder mit (02:43; Stand April 2020). Ich lese das so: Rasch handeln geht, wenn die Kontrolle nachkommt – auch nach den Schäden bei uns. Für die andere Seite spricht: Die Regel trifft nur unter 18-Jährige. Ich verlange, dass der Gemeinderat die Grundlage nennt und die Legislative der Gemeinde die Regel bald überprüft. Dasselbe frage ich bei jeder Hausordnung: Wer prüft sie?",
+              "beispiel_pol_2": "Ich halte das Durchgreifen so nicht für vertretbar. Kap. 3.1 verlangt, dass die Gewalten einander kontrollieren und unabhängig sind (S. 91). In der Quelle hängt das Parlament teils vom Entgegenkommen der Regierung ab (00:18) und stimmt den wichtigen Entscheiden faktisch zu (02:11–02:16; Stand April 2020). Ich lese das so: Regiert eine Gewalt allein, wird die Kontrolle schwach – und bei uns gab es keine Krise im ganzen Land. Für die andere Seite spricht: Die Schäden sind echt. Ich verlange, dass zuerst die Legislative der Gemeinde mitentscheidet. Das würde ich auch in einem Jugendtreff fragen, wenn die Leitung über Nacht Regeln setzt.",
+              "nicht_tragfaehig": "Ein Urteil ohne Seite und ohne Zeitmarke; die Krise von 2020 mit dem eigenen Fall gleichsetzen; ein Urteil «erlaubt» oder «verboten»; eine Antwort ohne Grund für die Gegenseite oder ohne verlangte Kontrolle."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-521a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle (QR-Seite) zweimal an. Vier Zeilen: vorn Zeitmarke, dann Bild, Ton, Aussage und ein Begriff aus LF1 oder dem Glossar. Zwei davon (wer handelt, wer kontrolliert) belegen Teil 2.",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-521a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was tut jede der drei Staatsgewalten, und wer hat die Aufsicht über wen?",
+          "erwartung": "Abs. 1: drei Gewalten, auf allen Staatsebenen getrennt, gegen Machtmissbrauch; je Ebene gehört eine Person nur einer an. Abs. 2: Die Regierung führt die Geschäfte und setzt Gesetze um. Abs. 6: Das Parlament erlässt Gesetze, hat die Oberaufsicht über Regierung und oberstes Gericht, wird vom Volk gewählt. Abs. 7: Das oberste Gericht schützt die Rechte der Einzelnen, entscheidet Streit zwischen Einzelnen und Staat. Absätze ohne Zwischentitel gezählt; ohne Datum, Abruf 04.10.2026."
+        },
+        {
+          "ref": "q-521a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Woran erkenne ich einen Rechtsstaat, und was ist sein Gegenteil?",
+          "erwartung": "Satz 1: Staatliches Handeln stützt sich auf Verfassung und Gesetz. Satz 2: Schutz vor Eingriffen ohne Grundlage. Satz 3: geteilte Gewalten. Satz 4: Gerichte prüfen unabhängig. Satz 5: Gegenteil Diktatur oder Polizeistaat. Satz 6–7: Demokratie ohne Rechtsstaat ist nur Schein. Deutung: Prüfpunkt 1 fragt nach Satz 1, Prüfpunkt 3 nach Satz 4. «Unrechtsstaat» steht auch hier nicht. Ein Absatz, Sätze gezählt; Abruf 04.10.2026."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "01:12 Trainerin in der Halle · «Training fällt oft aus» · Halle ist zu knapp · → Belegung (erfunden)"
+        ]
+      },
+      "scaffold_90": "Füllen Sie die erste Rasterzeile gemeinsam (Zeitmarke 00:01); das Beispiel auf S. 6 zeigt einen Check mit Kommentar und Antwort."
+    }
+  }
+}
