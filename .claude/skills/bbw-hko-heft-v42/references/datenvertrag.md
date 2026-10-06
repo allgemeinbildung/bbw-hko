@@ -623,7 +623,7 @@ schreibt sie nicht.
 | `raster.quelle_ref` in `ohne_medien`; `raster.knoten_ref`, `raster.auftrag`, `raster.beispielzeile` in `mit_medien` | je nur in der anderen Spur |
 | `quellen` in `ohne_medien` | verboten (`ERR_V42_R3`) |
 | `kasten_s4.spalten`, `.hinweis`, `.loesung_zeilen` in `mit_medien` | nur bei `typ: "denkhilfe"` |
-| `methoden[].beispiel` im Kern; `methoden_ref_rezeption.tun` | `beispiel` nur in `methoden_ref_rezeption` |
+| `methoden[].beispiel` im Kern; `methoden_ref_rezeption.tun` | `beispiel` nur in `methoden_ref_rezeption` — Ausnahme (ENTSCHEIDE E31 Nr. 2): Die Übertragung einer `hko-`Karte, deren `tun` nicht gedruckt wird, darf ausnahmsweise über ein überschriebenes `beispiel` in der Methoden-Referenz des Kerns laufen (`docs/methodenkartei.md`); der Bericht nennt es |
 | `set.entwurf_komponenten` | entfällt; die ganze Einheit trägt `status: "entwurf"` |
 
 ### 11.4 Das eine Feld ausserhalb der Gold-Form: `set.lehrgaenge`

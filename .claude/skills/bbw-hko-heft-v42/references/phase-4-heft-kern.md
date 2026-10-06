@@ -256,10 +256,18 @@ schneidet Seite 6 still ab. Für v4.2 prüft das kein Skript — von Hand zähle
 heisst. Pflicht bei Lehrmittel-Karten (`lm-…`); bei eigenen Karten (`hko-…`) nur, wenn die Karte
 ohne Übertragung nicht verständlich ist. Kein Begriff des KN-Falls, kein Lehrmitteltext.
 
+**Bei `hko-`Karten wird `tun` nicht gedruckt** — der Renderer bleibt, wie er ist, weil Seite 6 in
+fast allen Einheiten 0 px Reserve hat. Die Übertragung einer eigenen Karte auf die Abgabe läuft
+darum über `fuer` und ausnahmsweise über ein überschriebenes `beispiel` in der Methoden-Referenz
+(`docs/methodenkartei.md`). Wer sich bei einer `hko-`Karte auf `tun` verlässt, druckt nichts.
+(Herkunft: ENTSCHEIDE E31 Nr. 2; Berichte `2026-10-04-221` §10, `2026-10-04-411` §10.)
+
 **Neue Karte** nur, wenn keine vorhandene passt — dann nach `docs/methodenkartei.md` §4 und §6:
 ID `hko-<slug>` oder `lm-<kap>-<slug>`, Musterbeispiel mit **neutralem Sujet** (kein Fall dieser
 Einheit), eigene Formulierung, Seitenzahl nur wenn am Buch geprüft. Bestehende Karten werden nie
-geändert. Jede neue Karte steht im Bericht.
+geändert: Passt eine Karte nicht zur Abgabe, überschreibt die Einheit (`fuer`, ausnahmsweise
+`beispiel`); ein Fehler in einer Karte gehört in den Bericht (`references/lauf.md` §10; ENTSCHEIDE
+E31 Nr. 3). Jede neue Karte steht im Bericht.
 
 ## 9. Felder, die nur die Lehrperson sieht
 
