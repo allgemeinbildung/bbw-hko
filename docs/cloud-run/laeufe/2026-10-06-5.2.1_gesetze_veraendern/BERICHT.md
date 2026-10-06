@@ -486,3 +486,44 @@ Ein Commit «Einheit 5.2.1_gesetze_veraendern (bbw-hko-heft-v42)»: Ordner der
 Einheit, die acht Karten `q-521*`, der Bauplan, dieser Bericht mit
 `check-all.txt` und `messung.txt`. Die zwei Index-Dateien sind gegenüber dem
 letzten Commit unverändert. Status `"entwurf"`. Kein Push.
+
+## 13. Nachtrag vom 2026-10-07 — vier offene Punkte entschieden (Pietro)
+
+Nach dem Stopp vor der Freigabe hat Pietro vier Punkte aus Abschnitt 11
+entschieden. Umgesetzt, Tor danach vollständig neu (Dateien `check-all.txt`
+und `messung.txt` sind die Ausgaben nach diesem Nachtrag):
+
+1. **Neue Methodenkarte `hko-wegskizze` («Wegskizze als Tabelle») für Heft B**
+   anstelle von `hko-wirkungskette`. Das ändert einen Entscheid des Bauplans
+   (§4, Karte 3; §9 «keine neue Karte nötig») — mit Freigabe von Pietro. Die
+   Karte beschreibt, was das Heft verlangt: Tabelle, vier bis sechs Stationen,
+   an jeder entscheidet jemand, ein Beleg in zwei Zeilen; Musterbeispiel mit
+   neutralem Sujet. `hko-wirkungskette` bleibt unverändert für die anderen
+   Einheiten. Seite 6 von Heft B: Die Karte ist 28 px niedriger als die alte,
+   nichts abgeschnitten. Der Hinweis im Begleiter auf den Widerspruch der
+   Karte ist entfallen. Die Karte ist nicht gegengelesen (keine vierte Runde).
+2. **Methodenkarte `lm-17-3-3b-schema`: `seiten` «S. 394» statt «S. 394–395».**
+   Am Kapitel nachgeschlagen: Das Schema steht ganz auf S. 394; S. 395 trägt
+   Hinweise zur Sprache und kein Wort zum Schema. Fehler in der Karte, nach
+   E31 behoben. Betrifft den Druck von 22 Heften in 18 Einheiten (ein Feld,
+   wird kürzer). `bestand-v42 --pruefen`: 26 Dokumente unverändert — der
+   Bestand muss nicht neu geschrieben werden. `check-all` über die 16 anderen
+   Einheiten mit dieser Karte: 14 grün; `1.1.1_ausbildung_erfassen_zeigen` und
+   `5.4.2_internationale_entscheide_wirken_4j` sind rot wegen zu langer
+   Lösungstexte — schon vor der Änderung, ohne Zusammenhang mit der Karte.
+   Nicht angefasst: Eigene Texte anderer Einheiten, die «S. 394–395» nennen
+   (acht Dateien, darunter die Begleiter von 3.3.1 und 4.2.1).
+3. **W-Fragen in Heft A:** Die Übertragung heisst neu «Wer hat was
+   beschlossen, wo, wann – und warum, gestützt worauf?»; damit passt der
+   Merksatz der Karte zum «Warum». Karte unverändert.
+4. **«Etappe 1/2/3» und das Beispiel «Sammelstelle» bleiben** (Entscheide 1
+   und 2 in Abschnitt 7); sie werden im Freigabe-Eintrag in `ENTSCHEIDE.md`
+   festgehalten. Die Rasterkarte `hko-quelle-raster` bleibt unverändert
+   (Sammelliste, mit dem Karten-Auftrag).
+
+Tor nach dem Nachtrag: `check-all` GRUEN · Messung Exit 0, kein Überlauf ·
+`bestand-v42 --pruefen` OK · `npm run build` Exit 0.
+
+Damit erledigt aus Abschnitt 11: die Punkte zu `hko-wirkungskette`, zur
+Seitenangabe der 3B-Karte und zum Merksatz der W-Fragen. Abschnitt 1 ist zu
+lesen als: neue Methodenkarten — eine (`hko-wegskizze`).
