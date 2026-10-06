@@ -1,0 +1,987 @@
+{
+  "id": "5.2.1_gesetze_veraendern_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "5.2",
+  "modul_titel": "Mich im Staat orientieren — Gesetze und Entscheide verändern",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Vom Ärger zum Anliegen – und wie es Gesetz wird",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Anliegen ausarbeiten und präsentieren"
+  },
+  "prinzip_ref": "5.2.1_gesetze_veraendern_prinzip",
+  "nrlp": {
+    "nr": "5.2.2",
+    "nr_primary": [
+      "5.2.2"
+    ],
+    "lebensbezug": "5.2",
+    "themen": [
+      "T5"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Politik",
+        "iteration": "R2"
+      }
+    ],
+    "sprachmodi": [
+      "Produktion mündlich"
+    ],
+    "sprachmodus_ids": [
+      "SM4"
+    ],
+    "sk": [
+      9,
+      11,
+      12
+    ],
+    "kompetenz_id": "5.2.2",
+    "lebensbezug_id": "5.2",
+    "kompetenz_text": "Ich kann ein eigenes politisches Anliegen auf Basis eines konkreten Problems aus meinem Alltag oder meiner Lebenswelt ausarbeiten und die einzelnen Schritte des Gesetzgebungs- bzw. Abstimmungsprozesses erläutern.",
+    "lebensbezug_text": "Ich erlebe, dass Gesetze und politische Entscheidungen verändert werden können."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "In meiner Klasse verdienen wir zwischen CHF 620 und CHF 1150 im Monat – je nach Branche und Betrieb, bei gleich vielen Arbeitsstunden. Das ärgert uns. Zu fünft haben wir eine Forderung aufgeschrieben: Für alle Lernenden soll ein Mindestlohn von CHF 900 im Monat gelten. Nur weiss niemand von uns, wer so etwas beschliessen kann. Ein Kollege winkt ab: «Wenn da alle mitreden, bleibt von euren CHF 900 nichts übrig.» Eine Kollegin findet: «Lieber etwas weniger fordern, dafür machen mehr Leute mit.» Am Freitag stellen wir unser Anliegen einer Gruppe aus anderen Klassen vor und bitten sie um Unterstützung. Bis dann will ich klären, wer für unsere Forderung zuständig ist, welchen Weg sie gehen muss, bis sie als Regel gilt, und wo ich fest bleibe und wo ich nachgebe.",
+  "zahlen_tabelle": [
+    {
+      "label": "Tiefster Monatslohn in meiner Klasse",
+      "wert": "CHF 620"
+    },
+    {
+      "label": "Höchster Monatslohn in meiner Klasse",
+      "wert": "CHF 1150"
+    },
+    {
+      "label": "Unsere Forderung: Mindestlohn im Monat",
+      "wert": "CHF 900"
+    },
+    {
+      "label": "So viele tragen die Forderung bisher",
+      "wert": "5 Personen"
+    }
+  ],
+  "leitfrage": "Bringe ich mein Anliegen so ein, wie ich es will – oder so, dass eine Mehrheit es mitträgt?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Anliegen im Wortlaut bewahren vs. mehrheitsfähig machen",
+    "hint": "CHF 900 für alle – oder eine Fassung, der mehr Leute zustimmen? Wer fest bleibt, kann scheitern; wer nachgibt, erhält weniger."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 6.5",
+      "titel": "Entstehung eines Gesetzes",
+      "unterueberschrift": "acht Stationen",
+      "seiten": "Seite 171",
+      "fuer_leitfrage": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 6.4",
+      "titel": "Referendum und Initiative",
+      "unterueberschrift": "Volksrechte",
+      "seiten": "Seite 168-170",
+      "fuer_leitfrage": [
+        1,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 6.2",
+      "titel": "Bundesstaat Schweiz",
+      "unterueberschrift": "Aufgaben der drei Ebenen",
+      "seiten": "Seite 159",
+      "fuer_leitfrage": [
+        2
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bereiten einen Kurzvortrag von drei Minuten zu Ihrem Anliegen vor. LF1 liefert die Stationen eines Gesetzes, LF2 Ebene, Stufe und Ihr Anliegen in einem Satz, LF3 Belege, wo ein Anliegen sich verändert, LF4 Ihren Entscheid zu Weg und Fassung.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 6.5 | S. 171 · Kap. 6.4 | S. 168-170",
+      "text": "Nennen Sie die acht Stationen, über die ein Bundesgesetz entsteht, und wer an jeder handelt (Kap. 6.5, S. 171). Was bewirken Referendum und Volksinitiative (Kap. 6.4, S. 168–170)?",
+      "liefert": "Stationen eines Gesetzes mit Beteiligten",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 171: Die fett gedruckten Wörter am Absatzanfang sind die acht Stationen.",
+          "Motion: Das Parlament beauftragt den Bundesrat mit einem Gesetz (S. 171)."
+        ],
+        "satzanfaenge": [
+          "«Am Anfang steht …; danach …»",
+          "«In der Vernehmlassung dürfen … Stellung nehmen.»",
+          "«Mit dem Referendum können Stimmberechtigte …»"
+        ],
+        "produkt": "Für die Wegskizze (S. 7) wählen Sie daraus vier bis sechs Stationen, die Ihr Anliegen betreffen."
+      },
+      "loesung": {
+        "kern": "Acht Stationen, viele reden mit; zwei Volksrechte",
+        "zeilen": [
+          {
+            "label": "Stationen 1–4",
+            "text": "Anstoss: Bundesrat oder Motion des Parlaments. Vorentwurf: Fachleute. Vernehmlassung: Kantone, Parteien, Verbände. Entwurf mit Botschaft: Verwaltung überarbeitet, Bundesrat schickt ans Parlament.",
+            "quelle": "Kap. 6.5, S. 171"
+          },
+          {
+            "label": "Stationen 5–8",
+            "text": "Behandlung in beiden Räten: Kommission, dann Rat; Differenzbereinigung, ohne Einigung kein Gesetz. Veröffentlichung mit Referendumsfrist (100 Tage). Volksabstimmung, falls das Referendum zustande kommt. Inkrafttreten: meist durch den Bundesrat.",
+            "quelle": "Kap. 6.5, S. 171"
+          },
+          {
+            "label": "Wer redet mit",
+            "text": "Bundesrat, Kantone, Parteien, Verbände, Parlament, allenfalls das Volk – darum breit abgestützte Gesetze.",
+            "quelle": "Kap. 6.5, S. 171"
+          },
+          {
+            "label": "Referendum",
+            "text": "Fakultativ: 50 000 Unterschriften oder acht Kantone in 100 Tagen: Abstimmung über ein Gesetz (Volksmehr). Obligatorisch: Verfassungsänderungen (doppeltes Mehr).",
+            "quelle": "Kap. 6.4, S. 168"
+          },
+          {
+            "label": "Volksinitiative",
+            "text": "100 000 Unterschriften in 18 Monaten: Abstimmung über eine Verfassungsänderung, doppeltes Mehr (S. 169–170). Gegenvorschlag: Sache des Parlaments (BV Art. 139; S. 170 nennt auch den Bundesrat).",
+            "quelle": "Kap. 6.4, S. 169–170"
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 6.2 | S. 159 · Kap. 1.3 | S. 22 · eigener Fall",
+      "text": "Welche Ebene ist nach Kap. 6.2 (S. 159) für Ihr Anliegen zuständig: Bund, Kanton oder Gemeinde? Auf welcher Stufe müsste die Regel stehen (Kap. 1.3, S. 22)? Schreiben Sie Ihr Anliegen in einem Satz.",
+      "liefert": "Ebene, Stufe und Anliegen in einem Satz",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "S. 159 (Föderalismus): Suchen Sie in den drei Listen das Stichwort zur Lehre.",
+          "S. 22: vier Stufen. Welche Stufe führt direkt die Verfassung näher aus?"
+        ],
+        "satzanfaenge": [
+          "«Zuständig ist …, denn auf S. 159 steht …»",
+          "«Die Regel müsste auf der Stufe … stehen, weil …»",
+          "«Ich fordere, dass … festlegt: …»"
+        ],
+        "produkt": "Ebene, Stufe und Ihr Satz kommen auf S. 7 in die Präsentationskarte, Zeile «Anliegen»."
+      },
+      "loesung": {
+        "kern": "Abgeleitet: Bund, Stufe Gesetz; ein Satz",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Ebene mit Seite, Stufe mit Seite und das Anliegen in einem Satz: wer was festlegen soll."
+          },
+          {
+            "label": "Ebene",
+            "text": "Abgeleitet aus dem Lehrmittel: der Bund. Die Liste der Bundesaufgaben nennt die Berufsbildung; dass der Lohn in der Lehre dazu zählt, ist Deutung. S. 22 zeigt die Stufen am selben Beispiel.",
+            "quelle": "Kap. 6.2, S. 159; 1.3, S. 22"
+          },
+          {
+            "label": "Stufe",
+            "text": "Gesetz: Gesetze führen einen Verfassungsartikel näher aus; eine Verordnung bräuchte bereits ein Gesetz als Grundlage. Ableitung – S. 22 nennt keine Lohnregel. Wer in LF4 die Volksinitiative wählt, schreibt «Verfassung» (Kap. 6.4, S. 169): ebenso gültig.",
+            "quelle": "Kap. 1.3, S. 22"
+          },
+          {
+            "label": "Möglicher Satz",
+            "text": "«Ich fordere, dass der Bund in einem Gesetz festlegt: Alle Lernenden verdienen mindestens CHF 900 im Monat.»"
+          },
+          {
+            "label": "Grenze",
+            "text": "Ableitung aus den zwei Seiten, keine Aussage über geltendes Recht: Ob und wo Löhne in der Lehre geregelt sind, sagt das Lehrmittel nicht."
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "«Kanton, weil Schule»: S. 159 nennt die Schule beim Kanton, die Berufsbildung aber beim Bund."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Kurzvortrag von drei Minuten zum eigenen Anliegen mit Präsentationskarte und Wegskizze",
+    "titel": "Mein Anliegen: Präsentationskarte und Wegskizze",
+    "format_detail": "Sie halten einen Kurzvortrag von drei Minuten, frei gesprochen vor drei bis vier Personen, die Ihr Anliegen mittragen sollen. Auf S. 7 bereiten Sie ihn vor. Oben steht die Präsentationskarte mit fünf Zeilen in Stichworten: «Problem» · «Anliegen» (ein Satz in Ich-Form, darunter klein die zuständige Ebene und die Stufe) · «Fest» (was Sie nicht preisgeben) · «Offen» (wo Sie nachgeben – oder, wenn Sie unverändert einbringen, was Sie dafür in Kauf nehmen; dazu ein Einwand, auf den Sie antworten) · «Bitte» (was die Zuhörenden für Ihr Anliegen tun sollen). Vor die Zeile «Fest» setzen Sie einen vollen Kreis, vor die Zeile «Offen» einen leeren. Darunter zeichnen Sie selbst die Tabelle «Wegskizze» mit drei Spalten: Station · Wer entscheidet · Was sich ändern kann. Sie hat vier bis sechs Zeilen; in zwei Zeilen steht in Spalte 3 ein Beleg aus Ihrem Raster (S. 3) mit Fundstelle – er zeigt, dass sich ein Anliegen an dieser Station ändern kann. Unter der Wegskizze notieren Sie nach dem Vortrag die gestoppte Dauer und eine Rückmeldung aus der Gruppe.",
+    "beschreibung": "Mit Karte und Wegskizze spreche ich frei. Auf der Karte setze ich zwei Marken: voller Kreis = hier bleibe ich fest, leerer Kreis = hier gebe ich nach.",
+    "schritte": [
+      {
+        "label": "01 Stationen klären",
+        "hint": "Aus LF1: S. 7: oben Platz für die Karte lassen, darunter die Tabelle «Wegskizze» zeichnen: Station · Wer entscheidet · Was sich ändern kann."
+      },
+      {
+        "label": "02 Ebene und Stufe bestimmen",
+        "hint": "Aus LF2: S. 7 oben, Präsentationskarte (fünf Zeilen): «Problem» in Stichworten, «Anliegen» als Satz, darunter Ebene und Stufe."
+      },
+      {
+        "label": "03 Veränderungen belegen",
+        "hint": "Aus LF3: In zwei Zeilen der Wegskizze steht in Spalte 3 ein Beleg aus Ihrem Raster (S. 3), mit Fundstelle."
+      },
+      {
+        "label": "04 Weg und Fassung entscheiden",
+        "hint": "Aus LF4: Wegskizze: vier bis sechs Stationen. Karte: «Fest»; «Offen»: wo Sie nachgeben oder was Sie in Kauf nehmen. Dazu ein Einwand."
+      },
+      {
+        "label": "05 Kurzvortrag halten",
+        "hint": "Karte: «Bitte» schreiben. Frei vortragen: drei Minuten, vor drei bis vier Personen. Unter der Wegskizze: Dauer, eine Rückmeldung."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Präsentationskarte, darunter die Wegskizze (S. 7)",
+      "Eine Rückmeldung aus der Gruppe in einem Satz (S. 7, unter der Wegskizze)",
+      "Die gestoppte Dauer Ihres Kurzvortrags (S. 7, unter der Wegskizze)"
+    ],
+    "beispielbild": {
+      "titel": "Anderer Fall (erfunden): Kehricht-Sammelstelle im Quartier",
+      "legende": [
+        {
+          "key": "fest",
+          "text": "hier bleibe ich fest"
+        },
+        {
+          "key": "offen",
+          "text": "hier gebe ich nach"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Präsentationskarte",
+          "eintraege": [
+            {
+              "text": "Problem: Sammelstelle nur werktags bis 17 Uhr offen."
+            },
+            {
+              "text": "Anliegen: Ich fordere, dass sie auch am Samstag offen ist.",
+              "notiz": "Ebene: Gemeinde · Stufe: Reglement"
+            },
+            {
+              "marke": "fest",
+              "text": "Fest: jeden Samstag im Jahr."
+            },
+            {
+              "marke": "offen",
+              "text": "Offen: am Samstag nur bis Mittag.",
+              "notiz": "Einwand: «Das kostet mehr Personal.»"
+            },
+            {
+              "text": "Bitte: Unterschreibt unsere Eingabe an den Gemeinderat."
+            }
+          ]
+        },
+        {
+          "titel": "Wegskizze",
+          "kopf": [
+            "Station",
+            "Wer entscheidet",
+            "Was sich ändern kann"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Eingabe",
+                "wir Anwohnenden",
+                "noch nichts"
+              ]
+            },
+            {
+              "zellen": [
+                "Prüfung",
+                "Gemeinderat",
+                "Zeiten (Regl. Art. 3)"
+              ]
+            },
+            {
+              "zellen": [
+                "Beschluss",
+                "Gemeindeversammlung",
+                "Kosten (Regl. Art. 7)"
+              ]
+            },
+            {
+              "zellen": [
+                "Regel gilt",
+                "Gemeinderat",
+                "Beginn"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Mindestlohn von CHF 900 – Karte und Wegskizze",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach dem Kurzvortrag zeigen. Sie folgt dem zweiten Beispiel von LF4 (angepasst, über ein Ratsmitglied ins Parlament). Ebenso gültig ist, wer unverändert einbringt und die Volksinitiative wählt: andere Stationen (Unterschriften sammeln, Empfehlung und Gegenvorschlag, Volksabstimmung – Kap. 6.4, S. 169–170), Stufe «Verfassung» statt «Gesetz» (S. 169), und in der Zeile «Offen» steht, was dafür in Kauf genommen wird (langer Weg, offener Ausgang). Nennen Lernende die Petition (Kap. 6.4, S. 170): Sie steht allen Urteilsfähigen offen, die Behörde muss sie aber nur zur Kenntnis nehmen – als erster Schritt gültig; dass daraus allein keine Regel entsteht, ist Deutung. Die zwei Belege stehen hier mit Seite. In der Fassung mit Medien steht dort eine Zeitmarke aus dem Raster, etwa in der Zeile «Behandlung in den Räten»: «weniger als verlangt – in der Quelle zwei statt vier Wochen (00:11–00:14)». Der Beleg zeigt an einem anderen Fall, dass sich ein Anliegen an dieser Station ändern kann; die Zuordnung zur Station ist Deutung. Fallüberlegung, nicht Lehrmittelaussage: der Brief an ein Ratsmitglied, der Beginn ab dem zweiten Lehrjahr, die Übergangszeit, «Stimmberechtigte» bei der Referendumsfrist (S. 171 nennt dort niemanden; vgl. Kap. 6.4, S. 168), «Ja oder Nein zum ganzen Gesetz» und alles in der Spalte «Was sich ändern kann», was über die Fundstelle hinausgeht. Ebene und Stufe sind eine Ableitung aus Kap. 6.2, S. 159 und Kap. 1.3, S. 22 – das Heft sagt nichts über geltende Lohnregeln und bewertet das Anliegen nicht. Im Beispiel auf S. 6 ist alles erfunden: Fall, Ebene, Stufe, Stationen und die zwei Fundstellen («Regl. Art. …» steht für ein Reglement der Gemeinde). S. 159 nennt die Kehrichtabfuhr als Gemeindeaufgabe, die Behörden der Gemeinde nennt Kap. 3.1, S. 91. Auf dem Blatt der Lernenden stehen unter der Wegskizze zusätzlich die gestoppte Dauer und eine Rückmeldung aus der Gruppe.",
+      "legende": [
+        {
+          "key": "fest",
+          "text": "hier bleibe ich fest"
+        },
+        {
+          "key": "offen",
+          "text": "hier gebe ich nach"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Präsentationskarte",
+          "eintraege": [
+            {
+              "text": "Problem: gleich viele Arbeitsstunden, aber CHF 620 bis CHF 1150 Lohn im Monat – je nach Branche und Betrieb."
+            },
+            {
+              "text": "Anliegen: Ich fordere, dass der Bund in einem Gesetz einen Mindestlohn von CHF 900 im Monat für Lernende festlegt.",
+              "notiz": "Ebene: Bund (S. 159) · Stufe: Gesetz (S. 22)"
+            },
+            {
+              "marke": "fest",
+              "text": "Fest: Der Mindestlohn gilt in allen Branchen, und am Ende sind es CHF 900."
+            },
+            {
+              "marke": "offen",
+              "text": "Offen: CHF 900 erst ab dem zweiten Lehrjahr; kleine Betriebe erhalten eine Übergangszeit.",
+              "notiz": "Einwand: «Zu teuer für kleine Betriebe.»"
+            },
+            {
+              "text": "Bitte: Fragt in eurer Klasse nach den Löhnen und unterschreibt unseren Brief an ein Ratsmitglied."
+            }
+          ]
+        },
+        {
+          "titel": "Wegskizze",
+          "kopf": [
+            "Station",
+            "Wer entscheidet",
+            "Was sich ändern kann"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Anstoss: Motion",
+                "Parlament beauftragt den Bundesrat",
+                "ob es überhaupt beginnt"
+              ]
+            },
+            {
+              "zellen": [
+                "Vernehmlassung",
+                "Kantone, Parteien, Verbände reden mit",
+                "Betrag, Ausnahmen (Kap. 6.5, S. 171)"
+              ]
+            },
+            {
+              "zellen": [
+                "Behandlung in den Räten",
+                "National- und Ständerat",
+                "Betrag, Beginn (Kap. 6.5, S. 171; mit Medien: Quelle, 00:11–00:14)"
+              ]
+            },
+            {
+              "zellen": [
+                "Referendumsfrist",
+                "Stimmberechtigte, mit Unterschriften",
+                "ob das Volk abstimmt"
+              ]
+            },
+            {
+              "zellen": [
+                "Volksabstimmung",
+                "das Volk",
+                "Ja oder Nein zum ganzen Gesetz"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Behauptungen stehen ohne Begründung da.",
+        "Eine Begründung ist angedeutet, aber lückenhaft oder ohne Beispiel.",
+        "Die Aussagen sind nachvollziehbar begründet und mit einem Beispiel gestützt.",
+        "Schlüssig begründet; ein Einwand ist vorweggenommen und beantwortet, Folgen sind benannt."
+      ],
+      "indikator_produkt": "Im Vortrag: ein Grund mit Beispiel und die Antwort auf einen Einwand."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position ist nicht erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+        "Die Position steht klar in Ich-Form und ist begründet.",
+        "Begründete Position in Ich-Form; benannt ist, was sie kostet und was für die andere Seite spricht."
+      ],
+      "indikator_produkt": "Forderung in Ich-Form; «Offen» nennt, was ich preisgebe oder in Kauf nehme."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt eine fertige Präsentationskarte mit Wegskizze an einem anderen Fall; die Satzanfänge auf S. 2 helfen beim Einstieg.",
+    "scaffold_100": "Nehmen Sie statt des Mindestlohns ein eigenes Problem aus Ihrem Alltag: Was stört Sie, was fordern Sie, wer ist zuständig?"
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-3-praesentation",
+      "fuer": "für den Aufbau des Kurzvortrags",
+      "tun": "Einleitung: Problem. Hauptteil: Anliegen, Weg, «Fest», «Offen». Schluss: Bitte. Frei sprechen."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-wegskizze",
+      "fuer": "für die Wegskizze (S. 7): vier bis sechs Zeilen, zwei mit Beleg"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für die Begründung im Hauptteil",
+      "tun": "Behauptung: Ihr Anliegen. Begründung: warum. Beispiel: Löhne in Ihrer Klasse. Dazu ein Einwand mit Antwort."
+    }
+  ],
+  "mindmap_zentrum": "Allein entscheiden oder Macht teilen",
+  "mindmap_aeste": [
+    {
+      "titel": "Wie entsteht ein Gesetz?",
+      "punkte": [
+        "Motion",
+        "Vernehmlassung",
+        "Botschaft",
+        "Differenzbereinigung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie redet das Volk mit?",
+      "punkte": [
+        "Referendum",
+        "Volksinitiative",
+        "Gegenvorschlag"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer ist zuständig?",
+      "punkte": [
+        "Föderalismus",
+        "Verfassung",
+        "Gesetz"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Steht auf S. 7, wer zuständig ist und welchen Weg mein Anliegen geht?",
+      "Zeigen «Fest» und «Offen», was von den CHF 900 bleibt und was mich das kostet?"
+    ],
+    "mitnahme": [
+      "Mein Anliegen in einem Satz und sein Weg",
+      "Wo ich nachgebe – und wo nicht",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Motion",
+          "nach": "Vernehmlassung",
+          "text": "führt über den Vorentwurf zur"
+        },
+        {
+          "von": "Vernehmlassung",
+          "nach": "Botschaft",
+          "text": "fliesst ein in den Entwurf mit"
+        },
+        {
+          "von": "Botschaft",
+          "nach": "Differenzbereinigung",
+          "text": "geht an beide Räte; weichen sie ab, folgt die"
+        },
+        {
+          "von": "Gesetz",
+          "nach": "Referendum",
+          "text": "kann vors Volk kommen durch das"
+        },
+        {
+          "von": "Volksinitiative",
+          "nach": "Verfassung",
+          "text": "verlangt eine Änderung der"
+        },
+        {
+          "von": "Volksinitiative",
+          "nach": "Gegenvorschlag",
+          "text": "beantwortet das Parlament allenfalls mit einem"
+        },
+        {
+          "von": "Föderalismus",
+          "nach": "Gesetz",
+          "text": "bestimmt, welche Ebene zuständig ist für ein"
+        },
+        {
+          "von": "Gegenvorschlag",
+          "nach": "gilt auch bei …",
+          "text": "ein Teil statt der vollen Forderung – das gibt es auch"
+        }
+      ],
+      "transfer": "Deutung, nicht Lehrmittelaussage: überall, wo eine Regel für viele gelten soll und andere mitreden – bei der Hausordnung einer Wohnsiedlung, bei neuen Regeln für einen Jugendtreff, bei der Platzordnung eines Skateparks.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Kommission",
+          "Referendumsfrist"
+        ],
+        "mit_medien": [
+          "Rückzug",
+          "Kompromiss"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn unter dem Anliegen Ebene und Stufe stehen (Schritt 02) und die Wegskizze den Weg in vier bis sechs Stationen zeigt (Schritte 01 und 04) – im Fall: Bund und Gesetz, abgeleitet aus Kap. 6.2, S. 159 und Kap. 1.3, S. 22; wer die Volksinitiative wählt, schreibt als Stufe «Verfassung» (Kap. 6.4, S. 169).",
+        "Ja, wenn «Fest» nennt, was bleibt, und «Offen», was preisgegeben oder in Kauf genommen wird (Schritt 04) – im Lösungsbild bleiben die CHF 900 in allen Branchen, der Beginn im ersten Lehrjahr nicht; wer unverändert einbringt, nennt den langen Weg und den offenen Ausgang."
+      ],
+      "mitnahme": [
+        "«Der Bund soll in einem Gesetz einen Mindestlohn von CHF 900 für Lernende festlegen.» Weg: Motion, Vernehmlassung, Behandlung in den Räten, Referendumsfrist, allenfalls Volksabstimmung.",
+        "Ich gebe beim Beginn nach (erst ab dem zweiten Lehrjahr, Übergangszeit) – nicht bei den CHF 900 und nicht bei der Geltung für alle Branchen.",
+        "Zum Beispiel, wie wir fünf zu einem Ratsmitglied kommen, das eine Motion einreicht – das sagt das Lehrmittel nicht."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Im Heft: LF1 acht Stationen, je mit Beteiligten",
+        "LF2: Ebene, Stufe und Anliegen in einem Satz",
+        "LF4: Entscheid und was er kostet"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Im Heft: Raster S. 3 voll (alle vier Zeilen)",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Abgabe: Karte und Wegskizze (S. 7)",
+      "vollstaendig_wenn": [
+        "Karte: fünf Zeilen; Anliegen mit Ebene und Stufe",
+        "Wegskizze: vier bis sechs Stationen, zwei mit Beleg (Raster)",
+        "Nach dem Kurzvortrag: Dauer und eine Rückmeldung notiert"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Im Heft: Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation, LF1 und LF2: Stationen klären, Ebene und Stufe bestimmen",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Karte und Wegskizze auf S. 7 beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Karte fertigstellen, Kurzvortrag halten, Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst will ich eine Regel ändern, bei der andere mitreden – und wie viel gebe ich dort nach?",
+    "ziel": "Regeln lassen sich auf einem festgelegten Weg ändern – wer etwas verändern will, braucht die richtige Stelle, Geduld und eine Mehrheit."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Ein Anliegen so ausarbeiten, dass klar ist, wer zuständig ist, welchen Weg es geht und was auf diesem Weg preisgegeben wird",
+    "lehrmittel_anker": "Kap. 6.5 S. 171 (acht Stationen der Gesetzgebung) · Kap. 6.4 S. 168-170 (Referendum, Volksinitiative, Gegenvorschlag, Gesetzesinitiative der Kantone, Petition) · Kap. 6.2 S. 159 (Aufgabenteilung Bund, Kantone, Gemeinden) · Kap. 1.3 S. 22 (Stufen von der Verfassung bis zum Reglement) · Kap. 6.3 S. 163-164 (zwei Kammern, Kommissionen)",
+    "kn_aktivierung": "Der KN verlangt, zwischen einer Forderung im vollen Wortlaut und einer Regel, die eine Mehrheit findet, zu entscheiden, den Weg dafür zu nennen und in Ich-Form zu sagen, wo man fest bleibt und wo man nachgibt. Genau das üben LF4 und die Zeilen «Fest» und «Offen» der Präsentationskarte.",
+    "transfer_check": "Kann die Lernende zu einem neuen Anliegen sagen, wer zuständig ist, über welche Stationen es geht und was sie dafür preisgibt?"
+  },
+  "sk_anker": [
+    {
+      "sk": 9,
+      "wo": "leitfragen[2] — den Weg eines Anliegens als Zusammenspiel der Akteure lesen: wer an welcher Station was verändern kann"
+    },
+    {
+      "sk": 11,
+      "wo": "leitfragen[3] — zwischen Wortlaut und Mehrheit entscheiden und festhalten, was preisgegeben wird"
+    },
+    {
+      "sk": 12,
+      "wo": "handlungsprodukt.schritte[4] + Produkt — das Anliegen vor einer Gruppe präsentieren und um Unterstützung bitten"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 6.5 | S. 171",
+          "text": "An welchen Stationen können laut Kap. 6.5 (S. 171) andere ein Gesetz verändern oder stoppen, und wer ist das? Befund: Was leiten Sie daraus für Ihre Forderung von CHF 900 ab?",
+          "liefert": "Belege, wo ein Anliegen sich verändert",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 6.5 | S. 171",
+            "auftrag": "Lesen Sie Kap. 6.5, S. 171. Zeile 1 ist ein Beispiel. Füllen Sie drei weitere: Absatz, Kernaussage, Beleg / Beispiel, Begriff aus LF1 oder Glossar. Zwei davon werden Belege in der Wegskizze (S. 7).",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 171, Vernehmlassung",
+              "Betroffene reden mit",
+              "Änderungsvorschläge",
+              "Vernehmlassung"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Zeile 1 zeigt, wie es geht. Spalte 1: Seite und die fetten Wörter am Absatzanfang.",
+              "Suchen Sie Stellen, an denen jemand ändern, ablehnen oder zurückweisen kann."
+            ],
+            "satzanfaenge": [
+              "«Verändern können … an der Station … (S. 171)»",
+              "«Gestoppt wird ein Gesetz, wenn …»",
+              "«Für meine CHF 900 leite ich ab: …»"
+            ],
+            "produkt": "Wegskizze (S. 7): In zwei Zeilen steht bei «Was sich ändern kann» ein Beleg aus dem Raster, mit Seite."
+          },
+          "loesung": {
+            "kern": "Drei Stellen: Vernehmlassung, Räte, Volk",
+            "quelle_ref": "Kap. 6.5 | S. 171",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Vernehmlassung: Kantone, Parteien, Verbände schlagen Änderungen vor. Räte: Die Kommission stellt Anträge, der Rat berät im Detail, kann nicht eintreten oder zurückweisen; ohne Einigung der Räte kein Gesetz. Volk: Referendum, dann Abstimmung.",
+                "quelle": "Kap. 6.5, S. 171"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Anstoss: Bundesrat oder Motion des Parlaments – dass hier jemand ein Anliegen stoppt, ist Deutung. Entwurf mit Botschaft: Die Verwaltung überarbeitet nach der Vernehmlassung.",
+                "quelle": "Kap. 6.5, S. 171"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Aus LF1: Motion, Vernehmlassung, Botschaft, Differenzbereinigung, Referendum. Aus dem Raster: Kommission, Referendumsfrist. Die Zuordnung ist Deutung."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: mindestens zwei Stationen mit Beteiligten und Seite, dazu eine Folgerung für die eigene Forderung (Fallüberlegung)."
+              },
+              {
+                "label": "Stand",
+                "text": "Am Kapiteltext geprüft am 05.10.2026; die Zahlen an der Bundesverfassung bestätigt am 06.10.2026 (Art. 141). «Stimmberechtigte» ergreifen das Referendum: S. 168; S. 171 nennt nur die Bedingung."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 171, Vernehmlassung",
+                "Betroffene reden mit",
+                "Änderungsvorschläge",
+                "Vernehmlassung"
+              ],
+              [
+                "S. 171, Behandlung in National- und Ständerat",
+                "Kommission beantragt, Rat entscheidet",
+                "Nichteintreten, Zurückweisung; keine Einigung",
+                "Kommission, Differenzbereinigung"
+              ],
+              [
+                "S. 171, Veröffentlichung mit Referendumsfrist",
+                "Frist für das Referendum",
+                "100 Tage ab Veröffentlichung",
+                "Referendumsfrist"
+              ],
+              [
+                "S. 171, Volksabstimmung, wenn Referendum ergriffen wurde",
+                "Volk stimmt ab",
+                "50 000 Unterschriften, acht Kantone",
+                "Referendum"
+              ]
+            ],
+            "befund": "Laut Kap. 6.5 schlagen Kantone, Parteien und Verbände in der Vernehmlassung Änderungen vor; die Räte beraten im Detail, können nicht eintreten oder zurückweisen, und ohne ihre Einigung gibt es kein Gesetz; kommt das Referendum zustande, stimmt das Volk ab (S. 171). Fallüberlegung: Betrag und Geltung meiner CHF 900 können an mehreren Stationen verändert werden – ich muss wissen, wo ich nachgebe."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 6.5 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Bringen Sie CHF 900 für alle unverändert ein – oder angepasst, damit eine Mehrheit zustimmt? Was kostet Ihr Entscheid? Wer auf dem Weg mitredet, zeigen Kap. 6.5 (S. 171) und Kap. 6.4 (S. 169–170).",
+          "liefert": "Entscheid zu Weg und Fassung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Wege: Motion im Parlament (S. 171) oder Volksinitiative – ändert die Verfassung (S. 169)"
+            ],
+            "satzanfaenge": [
+              "«Auf dem Weg können … meine Forderung ändern (S. …)»",
+              "«Mir ist wichtig, dass … bleibt, weil …»",
+              "«Ich bringe sie … ein; das kostet mich …»"
+            ],
+            "produkt": "Ihr Entscheid wird auf S. 7 zu den Zeilen «Fest» und «Offen»; Ihr Weg füllt die Wegskizze."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ eigener Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt das Modell mit Seite: Vernehmlassung und Behandlung in beiden Räten, wo andere mitreden; das Referendum, das ein Gesetz zu Fall bringen kann (Kap. 6.5, S. 171) und schon als Drohung auf den Inhalt wirkt (Kap. 6.4, S. 169); bei der Volksinitiative Empfehlung und Gegenvorschlag (S. 170)",
+                "entscheidet sich für eine der zwei Möglichkeiten – unverändert oder angepasst – und nennt den Weg, der dazu passt",
+                "sagt in Ich-Form, was der Entscheid kostet und was für die andere Möglichkeit spricht",
+                "Hinweis: Fallüberlegung, nicht Lehrmittelaussage: das Ratsmitglied für die Motion; dass eine Initiative unverändert vors Volk kommt (S. 170: nur Empfehlung, Gegenvorschlag). Wer unverändert einbringt, nennt in «Offen», was er in Kauf nimmt. Nichts über geltende Lohnregeln."
+              ],
+              "beispiel_pol_1": "Ich bringe CHF 900 für alle unverändert ein. Auf dem Weg über das Parlament reden viele mit: Kantone, Parteien und Verbände in der Vernehmlassung, die Kommissionen und beide Räte (Kap. 6.5, S. 171). Darum wähle ich die Volksinitiative: Über sie stimmt das Volk ab, auch wenn das Parlament einen Gegenvorschlag dagegenstellen kann (Kap. 6.4, S. 169–170). Das kostet mich viel: 100 000 Unterschriften in 18 Monaten, das doppelte Mehr – und sie ändert die Verfassung, nicht ein Gesetz. Für die andere Möglichkeit spricht, dass ein Kompromiss eher eine Mehrheit fände. Ich bleibe fest, weil mir derselbe Betrag für alle wichtiger ist.",
+              "beispiel_pol_2": "Ich passe die Forderung an: CHF 900 erst ab dem zweiten Lehrjahr, mit Übergangszeit für kleine Betriebe. Mein Weg führt über ein Ratsmitglied ins Parlament; dort reden an fast jeder Station andere mit, und ohne Einigung der Räte gibt es kein Gesetz (Kap. 6.5, S. 171). Schon ein drohendes Referendum kann dazu führen, dass das Parlament Kompromisse sucht (Kap. 6.4, S. 169). Das kostet mich: Fürs erste Lehrjahr gilt dann kein Mindestlohn – ein Teil derer, für die wir uns einsetzen, geht vorerst leer aus. Für die andere Möglichkeit spricht: Eine klare Forderung ist leichter zu erklären. Annahme: Ein Ratsmitglied reicht die Motion ein.",
+              "nicht_tragfaehig": "Ein Entscheid ohne Fundstelle und ohne Preis («Ich bleibe dabei, weil es gerecht ist»); eine Behauptung darüber, was heute für Löhne in der Lehre gilt; «Das regelt der Kanton, weil die Schule kantonal ist» ohne Seite."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Wer redet mit (mit Seite)",
+          "Was das für CHF 900 heisst",
+          "Mein Entscheid, mein Preis"
+        ],
+        "hinweis": "Zwei Zeilen genügen, Stichworte mit Seite. Aus Spalte 3 folgt Ihr Entscheid: unverändert oder angepasst – und sein Preis.",
+        "loesung_zeilen": [
+          [
+            "Vernehmlassung und Räte: Kantone, Parteien, Verbände schlagen Änderungen vor; Kommissionen und Räte beraten (Kap. 6.5, S. 171)",
+            "Betrag oder Geltung können sich ändern (Fallüberlegung)",
+            "angepasst: CHF 900 ab dem zweiten Lehrjahr – Preis: fürs erste Lehrjahr vorerst kein Mindestlohn"
+          ],
+          [
+            "Volksinitiative: Das Volk stimmt ab; das Parlament kann einen Gegenvorschlag dagegenstellen (Kap. 6.4, S. 169–170)",
+            "Die Forderung käme unverändert vors Volk (Deutung), braucht aber 100 000 Unterschriften und das doppelte Mehr; sie ändert die Verfassung",
+            "unverändert: CHF 900 für alle – Preis: langer Weg, Ausgang offen"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 6.5 (S. 3)",
+        "beispiel": [
+          "S. 40 · Kiosk erhöht Preise · «Brot plus 20 Rp.» (erfunden) · Preis"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und eine fertige Karte mit Wegskizze aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Wo auf dem Weg hat sich das Anliegen in der Quelle verändert, wer hat es verändert, und was hat das Komitee am Ende erhalten? Befund: Was leiten Sie daraus für Ihre Forderung von CHF 900 ab?",
+          "liefert": "Belege, wo ein Anliegen sich verändert",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-521b-pflicht",
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Bild: vorn die Zeitmarke, dann was Sie sehen. Ton: wer was sagt. Aussage: was das heisst.",
+              "Initianten = Komitee hinter der Initiative (Volksbegehren). «Zurückziehen»: verzichten."
+            ],
+            "satzanfaenge": [
+              "«Verändert hat sich das Anliegen bei … (Zeitmarke …)»",
+              "«Das Komitee erhält am Ende …»",
+              "«Für meine CHF 900 leite ich ab: …»"
+            ],
+            "produkt": "Wegskizze (S. 7): In zwei Zeilen steht in Spalte 3 ein Beleg aus dem Raster, mit Zeitmarke."
+          },
+          "loesung": {
+            "kern": "Parlament bietet zwei statt vier, Rückzug",
+            "quelle_ref": "q-521b-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Stelle und wer: das Parlament. Verlangt waren vier Wochen (00:11–00:12), es bot zwei (00:14, 00:30); «die Hälfte» ist gerechnet. Erhalten: einen Teil und eine Diskussion (00:36–00:44); dafür ziehen die Initianten zurück (00:18–00:20, 00:32).",
+                "quelle": "Quelle, 00:11–00:44"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Neue Initiativen sind geplant (00:53). Eine Seite will bei zwei Wochen bleiben und warnt vor der Belastung für KMU (01:22–01:39), die andere will weitergehen (01:56–02:11).",
+                "quelle": "Quelle, 00:53–02:11"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Zuordnung ist Deutung, auch «Behandlung in den Räten» (Kap. 6.5, S. 171). «Gegenvorschlag» fällt im Beitrag nicht, gilt als Zuordnung (Kap. 6.4, S. 170). «Zurückziehen»: Wort der Quelle."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Nationalrat berät (00:38–00:42); Gegenentwurf des Ständerats (01:00). Er lehnt die Initiative ab, stützt die kürzere Dauer (01:54–02:02); der Urheber erwägt den Rückzug (02:06–02:14).",
+                "quelle": "Ersatzquelle, 00:38–02:14"
+              },
+              {
+                "label": "Stand, Bild",
+                "text": "Beitrag vom 02.10.2019; Ausgang: Vertiefung 2 (Abs. 1, 11, 14). «Bild», Sprecher: aus Untertiteln erschlossen."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "00:11–00:14 · Studio, Moderation (erschlossen)",
+                "vier Wochen verlangt, zwei angeboten",
+                "Parlament bietet weniger an",
+                "Gegenvorschlag (Zuordnung)"
+              ],
+              [
+                "00:18–00:20 · Studio, Moderation (erschlossen)",
+                "Initianten ziehen Volksbegehren zurück",
+                "Verzicht zugunsten des Angebots",
+                "Rückzug"
+              ],
+              [
+                "00:36–00:44 · Vertreter des Komitees (erschlossen)",
+                "Urlaub erreicht, Diskussion angestossen",
+                "Nachgeben bringt einen Teil (Deutung)",
+                "Kompromiss"
+              ],
+              [
+                "00:53 · Bericht, Reporter (erschlossen)",
+                "zwei neue Volksinitiativen geplant",
+                "Anliegen geht anders weiter",
+                "Volksinitiative"
+              ]
+            ],
+            "befund": "In der Quelle hat das Parlament das Anliegen verändert: Verlangt waren vier Wochen, es bot zwei (00:11–00:14). Die Initianten zogen die Initiative zurück (00:18–00:20) und erhielten dafür einen Teil der Forderung und eine angestossene Diskussion (00:36–00:44). Fallüberlegung: Auch bei meinen CHF 900 kann ein Parlament weniger anbieten – ich muss wissen, bis wohin ich nachgebe."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 6.5 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Bringen Sie CHF 900 für alle unverändert ein – oder angepasst, damit eine Mehrheit zustimmt? Was kostet Ihr Entscheid? Wer mitredet, zeigt Kap. 6.5 (S. 171); wie Nachgeben aussieht, zeigt die Quelle.",
+          "liefert": "Entscheid zu Weg und Fassung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Je ein Satz zum Modell (S. 171) und zur Quelle, dann Ihr Entscheid.",
+              "Wege: Motion im Parlament (S. 171) oder Volksinitiative – ändert die Verfassung (S. 169)"
+            ],
+            "satzanfaenge": [
+              "«Auf dem Weg können … meine Forderung ändern (S. …)»",
+              "«Mir ist wichtig, dass … bleibt, weil …»",
+              "«Ich bringe sie … ein; das kostet mich …»"
+            ],
+            "produkt": "Ihr Entscheid wird auf S. 7 zu den Zeilen «Fest» und «Offen»; Ihr Weg füllt die Wegskizze."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Modell ↔ eigener Fall, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt das Modell mit Seite: Vernehmlassung und Behandlung in beiden Räten, wo andere mitreden; das Referendum, das ein Gesetz zu Fall bringen kann (Kap. 6.5, S. 171) und schon als Drohung auf den Inhalt wirkt (Kap. 6.4, S. 169); bei der Volksinitiative Empfehlung und Gegenvorschlag (S. 170)",
+                "nutzt die Quelle mit Zeitmarke: Die Initianten ziehen zurück (00:18–00:20, 00:32); mit Ersatzquelle: Der Urheber wollte einen Vorschlag mit Mehrheit und erwägt den Rückzug (00:50–00:55, 02:06–02:14)",
+                "entscheidet, nennt Weg und Preis in Ich-Form und was für die andere Möglichkeit spricht",
+                "Hinweis: Fallüberlegung, nicht Lehrmittelaussage: das Ratsmitglied für die Motion; dass eine Initiative unverändert vors Volk kommt (S. 170: nur Empfehlung, Gegenvorschlag). Wer unverändert einbringt, nennt in «Offen», was er in Kauf nimmt. Nichts über geltende Lohnregeln. Ausgang der Quelle: Vertiefung 2."
+              ],
+              "beispiel_pol_1": "Ich bringe CHF 900 für alle unverändert ein und wähle die Volksinitiative: Über sie stimmt das Volk ab (Kap. 6.4, S. 169–170). Auch dann macht das Parlament ein Gegenangebot – in der Quelle zwei statt vier Wochen (00:11–00:14) –, doch zurückgezogen haben dort die Initianten selbst (00:18–00:20, 00:32). Fallüberlegung: Wir ziehen nicht zurück. Das kostet mich: 100 000 Unterschriften in 18 Monaten, das doppelte Mehr, und sie ändert die Verfassung, nicht ein Gesetz. Für die andere Möglichkeit spricht: Die Initianten haben mit dem Nachgeben einen Teil erreicht (00:36–00:44). Ich bleibe fest, weil mir derselbe Betrag für alle wichtiger ist.",
+              "beispiel_pol_2": "Ich passe die Forderung an: CHF 900 erst ab dem zweiten Lehrjahr, mit Übergangszeit für kleine Betriebe. Mein Weg führt über ein Ratsmitglied ins Parlament; ohne Einigung der Räte gibt es kein Gesetz (Kap. 6.5, S. 171). In der Quelle warnt eine Seite vor der Belastung für kleine und mittlere Betriebe (01:39); meine Deutung: Wer entgegenkommt, erreicht eher einen Teil (00:36–00:44). Das kostet mich: Fürs erste Lehrjahr gilt dann kein Mindestlohn – ein Teil derer, für die wir uns einsetzen, geht vorerst leer aus. Für die andere Möglichkeit spricht: Eine klare Forderung ist leichter zu erklären. Annahme: Ein Ratsmitglied reicht die Motion ein.",
+              "nicht_tragfaehig": "Entscheid ohne Fundstelle und Preis; die Quelle als Beweis, dass Nachgeben immer richtig ist."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-521b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Sehen Sie die Quelle (QR-Seite) ganz an, bis 02:26. Stand 2019: Danach kam das Referendum, 2020 stimmte das Volk zu. Je Zeile: vorn Zeitmarke, Bild, Ton, Aussage, Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Bild",
+              "Ton",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-521b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wer macht auf welcher Staatsebene Gesetze, und was muss geschehen, bevor ein Bundesgesetz gilt?",
+          "erwartung": "Abs. 3: Bund, Kantone, Gemeinden haben eigene Gesetze. Abs. 6: Je Ebene beschliesst das Parlament, in Gemeinden auch die Versammlung. Abs. 8–9: Verfahren mit vielen Schritten; in Kraft erst, wenn die Räte einig sind und – so die Seite – das Volk einverstanden ist. Genauer S. 171: Abstimmung nur bei Referendum. Auch gültig: Abs. 10–13 (dringlich). Abruf 04.10.2026."
+        },
+        {
+          "ref": "q-521b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Wie ging es nach dem Beschluss des Parlaments weiter – und wer hat am Ende entschieden?",
+          "erwartung": "Abs. 10–11: Am Anfang stand eine Volksinitiative; dem Parlament ging sie zu weit, sein Gegenvorschlag: zwei statt vier Wochen. Abs. 14: Ein Komitee ergriff das Referendum. Abs. 1: Das Volk nahm an – es hat entschieden. Abs. 13: Der Bundesrat setzt in Kraft («voraussichtlich»). Auch gültig: Abs. 8–9. Nicht verwenden: Stimmbeteiligung, Kosten."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "00:40 Kiosk · «Brot kostet mehr» (erfunden) · Preise steigen · Preis"
+        ]
+      },
+      "scaffold_90": "Sehen Sie den Anfang der Quelle bis 00:32 gemeinsam an und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt eine fertige Karte mit Wegskizze."
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "id": "4.3.1_vielfalt_untersuchen_prinzip",
+  "modul": "4.3",
+  "kompetenz_nr": "4.3.1",
+  "topic_slug": "vielfalt_untersuchen",
+  "lehrgang": "EFZ_3J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-10-05",
+  "kern_kompetenzversprechen": "Ich kann die Vielfalt in meinem Umfeld beschreiben, ihre Chancen und Herausforderungen im Gespräch untersuchen und an Beispielen erklären, warum Menschen wandern und was das für sie und für die Gesellschaft bedeutet — auch wenn sich dazu mehr als eine Haltung begründen lässt.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K4",
+    "LF4": "K4"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Vielfalt im Team erfragen",
+      "konfliktart": "Vielfalt als Gewinn vs. Vielfalt als Reibung",
+      "handlungsprodukt_typ": "Interview mit Leitfaden, Stichwortnotizen und Fazit",
+      "kompetenzen": [
+        "4.3.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Zuwanderung erklären und Stellung nehmen",
+      "konfliktart": "Gründe zu gehen vs. Recht zu bleiben",
+      "handlungsprodukt_typ": "Leserbrief mit Bezug, zwei belegten Argumenten und Forderung",
+      "kompetenzen": [
+        "4.3.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      7,
+      10,
+      11
+    ],
+    "B": [
+      7,
+      11,
+      5
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      7,
+      11,
+      5
+    ]
+  },
+  "aspekte": {
+    "Identität und Sozialisation": "R3",
+    "Recht": "R3",
+    "Ethik": "R4"
+  },
+  "modi_units": [
+    "Interaktion und Kollaboration mündlich",
+    "Rezeption schriftlich und bildlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Vielfalt als Gewinn vs. Vielfalt als Reibung",
+      "Gründe zu gehen vs. Recht zu bleiben",
+      "Sich anpassen vs. Eigenes bewahren",
+      "Chance für die, die gehen vs. Lücke bei denen, die bleiben"
+    ],
+    "verbindlich": "Wie viel Anpassung ein Zusammenleben verlangen darf und wer bleiben soll, lässt sich nicht ausrechnen; mehr als eine Haltung bleibt begründbar, wenn sie Gründe, Regeln und die Sicht der Betroffenen einbezieht."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Wo Menschen mit verschiedener Herkunft und Lebensweise zusammenkommen, entstehen Gewinn und Reibung zugleich; wer urteilt, kennt zuerst die Gründe und die Regeln und hört die Betroffenen.",
+    "transferfeld": "Übertragbar auf jede Lage, in der Menschen neu zu einer bestehenden Gruppe stossen und beide Seiten aushandeln, was gemeinsam gilt – etwa wenn jemand in eine Wohngemeinschaft einzieht, wenn zwei Klassen zusammengelegt werden oder wenn in einem Quartier ein Wohnheim eröffnet wird."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R3",
+    "r2_voraussicht": "T6 'Mein eigenes Zuhause' — Wohn- und Lebensformen wählen",
+    "r3_voraussicht": "T8 'Arbeiten in der Zukunft' — berufliche Rolle finden"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Kap. 3.4",
+        "titel": "Migration, Integration und Rassismus — Migrationsgründe, Aus- und Einwanderung, Integration, Bewilligungen, Asyl",
+        "seiten": "Seite 106-114"
+      },
+      {
+        "ref": "Kap. 12.1",
+        "titel": "Werte — Formen des Zusammenlebens, Erwartungen und Kompromisse",
+        "seiten": "Seite 292"
+      },
+      {
+        "ref": "Kap. 12.2",
+        "titel": "Lebensformen — Konkubinat",
+        "seiten": "Seite 299"
+      }
+    ],
+    "konzepte": [
+      "Migration",
+      "Push-Faktoren",
+      "Pull-Faktoren",
+      "Emigration",
+      "Immigration",
+      "Migrationshintergrund",
+      "Familiennachzug",
+      "Personenfreizügigkeit",
+      "Assimilation",
+      "Integration",
+      "Duales System",
+      "Aufenthaltsbewilligung B",
+      "Niederlassungsbewilligung C",
+      "Kurzaufenthaltsbewilligung L",
+      "Asyl",
+      "Genfer Flüchtlingskonvention",
+      "Asylsuchende",
+      "Flüchtlinge",
+      "Asylverfahren",
+      "vorläufige Aufnahme",
+      "Partnerschaft",
+      "Konkubinat"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EFZ, 2. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Unihockey",
+      "Spielerlizenz",
+      "Meisterschaft"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Interaktion und Kollaboration mündlich",
+      "Rezeption schriftlich und bildlich"
+    ],
+    "B": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Identitätskonstrukt"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "position_gegenposition",
+      "mit_medien": "position_gegenposition"
+    },
+    "B": {
+      "ohne_medien": "recht_praxis",
+      "mit_medien": "recht_praxis"
+    }
+  },
+  "mindmap_zentrum_kurz": "Anpassen oder Eigenes bewahren",
+  "modi_auftrag": [
+    "Produktion mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B)",
+  "auftrag_lebensbereich": "Familie"
+}
