@@ -83,7 +83,19 @@ export const PATCH: APIRoute = async ({ locals, params, request }) => {
     .from('profiles').select('role').eq('id', locals.user.id).single()
   const isKt1 = profile?.role === 'kt1'
 
-  const update = isKt1 ? pick(body, KT1_FIELDS) : pick(body, LP_FIELDS)
+  // Ein KT1-Mitglied, das selbst Material teilt, bearbeitet seine eigene Zeile wie
+  // jede Lehrperson. Ohne diese Unterscheidung blieben bei ihm nach dem ersten
+  // Speichern nur Status und Kommentar übrig — Links, Kriterien und Text gingen
+  // bei jedem weiteren Speichern still verloren.
+  let eigeneZeile = false
+  if (isKt1) {
+    const { data: zeile } = await locals.supabase
+      .from('einheit_feedbacks').select('lp_id').eq('id', id).maybeSingle()
+    eigeneZeile = zeile?.lp_id === locals.user.id
+  }
+  const update = isKt1
+    ? { ...(eigeneZeile ? pick(body, LP_FIELDS) : {}), ...pick(body, KT1_FIELDS) }
+    : pick(body, LP_FIELDS)
   sanitizeEigenesPayload(update)
   if (Object.keys(update).length === 0) {
     return new Response(JSON.stringify({ error: 'Keine änderbaren Felder.' }), { status: 400 })

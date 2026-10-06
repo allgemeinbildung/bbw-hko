@@ -1,4 +1,5 @@
 ---
+import TextMitLinks from '../../components/TextMitLinks.astro'
 import Admin from '../../layouts/Admin.astro'
 
 const user = Astro.locals.user
@@ -38,7 +39,7 @@ const selbstcheckLabel: Record<string, string> = {
   situation_ich: 'ICH-Perspektive',
   handlungsprodukt: 'Handlungsprodukt',
   kn_transfer: 'KN-Transfer',
-  kriterien: 'Beurteilungskriterien',
+  kriterien: 'Bewertungspositionen',
 }
 
 const lehrgangLabel: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
@@ -112,18 +113,16 @@ const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').len
                   </div>
                 )}
                 {row.eigen_handlungssituation && (
-                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Herausforderung</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungssituation}</p></div>
+                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Herausforderung</span><TextMitLinks text={row.eigen_handlungssituation} class="text-slate-700" /></div>
                 )}
                 {row.eigen_handlungsprodukt && (
-                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungsprodukt</span><p class="text-slate-700 whitespace-pre-wrap">{row.eigen_handlungsprodukt}</p></div>
+                  <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungsprodukt</span><TextMitLinks text={row.eigen_handlungsprodukt} class="text-slate-700" /></div>
                 )}
                 {(row.eigen_kn_format || row.eigen_kn_aufgabe) && (
                   <div>
                     <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Kompetenznachweis</span>
-                    <p class="text-slate-700 whitespace-pre-wrap">
-                      {row.eigen_kn_format && <strong>{knFormatLabel[row.eigen_kn_format] ?? row.eigen_kn_format}: </strong>}
-                      {row.eigen_kn_aufgabe}
-                    </p>
+                    {row.eigen_kn_format && <p class="text-slate-700 font-semibold">{knFormatLabel[row.eigen_kn_format] ?? row.eigen_kn_format}</p>}
+                    <TextMitLinks text={row.eigen_kn_aufgabe} class="text-slate-700" />
                   </div>
                 )}
                 {Array.isArray(row.eigen_links) && row.eigen_links.length > 0 && (
@@ -139,7 +138,7 @@ const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').len
                 {(() => {
                   const e = row.eigen_erweitert ?? {}
                   const kriterien = Array.isArray(e.bewertungskriterien) ? e.bewertungskriterien : []
-                  const hat = e.kompetenzversprechen || kriterien.length || e.lehrmittel_anker || e.didaktischer_kniff || (e.schluesselkompetenzen ?? []).length
+                  const hat = e.kompetenzversprechen || kriterien.length || e.lehrmittel_anker || e.scaffolds || e.didaktischer_kniff || (e.schluesselkompetenzen ?? []).length
                   if (!hat) return null
                   return (
                     <details class="rounded border border-slate-200 bg-white px-3 py-2">
@@ -150,12 +149,13 @@ const angepasstCount = fb.filter((f: any) => f.feedback_art === 'angepasst').len
                         {(e.aspekte ?? []).length > 0 && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Aspekte</span><p class="text-slate-700">{e.aspekte.join(' · ')}</p></div>}
                         {(e.sprachmodi_sekundaer ?? []).length > 0 && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Weitere Sprachmodi</span><p class="text-slate-700">{e.sprachmodi_sekundaer.join(' · ')}</p></div>}
                         {kriterien.length > 0 && (
-                          <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Beurteilungskriterien</span>
+                          <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Bewertungspositionen</span>
                             <ul class="list-disc pl-5 text-slate-700">{kriterien.map((k: any) => <li>{k.name} <span class="text-xs text-slate-400">({k.dimension})</span></li>)}</ul>
                           </div>
                         )}
-                        {e.lehrmittel_anker && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Lehrmittel-Bezug</span><p class="text-slate-700">{e.lehrmittel_anker}</p></div>}
-                        {e.didaktischer_kniff && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Didaktischer Kniff</span><p class="text-slate-700 whitespace-pre-wrap">{e.didaktischer_kniff}</p></div>}
+                        {e.lehrmittel_anker && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Lehrmittel-Bezug</span><TextMitLinks text={e.lehrmittel_anker} class="text-slate-700" /></div>}
+                        {e.scaffolds && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Scaffolds</span><TextMitLinks text={e.scaffolds} class="text-slate-700" /></div>}
+                        {e.didaktischer_kniff && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Didaktischer Kniff</span><TextMitLinks text={e.didaktischer_kniff} class="text-slate-700" /></div>}
                       </div>
                     </details>
                   )

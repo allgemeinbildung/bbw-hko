@@ -1,0 +1,20 @@
+---
+// Freitext von Lehrpersonen, in dem http(s)-Adressen anklickbar sind.
+// Der Text wird nie als HTML eingesetzt: er wird in Stücke geteilt, und nur die
+// Adressen werden zu <a>. Satzzeichen am Ende gehören nicht zur Adresse.
+interface Props {
+  text?: string | null
+  class?: string
+}
+const { text, class: klasse = '' } = Astro.props
+const teile = String(text ?? '').split(/(https?:\/\/[^\s<>"]+)/g).map((t) => {
+  if (!/^https?:\/\//.test(t)) return { text: t }
+  const m = t.match(/[.,;:!?)\]]+$/)
+  return m ? { url: t.slice(0, -m[0].length), nach: m[0] } : { url: t }
+})
+---
+<p class={`whitespace-pre-wrap ${klasse}`}>{teile.map((t) =>
+  t.url
+    ? <><a href={t.url} target="_blank" rel="noopener" class="underline break-all">{t.url}</a>{t.nach}</>
+    : t.text
+)}</p>
