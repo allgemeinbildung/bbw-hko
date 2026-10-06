@@ -1,5 +1,9 @@
 # Phase 9 — Tor und Bericht
 
+Das Tor führt nur der Orchestrator aus, nie zwei Tore gleichzeitig im selben
+Arbeitsbaum (`references/lauf.md` §5). Auf Phase 9 folgt in jedem Lauf
+Phase 10 (`references/phase-10-abschluss.md`).
+
 Eine Einheit ist erst fertig, wenn alles hier durchgelaufen ist. Befunde werden
 **in den Daten** behoben — nie im Skript, nie über `--baseline`, nie durch
 Weglassen eines Gates.
@@ -33,7 +37,27 @@ sein, `status` **muss** `"entwurf"` sein).
 | `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <bericht>` (Bauplan und Bericht — `check-all` liest nur den Ordner der Einheit) | letzte Zeile «GRUEN — keine woertliche Uebernahme ab 14 Woertern.», Exit 0 | Exit 1: die gemeldete Stelle im Dokument umformulieren (eigene Worte plus Kapitel/Seite bzw. Karten-ID), auch bei einer Warnung. Exit 2: Lehrmittel oder Archiv fehlt — nicht geprüft, Bauplan und Bericht nicht committen. |
 | `bestand-v42 --pruefen` | «OK — … Dokumente unverändert.» | Die Skill hat etwas ausserhalb ihres Ordners verändert. Rückgängig machen (`git checkout -- <datei>`), Ursache in den Bericht. |
 | `npm run build` | Exit 0 | wie oben; die Warnung «chunks larger than 500 kB» ist bekannt und kein Befund |
-| `git status --short` | neu oder geändert nur: der Ordner der Einheit, neue Karten in `src/data/quellen/` (und allenfalls `src/data/methoden/`), der Bauplan, die zwei Index-Dateien | alles andere zurücksetzen |
+| `git status --short` | neu oder geändert **durch diesen Lauf** nur: der Ordner der Einheit, neue Karten in `src/data/quellen/` (und allenfalls `src/data/methoden/`), der Bauplan, der Laufordner, die zwei Index-Dateien | was dieser Lauf sonst geändert hat, zurücksetzen; Fremdes nicht anfassen und nie mitcommitten |
+
+**Messung.** Die Executor haben ihr Heft schon in der Schreibphase gemessen
+(`references/lauf.md` §6); das Tor misst **alle** Dokumente, auch S. 8 der
+Hefte und den Auftragsbogen. Die Messung läuft lokal mit der Schreibschrift
+Segoe Print; sie gilt, vor allem für Seite 6. Ein Überlauf bis 2 px auf Seite 6
+ist hingenommen und wird nur gemeldet; alles darüber wird in den Daten
+behoben. (Herkunft: ENTSCHEIDE E28 Nr. 2; Prompt
+`einheit-aus-bauplan-lokal.md`, Fassung bis 07.10.2026.)
+
+**Bestand der anderen.** Einmal je Lauf:
+`node scripts/check-all.mjs 1.3.1_konsum_verantworten_v42 2.3.1_anliegen_vertreten 2.1.1_informationen_hinterfragen`
+— bleibt grün. (Herkunft: derselbe Prompt.)
+
+**Nach jeder Korrektur an Heft, Set oder KN** läuft das Marker-Skript ohne
+`--check` neu, dann das Tor von vorn (`references/lauf.md` §4).
+
+`node scripts/lauf.mjs <ordner>` (sobald vorhanden) führt diese Folge in einem
+Befehl aus und schreibt die Ausgaben in den Laufordner. Bis dahin: die Befehle
+einzeln, die Ausgaben von `check-all` und `messen-v42` ganz nach
+`check-all.txt` und `messung.txt` (`references/lauf.md` §8).
 
 `npm run build` führt im `prebuild` `sync:einheiten-nrlp` aus: Das Skript
 schreibt Kompetenz- und Lebensbezugstexte aus dem Datensatz in die Einheiten.
@@ -62,8 +86,11 @@ prüfen. Höchstens **drei** Runden.
 - Warnungen von `check-einheiten` zählen als Fehler (Exit 1).
 
 Ist das Tor nach der dritten Runde rot: Ordner der Einheit und die in diesem
-Lauf neu angelegten Karten entfernen, Index neu bauen, Grund und letzte
-Tor-Ausgabe in den Bericht. Eine halbe Einheit bleibt nie liegen.
+Lauf neu angelegten Karten nach
+`docs/cloud-run/laeufe/<datum>-<ordnername>/abgebrochen/` **verschieben, nicht
+löschen**, Index neu bauen, Grund und letzte Tor-Ausgabe in den Bericht
+(`references/lauf.md` §7). Eine halbe Einheit bleibt nie unter
+`src/data/einheiten/` liegen.
 
 ## 3. Was kein Befehl prüft — vor dem Bericht von Hand
 
@@ -117,7 +144,10 @@ Tor-Ausgabe in den Bericht. Eine halbe Einheit bleibt nie liegen.
 
 ## 4. Bericht
 
-Lokal: als Antwort. Im Produktionslauf: gemäss `docs/cloud-run/RUN.md`.
+Immer als Datei: `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/BERICHT.md`
+nach dem Gerüst `assets/bericht-template.md` (`references/lauf.md` §8) — bei
+jedem Start, auch im Gespräch mit Pietro. Die Antwort im Gespräch fasst ihn
+zusammen, ersetzt ihn nicht. Was der Bericht enthält:
 
 - Ordner, Lehrgang, Kompetenzen je Heft, Kapitel und Seiten
 - letzte Ausgabe von `check-all`; Ergebnis von Messung, Bestand, Build
@@ -129,7 +159,13 @@ Lokal: als Antwort. Im Produktionslauf: gemäss `docs/cloud-run/RUN.md`.
 - die Gegenleser (`references/gegenleser.md` §6): Befunde je Leser, was
   übernommen wurde, was wegfiel, in welcher Runde zuletzt gelesen wurde
 - was nicht belegt, nicht geprüft oder nicht erzeugbar war
-- Fehler in Skill, Skripten oder Renderer, die aufgefallen sind (nicht repariert)
+- Fehler in Skill, Skripten oder Renderer, die aufgefallen sind (nicht
+  repariert) — als Zeilen der Liste «Offen», Kürzel S oder R
 
-**Kein Commit, kein Push**, ausser der Aufruf verlangt es (der Produktionslauf
-verlangt einen Commit je Einheit auf dem Lauf-Branch).
+Nach Phase 9 ist der Bericht nicht fertig: Phase 10 schreibt in derselben
+Datei weiter (Fakten-Audit, Gegenhör-Liste, Vorlage zur Freigabe). Eine Datei
+`NACHTRAG.md` gibt es nicht mehr.
+
+**Commit erst nach Phase 10 Schritt 6**, einer je Einheit, Umfang und
+Leck-Prüfung nach `references/lauf.md` §8 — der Bauplan gehört dazu. **Kein
+Push.**

@@ -320,3 +320,27 @@ Solange `set.json` fehlt, meldet `check-v42.mjs` die fehlende Datei
 (`ERR_V42_DATEI`); die Glossar-Regel (`ERR_V42_GLOSSAR`) kann erst nach Phase 7
 grün werden. Jeder andere Befund zu den Feldern dieser Phase — `ERR_V42_BUDGET`,
 `ERR_V42_R7`, `ERR_V42_LOESUNG`, `ERR_V42_PRODUKTBILD` — wird sofort behoben.
+
+## 7. Messen, bevor das Heft abgegeben wird
+
+Mit Phase 6 ist das Heft vollständig. Der Executor, der es geschrieben hat,
+misst es jetzt selbst — in einem **eigenen** Temp-Ordner — und gibt erst ab,
+wenn keine seiner Seiten überläuft:
+
+```
+node scripts/export-v42.mjs <ordner> --out <eigener-temp-ordner>
+node scripts/messen-v42.mjs <eigener-temp-ordner>
+```
+
+Gemessen werden die Seiten des eigenen Hefts in jeder vorhandenen Spur und
+das eigene Dokument «Lösungen». Ein Überlauf wird im Feld der gemeldeten Seite
+behoben, auch wenn dessen Zeichenbudget eingehalten ist; für
+`loesungsbild.hinweis` gibt es kein Budget (ein Lauf: 458 px). Seite 8 und der
+Auftragsbogen zählen erst im Tor, weil ihnen `set.json` noch fehlt. Was der
+Executor mit seinem Heft abgibt und was er tut, wenn der Export «nicht im
+Index» meldet, steht in `references/lauf.md` §6. Dasselbe gilt nach jeder
+späteren Korrektur am Heft.
+
+(Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md`
+§4 Zeile 1 — Überlauf bei grünem `check-all` in 11 von 13 Läufen — und §5.2;
+Bericht `2026-10-06-4.3.1_vielfalt_untersuchen` §10.)

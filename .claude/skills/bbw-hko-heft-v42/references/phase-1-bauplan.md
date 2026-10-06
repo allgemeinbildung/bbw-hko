@@ -14,8 +14,8 @@ obwohl Thema und Kompetenz andere sind, ist die Herleitung nachzuprüfen.
 
 ## 1. Ablauf
 
-1. **Bauplan-Entwurf** aus dem Verortungsblatt (Phase 0): §1–§6 und §8
-   gefüllt; §7 nennt je Slot den gesuchten Typ, Stand «offen», und im
+1. **Bauplan-Entwurf** aus dem Verortungsblatt (Phase 0): §1–§6, §8 und §10
+   («Fakten», Abschnitt 3.14) gefüllt; §7 nennt je Slot den gesuchten Typ, Stand «offen», und im
    Unterabschnitt «Suchaufträge», was die Quelle zeigen muss.
 2. **Phase Q** (nur lokal, nur für Hefte mit `mit_medien`):
    `references/phase-q-quellen.md`. Danach ist §7 gefüllt. Passt eine geprüfte
@@ -263,6 +263,52 @@ der Quellenkarten. Darum:
 | **«Das nehme ich mit»** (§4) | Drei Zeilen je Heft, je ≤ 50 Zeichen: zwei benennen, was das Produkt des Hefts dem gemeinsamen Auftrag als Werkzeug mitgibt; die dritte lautet immer «Mir noch unklar». |
 | **Quellen-Slots** (§7) | Je Heft mit `mit_medien`: Quelle, Ersatz, Vertiefung 1, Vertiefung 2; IDs nach `references/ableitungsregeln.md`. **Typ** = Rezeptionsmodus der Heft-Kompetenz; nennt sie keinen, der Modus des Themas (Leitfaden §5) mit der Ausweichfolge Audio → Video mit Untertiteln → Artikel (`references/phase-q-quellen.md` §3); A und B möglichst verschieden. Im Entwurf: Spalte «Typ (gesucht)», Stand «offen», und im Unterabschnitt «Suchaufträge», was die Quelle zeigen muss — die Fragen entstehen erst nach der Wahl. Nach Phase Q je Slot: Titel, Herausgeber, Datum, Ausschnitt, Länge, Karte, Archivtext, Zugeständnis, Stand. Dazu die Zeile **«Rasterspalten je Heft und Spur»** (`references/phase-5-spuren.md` §4). **Heft mit nur der Medien-Spur:** Die Ersatzquelle ist Pflicht, mit demselben Typ oder Sprachmodus. |
 
+### 3.14 Fakten (§10)
+
+Jede **Rechts- und Sachaussage über die Welt**, die die Einheit tragen soll,
+steht vor dem Schreiben im Bauplan §10: Artikelnummer, Frist, Betrag, Prozent,
+Datum, Zahl der Unterschriften, Ergebnis einer Abstimmung, jedes «Stand …».
+Je Zeile:
+
+| Spalte | Inhalt |
+|---|---|
+| Aussage | in eigenen Worten — kein Satz aus Gesetz, Lehrmittel oder Quelle |
+| Wo gebraucht | Heft und Stelle (LF, Raster, Lösung, Beispiel), Auftrag, KN, Begleiter |
+| Fundstelle im Lehrmittel | Kapitel und Seite, oder «—» |
+| Primärquelle | Gesetz oder Amt mit Artikel bzw. Titel der Seite |
+| URL | die Adresse, an der es heute steht |
+| Abruf | JJJJ-MM-TT |
+| Urteil | stimmt · vertretbar vereinfacht · nicht belegbar |
+
+Regeln:
+
+- **Primärquelle** heisst Gesetz oder Amt (fedlex.admin.ch, admin.ch,
+  bfs.admin.ch, ch.ch, Kanton, Gericht) — nicht das Lehrmittel, nicht ein
+  Medienbericht. Das Lehrmittel bleibt die Fundstelle, die das Heft nennt;
+  §10 hält fest, dass die Aussage heute an Gesetz oder Amt stimmt.
+- **Die Erzeugung zitiert nur daraus.** Eine Aussage dieser Art, die nicht in
+  §10 steht, wird nicht geschrieben. Braucht ein Heft sie doch, fehlt sie im
+  Bauplan: vor dem Stopp nachtragen.
+- **Nicht belegbar** → die Aussage entfällt, oder der Bauplan sagt, dass das
+  Heft sie als Fallüberlegung bzw. als Aussage der Quelle wiedergibt, nicht
+  als Tatsache. Sie steht zusätzlich in §9.
+- **Sachaussagen einer Medienquelle**, auf denen eine Rasterzeile oder eine
+  Lösung aufbaut (Zahl einer Studie, Ausgang einer Abstimmung, Dauer einer
+  Regelung), gehören auch hierher, nach Phase Q.
+- **Nicht hierher** gehören die erfundenen Fallzahlen einer Situation; sie
+  werden nachgerechnet (Abschnitt 3.4), nicht belegt.
+- Widerspricht das Lehrmittel der Primärquelle, steht das hier und in §9; der
+  Entscheid, was das Heft schreibt, fällt am Stopp.
+
+Nach dem Schreiben prüft das Fakten-Audit jede Zeile am fertigen Text noch
+einmal, dazu alles, was hinzukam (`references/phase-10-abschluss.md` §2).
+
+Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §4
+(rund 35–40 falsche oder überzogene Rechts- und Sachaussagen in mindestens
+neun Einheiten, gefunden erst an Primärquellen), §5.2 («Fakten im Bauplan
+**und** Fakten-Audit nach dem Schreiben»), §5.4 («Bauplan → Einheit»);
+ENTSCHEIDE E34.
+
 ## 4. Abdeckungsprüfung vor dem Stopp
 
 Tabelle im Bauplan §8. Die Zeilen A1–A14 und ihr Soll stehen **nur** in
@@ -280,7 +326,8 @@ wird.
 der Zuschnitt (Lehrgang, Hefte, Spuren mit Grund); (2) die Entscheide als
 Liste, je mit Empfehlung und den Alternativen «(1)», «(2)»; (3) die Quellen
 mit ihrem Zugeständnis und offene Slots; (4) die Abdeckungstabelle, Lücken
-zuoberst; (5) Ausnahmen (§9) und alles, was nicht belegt ist; (6) ein Satz:
+zuoberst; (5) Ausnahmen (§9) und alles, was nicht belegt ist — darunter jede
+Zeile aus §10 mit Urteil «nicht belegbar»; (6) ein Satz:
 «ok» startet die Erzeugung ohne weitere Rückfrage.
 
 **Antwort verarbeiten:**

@@ -251,6 +251,16 @@ Pflichtfelder: `pflichtfelderKarte` → `ERR_V42_KARTE_PFLICHTFELD`. Budgets:
   «`titel` · `herausgeber`, `datum`» ist ≤ 100 Zeichen.
 - **Kein Feld über 400 Zeichen** (`regel10Volltext` → `ERR_V42_R10_VOLLTEXT`).
 - Kein Eszett, kein Platzhalter (`{{…}}` aus dem Skelett muss weg).
+- **Der `kurzbeschrieb` verrät die Lösung nicht.** Er nennt Thema und Form der
+  Quelle — nicht die Aussagen, die das Raster sucht, und kein Wort, das der
+  Ausschnitt nicht trägt. Er steht auf der QR-Seite, die Lernende vor dem
+  Raster sehen. (Herkunft: Rückblick
+  `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §4 — rund elf Karten
+  am 05.10.2026 gekürzt; Nachtrag `2026-10-04-311` §6.)
+- **`verortung.absaetze` einer Webseite** in Worten, die auf der Seite
+  auffindbar sind (Zwischentitel, «die ersten vier Fragen») — nicht als
+  Absatznummern des Archivs, die Lernende am Handy nicht nachzählen können.
+  (Herkunft: Nachtrag `2026-10-04-411` §7 Nr. 8; Bericht `2026-10-04-421` §10.)
 
 ## 9. Archiv
 

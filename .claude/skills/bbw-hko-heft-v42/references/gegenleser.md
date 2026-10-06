@@ -19,7 +19,7 @@ und ein Blick aufs Papier; Zeiten sind Schätzungen. Der Bericht sagt das.
 |---|---|---|---|
 | **Lernende/r, Profil a** (stark, schnell, liest genau) | je Heft und vorhandener Spur | Seitentext des Hefts; Spur mit Medien: QR-Seite und Quelle; die genannten Lehrmittelseiten | Widersprüche zwischen Seiten, Aufträge, die das Material nicht trägt, vorweggenommene Entscheide |
 | **Lernende/r am Auftragsbogen**, Profil a | 1 je Einheit | Seitentext des Auftragsbogens, dazu S. 4 und 8 beider Hefte | Schritte ohne Abgabe, Kriterien ohne Auftrag, Fall passt nicht zu den Heften |
-| **Lösungs-Audit** | je Heft und vorhandener Spur | Dokument «Lösungen», Kapiteldatei bzw. Archivtext | falsche Fundstellen, Zeitmarken, Fakten |
+| **Lösungs-Audit** | je Heft und vorhandener Spur | Dokument «Lösungen»; Kapiteldatei mit Seitenmarken bzw. Archivtext — bei Audio und Video die Untertitel **in voller Auflösung** (Abschnitt 4.2) | falsche Fundstellen, Zeitmarken, Ableitungen, die als Aussage der Quelle dastehen |
 | **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, Fall-Begriffe, Anrede |
 
 Bei zwei Heften mit je zwei Spuren sind das vier Lernende a,
@@ -28,6 +28,13 @@ festen Besetzung gehören das Profil «Deutsch als Zweitsprache, B1» (Entscheid
 E31: Befunde zu Sprachlast und Zeitbedarf für B1 werden nicht bearbeitet) und
 das Profil «wenig Lust, macht das Minimum»; dieses lohnt sich für eine
 Stichprobe, wenn die Frage ist, was übersprungen wird.
+
+**Nicht Gegenleser, aber Teil jedes Laufs: das Fakten-Audit** (Opus, mit Netz,
+`references/phase-10-abschluss.md` §2). Das Lösungs-Audit prüft gegen Quelle
+und Lehrmittel, das Fakten-Audit gegen Gesetz und Amt — die Gegenleser finden
+Bearbeitbarkeit, nicht Wahrheit. Wer wann läuft und was gleichzeitig laufen
+darf: `references/lauf.md` §4–§5. (Herkunft: Rückblick
+`docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §4, §5.3 Nr. 6.)
 
 ## 2. Zeitpunkt
 
@@ -43,7 +50,9 @@ Tor.** Reihenfolge im Lauf:
    ändert, ist das Gegenlesen abgeschlossen.
 
 Höchstens drei Runden (wie `phase-9-tor.md` §2). Was danach offen ist, steht im
-Bericht.
+Bericht unter «Offen». Ändert Phase 10 noch Text oder eine Lösung, wird dort
+erneut gelesen (`references/phase-10-abschluss.md` §4) — die Runden zählen
+zusammen.
 
 ## 3. Paket für die Lernenden-Gegenleser
 
@@ -68,12 +77,26 @@ mit Seitenmarken nach `<tmp>/text/`. Dazu ins Paket:
 - **Auftragsbogen:** S. 4 und 8 beider Hefte als das, was die Person mitbringt.
 - **Nie:** Begleiter, Lösungen, Bauplan, Prinzip, KN.
 
+**Paket ansehen, bevor es hinausgeht.** Die Dateien `quelle.md` im Archiv haben
+nicht alle dieselbe Form (mit oder ohne Abschnitt «Text des Ausschnitts», Text
+nach der ersten Trennlinie, Absätze mit oder ohne Zwischentitel gezählt, eine
+Grafik statt Text) und tragen Windows-Zeilenenden. Ein Paket, das nur den Kopf
+der Quelle enthält, liefert eine wertlose Lesung: Steht der Text des
+Ausschnitts wirklich darin? (Herkunft: Berichte `2026-10-04-321` §10,
+`2026-10-04-411` §10, `2026-10-06-4.3.1_vielfalt_untersuchen` §10.)
+
 ## 4. Aufträge
 
 ### 4.1 Lernende (Heft und Auftragsbogen)
 
-Rolle voranstellen: Lernende/r im 1. Lehrjahr EFZ, 16 Jahre, mit dem Profil aus
-Abschnitt 1; die Person weiss nur, was im Paket steht. Dann wörtlich:
+Rolle voranstellen: Lernende/r EFZ **im Lehrjahr der Einheit**, mit dem Profil
+aus Abschnitt 1; die Person weiss nur, was im Paket steht. Das Lehrjahr steht
+im Bauplan §1 (Zeile «Thema», für den kanonischen Lehrgang) und wird am
+Datensatz des Lehrgangs nachgesehen — nie fest «1. Lehrjahr». Alter: 16 im
+1. Lehrjahr, je Lehrjahr ein Jahr mehr. Gilt die Einheit für zwei Lehrgänge
+mit verschiedenem Lehrjahr, zählt der kanonische. (Herkunft: Berichte
+`2026-10-04-411` §10 — für Thema 4 falsch — und
+`2026-10-06-5.2.1_gesetze_veraendern` §11; Rückblick §5.4.) Dann wörtlich:
 
 > Arbeite das Dokument von Seite 1 bis zum Schluss durch, in der Rolle. Halte je
 > Seite fest: (1) was ich hier tun soll, in meinen Worten — oder dass ich es
@@ -105,6 +128,23 @@ Vertiefung, Lösungsbild, Abschluss) gegen Kapiteldatei bzw. Archivtext prüfen:
 Fundstelle stimmt, Zeitmarke stimmt, nichts steht als Lehrmittelaussage da, was
 Fallüberlegung ist. Je Befund: Feld, Wortlaut, was die Grundlage wirklich sagt.
 
+**Material in voller Auflösung.** Für Audio und Video bekommt das Audit die
+Untertitel bzw. das Transkript **Zeile für Zeile mit Einsatzzeit** aus dem
+Archivordner der Quelle — nicht in Blöcken von rund 20 Sekunden. Aus solchen
+Blöcken kamen Zeitmarken, die 8 bis 25 Sekunden neben der Aussage lagen. Für
+das Lehrmittel: die Kapiteldatei mit ihren Seitenmarken. Liegt im Archiv nur
+ein Blocktranskript, sagt der Bericht das, und jede Zeitmarke dieser Quelle
+kommt auf die Gegenhör-Liste. (Herkunft: Nachtrag `2026-10-03-221` §7 — elf
+Zeitmarken; Rückblick §4, §5.3 Nr. 2.)
+
+**Erneut nach jeder Änderung einer Lösung** — nur das geänderte Feld
+(`references/phase-10-abschluss.md` §4; Rückblick §5.3 Nr. 5).
+
+`node scripts/check-belege.mjs <ordner>` (sobald vorhanden) bringt die neue
+Form des Audits: blind lösen und erst dann vergleichen, vier Urteile je Feld,
+Ergebnis als `belege.json` im Quellenarchiv unter `_pruefung/<ordnername>/`.
+Bis dahin gilt dieser Abschnitt (Rückblick §5.1, §5.3).
+
 ### 4.3 Sweep
 
 Über alle Dateien: «ß», Platzhalter, Transliterationen
@@ -121,7 +161,7 @@ Textaufbereitung). Dann ordnen:
 | Kürzel | Ursache | Geht an |
 |---|---|---|
 | E | Fehler dieser Einheit | Executor der Datei, als genauer Auftrag |
-| S | Regel oder Lücke der Skill, Methodenkarte | Bericht, Abschnitt «Fehler in Skill, Skript, Renderer» — im Lauf nicht ändern |
+| S | Regel oder Lücke der Skill, Skript, Methodenkarte, Lehrmittel | Bericht, Abschnitt «Offen» (`assets/bericht-template.md`) — im Lauf nicht ändern |
 | R | fester Text oder Layout des Renderers | Bericht, wie S |
 | Q | Quelle | Bericht; die Quelle wechselt der Lauf nicht |
 | V | so gewollt (Sie-Form, Ich-Situation, feste Seitenfolge) | nur zählen |

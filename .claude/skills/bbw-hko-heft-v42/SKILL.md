@@ -1,6 +1,6 @@
 ---
 name: bbw-hko-heft-v42
-description: "Standard-Generator für neue EFZ-Einheiten in bbw-hko (Format v4.2, Template heft_8page_v42): erzeugt aus einer nRLP-Kompetenz und dem Lehrmittelkapitel eine Einheit mit zwei Heften A/B (je acht Seiten, je in den Spuren ohne Medien und mit Medien), gemeinsamem Auftrag, Kompetenznachweis, Begleiter, Glossar mit Begriffsnetz, Beispielbild und Lösungen für alle Felder — und schreibt sie nach src/data/einheiten/{X.Y.Z}_{slug}/ (dazu Quellenkarten nach src/data/quellen/). Nutze diese Skill immer, wenn Pietro eine neue Einheit will: 'mach eine Einheit zu 2.1.2', 'neue Einheit für EFZ 3J/4J', 'Heft generieren', 'Einheit mit Medien-Spur', 'v4.2-Einheit', 'Bauplan für X.Y.Z', 'Einheit aus dem Bauplan erzeugen', 'Produktionslauf'. Auch bei allgemeinen oder englischen Aufträgen wie 'create the new HKO Einheit for X.Y.Z', 'neue HKO-Einheit erstellen' oder 'Lehrmittelkapitel X.Y → Lernsituationen für ABU Reform 2030': Ein Lehrmittelkapitel plus HKO/ABU ohne das Wort '3er-Set' heisst immer v4.2, also diese Skill. Arbeitet mit einem Bauplan (ein gebündelter Stopp zur Freigabe) und läuft danach ohne Rückfrage bis zum grünen Tor. NICHT für: das alte 3er-Set mit drei Herausforderungen A/B/C ('3er-Set', 'alte Methode', 'wie früher' → bbw-hko-3er-set), EBA-Einheiten (→ hko-2er-EBA-set-generator), die KI-Toolbox einer fertigen Einheit (→ hko-ki-komplement)."
+description: "Standard-Generator für neue EFZ-Einheiten in bbw-hko (Format v4.2, Template heft_8page_v42): erzeugt aus einer nRLP-Kompetenz und dem Lehrmittelkapitel eine Einheit mit zwei Heften A/B (je acht Seiten, je in den Spuren ohne Medien und mit Medien), gemeinsamem Auftrag, Kompetenznachweis, Begleiter, Glossar mit Begriffsnetz, Beispielbild und Lösungen für alle Felder — und schreibt sie nach src/data/einheiten/{X.Y.Z}_{slug}/ (dazu Quellenkarten nach src/data/quellen/). Nutze diese Skill immer, wenn Pietro eine neue Einheit will: 'mach eine Einheit zu 2.1.2', 'neue Einheit für EFZ 3J/4J', 'Heft generieren', 'Einheit mit Medien-Spur', 'v4.2-Einheit', 'Bauplan für X.Y.Z', 'Einheit aus dem Bauplan erzeugen', 'Produktionslauf'. Auch bei allgemeinen oder englischen Aufträgen wie 'create the new HKO Einheit for X.Y.Z', 'neue HKO-Einheit erstellen' oder 'Lehrmittelkapitel X.Y → Lernsituationen für ABU Reform 2030': Ein Lehrmittelkapitel plus HKO/ABU ohne das Wort '3er-Set' heisst immer v4.2, also diese Skill. Arbeitet mit einem Bauplan (ein gebündelter Stopp zur Freigabe) und läuft danach ohne Rückfrage durch Erzeugung, Tor, Gegenlesen, Fakten-Audit und Abschluss bis zur Vorlage für die Freigabe — bei jedem Start gleich: einzelne Einheit, Schleife über alle Baupläne, Abschluss einer vorhandenen Einheit ('Einheit abschliessen', 'bis zur Freigabe bringen', 'Einheit freigeben'). NICHT für: das alte 3er-Set mit drei Herausforderungen A/B/C ('3er-Set', 'alte Methode', 'wie früher' → bbw-hko-3er-set), EBA-Einheiten (→ hko-2er-EBA-set-generator), die KI-Toolbox einer fertigen Einheit (→ hko-ki-komplement)."
 ---
 
 # bbw-hko Heft v4.2 — Generator
@@ -46,6 +46,23 @@ anderes verlangen, ist falsch — auch wenn das Tor grün ist.
 Die Templates unter `assets/` sind **Skelette**, keine Wahrheit: Steht im
 Template etwas anderes als im Datenvertrag, gilt der Datenvertrag.
 
+**Jede neue E-Nummer wird in derselben Session in die Skill eingearbeitet.**
+ENTSCHEIDE bleibt oben. Aber «gilt vor dem Text der Skill, noch nicht
+nachgeführt» ist kein zulässiger Zustand mehr: Wer einen Entscheid einträgt,
+der eine Regel der Skill ändert, ändert im selben Zug `SKILL.md` und die
+betroffenen References und nennt sie im Eintrag. Findet ein Lauf trotzdem
+einen Widerspruch zwischen ENTSCHEIDE und Skill, gilt ENTSCHEIDE, und der
+Widerspruch steht im Bericht unter «Offen» (Kürzel S).
+
+**Ein Prompt trägt keine Regeln.** Er nennt, welcher Bauplan an der Reihe ist;
+wie gearbeitet wird, steht hier. Steht in einem Prompt etwas anderes als in
+der Skill, gilt die Skill.
+
+(Herkunft: E30 stand vom 04. bis 07.10.2026 «noch nicht nachgeführt» in
+ENTSCHEIDE, und ein Lauf ohne den Schleifen-Prompt arbeitete nach altem Stand —
+Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 3;
+ENTSCHEIDE E34.)
+
 ## 2. Dateien, die entstehen
 
 ```
@@ -55,22 +72,43 @@ src/data/einheiten/<ordner>/
 src/data/quellen/q-<n><a|b>-{pflicht,pflicht-ersatz,vertiefung-1,vertiefung-2}.json   (nur Medien-Spur)
 src/data/methoden/<id>.json            (nur wenn eine neue Karte nötig ist — selten)
 docs/cloud-run/bauplaene/<ordner>.md   (der Bauplan)
+docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordner>/   (BERICHT.md, check-all.txt, messung.txt)
 D:\OS\_lab\quellen-archiv\bbw-hko\<quellen-id>\   (Volltexte — NIE im Repo)
 ```
 
 Sonst wird nichts geschrieben. `src/data/einheiten.index.json` schreibt
 `npm run build:einheiten-index`, nie die Skill von Hand.
 
-## 3. Zwei Betriebsarten
+## 3. Start und Betriebsarten
 
-| | **Mit Bauplan-Stopp** (Standard, lokal mit Pietro) | **Auto** (unbeaufsichtigt) |
+### Drei Starts, ein Ablauf
+
+| Start | Auslöser | |
+|---|---|---|
+| **Einzelstart** | ein Satz im Gespräch: «Erzeuge mit der Skill die Einheit aus Bauplan `<ordner>`» — oder Lehrgang und Kompetenz, wenn es noch keinen Bauplan gibt | am Schluss Dev-Server und Stopp vor der Freigabe |
+| **Schleife** | `docs/cloud-run/prompts/alle-bauplaene-seriell.md` — wählt den nächsten freigegebenen Bauplan | eine Einheit je Durchgang; kein Dev-Server, kein Warten |
+| **Abschluss** | der Aufruf nennt einen vorhandenen Ordner mit `"entwurf"`, der bis zur Freigabe gebracht werden soll | beginnt beim Bestand, dann ab dem Tor |
+
+Jeder Start führt **denselben Ablauf mit denselben Rollen** aus:
+`references/lauf.md`. Lies sie, sobald ein freigegebener Bauplan vorliegt —
+vor Phase 2 und bevor ein Subagent startet. Kein Start lässt die Messung in
+der Schreibphase, das Fakten-Audit oder Phase 10 aus, und jeder endet mit
+demselben Commit-Umfang (der Bauplan gehört dazu). (Herkunft: Rückblick §3
+Nr. 3; ENTSCHEIDE E34.)
+
+### Zwei Betriebsarten
+
+| | **Mit Bauplan-Stopp** (lokal mit Pietro, es gibt noch keinen freigegebenen Bauplan) | **Auto** (der Bauplan ist freigegeben) |
 |---|---|---|
 | Auslöser | Pietro nennt Lehrgang und Kompetenz, es gibt keinen freigegebenen Bauplan | `docs/cloud-run/bauplaene/<ordner>.md` trägt «Freigabe: freigegeben am …», oder der Aufruf kommt aus `docs/cloud-run/RUN.md` |
-| Stopps | **genau einer**: der fertige Bauplan (mit Quellen) wird vorgelegt; weiter erst auf «ok» oder Korrektur | **keiner** |
+| Stopp vor der Erzeugung | **genau einer**: der fertige Bauplan (mit Quellen und Fakten) wird vorgelegt; weiter erst auf «ok» oder Korrektur | **keiner** |
 | Quellensuche (Phase Q) | ja, lokal mit Netz | nein — es gilt, was der Bauplan in §7 nennt und was als Karte **und** Archivtext vorliegt |
 | fehlt etwas | nachfragen ist erlaubt, aber nur gebündelt im Bauplan-Stopp | Regel aus `references/auto-modus.md`; Entscheid in den Bericht |
+| Stopp vor der Freigabe (Phase 10) | ja | Einzelstart und Abschluss: ja · Schleife: die Vorlage steht im Bericht, es wird nicht gewartet |
 
-Ausserhalb des einen Stopps wird nie gefragt. Was früher ein Stopp war
+Nach der Freigabe des Bauplans gilt immer der Auto-Modus, auch wenn Pietro im
+Gespräch ist. Ausserhalb der zwei Stopps — Bauplan und Freigabe — wird nie
+gefragt. Was früher ein Stopp war
 (Versprechen wählen, Herausforderungen wählen, Hybrid-Fall freigeben,
 `knoten_ref` über drei Seiten, Sekundär-Kompetenzen), ist ein Abschnitt des
 Bauplans mit **einer** empfohlenen Variante und höchstens zwei genannten
@@ -89,17 +127,18 @@ Reihenfolge ist eine Abhängigkeitsfolge und wird nicht umgestellt.
 | # | Phase | Ergebnis | Reference | Skelett |
 |---|---|---|---|---|
 | 0 | **Verortung** | Kompetenz, Lebensbezug, Kapitel am Text geprüft, zulässige Spuren je Heft, Ordnername und IDs | `references/phase-0-verortung.md` | — |
-| 1 | **Bauplan** | `docs/cloud-run/bauplaene/<ordner>.md`, alle Entscheide mit Empfehlung | `references/phase-1-bauplan.md` | `docs/cloud-run/bauplaene/_VORLAGE.md` |
+| 1 | **Bauplan** | `docs/cloud-run/bauplaene/<ordner>.md`, alle Entscheide mit Empfehlung; §10 «Fakten»: jede Rechts- und Sachaussage mit Primärquelle | `references/phase-1-bauplan.md` | `docs/cloud-run/bauplaene/_VORLAGE.md` |
 | Q | **Quellen** (nur lokal, nur für Hefte mit Medien-Spur) | Karten in `src/data/quellen/`, Volltexte im Archiv, Bauplan §7 gefüllt | `references/phase-q-quellen.md` | `assets/quelle-template.json` |
 | — | **STOPP: Freigabe des Bauplans** (entfällt im Auto-Modus) | | | |
 | 2 | **Prinzip** | `prinzip.json` | `references/phase-2-3-prinzip-kn.md` | `assets/prinzip-template.json` |
 | 3 | **KN** | `kn.json` — vor den Heften, weil `rubrik_shared` die Feedback-Kriterien liefert | `references/phase-2-3-prinzip-kn.md` | `assets/kn-template.json` |
-| 4 | **Heft-Kern** A, dann B | Situation, LF1, LF2 mit Lösung, Produkt, Schritte, Kriterien, Methoden | `references/phase-4-heft-kern.md` | `assets/herausforderung-template.json` |
+| 4 | **Heft-Kern** je Heft | Situation, LF1, LF2 mit Lösung, Produkt, Schritte, Kriterien, Methoden | `references/phase-4-heft-kern.md` | `assets/herausforderung-template.json` |
 | 5 | **Spuren** je Heft | LF3 und LF4 je Spur **mit** Lösung an der Quelle, Kasten S. 4, Quellenbindung | `references/phase-5-spuren.md` | (im Heft-Skelett) |
 | 6 | **Abschluss und Bilder** je Heft | Begriffsnetz, Abschluss mit Lösung, Checkliste, Übersicht, Beispielbild, Lösungsbild | `references/phase-6-abschluss.md` | (im Heft-Skelett) |
 | 7 | **Set** | `set.json`: Glossar, gemeinsamer Auftrag mit `heft_bezug`, Wochenplan, `status: "entwurf"` | `references/phase-7-set.md` | `assets/set-template.json` |
 | 8 | **Begleiter** | `begleiter.md`; die Marker füllt `scripts/begleiter-marker.mjs` der Skill, nie die Hand | `references/phase-8-begleiter.md` | `assets/begleiter-template.md` |
-| 9 | **Tor und Bericht** | alle Gates grün, Gegenleser nach der letzten Änderung, Bericht | `references/phase-9-tor.md`, `references/gegenleser.md` | — |
+| 9 | **Tor und Bericht** | alle Gates grün, Messung aller Dokumente ohne Überlauf, Gegenleser und Lösungs-Audits nach der letzten Änderung, Bericht begonnen | `references/phase-9-tor.md`, `references/gegenleser.md` | `assets/bericht-template.md` |
+| 10 | **Abschluss vor der Freigabe** | offene Befunde abgearbeitet, Fakten-Audit an Primärquellen mit Tabelle, Zahlen nachgerechnet, erneut gelesen nach der letzten Änderung, Gegenhör-Liste für Pietro, **ein Commit** — dann **STOPP: Vorlage zur Freigabe**; freigegeben wird nur auf Pietros «ok» | `references/phase-10-abschluss.md` | (im Bericht-Gerüst) |
 
 Querschnitt, für jede Phase: `references/kohaerenz.md` (fest gegen hergeleitet,
 Abdeckungstabelle, Vergleich mit Gold), `references/datenvertrag.md` (jedes
@@ -107,7 +146,24 @@ Feld, Budget, Regel), `references/sprache.md` (Anrede, Umlaute, Fall-Begriffe),
 `references/nrlp-lehrmittel-crosswalk.md`, `references/sprachmodus-ids.md`,
 `references/ableitungsregeln.md` (Ordner, IDs, Kurzlink, Quellen-IDs — E21),
 `references/auto-modus.md` (Regel für jeden früheren Stopp, Verhalten bei
-fehlender Voraussetzung — E23).
+fehlender Voraussetzung — E23), `references/lauf.md` (Start, Rollen und
+Modelle, Vorprüfung, Reihenfolge, Messung, Abbruch, Commit — E34).
+
+### Wer was tut
+
+Ab Phase 2 arbeitet die Skill mit Rollen; vollständig in
+`references/lauf.md` §2–§5. In Kürze:
+
+| Rolle | Modell | Aufgabe |
+|---|---|---|
+| Orchestrator | Opus | Vorprüfung, Phasen 2–3, alle Aufträge, Index, Marker-Skript, Tor, Bericht, Commit — nur er |
+| Executor A ∥ Executor B | Opus | je ein Heft (Phasen 4–6), gleichzeitig; **jeder misst sein Heft selbst, bevor er abgibt** |
+| Executor Set → Executor Begleiter | Opus | Phase 7, dann Phase 8, nacheinander |
+| Gegenleser | Sonnet | Lernende, Bogen-Leser, Sweep, Lösungs-Audit — alle gleichzeitig, nur lesend |
+| Fakten-Audit | Opus, mit Netz | jede Rechts- und Sachaussage an Gesetz und Amt (Phase 10) |
+
+Eine Session je Arbeitsbaum, eine Einheit je Session-Durchgang, kein
+`git worktree`, kein `npm ci`, kein Branchwechsel.
 
 ### Prüfen während des Schreibens
 
@@ -126,10 +182,25 @@ die laufende Phase schon geschrieben hat, wird sofort behoben, nicht gesammelt.
 Bis `set.json` steht, zählt bei `check-einheiten` die Befundliste, nicht der
 Exit-Code. Zeichen zählen, nicht schätzen.
 
+**Zeichenbudget ist nicht Seitenhöhe.** In 11 von 13 Läufen lief eine Seite
+über, obwohl `check-all` grün war. Darum misst jeder Executor sein Heft und
+sein Dokument «Lösungen» selbst, bevor er abgibt, in einem eigenen
+Temp-Ordner:
+
+```
+node scripts/export-v42.mjs <ordner> --out <eigener-temp-ordner>
+node scripts/messen-v42.mjs <eigener-temp-ordner>
+```
+
+Einzelheiten und der Weg, wenn der Export nicht läuft:
+`references/lauf.md` §6. (Herkunft: Rückblick §4 Zeile 1, §5.2.)
+
 ## 5. Regeln, die in jeder Phase gelten
 
 1. **Kein Push, kein Deploy, kein Merge nach `main`.** Kein `status`-Wechsel.
-   `set.json` trägt exakt `"status": "entwurf"`.
+   `set.json` trägt exakt `"status": "entwurf"` — bis zum Freigabeschritt
+   (`references/phase-10-abschluss.md` §8), und der läuft nur auf Pietros
+   ausdrückliches «ok» (E32).
 2. **Das Repo ist öffentlich.** Kein Lehrmitteltext, kein Transkript, kein
    Artikeltext in irgendeiner Datei des Repos — auch nicht im Bauplan, im
    Bericht oder als Beispiel. Eigene Formulierung plus Kapitel und Seite als
@@ -138,6 +209,11 @@ Exit-Code. Zeichen zählen, nicht schätzen.
    aus dem Lehrmittelkapitel (`material/_lehrmittel/`), dem nRLP-Datensatz des
    Lehrgangs und dem Archivtext einer Quelle, deren Karte vorliegt. Nichts aus
    dem Gedächtnis. Was sich nicht belegen lässt, entfällt und steht im Bericht.
+   **Rechts- und Sachaussagen über die Welt** (Artikelnummer, Frist, Betrag,
+   Datum, «Stand …») brauchen zusätzlich eine Primärquelle — Gesetz oder Amt —
+   mit URL und Abrufdatum: vor dem Schreiben im Bauplan §10, nach dem Schreiben
+   im Fakten-Audit (Phase 10). Die Erzeugung zitiert nur aus §10 (Rückblick
+   §4, §5.2).
    Zahlen einer Situation (Lohn, Preis) sind erfundene Fallzahlen und als
    solche erlaubt; Zahlen über die Welt nicht.
 4. **Keine erfundene Quelle.** Medien-Spur nur mit Karte **und** Volltext im
@@ -194,12 +270,26 @@ Kurzfassung; vollständig in `references/auto-modus.md`.
 | Karte oder Archivtext für die Quelle eines Hefts | nur `ohne_medien` für dieses Heft |
 | `ohne_medien` ist unzulässig (Kompetenz des Hefts verlangt Rezeption mündlich oder audiovisuell) **und** die Quelle fehlt | lokal: Phase Q zuerst; Auto: «nicht erzeugbar» |
 | Transkript eines Audio- oder Videobeitrags | nicht als Quelle mit Raster verwendbar |
-| Tor nach drei Reparaturrunden rot | Ordner und neue Karten entfernen, Grund in den Bericht |
+| Tor nach drei Reparaturrunden rot | Ordner und neue Karten nach `docs/cloud-run/laeufe/…/abgebrochen/` verschieben, nicht löschen (`references/lauf.md` §7); Grund in den Bericht |
 
 ## 7. Fertig ist die Einheit, wenn
 
-`references/phase-9-tor.md` durchgelaufen ist: `check-all` GRUEN, Export und
-Messung ohne Überlauf, Bestand unverändert, Build Exit 0 — und der Bericht
-nennt: Ordner, Tor-Ausgabe, Kapitel und Seiten, jede Quelle mit Prüfdatum, alle
-Entscheide, die sonst ein Mensch getroffen hätte, und alles, was nicht belegt
-oder nicht geprüft ist. **Kein Commit, ausser der Aufruf verlangt ihn.**
+1. `references/phase-9-tor.md` durchgelaufen ist: `check-all` GRUEN, Export und
+   Messung ohne Überlauf, Bestand unverändert, Build Exit 0, Gegenleser und
+   Lösungs-Audits nach der letzten Änderung;
+2. `references/phase-10-abschluss.md` Schritte 1 bis 6 durchgelaufen sind:
+   offene Befunde abgearbeitet, Fakten-Audit mit Tabelle, Zahlen nachgerechnet,
+   erneut gelesen, Tor und Messung nach der letzten Änderung, Gegenhör-Liste;
+3. der Bericht im Laufordner liegt (`assets/bericht-template.md`) und nennt:
+   Ordner, Tor-Ausgabe, Kapitel und Seiten, jede Quelle mit Prüfdatum, alle
+   Entscheide, die sonst ein Mensch getroffen hätte, die Fakten-Tabelle, und
+   unter «Offen» alles, was nicht belegt, nicht geprüft oder nicht entschieden
+   ist;
+4. **ein Commit** «Einheit `<ordner>` (bbw-hko-heft-v42)» steht, mit Einheit,
+   Quellenkarten, **Bauplan**, Laufordner und den zwei Index-Dateien — nach
+   `node scripts/check-leck.mjs --staged` ohne Fehler und ohne Warnung
+   (`references/lauf.md` §8). Kein Push.
+
+Fertig heisst nicht freigegeben: Die Einheit bleibt `"entwurf"`, bis Pietro
+auf die Vorlage zur Freigabe «ok» sagt (`references/phase-10-abschluss.md`
+§7–§8).

@@ -2,8 +2,12 @@
 
 Im Auto-Modus beantwortet niemand eine Frage. Die Skill führt einen
 freigegebenen Bauplan aus, füllt Lücken nach einer festen Regel, hält jeden
-solchen Entscheid fest und endet entweder mit grünem Tor oder mit der Meldung
-«nicht erzeugbar».
+solchen Entscheid fest und endet entweder mit grünem Tor, abgeschlossener
+Phase 10 und einem Commit — oder mit der Meldung «nicht erzeugbar».
+
+**Wer was in welcher Reihenfolge tut** (Rollen und Modelle, Vorprüfung,
+Parallelität, Messung, Abbruch, Commit) steht in `references/lauf.md`. Diese
+Datei sagt, **wie entschieden wird**, wenn niemand antwortet.
 
 ## 1. Woran der Auto-Modus erkannt wird
 
@@ -30,7 +34,7 @@ Auto-Modus: Der eine Stopp hat stattgefunden.
 | Phase 1 | schreibt den Bauplan | entfällt — der Bauplan liegt vor |
 | Phase Q | Quellensuche | **entfällt** (Abschnitt 6) |
 | Stopp | einer | keiner |
-| Phasen 2–9 | wie in der jeweiligen Reference | gleich; Werte kommen aus dem Bauplan |
+| Phasen 2–10 | wie in der jeweiligen Reference | gleich; Werte kommen aus dem Bauplan. Phase 10 läuft bis zur Vorlage zur Freigabe; freigegeben wird nie ohne Pietros «ok» |
 
 ## 3. Kein Entscheid des Bauplans wird geändert
 
@@ -101,10 +105,11 @@ Dazu, aus anderen Entscheiden und aus `docs/cloud-run/RUN.md`:
 | Bauplan entspricht E21 nicht und Bauplan §9 nennt die Abweichung nicht als Ausnahme (Abschnitt 7) | «nicht erzeugbar», nichts schreiben |
 | Ordner existiert bereits | nie überschreiben; «nicht erzeugbar» |
 | Fehler in Renderer oder Skript | nicht reparieren, nicht umgehen (`--baseline` ist verboten); in den Bericht; «nicht erzeugbar», wenn das Tor sonst nicht grün wird |
-| Tor nach drei Reparaturrunden rot (Abschnitt 8) | Ordner und neue Karten entfernen, Grund in den Bericht |
+| Tor nach drei Reparaturrunden rot (Abschnitt 8) | Ordner und neue Karten nach `laeufe/…/abgebrochen/` verschieben (`references/lauf.md` §7), Grund in den Bericht |
 
 «Nicht erzeugbar» heisst immer: kein Ordner unter `src/data/einheiten/`, keine
-halbe Einheit, ein Eintrag im Bericht mit dem Grund in einem Satz.
+halbe Einheit, ein Eintrag im Bericht mit dem Grund in einem Satz. Was schon
+geschrieben war, wird verschoben, nicht gelöscht (`references/lauf.md` §7).
 
 ## 6. Keine Recherche
 
@@ -125,6 +130,16 @@ dem Archivtext — nie aus dem Kurzbeschrieb der Karte, nie aus dem Gedächtnis.
 
 Der Archivtext wird gelesen, nicht kopiert: Kein Satz daraus steht in einer
 Datei des Repos, auch nicht im Bericht.
+
+**Rechts- und Sachaussagen** (Artikelnummer, Frist, Betrag, Datum, «Stand …»)
+schreibt die Erzeugung nur, wenn sie in Bauplan §10 «Fakten» mit Primärquelle
+stehen (`references/phase-1-bauplan.md` §3.14). Trägt der Bauplan keinen §10
+(freigegeben vor dem 07.10.2026): nur aus Lehrmittel, Datensatz und
+Archivtext, wie `SKILL.md` §5 Nr. 3. In beiden Fällen prüft das Fakten-Audit
+in Phase 10 jede Aussage an der Primärquelle. Das Audit ist keine
+Quellensuche: Es liest frei zugängliche amtliche Seiten und wählt keine neue
+Quelle für ein Heft (`references/phase-10-abschluss.md` §2). (Herkunft:
+Rückblick §5.2; ENTSCHEIDE E34.)
 
 ## 7. Prüfung «Bauplan entspricht E21» — vor dem ersten Schreiben
 
@@ -165,9 +180,10 @@ erneut laufen lassen. Die laufende Prüfung mit `check-v42` nach jeder Datei
 zählt nicht als Runde.
 
 - **Höchstens drei Runden.** Ist das Tor danach rot: den Ordner der Einheit
-  und die Karten, die **dieser Lauf neu angelegt** hat, entfernen;
-  bestehende Karten und alles andere bleiben. Grund und letzte Tor-Ausgabe in
-  den Bericht.
+  und die Karten, die **dieser Lauf neu angelegt** hat, nach
+  `docs/cloud-run/laeufe/<datum>-<ordnername>/abgebrochen/` verschieben —
+  nicht löschen (`references/lauf.md` §7); bestehende Karten und alles
+  andere bleiben. Grund und letzte Tor-Ausgabe in den Bericht.
 - Nie im Skript reparieren, nie eine Regel abschalten, nie einen Befund
   wegdefinieren. Eine Warnung zu wörtlicher Übernahme ist zu beheben wie ein
   Fehler.
@@ -176,15 +192,22 @@ zählt nicht als Runde.
 
 ## 9. Wohin der Bericht geht
 
-| Lauf | Bericht | Entscheide |
-|---|---|---|
-| lokal (Bauplan freigegeben, Pietro im Gespräch oder nicht) | in der Antwort der Skill | im selben Bericht |
-| Produktionslauf | gemäss `docs/cloud-run/RUN.md`: `docs/cloud-run/laeufe/<datum>/BERICHT.md` | `docs/cloud-run/laeufe/<datum>/ENTSCHEIDE.md` |
+Bei jedem lokalen Start — Einzelstart, Schleife, Abschluss, mit oder ohne
+Pietro im Gespräch — nach
+`docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/BERICHT.md`, im Gerüst
+`assets/bericht-template.md`. Die Entscheide nach Abschnitt 4 stehen im selben
+Bericht (Abschnitt 7 des Gerüsts); Phase 10 schreibt darin weiter
+(`references/lauf.md` §8).
 
 Inhalt je Einheit: Ordner; letzte Tor-Ausgabe; Kapitel und Seiten; jede
 Quelle mit Prüfdatum; alle Entscheide nach Abschnitt 4; was nicht belegt,
 nicht geprüft oder nicht erzeugbar war; aufgefallene Fehler in Skill, Skript
 oder Daten. Kein Lehrmittel-, Transkript- oder Artikeltext.
 
-Commit, Branch und Push richten sich im Produktionslauf nach `RUN.md`; lokal
-gilt: kein Commit, ausser der Aufruf verlangt ihn.
+**Commit:** einer je Einheit, nach `references/lauf.md` §8; kein Push.
+
+Der Produktionslauf über `docs/cloud-run/RUN.md` (privater Spiegel) ist seit
+dem 03.10.2026 nicht mehr benutzt worden; ob er bleibt, ist offen (Rückblick
+§1, §5.5). Kommt ein Aufruf doch von dort, richten sich Ort des Berichts,
+Branch und Push nach `RUN.md` — der Ablauf bleibt der aus
+`references/lauf.md`.

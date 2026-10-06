@@ -362,3 +362,13 @@ Angereicherte Methodenkarten zählen (Soll: mit der Rezeptionskarte genau zwei):
 ```
 node -e "const h=require('./src/data/einheiten/<ordner>/herausforderung_A.json');for(const m of h.methoden){if(m.ref==='__spur__'){console.log('__spur__  (Rezeptionskarte, Phase 5)');continue}const k=require('./src/data/methoden/'+m.ref+'.json');console.log(m.ref,(m.beispiel||k.beispiel||k.fehler)?'angereichert':'leicht')}"
 ```
+
+**Zeichenbudget ist nicht Seitenhöhe.** Der Executor eines Hefts misst sein
+Heft selbst, bevor er es abgibt — nach Phase 6, weil S. 6 erst mit dem
+Beispielbild voll ist (`references/phase-6-abschluss.md` §6,
+`references/lauf.md` §6). Schon beim Schreiben des Kerns gilt: Zwei
+angereicherte Methodenkarten mit langem `beispiel` in der unteren Reihe lassen
+dem Beispielbild auf S. 6 kaum Platz, und Stufentexte, die im Budget liegen,
+können S. 5 trotzdem füllen — beides sieht nur die Messung. (Herkunft:
+Berichte `2026-10-04-111` §9 Nr. 1, `2026-10-04-421` §10, `2026-10-03-121`
+§11 Nr. 3; Rückblick §4.)

@@ -259,3 +259,27 @@ Regel, dem abweichenden Wert und dem Grund — etwa: abweichender Ordnername ·
 Quellen-IDs einer anderen Einheit · SK ausserhalb des Themas · Kapitel
 ausserhalb der Crosswalk-Zeile. Was hier steht, gilt im unbeaufsichtigten
 Lauf; was hier fehlt, macht den Bauplan dort «nicht erzeugbar».
+
+## 10. Fakten
+
+Jede Rechts- und Sachaussage über die Welt, die die Einheit tragen soll —
+Artikelnummer, Frist, Betrag, Prozent, Datum, Unterschriftenzahl, Ergebnis
+einer Abstimmung, jedes «Stand …». Vor dem Schreiben an der **Primärquelle**
+geprüft (Gesetz oder Amt; nicht das Lehrmittel, nicht ein Medienbericht). Die
+Erzeugung zitiert nur aus dieser Tabelle; das Fakten-Audit nach dem Schreiben
+prüft jede Zeile am fertigen Text noch einmal. Regeln:
+`references/phase-1-bauplan.md` §3.14 der Skill.
+
+**Kein Wortlaut** aus Gesetz, Lehrmittel oder Quelle — die Aussage in eigenen
+Worten, dazu die Fundstelle.
+
+| Nr. | Aussage (eigene Worte) | Wo gebraucht (Heft · Stelle) | Lehrmittel (Kap., S.) | Primärquelle (Gesetz, Art. / Amt, Seite) | URL | Abruf | Urteil |
+|---|---|---|---|---|---|---|---|
+| 1 | | | | | | JJJJ-MM-TT | stimmt / vertretbar vereinfacht / nicht belegbar |
+
+- **Nicht belegbar:** entfällt — oder das Heft gibt die Aussage als
+  Fallüberlegung bzw. als Aussage der Quelle wieder (dann auch in §9).
+- **Lehrmittel gegen Primärquelle:** … (Kapitel, Seite, was abweicht) / keine
+  Abweichung gefunden.
+- Erfundene Fallzahlen einer Situation gehören nicht hierher.
+- Braucht die Einheit keine solche Aussage: «keine» — mit einem Satz, warum.
