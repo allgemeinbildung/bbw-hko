@@ -1,0 +1,936 @@
+{
+  "id": "4.3.1_vielfalt_untersuchen_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "4.3",
+  "modul_titel": "Verantwortung für mich und andere übernehmen — vielfalt und migration untersuchen",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Wer kommt, wer bleibt? Mein Leserbrief zur Zuwanderung",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Zuwanderung erklären und Stellung nehmen"
+  },
+  "prinzip_ref": "4.3.1_vielfalt_untersuchen_prinzip",
+  "nrlp": {
+    "nr": "4.3.2",
+    "nr_primary": [
+      "4.3.2"
+    ],
+    "lebensbezug": "4.3",
+    "themen": [
+      "T4"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R3"
+      },
+      {
+        "aspekt": "Ethik",
+        "iteration": "R4"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich",
+      "Produktion schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3",
+      "SM5"
+    ],
+    "sk": [
+      7,
+      11,
+      5
+    ],
+    "kompetenz_id": "4.3.2",
+    "lebensbezug_id": "4.3",
+    "kompetenz_text": "Ich kann Ursachen und Auswirkungen von Migration anhand konkreter Beispiele analysieren und erklären, wie das Leben von Betroffenen und die Gesellschaft beeinflusst werden.",
+    "lebensbezug_text": "Ich lebe in einer vielfältigen Gesellschaft und möchte respektiert werden."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "In der Zeitung meiner Wohngemeinde steht ein Leserbrief. Darin heisst es: Zu uns kämen fast nur noch Menschen, die Asyl wollten. Die wenigsten seien verfolgt. Wer nur ein besseres Leben suche, solle wieder gehen. Einige in meinem Umfeld sagen: «Endlich schreibt das jemand.» Ich denke an drei Menschen, die ich kenne: an die Pflegefachfrau aus Deutschland im Heim meiner Grossmutter. An den Maurer aus Portugal, dessen Frau und Kinder nachgezogen sind. Und an unseren Nachbarn. Er ist vor einem Krieg geflohen und wurde vorläufig aufgenommen. Stimmt für sie, was im Brief steht? Die Zeitung druckt Antworten, die bis Freitag eintreffen. Ich will dem Brief antworten. Zuerst will ich klären, aus welchen Gründen Menschen herkommen, welche Regeln für sie gelten und was ich selbst fordere.",
+  "zahlen_tabelle": [
+    {
+      "label": "Brief in der Zeitung (für dieses Heft)",
+      "wert": "erfunden"
+    },
+    {
+      "label": "Antworten an die Zeitung bis",
+      "wert": "Freitag"
+    },
+    {
+      "label": "Länge meines Leserbriefs (Wörter)",
+      "wert": "120 bis 150"
+    },
+    {
+      "label": "Argumente mit Beleg",
+      "wert": "2"
+    }
+  ],
+  "leitfrage": "Wer soll bleiben dürfen – nur wer verfolgt wird, oder auch, wer vor Krieg und Not geht oder hier gebraucht wird?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Gründe zu gehen vs. Recht zu bleiben",
+    "hint": "Krieg und Not sind starke Gründe zu gehen. Asyl erhält nach der Regel nur, wer verfolgt wird. Soll die Regel eng bleiben? Beides lässt sich begründen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Gründe und Zahlen",
+      "seiten": "Seite 106-109",
+      "fuer_leitfrage": [
+        1,
+        3
+      ]
+    },
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Einwanderungsland",
+      "seiten": "Seite 111",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Zulassung und Asyl",
+      "seiten": "Seite 113-114",
+      "fuer_leitfrage": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie schreiben einen Leserbrief als Antwort auf den Brief in der Zeitung. LF1 liefert die Begriffe für die Gründe, LF2 ein Beispiel mit seiner Folge, LF3 Zahlen als Belege für zwei Argumente, LF4 Ihre Forderung für den Schluss.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.4 | S. 106, 114",
+      "text": "Erklären Sie mit Kap. 3.4, S. 106: Was ist ein Push-Faktor, was ein Pull-Faktor? Nennen Sie je zwei Beispiele. Welcher Push-Faktor gilt laut S. 114 (Tabelle, Zeile «Flüchtlinge») als einziger Asylgrund?",
+      "liefert": "Begriffe für Gründe und Asylgrund",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "Push heisst drücken, Pull heisst ziehen. Lesen Sie die zwei Kästen auf S. 106.",
+          "Asyl heisst Schutz. S. 114, Zeile «Flüchtlinge», sagt, wer ihn nach der Regel erhält."
+        ],
+        "satzanfaenge": [
+          "«Ein Push-Faktor drückt Menschen weg, zum Beispiel …»",
+          "«Ein Pull-Faktor zieht Menschen an, zum Beispiel …»",
+          "«Als Asylgrund gilt nur …»"
+        ],
+        "produkt": "Mit diesen Begriffen sagen Sie in der Einleitung Ihres Leserbriefs (S. 7), worum es geht."
+      },
+      "loesung": {
+        "kern": "Push, Pull – und nur Verfolgung als Asylgrund",
+        "zeilen": [
+          {
+            "label": "Migration",
+            "text": "Menschen wandern ein oder aus.",
+            "quelle": "Kap. 3.4, S. 106"
+          },
+          {
+            "label": "Push-Faktoren",
+            "text": "Gründe, die Menschen aus ihrem Gebiet wegdrücken. Das Lehrmittel nennt vier: Krieg; Verfolgung (Religion, Politik, Rassismus); Umweltkatastrophen; Überbevölkerung mit Armut und Arbeitslosigkeit.",
+            "quelle": "Kap. 3.4, S. 106"
+          },
+          {
+            "label": "Pull-Faktoren",
+            "text": "Gründe, die Menschen in ein anderes Gebiet ziehen. Das Lehrmittel nennt vier: guter Verdienst und Wohlstand; Sicherheit und Menschenrechte; Toleranz; gute Bildung.",
+            "quelle": "Kap. 3.4, S. 106"
+          },
+          {
+            "label": "Asylgrund",
+            "text": "Laut Lehrmittel nur Verfolgung: Wer wegen Religion, Nationalität, sozialer Gruppe, politischer Anschauung oder aus rassistischen Gründen ernsthaft bedroht ist. Krieg und Hunger geben kein Recht auf dauerhaften Aufenthalt. Rechtsstand: laut Lehrmittel, ohne Datum.",
+            "quelle": "Kap. 3.4, S. 114"
+          },
+          {
+            "label": "Nicht im Lehrmittel",
+            "text": "Klimawandel und Alterung der Bevölkerung: S. 106 nennt nur Umweltkatastrophen und Überbevölkerung. Wer sie nennt, bringt eine Fallüberlegung, keine Fachaussage."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 3.4 | S. 111, 113-114 · eigener Fall",
+      "text": "Ordnen Sie die drei Menschen der Situation ein: Grund (S. 106, 111), Weg zum Bleiben und Ausweis (Kap. 3.4, S. 113–114). Notieren Sie je eine Folge für die Person oder die Gesellschaft (S. 111 oder eigene Überlegung).",
+      "liefert": "Drei Beispiele mit Grund und Folge",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "Personenfreizügigkeit (EU, auch EFTA): Wer eine Stelle hat, darf herkommen (S. 111, 113).",
+          "Vorläufige Aufnahme: meist Asylgesuch abgelehnt; Rückkehr etwa unzumutbar (S. 114)."
+        ],
+        "satzanfaenge": [
+          "«… kam wegen … Das ist ein …-Faktor.»",
+          "«Bleiben darf … wegen … (S. …), Ausweis …»",
+          "«Eine Folge ist: … (S. 111 oder meine Überlegung)»"
+        ],
+        "produkt": "Ein Beispiel mit seiner Folge stützt später die Begründung eines Arguments (S. 7)."
+      },
+      "loesung": {
+        "kern": "Drei Ketten: Grund, Weg, Ausweis, Folge",
+        "zeilen": [
+          {
+            "label": "Vollständig",
+            "text": "Je Person vier Angaben; Weg und Ausweis mit Seite."
+          },
+          {
+            "label": "Pflegefachfrau",
+            "text": "Grund: Erwerbstätigkeit (S. 111); Pull-Faktor: Deutung. Weg: Personenfreizügigkeit, mit Stelle oder eigenem Lebensunterhalt; S. 111 nennt nur die EU, sie gilt auch für die EFTA. Ausweis: B EU/EFTA bei Vertrag ab einem Jahr, sonst L (S. 113); im Fall offen.",
+            "quelle": "Kap. 3.4, S. 111, 113"
+          },
+          {
+            "label": "Maurer und Familie",
+            "text": "Er: wie oben. Frau und Kinder: Familiennachzug (S. 111), Ausweis nicht im Lehrmittel.",
+            "quelle": "Kap. 3.4, S. 111, 113"
+          },
+          {
+            "label": "Nachbar",
+            "text": "Grund: Krieg, ein Push-Faktor (S. 106). Weg: kein Asylgrund, Rückkehr aber unzumutbar: vorläufige Aufnahme (S. 114), Ausweis F (S. 113). Wer S (Schutzbedürftige, S. 113) nennt: sachlich möglich, die Situation sagt aber F. Folge (Fallüberlegung): Er lebt auf Zeit, kann schlecht planen.",
+            "quelle": "Kap. 3.4, S. 113-114"
+          },
+          {
+            "label": "Folgen (S. 111)",
+            "text": "Laut Lehrmittel, ohne Jahr, ungeprüft: Gesundheits- und Sozialwesen ein Drittel ausländischer Herkunft; Gastgewerbe, Bau: rund die halbe Arbeit.",
+            "quelle": "Kap. 3.4, S. 111"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Alle drei unter «Asyl» einordnen; Grund und Recht zu bleiben verwechseln."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Leserbrief mit Bezug, zwei belegten Argumenten und Forderung",
+    "titel": "Mein Leserbrief: Wer soll bleiben dürfen?",
+    "format_detail": "Sie schreiben auf S. 7 einen Leserbrief von 120 bis 150 Wörtern an die Zeitung Ihrer Wohngemeinde, als Antwort auf den Brief aus der Situation. Er hat vier Teile: Titel · Einleitung mit Bezug auf den Brief (ein bis zwei Sätze) · zwei Argumente, je in drei Sätzen: Behauptung, Begründung, Beleg · Schluss in drei Sätzen: was für die andere Haltung spricht (der Einwand), Ihre Antwort darauf, Ihre Forderung in Ich-Form. Einwand und Antwort gehören zum Schluss; sie sind kein drittes Argument. Ein Beleg ist eine Zahl oder eine Regel. Beleg 1 kommt aus dem Raster (S. 3), Beleg 2 aus dem Raster oder aus LF1 und LF2. Unterstreichen Sie die zwei Belege im Brief. Unter den Brief schreiben Sie die Liste «Meine Belege»: zu jedem Beleg die Fundstelle, dazu Ihre Wertung in einem Satz («Mir ist wichtig, dass …»). Beispiele nennen Sie ohne Namen und so, dass niemand erkennbar ist; niemand wird abgewertet.",
+    "beschreibung": "Ich antworte auf den Brief in der Zeitung: Titel, Einleitung, zwei Argumente (Behauptung, Begründung, Beleg), Schluss mit Einwand, Antwort und meiner Forderung. 120 bis 150 Wörter.",
+    "schritte": [
+      {
+        "label": "01 Gründe ordnen",
+        "hint": "Aus LF1: Schreiben Sie auf S. 7 Titel und Einleitung (ein bis zwei Sätze). Auf welchen Satz des Briefs antworten Sie?"
+      },
+      {
+        "label": "02 Beispiele einordnen",
+        "hint": "Aus LF2 (S. 2): Kreisen Sie dort ein Beispiel mit Folge ein. In Ihrem Leserbrief stützt es eine Begründung – ohne Namen."
+      },
+      {
+        "label": "03 Behauptung prüfen",
+        "hint": "Aus LF3: Schreiben Sie zwei Argumente. Beleg 1: Zahl aus dem Raster. Beleg 2: zweite Rasterzeile – oder Zahl oder Regel aus LF1, LF2."
+      },
+      {
+        "label": "04 Position festlegen",
+        "hint": "Aus LF4: Schreiben Sie den Schluss in drei Sätzen: was für die andere Haltung spricht, Ihre Antwort, Ihre Forderung in Ich-Form."
+      },
+      {
+        "label": "05 Brief fertigstellen, prüfen",
+        "hint": "Zählen Sie: 120 bis 150 Wörter? Zwei Belege unterstreichen. Darunter «Meine Belege»: zwei Fundstellen, Ihre Wertung. Zwei Kriterien prüfen."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Leserbrief (120 bis 150 Wörter), die zwei Belege unterstrichen",
+      "Liste «Meine Belege»: zwei Fundstellen und meine Wertung in einem Satz"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel, halb so lang wie Ihr Brief: Leserbrief «Abends in die Bibliothek?»",
+      "legende": [
+        {
+          "key": "beleg",
+          "text": "Beleg mit Zahl oder Regel"
+        },
+        {
+          "key": "wertung",
+          "text": "meine Wertung"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Leserbrief",
+          "text": [
+            "Im Gemeindeblatt stand, die Bibliothek brauche abends niemand. Ich sehe das anders.",
+            "Viele können erst abends kommen. Wer eine Lehre macht, arbeitet oft bis 17.30 Uhr. Die Bibliothek schliesst aber um 17 Uhr.",
+            "Ein langer Abend kostet wenig. Es braucht nur eine Person. Das sind drei Stunden Lohn an jedem Donnerstag.",
+            "Ja, das Geld der Gemeinde ist knapp. Doch leere Räume kosten auch. Ich fordere: donnerstags offen bis 20 Uhr."
+          ]
+        },
+        {
+          "titel": "Meine Belege",
+          "eintraege": [
+            {
+              "marke": "beleg",
+              "text": "Schliesst um 17 Uhr – Aushang an der Tür"
+            },
+            {
+              "marke": "beleg",
+              "text": "Drei Stunden Lohn je Donnerstag – Budget der Gemeinde, S. 4"
+            },
+            {
+              "marke": "wertung",
+              "text": "Mir ist wichtig, dass alle lesen können."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Leserbrief «Wer soll bleiben dürfen?»",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Schritt 05 zeigen. Der Brief fordert, mehr Gründe gelten zu lassen (zweites Beispiel bei LF4); ein Brief, der die enge Regel verteidigt, erreicht ebenso die volle Punktzahl, wenn er begründet und belegt ist. Nicht tragfähig ist ein Brief, der Gruppen abwertet. 146 Wörter, mit Titel 150. Er zeigt die Fassung ohne Medien: Beleg 1 aus dem Raster zu Kap. 3.4 (selbst gefüllte Zeile; vier Werte der Tabelle addiert), Beleg 2 eine Regel aus LF2. Mit der Grafik ersetzt ein Balken das erste Argument, etwa: «Am häufigsten kamen Menschen für die Arbeit: laut Grafik 2025 88 355 Personen, davon 95 Prozent aus EU/EFTA-Staaten» (Fundstelle: Balken «Erwerbstätigkeit», Zahlen 2025). Vorsicht: «Etwa 2,4 Prozent» (S. 114) ist ein Anteil am Bestand der ausländischen Wohnbevölkerung, ohne Jahr, an amtlichen Zahlen nicht nachvollziehbar; kein Beleg zum heutigen Zuzug. «Die wenigsten seien verfolgt» lässt sich mit dem Material des Hefts nicht prüfen. Nicht als Beleg empfehlen: «mehr als die Hälfte aus wirtschaftlichen Gründen» (S. 107, nicht belegbar) und die Branchenanteile (S. 111, ohne Jahr, nicht nachgeprüft). Fallüberlegungen: dass ohne Zugezogene Personal fehlte; dass die Rückkehr unzumutbar ist (S. 114 nennt Krieg als Beispiel, geprüft wird der Einzelfall). Der Brief der Zeitung ist erfunden; das Heft sagt nichts zum heutigen Stand der Politik.",
+      "legende": [
+        {
+          "key": "beleg",
+          "text": "Beleg mit Zahl oder Regel"
+        },
+        {
+          "key": "wertung",
+          "text": "meine Wertung"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Leserbrief",
+          "text": [
+            "In Ihrer Ausgabe schreibt jemand, zu uns kämen fast nur noch Menschen, die Asyl wollen, und wer ein besseres Leben suche, solle wieder gehen. Ich widerspreche, denn ein Pull-Faktor wie guter Verdienst ist etwas anderes als ein Asylgrund.",
+            "Erstens ist ein besseres Leben kein Vorwurf. Auch aus der Schweiz gingen Menschen fort, erst aus Not, später auch für Wohlstand. Laut meinem Lehrmittel wanderten 1850 bis 1930 rund 390 000 Menschen nach Übersee aus.",
+            "Zweitens kommen Menschen auch für die Arbeit und nach einer Regel, nicht über Asyl. So kommen Pflegefachleute, ohne die Personal fehlte. Seit 2002 gilt die Personenfreizügigkeit: Aus EU- und EFTA-Staaten darf kommen, wer eine Stelle hat oder den Lebensunterhalt selbst bestreitet.",
+            "Richtig ist: Asyl erhält nach der Regel nur, wer verfolgt wird, und Regeln sollen gelten. Aber eine Rückkehr in den Krieg kann unzumutbar sein. Ich fordere: Wer nicht zurückkann, soll bleiben dürfen."
+          ]
+        },
+        {
+          "titel": "Meine Belege",
+          "eintraege": [
+            {
+              "marke": "beleg",
+              "text": "Rund 390 000 wanderten 1850–1930 nach Übersee aus – Kap. 3.4, S. 109, Tabelle",
+              "notiz": "Beleg 1 (Raster S. 3, ohne Medien); vier Werte addiert"
+            },
+            {
+              "marke": "beleg",
+              "text": "Personenfreizügigkeit seit 2002: Stelle oder eigener Lebensunterhalt – Kap. 3.4, S. 111, 113",
+              "notiz": "Beleg 2 (aus LF2); Regel; S. 111 nennt nur die EU"
+            },
+            {
+              "marke": "wertung",
+              "text": "Mir ist wichtig, dass Schutz vor Krieg mehr zählt als eine enge Regel."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Aussagen stehen ohne Begründung da.",
+        "Eine Begründung ist angedeutet, bleibt aber lückenhaft.",
+        "Die Aussagen sind nachvollziehbar begründet und mit einem Beleg gestützt.",
+        "Schlüssig begründet; ein Einwand ist beantwortet, Folgen sind benannt."
+      ],
+      "indikator_produkt": "Zwei Argumente mit Begründung und Beleg; der Einwand ist beantwortet, eine Folge steht da."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Position ist nicht erkennbar.",
+        "Eine Position ist angedeutet, bleibt aber unklar oder ohne Grund.",
+        "Die Position steht klar in Ich-Form und ist begründet.",
+        "Begründete Position in Ich-Form; was für die andere Haltung spricht, ist anerkannt."
+      ],
+      "indikator_produkt": "Der Schluss fordert etwas in Ich-Form und sagt, was für die andere Haltung spricht."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Der Leserbrief auf S. 6 zeigt die Form an einem anderen Thema; die Satzanfänge auf S. 2 helfen beim Einordnen der drei Beispiele.",
+    "scaffold_100": "Zeichnen Sie für eines der drei Beispiele die Wirkungskette: Grund → Weg → Ausweis → Folge. Markieren Sie, wo Ihre Forderung etwas ändert."
+  },
+  "methoden": [
+    {
+      "ref": "lm-17-3-stellungnahme",
+      "fuer": "für den Leserbrief",
+      "tun": "Ihr Leserbrief: Titel als Frage, Einleitung mit Bezug auf den Brief, zwei Argumente, Schluss mit Ihrer Forderung."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "lm-17-3-3b-schema",
+      "fuer": "für jedes der zwei Argumente",
+      "tun": "Je Argument drei Sätze: Behauptung, Begründung, Beleg. Das dritte B ist hier Ihr Beleg: eine Zahl oder eine Regel."
+    },
+    {
+      "ref": "hko-wirkungskette",
+      "fuer": "für LF2 und das Plus: Grund → Weg → Ausweis → Folge",
+      "beispiel": [
+        "Lehrstelle in einer anderen Stadt → Umzug → Anmeldung bei der Gemeinde",
+        "→ neue Kolleginnen und Kollegen, alte Freunde seltener"
+      ]
+    }
+  ],
+  "mindmap_zentrum": "Anpassen oder Eigenes bewahren",
+  "mindmap_aeste": [
+    {
+      "titel": "Warum gehen Menschen?",
+      "punkte": [
+        "Migration",
+        "Push-Faktor",
+        "Pull-Faktor"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer darf bleiben?",
+      "punkte": [
+        "Personenfreizügigkeit",
+        "Familiennachzug",
+        "Asylgrund",
+        "vorläufige Aufnahme"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was schreibe ich dazu?",
+      "punkte": [
+        "Argument",
+        "Beleg",
+        "Forderung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Sagt mein Schluss in Ich-Form, wer bleiben dürfen soll – und was für die andere Haltung spricht?",
+      "Habe ich den Brief der Zeitung mit zwei Belegen geprüft, je mit Fundstelle in «Meine Belege»?"
+    ],
+    "mitnahme": [
+      "Gründe zu gehen und Regeln zu bleiben",
+      "Mein Beleg mit Zahl und Fundstelle",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Push-Faktor",
+          "nach": "Migration",
+          "text": "drückt weg und führt zu"
+        },
+        {
+          "von": "Pull-Faktor",
+          "nach": "Migration",
+          "text": "zieht an und führt zu"
+        },
+        {
+          "von": "Pull-Faktor",
+          "nach": "Personenfreizügigkeit",
+          "text": "guter Verdienst zieht an; herkommen dürfen Staatsangehörige der EU/EFTA-Staaten dank der (S. 111: dort nur EU)"
+        },
+        {
+          "von": "Migration",
+          "nach": "Familiennachzug",
+          "text": "zieht weitere nach sich, etwa durch (S. 107 und S. 111; die Verbindung ist Deutung)"
+        },
+        {
+          "von": "Push-Faktor",
+          "nach": "Asylgrund",
+          "text": "ist nur in einem von vier Fällen – bei Verfolgung – auch ein (S. 106, 114)"
+        },
+        {
+          "von": "Asylgrund",
+          "nach": "vorläufige Aufnahme",
+          "text": "fehlt bei Krieg; ist die Rückkehr unzumutbar, folgt die (S. 114)"
+        },
+        {
+          "von": "Beleg",
+          "nach": "Argument",
+          "text": "stützt das"
+        },
+        {
+          "von": "Argument",
+          "nach": "Forderung",
+          "text": "begründet die"
+        },
+        {
+          "von": "Forderung",
+          "nach": "gilt auch bei …",
+          "text": "braucht Gründe, Regeln und einen Beleg – das"
+        }
+      ],
+      "transfer": "Deutung, nicht Lehrmittelaussage: überall, wo eine Gruppe entscheidet, wer dazukommen oder bleiben darf, und der Grund eines Menschen und die geltende Regel nicht dasselbe sagen – etwa beim Einzug in eine Wohngemeinschaft, bei der Vergabe eines Platzes im Wohnheim oder bei der Zulassung zu einer Ausbildung. Auch dort gilt: zuerst Gründe und Regeln kennen, dann fordern.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Emigration",
+          "Auswanderungsland"
+        ],
+        "mit_medien": [
+          "Drittstaat",
+          "ständige Wohnbevölkerung"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn der Schluss die drei Sätze aus Schritt 04 hat: was für die andere Haltung spricht, die Antwort darauf und die Forderung in Ich-Form. Beide Forderungen sind gültig (enge Regel behalten oder mehr Gründe gelten lassen), wie in den zwei Beispielen von LF4.",
+        "Ja, wenn im Brief zwei Belege unterstrichen sind und die Liste «Meine Belege» zu jedem die Fundstelle nennt (Schritte 03 und 05): Seite und Stelle im Lehrmittel oder Balken und Jahr der Quelle. Mindestens ein Beleg ist eine Zahl aus dem Raster."
+      ],
+      "mitnahme": [
+        "Menschen gehen wegen Push- und Pull-Faktoren (S. 106). Bleiben dürfen sie nach Regeln: Personenfreizügigkeit (S. 111, 113), Asyl nur bei Verfolgung, sonst allenfalls vorläufige Aufnahme (S. 114). Familiennachzug: S. 111 nennt nur den Grund.",
+        "Zum Beispiel: 1850–1930 wanderten rund 390 000 aus der Schweiz nach Übersee aus (Kap. 3.4, S. 109, Tabelle) – oder mit der Quelle: Erwerbstätigkeit 88 355 (Balken, Zahlen 2025).",
+        "Zum Beispiel, was «vorläufig» für den Alltag einer Person heisst – das sagt das Lehrmittel nicht (S. 113–114 nennen nur Ausweis und Gründe)."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Push-Faktor, Pull-Faktor und Asylgrund erklärt",
+        "LF2: drei Beispiele mit Grund, Weg, Ausweis und Folge",
+        "LF4: Regel, Praxis im Fall und meine Forderung"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle (S. 3) mit vier Zeilen",
+        "Jede Zeile hat einen Begriff (LF1 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Abgabe: Leserbrief (S. 7)",
+      "vollstaendig_wenn": [
+        "Leserbrief, 120 bis 150 Wörter, zwei Belege unterstrichen",
+        "Liste «Meine Belege»: zwei Fundstellen, meine Wertung",
+        "Schluss: Einwand, Antwort, Forderung in Ich-Form"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation, LF1 und LF2: Gründe ordnen, drei Beispiele einordnen",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Leserbrief auf S. 7 beginnen",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Leserbrief fertigstellen, mit den Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst urteile ich über Menschen, bevor ich ihre Gründe kenne und die Regeln, die für sie gelten?",
+    "ziel": "Wer über Zuwanderung urteilt, kennt zuerst die Gründe und die Regeln und hört die Betroffenen; erst dann folgt die eigene, belegte Forderung."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Gründe der Migration von den Regeln des Bleibens unterscheiden, eine Behauptung an Zahlen prüfen und eine belegte Forderung vertreten",
+    "lehrmittel_anker": "Kap. 3.4 S. 106 (Migration, Push- und Pull-Faktoren) · S. 107-109 (weltweite Migration, Schweiz als Auswanderungsland, Tabelle der Auswanderung nach Übersee) · S. 111 (Einwanderungsgründe, Branchen, Personenfreizügigkeit) · S. 113-114 (duales System, Ausweise, Asyl, vorläufige Aufnahme) · Form des Produkts über die Methodenkarten zu Kap. 17.3 (S. 394, 397)",
+    "kn_aktivierung": "Der KN verlangt, die rechtliche Lage eines Mitspielers im Verein einzuordnen (Asylgesuch offen; Krieg allein ist laut Lehrmittel kein Asylgrund; eine vorläufige Aufnahme ist möglich) und auf den Satz «er muss ja sowieso wieder gehen» mit einer begründeten Position in Ich-Form zu antworten. Genau das üben LF2, LF4 und der Schluss des Leserbriefs.",
+    "transfer_check": "Kann die Lernende an einem neuen Beispiel sagen, aus welchem Grund jemand gekommen ist, nach welcher Regel die Person bleiben darf – und dazu eine belegte Forderung vertreten?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "leitfragen[2] — die Behauptung des Briefs und die Lage der Betroffenen an Zahlen mit Fundstelle nachvollziehen, bevor geurteilt wird"
+    },
+    {
+      "sk": 11,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — Regel und tatsächliche Lage widersprechen sich; beide Forderungen bleiben begründbar"
+    },
+    {
+      "sk": 5,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — die eigene Wertung in «Meine Belege» in einem Satz benennen und von den Belegen trennen"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 3.4 | S. 107-109",
+          "text": "Warum wandern Menschen laut Kap. 3.4 (S. 107–109) – weltweit heute, früher aus der Schweiz? Befund in zwei bis drei Sätzen: Was heisst das für den Satz, wer nur ein besseres Leben suche, solle wieder gehen?",
+          "liefert": "Belege mit Zahl und Fundstelle",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 3.4 | S. 107-109",
+            "auftrag": "Lesen Sie Kap. 3.4, S. 107–109: nur den Text und die Tabelle auf S. 109, nicht die Karten. Zeile 1 ist ein Beispiel. Füllen Sie drei weitere: Absatz, Kernaussage, Beleg / Beispiel und ein Begriff aus LF1 oder Glossar.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 109, Tabelle",
+              "Viele wanderten aus",
+              "1891–1930: rund 180 000",
+              "Migration"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 107: erster Absatz. S. 109: Text vor und nach der Tabelle, dazu die Tabelle."
+            ],
+            "satzanfaenge": [
+              "«Laut S. … wandern Menschen, weil …»",
+              "«Auch aus der Schweiz gingen Menschen, weil …»",
+              "«Für den Satz im Brief heisst das: …»"
+            ],
+            "produkt": "Eine Zeile mit Zahl, die Sie selbst gefüllt haben, wird Beleg 1 im Leserbrief. Notieren Sie Seite und Stelle."
+          },
+          "loesung": {
+            "kern": "Wirtschaft und Not treiben – weltweit und einst hier",
+            "quelle_ref": "Kap. 3.4 | S. 107-109",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Laut Lehrmittel über 280 Millionen fern der Heimat; rund 120 Millionen vertrieben (S. 107, Stand Mai 2024). Aus der Schweiz wanderten viele aus, erst aus Not, später für mehr Wohlstand (S. 109); Tabelle, addiert: 1850–1930 rund 390 000.",
+                "quelle": "Kap. 3.4, S. 107, 109"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Wer geht, wählt Staaten mit Landsleuten (S. 107). Hoher Ausländeranteil: stetige Zuwanderung, höhere Einbürgerungshürden (S. 108).",
+                "quelle": "Kap. 3.4, S. 107-109"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Push- oder Pull-Faktor zuzuordnen ist Deutung: S. 107–109 benutzen die Wörter im Lauftext nicht. Gültig ist jeder passende Begriff aus LF1 oder Glossar."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: ein Grund weltweit, einer aus der Schweizer Geschichte, je mit Seite, bezogen auf den Satz im Brief. Ein Recht zu bleiben regeln erst S. 113–114."
+              },
+              {
+                "label": "Vorsicht",
+                "text": "«Mehr als die Hälfte» (S. 107): laut Lehrmittel; an amtlichen Quellen nicht belegbar – nicht als Beleg im Brief empfehlen.",
+                "quelle": "Kap. 3.4, S. 107"
+              },
+              {
+                "label": "Nicht verwenden",
+                "text": "Karten und Diagramme S. 107–109 (Werte nicht verlässlich). Die zwei Zahlen von S. 107 nicht verrechnen."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 109, Tabelle",
+                "Viele wanderten aus",
+                "1891–1930: rund 180 000",
+                "Migration"
+              ],
+              [
+                "S. 107, erster Absatz",
+                "Laut Lehrmittel ging mehr als die Hälfte aus wirtschaftlichen Gründen",
+                "über 280 Millionen fern der Heimat; rund 120 Millionen vertrieben (Stand Mai 2024)",
+                "Pull-Faktor, Push-Faktor (Deutung)"
+              ],
+              [
+                "S. 109, Text und Tabelle",
+                "Not zwang viele zur Emigration",
+                "Tabelle: 1850–1930 zusammen rund 390 000",
+                "Emigration, Auswanderungsland (Glossar)"
+              ],
+              [
+                "S. 109, nach der Tabelle",
+                "Nicht alle gingen aus Not: später für mehr Wohlstand und bessere Berufschancen",
+                "neue Wanderungsform in der zweiten Hälfte des 19. Jahrhunderts",
+                "Pull-Faktor (Deutung)"
+              ]
+            ],
+            "befund": "Laut Lehrmittel hat weltweit mehr als die Hälfte der Menschen, die fern ihrer Heimat leben, diese aus wirtschaftlichen Gründen verlassen (S. 107; nicht belegbar). Auch aus der Schweiz wanderten viele aus, zuerst aus Not, später auch für mehr Wohlstand: 1850 bis 1930 rund 390 000 (S. 109). Deutung: Ein besseres Leben zu suchen ist ein Grund zu wandern und kein Vorwurf; ob er ein Recht zu bleiben gibt, sagen diese Seiten nicht."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.4 · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Regel: Asylgrund ist nur Verfolgung (Kap. 3.4, S. 114). Praxis: Der Nachbar floh vor einem Krieg und bleibt trotzdem, vorläufig aufgenommen (S. 114). Was fordern Sie: enge Regel behalten oder mehr Gründe gelten lassen?",
+          "liefert": "Forderung mit Einwand und Antwort",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "S. 114, Kasten: «unzumutbar» ist die Rückschaffung etwa wegen Krieg oder schwerer Notlage."
+            ],
+            "satzanfaenge": [
+              "«Die Regel sagt: … (S. …). Dafür spricht: …»",
+              "«Im Fall geschieht aber: … Das zeigt: …»",
+              "«Ich fordere …, obwohl …, denn mir ist wichtig: …»"
+            ],
+            "produkt": "Ihre Forderung wird der letzte Satz des Leserbriefs; davor stehen Einwand und Antwort (S. 7)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Forderung",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Regel mit Seite: Als Asylgrund gilt laut Lehrmittel nur Verfolgung; Krieg und Hunger geben kein Recht auf dauerhaften Aufenthalt (Kap. 3.4, S. 114)",
+                "nennt die tatsächliche Lage im Fall: Der Nachbar bleibt als vorläufig Aufgenommener, weil die Rückkehr wegen des Kriegs unzumutbar ist (S. 114, Kasten; Ausweis F, S. 113)",
+                "entscheidet sich für eine Forderung in Ich-Form, begründet sie und sagt, was für die andere Haltung spricht",
+                "wertet keine Gruppe ab und behauptet nichts über den heutigen Stand der Politik; der Rechtsstand heisst «laut Lehrmittel»"
+              ],
+              "beispiel_pol_1": "Ich bin dafür, dass die Regel beim Asyl eng bleibt. Laut Lehrmittel gilt nur Verfolgung als Asylgrund (Kap. 3.4, S. 114). Das finde ich richtig, weil Asyl ein besonderer Schutz ist: Er soll sicher die Menschen erreichen, die verfolgt werden. Für unseren Nachbarn gibt es einen anderen Weg: Er ist vorläufig aufgenommen, weil die Rückkehr in den Krieg unzumutbar ist (S. 114). So muss er nicht in den Krieg zurück; wie lange das gilt, sagt das Lehrmittel nicht. Für die andere Haltung spricht: Wer lange nur vorläufig hier lebt, kann sein Leben schlecht planen (Fallüberlegung, nicht aus dem Lehrmittel). Trotzdem fordere ich: Die Regel bleibt, und niemand wird in einen Krieg zurückgeschickt.",
+              "beispiel_pol_2": "Ich fordere, dass auch Krieg als Grund gilt, um bleiben zu dürfen. Die Regel sagt: Asyl erhält nur, wer verfolgt wird; Krieg und Hunger geben laut Lehrmittel kein Recht auf dauerhaften Aufenthalt (Kap. 3.4, S. 114). Tatsächlich bleibt unser Nachbar trotzdem hier, vorläufig aufgenommen (S. 114; Ausweis F, S. 113). Er lebt bei uns, aber nur auf Zeit (Fallüberlegung, nicht aus dem Lehrmittel). Für die enge Regel spricht: Sie ist klar, und Asyl bleibt den Verfolgten vorbehalten. Mir ist aber wichtiger, dass ein Mensch, der nicht zurückkann, hier ein Leben aufbauen darf. Ich gehe dabei davon aus, dass der Krieg andauert (Annahme).",
+              "nicht_tragfaehig": "Eine Forderung ohne Regel und ohne Seite; «Krieg ist ein Asylgrund» als Tatsache (laut S. 114 nicht); eine Antwort, die Gruppen abwertet oder Menschen nach ihrer Herkunft beurteilt; eine Aussage zum heutigen Stand der Politik ohne Beleg."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Was die Regel sagt",
+          "Was im Fall geschieht",
+          "Was ich fordere"
+        ],
+        "hinweis": "Zwei Zeilen genügen, Stichworte mit Seite. Aus der dritten Spalte wird Ihre Forderung im Schluss des Leserbriefs (S. 7).",
+        "loesung_zeilen": [
+          [
+            "Als Asylgrund gilt laut Lehrmittel nur Verfolgung (Kap. 3.4, S. 114)",
+            "Die Pflegefachfrau und der Maurer brauchen kein Asyl: Für sie gilt die Personenfreizügigkeit (S. 111, 113)",
+            "Der Brief vermischt die Wege; das stelle ich richtig"
+          ],
+          [
+            "Krieg und Hunger geben laut Lehrmittel kein Recht auf dauerhaften Aufenthalt (S. 114)",
+            "Der Nachbar bleibt trotzdem: vorläufig aufgenommen, weil die Rückkehr unzumutbar ist (S. 114, Kasten; Ausweis F, S. 113)",
+            "Entweder: Die Regel bleibt, Schutz auf Zeit genügt. Oder: Wer nicht zurückkann, soll bleiben dürfen"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 3.4 (S. 3)",
+        "beispiel": [
+          "S. 52, Abs. 2 · Hallenbad schliesst im Sommer · «acht Wochen» (erfunden) · → ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und der Leserbrief auf S. 6 zeigen, wie eine Rasterzeile und ein fertiger Brief aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Aus welchen Gründen wanderten laut Quelle Menschen in die ständige ausländische Wohnbevölkerung ein, und welcher Grund ist der häufigste? Befund: Was sagt die Grafik zu «fast nur noch Asyl» – und was zählt sie nicht?",
+          "liefert": "Belege mit Zahl und Fundstelle",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-431b-pflicht",
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Erst Titel und Legende lesen, dann die Balken. Schreiben Sie zu jeder Zahl das Jahr.",
+              "Gezählt ist nur, wer Ausweis B, C oder L ab 12 Monaten hat (Quelle, S. 16). N, F fehlen."
+            ],
+            "satzanfaenge": [
+              "«Am häufigsten kamen Menschen wegen … (Balken …)»",
+              "«Die Grafik zählt nicht, wer …»",
+              "«Für die Behauptung im Brief heisst das: …»"
+            ],
+            "produkt": "Eine Rasterzeile wird Beleg 1 im Leserbrief. Notieren Sie Zahl, Jahr und Balken für «Meine Belege»."
+          },
+          "loesung": {
+            "kern": "Arbeit ist der häufigste Grund; Gesuche zählt sie nicht",
+            "quelle_ref": "q-431b-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "2025: Erwerbstätigkeit 88 355 (95 % EU/EFTA; häufigster Grund), Familiennachzug 42 170, Aus- und Weiterbildung 17 579, Übertritte 8119.",
+                "quelle": "Quelle, S. 11, Balken"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Ohne Erwerbstätigkeit 5087; Übrige 4076. Summe 165 386 (nachgerechnet).",
+                "quelle": "Quelle, S. 11, Balken"
+              },
+              {
+                "label": "Zwei Werte",
+                "text": "Übertritte: Balken 8119 (verlangt), Text 8199; beide gelten mit Fundstelle. Zum Balken passt das Total (S. 5, nicht im Ausschnitt).",
+                "quelle": "Quelle, S. 11, Balken und Text"
+              },
+              {
+                "label": "Lesefalle",
+                "text": "Gezählt: ständige ausländische Wohnbevölkerung (B, C, L ab 12 Monaten; ohne N, F; S. 16), keine Gesuche. Tragfähig: «fast nur noch Asyl» passt nicht zu den gezählten Gründen. Nicht tragfähig: «nur 5 Prozent wegen Asyl». Nicht prüfbar: «die wenigsten seien verfolgt».",
+                "quelle": "Quelle, S. 11 (Titel), S. 16"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Pull-Faktor: Deutung. «Übertritte»: Wechsel aus dem Asylbereich; ob mit Asylgrund, sagt die Grafik nicht. Personenfreizügigkeit: EU/EFTA."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "2024: 89 410, 42 433, 17 652, Übertritte 11 433; Summe 170 607; Balken = Text. Fehlschluss dort «knapp 7 Prozent»: ebenso nicht tragfähig. Definition: S. 15.",
+                "quelle": "Ersatzquelle, S. 11"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Balken «Erwerbstätigkeit»",
+                "88 355 Personen, davon 95 % EU/EFTA",
+                "Arbeit ist der häufigste Grund",
+                "Pull-Faktor (Deutung)"
+              ],
+              [
+                "Balken «Familiennachzug»",
+                "42 170 Personen; 53 % EU/EFTA, 47 % Drittstaaten",
+                "zweithäufigster Grund: Angehörige ziehen nach",
+                "Familiennachzug; Drittstaat"
+              ],
+              [
+                "Balken «Aus- und Weiterbildung»",
+                "17 579 Personen; je 50 %",
+                "Bildung zieht an",
+                "Pull-Faktor (Deutung)"
+              ],
+              [
+                "Balken «Übertritte aus dem Asylbereich»",
+                "8119 Personen (am Balken), alle aus Drittstaaten",
+                "viel weniger als wegen Arbeit; Asylgesuche zählt die Grafik nicht",
+                "ständige Wohnbevölkerung"
+              ]
+            ],
+            "befund": "Laut der Grafik sind 2025 die meisten Menschen wegen einer Arbeit in die ständige ausländische Wohnbevölkerung eingewandert: 88 355, davon 95 Prozent aus EU/EFTA-Staaten (Balken «Erwerbstätigkeit»). Aus dem Asylbereich wechselten 8119 Personen (Balken «Übertritte»). Die Behauptung «fast nur noch Asyl» passt nicht zu den Gründen, die diese Statistik zählt. Asylsuchende (N) und vorläufig Aufgenommene (F) zählt sie aber nicht: Wie viele ein Gesuch stellten, zeigt sie nicht."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.4 und Quelle · Regel ↔ Praxis im Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Regel: Asylgrund ist nur Verfolgung (Kap. 3.4, S. 114). Praxis: Der Nachbar bleibt trotzdem (S. 114); die Quelle zählt Übertritte aus dem Asylbereich. Was fordern Sie: enge Regel behalten oder mehr Gründe gelten lassen?",
+          "liefert": "Forderung mit Einwand und Antwort",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Wegweisung heisst: Die Person muss gehen. S. 114, Kasten: drei Gründe, doch zu bleiben.",
+              "Unzulässig: Völkerrecht verbietet es. Unzumutbar: Gefahr wie Krieg. Unmöglich: geht nicht."
+            ],
+            "satzanfaenge": [
+              "«Die Regel sagt: … (S. …). Dafür spricht: …»",
+              "«Im Fall geschieht aber: … Das zeigt: …»",
+              "«Ich fordere …, obwohl …, denn mir ist wichtig: …»"
+            ],
+            "produkt": "Ihre Forderung wird der letzte Satz des Leserbriefs; davor stehen Einwand und Antwort (S. 7)."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Regel ↔ Praxis im Fall, Forderung",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt die Regel mit Seite: Asylgrund ist laut Lehrmittel nur Verfolgung (Kap. 3.4, S. 114)",
+                "nennt die Lage im Fall: Der Nachbar bleibt, vorläufig aufgenommen (S. 114). Grafik 2025: 8119 Übertritte aus dem Asylbereich (Begleittext: 8199; Ersatzquelle, 2024: 11 433)",
+                "liest die Zahl richtig: Wer übertritt, sagt der Ausschnitt nicht. «Etwa 2,4 Prozent» (S. 114): Anteil am Bestand, ohne Jahr, amtlich nicht belegbar; kein Vergleich",
+                "fordert in Ich-Form, begründet, sagt, was für die andere Haltung spricht, und wertet keine Gruppe ab"
+              ],
+              "beispiel_pol_1": "Ich bin dafür, dass die Regel beim Asyl eng bleibt. Laut Lehrmittel gilt nur Verfolgung als Asylgrund (Kap. 3.4, S. 114); Asyl soll Verfolgte schützen. Unser Nachbar ist trotzdem geschützt: Er ist vorläufig aufgenommen (S. 114). Laut Grafik wechselten 2025 8119 Personen aus dem Asylbereich in die ständige ausländische Wohnbevölkerung (Balken); wer das ist, sagt die Grafik nicht. Für die andere Haltung spricht: Wer lange nur vorläufig hier lebt, kann schlecht planen (Fallüberlegung). Ich fordere: Die Regel bleibt, und niemand wird in einen Krieg zurückgeschickt.",
+              "beispiel_pol_2": "Ich fordere, dass auch Krieg als Grund gilt, um bleiben zu dürfen. Die Regel sagt: Asyl erhält nur, wer verfolgt wird (Kap. 3.4, S. 114). Unser Nachbar bleibt trotzdem, aber nur vorläufig (S. 114). Die Grafik zählt 2025 nur 8119 Übertritte aus dem Asylbereich, neben 88 355 für die Arbeit (Balken); Gesuche zählt sie nicht. Für die enge Regel spricht: Sie ist klar. Mir ist aber wichtiger, dass ein Mensch, der nicht zurückkann, hier ein Leben aufbauen darf. Ich gehe dabei davon aus, dass der Krieg andauert (Annahme).",
+              "nicht_tragfaehig": "Eine Forderung ohne Regel und Fundstelle; «nur 5 Prozent kommen wegen Asyl» (die Grafik zählt keine Gesuche); «Krieg ist ein Asylgrund» als Tatsache; eine Antwort, die Gruppen abwertet."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-431b-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Grafik (QR-Seite). Drittstaat heisst: nicht EU/EFTA. Zahlen von den Balken nehmen, nicht aus dem Text. Vier Zeilen, je ein Balken: was gemessen, auffälliger Wert, Aussage, ein Begriff aus LF1 oder Glossar.",
+          "raster": {
+            "spalten": [
+              "Was gemessen",
+              "auffälliger Wert",
+              "Aussage",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-431b-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Was bedeutet der offene Entscheid für die junge Frau – und was für das Heim, das sie ausbildet?",
+          "erwartung": "Abs. 1–11, ohne Vorspann und Zwischentitel. Junge Frau: lernt Pflegehelferin, arbeitet seit Mai 2025 im Heim (Abs. 1); die Ausbildung tue ihr gut (Abs. 3). Offen, ob sie bleibt: laut ihren Angaben einmal abgelehnt, Rekurs läuft (Abs. 11). Heim: Mehrwert – Integration, weniger Personalmangel (Abs. 4). Was der offene Entscheid für das Heim heisst, sagt der Artikel nicht (Deutung: Es bildet aus, ohne zu wissen, ob sie bleibt). Nie mit Namen nennen. Stand September 2025."
+        },
+        {
+          "ref": "q-431b-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Aus welchen drei Gründen bleibt jemand trotz Wegweisung hier – und was darf die Person?",
+          "erwartung": "Es spricht die Behörde. Drei Gründe (Satz 1): unzulässig (Völkerrecht), unzumutbar (konkrete Gefährdung) oder unmöglich. 12 Monate, vom Kanton je um 12 verlängerbar (Satz 3); Arbeit schweizweit erlaubt (Satz 4). Massgebend: AIG Art. 83; die Seite folgt ihm. S. 114 ordnet die Gefährdung abweichend «unzulässig» zu; Krieg ordnen Lehrmittel und Gesetz gleich zu (unzumutbar). Stand: 10.11.2025."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-grafik-lesen",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Was gemessen: Fahrgäste je Buslinie · auffälliger Wert: Linie 4, 900 am Tag (erfunden) · Aussage: Linie 4 ist am vollsten · → ein Begriff aus LF1"
+        ]
+      },
+      "scaffold_90": "Lesen Sie Titel und Legende der Grafik gemeinsam und füllen Sie die erste Rasterzeile zusammen; der Leserbrief auf S. 6 zeigt die Form."
+    }
+  }
+}

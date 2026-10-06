@@ -1,0 +1,950 @@
+{
+  "id": "4.3.1_vielfalt_untersuchen_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "4.3",
+  "modul_titel": "Verantwortung für mich und andere übernehmen — vielfalt und migration untersuchen",
+  "lehrgang": "EFZ_3J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Unser Team im Porträt – was frage ich, was lasse ich?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Vielfalt im Team erfragen"
+  },
+  "prinzip_ref": "4.3.1_vielfalt_untersuchen_prinzip",
+  "nrlp": {
+    "nr": "4.3.1",
+    "nr_primary": [
+      "4.3.1"
+    ],
+    "lebensbezug": "4.3",
+    "themen": [
+      "T4"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R3"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration mündlich",
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM7",
+      "SM3"
+    ],
+    "sk": [
+      7,
+      10,
+      11
+    ],
+    "kompetenz_id": "4.3.1",
+    "lebensbezug_id": "4.3",
+    "kompetenz_text": "Ich kann gesellschaftliche Vielfalt beschreiben und die Chancen und Herausforderungen dieser Vielfalt für das Zusammenleben untersuchen.",
+    "lebensbezug_text": "Ich lebe in einer vielfältigen Gesellschaft und möchte respektiert werden."
+  },
+  "persona": {
+    "beruf": "Lernende/r EFZ, 2. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Die Betriebszeitung meines Lehrbetriebs stellt jeden Monat ein Team vor. Diesmal ist unseres dran: elf Leute mit vier Erstsprachen – so heisst die Sprache, die jemand als Kind zuerst gelernt hat. Ich bin im 2. Lehrjahr, ein Kollege steht kurz vor der Pensionierung. Für das Porträt soll ich eine Person aus dem Team interviewen: sechs Fragen, rund zehn Minuten, Abgabe am Freitag in einer Woche. Meine Berufsbildnerin wünscht sich etwas Positives: «Zeig, wie gut wir zusammenarbeiten.» Das stimmt auch: Wir helfen einander, und jede Person kann etwas, das andere nicht können. Ich weiss aber, dass es bei uns Missverständnisse gibt. In der Pause gehen manchmal zwei Sprachen durcheinander, und wer sie nicht versteht, sitzt daneben. Eine Anweisung kommt nicht bei allen gleich an. Ich will klären, wonach ich frage und was davon ins Porträt kommt.",
+  "zahlen_tabelle": [
+    {
+      "label": "Personen im Team",
+      "wert": "11"
+    },
+    {
+      "label": "Erstsprachen im Team",
+      "wert": "4"
+    },
+    {
+      "label": "Fragen im Leitfaden",
+      "wert": "6"
+    },
+    {
+      "label": "Länge des Interviews",
+      "wert": "rund 10 Min."
+    }
+  ],
+  "leitfrage": "Zeige ich im Porträt nur, was unser gemischtes Team stark macht – oder auch, was bei uns schwierig ist?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Vielfalt als Gewinn vs. Vielfalt als Reibung",
+    "hint": "Nur das Starke zeigen freut das Team, lässt aber etwas weg. Auch das Schwierige zeigen ist ehrlicher, kann aber jemanden treffen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Kap. 3.4",
+      "titel": "Migration, Integration und Rassismus",
+      "unterueberschrift": "Einwanderung, Anpassung",
+      "seiten": "Seite 111-112",
+      "fuer_leitfrage": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ref": "Kap. 12.1",
+      "titel": "Werte",
+      "unterueberschrift": "Zusammenleben, Erwartungen",
+      "seiten": "Seite 292",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Kap. 12.2",
+      "titel": "Lebensformen",
+      "unterueberschrift": "Konkubinat",
+      "seiten": "Seite 299",
+      "fuer_leitfrage": [
+        1
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie führen ein Interview von rund zehn Minuten und schreiben dazu ein Fazit. LF1 liefert Begriffe, um Vielfalt zu beschreiben, LF2 Ihre erste Frage, LF3 eine Chance und eine Schwierigkeit für zwei weitere Fragen, LF4 Ihren Entscheid, was das Fazit zeigt.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 3.4 | S. 111 · Kap. 12.1 | S. 292 · Kap. 12.2 | S. 299",
+      "text": "Erklären Sie mit Kap. 3.4 (S. 111), was «Migrationshintergrund» heisst und aus welchen Gründen Menschen einwandern. Notieren Sie mit Kap. 12.1 (S. 292) und Kap. 12.2 (S. 299) drei Formen des Zusammenlebens.",
+      "liefert": "Begriffe zum Beschreiben von Vielfalt",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 35,
+      "scaffolding": {
+        "strategien": [
+          "S. 111, erster Absatz: eine Erklärung und vier Gründe. Zwei Gründe genügen.",
+          "S. 292, erster Absatz, und S. 299: je Form des Zusammenlebens ein Stichwort."
+        ],
+        "satzanfaenge": [
+          "«Einen Migrationshintergrund hat, wer …»",
+          "«Menschen wandern ein, zum Beispiel wegen …»",
+          "«Menschen leben allein, als … oder im …»"
+        ],
+        "produkt": "Mit diesen Begriffen beschreiben Sie Vielfalt (Schritt 01), füllen das Raster (S. 3) und das Netz (S. 8)."
+      },
+      "loesung": {
+        "kern": "Herkunft und Lebensform: zwei Arten von Vielfalt",
+        "zeilen": [
+          {
+            "label": "Migrationshintergrund",
+            "text": "Laut Lehrmittel: wer selbst eingewandert ist oder einen eingewanderten Elternteil hat (das BFS grenzt anders ab); mehr als ein Drittel, ein Viertel im Ausland geboren. Stand: Lehrmittel ohne Jahr; BFS 2024: rund 41 % (ab 15 Jahren), knapp ein Drittel im Ausland geboren.",
+            "quelle": "Kap. 3.4, S. 111"
+          },
+          {
+            "label": "Einwanderungsgründe",
+            "text": "Genannt: Erwerbstätigkeit, Familiennachzug, Aus- und Weiterbildung, Übertritt aus dem Asylbereich («unter anderem»). Zwei genügen.",
+            "quelle": "Kap. 3.4, S. 111"
+          },
+          {
+            "label": "Lebensformen",
+            "text": "S. 292: Alleinleben und Partnerschaft als akzeptierte Formen; dazu das Konkubinat (S. 299). Auch gültig: Patchworkfamilie, Paar ohne Kinder (S. 292, nebenbei).",
+            "quelle": "Kap. 12.1 S. 292, 12.2 S. 299"
+          },
+          {
+            "label": "Konkubinat",
+            "text": "Zusammenleben wie in einer Ehe, ohne Trauschein; gesetzlich nicht geregelt. Früher in einigen Kantonen verboten, heute verbreitet. Deutung: Wandel.",
+            "quelle": "Kap. 12.2, S. 299"
+          },
+          {
+            "label": "Nicht im Lehrmittel",
+            "text": "Für Schritt 01: Alter und Erstsprache stehen auf diesen Seiten nicht; wer sie nennt, liegt nicht falsch (eigene Beobachtung). Ohne Namen: Niemand wird zugeordnet."
+          }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 3.4 | S. 112 · Kap. 12.1 | S. 292 · eigener Fall",
+      "text": "Kap. 3.4 (S. 112) unterscheidet Assimilation und Integration. Wenden Sie das auf das Team der Situation (S. 1) an: Was müssen dort alle gleich machen? Was darf jede Person behalten? Nennen Sie je ein Beispiel.",
+      "liefert": "Frage 1 zum Anpassen im Team",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 45,
+      "scaffolding": {
+        "strategien": [
+          "S. 112, Tabelle «Definition»: zwei Zeilen. Der Unterschied steht im zweiten Teil.",
+          "«Alle» meint alle im Team, auch Langjährige, nicht nur Zugezogene. Beispiele: S. 1."
+        ],
+        "satzanfaenge": [
+          "«Assimilation heisst …; Integration heisst …»",
+          "«Im Team müssen alle …, zum Beispiel …»",
+          "«Behalten darf jede Person …, zum Beispiel …»"
+        ],
+        "produkt": "Aus Ihrer Antwort wird Frage 1 auf S. 7 (Schritt 02). Ihr Fazit kommt am Schluss darauf zurück."
+      },
+      "loesung": {
+        "kern": "Integration: anpassen und Eigenes behalten",
+        "zeilen": [
+          {
+            "label": "Begriffspaar",
+            "text": "Assimilation: sich ganz anpassen und die Bindung an die frühere Kultur verlieren. Integration: sich anpassen und Teile des Eigenen behalten.",
+            "quelle": "Kap. 3.4, S. 112"
+          },
+          {
+            "label": "Umstritten",
+            "text": "Wie weit Anpassung gehen muss, ist laut Lehrmittel umstritten. Eine einzige richtige Grenze gibt es darum nicht.",
+            "quelle": "Kap. 3.4, S. 112"
+          },
+          {
+            "label": "Gleich für alle",
+            "text": "Fallüberlegung, nicht aus dem Lehrmittel: zum Beispiel Anweisungen verstehen und nachfragen, Sicherheitsregeln, Arbeitszeiten. Das gilt für alle elf, nicht nur für Zugezogene."
+          },
+          {
+            "label": "Darf bleiben",
+            "text": "Fallüberlegung: zum Beispiel die Sprache in der Pause oder das Essen. Tragfähig ist auch die Gegenmeinung (in der Pause eine gemeinsame Sprache), wenn sie begründet ist."
+          },
+          {
+            "label": "Grenze des Vergleichs",
+            "text": "Das Lehrmittel spricht von Zugewanderten und der Gesellschaft, nicht von Teams. Im Team passen sich alle an, auch Lernende und Langjährige. Erwartungen belegt S. 292 nur für die Partnerschaft.",
+            "quelle": "Kap. 3.4 S. 112, 12.1 S. 292"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Die zwei Begriffe verwechseln; Anpassung nur von «den anderen» verlangen; eine Herkunft bewerten."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Interview mit Leitfaden, Stichwortnotizen und Fazit",
+    "titel": "Mein Interview: sechs Fragen, Notizen, Fazit",
+    "format_detail": "Sie führen ein Interview von rund zehn Minuten mit einer Person aus Ihrem Lehrbetrieb oder aus Ihrer Klasse. Thema ist, wie die Zusammenarbeit in einem gemischten Team läuft. S. 7 ist Ihr Blatt, ohne Linien: links der Leitfaden mit sechs Fragen, hinter jeder Frage steht die Frageart. Mindestens zwei Fragen gelten dem, was gut läuft, zwei dem, was schwierig ist, eine dient zum Nachhaken. Rechts stehen Ihre Stichwortnotizen zu den Antworten, unten Ihr Fazit in drei Sätzen, ohne Namen. Sie fragen nach Erfahrungen im Zusammenarbeiten, nie nach Herkunft, Aufenthalt, Religion oder Familie. Die befragte Person entscheidet, was sie erzählt; sie darf eine Frage auslassen.",
+    "beschreibung": "Ich befrage eine Person zum Zusammenarbeiten in einem gemischten Team. Sie entscheidet, was sie erzählt. Ich notiere Stichworte und schreibe ein Fazit in drei Sätzen, ohne Namen.",
+    "schritte": [
+      {
+        "label": "01 Vielfalt beschreiben",
+        "hint": "Notieren Sie zu LF1 (S. 2), worin Menschen in Teams verschieden sind, ohne Namen. S. 7 anlegen: links Fragen, rechts Notizen, unten Fazit."
+      },
+      {
+        "label": "02 Anpassung einordnen",
+        "hint": "Aus LF2 wird Frage 1: Was gilt für alle, was darf jede Person behalten? Nie nach Herkunft, Aufenthalt, Religion oder Familie fragen."
+      },
+      {
+        "label": "03 Fragen ableiten",
+        "hint": "Rasterzeile (LF3) mit Chance: Frage 2. Zeile mit Schwierigkeit: Frage 3. Beide fragen nach dem Zusammenarbeiten."
+      },
+      {
+        "label": "04 Ausrichtung festlegen",
+        "hint": "Frage 4 (Gutes), 5 (Schwieriges): selbst beobachtet. Frage 6: Klärungsfrage, im Gespräch anpassen. LF4 bestimmt Satz 2 (Fazit)."
+      },
+      {
+        "label": "05 Interview führen, Fazit",
+        "hint": "Nennen Sie den Zweck; die Person darf eine Frage auslassen. Interview führen, Stichworte notieren. Fazit: drei Sätze ohne Namen; ihr zeigen."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Leitfaden (S. 7): sechs Fragen, je mit Frageart",
+      "Stichwortnotizen zu den Antworten (S. 7)",
+      "Fazit in drei Sätzen, ohne Namen (S. 7)"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel, gekürzt: Interview nach dem Hausfest (3 von 6 Fragen, Fazit ganz)",
+      "legende": [
+        {
+          "key": "offen",
+          "text": "offene Frage"
+        },
+        {
+          "key": "nachhaken",
+          "text": "Frage zum Nachhaken"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Fragen → Stichwortnotizen",
+          "wechsel": [
+            {
+              "wer": "Frage 2",
+              "marke": "offen",
+              "text": "Was hat am Fest gut geklappt? → alle brachten etwas mit, Kinder spielten zusammen"
+            },
+            {
+              "wer": "Frage 3",
+              "marke": "offen",
+              "text": "Was war am Fest schwierig? → Musik zu laut für den 3. Stock, zwei gingen früh"
+            },
+            {
+              "wer": "Frage 6",
+              "marke": "nachhaken",
+              "text": "Was heisst «zu laut» genau? → nach 22 Uhr, Fenster zum Hof offen"
+            }
+          ]
+        },
+        {
+          "titel": "Fazit (drei Sätze, ohne Namen)",
+          "eintraege": [
+            {
+              "text": "Das Fest hat gut geklappt, weil alle etwas beigetragen haben."
+            },
+            {
+              "text": "Schwierig war die Lautstärke: Einige wollten feiern, andere schlafen."
+            },
+            {
+              "text": "Für alle gilt Ruhe nach 22 Uhr; wie jemand feiert, darf verschieden bleiben."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: Teamporträt für die Betriebszeitung – Interview mit Fazit",
+      "hinweis": "Eine mögliche Lösung, keine Vorlage: erst nach Interview und Fazit zeigen. Sie folgt dem Entscheid «auch das Schwierige zeigen» (zweites Beispiel bei LF4). Ein Fazit, das nur das Starke zeigt, ist ebenso gültig, wenn der Einwand beantwortet ist; dann nennt Satz 2 eine zweite Stärke. Annahmen: Alle Antworten und Notizen sind erfunden; die Situation nennt nur die Missverständnisse in der Pause und bei einer Anweisung. Frage 1 stammt aus LF2, Frage 2 und 3 aus dem Raster (in beiden Fassungen des Hefts möglich), Frage 4 und 5 aus eigener Beobachtung. Bewertet werden Fragen, Notizen und Fazit – nicht, wie viel die befragte Person erzählt hat. Keine Frage gilt Herkunft, Aufenthalt, Religion oder Familie; das Fazit nennt keine Namen. «Integration» für ein Team ist ein Vergleich: Das Lehrmittel meint Zugewanderte (Kap. 3.4, S. 112). Frage 5 fragt offen nach einer Lage (Pause) und macht keine Sprache zum Problem; das Schwierige nennt die befragte Person selbst. Die Übertragung auf Neues (3 Punkte beim zweiten Kriterium) trägt Satz 3 als Halbsatz («wie in einer neuen Klasse»); ausführlicher zeigt sie sich in LF4 und im Feld «gilt auch bei …» (S. 8).",
+      "legende": [
+        {
+          "key": "offen",
+          "text": "offene Frage"
+        },
+        {
+          "key": "nachhaken",
+          "text": "Frage zum Nachhaken"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Fragen → Stichwortnotizen",
+          "wechsel": [
+            {
+              "wer": "Frage 1",
+              "marke": "offen",
+              "text": "Was gilt bei uns für alle, was darf jede Person behalten? → Sicherheit, Anweisungen; Pause frei"
+            },
+            {
+              "wer": "Frage 2",
+              "marke": "offen",
+              "text": "Was kann jemand im Team, das sonst niemand kann? → Maschine erklären, übersetzen"
+            },
+            {
+              "wer": "Frage 3",
+              "marke": "offen",
+              "text": "Was hilft, einander zu verstehen – und was nicht? → nachfragen; nicht: Anweisung im Lärm"
+            },
+            {
+              "wer": "Frage 4",
+              "marke": "offen",
+              "text": "Was läuft gut, wenn es eilt? → alle springen ein, wenig Worte nötig"
+            },
+            {
+              "wer": "Frage 5",
+              "marke": "offen",
+              "text": "Wie erleben Sie die Pausen im Team? → zwei Sprachen; wer nichts versteht, sitzt daneben"
+            },
+            {
+              "wer": "Frage 6",
+              "marke": "nachhaken",
+              "text": "Was heisst «sitzt daneben» genau? → redet nicht mit, geht früher zurück"
+            }
+          ]
+        },
+        {
+          "titel": "Fazit (drei Sätze, ohne Namen)",
+          "eintraege": [
+            {
+              "text": "Unser Team ist stark, weil jede Person etwas kann, das den anderen hilft – vom Übersetzen bis zur Maschine.",
+              "notiz": "aus Frage 2 und 4"
+            },
+            {
+              "text": "Schwierig wird es, wenn eine Anweisung nicht bei allen gleich ankommt oder in der Pause jemand nichts versteht.",
+              "notiz": "Entscheid LF4: auch das Schwierige, ohne Namen"
+            },
+            {
+              "text": "Was für alle gilt (Sicherheit) und was bleibt (Pause), handeln wir aus: Integration statt Assimilation, wie in einer neuen Klasse.",
+              "notiz": "Vergleich (S. 112: Zugewanderte); Übertragung: neue Klasse"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachbegriffe der Einheit fehlen oder sind falsch gebraucht.",
+        "Einige Fachbegriffe stimmen, andere sind ungenau oder verwechselt.",
+        "Fachbegriffe und Angaben sind richtig und passen zur Situation.",
+        "Fachbegriffe richtig und selbstständig verbunden; ihre Grenzen sind benannt."
+      ],
+      "indikator_produkt": "Jede Frage trägt die passende Frageart; im Fazit stimmt der Begriff aus LF2."
+    },
+    {
+      "kn_kriterium": "Identitätskonstrukt",
+      "dimension": "Ges",
+      "stufen": [
+        "Wer dazugehört und was Menschen voneinander erwarten, kommt nicht vor.",
+        "Zugehörigkeit ist genannt, aber als feste Eigenschaft einer Person oder Gruppe gesehen.",
+        "Zugehörigkeit und Erwartungen sind als etwas beschrieben, das die Beteiligten miteinander aushandeln.",
+        "Anpassen und Eigenes bewahren sind aus beiden Sichten abgewogen und auf Neues übertragen."
+      ],
+      "indikator_produkt": "Satz 3 im Fazit zeigt: Was für alle gilt und was bleiben darf, handelt das Team aus."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Das Beispiel auf S. 6 zeigt Fragen mit Notizen und ein Fazit; die Satzanfänge auf S. 2 helfen beim Einordnen.",
+    "scaffold_100": "Plus: Befragen Sie eine zweite Person mit demselben Leitfaden. Notieren Sie, wo die zwei Antworten auseinandergehen."
+  },
+  "methoden": [
+    {
+      "ref": "lm-16-4-fragearten",
+      "fuer": "für die sechs Fragen des Leitfadens: offen fragen, klären, nichts unterstellen",
+      "tun": "Schreiben Sie hinter jede Frage die Art. Offen: viele Antworten sind möglich; beginnt oft mit Was, Wie oder Warum. Klärungsfrage zum Nachhaken: «Was heisst das genau?» Keine Suggestivfrage – sie gibt die Antwort vor («Sie finden sicher auch …»)."
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-stille-aushalten",
+      "fuer": "für das Interview: erzählen lassen und nachhaken",
+      "beispiel": [
+        "Frage 4: «Was läuft in der Gruppe gut?»",
+        "— ausreden lassen, drei Sekunden warten —",
+        "Frage 6: «Was heisst das genau?» Nie: «Woher kommen Sie?»"
+      ]
+    },
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für das Mitschreiben der Antworten und das Fazit",
+      "tun": "Ihre sechs Fragen sind die Oberbegriffe; rechts daneben nur Schlüsselwörter. Fazit: Satz 1 was gut läuft. Satz 2 nach LF4: was schwierig ist oder eine zweite Stärke. Satz 3 was für alle gilt und was bleiben darf, mit einem Begriff aus LF2 (Integration, Assimilation)."
+    }
+  ],
+  "mindmap_zentrum": "Anpassen oder Eigenes bewahren",
+  "mindmap_aeste": [
+    {
+      "titel": "Worin sind wir verschieden?",
+      "punkte": [
+        "Migrationshintergrund",
+        "Einwanderungsgrund",
+        "Lebensform",
+        "Konkubinat"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was gilt im Zusammenleben?",
+      "punkte": [
+        "Assimilation",
+        "Integration",
+        "Erwartung"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wie frage ich?",
+      "punkte": [
+        "offene Frage",
+        "Klärungsfrage",
+        "Suggestivfrage"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Habe ich nach Gutem und nach Schwierigem gefragt – und nie nach Herkunft, Aufenthalt, Religion oder Familie?",
+      "Zeigt mein Fazit in drei Sätzen und ohne Namen, was ich in LF4 entschieden habe?"
+    ],
+    "mitnahme": [
+      "Meine sechs Fragen – offen gestellt",
+      "Eine Chance und eine Schwierigkeit im Team",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Einwanderungsgrund",
+          "nach": "Migrationshintergrund",
+          "text": "erklärt (Deutung), warum jemand oder ein Elternteil einwanderte: daher der"
+        },
+        {
+          "von": "Konkubinat",
+          "nach": "Lebensform",
+          "text": "ist eine"
+        },
+        {
+          "von": "Assimilation",
+          "nach": "Integration",
+          "text": "verlangt mehr Anpassung als die"
+        },
+        {
+          "von": "Erwartung",
+          "nach": "Integration",
+          "text": "bestimmt mit (Deutung, nicht im Lehrmittel), wie weit sie geht: die"
+        },
+        {
+          "von": "offene Frage",
+          "nach": "Erwartung",
+          "text": "bringt im Interview zur Sprache: die"
+        },
+        {
+          "von": "Klärungsfrage",
+          "nach": "offene Frage",
+          "text": "hakt nach einer Antwort nach auf die"
+        },
+        {
+          "von": "Suggestivfrage",
+          "nach": "offene Frage",
+          "text": "gibt die Antwort vor, anders als die"
+        },
+        {
+          "von": "Integration",
+          "nach": "gilt auch bei …",
+          "text": "als Anpassen und Eigenes behalten (Übertragung, nicht belegt) auch bei"
+        }
+      ],
+      "transfer": "Einzug in eine Wohngemeinschaft; eine neue Klasse nach einem Schulwechsel; Stellenwechsel in einen Betrieb mit eigenen Gewohnheiten.",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Arbeitslosenquote",
+          "Landessprache"
+        ],
+        "mit_medien": [
+          "Fachkräftemangel",
+          "Sprachhürde"
+        ]
+      },
+      "quercheck": [
+        "Ja, wenn der Leitfaden mindestens zwei Fragen zu Gutem und zwei zu Schwierigem enthält und jede Frage dem Zusammenarbeiten gilt – wie im Lösungsbild (Fragen 2 und 4, 3 und 5).",
+        "Ja, wenn Satz 2 zum Entscheid aus LF4 passt: eine Schwierigkeit ohne Namen (wie im Lösungsbild) oder, bei «nur das Starke», eine zweite Stärke."
+      ],
+      "mitnahme": [
+        "Fünf offene Fragen (viele Antworten möglich; Faustregel: Was, Wie, Warum); die sechste hakt nach: «Was heisst das genau?»",
+        "Chance: Jede Person kann etwas, das den anderen hilft. Schwierigkeit: Eine Anweisung kommt nicht bei allen gleich an.",
+        "Zum Beispiel, ob in der Pause eine gemeinsame Sprache gelten soll – laut Lehrmittel ist umstritten, wie weit Anpassung gehen muss (Kap. 3.4, S. 112)."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "LF1: Migrationshintergrund, Gründe, drei Lebensformen",
+        "LF2: je ein Beispiel «gleich für alle», «darf bleiben»",
+        "LF4: Entscheid, stärkster Einwand und Antwort darauf"
+      ]
+    },
+    {
+      "produkt": "Quelle",
+      "vollstaendig_wenn": [
+        "Raster zur Quelle (S. 3): alle Zeilen gefüllt",
+        "Jede Zeile hat einen Begriff (LF1, LF2 oder Glossar)",
+        "Befund in zwei bis drei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Interview (Abgabe, S. 7)",
+      "vollstaendig_wenn": [
+        "Sechs Fragen, je mit Frageart; Gutes und Schwieriges",
+        "Stichwortnotizen zu den Antworten",
+        "Fazit in drei Sätzen, ohne Namen"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Begriffsnetz mit mind. 5 beschrifteten Verbindungen",
+        "Quer-Check abgehakt",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation, LF1, LF2: Begriffe klären, S. 7 anlegen, Frage 1 schreiben",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "LF3 mit Raster zur Quelle, LF4, Fragen 2 bis 5 schreiben, Frage 6 vorbereiten",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Interview führen, Notizen und Fazit, mit den Kriterien prüfen, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo sonst kommen Menschen mit verschiedener Herkunft und Lebensweise zusammen – und wer fragt dort, was gut läuft und was schwierig ist?",
+    "ziel": "Wo Menschen mit verschiedener Herkunft und Lebensweise zusammenarbeiten, entstehen Gewinn und Reibung zugleich; wer darüber berichtet, hört zuerst die Betroffenen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Vielfalt im eigenen Umfeld beschreiben und im Gespräch erfragen, was sie bringt und was sie verlangt",
+    "lehrmittel_anker": "Kap. 3.4 S. 111 (Migrationshintergrund, Einwanderungsgründe, Branchen, Spezialisten, Arbeitslosenquote) und S. 112 (Assimilation und Integration, vernachlässigte Integration) · Kap. 12.1 S. 292 (Formen des Zusammenlebens, Erwartungen) · Kap. 12.2 S. 299 (Konkubinat) · über die Methodenkarten: Kap. 16.4 S. 373 (Fragearten), Kap. 17.2 S. 381-382 (Stichwortnotizen)",
+    "kn_aktivierung": "Der KN verlangt, im Fall des Mitspielers zu benennen, was ein gemischtes Team gewinnt und woran es sich reibt, und die Forderung, im Training werde Deutsch gesprochen, mit Integration und Assimilation einzuordnen – dieselbe Abwägung von Anpassen und Eigenem wie im Interview, dazu die Erwartungen beider Seiten.",
+    "transfer_check": "Kann die Lernende in einer neuen Gruppe benennen, was Vielfalt dort bringt und was sie verlangt, und beide Seiten fair erfragen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 7,
+      "wo": "Produkt (S. 7) + handlungsprodukt.schritte[4] — im Interview eine andere Sicht erfragen, nachhaken und im Fazit fair wiedergeben"
+    },
+    {
+      "sk": 10,
+      "wo": "leitfragen[2] — herauslesen, wie sich ein Umfeld durch Zuwanderung verändert und was das von wem an Anpassung verlangt"
+    },
+    {
+      "sk": 11,
+      "wo": "leitfragen[3] + handlungsprodukt.schritte[3] — Gewinn und Reibung gelten beide; entscheiden, was das Fazit zeigt"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Kap. 3.4 | S. 111-112",
+          "text": "Welche Chancen und welche Schwierigkeiten der Einwanderung nennt Kap. 3.4 (S. 111–112) – und was sagt es zur Anpassung? Befund in zwei bis drei Sätzen: Was leiten Sie für Ihr Interview ab?",
+          "liefert": "Chance und Schwierigkeit für zwei Fragen",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Kap. 3.4 | S. 111-112",
+            "auftrag": "Lesen Sie Kap. 3.4, S. 111–112. Zeile 1 ist ein Beispiel (eine Chance). Füllen Sie drei eigene Zeilen: mindestens eine Schwierigkeit und eine Aussage zur Anpassung. Vorn stehen Seite und Stichwort des Absatzes.",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Beispiel",
+              "→ Begriff"
+            ],
+            "zeilen": 4,
+            "beispielzeile": [
+              "S. 111, Spezialisten",
+              "Fachleute fehlen sonst",
+              "Wohlstand für alle wächst",
+              "Einwanderungsgrund"
+            ]
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Die Beispielzeile zeigt, wie eine Zeile aussieht — füllen Sie drei weitere.",
+              "S. 111–112. «→ Begriff»: das Fachwort (LF1, LF2, Glossar), mit dem Sie die Zeile benennen."
+            ],
+            "satzanfaenge": [
+              "«Als Chance nennt das Lehrmittel … (S. …)»",
+              "«Schwierig ist laut Lehrmittel … (S. …)»",
+              "«Für mein Interview leite ich die Frage ab: …»"
+            ],
+            "produkt": "Schritt 03: Zeile mit Chance wird Frage 2, mit Schwierigkeit Frage 3 – zur Zusammenarbeit, nie zur Herkunft."
+          },
+          "loesung": {
+            "kern": "Gewinn, Schwierigkeiten und offene Anpassung",
+            "quelle_ref": "Kap. 3.4 | S. 111-112",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Chance: Fachleute besetzen Stellen, die sonst offen blieben; das stützt den Wohlstand (S. 111). Schwierigkeit (Deutung; S. 112: versäumte Integrationspolitik): Integration lange kein Ziel, Landessprache zweitrangig. Beides (Deutung, S. 111): Die höhere Arbeitslosenquote trifft die Betroffenen; laut Lehrmittel gingen in Krisen mehr, als kamen – Nutzen für die Schweiz. Anpassung: umstritten, wie weit (S. 112).",
+                "quelle": "Kap. 3.4, S. 111-112"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Bau und Gastgewerbe: laut Lehrmittel (ohne Jahr), nicht nachgeprüft, rund die halbe Arbeit; Personenfreizügigkeit seit 2002 (S. 111).",
+                "quelle": "Kap. 3.4, S. 111"
+              },
+              {
+                "label": "Begriffe",
+                "text": "Integration, Assimilation (LF2); Arbeitslosenquote, Landessprache (Glossar). Zeile 1: «Einwanderungsgrund» ist Deutung (Arbeit als Grund, S. 111). Zahlen: ohne Schweizer Pass, nicht Migrationshintergrund."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: Chance und Schwierigkeit mit Seite, dann Ableitung. Die Fragen sind Fallüberlegung: Das Lehrmittel meint die Gesellschaft, nicht Teams."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "S. 111, Spezialisten",
+                "Fachleute fehlen sonst",
+                "Wohlstand für alle wächst",
+                "Einwanderungsgrund"
+              ],
+              [
+                "S. 111, Export der Arbeitslosigkeit",
+                "Quote ohne Schweizer Pass höher; Arbeitslosigkeit im Land gesenkt",
+                "laut Lehrmittel: in Krisen mehr Weg- als Zuzug",
+                "Arbeitslosenquote"
+              ],
+              [
+                "S. 112, Vernachlässigte Integration",
+                "Integration war lange kein Ziel",
+                "Landessprache lernen galt als zweitrangig",
+                "Integration"
+              ],
+              [
+                "S. 112, Assimilation und Integration",
+                "wie weit Anpassung gehen muss, ist umstritten",
+                "Tabelle: ganz anpassen oder Eigenes behalten",
+                "Assimilation"
+              ]
+            ],
+            "befund": "Laut Lehrmittel bringen Fachleute aus dem Ausland, was sonst fehlte (S. 111). Als Schwierigkeit lese ich, dass Integration lange kein Ziel war und die Sprache als zweitrangig galt (S. 112); wie weit Anpassung gehen muss, ist umstritten. Für mein Interview leite ich ab: Ich frage, was jemand ins Team bringt und was hilft, einander zu verstehen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Kap. 3.4 · nur Starkes zeigen ↔ auch Schwieriges zeigen",
+          "pol_typ": "position_gegenposition",
+          "text": "Kap. 3.4 zeigt Gewinn (S. 111) und Streit um Anpassung (S. 112). Was zeigt Ihr Fazit: nur, was das Team stark macht – oder auch, was schwierig ist? Nennen Sie den stärksten Einwand gegen Ihre Wahl und Ihre Antwort.",
+          "liefert": "Entscheid für Satz 2 im Fazit",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus, dann schreiben Sie.",
+              "Einwand: der beste Grund für die andere Wahl. Suchen Sie ihn in der Situation (S. 1)."
+            ],
+            "satzanfaenge": [
+              "«Mein Fazit zeigt nur das Starke, weil …»",
+              "«Mein Fazit zeigt auch das Schwierige, weil …»",
+              "«Der stärkste Einwand ist …; ich antworte: …»"
+            ],
+            "produkt": "Ihr Entscheid bestimmt nur Satz 2 im Fazit (Schritt 04). Frage 5 stellen alle."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Starkes ↔ Schwieriges, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt eine Position: was das Fazit zeigt",
+                "nennt den stärksten Einwand (nicht einen schwachen) und antwortet darauf: bleiben oder ändern",
+                "stützt sich auf das Lehrmittel: Gewinn (S. 111) oder umstrittene Anpassung (S. 112); die Übertragung auf das Team ist Fallüberlegung",
+                "sagt, was daraus für Satz 2 im Fazit folgt; kein Urteil über eine Herkunft oder eine Person"
+              ],
+              "beispiel_pol_1": "Mein Fazit zeigt, was unser Team stark macht. Laut Lehrmittel bringen Fachleute aus dem Ausland, was sonst fehlen würde (S. 111); bei uns kann auch jede Person etwas, das andere nicht können (Fallüberlegung). Der stärkste Einwand: Ein Porträt ohne Missverständnisse ist geschönt. Ich bleibe dabei, denn die Zeitung lesen alle im Betrieb, und niemand soll sich blossgestellt fühlen. Nach dem Schwierigen frage ich trotzdem; Satz 2 nennt eine zweite Stärke. Satz 3 sagt ehrlich: Was für alle gilt und was jede Person behalten darf, handeln wir noch aus (S. 112: umstritten). Das gilt für Neue wie für Langjährige – auch in einer neuen Klasse.",
+              "beispiel_pol_2": "Mein Fazit zeigt auch, was schwierig ist. Wie weit Anpassung gehen muss, ist umstritten (S. 112); bei uns zeigt sich das in der Pause, wenn zwei Sprachen durcheinandergehen (Fallüberlegung). Der stärkste Einwand: Meine Berufsbildnerin wünscht etwas Positives, und ein offenes Wort kann jemanden treffen. Ich antworte: Satz 2 nennt keine Namen und beschreibt eine Lage, nicht eine Person. Für die andere Wahl spricht: Ein Porträt darf stolz machen. Was für alle gilt und was jede Person behalten darf, handeln beide Seiten aus – auch dort, wo jemand neu in eine Wohngemeinschaft zieht. Annahme: Die befragte Person ist einverstanden.",
+              "nicht_tragfaehig": "Wahl ohne Einwand; ein Einwand, der nur zum Schein genannt ist; ein Urteil über eine Herkunft oder eine Person; ein Fazit mit Namen."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe zu LF4",
+        "spalten": [
+          "Meine Wahl fürs Fazit",
+          "Stärkster Einwand dagegen",
+          "Meine Antwort darauf"
+        ],
+        "hinweis": "Je Spalte ein bis zwei Stichworte. Der Einwand ist der beste Grund für die andere Wahl. Dritte Spalte zuletzt: bleiben oder ändern?",
+        "loesung_zeilen": [
+          [
+            "Nur das Starke: jede Person kann etwas (Fall); Fachleute als Gewinn (S. 111)",
+            "Ohne Missverständnisse ist das Porträt geschönt",
+            "Bleiben: Zeitung lesen alle, niemand soll blossgestellt sein; ich frage trotzdem"
+          ],
+          [
+            "Auch das Schwierige: Pause, Anweisung (Anpassung umstritten, S. 112)",
+            "Die Berufsbildnerin wünscht Positives; es kann jemanden treffen",
+            "Bleiben: ohne Namen; Satz 2 nennt eine Lage, nicht eine Person"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zu Kap. 3.4 (S. 3): zweimal lesen, dann je Aussage eine Zeile",
+        "beispiel": [
+          "S. 30, Abfall · Karton wird monatlich geholt · «erster Dienstag» · → Abfuhrplan (erfunden)"
+        ]
+      },
+      "scaffold_90": "Die ausgefüllte Beispielzeile im Raster (S. 3) und das Beispiel auf S. 6 zeigen, wie eine Rasterzeile und wie Fragen mit Notizen und Fazit aussehen."
+    },
+    "mit_medien": {
+      "leitfragen": [
+        {
+          "nr": 3,
+          "bloom": "Analysieren",
+          "knoten_ref": "Quelle · Raster",
+          "text": "Welchen Gewinn erhofft die Quelle, welche Schwierigkeiten zeigt sie, wenn Menschen verschiedener Herkunft zusammenarbeiten? Wer musste sich anpassen? Befund in zwei bis drei Sätzen: Was leiten Sie fürs Interview ab?",
+          "liefert": "Chance und Schwierigkeit für zwei Fragen",
+          "antwortform": "raster",
+          "raster": {
+            "quelle_ref": "q-431a-pflicht",
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          },
+          "feld_hoehe_mm": 25,
+          "scaffolding": {
+            "strategien": [
+              "Wörter: Fachkräftemangel = Fachleute fehlen. Angestammtes Personal = wer schon da ist.",
+              "«→ Begriff»: das Fachwort (LF1, LF2, Glossar), mit dem Sie die Zeile im Befund benennen."
+            ],
+            "satzanfaenge": [
+              "«Als Gewinn zeigt die Quelle … (Abs. …)»",
+              "«Schwierig war laut Quelle … (Abs. …)»",
+              "«Für mein Interview leite ich die Frage ab: …»"
+            ],
+            "produkt": "Schritt 03: Zeile mit Gewinn (Chance) wird Frage 2, mit Schwierigkeit Frage 3 – zur Zusammenarbeit."
+          },
+          "loesung": {
+            "kern": "Gewinn erhofft; Aufwand, Sprache; Erwartungen unerfüllt",
+            "quelle_ref": "q-431a-pflicht",
+            "quelle_stand": "2026-10-05",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Gewinn: Entlastung erhofft (Abs. 2); Pflegefachmann glaubt, man war zufrieden (Abs. 5). Schwierig laut Spital: Aufwand für sieben zu gross, Sprache (Abs. 3–4); Erwartungen beider Seiten unerfüllt (Abs. 12).",
+                "quelle": "Quelle, Abs. 2–5 und 12"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Spital: wertvolle Erfahrung (Abs. 10). Verband meint: Pflegende fehlen im Herkunftsgebiet (Abs. 8–9).",
+                "quelle": "Quelle, Abs. 8–10"
+              },
+              {
+                "label": "Begriffe, Deutung",
+                "text": "Fachkräftemangel, Sprachhürde (Glossar); Integration, Erwartung (LF2). Deutung: Integration (Abs. 5); Ernüchterung bei den Pflegenden (Abs. 11); Anpassen: Folgerung."
+              },
+              {
+                "label": "Befund",
+                "text": "Tragfähig: Gewinn, Schwierigkeit (je Absatz), wer sich anpasste, Ableitung."
+              },
+              {
+                "label": "Stand, Zählweise",
+                "text": "Artikel vom 15.10.2025. Ohne Nummer: Vorspann, Zwischentitel, Bilder (nach Abs. 3), Legenden."
+              },
+              {
+                "label": "Mit Ersatzquelle",
+                "text": "Erhebung 2024: fast 90 % nach eigenen Angaben oft Kontakt mit «anderen» (Pass, Religion, Hautfarbe); ein Drittel gestört (Abs. 2). Zwei Drittel offen, Trend gebrochen (Abs. 3). 27 % erlebten Diskriminierung (Abs. 4). Keine Teamstimme; Anpassen entfällt.",
+                "quelle": "Ersatzquelle, Abs. 2–4"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Abs. 1–2",
+                "Hilfe von aussen soll das angestammte Personal entlasten",
+                "sieben Fachkräfte seit Frühjahr 2024",
+                "Fachkräftemangel"
+              ],
+              [
+                "Abs. 3–4",
+                "laut Spital: Aufwand zu gross, unwirtschaftlich; Sprachhürden",
+                "Zertifikat B2; nach der Probezeit 3 von 7 weg",
+                "Sprachhürde"
+              ],
+              [
+                "Abs. 5",
+                "Pflegefachmann: alles gegeben; glaubt, man war zufrieden",
+                "Bild der Achterbahn",
+                "Integration"
+              ],
+              [
+                "Abs. 12",
+                "Bilanz: Erwartungen beider Seiten nicht erfüllt",
+                "nach 18 Monaten, vorerst keine Wiederholung",
+                "Erwartung"
+              ]
+            ],
+            "befund": "Die Quelle zeigt beides: Sieben Fachkräfte sollten das Team entlasten, und ein Pflegefachmann glaubt, Patienten und Mitarbeitende seien zufrieden gewesen (Abs. 1–2, 5). Schwierig waren laut Spital Aufwand und Sprache (Abs. 3–4), und am Ende blieben die Erwartungen beider Seiten unerfüllt (Abs. 12). Daraus schliesse ich: Anpassen mussten sich vor allem die Zugezogenen. Für mein Interview leite ich ab: Ich frage, was jemand ins Team bringt und was hilft, einander zu verstehen."
+          }
+        },
+        {
+          "nr": 4,
+          "bloom": "Beurteilen",
+          "knoten_ref": "Quelle · nur Starkes zeigen ↔ auch Schwieriges zeigen",
+          "pol_typ": "position_gegenposition",
+          "text": "Die Quelle nennt erhofften Gewinn und Schwierigkeiten (Raster, S. 3). Was zeigt Ihr Fazit: nur, was das Team stark macht – oder auch, was schwierig ist? Nennen Sie den stärksten Einwand gegen Ihre Wahl und Ihre Antwort.",
+          "liefert": "Entscheid für Satz 2 im Fazit",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 60,
+          "scaffolding": {
+            "strategien": [
+              "Suchen Sie im Raster je einen Beleg für beide Möglichkeiten. Notieren Sie den Absatz.",
+              "Einwand: der beste Grund für die andere Wahl – auch aus der Situation (S. 1)."
+            ],
+            "satzanfaenge": [
+              "«Mein Fazit zeigt nur das Starke, weil … (Abs. …)»",
+              "«Mein Fazit zeigt auch das Schwierige, weil … (Abs. …)»",
+              "«Der stärkste Einwand ist …; ich antworte: …»"
+            ],
+            "produkt": "Ihr Entscheid bestimmt nur Satz 2 im Fazit (Schritt 04). Frage 5 stellen alle."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: Starkes ↔ Schwieriges, Entscheid",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "nennt eine Position: was das Fazit zeigt",
+                "nennt den stärksten Einwand (nicht einen schwachen) und antwortet darauf: bleiben oder ändern",
+                "stützt beide Seiten mit einem Absatz der Quelle: etwa Abs. 5 oder 10 für den Gewinn, Abs. 3–4 oder 12 für die Schwierigkeit; die Übertragung auf das eigene Team ist Fallüberlegung",
+                "mit Ersatzquelle (Erhebung 2024): Abs. 2 trägt beide Seiten (meist harmonisch; ein Drittel fühlt sich gestört)"
+              ],
+              "beispiel_pol_1": "Mein Fazit zeigt, was unser Team stark macht. Auch das Spital nennt sein Projekt trotz allem eine wertvolle Erfahrung (Abs. 10), und ein Pflegefachmann glaubt, Patienten und Mitarbeitende seien zufrieden gewesen (Abs. 5). Der stärkste Einwand: Die Quelle verschweigt das Schwierige nicht (Abs. 3–4, 12); ein Porträt ohne Missverständnisse wäre geschönt. Ich bleibe dabei: Die Zeitung lesen alle im Betrieb, niemand soll sich blossgestellt fühlen. Nach dem Schwierigen frage ich trotzdem; Satz 2 nennt eine zweite Stärke. Satz 3 sagt ehrlich, dass wir noch aushandeln, was für alle gilt und was jede Person behalten darf. Das gilt für Neue wie für Langjährige – auch in einer neuen Klasse.",
+              "beispiel_pol_2": "Mein Fazit zeigt auch, was schwierig ist. In der Quelle waren laut Spital Aufwand und Sprache Hürden, und am Ende waren die Erwartungen beider Seiten nicht erfüllt (Abs. 3–4, 12); bei uns gehen in der Pause zwei Sprachen durcheinander (Fallüberlegung). Der stärkste Einwand: Meine Berufsbildnerin wünscht etwas Positives, und auch das Spital betont den Wert der Erfahrung (Abs. 10). Ich antworte: Satz 2 nennt keine Namen und beschreibt eine Lage, nicht eine Person. Für die andere Wahl spricht: Ein Porträt darf stolz machen. Was für alle gilt und was jede Person behalten darf, handeln beide Seiten aus – auch dort, wo jemand neu in eine Wohngemeinschaft zieht. Annahme: Die befragte Person ist einverstanden.",
+              "nicht_tragfaehig": "Wahl ohne Einwand; ein Einwand, der nur zum Schein genannt ist; ein Schluss von den sieben Fachkräften auf ein Land; ein Fazit mit Namen."
+            }
+          }
+        }
+      ],
+      "quellen": [
+        {
+          "ref": "q-431a-pflicht",
+          "rolle": "pflicht",
+          "fuer_leitfrage": [
+            3,
+            4
+          ],
+          "auftrag": "Lesen Sie die Quelle (QR-Seite). Füllen Sie vier Zeilen, je zwei zu Gewinn und Schwierigkeiten. Absatz 1 folgt dem Vorspann; Zwischentitel, Bilder, Bildlegenden zählen nicht. Es geht um ein Projekt, nicht um ein Land.",
+          "raster": {
+            "spalten": [
+              "Absatz",
+              "Kernaussage",
+              "Beleg / Zahl",
+              "→ Begriff"
+            ],
+            "zeilen": 4
+          }
+        },
+        {
+          "ref": "q-431a-vertiefung-1",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Sehen Sie 22:49 bis 26:52 (dort stoppen). Was hält dieses Team zusammen?",
+          "erwartung": "Polier: steht zwischen seinen Leuten und dem Chef, trägt die Verantwortung (23:01–23:32), mag seine Leute (24:06). Am Bagger: Allein erreiche man nichts (25:13–25:23). Team «wie eine Familie» (26:00). Deutung: Zusammenhalt aus gemeinsamer Arbeit, nicht aus gleicher Herkunft. Nur Untertitel gelesen; vor dem Einsatz gegensehen (Begleiter, Kap. 3)."
+        },
+        {
+          "ref": "q-431a-vertiefung-2",
+          "rolle": "vertiefung",
+          "leitfrage_vertiefung": "Welches Bild von Vielfalt zeichnet die Seite – und was erfahren Sie hier nicht?",
+          "erwartung": "Bild: Vielfalt als Stärke für jeden Beitrag (Abs. 2); Mitarbeitende würden unabhängig von Geschlecht, Herkunft und Alter geschätzt (Abs. 3). Es fehlen: Schwierigkeiten, Stimmen aus dem Team. Absicht (Deutung): sich als Arbeitgeberin zeigen. Seite von 2022, geändert am 24.3.2026."
+        }
+      ],
+      "kasten_s4": {
+        "typ": "vertiefung",
+        "titel": "Vertiefung (freiwillig)"
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "für das Raster zur Quelle (S. 3)",
+        "beispiel": [
+          "Abs. 2 · Mensa kocht öfter ohne Fleisch · «3 von 5 Menüs» · → Angebot (erfunden)"
+        ]
+      },
+      "scaffold_90": "Lesen Sie den ersten Absatz der Quelle gemeinsam und füllen Sie die erste Rasterzeile zusammen; das Beispiel auf S. 6 zeigt Fragen mit Notizen und ein Fazit."
+    }
+  }
+}
