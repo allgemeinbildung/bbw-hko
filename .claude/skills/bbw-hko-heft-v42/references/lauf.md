@@ -107,12 +107,12 @@ kn.json → Heft A und Heft B → Set → Begleiter → Tor → Gegenleser → K
 | 3 | `npm run build:einheiten-index` — einmal, damit die Executor exportieren können | Orchestrator | Abschnitt 6 |
 | 4 | Heft A und Heft B — Phasen 4, 5, 6 je Heft, **mit eigener Messung vor der Abgabe** | Executor A ∥ Executor B | `phase-4-…`, `phase-5-…`, `phase-6-…`, Abschnitt 6 |
 | 5 | `set.json`, danach `begleiter.md` (der Executor Begleiter füllt am Schluss einmal die Marker) | Executor Set → Executor Begleiter | `phase-7-set.md`, `phase-8-begleiter.md` |
-| 6 | Tor mit Export und Messung aller Dokumente; höchstens drei Reparaturrunden | Orchestrator | `phase-9-tor.md` §1–§2 |
+| 6 | Tor mit Export und Messung aller Dokumente, dazu einmal `check-all` über die drei Bestandseinheiten (`phase-9-tor.md` §1); höchstens drei Reparaturrunden — eine Runde umfasst `check-all` **und** Messung | Orchestrator | `phase-9-tor.md` §1–§2 |
 | 7 | Gegenleser, alle gleichzeitig: je Heft und Spur Lernende/r und Lösungs-Audit, ein Bogen-Leser, ein Sweep | Gegenleser | `gegenleser.md` |
-| 8 | Jeden Befund am Dokument nachprüfen → genaue Aufträge → Korrekturen → Marker-Skript neu → Tor neu → geänderte Seiten noch einmal lesen; höchstens drei Runden | Orchestrator, Executor A ∥ B | `gegenleser.md` §2, §5 |
+| 8 | Jeden Befund am Dokument nachprüfen → genaue Aufträge → Korrekturen → Marker-Skript neu → Tor neu → geänderte Seiten noch einmal lesen; höchstens drei Runden. Wer korrigiert: am Heft der Executor A bzw. B, an `set.json` und `begleiter.md` der Executor der Datei, an `prinzip.json`, `kn.json` und an einer in diesem Lauf neu angelegten Methodenkarte der Orchestrator | Orchestrator, Executor der Datei | `gegenleser.md` §2, §5 |
 | 9 | **Phase 10, Schritte 1–6:** offene Befunde, Fakten-Audit an Primärquellen, Zahlen nachrechnen, erneutes Lesen nach der letzten Änderung, Tor und Messung, Gegenhör-Liste | Orchestrator, Fakten-Audit, Gegenleser | `phase-10-abschluss.md` |
 | 10 | Bericht im Laufordner, dazu `check-all.txt` und `messung.txt` | Orchestrator | `assets/bericht-template.md`, Abschnitt 8 |
-| 11 | Leck-Prüfung über Bauplan und Bericht, gezieltes `git add`, **ein** Commit | Orchestrator | Abschnitt 8 |
+| 11 | Leck-Prüfung über Bauplan und Bericht — **nach** dem Bericht, **vor** `git add`; ihr Ergebnis wird im Bericht nachgetragen —, dann gezieltes `git add`, `check-leck --staged`, **ein** Commit | Orchestrator | Abschnitt 8 |
 | 12 | Schluss: Vorlage zur Freigabe | Orchestrator | Abschnitt 9 |
 | 13 | **Phase 10, Schritt 8: Freigabe** — nur auf Pietros «ok» | Orchestrator | `phase-10-abschluss.md` §8 |
 
@@ -234,6 +234,13 @@ Dann, in dieser Reihenfolge [P-loop §3]:
 
 Eine halbe Einheit bleibt nie unter `src/data/einheiten/` liegen.
 
+**Kein Abbruchfall** ist ein Ordner, der schon ohne Commit unter
+`src/data/einheiten/` liegt (Abschnitt 3 Zeile 5): nicht anfassen, melden,
+weiter nur über den Start «Abschluss» — kein Bericht «nicht erzeugbar», kein
+Verschieben, keine Dauersperre. «Nicht erzeugbar» wegen des Ordnernamens gibt
+es nur nach der Ableitungsregel: Der Name gehört einer **anderen** Einheit und
+kein verlängerter slug ist frei (`references/ableitungsregeln.md` §1.4). [E34]
+
 Sagt ein älterer Bauplan für den Abbruch «der Lauf entfernt die Karte» oder
 «Ordner löschen», gilt die Skill: verschieben nach `abgebrochen/`. [E34]
 
@@ -300,14 +307,18 @@ Berichts in `docs/cloud-run/OFFEN.md` stehen. Handweg bis dahin: Der Abschnitt
 | | Einzelstart, Abschluss | Schleife |
 |---|---|---|
 | Dev-Server | starten (`npm run dev`) und zwei Adressen nennen: Arbeitsansicht `/einheiten/<ordner>` und QR-Seite `/m/<ordner>` [P-einzel] | **nicht** starten — er stört den nächsten Durchgang; nur den Ordnernamen nennen [P-loop §3] |
-| Letzte Nachricht | die Vorlage zur Freigabe (`phase-10-abschluss.md` §7): grün oder nicht · Gegenhör-Liste · offene Punkte · nicht belegbare Fakten · die drei wichtigsten Punkte — dann **warten** auf Pietros «ok» [P-1a «EINZIGER STOPP»] | eine kurze Nachricht: Ordner · grün oder nicht erzeugbar · was gegengehört werden muss · wie viele Baupläne noch warten. Die Vorlage steht im Bericht; **nicht warten**, nächster Durchgang [P-loop §4] |
+| Letzte Nachricht | die Vorlage zur Freigabe (`phase-10-abschluss.md` §7): grün oder nicht · Gegenhör-Liste · offene Punkte, zuerst die mit Entscheid · nicht belegbare Fakten · freigabereif nach dem Gegenhören: ja oder nein · Hash des Commits — dann **warten** auf Pietros «ok» [P-1a «EINZIGER STOPP»] | eine kurze Nachricht: Ordner · grün oder nicht erzeugbar · was gegengehört werden muss · freigabereif nach dem Gegenhören: ja oder nein · Hash des Commits · wie viele Baupläne noch warten. Die ganze Vorlage steht im Bericht (Abschnitt 11); **nicht warten**, nächster Durchgang [P-loop §4] |
 | Freigabe | nach dem «ok»: `phase-10-abschluss.md` §8 | nie in der Schleife — später über den Start «Abschluss» oder durch Pietro |
 
 ## 10. Was in jedem Lauf gilt
 
 - Kein Push, kein Deploy, kein Merge, kein Branchwechsel — ausser Pietro
   verlangt es beim Freigabeschritt ausdrücklich. [P-einzel, P-loop, P-1a]
-- Nicht anfassen: den Bauplan (auch die Freigabe-Zeile), die Skill,
+- Nicht anfassen: den Bauplan (auch die Freigabe-Zeile) — ausser um eine
+  Stelle umzuformulieren, die die Leck-Prüfung meldet (Abschnitt 8) —, die
+  Skill (ein Erzeugungslauf meldet Regel-Lücken mit Kürzel S im Bericht; die
+  Pflicht aus `SKILL.md` §1, einen Entscheid einzuarbeiten, trifft die
+  Session, die ihn fällt, nicht den Lauf),
   `scripts/`, `src/lib`, `src/components`, `src/styles`, `src/pages`,
   bestehende Einheiten, bestehende Karten (was «bestehend» heisst: nächster
   Punkt). Fehler dort
@@ -317,7 +328,10 @@ Berichts in `docs/cloud-run/OFFEN.md` stehen. Handweg bis dahin: Der Abschnitt
   diese noch nicht publizierte Einheit führt (aus ihrer Phase Q). An ihr
   korrigierbar sind Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum und
   `kurzbeschrieb` — nie Titel, URL oder URN, nie der Ausschnitt: Eine andere
-  Quelle ist eine neue Karte, und die wählt der Lauf nicht. *Bestehend* sind
+  Quelle ist eine neue Karte, und die wählt der Lauf nicht. Eine Methodenkarte,
+  die der Orchestrator in diesem Lauf neu angelegt hat, darf er bis zum Commit
+  der Einheit korrigieren (sie hat keinen anderen Verbraucher); danach ist sie
+  bestehend. *Bestehend* sind
   alle anderen Karten: jede Methodenkarte und jede Quellenkarte, die eine
   andere Einheit führt. Sie werden nicht angefasst. [Rb §3 Nr. 4–5; E31 Nr. 3;
   Entscheid Orchestrator nach dem Trockenlauf, E34]

@@ -23,6 +23,11 @@ npm run build
 git status --short
 ```
 
+Erst **nach dem Bericht** und vor `git add` läuft dazu
+`node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <laufordner>`
+(Tabellenzeile unten; `references/lauf.md` §4 Schritt 11, §8) — vorher gibt es
+den Bericht nicht, den sie prüfen soll.
+
 Lokale Läufe — Einzelstart, Schleife, Abschluss — rufen `check-all <ordner>`
 **ohne** `--cloud`. Das Lehrmittel muss trotzdem lokal da sein; das stellt die
 Vorprüfung fest (`references/lauf.md` §3 Zeile 7), denn ohne `--cloud` meldet
@@ -39,7 +44,7 @@ des Orchestrators nach dem Trockenlauf.)
 | `check-all` | letzte Zeile «GRUEN — keine Fehler.», Exit 0 | Abschnitt 2 |
 | `export-v42` | schreibt je vorhandener Spur und Heft `heft-<a\|b>-<spur>.html/.docx`, `loesungen-<a\|b>-<spur>.html/.docx`, dazu `auftragsbogen.*` und `begleiter.docx` | Fehlermeldung lesen: meist ein Feld, das der Renderer erwartet und das fehlt. Kein Workaround im Skript. |
 | `messen-v42` | Exit 0: keine Seite läuft über. Erwartet: 8 Seiten je Heft, 4 im Auftragsbogen, 5 je Dokument «Lösungen» | Exit 1: das Feld kürzen, das auf der gemeldeten Seite steht, auch wenn das Zeichenbudget eingehalten ist (die Budgets sind an einer Einheit gemessen). Exit 2: kein Browser — im Bericht als «nicht gemessen» führen; die Messung holt die lokale Abnahme nach. |
-| `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <bericht>` (Bauplan und Bericht — `check-all` liest nur den Ordner der Einheit) | letzte Zeile «GRUEN — keine woertliche Uebernahme ab 14 Woertern.», Exit 0 | Exit 1: die gemeldete Stelle im Dokument umformulieren (eigene Worte plus Kapitel/Seite bzw. Karten-ID), auch bei einer Warnung. Exit 2: Lehrmittel oder Archiv fehlt — nicht geprüft, Bauplan und Bericht nicht committen. |
+| `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <laufordner>` — **nach dem Bericht, vor `git add`** (Bauplan und Bericht — `check-all` liest nur den Ordner der Einheit) | letzte Zeile «GRUEN — keine woertliche Uebernahme ab 14 Woertern.», Exit 0 | Exit 1: die gemeldete Stelle im Dokument umformulieren (eigene Worte plus Kapitel/Seite bzw. Karten-ID), auch bei einer Warnung. Exit 2: Lehrmittel oder Archiv fehlt — nicht geprüft, Bauplan und Bericht nicht committen. |
 | `bestand-v42 --pruefen` | «OK — … Dokumente unverändert.» | Die Skill hat etwas ausserhalb ihres Ordners verändert. Rückgängig machen (`git checkout -- <datei>`), Ursache in den Bericht. |
 | `npm run build` | Exit 0 | wie oben; die Warnung «chunks larger than 500 kB» ist bekannt und kein Befund |
 | `git status --short` | neu oder geändert **durch diesen Lauf** nur: der Ordner der Einheit, neue Karten in `src/data/quellen/` (und allenfalls `src/data/methoden/`), der Bauplan, der Laufordner, die zwei Index-Dateien | was dieser Lauf sonst geändert hat, zurücksetzen; Fremdes nicht anfassen und nie mitcommitten |
@@ -72,8 +77,16 @@ Einheit, ist das nicht dein Befund: zurücksetzen und im Bericht nennen.
 
 ## 2. Reparaturrunden
 
-Eine Runde = alle Befunde von `check-all` lesen, in den Daten beheben, neu
-prüfen. Höchstens **drei** Runden.
+Eine Runde = `check-all` **und** Messung laufen lassen, alle Befunde lesen —
+ein Überlauf ist ein Befund der Runde —, in den Daten beheben, neu prüfen.
+Höchstens **drei** Runden.
+
+Nach der dritten Runde: Ist `check-all` rot → Abbruch (unten). Ist `check-all`
+grün und bleibt nur ein Überlauf über 2 px → **kein** Abbruch: Die Einheit
+bleibt `"entwurf"`, der Überlauf steht im Bericht unter «Offen» (Kürzel E, mit
+Seite und Pixeln), und die Vorlage zur Freigabe sagt «freigabereif: nein». Bis
+2 px auf Seite 6 ist hingenommen und wird nur gemeldet. (Herkunft: ENTSCHEIDE
+E28 Nr. 2; Rückblick §4 Zeile 1; Entscheid des Orchestrators, E34.)
 
 - Ein Befund wird an der **Quelle** behoben: Ist eine Leitfrage zu lang, wird
   die Frage neu formuliert und danach geprüft, ob Lösung, Satzanfänge und der
@@ -90,7 +103,7 @@ prüfen. Höchstens **drei** Runden.
   übereinstimmt. Auch die Warnung wird behoben.
 - Warnungen von `check-einheiten` zählen als Fehler (Exit 1).
 
-Ist das Tor nach der dritten Runde rot: Ordner der Einheit und die in diesem
+Ist `check-all` nach der dritten Runde rot: Ordner der Einheit und die in diesem
 Lauf neu angelegten Karten nach
 `docs/cloud-run/laeufe/<datum>-<ordnername>/abgebrochen/` **verschieben, nicht
 löschen**, Index neu bauen, Grund und letzte Tor-Ausgabe in den Bericht

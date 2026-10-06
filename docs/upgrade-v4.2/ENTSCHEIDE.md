@@ -1095,6 +1095,42 @@ bleibt. Sieben Widersprüche und Lücken sind behoben:
 7. **Abbruch gegen ältere Baupläne:** Sagt ein Bauplan «der Lauf entfernt die
    Karte», gilt die Skill — verschieben nach `abgebrochen/`. `lauf.md` §7.
 
+### Zweite Leserunde (07.10.2026) — vom Orchestrator entschieden
+
+Zehn kleinere Widersprüche, behoben in einem Commit:
+
+1. **Fakten ohne §10:** Die Übergangsregel steht jetzt auch in `SKILL.md` §5
+   Nr. 3 und `phase-1-bauplan.md` §3.14.
+2. **Bauplan:** nicht anfassen, ausser um eine Leck-Stelle umzuformulieren
+   (`lauf.md` §10).
+3. **Ordner liegt schon ohne Commit da:** nicht anfassen, melden, weiter über
+   den Start «Abschluss» — kein «nicht erzeugbar», kein Verschieben. «Nicht
+   erzeugbar» nur, wenn der Name einer anderen Einheit gehört und kein slug
+   frei ist (`lauf.md` §7; `auto-modus.md` §5, §7).
+4. **Schlussnachricht:** `lauf.md` §9, `phase-10` §7 und Bericht-Gerüst §11
+   tragen dieselben Punkte, mit «freigabereif ja/nein» und Commit-Hash.
+5. **`check-leck`** läuft nach dem Bericht, vor `git add` (`lauf.md` §4
+   Schritt 11; `phase-9-tor.md` §1; Bericht-Gerüst §2).
+6. **Reparaturrunde** = `check-all` und Messung. `check-all` nach drei Runden
+   rot → Abbruch. Nur ein Überlauf über 2 px → kein Abbruch: Einheit bleibt
+   `entwurf`, Punkt unter «Offen» (E), «freigabereif: nein»; bis 2 px auf S. 6
+   hingenommen (`phase-9-tor.md` §2; `SKILL.md` §7 Nr. 1; `lauf.md` §4).
+   Herkunft: E28, Rückblick §4 Zeile 1.
+7. **Wer korrigiert:** Heft → Executor A/B; `set.json`, `begleiter.md` →
+   Executor der Datei; `prinzip.json`, `kn.json` und eine in diesem Lauf neu
+   angelegte Methodenkarte (bis zum Commit) → Orchestrator (`lauf.md` §4
+   Schritt 8, §10; `phase-10` §1).
+8. **«Skill nicht anfassen»** gilt für den Erzeugungslauf; die Pflicht aus
+   `SKILL.md` §1 trifft die Session, die einen Entscheid fällt (`lauf.md` §10;
+   `phase-10` §8 Nr. 4).
+9. **Bestandsprobe** über die drei Einheiten auch in `lauf.md` §4 Schritt 6
+   und Bericht-Gerüst §2.
+10. **Phase 0 im Auto-Modus:** `phase-0-verortung.md` §10 angeglichen;
+    `auto-modus.md` §7 prüft Vorhandensein der Kapiteldateien und Seitenmarken,
+    nicht den Inhalt; `phase-8-begleiter.md` §8 ohne `check-all` für den
+    Executor; `SKILL.md` §5 Nr. 10 und `auto-modus.md` §3 verträglich mit
+    «eigene Karte korrigierbar».
+
 Nicht ergänzt: ein Satz im Schleifen-Prompt, wie ohne ScheduleWakeup (unter
 `/goal`) fortgesetzt wird — die archivierten Prompts belegen dazu nichts.
 

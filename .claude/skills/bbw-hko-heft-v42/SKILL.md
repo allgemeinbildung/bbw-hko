@@ -213,7 +213,9 @@ Einzelheiten und der Weg, wenn der Export nicht läuft:
    Datum, «Stand …») brauchen zusätzlich eine Primärquelle — Gesetz oder Amt —
    mit URL und Abrufdatum: vor dem Schreiben im Bauplan §10, nach dem Schreiben
    im Fakten-Audit (Phase 10). Die Erzeugung zitiert nur aus §10 (Rückblick
-   §4, §5.2).
+   §4, §5.2). Übergang: Trägt ein Bauplan keinen §10 (freigegeben vor dem
+   07.10.2026), wird nur aus Lehrmittel, Datensatz und Archivtext geschrieben,
+   und das Fakten-Audit beginnt bei null (`references/lauf.md` §3).
    Zahlen einer Situation (Lohn, Preis) sind erfundene Fallzahlen und als
    solche erlaubt; Zahlen über die Welt nicht.
 4. **Keine erfundene Quelle.** Medien-Spur nur mit Karte **und** Volltext im
@@ -244,7 +246,8 @@ Einzelheiten und der Weg, wenn der Export nicht läuft:
    Auftrag und KN sind paarweise verschieden.
 10. **Unumkehrbares nach Regel.** Ordnername, IDs, Kurzlink und Quellen-IDs
     nach `references/ableitungsregeln.md` — ableiten, nicht fragen, nie eine
-    vorhandene Einheit oder Karte überschreiben.
+    vorhandene Einheit oder bestehende Karte überschreiben (an einer eigenen
+    Quellenkarte sind einzelne Felder korrigierbar: `references/lauf.md` §10).
 11. **Sprache.** Schweizer Hochdeutsch, kein «ß», echte Umlaute. Situationen in
     Ich-Form, Aufträge an Lernende in Sie-Form, Begleiter in Du-Form, neutrale
     Persona (wörtlich wie im Skelett). Im Heft keine Woche, keine Lektion,
@@ -276,8 +279,12 @@ Kurzfassung; vollständig in `references/auto-modus.md`.
 ## 7. Fertig ist die Einheit, wenn
 
 1. `references/phase-9-tor.md` durchgelaufen ist: `check-all` GRUEN, Export und
-   Messung ohne Überlauf, Bestand unverändert, Build Exit 0, Gegenleser und
-   Lösungs-Audits nach der letzten Änderung;
+   Messung ohne Überlauf (bis 2 px auf Seite 6 hingenommen und gemeldet — E28),
+   Bestand unverändert, Build Exit 0, Gegenleser und Lösungs-Audits nach der
+   letzten Änderung. Bleibt nach drei Reparaturrunden nur ein Überlauf über
+   2 px, ist das kein Abbruch: Die Einheit bleibt `"entwurf"`, der Punkt steht
+   unter «Offen» (Kürzel E), und die Vorlage sagt «freigabereif: nein»
+   (`references/phase-9-tor.md` §2);
 2. `references/phase-10-abschluss.md` Schritte 1 bis 6 durchgelaufen sind:
    offene Befunde abgearbeitet, Fakten-Audit mit Tabelle, Zahlen nachgerechnet,
    erneut gelesen, Tor und Messung nach der letzten Änderung, Gegenhör-Liste;

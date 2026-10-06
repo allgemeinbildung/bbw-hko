@@ -234,7 +234,9 @@ einer Ausnahme in §9 bleiben, wie sie freigegeben sind.
 ## 10. Verortungsblatt
 
 Ausgabe in dieser Form (lokal: als Bauplan §1–§2; im Auto-Modus steht sie
-schon im Bauplan und wird nur gegen den Datensatz nachgeprüft):
+schon im Bauplan und wird nur nachgeprüft — gegen den Datensatz, und ob die
+Kapiteldateien mit den genannten Seitenmarken da sind; `references/auto-modus.md`
+§7, Zeile 7 der Vorprüfung in `references/lauf.md` §3):
 
 ```
 Lehrgang (kanonisch): …      Datensatz: public/nrlp_….json

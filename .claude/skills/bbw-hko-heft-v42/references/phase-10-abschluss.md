@@ -47,7 +47,10 @@ Befund wird **am heutigen Text nachgeprüft** — er kann durch eine spätere
 Korrektur schon erledigt sein. Dann genau einer von drei Ständen
 [P-abschluss «Abgabe» Nr. 1]:
 
-- **behoben** — mit Datei und Feld;
+- **behoben** — mit Datei und Feld; es korrigiert, wer die Datei schreibt: am
+  Heft der Executor A bzw. B, an `set.json` und `begleiter.md` der Executor der
+  Datei, an `prinzip.json`, `kn.json` und einer in diesem Lauf neu angelegten
+  Methodenkarte der Orchestrator (`references/lauf.md` §4 Schritt 8);
 - **stehen gelassen** — mit dem Grund in einem Satz;
 - **braucht Entscheid** — für Pietro, mit einer Empfehlung. Nicht selbst
   entscheiden, was der Bauplan festlegt oder was eine geteilte Datei betrifft.
@@ -211,7 +214,12 @@ Nach Bericht und Commit legt der Orchestrator vor [P-1a «EINZIGER STOPP»]:
 3. die offenen Punkte, zuerst die, die einen Entscheid brauchen — je mit
    Empfehlung;
 4. die Fakten mit Urteil «nicht belegbar» und was mit ihnen geschah;
-5. ein Satz: freigabereif nach dem Gegenhören — ja oder nein.
+5. ein Satz: freigabereif nach dem Gegenhören — ja oder nein («nein» immer,
+   wenn ein Überlauf über 2 px offen ist oder das Fakten-Audit fehlt);
+6. der Hash des Commits «Einheit …» (er steht nicht im Bericht).
+
+Dieselben Punkte stehen in `references/lauf.md` §9 und, ohne den Hash, im
+Bericht (Abschnitt 11).
 
 **Einzelstart und Abschluss:** warten auf Pietros «ok». **Schleife:** nicht
 warten; die Vorlage steht im Bericht (Abschnitt 11), der nächste Durchgang
@@ -246,8 +254,11 @@ npm run build
    Bericht — darin jetzt nachgetragen: der Hash des Commits «Einheit …». Vorher `node scripts/check-leck.mjs --staged`.
 4. Eintrag in `docs/upgrade-v4.2/ENTSCHEIDE.md`, nächste freie Nummer: welche
    Einheit, was vorher lief, was bei der Freigabe geprüft wurde, wo die offenen
-   Punkte stehen, wie es rückgängig geht. Ändert die Freigabe eine Regel, wird
-   sie in derselben Session in die Skill eingearbeitet (`SKILL.md` §1).
+   Punkte stehen, wie es rückgängig geht. Der Eintrag hält eine Freigabe fest,
+   keine Regel. Die Pflicht aus `SKILL.md` §1 — einen Entscheid in derselben
+   Session in die Skill einarbeiten — trifft die Session, die eine Regel
+   **entscheidet**, nicht den Lauf: Ein Lauf fasst die Skill nicht an und
+   meldet Regel-Lücken mit Kürzel S im Bericht (`references/lauf.md` §10).
 5. **Merge nach `main`, Push und Deploy nur, wenn Pietro es in diesem «ok»
    ausdrücklich verlangt** — sonst endet die Skill beim Commit. [`SKILL.md` §5
    Nr. 1; P-1a]

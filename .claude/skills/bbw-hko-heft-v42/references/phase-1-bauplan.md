@@ -288,7 +288,10 @@ Regeln:
   §10 hält fest, dass die Aussage heute an Gesetz oder Amt stimmt.
 - **Die Erzeugung zitiert nur daraus.** Eine Aussage dieser Art, die nicht in
   §10 steht, wird nicht geschrieben. Braucht ein Heft sie doch, fehlt sie im
-  Bauplan: vor dem Stopp nachtragen.
+  Bauplan: vor dem Stopp nachtragen. Übergang für Baupläne ohne §10
+  (freigegeben vor dem 07.10.2026): Sie bleiben erzeugbar; geschrieben wird
+  nur aus Lehrmittel, Datensatz und Archivtext, und das Fakten-Audit beginnt
+  bei null (`references/lauf.md` §3, `references/auto-modus.md` §6).
 - **Nicht belegbar** → die Aussage entfällt, oder der Bauplan sagt, dass das
   Heft sie als Fallüberlegung bzw. als Aussage der Quelle wiedergibt, nicht
   als Tatsache. Sie steht zusätzlich in §9.

@@ -40,7 +40,9 @@ Auto-Modus: Der eine Stopp hat stattgefunden.
 
 Ordnername, Zuschnitt, Kompetenzversprechen, Konfliktarten, Produkttypen,
 Spuren, Pol-Typen, Kriterien-Verteilung, Sprachmodi, SK, Hybrid-Fall,
-Fall-Begriffe, Lebensbereiche, Methodenkarten und Quellen werden **so
+Fall-Begriffe, Lebensbereiche, Methodenkarten und Quellen (welche Quelle,
+welcher Ausschnitt — einzelne Felder einer eigenen Quellenkarte bleiben
+korrigierbar: `references/lauf.md` §10) werden **so
 übernommen, wie sie dort stehen** — auch wenn der Skill beim Schreiben eine
 bessere Variante einfällt. Eine bessere Variante gehört in den Bericht, nicht
 in die Daten.
@@ -103,7 +105,7 @@ Dazu, aus anderen Entscheiden und aus `docs/cloud-run/RUN.md`:
 |---|---|
 | Bauplan fehlt oder ist nicht freigegeben | «nicht erzeugbar» |
 | Bauplan entspricht E21 nicht und Bauplan §9 nennt die Abweichung nicht als Ausnahme (Abschnitt 7) | «nicht erzeugbar», nichts schreiben |
-| Ordner existiert bereits | nie überschreiben; «nicht erzeugbar» |
+| Ordner existiert bereits | nie überschreiben. Liegt er ohne Commit da: nicht anfassen, melden, weiter nur über den Start «Abschluss» (`references/lauf.md` §3 Zeile 5) — kein Bericht «nicht erzeugbar», kein Verschieben. «Nicht erzeugbar» nur, wenn der Name einer **anderen** Einheit gehört und kein verlängerter slug frei ist (`references/ableitungsregeln.md` §1.4) |
 | Fehler in Renderer oder Skript | nicht reparieren, nicht umgehen (`--baseline` ist verboten); in den Bericht; «nicht erzeugbar», wenn das Tor sonst nicht grün wird |
 | Tor nach drei Reparaturrunden rot (Abschnitt 8) | Ordner und neue Karten nach `laeufe/…/abgebrochen/` verschieben (`references/lauf.md` §7), Grund in den Bericht |
 
@@ -149,13 +151,19 @@ zutrifft:
 - Ordnername hat die Form `<X.Y.Z>_<slug>`; `X.Y.Z` ist die erste Kompetenz
   von Heft A im kanonischen Lehrgang; `slug` nur aus `[a-z0-9_]`.
 - Lehrgang-Suffix genau dann, wenn die Regel ihn verlangt; kein `_v42`.
-- `src/data/einheiten/<ordner>/` existiert nicht.
+- `src/data/einheiten/<ordner>/` gehört keiner anderen Einheit. (Liegt der
+  Ordner dieser Einheit schon ohne Commit da, ist das kein Fall dieser
+  Prüfung, sondern Zeile 5 der Vorprüfung: `references/lauf.md` §3.)
 - Quellen-IDs folgen dem Muster der Regel; ein Satz, ein Muster; keine ID
   gehört einer anderen Einheit.
 - Weitere Lehrgänge nur, wenn jede Kompetenz dort nummern- und textgleich ist
   (am Datensatz nachprüfen, nicht dem Bauplan glauben).
 - Zuschnitt, Kompetenztexte, Modi je Kompetenz und Spuren stimmen mit dem
   Datensatz überein (`references/phase-0-verortung.md`).
+- **Kapitel:** Jede Kapiteldatei aus Bauplan §2 liegt unter
+  `material/_lehrmittel/`, und die dort genannten Seitenmarken stehen in der
+  Datei. Geprüft wird das Vorhandensein, nicht der Inhalt — den hat Phase 0
+  vor der Freigabe am Text geprüft.
 
 **Ausnahme aus Bauplan §9.** Nennt Bauplan §9 eine Abweichung von einer
 dieser Regeln **ausdrücklich** — mit der Regel, dem abweichenden Wert und dem

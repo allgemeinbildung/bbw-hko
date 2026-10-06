@@ -357,8 +357,10 @@ und 7 aus §6 · keine Überschrift «Lösungen der Leitfragen», kein
 ```
 node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner>
 node scripts/check-einheiten.mjs <ordner>
-node scripts/check-all.mjs <ordner>
 ```
+
+`node scripts/check-all.mjs <ordner>` läuft danach beim Orchestrator, nicht
+beim Executor Begleiter (§3.1, `references/lauf.md` §5).
 
 Der erste Befehl füllt die Marker (§3.1) und muss mit Exit 0 enden, bevor die
 Prüfungen laufen.
