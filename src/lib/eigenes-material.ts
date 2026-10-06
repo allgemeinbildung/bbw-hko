@@ -12,12 +12,27 @@ export interface MaterialLink {
 
 const MAX_LINKS = 20
 
+/**
+ * Macht aus dem, was Lehrpersonen wirklich einfügen, eine Adresse: «www.bbw.ch/x»
+ * ohne Schema bekommt https://, und aus eingefügtem Text mit Umbruch (OneNote
+ * kopiert Web- und App-Link zusammen) zählt die erste http(s)-Adresse.
+ * Dieselbe Regel steht im Formular (eigenes-material.astro, `linkBereinigen`).
+ */
+export function normalisiereLink(roh: string): string {
+  const text = String(roh ?? '').trim()
+  if (!text) return ''
+  const treffer = text.match(/https?:\/\/\S+/i)
+  if (treffer) return treffer[0]
+  const erstes = text.split(/\s+/)[0]
+  return /^[\w-]+(\.[\w-]+)+([/?#]\S*)?$/.test(erstes) ? `https://${erstes}` : text
+}
+
 /** Nur http(s)-Links; kein javascript:, kein data:. */
 export function sanitizeLinks(raw: unknown): MaterialLink[] {
   if (!Array.isArray(raw)) return []
   const out: MaterialLink[] = []
   for (const l of raw.slice(0, MAX_LINKS)) {
-    const url = String((l as any)?.url ?? '').trim()
+    const url = normalisiereLink(String((l as any)?.url ?? ''))
     if (!/^https?:\/\/\S+$/i.test(url) || url.length > 2000) continue
     const titel = String((l as any)?.titel ?? '').trim().slice(0, 200)
     out.push({ url, titel })
@@ -35,7 +50,7 @@ export function sanitizeErweitert(raw: unknown): Record<string, unknown> {
     ? r.bewertungskriterien
         .map((k: any) => ({ name: str(k?.name, 300), dimension: k?.dimension === 'SuK' ? 'SuK' : 'Ges' }))
         .filter((k) => k.name)
-        .slice(0, 12)
+        .slice(0, 20)
     : []
   return {
     kompetenzversprechen: str(r.kompetenzversprechen, 600),
@@ -44,6 +59,7 @@ export function sanitizeErweitert(raw: unknown): Record<string, unknown> {
     sprachmodi_sekundaer: strList(r.sprachmodi_sekundaer),
     bewertungskriterien: kriterien,
     lehrmittel_anker: str(r.lehrmittel_anker, 600),
+    scaffolds: str(r.scaffolds, 2000),
     didaktischer_kniff: str(r.didaktischer_kniff, 2000),
   }
 }

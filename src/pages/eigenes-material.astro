@@ -208,6 +208,23 @@ const start = { row, abteilung: access.abteilung ?? '' }
             <span class="field-label">KN-Aufgabe <span class="text-red-500">*</span></span>
             <textarea class="input" rows="3" x-model="f.kn_aufgabe" placeholder="Wie prüfst du die Kompetenz?"></textarea>
           </label>
+
+          <!-- Bewertungspositionen: je Dimension ein offenes Feld, eine Position pro Zeile.
+               Gespeichert wird wie bisher als Liste {name, dimension} in eigen_erweitert. -->
+          <div>
+            <span class="field-label block mb-1">Bewertungspositionen <span class="font-normal normal-case text-slate-400">— empfohlen</span></span>
+            <p class="text-xs text-slate-500 mb-2">Woran beurteilst du? Eine Position pro Zeile; es müssen nicht alle des Schullehrplans sein.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <label class="flex flex-col gap-1">
+                <span class="text-xs font-semibold text-slate-600">Sprache und Kommunikation</span>
+                <textarea class="input" rows="4" x-model="kriterienText.SuK" placeholder="z.B. Die Fragen sind offen formuliert."></textarea>
+              </label>
+              <label class="flex flex-col gap-1">
+                <span class="text-xs font-semibold text-slate-600">Gesellschaft</span>
+                <textarea class="input" rows="4" x-model="kriterienText.Ges" placeholder="z.B. Mindestens drei Pflichtinhalte des Lehrvertrags kommen vor."></textarea>
+              </label>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -237,7 +254,7 @@ const start = { row, abteilung: access.abteilung ?? '' }
           <div class="space-y-2">
             <template x-for="(l, i) in f.links" :key="i">
               <div class="flex flex-col sm:flex-row gap-2">
-                <input class="input flex-1" type="url" x-model="l.url" placeholder="https://…" />
+                <input class="input flex-1" type="text" inputmode="url" x-model="l.url" @blur="l.url = linkBereinigen(l.url)" placeholder="https://…" />
                 <input class="input sm:w-56" x-model="l.titel" placeholder="Bezeichnung (optional)" />
                 <button type="button" class="text-xs text-red-500 hover:text-red-700 sm:self-center" @click="f.links.splice(i, 1)">Entfernen</button>
               </div>
@@ -250,7 +267,7 @@ const start = { row, abteilung: access.abteilung ?? '' }
       <!-- ── Erweiterte Angaben ───────────────────────────────────────────── -->
       <details class="rounded-lg border border-slate-200" :open="erweitertOffen">
         <summary class="cursor-pointer select-none px-4 py-3 text-sm font-semibold text-slate-800">
-          Erweiterte Angaben <span class="font-normal text-slate-500">— optional: Kompetenzversprechen, Taxonomie, Beurteilungskriterien, Lehrmittel</span>
+          Erweiterte Angaben <span class="font-normal text-slate-500">— optional: Kompetenzversprechen, Taxonomie, Lehrmittel, Scaffolds</span>
         </summary>
         <div class="px-4 pb-4 space-y-5">
           <label class="flex flex-col gap-1">
@@ -301,27 +318,13 @@ const start = { row, abteilung: access.abteilung ?? '' }
             </div>
           </div>
 
-          <div>
-            <span class="field-label block mb-1">Beurteilungskriterien</span>
-            <p class="text-xs text-slate-500 mb-2">Empfohlen: 3–5 Kriterien, je Sprache &amp; Kommunikation (SuK) oder Gesellschaft (Ges).</p>
-            <div class="space-y-2">
-              <template x-for="(k, i) in f.erweitert.bewertungskriterien" :key="i">
-                <div class="flex gap-2">
-                  <input class="input flex-1" x-model="k.name" placeholder="z.B. Argumente sind begründet" />
-                  <select class="input w-24" x-model="k.dimension">
-                    <option value="SuK">SuK</option>
-                    <option value="Ges">Ges</option>
-                  </select>
-                  <button type="button" class="text-xs text-red-500 hover:text-red-700" @click="f.erweitert.bewertungskriterien.splice(i, 1)">✕</button>
-                </div>
-              </template>
-            </div>
-            <button type="button" class="mt-2 text-sm underline text-slate-600 hover:text-slate-900" @click="f.erweitert.bewertungskriterien.push({ name: '', dimension: 'Ges' })">+ Kriterium</button>
-          </div>
-
           <label class="flex flex-col gap-1">
             <span class="field-label">Lehrmittel-Bezug</span>
             <input class="input" x-model="f.erweitert.lehrmittel_anker" placeholder="z.B. Kapitel 3.2, S. 45–48" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Scaffolds</span>
+            <textarea class="input" rows="3" x-model="f.erweitert.scaffolds" placeholder="Welche Hilfen stehen den Lernenden zur Verfügung? (Satzanfänge, Checklisten, Vorlagen, digitale Werkzeuge …)"></textarea>
           </label>
           <label class="flex flex-col gap-1">
             <span class="field-label">Didaktischer Kniff</span>
@@ -347,8 +350,8 @@ const start = { row, abteilung: access.abteilung ?? '' }
           <div class="check-item" :class="hatKriterien ? 'checked' : ''" style="cursor: default">
             <input type="checkbox" :checked="hatKriterien" disabled />
             <span>
-              Beurteilungskriterien sind vorhanden.
-              <span class="block text-xs text-slate-500" x-show="!hatKriterien">Wird automatisch abgehakt, sobald du unter «Erweiterte Angaben» Kriterien erfasst.</span>
+              Bewertungspositionen sind vorhanden.
+              <span class="block text-xs text-slate-500" x-show="!hatKriterien">Wird automatisch abgehakt, sobald du beim Kompetenznachweis Bewertungspositionen erfasst.</span>
             </span>
           </div>
         </div>
@@ -384,7 +387,12 @@ const start = { row, abteilung: access.abteilung ?? '' }
         rowStatus: row ? row.status : null,
         dateien: row && Array.isArray(row.idee_dateien) ? row.idee_dateien : [],
         dateienGewaehlt: 0,
-        erweitertOffen: !!(e.kompetenzversprechen || (e.bewertungskriterien || []).length || e.lehrmittel_anker || e.didaktischer_kniff),
+        erweitertOffen: !!(e.kompetenzversprechen || e.lehrmittel_anker || e.scaffolds || e.didaktischer_kniff),
+        // Bewertungspositionen als Text je Dimension, eine pro Zeile (siehe `kriterien`).
+        kriterienText: {
+          SuK: (Array.isArray(e.bewertungskriterien) ? e.bewertungskriterien : []).filter((k) => k.dimension === 'SuK').map((k) => k.name).join('\n'),
+          Ges: (Array.isArray(e.bewertungskriterien) ? e.bewertungskriterien : []).filter((k) => k.dimension !== 'SuK').map((k) => k.name).join('\n'),
+        },
         kvManuell: !!e.kompetenzversprechen,
         busy: false,
         msg: '',
@@ -410,8 +418,8 @@ const start = { row, abteilung: access.abteilung ?? '' }
             schluesselkompetenzen: Array.isArray(e.schluesselkompetenzen) ? [...e.schluesselkompetenzen] : [],
             aspekte: Array.isArray(e.aspekte) ? [...e.aspekte] : [],
             sprachmodi_sekundaer: Array.isArray(e.sprachmodi_sekundaer) ? [...e.sprachmodi_sekundaer] : [],
-            bewertungskriterien: Array.isArray(e.bewertungskriterien) ? e.bewertungskriterien.map((k) => ({ ...k })) : [],
             lehrmittel_anker: e.lehrmittel_anker || '',
+            scaffolds: e.scaffolds || '',
             didaktischer_kniff: e.didaktischer_kniff || '',
           },
         },
@@ -444,7 +452,14 @@ const start = { row, abteilung: access.abteilung ?? '' }
           if (this.f.sprachmodus_primaer && !list.includes(this.f.sprachmodus_primaer)) list.push(this.f.sprachmodus_primaer)
           return list
         },
-        get hatKriterien() { return this.f.erweitert.bewertungskriterien.some((k) => k.name && k.name.trim()) },
+        // Aus den zwei Textfeldern wird die gespeicherte Form: je Zeile eine Position.
+        get kriterien() {
+          const zeilen = (text, dimension) => String(text || '').split('\n')
+            .map((z) => z.replace(/^\s*[-–•*]\s*/, '').trim()).filter(Boolean)
+            .map((name) => ({ name, dimension }))
+          return [...zeilen(this.kriterienText.SuK, 'SuK'), ...zeilen(this.kriterienText.Ges, 'Ges')]
+        },
+        get hatKriterien() { return this.kriterien.length > 0 },
 
         // Die Vorgabe wird bei jeder Änderung der Auswahl neu gesetzt: angekreuzt ist,
         // was der Lehrplan verlangt; die Lehrperson kann danach abwählen/ergänzen.
@@ -510,8 +525,18 @@ const start = { row, abteilung: access.abteilung ?? '' }
         },
 
         // ── Speichern ───────────────────────────────────────────────────
+        // Dieselbe Regel wie `normalisiereLink` in lib/eigenes-material.ts: fehlendes
+        // https:// ergänzen, aus eingefügtem Text die erste Adresse nehmen.
+        linkBereinigen(roh) {
+          const text = String(roh || '').trim()
+          if (!text) return ''
+          const treffer = text.match(/https?:\/\/\S+/i)
+          if (treffer) return treffer[0]
+          const erstes = text.split(/\s+/)[0]
+          return /^[\w-]+(\.[\w-]+)+([/?#]\S*)?$/.test(erstes) ? 'https://' + erstes : text
+        },
         gueltigeLinks() {
-          return this.f.links.map((l) => ({ url: (l.url || '').trim(), titel: (l.titel || '').trim() })).filter((l) => l.url)
+          return this.f.links.map((l) => ({ url: this.linkBereinigen(l.url), titel: (l.titel || '').trim() })).filter((l) => l.url)
         },
         pruefen(status) {
           const f = this.f
@@ -554,7 +579,7 @@ const start = { row, abteilung: access.abteilung ?? '' }
             eigen_kn_aufgabe: f.kn_aufgabe,
             eigen_selbstcheck: { ...f.selbstcheck, kriterien: this.hatKriterien },
             eigen_links: this.gueltigeLinks(),
-            eigen_erweitert: f.erweitert,
+            eigen_erweitert: { ...f.erweitert, bewertungskriterien: this.kriterien },
           }
         },
         async send(status) {
