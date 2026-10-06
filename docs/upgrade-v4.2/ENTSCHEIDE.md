@@ -910,3 +910,158 @@ sechzehn Einheiten im Format v4.2 publiziert.
 **Offen je Einheit:** steht im jeweiligen Bericht (4.3.1: §8 «gegenhören und
 gegensehen» und §9 — darunter die Video-Vertiefung von Heft A, 22:49–26:52).
 **Rückgängig:** `status` in `set.json` zurück auf `entwurf`, Index bauen, deployen.
+
+## E34 — Die Skill allein beschreibt den Ablauf; Prompts tragen keine Regeln mehr (07.10.2026)
+
+**Ausgangslage:** Für einen Lauf galt eine Dreifach-Schichtung: Skill ← Prompt
+`einheit-aus-bauplan-lokal` ← Prompt `alle-bauplaene-seriell` («diese
+Abweichungen gehen vor») ← E30 («gilt vor dem Text der Skill»). Wer ohne den
+Schleifen-Prompt startete, arbeitete nach altem Stand (Rückblick
+`RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 3).
+
+**Entscheid:**
+
+1. **Ein Ablauf für jeden Start.** Einzelstart, Schleife und Abschluss rufen
+   dieselbe Skill und bekommen denselben Ablauf: `references/lauf.md` (neu) —
+   Rollen und Modelle (Orchestrator Opus, Executor Opus, Gegenleser Sonnet,
+   Fakten-Audit Opus), Vorprüfung, Reihenfolge, was gleichzeitig laufen darf,
+   Messung, Abbruch, Laufordner, Commit-Umfang inklusive Bauplan.
+2. **Vorrang neu gefasst** (`SKILL.md` §1): ENTSCHEIDE bleibt oben, aber jede
+   neue E-Nummer, die eine Regel der Skill ändert, wird **in derselben
+   Session** in die Skill eingearbeitet und nennt die geänderten Dateien. «Gilt
+   vor dem Text der Skill, noch nicht nachgeführt» ist kein zulässiger Zustand
+   mehr. Ein Prompt trägt keine Regeln; widerspricht er der Skill, gilt die
+   Skill.
+3. **E30 ist nachgeführt.** Die sechs Wörter stehen in `SKILL.md` und elf
+   References nicht mehr als gesperrt; verblieben sind zwei historische
+   Verweise (`phase-0-verortung.md` §9, `sprache.md` §7.2). Nicht geändert:
+   `docs/cloud-run/bauplaene/_VORLAGE.md` §1 führt die Zeile «Gesperrte Wörter
+   (E24)» weiter und nennt sie in §7 «Suchaufträge» — sie wird mit «aufgehoben
+   (E30)» gefüllt, bis die Vorlage bereinigt ist.
+4. **Messung in der Schreibphase.** Executor A und B messen ihr Heft und ihr
+   Dokument «Lösungen» selbst, in einem eigenen Temp-Ordner, bevor sie abgeben
+   (`lauf.md` §6; `phase-4`, `phase-5`, `phase-6` §7). Der Orchestrator baut den
+   Index dafür einmal nach `prinzip.json` und `kn.json`.
+5. **Phase 10 «Abschluss vor der Freigabe»** (`references/phase-10-abschluss.md`,
+   neu) gehört zu jedem Lauf: offene Befunde, Fakten-Audit an Primärquellen mit
+   Tabelle, Zahlen nachrechnen, erneutes Lesen nach der letzten Änderung, Tor
+   und Messung, Gegenhör-Liste, Vorlage zur Freigabe (zweiter Stopp), Freigabe
+   nur auf Pietros «ok». In der Schleife wird am zweiten Stopp nicht gewartet;
+   die Einheit bleibt `"entwurf"`.
+6. **Fakten im Bauplan.** Neuer Abschnitt «10. Fakten» in `_VORLAGE.md` und
+   `phase-1-bauplan.md` §3.14: jede Rechts- und Sachaussage mit Primärquelle,
+   URL, Abrufdatum; die Erzeugung zitiert nur daraus. **Übergang:** Ein Bauplan,
+   der vor dem 07.10.2026 freigegeben wurde und keinen §10 trägt, bleibt
+   erzeugbar; das Fakten-Audit prüft dann alles (`lauf.md` §3).
+7. **Ein Bericht je Lauf** nach `assets/bericht-template.md` (neu), immer als
+   Datei im Laufordner `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/`, mit
+   Kopf (Ordner, Modelle, Beginn, Ende, Runden) und der Liste «Offen» (Kürzel
+   E/S/R/Q, Stand). `NACHTRAG.md` entfällt als eigene Form: Phase 10 und spätere
+   Entscheide schreiben im selben Bericht weiter.
+8. **Abbruch heisst verschieben, nicht löschen:** nach
+   `laeufe/…/abgebrochen/` (`lauf.md` §7; angeglichen in `SKILL.md` §6,
+   `phase-9-tor.md` §2, `auto-modus.md` §5 und §8, die «entfernen» sagten).
+9. **Eine Session je Arbeitsbaum.** Die Ausnahme «zweite Session nebeneinander»
+   aus dem Schleifen-Prompt entfällt.
+10. **Commit gehört zum Ablauf:** einer je Einheit nach Phase 10 Schritt 6, mit
+    Einheit, Karten, Bauplan, Laufordner, zwei Index-Dateien, nach
+    `check-leck --staged`. Bisher sagte die Skill «kein Commit, ausser der
+    Aufruf verlangt ihn».
+11. **Gegenleser:** Das Lehrjahr der Rolle wird aus der Einheit hergeleitet
+    (nie fest «1. Lehrjahr»); das Lösungs-Audit bekommt Untertitel Zeile für
+    Zeile mit Einsatzzeit (`gegenleser.md` §4.1, §4.2).
+12. **Prompts:** `einheit-aus-bauplan-lokal.md` ist ein Satz;
+    `alle-bauplaene-seriell.md` führt nur noch Warteschlange und Schleife (die
+    feste Reihenfolge der ersten vier Baupläne ist gestrichen — alle vier sind
+    publiziert). Sieben überholte Prompts liegen unter `prompts/archiv/`.
+13. **Skripte, die es noch nicht gibt** (`lauf.mjs`, `check-zeiger.mjs`,
+    `check-namen.mjs`, `karten.mjs`, `check-belege.mjs`, `check-fakten.mjs`,
+    `offen.mjs`, dazu `docs/cloud-run/OFFEN.md`): Die Skill nennt sie mit
+    «sobald vorhanden» und dem Handweg (`lauf.md` §11). Beleg-Dateien liegen
+    ausserhalb des Repos im Quellenarchiv unter `_pruefung/<ordnername>/`.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern): Punkt 5 «Schleife wartet nicht»; Punkt 6 «Übergang»; Punkt 4 «Index
+einmal vor den Executorn» (am Code des Index-Builders gelesen, nicht im Lauf
+erprobt); im Abbruchfall bleiben Bericht und `abgebrochen/` uncommittet im
+Arbeitsbaum; höchstens drei Leserunden über Phase 9 und 10 zusammen.
+
+**Nicht geprüft:** der Trockenlauf mit zwei Subagenten (Einzelstart gegen
+Schleife) — er folgt nach diesem Eintrag durch den Orchestrator.
+
+### Inventar — was nur ausserhalb der Skill stand, und wohin es gekommen ist
+
+Zeilennummern der Spalte «widerspricht» beziehen sich auf den Stand vor dem
+Umbau (Git `ad54734`). «—» heisst: Die Skill schwieg.
+
+| # | Regel | stand in | widerspricht der Skill in | kommt nach |
+|---|---|---|---|---|
+| 1 | Die sechs Wörter des Piloten sind nicht mehr gesperrt | E30 | `SKILL.md`:197 · `auto-modus`:103 · `datenvertrag`:526–529 · `phase-0`:222–231, 257, 267 · `phase-1`:80 · `phase-2-3`:135, 203, 226 · `phase-4`:288–291 · `phase-6`:14, 62–63, 118, 244, 303 · `phase-7`:97, 269 · `phase-q`:13, 133, 198 · `sprache`:111–133, 360, 375 · `gegenleser`:23, 111 | an allen Stellen entfernt |
+| 2 | Überlauf bis 2 px auf Seite 6 hingenommen, nur gemeldet | E28 Nr. 2; Einzel-Prompt | — | `phase-9-tor` §1 · `lauf` §6 |
+| 3 | Player auf der QR-Seite; Umschalter bei nur einer Spur | E28 Nr. 1, 3 | — | keine Regel der Skill; QR-Seite steht auf der Gegenhör-Liste (`phase-10` §6) |
+| 4 | Präsentation und Werkstatt für v4.2 | E29 | — | keine Regel der Skill (rechnet zur Laufzeit) |
+| 5 | Gegenleser ohne Profil b | E31 Nr. 1 | — (am 05.10. nachgeführt) | `gegenleser` §1, unverändert |
+| 6 | `tun` wird bei `hko-`Karten nicht gedruckt; Übertragung über `fuer`, ausnahmsweise `beispiel` | E31 Nr. 2 | `phase-4`:255–257 · `datenvertrag`:628 | `phase-4` §8 · `datenvertrag` §11.3 · `lauf` §10 |
+| 7 | Karten: Fehler in der Karte, Passung in der Einheit | E31 Nr. 3 | `phase-4`:259–262 («nie geändert», ohne Weg) | `phase-4` §8 · `lauf` §10 (Skript `karten.mjs` sobald vorhanden) |
+| 8 | Abschlussrunde je Einheit vor der Freigabe | E32; Prompts `abschluss-*`, `1a` | `SKILL.md`:200–206 (fertig nach Phase 9) | `phase-10` · `SKILL.md` §4, §7 |
+| 9 | Freigabe: `status` → `publiziert`, Index, Prüfungen, Commit, Eintrag | E32, E33; Prompt `1a` | `SKILL.md`:131–132 («kein `status`-Wechsel», ohne Ausnahme) | `phase-10` §8 · `SKILL.md` §5 Nr. 1 |
+| 10 | Archivierte Einheit steht auf `entwurf` | E31 Nr. 4, E32 | — | nicht eingearbeitet — eigener Auftrag («archiviert») |
+| 11 | Rollen und Modelle | Einzel-Prompt, Schleifen-Prompt, `zwei-einheiten` | — | `lauf` §2 · `SKILL.md` §4 |
+| 12 | Vorprüfung: Freigabe, Karten und Archivtext, Blockade in §9 | Einzel-Prompt | — | `lauf` §3 |
+| 13 | Fertig, nicht erzeugbar, Ordner ohne Commit → überspringen | Schleifen-Prompt §1 | — | `lauf` §3 (Zeilen 3–5) |
+| 14 | Gleichzeitig: Executor A und B, alle Gegenleser; nacheinander: Set, Begleiter | Schleifen-Prompt §3 | `SKILL.md`:97 («A, dann B») | `lauf` §5 · `SKILL.md` §4 |
+| 15 | Index, Tor, Build, Commit nur beim Orchestrator; nie zwei Tore | Einzel-Prompt | — | `lauf` §5 · `phase-9-tor` |
+| 16 | Kein worktree, kein `npm ci`, kein Branchwechsel | beide Prompts | — | `lauf` §5 · `SKILL.md` §4 |
+| 17 | Zweite Session nebeneinander (Ausnahme) | Schleifen-Prompt §1 | — | **entfällt** — `lauf` §3 Zeile 1 |
+| 18 | Zwei Einheiten dürfen parallel laufen | `zwei-einheiten` | — | **entfällt** — `lauf` §5 |
+| 19 | Abbruch: Bericht «nicht erzeugbar», Ordner verschieben, Index neu | Schleifen-Prompt §3 | `SKILL.md`:198 · `phase-9-tor`:64–66 · `auto-modus`:105, 168–171 («entfernen») | `lauf` §7, an den vier Stellen angeglichen |
+| 20 | Ein Commit je Einheit mit Bauplan, Bericht, Index; `check-leck --staged` | Schleifen-Prompt §4 | `SKILL.md`:206 · `phase-9-tor`:134 · `auto-modus`:190 («kein Commit, ausser …») | `lauf` §8 · `SKILL.md` §7 |
+| 21 | Bericht als Datei im Laufordner | beide Prompts | `phase-9-tor`:120 · `auto-modus`:182 («lokal: in der Antwort») | `lauf` §8 · `assets/bericht-template.md` |
+| 22 | Dev-Server nur beim Einzelstart | Einzel-Prompt; Schleifen-Prompt §3 | — | `lauf` §9 |
+| 23 | Bestandsprobe (Gold, 2.3.1, 2.1.1 bleiben grün); Messung mit Segoe Print | Einzel-Prompt «TOR» | — | `phase-9-tor` §1 |
+| 24 | Bekannte Fehler lesen: nicht neu melden, nicht reparieren | Einzel-Prompt | — | `lauf` §3 |
+| 25 | Keine Rückfrage, kein Swissdox, keine Zugangsdaten | beide Prompts | — | `lauf` §10 (`auto-modus` §6 hatte es zum Teil) |
+| 26 | Executor misst selbst, eigener Temp-Ordner | Schleifen-Prompt §3; Rückblick §4, §5.2 | — | `lauf` §6 · `phase-4` §13 · `phase-5` §14 · `phase-6` §7 · `SKILL.md` §4 |
+| 27 | Offene Befunde: behoben / stehen gelassen / braucht Entscheid | Prompts `abschluss-*` | — | `phase-10` §1 |
+| 28 | Fakten-Audit an Primärquellen, Tabelle, eigener Subagent Opus | Prompt `1a`; E32; Rückblick §4, §5.2 | `SKILL.md`:137–142 (Belege nur aus Lehrmittel, Datensatz, Archiv) | `phase-10` §2 · `SKILL.md` §5 Nr. 3 |
+| 29 | Fakten schon im Bauplan | Rückblick §5.2, §5.4 | — | `_VORLAGE.md` §10 · `phase-1` §3.14 · `auto-modus` §6 |
+| 30 | Zahlen von Hand nachrechnen, Fallzahlen überall gleich | Prompt `1a`; Rückblick §4 | — | `phase-10` §3 |
+| 31 | Nach jeder Änderung von Text oder Lösung erneut lesen | Prompts `abschluss-*`, `1a`; Rückblick §4 | — | `phase-10` §4 · `gegenleser` §2, §4.2 |
+| 32 | Gegenhör-Liste für Pietro | Prompts `abschluss-*`; Nachträge; Rückblick §5.2 | — | `phase-10` §6 · Bericht-Gerüst §9 |
+| 33 | Stopp vor der Freigabe; Entscheide Pietros im selben Bericht | Prompt `1a`; Berichte vom 06.10. | — | `phase-10` §7 |
+| 34 | Lösungs-Audit mit Untertiteln in voller Auflösung | Prompt `1a`; Nachtrag `2026-10-03-221` §7; Rückblick §5.3 | `gegenleser`:22, 103–106 (nur «Archivtext») | `gegenleser` §1, §4.2 |
+| 35 | «1. Lehrjahr» aus der Einheit herleiten | Berichte `2026-10-04-411` §10, `…5.2.1…` §11; Rückblick §5.4 | `gegenleser`:75 | `gegenleser` §4.1 |
+| 36 | Marker-Skript nach jeder Änderung an Heft, Set, KN | Berichte 221, 331, 411, 421, 241 | — (nur in Phase 8 gesagt) | `lauf` §4 · `phase-9-tor` §1 |
+| 37 | `export-v42` setzt den Index voraus | Bericht `2026-10-04-321` §10 | — | `lauf` §4 Schritt 3, §6 |
+| 38 | Seite 8 vor Phase 7 nicht messbar | Bericht `2026-10-05-241` §10 | — | `lauf` §6 · `phase-6` §7 |
+| 39 | Dokument «Lösungen»: LF3 auf S. 2, LF4 und Vertiefungen auf S. 3 | Bericht `2026-10-03-221` §13 | — | `lauf` §6 · `phase-5` §14 |
+| 40 | Wo kein Budget besteht, entscheidet die Messung (`erwartung`, `beispiel_pol_*`, `hinweis`, Zellen, Karten S. 6) | Berichte 121, 221, 331, 421, 4.3.1 | — | `lauf` §6 · `phase-4` §13 · `phase-5` §14 (Budgets im Skript: späterer Auftrag) |
+| 41 | Paket der Gegenleser: Archivdateien haben mehrere Formen, Windows-Zeilenenden | Berichte 321, 411, 4.3.1 | — | `gegenleser` §3 |
+| 42 | Kurzbeschrieb einer Quellenkarte verrät die Lösung nicht | Nachtrag `2026-10-04-311` §6; Rückblick §4 | — | `phase-q` §8 · `phase-10` §1 |
+| 43 | `verortung.absaetze` einer Webseite in auffindbaren Worten | Nachtrag `2026-10-04-411` §7; Bericht `2026-10-04-421` §10 | — | `phase-q` §8 |
+| 44 | Executor ohne Fortschritt: in kleinen Schritten fortsetzen; Scratchpad je Lauf | Berichte `2026-10-04-421`, `2026-10-05-241` §10 | — | `lauf` §5 |
+| 45 | Leck-Prüfung auch für Bauplan und Bericht | Bericht `…4.3.1…` §10; Rückblick §3 Nr. 2 | — | `phase-9-tor` §1 (seit `d8e74d6`) · `lauf` §8 |
+| 46 | Lehrmittel widerspricht dem Gesetz | Bericht `…4.3.1…` §10 | — | `phase-10` §2 · `phase-1` §3.14 (kein stiller Entscheid) |
+| 47 | Laufordner mit vollem Ordnernamen | Rückblick §3 Nr. 8; Läufe vom 06.10. | — | `lauf` §8 (Prüfskript: späterer Auftrag) |
+| 48 | Offene Punkte als Liste mit Kürzel und Stand | Rückblick §3 Nr. 6 | `gegenleser`:124 (Abschnitt «Fehler in Skill, Skript, Renderer») | Bericht-Gerüst §10 · `gegenleser` §5 |
+| 49 | Kein Start mit offenen S-Punkten, die Fehler erzeugen | Rückblick §5.4 | — | `lauf` §3 Zeile 9 (greift, sobald `OFFEN.md` vorhanden) |
+| 50 | Fehler aus Regel, Skelett, Karte, Renderer: gleiche Stelle in allen Einheiten suchen | Rückblick §5.4 «Rückweg» | — | `lauf` §10 · Bericht-Gerüst §10 |
+| 51 | Abgeleitete Einheit gilt als neue Einheit, kein Beleg wird übernommen | Rückblick §5.4; Prompt `anpassung-3.1.1` | — | `phase-10` §1 Nr. 5 (Feld `abgeleitet_von`: späterer Auftrag) |
+| 52 | Belege als Daten, blind lösen, vier Urteile, Hash | Rückblick §5.1, §5.3 | — | nur als «sobald vorhanden» (`lauf` §11, `gegenleser` §4.2, `phase-10` §2) — späterer Auftrag |
+| 53 | Cloud-Weg über `RUN.md` | Cloud-Prompts 2.1.1, 2.3.1; Rückblick §1, §5.5 | — | `auto-modus` §9: seit 03.10. nicht benutzt, Entscheid offen |
+
+**Regel-Lücken aus den Laufberichten, die dieser Eintrag nicht einarbeitet**
+(inhaltliche Regeln, Skelette oder Skripte — sie gehören in die Sammelliste):
+Seiten im Paket des Bogen-Lesers (Bericht `2026-10-04-111` §9 Nr. 9) · Skelett
+`herausforderung-template.json` «Begriff aus LF1» gegen `phase-5` §8 · «(Beispielwert)»
+im Beispiel der Rezeptionskarte (`phase-5` §9) · Rasterspalten als Konstante
+gegen Bauplan §7 · Stationen in Ich-Form gegen Bauplan §6 (`phase-7` §4.1) ·
+«Minuten» in `phase-5` §13 gegen `sprache` §2 · Budgets und Kartenhöhe schon im
+Bauplan zählen · Stufe 3 der Kriterien teils unerreichbar · `set.wochenplan`
+mit zwölf Lektionen · `set-template.json` ohne `lehrgaenge` · Begleiter-Skelett
+ohne Ort für Geräte, Lehrgänge, «vor dem Druck» · Persona «1. Lehrjahr» bei
+zwei Lehrgängen · fehlende Rezeptionskarte für Video.
+
+**Rückgängig:** `git revert` der Commits dieses Eintrags (Skill, Prompts); die
+archivierten Prompts liegen unverändert bis auf ihre Kopfzeile unter
+`docs/cloud-run/prompts/archiv/`.
