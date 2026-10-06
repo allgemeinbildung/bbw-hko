@@ -897,3 +897,16 @@ nicht. Der nächste `build:einheiten-index` nimmt sie wieder auf.
 **Offen je Einheit:** steht im jeweiligen NACHTRAG unter «offen» bzw.
 «Entscheide».
 **Rückgängig:** `status` in `set.json` zurück auf `entwurf`, Index bauen, deployen.
+
+## E33 — Freigabe von 4.3.1 und 5.2.1 (Pietro, 07.10.2026)
+
+**Entscheid Pietro:** `4.3.1_vielfalt_untersuchen` und `5.2.1_gesetze_veraendern`
+werden für alle Lehrpersonen freigegeben; KT1 macht kein Review. Damit sind
+sechzehn Einheiten im Format v4.2 publiziert.
+**Vorher:** je Einheit Abschluss mit Tor, Messung, Gegenlesern und Fakten-Audit
+(`docs/cloud-run/laeufe/2026-10-06-<ordner>/BERICHT.md`).
+**Bei der Freigabe geprüft:** `check-all` für beide GRUEN, `bestand-v42
+--pruefen` unverändert (26 Dokumente), `npm run build` Exit 0.
+**Offen je Einheit:** steht im jeweiligen Bericht (4.3.1: §8 «gegenhören und
+gegensehen» und §9 — darunter die Video-Vertiefung von Heft A, 22:49–26:52).
+**Rückgängig:** `status` in `set.json` zurück auf `entwurf`, Index bauen, deployen.
