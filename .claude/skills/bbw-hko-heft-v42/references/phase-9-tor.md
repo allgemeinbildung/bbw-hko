@@ -41,7 +41,7 @@ des Orchestrators nach dem Trockenlauf.)
 |---|---|---|
 | `build:einheiten-index` | läuft durch; schreibt `src/data/einheiten.index.json` und die Kopie unter `public/nrlp/` | JSON-Fehler in der Einheit beheben. Den Index nie von Hand ändern. |
 | `begleiter-marker --check` | «0 abweichend · 0 unaufloesbar», Exit 0 | ohne `--check` laufen lassen (füllt die Marker); bei `UNAUFLOESBAR` den Pfad im Begleiter korrigieren (`references/phase-8-begleiter.md` §3.1) |
-| `check-all` | letzte Zeile «GRUEN — keine Fehler.», Exit 0 | Abschnitt 2 |
+| `check-all` | letzte Zeile «GRUEN — keine Fehler.», Exit 0. Darin die Zeile «Namen»: `check-namen.mjs <ordner>` prüft Ordner, IDs, Verweise, Quellenkarten, `archiv_ref` und Laufordner (`references/ableitungsregeln.md` §10). Warnungen an publizierten Einheiten stehen darunter und sind nur zu melden; ein Hinweis «Quellenarchiv fehlt lokal» heisst: `archiv_ref` nicht gegen die Ordner geprüft — im Bericht als «nicht geprüft» führen, nie als grün | Abschnitt 2 |
 | `export-v42` | schreibt je vorhandener Spur und Heft `heft-<a\|b>-<spur>.html/.docx`, `loesungen-<a\|b>-<spur>.html/.docx`, dazu `auftragsbogen.*` und `begleiter.docx` | Fehlermeldung lesen: meist ein Feld, das der Renderer erwartet und das fehlt. Kein Workaround im Skript. |
 | `messen-v42` | Exit 0: keine Seite läuft über. Erwartet: 8 Seiten je Heft, 4 im Auftragsbogen, 5 je Dokument «Lösungen» | Exit 1: das Feld kürzen, das auf der gemeldeten Seite steht, auch wenn das Zeichenbudget eingehalten ist (die Budgets sind an einer Einheit gemessen). Exit 2: kein Browser — im Bericht als «nicht gemessen» führen; die Messung holt die lokale Abnahme nach. |
 | `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <laufordner>` — **nach dem Bericht, vor `git add`** (Bauplan und Bericht — `check-all` liest nur den Ordner der Einheit) | letzte Zeile «GRUEN — keine woertliche Uebernahme ab 14 Woertern.», Exit 0 | Exit 1: die gemeldete Stelle im Dokument umformulieren (eigene Worte plus Kapitel/Seite bzw. Karten-ID), auch bei einer Warnung. Exit 2: Lehrmittel oder Archiv fehlt — nicht geprüft, Bauplan und Bericht nicht committen. |
@@ -105,7 +105,7 @@ E28 Nr. 2; Rückblick §4 Zeile 1; Entscheid des Orchestrators, E34.)
 
 Ist `check-all` nach der dritten Runde rot: Ordner der Einheit und die in diesem
 Lauf neu angelegten Karten nach
-`docs/cloud-run/laeufe/<datum>-<ordnername>/abgebrochen/` **verschieben, nicht
+`docs/cloud-run/laeufe/<datum>-<ordnername>[-<k>]/abgebrochen/` **verschieben, nicht
 löschen**, Index neu bauen, Grund und letzte Tor-Ausgabe in den Bericht
 (`references/lauf.md` §7). Eine halbe Einheit bleibt nie unter
 `src/data/einheiten/` liegen.
@@ -162,7 +162,7 @@ löschen**, Index neu bauen, Grund und letzte Tor-Ausgabe in den Bericht
 
 ## 4. Bericht
 
-Immer als Datei: `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/BERICHT.md`
+Immer als Datei: `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]/BERICHT.md`
 nach dem Gerüst `assets/bericht-template.md` (`references/lauf.md` §8) — bei
 jedem Start, auch im Gespräch mit Pietro. Die Antwort im Gespräch fasst ihn
 zusammen, ersetzt ihn nicht. Was der Bericht enthält:

@@ -8,7 +8,13 @@ Ordnername steht im QR-Code jedes gedruckten Hefts. Darum gilt:
 - **Prüfen vor dem Schreiben.** Jede Regel hat einen Prüfschritt; erst wenn er
   bestanden ist, wird der Wert verwendet.
 - **Nie überschreiben.** Weder einen vorhandenen Ordner noch eine vorhandene
-  Karte, noch einen vorhandenen Archivordner.
+  Karte, noch einen vorhandenen Archivordner, noch einen vorhandenen
+  Laufordner.
+- **Ein Skript prüft es:** `node scripts/check-namen.mjs --vor <ordner>` vor
+  dem ersten Schreiben (nennt auch den Laufordner und das Quellen-Muster),
+  `node scripts/check-namen.mjs <ordner>` im Tor — `check-all` ruft es für
+  jede geprüfte Einheit auf. Abschnitt 10 sagt, was es prüft und wie schwer
+  ein Befund wiegt.
 - Im Auto-Modus stehen die Werte schon im Bauplan. Sie werden nicht neu
   erfunden, sondern gegen diese Regeln geprüft; weicht einer ab, ist der
   Bauplan nicht ausführbar — ausser Bauplan §9 nennt die Abweichung
@@ -114,8 +120,10 @@ Lehrgang-Suffix: `quellen_pruefen` (Form der Gold-Einheit, deren `topic_slug`
 den Zusatz des Ordners nicht trägt).
 
 Prüfschritt: `check-all.mjs` meldet `ERR_ID`, wenn die `id` eines Hefts nicht
-mit `<ordner>_` beginnt. Die übrigen IDs und Verweise prüft kein Skript — von
-Hand vergleichen, bevor das Tor läuft.
+mit `<ordner>_` beginnt. `check-namen.mjs` prüft alle fünf IDs genau
+(`NAME_ID`), jeden Verweis zwischen den Dateien (`NAME_VERWEIS`) und `topic_slug`
+(`NAME_TOPIC_SLUG`); jede ID kommt im ganzen Bestand nur einmal vor
+(`NAME_ID_DOPPELT`).
 
 ---
 
@@ -161,7 +169,11 @@ dem Dateinamen ohne `.json`.
 
 ### 4.1 Die ID ist schon vergeben
 
-Prüfschritt, für `q-<n>a-pflicht` **und** `q-<n>b-pflicht`:
+Prüfschritt, für `q-<n>a-pflicht` **und** `q-<n>b-pflicht`
+(`node scripts/check-namen.mjs --vor <ordner>` rechnet das und nennt das
+Muster; im Tor prüft `check-namen.mjs <ordner>`, dass jede Karte der Einheit
+dem Muster, dem Heft-Buchstaben und der Ordnernummer entspricht und von keiner
+anderen Einheit geführt wird):
 
 1. Gibt es `src/data/quellen/<id>.json`?
 2. Gibt es den Archivordner `<id>\` (Abschnitt 5)?
@@ -217,6 +229,14 @@ D:\OS\_lab\quellen-archiv\bbw-hko\<quellen-id>\kandidat-2\
 
 Beispiel: `D:\OS\_lab\quellen-archiv\bbw-hko\q-212a-pflicht\gewaehlt\quelle.md`,
 `archiv_ref`: `q-212a-pflicht/gewaehlt`.
+
+**Der Archivordner heisst wie die Karte.** `archiv_ref` ist immer
+`<id der Karte>/gewaehlt` — nie der Ordner einer anderen Karte, auch nicht der
+der Ersatzkarte. Das prüft `check-namen.mjs` als Text (`NAME_ARCHIV_REF`) und,
+wenn das Archiv lokal da ist, gegen die Ordner (`NAME_ARCHIV_ORDNER`). Fehlt das
+Archiv, meldet es einen HINWEIS und nennt das Ergebnis nie «GRUEN». Beleg-Dateien
+eines Laufs liegen daneben unter `<Archiv>\_pruefung\<ordnername>\`
+(Abschnitt 10.3).
 
 Prüfschritt vor Phase 5: Für jede Quelle, die ein Heft einbindet, existieren
 die Karte **und** `gewaehlt\quelle.md`. Fehlt eines, gilt Abschnitt 4.2.
@@ -274,5 +294,91 @@ bevor ich etwas teile».
 ## 9. Rückgängig
 
 Solange nichts gedruckt ist: Ordner umbenennen, alle IDs und Verweise
-ersetzen, Karten und Archivordner umbenennen, Index neu bauen. Nach dem ersten
+ersetzen, Karten und Archivordner umbenennen, Index neu bauen. Laufordner und
+ihre Berichte bleiben, wie sie sind (Abschnitt 10.1). Nach dem ersten
 Druck: nichts davon.
+
+---
+
+## 10. Weitere Namen — Laufordner, Export, Karten, Belege
+
+Mehrere Einheiten können dieselbe Kompetenznummer tragen (heute: 1.1.1 fünfmal,
+3.2.1 dreimal, 2.2.1 zweimal). Ein Name, der nur aus der Nummer abgeleitet ist,
+kann kollidieren. Diese Tabelle führt **jede Art von Name**, die die Skill
+ableitet, mit ihrer Regel und der Frage, ob sie bei zwei Einheiten gleicher
+Nummer und bei zwei Läufen derselben Einheit am selben Tag eindeutig bleibt
+(Stand 07.10.2026).
+
+| Name | Regel (Fundstelle) | Gleiche Nummer, zwei Einheiten | Zwei Läufe am selben Tag | Prüfung |
+|---|---|---|---|---|
+| Einheiten-Ordner | `<X.Y.Z>_<slug>[_3j/_4j]` (§1) | nur durch den slug; existiert er, wird er verlängert (§1.4) | derselbe Ordner: der zweite Lauf findet ihn vor (`lauf.md` §3 Zeile 3 und 5) | `--vor`; im Bestand `NAME_ORDNER_*`, `NAME_SUFFIX_*` |
+| `id` von Heft, Set, KN, Prinzip; `topic_slug` | aus dem Ordnernamen (§2) | ja, solange der Ordner eindeutig ist | ja | `NAME_ID`, `NAME_VERWEIS`, `NAME_TOPIC_SLUG`, `NAME_ID_DOPPELT` |
+| Kurzlink `/m/<ordner>`, Anker `#a`/`#b`, QR | aus dem Ordnernamen (§3) | ja; Gefahr nur Gross-/Kleinschreibung und die festen Seiten unter `src/pages/m/` | ja | `NAME_KURZLINK` |
+| Quellen-ID | `q-<n><h>-…`, zweite Einheit `q-<n>.<k><h>-…` (§4) | ja, wenn §4.1 befolgt wird — bisher von keinem Skript geprüft | der zweite Lauf derselben Einheit verwendet dieselben IDs (§4.1, Zeile «gehört dieser Einheit») | `--vor`; `NAME_KARTE_*`, `NAME_QUELLE_*` |
+| Archivordner | `<quellen-id>/` im Archiv (§5) | ja, folgt der ID | wie die ID | `NAME_ARCHIV_REF`, `NAME_ARCHIV_ORDNER` |
+| Bauplan | `docs/cloud-run/bauplaene/<ordner>.md` (`SKILL.md` §2) | ja, folgt dem Ordner | ein Bauplan je Ordner | `NAME_BAUPLAN` |
+| **Laufordner** | **`<JJJJ-MM-TT>-<ordnername>[-<k>]` (10.1)** | **ja — bisher nein** (`<datum>-<nummer>`) | **ja, durch `-<k>`** | `--vor`; `NAME_LAUF_*` |
+| Beleg-Dateien | `<Archiv>/_pruefung/<ordnername>/` (10.3) | ja | ein Ordner je Einheit, nicht je Lauf | noch kein Skript |
+| Export-Dateinamen | `heft-<a/b>-<spur>`, `loesungen-<a/b>-<spur>`, `auftragsbogen`, `begleiter` im Ausgabeordner (10.4) | ja, wenn der Ausgabeordner je Einheit und Executor eigen ist | nur mit eigenem Ausgabeordner je Executor | Vorschrift in `lauf.md` §6 |
+| Methodenkarten-ID | `hko-<slug>` oder `lm-<kap>-<slug>`, Datei = `id` (`phase-4-heft-kern.md` §8) | unabhängig von der Einheit: eine Karte, plattformweit | die Datei darf nicht schon da sein | `--vor … --karte <id>`; `NAME_METHODE_*`, `NAME_KARTE_DATEINAME` |
+
+### 10.1 Laufordner
+
+```
+docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]/
+```
+
+- `<JJJJ-MM-TT>` = Tag des Starts; `<ordnername>` = der **volle** Ordnername der
+  Einheit (`2.2.1_ausgrenzung_analysieren`), nicht nur die Nummer.
+- Der erste Lauf einer Einheit an einem Tag trägt keine Zahl. Jeder weitere
+  Lauf derselben Einheit am selben Tag trägt `-2`, `-3` — das nächste freie
+  `<k>`. `-1` gibt es nicht.
+- Weil ein slug nie einen Bindestrich enthält (§1.2), ergibt sich die Einheit
+  eindeutig aus dem Namen: Datum und `-<k>` weglassen.
+- Ableiten und prüfen vor dem Schreiben: `node scripts/check-namen.mjs --vor
+  <ordner>` nennt den Namen. Ein vorhandener Laufordner wird **nie**
+  überschrieben und nie beschrieben, auch nicht am selben Tag.
+- **Bestehende Laufordner werden nicht umbenannt.** Berichte und Commits
+  verweisen auf sie. Die 14 Ordner alter Form (`<JJJJ-MM-TT>-<Ziffern>`, etwa
+  `2026-10-03-221`) und alles, was kein Lauf einer Einheit ist, ordnet
+  `docs/cloud-run/laeufe/INDEX.md` zu. Ein Ordner ohne `BERICHT.md` ist kein
+  Lauf einer Einheit und braucht keine Zeile dort.
+- Abbruch: Die Einheit liegt danach unter `<laufordner>/abgebrochen/<ordnername>/`
+  (`lauf.md` §7); der Laufordner trägt den Namen trotzdem. Auch ein Lauf «nicht
+  erzeugbar», der nie einen Ordner unter `src/data/einheiten/` angelegt hat,
+  heisst so, sofern ein Bauplan gleichen Namens besteht.
+
+Prüfung im Bestand: Ein Laufordner neuer Form verweist auf einen vorhandenen
+Einheiten-Ordner, auf `abgebrochen/<ordnername>/` oder auf einen Bauplan mit
+Bericht «nicht erzeugbar»; das Datum ist ein Datum; `-<k>` setzt den Vorgänger
+voraus. Ein Ordner alter oder fremder Form mit `BERICHT.md` und ohne Zeile in
+`INDEX.md` ist ein Fehler.
+
+### 10.2 Schwere eines Befunds
+
+Was gedruckt oder veröffentlicht ist (Kurzlink, Quellen-ID, Ordner), wird nie
+umbenannt (E21) — nur gemeldet. Darum:
+
+- Verstoss an einer Einheit mit `status` ≠ `"entwurf"` → **Warnung**.
+- Verstoss an einem Entwurf → **Fehler**; das Tor bleibt rot.
+- Global immer Fehler: doppelte ID, unlesbare Karte, Kurzlink-Kollision,
+  Laufordner ohne Einheit.
+- Eine Quellenkarte gehört genau einer Einheit. Ausnahmen stehen als Liste
+  `GETEILT` im Skript (heute: die Karten `q-131…` der Gold-Einheit in
+  `3.1.1_konsum_verantworten_3j`, Bauplan §9). Eine neue Ausnahme braucht einen
+  Entscheid und einen Eintrag dort. Eine Karte ohne Einheit und ohne Nennung in
+  einem Bauplan ist verwaist (Warnung).
+
+### 10.3 Beleg-Dateien
+
+Beleg-Dateien mit Wortlaut (`belege.json`, `fakten.json`) liegen nie im Repo,
+sondern im Quellenarchiv unter `_pruefung/<ordnername>/` (`lauf.md` §8).
+
+### 10.4 Export
+
+`export-v42.mjs` schreibt je vorhandener Spur `heft-<a|b>-<spur>`,
+`loesungen-<a|b>-<spur>`, dazu `auftragsbogen` und `begleiter`. Innerhalb einer
+Einheit sind die Namen durch Buchstabe und Spur eindeutig. Zwischen Einheiten
+und zwischen Executoren trennt sie nur der **Ausgabeordner**: ein eigener Ordner
+je Einheit und Executor, nie im Repo (`lauf.md` §6). Zwei Exporte in denselben
+Ordner überschreiben einander.

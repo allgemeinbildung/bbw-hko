@@ -215,7 +215,10 @@ fragen. Phase 0 liefert:
 - **Lehrgang-Suffix** nur, wenn die Einheit für einen Lehrgang gilt und
   dieselbe Nummer im anderen EFZ-Lehrgang mit anderem Text existiert
   (Ergebnis aus Abschnitt 7).
-- **Frei?** `src/data/einheiten/<ordner>/` darf nicht existieren. Die
+- **Frei?** `node scripts/check-namen.mjs --vor <ordner>` beantwortet es für
+  Ordner, Laufordner, Quellen-Muster und neue Methodenkarten
+  (`--karte <id>`) — das Ergebnis gehört ins Verortungsblatt. Von Hand heisst
+  es: `src/data/einheiten/<ordner>/` darf nicht existieren. Die
   Quellen-ID `q-<n><h>-pflicht` darf weder als Karte unter `src/data/quellen/`
   noch als Archivordner einer anderen Einheit gehören.
 

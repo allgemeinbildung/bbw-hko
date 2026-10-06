@@ -145,8 +145,11 @@ Rückblick §5.2; ENTSCHEIDE E34.)
 
 ## 7. Prüfung «Bauplan entspricht E21» — vor dem ersten Schreiben
 
-Nach `references/ableitungsregeln.md`. Der Bauplan besteht, wenn alles
-zutrifft:
+Nach `references/ableitungsregeln.md`. Die Namen rechnet und prüft
+`node scripts/check-namen.mjs --vor <ordner>` (Ordner, Laufordner, Quellen-
+Muster; je neue Methodenkarte aus Bauplan §9 dazu `--karte <id>`) — vor dem
+ersten Schreiben, als Teil der Vorprüfung (`references/lauf.md` §3 Zeile 10).
+Der Bauplan besteht, wenn alles zutrifft:
 
 - Ordnername hat die Form `<X.Y.Z>_<slug>`; `X.Y.Z` ist die erste Kompetenz
   von Heft A im kanonischen Lehrgang; `slug` nur aus `[a-z0-9_]`.
@@ -189,7 +192,7 @@ zählt nicht als Runde.
 
 - **Höchstens drei Runden.** Ist das Tor danach rot: den Ordner der Einheit
   und die Karten, die **dieser Lauf neu angelegt** hat, nach
-  `docs/cloud-run/laeufe/<datum>-<ordnername>/abgebrochen/` verschieben —
+  `docs/cloud-run/laeufe/<datum>-<ordnername>[-<k>]/abgebrochen/` verschieben —
   nicht löschen (`references/lauf.md` §7); bestehende Karten und alles
   andere bleiben. Grund und letzte Tor-Ausgabe in den Bericht.
 - Nie im Skript reparieren, nie eine Regel abschalten, nie einen Befund
@@ -202,7 +205,7 @@ zählt nicht als Runde.
 
 Bei jedem lokalen Start — Einzelstart, Schleife, Abschluss, mit oder ohne
 Pietro im Gespräch — nach
-`docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/BERICHT.md`, im Gerüst
+`docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]/BERICHT.md`, im Gerüst
 `assets/bericht-template.md`. Die Entscheide nach Abschnitt 4 stehen im selben
 Bericht (Abschnitt 7 des Gerüsts); Phase 10 schreibt darin weiter
 (`references/lauf.md` §8).

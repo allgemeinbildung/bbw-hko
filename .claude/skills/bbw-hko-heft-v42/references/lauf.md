@@ -80,7 +80,7 @@ Dann, in dieser Reihenfolge; die erste Zeile, die zutrifft, entscheidet:
 | 7 | Der Bauplan besteht die Prüfung gegen Datensatz, Kapiteldateien und Ableitungsregeln nicht (`references/auto-modus.md` §7) und §9 nennt die Abweichung nicht; oder eine Kapiteldatei fehlt | Abbruchfall [E21, E23] |
 | 8 | Eine Quelle aus Bauplan §7 mit Stand «geprüft» hat keine Karte unter `src/data/quellen/` **oder** keinen Archivtext | Regel aus `references/auto-modus.md` §5: Spur entfällt oder Abbruchfall; Entscheid in den Bericht [P-einzel, E23] |
 | 9 | `docs/cloud-run/OFFEN.md` (sobald vorhanden) führt einen offenen Punkt der Art S oder P mit dem Vermerk «erzeugt Fehler» | nicht beginnen, melden. Bis die Liste besteht: kein Riegel, aber die bekannten Fehler aus «Zuerst lesen» gelten [Rb §5.4, Zeile «Skelett, Skill, Renderer»] |
-| 10 | `node scripts/check-namen.mjs` (sobald vorhanden) meldet eine Kollision | Abbruchfall. Handweg bis dahin: `references/auto-modus.md` §7 von Hand; Laufordner nach Abschnitt 8 [Rb §3 Nr. 8] |
+| 10 | `node scripts/check-namen.mjs --vor <ordner>` (für jede neue Methodenkarte aus Bauplan §9 dazu `--karte <id>`) meldet «BELEGT» (Exit 1): der Ordner gehört einer anderen Einheit, oder die Methodenkarte gibt es schon | Abbruchfall. Das Skript nennt auch den Laufordner (Abschnitt 8) und das Quellen-Muster; weicht dieses vom Bauplan ab und Bauplan §9 nennt es nicht als Ausnahme, gilt Zeile 7. Dasselbe Skript läuft im Tor mit (`check-all`, Zeile «Namen») [Rb §3 Nr. 8; ableitungsregeln.md §10] |
 
 Der Bauplan gilt. Kein Entscheid wird geändert; die Phasen 0, 1 und Q laufen
 nicht als Erzeugung — nichts wird hergeleitet, kein Bauplan geschrieben, keine
@@ -221,11 +221,11 @@ nach drei Reparaturrunden rot ist (`references/auto-modus.md` §5, §8).
 
 Dann, in dieser Reihenfolge [P-loop §3]:
 
-1. Bericht nach `docs/cloud-run/laeufe/<datum>-<ordnername>/BERICHT.md` mit der
+1. Bericht nach `docs/cloud-run/laeufe/<datum>-<ordnername>[-<k>]/BERICHT.md` mit der
    Zeile «nicht erzeugbar: <Grund>» und der letzten Tor-Ausgabe.
 2. **Verschieben, nicht löschen:** den halbfertigen Ordner
    `src/data/einheiten/<ordner>/` und die Karten, die **dieser Lauf neu
-   angelegt** hat, nach `docs/cloud-run/laeufe/<datum>-<ordnername>/abgebrochen/`.
+   angelegt** hat, nach `docs/cloud-run/laeufe/<datum>-<ordnername>[-<k>]/abgebrochen/`.
    Karten aus Phase Q und alle bestehenden Karten bleiben, wo sie sind.
 3. `npm run build:einheiten-index`, damit der Index wieder stimmt.
 4. **Kein Commit der Einheit.** Bericht und `abgebrochen/` bleiben im
@@ -246,11 +246,15 @@ Sagt ein älterer Bauplan für den Abbruch «der Lauf entfernt die Karte» oder
 
 ## 8. Laufordner, Bericht, Commit
 
-**Laufordner:** `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/` — der volle
-Ordnername, nicht nur die Nummer (zwei Einheiten `2.2.1_…` unterscheiden sich
-sonst nur durchs Datum); ein weiterer Lauf am selben Tag bekommt `-2`, `-3`.
-Bestehende Laufordner werden nicht umbenannt. [Rb §3 Nr. 8; Form der Läufe vom
-06.10.2026]
+**Laufordner:** `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]/` — der
+volle Ordnername, nicht nur die Nummer (zwei Einheiten `2.2.1_…` unterscheiden
+sich sonst nur durchs Datum); ein weiterer Lauf am selben Tag bekommt `-2`, `-3`
+(`<k>`, das nächste freie). Den Namen liefert
+`node scripts/check-namen.mjs --vor <ordner>`; ein vorhandener Laufordner wird
+nie beschrieben. Bestehende Laufordner werden nicht umbenannt;
+`docs/cloud-run/laeufe/INDEX.md` ordnet die der alten Form (`<datum>-<Ziffern>`)
+ihren Einheiten zu. Regel und Prüfung: `references/ableitungsregeln.md` §10.
+[Rb §3 Nr. 8; Form der Läufe vom 06.10.2026; ENTSCHEIDE E35]
 
 | Datei | Inhalt |
 |---|---|
@@ -280,7 +284,7 @@ Quellenarchiv unter `_pruefung/<ordnername>/`. [Rb §5.1; Entscheid Pietro
 Vorher, in dieser Reihenfolge [P-loop §4; `phase-9-tor.md` §1]:
 
 ```
-node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md docs/cloud-run/laeufe/<datum>-<ordnername>
+node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md docs/cloud-run/laeufe/<datum>-<ordnername>[-<k>]
 git add <jeden Pfad einzeln>
 node scripts/check-leck.mjs --staged
 ```
@@ -359,7 +363,6 @@ gilt der Handweg — das Fehlen ist kein Abbruchfall und kein Befund.
 | Skript | Wofür | Handweg bis dahin | Herkunft |
 |---|---|---|---|
 | `scripts/lauf.mjs` | Tor, Export, Messung in einem Befehl; Logs und Kopf in den Laufordner | Befehle aus `phase-9-tor.md` §1 einzeln | Rb §5.5 |
-| `scripts/check-namen.mjs` | Kollisionen von Ordner, IDs, Laufordner | `auto-modus.md` §7 von Hand | Rb §3 Nr. 8 |
 | `scripts/check-zeiger.mjs` | Zeitmarke, Absatz, Seite, Wortzahl, `archiv_ref` | Lösungs-Audit mit Material in voller Auflösung (`gegenleser.md` §4.2) | Rb §5.2 |
 | `scripts/karten.mjs` | Verbraucher einer Karte; ändern oder neu | der Lauf ändert keine bestehende Karte | Rb §5.4 |
 | `scripts/check-belege.mjs`, `scripts/check-fakten.mjs` | prüfen `belege.json` und `fakten.json` im Quellenarchiv unter `_pruefung/<ordnername>/` | Tabellen im Bericht (`phase-10-abschluss.md` §2), erneutes Lesen nach jeder Änderung einer Lösung | Rb §5.1, §5.3 |

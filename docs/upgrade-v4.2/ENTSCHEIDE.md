@@ -1137,3 +1137,49 @@ Nicht ergänzt: ein Satz im Schleifen-Prompt, wie ohne ScheduleWakeup (unter
 **Rückgängig:** `git revert` der Commits dieses Eintrags (Skill, Prompts); die
 archivierten Prompts liegen unverändert bis auf ihre Kopfzeile unter
 `docs/cloud-run/prompts/archiv/`.
+
+## E35 — Namen eindeutig: Laufordner mit vollem Ordnernamen, `check-namen.mjs` im Tor (07.10.2026)
+
+**Ausgangslage:** Mehrere Einheiten tragen dieselbe Kompetenznummer (1.1.1
+fünfmal, 3.2.1 dreimal, 2.2.1 zweimal). Der Laufordner hiess
+`<datum>-<nummer>` und war damit nicht eindeutig: `2026-10-03-221` und
+`2026-10-04-221` sind zwei verschiedene Einheiten. Die Regel für Quellen-IDs
+(`q-<n>.<k><h>-…`, E21) stand in der Skill, aber kein Skript prüfte sie
+(Rückblick `RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 8).
+
+**Entscheid:**
+
+1. **Laufordner neu:** `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]/`
+   — der volle Ordnername; ein weiterer Lauf derselben Einheit am selben Tag
+   trägt `-2`, `-3`. Bestehende Laufordner werden **nicht umbenannt**; die
+   neue Datei `docs/cloud-run/laeufe/INDEX.md` ordnet jeden Ordner alter Form
+   seiner Einheit zu und führt `2026-10-07-umbau` als «kein Einheiten-Lauf».
+2. **`scripts/check-namen.mjs`** (neu, nur lesend) prüft: jede ID einmalig und
+   gleich dem Dateinamen; die fünf IDs einer Einheit und ihre Verweise aus dem
+   Ordnernamen; Kurzlinks paarweise verschieden (auch gegen die festen Seiten
+   unter `src/pages/m/`); jede Quellenkarte gehört genau einer Einheit,
+   `archiv_ref` ist `<id>/gewaehlt` und der Ordner existiert; ein Satz Quellen-IDs,
+   ein Muster; Laufordner neuer Form verweist auf eine Einheit; verwaiste Karten
+   (Warnung). `--vor <ordner>` rechnet vor dem ersten Schreiben Laufordner und
+   Quellen-Muster. In `check-all` steht es als Zeile «Namen».
+3. **Schwere:** Verstoss an einer publizierten Einheit = Warnung (der Name ist
+   gedruckt oder im Netz, E21), am Entwurf = Fehler; globale Befunde immer
+   Fehler. Fehlt das Archiv lokal, meldet das Skript einen Hinweis und nie
+   «GRUEN»; mit `--cloud` ist es ein Fehler.
+4. **Geteilte Quellenkarten** stehen als Liste `GETEILT` im Skript, nicht als
+   Feld `geteilt_mit` an der Karte: Der Datenvertrag und alle Karten bleiben,
+   wie sie sind. Vorschlag für später: ein Feld `geteilt_mit: [<ordner>…]` an
+   der Karte, damit die Liste nicht im Skript wächst.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern): Ein Ordner ohne `BERICHT.md` ist kein Lauf einer Einheit und braucht
+keine Zeile in `INDEX.md`; ein Laufordner mit `abgebrochen/<ordnername>/` oder
+mit Bericht «nicht erzeugbar» und Bauplan gilt als Verweis auf eine Einheit,
+auch wenn kein Ordner unter `src/data/einheiten/` besteht.
+
+**Geänderte Dateien:** `ableitungsregeln.md` (§10 neu, Kopf, §2, §4, §5, §9),
+`lauf.md` (§3 Zeile 10, §8, §11), `phase-0-verortung.md` (§8),
+`auto-modus.md` (§7), `phase-9-tor.md` (Tor-Tabelle); `scripts/check-all.mjs`
+(Zeile «Namen»).
+
+**Rückgängig:** `git revert`; `INDEX.md` löschen. Kein Datensatz ändert sich.
