@@ -156,8 +156,11 @@ einen Fehler erzeugt hat): <Muster · Treffer in … · nichts geändert>.
 
 ## 12. Commit
 
-«Einheit <ordnername> (bbw-hko-heft-v42)» · <Hash> · enthält: Ordner der
-Einheit, Karten `q-…`, Bauplan, diesen Laufordner, die zwei Index-Dateien.
+«Einheit <ordnername> (bbw-hko-heft-v42)» · enthält: Ordner der Einheit, Karten
+`q-…`, neue Methodenkarte (falls Bauplan §9 sie verlangt hat), Bauplan, diesen
+Laufordner, die zwei Index-Dateien. Der Hash steht nicht hier — der Bericht
+liegt im selben Commit; ihn nennt die Schlussmeldung, und er wird beim
+Freigabe-Commit nachgetragen: <Hash, erst dann>.
 `check-leck --staged`: … Kein Push.
 
 <!--
@@ -170,5 +173,6 @@ Stand.
 
 ## 14. Freigabe vom JJJJ-MM-TT
 `status` → "publiziert" · check-all, Bestand, Build · Commit «Freigabe:
-<ordnername>» <Hash> · Eintrag ENTSCHEIDE E<nn>.
+<ordnername>» (Titel; sein Hash steht in der Schlussmeldung) · Eintrag
+ENTSCHEIDE E<nn>.
 -->

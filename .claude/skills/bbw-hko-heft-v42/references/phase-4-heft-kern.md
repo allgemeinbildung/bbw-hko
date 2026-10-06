@@ -262,7 +262,10 @@ darum über `fuer` und ausnahmsweise über ein überschriebenes `beispiel` in de
 (`docs/methodenkartei.md`). Wer sich bei einer `hko-`Karte auf `tun` verlässt, druckt nichts.
 (Herkunft: ENTSCHEIDE E31 Nr. 2; Berichte `2026-10-04-221` §10, `2026-10-04-411` §10.)
 
-**Neue Karte** nur, wenn keine vorhandene passt — dann nach `docs/methodenkartei.md` §4 und §6:
+**Neue Karte** nur, wenn keine vorhandene passt (im Auto-Modus: nur, wenn Bauplan §9 sie
+verlangt). Im Lauf mit Rollen legt sie der **Orchestrator** an, bevor die Executor starten —
+geteilte Daten, ein Schreiber; der Executor eines Hefts schreibt nur seine eigene Datei
+(`references/lauf.md` §2, §4; ENTSCHEIDE E34). Angelegt wird sie nach `docs/methodenkartei.md` §4 und §6:
 ID `hko-<slug>` oder `lm-<kap>-<slug>`, Musterbeispiel mit **neutralem Sujet** (kein Fall dieser
 Einheit), eigene Formulierung, Seitenzahl nur wenn am Buch geprüft. Bestehende Karten werden nie
 geändert: Passt eine Karte nicht zur Abgabe, überschreibt die Einheit (`fuer`, ausnahmsweise

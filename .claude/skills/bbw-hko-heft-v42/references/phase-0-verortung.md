@@ -227,8 +227,8 @@ Einheit (E24). E30 hat das aufgehoben: Der Fall-Ausschluss kommt nur noch aus
 jeweiligen Einheit. Phase 0 prüft hier nichts mehr; kein Wort macht eine
 Einheit von sich aus «nicht erzeugbar».
 
-Die Zeile «Gesperrte Wörter (E24)» in §1 der Bauplan-Vorlage wird mit
-«aufgehoben (E30)» gefüllt. Ältere Baupläne mit «kein Treffer» oder mit
+Die Bauplan-Vorlage führt die Zeile «Gesperrte Wörter (E24)» seit dem
+07.10.2026 nicht mehr. Ältere Baupläne mit «kein Treffer» oder mit
 einer Ausnahme in §9 bleiben, wie sie freigegeben sind.
 
 ## 10. Verortungsblatt

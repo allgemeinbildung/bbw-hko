@@ -21,7 +21,8 @@ Einzelstart, Schleife, Abschluss. **Ergebnis:** derselbe Bericht, weitergeführt
 (`assets/bericht-template.md`, Abschnitte 6 bis 11) — keine eigene Datei.
 
 **Was sich ändert und was nicht.** Phase 10 ändert nur Dateien der eigenen
-Einheit und ihre eigenen Quellenkarten. Kein Entscheid des Bauplans wird
+Einheit und ihre eigenen Quellenkarten — dort nur Zeitmarken, Wortzahl bzw.
+Dauer, Prüfdatum und `kurzbeschrieb` (`references/lauf.md` §10). Kein Entscheid des Bauplans wird
 geändert; `status` bleibt `"entwurf"` bis Schritt 8.
 
 | # | Schritt | Wer | Ergebnis im Bericht |
@@ -56,7 +57,8 @@ Ausdrücklich nachsehen — an diesen Stellen fehlten die Läufe:
 1. **Der Kurzbeschrieb einer Quellenkarte verrät die Lösung nicht.** Er nennt
    Thema und Form der Quelle, nicht die Aussagen, die das Raster sucht — er
    steht auf der QR-Seite. Eine eigene Karte dieser Einheit wird gekürzt; eine
-   fremde Karte gehört in den Bericht. [Rb §4 «Quellenkarte verrät die
+   bestehende Karte gehört in den Bericht (eigen und bestehend:
+   `references/lauf.md` §10). [Rb §4 «Quellenkarte verrät die
    Lösung», rund elf Karten; N `2026-10-04-311` §6]
 2. **Auftrag über dem Raster, Rezeptionskarte auf S. 6 und Checkliste auf S. 8
    sagen dasselbe** über den Begriff der letzten Spalte, in beiden Heften und
@@ -241,7 +243,7 @@ npm run build
 2. Die vier Befehle: Index neu, `check-all` GRUEN, Bestand unverändert, Build
    Exit 0.
 3. Commit «Freigabe: `<ordner>`» mit `set.json`, den zwei Index-Dateien und dem
-   Bericht. Vorher `node scripts/check-leck.mjs --staged`.
+   Bericht — darin jetzt nachgetragen: der Hash des Commits «Einheit …». Vorher `node scripts/check-leck.mjs --staged`.
 4. Eintrag in `docs/upgrade-v4.2/ENTSCHEIDE.md`, nächste freie Nummer: welche
    Einheit, was vorher lief, was bei der Freigabe geprüft wurde, wo die offenen
    Punkte stehen, wie es rückgängig geht. Ändert die Freigabe eine Regel, wird

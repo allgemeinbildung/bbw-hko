@@ -40,7 +40,6 @@ scripts/cloud-preflight.mjs liest sie. -->
 | SK des Themas | Nr. Bezeichnung (Iteration) · … |
 | Aspekte | Name wie im Datensatz (Iteration) · … |
 | Fokus | ein Satz |
-| Gesperrte Wörter (E24) | kein Treffer |
 
 ## 2. Lehrmittel
 
@@ -219,7 +218,7 @@ unbeaufsichtigte Lauf recherchiert nicht.
 
 Solange ein Slot «offen» ist, steht hier je Slot, was die Quelle zeigen muss:
 Fall in einem Satz · was Schritt 03 des Produkts von ihr braucht · Typ und
-Höchstlänge · Ausschlüsse (Fall-Begriffe aus §5, gesperrte Wörter). Bei einem
+Höchstlänge · Ausschlüsse (Fall-Begriffe aus §5). Bei einem
 Heft mit nur einer Spur bleibt die Situation in §4 themenneutral, bis die
 Quelle gewählt ist; das Thema trägt Phase Q nach. Ist §7 gefüllt, entfällt
 dieser Unterabschnitt.

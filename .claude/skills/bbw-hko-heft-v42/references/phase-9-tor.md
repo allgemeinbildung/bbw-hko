@@ -23,9 +23,14 @@ npm run build
 git status --short
 ```
 
-Im unbeaufsichtigten Lauf heisst der dritte Befehl
+Lokale Läufe — Einzelstart, Schleife, Abschluss — rufen `check-all <ordner>`
+**ohne** `--cloud`. Das Lehrmittel muss trotzdem lokal da sein; das stellt die
+Vorprüfung fest (`references/lauf.md` §3 Zeile 7), denn ohne `--cloud` meldet
+`check-all` ein fehlendes Lehrmittel nur als Hinweis. `--cloud` gilt allein für
+den Cloud-Weg über `docs/cloud-run/RUN.md`: Dort heisst der dritte Befehl
 `node scripts/check-all.mjs <ordner> --cloud` (das Lehrmittel **muss** dann da
-sein, `status` **muss** `"entwurf"` sein).
+sein, `status` **muss** `"entwurf"` sein). (Herkunft: ENTSCHEIDE E34, Entscheid
+des Orchestrators nach dem Trockenlauf.)
 
 | Befehl | Soll | Wenn nicht |
 |---|---|---|

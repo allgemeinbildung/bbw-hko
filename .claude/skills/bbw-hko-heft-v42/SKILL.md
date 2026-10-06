@@ -156,9 +156,9 @@ Ab Phase 2 arbeitet die Skill mit Rollen; vollständig in
 
 | Rolle | Modell | Aufgabe |
 |---|---|---|
-| Orchestrator | Opus | Vorprüfung, Phasen 2–3, alle Aufträge, Index, Marker-Skript, Tor, Bericht, Commit — nur er |
+| Orchestrator | Opus | Vorprüfung, Phasen 2–3, eine vom Bauplan verlangte neue Methodenkarte, alle Aufträge, Index, Marker-Skript nach Phase 8, Tor, Bericht, Commit — nur er |
 | Executor A ∥ Executor B | Opus | je ein Heft (Phasen 4–6), gleichzeitig; **jeder misst sein Heft selbst, bevor er abgibt** |
-| Executor Set → Executor Begleiter | Opus | Phase 7, dann Phase 8, nacheinander |
+| Executor Set → Executor Begleiter | Opus | Phase 7, dann Phase 8, nacheinander; der Executor Begleiter füllt am Ende einmal die Marker mit dem Skript |
 | Gegenleser | Sonnet | Lernende, Bogen-Leser, Sweep, Lösungs-Audit — alle gleichzeitig, nur lesend |
 | Fakten-Audit | Opus, mit Netz | jede Rechts- und Sachaussage an Gesetz und Amt (Phase 10) |
 
@@ -255,7 +255,8 @@ Einzelheiten und der Weg, wenn der Export nicht läuft:
     `references/sprache.md`.
 12. **Scope.** Nicht anfassen: `src/lib/`, `src/components/`, `src/styles/`,
     `src/pages/`, `scripts/`, jede bestehende Einheit, bestehende Methoden- und
-    Quellenkarten, andere Skills, `public/`, `supabase/`, `CLAUDE.md`. Zeigt
+    Quellenkarten (eigen ist nur die Quellenkarte, die allein diese noch nicht
+    publizierte Einheit führt — `references/lauf.md` §10), andere Skills, `public/`, `supabase/`, `CLAUDE.md`. Zeigt
     sich ein Fehler in Renderer oder Skript: nicht reparieren, nicht umgehen
     (`--baseline` ist verboten) — in den Bericht, Einheit als nicht erzeugbar
     melden, wenn das Tor sonst nicht grün wird.
@@ -286,7 +287,8 @@ Kurzfassung; vollständig in `references/auto-modus.md`.
    unter «Offen» alles, was nicht belegt, nicht geprüft oder nicht entschieden
    ist;
 4. **ein Commit** «Einheit `<ordner>` (bbw-hko-heft-v42)» steht, mit Einheit,
-   Quellenkarten, **Bauplan**, Laufordner und den zwei Index-Dateien — nach
+   Quellenkarten, neuer Methodenkarte (falls Bauplan §9 sie verlangt hat),
+   **Bauplan**, Laufordner und den zwei Index-Dateien — nach
    `node scripts/check-leck.mjs --staged` ohne Fehler und ohne Warnung
    (`references/lauf.md` §8). Kein Push.
 

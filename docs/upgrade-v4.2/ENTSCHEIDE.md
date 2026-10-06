@@ -934,10 +934,10 @@ Schleifen-Prompt startete, arbeitete nach altem Stand (Rückblick
    Skill.
 3. **E30 ist nachgeführt.** Die sechs Wörter stehen in `SKILL.md` und elf
    References nicht mehr als gesperrt; verblieben sind zwei historische
-   Verweise (`phase-0-verortung.md` §9, `sprache.md` §7.2). Nicht geändert:
-   `docs/cloud-run/bauplaene/_VORLAGE.md` §1 führt die Zeile «Gesperrte Wörter
-   (E24)» weiter und nennt sie in §7 «Suchaufträge» — sie wird mit «aufgehoben
-   (E30)» gefüllt, bis die Vorlage bereinigt ist.
+   Verweise (`phase-0-verortung.md` §9, `sprache.md` §7.2). Auch
+   `docs/cloud-run/bauplaene/_VORLAGE.md` führt die Zeile «Gesperrte Wörter
+   (E24)» in §1 und den Zusatz in §7 «Suchaufträge» nicht mehr (nach dem
+   Trockenlauf bereinigt).
 4. **Messung in der Schreibphase.** Executor A und B messen ihr Heft und ihr
    Dokument «Lösungen» selbst, in einem eigenen Temp-Ordner, bevor sie abgeben
    (`lauf.md` §6; `phase-4`, `phase-5`, `phase-6` §7). Der Orchestrator baut den
@@ -1061,6 +1061,42 @@ Bauplan zählen · Stufe 3 der Kriterien teils unerreichbar · `set.wochenplan`
 mit zwölf Lektionen · `set-template.json` ohne `lehrgaenge` · Begleiter-Skelett
 ohne Ort für Geräte, Lehrgänge, «vor dem Druck» · Persona «1. Lehrjahr» bei
 zwei Lehrgängen · fehlende Rezeptionskarte für Video.
+
+### Nach dem Trockenlauf behoben (07.10.2026)
+
+Zwei Subagenten — einer mit dem Einzelstart, einer über den Schleifen-Prompt —
+lasen aus der Skill denselben Ablauf: Rollen, Messung, Fakten-Audit, Phase 10,
+Commit-Umfang. Der gewollte Unterschied (Dev-Server, Warten am Freigabe-Stopp)
+bleibt. Sieben Widersprüche und Lücken sind behoben:
+
+1. **Marker-Skript** (vom Orchestrator entschieden): Der Executor Begleiter
+   führt es einmal aus, am Ende von Phase 8, an seiner eigenen Datei; jeder
+   spätere Lauf liegt beim Orchestrator. `lauf.md` §2, §4, §5 ·
+   `phase-8-begleiter.md` §3 · `SKILL.md` §4.
+2. **Eigene und bestehende Karten** (vom Orchestrator entschieden): Eigen ist
+   die Quellenkarte, die nur diese noch nicht publizierte Einheit führt;
+   korrigierbar sind Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum,
+   `kurzbeschrieb` — nie Titel, URL/URN, Ausschnitt. Alle anderen Karten sind
+   bestehend und werden nicht angefasst. `lauf.md` §10 · `phase-10` Kopf und
+   §1 Nr. 1 · `SKILL.md` §5 Nr. 12. Herkunft: Rückblick §3 Nr. 4–5, E31 Nr. 3.
+3. **Neue Methodenkarte** (vom Orchestrator entschieden): Der Orchestrator
+   legt eine vom Bauplan §9 verlangte Karte an, bevor die Executor starten.
+   `lauf.md` §2, §4, §5 · `phase-4-heft-kern.md` §8; im Commit-Umfang genannt in
+   `SKILL.md` §7 und `assets/bericht-template.md` §12.
+4. **`check-all --cloud`** (vom Orchestrator entschieden): nur für den
+   Cloud-Weg über `RUN.md`; lokale Läufe rufen `check-all <ordner>` ohne die
+   Option, das Lehrmittel prüft die Vorprüfung. `phase-9-tor.md` §1.
+5. **Phase 0 im Auto-Modus:** läuft nicht als Erzeugung; die Prüfung des
+   Bauplans gegen Datensatz, Kapiteldateien und Ableitungsregeln ist Zeile 7
+   der Vorprüfung. `auto-modus.md` §2 · `lauf.md` §3.
+6. **Bericht und Commit-Hash:** Der Bericht nennt den Titel des Commits, die
+   Schlussmeldung den Hash; beim Freigabe-Commit wird er nachgetragen.
+   `lauf.md` §8 · `assets/bericht-template.md` §12 · `phase-10` §8.
+7. **Abbruch gegen ältere Baupläne:** Sagt ein Bauplan «der Lauf entfernt die
+   Karte», gilt die Skill — verschieben nach `abgebrochen/`. `lauf.md` §7.
+
+Nicht ergänzt: ein Satz im Schleifen-Prompt, wie ohne ScheduleWakeup (unter
+`/goal`) fortgesetzt wird — die archivierten Prompts belegen dazu nichts.
 
 **Rückgängig:** `git revert` der Commits dieses Eintrags (Skill, Prompts); die
 archivierten Prompts liegen unverändert bis auf ihre Kopfzeile unter

@@ -140,6 +140,13 @@ und `check-einheiten`:
 node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner>
 ```
 
+**Wer es ausführt** (`references/lauf.md` §2, §5): Der Executor Begleiter
+einmal, am Ende von Phase 8, an seiner eigenen Datei. Jeden späteren Lauf —
+nach einer Korrektur an Heft, Set oder KN und im Tor — führt der Orchestrator
+aus. `check-all` (Abschnitt 8) läuft nur beim Orchestrator; der Executor
+Begleiter endet mit Marker-Skript und `check-einheiten`. (Herkunft: ENTSCHEIDE
+E34, Entscheid des Orchestrators nach dem Trockenlauf.)
+
 Pflichtschritt, in dieser Folge:
 
 1. Prosa und Gerüst schreiben; Marker stehen mit Platzhalter, wie im Skelett

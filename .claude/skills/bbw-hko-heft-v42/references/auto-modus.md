@@ -30,7 +30,7 @@ Auto-Modus: Der eine Stopp hat stattgefunden.
 
 | | Mit Bauplan-Stopp | Auto |
 |---|---|---|
-| Phase 0 | leitet her | **prüft** die Angaben des Bauplans §1–§2 gegen Datensatz und Kapiteldateien |
+| Phase 0 | leitet her | läuft nicht als Erzeugung; es bleibt die **Prüfung** der Angaben des Bauplans §1–§2 gegen Datensatz und Kapiteldateien (Abschnitt 7) — sie ist Zeile 7 der Vorprüfung in `references/lauf.md` §3 |
 | Phase 1 | schreibt den Bauplan | entfällt — der Bauplan liegt vor |
 | Phase Q | Quellensuche | **entfällt** (Abschnitt 6) |
 | Stopp | einer | keiner |

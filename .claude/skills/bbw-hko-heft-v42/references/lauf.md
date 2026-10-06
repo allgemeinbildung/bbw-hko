@@ -43,17 +43,20 @@ Phase 10 ist kein gültiger Lauf, gleich wie er gestartet wurde. [Rb §3 Nr. 3,
 
 | Rolle | Modell | Tut | Schreibt in |
 |---|---|---|---|
-| **Orchestrator** | Opus | Vorprüfung; `prinzip.json` und `kn.json` (Phasen 2–3); Aufträge an alle anderen; Index, Marker-Skript, Tor, Messung des Ganzen, Build; jeden Befund am Dokument nachprüfen; Bericht; Commit | `prinzip.json`, `kn.json`, Laufordner, Index (nur über das Skript) |
+| **Orchestrator** | Opus | Vorprüfung; `prinzip.json` und `kn.json` (Phasen 2–3); eine vom Bauplan §9 verlangte **neue Methodenkarte**, bevor die Executor starten; Aufträge an alle anderen; Index, Marker-Skript bei jedem Lauf **nach** Phase 8, Tor, Messung des Ganzen, Build; jeden Befund am Dokument nachprüfen; Bericht; Commit | `prinzip.json`, `kn.json`, neue Methodenkarte, Laufordner, Index (nur über das Skript) |
 | **Executor A**, **Executor B** | Opus | je ein Heft vollständig: Phasen 4, 5, 6 — und **misst das eigene Heft**, bevor er abgibt (Abschnitt 6); später die Korrekturen am eigenen Heft | nur die eigene `herausforderung_<A\|B>.json` und einen eigenen Temp-Ordner |
 | **Executor Set** | Opus | Phase 7, nach beiden Heften | nur `set.json` |
-| **Executor Begleiter** | Opus | Phase 8, nach allen fünf Dateien; Marker nur mit `scripts/begleiter-marker.mjs` der Skill | nur `begleiter.md` |
+| **Executor Begleiter** | Opus | Phase 8, nach allen fünf Dateien; füllt die Marker **einmal**, am Ende von Phase 8, mit `scripts/begleiter-marker.mjs` der Skill an seiner eigenen Datei — nie von Hand | nur `begleiter.md` |
 | **Gegenleser** (Lernende, Bogen-Leser, Sweep, Lösungs-Audit) | Sonnet | lesen und berichten nach `references/gegenleser.md`; ändern nichts | nur die eigene Rückgabedatei im Temp |
 | **Fakten-Audit** | Opus, mit Netz | jede Rechts- und Sachaussage an der Primärquelle (`references/phase-10-abschluss.md` §2); ändert nichts | nur die Fakten-Tabelle |
 
 [Orchestrator, Executor, Gegenleser: P-einzel «Subagenten: Opus für begrenzte
 Schreibaufträge, Sonnet für Gegenlesen». Fakten-Audit Opus: P-1a Schritt 4,
 B `2026-10-06-5.2.1_gesetze_veraendern` §6. Ob das Lösungs-Audit besser bei
-Opus liegt, ist offen: Rb §5.3 Nr. 6.]
+Opus liegt, ist offen: Rb §5.3 Nr. 6. Marker-Skript einmal beim Executor
+Begleiter, danach beim Orchestrator, und neue Methodenkarte beim Orchestrator
+(geteilte Daten, ein Schreiber): Entscheide des Orchestrators nach dem
+Trockenlauf, E34.]
 
 ## 3. Vorprüfung — der Orchestrator, vor jedem Schreiben
 
@@ -74,13 +77,17 @@ Dann, in dieser Reihenfolge; die erste Zeile, die zutrifft, entscheidet:
 | 4 | Unter `docs/cloud-run/laeufe/` meldet ein Bericht zu diesem Ordner «nicht erzeugbar» | nicht erneut versuchen [P-loop §1] |
 | 5 | `src/data/einheiten/<ordner>/` existiert, ohne Commit | **nicht anfassen**; melden. Weiter nur über den Start «Abschluss» (Abschnitt 1) [P-loop §1; Rb §3 Nr. 1] |
 | 6 | Bauplan §9 nennt eine Blockade («nicht erzeugbar bis …») | Abbruchfall (Abschnitt 7) [P-einzel] |
-| 7 | Der Bauplan entspricht den Ableitungsregeln nicht und §9 nennt die Abweichung nicht | Abbruchfall (`references/auto-modus.md` §7) [E21, E23] |
+| 7 | Der Bauplan besteht die Prüfung gegen Datensatz, Kapiteldateien und Ableitungsregeln nicht (`references/auto-modus.md` §7) und §9 nennt die Abweichung nicht; oder eine Kapiteldatei fehlt | Abbruchfall [E21, E23] |
 | 8 | Eine Quelle aus Bauplan §7 mit Stand «geprüft» hat keine Karte unter `src/data/quellen/` **oder** keinen Archivtext | Regel aus `references/auto-modus.md` §5: Spur entfällt oder Abbruchfall; Entscheid in den Bericht [P-einzel, E23] |
 | 9 | `docs/cloud-run/OFFEN.md` (sobald vorhanden) führt einen offenen Punkt der Art S oder P mit dem Vermerk «erzeugt Fehler» | nicht beginnen, melden. Bis die Liste besteht: kein Riegel, aber die bekannten Fehler aus «Zuerst lesen» gelten [Rb §5.4, Zeile «Skelett, Skill, Renderer»] |
 | 10 | `node scripts/check-namen.mjs` (sobald vorhanden) meldet eine Kollision | Abbruchfall. Handweg bis dahin: `references/auto-modus.md` §7 von Hand; Laufordner nach Abschnitt 8 [Rb §3 Nr. 8] |
 
 Der Bauplan gilt. Kein Entscheid wird geändert; die Phasen 0, 1 und Q laufen
-nicht, es wird nicht nach Quellen gesucht (`references/auto-modus.md` §3, §6).
+nicht als Erzeugung — nichts wird hergeleitet, kein Bauplan geschrieben, keine
+Quelle gesucht (`references/auto-modus.md` §3, §6). Was von Phase 0 bleibt, ist
+Zeile 7: die Prüfung des Bauplans gegen Datensatz, Kapiteldateien (das
+Lehrmittel muss lokal unter `material/_lehrmittel/` liegen) und
+Ableitungsregeln nach `references/auto-modus.md` §7.
 Trägt der Bauplan noch keinen Abschnitt «10. Fakten» (freigegeben vor dem
 07.10.2026), ist das kein Abbruchfall: Geschrieben wird dann wie bisher nur aus
 Lehrmittel, Datensatz und Archivtext (`SKILL.md` §5 Nr. 3), und das Fakten-Audit
@@ -96,10 +103,10 @@ kn.json → Heft A und Heft B → Set → Begleiter → Tor → Gegenleser → K
 | # | Schritt | Wer | Reference |
 |---|---|---|---|
 | 1 | Vorprüfung | Orchestrator | Abschnitt 3 |
-| 2 | `prinzip.json`, dann `kn.json`; prüfen | Orchestrator | `phase-2-3-prinzip-kn.md` |
+| 2 | `prinzip.json`, dann `kn.json`; prüfen. Verlangt Bauplan §9 eine neue Methodenkarte: jetzt anlegen, bevor ein Executor startet | Orchestrator | `phase-2-3-prinzip-kn.md`, `phase-4-heft-kern.md` §8 |
 | 3 | `npm run build:einheiten-index` — einmal, damit die Executor exportieren können | Orchestrator | Abschnitt 6 |
 | 4 | Heft A und Heft B — Phasen 4, 5, 6 je Heft, **mit eigener Messung vor der Abgabe** | Executor A ∥ Executor B | `phase-4-…`, `phase-5-…`, `phase-6-…`, Abschnitt 6 |
-| 5 | `set.json`, danach `begleiter.md` | Executor Set → Executor Begleiter | `phase-7-set.md`, `phase-8-begleiter.md` |
+| 5 | `set.json`, danach `begleiter.md` (der Executor Begleiter füllt am Schluss einmal die Marker) | Executor Set → Executor Begleiter | `phase-7-set.md`, `phase-8-begleiter.md` |
 | 6 | Tor mit Export und Messung aller Dokumente; höchstens drei Reparaturrunden | Orchestrator | `phase-9-tor.md` §1–§2 |
 | 7 | Gegenleser, alle gleichzeitig: je Heft und Spur Lernende/r und Lösungs-Audit, ein Bogen-Leser, ein Sweep | Gegenleser | `gegenleser.md` |
 | 8 | Jeden Befund am Dokument nachprüfen → genaue Aufträge → Korrekturen → Marker-Skript neu → Tor neu → geänderte Seiten noch einmal lesen; höchstens drei Runden | Orchestrator, Executor A ∥ B | `gegenleser.md` §2, §5 |
@@ -113,9 +120,10 @@ Das Fakten-Audit liest nur. Es darf schon neben den Gegenlesern von Schritt 7
 laufen; seine Befunde werden dann mit ihren zusammen korrigiert, und gelesen
 wird einmal nach allen Korrekturen. [P-1a Schritte 3–5]
 
-Nach **jeder** Änderung an Heft, Set oder KN, die auf Phase 8 folgt:
+Nach **jeder** Änderung an Heft, Set oder KN, die auf Phase 8 folgt, lässt der
+**Orchestrator**
 `node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner>`
-neu laufen lassen und die Prosa des Begleiters an der geänderten Stelle
+neu laufen und die Prosa des Begleiters an der geänderten Stelle
 ansehen. [B `2026-10-04-221` §10, B `2026-10-04-331` §10, B `2026-10-05-241` §10]
 
 ## 5. Was gleichzeitig laufen darf — und was nur der Orchestrator tut
@@ -132,8 +140,10 @@ einander nicht brauchen [P-loop §3, Pietro 04.10.2026]:
 Nacheinander bleiben: Set (braucht beide Hefte), Begleiter (braucht alle fünf
 Dateien).
 
-**Nur der Orchestrator:** `npm run build:einheiten-index`, das Marker-Skript,
-`check-all`, `bestand-v42`, `npm run build`, `git add`, `git commit`, der
+**Nur der Orchestrator:** `npm run build:einheiten-index`, das Marker-Skript
+bei jedem Lauf nach Phase 8 (nach Korrekturen und im Tor — nur das eine Mal am
+Ende von Phase 8 führt es der Executor Begleiter an seiner eigenen Datei aus),
+das Anlegen einer neuen Methodenkarte, `check-all`, `bestand-v42`, `npm run build`, `git add`, `git commit`, der
 Bericht. Nie zwei Tore gleichzeitig im selben Arbeitsbaum. [P-einzel «Index und
 Build laufen nur bei dir»; P-loop §3]
 
@@ -224,6 +234,9 @@ Dann, in dieser Reihenfolge [P-loop §3]:
 
 Eine halbe Einheit bleibt nie unter `src/data/einheiten/` liegen.
 
+Sagt ein älterer Bauplan für den Abbruch «der Lauf entfernt die Karte» oder
+«Ordner löschen», gilt die Skill: verschieben nach `abgebrochen/`. [E34]
+
 ## 8. Laufordner, Bericht, Commit
 
 **Laufordner:** `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/` — der volle
@@ -270,6 +283,11 @@ umformuliert (eigene Worte plus Kapitel und Seite bzw. Karten-ID) — im Bauplan
 nur diese Stelle, sonst bleibt er, wie er freigegeben ist. Exit 2 (Lehrmittel
 oder Archiv fehlt): nicht geprüft, nicht committen.
 
+Der Bericht liegt im selben Commit und kann dessen Hash nicht tragen: Er nennt
+den **Titel** des Commits; den Hash nennt die Schlussmeldung. Beim späteren
+Freigabe-Commit wird der Hash des Einheit-Commits im Bericht nachgetragen.
+[E34]
+
 Nie `git add -A` und nie `git add .`: Im Arbeitsbaum können fremde Dateien
 liegen. `status` bleibt `"entwurf"`. Kein Push.
 
@@ -291,16 +309,25 @@ Berichts in `docs/cloud-run/OFFEN.md` stehen. Handweg bis dahin: Der Abschnitt
   verlangt es beim Freigabeschritt ausdrücklich. [P-einzel, P-loop, P-1a]
 - Nicht anfassen: den Bauplan (auch die Freigabe-Zeile), die Skill,
   `scripts/`, `src/lib`, `src/components`, `src/styles`, `src/pages`,
-  bestehende Einheiten, bestehende Methoden- und Quellenkarten. Fehler dort
+  bestehende Einheiten, bestehende Karten (was «bestehend» heisst: nächster
+  Punkt). Fehler dort
   gehören in den Bericht, Abschnitt «Offen», mit Kürzel S, R oder Q.
   [P-einzel, P-loop; `SKILL.md` §5 Nr. 12]
-- **Karten:** Passt eine Methodenkarte nicht zur Abgabe, überschreibt die
+- **Karten — eigene und bestehende.** *Eigen* ist eine Quellenkarte, die nur
+  diese noch nicht publizierte Einheit führt (aus ihrer Phase Q). An ihr
+  korrigierbar sind Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum und
+  `kurzbeschrieb` — nie Titel, URL oder URN, nie der Ausschnitt: Eine andere
+  Quelle ist eine neue Karte, und die wählt der Lauf nicht. *Bestehend* sind
+  alle anderen Karten: jede Methodenkarte und jede Quellenkarte, die eine
+  andere Einheit führt. Sie werden nicht angefasst. [Rb §3 Nr. 4–5; E31 Nr. 3;
+  Entscheid Orchestrator nach dem Trockenlauf, E34]
+  Passt eine Methodenkarte nicht zur Abgabe, überschreibt die
   Einheit (`fuer`, ausnahmsweise `beispiel`); `tun` wird bei `hko-`Karten nicht
-  gedruckt. Ein **Fehler** in einer Karte (falsche Seite, Rechenfehler,
-  Widerspruch in sich) gehört in den Bericht — die Karte hängt an publizierten
-  Heften. `node scripts/karten.mjs darf <karten-id>` (sobald vorhanden) sagt,
-  ob eine Änderung zulässig ist. Handweg bis dahin: Der Lauf ändert keine
-  bestehende Karte. [E31 Nr. 2–3; Rb §3 Nr. 4, §5.4]
+  gedruckt. Ein **Fehler** in einer bestehenden Karte (falsche Seite,
+  Rechenfehler, Widerspruch in sich) gehört in den Bericht — die Karte hängt an
+  publizierten Heften. `node scripts/karten.mjs darf <karten-id>` (sobald
+  vorhanden) sagt, ob eine Änderung zulässig ist. Handweg bis dahin: Der Lauf
+  ändert keine bestehende Karte. [E31 Nr. 2–3; Rb §3 Nr. 4, §5.4]
 - Keine Rückfrage an Pietro ausser an den zwei Stopps (Bauplan, Freigabe).
   Fehlt eine Voraussetzung: `references/auto-modus.md`. [P-einzel, P-loop]
 - Keine Quellensuche, kein Swissdox, keine Zugangsdaten. Das Fakten-Audit ist
