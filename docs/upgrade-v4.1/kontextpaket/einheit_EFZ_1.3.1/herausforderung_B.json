@@ -1,0 +1,376 @@
+{
+  "id": "1.3.1_konsum_verantworten_hf_B",
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "lehrgang": "EFZ_4J",
+
+  "buchstabe": "B",
+  "sit_farbe": "#1A5276",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#2E86C1",
+
+  "titel": "Am 20. ist das Konto leer",
+
+  "wissensknoten": ["budget_erstellen"],
+
+  "nrlp": {
+    "nr": "1.3.2",
+    "nr_primary": ["1.3.2"],
+    "lebensbezug": "1.3",
+    "themen": ["T1"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R1"}
+    ],
+    "sprachmodi": ["Interaktion und Kollaboration mündlich"],
+    "sprachmodus_ids": ["SM7"],
+    "sk": [2, 11, 6],
+    "kompetenz_id": "1.3.2",
+    "lebensbezug_id": "1.3",
+    "kompetenz_text": "Ich kann mein Budget realistisch planen, Abweichungen und Risiken identifizieren und entsprechende Anpassungen vornehmen sowie mich mit anderen darüber austauschen.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen."
+  },
+
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+
+  "situation_text": "Ich bin im 1. Lehrjahr und bekomme meinen Lohn einmal im Monat aufs Konto. Rund um den 20. ist es regelmässig leer, obwohl noch zehn Tage bis zum nächsten Zahltag fehlen. Letzten Freitag musste ich einer Kollegin 40 Franken für ein Konzertticket schuldig bleiben, das wir zusammen gekauft hatten — das war mir unangenehm. Am Monatsanfang geht das meiste für Ausgang, Kleider und Take-away weg; wohin genau, weiss ich nicht, denn ich schreibe nichts auf. Dieselbe Kollegin kommt mit weniger Lohn über die Runden und bietet an, mein Budget mit mir durchzugehen. Bis dahin will ich ein realistisches Budget haben und begründen können, was ich ändere — ohne mich zu rechtfertigen.",
+
+  "zahlen_tabelle": [
+    {"label": "Nettolohn pro Monat (ca.)", "wert": "CHF 900"},
+    {"label": "Konto leer ab", "wert": "ca. 20. des Monats"},
+    {"label": "Fehlende Tage bis Lohn", "wert": "ca. 10 Tage"}
+  ],
+
+  "leitfrage": "Wie plane ich mein Geld so, dass es bis zum Monatsende reicht — und wie begründe ich meine Anpassungen?",
+  "leitfragen_intro": "Sie bauen in dieser Lektion Ihr Monatsbudget auf und bereiten damit das Budgetgespräch vor: LF1 liefert die Einnahmenzeile mit dem Nettolohn, LF2 das gegliederte Budget mit Saldo, LF3 die zwei bis drei begründeten Anpassungen, LF4 die drei Argumente und die Rückfrage, mit denen Sie das Gespräch führen. Rechnen Sie mit eigenen Zahlen; geschätzte genügen. Nutzen Sie das Lehrmittel Kap. 2.1, Kap. 2.2 und Kap. 16.1 als Grundlage.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 2.1 | S. 46",
+      "text": "Erklären Sie den Unterschied zwischen Bruttolohn und Nettolohn und welche Sozialversicherungsabzüge (AHV, IV, EO, ALV, NBU) Ihren ausbezahlten Lohn schmälern.",
+      "liefert": "die Einnahmenzeile mit Nettolohn",
+      "scaffolding": {
+        "strategien": [
+          "Rechnen Sie 12,8 % Sozialabzüge und rund 1 % NBU vom Bruttolohn ab.",
+          "Prüfen Sie, ob die Abzüge in Ihrem Alter schon gelten (Kap. 2.1)."
+        ],
+        "satzanfaenge": [
+          "Vom Bruttolohn gehen … ab, deshalb …",
+          "Netto bleiben mir monatlich …"
+        ],
+        "produkt": "Der Nettolohn ist die Einnahmenzeile des Budgets in Schritt 1."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Bruttolohn, Nettolohn und die Abzüge",
+        "zeilen": [
+          { "label": "Bruttolohn", "text": "Der mit dem Arbeitgeber vereinbarte Lohn plus mögliche Zuschläge wie 13. Monatslohn oder Überstunden.", "quelle": "Kap. 2.1" },
+          { "label": "Nettolohn", "text": "Der Bruttolohn abzüglich der Sozialversicherungsbeiträge — das, was tatsächlich ausbezahlt wird.", "quelle": "Kap. 2.1" },
+          { "label": "AHV/IV/EO/ALV", "text": "Zusammen 12,8 % des Bruttolohns, je zur Hälfte von Betrieb und Lernender getragen.", "quelle": "Kap. 2.1" },
+          { "label": "NBU", "text": "Nichtbetriebsunfallversicherung, ca. 0,4–1 %, zusätzlich zu den vier Sozialversicherungen.", "quelle": "Kap. 2.1" },
+          { "label": "Ab wann", "text": "Abzüge gelten ab 1. Januar des Jahres, in dem die Lernende 18 wird.", "quelle": "Kap. 2.1" }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Anwenden",
+      "knoten_ref": "Kap. 2.2 | S. 48",
+      "text": "Erstellen Sie ein realistisches Monatsbudget mit Ihren eigenen Zahlen — geschätzte genügen, wo Sie sie nicht genau kennen — und gliedern Sie die Ausgaben in fixe Kosten, variable Kosten und Rückstellungen.",
+      "liefert": "das gegliederte Monatsbudget mit Saldo",
+      "scaffolding": {
+        "strategien": [
+          "Setzen Sie eigene, realistische Zahlen ein — geschätzte genügen (Kap. 2.2).",
+          "Ordnen Sie jede Ausgabe genau einer der drei Kostenarten zu."
+        ],
+        "satzanfaenge": [
+          "Fix bezahle ich jeden Monat …",
+          "Mein Saldo beträgt …, also …"
+        ],
+        "produkt": "Das gegliederte Budget mit Saldo ist das Blatt aus Schritt 2."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Kostenarten realistisch trennen",
+        "zeilen": [
+          { "label": "Fixe Kosten", "text": "Bleiben gleich und sind kaum beeinflussbar: Krankenkasse, Mobiltelefon, Haushaltsbeitrag/Miete.", "quelle": "Kap. 2.2" },
+          { "label": "Variable Kosten", "text": "Durch eigenes Verhalten veränderbar: Taschengeld, Kleider, Ausgang, Coiffeur, Hobby.", "quelle": "Kap. 2.2" },
+          { "label": "Rückstellungen", "text": "Für unregelmässige Ausgaben zurücklegen: Zahnarzt, Ferien, Sparen, Diverses.", "quelle": "Kap. 2.2" },
+          { "label": "Häufiger Fehler", "text": "Nur mit Wunschzahlen statt mit den eigenen, realistischen Zahlen rechnen — das Budget geht dann auf dem Papier auf, nicht auf dem Konto.", "quelle": "Kap. 2.2" }
+        ]
+      }
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.2 | S. 49",
+      "text": "Entscheiden Sie anhand Ihres Budget-Saldos, welche zwei bis drei Ausgaben Sie realistisch anpassen, damit das Geld bis Monatsende reicht.",
+      "liefert": "zwei bis drei begründete Anpassungen",
+      "scaffolding": {
+        "strategien": [
+          "Kürzen Sie zuerst dort, wo am wenigsten Gegenwert entsteht.",
+          "Lassen Sie die Rückstellungen stehen — sonst fehlt bald wieder Geld."
+        ],
+        "satzanfaenge": [
+          "Anpassen will ich …, weil …",
+          "Nicht kürzen kann ich …, denn …"
+        ],
+        "produkt": "Die zwei bis drei Anpassungen stehen begründet unter dem Budget (Schritt 3)."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Welche Ausgaben anpassen — und warum",
+        "zeilen": [
+          { "label": "Vorgehen", "text": "Erst Überblick verschaffen, dann ausloten, wie viel Geld für Anpassungen zur Verfügung steht.", "quelle": "Kap. 2.2" },
+          { "label": "Erwartet", "text": "Bei den variablen Kosten kürzen — dort, wo am wenigsten Gegenwert für das Geld entsteht (z. B. Take-away statt mitgenommenes Essen)." },
+          { "label": "Ebenfalls tragfähig", "text": "Weniger stark kürzen, wenn eine Ausgabe begründet Vorrang hat — ein Budget ohne jeden Spielraum hält niemand lange durch." },
+          { "label": "Nicht tragfähig", "text": "Nur bei den Rückstellungen streichen — dann fehlt bei der nächsten unerwarteten Rechnung sofort wieder Geld." }
+        ]
+      }
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 16.1 | S. 366",
+      "text": "Formulieren Sie für das Budgetgespräch drei sachliche Argumente für Ihre Anpassungen und eine Rückfrage, mit der Sie auf die Sicht Ihrer Kollegin eingehen (Diskussionsregeln Kap. 16.1).",
+      "liefert": "drei Argumente und eine Rückfrage",
+      "scaffolding": {
+        "strategien": [
+          "Ein Argument pro Anpassung, mit Grund — nicht rechtfertigen (Kap. 16.1).",
+          "Stellen Sie eine echte Rückfrage, keine rhetorische."
+        ],
+        "satzanfaenge": [
+          "«Ich passe … an, weil …»",
+          "«Wie machst du das mit …?»"
+        ],
+        "produkt": "Argumente und Rückfrage tragen das Budgetgespräch in Schritt 4."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei Argumente und eine echte Rückfrage",
+        "zeilen": [
+          { "label": "Diskussionsstil", "text": "Mit Respekt gegenteilige Argumente zulassen, auf Gesagtes eingehen und die eigenen Argumente sachlich darstellen.", "quelle": "Kap. 16.1" },
+          { "label": "Argument-Muster", "text": "«Ich passe … an, weil …» — ein Argument pro Anpassung, mit Grund." },
+          { "label": "Rückfrage-Muster", "text": "«Wie machst du das mit …?» — echtes Interesse an der Sicht der Kollegin, keine rhetorische Frage." },
+          { "label": "Massstab", "text": "Drei Argumente plus eine Rückfrage, keine Rechtfertigung und kein Vorwurf.", "quelle": "Kap. 16.1" }
+        ]
+      }
+    }
+  ],
+
+  "mindmap_zentrum": "Mein Budget",
+  "mindmap_aeste": [
+    {"titel": "Einnahmen", "punkte": ["Nettolohn", "andere Einnahmen", "Brutto → Netto (Abzüge)"], "optional": false},
+    {"titel": "Fixe Kosten", "punkte": ["Krankenkasse", "Handy-Abo", "Haushaltsbeitrag / Miete"], "optional": false},
+    {"titel": "Variable Kosten", "punkte": ["Ausgang", "Kleider", "Take-away"], "optional": false},
+    {"titel": "Rückstellungen", "punkte": ["Zahnarzt", "Sparen", "Unvorhergesehenes"], "optional": true}
+  ],
+
+  "handlungsprodukt": {
+    "format": "Realistisches Monatsbudget + moderiertes Budgetgespräch",
+    "abgaben": [
+      "Ausgefülltes Monatsbudget (Einnahmen, fixe/variable Kosten, Rückstellungen, Saldo)",
+      "Notiz der 2-3 geplanten Anpassungen mit Begründung",
+      "Gesprächsvorbereitung: 3 Argumente + 1 Rückfrage für das Budgetgespräch"
+    ],
+    "titel": "Mein Budget und mein Budgetgespräch",
+    "format_detail": "Ein ausgefülltes Budget (Vorlage oder Tabelle) plus ein vorbereitetes Budgetgespräch von 3-5 Minuten mit einer Partnerin oder einem Partner, in dem Sie Ihre Anpassungen sachlich begründen und auf ihre/seine Sicht eingehen.",
+    "beschreibung": "Ich plane mein Geld mit realistischen eigenen Zahlen, identifiziere, wo es knapp wird, entscheide über Anpassungen und vertrete diese im Gespräch mit guten Argumenten, ohne die andere Sicht abzuwerten.",
+    "schritte": [
+      {"label": "Nettolohn bestimmen", "hint": "Übernehmen Sie aus LF1 die Abzüge und rechnen Sie Ihren Nettolohn aus — nehmen Sie die Abrechnung aus Ihrem Lehrbetrieb, oder von dort, wo Sie zuletzt gearbeitet haben; eine Schätzung genügt. Er ist die Einnahmenzeile Ihres Budgets."},
+      {"label": "Budget aufstellen", "hint": "Übernehmen Sie aus LF2 die drei Kostenarten, tragen Sie Ihre Zahlen ein und schreiben Sie den Saldo unter die Tabelle."},
+      {"label": "Anpassungen festlegen", "hint": "Übernehmen Sie aus LF3 die zwei bis drei Anpassungen und halten Sie sie mit je einer Begründung unter dem Budget fest."},
+      {"label": "Budgetgespräch führen", "hint": "Führen Sie das Gespräch mit den drei Argumenten und der Rückfrage aus LF4: erst zuhören, dann sachlich antworten (Kap. 16.1)."},
+      {"label": "Abgleichen und überarbeiten", "hint": "Gleichen Sie Budget und Gesprächsnotiz mit den vollständig-wenn-Kriterien im Bewertungsraster ab und überarbeiten Sie eine Anpassung, die im Gespräch nicht getragen hat."}
+    ],
+    "schreib_label": "BUDGET UND GESPRÄCHSVORBEREITUNG HIER ERARBEITEN",
+    "schreib_note": "-> wissen/budget_erstellen",
+    "scaffolding": {
+      "satzanfaenge": ["«Ich passe … an, weil …»", "«Für mich ist … wichtiger als …, deshalb …»", "«Wie machst du das mit …?»"],
+      "strategien": ["Nur realistische, eigene Zahlen einsetzen (Kap. 2.2)", "Erst zuhören, dann sachlich antworten — keine Killerphrasen (Kap. 16.1)"],
+      "struktur": ["Budget: Einnahmen − fixe − variable − Rückstellungen = Saldo", "Gespräch: Standpunkt → Begründung → Rückfrage"]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigenes Budget steht. Beispiel auf Stufe 3–4: das Budget geht auf, die Anpassungen sind begründet, und im Gespräch wird zugehört statt verteidigt. Nettolohn CHF 900.",
+      "abschnitte": [
+        {
+          "titel": "Budget — Einnahmen und fixe Kosten",
+          "zeilen": [
+            {
+              "label": "Einnahmen",
+              "text": "Nettolohn CHF 900. Keine weiteren Einnahmen."
+            },
+            {
+              "label": "Fixe Kosten",
+              "text": "Krankenkasse CHF 120 · Handy-Abo CHF 40 · Haushaltsbeitrag zu Hause CHF 200 · ÖV-Abo CHF 65. Zusammen CHF 425."
+            },
+            {
+              "label": "Bleibt",
+              "text": "CHF 475 für alles Variable und für Rückstellungen."
+            }
+          ]
+        },
+        {
+          "titel": "Budget — variable Kosten vorher und nachher",
+          "zeilen": [
+            {
+              "label": "Vorher",
+              "text": "Ausgang CHF 220 · Take-away CHF 160 · Kleider CHF 120. Zusammen CHF 500 — also CHF 25 mehr, als überhaupt da ist. Genau deshalb ist am 20. das Konto leer."
+            },
+            {
+              "label": "Nachher",
+              "text": "Ausgang CHF 150 · Take-away CHF 80 · Kleider CHF 60. Zusammen CHF 290."
+            },
+            {
+              "label": "Rückstellungen",
+              "text": "Zahnarzt CHF 50 · Sparen CHF 80 · Unvorhergesehenes CHF 55. Zusammen CHF 185."
+            },
+            {
+              "label": "Saldo",
+              "text": "CHF 475 − 290 − 185 = CHF 0. Das Budget geht auf, und zum ersten Mal ist etwas zurückgelegt."
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Anpassungen — begründet",
+          "zeilen": [
+            {
+              "text": "Ich passe das Take-away an, weil es der grösste Posten ohne echten Gegenwert war: CHF 160 für Essen, das ich auch mitnehmen könnte. Das ist die Hälfte meiner Rückstellungen."
+            },
+            {
+              "text": "Für mich ist Ausgang wichtiger als neue Kleider, deshalb kürze ich dort weniger. Ich streiche nicht alles — ein Budget, das keinen Spass zulässt, halte ich keine zwei Monate durch."
+            },
+            {
+              "text": "Ich lege neu CHF 80 zur Seite, weil mich am meisten gestört hat, dass jede unerwartete Rechnung ein Problem war."
+            }
+          ]
+        },
+        {
+          "titel": "Budgetgespräch — mein Teil",
+          "zeilen": [
+            {
+              "label": "Standpunkt",
+              "text": "Ich habe beim Take-away am stärksten gekürzt und dafür den Ausgang weitgehend gelassen."
+            },
+            {
+              "label": "Begründung",
+              "text": "Weil ich dort Geld ausgebe, ohne etwas davon zu haben — beim Ausgang habe ich wenigstens etwas davon."
+            },
+            {
+              "label": "Rückfrage",
+              "text": "Wie machst du das mit dem Mittagessen? Du kommst mit weniger Lohn aus, das interessiert mich ehrlich."
+            },
+            {
+              "label": "Zuhören",
+              "text": "Sie nimmt Essen von zu Hause mit und kauft Kleider nur im Ausverkauf. Das mit dem Mittagessen übernehme ich — beim Rest bleibe ich bei meiner Lösung und sage ihr auch warum."
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "methoden": [
+    {
+      "ref": "lm-2-2-budget",
+      "fuer": "für das Monatsbudget mit Saldo",
+      "tun": "Gehen Sie in der Reihenfolge des Kapitels vor: Einnahmen, fixe Kosten, variable Kosten, Rückstellungen, Saldo — mit Ihren eigenen Zahlen."
+    },
+    {
+      "ref": "lm-19-2-vier-ohren",
+      "fuer": "für das Zuhören im Budgetgespräch",
+      "tun": "Hören Sie bei der Antwort Ihres Gegenübers auf alle vier Ohren, bevor Sie widersprechen: Sachinhalt, Selbstkundgabe, Beziehung, Appell."
+    },
+    {
+      "ref": "lm-16-2-statement",
+      "fuer": "für die Begründung der Anpassungen",
+      "tun": "Begründen Sie jede Anpassung in drei Zügen: Ausgangslage, Grund, Entscheid — je ein Satz."
+    },
+    {
+      "ref": "hko-verzichten-abwaegen",
+      "fuer": "für die Entscheidung, wo angepasst wird"
+    }
+  ],
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Was hat mich beim Aufstellen meines Budgets überrascht?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Wo in meinem Alltag entstehen die Ausgaben, die mein Budget kippen?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Welche eine Anpassung setze ich diesen Monat konkret um?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {"produkt": "Leitfragen", "kriterium": "Inhaltliche Korrektheit", "vollstaendig_wenn": ["Alle 4 Leitfragen schriftlich beantwortet", "Brutto/Netto und Abzüge korrekt erklärt (Kap. 2.1)", "Kostenarten korrekt unterschieden (Kap. 2.2)"]},
+    {"produkt": "Mindmap", "kriterium": "Struktur · Tiefe · Verbindungen", "vollstaendig_wenn": ["Zentrum und 4 Ast-Titel übernommen", "Pro Ast eigene Detail-Punkte ergänzt"]},
+    {"produkt": "Handlungsprodukt", "kriterium": "Rubrik 4 Stufen (SuK + Ges)", "vollstaendig_wenn": ["Budget mit realistischen eigenen Zahlen und Saldo", "2-3 begründete Anpassungen", "Gespräch mit Argumenten und Rückfrage geführt"]},
+    {"produkt": "Reflexion", "kriterium": "Tiefe + Transfer", "vollstaendig_wenn": ["Alle 3 Reflexionsfragen beantwortet", "Eine konkrete Anpassung für diesen Monat benannt"]}
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Budget aufstellen, Mindmap", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Anpassungen festlegen, Gespräch vorbereiten", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Budgetgespräch führen, Abgleich mit dem Bewertungsraster, Austausch (Set), Reflexion", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Budget planen"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Momentaner Wunsch vs. langfristige finanzielle Sicherheit",
+    "hint": "Sparen ist nicht automatisch besser — entscheidend ist, dass Sie bewusst wählen und Ihr Budget bis Monatsende trägt."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Wie übertrage ich das Prinzip 'erst planen, dann ausgeben' auf andere Bereiche, in denen meine Mittel knapp sind (z.B. Zeit)?",
+    "ziel": "Überlegte Konsumentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T6 'Mein eigenes Zuhause' — Haushaltsbudget mit Miete und wiederkehrenden Kosten (LJ2).",
+    "r3_voraussicht": "T4 'Verantwortung für mich und andere' — Versicherungsprämien und Vorsorge im Budget einplanen."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 2.1", "titel": "Lohnbestandteile — Brutto/Netto und Sozialabzüge", "unterueberschrift": "Bruttolohn, Nettolohn, obligatorische Abzüge", "seiten": "Seite 46-47", "fuer_leitfrage": [1]},
+    {"ref": "Kap. 2.2", "titel": "Budget — fixe und variable Kosten, Rückstellungen", "unterueberschrift": "Budgeterstellung und Budgetpositionen", "seiten": "Seite 48-49", "fuer_leitfrage": [2, 3]},
+    {"ref": "Kap. 16.1", "titel": "Diskussion — Regeln und Argumentation", "unterueberschrift": "Die Regeln einer Diskussion", "seiten": "Seite 366-367", "fuer_leitfrage": [4]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Lohn verstehen", "indikator": "Brutto/Netto und Abzüge korrekt erklärt", "gewicht_prozent": 25},
+      {"kriterium": "Budget planen", "indikator": "Realistisches Budget mit korrekt getrennten Kostenarten", "gewicht_prozent": 25},
+      {"kriterium": "Risiken & Anpassung", "indikator": "Engpass erkannt, Anpassungen begründet gewählt", "gewicht_prozent": 25},
+      {"kriterium": "Austausch", "indikator": "Argumente sachlich vertreten, auf andere Sicht eingegangen", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Budgetvorlage mit vorgegebenen Kategorien wird bereitgestellt.",
+    "scaffold_100": "Zusätzlich ein zweites Szenario (unerwartete Ausgabe von CHF 300) einbauen und das Budget anpassen."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Realistisch planen und Engpässe erkennen",
+    "lehrmittel_anker": "Kap. 2.1 S. 46-47 (Bruttolohn, Nettolohn, obligatorische Abzüge) plus Kap. 2.2 S. 48-49 (Budgeterstellung, Budgetpositionen).",
+    "kn_aktivierung": "In der KN-Hybrid-Herausforderung muss die Lernende einen knappen finanziellen Spielraum erkennen und begründet anpassen.",
+    "transfer_check": "Kann die Lernende ein Budget mit realistischen Zahlen aufstellen und eine Anpassung begründen?"
+  },
+
+  "sk_anker": [
+    {"sk": 2, "wo": "leitfragen[1]-[2] + Budgeterstellung — eigenes finanzielles Ziel setzen und planen"},
+    {"sk": 11, "wo": "mehrdeutigkeit.trade_off — momentaner Wunsch vs. langfristige Sicherheit bleibt abzuwägen"},
+    {"sk": 6, "wo": "leitfragen[3] + Budgetgespräch — Anpassungen sachlich begründen (Kap. 16.1)"}
+  ]
+}

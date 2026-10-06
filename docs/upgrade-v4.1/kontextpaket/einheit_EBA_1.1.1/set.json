@@ -1,0 +1,48 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_set",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen",
+  "lehrgang": "EBA_2J",
+  "thema": "T1",
+  "version": "2.0.0",
+  "erstellt_am": "2026-07-02",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_prinzip",
+  "kn_ref": "1.1.1_lehrvertrag_orientieren_kn",
+  "herausforderungen": [
+    "1.1.1_lehrvertrag_orientieren_hf_A",
+    "1.1.1_lehrvertrag_orientieren_hf_B"
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "1.1.1_lehrvertrag_orientieren_hf_A",
+      "konzept": "Komplexes Formular gliedern und filtern"
+    },
+    {
+      "position": 2,
+      "herausforderung": "1.1.1_lehrvertrag_orientieren_hf_B",
+      "konzept": "Fakten klären, Weg begründet wählen"
+    }
+  ],
+  "austausch_phase": {
+    "_kommentar": "Drei wählbare Sozialformen. Lernende nutzen die Austausch-Scaffolds im Dossier (transfer_wissensblatt.austausch_scaffolds). Sie-Form, A2.",
+    "format": "gruppenpuzzle_jigsaw",
+    "dauer_min": 30,
+    "gruppenarbeit_jigsaw": {
+      "runde_1": "Erfahrung teilen — 90 Sek. pro Person: Mein Fall, mein Vorgehen, mein bester Tipp. Nutzen Sie die Satzanfänge aus dem Dossier.",
+      "runde_2": "Gemeinsamkeit finden — Was ist bei beiden Fällen gleich? Welche Grundregel steckt dahinter?",
+      "runde_3": "Transfer — Welcher Fall wäre für mich am schwierigsten? Warum?"
+    },
+    "einzelarbeit_plenum": "Die Lehrperson leitet die Diskussion: Wann kläre ich selbst? Wann hole ich Hilfe? Wo schaue ich zuerst nach?",
+    "einzelauftrag": "Fassen Sie die gemeinsame Grundregel beider Fälle in 3-4 kurzen Sätzen zusammen. Nennen Sie je ein Beispiel aus Ihrem Lehralltag. Nutzen Sie die Austausch-Scaffolds im Dossier."
+  },
+  "dekontextualisierungs_aufgabe": {
+    "_kommentar": "Bewertete Set-Aufgabe (15 Prozent). ziel verweist auf prinzip.dekontextualisierungs_anker. Begriffe aus dem Dossier.",
+    "auftrag": "Übertragen Sie die Grundregel auf einen neuen Vertrag oder eine neue Unstimmigkeit aus Ihrem Leben. Wählen Sie den Fall selbst.",
+    "format": "schriftlich, 4-6 kurze Sätze, Begriffe aus dem Dossier verwenden",
+    "ziel": "Ich verschaffe mir zuerst einen Überblick und suche gezielt die relevante Stelle. Erst dann entscheide ich: selbst klären oder Hilfe holen.",
+    "gewicht_prozent": 15,
+    "abgabe": "vor dem KN"
+  },
+  "status": "publiziert"
+}
