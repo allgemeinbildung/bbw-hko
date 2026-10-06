@@ -1,5 +1,7 @@
 # Abschluss der Korrekturen: 2.3.1_anliegen_vertreten
 
+> **Historisch, Stand vom 04.10.2026** — archiviert am 07.10.2026, nicht mehr ausführen. Der geltende Ablauf steht in der Skill `bbw-hko-heft-v42` (`SKILL.md`, `references/lauf.md`).
+
 Du arbeitest in `D:\OS\dev\bbw-hko`, Branch `v42-skill`. Ziel dieser Session: die
 Einheit `src/data/einheiten/2.3.1_anliegen_vertreten/` so weit bringen, dass Pietro
 sie nach einmaligem Gegenhören der zwei Audios für Lehrpersonen freigeben kann.

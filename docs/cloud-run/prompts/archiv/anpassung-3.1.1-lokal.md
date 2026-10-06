@@ -1,5 +1,7 @@
 # Prompt — Gold 1.3.1 für EFZ 3J anpassen (3.1.1), lokal, ohne Stopp
 
+> **Historisch, Stand vom 04.10.2026** — archiviert am 07.10.2026, nicht mehr ausführen. Der geltende Ablauf steht in der Skill `bbw-hko-heft-v42` (`SKILL.md`, `references/lauf.md`).
+
 Lokal in einer neuen Session im Ordner `D:\OS\dev\bbw-hko` (Branch
 `v42-skill`, Modell Opus 5.5) einfügen. Erst starten, wenn der Plan
 «**Freigabe:** freigegeben am JJJJ-MM-TT» trägt und keine andere Session

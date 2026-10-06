@@ -1,5 +1,7 @@
 # Prompt — zwei weitere Einheiten, lokal im Chat orchestriert
 
+> **Historisch, Stand vom 05.10.2026** — archiviert am 07.10.2026, nicht mehr ausführen. Der geltende Ablauf steht in der Skill `bbw-hko-heft-v42` (`SKILL.md`, `references/lauf.md`).
+
 Lokal in einer Chat-Session im Ordner `D:\OS\dev\bbw-hko` (Branch `v42-skill`,
 Modell Opus 5.5) einfügen. Die zwei Zeilen unter «AUFTRAG» anpassen.
 
