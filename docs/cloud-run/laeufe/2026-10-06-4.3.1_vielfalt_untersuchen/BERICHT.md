@@ -233,6 +233,30 @@ Archivtext nicht halten («Sprache die grösste Hürde», «Patienten und Team
 zufrieden», «zwei Stellen in anderen Sprachen», «deckt sich mit S. 114») und nennt
 448 Wörter. Massgebend sind die Hefte.
 
+## 9a. Nachtrag vom 2026-10-07 — Entscheide Pietro am Stopp
+
+| Punkt | Entscheid | Umsetzung |
+|---|---|---|
+| Video-Vertiefung von Heft A | bleibt, Ausschnitt 22:49–26:52 unverändert | keine Änderung; die Warnung «vor dem Einsatz gegensehen» steht im Begleiter, Kap. 3 |
+| Leitfrage von Heft A | Abweichung vom Bauplan ist recht | keine Änderung |
+| Vierte Methodenkarte von Heft A | `hko-stille-aushalten` → **`hko-was-zeige-ich`** (Vorschlag des Orchestrators, von Pietro angenommen) — Abweichung von Bauplan §4 | `methoden[2]` in Heft A mit eigenem `fuer` und `beispiel`; Begleiter Kap. 3 (S. 6) nachgezogen; Tor neu grün, 56 Seiten ohne Überlauf |
+| KN, Werkschau | `kn.json` bleibt; die Anweisung im Begleiter genügt | keine Änderung |
+| `5.2.1_gesetze_veraendern` im Index | bleibt als Entwurf, für KT1 sichtbar | keine Änderung; fehlt der Ordner, antwortet die Detailseite mit 404 |
+
+**Nachlesung der neuen Karte (ein Lernender, Sonnet, Seiten 4–7 von Heft A):** Die
+Karte passt schlechter als erwartet. Ihr gedruckter Text geht von einem Text über
+sich selbst aus («Was soll diese Person nachher über mich wissen?», «Nennen Sie
+andere Personen, fragen Sie diese vorher», Merksatz zum Aushang); das Fazit
+handelt vom Team, nennt keine Namen und steht in einer Betriebszeitung. Der
+Leser fand fünf Reibungen; bei drei erfundenen Angaben half ihm die Karte bei
+zwei, bei der entscheidenden (das Schwierige zeigen oder nicht) nicht. Danach
+geschärft: `fuer` sagt «über mich heisst hier: über das Team», das Beispiel
+führt die Zonen der Karte wörtlich («Nur diese Person»), der Begleiter erklärt
+die zwei Kartensätze. **Diese letzte Fassung ist nicht mehr gegengelesen** (nur
+Tor und Messung). Die alte Karte hatte eine andere Reibung («einen einzigen
+Impulssatz» gegen sechs Fragen). Zurück zur Karte des Bauplans wäre ein
+Handgriff: `methoden[2]` und ein Absatz im Begleiter.
+
 ## 10. Fehler in Skill, Skript, Renderer, Bestand (nicht repariert)
 
 - **Kein Budget für `quellen[].erwartung` und `loesungsbild.hinweis`.** `check-v42`
@@ -254,6 +278,10 @@ zufrieden», «zwei Stellen in anderen Sprachen», «deckt sich mit S. 114») un
   nicht angefasst und nicht committet.
 
 ## 11. Commit
+
+Zweiter Commit am 2026-10-07 mit dem Nachtrag 9a (Karte, Begleiter, Bericht), ebenfalls Status `entwurf`, kein Push.
+
+Erster Commit:
 
 «Einheit 4.3.1_vielfalt_untersuchen (bbw-hko-heft-v42)» auf `v42-skill`: Ordner der
 Einheit, acht Karten `q-431*`, Bauplan, dieser Laufordner (`BERICHT.md`,
