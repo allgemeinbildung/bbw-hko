@@ -181,6 +181,13 @@ const nrlp = lauf('check-nrlp-consistency.mjs', [])
 zeile(nrlp.ok, 'nRLP-Datensaetze')
 if (!nrlp.ok) { rot++; console.log(einruecken(nrlp.text)) }
 
+// Namen eindeutig (Ordner, IDs, Quellenkarten, Archiv, Laufordner): scripts/check-namen.mjs, nur die geprueften Einheiten.
+if (slugs.length) {
+  const namen = lauf('check-namen.mjs', [...slugs, ...(CLOUD ? ['--cloud'] : [])])
+  zeile(namen.ok, 'Namen', 'Ordner · IDs · Quellenkarten · Archiv · Laufordner')
+  if (!namen.ok || /warnung|HINWEIS/.test(namen.text)) { if (!namen.ok) rot++; console.log(einruecken(namen.text)) }
+}
+
 if (!slugs.length) console.log('\n  Keine Einheit im Umfang.')
 
 const sync = slugs.length ? lauf('sync-einheiten-nrlp.mjs', ['--check']) : { text: '' }
