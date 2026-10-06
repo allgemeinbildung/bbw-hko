@@ -28,27 +28,20 @@
  *
  * Reines Node, keine Abhaengigkeiten, nur lesend. Exit 0 nur ohne FEHLER.
  */
-import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs'
+import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
+// Leck-Pruefung: geteilt mit scripts/check-leck.mjs (beliebige Pfade).
+import { ladeLehrmittel, laengsteUebernahme, strings, LECK_WARN, LECK_ERR } from './lib/leck.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const EINHEITEN = join(ROOT, 'src/data/einheiten')
 const METHODEN = join(ROOT, 'src/data/methoden')
-const MATERIAL = join(ROOT, 'material')
-// Volltexte der Quellen: im privaten Spiegel unter material/_quellen-archiv/, lokal ausserhalb des Repos.
-const ARCHIV = [join(MATERIAL, '_quellen-archiv'), process.env.QUELLEN_ARCHIV || 'D:/OS/_lab/quellen-archiv/bbw-hko'].find((p) => existsSync(p))
-
 const LEHRGAENGE = ['EBA_2J', 'EFZ_3J', 'EFZ_4J']
 const STATUS_OK = [undefined, 'entwurf', 'publiziert']
 const PFLICHT = ['set.json', 'prinzip.json', 'kn.json', 'begleiter.md', 'herausforderung_A.json', 'herausforderung_B.json']
 const PLATZHALTER = /\[QUELLE SUCHEN|\[URL\b|\[JJJJ|\[HERAUSGEBER|verifizieren\]|\[Beispiel aus|\bTODO\b|\bTBD\b|\{\{[^}]*\}\}|\{[A-Z][A-Z0-9_.]{3,}\}/
-// Laenge einer woertlichen Uebernahme, in Woertern. Ein Fachbegriff oder eine
-// Gesetzesformel ist kuerzer; ab LECK_ERR ist es ein abgeschriebener Absatz.
-const SHINGLE = 8
-const LECK_WARN = 14
-const LECK_ERR = 25
 
 const argv = process.argv.slice(2)
 const flag = (f) => argv.includes(f)
@@ -93,63 +86,6 @@ if (wunsch.length) {
 } else {
   console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud]')
   process.exit(2)
-}
-
-// ------------------------------------------------------------- Lehrmittel
-
-// Links und URNs sind keine Uebernahme — sie stehen in Karte und Quelle zwangslaeufig gleich.
-const wörter = (s) => s.toLowerCase().replace(/https?:\/\/\S+|urn:\S+/g, ' ').match(/[\p{L}\p{N}]+/gu) ?? []
-
-function ladeLehrmittel() {
-  if (!existsSync(MATERIAL)) return null
-  const dirs = readdirSync(MATERIAL).filter((d) => d.startsWith('_lehrmittel') && statSync(join(MATERIAL, d)).isDirectory())
-  const set = new Set()
-  let dateien = 0
-  for (const d of dirs) {
-    for (const f of readdirSync(join(MATERIAL, d))) {
-      if (!f.endsWith('.md')) continue
-      dateien++
-      const w = wörter(readFileSync(join(MATERIAL, d, f), 'utf8').replace(/\[seite:\s*\d+\]/g, ' '))
-      for (let i = 0; i + SHINGLE <= w.length; i++) set.add(w.slice(i, i + SHINGLE).join(' '))
-    }
-  }
-  let quellen = 0
-  const lies = (dir) => {
-    for (const e of readdirSync(dir, { withFileTypes: true })) {
-      const p = join(dir, e.name)
-      if (e.isDirectory()) lies(p)
-      else if (/.(md|txt)$/i.test(e.name)) {
-        quellen++
-        const w = wörter(readFileSync(p, 'utf8'))
-        for (let i = 0; i + SHINGLE <= w.length; i++) set.add(w.slice(i, i + SHINGLE).join(' '))
-      }
-    }
-  }
-  // Nur die Quellenordner (q-…). Arbeitsnotizen daneben (_pruefung, _briefs)
-  // zitieren die Einheit selbst und wuerden jede Zeile als Leck melden.
-  if (ARCHIV) for (const d of readdirSync(ARCHIV)) if (d.startsWith('q-')) lies(join(ARCHIV, d))
-  return dateien ? { set, dateien, quellen } : null
-}
-
-/** Laengste woertliche Uebernahme in `text`, als { woerter, auszug }. */
-function laengsteUebernahme(text, lm) {
-  const w = wörter(text)
-  let best = 0, bestStart = 0, run = 0
-  for (let i = 0; i + SHINGLE <= w.length; i++) {
-    if (lm.set.has(w.slice(i, i + SHINGLE).join(' '))) {
-      run++
-      if (run > best) { best = run; bestStart = i - run + 1 }
-    } else run = 0
-  }
-  if (!best) return null
-  const n = best + SHINGLE - 1
-  return { woerter: n, auszug: w.slice(bestStart, bestStart + Math.min(n, 12)).join(' ') + ' …' }
-}
-
-function* strings(node, pfad = '') {
-  if (typeof node === 'string') yield [pfad, node]
-  else if (Array.isArray(node)) for (let i = 0; i < node.length; i++) yield* strings(node[i], `${pfad}[${i}]`)
-  else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) yield* strings(v, pfad ? `${pfad}.${k}` : k)
 }
 
 // ------------------------------------------------------------ Eigene Checks
