@@ -115,7 +115,17 @@ vorgehen:
 ### 4. Abschluss des Durchgangs
 
 - Grün: ein Commit «Einheit <ordner> (bbw-hko-heft-v42)» mit Einheit,
-  Quellenkarten dieser Einheit, Bericht und den zwei Index-Dateien. Kein Push.
+  Quellenkarten dieser Einheit, **dem Bauplan**
+  (`docs/cloud-run/bauplaene/<ordner>.md`), Bericht und den zwei
+  Index-Dateien. Kein Push. Der Bauplan gehört in denselben Commit wie die
+  Einheit — sonst ist die Einheit live und ihr Bauplan liegt unversioniert
+  im Arbeitsbaum (so geschehen bei 13 Bauplänen bis 07.10.2026).
+- Vor dem Commit, nach dem gezielten `git add`:
+  `node scripts/check-leck.mjs --staged` — kein Fehler, keine Warnung.
+  Bauplan und Bericht prüft `check-all` nicht. Ein Treffer wird an der
+  gemeldeten Stelle umformuliert (eigene Worte plus Kapitel/Seite bzw.
+  Karten-ID) — im Bauplan nur diese Stelle, sonst bleibt er, wie er
+  freigegeben ist.
 - Eine kurze Nachricht: Ordner · grün oder nicht erzeugbar · was vor dem
   Druck gegengehört werden muss · wie viele Baupläne noch in der Schlange sind.
 - Bei `/loop`: nächsten Durchgang sofort einplanen (kürzeste Wartezeit), es
