@@ -360,3 +360,19 @@ die Befunde zu `abschluss.loesung` lösen sich in Phase 6 und 7. Jeder andere
 Befund zu `spuren.*` oder zu einer eingebundenen Karte wird sofort behoben.
 `check-einheiten` und die Leck-Prüfung laufen im Tor
 (`references/phase-9-tor.md`).
+
+**Die Lösungsseite der Medien-Spur läuft am leichtesten über.** Im Dokument
+«Lösungen» steht LF3 auf S. 2, LF4 und die Vertiefungen auf S. 3. In den
+Läufen lief S. 3 bis 178 px über, ohne dass ein Budget verletzt war; seit E38
+führt `check-v42` dafür gemessene Budgets (`quellen[].erwartung`, die Summe der
+Lösungsseite je Spur) — eine notwendige Grenze, keine hinreichende. Der
+Executor misst darum sein Heft **und** sein Dokument
+«Lösungen», bevor er abgibt (`references/phase-6-abschluss.md` §6,
+`references/lauf.md` §6). (Herkunft: Berichte `2026-10-03-121` §11 Nr. 2,
+`2026-10-03-221` §13 Nr. 1–2, `2026-10-04-331` §10.)
+
+**Wer `fall.json` schreibt:** Führt eine Spur eine erfundene Zahl oder Angabe
+ein, die die Situation nicht nennt (in LF4, in der Denkhilfe, in einer
+Lösung), trägt der Executor des Hefts sie in seine Teildatei `fall.<A|B>.json`
+nach (`references/phase-4-heft-kern.md`, `references/belege.md` §6) — nie ein
+Audit. (Herkunft: Auftrag 10, Stufe A; E38.)

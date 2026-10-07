@@ -28,6 +28,7 @@ import {
 import type { Block, Callout, Deck, DeckOptions, DeckSlide, Palette, Section } from './deck-builder'
 import { SPUR_NAME_LS, loesungenModell } from './loesungen-v42'
 import { landingUrl, qrSvg } from './qr'
+import { quelleEmbedSrc } from './quelle-embed'
 import { RUBRIK_PUNKTE_MAX, RUBRIK_ZIELPUNKTZAHL, punkteLabel } from './rubrik-skala'
 import { SPUR_KEYS } from './spuren'
 import type {
@@ -40,6 +41,7 @@ import type {
   ProduktBild,
   ProduktBildBlock,
   Quelle,
+  QuelleKarte,
   SetJson,
   SituationJson,
   SpurKey,
@@ -77,6 +79,15 @@ export function deckSourceV42(d: EinheitFullSet | null | undefined, spur?: SpurK
   if (!hefte.length) return null
   return { id: d.id, set: d.set, prinzip: d.prinzip, kn: d.kn, hefte, begleiter: d.begleiter?.raw ?? '', spur: wahl }
 }
+
+/**
+ * Wo die Fassungen der anderen Spuren liegen (Spur → href). Das Deck zeigt genau eine Spur;
+ * mit dieser Angabe verlinkt die Titelfolie die anderen — auf der Plattform `?spur=…`, im
+ * ZIP die Nachbardatei. Ohne Angabe steht dort kein Wechsel.
+ */
+export type SpurLinks = Partial<Record<SpurKey, string>>
+
+export type DeckOptionsV42 = DeckOptions & { spurLinks?: SpurLinks }
 
 /** Gibt es im Deck mindestens eine Lösung? (Für den Zusatz «mit Lösungen» am Knopf.) */
 export function deckV42HatLoesungen(src: EinheitSourceV42 | null | undefined): boolean {
@@ -129,6 +140,33 @@ function verortung(q: Quelle): string {
 }
 
 const herkunft = (q: Quelle) => [q.herausgeber, datumCh(q.datum)].filter(Boolean).join(', ')
+
+/** Wie `esc`, dazu Anführungszeichen — für Werte in HTML-Attributen. */
+const attr = (s: unknown) => esc(s).replace(/"/g, '&quot;')
+
+/**
+ * Knöpfe einer Quelle auf der Folie. Audio und Video (SRF mit URN, E28) spielen im Deck:
+ * der Knopf trägt die Player-Adresse, die Shell öffnet sie als Überlagerung — geladen wird
+ * erst beim Klick. Alles andere öffnet in einem neuen Tab; bei Audio/Video bleibt dieser
+ * Link als Ausweg stehen. `ersatz`: leiser gesetzt und als Ersatzquelle beschriftet.
+ */
+function quelleKnoepfe(q: QuelleKarte, ersatz = false): string {
+  if (!q) return ''
+  const embed = quelleEmbedSrc(q)
+  const typ = TYP_ETIKETT[q.typ] || 'Quelle'
+  const play = embed
+    ? `<button type="button" class="v-play${ersatz ? ' zweit' : ''}" data-embed-src="${attr(embed)}" data-embed-title="${attr(
+        `${typ} · ${q.titel}`
+      )}">▶ ${ersatz ? 'Ersatzquelle abspielen' : `${typ} hier abspielen`}</button>`
+    : ''
+  const link = voll(q.url)
+    ? `<a class="v-link${ersatz || embed ? ' zweit' : ''}" href="${attr(q.url)}" target="_blank" rel="noopener noreferrer">${
+        embed ? (ersatz ? '' : 'Bei SRF öffnen') : ersatz ? 'Ersatzquelle öffnen' : 'Quelle öffnen'
+      } ↗</a>`
+    : ''
+  // Ersatzquelle mit Player: der Abspielknopf genügt, der zweite Link fiele ohne Text aus.
+  return play + (ersatz && embed ? '' : link)
+}
 
 /** Ordner der Einheit aus der Heft-ID (wie im Heft, S. 3). */
 const ordnerVon = (sit: SituationJson, fallback: string) => (sit.id || '').replace(/_hf_[A-Za-z]$/, '') || fallback
@@ -338,7 +376,7 @@ function ehNotiz(titel: string, eh?: Erwartungshorizont): string | null {
 /* Deck                                                                */
 /* ------------------------------------------------------------------ */
 
-export function buildDeckV42(src: EinheitSourceV42): Deck {
+export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): Deck {
   const { set, prinzip, kn, hefte, spur } = src
   const secs = parseBegleiterSections(src.begleiter)
   // Der v4.2-Begleiter zählt anders als der alte (5 = Quellen-Stand, 6 = Auftrag, 7 = KN) —
@@ -361,6 +399,11 @@ export function buildDeckV42(src: EinheitSourceV42): Deck {
   const einheitTitel = set.einheit_titel || (set as any).modul_titel || prinzip.topic_slug || 'Unterrichtsdeck'
   const aspektePaare = ohneKommentare<string>(prinzip.aspekte)
   const modulTitel: string | undefined = (set as any).modul_titel
+  // Das Deck zeigt eine Spur. Wer die falsche Fassung geöffnet hat, vermisst sonst Quelle,
+  // LF3/LF4 und deren Lösungen der anderen — darum sagt die Titelfolie es und führt hinüber.
+  const wechsel = SPUR_KEYS.filter((k) => k !== spur && voll(spurLinks[k]))
+    .map((k) => `<a href="${attr(spurLinks[k])}">Zur Fassung ${esc(SPUR_NAME_LS[k])} →</a>`)
+    .join('')
   slides.push({
     id: 'titel',
     accent: BRAND,
@@ -380,6 +423,9 @@ export function buildDeckV42(src: EinheitSourceV42): Deck {
           { text: `Spur ${spurName}` },
         ],
       },
+      ...(wechsel
+        ? [raw(`<div class="v-spur">Quelle, Leitfragen 3 und 4 und ihre Lösungen stehen hier in der Spur ${esc(spurName)}.${wechsel}</div>`)]
+        : []),
     ],
     notes: notesFrom(`Einstieg — Überblick über die Einheit (Fassung: Spur ${spurName}).`, [
       ...co(sek0, ['hinweis']),
@@ -551,7 +597,9 @@ export function buildDeckV42(src: EinheitSourceV42): Deck {
           pflicht.titel
         )}</div><div class="v-q-h">${esc(herkunft(pflicht))}</div>${
           pflicht.kurzbeschrieb ? `<div class="v-q-b">${esc(pflicht.kurzbeschrieb)}</div>` : ''
-        }<div class="v-q-m">${[ort ? `<b>Ausschnitt:</b> ${esc(ort)}` : '', lang ? `<b>Länge:</b> ${esc(lang)}` : ''].filter(Boolean).join(' · ')}</div><div class="v-q-m"><b>QR-Seite:</b> ${esc(url.replace(/^https?:\/\//, ''))}</div></div><div class="v-q-qr">${qrSvg(url)}</div></div>`
+        }<div class="v-q-m">${[ort ? `<b>Ausschnitt:</b> ${esc(ort)}` : '', lang ? `<b>Länge:</b> ${esc(lang)}` : ''].filter(Boolean).join(' · ')}</div><div class="v-q-m"><b>QR-Seite:</b> ${esc(url.replace(/^https?:\/\//, ''))}</div><div class="v-qk">${quelleKnoepfe(pflicht)}${
+          pflicht.ersatz ? quelleKnoepfe(pflicht.ersatz, true) : ''
+        }</div></div><div class="v-q-qr">${qrSvg(url)}</div></div>`
       } else {
         const anker = hf.quellen_anker?.find((a) => a.ref && raster!.knoten_ref!.startsWith(a.ref))
         karteHtml = `<div class="v-q"><div class="v-q-txt"><div class="v-q-k">Lehrmittel-Abschnitt</div><div class="v-q-t">${esc(
@@ -706,7 +754,7 @@ export function buildDeckV42(src: EinheitSourceV42): Deck {
               q.titel
             )}</b>${ort ? `<span class="v-ort">Ausschnitt: ${esc(ort)}</span>` : ''}${
               q.leitfrage_vertiefung ? `<span class="v-frage">${esc(q.leitfrage_vertiefung)}</span>` : ''
-            }</div></div>`
+            }</div><div class="v-qk">${quelleKnoepfe(q)}</div></div>`
           })
           .join('')
         sub('kasten', k.titel || 'Vertiefung', {
@@ -1124,6 +1172,10 @@ const V42_CSS = `
   .v-hinweis { background: var(--acc-soft); color: var(--acc-dark); border-radius: 14px; padding: 12px 20px; font-size: 25px; line-height: 1.3; font-weight: 600; }
   .v-hinweis.v-auf { font-size: 29px; } .v-hinweis.v-auf.f2 { font-size: 26px; } .v-hinweis.v-auf.f3 { font-size: 23px; }
   .v-mini { font-size: 22px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--acc-dark); }
+  /* Titelfolie: Wechsel zur Fassung der anderen Spur — für die Lehrperson, nicht am Beamer */
+  .v-spur { font-size: 24px; line-height: 1.3; font-weight: 600; color: #4a5a51; }
+  .v-spur a { margin-left: .6em; color: var(--acc-dark); font-weight: 750; text-decoration: underline; text-underline-offset: 4px; }
+  body.audience .v-spur { display: none; }
 
   /* Quellenkarte */
   .v-q { display: flex; gap: 32px; align-items: center; background: #fff; border-radius: 20px; border-left: 10px solid var(--acc); padding: 22px 28px; }
@@ -1136,6 +1188,14 @@ const V42_CSS = `
   .v-q-qr { flex: 0 0 250px; text-align: center; }
   .v-q-qr svg { width: 230px; height: 230px; display: block; margin: 0 auto; }
   .v-ort { display: block; margin-top: 6px; font-size: .82em; color: #5c6b63; }
+  /* Knöpfe einer Quelle: abspielen (Überlagerung der Shell) bzw. in neuem Tab öffnen */
+  .v-qk { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+  .v-qk:empty { display: none; }
+  .v-play, .v-link { display: inline-flex; align-items: center; gap: .4em; font: inherit; font-size: 24px; font-weight: 750; line-height: 1.2;
+    padding: 10px 22px; border-radius: 999px; border: 2px solid var(--acc); background: var(--acc); color: #fff; text-decoration: none; cursor: pointer; }
+  .v-play.zweit, .v-link.zweit { background: #fff; color: var(--acc-dark); }
+  .v-play:hover, .v-link:hover { filter: brightness(.94); }
+  .card .v-qk { margin-top: 12px; } .card .v-play, .card .v-link { font-size: 21px; padding: 8px 18px; }
   .v-frage { display: block; margin-top: 8px; }
 
   /* Schritte und Abgaben */
@@ -1186,6 +1246,7 @@ const V42_CSS = `
 /* ------------------------------------------------------------------ */
 
 /** Eigenständiges Deck — von der Plattform ausgeliefert und im ZIP mitgegeben. */
-export function buildStandaloneDeckHtmlV42(src: EinheitSourceV42, deckId: string, opts: DeckOptions = {}): string {
-  return renderStandaloneDeckHtml(buildDeckV42(src), deckId, { ...opts, extraCss: V42_CSS + (opts.extraCss ?? '') })
+export function buildStandaloneDeckHtmlV42(src: EinheitSourceV42, deckId: string, opts: DeckOptionsV42 = {}): string {
+  const { spurLinks, ...rest } = opts
+  return renderStandaloneDeckHtml(buildDeckV42(src, spurLinks), deckId, { ...rest, extraCss: V42_CSS + (rest.extraCss ?? '') })
 }

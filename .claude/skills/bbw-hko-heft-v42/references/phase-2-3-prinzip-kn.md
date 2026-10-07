@@ -132,7 +132,7 @@ Je Einheit hergeleitet wird nur `fall_ausschluss_hefte_und_auftrag`: die Begriff
 3. Er ist kein Kernbegriff der Hefte: nicht in `konzepte`, nicht in einem Glossarbegriff, nicht in der Karte einer gewählten Quelle (Titel, Kurzbeschrieb).
 4. Zwei bis fünf Begriffe: der Gegenstand, das Dokument oder Angebot, eine Beteiligte oder ein Ort, wenn sie den Fall tragen.
 
-Fest gesperrt in jeder Einheit (E24, im Skript verdrahtet): «Leasing», «Konsumkredit», «Kleinkredit», «E-Bike», «Ebike», «Mobilität». Kein Heft, kein Auftrag, kein Glossar, keine Quellenkarte darf sie enthalten. Braucht der Gegenstand der Einheit eines davon, ist sie nicht erzeugbar (SKILL.md §6).
+Fest im Skript gesperrte Wörter gibt es nicht mehr: E30 hat die sechs Wörter des Piloten aufgehoben. Der Fall-Ausschluss einer Einheit ist genau diese Liste.
 
 Leere Liste = `ERR_V42_R9`.
 
@@ -200,7 +200,7 @@ Name von Kriterium 3, Muster «<Adjektiv zum Aspekt>es Prinzip»: Wirtschaft →
 **Regel für die Stufentexte.** Sie werden zeichengenau in beide Hefte und in den Auftrag kopiert (`wortlaut` in `regel6`, `ERR_V42_R6`) und müssen auf Heft-Produkt, Auftrag und KN gleichermassen passen. Darum nennt kein Stufentext
 
 - einen Gegenstand des KN-Falls,
-- einen Begriff aus `fall_ausschluss_hefte_und_auftrag` oder ein fest gesperrtes Wort (2.9),
+- einen Begriff aus `fall_ausschluss_hefte_und_auftrag` (2.9),
 - ein Fachwort, das nur in einem der zwei Hefte vorkommt.
 
 Die Stufen beschreiben die Leistung, nicht den Stoff: «Fachbegriffe der Einheit korrekt und zur Situation passend verwendet», nicht eine Liste von Begriffen in Klammern. Den Stoff trägt im Heft `indikator_produkt`. Stufe 3 von Kriterium 3 darf «übertragen» heissen: Die Übertragung ist in jedem Heft über den Transfer-Ast des Begriffsnetzes gedeckt (S. 8, Ast «gilt auch bei …», `mindmap_aeste[3]` und `abschluss.loesung.transfer`) — diese Stelle nennt der Bericht als Beleg. Die Ausnahme des Skripts für `stufen` (E8) ist ein Notbehelf der Gold-Einheit, keine Erlaubnis.
@@ -223,7 +223,7 @@ Bauplan» vermerkt. Ohne Eintrag in §9 schlägt die Zeile fehl.
 
 1. **Fall neu.** Gegenstand, Beteiligte, Zahlen und Dokument der Szene kommen in Bauplan §4 (A, B) und §6 (Auftrag) nicht vor.
 2. **Lebensbereiche paarweise verschieden:** A, B, `auftrag_lebensbereich`, KN-Fall — sechs Paare, jedes einzeln.
-3. **Fall-Ausschluss tragfähig:** jeder Begriff ≥ 5 Zeichen, in keinem `konzepte`-Eintrag, in keiner Karte der gewählten Quellen, in keinem Stufentext; kein fest gesperrtes Wort in Titeln und Produkten des Bauplans.
+3. **Fall-Ausschluss tragfähig:** jeder Begriff ≥ 5 Zeichen, in keinem `konzepte`-Eintrag, in keiner Karte der gewählten Quellen, in keinem Stufentext.
 4. **`modi_kn`** = Vereinigung der `sprachmodi` der drei `kn_typen`, als Menge.
 5. **Abdeckung Modi:** `modi_kn` ist der Gerüst-Wert (2.4). Jeder Modus aus `modi_kn` steht in `modi_pro_heft.A`, `modi_pro_heft.B` oder `modi_auftrag`. Ausnahme nur der Sonderfall «mehr als zwei», und dann steht die Lücke in `modi_auftrag_herleitung` und im Bericht.
 6. **Modi der Hefte:** jedes Element von `modi_pro_heft[L]` steht in den `sprachmodi` einer Kompetenz dieses Hefts (geführt); ein Rezeptionsmodus, den das Heft auf S. 3 nur übt, steht nicht darin; kein Rezeptionsmodus mündlich oder audiovisuell bei einem Heft mit Spur `ohne_medien`.

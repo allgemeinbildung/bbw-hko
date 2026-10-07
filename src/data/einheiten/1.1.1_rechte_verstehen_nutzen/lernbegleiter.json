@@ -3,108 +3,115 @@
   "set_ref": "1.1.1_rechte_verstehen_nutzen_set",
   "prinzip_ref": "1.1.1_rechte_verstehen_nutzen_prinzip",
   "kn_ref": "1.1.1_rechte_verstehen_nutzen_kn",
-  "version": "1.0.0",
-  "erstellt_am": "2026-06-17",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
   "lernbegleiter": {
     "version": "1.0",
     "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
-    "ziel": "Sie nutzen die KI als Lerncoach, um den Stoff dieser Unit zu wiederholen und sich gezielt auf einen möglichen Kompetenznachweis vorzubereiten — ohne dass die KI die Arbeit für Sie macht.",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
     "kompetenzversprechen": "Ich kläre Tatbestand und Rechtsgrundlage aus geeigneten Quellen, beurteile meine Rolle und Verantwortung gegenüber dem Adressaten und beantworte eine rechtliche Anfrage schriftlich, begründet und adressatengerecht.",
     "ki_frei_zuerst": {
-      "auftrag": "Bevor Sie die KI nutzen: Schätzen Sie ehrlich ein, wie sicher Sie sich bei den drei Teilen des Kompetenzversprechens fühlen. Markieren Sie für jeden Punkt 1 (noch unsicher) bis 5 (sitzt). Genau die Punkte mit 1-3 üben Sie danach zuerst.",
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
       "selbsteinschaetzung": [
-        "Ich kläre Tatbestand und Rechtsgrundlage aus geeigneten Quellen und unterscheide Tatbestand, Rechtslage und Rechtsfolge (Kap. 1.3, 1.4, 20.8).",
-        "Ich beurteile meine Rolle und Verantwortung gegenüber dem Adressaten und benenne, wo meine Auskunft nicht abschliessend ist (Kap. 18.1).",
-        "Ich beantworte eine rechtliche Anfrage schriftlich, begründet und adressatengerecht nach Anlass-Absicht-Begründung-Schluss und 3B-Schema (Kap. 17.3, 17.4)."
+        "Ich kann Tatbestand und Rechtslage aus dem Lehrmittel klären (Kap. 1.3 und 1.4).",
+        "Ich kann meine Rolle einschätzen und sage offen, was ich nicht sicher weiss.",
+        "Ich kann eine begründete Antwort zum Recht schreiben, die zur Leserin/zum Leser passt."
       ]
     },
+    "begriffe": [
+      "Lehrvertrag",
+      "Rechte und Pflichten Lernende",
+      "Pflichten Berufsbildende",
+      "Treuepflicht",
+      "Geschäftsgeheimnis",
+      "Lohnabzüge",
+      "Tatbestand",
+      "Rechtslage",
+      "Rechtsfolge",
+      "Datenschutz",
+      "Suchstrategie",
+      "3B-Schema",
+      "Geschäftsbrief"
+    ],
     "strategie_karten": [
       {
         "key": "retrieval",
-        "technik": "Abfragen lassen (Retrieval)",
-        "wann": "Zum Wiederholen von Begriffen und Regeln — Tatbestand, Rechtslage, Rechtsfolge, Rechte und Pflichten im Lehrvertrag, 3B-Schema, Briefaufbau.",
-        "prompt_basis": "Stell mir nacheinander 5 Prüfungsfragen zum Thema Rechte und Pflichten im Lehrverhältnis (Tatbestand-Rechtslage-Rechtsfolge, Lohnabzug, Treuepflicht, 3B-Schema, Briefaufbau). Gib mir die Lösung erst, nachdem ich geantwortet habe.",
-        "prompt_fortgeschritten": "Frag mich im Wechsel ab: eine Wissensfrage zu einem Rechtsbegriff, dann eine Anwendungsfrage zu einem kurzen Fall. Bewerte meine Antwort knapp und stell die nächste Frage erst, wenn ich nachgebessert habe.",
-        "warnung": "Lassen Sie sich die Lösung wirklich erst nach Ihrer Antwort geben — sonst üben Sie Wiedererkennen statt Abrufen, und im KN steht die Antwort nicht vor Ihnen."
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Begriffe zum Lehrvertrag erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Lehrvertrag in der Schweiz. Frag mich ab zu: Lehrvertrag, Treuepflicht, Lohnabzüge, Pflichten Berufsbildende. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Lehrmittel ab (Kap. 1.4), gilt das Lehrmittel."
       },
       {
         "key": "feynman",
-        "technik": "Selbst erklären (Feynman)",
-        "wann": "Wenn Sie prüfen wollen, ob Sie das TLR-Schema wirklich verstanden haben und nicht nur auswendig können.",
-        "prompt_basis": "Ich erkläre dir jetzt mit eigenen Worten, wie das Schema Tatbestand-Rechtslage-Rechtsfolge funktioniert. Hör zu und sag mir, wo meine Erklärung Lücken oder Fehler hat — ohne mir gleich die perfekte Version zu liefern.",
-        "prompt_fortgeschritten": "Ich erkläre dir, warum man einen Rechtsfall zuerst in Tatbestand zerlegt, bevor man die Rechtsfolge nennt. Stell mir danach zwei Rückfragen, die eine Lehrperson stellen würde, um zu prüfen, ob ich es wirklich verstanden habe.",
-        "warnung": "Wenn die KI Ihnen die fertige Erklärung schenkt, lernen Sie nichts. Bitten Sie sie um Lücken-Hinweise und Rückfragen, nicht um die Musterlösung."
-      },
-      {
-        "key": "mock_transfer",
-        "technik": "Übungsfall lösen (Transfer-Simulation)",
-        "wann": "Zum Üben des Transfers: ob Sie das TLR-Schema und die Quellenprüfung auf einen neuen, unbekannten Rechtsfall übertragen.",
-        "prompt_basis": "Erfinde einen NEUEN rechtlichen Anfragefall im Lehrverhältnis — anderer Beruf und ein anderes Thema als der Lohnabzug für einen Kratzer am Werkstück (zum Beispiel Überstunden, Ferienanspruch oder Geschäftsgeheimnis). Gib mir nur die Situation. Ich löse sie nach Tatbestand-Rechtslage-Rechtsfolge; danach bewerte meine Lösung nach den Kriterien Fachkorrektheit, Argumentation, Rechtliches Prinzip und Position/Werthaltung.",
-        "prompt_fortgeschritten": "Gib mir einen neuen Anfragefall mit einer klaren Zwickmühle zwischen schnell antworten und sauber recherchieren. Nachdem ich entschieden habe, spiel die Gegenseite und prüfe, ob meine Begründung und meine Quelle standhalten.",
-        "warnung": "Wichtig: Der Übungsfall muss ein ANDERER sein als der Lohnabzug-Fall um 21 Uhr aus Ihrem KN — anderer Beruf, anderes Rechtsthema. Die KI darf Ihnen keine Musterlösung für genau Ihren KN-Fall geben; Sie üben die Methode, nicht eine auswendig gelernte Antwort."
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff aus Kap. 1.4 in eigenen Worten erklären wollen.",
+        "prompt_basis": "Thema: Lehrvertrag in der Schweiz. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir zwei Lücken als Fragen. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, in Kap. 1.4, bevor Sie etwas ändern."
       },
       {
         "key": "uebungs_feedback",
-        "technik": "Feedback auf einen Übungsversuch",
-        "wann": "Wenn Sie etwas Eigenes geschrieben haben (Fall-Lösung, Antwortschreiben, Stellungnahme) und wissen wollen, was fehlt.",
-        "prompt_basis": "Hier ist mein Antwortschreiben zu einem rechtlichen Anfragefall: [dein Text]. Sag mir nach dem Kriterium «Argumentation» (3B-Schema), was noch fehlt — nenne nur die Lücken, gib mir KEINE fertige Musterlösung.",
-        "prompt_fortgeschritten": "Hier ist meine Falllösung nach Tatbestand-Rechtslage-Rechtsfolge: [dein Text]. Prüfe, ob ich die Quelle korrekt zitiert und die offene Stelle ehrlich markiert habe. Markiere drei Schwächen als Fragen an mich, damit ich selbst nachbessere.",
-        "warnung": "Bitten Sie die KI ausdrücklich um Lücken und Fragen statt um die Verbesserung. Sobald sie Ihren Text neu schreibt, ist es ihr Text — und im KN sitzen Sie allein da."
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie zu einer Begründung eine Rückmeldung wollen: aus Fall-Mappe, Antwortschreiben oder einem Übungsfall im selben Chat.",
+        "prompt_basis": "Thema: Lehrvertrag in der Schweiz. Hier ist meine Begründung: [meine Begründung]. Prüfe die Argumentation: Behauptung, Begründung, Beispiel. Nenne mir zwei Lücken als Fragen. Schreib meine Begründung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Lehrvertrag in der Schweiz. Hier ist meine Begründung: [meine Begründung]. Prüfe zwei Dinge. Argumentation: Behauptung, Begründung, Beispiel. Rechtliches Prinzip: Tatbestand, Rechtslage und Rechtsfolge getrennt, mit Artikel. Nenne mir je eine Lücke als Frage. Schreib meine Begründung nicht neu. Sag mir nicht, ob das Recht stimmt. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI nennt Lücken, sie schreibt Ihre Begründung nicht. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie vor dem Kompetenznachweis an einem neuen Fall üben wollen.",
+        "prompt_basis": "Thema: Lehrvertrag in der Schweiz. Erfinde einen neuen, kurzen Fall zu Ferien oder Probezeit. Mitlernende fragen mich darin um Rat. Der Fall handelt nicht von Lohnabzug, Überstunden oder Handy-Nummer. Warte auf meine Antwort. Nenne mir danach zwei Lücken bei der Argumentation: Behauptung, Begründung, Beispiel. Schreib keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Lehrvertrag in der Schweiz. Erfinde einen neuen, kurzen Fall zur Berufsfachschule oder zu Krankheit in der Lehre. Der Fall handelt nicht von Lohnabzug, Überstunden oder Handy-Nummer. Warte auf meine Antwort. Prüfe danach zwei Dinge. Rechtliches Prinzip: Tatbestand, Rechtslage und Rechtsfolge getrennt, mit Artikel. Position / Werthaltung: in Ich-Form, was sicher ist, wo ich weiterverweise. Nenne mir je eine Lücke als Frage. Schreib keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
       },
       {
         "key": "repetitionsplan",
-        "technik": "Repetitionsplan und Karteikarten",
-        "wann": "Zum Strukturieren der letzten Lernphase vor dem KN.",
-        "prompt_basis": "Erstell mir aus diesen Themen einen Repetitionsplan für drei Lernabende: Rechte und Pflichten im Lehrvertrag, Tatbestand-Rechtslage-Rechtsfolge, adressatengerechtes Antwortschreiben (3B-Schema, Briefaufbau). Pro Abend ein Schwerpunkt mit je einer kurzen Übung.",
-        "prompt_fortgeschritten": "Erstell mir 10 Karteikarten (Frage / Antwort) zu den Kernbegriffen dieser Unit. Sortier sie nach Schwierigkeit und markiere, welche eher Wissen und welche eher Anwendung prüfen.",
-        "warnung": "Karteikarten von der KI sind ein Entwurf, kein geprüfter Stoff: Gleichen Sie jede Antwort mit Ihrem Lehrmittel ab, bevor Sie damit lernen — gerade bei OR-Artikeln und Rechtsbegriffen."
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie die Tage bis zum Kompetenznachweis einteilen wollen.",
+        "prompt_basis": "Thema: Lehrvertrag in der Schweiz. Ich habe bis zum Kompetenznachweis [Anzahl] Tage Zeit. Mach mir einen Lernplan mit einer kurzen Aufgabe je Tag. Diese Begriffe will ich üben: Treuepflicht, Lohnabzüge, Pflichten Berufsbildende, Tatbestand, Rechtslage, Rechtsfolge. Schreib keine Erklärungen zu den Begriffen. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Lehrvertrag in der Schweiz. Mach mir Lernkarten nur mit Fragen, ohne Antworten. Ordne sie nach drei Themen: Rechte und Pflichten, Rechtsfälle lösen, schriftlich antworten. Schreib je Thema vier Fragen. Die Antworten schreibe ich selbst aus dem Lehrmittel. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf die Lernkarten schreiben Sie selbst aus dem Lehrmittel (Kap. 1.3, 1.4, 17.3 und 17.4). Ein Plan der KI ist nur ein Vorschlag."
       }
     ],
     "kn_typ_tracks": [
       {
         "typ": "fachgespraech",
         "label": "Fachgespräch",
-        "uebungsfokus": "Mündlich begründen unter Nachfragen — Sie erklären die Regel, wenden das TLR-Schema an und bewerten den Zielkonflikt zwischen Tempo und Sorgfalt.",
-        "prompt": "Simuliere ein kurzes Fachgespräch: Stell mir 5 mündliche Fragen steigender Schwierigkeit zu einem rechtlichen Anfragefall (Regel erklären, TLR-Schema anwenden, Tempo gegen Sorgfalt bewerten, mit dem Spickzettel-Vorgehen vergleichen, Verantwortung der Auskunft begründen). Reagiere auf meine Antwort mit einer Rückfrage, wie es eine Lehrperson täte."
+        "uebungsfokus": "Sie beantworten mündlich Fragen zu einem neuen Fall, von leicht zu schwer.",
+        "prompt": "Thema: Lehrvertrag in der Schweiz. Erfinde einen neuen, kurzen Fall zur Probezeit, nicht zu Lohnabzug, Überstunden oder Handy-Nummer. Stell mir dazu drei Fragen, eine nach der anderen, von leicht zu schwer. Antworte in kurzen, einfachen Sätzen."
       },
       {
         "typ": "mini_case_schriftlich",
         "label": "Mini Case schriftlich",
-        "uebungsfokus": "Schriftlicher Transfer: einen neuen Fall analysieren, den Kanal begründet wählen und ein Antwortschreiben mit zitiertem Artikel und ehrlich markierter offener Stelle verfassen.",
-        "prompt": "Gib mir einen neuen schriftlichen Anfragefall mit vier Aufgaben (Regel erklären, WhatsApp gegen formelle E-Mail unterscheiden, Kanal und Reihenfolge entscheiden, Antwort in E-Mail-Form verfassen). Ich schreibe meine Lösung; danach prüfe sie nach den Rubrik-Kriterien und nenne mir Lücken als Fragen — ohne Musterlösung."
+        "uebungsfokus": "Sie lösen schriftlich einen neuen Fall und begründen Ihre Antwort mit einer Quelle.",
+        "prompt": "Thema: Lehrvertrag in der Schweiz. Erfinde einen neuen, kurzen Fall zur Berufsfachschule, nicht zu Lohnabzug, Überstunden oder Handy-Nummer. Schreib keine Lösung. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
       },
       {
         "typ": "werkschau_transfer",
         "label": "Werkschau + Transfer-Reflexion",
-        "uebungsfokus": "Das eigene Prinzip benennen und seinen Transfer reflektieren: Was ist gleich, was anders, wann versagt es?",
-        "prompt": "Ich erkläre dir das Grundprinzip, das ich in dieser Unit gelernt habe (zuerst Quelle und Tatbestand klären, dann Rolle prüfen, dann adressatengerecht antworten). Stell mir die drei Transfer-Fragen (Prinzip in einem Satz, wie es in einem neuen Fall sichtbar wird, wann es versagt) und prüfe, ob meine Antworten konkret genug sind."
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Lehrvertrag in der Schweiz. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen, kurzen Fall dazu, nicht zu Lohnabzug, Überstunden oder Handy-Nummer. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
       }
     ],
     "rubrik_fokus": [
       {
         "dimension": "SuK",
-        "kriterien": [
-          "Fachkorrektheit",
-          "Argumentation"
-        ],
-        "so_uebst_du": "Lassen Sie sich zu Begriffen (Lehrvertrag, Tatbestand, Rechtslage, Rechtsfolge, Kanal, 3B-Schema) abfragen und prüfen Sie Ihre Begründung nach dem 3B-Schema gegen eine KI-Gegenfrage — jeden OR-Artikel aber immer im Lehrmittel gegenchecken."
+        "kriterien": ["Fachkorrektheit", "Argumentation"],
+        "so_uebst_du": "Mit «Abfragen lassen» und dem Übungsfall üben Sie richtige Begriffe und eine Begründung nach dem 3B-Schema."
       },
       {
         "dimension": "Ges",
-        "kriterien": [
-          "Rechtliches Prinzip",
-          "Position / Werthaltung"
-        ],
-        "so_uebst_du": "Üben Sie an neuen Fällen, Tatbestand, Rechtslage und Rechtsfolge sauber zu unterscheiden und Ihre Position als begründete Ich-Aussage zu formulieren, die den Zielkonflikt zwischen Tempo, Vollständigkeit und Ehrlichkeit benennt — und holen Sie sich Feedback auf Lücken, nicht auf eine fertige Lösung."
+        "kriterien": ["Rechtliches Prinzip", "Position / Werthaltung"],
+        "so_uebst_du": "Im Übungsfall trennen Sie Tatbestand, Rechtslage und Rechtsfolge und sagen in Ich-Form, was Sie sicher wissen und wo Sie weiterverweisen."
       }
     ],
-    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nicht beim Abgeben. Im Kompetenznachweis sitzen Sie allein da: Lassen Sie sich deshalb nie Ihre konkrete KN-Lösung schreiben, sondern üben Sie an anderen Fällen und an Lücken-Feedback. Und prüfen Sie jede rechtliche Aussage der KI im Lehrmittel oder Gesetzestext nach — Nummer und Inhalt.",
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nie beim Kompetenznachweis selbst. Dort arbeiten Sie allein und ohne KI.",
     "selbstcheck": [
-      "Ich habe zuerst KI-frei eingeschätzt, wo ich noch unsicher bin, und genau dort geübt.",
-      "Meine Übungsfälle waren andere als der Lohnabzug-Fall aus meinem möglichen KN.",
-      "Ich habe die KI um Lücken-Feedback gebeten, nicht um fertige Lösungen.",
-      "Ich habe jeden OR-Artikel der KI im Lehrmittel oder Gesetzestext nachgeschlagen.",
-      "Ich kann das Grundprinzip dieser Unit in einem Satz aus dem Kopf formulieren."
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Herausforderungen.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann Tatbestand, Rechtslage und Rechtsfolge ohne KI erklären."
     ]
   }
 }

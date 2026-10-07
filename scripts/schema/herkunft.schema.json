@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bbw-hko.ch/schema/herkunft.schema.json",
+  "title": "herkunft.json — Abstammung einer v4.2-Einheit, die aus einer anderen entstanden ist",
+  "description": "Liegt AUSSERHALB des Repos: <Quellenarchiv>/_pruefung/<ordnername>/herkunft.json. Geschrieben bei der Anpassung einer Einheit aus einer Vorlage; set.json führt dafür KEIN Feld (der Datenvertrag bleibt). Die Datei gibt es nur bei abgeleiteten Einheiten. check-belege liest sie: Eine abgeleitete Einheit braucht eigene belege.json und fakten.json, und ändert sich die Vorlage nach `stand_commit` in einem Lösungs- oder Faktenfeld, ist die Abgeleitete neu zu prüfen. Beschreibung: .claude/skills/bbw-hko-heft-v42/references/belege.md (ENTSCHEIDE E38).",
+  "type": "object",
+  "required": ["abgeleitet_von", "stand_commit"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "bbw-hko/herkunft@1" },
+    "einheit": { "$ref": "#/$defs/ordnername" },
+    "abgeleitet_von": { "description": "Ordnername der Vorlage unter src/data/einheiten/.", "$ref": "#/$defs/ordnername" },
+    "stand_commit": {
+      "description": "Git-Commit des Repos, dessen Stand der Vorlage übernommen wurde (7 bis 40 Hex-Zeichen).",
+      "type": "string",
+      "pattern": "^[0-9a-f]{7,40}$"
+    },
+    "bemerkung": { "type": "string" }
+  },
+  "$defs": {
+    "ordnername": { "type": "string", "pattern": "^[0-9]\\.[0-9]\\.[0-9]_[a-z0-9]+(?:_[a-z0-9]+)*$" }
+  },
+  "examples": [
+    { "format": "bbw-hko/herkunft@1", "einheit": "9.9.9_platzhalter_pruefen_3j", "abgeleitet_von": "9.9.9_platzhalter_pruefen", "stand_commit": "0000000" }
+  ]
+}

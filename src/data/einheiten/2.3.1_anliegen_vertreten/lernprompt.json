@@ -1,0 +1,114 @@
+{
+  "id": "2.3.1_anliegen_vertreten_lernprompt",
+  "set_ref": "2.3.1_anliegen_vertreten_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Anliegen vertreten». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Aus dieser Rolle heraus stellt sie andere Fragen.",
+        "thema_bezug": "Anliegen und gewählter Weg stehen in Ihrem Factsheet aus Heft A.",
+        "beispiel_basis": "Du bist eine Behörde, die über mein Anliegen entscheidet. Mein Anliegen und mein Weg: [mein Anliegen und Weg]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI spielt die Behörde nur; eine echte Behörde kann anders reagieren."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und wer Sie sind. So passen ihre Fragen besser zu Ihrer Lage.",
+        "thema_bezug": "Thema und Lehre sind hier der Kontext, den die KI braucht.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: politisch mitwirken in der Schweiz. Ich bin in der Lehre. Mein Anliegen und mein Weg: [mein Anliegen und Weg]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie verlangen von der KI, dass sie in einzelnen Schritten vorgeht. So sehen Sie jeden Schritt und können ihn einzeln prüfen.",
+        "thema_bezug": "Ihr erstes Argument steht auf Ihrer Diskussionskarte in Heft B. Die KI geht Behauptung, Begründung und Beispiel einzeln durch.",
+        "beispiel_basis": "Thema: politisch mitwirken in der Schweiz. Mein Argument: [mein erstes Argument]. Geh Schritt für Schritt vor. Erstens: Was ist meine Behauptung? Zweitens: Was ist meine Begründung? Drittens: Fehlt ein Beispiel? Schreib mein Argument nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist mein Lerncoach. Thema: politisch mitwirken in der Schweiz. Mein Anliegen und mein Weg: [mein Anliegen und Weg]. Geh mit mir drei Schritte durch, einen nach dem anderen. Schritt 1: Wer entscheidet? Schritt 2: Was muss diese Stelle mit meinem Weg tun? Schritt 3: Was folgt daraus für mich? Ich antworte, du zeigst mir Lücken. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Schritte sehen ordentlich aus, auch wenn einer falsch ist. Schlagen Sie jedes Recht und jede Zahl im Lehrmittel nach (Kap. 3.2 und 6.4).",
+        "baukasten": {
+          "rolle": [
+            "Du bist mein Lerncoach.",
+            "Du bist eine Behörde in der Schweiz."
+          ],
+          "kontext": [
+            "Thema: politisch mitwirken in der Schweiz.",
+            "Mein Argument: [mein erstes Argument].",
+            "Mein Anliegen und mein Weg: [mein Anliegen und Weg]."
+          ],
+          "aufgabe": [
+            "Geh Schritt für Schritt vor.",
+            "Zeig mir bei jedem Schritt, was fehlt.",
+            "Frag mich bei jedem Schritt zuerst."
+          ],
+          "format": [
+            "Nummeriere die Schritte.",
+            "Höchstens zwei Sätze je Schritt.",
+            "Antworte in kurzen, einfachen Sätzen."
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI Gründe gegen Ihre Position. So lernen Sie Einwände kennen, bevor jemand sie in der Diskussion bringt.",
+        "thema_bezug": "Ihre Position steht auf Ihrer Diskussionskarte in Heft B. Die KI nennt Einwände, und Sie entscheiden, welcher zählt.",
+        "beispiel_basis": "Thema: politisch mitwirken in der Schweiz. Meine Position: [meine Position]. Nenne mir zwei Einwände dagegen, je in einem Satz. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist in einer Diskussion die andere Seite. Thema: politisch mitwirken in der Schweiz. Meine Position: [meine Position]. Nenne mir einen Einwand aus Sicht von jemandem, der unentschieden ist. Nenne mir einen zweiten aus Sicht von jemandem, der klar dagegen ist. Bleib sachlich. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Ein Einwand der KI kann eine Killerphrase sein oder auf einer falschen Zahl stehen. Prüfen Sie ihn, bevor Sie darauf antworten.",
+        "baukasten": {
+          "rolle": [
+            "Du bist in einer Diskussion die andere Seite.",
+            "Du bist unentschieden.",
+            "Du bist klar dagegen."
+          ],
+          "kontext": [
+            "Thema: politisch mitwirken in der Schweiz.",
+            "Meine Position: [meine Position].",
+            "Wir diskutieren zu viert."
+          ],
+          "aufgabe": [
+            "Nenne mir zwei Einwände.",
+            "Nenne mir den Einwand, den du am häufigsten hörst.",
+            "Frag mich, wie ich auf den Einwand antworte."
+          ],
+          "format": [
+            "Je Einwand ein Satz.",
+            "Sag nicht, welcher Einwand stärker ist.",
+            "Antworte in kurzen, einfachen Sätzen."
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Mit Prompt 1 stellt die KI zwei Fragen zu Ihrem Anliegen und Ihrem Weg. Mit Prompt 2 fragt sie dort nach, wo Ihre Antwort am schwächsten war.",
+      "prompt_1": "Du bist eine Behörde in der Schweiz und entscheidest über mein Anliegen. Ich bin in der Lehre. Mein Anliegen und mein Weg: [mein Anliegen und Weg]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Bleib in deiner Rolle. Stell mir eine letzte Frage zu meiner schwächsten Antwort. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Schritt für Schritt denken",
+        "Gegenseite verlangen"
+      ],
+      "logik_und_ziel": "Mit Prompt 1 geht die KI Ihr Argument in drei Schritten durch und zeigt, was fehlt. Mit Prompt 2 nennt sie zwei Einwände gegen dasselbe Argument. Welcher Einwand zählt, entscheiden Sie.",
+      "prompt_1": "Thema: politisch mitwirken in der Schweiz. Mein Argument: [mein erstes Argument]. Geh Schritt für Schritt vor: Behauptung, Begründung, Beispiel. Zeig mir bei jedem Schritt, was fehlt. Schreib mein Argument nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Nimm jetzt die andere Seite ein. Nenne mir zwei Einwände gegen mein Argument, je in einem Satz. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: politisch mitwirken. Meine Erklärung: Eine Petition ist offen für alle Urteilsfähigen. Was fehlt? Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Sie ist nur für Stimmberechtigte offen. Es fehlt: Die Behörde muss sie nur zur Kenntnis nehmen.",
+      "pruefung": "Ich schlage im Glossar nach: offen für alle Urteilsfähigen. Die KI irrt hier. Die Kenntnisnahme stimmt, ich ergänze sie."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

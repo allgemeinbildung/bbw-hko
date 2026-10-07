@@ -1,0 +1,129 @@
+{
+  "id": "2.4.1_haltung_zeigen_lernbegleiter",
+  "set_ref": "2.4.1_haltung_zeigen_set",
+  "prinzip_ref": "2.4.1_haltung_zeigen_prinzip",
+  "kn_ref": "2.4.1_haltung_zeigen_kn",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — wiederholen und für den Kompetenznachweis üben",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann in einem Werk erkennen und beschreiben, welche Haltung es zeigt und wie es auf mich wirkt, meine eigene Haltung in einem gestalteten Beitrag zum Ausdruck bringen und ein Werk begründet und respektvoll rezensieren — auch wenn andere es anders sehen.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann beschreiben, welche Haltung ein Werk zeigt und wie es auf mich wirkt.",
+        "Ich kann meine eigene Haltung mit Bild und Wort zeigen.",
+        "Ich kann ein Werk begründet und fair beurteilen, auch wenn andere es anders sehen."
+      ]
+    },
+    "begriffe": [
+      "Haltung",
+      "Wert",
+      "Auswahl",
+      "Gewichtung",
+      "Wortwahl",
+      "Bildaufbau",
+      "Symbol",
+      "Wirkung",
+      "Raum für Deutung",
+      "Werkkommentar",
+      "Rezension",
+      "Beschreibung",
+      "Wertung",
+      "Stellungnahme",
+      "Argument",
+      "Behauptung",
+      "Begründung",
+      "Vorurteil",
+      "Empathie"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Begriffe der Einheit erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: mit Kunst Haltung zeigen. Frag mich diese Begriffe ab: Haltung, Symbol, Bildaufbau, Wirkung, Wertung, Argument. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihren Heften ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff kennen, ihn aber noch nicht gut erklären können.",
+        "prompt_basis": "Thema: mit Kunst Haltung zeigen. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir höchstens zwei Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Thema: mit Kunst Haltung zeigen. Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Trenne ich, was das Werk zeigt und wie es wirkt? Hat mein Urteil einen Grund und ein Beispiel? Nenne mir je eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: mit Kunst Haltung zeigen. Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Sage ich, was Wort, Bild oder Symbol bewirken? Steht meine Haltung in Ich-Form da, und sage ich, was andere anders sehen? Nenne mir je eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI zeigt Lücken, sie gibt keine Punkte. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Wissen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Thema: mit Kunst Haltung zeigen. Erfinde einen neuen Fall in fünf Sätzen: Jemand zeigt ein Werk, und andere sehen es anders. Nimm kein Plakat, keine Rezension und kein Bild für eine Wand. Stell mir dazu zwei Fragen, eine nach der anderen. Frag, was das Werk zeigt und wie es wirkt. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: mit Kunst Haltung zeigen. Erfinde einen neuen Fall in sechs Sätzen: Jemand zeichnet einen Comic für die Schülerzeitung und will darin Kritik zeigen. Nimm kein Plakat, keine Rezension und kein Bild für eine Wand. Stell mir drei Fragen, eine nach der anderen. Frag, was der Comic zeigt, wie er auf zwei Gruppen wirkt und wie deutlich ich wäre. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie wissen, wann der Kompetenznachweis ist, und Ihre Zeit einteilen wollen.",
+        "prompt_basis": "Thema: mit Kunst Haltung zeigen. Bis zum Kompetenznachweis habe ich [Zahl] Tage Zeit. Diese Begriffe übe ich noch: [meine Begriffe]. Mach mir einen Lernplan mit einer kurzen Aufgabe je Tag. Erkläre die Begriffe nicht. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: mit Kunst Haltung zeigen. Schreib mir zehn Lernkarten nur mit Fragen, ohne Antworten. Ordne sie nach zwei Themen: Plakat und Rezension. Nimm diese Begriffe: Haltung, Wert, Wortwahl, Bildaufbau, Symbol, Wirkung, Beschreibung, Wertung, Argument, Empathie. Die Antworten schreibe ich selbst. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf die Lernkarten schreiben Sie selbst aus dem Glossar in Ihren Heften."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie erklären an einem neuen Fall laut, was ein Werk zeigt und wie es wirkt.",
+        "prompt": "Thema: mit Kunst Haltung zeigen. Erfinde einen neuen Fall mit einem Werk. Nimm kein Plakat, keine Rezension, kein Bild für eine Wand. Stell mir zwei Fragen, eine nach der anderen: Was zeigt das Werk? Wie wirkt es? Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich und begründen Ihren Entscheid mit Beispiel.",
+        "prompt": "Thema: mit Kunst Haltung zeigen. Erfinde einen neuen Fall um ein Werk in vier Sätzen. Er endet mit der Frage: Soll es so bleiben? Nimm kein Plakat, keine Rezension, kein Bild für eine Wand. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: mit Kunst Haltung zeigen. Gelernt: [was ich gelernt habe]. Erfinde einen neuen Fall in vier Sätzen, kein Plakat, keine Rezension, kein Bild für eine Wand. Stell mir zwei Fragen, eine nach der anderen: Wo passt mein Satz, wo nicht? Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Üben Sie, Begriffe richtig zu verwenden (Karte «Abfragen lassen») und ein Urteil mit Beispiel zu begründen (Übungsfall hier)."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Kulturelles Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Üben Sie, Zeigen und Wirken eines Werks zu trennen und Ihre Haltung in Ich-Form zu sagen (Übungsfall hier)."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meine Haltung mit «weil» in einem Satz sagen."
+    ]
+  }
+}

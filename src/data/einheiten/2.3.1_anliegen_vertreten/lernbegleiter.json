@@ -1,0 +1,130 @@
+{
+  "id": "2.3.1_anliegen_vertreten_lernbegleiter",
+  "set_ref": "2.3.1_anliegen_vertreten_set",
+  "prinzip_ref": "2.3.1_anliegen_vertreten_prinzip",
+  "kn_ref": "2.3.1_anliegen_vertreten_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann ein politisches Anliegen formulieren, den Weg der Mitwirkung aufzeigen, der dazu passt, und meine begründete Meinung in einer Diskussion respektvoll vertreten — auch wenn andere es anders sehen.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann mein Anliegen in einem Satz sagen.",
+        "Ich kann zeigen, welcher Weg zu einem Anliegen passt.",
+        "Ich kann meine Position begründen und einen Einwand fair beantworten."
+      ]
+    },
+    "begriffe": [
+      "Menschenrecht",
+      "politisches Recht",
+      "Stimmrecht",
+      "Wahlrecht",
+      "Petition",
+      "Referendum",
+      "Initiative",
+      "Anliegen",
+      "Kenntnisnahme",
+      "Verbindlichkeit",
+      "Position",
+      "Behauptung",
+      "Begründung",
+      "Beispiel",
+      "Einwand",
+      "Killerphrase",
+      "Diskussionsregel",
+      "Konsens",
+      "Kompromiss",
+      "Dissens"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Begriffe der Einheit erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: politisch mitwirken in der Schweiz. Frag mich ab zu: Petition, Referendum, Initiative, Stimmrecht, Killerphrase, Kompromiss. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff kennen, ihn aber noch nicht gut erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: politisch mitwirken in der Schweiz. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir höchstens zwei Lücken. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Thema: politisch mitwirken in der Schweiz. Meine Lösung zum Übungsfall: [meine Lösung]. Prüfe: Erstens Argumentation: Ist meine Behauptung begründet und mit einem Beispiel gestützt? Zweitens Position / Werthaltung: Sage ich klar, was ich denke und warum? Nenne Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: politisch mitwirken in der Schweiz. Meine Lösung zum Übungsfall: [meine Lösung]. Prüfe: Erstens Fachkorrektheit: Sind die Begriffe richtig gebraucht? Zweitens Politisches Prinzip: Stimmt, wer entscheidet, und passt mein Weg dazu? Stell zu jeder Lücke eine Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Schlagen Sie jedes Recht und jede Zahl der KI im Lehrmittel nach. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie an einem neuen Fall üben wollen.",
+        "prompt_basis": "Thema: politisch mitwirken in der Schweiz. Erfinde einen neuen Fall: Eine Stelle entscheidet etwas, das mich betrifft. Nicht: Freibad, Stimmrechtsalter, Kurstage. Gib mir keine Lösung. Frag mich nach meinem Anliegen und meinem Weg. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "prompt_fortgeschritten": "Thema: politisch mitwirken in der Schweiz. Erfinde einen neuen Fall zu einem Wochenmarkt. Nicht: Freibad, Stimmrechtsalter, Kurstage. Gib mir keine Lösung. Stell mir eine Aufgabe zum Fall. Warte auf meine Lösung. Schreib sie nicht neu. Prüfe sie dann: Erstens Politisches Prinzip: Stimmt, wer entscheidet, und passt mein Weg dazu? Zweitens Argumentation: Ist meine Behauptung begründet und mit Beispiel gestützt? Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn der Kompetenznachweis ansteht und Sie gezielt repetieren wollen.",
+        "prompt_basis": "Thema: politisch mitwirken in der Schweiz. Ich habe [Anzahl] Tage bis zum Kompetenznachweis. Mach mir einen Lernplan: drei Lernzeiten, je 20 Minuten. Ich übe: Petition, Referendum, Initiative, Einwand, Konsens, Kompromiss, Dissens. Schreib keine Erklärungen. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: politisch mitwirken in der Schweiz. Schreib zwölf Fragen für Lernkarten, geordnet nach: Rechte, Wege der Mitwirkung, Diskussion. Begriffe: Menschenrecht, Stimmrecht, Wahlrecht, Petition, Referendum, Initiative, Kenntnisnahme, Behauptung, Einwand, Killerphrase, Konsens, Dissens. Schreib nur Fragen, keine Antworten. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Freie Zeiten und die Lernkarten-Antworten tragen Sie selbst ein. Die Antworten stehen im Glossar in Ihrem Heft."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie erklären mündlich einen Weg der Mitwirkung und vertreten Ihre Position zu einem neuen Fall.",
+        "prompt": "Thema: politisch mitwirken in der Schweiz. Erfinde einen neuen, kurzen Fall: Eine Stelle entscheidet etwas, das mich betrifft. Nicht: Freibad, Stimmrechtsalter, Kurstage. Stell mir dazu drei Fragen, eine nach der anderen. Frag auch nach meiner Position. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich: Sie erklären zwei Wege und begründen Ihre Wahl.",
+        "prompt": "Thema: politisch mitwirken in der Schweiz. Erfinde einen neuen, kurzen Fall: Eine Stelle entscheidet etwas, das mich betrifft. Zwei Wege sind möglich. Nicht: Freibad, Stimmrechtsalter, Kurstage. Stell mir dazu zwei Aufgaben, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: politisch mitwirken in der Schweiz. Das habe ich gelernt: [was ich gelernt habe]. Erfinde dazu einen neuen, kurzen Fall: Eine Stelle entscheidet etwas, das mich betrifft. Nicht: Freibad, Stimmrechtsalter, Kurstage. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie üben mit «Abfragen lassen», die Begriffe richtig zu brauchen, und am Übungsfall, mit Beispiel zu begründen."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Politisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie zeigen am Übungsfall auf dieser Seite, wer entscheidet, welcher Weg passt und wo Sie selbst stehen."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meinen Weg und meine Position ohne KI erklären."
+    ]
+  }
+}

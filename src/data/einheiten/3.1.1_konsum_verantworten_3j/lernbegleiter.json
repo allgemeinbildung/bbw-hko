@@ -1,0 +1,128 @@
+{
+  "id": "3.1.1_konsum_verantworten_3j_lernbegleiter",
+  "set_ref": "3.1.1_konsum_verantworten_3j_set",
+  "prinzip_ref": "3.1.1_konsum_verantworten_3j_prinzip",
+  "kn_ref": "3.1.1_konsum_verantworten_3j_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann echte Bedürfnisse und geweckte Wünsche unterscheiden.",
+        "Ich kann einen Kauf mit meinem Budget prüfen und meinen Entscheid begründen."
+      ]
+    },
+    "begriffe": [
+      "Bedürfnis",
+      "Gut",
+      "Existenzbedürfnis",
+      "Wahlbedürfnis",
+      "Bedürfnispyramide",
+      "Werbung",
+      "Impulskauf",
+      "Konsumdruck",
+      "Geweckter Wunsch",
+      "Massstab",
+      "Nettolohn",
+      "Fixe Kosten",
+      "Variable Kosten",
+      "Rückstellung",
+      "Saldo",
+      "Engpass",
+      "Mahnung",
+      "Schuldenspirale",
+      "Anpassung",
+      "Schutzregel"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Begriffe aus Heft A und Heft B noch wissen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Bedürfnisse und Budget. Frag mich diese Begriffe ab: Existenzbedürfnis, Wahlbedürfnis, Bedürfnispyramide, Fixe Kosten, Variable Kosten, Saldo. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff kennen, ihn aber noch nicht selbst erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Bedürfnisse und Budget. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir höchstens zwei Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke der KI im Glossar Ihres Hefts, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben und wissen wollen, was fehlt.",
+        "prompt_basis": "Du kennst meinen Übungsfall und meine Lösung aus diesem Chat. Prüfe ein Kriterium. Argumentation: Ist mein Entscheid klar und geordnet begründet? Nenne mir Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Du kennst meinen Übungsfall und meine Lösung aus diesem Chat. Prüfe zwei Kriterien. Argumentation: Ist mein Entscheid klar und geordnet begründet? Wirtschaftliches Prinzip: Verbinde ich Bedürfnis, Budget und Schuldenrisiko richtig? Nenne mir je Kriterium eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt Ihre Kriterien nur aus dem Prompt: Was sie sagt, ist ein Hinweis, keine Bewertung. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Wissen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Thema: Konsum und Budget in der Lehre. Erfinde einen neuen, kurzen Fall: Ich will etwas kaufen, aber mein Geld ist knapp. Der Fall spielt beim Wohnen oder in den Ferien. Nicht: Kopfhörer, Handy, Abos, Mahnung, Openair. Gib mir keine Lösung. Frag mich danach: Wie entscheide ich, und warum? Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Konsum und Budget in der Lehre. Erfinde einen neuen Fall mit Zahlen: Wunsch, knappes Budget, Druck von Kollegen. Der Fall spielt beim Wohnen oder in den Ferien. Nicht: Kopfhörer, Handy, Abos, Mahnung, Openair. Gib mir keine Lösung. Nenne mir nach meiner Lösung Lücken bei zwei Kriterien. Argumentation: Ist mein Entscheid klar begründet? Wirtschaftliches Prinzip: Verbinde ich Bedürfnis, Budget und Schuldenrisiko richtig? Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn in der Liste «Meine Begriffe» noch Kästchen leer sind und Sie Ihre Lernzeit planen wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Bedürfnisse und Budget. Diese Begriffe kann ich noch nicht erklären: [meine Begriffe]. Ich habe [Anzahl] Tage Zeit. Mach mir einen Lernplan mit kurzen Lernzeiten. Erkläre die Begriffe nicht. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Du bist mein Lerncoach. Thema: Bedürfnisse und Budget. Diese Begriffe übe ich: [meine Begriffe]. Schreib mir zu jedem Begriff eine Frage für eine Lernkarte. Ordne die Fragen nach zwei Themen: Bedürfnisse und Budget. Schreib keine Antworten. Die Antworten schreibe ich selbst aus meinem Glossar. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Erklärungen und Lernkarten-Antworten schreiben Sie selbst, aus dem Glossar in Ihren Heften. Der Plan ist ein Vorschlag: Die KI kennt Ihren Alltag nicht."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie erklären mündlich an einem neuen Fall, wie Sie entscheiden und warum.",
+        "prompt": "Thema: Konsum und Budget in der Lehre. Erfinde einen neuen, kurzen Fall zu Ferien, nicht zu Kopfhörern, Handy, Abos, Mahnung oder Openair. Stell mir dazu drei Fragen, eine nach der anderen, von leicht zu schwer. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich: Sie rechnen, entscheiden und begründen in Ich-Form.",
+        "prompt": "Thema: Konsum und Budget in der Lehre. Erfinde einen neuen Fall mit drei Zahlen zum Wohnen, nicht zu Kopfhörern, Handy, Abos, Mahnung oder Openair. Stell mir dazu zwei Aufgaben, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Konsum und Budget in der Lehre. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen Fall zu Geschenken, nicht zu Kopfhörern, Handy, Abos, Mahnung oder Openair. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie brauchen die Begriffe richtig und begründen Ihren Entscheid klar: Üben Sie mit «Selbst erklären» und einem Übungsfall."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Wirtschaftliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie verbinden Bedürfnis, Budget und Schuldenrisiko und sagen in Ich-Form, wofür Sie stehen: Üben Sie das an einem Übungsfall oben."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken: Was auf Ihrem Blatt steht, schreiben Sie selbst. Verlangen Sie von ihr nie eine Lösung für Ihren Kompetenznachweis.",
+    "selbstcheck": [
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meinen Entscheid selbst begründen: Wunsch jetzt oder Sicherheit später."
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "1.2.1_lernzeit_planen_lernbegleiter",
+  "set_ref": "1.2.1_lernzeit_planen_set",
+  "prinzip_ref": "1.2.1_lernzeit_planen_prinzip",
+  "kn_ref": "1.2.1_lernzeit_planen_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben für den Kompetenznachweis mit der KI (künstliche Intelligenz). Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann meine Lern- und Arbeitszeit für eine Woche strukturiert planen, den Plan anpassen, wenn etwas dazwischenkommt, und mich gezielt und wirksam auf den nächsten Kompetenznachweis vorbereiten.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie dann, was bei 1 bis 3 liegt.",
+      "selbsteinschaetzung": [
+        "Ich kann meine Lern- und Arbeitszeit für eine Woche planen (Kap. 20.5, S. 442-443).",
+        "Ich kann meinen Plan anpassen, wenn etwas dazwischenkommt.",
+        "Ich kann mich gezielt auf den Kompetenznachweis vorbereiten (Kap. 20.6, S. 444)."
+      ]
+    },
+    "begriffe": [
+      "Wochenplan",
+      "ALPEN-Methode",
+      "ABC-Analyse",
+      "Priorität",
+      "Pufferzeit",
+      "Nachkontrolle",
+      "Rückmeldung",
+      "Ich-Botschaft",
+      "Lernstrategie",
+      "Eingangskanal",
+      "verteilt lernen",
+      "nur Verstandenes lernen",
+      "Lernziel (SMART)",
+      "Lesen in fünf Schritten",
+      "abfragen",
+      "Übe-Prompt",
+      "Lernkartei"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie wissen wollen, welche Begriffe schon sitzen.",
+        "prompt_basis": "Thema: Zeit planen und wirksam lernen. Frag mich diese Begriffe ab: ABC-Analyse, Pufferzeit, Nachkontrolle, verteilt lernen, Eingangskanal, Lernkartei. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff kennen, ihn aber noch nicht erklären können.",
+        "prompt_basis": "Thema: Zeit planen und wirksam lernen. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir die Lücken. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben und wissen wollen, was fehlt.",
+        "prompt_basis": "Thema: Zeit planen und wirksam lernen. Hier ist meine Lösung zu deinem Übungsfall: [meine Lösung]. Was fehlt bei der Argumentation: Entscheid, Grund, Bezug zum Fall? Nenne die Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Zeit planen und wirksam lernen. Hier ist meine Lösung zu deinem Übungsfall: [meine Lösung]. Prüfe zwei Kriterien. Erstens Argumentation: Entscheid, Grund, Bezug zum Fall. Zweitens Position / Werthaltung: klare Haltung in Ich-Form mit Grund. Nenne je Kriterium eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt den Übungsfall nur, wenn Sie im selben Chat bleiben. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie Ihr Wissen auf einen neuen Fall übertragen können.",
+        "prompt_basis": "Thema: Zeit planen und wirksam lernen. Erfinde einen neuen Fall zu Nebenjob, Geld oder Computer. Ich muss bis zu einem Termin etwas können, und meine Zeit ist knapp. Nimm keinen Fall aus Lehrbetrieb, Schule oder Kurs. Gib mir nur den Fall, keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Zeit planen und wirksam lernen. Erfinde einen neuen Fall zu Nebenjob, Geld oder Computer. Ich muss bis zu einem Termin etwas können, und meine Zeit ist knapp. Nimm keinen Fall aus Lehrbetrieb, Schule oder Kurs. Warte auf meine Lösung. Sag mir dann, was bei der Argumentation fehlt: Entscheid, Grund, Bezug zum Fall. Schreib keine eigene Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie die Tage bis zum Kompetenznachweis eingeteilt haben und den Plan prüfen wollen.",
+        "prompt_basis": "Thema: Zeit planen und wirksam lernen. Hier ist mein Lernplan bis zum Termin: [mein Lernplan in Stichworten]. Stell mir dazu drei Fragen, eine nach der anderen. Frag nach Reserve, Reihenfolge und Wiederholen. Schreib meinen Lernplan nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Zeit planen und wirksam lernen. Mach mir Lernkarten zu diesen Begriffen: [meine offenen Begriffe]. Schreib auf jede Karte nur eine Frage und keine Antwort. Ordne die Karten nach zwei Themen: planen und lernen. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Den Lernplan machen Sie selbst, die KI fragt nur nach. Die Antworten auf die Lernkarten schreiben Sie aus dem Glossar in Ihrem Heft."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie üben, an einem neuen Fall laut zu erklären und auf Nachfragen zu antworten.",
+        "prompt": "Thema: Zeit planen und wirksam lernen. Erfinde einen neuen Fall zu Nebenjob, Geld oder Computer: Ich muss bis zu einem Termin etwas können. Nimm keinen Fall aus Lehrbetrieb, Schule oder Kurs. Stell mir dazu drei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich: ordnen, entscheiden, begründen.",
+        "prompt": "Thema: Zeit planen und wirksam lernen. Erfinde einen neuen Fall zu Nebenjob, Geld oder Computer: Ich muss bis zu einem Termin etwas können. Nimm keinen Fall aus Lehrbetrieb, Schule oder Kurs. Gib mir nur den Fall, keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Zeit planen und wirksam lernen. Das habe ich gelernt: [was ich gelernt habe]. Erfinde dazu einen neuen Fall zu Nebenjob, Geld oder Computer, nicht aus Lehrbetrieb, Schule oder Kurs. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie üben mit «Abfragen lassen» die Begriffe und begründen im Übungsfall jeden Entscheid am Fall."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Technologisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie sagen im Übungsfall in Ich-Form, wofür Sie ein digitales Werkzeug nehmen und wie Sie sein Ergebnis prüfen."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nicht im Kompetenznachweis. Verlangen Sie von ihr nie eine Lösung für Ihren Kompetenznachweis.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meine Begriffe ohne KI erklären."
+    ]
+  }
+}

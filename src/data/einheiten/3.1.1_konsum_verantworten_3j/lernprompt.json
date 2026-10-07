@@ -1,0 +1,115 @@
+{
+  "id": "3.1.1_konsum_verantworten_3j_lernprompt",
+  "set_ref": "3.1.1_konsum_verantworten_3j_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Konsum verantworten». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Dann passt ihre Antwort besser zu dem, was Sie brauchen.",
+        "thema_bezug": "Als Lerncoach fragt die KI Ihre Begriffe aus Heft A ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Bedürfnisse und Konsum. Frag mich diese Begriffe ab: Bedürfnis, Gut, Impulskauf. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Auch als Lerncoach kann die KI falsch liegen: Es gilt Ihr Glossar."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und in welcher Lage Sie sind. So passen ihre Fragen zu Ihnen.",
+        "thema_bezug": "Ihre Schutzregel steht in Ihrem Budget aus Heft B.",
+        "beispiel_basis": "Ich bin in der Lehre und plane mein Monatsbudget. Meine Schutzregel: [meine Schutzregel]. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meine Regel nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Kontext ja, Namen nein: Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI die andere Seite. Die KI nennt Einwände: was jemand gegen Ihre Sicht sagen kann. Welcher Einwand zählt, entscheiden Sie selbst.",
+        "thema_bezug": "In Heft B beantworten Sie im Budgetgespräch einen Einwand. Hier üben Sie das mit Ihrer wichtigsten Anpassung aus Heft B.",
+        "beispiel_basis": "Thema: mein Monatsbudget in der Lehre. Meine Anpassung: [meine Anpassung mit Grund]. Nenne mir zwei Einwände dagegen. Schreib meine Anpassung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist eine Kollegin, die lieber heute ausgibt als spart. Thema: mein Monatsbudget in der Lehre. Meine Anpassung: [meine Anpassung mit Grund]. Nenne mir zwei Einwände aus deiner Sicht, einen zum Geld und einen zum Dazugehören. Schreib meine Anpassung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt Ihr Budget und Ihr Leben nicht. Ein Einwand, der gut klingt, muss für Sie nicht stimmen.",
+        "baukasten": {
+          "rolle": [
+            "eine Kollegin, die lieber ausgibt",
+            "ein Freund, der mich dabeihaben will",
+            "eine strenge Budgetberaterin"
+          ],
+          "kontext": [
+            "mein Massstab-Satz aus Heft A",
+            "meine Anpassung aus Heft B",
+            "meine Schutzregel aus Heft B"
+          ],
+          "aufgabe": [
+            "zwei Einwände nennen",
+            "einen Einwand zum Geld nennen",
+            "einen Einwand zum Dazugehören nennen"
+          ],
+          "format": [
+            "ein Satz pro Einwand",
+            "nummeriert",
+            "kurze, einfache Sätze"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen von der KI zu einer Angabe eine Quelle. Eine Quelle ist die Stelle, an der man die Angabe nachlesen kann. So können Sie prüfen, ob die Angabe stimmt.",
+        "thema_bezug": "Nehmen Sie eine Aussage zu Ihrem Budget, etwa zu fixen Kosten. Dafür brauchen Sie Angaben, die Sie nachlesen können.",
+        "beispiel_basis": "Thema: Budget für Lernende in der Schweiz. Meine Aussage: [meine Aussage zum Budget]. Nenne mir zwei Quellen, in denen ich das nachlesen kann. Sag zu jeder Quelle, wie sie heisst und wer sie herausgibt. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist eine Budgetberaterin für junge Leute in der Schweiz. Meine Aussage: [meine Aussage zum Budget]. Nenne mir zwei Quellen, in denen ich das nachlesen kann. Sag zu jeder Quelle, wie sie heisst und wer sie herausgibt. Sag auch, wenn du keine sichere Quelle kennst. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet manchmal Quellen, die es nicht gibt. Gibt es eine Quelle nicht, übernehmen Sie die Angabe nicht.",
+        "baukasten": {
+          "rolle": [
+            "eine Budgetberaterin",
+            "ein Lerncoach",
+            "eine Lehrperson für Wirtschaft"
+          ],
+          "kontext": [
+            "meine Aussage zu fixen Kosten",
+            "meine Aussage zur Rückstellung",
+            "meine Aussage zur Schuldenspirale"
+          ],
+          "aufgabe": [
+            "zwei Quellen nennen",
+            "sagen, wo ich nachlesen kann",
+            "sagen, wenn die Quelle unsicher ist"
+          ],
+          "format": [
+            "Name und Herausgeber",
+            "eine Zeile pro Quelle",
+            "kurze, einfache Sätze"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Im ersten Prompt fragt die KI zu Ihrem Massstab-Satz aus Heft A. Im zweiten, im selben Chat, fragt sie zu Ihrer schwächeren Antwort.",
+      "prompt_1": "Du bist mein Lerncoach. Ich bin in der Lehre und ordne meine Wünsche. Mein Massstab-Satz: [mein Massstab-Satz]. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Welche meiner zwei Antworten war schwächer? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Quellen verlangen"
+      ],
+      "logik_und_ziel": "Zuerst nennt die KI zwei Einwände gegen Ihren Massstab-Satz aus Heft A. Dann verlangen Sie zu einer Zahl oder einem Begriff eine Quelle und prüfen sie nach.",
+      "prompt_1": "Thema: meine Wünsche und mein Geld in der Lehre. Mein Massstab-Satz: [mein Massstab-Satz]. Nenne mir zwei Einwände dagegen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Du hast mir zwei Einwände genannt. Steht in einem Einwand eine Zahl oder ein Begriff? Nenne mir dazu eine Quelle. Sag, wie sie heisst und wer sie herausgibt. Sag auch, wenn du keine sichere Quelle kennst. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Meine Abos kosten 45, 20 und 65 Franken im Monat. Wie viel ist das im Jahr? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Im Monat sind das 130 Franken. Im Jahr sind das 1460 Franken.",
+      "pruefung": "Ich rechne nach. 130 Franken im Monat stimmen. Im Jahr sind es 12 mal 130, also 1560 Franken, nicht 1460."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

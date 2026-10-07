@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bbw-hko.ch/schema/fall.schema.json",
+  "title": "fall.json — die erfundenen Fallzahlen der Situationen einer v4.2-Einheit",
+  "description": "Liegt AUSSERHALB des Repos: <Quellenarchiv>/_pruefung/<ordnername>/fall.json. Geschrieben vom Executor des Hefts (A, B) bzw. vom Executor Set (auftrag) — nicht vom Audit. Gelesen von scripts/check-zahlen.mjs (jede Fallzahl steht überall mit demselben Wert) und scripts/check-fakten.mjs (eine Fallzahl ist keine Aussage über die Welt). Beschreibung: .claude/skills/bbw-hko-heft-v42/references/belege.md (ENTSCHEIDE E38).",
+  "type": "object",
+  "required": ["format", "einheit", "faelle"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "bbw-hko/fall@1" },
+    "einheit": { "type": "string", "pattern": "^[0-9]\\.[0-9]\\.[0-9]_[a-z0-9]+(?:_[a-z0-9]+)*$" },
+    "faelle": {
+      "description": "Je Träger einer Situation ein Fall: Heft A, Heft B, gemeinsamer Auftrag.",
+      "type": "object",
+      "required": ["A", "B"],
+      "additionalProperties": false,
+      "properties": {
+        "A": { "$ref": "#/$defs/fall" },
+        "B": { "$ref": "#/$defs/fall" },
+        "auftrag": { "$ref": "#/$defs/fall" }
+      }
+    }
+  },
+  "$defs": {
+    "datum": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "von": {
+      "type": "object",
+      "required": ["rolle", "modell"],
+      "additionalProperties": false,
+      "properties": {
+        "rolle": { "type": "string", "minLength": 1 },
+        "modell": { "type": "string", "minLength": 1 }
+      }
+    },
+    "zahl": {
+      "type": "object",
+      "required": ["name", "wert", "einheit"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "description": "Was die Zahl ist, so wie das Heft es nennt (Lohn, Preis, Menge, Termin).", "type": "string", "minLength": 1 },
+        "wert": { "description": "Zahl; Zeichenkette nur für Wochentag, Datum oder Uhrzeit.", "type": ["number", "string"] },
+        "einheit": { "description": "CHF, %, Stück, Tage, Wochentag, Datum … — leer nur bei einer reinen Anzahl.", "type": "string" },
+        "schreibweisen": { "description": "Wie der Wert im Text steht, wenn es von `wert` + `einheit` abweicht (Tausendertrenner, «Franken», ausgeschriebene Zahl).", "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "abgeleitet_aus": { "description": "Nur bei einem gerechneten Wert: die Rechnung mit den Namen der anderen Fallzahlen.", "type": "string" }
+      }
+    },
+    "ausschluss": {
+      "description": "Was die Situation ausschliesst — darf im Beispiel (S. 6), im Lösungsbild und in den Lösungen nicht als möglich erscheinen.",
+      "type": "object",
+      "required": ["was", "werte"],
+      "additionalProperties": false,
+      "properties": {
+        "was": { "description": "Wochentag, Datum, Uhrzeit, Ort …", "type": "string", "minLength": 1 },
+        "werte": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "grund": { "type": "string" }
+      }
+    },
+    "fall": {
+      "type": "object",
+      "required": ["zahlen", "ausgeschlossen", "geschrieben_am", "von"],
+      "additionalProperties": false,
+      "properties": {
+        "zahlen": { "type": "array", "items": { "$ref": "#/$defs/zahl" } },
+        "ausgeschlossen": { "type": "array", "items": { "$ref": "#/$defs/ausschluss" } },
+        "geschrieben_am": { "$ref": "#/$defs/datum" },
+        "von": { "$ref": "#/$defs/von" }
+      }
+    }
+  },
+  "examples": [
+    {
+      "format": "bbw-hko/fall@1",
+      "einheit": "9.9.9_platzhalter_pruefen",
+      "faelle": {
+        "A": {
+          "zahlen": [
+            { "name": "Platzhalter-Lohn", "wert": 1000, "einheit": "CHF", "schreibweisen": ["1000 Franken"] },
+            { "name": "Platzhalter-Termin", "wert": "Montag", "einheit": "Wochentag" }
+          ],
+          "ausgeschlossen": [{ "was": "Wochentag", "werte": ["Dienstag"], "grund": "Platzhalter-Grund" }],
+          "geschrieben_am": "2026-01-01",
+          "von": { "rolle": "Executor A", "modell": "platzhalter-modell" }
+        },
+        "B": {
+          "zahlen": [],
+          "ausgeschlossen": [],
+          "geschrieben_am": "2026-01-01",
+          "von": { "rolle": "Executor B", "modell": "platzhalter-modell" }
+        }
+      }
+    }
+  ]
+}

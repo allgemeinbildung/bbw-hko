@@ -15,7 +15,7 @@ quellen_json:
 
 # KI-Toolbox — Lies mich!
 
-> Dieses Blatt richtet sich an die **Lehrperson**, nicht an die Lernenden. Es erklärt in Kürze, **was** die vier KI-Dokumente dieser Einheit leisten und **wie** Sie sie einsetzen, ohne die Klasse zu überfrachten. Die KI-Toolbox ist ein **optionales Zusatzangebot** — kein Pflichtteil. Verbindlich bleiben die {{ANZAHL}} Herausforderungen, der Kompetenznachweis und der Lehrpersonen-/Bewertungsteil.
+> Dieses Blatt richtet sich an die **Lehrperson**, nicht an die Lernenden. Es erklärt in Kürze, **was** die vier KI-Dokumente dieser Einheit leisten und **wie** Sie sie einsetzen, ohne die Klasse zu überfrachten. Die KI-Toolbox ist ein **optionales Zusatzangebot** — kein Pflichtteil.
 
 ---
 
@@ -25,13 +25,16 @@ Alle vier liegen als **Word-Datei** im ZIP und sind frei anpassbar (siehe §3).
 
 | # | Dokument | Funktion | Wann |
 |---|---|---|---|
-| **1** | KI-Auftrag «{{KI_AUFTRAG_1_TITEL}}» | **Üben mit KI** — {{KI_AUFTRAG_1_KURZ}} | mitten in der Einheit |
-| **2** | KI-Auftrag «{{KI_AUFTRAG_2_TITEL}}» | **Üben mit KI** — {{KI_AUFTRAG_2_KURZ}} | mitten in der Einheit |
-| **P** | KI-Lernprompt | **Prompten lernen** — vier Techniken + Baukasten | vor den KI-Aufträgen |
-| **L** | KI-Lernbegleiter | **KN-Vorbereitung** — Selbsteinschätzung, Lernstrategien, Üben an neuen Fällen | am Schluss, vor dem KN |
+| **1** | KI-Auftrag «{{KI_AUFTRAG_1_TITEL}}» (Basis) | **Üben mit KI** — {{KI_AUFTRAG_1_KURZ}} | {{WANN_BASIS}} |
+| **2** | KI-Auftrag «{{KI_AUFTRAG_2_TITEL}}» (Plus) | **Üben mit KI** — {{KI_AUFTRAG_2_KURZ}} | {{WANN_PLUS}} |
+| **P** | KI-Lernprompt | **Prompten lernen** — zwei Techniken mit fertigen Prompts; zwei weitere als Plus | vor den KI-Aufträgen |
+| **L** | KI-Lernbegleiter | **KN-Vorbereitung** — Selbsteinschätzung, Begriffe zum Abhaken, Lernstrategien, Üben an neuen Fällen | am Schluss, vor dem KN |
 
 > [!hinweis] Die vier Prompt-Techniken (Dokument P)
-> In dieser Einheit: **{{TECHNIK_1}}**, **{{TECHNIK_2}}**, **{{TECHNIK_3}}**, **{{TECHNIK_4}}**. Dazu zwei fertige Zwei-Schritt-Sequenzen («Stacking») und die Bauformel `[Rolle] + [Kontext] + [Aufgabe] + [Format]`.
+> Basis: **{{TECHNIK_1}}** und **{{TECHNIK_2}}**, dazu eine fertige Folge aus zwei Prompts (nachfragen). Plus: **{{TECHNIK_3}}** und **{{TECHNIK_4}}** mit Baukasten, um eigene Prompts zu bauen.
+
+> [!hinweis] Der Fehler im Beispiel ist Absicht
+> Auf Seite 1 des Lernprompts steht ein kurzer Beispiel-Verlauf. Die Antwort der KI enthält dort **absichtlich einen Fehler** ({{BEISPIEL_FEHLER}}) — die Lernenden sehen einmal, wie Prüfen aussieht. Kein Druckfehler. Im Lernbegleiter stehen kleine Notizfelder: unter den Prompts der zwei Basis-Karten «Das hat die KI gesagt · Das stimmt · Das stimmt nicht», am Schluss der KN-Seite «Mein Übungsfall · Das konnte ich · Das übe ich noch».
 
 ---
 
@@ -40,48 +43,48 @@ Alle vier liegen als **Word-Datei** im ZIP und sind frei anpassbar (siehe §3).
 Alle vier Dokumente folgen demselben Prinzip — die KI **challengt, spiegelt und prüft** das eigene Produkt der Lernenden, sie liefert es nie fertig. Jeder KI-Auftrag startet mit einem Schritt **«ohne KI»**; der Lernbegleiter beginnt mit einer ehrlichen Selbsteinschätzung, bevor die KI ins Spiel kommt.
 
 > [!warnung] Das ist die Leitplanke, nicht die Deko
-> Auch in der kürzesten Variante (§3) bleibt der **«ohne KI zuerst»-Schritt drin**. Und: Im Kompetenznachweis sitzen die Lernenden allein da. Die KI darf hier üben helfen, nie die KN-Lösung schreiben — geübt wird an *anderen* Fällen.
+> Auch in der kleinsten Fassung (§3) bleibt der **«ohne KI zuerst»-Schritt drin**. Und: {{KN_LEITPLANKE}} Die KI darf hier üben helfen, nie die KN-Lösung schreiben — geübt wird an *neuen* Fällen.
 
 <!-- NUR EINFÜGEN, wenn die Unit rechts-/quellenlastig ist (Aspekt «Recht» oder ein guetekriterium prüft Verifikation): -->
 > [!warnung] {{FACHGEBIET}}: immer gegenprüfen
-> KI-Systeme erfinden bei {{QUELLENTYP}} regelmässig plausibel klingende Angaben. In dieser Einheit gilt: **jede** {{QUELLENTYP}}-Aussage der KI wird im Lehrmittel nachgeschlagen. Das ist in den Gütekriterien der KI-Aufträge bereits als Pflicht verankert.
+> KI-Systeme erfinden bei {{QUELLENTYP}} regelmässig plausibel klingende Angaben. In dieser Einheit gilt: {{QUELLENTYP}}-Aussagen der KI werden {{NACHSCHLAGE_ORT}} nachgeschlagen — {{NACHSCHLAGE_MENGE}}. Das steht in beiden KI-Aufträgen als Kriterium.
 
 ---
 
-## 3. Zu dicht? — vier Reduktions-Rezepte (Word anpassen)
+## 3. Basis und Plus — was Sie drucken
 
-Die Dokumente sind bewusst dicht (sie sollen ohne Nachschlagen tragen) — aber Sie müssen **nicht alles** einsetzen. Laden Sie die Word-Datei herunter und kürzen Sie gezielt:
+Die Toolbox ist so gebaut, dass die **kleine Fassung die Vorgabe** ist. In der Basis schreiben die Lernenden keinen Prompt selbst: Sie bekommen fertige Prompts mit höchstens einer Lücke für ihren eigenen Text. Jeder Prompt bestellt bei der KI kurze, einfache Antworten. Was darüber hinausgeht, ist Plus — Sie legen es dazu, statt etwas wegzuschneiden.
 
-> [!differenzieren] Rezept 1 — Eine Technik statt vier
-> Im **KI-Lernprompt** behalten Sie **einen** Technik-Block (z. B. nur *{{TECHNIK_1}}*) und löschen die anderen drei plus die beiden «Stacking»-Sequenzen. Eine Technik sauber statt vier oberflächlich.
+| Dokument | Basis | Plus |
+|---|---|---|
+| KI-Auftrag | «{{KI_AUFTRAG_1_TITEL}}» — zwei Seiten: drei Schritte, zwei fertige Prompts | «{{KI_AUFTRAG_2_TITEL}}» — drei Seiten |
+| KI-Lernprompt | Seite 1: {{TECHNIK_1}}, {{TECHNIK_2}}, nachfragen | Seiten 2–3: {{TECHNIK_3}}, {{TECHNIK_4}}, Baukasten |
+| KI-Lernbegleiter | Seite 1: {{KARTE_1}}, {{KARTE_2}} · Seite 2: Üben für den KN | Seite 3: {{KARTE_3}}, {{KARTE_4}}, {{KARTE_5}} |
 
-> [!differenzieren] Rezept 2 — Nur ein KI-Auftrag
-> Setzen Sie **entweder** «{{KI_AUFTRAG_1_TITEL}}» **oder** «{{KI_AUFTRAG_2_TITEL}}» ein, nicht beide. {{AUFTRAG_WAHL_HINWEIS}}
+> [!differenzieren] Noch kleiner
+> Ein Dokument genügt. Für den Einstieg: der Basis-Auftrag allein. Vor dem KN: Seite 1 des Lernbegleiters mit **einer** Karte, z. B. *{{KARTE_1}}*. Der Schritt «ohne KI zuerst» bleibt immer drin.
 
-> [!differenzieren] Rezept 3 — Lernbegleiter auf eine Karte
-> Der **KI-Lernbegleiter** hat fünf Strategie-Karten. Für ein kurzes Repetitions-Setting reicht **eine** — z. B. *{{STRATEGIE_KARTE}}* als Exit-Ticket vor dem KN. Selbsteinschätzung und Integritäts-Hinweis bleiben drin, der Rest wird gelöscht.
-
-> [!differenzieren] Rezept 4 — Nur der Baukasten
-> Lassen Sie die Technik-Erklärungen weg und geben Sie nur die **Bauformel** `[Rolle] + [Kontext] + [Aufgabe] + [Format]` mit den Baukasten-Listen ab. Die Lernenden bauen ihren Prompt aus Bausteinen zusammen — schnell, konkret, ohne Theorie.
+> [!differenzieren] Grösser
+> Das Plus ist für Lernende gedacht, die mit der Basis sicher arbeiten: {{PLUS_HINWEIS}} Im Plus-Auftrag beurteilen die Lernenden die Antworten der KI selbst; eigene Prompts bauen sie nur im Plus des Lernprompts (Baukasten). Beides ist deutlich anspruchsvoller als die Basis.
 
 ---
 
 ## 4. Didaktische Einsatz-Ideen
 
 > [!coaching] Staffeln statt stapeln
-> Nicht alles in einer Lektion. Verteilen Sie: **Lernprompt** als kurzer Input beim ersten KI-Einsatz · **KI-Auftrag** als formative Vertiefung mitten drin · **Lernbegleiter** ganz am Schluss zur KN-Vorbereitung.
+> Nicht alles in einer Lektion. Verteilen Sie: **Lernprompt** als kurzer Input beim ersten KI-Einsatz · **Basis-Auftrag** {{WANN_BASIS}} · **Lernbegleiter** ganz am Schluss zur KN-Vorbereitung.
 
 > [!coaching] Plenum-Demo am Beamer (Modeling)
 > Führen Sie **einen** Prompt live vor: eintippen, Antwort gemeinsam lesen, gemeinsam {{GEGENPRUEF_BEISPIEL}}. Die Lernenden sehen das kritische Prüfen einmal, bevor sie es selbst tun — das senkt die kognitive Last enorm.
 
 > [!coaching] Gruppenpuzzle über die Techniken
-> Vier Gruppen, je eine Prompt-Technik. Jede Gruppe probiert ihre Technik aus und erklärt sie den anderen. So wird die Dichte zur Stärke.
+> Zwei bis vier Gruppen, je eine Prompt-Technik (zwei aus der Basis, bei Bedarf zwei aus dem Plus). Jede Gruppe probiert ihre Technik aus und erklärt sie den anderen.
 
 > [!coaching] Lernzirkel / Stationen
 > Vier Stationen = vier Dokumente. Die Klasse rotiert; an jeder Station ein klar abgegrenzter Mini-Auftrag (10–15 Min.). Gut, wenn Geräte knapp sind.
 
 > [!differenzieren] Als Vertiefung für Schnelle
-> Wer mit den Pflichtteilen früher fertig ist, bekommt einen KI-Auftrag als Zusatz. So bleibt die Toolbox optional und schafft trotzdem eine Differenzierungsstufe nach oben.
+> Wer den Basis-Auftrag sicher gelöst hat und {{WANN_PLUS}} Zeit hat, bekommt den Plus-Auftrag als Zusatz. So bleibt die Toolbox optional und schafft trotzdem eine Differenzierungsstufe nach oben.
 
 ---
 
@@ -89,7 +92,7 @@ Die Dokumente sind bewusst dicht (sie sollen ohne Nachschlagen tragen) — aber 
 
 > [!lernziel] In drei Minuten startklar
 > 1. **Brauche ich die Toolbox überhaupt?** Sie ist optional — kein schlechtes Gewissen, wenn nein.
-> 2. **Welches Reduktions-Rezept (§3)** passt zu meiner Zeit und Klasse? Word entsprechend kürzen.
+> 2. **Basis oder Basis mit Plus (§3)?** Die passenden Seiten drucken.
 > 3. **Geräte/KI-Zugang** geklärt? Wenn knapp → Plenum-Demo oder Stationen (§4).
 > 4. **«Ohne KI zuerst»{{RECHTS_CHECK}}** bleiben drin — immer.
 > 5. **Kein KN-Stoff in die KI.** Geübt wird an *anderen* Fällen, nie an der konkreten KN-Aufgabe.
@@ -104,15 +107,38 @@ Erzeugt aus der KI-Toolbox der Einheit {{KOMPETENZ_NR}} «{{SLUG_KURZ}}» (`ki.j
 PLATZHALTER-LEGENDE (alle aus den in dieser Unit erzeugten Dateien ableiten):
   {{KOMPETENZ_NR}}        z. B. 1.1.1
   {{SLUG}}                voller Slug, z. B. 1.1.1_konflikt_kommunizieren
-  {{SLUG_KURZ}}           Lesbarer Kurztitel, z. B. Konflikt kommunizieren
+  {{SLUG_KURZ}}           Titel der Einheit, wörtlich wie set.einheit_titel (z. B. «Im Konflikt
+                          kommunizieren», nicht aus dem Ordnernamen abgeleitet)
   {{KOMPETENZ_TITEL}}     prinzip/kn Kompetenz-Klartext
   {{LEHRGANG}} {{THEMA}} {{LEBENSBEZUG}}   wie Begleiter-Frontmatter
-  {{ANZAHL}}              "drei" (EFZ A/B/C) bzw. "zwei" (EBA A/B)
+  {{WANN_BASIS}}          wann der Basis-Auftrag frühestens geht — EIN Wortlaut für §1 und §4:
+                          v4.2 "sobald Heft A und Heft B fertig sind" · 3er-Set/EBA "sobald die
+                          Herausforderungen fertig sind"
+  {{WANN_PLUS}}           EIN Wortlaut für §1 und §4, wie ki.timing: v4.2 "nach dem gemeinsamen
+                          Auftrag" · 3er-Set/EBA "nach Austausch & Transfer"
+                          (ki.timing nennt den spätesten Zeitpunkt für beide Aufträge und wird
+                          nicht gedruckt; der Liesmich darf den Basis-Auftrag früher ansetzen,
+                          sich selbst aber nie widersprechen)
+  {{BEISPIEL_FEHLER}}     der Fehler aus lernprompt.beispiel_dialog in wenigen Wörtern
+  {{KN_LEITPLANKE}}       was über den KN gilt, wörtlich im Sinn von kn.json: "Im Kompetenznachweis
+                          arbeiten die Lernenden allein und ohne KI." NUR, wenn kn.json das für jede
+                          Form sagt; sonst "Im Kompetenznachweis zählt, was die Lernenden selbst
+                          können." — und bei einer Werkschau ein Satz, dass die Lehrperson ihre
+                          KI-Regel für die gezeigten Arbeiten ansagt
+  3er-Set:                kennt der Begleiter Varianten, in denen Lernende nur eine oder zwei
+                          Herausforderungen bearbeiten, sagt §4 in einem Satz, welche Dokumente
+                          dann gehen (Basis-Auftrag: mit jedem Produkt)
+  {{NACHSCHLAGE_ORT}}     "im Lehrmittel (Kap. …)" / "im Glossar der Hefte" / "im Dossier"
+  {{NACHSCHLAGE_MENGE}}   wörtlich wie in den Kriterien: "im Basis-Auftrag jede, im Plus-Auftrag
+                          mindestens eine" bzw. "in beiden jede"
+  Der Liesmich sagt nur, was die Daten tun: Wer etwas benennt, prüft oder baut (die KI oder
+  die Lernenden), steht so da wie im Prompt und im Schritt.
   {{KI_AUFTRAG_1_TITEL}}/{{KI_AUFTRAG_2_TITEL}}   ki.assignments[].titel (verbatim)
   {{KI_AUFTRAG_1_KURZ}}/{{KI_AUFTRAG_2_KURZ}}     1 Halbsatz aus assignment.ziel
   {{TECHNIK_1..4}}        lernprompt.techniken[].titel (alle vier, verbatim)
-  {{STRATEGIE_KARTE}}     eine lernbegleiter.strategie_karten[].technik (z. B. Abfragen lassen)
-  {{AUFTRAG_WAHL_HINWEIS}} 1 Satz: was Auftrag 1 vs. 2 schärft
+  {{KARTE_1..5}}          lernbegleiter.strategie_karten[].technik in der Reihenfolge der Datei
+                          (1+2 = Basis, 3-5 = Plus)
+  {{PLUS_HINWEIS}}        1 Satz: was der Plus-Auftrag und die Plus-Techniken dieser Unit verlangen
   {{FACHGEBIET}}/{{QUELLENTYP}}/{{GEGENPRUEF_BEISPIEL}}/{{RECHTS_CHECK}}
                           nur befüllen/einfügen, wenn die Unit rechts-/quellenlastig ist;
                           sonst die bedingte Recht-Warnung und " und Quellen-Gegenprüfung"

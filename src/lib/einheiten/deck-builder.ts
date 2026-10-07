@@ -1340,7 +1340,19 @@ const SHELL_CSS = `
   #bar .cnt { color: #9dbfaa; font-size: 13px; font-variant-numeric: tabular-nums; padding: 0 6px; min-width: 62px; text-align: center; }
   #bar .sep { width: 1px; height: 20px; background: #2c4438; margin: 0 2px; }
   #bar .down { color: #8fd0a6; }
-  @media print { #bar, #aside { display: none !important } }
+  @media print { #bar, #aside, #embed { display: none !important } }
+
+  /* Player einer Quelle (Audio/Video) — liegt über der Folie, nicht im Deck: die Folie
+     bleibt stehen, und das Bild wird so gross, wie die Bühne es erlaubt. */
+  #embed { position: absolute; inset: 0; z-index: 15; display: none; align-items: center; justify-content: center; background: rgba(11,20,16,.94); padding-bottom: 60px; }
+  #embed.on { display: flex; }
+  #embed-in { display: flex; flex-direction: column; gap: 10px; }
+  #embed-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #e8f3ec; font-size: 15px; font-weight: 650; }
+  #embed-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #embed-x { flex: 0 0 auto; background: transparent; border: 1px solid #2c4438; color: #cfe3d6; font: inherit; font-size: 14px; cursor: pointer; padding: 7px 14px; border-radius: 999px; }
+  #embed-x:hover { background: #1d3128; color: #fff; }
+  #embed-box { background: #000; border-radius: 12px; overflow: hidden; }
+  #embed-box iframe { display: block; width: 100%; height: 100%; border: 0; }
 
   /* Sub-slide hint on any main slide that has a branch. */
   .hasSub::after {
@@ -1413,6 +1425,12 @@ ${SHELL_CSS}${opts.extraCss ?? ''}
     <div id="deck-root">
 ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
     </div>
+    <div id="embed" role="dialog" aria-label="Quelle abspielen">
+      <div id="embed-in">
+        <div id="embed-head"><span id="embed-title"></span><button id="embed-x" type="button" title="Schliessen (Esc)">Schliessen ✕</button></div>
+        <div id="embed-box"></div>
+      </div>
+    </div>
   </div>
   <aside id="aside">
     <header><div class="lbl" id="a-lbl"></div><h2 id="a-title"></h2></header>
@@ -1476,6 +1494,43 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
     var s = Math.min(w / 1920, h / 1080);
     document.getElementById('deck-root').style.transform =
       'translate(' + ((w - 1920 * s) / 2) + 'px,' + ((h - 1080 * s) / 2) + 'px) scale(' + s + ')';
+    fitEmbed();
+  }
+
+  /* ---- Quelle abspielen: Player als Überlagerung ---- */
+  // Ein Knopf mit data-embed-src (Audio/Video einer Quelle) öffnet den Player über der
+  // Folie. Geladen wird erst beim Klick — vorher geht keine Anfrage an den Anbieter. Ein
+  // Folienwechsel räumt den Player ab, sonst liefe der Ton auf der nächsten Folie weiter.
+  var embed = document.getElementById('embed');
+  var embedBox = document.getElementById('embed-box');
+  var embedSrc = null, embedTitle = '';
+  function fitEmbed() {
+    if (!embedSrc) return;
+    var st = document.getElementById('stage');
+    var u = Math.max(0, Math.min(st.clientWidth * .94 / 16, (st.clientHeight - 150) / 9));
+    document.getElementById('embed-in').style.width = (16 * u) + 'px';
+    embedBox.style.height = (9 * u) + 'px';
+  }
+  function openEmbed(src, title, quiet) {
+    if (!src || src.indexOf('https://') !== 0) return;
+    closeEmbed(true);
+    var f = document.createElement('iframe');
+    f.src = src; f.title = title || 'Quelle';
+    f.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    embedBox.appendChild(f);
+    embedSrc = src; embedTitle = title || '';
+    document.getElementById('embed-title').textContent = embedTitle;
+    embed.classList.add('on'); fitEmbed();
+    // Fokus vom Knopf nehmen: sonst löste die Leertaste ihn ein zweites Mal aus.
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    if (!quiet && chan && !audience) chan.postMessage({ t: 'embed', s: i, src: src, title: embedTitle });
+  }
+  function closeEmbed(quiet) {
+    if (!embedSrc) return;
+    embedBox.innerHTML = ''; embedSrc = null; embed.classList.remove('on');
+    if (!quiet && chan && !audience) chan.postMessage({ t: 'embed', s: i, src: null });
   }
 
   function paint() {
@@ -1496,6 +1551,7 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
   }
 
   function go(n, quiet) {
+    closeEmbed(true);                // der Player gehört zur Folie, die man verlässt
     i = Math.max(0, Math.min(scenes.length - 1, n));
     cursor = 0; applyCursor(true);   // eine Mindmap startet immer zugeklappt
     paint();
@@ -1507,9 +1563,12 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
       var d = e.data || {};
       if (d.t === 'go' && audience) go(d.i, true);
       if (d.t === 'cursor' && audience && d.s === i) { cursor = d.c; applyCursor(true); }
+      // Der Player öffnet auch im Beamer-Fenster — dort soll das Bild laufen.
+      if (d.t === 'embed' && audience && d.s === i) { if (d.src) openEmbed(d.src, d.title, true); else closeEmbed(true); }
       if (d.t === 'hello' && !audience) {
         chan.postMessage({ t: 'go', i: i });
         chan.postMessage({ t: 'cursor', s: i, c: cursor });
+        if (embedSrc) chan.postMessage({ t: 'embed', s: i, src: embedSrc, title: embedTitle });
       }
     };
     if (audience) chan.postMessage({ t: 'hello' });
@@ -1553,7 +1612,17 @@ ${deck.slides.map((s, i) => renderSlide(s, i, logo)).join('\n')}
     setCursor(b.classList.contains('open') ? k : k + 1);
   });
 
+  // Abspielknöpfe gelten in beiden Fenstern (auch am Beamer direkt anklickbar).
+  document.addEventListener('click', function (e) {
+    var p = e.target.closest && e.target.closest('[data-embed-src]');
+    if (p && scenes[i].contains(p)) openEmbed(p.getAttribute('data-embed-src'), p.getAttribute('data-embed-title'));
+    else if (e.target === embed) closeEmbed();           // Klick neben den Player
+  });
+  document.getElementById('embed-x').onclick = function () { closeEmbed(); };
+
   document.addEventListener('keydown', function (e) {
+    // Solange der Player offen ist, blättert keine Taste — nur Esc schliesst ihn.
+    if (embedSrc) { if (e.key === 'Escape') { e.preventDefault(); closeEmbed(); } return; }
     if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
     else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); dive(1); }

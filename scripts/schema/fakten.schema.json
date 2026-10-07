@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bbw-hko.ch/schema/fakten.schema.json",
+  "title": "fakten.json — Rechts- und Sachaussagen einer v4.2-Einheit, an der Primärquelle geprüft",
+  "description": "Liegt AUSSERHALB des Repos: <Quellenarchiv>/_pruefung/<ordnername>/fakten.json. Geschrieben vom Fakten-Audit, geprüft von scripts/check-fakten.mjs. Eine Zeile je Aussage über die Welt (Artikelnummer, Frist, Betrag, Prozent, Datum, «Stand …», Ergebnis einer Abstimmung) — nicht die erfundenen Fallzahlen (fall.json). Beschreibung: .claude/skills/bbw-hko-heft-v42/references/belege.md (ENTSCHEIDE E38).",
+  "type": "object",
+  "required": ["format", "einheit", "zeilen"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "bbw-hko/fakten@1" },
+    "einheit": { "$ref": "#/$defs/ordnername" },
+    "zeilen": { "type": "array", "items": { "$ref": "#/$defs/zeile" } }
+  },
+  "$defs": {
+    "ordnername": { "type": "string", "pattern": "^[0-9]\\.[0-9]\\.[0-9]_[a-z0-9]+(?:_[a-z0-9]+)*$" },
+    "datum": { "description": "JJJJ-MM-TT", "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "von": {
+      "type": "object",
+      "required": ["rolle", "modell"],
+      "additionalProperties": false,
+      "properties": {
+        "rolle": { "type": "string", "minLength": 1 },
+        "modell": { "type": "string", "minLength": 1 }
+      }
+    },
+    "feld": {
+      "description": "Datei › Stelle. Dateien der Einheit ohne Pfad davor; Karten mit «quellen/» bzw. «methoden/». JSON: Pfad wie in check-all (z. B. «herausforderung_B.json › situation_text»); begleiter.md: «begleiter.md › Absatz N».",
+      "type": "string",
+      "pattern": "^(?:herausforderung_[AB]\\.json|set\\.json|kn\\.json|prinzip\\.json|begleiter\\.md|quellen/[^ /]+\\.json|methoden/[^ /]+\\.json) › \\S.*$"
+    },
+    "zeile": {
+      "type": "object",
+      "required": ["wortlaut_im_heft", "feld", "primaerquelle", "abgerufen_am", "urteil", "bemerkung"],
+      "additionalProperties": false,
+      "properties": {
+        "wortlaut_im_heft": {
+          "description": "Die Aussage, wie sie im Feld steht — wörtlich aus der Einheit (eigener Text, kein Quellentext), so lang wie nötig, dass Kürzel, Artikel, Zahl und Einheit darin stehen. check-fakten sucht den Wortlaut im Feld: Ändert sich der Text, fehlt die Zeile wieder.",
+          "type": "string",
+          "minLength": 1
+        },
+        "feld": { "$ref": "#/$defs/feld" },
+        "auch_in": { "description": "Weitere Felder mit derselben Aussage im selben Wortlaut.", "type": "array", "items": { "$ref": "#/$defs/feld" } },
+        "art": { "enum": ["artikel", "frist", "betrag", "prozent", "datum", "stand", "abstimmung", "zahl", "sonst"] },
+        "primaerquelle": {
+          "description": "URL der amtlichen Stelle (Gesetz, Amt, Gericht). Leer nur bei «nicht_belegbar». Keine Medien, kein Wikipedia.",
+          "type": "string",
+          "pattern": "^(?:https://\\S+)?$"
+        },
+        "fundstelle": { "description": "Wo in der Primärquelle: Artikel und Absatz, Tabelle, Abschnitt — in eigenen Worten, kein Zitat.", "type": "string" },
+        "abgerufen_am": { "$ref": "#/$defs/datum" },
+        "urteil": {
+          "description": "belegt (steht so an der Primärquelle; eine vertretbare Vereinfachung nennt `bemerkung`) · abweichend (die Primärquelle sagt etwas anderes) · nicht_belegbar (nicht abrufbar oder nirgends amtlich zu finden).",
+          "enum": ["belegt", "abweichend", "nicht_belegbar"]
+        },
+        "bemerkung": { "description": "In eigenen Worten; darf leer sein.", "type": "string" },
+        "von": { "$ref": "#/$defs/von" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "urteil": { "enum": ["belegt", "abweichend"] } }, "required": ["urteil"] },
+          "then": { "properties": { "primaerquelle": { "minLength": 9 } } }
+        },
+        {
+          "if": { "properties": { "urteil": { "enum": ["abweichend", "nicht_belegbar"] } }, "required": ["urteil"] },
+          "then": { "properties": { "bemerkung": { "minLength": 1 } } }
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "format": "bbw-hko/fakten@1",
+      "einheit": "9.9.9_platzhalter_pruefen",
+      "zeilen": [
+        {
+          "wortlaut_im_heft": "Platzhalter-Aussage mit Art. 0 XY und einer Frist von 0 Tagen",
+          "feld": "herausforderung_A.json › situation_text",
+          "auch_in": ["begleiter.md › Absatz 12"],
+          "art": "frist",
+          "primaerquelle": "https://www.example.org/platzhalter",
+          "fundstelle": "Art. 0 Abs. 0",
+          "abgerufen_am": "2026-01-01",
+          "urteil": "belegt",
+          "bemerkung": "",
+          "von": { "rolle": "Fakten-Audit", "modell": "platzhalter-modell" }
+        }
+      ]
+    }
+  ]
+}

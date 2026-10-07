@@ -45,7 +45,7 @@ Reihenfolge einhalten; jeder Schritt liest eine Datei, keiner das Gedächtnis.
 | `lehrgang` | kanonisch, einwertig, wie in den Heften |
 | `thema` | `T<n>` wie `nrlp.themen[0]` der Hefte |
 | `version` | `"2.1.0"` (Konstante des Skeletts) |
-| `status` | **exakt `"entwurf"`** — `ERR_V42_STATUS`; `check-all` lässt nur `entwurf`, `publiziert` oder kein Feld zu, und der Index-Builder behandelt jeden anderen Wert als veröffentlicht |
+| `status` | **exakt `"entwurf"`** — `ERR_V42_STATUS`; `check-all` lässt nur `entwurf`, `publiziert`, `archiviert` oder kein Feld zu, und der Index-Builder bricht bei jedem anderen Wert ab (E37) |
 | `prinzip_ref`, `kn_ref` | `<ordner>_prinzip`, `<ordner>_kn` |
 | `herausforderungen` | genau 2: `<ordner>_hf_A`, `<ordner>_hf_B` |
 | `wochenplan` | 4 Einträge `{ woche, lektionen, inhalt }`, `woche` 1–4, `lektionen` je 3; `inhalt` wie im Skelett (Leitfaden §8): Heft A · Heft B · Gemeinsamer Auftrag (2) + Rückmeldung (1) · KN (2) + Puffer (1). Steht nur im Set; das Heft nennt keine Woche (E17) |
@@ -93,8 +93,7 @@ Heft A in der Reihenfolge der Äste, Spur-Einträge Heft A, dann dasselbe für B
   `"quelle"`. Für eine Spur, die das Heft nicht hat, gibt es keinen Eintrag.
 - **Fall-Ausschluss gilt auch hier:** kein Begriff aus
   `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` in `begriff`
-  oder `definition` (`ERR_V42_R9_FALL`, Teilzeichenkette, Kleinschreibung), dazu
-  die sechs fest gesperrten Wörter aus E24.
+  oder `definition` (`ERR_V42_R9_FALL`, Teilzeichenkette, Kleinschreibung).
 
 ## 4. `gemeinsamer_auftrag`
 
@@ -265,8 +264,8 @@ Der **Fall-Ausschluss** (`fallAusschluss`, `ERR_V42_R9_FALL`) läuft zusätzlich
 **alle** Texte von `gemeinsamer_auftrag` — auch `produkte`, `heft_bezug`,
 `indikator_produkt`, `erwartungshorizont`, `sozialform` — und über `glossar`.
 Ausgenommen sind nur `feedback_kriterien[].stufen[]` und `kontext_ausschluss`.
-Gesucht wird jeder Begriff aus `fall_ausschluss_hefte_und_auftrag` und die sechs
-festen Wörter aus E24.
+Gesucht wird jeder Begriff aus `fall_ausschluss_hefte_und_auftrag` — nur diese
+Liste (E30).
 
 ## 5. Prüfungen, die kein Skript macht
 
@@ -311,3 +310,10 @@ sofort behoben. `build:einheiten-index` schreibt beide Index-Kopien (`src/data/`
 und `public/nrlp/`) — nie von Hand. Der Index führt auch, ob ein Begleiter
 vorliegt: nach Phase 8 wird er erneut gebaut. `check-all` läuft erst im Tor
 (Phase 9), weil es `begleiter.md` als Pflichtdatei verlangt.
+
+**Wer `fall.json` schreibt:** Die erfundenen Zahlen und Angaben des
+gemeinsamen Auftrags schreibt der Executor Set als Teildatei
+`fall.auftrag.json` im Quellenarchiv unter `_pruefung/<ordnername>/`; die der
+Hefte haben die Executor A und B geschrieben (`fall.A.json`, `fall.B.json`).
+Zusammengeführt wird im Tor (`references/belege.md` §6, `references/phase-9-tor.md`
+§1 Schritt 3). (Herkunft: Auftrag 10, Stufe A; E38.)

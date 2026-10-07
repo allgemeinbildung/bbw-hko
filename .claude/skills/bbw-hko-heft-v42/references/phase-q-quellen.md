@@ -10,7 +10,7 @@ des Bauplans). Phase Q fragt nicht nach; was offen bleibt, steht im Bauplan.
 Phase Q nie: Dort gilt, was als Karte **und** als Archivtext vorliegt.
 
 Grundlagen dieser Datei: `docs/upgrade-v4.2/ENTSCHEIDE.md` (E6, E11, E14, E16,
-E21, E23, E24), `docs/upgrade-v4.2/01_Leitfaden_v4.2.md` (§4.4, §5, §11.4, §13),
+E21, E23, E30), `docs/upgrade-v4.2/01_Leitfaden_v4.2.md` (§4.4, §5, §11.4, §13),
 `docs/upgrade-v4.2/BERICHT.md` (§8), `scripts/check-v42.mjs`,
 `scripts/check-all.mjs`. Bei Widerspruch gilt die Reihenfolge aus `SKILL.md` §1.
 
@@ -40,7 +40,10 @@ Je Heft vier Slots. IDs nach `references/ableitungsregeln.md` (ENTSCHEIDE E21):
 `<n>` = Ziffern der Ordnernummer ohne Punkte, `<h>` = `a` oder `b`. Gehört die
 ID schon einer anderen Einheit (Karte **oder** Archivordner), gilt die
 Ausweichregel aus E21 für den ganzen Satz. Nie eine vorhandene Karte
-überschreiben. «Pflichtquelle» heisst gegenüber Lernenden und Lehrperson
+überschreiben: Vor jeder Änderung an einer vorhandenen Quellenkarte läuft
+`node scripts/karten.mjs darf <karten-id>`, das Ergebnis steht im Bericht bzw.
+im Bauplan §7 (Abschnitt 8, «Vorhandene Karte»; `references/karten.md`).
+«Pflichtquelle» heisst gegenüber Lernenden und Lehrperson
 «Quelle» (E16); intern bleiben `pflicht` und die IDs.
 
 ## 3. Was je Heft herzuleiten ist
@@ -129,8 +132,8 @@ Einsatz: Lernende im <N>. Lehrjahr, auf dem Handy, ohne Konto.
 
 Harte Regeln
 1. Nichts erfinden. Jeder Kandidat ist in dieser Session abgerufen.
-2. Fall-Ausschluss: kein Kandidat mit <Fall-Begriffe aus Bauplan §5
-   und die gesperrten Wörter aus E24>. Am Rand vorkommend: mit Fundstelle melden.
+2. Fall-Ausschluss: kein Kandidat mit <Fall-Begriffe aus Bauplan §5>.
+   Am Rand vorkommend: mit Fundstelle melden.
 3. Frei zugänglich: Abruf ohne Cookies, keine Paywall, kein Login, keine App.
 4. Nichts ins Repo schreiben. Keine Karte. Nur Kandidaten.
 5. Kein Swissdox. Fehlt ein Volltext: «Volltext fehlt — Swissdox nötig».
@@ -194,8 +197,7 @@ Bauplan; wo möglich, zeigt die `url` direkt auf den Ausschnitt. Das Skript
 liest dagegen **jedes Feld der Karte** ohne Ausnahme (auch `titel`,
 `titel_original`, `url`, `lizenz_hinweis`): Steht ein Begriff dort, scheidet
 der Kandidat aus. Begriffe in Phase Q: die Fall-Begriffe aus §5 des
-Bauplans (später `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag`)
-und die sechs fest gesperrten Wörter aus E24.
+Bauplans (später `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag`).
 
 ## 7. Kohärenz-Audit nach der Wahl
 
@@ -252,6 +254,26 @@ Pflichtfelder: `pflichtfelderKarte` → `ERR_V42_KARTE_PFLICHTFELD`. Budgets:
   «`titel` · `herausgeber`, `datum`» ist ≤ 100 Zeichen.
 - **Kein Feld über 400 Zeichen** (`regel10Volltext` → `ERR_V42_R10_VOLLTEXT`).
 - Kein Eszett, kein Platzhalter (`{{…}}` aus dem Skelett muss weg).
+- **Der `kurzbeschrieb` verrät die Lösung nicht.** Er nennt Thema und Form der
+  Quelle — nicht die Aussagen, die das Raster sucht, und kein Wort, das der
+  Ausschnitt nicht trägt. Er steht auf der QR-Seite, die Lernende vor dem
+  Raster sehen. (Herkunft: Rückblick
+  `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §4 — rund elf Karten
+  am 05.10.2026 gekürzt; Nachtrag `2026-10-04-311` §6.)
+- **`verortung.absaetze` einer Webseite** in Worten, die auf der Seite
+  auffindbar sind (Zwischentitel, «die ersten vier Fragen») — nicht als
+  Absatznummern des Archivs, die Lernende am Handy nicht nachzählen können.
+- **Vorhandene Karte** (`references/karten.md` §2, Fall d; ENTSCHEIDE E36):
+  Nach der Freigabe des Bauplans wird der Inhalt einer Karte — Titel, URL bzw.
+  URN, Ausschnitt — nie mehr ausgetauscht. Eine andere Quelle, auch ein
+  anderer Ausschnitt desselben Beitrags, ist eine **neue Karte mit neuer ID**;
+  die alte bleibt, wie sie ist. Korrigierbar bleiben Zeitmarken, Wortzahl bzw.
+  Dauer, Prüfdatum und `kurzbeschrieb`: frei an einer Karte ohne publizierten
+  Verbraucher, sonst nur als Fehler mit Vermerk in
+  `src/data/quellen/_aenderungen.json`. `node scripts/karten.mjs darf <id>`
+  sagt, welcher Fall vorliegt; `verbraucher <id>` zeigt auch Einheiten, die
+  die Karte einer anderen Einheit führen.
+  (Herkunft: Nachtrag `2026-10-04-411` §7 Nr. 8; Bericht `2026-10-04-421` §10.)
 
 ## 9. Archiv
 

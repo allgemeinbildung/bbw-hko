@@ -215,25 +215,31 @@ fragen. Phase 0 liefert:
 - **Lehrgang-Suffix** nur, wenn die Einheit für einen Lehrgang gilt und
   dieselbe Nummer im anderen EFZ-Lehrgang mit anderem Text existiert
   (Ergebnis aus Abschnitt 7).
-- **Frei?** `src/data/einheiten/<ordner>/` darf nicht existieren. Die
+- **Frei?** `node scripts/check-namen.mjs --vor <ordner>` beantwortet es für
+  Ordner, Laufordner, Quellen-Muster und neue Methodenkarten
+  (`--karte <id>`) — das Ergebnis gehört ins Verortungsblatt. Von Hand heisst
+  es: `src/data/einheiten/<ordner>/` darf nicht existieren. Die
   Quellen-ID `q-<n><h>-pflicht` darf weder als Karte unter `src/data/quellen/`
   noch als Archivordner einer anderen Einheit gehören.
 
-## 9. Gesperrte Wörter (ENTSCHEIDE E24)
+## 9. Gesperrte Wörter — aufgehoben (ENTSCHEIDE E30)
 
-`check-v42.mjs` sperrt sechs Wörter in jeder Einheit, als Teilzeichenkette und
-ohne Unterschied von Gross- und Kleinschreibung: Leasing, Konsumkredit,
-Kleinkredit, E-Bike, Ebike, Mobilität.
+Bis 04.10.2026 sperrte `check-v42.mjs` sechs Wörter des Piloten für jede
+Einheit (E24). E30 hat das aufgehoben: Der Fall-Ausschluss kommt nur noch aus
+`prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` der
+jeweiligen Einheit. Phase 0 prüft hier nichts mehr; kein Wort macht eine
+Einheit von sich aus «nicht erzeugbar».
 
-Prüfen: Kommt eines davon in `lebensbezuege[].text`, in einem
-`kompetenzen[].text`, in einem `detail` der Kompetenzen oder im Titel eines
-Kernkapitels vor, das die Hefte nennen müssten? Dann ist die Einheit **nicht
-erzeugbar**, bis das Skript korrigiert ist. Das Skript wird nicht geändert.
+Die Bauplan-Vorlage führt die Zeile «Gesperrte Wörter (E24)» seit dem
+07.10.2026 nicht mehr. Ältere Baupläne mit «kein Treffer» oder mit
+einer Ausnahme in §9 bleiben, wie sie freigegeben sind.
 
 ## 10. Verortungsblatt
 
 Ausgabe in dieser Form (lokal: als Bauplan §1–§2; im Auto-Modus steht sie
-schon im Bauplan und wird nur gegen den Datensatz nachgeprüft):
+schon im Bauplan und wird nur nachgeprüft — gegen den Datensatz, und ob die
+Kapiteldateien mit den genannten Seitenmarken da sind; `references/auto-modus.md`
+§7, Zeile 7 der Vorprüfung in `references/lauf.md` §3):
 
 ```
 Lehrgang (kanonisch): …      Datensatz: public/nrlp_….json
@@ -254,7 +260,6 @@ Kapitel:  <Datei> · S. aa–bb · wofür (Heft, Leitfrage) · am Text geprüft 
           nicht belegt: …
 Fokus:    …
 Ordner:   <X.Y.Z>_<slug>   frei: ja | nein     IDs: <ordner>_{hf_A,hf_B,set,kn,prinzip}
-Gesperrte Wörter (E24): kein Treffer | Treffer: …
 ```
 
 ## 11. Wann Phase 0 abbricht
@@ -264,7 +269,6 @@ Gesperrte Wörter (E24): kein Treffer | Treffer: …
 | Nummer steht im Datensatz des Lehrgangs nicht; Thema ohne Lebensbezüge | nicht erzeugbar, Meldung |
 | Lebensbezug fehlt im Crosswalk | lokal: Kapitel suchen, begründen, Crosswalk nachführen; unbeaufsichtigt: nicht erzeugbar |
 | Kapiteldatei fehlt | nicht erzeugbar, nichts schreiben |
-| gesperrtes Wort im Gegenstand | nicht erzeugbar bis zur Korrektur des Skripts |
 | Ordner existiert, auch mit verlängertem slug | nicht erzeugbar (E21) |
 | Heft hat nur `mit_medien` und es gibt keine Quelle oder keine Ersatzquelle | lokal: Phase Q zuerst; unbeaufsichtigt: nicht erzeugbar |
 

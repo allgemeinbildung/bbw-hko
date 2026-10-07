@@ -23,8 +23,12 @@ export function einheitById(id: string): EinheitIndexEntry | undefined {
 // ---------------------------------------------------------------------------
 // Zwei Schalter (beide in set.json, beide optional, default = live für alle):
 //   • status: 'entwurf'            → ganze Einheit nur für KT1 (neue Einheit)
+//   • status: 'archiviert'         → ganze Einheit nur für KT1 (abgelöste Einheit, E37);
+//                                    optional `ersetzt_durch: "<ordner>"` = Nachfolgerin
 //   • entwurf_komponenten: [...]   → einzelne Bausteine nur für KT1 (selektiv)
 // KT1 sieht immer alles (mit Badge); lp/gast sehen nur Publiziertes.
+// Ausnahme: die QR-Seite /m/<ordner> fragt den Status nicht — gedruckte Hefte
+// müssen funktionieren, auch wenn die Einheit Entwurf oder archiviert ist.
 
 export type Role = 'lp' | 'kt1' | 'gast'
 
@@ -42,6 +46,16 @@ export function isEntwurf(entry: Pick<EinheitIndexEntry, 'status'>): boolean {
   return entry.status === 'entwurf'
 }
 
+/** Abgelöste Einheit: bleibt im Repo (gedruckte Hefte, Feedback, Statistik), ist aber nur für KT1 sichtbar. */
+export function isArchiviert(entry: Pick<EinheitIndexEntry, 'status'>): boolean {
+  return entry.status === 'archiviert'
+}
+
+/** Ganze Einheit nur für KT1 — Entwurf ODER archiviert. Die eine Schranke für Katalog und Direkt-URLs. */
+export function istNurKt1(entry: Pick<EinheitIndexEntry, 'status'>): boolean {
+  return isEntwurf(entry) || isArchiviert(entry)
+}
+
 export function draftKomponenten(entry: Pick<EinheitIndexEntry, 'entwurf_komponenten'>): string[] {
   return Array.isArray(entry.entwurf_komponenten) ? entry.entwurf_komponenten : []
 }
@@ -49,7 +63,7 @@ export function draftKomponenten(entry: Pick<EinheitIndexEntry, 'entwurf_kompone
 /** Katalog-Filter: KT1 sieht alle Einheiten, lp/gast nur publizierte. */
 export function visibleEinheiten<T extends Pick<EinheitIndexEntry, 'status'>>(list: T[], role: Role): T[] {
   if (role === 'kt1') return list
-  return list.filter((e) => !isEntwurf(e))
+  return list.filter((e) => !istNurKt1(e))
 }
 
 /** Ist ein Baustein-Gruppen-Key für diese Rolle sichtbar? */

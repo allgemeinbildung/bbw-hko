@@ -1,0 +1,129 @@
+{
+  "id": "2.2.1_ausgrenzung_analysieren_ki",
+  "set_ref": "2.2.1_ausgrenzung_analysieren_set",
+  "prinzip_ref": "2.2.1_ausgrenzung_analysieren_prinzip",
+  "kn_ref": "2.2.1_ausgrenzung_analysieren_kn",
+  "anchored_situations": [
+    "2.2.1_ausgrenzung_analysieren_hf_A",
+    "2.2.1_ausgrenzung_analysieren_hf_B"
+  ],
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten — Ausgrenzung analysieren",
+  "thema": "T2",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Meinungen bilden und mitgestalten: Ich bilde mir eine eigene Haltung und vertrete sie mit Respekt.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Ethik",
+        "detail": "Würde des Menschen, moralische Prinzipien",
+        "kompetenz_anker": "2.2.1"
+      },
+      {
+        "aspekt": "Politik",
+        "detail": "Menschenrechte, demokratische Werte, Meinungsfreiheit",
+        "kompetenz_anker": "2.2.1"
+      },
+      {
+        "aspekt": "Kultur",
+        "detail": "Künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung",
+        "kompetenz_anker": "2.2.3"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK7 — Verständnis fördern",
+      "SK5 — Werthaltungen reflektieren",
+      "SK6 — Standpunkte begründen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir eine KI, wenn ich über Ausgrenzung nachdenke?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI nicht stimmt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Drei Fragen zu meiner Grenze",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob Ihre Grenze klar und begründet ist.",
+      "bezug": "In Heft A prüfen Sie Aussagen über Menschen, in Heft B kommentieren Sie einen Beitrag. In beiden gilt: Erlaubt heisst noch nicht in Ordnung.",
+      "auftrag": "Die KI stellt Ihnen drei Fragen zu Ihrer Grenze aus dem Prüfbericht (Heft A). Ihre Grenze ist Ihr Standpunkt dazu, ab wann eine Aussage nicht mehr in Ordnung ist. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Meine Grenze bei Aussagen über Menschen: [meine Grenze mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich denken soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am wenigsten klar? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich denken soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Recht oder einen Begriff, schlagen Sie die Angabe im Glossar Ihrer Hefte nach. Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Grenze mit einem Grund ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Grenze mit einem Grund ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihre Grenze bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Grenze mit Grund stand vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie sagen selbst, ob Ihre Grenze bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Rechte und Begriffe der KI sind nachgeschlagen. Fragt die KI nur, ist das Kriterium erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Bei welcher Frage der KI mussten Sie am längsten überlegen?",
+        "Im Kompetenznachweis sagen Sie Ihren Standpunkt selbst und klar. Was nehmen Sie aus den drei Fragen mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Zwei Einwände gegen meinen Standpunkt",
+      "ziel": "Sie prüfen Ihren Standpunkt an zwei Einwänden der KI und entscheiden selbst, welcher stärker ist.",
+      "bezug": "In Heft A prüfen Sie Aussagen über Menschen, in Heft B kommentieren Sie einen Beitrag. In beiden gilt: Erlaubt heisst noch nicht in Ordnung.",
+      "auftrag": "Nehmen Sie den Standpunkt aus Ihrem Kommentar in Heft B. Die KI nennt zwei Einwände dagegen. Ein Einwand ist, was die andere Seite dagegen sagt. Sie entscheiden, welcher Einwand stärker ist, und antworten selbst darauf. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du vertrittst die andere Seite. Thema: Ausgrenzung und Meinungsfreiheit. An meiner Schule hängt ein Plakat. Es zeigt einen verletzenden Satz, um ihn zu kritisieren. Mein Standpunkt: [mein Standpunkt mit Grund]. Nenne zwei Einwände dagegen, je in einem Satz. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach Ihrer Antwort auf den Einwand: «Ich finde diesen Einwand stärker: [der stärkere Einwand]. Meine Antwort darauf: [meine Antwort]. Stell mir zwei Fragen zu meiner Antwort, eine nach der anderen. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Recht oder einen Begriff, schlagen Sie die Angabe im Glossar Ihrer Hefte nach. Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Standpunkt mit Grund ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Standpunkt mit Grund ohne KI auf.",
+        "Lassen Sie sich mit Prompt 1 zwei Einwände nennen.",
+        "Schlagen Sie jedes Recht und jeden Begriff der KI im Glossar nach.",
+        "Schreiben Sie Ihre Antwort auf den Einwand, der Ihnen stärker scheint.",
+        "Beantworten Sie mit Prompt 2 die zwei Fragen der KI."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Standpunkt mit Grund stand vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Rechte und Begriffe der KI sind nachgeschlagen."
+        },
+        {
+          "kriterium": "Selbst geantwortet",
+          "indikator": "Die Antwort auf den stärkeren Einwand haben Sie selbst geschrieben."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben gewählt, welcher Einwand stärker ist."
+        }
+      ],
+      "reflexion": [
+        "Was sieht die andere Seite richtig, auch wenn Sie bei Ihrem Standpunkt bleiben?",
+        "Welcher Einwand der KI passte nicht zu Ihrem Standpunkt? Woran haben Sie das gemerkt?",
+        "Im Kompetenznachweis sagen Sie Ihren Standpunkt selbst und klar. Was nehmen Sie aus den zwei Einwänden mit?"
+      ]
+    }
+  ]
+}

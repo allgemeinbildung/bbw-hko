@@ -43,3 +43,10 @@ scripts/scorm-*.mjs
 
 # Auszuege mit Personendaten (z. B. Mailverteiler aus Supabase) — nie ins Repo
 exports/
+
+# Nicht als Text pruefbar (scripts/check-leck.mjs) — bleibt draussen.
+# Das Zip ist ein Abzug von docs/upgrade-v4.1/kontextpaket/ (dort als Text versioniert).
+docs/upgrade-v4.1/Kontextpaket-bbw-hko.zip
+# Probe-Exporte vom 03.10.2026 (2.1.1, 2.3.1): 18 Word-Dateien, 16 HTML mit
+# eingebetteten Schriften, 22 MB. Entstehen neu mit scripts/export-v42.mjs.
+docs/upgrade-v4.2/probe/

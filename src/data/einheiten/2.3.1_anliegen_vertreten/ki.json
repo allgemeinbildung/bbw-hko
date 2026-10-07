@@ -1,0 +1,124 @@
+{
+  "id": "2.3.1_anliegen_vertreten_ki",
+  "set_ref": "2.3.1_anliegen_vertreten_set",
+  "prinzip_ref": "2.3.1_anliegen_vertreten_prinzip",
+  "kn_ref": "2.3.1_anliegen_vertreten_kn",
+  "anchored_situations": [
+    "2.3.1_anliegen_vertreten_hf_A",
+    "2.3.1_anliegen_vertreten_hf_B"
+  ],
+  "modul": "2.3",
+  "modul_titel": "Meinungen bilden und mitgestalten — mitreden und mitgestalten",
+  "thema": "T2",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Meinungen bilden und mitgestalten: Ich bilde mir eine Meinung, vertrete sie mit Respekt und bringe mich ein.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Politik",
+        "detail": "Durchsetzungsstrategien eigener Interessen",
+        "kompetenz_anker": "2.3.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Ethische Prinzipien, Perspektivenübernahme",
+        "kompetenz_anker": "2.3.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK12 — Partizipation",
+      "SK7 — Verständnis fördern"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn ich etwas erreichen will?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI zu meinen Rechten falsch ist?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Die KI fragt nach meinem Weg",
+      "ziel": "Sie beantworten Fragen der KI zu Ihrem Anliegen und Ihrem Weg und merken, wo Ihr Weg noch eine Lücke hat.",
+      "bezug": "In Heft A wählen Sie einen Weg für Ihr Anliegen, in Heft B vertreten Sie Ihre Position. Für beides gilt: Wer mitgestalten will, braucht gute Gründe und andere Menschen.",
+      "auftrag": "Nehmen Sie Ihr Factsheet aus Heft A. Die KI stellt Ihnen Fragen zu Ihrem Anliegen und zum Weg, auf dem Sie es einbringen. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: politisch mitwirken in der Schweiz. Mein Anliegen und mein Weg: [mein Anliegen und Weg]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Recht oder eine Zahl, schlagen Sie die Angabe im Lehrmittel nach (Kap. 3.2 und 6.4). Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie zuerst ohne KI Ihr Anliegen und Ihren Weg in einem Satz auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihr Anliegen und Ihren Weg ohne KI in einem Satz auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI zu Ihrem Weg.",
+        "Entscheiden Sie nach Prompt 2, ob Ihr Weg bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Anliegen und Weg standen da, bevor Sie Prompt 1 schrieben."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jedes Recht und jede Zahl der KI ist nachgeschlagen. Hat sie nur gefragt, ist das erfüllt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie sagen selbst, ob Ihr Weg bleibt oder sich ändert."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat eine Lücke in Ihrem Weg gezeigt?",
+        "Im Kompetenznachweis zeigen Sie selbst, wie Sie ein Anliegen einbringen. Was nehmen Sie dafür mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Drei Einwände gegen meine Position",
+      "ziel": "Sie prüfen Ihre Position an drei Einwänden der KI und wählen selbst den stärksten Einwand.",
+      "bezug": "In Heft B vertreten Sie Ihre Position, in Heft A begründen Sie Ihr Anliegen. Für beides gilt: Wer andere gewinnen will, muss ihre Einwände kennen und ernst nehmen.",
+      "auftrag": "Nehmen Sie Ihre Diskussionskarte aus Heft B. Die KI nennt drei Einwände gegen Ihre Position. Sie wählen selbst den stärksten Einwand und antworten darauf mit Behauptung, Begründung und Beispiel. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist in einer Diskussion die andere Seite. Thema: politisch mitwirken in der Schweiz. Meine Position: [meine Position]. Nenne drei Einwände dagegen, je in einem Satz. Nummeriere sie. Bleib sachlich. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, für den stärksten Einwand: «Ich antworte auf deinen Einwand Nummer [Nummer]: [meine Antwort]. Was überzeugt dich daran noch nicht? Stell mir dazu eine Frage. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Recht oder eine Zahl, schlagen Sie die Angabe im Lehrmittel nach (Kap. 3.2 und 6.4). Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie zuerst ohne KI Ihre Position in einem Satz auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Position ohne KI in einem Satz auf.",
+        "Lassen Sie sich mit Prompt 1 drei Einwände nennen.",
+        "Schlagen Sie jedes Recht und jede Zahl aus den Einwänden im Lehrmittel nach.",
+        "Antworten Sie in Prompt 2 auf den stärksten Einwand, mit seiner Nummer.",
+        "Notieren Sie, ob Ihre Position bleibt oder sich ändert, und warum."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Position stand da, bevor Sie Prompt 1 schrieben."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jedes Recht und jede Zahl aus den Einwänden haben Sie nachgeschlagen. Steht in keinem Einwand ein Recht oder eine Zahl, ist das erfüllt."
+        },
+        {
+          "kriterium": "Einwand gewählt",
+          "indikator": "Sie haben selbst gewählt, welcher Einwand am stärksten ist."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihre Position bleibt oder sich ändert, und warum."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand der KI war stärker als der Einwand auf Ihrer Diskussionskarte?",
+        "Stand eine Angabe der KI nicht im Lehrmittel? Was haben Sie damit gemacht?",
+        "Im Kompetenznachweis zeigen Sie selbst, wie Sie Ihre Position begründet vertreten. Was nehmen Sie dafür mit?"
+      ]
+    }
+  ]
+}

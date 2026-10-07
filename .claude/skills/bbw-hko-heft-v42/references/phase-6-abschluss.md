@@ -11,7 +11,7 @@ Bei Zweifel nachlesen, nie aus dem Gedächtnis schreiben: `scripts/check-v42.mjs
 (`budgetKern` ab `mindmap_zentrum`, `budgetProduktBild`, `regelGlossar`,
 `regelLoesungen`, `regel7`), `scripts/check-einheiten.mjs`,
 `src/lib/einheiten/types.ts` (`ProduktBild`, `ProduktBildBlock`, `Abschluss`,
-`AbschlussLoesung`), `docs/upgrade-v4.2/ENTSCHEIDE.md` (E15, E17, E19, E24, E26).
+`AbschlussLoesung`), `docs/upgrade-v4.2/ENTSCHEIDE.md` (E15, E17, E19, E26, E30).
 
 ## Fest und herzuleiten
 
@@ -58,9 +58,7 @@ wirklich benutzen (Leitfrage, ihre Lösung, ein Schritt, die `abgaben`).
 3. Schreibweise festlegen (Nominativ Singular, ohne Artikel). Dieselbe
    Zeichenfolge steht später im Glossar und in `verbindungen`.
 4. Ausschliessen: jeden Begriff aus
-   `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` und die
-   gesperrten Wörter aus E24 (Leasing, Konsumkredit, Kleinkredit, E-Bike, Ebike,
-   Mobilität).
+   `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag`.
 
 **Übergabe an Phase 7.** `regelGlossar` verlangt beide Richtungen: Jeder Knoten
 ist ein Glossarbegriff des Hefts ohne `spur`, und umgekehrt. Phase 6 hält darum
@@ -115,7 +113,7 @@ vorkommen und noch kein Knoten sind, je ≤ 25 Zeichen — Phase 7 nimmt aus ihn
 die ein bis zwei Glossareinträge der Spur. **Nur eine Spur:** `eigene_knoten`
 trägt nur deren Schlüssel; das Skript geht die vorhandenen Schlüssel von
 `spuren` durch. Alle übrigen Felder von `loesung` gelten unverändert.
-`loesung.transfer` nennt weder den Fall des KN noch ein gesperrtes Wort.
+`loesung.transfer` nennt den Fall des KN nicht (kein Begriff aus dem Fall-Ausschluss).
 
 ## 3. Checkliste — `bewertungsraster`
 
@@ -241,7 +239,7 @@ Beispielbild:
 1. Es zeigt die **Form vollständig**: jeden Teil, den die Schritte 01–04 und
    die `abgaben` verlangen — auch Legende, Entscheid, Begründung.
 2. Der Fall kommt aus einem anderen Lebensbereich als Heft, Auftrag und KN,
-   ohne Begriff des KN-Falls und ohne gesperrtes Wort.
+   ohne Begriff des KN-Falls.
 3. Zahlen sind erfundene Fallzahlen und **nachgerechnet** (jede Summe, jede
    Differenz), nicht geschätzt.
 4. Fasst die enge Grenze nicht alle verlangten Einträge, zeigt es je Block die
@@ -300,7 +298,7 @@ Vor dem Prüfbefehl, je Heft:
 
 - [ ] `mindmap_zentrum` zeichengleich mit `prinzip.mindmap_zentrum_kurz` und dem anderen Heft
 - [ ] vier Äste, Ast 4 wie in §1; Äste 1–3 je ≥ 1 Knoten; ≤ 5 je Ast, ≤ 10 im Ganzen, je ≤ 25 Zeichen
-- [ ] jeder Knoten kommt in LF1–LF4 oder im Produkt vor; kein Begriff des KN-Falls, kein gesperrtes Wort
+- [ ] jeder Knoten kommt in LF1–LF4 oder im Produkt vor; kein Begriff des KN-Falls
 - [ ] Begriffsliste für Phase 7 notiert (Begriff, Heft, Herkunft, Fundstelle)
 - [ ] zwei Quer-Check-Fragen aus der Situation; drei Mitnahme-Zeilen, die dritte «Mir noch unklar», ohne Wort über den Auftrag; Lösung je Frage und Zeile
 - [ ] ≥ 5 Verbindungen, alle Enden zeichengenau Knoten oder Transfer-Titel, eine zum Transfer-Feld
@@ -322,3 +320,44 @@ Solange `set.json` fehlt, meldet `check-v42.mjs` die fehlende Datei
 (`ERR_V42_DATEI`); die Glossar-Regel (`ERR_V42_GLOSSAR`) kann erst nach Phase 7
 grün werden. Jeder andere Befund zu den Feldern dieser Phase — `ERR_V42_BUDGET`,
 `ERR_V42_R7`, `ERR_V42_LOESUNG`, `ERR_V42_PRODUKTBILD` — wird sofort behoben.
+
+## 7. Messen, bevor das Heft abgegeben wird
+
+Mit Phase 6 ist das Heft vollständig. Der Executor, der es geschrieben hat,
+misst es jetzt selbst — in einem **eigenen** Temp-Ordner — und gibt erst ab,
+wenn keine seiner Seiten überläuft:
+
+```
+node scripts/export-v42.mjs <ordner> --out <eigener-temp-ordner>
+node scripts/messen-v42.mjs <eigener-temp-ordner>
+```
+
+Gemessen werden die Seiten des eigenen Hefts in jeder vorhandenen Spur und
+das eigene Dokument «Lösungen». Ein Überlauf wird im Feld der gemeldeten Seite
+behoben, auch wenn dessen Zeichenbudget eingehalten ist; für
+`loesungsbild.hinweis` gibt es kein Budget (ein Lauf: 458 px). Seite 8 und der
+Auftragsbogen zählen erst im Tor, weil ihnen `set.json` noch fehlt. Was der
+Executor mit seinem Heft abgibt und was er tut, wenn der Export «nicht im
+Index» meldet, steht in `references/lauf.md` §6. Dasselbe gilt nach jeder
+späteren Korrektur am Heft.
+
+**Seite 6 läuft über oder eine Karte widerspricht dem Beispielbild: nie die
+Karte ändern.** Die Methodenkarten über dem Beispielbild stehen in vielen
+publizierten Heften. Gekürzt und angepasst wird im Heft — am Beispielbild, an
+`fuer`, ausnahmsweise an einem überschriebenen `beispiel` der Methoden-Referenz.
+Wer trotzdem an eine Karte will, fragt zuerst
+`node scripts/karten.mjs darf <karten-id>`; das Ergebnis steht im Bericht.
+Ein Fehler in der Karte selbst geht in den Bericht («Offen», Kürzel S), nicht
+in die Karte (`references/karten.md`; ENTSCHEIDE E36).
+
+**Wer `fall.json` schreibt:** der Executor des Hefts — er gibt mit dem Heft
+seine Teildatei `fall.<A|B>.json` ab, jetzt vollständig: auch die Zahlen, die
+das Lösungsbild aus den Fallzahlen ableitet (mit `abgeleitet_aus`), und was
+die Situation ausschliesst. Das Beispielbild hat einen eigenen, neutralen Fall;
+seine Zahlen gehören nicht hinein (`references/belege.md` §6). (Herkunft:
+Rückblick §4 «Widerspruch zwischen Seiten», «Rechenfehler»; Auftrag 10,
+Stufe A; E38.)
+
+(Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md`
+§4 Zeile 1 — Überlauf bei grünem `check-all` in 11 von 13 Läufen — und §5.2;
+Bericht `2026-10-06-4.3.1_vielfalt_untersuchen` §10.)

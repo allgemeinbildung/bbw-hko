@@ -1,0 +1,129 @@
+{
+  "id": "2.5.1_klimaveraenderung_diskutieren_ki",
+  "set_ref": "2.5.1_klimaveraenderung_diskutieren_set",
+  "prinzip_ref": "2.5.1_klimaveraenderung_diskutieren_prinzip",
+  "kn_ref": "2.5.1_klimaveraenderung_diskutieren_kn",
+  "anchored_situations": [
+    "2.5.1_klimaveraenderung_diskutieren_hf_A",
+    "2.5.1_klimaveraenderung_diskutieren_hf_B"
+  ],
+  "modul": "2.5",
+  "modul_titel": "Meinungen bilden und mitgestalten — Umweltfragen diskutieren",
+  "thema": "T2",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Meinungen bilden und mitgestalten: Ich diskutiere Umweltfragen, die meinen Alltag und meine Zukunft betreffen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Ökologie",
+        "detail": "Quasi-Kollektivgüter/Allmendegüter",
+        "kompetenz_anker": "2.5.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Ethische Prinzipien, Perspektivenübernahme",
+        "kompetenz_anker": "2.5.2"
+      },
+      {
+        "aspekt": "Ökologie",
+        "detail": "Ökologisch nachhaltige Nutzung von natürlichen Ressourcen",
+        "kompetenz_anker": "2.5.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK1 — Quellen unterscheiden",
+      "SK7 — Verständnis fördern"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn ich meine Position begründe?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI nicht belegt ist?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Die KI fragt, ich begründe",
+      "ziel": "Sie prüfen mit Fragen der KI, ob die Begründung Ihrer Aussage hält.",
+      "bezug": "In Heft A trennen Sie, was belegt, erwartet oder vermutet ist. In Heft B wägen Sie ab, was Einzelne tun und was nur Regeln für alle bewirken.",
+      "auftrag": "Ein Prompt ist Ihre Eingabe an die KI. Wählen Sie eine Aussage: Ihre Aussage zur Zukunft (Heft A) oder Ihre Position (Heft B). Dazu stellt die KI Ihnen drei Fragen.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Klimaveränderung, Folgen und Lösungen. Meine Aussage: [meine Aussage mit Begründung]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI eine Zahl oder einen Fachbegriff, schlagen Sie die Angabe im Glossar oder im Lehrmittel nach (Kap. 9). Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Aussage und Ihre Begründung zuerst ohne KI auf ein Blatt. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Aussage und Ihre Begründung ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihre Begründung bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Aussage und Begründung standen vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie sagen, ob Ihre Begründung bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Zahl und jeder Fachbegriff der KI ist nachgeschlagen. Fragt die KI nur, ist das erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat eine Lücke in Ihrer Begründung gezeigt?",
+        "Im Kompetenznachweis begründen Sie Ihre Aussagen selbst. Was nehmen Sie aus dieser Übung mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Einwände der KI beantworten",
+      "ziel": "Sie prüfen zwei Einwände der KI und antworten auf den stärksten.",
+      "bezug": "Aus Heft B kommt Ihre Position, aus Heft A die Frage, was belegt ist. Sie wägen ab, was Einzelne tun können und was nur Regeln für alle erreichen.",
+      "auftrag": "Ein Prompt ist Ihre Eingabe an die KI. Nehmen Sie Ihre Position aus Heft B. Die KI nennt zwei Einwände und begründet sie. Sie schlagen wie in Heft A nach, was davon belegt ist. Dann antworten Sie auf den stärksten Einwand.",
+      "prompt_strategie": [
+        "Prompt 1: «Du vertrittst die andere Seite. Thema: Klimaveränderung, eigener Verzicht oder Regeln für alle. Meine Position: [meine Position mit Begründung]. Nenne mir zwei Einwände dagegen. Begründe jeden Einwand in einem Satz. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach Ihrer Antwort: «Ich antworte auf einen deiner Einwände: [Einwand und meine Antwort]. Wo gehe ich nicht auf den Einwand ein? Stell mir dazu eine Frage. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie jede Begründung der KI im Glossar oder im Lehrmittel nach (Kap. 9). Steht sie dort nicht, übernehmen Sie sie nicht als belegt."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Position und Ihre Begründung zuerst ohne KI auf ein Blatt. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Position und Ihre Begründung ohne KI auf.",
+        "Lassen Sie sich mit Prompt 1 zwei Einwände nennen.",
+        "Schlagen Sie jede Begründung der KI im Glossar oder im Lehrmittel nach.",
+        "Beantworten Sie den stärksten Einwand, bevor Sie Prompt 2 abschicken.",
+        "Notieren Sie nach Prompt 2, was Sie von der KI übernehmen und was nicht."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Position und Begründung standen vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Begründung der KI haben Sie im Glossar oder im Lehrmittel nachgeschlagen."
+        },
+        {
+          "kriterium": "Einwand beantwortet",
+          "indikator": "Ihre Antwort geht auf den Einwand ein, der für Sie der stärkste ist."
+        },
+        {
+          "kriterium": "Selbst geurteilt",
+          "indikator": "Sie haben notiert, was Sie von der KI übernehmen und was nicht."
+        }
+      ],
+      "reflexion": [
+        "Was stimmt am stärksten Einwand, auch wenn Sie bei Ihrer Position bleiben?",
+        "Welche Begründung der KI stand weder im Glossar noch im Lehrmittel?",
+        "Im Kompetenznachweis begründen Sie Ihre Aussagen selbst. Was nehmen Sie aus den Einwänden mit?"
+      ]
+    }
+  ]
+}

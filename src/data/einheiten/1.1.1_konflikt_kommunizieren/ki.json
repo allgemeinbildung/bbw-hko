@@ -12,31 +12,31 @@
   "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
   "thema": "T1",
   "lehrgang": "EFZ_3J",
-  "version": "1.0.0",
-  "erstellt_am": "2026-06-17",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
   "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
   "nrlp_anker": {
-    "thema_text": "T1 — Ins Berufsleben einsteigen: im Konflikt die eigenen Rechte erkennen, den Kanal adressatengerecht wählen und das Gespräch beziehungserhaltend führen.",
+    "thema_text": "Ins Berufsleben einsteigen: Ich kenne meine Rechte und Pflichten im Lehrvertrag und löse Konflikte fair.",
     "gesellschaft_details": [
       {
         "aspekt": "Recht",
-        "detail": "Lehrvertrag, Rechte und Pflichten Lernende (OR 321a, OR 345a), Lerndokumentations-Pflicht, Konfliktfallregelung.",
+        "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen",
         "kompetenz_anker": "1.1.1"
       },
       {
         "aspekt": "Ethik",
-        "detail": "Verantwortung und Werthaltung im Konflikt; offen benennen, wo beide Seiten ein berechtigtes Anliegen haben, statt eine Seite zu eliminieren.",
+        "detail": "Perspektivenübernahme, Konfliktstrategien",
         "kompetenz_anker": "1.1.1"
       },
       {
         "aspekt": "Identität und Sozialisation",
-        "detail": "Rollenübernahme und Selbstwert: als Lernende/r eine Position vertreten, ohne die Lernbeziehung zu beschädigen.",
+        "detail": "Soziale Rollen, Rollenkonflikte",
         "kompetenz_anker": "1.1.1"
       },
       {
         "aspekt": "Technologische und digitale Transformation",
-        "detail": "Kanalwahl und Register im digitalen Konflikt; KI als Schreib- und Sparringsinstrument mit Halluzinationsrisiko.",
-        "kompetenz_anker": "1.1.1"
+        "detail": "Situative und zweckmässige Nutzung digitaler Kommunikationsregeln der verschiedenen Tools",
+        "kompetenz_anker": "1.1.3"
       }
     ],
     "schluesselkompetenzen_texte": [
@@ -46,92 +46,89 @@
     ]
   },
   "ki_leitfragen": {
-    "offen": "Was kann eine KI in einem Konflikt für Sie leisten — und welcher Schritt bleibt Ihre eigene Verantwortung?",
-    "kritisch": "Woran erkennen Sie, dass eine KI Ihnen eine rechtlich falsche oder beziehungsschädigende Empfehlung gibt?",
-    "vergleichend": "Worin unterscheidet sich Ihre begründete Ich-Botschaft von einer KI-Formulierung, die Sie nicht selbst geprüft haben?",
-    "urteilend": "Würden Sie eine KI-formulierte Konfliktnachricht abschicken, ohne sie selbst auf Ton und Recht zu prüfen — warum (nicht)?"
+    "offen": "Was bleibt in einem Konflikt Ihre eigene Arbeit, auch wenn eine KI hilft?",
+    "kritisch": "Was weiss eine KI über Ihren Lehrvertrag und Ihren Lehrbetrieb nicht?"
   },
   "assignments": [
     {
       "key": "ki_1",
-      "pattern": "ai_gegenpositionen",
-      "titel": "Die KI als Gegenseite im Konflikt",
-      "ziel": "Sie prüfen, wie tragfähig Ihre Position im Konflikt ist, indem Sie die KI die Sicht des Berufsbildner/in so stark wie möglich vertreten lassen.",
-      "bezug": "Nutzt alle drei Herausforderungen: die geklärten Rechte und Pflichten aus dem Lehrvertrag (A), die Kanal- und Register-Entscheidung (B) und das beziehungserhaltende Gespräch mit Ich-Botschaften (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Wer im Konflikt handlungsfähig ist, klärt zuerst Sachlage und Rechte, wählt dann bewusst Kanal und Register und führt das Gespräch so, dass beide Seiten ihr Gesicht wahren.",
-      "auftrag": "Wählen Sie einen Konflikt aus Ihren Herausforderungen (z. B. die Aufforderung, einen Vorfall nicht in die Lerndokumentation einzutragen). Formulieren Sie zuerst Ihre eigene begründete Position mit dem Recht, auf das Sie sich stützen. Beauftragen Sie dann eine KI, in der Rolle Ihres Berufsbildner/in die Gegenposition so stark wie möglich zu vertreten — mit Verweis auf Betriebsinteressen und Treuepflicht. Prüfen Sie jede rechtliche Behauptung gegen Ihr Lehrmittel (Kap. 1.4, OR 321a/345a) und entscheiden Sie: Welche Gegenargumente sind ein berechtigtes Anliegen, das Sie anerkennen müssen — und welche sind rechtlich falsch oder reine Machtausübung?",
+      "pattern": "ai_lernassistent",
+      "titel": "Drei Fragen zu Ihrer Aussage",
+      "ziel": "Sie nutzen die KI als Fragestellerin und entscheiden selbst, was Sie an Ihrer Aussage ändern.",
+      "bezug": "In Herausforderung A, B und C geht es um Rechte, Kanal und Gespräch. Immer gilt: zuerst die Sache klären, dann Kanal und Ton wählen, dann fair reden.",
+      "auftrag": "Nehmen Sie Ihr Positionspapier, Ihr Schreiben oder Ihr Drehbuch. Die KI (künstliche Intelligenz) stellt Fragen zu Ihrer wichtigsten Aussage daraus. Ein Prompt ist Ihre Eingabe an die KI.",
       "prompt_strategie": [
-        "Geben Sie der KI eine klare Rolle: «Du bist mein Berufsbildner/in und siehst den Vorfall aus Sicht des Betriebs …»",
-        "Geben Sie den Tatbestand wertungsfrei als Kontext mit — ohne Ihre eigene Position oder Ihr Wunschergebnis zu verraten.",
-        "Verlangen Sie zu jedem Gegenargument eine Begründung und, wo es um Recht geht, einen prüfbaren Verweis (OR-Artikel, Lehrvertrag).",
-        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Position und sag mir, wo ich nur recht haben will, aber die Beziehung gefährde.»"
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Konflikt im Lehrbetrieb. Meine wichtigste Aussage: [meine wichtigste Aussage]. Stell mir dazu drei Fragen, eine nach der anderen. Frag nach Sache und Ton. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am wenigsten klar? Stell mir dazu noch eine Frage. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie jede Angabe zu Recht und Regeln im Lehrmittel nach (Kap. 1.4, 17.4, 19.2). Fehlt sie dort, übernehmen Sie sie nicht."
       ],
-      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihre Position zum gewählten Konflikt in 2-3 Sätzen nach dem 3B-Schema (Behauptung, Begründung, Beispiel) plus das Recht oder die Quelle, auf die Sie sich stützen.",
+      "ki_frei_vorher": "Notieren Sie ohne KI Ihre wichtigste Aussage in einem Satz. Schreiben Sie keine Namen in den Prompt.",
       "schritte": [
-        "Konflikt wählen und eigene Position KI-frei festhalten (siehe Feld auf Seite 1).",
-        "KI mit Rollen-Prompt als Berufsbildner/in ansetzen; die stärkste Gegenposition mit Begründungen verlangen.",
-        "Jede rechtliche Behauptung im Lehrmittel oder Gesetzestext nachschlagen: Stimmt sie — oder ist sie verzerrt oder erfunden?",
-        "Trennen: Welche Gegenargumente sind ein berechtigtes Anliegen (Beziehung, Betriebsinteresse), welche sind rechtlich falsch?",
-        "Ihre Position überarbeiten: Was anerkennen Sie von der Gegenseite, was weisen Sie begründet zurück — und wie formulieren Sie das beziehungserhaltend?"
+        "Notieren Sie ohne KI Ihre wichtigste Aussage in einem Satz.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, was Sie an Ihrer Aussage ändern."
       ],
       "guetekriterien": [
         {
-          "kriterium": "Eigenposition zuerst",
-          "indikator": "Die KI-freie Position mit Quelle liegt vor, bevor der erste Prompt abgesetzt wurde."
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Aussage stand auf dem Blatt, bevor Sie die KI geöffnet haben."
         },
         {
-          "kriterium": "Rechts-Verifikation",
-          "indikator": "Jede rechtliche Behauptung der KI ist nachgeschlagen und als korrekt, verzerrt oder erfunden markiert."
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben selbst entschieden, was Sie an Ihrer Aussage ändern."
         },
         {
-          "kriterium": "Berechtigtes Anliegen erkannt",
-          "indikator": "Die überarbeitete Position unterscheidet mindestens ein berechtigtes Anliegen der Gegenseite von einer begründeten Zurückweisung."
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Angabe zu Recht und Regeln ist nachgeschlagen. Hat die KI nur gefragt, ist das erfüllt."
         }
       ],
       "reflexion": [
-        "Welches Gegenargument des Berufsbildner/in hat Sie am meisten herausgefordert — und warum?",
-        "Hat die KI eine rechtliche Aussage erfunden oder verzerrt? Woran haben Sie es gemerkt?",
-        "Im Kompetenznachweis müssen Sie im Konflikt Ihre eigene Position UND das Anliegen der Gegenseite fair und gleichwertig darstellen. Wie hilft Ihnen diese Übung, beide Seiten begründet abzuwägen, statt nur recht behalten zu wollen?"
+        "Welche Frage der KI hat Ihnen eine Lücke in Ihrer Aussage gezeigt?",
+        "Im Kompetenznachweis prüfen Sie Sache und Ton ohne KI. Welche Frage stellen Sie sich dann selbst?"
       ]
     },
     {
       "key": "ki_2",
-      "pattern": "ai_redaktion",
-      "titel": "KI-Entwurf der Konfliktantwort redigieren",
-      "ziel": "Sie beurteilen, was eine KI beim adressatengerechten Konflikt-Schreiben leistet — und wo Ihre eigene Prüfung von Ton, Recht und Kanal unersetzlich bleibt.",
-      "bezug": "Nutzt alle drei Herausforderungen: die geklärte Rechtslage als Inhalt (A), die bewusste Kanal- und Register-Wahl (B) und die Ich-Botschaften aus dem Gesprächs-Drehbuch (C) — und wendet das Transfer-Prinzip an: Die Antwort gehört in den passenden Kanal, mit nachvollziehbarer Begründung und so formuliert, dass beide Seiten ihr Gesicht wahren.",
-      "auftrag": "Lassen Sie eine KI eine schriftliche Antwort an Ihren Berufsbildner/in zu Ihrem Konflikt verfassen — mit allen Kontextangaben, die sie braucht. Redigieren Sie den KI-Entwurf anschliessend wie eine Redaktorin/ein Redaktor: Prüfen Sie Aufbau (Anlass — Absicht — Begründung — Schluss), ob Ich-Botschaften statt verdeckter Du-Botschaften verwendet werden, Register und Ton, die Kanal- und Datenschutz-Logik sowie die sachliche Richtigkeit der genannten Rechte. Erstellen Sie daraus Ihre eigene, bessere Version und dokumentieren Sie mindestens drei begründete Änderungen.",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die Gegenseite spricht",
+      "ziel": "Sie lassen die KI die Gegenseite vertreten und prüfen, ob Ihre Position danach noch hält.",
+      "bezug": "In Herausforderung A, B und C geht es um Rechte, Kanal und Gespräch. Immer gilt: zuerst die Sache klären, dann Kanal und Ton wählen, dann fair reden.",
+      "auftrag": "Ihre Position ist, was Sie im Konflikt Ihrer Herausforderung verlangen. Die KI (künstliche Intelligenz) spielt die Gegenseite: die andere Person im Konflikt. Ein Einwand ist, was sie dagegen sagt. Sie prüfen, welcher Einwand zählt. Ein Prompt ist Ihre Eingabe an die KI.",
       "prompt_strategie": [
-        "Kontextualisieren Sie vollständig: Worum geht der Konflikt, wer liest mit, was soll der Berufsbildner/in nach dem Lesen tun?",
-        "Geben Sie das Format vor: schriftliche Antwort nach Anlass — Absicht — Begründung — Schluss, durchgehend Ich-Botschaften, max. 200 Wörter.",
-        "Verlangen Sie, dass die KI jede Ich-Botschaft markiert — so können Sie verdeckte Du-Botschaften und Vorwürfe leichter finden.",
-        "Zweiter Prompt: «Nenne drei Stellen, an denen mein Berufsbildner/in sich durch diesen Entwurf angegriffen fühlen könnte — und wie ich es beziehungserhaltend umformuliere.»"
+        "Prompt 1: «Du bist Berufsbildner/in in der Schweiz. Thema: ein Konflikt in der Lehre. Meine Position: [meine Position]. Nenne mir drei Einwände aus deiner Sicht. Nenne zu jedem Einwand das Recht oder die Regel dahinter. Schreib meine Position nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, wenn Sie einen Einwand gewählt haben: «Diesen Einwand nehme ich ernst: [ein Einwand]. Das antworte ich darauf: [meine Antwort]. Bleib in deiner Rolle. Sag mir, was du darauf sagst. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie jede Angabe zu Recht und Regeln im Lehrmittel nach (Kap. 1.4, 17.4, 19.2). Fehlt sie dort, übernehmen Sie sie nicht."
       ],
-      "ki_frei_vorher": "Notieren Sie OHNE KI: die drei wichtigsten Punkte, die in Ihrer Antwort vorkommen müssen, und den Kanal, den Sie wählen — mit einem Satz Begründung.",
+      "ki_frei_vorher": "Schreiben Sie Ihre Position und Ihr Recht oder Ihre Regel ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
       "schritte": [
-        "Konflikt wählen; eigene Eckpunkte und Kanalwahl KI-frei festhalten.",
-        "KI mit vollständigem Kontext und Formatvorgabe den Entwurf schreiben lassen.",
-        "Redaktionsprüfung: Aufbau, Ich-Botschaften, Ton, Kanal- und Datenschutz-Logik, sachliche Richtigkeit — Schwächen markieren.",
-        "Eigene Version erstellen; mindestens drei Änderungen mit Begründung dokumentieren (davon mindestens eine umformulierte Du- in eine Ich-Botschaft).",
-        "Vergleich: Welche Version würden Sie wirklich abschicken — und welcher Satz entscheidet, ob das Gespräch eskaliert oder trägt?"
+        "Schreiben Sie Ihre Position und Ihr Recht oder Ihre Regel ohne KI auf.",
+        "Holen Sie mit Prompt 1 drei Einwände der Gegenseite.",
+        "Schlagen Sie jede Angabe zu Recht und Regeln im Lehrmittel nach.",
+        "Antworten Sie mit Prompt 2 auf den Einwand, der für Sie am meisten zählt.",
+        "Notieren Sie, was Sie von der KI übernehmen und was Sie mit Grund zurückweisen."
       ],
       "guetekriterien": [
         {
-          "kriterium": "Vollständiger Kontext-Prompt",
-          "indikator": "Der erste Prompt enthält Anlass, Adressat, gewünschte Wirkung und die Formatvorgabe (Aufbau, Ich-Botschaften, Länge)."
+          "kriterium": "Position zuerst",
+          "indikator": "Ihre Position und Ihr Recht standen auf dem Blatt, bevor die KI geantwortet hat."
         },
         {
-          "kriterium": "Redaktionsprüfung dokumentiert",
-          "indikator": "Mindestens drei begründete Änderungen am KI-Entwurf sind festgehalten, davon mindestens eine Du- zu Ich-Botschaft."
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Angabe zu Recht und Regeln haben Sie im Lehrmittel nachgeschlagen."
         },
         {
-          "kriterium": "Eigene Version trägt",
-          "indikator": "Die finale Version hält den Aufbau ein, bleibt in der Ich-Form und begründet die Kanalwahl nachvollziehbar."
+          "kriterium": "Einwand selbst gewählt",
+          "indikator": "Sie haben selbst gewählt, welcher Einwand für Sie am meisten zählt."
+        },
+        {
+          "kriterium": "Übernommen oder zurückgewiesen",
+          "indikator": "Bei jedem Einwand steht, ob Sie ihn übernehmen oder zurückweisen, mit Grund."
         }
       ],
       "reflexion": [
-        "Was konnte die KI beim Formulieren schneller oder besser als Sie — und was haben Sie besser gekonnt?",
-        "Welche verdeckte Du-Botschaft oder welchen Tonbruch hätten Sie ohne die Redaktionsprüfung übersehen?",
-        "Im Kompetenznachweis müssen Sie selbst — ohne KI — sachlich richtig und beziehungserhaltend schreiben. Was nehmen Sie aus dieser Redaktion mit, das Sie danach allein beherrschen müssen?"
+        "Welcher Einwand der Gegenseite hat Ihre Position verändert?",
+        "Wo hat die KI etwas zum Recht behauptet, das im Lehrmittel anders steht?",
+        "Im Kompetenznachweis vertreten Sie Ihre Position ohne KI. Welchen Einwand der Gegenseite bedenken Sie dann von Anfang an?"
       ]
     }
   ]

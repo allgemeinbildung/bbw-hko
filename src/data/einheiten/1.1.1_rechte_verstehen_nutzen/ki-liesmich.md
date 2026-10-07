@@ -1,9 +1,9 @@
 ---
-titel: "KI-Toolbox — Lies mich! (1.1.1 Rechte verstehen und nutzen)"
+titel: "KI-Toolbox — Lies mich! (1.1.1 Rechte verstehen & nutzen)"
 untertitel: "Didaktischer Kompass zu den vier KI-Dokumenten — für Lehrpersonen"
 kompetenz: "1.1.1 — Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv"
 autor: "Kernteam 1 — BBW Winterthur"
-stand: "2026-06-19"
+stand: "2026-10-07"
 lehrgang: "EFZ 3J"
 thema: "T1 — Ins Berufsleben einsteigen"
 lebensbezug: "1.1"
@@ -15,7 +15,7 @@ quellen_json:
 
 # KI-Toolbox — Lies mich!
 
-> Dieses Blatt richtet sich an die **Lehrperson**, nicht an die Lernenden. Es erklärt in Kürze, **was** die vier KI-Dokumente dieser Einheit leisten und **wie** Sie sie einsetzen, ohne die Klasse zu überfrachten. Die KI-Toolbox ist ein **optionales Zusatzangebot** — kein Pflichtteil. Verbindlich bleiben die drei Herausforderungen, der Kompetenznachweis und der Lehrpersonen-/Bewertungsteil.
+> Dieses Blatt richtet sich an die **Lehrperson**, nicht an die Lernenden. Es erklärt in Kürze, **was** die vier KI-Dokumente dieser Einheit leisten und **wie** Sie sie einsetzen, ohne die Klasse zu überfrachten. Die KI-Toolbox ist ein **optionales Zusatzangebot** — kein Pflichtteil.
 
 ---
 
@@ -25,62 +25,74 @@ Alle vier liegen als **Word-Datei** im ZIP und sind frei anpassbar (siehe §3).
 
 | # | Dokument | Funktion | Wann |
 |---|---|---|---|
-| **1** | KI-Auftrag «Die KI als Gegenseite — hält Ihr Lohnabzug-Argument stand?» | **Üben mit KI** — die KI vertritt die Sicht des Betriebs, die Lernende prüft jede Rechtsbehauptung gegen die Quelle | mitten in der Einheit, nach Herausforderung A–C |
-| **2** | KI-Auftrag «KI-Entwurf des Antwortschreibens redigieren» | **Üben mit KI** — die KI schreibt einen Entwurf, die Lernende redigiert ihn kritisch | mitten in der Einheit, nach B/C |
-| **P** | KI-Lernprompt | **Prompten lernen** — vier Techniken + Baukasten, um überhaupt brauchbar zu fragen | als eigener Input, vor den KI-Aufträgen |
-| **L** | KI-Lernbegleiter | **KN-Vorbereitung** — Selbsteinschätzung, Lernstrategien mit KI, Üben an neuen Fällen | am Schluss, vor dem Kompetenznachweis |
+| **1** | KI-Auftrag «Drei Fragen zu meiner Regel» (Basis) | **Üben mit KI** — die KI stellt drei Fragen zu einer eigenen Regel zum Lehrvertrag mit Quelle (aus Spickzettel, Fall-Mappe oder Antwortschreiben); die Lernenden antworten und entscheiden selbst, ob die Regel bleibt | sobald die Herausforderungen fertig sind |
+| **2** | KI-Auftrag «Plus: Den Entwurf der KI prüfen» (Plus) | **Üben mit KI** — die KI schreibt einen Entwurf zu einer Rechtsfrage zum Lehrvertrag; die Lernenden schlagen jede Angabe zum Recht nach und entscheiden, was sie übernehmen | nach Austausch & Transfer |
+| **P** | KI-Lernprompt | **Prompten lernen** — zwei Techniken mit fertigen Prompts; zwei weitere als Plus | vor den KI-Aufträgen |
+| **L** | KI-Lernbegleiter | **KN-Vorbereitung** — Selbsteinschätzung, Begriffe zum Abhaken, Lernstrategien, Üben an neuen Fällen | am Schluss, vor dem KN |
 
 > [!hinweis] Die vier Prompt-Techniken (Dokument P)
-> In dieser Einheit: **Rollen-Prompting**, **Kontext geben**, **Schritt-für-Schritt denken**, **Quellen und Belege anfordern**. Dazu zwei fertige Zwei-Schritt-Sequenzen («Stacking») und die Bauformel `[Rolle] + [Kontext] + [Aufgabe] + [Format]`.
+> Basis: **Der KI eine Rolle geben** und **Kontext geben**, dazu eine fertige Folge aus zwei Prompts (nachfragen). Plus: **Gegenseite verlangen** und **Quellen verlangen** mit Baukasten, um eigene Prompts zu bauen.
+
+> [!hinweis] Der Fehler im Beispiel ist Absicht
+> Auf Seite 1 des Lernprompts steht ein kurzer Beispiel-Verlauf. Die Antwort der KI enthält dort **absichtlich einen Fehler** (Lohnzuschlag für Überstunden 50 statt 25 Prozent, Kap. 1.4) — die Lernenden sehen einmal, wie Prüfen aussieht. Kein Druckfehler. Im Lernbegleiter stehen kleine Notizfelder: unter den Prompts der zwei Basis-Karten «Das hat die KI gesagt · Das stimmt · Das stimmt nicht», am Schluss der KN-Seite «Mein Übungsfall · Das konnte ich · Das übe ich noch».
+
+> [!hinweis] Die KN-Seite des Lernbegleiters
+> Sie trägt je KN-Form einen Übungs-Prompt für einen **neuen** Fall. Auf dem Blatt der Lernenden heissen die Formen: «Fachgespräch» · «Schriftliche Aufgabe zu einem neuen Fall» (Ihr *Mini Case schriftlich*) · «Eigene Arbeiten zeigen und erklären» (Ihre *Werkschau + Transfer-Reflexion*). Die Namen der Lehrperson stehen in keinem Text für Lernende.
 
 ---
 
 ## 2. Die eine Grundregel: KI prüft, sie ersetzt nicht
 
-Alle vier Dokumente folgen demselben Prinzip — die KI **challengt, spiegelt und prüft** das eigene Produkt der Lernenden, sie liefert es nie fertig. Konkret heisst das: Jeder KI-Auftrag startet mit einem Schritt **«ohne KI»** (`ki_frei_vorher` — eigene Auskunft nach Tatbestand-Rechtslage-Rechtsfolge bzw. eigene Eckpunkte des Schreibens), und der Lernbegleiter beginnt mit einer ehrlichen Selbsteinschätzung, bevor die KI ins Spiel kommt.
+Alle vier Dokumente folgen demselben Prinzip — die KI **fragt, spiegelt und prüft** die Arbeit der Lernenden, sie liefert sie nie fertig. Jeder KI-Auftrag startet mit einem Schritt **«ohne KI»**: Im Basis-Auftrag steht die eigene Regel mit Quelle auf dem Blatt, bevor der erste Prompt abgeschickt wird; im Plus-Auftrag die eigene Antwort auf die Rechtsfrage. Der Lernbegleiter beginnt mit einer ehrlichen Selbsteinschätzung, bevor die KI ins Spiel kommt.
 
 > [!warnung] Das ist die Leitplanke, nicht die Deko
-> Auch in der kürzesten Variante (§3) bleibt der **«ohne KI zuerst»-Schritt drin**. Fällt er weg, üben die Lernenden, sich etwas vorschreiben zu lassen — genau das Gegenteil des Lernziels. Und: Im Kompetenznachweis sitzen sie allein da. Die KI darf hier üben helfen, nie die KN-Lösung schreiben — geübt wird an *anderen* Fällen.
+> Auch in der kleinsten Fassung (§3) bleibt der **«ohne KI zuerst»-Schritt drin**. Und: Im Kompetenznachweis arbeiten die Lernenden allein und ohne KI. Die KI darf hier üben helfen, nie die KN-Lösung schreiben — geübt wird an *anderen* Fällen. Alle Übungs-Prompts schliessen darum Lohnabzug, Überstunden und Handy-Nummer aus (Fälle aus den Herausforderungen) und lenken auf Ferien, Probezeit, Berufsfachschule oder Krankheit. Im Plus-Auftrag wählen die Lernenden die Rechtsfrage selbst; das Blatt nennt als Beispiel Überstunden. Lenken Sie die Wahl weg von der Frage, die Ihr KN stellt.
 
-> [!warnung] Schweizer Recht: immer gegenprüfen
-> KI-Systeme erfinden bei OR-/ArG-Artikeln regelmässig plausibel klingende Nummern. In dieser rechtslastigen Einheit gilt: **jede** rechtliche Aussage der KI wird im Lehrmittel nachgeschlagen — Nummer **und** Inhalt. Das ist in den Gütekriterien der KI-Aufträge bereits als Pflicht verankert.
+> [!warnung] Recht: immer gegenprüfen
+> KI-Systeme erfinden bei Rechtsangaben (Artikel, Zahlen, Pflichten) regelmässig plausibel klingende Angaben, und sie kennen das Schweizer Lehrvertragsrecht nicht zuverlässig. In dieser Einheit gilt: Angaben der KI zum Recht werden im Lehrmittel (Kap. 1.4) nachgeschlagen — in beiden Aufträgen **jede**. Steht eine Angabe dort nicht, übernehmen die Lernenden sie nicht. Das steht in beiden KI-Aufträgen als Kriterium «Nachgeschlagen»; im Basis-Auftrag gilt es auch als erfüllt, wenn die KI nur gefragt hat. Beide Aufträge und die Karten «Abfragen lassen» und «Selbst erklären» bleiben darum beim Lehrvertrag (Kap. 1.4): Eine Datenschutz-Regel vom Spickzettel (Kap. 20.7) passt hier nicht.
+
+> [!hinweis] Keine Namen in den Prompt
+> Wo eigener Text in die KI geht, steht der Satz «Schreiben Sie keine Namen in den Prompt.» auf dem Blatt: im Basis- und im Plus-Auftrag beim Schritt ohne KI, im Lernprompt in der Warnung von «Kontext geben», im Lernbegleiter in der Warnung der Karte «Rückmeldung holen». Die Fälle der Herausforderungen nennen Personen und Betriebe — erinnern Sie mündlich daran.
 
 ---
 
-## 3. Zu dicht? — vier Reduktions-Rezepte (Word anpassen)
+## 3. Basis und Plus — was Sie drucken
 
-Die Dokumente sind bewusst dicht (sie sollen ohne Nachschlagen tragen) — aber Sie müssen **nicht alles** einsetzen. Laden Sie die Word-Datei herunter und kürzen Sie gezielt:
+Die Toolbox ist so gebaut, dass die **kleine Fassung die Vorgabe** ist. In der Basis schreiben die Lernenden keinen Prompt selbst: Sie bekommen fertige Prompts mit höchstens einer Lücke für ihren eigenen Text. Jeder Prompt bestellt bei der KI kurze, einfache Antworten. Was darüber hinausgeht, ist Plus — Sie legen es dazu, statt etwas wegzuschneiden.
 
-> [!differenzieren] Rezept 1 — Eine Technik statt vier
-> Im **KI-Lernprompt** behalten Sie **einen** Technik-Block (z. B. nur *Quellen und Belege anfordern*) und löschen die anderen drei plus die beiden «Stacking»-Sequenzen. Eine Technik sauber statt vier oberflächlich. Bei dieser rechtslastigen Einheit ist *Quellen und Belege anfordern* der wirksamste Einstieg.
+| Dokument | Basis | Plus |
+|---|---|---|
+| KI-Auftrag | «Drei Fragen zu meiner Regel» — zwei Seiten: drei Schritte, zwei fertige Prompts | «Plus: Den Entwurf der KI prüfen» — drei Seiten |
+| KI-Lernprompt | Seite 1: Der KI eine Rolle geben, Kontext geben, nachfragen | Seiten 2–3: Gegenseite verlangen, Quellen verlangen, Baukasten |
+| KI-Lernbegleiter | Seite 1: Abfragen lassen, Selbst erklären · Seite 2: Üben für den KN | Seite 3: Rückmeldung holen, Übungsfall lösen, Lernplan machen |
 
-> [!differenzieren] Rezept 2 — Nur ein KI-Auftrag
-> Setzen Sie **entweder** «Die KI als Gegenseite — hält Ihr Lohnabzug-Argument stand?» **oder** «KI-Entwurf des Antwortschreibens redigieren» ein, nicht beide. Auftrag 1 schärft die rechtliche Argumentation und die Tragfähigkeit der Auskunft, Auftrag 2 das adressatengerechte Schreiben — wählen Sie nach Ihrem Schwerpunkt.
+> [!differenzieren] Noch kleiner
+> Ein Dokument genügt. Für den Einstieg: der Basis-Auftrag allein. Vor dem KN: Seite 1 des Lernbegleiters mit **einer** Karte, z. B. *Abfragen lassen*. Der Schritt «ohne KI zuerst» bleibt immer drin.
 
-> [!differenzieren] Rezept 3 — Lernbegleiter auf eine Karte
-> Der **KI-Lernbegleiter** hat fünf Strategie-Karten. Für ein kurzes Repetitions-Setting reicht **eine** — z. B. *Abfragen lassen (Retrieval)* als Exit-Ticket vor dem KN. Selbsteinschätzung und Integritäts-Hinweis bleiben drin, der Rest wird gelöscht.
-
-> [!differenzieren] Rezept 4 — Nur der Baukasten
-> Lassen Sie die Technik-Erklärungen weg und geben Sie nur die **Bauformel** `[Rolle] + [Kontext] + [Aufgabe] + [Format]` mit den Baukasten-Listen ab. Die Lernenden bauen ihren Prompt aus Bausteinen zusammen — schnell, konkret, ohne Theorie.
+> [!differenzieren] Grösser
+> Das Plus ist für Lernende gedacht, die mit der Basis sicher arbeiten: Im Plus-Auftrag schreibt die KI einen Entwurf in fünf Sätzen, und die Lernenden schlagen jede Angabe zum Recht darin nach, melden der KI ihren Fund und notieren, was sie übernehmen und warum. Die Plus-Techniken «Gegenseite verlangen» und «Quellen verlangen» lassen die KI Einwände und Artikel nennen, die die Lernenden selbst im Lehrmittel prüfen. Im Plus-Auftrag beurteilen die Lernenden die Antworten der KI selbst; eigene Prompts bauen sie nur im Plus des Lernprompts (Baukasten). Beides ist deutlich anspruchsvoller als die Basis.
 
 ---
 
 ## 4. Didaktische Einsatz-Ideen
 
 > [!coaching] Staffeln statt stapeln
-> Nicht alles in einer Lektion. Verteilen Sie über die Einheit: **Lernprompt** als kurzer Input, sobald die Klasse zum ersten Mal mit KI arbeitet · **KI-Auftrag** als formative Vertiefung mitten drin · **Lernbegleiter** ganz am Schluss zur KN-Vorbereitung.
+> Nicht alles in einer Lektion. Verteilen Sie: **Lernprompt** als kurzer Input beim ersten KI-Einsatz · **Basis-Auftrag** sobald die Herausforderungen fertig sind · **Lernbegleiter** ganz am Schluss zur KN-Vorbereitung.
+
+> [!hinweis] Wenn nicht alle drei Herausforderungen bearbeitet wurden
+> In den Durchführungs-Varianten B und C des Begleiters haben die Lernenden nur eine oder zwei Herausforderungen selbst gemacht. Der Basis-Auftrag und Seite 1 des Lernprompts gehen mit **jedem** der drei Produkte: Die Lücke verlangt eine Regel zum Lehrvertrag mit Quelle aus Spickzettel, Fall-Mappe **oder** Antwortschreiben. Die Plus-Karte «Rückmeldung holen» braucht eine Begründung — aus Fall-Mappe, Antwortschreiben oder aus einem Übungsfall im selben Chat.
 
 > [!coaching] Plenum-Demo am Beamer (Modeling)
-> Führen Sie **einen** Prompt live vor: eintippen, Antwort gemeinsam lesen, gemeinsam einen OR-Artikel im Lehrmittel gegenprüfen. Die Lernenden sehen das kritische Prüfen einmal, bevor sie es selbst tun — das senkt die kognitive Last enorm.
+> Führen Sie **einen** Prompt live vor: eintippen, Antwort gemeinsam lesen, gemeinsam einen Artikel oder eine Zahl in Kap. 1.4 nachschlagen. Die Lernenden sehen das kritische Prüfen einmal, bevor sie es selbst tun — das senkt die kognitive Last enorm.
 
 > [!coaching] Gruppenpuzzle über die Techniken
-> Vier Gruppen, je eine Prompt-Technik. Jede Gruppe probiert ihre Technik an der Einheits-Situation aus und erklärt sie den anderen. So wird die Dichte zur Stärke.
+> Zwei bis vier Gruppen, je eine Prompt-Technik (zwei aus der Basis, bei Bedarf zwei aus dem Plus). Jede Gruppe probiert ihre Technik aus und erklärt sie den anderen.
 
 > [!coaching] Lernzirkel / Stationen
-> Vier Stationen = vier Dokumente. Die Klasse rotiert; an jeder Station ein klar abgegrenzter Mini-Auftrag (10–15 Min.). Gut, wenn Geräte knapp sind — nicht alle brauchen gleichzeitig KI-Zugang.
+> Vier Stationen = vier Dokumente. Die Klasse rotiert; an jeder Station ein klar abgegrenzter Mini-Auftrag (10–15 Min.). Gut, wenn Geräte knapp sind.
 
 > [!differenzieren] Als Vertiefung für Schnelle
-> Wer mit den Pflichtteilen früher fertig ist, bekommt einen KI-Auftrag als Zusatz. So bleibt die Toolbox optional und schafft trotzdem eine echte Differenzierungsstufe nach oben.
+> Wer den Basis-Auftrag sicher gelöst hat und nach Austausch & Transfer Zeit hat, bekommt den Plus-Auftrag als Zusatz. So bleibt die Toolbox optional und schafft trotzdem eine Differenzierungsstufe nach oben.
 
 ---
 
@@ -88,13 +100,13 @@ Die Dokumente sind bewusst dicht (sie sollen ohne Nachschlagen tragen) — aber 
 
 > [!lernziel] In drei Minuten startklar
 > 1. **Brauche ich die Toolbox überhaupt?** Sie ist optional — kein schlechtes Gewissen, wenn nein.
-> 2. **Welches Reduktions-Rezept (§3)** passt zu meiner Zeit und Klasse? Word entsprechend kürzen.
+> 2. **Basis oder Basis mit Plus (§3)?** Die passenden Seiten drucken.
 > 3. **Geräte/KI-Zugang** geklärt? Wenn knapp → Plenum-Demo oder Stationen (§4).
-> 4. **«Ohne KI zuerst» und Rechts-Gegenprüfung** bleiben drin — immer.
-> 5. **Kein KN-Stoff in die KI.** Geübt wird an *anderen* Fällen, nie an der konkreten KN-Aufgabe (Lohnabzug-Anfrage um 21 Uhr).
+> 4. **«Ohne KI zuerst» und das Nachschlagen im Lehrmittel (Kap. 1.4)** bleiben drin — immer.
+> 5. **Kein KN-Stoff in die KI.** Geübt wird an *anderen* Fällen, nie an der konkreten KN-Aufgabe.
 
 ---
 
 ## Anhang — Quellen dieses Dokuments
 
-Erzeugt aus der KI-Toolbox der Einheit 1.1.1 «Rechte verstehen und nutzen» (`ki.json`, `lernprompt.json`, `lernbegleiter.json`). Die KI-Schicht wird komplementär zur fertigen Einheit erzeugt (Skill `hko-ki-komplement`) und ändert die verbindlichen Unit-Dateien nie.
+Erzeugt aus der KI-Toolbox der Einheit 1.1.1 «Rechte verstehen & nutzen» (`ki.json`, `lernprompt.json`, `lernbegleiter.json`). Die KI-Schicht wird komplementär zur fertigen Einheit erzeugt (Skill `hko-ki-komplement`) und ändert die Dateien der Einheit nie.

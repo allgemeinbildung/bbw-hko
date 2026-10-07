@@ -11,7 +11,7 @@
 import Einheiten from '../../layouts/Einheiten.astro'
 import Glossar from '../../components/Glossar.astro'
 import EinheitCard from '../../components/einheiten/EinheitCard.astro'
-import { einheitenIndex, visibleEinheiten, lehrgaengeOf, lehrgangShort, isEbaLehrgang, isEntwurf, draftKomponenten, isKomponenteSichtbar, KOMPONENTEN_LABEL, LEHRGANG_ORDER, LEHRGANG_LABEL } from '../../lib/einheiten'
+import { einheitenIndex, visibleEinheiten, lehrgaengeOf, lehrgangShort, isEbaLehrgang, isEntwurf, isArchiviert, draftKomponenten, isKomponenteSichtbar, KOMPONENTEN_LABEL, LEHRGANG_ORDER, LEHRGANG_LABEL } from '../../lib/einheiten'
 import { getNrlp, toLehrdauer } from '../../lib/nrlp'
 
 const user = Astro.locals.user
@@ -27,7 +27,11 @@ const role: 'lp' | 'kt1' | 'gast' =
   profile?.role === 'kt1' ? 'kt1' : profile?.role === 'gast' ? 'gast' : 'lp'
 
 // Sichtbarkeit nach Rolle: lp/gast sehen nur publizierte Einheiten, KT1 alle.
-const sichtbar = visibleEinheiten(einheitenIndex, role)
+// Archivierte Einheiten (nur KT1) stehen NICHT in der Landkarte und in keinem Zähler,
+// sondern in einem eigenen, eingeklappten Abschnitt «Archiv» darunter.
+const erlaubt = visibleEinheiten(einheitenIndex, role)
+const sichtbar = erlaubt.filter((e) => !isArchiviert(e))
+const archiv = role === 'kt1' ? erlaubt.filter((e) => isArchiviert(e)) : []
 type E = (typeof sichtbar)[number]
 const hatKi = (e: E) => !!e.hat_ki && isKomponenteSichtbar(e, 'ki-fluency', role)
 const nachNr = (a: E, b: E) =>
@@ -247,6 +251,21 @@ const auch = (e: E, lg: string) => {
     </div>
   </div>
   </div>
+
+  {archiv.length > 0 && (
+    <details class="mt-8 bg-slate-50 border border-slate-200 rounded-lg">
+      <summary class="px-4 py-3 cursor-pointer text-sm font-semibold text-slate-700">
+        Archiv <span class="font-normal text-slate-500">· {archiv.length} abgelöste {archiv.length === 1 ? 'Einheit' : 'Einheiten'} · nur für KT1 sichtbar</span>
+      </summary>
+      <div class="px-4 pb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        {archiv.map((e) => (
+          <div class="flex flex-col [&>*]:flex-1">
+            <EinheitCard einheit={e} role={role} varianten={lehrgaengeOf(e)} />
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
 
   <div class="mt-8">
     <Glossar />

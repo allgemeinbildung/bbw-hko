@@ -7,6 +7,13 @@
  *   node scripts/check-all.mjs --entwurf           # alle mit status "entwurf"
  *   node scripts/check-all.mjs --alle              # der ganze Bestand (nur zur Kalibrierung)
  *   … --cloud                                      # unbeaufsichtigter Lauf: Lehrmittel MUSS da sein
+ *   … --streng                                     # die fuenf Beleg-Pruefungen behandeln jede Einheit wie einen
+ *                                                  # Entwurf: Befunde sind Fehler, auch bei publizierten (E38)
+ *   … --vor-audit                                  # erster Durchgang des Tors, vor den Audits: Fehlen belege.json
+ *                                                  # und fakten.json noch, ist das ein HINWEIS «Audit steht aus»,
+ *                                                  # kein Fehler. Die Schlusszeile heisst dann nie «GRUEN», sondern
+ *                                                  # «VOR AUDIT …» — der zweite Durchgang laeuft ohne den Schalter
+ *                                                  # (E38 Stufe D; references/phase-9-tor.md §1)
  *
  * Buendelt die bestehenden Checks (nRLP, check-einheiten, check-lf-loesung,
  * check-v42, sync-einheiten-nrlp --check) und ergaenzt, was bisher kein Skript
@@ -14,45 +21,60 @@
  *
  *   STRUKTUR   Pflichtdateien, jedes JSON parsbar, IDs tragen den Ordnernamen,
  *              ein Lehrgang ueber alle Herausforderungen
- *   STATUS     set.status ist exakt "entwurf" | "publiziert" | fehlt — der
- *              Index-Builder behandelt jeden anderen Wert als LIVE. Unter --neu
+ *   STATUS     set.status ist exakt "entwurf" | "publiziert" | "archiviert" | fehlt —
+ *              der Index-Builder bricht bei jedem anderen Wert ab (E37). Unter --neu
  *              und --cloud muss er "entwurf" sein.
  *   METHODEN   Refs existieren in src/data/methoden/, genau vier Eintraege,
  *              genau zwei mit Beispiel (docs/methodenkartei.md)
  *   SPRACHE    kein «ß», keine stehengebliebenen Platzhalter
+ *   KARTEN     keine Karte geaendert, die ein publiziertes Heft fuehrt — ausser
+ *              als Fehler mit Vermerk (scripts/karten.mjs geaendert, gegen origin/main)
+ *   SKELETTE   die Vorlagen der Skill unter assets/ und die Auftragsvorlagen verletzen selbst keine Regel
+ *              (scripts/check-skelette.mjs — einmal je Aufruf, nicht je Einheit; E38 Stufe D)
  *   LECK       keine woertliche Lehrmittelpassage in den Daten — das Repo ist
  *              oeffentlich, das Lehrmittel nicht. Verglichen wird gegen
  *              material/_lehrmittel/ (gitignored) und das Quellenarchiv
  *              (Transkripte, Artikel); fehlt das Lehrmittel, ist die
  *              Pruefung nicht moeglich: HINWEIS, unter --cloud ein Fehler.
  *
+ * Dazu je Einheit im Format v4.2 fuenf eigene Skripte (ENTSCHEIDE E38; Codes im Kopf jedes Skripts):
+ *
+ *   BELEGE     check-belege.mjs    belege.json des Loesungs-Audits: jedes Loesungsfeld eine Zeile, Hash,
+ *                                  Anker im Archivtext bzw. Lehrmittel, Zeitmarke, Urteil; probe.json
+ *   FAKTEN     check-fakten.mjs    jede Rechts- und Sachaussage hat eine Zeile in fakten.json
+ *   ZEIGER     check-zeiger.mjs    archiv_ref, Wortzahl, Absatz, Zeitmarke, Heftseite, Lehrmittelseite
+ *   ZAHLEN     check-zahlen.mjs    Rechnungen, Summen, Fallzahlen (fall.json), Ausschluesse
+ *   KOHAERENZ  check-kohaerenz.mjs gleiche Werte in Prinzip/Heft/Set, kein Loesungssatz bei den Lernenden,
+ *                                  gesperrte Woerter, Umlaute, Anzahl und Bezeichner, Kurzbeschrieb, Punkte
+ *
+ *   Bei einer gebundenen Einheit (publiziert, archiviert) sind ihre Befunde WARNUNGEN, bei einem Entwurf
+ *   FEHLER. Das Tor zeigt Warnungen und Hinweise dieser fuenf als Zaehlung je Code; den Wortlaut zeigt
+ *   das Skript selbst (`node scripts/check-zeiger.mjs <ordner>`). Die Beleg-Dateien liegen im
+ *   Quellenarchiv unter `_pruefung/<ordner>/`: Fehlt das Archiv (oder das Lehrmittel) lokal, heisst die
+ *   Zeile «nicht geprueft», die Schlusszeile nie «GRUEN», und unter --cloud ist es ein Fehler.
+ *
  * Reines Node, keine Abhaengigkeiten, nur lesend. Exit 0 nur ohne FEHLER.
  */
-import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs'
+import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
+// Leck-Pruefung: geteilt mit scripts/check-leck.mjs (beliebige Pfade).
+import { ladeLehrmittel, laengsteUebernahme, strings, LECK_WARN, LECK_ERR } from './lib/leck.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const EINHEITEN = join(ROOT, 'src/data/einheiten')
 const METHODEN = join(ROOT, 'src/data/methoden')
-const MATERIAL = join(ROOT, 'material')
-// Volltexte der Quellen: im privaten Spiegel unter material/_quellen-archiv/, lokal ausserhalb des Repos.
-const ARCHIV = [join(MATERIAL, '_quellen-archiv'), process.env.QUELLEN_ARCHIV || 'D:/OS/_lab/quellen-archiv/bbw-hko'].find((p) => existsSync(p))
-
 const LEHRGAENGE = ['EBA_2J', 'EFZ_3J', 'EFZ_4J']
-const STATUS_OK = [undefined, 'entwurf', 'publiziert']
+const STATUS_OK = [undefined, 'entwurf', 'publiziert', 'archiviert']
 const PFLICHT = ['set.json', 'prinzip.json', 'kn.json', 'begleiter.md', 'herausforderung_A.json', 'herausforderung_B.json']
 const PLATZHALTER = /\[QUELLE SUCHEN|\[URL\b|\[JJJJ|\[HERAUSGEBER|verifizieren\]|\[Beispiel aus|\bTODO\b|\bTBD\b|\{\{[^}]*\}\}|\{[A-Z][A-Z0-9_.]{3,}\}/
-// Laenge einer woertlichen Uebernahme, in Woertern. Ein Fachbegriff oder eine
-// Gesetzesformel ist kuerzer; ab LECK_ERR ist es ein abgeschriebener Absatz.
-const SHINGLE = 8
-const LECK_WARN = 14
-const LECK_ERR = 25
 
 const argv = process.argv.slice(2)
 const flag = (f) => argv.includes(f)
 const CLOUD = flag('--cloud')
+const STRENG = flag('--streng')
+const VOR_AUDIT = flag('--vor-audit')
 const wunsch = argv.filter((a) => !a.startsWith('--'))
 
 const alleSlugs = readdirSync(EINHEITEN, { withFileTypes: true })
@@ -91,72 +113,15 @@ if (wunsch.length) {
 } else if (flag('--alle')) {
   slugs = alleSlugs
 } else {
-  console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud]')
+  console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud] [--streng] [--vor-audit]')
   process.exit(2)
-}
-
-// ------------------------------------------------------------- Lehrmittel
-
-// Links und URNs sind keine Uebernahme — sie stehen in Karte und Quelle zwangslaeufig gleich.
-const wörter = (s) => s.toLowerCase().replace(/https?:\/\/\S+|urn:\S+/g, ' ').match(/[\p{L}\p{N}]+/gu) ?? []
-
-function ladeLehrmittel() {
-  if (!existsSync(MATERIAL)) return null
-  const dirs = readdirSync(MATERIAL).filter((d) => d.startsWith('_lehrmittel') && statSync(join(MATERIAL, d)).isDirectory())
-  const set = new Set()
-  let dateien = 0
-  for (const d of dirs) {
-    for (const f of readdirSync(join(MATERIAL, d))) {
-      if (!f.endsWith('.md')) continue
-      dateien++
-      const w = wörter(readFileSync(join(MATERIAL, d, f), 'utf8').replace(/\[seite:\s*\d+\]/g, ' '))
-      for (let i = 0; i + SHINGLE <= w.length; i++) set.add(w.slice(i, i + SHINGLE).join(' '))
-    }
-  }
-  let quellen = 0
-  const lies = (dir) => {
-    for (const e of readdirSync(dir, { withFileTypes: true })) {
-      const p = join(dir, e.name)
-      if (e.isDirectory()) lies(p)
-      else if (/.(md|txt)$/i.test(e.name)) {
-        quellen++
-        const w = wörter(readFileSync(p, 'utf8'))
-        for (let i = 0; i + SHINGLE <= w.length; i++) set.add(w.slice(i, i + SHINGLE).join(' '))
-      }
-    }
-  }
-  // Nur die Quellenordner (q-…). Arbeitsnotizen daneben (_pruefung, _briefs)
-  // zitieren die Einheit selbst und wuerden jede Zeile als Leck melden.
-  if (ARCHIV) for (const d of readdirSync(ARCHIV)) if (d.startsWith('q-')) lies(join(ARCHIV, d))
-  return dateien ? { set, dateien, quellen } : null
-}
-
-/** Laengste woertliche Uebernahme in `text`, als { woerter, auszug }. */
-function laengsteUebernahme(text, lm) {
-  const w = wörter(text)
-  let best = 0, bestStart = 0, run = 0
-  for (let i = 0; i + SHINGLE <= w.length; i++) {
-    if (lm.set.has(w.slice(i, i + SHINGLE).join(' '))) {
-      run++
-      if (run > best) { best = run; bestStart = i - run + 1 }
-    } else run = 0
-  }
-  if (!best) return null
-  const n = best + SHINGLE - 1
-  return { woerter: n, auszug: w.slice(bestStart, bestStart + Math.min(n, 12)).join(' ') + ' …' }
-}
-
-function* strings(node, pfad = '') {
-  if (typeof node === 'string') yield [pfad, node]
-  else if (Array.isArray(node)) for (let i = 0; i < node.length; i++) yield* strings(node[i], `${pfad}[${i}]`)
-  else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) yield* strings(v, pfad ? `${pfad}.${k}` : k)
 }
 
 // ------------------------------------------------------------ Eigene Checks
 
 const lehrmittel = ladeLehrmittel()
 const karten = existsSync(METHODEN)
-  ? Object.fromEntries(readdirSync(METHODEN).filter((f) => f.endsWith('.json')).map((f) => {
+  ? Object.fromEntries(readdirSync(METHODEN).filter((f) => f.endsWith('.json') && !f.startsWith('_')).map((f) => {
       try { const k = readJson(join(METHODEN, f)); return [k.id, k] } catch { return [f, null] }
     }))
   : {}
@@ -176,7 +141,7 @@ function pruefeEinheit(slug) {
   }
 
   const status = json['set.json']?.status
-  if (!STATUS_OK.includes(status)) err('ERR_STATUS_UNBEKANNT', 'set.json › status', `«${status}» — der Index-Builder behandelt das als LIVE`)
+  if (!STATUS_OK.includes(status)) err('ERR_STATUS_UNBEKANNT', 'set.json › status', `«${status}» — erlaubt: entwurf, publiziert, archiviert oder kein Feld; der Index-Builder bricht sonst ab`)
   else if (mussEntwurf && status !== 'entwurf') err('ERR_STATUS_NICHT_ENTWURF', 'set.json › status', `«${status ?? 'fehlt'}» — eine neu erzeugte Einheit muss "entwurf" tragen, sonst ist sie nach dem Index-Bau fuer alle sichtbar`)
 
   const hfs = ['A', 'B', 'C'].map((l) => [l, json[`herausforderung_${l}.json`]]).filter(([, h]) => h)
@@ -227,14 +192,26 @@ function pruefeEinheit(slug) {
 
 function lauf(script, args) {
   const r = spawnSync(process.execPath, [join(ROOT, 'scripts', script), ...args], { cwd: ROOT, encoding: 'utf8' })
-  return { ok: r.status === 0, text: ((r.stdout ?? '') + (r.stderr ?? '')).trim() }
+  return { ok: r.status === 0, status: r.status, text: ((r.stdout ?? '') + (r.stderr ?? '')).trim() }
+}
+/** Zaehlt in der Ausgabe eines Beleg-Skripts die Befunde je Art und Code («  warnung  CODE  …»). */
+function zaehlung(text) {
+  const z = { 'FEHLER ': {}, warnung: {}, HINWEIS: {} }
+  for (const l of text.split('\n')) {
+    const m = /^\s+(FEHLER |warnung|HINWEIS)\s+([A-Z][A-Z0-9_]+)\b/.exec(l)
+    if (m) z[m[1]][m[2]] = (z[m[1]][m[2]] ?? 0) + 1
+  }
+  const zeile = (o) => { const e = Object.entries(o); return e.length ? `${e.reduce((n, [, v]) => n + v, 0)}: ${e.map(([k, v]) => `${k} ${v}`).join(' · ')}` : '' }
+  return { warnungen: zeile(z.warnung), hinweise: zeile(z.HINWEIS) }
 }
 const einruecken = (t) => t.split('\n').map((l) => '      ' + l).join('\n')
 
-console.log(`check-all — ${slugs.length} Einheit(en)${mussEntwurf ? ' · status muss "entwurf" sein' : ''}${CLOUD ? ' · --cloud' : ''}\n`)
+console.log(`check-all — ${slugs.length} Einheit(en)${mussEntwurf ? ' · status muss "entwurf" sein' : ''}${CLOUD ? ' · --cloud' : ''}${VOR_AUDIT ? ' · --vor-audit: erster Durchgang, die Audits stehen aus' : ''}\n`)
 
 let rot = 0
-const zeile = (ok, name, detail = '') => console.log(`  ${ok ? 'ok    ' : 'FEHLER'}  ${name}${detail ? '  ' + detail : ''}`)
+let ungeprueft = 0
+let auditAus = 0
+const zeile =(ok, name, detail = '') => console.log(`  ${ok ? 'ok    ' : 'FEHLER'}  ${name}${detail ? '  ' + detail : ''}`)
 
 if (!lehrmittel) {
   if (CLOUD) { rot++; zeile(false, 'Lehrmittel', 'material/_lehrmittel/ fehlt — ohne Quelltext darf kein Lauf starten (scripts/cloud-preflight.mjs)') }
@@ -244,6 +221,35 @@ if (!lehrmittel) {
 const nrlp = lauf('check-nrlp-consistency.mjs', [])
 zeile(nrlp.ok, 'nRLP-Datensaetze')
 if (!nrlp.ok) { rot++; console.log(einruecken(nrlp.text)) }
+
+// Namen eindeutig (Ordner, IDs, Quellenkarten, Archiv, Laufordner): scripts/check-namen.mjs, nur die geprueften Einheiten.
+if (slugs.length) {
+  const namen = lauf('check-namen.mjs', [...slugs, ...(CLOUD ? ['--cloud'] : [])])
+  zeile(namen.ok, 'Namen', 'Ordner · IDs · Quellenkarten · Archiv · Laufordner')
+  if (!namen.ok || /warnung|HINWEIS/.test(namen.text)) { if (!namen.ok) rot++; console.log(einruecken(namen.text)) }
+}
+
+// Karten: scripts/karten.mjs geaendert — jede Methoden- und Quellenkarte, die sich gegenueber origin/main
+// unterscheidet. Rot, wenn eine publizierte oder archivierte Einheit sie fuehrt und kein Vermerk vorliegt
+// (docs/methodenkartei.md §9). Gilt fuer den ganzen Baum: Eine Karte aendert auch Hefte ausserhalb des Umfangs.
+{
+  const k = lauf('karten.mjs', ['geaendert'])
+  zeile(k.ok, 'Karten', 'geaenderte Methoden- und Quellenkarten gegen origin/main · Verbraucher · Vermerk')
+  if (!k.ok || /warnung|HINWEIS|  (geändert|gelöscht)  /.test(k.text)) { if (!k.ok) rot++; console.log(einruecken(k.text)) }
+}
+
+// Skelette: scripts/check-skelette.mjs — die Vorlagen unter assets/ und die Auftragsvorlagen der Skill verletzen
+// selbst keine Regel (Anrede, gesperrte Woerter, Platzhalterform, Felder). Einmal je Aufruf. Fehlt die Skill im
+// Baum (Exit 2), ist das ein Hinweis: Dann gibt es nichts, woraus ein Lauf einen Fehler erben koennte.
+{
+  const k = lauf('check-skelette.mjs', [])
+  if (k.status === 2) console.log(`  HINWEIS Skelette  nicht geprueft — ${k.text.split('\n').filter(Boolean).pop()?.trim() ?? 'Skill fehlt im Baum'}`)
+  else {
+    zeile(k.ok, 'Skelette', 'Vorlagen der Skill: Anrede · gesperrte Woerter · Platzhalterform · Felder · feste Angaben')
+    if (!k.ok) { rot++; console.log(einruecken(k.text)) }
+    else { const z = zaehlung(k.text); if (z.warnungen) console.log(`      Warnungen ${z.warnungen}  (node scripts/check-skelette.mjs)`); if (z.hinweise) console.log(`      Hinweise ${z.hinweise}`) }
+  }
+}
 
 if (!slugs.length) console.log('\n  Keine Einheit im Umfang.')
 
@@ -271,8 +277,38 @@ for (const slug of slugs) {
     const r = lauf(script, args)
     zeile(r.ok, name)
     if (!r.ok) { rot++; console.log(einruecken(r.text)) }
+    // Nachgetragene Budgets (E38) sind an gebundenen Einheiten Warnungen: zeigen, auch wenn das Skript gruen endet.
+    else if (script === 'check-v42.mjs') { const n = (r.text.match(/^\s+WARN_V42_BUDGET\b/gm) ?? []).length; if (n) console.log(`      Warnungen ${n}: WARN_V42_BUDGET ${n}  (node scripts/check-v42.mjs ${slug})`) }
+  }
+
+  // Die fuenf Beleg-Pruefungen (E38). Exit 1 = Fehler · Exit 2 = Archiv oder Lehrmittel fehlt lokal: nicht geprueft.
+  if (template === 'heft_8page_v42') {
+    const beleg = [
+      ['Belege (belege.json: Feld, Hash, Anker, Zeitmarke, Urteil)', 'check-belege.mjs'],
+      ['Fakten (fakten.json: Rechts- und Sachaussagen)', 'check-fakten.mjs'],
+      ['Zeiger (archiv_ref, Wortzahl, Absatz, Zeitmarke, Seiten)', 'check-zeiger.mjs'],
+      ['Zahlen (Rechnungen, Summen, Fallzahlen)', 'check-zahlen.mjs'],
+      ['Kohaerenz (Werte, Loesung sichtbar, Woerter, Anzahl, Punkte)', 'check-kohaerenz.mjs'],
+    ]
+    for (const [name, script] of beleg) {
+      // --vor-audit kennen nur die zwei Skripte, deren Datei erst ein Audit schreibt.
+      const vorAudit = VOR_AUDIT && (script === 'check-belege.mjs' || script === 'check-fakten.mjs')
+      const r = lauf(script, [slug, ...(STRENG ? ['--streng'] : []), ...(vorAudit ? ['--vor-audit'] : [])])
+      const z = zaehlung(r.text)
+      if (r.status === 2) {
+        // Nie «ok»: Was nicht pruefbar war, ist nicht gruen. Unter --cloud ein Fehler.
+        ungeprueft++
+        console.log(`  ${CLOUD ? 'FEHLER' : 'HINWEIS'} ${name}  nicht geprueft — ${r.text.split('\n').filter((l) => /NICHT GEPRUEFT|fehlt lokal/.test(l)).pop()?.trim().replace(/^NICHT GEPRUEFT — /, "") ?? 'Quellenarchiv oder Lehrmittel fehlt lokal'}`)
+        if (CLOUD) rot++
+      } else zeile(r.ok, name)
+      if (/HINWEIS_AUDIT_STEHT_AUS/.test(r.text)) auditAus++
+      if (r.status === 1) { rot++; console.log(einruecken(r.text)) } else {
+        if (z.warnungen) console.log(`      Warnungen ${z.warnungen}`)
+        if (z.hinweise) console.log(`      Hinweise ${z.hinweise}`)
+      }
+    }
   }
 }
 
-console.log(`\n${rot ? `ROT — ${rot} Pruefung(en) mit Fehlern.` : 'GRUEN — keine Fehler.'}`)
+console.log(`\n${rot ? `ROT — ${rot} Pruefung(en) mit Fehlern.` : ungeprueft ? `UNVOLLSTAENDIG — keine Fehler, aber ${ungeprueft} Pruefung(en) nicht gelaufen (Quellenarchiv oder Lehrmittel fehlt lokal).` : auditAus ? `VOR AUDIT — keine Fehler, aber ${auditAus} Beleg-Datei(en) stehen aus (belege.json, fakten.json). Erster Durchgang; der zweite laeuft ohne --vor-audit.` : 'GRUEN — keine Fehler.'}`)
 process.exit(rot ? 1 : 0)

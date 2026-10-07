@@ -1,0 +1,115 @@
+{
+  "id": "1.1.1_einstieg_interview_lernprompt",
+  "set_ref": "1.1.1_einstieg_interview_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Wie ich frage, so erfahre ich». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI, wer sie für Sie sein soll. Dann richtet sie Ton und Inhalt ihrer Antwort nach dieser Rolle.",
+        "thema_bezug": "Als Lerncoach fragt die KI Sie zu den Fragearten ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Fragearten im Interview. Frag mich ab zu offene Frage, geschlossene Frage und Klärungsfrage. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Auch als Lerncoach kann die KI eine Frageart falsch erklären."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und was Sie schon haben. So passt die Antwort zu Ihrer Lage.",
+        "thema_bezug": "Ihr Satz zur Methode nennt Ihre Methode und stammt aus Ihrer Methoden-Notiz.",
+        "beispiel_basis": "Thema: ein Interview in der Klasse, um eine Person vorzustellen. Mein Satz zu meiner Methode: [mein Satz zur Methode]. Welche zwei Stellen sind noch ungenau? Zeig sie mir als Fragen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI Einwände gegen Ihre Sicht. Ein Einwand ist, was die andere Seite dagegen sagt. Welcher Einwand zählt, entscheiden Sie.",
+        "thema_bezug": "Die Gegenseite ist hier die andere Methode. Ihr Satz zur Methode nennt Ihre Methode und stammt aus Ihrer Methoden-Notiz.",
+        "beispiel_basis": "Thema: ein Interview in der Klasse. Es gibt zwei Methoden: fragen mit Fragenkatalog oder erzählen lassen. Mein Satz zu meiner Methode: [mein Satz zur Methode]. Nenne zwei Einwände aus Sicht der anderen Methode. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Thema: ein Interview in der Klasse. Es gibt zwei Methoden: fragen mit Fragenkatalog oder erzählen lassen. Mein Satz zu meiner Methode: [mein Satz zur Methode]. Nenne drei Einwände aus Sicht der anderen Methode. Nenne zu jedem Einwand einen Fachbegriff, auf den du dich stützt. Ich schlage jeden Fachbegriff im Lehrmittel nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI war bei Ihrem Interview nicht dabei und rät nur, was die andere Methode gezeigt hätte. Ob ein Einwand für Ihr Gespräch stimmt, wissen nur Sie.",
+        "baukasten": {
+          "rolle": [
+            "Vertritt die andere Methode",
+            "Du bist eine kritische Kollegin",
+            "Du bist meine Lehrperson"
+          ],
+          "kontext": [
+            "Interview in der Klasse",
+            "Meine Methode: Fragenkatalog",
+            "Meine Methode: erzählen lassen",
+            "Ich hatte 15 Minuten Zeit"
+          ],
+          "aufgabe": [
+            "Nenne zwei Einwände",
+            "Nenne zu jedem Einwand einen Fachbegriff",
+            "Frag mich, was ich dazu sage"
+          ],
+          "format": [
+            "als Liste mit Nummern",
+            "je Einwand ein Satz",
+            "in kurzen, einfachen Sätzen"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie verlangen, dass die KI in einzelnen Schritten vorgeht. So sehen Sie bei jedem Schritt, ob er stimmt. Einen falschen Schritt finden Sie leichter als ein falsches Ergebnis.",
+        "thema_bezug": "Die KI führt Sie in drei Schritten zu einer Methode: Ziel, Zeit, Gegenüber. Ihre Lage ist zum Beispiel ein Gespräch mit einer Kundin.",
+        "beispiel_basis": "Thema: eine Person befragen. Ich wähle zwischen Fragenkatalog und erzählen lassen. Meine Lage: [meine Lage]. Führe mich Schritt für Schritt mit Fragen zu meiner Wahl. Entscheide nicht für mich. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "beispiel_fortgeschritten": "Thema: eine Person befragen. Ich wähle zwischen Fragenkatalog und erzählen lassen. Meine Lage: [meine Lage]. Geh in drei Schritten vor. Schritt 1: Frag mich, was ich erfahren muss. Schritt 2: Frag mich nach Zeit und Ort. Schritt 3: Frag mich, was mein Gegenüber braucht. Warte nach jedem Schritt auf meine Antwort. Entscheide nicht für mich. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Schritte der KI klingen logisch, auch wenn einer nicht zu Ihrer Lage passt. Prüfen Sie jeden Schritt an dem, was Sie selbst wissen.",
+        "baukasten": {
+          "rolle": [
+            "Du bist mein Lerncoach",
+            "Du bist eine Lernende im 3. Lehrjahr"
+          ],
+          "kontext": [
+            "Gespräch mit einer Kundin",
+            "Auskunft auf einem Amt",
+            "Ich habe wenig Zeit"
+          ],
+          "aufgabe": [
+            "Geh in drei Schritten vor",
+            "Frag mich bei jedem Schritt",
+            "Entscheide nicht für mich"
+          ],
+          "format": [
+            "ein Schritt, eine Frage",
+            "mit Nummern",
+            "in kurzen, einfachen Sätzen"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Mit Prompt 1 fragt die KI Sie als Lerncoach ab. Mit Prompt 2 fragt sie dort weiter, wo Ihre Antwort ungenau war.",
+      "prompt_1": "Du bist mein Lerncoach. Thema: ein Interview führen. Ich übe für eine Prüfung. Frag mich ab zu Suggestivfrage und nachhaken. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+      "prompt_2": "Welche meiner Antworten war am ungenausten? Stell mir dazu noch eine Frage. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Schritt für Schritt denken"
+      ],
+      "logik_und_ziel": "Prompt 1 holt Einwände gegen Ihren Satz zur Methode. Mit Prompt 2 gehen Sie einen Einwand Schritt für Schritt durch und entscheiden selbst.",
+      "prompt_1": "Thema: ein Interview in der Klasse. Es gibt zwei Methoden: fragen mit Fragenkatalog oder erzählen lassen. Mein Satz zu meiner Methode: [mein Satz zur Methode]. Nenne drei Einwände aus Sicht der anderen Methode, mit Nummern. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Nimm deinen Einwand Nummer [Nummer]. Geh ihn Schritt für Schritt mit mir durch. Frag mich zuerst, was in meinem Interview wirklich passiert ist. Frag mich dann, ob der Einwand dazu passt. Sag mir nicht, ob ich recht habe. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort."
+    },
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Thema: ein Interview führen. Mein Plan: zuerst Grundsatzfragen, dann Detailfragen, bei ungenauen Antworten nachhaken. Stimmt das? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Nachhaken stimmt. Die Reihenfolge stimmt nicht: Im Interview kommen zuerst die Detailfragen, dann die Grundsatzfragen.",
+      "pruefung": "Ich schlage in Kap. 16.4 nach. Nachhaken stimmt. Zur Reihenfolge steht dort: Grundsatzfragen vor Detailfragen stellen. Mein Plan bleibt."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bbw-hko.ch/schema/karte-belege.schema.json",
+  "title": "<karten-id>.json — Belege und Fakten einer geteilten Karte",
+  "description": "Liegt AUSSERHALB des Repos: <Quellenarchiv>/_pruefung/_karten/<id>.json. Für Methodenkarten (src/data/methoden/<id>.json) und Quellenkarten (src/data/quellen/<id>.json): Aussagen der Karte, die an Lehrmittel oder Quelle hängen (Seite, Zahl, Regel), werden wie Lösungsfelder belegt; Aussagen über die Welt wie Fakten. Die Regeln je Zeile sind dieselben wie in belege.schema.json und fakten.schema.json — hier wiederholt, damit jede Schema-Datei für sich lesbar ist. `feld` ist der JSON-Pfad in der Karte. Welche Felder einer Karte belegt werden müssen, legt scripts/karten.mjs bzw. check-belege fest. Beschreibung: .claude/skills/bbw-hko-heft-v42/references/belege.md (ENTSCHEIDE E38).",
+  "type": "object",
+  "required": ["format", "karte", "art", "belege", "fakten"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "bbw-hko/karte-belege@1" },
+    "karte": { "description": "ID der Karte = Dateiname ohne .json.", "type": "string", "pattern": "^(?:hko-[a-z0-9]+(?:-[a-z0-9]+)*|lm-[0-9]+-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*|q-[0-9]+(?:\\.[0-9]+)?[ab]-[a-z0-9-]+)$" },
+    "art": { "enum": ["methode", "quelle"] },
+    "belege": { "type": "array", "items": { "$ref": "#/$defs/beleg" } },
+    "fakten": { "type": "array", "items": { "$ref": "#/$defs/fakt" } }
+  },
+  "$defs": {
+    "datum": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "von": {
+      "type": "object",
+      "required": ["rolle", "modell"],
+      "additionalProperties": false,
+      "properties": {
+        "rolle": { "type": "string", "minLength": 1 },
+        "modell": { "type": "string", "minLength": 1 }
+      }
+    },
+    "kartenfeld": { "description": "JSON-Pfad in der Karte, z. B. «schritte[2]» oder «merk».", "type": "string", "pattern": "^[A-Za-z_][^ ]*$" },
+    "beleg": {
+      "type": "object",
+      "required": ["feld", "herkunft", "anker", "wo", "stelle", "urteil", "hash", "geprueft_am", "von"],
+      "additionalProperties": false,
+      "properties": {
+        "feld": { "$ref": "#/$defs/kartenfeld" },
+        "herkunft": { "enum": ["quelle", "lehrmittel", "fallueberlegung", "nrlp"] },
+        "anker": { "type": "string", "pattern": "^(?:\\s*\\S+(?:\\s+\\S+){4,11}\\s*)?$" },
+        "wo": { "type": "string" },
+        "stelle": { "type": "string" },
+        "urteil": { "enum": ["stimmt", "fundstelle_falsch", "ableitung", "falsch"] },
+        "hash": { "description": "SHA-256 über den normalisierten Text des Kartenfelds — hashText() in scripts/lib/loesungsfelder.mjs.", "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "geprueft_am": { "$ref": "#/$defs/datum" },
+        "von": { "$ref": "#/$defs/von" },
+        "bemerkung": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "herkunft": { "const": "fallueberlegung" } }, "required": ["herkunft"] },
+          "then": { "properties": { "anker": { "const": "" }, "wo": { "const": "" }, "stelle": { "const": "" }, "urteil": { "enum": ["stimmt", "ableitung", "falsch"] } } }
+        },
+        {
+          "if": { "properties": { "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp"] } }, "required": ["herkunft"] },
+          "then": { "properties": { "urteil": { "enum": ["stimmt", "fundstelle_falsch", "falsch"] } } }
+        },
+        {
+          "if": { "properties": { "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp"] }, "urteil": { "enum": ["stimmt", "fundstelle_falsch"] } }, "required": ["herkunft", "urteil"] },
+          "then": { "properties": { "anker": { "minLength": 1 } } }
+        },
+        {
+          "if": { "properties": { "herkunft": { "const": "quelle" } }, "required": ["herkunft"] },
+          "then": { "properties": { "wo": { "pattern": "^q-[0-9]+(?:\\.[0-9]+)?[ab]-[a-z0-9-]+$" } } }
+        },
+        {
+          "if": { "properties": { "herkunft": { "const": "lehrmittel" } }, "required": ["herkunft"] },
+          "then": { "properties": { "wo": { "pattern": "^[0-9]{1,2}\\.[0-9]{1,2}_.+\\.md$" }, "stelle": { "pattern": "^S\\. [0-9]+$" } } }
+        }
+      ]
+    },
+    "fakt": {
+      "type": "object",
+      "required": ["wortlaut_in_der_karte", "feld", "primaerquelle", "abgerufen_am", "urteil", "bemerkung"],
+      "additionalProperties": false,
+      "properties": {
+        "wortlaut_in_der_karte": { "type": "string", "minLength": 1 },
+        "feld": { "$ref": "#/$defs/kartenfeld" },
+        "primaerquelle": { "type": "string", "pattern": "^(?:https://\\S+)?$" },
+        "fundstelle": { "type": "string" },
+        "abgerufen_am": { "$ref": "#/$defs/datum" },
+        "urteil": { "enum": ["belegt", "abweichend", "nicht_belegbar"] },
+        "bemerkung": { "type": "string" },
+        "von": { "$ref": "#/$defs/von" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "urteil": { "enum": ["belegt", "abweichend"] } }, "required": ["urteil"] },
+          "then": { "properties": { "primaerquelle": { "minLength": 9 } } }
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "format": "bbw-hko/karte-belege@1",
+      "karte": "hko-platzhalter-karte",
+      "art": "methode",
+      "belege": [
+        {
+          "feld": "schritte[0]",
+          "herkunft": "lehrmittel",
+          "anker": "erfundener platzhalter aus sechs ganzen wörtern",
+          "wo": "99.9_Platzhalter.md",
+          "stelle": "S. 999",
+          "urteil": "stimmt",
+          "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "geprueft_am": "2026-01-01",
+          "von": { "rolle": "Lösungs-Audit", "modell": "platzhalter-modell" }
+        }
+      ],
+      "fakten": []
+    }
+  ]
+}

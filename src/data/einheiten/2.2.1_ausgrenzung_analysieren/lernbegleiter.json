@@ -1,0 +1,129 @@
+{
+  "id": "2.2.1_ausgrenzung_analysieren_lernbegleiter",
+  "set_ref": "2.2.1_ausgrenzung_analysieren_set",
+  "prinzip_ref": "2.2.1_ausgrenzung_analysieren_prinzip",
+  "kn_ref": "2.2.1_ausgrenzung_analysieren_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann Beispiele von Ausgrenzung in Gesprächen, Medienbeiträgen und künstlerischen Beiträgen analysieren, unterschiedliche Perspektiven darauf nachvollziehen und meinen eigenen Standpunkt dazu entwickeln und klar ausdrücken — auch dort, wo etwas gesagt werden darf und trotzdem verletzt.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann sagen, ob eine Aussage Stereotyp, Vorurteil oder Diskriminierung ist.",
+        "Ich kann bei einem Beitrag Absicht und Wirkung getrennt beschreiben.",
+        "Ich kann meinen Standpunkt klar sagen, auch wenn etwas erlaubt ist und trotzdem verletzt."
+      ]
+    },
+    "begriffe": [
+      "Stereotyp",
+      "Vorurteil",
+      "Diskriminierung",
+      "Rassismus",
+      "Ausgrenzung",
+      "Anti-Rassismus-Strafnorm",
+      "Öffentlichkeit",
+      "Meinungsfreiheit",
+      "Menschenwürde",
+      "Wirkung",
+      "Wert",
+      "Norm",
+      "Wertewandel",
+      "Wertekonflikt",
+      "Haltung",
+      "Absicht",
+      "Empathie",
+      "Kommentar",
+      "Standpunkt"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie die Begriffe aus dem Glossar sicher können wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Frag mich diese Begriffe ab: Stereotyp, Vorurteil, Diskriminierung, Absicht, Wirkung, Wertekonflikt. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff in eigenen Worten erklären wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne höchstens zwei Lücken. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Meine Lösung zum Übungsfall: [meine Lösung]. Was fehlt bei der Argumentation: Standpunkt, Begründung, ein Beispiel? Nenne die Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Argumentation: Standpunkt, Begründung, ein Beispiel. Position / Werthaltung: klar in Ich-Form, mit Grund. Nenne je eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt Ihr Heft nicht. Sie zeigt nur Lücken und bewertet Ihre Lösung nicht. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie das Gelernte an einem neuen Fall üben wollen.",
+        "prompt_basis": "Thema: Ausgrenzung und Meinungsfreiheit. Erfinde einen neuen, kurzen Fall mit einem Kostüm, einem Songtext oder einer Zeichnung. Etwas ist erlaubt und trifft trotzdem Menschen. Kein Spruch im Freundeskreis, kein Post im Netz, kein Plakat, kein Fall aus dem Sportverein. Schreib abwertende Sätze nur als Stichwort. Stell mir dazu zwei Fragen, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Ausgrenzung und Meinungsfreiheit. Erfinde einen neuen Fall mit einem Kostüm, einem Songtext oder einer Zeichnung. Etwas ist erlaubt und trifft trotzdem Menschen. Kein Fall aus Freundeskreis, Netz, Schule oder Verein. Schreib abwertende Sätze nur als Stichwort. Warte auf meinen Standpunkt. Prüfe dann «Ethisches Prinzip»: Sind Erlaubtes, Absicht und Wirkung getrennt? Nenne Lücken als Fragen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie die Tage vor dem Kompetenznachweis planen wollen.",
+        "prompt_basis": "Thema: Ausgrenzung und Meinungsfreiheit. Ich habe [Anzahl] Tage Zeit. Mach mir einen Lernplan mit einer Aufgabe je Tag. Diese Begriffe will ich üben: Stereotyp, Vorurteil, Diskriminierung, Absicht, Wirkung, Standpunkt. Erkläre die Begriffe nicht. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Ausgrenzung und Meinungsfreiheit. Schreib mir zwölf Lernkarten nur mit Fragen. Ordne sie nach drei Gruppen: Kette vom Stereotyp zur Diskriminierung, Absicht und Wirkung, Standpunkt begründen. Schreib keine Antworten. Die Antworten schreibe ich selbst aus dem Glossar. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf die Lernkarten schreiben Sie selbst aus dem Glossar Ihrer Hefte. Den Plan der KI passen Sie an Ihre Tage an."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie üben, auf Fragen zu einem neuen Fall laut und in ganzen Sätzen zu antworten.",
+        "prompt": "Thema: Ausgrenzung und Meinungsfreiheit. Erfinde einen neuen, kurzen Fall mit einem Kostüm oder einem Songtext. Etwas ist erlaubt und trifft trotzdem Menschen. Kein Fall aus Freundeskreis, Netz, Schule oder Verein. Stell mir dazu drei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie üben, einen neuen Fall schriftlich zu lösen und Ihren Standpunkt in Ich-Form zu begründen.",
+        "prompt": "Thema: Ausgrenzung und Meinungsfreiheit. Erfinde einen neuen, kurzen Fall mit einer Zeichnung in einer Zeitung. Etwas ist erlaubt und trifft trotzdem Menschen. Kein Fall aus Freundeskreis, Netz, Schule oder Verein. Stell mir dazu zwei Aufgaben. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Ausgrenzung und Meinungsfreiheit. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen Fall mit einem Kostüm. Etwas ist erlaubt und trifft trotzdem Menschen. Kein Fall aus Freundeskreis, Netz, Schule oder Verein. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie benutzen die Begriffe richtig und stützen Ihren Standpunkt mit einem Beispiel: Üben Sie mit «Abfragen lassen» und einem Übungsfall."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Ethisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie trennen Erlaubtes, Absicht und Wirkung und sagen Ihren Standpunkt in Ich-Form: Üben Sie das an einem Übungsfall auf dieser Seite."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meinen Standpunkt ohne KI in zwei Sätzen sagen."
+    ]
+  }
+}

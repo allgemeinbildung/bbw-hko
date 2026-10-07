@@ -108,30 +108,12 @@ Rücksicht auf Gross- und Kleinschreibung (`ERR_V42_R9_FALL`). Ein Begriff
 `feedback_kriterien[].stufen[]` (Wortlaut des KN, E8),
 `gemeinsamer_auftrag.kontext_ausschluss`, `prinzip_handoff.kn_aktivierung`.
 
-### 7.2 Sechs Wörter, die für jede Einheit gesperrt sind (E24)
+### 7.2 Keine fest gesperrten Wörter mehr (E30)
 
-`scripts/check-v42.mjs` führt sechs Wörter des Piloten fest im Code. Sie gelten
-für **jede** v4.2-Einheit, gleich welchen Themas, an denselben Orten wie 7.1:
-
-| Gesperrt (als Teilwort, klein oder gross) | trifft zum Beispiel auch |
-|---|---|
-| `leasing` | Leasingvertrag, Autoleasing |
-| `konsumkredit` | Konsumkreditgesetz |
-| `kleinkredit` | Kleinkredite |
-| `e-bike` | E-Bikes |
-| `ebike` | — |
-| `mobilität` | Elektromobilität, Mobilitätskosten |
-
-Folgen:
-
-- Kein Heft, kein Auftrag, kein Glossareintrag und keine Quellenkarte nennt
-  eines dieser Wörter — auch nicht in `url`, `titel` oder `titel_original`
-  einer Karte.
-- Braucht der **Gegenstand** der Einheit eines davon, ist die Einheit nicht
-  erzeugbar, bis das Skript korrigiert ist. Nicht umschreiben («Velo mit
-  Motor»), nicht umgehen: melden.
-- Kommt ein Wort nur am Rand vor, den Satz so schreiben, dass er es nicht
-  braucht.
+Bis 04.10.2026 führte `scripts/check-v42.mjs` sechs Wörter des Piloten fest im
+Code; sie galten für jede Einheit (E24). E30 hat sie aufgehoben. Gesperrt ist
+in einer Einheit nur noch, was ihr eigener Fall-Ausschluss nennt (7.1). Kein
+Wort macht eine Einheit von sich aus «nicht erzeugbar».
 
 ### 7.3 Wendungen, die ein Skript als Fehler liest
 
@@ -143,6 +125,46 @@ Folgen:
 | «Sie», «Ihr», «Ihre» in `liefert` | `WARN_LIEFERT_VERBFORM` | nominal: «drei Belege mit Fundstelle» |
 | TODO, TBD; eine eckige Klammer vor «nach », «abhängig», «Datum», «Vier », «URL», «JJJJ»; geschweifte Klammern um Platzhalter | `ERR_PLATZHALTER`, `ERR_V42_PLATZHALTER` | ausschreiben; runde Klammern |
 | ein Satz aus dem Lehrmittel oder aus einer Quelle | `WARN_LEHRMITTEL_NAH` ab 14, `ERR_LEHRMITTEL_WOERTLICH` ab 25 Wörtern am Stück | eigene Formulierung plus Kapitel und Seite |
+
+### 7.4 Kennzeichen für Fallüberlegung und Deutung
+
+Kein gesperrtes, sondern ein **verlangtes** Wort. Was eine Lösung selbst
+folgert — was also weder in der Quelle noch im Lehrmittel steht —, sagt das im
+selben Feld mit einem Wort dieser Liste. Dasselbe gilt für eine Aussage über
+die Welt, die sich an keiner amtlichen Stelle belegen liess und trotzdem stehen
+bleibt. Fehlt das Wort, ist es im Tor ein Fehler:
+`ERR_ABLEITUNG_UNGEKENNZEICHNET` (`check-belege`: das Lösungs-Audit urteilt
+`ableitung`) bzw. `ERR_FAKT_NICHT_BELEGBAR` (`check-fakten`: das Fakten-Audit
+urteilt `nicht_belegbar`).
+
+| Kennzeichen | Gilt als |
+|---|---|
+| Fallüberlegung · Fallangabe · Fallannahme | Teilwort |
+| Annahme · Annahmen · angenommen | ganzes Wort |
+| Auslegung | Teilwort |
+| Deutung | ganzes Wort |
+| gedeutet | Teilwort |
+| nicht belegt · nicht belegbar | Wortfolge |
+| nicht aus dem Lehrmittel · keine Lehrmittelaussage · nicht Lehrmittelaussage | Wortfolge |
+| Vertragssache · Einzelfall | Teilwort |
+| eigene Überlegung | Wortfolge |
+| mögliche Lösung · mögliche Antwort | Wortfolge |
+| erfunden… · Beispielwert… | Wortanfang |
+
+Gross- und Kleinschreibung zählen nicht. **Massgebend ist das Skript:** Die
+Liste ist die Abschrift von `RE_FALLKENNZEICHEN` in
+`scripts/lib/pruefung.mjs` (Stand 07.10.2026, erhoben an den Lösungen der 16
+Einheiten). Wer ein Kennzeichen ergänzen will, ändert das Skript und führt
+diese Tabelle nach — nie nur die Tabelle.
+
+So schreiben: «Fallüberlegung: …», «(Annahme: 14 Tage ab Erhalt)», «Deutung,
+nicht Aussage der Quelle: …», «nicht aus dem Lehrmittel: …». Die Kennzeichnung
+steht in der Lösung, nie im Text für Lernende. Sie macht eine Ableitung
+zulässig, nicht richtig: Ob sie trägt, beurteilt das Lösungs-Audit
+(`references/audits.md` §2), und wo eine Stelle im Lehrmittel oder in der
+Quelle die Aussage belegt, gehört die Fundstelle hin, nicht das Kennzeichen.
+(Herkunft: Rückblick §4 «Ableitung steht als Quellenaussage da», rund 15
+Stellen; §5.3 Nr. 4; Auftrag 10, Stufe B Nr. 1; ENTSCHEIDE E38, Stufen B und C.)
 
 ## 8. Trade-off → Spannungsfeld oder Zielkonflikt
 
@@ -357,8 +379,9 @@ Nicht still korrigiert, sondern neu geschrieben und im Bericht vermerkt:
 
 - Verletzung der Ich- oder Sie-Form
 - Füllsel und distanzierende Wendungen
-- ein gesperrtes Wort (Abschnitt 7) — nie durch ein Synonym «retten», wenn es
-  der Gegenstand ist
+- ein Begriff des KN-Falls (Abschnitt 7.1) — nie durch ein Synonym «retten»:
+  derselbe Gegenstand unter anderem Wort bleibt der Fall des KN
+  (`references/phase-9-tor.md` §3 Nr. 6)
 
 ## 16. Kurzprüfung vor jedem Schreiben
 
@@ -372,7 +395,7 @@ Nicht still korrigiert, sondern neu geschrieben und im Bericht vermerkt:
 □ Kein «Spur» in Texten für Lernende
 □ «Quelle» statt «Pflichtquelle»; «Punkte» statt «Stufe»
 □ Auftragsbogen ohne Vorgabe an die Lehrperson
-□ Kein Begriff des KN-Falls und keines der sechs gesperrten Wörter in Heft, Auftrag, Glossar, Quellenkarte
+□ Kein Begriff des KN-Falls in Heft, Auftrag, Glossar, Quellenkarte
 □ Kein «im Voraus», kein «bringen Sie … mit», kein «aus Herausforderung A»
 □ Höchstens zwei Aufträge je Leitfrage; `liefert` ohne Anrede
 □ Kein «Trade-off» im sichtbaren Text

@@ -1,0 +1,130 @@
+{
+  "id": "1.3.1_konsum_verantworten_v42_lernbegleiter",
+  "set_ref": "1.3.1_konsum_verantworten_v42_set",
+  "prinzip_ref": "1.3.1_konsum_verantworten_v42_prinzip",
+  "kn_ref": "1.3.1_konsum_verantworten_v42_kn",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — üben für den Kompetenznachweis",
+    "ziel": "Sie üben mit der KI den Stoff der zwei Hefte, ohne dass die KI Ihre Arbeit macht.",
+    "kompetenzversprechen": "Ich kann meine Konsum- und Geldentscheidungen so treffen und begründen, dass ich zwischen meinen momentanen Wünschen und meiner langfristigen finanziellen Sicherheit bewusst abwäge.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach zuerst, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann Existenzbedürfnis und Wahlbedürfnis unterscheiden (Kap. 2.7, S. 73–77).",
+        "Ich kann ein Budget mit fixen Kosten, variablen Kosten und Rückstellungen aufstellen (Kap. 2.2, S. 48).",
+        "Ich kann einen Kaufentscheid mit meinem Massstab begründen."
+      ]
+    },
+    "begriffe": [
+      "Bedürfnis",
+      "Gut",
+      "Existenzbedürfnis",
+      "Wahlbedürfnis",
+      "Bedürfnispyramide",
+      "Werbung",
+      "Impulskauf",
+      "Konsumdruck",
+      "Geweckter Wunsch",
+      "Massstab",
+      "Nettolohn",
+      "Fixe Kosten",
+      "Variable Kosten",
+      "Rückstellung",
+      "Saldo",
+      "Engpass",
+      "Mahnung",
+      "Schuldenspirale",
+      "Anpassung",
+      "Schutzregel"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie die Begriffe aus Ihrem Glossar wiederholen möchten.",
+        "prompt_basis": "Frag mich diese Begriffe ab: Bedürfnis, Gut, Existenzbedürfnis, Wahlbedürfnis, Fixe Kosten, Variable Kosten, Rückstellung, Saldo, Schuldenspirale. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort.",
+        "warnung": "Antworten Sie zuerst selbst, sonst üben Sie nur das Wiedererkennen."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie prüfen möchten, ob Sie einen Begriff wirklich verstanden haben.",
+        "prompt_basis": "Ich erkläre dir einen Begriff mit eigenen Worten: [meine Erklärung]. Sag mir, was fehlt oder falsch ist. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Lassen Sie sich die Erklärung nicht von der KI schreiben, sonst lernen Sie ihre Worte auswendig."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie etwas Eigenes geschrieben haben und wissen möchten, was fehlt.",
+        "prompt_basis": "Hier ist meine Begründung für einen Kaufentscheid: [mein Text]. Was fehlt beim Kriterium «Argumentation»? Nenne mir nur die Lücken. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Hier ist mein Budget mit Anpassungen und Schutzregeln: [mein Budget]. Prüfe es mit den Kriterien «Argumentation» und «Wirtschaftliches Prinzip». Stell mir zu drei schwachen Stellen je eine Frage. Schreib nichts neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Sobald die KI Ihren Text neu schreibt, ist es ihr Text. Verlangen Sie nur Lücken und Fragen."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben möchten, Ihr Wissen auf eine neue Lage zu übertragen.",
+        "prompt_basis": "Erfinde einen kurzen neuen Fall: Eine Person im 1. Lehrjahr muss über eine Ausgabe entscheiden. Nimm keine Kopfhörer, kein Handy, kein Abo und kein Openair. Gib mir nur den Fall. Ich löse ihn selbst. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Erfinde einen neuen Fall mit einem Spannungsfeld zwischen Wunsch jetzt und Sicherheit später. Gib mir nur den Fall. Wenn ich ihn gelöst habe, bewerte meine Lösung mit den Kriterien «Fachkorrektheit», «Argumentation», «Wirtschaftliches Prinzip» und «Position / Werthaltung». Nenne Lücken als Fragen. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Der Übungsfall muss ein anderer sein als Ihr Kompetenznachweis. Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie die letzten Tage vor dem Kompetenznachweis planen möchten.",
+        "prompt_basis": "Mach mir einen Lernplan für drei Abende. Themen: Bedürfnisse ordnen, Budget aufstellen, Entscheid begründen. Plane je Abend eine kurze Übung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Mach mir zehn Lernkarten mit Frage und Antwort zu diesen Begriffen: Bedürfnispyramide, Impulskauf, Konsumdruck, Massstab, Nettolohn, Engpass, Mahnung, Schutzregel. Ordne sie von leicht zu schwer. Schreib kurze, einfache Sätze.",
+        "warnung": "Lernkarten der KI können Fehler enthalten. Vergleichen Sie jede Antwort mit dem Glossar in Ihrem Heft."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie üben, einen Entscheid mündlich zu begründen und auf Nachfragen zu antworten.",
+        "prompt": "Spiel mit mir ein kurzes Fachgespräch. Erfinde dafür einen neuen Fall zu einer Ausgabe im 1. Lehrjahr. Stell mir fünf Fragen dazu, von leicht zu schwer. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie üben, einen neuen Fall schriftlich zu lösen.",
+        "prompt": "Gib mir einen neuen kurzen Fall zu einer Ausgabe im 1. Lehrjahr, mit vier Aufgaben. Ich schreibe meine Lösung. Nenne mir danach nur die Lücken, als Fragen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie üben, Ihr Prinzip in einem Satz zu sagen und auf einen neuen Fall zu übertragen.",
+        "prompt": "Ich sage dir das Prinzip, das ich in dieser Einheit gelernt habe: [mein Prinzip]. Frag mich, wo es auch gilt und wo nicht. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie üben mit der Karte «Abfragen lassen» und begründen jeden Entscheid mit zwei Gründen."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Wirtschaftliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie zeigen an einem neuen Fall, wie Budget, Bedürfnis und Schulden zusammenhängen, und sagen Ihre Meinung in Ich-Form."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nicht beim Abgeben. Im Kompetenznachweis arbeiten Sie allein, darum üben Sie an anderen Fällen.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Meine Übungsfälle waren andere als mein Kompetenznachweis.",
+      "Ich habe Lücken verlangt, keine fertige Lösung.",
+      "Ich habe Angaben der KI im Lehrmittel nachgeschlagen."
+    ]
+  }
+}

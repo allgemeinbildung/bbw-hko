@@ -910,3 +910,1305 @@ sechzehn Einheiten im Format v4.2 publiziert.
 **Offen je Einheit:** steht im jeweiligen Bericht (4.3.1: §8 «gegenhören und
 gegensehen» und §9 — darunter die Video-Vertiefung von Heft A, 22:49–26:52).
 **Rückgängig:** `status` in `set.json` zurück auf `entwurf`, Index bauen, deployen.
+
+## E34 — Die Skill allein beschreibt den Ablauf; Prompts tragen keine Regeln mehr (07.10.2026)
+
+**Ausgangslage:** Für einen Lauf galt eine Dreifach-Schichtung: Skill ← Prompt
+`einheit-aus-bauplan-lokal` ← Prompt `alle-bauplaene-seriell` («diese
+Abweichungen gehen vor») ← E30 («gilt vor dem Text der Skill»). Wer ohne den
+Schleifen-Prompt startete, arbeitete nach altem Stand (Rückblick
+`RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 3).
+
+**Entscheid:**
+
+1. **Ein Ablauf für jeden Start.** Einzelstart, Schleife und Abschluss rufen
+   dieselbe Skill und bekommen denselben Ablauf: `references/lauf.md` (neu) —
+   Rollen und Modelle (Orchestrator Opus, Executor Opus, Gegenleser Sonnet,
+   Fakten-Audit Opus), Vorprüfung, Reihenfolge, was gleichzeitig laufen darf,
+   Messung, Abbruch, Laufordner, Commit-Umfang inklusive Bauplan.
+2. **Vorrang neu gefasst** (`SKILL.md` §1): ENTSCHEIDE bleibt oben, aber jede
+   neue E-Nummer, die eine Regel der Skill ändert, wird **in derselben
+   Session** in die Skill eingearbeitet und nennt die geänderten Dateien. «Gilt
+   vor dem Text der Skill, noch nicht nachgeführt» ist kein zulässiger Zustand
+   mehr. Ein Prompt trägt keine Regeln; widerspricht er der Skill, gilt die
+   Skill.
+3. **E30 ist nachgeführt.** Die sechs Wörter stehen in `SKILL.md` und elf
+   References nicht mehr als gesperrt; verblieben sind zwei historische
+   Verweise (`phase-0-verortung.md` §9, `sprache.md` §7.2). Auch
+   `docs/cloud-run/bauplaene/_VORLAGE.md` führt die Zeile «Gesperrte Wörter
+   (E24)» in §1 und den Zusatz in §7 «Suchaufträge» nicht mehr (nach dem
+   Trockenlauf bereinigt).
+4. **Messung in der Schreibphase.** Executor A und B messen ihr Heft und ihr
+   Dokument «Lösungen» selbst, in einem eigenen Temp-Ordner, bevor sie abgeben
+   (`lauf.md` §6; `phase-4`, `phase-5`, `phase-6` §7). Der Orchestrator baut den
+   Index dafür einmal nach `prinzip.json` und `kn.json`.
+5. **Phase 10 «Abschluss vor der Freigabe»** (`references/phase-10-abschluss.md`,
+   neu) gehört zu jedem Lauf: offene Befunde, Fakten-Audit an Primärquellen mit
+   Tabelle, Zahlen nachrechnen, erneutes Lesen nach der letzten Änderung, Tor
+   und Messung, Gegenhör-Liste, Vorlage zur Freigabe (zweiter Stopp), Freigabe
+   nur auf Pietros «ok». In der Schleife wird am zweiten Stopp nicht gewartet;
+   die Einheit bleibt `"entwurf"`.
+6. **Fakten im Bauplan.** Neuer Abschnitt «10. Fakten» in `_VORLAGE.md` und
+   `phase-1-bauplan.md` §3.14: jede Rechts- und Sachaussage mit Primärquelle,
+   URL, Abrufdatum; die Erzeugung zitiert nur daraus. **Übergang:** Ein Bauplan,
+   der vor dem 07.10.2026 freigegeben wurde und keinen §10 trägt, bleibt
+   erzeugbar; das Fakten-Audit prüft dann alles (`lauf.md` §3).
+7. **Ein Bericht je Lauf** nach `assets/bericht-template.md` (neu), immer als
+   Datei im Laufordner `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>/`, mit
+   Kopf (Ordner, Modelle, Beginn, Ende, Runden) und der Liste «Offen» (Kürzel
+   E/S/R/Q, Stand). `NACHTRAG.md` entfällt als eigene Form: Phase 10 und spätere
+   Entscheide schreiben im selben Bericht weiter.
+8. **Abbruch heisst verschieben, nicht löschen:** nach
+   `laeufe/…/abgebrochen/` (`lauf.md` §7; angeglichen in `SKILL.md` §6,
+   `phase-9-tor.md` §2, `auto-modus.md` §5 und §8, die «entfernen» sagten).
+9. **Eine Session je Arbeitsbaum.** Die Ausnahme «zweite Session nebeneinander»
+   aus dem Schleifen-Prompt entfällt.
+10. **Commit gehört zum Ablauf:** einer je Einheit nach Phase 10 Schritt 6, mit
+    Einheit, Karten, Bauplan, Laufordner, zwei Index-Dateien, nach
+    `check-leck --staged`. Bisher sagte die Skill «kein Commit, ausser der
+    Aufruf verlangt ihn».
+11. **Gegenleser:** Das Lehrjahr der Rolle wird aus der Einheit hergeleitet
+    (nie fest «1. Lehrjahr»); das Lösungs-Audit bekommt Untertitel Zeile für
+    Zeile mit Einsatzzeit (`gegenleser.md` §4.1, §4.2).
+12. **Prompts:** `einheit-aus-bauplan-lokal.md` ist ein Satz;
+    `alle-bauplaene-seriell.md` führt nur noch Warteschlange und Schleife (die
+    feste Reihenfolge der ersten vier Baupläne ist gestrichen — alle vier sind
+    publiziert). Sieben überholte Prompts liegen unter `prompts/archiv/`.
+13. **Skripte, die es noch nicht gibt** (`lauf.mjs`, `check-zeiger.mjs`,
+    `check-namen.mjs`, `karten.mjs`, `check-belege.mjs`, `check-fakten.mjs`,
+    `offen.mjs`, dazu `docs/cloud-run/OFFEN.md`): Die Skill nennt sie mit
+    «sobald vorhanden» und dem Handweg (`lauf.md` §11). Beleg-Dateien liegen
+    ausserhalb des Repos im Quellenarchiv unter `_pruefung/<ordnername>/`.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern): Punkt 5 «Schleife wartet nicht»; Punkt 6 «Übergang»; Punkt 4 «Index
+einmal vor den Executorn» (am Code des Index-Builders gelesen, nicht im Lauf
+erprobt); im Abbruchfall bleiben Bericht und `abgebrochen/` uncommittet im
+Arbeitsbaum; höchstens drei Leserunden über Phase 9 und 10 zusammen.
+
+**Nicht geprüft:** der Trockenlauf mit zwei Subagenten (Einzelstart gegen
+Schleife) — er folgt nach diesem Eintrag durch den Orchestrator.
+
+### Inventar — was nur ausserhalb der Skill stand, und wohin es gekommen ist
+
+Zeilennummern der Spalte «widerspricht» beziehen sich auf den Stand vor dem
+Umbau (Git `ad54734`). «—» heisst: Die Skill schwieg.
+
+| # | Regel | stand in | widerspricht der Skill in | kommt nach |
+|---|---|---|---|---|
+| 1 | Die sechs Wörter des Piloten sind nicht mehr gesperrt | E30 | `SKILL.md`:197 · `auto-modus`:103 · `datenvertrag`:526–529 · `phase-0`:222–231, 257, 267 · `phase-1`:80 · `phase-2-3`:135, 203, 226 · `phase-4`:288–291 · `phase-6`:14, 62–63, 118, 244, 303 · `phase-7`:97, 269 · `phase-q`:13, 133, 198 · `sprache`:111–133, 360, 375 · `gegenleser`:23, 111 | an allen Stellen entfernt |
+| 2 | Überlauf bis 2 px auf Seite 6 hingenommen, nur gemeldet | E28 Nr. 2; Einzel-Prompt | — | `phase-9-tor` §1 · `lauf` §6 |
+| 3 | Player auf der QR-Seite; Umschalter bei nur einer Spur | E28 Nr. 1, 3 | — | keine Regel der Skill; QR-Seite steht auf der Gegenhör-Liste (`phase-10` §6) |
+| 4 | Präsentation und Werkstatt für v4.2 | E29 | — | keine Regel der Skill (rechnet zur Laufzeit) |
+| 5 | Gegenleser ohne Profil b | E31 Nr. 1 | — (am 05.10. nachgeführt) | `gegenleser` §1, unverändert |
+| 6 | `tun` wird bei `hko-`Karten nicht gedruckt; Übertragung über `fuer`, ausnahmsweise `beispiel` | E31 Nr. 2 | `phase-4`:255–257 · `datenvertrag`:628 | `phase-4` §8 · `datenvertrag` §11.3 · `lauf` §10 |
+| 7 | Karten: Fehler in der Karte, Passung in der Einheit | E31 Nr. 3 | `phase-4`:259–262 («nie geändert», ohne Weg) | `phase-4` §8 · `lauf` §10 (Skript `karten.mjs` sobald vorhanden) |
+| 8 | Abschlussrunde je Einheit vor der Freigabe | E32; Prompts `abschluss-*`, `1a` | `SKILL.md`:200–206 (fertig nach Phase 9) | `phase-10` · `SKILL.md` §4, §7 |
+| 9 | Freigabe: `status` → `publiziert`, Index, Prüfungen, Commit, Eintrag | E32, E33; Prompt `1a` | `SKILL.md`:131–132 («kein `status`-Wechsel», ohne Ausnahme) | `phase-10` §8 · `SKILL.md` §5 Nr. 1 |
+| 10 | Archivierte Einheit steht auf `entwurf` | E31 Nr. 4, E32 | — | nicht eingearbeitet — eigener Auftrag («archiviert») |
+| 11 | Rollen und Modelle | Einzel-Prompt, Schleifen-Prompt, `zwei-einheiten` | — | `lauf` §2 · `SKILL.md` §4 |
+| 12 | Vorprüfung: Freigabe, Karten und Archivtext, Blockade in §9 | Einzel-Prompt | — | `lauf` §3 |
+| 13 | Fertig, nicht erzeugbar, Ordner ohne Commit → überspringen | Schleifen-Prompt §1 | — | `lauf` §3 (Zeilen 3–5) |
+| 14 | Gleichzeitig: Executor A und B, alle Gegenleser; nacheinander: Set, Begleiter | Schleifen-Prompt §3 | `SKILL.md`:97 («A, dann B») | `lauf` §5 · `SKILL.md` §4 |
+| 15 | Index, Tor, Build, Commit nur beim Orchestrator; nie zwei Tore | Einzel-Prompt | — | `lauf` §5 · `phase-9-tor` |
+| 16 | Kein worktree, kein `npm ci`, kein Branchwechsel | beide Prompts | — | `lauf` §5 · `SKILL.md` §4 |
+| 17 | Zweite Session nebeneinander (Ausnahme) | Schleifen-Prompt §1 | — | **entfällt** — `lauf` §3 Zeile 1 |
+| 18 | Zwei Einheiten dürfen parallel laufen | `zwei-einheiten` | — | **entfällt** — `lauf` §5 |
+| 19 | Abbruch: Bericht «nicht erzeugbar», Ordner verschieben, Index neu | Schleifen-Prompt §3 | `SKILL.md`:198 · `phase-9-tor`:64–66 · `auto-modus`:105, 168–171 («entfernen») | `lauf` §7, an den vier Stellen angeglichen |
+| 20 | Ein Commit je Einheit mit Bauplan, Bericht, Index; `check-leck --staged` | Schleifen-Prompt §4 | `SKILL.md`:206 · `phase-9-tor`:134 · `auto-modus`:190 («kein Commit, ausser …») | `lauf` §8 · `SKILL.md` §7 |
+| 21 | Bericht als Datei im Laufordner | beide Prompts | `phase-9-tor`:120 · `auto-modus`:182 («lokal: in der Antwort») | `lauf` §8 · `assets/bericht-template.md` |
+| 22 | Dev-Server nur beim Einzelstart | Einzel-Prompt; Schleifen-Prompt §3 | — | `lauf` §9 |
+| 23 | Bestandsprobe (Gold, 2.3.1, 2.1.1 bleiben grün); Messung mit Segoe Print | Einzel-Prompt «TOR» | — | `phase-9-tor` §1 |
+| 24 | Bekannte Fehler lesen: nicht neu melden, nicht reparieren | Einzel-Prompt | — | `lauf` §3 |
+| 25 | Keine Rückfrage, kein Swissdox, keine Zugangsdaten | beide Prompts | — | `lauf` §10 (`auto-modus` §6 hatte es zum Teil) |
+| 26 | Executor misst selbst, eigener Temp-Ordner | Schleifen-Prompt §3; Rückblick §4, §5.2 | — | `lauf` §6 · `phase-4` §13 · `phase-5` §14 · `phase-6` §7 · `SKILL.md` §4 |
+| 27 | Offene Befunde: behoben / stehen gelassen / braucht Entscheid | Prompts `abschluss-*` | — | `phase-10` §1 |
+| 28 | Fakten-Audit an Primärquellen, Tabelle, eigener Subagent Opus | Prompt `1a`; E32; Rückblick §4, §5.2 | `SKILL.md`:137–142 (Belege nur aus Lehrmittel, Datensatz, Archiv) | `phase-10` §2 · `SKILL.md` §5 Nr. 3 |
+| 29 | Fakten schon im Bauplan | Rückblick §5.2, §5.4 | — | `_VORLAGE.md` §10 · `phase-1` §3.14 · `auto-modus` §6 |
+| 30 | Zahlen von Hand nachrechnen, Fallzahlen überall gleich | Prompt `1a`; Rückblick §4 | — | `phase-10` §3 |
+| 31 | Nach jeder Änderung von Text oder Lösung erneut lesen | Prompts `abschluss-*`, `1a`; Rückblick §4 | — | `phase-10` §4 · `gegenleser` §2, §4.2 |
+| 32 | Gegenhör-Liste für Pietro | Prompts `abschluss-*`; Nachträge; Rückblick §5.2 | — | `phase-10` §6 · Bericht-Gerüst §9 |
+| 33 | Stopp vor der Freigabe; Entscheide Pietros im selben Bericht | Prompt `1a`; Berichte vom 06.10. | — | `phase-10` §7 |
+| 34 | Lösungs-Audit mit Untertiteln in voller Auflösung | Prompt `1a`; Nachtrag `2026-10-03-221` §7; Rückblick §5.3 | `gegenleser`:22, 103–106 (nur «Archivtext») | `gegenleser` §1, §4.2 |
+| 35 | «1. Lehrjahr» aus der Einheit herleiten | Berichte `2026-10-04-411` §10, `…5.2.1…` §11; Rückblick §5.4 | `gegenleser`:75 | `gegenleser` §4.1 |
+| 36 | Marker-Skript nach jeder Änderung an Heft, Set, KN | Berichte 221, 331, 411, 421, 241 | — (nur in Phase 8 gesagt) | `lauf` §4 · `phase-9-tor` §1 |
+| 37 | `export-v42` setzt den Index voraus | Bericht `2026-10-04-321` §10 | — | `lauf` §4 Schritt 3, §6 |
+| 38 | Seite 8 vor Phase 7 nicht messbar | Bericht `2026-10-05-241` §10 | — | `lauf` §6 · `phase-6` §7 |
+| 39 | Dokument «Lösungen»: LF3 auf S. 2, LF4 und Vertiefungen auf S. 3 | Bericht `2026-10-03-221` §13 | — | `lauf` §6 · `phase-5` §14 |
+| 40 | Wo kein Budget besteht, entscheidet die Messung (`erwartung`, `beispiel_pol_*`, `hinweis`, Zellen, Karten S. 6) | Berichte 121, 221, 331, 421, 4.3.1 | — | `lauf` §6 · `phase-4` §13 · `phase-5` §14 (Budgets im Skript: späterer Auftrag) |
+| 41 | Paket der Gegenleser: Archivdateien haben mehrere Formen, Windows-Zeilenenden | Berichte 321, 411, 4.3.1 | — | `gegenleser` §3 |
+| 42 | Kurzbeschrieb einer Quellenkarte verrät die Lösung nicht | Nachtrag `2026-10-04-311` §6; Rückblick §4 | — | `phase-q` §8 · `phase-10` §1 |
+| 43 | `verortung.absaetze` einer Webseite in auffindbaren Worten | Nachtrag `2026-10-04-411` §7; Bericht `2026-10-04-421` §10 | — | `phase-q` §8 |
+| 44 | Executor ohne Fortschritt: in kleinen Schritten fortsetzen; Scratchpad je Lauf | Berichte `2026-10-04-421`, `2026-10-05-241` §10 | — | `lauf` §5 |
+| 45 | Leck-Prüfung auch für Bauplan und Bericht | Bericht `…4.3.1…` §10; Rückblick §3 Nr. 2 | — | `phase-9-tor` §1 (seit `d8e74d6`) · `lauf` §8 |
+| 46 | Lehrmittel widerspricht dem Gesetz | Bericht `…4.3.1…` §10 | — | `phase-10` §2 · `phase-1` §3.14 (kein stiller Entscheid) |
+| 47 | Laufordner mit vollem Ordnernamen | Rückblick §3 Nr. 8; Läufe vom 06.10. | — | `lauf` §8 (Prüfskript: späterer Auftrag) |
+| 48 | Offene Punkte als Liste mit Kürzel und Stand | Rückblick §3 Nr. 6 | `gegenleser`:124 (Abschnitt «Fehler in Skill, Skript, Renderer») | Bericht-Gerüst §10 · `gegenleser` §5 |
+| 49 | Kein Start mit offenen S-Punkten, die Fehler erzeugen | Rückblick §5.4 | — | `lauf` §3 Zeile 9 (greift, sobald `OFFEN.md` vorhanden) |
+| 50 | Fehler aus Regel, Skelett, Karte, Renderer: gleiche Stelle in allen Einheiten suchen | Rückblick §5.4 «Rückweg» | — | `lauf` §10 · Bericht-Gerüst §10 |
+| 51 | Abgeleitete Einheit gilt als neue Einheit, kein Beleg wird übernommen | Rückblick §5.4; Prompt `anpassung-3.1.1` | — | `phase-10` §1 Nr. 5 (Feld `abgeleitet_von`: späterer Auftrag) |
+| 52 | Belege als Daten, blind lösen, vier Urteile, Hash | Rückblick §5.1, §5.3 | — | nur als «sobald vorhanden» (`lauf` §11, `gegenleser` §4.2, `phase-10` §2) — späterer Auftrag |
+| 53 | Cloud-Weg über `RUN.md` | Cloud-Prompts 2.1.1, 2.3.1; Rückblick §1, §5.5 | — | `auto-modus` §9: seit 03.10. nicht benutzt, Entscheid offen |
+
+**Regel-Lücken aus den Laufberichten, die dieser Eintrag nicht einarbeitet**
+(inhaltliche Regeln, Skelette oder Skripte — sie gehören in die Sammelliste):
+Seiten im Paket des Bogen-Lesers (Bericht `2026-10-04-111` §9 Nr. 9) · Skelett
+`herausforderung-template.json` «Begriff aus LF1» gegen `phase-5` §8 · «(Beispielwert)»
+im Beispiel der Rezeptionskarte (`phase-5` §9) · Rasterspalten als Konstante
+gegen Bauplan §7 · Stationen in Ich-Form gegen Bauplan §6 (`phase-7` §4.1) ·
+«Minuten» in `phase-5` §13 gegen `sprache` §2 · Budgets und Kartenhöhe schon im
+Bauplan zählen · Stufe 3 der Kriterien teils unerreichbar · `set.wochenplan`
+mit zwölf Lektionen · `set-template.json` ohne `lehrgaenge` · Begleiter-Skelett
+ohne Ort für Geräte, Lehrgänge, «vor dem Druck» · Persona «1. Lehrjahr» bei
+zwei Lehrgängen · fehlende Rezeptionskarte für Video.
+
+### Nach dem Trockenlauf behoben (07.10.2026)
+
+Zwei Subagenten — einer mit dem Einzelstart, einer über den Schleifen-Prompt —
+lasen aus der Skill denselben Ablauf: Rollen, Messung, Fakten-Audit, Phase 10,
+Commit-Umfang. Der gewollte Unterschied (Dev-Server, Warten am Freigabe-Stopp)
+bleibt. Sieben Widersprüche und Lücken sind behoben:
+
+1. **Marker-Skript** (vom Orchestrator entschieden): Der Executor Begleiter
+   führt es einmal aus, am Ende von Phase 8, an seiner eigenen Datei; jeder
+   spätere Lauf liegt beim Orchestrator. `lauf.md` §2, §4, §5 ·
+   `phase-8-begleiter.md` §3 · `SKILL.md` §4.
+2. **Eigene und bestehende Karten** (vom Orchestrator entschieden): Eigen ist
+   die Quellenkarte, die nur diese noch nicht publizierte Einheit führt;
+   korrigierbar sind Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum,
+   `kurzbeschrieb` — nie Titel, URL/URN, Ausschnitt. Alle anderen Karten sind
+   bestehend und werden nicht angefasst. `lauf.md` §10 · `phase-10` Kopf und
+   §1 Nr. 1 · `SKILL.md` §5 Nr. 12. Herkunft: Rückblick §3 Nr. 4–5, E31 Nr. 3.
+3. **Neue Methodenkarte** (vom Orchestrator entschieden): Der Orchestrator
+   legt eine vom Bauplan §9 verlangte Karte an, bevor die Executor starten.
+   `lauf.md` §2, §4, §5 · `phase-4-heft-kern.md` §8; im Commit-Umfang genannt in
+   `SKILL.md` §7 und `assets/bericht-template.md` §12.
+4. **`check-all --cloud`** (vom Orchestrator entschieden): nur für den
+   Cloud-Weg über `RUN.md`; lokale Läufe rufen `check-all <ordner>` ohne die
+   Option, das Lehrmittel prüft die Vorprüfung. `phase-9-tor.md` §1.
+5. **Phase 0 im Auto-Modus:** läuft nicht als Erzeugung; die Prüfung des
+   Bauplans gegen Datensatz, Kapiteldateien und Ableitungsregeln ist Zeile 7
+   der Vorprüfung. `auto-modus.md` §2 · `lauf.md` §3.
+6. **Bericht und Commit-Hash:** Der Bericht nennt den Titel des Commits, die
+   Schlussmeldung den Hash; beim Freigabe-Commit wird er nachgetragen.
+   `lauf.md` §8 · `assets/bericht-template.md` §12 · `phase-10` §8.
+7. **Abbruch gegen ältere Baupläne:** Sagt ein Bauplan «der Lauf entfernt die
+   Karte», gilt die Skill — verschieben nach `abgebrochen/`. `lauf.md` §7.
+
+### Zweite Leserunde (07.10.2026) — vom Orchestrator entschieden
+
+Zehn kleinere Widersprüche, behoben in einem Commit:
+
+1. **Fakten ohne §10:** Die Übergangsregel steht jetzt auch in `SKILL.md` §5
+   Nr. 3 und `phase-1-bauplan.md` §3.14.
+2. **Bauplan:** nicht anfassen, ausser um eine Leck-Stelle umzuformulieren
+   (`lauf.md` §10).
+3. **Ordner liegt schon ohne Commit da:** nicht anfassen, melden, weiter über
+   den Start «Abschluss» — kein «nicht erzeugbar», kein Verschieben. «Nicht
+   erzeugbar» nur, wenn der Name einer anderen Einheit gehört und kein slug
+   frei ist (`lauf.md` §7; `auto-modus.md` §5, §7).
+4. **Schlussnachricht:** `lauf.md` §9, `phase-10` §7 und Bericht-Gerüst §11
+   tragen dieselben Punkte, mit «freigabereif ja/nein» und Commit-Hash.
+5. **`check-leck`** läuft nach dem Bericht, vor `git add` (`lauf.md` §4
+   Schritt 11; `phase-9-tor.md` §1; Bericht-Gerüst §2).
+6. **Reparaturrunde** = `check-all` und Messung. `check-all` nach drei Runden
+   rot → Abbruch. Nur ein Überlauf über 2 px → kein Abbruch: Einheit bleibt
+   `entwurf`, Punkt unter «Offen» (E), «freigabereif: nein»; bis 2 px auf S. 6
+   hingenommen (`phase-9-tor.md` §2; `SKILL.md` §7 Nr. 1; `lauf.md` §4).
+   Herkunft: E28, Rückblick §4 Zeile 1.
+7. **Wer korrigiert:** Heft → Executor A/B; `set.json`, `begleiter.md` →
+   Executor der Datei; `prinzip.json`, `kn.json` und eine in diesem Lauf neu
+   angelegte Methodenkarte (bis zum Commit) → Orchestrator (`lauf.md` §4
+   Schritt 8, §10; `phase-10` §1).
+8. **«Skill nicht anfassen»** gilt für den Erzeugungslauf; die Pflicht aus
+   `SKILL.md` §1 trifft die Session, die einen Entscheid fällt (`lauf.md` §10;
+   `phase-10` §8 Nr. 4).
+9. **Bestandsprobe** über die drei Einheiten auch in `lauf.md` §4 Schritt 6
+   und Bericht-Gerüst §2.
+10. **Phase 0 im Auto-Modus:** `phase-0-verortung.md` §10 angeglichen;
+    `auto-modus.md` §7 prüft Vorhandensein der Kapiteldateien und Seitenmarken,
+    nicht den Inhalt; `phase-8-begleiter.md` §8 ohne `check-all` für den
+    Executor; `SKILL.md` §5 Nr. 10 und `auto-modus.md` §3 verträglich mit
+    «eigene Karte korrigierbar».
+
+Nicht ergänzt: ein Satz im Schleifen-Prompt, wie ohne ScheduleWakeup (unter
+`/goal`) fortgesetzt wird — die archivierten Prompts belegen dazu nichts.
+
+**Rückgängig:** `git revert` der Commits dieses Eintrags (Skill, Prompts); die
+archivierten Prompts liegen unverändert bis auf ihre Kopfzeile unter
+`docs/cloud-run/prompts/archiv/`.
+
+## E35 — Namen eindeutig: Laufordner mit vollem Ordnernamen, `check-namen.mjs` im Tor (07.10.2026)
+
+**Ausgangslage:** Mehrere Einheiten tragen dieselbe Kompetenznummer (1.1.1
+fünfmal, 3.2.1 dreimal, 2.2.1 zweimal). Der Laufordner hiess
+`<datum>-<nummer>` und war damit nicht eindeutig: `2026-10-03-221` und
+`2026-10-04-221` sind zwei verschiedene Einheiten. Die Regel für Quellen-IDs
+(`q-<n>.<k><h>-…`, E21) stand in der Skill, aber kein Skript prüfte sie
+(Rückblick `RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 8).
+
+**Entscheid:**
+
+1. **Laufordner neu:** `docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]/`
+   — der volle Ordnername; ein weiterer Lauf derselben Einheit am selben Tag
+   trägt `-2`, `-3`. Bestehende Laufordner werden **nicht umbenannt**; die
+   neue Datei `docs/cloud-run/laeufe/INDEX.md` ordnet jeden Ordner alter Form
+   seiner Einheit zu und führt `2026-10-07-umbau` als «kein Einheiten-Lauf».
+2. **`scripts/check-namen.mjs`** (neu, nur lesend) prüft: jede ID einmalig und
+   gleich dem Dateinamen; die fünf IDs einer Einheit und ihre Verweise aus dem
+   Ordnernamen; Kurzlinks paarweise verschieden (auch gegen die festen Seiten
+   unter `src/pages/m/`); jede Quellenkarte gehört genau einer Einheit,
+   `archiv_ref` ist `<id>/gewaehlt` und der Ordner existiert; ein Satz Quellen-IDs,
+   ein Muster; Laufordner neuer Form verweist auf eine Einheit; verwaiste Karten
+   (Warnung). `--vor <ordner>` rechnet vor dem ersten Schreiben Laufordner und
+   Quellen-Muster. In `check-all` steht es als Zeile «Namen».
+3. **Schwere:** Verstoss an einer publizierten Einheit = Warnung (der Name ist
+   gedruckt oder im Netz, E21), am Entwurf = Fehler; globale Befunde immer
+   Fehler. Fehlt das Archiv lokal, meldet das Skript einen Hinweis und nie
+   «GRUEN»; mit `--cloud` ist es ein Fehler.
+4. **Geteilte Quellenkarten** stehen als Liste `GETEILT` im Skript, nicht als
+   Feld `geteilt_mit` an der Karte: Der Datenvertrag und alle Karten bleiben,
+   wie sie sind. Vorschlag für später: ein Feld `geteilt_mit: [<ordner>…]` an
+   der Karte, damit die Liste nicht im Skript wächst.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern): Ein Ordner ohne `BERICHT.md` ist kein Lauf einer Einheit und braucht
+keine Zeile in `INDEX.md`; ein Laufordner mit `abgebrochen/<ordnername>/` oder
+mit Bericht «nicht erzeugbar» und Bauplan gilt als Verweis auf eine Einheit,
+auch wenn kein Ordner unter `src/data/einheiten/` besteht.
+
+**Geänderte Dateien:** `ableitungsregeln.md` (§10 neu, Kopf, §2, §4, §5, §9),
+`lauf.md` (§3 Zeile 10, §8, §11), `phase-0-verortung.md` (§8),
+`auto-modus.md` (§7), `phase-9-tor.md` (Tor-Tabelle); `scripts/check-all.mjs`
+(Zeile «Namen»).
+
+**Rückgängig:** `git revert`; `INDEX.md` löschen. Kein Datensatz ändert sich.
+
+## E36 — Karten: ändern oder neu anlegen; `karten.mjs` im Tor, Vermerk-Dateien (07.10.2026)
+
+**Ausgangslage:** Methoden- und Quellenkarten sind Produktionsdaten:
+`lm-17-3-3b-schema` führen 18 Einheiten (14 publiziert), `hko-quelle-raster`
+alle 16 publizierten v4.2-Einheiten. Am 05.10.2026 wurden 17 Methodenkarten
+korrigiert, als die Einheiten noch Entwurf waren; kein Skript nannte die
+Verbraucher einer Karte, und keine Regel sagte, wann eine Karte geändert
+werden darf und wann es eine neue braucht (Rückblick
+`RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 4, §4, §5.4). E31 Nr. 3 kannte
+die Unterscheidung Fehler gegen Passung nur für sechs genannte Karten.
+
+**Entscheid:**
+
+1. **Regel «ändern oder neu»** (`docs/methodenkartei.md` §9 und
+   `references/karten.md` der Skill, gleichlautend):
+   a) kein publizierter und kein archivierter Verbraucher → ändern erlaubt;
+   b) **Fehler** in der Karte → ändern auch bei publizierten Verbrauchern,
+      aber nur mit Vermerk, danach je Verbraucher `check-all`, Export, Messung;
+   c) **Passung** → Karte nicht ändern: die Einheit überschreibt (`fuer`,
+      ausnahmsweise `beispiel`), sonst neue Karte mit eigener ID;
+   d) **Quellenkarte:** Titel, URL/URN und Ausschnitt werden nach der ersten
+      Freigabe nie getauscht — eine andere Quelle ist eine neue Karte;
+      korrigierbar bleiben Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum,
+      `kurzbeschrieb` (bei gebundener Karte mit Vermerk);
+   e) keine festen Zahlen und Formate in `merk` und `schritte` — Warnung.
+2. **`scripts/karten.mjs`** (neu, nur lesend): `verbraucher <id>`, `darf <id>`
+   (Exit 0/1), `geaendert [--gegen origin/main]`, `warnungen`; `--wurzel` wie
+   `check-namen`. Fehlt der Vergleichsstand: Exit 2, nie grün. In `check-all`
+   steht `geaendert` als Zeile «Karten».
+3. **Vermerk** `{karte, datum, art: "fehler", beleg, verbraucher[]}` in
+   `src/data/methoden/_aenderungen.json` bzw.
+   `src/data/quellen/_aenderungen.json`; beide sind leer (`[]`) angelegt.
+4. **Skill:** vor jeder Kartenänderung `karten.mjs darf <id>`, Ergebnis im
+   Bericht. **Im Auto-Modus wird nie eine bestehende Karte geändert** — ein
+   Fehler geht in den Bericht («Offen», Kürzel S) und in die Sammelliste.
+
+**Ort der Vermerk-Dateien — geprüft, keine Abweichung vom Auftrag:** Die zwei
+Loader (`src/lib/einheiten/methoden.ts`, `quellen.ts`) lesen den Ordner per
+`import.meta.glob` und verwerfen jeden Eintrag ohne `id`; `check-v42.mjs`
+liest Karten nur über ihre ID; `build-einheiten-index.mjs`, `export-v42.mjs`
+und `bestand-v42.mjs` listen die Ordner nicht (`bestand-v42 --pruefen` nach
+dem Anlegen: 26 Dokumente unverändert). Gestört hätten die Dateien nur
+`check-namen.mjs` («Dateiname = id») und die Kartenliste von `check-all.mjs`;
+beide überspringen jetzt Dateien mit führendem `_`. `src/lib` und `src/pages`
+sind nicht angefasst.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **«Gebunden»** ist eine Karte durch jede Einheit, die nicht `"entwurf"`
+  trägt: `publiziert`, fehlendes oder unbekanntes Feld (gilt im Index-Builder
+  als live) und `archiviert`. Den Status `archiviert` gibt es noch nicht; das
+  Skript kennt ihn schon, weist ihn getrennt aus und behandelt ihn in `darf`
+  und `geaendert` wie publiziert — die Hefte sind gedruckt im Umlauf, die
+  QR-Seite einer archivierten Einheit funktioniert weiter (Entscheid Pietro,
+  07.10.2026).
+- **Die Zeile «Karten» gilt für den ganzen Baum**, nicht nur für die geprüften
+  Einheiten: Eine geänderte Karte ändert auch Hefte ausserhalb des Umfangs.
+- **Ein Vermerk zählt nur, solange er im Vergleichsstand noch nicht steht** —
+  sonst deckte ein alter Vermerk jede spätere Änderung derselben Karte.
+  `verbraucher` muss jeden gebundenen Ordner nennen (sonst rot); fehlende
+  Entwürfe sind eine Warnung.
+- **Quellenkarten:** `id`, `titel`, `url`, `urn` einer gebundenen Karte bleiben
+  auch mit Vermerk rot (Regel d). Eine Änderung an `verortung` ist mit Vermerk
+  zulässig, dazu eine Warnung: Ob Marken korrigiert sind oder der Ausschnitt
+  ein anderer ist, entscheidet kein Skript. Alle übrigen Felder: mit Vermerk.
+  «Erste Freigabe» ist die Freigabe des Bauplans, der die Quelle nennt.
+- **Regel e** sucht Ziffern, Zahlwörter (zwei bis zwölf) und Formatwörter
+  (A3–A6, Hoch- und Querformat …); Seiten-, Kapitel- und Artikelverweise
+  zählen nicht. Im Tor erscheint sie nur für geänderte und neue
+  Methodenkarten, der Bestand steht unter `karten.mjs warnungen` (07.10.2026:
+  25 Warnungen in 17 von 42 Karten).
+- **Rückwirkend ist kein Vermerk eingetragen.** Die Korrekturen vom 05.10.2026
+  und die Änderung an `lm-17-3-3b-schema` vom 07.10.2026 (`seiten`, Commit
+  `a5fa3eb`, nach der Freigabe von 14 Verbrauchern) stehen in `origin/main`;
+  der Vergleich beginnt dort.
+
+**Offen (kein stiller Entscheid):** `datenvertrag.md` §11.3 erlaubt
+`methoden[].beispiel` im Kern nur als Ausnahme für `hko-`Karten (E31 Nr. 2);
+die Regel c oben und `docs/methodenkartei.md` §4 nennen `beispiel` ohne diese
+Einschränkung, und in den publizierten Einheiten überschreiben 14 Hefte, drei
+davon an `lm-`Karten. Vorschlag in der Rückgabe zu diesem Auftrag; der
+Datenvertrag ist nicht geändert. Noch nicht nachgeführt, weil ausserhalb des
+Auftrags: `phase-9-tor.md` (Tor-Tabelle) und `assets/bericht-template.md`
+nennen die Zeile «Karten» nicht.
+
+**Geänderte Dateien:** `scripts/karten.mjs` (neu), `scripts/check-all.mjs`
+(Zeile «Karten», Kartenliste ohne `_`-Dateien), `scripts/check-namen.mjs`
+(`_`-Dateien überspringen), `src/data/methoden/_aenderungen.json`,
+`src/data/quellen/_aenderungen.json` (neu, `[]`), `docs/methodenkartei.md`
+(§6, §8, §9 neu); Skill: `references/karten.md` (neu), `SKILL.md` (§4, §5
+Nr. 12), `lauf.md` (Kopf, §10, §11), `auto-modus.md` (§4),
+`phase-4-heft-kern.md` (§8), `phase-6-abschluss.md` (§7),
+`phase-q-quellen.md` (§2, §8).
+
+**Rückgängig:** `git revert` der drei Commits; die zwei `_aenderungen.json`
+entfallen dabei. Kein Datensatz und keine Karte ändert sich.
+
+## E37 — Dritter Status «archiviert»: abgelöste Einheit nur für KT1, QR-Seite bleibt (Pietro, 07.10.2026)
+
+**Anlass.** `set.json › status` kannte «entwurf» und «publiziert»; der
+Index-Builder behandelte jeden anderen Wert — auch einen Tippfehler — als
+live. Die abgelöste `1.3.1_konsum_verantworten` stand darum auf «entwurf» und
+erschien für KT1 zwischen echten Entwürfen und im Entwurf-Zähler auf `/admin`
+(E31 Nr. 4, E32; Rückblick 06.10.2026 §3 Nr. 7; Inventar E34 Nr. 10).
+
+**Entscheid.**
+
+1. `status` ist `entwurf` | `publiziert` | `archiviert` (oder fehlt = live).
+   `scripts/build-einheiten-index.mjs` bricht bei jedem anderen Wert mit
+   Fehlermeldung ab, bevor eine der zwei Index-Dateien geschrieben wird.
+2. **Archiviert ist nur für KT1 sichtbar** — überall dort, wo ein Entwurf es
+   ist: Katalog, Jahresplanung, Feedback-Auswahl, Prompt-Builder-Panel,
+   Graph-Overlay, Direkt-URL der Detailseite samt Deck, «Lies mich!» und
+   Werkstatt (Umleitung auf `/einheiten`). Eine Schranke: `istNurKt1()` in
+   `src/lib/einheiten/index.ts` (= Entwurf oder archiviert); `visibleEinheiten`
+   filtert damit.
+3. **Die QR-Seite `/m/<ordner>` funktioniert weiter, für alle wie bisher**
+   (Pietro, 07.10.2026): Gedruckte Hefte sind im Umlauf. Die Seite fragt den
+   Status nicht — weder bei Entwurf noch bei archiviert.
+4. **KT1** sieht archivierte Einheiten im Katalog in einem eigenen,
+   eingeklappten Abschnitt «Archiv» unter der Landkarte, mit grauem
+   Zustands-Badge «Archiviert · nur KT1» — nicht in der Landkarte, in keinem
+   Zähler des Katalogs, nicht im Entwurf-Zähler auf `/admin`. Die Detailseite
+   trägt einen grauen Hinweisbalken.
+5. **`ersetzt_durch: "<ordner>"`** (optional, nur bei `archiviert`): Karte und
+   Detailseite zeigen KT1 den Link zur Nachfolgerin. Der Builder prüft, dass
+   der Ordner existiert; der Schlüssel steht nur im Index, wenn er gesetzt ist.
+6. **Für die Prüfskripte gilt archiviert wie publiziert:** `check-namen`
+   meldet Befunde als Warnung, `karten.mjs` zählt die Einheit als «gebunden»
+   und weist sie getrennt aus (E36), `check-einheiten` und
+   `check-bogen-v2-regression` halten sie eingefroren. `check-all`
+   (`STATUS_OK`) und `check-v42` (`ERR_V42_STATUS`) lassen den Wert zu.
+7. **Daten:** nur `1.3.1_konsum_verantworten` → `archiviert`,
+   `ersetzt_durch: "1.3.1_konsum_verantworten_v42"`. Ihre Dokumente ändern
+   sich nicht (`bestand-v42 --pruefen` unverändert). Feedback-Bögen und
+   Statistik bestehender Einträge bleiben lesbar — sie hängen an der
+   Einheiten-ID, nicht am Status.
+
+**Was sich für lp und gast ändert:** nichts. Die alte 1.3.1 war für sie als
+Entwurf schon unsichtbar.
+
+**Nicht Teil dieses Entscheids, beim Erheben gefunden (kein stiller
+Entscheid):**
+
+- `public/nrlp/einheiten.index.json` ist eine öffentlich ausgelieferte
+  statische Datei und führt **alle** Einheiten mit vollen Metadaten (Titel,
+  Kompetenzen, Hefttitel, Status) — Entwürfe wie die archivierte. Ausgeblendet
+  wird erst im Browser; die Rolle des Prompt-Builders kommt aus dem
+  URL-Parameter `?role=`. Das war vor E37 so und ist unverändert.
+- Keine Entwurf-Schranke haben heute `/jahresplanung/thema/[nr]` (listet alle
+  Einheiten eines Lebensbezugs, auch Entwürfe, für jede Rolle),
+  `/einheiten/<ordner>/feedback`, `/einheiten/<ordner>/ki-liesmich` und die
+  zwei Word-Routen `/api/einheit-begleiter-docx` und
+  `/api/einheit-ki-liesmich-docx`. Für die archivierte 1.3.1 heisst das: Sie
+  ist dort so erreichbar wie zuvor als Entwurf.
+- Auf den Astro-Seiten gilt die Rolle `reviewer` als `lp` (sieht weder
+  Entwürfe noch Archiv); nur die statische Sub-App unter `public/nrlp/`
+  behandelt `reviewer` wie `kt1`. Unverändert übernommen.
+- `scripts/abdeckung.mjs` kennzeichnet jede Einheit, die nicht «entwurf» ist,
+  mit «P» — auch die archivierte.
+
+**Geänderte Dateien:** `scripts/build-einheiten-index.mjs`,
+`scripts/check-all.mjs`, `scripts/check-v42.mjs`;
+`src/lib/einheiten/index.ts`, `types.ts`;
+`src/components/einheiten/EinheitCard.astro`; `src/pages/einheiten/index.astro`,
+`[setKey].astro`, `[setKey]/deck.astro`, `begleiter.astro`, `werkstatt.astro`;
+`src/pages/admin/katalog.astro`; `public/nrlp/prompt-builder/einheiten.js`,
+`public/nrlp/ext/units-overlay.js`; Daten: `1.3.1_konsum_verantworten/set.json`
+und die zwei Index-Dateien; Skill: `datenvertrag.md`, `phase-7-set.md`,
+`phase-10-abschluss.md` (je ein Satz).
+
+**Rückgängig:** `git revert` der Commits, danach `npm run build:einheiten-index`.
+
+## E38 — Belege ausserhalb des Repos: Ort, Format, Lösungsfelder (Pietro, 07.10.2026)
+
+**Ausgangslage:** Das Tor prüft Form. Was nach grünem Tor korrigiert wurde, war
+fast nur Inhalt: falsche Zeiger, Ableitungen, die als Quellenaussage dastanden,
+Rechts- und Sachfehler, Lösungen, die nach dem Audit geändert und nicht mehr
+geprüft wurden (Rückblick `RUECKBLICK-produktion-2026-10-06.md` §4). Die Audits
+gaben Prosa ab; daran prüft kein Skript etwas. Rückblick §5.1 schlägt vor, dass
+jede prüfende Rolle eine **Beleg-Datei** abgibt, und liess offen, wo sie liegt
+(§5.6, letzter Punkt).
+
+**Entscheid Pietro (07.10.2026): Die Beleg-Dateien liegen ausserhalb des
+Repos**, im Quellenarchiv — sie tragen wörtliche Anker aus Quelle und
+Lehrmittel, und das Repo ist öffentlich.
+
+**Stufe A — Ort und Format** (dieser Eintrag wird von den folgenden Stufen
+desselben Auftrags ergänzt: Skripte im Tor, Rollen der Skill, Riegel gegen
+Vererbung):
+
+1. **Ort:** `<Quellenarchiv>/_pruefung/<ordnername>/` — ein Ordner je Einheit,
+   nicht je Lauf; für geteilte Karten `<Quellenarchiv>/_pruefung/_karten/<id>.json`.
+   Das Archiv wird aufgelöst wie in `check-namen.mjs` (`QUELLEN_ARCHIV`
+   gewinnt). Die losen Dateien einer früheren Prüfung unter `_pruefung/`
+   bleiben unberührt.
+2. **Dateien:** `belege.json` (Lösungs-Audit: je Lösungsfeld Herkunft, Anker,
+   Fundstelle, Urteil, Hash) · `fakten.json` (Fakten-Audit: je Aussage über die
+   Welt Primärquelle, Abruf, Urteil) · `fall.json` (Executor des Hefts: die
+   erfundenen Fallzahlen und was die Situation ausschliesst) · `probe.json`
+   (Lösbarkeitsprobe: Befund, Beleg, Stand) · `herkunft.json`
+   (`{abgeleitet_von, stand_commit}` bei einer Anpassung — `set.json` bekommt
+   dafür kein Feld). Schemas im Repo unter `scripts/schema/`, je mit einem
+   Beispiel aus erfundenem Platzhaltertext.
+3. **Lösungsfelder** stehen an genau einer Stelle: `MUSTER` in
+   `scripts/lib/loesungsfelder.mjs`, hergeleitet aus `types.ts`, dem
+   Datenvertrag und der Gold-Einheit. Die 16 Einheiten im Format v4.2 führen
+   zusammen 2062 Lösungsfelder (89 bis 142 je Einheit).
+4. **Hash:** SHA-256 über den normalisierten Text des Felds (NFC, Zeilenenden,
+   Leerraum zu einem Leerzeichen, Rand weg — sonst nichts). Jede sichtbare
+   Änderung einer Lösung macht ihre Belegzeile ungültig.
+5. **«stelle» je Form des Archivtexts**, erhoben an allen 158 Archivordnern:
+   Zeitzeilen → `mm:ss` der Zeile; Absatz mit Zeit → `mm:ss` des Blocks;
+   Absatz → `Abs. N`; Lehrmittel → `S. N` (Marke `[seite: N]`). Wo ein Audio
+   oder Video keinen Text mit Zeitmarken hat, ist die Zeitmarken-Prüfung nicht
+   möglich — das wird je Karte als HINWEIS ausgegeben, nie still bestanden;
+   bei Blocktranskripten gilt nur das Fenster des Blocks.
+6. **Beschreibung** für die Skill: `references/belege.md` (Ort, jede Datei,
+   jedes Feld, die Urteile, wer schreibt).
+
+**Folgen:**
+
+- **Das Tor braucht das Archiv.** Fehlt es lokal, ist nichts geprüft: Exit 2
+  bzw. HINWEIS, nie «grün». Ein Lauf ohne Archiv (Cloud) kann die Belege nicht
+  prüfen.
+- **`_pruefung/` gehört ins Backup des Archivs.** Geht der Ordner verloren,
+  sind alle Audits zu wiederholen. (Nur genannt — das Backup selbst ist nicht
+  Teil dieses Entscheids.)
+- Für die 16 publizierten Einheiten gibt es noch keine Beleg-Dateien. Ihr
+  Fehlen ist im Tor eine Warnung, kein Fehler; bei einem Entwurf ein Fehler.
+- Im Repo steht nie ein Anker: Protokolle im Laufordner nennen Feld, Urteil
+  und Fundstelle.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Körnung der Lösungsfelder:** jede Lösungszeile (`loesung.zeilen[i]`, sie
+  trägt ihre eigene Fundstelle), jede Rasterzeile, jede Zeile der Denkhilfe,
+  jede Verbindung des Begriffsnetzes und jeder Block des Lösungsbilds ist ein
+  Feld; `gut_wenn`, `mitnahme` und `eigene_knoten` sind je ein Feld. Auch
+  `loesung.kern` ist ein Feld. Feiner als «LF1 bis LF4» im Auftrag — dafür
+  lässt sich die Fundstelle jeder Zeile mit ihrem Beleg vergleichen.
+- **`spur`** kennt neben `ohne_medien` und `mit_medien` den Wert `beide` (Kern
+  des Hefts, gemeinsamer Auftrag).
+- **`weitere_belege`** (optional) in `belege.json`: Ein Feld bleibt eine
+  Zeile, auch wenn es zwei Seiten oder zwei Zeitmarken nennt.
+- **Urteil und Herkunft:** Bei `fallueberlegung` sind Anker, `wo` und `stelle`
+  leer, und das Urteil ist `stimmt`, `ableitung` oder `falsch`; bei `quelle`,
+  `lehrmittel`, `nrlp` ist es `stimmt`, `fundstelle_falsch` oder `falsch`.
+- **`fakten.json`:** dazu `auch_in` (dieselbe Aussage in weiteren Feldern),
+  `art`, `fundstelle`, `von`. Die vier Urteile der Fakten-Tabelle
+  (`phase-10-abschluss.md` §2) fallen auf drei: «stimmt» und «vertretbar
+  vereinfacht» → `belegt`.
+- **`probe.json`** führt `laeufe[]`, damit «keine Befunde» nicht dasselbe ist
+  wie «nicht gelaufen», und je Befund eine `art`.
+- **Quellentext und Notiz** in einer Archivdatei trennt eine Regel am
+  Schriftbild (`zerlegeArchivtext()`): Quellentext ist jede Zeile mit einer
+  Marke in eckigen Klammern, dazu Tabellenzeilen; Abschnitte mit einer
+  Überschrift wie «Audit-Notiz» und Listenzeilen nach dem Kopf sind Notiz. Ein
+  Anker, der nur im Kopf oder in einer Notiz steht, ist kein Beleg.
+- **Block oder Zeile:** Ein Text gilt als Blocktranskript, wenn der Median des
+  Abstands zweier Einsatzzeiten über 6 Sekunden liegt (gemessen: Untertitel
+  2,7 bis 4 s, Blöcke 8 bis 35 s).
+- **Lehrmittel bei `--wurzel`:** Eine Temp-Kopie des Repos hat kein
+  `material/`; die Bibliothek sucht das Lehrmittel dann im Repo selbst oder
+  unter `LEHRMITTEL`.
+
+**Beim Erheben gefunden (kein stiller Entscheid, nichts geändert):**
+
+- Im Archiv fehlt der Ordner `q-221.2b-vertiefung-2/gewaehlt/`.
+- 16 der 158 Archivtexte sind Blocktranskripte, 5 Audio- oder Videokarten
+  haben keinen Text mit Zeitmarken (nur Begleittext oder Absätze). Von den 118
+  Karten der 16 Einheiten bekommen 19 einen HINWEIS zur Zeitmarken-Prüfung.
+- In mehreren Köpfen steht, die Zeitmarken seien berechnet, geschätzt oder
+  nicht gegengehört; die Bibliothek gibt das als Stichwort weiter.
+- Drei Kapiteldateien führen Seitenmarken nicht aufsteigend, zwei haben Text
+  vor der ersten Marke.
+
+**Noch nicht nachgeführt, weil ausserhalb dieser Stufe:** `SKILL.md` (Liste der
+References), `gegenleser.md` §4.2, `phase-9-tor.md`, `ableitungsregeln.md`
+§10 («noch kein Skript») — das tun die folgenden Stufen.
+
+**Geänderte Dateien (Stufe A):** `scripts/schema/belege.schema.json`,
+`fakten.schema.json`, `fall.schema.json`, `probe.schema.json`,
+`herkunft.schema.json`, `karte-belege.schema.json` (neu);
+`scripts/lib/loesungsfelder.mjs`, `scripts/lib/archiv.mjs` (neu, nur lesend);
+Skill: `references/belege.md` (neu), `lauf.md` (Kopf, §8, §11),
+`phase-10-abschluss.md` (§2, ein Verweis). `check-all.mjs` ist in dieser Stufe
+nicht geändert; im Archiv ist nichts angelegt.
+
+**Rückgängig:** `git revert` des Commits. Keine Einheit, keine Karte und kein
+Skript des Tors ändert sich; im Archiv ist nichts zu entfernen.
+
+### E38, Stufe B — Skripte im Tor (07.10.2026)
+
+**Was dazukommt:** fünf Prüfskripte, je eine Zeile in `check-all` für jede
+Einheit im Format v4.2, dazu `check-links` ausserhalb des Tors.
+
+| Skript | Prüft |
+|---|---|
+| `scripts/check-belege.mjs` | `belege.json`: jedes Lösungsfeld eine Zeile, Hash (`ERR_AUDIT_VERALTET`), Anker im Archivtext bzw. auf der Lehrmittelseite, Zeile des Ankers im Ausschnitt der Karte, Zeitmarke höchstens 3 s neben dem Fenster des Ankers, Urteil, Ableitung gekennzeichnet, keine Fundstelle ohne Belegzeile; `probe.json` (offener Befund) |
+| `scripts/check-fakten.mjs` | jede Aussage über die Welt (Artikel, «Stand …», Datum, Betrag, Prozent, Frist, Menge, Abstimmung) hat eine Zeile `belegt` in `fakten.json`; Fallzahlen aus `fall.json` ausgenommen |
+| `scripts/check-zeiger.mjs` | `archiv_ref`, Wortzahl ± 5 %, Absatz, `von`/`bis`/`dauer_sek`; Zeitmarken und Absätze des Hefts im Ausschnitt; «S. n» trägt das genannte Element; jeder Schritt-Hinweis nennt eine Seite; Lehrmittelseite liegt im Kapitel |
+| `scripts/check-zahlen.mjs` | Rechnungen im Text, Summenzeile einer Tabelle, Fallzahlen überall gleich, Ausschlüsse der Situation |
+| `scripts/check-kohaerenz.mjs` | Handprüfungen `phase-9-tor.md` §3 Nr. 2–5 (gleiche Werte in Prinzip, Heft, Set · kein Lösungssatz bei den Lernenden · gesperrte Wörter · Umlaute), dazu Anzahl und Bezeichner, Kurzbeschrieb gegen Lösung, «Punkte» statt «Stufe» |
+| `scripts/check-links.mjs` | mit Netz, **nicht im Tor**: Status und Weiterleitung jeder URL der Karten und Hefte. Wöchentlich: `node scripts/check-links.mjs --alle` (nichts ist eingeplant) |
+
+**Regeln für alle fünf:**
+
+1. **Schwere nach Status.** Gebundene Einheit (`publiziert`, `archiviert`,
+   kein Feld): jeder Befund ist eine Warnung. Entwurf: Fehler. `--streng`
+   behandelt jede Einheit wie einen Entwurf — für Gegenproben und für das
+   Prüfen eines Altstands in einer Temp-Kopie.
+2. **Fehlende Beleg-Datei:** eine Zeile je Datei («nicht auditiert») —
+   `ERR_BELEGE_FEHLT`, `ERR_FAKTEN_FEHLT`, `ERR_FALL_FEHLT`; an den 16
+   publizierten Einheiten also je drei Warnungen, kein Fehler.
+3. **Exit** 0 ohne Fehler · 1 mit Fehlern · 2 bei falschem Aufruf oder wenn
+   Archiv bzw. Lehrmittel lokal fehlt. In `check-all` heisst Exit 2 «nicht
+   geprueft»; die Schlusszeile lautet dann «UNVOLLSTAENDIG», nie «GRUEN», und
+   unter `--cloud` ist es ein Fehler.
+4. **Ausgabe:** Code · Datei › Feld · Kurzbefund. Die Konsole darf Anker
+   zeigen; `--protokoll <datei>` schreibt dieselbe Liste ohne Anker und ohne
+   Textauszug — nur diese Fassung gehört in den Laufordner.
+5. **`check-all`** zeigt Warnungen und Hinweise der fünf als Zählung je Code,
+   nicht im Wortlaut (bei 16 Einheiten wäre das Tor sonst unlesbar), und
+   reicht `--streng` durch.
+
+**Gemessen am 07.10.2026 (16 publizierte Einheiten, heutiger Stand):**
+
+- `check-all` für die 16: **GRUEN**, Laufzeit 6.4 s → 16.4 s (80 zusätzliche
+  Skriptstarts).
+- Gegenproben in einer Temp-Kopie (zwei Einheiten, eigene Archivkopie,
+  Test-Belege mit aus dem Archivtext gezogenen Ankern): Grundlinie von
+  `check-belege`, `check-fakten`, `check-zahlen` ohne Fehler; **83 von 83**
+  einzeln eingebauten Fehlern lösen ihren Code aus.
+- Befunde an den 16 unter `--streng` (nichts behoben — das ist die Liste für
+  die publizierten Hefte): `check-belege` 16 × `ERR_BELEGE_FEHLT` ·
+  `check-fakten` 16 × `ERR_FAKTEN_FEHLT` · `check-zahlen` 16 ×
+  `ERR_FALL_FEHLT`, keine falsche Rechnung · `check-zeiger` 127 ×
+  `ERR_ZEIGER_SCHRITT_OHNE_SEITE` (von 240 Schritt-Hinweisen), 7 ×
+  `ERR_ZEIGER_WOERTER`, 45 Hinweise (Zeitmarken nur blockgenau, nicht prüfbar,
+  im Kopf als berechnet vermerkt; Wortzahl nicht abgrenzbar) ·
+  `check-kohaerenz` 4 × `ERR_KOH_LOESUNG_SICHTBAR`, 3 × `ERR_KOH_ANZAHL`,
+  3 × `ERR_KOH_STUFE_PUNKTE`, 43 Warnungen.
+
+**Nachgetragene Budgets in `check-v42.mjs`** (Rückblick §4, Zeile 1). Gemessen,
+nicht geschätzt: alle 16 Einheiten exportiert und in Chrome gemessen
+(`messen-v42`; 15 ohne Überlauf, 2.3.1 Heft A S. 6 mit 1.8 px — bis 2 px auf
+S. 6 ist nach E28 hingenommen); ein Budget ist der Höchstwert, der in diesen
+16 vorkommt, also der grösste Wert, von dem gemessen ist, dass er passt.
+
+| Budget | Wert | Wo der Höchstwert steht · Reserve der Seite | hart |
+|---|---|---|---|
+| Erwartung einer Vertiefung (`quellen[i].erwartung`) | 730 Zeichen | 2.2.1_meinungsfreiheit, Heft B · Lösungen S. 4: 8.7 px | ja |
+| Lösungen S. 4 je Spur (Erwartungshorizont LF4 + Erwartungen + Denkhilfe) | 3026 Zeichen | 5.2.1, Heft A mit Medien · 8.7 px | ja |
+| Lösungen S. 3 mit Medien (LF3: kern + Zeilen + Rasterzeilen + Befund) | 2151 Zeichen | 3.2.1, Heft A · 87.1 px (Heft B derselben Einheit: 2138 Zeichen, 14.9 px) | nein |
+| Kartentexte des Hefts: `fuer` · `tun` · `beispiel` | 106 · 267 Zeichen · 5 Zeilen zu 116 | 4.1.1 B · 4.3.1 A · 3.1.1 A, 3.3.1 A · S. 6 misst immer 0 px | nein |
+| Rezeptionskarte der Spur: `fuer` · `beispiel` | 80 · 178 Zeichen | 4.2.1 A · 2.1.1 B | nein |
+| Stufentexte in `kn.json` und im Auftrag | 120 Zeichen | Budget des Hefts; längster: 112 (3.3.1) | ja |
+| Zahlentabelle des Auftrags: `label` · `wert` | 45 · 30 Zeichen | 2.1.1 (44; Bogen A1: 15.8 px) · 4.2.1 (30; A1: 4 px) | nein |
+
+«Hart» heisst: Die Seite war beim Höchstwert voll — an einem Entwurf ist die
+Überschreitung ein Befund (`ERR_V42_BUDGET`). Sonst, und an jeder gebundenen
+Einheit, ist sie eine Warnung (`WARN_V42_BUDGET`, Exit unverändert): Die
+Messung entscheidet. Keine der 16 Einheiten überschreitet ein nachgetragenes
+Budget. Die Summe der Zeichen sagt eine Seite nur grob voraus (Lösungen S. 4
+hatte auch bei 2157 und 2596 Zeichen nur 8.7 px Reserve) — das Budget ist eine
+notwendige Grenze, keine hinreichende; `messen-v42` bleibt das Mass.
+
+**Bekannte Skriptfehler (Rückblick §5.5):**
+
+| Fehler | Reproduziert | Ergebnis |
+|---|---|---|
+| `check-einheiten` schweigt ohne `set.json` | ja: Einheit ohne `set.json` mit eingebautem Verstoss → «0 offene Befunde», Exit 0, alle Befunde «EINGEFROREN: live (kein status-Feld)» | behoben: Ohne `set.json` gilt die Einheit als im Bau, ihre Befunde zählen (62 offene Befunde, Exit 1). Ausgabe über alle 27 Einheiten unverändert |
+| `ERR_V42_AUFTRAG_SPALTEN`, falscher Treffer | ja: Auftrag «…: Bild, Ton, Aussage, Begriff (Glossar, Heft S. 8).» → Befund, weil der Punkt in der Klammer den Satz zerschnitt | behoben: Klammern zuerst entfernen, dann am Satzende schneiden (Abkürzungen ausgenommen). Ein echter Verstoss wird weiter gefunden; die 16 Einheiten bleiben bei 0 Befunden |
+| «UTF-16-Zählung» | — | liegt nicht in `check-v42` (zählt Codepunkte), sondern in `check-lf-loesung.mjs` (`String.length`). Nicht angefasst (ausserhalb des Umfangs dieser Stufe); in den 16 Einheiten ohne Wirkung, solange kein Zeichen ausserhalb der Grundebene vorkommt |
+| `begleiter-marker.mjs` braucht mehrere Durchgänge | **nein**: an Kopien aller 16 Einheiten jedes Textfeld geändert (auch mehrzeilig, mit «\|») — ein Lauf füllt alles (178 bis 209 Marker), der zweite füllt 0, `--check` meldet 0 abweichend | nicht geändert. Die Berichte meinen: Nach jeder späteren Änderung an Heft oder Set muss das Skript erneut laufen — das ist eine Regel des Ablaufs, kein Fehler des Skripts |
+| `seitentext.mjs` verliert den Quellentext | **nein**: Das Skript liest nur den Export, nie das Archiv; mit Windows-Zeilenenden in der Eingabe ist die Ausgabe zeichengleich. Verloren ging der Text in handgeschriebenen Paket-Skripten (Bericht 2026-10-03-121) | nicht «behoben». Die Umwandlung steht neu in `scripts/lib/seitentext.mjs` (geteilt mit `check-zeiger`, `check-kohaerenz`); die Ausgabe für alle 16 Einheiten ist vorher und nachher zeichengleich (75 Dateien). Für den Ausschnitt der Quelle gibt es `ladeArchivtext()` in `scripts/lib/archiv.mjs` |
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Zuordnung Feld → Heftseite ohne Rendern.** Die Seitenfolge ist im Renderer
+  fest (`DocHeftV42.tsx`: Seite 1 bis 8; `DocAuftragsbogen.tsx`: A1 bis A4),
+  und jede Seite liest feste Felder — die Zuordnung steht als Tabelle in
+  `scripts/lib/pruefung.mjs` (`seiteVonFeld`, `ELEMENT_SEITEN`). `--export`
+  liest zusätzlich den gedruckten Seitentext (Wort in Guillemets vor einem
+  Verweis; feste Texte des Renderers). Ohne Export gibt es dafür keinen
+  Hinweis: Die statische Prüfung läuft vollständig.
+- **Was ein Seitenzeiger ist:** nur ein Verweis, der das Element unmittelbar
+  vor der Seite nennt («Checkliste (S. 8)»). «Übertragen Sie LF3 auf S. 7» ist
+  keiner. Im Bogen und im Begleiter gilt «S. n» nur als Heftseite, wenn «Heft»
+  dabeisteht.
+- **«Jeder Schritt-Hinweis nennt eine Seite»** wörtlich genommen: «S. n» im
+  Heft; im Bogen A1–A4, ein Heft oder ein eigenes Blatt. Das trifft 127 von
+  240 Hinweisen der publizierten Einheiten.
+- **Wortliste «Fallüberlegung/Deutung»** steht in `scripts/lib/pruefung.mjs`
+  (`RE_FALLKENNZEICHEN`), erhoben an den Lösungen der 16 Einheiten;
+  `references/sprache.md` führt bisher keine. Stufe C trägt sie dort nach.
+- **`check-fakten` liest auch `kn.json` und die Karten der Einheit**, nicht nur
+  Hefte, Lösungen, Auftrag, Begleiter und Glossar. Die Art `frist` umfasst jede
+  Zahl mit Tag, Woche, Monat, Jahr, Stunde — auch ein Alter.
+- **`check-zahlen` ohne `fall.json`:** Die Zeilen der `zahlen_tabelle` gelten
+  als Fallzahlen (Name = Label). Eine Summenzeile wird nur geprüft, wenn die
+  Tabelle genau eine hat und sie die letzte ist.
+- **`check-kohaerenz`:** Zahl gleicher Dinge an zwei Stellen des Produkts ist
+  nur eine Warnung (`WARN_KOH_ANZAHL`), weil dasselbe Wort zwei Sachen meinen
+  kann; ein Fehler ist nur der Widerspruch zu den Daten (Stationen, Zeilen und
+  Spalten des Lösungsbilds, Rasterzeilen). «Woche» und «Minute» sind eine
+  Warnung und nur als Unterrichtszeit gesucht («in dieser Woche», «20
+  Minuten» ausserhalb von Situation, Zahlen, Beispiel und Produktdauer).
+  Schwelle Kurzbeschrieb: 55 % (gemessen an 122 Paaren: Median 29 %, 90 % unter
+  54 %).
+- **Zeitmarke einer Spanne:** «00:26–02:43» in einer Lösung gilt als belegt,
+  wenn ein Anker in der Spanne beginnt.
+
+**Geänderte Dateien (Stufe B):** neu `scripts/check-belege.mjs`,
+`check-fakten.mjs`, `check-zeiger.mjs`, `check-zahlen.mjs`,
+`check-kohaerenz.mjs`, `check-links.mjs`, `scripts/lib/pruefung.mjs`,
+`aussagen.mjs`, `schema.mjs`, `seitentext.mjs`; geändert
+`scripts/check-all.mjs` (fünf Zeilen je v4.2-Einheit, `--streng`, Zählung),
+`scripts/check-v42.mjs` (nachgetragene Budgets, `auftragSpalten`),
+`scripts/check-einheiten.mjs` (ohne `set.json`), `package.json` (sechs Zeilen
+`check:*`), Skill `scripts/seitentext.mjs` (nutzt die Bibliothek),
+`references/belege.md` (Abschnitt 11). Keine Einheit, keine Karte, kein
+Renderer; im Archiv ist nichts angelegt.
+
+**Rückgängig:** `git revert` der zwei Commits der Stufe B. Das Tor läuft dann
+wie nach Stufe A.
+
+### E38, Stufe C — Rollen der Skill (07.10.2026)
+
+**Was sich ändert:** Das Lösungs-Audit der Skill ist neu gebaut, zwei Rollen
+kommen dazu, und jede gibt eine Datei ab, die ein Skript aus Stufe B prüft
+(Rückblick §5.1–§5.3; Auftrag 10, Stufe C).
+
+| Rolle | Modell | Je | Verfahren | Gibt ab |
+|---|---|---|---|---|
+| Lösungs-Audit | Opus | Heft und Spur, dazu der Auftrag | **blind lösen** (Paket ohne Lösung) → erst dann vergleichen → je Lösungsfeld Herkunft, Anker, Stelle, Urteil | `belege.json` |
+| Fakten-Audit | Opus, mit Netz | Einheit | Arbeitsliste aus `check-fakten --liste` **und** eigenes Lesen nach Aussagen ohne Zahl und Artikel; nur amtliche Primärquellen; Bauplan §10 wird nachgeprüft, nicht übernommen | `fakten.json` |
+| Lösbarkeitsprobe | Sonnet | Produkt eines Lernenden-Gegenlesers | sieht nur Produkt, «Das geben Sie ab», Kriterien mit Stufen, Lösungsbild (und die Frage LF4); drei Befundarten | `probe.json` |
+
+Die drei stehen als **Auftragsvorlagen** in der neuen Reference
+`references/audits.md` (Platzhalter `<ordner>`, `<heft>`, `<spur>`, `<wurzel>`,
+`<archiv>` — sie gelten auch für einen Altstand in einer Temp-Kopie). Das
+frühere Lösungs-Audit (Sonnet, las die Lösung zuerst, gab Prosa ab,
+`gegenleser.md` §4.2) gilt nicht mehr.
+
+**Regeln, die dazukommen:**
+
+1. **Die Audits beginnen nach dem ersten grünen Tor** und laufen neben den
+   Gegenlesern. Das Tor läuft darum zweimal: im ersten Durchgang sind die
+   einzigen zulässigen Fehler `ERR_BELEGE_FEHLT` und `ERR_FAKTEN_FEHLT`, im
+   zweiten endet `check-all` «GRUEN» (`phase-9-tor.md` §1, `lauf.md` §4).
+2. **Nach jeder Änderung einer Lösung** werden nur die Felder mit
+   `ERR_AUDIT_VERALTET` neu auditiert (Paket mit `--nur-veraltet`); für Fakten
+   entsprechend `ERR_FAKT_ZEILE_VERWAIST` und `ERR_FAKT_OHNE_ZEILE`
+   (`lauf.md` §4.1, `audits.md` §2.5, §3.5).
+3. **Die Lernenden-Gegenleser geben ihr Produkt als Datei ab** (ausserhalb des
+   Repos); daran hängt die Lösbarkeitsprobe (`gegenleser.md` §4.1).
+4. **Neue Tor-Reihenfolge** (`phase-9-tor.md` §1): Index · Marker `--check` ·
+   Teildateien zusammenführen · `check-all` · Export · Messung · die fünf
+   Beleg-Prüfungen mit `--protokoll` in den Laufordner (`check-zeiger` und
+   `check-kohaerenz` dabei mit `--export`) · Bestand · Build · `git status`;
+   nach dem Bericht `check-leck`. Die Handprüfungen §3 Nr. 2–5 entfallen (sie
+   laufen in `check-kohaerenz`); von Hand bleiben Nr. 1, 6, 7, 8, 9. Die
+   Nummern sind nicht neu vergeben, weil Skill und Berichte darauf verweisen.
+5. **Die Gegenhör-Liste wird erzeugt** (`scripts/gegenhoeren.mjs`) — aus Karten
+   und Feldnamen, ohne Anker; sie nennt je Karte, wie genau die Zeitmarken am
+   Archivtext geprüft sind (nur Block, nicht prüfbar, Vermerk im Kopf).
+6. **Die Wortliste «Fallüberlegung/Deutung»** steht in `sprache.md` §7.4 als
+   Abschrift von `RE_FALLKENNZEICHEN`; massgebend bleibt das Skript.
+
+**Zwei neue Skripte** (reines Node, ohne Netz; `--wurzel`):
+
+| Skript | Tut |
+|---|---|
+| `scripts/audit-paket.mjs` | `--plan` (Pakete einer Einheit) · Blind-Paket · Vergleichs-Paket mit Gerüst der Teildatei (nur, wenn die Antworten-Datei des Auditors jede Aufgabe trägt) · Paket der Lösbarkeitsprobe · `--zusammenfuehren` (Teildateien → `belege.json`, `probe.json`, `fall.json`) · `--pruefen` (zusammenführen, `check-belege --streng`, nur die Felder des Pakets). Verweigert jede Ausgabe in dieses Repo, unter `--wurzel` und in jedes Git-Repo |
+| `scripts/gegenhoeren.mjs` | Gegenhör-Liste als Markdown (Konsole oder `--out`) |
+
+**Gemessen am 07.10.2026:**
+
+- `gegenhoeren`: `2.2.1_ausgrenzung_analysieren` 4 Audio/Video, 26 Stellen mit
+  Zeitmarke, 4 Text- und Bildquellen (zwei Karten nur auf den Block genau);
+  `3.3.1_kaufvertrag_beurteilen` 2 Audio/Video, 18 Stellen, 6 Text- und
+  Bildquellen. Kein Stück eines Lösungsfelds ab sechs Wörtern und kein Treffer
+  von `check-leck` in den Listen.
+- `audit-paket` an `3.3.1_kaufvertrag_beurteilen`: fünf Pakete decken die 137
+  Lösungsfelder genau einmal (47 · 20 · 49 · 18 · 3). Die Blind-Pakete von
+  Heft A enthalten von 142 Stücken der Lösungsfelder ab sechs Wörtern 2
+  (ohne Medien) bzw. 1 (mit Medien) — beide stehen im Heft selbst (eine
+  Seitenangabe, die auch der Auftrag über dem Raster nennt; eine Prüffrage,
+  die auch die Produktbeschreibung nennt). Das Vergleichs-Paket derselben Spur
+  enthält 43. Ein `--out` im Repo endet mit «VERWEIGERT», Exit 2.
+- Ausgangswerte unverändert: `check-all` über die 16 «GRUEN», `check-namen`
+  grün, `karten.mjs geaendert` grün, Bestand unverändert, Build Exit 0.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Teildatei je Schreiber.** `check-belege`, `check-zahlen` lesen je eine
+  Datei; Auditoren und Executor arbeiten gleichzeitig. Jeder schreibt darum
+  eine Teildatei (`belege.<heft>.<spur>.json`, `probe.<heft>.<spur>.json`,
+  `fall.<A|B|auftrag>.json`), und `audit-paket.mjs --zusammenfuehren` baut die
+  Datei. Je Feld gewinnt die Zeile mit heutigem Hash, dann die jüngere. Damit
+  schreibt `fall.json` weiter der Executor des Hefts — als `fall.<A|B>.json`.
+- **Fünf Lösungs-Audits je Einheit** (bei zwei Heften mit je zwei Spuren): vier
+  Pakete Heft × Spur und eines für den Auftrag. Der Kern eines Hefts (LF1, LF2,
+  Lösungsbild, Abschluss) liegt im Paket der ersten vorhandenen Spur. Mit fünf
+  Lösbarkeitsproben, einem Fakten-Audit und sechs Gegenlesern sind es siebzehn
+  Agenten je Lauf statt elf.
+- **Blind wird erzwungen, soweit ein Skript das kann:** Das Vergleichs-Paket
+  gibt es erst, wenn die Antworten-Datei jede Aufgabe trägt; es hält Hash und
+  Zeit dieser Datei fest. Dass der Auditor die Einheit nicht selbst öffnet,
+  bleibt eine Regel des Auftrags.
+- **Was «blind» ausschliesst:** jedes Lösungsfeld, den Kurzbeschrieb der
+  Quellenkarte (er kann die Lösung verraten), Kopf und Notizen der Archivdatei,
+  Begleiter, KN, Prinzip. Das Blind-Paket trägt die ganzen Kapitel, die das
+  Heft nennt — nicht nur die genannten Seiten —, damit eine falsche Seite
+  auffallen kann.
+- **Die Frage LF4 steht im Paket der Lösbarkeitsprobe** — der Auftrag nennt nur
+  Produkt, Abgaben, Kriterien und Lösungsbild; ohne die Frage ist «LF4 lässt
+  nur eine Antwort zu» nicht zu beurteilen.
+- **Die Fakten-Tabelle im Bericht entfällt**, mit ihr `fakten-tabelle.md`.
+  `fakten.json` ist die eine Fassung; der Bericht nennt die Zahlen je Urteil
+  und jede Zeile, die nicht «belegt» heisst. Eine Tabelle von Hand daneben
+  wäre eine zweite Fassung, die kein Skript prüft.
+- **Mischfeld:** Trägt ein Feld eine belegte und eine abgeleitete Aussage, gilt
+  das schwerste Urteil; die belegten Teile stehen in `weitere_belege`.
+- **Was nicht nachgeführt ist:** Der Sweep (ein Gegenleser) prüft heute fast
+  nur noch, was `check-all` und `check-kohaerenz` prüfen. Er ist geblieben,
+  weil kein Beleg vorliegt, dass er nichts mehr findet.
+
+**Offen für Pietro:**
+
+1. **`ERR_ZEIGER_SCHRITT_OHNE_SEITE` wörtlich?** «Jeder Schritt-Hinweis nennt
+   eine Seite» trifft im Bestand 127 von 240 Hinweisen. Bleibt die Regel
+   wörtlich, ist das an jedem Entwurf ein Fehler in etwa jedem zweiten
+   Schritt — oder gilt sie nur für Schritte, die auf eine andere Seite führen?
+2. **Nicht harte Budgets am Entwurf.** Vier der sieben nachgetragenen Budgets
+   (Lösungen S. 3 mit Medien, Kartentexte, Rezeptionskarte, Zahlentabelle) sind
+   am Entwurf Warnungen. Sollen sie Fehler werden?
+3. **Lösungs-Audit dauerhaft auf Opus?** Der Beweis zu Auftrag 10 misst Opus
+   gegen Sonnet beim Blindlösen an denselben Feldern. Bis zu einem Entscheid
+   nennt die Skill Opus.
+4. **Erster Durchgang des Tors ohne Exit 0.** `check-all` endet vor den Audits
+   «ROT» (zwei erwartete Fehler); der Orchestrator liest die Ausgabe. Ein
+   Schalter dafür (etwa `--vor-audit`) wäre eine Änderung an `check-all` und
+   lag ausserhalb dieser Stufe. → Erledigt in Stufe D: Schalter
+   `--vor-audit`, entschieden vom Orchestrator des Auftrags 10.
+5. **`check-all` kennt kein `--wurzel`.** Die fünf Beleg-Prüfungen und
+   `audit-paket` laufen an einer Temp-Kopie, das Tor als Ganzes nicht.
+6. **Siebzehn Agenten je Lauf.** Wenn das zu viel ist: Der Auftrag (drei
+   Felder) kann ins Paket eines Hefts, und eine Lösbarkeitsprobe kann mehrere
+   Produkte nacheinander bewerten.
+
+**Geänderte Dateien (Stufe C):** neu `scripts/audit-paket.mjs`,
+`scripts/gegenhoeren.mjs`, `references/audits.md`; geändert `SKILL.md` (§2, §4,
+§5 Nr. 5, §7), `references/gegenleser.md` (§1, §2, §4.1, §4.2, §6), `lauf.md`
+(§1, §2, §4, §4.1, §5, §6, §8, §11), `phase-9-tor.md` (§1, §3, §4),
+`phase-10-abschluss.md` (Tabelle, §1 bis §7), `belege.md` (Kopf, §2, §5 bis §7,
+§11, §12), `sprache.md` (§7.4), `ableitungsregeln.md` (§10, §10.3),
+`phase-4-heft-kern.md`, `phase-5-spuren.md`, `phase-6-abschluss.md`,
+`phase-7-set.md` (je der Absatz, wer `fall.json` schreibt),
+`assets/bericht-template.md` (Kopf, Abschnitte 2, 6, 8, 9, 11), `package.json`
+(zwei Zeilen). Keine Einheit, keine Karte, kein Renderer, keines der fünf
+Prüfskripte, nicht `check-all`; im Archiv ist nichts angelegt.
+
+**Rückgängig:** `git revert` des Commits der Stufe C. Die Skripte der Stufe B
+laufen unverändert; die Skill beschreibt dann wieder das frühere Lösungs-Audit.
+
+### E38, Stufe D — Keine Vererbung (07.10.2026)
+
+**Was sich ändert:** Die vier Wege, auf denen sich ein Fehler vervielfacht hat
+(Rückblick §5.4), bekommen je einen Riegel, den ein Skript hält; dazu der
+Schalter für den ersten Durchgang des Tors (Auftrag 10, Stufe D).
+
+| Weg | Riegel | Skript |
+|---|---|---|
+| Einheit aus Einheit | `<Quellenarchiv>/_pruefung/<ordner>/herkunft.json` `{abgeleitet_von, stand_commit}`; eigene `belege.json` und `fakten.json`; übernommene Zeile → Fehler; Vorlage nach `stand_commit` in einem Lösungs- oder Faktenfeld geändert → «neu zu prüfen» | `check-belege.mjs`, `check-fakten.mjs`, neu `lib/herkunft.mjs` |
+| geteilte Karte | Kartenbelege `<Quellenarchiv>/_pruefung/_karten/<id>.json`: Text der Karte wie ein Lösungsfeld belegt, mit Hash — eine geänderte Karte macht ihre Belege ungültig | `karten.mjs belege [<id>]`; `karten.mjs geaendert` liest mit |
+| Skelett, Skill | Die Vorlagen unter `assets/` und die wörtlichen Auftragsvorlagen laufen selbst durchs Tor (Zeile «Skelette»); Start-Riegel über `docs/cloud-run/OFFEN.md` | neu `check-skelette.mjs` |
+| Fehler bleibt in den anderen Einheiten | Rückweg: Fehlerform in allen Einheiten und Karten suchen, bevor der Lauf endet; Ergebnis in Bericht und `OFFEN.md` | neu `gleiche-stelle.mjs <feldpfad> <muster>` |
+
+**Regeln, die dazukommen:**
+
+1. **`--vor-audit`** (`check-all`, durchgereicht an `check-belege` und
+   `check-fakten`): Fehlt `belege.json` bzw. `fakten.json` noch, ist das
+   `HINWEIS_AUDIT_STEHT_AUS` statt eines Fehlers; alles andere bleibt. Die
+   Schlusszeile heisst dann «VOR AUDIT — keine Fehler, aber n Beleg-Datei(en)
+   stehen aus», Exit 0 — nie «GRUEN». Erster Durchgang des Tors mit dem
+   Schalter, zweiter ohne (`phase-9-tor.md` §1). **Damit ist Stufe C «Offen für
+   Pietro» Nr. 4 entschieden — vom Orchestrator des Auftrags 10, nicht von
+   Pietro.**
+2. **Abgeleitete Einheit:** Der Orchestrator legt `herkunft.json` vor dem
+   ersten Schreiben an. «Neu zu prüfen» endet, wenn er nach der Prüfung den
+   neuen `stand_commit` einträgt (`belege.md` §8).
+3. **Kartenbelege:** belegpflichtig sind `lesen` und `merk` einer
+   Lehrmittelkarte (Anker im Kapitel `kap`, auf einer Seite aus `seiten`) und
+   jede Aussage über die Welt in einer Methodenkarte. Eine fehlende Datei ist
+   ein Hinweis, kein Fehler. Wer sie schreibt: das Karten-Audit, eine eigene
+   Session (`audits.md` §6, `karten.md` §5).
+4. **Rückweg:** Für jeden Punkt mit Kürzel S oder R läuft `gleiche-stelle`,
+   bevor der Lauf endet; im Bericht (Abschnitt 10) stehen Feldpfad, Muster und
+   Treffer je Einheit (`phase-9-tor.md` §5).
+5. **Start-Riegel, genaue Form** (`lauf.md` §3 Zeile 9): Ein Lauf beginnt nicht,
+   solange `OFFEN.md` eine Zeile führt mit `Art` = `S` oder `P`, `Stand`
+   passend auf `^(offen|braucht Entscheid)\b` und dem Vermerk
+   `[erzeugt Fehler]` (mit eckigen Klammern) in der Spalte «Punkt». Ebenso,
+   wenn die Zeile «Skelette» rot ist. Die Liste und `offen.mjs` entstehen im
+   letzten Auftrag der Reihe.
+6. **Feste Angaben in Auftragsvorlagen:** Der Rollensatz der
+   Lernenden-Gegenleser hat Platzhalter mit Herleitung (`<lehrgang>`,
+   `<lehrjahr>`, `<alter>`, `<profil>` — `gegenleser.md` §4.1); `audits.md`
+   nennt keinen Pfad dieses Rechners mehr (`<repo>`). `check-skelette` prüft
+   die wörtlichen Auftragszeilen beider Dateien darauf.
+
+**Gemessen am 07.10.2026:**
+
+- **Ausgangswerte unverändert:** `check-all` über die 16 «GRUEN — keine
+  Fehler.» (15.5 s; keine neue Warnung: Zeile «Skelette» ok, Kartenbelege
+  0 Dateien), `check-namen` grün, `karten.mjs geaendert` grün, Bestand
+  unverändert, Build Exit 0.
+- **`check-skelette`:** 7 Vorlagen, 485 Feldpfade in fünf JSON-Skeletten (478
+  in der Gold-Einheit bzw. den Quellenkarten, 7 nur im Datenvertrag —
+  `gemeinsamer_auftrag.produkte…`, das Gold nicht führt), 216 Marker des
+  Begleiter-Skeletts, 261 Zeilen Auftragsvorlage: **kein Befund**. Gegenprobe
+  in einer Temp-Kopie: zehn eingebaute Verstösse lösen zehn verschiedene Codes
+  aus (15 Befunde).
+- **Herkunft** (Temp-Kopie, eigenes Archiv, Test-Belege ohne Quellentext):
+  `3.1.1_konsum_verantworten_3j` als abgeleitet von
+  `1.3.1_konsum_verantworten_v42`. Fünf Zeilen mit dem Hash der Vorlage bei
+  anderem Text → 5 × `ERR_BELEG_KOPIERT` (ohne `herkunft.json`: 5 ×
+  `ERR_AUDIT_VERALTET`). Mit `stand_commit` `bd80e89` (letzter Stand der
+  Vorlage vor der Anpassung `ed55049`): `ERR_VORLAGE_GEAENDERT` — 13
+  Lösungsfelder der Vorlage seither geändert (Commits `1902384`, `348fb55`),
+  0 Faktenfelder; keines der 13 steht in 3.1.1 noch im alten Wortlaut.
+  Unbekannter Commit → `HINWEIS_HERKUNFT_NICHT_PRUEFBAR`, Exit 2. Kopierte
+  Faktenzeile → `ERR_FAKT_KOPIERT`.
+- **Kartenbelege** (Temp-Kopie): zwei gültige Zeilen für `lm-17-3-3b-schema`
+  → grün; falsche Seite → `KARTE_STELLE_FALSCH`; Karte nach dem Audit geändert
+  → `KARTE_BELEGE_VERALTET` (Fehler in `belege`, Warnung in `geaendert`). Am
+  Bestand: 42 Methodenkarten, keine belegt; 23 haben belegpflichtige Felder
+  (21 Lehrmittelkarten, 2 eigene), 19 keine.
+- **`--vor-audit`** (Temp-Einheit mit `status: "entwurf"`): `check-belege` und
+  `check-fakten` enden ohne Schalter «ROT» (`ERR_BELEGE_FEHLT`,
+  `ERR_FAKTEN_FEHLT`), mit Schalter Exit 0 mit je einem Hinweis; liegt
+  `belege.json` vor, bleibt eine veraltete Zeile ein Fehler.
+- **`gleiche-stelle`** an zwei Fehlerformen aus den Nachträgen: Karte
+  `lm-1-3-rechtsfall` und Widerruf am Marktstand (Lauf `2026-10-04-331`) —
+  Muster `Marktstand|Messestand`: 20 Treffer in 3 von 27 Einheiten (3.3.1: 7,
+  4.1.1: 8, 4.2.1: 5), 1 in Karten. Skelett `set-template.json`, fester
+  Wochenplan 4 × 3 Lektionen (Lauf `2026-10-04-421`) — Feld
+  `wochenplan[*].lektionen`, Muster `^3$`: 64 Treffer, je 4 in allen 16
+  v4.2-Einheiten.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Kopierter Beleg:** Verglichen wird der `hash` einer Belegzeile der
+  Abgeleiteten, der nicht zum heutigen Text ihres Felds passt, mit den Hashes
+  der Lösungsfelder der Vorlage — heute im Baum, am `stand_commit` und in der
+  `belege.json` der Vorlage. Trägt die Abgeleitete in einem Feld wörtlich den
+  Text der Vorlage, ist der Hash derselbe: Ob die Zeile neu auditiert oder
+  abgeschrieben ist, sieht kein Skript.
+- **Faktenfeld:** ein Textfeld von Heft, `set.json`, `kn.json` (der Begleiter
+  als Ganzes), in dem `lib/aussagen.mjs` eine Aussage über die Welt findet;
+  «geändert» heisst, die Aussagen des Felds sind nicht mehr dieselben. Eine
+  Umformulierung ohne Zahl, Artikel oder Datum zählt nicht als Änderung eines
+  Faktenfelds.
+- **«Heute» ist der Baum, nicht `HEAD`:** Verglichen wird der Stand der
+  Vorlage am Commit mit ihren Dateien im Arbeitsbaum (auch unter `--wurzel`).
+- **Schwere:** wie in Stufe B — an einer gebundenen Einheit Warnungen, am
+  Entwurf Fehler. Je geändertes Feld der Vorlage eine Zeile, davor eine mit
+  den Zahlen.
+- **Kartenbelege veraltet** ist in `karten.mjs geaendert` (Tor) eine Warnung,
+  in `karten.mjs belege` ein Fehler. `geaendert` liest jede vorhandene Datei,
+  unabhängig vom Vergleich mit `origin/main` — der Hash gilt gegen heute.
+- **`check-skelette`, Felder:** Pfad gegen die Gold-Einheit und den
+  Datenvertrag (dort auch relativ notierte Pfade); gegen `types.ts` nur der
+  Feldname — die Datei wird statisch gelesen, ein Pfad lässt sich ohne
+  Compiler nicht sicher auflösen. 31 Feldpfade der Skelette tragen einen Namen, der in
+  `types.ts` nicht vorkommt; alle stehen im Datenvertrag («nur Gold») und sind kein
+  Befund. Die Liste `HINGENOMMEN` im Skript ist leer.
+- **`check-skelette` fehlt die Skill im Baum** (Exit 2): in `check-all` ein
+  Hinweis, kein Fehler.
+- **`gleiche-stelle`:** durchsucht jede JSON-Datei jeder Einheit (auch
+  Herausforderung C und KI-Dateien), Zahlen als Text, den Begleiter je Absatz
+  und einmal alle Karten; Exit 1 heisst «Treffer». Der Ausschnitt ist eigener
+  Text der Einheit, höchstens acht Wörter.
+- **Kürzel K** (Karte) ist im Bericht nicht eingeführt: Ein Kartenfehler steht
+  dort weiter unter S; die Skill nennt K nur als Art der künftigen `OFFEN.md`.
+- **«Fünf Schritte»** im Auftrag der Lernenden-Gegenleser heisst jetzt «jeder
+  Schritt»; die Seitenzahlen 3, 4 und 6 bleiben — sie sind im Renderer fest.
+
+**Offen für Pietro** (Fortsetzung der Liste aus Stufe C; dort ist Nr. 4
+erledigt):
+
+7. **`herkunft.json` für `3.1.1_konsum_verantworten_3j` eintragen?** Heute
+   trägt keine Einheit eine. Vorschlag: `{"format": "bbw-hko/herkunft@1",
+   "einheit": "3.1.1_konsum_verantworten_3j", "abgeleitet_von":
+   "1.3.1_konsum_verantworten_v42", "stand_commit": "bd80e89"}` — der letzte
+   Commit der Vorlage vor der Anpassung. Folge: an 3.1.1 (publiziert) 14
+   Warnungen `ERR_VORLAGE_GEAENDERT`, bis die 13 Felder geprüft sind und der
+   Commit nachgeführt ist.
+8. **Karten-Audit des Bestands:** 23 Methodenkarten haben belegpflichtige
+   Felder, keine ist belegt. Wann, und in welcher Reihenfolge (nach Zahl der
+   Verbraucher)?
+9. **Kürzel K im Bericht** — soll der Abschnitt «Offen» die Karte als eigene
+   Art führen, wie die künftige `OFFEN.md`?
+10. **Fester Wochenplan im Skelett** (`set-template.json`: 4 × 3 Lektionen,
+    Bericht `2026-10-04-421`): steht in allen 16 Einheiten. `check-skelette`
+    prüft keinen Festwert gegen den Datensatz; soll es?
+
+**Geänderte Dateien (Stufe D):** neu `scripts/check-skelette.mjs`,
+`scripts/gleiche-stelle.mjs`, `scripts/lib/herkunft.mjs`; geändert
+`scripts/check-belege.mjs` (`--vor-audit`, Herkunft), `scripts/check-fakten.mjs`
+(`--vor-audit`, kopierte Zeile), `scripts/check-all.mjs` (Zeile «Skelette»,
+`--vor-audit`, Schlusszeile «VOR AUDIT»), `scripts/karten.mjs` (`belege`,
+Kartenbelege in `geaendert`), `package.json` (zwei Zeilen); Skill: `SKILL.md`
+(§4), `references/phase-9-tor.md` (§1, §4, §5 neu), `lauf.md` (§3, §4, §10,
+§11), `auto-modus.md` (§5), `belege.md` (Kopf, §8, §9, §11, §13 neu),
+`karten.md` (§1, §5 neu, §6), `audits.md` (§1.1, §1.3, §5, §6 neu),
+`gegenleser.md` (§4.1, §5), `phase-10-abschluss.md` (§1),
+`assets/bericht-template.md` (Abschnitte 2 und 10). Kein Skelett ist geändert
+(kein Befund). Keine Einheit, keine Karte, kein Renderer; im Archiv ist nichts
+angelegt.
+
+**Rückgängig:** `git revert` des Commits der Stufe D. Das Tor läuft dann wie
+nach Stufe C (erster Durchgang wieder «ROT» mit zwei erwarteten Fehlern).
+
+## E39 — KI-Toolbox für v4.2-Einheiten: `hko-ki-komplement` liest das neue Format (Pietro, 07.10.2026)
+
+**Ausgangslage:** E29 hatte die KI-Toolbox für v4.2 zurückgestellt. Die Skill
+`hko-ki-komplement` kannte nur das 3er-Set (A/B/C) und EBA; auf einer
+v4.2-Einheit hätte sie eine dritte Herausforderung verlangt, von «Austausch &
+Transfer» gesprochen und weder den Fall-Ausschluss des KN noch die Spuren
+gekannt. Keine der 16 v4.2-Einheiten trägt eine Toolbox.
+
+**Entscheid Pietro:** Die Skill wird auf v4.2 nachgeführt.
+
+**Umsetzung — nur die Skill, nur die Leseseite:**
+
+- **Der Output-Vertrag bleibt.** `ki.json`, `lernprompt.json`,
+  `lernbegleiter.json` und `ki-liesmich.md` haben in jedem Format dieselbe Form.
+  Kein Renderer, kein Typ, kein Skript ist angefasst: `loadEinheit` und die
+  Arbeitsansicht führen die Toolbox schon heute unabhängig vom Format (Gruppe
+  «KI-Toolbox», ZIP).
+- **Format-Erkennung** in Phase 0 an `herausforderung_A.template` und
+  `prinzip.lehrgang` (`references/input-adapter.md` §0).
+- **v4.2-Regeln** (`SKILL.md`): nur der Kern der Hefte, nichts aus `spuren.*`
+  und aus keinem Lösungsfeld · kein Begriff aus
+  `fall_ausschluss_hefte_und_auftrag` in einer der vier Dateien · Übungsfälle
+  disjunkt von Heft A, Heft B, Auftrag und KN · Wörter der Hefte («Heft A/B»,
+  «gemeinsamer Auftrag», «Spannungsfeld», «0 bis 3 Punkte») · Fachbegriffe aus
+  `set.glossar` · Kriterien im Wortlaut des KN. Drei neue Checks der Skill
+  (`V42_SPUR`, `V42_FALL`, `V42_WORT`) und das Tor `check-all` über den Ordner.
+- **Sichtbarkeit setzt die Skill nicht.** Bei einer publizierten Einheit meldet
+  sie, dass `"entwurf_komponenten": ["ki-fluency"]` die Toolbox zurückhält.
+
+**Offen:** (1) `V42_FALL` prüft kein Skript — `check-v42` wendet den
+Fall-Ausschluss nur auf Hefte, Auftrag, Glossar und Quellenkarten an. (2) Es gibt
+keine v4.2-Gold-Toolbox; die Skill ist an keiner v4.2-Einheit gelaufen. (3) Das
+Niveau der Toolbox (Rückmeldung der Lehrpersonen: zu hoch) ist mit diesem
+Entscheid nicht berührt.
+
+**Rückgängig:** `git revert` des Commits; betroffen sind nur
+`.claude/skills/hko-ki-komplement/`, eine Zeile in `CLAUDE.md` und dieser Eintrag.
+
+## E40 — KI-Toolbox: kleine Fassung als Vorgabe (Basis/Plus) und B1-Sprach-Gate für EFZ (Pietro, 07.10.2026)
+
+**Ausgangslage:** Rückmeldung mehrerer Lehrpersonen an Pietro: Das Niveau der
+KI-Toolbox ist für die Lernenden zu hoch. Pietro: Es liegt an der Wortwahl und an
+zu viel Inhalt je Dokument. Befund an der Gold-Toolbox
+`1.1.1_konflikt_kommunizieren`: (1) EBA hat ein A2-Gate, EFZ keines — Aufträge mit
+über hundert Wörtern in einem Absatz, Wörter wie «Retrieval», «Verifikation»,
+«Stacking»; (2) jeder Auftrag verlangt Inhalt bearbeiten **und** die KI beurteilen
+(K4–K5, die Hefte zielen auf K2–K4); (3) vier Techniken mit je sechs Feldern, fünf
+Karten mit je zwei Prompts; (4) Prompts müssen aus einem Baukasten selbst gebaut
+werden. Der Liesmich bat die Lehrperson, die Word-Datei selbst zu kürzen.
+
+**Entscheid Pietro:** Alle vier Vorschläge umsetzen.
+
+**Umsetzung — nur die Skill `hko-ki-komplement`, für alle drei Formate:**
+
+1. **B1-Sprach-Gate für EFZ** (`references/b1-language-rules.md`), gebaut wie das
+   A2-Gate: längster Satz 22 Wörter, ein Auftrag je Satz, ein Schritt ein Satz,
+   Fachbegriffe nur mit Deckung (v4.2: `set.glossar`), Sperrwörter der Didaktik.
+2. **Fertige Prompts** mit höchstens einer Lücke; jeder endet mit einer
+   **Sprachzeile**, die der KI kurze, einfache Antworten und eine Frage aufs Mal
+   vorschreibt.
+3. **Andocken:** Die Basis arbeitet nur mit Begriffen, eigenem Produkt und
+   Kriterien der Einheit — kein neuer Fall, kein neues Kriterium.
+4. **Basis ist die Vorgabe, Plus liegt daneben** (`references/basis-plus.md`):
+   `ki_1` = Basis-Auftrag aus `ai_lernassistent` / `ai_entscheidungscoach`
+   (3 Schritte, 2 fertige Prompts, 2 Reflexionsfragen), `ki_2` = Plus-Auftrag;
+   Lernprompt Seiten 1–2 Basis, 3–4 Plus; Lernbegleiter Seite 1 und KN-Seite
+   Basis, Seite 2 Plus. Neue Checks BP1–BP6. Der Liesmich nennt die Seiten, statt
+   zum Kürzen aufzufordern.
+
+**Kein Renderer, kein Typ, kein Skript angefasst.** Die drei Doc-Komponenten
+zeichnen jedes Feld nur, wenn es da ist, und setzen die Seiten aus der Reihenfolge
+der Daten; Basis und Plus entstehen allein aus Reihenfolge und Weglassen. Der
+Output-Vertrag bleibt.
+
+**Nicht erreicht:** «Eine Seite je Dokument». Ein KI-Auftrag hat im Renderer fest
+drei Seiten (jetzt mit wenig Text und viel Schreibfläche), die Basis des
+Lernprompts zwei, die des Lernbegleiters zwei (Seite 1 und KN-Seite, dazwischen
+die Plus-Seite). Weniger braucht eine Änderung an den Doc-Komponenten.
+
+**Offen:** (1) Kein Skript prüft B1 und BP1–BP6 — es sind Scans der Skill.
+(2) Einige feste Überschriften des Renderers tragen noch Fachwörter
+(«Gütekriterien», «Rubrik-Fokus», «KN-Typen», «Prompts stapeln»), und der Kopf des
+KI-Auftrags zeigt den rohen Muster-Schlüssel. (3) Die zehn Toolboxen der
+Bestandseinheiten sind unverändert in der alten Fassung. (4) Die Skill ist im
+neuen Zuschnitt an keiner Einheit gelaufen; die Wirkung bei Lernenden ist nicht
+erprobt.
+
+**Rückgängig:** `git revert` des Commits; betroffen sind nur
+`.claude/skills/hko-ki-komplement/` und dieser Eintrag.
+
+## E41 — KI-Toolbox: Pilot, Renderer ohne Fachwörter und mit weniger Leerraum, `check-ki-toolbox.mjs` (Pietro, 07.10.2026)
+
+**Pilot.** Die Skill ist im neuen Zuschnitt (E39, E40) an
+`1.3.1_konsum_verantworten_v42` gelaufen: `ki.json`, `lernprompt.json`,
+`lernbegleiter.json`, `ki-liesmich.md`. Basis-Auftrag `ai_entscheidungscoach`,
+Plus-Auftrag `ai_gegenpositionen`. Befund an den gerenderten Seiten: Der Text war
+klein, die Seiten nicht — jede Basis-Seite halb leer, und das Lauteste auf dem
+Blatt waren Fachwörter des Renderers.
+
+**Auftrag Pietro:** Renderer nachziehen, Leerraum beheben, Prüfskript schreiben.
+
+**Renderer** (`src/components/einheiten/docs/Doc{Ki,Lernprompt,Lernbegleiter}.tsx`,
+die drei Builder in `docx-builder.ts`, neu `src/lib/einheiten/ki-toolbox.ts`):
+
+- **Wörter:** «KI-Toolbox · formativ» → «KI-Toolbox · Auftrag»; das Etikett mit
+  dem rohen Muster-Schlüssel entfällt; «Lehrplan-Bezug / Schlüsselkompetenzen
+  dieser Einheit» → «Das üben Sie» (Namen ohne SK-Code); Leitfragen ohne
+  «Offen/Kritisch/…»; «Prompt-Strategie» → «Prompts»; «Gütekriterien» →
+  «Kontrolle»; «R1» → «1.»; «Prompts stapeln» → «Nachfragen — Zwei Prompts
+  nacheinander» (Technik-Schlüssel werden als Titel gedruckt); «KN-Typen» →
+  «Kompetenznachweis»; «Rubrik-Fokus / im KN» → «Kriterien / im
+  Kompetenznachweis»; «SuK», «Ges» ausgeschrieben; «Fairness & Integrität» →
+  «Fairness»; ein Prompt ohne schwierigere Variante heisst «Fertiger Prompt».
+- **Prompts im KI-Auftrag** stehen in einem Kasten wie in den zwei anderen
+  Dokumenten, wenn die Zeile mit einem zitierten Prompt endet.
+- **Seiten aus den Daten:** Basis-Auftrag zwei statt drei Seiten; Basis-Techniken
+  und ihr «Nachfragen» auf einer Seite; im Lernbegleiter folgt die KN-Seite auf
+  Seite 1, die übrigen Karten stehen als «Plus» am Schluss. Erkannt wird die
+  Basis-Form daran, was fehlt — kein neues Datenfeld.
+- **Schreibfelder nehmen den freien Platz auf** (`Schreibfeld grow`; die bisherige
+  Höhe ist Mindesthöhe).
+
+**Wirkung auf den Bestand.** Die zehn Toolboxen in voller Dichte erfüllen keine
+der Basis-Bedingungen: gleiche Seitenzahl, gleiche Reihenfolge. Geändert sind bei
+ihnen die Überschriften oben, der Prompt-Kasten und die Höhe der Schreibfelder,
+wo eine Seite Platz hatte. Gemessen an `1.1.1_konflikt_kommunizieren`
+(13 Seiten) und am Piloten (11 Seiten) mit `messen-v42.mjs`: kein Überlauf.
+Die Word-Dateien beider Einheiten werden erzeugt; ihr Satzbild ist nicht
+angesehen.
+
+**Prüfskript** `scripts/check-ki-toolbox.mjs <ordner>`: Form der drei Dateien,
+BP1–BP4 und BP6, die gezählten B1-Regeln (Satzlänge, ein Auftrag je Teilsatz,
+Schritt, Sperrwörter), bei v4.2 Fall-Ausschluss, Spur-Begriffe und Wörter, der
+Liesmich (Callouts, Titel, Karten). Geprüft wird nur eine Toolbox mit
+`ki.json › version` ab 2.0.0; der Bestand wird genannt und übersprungen. Nicht
+in `check-all` eingehängt.
+
+**Offen:** (1) Der Pilot liegt in einer **publizierten** Einheit; Index nicht
+gebaut, nichts committet — vor dem Index-Bau entscheidet Pietro über
+`entwurf_komponenten`. (2) Leerraum bleibt im Lernbegleiter (Seite 1 und KN-Seite)
+und auf der ersten Plus-Seite des Lernprompts; Vorschläge dazu liegen bei Pietro.
+(3) Das Skript prüft weder die Deckung von Fachbegriffen noch A2 bei EBA.
+
+**Rückgängig:** `git revert` des Commits; die vier Pilot-Dateien löschen.
+
+## E42 — KI-Toolbox: KN-Formen ohne Fachnamen, drei Zusätze gegen den Leerraum, alles am Dateistand 2.x (Pietro, 07.10.2026)
+
+**1. Namen der KN-Formen (Pietro).** «Mini Case schriftlich» stand in einer
+Reflexionsfrage des Plus-Auftrags und als Kartentitel im Lernbegleiter. Es ist
+ein Begriff der Lehrperson. Neu: «Mini Case», «Werkschau» und
+«Transfer-Reflexion» stehen in keinem Feld, das Lernende lesen (eigener Abschnitt
+in `SKILL.md`, Sperrwörter in `b1-language-rules.md`, Check `KN_NAME`,
+`check-ki-toolbox.mjs`). `kn_typ_tracks[].label` bleibt wörtlich wie in `kn.json`;
+der Renderer druckt «Fachgespräch» · «Schriftliche Aufgabe zu einem neuen Fall» ·
+«Eigene Arbeiten zeigen und erklären» (`knTypFuerLernende`). «Fachgespräch»
+bleibt — von mir entschieden, Pietro hat nur den Mini Case genannt.
+
+**2. Drei Zusätze (Pietro: Ideen 1, 2, 3), gebaut an `1.3.1_konsum_verantworten_v42`:**
+
+- **Notizfelder** unter jedem Prompt der zwei Basis-Karten («Das hat die KI
+  gesagt · Das stimmt · Das stimmt nicht») und am Schluss der KN-Seite («Mein
+  Übungsfall · Das konnte ich · Das übe ich noch»). Kein Datenfeld.
+- **«Meine Begriffe — Kann ich das erklären?»**: neues Feld
+  `lernbegleiter.begriffe[]`, bei v4.2 alle Glossarbegriffe ohne `spur`.
+- **Beispiel-Verlauf** auf Seite 1 des Lernprompts: neues Feld
+  `lernprompt.beispiel_dialog` (`frage`, `antwort`, `pruefung`). Die Antwort der
+  KI trägt genau einen prüfbaren Fehler, damit die Lernenden einmal sehen, wie
+  Prüfen aussieht.
+
+**3. Andere Einheiten bleiben, wie sie sind (Pietro).** Umbruch der Basis-Form
+(E41) und alle Zusätze hängen jetzt am Dateistand: `istNeueFassung` verlangt
+`version` ab 2.x. Die zehn Toolboxen mit 1.x sind in keiner Datei angefasst und
+behalten Seitenfolge und Inhalt; sie werden neu erzeugt, wenn die Skill fertig
+ist. Für sie bleiben aus E41 die geänderten Überschriften und aus Punkt 1 die
+Kartentitel im Klartext.
+
+**Berichtigung zu E41.** Dort steht, auch der Bestand erhalte den Prompt-Kasten
+und wachsende Schreibfelder. Die Messung aller zehn Bestands-Toolboxen zeigte in
+`5.4.2_internationale_entscheide_wirken_4j` dadurch zwei neue Überläufe (Seite 2
+beider KI-Aufträge). Kasten und wachsende Felder gelten darum ebenfalls nur ab
+Dateistand 2.x. Nachgemessen: Der Bestand hat keinen Überlauf, den der
+eingecheckte Renderer nicht auch hat. **Vorbestehend** und nicht behoben: je eine
+überlaufende Seite 1 im Lernprompt von `5.4.2_…` (54 px) und von
+`1.1.1_ausbildung_erfassen_zeigen` (6 px) sowie Seite 1 des Lernbegleiters
+derselben Einheit (17 px).
+
+**Gemessen:** Pilot 11 Seiten ohne Überlauf; Seite 1 des Lernbegleiters hat noch
+rund 11 mm Reserve und ist damit die engste Seite. Check BP7 im Skript.
+
+**Offen:** Leerraum bleibt auf der ersten Plus-Seite des Lernprompts und auf der
+Plus-Seite des Lernbegleiters. Der Pilot liegt weiter in einer publizierten
+Einheit, uncommittet.
+
+**Rückgängig:** `git revert` des Commits; die zwei Felder aus den Pilot-Dateien
+entfernen.
+
+## E43 — Präsentation: je Spur ein Knopf, Audio und Video spielen im Deck (Pietro, 07.10.2026)
+
+**Anlass:** In der Präsentation von `1.3.1_konsum_verantworten_v42` schienen die
+Lösungen zu LF3 der Spur mit Medien zu fehlen. Daten und Deck waren vollständig;
+der eine Knopf «Präsentation» öffnete die Spur, auf der die Vorschau gerade
+stand (zuerst «ohne Medien», `set.spur: "wahl"`), ohne sie zu nennen.
+
+**1. Je Spur ein Knopf (ergänzt E29).** Hat eine v4.2-Einheit zwei Spuren, zeigt
+die Arbeitsansicht «Präsentation · Ohne Medien» und «Präsentation · Mit Medien»,
+je mit eigenem Zusatz «mit Lösungen». Die Titelfolie sagt, in welcher Spur
+Quelle, LF3, LF4 und ihre Lösungen stehen, und verlinkt die andere Fassung — auf
+der Plattform `?spur=…`, im ZIP die Nachbardatei. Im Beamer-Fenster ist die
+Zeile ausgeblendet. Es bleibt bei **einer Fassung je Spur**; ein Deck mit beiden
+Spuren ist nicht gebaut. Einheiten mit einer Spur und 3er-Sets behalten den
+einen Knopf.
+
+**2. Audio und Video spielen im Deck (dehnt E28 von der QR-Seite auf die
+Präsentation aus).** Auf der Folie «Quelle» und auf jeder Karte der Folie
+«Vertiefung» steht bei SRF-Beiträgen mit URN «▶ Video/Audio hier abspielen». Der
+Player von SRF öffnet als Überlagerung über der Folie, Start bei
+`verortung.von`; «Bei SRF öffnen ↗» bleibt als Ausweg. Artikel, Grafiken,
+Webseiten und Rechtstexte bekommen «Quelle öffnen ↗» (neuer Tab). Die
+Ersatzquelle hat einen eigenen, leiseren Knopf. Geladen wird erst beim Klick;
+Esc, «Schliessen», ein Klick neben den Player oder ein Folienwechsel räumen ihn
+ab. Solange er offen ist, blättert keine Taste. Das Beamer-Fenster öffnet und
+schliesst mit; gestartet wird dort, wo das Bild laufen soll.
+
+**Kein neues Datenfeld.** Die Regel, was eingebettet wird, steht einmal in
+`src/lib/einheiten/quelle-embed.ts` und gilt für QR-Seite und Deck
+(`typ`, `urn` bzw. `url`, `verortung.von`).
+
+**Abweichung von E29:** Die Überlagerung liegt in der gemeinsamen Shell
+(`renderStandaloneDeckHtml`). Das HTML der Präsentation alter Einheiten ist
+darum nicht mehr zeichengleich — es trägt Markup, CSS und Skript der
+Überlagerung, aber keinen Knopf, der sie öffnet.
+
+**Geprüft (lokal, Decks direkt aus den Daten gebaut):** `1.3.1_konsum_verantworten_v42`
+beide Spuren, `2.2.1_meinungsfreiheit_reflektieren` (Video als Pflichtquelle mit
+Ersatz): Knöpfe innerhalb der Folie, Player lädt, bleibt 16:9 über der
+Steuerleiste, Esc räumt ab, Beamer-Fenster folgt. QR-Seite von 1.3.1 mit
+denselben drei Player-Adressen wie zuvor.
+
+**Nicht geprüft:** die angemeldeten Routen (`/einheiten/…/deck`, Arbeitsansicht —
+die zwei Knöpfe nur als Attrappe mit dem echten Stylesheet); das Deck aus dem
+ZIP per Doppelklick (`file://`, ob der Player von SRF dort lädt); Wiedergabe mit
+Ton; Produktions-Domain und Schulnetz.
+
+**Rückgängig:** `git revert` des Commits.
+
+## E44 — KI-Toolbox: 14 Einheiten des 1. Lehrjahrs im Stand 2.0.0, Skill nachgeschärft, live ohne Entwurfs-Schranke (Pietro, 07.10.2026)
+
+**Anlass.** Lauf `docs/cloud-run/prompts/ki-toolbox-lehrjahr-1.md`: Die Skill
+`hko-ki-komplement` sollte die Toolbox für alle Einheiten des 1. Lehrjahrs
+schreiben. Nach Pilot und zwei Sonden zeigten sich dieselben Mängel in allen drei
+(Bericht §4, M1–M15).
+
+**Entschieden.**
+
+1. **Die Skill wird angepasst, nicht die Einheiten von Hand.** Was geändert wurde,
+   steht vollständig im Bericht §4b (M1–M15, N1–N13, H1–H14) — u. a. Aufbau des
+   Basis-Auftrags (Prompt 1 stellt drei Fragen, Prompt 2 zeigt auf die schwächste
+   Antwort), Grundsatz «Die KI kennt die Einheit nicht», feste Sprachzeile, feste
+   Technik-Titel, KN-Brücke nur mit dem, was jede KN-Form verlangt, «ohne KI» nur,
+   wenn `kn.json` es für jede Form sagt, Richtwerte für die engen Seiten.
+2. **Modelle.** Opus erzeugt; Sonnet liest gegen (auch die erste Lesung), kürzt und
+   korrigiert.
+3. **Sperrwort-Ausnahme nur für die Einheit über KI.** `check-ki-toolbox.mjs`
+   lässt «Halluzination» in `1.2.2_ki_kompetenznachweis_vorbereiten` zu
+   (`SPERRWORT_AUSNAHMEN`). «Absender», «Stufe», «Ich-Form» bleiben gesperrt und
+   werden in den Toolboxen umschrieben.
+4. **Sichtbarkeit.** Kein `entwurf_komponenten` — die Toolbox der zwölf
+   publizierten Einheiten und des Pilots geht mit diesem Stand live. Bei
+   `1.1.1_konflikt_kommunizieren`, `1.1.1_rechte_verstehen_nutzen` und
+   `1.2.2_ki_kompetenznachweis_vorbereiten` ersetzt sie die Fassung 1.x.
+5. **Nicht behoben, bewusst:** der KN-Fall in der Musterlösung von
+   `1.1.1_rechte_verstehen_nutzen › herausforderung_C.json` — die 3er-Sets werden
+   später neu erzeugt.
+
+**Stand.** 2.0.0 tragen 15 Einheiten (Pilot + 14). 1.x tragen noch
+`1.1.1_lehrvertrag_orientieren`, `1.1.2_unterlagen_ordnen`,
+`1.3.1_konsum_verantworten` (archiviert), `3.2.1_ernaehrung_nachhaltig_gestalten`,
+`3.2.1_wahre_kosten`, `5.4.2_internationale_entscheide_wirken_4j`. Ohne Toolbox:
+`3.2.1_konsumfolgen_beurteilen`, `3.3.1_kaufvertrag_beurteilen`. Offen sind
+`3.2.1_konsumfolgen_beurteilen`, `3.2.1_wahre_kosten`, `3.3.1_kaufvertrag_beurteilen`
+(Prompt: `docs/cloud-run/prompts/ki-toolbox-lehrjahr-1-rest.md`) und die
+Überarbeitung des Pilots (Gegenleser «zurück», Bericht §3.1).
+
+**Geprüft.** Je Einheit `check-ki-toolbox` GRUEN, Export 2 · 3 · 3 · 3 Seiten,
+`messen-v42` ohne Überlauf, bei v4.2 `check-all` ohne Treffer in den vier Dateien;
+Gegenleser am Schluss bei allen 14 «in Ordnung». Lokaler Produktions-Build
+(`npm run build`) läuft durch.
+
+**Nicht geprüft:** die angemeldeten Routen im Browser (KI-Tab der Arbeitsansicht,
+ZIP mit den Word-Dateien der Toolbox).
+
+**Bericht:** `docs/cloud-run/laeufe/2026-10-07-ki-toolbox-lehrjahr-1/BERICHT.md`
+(Reststellen je Einheit in §3).
+
+**Rückgängig:** `git revert` des Commits; einzelne Toolbox verbergen mit
+`"entwurf_komponenten": ["ki-fluency"]` in `set.json` und Index-Bau.

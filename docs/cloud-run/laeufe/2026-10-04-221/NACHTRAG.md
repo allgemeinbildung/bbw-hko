@@ -338,3 +338,42 @@ knapp». Alle drei Stellen nennen dieselbe Länge. Offen, nicht geändert:
 **Tor nach der letzten Änderung:** `check-all`: «GRUEN — keine Fehler.» ·
 `messen-v42`: 43 Seiten ok, kein Überlauf; Heft B ohne Medien S. 8 weiter
 0,8 px, S. 5: 58,6 px, S. 1: 0 px (voll, kein Überlauf).
+
+## 11. Quellenkarten q-221a entwirrt, 07.10.2026
+
+**Anlass.** Seit dem Tausch (§9) zeigte `archiv_ref` über Kreuz auf den
+Archivordner der jeweils anderen Karte. Ausgeführt am 07.10.2026
+(Auftrag `docs/cloud-run/prompts/sofort/5-quellenkarten-221a-entwirren.md`).
+
+**Lage vorher** (`D:\OS\_lab\quellen-archiv\bbw-hko\`): `q-221a-pflicht\` enthielt
+`gewaehlt\quelle.md` (5964 Byte, Beitrag Jenische und Sinti, URN c5ea99d8…)
+und `kandidat-1` bis `kandidat-6`; `q-221a-pflicht-ersatz\` enthielt nur
+`gewaehlt\quelle.md` (5607 Byte, Beitrag Musliminnen, URN c6c018ea…).
+
+**Umbenannt** in drei Schritten über `_tausch-221a-tmp`. Jetzt:
+`q-221a-pflicht\` = nur `gewaehlt` (Musliminnen, URN der Karte stimmt);
+`q-221a-pflicht-ersatz\` = `gewaehlt` (Jenische und Sinti, URN stimmt) und
+`kandidat-1` bis `-6`. Nichts gelöscht oder überschrieben. Offen: Die
+Kopfzeile «Slot:» in beiden `quelle.md` nennt noch den alten Slot; die
+Kandidaten liegen nun unter dem Ersatz-Ordner (Bauplan nachgeführt).
+`_pruefung`, `_briefs`, `_kandidaten`: keine Fundstelle des Ordnernamens.
+
+**Karten** (Vermerk je Karte in `src/data/quellen/_aenderungen.json`, art
+«fehler»): `archiv_ref` auf den Ordner gleichen Namens, Tausch-Hinweis aus
+`lizenz_hinweis` entfernt. ID, Titel, URL, URN, Zeitmarken, Dauer und
+Prüfdatum unverändert. Bauplan: Ordnernamen bei den verworfenen Kandidaten
+nachgeführt.
+
+**Zeitmarken.** Jede Marke von Karte und Lösungen Heft A (Spur mit Medien)
+am Archivtext nachgerechnet: Musliminnen = Absatzmarke minus 8 Sek., Jenische
+und Sinti = Absatzmarke unverändert. Keine Abweichung über 3 Sek., nichts
+geändert. Grenze: Die Absatzmarken sind Sprecherwechsel (Auflösung 5 bis 31
+Sek.), die Beginn-Annahme bleibt Schätzung; was nur Hören klärt, steht in der
+Gegenhör-Liste (§3, dazu: Beginn der Jenische-Marken, ob auch dort 8 Sek.
+abzuziehen sind; Marken 00:29, 01:17 und 00:00 liegen am Anfang langer
+Absätze, die Aussage kann einige Sekunden später fallen).
+
+**Tor:** check-all GRUEN (Namen 0 Warnungen), karten geaendert GRUEN,
+Export und Messung ok, bestand-v42 unverändert, Marker 0 abweichend.
+Sichtbar ändert sich für Lernende nichts; die QR-Seite liest weiter dieselben
+Felder.

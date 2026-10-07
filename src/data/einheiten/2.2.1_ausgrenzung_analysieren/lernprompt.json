@@ -1,0 +1,115 @@
+{
+  "id": "2.2.1_ausgrenzung_analysieren_lernprompt",
+  "set_ref": "2.2.1_ausgrenzung_analysieren_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Ausgrenzung analysieren». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI, wer sie sein soll. Dann antwortet sie aus dieser Sicht.",
+        "thema_bezug": "Ihr erster Satz steht im Kommentar (Heft B).",
+        "beispiel_basis": "Du bist eine Leserin, die mein Thema nicht kennt. Mein erster Satz: [mein erster Satz]. Sag mir in einem Satz, was du verstanden hast. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI spielt nur eine Rolle. Was sie sagt, prüfen Sie."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Kontext: Sie sagen der KI, worum es geht. So fragt sie passend dazu.",
+        "thema_bezug": "Ihr Standpunkt mit Grund steht im Kommentar (Heft B).",
+        "beispiel_basis": "Ein Plakat zeigt einen verletzenden Satz, um ihn zu kritisieren. Mein Standpunkt dazu: [mein Standpunkt mit Grund]. Stell mir zwei Fragen, eine nach der anderen. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI Einwände gegen Ihren Standpunkt. Ein Einwand ist, was die andere Seite dagegen sagt. Welcher Einwand zählt, entscheiden Sie.",
+        "thema_bezug": "Ihre Grenze mit Grund steht in den drei Sätzen Ihres Prüfberichts (Heft A).",
+        "beispiel_basis": "Du vertrittst die andere Seite. Thema: Ausgrenzung und Meinungsfreiheit. Meine Grenze bei Aussagen über Menschen: [meine Grenze mit Grund]. Nenne zwei Einwände dagegen, je in einem Satz. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du vertrittst zwei Seiten. Thema: Ausgrenzung und Meinungsfreiheit. Meine Grenze bei Aussagen über Menschen: [meine Grenze mit Grund]. Nenne einen Einwand von jemandem, der mehr Freiheit beim Reden will. Nenne einen Einwand von jemandem, den solche Aussagen treffen. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Nennt die KI ein Recht, schlagen Sie es im Glossar Ihrer Hefte nach. Steht es dort nicht, übernehmen Sie es nicht.",
+        "baukasten": {
+          "rolle": [
+            "Du vertrittst die andere Seite.",
+            "Du bist jemand, den solche Aussagen treffen.",
+            "Du bist jemand, der mehr Freiheit beim Reden will."
+          ],
+          "kontext": [
+            "Thema: Ausgrenzung und Meinungsfreiheit.",
+            "Meine Grenze: [meine Grenze mit Grund].",
+            "Mein Standpunkt: [mein Standpunkt mit Grund]."
+          ],
+          "aufgabe": [
+            "Nenne zwei Einwände dagegen.",
+            "Nenne einen Einwand aus Sicht der Betroffenen.",
+            "Sag nicht, welcher Einwand stärker ist."
+          ],
+          "format": [
+            "Je Einwand ein Satz.",
+            "Antworte in kurzen, einfachen Sätzen.",
+            "Schreib meinen Standpunkt nicht neu."
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie verlangen von der KI, dass sie in Schritten fragt und nach jedem Schritt wartet. So denken Sie jeden Schritt selbst und merken, wo Sie unsicher sind.",
+        "thema_bezug": "In Heft B trennen Sie Absicht und Wirkung, bevor Sie Ihren Standpunkt sagen.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Ich beurteile ein Plakat, das einen verletzenden Satz zeigt. Führ mich in drei Schritten: zuerst die Absicht, dann die Wirkung, dann mein Standpunkt. Stell je Schritt eine Frage. Warte auf meine Antwort. Sag mir nicht, was ich denken soll. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Mein Standpunkt zu einem Plakat: [mein Standpunkt mit Grund]. Führ mich in vier Schritten: Absicht, Wirkung, Wertekonflikt, mein Standpunkt. Stell je Schritt eine Frage. Warte auf meine Antwort. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt das Plakat nicht. Die Wirkung beschreiben Sie aus Ihrem Heft, nicht aus der Antwort der KI.",
+        "baukasten": {
+          "rolle": [
+            "Du bist mein Lerncoach.",
+            "Du bist eine Kollegin, die genau nachfragt.",
+            "Du bist ein Leser, der das Plakat nicht kennt."
+          ],
+          "kontext": [
+            "Thema: Ausgrenzung und Meinungsfreiheit.",
+            "Ich beurteile ein Plakat mit einem verletzenden Satz.",
+            "Mein Standpunkt: [mein Standpunkt mit Grund]."
+          ],
+          "aufgabe": [
+            "Führ mich in drei Schritten: Absicht, Wirkung, Standpunkt.",
+            "Stell je Schritt eine Frage.",
+            "Sag mir nicht, was ich denken soll."
+          ],
+          "format": [
+            "Warte nach jedem Schritt auf meine Antwort.",
+            "Nummeriere die Schritte.",
+            "Antworte in kurzen, einfachen Sätzen."
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 fragt Sie ab, Prompt 2 fragt nach. Weicht die KI vom Glossar ab, gilt das Glossar.",
+      "prompt_1": "Du bist mein Lerncoach. Ich bin im 1. Lehrjahr. Thema: Ausgrenzung und Meinungsfreiheit. Stell mir drei Fragen zu Stereotyp und Vorurteil, eine nach der anderen. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Bei welcher Frage war meine Antwort am wenigsten genau? Stell mir dazu noch eine Frage. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Schritt für Schritt denken"
+      ],
+      "logik_und_ziel": "Prompt 1 führt Sie in drei Schritten zu Ihrem Standpunkt. Prompt 2 verlangt danach zwei Einwände gegen genau diesen Standpunkt. Welcher Einwand zählt, entscheiden Sie.",
+      "prompt_1": "Du bist mein Lerncoach. Thema: Ausgrenzung und Meinungsfreiheit. Mein Standpunkt zu einem Plakat mit einem verletzenden Satz: [mein Standpunkt mit Grund]. Führ mich in drei Schritten: Absicht, Wirkung, Standpunkt. Stell je Schritt eine Frage. Warte auf meine Antwort. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Du kennst jetzt meinen Standpunkt und meine drei Antworten. Vertritt nun die andere Seite. Nenne zwei Einwände, je in einem Satz. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: Ausgrenzung. Ein Stereotyp ist ein Bild, ein Vorurteil ein Urteil. Stimmt das? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Ja, ein Stereotyp ist ein Bild. Nein, ein Vorurteil ist eine Handlung, die Menschen schlechter behandelt.",
+      "pruefung": "Ich prüfe im Glossar: Ein Stereotyp ist ein Bild, richtig. Ein Vorurteil ist ein Urteil. Schlechter behandeln ist Diskriminierung."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

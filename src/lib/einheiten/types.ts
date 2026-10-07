@@ -562,7 +562,9 @@ export interface SetJson {
   // Cluster 3 — optional per-unit override; normally derived from sit_*.nrlp.sprachmodus_ids
   sprachfoerderung?: { sprachmodus_ids?: string[]; hinweis_hoerverstaendnis?: string }
   // Sichtbarkeit (KT1-only Drafts). Beide optional; fehlend = live für alle.
-  status?: 'entwurf' | 'publiziert'
+  status?: EinheitStatus
+  /** Nur bei `status: "archiviert"`: Ordnername der Nachfolgerin (E37). */
+  ersetzt_durch?: string
   entwurf_komponenten?: string[]   // z. B. ['ki-fluency'] → einzelne Bausteine nur KT1
   /** Kanonischer Lehrgang — steuert Datensatz-Auflösung und EBA-Rendering. Einwertig. */
   lehrgang?: string
@@ -703,6 +705,8 @@ export interface KiAssignment {
 }
 export interface KiJson {
   id?: string
+  /** Dateistand. Ab «2.x» (E40 ff.) gilt die Basis-Form mit ihrem eigenen Umbruch. */
+  version?: string
   modul_titel?: string
   thema?: string
   lehrgang?: string
@@ -732,12 +736,21 @@ export interface LernpromptStacking {
   prompt_1?: string
   prompt_2?: string
 }
+/** Ein kurzer Beispiel-Verlauf: eigener Prompt, Antwort der KI, was geprüft wurde (E42). */
+export interface LernpromptBeispielDialog {
+  frage?: string
+  antwort?: string
+  pruefung?: string
+}
 export interface LernpromptJson {
   id?: string
+  /** Dateistand, siehe `KiJson.version`. */
+  version?: string
   lehrgang?: string
   lernprompt?: {
     version?: string
     thema_kontext?: string
+    beispiel_dialog?: LernpromptBeispielDialog
     techniken?: LernpromptTechnik[]
     stacking_seite_1?: LernpromptStacking
     stacking_seite_2?: LernpromptStacking
@@ -755,9 +768,13 @@ export interface LernbegleiterStrategie {
 }
 export interface LernbegleiterJson {
   id?: string
+  /** Dateistand, siehe `KiJson.version`. */
+  version?: string
   lehrgang?: string
   lernbegleiter?: {
     version?: string
+    /** Begriffe der Einheit zum Abhaken («kann ich erklären») — E42. */
+    begriffe?: string[]
     titel?: string
     ziel?: string
     kompetenzversprechen?: string
@@ -770,10 +787,15 @@ export interface LernbegleiterJson {
   }
 }
 
+/** Status einer ganzen Einheit (set.json › status). Der Index-Builder bricht bei jedem anderen Wert ab. */
+export type EinheitStatus = 'entwurf' | 'publiziert' | 'archiviert'
+
 export interface EinheitIndexEntry {
   id: string
-  /** Sichtbarkeit der ganzen Einheit. Fehlend/`publiziert` = live; `entwurf` = nur KT1. */
-  status?: 'entwurf' | 'publiziert'
+  /** Sichtbarkeit der ganzen Einheit. Fehlend/`publiziert` = live; `entwurf` und `archiviert` = nur KT1. */
+  status?: EinheitStatus
+  /** Nur bei archivierten Einheiten und nur, wenn gesetzt: Ordnername der Nachfolgerin. */
+  ersetzt_durch?: string
   /** Bausteine, die (bei sonst live Einheit) nur KT1 sieht. Gruppen-Keys, z. B. `ki-fluency`. */
   entwurf_komponenten?: string[]
   kompetenz_nr: string

@@ -176,7 +176,8 @@ farbcodierte Unterscheidung wäre genau dort weg, wo sie zählt.
 
 ## 6. Eine neue Karte anlegen
 
-1. Prüfen, ob es sie schon gibt: `ls src/data/methoden/`.
+1. Prüfen, ob es sie schon gibt: `ls src/data/methoden/`. Gibt es eine, die fast passt:
+   nicht ändern, sondern §9 lesen — meist überschreibt die Einheit.
 2. Datei `src/data/methoden/<id>.json` anlegen. ID-Konvention: `lm-<kap-mit-bindestrich>-<slug>`
    für Lehrmittel-Karten, `hko-<slug>` für eigene.
 3. Bei `quelle: "lehrmittel"` das Kapitel im Lehrmittel nachlesen und `lesen` in zwei
@@ -212,6 +213,8 @@ Lernenden nicht verschleiert. Auf der Karte steht ausgeschrieben «nicht im Lehr
 | Datei | Rolle |
 |---|---|
 | `src/data/methoden/*.json` | die Kartei |
+| `src/data/methoden/_aenderungen.json` · `src/data/quellen/_aenderungen.json` | Vermerke zu Korrekturen an gebundenen Karten (§9); keine Karten — Dateien mit führendem `_` überspringen Loader und Checks |
+| `scripts/karten.mjs` | Verbraucher einer Karte, Entscheid «ändern oder neu», geänderte Karten gegen `origin/main` (im Tor: `check-all`, Zeile «Karten») |
 | `src/lib/einheiten/methoden.ts` | Laden (`import.meta.glob`) + `resolveMethoden` |
 | `src/lib/einheiten/types.ts` | `MethodeKarte` · `MethodeRef` · `Methode` |
 | `src/lib/einheiten/index.ts` | `withMethoden` — die eine Auflösungsstelle |
@@ -221,3 +224,58 @@ Lernenden nicht verschleiert. Auf der Karte steht ausgeschrieben «nicht im Lehr
 
 Ein Vorschlagspapier für Kernteam 1 liegt unter `/admin/methodenseite`
 (Quelle: `src/data/dokumente/methodenseite-kernteam.html`).
+
+---
+
+## 9. Eine Karte ändern — oder eine neue anlegen
+
+Eine Karte wird von vielen Einheiten geführt, die meisten sind publiziert
+(Stand 07.10.2026: `lm-17-3-3b-schema` in 18 Einheiten, `hko-quelle-raster` in 16).
+Wer sie ändert, ändert gedruckte Hefte. Dasselbe gilt für Quellenkarten
+(`src/data/quellen/`): Sie erscheinen im Heft, im Begleiter und auf der QR-Seite.
+Darum vor **jeder** Kartenänderung:
+
+```
+node scripts/karten.mjs verbraucher <karten-id>   # wer führt sie, mit welchem Status, was wird überschrieben
+node scripts/karten.mjs darf <karten-id>          # Entscheid nach der Regel, Exit 0 = erlaubt, 1 = gebunden
+node scripts/karten.mjs geaendert                 # was ist gegenüber origin/main geändert (läuft im Tor mit)
+node scripts/karten.mjs warnungen                 # Regel e über die ganze Kartei
+```
+
+**Gebunden** ist eine Karte, die mindestens eine Einheit mit `status: "publiziert"`
+(auch ohne Feld — das gilt als live) oder `"archiviert"` führt. Archivierte Einheiten
+binden wie publizierte: Ihre Hefte sind gedruckt im Umlauf, und die QR-Seite
+`/m/<ordner>` funktioniert weiter (Entscheid Pietro, 07.10.2026).
+
+| Fall | Lage | Was gilt |
+|---|---|---|
+| **a** | Die Karte hat **keinen** publizierten und keinen archivierten Verbraucher | Ändern erlaubt. Entwürfe, die die Karte führen, werden danach neu geprüft und gemessen. Für Quellenkarten gilt zusätzlich Fall d |
+| **b** | **Fehler** in der Karte: Die Aussage steht nicht auf der genannten Seite, die Seite ist falsch, ein Rechenfehler, ein Widerspruch in sich | Ändern, auch bei publizierten Verbrauchern — aber nur mit **Vermerk** und danach für **jeden** Verbraucher: `check-all`, Export, Messung; bei sichtbarer Änderung an einer Bestandseinheit `bestand-v42.mjs --schreiben`. Ohne Vermerk ist `geaendert` rot |
+| **c** | **Passung:** Die Karte stimmt, passt aber nicht zu dieser Einheit — Anzahl, Format, Beispiel, Begriff | Karte **nicht** ändern. Reihenfolge: 1. Die Einheit überschreibt in der Methoden-Referenz (`fuer`, ausnahmsweise `beispiel`). 2. Reicht das nicht: **neue Karte** mit eigener ID (§6); die alte bleibt unverändert |
+| **d** | **Quellenkarte** | Der Inhalt einer Karte — Titel, URL bzw. URN, Ausschnitt — wird nach der ersten Freigabe (Freigabe des Bauplans, der die Quelle nennt) **nie** mehr ausgetauscht: Eine andere Quelle ist eine neue Karte mit neuer ID. Korrigierbar bleiben Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum und `kurzbeschrieb` — bei gebundener Karte mit Vermerk wie in Fall b |
+| **e** | **Karten für alle** | In `merk` und `schritte` stehen keine festen Zahlen und Formate («6 bis 8 Bilder», «A4», «drei Argumente») — die nennt die Einheit in `fuer`. Das Skript warnt bei Ziffern, Zahlwörtern und Formatwörtern; eine Warnung ist nie ein Fehler. Seiten-, Kapitel- und Artikelverweise zählen nicht |
+
+**Fehler oder Passung?** Probe: Wäre die Karte auch falsch, wenn es diese Einheit
+nicht gäbe? Ja → Fehler (b). Nein → Passung (c). Das entscheidet ein Mensch, nicht
+das Skript — ebenso, ob eine geänderte Zeitmarke eine Korrektur ist oder ein anderer
+Ausschnitt (dann: neue Karte).
+
+**Der Vermerk** ist ein Eintrag im Array von `src/data/methoden/_aenderungen.json`
+bzw. `src/data/quellen/_aenderungen.json`:
+
+```json
+{ "karte": "<id>", "datum": "JJJJ-MM-TT", "art": "fehler",
+  "beleg": "<Fundstelle in eigenen Worten: Kapitel und Seite, Bericht, Primärquelle>",
+  "verbraucher": ["<ordner>", "…"] }
+```
+
+`art` ist immer `"fehler"`; `verbraucher` nennt jeden Ordner aus
+`karten.mjs verbraucher`; `beleg` ist nie ein Zitat (das Repo ist öffentlich). Ein
+Vermerk zählt nur, solange er in `origin/main` noch nicht steht — ein alter Vermerk
+deckt keine neue Änderung. Titel, URL und URN einer gebundenen Quellenkarte bleiben
+auch mit Vermerk rot (Fall d).
+
+**In einem Lauf der Skill** wird nie eine bestehende Karte geändert; ein Fehler geht
+in den Bericht («Offen», Kürzel S) und in die Sammelliste. Einzelheiten:
+`.claude/skills/bbw-hko-heft-v42/references/karten.md`. Herkunft der Regel:
+`docs/upgrade-v4.2/ENTSCHEIDE.md` E31 Nr. 3 und E36.

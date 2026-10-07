@@ -1,0 +1,378 @@
+{
+  "id": "1.3.1_konsum_verantworten_hf_C",
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "lehrgang": "EFZ_4J",
+
+  "buchstabe": "C",
+  "sit_farbe": "#1E8449",
+  "sit_farbe_light": "#D5F5E3",
+  "sit_farbe_mid": "#27AE60",
+
+  "titel": "Abos, Kleinkredit, Schuldenspirale",
+
+  "wissensknoten": ["schuldenpraevention"],
+
+  "nrlp": {
+    "nr": "1.3.3",
+    "nr_primary": ["1.3.3"],
+    "lebensbezug": "1.3",
+    "themen": ["T1"],
+    "gesellschaft": [
+      {"aspekt": "Wirtschaft", "iteration": "R1"},
+      {"aspekt": "Ethik", "iteration": "R1"}
+    ],
+    "sprachmodi": ["Rezeption schriftlich und bildlich", "Interaktion und Kollaboration mündlich"],
+    "sprachmodus_ids": ["SM3", "SM7"],
+    "sk": [5, 11, 6],
+    "kompetenz_id": "1.3.3",
+    "lebensbezug_id": "1.3",
+    "kompetenz_text": "Ich kann Risiken der Verschuldung erkennen, mein eigenes Konsumverhalten kritisch reflektieren, Wege zur Vermeidung von Schulden entwickeln und diese mit anderen diskutieren.",
+    "lebensbezug_text": "Ich treffe überlegte Konsumentscheidungen, die zu mir und meiner Lebenssituation passen."
+  },
+
+  "persona": {
+    "beruf": "Lernende/r EFZ, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+
+  "situation_text": "Ich bin im 1. Lehrjahr und habe in den letzten Monaten mehrere Abos abgeschlossen: Handy, Streaming, Fitness — zusammen rund 130 Franken im Monat. Das Fitnessabo habe ich im Januar für ein Jahr unterschrieben und war seit Februar dreimal dort; kündigen kann ich erst im Dezember. Gestern lag Werbung für einen Kleinkredit über 4000 Franken im Briefkasten: «frei verwendbar, bequem in kleinen Raten». Verwendung hätte ich sofort — Snowboard, Sommerferien, ein besserer Laptop. Ein Kollege hat so einen Kredit aufgenommen; seine Raten laufen jetzt ins dritte Jahr, und er weiss nicht mehr, wofür er das Geld ausgegeben hat. Ich spüre, wie schnell sich Verpflichtungen summieren, und will die Risiken durchschauen, bevor ich unterschreibe.",
+
+  "zahlen_tabelle": [
+    {"label": "Laufende Abos (Handy, Streaming, Fitness)", "wert": "ca. CHF 130/Monat"},
+    {"label": "Kleinkredit-Angebot", "wert": "CHF 4'000"},
+    {"label": "Gesetzlicher Höchstzins Leasing/Kredit", "wert": "max. 10 %"}
+  ],
+
+  "leitfrage": "Wie erkenne ich Verschuldungsrisiken früh — und welche Regeln geben mir Sicherheit?",
+  "leitfragen_intro": "Sie schreiben Ihren Schuldenpräventions-Ratgeber Block für Block: LF1 liefert den Risikoteil mit den Vermeidungstipps, LF2 den Warnkasten zur Kostenfalle bei Leasing und Kredit, LF3 Ihren Entscheid über die laufenden Verpflichtungen, LF4 die drei Wenn-dann-Regeln, die Sie danach in der Gruppe vertreten. Bearbeiten Sie die vier Leitfragen schriftlich. Nutzen Sie das Lehrmittel Kap. 8.2, Kap. 8.1 und Kap. 2.2 als Grundlage.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Erklären Sie, wie die Schuldenspirale entsteht und mit welchen konkreten Tipps (Bankkarte, Bargeld, Handy, Ausgang) man Schulden vermeiden kann.",
+      "liefert": "der Risikoteil des Ratgebers",
+      "scaffolding": {
+        "strategien": [
+          "Markieren Sie nur Schlüsselwörter in Kap. 8.2, keine ganzen Sätze.",
+          "Ordnen Sie jedem Tipp das Risiko zu, gegen das er hilft."
+        ],
+        "satzanfaenge": [
+          "Die Schuldenspirale beginnt, wenn …",
+          "Dagegen hilft …, weil …"
+        ],
+        "produkt": "Risiken und Tipps bilden den ersten Block des Ratgebers (Schritt 1)."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Wie die Schuldenspirale entsteht — und Tipps dagegen",
+        "zeilen": [
+          { "label": "Schuldenspirale", "text": "Entsteht, wenn regelmässig mehr ausgegeben als eingenommen wird — ein Leben 'auf Pump' mit unangenehmen Folgen.", "quelle": "Kap. 8.2" },
+          { "label": "Bankkarte", "text": "Beim Bargeldbezug immer den Kontostand prüfen, möglichst wenig damit bezahlen.", "quelle": "Kap. 8.2" },
+          { "label": "Bargeld", "text": "Nur wenig im Portemonnaie mittragen, nichts von anderen ausleihen.", "quelle": "Kap. 8.2" },
+          { "label": "Handy", "text": "Prepaid statt Abo, oder ein Abo mit Gebührenlimite; Roaming ausschalten.", "quelle": "Kap. 8.2" },
+          { "label": "Ausgang", "text": "Party im Freundeskreis statt in teuren Clubs.", "quelle": "Kap. 8.2" }
+        ]
+      }
+    },
+    {
+      "nr": 2,
+      "bloom": "Analysieren",
+      "knoten_ref": "Kap. 8.1 | S. 194-195",
+      "text": "Analysieren Sie am Beispiel Auto-Leasing und Konsumkredit, welche versteckten Kosten und Risiken (Nebenkosten, Höchstzins, Bonitätsprüfung, Nachzahlungen) entstehen können.",
+      "liefert": "die Kostenfalle bei Leasing und Kredit",
+      "scaffolding": {
+        "strategien": [
+          "Rechnen Sie den Gesamtaufwand über die Laufzeit, nicht die Monatsrate.",
+          "Halten Sie Nebenkosten und Höchstzins getrennt fest (Kap. 8.1)."
+        ],
+        "satzanfaenge": [
+          "Versteckt kostet dieser Vertrag zusätzlich …",
+          "Über die ganze Laufzeit sind das …"
+        ],
+        "produkt": "Die Kostenfalle wird der Warnkasten des Ratgebers in Schritt 2."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Versteckte Kosten bei Leasing und Kredit",
+        "zeilen": [
+          { "label": "Eigentum", "text": "Beim Leasing bleibt das Auto immer Eigentum der Leasinggeberin — anders als beim Kredit, wo man ab Kauf Eigentümer ist.", "quelle": "Kap. 8.1" },
+          { "label": "Höchstzins", "text": "Gesetzlich max. 10 % Jahreszins bei Leasing und Konsumkredit — im Rechenbeispiel des Lehrmittels macht das über CHF 6'993 Zins bei CHF 23'310 Kredit.", "quelle": "Kap. 8.1" },
+          { "label": "Bonitätsprüfung", "text": "Vor Vertragsabschluss wird geprüft, ob der pfändbare Lohnanteil den Kredit in 36 Monaten zurückzahlen kann.", "quelle": "Kap. 8.1" },
+          { "label": "Nebenkosten", "text": "Leasingrate zeigt nur einen Teil der Wahrheit — Versicherung, Service, Kilometerüberschuss kommen dazu.", "quelle": "Kap. 8.1" },
+          { "label": "Schwach vs. stark", "text": "Schwach: nur die Monatsrate nennen. Stark: Gesamtaufwand über die ganze Laufzeit inklusive Zins und Nebenkosten vergleichen." }
+        ]
+      }
+    },
+    {
+      "nr": 3,
+      "bloom": "Entscheiden",
+      "knoten_ref": "Kap. 2.2 | S. 48",
+      "text": "Entscheiden Sie anhand der Summe Ihrer monatlichen Raten, welche laufenden oder geplanten Verpflichtungen (Abos, Kredit, Leasing) Sie eingehen und welche Sie streichen.",
+      "liefert": "der Entscheid über laufende Verpflichtungen",
+      "scaffolding": {
+        "strategien": [
+          "Listen Sie zuerst alle Monatsraten auf, entscheiden Sie danach.",
+          "Prüfen Sie die Summe der Raten, nicht die einzelne Rate."
+        ],
+        "satzanfaenge": [
+          "Diese Verpflichtung behalte ich, weil …",
+          "Streichen muss ich …, denn zusammen …"
+        ],
+        "produkt": "Der Entscheid steht als eigener Abschnitt im Ratgeber (Schritt 3)."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Welche Verpflichtung das Budget trägt",
+        "zeilen": [
+          { "label": "Budget-Regel", "text": "Merkpunkt aus Kap. 2.2: nur realistische, eigene Zahlen einsetzen — Ehrlichkeit und Disziplin sind Grundvoraussetzung.", "quelle": "Kap. 2.2" },
+          { "label": "Erwartet", "text": "Den Kleinkredit streichen — die Raten laufen länger, als Snowboard, Ferien und Laptop halten; das Budget trägt es nicht." },
+          { "label": "Ebenfalls tragfähig", "text": "Ein Abo streichen statt des Kredits, wenn die laufenden Fixkosten den grösseren Engpass verursachen." },
+          { "label": "Nicht tragfähig", "text": "Alles eingehen, weil die einzelne Rate klein wirkt — die Summe entscheidet, nicht die Rate." }
+        ]
+      }
+    },
+    {
+      "nr": 4,
+      "bloom": "Formulieren",
+      "knoten_ref": "Kap. 8.2 | S. 199",
+      "text": "Formulieren Sie drei persönliche Regeln zur Schuldenvermeidung, die Sie in der Gruppendiskussion vertreten können.",
+      "liefert": "drei überprüfbare Wenn-dann-Regeln",
+      "scaffolding": {
+        "strategien": [
+          "Schreiben Sie jede Regel als Wenn-dann-Satz, konkret und prüfbar.",
+          "Leiten Sie jede Regel aus einem Tipp aus Kap. 8.2 ab."
+        ],
+        "satzanfaenge": [
+          "«Wenn …, dann …»",
+          "«Meine Regel lautet …, damit …»"
+        ],
+        "produkt": "Die drei Regeln schliessen den Ratgeber ab und tragen die Diskussion."
+      },
+      "feld_hoehe_mm": 15,
+      "loesung": {
+        "kern": "Drei überprüfbare Wenn-dann-Regeln",
+        "zeilen": [
+          { "label": "Regel-Muster", "text": "«Wenn …, dann …» — konkret und überprüfbar, keine allgemeine Absicht wie 'ich will sparsamer sein'.", "quelle": "Kap. 8.2" },
+          { "label": "Aus den Tipps ableiten", "text": "Jeder Lehrmittel-Tipp (Bankkarte, Bargeld, Handy, Ausgang) lässt sich in eine persönliche Wenn-dann-Regel übersetzen.", "quelle": "Kap. 8.2" },
+          { "label": "Vertretbar", "text": "«Meine Regel lautet …, damit …» — die Regel muss in der Diskussion begründbar sein, nicht nur behauptet." },
+          { "label": "Massstab", "text": "Drei Regeln, jede konkret genug, um in einem Monat überprüfbar zu sein." }
+        ]
+      }
+    }
+  ],
+
+  "mindmap_zentrum": "Schulden vermeiden",
+  "mindmap_aeste": [
+    {"titel": "Schuldenfalle", "punkte": ["Leben auf Pump", "Abos summieren sich", "Schuldenspirale"], "optional": false},
+    {"titel": "Risikoprodukte", "punkte": ["Leasing", "Konsumkredit", "Kleindarlehen"], "optional": false},
+    {"titel": "Vermeidungstipps", "punkte": ["Prepaid statt Abo", "Bezugslimite", "Ausgang im Freundeskreis"], "optional": false},
+    {"titel": "Wenn es passiert", "punkte": ["Überblick verschaffen", "Beratungsstellen", "Betreibung"], "optional": true}
+  ],
+
+  "handlungsprodukt": {
+    "format": "Persönlicher Schuldenpräventions-Ratgeber + Diskussion",
+    "abgaben": [
+      "Schuldenpräventions-Ratgeber (1 Seite: Risiken + 5-7 Tipps, mit Markiertechnik gestaltet)",
+      "3 persönliche Regeln zur Schuldenvermeidung",
+      "Diskussionsbeitrag: Regeln in der Gruppe vertreten und auf andere eingehen"
+    ],
+    "titel": "Mein Schuldenpräventions-Ratgeber",
+    "format_detail": "Ein einseitiger Ratgeber (handschriftlich oder digital) mit den wichtigsten Verschuldungsrisiken und 5-7 konkreten Tipps, gestaltet mit Farben und Symbolen — plus ein Diskussionsbeitrag, in dem Sie Ihre drei Regeln in der Gruppe vertreten und auf Gegenargumente eingehen.",
+    "beschreibung": "Ich erkenne Verschuldungsrisiken, reflektiere mein eigenes Konsumverhalten ehrlich, entwickle konkrete Vermeidungsregeln und vertrete sie in einer Diskussion nach den Diskussionsregeln.",
+    "schritte": [
+      {"label": "Risiken und Tipps markieren", "hint": "Übernehmen Sie aus LF1 die Schuldenspirale und die Vermeidungstipps und schreiben Sie sie als ersten Block auf den Ratgeber — nur Schlüsselwörter, farbig markiert."},
+      {"label": "Kostenfalle eintragen", "hint": "Übernehmen Sie aus LF2 die versteckten Kosten von Leasing und Kredit und setzen Sie sie als Warnkasten neben den Risikoblock (Kap. 8.1)."},
+      {"label": "Verpflichtungen entscheiden", "hint": "Übernehmen Sie aus LF3 Ihren Entscheid über die laufenden und geplanten Raten und halten Sie ihn als eigenen Abschnitt fest. Haben Sie Herausforderung A bearbeitet, nehmen Sie Ihre Bedürfnis-Landkarte als Gegenprobe dazu."},
+      {"label": "Regeln in der Gruppe vertreten", "hint": "Setzen Sie die drei Regeln aus LF4 als Schlussblock auf den Ratgeber und vertreten Sie sie in der Diskussion: ein Beitrag pro Regel, dazu eine Reaktion auf einen anderen Beitrag (Kap. 16.1)."},
+      {"label": "Gegenlesen und überarbeiten", "hint": "Prüfen Sie den Ratgeber gegen die vollständig-wenn-Kriterien im Bewertungsraster und überarbeiten Sie eine Regel, die in der Diskussion nicht getragen hat."}
+    ],
+    "schreib_label": "SCHULDENPRÄVENTIONS-RATGEBER HIER ERARBEITEN",
+    "schreib_note": "-> wissen/schuldenpraevention",
+    "scaffolding": {
+      "satzanfaenge": ["«Ein grosses Risiko ist …, weil …»", "«Meine Regel lautet …, damit …»", "«Ich sehe das anders als du, denn …»"],
+      "strategien": ["Nur Schlüsselbegriffe markieren, Tipps in eigene Worte fassen (Kap. 17.2/8.2)", "In der Diskussion sachlich bleiben, keine Killerphrasen (Kap. 16.1)"],
+      "struktur": ["Ratgeber: Risiko → Folge → Tipp", "Regel: Wenn … dann … (konkret und überprüfbar)"]
+    },
+    "musterloesung": {
+      "hinweis": "Erst zeigen, wenn ein eigener Ratgeber steht. Beispiel auf Stufe 3–4: Risiko → Folge → Tipp sauber getrennt, Regeln sind überprüfbar formuliert, und im Diskussionsteil wird auf ein Gegenargument wirklich eingegangen.",
+      "abschnitte": [
+        {
+          "titel": "Risiko 1 — Abos summieren sich unsichtbar",
+          "zeilen": [
+            {
+              "label": "Folge",
+              "text": "Handy, Streaming, Fitness zusammen ca. CHF 130 pro Monat — das sind über CHF 1500 im Jahr, die ich nie als Entscheidung erlebt habe. Jedes Abo einzeln wirkte günstig."
+            },
+            {
+              "label": "Tipp",
+              "text": "Einmal im Quartal den Kontoauszug nach wiederkehrenden Beträgen durchgehen und jedes Abo laut begründen. Was ich nicht begründen kann, kündige ich."
+            }
+          ]
+        },
+        {
+          "titel": "Risiko 2 — Kleinkredit «in kleinen Raten»",
+          "zeilen": [
+            {
+              "label": "Folge",
+              "text": "CHF 4000 für Snowboard, Ferien und Laptop klingen in Raten machbar. Bei einem Zins bis zum gesetzlichen Höchstsatz von 10 % zahle ich deutlich mehr zurück, als ich bekommen habe — und die Raten laufen weiter, wenn die Ferien längst vorbei sind."
+            },
+            {
+              "label": "Tipp",
+              "text": "Keinen Kredit für etwas aufnehmen, das schneller vorbei ist als der Kredit läuft. Grössere Anschaffungen kaufe ich gestaffelt aus dem laufenden Lohn."
+            }
+          ]
+        },
+        {
+          "titel": "Risiko 3 — Leasing mit Nebenkosten",
+          "zeilen": [
+            {
+              "label": "Folge",
+              "text": "Wer auf ein Leasing schaut, sieht die Monatsrate — Versicherung, Service, Reifen und Wertverlust kommen dazu. Die Rate ist nur ein Teil der Wahrheit."
+            },
+            {
+              "label": "Tipp",
+              "text": "Vor jeder Unterschrift die Vollkosten für ein Jahr ausrechnen, nicht die Monatsrate. Wenn ich die Jahreszahl nicht kenne, unterschreibe ich nicht."
+            }
+          ]
+        },
+        {
+          "titel": "Meine drei Regeln",
+          "zeilen": [
+            {
+              "label": "Regel 1",
+              "text": "Wenn ein Vertrag länger läuft als zwölf Monate, dann schlafe ich mindestens eine Nacht darüber."
+            },
+            {
+              "label": "Regel 2",
+              "text": "Wenn ich etwas nicht aus zwei Monatslöhnen bezahlen könnte, dann kaufe ich es nicht auf Kredit."
+            },
+            {
+              "label": "Regel 3",
+              "text": "Wenn ich ein neues Abo abschliesse, dann kündige ich vorher ein anderes."
+            }
+          ]
+        },
+        {
+          "titel": "Diskussion — auf ein Gegenargument eingehen",
+          "zeilen": [
+            {
+              "label": "Gegenargument",
+              "text": "«Mit einem Kredit habe ich den Laptop sofort und lerne damit besser — das zahlt sich aus.»"
+            },
+            {
+              "label": "Meine Antwort",
+              "text": "Ich sehe das anders als du, denn der Laptop bringt mir keinen höheren Lohn — der Kredit zahlt sich also nicht aus, er kostet nur. Wer mit dem Gerät Geld verdient, rechnet anders; in unserer Lage rechnet es sich nicht."
+            },
+            {
+              "label": "Was ich gelten lasse",
+              "text": "Recht hast du, wenn etwas für die Ausbildung wirklich nötig ist — das schiebe ich nicht auf. Dafür spare ich aber zwei Monate, statt es zu finanzieren."
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "methoden": [
+    {
+      "ref": "lm-17-2-stichwortnotizen",
+      "fuer": "für die Schlüsselwörter im Ratgeber",
+      "tun": "Fassen Sie jedes Risiko und jeden Tipp in einem Stichwort. Der Ratgeber passt auf eine Seite, weil er keine ganzen Sätze enthält."
+    },
+    {
+      "ref": "lm-16-1-diskussion",
+      "fuer": "für den Diskussionsbeitrag",
+      "tun": "Vertreten Sie jede Regel in der Ich-Form, und antworten Sie auf einen fremden Beitrag mit einer der Wendungen aus dem Kapitel. Bei einer Killerphrase fragen Sie nach."
+    },
+    {
+      "ref": "lm-16-3-gestaltung",
+      "fuer": "für den einseitigen Ratgeber",
+      "tun": "Gestalten Sie den Ratgeber nach den Regeln des Kapitels: wenig Text, klare Blöcke, Farbe nur dort, wo sie etwas bedeutet."
+    },
+    {
+      "ref": "hko-kostenfalle-rechnen",
+      "fuer": "für den Warnkasten mit den versteckten Kosten"
+    }
+  ],
+  "reflexion_fragen": [
+    {"nr": "R1", "text": "Welches Verschuldungsrisiko habe ich bei mir selbst unterschätzt?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R2", "text": "Wo in meinem Alltag lauert die grösste Schuldenfalle?", "sub": null, "feld_hoehe_mm": 10},
+    {"nr": "R3", "text": "Welche meiner drei Regeln setze ich ab sofort um?", "sub": null, "feld_hoehe_mm": 10}
+  ],
+
+  "bewertungsraster": [
+    {"produkt": "Leitfragen", "kriterium": "Inhaltliche Korrektheit", "vollstaendig_wenn": ["Alle 4 Leitfragen schriftlich beantwortet", "Schuldenspirale und Vermeidungstipps korrekt erklärt (Kap. 8.2)", "Versteckte Kosten von Leasing/Kredit analysiert (Kap. 8.1)"]},
+    {"produkt": "Mindmap", "kriterium": "Struktur · Tiefe · Verbindungen", "vollstaendig_wenn": ["Zentrum und 4 Ast-Titel übernommen", "Pro Ast eigene Detail-Punkte ergänzt"]},
+    {"produkt": "Handlungsprodukt", "kriterium": "Rubrik 4 Stufen (SuK + Ges)", "vollstaendig_wenn": ["Ratgeber mit Risiken und 5-7 Tipps", "3 persönliche, überprüfbare Regeln", "Regeln in der Diskussion vertreten und auf andere eingegangen"]},
+    {"produkt": "Reflexion", "kriterium": "Tiefe + Transfer", "vollstaendig_wenn": ["Alle 3 Reflexionsfragen beantwortet", "Konkrete Regel zur Umsetzung benannt"]}
+  ],
+
+  "wochen": 3,
+  "wochen_plan": [
+    {"label": "Woche 1 - 45 min", "text": "Herausforderung lesen, LF1-LF2, Risikoteil und Kostenfalle in den Ratgeber", "aktiv": true},
+    {"label": "Woche 2 - 45 min", "text": "LF3-LF4, Entscheid festhalten, drei Regeln formulieren", "aktiv": false},
+    {"label": "Woche 3 - 45 min", "text": "Regeln in der Gruppe vertreten, Ratgeber gegenlesen, Austausch (Set), Reflexion", "aktiv": false}
+  ],
+
+  "template": "default_4page_v2",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {},
+
+  "prinzip_ref": "1.3.1_konsum_verantworten_prinzip",
+  "herausforderung": {
+    "buchstabe": "C",
+    "label": "Schulden vermeiden"
+  },
+
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Attraktives Angebot vs. verstecktes Verschuldungsrisiko",
+    "hint": "Ein Kredit oder Leasing ist nicht per se falsch — entscheidend ist, ob Sie die Folgen tragen können und Ihren Entscheid verantworten wollen."
+  },
+
+  "dekontextualisierung": {
+    "frage": "Woran erkenne ich künftig, ob ein 'bequemes' Angebot ein verstecktes Risiko für mich ist?",
+    "ziel": "Überlegte Konsumentscheidungen entstehen, wenn ich meine momentanen Wünsche bewusst gegen meine langfristige Sicherheit abwäge und meinen Entscheid vor mir selbst begründen kann."
+  },
+
+  "zirkularitaet_anker": {
+    "iteration": "R1",
+    "r2_voraussicht": "T6 'Mein eigenes Zuhause' — finanzielle Verpflichtungen und Verträge im eigenen Haushalt (LJ2).",
+    "r3_voraussicht": "T4 'Verantwortung für mich und andere' — langfristige Absicherung und verantwortungsvoller Umgang mit Verpflichtungen."
+  },
+
+  "quellen_anker": [
+    {"ref": "Kap. 8.2", "titel": "Schulden und Betreibung — Schuldenfalle und Prävention", "unterueberschrift": "Verschuldung und Tipps zur Schuldenvermeidung", "seiten": "Seite 199-202", "fuer_leitfrage": [1, 4]},
+    {"ref": "Kap. 8.1", "titel": "Kaufvertragsarten Teil 2 — Leasing und Konsumkredit", "unterueberschrift": "Leasing, Konsumkredit, Kleindarlehen", "seiten": "Seite 194-196", "fuer_leitfrage": [2]},
+    {"ref": "Kap. 2.2", "titel": "Budget — Kontrolle und Schuldensanierung", "unterueberschrift": "Budget als Kontrollinstrument", "seiten": "Seite 48-49", "fuer_leitfrage": [3]}
+  ],
+
+  "lernfortschritt": {
+    "kriterien": [
+      {"kriterium": "Risiken erkennen", "indikator": "Schuldenspirale und Risikoprodukte korrekt beschrieben", "gewicht_prozent": 25},
+      {"kriterium": "Konsum reflektieren", "indikator": "Eigenes Konsumverhalten ehrlich gegen das Budget gespiegelt", "gewicht_prozent": 25},
+      {"kriterium": "Wege entwickeln", "indikator": "3 konkrete, überprüfbare Regeln formuliert", "gewicht_prozent": 25},
+      {"kriterium": "Diskutieren", "indikator": "Regeln vertreten, auf andere Sicht eingegangen (Kap. 16.1)", "gewicht_prozent": 25}
+    ],
+    "scaffold_90": "Liste möglicher Risiken und Beispiel-Tipps wird bereitgestellt.",
+    "scaffold_100": "Zusätzlich ein reales Abo- oder Kreditangebot aus der Werbung durchrechnen und im Ratgeber als Fallbeispiel aufnehmen."
+  },
+
+  "prinzip_handoff": {
+    "kernkonzept": "Verschuldungsrisiken erkennen und verantworten",
+    "lehrmittel_anker": "Kap. 8.1 S. 194-196 (Leasing, Konsumkredit, Kleindarlehen) plus Kap. 8.2 S. 199-202 (Verschuldung, Schuldenvermeidung).",
+    "kn_aktivierung": "In der KN-Hybrid-Herausforderung muss die Lernende ein verlockendes Angebot als Verschuldungsrisiko erkennen und ihren Entscheid verantworten.",
+    "transfer_check": "Kann die Lernende ein Angebot auf verdeckte Kosten prüfen und eine begründete, verantwortbare Entscheidung treffen?"
+  },
+
+  "sk_anker": [
+    {"sk": 5, "wo": "leitfragen[2] + Reflexion — eigenes Konsumverhalten und Werthaltung kritisch prüfen"},
+    {"sk": 11, "wo": "mehrdeutigkeit.trade_off — attraktives Angebot vs. verstecktes Risiko bleibt abzuwägen"},
+    {"sk": 6, "wo": "leitfragen[3] + Diskussion — eigene Regeln begründet vertreten (Kap. 16.1)"}
+  ]
+}

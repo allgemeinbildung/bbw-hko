@@ -4,35 +4,43 @@
   "prinzip_ref": "{X.Y.Z}_{slug}_prinzip",
   "kn_ref": "{X.Y.Z}_{slug}_kn",
   "lehrgang": "EFZ_3J",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "erstellt_am": "YYYY-MM-DD",
   "lernbegleiter": {
     "version": "1.0",
     "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
-    "ziel": "KI als Lerncoach fuer Repetition + KN-Vorbereitung (1 Satz).",
+    "ziel": "KI als Lerncoach fuer Repetition + KN-Vorbereitung (1 Satz); dazu «KI» einmal ausgeschrieben und «Prompt» erklaert (hoechstens 12 Woerter mehr).",
     "kompetenzversprechen": "verbatim aus prinzip.kern_kompetenzversprechen",
     "ki_frei_zuerst": {
-      "auftrag": "Selbsteinschaetzung VOR KI-Nutzung; Punkte mit 1-3 zuerst ueben.",
+      "auftrag": "hoechstens 2 Saetze: «Schaetzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Ueben Sie danach, was Sie mit 1 bis 3 bewertet haben.» — die Skala MUSS dastehen (der Renderer druckt fuenf Kaestchen ohne Legende)",
       "selbsteinschaetzung": [
         "je ein «Ich kann …»-Satz aus den Teilen des Kompetenzversprechens"
       ]
     },
+    "begriffe": ["6-20 Begriffe der Einheit; v4.2: alle set.glossar[].begriff ohne spur, gleiche Schreibweise"],
     "strategie_karten": [
       {
-        "key": "retrieval | feynman | mock_transfer | uebungs_feedback | repetitionsplan (alle 5)",
-        "technik": "",
-        "wann": "",
-        "prompt_basis": "kopierbarer Prompt mit Unit-Material",
-        "prompt_fortgeschritten": "anspruchsvollere Variante",
-        "warnung": "technik-spezifisch (L3); mock_transfer: verbietet KN-Musterloesung (L2)"
+        "key": "BASIS (Karte 1 und 2): retrieval, dann feynman",
+        "technik": "deutsches Wort ohne Klammer: «Abfragen lassen», «Selbst erklaeren»",
+        "wann": "1 Satz",
+        "prompt_basis": "fertiger Prompt mit Sprachzeile, hoechstens eine Luecke; nennt das Thema der Einheit (basis-plus.md §1 Nr. 5)",
+        "warnung": "1 Satz: womit die Lernenden die Antwort der KI vergleichen (Glossar im Heft / Lehrmittel / Dossier) und was gilt — kein prompt_fortgeschritten in der Basis"
+      },
+      {
+        "key": "PLUS (Karte 3 bis 5): uebungs_feedback, mock_transfer, repetitionsplan — in dieser Reihenfolge",
+        "technik": "«Rueckmeldung holen», «Uebungsfall loesen», «Lernplan machen»",
+        "wann": "1 Satz",
+        "prompt_basis": "fertiger Prompt mit Sprachzeile; Kriterium nie nur als Name (hoechstens zwei, je mit dem, was es verlangt)",
+        "prompt_fortgeschritten": "anspruchsvollere Variante; repetitionsplan: Lernkarten NUR mit Fragen, Antworten schreiben die Lernenden aus dem Glossar",
+        "warnung": "technik-spezifisch (L3); mock_transfer: «Verlangen Sie von der KI nie eine Loesung fuer Ihren Kompetenznachweis. Ueben Sie an neuen Faellen.» (L2)"
       }
     ],
     "kn_typ_tracks": [
       {
         "typ": "fachgespraech | mini_case_schriftlich | werkschau_transfer (einer pro kn.kn_typen)",
-        "label": "",
-        "uebungsfokus": "",
-        "prompt": ""
+        "label": "woertlich wie in kn.json (wird nicht gedruckt)",
+        "uebungsfokus": "1 Satz; ohne das Wort «Prinzip»",
+        "prompt": "fertig, Sprachzeile, <= 45 Woerter; nennt das Thema der Einheit; neuer Fall: sagt in Woertern der Hefte, was er nicht sein soll; Luecke «[was ich gelernt habe]» statt «[mein Prinzip]»"
       }
     ],
     "rubrik_fokus": [
@@ -42,7 +50,7 @@
         "so_uebst_du": ""
       }
     ],
-    "integritaet_warnung": "Leitplanke in Lernenden-Sprache: KI hilft beim Ueben, nie bei der KN-Abgabe.",
-    "selbstcheck": ["4-5 Haekchen-Saetze inkl. «Mock-Faelle anders als KN», «Quellen geprueft»"]
+    "integritaet_warnung": "Leitplanke in Lernenden-Sprache, hoechstens 2 Saetze; «allein und ohne KI» nur, wenn kn.json das fuer JEDE KN-Form sagt (bei einer Werkschau: «Die KI stellt Fragen und zeigt Luecken. Was auf Ihrem Blatt steht, schreiben Sie selbst.»)",
+    "selbstcheck": ["3-4 Haekchen-Saetze inkl. «Ich habe an neuen Faellen geuebt, nicht an den Faellen aus meinen Heften.», «Ich habe Angaben der KI nachgeschlagen.»"]
   }
 }

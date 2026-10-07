@@ -35,6 +35,18 @@ Handlungsprodukt-Typen, `trade_off_raum`, `zirkularitaet`.
 - +25 wenn die Herausforderungen Entscheidungs-Leitfragen (K3 «Entscheide») dominant haben
 - +15 wenn ein Trade-off explizit «X vs. Y» strukturiert ist
 
+**«dominant» wird gezählt, nicht geschätzt.** Alle Leitfragen der Einheit zählen:
+je Herausforderung `leitfragen[]`, bei v4.2 dazu die `leitfrage` des Hefts.
+Entscheidungsfrage ist eine Frage, die einen eigenen Entscheid oder eine Wahl
+zwischen Möglichkeiten verlangt (entscheiden, wählen, abwägen, «soll ich …»).
+Dominant = **mindestens die Hälfte** aller Leitfragen. Zähler und Nenner stehen in
+der Rückmeldung («3 von 8»). Im Lauf vom 07.10.2026 kippte der Basis-Auftrag in
+beiden Sonden an diesem einen Urteil.
+
+Der Entscheidungscoach braucht zudem einen **Entscheid, den die Lernenden in der
+Einheit wirklich treffen** und so nennen. Heissen die Produkte «Standort», «Regel»
+oder «Drehbuch», ist `ai_lernassistent` das passende Basis-Muster.
+
 **`ai_prompt_duell`** (Prompt-Varianten vergleichen, K4)
 - +20 wenn sk_targets SK 11 enthält
 - +15 wenn Aspekte `Technologische und digitale Transformation` enthalten
@@ -45,10 +57,19 @@ Handlungsprodukt-Typen, `trade_off_raum`, `zirkularitaet`.
 
 ## Auswahl
 
-- Genau **2** Patterns: die zwei höchsten Scores.
-- Minimum-Score 30; liegen alle darunter: trotzdem Top-2 + flaggen.
-- Die zwei müssen **verschiedene KI-Kompetenzen** trainieren (nicht zweimal
-  «Gegenposition»): bei inhaltlicher Nähe das drittplatzierte nachziehen.
+Genau **2** Patterns — eines Basis, eines Plus (`basis-plus.md`):
+
+- **`ki_1` (Basis)** kommt aus dem **Basis-Pool**: `ai_lernassistent` oder
+  `ai_entscheidungscoach` — das besser bewertete; bei Gleichstand
+  `ai_lernassistent`. In beiden stellt die KI **Fragen zur Arbeit der Lernenden**
+  (zum eigenen Produkt bzw. zur eigenen Entscheidung im Spannungsfeld) und schreibt
+  selbst nichts. Der Basis-Auftrag wird immer erzeugt, auch wenn sein Score unter
+  30 liegt — er ist der Einstieg, nicht die Kür.
+- **`ki_2` (Plus)** ist das bestbewertete der übrigen fünf (`ai_gegenpositionen`,
+  `ai_redaktion`, `ai_ethik_tribunal`, `ai_prompt_duell`, `ai_zeitkapsel`).
+  Minimum-Score 30; liegen alle darunter: trotzdem das beste + flaggen.
+- Warum getrennt: In den fünf Plus-Mustern bearbeiten die Lernenden einen Inhalt
+  **und** beurteilen zugleich die KI (K4-K5). Die Hefte zielen auf K2-K4.
 - Quellen-/Rechts-Verifikation ist KEIN eigenes Pattern, sondern Pflicht-
   Gütekriterium in beiden Aufträgen (bei Recht besonders streng).
 
@@ -56,11 +77,14 @@ Handlungsprodukt-Typen, `trade_off_raum`, `zirkularitaet`.
 
 ```
 KI-Toolbox für: {slug}
-1. {pattern_1}  (Score {s1}) — {grund, max 80 Zeichen}
-2. {pattern_2}  (Score {s2}) — {grund}
+Basis  {pattern_1}  (Score {s1}) — {grund, max 80 Zeichen}
+Plus   {pattern_2}  (Score {s2}) — {grund}
 Bestätigen? [j / ändern]
 ```
 
-> Referenz-Scoring (Gold-Unit 1.1.1_konflikt): Aspekte Recht+Ethik, sk_targets
-> [6,7,11], Produkt B = E-Mail/Schreiben → `ai_gegenpositionen` (80) +
-> `ai_redaktion` (75). Diese beiden bilden die Gold-`ki.json`.
+> Referenz-Scoring (1.1.1_konflikt): Aspekte Recht+Ethik, sk_targets [6,7,11],
+> Produkt B = E-Mail/Schreiben → `ai_gegenpositionen` (80), `ai_redaktion` (75).
+> Basis-Pool: `ai_lernassistent` 35 (methodenlastig 25 + universell 10),
+> `ai_entscheidungscoach` 15 (nur «X vs. Y»; eine von vier Leitfragen je
+> Herausforderung ist eine Entscheidungsfrage → nicht dominant). Ergebnis seit
+> 07.10.2026: Basis `ai_lernassistent`, Plus `ai_gegenpositionen`.

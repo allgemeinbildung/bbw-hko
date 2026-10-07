@@ -19,7 +19,11 @@
  * Pfade: Einheitsdateien relativ zu src/data/einheiten/<slug>/,
  *        `quellen/<id>.json` = src/data/quellen/, `methoden/<id>.json` = src/data/methoden/.
  *
- * Exit 0 nur ohne Befund. HINWEIS-Zeilen (nicht maschinell pruefbar) zaehlen nicht.
+ *   dazu   nachgetragene Budgets (E38, an den 16 Einheiten gemessen: NACHGETRAGEN unten) — Erwartung der
+ *          Vertiefung, Loesungen S. 3/S. 4, Kartentexte fuer/tun/beispiel, Stufentexte in KN und Auftrag,
+ *          Zahlentabelle des Auftrags. An gebundenen Einheiten WARN_V42_BUDGET (kein Befund).
+ *
+ * Exit 0 nur ohne Befund. HINWEIS- und WARN-Zeilen zaehlen nicht.
  */
 import { readFileSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
@@ -151,6 +155,60 @@ function anzahl(datei, pfad, liste, min, maxN, was = 'Eintraege') {
   add('budget', 'ERR_V42_BUDGET', datei, pfad, B, `${Array.isArray(liste) ? ist : 'fehlt (0)'} ${was}`, `${soll} ${was}`)
 }
 
+// ------------------------------------------- Nachgetragene Budgets (ENTSCHEIDE E38, Stufe B)
+//
+// Fuenf Budgets, die die Laufberichte als fehlend meldeten (Rueckblick 2026-10-06 §4, Zeile 1: Seitenueberlauf
+// bei gruenem check-all). Die Werte sind GEMESSEN, nicht geschaetzt: Am 07.10.2026 wurden alle 16 Einheiten im
+// Format v4.2 exportiert (export-v42) und in Chrome gemessen (messen-v42: jede Seite ohne Ueberlauf). Ein Budget
+// ist der HOECHSTWERT, der in diesen 16 Einheiten vorkommt — also der groesste Wert, von dem gemessen ist, dass
+// er passt. Bei jedem Budget steht, in welcher Einheit er steht und wie viel Reserve die Seite dort hatte.
+//
+// Folge: Keine der 16 Einheiten ueberschreitet ein nachgetragenes Budget. Wer darueber liegt, liegt ueber allem,
+// was je gemessen gepasst hat — das heisst nicht, dass es nicht passt (eine kurze Nachbarzelle gibt Platz frei),
+// aber die Messung muss es zeigen. Darum:
+//   gebundene Einheit (publiziert, archiviert, kein Feld)  → WARNUNG, der Exit bleibt 0 (Bestand bleibt gruen)
+//   Entwurf, Budget «hart» (Seite beim Hoechstwert voll)    → Befund ERR_V42_BUDGET
+//   Entwurf, Budget nicht hart (Seite hatte Reserve, oder
+//   die Seite ist nicht messbar: S. 6 misst immer 0 px)     → WARNUNG; messen-v42 entscheidet
+//
+// «Voll» heisst: 8.7 px Reserve — weniger als eine Zeile (die Reserven der Loesungsseiten liegen in Schritten von
+// rund 18.7 px: 8.7 · 27.4 · 46 · 64.7 …). Die Zeichensumme sagt eine Seite nur grob voraus: Loesungen S. 4 hatte
+// keine freie Zeile mehr bei 3026 Zeichen (5.2.1 A), aber auch bei 2157 (2.2.1 B) und 2546 (2.5.1 A). Das Budget
+// ist also eine notwendige Grenze, keine hinreichende — messen-v42 bleibt das Mass.
+const NACHGETRAGEN = {
+  // Loesungen S. 4, Spur mit Medien: Erwartung zu einer Vertiefung (`spuren.mit_medien.quellen[i].erwartung`).
+  erwartung: { soll: 730, hart: true, gemessen: '2.2.1_meinungsfreiheit_reflektieren, Heft B: 730 Zeichen, Loesungen S. 4 mit 8.7 px Reserve' },
+  // Loesungen S. 4, je Spur: Erwartungshorizont LF4 + Erwartungen der Vertiefungen + ausgefuellte Denkhilfe.
+  loesungS4: { soll: 3026, hart: true, gemessen: '5.2.1_gesetze_veraendern, Heft A mit Medien: 3026 Zeichen, Loesungen S. 4 mit 8.7 px Reserve' },
+  // Loesungen S. 3, Spur mit Medien: kern + Zeilen (label, text, quelle) + Rasterzeilen + Befund von LF3.
+  // Nicht hart: Beim Hoechstwert blieben 87 px. Dieselbe Einheit zeigt aber, wie nah die Grenze ist — Heft B hatte
+  // bei 2138 Zeichen nur 14.9 px Reserve (keine freie Zeile).
+  loesungS3: { soll: 2151, hart: false, gemessen: '3.2.1_konsumfolgen_beurteilen, Heft A mit Medien: 2151 Zeichen, Loesungen S. 3 mit 87.1 px Reserve (Heft B: 2138 Zeichen, 14.9 px)' },
+  // Heft S. 6, Kartentexte, die das Heft selbst schreibt (Uebertragung auf die Abgabe). S. 6 misst immer
+  // «Reserve 0 px» (die Karten fuellen die Seite), darum nie hart: Der Hoechstwert sagt nur «so viel hat gepasst».
+  karteFuer: { soll: 106, hart: false, gemessen: '4.1.1_wohlbefinden_staerken, Heft B: 106 Zeichen' },
+  karteTun: { soll: 267, hart: false, gemessen: '4.3.1_vielfalt_untersuchen, Heft A: 267 Zeichen' },
+  karteBeispielZeilen: { soll: 5, hart: false, gemessen: '3.1.1_konsum_verantworten_3j, Heft A: 5 Zeilen' },
+  karteBeispielZeile: { soll: 116, hart: false, gemessen: '3.3.1_kaufvertrag_beurteilen, Heft A: 116 Zeichen' },
+  rezeptionFuer: { soll: 80, hart: false, gemessen: '4.2.1_risiken_absichern, Heft A mit Medien: 80 Zeichen' },
+  rezeptionBeispiel: { soll: 178, hart: false, gemessen: '2.1.1_informationen_hinterfragen, Heft B mit Medien: 178 Zeichen' },
+  // Stufentexte im KN und im Auftragsbogen (A4). Das Heft darf sie nicht kuerzen (Regel 6: Wortlaut des KN) —
+  // ueber 120 Zeichen im KN bricht darum das Budget des Hefts. Laengster Stufentext der 16 Einheiten: 112.
+  stufe: { soll: 120, hart: true, gemessen: 'Budget des Hefts (120); laengster Stufentext: 3.3.1_kaufvertrag_beurteilen, 112 Zeichen' },
+  // Zahlentabelle des Auftrags (Bogen A1). Das Heft fuehrt 45/15; der Bogen ist breiter.
+  auftragLabel: { soll: 45, hart: false, gemessen: 'Budget des Hefts (45); laengstes Label: 2.1.1_informationen_hinterfragen, 44 Zeichen, Bogen A1 mit 15.8 px Reserve' },
+  auftragWert: { soll: 30, hart: false, gemessen: '4.2.1_risiken_absichern: 30 Zeichen, Bogen A1 mit 4 px Reserve' },
+}
+const warnungen = []
+/** Nachgetragenes Budget pruefen — siehe Kommentar oben. `ist` ist eine Zahl. */
+function nachgetragen(key, datei, pfad, ist, was = 'Zeichen') {
+  const b = NACHGETRAGEN[key]
+  if (!(ist > b.soll)) return
+  const gebunden = set?.status !== 'entwurf'
+  if (b.hart && !gebunden) add('budget', 'ERR_V42_BUDGET', datei, pfad, `${B} nachgetragen (E38)`, `${ist} ${was}`, `≤ ${b.soll} ${was} — gemessen: ${b.gemessen}`)
+  else warnungen.push({ datei, pfad, ist: `${ist} ${was}`, soll: `≤ ${b.soll} ${was}`, gemessen: b.gemessen, grund: gebunden ? 'gebundene Einheit' : 'Seite beim Hoechstwert nicht voll bzw. nicht messbar — messen-v42 entscheidet' })
+}
+
 function feldHoehe(datei, pfad, ist, soll) {
   if (ist !== soll) add('budget', 'ERR_V42_BUDGET', datei, pfad, `${B} feld_hoehe_mm`, `${ist === undefined ? 'nicht gesetzt' : `${ist} mm`}`, `${soll} mm`)
 }
@@ -236,6 +294,17 @@ function budgetKern(datei, sit) {
   })
   max(datei, 'lernfortschritt.scaffold_100', sit.lernfortschritt?.scaffold_100, 150)
 
+  // Nachgetragen (E38): Kartentexte auf S. 6, die das Heft selbst schreibt (`fuer`, `tun`, `beispiel`).
+  ;(Array.isArray(sit.methoden) ? sit.methoden : []).forEach((m, i) => {
+    if (!m || m.ref === '__spur__') return
+    if (typeof m.fuer === 'string') nachgetragen('karteFuer', datei, `methoden[${i}].fuer`, len(m.fuer))
+    if (typeof m.tun === 'string') nachgetragen('karteTun', datei, `methoden[${i}].tun`, len(m.tun))
+    if (Array.isArray(m.beispiel)) {
+      nachgetragen('karteBeispielZeilen', datei, `methoden[${i}].beispiel`, m.beispiel.length, 'Zeilen')
+      m.beispiel.forEach((b, j) => nachgetragen('karteBeispielZeile', datei, `methoden[${i}].beispiel[${j}]`, len(b)))
+    }
+  })
+
   max(datei, 'mindmap_zentrum', sit.mindmap_zentrum, 40)
   anzahl(datei, 'mindmap_aeste', sit.mindmap_aeste, 4, 4, 'Aeste')
   ;(sit.mindmap_aeste ?? []).forEach((a, i) => {
@@ -272,6 +341,21 @@ function budgetSpur(datei, spurKey, spur) {
     budgetRaster(datei, `${basis}.quellen[${i}].raster`, q?.raster)
     max(datei, `${basis}.quellen[${i}].leitfrage_vertiefung`, q?.leitfrage_vertiefung, 100)
   })
+  // Nachgetragen (E38): Loesungen S. 3 und S. 4 — die Felder, die nur das Dokument «Loesungen» druckt.
+  const lf3 = (spur.leitfragen ?? []).find((l) => l?.nr === 3)?.loesung ?? {}
+  const lf4 = (spur.leitfragen ?? []).find((l) => l?.nr === 4)?.loesung?.erwartungshorizont ?? {}
+  const erwartungen = (spur.quellen ?? []).map((q) => len(q?.erwartung))
+  ;(spur.quellen ?? []).forEach((q, i) => { if (typeof q?.erwartung === 'string') nachgetragen('erwartung', datei, `${basis}.quellen[${i}].erwartung`, len(q.erwartung)) })
+  const summeS3 = len(lf3.kern) + (lf3.zeilen ?? []).reduce((n, z) => n + len(z?.label) + len(z?.text) + len(z?.quelle), 0) + (lf3.raster_zeilen ?? []).flat().reduce((n, c) => n + len(c), 0) + len(lf3.befund)
+  if (spurKey === 'mit_medien') nachgetragen('loesungS3', datei, `${basis}.leitfragen[LF3].loesung (kern + zeilen + raster_zeilen + befund)`, summeS3, 'Zeichen zusammen')
+  const summeS4 = (lf4.gut_wenn ?? []).reduce((n, x) => n + len(x), 0) + len(lf4.beispiel_pol_1) + len(lf4.beispiel_pol_2) + len(lf4.tragfaehig) + len(lf4.nicht_tragfaehig)
+    + erwartungen.reduce((a, b) => a + b, 0) + (spur.kasten_s4?.loesung_zeilen ?? []).flat().reduce((n, c) => n + len(c), 0)
+  nachgetragen('loesungS4', datei, `${basis} (Erwartungshorizont LF4 + Erwartungen der Vertiefungen + Denkhilfe)`, summeS4, 'Zeichen zusammen')
+  // Nachgetragen (E38): Rezeptionskarte der Spur (Heft S. 6).
+  const rez = spur.methoden_ref_rezeption
+  if (typeof rez?.fuer === 'string') nachgetragen('rezeptionFuer', datei, `${basis}.methoden_ref_rezeption.fuer`, len(rez.fuer))
+  ;(Array.isArray(rez?.beispiel) ? rez.beispiel : []).forEach((b, i) => nachgetragen('rezeptionBeispiel', datei, `${basis}.methoden_ref_rezeption.beispiel[${i}]`, len(b)))
+
   const ks = spur.kasten_s4
   if (ks?.typ === 'denkhilfe') {
     anzahl(datei, `${basis}.kasten_s4.spalten`, ks.spalten, 2, 3, 'Spalten')
@@ -294,10 +378,13 @@ function auftragSpalten(datei, pfad, auftrag, spalten) {
   const i = auftrag.lastIndexOf(': ')
   if (i < 0) return
   const koepfe = spalten.flatMap((s) => String(s).replace(/^→\s*/, '').toLowerCase().split(/\s*\/\s*/)).filter(Boolean)
+  // Reihenfolge: zuerst die Klammern weg, dann am Satzende schneiden. Umgekehrt zerschnitt der Punkt in
+  // «(Glossar, Heft S. 8)» die Klammer, ihr Rest blieb als Glied stehen und galt als fremde Spalte
+  // (Bericht 2026-10-05-241). Ein Punkt nach «S», «Kap», «Abs», «vgl», «bzw» ist kein Satzende.
   const glieder = auftrag
     .slice(i + 2)
-    .split(/[.;]/)[0]
     .replace(/\([^)]*\)/g, ' ')
+    .split(/(?<!\b(?:S|Kap|Abs|vgl|bzw|ca|mind|Nr))\.(?=\s|$)|;/)[0]
     .split(/,| und | dann | sowie /)
     .map((g) => g.toLowerCase().replace(/[«»]/g, '').replace(/(^|\s)(vorn|hinten|dann|je|ein|eine|einen|die|der|das)(?=\s|$)/g, ' ').replace(/\s+/g, ' ').trim())
     .filter(Boolean)
@@ -315,6 +402,12 @@ function budgetAuftrag(ga) {
   const b = 'gemeinsamer_auftrag'
   max(datei, `${b}.situation_text`, ga.situation_text, 900)
   anzahl(datei, `${b}.zahlen_tabelle`, ga.zahlen_tabelle, 0, 4, 'Zeilen')
+  // Nachgetragen (E38): Zahlentabelle des Auftrags (Bogen A1) und Stufentexte auf A4.
+  ;(Array.isArray(ga.zahlen_tabelle) ? ga.zahlen_tabelle : []).forEach((z, i) => {
+    if (typeof z?.label === 'string') nachgetragen('auftragLabel', datei, `${b}.zahlen_tabelle[${i}].label`, len(z.label))
+    if (typeof z?.wert === 'string') nachgetragen('auftragWert', datei, `${b}.zahlen_tabelle[${i}].wert`, len(z.wert))
+  })
+  ;(Array.isArray(ga.feedback_kriterien) ? ga.feedback_kriterien : []).forEach((k, i) => (Array.isArray(k?.stufen) ? k.stufen : []).forEach((s, j) => { if (typeof s === 'string') nachgetragen('stufe', datei, `${b}.feedback_kriterien[${i}].stufen[${j}]`, len(s)) }))
   anzahl(datei, `${b}.schritte`, ga.schritte, 5, 5, 'Schritte')
   ;(ga.schritte ?? []).forEach((s, i) => {
     max(datei, `${b}.schritte[${i}].label`, s?.label, 30)
@@ -879,8 +972,9 @@ for (const L of ['A', 'B']) {
 
 // Seit der Freigabe vom 05.10.2026 (E32) darf eine v4.2-Einheit publiziert sein. Dass ein
 // frisch erzeugter Ordner «entwurf» trägt, erzwingt check-all unter --neu und --cloud.
-if (set && set.status !== 'entwurf' && set.status !== 'publiziert') {
-  add('regel', 'ERR_V42_STATUS', 'set.json', 'status', 'E32', zeige(set.status), '"entwurf" oder "publiziert"')
+// «archiviert» (E37) ist der dritte Status: eine abgelöste Einheit, nur für KT1 sichtbar.
+if (set && !['entwurf', 'publiziert', 'archiviert'].includes(set.status)) {
+  add('regel', 'ERR_V42_STATUS', 'set.json', 'status', 'E32/E37', zeige(set.status), '"entwurf", "publiziert" oder "archiviert"')
 }
 
 // Fall-Begriffe: aus dem Prinzip, plus Wortformen. Vergleich in Kleinbuchstaben.
@@ -978,6 +1072,9 @@ regelLoesungen(hefte)
 regel8(set, prinzip)
 regel9Kontext(set, FALL_BEGRIFFE)
 
+// Nachgetragen (E38): Stufentexte im KN — das Heft uebernimmt sie woertlich (Regel 6) und hat 120 Zeichen.
+if (kn) (Array.isArray(kn.rubrik_shared?.kriterien) ? kn.rubrik_shared.kriterien : []).forEach((k, i) => (Array.isArray(k?.stufen) ? k.stufen : []).forEach((s, j) => { if (typeof s === 'string') nachgetragen('stufe', 'kn.json', `rubrik_shared.kriterien[${i}].stufen[${j}]`, len(s)) }))
+
 if (set) {
   if (set.gemeinsamer_auftrag) budgetAuftrag(set.gemeinsamer_auftrag)
   regelAuftragProdukte(set.gemeinsamer_auftrag)
@@ -1030,6 +1127,14 @@ for (const [kat, titel] of KAT) {
 if (hinweise.length) {
   console.log(`\nHinweise (nicht maschinell pruefbar, kein Befund) — ${hinweise.length}`)
   for (const h of hinweise) console.log(`  HINWEIS  ${h.datei}${h.pfad ? ` › ${h.pfad}` : ''}  — ${h.text}`)
+}
+
+if (warnungen.length) {
+  console.log(`\nWarnungen (nachgetragene Budgets, E38 — kein Befund, Exit unveraendert) — ${warnungen.length}`)
+  for (const w of warnungen) {
+    console.log(`  WARN_V42_BUDGET  ${w.datei}${w.pfad ? ` › ${w.pfad}` : ''}  [${w.grund}]`)
+    console.log(`      Ist: ${w.ist}  |  Soll: ${w.soll} — gemessen: ${w.gemessen}`)
+  }
 }
 
 const proCode = {}

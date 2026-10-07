@@ -19,31 +19,56 @@ und ein Blick aufs Papier; Zeiten sind Schätzungen. Der Bericht sagt das.
 |---|---|---|---|
 | **Lernende/r, Profil a** (stark, schnell, liest genau) | je Heft und vorhandener Spur | Seitentext des Hefts; Spur mit Medien: QR-Seite und Quelle; die genannten Lehrmittelseiten | Widersprüche zwischen Seiten, Aufträge, die das Material nicht trägt, vorweggenommene Entscheide |
 | **Lernende/r am Auftragsbogen**, Profil a | 1 je Einheit | Seitentext des Auftragsbogens, dazu S. 4 und 8 beider Hefte | Schritte ohne Abgabe, Kriterien ohne Auftrag, Fall passt nicht zu den Heften |
-| **Lösungs-Audit** | je Heft und vorhandener Spur | Dokument «Lösungen», Kapiteldatei bzw. Archivtext | falsche Fundstellen, Zeitmarken, Fakten |
-| **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, gesperrte Wörter, Anrede |
+| **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, Fall-Begriffe, Anrede |
 
-Bei zwei Heften mit je zwei Spuren sind das vier Lernende a,
-ein Bogen-Leser, vier Audits und ein Sweep: zehn. Modell: Sonnet. Nicht zur
-festen Besetzung gehören das Profil «Deutsch als Zweitsprache, B1» (Entscheid
-E31: Befunde zu Sprachlast und Zeitbedarf für B1 werden nicht bearbeitet) und
-das Profil «wenig Lust, macht das Minimum»; dieses lohnt sich für eine
-Stichprobe, wenn die Frage ist, was übersprungen wird.
+Modell: Sonnet. Jede/r Lernende — auch am Auftragsbogen — gibt neben dem
+Lesebericht **das eigene Produkt als Datei** ab (Abschnitt 4.1); daran hängt
+die Lösbarkeitsprobe. Nicht zur festen Besetzung gehören das Profil «Deutsch
+als Zweitsprache, B1» (Entscheid E31: Befunde zu Sprachlast und Zeitbedarf für
+B1 werden nicht bearbeitet) und das Profil «wenig Lust, macht das Minimum»;
+dieses lohnt sich für eine Stichprobe, wenn die Frage ist, was übersprungen
+wird.
+
+**Nicht Gegenleser, aber Teil jedes Laufs: die drei Audits**
+(`references/audits.md`). Die Gegenleser finden Bearbeitbarkeit, nicht
+Wahrheit; die Audits geben je eine Datei ab, die ein Skript prüft:
+
+| Audit | Modell | Anzahl | Prüft | Gibt ab |
+|---|---|---|---|---|
+| **Lösungs-Audit** | Opus | je Heft und vorhandener Spur, dazu 1 für den Auftrag | jede Lösung gegen Quelle und Lehrmittel — **blind gelöst, dann verglichen** | `belege.json` |
+| **Fakten-Audit** | Opus, mit Netz | 1 je Einheit | jede Rechts- und Sachaussage gegen Gesetz und Amt | `fakten.json` |
+| **Lösbarkeitsprobe** | Sonnet | je Produkt eines Lernenden-Gegenlesers | ob ein sorgfältiges Produkt die höchste Stufe erreichen kann, der Form des Lösungsbilds entspricht und LF4 eine echte Wahl lässt | `probe.json` |
+
+**Zahl der Agenten je Lauf**, bei zwei Heften mit je zwei Spuren: vier Lernende,
+ein Bogen-Leser, ein Sweep (sechs, Sonnet) · fünf Lösungs-Audits (Opus) · ein
+Fakten-Audit (Opus) · fünf Lösbarkeitsproben (Sonnet) — **siebzehn**. Bis
+07.10.2026 waren es elf: Das Lösungs-Audit lief mit vier Agenten auf Sonnet,
+las die Lösung zuerst und gab Prosa ab; die Lösbarkeitsprobe gab es nicht. Wer
+wann läuft und was gleichzeitig laufen darf: `references/lauf.md` §4–§5.
+(Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md`
+§4, §5.2, §5.3; ENTSCHEIDE E38, Stufe C.)
 
 ## 2. Zeitpunkt
 
 **Nach der letzten Reparatur- oder Kürzungsrunde, nicht nach dem ersten grünen
 Tor.** Reihenfolge im Lauf:
 
-1. Tor grün (`references/phase-9-tor.md` §1), Messung ohne Überlauf.
-2. Gegenleser, alle parallel.
-3. Befunde nachprüfen (Abschnitt 5), Aufträge an die Executors, Tor neu.
+1. Tor grün im ersten Durchgang (`references/phase-9-tor.md` §1), Messung ohne
+   Überlauf.
+2. Gegenleser, alle parallel — daneben Lösungs-Audit und Fakten-Audit; die
+   Lösbarkeitsprobe, sobald ein Produkt vorliegt (`references/audits.md` §1.3).
+3. Befunde nachprüfen (Abschnitt 5) — auch jedes Urteil der Audits, das nicht
+   «stimmt» bzw. «belegt» heisst, und jeden Befund der Probe —, Aufträge an die
+   Executors, Tor neu.
 4. Hat Schritt 3 sichtbaren Text geändert — auch nur durch Kürzen wegen
    Überlauf —, lesen die Lernenden-Gegenleser der betroffenen Dokumente die
    **geänderten Seiten** noch einmal. Erst wenn eine Runde nichts Sichtbares mehr
    ändert, ist das Gegenlesen abgeschlossen.
 
 Höchstens drei Runden (wie `phase-9-tor.md` §2). Was danach offen ist, steht im
-Bericht.
+Bericht unter «Offen». Ändert Phase 10 noch Text oder eine Lösung, wird dort
+erneut gelesen (`references/phase-10-abschluss.md` §4) — die Runden zählen
+zusammen.
 
 ## 3. Paket für die Lernenden-Gegenleser
 
@@ -68,12 +93,40 @@ mit Seitenmarken nach `<tmp>/text/`. Dazu ins Paket:
 - **Auftragsbogen:** S. 4 und 8 beider Hefte als das, was die Person mitbringt.
 - **Nie:** Begleiter, Lösungen, Bauplan, Prinzip, KN.
 
+**Paket ansehen, bevor es hinausgeht.** Die Dateien `quelle.md` im Archiv haben
+nicht alle dieselbe Form (mit oder ohne Abschnitt «Text des Ausschnitts», Text
+nach der ersten Trennlinie, Absätze mit oder ohne Zwischentitel gezählt, eine
+Grafik statt Text) und tragen Windows-Zeilenenden. Ein Paket, das nur den Kopf
+der Quelle enthält, liefert eine wertlose Lesung: Steht der Text des
+Ausschnitts wirklich darin? (Herkunft: Berichte `2026-10-04-321` §10,
+`2026-10-04-411` §10, `2026-10-06-4.3.1_vielfalt_untersuchen` §10.)
+
 ## 4. Aufträge
 
 ### 4.1 Lernende (Heft und Auftragsbogen)
 
-Rolle voranstellen: Lernende/r im 1. Lehrjahr EFZ, 16 Jahre, mit dem Profil aus
-Abschnitt 1; die Person weiss nur, was im Paket steht. Dann wörtlich:
+Rolle voranstellen — ein Satz, den der Orchestrator **je Einheit herleitet**,
+nie aus einem früheren Lauf übernimmt:
+
+> Du bist Lernende/r `<lehrgang>` im `<lehrjahr>`. Lehrjahr, `<alter>` Jahre
+> alt, `<profil>`. Du weisst nur, was in deinem Paket steht.
+
+| Platzhalter | Herleitung |
+|---|---|
+| `<lehrgang>` | aus `lehrgang` der Hefte (`herausforderung_A.json`): `EFZ_3J` → «EFZ, dreijährige Lehre», `EFZ_4J` → «EFZ, vierjährige Lehre». Gilt die Einheit für zwei Lehrgänge (`set.json › lehrgaenge`), zählt der kanonische |
+| `<lehrjahr>` | das Lehrjahr des Themas im Datensatz dieses Lehrgangs (`public/nrlp_3j.json` bzw. `nrlp_4j.json`, `themen[].lehrjahr` für das Thema aus `nrlp.themen`); der Bauplan §1 nennt es in der Zeile «Thema» — am Datensatz nachsehen, nicht dem Bauplan glauben. Dieselbe Zahl steht in `persona.beruf` der Hefte |
+| `<alter>` | 15 + Lehrjahr (16 im ersten, je Lehrjahr ein Jahr mehr) |
+| `<profil>` | das Profil aus Abschnitt 1, ausgeschrieben («stark, schnell, liest genau») |
+
+Die Seitenzahlen im Auftrag unten (Seite 3, 4, 6) sind keine Angaben einer
+Einheit: Die Seitenfolge des Hefts ist im Renderer fest (`HEFT_SEITEN` und
+`seiteVonFeld` in `scripts/lib/pruefung.mjs`); ebenso die Punkte 0 bis 3 (vier
+Stufen je Kriterium, `datenvertrag.md`). `check-skelette.mjs` prüft die
+wörtlichen Auftragszeilen dieser Datei auf ein festes Lehrjahr, einen
+Lehrgang, ein Alter, ein Modell mit Version und einen absoluten Pfad.
+(Herkunft: Berichte `2026-10-04-411` §10 — «1. Lehrjahr» war für Thema 4
+falsch — und `2026-10-06-5.2.1_gesetze_veraendern` §11; Rückblick §5.4;
+Auftrag 10, Stufe D Nr. 3; ENTSCHEIDE E38, Stufe D.) Dann wörtlich:
 
 > Arbeite das Dokument von Seite 1 bis zum Schluss durch, in der Rolle. Halte je
 > Seite fest: (1) was ich hier tun soll, in meinen Worten — oder dass ich es
@@ -81,7 +134,7 @@ Abschnitt 1; die Person weiss nur, was im Paket steht. Dann wörtlich:
 > schreiben würde; (3) wo ich hängen bleibe: Wort, Satz, Auftrag, fehlende
 > Angabe, Widerspruch zu einer anderen Seite — mit Seite und exaktem Wortlaut in
 > «…»; (4) geschätzte Zeit. Dann kritisch, aus meiner Sicht: Trägt die Quelle
-> die Frage von Seite 3? Weiss ich bei jedem der fünf Schritte, was ich abgebe?
+> die Frage von Seite 3? Weiss ich bei jedem Schritt, was ich abgebe?
 > Kann ich das Produkt mit dem, was auf den Seiten steht, wirklich herstellen?
 > Hilft mir das Beispiel auf Seite 6 oder führt es mich in die Irre? Verstehe
 > ich die Kriterien und kann ich mich einschätzen? Was würde ich überspringen?
@@ -89,27 +142,45 @@ Abschnitt 1; die Person weiss nur, was im Paket steht. Dann wörtlich:
 > auf welche Seite gehört? Nenne am Schluss die drei Stellen, die mich am
 > meisten gestört haben, mit Seite und Wortlaut. Nichts beschönigen, nichts
 > reparieren, keine Verbesserungsvorschläge, keine Subagenten.
+>
+> Gib dazu dein **Produkt als eigene Datei** ab, so sorgfältig, wie du es als
+> starke Lernende abgeben würdest — ohne Kommentar, ohne Kritik: (1) alles, was
+> «Das geben Sie ab» verlangt, vollständig und in der verlangten Form (Tabelle
+> als Tabelle, jede Zeile, jeder Satz); (2) deine Antwort auf die Frage der
+> Seite 4 (LF4) im Wortlaut, und darunter eine Zeile «Ebenso vertretbar wäre:
+> …» — oder «Eine zweite vertretbare Antwort sehe ich nicht, weil …»; (3) deine
+> Selbsteinschätzung: je Kriterium die Punkte 0 bis 3 und die Stelle im Produkt,
+> auf die du dich stützt. Beim Auftragsbogen: beide Produkte, und statt LF4 die
+> Frage des Auftrags.
 
 «Durcharbeiten und die Antworten hinschreiben» ist der Kern: Dass ein
 Lehrmittel-Abschnitt eine Frage nicht trägt, fällt erst auf, wenn jemand den
 Befund schreiben muss. «Lies und beurteile» findet das nicht.
 
-Rückgabe: eine Datei mit Tabelle je Seite (vier Spalten), den kritischen
-Antworten, den drei Stellen und der Zeitsumme; höchstens 120 Zeilen. An den
-Orchestrator zurück: Pfad und die drei Stellen.
+Rückgabe: **zwei Dateien** im Temp-Ordner des Laufs, ausserhalb des Repos —
+der Lesebericht (Tabelle je Seite mit vier Spalten, die kritischen Antworten,
+die drei Stellen, die Zeitsumme; höchstens 120 Zeilen) und das Produkt
+`<tmp>/gegenleser/produkt.<heft>.<spur>.md` (beim Auftragsbogen
+`produkt.auftrag.beide.md`). An den Orchestrator zurück: beide Pfade und die
+drei Stellen. Das Produkt geht unverändert an die Lösbarkeitsprobe
+(`references/audits.md` §4) — der Lesebericht nicht. (Herkunft: Rückblick
+§5.2, Zeile «Aufgabe nicht lösbar, keine echte Wahl»; Auftrag 10, Stufe C
+Nr. 3; ENTSCHEIDE E38.)
 
-### 4.2 Lösungs-Audit
+### 4.2 Lösungs-Audit — steht in `audits.md`
 
-Jede Lösung (LF1 bis LF4, Raster, Befund, Denkhilfe, Erwartungen der
-Vertiefung, Lösungsbild, Abschluss) gegen Kapiteldatei bzw. Archivtext prüfen:
-Fundstelle stimmt, Zeitmarke stimmt, nichts steht als Lehrmittelaussage da, was
-Fallüberlegung ist. Je Befund: Feld, Wortlaut, was die Grundlage wirklich sagt.
+Das Lösungs-Audit ist kein Gegenleser mehr: Es löst jede Aufgabe **blind** an
+Quelle und Lehrmittel, vergleicht erst dann mit der Lösung und gibt
+`belege.json` ab, die `check-belege` prüft. Paket, Auftrag, Urteile und die
+Prüfung nach jeder Änderung einer Lösung: `references/audits.md` §2. Das
+frühere Verfahren dieses Abschnitts (Sonnet, las die Lösung zuerst, gab Prosa
+ab) gilt nicht mehr. (Herkunft: Rückblick §5.1, §5.3; ENTSCHEIDE E38, Stufe C.)
 
 ### 4.3 Sweep
 
 Über alle Dateien: «ß», Platzhalter, Transliterationen
-(`references/umlaute.md`), gesperrte Wörter und Anrede
-(`references/sprache.md`).
+(`references/umlaute.md`), Fall-Begriffe (`references/sprache.md` §7.1) und
+Anrede (`references/sprache.md`).
 
 ## 5. Nachprüfung — jeder Befund, bevor er zum Auftrag wird
 
@@ -121,7 +192,7 @@ Textaufbereitung). Dann ordnen:
 | Kürzel | Ursache | Geht an |
 |---|---|---|
 | E | Fehler dieser Einheit | Executor der Datei, als genauer Auftrag |
-| S | Regel oder Lücke der Skill, Methodenkarte | Bericht, Abschnitt «Fehler in Skill, Skript, Renderer» — im Lauf nicht ändern |
+| S | Regel oder Lücke der Skill, Skript, Methodenkarte, Lehrmittel | Bericht, Abschnitt «Offen» (`assets/bericht-template.md`) — im Lauf nicht ändern |
 | R | fester Text oder Layout des Renderers | Bericht, wie S |
 | Q | Quelle | Bericht; die Quelle wechselt der Lauf nicht |
 | V | so gewollt (Sie-Form, Ich-Situation, feste Seitenfolge) | nur zählen |
@@ -129,9 +200,21 @@ Textaufbereitung). Dann ordnen:
 Zuerst die sechs Fragen der Sinnprobe (`phase-9-tor.md` §3 Nr. 9) beantworten —
 sie sind die Stellen, an denen 2.3.1 und 2.1.1 gefehlt haben.
 
+**Rückweg bei S und R.** Ein Punkt mit Kürzel S oder R steht kaum nur in
+dieser Einheit: Vor dem Bericht läuft je Punkt
+`node scripts/gleiche-stelle.mjs "<feldpfad>" "<muster>" --ohne <ordner>`, und
+die Trefferzahl je Einheit steht beim Punkt (`phase-9-tor.md` §5). In
+`docs/cloud-run/OFFEN.md` (sobald vorhanden) heissen die Arten S (Skill,
+Skelett, Skript), K (Karte) und R (Renderer); ein Fehler in einer bestehenden
+Karte steht im Bericht weiter unter S. Erzeugt ein S-Punkt in jeder neuen
+Einheit denselben Fehler, bekommt er dort den Vermerk `[erzeugt Fehler]` — der
+sperrt den nächsten Start (`lauf.md` §3 Zeile 9).
+
 ## 6. Im Bericht
 
 Je Gegenleser: Zahl der Befunde, was übernommen wurde (mit Auftrag an wen), was
 nicht und warum, was nach Nachprüfung wegfiel. Dazu: in welcher Runde zuletzt
 gelesen wurde, die Zeitsumme je Heft der Lernenden-Gegenleser gegen den
-Seitenplan, und was kein Gegenleser prüfen konnte (Audio, Seitenbild).
+Seitenplan, und was kein Gegenleser prüfen konnte (Audio, Seitenbild). Die
+Audits stehen im selben Abschnitt des Berichts, in der Form aus
+`references/audits.md` §5.

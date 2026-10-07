@@ -1,0 +1,130 @@
+{
+  "id": "2.1.1_informationen_hinterfragen_lernbegleiter",
+  "set_ref": "2.1.1_informationen_hinterfragen_set",
+  "prinzip_ref": "2.1.1_informationen_hinterfragen_prinzip",
+  "kn_ref": "2.1.1_informationen_hinterfragen_kn",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben Begriffe und neue Fälle mit der KI (künstliche Intelligenz). Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann in gehörten Beiträgen und in Inhalten aus meinem Feed die Interessen und Werte dahinter identifizieren, Merkmale von Manipulation erkennen und begründet entscheiden, ob ich einer Aussage vertraue oder sie zuerst prüfe.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein: 1 heisst unsicher, 5 heisst sicher. Üben Sie danach zuerst, was Sie mit 1 bis 3 angekreuzt haben.",
+      "selbsteinschaetzung": [
+        "Ich kann Interesse und Wert hinter einer Aussage benennen (Glossar).",
+        "Ich kann Merkmale von Manipulation in meinem Feed erkennen (Kap. 7.1).",
+        "Ich kann begründen, ob ich einer Aussage vertraue oder sie zuerst prüfe (Kap. 20.7)."
+      ]
+    },
+    "begriffe": [
+      "Partei",
+      "Verband",
+      "NGO",
+      "Lobby",
+      "Interessenkonflikt",
+      "Grundhaltung",
+      "Interesse",
+      "Wert",
+      "Zielkonflikt",
+      "Einwand",
+      "Auswahl",
+      "Gewichtung",
+      "Wortwahl",
+      "Bildmanipulation",
+      "Fake News",
+      "Quellen-Check",
+      "Fakten-Check",
+      "Google-Check",
+      "Fakt oder Meinung",
+      "Eigene Regel"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie wissen wollen, welche Begriffe Sie schon erklären können.",
+        "prompt_basis": "Thema: Informationen hinterfragen. Frag mich diese Begriffe ab: Verband, Lobby, Zielkonflikt, Fake News, Fakten-Check, Google-Check. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff kennen, ihn aber noch nicht in eigenen Worten sagen können.",
+        "prompt_basis": "Thema: Informationen hinterfragen. Ich erkläre dir einen Begriff aus meinem Glossar: [meine Erklärung]. Nenne mir die Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie zu einem Übungsfall einen Entscheid mit Grund geschrieben haben.",
+        "prompt_basis": "Thema: Informationen hinterfragen. Hier ist mein Entscheid zu einem Übungsfall: [mein Text]. Achte auf die Argumentation: Ist die Begründung geordnet und nachvollziehbar? Nenne mir zwei Lücken als Fragen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Informationen hinterfragen. Mein Entscheid zu einem Übungsfall: [mein Text]. Argumentation: Ist die Begründung geordnet und nachvollziehbar? Position / Werthaltung: Steht meine Position klar in Ich-Form da? Nenne mir zwei Lücken als Fragen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Vergleichen Sie die Rückmeldung der KI mit den Kriterien im Heft. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Wissen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Thema: Informationen hinterfragen. Erfinde einen neuen, kurzen Fall zur Bewertung eines Produkts im Netz. Darin muss ich entscheiden, ob ich einer Aussage vertraue oder sie zuerst prüfe. Nimm keinen Fall mit Radiobeitrag, Steuern, Clip, Gruppenchat oder Jugendtreff. Stell mir danach drei Fragen, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Informationen hinterfragen. Erfinde einen neuen, kurzen Fall: Zwei Personen streiten über ein Wahlplakat. Ich muss entscheiden, wem ich glaube. Nimm keinen Fall mit Radiobeitrag, Steuern, Clip, Gruppenchat oder Jugendtreff. Ich schreibe dir meinen Entscheid mit Grund. Zeig mir danach Lücken bei zwei Kriterien. Politisches Prinzip: Interessen und Werte erkannt und belegt? Argumentation: Begründung geordnet und nachvollziehbar? Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn der Kompetenznachweis näher kommt und Sie Ihre Lernzeit einteilen wollen.",
+        "prompt_basis": "Thema: Informationen hinterfragen. Bis zum Kompetenznachweis habe ich [Anzahl Tage] Tage Zeit. Diese Begriffe aus meinem Glossar kann ich noch nicht erklären: [meine Begriffe]. Mach mir einen Lernplan mit einem kurzen Schritt je Tag. Erkläre die Begriffe nicht. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Informationen hinterfragen. Mach mir Lernkarten zu diesen Begriffen: Partei, Verband, NGO, Lobby, Zielkonflikt, Einwand, Auswahl, Gewichtung, Wortwahl, Fake News. Schreib auf jede Karte nur eine Frage. Ordne die Karten nach zwei Themen: Interessen in der Politik, Inhalte prüfen. Die Antworten schreibe ich selbst aus dem Glossar. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf Ihre Lernkarten schreiben Sie selbst, aus dem Glossar in Ihrem Heft."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie sprechen laut über einen neuen Fall und antworten auf drei Fragen der KI.",
+        "prompt": "Thema: Informationen hinterfragen. Erfinde einen neuen Fall: Zwei Personen streiten über ein Wahlplakat. Nimm keinen Fall mit Radiobeitrag, Steuern, Clip, Gruppenchat oder Jugendtreff. Stell mir drei Fragen, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich und begründen Ihren Entscheid.",
+        "prompt": "Thema: Informationen hinterfragen. Erfinde einen neuen Fall zur Bewertung eines Produkts im Netz, die jemand weiterleitet. Nimm keinen Fall mit Radiobeitrag, Steuern, Clip, Gruppenchat oder Jugendtreff. Stell mir zwei Aufgaben zum Schreiben. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Informationen hinterfragen. Mein wichtigster Satz: [mein wichtigster Satz]. Erfinde dazu einen neuen Fall zur Werbung einer Firma. Nimm keinen Fall mit Radiobeitrag, Steuern, Clip, Gruppenchat oder Jugendtreff. Frag mich, wo mein Satz im Fall gilt. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Begriffe richtig brauchen und geordnet begründen: Üben Sie mit einem Übungsfall auf dieser Seite."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Politisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Interesse und Wert benennen, Position in Ich-Form: Üben Sie mit einem Übungsfall auf dieser Seite."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nicht beim Kompetenznachweis. Geben Sie nie eine Aufgabe aus dem Kompetenznachweis in die KI ein.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meinen Entscheid ohne KI begründen."
+    ]
+  }
+}

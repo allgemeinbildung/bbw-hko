@@ -101,6 +101,13 @@ die Fakten des Falls als Label und Wert — Frist, Dauer, Anzahl Beteiligte, Dat
 die Gemeinde bis» / «30.11.», «Beteiligte am Gespräch» / «3 Personen»). `wert` wird
 rechtsbündig, einzeilig und in Festbreitenschrift gesetzt: kurze Angabe, kein Satz.
 
+**Wer `fall.json` schreibt:** der Executor des Hefts, in dieser Phase — jede erfundene Zahl und
+Angabe der Situation (Lohn, Preis, Menge, Alter, Wochentag, Datum, Frist des Falls) und was die
+Situation ausschliesst, als Teildatei `fall.<A|B>.json` im Quellenarchiv unter
+`_pruefung/<ordnername>/`; nie ein Audit. Form: `references/belege.md` §6. Daran prüft
+`check-zahlen`, dass die Zahl überall gleich steht, und `check-fakten` verlangt für sie keinen
+Beleg. (Herkunft: Rückblick §4 «Zahlen uneinheitlich», §5.2; Auftrag 10, Stufe A; E38.)
+
 **`leitfrage`** — Ich-Form, ≤ 140, eine Frage, die beide Pole des Spannungsfelds offen lässt und
 die das Produkt beantwortet. **`mehrdeutigkeit`** — `explizit` ist `true`; `trade_off` ist **wörtlich** ein Eintrag aus
 `prinzip.mehrdeutigkeits_architektur.trade_off_raum` (welcher: Bauplan), ≤ 70; `hint` in
@@ -256,10 +263,36 @@ schneidet Seite 6 still ab. Für v4.2 prüft das kein Skript — von Hand zähle
 heisst. Pflicht bei Lehrmittel-Karten (`lm-…`); bei eigenen Karten (`hko-…`) nur, wenn die Karte
 ohne Übertragung nicht verständlich ist. Kein Begriff des KN-Falls, kein Lehrmitteltext.
 
-**Neue Karte** nur, wenn keine vorhandene passt — dann nach `docs/methodenkartei.md` §4 und §6:
+**Bei `hko-`Karten wird `tun` nicht gedruckt** — der Renderer bleibt, wie er ist, weil Seite 6 in
+fast allen Einheiten 0 px Reserve hat. Die Übertragung einer eigenen Karte auf die Abgabe läuft
+darum über `fuer` und ausnahmsweise über ein überschriebenes `beispiel` in der Methoden-Referenz
+(`docs/methodenkartei.md`). Wer sich bei einer `hko-`Karte auf `tun` verlässt, druckt nichts.
+(Herkunft: ENTSCHEIDE E31 Nr. 2; Berichte `2026-10-04-221` §10, `2026-10-04-411` §10.)
+
+**Neue Karte** nur, wenn keine vorhandene passt (im Auto-Modus: nur, wenn Bauplan §9 sie
+verlangt). Im Lauf mit Rollen legt sie der **Orchestrator** an, bevor die Executor starten —
+geteilte Daten, ein Schreiber; der Executor eines Hefts schreibt nur seine eigene Datei
+(`references/lauf.md` §2, §4; ENTSCHEIDE E34). Angelegt wird sie nach `docs/methodenkartei.md` §4 und §6:
 ID `hko-<slug>` oder `lm-<kap>-<slug>`, Musterbeispiel mit **neutralem Sujet** (kein Fall dieser
-Einheit), eigene Formulierung, Seitenzahl nur wenn am Buch geprüft. Bestehende Karten werden nie
-geändert. Jede neue Karte steht im Bericht.
+Einheit), eigene Formulierung, Seitenzahl nur wenn am Buch geprüft; in `merk` und `schritte` keine
+festen Zahlen und Formate — die nennt die Einheit in `fuer` (`references/karten.md` §2, Fall e).
+Jede neue Karte steht im Bericht.
+
+**Bestehende Karten — ändern oder neu** (`references/karten.md`; ENTSCHEIDE E31 Nr. 3, E36). Vor
+jeder Änderung an einer Karte: `node scripts/karten.mjs darf <karten-id>`; `verbraucher <karten-id>`
+zeigt, welche Hefte sie führen. In einem Lauf wird keine bestehende Karte geändert:
+
+- **Passung** (die Karte stimmt, passt aber nicht zur Abgabe — Anzahl, Format, Beispiel, Begriff):
+  Die Einheit überschreibt (`fuer`, ausnahmsweise `beispiel`). Reicht das nicht, braucht es eine
+  neue Karte mit eigener ID — im Auto-Modus nur, wenn Bauplan §9 sie verlangt; sonst steht der
+  Punkt im Bericht.
+- **Fehler** in der Karte (falsche Seite, Aussage steht nicht auf der Seite, Rechenfehler,
+  Widerspruch in sich): in den Bericht, Abschnitt «Offen», Kürzel S, mit Karten-ID, Feld und Beleg
+  (`references/lauf.md` §10). Die Korrektur mit Vermerk macht eine eigene Session.
+- Läuft Seite 6 über, wird im Heft gekürzt, nie in der Karte.
+
+Das Ergebnis von `karten.mjs darf` steht im Bericht (Abschnitt 7 «Entscheide im Lauf»), sobald der
+Lauf eine Karte ändern wollte oder überschrieben hat.
 
 ## 9. Felder, die nur die Lehrperson sieht
 
@@ -285,10 +318,8 @@ des Hefts enthält einen Begriff aus
 Kleinbuchstaben und als **Teilwort** (ein kurzer Begriff trifft auch Zusammensetzungen). Das
 gilt für jedes Feld, auch `loesung`, `tun`, `sk_anker`, `dekontextualisierung`, `id`.
 Ausgenommen sind nur `feedback_kriterien[].stufen[]` (KN-Wortlaut, E8) und
-`prinzip_handoff.kn_aktivierung`. **Gesperrte Wörter (E24):** Zusätzlich sperrt das Skript für jede Einheit fest `leasing`,
-`konsumkredit`, `kleinkredit`, `e-bike`, `ebike`, `mobilität`. Braucht der Gegenstand eines
-davon, ist die Einheit nicht erzeugbar (`references/auto-modus.md`); umschreiben nur, wenn der
-Sinn hält.
+`prinzip_handoff.kn_aktivierung`. Fest im Skript gesperrte Wörter gibt es seit E30 nicht
+mehr; gesucht wird nur diese Liste.
 
 ## 11. Regeln der Skripte, die den Kern treffen
 
@@ -364,3 +395,13 @@ Angereicherte Methodenkarten zählen (Soll: mit der Rezeptionskarte genau zwei):
 ```
 node -e "const h=require('./src/data/einheiten/<ordner>/herausforderung_A.json');for(const m of h.methoden){if(m.ref==='__spur__'){console.log('__spur__  (Rezeptionskarte, Phase 5)');continue}const k=require('./src/data/methoden/'+m.ref+'.json');console.log(m.ref,(m.beispiel||k.beispiel||k.fehler)?'angereichert':'leicht')}"
 ```
+
+**Zeichenbudget ist nicht Seitenhöhe.** Der Executor eines Hefts misst sein
+Heft selbst, bevor er es abgibt — nach Phase 6, weil S. 6 erst mit dem
+Beispielbild voll ist (`references/phase-6-abschluss.md` §6,
+`references/lauf.md` §6). Schon beim Schreiben des Kerns gilt: Zwei
+angereicherte Methodenkarten mit langem `beispiel` in der unteren Reihe lassen
+dem Beispielbild auf S. 6 kaum Platz, und Stufentexte, die im Budget liegen,
+können S. 5 trotzdem füllen — beides sieht nur die Messung. (Herkunft:
+Berichte `2026-10-04-111` §9 Nr. 1, `2026-10-04-421` §10, `2026-10-03-121`
+§11 Nr. 3; Rückblick §4.)

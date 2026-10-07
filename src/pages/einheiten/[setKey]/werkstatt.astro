@@ -14,7 +14,7 @@
 // bereits ein festes Markdown-Skelett vor (siehe lib/werkstatt/auftraege.ts) — das ist
 // die Naht für einen späteren Rückweg ins Word-Hausformat.
 import Einheiten from '../../../layouts/Einheiten.astro'
-import { einheitById, loadEinheit, isEntwurf, stripDraftComponents } from '../../../lib/einheiten'
+import { einheitById, loadEinheit, istNurKt1, stripDraftComponents } from '../../../lib/einheiten'
 import { enrichKompetenzen } from '../../../lib/einheiten/kompetenz-text'
 import { werkstattKontext, SPUR_LABEL } from '../../../lib/werkstatt/kontext'
 import { AUFTRAEGE, NIVEAUS, NIVEAU_LABEL, auftragAnzeige } from '../../../lib/werkstatt/auftraege'
@@ -51,8 +51,8 @@ if (role === 'gast') {
     `/einheiten/${setKey}?error=` + encodeURIComponent('Die Werkstatt steht angemeldeten Lehrpersonen zur Verfügung.')
   )
 }
-// Entwurf-Einheiten sind nur für KT1 — dieselbe Schranke wie auf der Detailseite.
-if (isEntwurf(meta) && role !== 'kt1') return Astro.redirect('/einheiten')
+// Entwurf- und archivierte Einheiten sind nur für KT1 — dieselbe Schranke wie auf der Detailseite.
+if (istNurKt1(meta) && role !== 'kt1') return Astro.redirect('/einheiten')
 
 // Entwurf-Bausteine raus, bevor irgendetwas davon in einen Prompt gerät.
 const sichtbar = stripDraftComponents(fullSet, meta, role)

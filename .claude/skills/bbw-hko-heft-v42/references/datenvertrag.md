@@ -318,7 +318,7 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 | `lehrgang` | string | Kanonischer Lehrgang, wie in den Heften. | BAUPLAN | — |
 | `thema` | string `T<n>` | Thema. Nur Gold, nicht in `types.ts`. | ABGELEITET ← Kompetenznummer | — |
 | `version` | string | Formatstand der Datei. Nur Gold, nicht in `types.ts`. | KONSTANT `2.1.0` | — |
-| `status` | string | Sichtbarkeit: nur KT1. Jeder andere Wert als `entwurf` oder `publiziert` gilt dem Index-Builder als live. | KONSTANT `entwurf` | `ERR_V42_STATUS` · `ERR_STATUS_UNBEKANNT` · `ERR_STATUS_NICHT_ENTWURF` |
+| `status` | string | Sichtbarkeit: nur KT1. Der Index-Builder kennt `entwurf`, `publiziert` und `archiviert` (abgelöste Einheit, E37) und bricht bei jedem anderen Wert ab. | KONSTANT `entwurf` | `ERR_V42_STATUS` · `ERR_STATUS_UNBEKANNT` · `ERR_STATUS_NICHT_ENTWURF` |
 | `prinzip_ref` · `kn_ref` | string `<ordner>_prinzip` · `<ordner>_kn` | Verweise. | ABGELEITET ← Ordner | — |
 | `herausforderungen` | string[2] | IDs der zwei Hefte. | ABGELEITET ← Ordner | — |
 | `wochenplan` · `wochenplan[].woche` · `wochenplan[].lektionen` · `wochenplan[].inhalt` | object[4] · number · number · string | Vorschlag für die Lehrperson: zwölf Lektionen über vier Wochen. Erscheint nie im Heft. | KONSTANT (Skelett): 1 · 3 · `Heft A` / 2 · 3 · `Heft B` / 3 · 3 · `Gemeinsamer Auftrag (2) + Rückmeldung (1)` / 4 · 3 · `KN (2) + Puffer (1)` | — |
@@ -522,11 +522,9 @@ gewollt. Und: Eine eckige Klammer, auf die «nach », «abhängig», «Datum» o
 ohne Rücksicht auf Gross- und Kleinschreibung, in: beiden Heften ganz,
 `set.gemeinsamer_auftrag`, `set.glossar`, jeder Quellenkarte der Einheit
 (Ersatzkarten eingeschlossen, alle Felder, auch `url`). Die Begriffe sind die
-Liste `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` **und**
-sechs im Skript fest eingebaute Wörter: `leasing`, `konsumkredit`,
-`kleinkredit`, `e-bike`, `ebike`, `mobilität`. Die sechs gelten für jede
-Einheit, gleich welchen Themas; braucht der Gegenstand eines davon, ist die
-Einheit nicht erzeugbar (E24). Ausgenommen sind genau drei Feldarten:
+Liste `prinzip.hybrid_situation_spec.fall_ausschluss_hefte_und_auftrag` —
+nur sie; fest im Skript eingebaute Wörter gibt es seit E30 nicht mehr.
+Ausgenommen sind genau drei Feldarten:
 `feedback_kriterien[].stufen[]` (KN-Wortlaut, E8), `kontext_ausschluss` und
 `prinzip_handoff.kn_aktivierung`. Nicht geprüft werden `kn.json`,
 `prinzip.json`, `begleiter.md` und die übrigen Felder von `set.json`.
@@ -625,7 +623,7 @@ schreibt sie nicht.
 | `raster.quelle_ref` in `ohne_medien`; `raster.knoten_ref`, `raster.auftrag`, `raster.beispielzeile` in `mit_medien` | je nur in der anderen Spur |
 | `quellen` in `ohne_medien` | verboten (`ERR_V42_R3`) |
 | `kasten_s4.spalten`, `.hinweis`, `.loesung_zeilen` in `mit_medien` | nur bei `typ: "denkhilfe"` |
-| `methoden[].beispiel` im Kern; `methoden_ref_rezeption.tun` | `beispiel` nur in `methoden_ref_rezeption` |
+| `methoden[].beispiel` im Kern; `methoden_ref_rezeption.tun` | `beispiel` nur in `methoden_ref_rezeption` — Ausnahme (ENTSCHEIDE E31 Nr. 2): Die Übertragung einer `hko-`Karte, deren `tun` nicht gedruckt wird, darf ausnahmsweise über ein überschriebenes `beispiel` in der Methoden-Referenz des Kerns laufen (`docs/methodenkartei.md`); der Bericht nennt es |
 | `set.entwurf_komponenten` | entfällt; die ganze Einheit trägt `status: "entwurf"` |
 
 ### 11.4 Das eine Feld ausserhalb der Gold-Form: `set.lehrgaenge`

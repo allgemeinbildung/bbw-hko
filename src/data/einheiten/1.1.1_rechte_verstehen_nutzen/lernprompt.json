@@ -1,147 +1,77 @@
 {
   "id": "1.1.1_rechte_verstehen_nutzen_lernprompt",
   "set_ref": "1.1.1_rechte_verstehen_nutzen_set",
-  "version": "1.0.0",
-  "erstellt_am": "2026-06-17",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
   "lernprompt": {
     "version": "1.2",
-    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «Rechte verstehen und nutzen» (Rechte und Pflichten aus dem Lehrvertrag, Tatbestand-Rechtslage-Rechtsfolge, adressatengerechtes Antwortschreiben).",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Rechte verstehen & nutzen». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
     "techniken": [
       {
         "key": "rollen_prompting",
-        "titel": "Rollen-Prompting",
-        "erklaerung": "Sie geben der KI eine konkrete Rolle, bevor Sie die Aufgabe stellen. Die Rolle steuert Perspektive, Ton und Tiefe der Antwort — die KI antwortet aus dieser Sicht statt allgemein.",
-        "thema_bezug": "Bei einer rechtlichen Anfrage klingt dieselbe Frage je nach Rolle völlig anders: Eine erfahrene Berufsbildnerin, eine neutrale Rechtsauskunft oder Ihr Betrieb, der einen Abzug rechtfertigen will, betonen je andere Punkte — und genau diese Perspektiven können Sie gezielt durchspielen.",
-        "beispiel_basis": "Du bist eine neutrale Rechtsauskunft für Lernende. Erkläre einem Lernenden im 1. Lehrjahr in einfacher Sprache, ob der Betrieb CHF 150 für einen Kratzer am Werkstück vom Lohn abziehen darf.",
-        "beispiel_fortgeschritten": "Du bist mein Berufsbildner/in und willst den Lohnabzug von CHF 150 rechtfertigen. Begründe ihn so überzeugend wie möglich mit Verweis auf das OR — und sag mir danach, an welcher Stelle du selbst nicht sicher bist, ob die Voraussetzung erfüllt ist.",
-        "warnung": "Eine Rolle macht die Antwort überzeugender, aber nicht automatisch rechtlich korrekt: Auch als «Rechtsauskunft» kann die KI einen OR-Artikel falsch wiedergeben. Die Rolle steuert den Ton — die Quelle prüfen Sie selbst.",
-        "baukasten": {
-          "rolle": [
-            "neutrale Rechtsauskunft für Lernende",
-            "erfahrene Berufsbildnerin",
-            "mein Betrieb, der den Abzug rechtfertigt"
-          ],
-          "kontext": [
-            "Lernende/r im 1. Lehrjahr",
-            "Lohnabzug-Anfrage einer/eines Mitlernenden",
-            "Antwort wird weitergeleitet"
-          ],
-          "aufgabe": [
-            "Rechtslage in einfacher Sprache erklären",
-            "Abzug begründen oder widerlegen",
-            "unsichere Stellen benennen"
-          ],
-          "format": [
-            "3 Sätze",
-            "einfache Sprache"
-          ]
-        }
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI, wer sie für Sie sein soll. Dann fragt oder antwortet sie aus dieser Rolle.",
+        "thema_bezug": "Als Lerncoach fragt die KI Begriffe zum Lehrvertrag ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Lehrvertrag in der Schweiz. Frag mich ab zu: Lehrvertrag, Treuepflicht, Lohnabzüge. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die KI vom Lehrmittel ab (Kap. 1.4), gilt das Lehrmittel."
       },
       {
         "key": "kontextualisieren",
         "titel": "Kontext geben",
-        "erklaerung": "Sie liefern der KI alle relevanten Fakten, bevor sie antwortet: Sachverhalt, Beteiligte, Ziel, Rahmenbedingungen. Je präziser der Kontext, desto weniger rät die KI — und desto brauchbarer ist die Antwort.",
-        "thema_bezug": "Ein Rechtsfall ist ohne klaren Tatbestand nicht zu beurteilen: Wer hat was getan, welcher Schaden, welcher Lohn, welche Quelle steht zur Verfügung? Erst mit diesem Sachverhalt kann die KI eine brauchbare rechtliche Einschätzung geben.",
-        "beispiel_basis": "Kontext: Schreiner-Lernende/r, 1. Lehrjahr, Lohn CHF 600. Ein Kratzer an einem fertigen Werkstück, der Betrieb will CHF 150 abziehen. Frage: Welche Regel im OR betrifft diesen Abzug?",
-        "beispiel_fortgeschritten": "Kontext: Schweizer Lehrverhältnis, EFZ, 1. Lehrjahr. Sachverhalt: Kratzer am fertigen Werkstück, geplanter Lohnabzug CHF 150, unklar ob verschuldet. Ziel: eine begründete Auskunft an eine/n Mitlernende/n. Aufgabe: Zerlege den Fall in Tatbestand, Rechtslage und Rechtsfolge und kennzeichne, was ich noch nicht weiss.",
-        "warnung": "Vertrauliche Details gehören nicht in den Prompt: echte Namen, Betrieb und erkennbare Personen weglassen oder anonymisieren (Kap. 20.7 Datenschutz) — sonst geben Sie selbst Daten preis, die Sie schützen sollten.",
-        "baukasten": {
-          "rolle": [
-            "neutraler Methoden-Coach",
-            "Rechts-Navigator für Lernende"
-          ],
-          "kontext": [
-            "Schweizer Lehrverhältnis EFZ",
-            "Sachverhalt in 2-3 Sätzen",
-            "verfügbare Quelle (Spickzettel, Kap. 1.4)"
-          ],
-          "aufgabe": [
-            "Fall in Tatbestand / Rechtslage / Rechtsfolge zerlegen",
-            "offene Fragen auflisten",
-            "fehlende Angaben benennen"
-          ],
-          "format": [
-            "Drei-Spalten-Tabelle",
-            "nummerierte Schritte"
-          ]
-        }
+        "erklaerung": "Sie sagen der KI, wer Sie sind und worum es geht. Ohne diese Angaben bleibt ihre Antwort allgemein.",
+        "thema_bezug": "Ihre Regel zum Lehrvertrag: ein Satz mit Quelle aus einer Ihrer Arbeiten.",
+        "beispiel_basis": "Ich bin im 1. Lehrjahr in der Schweiz. Ich antworte Mitlernenden auf eine Frage zum Lehrvertrag. Meine Regel: [meine Regel mit Quelle]. Stell mir drei Fragen dazu, eine nach der anderen. Schreib meine Regel nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
       },
       {
-        "key": "chain_of_thought",
-        "titel": "Schritt-für-Schritt denken",
-        "erklaerung": "Sie fordern die KI auf, ihren Weg in nachvollziehbaren Schritten offenzulegen, statt nur ein Ergebnis zu nennen. So können Sie jeden Schritt einzeln prüfen und sehen, wo eine Schlussfolgerung nicht trägt.",
-        "thema_bezug": "Das Schema Tatbestand-Rechtslage-Rechtsfolge (Kap. 1.3) ist selbst eine Schritt-für-Schritt-Methode: Wenn die KI diese Schritte einzeln zeigt, erkennen Sie sofort, ob sie vom Tatbestand zur Rechtsfolge sauber geschlossen hat oder eine Stufe übersprungen hat.",
-        "beispiel_basis": "Löse den Lohnabzug-Fall Schritt für Schritt: Nenne zuerst den Tatbestand, dann die Rechtslage mit Artikel, dann die Rechtsfolge. Zeig jeden Schritt einzeln, bevor du zum Ergebnis kommst.",
-        "beispiel_fortgeschritten": "Arbeite den Fall in der Reihenfolge Tatbestand, Rechtslage, Rechtsfolge durch. Halt nach jedem Schritt an und markiere, welche Voraussetzung erfüllt sein muss, damit der nächste Schritt überhaupt gilt — und wo eine Angabe im Sachverhalt noch fehlt.",
-        "warnung": "Eine ausführliche Schritt-Kette klingt logisch, kann aber auf einem falschen Artikel aufbauen. Prüfen Sie gerade den Übergang von der Rechtslage zur Rechtsfolge: Folgt die Rechtsfolge wirklich aus der genannten Quelle?",
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI, was die andere Seite sagt. Das nennt man einen Einwand. So sehen Sie, ob Ihre Begründung hält.",
+        "thema_bezug": "In dieser Einheit sieht der Betrieb eine Frage oft anders als die Lernenden. Ihre Behauptung mit Begründung nehmen Sie aus einer Ihrer Arbeiten.",
+        "beispiel_basis": "Thema: Lehrvertrag in der Schweiz. Meine Behauptung: [meine Behauptung mit Begründung]. Nenne mir zwei Einwände aus der Sicht des Betriebs. Sag mir nicht, wer recht hat. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist Berufsbildner/in in einem Lehrbetrieb in der Schweiz. Thema: Lehrvertrag. Meine Behauptung: [meine Behauptung mit Begründung]. Nenne mir drei Einwände aus deiner Sicht. Nenne zu jedem Einwand das Recht, auf das du dich stützt. Ich schlage jedes Recht im Lehrmittel nach. Sag mir nicht, wer recht hat. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Ein Einwand der KI ist noch kein Recht. Welcher Einwand zählt, entscheiden Sie mit dem Lehrmittel (Kap. 1.4).",
         "baukasten": {
-          "rolle": [
-            "Methoden-Coach für Rechtsfälle",
-            "Tutor für das TLR-Schema"
-          ],
-          "kontext": [
-            "ein Fall aus meiner Fall-Mappe",
-            "der Lohnabzug-Fall"
-          ],
-          "aufgabe": [
-            "Tatbestand benennen",
-            "Rechtslage mit Artikel zeigen",
-            "Rechtsfolge ableiten",
-            "fehlende Voraussetzung markieren"
-          ],
-          "format": [
-            "nummerierte Schritte",
-            "ein Schritt pro Zeile"
-          ]
+          "rolle": ["Berufsbildner/in im Lehrbetrieb", "Chef/in eines kleinen Betriebs", "Personalabteilung"],
+          "kontext": ["Lehrvertrag in der Schweiz", "1. Lehrjahr", "meine Behauptung mit Begründung"],
+          "aufgabe": ["zwei Einwände nennen", "zu jedem Einwand das Recht nennen", "nicht sagen, wer recht hat"],
+          "format": ["je Einwand ein Satz", "nummerierte Liste", "kurze, einfache Sätze"]
         }
       },
       {
         "key": "quellen_anfordern",
-        "titel": "Quellen und Belege anfordern",
-        "erklaerung": "Sie verlangen von der KI zu jeder rechtlichen Aussage die Quelle — und kündigen an, dass Sie sie prüfen. Das zwingt die KI zu vorsichtigeren Aussagen und gibt Ihnen die Prüfspur für Ihre eigene Kontrolle.",
-        "thema_bezug": "Sobald es um Rechte, Pflichten und Lohnabzug geht (Lehrvertrag, OR 321e, Kap. 1.4), ist die exakte Quelle das Qualitätsmerkmal: Eine KI-Aussage über Ihr Recht ohne prüfbaren Artikel ist in der Antwort an eine/n Mitlernende/n wertlos und im KN ein Fehler.",
-        "beispiel_basis": "Welche Regel im OR betrifft den Lohnabzug für einen Schaden im Betrieb? Gib mir den genauen Artikel und markiere, wo du unsicher bist. Ich schlage den Artikel im Lehrmittel nach.",
-        "beispiel_fortgeschritten": "Erstelle eine Liste der Rechte und Pflichten von Lernenden rund um Lohn und Schaden im Schweizer Lehrvertrag. Pro Punkt: genauer OR-/ArG-Artikel, ein Satz in einfacher Sprache, Vertrauensgrad (sicher/unsicher). Ich prüfe jeden Artikel im Lehrmittel auf Nummer und Inhalt.",
-        "warnung": "KI-Systeme erfinden bei Schweizer Recht regelmässig plausibel klingende Artikelnummern. Jeder Artikel muss im Lehrmittel oder Gesetzestext nachgeschlagen werden — Übereinstimmung von Nummer UND Inhalt.",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen zu jeder Angabe die Quelle. So können Sie nachschlagen, ob die Angabe stimmt. Ohne Quelle bleibt offen, woher die KI sie hat.",
+        "thema_bezug": "Beim Lehrvertrag ist die Quelle ein Artikel im Gesetz, zum Beispiel im Obligationenrecht (OR). Ihre Regeln nehmen Sie aus einer Ihrer Arbeiten.",
+        "beispiel_basis": "Thema: Lehrvertrag in der Schweiz. Hier sind meine Regeln: [meine Regeln in Stichworten]. Nenne zu jeder Regel den Artikel im Gesetz. Sag es, wenn du unsicher bist. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist Lerncoach für Recht in der Lehre. Thema: Lehrvertrag in der Schweiz. Hier sind meine Regeln: [meine Regeln in Stichworten]. Nenne zu jeder Regel Gesetz und Artikel. Schreib das Wort unsicher dazu, wenn du den Artikel nicht sicher kennst. Erfinde keinen Artikel. Ich prüfe jede Quelle im Lehrmittel nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet manchmal Artikel, die echt klingen. Schlagen Sie jede Quelle im Lehrmittel nach (Kap. 1.4), bevor Sie sie übernehmen.",
         "baukasten": {
-          "rolle": [
-            "Faktenprüfer",
-            "Gesetzes-Navigator"
-          ],
-          "kontext": [
-            "Schweizer Recht (OR, ArG, Lehrvertrag)",
-            "Stand der geltenden Fassung"
-          ],
-          "aufgabe": [
-            "Artikel zu Aussage finden",
-            "Aussage zu Artikel prüfen",
-            "Vertrauensgrad angeben"
-          ],
-          "format": [
-            "Tabelle Aussage/Quelle/Sicherheit",
-            "Liste mit Artikel in Klammern"
-          ]
+          "rolle": ["Lerncoach für Recht in der Lehre", "Mitarbeiter/in beim Amt für Berufsbildung", "Lehrperson an der Berufsfachschule"],
+          "kontext": ["Lehrvertrag in der Schweiz", "meine Regeln in Stichworten", "1. Lehrjahr, unter 18 Jahren"],
+          "aufgabe": ["zu jeder Regel Gesetz und Artikel nennen", "sagen, wo du unsicher bist", "keinen Artikel erfinden"],
+          "format": ["Tabelle: Regel, Gesetz, Artikel", "eine Zeile je Regel", "kurze, einfache Sätze"]
         }
       }
     ],
     "stacking_seite_1": {
-      "technik_keys": [
-        "rollen_prompting",
-        "kontextualisieren"
-      ],
-      "logik_und_ziel": "Prompt 1 liefert mit Rolle und vollständigem Sachverhalt eine erste rechtliche Einschätzung des Lohnabzug-Falls. Prompt 2 nutzt diese Antwort, um gezielt die offenen Angaben zu klären, die im ersten Schritt noch fehlten — so wird aus einer allgemeinen Auskunft eine fallgenaue Grundlage.",
-      "prompt_1": "Du bist ein neutraler Methoden-Coach für Rechtsfälle. Kontext: Schreiner-Lernende/r im 1. Lehrjahr, Lohn CHF 600, ein Kratzer an einem fertigen Werkstück, der Betrieb will CHF 150 abziehen, unklar ob verschuldet. Zerlege den Fall in Tatbestand, Rechtslage und Rechtsfolge und nenne die offenen Fragen, die ich noch klären muss.",
-      "prompt_2": "Auf Basis deiner Analyse: Welche eine fehlende Angabe würde die Rechtsfolge am stärksten verändern — und welche Frage müsste ich der/dem Mitlernenden stellen, bevor ich eine verlässliche Auskunft geben kann?"
+      "technik_keys": ["Der KI eine Rolle geben", "Kontext geben"],
+      "logik_und_ziel": "Mit Prompt 1 stellt die KI Ihnen in ihrer Rolle zwei Fragen. Mit Prompt 2 zeigt sie auf Ihre ungenaue Antwort und fragt nach.",
+      "prompt_1": "Du bist Mitlernende/r im 1. Lehrjahr in der Schweiz. Thema: Lehrvertrag. Du willst meine Regel verstehen: [meine Regel mit Quelle]. Stell mir zwei Fragen dazu, eine nach der anderen. Schreib meine Regel nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Du hast mir zwei Fragen gestellt. Zeig mir, welche meiner zwei Antworten ungenau war. Stell mir dazu noch eine Frage. Sag mir die Lösung nicht. Antworte in kurzen, einfachen Sätzen."
     },
     "stacking_seite_2": {
-      "technik_keys": [
-        "chain_of_thought",
-        "quellen_anfordern"
-      ],
-      "logik_und_ziel": "Prompt 1 lässt die KI den Fall Schritt für Schritt nach dem TLR-Schema durchdenken. Prompt 2 verlangt zu jedem Schritt den prüfbaren Artikel — so erkennen Sie, welche Schlussfolgerung wirklich auf einer Quelle steht und welche nur plausibel klingt, bevor Sie sie in Ihre Antwort oder den KN übernehmen.",
-      "prompt_1": "Löse den Lohnabzug-Fall Schritt für Schritt: Nenne zuerst den Tatbestand, dann die Rechtslage, dann die Rechtsfolge. Halt nach jedem Schritt an und markiere, welche Voraussetzung erfüllt sein muss, damit der nächste Schritt gilt.",
-      "prompt_2": "Geh jetzt deine drei Schritte noch einmal durch und gib zu jeder rechtlichen Aussage den genauen OR-Artikel sowie einen Vertrauensgrad (sicher/unsicher) an. Markiere die Stelle, an der du am ehesten einen Artikel verwechselt haben könntest — ich schlage jeden im Lehrmittel nach."
+      "technik_keys": ["Gegenseite verlangen", "Quellen verlangen"],
+      "logik_und_ziel": "Prompt 1 holt zwei Einwände gegen Ihre Behauptung. Prompt 2 verlangt zu jedem Einwand die Quelle, damit Sie ihn im Lehrmittel prüfen können.",
+      "prompt_1": "Du bist Berufsbildner/in in einem Lehrbetrieb in der Schweiz. Thema: Lehrvertrag. Meine Behauptung: [meine Behauptung mit Begründung]. Nenne mir zwei Einwände aus deiner Sicht. Sag mir nicht, wer recht hat. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Du hast mir zwei Einwände genannt. Nenne zu jedem Einwand das Gesetz und den Artikel, auf den du dich stützt. Schreib das Wort unsicher dazu, wenn du den Artikel nicht sicher kennst. Ich prüfe jede Quelle im Lehrmittel nach. Antworte in kurzen, einfachen Sätzen."
     },
-    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Thema: Lehrvertrag in der Schweiz. Wie werden Überstunden von Lernenden ausgeglichen? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Überstunden werden mit Freizeit von gleicher Dauer ausgeglichen. Oder es gibt einen Lohnzuschlag von 50 Prozent.",
+      "pruefung": "Ich schlage in Kap. 1.4 nach. Freizeit von gleicher Dauer stimmt. Der Lohnzuschlag beträgt aber 25 Prozent, nicht 50."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
   }
 }

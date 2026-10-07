@@ -40,8 +40,8 @@ export function passendeEinheiten(S, datasetPath) {
   for (const e of (U.einheiten || [])) {
     const lg = lehrgangArr(e.lehrgaenge && e.lehrgaenge.length ? e.lehrgaenge : e.lehrgang);
     if (lg.length && !lg.includes(want)) continue;
-    // Entwuerfe sieht nur KT1 — dieselbe Schranke wie im Katalog.
-    if (role !== 'kt1' && role !== 'reviewer' && e.status === 'entwurf') continue;
+    // Entwuerfe und archivierte Einheiten sieht nur KT1 — dieselbe Schranke wie im Katalog.
+    if (role !== 'kt1' && role !== 'reviewer' && (e.status === 'entwurf' || e.status === 'archiviert')) continue;
 
     const komp = (e.abgedeckte_kompetenzen && e.abgedeckte_kompetenzen.length)
       ? e.abgedeckte_kompetenzen

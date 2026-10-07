@@ -236,6 +236,8 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   const [navCollapsed, setNavCollapsed] = useState(loadNavCollapsed)
   const [kiOpen, setKiOpen] = useState(false)
   const [zusatzOpen, setZusatzOpen] = useState(false)
+  const [knOpen, setKnOpen] = useState(false)
+  const [loesungOpen, setLoesungOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
   const [zoomPref] = useState(loadZoomPref)
   const [zoom, setZoom] = useState(zoomPref.zoom)
@@ -269,6 +271,17 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         (hf.leitfragen ?? []).some((lf: any) => lf.loesung?.zeilen?.length)
       ),
     [deckSource, deckSourceV42Akt]
+  )
+  // Das v4.2-Deck zeigt genau eine Spur. Gibt es zwei, bekommt jede ihren eigenen Knopf —
+  // ein einzelner «Präsentation»-Knopf öffnete stillschweigend die Spur der Vorschau, und
+  // Quelle, LF3/LF4 samt Lösungen der anderen Spur fehlten scheinbar.
+  const deckSpuren = useMemo(
+    () =>
+      (istV42 ? SPUR_KEYS : []).flatMap((k) => {
+        const src = dRoh.spur_varianten?.[k] ? deckSourceV42(dRoh, k) : null
+        return src ? [{ spur: k, loesungen: deckV42HatLoesungen(src) }] : []
+      }),
+    [dRoh, istV42]
   )
 
   useEffect(() => {
@@ -816,7 +829,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             const src = deckSourceV42(dRoh, k)
             if (!src) continue
             const path = `Material_LP/${prefix}_unterrichtsdeck_${k}.html`
-            zip.file(path, buildStandaloneDeckHtmlV42(src, `${d.id}-${k}`, { logoSrc: pngDataUrl, lionSrc }))
+            // Die Titelfolie verlinkt die Fassung der anderen Spur — im ZIP die Nachbardatei.
+            const spurLinks = Object.fromEntries(
+              spurenDa.filter((o) => o !== k && !!deckSourceV42(dRoh, o)).map((o) => [o, `${prefix}_unterrichtsdeck_${o}.html`])
+            )
+            zip.file(path, buildStandaloneDeckHtmlV42(src, `${d.id}-${k}`, { logoSrc: pngDataUrl, lionSrc, spurLinks }))
             log.push(path)
           } catch (e) { console.warn('deck v42 failed', e) }
         }
@@ -1018,6 +1035,23 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
               <span className="wb-action-label">Präsentation</span>
               {deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>} {lockBadge}
             </button>
+          ) : deckSpuren.length > 1 ? (
+            deckSpuren.map(({ spur: k, loesungen }) => (
+              <a
+                key={k}
+                className="wb-action deck"
+                href={`/einheiten/${d.id}/deck?spur=${k}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Präsentation · ${SPUR_LABEL[k]}`}
+              >
+                <span className="wb-action-icon" aria-hidden="true">🖥️</span>
+                <span className="wb-action-text">
+                  <span className="wb-action-label">Präsentation · {SPUR_LABEL[k]}</span>
+                  {loesungen && <span className="wb-action-note">mit Lösungen</span>}
+                </span>
+              </a>
+            ))
           ) : (
             <a
               className="wb-action deck"
@@ -1155,7 +1189,17 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
           {d.kn && (
             <div className="wb-tree-group">
-              <div className="wb-tree-head">Kompetenznachweis</div>
+              <button
+                type="button"
+                className={`wb-tree-head wb-tree-head-toggle${knOpen ? ' open' : ''}`}
+                onClick={() => setKnOpen((v) => !v)}
+                aria-expanded={knOpen}
+              >
+                <span className="wb-ki-label">Kompetenznachweis</span>
+                <span className="wb-chevron" aria-hidden="true">▾</span>
+              </button>
+              {(knOpen || navCollapsed) && (
+              <>
               <div className="wb-tree-sub">Schüler/in</div>
               {knTypen.map((t) => (
                 <button
@@ -1178,14 +1222,24 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
                 <span className="wb-item-title">Lehrperson + Bewertung</span>
                 {lockBadge}
               </button>
+              </>
+              )}
             </div>
           )}
 
           {/* v4.2: Lösungen je Heft (E19) — folgen dem Spur-Umschalter, nur Lehrperson, für Gäste gesperrt. */}
           {loesungsHefte.length > 0 && (
             <div className="wb-tree-group">
-              <div className="wb-tree-head">Lösungen · Lehrperson</div>
-              {loesungsHefte.map((s) => (
+              <button
+                type="button"
+                className={`wb-tree-head wb-tree-head-toggle${loesungOpen ? ' open' : ''}`}
+                onClick={() => setLoesungOpen((v) => !v)}
+                aria-expanded={loesungOpen}
+              >
+                <span className="wb-ki-label">Lösungen · Lehrperson</span>
+                <span className="wb-chevron" aria-hidden="true">▾</span>
+              </button>
+              {(loesungOpen || navCollapsed) && loesungsHefte.map((s) => (
                 <button
                   key={s}
                   className={`wb-item nested${doc === 'doc-loesungen' && situation === s ? ' active' : ''}${readOnly ? ' locked' : ''}`}
@@ -1435,8 +1489,6 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             <p>
               <strong>KI-Toolbox — optionales Zusatzangebot.</strong> Der Einsatz dieser Materialien
               entscheidet die Lehrperson; sie sind <strong>kein Pflichtteil</strong> der Einheit.
-              Verbindlich sind die drei Herausforderungen, der Kompetenznachweis und der
-              Lehrpersonen-/Bewertungsteil.
             </p>
             <p>
               Jedes Dokument ist als <strong>Word-Datei</strong> herunterladbar und
