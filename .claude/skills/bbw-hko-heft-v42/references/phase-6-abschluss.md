@@ -341,6 +341,15 @@ Executor mit seinem Heft abgibt und was er tut, wenn der Export «nicht im
 Index» meldet, steht in `references/lauf.md` §6. Dasselbe gilt nach jeder
 späteren Korrektur am Heft.
 
+**Seite 6 läuft über oder eine Karte widerspricht dem Beispielbild: nie die
+Karte ändern.** Die Methodenkarten über dem Beispielbild stehen in vielen
+publizierten Heften. Gekürzt und angepasst wird im Heft — am Beispielbild, an
+`fuer`, ausnahmsweise an einem überschriebenen `beispiel` der Methoden-Referenz.
+Wer trotzdem an eine Karte will, fragt zuerst
+`node scripts/karten.mjs darf <karten-id>`; das Ergebnis steht im Bericht.
+Ein Fehler in der Karte selbst geht in den Bericht («Offen», Kürzel S), nicht
+in die Karte (`references/karten.md`; ENTSCHEIDE E36).
+
 (Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md`
 §4 Zeile 1 — Überlauf bei grünem `check-all` in 11 von 13 Läufen — und §5.2;
 Bericht `2026-10-06-4.3.1_vielfalt_untersuchen` §10.)

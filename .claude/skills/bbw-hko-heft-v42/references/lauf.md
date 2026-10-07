@@ -14,7 +14,7 @@ der Ablauf darum herum.
 
 | Kürzel | Quelle |
 |---|---|
-| E28 … E34 | `docs/upgrade-v4.2/ENTSCHEIDE.md` |
+| E28 … E36 | `docs/upgrade-v4.2/ENTSCHEIDE.md` |
 | Rb §n | `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` |
 | P-einzel | `docs/cloud-run/prompts/einheit-aus-bauplan-lokal.md`, Fassung bis 07.10.2026 (Git `ad54734`) |
 | P-loop | `docs/cloud-run/prompts/alle-bauplaene-seriell.md`, Fassung bis 07.10.2026 (Git `ad54734`) |
@@ -341,11 +341,20 @@ Berichts in `docs/cloud-run/OFFEN.md` stehen. Handweg bis dahin: Der Abschnitt
   Entscheid Orchestrator nach dem Trockenlauf, E34]
   Passt eine Methodenkarte nicht zur Abgabe, überschreibt die
   Einheit (`fuer`, ausnahmsweise `beispiel`); `tun` wird bei `hko-`Karten nicht
-  gedruckt. Ein **Fehler** in einer bestehenden Karte (falsche Seite,
-  Rechenfehler, Widerspruch in sich) gehört in den Bericht — die Karte hängt an
-  publizierten Heften. `node scripts/karten.mjs darf <karten-id>` (sobald
-  vorhanden) sagt, ob eine Änderung zulässig ist. Handweg bis dahin: Der Lauf
-  ändert keine bestehende Karte. [E31 Nr. 2–3; Rb §3 Nr. 4, §5.4]
+  gedruckt. Ein **Fehler** in einer bestehenden Karte (falsche Seite, Aussage
+  steht nicht auf der Seite, Rechenfehler, Widerspruch in sich) gehört in den
+  Bericht, Abschnitt «Offen», Kürzel S — die Karte hängt an publizierten
+  Heften. [E31 Nr. 2–3; Rb §3 Nr. 4, §5.4]
+  **Die Regel dazu steht in `references/karten.md`** (Fälle a bis e): Die
+  eigene Karte ist dort Fall a, der Fehler Fall b, die Passung Fall c, die
+  Quellenkarte Fall d. Vor jeder Kartenänderung läuft
+  `node scripts/karten.mjs darf <karten-id>` (Exit 0 = erlaubt, 1 = gebunden);
+  Entscheid und Fall stehen im Bericht, Abschnitt 7. **Der Lauf ändert keine
+  bestehende Karte** — auch dann nicht, wenn `darf` Fall b nennt: Die
+  Korrektur mit Vermerk misst jeden Verbraucher neu und ist eine eigene
+  Session. Das Tor meldet eine berührte Karte in der Zeile «Karten»
+  (`karten.mjs geaendert`, Vergleich mit `origin/main`); neue Karten sind kein
+  Befund. [E36]
 - Keine Rückfrage an Pietro ausser an den zwei Stopps (Bauplan, Freigabe).
   Fehlt eine Voraussetzung: `references/auto-modus.md`. [P-einzel, P-loop]
 - Keine Quellensuche, kein Swissdox, keine Zugangsdaten. Das Fakten-Audit ist
@@ -364,6 +373,9 @@ gilt der Handweg — das Fehlen ist kein Abbruchfall und kein Befund.
 |---|---|---|---|
 | `scripts/lauf.mjs` | Tor, Export, Messung in einem Befehl; Logs und Kopf in den Laufordner | Befehle aus `phase-9-tor.md` §1 einzeln | Rb §5.5 |
 | `scripts/check-zeiger.mjs` | Zeitmarke, Absatz, Seite, Wortzahl, `archiv_ref` | Lösungs-Audit mit Material in voller Auflösung (`gegenleser.md` §4.2) | Rb §5.2 |
-| `scripts/karten.mjs` | Verbraucher einer Karte; ändern oder neu | der Lauf ändert keine bestehende Karte | Rb §5.4 |
 | `scripts/check-belege.mjs`, `scripts/check-fakten.mjs` | prüfen `belege.json` und `fakten.json` im Quellenarchiv unter `_pruefung/<ordnername>/` | Tabellen im Bericht (`phase-10-abschluss.md` §2), erneutes Lesen nach jeder Änderung einer Lösung | Rb §5.1, §5.3 |
 | `scripts/offen.mjs` | gleicht den Abschnitt «Offen» der Berichte mit `docs/cloud-run/OFFEN.md` ab | der Abschnitt «Offen» des Berichts | Rb §3 Nr. 6 |
+
+Vorhanden seit 07.10.2026: `scripts/check-namen.mjs` (E35) und
+`scripts/karten.mjs` (E36 — Verbraucher einer Karte, ändern oder neu,
+`references/karten.md`); beide laufen im Tor mit.

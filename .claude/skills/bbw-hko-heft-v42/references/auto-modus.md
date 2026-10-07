@@ -86,6 +86,8 @@ Früher ein Stopp, jetzt eine Regel:
 | Kapitel ausserhalb der Crosswalk-Zeile (für Fachaussagen) | zulässig, wenn der Bauplan §2 es nennt («Kapitel ausserhalb der Crosswalk-Zeile»); sonst nicht verwenden |
 | Methodenkarte aus den Kapiteln 16–20, die die Crosswalk-Zeile nicht nennt | zulässig ohne Eintrag: Die Karte ist die Fundstelle (E27) |
 | neue Methodenkarte | nur, wenn der Bauplan §9 «neue Karte nötig» sagt; sonst die nächstpassende vorhandene |
+| eine bestehende Methoden- oder Quellenkarte passt nicht zur Abgabe (Passung) | die Karte bleibt; die Einheit überschreibt (`fuer`, ausnahmsweise `beispiel`). Reicht das nicht und nennt Bauplan §9 keine neue Karte: nächstpassende vorhandene Karte, der Punkt steht im Bericht (`references/karten.md` §2, Fall c) |
+| eine bestehende Karte enthält einen **Fehler** (falsche Seite, Aussage steht nicht auf der Seite, Rechenfehler, Widerspruch in sich) | **Im Auto-Modus wird nie eine bestehende Karte geändert** — auch nicht mit Vermerk. Der Fehler geht in den Bericht, Abschnitt «Offen», Kürzel S (Karten-ID, Feld, Beleg), und von dort in die Sammelliste (`docs/cloud-run/OFFEN.md`, sobald vorhanden). `node scripts/karten.mjs darf <karten-id>` läuft trotzdem, sein Ergebnis steht dabei (`references/karten.md` §4; ENTSCHEIDE E36) |
 
 ## 5. Voraussetzung fehlt → Verhalten (ENTSCHEIDE E23)
 

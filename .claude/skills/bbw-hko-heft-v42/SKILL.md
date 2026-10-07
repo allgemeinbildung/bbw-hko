@@ -147,7 +147,9 @@ Feld, Budget, Regel), `references/sprache.md` (Anrede, Umlaute, Fall-Begriffe),
 `references/ableitungsregeln.md` (Ordner, IDs, Kurzlink, Quellen-IDs — E21),
 `references/auto-modus.md` (Regel für jeden früheren Stopp, Verhalten bei
 fehlender Voraussetzung — E23), `references/lauf.md` (Start, Rollen und
-Modelle, Vorprüfung, Reihenfolge, Messung, Abbruch, Commit — E34).
+Modelle, Vorprüfung, Reihenfolge, Messung, Abbruch, Commit — E34),
+`references/karten.md` (Methoden- und Quellenkarten: ändern oder neu anlegen,
+`scripts/karten.mjs`, Vermerk — E36).
 
 ### Wer was tut
 
@@ -263,6 +265,15 @@ Einzelheiten und der Weg, wenn der Export nicht läuft:
     sich ein Fehler in Renderer oder Skript: nicht reparieren, nicht umgehen
     (`--baseline` ist verboten) — in den Bericht, Einheit als nicht erzeugbar
     melden, wenn das Tor sonst nicht grün wird.
+    **Karten — ändern oder neu:** Vor jeder Änderung an einer Methoden- oder
+    Quellenkarte läuft `node scripts/karten.mjs darf <karten-id>`; Entscheid
+    und Fall stehen im Bericht. Eine Karte, die eine publizierte oder
+    archivierte Einheit führt, ändert gedruckte Hefte: Passt sie nicht,
+    überschreibt die Einheit oder bekommt eine neue Karte; ein Fehler in der
+    Karte wird nur mit Vermerk behoben — und nie im Auto-Modus, dort geht er
+    in den Bericht («Offen», Kürzel S). Regel, Vermerk und Befehle:
+    `references/karten.md` (ENTSCHEIDE E31 Nr. 3, E36). Das Tor prüft es mit
+    (`check-all`, Zeile «Karten»).
 
 ## 6. Wenn eine Voraussetzung fehlt
 

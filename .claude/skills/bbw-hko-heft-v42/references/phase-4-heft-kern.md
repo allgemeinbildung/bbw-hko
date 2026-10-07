@@ -267,10 +267,25 @@ verlangt). Im Lauf mit Rollen legt sie der **Orchestrator** an, bevor die Execut
 geteilte Daten, ein Schreiber; der Executor eines Hefts schreibt nur seine eigene Datei
 (`references/lauf.md` §2, §4; ENTSCHEIDE E34). Angelegt wird sie nach `docs/methodenkartei.md` §4 und §6:
 ID `hko-<slug>` oder `lm-<kap>-<slug>`, Musterbeispiel mit **neutralem Sujet** (kein Fall dieser
-Einheit), eigene Formulierung, Seitenzahl nur wenn am Buch geprüft. Bestehende Karten werden nie
-geändert: Passt eine Karte nicht zur Abgabe, überschreibt die Einheit (`fuer`, ausnahmsweise
-`beispiel`); ein Fehler in einer Karte gehört in den Bericht (`references/lauf.md` §10; ENTSCHEIDE
-E31 Nr. 3). Jede neue Karte steht im Bericht.
+Einheit), eigene Formulierung, Seitenzahl nur wenn am Buch geprüft; in `merk` und `schritte` keine
+festen Zahlen und Formate — die nennt die Einheit in `fuer` (`references/karten.md` §2, Fall e).
+Jede neue Karte steht im Bericht.
+
+**Bestehende Karten — ändern oder neu** (`references/karten.md`; ENTSCHEIDE E31 Nr. 3, E36). Vor
+jeder Änderung an einer Karte: `node scripts/karten.mjs darf <karten-id>`; `verbraucher <karten-id>`
+zeigt, welche Hefte sie führen. In einem Lauf wird keine bestehende Karte geändert:
+
+- **Passung** (die Karte stimmt, passt aber nicht zur Abgabe — Anzahl, Format, Beispiel, Begriff):
+  Die Einheit überschreibt (`fuer`, ausnahmsweise `beispiel`). Reicht das nicht, braucht es eine
+  neue Karte mit eigener ID — im Auto-Modus nur, wenn Bauplan §9 sie verlangt; sonst steht der
+  Punkt im Bericht.
+- **Fehler** in der Karte (falsche Seite, Aussage steht nicht auf der Seite, Rechenfehler,
+  Widerspruch in sich): in den Bericht, Abschnitt «Offen», Kürzel S, mit Karten-ID, Feld und Beleg
+  (`references/lauf.md` §10). Die Korrektur mit Vermerk macht eine eigene Session.
+- Läuft Seite 6 über, wird im Heft gekürzt, nie in der Karte.
+
+Das Ergebnis von `karten.mjs darf` steht im Bericht (Abschnitt 7 «Entscheide im Lauf»), sobald der
+Lauf eine Karte ändern wollte oder überschrieben hat.
 
 ## 9. Felder, die nur die Lehrperson sieht
 
