@@ -1357,3 +1357,123 @@ und die zwei Index-Dateien; Skill: `datenvertrag.md`, `phase-7-set.md`,
 `phase-10-abschluss.md` (je ein Satz).
 
 **Rückgängig:** `git revert` der Commits, danach `npm run build:einheiten-index`.
+
+## E38 — Belege ausserhalb des Repos: Ort, Format, Lösungsfelder (Pietro, 07.10.2026)
+
+**Ausgangslage:** Das Tor prüft Form. Was nach grünem Tor korrigiert wurde, war
+fast nur Inhalt: falsche Zeiger, Ableitungen, die als Quellenaussage dastanden,
+Rechts- und Sachfehler, Lösungen, die nach dem Audit geändert und nicht mehr
+geprüft wurden (Rückblick `RUECKBLICK-produktion-2026-10-06.md` §4). Die Audits
+gaben Prosa ab; daran prüft kein Skript etwas. Rückblick §5.1 schlägt vor, dass
+jede prüfende Rolle eine **Beleg-Datei** abgibt, und liess offen, wo sie liegt
+(§5.6, letzter Punkt).
+
+**Entscheid Pietro (07.10.2026): Die Beleg-Dateien liegen ausserhalb des
+Repos**, im Quellenarchiv — sie tragen wörtliche Anker aus Quelle und
+Lehrmittel, und das Repo ist öffentlich.
+
+**Stufe A — Ort und Format** (dieser Eintrag wird von den folgenden Stufen
+desselben Auftrags ergänzt: Skripte im Tor, Rollen der Skill, Riegel gegen
+Vererbung):
+
+1. **Ort:** `<Quellenarchiv>/_pruefung/<ordnername>/` — ein Ordner je Einheit,
+   nicht je Lauf; für geteilte Karten `<Quellenarchiv>/_pruefung/_karten/<id>.json`.
+   Das Archiv wird aufgelöst wie in `check-namen.mjs` (`QUELLEN_ARCHIV`
+   gewinnt). Die losen Dateien einer früheren Prüfung unter `_pruefung/`
+   bleiben unberührt.
+2. **Dateien:** `belege.json` (Lösungs-Audit: je Lösungsfeld Herkunft, Anker,
+   Fundstelle, Urteil, Hash) · `fakten.json` (Fakten-Audit: je Aussage über die
+   Welt Primärquelle, Abruf, Urteil) · `fall.json` (Executor des Hefts: die
+   erfundenen Fallzahlen und was die Situation ausschliesst) · `probe.json`
+   (Lösbarkeitsprobe: Befund, Beleg, Stand) · `herkunft.json`
+   (`{abgeleitet_von, stand_commit}` bei einer Anpassung — `set.json` bekommt
+   dafür kein Feld). Schemas im Repo unter `scripts/schema/`, je mit einem
+   Beispiel aus erfundenem Platzhaltertext.
+3. **Lösungsfelder** stehen an genau einer Stelle: `MUSTER` in
+   `scripts/lib/loesungsfelder.mjs`, hergeleitet aus `types.ts`, dem
+   Datenvertrag und der Gold-Einheit. Die 16 Einheiten im Format v4.2 führen
+   zusammen 2062 Lösungsfelder (89 bis 142 je Einheit).
+4. **Hash:** SHA-256 über den normalisierten Text des Felds (NFC, Zeilenenden,
+   Leerraum zu einem Leerzeichen, Rand weg — sonst nichts). Jede sichtbare
+   Änderung einer Lösung macht ihre Belegzeile ungültig.
+5. **«stelle» je Form des Archivtexts**, erhoben an allen 158 Archivordnern:
+   Zeitzeilen → `mm:ss` der Zeile; Absatz mit Zeit → `mm:ss` des Blocks;
+   Absatz → `Abs. N`; Lehrmittel → `S. N` (Marke `[seite: N]`). Wo ein Audio
+   oder Video keinen Text mit Zeitmarken hat, ist die Zeitmarken-Prüfung nicht
+   möglich — das wird je Karte als HINWEIS ausgegeben, nie still bestanden;
+   bei Blocktranskripten gilt nur das Fenster des Blocks.
+6. **Beschreibung** für die Skill: `references/belege.md` (Ort, jede Datei,
+   jedes Feld, die Urteile, wer schreibt).
+
+**Folgen:**
+
+- **Das Tor braucht das Archiv.** Fehlt es lokal, ist nichts geprüft: Exit 2
+  bzw. HINWEIS, nie «grün». Ein Lauf ohne Archiv (Cloud) kann die Belege nicht
+  prüfen.
+- **`_pruefung/` gehört ins Backup des Archivs.** Geht der Ordner verloren,
+  sind alle Audits zu wiederholen. (Nur genannt — das Backup selbst ist nicht
+  Teil dieses Entscheids.)
+- Für die 16 publizierten Einheiten gibt es noch keine Beleg-Dateien. Ihr
+  Fehlen ist im Tor eine Warnung, kein Fehler; bei einem Entwurf ein Fehler.
+- Im Repo steht nie ein Anker: Protokolle im Laufordner nennen Feld, Urteil
+  und Fundstelle.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Körnung der Lösungsfelder:** jede Lösungszeile (`loesung.zeilen[i]`, sie
+  trägt ihre eigene Fundstelle), jede Rasterzeile, jede Zeile der Denkhilfe,
+  jede Verbindung des Begriffsnetzes und jeder Block des Lösungsbilds ist ein
+  Feld; `gut_wenn`, `mitnahme` und `eigene_knoten` sind je ein Feld. Auch
+  `loesung.kern` ist ein Feld. Feiner als «LF1 bis LF4» im Auftrag — dafür
+  lässt sich die Fundstelle jeder Zeile mit ihrem Beleg vergleichen.
+- **`spur`** kennt neben `ohne_medien` und `mit_medien` den Wert `beide` (Kern
+  des Hefts, gemeinsamer Auftrag).
+- **`weitere_belege`** (optional) in `belege.json`: Ein Feld bleibt eine
+  Zeile, auch wenn es zwei Seiten oder zwei Zeitmarken nennt.
+- **Urteil und Herkunft:** Bei `fallueberlegung` sind Anker, `wo` und `stelle`
+  leer, und das Urteil ist `stimmt`, `ableitung` oder `falsch`; bei `quelle`,
+  `lehrmittel`, `nrlp` ist es `stimmt`, `fundstelle_falsch` oder `falsch`.
+- **`fakten.json`:** dazu `auch_in` (dieselbe Aussage in weiteren Feldern),
+  `art`, `fundstelle`, `von`. Die vier Urteile der Fakten-Tabelle
+  (`phase-10-abschluss.md` §2) fallen auf drei: «stimmt» und «vertretbar
+  vereinfacht» → `belegt`.
+- **`probe.json`** führt `laeufe[]`, damit «keine Befunde» nicht dasselbe ist
+  wie «nicht gelaufen», und je Befund eine `art`.
+- **Quellentext und Notiz** in einer Archivdatei trennt eine Regel am
+  Schriftbild (`zerlegeArchivtext()`): Quellentext ist jede Zeile mit einer
+  Marke in eckigen Klammern, dazu Tabellenzeilen; Abschnitte mit einer
+  Überschrift wie «Audit-Notiz» und Listenzeilen nach dem Kopf sind Notiz. Ein
+  Anker, der nur im Kopf oder in einer Notiz steht, ist kein Beleg.
+- **Block oder Zeile:** Ein Text gilt als Blocktranskript, wenn der Median des
+  Abstands zweier Einsatzzeiten über 6 Sekunden liegt (gemessen: Untertitel
+  2,7 bis 4 s, Blöcke 8 bis 35 s).
+- **Lehrmittel bei `--wurzel`:** Eine Temp-Kopie des Repos hat kein
+  `material/`; die Bibliothek sucht das Lehrmittel dann im Repo selbst oder
+  unter `LEHRMITTEL`.
+
+**Beim Erheben gefunden (kein stiller Entscheid, nichts geändert):**
+
+- Im Archiv fehlt der Ordner `q-221.2b-vertiefung-2/gewaehlt/`.
+- 16 der 158 Archivtexte sind Blocktranskripte, 5 Audio- oder Videokarten
+  haben keinen Text mit Zeitmarken (nur Begleittext oder Absätze). Von den 118
+  Karten der 16 Einheiten bekommen 19 einen HINWEIS zur Zeitmarken-Prüfung.
+- In mehreren Köpfen steht, die Zeitmarken seien berechnet, geschätzt oder
+  nicht gegengehört; die Bibliothek gibt das als Stichwort weiter.
+- Drei Kapiteldateien führen Seitenmarken nicht aufsteigend, zwei haben Text
+  vor der ersten Marke.
+
+**Noch nicht nachgeführt, weil ausserhalb dieser Stufe:** `SKILL.md` (Liste der
+References), `gegenleser.md` §4.2, `phase-9-tor.md`, `ableitungsregeln.md`
+§10 («noch kein Skript») — das tun die folgenden Stufen.
+
+**Geänderte Dateien (Stufe A):** `scripts/schema/belege.schema.json`,
+`fakten.schema.json`, `fall.schema.json`, `probe.schema.json`,
+`herkunft.schema.json`, `karte-belege.schema.json` (neu);
+`scripts/lib/loesungsfelder.mjs`, `scripts/lib/archiv.mjs` (neu, nur lesend);
+Skill: `references/belege.md` (neu), `lauf.md` (Kopf, §8, §11),
+`phase-10-abschluss.md` (§2, ein Verweis). `check-all.mjs` ist in dieser Stufe
+nicht geändert; im Archiv ist nichts angelegt.
+
+**Rückgängig:** `git revert` des Commits. Keine Einheit, keine Karte und kein
+Skript des Tors ändert sich; im Archiv ist nichts zu entfernen.

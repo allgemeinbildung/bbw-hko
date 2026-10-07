@@ -1,0 +1,320 @@
+# Belege — Ort, Dateien, Felder, Urteile
+
+Eine prüfende Rolle gibt ihr Ergebnis nicht als Prosa ab, sondern als
+**Beleg-Datei**. Ein Skript prüft sie dann mechanisch: Der Anker steht im
+Archivtext, die Zeitmarke liegt im Fenster der Ankerzeile, der Hash stimmt noch,
+jedes Lösungsfeld hat eine Zeile. Diese Datei beschreibt **Ort und Form** der
+Beleg-Dateien. Wer sie wann schreibt und wie die Audits arbeiten, steht bei den
+Rollen (`gegenleser.md`, `phase-10-abschluss.md`).
+
+Herkunft: ENTSCHEIDE E38; Rückblick
+`docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §5.1–§5.4; Entscheid
+Pietro 07.10.2026 («Beleg-Dateien liegen ausserhalb des Repos»).
+
+**Stand 07.10.2026:** Ort, Format, Schemas und die zwei Bibliotheken bestehen.
+Die Skripte, die die Dateien prüfen (`check-belege`, `check-fakten`,
+`check-zeiger`, `check-zahlen`), nennt `lauf.md` §11, solange sie fehlen.
+
+## 1. Ort
+
+```
+<Quellenarchiv>/_pruefung/<ordnername>/        ein Ordner je Einheit, nicht je Lauf
+<Quellenarchiv>/_pruefung/_karten/<id>.json    Belege einer geteilten Karte
+```
+
+- `<Quellenarchiv>` ist lokal `D:\OS\_lab\quellen-archiv\bbw-hko\`; die
+  Umgebungsvariable `QUELLEN_ARCHIV` überschreibt es (wie in `check-namen.mjs`).
+  Auflösen: `archivWurzel()` in `scripts/lib/archiv.mjs`.
+- `<ordnername>` ist der volle Ordnername der Einheit unter
+  `src/data/einheiten/` (`references/ableitungsregeln.md` §10).
+- **Nichts davon liegt je im Repo** — die Dateien tragen Wortlaut aus Quelle
+  und Lehrmittel (die Anker), und das Repo ist öffentlich. Im Repo liegen nur
+  die Schemas (`scripts/schema/`), die Bibliotheken und später das Protokoll
+  eines Prüflaufs im Laufordner: Feld, Urteil, Fundstelle — **nie der Anker**.
+- Unter `_pruefung/` liegen lose Dateien einer früheren Prüfung (Exporte der
+  Gold-Einheit). Sie bleiben, wie sie sind; neu entstehen nur Unterordner.
+- **Folgen:** Das Tor braucht das Archiv. Fehlt es lokal, ist nichts geprüft —
+  ein Skript meldet dann HINWEIS und endet mit Exit 2, nie «grün». Und:
+  `_pruefung/` gehört ins Backup des Archivs; geht der Ordner verloren, sind
+  alle Audits zu wiederholen.
+
+## 2. Die Dateien
+
+| Datei | Inhalt | Schreibt | Schema |
+|---|---|---|---|
+| `belege.json` | je Lösungsfeld: Herkunft, Anker, Fundstelle, Urteil, Hash | Lösungs-Audit | `scripts/schema/belege.schema.json` |
+| `fakten.json` | je Rechts- oder Sachaussage über die Welt: Primärquelle, Abruf, Urteil | Fakten-Audit | `fakten.schema.json` |
+| `fall.json` | die erfundenen Fallzahlen der Situationen und was die Situation ausschliesst | Executor des Hefts (A, B); Executor Set (Auftrag) — **nicht** ein Audit | `fall.schema.json` |
+| `probe.json` | Befunde der Lösbarkeitsprobe, je mit Stand offen oder erledigt | Lösbarkeitsprobe; den Stand führt der Orchestrator nach | `probe.schema.json` |
+| `herkunft.json` | `{ abgeleitet_von, stand_commit }` — nur bei einer Einheit, die aus einer anderen entstanden ist | wer die Anpassung beginnt (Orchestrator) | `herkunft.schema.json` |
+| `_karten/<id>.json` | Belege und Fakten einer Methoden- oder Quellenkarte | Audit der Karte | `karte-belege.schema.json` |
+
+Jede Datei beginnt mit `"format": "bbw-hko/<name>@1"` und `"einheit":
+"<ordnername>"`. Die Schemas enthalten je ein Beispiel mit erfundenem
+Platzhaltertext — nie ein Beispiel aus einer Quelle. Sie verwenden nur `type`
+(auch als Liste), `const`, `enum`, `pattern`, `minLength`, `minItems`,
+`required`, `properties`, `additionalProperties`, `items`, `$defs`, `$ref`
+innerhalb der Datei, `allOf`, `if`, `then` — ein Skript kann sie ohne
+Abhängigkeit prüfen.
+
+Ein Audit **ändert nichts an der Einheit** und schreibt nur in seinen Ordner
+unter `_pruefung/`. `set.json` bekommt kein Feld für die Abstammung; der
+Datenvertrag bleibt.
+
+## 3. Lösungsfelder und Hash
+
+**Lösungsfeld** ist ein Feld, das nur die Lehrperson sieht und sagt, was als
+Antwort gilt. Die Liste steht an genau einer Stelle: `MUSTER` in
+`scripts/lib/loesungsfelder.mjs`. `loesungsfelder(<ordner>)` liefert jedes Feld
+mit Pfad, Heft, Spur, Art, Text und Hash; die Zahl je Einheit zeigt
+`node scripts/lib/loesungsfelder.mjs <ordner>` (mit `--felder` jede Zeile).
+
+| Wo | Felder | Körnung |
+|---|---|---|
+| `leitfragen[LF1]`, `[LF2]` (Kern) und `spuren.<spur>.leitfragen[LF3]`, `[LF4]` | `loesung.kern` · `loesung.zeilen[i]` · `loesung.raster_zeilen[i]` · `loesung.befund` · `loesung.erwartungshorizont.gut_wenn` · `.beispiel_pol_1` · `.beispiel_pol_2` · `.nicht_tragfaehig` | jede Lösungszeile und jede Rasterzeile ein Feld; `gut_wenn` als Ganzes |
+| `spuren.<spur>.kasten_s4` | `loesung_zeilen[i]` (Denkhilfe) | jede Zeile |
+| `spuren.<spur>.quellen[i]` | `erwartung` (Vertiefung) | je Vertiefung |
+| `handlungsprodukt.loesungsbild` | `hinweis` · `bloecke[i]` | je Block (Titel und alle Einträge) |
+| `abschluss.loesung` | `verbindungen[i]` · `transfer` · `eigene_knoten.<spur>` · `quercheck[i]` · `mitnahme` | jede Verbindung, jede Quer-Check-Antwort; Listen als Ganzes |
+| `set.json › gemeinsamer_auftrag.erwartungshorizont` | `gut_wenn` · `tragfaehig` · `nicht_tragfaehig` | Auftragsbogen |
+
+Kein Lösungsfeld: Fragen, Rasterspalten, Beispielbild (neutraler Fall, im
+Heft), Methodenkarten, Glossar, `kn.json` (führt keine Lösung), `begleiter.md`
+(seine Lösungsstellen füllt das Marker-Skript aus diesen Feldern), Titel und
+Legende des Lösungsbilds, `quelle_ref`, `quelle_stand`.
+
+**`feld`** heisst überall `Datei › JSON-Pfad`, zeichengleich mit der Ausgabe
+der Bibliothek: `herausforderung_A.json ›
+spuren.mit_medien.leitfragen[LF3].loesung.zeilen[1]`. Eine Leitfrage wird über
+ihre Nummer angesprochen (`[LF3]`), Listen über den Index.
+
+**`spur`** ist `ohne_medien` oder `mit_medien` für alles unter
+`spuren.<spur>` und für `eigene_knoten.<spur>`; sonst `beide` (Kern des Hefts,
+gemeinsamer Auftrag).
+
+**`hash`** ist SHA-256 (hex) über den normalisierten Text des Felds:
+Unicode NFC · Zeilenenden zu `\n` · jede Folge von Leerraum zu einem
+Leerzeichen · Rand weg. Gross/Klein, Satzzeichen und Ziffern zählen. Jede
+sichtbare Änderung einer Lösung macht die Belegzeile ungültig
+(`ERR_AUDIT_VERALTET`); geprüft wird dann nur dieses Feld neu. Wie der Text
+eines Felds aus Zeile, Zellen oder Block gebildet wird, steht im Kopf von
+`loesungsfelder.mjs`; den Hash berechnet `hashText()` — nie von Hand.
+
+## 4. `belege.json`
+
+Genau **eine Zeile je Lösungsfeld**, keine Zeile ohne Feld.
+
+| Feld | Inhalt |
+|---|---|
+| `feld` | `Datei › JSON-Pfad` (Abschnitt 3) |
+| `spur` | `beide` · `ohne_medien` · `mit_medien` |
+| `herkunft` | `quelle` · `lehrmittel` · `fallueberlegung` · `nrlp` — woher die Aussage **nach dem Befund des Audits** stammt, nicht nach der Behauptung des Felds |
+| `anker` | wörtlich, 5 bis 12 Wörter am Stück; leer bei `fallueberlegung` |
+| `wo` | Quelle: ID der Karte (`q-…`) · Lehrmittel: Dateiname der Kapiteldatei · nRLP: `nrlp_3j.json` bzw. `nrlp_4j.json` · sonst leer |
+| `stelle` | wo der Anker beginnt — je Form: Abschnitt 4.2 und 4.3 |
+| `urteil` | `stimmt` · `fundstelle_falsch` · `ableitung` · `falsch` |
+| `hash` | Hash des geprüften Lösungstexts (Abschnitt 3) |
+| `geprueft_am` | `JJJJ-MM-TT` |
+| `von` | `{ "rolle": …, "modell": … }` |
+| `weitere_belege` | optional: weitere Fundstellen desselben Felds (`herkunft`, `anker`, `wo`, `stelle`) — für eine Lösungszeile, die zwei Seiten oder zwei Zeitmarken nennt |
+| `bemerkung` | optional, in eigenen Worten: was die Grundlage wirklich sagt |
+
+### 4.1 Urteile
+
+| `urteil` | Bedeutung | Folge im Tor |
+|---|---|---|
+| `stimmt` | Die Aussage steht an der genannten Stelle — oder das Feld ist eine Fallüberlegung und gibt sich als solche | — |
+| `fundstelle_falsch` | Die Aussage stimmt, aber die Fundstelle, die das Feld nennt (Karte, Seite, Absatz, Zeitmarke), ist falsch. `wo` und `stelle` der Zeile nennen die richtige | Fehler |
+| `ableitung` | Die Aussage steht weder in der Quelle noch im Lehrmittel; das Heft folgert sie | zulässig nur, wenn das Feld sie als Fallüberlegung oder Deutung kennzeichnet (`references/sprache.md`); sonst Fehler |
+| `falsch` | Die Grundlage sagt etwas anderes, oder die Aussage widerspricht dem Fall | Fehler |
+
+Zusammenhang mit `herkunft`: Bei `quelle`, `lehrmittel` und `nrlp` ist das
+Urteil `stimmt`, `fundstelle_falsch` oder `falsch`, und Anker, `wo`, `stelle`
+sind gesetzt (bei `falsch` darf der Anker fehlen: Es gibt die Stelle nicht).
+Bei `fallueberlegung` sind Anker, `wo` und `stelle` leer, und das Urteil ist
+`stimmt` (reine Überlegung am Fall, die nichts über die Quelle behauptet),
+`ableitung` (Aussage über die Sache, die die Grundlage nicht trägt) oder
+`falsch`.
+
+Der **Anker** wird aus dem Archivtext bzw. der Kapiteldatei **kopiert**, nicht
+nacherzählt. Die Suche vergleicht Wörter: Gross/Klein, Satzzeichen, Leerraum,
+Anführungszeichen und Trennstriche zählen nicht; Umlaute und Ziffern zählen
+(`ankerWoerter()` in `scripts/lib/archiv.mjs`). Er darf über eine Zeilengrenze
+laufen — Untertitelzeilen sind kürzer als ein Anker —, aber nicht aus zwei
+entfernten Stellen zusammengesetzt sein. Ein Anker, der nur im Kopf oder in
+einer Notiz der Archivdatei steht, ist kein Beleg aus der Quelle.
+
+### 4.2 Was «stelle» je Archivform heisst
+
+Ein Archivtext liegt unter `<Quellenarchiv>/<karten-id>/gewaehlt/quelle.md`
+(`phase-q-quellen.md` §9). Die Datei hat drei Teile; `zerlegeArchivtext()`
+trennt sie:
+
+- **Kopf** — die Zeile `# Titel` und die Liste `- Schlüssel: Wert` darunter
+  (Herausgeber, Datum, URL bzw. URN, Abrufdatum, Typ, Ausschnitt, Länge,
+  Transkriptart, Zeitmarken, Prüfnachweis, Sachlage …), bis zur Trennlinie
+  `---` bzw. bis zur ersten Textzeile. Die Schlüssel sind nicht in jeder Datei
+  gleich geschrieben; `kopfFeld(text, /^ausschnitt/)` sucht nach Muster.
+- **Quellentext** — jede Zeile, die mit einer **Marke in eckigen Klammern**
+  beginnt (auch fett, auch mit vorangestelltem `»`), dazu eine Zeit ohne
+  Klammer am Zeilenanfang und die Tabellenzeilen unter dem Kopf (Werte einer
+  Grafik).
+- **Notiz** — alles Übrige: Abschnitte, deren Überschrift «Audit-Notiz»,
+  «Bildprotokoll», «eigene Beschreibung» und Ähnliches nennt; Listenzeilen
+  nach dem Kopf; einzelne Hinweiszeilen. Unmarkierte Prosazeilen nach dem Kopf
+  gelten als Text **ohne Stelle** («lose»).
+
+Die Trennung ist eine Regel am Schriftbild, kein Wissen über den Inhalt. Wer
+ein Archiv neu schreibt, hält sich an die Marken unten — dann ist sie sicher.
+
+| Form | Schreibweise der Marke | `stelle` | Zeitmarken prüfbar |
+|---|---|---|---|
+| **Zeitzeilen** (Untertitel, Audio und Video) | `[mm:ss]` · `[mm:ss.d]` · `[mm:ss–mm:ss]` · `mm:ss` ohne Klammer, je Zeile | `mm:ss` — die Einsatzzeit der Zeile, in der der Anker beginnt, abgerundet auf die Sekunde | **ja**: Die Zeitmarke, die Heft oder Lösung nennen, liegt im Fenster «Einsatz der Ankerzeile bis Einsatz der nächsten Zeile nach dem Anker», ± 3 Sekunden |
+| **Absatz mit Zeit** (Transkript in Blöcken) | `[N] mm:ss — …` · `[N] mm:ss–mm:ss …` · `[N] mm:ss (Sendung hh:mm:ss) …` | `mm:ss` — die Einsatzzeit des Absatzes; `Abs. N` ist ebenfalls gültig | **nur auf den Block genau**: gleiches Fenster, aber der Block dauert meist 10 bis 30 Sekunden. HINWEIS je Karte; jede Zeitmarke dieser Quelle gehört auf die Gegenhör-Liste |
+| **Absatz** (Artikel, Webseite, Rechtstext; auch der Begleittext eines Beitrags ohne Transkript) | `[N]` · `**[N]**` · `[Abs. N]` · `[S. P, Abs. N]` | `Abs. N` bzw. `S. P, Abs. N` | Textquelle: entfällt. Audio oder Video mit solchem Text: **nicht möglich** — HINWEIS je Karte, nie still bestehen |
+| **Etikett** | `[Lead]` · `[Begleittext]` · `[Zwischentitel]` | das Etikett | wie Absatz |
+| **Tabelle** (Werte einer Grafik) | Tabellenzeile `\| … \|` | `Tabelle` | entfällt |
+| **ohne Marke** | Prosazeile nach dem Kopf | leer | nicht prüfbar — HINWEIS je Zeile der `belege.json` |
+| **kein Text** | Ordner oder `quelle.md` fehlt; nur PDF, PNG oder Tabellendatei | — | nichts prüfbar: Eine Zeile mit `herkunft: quelle` auf diese Karte ist ein Fehler |
+
+Dazu, unabhängig von der Form:
+
+- **Zeit zählt wie im Player des Beitrags** — dieselbe Zählung wie
+  `verortung.von`/`bis` der Karte. Stunden werden in Minuten umgerechnet
+  (`01:02:03` → `62:03`).
+- Der Kopf sagt bei einigen Dateien selbst, dass die Zeitmarken **berechnet**,
+  **geschätzt** oder **nicht gegengehört** sind. `zeitPruefbar()` gibt das als
+  Stichwort in `vermerk` zurück. Solche Karten bekommen einen HINWEIS, auch
+  wenn die Form «Zeitzeilen» ist.
+- Zeilen, die die Datei als ausserhalb des gewählten Ausschnitts kennzeichnet
+  (Zusatz am Zeilenende oder fehlendes `»`), bleiben Quellentext. Ob ein Anker
+  im Ausschnitt liegt, entscheidet `verortung` der Karte.
+- **Beilagen** im Ordner (`*.png`, `*.pdf`, `*.xlsx`) sind kein Text. Eine
+  Beilage `transkript.md` wird mitgelesen.
+
+`node scripts/lib/archiv.mjs --formen` zeigt für jede Karte des Archivs Form,
+Zahl der Zeilen und die Stufe der Zeitmarken-Prüfung (`zeile` · `block` ·
+`nein` · `entfaellt`) — ohne Text.
+
+Erhoben am 07.10.2026 an allen 158 Ordnern `q-…` des Archivs: 92 Absatz ·
+45 Zeitzeilen · 19 Absatz mit Zeit · 1 Etikett · 1 ohne Ordner `gewaehlt`.
+Keine Karte hat nur Bild oder PDF; vier Ordner führen Beilagen neben dem Text.
+Zeitmarken: 48 auf die Zeile, 16 nur auf den Block, 5 nicht prüfbar, 89
+entfallen (Textquellen).
+
+### 4.3 Was «stelle» im Lehrmittel heisst
+
+Kapiteldateien liegen unter `material/_lehrmittel/<Kapitelnummer>_<Titel>.md`
+(gitignored). Eine Zeile `[seite: N]` beginnt die Buchseite N; alles bis zur
+nächsten Marke gehört zu ihr. Kommentare `<!-- header|footer|style: … -->` sind
+Satzangaben und kein Text.
+
+- `wo` ist der **Dateiname** der Kapiteldatei, `stelle` ist `S. N` — die Seite,
+  auf der der Anker beginnt. Ein Anker darf über einen Seitenwechsel laufen.
+- Die Seite, die das Heft oder die Lösung nennt, muss die Seite des Ankers
+  sein (bei einem Bereich «S. 55–60»: darin liegen).
+- Zwei Kapitelnummern tragen zwei Dateien; `kapitelDateien()` gibt dann beide
+  zurück. In drei Dateien stehen Seitenmarken nicht aufsteigend, in zwei steht
+  Text vor der ersten Marke (ohne Seite) — `ladeKapitel()` meldet das als
+  `ungeordnet` bzw. `seite: null`.
+
+`herkunft: nrlp`: `wo` ist die Datei des Datensatzes unter `public/`, `stelle`
+die Nummer der Kompetenz oder des Lebensbezugs, der Anker ein Stück des
+Wortlauts dort.
+
+## 5. `fakten.json`
+
+Eine Zeile je **Aussage über die Welt** im sichtbaren Text der Einheit (Hefte,
+Lösungen, Auftragsbogen, Begleiter, Glossar, Karten): Gesetzeskürzel mit
+Artikel, Frist, Betrag, Prozent, Datum, «Stand …», Ergebnis einer Abstimmung.
+Nicht: die Fallzahlen aus `fall.json`.
+
+| Feld | Inhalt |
+|---|---|
+| `wortlaut_im_heft` | die Aussage, wie sie im Feld steht — eigener Text der Einheit, so lang, dass Kürzel, Zahl und Einheit darin stehen. Das Skript sucht den Wortlaut im Feld; ändert sich der Text, fehlt die Zeile wieder |
+| `feld` | `Datei › Stelle`; Karten als `quellen/<id>.json › …` bzw. `methoden/<id>.json › …`; Begleiter als `begleiter.md › Absatz N` |
+| `auch_in` | optional: weitere Felder mit derselben Aussage im selben Wortlaut |
+| `art` | optional: `artikel` · `frist` · `betrag` · `prozent` · `datum` · `stand` · `abstimmung` · `zahl` · `sonst` |
+| `primaerquelle` | URL der amtlichen Stelle; leer nur bei `nicht_belegbar` |
+| `fundstelle` | optional: Artikel und Absatz, Tabelle — in eigenen Worten |
+| `abgerufen_am` | `JJJJ-MM-TT` |
+| `urteil` | `belegt` · `abweichend` · `nicht_belegbar` |
+| `bemerkung` | in eigenen Worten; Pflicht bei `abweichend` und `nicht_belegbar` |
+| `von` | optional: `{ rolle, modell }` |
+
+Die Fakten-Tabelle im Bericht (`phase-10-abschluss.md` §2) kennt vier Urteile;
+in der Datei werden daraus drei: «stimmt» und «vertretbar vereinfacht» →
+`belegt` (was weggelassen ist, steht in `bemerkung`) · «stimmt nicht» →
+`abweichend` · «nicht belegbar» → `nicht_belegbar`. `abweichend` ist im Tor ein
+Fehler; `nicht_belegbar` ebenfalls, ausser die Stelle ist als Fallüberlegung
+gekennzeichnet. Ein Abruf, der älter als zwölf Monate ist, ist eine Warnung.
+
+## 6. `fall.json`
+
+Die **erfundenen** Zahlen und Angaben der Situationen — je Träger ein Fall:
+`faelle.A`, `faelle.B`, wahlweise `faelle.auftrag`. Geschrieben von dem, der
+die Situation schreibt, in derselben Phase.
+
+- `zahlen[]`: `name` (wie das Heft die Grösse nennt) · `wert` (Zahl; Text nur
+  für Wochentag, Datum, Uhrzeit) · `einheit` · wahlweise `schreibweisen[]`
+  (wie der Wert im Text steht, wenn es abweicht) und `abgeleitet_aus` (die
+  Rechnung, wenn der Wert aus anderen Fallzahlen folgt).
+- `ausgeschlossen[]`: `was` · `werte[]` · wahlweise `grund` — was die Situation
+  ausschliesst (ein Wochentag, ein Datum). Das Beispiel auf S. 6, das
+  Lösungsbild und die Lösungen dürfen es nicht als möglich zeigen.
+- je Fall `geschrieben_am` und `von`.
+
+Die Datei dient zwei Prüfungen: Jede Fallzahl steht überall mit demselben Wert
+(`check-zahlen`), und eine Fallzahl braucht keine Zeile in `fakten.json`
+(`check-fakten`).
+
+## 7. `probe.json`
+
+Ergebnis der Lösbarkeitsprobe. `laeufe[]` hält fest, **was** geprobt wurde
+(`heft`, `spur`, `geprueft_am`, `von`) — «keine Befunde» ist damit etwas
+anderes als «nicht gelaufen». `zeilen[]` sind die Befunde:
+
+| Feld | Inhalt |
+|---|---|
+| `feld` | `Datei › JSON-Pfad` der Stelle, an der die **Aufgabe** der Fehler ist |
+| `heft` · `spur` | `A` · `B` · `auftrag`; Spur wie oben |
+| `art` | `stufe3_unerreichbar` · `form_weicht_ab` · `keine_echte_wahl` · `sonst` |
+| `befund` | ein Satz |
+| `beleg` | die Stelle im Produkt und die Stelle in Kriterium, Auftrag oder Lösungsbild |
+| `stand` | `offen` · `erledigt` — `erledigt` verlangt `erledigt_am` und `erledigt_wie` (behoben, stehen gelassen mit Grund, Entscheid Pietro) |
+
+Ein Befund mit Stand `offen` ist im Tor ein Fehler.
+
+## 8. `herkunft.json`
+
+Nur bei einer Einheit, die aus einer anderen entstanden ist (Anpassungsplan):
+
+```json
+{ "abgeleitet_von": "<ordnername der Vorlage>", "stand_commit": "<git-hash>" }
+```
+
+`stand_commit` ist der Commit des Repos, dessen Stand der Vorlage übernommen
+wurde. Eine abgeleitete Einheit ist eine neue Einheit: eigene `belege.json`,
+eigene `fakten.json`, kein übernommener Beleg (`phase-10-abschluss.md` §1
+Nr. 5).
+
+## 9. Karten: `_pruefung/_karten/<id>.json`
+
+Für eine Methoden- oder Quellenkarte, deren Text an Lehrmittel oder Quelle
+hängt: `belege[]` (Zeilen wie in `belege.json`, `feld` ist der JSON-Pfad in
+der Karte, ohne `spur`) und `fakten[]` (Zeilen wie in `fakten.json`, mit
+`wortlaut_in_der_karte`). Der Hash läuft über den Text des Kartenfelds.
+
+## 10. Die zwei Bibliotheken
+
+Beide lesen nur, brauchen keine Abhängigkeit und geben auf der Konsole nie
+Quellentext aus.
+
+| Datei | Liefert |
+|---|---|
+| `scripts/lib/loesungsfelder.mjs` | `MUSTER` · `loesungsfelder(ordner)` · `loesungsfelderAus(dateien)` · `leseFeld(json, pfad)` · `normalisiereLoesungstext()` · `hashText()` |
+| `scripts/lib/archiv.mjs` | `archivWurzel()` · `lehrmittelWurzel()` · `pruefOrdner()` · `kartenBelegDatei()` · `liesBelegDatei()` · `ladeArchivtext()` · `zerlegeArchivtext()` · `kopfFeld()` · `formVon()` · `zeitPruefbar()` · `ausschnittDerKarte()` · `ankerWoerter()` · `sucheAnker()` · `laengsterTeilanker()` · `imFenster()` · `kapitelDateien()` · `ladeKapitel()` · `sucheAnkerKapitel()` · `parseZeit()` · `formatZeit()` |
+
+Beide nehmen `--wurzel <ordner>` (Repo-Wurzel einer Temp-Kopie). Das Archiv
+bleibt dabei das lokale bzw. `QUELLEN_ARCHIV`; das Lehrmittel wird zuerst in
+der Temp-Kopie gesucht, dann im Repo, oder über `LEHRMITTEL` gesetzt.

@@ -136,8 +136,10 @@ nachgeholt ist. [E32: Freigabe erst nach «Fakten an amtlichen Quellen»]
 `fakten.json` und `node scripts/check-fakten.mjs <ordner>` (sobald vorhanden):
 Dann gibt das Audit sein Ergebnis zusätzlich als Datei ab, ausserhalb des Repos
 im Quellenarchiv unter `_pruefung/<ordnername>/fakten.json`; im Laufordner
-liegt nur das Prüfprotokoll. Handweg bis dahin: die Tabelle. [Rb §5.1;
-Entscheid Pietro 07.10.2026]
+liegt nur das Prüfprotokoll. Handweg bis dahin: die Tabelle. Die Form der
+Datei steht fest: `references/belege.md` §5 — dort auch, wie die vier Urteile
+der Tabelle auf die drei der Datei fallen (`belegt`, `abweichend`,
+`nicht_belegbar`). [Rb §5.1; Entscheid Pietro 07.10.2026; E38]
 
 ## 3. Zahlen nachrechnen
 

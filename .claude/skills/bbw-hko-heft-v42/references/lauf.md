@@ -14,7 +14,7 @@ der Ablauf darum herum.
 
 | Kürzel | Quelle |
 |---|---|
-| E28 … E36 | `docs/upgrade-v4.2/ENTSCHEIDE.md` |
+| E28 … E38 | `docs/upgrade-v4.2/ENTSCHEIDE.md` |
 | Rb §n | `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` |
 | P-einzel | `docs/cloud-run/prompts/einheit-aus-bauplan-lokal.md`, Fassung bis 07.10.2026 (Git `ad54734`) |
 | P-loop | `docs/cloud-run/prompts/alle-bauplaene-seriell.md`, Fassung bis 07.10.2026 (Git `ad54734`) |
@@ -263,10 +263,11 @@ ihren Einheiten zu. Regel und Prüfung: `references/ableitungsregeln.md` §10.
 | `fakten-tabelle.md` | nur wenn die Fakten-Tabelle für den Bericht zu lang ist [B `2026-10-06-4.3.1_vielfalt_untersuchen`] |
 | `abgebrochen/` | nur im Abbruchfall (Abschnitt 7) |
 
-Beleg-Dateien mit Wortlaut der Quellen (`belege.json`, `fakten.json` — sobald
-vorhanden) liegen **nie** im Laufordner, sondern ausserhalb des Repos im
-Quellenarchiv unter `_pruefung/<ordnername>/`. [Rb §5.1; Entscheid Pietro
-07.10.2026]
+Beleg-Dateien mit Wortlaut der Quellen (`belege.json`, `fakten.json`, dazu
+`fall.json`, `probe.json`, `herkunft.json`) liegen **nie** im Laufordner,
+sondern ausserhalb des Repos im Quellenarchiv unter `_pruefung/<ordnername>/`.
+Ort, Form jeder Datei, die Urteile und was «stelle» je Archivform heisst:
+`references/belege.md`. [Rb §5.1; Entscheid Pietro 07.10.2026; E38]
 
 **Commit — einer je Einheit, erst nach grünem Tor und nach Phase 10 Schritt 6:**
 «Einheit `<ordner>` (bbw-hko-heft-v42)». Er enthält [P-loop §4, P-1a Schritt 8]:
@@ -373,9 +374,16 @@ gilt der Handweg — das Fehlen ist kein Abbruchfall und kein Befund.
 |---|---|---|---|
 | `scripts/lauf.mjs` | Tor, Export, Messung in einem Befehl; Logs und Kopf in den Laufordner | Befehle aus `phase-9-tor.md` §1 einzeln | Rb §5.5 |
 | `scripts/check-zeiger.mjs` | Zeitmarke, Absatz, Seite, Wortzahl, `archiv_ref` | Lösungs-Audit mit Material in voller Auflösung (`gegenleser.md` §4.2) | Rb §5.2 |
-| `scripts/check-belege.mjs`, `scripts/check-fakten.mjs` | prüfen `belege.json` und `fakten.json` im Quellenarchiv unter `_pruefung/<ordnername>/` | Tabellen im Bericht (`phase-10-abschluss.md` §2), erneutes Lesen nach jeder Änderung einer Lösung | Rb §5.1, §5.3 |
+| `scripts/check-belege.mjs`, `scripts/check-fakten.mjs` | prüfen `belege.json` und `fakten.json` im Quellenarchiv unter `_pruefung/<ordnername>/` (Form: `references/belege.md`) | Tabellen im Bericht (`phase-10-abschluss.md` §2), erneutes Lesen nach jeder Änderung einer Lösung | Rb §5.1, §5.3 |
 | `scripts/offen.mjs` | gleicht den Abschnitt «Offen» der Berichte mit `docs/cloud-run/OFFEN.md` ab | der Abschnitt «Offen» des Berichts | Rb §3 Nr. 6 |
 
 Vorhanden seit 07.10.2026: `scripts/check-namen.mjs` (E35) und
 `scripts/karten.mjs` (E36 — Verbraucher einer Karte, ändern oder neu,
-`references/karten.md`); beide laufen im Tor mit.
+`references/karten.md`); beide laufen im Tor mit. Ebenfalls vorhanden (E38):
+Ort und Form der Beleg-Dateien (`references/belege.md`, Schemas unter
+`scripts/schema/`) und die zwei Bibliotheken, auf denen die Prüfskripte
+aufbauen — `scripts/lib/loesungsfelder.mjs` (welche Felder Lösungsfelder sind,
+Hash; `node scripts/lib/loesungsfelder.mjs <ordner>` zählt sie) und
+`scripts/lib/archiv.mjs` (Archivtext zerlegen, Anker suchen;
+`node scripts/lib/archiv.mjs --formen` zeigt je Karte Form und Stufe der
+Zeitmarken-Prüfung). Sie prüfen selbst nichts und laufen nicht im Tor.
