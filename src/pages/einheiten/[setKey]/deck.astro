@@ -51,8 +51,12 @@ if (istV42Einheit(fullSet)) {
       { status: 404 }
     )
   }
+  // Die Titelfolie verlinkt die Fassung(en) der anderen Spur — das Deck selbst zeigt nur eine.
+  const spurLinks = Object.fromEntries(
+    SPUR_KEYS.filter((k) => k !== srcV42.spur && !!fullSet.spur_varianten?.[k]).map((k) => [k, `/einheiten/${setKey}/deck?spur=${k}`])
+  )
   // Die Spur gehört zur Kennung: zwei offene Fassungen sollen sich nicht gegenseitig steuern.
-  return new Response(buildStandaloneDeckHtmlV42(srcV42, `${setKey}-${srcV42.spur}`), {
+  return new Response(buildStandaloneDeckHtmlV42(srcV42, `${setKey}-${srcV42.spur}`, { spurLinks }), {
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
   })
 }

@@ -270,6 +270,17 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       ),
     [deckSource, deckSourceV42Akt]
   )
+  // Das v4.2-Deck zeigt genau eine Spur. Gibt es zwei, bekommt jede ihren eigenen Knopf —
+  // ein einzelner «Präsentation»-Knopf öffnete stillschweigend die Spur der Vorschau, und
+  // Quelle, LF3/LF4 samt Lösungen der anderen Spur fehlten scheinbar.
+  const deckSpuren = useMemo(
+    () =>
+      (istV42 ? SPUR_KEYS : []).flatMap((k) => {
+        const src = dRoh.spur_varianten?.[k] ? deckSourceV42(dRoh, k) : null
+        return src ? [{ spur: k, loesungen: deckV42HatLoesungen(src) }] : []
+      }),
+    [dRoh, istV42]
+  )
 
   useEffect(() => {
     const style = document.createElement('style')
@@ -816,7 +827,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             const src = deckSourceV42(dRoh, k)
             if (!src) continue
             const path = `Material_LP/${prefix}_unterrichtsdeck_${k}.html`
-            zip.file(path, buildStandaloneDeckHtmlV42(src, `${d.id}-${k}`, { logoSrc: pngDataUrl, lionSrc }))
+            // Die Titelfolie verlinkt die Fassung der anderen Spur — im ZIP die Nachbardatei.
+            const spurLinks = Object.fromEntries(
+              spurenDa.filter((o) => o !== k && !!deckSourceV42(dRoh, o)).map((o) => [o, `${prefix}_unterrichtsdeck_${o}.html`])
+            )
+            zip.file(path, buildStandaloneDeckHtmlV42(src, `${d.id}-${k}`, { logoSrc: pngDataUrl, lionSrc, spurLinks }))
             log.push(path)
           } catch (e) { console.warn('deck v42 failed', e) }
         }
@@ -1018,6 +1033,23 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
               <span className="wb-action-label">Präsentation</span>
               {deckHasLoesungen && <span className="wb-action-note">mit Lösungen</span>} {lockBadge}
             </button>
+          ) : deckSpuren.length > 1 ? (
+            deckSpuren.map(({ spur: k, loesungen }) => (
+              <a
+                key={k}
+                className="wb-action deck"
+                href={`/einheiten/${d.id}/deck?spur=${k}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Präsentation · ${SPUR_LABEL[k]}`}
+              >
+                <span className="wb-action-icon" aria-hidden="true">🖥️</span>
+                <span className="wb-action-text">
+                  <span className="wb-action-label">Präsentation · {SPUR_LABEL[k]}</span>
+                  {loesungen && <span className="wb-action-note">mit Lösungen</span>}
+                </span>
+              </a>
+            ))
           ) : (
             <a
               className="wb-action deck"

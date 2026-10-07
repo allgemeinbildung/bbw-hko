@@ -422,6 +422,10 @@ body {
   padding: 2px 6px; border-radius: 999px;
   background: #dcfce7; color: #15803d;
 }
+/* v4.2 mit zwei Spuren: der Knopf nennt die Spur. Label und Zusatz passen dann nicht mehr
+   in eine Zeile — der Zusatz bricht unter das Label um, nicht unter das Symbol. */
+.wb-action-text { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0; }
+.wb-action-text .wb-action-note { margin-left: 0; }
 .wb-action.deck.locked .wb-action-note { background: #e2e8f0; color: #64748b; }
 .wb-action.deck.locked { background: #f1f5f9; border-color: #cbd5e1; color: #64748b; }
 .wb-action.deck.locked:hover { background: #e2e8f0; border-color: #94a3b8; }

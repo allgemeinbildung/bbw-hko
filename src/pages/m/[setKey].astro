@@ -12,6 +12,7 @@
 // Der Entwurf-Status der Einheit sperrt die Seite absichtlich NICHT: gedruckte Hefte
 // müssen funktionieren. Die statische Route /m/131-a (altes Mockup) hat Vorrang.
 import { loadEinheit } from '../../lib/einheiten'
+import { quelleEmbedSrc } from '../../lib/einheiten/quelle-embed'
 import type { Quelle, QuelleKarte, SituationJson } from '../../lib/einheiten/types'
 
 const setKey = Astro.params.setKey ?? ''
@@ -108,19 +109,9 @@ function verortungText(k: QuelleKarte): string {
   return v.absaetze ?? v.von ?? ''
 }
 
-/**
- * Audio und Video direkt auf der Seite (ENTSCHEIDE E28): SRF-Beiträge mit URN laufen im
- * eingebetteten Player von SRF, Start bei `verortung.von`. Alles andere (Artikel, Grafik,
- * fremde Hosts) bleibt ein Link. Der Link unter dem Player bleibt als Ausweg stehen.
- */
-function embedSrc(k: QuelleKarte): string | null {
-  if (k.typ !== 'audio' && k.typ !== 'video') return null
-  const urn = (k as { urn?: string }).urn || /[?&]urn=([^&]+)/.exec(k.url || '')?.[1]
-  if (!urn || !/^urn:srf:(audio|video):[\w-]+$/.test(urn)) return null
-  const m = /^(?:(\d+):)?(\d{1,2}):(\d{2})$/.exec(k.verortung?.von ?? '')
-  const start = m ? (+(m[1] ?? 0)) * 3600 + +m[2] * 60 + +m[3] : 0
-  return `https://www.srf.ch/play/embed?urn=${urn}&subdivisions=false${start > 0 ? `&startTime=${start}` : ''}`
-}
+// Audio und Video direkt auf der Seite (ENTSCHEIDE E28) — die Regel steht in quelle-embed.ts
+// und gilt genauso im Unterrichtsdeck. Der Link unter dem Player bleibt als Ausweg stehen.
+const embedSrc = quelleEmbedSrc
 
 // Raster-Spalten je Quellentyp (Leitfaden §5); letzte Spalte immer «→ Begriff».
 const RASTER: Record<string, string[]> = {

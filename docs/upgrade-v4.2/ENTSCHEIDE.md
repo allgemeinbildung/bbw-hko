@@ -1915,3 +1915,52 @@ angelegt.
 
 **Rückgängig:** `git revert` des Commits der Stufe D. Das Tor läuft dann wie
 nach Stufe C (erster Durchgang wieder «ROT» mit zwei erwarteten Fehlern).
+
+## E43 — Präsentation: je Spur ein Knopf, Audio und Video spielen im Deck (Pietro, 07.10.2026)
+
+**Anlass:** In der Präsentation von `1.3.1_konsum_verantworten_v42` schienen die
+Lösungen zu LF3 der Spur mit Medien zu fehlen. Daten und Deck waren vollständig;
+der eine Knopf «Präsentation» öffnete die Spur, auf der die Vorschau gerade
+stand (zuerst «ohne Medien», `set.spur: "wahl"`), ohne sie zu nennen.
+
+**1. Je Spur ein Knopf (ergänzt E29).** Hat eine v4.2-Einheit zwei Spuren, zeigt
+die Arbeitsansicht «Präsentation · Ohne Medien» und «Präsentation · Mit Medien»,
+je mit eigenem Zusatz «mit Lösungen». Die Titelfolie sagt, in welcher Spur
+Quelle, LF3, LF4 und ihre Lösungen stehen, und verlinkt die andere Fassung — auf
+der Plattform `?spur=…`, im ZIP die Nachbardatei. Im Beamer-Fenster ist die
+Zeile ausgeblendet. Es bleibt bei **einer Fassung je Spur**; ein Deck mit beiden
+Spuren ist nicht gebaut. Einheiten mit einer Spur und 3er-Sets behalten den
+einen Knopf.
+
+**2. Audio und Video spielen im Deck (dehnt E28 von der QR-Seite auf die
+Präsentation aus).** Auf der Folie «Quelle» und auf jeder Karte der Folie
+«Vertiefung» steht bei SRF-Beiträgen mit URN «▶ Video/Audio hier abspielen». Der
+Player von SRF öffnet als Überlagerung über der Folie, Start bei
+`verortung.von`; «Bei SRF öffnen ↗» bleibt als Ausweg. Artikel, Grafiken,
+Webseiten und Rechtstexte bekommen «Quelle öffnen ↗» (neuer Tab). Die
+Ersatzquelle hat einen eigenen, leiseren Knopf. Geladen wird erst beim Klick;
+Esc, «Schliessen», ein Klick neben den Player oder ein Folienwechsel räumen ihn
+ab. Solange er offen ist, blättert keine Taste. Das Beamer-Fenster öffnet und
+schliesst mit; gestartet wird dort, wo das Bild laufen soll.
+
+**Kein neues Datenfeld.** Die Regel, was eingebettet wird, steht einmal in
+`src/lib/einheiten/quelle-embed.ts` und gilt für QR-Seite und Deck
+(`typ`, `urn` bzw. `url`, `verortung.von`).
+
+**Abweichung von E29:** Die Überlagerung liegt in der gemeinsamen Shell
+(`renderStandaloneDeckHtml`). Das HTML der Präsentation alter Einheiten ist
+darum nicht mehr zeichengleich — es trägt Markup, CSS und Skript der
+Überlagerung, aber keinen Knopf, der sie öffnet.
+
+**Geprüft (lokal, Decks direkt aus den Daten gebaut):** `1.3.1_konsum_verantworten_v42`
+beide Spuren, `2.2.1_meinungsfreiheit_reflektieren` (Video als Pflichtquelle mit
+Ersatz): Knöpfe innerhalb der Folie, Player lädt, bleibt 16:9 über der
+Steuerleiste, Esc räumt ab, Beamer-Fenster folgt. QR-Seite von 1.3.1 mit
+denselben drei Player-Adressen wie zuvor.
+
+**Nicht geprüft:** die angemeldeten Routen (`/einheiten/…/deck`, Arbeitsansicht —
+die zwei Knöpfe nur als Attrappe mit dem echten Stylesheet); das Deck aus dem
+ZIP per Doppelklick (`file://`, ob der Player von SRF dort lädt); Wiedergabe mit
+Ton; Produktions-Domain und Schulnetz.
+
+**Rückgängig:** `git revert` des Commits.
