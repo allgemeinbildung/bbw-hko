@@ -255,6 +255,8 @@ for (const slug of slugs) {
     const r = lauf(script, args)
     zeile(r.ok, name)
     if (!r.ok) { rot++; console.log(einruecken(r.text)) }
+    // Nachgetragene Budgets (E38) sind an gebundenen Einheiten Warnungen: zeigen, auch wenn das Skript gruen endet.
+    else if (script === 'check-v42.mjs') { const n = (r.text.match(/^\s+WARN_V42_BUDGET\b/gm) ?? []).length; if (n) console.log(`      Warnungen ${n}: WARN_V42_BUDGET ${n}  (node scripts/check-v42.mjs ${slug})`) }
   }
 
   // Die fuenf Beleg-Pruefungen (E38). Exit 1 = Fehler · Exit 2 = Archiv oder Lehrmittel fehlt lokal: nicht geprueft.

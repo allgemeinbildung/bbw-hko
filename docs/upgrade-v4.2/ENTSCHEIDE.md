@@ -1477,3 +1477,140 @@ nicht geändert; im Archiv ist nichts angelegt.
 
 **Rückgängig:** `git revert` des Commits. Keine Einheit, keine Karte und kein
 Skript des Tors ändert sich; im Archiv ist nichts zu entfernen.
+
+### E38, Stufe B — Skripte im Tor (07.10.2026)
+
+**Was dazukommt:** fünf Prüfskripte, je eine Zeile in `check-all` für jede
+Einheit im Format v4.2, dazu `check-links` ausserhalb des Tors.
+
+| Skript | Prüft |
+|---|---|
+| `scripts/check-belege.mjs` | `belege.json`: jedes Lösungsfeld eine Zeile, Hash (`ERR_AUDIT_VERALTET`), Anker im Archivtext bzw. auf der Lehrmittelseite, Zeile des Ankers im Ausschnitt der Karte, Zeitmarke höchstens 3 s neben dem Fenster des Ankers, Urteil, Ableitung gekennzeichnet, keine Fundstelle ohne Belegzeile; `probe.json` (offener Befund) |
+| `scripts/check-fakten.mjs` | jede Aussage über die Welt (Artikel, «Stand …», Datum, Betrag, Prozent, Frist, Menge, Abstimmung) hat eine Zeile `belegt` in `fakten.json`; Fallzahlen aus `fall.json` ausgenommen |
+| `scripts/check-zeiger.mjs` | `archiv_ref`, Wortzahl ± 5 %, Absatz, `von`/`bis`/`dauer_sek`; Zeitmarken und Absätze des Hefts im Ausschnitt; «S. n» trägt das genannte Element; jeder Schritt-Hinweis nennt eine Seite; Lehrmittelseite liegt im Kapitel |
+| `scripts/check-zahlen.mjs` | Rechnungen im Text, Summenzeile einer Tabelle, Fallzahlen überall gleich, Ausschlüsse der Situation |
+| `scripts/check-kohaerenz.mjs` | Handprüfungen `phase-9-tor.md` §3 Nr. 2–5 (gleiche Werte in Prinzip, Heft, Set · kein Lösungssatz bei den Lernenden · gesperrte Wörter · Umlaute), dazu Anzahl und Bezeichner, Kurzbeschrieb gegen Lösung, «Punkte» statt «Stufe» |
+| `scripts/check-links.mjs` | mit Netz, **nicht im Tor**: Status und Weiterleitung jeder URL der Karten und Hefte. Wöchentlich: `node scripts/check-links.mjs --alle` (nichts ist eingeplant) |
+
+**Regeln für alle fünf:**
+
+1. **Schwere nach Status.** Gebundene Einheit (`publiziert`, `archiviert`,
+   kein Feld): jeder Befund ist eine Warnung. Entwurf: Fehler. `--streng`
+   behandelt jede Einheit wie einen Entwurf — für Gegenproben und für das
+   Prüfen eines Altstands in einer Temp-Kopie.
+2. **Fehlende Beleg-Datei:** eine Zeile je Datei («nicht auditiert») —
+   `ERR_BELEGE_FEHLT`, `ERR_FAKTEN_FEHLT`, `ERR_FALL_FEHLT`; an den 16
+   publizierten Einheiten also je drei Warnungen, kein Fehler.
+3. **Exit** 0 ohne Fehler · 1 mit Fehlern · 2 bei falschem Aufruf oder wenn
+   Archiv bzw. Lehrmittel lokal fehlt. In `check-all` heisst Exit 2 «nicht
+   geprueft»; die Schlusszeile lautet dann «UNVOLLSTAENDIG», nie «GRUEN», und
+   unter `--cloud` ist es ein Fehler.
+4. **Ausgabe:** Code · Datei › Feld · Kurzbefund. Die Konsole darf Anker
+   zeigen; `--protokoll <datei>` schreibt dieselbe Liste ohne Anker und ohne
+   Textauszug — nur diese Fassung gehört in den Laufordner.
+5. **`check-all`** zeigt Warnungen und Hinweise der fünf als Zählung je Code,
+   nicht im Wortlaut (bei 16 Einheiten wäre das Tor sonst unlesbar), und
+   reicht `--streng` durch.
+
+**Gemessen am 07.10.2026 (16 publizierte Einheiten, heutiger Stand):**
+
+- `check-all` für die 16: **GRUEN**, Laufzeit 6.4 s → 16.4 s (80 zusätzliche
+  Skriptstarts).
+- Gegenproben in einer Temp-Kopie (zwei Einheiten, eigene Archivkopie,
+  Test-Belege mit aus dem Archivtext gezogenen Ankern): Grundlinie von
+  `check-belege`, `check-fakten`, `check-zahlen` ohne Fehler; **83 von 83**
+  einzeln eingebauten Fehlern lösen ihren Code aus.
+- Befunde an den 16 unter `--streng` (nichts behoben — das ist die Liste für
+  die publizierten Hefte): `check-belege` 16 × `ERR_BELEGE_FEHLT` ·
+  `check-fakten` 16 × `ERR_FAKTEN_FEHLT` · `check-zahlen` 16 ×
+  `ERR_FALL_FEHLT`, keine falsche Rechnung · `check-zeiger` 127 ×
+  `ERR_ZEIGER_SCHRITT_OHNE_SEITE` (von 240 Schritt-Hinweisen), 7 ×
+  `ERR_ZEIGER_WOERTER`, 45 Hinweise (Zeitmarken nur blockgenau, nicht prüfbar,
+  im Kopf als berechnet vermerkt; Wortzahl nicht abgrenzbar) ·
+  `check-kohaerenz` 4 × `ERR_KOH_LOESUNG_SICHTBAR`, 3 × `ERR_KOH_ANZAHL`,
+  3 × `ERR_KOH_STUFE_PUNKTE`, 43 Warnungen.
+
+**Nachgetragene Budgets in `check-v42.mjs`** (Rückblick §4, Zeile 1). Gemessen,
+nicht geschätzt: alle 16 Einheiten exportiert und in Chrome gemessen
+(`messen-v42`; 15 ohne Überlauf, 2.3.1 Heft A S. 6 mit 1.8 px — bis 2 px auf
+S. 6 ist nach E28 hingenommen); ein Budget ist der Höchstwert, der in diesen
+16 vorkommt, also der grösste Wert, von dem gemessen ist, dass er passt.
+
+| Budget | Wert | Wo der Höchstwert steht · Reserve der Seite | hart |
+|---|---|---|---|
+| Erwartung einer Vertiefung (`quellen[i].erwartung`) | 730 Zeichen | 2.2.1_meinungsfreiheit, Heft B · Lösungen S. 4: 8.7 px | ja |
+| Lösungen S. 4 je Spur (Erwartungshorizont LF4 + Erwartungen + Denkhilfe) | 3026 Zeichen | 5.2.1, Heft A mit Medien · 8.7 px | ja |
+| Lösungen S. 3 mit Medien (LF3: kern + Zeilen + Rasterzeilen + Befund) | 2151 Zeichen | 3.2.1, Heft A · 87.1 px (Heft B derselben Einheit: 2138 Zeichen, 14.9 px) | nein |
+| Kartentexte des Hefts: `fuer` · `tun` · `beispiel` | 106 · 267 Zeichen · 5 Zeilen zu 116 | 4.1.1 B · 4.3.1 A · 3.1.1 A, 3.3.1 A · S. 6 misst immer 0 px | nein |
+| Rezeptionskarte der Spur: `fuer` · `beispiel` | 80 · 178 Zeichen | 4.2.1 A · 2.1.1 B | nein |
+| Stufentexte in `kn.json` und im Auftrag | 120 Zeichen | Budget des Hefts; längster: 112 (3.3.1) | ja |
+| Zahlentabelle des Auftrags: `label` · `wert` | 45 · 30 Zeichen | 2.1.1 (44; Bogen A1: 15.8 px) · 4.2.1 (30; A1: 4 px) | nein |
+
+«Hart» heisst: Die Seite war beim Höchstwert voll — an einem Entwurf ist die
+Überschreitung ein Befund (`ERR_V42_BUDGET`). Sonst, und an jeder gebundenen
+Einheit, ist sie eine Warnung (`WARN_V42_BUDGET`, Exit unverändert): Die
+Messung entscheidet. Keine der 16 Einheiten überschreitet ein nachgetragenes
+Budget. Die Summe der Zeichen sagt eine Seite nur grob voraus (Lösungen S. 4
+hatte auch bei 2157 und 2596 Zeichen nur 8.7 px Reserve) — das Budget ist eine
+notwendige Grenze, keine hinreichende; `messen-v42` bleibt das Mass.
+
+**Bekannte Skriptfehler (Rückblick §5.5):**
+
+| Fehler | Reproduziert | Ergebnis |
+|---|---|---|
+| `check-einheiten` schweigt ohne `set.json` | ja: Einheit ohne `set.json` mit eingebautem Verstoss → «0 offene Befunde», Exit 0, alle Befunde «EINGEFROREN: live (kein status-Feld)» | behoben: Ohne `set.json` gilt die Einheit als im Bau, ihre Befunde zählen (62 offene Befunde, Exit 1). Ausgabe über alle 27 Einheiten unverändert |
+| `ERR_V42_AUFTRAG_SPALTEN`, falscher Treffer | ja: Auftrag «…: Bild, Ton, Aussage, Begriff (Glossar, Heft S. 8).» → Befund, weil der Punkt in der Klammer den Satz zerschnitt | behoben: Klammern zuerst entfernen, dann am Satzende schneiden (Abkürzungen ausgenommen). Ein echter Verstoss wird weiter gefunden; die 16 Einheiten bleiben bei 0 Befunden |
+| «UTF-16-Zählung» | — | liegt nicht in `check-v42` (zählt Codepunkte), sondern in `check-lf-loesung.mjs` (`String.length`). Nicht angefasst (ausserhalb des Umfangs dieser Stufe); in den 16 Einheiten ohne Wirkung, solange kein Zeichen ausserhalb der Grundebene vorkommt |
+| `begleiter-marker.mjs` braucht mehrere Durchgänge | **nein**: an Kopien aller 16 Einheiten jedes Textfeld geändert (auch mehrzeilig, mit «\|») — ein Lauf füllt alles (178 bis 209 Marker), der zweite füllt 0, `--check` meldet 0 abweichend | nicht geändert. Die Berichte meinen: Nach jeder späteren Änderung an Heft oder Set muss das Skript erneut laufen — das ist eine Regel des Ablaufs, kein Fehler des Skripts |
+| `seitentext.mjs` verliert den Quellentext | **nein**: Das Skript liest nur den Export, nie das Archiv; mit Windows-Zeilenenden in der Eingabe ist die Ausgabe zeichengleich. Verloren ging der Text in handgeschriebenen Paket-Skripten (Bericht 2026-10-03-121) | nicht «behoben». Die Umwandlung steht neu in `scripts/lib/seitentext.mjs` (geteilt mit `check-zeiger`, `check-kohaerenz`); die Ausgabe für alle 16 Einheiten ist vorher und nachher zeichengleich (75 Dateien). Für den Ausschnitt der Quelle gibt es `ladeArchivtext()` in `scripts/lib/archiv.mjs` |
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Zuordnung Feld → Heftseite ohne Rendern.** Die Seitenfolge ist im Renderer
+  fest (`DocHeftV42.tsx`: Seite 1 bis 8; `DocAuftragsbogen.tsx`: A1 bis A4),
+  und jede Seite liest feste Felder — die Zuordnung steht als Tabelle in
+  `scripts/lib/pruefung.mjs` (`seiteVonFeld`, `ELEMENT_SEITEN`). `--export`
+  liest zusätzlich den gedruckten Seitentext (Wort in Guillemets vor einem
+  Verweis; feste Texte des Renderers). Ohne Export gibt es dafür keinen
+  Hinweis: Die statische Prüfung läuft vollständig.
+- **Was ein Seitenzeiger ist:** nur ein Verweis, der das Element unmittelbar
+  vor der Seite nennt («Checkliste (S. 8)»). «Übertragen Sie LF3 auf S. 7» ist
+  keiner. Im Bogen und im Begleiter gilt «S. n» nur als Heftseite, wenn «Heft»
+  dabeisteht.
+- **«Jeder Schritt-Hinweis nennt eine Seite»** wörtlich genommen: «S. n» im
+  Heft; im Bogen A1–A4, ein Heft oder ein eigenes Blatt. Das trifft 127 von
+  240 Hinweisen der publizierten Einheiten.
+- **Wortliste «Fallüberlegung/Deutung»** steht in `scripts/lib/pruefung.mjs`
+  (`RE_FALLKENNZEICHEN`), erhoben an den Lösungen der 16 Einheiten;
+  `references/sprache.md` führt bisher keine. Stufe C trägt sie dort nach.
+- **`check-fakten` liest auch `kn.json` und die Karten der Einheit**, nicht nur
+  Hefte, Lösungen, Auftrag, Begleiter und Glossar. Die Art `frist` umfasst jede
+  Zahl mit Tag, Woche, Monat, Jahr, Stunde — auch ein Alter.
+- **`check-zahlen` ohne `fall.json`:** Die Zeilen der `zahlen_tabelle` gelten
+  als Fallzahlen (Name = Label). Eine Summenzeile wird nur geprüft, wenn die
+  Tabelle genau eine hat und sie die letzte ist.
+- **`check-kohaerenz`:** Zahl gleicher Dinge an zwei Stellen des Produkts ist
+  nur eine Warnung (`WARN_KOH_ANZAHL`), weil dasselbe Wort zwei Sachen meinen
+  kann; ein Fehler ist nur der Widerspruch zu den Daten (Stationen, Zeilen und
+  Spalten des Lösungsbilds, Rasterzeilen). «Woche» und «Minute» sind eine
+  Warnung und nur als Unterrichtszeit gesucht («in dieser Woche», «20
+  Minuten» ausserhalb von Situation, Zahlen, Beispiel und Produktdauer).
+  Schwelle Kurzbeschrieb: 55 % (gemessen an 122 Paaren: Median 29 %, 90 % unter
+  54 %).
+- **Zeitmarke einer Spanne:** «00:26–02:43» in einer Lösung gilt als belegt,
+  wenn ein Anker in der Spanne beginnt.
+
+**Geänderte Dateien (Stufe B):** neu `scripts/check-belege.mjs`,
+`check-fakten.mjs`, `check-zeiger.mjs`, `check-zahlen.mjs`,
+`check-kohaerenz.mjs`, `check-links.mjs`, `scripts/lib/pruefung.mjs`,
+`aussagen.mjs`, `schema.mjs`, `seitentext.mjs`; geändert
+`scripts/check-all.mjs` (fünf Zeilen je v4.2-Einheit, `--streng`, Zählung),
+`scripts/check-v42.mjs` (nachgetragene Budgets, `auftragSpalten`),
+`scripts/check-einheiten.mjs` (ohne `set.json`), `package.json` (sechs Zeilen
+`check:*`), Skill `scripts/seitentext.mjs` (nutzt die Bibliothek),
+`references/belege.md` (Abschnitt 11). Keine Einheit, keine Karte, kein
+Renderer; im Archiv ist nichts angelegt.
+
+**Rückgängig:** `git revert` der zwei Commits der Stufe B. Das Tor läuft dann
+wie nach Stufe A.

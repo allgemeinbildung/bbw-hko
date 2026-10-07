@@ -318,3 +318,90 @@ Quellentext aus.
 Beide nehmen `--wurzel <ordner>` (Repo-Wurzel einer Temp-Kopie). Das Archiv
 bleibt dabei das lokale bzw. `QUELLEN_ARCHIV`; das Lehrmittel wird zuerst in
 der Temp-Kopie gesucht, dann im Repo, oder über `LEHRMITTEL` gesetzt.
+
+## 11. Stufe B — die Skripte, die die Dateien prüfen
+
+Seit 07.10.2026 (ENTSCHEIDE E38, Stufe B). Jedes Skript führt seinen
+Codekatalog im Kopfkommentar; je Befund gibt es aus: **Code · Datei › Feld ·
+Kurzbefund**.
+
+| Skript | Liest | Prüft |
+|---|---|---|
+| `scripts/check-belege.mjs` | `belege.json`, `probe.json`, Archivtext, Kapiteldatei | jedes Lösungsfeld genau eine Zeile · Hash (`ERR_AUDIT_VERALTET`) · Anker im Quellentext bzw. auf der Seite · Zeile des Ankers im Ausschnitt der Karte · Zeitmarke der Lösung höchstens 3 s neben dem Fenster des Ankers · Urteil · Ableitung gekennzeichnet · keine Fundstelle in der Lösung ohne Belegzeile · kein offener Befund der Lösbarkeitsprobe |
+| `scripts/check-fakten.mjs` | `fakten.json`, `fall.json` | jede Aussage über die Welt (Artikel, «Stand …», Datum, Betrag, Prozent, Frist, Menge, Abstimmung) hat eine Zeile mit Urteil `belegt` · `abweichend` · `nicht_belegbar` ohne Kennzeichnung · Abruf älter als zwölf Monate |
+| `scripts/check-zeiger.mjs` | Karten, Archivtext, Kapiteldateien | `archiv_ref` · `woerter` ± 5 % · Absatz ≤ Absatzzahl · `von` < `bis`, `dauer_sek` · Zeitmarken und Absätze im Heft liegen im Ausschnitt · «S. n» trägt das genannte Element · jeder Schritt-Hinweis nennt eine Seite · Lehrmittelseite liegt im Kapitel |
+| `scripts/check-zahlen.mjs` | `fall.json` | Rechnungen im Text · Summenzeile einer Tabelle · jede Fallzahl überall mit demselben Wert · was die Situation ausschliesst |
+| `scripts/check-kohaerenz.mjs` | nur die Einheit | gleiche Werte in Prinzip, Heft und Set · kein Lösungssatz bei den Lernenden · gesperrte Wörter · Umlaute · Anzahl und Bezeichner · Kurzbeschrieb gegen Lösung · «Punkte» statt «Stufe» |
+| `scripts/check-links.mjs` | Karten und Hefte, **mit Netz** | Status und Weiterleitung jeder URL — nicht im Tor |
+
+**Gleiche Schalter in den fünf Tor-Skripten:**
+
+- `<ordner> [<ordner> …]` oder `--v42` (alle Einheiten im Format v4.2)
+- `--streng` — jede Einheit wie ein Entwurf: Befunde sind Fehler
+- `--protokoll <datei>` — dieselbe Ausgabe **ohne Anker und ohne Textauszug**
+  (nur Feld, Urteil, Fundstelle, Code): die Fassung für
+  `laeufe/<…>/belege-check.txt`. Die Konsole zeigt Anker; ins Repo gehört nur
+  das Protokoll.
+- `--wurzel <ordner>` — anderer Baum statt dieses Repos (Gegenproben)
+- `--liste` (belege, fakten, zahlen) — die Arbeitsliste, ohne zu prüfen:
+  alle Lösungsfelder mit Hash · alle gefundenen Aussagen mit Art und Umfeld ·
+  alle Rechnungen und Zahlen mit Einheit
+- `--export <ordner>` (zeiger, kohaerenz) — die Ausgabe von
+  `scripts/export-v42.mjs` dieser einen Einheit: liest zusätzlich den
+  gedruckten Seitentext. Die Skripte exportieren nie selbst.
+
+**Schwere.** Bei einer gebundenen Einheit (`publiziert`, `archiviert`, kein
+Feld) ist jeder Befund eine Warnung, bei `entwurf` und unter `--streng` ein
+Fehler. Fehlt `belege.json`, `fakten.json` oder `fall.json`, gibt es **eine**
+Zeile je Datei («nicht auditiert»), nicht eine je Feld. Codes mit `WARN_` sind
+immer Warnungen (ein Mensch entscheidet), `HINWEIS_` heisst «nicht prüfbar» und
+zählt nie als bestanden.
+
+**Exit.** 0 ohne Fehler · 1 mit Fehlern · 2 bei falschem Aufruf oder wenn
+Archiv bzw. Lehrmittel lokal fehlt. `check-all` führt die fünf als eigene
+Zeilen je v4.2-Einheit, zeigt ihre Warnungen und Hinweise als Zählung je Code
+und reicht `--streng` durch; ein Exit 2 heisst dort «nicht geprüft», die
+Schlusszeile lautet dann nicht «GRUEN», und unter `--cloud` ist es ein Fehler.
+
+**Wie die Skripte lesen** (damit ein Audit Zeilen schreibt, die bestehen):
+
+- *Zeitmarke.* Die Lösung nennt `mm:ss` oder eine Spanne `mm:ss–mm:ss`. Eine
+  Einzelmarke muss im Fenster eines Ankers liegen (Einsatz der Ankerzeile bis
+  Einsatz der nächsten Zeile, ± 3 s); bei einer Spanne muss ein Anker in ihr
+  beginnen. Jede genannte Marke braucht einen Beleg — die Hauptzeile oder
+  `weitere_belege`.
+- *Seite.* Nennt die Lösung «Kap. x.y, S. n» oder «S. n» über 8, muss ein
+  Beleg mit `herkunft: lehrmittel` auf dieser Seite (im Bereich) stehen, und
+  kein Beleg ausserhalb der genannten Seiten. «S. 1» bis «S. 8» ohne Kapitel
+  sind Heftseiten.
+- *Absatz.* «Abs. n» meint den Absatz der Quelle. «S. 62, Absatz 2» meint
+  einen Absatz der Lehrmittelseite; geprüft wird dort nur die Seite.
+  «Art. … Abs. …» ist Gesetz und kein Zeiger.
+- *Ableitung.* Das Feld kennzeichnet sie mit einem dieser Wörter:
+  Fallüberlegung · Fallangabe · Annahme · Auslegung · Deutung · nicht belegt ·
+  nicht aus dem Lehrmittel · Vertragssache · Einzelfall · mögliche Lösung
+  (`RE_FALLKENNZEICHEN` in `scripts/lib/pruefung.mjs`).
+- *Fakten.* `wortlaut_im_heft` muss im genannten Feld stehen und den Treffer
+  des Skripts enthalten (Kürzel mit Artikel, Zahl mit Einheit …). Im Begleiter
+  zählt jeder Absatz, der den Wortlaut trägt — die Absatzzählung verschiebt
+  sich mit jeder Änderung. Felder mit erfundenem Fall (Beispielbild, Beispiel
+  einer Karte, Beispielzeile) brauchen nur für Artikel, «Stand» und
+  Abstimmungen eine Zeile.
+- *Fallzahlen.* Ohne `fall.json` gelten die Zeilen der `zahlen_tabelle` als
+  Fallzahlen (Name = `label`). Mit `fall.json` gilt zusätzlich: Jede Zahl steht
+  im Text ihres Hefts, und was `ausgeschlossen` nennt, zeigen Beispiel,
+  Lösungsbild und Lösungen nicht als möglich (ein Satz mit «nicht», «kein»,
+  «ausser» zählt nicht).
+- *Seitenzeiger.* Welches Feld auf welcher Heftseite steht, ist am Renderer
+  abgelesen (feste Folge Seite 1 bis 8; `ELEMENT_SEITEN` in
+  `scripts/lib/pruefung.mjs`): Situation 1 · LF1, LF2 2 · LF3, Raster 3 · LF4,
+  Denkhilfe, Vertiefung 4 · «Das geben Sie ab», Kriterien 5 · Methoden,
+  Beispiel 6 · Arbeitsfläche 7 · Checkliste, Begriffsnetz, Glossar,
+  Quer-Check 8. Geprüft wird ein Verweis, der das Element unmittelbar vor der
+  Seite nennt («Checkliste (S. 8)», «Raster auf S. 3»).
+
+Die Bibliotheken dazu: `scripts/lib/pruefung.mjs` (Aufruf, Einheit laden,
+Schwere, Bericht, Textfelder, Seiten, Marken), `scripts/lib/aussagen.mjs`
+(Aussagen und Zahlen finden), `scripts/lib/schema.mjs` (Schemas prüfen),
+`scripts/lib/seitentext.mjs` (Text eines exportierten Dokuments je Seite —
+geteilt mit `scripts/seitentext.mjs` der Skill).

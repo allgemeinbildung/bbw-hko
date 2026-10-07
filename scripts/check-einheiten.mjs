@@ -383,7 +383,10 @@ function pruefeBegleiter(slug) {
  */
 function frozenReason(slug) {
   const sp = join(DATA, slug, 'set.json')
-  const status = existsSync(sp) ? (JSON.parse(readFileSync(sp, 'utf8')).status ?? null) : null
+  // Ohne set.json ist die Einheit im Bau (die Skill schreibt das Set erst in Phase 7) — nicht «live».
+  // Frueher galt sie hier als «live (kein status-Feld)»: Jeder Befund war eingefroren, das Skript endete
+  // mit «0 offene Befunde» und Exit 0, und check-all zeigte «ok» (Berichte 2026-10-03-211, 2026-10-04-421).
+  const status = existsSync(sp) ? (JSON.parse(readFileSync(sp, 'utf8')).status ?? null) : 'entwurf'
   if (status !== 'entwurf') return status ? `live (${status})` : 'live (kein status-Feld)'
   const hp = join(DATA, slug, 'herausforderung_A.json')
   const lg = existsSync(hp) ? (JSON.parse(readFileSync(hp, 'utf8')).lehrgang ?? '') : ''
