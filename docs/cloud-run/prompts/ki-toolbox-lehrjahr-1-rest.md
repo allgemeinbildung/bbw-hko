@@ -56,7 +56,7 @@ die sie für deine Phase nennt.
   Dateien ersetzt du ganz (neuer Zuschnitt, "version": "2.0.0"). Keine andere Datei
   anfassen — nicht set.json, nicht den Index, nicht die Skill, kein Skript.
 - Der Stopp in Phase 1 («Bestätigen?») entfällt: Wähle Basis- und Plus-Muster nach der
-  Skill und nenne Wahl und Punktzahlen in deiner Rückmeldung.
+  Skill und nenne die Wahl in deiner Rückmeldung (Basis mit Grund, Plus mit Punktzahlen).
 - Führe am Schluss `node scripts/check-ki-toolbox.mjs <ordner>` aus und behebe jeden
   Fehler in deinen vier Dateien, bis es GRUEN ist. Bei v4.2 zusätzlich
   `node scripts/check-all.mjs <ordner>`: Befunde in deinen Dateien beheben, Befunde in
@@ -67,7 +67,7 @@ die sie für deine Phase nennt.
 - Hältst du eine Regel der Skill für falsch oder für diese Einheit unerfüllbar: nicht
   dehnen, nicht umgehen — melden, mit Feld und Grund.
 
-Rückmeldung: Format und Lehrgang · Basis- und Plus-Muster mit Punktzahl · die zwei
+Rückmeldung: Format und Lehrgang · Basis-Muster mit Grund · Plus-Muster mit Punktzahl · die zwei
 Plus-Techniken · der Fehler im beispiel_dialog in einem Satz · letzte Zeile von
 check-ki-toolbox · was du nicht lösen konntest.
 ```

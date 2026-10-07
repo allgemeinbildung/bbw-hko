@@ -1,4 +1,4 @@
-# KI-Pattern-Scoring — 7 Patterns → genau 2 (Phase 1)
+# KI-Muster wählen — Basis fest, Plus nach Punkten (Phase 1)
 
 Inputs (aus dem Adapter): `aspekte`, `sk_targets` (= `sk_schnittmenge_kn.primary`),
 Handlungsprodukt-Typen, `trade_off_raum`, `zirkularitaet`.
@@ -8,7 +8,29 @@ Handlungsprodukt-Typen, `trade_off_raum`, `zirkularitaet`.
 `ai_gegenpositionen`, `ai_redaktion`, `ai_lernassistent`, `ai_ethik_tribunal`,
 `ai_entscheidungscoach`, `ai_prompt_duell`, `ai_zeitkapsel`.
 
-## Scoring-Regeln
+## Basis (`ki_1`) — fest, ohne Punkte (seit 07.10.2026, E44)
+
+Das Basis-Muster wird **nicht mehr gescort**. Im Lauf vom 07.10.2026 kam bei allen
+14 Einheiten `ai_lernassistent` heraus; die Punkte entschieden nichts, das Urteil
+«dominant» kippte aber zweimal.
+
+- **Vorgabe: `ai_lernassistent`.** Die KI stellt Fragen zum eigenen Produkt der
+  Lernenden und schreibt selbst nichts.
+- **`ai_entscheidungscoach` nur, wenn ein Handlungsprodukt selbst ein Entscheid
+  ist.** Probe, am Wortlaut von `handlungsprodukt` (Titel, Beschreibung, Abgaben)
+  in den Heften bzw. Herausforderungen: Verlangt eines **wörtlich** einen Entscheid
+  oder eine Wahl zwischen benannten Möglichkeiten («Mein Entscheid», «Ich
+  entscheide, ob …», «Ich wähle zwischen … und …»)? Dann Entscheidungscoach.
+  Ein Massstab, eine Regel, ein Standort, ein Plan, ein Brief sind kein Entscheid —
+  auch dann nicht, wenn Leitfragen nach einem Entscheid fragen. Die Aufgaben des
+  Kompetenznachweises zählen nicht.
+- Die Rückmeldung nennt das Basis-Muster mit **einem Satz Grund** (bei
+  Entscheidungscoach: das Produkt und die Stelle, wörtlich), keine Punktzahl.
+
+## Plus (`ki_2`) — Punkte
+
+Gescort werden nur die fünf Plus-Muster. Es zählen die Handlungsprodukte der Hefte
+bzw. Herausforderungen, **nicht** die Aufgaben des Kompetenznachweises.
 
 **`ai_gegenpositionen`** (Gegenposition fordern, K4/K5)
 - +30 wenn Aspekte `Ethik` ODER `Recht` enthalten
@@ -17,35 +39,14 @@ Handlungsprodukt-Typen, `trade_off_raum`, `zirkularitaet`.
 - +10 universell
 
 **`ai_redaktion`** (KI-Entwurf redigieren, K4)
-- +30 wenn ein Handlungsprodukt schriftlich-formell ist (Brief, E-Mail, Bericht, Dossier, Schreiben)
+- +30 wenn ein Handlungsprodukt schriftlich-formell ist (Liste unten)
 - +20 wenn sk_targets SK 6 enthält
 - +15 wenn ein Output-Sprachmodus schriftlich-produktiv ist (Produktion schriftlich)
-- +10 universell
-
-**`ai_lernassistent`** (sokratischer Coach, K2-K3)
-- +25 wenn die Unit methodenlastig ist (Schema, Verfahren, Modell — z. B. Vier Ohren, 3B)
-- +20 wenn sk_targets SK 2 enthält
 - +10 universell
 
 **`ai_ethik_tribunal`** (Dilemma verhandeln, K5)
 - +30 wenn Aspekte `Ethik` enthalten UND >=2 Akteursgruppen im Stoff
 - +15 wenn sk_targets SK 12 enthält
-
-**`ai_entscheidungscoach`** (Optionen abwägen, K3)
-- +25 wenn die Herausforderungen Entscheidungs-Leitfragen (K3 «Entscheide») dominant haben
-- +15 wenn ein Trade-off explizit «X vs. Y» strukturiert ist
-
-**«dominant» wird gezählt, nicht geschätzt.** Alle Leitfragen der Einheit zählen:
-je Herausforderung `leitfragen[]`, bei v4.2 dazu die `leitfrage` des Hefts.
-Entscheidungsfrage ist eine Frage, die einen eigenen Entscheid oder eine Wahl
-zwischen Möglichkeiten verlangt (entscheiden, wählen, abwägen, «soll ich …»).
-Dominant = **mindestens die Hälfte** aller Leitfragen. Zähler und Nenner stehen in
-der Rückmeldung («3 von 8»). Im Lauf vom 07.10.2026 kippte der Basis-Auftrag in
-beiden Sonden an diesem einen Urteil.
-
-Der Entscheidungscoach braucht zudem einen **Entscheid, den die Lernenden in der
-Einheit wirklich treffen** und so nennen. Heissen die Produkte «Standort», «Regel»
-oder «Drehbuch», ist `ai_lernassistent` das passende Basis-Muster.
 
 **`ai_prompt_duell`** (Prompt-Varianten vergleichen, K4)
 - +20 wenn sk_targets SK 11 enthält
@@ -55,17 +56,28 @@ oder «Drehbuch», ist `ai_lernassistent` das passende Basis-Muster.
 - +20 wenn `zirkularitaet.r2/r3_voraussicht` einen klaren Zukunftsbezug hat
 - +10 wenn Aspekte `Politik` oder `Ökologie` enthalten
 
+### «schriftlich-formell» — gezählt, nicht geschätzt
+
+Schriftlich-formell ist ein Handlungsprodukt, wenn es **an eine bestimmte Person
+oder Stelle geht und eine feste Form hat** (Anrede oder Betreff, Gruss oder
+Unterschrift). Im Lauf vom 07.10.2026 hing die Plus-Wahl in drei Einheiten an
+diesem Wort.
+
+| zählt | zählt nicht |
+|---|---|
+| Brief, E-Mail, Gesuch, Antrag, Reklamation, Mängelrüge, Bewerbung, Kündigung, Einsprache, Beschwerde, Stellungnahme an eine Stelle, Petitionstext, Leserbrief | Protokoll, Notiz, Plan, Tabelle, Checkliste, Übersicht, Factsheet, Plakat, Rezension, Kommentar, Stichwort- oder Diskussionskarte, Drehbuch, Reflexion, Präsentation, Bericht oder Dossier ohne Empfängerin oder Empfänger |
+
+Steht ein Produkt in keiner Spalte, entscheidet die Probe oben (Empfänger **und**
+feste Form); die Rückmeldung nennt das Produkt und das Ergebnis der Probe.
+
 ## Auswahl
 
-Genau **2** Patterns — eines Basis, eines Plus (`basis-plus.md`):
+Genau **2** Muster — eines Basis, eines Plus (`basis-plus.md`):
 
-- **`ki_1` (Basis)** kommt aus dem **Basis-Pool**: `ai_lernassistent` oder
-  `ai_entscheidungscoach` — das besser bewertete; bei Gleichstand
-  `ai_lernassistent`. In beiden stellt die KI **Fragen zur Arbeit der Lernenden**
-  (zum eigenen Produkt bzw. zur eigenen Entscheidung im Spannungsfeld) und schreibt
-  selbst nichts. Der Basis-Auftrag wird immer erzeugt, auch wenn sein Score unter
-  30 liegt — er ist der Einstieg, nicht die Kür.
-- **`ki_2` (Plus)** ist das bestbewertete der übrigen fünf (`ai_gegenpositionen`,
+- **`ki_1` (Basis)**: fest nach dem Abschnitt «Basis» oben — `ai_lernassistent`,
+  ausser ein Handlungsprodukt ist selbst ein Entscheid. In beiden Mustern stellt
+  die KI **Fragen zur Arbeit der Lernenden** und schreibt selbst nichts.
+- **`ki_2` (Plus)** ist das bestbewertete der fünf Plus-Muster (`ai_gegenpositionen`,
   `ai_redaktion`, `ai_ethik_tribunal`, `ai_prompt_duell`, `ai_zeitkapsel`).
   Minimum-Score 30; liegen alle darunter: trotzdem das beste + flaggen.
 - Warum getrennt: In den fünf Plus-Mustern bearbeiten die Lernenden einen Inhalt
@@ -77,14 +89,12 @@ Genau **2** Patterns — eines Basis, eines Plus (`basis-plus.md`):
 
 ```
 KI-Toolbox für: {slug}
-Basis  {pattern_1}  (Score {s1}) — {grund, max 80 Zeichen}
+Basis  {pattern_1}  (fest) — {grund, max 80 Zeichen}
 Plus   {pattern_2}  (Score {s2}) — {grund}
 Bestätigen? [j / ändern]
 ```
 
-> Referenz-Scoring (1.1.1_konflikt): Aspekte Recht+Ethik, sk_targets [6,7,11],
-> Produkt B = E-Mail/Schreiben → `ai_gegenpositionen` (80), `ai_redaktion` (75).
-> Basis-Pool: `ai_lernassistent` 35 (methodenlastig 25 + universell 10),
-> `ai_entscheidungscoach` 15 (nur «X vs. Y»; eine von vier Leitfragen je
-> Herausforderung ist eine Entscheidungsfrage → nicht dominant). Ergebnis seit
-> 07.10.2026: Basis `ai_lernassistent`, Plus `ai_gegenpositionen`.
+> Beispiel (1.1.1_konflikt): Aspekte Recht+Ethik, sk_targets [6,7,11],
+> Produkt B = E-Mail/Schreiben (schriftlich-formell) → Plus `ai_gegenpositionen`
+> (80) vor `ai_redaktion` (75). Basis `ai_lernassistent` (fest; kein Produkt ist
+> ein Entscheid).

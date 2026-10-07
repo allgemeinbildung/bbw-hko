@@ -197,14 +197,15 @@ fehlenden Inputs `ERR_INPUTS` + auflisten, was fehlt.
 
 ### PHASE 1 — KI-Pattern-Scoring (7 → 2)
 
-Read `references/ki-scoring.md`. Alle 7 Patterns scoren, **genau 2** wählen:
-`ki_1` = das besser bewertete Muster aus dem **Basis-Pool** (`ai_lernassistent`,
-`ai_entscheidungscoach`), `ki_2` = das bestbewertete der übrigen fünf (Plus;
-Minimum 30 sonst flaggen). Teacher-Preview:
+Read `references/ki-scoring.md`. **Genau 2** Muster wählen: `ki_1` (Basis) ist
+**fest** `ai_lernassistent` — `ai_entscheidungscoach` nur, wenn ein Handlungsprodukt
+wörtlich ein Entscheid ist (Probe in `ki-scoring.md`); gescort werden nur die fünf
+Plus-Muster, `ki_2` = das bestbewertete (Minimum 30 sonst flaggen;
+«schriftlich-formell» nach der Liste dort). Teacher-Preview:
 
 ```
 KI-Toolbox für: {slug}
-Basis  {pattern_1}  (Score {s1}) — {grund}
+Basis  {pattern_1}  (fest) — {grund}
 Plus   {pattern_2}  (Score {s2}) — {grund}
 Bestätigen? [j / ändern]
 ```
@@ -385,8 +386,9 @@ dann `/einheiten/{slug}` im Workbench prüfen (Nav-Gruppe «KI-Toolbox»: oben d
 Link «📖 KI-Toolbox — Lies mich!», dann 4 Docs; A4-Overflow — v. a. DocKi Seite 1;
 Liesmich-Route `/einheiten/{slug}/ki-liesmich` rendert + Word-Export geht).
 Final-Summary mit Datei-Liste (vier Dateien: drei JSON + `ki-liesmich.md`). Dazu
-gehört, was eine Auswahl entschieden hat: Punkte aller sieben Muster mit dem Zähler
-der Entscheidungs-Leitfragen («3 von 8», `ki-scoring.md`), Signale der
+gehört, was eine Auswahl entschieden hat: das Basis-Muster mit einem Satz Grund,
+die Punkte der fünf Plus-Muster (bei `ai_redaktion` das Produkt und ob es nach der
+Liste in `ki-scoring.md` schriftlich-formell ist), Signale der
 Plus-Techniken, weggelassene `begriffe` (3er-Set), ein Sperrwort in einem
 wörtlichen Feld (`kompetenzversprechen`).
 

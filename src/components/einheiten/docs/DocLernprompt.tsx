@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
 import type { LernpromptJson, LernpromptTechnik, LernpromptStacking, LernpromptBeispielDialog } from '../../../lib/einheiten/types'
-import { istBasisTechnik, istNeueFassung } from '../../../lib/einheiten/ki-toolbox'
+import { baukastenFormatLabel, istBasisTechnik, istNeueFassung } from '../../../lib/einheiten/ki-toolbox'
 
 // KI-Toolbox · Prompting (mirrors hko-deploy `ki_lernprompt`).
 // Pagination (paired): each block of 2 Technik-Karten is followed by its
@@ -51,7 +51,7 @@ const chip = {
   padding: '0.4mm 1.8mm', borderRadius: '3mm', fontWeight: 500, margin: '0 1mm 0.6mm 0',
 } as const
 
-function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
+function TechnikKarte({ t, index, formatLabel }: { t: LernpromptTechnik; index: number; formatLabel: string }) {
   const bk = t.baukasten
   return (
     <div style={{
@@ -90,7 +90,7 @@ function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
         {bk && (bk.rolle || bk.kontext || bk.aufgabe || bk.format) && (
           <div style={{ marginTop: '1mm', borderTop: '1px dashed #d8dde4', paddingTop: '1mm' }}>
             {([
-              ['Rolle', bk.rolle], ['Kontext', bk.kontext], ['Aufgabe', bk.aufgabe], ['Format', bk.format],
+              ['Rolle', bk.rolle], ['Kontext', bk.kontext], ['Aufgabe', bk.aufgabe], [formatLabel, bk.format],
             ] as Array<[string, string[] | undefined]>).map(([label, items]) =>
               items?.length ? (
                 <div key={label} style={{ marginBottom: '0.4mm', lineHeight: 1.45 }}>
@@ -225,7 +225,7 @@ export function DocLernprompt({ lernprompt, abteilung }: DocLernpromptProps) {
     // 2-column grid; default align stretch keeps both columns equal height.
     const karten = (
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3mm', alignItems: 'stretch' }}>
-        {blk.cards.map((t, i) => <TechnikKarte key={i} t={t} index={bi * 2 + i + 1} />)}
+        {blk.cards.map((t, i) => <TechnikKarte key={i} t={t} index={bi * 2 + i + 1} formatLabel={baukastenFormatLabel(lp.prompt_vorlage)} />)}
       </div>
     )
     if (neu && blk.stacking && blk.cards.every(istBasisTechnik)) {

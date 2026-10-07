@@ -873,3 +873,12 @@ Nach dem Bericht geändert: `scripts/check-ki-toolbox.mjs` (Ausnahme), `b1-langu
 `src/data/einheiten.index.json` und `public/nrlp/einheiten.index.json` (Index-Bau),
 `docs/upgrade-v4.2/ENTSCHEIDE.md` (E44), `CLAUDE.md` (drei überholte Sätze zur Toolbox).
 Lokaler Produktions-Build (`npm run build`) läuft durch.
+
+5. **Die drei Setzungen (§4b):** bestätigt, mit zwei Folgen (E44, Nachtrag). Der Baukasten im
+   Lernprompt druckt die vierte Zeile als «Form der Antwort», wenn die `prompt_vorlage` des
+   Blatts so heisst (13 Toolboxen; Pilot, `1.2.2` und Bestand behalten «Format»). Das
+   Basis-Muster ist fest `ai_lernassistent` (`ai_entscheidungscoach` nur, wenn ein
+   Handlungsprodukt wörtlich ein Entscheid ist), Punkte nur noch fürs Plus,
+   «schriftlich-formell» als Liste mit Probe. Alle 15 Toolboxen danach neu gemessen: kein
+   Überlauf. **Der Pilot fiele nach der neuen Probe auf `ai_lernassistent`** — in §8 stand
+   noch «wie im Pilot»; das war ungenau.

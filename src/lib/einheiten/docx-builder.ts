@@ -12,7 +12,7 @@ import {
 } from 'docx'
 
 import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, LernpromptJson, LernbegleiterJson, LernpromptTechnik, LernbegleiterStrategie } from './types'
-import { dimensionLabel, istBasisAuftrag, istBasisKarte, istBasisTechnik, istNeueFassung, knTypFuerLernende, leitfragenListe, promptZeile, skName } from './ki-toolbox'
+import { baukastenFormatLabel, dimensionLabel, istBasisAuftrag, istBasisKarte, istBasisTechnik, istNeueFassung, knTypFuerLernende, leitfragenListe, promptZeile, skName } from './ki-toolbox'
 import type { DossierJson, DossierRecherche, DossierScaffold } from '../../components/einheiten/docs/DocEbaDossier'
 import { skNameByNr } from '../sk-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from './sprachfoerderung'
@@ -2104,7 +2104,7 @@ export function buildLernprompt({ lernprompt, abteilung, logoPng = null }: Build
     if (t.warnung) { children.push(spacer(40)); children.push(callout('Achtung', t.warnung, WARN_AKZENT, WARN_LIGHT)) }
     const bk = t.baukasten
     if (bk) {
-      ;([['Rolle', bk.rolle], ['Kontext', bk.kontext], ['Aufgabe', bk.aufgabe], ['Format', bk.format]] as Array<[string, string[] | undefined]>).forEach(([label, items]) => {
+      ;([['Rolle', bk.rolle], ['Kontext', bk.kontext], ['Aufgabe', bk.aufgabe], [baukastenFormatLabel(lp.prompt_vorlage), bk.format]] as Array<[string, string[] | undefined]>).forEach(([label, items]) => {
         if (!items?.length) return
         children.push(new Paragraph({
           children: [
