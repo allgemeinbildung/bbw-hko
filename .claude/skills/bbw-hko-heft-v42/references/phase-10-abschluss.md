@@ -246,8 +246,8 @@ npm run build
 ```
 
 1. In `set.json` `"status": "publiziert"` setzen — das Feld bleibt stehen;
-   `check-all` lässt nur `"entwurf"`, `"publiziert"` oder ein fehlendes Feld
-   zu. [E32]
+   `check-all` lässt nur `"entwurf"`, `"publiziert"`, `"archiviert"` oder ein
+   fehlendes Feld zu. [E32, E37]
 2. Die vier Befehle: Index neu, `check-all` GRUEN, Bestand unverändert, Build
    Exit 0.
 3. Commit «Freigabe: `<ordner>`» mit `set.json`, den zwei Index-Dateien und dem

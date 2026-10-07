@@ -1281,3 +1281,79 @@ Nr. 12), `lauf.md` (Kopf, §10, §11), `auto-modus.md` (§4),
 
 **Rückgängig:** `git revert` der drei Commits; die zwei `_aenderungen.json`
 entfallen dabei. Kein Datensatz und keine Karte ändert sich.
+
+## E37 — Dritter Status «archiviert»: abgelöste Einheit nur für KT1, QR-Seite bleibt (Pietro, 07.10.2026)
+
+**Anlass.** `set.json › status` kannte «entwurf» und «publiziert»; der
+Index-Builder behandelte jeden anderen Wert — auch einen Tippfehler — als
+live. Die abgelöste `1.3.1_konsum_verantworten` stand darum auf «entwurf» und
+erschien für KT1 zwischen echten Entwürfen und im Entwurf-Zähler auf `/admin`
+(E31 Nr. 4, E32; Rückblick 06.10.2026 §3 Nr. 7; Inventar E34 Nr. 10).
+
+**Entscheid.**
+
+1. `status` ist `entwurf` | `publiziert` | `archiviert` (oder fehlt = live).
+   `scripts/build-einheiten-index.mjs` bricht bei jedem anderen Wert mit
+   Fehlermeldung ab, bevor eine der zwei Index-Dateien geschrieben wird.
+2. **Archiviert ist nur für KT1 sichtbar** — überall dort, wo ein Entwurf es
+   ist: Katalog, Jahresplanung, Feedback-Auswahl, Prompt-Builder-Panel,
+   Graph-Overlay, Direkt-URL der Detailseite samt Deck, «Lies mich!» und
+   Werkstatt (Umleitung auf `/einheiten`). Eine Schranke: `istNurKt1()` in
+   `src/lib/einheiten/index.ts` (= Entwurf oder archiviert); `visibleEinheiten`
+   filtert damit.
+3. **Die QR-Seite `/m/<ordner>` funktioniert weiter, für alle wie bisher**
+   (Pietro, 07.10.2026): Gedruckte Hefte sind im Umlauf. Die Seite fragt den
+   Status nicht — weder bei Entwurf noch bei archiviert.
+4. **KT1** sieht archivierte Einheiten im Katalog in einem eigenen,
+   eingeklappten Abschnitt «Archiv» unter der Landkarte, mit grauem
+   Zustands-Badge «Archiviert · nur KT1» — nicht in der Landkarte, in keinem
+   Zähler des Katalogs, nicht im Entwurf-Zähler auf `/admin`. Die Detailseite
+   trägt einen grauen Hinweisbalken.
+5. **`ersetzt_durch: "<ordner>"`** (optional, nur bei `archiviert`): Karte und
+   Detailseite zeigen KT1 den Link zur Nachfolgerin. Der Builder prüft, dass
+   der Ordner existiert; der Schlüssel steht nur im Index, wenn er gesetzt ist.
+6. **Für die Prüfskripte gilt archiviert wie publiziert:** `check-namen`
+   meldet Befunde als Warnung, `karten.mjs` zählt die Einheit als «gebunden»
+   und weist sie getrennt aus (E36), `check-einheiten` und
+   `check-bogen-v2-regression` halten sie eingefroren. `check-all`
+   (`STATUS_OK`) und `check-v42` (`ERR_V42_STATUS`) lassen den Wert zu.
+7. **Daten:** nur `1.3.1_konsum_verantworten` → `archiviert`,
+   `ersetzt_durch: "1.3.1_konsum_verantworten_v42"`. Ihre Dokumente ändern
+   sich nicht (`bestand-v42 --pruefen` unverändert). Feedback-Bögen und
+   Statistik bestehender Einträge bleiben lesbar — sie hängen an der
+   Einheiten-ID, nicht am Status.
+
+**Was sich für lp und gast ändert:** nichts. Die alte 1.3.1 war für sie als
+Entwurf schon unsichtbar.
+
+**Nicht Teil dieses Entscheids, beim Erheben gefunden (kein stiller
+Entscheid):**
+
+- `public/nrlp/einheiten.index.json` ist eine öffentlich ausgelieferte
+  statische Datei und führt **alle** Einheiten mit vollen Metadaten (Titel,
+  Kompetenzen, Hefttitel, Status) — Entwürfe wie die archivierte. Ausgeblendet
+  wird erst im Browser; die Rolle des Prompt-Builders kommt aus dem
+  URL-Parameter `?role=`. Das war vor E37 so und ist unverändert.
+- Keine Entwurf-Schranke haben heute `/jahresplanung/thema/[nr]` (listet alle
+  Einheiten eines Lebensbezugs, auch Entwürfe, für jede Rolle),
+  `/einheiten/<ordner>/feedback`, `/einheiten/<ordner>/ki-liesmich` und die
+  zwei Word-Routen `/api/einheit-begleiter-docx` und
+  `/api/einheit-ki-liesmich-docx`. Für die archivierte 1.3.1 heisst das: Sie
+  ist dort so erreichbar wie zuvor als Entwurf.
+- Auf den Astro-Seiten gilt die Rolle `reviewer` als `lp` (sieht weder
+  Entwürfe noch Archiv); nur die statische Sub-App unter `public/nrlp/`
+  behandelt `reviewer` wie `kt1`. Unverändert übernommen.
+- `scripts/abdeckung.mjs` kennzeichnet jede Einheit, die nicht «entwurf» ist,
+  mit «P» — auch die archivierte.
+
+**Geänderte Dateien:** `scripts/build-einheiten-index.mjs`,
+`scripts/check-all.mjs`, `scripts/check-v42.mjs`;
+`src/lib/einheiten/index.ts`, `types.ts`;
+`src/components/einheiten/EinheitCard.astro`; `src/pages/einheiten/index.astro`,
+`[setKey].astro`, `[setKey]/deck.astro`, `begleiter.astro`, `werkstatt.astro`;
+`src/pages/admin/katalog.astro`; `public/nrlp/prompt-builder/einheiten.js`,
+`public/nrlp/ext/units-overlay.js`; Daten: `1.3.1_konsum_verantworten/set.json`
+und die zwei Index-Dateien; Skill: `datenvertrag.md`, `phase-7-set.md`,
+`phase-10-abschluss.md` (je ein Satz).
+
+**Rückgängig:** `git revert` der Commits, danach `npm run build:einheiten-index`.

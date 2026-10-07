@@ -45,7 +45,7 @@ Reihenfolge einhalten; jeder Schritt liest eine Datei, keiner das Gedächtnis.
 | `lehrgang` | kanonisch, einwertig, wie in den Heften |
 | `thema` | `T<n>` wie `nrlp.themen[0]` der Hefte |
 | `version` | `"2.1.0"` (Konstante des Skeletts) |
-| `status` | **exakt `"entwurf"`** — `ERR_V42_STATUS`; `check-all` lässt nur `entwurf`, `publiziert` oder kein Feld zu, und der Index-Builder behandelt jeden anderen Wert als veröffentlicht |
+| `status` | **exakt `"entwurf"`** — `ERR_V42_STATUS`; `check-all` lässt nur `entwurf`, `publiziert`, `archiviert` oder kein Feld zu, und der Index-Builder bricht bei jedem anderen Wert ab (E37) |
 | `prinzip_ref`, `kn_ref` | `<ordner>_prinzip`, `<ordner>_kn` |
 | `herausforderungen` | genau 2: `<ordner>_hf_A`, `<ordner>_hf_B` |
 | `wochenplan` | 4 Einträge `{ woche, lektionen, inhalt }`, `woche` 1–4, `lektionen` je 3; `inhalt` wie im Skelett (Leitfaden §8): Heft A · Heft B · Gemeinsamer Auftrag (2) + Rückmeldung (1) · KN (2) + Puffer (1). Steht nur im Set; das Heft nennt keine Woche (E17) |
