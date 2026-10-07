@@ -562,7 +562,9 @@ export interface SetJson {
   // Cluster 3 — optional per-unit override; normally derived from sit_*.nrlp.sprachmodus_ids
   sprachfoerderung?: { sprachmodus_ids?: string[]; hinweis_hoerverstaendnis?: string }
   // Sichtbarkeit (KT1-only Drafts). Beide optional; fehlend = live für alle.
-  status?: 'entwurf' | 'publiziert'
+  status?: EinheitStatus
+  /** Nur bei `status: "archiviert"`: Ordnername der Nachfolgerin (E37). */
+  ersetzt_durch?: string
   entwurf_komponenten?: string[]   // z. B. ['ki-fluency'] → einzelne Bausteine nur KT1
   /** Kanonischer Lehrgang — steuert Datensatz-Auflösung und EBA-Rendering. Einwertig. */
   lehrgang?: string
@@ -770,10 +772,15 @@ export interface LernbegleiterJson {
   }
 }
 
+/** Status einer ganzen Einheit (set.json › status). Der Index-Builder bricht bei jedem anderen Wert ab. */
+export type EinheitStatus = 'entwurf' | 'publiziert' | 'archiviert'
+
 export interface EinheitIndexEntry {
   id: string
-  /** Sichtbarkeit der ganzen Einheit. Fehlend/`publiziert` = live; `entwurf` = nur KT1. */
-  status?: 'entwurf' | 'publiziert'
+  /** Sichtbarkeit der ganzen Einheit. Fehlend/`publiziert` = live; `entwurf` und `archiviert` = nur KT1. */
+  status?: EinheitStatus
+  /** Nur bei archivierten Einheiten und nur, wenn gesetzt: Ordnername der Nachfolgerin. */
+  ersetzt_durch?: string
   /** Bausteine, die (bei sonst live Einheit) nur KT1 sieht. Gruppen-Keys, z. B. `ki-fluency`. */
   entwurf_komponenten?: string[]
   kompetenz_nr: string

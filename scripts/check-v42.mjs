@@ -879,8 +879,9 @@ for (const L of ['A', 'B']) {
 
 // Seit der Freigabe vom 05.10.2026 (E32) darf eine v4.2-Einheit publiziert sein. Dass ein
 // frisch erzeugter Ordner «entwurf» trägt, erzwingt check-all unter --neu und --cloud.
-if (set && set.status !== 'entwurf' && set.status !== 'publiziert') {
-  add('regel', 'ERR_V42_STATUS', 'set.json', 'status', 'E32', zeige(set.status), '"entwurf" oder "publiziert"')
+// «archiviert» (E37) ist der dritte Status: eine abgelöste Einheit, nur für KT1 sichtbar.
+if (set && !['entwurf', 'publiziert', 'archiviert'].includes(set.status)) {
+  add('regel', 'ERR_V42_STATUS', 'set.json', 'status', 'E32/E37', zeige(set.status), '"entwurf", "publiziert" oder "archiviert"')
 }
 
 // Fall-Begriffe: aus dem Prinzip, plus Wortformen. Vergleich in Kleinbuchstaben.

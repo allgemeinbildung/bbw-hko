@@ -58,6 +58,12 @@ const slugs = readdirSync(DATA_DIR).filter((n) => {
   return statSync(p).isDirectory()
 })
 
+// Status der ganzen Einheit (set.json › status). Ein unbekannter Wert galt frueher
+// still als «publiziert» — ein Tippfehler haette einen Entwurf fuer alle sichtbar
+// gemacht. Jetzt bricht der Bau ab, BEVOR eine Index-Datei geschrieben wird (E37).
+const STATUS_ERLAUBT = ['entwurf', 'publiziert', 'archiviert']
+const fehler = []
+
 const index = []
 for (const slug of slugs) {
   const dir = join(DATA_DIR, slug)
@@ -118,11 +124,26 @@ for (const slug of slugs) {
   const abgedeckteKompetenzen = Array.from(abgedeckteSet)
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
 
-  // Sichtbarkeits-Steuerung (KT1-only Drafts). Beide Felder optional in set.json:
+  // Sichtbarkeits-Steuerung (KT1-only Drafts). Alle Felder optional in set.json:
   //  • status: 'entwurf' → ganze Einheit nur für KT1 sichtbar (neue Einheit)
+  //  • status: 'archiviert' → ganze Einheit nur für KT1 sichtbar (abgelöste Einheit);
+  //    ersetzt_durch: '<ordner>' nennt die Nachfolgerin
+  //  • status fehlt oder 'publiziert' → live für alle
   //  • entwurf_komponenten: ['ki-fluency', …] → einzelne Bausteine einer sonst
   //    live geschalteten Einheit nur für KT1 (selektives Publizieren)
-  const status = set?.status === 'entwurf' ? 'entwurf' : 'publiziert'
+  const rohStatus = set?.status
+  if (rohStatus !== undefined && !STATUS_ERLAUBT.includes(rohStatus)) {
+    fehler.push(`${slug}/set.json › status: ${JSON.stringify(rohStatus)} — erlaubt: ${STATUS_ERLAUBT.map((s) => `"${s}"`).join(', ')} oder kein Feld`)
+  }
+  const status = rohStatus ?? 'publiziert'
+  const ersetztDurch = set?.ersetzt_durch
+  if (ersetztDurch !== undefined) {
+    if (typeof ersetztDurch !== 'string' || ersetztDurch === slug || !slugs.includes(ersetztDurch)) {
+      fehler.push(`${slug}/set.json › ersetzt_durch: ${JSON.stringify(ersetztDurch)} — kein anderer Ordner unter src/data/einheiten/ heisst so`)
+    } else if (status !== 'archiviert') {
+      fehler.push(`${slug}/set.json › ersetzt_durch steht nur einer Einheit mit status "archiviert" zu (Ist: "${status}")`)
+    }
+  }
   const entwurfKomponenten = Array.isArray(set?.entwurf_komponenten)
     ? set.entwurf_komponenten.filter((x) => typeof x === 'string')
     : []
@@ -143,6 +164,8 @@ for (const slug of slugs) {
   index.push({
     id: slug,
     status,
+    // Nur gesetzt, wenn die Einheit eine Nachfolgerin nennt — sonst fehlt der Schluessel.
+    ...(ersetztDurch !== undefined ? { ersetzt_durch: ersetztDurch } : {}),
     entwurf_komponenten: entwurfKomponenten,
     kompetenz_nr: kompetenzNr,
     abgedeckte_kompetenzen: abgedeckteKompetenzen,
@@ -203,6 +226,12 @@ function estimateBundleCount({ sitA, sitB, sitC, kn, prinzip, hatBegleiter, ki, 
   if (hatBegleiter) n += 1
   n += 1
   return n
+}
+
+if (fehler.length) {
+  console.error(`build-einheiten-index: ABBRUCH — ${fehler.length} Fehler, kein Index geschrieben`)
+  for (const f of fehler) console.error('  ' + f)
+  process.exit(1)
 }
 
 index.sort((a, b) => a.id.localeCompare(b.id))

@@ -6,7 +6,7 @@
 // Lehrgangs als Landkarte — Thema → Lebensbezug → Einheiten — mit einer Themen-Leiste links
 // als Sprungmarken. Lebensbezüge ohne Einheit bleiben sichtbar («noch keine Einheit»).
 import Admin from '../../layouts/Admin.astro'
-import { einheitenIndex, lehrgaengeOf, LEHRGANG_ORDER, LEHRGANG_LABEL } from '../../lib/einheiten'
+import { einheitenIndex, isArchiviert, lehrgaengeOf, LEHRGANG_ORDER, LEHRGANG_LABEL } from '../../lib/einheiten'
 import { getNrlp, toLehrdauer } from '../../lib/nrlp'
 
 const user = Astro.locals.user
@@ -22,7 +22,7 @@ if (profile?.role !== 'kt1') return Astro.redirect('/')
 
 const NEU = new Set(['1.3.1_konsum_verantworten', '1.2.2_ki_kompetenznachweis_vorbereiten'])
 
-const alle = einheitenIndex.map((e: any) => ({
+const alle = einheitenIndex.filter((e) => !isArchiviert(e)).map((e: any) => ({
   id: e.id,
   titel: e.einheit_titel,
   kompetenz: e.kompetenz_nr,

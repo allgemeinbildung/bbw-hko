@@ -1,5 +1,5 @@
 ---
-import { loadEinheit, einheitById, isEntwurf } from '../../../lib/einheiten'
+import { loadEinheit, einheitById, istNurKt1 } from '../../../lib/einheiten'
 import { guestGateHtml } from '../../../lib/einheiten/guest-gate'
 import { buildStandaloneDeckHtml, deckSourceFromFullSet } from '../../../lib/einheiten/deck-builder'
 import { buildStandaloneDeckHtmlV42, deckSourceV42, istV42Einheit } from '../../../lib/einheiten/deck-v42'
@@ -31,10 +31,10 @@ if (gateProfile?.role === 'gast') {
   })
 }
 
-// Entwurf-Einheiten sind nur für KT1 sichtbar. Die Detailseite leitet lp/gast bereits
+// Entwurf- und archivierte Einheiten sind nur für KT1 sichtbar. Die Detailseite leitet lp/gast bereits
 // um — diese Unterroute wird aber direkt per URL erreicht und muss dieselbe Schranke
 // selbst ziehen, sonst liesse sich ein unveröffentlichtes Deck am Katalog vorbei öffnen.
-if (isEntwurf(meta) && gateProfile?.role !== 'kt1') {
+if (istNurKt1(meta) && gateProfile?.role !== 'kt1') {
   return Astro.redirect('/einheiten')
 }
 

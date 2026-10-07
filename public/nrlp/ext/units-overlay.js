@@ -19,10 +19,10 @@ function lehrgangMatches(unitLehrgang, want) {
   return arr.includes(want);
 }
 
-// Sichtbarkeit: Entwurf-Einheiten für lp/gast ausblenden.
+// Sichtbarkeit: Entwurf- und archivierte Einheiten für lp/gast ausblenden.
 function einheitVisible(e, role) {
   if (role === 'kt1' || role === 'reviewer') return true;
-  return e.status !== 'entwurf';
+  return e.status !== 'entwurf' && e.status !== 'archiviert';
 }
 
 async function fetchIndex(url) {

@@ -14,8 +14,8 @@
  *
  *   STRUKTUR   Pflichtdateien, jedes JSON parsbar, IDs tragen den Ordnernamen,
  *              ein Lehrgang ueber alle Herausforderungen
- *   STATUS     set.status ist exakt "entwurf" | "publiziert" | fehlt — der
- *              Index-Builder behandelt jeden anderen Wert als LIVE. Unter --neu
+ *   STATUS     set.status ist exakt "entwurf" | "publiziert" | "archiviert" | fehlt —
+ *              der Index-Builder bricht bei jedem anderen Wert ab (E37). Unter --neu
  *              und --cloud muss er "entwurf" sein.
  *   METHODEN   Refs existieren in src/data/methoden/, genau vier Eintraege,
  *              genau zwei mit Beispiel (docs/methodenkartei.md)
@@ -41,7 +41,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const EINHEITEN = join(ROOT, 'src/data/einheiten')
 const METHODEN = join(ROOT, 'src/data/methoden')
 const LEHRGAENGE = ['EBA_2J', 'EFZ_3J', 'EFZ_4J']
-const STATUS_OK = [undefined, 'entwurf', 'publiziert']
+const STATUS_OK = [undefined, 'entwurf', 'publiziert', 'archiviert']
 const PFLICHT = ['set.json', 'prinzip.json', 'kn.json', 'begleiter.md', 'herausforderung_A.json', 'herausforderung_B.json']
 const PLATZHALTER = /\[QUELLE SUCHEN|\[URL\b|\[JJJJ|\[HERAUSGEBER|verifizieren\]|\[Beispiel aus|\bTODO\b|\bTBD\b|\{\{[^}]*\}\}|\{[A-Z][A-Z0-9_.]{3,}\}/
 
@@ -114,7 +114,7 @@ function pruefeEinheit(slug) {
   }
 
   const status = json['set.json']?.status
-  if (!STATUS_OK.includes(status)) err('ERR_STATUS_UNBEKANNT', 'set.json › status', `«${status}» — der Index-Builder behandelt das als LIVE`)
+  if (!STATUS_OK.includes(status)) err('ERR_STATUS_UNBEKANNT', 'set.json › status', `«${status}» — erlaubt: entwurf, publiziert, archiviert oder kein Feld; der Index-Builder bricht sonst ab`)
   else if (mussEntwurf && status !== 'entwurf') err('ERR_STATUS_NICHT_ENTWURF', 'set.json › status', `«${status ?? 'fehlt'}» — eine neu erzeugte Einheit muss "entwurf" tragen, sonst ist sie nach dem Index-Bau fuer alle sichtbar`)
 
   const hfs = ['A', 'B', 'C'].map((l) => [l, json[`herausforderung_${l}.json`]]).filter(([, h]) => h)
