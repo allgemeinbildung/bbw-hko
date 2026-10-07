@@ -233,3 +233,69 @@ Session je Arbeitsbaum · Cloud-Weg entscheiden · `docs/cloud-run/` →
 5. Danach, als eigener Auftrag: Belege als Daten (5.1–5.3), die Skripte aus
    5.2, die Riegel aus 5.4. Probe an den fünf wartenden Bauplänen
    (5.1.1 bis 6.3.1) mit gemessener Dauer.
+
+## 7. Umgesetzt am 07.10.2026
+
+Die Punkte aus §3 und §5 sind in acht Aufträgen umgesetzt (Protokoll:
+`docs/cloud-run/laeufe/2026-10-07-umbau/PROTOKOLL.md`; Entscheide E34–E38).
+Neu im Tor: Namen, Karten, Belege, Fakten, Zeiger, Zahlen, Kohärenz, Skelette.
+Neu in der Skill: ein Ablauf für jeden Start (`references/lauf.md`), Phase 10,
+die Rollen Lösungs-Audit (blind), Fakten-Audit und Lösbarkeitsprobe
+(`references/audits.md`), Belege ausserhalb des Repos (`references/belege.md`).
+
+**Beweis an den Fehlern vom 05.10.** Altstand `ba2732c` von
+`3.3.1_kaufvertrag_beurteilen`, `4.2.1_risiken_absichern`,
+`1.2.1_lernzeit_planen` in einer Temp-Kopie; Messlatte sind 138 Fehler, die
+Nachträge und Korrektur-Commits nennen. Gelaufen sind die Skripte über die
+ganzen Einheiten, das Lösungs-Audit je Einheit an EINEM von fünf Paketen
+(Heft B, mit Medien; einmal zusätzlich mit Sonnet), das Fakten-Audit begrenzt
+auf 45 Aussagen, die Lösbarkeitsprobe an Heft B mit Medien. 69 der 138 Zeilen
+lagen damit ausserhalb jedes Laufs. Gezählt ist streng: gefunden heisst
+gleiches Feld und gleicher Sachverhalt, als Urteil.
+
+| Art | Fehler | in Reichweite | Skript | Rolle | nur bemerkt | in Reichweite nicht gefunden |
+|---|---|---|---|---|---|---|
+| Zeiger | 10 | 5 | 1 | 0 | 0 | 4 |
+| Zeitmarke | 6 | 5 | 1 | 0 | 0 | 4 |
+| Zahl, Rechnung | 4 | 1 | 0 | 0 | 0 | 1 |
+| Recht, Sache | 25 | 19 | 0 | 7 | 7 | 5 |
+| Widerspruch zwischen Seiten | 24 | 8 | 0 | 0 | 0 | 8 |
+| Lösbarkeit | 35 | 15 | 0 | 0 | 6 | 9 |
+| Ableitung als Quellenaussage | 20 | 10 | 0 | 0 | 1 | 9 |
+| Überlauf, Sprache, Sonstiges | 14 | 6 | 0 | 0 | 0 | 6 |
+| **Summe** | **138** | **69** | **2** | **7** | **14** | **46** |
+
+Die drei Ziele des Auftrags:
+
+1. Jeder Zeiger-, Zahlen- und Zeitmarkenfehler vom Skript: **nein** — 2 von 20.
+2. Jeder Rechts- und Sachfehler vom Fakten-Audit: **teilweise** — 7 von 25 als
+   Urteil, 7 weitere nur bemerkt, 5 in Reichweite nicht gefunden, 6 nicht unter
+   den 45 geprüften Aussagen.
+3. «Keine echte Wahl», «Stufe 3 unerreichbar» von der Lösbarkeitsprobe:
+   **nein** an der Messlatte (0 von 22 in Reichweite; vier Punkte standen nur
+   in der Rückgabe der Lernenden). Neu gefunden hat sie zweimal «Stufe 3
+   unerreichbar» und dreimal «Form weicht vom Lösungsbild ab».
+
+Was der Beweis sonst zeigt:
+
+- Das **Fakten-Audit** ist die einzige Rolle, die bekannte Fehler als Urteil
+  getroffen hat, und es hat 17 neue Befunde geliefert; 15 davon stehen in den
+  publizierten Heften noch.
+- Das **Lösungs-Audit** hat an den Messlatten-Zeilen seiner Pakete nichts
+  getroffen (Opus und Sonnet je 0 von 4). `check-belege` misst die Zeitmarke
+  gegen den Anker, nicht gegen die Aussage: Ein Anker am Satzanfang hält die
+  Prüfung stumm, auch wenn die Aussage acht Sekunden später fällt.
+- Die **Skripte** melden am Altstand 41 Befunde, drei davon treffen die
+  Messlatte. `ERR_ZEIGER_SCHRITT_OHNE_SEITE` trifft echte, bisher nicht
+  gezählte Stellen; `WARN_KOH_ANZAHL` war in allen sieben Fällen falsch;
+  `ERR_ZEIGER_WOERTER` ist wahrscheinlich eine andere Zählweise.
+- `fall.json` nimmt dem Fakten-Audit Zahlen weg: Eine Fallzahl maskiert eine
+  gleich grosse Rechtszahl.
+- Kosten, gemessen: Lösungs-Audit 3–4 Minuten je Paket und Agent, Fakten-Audit
+  6–10 Minuten für 45 Aussagen. Für eine ganze Einheit gerechnet, nicht
+  gemessen: fünf Opus-Agenten für das Lösungs-Audit, das Fakten-Audit ohne
+  Grenze 28–85 Minuten. Das alte Audit ist nie gemessen worden.
+
+Volle Tabellen, die neuen Befunde an den publizierten Heften und vierzehn
+Mängel des Verfahrens: `docs/cloud-run/laeufe/2026-10-07-umbau/BEWEIS-auftrag-10.md`.
+Die Messlatte und die Beleg-Dateien des Probelaufs liegen ausserhalb des Repos.
