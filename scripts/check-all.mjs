@@ -7,6 +7,8 @@
  *   node scripts/check-all.mjs --entwurf           # alle mit status "entwurf"
  *   node scripts/check-all.mjs --alle              # der ganze Bestand (nur zur Kalibrierung)
  *   … --cloud                                      # unbeaufsichtigter Lauf: Lehrmittel MUSS da sein
+ *   … --streng                                     # die fuenf Beleg-Pruefungen behandeln jede Einheit wie einen
+ *                                                  # Entwurf: Befunde sind Fehler, auch bei publizierten (E38)
  *
  * Buendelt die bestehenden Checks (nRLP, check-einheiten, check-lf-loesung,
  * check-v42, sync-einheiten-nrlp --check) und ergaenzt, was bisher kein Skript
@@ -28,6 +30,22 @@
  *              (Transkripte, Artikel); fehlt das Lehrmittel, ist die
  *              Pruefung nicht moeglich: HINWEIS, unter --cloud ein Fehler.
  *
+ * Dazu je Einheit im Format v4.2 fuenf eigene Skripte (ENTSCHEIDE E38; Codes im Kopf jedes Skripts):
+ *
+ *   BELEGE     check-belege.mjs    belege.json des Loesungs-Audits: jedes Loesungsfeld eine Zeile, Hash,
+ *                                  Anker im Archivtext bzw. Lehrmittel, Zeitmarke, Urteil; probe.json
+ *   FAKTEN     check-fakten.mjs    jede Rechts- und Sachaussage hat eine Zeile in fakten.json
+ *   ZEIGER     check-zeiger.mjs    archiv_ref, Wortzahl, Absatz, Zeitmarke, Heftseite, Lehrmittelseite
+ *   ZAHLEN     check-zahlen.mjs    Rechnungen, Summen, Fallzahlen (fall.json), Ausschluesse
+ *   KOHAERENZ  check-kohaerenz.mjs gleiche Werte in Prinzip/Heft/Set, kein Loesungssatz bei den Lernenden,
+ *                                  gesperrte Woerter, Umlaute, Anzahl und Bezeichner, Kurzbeschrieb, Punkte
+ *
+ *   Bei einer gebundenen Einheit (publiziert, archiviert) sind ihre Befunde WARNUNGEN, bei einem Entwurf
+ *   FEHLER. Das Tor zeigt Warnungen und Hinweise dieser fuenf als Zaehlung je Code; den Wortlaut zeigt
+ *   das Skript selbst (`node scripts/check-zeiger.mjs <ordner>`). Die Beleg-Dateien liegen im
+ *   Quellenarchiv unter `_pruefung/<ordner>/`: Fehlt das Archiv (oder das Lehrmittel) lokal, heisst die
+ *   Zeile «nicht geprueft», die Schlusszeile nie «GRUEN», und unter --cloud ist es ein Fehler.
+ *
  * Reines Node, keine Abhaengigkeiten, nur lesend. Exit 0 nur ohne FEHLER.
  */
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
@@ -48,6 +66,7 @@ const PLATZHALTER = /\[QUELLE SUCHEN|\[URL\b|\[JJJJ|\[HERAUSGEBER|verifizieren\]
 const argv = process.argv.slice(2)
 const flag = (f) => argv.includes(f)
 const CLOUD = flag('--cloud')
+const STRENG = flag('--streng')
 const wunsch = argv.filter((a) => !a.startsWith('--'))
 
 const alleSlugs = readdirSync(EINHEITEN, { withFileTypes: true })
@@ -86,7 +105,7 @@ if (wunsch.length) {
 } else if (flag('--alle')) {
   slugs = alleSlugs
 } else {
-  console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud]')
+  console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud] [--streng]')
   process.exit(2)
 }
 
@@ -165,14 +184,25 @@ function pruefeEinheit(slug) {
 
 function lauf(script, args) {
   const r = spawnSync(process.execPath, [join(ROOT, 'scripts', script), ...args], { cwd: ROOT, encoding: 'utf8' })
-  return { ok: r.status === 0, text: ((r.stdout ?? '') + (r.stderr ?? '')).trim() }
+  return { ok: r.status === 0, status: r.status, text: ((r.stdout ?? '') + (r.stderr ?? '')).trim() }
+}
+/** Zaehlt in der Ausgabe eines Beleg-Skripts die Befunde je Art und Code («  warnung  CODE  …»). */
+function zaehlung(text) {
+  const z = { 'FEHLER ': {}, warnung: {}, HINWEIS: {} }
+  for (const l of text.split('\n')) {
+    const m = /^\s+(FEHLER |warnung|HINWEIS)\s+([A-Z][A-Z0-9_]+)\b/.exec(l)
+    if (m) z[m[1]][m[2]] = (z[m[1]][m[2]] ?? 0) + 1
+  }
+  const zeile = (o) => { const e = Object.entries(o); return e.length ? `${e.reduce((n, [, v]) => n + v, 0)}: ${e.map(([k, v]) => `${k} ${v}`).join(' · ')}` : '' }
+  return { warnungen: zeile(z.warnung), hinweise: zeile(z.HINWEIS) }
 }
 const einruecken = (t) => t.split('\n').map((l) => '      ' + l).join('\n')
 
 console.log(`check-all — ${slugs.length} Einheit(en)${mussEntwurf ? ' · status muss "entwurf" sein' : ''}${CLOUD ? ' · --cloud' : ''}\n`)
 
 let rot = 0
-const zeile = (ok, name, detail = '') => console.log(`  ${ok ? 'ok    ' : 'FEHLER'}  ${name}${detail ? '  ' + detail : ''}`)
+let ungeprueft = 0
+const zeile =(ok, name, detail = '') => console.log(`  ${ok ? 'ok    ' : 'FEHLER'}  ${name}${detail ? '  ' + detail : ''}`)
 
 if (!lehrmittel) {
   if (CLOUD) { rot++; zeile(false, 'Lehrmittel', 'material/_lehrmittel/ fehlt — ohne Quelltext darf kein Lauf starten (scripts/cloud-preflight.mjs)') }
@@ -226,7 +256,32 @@ for (const slug of slugs) {
     zeile(r.ok, name)
     if (!r.ok) { rot++; console.log(einruecken(r.text)) }
   }
+
+  // Die fuenf Beleg-Pruefungen (E38). Exit 1 = Fehler · Exit 2 = Archiv oder Lehrmittel fehlt lokal: nicht geprueft.
+  if (template === 'heft_8page_v42') {
+    const beleg = [
+      ['Belege (belege.json: Feld, Hash, Anker, Zeitmarke, Urteil)', 'check-belege.mjs'],
+      ['Fakten (fakten.json: Rechts- und Sachaussagen)', 'check-fakten.mjs'],
+      ['Zeiger (archiv_ref, Wortzahl, Absatz, Zeitmarke, Seiten)', 'check-zeiger.mjs'],
+      ['Zahlen (Rechnungen, Summen, Fallzahlen)', 'check-zahlen.mjs'],
+      ['Kohaerenz (Werte, Loesung sichtbar, Woerter, Anzahl, Punkte)', 'check-kohaerenz.mjs'],
+    ]
+    for (const [name, script] of beleg) {
+      const r = lauf(script, [slug, ...(STRENG ? ['--streng'] : [])])
+      const z = zaehlung(r.text)
+      if (r.status === 2) {
+        // Nie «ok»: Was nicht pruefbar war, ist nicht gruen. Unter --cloud ein Fehler.
+        ungeprueft++
+        console.log(`  ${CLOUD ? 'FEHLER' : 'HINWEIS'} ${name}  nicht geprueft — ${r.text.split('\n').filter((l) => /NICHT GEPRUEFT|fehlt lokal/.test(l)).pop()?.trim().replace(/^NICHT GEPRUEFT — /, "") ?? 'Quellenarchiv oder Lehrmittel fehlt lokal'}`)
+        if (CLOUD) rot++
+      } else zeile(r.ok, name)
+      if (r.status === 1) { rot++; console.log(einruecken(r.text)) } else {
+        if (z.warnungen) console.log(`      Warnungen ${z.warnungen}`)
+        if (z.hinweise) console.log(`      Hinweise ${z.hinweise}`)
+      }
+    }
+  }
 }
 
-console.log(`\n${rot ? `ROT — ${rot} Pruefung(en) mit Fehlern.` : 'GRUEN — keine Fehler.'}`)
+console.log(`\n${rot ? `ROT — ${rot} Pruefung(en) mit Fehlern.` : ungeprueft ? `UNVOLLSTAENDIG — keine Fehler, aber ${ungeprueft} Pruefung(en) nicht gelaufen (Quellenarchiv oder Lehrmittel fehlt lokal).` : 'GRUEN — keine Fehler.'}`)
 process.exit(rot ? 1 : 0)
