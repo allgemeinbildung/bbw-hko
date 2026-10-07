@@ -20,6 +20,8 @@
  *   METHODEN   Refs existieren in src/data/methoden/, genau vier Eintraege,
  *              genau zwei mit Beispiel (docs/methodenkartei.md)
  *   SPRACHE    kein «ß», keine stehengebliebenen Platzhalter
+ *   KARTEN     keine Karte geaendert, die ein publiziertes Heft fuehrt — ausser
+ *              als Fehler mit Vermerk (scripts/karten.mjs geaendert, gegen origin/main)
  *   LECK       keine woertliche Lehrmittelpassage in den Daten — das Repo ist
  *              oeffentlich, das Lehrmittel nicht. Verglichen wird gegen
  *              material/_lehrmittel/ (gitignored) und das Quellenarchiv
@@ -92,7 +94,7 @@ if (wunsch.length) {
 
 const lehrmittel = ladeLehrmittel()
 const karten = existsSync(METHODEN)
-  ? Object.fromEntries(readdirSync(METHODEN).filter((f) => f.endsWith('.json')).map((f) => {
+  ? Object.fromEntries(readdirSync(METHODEN).filter((f) => f.endsWith('.json') && !f.startsWith('_')).map((f) => {
       try { const k = readJson(join(METHODEN, f)); return [k.id, k] } catch { return [f, null] }
     }))
   : {}
@@ -186,6 +188,15 @@ if (slugs.length) {
   const namen = lauf('check-namen.mjs', [...slugs, ...(CLOUD ? ['--cloud'] : [])])
   zeile(namen.ok, 'Namen', 'Ordner · IDs · Quellenkarten · Archiv · Laufordner')
   if (!namen.ok || /warnung|HINWEIS/.test(namen.text)) { if (!namen.ok) rot++; console.log(einruecken(namen.text)) }
+}
+
+// Karten: scripts/karten.mjs geaendert — jede Methoden- und Quellenkarte, die sich gegenueber origin/main
+// unterscheidet. Rot, wenn eine publizierte oder archivierte Einheit sie fuehrt und kein Vermerk vorliegt
+// (docs/methodenkartei.md §9). Gilt fuer den ganzen Baum: Eine Karte aendert auch Hefte ausserhalb des Umfangs.
+{
+  const k = lauf('karten.mjs', ['geaendert'])
+  zeile(k.ok, 'Karten', 'geaenderte Methoden- und Quellenkarten gegen origin/main · Verbraucher · Vermerk')
+  if (!k.ok || /warnung|HINWEIS|  (geändert|gelöscht)  /.test(k.text)) { if (!k.ok) rot++; console.log(einruecken(k.text)) }
 }
 
 if (!slugs.length) console.log('\n  Keine Einheit im Umfang.')

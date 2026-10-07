@@ -117,7 +117,8 @@ const FEHLER = 'FEHLER '
 const WARN = 'warnung'
 
 const dirs = (p) => (existsSync(p) ? readdirSync(p, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort() : [])
-const jsons = (p) => (existsSync(p) ? readdirSync(p).filter((f) => f.endsWith('.json')).sort() : [])
+// Dateien mit führendem «_» sind keine Karten (z. B. _aenderungen.json — Vermerke zu scripts/karten.mjs).
+const jsons = (p) => (existsSync(p) ? readdirSync(p).filter((f) => f.endsWith('.json') && !f.startsWith('_')).sort() : [])
 
 const einheiten = {}
 for (const slug of dirs(EINH)) {
@@ -346,7 +347,7 @@ for (const [slug, liste] of Object.entries(verweisNach)) {
   }
 }
 
-// Methodenkarten: id = Dateiname, Muster. (Verbraucher: scripts/karten.mjs, sobald vorhanden.)
+// Methodenkarten: id = Dateiname, Muster. (Verbraucher: scripts/karten.mjs.)
 for (const [id, k] of Object.entries(methoden)) {
   if (!ganz) break
   if (k.id !== id) melde(FEHLER, 'NAME_KARTE_DATEINAME', `src/data/methoden/${id}.json`, `Feld id «${k.id}» ist nicht der Dateiname «${id}»`)
