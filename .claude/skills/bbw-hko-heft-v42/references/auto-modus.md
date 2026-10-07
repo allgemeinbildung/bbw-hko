@@ -106,6 +106,7 @@ Dazu, aus anderen Entscheiden und aus `docs/cloud-run/RUN.md`:
 | Es fehlt oder trifft zu | Die Skill |
 |---|---|
 | Bauplan fehlt oder ist nicht freigegeben | «nicht erzeugbar» |
+| `docs/cloud-run/OFFEN.md` (sobald vorhanden) führt einen Punkt der Art `S` oder `P`, Stand `offen` oder `braucht Entscheid`, mit dem Vermerk `[erzeugt Fehler]` in der Spalte «Punkt» — oder die Zeile «Skelette» des Tors ist rot | **Start-Riegel:** nicht beginnen, nur melden (ID und Punkt). Kein Bericht «nicht erzeugbar», keine Dauersperre: Der Bauplan wartet, bis der Punkt behoben oder ausdrücklich hingenommen ist. Der Auto-Modus hebt den Riegel nie selbst auf und repariert die Skill nicht (`references/lauf.md` §3 Zeile 9, dort die genaue Form; ENTSCHEIDE E38 Stufe D) |
 | Bauplan entspricht E21 nicht und Bauplan §9 nennt die Abweichung nicht als Ausnahme (Abschnitt 7) | «nicht erzeugbar», nichts schreiben |
 | Ordner existiert bereits | nie überschreiben. Liegt er ohne Commit da: nicht anfassen, melden, weiter nur über den Start «Abschluss» (`references/lauf.md` §3 Zeile 5) — kein Bericht «nicht erzeugbar», kein Verschieben. «Nicht erzeugbar» nur, wenn der Name einer **anderen** Einheit gehört und kein verlängerter slug frei ist (`references/ableitungsregeln.md` §1.4) |
 | Fehler in Renderer oder Skript | nicht reparieren, nicht umgehen (`--baseline` ist verboten); in den Bericht; «nicht erzeugbar», wenn das Tor sonst nicht grün wird |

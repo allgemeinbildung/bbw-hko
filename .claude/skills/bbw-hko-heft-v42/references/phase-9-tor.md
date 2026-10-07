@@ -18,7 +18,8 @@ Temp-Ordner ausserhalb des Repos, `<laufordner>` =
  1  npm run build:einheiten-index
  2  node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner> --check
  3  node scripts/audit-paket.mjs <ordner> --zusammenfuehren
- 4  node scripts/check-all.mjs <ordner>
+ 4  node scripts/check-all.mjs <ordner> --vor-audit        ← erster Durchgang
+    node scripts/check-all.mjs <ordner>                    ← zweiter Durchgang
  5  node scripts/export-v42.mjs <ordner> --out <tmp>
  6  node scripts/messen-v42.mjs <tmp>
  7  node scripts/check-zeiger.mjs    <ordner> --export <tmp> --protokoll <laufordner>/zeiger-check.txt
@@ -31,21 +32,27 @@ Temp-Ordner ausserhalb des Repos, `<laufordner>` =
 10  git status --short
 ```
 
-(Herkunft der Reihenfolge: ENTSCHEIDE E38, Stufen B und C; Auftrag 10,
-Abschluss. Die Schritte 3 und 7 sind neu; die Zeilen «Namen» und «Karten» in
-Schritt 4 stammen aus E35 und E36.)
+(Herkunft der Reihenfolge: ENTSCHEIDE E38, Stufen B bis D; Auftrag 10,
+Abschluss. Die Schritte 3 und 7 stammen aus den Stufen B und C, der Schalter
+`--vor-audit` und die Zeile «Skelette» aus Stufe D; die Zeilen «Namen» und
+«Karten» in Schritt 4 aus E35 und E36.)
 
 **Das Tor läuft in jedem Lauf zweimal, mit zwei Massstäben** — die Audits
 beginnen erst nach dem ersten Durchgang (`references/lauf.md` §4, §4.1):
 
-| | Wann | Grün heisst |
-|---|---|---|
-| **Erster Durchgang** | nach Phase 8, vor Gegenlesern und Audits | Schritt 4 endet «ROT», und die **einzigen** Fehler sind `ERR_BELEGE_FEHLT` (Zeile «Belege») und `ERR_FAKTEN_FEHLT` (Zeile «Fakten») — beide Dateien schreiben erst die Audits. Jede andere Zeile ist `ok`; `fall.json` steht (kein `ERR_FALL_FEHLT`). Alle übrigen Schritte wie in der Tabelle |
-| **Zweiter Durchgang** | nach der letzten Korrektur und dem letzten Audit (Phase 10 Schritt 5) | Schritt 4 endet «GRUEN — keine Fehler.» — mit Belegen, Fakten und Probe |
+| | Wann | Schritt 4 | Grün heisst |
+|---|---|---|---|
+| **Erster Durchgang** | nach Phase 8, vor Gegenlesern und Audits | `check-all <ordner> --vor-audit` | letzte Zeile «VOR AUDIT — keine Fehler, aber 2 Beleg-Datei(en) stehen aus …», Exit 0. Unter «Belege» und «Fakten» steht je `HINWEIS_AUDIT_STEHT_AUS`; jede andere Zeile ist `ok`, `fall.json` steht (kein `ERR_FALL_FEHLT`). Alle übrigen Schritte wie in der Tabelle; in Schritt 7 bekommen `check-belege` und `check-fakten` denselben Schalter |
+| **Zweiter Durchgang** | nach der letzten Korrektur und dem letzten Audit (Phase 10 Schritt 5) | `check-all <ordner>` — **ohne** Schalter | letzte Zeile «GRUEN — keine Fehler.» — mit Belegen, Fakten und Probe |
 
-Ein Schalter, der den ersten Durchgang mit Exit 0 enden liesse, fehlt in
-`check-all` noch: Der Orchestrator liest die Ausgabe. Im Bericht steht die
-Ausgabe des zweiten Durchgangs.
+`--vor-audit` ändert genau eines: Fehlt `belege.json` bzw. `fakten.json` noch,
+ist das ein Hinweis «Audit steht aus» statt `ERR_BELEGE_FEHLT` bzw.
+`ERR_FAKTEN_FEHLT`. Liegt die Datei schon vor, wird sie voll geprüft; alle
+anderen Prüfungen bleiben, wie sie sind. Die Schlusszeile heisst mit dem
+Schalter nie «GRUEN», solange eine Datei aussteht — ein Lauf, der mit «VOR
+AUDIT» endet, ist nicht fertig. Im Bericht steht die Ausgabe des zweiten
+Durchgangs. (Herkunft: E38 Stufe C «offen für Pietro» Nr. 4; entschieden vom
+Orchestrator, E38 Stufe D.)
 
 Erst **nach dem Bericht** und vor `git add` läuft dazu
 `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <laufordner>`
@@ -66,7 +73,7 @@ des Orchestrators nach dem Trockenlauf.)
 | `build:einheiten-index` | läuft durch; schreibt `src/data/einheiten.index.json` und die Kopie unter `public/nrlp/` | JSON-Fehler in der Einheit beheben. Den Index nie von Hand ändern. |
 | `begleiter-marker --check` | «0 abweichend · 0 unaufloesbar», Exit 0 | ohne `--check` laufen lassen (füllt die Marker); bei `UNAUFLOESBAR` den Pfad im Begleiter korrigieren (`references/phase-8-begleiter.md` §3.1) |
 | `audit-paket --zusammenfuehren` | je Datei eine Zeile: `fall.json` aus `fall.A.json`, `fall.B.json` (und `fall.auftrag.json`); nach den Audits `belege.json` mit **allen** Lösungsfeldern und 0 «mit altem Hash», `probe.json` mit den Läufen. Exit 0 | Exit 1: eine Teildatei ist ungültig — an ihren Schreiber zurück (`references/audits.md` §1.4). Exit 2 «kein Ordner»: Kein Executor hat `fall.<…>.json` abgegeben (`references/belege.md` §6). «NICHT geschrieben: Es fehlt der Block …»: derselbe Fall für ein Heft |
-| `check-all` | zweiter Durchgang: letzte Zeile «GRUEN — keine Fehler.», Exit 0 (erster Durchgang: Tabelle oben). Zeilen je Einheit: «Struktur · Status · Methoden · Sprache · Leck», «nRLP-Abgleich», «Kopplung · Autarkie · Begleiter-Marker», «Leitfragen-Loesungen», «Heft v4.x», dazu die fünf Beleg-Prüfungen «Belege», «Fakten», «Zeiger», «Zahlen», «Kohaerenz» (Codes im Kopf jedes Skripts, `references/belege.md` §11); einmal je Aufruf «Namen» und «Karten». **«Namen»:** `check-namen.mjs <ordner>` prüft Ordner, IDs, Verweise, Quellenkarten, `archiv_ref` und Laufordner (`references/ableitungsregeln.md` §10). **«Karten»:** `karten.mjs geaendert` — keine bestehende Karte berührt (`references/karten.md`). Warnungen an publizierten Einheiten stehen darunter und sind nur zu melden. «UNVOLLSTAENDIG» bzw. ein Hinweis «nicht geprueft — Quellenarchiv oder Lehrmittel fehlt lokal» heisst: Diese Prüfung ist **nicht gelaufen** — im Bericht als «nicht geprüft» führen, nie als grün; die Einheit ist dann nicht freigabereif | Abschnitt 2. `ERR_AUDIT_VERALTET`, `ERR_FAKT_ZEILE_VERWAIST`, `ERR_FAKT_OHNE_ZEILE` nach einer Korrektur: nicht die Daten ändern, sondern die betroffenen Felder neu auditieren (`references/lauf.md` §4.1). `ERR_PROBE_OFFEN`: den Befund entscheiden (`references/audits.md` §4.3) |
+| `check-all` | zweiter Durchgang: letzte Zeile «GRUEN — keine Fehler.», Exit 0 (erster Durchgang: Tabelle oben). **Einmal je Aufruf:** «Lehrmittel», «nRLP-Datensaetze», «Namen», «Karten», «Skelette». **Je Einheit:** «Struktur · Status · Methoden · Sprache · Leck», «nRLP-Abgleich», «Kopplung · Autarkie · Begleiter-Marker», «Leitfragen-Loesungen», «Heft v4.x», dazu die fünf Beleg-Prüfungen «Belege», «Fakten», «Zeiger», «Zahlen», «Kohaerenz» (Codes im Kopf jedes Skripts, `references/belege.md` §11, §13). **«Namen»:** `check-namen.mjs <ordner>` prüft Ordner, IDs, Verweise, Quellenkarten, `archiv_ref` und Laufordner (`references/ableitungsregeln.md` §10). **«Karten»:** `karten.mjs geaendert` — keine bestehende Karte berührt, und keine Karte, deren Belege durch eine Änderung veraltet sind (`references/karten.md`). **«Skelette»:** `check-skelette.mjs` — die Vorlagen unter `assets/` und die Auftragsvorlagen verletzen selbst keine Regel; rot heisst: Der Fehler steht in der Skill, nicht in der Einheit — nicht beginnen bzw. nicht weiterschreiben, melden (Kürzel S). Warnungen an publizierten Einheiten stehen darunter und sind nur zu melden. «UNVOLLSTAENDIG» bzw. ein Hinweis «nicht geprueft — Quellenarchiv oder Lehrmittel fehlt lokal» heisst: Diese Prüfung ist **nicht gelaufen** — im Bericht als «nicht geprüft» führen, nie als grün; die Einheit ist dann nicht freigabereif | Abschnitt 2. `ERR_AUDIT_VERALTET`, `ERR_FAKT_ZEILE_VERWAIST`, `ERR_FAKT_OHNE_ZEILE` nach einer Korrektur: nicht die Daten ändern, sondern die betroffenen Felder neu auditieren (`references/lauf.md` §4.1). `ERR_PROBE_OFFEN`: den Befund entscheiden (`references/audits.md` §4.3). Nur bei einer abgeleiteten Einheit (`herkunft.json`, `references/belege.md` §8): `ERR_BELEG_KOPIERT`, `ERR_FAKT_KOPIERT` — die Zeile stammt aus der Vorlage, das Feld selbst auditieren; `ERR_VORLAGE_GEAENDERT` — die genannten Felder an der Abgeleiteten neu prüfen, danach `stand_commit` nachführen; «nicht geprueft» wegen `HINWEIS_HERKUNFT_NICHT_PRUEFBAR` — Git oder der Commit fehlt |
 | `export-v42` | schreibt je vorhandener Spur und Heft `heft-<a\|b>-<spur>.html/.docx`, `loesungen-<a\|b>-<spur>.html/.docx`, dazu `auftragsbogen.*` und `begleiter.docx` | Fehlermeldung lesen: meist ein Feld, das der Renderer erwartet und das fehlt. Kein Workaround im Skript. |
 | `messen-v42` | Exit 0: keine Seite läuft über. Erwartet: 8 Seiten je Heft, 4 im Auftragsbogen, 5 je Dokument «Lösungen» | Exit 1: das Feld kürzen, das auf der gemeldeten Seite steht, auch wenn das Zeichenbudget eingehalten ist (die Budgets sind an einer Einheit gemessen). Exit 2: kein Browser — im Bericht als «nicht gemessen» führen; die Messung holt die lokale Abnahme nach. |
 | die fünf mit `--protokoll` (Schritt 7) | dieselben Prüfungen wie in `check-all`, dazu: `check-zeiger` und `check-kohaerenz` lesen mit `--export <tmp>` den **gedruckten** Seitentext (trägt die genannte Seite das genannte Element? steht ein Lösungssatz oder ein gesperrtes Wort im gedruckten Heft?). Jedes schreibt sein Protokoll in den Laufordner — Feld, Code, Fundstelle, **ohne Anker und ohne Textauszug**. Exit wie in Schritt 4 | wie `check-all`. `HINWEIS_EXPORT_UNPASSEND`: `<tmp>` ist nicht der Export dieser Einheit |
@@ -221,6 +228,8 @@ zusammen, ersetzt ihn nicht. Was der Bericht enthält:
 - was nicht belegt, nicht geprüft oder nicht erzeugbar war
 - Fehler in Skill, Skripten oder Renderer, die aufgefallen sind (nicht
   repariert) — als Zeilen der Liste «Offen», Kürzel S oder R
+- zu jedem solchen Punkt das Ergebnis der Suche nach derselben Stelle
+  (Abschnitt 5)
 
 Nach Phase 9 ist der Bericht nicht fertig: Phase 10 schreibt in derselben
 Datei weiter (Stand der Audits, Gegenhör-Liste, Vorlage zur Freigabe). Eine Datei
@@ -229,3 +238,36 @@ Datei weiter (Stand der Audits, Gegenhör-Liste, Vorlage zur Freigabe). Eine Dat
 **Commit erst nach Phase 10 Schritt 6**, einer je Einheit, Umfang und
 Leck-Prüfung nach `references/lauf.md` §8 — der Bauplan gehört dazu. **Kein
 Push.**
+
+## 5. Rückweg — dieselbe Stelle in den anderen Einheiten
+
+Stammt ein Fehler nicht aus dieser Einheit, sondern aus einer Regel der Skill,
+einem Skelett, einer Karte oder dem Renderer (Kürzel **S** oder **R** nach
+`references/gegenleser.md` §5; in `docs/cloud-run/OFFEN.md` die Arten S, K und
+R), steht er wahrscheinlich auch in anderen Einheiten. **Bevor der Lauf endet**
+— vor dem Bericht, also vor Schritt 10 in `references/lauf.md` §4 — läuft je
+solchem Punkt:
+
+```
+node scripts/gleiche-stelle.mjs "<feldpfad>" "<muster>" --ohne <ordner>
+```
+
+- `<feldpfad>` ist das Feld, in dem der Fehler stand, mit Platzhaltern für
+  Heft, Spur und Index (`spuren.*.kasten_s4.**`, `handlungsprodukt.schritte[*].hint`,
+  `**` für jedes Feld); `<muster>` ein regulärer Ausdruck für die Fehlerform.
+  Platzhalter und Schalter: Kopf des Skripts.
+- Gesucht wird in **allen** Einheiten und in den Karten; `--v42` beschränkt auf
+  das Format v4.2. Exit 1 heisst «Treffer», nicht «Fehler des Laufs».
+- **Geändert wird nichts** — nicht in den anderen Einheiten, nicht in der
+  Karte, nicht in der Skill (`references/lauf.md` §10).
+- **Ins Ergebnis gehört:** Feldpfad und Muster, die Zahl der Treffer je Einheit
+  (die Ausgabe mit `--zaehlen`) und ein Satz, ob die Treffer derselbe Fehler
+  sind — das entscheidet der Orchestrator am Text, nicht das Skript. Es steht
+  im Bericht, Abschnitt 10 «Offen», unter der Tabelle, und in der Zeile des
+  Punkts in `docs/cloud-run/OFFEN.md` (sobald vorhanden; Spalte «Fundstelle»).
+- Lässt sich die Fehlerform nicht als Muster fassen (ein Sinnfehler ohne festes
+  Wort), steht das statt der Trefferzahl da: «nicht als Muster fassbar».
+
+(Herkunft: Rückblick §5.4 «Rückweg» — 3.1.1 hat Fehler der Gold-Einheit
+geerbt, 17 Kartenänderungen trafen bis 18 Verbraucher; Auftrag 10, Stufe D
+Nr. 4; ENTSCHEIDE E38, Stufe D.)

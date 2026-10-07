@@ -21,6 +21,8 @@
     "check:zahlen": "node scripts/check-zahlen.mjs",
     "check:kohaerenz": "node scripts/check-kohaerenz.mjs",
     "check:links": "node scripts/check-links.mjs",
+    "check:skelette": "node scripts/check-skelette.mjs",
+    "gleiche:stelle": "node scripts/gleiche-stelle.mjs",
     "audit:paket": "node scripts/audit-paket.mjs",
     "gegenhoeren": "node scripts/gegenhoeren.mjs",
     "abdeckung": "node scripts/abdeckung.mjs",

@@ -105,14 +105,28 @@ Ausschnitts wirklich darin? (Herkunft: Berichte `2026-10-04-321` §10,
 
 ### 4.1 Lernende (Heft und Auftragsbogen)
 
-Rolle voranstellen: Lernende/r EFZ **im Lehrjahr der Einheit**, mit dem Profil
-aus Abschnitt 1; die Person weiss nur, was im Paket steht. Das Lehrjahr steht
-im Bauplan §1 (Zeile «Thema», für den kanonischen Lehrgang) und wird am
-Datensatz des Lehrgangs nachgesehen — nie fest «1. Lehrjahr». Alter: 16 im
-1. Lehrjahr, je Lehrjahr ein Jahr mehr. Gilt die Einheit für zwei Lehrgänge
-mit verschiedenem Lehrjahr, zählt der kanonische. (Herkunft: Berichte
-`2026-10-04-411` §10 — für Thema 4 falsch — und
-`2026-10-06-5.2.1_gesetze_veraendern` §11; Rückblick §5.4.) Dann wörtlich:
+Rolle voranstellen — ein Satz, den der Orchestrator **je Einheit herleitet**,
+nie aus einem früheren Lauf übernimmt:
+
+> Du bist Lernende/r `<lehrgang>` im `<lehrjahr>`. Lehrjahr, `<alter>` Jahre
+> alt, `<profil>`. Du weisst nur, was in deinem Paket steht.
+
+| Platzhalter | Herleitung |
+|---|---|
+| `<lehrgang>` | aus `lehrgang` der Hefte (`herausforderung_A.json`): `EFZ_3J` → «EFZ, dreijährige Lehre», `EFZ_4J` → «EFZ, vierjährige Lehre». Gilt die Einheit für zwei Lehrgänge (`set.json › lehrgaenge`), zählt der kanonische |
+| `<lehrjahr>` | das Lehrjahr des Themas im Datensatz dieses Lehrgangs (`public/nrlp_3j.json` bzw. `nrlp_4j.json`, `themen[].lehrjahr` für das Thema aus `nrlp.themen`); der Bauplan §1 nennt es in der Zeile «Thema» — am Datensatz nachsehen, nicht dem Bauplan glauben. Dieselbe Zahl steht in `persona.beruf` der Hefte |
+| `<alter>` | 15 + Lehrjahr (16 im ersten, je Lehrjahr ein Jahr mehr) |
+| `<profil>` | das Profil aus Abschnitt 1, ausgeschrieben («stark, schnell, liest genau») |
+
+Die Seitenzahlen im Auftrag unten (Seite 3, 4, 6) sind keine Angaben einer
+Einheit: Die Seitenfolge des Hefts ist im Renderer fest (`HEFT_SEITEN` und
+`seiteVonFeld` in `scripts/lib/pruefung.mjs`); ebenso die Punkte 0 bis 3 (vier
+Stufen je Kriterium, `datenvertrag.md`). `check-skelette.mjs` prüft die
+wörtlichen Auftragszeilen dieser Datei auf ein festes Lehrjahr, einen
+Lehrgang, ein Alter, ein Modell mit Version und einen absoluten Pfad.
+(Herkunft: Berichte `2026-10-04-411` §10 — «1. Lehrjahr» war für Thema 4
+falsch — und `2026-10-06-5.2.1_gesetze_veraendern` §11; Rückblick §5.4;
+Auftrag 10, Stufe D Nr. 3; ENTSCHEIDE E38, Stufe D.) Dann wörtlich:
 
 > Arbeite das Dokument von Seite 1 bis zum Schluss durch, in der Rolle. Halte je
 > Seite fest: (1) was ich hier tun soll, in meinen Worten — oder dass ich es
@@ -120,7 +134,7 @@ mit verschiedenem Lehrjahr, zählt der kanonische. (Herkunft: Berichte
 > schreiben würde; (3) wo ich hängen bleibe: Wort, Satz, Auftrag, fehlende
 > Angabe, Widerspruch zu einer anderen Seite — mit Seite und exaktem Wortlaut in
 > «…»; (4) geschätzte Zeit. Dann kritisch, aus meiner Sicht: Trägt die Quelle
-> die Frage von Seite 3? Weiss ich bei jedem der fünf Schritte, was ich abgebe?
+> die Frage von Seite 3? Weiss ich bei jedem Schritt, was ich abgebe?
 > Kann ich das Produkt mit dem, was auf den Seiten steht, wirklich herstellen?
 > Hilft mir das Beispiel auf Seite 6 oder führt es mich in die Irre? Verstehe
 > ich die Kriterien und kann ich mich einschätzen? Was würde ich überspringen?
@@ -185,6 +199,16 @@ Textaufbereitung). Dann ordnen:
 
 Zuerst die sechs Fragen der Sinnprobe (`phase-9-tor.md` §3 Nr. 9) beantworten —
 sie sind die Stellen, an denen 2.3.1 und 2.1.1 gefehlt haben.
+
+**Rückweg bei S und R.** Ein Punkt mit Kürzel S oder R steht kaum nur in
+dieser Einheit: Vor dem Bericht läuft je Punkt
+`node scripts/gleiche-stelle.mjs "<feldpfad>" "<muster>" --ohne <ordner>`, und
+die Trefferzahl je Einheit steht beim Punkt (`phase-9-tor.md` §5). In
+`docs/cloud-run/OFFEN.md` (sobald vorhanden) heissen die Arten S (Skill,
+Skelett, Skript), K (Karte) und R (Renderer); ein Fehler in einer bestehenden
+Karte steht im Bericht weiter unter S. Erzeugt ein S-Punkt in jeder neuen
+Einheit denselben Fehler, bekommt er dort den Vermerk `[erzeugt Fehler]` — der
+sperrt den nächsten Start (`lauf.md` §3 Zeile 9).
 
 ## 6. Im Bericht
 

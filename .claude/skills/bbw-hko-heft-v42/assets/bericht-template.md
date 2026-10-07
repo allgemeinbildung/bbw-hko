@@ -53,8 +53,8 @@ des Bauplans ist geändert — oder welcher, mit wessen Freigabe.>
 ## 2. Tor und Messung (letzte Ausgaben, nach der letzten Änderung)
 
 <Ausgaben des **zweiten Durchgangs** (`references/phase-9-tor.md` §1). Der erste
-Durchgang — vor den Audits — steht in einem Satz: grün bis auf
-`ERR_BELEGE_FEHLT` und `ERR_FAKTEN_FEHLT`, in Runde n.>
+Durchgang — vor den Audits, `check-all <ordnername> --vor-audit` — steht in
+einem Satz: letzte Zeile «VOR AUDIT — keine Fehler …», in Runde n.>
 
 - `npm run build:einheiten-index`: …
 - `begleiter-marker --check`: … Marker · 0 abweichend · 0 unauflösbar
@@ -65,7 +65,8 @@ Durchgang — vor den Audits — steht in einem Satz: grün bis auf
   | Zeile | Ergebnis | Warnungen und Hinweise (Zählung je Code) |
   |---|---|---|
   | Namen (`check-namen`) | ok / FEHLER | |
-  | Karten (`karten.mjs geaendert`) | ok / FEHLER | berührte Karten: keine / … |
+  | Karten (`karten.mjs geaendert`) | ok / FEHLER | berührte Karten: keine / … · Kartenbelege veraltet: keine / … |
+  | Skelette (`check-skelette`) | ok / FEHLER | |
   | Struktur · Status · Methoden · Sprache · Leck | | |
   | nRLP-Abgleich | | |
   | Kopplung · Autarkie · Begleiter-Marker | | |
@@ -199,8 +200,15 @@ Auch «nicht belegt» und «nicht geprüft» stehen hier.
 |---|---|---|---|---|---|
 | 1 | E | | | Session / Pietro | offen |
 
-Gleiche Stelle in anderen Einheiten gesucht (für jeden Punkt S oder R, der
-einen Fehler erzeugt hat): <Muster · Treffer in … · nichts geändert>.
+Gleiche Stelle in anderen Einheiten gesucht — für jeden Punkt S oder R
+(`references/phase-9-tor.md` §5), mit
+`node scripts/gleiche-stelle.mjs "<feldpfad>" "<muster>" --ohne <ordnername> --zaehlen`:
+
+| # des Punkts | Feldpfad | Muster | Treffer je Einheit (und in Karten) | derselbe Fehler? | in `OFFEN.md` |
+|---|---|---|---|---|---|
+| | | | <Einheit n · Einheit n · Karten n — oder «keine» — oder «nicht als Muster fassbar»> | ja / nein / teils: … | <ID, sobald die Liste besteht> |
+
+Nichts geändert ausserhalb dieser Einheit.
 
 ## 11. Vorlage zur Freigabe (`references/phase-10-abschluss.md` §7)
 

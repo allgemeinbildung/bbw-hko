@@ -15,7 +15,8 @@ Pietro 07.10.2026 («Beleg-Dateien liegen ausserhalb des Repos»).
 die fünf Skripte, die die Dateien prüfen, laufen im Tor (Stufe B,
 Abschnitt 11); die Rollen, die sie schreiben, und das Skript, das ihre Pakete
 baut und ihre Teildateien zusammenführt, stehen in `audits.md` (Stufe C,
-Abschnitt 12).
+Abschnitt 12); `herkunft.json` und die Kartenbelege werden gelesen und geprüft
+(Stufe D, Abschnitte 8, 9 und 13).
 
 ## 1. Ort
 
@@ -325,16 +326,77 @@ Nur bei einer Einheit, die aus einer anderen entstanden ist (Anpassungsplan):
 ```
 
 `stand_commit` ist der Commit des Repos, dessen Stand der Vorlage übernommen
-wurde. Eine abgeleitete Einheit ist eine neue Einheit: eigene `belege.json`,
-eigene `fakten.json`, kein übernommener Beleg (`phase-10-abschluss.md` §1
-Nr. 5).
+wurde (7 bis 40 Hex-Zeichen). Eine abgeleitete Einheit ist eine neue Einheit:
+eigene `belege.json`, eigene `fakten.json`, kein übernommener Beleg
+(`phase-10-abschluss.md` §1 Nr. 5). `set.json` führt die Abstammung nicht —
+der Datenvertrag bleibt.
+
+**Wer schreibt, wann.** Der Orchestrator, **vor dem ersten Schreiben** der
+Anpassung. Den Commit liefert
+`git rev-list -1 HEAD -- src/data/einheiten/<vorlage>` (der letzte Commit, der
+die Vorlage geändert hat) zu dem Zeitpunkt, an dem die Vorlage gelesen wird.
+Optional `format` (`bbw-hko/herkunft@1`), `einheit`, `bemerkung`.
+
+**Was `check-belege` daraus macht** (seit E38, Stufe D; `check-fakten` für die
+Faktenzeilen):
+
+| Prüfung | Was verglichen wird | Code |
+|---|---|---|
+| eigene Audits | `belege.json` **und** `fakten.json` liegen im Ordner der Abgeleiteten | `ERR_HERKUNFT_OHNE_AUDIT` (mit `--vor-audit`: kein Befund) |
+| kein kopierter Beleg | Eine Belegzeile, deren `hash` **nicht** zum heutigen Text ihres Felds passt, aber der Hash eines Lösungsfelds der Vorlage ist — heute, am `stand_commit` oder in der `belege.json` der Vorlage. Dasselbe für eine Zeile, deren Feld es hier nicht gibt | `ERR_BELEG_KOPIERT` (statt `ERR_AUDIT_VERALTET` bzw. `ERR_BELEG_OHNE_FELD`) |
+| keine kopierte Faktenzeile | Eine verwaiste Zeile (ihr Wortlaut steht nicht im genannten Feld), deren Wortlaut in der `fakten.json` der Vorlage steht | `ERR_FAKT_KOPIERT` (statt `ERR_FAKT_ZEILE_VERWAIST`) |
+| Vorlage korrigiert | Die Vorlage am `stand_commit` (`git show`) gegen die Vorlage heute im Baum: jedes **Lösungsfeld** (Hash je Feldpfad: geändert, neu, entfernt) und jedes **Faktenfeld** (ein Textfeld von Heft, `set.json`, `kn.json` oder der Begleiter als Ganzes, dessen Aussagen über die Welt — Artikel, Zahl mit Einheit, Datum, «Stand» — nicht mehr dieselben sind) | `ERR_VORLAGE_GEAENDERT` — eine Zeile mit den Zahlen, dann eine je Feld; «hier noch im alten Wortlaut» heisst: Die Abgeleitete trägt in einem Lösungsfeld noch genau den Text, den die Vorlage korrigiert hat |
+| Vergleich nicht möglich | Git fehlt, oder der Commit ist im Repo nicht lesbar | `HINWEIS_HERKUNFT_NICHT_PRUEFBAR`, Exit 2 — nie grün |
+| Form | unlesbar, Schema verletzt, `einheit` nennt einen anderen Ordner, `abgeleitet_von` nennt die Einheit selbst; die Vorlage fehlt im Baum oder am Commit | `ERR_HERKUNFT_SCHEMA`, `ERR_HERKUNFT_VORLAGE_FEHLT` |
+
+- **Derselbe Text ist kein kopierter Beleg.** Trägt die Abgeleitete in einem
+  Feld wörtlich den Text der Vorlage, ist der Hash derselbe — ob die Zeile neu
+  auditiert oder abgeschrieben ist, sieht kein Skript. Das sichert die Regel
+  (volle Audits) und das Blind-Paket; `ERR_BELEGE_EINHEIT` fängt die ganze
+  kopierte Datei.
+- **«Neu zu prüfen» endet mit einem neuen `stand_commit`.** Hat der
+  Orchestrator die gemeldeten Felder an der Abgeleiteten geprüft (und wo nötig
+  korrigiert und neu auditiert), trägt er in `herkunft.json` den Commit ein,
+  gegen den geprüft wurde; `bemerkung` nennt Datum und Bericht. Vorher bleibt
+  die Meldung stehen — an einem Entwurf als Fehler, an einer gebundenen
+  Einheit als Warnung.
+- **Schwere** wie überall: gebunden → Warnung, Entwurf oder `--streng` →
+  Fehler. Ohne `herkunft.json` gilt eine Einheit als nicht abgeleitet; heute
+  trägt keine eine (die Abstammung von `3.1.1_konsum_verantworten_3j` ist im
+  Archiv nicht eingetragen — E38 Stufe D, «offen für Pietro»).
+- Unter `--wurzel` (Temp-Kopie ohne `.git`) kommt der Stand am Commit aus dem
+  Repo des Skripts, «heute» aus der Temp-Kopie — wie bei `karten.mjs`.
 
 ## 9. Karten: `_pruefung/_karten/<id>.json`
 
 Für eine Methoden- oder Quellenkarte, deren Text an Lehrmittel oder Quelle
 hängt: `belege[]` (Zeilen wie in `belege.json`, `feld` ist der JSON-Pfad in
 der Karte, ohne `spur`) und `fakten[]` (Zeilen wie in `fakten.json`, mit
-`wortlaut_in_der_karte`). Der Hash läuft über den Text des Kartenfelds.
+`wortlaut_in_der_karte`). Der Hash läuft über den Text des Kartenfelds (eine
+Liste wie `schritte` oder `beispiel` als Ganzes: Einträge mit Zeilenwechsel
+verbunden; ein einzelner Eintrag als `schritte[2]`).
+
+**Was belegt sein muss** (seit E38, Stufe D; `belegPflicht()` in
+`scripts/karten.mjs`):
+
+| Karte | Feld | Zeile |
+|---|---|---|
+| Lehrmittelkarte (`quelle: "lehrmittel"`) | `lesen`, `merk` — sie sagen, was im Kapitel steht | `belege[]`, Herkunft `lehrmittel`, `wo` = Kapiteldatei des Kapitels `kap`, `stelle` = `S. N` auf einer Seite aus `seiten` |
+| jede Methodenkarte | jede Aussage über die Welt in `fuer`, `lesen`, `schritte`, `ankommt`, `fehler`, `merk` (Artikel, Zahl mit Einheit, Datum, «Stand»; im Musterbeispiel `beispiel` nur Artikel, «Stand», Abstimmung) | `fakten[]` — oder eine Belegzeile für das Feld |
+| Quellenkarte | nichts von selbst (ihre Aussagen prüft `check-fakten` in jeder Einheit, die sie führt); eine Datei ist zulässig | — |
+
+**Prüfen:** `node scripts/karten.mjs belege [<karten-id>]` — ohne ID alle
+Methodenkarten. Schema, Hash je Zeile gegen den heutigen Text des Felds
+(`KARTE_BELEGE_VERALTET`), Anker im Kapitel bzw. im Archivtext, Seite des
+Ankers gleich `stelle` (`KARTE_STELLE_FALSCH`) und in `seiten` der Karte
+(`KARTE_SEITE_DANEBEN`), Urteil (`KARTE_URTEIL`), fehlende Zeilen
+(`KARTE_BELEG_FEHLT`, Warnung). **Fehlt die Datei, ist die Karte «nicht
+belegt» — ein Hinweis, kein Fehler** (Stand 07.10.2026: keine der 42
+Methodenkarten hat eine). `karten.mjs geaendert` — die Zeile «Karten» im Tor —
+liest die vorhandenen Dateien mit: Eine Karte, deren Text nach dem Audit
+geändert wurde, macht ihre Belege ungültig und erscheint als Warnung
+`KARTE_BELEGE_VERALTET`. Wer die Datei schreibt: `audits.md` §6
+(Karten-Audit).
 
 ## 10. Die zwei Bibliotheken
 
@@ -374,6 +436,10 @@ Kurzbefund**.
   `laeufe/<…>/belege-check.txt`. Die Konsole zeigt Anker; ins Repo gehört nur
   das Protokoll.
 - `--wurzel <ordner>` — anderer Baum statt dieses Repos (Gegenproben)
+- `--vor-audit` (nur belege und fakten; `check-all` reicht ihn durch) — erster
+  Durchgang des Tors: Fehlt die Datei noch, ist das `HINWEIS_AUDIT_STEHT_AUS`
+  statt `ERR_BELEGE_FEHLT` bzw. `ERR_FAKTEN_FEHLT`. Sonst ändert der Schalter
+  nichts (`phase-9-tor.md` §1)
 - `--liste` (belege, fakten, zahlen) — die Arbeitsliste, ohne zu prüfen:
   alle Lösungsfelder mit Hash · alle gefundenen Aussagen mit Art und Umfeld ·
   alle Rechnungen und Zahlen mit Einheit
@@ -457,3 +523,26 @@ Alle nehmen `--wurzel <ordner>`. `audit-paket.mjs` verweigert jede Ausgabe in
 dieses Repo, unter `--wurzel` und in jedes Git-Repo (Exit 2). Was «blind»
 heisst, steht im Kopf des Skripts: kein Feld, das `lib/pruefung.mjs` als Lösung
 führt, kein Kurzbeschrieb der Karte, weder Kopf noch Notizen der Archivdatei.
+
+## 13. Stufe D — keine Vererbung
+
+Seit 07.10.2026 (ENTSCHEIDE E38, Stufe D; Rückblick §5.4). Vier Wege, auf denen
+sich ein Fehler vervielfacht hat, und was ihn heute aufhält:
+
+| Weg | Riegel | Wo beschrieben |
+|---|---|---|
+| Einheit aus Einheit | `herkunft.json`; `check-belege` und `check-fakten` melden übernommene Zeilen und eine später korrigierte Vorlage | Abschnitt 8 |
+| geteilte Karte | `karten.mjs` (ändern oder neu, Vermerk); Kartenbelege mit Hash | Abschnitt 9, `karten.md` |
+| Skelett, Skill | `scripts/check-skelette.mjs` — Zeile «Skelette» im Tor; Start-Riegel über `docs/cloud-run/OFFEN.md` | `lauf.md` §3 Zeile 9 |
+| gefundener Fehler bleibt in den anderen Einheiten | `scripts/gleiche-stelle.mjs` — Rückweg, bevor der Lauf endet | `phase-9-tor.md` §5 |
+
+| Skript | Tut | Im Tor |
+|---|---|---|
+| `scripts/check-skelette.mjs` | prüft die Vorlagen unter `assets/` ungefüllt: gültiges JSON · Platzhalterform «{{…}}» (nur diese findet `check-all` in einer Einheit wieder) · kein «ß» · kein Du und kein gesperrtes Wort im festen Text der Lernenden · kein transliterierter Umlaut · jeder Feldpfad steht in der Gold-Einheit oder im Datenvertrag (gegen `types.ts` nur der Feldname — statisch gelesen, kein Compiler) · `status: "entwurf"`, Template · jeder Marker des Begleiter-Skeletts führt in ein Feld · die wörtlichen Auftragsvorlagen in `gegenleser.md` und `audits.md` nennen kein festes Lehrjahr, keinen Lehrgang, kein Alter, kein Modell mit Version, keinen absoluten Pfad. `--felder` listet jeden Pfad | ja, Zeile «Skelette», einmal je Aufruf |
+| `scripts/gleiche-stelle.mjs <feldpfad> <muster>` | sucht eine Fehlerform in allen Einheiten und Karten; gibt Einheit · Datei › Pfad · Ausschnitt (höchstens acht Wörter eigenen Texts) und die Trefferzahl je Einheit aus. Exit 1 = Treffer | nein |
+| `scripts/karten.mjs belege [<id>]` | Kartenbelege prüfen (Abschnitt 9) | mittelbar: `geaendert` meldet veraltete Zeilen |
+| `scripts/lib/herkunft.mjs` | Bibliothek: Stand der Vorlage an einem Commit, Vergleich der Lösungs- und Faktenfelder | — |
+
+Ein Befund in einem Skelett ist ein Fehler, ausser er steht mit Datum und Grund
+in der Liste `HINGENOMMEN` im Kopf von `check-skelette.mjs` — dann ist er eine
+Warnung, bis er entschieden ist. Die Liste ist leer (07.10.2026: kein Befund).

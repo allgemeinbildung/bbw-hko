@@ -22,11 +22,14 @@ node scripts/karten.mjs darf <karten-id>
 node scripts/karten.mjs geaendert [--gegen origin/main]
 ```
 
+Dazu, für die Belege einer Karte (Abschnitt 5):
+`node scripts/karten.mjs belege [<karten-id>]`.
+
 | Befehl | Zeigt | Exit |
 |---|---|---|
 | `verbraucher` | jede Einheit, jedes Heft, jede Spur, die die Karte führt — getrennt nach `publiziert`, `archiviert`, `entwurf` —, dazu die Felder, die die Einheit überschreibt. Auch indirekt: die Ersatzkarte einer geführten Quellenkarte, Karten einer anderen Einheit (3.1.1 führt Vertiefungen `q-131…`), Nennungen in einer Lösung (`quelle_ref`), Baupläne, die die Karte nennen | 0 |
 | `darf` | den Entscheid nach Abschnitt 2 mit Begründung | 0 = ändern erlaubt (Fall a) · 1 = gebunden |
-| `geaendert` | jede Karte, die sich vom Vergleichsstand unterscheidet (Standard `origin/main`, der Stand, der live ist), mit Verbrauchern. Neue Karten sind kein Befund | 1, wenn eine gebundene Karte ohne neuen Vermerk geändert ist |
+| `geaendert` | jede Karte, die sich vom Vergleichsstand unterscheidet (Standard `origin/main`, der Stand, der live ist), mit Verbrauchern. Neue Karten sind kein Befund. Dazu jede Karte, deren Kartenbelege nicht mehr zu ihrem Text passen (`KARTE_BELEGE_VERALTET`, Warnung — Abschnitt 5) | 1, wenn eine gebundene Karte ohne neuen Vermerk geändert ist |
 
 `geaendert` läuft im Tor mit: `check-all`, Zeile «Karten». Fehlt der
 Vergleichsstand, endet das Skript mit Exit 2 — nie grün. `karten.mjs warnungen`
@@ -111,10 +114,41 @@ Ein Eintrag je Korrektur, angehängt an das Array in
   berührt hat. Rot heisst: zurücksetzen (`git restore <datei>`) und den Fall
   nach Abschnitt 2 lösen.
 
-## 5. Was das Skript nicht prüft
+## 5. Kartenbelege — was eine Karte behauptet, wird belegt
+
+Eine Lehrmittelkarte sagt, was auf einer Seite steht («das Schema hat drei
+Teile», «acht Regeln»); stimmt das nicht, steht der Fehler in jedem Heft, das
+die Karte führt. Darum wird der Text einer Karte **wie ein Lösungsfeld
+belegt** — mit Anker, Fundstelle, Urteil und Hash — in
+`<Quellenarchiv>/_pruefung/_karten/<karten-id>.json`, ausserhalb des Repos
+(Form: `references/belege.md` §9, Schema
+`scripts/schema/karte-belege.schema.json`).
+
+```
+node scripts/karten.mjs belege                 # alle Methodenkarten
+node scripts/karten.mjs belege <karten-id>     # eine Karte, auch eine Quellenkarte
+```
+
+| Was | Regel |
+|---|---|
+| belegpflichtig | Lehrmittelkarte: `lesen` und `merk` (Belegzeile mit Anker im Kapitel `kap`, auf einer Seite aus `seiten`). Jede Methodenkarte: jede Aussage über die Welt (Artikel, Zahl mit Einheit, Datum, «Stand») — als Fakt oder Belegzeile |
+| keine Datei | «nicht belegt»: ein **Hinweis**, kein Fehler. Stand 07.10.2026 hat keine der 42 Methodenkarten eine Datei |
+| Datei vorhanden | Fehler, wenn: Schema verletzt · Hash einer Zeile passt nicht mehr zum Text des Felds (`KARTE_BELEGE_VERALTET`) · Anker steht nicht im Kapitel bzw. Archivtext · Anker steht auf einer anderen Seite als die Zeile sagt, oder auf einer Seite, die `seiten` nicht nennt · Urteil `falsch`, `fundstelle_falsch`, `abweichend`, `nicht_belegbar`. Warnung, wenn ein belegpflichtiges Feld keine Zeile hat |
+| Karte geändert | Jede Änderung am Text eines Felds macht dessen Zeilen ungültig (Hash). `karten.mjs geaendert` — die Zeile «Karten» im Tor — meldet das als Warnung `KARTE_BELEGE_VERALTET`; `karten.mjs belege <id>` zeigt die Felder. Neu geprüft werden nur diese |
+| Urteil «falsch» | ein **Fehler in der Karte**: Fall b (Abschnitt 2) — Vermerk, jeden Verbraucher neu prüfen. Im Lauf: nicht ändern, melden (Abschnitt 4) |
+
+Wer die Datei schreibt und womit: `references/audits.md` §6 (Karten-Audit) —
+eine eigene Session, kein Schritt eines Erzeugungslaufs. Bei der Korrektur
+einer Karte nach Fall b gehört das erneute Karten-Audit der geänderten Felder
+zur Korrektur. (Herkunft: Rückblick §5.4 «geteilte Karte»; Auftrag 10, Stufe D
+Nr. 2; ENTSCHEIDE E38, Stufe D.)
+
+## 6. Was das Skript nicht prüft
 
 - ob die Verbraucher nach einer Korrektur wirklich neu gemessen sind — das
-  belegt der Bericht (später `_pruefung/_karten/<id>.json` im Quellenarchiv);
+  belegt der Bericht der Korrektur;
 - ob eine Änderung ein Fehler oder eine Passungsfrage ist (Abschnitt 2);
+- ob eine Karte ohne Datei unter `_pruefung/_karten/` stimmt — «nicht belegt»
+  heisst nicht «geprüft»;
 - Karten, die nur ein Bauplan nennt: Sie erscheinen bei `verbraucher` als «nur
   im Bauplan genannt», binden aber nicht.

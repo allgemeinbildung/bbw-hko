@@ -85,8 +85,17 @@ Ausdrücklich nachsehen — an diesen Stellen fehlten die Läufe:
    Zeiger», rund 25 Stellen; §5.2; E38 Stufe B]
 5. **Abgeleitete Einheit:** Ist die Einheit aus einer anderen entstanden
    (Anpassungsplan), gilt sie als neue Einheit — volle Audits, kein Beleg wird
-   übernommen. [Rb §5.4 «Einheit aus Einheit»: 3.1.1 hat Fehler der
-   Gold-Einheit geerbt]
+   übernommen. Die Abstammung steht in `herkunft.json` im Quellenarchiv
+   (`belege.md` §8); `check-belege` und `check-fakten` melden eine übernommene
+   Zeile (`ERR_BELEG_KOPIERT`, `ERR_FAKT_KOPIERT`) und jede Korrektur der
+   Vorlage seit `stand_commit` (`ERR_VORLAGE_GEAENDERT` — die genannten Felder
+   an der Abgeleiteten prüfen, dann `stand_commit` nachführen). [Rb §5.4
+   «Einheit aus Einheit»: 3.1.1 hat Fehler der Gold-Einheit geerbt; E38
+   Stufe D]
+6. **Rückweg:** Für jeden offenen oder behobenen Punkt mit Kürzel S oder R ist
+   dieselbe Stelle in den anderen Einheiten gesucht
+   (`scripts/gleiche-stelle.mjs`, `phase-9-tor.md` §5); das Ergebnis steht im
+   Bericht. [Rb §5.4 «Rückweg»; E38 Stufe D]
 
 ## 2. Fakten-Audit an Primärquellen
 

@@ -10,6 +10,8 @@
  *   … --streng                                           # jede Einheit wie ein Entwurf: Befunde sind Fehler
  *   … --protokoll <datei>                                # Fassung ohne Treffertext
  *   … --heute JJJJ-MM-TT                                 # Stichtag für das Alter eines Abrufs (Vorgabe: heute)
+ *   … --vor-audit                                        # erster Durchgang des Tors: Fehlt fakten.json, ist das
+ *                                                        # kein Fehler, sondern der Hinweis «Audit steht aus»
  *   … --wurzel <ordner>                                  # anderer Baum statt dieses Repos (Gegenproben)
  *
  * Gesucht wird im sichtbaren Text: Hefte (Kern und beide Spuren), Lösungen, Auftragsbogen
@@ -21,6 +23,8 @@
  *
  * Gelesen wird `<Quellenarchiv>/_pruefung/<ordner>/fakten.json` und `fall.json`.
  * Fehlt fakten.json, gibt es genau EINE Zeile («nicht auditiert») mit der Zahl der Aussagen.
+ * Bei einer abgeleiteten Einheit (herkunft.json, E38 Stufe D) wird dazu die fakten.json der
+ * Vorlage gelesen: Eine verwaiste Zeile, die dort wörtlich steht, ist übernommen.
  *
  * Codes:
  *   ERR_FAKTEN_FEHLT            fakten.json fehlt — die Aussagen der Einheit sind nicht geprüft.
@@ -29,10 +33,12 @@
  *   ERR_FAKTEN_EINHEIT          `einheit` nennt einen anderen Ordner (kopierte Datei).
  *   ERR_FAKT_OHNE_ZEILE         Eine Aussage im Text hat keine Zeile in fakten.json.
  *   ERR_FAKT_ZEILE_VERWAIST     Eine Zeile nennt ein Feld, das es nicht gibt, oder ihr Wortlaut steht nicht mehr im Feld.
+ *   ERR_FAKT_KOPIERT            Verwaiste Zeile, die wörtlich in der fakten.json der Vorlage steht: übernommener Beleg.
  *   ERR_FAKT_ABWEICHEND         Urteil «abweichend»: Die Primärquelle sagt etwas anderes.
  *   ERR_FAKT_NICHT_BELEGBAR     Urteil «nicht_belegbar», und die Stelle ist nicht als Fallüberlegung gekennzeichnet.
  *   WARN_FAKT_ABRUF_ALT         Der Abruf der Primärquelle ist älter als zwölf Monate.
  *   WARN_FAKT_QUELLE_NICHT_AMTLICH  Die Primärquelle ist ein Medium oder ein Lexikon, keine amtliche Stelle.
+ *   HINWEIS_AUDIT_STEHT_AUS     Nur mit --vor-audit: fakten.json fehlt noch — das Fakten-Audit ist nicht gelaufen.
  *   HINWEIS_FALL_FEHLT          fall.json fehlt: Fallzahlen sind nicht ausgenommen, die Liste ist länger als nötig.
  *   HINWEIS_KEIN_V42            Die Einheit ist nicht im Format v4.2 — nichts zu prüfen.
  *
@@ -48,7 +54,8 @@ import { ladeSchema, validiere } from './lib/schema.mjs'
 import { findeAussagen, fallzahlen, fallzahlenFuer, istFallzahl, ARTEN } from './lib/aussagen.mjs'
 
 const NAME = 'check-fakten'
-const A = aufruf(NAME, 'node scripts/check-fakten.mjs <ordner>… | --v42  [--liste] [--streng] [--protokoll <datei>] [--heute JJJJ-MM-TT] [--wurzel <ordner>]', { heute: 'wert' })
+const A = aufruf(NAME, 'node scripts/check-fakten.mjs <ordner>… | --v42  [--liste] [--streng] [--protokoll <datei>] [--heute JJJJ-MM-TT] [--vor-audit] [--wurzel <ordner>]', { heute: 'wert', 'vor-audit': 'flag' })
+const VOR_AUDIT = !!A.opt['vor-audit']
 const heute = A.opt.heute ? datumVon(A.opt.heute) : new Date()
 if (!heute) { console.error(`${NAME}: --heute braucht JJJJ-MM-TT`); process.exit(2) }
 
@@ -113,7 +120,11 @@ for (const ordner of A.ordner) {
   const fall = ladeFall(ordner)
   const liste = aussagenVon(E, fall.fz)
   const datei = liesBelegDatei(archiv.pfad, ordner, 'fakten')
-  if (!datei.vorhanden) { B.fehler('ERR_FAKTEN_FEHLT', `${rel}/fakten.json`, `nicht auditiert: ${liste.length} Aussagen ohne Beleg (${nachArt(liste)})${fall.vorhanden ? '' : ' — ohne fall.json gezählt'}`); continue }
+  if (!datei.vorhanden) {
+    if (VOR_AUDIT) B.hinweis('HINWEIS_AUDIT_STEHT_AUS', `${rel}/fakten.json`, `Audit steht aus: ${liste.length} Aussagen noch ohne Beleg (erster Durchgang, --vor-audit)`)
+    else B.fehler('ERR_FAKTEN_FEHLT', `${rel}/fakten.json`, `nicht auditiert: ${liste.length} Aussagen ohne Beleg (${nachArt(liste)})${fall.vorhanden ? '' : ' — ohne fall.json gezählt'}`)
+    continue
+  }
   if (datei.fehler) { B.fehler('ERR_FAKTEN_UNLESBAR', `${rel}/fakten.json`, 'kein gültiges JSON'); continue }
   if (!fall.vorhanden) B.hinweis('HINWEIS_FALL_FEHLT', `${rel}/fall.json`, 'fehlt — Fallzahlen sind nicht ausgenommen')
 
@@ -135,6 +146,11 @@ for (const ordner of A.ordner) {
     }
     return out
   }
+  // Abgeleitete Einheit: Wortlaute der Faktenzeilen der Vorlage — eine verwaiste Zeile, die dort steht, ist kopiert.
+  const herkunft = liesBelegDatei(archiv.pfad, ordner, 'herkunft')
+  const vorlage = herkunft.vorhanden && !herkunft.fehler && typeof herkunft.daten?.abgeleitet_von === 'string' && herkunft.daten.abgeleitet_von !== ordner ? herkunft.daten.abgeleitet_von : null
+  const vf = vorlage ? liesBelegDatei(archiv.pfad, vorlage, 'fakten') : null
+  const vorlageWortlaute = new Set(vf?.vorhanden && !vf.fehler ? (vf.daten?.zeilen ?? []).map((z) => norm(z?.wortlaut_im_heft)).filter(Boolean) : [])
   const zeilenOrte = zeilen.map((z) => ({ z, orte: new Set(orte(z)), w: norm(z.wortlaut_im_heft) }))
 
   for (const [i, { z, orte: o }] of zeilenOrte.entries()) {
@@ -142,7 +158,8 @@ for (const ordner of A.ordner) {
     const gemeint = [z.feld, ...(Array.isArray(z.auch_in) ? z.auch_in : [])].filter((x) => typeof x === 'string')
     for (const name of gemeint) {
       const da = name.startsWith('begleiter.md') ? [...o].some((x) => x.startsWith('begleiter.md')) : o.has(name)
-      if (!da) B.fehler('ERR_FAKT_ZEILE_VERWAIST', name, `Zeile ${i + 1}: ${name.startsWith('begleiter.md') || felder.has(name) ? 'der Wortlaut der Zeile steht nicht (mehr) im Feld — neu prüfen' : 'dieses Feld gibt es nicht'}`)
+      if (!da && vorlageWortlaute.has(norm(z.wortlaut_im_heft))) B.fehler('ERR_FAKT_KOPIERT', name, `Zeile ${i + 1}: der Wortlaut steht hier nicht, aber in der fakten.json der Vorlage ${vorlage} — übernommene Zeile, die Aussage selbst prüfen`)
+      else if (!da) B.fehler('ERR_FAKT_ZEILE_VERWAIST', name, `Zeile ${i + 1}: ${name.startsWith('begleiter.md') || felder.has(name) ? 'der Wortlaut der Zeile steht nicht (mehr) im Feld — neu prüfen' : 'dieses Feld gibt es nicht'}`)
     }
     if (z.urteil === 'abweichend') B.fehler('ERR_FAKT_ABWEICHEND', wo, `Zeile ${i + 1}: Urteil «abweichend» (Art ${z.art ?? '—'}, Abruf ${z.abgerufen_am ?? '—'})`, z.wortlaut_im_heft ? `· «${z.wortlaut_im_heft}»` : '')
     if (z.urteil === 'nicht_belegbar') {

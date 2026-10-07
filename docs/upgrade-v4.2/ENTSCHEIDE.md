@@ -1733,7 +1733,8 @@ frühere Lösungs-Audit (Sonnet, las die Lösung zuerst, gab Prosa ab,
 4. **Erster Durchgang des Tors ohne Exit 0.** `check-all` endet vor den Audits
    «ROT» (zwei erwartete Fehler); der Orchestrator liest die Ausgabe. Ein
    Schalter dafür (etwa `--vor-audit`) wäre eine Änderung an `check-all` und
-   lag ausserhalb dieser Stufe.
+   lag ausserhalb dieser Stufe. → Erledigt in Stufe D: Schalter
+   `--vor-audit`, entschieden vom Orchestrator des Auftrags 10.
 5. **`check-all` kennt kein `--wurzel`.** Die fünf Beleg-Prüfungen und
    `audit-paket` laufen an einer Temp-Kopie, das Tor als Ganzes nicht.
 6. **Siebzehn Agenten je Lauf.** Wenn das zu viel ist: Der Auftrag (drei
@@ -1754,3 +1755,163 @@ Prüfskripte, nicht `check-all`; im Archiv ist nichts angelegt.
 
 **Rückgängig:** `git revert` des Commits der Stufe C. Die Skripte der Stufe B
 laufen unverändert; die Skill beschreibt dann wieder das frühere Lösungs-Audit.
+
+### E38, Stufe D — Keine Vererbung (07.10.2026)
+
+**Was sich ändert:** Die vier Wege, auf denen sich ein Fehler vervielfacht hat
+(Rückblick §5.4), bekommen je einen Riegel, den ein Skript hält; dazu der
+Schalter für den ersten Durchgang des Tors (Auftrag 10, Stufe D).
+
+| Weg | Riegel | Skript |
+|---|---|---|
+| Einheit aus Einheit | `<Quellenarchiv>/_pruefung/<ordner>/herkunft.json` `{abgeleitet_von, stand_commit}`; eigene `belege.json` und `fakten.json`; übernommene Zeile → Fehler; Vorlage nach `stand_commit` in einem Lösungs- oder Faktenfeld geändert → «neu zu prüfen» | `check-belege.mjs`, `check-fakten.mjs`, neu `lib/herkunft.mjs` |
+| geteilte Karte | Kartenbelege `<Quellenarchiv>/_pruefung/_karten/<id>.json`: Text der Karte wie ein Lösungsfeld belegt, mit Hash — eine geänderte Karte macht ihre Belege ungültig | `karten.mjs belege [<id>]`; `karten.mjs geaendert` liest mit |
+| Skelett, Skill | Die Vorlagen unter `assets/` und die wörtlichen Auftragsvorlagen laufen selbst durchs Tor (Zeile «Skelette»); Start-Riegel über `docs/cloud-run/OFFEN.md` | neu `check-skelette.mjs` |
+| Fehler bleibt in den anderen Einheiten | Rückweg: Fehlerform in allen Einheiten und Karten suchen, bevor der Lauf endet; Ergebnis in Bericht und `OFFEN.md` | neu `gleiche-stelle.mjs <feldpfad> <muster>` |
+
+**Regeln, die dazukommen:**
+
+1. **`--vor-audit`** (`check-all`, durchgereicht an `check-belege` und
+   `check-fakten`): Fehlt `belege.json` bzw. `fakten.json` noch, ist das
+   `HINWEIS_AUDIT_STEHT_AUS` statt eines Fehlers; alles andere bleibt. Die
+   Schlusszeile heisst dann «VOR AUDIT — keine Fehler, aber n Beleg-Datei(en)
+   stehen aus», Exit 0 — nie «GRUEN». Erster Durchgang des Tors mit dem
+   Schalter, zweiter ohne (`phase-9-tor.md` §1). **Damit ist Stufe C «Offen für
+   Pietro» Nr. 4 entschieden — vom Orchestrator des Auftrags 10, nicht von
+   Pietro.**
+2. **Abgeleitete Einheit:** Der Orchestrator legt `herkunft.json` vor dem
+   ersten Schreiben an. «Neu zu prüfen» endet, wenn er nach der Prüfung den
+   neuen `stand_commit` einträgt (`belege.md` §8).
+3. **Kartenbelege:** belegpflichtig sind `lesen` und `merk` einer
+   Lehrmittelkarte (Anker im Kapitel `kap`, auf einer Seite aus `seiten`) und
+   jede Aussage über die Welt in einer Methodenkarte. Eine fehlende Datei ist
+   ein Hinweis, kein Fehler. Wer sie schreibt: das Karten-Audit, eine eigene
+   Session (`audits.md` §6, `karten.md` §5).
+4. **Rückweg:** Für jeden Punkt mit Kürzel S oder R läuft `gleiche-stelle`,
+   bevor der Lauf endet; im Bericht (Abschnitt 10) stehen Feldpfad, Muster und
+   Treffer je Einheit (`phase-9-tor.md` §5).
+5. **Start-Riegel, genaue Form** (`lauf.md` §3 Zeile 9): Ein Lauf beginnt nicht,
+   solange `OFFEN.md` eine Zeile führt mit `Art` = `S` oder `P`, `Stand`
+   passend auf `^(offen|braucht Entscheid)\b` und dem Vermerk
+   `[erzeugt Fehler]` (mit eckigen Klammern) in der Spalte «Punkt». Ebenso,
+   wenn die Zeile «Skelette» rot ist. Die Liste und `offen.mjs` entstehen im
+   letzten Auftrag der Reihe.
+6. **Feste Angaben in Auftragsvorlagen:** Der Rollensatz der
+   Lernenden-Gegenleser hat Platzhalter mit Herleitung (`<lehrgang>`,
+   `<lehrjahr>`, `<alter>`, `<profil>` — `gegenleser.md` §4.1); `audits.md`
+   nennt keinen Pfad dieses Rechners mehr (`<repo>`). `check-skelette` prüft
+   die wörtlichen Auftragszeilen beider Dateien darauf.
+
+**Gemessen am 07.10.2026:**
+
+- **Ausgangswerte unverändert:** `check-all` über die 16 «GRUEN — keine
+  Fehler.» (15.5 s; keine neue Warnung: Zeile «Skelette» ok, Kartenbelege
+  0 Dateien), `check-namen` grün, `karten.mjs geaendert` grün, Bestand
+  unverändert, Build Exit 0.
+- **`check-skelette`:** 7 Vorlagen, 485 Feldpfade in fünf JSON-Skeletten (478
+  in der Gold-Einheit bzw. den Quellenkarten, 7 nur im Datenvertrag —
+  `gemeinsamer_auftrag.produkte…`, das Gold nicht führt), 216 Marker des
+  Begleiter-Skeletts, 261 Zeilen Auftragsvorlage: **kein Befund**. Gegenprobe
+  in einer Temp-Kopie: zehn eingebaute Verstösse lösen zehn verschiedene Codes
+  aus (15 Befunde).
+- **Herkunft** (Temp-Kopie, eigenes Archiv, Test-Belege ohne Quellentext):
+  `3.1.1_konsum_verantworten_3j` als abgeleitet von
+  `1.3.1_konsum_verantworten_v42`. Fünf Zeilen mit dem Hash der Vorlage bei
+  anderem Text → 5 × `ERR_BELEG_KOPIERT` (ohne `herkunft.json`: 5 ×
+  `ERR_AUDIT_VERALTET`). Mit `stand_commit` `bd80e89` (letzter Stand der
+  Vorlage vor der Anpassung `ed55049`): `ERR_VORLAGE_GEAENDERT` — 13
+  Lösungsfelder der Vorlage seither geändert (Commits `1902384`, `348fb55`),
+  0 Faktenfelder; keines der 13 steht in 3.1.1 noch im alten Wortlaut.
+  Unbekannter Commit → `HINWEIS_HERKUNFT_NICHT_PRUEFBAR`, Exit 2. Kopierte
+  Faktenzeile → `ERR_FAKT_KOPIERT`.
+- **Kartenbelege** (Temp-Kopie): zwei gültige Zeilen für `lm-17-3-3b-schema`
+  → grün; falsche Seite → `KARTE_STELLE_FALSCH`; Karte nach dem Audit geändert
+  → `KARTE_BELEGE_VERALTET` (Fehler in `belege`, Warnung in `geaendert`). Am
+  Bestand: 42 Methodenkarten, keine belegt; 23 haben belegpflichtige Felder
+  (21 Lehrmittelkarten, 2 eigene), 19 keine.
+- **`--vor-audit`** (Temp-Einheit mit `status: "entwurf"`): `check-belege` und
+  `check-fakten` enden ohne Schalter «ROT» (`ERR_BELEGE_FEHLT`,
+  `ERR_FAKTEN_FEHLT`), mit Schalter Exit 0 mit je einem Hinweis; liegt
+  `belege.json` vor, bleibt eine veraltete Zeile ein Fehler.
+- **`gleiche-stelle`** an zwei Fehlerformen aus den Nachträgen: Karte
+  `lm-1-3-rechtsfall` und Widerruf am Marktstand (Lauf `2026-10-04-331`) —
+  Muster `Marktstand|Messestand`: 20 Treffer in 3 von 27 Einheiten (3.3.1: 7,
+  4.1.1: 8, 4.2.1: 5), 1 in Karten. Skelett `set-template.json`, fester
+  Wochenplan 4 × 3 Lektionen (Lauf `2026-10-04-421`) — Feld
+  `wochenplan[*].lektionen`, Muster `^3$`: 64 Treffer, je 4 in allen 16
+  v4.2-Einheiten.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Kopierter Beleg:** Verglichen wird der `hash` einer Belegzeile der
+  Abgeleiteten, der nicht zum heutigen Text ihres Felds passt, mit den Hashes
+  der Lösungsfelder der Vorlage — heute im Baum, am `stand_commit` und in der
+  `belege.json` der Vorlage. Trägt die Abgeleitete in einem Feld wörtlich den
+  Text der Vorlage, ist der Hash derselbe: Ob die Zeile neu auditiert oder
+  abgeschrieben ist, sieht kein Skript.
+- **Faktenfeld:** ein Textfeld von Heft, `set.json`, `kn.json` (der Begleiter
+  als Ganzes), in dem `lib/aussagen.mjs` eine Aussage über die Welt findet;
+  «geändert» heisst, die Aussagen des Felds sind nicht mehr dieselben. Eine
+  Umformulierung ohne Zahl, Artikel oder Datum zählt nicht als Änderung eines
+  Faktenfelds.
+- **«Heute» ist der Baum, nicht `HEAD`:** Verglichen wird der Stand der
+  Vorlage am Commit mit ihren Dateien im Arbeitsbaum (auch unter `--wurzel`).
+- **Schwere:** wie in Stufe B — an einer gebundenen Einheit Warnungen, am
+  Entwurf Fehler. Je geändertes Feld der Vorlage eine Zeile, davor eine mit
+  den Zahlen.
+- **Kartenbelege veraltet** ist in `karten.mjs geaendert` (Tor) eine Warnung,
+  in `karten.mjs belege` ein Fehler. `geaendert` liest jede vorhandene Datei,
+  unabhängig vom Vergleich mit `origin/main` — der Hash gilt gegen heute.
+- **`check-skelette`, Felder:** Pfad gegen die Gold-Einheit und den
+  Datenvertrag (dort auch relativ notierte Pfade); gegen `types.ts` nur der
+  Feldname — die Datei wird statisch gelesen, ein Pfad lässt sich ohne
+  Compiler nicht sicher auflösen. 31 Feldpfade der Skelette tragen einen Namen, der in
+  `types.ts` nicht vorkommt; alle stehen im Datenvertrag («nur Gold») und sind kein
+  Befund. Die Liste `HINGENOMMEN` im Skript ist leer.
+- **`check-skelette` fehlt die Skill im Baum** (Exit 2): in `check-all` ein
+  Hinweis, kein Fehler.
+- **`gleiche-stelle`:** durchsucht jede JSON-Datei jeder Einheit (auch
+  Herausforderung C und KI-Dateien), Zahlen als Text, den Begleiter je Absatz
+  und einmal alle Karten; Exit 1 heisst «Treffer». Der Ausschnitt ist eigener
+  Text der Einheit, höchstens acht Wörter.
+- **Kürzel K** (Karte) ist im Bericht nicht eingeführt: Ein Kartenfehler steht
+  dort weiter unter S; die Skill nennt K nur als Art der künftigen `OFFEN.md`.
+- **«Fünf Schritte»** im Auftrag der Lernenden-Gegenleser heisst jetzt «jeder
+  Schritt»; die Seitenzahlen 3, 4 und 6 bleiben — sie sind im Renderer fest.
+
+**Offen für Pietro** (Fortsetzung der Liste aus Stufe C; dort ist Nr. 4
+erledigt):
+
+7. **`herkunft.json` für `3.1.1_konsum_verantworten_3j` eintragen?** Heute
+   trägt keine Einheit eine. Vorschlag: `{"format": "bbw-hko/herkunft@1",
+   "einheit": "3.1.1_konsum_verantworten_3j", "abgeleitet_von":
+   "1.3.1_konsum_verantworten_v42", "stand_commit": "bd80e89"}` — der letzte
+   Commit der Vorlage vor der Anpassung. Folge: an 3.1.1 (publiziert) 14
+   Warnungen `ERR_VORLAGE_GEAENDERT`, bis die 13 Felder geprüft sind und der
+   Commit nachgeführt ist.
+8. **Karten-Audit des Bestands:** 23 Methodenkarten haben belegpflichtige
+   Felder, keine ist belegt. Wann, und in welcher Reihenfolge (nach Zahl der
+   Verbraucher)?
+9. **Kürzel K im Bericht** — soll der Abschnitt «Offen» die Karte als eigene
+   Art führen, wie die künftige `OFFEN.md`?
+10. **Fester Wochenplan im Skelett** (`set-template.json`: 4 × 3 Lektionen,
+    Bericht `2026-10-04-421`): steht in allen 16 Einheiten. `check-skelette`
+    prüft keinen Festwert gegen den Datensatz; soll es?
+
+**Geänderte Dateien (Stufe D):** neu `scripts/check-skelette.mjs`,
+`scripts/gleiche-stelle.mjs`, `scripts/lib/herkunft.mjs`; geändert
+`scripts/check-belege.mjs` (`--vor-audit`, Herkunft), `scripts/check-fakten.mjs`
+(`--vor-audit`, kopierte Zeile), `scripts/check-all.mjs` (Zeile «Skelette»,
+`--vor-audit`, Schlusszeile «VOR AUDIT»), `scripts/karten.mjs` (`belege`,
+Kartenbelege in `geaendert`), `package.json` (zwei Zeilen); Skill: `SKILL.md`
+(§4), `references/phase-9-tor.md` (§1, §4, §5 neu), `lauf.md` (§3, §4, §10,
+§11), `auto-modus.md` (§5), `belege.md` (Kopf, §8, §9, §11, §13 neu),
+`karten.md` (§1, §5 neu, §6), `audits.md` (§1.1, §1.3, §5, §6 neu),
+`gegenleser.md` (§4.1, §5), `phase-10-abschluss.md` (§1),
+`assets/bericht-template.md` (Abschnitte 2 und 10). Kein Skelett ist geändert
+(kein Befund). Keine Einheit, keine Karte, kein Renderer; im Archiv ist nichts
+angelegt.
+
+**Rückgängig:** `git revert` des Commits der Stufe D. Das Tor läuft dann wie
+nach Stufe C (erster Durchgang wieder «ROT» mit zwei erwarteten Fehlern).

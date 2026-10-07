@@ -37,10 +37,19 @@ Die Vorlage genügt allein — der Subagent liest diese Skill nicht.
 | `<archiv>` | das Quellenarchiv: lokal `D:\OS\_lab\quellen-archiv\bbw-hko`, bei einer Gegenprobe eine Kopie mit den Ordnern `q-…` der Einheit |
 | `<pruef>` | `<archiv>/_pruefung/<ordner>` — dorthin schreibt jede Rolle ihre Datei |
 | `<tmp>` | ein Ordner je Lauf **ausserhalb jedes Repos** (unter `%TEMP%`) |
-| `<modell>` | das Modell, das den Auftrag ausführt — steht in jeder Zeile unter `von.modell` |
+| `<modell>` | das Modell, das den Auftrag ausführt — steht in jeder Zeile unter `von.modell`. Der Orchestrator setzt den Namen ein, unter dem er den Subagenten startet; die Vorlagen nennen nie ein Modell mit Version |
+| `<repo>` | die Wurzel dieses Repos (dort liegt `scripts/`) — der Orchestrator setzt seinen Arbeitsordner ein |
 
-Jeder Befehl läuft im Repo (`D:\OS\dev\bbw-hko`) und wirkt auf `<wurzel>` und
-`<archiv>`:
+**Nichts in einer Vorlage ist je Einheit fest verdrahtet.** Lehrgang, Lehrjahr,
+Zahl der Hefte, Spuren, Karten, Kapitel und Seiten stehen im Paket, das
+`audit-paket.mjs` aus der Einheit baut — die Vorlagen nennen sie nicht. Was in
+einer Vorlage als Zahl steht (Punkte 0 bis 3, die drei Schritte des
+Lösungs-Audits), gilt für jede Einheit im Format v4.2. `check-skelette.mjs`
+prüft die wörtlichen Auftragszeilen dieser Datei auf ein festes Lehrjahr, einen
+Lehrgang, ein Alter, ein Modell mit Version und einen absoluten Pfad
+(`belege.md` §13). [Rb §5.4, Zeile «Skelett, Skill, Renderer»; E38 Stufe D]
+
+Jeder Befehl läuft in `<repo>` und wirkt auf `<wurzel>` und `<archiv>`:
 
 ```
 PowerShell:  $env:QUELLEN_ARCHIV = '<archiv>'; node scripts/<skript>.mjs <ordner> … --wurzel "<wurzel>"
@@ -69,7 +78,8 @@ ausdrücklich. [E38 Stufe A: «Lehrmittel bei `--wurzel`»]
 ### 1.3 Wann — und was eine Änderung auslöst
 
 Die Audits beginnen **nach dem ersten grünen Tor** (`phase-9-tor.md` §1, erster
-Durchgang) und laufen neben den Lernenden-Gegenlesern; sie lesen nur. Die
+Durchgang: `check-all <ordner> --vor-audit` endet «VOR AUDIT — keine Fehler …»)
+und laufen neben den Lernenden-Gegenlesern; sie lesen nur. Die
 Lösbarkeitsprobe beginnt, sobald das Produkt eines Lernenden-Gegenlesers
 vorliegt. [`lauf.md` §4–§5]
 
@@ -550,3 +560,31 @@ Rolle: Modell, Zahl der Agenten, Zahl der Felder bzw. Aussagen je Urteil, und
 der Probe**, je mit dem, was geschah (`assets/bericht-template.md`, Abschnitte
 6 und 8). Die Beleg-Dateien selbst bleiben im Archiv; `_pruefung/` gehört in
 dessen Backup. [E38]
+
+Findet ein Audit einen Fehler, der nicht aus dieser Einheit stammt, sondern aus
+einer Regel der Skill, einem Skelett, einer Karte oder dem Renderer (Kürzel S
+oder R), läuft vor dem Bericht die Suche nach derselben Stelle in den anderen
+Einheiten: `node scripts/gleiche-stelle.mjs "<feldpfad>" "<muster>" --ohne
+<ordner>` — Regel und Form in `phase-9-tor.md` §5. [Rb §5.4 «Rückweg»; E38
+Stufe D]
+
+## 6. Karten-Audit — die Belege einer geteilten Karte
+
+Kein Schritt eines Erzeugungslaufs: Eine Karte gehört vielen Einheiten. Das
+Karten-Audit ist eine eigene Session — für eine neue Karte, bevor die erste
+Einheit mit ihr publiziert wird, für den Bestand nach und nach, und nach jeder
+Korrektur einer Karte (`karten.md` §2 Fall b) für die geänderten Felder. Es
+bringt **keine neue inhaltliche Regel**: Belegt wird wie beim Lösungs-Audit
+(Abschnitt 2), nur ist das Feld ein Feld der Karte.
+
+| | |
+|---|---|
+| **Wer** | ein Subagent, Modell wie das Lösungs-Audit; ändert nichts — auch nicht die Karte |
+| **Womit** | die Karte `src/data/methoden/<karten-id>.json` · bei einer Lehrmittelkarte die Kapiteldatei des Kapitels `kap` mit ihren Seitenmarken, ganz (nicht nur die Seiten aus `seiten` — eine falsche Seite soll auffallen) · die Liste der belegpflichtigen Felder aus `node scripts/karten.mjs belege <karten-id>` («zu belegen: …») |
+| **Wie** | je Feld: Was behauptet es über Kapitel oder Welt? Stelle im Kapitel suchen, Anker (5 bis 12 Wörter, wörtlich) und Seite notieren, Urteil wie in Abschnitt 2.3 (`stimmt`, `fundstelle_falsch`, `falsch`; reine Arbeitsanweisung ohne Aussage: `fallueberlegung`, `stimmt`). Aussagen über die Welt wie im Fakten-Audit (Abschnitt 3.2) an der amtlichen Primärquelle |
+| **Ergebnisdatei** | `<archiv>/_pruefung/_karten/<karten-id>.json` nach `scripts/schema/karte-belege.schema.json` (`belege.md` §9): `karte`, `art`, `belege[]`, `fakten[]`; `hash` je Zeile = `hashText()` über den Text des Felds. Ausserhalb des Repos — die Datei trägt Anker |
+| **Prüft danach** | `node scripts/karten.mjs belege <karten-id>` — Exit 0, kein Fehler. Ein Urteil `falsch` oder `fundstelle_falsch` ist kein Fehler des Audits, sondern ein **Fehler in der Karte**: Er geht als Punkt (Kürzel S; in `OFFEN.md` Art K) in die Liste, mit `karten.mjs verbraucher <karten-id>` und der Suche aus `phase-9-tor.md` §5 — korrigiert wird nach `karten.md` §2 Fall b, nicht im Audit |
+| **Rückgabe** | je Feld: Urteil und Fundstelle (Kapitel, Seite) — kein Anker, kein Satz aus dem Lehrmittel |
+
+Stand 07.10.2026: Keine der 42 Methodenkarten ist belegt; `karten.mjs belege`
+meldet das als Hinweis. [Auftrag 10, Stufe D Nr. 2; E38 Stufe D]

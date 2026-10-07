@@ -158,7 +158,13 @@ Modelle, Vorprüfung, Reihenfolge, Messung, Abbruch, Commit — E34),
 `scripts/karten.mjs`, Vermerk — E36), `references/belege.md` (Beleg-Dateien
 ausserhalb des Repos: Ort, Form, Lösungsfelder und Hash, die Skripte, die sie
 prüfen — E38), `references/audits.md` (Lösungs-Audit, Fakten-Audit,
-Lösbarkeitsprobe als Auftragsvorlagen; `scripts/audit-paket.mjs` — E38).
+Lösbarkeitsprobe als Auftragsvorlagen; `scripts/audit-paket.mjs`; Karten-Audit
+— E38). Gegen Vererbung (E38, Stufe D): `scripts/check-skelette.mjs` prüft die
+Vorlagen unter `assets/` und die Auftragsvorlagen im Tor (Zeile «Skelette»),
+`scripts/gleiche-stelle.mjs` sucht eine gefundene Fehlerform in allen
+Einheiten (`references/phase-9-tor.md` §5), `herkunft.json` hält fest, woraus
+eine Einheit abgeleitet ist (`references/belege.md` §8), und der Start-Riegel
+steht in `references/lauf.md` §3 Zeile 9.
 
 ### Wer was tut
 

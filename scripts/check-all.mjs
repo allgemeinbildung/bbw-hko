@@ -9,6 +9,11 @@
  *   … --cloud                                      # unbeaufsichtigter Lauf: Lehrmittel MUSS da sein
  *   … --streng                                     # die fuenf Beleg-Pruefungen behandeln jede Einheit wie einen
  *                                                  # Entwurf: Befunde sind Fehler, auch bei publizierten (E38)
+ *   … --vor-audit                                  # erster Durchgang des Tors, vor den Audits: Fehlen belege.json
+ *                                                  # und fakten.json noch, ist das ein HINWEIS «Audit steht aus»,
+ *                                                  # kein Fehler. Die Schlusszeile heisst dann nie «GRUEN», sondern
+ *                                                  # «VOR AUDIT …» — der zweite Durchgang laeuft ohne den Schalter
+ *                                                  # (E38 Stufe D; references/phase-9-tor.md §1)
  *
  * Buendelt die bestehenden Checks (nRLP, check-einheiten, check-lf-loesung,
  * check-v42, sync-einheiten-nrlp --check) und ergaenzt, was bisher kein Skript
@@ -24,6 +29,8 @@
  *   SPRACHE    kein «ß», keine stehengebliebenen Platzhalter
  *   KARTEN     keine Karte geaendert, die ein publiziertes Heft fuehrt — ausser
  *              als Fehler mit Vermerk (scripts/karten.mjs geaendert, gegen origin/main)
+ *   SKELETTE   die Vorlagen der Skill unter assets/ und die Auftragsvorlagen verletzen selbst keine Regel
+ *              (scripts/check-skelette.mjs — einmal je Aufruf, nicht je Einheit; E38 Stufe D)
  *   LECK       keine woertliche Lehrmittelpassage in den Daten — das Repo ist
  *              oeffentlich, das Lehrmittel nicht. Verglichen wird gegen
  *              material/_lehrmittel/ (gitignored) und das Quellenarchiv
@@ -67,6 +74,7 @@ const argv = process.argv.slice(2)
 const flag = (f) => argv.includes(f)
 const CLOUD = flag('--cloud')
 const STRENG = flag('--streng')
+const VOR_AUDIT = flag('--vor-audit')
 const wunsch = argv.filter((a) => !a.startsWith('--'))
 
 const alleSlugs = readdirSync(EINHEITEN, { withFileTypes: true })
@@ -105,7 +113,7 @@ if (wunsch.length) {
 } else if (flag('--alle')) {
   slugs = alleSlugs
 } else {
-  console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud] [--streng]')
+  console.error('usage: node scripts/check-all.mjs <slug>… | --neu | --entwurf | --alle   [--cloud] [--streng] [--vor-audit]')
   process.exit(2)
 }
 
@@ -198,10 +206,11 @@ function zaehlung(text) {
 }
 const einruecken = (t) => t.split('\n').map((l) => '      ' + l).join('\n')
 
-console.log(`check-all — ${slugs.length} Einheit(en)${mussEntwurf ? ' · status muss "entwurf" sein' : ''}${CLOUD ? ' · --cloud' : ''}\n`)
+console.log(`check-all — ${slugs.length} Einheit(en)${mussEntwurf ? ' · status muss "entwurf" sein' : ''}${CLOUD ? ' · --cloud' : ''}${VOR_AUDIT ? ' · --vor-audit: erster Durchgang, die Audits stehen aus' : ''}\n`)
 
 let rot = 0
 let ungeprueft = 0
+let auditAus = 0
 const zeile =(ok, name, detail = '') => console.log(`  ${ok ? 'ok    ' : 'FEHLER'}  ${name}${detail ? '  ' + detail : ''}`)
 
 if (!lehrmittel) {
@@ -227,6 +236,19 @@ if (slugs.length) {
   const k = lauf('karten.mjs', ['geaendert'])
   zeile(k.ok, 'Karten', 'geaenderte Methoden- und Quellenkarten gegen origin/main · Verbraucher · Vermerk')
   if (!k.ok || /warnung|HINWEIS|  (geändert|gelöscht)  /.test(k.text)) { if (!k.ok) rot++; console.log(einruecken(k.text)) }
+}
+
+// Skelette: scripts/check-skelette.mjs — die Vorlagen unter assets/ und die Auftragsvorlagen der Skill verletzen
+// selbst keine Regel (Anrede, gesperrte Woerter, Platzhalterform, Felder). Einmal je Aufruf. Fehlt die Skill im
+// Baum (Exit 2), ist das ein Hinweis: Dann gibt es nichts, woraus ein Lauf einen Fehler erben koennte.
+{
+  const k = lauf('check-skelette.mjs', [])
+  if (k.status === 2) console.log(`  HINWEIS Skelette  nicht geprueft — ${k.text.split('\n').filter(Boolean).pop()?.trim() ?? 'Skill fehlt im Baum'}`)
+  else {
+    zeile(k.ok, 'Skelette', 'Vorlagen der Skill: Anrede · gesperrte Woerter · Platzhalterform · Felder · feste Angaben')
+    if (!k.ok) { rot++; console.log(einruecken(k.text)) }
+    else { const z = zaehlung(k.text); if (z.warnungen) console.log(`      Warnungen ${z.warnungen}  (node scripts/check-skelette.mjs)`); if (z.hinweise) console.log(`      Hinweise ${z.hinweise}`) }
+  }
 }
 
 if (!slugs.length) console.log('\n  Keine Einheit im Umfang.')
@@ -269,7 +291,9 @@ for (const slug of slugs) {
       ['Kohaerenz (Werte, Loesung sichtbar, Woerter, Anzahl, Punkte)', 'check-kohaerenz.mjs'],
     ]
     for (const [name, script] of beleg) {
-      const r = lauf(script, [slug, ...(STRENG ? ['--streng'] : [])])
+      // --vor-audit kennen nur die zwei Skripte, deren Datei erst ein Audit schreibt.
+      const vorAudit = VOR_AUDIT && (script === 'check-belege.mjs' || script === 'check-fakten.mjs')
+      const r = lauf(script, [slug, ...(STRENG ? ['--streng'] : []), ...(vorAudit ? ['--vor-audit'] : [])])
       const z = zaehlung(r.text)
       if (r.status === 2) {
         // Nie «ok»: Was nicht pruefbar war, ist nicht gruen. Unter --cloud ein Fehler.
@@ -277,6 +301,7 @@ for (const slug of slugs) {
         console.log(`  ${CLOUD ? 'FEHLER' : 'HINWEIS'} ${name}  nicht geprueft — ${r.text.split('\n').filter((l) => /NICHT GEPRUEFT|fehlt lokal/.test(l)).pop()?.trim().replace(/^NICHT GEPRUEFT — /, "") ?? 'Quellenarchiv oder Lehrmittel fehlt lokal'}`)
         if (CLOUD) rot++
       } else zeile(r.ok, name)
+      if (/HINWEIS_AUDIT_STEHT_AUS/.test(r.text)) auditAus++
       if (r.status === 1) { rot++; console.log(einruecken(r.text)) } else {
         if (z.warnungen) console.log(`      Warnungen ${z.warnungen}`)
         if (z.hinweise) console.log(`      Hinweise ${z.hinweise}`)
@@ -285,5 +310,5 @@ for (const slug of slugs) {
   }
 }
 
-console.log(`\n${rot ? `ROT — ${rot} Pruefung(en) mit Fehlern.` : ungeprueft ? `UNVOLLSTAENDIG — keine Fehler, aber ${ungeprueft} Pruefung(en) nicht gelaufen (Quellenarchiv oder Lehrmittel fehlt lokal).` : 'GRUEN — keine Fehler.'}`)
+console.log(`\n${rot ? `ROT — ${rot} Pruefung(en) mit Fehlern.` : ungeprueft ? `UNVOLLSTAENDIG — keine Fehler, aber ${ungeprueft} Pruefung(en) nicht gelaufen (Quellenarchiv oder Lehrmittel fehlt lokal).` : auditAus ? `VOR AUDIT — keine Fehler, aber ${auditAus} Beleg-Datei(en) stehen aus (belege.json, fakten.json). Erster Durchgang; der zweite laeuft ohne --vor-audit.` : 'GRUEN — keine Fehler.'}`)
 process.exit(rot ? 1 : 0)

@@ -87,8 +87,30 @@ Dann, in dieser Reihenfolge; die erste Zeile, die zutrifft, entscheidet:
 | 6 | Bauplan §9 nennt eine Blockade («nicht erzeugbar bis …») | Abbruchfall (Abschnitt 7) [P-einzel] |
 | 7 | Der Bauplan besteht die Prüfung gegen Datensatz, Kapiteldateien und Ableitungsregeln nicht (`references/auto-modus.md` §7) und §9 nennt die Abweichung nicht; oder eine Kapiteldatei fehlt | Abbruchfall [E21, E23] |
 | 8 | Eine Quelle aus Bauplan §7 mit Stand «geprüft» hat keine Karte unter `src/data/quellen/` **oder** keinen Archivtext | Regel aus `references/auto-modus.md` §5: Spur entfällt oder Abbruchfall; Entscheid in den Bericht [P-einzel, E23] |
-| 9 | `docs/cloud-run/OFFEN.md` (sobald vorhanden) führt einen offenen Punkt der Art S oder P mit dem Vermerk «erzeugt Fehler» | nicht beginnen, melden. Bis die Liste besteht: kein Riegel, aber die bekannten Fehler aus «Zuerst lesen» gelten [Rb §5.4, Zeile «Skelett, Skill, Renderer»] |
+| 9 | **Start-Riegel.** `docs/cloud-run/OFFEN.md` (sobald vorhanden) führt eine Zeile, auf die alle drei zutreffen: Spalte «Art» ist `S` oder `P` · Spalte «Stand» beginnt mit `offen` oder `braucht Entscheid` · Spalte «Punkt» enthält den Vermerk `[erzeugt Fehler]` (genau so, in eckigen Klammern) | **nicht beginnen**, nur melden: die ID der Zeile und ihren Punkt. Der Riegel fällt, wenn der Punkt behoben oder ausdrücklich hingenommen ist — dann steht in «Stand» `behoben …`, `hingenommen …` oder `entschieden am …`. Ein Lauf setzt oder entfernt den Vermerk nie selbst. Bis die Liste besteht: kein Riegel, aber die bekannten Fehler aus «Zuerst lesen» gelten. Genaue Form: unter dieser Tabelle [Rb §5.4, Zeile «Skelett, Skill, Renderer»; Auftrag 10, Stufe D Nr. 5; E38 Stufe D] |
 | 10 | `node scripts/check-namen.mjs --vor <ordner>` (für jede neue Methodenkarte aus Bauplan §9 dazu `--karte <id>`) meldet «BELEGT» (Exit 1): der Ordner gehört einer anderen Einheit, oder die Methodenkarte gibt es schon | Abbruchfall. Das Skript nennt auch den Laufordner (Abschnitt 8) und das Quellen-Muster; weicht dieses vom Bauplan ab und Bauplan §9 nennt es nicht als Ausnahme, gilt Zeile 7. Dasselbe Skript läuft im Tor mit (`check-all`, Zeile «Namen») [Rb §3 Nr. 8; ableitungsregeln.md §10] |
+
+**Der Start-Riegel, genau** (Zeile 9). `docs/cloud-run/OFFEN.md` ist eine
+Tabelle mit den Spalten `ID · Einheit oder Bereich · Art · Punkt · Fundstelle ·
+wer · Stand · seit`. Ein Punkt sperrt den Start, wenn
+
+1. `Art` genau `S` oder `P` ist (die Arten erklärt der Kopf der Liste),
+2. `Stand` auf `^(offen|braucht Entscheid)\b` passt, und
+3. `Punkt` die Zeichenfolge `[erzeugt Fehler]` enthält — mit den eckigen
+   Klammern, Gross- und Kleinschreibung wie hier. «erzeugt Fehler» ohne
+   Klammern im Fliesstext eines Punkts sperrt nicht.
+
+Den Vermerk setzt, wer den Punkt in die Liste einträgt, wenn die Lücke in
+jeder neuen Einheit denselben Fehler **erzeugt** (ein Skelett mit falschem
+Festwert, eine Auftragsvorlage mit festem Lehrjahr, eine Regel, die einen
+Widerspruch vorschreibt) — nicht bei einem Punkt, der nur stört. Entfernt wird
+er nie; der Riegel fällt über die Spalte «Stand». `node scripts/offen.mjs`
+(sobald vorhanden) prüft diese drei Bedingungen; bis dahin liest der
+Orchestrator die Liste. Dazu läuft im Tor die Zeile «Skelette»
+(`scripts/check-skelette.mjs`): Ein Fehler dort ist derselbe Fall, vom Skript
+gefunden — nicht beginnen, melden. [Rb §5.4: «ein Lauf startet nicht mit
+offenen S-Punkten, die Fehler erzeugen. Skelette laufen selbst durchs Tor»;
+E38 Stufe D]
 
 Der Bauplan gilt. Kein Entscheid wird geändert; die Phasen 0, 1 und Q laufen
 nicht als Erzeugung — nichts wird hergeleitet, kein Bauplan geschrieben, keine
@@ -116,11 +138,11 @@ Durchgang des Tors: Auftrag 10, Stufe C; E38]
 | 3 | `npm run build:einheiten-index` — einmal, damit die Executor exportieren können | Orchestrator | Abschnitt 6 |
 | 4 | Heft A und Heft B — Phasen 4, 5, 6 je Heft, **mit eigener Messung vor der Abgabe**; jeder Executor gibt mit dem Heft `fall.<A\|B>.json` ab | Executor A ∥ Executor B | `phase-4-…`, `phase-5-…`, `phase-6-…`, Abschnitt 6, `belege.md` §6 |
 | 5 | `set.json` (mit `fall.auftrag.json`), danach `begleiter.md` (der Executor Begleiter füllt am Schluss einmal die Marker) | Executor Set → Executor Begleiter | `phase-7-set.md`, `phase-8-begleiter.md` |
-| 6 | **Tor, erster Durchgang:** Teildateien zusammenführen (`fall.json`), `check-all`, Export und Messung aller Dokumente, dazu einmal `check-all` über die drei Bestandseinheiten. Grün heisst hier: Die einzigen Fehler sind `ERR_BELEGE_FEHLT` und `ERR_FAKTEN_FEHLT` — die Audits sind noch nicht gelaufen. Höchstens drei Reparaturrunden — eine Runde umfasst `check-all` **und** Messung | Orchestrator | `phase-9-tor.md` §1–§2 |
+| 6 | **Tor, erster Durchgang:** Teildateien zusammenführen (`fall.json`), `check-all <ordner> --vor-audit`, Export und Messung aller Dokumente, dazu einmal `check-all` über die drei Bestandseinheiten. Grün heisst hier: letzte Zeile «VOR AUDIT — keine Fehler …», Exit 0 — `belege.json` und `fakten.json` stehen noch aus, sonst ist nichts offen. Höchstens drei Reparaturrunden — eine Runde umfasst `check-all` **und** Messung | Orchestrator | `phase-9-tor.md` §1–§2 |
 | 7 | Gegenleser und Audits, **gleichzeitig**: je Heft und Spur ein/e Lernende/r, ein Bogen-Leser, ein Sweep · je Heft und Spur und für den Auftrag ein Lösungs-Audit · ein Fakten-Audit. Die Pakete baut der Orchestrator vorher | Gegenleser, Lösungs-Audit, Fakten-Audit | `gegenleser.md`, `audits.md` §2–§3 |
 | 7a | Lösbarkeitsprobe, sobald das Produkt eines Lernenden-Gegenlesers vorliegt — je Produkt eine, gleichzeitig | Lösbarkeitsprobe | `audits.md` §4 |
 | 8 | Teildateien zusammenführen. Jeden Befund am Dokument nachprüfen — die der Gegenleser, jedes Urteil der Audits, das nicht «stimmt» bzw. «belegt» heisst, jeden Befund der Probe → genaue Aufträge → Korrekturen → Marker-Skript neu → Tor neu → geänderte Seiten noch einmal lesen, **geänderte Lösungsfelder und Aussagen neu auditieren** (Abschnitt 4.1); höchstens drei Runden. Wer korrigiert: am Heft der Executor A bzw. B, an `set.json` und `begleiter.md` der Executor der Datei, an `prinzip.json`, `kn.json` und an einer in diesem Lauf neu angelegten Methodenkarte der Orchestrator | Orchestrator, Executor der Datei | `gegenleser.md` §2, §5; `audits.md` §2.4–§2.5, §3.3, §4.3 |
-| 9 | **Phase 10, Schritte 1–6:** offene Befunde, Stand des Fakten-Audits, Zahlen, erneutes Lesen und erneutes Audit nach der letzten Änderung, **Tor, zweiter Durchgang** (`check-all` GRUEN — mit Belegen, Fakten und Probe) und Messung, Gegenhör-Liste | Orchestrator, Audits, Gegenleser | `phase-10-abschluss.md` |
+| 9 | **Phase 10, Schritte 1–6:** offene Befunde, Stand des Fakten-Audits, Zahlen, erneutes Lesen und erneutes Audit nach der letzten Änderung, **Tor, zweiter Durchgang** (`check-all <ordner>` **ohne** `--vor-audit`: GRUEN — mit Belegen, Fakten und Probe) und Messung, Gegenhör-Liste; für jeden Punkt mit Kürzel S oder R die Suche nach derselben Stelle (`phase-9-tor.md` §5) | Orchestrator, Audits, Gegenleser | `phase-10-abschluss.md` |
 | 10 | Bericht im Laufordner, dazu `check-all.txt`, `messung.txt` und die fünf Protokolle `*-check.txt` | Orchestrator | `assets/bericht-template.md`, Abschnitt 8 |
 | 11 | Leck-Prüfung über Bauplan und Bericht — **nach** dem Bericht, **vor** `git add`; ihr Ergebnis wird im Bericht nachgetragen —, dann gezieltes `git add`, `check-leck --staged`, **ein** Commit | Orchestrator | Abschnitt 8 |
 | 12 | Schluss: Vorlage zur Freigabe | Orchestrator | Abschnitt 9 |
@@ -407,9 +429,21 @@ Berichts in `docs/cloud-run/OFFEN.md` stehen. Handweg bis dahin: Der Abschnitt
 - Keine Quellensuche, kein Swissdox, keine Zugangsdaten. Das Fakten-Audit ist
   keine Quellensuche: Es liest frei zugängliche amtliche Seiten und wählt keine
   neue Quelle für ein Heft. [P-loop «Was in jedem Durchgang gilt»; P-1a Schritt 4]
-- Stammt ein Fehler aus einer Regel der Skill, einem Skelett, einer Karte oder
-  dem Renderer, wird dieselbe Stelle in den übrigen Einheiten gesucht; der
-  Bericht nennt das Ergebnis. Geändert wird dort nichts. [Rb §5.4 «Rückweg»]
+- **Rückweg.** Stammt ein Fehler aus einer Regel der Skill, einem Skelett,
+  einer Karte oder dem Renderer (Kürzel S oder R; in `OFFEN.md` die Arten S, K,
+  R), läuft `node scripts/gleiche-stelle.mjs "<feldpfad>" "<muster>" --ohne
+  <ordner>`, **bevor der Lauf endet**; die Trefferzahl je Einheit steht im
+  Bericht (Abschnitt 10) und in `docs/cloud-run/OFFEN.md` (sobald vorhanden).
+  Geändert wird dort nichts. Regel und Form: `phase-9-tor.md` §5. [Rb §5.4
+  «Rückweg»; Auftrag 10, Stufe D Nr. 4; E38 Stufe D]
+- **Abgeleitete Einheit.** Entsteht eine Einheit aus einer anderen
+  (Anpassung), legt der Orchestrator **vor dem ersten Schreiben**
+  `herkunft.json` im Quellenarchiv an (`belege.md` §8) — `set.json` bekommt
+  dafür kein Feld. Die Abgeleitete ist eine neue Einheit: volle Audits, kein
+  Beleg und keine Faktenzeile wird aus der Vorlage übernommen; `check-belege`
+  und `check-fakten` erkennen eine übernommene Zeile und melden, wenn die
+  Vorlage später korrigiert wurde. [Rb §5.4 «Einheit aus Einheit»; Auftrag
+  10, Stufe D Nr. 1; E38 Stufe D]
 
 ## 11. Skripte, die es noch nicht gibt
 
@@ -438,4 +472,9 @@ Tor (`phase-9-tor.md` §1, `belege.md` §11) — und `scripts/check-links.mjs`
 (mit Netz, nicht im Tor: `node scripts/check-links.mjs --alle`, wöchentlich von
 Hand). Seit Stufe C: `scripts/audit-paket.mjs` (Pakete der Audits, Teildateien
 zusammenführen — `audits.md`) und `scripts/gegenhoeren.mjs` (Gegenhör-Liste —
-`phase-10-abschluss.md` §6).
+`phase-10-abschluss.md` §6). Seit Stufe D: `scripts/check-skelette.mjs` (im
+Tor, Zeile «Skelette» — die Vorlagen der Skill verletzen selbst keine Regel),
+`scripts/gleiche-stelle.mjs` (Rückweg, `phase-9-tor.md` §5 — nicht im Tor),
+`node scripts/karten.mjs belege [<id>]` (Kartenbelege, `karten.md` §5) und der
+Schalter `--vor-audit` von `check-all`, `check-belege` und `check-fakten`
+(erster Durchgang des Tors).

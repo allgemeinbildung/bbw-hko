@@ -8,15 +8,26 @@
  *   … --streng                                           # jede Einheit wie ein Entwurf: Befunde sind Fehler
  *   … --liste                                            # nur die Lösungsfelder mit Hash (Arbeitsliste fürs Audit)
  *   … --protokoll <datei>                                # Fassung OHNE Anker (für laeufe/<…>/belege-check.txt)
+ *   … --vor-audit                                        # erster Durchgang des Tors: Fehlt belege.json, ist das
+ *                                                        # kein Fehler, sondern der Hinweis «Audit steht aus»
  *   … --wurzel <ordner>                                  # anderer Baum statt dieses Repos (Gegenproben)
  *
- * Gelesen wird `<Quellenarchiv>/_pruefung/<ordner>/belege.json` (dazu `probe.json`).
+ * Gelesen wird `<Quellenarchiv>/_pruefung/<ordner>/belege.json` (dazu `probe.json` und,
+ * bei einer abgeleiteten Einheit, `herkunft.json`).
  * Das Archiv löst lib/archiv.mjs auf (QUELLEN_ARCHIV gewinnt); das Lehrmittel
  * `material/_lehrmittel/` bzw. LEHRMITTEL.
  *
  * Schwere: Bei einer gebundenen Einheit (publiziert, archiviert, kein Feld) sind alle
  * Befunde Warnungen, bei einem Entwurf und unter --streng Fehler. Fehlt belege.json,
  * gibt es genau EINE Zeile («nicht auditiert»).
+ *
+ * Abgeleitete Einheit (herkunft.json, E38 Stufe D — keine Vererbung): Sie braucht eigene
+ * belege.json und fakten.json. Eine Belegzeile, deren Hash nicht zum heutigen Text ihres
+ * Felds passt, aber der Hash eines Lösungsfelds der Vorlage ist (heute, am `stand_commit`
+ * oder in deren belege.json), ist aus der Vorlage kopiert. Und hat sich die Vorlage seit
+ * `stand_commit` in einem Lösungs- oder Faktenfeld geändert, ist die Abgeleitete neu zu
+ * prüfen — bis der Orchestrator nach der Prüfung den neuen `stand_commit` einträgt. Der
+ * Vergleich braucht Git und den Commit; fehlt eines davon: HINWEIS und Exit 2.
  *
  * Codes:
  *   ERR_BELEGE_FEHLT                 belege.json fehlt — die Einheit ist nicht auditiert.
@@ -41,6 +52,11 @@
  *   ERR_SEITE_DANEBEN                Die Seite des Ankers liegt nicht auf einer Seite, die die Lösung nennt.
  *   ERR_ABSATZ_DANEBEN               Der Absatz des Ankers liegt nicht in einem Absatz, den die Lösung nennt.
  *   ERR_FUNDSTELLE_OHNE_BELEG        Die Lösung nennt eine Zeitmarke, Seite oder einen Absatz ohne Belegzeile dort.
+ *   ERR_BELEG_KOPIERT                Die Zeile trägt den Hash eines Lösungsfelds der Vorlage, der Text hier ist ein anderer: übernommener Beleg.
+ *   ERR_HERKUNFT_SCHEMA              herkunft.json ist unlesbar, verletzt das Schema oder nennt einen anderen Ordner bzw. sich selbst.
+ *   ERR_HERKUNFT_VORLAGE_FEHLT       Die Vorlage gibt es im Baum nicht, oder es gab sie am `stand_commit` nicht.
+ *   ERR_HERKUNFT_OHNE_AUDIT          Abgeleitete Einheit ohne eigene belege.json oder fakten.json.
+ *   ERR_VORLAGE_GEAENDERT            Die Vorlage wurde nach `stand_commit` in einem Lösungs- oder Faktenfeld geändert: neu zu prüfen.
  *   ERR_PROBE_SCHEMA                 probe.json verletzt das Schema oder ist unlesbar.
  *   ERR_PROBE_OFFEN                  Die Lösbarkeitsprobe führt einen Befund mit Stand «offen».
  *   HINWEIS_ZEIT_NUR_BLOCK           Das Transkript der Karte hat nur Blöcke: Zeitmarken sind nur auf den Block genau geprüft.
@@ -49,11 +65,14 @@
  *   HINWEIS_STELLE_OHNE_MARKE        Der Anker steht in Text ohne Marke: Die Stelle ist nicht prüfbar.
  *   HINWEIS_LEHRMITTEL_FEHLT         Das Lehrmittel fehlt lokal: Zeilen mit Herkunft «lehrmittel» sind nicht geprüft.
  *   HINWEIS_PROBE_FEHLT              probe.json fehlt: Die Lösbarkeitsprobe ist nicht gelaufen.
+ *   HINWEIS_AUDIT_STEHT_AUS          Nur mit --vor-audit: belege.json fehlt noch — das Lösungs-Audit ist nicht gelaufen.
+ *   HINWEIS_HERKUNFT_NICHT_PRUEFBAR  Git oder der `stand_commit` fehlt: Die Vorlage ist NICHT verglichen (Exit 2).
  *   HINWEIS_KEIN_V42                 Die Einheit ist nicht im Format v4.2 — nichts zu prüfen.
  *
  * Exit 0  keine Fehler (Warnungen und Hinweise möglich)
  * Exit 1  mindestens ein Fehler
- * Exit 2  Aufruf falsch, oder Archiv bzw. Lehrmittel fehlt lokal — dann ist nichts «grün»
+ * Exit 2  Aufruf falsch, oder Archiv bzw. Lehrmittel fehlt lokal, oder die Vorlage einer abgeleiteten
+ *         Einheit ist nicht vergleichbar (Git, Commit) — dann ist nichts «grün»
  *
  * Reines Node, keine Abhängigkeiten, nur lesend (ausser --protokoll). Kein Wortlaut
  * aus Quelle oder Lehrmittel in dieser Datei.
@@ -64,10 +83,12 @@ import { aufruf, ladeEinheit, Bericht, schluss, RE_FALLKENNZEICHEN, zeitmarkenIn
 import { loesungsfelder } from './lib/loesungsfelder.mjs'
 import { archivWurzel, lehrmittelWurzel, liesBelegDatei, ladeArchivtext, sucheAnker, laengsterTeilanker, imFenster, ausschnittDerKarte, ladeKapitel, sucheAnkerKapitel, ankerWoerter, formatZeit, parseZeit } from './lib/archiv.mjs'
 import { ladeSchema, validiere } from './lib/schema.mjs'
+import { gitRepoFuer, commitLesbar, vorlageAm, vorlageHeute, vergleicheVorlage, loesungsHashes } from './lib/herkunft.mjs'
 
 const NAME = 'check-belege'
-const A = aufruf(NAME, 'node scripts/check-belege.mjs <ordner>… | --v42  [--streng] [--liste] [--protokoll <datei>] [--wurzel <ordner>]')
+const A = aufruf(NAME, 'node scripts/check-belege.mjs <ordner>… | --v42  [--streng] [--liste] [--protokoll <datei>] [--vor-audit] [--wurzel <ordner>]', { 'vor-audit': 'flag' })
 const TOLERANZ_SEK = 3
+const VOR_AUDIT = !!A.opt['vor-audit']
 
 if (A.liste) {
   for (const o of A.ordner) {
@@ -82,6 +103,7 @@ const archiv = archivWurzel({ wurzel: A.wurzel })
 const lehrmittel = lehrmittelWurzel({ wurzel: A.wurzel })
 const berichte = []
 let lehrmittelGefehlt = false
+let herkunftUngeprueft = false
 const kapitelCache = new Map()
 const kapitel = (datei) => { if (!kapitelCache.has(datei)) kapitelCache.set(datei, existsSync(join(lehrmittel.pfad, datei)) ? ladeKapitel(lehrmittel.pfad, datei) : null); return kapitelCache.get(datei) }
 
@@ -112,12 +134,18 @@ function pruefeEinheit(ordner) {
   const L = loesungsfelder(E.dir)
   const rel = `_pruefung/${ordner}`
 
+  // Abstammung zuerst: Die Hashes der Vorlage braucht die Prüfung jeder Zeile (kopierter Beleg).
+  const H = ladeHerkunft(E, B, rel)
+
   const datei = liesBelegDatei(archiv.pfad, ordner, 'belege')
   if (!datei.vorhanden) {
-    B.fehler('ERR_BELEGE_FEHLT', `${rel}/belege.json`, `nicht auditiert: ${L.felder.length} Lösungsfelder ohne Beleg`)
+    if (VOR_AUDIT) B.hinweis('HINWEIS_AUDIT_STEHT_AUS', `${rel}/belege.json`, `Audit steht aus: ${L.felder.length} Lösungsfelder noch ohne Beleg (erster Durchgang, --vor-audit)`)
+    else B.fehler('ERR_BELEGE_FEHLT', `${rel}/belege.json`, `nicht auditiert: ${L.felder.length} Lösungsfelder ohne Beleg`)
   } else if (datei.fehler) {
     B.fehler('ERR_BELEGE_UNLESBAR', `${rel}/belege.json`, 'kein gültiges JSON')
-  } else pruefeBelege(E, B, L, datei.daten, rel)
+  } else pruefeBelege(E, B, L, datei.daten, rel, H)
+
+  if (H) pruefeVorlage(E, B, L, H, rel, datei.vorhanden)
 
   // Lösbarkeitsprobe: mitgelesen. Ein offener Befund hält den Lauf an.
   const probe = liesBelegDatei(archiv.pfad, ordner, 'probe')
@@ -130,7 +158,57 @@ function pruefeEinheit(ordner) {
   }
 }
 
-function pruefeBelege(E, B, L, daten, rel) {
+/**
+ * Liest herkunft.json. Ohne Datei ist die Einheit nicht abgeleitet (null).
+ * @returns {null | { vorlage: string, commit: string, hashes: Map<string,string>, alt: any, neu: any, vergleichbar: boolean }}
+ */
+function ladeHerkunft(E, B, rel) {
+  const d = liesBelegDatei(archiv.pfad, E.ordner, 'herkunft')
+  if (!d.vorhanden) return null
+  const wo = `${rel}/herkunft.json`
+  if (d.fehler) { B.fehler('ERR_HERKUNFT_SCHEMA', wo, 'kein gültiges JSON'); return null }
+  const v = validiere(ladeSchema('herkunft'), d.daten)
+  for (const x of v.slice(0, 6)) B.fehler('ERR_HERKUNFT_SCHEMA', wo, x)
+  if (v.length) return null
+  const { abgeleitet_von: vorlage, stand_commit: commit } = d.daten
+  if (d.daten.einheit !== undefined && d.daten.einheit !== E.ordner) B.fehler('ERR_HERKUNFT_SCHEMA', `${wo} › einheit`, `«${d.daten.einheit}» — die Datei gehört nicht zu dieser Einheit`)
+  if (vorlage === E.ordner) { B.fehler('ERR_HERKUNFT_SCHEMA', `${wo} › abgeleitet_von`, 'nennt die Einheit selbst'); return null }
+  const H = { vorlage, commit, hashes: new Map(), alt: null, neu: vorlageHeute(A.wurzel, vorlage), vergleichbar: false }
+  if (!H.neu.vorhanden) B.fehler('ERR_HERKUNFT_VORLAGE_FEHLT', `${wo} › abgeleitet_von`, `kein Ordner src/data/einheiten/${vorlage} im Baum`)
+  else for (const [feld, h] of loesungsHashes(H.neu)) H.hashes.set(h, `${vorlage}/${feld} (heute)`)
+  const vb = liesBelegDatei(archiv.pfad, vorlage, 'belege')
+  if (vb.vorhanden && !vb.fehler) for (const z of vb.daten?.zeilen ?? []) if (z && typeof z.hash === 'string' && !H.hashes.has(z.hash)) H.hashes.set(z.hash, `_pruefung/${vorlage}/belege.json › ${z.feld}`)
+  // Stand der Vorlage am Commit — nur mit Git.
+  const g = gitRepoFuer(A.wurzel)
+  const voll = g.repo ? commitLesbar(g.repo, commit) : null
+  if (!voll) {
+    herkunftUngeprueft = true
+    B.hinweis('HINWEIS_HERKUNFT_NICHT_PRUEFBAR', `${wo} › stand_commit`, `${g.repo ? `Commit ${commit} ist in ${g.repo} nicht lesbar` : g.grund} — die Vorlage ${vorlage} ist NICHT verglichen`)
+    return H
+  }
+  H.alt = vorlageAm(g.repo, voll, vorlage)
+  if (!H.alt.vorhanden) { B.fehler('ERR_HERKUNFT_VORLAGE_FEHLT', `${wo} › stand_commit`, `am Commit ${commit} gab es src/data/einheiten/${vorlage} nicht`); return H }
+  for (const [feld, h] of loesungsHashes(H.alt)) if (!H.hashes.has(h)) H.hashes.set(h, `${vorlage}/${feld} (am ${commit})`)
+  H.vergleichbar = H.neu.vorhanden
+  return H
+}
+
+/** Eigene Audits der Abgeleiteten, und: Hat sich die Vorlage seit `stand_commit` geändert? */
+function pruefeVorlage(E, B, L, H, rel, hatBelege) {
+  const fehlt = [hatBelege ? null : 'belege.json', liesBelegDatei(archiv.pfad, E.ordner, 'fakten').vorhanden ? null : 'fakten.json'].filter(Boolean)
+  if (fehlt.length && !VOR_AUDIT) B.fehler('ERR_HERKUNFT_OHNE_AUDIT', `${rel}/herkunft.json`, `abgeleitet von ${H.vorlage}, aber ohne eigene ${fehlt.join(' und ')} — eine Anpassung ist eine neue Einheit: volle Audits, kein übernommener Beleg`)
+  if (!H.vergleichbar) return
+  const d = vergleicheVorlage(H.alt, H.neu)
+  if (!d.loesung.length && !d.fakten.length) return
+  const hier = new Map(L.felder.map((f) => [f.hash, f.feld]))
+  const geerbt = d.loesung.filter((x) => x.hash_alt && hier.has(x.hash_alt))
+  B.fehler('ERR_VORLAGE_GEAENDERT', `${rel}/herkunft.json`, `neu zu prüfen: Vorlage ${H.vorlage} seit ${H.commit} geändert in ${d.loesung.length} Lösungsfeld(ern) und ${d.fakten.length} Faktenfeld(ern); ${geerbt.length} der Lösungsfelder stehen hier noch im alten Wortlaut. Nach der Prüfung den neuen stand_commit eintragen`)
+  const ART = { geaendert: 'geändert', neu: 'neu', entfernt: 'entfernt' }
+  for (const x of d.loesung) B.fehler('ERR_VORLAGE_GEAENDERT', `${H.vorlage}/${x.feld}`, `Lösungsfeld der Vorlage ${ART[x.art]}${x.hash_alt && hier.has(x.hash_alt) ? ` — hier noch im alten Wortlaut: ${hier.get(x.hash_alt)}` : ''}`)
+  for (const x of d.fakten) B.fehler('ERR_VORLAGE_GEAENDERT', `${H.vorlage}/${x.feld}`, `Faktenfeld der Vorlage ${ART[x.art]} (Artikel, Zahl, Datum oder «Stand»)`)
+}
+
+function pruefeBelege(E, B, L, daten, rel, H) {
   const v = validiere(ladeSchema('belege'), daten)
   for (const x of v.slice(0, 12)) B.fehler('ERR_BELEGE_SCHEMA', `${rel}/belege.json`, x)
   if (v.length > 12) B.fehler('ERR_BELEGE_SCHEMA', `${rel}/belege.json`, `… und ${v.length - 12} weitere Verstösse`)
@@ -142,15 +220,21 @@ function pruefeBelege(E, B, L, daten, rel) {
   for (const z of zeilen) (nachFeld.get(z.feld) ?? nachFeld.set(z.feld, []).get(z.feld)).push(z)
   for (const f of L.felder) if (!nachFeld.has(f.feld)) B.fehler('ERR_BELEG_FEHLT', f.feld, `kein Beleg (Art ${f.art}, Spur ${f.spur})`)
   for (const [feld, zs] of nachFeld) {
-    if (!felder.has(feld)) { B.fehler('ERR_BELEG_OHNE_FELD', String(feld), 'Zeile ohne Lösungsfeld — Feld entfernt oder Pfad verschoben'); continue }
+    if (!felder.has(feld)) {
+      if (H?.hashes.has(zs[0].hash)) B.fehler('ERR_BELEG_KOPIERT', String(feld), `Zeile ohne Lösungsfeld hier, ihr Hash gehört zu ${H.hashes.get(zs[0].hash)} — aus der Vorlage übernommen`)
+      else B.fehler('ERR_BELEG_OHNE_FELD', String(feld), 'Zeile ohne Lösungsfeld — Feld entfernt oder Pfad verschoben')
+      continue
+    }
     if (zs.length > 1) B.fehler('ERR_BELEG_DOPPELT', feld, `${zs.length} Zeilen für ein Feld`)
-    pruefeZeile(E, B, felder.get(feld), zs[0])
+    pruefeZeile(E, B, felder.get(feld), zs[0], H)
   }
 }
 
 const zeitHinweis = new Set()
 
-function pruefeZeile(E, B, f, z) {
+function pruefeZeile(E, B, f, z, H) {
+  // Kopierter Beleg: Der Hash der Zeile ist der eines Lösungsfelds der Vorlage, der Text hier ist ein anderer.
+  if (z.hash !== f.hash && H?.hashes.has(z.hash)) { B.fehler('ERR_BELEG_KOPIERT', f.feld, `der Hash der Zeile gehört zu ${H.hashes.get(z.hash)}, der Text hier ist ein anderer — übernommener Beleg, dieses Feld selbst prüfen`); return }
   if (z.hash !== f.hash) { B.fehler('ERR_AUDIT_VERALTET', f.feld, `Lösung nach dem Audit geändert (geprüft am ${z.geprueft_am ?? '—'}) — dieses Feld neu prüfen`); return }
   if (z.spur !== f.spur) B.fehler('ERR_BELEG_SPUR', f.feld, `Zeile sagt «${z.spur}», das Feld gehört zu «${f.spur}»`)
   if (z.urteil === 'falsch') B.fehler('ERR_URTEIL_FALSCH', f.feld, `Urteil «falsch» (Herkunft ${z.herkunft})`)
@@ -292,5 +376,5 @@ for (const o of A.ordner) pruefeEinheit(o)
 schluss(NAME, berichte, {
   protokoll: A.protokoll,
   vorspann: [`  Archiv ${archiv.pfad} · Lehrmittel ${lehrmittel.pfad ?? 'fehlt lokal'}`],
-  nichtGeprueft: lehrmittelGefehlt ? 'Lehrmittel fehlt lokal: Zeilen mit Herkunft «lehrmittel» sind nicht geprüft.' : '',
+  nichtGeprueft: [lehrmittelGefehlt ? 'Lehrmittel fehlt lokal: Zeilen mit Herkunft «lehrmittel» sind nicht geprüft.' : '', herkunftUngeprueft ? 'Vorlage einer abgeleiteten Einheit nicht vergleichbar (Git oder stand_commit fehlt).' : ''].filter(Boolean).join(' '),
 })
