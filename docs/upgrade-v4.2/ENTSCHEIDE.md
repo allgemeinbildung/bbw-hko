@@ -1183,3 +1183,101 @@ auch wenn kein Ordner unter `src/data/einheiten/` besteht.
 (Zeile «Namen»).
 
 **Rückgängig:** `git revert`; `INDEX.md` löschen. Kein Datensatz ändert sich.
+
+## E36 — Karten: ändern oder neu anlegen; `karten.mjs` im Tor, Vermerk-Dateien (07.10.2026)
+
+**Ausgangslage:** Methoden- und Quellenkarten sind Produktionsdaten:
+`lm-17-3-3b-schema` führen 18 Einheiten (14 publiziert), `hko-quelle-raster`
+alle 16 publizierten v4.2-Einheiten. Am 05.10.2026 wurden 17 Methodenkarten
+korrigiert, als die Einheiten noch Entwurf waren; kein Skript nannte die
+Verbraucher einer Karte, und keine Regel sagte, wann eine Karte geändert
+werden darf und wann es eine neue braucht (Rückblick
+`RUECKBLICK-produktion-2026-10-06.md` §3 Nr. 4, §4, §5.4). E31 Nr. 3 kannte
+die Unterscheidung Fehler gegen Passung nur für sechs genannte Karten.
+
+**Entscheid:**
+
+1. **Regel «ändern oder neu»** (`docs/methodenkartei.md` §9 und
+   `references/karten.md` der Skill, gleichlautend):
+   a) kein publizierter und kein archivierter Verbraucher → ändern erlaubt;
+   b) **Fehler** in der Karte → ändern auch bei publizierten Verbrauchern,
+      aber nur mit Vermerk, danach je Verbraucher `check-all`, Export, Messung;
+   c) **Passung** → Karte nicht ändern: die Einheit überschreibt (`fuer`,
+      ausnahmsweise `beispiel`), sonst neue Karte mit eigener ID;
+   d) **Quellenkarte:** Titel, URL/URN und Ausschnitt werden nach der ersten
+      Freigabe nie getauscht — eine andere Quelle ist eine neue Karte;
+      korrigierbar bleiben Zeitmarken, Wortzahl bzw. Dauer, Prüfdatum,
+      `kurzbeschrieb` (bei gebundener Karte mit Vermerk);
+   e) keine festen Zahlen und Formate in `merk` und `schritte` — Warnung.
+2. **`scripts/karten.mjs`** (neu, nur lesend): `verbraucher <id>`, `darf <id>`
+   (Exit 0/1), `geaendert [--gegen origin/main]`, `warnungen`; `--wurzel` wie
+   `check-namen`. Fehlt der Vergleichsstand: Exit 2, nie grün. In `check-all`
+   steht `geaendert` als Zeile «Karten».
+3. **Vermerk** `{karte, datum, art: "fehler", beleg, verbraucher[]}` in
+   `src/data/methoden/_aenderungen.json` bzw.
+   `src/data/quellen/_aenderungen.json`; beide sind leer (`[]`) angelegt.
+4. **Skill:** vor jeder Kartenänderung `karten.mjs darf <id>`, Ergebnis im
+   Bericht. **Im Auto-Modus wird nie eine bestehende Karte geändert** — ein
+   Fehler geht in den Bericht («Offen», Kürzel S) und in die Sammelliste.
+
+**Ort der Vermerk-Dateien — geprüft, keine Abweichung vom Auftrag:** Die zwei
+Loader (`src/lib/einheiten/methoden.ts`, `quellen.ts`) lesen den Ordner per
+`import.meta.glob` und verwerfen jeden Eintrag ohne `id`; `check-v42.mjs`
+liest Karten nur über ihre ID; `build-einheiten-index.mjs`, `export-v42.mjs`
+und `bestand-v42.mjs` listen die Ordner nicht (`bestand-v42 --pruefen` nach
+dem Anlegen: 26 Dokumente unverändert). Gestört hätten die Dateien nur
+`check-namen.mjs` («Dateiname = id») und die Kartenliste von `check-all.mjs`;
+beide überspringen jetzt Dateien mit führendem `_`. `src/lib` und `src/pages`
+sind nicht angefasst.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **«Gebunden»** ist eine Karte durch jede Einheit, die nicht `"entwurf"`
+  trägt: `publiziert`, fehlendes oder unbekanntes Feld (gilt im Index-Builder
+  als live) und `archiviert`. Den Status `archiviert` gibt es noch nicht; das
+  Skript kennt ihn schon, weist ihn getrennt aus und behandelt ihn in `darf`
+  und `geaendert` wie publiziert — die Hefte sind gedruckt im Umlauf, die
+  QR-Seite einer archivierten Einheit funktioniert weiter (Entscheid Pietro,
+  07.10.2026).
+- **Die Zeile «Karten» gilt für den ganzen Baum**, nicht nur für die geprüften
+  Einheiten: Eine geänderte Karte ändert auch Hefte ausserhalb des Umfangs.
+- **Ein Vermerk zählt nur, solange er im Vergleichsstand noch nicht steht** —
+  sonst deckte ein alter Vermerk jede spätere Änderung derselben Karte.
+  `verbraucher` muss jeden gebundenen Ordner nennen (sonst rot); fehlende
+  Entwürfe sind eine Warnung.
+- **Quellenkarten:** `id`, `titel`, `url`, `urn` einer gebundenen Karte bleiben
+  auch mit Vermerk rot (Regel d). Eine Änderung an `verortung` ist mit Vermerk
+  zulässig, dazu eine Warnung: Ob Marken korrigiert sind oder der Ausschnitt
+  ein anderer ist, entscheidet kein Skript. Alle übrigen Felder: mit Vermerk.
+  «Erste Freigabe» ist die Freigabe des Bauplans, der die Quelle nennt.
+- **Regel e** sucht Ziffern, Zahlwörter (zwei bis zwölf) und Formatwörter
+  (A3–A6, Hoch- und Querformat …); Seiten-, Kapitel- und Artikelverweise
+  zählen nicht. Im Tor erscheint sie nur für geänderte und neue
+  Methodenkarten, der Bestand steht unter `karten.mjs warnungen` (07.10.2026:
+  25 Warnungen in 17 von 42 Karten).
+- **Rückwirkend ist kein Vermerk eingetragen.** Die Korrekturen vom 05.10.2026
+  und die Änderung an `lm-17-3-3b-schema` vom 07.10.2026 (`seiten`, Commit
+  `a5fa3eb`, nach der Freigabe von 14 Verbrauchern) stehen in `origin/main`;
+  der Vergleich beginnt dort.
+
+**Offen (kein stiller Entscheid):** `datenvertrag.md` §11.3 erlaubt
+`methoden[].beispiel` im Kern nur als Ausnahme für `hko-`Karten (E31 Nr. 2);
+die Regel c oben und `docs/methodenkartei.md` §4 nennen `beispiel` ohne diese
+Einschränkung, und in den publizierten Einheiten überschreiben 14 Hefte, drei
+davon an `lm-`Karten. Vorschlag in der Rückgabe zu diesem Auftrag; der
+Datenvertrag ist nicht geändert. Noch nicht nachgeführt, weil ausserhalb des
+Auftrags: `phase-9-tor.md` (Tor-Tabelle) und `assets/bericht-template.md`
+nennen die Zeile «Karten» nicht.
+
+**Geänderte Dateien:** `scripts/karten.mjs` (neu), `scripts/check-all.mjs`
+(Zeile «Karten», Kartenliste ohne `_`-Dateien), `scripts/check-namen.mjs`
+(`_`-Dateien überspringen), `src/data/methoden/_aenderungen.json`,
+`src/data/quellen/_aenderungen.json` (neu, `[]`), `docs/methodenkartei.md`
+(§6, §8, §9 neu); Skill: `references/karten.md` (neu), `SKILL.md` (§4, §5
+Nr. 12), `lauf.md` (Kopf, §10, §11), `auto-modus.md` (§4),
+`phase-4-heft-kern.md` (§8), `phase-6-abschluss.md` (§7),
+`phase-q-quellen.md` (§2, §8).
+
+**Rückgängig:** `git revert` der drei Commits; die zwei `_aenderungen.json`
+entfallen dabei. Kein Datensatz und keine Karte ändert sich.
