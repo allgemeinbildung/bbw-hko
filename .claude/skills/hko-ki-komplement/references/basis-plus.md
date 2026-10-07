@@ -142,7 +142,7 @@ dass es sie prüfen soll; Toolboxen mit Version 1.x überspringt es.
 
 ## 3. `ki.json`
 
-Auswahl der zwei Muster: `ki-scoring.md` (Basis-Pool für `ki_1`).
+Auswahl der zwei Muster: `ki-scoring.md` (`ki_1` fest `ai_lernassistent`, ausser ein Handlungsprodukt ist selbst ein Entscheid; Punkte nur fürs Plus).
 
 | Feld | `ki_1` (Basis) | `ki_2` (Plus) |
 |---|---|---|
@@ -336,8 +336,12 @@ Intelligenz).»).
 - `prompt_vorlage` (fest): «Ein guter Prompt nennt vier Dinge: Rolle, Kontext,
   Aufgabe, Form der Antwort.» Einzige Ausnahme: Lehrt die Einheit selbst eine
   Prompt-Formel (ein Heft über das Lernen mit KI: «Rolle, Ziel, Kontext, Format»),
-  steht hier die Formel der Einheit — die Toolbox widerspricht dem Heft nie. («Format» ist in der Basis nirgends erklärt; im
-  Baukasten des Plus heisst die vierte Spalte weiter «Format».)
+  steht hier die Formel der Einheit — die Toolbox widerspricht dem Heft nie. Die
+  vierte Zeile des Baukastens im Plus trägt dasselbe Wort wie die Vorlage: Der
+  Renderer druckt «Form der Antwort», sobald die Vorlage so heisst, sonst «Format»
+  (`baukastenFormatLabel` in `src/lib/einheiten/ki-toolbox.ts`, seit 07.10.2026).
+  Die Vorlage darum wörtlich schreiben — ein abweichender Wortlaut fällt auf
+  «Format» zurück.
 - **`beispiel_dialog`** (Pflicht, Basis, Seite 1 unter «Nachfragen»): ein kurzer
   Verlauf in drei Teilen, der zeigt, wie Prüfen aussieht.
 

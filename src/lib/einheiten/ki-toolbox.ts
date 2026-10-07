@@ -31,6 +31,17 @@ export function istBasisTechnik(t: LernpromptTechnik | undefined): boolean {
   return !!t && !t.beispiel_fortgeschritten && !t.baukasten
 }
 
+/**
+ * Name der vierten Baukasten-Zeile im Lernprompt. Er folgt dem Wort, das die
+ * `prompt_vorlage` desselben Blatts braucht: Die Skill schreibt seit E44 «… Rolle,
+ * Kontext, Aufgabe, Form der Antwort.» — «Format» ist für Lernende kein Alltagswort.
+ * Blätter, deren Vorlage noch «Format» sagt (Bestand 1.x, die eigene Formel einer
+ * Einheit), behalten «Format», damit Vorlage und Baukasten dasselbe Wort tragen.
+ */
+export function baukastenFormatLabel(promptVorlage: string | undefined): string {
+  return /Form der Antwort/.test(promptVorlage ?? '') ? 'Form der Antwort' : 'Format'
+}
+
 /** Strategie-Karte in Basis-Form: nur der fertige Prompt. */
 export function istBasisKarte(s: LernbegleiterStrategie | undefined): boolean {
   return !!s && !s.prompt_fortgeschritten

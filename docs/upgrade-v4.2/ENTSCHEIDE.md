@@ -2212,3 +2212,36 @@ ZIP mit den Word-Dateien der Toolbox).
 
 **Rückgängig:** `git revert` des Commits; einzelne Toolbox verbergen mit
 `"entwurf_komponenten": ["ki-fluency"]` in `set.json` und Index-Bau.
+
+### E44, Nachtrag — Technik-Titel im Baukasten, Basis-Muster fest (Pietro, 07.10.2026)
+
+Die drei Setzungen der Skill aus dem Bericht §4b sind bestätigt; zwei davon haben eine Folge.
+
+1. **Zeitpunkt:** bleibt. `ki.timing` ist der späteste Zeitpunkt und wird nicht gedruckt; der
+   Liesmich setzt den Basis-Auftrag «sobald die Hefte fertig sind».
+2. **Technik-Titel:** bleiben fest. Dazu trägt die vierte Zeile des Baukastens im Lernprompt
+   jetzt dasselbe Wort wie die `prompt_vorlage` desselben Blatts: «Form der Antwort», wenn die
+   Vorlage so heisst, sonst «Format» (`baukastenFormatLabel` in `src/lib/einheiten/ki-toolbox.ts`;
+   `DocLernprompt.tsx`, `docx-builder.ts`). 13 Toolboxen drucken damit «Form der Antwort»;
+   der Pilot, `1.2.2_ki_kompetenznachweis_vorbereiten` (eigene Formel) und der Bestand 1.x
+   behalten «Format». Kein neues Datenfeld.
+3. **Basis-Muster fest.** `ki_1` ist `ai_lernassistent`; `ai_entscheidungscoach` nur, wenn ein
+   Handlungsprodukt wörtlich ein Entscheid ist (Probe in `ki-scoring.md`). Punkte gibt es nur
+   noch für die fünf Plus-Muster. «schriftlich-formell» (+30 für `ai_redaktion`) ist eine Liste
+   mit Probe (Empfänger **und** feste Form); die Aufgaben des KN zählen nicht mit.
+
+**Folge für den Pilot:** `1.3.1_konsum_verantworten_v42` trägt als Basis `ai_entscheidungscoach`.
+Nach der neuen Probe ist keines seiner Handlungsprodukte ein Entscheid («Meine
+Bedürfnis-Landkarte», «Mein Budget, meine Regeln, mein Budgetgespräch») — bei der Überarbeitung
+fällt er auf `ai_lernassistent`, wie seine Schwester `3.1.1_konsum_verantworten_3j`. Die 14
+Einheiten des Laufs ändern sich nicht (alle `ai_lernassistent`). An den drei Stellen, an denen
+die Plus-Wahl an «schriftlich-formell» oder am KN hing (`2.1.1`, `2.4.1`, `1.2.1`), entscheidet
+die Liste wie die Erzeuger; neu durchgerechnet ist das Scoring der 14 nicht.
+
+**Geprüft:** alle 15 Toolboxen neu exportiert und gemessen, kein Überlauf (Lernprompt S. 2 von
+`2.2.1_ausgrenzung_analysieren` hat noch 2.9 px Reserve, vorher 23.2). `tsc` meldet in den drei
+geänderten Dateien nichts. **Nicht geprüft:** das Word-Dokument des Lernprompts (nur der Code
+gelesen), die angemeldeten Routen.
+
+**Rückgängig:** `baukastenFormatLabel` gibt wieder fest «Format» zurück; die Regeln der Skill
+über `git revert`.
