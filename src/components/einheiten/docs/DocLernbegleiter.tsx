@@ -1,11 +1,16 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
 import type { LernbegleiterJson, LernbegleiterStrategie } from '../../../lib/einheiten/types'
+import { dimensionLabel, istBasisKarte, istNeueFassung, knTypFuerLernende } from '../../../lib/einheiten/ki-toolbox'
 
 // KI-Toolbox · Lernen — NEW doc (no hko-deploy precedent).
 // Pagination: page 1 = Kopf + Ohne-KI + erste 2 Strategie-Karten; weitere
 // Karten je 3 pro Seite; Schlussseite = KN-Tracks + Rubrik + Integrität +
 // Selbstcheck. Accent #3B6FD4 as a local constant only. renderToStaticMarkup-safe.
+//
+// Basis-Form (E40): tragen die ersten zwei Karten nur den fertigen Prompt
+// (`istBasisKarte`), folgt die KN-Seite direkt auf Seite 1 und die übrigen Karten
+// stehen als «Plus» am Schluss — Basis ist dann Seite 1-2, Plus der Rest.
 
 const LB_AKZENT = '#3B6FD4'
 const LB_LIGHT = '#E8F0FE'
@@ -34,7 +39,22 @@ const warnBox = {
   fontSize: '8pt', lineHeight: 1.34, color: '#7c4a03',
 } as const
 
-function StrategieKarte({ s }: { s: LernbegleiterStrategie }) {
+// E42 — drei kleine Schreibfelder nebeneinander: aus dem Lesen wird ein Arbeitsblatt.
+// `grow` lässt die Reihe den freien Platz der Seite aufnehmen (KN-Seite).
+function Notizreihe({ labels, grow = false }: { labels: [string, string, string]; grow?: boolean }) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2mm', marginTop: '1.2mm', ...(grow ? { flex: '1 0 auto' } : {}) }}>
+      {labels.map((l) => (
+        <div key={l} style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ ...microLabel, margin: '0 0 0.6mm' }}>{l}</div>
+          <div className="feld" style={{ flex: '1 0 auto', minHeight: '17mm' }} contentEditable suppressContentEditableWarning spellCheck={false} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function StrategieKarte({ s, notiz = false }: { s: LernbegleiterStrategie; notiz?: boolean }) {
   return (
     <div style={{
       border: '1px solid #d8dde4', borderTop: `2px solid ${LB_AKZENT}`,
@@ -42,9 +62,10 @@ function StrategieKarte({ s }: { s: LernbegleiterStrategie }) {
     }}>
       <div style={{ fontSize: '10pt', fontWeight: 700, color: LB_DARK, marginBottom: '0.7mm' }}>{s.technik}</div>
       {s.wann && <p style={{ margin: '0 0 1.2mm', fontSize: '8.7pt', lineHeight: 1.34, color: '#3a4049' }}><strong>Wann:</strong> {s.wann}</p>}
-      {s.prompt_basis && (<><div style={microLabel}>Prompt · Basis</div><div style={promptBox}>{s.prompt_basis}</div></>)}
+      {s.prompt_basis && (<><div style={microLabel}>{s.prompt_fortgeschritten ? 'Prompt · Basis' : 'Fertiger Prompt'}</div><div style={promptBox}>{s.prompt_basis}</div></>)}
       {s.prompt_fortgeschritten && (<><div style={microLabel}>Prompt · fortgeschritten</div><div style={promptBox}>{s.prompt_fortgeschritten}</div></>)}
       {s.warnung && <div style={warnBox}>⚠ {s.warnung}</div>}
+      {notiz && <Notizreihe labels={['Das hat die KI gesagt', 'Das stimmt', 'Das stimmt nicht']} />}
     </div>
   )
 }
@@ -91,9 +112,13 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
   const restChunks: LernbegleiterStrategie[][] = []
   for (let i = 0; i < restCards.length; i += 3) restChunks.push(restCards.slice(i, i + 3))
   const pageTotal = 1 + restChunks.length + 1
+  const neu = istNeueFassung(lernbegleiter)
+  const basisForm = neu && restCards.length > 0 && firstCards.length > 0 && firstCards.every(istBasisKarte)
+  const begriffe = neu ? (lb.begriffe || []) : []
 
   const page = (n: number, code: string, children: ReactNode) => (
     <A4Page
+      key={n}
       sit={null}
       abteilung={abteilung}
       docCode={`DOC-LERNBEGLEITER · ${code}`}
@@ -131,32 +156,43 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
             </section>
           )}
 
+          {begriffe.length ? (
+            <section style={{ marginBottom: '2.5mm' }}>
+              <SectionHead num="Meine Begriffe">Kann ich das erklären?</SectionHead>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1mm 4mm', fontSize: '8.8pt', lineHeight: 1.5 }}>
+                {begriffe.map((b, i) => (
+                  <span key={i} style={{ whiteSpace: 'nowrap' }}><span style={{ color: LB_AKZENT, fontWeight: 600 }}>☐</span> {b}</span>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
           {firstCards.length ? (
             <section>
               <SectionHead num="Strategien">So lernen Sie mit der KI</SectionHead>
-              {firstCards.map((s, i) => <StrategieKarte key={i} s={s} />)}
+              {firstCards.map((s, i) => <StrategieKarte key={i} s={s} notiz={basisForm} />)}
             </section>
           ) : null}
         </>
       ))}
 
-      {/* Folgeseiten — weitere Strategie-Karten */}
-      {restChunks.map((chunk, ci) => page(++pn, 'STRATEGIEN', (
+      {/* Folgeseiten — weitere Strategie-Karten (volle Dichte: vor der KN-Seite) */}
+      {!basisForm && restChunks.map((chunk) => page(++pn, 'STRATEGIEN', (
         <>
           <PageHeader titel="So lernen Sie mit der KI" />
           {chunk.map((s, i) => <StrategieKarte key={i} s={s} />)}
         </>
       )))}
 
-      {/* Schlussseite — KN-Vorbereitung */}
+      {/* KN-Vorbereitung — Schlussseite; in der Basis-Form Seite 2 */}
       {page(++pn, 'KN-VORBEREITUNG', (
         <>
           {tracks.length ? (
             <section style={{ marginBottom: '2.5mm' }}>
-              <SectionHead num="KN-Typen">Üben für Ihren Kompetenznachweis</SectionHead>
+              <SectionHead num="Kompetenznachweis">Üben für Ihren Kompetenznachweis</SectionHead>
               {tracks.map((t, i) => (
                 <div key={i} style={{ border: '1px solid #d8dde4', borderLeft: `3px solid ${LB_AKZENT}`, borderRadius: '1mm', padding: '1.5mm 2.5mm', marginBottom: '1.5mm', breakInside: 'avoid' }}>
-                  <div style={{ fontSize: '9.3pt', fontWeight: 700, color: LB_DARK }}>{t.label}</div>
+                  <div style={{ fontSize: '9.3pt', fontWeight: 700, color: LB_DARK }}>{knTypFuerLernende(t.typ, t.label, lernbegleiter.lehrgang)}</div>
                   {t.uebungsfokus && <p style={{ margin: '0.5mm 0 0.9mm', fontSize: '8.6pt', lineHeight: 1.34, color: '#3a4049' }}>{t.uebungsfokus}</p>}
                   {t.prompt && <div style={promptBox}>{t.prompt}</div>}
                 </div>
@@ -166,11 +202,11 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
 
           {rubrik.length ? (
             <section style={{ marginBottom: '2.5mm' }}>
-              <SectionHead num="Rubrik-Fokus">Worauf es im KN ankommt</SectionHead>
+              <SectionHead num="Kriterien">Worauf es im Kompetenznachweis ankommt</SectionHead>
               {rubrik.map((r, i) => (
                 <div key={i} style={{ marginBottom: '1.2mm' }}>
                   <div style={{ fontSize: '9pt', fontWeight: 700, color: LB_AKZENT }}>
-                    {r.dimension}{r.kriterien?.length ? <span style={{ color: '#5b6470', fontWeight: 400 }}> — {r.kriterien.join(' · ')}</span> : null}
+                    {dimensionLabel(r.dimension)}{r.kriterien?.length ? <span style={{ color: '#5b6470', fontWeight: 400 }}> — {r.kriterien.join(' · ')}</span> : null}
                   </div>
                   {r.so_uebst_du && <p style={{ margin: '0.3mm 0 0', fontSize: '8.6pt', lineHeight: 1.34 }}>{r.so_uebst_du}</p>}
                 </div>
@@ -180,7 +216,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
 
           {lb.integritaet_warnung && (
             <div style={{ background: '#fef2f2', borderLeft: '3px solid #dc2626', padding: '1.8mm 2.5mm', borderRadius: '1mm', margin: '1.5mm 0', fontSize: '8.7pt', lineHeight: 1.38, color: '#7f1d1d' }}>
-              <strong>Fairness & Integrität:</strong> {lb.integritaet_warnung}
+              <strong>Fairness:</strong> {lb.integritaet_warnung}
             </div>
           )}
 
@@ -194,8 +230,23 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
               </ul>
             </section>
           ) : null}
+
+          {basisForm && (
+            <section style={{ display: 'flex', flexDirection: 'column', flex: '1 0 auto', marginTop: '2.5mm' }}>
+              <SectionHead num="Nach dem Üben">Das halte ich fest</SectionHead>
+              <Notizreihe grow labels={['Mein Übungsfall', 'Das konnte ich', 'Das übe ich noch']} />
+            </section>
+          )}
         </>
       ))}
+
+      {/* Basis-Form: die übrigen Karten als Plus am Schluss */}
+      {basisForm && restChunks.map((chunk) => page(++pn, 'PLUS', (
+        <>
+          <PageHeader titel="Plus — weitere Strategien" />
+          {chunk.map((s, i) => <StrategieKarte key={i} s={s} />)}
+        </>
+      )))}
     </div>
   )
 }

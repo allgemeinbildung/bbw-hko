@@ -1,0 +1,130 @@
+{
+  "id": "1.1.1_ausbildung_kommunizieren_lernbegleiter",
+  "set_ref": "1.1.1_ausbildung_kommunizieren_set",
+  "prinzip_ref": "1.1.1_ausbildung_kommunizieren_prinzip",
+  "kn_ref": "1.1.1_ausbildung_kommunizieren_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann Informationen zu meiner Ausbildung aus Quellen entnehmen und nutzen, um in einem Konflikt angemessen zu kommunizieren, und meine digitalen Werkzeuge sicher und zielgruppengerecht einsetzen — auch wenn der schnelle Weg ein anderer wäre.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann nachschlagen, was für Ferien und Pflichten in der Lehre gilt (Kap. 1.4).",
+        "Ich kann in einem Konflikt mit Ich-Botschaft und offener Frage sprechen.",
+        "Ich kann Kanal (Chat, E-Mail, Gespräch) und Ton sicher und passend wählen."
+      ]
+    },
+    "begriffe": [
+      "Ferienanspruch",
+      "schulfreie Zeit",
+      "Rücksichtnahme",
+      "Sachinhalt",
+      "Selbstkundgabe",
+      "Beziehung",
+      "Appell",
+      "Ich-Botschaft",
+      "offene Frage",
+      "Verhandeln",
+      "Sorgfaltspflicht",
+      "Treuepflicht",
+      "Geschäftsgeheimnis",
+      "E-Mail",
+      "Betreff",
+      "CC",
+      "BCC",
+      "Adressat/in",
+      "Medienkompetenz",
+      "Privatsphäre"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, welche Begriffe Sie schon erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kommunizieren in der Lehre. Frag mich ab: Ich-Botschaft, offene Frage, Verhandeln, Treuepflicht, CC, BCC. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff aus dem Glossar in eigenen Worten erklären wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kommunizieren in der Lehre. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir höchstens zwei Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Ändern Sie Ihre Erklärung nur, wenn das Glossar die Lücke der KI bestätigt."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie eine Rückmeldung zu Ihrer Chat-Nachricht aus Heft B wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kommunizieren in der Lehre. Hier ist meine Chat-Nachricht an meine Gruppe: [mein Text]. Fachkorrektheit heisst: Kanal, Form und Ton passen zum Gegenüber. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kommunizieren in der Lehre. Hier ist meine Chat-Nachricht an meine Gruppe: [mein Text]. Fachkorrektheit heisst: Kanal, Form und Ton passen zum Gegenüber. Position / Werthaltung heisst: klare Haltung in Ich-Form. Stell mir zu jedem der zwei Punkte eine Frage, eine nach der anderen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt. Ob der Ton ankommt, entscheiden Sie."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Vorgehen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kommunizieren in der Lehre. Erfinde einen neuen, kurzen Fall: Ich muss etwas klären. Der Fall handelt nicht von Ferien, Fotos oder Verein. Gib mir dazu eine Aufgabe. Warte auf meine Lösung. Prüfe dann die Fachkorrektheit: Passen Kanal, Form und Ton zum Gegenüber? Schreib keine eigene Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kommunizieren in der Lehre. Erfinde einen neuen Fall, nicht zu Ferien, Fotos oder Verein. Das Spannungsfeld: schnell oder sicher. Gib mir dazu eine Aufgabe. Warte auf meine Lösung. Prüfe dann zwei Dinge. Argumentation: Begründe ich und antworte ich der anderen Seite? Rechtliches Prinzip: Wende ich eine Regel an, mit Fundstelle? Schreib keine eigene Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie wissen, wann Ihr Kompetenznachweis ist, und die Tage davor planen wollen.",
+        "prompt_basis": "Thema: Kommunizieren in der Lehre. Bis zum Kompetenznachweis habe ich [Anzahl] Tage. Mach mir einen Lernplan mit drei kurzen Übungen: abfragen, selbst erklären, einen neuen Fall lösen. Schreib keine Erklärungen zum Stoff. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kommunizieren in der Lehre. Schreib mir zu jedem Begriff eine Lernkarte nur mit einer Frage, ohne Antwort. Recht: Ferienanspruch, Rücksichtnahme, Sorgfaltspflicht, Treuepflicht. Gespräch: Ich-Botschaft, offene Frage, Verhandeln. E-Mail: Betreff, CC, BCC. Die Antworten schreibe ich selbst aus meinem Glossar. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten schreiben Sie selbst aus dem Glossar in Ihrem Heft."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie erklären einen neuen Fall mündlich und beantworten Fragen dazu.",
+        "prompt": "Du prüfst mich im Fachgespräch. Thema: Kommunizieren in der Lehre. Erfinde einen neuen, kurzen Fall, nicht zu Ferien, Fotos oder Verein. Stell mir dazu drei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich und begründen Kanal und Ton.",
+        "prompt": "Thema: Kommunizieren in der Lehre. Erfinde einen neuen, kurzen Fall, nicht zu Ferien, Fotos oder Verein. Gib mir dazu eine Aufgabe zum Schreiben. Warte auf meinen Text. Stell mir dann zwei Fragen dazu, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Kommunizieren in der Lehre. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen, kurzen Fall, nicht zu Ferien, Fotos oder Verein. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Mit «Abfragen lassen» und einem Übungsfall üben Sie, Begriffe richtig zu brauchen und Ihre Wahl zu begründen."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Rechtliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Mit «Selbst erklären» und einem Übungsfall üben Sie zu sagen, was gilt und wofür Sie einstehen."
+      }
+    ],
+    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nie bei der Abgabe für den Kompetenznachweis. Dort arbeiten Sie allein und ohne KI.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meine Begriffe ohne KI erklären."
+    ]
+  }
+}

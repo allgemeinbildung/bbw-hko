@@ -1,0 +1,126 @@
+{
+  "id": "1.3.1_konsum_verantworten_v42_ki",
+  "set_ref": "1.3.1_konsum_verantworten_v42_set",
+  "prinzip_ref": "1.3.1_konsum_verantworten_v42_prinzip",
+  "kn_ref": "1.3.1_konsum_verantworten_v42_kn",
+  "anchored_situations": [
+    "1.3.1_konsum_verantworten_v42_hf_A",
+    "1.3.1_konsum_verantworten_v42_hf_B"
+  ],
+  "modul": "1.3",
+  "modul_titel": "Ins Berufsleben einsteigen — überlegt konsumieren",
+  "thema": "T1",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "T1 — Ins Berufsleben einsteigen: Bedürfnisse ordnen, das eigene Geld planen und Kaufentscheide begründen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Bedürfnisse und Güter, Budget mit fixen und variablen Kosten, Rückstellungen, Schuldenspirale.",
+        "kompetenz_anker": "1.3.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Eigener Massstab und Konsumdruck aus dem Umfeld.",
+        "kompetenz_anker": "1.3.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Verantwortung für die eigenen Geldentscheide und ihre Folgen.",
+        "kompetenz_anker": "1.3.3"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK5 — Werthaltungen reflektieren",
+      "SK6 — Standpunkte begründen",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei kann die KI Ihnen bei einem Kaufentscheid helfen — und was entscheiden nur Sie?",
+    "kritisch": "Woran merken Sie, dass eine Antwort der KI nicht zu Ihrem Budget passt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Die KI fragt nach meinem Entscheid",
+      "ziel": "Sie prüfen mit Fragen der KI, ob Ihr Entscheid zu Ihrem Massstab und zu Ihrem Budget passt.",
+      "bezug": "Sie brauchen Ihren Massstab aus Heft A und Ihr Budget aus Heft B. Das Prinzip: Ich wäge meinen Wunsch gegen meine Sicherheit ab und begründe meinen Entscheid.",
+      "auftrag": "Nehmen Sie einen Entscheid aus Ihren Heften: den Kauf aus Heft A oder eine Anpassung aus Heft B. Die KI stellt Ihnen dazu Fragen. Sie antworten selbst und entscheiden am Schluss.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Mein Entscheid: [mein Entscheid mit Grund]. Stell mir Fragen zu meinem Wunsch und zu meinem Budget. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort.»",
+        "Prompt 2, wenn die KI geantwortet hat: «Nenne mir jetzt eine Folge meines Entscheids, an die ich noch nicht gedacht habe. Sag mir nicht, was ich tun soll. Antworte in zwei kurzen, einfachen Sätzen.»",
+        "Prüfen: Rechnen Sie jede Zahl der KI selbst nach."
+      ],
+      "ki_frei_vorher": "Schreiben Sie ohne KI Ihren Entscheid in einem Satz auf. Schreiben Sie darunter Ihren wichtigsten Grund.",
+      "schritte": [
+        "Schreiben Sie Ihren Entscheid und Ihren Grund ohne KI auf.",
+        "Beantworten Sie die Fragen der KI aus Prompt 1 selbst.",
+        "Halten Sie fest, ob Ihr Entscheid bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Entscheid und Ihr Grund stehen da, bevor Sie die KI fragen."
+        },
+        {
+          "kriterium": "Selbst geantwortet",
+          "indikator": "Jede Antwort an die KI stammt von Ihnen."
+        },
+        {
+          "kriterium": "Nachgeprüft",
+          "indikator": "Jede Zahl und jede Angabe der KI haben Sie im Budget oder im Lehrmittel nachgeschlagen."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Sie zum Nachdenken gebracht?",
+        "Im Fachgespräch des Kompetenznachweises begründen Sie einen Entscheid ohne KI. Welchen Grund aus dieser Übung nehmen Sie mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die KI widerspricht meinem Entscheid",
+      "ziel": "Sie prüfen, ob Ihre Begründung hält, wenn die KI die Gegenseite vertritt.",
+      "bezug": "Sie brauchen Ihren Massstab aus Heft A und Ihre Anpassungen aus Heft B. Das Prinzip: Ich wäge meinen Wunsch gegen meine Sicherheit ab und begründe meinen Entscheid.",
+      "auftrag": "Wählen Sie einen Entscheid aus Heft A oder Heft B. Schreiben Sie zuerst Ihre Begründung auf. Die KI vertritt danach die Gegenseite, zum Beispiel eine Kollegin mit anderem Massstab. Prüfen Sie jedes Argument der KI. Entscheiden Sie am Schluss, welches Argument Sie ernst nehmen.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist eine Kollegin aus meiner Klasse und siehst es anders als ich. Mein Entscheid: [mein Entscheid mit Gründen]. Nenne drei Argumente gegen meinen Entscheid. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, wenn die KI geantwortet hat: «Welches deiner drei Argumente ist das stärkste? Begründe es in zwei kurzen, einfachen Sätzen.»",
+        "Verraten Sie der KI im ersten Prompt nicht, welche Antwort Sie sich wünschen.",
+        "Prüfen: Schlagen Sie jede Angabe der KI zu Geld und Recht im Lehrmittel nach."
+      ],
+      "ki_frei_vorher": "Schreiben Sie ohne KI Ihren Entscheid und zwei Gründe auf. Notieren Sie dazu, was Sie dafür aufgeben.",
+      "schritte": [
+        "Schreiben Sie Ihren Entscheid und zwei Gründe ohne KI auf.",
+        "Geben Sie Prompt 1 ein.",
+        "Markieren Sie bei jedem Argument der KI, ob es stimmt, halb stimmt oder nicht stimmt.",
+        "Schlagen Sie mindestens eine Angabe der KI im Lehrmittel nach.",
+        "Schreiben Sie Ihre Begründung neu, mit einem Gegenargument der KI."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Entscheid und zwei Gründe stehen da, bevor Sie die KI fragen."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Mindestens eine Angabe der KI haben Sie im Lehrmittel geprüft."
+        },
+        {
+          "kriterium": "Gegenseite ernst genommen",
+          "indikator": "Ihre neue Begründung nennt ein Argument der Gegenseite und Ihre Antwort darauf."
+        }
+      ],
+      "reflexion": [
+        "Welches Argument der KI hat Ihren Entscheid am stärksten in Frage gestellt?",
+        "Wo hat die KI etwas behauptet, das nicht stimmt oder nicht zu Ihnen passt?",
+        "Im schriftlichen Kompetenznachweis zählt das Kriterium Argumentation. Was nehmen Sie aus dieser Übung dafür mit?"
+      ]
+    }
+  ]
+}

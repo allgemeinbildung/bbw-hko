@@ -1,12 +1,17 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
-import type { LernpromptJson, LernpromptTechnik, LernpromptStacking } from '../../../lib/einheiten/types'
+import type { LernpromptJson, LernpromptTechnik, LernpromptStacking, LernpromptBeispielDialog } from '../../../lib/einheiten/types'
+import { istBasisTechnik, istNeueFassung } from '../../../lib/einheiten/ki-toolbox'
 
 // KI-Toolbox · Prompting (mirrors hko-deploy `ki_lernprompt`).
 // Pagination (paired): each block of 2 Technik-Karten is followed by its
 // Stacking-Beispiele page (stacking_seite_1 after the first block,
 // stacking_seite_2 after the second). Accent #3B6FD4 as a local constant only.
 // renderToStaticMarkup-safe.
+//
+// Basis-Form (E40): sind beide Karten eines Blocks kurz (`istBasisTechnik` — ein
+// fertiger Prompt, kein Baukasten), stehen Karten und Nachfragen auf EINER Seite.
+// Blöcke in voller Dichte behalten ihre zwei Seiten.
 //
 // Layout (ported from the improved hko-deploy ki_lernprompt template):
 //  - the two Technik-Karten sit side by side in a 2-column grid (was a stack);
@@ -69,7 +74,7 @@ function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.6mm 0', alignItems: 'start' }}>
             {t.beispiel_basis && (
               <div>
-                <div style={microLabel}>Beispiel · Basis</div>
+                <div style={microLabel}>{t.beispiel_fortgeschritten ? 'Beispiel · Basis' : 'Fertiger Prompt'}</div>
                 <div style={promptBox}>{t.beispiel_basis}</div>
               </div>
             )}
@@ -101,13 +106,42 @@ function TechnikKarte({ t, index }: { t: LernpromptTechnik; index: number }) {
   )
 }
 
-function StackingPage({ s, vorlage }: { s: LernpromptStacking; vorlage?: string }) {
+// E42 — ein kurzer Beispiel-Verlauf in drei Spalten: was ich geschrieben habe, was
+// die KI geantwortet hat, was ich geprüft habe. Nur wenn die Datei ihn führt.
+function BeispielDialog({ b }: { b: LernpromptBeispielDialog }) {
+  const spalten: Array<[string, string | undefined, 'mono' | 'ki' | 'ich']> = [
+    ['Das habe ich geschrieben', b.frage, 'mono'],
+    ['Das hat die KI geantwortet', b.antwort, 'ki'],
+    ['Das habe ich geprüft', b.pruefung, 'ich'],
+  ]
+  return (
+    <section style={{ marginTop: '3mm', flexShrink: 0 }}>
+      <SectionHead num="Beispiel">So sieht das aus</SectionHead>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5mm', alignItems: 'stretch' }}>
+        {spalten.map(([label, text, art]) => text ? (
+          <div key={label} style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={microLabel}>{label}</div>
+            <div style={art === 'mono'
+              ? { ...promptBox, flex: 1, margin: 0 }
+              : {
+                  flex: 1, borderRadius: '1mm', padding: '1.5mm 2.2mm', fontSize: '8.8pt', lineHeight: 1.34,
+                  background: art === 'ki' ? LP_LIGHT : '#fff', border: `1px solid ${art === 'ki' ? '#c9d8f5' : LP_AKZENT}`,
+                  color: '#2a2f36',
+                }}>{text}</div>
+          </div>
+        ) : null)}
+      </div>
+    </section>
+  )
+}
+
+function StackingPage({ s, vorlage, titelVon, beispiel }: { s: LernpromptStacking; vorlage?: string; titelVon: (k: string) => string; beispiel?: LernpromptBeispielDialog }) {
   return (
     <>
-      <SectionHead num="Prompts stapeln">Zwei Prompts aufeinander aufbauen</SectionHead>
+      <SectionHead num="Nachfragen">Zwei Prompts nacheinander</SectionHead>
       {s.technik_keys?.length ? (
         <div style={{ margin: '0 0 1.5mm' }}>
-          {s.technik_keys.map((k, i) => <span key={i} style={chip}>{k}</span>)}
+          {s.technik_keys.map((k, i) => <span key={i} style={chip}>{titelVon(k)}</span>)}
         </div>
       ) : null}
       {s.logik_und_ziel && (
@@ -121,6 +155,7 @@ function StackingPage({ s, vorlage }: { s: LernpromptStacking; vorlage?: string 
           padding: '2.5mm 3mm', fontSize: '9.5pt', textAlign: 'center', fontWeight: 600,
         }}>{vorlage}</div>
       )}
+      {beispiel && <BeispielDialog b={beispiel} />}
       {/* Freies Schreibfeld — füllt den Rest der Seite. Kein Label, kein Hinweis:
           Platz, falls die/der Lernende einen eigenen Prompt notieren möchte.
           `.feld` liefert die Schreiblinien (Druck: siehe einheiten-renderer.css). */}
@@ -168,7 +203,12 @@ export function DocLernprompt({ lernprompt, abteilung }: DocLernpromptProps) {
   }
   const techniken = lp.techniken || []
   const stackings = [lp.stacking_seite_1, lp.stacking_seite_2]
+  // Ältere Dateien führen in `technik_keys` die Schlüssel (`rollen_prompting`);
+  // gedruckt wird der Titel der Technik. Was kein Schlüssel ist, bleibt wörtlich.
+  const titelVon = (k: string) => techniken.find((t) => t.key === k)?.titel || k
   const ebaClass = lernprompt.lehrgang === 'EBA_2J' ? 'doc-eba' : undefined
+  const neu = istNeueFassung(lernprompt)
+  const dialog = neu && (lp.beispiel_dialog?.frage || lp.beispiel_dialog?.antwort) ? lp.beispiel_dialog : undefined
 
   // 2 Technik-Karten je Block; jedem Block folgt seine Stacking-Beispiele-Seite.
   const blocks: { cards: LernpromptTechnik[]; stacking?: LernpromptStacking }[] = []
@@ -179,27 +219,37 @@ export function DocLernprompt({ lernprompt, abteilung }: DocLernpromptProps) {
   // Seitenliste vorab bauen, damit pageNum/pageTotal stimmen.
   const pages: { code: string; node: ReactNode }[] = []
   blocks.forEach((blk, bi) => {
-    pages.push({
-      code: `TECHNIKEN ${bi + 1}`,
-      node: (
-        <>
-          {bi === 0
-            ? <PageHeader titel="Prompting lernen" kontext={lp.thema_kontext} />
-            : <PageHeader titel="Prompting — weitere Techniken" />}
-          {/* 2-column grid; default align stretch keeps both columns equal height. */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3mm', alignItems: 'stretch' }}>
-            {blk.cards.map((t, i) => <TechnikKarte key={i} t={t} index={bi * 2 + i + 1} />)}
-          </div>
-        </>
-      ),
-    })
-    if (blk.stacking) {
+    const kopf = bi === 0
+      ? <PageHeader titel="Prompting lernen" kontext={lp.thema_kontext} />
+      : <PageHeader titel="Prompting — weitere Techniken" />
+    // 2-column grid; default align stretch keeps both columns equal height.
+    const karten = (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3mm', alignItems: 'stretch' }}>
+        {blk.cards.map((t, i) => <TechnikKarte key={i} t={t} index={bi * 2 + i + 1} />)}
+      </div>
+    )
+    if (neu && blk.stacking && blk.cards.every(istBasisTechnik)) {
       pages.push({
-        code: `STACKING ${bi + 1}`,
+        code: `TECHNIKEN ${bi + 1}`,
         node: (
           <>
-            <PageHeader titel="Prompts stapeln" />
-            <StackingPage s={blk.stacking} vorlage={lp.prompt_vorlage} />
+            {kopf}
+            {karten}
+            <div style={{ height: '4mm', flexShrink: 0 }} />
+            <StackingPage s={blk.stacking} vorlage={lp.prompt_vorlage} titelVon={titelVon} beispiel={bi === 0 ? dialog : undefined} />
+          </>
+        ),
+      })
+      return
+    }
+    pages.push({ code: `TECHNIKEN ${bi + 1}`, node: <>{kopf}{karten}</> })
+    if (blk.stacking) {
+      pages.push({
+        code: `NACHFRAGEN ${bi + 1}`,
+        node: (
+          <>
+            <PageHeader titel="Nachfragen" />
+            <StackingPage s={blk.stacking} vorlage={lp.prompt_vorlage} titelVon={titelVon} />
           </>
         ),
       })

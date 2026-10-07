@@ -2,18 +2,26 @@
   "id": "{X.Y.Z}_{slug}_lernprompt",
   "set_ref": "{X.Y.Z}_{slug}_set",
   "lehrgang": "EFZ_3J",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "erstellt_am": "YYYY-MM-DD",
   "lernprompt": {
     "version": "1.2",
-    "thema_kontext": "Dieses Dokument bezieht sich auf die Unit «{titel}».",
+    "thema_kontext": "Dieses Blatt gehoert zur Einheit «{titel}». Ein Prompt ist Ihre Eingabe an die KI (kuenstliche Intelligenz). — hoechstens 2 Saetze, <= 25 Woerter",
     "techniken": [
       {
-        "key": "rollen_prompting | kontextualisieren | chain_of_thought | format_vorgeben | gegenposition_fordern | quellen_anfordern (genau 4; immer rollen_prompting + kontextualisieren)",
+        "key": "BASIS (Technik 1 und 2): rollen_prompting, dann kontextualisieren",
+        "titel": "woertlich aus der Titelliste in references/lernprompt-techniken.md",
+        "erklaerung": "Wie + warum die Technik wirkt (hoechstens 2 Saetze, <= 30 Woerter, KEINE Beispiele)",
+        "thema_bezug": "1 Satz, konkret auf diese Unit bezogen",
+        "beispiel_basis": "fertiger Prompt mit Sprachzeile, hoechstens eine Luecke",
+        "warnung": "1 Satz, technik-spezifisch (kein beispiel_fortgeschritten, kein baukasten in der Basis)"
+      },
+      {
+        "key": "PLUS (Technik 3 und 4): chain_of_thought | format_vorgeben | gegenposition_fordern | quellen_anfordern",
         "titel": "",
-        "erklaerung": "Wie + warum die Technik wirkt (2-3 Saetze, KEINE Beispiele)",
-        "thema_bezug": "konkret auf diese Unit bezogen",
-        "beispiel_basis": "direkt verwendbarer Prompt fuer diese Unit",
+        "erklaerung": "hoechstens 3 Saetze, KEINE Beispiele",
+        "thema_bezug": "1-2 Saetze",
+        "beispiel_basis": "fertiger Prompt mit Sprachzeile",
         "beispiel_fortgeschritten": "anspruchsvollere Variante mit mehr Kontext",
         "warnung": "technik-spezifischer Blindspot DIESER Unit (nicht generisch)",
         "baukasten": {
@@ -25,17 +33,22 @@
       }
     ],
     "stacking_seite_1": {
-      "technik_keys": ["technik_1", "technik_2"],
-      "logik_und_ziel": "warum Prompt 2 NACH der ersten Antwort folgt",
-      "prompt_1": "themenspezifisch, kombiniert Technik 1+2",
-      "prompt_2": "baut EXPLIZIT auf der ersten Antwort auf"
+      "technik_keys": ["Titel der Technik 1", "Titel der Technik 2"],
+      "logik_und_ziel": "BASIS — warum Prompt 2 NACH der ersten Antwort folgt (hoechstens 2 Saetze)",
+      "prompt_1": "fertig, mit Sprachzeile; kombiniert Technik 1+2",
+      "prompt_2": "fertig, mit Sprachzeile; baut EXPLIZIT auf der ersten Antwort auf"
     },
     "stacking_seite_2": {
-      "technik_keys": ["technik_3", "technik_4"],
-      "logik_und_ziel": "",
+      "technik_keys": ["Titel der Technik 3", "Titel der Technik 4"],
+      "logik_und_ziel": "PLUS",
       "prompt_1": "",
       "prompt_2": ""
     },
-    "prompt_vorlage": "Bauen Sie Ihren Prompt nach diesem Muster: [Rolle] + [Kontext] + [Aufgabe] + [Format]"
+    "beispiel_dialog": {
+      "frage": "fertiger Prompt mit Sprachzeile, OHNE Luecke (Angaben als Beispiel ausgefuellt), <= 45 Woerter",
+      "antwort": "Antwort der KI: kurz, einfach, hoechstens ZWEI pruefbare Angaben — genau EINE falsch —, <= 30 Woerter (Richtwert 20)",
+      "pruefung": "Ich-Form: nennt beide Angaben (den Fehler im Wortlaut der Quelle, und was stimmt), <= 30 Woerter (Richtwert 20)"
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
   }
 }

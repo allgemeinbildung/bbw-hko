@@ -1,0 +1,114 @@
+{
+  "id": "2.4.1_haltung_zeigen_lernprompt",
+  "set_ref": "2.4.1_haltung_zeigen_set",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Haltung zeigen». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Die Rolle lenkt, worauf die KI achtet.",
+        "thema_bezug": "Ihre Beschreibung ist der erste Abschnitt Ihrer Rezension aus Heft B.",
+        "beispiel_basis": "Du bist eine Leserin meiner Rezension und kennst das Werk nicht. Meine Beschreibung: [meine Beschreibung]. Stell mir drei Fragen zu dem, was unklar ist, eine nach der anderen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI spielt die Rolle nur und kennt Ihr Werk nicht."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Kontext heisst: Sie sagen der KI, was Sie machen und für wen. Dann passen ihre Fragen zu Ihrer Arbeit.",
+        "thema_bezug": "Ihre Schlagzeile ist der kurze Satz in grosser Schrift auf Ihrem Plakat-Entwurf.",
+        "beispiel_basis": "Mein Plakat hängt im Gang meiner Schule. Lernende und Lehrpersonen gehen vorbei. Meine Schlagzeile: [meine Schlagzeile]. Stell mir zwei Fragen zur Wirkung, eine nach der anderen. Schreib meine Schlagzeile nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Kontext heisst nicht alles verraten: Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie bitten die KI, Ihnen zu widersprechen. Ein Einwand ist, was jemand dagegen sagt. Welcher Einwand zählt, entscheiden Sie selbst.",
+        "thema_bezug": "Beim Plakat finden die einen den Satz zu hart, den anderen sagt er zu wenig. Ihr Ich-Satz mit Grund ist Satz 1 Ihres Werkkommentars oder der erste Satz Ihres Urteils.",
+        "beispiel_basis": "Meine Schlagzeile für ein Plakat im Gang meiner Schule: [meine Schlagzeile]. Nenne mir zwei Einwände gegen sie. Schreib je Einwand höchstens zwei Sätze. Schreib die Schlagzeile nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du gehst an meinem Plakat vorbei und siehst es anders als ich. Meine Schlagzeile: [meine Schlagzeile]. Meine Haltung dahinter: [mein Ich-Satz mit Grund]. Nenne mir zwei Einwände. Einer kommt von jemandem, dem die Schlagzeile zu hart ist. Einer kommt von jemandem, dem sie zu wenig sagt. Schreib je Einwand höchstens zwei Sätze. Schreib nichts neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt weder Ihr Plakat noch die Leute, die es sehen. Welcher Einwand zählt, entscheiden Sie.",
+        "baukasten": {
+          "rolle": [
+            "Du siehst mein Werk anders als ich",
+            "Du gehst an meinem Plakat vorbei",
+            "Du magst das Werk, das mich nicht überzeugt"
+          ],
+          "kontext": [
+            "meine Schlagzeile und wo das Plakat hängt",
+            "mein Urteil in der Rezension, mit Grund",
+            "mein Werk in zwei Sätzen"
+          ],
+          "aufgabe": [
+            "Nenne mir zwei Einwände",
+            "Nenne einen Einwand zur Wirkung",
+            "Stell mir eine Frage zu meiner Antwort"
+          ],
+          "format": [
+            "je Einwand höchstens zwei Sätze",
+            "kurze, einfache Sätze",
+            "Schreib meinen Satz nicht neu"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie bitten die KI, in Schritten vorzugehen und nach jedem Schritt zu warten. So bleibt jeder Schritt klein, und Sie denken selbst mit.",
+        "thema_bezug": "Ein Argument hat drei Teile: Behauptung, Begründung, Beispiel. Ihr Argument steht im Abschnitt Urteil Ihrer Rezension.",
+        "beispiel_basis": "Thema: ein Argument in meiner Rezension. Mein Argument: [mein Argument]. Stell mir drei Fragen, eine nach der anderen. Frag zuerst nach der Behauptung, dann nach der Begründung, dann nach dem Beispiel. Schreib mein Argument nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Thema: mein Plakat-Entwurf. Meine Schlagzeile: [meine Schlagzeile]. Geh mit mir drei Schritte, einen nach dem anderen. Schritt 1: Frag mich, was die Schlagzeile zeigt. Schritt 2: Frag mich, wie sie auf andere wirken kann. Schritt 3: Frag mich, ob ich deutlicher werde oder mehr offen lasse. Warte nach jedem Schritt auf meine Antwort. Schreib die Schlagzeile nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI fragt nur nach den drei Teilen. Ob Ihr Beispiel wirklich im Werk vorkommt, wissen nur Sie.",
+        "baukasten": {
+          "rolle": [
+            "Du bist mein Lerncoach",
+            "Du bist eine Leserin, die das Werk nicht kennt"
+          ],
+          "kontext": [
+            "ein Argument aus meiner Rezension",
+            "die Schlagzeile meines Plakats",
+            "Satz 2 meines Werkkommentars: meine Mittel"
+          ],
+          "aufgabe": [
+            "Geh mit mir drei Schritte",
+            "Frag zuerst, was es zeigt, dann, wie es wirkt",
+            "Warte nach jedem Schritt auf meine Antwort"
+          ],
+          "format": [
+            "je Schritt eine Frage",
+            "kurze, einfache Sätze",
+            "keine Lösung, nur Fragen"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt der KI eine Rolle und sagt, wo Ihr Plakat hängt. Prompt 2 lässt die KI bei Ihrer unklarsten Antwort nachfragen.",
+      "prompt_1": "Du bist jemand, der im Schulgang an meinem Plakat vorbeigeht. Meine Schlagzeile: [meine Schlagzeile]. Stell mir drei Fragen zu dem, was unklar ist, eine nach der anderen. Schreib meine Schlagzeile nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Welche meiner drei Antworten war am wenigsten klar? Stell mir dazu noch eine Frage. Sag mir nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Schritt für Schritt denken"
+      ],
+      "logik_und_ziel": "Prompt 1 nennt Ihr Urteil und verlangt zwei Einwände. Prompt 2 lässt die KI in drei Schritten fragen, wie Sie auf einen Einwand antworten.",
+      "prompt_1": "Thema: meine Rezension. Mein Werk: [mein Werk, zwei Sätze]. Mein Urteil: [mein Ich-Satz mit Grund]. Nenne mir zwei Einwände dagegen, je höchstens zwei Sätze. Nummeriere sie 1 und 2. Schreib mein Urteil nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Ich nehme diesen Einwand: [Einwand 1 oder 2]. Geh mit mir drei Schritte, einen nach dem anderen. Schritt 1: Frag mich, was am Einwand stimmt. Schritt 2: Frag mich, was ich trotzdem so lasse. Schritt 3: Frag mich, ob mein Urteil bleibt. Warte nach jedem Schritt auf meine Antwort. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: Rezension. Ist dieser Satz Beschreibung oder Wertung: «Der Kurzfilm dauert zehn Minuten und ist langweilig.» Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Der Satz ist eine reine Beschreibung. Er nennt die Dauer des Films.",
+      "pruefung": "Ich prüfe im Glossar. «Langweilig» sagt, wie ich den Film finde: Das ist Wertung. Die Dauer stimmt als Beschreibung."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "2.4.1_haltung_zeigen_ki",
+  "set_ref": "2.4.1_haltung_zeigen_set",
+  "prinzip_ref": "2.4.1_haltung_zeigen_prinzip",
+  "kn_ref": "2.4.1_haltung_zeigen_kn",
+  "anchored_situations": [
+    "2.4.1_haltung_zeigen_hf_A",
+    "2.4.1_haltung_zeigen_hf_B"
+  ],
+  "modul": "2.4",
+  "modul_titel": "Meinungen bilden und mitgestalten — mit Kunst Haltung zeigen",
+  "thema": "T2",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Meinungen bilden und mitgestalten: Ich finde meine eigene Haltung, zeige sie mit Kunst und rezensiere andere Werke respektvoll.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Kultur",
+        "detail": "Künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung, Kunst- und Meinungsfreiheit, Gestaltungs- und Ausdrucksfähigkeiten",
+        "kompetenz_anker": "2.4.1"
+      },
+      {
+        "aspekt": "Kultur",
+        "detail": "Künstlerische Ausdrucksformen und deren Wirkung, zeitliche Prägung",
+        "kompetenz_anker": "2.4.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK 7 — Verständnis fördern",
+      "SK 5 — Werthaltungen reflektieren",
+      "SK 6 — Standpunkte begründen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn ich meine Haltung zeigen will?",
+    "kritisch": "Was kann die KI über mein Werk nicht wissen?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Fragen zu meinem Ich-Satz",
+      "ziel": "Sie beantworten Fragen der KI zu Ihrem Ich-Satz und entscheiden selbst, ob er bleibt.",
+      "bezug": "In Heft A gestalten Sie einen Plakat-Entwurf, in Heft B schreiben Sie eine Rezension. Beide Male trennen Sie, was ein Werk zeigt und wie es wirkt, und entscheiden, wie deutlich Sie werden.",
+      "auftrag": "Ihr Ich-Satz sagt mit «weil», wie Sie etwas sehen: Satz 1 im Werkkommentar oder Satz 1 im Abschnitt Urteil. Die KI stellt Ihnen drei Fragen. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Thema: mit Kunst Haltung zeigen. Mein Ich-Satz: [mein Ich-Satz mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Frag nach dem Grund, der Wirkung auf andere und einer anderen Sicht. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Erklärt die KI einen Begriff, schlagen Sie ihn im Glossar in Ihrem Heft nach. Steht er dort nicht oder anders, übernehmen Sie die Erklärung nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Ich-Satz mit Grund zuerst ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Ich-Satz mit Grund ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihr Ich-Satz bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Ich-Satz mit Grund stand da, bevor Sie die KI fragten."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie sagen, ob Ihr Ich-Satz bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Begriff, den die KI erklärte, haben Sie nachgeschlagen. Fragte sie nur, ist das erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI brachte Sie am meisten zum Nachdenken?",
+        "Im Kompetenznachweis zeigen und erklären Sie Ihre Haltung selbst. Welche Frage nehmen Sie mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Einwände gegen meinen Ich-Satz",
+      "ziel": "Sie lassen die KI Ihrem Ich-Satz widersprechen und entscheiden selbst, welcher Einwand zählt.",
+      "bezug": "In Heft A zeigt Ihr Plakat-Entwurf Ihre Haltung, in Heft B begründet Ihre Rezension Ihr Urteil. Beide Male gilt: Sie entscheiden, wie deutlich Sie werden, und andere sehen es anders.",
+      "auftrag": "Nehmen Sie Ihren Ich-Satz mit «weil»: Satz 1 im Werkkommentar oder Satz 1 im Abschnitt Urteil. Die KI nennt zwei Einwände. Ein Einwand ist, was jemand gegen Ihren Satz sagt. Sie wählen einen Einwand und antworten selbst. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Thema: mit Kunst Haltung zeigen. Mein Werk: [mein Werk, zwei Sätze]. Mein Ich-Satz: [mein Ich-Satz mit Grund]. Nenne mir zwei Einwände dagegen, je höchstens zwei Sätze. Nummeriere sie 1 und 2. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach den zwei Einwänden: «Dieser Einwand zählt für mich mehr: [Einwand 1 oder 2]. Meine Antwort darauf: [meine Antwort]. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Sagt die KI etwas über Ihr Werk, prüfen Sie es am Werk. Stimmt es nicht, übernehmen Sie es nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Ich-Satz mit Grund und zwei Sätze zu Ihrem Werk zuerst ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Ich-Satz mit Grund und zwei Sätze zu Ihrem Werk ohne KI auf.",
+        "Lassen Sie sich mit Prompt 1 zwei Einwände nennen.",
+        "Prüfen Sie jede Angabe der KI zu Ihrem Werk am Werk selbst.",
+        "Beantworten Sie mit Prompt 2 den Einwand, der für Sie mehr zählt.",
+        "Notieren Sie, ob Ihr Ich-Satz bleibt oder sich ändert, und warum."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Ich-Satz mit Grund stand da, bevor Sie die KI fragten."
+        },
+        {
+          "kriterium": "Geprüft",
+          "indikator": "Jede Angabe der KI zu Ihrem Werk haben Sie am Werk geprüft. Gab es keine, ist das erfüllt."
+        },
+        {
+          "kriterium": "Selbst geantwortet",
+          "indikator": "Sie haben gewählt, welcher Einwand mehr zählt, und in eigenen Worten geantwortet."
+        },
+        {
+          "kriterium": "Begründet entschieden",
+          "indikator": "Sie haben notiert, ob Ihr Ich-Satz bleibt oder sich ändert, und warum."
+        }
+      ],
+      "reflexion": [
+        "Welchen Einwand hatten Sie selbst nicht erwartet?",
+        "Wo hat die KI etwas über Ihr Werk gesagt, das sie nicht wissen kann?",
+        "Im Kompetenznachweis zeigen Sie Ihre Haltung, auch wenn andere es anders sehen. Was nehmen Sie aus dieser Übung mit?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "1.1.1_einstieg_interview_lernbegleiter",
+  "set_ref": "1.1.1_einstieg_interview_set",
+  "prinzip_ref": "1.1.1_einstieg_interview_prinzip",
+  "kn_ref": "1.1.1_einstieg_interview_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich wähle eine Befragungsmethode bewusst aus, höre aktiv zu und halte fest, was ich erfahren habe — und ich kann begründen, was meine Methode sichtbar macht und was sie verdeckt.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann für ein neues Gespräch eine Methode bewusst wählen.",
+        "Ich kann zuhören und festhalten, was ich erfahren habe.",
+        "Ich kann begründen, was meine Methode sichtbar macht und verdeckt."
+      ]
+    },
+    "begriffe": [
+      "Interview",
+      "Fragenkatalog",
+      "Offene Frage",
+      "Geschlossene Frage",
+      "Klärungsfrage",
+      "Informationsfrage",
+      "Suggestivfrage",
+      "Grundsatzfrage vor Detailfrage",
+      "Nachhaken",
+      "Kommunikationsquadrat",
+      "Selbstkundgabeohr",
+      "Sachohr"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Fragearten noch erklären können.",
+        "prompt_basis": "Thema: Fragearten im Interview. Frag mich ab zu offene Frage, geschlossene Frage, Klärungsfrage und Suggestivfrage. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Lehrmittel ab (Kap. 16.4), gilt das Lehrmittel."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff aus der Liste oben in eigenen Worten erklären wollen.",
+        "prompt_basis": "Thema: ein Interview führen. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir höchstens zwei Lücken. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke der KI im Lehrmittel (Kap. 16.4, 19.2), bevor Sie etwas ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Ihre Methoden-Notiz steht und Sie wissen wollen, was ihr noch fehlt.",
+        "prompt_basis": "Thema: ein Interview in der Klasse. Hier ist meine Methoden-Notiz: [meine Methoden-Notiz]. Die Notiz soll sagen, was meine Methode sichtbar gemacht und verdeckt hat. Was fehlt? Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: ein Interview in der Klasse. Hier ist meine Methoden-Notiz: [meine Methoden-Notiz]. Die andere Person heisst darin «mein Gegenüber». Prüfe zwei Dinge. Erstens: Steht bei jedem Satz ein Beispiel aus dem Gespräch? Zweitens: Sage ich, was ich beim nächsten Mal anders mache? Zeig mir je die schwächste Stelle als Frage. Schreib meinen Text nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt. Ihr Gegenüber heisst «mein Gegenüber», Zitate und das Kurzprofil bleiben draussen."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, für eine neue Lage eine Methode zu wählen.",
+        "prompt_basis": "Thema: eine Person befragen. Erfinde einen neuen, kurzen Fall ausserhalb der Schule: Ich muss von einer Kundin oder auf einem Amt etwas erfahren. Frag mich, ob ich mit Fragenkatalog frage oder erzählen lasse. Frag danach, was ich so nicht erfahre. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "prompt_fortgeschritten": "Thema: eine Person befragen. Erfinde einen neuen, kurzen Fall ausserhalb der Schule: Ich muss von einer Kundin oder auf einem Amt etwas erfahren. Ich wähle dann zwischen Fragenkatalog und erzählen lassen. Ich schreibe dir meinen Grund. Sag mir dann zwei Dinge. Erstens: Passt mein Grund zu zwei Bedingungen im Fall? Zweitens: Sage ich, was meine Wahl verdeckt? Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn der Termin für den Kompetenznachweis feststeht und Sie die Tage davor planen wollen.",
+        "prompt_basis": "Thema: ein Interview führen. In [Zahl] Tagen habe ich dazu eine Prüfung. Diese Begriffe kann ich noch nicht erklären: [meine Begriffe]. Mach mir einen Lernplan für jeden Tag. Erkläre die Begriffe nicht. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: ein Interview führen. Schreib mir zehn Fragen für Lernkarten zu diesen Begriffen: [meine Begriffe]. Ordne die Fragen nach Begriff. Schreib keine Antworten dazu. Die Antworten schreibe ich selbst aus dem Lehrmittel. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf Ihre Lernkarten schreiben Sie selbst aus dem Lehrmittel (Kap. 16.4, 19.2). Den Plan der KI passen Sie an Ihre Woche an."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie üben, auf Fragen zu einem neuen Fall frei zu antworten.",
+        "prompt": "Thema: eine Person befragen. Erfinde einen neuen Fall ausserhalb der Schule: Ich muss von einer Kundin etwas erfahren. Ich wähle zwischen Fragenkatalog und erzählen lassen. Stell mir dazu drei Fragen, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie üben, für einen neuen Fall eine Methode zu wählen und die Wahl schriftlich zu begründen.",
+        "prompt": "Thema: eine Person befragen. Erfinde einen neuen Fall ausserhalb der Schule: Ich brauche vom Amt eine Auskunft. Ich schreibe dir meine Wahl: Fragenkatalog oder erzählen lassen, mit Grund. Stell mir zwei Fragen, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: eine Person befragen. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen, kurzen Fall ausserhalb der Schule, zum Beispiel eine Umfrage im überbetrieblichen Kurs. Stell mir dazu zwei Fragen, eine nach der anderen. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Begründung der Methodenwahl"
+        ],
+        "so_uebst_du": "Sie brauchen richtige Fachbegriffe und zwei Gründe aus dem Fall für Ihre Methode; üben Sie mit «Abfragen lassen» und einem Übungsfall."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Methode als Erkenntnisrahmen",
+          "Rolle und Rücksichtnahme"
+        ],
+        "so_uebst_du": "Sie sagen, was eine Methode sichtbar macht und verdeckt, und denken an Ihr Gegenüber; üben Sie mit einem Übungsfall."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Herausforderungen.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich habe keine Namen und kein Kurzprofil in die KI eingegeben."
+    ]
+  }
+}

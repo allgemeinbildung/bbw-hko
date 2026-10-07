@@ -1,0 +1,134 @@
+{
+  "id": "2.2.1_meinungsfreiheit_reflektieren_ki",
+  "set_ref": "2.2.1_meinungsfreiheit_reflektieren_set",
+  "prinzip_ref": "2.2.1_meinungsfreiheit_reflektieren_prinzip",
+  "kn_ref": "2.2.1_meinungsfreiheit_reflektieren_kn",
+  "anchored_situations": [
+    "2.2.1_meinungsfreiheit_reflektieren_hf_A",
+    "2.2.1_meinungsfreiheit_reflektieren_hf_B"
+  ],
+  "modul": "2.2",
+  "modul_titel": "Meinungen bilden und mitgestalten — Meinungsfreiheit reflektieren",
+  "thema": "T2",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Meinungen bilden und mitgestalten: Ich bilde mir eine eigene Meinung und vertrete sie mit Respekt.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Ethik",
+        "detail": "Würde des Menschen, moralische Prinzipien",
+        "kompetenz_anker": "2.2.1"
+      },
+      {
+        "aspekt": "Politik",
+        "detail": "Menschenrechte, demokratische Werte, Meinungsfreiheit",
+        "kompetenz_anker": "2.2.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Ethische Prinzipien, Wertekonflikte",
+        "kompetenz_anker": "2.2.2"
+      },
+      {
+        "aspekt": "Politik",
+        "detail": "Eigene und fremde Interessen",
+        "kompetenz_anker": "2.2.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK5 — Werthaltungen reflektieren",
+      "SK7 — Verständnis fördern"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hat Ihnen die KI geholfen, und wobei nicht?",
+    "kritisch": "Woran merken Sie, dass eine Angabe der KI nicht stimmt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Drei Fragen zu meinen Sätzen",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob Ihre drei Sätze zur Meinungsfreiheit halten.",
+      "bezug": "In Heft A prüfen Sie Aussagen, in Heft B vertreten Sie einen Standpunkt. In beiden schützt die Meinungsfreiheit auch Meinungen, die Ihnen nicht passen.",
+      "auftrag": "Nehmen Sie Ihre drei Sätze aus Heft A, sie stehen unter der Tabelle. Die KI (künstliche Intelligenz) stellt dazu drei Fragen, und Sie antworten. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Meinungsfreiheit und Ausgrenzung. Hier sind meine drei Sätze dazu: [meine drei Sätze]. Stell mir dazu drei Fragen, eine nach der anderen. Schreib meine Sätze nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Gesetz oder eine Zahl, schlagen Sie jede dieser Angaben im Lehrmittel nach (Kap. 7.1, 3.4). Steht eine dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Prüfen Sie ohne KI, ob Einordnung, Recht und Schranke stehen. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Prüfen Sie ohne KI, ob Einordnung, Recht und Schranke stehen.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, was an Ihren drei Sätzen bleibt und was Sie ändern."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Sie haben Ihre drei Sätze zuerst selbst geprüft."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben entschieden, was bleibt und was Sie ändern."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Sie haben jede Angabe zu Gesetz oder Zahl nachgeschlagen. Hat die KI nur gefragt: erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Ihnen am meisten geholfen, und warum?",
+        "Im Kompetenznachweis begründen Sie selbst, wo eine Meinung endet. Was nehmen Sie aus dieser Übung mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die KI widerspricht meinem Standpunkt",
+      "ziel": "Sie prüfen Ihren Standpunkt an zwei Einwänden der KI und entscheiden, was Sie ändern.",
+      "bezug": "In Heft A prüfen Sie Aussagen, in Heft B vertreten Sie Ihren Standpunkt. Die Meinungsfreiheit schützt auch die Meinung der anderen Seite. Wer sie kennt, begründet besser.",
+      "auftrag": "Sie arbeiten mit dem Standpunkt aus Heft B. Die KI (künstliche Intelligenz) nennt zwei Einwände dagegen. Ein Einwand ist, was die andere Seite dagegen sagt. Sie wählen den stärkeren Einwand und antworten darauf. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du vertrittst die andere Seite. Thema: Einbürgerung in der Schweiz. Mein Standpunkt: [mein Standpunkt mit Grund]. Nenne mir zwei Einwände dagegen, je mit einem Grund. Greif keine Menschen an. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, mit Ihrer Antwort auf den stärkeren Einwand: «Ich antworte auf einen deiner Einwände: [meine Antwort]. Stell mir dazu eine Frage aus Sicht der anderen Seite. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Gesetz oder eine Zahl, schlagen Sie jede Angabe im Lehrmittel nach (Kap. 3.4, S. 115). Steht eine dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie zuerst ohne KI Ihren Standpunkt mit Grund in zwei Sätzen auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Standpunkt mit Grund ohne KI in zwei Sätzen auf.",
+        "Lassen Sie sich mit Prompt 1 zwei Einwände nennen.",
+        "Schlagen Sie jede Angabe der KI zu Gesetz oder Zahl im Lehrmittel nach.",
+        "Notieren Sie, welcher Einwand stärker ist und welcher Wert dahintersteht.",
+        "Begründen Sie nach Prompt 2, was Sie an Ihrem Standpunkt ändern und was nicht."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Standpunkt mit Grund stand, bevor Sie die KI gefragt haben."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Sie haben jede Angabe der KI zu Gesetz oder Zahl im Lehrmittel nachgeschlagen."
+        },
+        {
+          "kriterium": "Wert benannt",
+          "indikator": "Sie haben notiert, welcher Einwand stärker ist und welcher Wert dahintersteht."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben begründet, was Sie an Ihrem Standpunkt ändern und was nicht."
+        }
+      ],
+      "reflexion": [
+        "Blieb die KI bei Kritik an einer Sache, oder gab es eine Herabsetzung von Menschen?",
+        "Wo war die KI ungenau oder falsch, und woran haben Sie es gemerkt?",
+        "Im Kompetenznachweis begründen Sie Ihren Standpunkt selbst. Was aus dieser Übung hilft Ihnen dabei?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "2.2.1_meinungsfreiheit_reflektieren_lernprompt",
+  "set_ref": "2.2.1_meinungsfreiheit_reflektieren_set",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Meinungsfreiheit reflektieren». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI, wer sie für Sie sein soll. Dann passt sie Ton und Inhalt der Antwort an diese Rolle an.",
+        "thema_bezug": "Als Lerncoach fragt die KI Begriffe aus Heft B ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Einbürgerung und Integration. Frag mich diese Begriffe ab: Integration, Assimilation, Einbürgerung. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Auch als Lerncoach irrt die KI, es gilt das Glossar im Heft."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und was Sie schon haben. Mit diesen Angaben passt die Antwort besser zu Ihrer Aufgabe.",
+        "thema_bezug": "Ihr Standpunkt steht im Schluss Ihrer Stellungnahme aus Heft B.",
+        "beispiel_basis": "Ich bin im ersten Lehrjahr und schreibe eine Stellungnahme zur Einbürgerung. Mein Standpunkt: [mein Standpunkt mit Grund]. Was ist daran noch unklar? Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Die KI vertritt die andere Seite. Sie zeigt, was fehlt, oder nennt Einwände, also was diese Seite gegen Ihren Standpunkt sagt. Was zählt, entscheiden Sie.",
+        "thema_bezug": "In Heft B beschreiben Sie zwei Sichtweisen so, dass beide Seiten zustimmen könnten. Die KI prüft Ihre Beschreibung aus Sicht der Seite, die Sie nicht teilen.",
+        "beispiel_basis": "Thema: Einbürgerung in der Schweiz. So beschreibe ich die Sichtweise, die ich nicht teile: [meine Beschreibung]. Sprich als diese Seite. Was fehlt dir in meiner Beschreibung? Schreib meine Beschreibung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du vertrittst die Seite, die ich nicht teile. Thema: Einbürgerung in der Schweiz. Mein Standpunkt: [mein Standpunkt mit Grund]. Nenne mir zwei Einwände, je mit einem Grund. Bleib sachlich. Greif keine Menschen an. Ich prüfe jede Angabe zu Gesetz oder Zahl nach. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet auch Einwände, die niemand so vertritt. Schlagen Sie jede Angabe zu Gesetz oder Zahl im Lehrmittel nach (Kap. 3.4).",
+        "baukasten": {
+          "rolle": [
+            "Du vertrittst die andere Seite.",
+            "Du bist eine Mitlernende mit anderer Meinung.",
+            "Du bist mein Lerncoach."
+          ],
+          "kontext": [
+            "Thema: Einbürgerung in der Schweiz.",
+            "Mein Standpunkt: [mein Standpunkt mit Grund].",
+            "So beschreibe ich die andere Sichtweise: [meine Beschreibung]."
+          ],
+          "aufgabe": [
+            "Nenne mir zwei Einwände, je mit einem Grund.",
+            "Was fehlt dir in meiner Beschreibung?",
+            "Stell mir eine Frage zu meinem Grund."
+          ],
+          "format": [
+            "Antworte in kurzen, einfachen Sätzen.",
+            "Höchstens zwei Sätze je Einwand.",
+            "Schreib meinen Text nicht neu."
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie verlangen von der KI, dass sie in Schritten vorgeht und jeden Schritt zeigt. So sehen Sie, an welcher Stelle etwas nicht stimmt. Bei jedem Schritt können Sie nachfragen.",
+        "thema_bezug": "In Heft A prüfen Sie jede Aussage mit vier Prüffragen. Nehmen Sie eine Aussage aus Ihrer Tabelle, mit Ihren vier Antworten.",
+        "beispiel_basis": "Thema: Meinungsfreiheit und Ausgrenzung. Ich habe eine Aussage mit vier Fragen geprüft: [Aussage und meine Antworten]. Geh meine Antworten Schritt für Schritt durch. Sag mir bei jeder, ob ein Grund fehlt. Schreib meine Antworten nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist mein Lerncoach. Thema: Meinungsfreiheit und Ausgrenzung. Meine vier Prüffragen: Über wen? Verallgemeinert? Kritik oder Herabsetzung? Gedeckt von der Meinungsfreiheit? Hier ist eine Aussage mit meinen Antworten: [Aussage und meine Antworten]. Geh Frage für Frage vor. Nenne bei jeder Frage zuerst meine Antwort. Sag dann, ob mein Grund dazu passt. Urteile nicht selbst über die Aussage. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI urteilt gern selbst, ob eine Aussage erlaubt ist. Was die Meinungsfreiheit schützt, schlagen Sie im Lehrmittel nach (Kap. 7.1, 3.4).",
+        "baukasten": {
+          "rolle": [
+            "Du bist mein Lerncoach.",
+            "Du prüfst nur meinen Gedankengang.",
+            "Du fragst nach, du urteilst nicht."
+          ],
+          "kontext": [
+            "Thema: Meinungsfreiheit und Ausgrenzung.",
+            "Meine vier Prüffragen: Über wen? Verallgemeinert? Kritik oder Herabsetzung? Gedeckt?",
+            "Hier ist eine Aussage mit meinen Antworten: [Aussage und meine Antworten]."
+          ],
+          "aufgabe": [
+            "Geh Frage für Frage vor.",
+            "Zeig mir den Schritt, bei dem ein Grund fehlt.",
+            "Nenne zuerst meine Antwort, dann deine Rückfrage."
+          ],
+          "format": [
+            "Nummeriere die Schritte.",
+            "Ein Satz je Schritt.",
+            "Antworte in kurzen, einfachen Sätzen."
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Mit Prompt 1 stellt die KI zwei Fragen zu Ihrem Standpunkt. Mit Prompt 2 fragt sie dort nach, wo Ihre Antwort schwächer war.",
+      "prompt_1": "Du bist mein Lerncoach. Ich schreibe eine Stellungnahme zur Einbürgerung. Mein Standpunkt: [mein Standpunkt mit Grund]. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Welche meiner zwei Antworten war schwächer? Stell mir dazu noch eine Frage. Sag mir nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Schritt für Schritt denken"
+      ],
+      "logik_und_ziel": "Prompt 1 holt zwei Einwände gegen Ihren Standpunkt. Mit Prompt 2 geht die KI Ihre Antwort auf einen Einwand in Schritten durch.",
+      "prompt_1": "Du vertrittst die Seite, die ich nicht teile. Thema: Einbürgerung in der Schweiz. Mein Standpunkt: [mein Standpunkt mit Grund]. Nenne mir zwei Einwände, je mit einem Grund. Greif keine Menschen an. Schreib meinen Standpunkt nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Ich antworte auf einen deiner Einwände: [meine Antwort]. Geh meine Antwort Schritt für Schritt durch. Sag mir bei jedem Schritt, ob ein Grund fehlt. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Thema: Meinungsfreiheit. Ich sage: Eine Schranke ist die Grenze eines Rechts. Stimmt das? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Ja, eine Schranke ist die Grenze eines Rechts. Die Meinungsfreiheit hat aber keine Schranken.",
+      "pruefung": "Satz 1 stimmt, so steht es im Glossar. Satz 2 ist falsch: In Heft A lese ich, die Meinungsfreiheit gilt und hat Schranken."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

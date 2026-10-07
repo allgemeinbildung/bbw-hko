@@ -86,9 +86,11 @@ interface SchreibfeldProps {
   value?: string
   onChange?: (v: string) => void
   placeholder?: string
+  /** Feld nimmt den freien Platz seines Flex-Elternteils (Spalte) auf; `heightMm` bleibt Mindesthöhe. */
+  grow?: boolean
 }
 
-export function Schreibfeld({ heightMm = 15, value = '', onChange, placeholder = '' }: SchreibfeldProps) {
+export function Schreibfeld({ heightMm = 15, value = '', onChange, placeholder = '', grow = false }: SchreibfeldProps) {
   const minRows = Math.max(3, Math.ceil(heightMm / 8.5) + 2)
   const minHeight = `calc(8.5mm * ${minRows})`
   const ref = useRef<HTMLDivElement>(null)
@@ -101,7 +103,7 @@ export function Schreibfeld({ heightMm = 15, value = '', onChange, placeholder =
     <div
       ref={ref}
       className="feld"
-      style={{ minHeight }}
+      style={grow ? { minHeight, flex: '1 0 auto' } : { minHeight }}
       contentEditable
       suppressContentEditableWarning
       data-placeholder={placeholder}

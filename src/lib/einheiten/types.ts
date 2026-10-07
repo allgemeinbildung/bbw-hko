@@ -705,6 +705,8 @@ export interface KiAssignment {
 }
 export interface KiJson {
   id?: string
+  /** Dateistand. Ab «2.x» (E40 ff.) gilt die Basis-Form mit ihrem eigenen Umbruch. */
+  version?: string
   modul_titel?: string
   thema?: string
   lehrgang?: string
@@ -734,12 +736,21 @@ export interface LernpromptStacking {
   prompt_1?: string
   prompt_2?: string
 }
+/** Ein kurzer Beispiel-Verlauf: eigener Prompt, Antwort der KI, was geprüft wurde (E42). */
+export interface LernpromptBeispielDialog {
+  frage?: string
+  antwort?: string
+  pruefung?: string
+}
 export interface LernpromptJson {
   id?: string
+  /** Dateistand, siehe `KiJson.version`. */
+  version?: string
   lehrgang?: string
   lernprompt?: {
     version?: string
     thema_kontext?: string
+    beispiel_dialog?: LernpromptBeispielDialog
     techniken?: LernpromptTechnik[]
     stacking_seite_1?: LernpromptStacking
     stacking_seite_2?: LernpromptStacking
@@ -757,9 +768,13 @@ export interface LernbegleiterStrategie {
 }
 export interface LernbegleiterJson {
   id?: string
+  /** Dateistand, siehe `KiJson.version`. */
+  version?: string
   lehrgang?: string
   lernbegleiter?: {
     version?: string
+    /** Begriffe der Einheit zum Abhaken («kann ich erklären») — E42. */
+    begriffe?: string[]
     titel?: string
     ziel?: string
     kompetenzversprechen?: string

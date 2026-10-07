@@ -1,0 +1,125 @@
+{
+  "id": "2.1.1_informationen_hinterfragen_ki",
+  "set_ref": "2.1.1_informationen_hinterfragen_set",
+  "prinzip_ref": "2.1.1_informationen_hinterfragen_prinzip",
+  "kn_ref": "2.1.1_informationen_hinterfragen_kn",
+  "anchored_situations": [
+    "2.1.1_informationen_hinterfragen_hf_A",
+    "2.1.1_informationen_hinterfragen_hf_B"
+  ],
+  "modul": "2.1",
+  "modul_titel": "Meinungen bilden und mitgestalten — Informationen hinterfragen",
+  "thema": "T2",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Meinungen bilden und mitgestalten: Ich hinterfrage Informationen aus verschiedenen Quellen und erkenne, warum mir bestimmte Inhalte angezeigt werden.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Politik",
+        "detail": "Aktuelle politische Themen, Interessengruppen, politische Grundhaltungen",
+        "kompetenz_anker": "2.1.1"
+      },
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Chancen und Risiken aktueller Technologien, algorithmische Steuerung, Filterblasen, Desinformation (Fake News)",
+        "kompetenz_anker": "2.1.2"
+      },
+      {
+        "aspekt": "Politik",
+        "detail": "Beeinflussung und Manipulationsmöglichkeiten, Informations- und Meinungsfreiheit",
+        "kompetenz_anker": "2.1.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK5 — Werthaltungen reflektieren",
+      "SK6 — Standpunkte begründen",
+      "SK1 — Quellen unterscheiden"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir eine KI, wenn ich einer Aussage nicht sofort traue?",
+    "kritisch": "Auch die KI ist eine Quelle: Wie prüfe ich, was sie mir sagt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Hält meine Regel?",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob Ihre Regel für zweifelhafte Inhalte hält.",
+      "bezug": "In Heft A ordnen Sie Interessen und Werte, in Heft B prüfen Sie Inhalte und schreiben Ihre Regel. Beide Hefte zeigen: Jede Aussage kommt von jemandem mit einem Interesse.",
+      "auftrag": "Nehmen Sie Ihre Regel für zweifelhafte Inhalte aus Heft B. Die KI stellt Ihnen dazu drei Fragen, und Sie prüfen, ob Ihre Regel hält. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Informationen hinterfragen. Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Begriff oder eine Zahl, schlagen Sie im Heft nach. Steht es dort nicht, übernehmen Sie es nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Regel mit Grund ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Regel mit Grund ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Notieren Sie nach Prompt 2, ob Ihre Regel bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Regel und Ihr Grund stehen vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Entschieden",
+          "indikator": "Sie haben notiert, ob Ihre Regel bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Begriffe und Zahlen der KI haben Sie nachgeschlagen. Fragt die KI nur, ist das erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Ihre Regel am stärksten geprüft?",
+        "Im Kompetenznachweis arbeiten Sie ohne KI. Welche Frage aus dieser Übung stellen Sie sich dann selbst?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Der Einwand gegen meine Regel",
+      "ziel": "Sie lassen die KI Ihrer Regel widersprechen und finden selbst das stärkste Argument.",
+      "bezug": "Aus Heft B kommt Ihre Regel, aus Heft A die Frage nach dem Interesse. Dahinter steht: Jede Aussage kommt von jemandem mit einem Interesse — auch ein Argument.",
+      "auftrag": "Die KI nennt drei Argumente gegen Ihre Regel für zweifelhafte Inhalte aus Heft B. Das stärkste ist der Einwand: Sie klären selbst, wer so reden würde und welches Interesse dahinter steht. Dann entscheiden Sie, ob Sie den Einwand annehmen oder zurückweisen. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du vertrittst die Gegenseite. Thema: Informationen hinterfragen. Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund]. Nenne drei Argumente dagegen, je in einem Satz. Sag nicht, wer so reden würde. Sag nicht, welches Argument das stärkste ist. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, zum stärksten Argument: «Ich wähle dieses Argument: [mein gewähltes Argument]. Nenne dazu einen Fakt, den ich nachprüfen kann. Sag mir, woher er stammt. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Den Fakt der KI prüfen Sie mit einem der drei Checks. Ohne Beleg übernehmen Sie ihn nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Regel mit Grund ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Regel mit Grund ohne KI auf.",
+        "Holen Sie mit Prompt 1 drei Argumente gegen Ihre Regel.",
+        "Notieren Sie zum stärksten Argument, wer so reden würde und mit welchem Interesse.",
+        "Prüfen Sie nach Prompt 2 den Fakt der KI mit einem der drei Checks.",
+        "Entscheiden Sie mit Grund, ob Sie den Einwand annehmen oder zurückweisen."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Interesse erkannt",
+          "indikator": "Zum Einwand steht, wer so reden würde und mit welchem Interesse."
+        },
+        {
+          "kriterium": "Geprüft",
+          "indikator": "Den Fakt der KI haben Sie mit einem der drei Checks geprüft."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie nehmen den Einwand an oder weisen ihn zurück und nennen Ihren Grund."
+        }
+      ],
+      "reflexion": [
+        "Welches Argument der KI hat Sie überrascht, und warum?",
+        "Woran haben Sie gemerkt, ob der Fakt der KI stimmt?",
+        "Im Kompetenznachweis erkennen Sie ohne KI, welches Interesse hinter einer Aussage steht. Was hilft Ihnen aus dieser Übung dabei?"
+      ]
+    }
+  ]
+}

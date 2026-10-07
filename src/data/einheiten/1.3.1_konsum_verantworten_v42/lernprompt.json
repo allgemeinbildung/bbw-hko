@@ -1,0 +1,109 @@
+{
+  "id": "1.3.1_konsum_verantworten_v42_lernprompt",
+  "set_ref": "1.3.1_konsum_verantworten_v42_set",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Konsum verantworten»: Bedürfnisse ordnen, Budget planen, Entscheide begründen. Ein Prompt ist Ihre Eingabe an die KI.",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Dann antwortet sie aus dieser Sicht und nicht allgemein.",
+        "thema_bezug": "Bei einem Kauf hilft Ihnen ein Lerncoach, der nachfragt, mehr als eine Verkäuferin.",
+        "beispiel_basis": "Du bist mein Lerncoach für das Thema Geld. Frag mich die Begriffe Existenzbedürfnis und Wahlbedürfnis ab. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort.",
+        "warnung": "Eine Rolle macht die Antwort passender, aber nicht richtiger."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie geben der KI die wichtigen Angaben, bevor sie antwortet. Je genauer die Angaben, desto weniger muss die KI raten.",
+        "thema_bezug": "Ohne Ihren Nettolohn und Ihre fixen Kosten kann die KI zu Ihrem Budget nichts Brauchbares sagen.",
+        "beispiel_basis": "Ich bin im 1. Lehrjahr. Hier ist mein Budget in Stichworten: [mein Budget]. Stell mir Fragen zu den Posten, bei denen es knapp wird. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort.",
+        "warnung": "Schreiben Sie keine Namen, keine Adresse und keine Kontonummer in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie schreiben zuerst Ihre eigene Meinung auf. Danach vertritt die KI die Gegenseite. So finden Sie schwache Stellen in Ihrer Begründung.",
+        "thema_bezug": "Bei jedem Kauf gibt es zwei Seiten: den Wunsch jetzt und die Sicherheit später. Beide lassen sich begründen.",
+        "beispiel_basis": "Ich finde: Ein Impulskauf ist manchmal in Ordnung. Vertritt die Gegenseite mit zwei Argumenten. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Mein Entscheid und meine Gründe: [mein Entscheid mit Gründen]. Du bist eine Kollegin, die vorsichtiger mit Geld umgeht. Nenne drei Einwände. Sag mir danach, welcher Einwand am schwersten wiegt. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI vertritt jede Seite überzeugend, auch eine falsche. Welches Argument zählt, entscheiden Sie.",
+        "baukasten": {
+          "rolle": [
+            "vorsichtige Kollegin",
+            "kritischer Freund"
+          ],
+          "kontext": [
+            "mein Entscheid mit Gründen",
+            "mein Massstab",
+            "mein Saldo"
+          ],
+          "aufgabe": [
+            "drei Einwände nennen",
+            "den stärksten Einwand begründen"
+          ],
+          "format": [
+            "drei kurze Punkte",
+            "zwei Sätze je Einwand"
+          ]
+        }
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie verlangen von der KI einen Weg in einzelnen Schritten. So sehen Sie, wie sie zu ihrer Antwort kommt. Fehler fallen leichter auf.",
+        "thema_bezug": "Bei einem Budget zählt der Rechenweg: Einnahmen, fixe Kosten, variable Kosten, Rückstellungen, Saldo.",
+        "beispiel_basis": "Erkläre mir Schritt für Schritt, wie ich den Saldo in einem Monatsbudget berechne. Schreib jeden Schritt in einem kurzen, einfachen Satz.",
+        "beispiel_fortgeschritten": "Hier ist mein Budget: [mein Budget]. Geh es Schritt für Schritt durch: Einnahmen, fixe Kosten, variable Kosten, Rückstellungen, Saldo. Zeig bei jedem Schritt deine Rechnung. Sag mir am Schluss, wo ein Engpass droht. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI verrechnet sich manchmal. Rechnen Sie jeden Schritt selbst nach.",
+        "baukasten": {
+          "rolle": [
+            "Lerncoach für Geld",
+            "geduldige Erklärerin"
+          ],
+          "kontext": [
+            "mein Budget in Stichworten",
+            "mein Nettolohn"
+          ],
+          "aufgabe": [
+            "Saldo Schritt für Schritt rechnen",
+            "Engpass suchen",
+            "eine Schutzregel prüfen"
+          ],
+          "format": [
+            "nummerierte Schritte",
+            "eine Rechnung je Zeile"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt der KI eine Rolle und Ihre Angaben. Prompt 2 fragt bei der Antwort nach.",
+      "prompt_1": "Du bist mein Lerncoach. Ich bin im 1. Lehrjahr und möchte mein Budget prüfen: [mein Budget]. Stell mir Fragen zu meinen fixen und variablen Kosten. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage und warte auf meine Antwort.",
+      "prompt_2": "Du hast mir Fragen zu meinem Budget gestellt. Sag mir jetzt, bei welchem Posten du einen Engpass siehst. Begründe es in zwei kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Schritt für Schritt denken"
+      ],
+      "logik_und_ziel": "Prompt 1 lässt die KI Ihren Entscheid Schritt für Schritt prüfen. Prompt 2 dreht die Sicht um: Die KI vertritt die Gegenseite.",
+      "prompt_1": "Mein Entscheid: [mein Entscheid mit Gründen]. Prüfe Schritt für Schritt, ob er zu meinem Budget passt. Zeig mir jeden Schritt. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Vertritt jetzt die Gegenseite zu deinem Ergebnis. Nenne zwei Argumente. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Meine fixen Kosten im Monat: Handy 35 Franken, Streaming 15 Franken, Fitness 80 Franken. Stell mir eine Frage dazu. Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Deine fixen Kosten sind 120 Franken im Monat. Das Fitness-Abo ist der grösste Posten. Wie oft gehst du hin?",
+      "pruefung": "Ich habe nachgerechnet: Es sind 130 Franken, nicht 120. Die Frage war gut. Ich gehe kaum hin."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Format."
+  }
+}

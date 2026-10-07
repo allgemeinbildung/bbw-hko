@@ -1916,6 +1916,202 @@ angelegt.
 **Rückgängig:** `git revert` des Commits der Stufe D. Das Tor läuft dann wie
 nach Stufe C (erster Durchgang wieder «ROT» mit zwei erwarteten Fehlern).
 
+## E39 — KI-Toolbox für v4.2-Einheiten: `hko-ki-komplement` liest das neue Format (Pietro, 07.10.2026)
+
+**Ausgangslage:** E29 hatte die KI-Toolbox für v4.2 zurückgestellt. Die Skill
+`hko-ki-komplement` kannte nur das 3er-Set (A/B/C) und EBA; auf einer
+v4.2-Einheit hätte sie eine dritte Herausforderung verlangt, von «Austausch &
+Transfer» gesprochen und weder den Fall-Ausschluss des KN noch die Spuren
+gekannt. Keine der 16 v4.2-Einheiten trägt eine Toolbox.
+
+**Entscheid Pietro:** Die Skill wird auf v4.2 nachgeführt.
+
+**Umsetzung — nur die Skill, nur die Leseseite:**
+
+- **Der Output-Vertrag bleibt.** `ki.json`, `lernprompt.json`,
+  `lernbegleiter.json` und `ki-liesmich.md` haben in jedem Format dieselbe Form.
+  Kein Renderer, kein Typ, kein Skript ist angefasst: `loadEinheit` und die
+  Arbeitsansicht führen die Toolbox schon heute unabhängig vom Format (Gruppe
+  «KI-Toolbox», ZIP).
+- **Format-Erkennung** in Phase 0 an `herausforderung_A.template` und
+  `prinzip.lehrgang` (`references/input-adapter.md` §0).
+- **v4.2-Regeln** (`SKILL.md`): nur der Kern der Hefte, nichts aus `spuren.*`
+  und aus keinem Lösungsfeld · kein Begriff aus
+  `fall_ausschluss_hefte_und_auftrag` in einer der vier Dateien · Übungsfälle
+  disjunkt von Heft A, Heft B, Auftrag und KN · Wörter der Hefte («Heft A/B»,
+  «gemeinsamer Auftrag», «Spannungsfeld», «0 bis 3 Punkte») · Fachbegriffe aus
+  `set.glossar` · Kriterien im Wortlaut des KN. Drei neue Checks der Skill
+  (`V42_SPUR`, `V42_FALL`, `V42_WORT`) und das Tor `check-all` über den Ordner.
+- **Sichtbarkeit setzt die Skill nicht.** Bei einer publizierten Einheit meldet
+  sie, dass `"entwurf_komponenten": ["ki-fluency"]` die Toolbox zurückhält.
+
+**Offen:** (1) `V42_FALL` prüft kein Skript — `check-v42` wendet den
+Fall-Ausschluss nur auf Hefte, Auftrag, Glossar und Quellenkarten an. (2) Es gibt
+keine v4.2-Gold-Toolbox; die Skill ist an keiner v4.2-Einheit gelaufen. (3) Das
+Niveau der Toolbox (Rückmeldung der Lehrpersonen: zu hoch) ist mit diesem
+Entscheid nicht berührt.
+
+**Rückgängig:** `git revert` des Commits; betroffen sind nur
+`.claude/skills/hko-ki-komplement/`, eine Zeile in `CLAUDE.md` und dieser Eintrag.
+
+## E40 — KI-Toolbox: kleine Fassung als Vorgabe (Basis/Plus) und B1-Sprach-Gate für EFZ (Pietro, 07.10.2026)
+
+**Ausgangslage:** Rückmeldung mehrerer Lehrpersonen an Pietro: Das Niveau der
+KI-Toolbox ist für die Lernenden zu hoch. Pietro: Es liegt an der Wortwahl und an
+zu viel Inhalt je Dokument. Befund an der Gold-Toolbox
+`1.1.1_konflikt_kommunizieren`: (1) EBA hat ein A2-Gate, EFZ keines — Aufträge mit
+über hundert Wörtern in einem Absatz, Wörter wie «Retrieval», «Verifikation»,
+«Stacking»; (2) jeder Auftrag verlangt Inhalt bearbeiten **und** die KI beurteilen
+(K4–K5, die Hefte zielen auf K2–K4); (3) vier Techniken mit je sechs Feldern, fünf
+Karten mit je zwei Prompts; (4) Prompts müssen aus einem Baukasten selbst gebaut
+werden. Der Liesmich bat die Lehrperson, die Word-Datei selbst zu kürzen.
+
+**Entscheid Pietro:** Alle vier Vorschläge umsetzen.
+
+**Umsetzung — nur die Skill `hko-ki-komplement`, für alle drei Formate:**
+
+1. **B1-Sprach-Gate für EFZ** (`references/b1-language-rules.md`), gebaut wie das
+   A2-Gate: längster Satz 22 Wörter, ein Auftrag je Satz, ein Schritt ein Satz,
+   Fachbegriffe nur mit Deckung (v4.2: `set.glossar`), Sperrwörter der Didaktik.
+2. **Fertige Prompts** mit höchstens einer Lücke; jeder endet mit einer
+   **Sprachzeile**, die der KI kurze, einfache Antworten und eine Frage aufs Mal
+   vorschreibt.
+3. **Andocken:** Die Basis arbeitet nur mit Begriffen, eigenem Produkt und
+   Kriterien der Einheit — kein neuer Fall, kein neues Kriterium.
+4. **Basis ist die Vorgabe, Plus liegt daneben** (`references/basis-plus.md`):
+   `ki_1` = Basis-Auftrag aus `ai_lernassistent` / `ai_entscheidungscoach`
+   (3 Schritte, 2 fertige Prompts, 2 Reflexionsfragen), `ki_2` = Plus-Auftrag;
+   Lernprompt Seiten 1–2 Basis, 3–4 Plus; Lernbegleiter Seite 1 und KN-Seite
+   Basis, Seite 2 Plus. Neue Checks BP1–BP6. Der Liesmich nennt die Seiten, statt
+   zum Kürzen aufzufordern.
+
+**Kein Renderer, kein Typ, kein Skript angefasst.** Die drei Doc-Komponenten
+zeichnen jedes Feld nur, wenn es da ist, und setzen die Seiten aus der Reihenfolge
+der Daten; Basis und Plus entstehen allein aus Reihenfolge und Weglassen. Der
+Output-Vertrag bleibt.
+
+**Nicht erreicht:** «Eine Seite je Dokument». Ein KI-Auftrag hat im Renderer fest
+drei Seiten (jetzt mit wenig Text und viel Schreibfläche), die Basis des
+Lernprompts zwei, die des Lernbegleiters zwei (Seite 1 und KN-Seite, dazwischen
+die Plus-Seite). Weniger braucht eine Änderung an den Doc-Komponenten.
+
+**Offen:** (1) Kein Skript prüft B1 und BP1–BP6 — es sind Scans der Skill.
+(2) Einige feste Überschriften des Renderers tragen noch Fachwörter
+(«Gütekriterien», «Rubrik-Fokus», «KN-Typen», «Prompts stapeln»), und der Kopf des
+KI-Auftrags zeigt den rohen Muster-Schlüssel. (3) Die zehn Toolboxen der
+Bestandseinheiten sind unverändert in der alten Fassung. (4) Die Skill ist im
+neuen Zuschnitt an keiner Einheit gelaufen; die Wirkung bei Lernenden ist nicht
+erprobt.
+
+**Rückgängig:** `git revert` des Commits; betroffen sind nur
+`.claude/skills/hko-ki-komplement/` und dieser Eintrag.
+
+## E41 — KI-Toolbox: Pilot, Renderer ohne Fachwörter und mit weniger Leerraum, `check-ki-toolbox.mjs` (Pietro, 07.10.2026)
+
+**Pilot.** Die Skill ist im neuen Zuschnitt (E39, E40) an
+`1.3.1_konsum_verantworten_v42` gelaufen: `ki.json`, `lernprompt.json`,
+`lernbegleiter.json`, `ki-liesmich.md`. Basis-Auftrag `ai_entscheidungscoach`,
+Plus-Auftrag `ai_gegenpositionen`. Befund an den gerenderten Seiten: Der Text war
+klein, die Seiten nicht — jede Basis-Seite halb leer, und das Lauteste auf dem
+Blatt waren Fachwörter des Renderers.
+
+**Auftrag Pietro:** Renderer nachziehen, Leerraum beheben, Prüfskript schreiben.
+
+**Renderer** (`src/components/einheiten/docs/Doc{Ki,Lernprompt,Lernbegleiter}.tsx`,
+die drei Builder in `docx-builder.ts`, neu `src/lib/einheiten/ki-toolbox.ts`):
+
+- **Wörter:** «KI-Toolbox · formativ» → «KI-Toolbox · Auftrag»; das Etikett mit
+  dem rohen Muster-Schlüssel entfällt; «Lehrplan-Bezug / Schlüsselkompetenzen
+  dieser Einheit» → «Das üben Sie» (Namen ohne SK-Code); Leitfragen ohne
+  «Offen/Kritisch/…»; «Prompt-Strategie» → «Prompts»; «Gütekriterien» →
+  «Kontrolle»; «R1» → «1.»; «Prompts stapeln» → «Nachfragen — Zwei Prompts
+  nacheinander» (Technik-Schlüssel werden als Titel gedruckt); «KN-Typen» →
+  «Kompetenznachweis»; «Rubrik-Fokus / im KN» → «Kriterien / im
+  Kompetenznachweis»; «SuK», «Ges» ausgeschrieben; «Fairness & Integrität» →
+  «Fairness»; ein Prompt ohne schwierigere Variante heisst «Fertiger Prompt».
+- **Prompts im KI-Auftrag** stehen in einem Kasten wie in den zwei anderen
+  Dokumenten, wenn die Zeile mit einem zitierten Prompt endet.
+- **Seiten aus den Daten:** Basis-Auftrag zwei statt drei Seiten; Basis-Techniken
+  und ihr «Nachfragen» auf einer Seite; im Lernbegleiter folgt die KN-Seite auf
+  Seite 1, die übrigen Karten stehen als «Plus» am Schluss. Erkannt wird die
+  Basis-Form daran, was fehlt — kein neues Datenfeld.
+- **Schreibfelder nehmen den freien Platz auf** (`Schreibfeld grow`; die bisherige
+  Höhe ist Mindesthöhe).
+
+**Wirkung auf den Bestand.** Die zehn Toolboxen in voller Dichte erfüllen keine
+der Basis-Bedingungen: gleiche Seitenzahl, gleiche Reihenfolge. Geändert sind bei
+ihnen die Überschriften oben, der Prompt-Kasten und die Höhe der Schreibfelder,
+wo eine Seite Platz hatte. Gemessen an `1.1.1_konflikt_kommunizieren`
+(13 Seiten) und am Piloten (11 Seiten) mit `messen-v42.mjs`: kein Überlauf.
+Die Word-Dateien beider Einheiten werden erzeugt; ihr Satzbild ist nicht
+angesehen.
+
+**Prüfskript** `scripts/check-ki-toolbox.mjs <ordner>`: Form der drei Dateien,
+BP1–BP4 und BP6, die gezählten B1-Regeln (Satzlänge, ein Auftrag je Teilsatz,
+Schritt, Sperrwörter), bei v4.2 Fall-Ausschluss, Spur-Begriffe und Wörter, der
+Liesmich (Callouts, Titel, Karten). Geprüft wird nur eine Toolbox mit
+`ki.json › version` ab 2.0.0; der Bestand wird genannt und übersprungen. Nicht
+in `check-all` eingehängt.
+
+**Offen:** (1) Der Pilot liegt in einer **publizierten** Einheit; Index nicht
+gebaut, nichts committet — vor dem Index-Bau entscheidet Pietro über
+`entwurf_komponenten`. (2) Leerraum bleibt im Lernbegleiter (Seite 1 und KN-Seite)
+und auf der ersten Plus-Seite des Lernprompts; Vorschläge dazu liegen bei Pietro.
+(3) Das Skript prüft weder die Deckung von Fachbegriffen noch A2 bei EBA.
+
+**Rückgängig:** `git revert` des Commits; die vier Pilot-Dateien löschen.
+
+## E42 — KI-Toolbox: KN-Formen ohne Fachnamen, drei Zusätze gegen den Leerraum, alles am Dateistand 2.x (Pietro, 07.10.2026)
+
+**1. Namen der KN-Formen (Pietro).** «Mini Case schriftlich» stand in einer
+Reflexionsfrage des Plus-Auftrags und als Kartentitel im Lernbegleiter. Es ist
+ein Begriff der Lehrperson. Neu: «Mini Case», «Werkschau» und
+«Transfer-Reflexion» stehen in keinem Feld, das Lernende lesen (eigener Abschnitt
+in `SKILL.md`, Sperrwörter in `b1-language-rules.md`, Check `KN_NAME`,
+`check-ki-toolbox.mjs`). `kn_typ_tracks[].label` bleibt wörtlich wie in `kn.json`;
+der Renderer druckt «Fachgespräch» · «Schriftliche Aufgabe zu einem neuen Fall» ·
+«Eigene Arbeiten zeigen und erklären» (`knTypFuerLernende`). «Fachgespräch»
+bleibt — von mir entschieden, Pietro hat nur den Mini Case genannt.
+
+**2. Drei Zusätze (Pietro: Ideen 1, 2, 3), gebaut an `1.3.1_konsum_verantworten_v42`:**
+
+- **Notizfelder** unter jedem Prompt der zwei Basis-Karten («Das hat die KI
+  gesagt · Das stimmt · Das stimmt nicht») und am Schluss der KN-Seite («Mein
+  Übungsfall · Das konnte ich · Das übe ich noch»). Kein Datenfeld.
+- **«Meine Begriffe — Kann ich das erklären?»**: neues Feld
+  `lernbegleiter.begriffe[]`, bei v4.2 alle Glossarbegriffe ohne `spur`.
+- **Beispiel-Verlauf** auf Seite 1 des Lernprompts: neues Feld
+  `lernprompt.beispiel_dialog` (`frage`, `antwort`, `pruefung`). Die Antwort der
+  KI trägt genau einen prüfbaren Fehler, damit die Lernenden einmal sehen, wie
+  Prüfen aussieht.
+
+**3. Andere Einheiten bleiben, wie sie sind (Pietro).** Umbruch der Basis-Form
+(E41) und alle Zusätze hängen jetzt am Dateistand: `istNeueFassung` verlangt
+`version` ab 2.x. Die zehn Toolboxen mit 1.x sind in keiner Datei angefasst und
+behalten Seitenfolge und Inhalt; sie werden neu erzeugt, wenn die Skill fertig
+ist. Für sie bleiben aus E41 die geänderten Überschriften und aus Punkt 1 die
+Kartentitel im Klartext.
+
+**Berichtigung zu E41.** Dort steht, auch der Bestand erhalte den Prompt-Kasten
+und wachsende Schreibfelder. Die Messung aller zehn Bestands-Toolboxen zeigte in
+`5.4.2_internationale_entscheide_wirken_4j` dadurch zwei neue Überläufe (Seite 2
+beider KI-Aufträge). Kasten und wachsende Felder gelten darum ebenfalls nur ab
+Dateistand 2.x. Nachgemessen: Der Bestand hat keinen Überlauf, den der
+eingecheckte Renderer nicht auch hat. **Vorbestehend** und nicht behoben: je eine
+überlaufende Seite 1 im Lernprompt von `5.4.2_…` (54 px) und von
+`1.1.1_ausbildung_erfassen_zeigen` (6 px) sowie Seite 1 des Lernbegleiters
+derselben Einheit (17 px).
+
+**Gemessen:** Pilot 11 Seiten ohne Überlauf; Seite 1 des Lernbegleiters hat noch
+rund 11 mm Reserve und ist damit die engste Seite. Check BP7 im Skript.
+
+**Offen:** Leerraum bleibt auf der ersten Plus-Seite des Lernprompts und auf der
+Plus-Seite des Lernbegleiters. Der Pilot liegt weiter in einer publizierten
+Einheit, uncommittet.
+
+**Rückgängig:** `git revert` des Commits; die zwei Felder aus den Pilot-Dateien
+entfernen.
+
 ## E43 — Präsentation: je Spur ein Knopf, Audio und Video spielen im Deck (Pietro, 07.10.2026)
 
 **Anlass:** In der Präsentation von `1.3.1_konsum_verantworten_v42` schienen die
@@ -1964,3 +2160,55 @@ ZIP per Doppelklick (`file://`, ob der Player von SRF dort lädt); Wiedergabe mi
 Ton; Produktions-Domain und Schulnetz.
 
 **Rückgängig:** `git revert` des Commits.
+
+## E44 — KI-Toolbox: 14 Einheiten des 1. Lehrjahrs im Stand 2.0.0, Skill nachgeschärft, live ohne Entwurfs-Schranke (Pietro, 07.10.2026)
+
+**Anlass.** Lauf `docs/cloud-run/prompts/ki-toolbox-lehrjahr-1.md`: Die Skill
+`hko-ki-komplement` sollte die Toolbox für alle Einheiten des 1. Lehrjahrs
+schreiben. Nach Pilot und zwei Sonden zeigten sich dieselben Mängel in allen drei
+(Bericht §4, M1–M15).
+
+**Entschieden.**
+
+1. **Die Skill wird angepasst, nicht die Einheiten von Hand.** Was geändert wurde,
+   steht vollständig im Bericht §4b (M1–M15, N1–N13, H1–H14) — u. a. Aufbau des
+   Basis-Auftrags (Prompt 1 stellt drei Fragen, Prompt 2 zeigt auf die schwächste
+   Antwort), Grundsatz «Die KI kennt die Einheit nicht», feste Sprachzeile, feste
+   Technik-Titel, KN-Brücke nur mit dem, was jede KN-Form verlangt, «ohne KI» nur,
+   wenn `kn.json` es für jede Form sagt, Richtwerte für die engen Seiten.
+2. **Modelle.** Opus erzeugt; Sonnet liest gegen (auch die erste Lesung), kürzt und
+   korrigiert.
+3. **Sperrwort-Ausnahme nur für die Einheit über KI.** `check-ki-toolbox.mjs`
+   lässt «Halluzination» in `1.2.2_ki_kompetenznachweis_vorbereiten` zu
+   (`SPERRWORT_AUSNAHMEN`). «Absender», «Stufe», «Ich-Form» bleiben gesperrt und
+   werden in den Toolboxen umschrieben.
+4. **Sichtbarkeit.** Kein `entwurf_komponenten` — die Toolbox der zwölf
+   publizierten Einheiten und des Pilots geht mit diesem Stand live. Bei
+   `1.1.1_konflikt_kommunizieren`, `1.1.1_rechte_verstehen_nutzen` und
+   `1.2.2_ki_kompetenznachweis_vorbereiten` ersetzt sie die Fassung 1.x.
+5. **Nicht behoben, bewusst:** der KN-Fall in der Musterlösung von
+   `1.1.1_rechte_verstehen_nutzen › herausforderung_C.json` — die 3er-Sets werden
+   später neu erzeugt.
+
+**Stand.** 2.0.0 tragen 15 Einheiten (Pilot + 14). 1.x tragen noch
+`1.1.1_lehrvertrag_orientieren`, `1.1.2_unterlagen_ordnen`,
+`1.3.1_konsum_verantworten` (archiviert), `3.2.1_ernaehrung_nachhaltig_gestalten`,
+`3.2.1_wahre_kosten`, `5.4.2_internationale_entscheide_wirken_4j`. Ohne Toolbox:
+`3.2.1_konsumfolgen_beurteilen`, `3.3.1_kaufvertrag_beurteilen`. Offen sind
+`3.2.1_konsumfolgen_beurteilen`, `3.2.1_wahre_kosten`, `3.3.1_kaufvertrag_beurteilen`
+(Prompt: `docs/cloud-run/prompts/ki-toolbox-lehrjahr-1-rest.md`) und die
+Überarbeitung des Pilots (Gegenleser «zurück», Bericht §3.1).
+
+**Geprüft.** Je Einheit `check-ki-toolbox` GRUEN, Export 2 · 3 · 3 · 3 Seiten,
+`messen-v42` ohne Überlauf, bei v4.2 `check-all` ohne Treffer in den vier Dateien;
+Gegenleser am Schluss bei allen 14 «in Ordnung». Lokaler Produktions-Build
+(`npm run build`) läuft durch.
+
+**Nicht geprüft:** die angemeldeten Routen im Browser (KI-Tab der Arbeitsansicht,
+ZIP mit den Word-Dateien der Toolbox).
+
+**Bericht:** `docs/cloud-run/laeufe/2026-10-07-ki-toolbox-lehrjahr-1/BERICHT.md`
+(Reststellen je Einheit in §3).
+
+**Rückgängig:** `git revert` des Commits; einzelne Toolbox verbergen mit
+`"entwurf_komponenten": ["ki-fluency"]` in `set.json` und Index-Bau.

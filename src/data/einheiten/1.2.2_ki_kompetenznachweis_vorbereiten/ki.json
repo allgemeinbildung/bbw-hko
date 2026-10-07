@@ -12,20 +12,20 @@
   "modul_titel": "Ich lerne effektiv und setze meine Ressourcen effizient ein",
   "thema": "T1",
   "lehrgang": "EFZ_3J",
-  "version": "1.0.0",
-  "erstellt_am": "2026-06-18",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
   "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
   "nrlp_anker": {
-    "thema_text": "T1 — Ins Berufsleben einsteigen: KI-Werkzeuge gezielt für die eigene Vorbereitung einsetzen, ihre Ergebnisse selbst überprüfen und begründet entscheiden, wo man der KI vertraut und wo nicht.",
+    "thema_text": "Ins Berufsleben einsteigen: KI-Werkzeuge gezielt für die Vorbereitung auf einen Kompetenznachweis einsetzen und ihre Ergebnisse selbst prüfen.",
     "gesellschaft_details": [
       {
         "aspekt": "Technologische und digitale Transformation",
-        "detail": "Sprachmodelle (LLM) und wie sie funktionieren; Halluzination und erfundene Quellen/URLs; gezieltes Prompten als Werkzeug fürs Verstehen statt als Antwort-Automat.",
+        "detail": "Sinnvolle Anwendung von Tools der künstlichen Intelligenz, zielgerichtetes Prompten",
         "kompetenz_anker": "1.2.2"
       },
       {
         "aspekt": "Identität und Sozialisation",
-        "detail": "Selbstwirksamkeit und Verantwortung fürs eigene Lernen: entscheiden, was man der KI überlässt und was man selbst können muss, statt sich nur vorbereitet zu fühlen.",
+        "detail": "Lernstrategien, Selbstwirksamkeitsförderung",
         "kompetenz_anker": "1.2.2"
       }
     ],
@@ -35,100 +35,85 @@
     ]
   },
   "ki_leitfragen": {
-    "offen": "Was kann eine KI in Ihrer Prüfungsvorbereitung wirklich übernehmen — und welcher Schritt bleibt Ihre eigene Verantwortung?",
-    "kritisch": "Woran erkennen Sie, dass eine KI Ihnen eine erfundene Quelle, einen toten Link oder eine plausibel klingende, aber falsche Erklärung liefert?",
-    "vergleichend": "Worin unterscheidet sich Wissen, das Sie der KI abgenommen haben, von Wissen, das Sie nach dem Üben wirklich selbst erklären können?",
-    "urteilend": "Würden Sie eine KI-Zusammenfassung für Ihren Kompetenznachweis übernehmen, ohne ihre Quellen selbst geprüft zu haben — warum (nicht)?"
+    "offen": "Wobei hilft mir die KI beim Lernen, und was muss ich selbst können?",
+    "kritisch": "Woran merke ich, dass eine Antwort der KI falsch oder erfunden ist?"
   },
   "assignments": [
     {
       "key": "ki_1",
       "pattern": "ai_lernassistent",
-      "titel": "Die KI als sokratischer Lerncoach — fragen lassen statt vorsagen lassen",
-      "ziel": "Sie nutzen die KI als Coach, der Sie durch gezielte Rückfragen zum eigenen Verstehen führt, statt Ihnen fertige Antworten zu liefern — und prüfen jede Wissensaussage, bevor Sie sie übernehmen.",
-      "bezug": "Nutzt alle drei Herausforderungen: das gezielte, iterative Prompten aus Ihrem Prompt-Protokoll (A), die Quellenprüfung Ihrer KI-Recherche-Analyse (B) und den bewussten KI-Lernplan, der trennt, was Sie selbst können müssen (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: KI macht mich schneller, aber nicht automatisch kompetenter; wer KI nutzt, muss entscheiden, was er ihr überlässt und was er selbst können muss, und ihre Ergebnisse prüfen, bevor er sich darauf verlässt. Geübt wird das an der Schwelle zur KN-Szene «Drei Tage vor dem KN», in der Sie unter Zeitdruck genau diese Entscheidung treffen müssen.",
-      "auftrag": "Wählen Sie ein Teilthema Ihres kommenden Kompetenznachweises, das Sie noch nicht sicher erklären können. Beauftragen Sie die KI ausdrücklich als sokratischen Lerncoach: Sie soll Sie mit Rückfragen und kurzen Kontrollaufgaben zum Thema führen und Ihnen die Lösung erst geben, nachdem Sie selbst geantwortet haben — nicht eine fertige Zusammenfassung liefern. Arbeiten Sie das Thema im Dialog durch, halten Sie Ihre eigenen Antworten fest und markieren Sie, wo Ihr Verständnis tatsächlich gewachsen ist. Prüfen Sie jede inhaltliche Behauptung und jede Quelle, die die KI nebenbei einstreut, gegen Ihre selbstgewählte verlässliche Quelle — und entscheiden Sie am Schluss begründet, welche Erklärung Sie übernehmen und welche Sie verwerfen oder selbst nacharbeiten.",
+      "titel": "Die KI befragt meine Entscheidung",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob eine Entscheidung aus Ihrem Produkt hält.",
+      "bezug": "In Herausforderung A, B und C geht es um gezieltes Prompten, das Prüfen einer KI-Recherche und den KI-Lernplan. In allen dreien macht die KI Sie schneller, aber nicht automatisch kompetenter.",
+      "auftrag": "Ihr Produkt ist Ihr Prompt-Protokoll, Ihre KI-Recherche-Analyse oder Ihr KI-Lernplan. Die KI stellt drei Fragen zur Entscheidung, etwa wo Sie ihr vertrauen. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
       "prompt_strategie": [
-        "Geben Sie der KI eine klare Coach-Rolle: «Du bist mein Lerncoach. Frag mich zu [Thema] ab und gib mir die Lösung erst, nachdem ich geantwortet habe — erkläre nicht alles vorweg.»",
-        "Geben Sie den Kontext mit: Ihr KN-Thema, Ihr aktueller Stand und Ihr Ziel «Ich will es im KN ohne KI selbst erklären können».",
-        "Verlangen Sie zu jeder Wissensaussage, die die KI als Fakt setzt, eine prüfbare Quelle — und kündigen Sie an, dass Sie sie nachschlagen.",
-        "Fordern Sie in einem zweiten Prompt: «Stell mir eine Kontrollfrage, die zeigt, ob ich es wirklich verstanden habe, und nenne die Stelle, an der meine Erklärung noch eine Lücke hat.»"
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Lernen mit KI. Meine Entscheidung: [meine Entscheidung mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI eine Zahl oder eine Quelle, schlagen Sie die Angabe in der Quelle selbst nach. Steht sie dort nicht, übernehmen Sie sie nicht."
       ],
-      "ki_frei_vorher": "Halten Sie OHNE KI fest: was Sie zu Ihrem gewählten KN-Teilthema jetzt schon aus dem Kopf erklären können (Stichworte) und wo Ihre grösste Lücke ist — diese Lücke üben Sie im Dialog zuerst.",
+      "ki_frei_vorher": "Schreiben Sie zuerst ohne KI eine Entscheidung aus Ihrem Produkt und den Grund dazu auf. Schreiben Sie keine Namen in den Prompt.",
       "schritte": [
-        "KN-Teilthema wählen und Ihren aktuellen Wissensstand KI-frei festhalten (siehe Feld auf Seite 1).",
-        "KI mit Coach-Rolle ansetzen: Sie fragt Sie ab und gibt die Lösung erst nach Ihrer Antwort — nicht vorweg erklären.",
-        "Im Dialog antworten, nachhaken lassen und markieren, an welcher Stelle Ihr Verständnis wirklich gewachsen ist.",
-        "Jede inhaltliche Behauptung und jede Quelle der KI gegen Ihre verlässliche Quelle prüfen: stimmt sie, ist sie verzerrt oder erfunden?",
-        "Entscheiden und begründen: Welche KI-Erklärung übernehmen Sie, welche arbeiten Sie selbst nach — und was müssen Sie bis zum KN allein üben?"
+        "Schreiben Sie ohne KI eine Entscheidung aus Ihrem Produkt und den Grund dazu auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Notieren Sie nach Prompt 2, ob Ihre Entscheidung bleibt oder sich ändert."
       ],
       "guetekriterien": [
         {
-          "kriterium": "Eigenes Wissen zuerst",
-          "indikator": "Der KI-freie Wissensstand mit der markierten Lücke liegt vor, bevor der erste Prompt abgesetzt wurde."
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Entscheidung mit Grund stand vor Prompt 1 auf dem Blatt."
         },
         {
-          "kriterium": "Coach statt Antwort-Automat",
-          "indikator": "Im Dialog beantwortet die Lernende/der Lernende die Kontrollfragen selbst, bevor die KI die Lösung gibt — der Lernfortschritt ist im Protokoll markiert."
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihre Entscheidung bleibt oder sich ändert."
         },
         {
-          "kriterium": "Inhalts-Verifikation",
-          "indikator": "Jede von der KI gesetzte Wissensaussage und Quelle ist gegen die verlässliche Quelle nachgeschlagen und als korrekt, verzerrt oder erfunden markiert."
-        },
-        {
-          "kriterium": "Begründete Übernahme",
-          "indikator": "Am Schluss ist für mindestens zwei Erklärungen begründet, ob sie übernommen, nachgearbeitet oder verworfen werden."
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Zahl oder Quelle der KI ist nachgeschlagen. Hat die KI nur gefragt, gilt das als erfüllt."
         }
       ],
       "reflexion": [
-        "An welcher Stelle hat Sie eine Rückfrage der KI gemerkt, dass Sie etwas nur zu verstehen glaubten — und wie haben Sie die Lücke geschlossen?",
-        "Hat die KI eine Erklärung oder Quelle geliefert, die plausibel klang, aber bei der Prüfung nicht standhielt? Woran haben Sie es gemerkt?",
-        "Im Fachgespräch des Kompetenznachweises müssen Sie Ihr KN-Thema mündlich und ohne KI erklären und auf Nachfragen der Lehrperson reagieren. Wie hilft Ihnen das Abfragen-Lassen durch die KI, genau diese mündliche Erklär-Situation vorzubereiten — statt nur eine fertige Antwort zu besitzen?"
+        "Welche Frage der KI hat Ihre Entscheidung am meisten geprüft?",
+        "Im Kompetenznachweis begründen Sie selbst, wo Sie der KI vertrauen. Was nehmen Sie aus dieser Übung mit?"
       ]
     },
     {
       "key": "ki_2",
-      "pattern": "ai_entscheidungscoach",
-      "titel": "Die KI als Entscheidungscoach — Vertrauen und Kontrolle abwägen",
-      "ziel": "Sie nutzen die KI, um Ihre Optionen für die KN-Vorbereitung systematisch abzuwägen, und treffen trotzdem selbst die begründete Entscheidung, wo Sie der KI vertrauen und wo Sie sie kontrollieren.",
-      "bezug": "Nutzt alle drei Herausforderungen: die Erkenntnis aus dem Prompt-Protokoll, dass die Art der Frage über das Verstehen entscheidet (A), die Prüfhaltung aus Ihrer KI-Recherche-Analyse (B) und die Mit-oder-ohne-KI-Entscheidungen Ihres KI-Lernplans (C) — und wendet das Transfer-Prinzip an: KI macht mich schneller, aber nicht automatisch kompetenter; jede Entscheidung, wo die KI hilft und wo nicht, muss begründbar bleiben. Gespielt wird genau die KN-Szene «Drei Tage vor dem KN»: knappe Zeit, eine glatte KI-Liste mit einem toten Link, und der Druck, das Gelernte trotzdem selbst zu können.",
-      "auftrag": "Bringen Sie sich in die Lage der KN-Szene: Sie haben nur noch wenig Zeit bis zu Ihrem Kompetenznachweis und müssen entscheiden, was Sie der KI überlassen, was Sie nachprüfen und was Sie bewusst selbst üben. Halten Sie zuerst ohne KI Ihre eigene Entscheidung fest. Beauftragen Sie dann die KI als Entscheidungscoach: Sie soll Ihnen zu Ihrer Lage die möglichen Wege aufzeigen und je Option Vorteil, Risiko und das Spannungsfeld zwischen Effizienz und echtem Verständnis offenlegen — aber Ihnen die Entscheidung nicht abnehmen. Lassen Sie sich zu jeder Option auch das stärkste Gegenargument nennen. Prüfen Sie jede sachliche Behauptung der KI über «das bringt Ihnen im KN nichts/viel» an Ihrer Erfahrung aus den drei Herausforderungen und entscheiden Sie am Schluss selbst und begründet, welchen Weg Sie gehen.",
+      "pattern": "ai_prompt_duell",
+      "titel": "Plus: Zwei Prompts im Vergleich",
+      "ziel": "Sie vergleichen zwei Prompts und beurteilen, welcher Ihnen beim Lernen mehr zeigt.",
+      "bezug": "In Herausforderung A, B und C geht es um gezieltes Prompten, das Prüfen einer KI-Recherche und den KI-Lernplan. In allen dreien macht die KI Sie schneller, aber nicht automatisch kompetenter.",
+      "auftrag": "Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz). Wählen Sie einen Begriff der Einheit, zum Beispiel Prompt, Sprachmodell oder Selbstwirksamkeit. Ihre Erklärung geben Sie der KI zweimal, mit zwei Prompts. Bei Prompt 1 nennt die KI Lücken, bei Prompt 2 fragt sie Sie ab. Am Schluss beurteilen Sie, welcher Prompt mehr zeigte.",
       "prompt_strategie": [
-        "Geben Sie der KI die Rolle und die Lage als Kontext: «Du bist mein Entscheidungscoach. Ich habe noch drei Tage bis zum KN über [Thema], darf im KN keine KI nutzen. Zeig mir meine Optionen, entscheide aber nicht für mich.»",
-        "Verlangen Sie ein klares Format: pro Option eine Zeile mit Vorteil, Risiko und der Frage, ob sie mein eigenes Können stärkt oder ersetzt.",
-        "Fordern Sie zu jeder Option das stärkste Gegenargument: «Nenne mir, warum genau dieser Weg mich im KN scheitern lassen könnte.»",
-        "Zweiter Prompt, der auf der Optionsliste aufbaut: «Ich habe mich für Option X entschieden. Spiel die kritische Lehrperson und nenne die schwächste Stelle meiner Begründung.»"
+        "Prompt 1: «Thema: Lernen mit KI. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir höchstens zwei Lücken. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, in einem neuen Chat: «Du bist mein Lerncoach. Thema: Lernen mit KI. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir die Lösung erst nach meiner Antwort. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie mindestens eine Lücke oder Lösung der KI in Ihren Notizen zu Leitfrage 1 nach. Fehlt sie dort, fragen Sie die Lehrperson."
       ],
-      "ki_frei_vorher": "Notieren Sie OHNE KI: Ihre erste eigene Entscheidung, wie Sie die verbleibende Zeit aufteilen (was mit KI, was nachprüfen, was bewusst allein), mit einem Satz Begründung pro Punkt.",
+      "ki_frei_vorher": "Erklären Sie zuerst ohne KI einen Begriff der Einheit in drei Sätzen. Schreiben Sie keine Namen in den Prompt.",
       "schritte": [
-        "Ihre Ausgangslage und Ihre erste eigene Entscheidung KI-frei festhalten.",
-        "KI als Entscheidungscoach ansetzen: Optionen mit Vorteil, Risiko und Gegenargument im vorgegebenen Format verlangen.",
-        "Jede sachliche Behauptung der KI über Nutzen und Risiko an Ihrer Erfahrung aus A, B und C prüfen — was stimmt, was ist zu pauschal?",
-        "Ihre Entscheidung treffen oder anpassen und begründen, warum dieser Weg Effizienz und eigenes Können am besten ausbalanciert.",
-        "Die KI als kritische Lehrperson Ihre Begründung angreifen lassen und das schwächste Argument selbst nachbessern — übernehmen oder zurückweisen, mit Begründung."
+        "Erklären Sie ohne KI einen Begriff der Einheit in drei Sätzen.",
+        "Notieren Sie zu Prompt 1 die Lücken, die die KI nennt.",
+        "Beantworten Sie in einem neuen Chat mit Prompt 2 die drei Fragen.",
+        "Schlagen Sie mindestens eine Lücke oder Lösung der KI in Ihren Notizen nach.",
+        "Notieren Sie, welcher Prompt Ihnen mehr gezeigt hat und warum."
       ],
       "guetekriterien": [
         {
-          "kriterium": "Eigene Entscheidung zuerst",
-          "indikator": "Die KI-freie Erstentscheidung mit Begründung liegt vor, bevor der erste Prompt abgesetzt wurde."
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Erklärung stand vor Prompt 1 auf dem Blatt."
         },
         {
-          "kriterium": "Optionen statt Vorgabe",
-          "indikator": "Die KI hat mindestens drei Optionen mit Vorteil, Risiko und Gegenargument geliefert; die Entscheidung trifft die Lernende/der Lernende selbst."
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Mindestens eine Lücke oder Lösung der KI haben Sie in Ihren Notizen nachgeschlagen."
         },
         {
-          "kriterium": "Behauptungs-Verifikation",
-          "indikator": "Jede sachliche Nutzen-/Risiko-Behauptung der KI ist an der eigenen Erfahrung aus A/B/C geprüft und als tragfähig oder zu pauschal markiert."
-        },
-        {
-          "kriterium": "Zielkonflikt benannt",
-          "indikator": "Die finale Begründung benennt das Spannungsfeld zwischen Effizienz und echtem Verständnis und wägt beide Pole ab, statt eine Seite zu streichen."
+          "kriterium": "Begründet verglichen",
+          "indikator": "Sie haben notiert, welcher Prompt Ihnen mehr gezeigt hat und warum."
         }
       ],
       "reflexion": [
-        "Welche Option hat Sie am meisten in Versuchung geführt, der KI zu viel zu überlassen — und was hat Sie davon abgehalten?",
-        "Hat die KI eine Behauptung über Nutzen oder Risiko gemacht, die zu pauschal war? Woran haben Sie gemerkt, dass Sie sie nicht einfach übernehmen dürfen?",
-        "Wie übertragen Sie diese Art abzuwägen auf die nächste Situation, in der Ihnen KI eine bequeme Abkürzung anbietet — im Betrieb, in einem anderen Fach oder im Alltag?"
+        "Bei welchem Prompt mussten Sie mehr selbst denken?",
+        "Wo hat die KI etwas gesagt, das nicht zu Ihren Notizen passt?",
+        "Im Kompetenznachweis begründen Sie selbst, wo Sie der KI vertrauen. Welche Art zu fragen hilft Ihnen am meisten?"
       ]
     }
   ]

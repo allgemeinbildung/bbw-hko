@@ -11,7 +11,8 @@ import {
   TabStopType, TabStopPosition, ImageRun,
 } from 'docx'
 
-import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, LernpromptJson, LernbegleiterJson } from './types'
+import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, LernpromptJson, LernbegleiterJson, LernpromptTechnik, LernbegleiterStrategie } from './types'
+import { dimensionLabel, istBasisAuftrag, istBasisKarte, istBasisTechnik, istNeueFassung, knTypFuerLernende, leitfragenListe, promptZeile, skName } from './ki-toolbox'
 import type { DossierJson, DossierRecherche, DossierScaffold } from '../../components/einheiten/docs/DocEbaDossier'
 import { skNameByNr } from '../sk-labels'
 import { lookupSprachmodus, unitSprachmodusIds, rezeptionFirst, kompetenzSprachmodusDetails, HOERVERSTAENDNIS_HINWEIS } from './sprachfoerderung'
@@ -1959,46 +1960,37 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
   children.push(new Paragraph({
     children: [
       badgeRun('KI ' + num, akzent),
-      new TextRun({ text: '   KI-Toolbox · formativ', color: LP_AKZENT, bold: true, size: 14 }),
+      new TextRun({ text: '   KI-Toolbox · Auftrag', color: LP_AKZENT, bold: true, size: 14 }),
     ],
     spacing: { after: 120 },
   }))
   children.push(h(docTitel, 'title'))
-  if (a.pattern) children.push(p(a.pattern, { run: { color: akzent, bold: true, size: 16, font: 'Consolas' } }))
   if (a.ziel) children.push(callout('Ziel', a.ziel, akzent, light))
   if (a.bezug) { children.push(spacer(60)); children.push(callout('Bezug', a.bezug, akzent, light)) }
 
-  // Lehrplan-Bezug (nRLP-Anker) + Leitfragen — am Anfang (parallel zur Preview-Seite 1).
+  // Kompetenzen + Leitfragen. Volle Dichte: am Anfang (parallel zur Preview-Seite 1);
+  // Basis-Form: am Schluss, nach der Reflexion (wie in DocKi).
   const anker = ki.nrlp_anker
-  const lf = ki.ki_leitfragen
+  const leitfragen = leitfragenListe(ki.ki_leitfragen)
   const skTexte = anker?.schluesselkompetenzen_texte || []
-  if (anker?.thema_text || skTexte.length) {
-    children.push(...sectionHead('Lehrplan-Bezug', 'Worum es geht', akzent))
-    if (anker?.thema_text) children.push(p(anker.thema_text, { run: { size: 18 }, spacing: { after: 80 } }))
-    if (skTexte.length) {
-      children.push(p('SCHLÜSSELKOMPETENZEN DIESER EINHEIT', { run: { color: akzent, bold: true, size: 13 }, spacing: { after: 20 } }))
-      skTexte.forEach((s) => {
-        const [code, ...rest] = s.split(' — ')
+  const basis = istNeueFassung(ki) && istBasisAuftrag(a)
+  const rahmen = () => {
+    if (anker?.thema_text || skTexte.length) {
+      children.push(...sectionHead('Kompetenzen', 'Das üben Sie', akzent))
+      if (anker?.thema_text) children.push(p(anker.thema_text, { run: { size: 18 }, spacing: { after: 80 } }))
+      if (skTexte.length) children.push(p(skTexte.map(skName).join(' · '), { run: { size: 16, color: COLOR.inkSoft }, spacing: { after: 30 } }))
+    }
+    if (leitfragen.length) {
+      children.push(...sectionHead('Leitfragen', 'Behalten Sie diese Fragen im Kopf', akzent))
+      leitfragen.forEach((v) => {
         children.push(new Paragraph({
-          children: [
-            new TextRun({ text: code, bold: true, color: akzent, size: 16 }),
-            ...(rest.length ? [new TextRun({ text: ' — ' + rest.join(' — '), size: 16, color: COLOR.inkSoft })] : []),
-          ],
+          children: [new TextRun({ text: '•  ', bold: true, color: akzent, size: 16 }), new TextRun({ text: v, size: 16 })],
           spacing: { after: 30 },
         }))
       })
     }
   }
-  if (lf) {
-    children.push(...sectionHead('Leitfragen', 'Behalten Sie diese Fragen im Kopf', akzent))
-    ;([['Offen', lf.offen], ['Kritisch', lf.kritisch], ['Vergleichend', lf.vergleichend], ['Urteilend', lf.urteilend]] as Array<[string, string | undefined]>).forEach(([k, v]) => {
-      if (!v) return
-      children.push(new Paragraph({
-        children: [new TextRun({ text: k + ': ', bold: true, color: akzent, size: 16 }), new TextRun({ text: v, size: 16 })],
-        spacing: { after: 30 },
-      }))
-    })
-  }
+  if (!basis) rahmen()
 
   if (a.auftrag) {
     children.push(...sectionHead('01 · Auftrag', 'Das ist Ihre Aufgabe', akzent))
@@ -2010,16 +2002,16 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
     children.push(...schreibfeld(17))
   }
   if (a.prompt_strategie?.length) {
-    children.push(pageBreak())
-    children.push(...sectionHead('02 · Prompt-Strategie', 'So sprechen Sie mit der KI', akzent))
-    a.prompt_strategie.forEach((s, i) => {
-      children.push(new Paragraph({
-        children: [
-          new TextRun({ text: (i + 1) + '. ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
-          new TextRun({ text: s, size: 20 }),
-        ],
-        spacing: { after: 60 }, indent: { left: 200 },
-      }))
+    if (!basis) children.push(pageBreak())
+    children.push(...sectionHead('02 · Prompts', 'So sprechen Sie mit der KI', akzent))
+    a.prompt_strategie.forEach((s) => {
+      const z = istNeueFassung(ki) ? promptZeile(s) : null
+      if (z) {
+        children.push(p(z.vor, { run: { bold: true, size: 20 }, spacing: { before: 60, after: 20 }, keepNext: true }))
+        children.push(promptBox(z.prompt))
+      } else {
+        children.push(p(s, { run: { size: 20 }, spacing: { before: 60, after: 60 } }))
+      }
     })
   }
 
@@ -2036,7 +2028,8 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
     })
   }
   if (a.guetekriterien?.length) {
-    children.push(...sectionHead('04 · Gütekriterien', 'Daran erkennen Sie gute Arbeit', akzent))
+    if (basis) children.push(pageBreak())
+    children.push(...sectionHead('04 · Kontrolle', 'Daran erkennen Sie gute Arbeit', akzent))
     a.guetekriterien.forEach((g) => {
       children.push(new Paragraph({
         children: [
@@ -2053,19 +2046,20 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
     children.push(...schreibfeld(31))
   }
   if (a.reflexion?.length) {
-    children.push(pageBreak())
+    if (!basis) children.push(pageBreak())
     children.push(...sectionHead('05 · Reflexion', 'Denken Sie darüber nach', akzent))
     a.reflexion.forEach((r, i) => {
       children.push(new Paragraph({
         children: [
-          new TextRun({ text: 'R' + (i + 1) + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
+          new TextRun({ text: (i + 1) + '.  ', bold: true, color: akzent, size: 20 }),
           new TextRun({ text: r, size: 20 }),
         ],
         spacing: { before: 100, after: 40 }, keepNext: true,
       }))
-      children.push(...schreibfeld(29))
+      children.push(...schreibfeld(basis ? 20 : 29))
     })
   }
+  if (basis) rahmen()
 
   return new Document({
     creator: 'HKO Renderer',
@@ -2099,11 +2093,13 @@ export function buildLernprompt({ lernprompt, abteilung, logoPng = null }: Build
   children.push(h('Prompting lernen', 'title'))
   if (lp.thema_kontext) children.push(p(lp.thema_kontext, { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 120 } }))
 
-  ;(lp.techniken || []).forEach((t) => {
+  const techniken = lp.techniken || []
+  const titelVon = (k: string) => techniken.find((t) => t.key === k)?.titel || k
+  const technik = (t: LernpromptTechnik) => {
     children.push(...sectionHead('Technik', t.titel || '', akzent))
     if (t.erklaerung) children.push(p(t.erklaerung, { run: { size: 19 } }))
     if (t.thema_bezug) children.push(p(t.thema_bezug, { run: { italics: true, color: COLOR.inkSoft, size: 17 } }))
-    if (t.beispiel_basis) { children.push(microLabel('Beispiel · Basis', akzent)); children.push(promptBox(t.beispiel_basis)) }
+    if (t.beispiel_basis) { children.push(microLabel(t.beispiel_fortgeschritten ? 'Beispiel · Basis' : 'Fertiger Prompt', akzent)); children.push(promptBox(t.beispiel_basis)) }
     if (t.beispiel_fortgeschritten) { children.push(microLabel('Beispiel · fortgeschritten', akzent)); children.push(promptBox(t.beispiel_fortgeschritten)) }
     if (t.warnung) { children.push(spacer(40)); children.push(callout('Achtung', t.warnung, WARN_AKZENT, WARN_LIGHT)) }
     const bk = t.baukasten
@@ -2120,19 +2116,37 @@ export function buildLernprompt({ lernprompt, abteilung, logoPng = null }: Build
       })
     }
     children.push(spacer(60))
-  })
+  }
 
   const stack = (label: string, s: typeof lp.stacking_seite_1) => {
     if (!s) return
-    children.push(...sectionHead(label, 'Prompts stapeln', akzent))
-    if (s.technik_keys?.length) children.push(p(s.technik_keys.join(' · '), { run: { color: akzent, bold: true, size: 14 } }))
+    children.push(...sectionHead(label, 'Zwei Prompts nacheinander', akzent))
+    if (s.technik_keys?.length) children.push(p(s.technik_keys.map(titelVon).join(' · '), { run: { color: akzent, bold: true, size: 14 } }))
     if (s.logik_und_ziel) children.push(p(s.logik_und_ziel, { run: { size: 18, color: COLOR.inkSoft } }))
     if (s.prompt_1) { children.push(microLabel('Prompt 1', akzent)); children.push(promptBox(s.prompt_1)) }
     if (s.prompt_2) { children.push(microLabel('Prompt 2', akzent)); children.push(promptBox(s.prompt_2)) }
   }
-  children.push(pageBreak())
-  stack('Stacking · 1', lp.stacking_seite_1)
-  stack('Stacking · 2', lp.stacking_seite_2)
+  // Basis-Form (wie DocLernprompt): der erste Block ist kurz → Technik 1+2 und
+  // ihr Nachfragen zuerst, dann als eigene Seite die weiteren Techniken.
+  if (istNeueFassung(lernprompt) && techniken.length > 2 && techniken.slice(0, 2).every(istBasisTechnik)) {
+    techniken.slice(0, 2).forEach(technik)
+    stack('Nachfragen · 1', lp.stacking_seite_1)
+    const dlg = lp.beispiel_dialog
+    if (dlg?.frage || dlg?.antwort) {
+      children.push(...sectionHead('Beispiel', 'So sieht das aus', akzent))
+      if (dlg.frage) { children.push(microLabel('Das habe ich geschrieben', akzent)); children.push(promptBox(dlg.frage)) }
+      if (dlg.antwort) { children.push(microLabel('Das hat die KI geantwortet', akzent)); children.push(p(dlg.antwort, { run: { size: 18 } })) }
+      if (dlg.pruefung) { children.push(microLabel('Das habe ich geprüft', akzent)); children.push(p(dlg.pruefung, { run: { size: 18 } })) }
+    }
+    children.push(pageBreak())
+    techniken.slice(2).forEach(technik)
+    stack('Nachfragen · 2', lp.stacking_seite_2)
+  } else {
+    techniken.forEach(technik)
+    children.push(pageBreak())
+    stack('Nachfragen · 1', lp.stacking_seite_1)
+    stack('Nachfragen · 2', lp.stacking_seite_2)
+  }
 
   if (lp.prompt_vorlage) {
     children.push(spacer(120))
@@ -2192,33 +2206,48 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
     })
   }
 
-  if (lb.strategie_karten?.length) {
+  // Basis-Form (wie DocLernbegleiter): Karte 1+2 kurz → die übrigen Karten folgen
+  // als «Plus» nach der KN-Seite.
+  const alleKarten = lb.strategie_karten || []
+  const neu = istNeueFassung(lernbegleiter)
+  const basisForm = neu && alleKarten.length > 2 && alleKarten.slice(0, 2).every(istBasisKarte)
+  const notizreihe = (labels: string[]) => {
+    labels.forEach((l) => { children.push(microLabel(l, akzent)); children.push(...schreibfeld(8)) })
+  }
+  const karte = (s: LernbegleiterStrategie, mitNotiz = false) => {
+    children.push(p(s.technik || '', { run: { bold: true, color: KI_AKZENT, size: 20 }, spacing: { before: 100, after: 20 }, keepNext: true }))
+    if (s.wann) children.push(p('Wann: ' + s.wann, { run: { size: 18, color: COLOR.inkSoft } }))
+    if (s.prompt_basis) { children.push(microLabel(s.prompt_fortgeschritten ? 'Prompt · Basis' : 'Fertiger Prompt', akzent)); children.push(promptBox(s.prompt_basis)) }
+    if (s.prompt_fortgeschritten) { children.push(microLabel('Prompt · fortgeschritten', akzent)); children.push(promptBox(s.prompt_fortgeschritten)) }
+    if (s.warnung) { children.push(spacer(40)); children.push(callout('Achtung', s.warnung, WARN_AKZENT, WARN_LIGHT)) }
+    if (mitNotiz) notizreihe(['Das hat die KI gesagt', 'Das stimmt', 'Das stimmt nicht'])
+  }
+  if (neu && lb.begriffe?.length) {
+    children.push(...sectionHead('Meine Begriffe', 'Kann ich das erklären?', akzent))
+    children.push(p(lb.begriffe.map((b) => '☐ ' + b).join('    '), { run: { size: 18 }, spacing: { after: 80 } }))
+  }
+  if (alleKarten.length) {
     children.push(...sectionHead('Strategien', 'So lernen Sie mit der KI', akzent))
-    lb.strategie_karten.forEach((s) => {
-      children.push(p(s.technik || '', { run: { bold: true, color: KI_AKZENT, size: 20 }, spacing: { before: 100, after: 20 }, keepNext: true }))
-      if (s.wann) children.push(p('Wann: ' + s.wann, { run: { size: 18, color: COLOR.inkSoft } }))
-      if (s.prompt_basis) { children.push(microLabel('Prompt · Basis', akzent)); children.push(promptBox(s.prompt_basis)) }
-      if (s.prompt_fortgeschritten) { children.push(microLabel('Prompt · fortgeschritten', akzent)); children.push(promptBox(s.prompt_fortgeschritten)) }
-      if (s.warnung) { children.push(spacer(40)); children.push(callout('Achtung', s.warnung, WARN_AKZENT, WARN_LIGHT)) }
-    })
+    if (basisForm) alleKarten.slice(0, 2).forEach((s) => karte(s, true))
+    else alleKarten.forEach((s) => karte(s))
   }
 
   if (lb.kn_typ_tracks?.length) {
     children.push(pageBreak())
-    children.push(...sectionHead('KN-Typen', 'Üben für Ihren Kompetenznachweis', akzent))
+    children.push(...sectionHead('Kompetenznachweis', 'Üben für Ihren Kompetenznachweis', akzent))
     lb.kn_typ_tracks.forEach((t) => {
-      children.push(p(t.label || '', { run: { bold: true, color: KI_AKZENT, size: 19 }, spacing: { before: 100, after: 20 }, keepNext: true }))
+      children.push(p(knTypFuerLernende(t.typ, t.label, lernbegleiter.lehrgang), { run: { bold: true, color: KI_AKZENT, size: 19 }, spacing: { before: 100, after: 20 }, keepNext: true }))
       if (t.uebungsfokus) children.push(p(t.uebungsfokus, { run: { size: 18, color: COLOR.inkSoft } }))
       if (t.prompt) children.push(promptBox(t.prompt))
     })
   }
 
   if (lb.rubrik_fokus?.length) {
-    children.push(...sectionHead('Rubrik-Fokus', 'Worauf es im KN ankommt', akzent))
+    children.push(...sectionHead('Kriterien', 'Worauf es im Kompetenznachweis ankommt', akzent))
     lb.rubrik_fokus.forEach((r) => {
       children.push(new Paragraph({
         children: [
-          new TextRun({ text: (r.dimension || '') + '  ', bold: true, color: akzent, size: 18 }),
+          new TextRun({ text: dimensionLabel(r.dimension) + '  ', bold: true, color: akzent, size: 18 }),
           ...(r.kriterien?.length ? [new TextRun({ text: '— ' + r.kriterien.join(' · '), size: 16, color: COLOR.inkMute })] : []),
         ],
         spacing: { before: 80, after: 20 },
@@ -2229,7 +2258,7 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
 
   if (lb.integritaet_warnung) {
     children.push(spacer(80))
-    children.push(callout('Fairness & Integrität', lb.integritaet_warnung, 'DC2626', 'FEF2F2'))
+    children.push(callout('Fairness', lb.integritaet_warnung, 'DC2626', 'FEF2F2'))
   }
 
   if (lb.selbstcheck?.length) {
@@ -2243,6 +2272,14 @@ export function buildLernbegleiter({ lernbegleiter, abteilung, logoPng = null }:
         spacing: { after: 40 }, indent: { left: 200 },
       }))
     })
+  }
+
+  if (basisForm) {
+    children.push(...sectionHead('Nach dem Üben', 'Das halte ich fest', akzent))
+    notizreihe(['Mein Übungsfall', 'Das konnte ich', 'Das übe ich noch'])
+    children.push(pageBreak())
+    children.push(...sectionHead('Plus', 'Weitere Strategien', akzent))
+    alleKarten.slice(2).forEach((s) => karte(s))
   }
 
   return new Document({

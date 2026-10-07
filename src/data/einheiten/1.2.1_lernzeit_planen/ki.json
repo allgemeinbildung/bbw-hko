@@ -1,0 +1,129 @@
+{
+  "id": "1.2.1_lernzeit_planen_ki",
+  "set_ref": "1.2.1_lernzeit_planen_set",
+  "prinzip_ref": "1.2.1_lernzeit_planen_prinzip",
+  "kn_ref": "1.2.1_lernzeit_planen_kn",
+  "anchored_situations": [
+    "1.2.1_lernzeit_planen_hf_A",
+    "1.2.1_lernzeit_planen_hf_B"
+  ],
+  "modul": "1.2",
+  "modul_titel": "Ins Berufsleben einsteigen — effektiv lernen und planen",
+  "thema": "T1",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Ins Berufsleben einsteigen: Ich lerne effektiv und setze meine Ressourcen effizient ein.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Arbeitserleichternde Nutzung",
+        "kompetenz_anker": "1.2.1"
+      },
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Sinnvolle Anwendung von Tools der künstlichen Intelligenz, zielgerichtetes Prompten",
+        "kompetenz_anker": "1.2.2"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Lernstrategien, Selbstwirksamkeitsförderung",
+        "kompetenz_anker": "1.2.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK2 — Ziele setzen und anpassen",
+      "SK4 — In Teams arbeiten",
+      "SK6 — Standpunkte begründen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI beim Planen und Lernen – und wobei nicht?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI nicht stimmt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Drei Fragen zu meiner Notiz",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob Ihre Notiz klar ist.",
+      "bezug": "In Heft A planen Sie Ihre Woche mit Reserve, in Heft B verarbeiten Sie den Stoff selbst. In beiden gilt, dass Werkzeuge und andere Menschen helfen, Ihnen die Arbeit aber nicht abnehmen.",
+      "auftrag": "Nehmen Sie Ihre Anpassungsnotiz aus Heft A oder Ihre Lernstand-Notiz aus Heft B. Die KI (künstliche Intelligenz) stellt Ihnen dazu drei Fragen, und Sie antworten. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Zeit planen und wirksam lernen. Hier ist meine Notiz: [meine Notiz]. Stell mir dazu drei Fragen, eine nach der anderen. Schreib meine Notiz nicht neu. Gib mir keinen Rat. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am wenigsten klar? Stell mir dazu eine letzte Frage. Gib mir keinen Rat. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Begriff oder eine Regel, schlagen Sie im Heft oder im Lehrmittel nach. Steht die Angabe dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie ohne KI eine Frage auf, die Sie zu Ihrer Notiz erwarten. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie ohne KI eine Frage auf, die Sie zu Ihrer Notiz erwarten.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, was an Ihrer Notiz bleibt und was sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre erwartete Frage stand vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie entscheiden, was an der Notiz bleibt und was sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Begriff und jede Regel der KI haben Sie nachgeschlagen. Fragt sie nur, ist das erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI haben Sie nicht erwartet?",
+        "Im Kompetenznachweis haben Sie keine KI. Welche Frage stellen Sie sich dann selbst?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die KI widerspricht meinem Entscheid",
+      "ziel": "Sie prüfen an zwei Einwänden der KI, ob Ihr Entscheid mit seinem Grund hält.",
+      "bezug": "In Heft A planen Sie Ihre Woche mit Reserve, in Heft B verarbeiten Sie den Stoff selbst. In beiden gilt, dass Werkzeuge und andere Menschen helfen, Ihnen die Arbeit aber nicht abnehmen.",
+      "auftrag": "Ihr Entscheid steht in Heft A (so viel Reserve lasse ich) oder in Heft B (das verarbeite ich selbst). Die KI (künstliche Intelligenz) nennt zwei Einwände gegen Ihren Entscheid. Ein Einwand ist, was jemand dagegen sagt. Sie prüfen beide Einwände und sagen, ob Ihr Entscheid bleibt. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist anderer Meinung als ich. Thema: Zeit planen und wirksam lernen. Mein Entscheid mit Grund: [mein Entscheid mit Grund]. Nenne mir zwei Einwände dagegen. Schreib je Einwand, welche Regel fürs Planen oder Lernen dahintersteht. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach dem Nachschlagen: «Ich antworte auf den Einwand, der für mich mehr zählt: [meine Antwort]. Stell mir dazu eine Frage. Sag nicht, ob ich recht habe. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie jede Regel der KI im Lehrmittel nach (Kap. 20.5 und 20.6). Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Entscheid mit Grund ohne KI in einem Satz auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Entscheid mit Grund ohne KI in einem Satz auf.",
+        "Holen Sie mit Prompt 1 zwei Einwände der KI.",
+        "Schlagen Sie jede Regel der KI im Lehrmittel nach.",
+        "Antworten Sie mit Prompt 2 auf den Einwand, der für Sie mehr zählt.",
+        "Notieren Sie, ob Ihr Entscheid bleibt oder sich ändert, und warum."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Entscheid mit Grund stand vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Regel der KI haben Sie im Lehrmittel nachgeschlagen."
+        },
+        {
+          "kriterium": "Einwand gewichtet",
+          "indikator": "Sie sagen selbst, welcher Einwand mehr zählt, und antworten darauf."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie notieren, ob Ihr Entscheid bleibt oder sich ändert, und warum."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand der KI hat Sie überrascht?",
+        "Wo war die KI ungenau oder falsch, und woran haben Sie es gemerkt?",
+        "Im Kompetenznachweis haben Sie keine KI. Welchen Einwand bedenken Sie dann selbst?"
+      ]
+    }
+  ]
+}

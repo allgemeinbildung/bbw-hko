@@ -1,0 +1,118 @@
+{
+  "id": "1.1.1_einstieg_interview_ki",
+  "set_ref": "1.1.1_einstieg_interview_set",
+  "prinzip_ref": "1.1.1_einstieg_interview_prinzip",
+  "kn_ref": "1.1.1_einstieg_interview_kn",
+  "anchored_situations": [
+    "1.1.1_einstieg_interview_hf_A",
+    "1.1.1_einstieg_interview_hf_B"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ich finde mich in meiner Ausbildung zurecht und kommuniziere konstruktiv",
+  "thema": "T1",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Ins Berufsleben einsteigen: Ich übernehme eine neue Rolle im Betrieb, in der Schule und in den überbetrieblichen Kursen.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Soziale Rollen, Rollenkonflikte",
+        "kompetenz_anker": "1.1.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK4 — In Teams arbeiten",
+      "SK6 — Standpunkte begründen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn ich über ein Gespräch nachdenke?",
+    "kritisch": "Was weiss die KI über mein Interview nicht, obwohl sie sicher klingt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Die KI befragt mich",
+      "ziel": "Sie beantworten drei Fragen der KI zu Ihrem Satz zur Methode und entscheiden, ob er bleibt.",
+      "bezug": "In Herausforderung A geht es um das Interview mit Fragenkatalog, in B um das Erzählen lassen. In beiden gilt der Satz «Wer fragt, entscheidet mit, was überhaupt gesagt werden kann».",
+      "auftrag": "Ihre Methode ist die Art, wie Sie gefragt haben: Fragenkatalog oder erzählen lassen. Die KI stellt Ihnen drei Fragen zu Ihrem Satz zur Methode. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: ein Interview in der Klasse. Mein Satz zu meiner Methode: [mein Satz zur Methode]. Stell mir dazu drei Fragen, eine nach der anderen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich ändern soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Fachbegriff, schlagen Sie ihn im Lehrmittel nach (Kap. 16.4, 19.2). Steht er dort nicht, übernehmen Sie ihn nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie einen Satz: Er nennt Ihre Methode und sagt, was sie sichtbar gemacht und verdeckt hat. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie ohne KI Ihren Satz zur Methode auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Notieren Sie nach Prompt 2, ob Ihr Satz bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Satz zur Methode stand vor dem ersten Prompt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihr Satz bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Fachbegriff der KI haben Sie nachgeschlagen. Hat sie nur gefragt, gilt das als erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Sie am meisten zum Nachdenken gebracht?",
+        "Im Kompetenznachweis begründen Sie selbst, was eine Methode sichtbar macht und verdeckt. Was nehmen Sie mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die KI vertritt die andere Methode",
+      "ziel": "Sie prüfen, welche Einwände der KI gegen Ihre Methode für Ihr Interview stimmen und welche nicht.",
+      "bezug": "Herausforderung A fragt mit Fragenkatalog, B lässt erzählen. In beiden gilt der Satz «Wer fragt, entscheidet mit, was überhaupt gesagt werden kann».",
+      "auftrag": "Sie haben mit Fragenkatalog gefragt oder erzählen lassen; das ist Ihre Methode. Die KI vertritt jetzt die andere Methode und nennt drei Einwände gegen Ihre. Ein Einwand ist, was die andere Seite dagegen sagt. Sie entscheiden, welcher Einwand für Ihr Interview stimmt. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Thema: ein Interview, um eine Person aus der Klasse vorzustellen. Es gibt zwei Methoden: fragen mit Fragenkatalog oder erzählen lassen. Das sage ich zu meiner Methode: [meine zwei Sätze]. Vertritt die andere Methode. Nenne drei Einwände gegen meine, mit Nummern. Nenne zu jedem Einwand einen Fachbegriff, auf den du dich stützt. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach den drei Einwänden: «Ich antworte auf deinen Einwand Nummer [Nummer]: [meine Antwort]. Stell mir dazu zwei Fragen, eine nach der anderen. Sag mir nicht, ob ich recht habe. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie jeden Fachbegriff der KI im Lehrmittel nach (Kap. 16.4, 19.2). Steht er dort nicht oder anders, übernehmen Sie ihn nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie zwei Sätze: Sie nennen Ihre Methode und sagen, was sie sichtbar gemacht und verdeckt hat. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie ohne KI Ihre zwei Sätze zur Methode auf.",
+        "Lassen Sie sich mit Prompt 1 drei Einwände nennen.",
+        "Schlagen Sie jeden Fachbegriff der KI im Lehrmittel nach.",
+        "Antworten Sie mit Prompt 2 auf einen Einwand Ihrer Wahl.",
+        "Notieren Sie zu jedem Einwand, ob er für Ihr Interview stimmt, und einen Grund."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre zwei Sätze zur Methode standen vor dem ersten Prompt."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Fachbegriff der KI haben Sie im Lehrmittel nachgeschlagen."
+        },
+        {
+          "kriterium": "Selbst geantwortet",
+          "indikator": "Ihre Antwort auf den Einwand haben Sie selbst geschrieben."
+        },
+        {
+          "kriterium": "Selbst beurteilt",
+          "indikator": "Zu jedem Einwand steht, ob er für Ihr Interview stimmt, mit einem Grund."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand hat etwas benannt, das Ihre Methode wirklich verdeckt hat?",
+        "Wo war die KI ungenau oder falsch, und woran haben Sie es gemerkt?",
+        "Im Kompetenznachweis begründen Sie selbst, was eine Methode sichtbar macht und verdeckt. Was nehmen Sie aus dieser Übung mit?"
+      ]
+    }
+  ]
+}

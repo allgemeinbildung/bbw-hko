@@ -1,0 +1,139 @@
+{
+  "id": "1.1.1_ausbildung_kommunizieren_ki",
+  "set_ref": "1.1.1_ausbildung_kommunizieren_set",
+  "prinzip_ref": "1.1.1_ausbildung_kommunizieren_prinzip",
+  "kn_ref": "1.1.1_ausbildung_kommunizieren_kn",
+  "anchored_situations": [
+    "1.1.1_ausbildung_kommunizieren_hf_A",
+    "1.1.1_ausbildung_kommunizieren_hf_B"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen — in der Ausbildung kommunizieren",
+  "thema": "T1",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Ins Berufsleben einsteigen: Ich finde mich in meiner Ausbildung zurecht und kommuniziere auf konstruktive Art und Weise.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Lehrvertragsrecht, sozial akzeptable Lösungen",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Perspektivenübernahme, Konfliktstrategien",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Soziale Rollen, Rollenkonflikte",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Schutz- und Sicherheitsaspekte, arbeitserleichternde Nutzung",
+        "kompetenz_anker": "1.1.2"
+      },
+      {
+        "aspekt": "Technologische und digitale Transformation",
+        "detail": "Situative und zweckmässige Nutzung digitaler Kommunikationsregeln der verschiedenen Tools",
+        "kompetenz_anker": "1.1.3"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK6 — Standpunkte begründen",
+      "SK8 — Lebensphasen planen",
+      "SK2 — Ziele setzen und anpassen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei kann mir eine KI helfen, wenn ich ein schwieriges Gespräch vorbereite?",
+    "kritisch": "Was weiss eine KI nicht über meinen Betrieb und mein Gegenüber?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Fragen zu meinem ersten Satz",
+      "ziel": "Sie prüfen Ihren ersten Satz mit drei Fragen der KI zu Gegenüber, Ziel und Ton.",
+      "bezug": "In Heft A planen Sie ein Gespräch, in Heft B schreiben Sie zwei Nachrichten. Beide Male gilt: zuerst klären, was gilt, dann Kanal und Ton wählen und schützen, was nicht alle sehen sollen.",
+      "auftrag": "Nehmen Sie den ersten Satz aus Ihrem Gesprächsplan (Heft A) oder aus Ihrer Chat-Nachricht (Heft B). Die KI stellt Ihnen dazu drei Fragen. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Kommunizieren in der Lehre. Mein erster Satz: [mein erster Satz]. Stell mir dazu drei Fragen, eine nach der anderen. Frag nach Gegenüber, Ziel und Ton. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI Regeln, schlagen Sie jede im Lehrmittel nach (Kap. 1.4 und 17.4). Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren ersten Satz zuerst ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren ersten Satz ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihr erster Satz bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr erster Satz stand vor dem ersten Prompt da."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie sagen selbst, ob Ihr erster Satz bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Regel der KI haben Sie nachgeschlagen. Hat die KI nur gefragt, gilt das als erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Sie am meisten zum Nachdenken gebracht?",
+        "Im Kompetenznachweis wählen Sie Ihre Worte ohne KI. Worauf achten Sie zuerst: Gegenüber, Ziel oder Ton?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Mein Vorschlag und zwei Einwände",
+      "ziel": "Sie prüfen Ihren Vorschlag an zwei Einwänden der KI und beantworten den Einwand, der schwerer wiegt.",
+      "bezug": "In Heft A und Heft B machen Sie einen Vorschlag: im Gespräch und im Chat. Beide Male gilt: zuerst klären, was gilt, dann Kanal und Ton wählen und schützen, was nicht alle sehen sollen.",
+      "auftrag": "Nehmen Sie Ihren Vorschlag aus dem Gesprächsplan (Heft A) oder aus der Chat-Nachricht (Heft B). Die KI spielt Ihr Gegenüber und bringt zwei Einwände. Ein Einwand ist, was Ihr Gegenüber dagegen sagt. Sie entscheiden, welcher Einwand schwerer wiegt, und antworten darauf. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Du spielst mein Gegenüber: [mein Gegenüber, ohne Namen]. Thema: Kommunizieren in der Lehre. Mein Vorschlag: [mein Vorschlag mit Grund]. Nenne mir zwei Einwände dagegen. Sag, wenn du dich auf eine Regel stützt, und auf welche. Schreib meinen Vorschlag nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach dem Nachschlagen: «Ich antworte auf deinen [ersten oder zweiten] Einwand: [meine Antwort]. Bleib in deiner Rolle. Sag mir, was dich noch nicht überzeugt. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Schlagen Sie jede Regel der KI im Lehrmittel nach (Kap. 1.4 und 17.4). Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Vorschlag mit einem Grund zuerst ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Vorschlag mit einem Grund ohne KI auf.",
+        "Lassen Sie sich mit Prompt 1 zwei Einwände nennen.",
+        "Schlagen Sie jede Regel der KI im Lehrmittel nach.",
+        "Beantworten Sie mit Prompt 2 den Einwand, der schwerer wiegt.",
+        "Notieren Sie, ob Ihr Vorschlag bleibt oder sich ändert, und warum."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Vorschlag mit Grund stand vor dem ersten Prompt da."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Nennt die KI Regeln, haben Sie jede nachgeschlagen."
+        },
+        {
+          "kriterium": "Einwand beantwortet",
+          "indikator": "Sie haben den Einwand, der schwerer wiegt, in eigenen Worten beantwortet."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihr Vorschlag bleibt oder sich ändert, und warum."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand der KI hat Sie überrascht, und warum?",
+        "Was hat die KI behauptet, das Sie im Lehrmittel nicht gefunden haben?",
+        "Im Kompetenznachweis klären Sie ohne KI, was gilt. Was nehmen Sie aus dieser Übung dafür mit?"
+      ]
+    }
+  ]
+}

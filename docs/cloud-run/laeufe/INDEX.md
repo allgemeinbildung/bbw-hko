@@ -36,3 +36,4 @@ Die Spalte «Einheit» nennt den Ordner unter `src/data/einheiten/` (oder `—`)
 | `2026-10-06-4.3.1_vielfalt_untersuchen` | `4.3.1_vielfalt_untersuchen` | neu | |
 | `2026-10-06-5.2.1_gesetze_veraendern` | `5.2.1_gesetze_veraendern` | neu | |
 | `2026-10-07-umbau` | — | — | kein Einheiten-Lauf: Protokoll des Umbaus der Skill nach dem Rückblick |
+| `2026-10-07-ki-toolbox-lehrjahr-1` | — | — | kein Einheiten-Lauf: KI-Toolbox (Skill `hko-ki-komplement`) für 14 Einheiten des 1. Lehrjahrs, E44 |

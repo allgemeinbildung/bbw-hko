@@ -1,0 +1,115 @@
+{
+  "id": "2.5.1_klimaveraenderung_diskutieren_lernprompt",
+  "set_ref": "2.5.1_klimaveraenderung_diskutieren_set",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Klimaveränderung beschreiben und diskutieren». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI, wer sie für Sie sein soll. So passt die Antwort besser.",
+        "thema_bezug": "Die KI fragt Sie als Lerncoach Begriffe ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Klimaveränderung. Frag drei Begriffe ab: Treibhauseffekt, Wetterextreme, Verursacherprinzip. Gib die Lösung erst nach meiner Antwort. Stell immer nur eine Frage. Warte auf meine Antwort. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Weicht der Lerncoach vom Glossar ab, gilt das Glossar."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, wer Sie sind und worum es geht. So passt die Antwort.",
+        "thema_bezug": "Ihre Aussage zur Zukunft (A) oder Ihre Position (B).",
+        "beispiel_basis": "Ich bin im 1. Lehrjahr. Thema: Klimaveränderung. Meine Aussage: [meine Aussage mit Begründung]. Stell mir eine Frage zu einer unklaren Stelle. Schreib meine Aussage nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI, dass sie Ihrer Position widerspricht. So sehen Sie, wo Ihre Begründung noch nicht hält. Welcher Einwand zählt, entscheiden Sie selbst.",
+        "thema_bezug": "Auf Ihrer Stichwortkarte aus Heft B steht ein erwarteter Einwand. Mit der KI üben Sie, auf weitere Einwände zu antworten.",
+        "beispiel_basis": "Meine Position zum Thema Klimaveränderung: [meine Position mit Begründung]. Was sagt jemand, der anders denkt? Nenne mir zwei Einwände. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du vertrittst die andere Seite. Thema: Klimaveränderung, eigener Verzicht oder Regeln für alle. Ich halte dazu ein kurzes Statement vor einer Runde. Meine Position: [meine Position mit Begründung]. Nenne mir zwei Einwände aus der Runde. Begründe jeden Einwand in einem Satz. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kann einen Einwand mit einer erfundenen Zahl begründen. Schlagen Sie Zahlen im Lehrmittel nach (Kap. 9), bevor Sie darauf antworten.",
+        "baukasten": {
+          "rolle": [
+            "die andere Seite",
+            "eine kritische Zuhörerin",
+            "ein Kollege, der zweifelt"
+          ],
+          "kontext": [
+            "Thema: eigener Verzicht oder Regeln für alle",
+            "meine Position mit Begründung",
+            "mein Statement dauert zwei Minuten"
+          ],
+          "aufgabe": [
+            "zwei Einwände nennen",
+            "jeden Einwand in einem Satz begründen",
+            "eine Frage zu meiner Antwort stellen"
+          ],
+          "format": [
+            "je Einwand ein Satz",
+            "nummerierte Liste",
+            "kurze, einfache Sätze"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen von der KI, dass sie zu jeder Angabe sagt, woher sie stammt. Eine Quelle der KI kann falsch oder erfunden sein. Darum prüfen Sie jede Quelle im Netz.",
+        "thema_bezug": "In Heft A setzen Sie hinter jede Sachaussage eine Fundstelle. Dasselbe verlangen Sie hier von der KI.",
+        "beispiel_basis": "Thema: Klimaveränderung in der Schweiz. Hier ist eine Sachaussage aus meinem Text: [meine Sachaussage]. Nenne mir dazu eine Quelle mit Titel und Jahr. Ich prüfe jede Quelle im Netz. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Thema: Klimaveränderung in der Schweiz. Hier sind zwei Sachaussagen aus meinem Text: [meine zwei Sachaussagen]. Nenne zu jeder Aussage eine Quelle mit Titel und Jahr. Sag auch, wer die Quelle herausgibt. Sag es offen, wenn du keine Quelle kennst. Ich prüfe jede Quelle im Netz. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Eine Quelle belegt erst, wenn Sie sie gelesen haben. Fehlt sie oder gibt es sie nicht, bleibt die Aussage unbelegt.",
+        "baukasten": {
+          "rolle": [
+            "mein Lerncoach",
+            "Bibliothekar/in",
+            "Faktenprüfer/in"
+          ],
+          "kontext": [
+            "eine Sachaussage aus meinem Text",
+            "Thema: Klimaveränderung in der Schweiz",
+            "ich prüfe jede Quelle nach"
+          ],
+          "aufgabe": [
+            "eine Quelle mit Titel und Jahr nennen",
+            "sagen, wer die Quelle herausgibt",
+            "offen sagen, wenn keine Quelle bekannt ist"
+          ],
+          "format": [
+            "je Aussage eine Zeile",
+            "Titel, Jahr, wer herausgibt",
+            "kurze, einfache Sätze"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt Rolle und Kontext, die KI stellt zwei Fragen. Prompt 2 sucht die Antwort, bei der ein Beleg fehlt.",
+      "prompt_1": "Du bist mein Lerncoach. Ich bin im 1. Lehrjahr. Thema: Klimaveränderung. Meine Aussage: [meine Aussage mit Begründung]. Stell mir zwei Fragen, eine nach der anderen. Schreib meine Aussage nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Bei welcher meiner zwei Antworten fehlt ein Beleg? Stell mir dazu eine letzte Frage. Sag nicht, was ich schreiben soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Quellen verlangen"
+      ],
+      "logik_und_ziel": "Prompt 1 holt zwei Einwände gegen Ihre Position. Prompt 2 verlangt zu jedem Einwand eine Quelle, damit Sie jede Quelle im Netz prüfen können.",
+      "prompt_1": "Du vertrittst die andere Seite. Thema: Klimaveränderung, eigener Verzicht oder Regeln für alle. Meine Position: [meine Position mit Begründung]. Nenne mir zwei Einwände dagegen. Begründe jeden Einwand in einem Satz. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Nenne zu jedem deiner zwei Einwände eine Quelle mit Titel und Jahr. Sag es offen, wenn du keine Quelle kennst. Ich prüfe jede Quelle im Netz. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: Klimaveränderung. Mein Satz: Das Netto-Null-Ziel heisst, kein Treibhausgas mehr auszustossen. Was fehlt? Schreib ihn nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Nicht ganz. Die Schweiz darf so viel ausstossen, wie Speicher aufnehmen. Das Ziel gilt ab 2040.",
+      "pruefung": "Ich prüfe im Glossar. Die Angabe zu den Speichern stimmt, das Jahr nicht: «ab 2050»."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

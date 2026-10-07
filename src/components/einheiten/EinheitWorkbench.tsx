@@ -236,6 +236,8 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   const [navCollapsed, setNavCollapsed] = useState(loadNavCollapsed)
   const [kiOpen, setKiOpen] = useState(false)
   const [zusatzOpen, setZusatzOpen] = useState(false)
+  const [knOpen, setKnOpen] = useState(false)
+  const [loesungOpen, setLoesungOpen] = useState(false)
   const [wbTop, setWbTop] = useState(80)
   const [zoomPref] = useState(loadZoomPref)
   const [zoom, setZoom] = useState(zoomPref.zoom)
@@ -1187,7 +1189,17 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
           {d.kn && (
             <div className="wb-tree-group">
-              <div className="wb-tree-head">Kompetenznachweis</div>
+              <button
+                type="button"
+                className={`wb-tree-head wb-tree-head-toggle${knOpen ? ' open' : ''}`}
+                onClick={() => setKnOpen((v) => !v)}
+                aria-expanded={knOpen}
+              >
+                <span className="wb-ki-label">Kompetenznachweis</span>
+                <span className="wb-chevron" aria-hidden="true">▾</span>
+              </button>
+              {(knOpen || navCollapsed) && (
+              <>
               <div className="wb-tree-sub">Schüler/in</div>
               {knTypen.map((t) => (
                 <button
@@ -1210,14 +1222,24 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
                 <span className="wb-item-title">Lehrperson + Bewertung</span>
                 {lockBadge}
               </button>
+              </>
+              )}
             </div>
           )}
 
           {/* v4.2: Lösungen je Heft (E19) — folgen dem Spur-Umschalter, nur Lehrperson, für Gäste gesperrt. */}
           {loesungsHefte.length > 0 && (
             <div className="wb-tree-group">
-              <div className="wb-tree-head">Lösungen · Lehrperson</div>
-              {loesungsHefte.map((s) => (
+              <button
+                type="button"
+                className={`wb-tree-head wb-tree-head-toggle${loesungOpen ? ' open' : ''}`}
+                onClick={() => setLoesungOpen((v) => !v)}
+                aria-expanded={loesungOpen}
+              >
+                <span className="wb-ki-label">Lösungen · Lehrperson</span>
+                <span className="wb-chevron" aria-hidden="true">▾</span>
+              </button>
+              {(loesungOpen || navCollapsed) && loesungsHefte.map((s) => (
                 <button
                   key={s}
                   className={`wb-item nested${doc === 'doc-loesungen' && situation === s ? ' active' : ''}${readOnly ? ' locked' : ''}`}
@@ -1467,8 +1489,6 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
             <p>
               <strong>KI-Toolbox — optionales Zusatzangebot.</strong> Der Einsatz dieser Materialien
               entscheidet die Lehrperson; sie sind <strong>kein Pflichtteil</strong> der Einheit.
-              Verbindlich sind die drei Herausforderungen, der Kompetenznachweis und der
-              Lehrpersonen-/Bewertungsteil.
             </p>
             <p>
               Jedes Dokument ist als <strong>Word-Datei</strong> herunterladbar und

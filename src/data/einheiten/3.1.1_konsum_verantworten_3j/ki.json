@@ -1,0 +1,140 @@
+{
+  "id": "3.1.1_konsum_verantworten_3j_ki",
+  "set_ref": "3.1.1_konsum_verantworten_3j_set",
+  "prinzip_ref": "3.1.1_konsum_verantworten_3j_prinzip",
+  "kn_ref": "3.1.1_konsum_verantworten_3j_kn",
+  "anchored_situations": [
+    "3.1.1_konsum_verantworten_3j_hf_A",
+    "3.1.1_konsum_verantworten_3j_hf_B"
+  ],
+  "modul": "3.1",
+  "modul_titel": "Bewusst konsumieren und handeln — überlegt entscheiden",
+  "thema": "T3",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Bewusst konsumieren und handeln: Ich gehe verantwortungsvoll mit meinem Lohn um und denke über mein Konsumverhalten nach.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Bedürfnisbefriedigung",
+        "kompetenz_anker": "3.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Einfluss von Herkunft und Umfeld",
+        "kompetenz_anker": "3.1.1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Geeignete Instrumente für den Umgang mit eigenen Mitteln, Einschätzung der eigenen wirtschaftlichen Lage",
+        "kompetenz_anker": "3.1.2"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Schuldenprävention",
+        "kompetenz_anker": "3.1.3"
+      },
+      {
+        "aspekt": "Ethik",
+        "detail": "Eigenverantwortung",
+        "kompetenz_anker": "3.1.3"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK5 — Werthaltungen reflektieren",
+      "SK3 — Innovation und Problemlösungen entwickeln",
+      "SK1 — Quellen unterscheiden"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn es um mein Geld geht — und wobei nicht?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI nicht stimmt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Hält meine Regel? Die KI fragt",
+      "ziel": "Sie lassen die KI fragen statt antworten und prüfen so, ob Ihre Regel hält.",
+      "bezug": "In Heft A geht es um Ihre Bedürfnisse, in Heft B um Ihr Monatsbudget. In beiden wägen Sie ab: Wunsch jetzt oder Sicherheit später.",
+      "auftrag": "Nehmen Sie Ihren Massstab-Satz aus Heft A oder eine Schutzregel aus Heft B: Das ist Ihre Regel. Die KI (künstliche Intelligenz) fragt, Sie antworten und entscheiden, ob Ihre Regel so bleibt. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Konsum und Budget in der Lehre. Meine Regel: [meine Regel mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage, im selben Chat: «Welche meiner Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Begriff, schlagen Sie ihn in Ihren Heften nach (Glossar, S. 8). Steht er dort nicht, übernehmen Sie ihn nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Regel und Ihren Grund zuerst ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Regel und Ihren Grund ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihre Regel bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Regel und Grund standen vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben entschieden, ob Ihre Regel bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Begriff der KI haben Sie nachgeschlagen. Fragt die KI nur, gilt das als erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Ihre Regel am stärksten geprüft?",
+        "Im Kompetenznachweis erklären Sie selbst, was Sie zeigen oder entscheiden. Welche KI-Frage stellen Sie sich?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die KI wendet ein, ich antworte",
+      "ziel": "Sie lassen die KI widersprechen und entscheiden selbst, welcher Einwand zählt.",
+      "bezug": "In Heft A begründen Sie Ihren Massstab-Satz, in Heft B Ihre Schutzregeln. Dahinter steht eine Frage: Wunsch jetzt oder Sicherheit später?",
+      "auftrag": "Nehmen Sie Ihren Massstab-Satz aus Heft A oder eine Schutzregel aus Heft B: Das ist Ihre Regel. Die KI (künstliche Intelligenz) nennt zwei Einwände. Ein Einwand ist, was jemand gegen Ihre Regel sagt. Sie wählen den stärkeren Einwand und antworten darauf. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Du vertrittst die andere Seite: Wunsch jetzt statt Sicherheit später. Thema: Konsum und Budget in der Lehre. Meine Regel: [meine Regel mit Grund]. Nenne mir zwei nummerierte Einwände gegen meine Regel. Schreib meine Regel nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach Ihrer Wahl: «Ich finde Einwand [1 oder 2] stärker. Meine Antwort darauf: [meine Antwort]. Stell mir eine Frage zu der Stelle, die noch schwach ist. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Begriff, schlagen Sie ihn in Ihren Heften nach (Glossar, S. 8). Steht er dort nicht, übernehmen Sie ihn nicht.",
+        "Bleiben Sie im selben Chat: Sonst kennt die KI Ihre Regel nicht mehr."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihre Regel, Ihren Grund und einen eigenen Einwand zuerst ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihre Regel, Ihren Grund und einen eigenen Einwand ohne KI auf.",
+        "Holen Sie mit Prompt 1 zwei Einwände der KI.",
+        "Schlagen Sie jeden Begriff der KI in Ihren Heften nach.",
+        "Beantworten Sie mit Prompt 2 den Einwand, der für Sie stärker ist.",
+        "Notieren Sie, ob Ihre Regel bleibt oder sich ändert, und warum."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Regel, Grund und ein eigener Einwand standen vor Prompt 1 auf dem Blatt."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Begriff der KI haben Sie in Ihren Heften nachgeschlagen. Nennt die KI keinen, gilt das als erfüllt."
+        },
+        {
+          "kriterium": "Einwand gewählt",
+          "indikator": "Sie haben selbst gewählt, welcher Einwand stärker ist, und darauf geantwortet."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihre Regel bleibt oder sich ändert, und warum."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand hat Sie am meisten zum Nachdenken gebracht — und warum?",
+        "Wo war ein Einwand der KI ungenau oder passte nicht zu Ihrem Leben?",
+        "Im Kompetenznachweis wägen Sie selbst ab. Welchen Einwand denken Sie dort von Anfang an mit?"
+      ]
+    }
+  ]
+}

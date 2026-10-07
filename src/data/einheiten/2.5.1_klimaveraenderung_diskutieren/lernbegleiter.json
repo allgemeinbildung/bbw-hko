@@ -1,0 +1,130 @@
+{
+  "id": "2.5.1_klimaveraenderung_diskutieren_lernbegleiter",
+  "set_ref": "2.5.1_klimaveraenderung_diskutieren_set",
+  "prinzip_ref": "2.5.1_klimaveraenderung_diskutieren_prinzip",
+  "kn_ref": "2.5.1_klimaveraenderung_diskutieren_kn",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann sachlich beschreiben, wie die Klimaveränderung mich und die Gesellschaft heute betrifft, daraus begründete Aussagen über die Zukunft ableiten und meine Position zu Lösungsansätzen in einer Diskussion begründet und respektvoll einbringen.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann sachlich beschreiben, wie die Klimaveränderung mich und die Gesellschaft heute betrifft (Kap. 9.1).",
+        "Ich kann daraus eine begründete Aussage über die Zukunft ableiten.",
+        "Ich kann meine Position zu Lösungen begründet und respektvoll einbringen (Kap. 17.3)."
+      ]
+    },
+    "begriffe": [
+      "Treibhauseffekt",
+      "Treibhausgas",
+      "Temperaturanstieg",
+      "Wetterextreme",
+      "Hitzeperiode",
+      "Pollensaison",
+      "Gletscher",
+      "Permafrost",
+      "Messreihe",
+      "Vermutung",
+      "Nachhaltigkeit",
+      "Netto-Null-Ziel",
+      "Graue Energie",
+      "Verzicht",
+      "Regel für alle",
+      "Verursacherprinzip",
+      "3B-Schema",
+      "Einwand",
+      "Killerphrase",
+      "Kompromiss"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, welche Begriffe Sie schon erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Klimaveränderung. Frag mich diese Begriffe ab: Treibhausgas, Hitzeperiode, Permafrost, Nachhaltigkeit, Graue Energie, Kompromiss. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihrem Heft ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff kennen, ihn aber noch nicht gut erklären können.",
+        "prompt_basis": "Thema: Klimaveränderung. Ich erkläre einen Begriff mit eigenen Worten. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke der KI im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe die Argumentation: Begründung mit Beispiel, eine andere Sichtweise genannt? Nenne mir Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Fachkorrektheit: Sind die Fachbegriffe richtig und die Aussagen belegt? Position / Werthaltung: Ist meine Position klar in Ich-Form und begründet? Nenne mir je eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie Lücken, keine fertige Lösung. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Wissen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Thema: Klimaveränderung, Folgen und Lösungen. Erfinde einen neuen, kurzen Fall aus dem Alltag einer lernenden Person. Darin streitet eine Gruppe, ob jede Person freiwillig handelt oder eine Regel für alle gilt. Der Fall handelt nicht von Hitze im Betrieb, Einkaufen oder Heizen. Stell mir dazu zwei Fragen, eine nach der anderen. Löse den Fall nicht für mich. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Klimaveränderung, Folgen und Lösungen. Erfinde einen neuen Fall mit zwei Seiten: Die eine will freiwillig handeln, die andere eine Regel für alle. Der Fall handelt nicht von Hitze im Betrieb, Einkaufen oder Heizen. Ich schreibe meine Position mit Begründung. Prüfe danach die Argumentation: Begründung mit Beispiel, eine andere Sichtweise genannt? Nenne mir Lücken als Fragen. Löse den Fall nicht für mich. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie Ihre Lernzeit bis zum Kompetenznachweis einteilen wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Klimaveränderung, Folgen und Lösungen. Bis zum Kompetenznachweis habe ich noch [Anzahl] Tage. Mach mir einen Lernplan mit drei Teilen: Begriffe wiederholen, selbst erklären, einen neuen Fall lösen. Schreib keinen Stoff in den Plan. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Klimaveränderung, Folgen und Lösungen. Mach mir zehn Lernkarten, nur mit Fragen. Ordne sie in drei Gruppen: Ursachen, Folgen und Lösungen. Nimm diese Begriffe: Treibhausgas, Treibhauseffekt, Temperaturanstieg, Wetterextreme, Gletscher, Netto-Null-Ziel, Verzicht, Verursacherprinzip. Die Antworten schreibe ich selbst. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf den Lernkarten schreiben Sie selbst, aus dem Glossar in Ihren Heften. Ein Plan der KI ersetzt das Üben nicht."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie beantworten laut fünf Fragen zu einem neuen Fall, von leicht zu schwer.",
+        "prompt": "Thema: Klimaveränderung, Folgen und Lösungen. Erfinde einen neuen, kurzen Fall. Er handelt nicht von Hitze im Betrieb, Einkaufen oder Heizen. Stell mir fünf Fragen, von leicht zu schwer. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen schriftlich einen neuen Fall und begründen Ihren Entscheid.",
+        "prompt": "Thema: Klimaveränderung, Folgen und Lösungen. Erfinde einen neuen, kurzen Fall mit einer Frage am Schluss. Er handelt nicht von Hitze im Betrieb, Einkaufen oder Heizen. Löse den Fall nicht für mich. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Klimaveränderung, Folgen und Lösungen. Das habe ich gelernt: [was ich gelernt habe]. Erfinde dazu einen neuen, kurzen Fall. Er handelt nicht von Hitze im Betrieb, Einkaufen oder Heizen. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Üben Sie, Fachbegriffe richtig zu brauchen («Selbst erklären») und Aussagen mit Beispiel zu begründen (Übungsfall oben)."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Ökologisches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Verbinden Sie im Übungsfall auf dieser Seite Ursache, Folge und Betroffene mit Ihrer eigenen Position."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meine Position ohne KI begründen."
+    ]
+  }
+}

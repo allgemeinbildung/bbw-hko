@@ -1,0 +1,115 @@
+{
+  "id": "1.2.1_lernzeit_planen_lernprompt",
+  "set_ref": "1.2.1_lernzeit_planen_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Lernzeit planen». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, welche Aufgabe sie für Sie übernimmt. Dann passt ihre Antwort besser zu dem, was Sie brauchen.",
+        "thema_bezug": "Ihr Lernziel steht in Heft B bei Ihrem Abfrageprotokoll.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Zeit planen und wirksam lernen. Mein Lernziel: [mein Lernziel]. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib mein Lernziel nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Auch als Lerncoach kennt die KI Ihr Heft und Ihr Lehrmittel nicht."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und was Sie schon haben. Dann geht sie auf Ihre Lage ein.",
+        "thema_bezug": "Ihre Reserve steht in Ihrem Wochenplan aus Heft A.",
+        "beispiel_basis": "Thema: Zeit planen und wirksam lernen. Mein Wochenplan hat 15 Abendstunden. Meine Reserve: [meine Reserve in Stunden]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt, auch nicht den Ihres Lehrbetriebs."
+      },
+      {
+        "key": "chain_of_thought",
+        "titel": "Schritt für Schritt denken",
+        "erklaerung": "Sie verlangen, dass die KI in einzelnen Schritten vorgeht und nach jedem Schritt anhält. So sehen Sie, an welcher Stelle etwas nicht stimmt. Sie können jeden Schritt einzeln prüfen.",
+        "thema_bezug": "Ihr Entscheid kommt aus Heft A (so viel Reserve lasse ich) oder aus Heft B (das verarbeite ich selbst). Die KI geht ihn in Schritten durch.",
+        "beispiel_basis": "Thema: Zeit planen und wirksam lernen. Mein Entscheid mit Grund: [mein Entscheid mit Grund]. Geh ihn in drei Schritten durch: der Entscheid, der Grund, die Folge. Stell mir zu jedem Schritt eine Frage. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "beispiel_fortgeschritten": "Du bist mein Lerncoach. Thema: Zeit planen und wirksam lernen. Mein Entscheid fürs Lernen: [mein Entscheid mit Grund]. Geh ihn Schritt für Schritt durch: was ich selbst verarbeite, was ich nur durchgehe, wofür ich ein KI-Werkzeug nehme. Frag mich bei jedem Schritt nach meinem Grund. Sag nicht, was ich ändern soll. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Schritte der KI klingen geordnet, auch wenn einer falsch ist. Die KI kennt nur die Zahlen und Gründe, die Sie ihr geben.",
+        "baukasten": {
+          "rolle": [
+            "Lerncoach",
+            "Lernpartner/in",
+            "Person, die nachfragt"
+          ],
+          "kontext": [
+            "mein Entscheid mit Grund",
+            "mein Wochenplan mit Reserve",
+            "mein Lernziel"
+          ],
+          "aufgabe": [
+            "Schritt für Schritt durchgehen",
+            "nach jedem Schritt anhalten",
+            "je Schritt eine Frage stellen"
+          ],
+          "format": [
+            "nummerierte Schritte",
+            "ein Satz je Schritt",
+            "eine Frage aufs Mal"
+          ]
+        }
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI Einwände gegen Ihren Entscheid. Ein Einwand ist, was jemand dagegen sagt. Welcher Einwand zählt, entscheiden Sie.",
+        "thema_bezug": "In beiden Heften gibt es ein Spannungsfeld: fester Plan oder Spielraum, schnell durchgehen oder gründlich verarbeiten. Für jede Seite gibt es gute Gründe.",
+        "beispiel_basis": "Thema: Zeit planen und wirksam lernen. Mein Entscheid mit Grund: [mein Entscheid mit Grund]. Nenne mir zwei Einwände dagegen. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist anderer Meinung als ich. Thema: Zeit planen und wirksam lernen. Mein Entscheid mit Grund: [mein Entscheid mit Grund]. Das ist meine Lage: [meine Lage in Stichworten]. Nenne mir zwei Einwände, die zu meiner Lage passen. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI widerspricht, weil Sie es verlangen. Ein Einwand ist noch kein Grund, Ihren Plan zu ändern.",
+        "baukasten": {
+          "rolle": [
+            "Person mit anderer Meinung",
+            "Lernpartner/in, die anders plant",
+            "Person, die streng nachfragt"
+          ],
+          "kontext": [
+            "mein Entscheid mit Grund",
+            "meine Lage in Stichworten",
+            "mein Wochenplan"
+          ],
+          "aufgabe": [
+            "zwei Einwände nennen",
+            "nicht sagen, welcher stärker ist",
+            "nach meiner Antwort nachfragen"
+          ],
+          "format": [
+            "zwei kurze Punkte",
+            "je Einwand ein Satz",
+            "ohne Urteil am Schluss"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt der KI Rolle und Kontext, und sie stellt zwei Fragen. Mit Prompt 2 lassen Sie die KI dort nachfragen, wo ein Grund fehlt.",
+      "prompt_1": "Du bist mein Lerncoach. Thema: Zeit planen und wirksam lernen. Mein Wochenplan hat 15 Abendstunden. Meine Reserve: [meine Reserve in Stunden]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Bei welcher meiner zwei Antworten fehlt noch ein Grund? Stell mir dazu eine letzte Frage. Gib mir keinen Rat. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Schritt für Schritt denken",
+        "Gegenseite verlangen"
+      ],
+      "logik_und_ziel": "In Prompt 1 steht Ihr Entscheid, und die KI fragt in zwei Schritten nach. In Prompt 2 nennt sie zwei Einwände dagegen. Welcher Einwand zählt, entscheiden Sie.",
+      "prompt_1": "Thema: Zeit planen und wirksam lernen. Mein Entscheid mit Grund: [mein Entscheid mit Grund]. Geh ihn in zwei Schritten durch: zuerst der Entscheid, dann der Grund. Stell mir zu jedem Schritt eine Frage. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+      "prompt_2": "Du kennst jetzt meinen Entscheid und meine Antworten. Nenne mir zwei Einwände dagegen. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Thema: Zeit planen. Ich erkläre die ABC-Analyse: A heisst muss, C heisst kann. Stimmt das? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "A heisst muss, das stimmt. C heisst aber soll, nicht kann.",
+      "pruefung": "Ich schlage im Glossar nach. A heisst muss: Das stimmt. C heisst kann, nicht soll. Hier irrt die KI."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

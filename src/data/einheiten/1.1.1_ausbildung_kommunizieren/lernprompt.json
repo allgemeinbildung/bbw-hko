@@ -1,0 +1,115 @@
+{
+  "id": "1.1.1_ausbildung_kommunizieren_lernprompt",
+  "set_ref": "1.1.1_ausbildung_kommunizieren_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «In der Ausbildung kommunizieren». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie für Sie sein soll. So passen ihre Antworten besser zu Ihrer Aufgabe.",
+        "thema_bezug": "Hier fragt die KI als Lerncoach Begriffe aus Ihrem Glossar ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: E-Mail in der Lehre. Stell mir drei Fragen zu Betreff, CC und BCC, eine nach der anderen. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Vergleichen Sie jede Lösung der KI mit dem Glossar im Heft."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Kontext heisst: Sie sagen der KI, worum es geht und für wen. Ohne diese Angaben bleibt die Antwort allgemein.",
+        "thema_bezug": "Ihr erster Satz steht in Ihrem Gesprächsplan (Heft A).",
+        "beispiel_basis": "Ich rede mit meinem Lehrbetrieb über meine Ferien. Mein erster Satz: [mein erster Satz]. Stell mir dazu zwei Fragen zum Ton, eine nach der anderen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie nennen der KI Ihren Vorschlag und verlangen Einwände. Ein Einwand ist, was Ihr Gegenüber dagegen sagt. So sehen Sie früh, wo Ihr Vorschlag noch nicht hält.",
+        "thema_bezug": "Die Gegenseite ist hier Ihr Gegenüber: der Betrieb, die Gruppe oder die Lehrperson. Ihr Vorschlag steht im Gesprächsplan oder in der Chat-Nachricht.",
+        "beispiel_basis": "Ich bin in der Lehre. Mein Vorschlag: [mein Vorschlag mit Grund]. Nenne mir zwei Einwände, die mein Gegenüber dagegen haben kann. Schreib meinen Vorschlag nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du spielst mein Gegenüber: [mein Gegenüber, ohne Namen]. Mein Vorschlag: [mein Vorschlag mit Grund]. Nenne mir aus deiner Sicht einen Einwand zur Sache und einen zum Ton. Schreib meinen Vorschlag nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt Ihren Betrieb und Ihre Gruppe nicht. Welcher Einwand zählt, entscheiden Sie.",
+        "baukasten": {
+          "rolle": [
+            "Du spielst mein Gegenüber im Lehrbetrieb.",
+            "Du spielst meine Gruppe in der Klasse.",
+            "Du bist mein Lerncoach."
+          ],
+          "kontext": [
+            "Ich bin in der Lehre.",
+            "Ich will etwas klären, ohne Streit.",
+            "Mein Vorschlag: [mein Vorschlag mit Grund]"
+          ],
+          "aufgabe": [
+            "Nenne zwei Einwände dagegen.",
+            "Nenne einen Einwand zum Ton.",
+            "Sag, was dich noch nicht überzeugt."
+          ],
+          "format": [
+            "je Einwand ein Satz",
+            "als Liste mit zwei Punkten",
+            "in kurzen, einfachen Sätzen"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen von der KI zu einer Regel eine Quelle. So können Sie gezielt nachschlagen. Auch eine Quelle der KI kann falsch sein.",
+        "thema_bezug": "In Ihrem Gesprächsplan stehen zwei Belege mit Fundstelle. Eine Regel daraus geben Sie hier der KI.",
+        "beispiel_basis": "Ich bin in der Lehre in der Schweiz. Meine Regel: [meine Regel]. Nenne mir dazu eine Quelle. Sag ehrlich, wenn du keine kennst. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Ich bin in der Lehre in der Schweiz. Hier sind zwei Regeln aus meinem Gesprächsplan: [meine zwei Regeln]. Nenne zu jeder Regel eine Quelle. Schreib dazu, wie sicher du bist. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet manchmal Quellen. Eine Quelle, die Sie beim Nachschlagen nicht finden, übernehmen Sie nicht.",
+        "baukasten": {
+          "rolle": [
+            "Du bist mein Lerncoach.",
+            "Du kennst das Recht der Lehre in der Schweiz.",
+            "Du bist eine Auskunftsstelle für Lernende."
+          ],
+          "kontext": [
+            "Ich bin in der Lehre in der Schweiz.",
+            "Es geht um meine Pflichten im Betrieb.",
+            "Meine Regel: [meine Regel]"
+          ],
+          "aufgabe": [
+            "Nenne mir dazu eine Quelle.",
+            "Schreib dazu, wie sicher du bist.",
+            "Nenne nur, was du belegen kannst."
+          ],
+          "format": [
+            "je Regel eine Zeile",
+            "zuerst die Quelle, dann ein Satz",
+            "in kurzen, einfachen Sätzen"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt der KI Rolle und Kontext, und die KI stellt zwei Fragen. Prompt 2 folgt nach Ihren zwei Antworten: Die KI zeigt auf die schwächere und fragt nach.",
+      "prompt_1": "Du bist mein Lerncoach. Ich rede im Lehrbetrieb über meine Ferien. Mein erster Satz: [mein erster Satz]. Stell mir zwei Fragen zu meinem Gegenüber, eine nach der anderen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Welche meiner zwei Antworten war schwächer? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Quellen verlangen"
+      ],
+      "logik_und_ziel": "Prompt 1 nennt Ihren Vorschlag und verlangt zwei Einwände. Prompt 2 fragt nach der Regel hinter den Einwänden und nach der Quelle. Danach schlagen Sie die Regel im Lehrmittel nach.",
+      "prompt_1": "Ich bin in der Lehre. Mein Vorschlag: [mein Vorschlag mit Grund]. Nenne mir zwei Einwände, die mein Gegenüber dagegen haben kann. Schreib meinen Vorschlag nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Stützt sich einer deiner zwei Einwände auf eine Regel? Nenne die Regel und die Quelle dazu. Sag ehrlich, wenn du keine Quelle kennst. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Du bist mein Lerncoach. Thema: E-Mail in der Lehre. Meine Erklärung: Bei BCC sehen die Empfänger einander nicht. Stimmt das? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "BCC heisst Blindkopie. Aber alle Empfänger sehen einander trotzdem.",
+      "pruefung": "Ich schlage im Glossar nach. «Blindkopie» stimmt. Der zweite Satz ist falsch: Bei BCC sehen die Empfänger einander nicht."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

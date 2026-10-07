@@ -1,0 +1,113 @@
+{
+  "id": "2.1.1_informationen_hinterfragen_lernprompt",
+  "set_ref": "2.1.1_informationen_hinterfragen_set",
+  "lehrgang": "EFZ_4J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-07",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Informationen hinterfragen». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Dann passen ihre Antworten besser zu Ihrer Aufgabe.",
+        "thema_bezug": "Als Lerncoach fragt die KI Begriffe aus Heft A ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Informationen hinterfragen. Frag mich drei Begriffe ab, einen nach dem anderen: Interesse, Wert, Zielkonflikt. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Auch als Lerncoach irrt die KI: Im Zweifel gilt Ihr Glossar."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Kontext heisst: Sie sagen der KI, worum es geht und was Sie schon haben. Sonst rät sie.",
+        "thema_bezug": "Die KI kennt Heft B und Ihre Regel nicht.",
+        "beispiel_basis": "Thema: Informationen hinterfragen. Ich bin in der Lehre. Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund]. Schreib sie nicht neu. Was ist unklar? Stell mir eine Frage. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Kopieren Sie keine Chat-Nachrichten mit Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie nennen der KI Ihre Meinung und verlangen Argumente dagegen. So sehen Sie, was die Gegenseite sagen würde. Welches Argument zählt, entscheiden Sie selbst.",
+        "thema_bezug": "Zu Ihrem Standort aus Heft A (Ihre Meinung zur Streitfrage) und Ihrer Regel aus Heft B gibt es eine Gegenseite. Deren stärkstes Argument heisst Einwand.",
+        "beispiel_basis": "Thema: Informationen hinterfragen. Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund]. Nenne zwei Argumente dagegen, je in einem Satz. Sag nicht, welches Argument stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du vertrittst die Gegenseite. Thema: Informationen hinterfragen. Mein Standort zu einer Streitfrage: [mein Standort mit Grund]. Nenne drei Argumente dagegen aus drei Sichtweisen, je in einem Satz. Sag nicht, wer so reden würde. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Der Prompt verlangt nur Argumente, kein Abwägen. Wer so reden würde und welches Interesse dahinter steht, klären Sie selbst.",
+        "baukasten": {
+          "rolle": [
+            "Du vertrittst die Gegenseite.",
+            "Du siehst es anders als ich."
+          ],
+          "kontext": [
+            "Thema: Informationen hinterfragen.",
+            "Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund].",
+            "Mein Standort: [mein Standort mit Grund]."
+          ],
+          "aufgabe": [
+            "Nenne zwei Argumente dagegen.",
+            "Nenne Argumente aus drei Sichtweisen.",
+            "Sag nicht, welches Argument das stärkste ist."
+          ],
+          "format": [
+            "Je Argument ein Satz.",
+            "Eine Liste mit Nummern.",
+            "Antworte in kurzen, einfachen Sätzen."
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen von der KI zu einer Angabe, woher sie stammt. Mit Quelle prüfen Sie eine Angabe leichter nach. Jede genannte Quelle prüfen Sie selbst nach.",
+        "thema_bezug": "In Ihrem Protokoll aus Heft B stehen Behauptungen aus Feed und Chat. Die KI nennt Quellen dazu, und Sie prüfen jede Quelle selbst nach.",
+        "beispiel_basis": "Thema: Informationen hinterfragen. In meinem Protokoll steht diese Behauptung: [die Behauptung]. Nenne zwei Quellen, bei denen ich sie nachprüfen kann. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist Bibliothekar/in. Thema: Informationen hinterfragen. In meinem Protokoll steht diese Behauptung: [die Behauptung]. Nenne zwei Quellen dazu, je mit Namen und Jahr. Schreib das Wort unsicher dazu, wenn du eine Quelle nicht sicher kennst. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet manchmal Quellen, die es nicht gibt. Prüfen Sie jede genannte Quelle mit dem Quellen-Check und dem Google-Check, bevor Sie ihr glauben.",
+        "baukasten": {
+          "rolle": [
+            "Du bist Bibliothekar/in.",
+            "Du bist mein Lerncoach."
+          ],
+          "kontext": [
+            "Thema: Informationen hinterfragen.",
+            "In meinem Protokoll steht: [die Behauptung].",
+            "Ich prüfe jede Quelle nach."
+          ],
+          "aufgabe": [
+            "Nenne zwei Quellen dazu.",
+            "Sag mir, woher diese Angabe stammt.",
+            "Schreib dazu, wo du unsicher bist."
+          ],
+          "format": [
+            "Je Quelle: Name und Jahr.",
+            "Eine Liste mit Nummern.",
+            "Antworte in kurzen, einfachen Sätzen."
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Zuerst stellt die KI eine Frage zu Ihrer Regel. Dann fragt sie nach, was offen ist.",
+      "prompt_1": "Du bist mein Lerncoach. Thema: Informationen hinterfragen. Ich bin in der Lehre. Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund]. Stell mir dazu eine Frage. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Meine Antwort: [meine Antwort]. Was ist daran noch offen? Stell mir dazu eine zweite Frage. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Quellen verlangen"
+      ],
+      "logik_und_ziel": "Im ersten Prompt nennt die KI zwei Argumente gegen Ihre Regel. Im zweiten verlangen Sie zu einem Argument eine Quelle, die Sie selbst nachprüfen.",
+      "prompt_1": "Du vertrittst die Gegenseite. Thema: Informationen hinterfragen. Meine Regel für zweifelhafte Inhalte: [meine Regel mit Grund]. Nenne zwei Argumente dagegen, je in einem Satz. Sag nicht, welches Argument stärker ist. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Ich wähle dieses Argument: [mein gewähltes Argument]. Nenne dazu eine Quelle, mit Namen und Jahr. Schreib das Wort unsicher dazu, wenn du die Quelle nicht sicher kennst. Ich prüfe die Quelle nach. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: Informationen hinterfragen. Mein Satz: Fakten-Check heisst, eine Behauptung bei der betroffenen Stelle nachprüfen. Stimmt das? Schreib ihn nicht neu. Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Ja, das stimmt. Beim Quellen-Check prüfst du dann mit einer Suchmaschine, ob seriöse Portale es melden.",
+      "pruefung": "Ich schlage im Glossar nach. Fakten-Check stimmt. Aber mit der Suchmaschine prüfe ich beim Google-Check, nicht beim Quellen-Check."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}
