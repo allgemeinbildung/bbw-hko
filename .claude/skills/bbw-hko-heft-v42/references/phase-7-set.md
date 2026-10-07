@@ -310,3 +310,10 @@ sofort behoben. `build:einheiten-index` schreibt beide Index-Kopien (`src/data/`
 und `public/nrlp/`) — nie von Hand. Der Index führt auch, ob ein Begleiter
 vorliegt: nach Phase 8 wird er erneut gebaut. `check-all` läuft erst im Tor
 (Phase 9), weil es `begleiter.md` als Pflichtdatei verlangt.
+
+**Wer `fall.json` schreibt:** Die erfundenen Zahlen und Angaben des
+gemeinsamen Auftrags schreibt der Executor Set als Teildatei
+`fall.auftrag.json` im Quellenarchiv unter `_pruefung/<ordnername>/`; die der
+Hefte haben die Executor A und B geschrieben (`fall.A.json`, `fall.B.json`).
+Zusammengeführt wird im Tor (`references/belege.md` §6, `references/phase-9-tor.md`
+§1 Schritt 3). (Herkunft: Auftrag 10, Stufe A; E38.)

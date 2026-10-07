@@ -4,16 +4,18 @@ Eine prüfende Rolle gibt ihr Ergebnis nicht als Prosa ab, sondern als
 **Beleg-Datei**. Ein Skript prüft sie dann mechanisch: Der Anker steht im
 Archivtext, die Zeitmarke liegt im Fenster der Ankerzeile, der Hash stimmt noch,
 jedes Lösungsfeld hat eine Zeile. Diese Datei beschreibt **Ort und Form** der
-Beleg-Dateien. Wer sie wann schreibt und wie die Audits arbeiten, steht bei den
-Rollen (`gegenleser.md`, `phase-10-abschluss.md`).
+Beleg-Dateien. Wie die Audits arbeiten — Paket, Auftrag, Abgabe —, steht in
+`audits.md`; wann sie im Lauf stehen, in `lauf.md` §4.
 
 Herkunft: ENTSCHEIDE E38; Rückblick
 `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §5.1–§5.4; Entscheid
 Pietro 07.10.2026 («Beleg-Dateien liegen ausserhalb des Repos»).
 
-**Stand 07.10.2026:** Ort, Format, Schemas und die zwei Bibliotheken bestehen.
-Die Skripte, die die Dateien prüfen (`check-belege`, `check-fakten`,
-`check-zeiger`, `check-zahlen`), nennt `lauf.md` §11, solange sie fehlen.
+**Stand 07.10.2026:** Ort, Format, Schemas und Bibliotheken bestehen (Stufe A);
+die fünf Skripte, die die Dateien prüfen, laufen im Tor (Stufe B,
+Abschnitt 11); die Rollen, die sie schreiben, und das Skript, das ihre Pakete
+baut und ihre Teildateien zusammenführt, stehen in `audits.md` (Stufe C,
+Abschnitt 12).
 
 ## 1. Ort
 
@@ -60,6 +62,21 @@ Abhängigkeit prüfen.
 Ein Audit **ändert nichts an der Einheit** und schreibt nur in seinen Ordner
 unter `_pruefung/`. `set.json` bekommt kein Feld für die Abstammung; der
 Datenvertrag bleibt.
+
+**Teildateien.** Wo mehrere Agenten gleichzeitig an einer Datei schreiben
+würden, schreibt jeder seine eigene Teildatei in denselben Ordner, und
+`node scripts/audit-paket.mjs <ordner> --zusammenfuehren` baut daraus die
+Datei, die die Prüfskripte lesen (Abschnitt 12; `audits.md` §1.4):
+
+| Datei | Teildateien | Form der Teildatei |
+|---|---|---|
+| `belege.json` | `belege.<heft>.<spur>.json` (Nachprüfung: `….r2.json`) | wie `belege.json`, mit den Zeilen eines Pakets |
+| `probe.json` | `probe.<heft>.<spur>.json` | wie `probe.json`, mit einem Lauf |
+| `fall.json` | `fall.A.json`, `fall.B.json`, `fall.auftrag.json` | **ein** Block `{ zahlen, ausgeschlossen, geschrieben_am, von }` — der Wert von `faelle.<Träger>` |
+
+`fakten.json` und `herkunft.json` haben einen Schreiber und keine Teildatei.
+(Herkunft: Executor A und B arbeiten gleichzeitig, ebenso die Auditoren —
+`lauf.md` §5; ein Schreiber je Datei: Entscheid Executor Stufe C, E38.)
 
 ## 3. Lösungsfelder und Hash
 
@@ -242,10 +259,12 @@ Nicht: die Fallzahlen aus `fall.json`.
 | `bemerkung` | in eigenen Worten; Pflicht bei `abweichend` und `nicht_belegbar` |
 | `von` | optional: `{ rolle, modell }` |
 
-Die Fakten-Tabelle im Bericht (`phase-10-abschluss.md` §2) kennt vier Urteile;
-in der Datei werden daraus drei: «stimmt» und «vertretbar vereinfacht» →
+Die frühere Fakten-Tabelle im Bericht kannte vier Urteile (Läufe bis
+07.10.2026); die Datei kennt drei: «stimmt» und «vertretbar vereinfacht» →
 `belegt` (was weggelassen ist, steht in `bemerkung`) · «stimmt nicht» →
-`abweichend` · «nicht belegbar» → `nicht_belegbar`. `abweichend` ist im Tor ein
+`abweichend` · «nicht belegbar» → `nicht_belegbar`. Die Tabelle selbst entfällt
+(`phase-10-abschluss.md` §2): Der Bericht nennt die Zahlen je Urteil und jede
+Zeile, die nicht `belegt` heisst. `abweichend` ist im Tor ein
 Fehler; `nicht_belegbar` ebenfalls, ausser die Stelle ist als Fallüberlegung
 gekennzeichnet. Ein Abruf, der älter als zwölf Monate ist, ist eine Warnung.
 
@@ -253,7 +272,15 @@ gekennzeichnet. Ein Abruf, der älter als zwölf Monate ist, ist eine Warnung.
 
 Die **erfundenen** Zahlen und Angaben der Situationen — je Träger ein Fall:
 `faelle.A`, `faelle.B`, wahlweise `faelle.auftrag`. Geschrieben von dem, der
-die Situation schreibt, in derselben Phase.
+die Situation schreibt, in derselben Phase — **nie von einem Audit**: Executor
+A schreibt `fall.A.json`, Executor B `fall.B.json` (Phase 4, ergänzt bis zur
+Abgabe des Hefts nach Phase 6), der Executor Set `fall.auftrag.json`
+(Phase 7), je als Teildatei mit einem Block (Abschnitt 2). Der Orchestrator
+führt sie im Tor zusammen. Ändert eine Korrektur eine Fallzahl, führt ihr
+Schreiber die eigene Teildatei nach. `node scripts/check-zahlen.mjs <ordner>
+--liste` zeigt jede Zahl mit Einheit im Text — die Arbeitsliste dafür.
+(Herkunft: Auftrag 10, Stufe A: «Geschrieben vom Executor des Hefts, nicht vom
+Audit»; E38.)
 
 - `zahlen[]`: `name` (wie das Heft die Grösse nennt) · `wert` (Zahl; Text nur
   für Wochentag, Datum, Uhrzeit) · `einheit` · wahlweise `schreibweisen[]`
@@ -283,7 +310,11 @@ anderes als «nicht gelaufen». `zeilen[]` sind die Befunde:
 | `beleg` | die Stelle im Produkt und die Stelle in Kriterium, Auftrag oder Lösungsbild |
 | `stand` | `offen` · `erledigt` — `erledigt` verlangt `erledigt_am` und `erledigt_wie` (behoben, stehen gelassen mit Grund, Entscheid Pietro) |
 
-Ein Befund mit Stand `offen` ist im Tor ein Fehler.
+Ein Befund mit Stand `offen` ist im Tor ein Fehler (`ERR_PROBE_OFFEN`). Die
+Probe schreibt ihre Teildatei immer mit `offen`; den Stand führt der
+Orchestrator in `probe.json` nach — das Zusammenführen lässt eine vorhandene
+Zeile stehen. Auftrag der Probe und die Regeln für `erledigt_wie`:
+`audits.md` §4.
 
 ## 8. `herkunft.json`
 
@@ -377,10 +408,10 @@ Schlusszeile lautet dann nicht «GRUEN», und unter `--cloud` ist es ein Fehler.
 - *Absatz.* «Abs. n» meint den Absatz der Quelle. «S. 62, Absatz 2» meint
   einen Absatz der Lehrmittelseite; geprüft wird dort nur die Seite.
   «Art. … Abs. …» ist Gesetz und kein Zeiger.
-- *Ableitung.* Das Feld kennzeichnet sie mit einem dieser Wörter:
-  Fallüberlegung · Fallangabe · Annahme · Auslegung · Deutung · nicht belegt ·
-  nicht aus dem Lehrmittel · Vertragssache · Einzelfall · mögliche Lösung
-  (`RE_FALLKENNZEICHEN` in `scripts/lib/pruefung.mjs`).
+- *Ableitung.* Das Feld kennzeichnet sie mit einem Wort der Liste in
+  `references/sprache.md` §7.4 (Fallüberlegung, Annahme, Deutung, Auslegung,
+  «nicht belegt» …). Massgebend ist `RE_FALLKENNZEICHEN` in
+  `scripts/lib/pruefung.mjs`; die Liste in `sprache.md` ist ihre Abschrift.
 - *Fakten.* `wortlaut_im_heft` muss im genannten Feld stehen und den Treffer
   des Skripts enthalten (Kürzel mit Artikel, Zahl mit Einheit …). Im Begleiter
   zählt jeder Absatz, der den Wortlaut trägt — die Absatzzählung verschiebt
@@ -405,3 +436,24 @@ Schwere, Bericht, Textfelder, Seiten, Marken), `scripts/lib/aussagen.mjs`
 (Aussagen und Zahlen finden), `scripts/lib/schema.mjs` (Schemas prüfen),
 `scripts/lib/seitentext.mjs` (Text eines exportierten Dokuments je Seite —
 geteilt mit `scripts/seitentext.mjs` der Skill).
+
+## 12. Stufe C — Pakete, Teildateien, Gegenhör-Liste
+
+Seit 07.10.2026 (ENTSCHEIDE E38, Stufe C). Beide Skripte prüfen nichts und
+laufen nicht als Zeile in `check-all`; das Zusammenführen ist Schritt 3 des
+Tors (`phase-9-tor.md` §1).
+
+| Skript | Tut | Schreibt |
+|---|---|---|
+| `scripts/audit-paket.mjs <ordner> --plan` | nennt die Pakete des Lösungs-Audits (Heft, Spur, Zahl der Felder) und rechnet nach, dass jedes Lösungsfeld in genau einem liegt | nichts |
+| `… --heft <heft> --spur <spur> --out <datei>` | **Blind-Paket**: Aufgaben, was die Lernenden sehen, Quelle und Lehrmittel in voller Auflösung — keine Lösung | `<datei>`, nie in einem Repo |
+| `… --mit-loesung --antworten <datei> --out <datei> [--geruest <datei>]` | **Vergleichs-Paket** und Gerüst der Teildatei — nur, wenn die Antworten-Datei jede Aufgabe trägt | `<datei>`, nie in einem Repo |
+| `… --probe --heft <heft> [--spur <spur>] --out <datei>` | **Paket der Lösbarkeitsprobe** | `<datei>`, nie in einem Repo |
+| `… --zusammenfuehren` | Teildateien → `belege.json`, `probe.json`, `fall.json` (Abschnitt 2) | im Ordner `_pruefung/<ordnername>/` |
+| `… --pruefen --heft <heft> --spur <spur>` | zusammenführen, dann `check-belege --streng`, gezeigt nur die Felder des Pakets: `ZEILE` (die Belegzeile stimmt nicht) oder `BEFUND` (das Audit hat etwas gefunden) | wie `--zusammenfuehren` |
+| `scripts/gegenhoeren.mjs <ordner> [--out <datei>]` | Gegenhör-Liste aus Karten und Feldnamen, mit der Genauigkeit der Zeitmarken je Karte — ohne Anker | `<datei>` (darf in den Bericht) |
+
+Alle nehmen `--wurzel <ordner>`. `audit-paket.mjs` verweigert jede Ausgabe in
+dieses Repo, unter `--wurzel` und in jedes Git-Repo (Exit 2). Was «blind»
+heisst, steht im Kopf des Skripts: kein Feld, das `lib/pruefung.mjs` als Lösung
+führt, kein Kurzbeschrieb der Karte, weder Kopf noch Notizen der Archivdatei.

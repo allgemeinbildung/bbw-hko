@@ -101,6 +101,13 @@ die Fakten des Falls als Label und Wert — Frist, Dauer, Anzahl Beteiligte, Dat
 die Gemeinde bis» / «30.11.», «Beteiligte am Gespräch» / «3 Personen»). `wert` wird
 rechtsbündig, einzeilig und in Festbreitenschrift gesetzt: kurze Angabe, kein Satz.
 
+**Wer `fall.json` schreibt:** der Executor des Hefts, in dieser Phase — jede erfundene Zahl und
+Angabe der Situation (Lohn, Preis, Menge, Alter, Wochentag, Datum, Frist des Falls) und was die
+Situation ausschliesst, als Teildatei `fall.<A|B>.json` im Quellenarchiv unter
+`_pruefung/<ordnername>/`; nie ein Audit. Form: `references/belege.md` §6. Daran prüft
+`check-zahlen`, dass die Zahl überall gleich steht, und `check-fakten` verlangt für sie keinen
+Beleg. (Herkunft: Rückblick §4 «Zahlen uneinheitlich», §5.2; Auftrag 10, Stufe A; E38.)
+
 **`leitfrage`** — Ich-Form, ≤ 140, eine Frage, die beide Pole des Spannungsfelds offen lässt und
 die das Produkt beantwortet. **`mehrdeutigkeit`** — `explizit` ist `true`; `trade_off` ist **wörtlich** ein Eintrag aus
 `prinzip.mehrdeutigkeits_architektur.trade_off_raum` (welcher: Bauplan), ≤ 70; `hint` in

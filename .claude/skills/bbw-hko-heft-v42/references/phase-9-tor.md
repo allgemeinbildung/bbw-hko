@@ -10,18 +10,42 @@ Weglassen eines Gates.
 
 ## 1. Reihenfolge
 
-Aus dem Repo-Root, `<ordner>` = Ordnername der Einheit:
+Aus dem Repo-Root, `<ordner>` = Ordnername der Einheit, `<tmp>` = ein
+Temp-Ordner ausserhalb des Repos, `<laufordner>` =
+`docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordnername>[-<k>]`:
 
 ```
-npm run build:einheiten-index
-node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner> --check
-node scripts/check-all.mjs <ordner>
-node scripts/export-v42.mjs <ordner> --out <tmp>
-node scripts/messen-v42.mjs <tmp>
-node scripts/bestand-v42.mjs --pruefen
-npm run build
-git status --short
+ 1  npm run build:einheiten-index
+ 2  node .claude/skills/bbw-hko-heft-v42/scripts/begleiter-marker.mjs <ordner> --check
+ 3  node scripts/audit-paket.mjs <ordner> --zusammenfuehren
+ 4  node scripts/check-all.mjs <ordner>
+ 5  node scripts/export-v42.mjs <ordner> --out <tmp>
+ 6  node scripts/messen-v42.mjs <tmp>
+ 7  node scripts/check-zeiger.mjs    <ordner> --export <tmp> --protokoll <laufordner>/zeiger-check.txt
+    node scripts/check-kohaerenz.mjs <ordner> --export <tmp> --protokoll <laufordner>/kohaerenz-check.txt
+    node scripts/check-belege.mjs    <ordner> --protokoll <laufordner>/belege-check.txt
+    node scripts/check-fakten.mjs    <ordner> --protokoll <laufordner>/fakten-check.txt
+    node scripts/check-zahlen.mjs    <ordner> --protokoll <laufordner>/zahlen-check.txt
+ 8  node scripts/bestand-v42.mjs --pruefen
+ 9  npm run build
+10  git status --short
 ```
+
+(Herkunft der Reihenfolge: ENTSCHEIDE E38, Stufen B und C; Auftrag 10,
+Abschluss. Die Schritte 3 und 7 sind neu; die Zeilen «Namen» und «Karten» in
+Schritt 4 stammen aus E35 und E36.)
+
+**Das Tor läuft in jedem Lauf zweimal, mit zwei Massstäben** — die Audits
+beginnen erst nach dem ersten Durchgang (`references/lauf.md` §4, §4.1):
+
+| | Wann | Grün heisst |
+|---|---|---|
+| **Erster Durchgang** | nach Phase 8, vor Gegenlesern und Audits | Schritt 4 endet «ROT», und die **einzigen** Fehler sind `ERR_BELEGE_FEHLT` (Zeile «Belege») und `ERR_FAKTEN_FEHLT` (Zeile «Fakten») — beide Dateien schreiben erst die Audits. Jede andere Zeile ist `ok`; `fall.json` steht (kein `ERR_FALL_FEHLT`). Alle übrigen Schritte wie in der Tabelle |
+| **Zweiter Durchgang** | nach der letzten Korrektur und dem letzten Audit (Phase 10 Schritt 5) | Schritt 4 endet «GRUEN — keine Fehler.» — mit Belegen, Fakten und Probe |
+
+Ein Schalter, der den ersten Durchgang mit Exit 0 enden liesse, fehlt in
+`check-all` noch: Der Orchestrator liest die Ausgabe. Im Bericht steht die
+Ausgabe des zweiten Durchgangs.
 
 Erst **nach dem Bericht** und vor `git add` läuft dazu
 `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <laufordner>`
@@ -32,7 +56,7 @@ Lokale Läufe — Einzelstart, Schleife, Abschluss — rufen `check-all <ordner>
 **ohne** `--cloud`. Das Lehrmittel muss trotzdem lokal da sein; das stellt die
 Vorprüfung fest (`references/lauf.md` §3 Zeile 7), denn ohne `--cloud` meldet
 `check-all` ein fehlendes Lehrmittel nur als Hinweis. `--cloud` gilt allein für
-den Cloud-Weg über `docs/cloud-run/RUN.md`: Dort heisst der dritte Befehl
+den Cloud-Weg über `docs/cloud-run/RUN.md`: Dort heisst Schritt 4
 `node scripts/check-all.mjs <ordner> --cloud` (das Lehrmittel **muss** dann da
 sein, `status` **muss** `"entwurf"` sein). (Herkunft: ENTSCHEIDE E34, Entscheid
 des Orchestrators nach dem Trockenlauf.)
@@ -41,9 +65,11 @@ des Orchestrators nach dem Trockenlauf.)
 |---|---|---|
 | `build:einheiten-index` | läuft durch; schreibt `src/data/einheiten.index.json` und die Kopie unter `public/nrlp/` | JSON-Fehler in der Einheit beheben. Den Index nie von Hand ändern. |
 | `begleiter-marker --check` | «0 abweichend · 0 unaufloesbar», Exit 0 | ohne `--check` laufen lassen (füllt die Marker); bei `UNAUFLOESBAR` den Pfad im Begleiter korrigieren (`references/phase-8-begleiter.md` §3.1) |
-| `check-all` | letzte Zeile «GRUEN — keine Fehler.», Exit 0. Darin die Zeile «Namen»: `check-namen.mjs <ordner>` prüft Ordner, IDs, Verweise, Quellenkarten, `archiv_ref` und Laufordner (`references/ableitungsregeln.md` §10). Warnungen an publizierten Einheiten stehen darunter und sind nur zu melden; ein Hinweis «Quellenarchiv fehlt lokal» heisst: `archiv_ref` nicht gegen die Ordner geprüft — im Bericht als «nicht geprüft» führen, nie als grün | Abschnitt 2 |
+| `audit-paket --zusammenfuehren` | je Datei eine Zeile: `fall.json` aus `fall.A.json`, `fall.B.json` (und `fall.auftrag.json`); nach den Audits `belege.json` mit **allen** Lösungsfeldern und 0 «mit altem Hash», `probe.json` mit den Läufen. Exit 0 | Exit 1: eine Teildatei ist ungültig — an ihren Schreiber zurück (`references/audits.md` §1.4). Exit 2 «kein Ordner»: Kein Executor hat `fall.<…>.json` abgegeben (`references/belege.md` §6). «NICHT geschrieben: Es fehlt der Block …»: derselbe Fall für ein Heft |
+| `check-all` | zweiter Durchgang: letzte Zeile «GRUEN — keine Fehler.», Exit 0 (erster Durchgang: Tabelle oben). Zeilen je Einheit: «Struktur · Status · Methoden · Sprache · Leck», «nRLP-Abgleich», «Kopplung · Autarkie · Begleiter-Marker», «Leitfragen-Loesungen», «Heft v4.x», dazu die fünf Beleg-Prüfungen «Belege», «Fakten», «Zeiger», «Zahlen», «Kohaerenz» (Codes im Kopf jedes Skripts, `references/belege.md` §11); einmal je Aufruf «Namen» und «Karten». **«Namen»:** `check-namen.mjs <ordner>` prüft Ordner, IDs, Verweise, Quellenkarten, `archiv_ref` und Laufordner (`references/ableitungsregeln.md` §10). **«Karten»:** `karten.mjs geaendert` — keine bestehende Karte berührt (`references/karten.md`). Warnungen an publizierten Einheiten stehen darunter und sind nur zu melden. «UNVOLLSTAENDIG» bzw. ein Hinweis «nicht geprueft — Quellenarchiv oder Lehrmittel fehlt lokal» heisst: Diese Prüfung ist **nicht gelaufen** — im Bericht als «nicht geprüft» führen, nie als grün; die Einheit ist dann nicht freigabereif | Abschnitt 2. `ERR_AUDIT_VERALTET`, `ERR_FAKT_ZEILE_VERWAIST`, `ERR_FAKT_OHNE_ZEILE` nach einer Korrektur: nicht die Daten ändern, sondern die betroffenen Felder neu auditieren (`references/lauf.md` §4.1). `ERR_PROBE_OFFEN`: den Befund entscheiden (`references/audits.md` §4.3) |
 | `export-v42` | schreibt je vorhandener Spur und Heft `heft-<a\|b>-<spur>.html/.docx`, `loesungen-<a\|b>-<spur>.html/.docx`, dazu `auftragsbogen.*` und `begleiter.docx` | Fehlermeldung lesen: meist ein Feld, das der Renderer erwartet und das fehlt. Kein Workaround im Skript. |
 | `messen-v42` | Exit 0: keine Seite läuft über. Erwartet: 8 Seiten je Heft, 4 im Auftragsbogen, 5 je Dokument «Lösungen» | Exit 1: das Feld kürzen, das auf der gemeldeten Seite steht, auch wenn das Zeichenbudget eingehalten ist (die Budgets sind an einer Einheit gemessen). Exit 2: kein Browser — im Bericht als «nicht gemessen» führen; die Messung holt die lokale Abnahme nach. |
+| die fünf mit `--protokoll` (Schritt 7) | dieselben Prüfungen wie in `check-all`, dazu: `check-zeiger` und `check-kohaerenz` lesen mit `--export <tmp>` den **gedruckten** Seitentext (trägt die genannte Seite das genannte Element? steht ein Lösungssatz oder ein gesperrtes Wort im gedruckten Heft?). Jedes schreibt sein Protokoll in den Laufordner — Feld, Code, Fundstelle, **ohne Anker und ohne Textauszug**. Exit wie in Schritt 4 | wie `check-all`. `HINWEIS_EXPORT_UNPASSEND`: `<tmp>` ist nicht der Export dieser Einheit |
 | `node scripts/check-leck.mjs docs/cloud-run/bauplaene/<ordner>.md <laufordner>` — **nach dem Bericht, vor `git add`** (Bauplan und Bericht — `check-all` liest nur den Ordner der Einheit) | letzte Zeile «GRUEN — keine woertliche Uebernahme ab 14 Woertern.», Exit 0 | Exit 1: die gemeldete Stelle im Dokument umformulieren (eigene Worte plus Kapitel/Seite bzw. Karten-ID), auch bei einer Warnung. Exit 2: Lehrmittel oder Archiv fehlt — nicht geprüft, Bauplan und Bericht nicht committen. |
 | `bestand-v42 --pruefen` | «OK — … Dokumente unverändert.» | Die Skill hat etwas ausserhalb ihres Ordners verändert. Rückgängig machen (`git checkout -- <datei>`), Ursache in den Bericht. |
 | `npm run build` | Exit 0 | wie oben; die Warnung «chunks larger than 500 kB» ist bekannt und kein Befund |
@@ -67,7 +93,14 @@ behoben. (Herkunft: ENTSCHEIDE E28 Nr. 2; Prompt
 `node scripts/lauf.mjs <ordner>` (sobald vorhanden) führt diese Folge in einem
 Befehl aus und schreibt die Ausgaben in den Laufordner. Bis dahin: die Befehle
 einzeln, die Ausgaben von `check-all` und `messen-v42` ganz nach
-`check-all.txt` und `messung.txt` (`references/lauf.md` §8).
+`check-all.txt` und `messung.txt` (`references/lauf.md` §8); die fünf
+Protokolle schreibt Schritt 7 selbst.
+
+**Nicht im Tor:** `node scripts/check-links.mjs <ordner>` bzw. `--alle` (mit
+Netz — Status und Weiterleitung jeder URL der Karten und Hefte; Protokoll nach
+`docs/cloud-run/laeufe/links-<datum>.txt`). Gedacht für einen wöchentlichen
+Lauf über den Bestand; eingeplant ist nichts. (Herkunft: Rückblick §5.2, Zeile
+«URL tot oder umgeleitet»; Auftrag 10, Stufe B Nr. 6; E38.)
 
 `npm run build` führt im `prebuild` `sync:einheiten-nrlp` aus: Das Skript
 schreibt Kompetenz- und Lebensbezugstexte aus dem Datensatz in die Einheiten.
@@ -112,24 +145,30 @@ löschen**, Index neu bauen, Grund und letzte Tor-Ausgabe in den Bericht
 
 ## 3. Was kein Befehl prüft — vor dem Bericht von Hand
 
+Die Nummern bleiben, wie sie waren: Andere Stellen der Skill und die Berichte
+verweisen darauf. **Nr. 2 bis 5 sind seit E38 keine Handprüfung mehr** — sie
+laufen im Tor (`check-kohaerenz`, in Schritt 7 auch am gedruckten Text):
+
+| Früher von Hand | Heute | Code |
+|---|---|---|
+| Nr. 2 — Prinzip, Hefte und Set tragen dieselben Werte | `check-kohaerenz`, WERTE | `ERR_KOH_KRITERIEN`, `ERR_KOH_POLTYP`, `ERR_KOH_ZENTRUM`, `ERR_KOH_LEBENSBEREICH`, `ERR_KOH_MODI` |
+| Nr. 3 — Lösungen nirgends bei den Lernenden | `check-kohaerenz`, LÖSUNG (acht Wörter am Stück; mit `--export` im gedruckten Heft und Bogen) | `ERR_KOH_LOESUNG_SICHTBAR` |
+| Nr. 4 — «Spur», «Pflichtquelle», «Lektion», «Woche», «Minute»; Du-Anrede | `check-kohaerenz`, WÖRTER | `ERR_KOH_GESPERRT`, `ERR_KOH_ANREDE_DU`; `WARN_KOH_WOCHE_MINUTE` — **die Warnung ansehen**: Unterrichtszeit oder Inhalt? |
+| Nr. 5 — Umlaute | `check-kohaerenz`, UMLAUTE | `ERR_KOH_TRANSLIT` |
+
+Ebenfalls im Tor und darum nicht mehr von Hand: Zeiger (Seite, Absatz,
+Zeitmarke, Wortzahl — `check-zeiger`), Rechnungen und Fallzahlen
+(`check-zahlen`), Anzahl und Bezeichner des Produkts (`check-kohaerenz`,
+ANZAHL und BEZEICHNER). Was die Skripte als `WARN_…` melden, entscheidet ein
+Mensch: `WARN_KOH_ANZAHL`, `WARN_KOH_KURZBESCHRIEB` (verrät der Kurzbeschrieb
+die Lösung?) — ansehen, im Bericht nennen. (Herkunft: Rückblick §5.2, Zeile
+«Handprüfungen `phase-9` §3 Nr. 2–5»; Auftrag 10, Stufe B Nr. 5 und Abschluss;
+E38.)
+
+Von Hand bleibt, was Sinn verlangt:
+
 1. **Abdeckung und Kohärenz:** Tabellen aus `references/kohaerenz.md`
    (Abschnitt 3 und 4) ausfüllen.
-2. **Prinzip, Hefte und Set tragen dieselben Werte:** `kn_kriterien_verteilung`,
-   `pol_typ_verteilung`, `mindmap_zentrum_kurz`, `auftrag_lebensbereich`,
-   `modi_pro_heft` gegen `nrlp.sprachmodi`.
-3. **Lösungen nirgends bei den Lernenden:** in `<tmp>/heft-*.html` und
-   `<tmp>/auftragsbogen.html` nach einem markanten Satz aus `loesung.befund`,
-   `erwartung` und `loesungsbild` suchen — kein Treffer.
-4. **Anrede:** Situationen Ich-Form, Aufträge Sie-Form, Begleiter Du-Form;
-   im **sichtbaren Text** der Heft-HTML (Tags, Stile und Skripte entfernt)
-   kein «Spur», «Pflichtquelle», «Woche», «Lektion» und keine Unterrichtszeit
-   in «Minuten» (die Dauer eines Produkts ist erlaubt). Einzeiler, je Datei
-   die Treffer mit 40 Zeichen Umfeld:
-
-   ```
-   node -e "const fs=require('fs');for(const f of fs.readdirSync(process.argv[1]).filter(n=>/^heft-.*\.html$/.test(n))){const t=fs.readFileSync(process.argv[1]+'/'+f,'utf8').replace(/<(script|style)[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ');for(const m of t.matchAll(/Spur|Pflichtquelle|Woche|Lektion|Minute/g))console.log(f,'…'+t.slice(Math.max(0,m.index-40),m.index+50)+'…')}" <tmp>
-   ```
-5. **Umlaute:** Suche nach Transliterationen (`references/umlaute.md`).
 6. **Der Fall des KN** kommt in Heften, Auftrag, Glossar und im genannten
    Ausschnitt der Quellen nicht vor (über die Fall-Begriffe hinaus: gleicher
    Gegenstand unter anderem Wort).
@@ -176,12 +215,15 @@ zusammen, ersetzt ihn nicht. Was der Bericht enthält:
   verworfener Alternative
 - die Gegenleser (`references/gegenleser.md` §6): Befunde je Leser, was
   übernommen wurde, was wegfiel, in welcher Runde zuletzt gelesen wurde
+- die Audits (`references/audits.md` §5): je Rolle Modell, Zahl der Agenten,
+  Zahl der Felder bzw. Aussagen je Urteil, jede Zeile mit einem Urteil ausser
+  «stimmt» bzw. «belegt», jeder Befund der Lösbarkeitsprobe mit seinem Stand
 - was nicht belegt, nicht geprüft oder nicht erzeugbar war
 - Fehler in Skill, Skripten oder Renderer, die aufgefallen sind (nicht
   repariert) — als Zeilen der Liste «Offen», Kürzel S oder R
 
 Nach Phase 9 ist der Bericht nicht fertig: Phase 10 schreibt in derselben
-Datei weiter (Fakten-Audit, Gegenhör-Liste, Vorlage zur Freigabe). Eine Datei
+Datei weiter (Stand der Audits, Gegenhör-Liste, Vorlage zur Freigabe). Eine Datei
 `NACHTRAG.md` gibt es nicht mehr.
 
 **Commit erst nach Phase 10 Schritt 6**, einer je Einheit, Umfang und

@@ -1614,3 +1614,143 @@ Renderer; im Archiv ist nichts angelegt.
 
 **Rückgängig:** `git revert` der zwei Commits der Stufe B. Das Tor läuft dann
 wie nach Stufe A.
+
+### E38, Stufe C — Rollen der Skill (07.10.2026)
+
+**Was sich ändert:** Das Lösungs-Audit der Skill ist neu gebaut, zwei Rollen
+kommen dazu, und jede gibt eine Datei ab, die ein Skript aus Stufe B prüft
+(Rückblick §5.1–§5.3; Auftrag 10, Stufe C).
+
+| Rolle | Modell | Je | Verfahren | Gibt ab |
+|---|---|---|---|---|
+| Lösungs-Audit | Opus | Heft und Spur, dazu der Auftrag | **blind lösen** (Paket ohne Lösung) → erst dann vergleichen → je Lösungsfeld Herkunft, Anker, Stelle, Urteil | `belege.json` |
+| Fakten-Audit | Opus, mit Netz | Einheit | Arbeitsliste aus `check-fakten --liste` **und** eigenes Lesen nach Aussagen ohne Zahl und Artikel; nur amtliche Primärquellen; Bauplan §10 wird nachgeprüft, nicht übernommen | `fakten.json` |
+| Lösbarkeitsprobe | Sonnet | Produkt eines Lernenden-Gegenlesers | sieht nur Produkt, «Das geben Sie ab», Kriterien mit Stufen, Lösungsbild (und die Frage LF4); drei Befundarten | `probe.json` |
+
+Die drei stehen als **Auftragsvorlagen** in der neuen Reference
+`references/audits.md` (Platzhalter `<ordner>`, `<heft>`, `<spur>`, `<wurzel>`,
+`<archiv>` — sie gelten auch für einen Altstand in einer Temp-Kopie). Das
+frühere Lösungs-Audit (Sonnet, las die Lösung zuerst, gab Prosa ab,
+`gegenleser.md` §4.2) gilt nicht mehr.
+
+**Regeln, die dazukommen:**
+
+1. **Die Audits beginnen nach dem ersten grünen Tor** und laufen neben den
+   Gegenlesern. Das Tor läuft darum zweimal: im ersten Durchgang sind die
+   einzigen zulässigen Fehler `ERR_BELEGE_FEHLT` und `ERR_FAKTEN_FEHLT`, im
+   zweiten endet `check-all` «GRUEN» (`phase-9-tor.md` §1, `lauf.md` §4).
+2. **Nach jeder Änderung einer Lösung** werden nur die Felder mit
+   `ERR_AUDIT_VERALTET` neu auditiert (Paket mit `--nur-veraltet`); für Fakten
+   entsprechend `ERR_FAKT_ZEILE_VERWAIST` und `ERR_FAKT_OHNE_ZEILE`
+   (`lauf.md` §4.1, `audits.md` §2.5, §3.5).
+3. **Die Lernenden-Gegenleser geben ihr Produkt als Datei ab** (ausserhalb des
+   Repos); daran hängt die Lösbarkeitsprobe (`gegenleser.md` §4.1).
+4. **Neue Tor-Reihenfolge** (`phase-9-tor.md` §1): Index · Marker `--check` ·
+   Teildateien zusammenführen · `check-all` · Export · Messung · die fünf
+   Beleg-Prüfungen mit `--protokoll` in den Laufordner (`check-zeiger` und
+   `check-kohaerenz` dabei mit `--export`) · Bestand · Build · `git status`;
+   nach dem Bericht `check-leck`. Die Handprüfungen §3 Nr. 2–5 entfallen (sie
+   laufen in `check-kohaerenz`); von Hand bleiben Nr. 1, 6, 7, 8, 9. Die
+   Nummern sind nicht neu vergeben, weil Skill und Berichte darauf verweisen.
+5. **Die Gegenhör-Liste wird erzeugt** (`scripts/gegenhoeren.mjs`) — aus Karten
+   und Feldnamen, ohne Anker; sie nennt je Karte, wie genau die Zeitmarken am
+   Archivtext geprüft sind (nur Block, nicht prüfbar, Vermerk im Kopf).
+6. **Die Wortliste «Fallüberlegung/Deutung»** steht in `sprache.md` §7.4 als
+   Abschrift von `RE_FALLKENNZEICHEN`; massgebend bleibt das Skript.
+
+**Zwei neue Skripte** (reines Node, ohne Netz; `--wurzel`):
+
+| Skript | Tut |
+|---|---|
+| `scripts/audit-paket.mjs` | `--plan` (Pakete einer Einheit) · Blind-Paket · Vergleichs-Paket mit Gerüst der Teildatei (nur, wenn die Antworten-Datei des Auditors jede Aufgabe trägt) · Paket der Lösbarkeitsprobe · `--zusammenfuehren` (Teildateien → `belege.json`, `probe.json`, `fall.json`) · `--pruefen` (zusammenführen, `check-belege --streng`, nur die Felder des Pakets). Verweigert jede Ausgabe in dieses Repo, unter `--wurzel` und in jedes Git-Repo |
+| `scripts/gegenhoeren.mjs` | Gegenhör-Liste als Markdown (Konsole oder `--out`) |
+
+**Gemessen am 07.10.2026:**
+
+- `gegenhoeren`: `2.2.1_ausgrenzung_analysieren` 4 Audio/Video, 26 Stellen mit
+  Zeitmarke, 4 Text- und Bildquellen (zwei Karten nur auf den Block genau);
+  `3.3.1_kaufvertrag_beurteilen` 2 Audio/Video, 18 Stellen, 6 Text- und
+  Bildquellen. Kein Stück eines Lösungsfelds ab sechs Wörtern und kein Treffer
+  von `check-leck` in den Listen.
+- `audit-paket` an `3.3.1_kaufvertrag_beurteilen`: fünf Pakete decken die 137
+  Lösungsfelder genau einmal (47 · 20 · 49 · 18 · 3). Die Blind-Pakete von
+  Heft A enthalten von 142 Stücken der Lösungsfelder ab sechs Wörtern 2
+  (ohne Medien) bzw. 1 (mit Medien) — beide stehen im Heft selbst (eine
+  Seitenangabe, die auch der Auftrag über dem Raster nennt; eine Prüffrage,
+  die auch die Produktbeschreibung nennt). Das Vergleichs-Paket derselben Spur
+  enthält 43. Ein `--out` im Repo endet mit «VERWEIGERT», Exit 2.
+- Ausgangswerte unverändert: `check-all` über die 16 «GRUEN», `check-namen`
+  grün, `karten.mjs geaendert` grün, Bestand unverändert, Build Exit 0.
+
+**Von mir entschieden, weil keine Vorgabe es deckte** (bitte bestätigen oder
+ändern):
+
+- **Teildatei je Schreiber.** `check-belege`, `check-zahlen` lesen je eine
+  Datei; Auditoren und Executor arbeiten gleichzeitig. Jeder schreibt darum
+  eine Teildatei (`belege.<heft>.<spur>.json`, `probe.<heft>.<spur>.json`,
+  `fall.<A|B|auftrag>.json`), und `audit-paket.mjs --zusammenfuehren` baut die
+  Datei. Je Feld gewinnt die Zeile mit heutigem Hash, dann die jüngere. Damit
+  schreibt `fall.json` weiter der Executor des Hefts — als `fall.<A|B>.json`.
+- **Fünf Lösungs-Audits je Einheit** (bei zwei Heften mit je zwei Spuren): vier
+  Pakete Heft × Spur und eines für den Auftrag. Der Kern eines Hefts (LF1, LF2,
+  Lösungsbild, Abschluss) liegt im Paket der ersten vorhandenen Spur. Mit fünf
+  Lösbarkeitsproben, einem Fakten-Audit und sechs Gegenlesern sind es siebzehn
+  Agenten je Lauf statt elf.
+- **Blind wird erzwungen, soweit ein Skript das kann:** Das Vergleichs-Paket
+  gibt es erst, wenn die Antworten-Datei jede Aufgabe trägt; es hält Hash und
+  Zeit dieser Datei fest. Dass der Auditor die Einheit nicht selbst öffnet,
+  bleibt eine Regel des Auftrags.
+- **Was «blind» ausschliesst:** jedes Lösungsfeld, den Kurzbeschrieb der
+  Quellenkarte (er kann die Lösung verraten), Kopf und Notizen der Archivdatei,
+  Begleiter, KN, Prinzip. Das Blind-Paket trägt die ganzen Kapitel, die das
+  Heft nennt — nicht nur die genannten Seiten —, damit eine falsche Seite
+  auffallen kann.
+- **Die Frage LF4 steht im Paket der Lösbarkeitsprobe** — der Auftrag nennt nur
+  Produkt, Abgaben, Kriterien und Lösungsbild; ohne die Frage ist «LF4 lässt
+  nur eine Antwort zu» nicht zu beurteilen.
+- **Die Fakten-Tabelle im Bericht entfällt**, mit ihr `fakten-tabelle.md`.
+  `fakten.json` ist die eine Fassung; der Bericht nennt die Zahlen je Urteil
+  und jede Zeile, die nicht «belegt» heisst. Eine Tabelle von Hand daneben
+  wäre eine zweite Fassung, die kein Skript prüft.
+- **Mischfeld:** Trägt ein Feld eine belegte und eine abgeleitete Aussage, gilt
+  das schwerste Urteil; die belegten Teile stehen in `weitere_belege`.
+- **Was nicht nachgeführt ist:** Der Sweep (ein Gegenleser) prüft heute fast
+  nur noch, was `check-all` und `check-kohaerenz` prüfen. Er ist geblieben,
+  weil kein Beleg vorliegt, dass er nichts mehr findet.
+
+**Offen für Pietro:**
+
+1. **`ERR_ZEIGER_SCHRITT_OHNE_SEITE` wörtlich?** «Jeder Schritt-Hinweis nennt
+   eine Seite» trifft im Bestand 127 von 240 Hinweisen. Bleibt die Regel
+   wörtlich, ist das an jedem Entwurf ein Fehler in etwa jedem zweiten
+   Schritt — oder gilt sie nur für Schritte, die auf eine andere Seite führen?
+2. **Nicht harte Budgets am Entwurf.** Vier der sieben nachgetragenen Budgets
+   (Lösungen S. 3 mit Medien, Kartentexte, Rezeptionskarte, Zahlentabelle) sind
+   am Entwurf Warnungen. Sollen sie Fehler werden?
+3. **Lösungs-Audit dauerhaft auf Opus?** Der Beweis zu Auftrag 10 misst Opus
+   gegen Sonnet beim Blindlösen an denselben Feldern. Bis zu einem Entscheid
+   nennt die Skill Opus.
+4. **Erster Durchgang des Tors ohne Exit 0.** `check-all` endet vor den Audits
+   «ROT» (zwei erwartete Fehler); der Orchestrator liest die Ausgabe. Ein
+   Schalter dafür (etwa `--vor-audit`) wäre eine Änderung an `check-all` und
+   lag ausserhalb dieser Stufe.
+5. **`check-all` kennt kein `--wurzel`.** Die fünf Beleg-Prüfungen und
+   `audit-paket` laufen an einer Temp-Kopie, das Tor als Ganzes nicht.
+6. **Siebzehn Agenten je Lauf.** Wenn das zu viel ist: Der Auftrag (drei
+   Felder) kann ins Paket eines Hefts, und eine Lösbarkeitsprobe kann mehrere
+   Produkte nacheinander bewerten.
+
+**Geänderte Dateien (Stufe C):** neu `scripts/audit-paket.mjs`,
+`scripts/gegenhoeren.mjs`, `references/audits.md`; geändert `SKILL.md` (§2, §4,
+§5 Nr. 5, §7), `references/gegenleser.md` (§1, §2, §4.1, §4.2, §6), `lauf.md`
+(§1, §2, §4, §4.1, §5, §6, §8, §11), `phase-9-tor.md` (§1, §3, §4),
+`phase-10-abschluss.md` (Tabelle, §1 bis §7), `belege.md` (Kopf, §2, §5 bis §7,
+§11, §12), `sprache.md` (§7.4), `ableitungsregeln.md` (§10, §10.3),
+`phase-4-heft-kern.md`, `phase-5-spuren.md`, `phase-6-abschluss.md`,
+`phase-7-set.md` (je der Absatz, wer `fall.json` schreibt),
+`assets/bericht-template.md` (Kopf, Abschnitte 2, 6, 8, 9, 11), `package.json`
+(zwei Zeilen). Keine Einheit, keine Karte, kein Renderer, keines der fünf
+Prüfskripte, nicht `check-all`; im Archiv ist nichts angelegt.
+
+**Rückgängig:** `git revert` des Commits der Stufe C. Die Skripte der Stufe B
+laufen unverändert; die Skill beschreibt dann wieder das frühere Lösungs-Audit.

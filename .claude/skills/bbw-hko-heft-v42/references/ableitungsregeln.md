@@ -318,7 +318,7 @@ Nummer und bei zwei Läufen derselben Einheit am selben Tag eindeutig bleibt
 | Archivordner | `<quellen-id>/` im Archiv (§5) | ja, folgt der ID | wie die ID | `NAME_ARCHIV_REF`, `NAME_ARCHIV_ORDNER` |
 | Bauplan | `docs/cloud-run/bauplaene/<ordner>.md` (`SKILL.md` §2) | ja, folgt dem Ordner | ein Bauplan je Ordner | `NAME_BAUPLAN` |
 | **Laufordner** | **`<JJJJ-MM-TT>-<ordnername>[-<k>]` (10.1)** | **ja — bisher nein** (`<datum>-<nummer>`) | **ja, durch `-<k>`** | `--vor`; `NAME_LAUF_*` |
-| Beleg-Dateien | `<Archiv>/_pruefung/<ordnername>/` (10.3) | ja | ein Ordner je Einheit, nicht je Lauf | noch kein Skript |
+| Beleg-Dateien | `<Archiv>/_pruefung/<ordnername>/` (10.3) | ja | ein Ordner je Einheit, nicht je Lauf; Teildateien je Schreiber | `check-belege`, `check-fakten`, `check-zahlen` lesen den Ordner; `ERR_BELEGE_EINHEIT`, `ERR_FAKTEN_EINHEIT`, `ERR_FALL_EINHEIT` melden eine Datei, die einer anderen Einheit gehört |
 | Export-Dateinamen | `heft-<a/b>-<spur>`, `loesungen-<a/b>-<spur>`, `auftragsbogen`, `begleiter` im Ausgabeordner (10.4) | ja, wenn der Ausgabeordner je Einheit und Executor eigen ist | nur mit eigenem Ausgabeordner je Executor | Vorschrift in `lauf.md` §6 |
 | Methodenkarten-ID | `hko-<slug>` oder `lm-<kap>-<slug>`, Datei = `id` (`phase-4-heft-kern.md` §8) | unabhängig von der Einheit: eine Karte, plattformweit | die Datei darf nicht schon da sein | `--vor … --karte <id>`; `NAME_METHODE_*`, `NAME_KARTE_DATEINAME` |
 
@@ -371,8 +371,16 @@ umbenannt (E21) — nur gemeldet. Darum:
 
 ### 10.3 Beleg-Dateien
 
-Beleg-Dateien mit Wortlaut (`belege.json`, `fakten.json`) liegen nie im Repo,
-sondern im Quellenarchiv unter `_pruefung/<ordnername>/` (`lauf.md` §8).
+Beleg-Dateien mit Wortlaut (`belege.json`, `fakten.json`, dazu `fall.json`,
+`probe.json`, `herkunft.json`) liegen nie im Repo, sondern im Quellenarchiv
+unter `_pruefung/<ordnername>/` (`lauf.md` §8) — ein Ordner je Einheit, benannt
+wie der Ordner unter `src/data/einheiten/`. Arbeiten mehrere Agenten
+gleichzeitig, schreibt jeder eine Teildatei mit festem Namen
+(`belege.<heft>.<spur>.json`, `probe.<heft>.<spur>.json`, `fall.<A|B|auftrag>.json`;
+`<heft>` = `A`, `B`, `auftrag`; `<spur>` = `ohne_medien`, `mit_medien`, `beide`,
+`kern`); `scripts/audit-paket.mjs --zusammenfuehren` baut daraus die Dateien,
+die die Prüfskripte lesen (`belege.md` §2, §12). Pakete und Antworten der
+Audits liegen in einem Temp-Ordner ausserhalb jedes Repos. (ENTSCHEIDE E38.)
 
 ### 10.4 Export
 

@@ -72,9 +72,15 @@ src/data/einheiten/<ordner>/
 src/data/quellen/q-<n><a|b>-{pflicht,pflicht-ersatz,vertiefung-1,vertiefung-2}.json   (nur Medien-Spur)
 src/data/methoden/<id>.json            (nur wenn eine neue Karte nötig ist — selten)
 docs/cloud-run/bauplaene/<ordner>.md   (der Bauplan)
-docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordner>/   (BERICHT.md, check-all.txt, messung.txt)
+docs/cloud-run/laeufe/<JJJJ-MM-TT>-<ordner>[-<k>]/   (BERICHT.md, check-all.txt, messung.txt, fünf Protokolle *-check.txt)
 D:\OS\_lab\quellen-archiv\bbw-hko\<quellen-id>\   (Volltexte — NIE im Repo)
+D:\OS\_lab\quellen-archiv\bbw-hko\_pruefung\<ordner>\   (Beleg-Dateien der Audits: belege.json, fakten.json, fall.json, probe.json — NIE im Repo)
 ```
+
+Der Laufordner trägt den vollen Ordnernamen; ein weiterer Lauf derselben
+Einheit am selben Tag bekommt `-2`, `-3` (`<k>`). Den Namen nennt
+`node scripts/check-namen.mjs --vor <ordner>` (`references/ableitungsregeln.md`
+§10.1; ENTSCHEIDE E35).
 
 Sonst wird nichts geschrieben. `src/data/einheiten.index.json` schreibt
 `npm run build:einheiten-index`, nie die Skill von Hand.
@@ -137,8 +143,8 @@ Reihenfolge ist eine Abhängigkeitsfolge und wird nicht umgestellt.
 | 6 | **Abschluss und Bilder** je Heft | Begriffsnetz, Abschluss mit Lösung, Checkliste, Übersicht, Beispielbild, Lösungsbild | `references/phase-6-abschluss.md` | (im Heft-Skelett) |
 | 7 | **Set** | `set.json`: Glossar, gemeinsamer Auftrag mit `heft_bezug`, Wochenplan, `status: "entwurf"` | `references/phase-7-set.md` | `assets/set-template.json` |
 | 8 | **Begleiter** | `begleiter.md`; die Marker füllt `scripts/begleiter-marker.mjs` der Skill, nie die Hand | `references/phase-8-begleiter.md` | `assets/begleiter-template.md` |
-| 9 | **Tor und Bericht** | alle Gates grün, Messung aller Dokumente ohne Überlauf, Gegenleser und Lösungs-Audits nach der letzten Änderung, Bericht begonnen | `references/phase-9-tor.md`, `references/gegenleser.md` | `assets/bericht-template.md` |
-| 10 | **Abschluss vor der Freigabe** | offene Befunde abgearbeitet, Fakten-Audit an Primärquellen mit Tabelle, Zahlen nachgerechnet, erneut gelesen nach der letzten Änderung, Gegenhör-Liste für Pietro, **ein Commit** — dann **STOPP: Vorlage zur Freigabe**; freigegeben wird nur auf Pietros «ok» | `references/phase-10-abschluss.md` | (im Bericht-Gerüst) |
+| 9 | **Tor und Bericht** | Tor im ersten Durchgang grün, Messung aller Dokumente ohne Überlauf; danach Gegenleser und die drei Audits — Lösungs-Audit (blind, `belege.json`), Fakten-Audit (`fakten.json`), Lösbarkeitsprobe (`probe.json`); Bericht begonnen | `references/phase-9-tor.md`, `references/gegenleser.md`, `references/audits.md` | `assets/bericht-template.md` |
+| 10 | **Abschluss vor der Freigabe** | offene Befunde abgearbeitet, Fakten-Audit abgeschlossen, Zahlen geprüft, erneut gelesen und erneut auditiert nach der letzten Änderung, Tor im zweiten Durchgang GRUEN (mit Belegen, Fakten, Probe), Gegenhör-Liste für Pietro erzeugt, **ein Commit** — dann **STOPP: Vorlage zur Freigabe**; freigegeben wird nur auf Pietros «ok» | `references/phase-10-abschluss.md` | (im Bericht-Gerüst) |
 
 Querschnitt, für jede Phase: `references/kohaerenz.md` (fest gegen hergeleitet,
 Abdeckungstabelle, Vergleich mit Gold), `references/datenvertrag.md` (jedes
@@ -149,7 +155,10 @@ Feld, Budget, Regel), `references/sprache.md` (Anrede, Umlaute, Fall-Begriffe),
 fehlender Voraussetzung — E23), `references/lauf.md` (Start, Rollen und
 Modelle, Vorprüfung, Reihenfolge, Messung, Abbruch, Commit — E34),
 `references/karten.md` (Methoden- und Quellenkarten: ändern oder neu anlegen,
-`scripts/karten.mjs`, Vermerk — E36).
+`scripts/karten.mjs`, Vermerk — E36), `references/belege.md` (Beleg-Dateien
+ausserhalb des Repos: Ort, Form, Lösungsfelder und Hash, die Skripte, die sie
+prüfen — E38), `references/audits.md` (Lösungs-Audit, Fakten-Audit,
+Lösbarkeitsprobe als Auftragsvorlagen; `scripts/audit-paket.mjs` — E38).
 
 ### Wer was tut
 
@@ -159,10 +168,17 @@ Ab Phase 2 arbeitet die Skill mit Rollen; vollständig in
 | Rolle | Modell | Aufgabe |
 |---|---|---|
 | Orchestrator | Opus | Vorprüfung, Phasen 2–3, eine vom Bauplan verlangte neue Methodenkarte, alle Aufträge, Index, Marker-Skript nach Phase 8, Tor, Bericht, Commit — nur er |
-| Executor A ∥ Executor B | Opus | je ein Heft (Phasen 4–6), gleichzeitig; **jeder misst sein Heft selbst, bevor er abgibt** |
-| Executor Set → Executor Begleiter | Opus | Phase 7, dann Phase 8, nacheinander; der Executor Begleiter füllt am Ende einmal die Marker mit dem Skript |
-| Gegenleser | Sonnet | Lernende, Bogen-Leser, Sweep, Lösungs-Audit — alle gleichzeitig, nur lesend |
-| Fakten-Audit | Opus, mit Netz | jede Rechts- und Sachaussage an Gesetz und Amt (Phase 10) |
+| Executor A ∥ Executor B | Opus | je ein Heft (Phasen 4–6), gleichzeitig; **jeder misst sein Heft selbst, bevor er abgibt**, und schreibt die erfundenen Fallzahlen seines Hefts als `fall.<A\|B>.json` |
+| Executor Set → Executor Begleiter | Opus | Phase 7 (mit `fall.auftrag.json`), dann Phase 8, nacheinander; der Executor Begleiter füllt am Ende einmal die Marker mit dem Skript |
+| Gegenleser | Sonnet | Lernende, Bogen-Leser, Sweep — alle gleichzeitig, nur lesend; die Lernenden geben ihr Produkt als Datei ab |
+| Lösungs-Audit | Opus | je Heft und Spur und für den Auftrag: **blind lösen, dann vergleichen**, Ergebnis `belege.json` (`references/audits.md` §2) |
+| Fakten-Audit | Opus, mit Netz | jede Rechts- und Sachaussage an Gesetz und Amt, Ergebnis `fakten.json` (`references/audits.md` §3) |
+| Lösbarkeitsprobe | Sonnet | bewertet das Produkt eines Lernenden-Gegenlesers mit Kriterien und Lösungsbild, Ergebnis `probe.json` (`references/audits.md` §4) |
+
+Die Audits beginnen nach dem ersten grünen Tor; jede Änderung einer Lösung
+macht ihre Belegzeile ungültig (Hash), und nur dieses Feld wird neu geprüft.
+Die Beleg-Dateien liegen ausserhalb des Repos; im Repo liegt nur das Protokoll
+der Prüfskripte. (Herkunft: Rückblick §5.1–§5.3; ENTSCHEIDE E38.)
 
 Eine Session je Arbeitsbaum, eine Einheit je Session-Durchgang, kein
 `git worktree`, kein `npm ci`, kein Branchwechsel.
@@ -226,6 +242,10 @@ Einzelheiten und der Weg, wenn der Export nicht läuft:
    jede Vertiefung bekommt ihre Lösung in derselben Phase, mit Fundstelle
    (Seite, Absatz, Zeitmarke). Lässt sich kein Erwartungshorizont mit
    Fundstelle schreiben, ist die Frage falsch gestellt und wird umformuliert.
+   Was eine Lösung selbst folgert — was weder in der Quelle noch im Lehrmittel
+   steht —, kennzeichnet sie im selben Feld als Fallüberlegung oder Deutung
+   (Wortliste: `references/sprache.md` §7.4); das Lösungs-Audit und
+   `check-belege` prüfen es (Rückblick §4, §5.3 Nr. 4; E38).
 6. **Quelle vor Frage.** LF3, LF4 und die Vertiefungsfragen der Medien-Spur
    werden erst formuliert, wenn die Quelle gewählt und gelesen ist; LF3 ohne
    Medien erst, wenn am Kapiteltext geprüft ist, was auf den Seiten steht.
@@ -289,19 +309,24 @@ Kurzfassung; vollständig in `references/auto-modus.md`.
 
 ## 7. Fertig ist die Einheit, wenn
 
-1. `references/phase-9-tor.md` durchgelaufen ist: `check-all` GRUEN, Export und
+1. `references/phase-9-tor.md` durchgelaufen ist: `check-all` im zweiten
+   Durchgang GRUEN — darin `check-belege` (jedes Lösungsfeld mit gültiger
+   Belegzeile, kein offener Befund der Lösbarkeitsprobe) und `check-fakten`
+   (jede Aussage über die Welt belegt) —, Export und
    Messung ohne Überlauf (bis 2 px auf Seite 6 hingenommen und gemeldet — E28),
-   Bestand unverändert, Build Exit 0, Gegenleser und Lösungs-Audits nach der
+   Bestand unverändert, Build Exit 0, Gegenleser nach der
    letzten Änderung. Bleibt nach drei Reparaturrunden nur ein Überlauf über
    2 px, ist das kein Abbruch: Die Einheit bleibt `"entwurf"`, der Punkt steht
    unter «Offen» (Kürzel E), und die Vorlage sagt «freigabereif: nein»
    (`references/phase-9-tor.md` §2);
 2. `references/phase-10-abschluss.md` Schritte 1 bis 6 durchgelaufen sind:
-   offene Befunde abgearbeitet, Fakten-Audit mit Tabelle, Zahlen nachgerechnet,
-   erneut gelesen, Tor und Messung nach der letzten Änderung, Gegenhör-Liste;
+   offene Befunde abgearbeitet, Fakten-Audit abgeschlossen, Zahlen geprüft,
+   erneut gelesen und erneut auditiert, Tor und Messung nach der letzten
+   Änderung, Gegenhör-Liste (`scripts/gegenhoeren.mjs`);
 3. der Bericht im Laufordner liegt (`assets/bericht-template.md`) und nennt:
    Ordner, Tor-Ausgabe, Kapitel und Seiten, jede Quelle mit Prüfdatum, alle
-   Entscheide, die sonst ein Mensch getroffen hätte, die Fakten-Tabelle, und
+   Entscheide, die sonst ein Mensch getroffen hätte, den Stand der drei Audits
+   mit jeder Zeile, die nicht «stimmt» bzw. «belegt» heisst, und
    unter «Offen» alles, was nicht belegt, nicht geprüft oder nicht entschieden
    ist;
 4. **ein Commit** «Einheit `<ordner>` (bbw-hko-heft-v42)» steht, mit Einheit,

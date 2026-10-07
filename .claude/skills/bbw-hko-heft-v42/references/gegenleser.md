@@ -19,31 +19,47 @@ und ein Blick aufs Papier; Zeiten sind Schätzungen. Der Bericht sagt das.
 |---|---|---|---|
 | **Lernende/r, Profil a** (stark, schnell, liest genau) | je Heft und vorhandener Spur | Seitentext des Hefts; Spur mit Medien: QR-Seite und Quelle; die genannten Lehrmittelseiten | Widersprüche zwischen Seiten, Aufträge, die das Material nicht trägt, vorweggenommene Entscheide |
 | **Lernende/r am Auftragsbogen**, Profil a | 1 je Einheit | Seitentext des Auftragsbogens, dazu S. 4 und 8 beider Hefte | Schritte ohne Abgabe, Kriterien ohne Auftrag, Fall passt nicht zu den Heften |
-| **Lösungs-Audit** | je Heft und vorhandener Spur | Dokument «Lösungen»; Kapiteldatei mit Seitenmarken bzw. Archivtext — bei Audio und Video die Untertitel **in voller Auflösung** (Abschnitt 4.2) | falsche Fundstellen, Zeitmarken, Ableitungen, die als Aussage der Quelle dastehen |
 | **Sweep** | 1 je Einheit | alle Dateien der Einheit | «ß», Platzhalter, Fall-Begriffe, Anrede |
 
-Bei zwei Heften mit je zwei Spuren sind das vier Lernende a,
-ein Bogen-Leser, vier Audits und ein Sweep: zehn. Modell: Sonnet. Nicht zur
-festen Besetzung gehören das Profil «Deutsch als Zweitsprache, B1» (Entscheid
-E31: Befunde zu Sprachlast und Zeitbedarf für B1 werden nicht bearbeitet) und
-das Profil «wenig Lust, macht das Minimum»; dieses lohnt sich für eine
-Stichprobe, wenn die Frage ist, was übersprungen wird.
+Modell: Sonnet. Jede/r Lernende — auch am Auftragsbogen — gibt neben dem
+Lesebericht **das eigene Produkt als Datei** ab (Abschnitt 4.1); daran hängt
+die Lösbarkeitsprobe. Nicht zur festen Besetzung gehören das Profil «Deutsch
+als Zweitsprache, B1» (Entscheid E31: Befunde zu Sprachlast und Zeitbedarf für
+B1 werden nicht bearbeitet) und das Profil «wenig Lust, macht das Minimum»;
+dieses lohnt sich für eine Stichprobe, wenn die Frage ist, was übersprungen
+wird.
 
-**Nicht Gegenleser, aber Teil jedes Laufs: das Fakten-Audit** (Opus, mit Netz,
-`references/phase-10-abschluss.md` §2). Das Lösungs-Audit prüft gegen Quelle
-und Lehrmittel, das Fakten-Audit gegen Gesetz und Amt — die Gegenleser finden
-Bearbeitbarkeit, nicht Wahrheit. Wer wann läuft und was gleichzeitig laufen
-darf: `references/lauf.md` §4–§5. (Herkunft: Rückblick
-`docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md` §4, §5.3 Nr. 6.)
+**Nicht Gegenleser, aber Teil jedes Laufs: die drei Audits**
+(`references/audits.md`). Die Gegenleser finden Bearbeitbarkeit, nicht
+Wahrheit; die Audits geben je eine Datei ab, die ein Skript prüft:
+
+| Audit | Modell | Anzahl | Prüft | Gibt ab |
+|---|---|---|---|---|
+| **Lösungs-Audit** | Opus | je Heft und vorhandener Spur, dazu 1 für den Auftrag | jede Lösung gegen Quelle und Lehrmittel — **blind gelöst, dann verglichen** | `belege.json` |
+| **Fakten-Audit** | Opus, mit Netz | 1 je Einheit | jede Rechts- und Sachaussage gegen Gesetz und Amt | `fakten.json` |
+| **Lösbarkeitsprobe** | Sonnet | je Produkt eines Lernenden-Gegenlesers | ob ein sorgfältiges Produkt die höchste Stufe erreichen kann, der Form des Lösungsbilds entspricht und LF4 eine echte Wahl lässt | `probe.json` |
+
+**Zahl der Agenten je Lauf**, bei zwei Heften mit je zwei Spuren: vier Lernende,
+ein Bogen-Leser, ein Sweep (sechs, Sonnet) · fünf Lösungs-Audits (Opus) · ein
+Fakten-Audit (Opus) · fünf Lösbarkeitsproben (Sonnet) — **siebzehn**. Bis
+07.10.2026 waren es elf: Das Lösungs-Audit lief mit vier Agenten auf Sonnet,
+las die Lösung zuerst und gab Prosa ab; die Lösbarkeitsprobe gab es nicht. Wer
+wann läuft und was gleichzeitig laufen darf: `references/lauf.md` §4–§5.
+(Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md`
+§4, §5.2, §5.3; ENTSCHEIDE E38, Stufe C.)
 
 ## 2. Zeitpunkt
 
 **Nach der letzten Reparatur- oder Kürzungsrunde, nicht nach dem ersten grünen
 Tor.** Reihenfolge im Lauf:
 
-1. Tor grün (`references/phase-9-tor.md` §1), Messung ohne Überlauf.
-2. Gegenleser, alle parallel.
-3. Befunde nachprüfen (Abschnitt 5), Aufträge an die Executors, Tor neu.
+1. Tor grün im ersten Durchgang (`references/phase-9-tor.md` §1), Messung ohne
+   Überlauf.
+2. Gegenleser, alle parallel — daneben Lösungs-Audit und Fakten-Audit; die
+   Lösbarkeitsprobe, sobald ein Produkt vorliegt (`references/audits.md` §1.3).
+3. Befunde nachprüfen (Abschnitt 5) — auch jedes Urteil der Audits, das nicht
+   «stimmt» bzw. «belegt» heisst, und jeden Befund der Probe —, Aufträge an die
+   Executors, Tor neu.
 4. Hat Schritt 3 sichtbaren Text geändert — auch nur durch Kürzen wegen
    Überlauf —, lesen die Lernenden-Gegenleser der betroffenen Dokumente die
    **geänderten Seiten** noch einmal. Erst wenn eine Runde nichts Sichtbares mehr
@@ -112,38 +128,39 @@ mit verschiedenem Lehrjahr, zählt der kanonische. (Herkunft: Berichte
 > auf welche Seite gehört? Nenne am Schluss die drei Stellen, die mich am
 > meisten gestört haben, mit Seite und Wortlaut. Nichts beschönigen, nichts
 > reparieren, keine Verbesserungsvorschläge, keine Subagenten.
+>
+> Gib dazu dein **Produkt als eigene Datei** ab, so sorgfältig, wie du es als
+> starke Lernende abgeben würdest — ohne Kommentar, ohne Kritik: (1) alles, was
+> «Das geben Sie ab» verlangt, vollständig und in der verlangten Form (Tabelle
+> als Tabelle, jede Zeile, jeder Satz); (2) deine Antwort auf die Frage der
+> Seite 4 (LF4) im Wortlaut, und darunter eine Zeile «Ebenso vertretbar wäre:
+> …» — oder «Eine zweite vertretbare Antwort sehe ich nicht, weil …»; (3) deine
+> Selbsteinschätzung: je Kriterium die Punkte 0 bis 3 und die Stelle im Produkt,
+> auf die du dich stützt. Beim Auftragsbogen: beide Produkte, und statt LF4 die
+> Frage des Auftrags.
 
 «Durcharbeiten und die Antworten hinschreiben» ist der Kern: Dass ein
 Lehrmittel-Abschnitt eine Frage nicht trägt, fällt erst auf, wenn jemand den
 Befund schreiben muss. «Lies und beurteile» findet das nicht.
 
-Rückgabe: eine Datei mit Tabelle je Seite (vier Spalten), den kritischen
-Antworten, den drei Stellen und der Zeitsumme; höchstens 120 Zeilen. An den
-Orchestrator zurück: Pfad und die drei Stellen.
+Rückgabe: **zwei Dateien** im Temp-Ordner des Laufs, ausserhalb des Repos —
+der Lesebericht (Tabelle je Seite mit vier Spalten, die kritischen Antworten,
+die drei Stellen, die Zeitsumme; höchstens 120 Zeilen) und das Produkt
+`<tmp>/gegenleser/produkt.<heft>.<spur>.md` (beim Auftragsbogen
+`produkt.auftrag.beide.md`). An den Orchestrator zurück: beide Pfade und die
+drei Stellen. Das Produkt geht unverändert an die Lösbarkeitsprobe
+(`references/audits.md` §4) — der Lesebericht nicht. (Herkunft: Rückblick
+§5.2, Zeile «Aufgabe nicht lösbar, keine echte Wahl»; Auftrag 10, Stufe C
+Nr. 3; ENTSCHEIDE E38.)
 
-### 4.2 Lösungs-Audit
+### 4.2 Lösungs-Audit — steht in `audits.md`
 
-Jede Lösung (LF1 bis LF4, Raster, Befund, Denkhilfe, Erwartungen der
-Vertiefung, Lösungsbild, Abschluss) gegen Kapiteldatei bzw. Archivtext prüfen:
-Fundstelle stimmt, Zeitmarke stimmt, nichts steht als Lehrmittelaussage da, was
-Fallüberlegung ist. Je Befund: Feld, Wortlaut, was die Grundlage wirklich sagt.
-
-**Material in voller Auflösung.** Für Audio und Video bekommt das Audit die
-Untertitel bzw. das Transkript **Zeile für Zeile mit Einsatzzeit** aus dem
-Archivordner der Quelle — nicht in Blöcken von rund 20 Sekunden. Aus solchen
-Blöcken kamen Zeitmarken, die 8 bis 25 Sekunden neben der Aussage lagen. Für
-das Lehrmittel: die Kapiteldatei mit ihren Seitenmarken. Liegt im Archiv nur
-ein Blocktranskript, sagt der Bericht das, und jede Zeitmarke dieser Quelle
-kommt auf die Gegenhör-Liste. (Herkunft: Nachtrag `2026-10-03-221` §7 — elf
-Zeitmarken; Rückblick §4, §5.3 Nr. 2.)
-
-**Erneut nach jeder Änderung einer Lösung** — nur das geänderte Feld
-(`references/phase-10-abschluss.md` §4; Rückblick §5.3 Nr. 5).
-
-`node scripts/check-belege.mjs <ordner>` (sobald vorhanden) bringt die neue
-Form des Audits: blind lösen und erst dann vergleichen, vier Urteile je Feld,
-Ergebnis als `belege.json` im Quellenarchiv unter `_pruefung/<ordnername>/`.
-Bis dahin gilt dieser Abschnitt (Rückblick §5.1, §5.3).
+Das Lösungs-Audit ist kein Gegenleser mehr: Es löst jede Aufgabe **blind** an
+Quelle und Lehrmittel, vergleicht erst dann mit der Lösung und gibt
+`belege.json` ab, die `check-belege` prüft. Paket, Auftrag, Urteile und die
+Prüfung nach jeder Änderung einer Lösung: `references/audits.md` §2. Das
+frühere Verfahren dieses Abschnitts (Sonnet, las die Lösung zuerst, gab Prosa
+ab) gilt nicht mehr. (Herkunft: Rückblick §5.1, §5.3; ENTSCHEIDE E38, Stufe C.)
 
 ### 4.3 Sweep
 
@@ -174,4 +191,6 @@ sie sind die Stellen, an denen 2.3.1 und 2.1.1 gefehlt haben.
 Je Gegenleser: Zahl der Befunde, was übernommen wurde (mit Auftrag an wen), was
 nicht und warum, was nach Nachprüfung wegfiel. Dazu: in welcher Runde zuletzt
 gelesen wurde, die Zeitsumme je Heft der Lernenden-Gegenleser gegen den
-Seitenplan, und was kein Gegenleser prüfen konnte (Audio, Seitenbild).
+Seitenplan, und was kein Gegenleser prüfen konnte (Audio, Seitenbild). Die
+Audits stehen im selben Abschnitt des Berichts, in der Form aus
+`references/audits.md` §5.

@@ -21,6 +21,8 @@
     "check:zahlen": "node scripts/check-zahlen.mjs",
     "check:kohaerenz": "node scripts/check-kohaerenz.mjs",
     "check:links": "node scripts/check-links.mjs",
+    "audit:paket": "node scripts/audit-paket.mjs",
+    "gegenhoeren": "node scripts/gegenhoeren.mjs",
     "abdeckung": "node scripts/abdeckung.mjs",
     "build:sk-labels": "node scripts/build-sk-labels.mjs",
     "sync:situationen": "node scripts/sync-situationen.mjs",

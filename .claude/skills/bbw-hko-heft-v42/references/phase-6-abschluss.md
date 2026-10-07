@@ -350,6 +350,14 @@ Wer trotzdem an eine Karte will, fragt zuerst
 Ein Fehler in der Karte selbst geht in den Bericht («Offen», Kürzel S), nicht
 in die Karte (`references/karten.md`; ENTSCHEIDE E36).
 
+**Wer `fall.json` schreibt:** der Executor des Hefts — er gibt mit dem Heft
+seine Teildatei `fall.<A|B>.json` ab, jetzt vollständig: auch die Zahlen, die
+das Lösungsbild aus den Fallzahlen ableitet (mit `abgeleitet_aus`), und was
+die Situation ausschliesst. Das Beispielbild hat einen eigenen, neutralen Fall;
+seine Zahlen gehören nicht hinein (`references/belege.md` §6). (Herkunft:
+Rückblick §4 «Widerspruch zwischen Seiten», «Rechenfehler»; Auftrag 10,
+Stufe A; E38.)
+
 (Herkunft: Rückblick `docs/upgrade-v4.2/RUECKBLICK-produktion-2026-10-06.md`
 §4 Zeile 1 — Überlauf bei grünem `check-all` in 11 von 13 Läufen — und §5.2;
 Bericht `2026-10-06-4.3.1_vielfalt_untersuchen` §10.)

@@ -126,6 +126,46 @@ Wort macht eine Einheit von sich aus «nicht erzeugbar».
 | TODO, TBD; eine eckige Klammer vor «nach », «abhängig», «Datum», «Vier », «URL», «JJJJ»; geschweifte Klammern um Platzhalter | `ERR_PLATZHALTER`, `ERR_V42_PLATZHALTER` | ausschreiben; runde Klammern |
 | ein Satz aus dem Lehrmittel oder aus einer Quelle | `WARN_LEHRMITTEL_NAH` ab 14, `ERR_LEHRMITTEL_WOERTLICH` ab 25 Wörtern am Stück | eigene Formulierung plus Kapitel und Seite |
 
+### 7.4 Kennzeichen für Fallüberlegung und Deutung
+
+Kein gesperrtes, sondern ein **verlangtes** Wort. Was eine Lösung selbst
+folgert — was also weder in der Quelle noch im Lehrmittel steht —, sagt das im
+selben Feld mit einem Wort dieser Liste. Dasselbe gilt für eine Aussage über
+die Welt, die sich an keiner amtlichen Stelle belegen liess und trotzdem stehen
+bleibt. Fehlt das Wort, ist es im Tor ein Fehler:
+`ERR_ABLEITUNG_UNGEKENNZEICHNET` (`check-belege`: das Lösungs-Audit urteilt
+`ableitung`) bzw. `ERR_FAKT_NICHT_BELEGBAR` (`check-fakten`: das Fakten-Audit
+urteilt `nicht_belegbar`).
+
+| Kennzeichen | Gilt als |
+|---|---|
+| Fallüberlegung · Fallangabe · Fallannahme | Teilwort |
+| Annahme · Annahmen · angenommen | ganzes Wort |
+| Auslegung | Teilwort |
+| Deutung | ganzes Wort |
+| gedeutet | Teilwort |
+| nicht belegt · nicht belegbar | Wortfolge |
+| nicht aus dem Lehrmittel · keine Lehrmittelaussage · nicht Lehrmittelaussage | Wortfolge |
+| Vertragssache · Einzelfall | Teilwort |
+| eigene Überlegung | Wortfolge |
+| mögliche Lösung · mögliche Antwort | Wortfolge |
+| erfunden… · Beispielwert… | Wortanfang |
+
+Gross- und Kleinschreibung zählen nicht. **Massgebend ist das Skript:** Die
+Liste ist die Abschrift von `RE_FALLKENNZEICHEN` in
+`scripts/lib/pruefung.mjs` (Stand 07.10.2026, erhoben an den Lösungen der 16
+Einheiten). Wer ein Kennzeichen ergänzen will, ändert das Skript und führt
+diese Tabelle nach — nie nur die Tabelle.
+
+So schreiben: «Fallüberlegung: …», «(Annahme: 14 Tage ab Erhalt)», «Deutung,
+nicht Aussage der Quelle: …», «nicht aus dem Lehrmittel: …». Die Kennzeichnung
+steht in der Lösung, nie im Text für Lernende. Sie macht eine Ableitung
+zulässig, nicht richtig: Ob sie trägt, beurteilt das Lösungs-Audit
+(`references/audits.md` §2), und wo eine Stelle im Lehrmittel oder in der
+Quelle die Aussage belegt, gehört die Fundstelle hin, nicht das Kennzeichen.
+(Herkunft: Rückblick §4 «Ableitung steht als Quellenaussage da», rund 15
+Stellen; §5.3 Nr. 4; Auftrag 10, Stufe B Nr. 1; ENTSCHEIDE E38, Stufen B und C.)
+
 ## 8. Trade-off → Spannungsfeld oder Zielkonflikt
 
 Der Anglizismus «Trade-off» steht in keinem sichtbaren Text.
