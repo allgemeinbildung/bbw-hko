@@ -114,9 +114,13 @@ dass das Skript ein Prüfwort der Einheit sperrt — die Ausnahme im Skript ist
 Pietros Entscheid. **Entschieden am 07.10.2026: Die Ausnahme gilt nur für die
 Einheit über KI** (`1.2.2_ki_kompetenznachweis_vorbereiten`, «Halluzination»;
 `SPERRWORT_AUSNAHMEN` im Skript). Dort darf das Wort in jedem Feld stehen, in dem
-die Einheit es auch braucht — beim ersten Vorkommen je Blatt erklärt. Andere
-Kernwörter («Absender», «Stufe», «Ich-Form») bleiben gesperrt und werden
-umschrieben.
+die Einheit es auch braucht — beim ersten Vorkommen je Blatt erklärt. **Seit
+08.10.2026 (E45) dazu:** «Dimension» in `3.2.1_konsumfolgen_beurteilen` — das
+Glossar führt «ökologische / ökonomische / soziale Dimension» als Kernbegriffe von
+Heft A; das Wort steht dort nur in diesen drei Glossarbegriffen, nie als Wort für
+die Achsen des Rasters. Andere Kernwörter («Absender», «Stufe», «Ich-Form»)
+bleiben gesperrt und werden umschrieben. Ein Glossarbegriff, der einmal ohne und
+einmal mit `spur` dasteht («graue Energie»), gilt als Kern (ohne Spur).
 
 Gross- und Kleinschreibung zählen nicht; ein Sperrwort gilt auch als Teilwort
 («Retrieval-Übung»). Einige feste Überschriften des Renderers tragen solche Wörter

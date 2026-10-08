@@ -3,102 +3,112 @@
   "set_ref": "3.2.1_wahre_kosten_set",
   "prinzip_ref": "3.2.1_wahre_kosten_prinzip",
   "kn_ref": "3.2.1_wahre_kosten_kn",
-  "version": "1.0.0",
-  "erstellt_am": "2026-08-20",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
   "lernbegleiter": {
     "version": "1.0",
     "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
-    "ziel": "Sie nutzen die KI als Lerncoach, um das Prinzip dieser Einheit zu repetieren und an neuen Fällen zu üben — nicht, um eine Abgabe schreiben zu lassen.",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
     "kompetenzversprechen": "Ich kann aufdecken, welche Kosten im Preis eines Produkts fehlen, und begründet entscheiden, wer sie tragen soll.",
     "ki_frei_zuerst": {
-      "auftrag": "Bevor Sie die KI nutzen: Schätzen Sie ehrlich ein, wie sicher Sie sich bei den drei Teilen des Kompetenzversprechens fühlen. Markieren Sie für jeden Punkt 1 (noch unsicher) bis 5 (sitzt). Genau die Punkte mit 1-3 üben Sie danach zuerst.",
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
       "selbsteinschaetzung": [
-        "Ich kann erklären, wie ein Preis über Angebot, Nachfrage und Produktionsfaktoren zustande kommt (Kap. 2.7, S. 76-82).",
-        "Ich kann bei einem konkreten Produkt aufdecken, welche Kosten im Preis fehlen, und sie benennen (Kap. 9.3, Kap. 11.2).",
-        "Ich kann begründet entscheiden, wer die fehlenden Kosten tragen soll — Konsument/in, Unternehmen oder Staat — und dabei das Verursacherprinzip und die Lenkungsabgabe richtig anwenden (Kap. 1.5 S. 41, Kap. 9.3 S. 233)."
+        "Ich kann erklären, wie ein Preis aus Angebot und Nachfrage entsteht (Kap. 2.7).",
+        "Ich kann aufdecken, welche Kosten im Preis eines Produkts fehlen.",
+        "Ich kann begründet entscheiden, wer diese Kosten tragen soll."
       ]
     },
+    "begriffe": [
+      "Verursacherprinzip",
+      "Lenkungsabgabe",
+      "Marktversagen",
+      "Angebot und Nachfrage",
+      "Nachfragekurve",
+      "Angebotskurve",
+      "Produktionsfaktoren",
+      "Umweltschutzgesetz",
+      "Recyclingquote",
+      "Label"
+    ],
     "strategie_karten": [
       {
         "key": "retrieval",
         "technik": "Abfragen lassen",
-        "wann": "Zum Repetieren der Begriffe und Prinzipien, kurz vor dem Kompetenznachweis oder als 15-Minuten-Runde zwischendurch.",
-        "prompt_basis": "Frag mich zu diesen Begriffen ab: Angebot und Nachfrage, Marktgleichgewicht, Produktionsfaktoren, externe Kosten, Verursacherprinzip, Lenkungsabgabe, Marktversagen. Stell mir eine Frage nach der anderen und gib mir die Lösung erst, nachdem ich geantwortet habe.",
-        "prompt_fortgeschritten": "Frag mich in aufsteigender Schwierigkeit ab: zuerst Begriffe erklären, dann an einem Beispiel anwenden, dann zwei Instrumente gegeneinander abwägen. Wenn ich einen Begriff nur nacherzähle, statt ihn anzuwenden, sag es mir und frag nochmals anders.",
-        "warnung": "Lassen Sie sich die Lösung nie vor Ihrer eigenen Antwort geben — sonst prüfen Sie nur Ihr Wiedererkennen, nicht Ihr Wissen. Und vergleichen Sie die Begriffsdefinitionen der KI mit dem Lehrmittel: Marktversagen und Lenkungsabgabe werden dort präziser gefasst, als eine KI sie meist wiedergibt."
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Begriffe der Einheit erklären können. Eine nicht bearbeitete Herausforderung schlagen Sie im Lehrmittel nach.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kosten, die im Preis fehlen. Frag mich ab zu Angebot und Nachfrage, Produktionsfaktoren, Verursacherprinzip, Lenkungsabgabe und Marktversagen. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Lehrmittel ab (Kap. 2.7, 9.3, 1.5), gilt das Lehrmittel."
       },
       {
         "key": "feynman",
         "technik": "Selbst erklären",
-        "wann": "Wenn Sie merken, dass Sie einen Zusammenhang zwar nachlesen, aber nicht frei erklären können.",
-        "prompt_basis": "Ich erkläre dir jetzt, wie ein Preis entsteht und welche Kosten darin fehlen: [meine Erklärung]. Nenne mir nur die Lücken und Ungenauigkeiten in meiner Erklärung — schreibe keine eigene Erklärung.",
-        "prompt_fortgeschritten": "Hör dir meine Erklärung an: [meine Erklärung]. Stell mir danach drei Nachfragen, an denen sich zeigt, ob ich den Zusammenhang wirklich verstanden habe, und sag mir bei jeder, worauf du bei meiner Antwort achten wirst.",
-        "warnung": "Sobald die KI die Erklärung für Sie zu Ende schreibt, ist die Übung verloren — im Fachgespräch erklären Sie frei. Formulieren Sie deshalb immer zuerst selbst und verlangen Sie ausdrücklich nur Lücken, keine Musterformulierung."
-      },
-      {
-        "key": "mock_transfer",
-        "technik": "Übungsfall lösen (Transfer-Simulation)",
-        "wann": "Zum Üben des Transfers: ob Sie das Prinzip auf ein Produkt übertragen, das Sie noch nie behandelt haben.",
-        "prompt_basis": "Erfinde einen NEUEN Fall aus einem anderen Feld als Werkzeugkauf im Betrieb, Vanille, Farbe und Handy — zum Beispiel eine Dienstleistung, ein Verpflegungsangebot oder ein Kleidungsstück. Gib mir nur die Situation mit ein paar Zahlen, keine Lösung. Ich löse sie selbst; danach bewerte meine Lösung nach den Kriterien Fachkorrektheit, Argumentation, wirtschaftliches Prinzip und Position beziehungsweise Werthaltung.",
-        "prompt_fortgeschritten": "Gib mir einen neuen Fall aus einem anderen Feld, in dem sich ein knappes Budget und eine teurere, langlebigere Wahl widersprechen und in dem unklar ist, wer die Folgekosten trägt. Nachdem ich entschieden habe, spiel die Gegenseite und prüfe, ob meine Begründung und meine Belege standhalten.",
-        "warnung": "Wichtig: Der Übungsfall muss ein ANDERER sein als die Prüfsituation Ihres Kompetenznachweises — kein Werkzeugkauf mit zwei Preisen und keine Entsorgungsrechnung im Betrieb. Die KI darf Ihnen für genau diesen Fall keine Musterlösung schreiben; Sie üben das Übertragen des Prinzips, nicht eine auswendig gelernte Antwort."
+        "wann": "Wenn Sie einen Begriff in eigenen Worten erklären wollen.",
+        "prompt_basis": "Thema: Kosten, die im Preis fehlen. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Sag mir, was in meiner Erklärung fehlt oder unklar ist. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Lehrmittel, bevor Sie etwas ändern."
       },
       {
         "key": "uebungs_feedback",
-        "technik": "Feedback auf einen Versuch",
-        "wann": "Nachdem Sie einen Übungsfall selbst gelöst oder eine Begründung selbst geschrieben haben.",
-        "prompt_basis": "Hier ist meine Lösung zu einem Übungsfall: [mein Text]. Nenne mir die Lücken als Fragen — je eine zu Fachkorrektheit, Argumentation, wirtschaftlichem Prinzip und Position. Schreibe keine Musterlösung und keine Verbesserung meines Textes.",
-        "prompt_fortgeschritten": "Prüfe meinen Text auf drei Dinge: Habe ich mindestens zwei Aussagen mit Kapitel- und Seitenangabe belegt? Habe ich das stärkste Gegenargument selbst genannt und entkräftet? Habe ich gesagt, was meine Entscheidung kostet? Zeig mir für jeden Punkt die Stelle in meinem Text — oder sag mir, dass sie fehlt.",
-        "warnung": "Wenn Sie nach Verbesserung statt nach Lücken fragen, bekommen Sie einen fremden Text zurück und lernen nichts. Fordern Sie Fragen, keine Formulierungen — und prüfen Sie jeden Beleg, den die KI kritisiert oder ergänzt, im Lehrmittel nach."
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Was fehlt bei der Argumentation: Position, Begründung, Beleg, Gegenseite? Nenne Lücken nur als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Erstens die Argumentation: Position, Begründung, Beleg, Gegenseite. Zweitens das wirtschaftliche Prinzip: Preis erklärt, fehlende Kosten benannt. Stell mir zu jeder Lücke eine Frage. Gib mir keine Lösung. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI kennt die Kriterien Ihrer Lehrperson nicht genau. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Wissen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Thema: Kosten, die im Preis fehlen. Erfinde einen neuen Fall: Ein Lehrbetrieb kauft ein Material ein. Kein Fall mit Vanille, Farbe oder Handy. Gib mir dazu eine Aufgabe. Warte auf meine Lösung. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kosten, die im Preis fehlen. Erfinde einen neuen Fall aus einem Lehrbetrieb, mit zwei Zahlen. Kein Fall mit Vanille, Farbe oder Handy. Gib mir dazu zwei Aufgaben, eine nach der anderen: zuerst rechnen, dann entscheiden. Warte auf meine Lösung. Frag danach, was bei meiner Argumentation fehlt: Position, Begründung, Beleg, Gegenseite. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
       },
       {
         "key": "repetitionsplan",
-        "technik": "Repetitionsplan und Karteikarten",
-        "wann": "Ein bis zwei Wochen vor dem Kompetenznachweis, wenn Sie Ihre Zeit einteilen wollen.",
-        "prompt_basis": "Erstelle mir einen Repetitionsplan für zehn Tage zu diesen Inhalten: Preisbildung, Produktionsfaktoren, externe Kosten, Verursacherprinzip, Lenkungsabgabe, Abfallhierarchie, globale Umweltfolgen des Konsums. Plane pro Tag 20 Minuten und wiederhole schwierige Inhalte mehrfach.",
-        "prompt_fortgeschritten": "Mach mir aus diesen Inhalten 15 Karteikarten mit je einer Frage auf der Vorderseite und einer kurzen Antwort auf der Rückseite. Ordne sie nach steigender Schwierigkeit und markiere die fünf Karten, die im Transfer am häufigsten gebraucht werden.",
-        "warnung": "Karteikarten einer KI enthalten oft ungenaue Definitionen und erfundene Zahlen oder Seitenangaben. Prüfen Sie jede Karte gegen Kap. 2.7, 9.3, 1.5 und 11.2 und korrigieren Sie sie von Hand, bevor Sie damit lernen — eine falsch gelernte Definition kostet Sie im Kompetenznachweis mehr Zeit, als das Nachschlagen jetzt."
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie wissen, wie viele Tage bis zum Kompetenznachweis bleiben.",
+        "prompt_basis": "Thema: Kosten, die im Preis fehlen. Meine Begriffe: Angebot und Nachfrage, Produktionsfaktoren, Verursacherprinzip, Lenkungsabgabe, Marktversagen. Ich habe [Anzahl] Tage Zeit. Mach mir einen Lernplan mit einer Aufgabe je Tag. Jede Aufgabe ist eine Frage an mich, keine Erklärung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kosten, die im Preis fehlen. Meine Begriffe: [meine Begriffe]. Mach daraus Lernkarten nur mit Fragen, ohne Antworten. Ordne sie in zwei Gruppen: Preis und Markt, Umwelt und Staat. Schreib je Begriff eine Frage. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten schreiben Sie selbst aus dem Lehrmittel (Kap. 2.7, 9.3, 1.5). Die KI stellt nur die Fragen."
       }
     ],
     "kn_typ_tracks": [
       {
         "typ": "fachgespraech",
         "label": "Fachgespräch",
-        "uebungsfokus": "Mündlich begründen unter Nachfragen — erklären, anwenden, beide Zurechnungswege gleichwertig bewerten und die eigene Haltung offenlegen.",
-        "prompt": "Simuliere ein kurzes Fachgespräch zu einem neuen Konsum- oder Beschaffungsfall: Stell mir 5 mündliche Fragen mit steigender Schwierigkeit — Preisbildung erklären, das Verursacherprinzip anwenden, zwei Zurechnungswege gleichwertig bewerten, mit einem Fall aus meinem Unterricht vergleichen, meine Werthaltung begründen. Reagiere auf jede Antwort mit einer Rückfrage, wie es eine Lehrperson täte."
+        "uebungsfokus": "Sie beantworten Fragen zu einem neuen Fall, von leicht zu schwer.",
+        "prompt": "Thema: Kosten, die im Preis fehlen. Erfinde einen neuen Fall aus einem Lehrbetrieb. Kein Fall mit Vanille, Farbe oder Handy. Stell mir dazu drei Fragen, eine nach der anderen, von leicht zu schwer. Antworte in kurzen, einfachen Sätzen."
       },
       {
         "typ": "mini_case_schriftlich",
         "label": "Mini Case schriftlich",
-        "uebungsfokus": "In 60 Minuten schriftlich vom Erklären über das Unterscheiden bis zur begründeten Entscheidung und einer adressierten Forderung kommen.",
-        "prompt": "Gib mir einen neuen Fall mit zwei Preisen und einer Rechnung, die niemand eingerechnet hat. Stell mir dazu vier schriftliche Aufgaben in dieser Reihenfolge: erklären, zwei Kostenarten unterscheiden, mit Preis pro Nutzungsjahr entscheiden, eine Forderung an eine beteiligte Seite formulieren. Gib mir keine Lösungen — ich schreibe zuerst, danach nennst du mir die Lücken."
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich und begründen Ihren Entscheid.",
+        "prompt": "Thema: Kosten, die im Preis fehlen. Erfinde einen neuen Fall aus einem Lehrbetrieb. Kein Fall mit Vanille, Farbe oder Handy. Gib mir dazu eine Aufgabe: entscheiden und begründen. Warte auf meine Lösung. Antworte in kurzen, einfachen Sätzen."
       },
       {
         "typ": "werkschau_transfer",
         "label": "Werkschau + Transfer-Reflexion",
-        "uebungsfokus": "Das eigene Handlungsprodukt begründet auswählen und das gelernte Prinzip in einem Satz formulieren, übertragen und in seinen Grenzen benennen.",
-        "prompt": "Ich formuliere das Grundprinzip meiner Einheit in einem Satz: [mein Satz]. Frag mich danach dreimal nach: Wo genau zeigt sich dieses Prinzip in einem anderen Fall, was ist dort anders, und wann versagt es? Bewerte nicht meinen Satz, sondern stell die Fragen, die eine Lehrperson stellen würde."
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Kosten, die im Preis fehlen. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen Fall aus einem Lehrbetrieb, ohne Vanille, Farbe oder Handy. Stell mir zwei Fragen dazu, ob mein Satz dort gilt, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
       }
     ],
     "rubrik_fokus": [
       {
         "dimension": "SuK",
         "kriterien": ["Fachkorrektheit", "Argumentation"],
-        "so_uebst_du": "Lassen Sie sich zu den Begriffen aus Kap. 2.7, 9.3, 1.5 und 11.2 abfragen (Angebot und Nachfrage, Produktionsfaktoren, Verursacherprinzip, Lenkungsabgabe) und prüfen Sie Ihre Argumente nach dem 3B-Schema von der Werkzeugseite gegen eine KI-Gegenposition — jede Zahl, jeden Begriff und jede Seitenangabe der KI aber immer im Lehrmittel gegenchecken."
+        "so_uebst_du": "Üben Sie mit «Abfragen lassen» die Begriffe und in einem Übungsfall Position, Begründung, Beleg und Gegenseite."
       },
       {
         "dimension": "Ges",
         "kriterien": ["Wirtschaftliches Prinzip", "Position / Werthaltung"],
-        "so_uebst_du": "Üben Sie an neuen Fällen, den Preis als Ergebnis von Angebot, Nachfrage und eingerechneten Kosten zu erklären und die fehlenden Kosten jemandem begründet zuzurechnen — und halten Sie dabei den Zielkonflikt offen: Ihre Entscheidung hat einen Preis, und den nennen Sie ausdrücklich mit."
+        "so_uebst_du": "Üben Sie in einem Übungsfall, den Preis zu erklären, fehlende Kosten zu benennen und Ihre Position mit Ihrer Haltung zu begründen."
       }
     ],
-    "integritaet_warnung": "Die KI hilft Ihnen beim Üben, nicht beim Abgeben. Im Kompetenznachweis sitzen Sie allein da: Lassen Sie sich deshalb nie Ihre konkrete KN-Lösung schreiben, sondern üben Sie an anderen Fällen und mit Lücken-Feedback. Und prüfen Sie jede Zahl, jeden Fachbegriff und jede Kapitel- und Seitenangabe der KI im Lehrmittel nach — genau darauf schaut das Kriterium Fachkorrektheit.",
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
     "selbstcheck": [
-      "Ich habe zuerst KI-frei eingeschätzt, wo ich noch unsicher bin, und genau dort geübt.",
-      "Meine Übungsfälle waren andere als die mögliche Prüfsituation meines Kompetenznachweises.",
-      "Ich habe die KI um Lücken-Feedback gebeten, nicht um fertige Lösungen oder Musterformulierungen.",
-      "Ich habe jede Zahl, jeden Fachbegriff und jede Kapitel- und Seitenangabe der KI im Lehrmittel nachgeschlagen.",
-      "Ich kann das Grundprinzip dieser Einheit in einem Satz aus dem Kopf formulieren und sagen, was meine Entscheidung kostet."
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Herausforderungen.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich kann meinen Entscheid ohne KI begründen."
     ]
   }
 }

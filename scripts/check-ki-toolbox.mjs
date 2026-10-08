@@ -49,8 +49,12 @@ const CALLOUTS = ['lernziel', 'hinweis', 'beispiel', 'warnung', 'reflexion', 'co
 // b1-language-rules.md §4 — als Teilwort, ohne Gross/Klein.
 const SPERRWOERTER = ['retrieval', 'feynman', 'stacking', 'mock', 'chain of thought', 'verifikation', 'verifizier', 'halluzin', 'rubrik', 'dimension', 'indikator', 'gütekriteri', 'formativ', 'summativ', 'dekontext', 'transfer-prinzip', 'konsistenz', 'trade-off', 'tragfähig', 'adressatengerecht', 'wertungsfrei', 'fluency', 'sparring', 'challeng', 'mini case', 'mini-case', 'werkschau', 'transfer-reflexion']
 // Lehrt eine Einheit ein Sperrwort selbst, ist es dort Prüfstoff (b1-language-rules.md §4,
-// Entscheid Pietro 07.10.2026: nur die Einheit über KI).
-const SPERRWORT_AUSNAHMEN = { '1.2.2_ki_kompetenznachweis_vorbereiten': ['halluzin'] }
+// Entscheid Pietro 07.10.2026: die Einheit über KI; 08.10.2026, E45: «Dimension» in der
+// Einheit, deren Glossar die drei Dimensionen der Nachhaltigkeit führt).
+const SPERRWORT_AUSNAHMEN = {
+  '1.2.2_ki_kompetenznachweis_vorbereiten': ['halluzin'],
+  '3.2.1_konsumfolgen_beurteilen': ['dimension'],
+}
 // SKILL.md «v4.2-Regeln» Nr. 3.
 const V42_WOERTER = ['herausforderung', 'austausch & transfer', 'trade-off', 'pflichtquelle', 'stufe', 'niveau', 'lektion']
 
@@ -241,7 +245,9 @@ function pruefe(slug) {
     const fall = prinzip.hybrid_situation_spec?.fall_ausschluss_hefte_und_auftrag ?? []
     if (!fall.length) err('ERR_INPUTS', 'prinzip.json › fall_ausschluss_hefte_und_auftrag', 'leer — V42_FALL nicht prüfbar')
     for (const [f, t] of Object.entries(roh)) for (const b of fall) if (t.toLowerCase().includes(b.toLowerCase())) err('ERR_V42_FALL', f, `Begriff des KN-Falls: «${b}»`)
-    const nurSpur = (set?.glossar ?? []).filter((g) => g.spur).map((g) => g.begriff)
+    // Ein Begriff, den das Glossar auch ohne `spur` führt (Heft A: «graue Energie»), gehört zum Kern (E45).
+    const ohneSpur = new Set((set?.glossar ?? []).filter((g) => !g.spur).map((g) => g.begriff))
+    const nurSpur = (set?.glossar ?? []).filter((g) => g.spur && !ohneSpur.has(g.begriff)).map((g) => g.begriff)
     for (const [datei, wo, t] of felder) {
       const klein = t.toLowerCase()
       for (const w of V42_WOERTER) if (klein.includes(w)) err('ERR_V42_WORT', `${datei} › ${wo}`, `«${w}»`)

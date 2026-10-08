@@ -12,26 +12,21 @@
   "modul_titel": "Ich konsumiere täglich, was Folgen für Umwelt und Gesellschaft hat",
   "thema": "T3",
   "lehrgang": "EFZ_3J",
-  "version": "1.0.0",
-  "erstellt_am": "2026-08-20",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
   "timing": "nach Austausch & Transfer, zur Vorbereitung auf den Kompetenznachweis",
   "nrlp_anker": {
-    "thema_text": "T3 — Bewusst konsumieren und handeln: aufdecken, welche Kosten im Preis eines Produkts fehlen, und begründet entscheiden, wer sie tragen soll.",
+    "thema_text": "Bewusst konsumieren und handeln: Mein Konsum hat Folgen für Umwelt und Gesellschaft.",
     "gesellschaft_details": [
       {
-        "aspekt": "Wirtschaft",
-        "detail": "Preisbildung über Angebot und Nachfrage, Produktionsfaktoren, erweiterter Wirtschaftskreislauf, Marktversagen bei nicht eingerechneten Kosten (Kap. 2.7, Kap. 9.3).",
-        "kompetenz_anker": "3.2.1"
-      },
-      {
         "aspekt": "Ökologie",
-        "detail": "Externe Kosten, Verursacherprinzip und Lenkungsabgabe, Labels und Abfallhierarchie Vermeiden — Vermindern — Verwerten, globale Umweltfolgen des eigenen Konsums (Kap. 1.5, Kap. 9.3, Kap. 11.2).",
+        "detail": "Energie- und Materialverbrauch, Emissionen, Klimawandel",
         "kompetenz_anker": "3.2.1"
       },
       {
-        "aspekt": "Ethik",
-        "detail": "Zurechnung von Folgekosten als Werthaltungsfrage: Konsument/in, Unternehmen oder Staat — und die eigene Kaufentscheidung bei knappem Lehrlingslohn.",
-        "kompetenz_anker": "3.2.1"
+        "aspekt": "Wirtschaft",
+        "detail": "Auswirkungen von Preisbildung, Marktmechanismen",
+        "kompetenz_anker": "3.2.2"
       }
     ],
     "schluesselkompetenzen_texte": [
@@ -41,100 +36,89 @@
     ]
   },
   "ki_leitfragen": {
-    "offen": "Welche fehlenden Kosten eines Produkts kann eine KI für Sie sichtbar machen — und welcher Schritt bleibt Ihre eigene Entscheidung?",
-    "kritisch": "Woran erkennen Sie, dass eine KI eine Zahl, ein Gesetz oder eine Kapitelangabe erfunden hat, statt sie zu belegen?",
-    "vergleichend": "Worin unterscheidet sich Ihre eigene, belegte Begründung von einer KI-Formulierung, die zwar glatt klingt, aber keinen Beleg mehr trägt?",
-    "urteilend": "Würden Sie eine Kaufentscheidung oder eine Forderung an Lieferant, Betrieb oder Staat auf eine KI-Antwort stützen, die Sie nicht selbst nachgeschlagen haben — warum (nicht)?"
+    "offen": "Was kann eine KI zu meinem Entscheid beitragen — und was nicht?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI nicht stimmt?"
   },
   "assignments": [
     {
       "key": "ki_1",
-      "pattern": "ai_gegenpositionen",
-      "titel": "Die KI als Gegenseite in der Kostenfrage",
-      "ziel": "Sie prüfen, wie tragfähig Ihre Position zur Kostenzurechnung ist, indem Sie die KI die Gegenseite — Unternehmen, Staat oder Konsument/in — so stark wie möglich vertreten lassen.",
-      "bezug": "Nutzt alle drei Herausforderungen: den aufgedeckten Preisweg der Vanille mit den Kosten, die auf keiner Rechnung stehen (A), die gemeinsame Stellungnahme dazu, wer die Folgekosten tragen soll (B), und das zweite Preisschild samt eigener Kaufbegründung beim 199-Franken-Handy (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Ein Preis zeigt, was jemand bezahlt, nicht, was etwas kostet; wer die Differenz trägt, ist eine Entscheidung von Menschen, keine Eigenschaft des Produkts. Genau diese Entscheidung verlangt auch die Prüfsituation des Kompetenznachweises, in der zwei Jacken und eine Gemeinderechnung über 12'000 Franken nebeneinanderliegen.",
-      "auftrag": "Wählen Sie eines der drei Spannungsfelder Ihrer Einheit: tiefer Preis heute gegen Folgekosten, die andere tragen · Verantwortung bei der Konsumentin, beim Unternehmen oder beim Staat · knappes Lehrlingsbudget gegen die teurere, langlebigere Wahl. Formulieren Sie zuerst Ihre eigene Position mit Begründung und Beleg. Beauftragen Sie dann eine KI, die Gegenseite so überzeugend wie möglich zu vertreten — etwa als Einkaufsleiter/in, die den günstigsten Lieferanten verteidigt, oder als Branchenvertretung, die eine Lenkungsabgabe ablehnt. Schlagen Sie jede Zahl, jeden Begriff und jede Rechtsaussage der KI im Lehrmittel nach (Kap. 2.7 S. 73-84, Kap. 9.3 S. 231-235, Kap. 1.5 S. 41, Kap. 11.2 S. 272-281) und entscheiden Sie: Welches Gegenargument ist ein berechtigtes Anliegen, das Sie anerkennen müssen — und welches ist fachlich falsch oder nur Interessenpolitik?",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Meinen Entscheid prüfen lassen",
+      "ziel": "Sie prüfen mit Fragen der KI, ob der Grund für Ihren Entscheid hält.",
+      "bezug": "In Herausforderung A, B und C geht es um Kosten, die im Preis fehlen. Ein Preis zeigt nur, was jemand bezahlt; wer die übrigen Kosten trägt, entscheiden Menschen.",
+      "auftrag": "Nehmen Sie einen Entscheid aus LF3 einer Herausforderung. Die KI (künstliche Intelligenz) stellt Ihnen dazu Fragen, und Sie antworten selbst. Ein Prompt ist Ihre Eingabe an die KI.",
       "prompt_strategie": [
-        "Geben Sie der KI eine klare Rolle und ein Interesse: «Du bist Einkaufsleiter/in eines Werkzeugbetriebs und musst den günstigsten Lieferanten verteidigen …»",
-        "Geben Sie die Sachlage mit Zahlen als Kontext mit — Ihren Preisweg, Ihre versteckten Posten —, ohne Ihre eigene Position oder Ihr Wunschergebnis zu verraten.",
-        "Verlangen Sie zu jedem Gegenargument einen prüfbaren Beleg: eine Zahl, ein Prinzip oder einen Gesetzesbezug, den Sie im Lehrmittel nachschlagen können.",
-        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Position und sag mir, welche Kosten ich einfach jemand anderem zuschiebe, ohne das zu begründen.»"
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Kosten, die im Preis fehlen. Mein Entscheid: [mein Entscheid mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Frag auch, wer die fehlenden Kosten trägt. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage, im selben Chat: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu noch eine Frage. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Gesetz oder einen Begriff, schlagen Sie jede solche Angabe im Lehrmittel nach (Kap. 2.7, 9.3, 1.5). Steht sie dort nicht, übernehmen Sie sie nicht."
       ],
-      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihre Position zum gewählten Spannungsfeld in 2 bis 3 Sätzen nach dem 3B-Schema von der Werkzeugseite (Behauptung, Begründung, Beispiel) plus die Kapitel- und Seitenangabe, auf die Sie sich stützen.",
+      "ki_frei_vorher": "Schreiben Sie Ihren Entscheid mit Grund ohne KI in ein bis zwei Sätzen auf. Schreiben Sie keine Namen in den Prompt.",
       "schritte": [
-        "Spannungsfeld wählen und die eigene Position KI-frei nach dem 3B-Schema festhalten, mit Kapitel- und Seitenangabe.",
-        "Die KI mit einer Rolle und einem klaren Interesse als Gegenseite ansetzen und die stärkste Gegenposition mit Belegen verlangen.",
-        "Jede Zahl, jeden Fachbegriff und jede Gesetzesaussage der KI im Lehrmittel nachschlagen und als korrekt, verzerrt oder erfunden markieren.",
-        "Trennen: Welches Gegenargument ist ein berechtigtes Anliegen der anderen Seite, welches ist fachlich falsch oder reine Interessenvertretung?",
-        "Ihre Position überarbeiten: Was übernehmen Sie von der Gegenseite, was weisen Sie begründet zurück — und welcher Preis Ihrer Entscheidung bleibt trotzdem bestehen?"
+        "Schreiben Sie Ihren Entscheid mit Grund ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Notieren Sie nach Prompt 2, ob Ihr Entscheid bleibt, und warum."
       ],
       "guetekriterien": [
         {
-          "kriterium": "Eigenposition zuerst",
-          "indikator": "Die KI-freie Position nach dem 3B-Schema mit Kapitel- und Seitenangabe liegt vor, bevor der erste Prompt abgesetzt wurde."
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Entscheid mit Grund stand da, bevor Sie die KI fragten."
         },
         {
-          "kriterium": "Quellen- und Zahlen-Verifikation",
-          "indikator": "Jede Zahl, jeder Fachbegriff und jede Gesetzesaussage der KI ist im Lehrmittel nachgeschlagen und als korrekt, verzerrt oder erfunden markiert."
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihr Entscheid bleibt, und warum."
         },
         {
-          "kriterium": "Berechtigtes Anliegen erkannt",
-          "indikator": "Die überarbeitete Position unterscheidet mindestens ein berechtigtes Anliegen der Gegenseite von einer begründeten Zurückweisung."
-        },
-        {
-          "kriterium": "Zielkonflikt bleibt offen",
-          "indikator": "Die überarbeitete Position nennt ausdrücklich, was die eigene Entscheidung kostet, statt die Gegenseite nur zu widerlegen."
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jedes Gesetz und jeder Begriff der KI ist nachgeschlagen. Hat die KI nur gefragt: erfüllt."
         }
       ],
       "reflexion": [
-        "Welches Gegenargument zur Kostenzurechnung hat Sie am meisten herausgefordert — und warum?",
-        "Hat die KI eine Zahl, ein Prinzip oder eine Gesetzesangabe erfunden oder verzerrt? Woran haben Sie es gemerkt?",
-        "Im Fachgespräch des Kompetenznachweises werden Sie bei Frage 3 aufgefordert, beide Wege — der Lieferant zahlt oder der Staat lenkt über eine Abgabe — gleichwertig zu bewerten und sich trotzdem zu entscheiden; bei Frage 5 sollen Sie sagen, was Ihre Entscheidung über Ihre Haltung aussagt. Wie hilft Ihnen diese Übung, beide Seiten ernst zu nehmen, statt nur recht behalten zu wollen?"
+        "Welche Frage der KI war für Ihren Entscheid am schwersten?",
+        "Im Kompetenznachweis begründen Sie Ihre Antworten selbst. Was nehmen Sie aus dieser Übung mit?"
       ]
     },
     {
       "key": "ki_2",
-      "pattern": "ai_redaktion",
-      "titel": "Die KI redigiert — Sie entscheiden, was bleibt",
-      "ziel": "Sie trainieren, jeden einzelnen Textvorschlag einer KI an einem fachlichen Massstab zu prüfen und begründet anzunehmen oder zurückzuweisen, statt eine glattere Fassung einfach zu übernehmen.",
-      "bezug": "Nutzt alle drei Herausforderungen: die Sprechspur zum Preisweg der Vanille (A), die gemeinsame Stellungnahme dazu, wer die Folgekosten tragen soll (B), und die gesprochene Kaufbegründung zum zweiten Preisschild (C) — und prüft das Transfer-Prinzip aus Austausch & Transfer: Ein Preis zeigt, was jemand bezahlt, nicht, was etwas kostet; wer die Differenz trägt, ist eine Entscheidung von Menschen, keine Eigenschaft des Produkts. In der Prüfsituation des Kompetenznachweises — zwei Jacken und eine Gemeinderechnung über 12'000 Franken — schreiben Sie ohne KI, deshalb üben Sie hier das Prüfen, nicht das Erzeugen.",
-      "auftrag": "Nehmen Sie einen fertigen eigenen Text aus Ihren Herausforderungen: die Stellungnahme zur Kostenzurechnung (B), die Sprechspur zum Preisweg (A) oder die Kaufbegründung zum zweiten Preisschild (C). Lassen Sie die KI eine redigierte Fassung erstellen — mit einer Liste, was sie geändert hat und warum. Prüfen Sie dann jede einzelne Änderung gegen die Werkzeugseite Ihrer Herausforderung (Aufbau der Stellungnahme, 3B-Schema, Regeln für die Rückmeldung, Dreischritt der gesprochenen Begründung) und gegen das Kriterium Argumentation aus dem Bewertungsraster. Achten Sie besonders auf drei Verluste: eine gestrichene Kapitel- und Seitenangabe, ein zum Schlagwort verkürztes Argument und ein weggeglätteter Zielkonflikt. Führen Sie ein kurzes Änderungsprotokoll: übernommen weil … / zurückgewiesen weil …",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die KI widerspricht meinem Entscheid",
+      "ziel": "Sie prüfen Ihren Entscheid an zwei Gegenargumenten der KI und antworten selbst auf das stärkste.",
+      "bezug": "In Herausforderung A, B und C geht es um Kosten, die im Preis fehlen. Ein Preis zeigt nur, was jemand bezahlt; wer die übrigen Kosten trägt, entscheiden Menschen.",
+      "auftrag": "Nehmen Sie einen Entscheid aus LF3 einer Herausforderung. Die KI (künstliche Intelligenz) nennt zwei Gegenargumente. Ein Gegenargument ist, was gegen Ihren Entscheid spricht. Sie wählen das stärkste Gegenargument und antworten selbst darauf. Ein Prompt ist Ihre Eingabe an die KI.",
       "prompt_strategie": [
-        "Geben Sie Rolle und Massstab gleichzeitig vor: «Du bist meine Redaktorin für einen ABU-Text. Prüfe meine Stellungnahme auf Aufbau, Begründung und Beleg …»",
-        "Verlangen Sie eine Änderungsliste statt einer stillen Neufassung: jede Änderung mit Begründung, damit Sie überhaupt etwas prüfen können.",
-        "Verbieten Sie im Prompt ausdrücklich, Zahlen, Kapitel- und Seitenangaben zu entfernen oder neue hinzuzuerfinden: «Erfinde keine Quellen und streiche keine meiner Belege.»",
-        "Fordern Sie in einem zweiten Prompt: «Nenne die schwächste Stelle meiner Argumentation und sag mir, an welcher Stelle mein Text den Zielkonflikt zudeckt, statt ihn zu benennen.»"
+        "Prompt 1: «Du bist die Gegenseite. Thema: Kosten, die im Preis fehlen. Mein Entscheid: [mein Entscheid mit Grund]. Nenne zwei Gegenargumente, je in einem Satz. Nummeriere sie. Schreib meinen Entscheid nicht neu. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, im selben Chat: «Ich antworte auf Gegenargument Nummer [Nummer]: [meine Antwort]. Wo ist meine Antwort schwach? Stell mir dazu eine Frage. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI ein Gesetz oder einen Begriff, schlagen Sie jede solche Angabe im Lehrmittel nach (Kap. 2.7, 9.3, 1.5). Steht sie dort nicht, übernehmen Sie sie nicht."
       ],
-      "ki_frei_vorher": "Halten Sie OHNE KI fest: Ihren fertigen eigenen Text und darin markiert die zwei Aussagen, die Sie mit Kapitel- und Seitenangabe belegt haben, sowie den Satz, in dem Sie den Zielkonflikt offenlegen.",
+      "ki_frei_vorher": "Schreiben Sie Ihren Entscheid mit Grund ohne KI in ein bis zwei Sätzen auf. Schreiben Sie keine Namen in den Prompt.",
       "schritte": [
-        "Eigenen Text fertigstellen und die Belege sowie den Satz zum Zielkonflikt markieren — noch ohne KI.",
-        "Die KI um eine redigierte Fassung mit vollständiger Änderungsliste bitten, ohne dass sie Belege streicht oder erfindet.",
-        "Jede vorgeschlagene Zahl, Kapitel- oder Seitenangabe im Lehrmittel nachschlagen und als korrekt, verzerrt oder erfunden markieren.",
-        "Jede Änderung gegen die Werkzeugseite Ihrer Herausforderung und gegen das Kriterium Argumentation halten: stärkt sie Behauptung, Begründung und Beleg — oder klingt sie nur glatter?",
-        "Änderungsprotokoll schreiben und die eigene Schlussfassung erstellen: übernommen weil … / zurückgewiesen weil … — und begründen, was Sie bewusst rau stehen lassen."
+        "Schreiben Sie Ihren Entscheid mit Grund ohne KI auf.",
+        "Holen Sie mit Prompt 1 zwei Gegenargumente der KI.",
+        "Schlagen Sie jedes Gesetz und jeden Begriff der KI im Lehrmittel nach.",
+        "Antworten Sie mit Prompt 2 selbst auf das stärkste Gegenargument.",
+        "Notieren Sie, was Sie vom Gegenargument übernehmen und was nicht, je mit Grund."
       ],
       "guetekriterien": [
         {
-          "kriterium": "Eigener Text zuerst",
-          "indikator": "Der vollständige eigene Text mit markierten Belegen liegt vor, bevor die KI ihn zu sehen bekommt."
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Entscheid mit Grund stand da, bevor Sie die KI fragten."
         },
         {
-          "kriterium": "Quellen- und Zahlen-Verifikation",
-          "indikator": "Jede von der KI gesetzte oder veränderte Zahl, Kapitel- und Seitenangabe ist im Lehrmittel nachgeschlagen und markiert."
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jedes Gesetz und jeden Begriff der KI haben Sie im Lehrmittel nachgeschlagen."
         },
         {
-          "kriterium": "Begründetes Annehmen und Zurückweisen",
-          "indikator": "Das Änderungsprotokoll enthält mindestens eine begründet übernommene und eine begründet zurückgewiesene Änderung."
+          "kriterium": "Selbst geantwortet",
+          "indikator": "Ihre Antwort auf das stärkste Gegenargument haben Sie selbst geschrieben."
         },
         {
-          "kriterium": "Zielkonflikt überlebt die Redaktion",
-          "indikator": "Der Satz, der den Zielkonflikt benennt, steht auch in der Schlussfassung — oder sein Wegfall ist ausdrücklich begründet."
+          "kriterium": "Abgewogen",
+          "indikator": "Sie haben notiert, was Sie übernehmen und was nicht, je mit Grund."
         }
       ],
       "reflexion": [
-        "Welche Änderung der KI hat Ihren Text inhaltlich wirklich stärker gemacht — und woran haben Sie das erkannt?",
-        "An welcher Stelle klang der KI-Vorschlag besser, war aber schwächer, weil ein Beleg, eine Zahl oder der Zielkonflikt verschwunden ist?",
-        "Im Mini Case schriftlich des Kompetenznachweises formulieren Sie bei Aufgabe 4 allein eine begründete Forderung an Lieferant, Betrieb oder Staat, und in der Werkschau mit Transfer-Reflexion schreiben Sie Ihre Reflexion ebenfalls ohne KI. Was nehmen Sie aus dieser Übung mit, damit Ihre Begründung dort auch ohne Redaktionshilfe trägt?"
+        "Was hat das stärkste Gegenargument an Ihrem Entscheid verändert?",
+        "Wo war die KI als Gegenseite ungenau oder falsch?",
+        "Im Kompetenznachweis begründen Sie Ihre Antworten selbst. Was hilft Ihnen dabei aus dieser Übung?"
       ]
     }
   ]

@@ -2245,3 +2245,30 @@ gelesen), die angemeldeten Routen.
 
 **Rückgängig:** `baukastenFormatLabel` gibt wieder fest «Format» zurück; die Regeln der Skill
 über `git revert`.
+
+## E45 — KI-Toolbox: 1. Lehrjahr vollständig, «Dimension» und «graue Energie» freigegeben (Pietro, 08.10.2026)
+
+Die letzten drei Einheiten des 1. Lehrjahrs tragen die Toolbox 2.0.0:
+`3.2.1_konsumfolgen_beurteilen`, `3.3.1_kaufvertrag_beurteilen`, `3.2.1_wahre_kosten` (Entwurf;
+ersetzt 1.0.0). Lauf und Reststellen: `docs/cloud-run/laeufe/2026-10-08-ki-toolbox-lehrjahr-1-rest/BERICHT.md`.
+Vier Entscheide nach dem Bericht:
+
+1. **Sperrwörter.** `scripts/check-ki-toolbox.mjs` lässt «Dimension» in
+   `3.2.1_konsumfolgen_beurteilen` zu (`SPERRWORT_AUSNAHMEN`) — das Glossar führt «ökologische /
+   ökonomische / soziale Dimension» als Kernbegriffe von Heft A. Und `nurSpur` nimmt einen
+   Begriff nicht mehr, den das Glossar auch ohne `spur` führt («graue Energie»: Heft A ohne,
+   Heft B `mit_medien`) — das war ein Fehler des Skripts. Die Karte «Abfragen lassen» der Einheit
+   fragt seither drei Begriffe aus Heft A ab (Nachhaltigkeit, ökologische Dimension, graue
+   Energie) und drei aus Heft B. `3.2.1_wahre_kosten` («drei Dimensionen der Nachhaltigkeit»)
+   hat keine Ausnahme bekommen.
+2. **Basis-Muster.** `ai_entscheidungscoach` gilt in `3.3.1_kaufvertrag_beurteilen` und
+   `3.2.1_wahre_kosten`: Ein Handlungsprodukt, das wörtlich einen Entscheid als Abgabe verlangt
+   (Prüfbericht mit Entscheid; Preisschild mit gesprochener Kaufbegründung), besteht die Probe
+   aus `ki-scoring.md`.
+3. **Zwei Regeln in der Skill** (`basis-plus.md` §5): `so_uebst_du` verspricht nur, was ein
+   Übungsfall-Prompt der KN-Seite wirklich bestellt, und sagt nie «am Übungsfall unten»; der
+   `uebungsfokus` sagt nicht «mündlich».
+4. **Sichtbarkeit.** Wie E44: kein `entwurf_komponenten`; Index gebaut und deployt.
+
+**Rückgängig:** die zwei Zeilen im Skript und die Sätze in `basis-plus.md` /
+`b1-language-rules.md` §4 über `git revert`.

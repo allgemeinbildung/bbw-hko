@@ -1,0 +1,115 @@
+{
+  "id": "3.3.1_kaufvertrag_beurteilen_lernprompt",
+  "set_ref": "3.3.1_kaufvertrag_beurteilen_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Kaufvertrag beurteilen». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI, wer sie sein soll. Dann passt ihre Antwort besser zu Ihrer Frage.",
+        "thema_bezug": "Als Lerncoach fragt die KI Begriffe aus Heft A ab.",
+        "beispiel_basis": "Du bist mein Lerncoach. Thema: Kaufvertrag, Schweizer Recht. Frag mich diese Begriffe ab: Tatbestand, Rechtslage, Rechtsfolge. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Vergleichen Sie jede Lösung der KI mit dem Glossar Ihrer Hefte."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und was Sie schon haben. Ohne diese Angaben rät die KI.",
+        "thema_bezug": "Ihre Forderung mit Frist steht in Ihrer Mängelrüge aus Heft B.",
+        "beispiel_basis": "Thema: Mangel an gekaufter Ware, Schweizer Recht. Mein Smartphone lädt nach fünf Monaten nicht mehr. Meine Forderung: [meine Forderung mit Frist]. Stell mir dazu zwei Fragen, eine nach der anderen. Schreib meine Forderung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI, was die andere Seite sagen würde. So sehen Sie früh, wo Ihre Begründung schwach ist. Welcher Einwand zählt, entscheiden Sie.",
+        "thema_bezug": "Ein Einwand ist, was die andere Seite dagegen sagt. [mein Entscheid]: Ihre zwei Sätze aus Heft A. [mein Beleg]: Fall und Regel aus Heft B.",
+        "beispiel_basis": "Du bist ein Kollege, der es anders sieht. Thema: Kaufvertrag, Schweizer Recht. Ich habe online bestellt und bereue den Kauf. Mein Entscheid: [mein Entscheid]. Nenne zwei Einwände dagegen, je in einem Satz. Nummeriere sie. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist die Geschäftsleitung eines Fachgeschäfts. Thema: Mangel an gekaufter Ware, Schweizer Recht. Mein Smartphone lädt nach fünf Monaten nicht mehr. Meine Forderung: [meine Forderung mit Frist]. Mein Beleg: [mein Beleg]. Nenne zwei Einwände dagegen. Nummeriere sie. Sag bei jedem, auf welche Regel du dich stützt. Ich schlage jede Regel nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI nennt auch Einwände, die im Schweizer Recht nicht gelten. Schlagen Sie die Regel dahinter im Lehrmittel nach (Kap. 2.4, S. 55-64).",
+        "baukasten": {
+          "rolle": [
+            "Geschäftsleitung eines Fachgeschäfts",
+            "Kundendienst eines Onlineshops",
+            "Kollege, der es anders sieht"
+          ],
+          "kontext": [
+            "Thema: Mangel an gekaufter Ware, Schweizer Recht",
+            "Meine Forderung: [meine Forderung mit Frist]",
+            "Mein Entscheid: [mein Entscheid]"
+          ],
+          "aufgabe": [
+            "Nenne zwei Einwände dagegen",
+            "Nummeriere die Einwände",
+            "Sag, auf welche Regel du dich stützt"
+          ],
+          "format": [
+            "je Einwand ein Satz",
+            "kurze, einfache Sätze",
+            "keine Lösung für mich"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen zu jeder Regel, wo sie steht. Dann können Sie nachschlagen, ob die Regel stimmt. Ohne Fundstelle bleibt sie eine Behauptung.",
+        "thema_bezug": "Im Prüfbericht steht zu jeder Regel eine Lehrmittelseite. Von der KI verlangen Sie Gesetz und Artikel; das Lehrmittel nennt die Gesetzesnummern (OR, ZGB) am Rand.",
+        "beispiel_basis": "Thema: Kaufvertrag, Schweizer Recht. Meine Regel aus dem Prüfbericht: [meine Regel]. In welchem Gesetz und Artikel steht sie? Nenne nur die Fundstelle. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist Fachperson für Schweizer Kaufrecht. Thema: Mangel an gekaufter Ware. Meine zwei Regeln: [meine zwei Regeln]. Nenne zu jeder Regel Gesetz und Artikel. Sag dazu, wie sicher du bist. Erfinde keine Artikel. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet auch Artikel. Steht eine Fundstelle nicht im Lehrmittel (Kap. 2.4, S. 55-64), übernehmen Sie sie nicht.",
+        "baukasten": {
+          "rolle": [
+            "Fachperson für Schweizer Kaufrecht",
+            "Lerncoach",
+            "Rechtsberatung für Lernende"
+          ],
+          "kontext": [
+            "Thema: Kaufvertrag, Schweizer Recht",
+            "Meine Regel: [meine Regel]",
+            "Ich schlage im Lehrmittel nach"
+          ],
+          "aufgabe": [
+            "Nenne Gesetz und Artikel",
+            "Sag, wie sicher du bist",
+            "Erfinde keine Artikel"
+          ],
+          "format": [
+            "nur die Fundstelle",
+            "je Regel eine Zeile",
+            "kurze, einfache Sätze"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt Rolle und Kontext, die KI fragt ab. Prompt 2 folgt im selben Chat und fragt bei Ihrer schwächsten Antwort nach.",
+      "prompt_1": "Du bist mein Lerncoach. Thema: Kaufvertrag, Schweizer Recht. Frag mich drei Begriffe ab: Mängelrüge, Minderung, Wandelung. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+      "prompt_2": "Welchen der drei Begriffe habe ich am schwächsten erklärt? Stell mir dazu noch eine Frage. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Quellen verlangen"
+      ],
+      "logik_und_ziel": "Prompt 1 holt zwei Einwände zu Ihrer Forderung. Prompt 2 verlangt im selben Chat die Fundstelle zum Einwand, den Sie wählen. Die Fundstelle schlagen Sie nach.",
+      "prompt_1": "Du bist die Geschäftsleitung eines Fachgeschäfts. Thema: Mangel an gekaufter Ware, Schweizer Recht. Meine Forderung: [meine Forderung mit Frist]. Nenne zwei Einwände dagegen, je in einem Satz. Nummeriere sie. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Zu Einwand Nummer [Nummer]: Auf welche Regel stützt du dich? Nenne Gesetz und Artikel. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: Kaufvertrag, Schweizer Recht. Ich habe online bestellt und bereue den Kauf. Darf ich widerrufen? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "An deine Bestellung bist du gebunden. Du kannst aber 14 Tage lang widerrufen. Das gilt bei jedem Internetkauf.",
+      "pruefung": "Die KI irrt: Laut Glossar gilt das Widerrufsrecht nur bei Haustür- und Telefonkauf. Gebunden bin ich aber."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

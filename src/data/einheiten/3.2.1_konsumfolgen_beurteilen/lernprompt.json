@@ -1,0 +1,115 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_lernprompt",
+  "set_ref": "3.2.1_konsumfolgen_beurteilen_set",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Konsumfolgen beurteilen». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Dann passt ihre Antwort besser zu Ihrer Aufgabe.",
+        "thema_bezug": "Ihr Schlusssatz: der Satz zu Bild 6 oder das Urteil Ihrer Preisbeurteilung.",
+        "beispiel_basis": "Du bist eine Mitlernende aus meiner Klasse. Thema: Folgen und Preis eines Kaufs. Mein Schlusssatz: [mein Schlusssatz mit Grund]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Auch in einer Rolle kann die KI falsche Angaben machen."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie sagen der KI, worum es geht und für wen Ihr Text ist. Ohne Kontext antwortet sie allgemein.",
+        "thema_bezug": "Ihr Kontext hier: Ihre Klasse hört oder liest Ihren Schlusssatz.",
+        "beispiel_basis": "Thema: Folgen und Preis eines Kaufs. Meine Klasse hört oder liest diesen Satz: [mein Schlusssatz mit Grund]. Stell mir zwei Fragen dazu, was unklar ist, eine nach der anderen. Schreib meinen Satz nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "gegenposition_fordern",
+        "titel": "Gegenseite verlangen",
+        "erklaerung": "Sie verlangen von der KI Einwände gegen Ihre eigene Aussage. Ein Einwand ist, was die andere Seite dagegen sagt. So sehen Sie, wo Ihre Begründung noch nicht hält.",
+        "thema_bezug": "Ihr Text nennt auch, was für die andere Seite spricht: in Heft A im Schlusssatz, in Heft B vor dem Urteil. Mit zwei Einwänden der KI prüfen Sie, ob das genügt.",
+        "beispiel_basis": "Du bist die andere Seite. Thema: Folgen und Preis eines Kaufs. Mein Schlusssatz: [mein Schlusssatz mit Grund]. Nenne zwei Einwände dagegen, je in einem Satz. Nummeriere sie. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist eine Kundin mit wenig Geld. Thema: Folgen und Preis eines Kaufs. Mein Schlusssatz: [mein Schlusssatz mit Grund]. Nenne zwei Einwände dagegen: einen zum Preis und einen zu den Folgen für andere. Nummeriere sie. Sag nicht, welcher Einwand stärker ist. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Welcher Einwand zählt, sagen Sie und nicht die KI. Nennt die KI dazu eine Zahl, schlagen Sie sie in Ihren Heften nach.",
+        "baukasten": {
+          "rolle": [
+            "die andere Seite",
+            "eine Kundin mit wenig Geld",
+            "ein Händler, der fair einkauft"
+          ],
+          "kontext": [
+            "Thema: Folgen und Preis eines Kaufs",
+            "mein Schlusssatz mit Grund",
+            "meine Klasse hört oder liest"
+          ],
+          "aufgabe": [
+            "zwei Einwände nennen",
+            "die Einwände nummerieren",
+            "eine Frage zu meiner Antwort stellen"
+          ],
+          "format": [
+            "je ein Satz",
+            "kurze, einfache Sätze",
+            "kein Urteil, welcher Einwand stärker ist"
+          ]
+        }
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen zu einer Angabe eine Quelle. Eine Quelle können Sie selbst nachprüfen. Die KI erfindet manchmal Quellen, darum prüfen Sie jede.",
+        "thema_bezug": "Im Prompt steht ein Fakt oder eine Aussage aus Ihrem Heft. Die KI nennt Ihnen Quellen dazu.",
+        "beispiel_basis": "Thema: Folgen eines Kaufs. Hier ist ein Fakt oder eine Aussage aus meinem Heft: [mein Fakt mit Fundstelle]. Wo kann ich das sonst noch nachprüfen? Nenne zwei Quellen mit Titel. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Du bist eine Bibliothekarin. Thema: Folgen eines Kaufs. Hier ist ein Fakt oder eine Aussage aus meinem Heft: [mein Fakt mit Fundstelle]. Nenne zwei Quellen aus der Schweiz, die das bestätigen oder widerlegen. Nenne je Titel und Jahr. Sag dazu, wenn du unsicher bist. Ich prüfe jede Quelle nach. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Eine Quelle der KI ist erst ein Beleg, wenn Sie sie selbst gefunden und gelesen haben. Sonst übernehmen Sie sie nicht.",
+        "baukasten": {
+          "rolle": [
+            "eine Bibliothekarin",
+            "ein Faktenprüfer",
+            "mein Lerncoach"
+          ],
+          "kontext": [
+            "Thema: Folgen eines Kaufs",
+            "ein Fakt oder eine Aussage aus meinem Heft",
+            "ich lerne in der Schweiz"
+          ],
+          "aufgabe": [
+            "zwei Quellen nennen",
+            "eine Quelle nennen, die widerspricht",
+            "sagen, wo du unsicher bist"
+          ],
+          "format": [
+            "Titel und Jahr",
+            "eine Quelle je Zeile",
+            "kurze, einfache Sätze"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt Rolle und Kontext, die KI stellt zwei Fragen. Prompt 2 folgt im selben Chat nach Ihren Antworten, und die KI fragt nach.",
+      "prompt_1": "Du bist mein Lerncoach. Thema: Folgen und Preis eines Kaufs. Meine Klasse hört oder liest diesen Satz: [mein Schlusssatz mit Grund]. Stell mir dazu zwei Fragen, eine nach der anderen. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Danke für deine zwei Fragen. Welche meiner zwei Antworten war schwächer? Stell mir dazu noch eine Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Gegenseite verlangen",
+        "Quellen verlangen"
+      ],
+      "logik_und_ziel": "Prompt 1 holt zwei Einwände gegen Ihren Schlusssatz. Prompt 2 verlangt im selben Chat die Quelle zu einem Einwand, den Sie wählen. Sie prüfen die Quelle, bevor Sie antworten.",
+      "prompt_1": "Du bist die andere Seite. Thema: Folgen und Preis eines Kaufs. Mein Schlusssatz: [mein Schlusssatz mit Grund]. Nenne zwei Einwände dagegen, je in einem Satz. Nummeriere sie. Antworte in kurzen, einfachen Sätzen.",
+      "prompt_2": "Ich nehme Einwand Nummer [Nummer]. Woher stammt, was du dort sagst? Nenne eine Quelle mit Titel und Jahr. Sag dazu, wenn du unsicher bist. Ich prüfe die Quelle nach. Antworte in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Thema: Preis eines Kaufs. Meine Erklärung: Nachfrage ist, was Kundinnen und Kunden zu einem Preis kaufen wollen. Stimmt das? Antworte in kurzen, einfachen Sätzen.",
+      "antwort": "Nein. Nachfrage ist, was Verkaufende zu einem Preis verkaufen wollen. Der Preis entsteht aus Angebot und Nachfrage.",
+      "pruefung": "Ich lese im Glossar nach: Das Nein ist falsch, sie erklärt das Angebot. Meine Erklärung und ihr Schluss stimmen."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

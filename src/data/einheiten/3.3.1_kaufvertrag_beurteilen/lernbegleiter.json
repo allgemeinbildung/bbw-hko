@@ -1,0 +1,129 @@
+{
+  "id": "3.3.1_kaufvertrag_beurteilen_lernbegleiter",
+  "set_ref": "3.3.1_kaufvertrag_beurteilen_set",
+  "prinzip_ref": "3.3.1_kaufvertrag_beurteilen_prinzip",
+  "kn_ref": "3.3.1_kaufvertrag_beurteilen_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie wiederholen die Einheit mit der KI (künstliche Intelligenz). Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann die rechtlichen Folgen eines Kaufvertrags beurteilen, auf meinen eigenen Kauf anwenden und bei einem Problem meine Forderung so begründen und formulieren, dass mein Gegenüber darauf eingeht — auch wenn Gesetz und Vertrag nicht dasselbe sagen.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann bei einem Kauf beurteilen, was rechtlich gilt.",
+        "Ich kann meine Forderung begründen und im passenden Ton vorbringen.",
+        "Ich kann sagen, wo Gesetz und Vertrag nicht dasselbe sagen."
+      ]
+    },
+    "begriffe": [
+      "Kaufvertrag",
+      "Bestellung",
+      "Handlungsfähigkeit",
+      "Internetkauf",
+      "Widerrufsrecht",
+      "anfechtbarer Vertrag",
+      "Geschäftsbedingungen",
+      "Tatbestand",
+      "Rechtslage",
+      "Rechtsfolge",
+      "Prüfungspflicht",
+      "Meldepflicht",
+      "Mängelrüge",
+      "Ersatzlieferung",
+      "Minderung",
+      "Wandelung",
+      "Gewährleistung",
+      "vertragliche Garantie",
+      "Ich-Botschaft"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, welche Begriffe Sie schon erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kaufvertrag, Schweizer Recht. Frag mich diese Begriffe ab: Widerrufsrecht, anfechtbarer Vertrag, Geschäftsbedingungen, Mängelrüge, Gewährleistung, vertragliche Garantie. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar Ihrer Hefte ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff in eigenen Worten erklären wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Kaufvertrag, Schweizer Recht. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Ist meine Forderung begründet und mit einem Beleg gestützt? Ist die passende Regel richtig auf den Fall angewendet? Nenne Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Stehen Gesetz und Vertrag getrennt da? Habe ich beantwortet, was die andere Seite dagegen sagt? Nenne je eine Lücke als Frage. Gib mir keine Lösung. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Eine Rückmeldung der KI ist keine Bewertung. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie üben wollen, Ihr Wissen auf einen neuen Fall zu übertragen.",
+        "prompt_basis": "Thema: Kaufvertrag, Schweizer Recht. Erfinde einen neuen, kurzen Fall: Mit einem Kauf läuft etwas schief. Nicht: Snowboard, Smartphone, Kauf am Telefon. Gib mir dazu eine Aufgabe. Warte auf meine Lösung. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kaufvertrag, Schweizer Recht. Erfinde einen neuen Fall: Ein neues Zelt hat nach zwei Wochen einen Riss. Das Geschäft will nur flicken. Nicht: Snowboard, Smartphone, Kauf am Telefon. Gib mir zwei Aufgaben: Was gilt rechtlich? Was fordere ich, und in welchem Ton? Warte auf meine Lösung. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie wissen, was Sie noch üben müssen, und einen Plan brauchen.",
+        "prompt_basis": "Thema: Kaufvertrag, Schweizer Recht. Das kann ich noch nicht sicher: [meine Lücken]. Mach mir einen Lernplan für drei kurze Lernzeiten. Sag je Lernzeit, was ich tue: abfragen, erklären oder einen Fall lösen. Liefere keinen Stoff. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Kaufvertrag, Schweizer Recht. Meine Begriffe: [meine Begriffe]. Schreib mir zu jedem Begriff eine Lernkarte, nur mit einer Frage. Ordne die Karten in drei Gruppen: Vertrag schliessen und auflösen, einen Fall prüfen, Mangel melden und fordern. Schreib keine Antworten. Die Antworten schreibe ich selbst aus dem Glossar. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Der Plan sagt nur, wann Sie was üben. Die Antworten holen Sie aus dem Glossar in Ihren Heften, nicht von der KI."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie beantworten mündlich Fragen zu einem neuen Fall, von leicht zu schwer.",
+        "prompt": "Thema: Kaufvertrag, Schweizer Recht. Erfinde einen neuen, kurzen Fall. Nicht: Snowboard, Smartphone, Kauf am Telefon. Stell mir dazu fünf Fragen, von leicht zu schwer. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie lösen schriftlich einen neuen Fall und begründen Ihre Forderung.",
+        "prompt": "Thema: Kaufvertrag, Schweizer Recht. Erfinde einen neuen, kurzen Fall. Nicht: Snowboard, Smartphone, Kauf am Telefon. Gib mir dazu eine Aufgabe: Ich soll eine Forderung begründen. Warte auf meine Lösung. Gib mir keine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Kaufvertrag, Schweizer Recht. Das habe ich gelernt: [was ich gelernt habe]. Erfinde einen neuen, kurzen Fall. Nicht: Snowboard, Smartphone, Kauf am Telefon. Stell mir zwei Fragen dazu, ob mein Satz dort passt, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie üben richtige Begriffe mit «Abfragen lassen» und eine begründete Forderung mit Beleg am Übungsfall oben."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Rechtliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie üben am Übungsfall oben, die passende Regel anzuwenden und zu sagen, was Sie verlangen."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich habe meine Texte selbst geschrieben."
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_lernbegleiter",
+  "set_ref": "3.2.1_konsumfolgen_beurteilen_set",
+  "prinzip_ref": "3.2.1_konsumfolgen_beurteilen_prinzip",
+  "kn_ref": "3.2.1_konsumfolgen_beurteilen_kn",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — repetieren und sich auf den Kompetenznachweis vorbereiten",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann Konsumgewohnheiten in unserer Gesellschaft reflektieren, Möglichkeiten nachhaltigen Konsums beschreiben und den Preis eines Produkts anhand von Herstellung, Transport, Angebot und Nachfrage beurteilen — auch wenn günstig und fair sich widersprechen.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann die Folgen einer Konsumgewohnheit für Umwelt und Menschen nennen.",
+        "Ich kann zwei Möglichkeiten für nachhaltigen Konsum beschreiben.",
+        "Ich kann einen Preis mit Herstellung, Transport, Angebot und Nachfrage beurteilen."
+      ]
+    },
+    "begriffe": [
+      "Nachhaltigkeit",
+      "ökologische Dimension",
+      "ökonomische Dimension",
+      "soziale Dimension",
+      "Konsumgewohnheit",
+      "Lebensweg",
+      "graue Energie",
+      "nachhaltiger Konsum",
+      "Abfall vermeiden",
+      "Nachfrage",
+      "Angebot",
+      "Preisbildung",
+      "Marktgleichgewicht",
+      "Herstellung",
+      "Transport",
+      "fairer Handel",
+      "Anspruchsgruppe",
+      "Zielkonflikt",
+      "Gewinn"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie prüfen wollen, ob Sie die Begriffe der Einheit erklären können.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Folgen und Preis eines Kaufs. Frag mich diese Begriffe ab: Nachhaltigkeit, ökologische Dimension, graue Energie, Angebot, Nachfrage, Preisbildung. Sag mir die Lösung erst nach meiner Antwort. Antworte in kurzen, einfachen Sätzen. Stell immer nur eine Frage. Warte auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihren Heften ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff in eigenen Worten erklären wollen.",
+        "prompt_basis": "Du bist mein Lerncoach. Thema: Folgen und Preis eines Kaufs. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nenne mir Lücken in meiner Erklärung. Schreib meine Erklärung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke, die die KI nennt, im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe die Argumentation: Urteil, Grund und ein Beleg oder Beispiel. Nenne mir zwei Lücken als Fragen. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Hier ist meine Lösung zum Übungsfall: [meine Lösung]. Prüfe zwei Dinge. Erstens «Argumentation»: Urteil, Grund und ein Beleg oder Beispiel. Zweitens «Wirtschaftliches Prinzip»: Der Preis ist mit Angebot, Nachfrage und Kosten erklärt. Nenne je eine Lücke als Frage. Schreib meine Lösung nicht neu. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie Lücken, kein Lob und keine fertige Lösung. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie Ihr Wissen an einem neuen Fall prüfen wollen.",
+        "prompt_basis": "Thema: Folgen und Preis eines Kaufs. Erfinde einen neuen, kurzen Fall aus einem Lehrbetrieb. Nicht: Sammelbestellung, Rosen, Ferien, Standby, Flohmarkt. Gib mir dazu eine Aufgabe. Warte auf meine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Folgen und Preis eines Kaufs. Erfinde einen neuen, kurzen Fall: Ein Lehrbetrieb kauft Arbeitsschuhe. Ein Preis steigt plötzlich, und der Kauf hat Folgen für andere. Nicht: Sammelbestellung, Rosen, Ferien, Standby, Flohmarkt. Gib mir dazu eine Aufgabe: Ich erkläre den Preis und nenne zwei Folgen. Warte auf meine Lösung. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie wissen, was Sie noch üben wollen.",
+        "prompt_basis": "Thema: Folgen und Preis eines Kaufs. Ich habe noch [Zahl] Tage Zeit. Das übe ich noch: [meine Lücken]. Mach mir einen Lernplan mit einem Schritt je Tag. Erkläre mir den Stoff nicht. Antworte in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: Folgen und Preis eines Kaufs. Meine Begriffe: [meine Begriffe]. Mach mir Lernkarten nur mit Fragen, ohne Antworten. Stell je Begriff eine Frage. Ordne die Karten in zwei Gruppen: Folgen eines Kaufs und Preis eines Kaufs. Die Antworten schreibe ich selbst aus dem Glossar. Antworte in kurzen, einfachen Sätzen.",
+        "warnung": "Die Antworten auf Ihre Lernkarten schreiben Sie aus dem Glossar in Ihren Heften. Den Plan der KI passen Sie an Ihre Zeit an."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Fachgespräch",
+        "uebungsfokus": "Sie beantworten Fragen zu einem neuen Fall, von leicht zu schwer.",
+        "prompt": "Thema: Folgen und Preis eines Kaufs. Erfinde einen neuen Fall aus einem Lehrbetrieb. Nicht: Sammelbestellung, Rosen, Ferien, Standby, Flohmarkt. Stell mir drei Fragen, von leicht zu schwer, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich",
+        "uebungsfokus": "Sie erklären schriftlich einen Preis zu einem neuen Fall und begründen Ihr Urteil.",
+        "prompt": "Thema: Folgen und Preis eines Kaufs. Erfinde einen neuen Fall aus einem Lehrbetrieb. Nicht: Sammelbestellung, Rosen, Ferien, Standby, Flohmarkt. Gib mir eine Aufgabe: Ich erkläre den Preis und begründe mein Urteil. Warte auf meine Lösung. Antworte in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: Folgen und Preis eines Kaufs. Mein Satz dazu: [was ich gelernt habe]. Erfinde einen neuen Fall aus einem Lehrbetrieb. Nicht: Sammelbestellung, Rosen, Ferien, Standby, Flohmarkt. Stell mir zwei Fragen, ob mein Satz dort gilt, eine nach der anderen. Antworte in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie üben mit «Abfragen lassen» die Fachbegriffe und im Übungsfall ein Urteil mit Grund und Beleg."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Wirtschaftliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Begründen Sie im Übungsfall Ihr Urteil mit der Erklärung des Preises."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Ich habe Angaben der KI nachgeschlagen.",
+      "Ich habe von der KI keine Lösung für den Kompetenznachweis verlangt."
+    ]
+  }
+}

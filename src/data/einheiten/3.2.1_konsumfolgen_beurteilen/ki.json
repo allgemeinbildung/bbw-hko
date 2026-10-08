@@ -1,0 +1,125 @@
+{
+  "id": "3.2.1_konsumfolgen_beurteilen_ki",
+  "set_ref": "3.2.1_konsumfolgen_beurteilen_set",
+  "prinzip_ref": "3.2.1_konsumfolgen_beurteilen_prinzip",
+  "kn_ref": "3.2.1_konsumfolgen_beurteilen_kn",
+  "anchored_situations": [
+    "3.2.1_konsumfolgen_beurteilen_hf_A",
+    "3.2.1_konsumfolgen_beurteilen_hf_B"
+  ],
+  "modul": "3.2",
+  "modul_titel": "Bewusst konsumieren und handeln — folgen und preise beurteilen",
+  "thema": "T3",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Bewusst konsumieren und handeln: Mein Konsum hat Folgen für Umwelt und Gesellschaft.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Ökologie",
+        "detail": "Energie- und Materialverbrauch, Emissionen, Klimawandel, drei Dimensionen der Nachhaltigkeit",
+        "kompetenz_anker": "3.2.1"
+      },
+      {
+        "aspekt": "Wirtschaft",
+        "detail": "Auswirkungen von Preisbildung, Marktmechanismen, Unternehmerisches Denken und Handeln, Zielkonflikte von Anspruchsgruppen",
+        "kompetenz_anker": "3.2.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK 5 — Werthaltungen reflektieren",
+      "SK 9 — Nachhaltig handeln",
+      "SK 3 — Innovation und Problemlösungen entwickeln"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn ich einen Kauf beurteile?",
+    "kritisch": "Woran merke ich, dass eine Angabe der KI nicht stimmt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Drei Fragen zu meinem Schlusssatz",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob Ihr Schlusssatz mit seinem Grund hält.",
+      "bezug": "In Heft A geht es um die Folgen eines Kaufs, in Heft B um seinen Preis. Bewusst kauft, wer beides kennt: wie der Preis entsteht und wer die Folgen trägt.",
+      "auftrag": "Ihr Schlusssatz ist der Sprechsatz zu Bild 6 (Heft A) oder das Urteil am Schluss Ihrer Preisbeurteilung (Heft B). Die KI stellt Ihnen dazu drei Fragen. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Folgen und Preis eines Kaufs. Mein Schlusssatz: [mein Schlusssatz mit Grund]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage, im selben Chat: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Begriff oder eine Zahl, schlagen Sie in Ihren Heften nach (Glossar, S. 8; Tabelle zum Fall). Steht es dort nicht, übernehmen Sie es nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Schlusssatz samt Grund ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Schlusssatz mit einem Grund ohne KI auf.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihr Schlusssatz bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Schlusssatz mit Grund stand vor Prompt 1 da."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben entschieden, ob Ihr Schlusssatz bleibt."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Begriff und jede Zahl der KI nachgeschlagen. Hat die KI nur gefragt, ist das erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Sie am meisten zum Nachdenken gebracht?",
+        "Im Kompetenznachweis beurteilen Sie selbst einen Kauf und seinen Preis. Was nehmen Sie dafür mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Zwei Einwände gegen meinen Schlusssatz",
+      "ziel": "Sie prüfen zwei Einwände der KI und antworten selbst auf den stärkeren.",
+      "bezug": "In Heft A geht es um die Folgen eines Kaufs, in Heft B um seinen Preis. Bewusst kauft, wer beides kennt: wie der Preis entsteht und wer die Folgen trägt.",
+      "auftrag": "Ihr Schlusssatz ist der Sprechsatz zu Bild 6 (Heft A) oder das Urteil am Schluss Ihrer Preisbeurteilung (Heft B). Die KI nennt zwei Einwände dagegen. Ein Einwand ist, was die andere Seite dagegen sagt. Sie prüfen die Einwände und antworten auf den stärkeren. Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist die andere Seite. Thema: Folgen und Preis eines Kaufs. Mein Schlusssatz: [mein Schlusssatz mit Grund]. Nenne zwei Einwände dagegen, je in einem Satz. Nummeriere sie. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI einen Begriff oder eine Zahl, schlagen Sie in Ihren Heften nach (Glossar, S. 8; Tabelle zum Fall). Steht es dort nicht, übernehmen Sie es nicht.",
+        "Wählen: Welcher Einwand stärker ist, bestimmen Sie selbst und nicht die KI.",
+        "Prompt 2, im selben Chat: «Ich antworte auf Einwand Nummer [Nummer]: [meine Antwort]. Was an meiner Antwort ist noch offen? Stell mir dazu eine Frage. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»"
+      ],
+      "ki_frei_vorher": "Schreiben Sie Ihren Schlusssatz samt Grund ohne KI auf. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Schreiben Sie Ihren Schlusssatz mit einem Grund ohne KI auf.",
+        "Holen Sie mit Prompt 1 zwei Einwände der KI.",
+        "Schlagen Sie jeden Begriff und jede Zahl der KI in Ihren Heften nach.",
+        "Antworten Sie mit Prompt 2 auf den stärkeren Einwand.",
+        "Notieren Sie, was an Ihrem Schlusssatz bleibt und was sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Schlusssatz mit Grund stand vor Prompt 1 da."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jeden Begriff und jede Zahl der KI haben Sie in Ihren Heften nachgeschlagen."
+        },
+        {
+          "kriterium": "Selbst gewählt",
+          "indikator": "Sie haben selbst bestimmt, welcher Einwand stärker ist."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, was an Ihrem Schlusssatz bleibt und was sich ändert."
+        }
+      ],
+      "reflexion": [
+        "Welcher Einwand hat Ihren Schlusssatz am meisten in Frage gestellt?",
+        "Wo war ein Einwand der KI falsch oder zu allgemein?",
+        "Im Kompetenznachweis beurteilen Sie einen Kauf, bei dem günstig und fair sich widersprechen. Was nehmen Sie aus den Einwänden mit?"
+      ]
+    }
+  ]
+}

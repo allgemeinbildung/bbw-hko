@@ -1,0 +1,124 @@
+{
+  "id": "3.3.1_kaufvertrag_beurteilen_ki",
+  "set_ref": "3.3.1_kaufvertrag_beurteilen_set",
+  "prinzip_ref": "3.3.1_kaufvertrag_beurteilen_prinzip",
+  "kn_ref": "3.3.1_kaufvertrag_beurteilen_kn",
+  "anchored_situations": [
+    "3.3.1_kaufvertrag_beurteilen_hf_A",
+    "3.3.1_kaufvertrag_beurteilen_hf_B"
+  ],
+  "modul": "3.3",
+  "modul_titel": "Bewusst konsumieren und handeln — beim Einkaufen Rechte einfordern",
+  "thema": "T3",
+  "lehrgang": "EFZ_3J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-08",
+  "timing": "nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Bewusst konsumieren und handeln: beim Einkaufen Pflichten kennen und Rechte einfordern.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Kaufvertrag",
+        "kompetenz_anker": "3.3.1"
+      },
+      {
+        "aspekt": "Recht",
+        "detail": "Kaufvertrag, Nutzung von Rechtsquellen",
+        "kompetenz_anker": "3.3.2"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK1 — Quellen unterscheiden",
+      "SK3 — Innovation und Problemlösungen entwickeln",
+      "SK5 — Werthaltungen reflektieren"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft mir die KI, wenn ich einen Kauf prüfe?",
+    "kritisch": "Woran merke ich, dass eine Regel der KI nicht stimmt?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_entscheidungscoach",
+      "titel": "Fragen zu meinem Entscheid",
+      "ziel": "Sie prüfen mit drei Fragen der KI, ob Ihr Entscheid aus Heft A hält.",
+      "bezug": "In Heft A prüfen Sie einen Kauf, in Heft B fordern Sie bei einem Mangel Ihr Recht. Für beide gilt: zuerst klären, was Gesetz und Vertrag sagen, dann handeln.",
+      "auftrag": "Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz). Nehmen Sie Ihren Entscheid aus Heft A: die zwei Sätze unter Ihrem Prüfbericht. Die KI stellt Ihnen dazu drei Fragen, danach entscheiden Sie selbst.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist mein Lerncoach. Thema: Kaufvertrag, Schweizer Recht. Ich habe online etwas bestellt und bereue den Kauf. Mein Entscheid: [mein Entscheid]. Stell mir dazu drei Fragen, eine nach der anderen. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der dritten Frage, im selben Chat: «Welche meiner drei Antworten war am schwächsten? Stell mir dazu eine letzte Frage. Sag mir nicht, was ich tun soll. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI eine Regel, schlagen Sie nach (Kap. 2.4, S. 55-64; Alter: Kap. 1.3, S. 25-27). Fehlt sie, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Legen Sie Ihren Entscheid aus Heft A bereit: zwei Sätze, geschrieben ohne KI. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Legen Sie Ihren Entscheid aus Heft A bereit, geschrieben ohne KI.",
+        "Beantworten Sie mit Prompt 1 die drei Fragen der KI.",
+        "Entscheiden Sie nach Prompt 2, ob Ihr Entscheid bleibt oder sich ändert."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr Entscheid stand da, bevor Sie die KI fragten."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie sagen, ob Ihr Entscheid bleibt oder sich ändert."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Regel der KI haben Sie nachgeschlagen. Hat die KI nur gefragt, gilt das als erfüllt."
+        }
+      ],
+      "reflexion": [
+        "Welche Frage der KI hat Sie am meisten zum Nachdenken gebracht?",
+        "Im Kompetenznachweis beurteilen Sie selbst, was bei einem Kauf rechtlich gilt. Was nehmen Sie mit?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Die Gegenseite hören",
+      "ziel": "Sie antworten auf den stärksten Einwand der KI gegen Ihre Forderung aus Heft B.",
+      "bezug": "In Heft A prüfen Sie einen Kauf, in Heft B fordern Sie bei einem Mangel Ihr Recht. Hier üben Sie, was für beide gilt: zuerst klären, was gilt, dann im passenden Ton fordern.",
+      "auftrag": "Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz). Ein Einwand ist, was die andere Seite dagegen sagt. Die KI spielt das Geschäft und nennt zwei Einwände gegen Ihre Forderung aus Heft B. Sie schlagen die Regeln nach und wählen den stärksten Einwand. Darauf antworten Sie in eigenen Worten.",
+      "prompt_strategie": [
+        "Prompt 1: «Du bist die Geschäftsleitung eines Fachgeschäfts in der Schweiz. Mein Smartphone lädt nach fünf Monaten nicht mehr. Meine Forderung: [meine Forderung mit Frist]. Nenne zwei Einwände dagegen, je in einem Satz. Nummeriere sie. Sag bei jedem Einwand, auf welche Regel du dich stützt. Antworte in kurzen, einfachen Sätzen.»",
+        "Prüfen: Nennt die KI eine Regel, schlagen Sie sie im Lehrmittel nach (Kap. 2.4, S. 61-62). Steht sie dort nicht, übernehmen Sie sie nicht.",
+        "Prompt 2, nach dem Nachschlagen, im selben Chat: «Ich antworte auf Einwand Nummer [Nummer]: [meine Antwort]. Wo überzeugt dich meine Antwort nicht? Stell mir dazu eine Frage. Schreib meine Antwort nicht neu. Antworte in kurzen, einfachen Sätzen.»"
+      ],
+      "ki_frei_vorher": "Legen Sie Ihre Forderung mit Frist aus Ihrer Mängelrüge bereit, geschrieben ohne KI. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Legen Sie Ihre Forderung mit Frist aus Heft B bereit.",
+        "Holen Sie mit Prompt 1 zwei Einwände der KI.",
+        "Schlagen Sie jede Regel der KI im Lehrmittel nach.",
+        "Antworten Sie mit Prompt 2 auf den stärksten Einwand.",
+        "Notieren Sie, ob Ihre Forderung bleibt oder sich ändert, und warum."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Forderung mit Frist stand da, bevor Sie die KI fragten."
+        },
+        {
+          "kriterium": "Nachgeschlagen",
+          "indikator": "Jede Regel der KI haben Sie im Lehrmittel nachgeschlagen."
+        },
+        {
+          "kriterium": "Stärkster Einwand",
+          "indikator": "Sie haben den stärksten Einwand gewählt und in eigenen Worten beantwortet."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Ihre Forderung bleibt oder sich ändert, und warum."
+        }
+      ],
+      "reflexion": [
+        "Was hat der stärkste Einwand an Ihrer Forderung geändert?",
+        "Welche Regel der KI stand nicht im Lehrmittel, oder stand dort anders?",
+        "Im Kompetenznachweis begründen Sie eine Forderung so, dass Ihr Gegenüber darauf eingeht. Was nehmen Sie aus dieser Übung mit?"
+      ]
+    }
+  ]
+}
