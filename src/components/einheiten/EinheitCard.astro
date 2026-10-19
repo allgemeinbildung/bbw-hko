@@ -73,6 +73,7 @@ const bausteine = zeigeEntwurf && isEntwurf(e)
     <div class="flex flex-wrap gap-1.5 mb-2">
       {eba && <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full" style="background: var(--lg); color: #fff">EBA 2-jährig</span>}
       {e.thema_nr != null && <span class="thema-chip" data-thema={e.thema_nr} title={`Thema ${e.thema_nr}`}>T{e.thema_nr}</span>}
+      {e.hat_medien && <span class="chip-medien" title="Hefte in zwei Spuren: ohne Medien und mit Medien (Audio, Video, Artikel)">▶ Mit Medien</span>}
       {varianten.length > 0 && (
         <span class="chip" title={`Gültig für ${varianten.map(lehrgangLabel).join(' und ')}`}>
           {varianten.map(lehrgangShort).join(' · ')}

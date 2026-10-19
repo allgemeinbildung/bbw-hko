@@ -76,6 +76,7 @@ const alle = sichtbar.map((e) => ({
   lehrgaenge: lehrgaengeOf(e),
   ki: hatKi(e),
   methoden: !!e.hat_methoden,
+  medien: !!e.hat_medien,
 }))
 const themenJeLg = Object.fromEntries(panels.map((p) => [p.lg, p.themen.map((t) => ({ nr: t.nr, titel: t.titel }))]))
 const lehrgaenge = LEHRGANG_ORDER.map((lg) => ({ v: lg, t: LEHRGANG_LABEL[lg], k: lehrgangShort(lg) }))
@@ -173,6 +174,7 @@ const auch = (e: E, lg: string) => {
       </nav>
 
       <div class="border-t border-slate-100 pt-3 space-y-1.5 text-sm">
+        <label class="flex items-center gap-1.5"><input type="checkbox" x-model="nurMedien" /> mit Medien</label>
         <label class="flex items-center gap-1.5"><input type="checkbox" x-model="nurKi" /> mit KI-Toolbox</label>
         <label class="flex items-center gap-1.5"><input type="checkbox" x-model="nurMethoden" /> mit Methoden-Karten</label>
         <button x-show="filterAktiv" type="button" class="text-slate-500 underline" @click="reset()">Filter zurücksetzen</button>
@@ -218,6 +220,7 @@ const auch = (e: E, lg: string) => {
                         <a href={`/einheiten/${e.id}`} x-show={`ok.has('${e.id}')`} class="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2 text-sm hover:bg-slate-50">
                           <span class="chip chip-blue shrink-0">{e.kompetenz_nr}</span>
                           <span class="font-medium text-slate-900 flex-1 min-w-[12rem]">{e.einheit_titel}</span>
+                          {e.hat_medien && <span class="chip-medien shrink-0" title="Hefte in zwei Spuren: ohne Medien und mit Medien (Audio, Video, Artikel)">▶ Mit Medien</span>}
                           {auch(e, p.lg) && <span class="text-[11px] text-slate-500 shrink-0">{auch(e, p.lg)}</span>}
                           <span class="shrink-0 text-[11px] text-slate-500">
                             {[`${e.herausforderungen?.length ?? 0} HF`, e.hat_kn && 'KN', hatKi(e) && 'KI', e.hat_methoden && 'Methoden'].filter(Boolean).join(' · ')}
@@ -283,7 +286,7 @@ const auch = (e: E, lg: string) => {
         alle, themenJeLg, lehrgaenge,
         lg: 'EFZ_3J',
         thema: null, // null = alle Themen; sonst nur dieses
-        q: '', nurKi: false, nurMethoden: false,
+        q: '', nurKi: false, nurMethoden: false, nurMedien: false,
         ansicht: 'liste',
         zuletzt: [],
 
@@ -297,10 +300,11 @@ const auch = (e: E, lg: string) => {
           this.q = p.get('q') || ''
           this.nurKi = p.has('ki')
           this.nurMethoden = p.has('methoden')
+          this.nurMedien = p.has('medien')
           if (p.get('ansicht') === 'karten') this.ansicht = 'karten'
           try { this.zuletzt = JSON.parse(lesen(LS_ZULETZT) || '[]').filter((x) => typeof x === 'string') } catch {}
 
-          for (const k of ['lg', 'thema', 'q', 'nurKi', 'nurMethoden', 'ansicht']) this.$watch(k, () => this.urlSchreiben())
+          for (const k of ['lg', 'thema', 'q', 'nurKi', 'nurMethoden', 'nurMedien', 'ansicht']) this.$watch(k, () => this.urlSchreiben())
           // Themennummern gelten nur innerhalb eines Lehrgangs — beim Wechsel verfällt die Wahl.
           this.$watch('lg', (v) => { schreiben(LS_LG, v); this.thema = null })
 
@@ -318,6 +322,7 @@ const auch = (e: E, lg: string) => {
           if (this.q.trim()) p.set('q', this.q.trim())
           if (this.nurKi) p.set('ki', '1')
           if (this.nurMethoden) p.set('methoden', '1')
+          if (this.nurMedien) p.set('medien', '1')
           if (this.ansicht === 'karten') p.set('ansicht', 'karten')
           history.replaceState(null, '', location.pathname + '?' + p + location.hash)
         },
@@ -325,11 +330,11 @@ const auch = (e: E, lg: string) => {
         label(l) { return (lehrgaenge.find((x) => x.v === l) || {}).t || l },
         kurz(l) { return (lehrgaenge.find((x) => x.v === l) || {}).k || l },
 
-        get filterAktiv() { return !!(this.q.trim() || this.nurKi || this.nurMethoden) },
+        get filterAktiv() { return !!(this.q.trim() || this.nurKi || this.nurMethoden || this.nurMedien) },
         // IDs aller Einheiten, die Suche und Zusatzfilter bestehen (Lehrgang und Thema regelt das Gerüst).
         get ok() {
           const q = this.q.trim().toLowerCase()
-          return new Set(this.alle.filter((e) => (!q || e.such.includes(q)) && (!this.nurKi || e.ki) && (!this.nurMethoden || e.methoden)).map((e) => e.id))
+          return new Set(this.alle.filter((e) => (!q || e.such.includes(q)) && (!this.nurKi || e.ki) && (!this.nurMethoden || e.methoden) && (!this.nurMedien || e.medien)).map((e) => e.id))
         },
         // Treffer in einem Lehrgang, optional eingeschränkt auf Thema und Lebensbezug.
         anzahl(lg, thema, modul) {
@@ -345,7 +350,7 @@ const auch = (e: E, lg: string) => {
 
         get zuletztItems() { return this.zuletzt.map((id) => this.alle.find((e) => e.id === id)).filter(Boolean) },
 
-        reset() { this.q = ''; this.nurKi = this.nurMethoden = false },
+        reset() { this.q = ''; this.nurKi = this.nurMethoden = this.nurMedien = false },
       }))
     })
   </script>
