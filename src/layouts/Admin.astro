@@ -62,6 +62,10 @@ const { count: meldungenOffen } = await Astro.locals.supabase
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/statistik' ? 'admin-tab-active' : 'admin-tab'}`}
           >Nutzung</a>
           <a
+            href="/admin/rueckmeldungen"
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/rueckmeldungen' ? 'admin-tab-active' : 'admin-tab'}`}
+          >Rückmeldungen</a>
+          <a
             href="/situationen/admin"
             class="px-3 py-1 rounded-md text-sm font-medium admin-tab"
           >Situationen-Feedbacks →</a>

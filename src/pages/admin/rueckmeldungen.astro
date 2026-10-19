@@ -1,0 +1,289 @@
+---
+// Auswertung der Rückmeldungen von Lehrpersonen für Kernteam 1.
+// Zahlen und Namen kommen bei jedem Aufruf aus der Datenbank (keine Personendaten im Repo);
+// die Einordnung (Abschnitte 2–5) ist der Stand vom 19.10.2026 und steht als Text in dieser Datei.
+import Admin from '../../layouts/Admin.astro'
+import { einheitById } from '../../lib/einheiten'
+import { createAdminClient } from '../../lib/supabase'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles')
+  .select('role')
+  .eq('id', user.id)
+  .single()
+
+if (profile?.role !== 'kt1' && profile?.role !== 'reviewer') return Astro.redirect('/')
+
+// Seed- und Testkonten: zählen nicht als Nutzung.
+const TESTKONTEN = new Set([
+  'anna.bauer@bbw.ch',
+  'bruno.mueller@bbw.ch',
+  'claudia.frei@bbw.ch',
+  'lehrer@hko.ch',
+  'io@tu.it',
+])
+const istTesttitel = (t: string | null | undefined) => !t || t.trim().length < 5
+
+type Konto = { email: string; letzte: string | null }
+const konten = new Map<string, Konto>()
+let ladeFehler = ''
+try {
+  const admin = createAdminClient()
+  const { data, error } = await admin.auth.admin.listUsers({ page: 1, perPage: 1000 })
+  if (error) throw error
+  for (const u of data.users) konten.set(u.id, { email: (u.email ?? '').toLowerCase(), letzte: u.last_sign_in_at ?? null })
+} catch (e: any) {
+  ladeFehler = e?.message ?? 'Konten nicht abrufbar'
+}
+const istTest = (id: string | null) => !!id && TESTKONTEN.has(konten.get(id)?.email ?? '')
+
+const [{ data: profileRows }, { data: fbRows }, { data: matRows }] = await Promise.all([
+  Astro.locals.supabase.from('profiles').select('id, full_name, role'),
+  Astro.locals.supabase
+    .from('einheit_feedbacks')
+    .select('id, lp_id, einheit_id, feedback_art, eigen_titel, dauer_lektionen, tauglichkeit, schwierigkeit, weiterempfehlung, status, created_at')
+    .neq('status', 'entwurf')
+    .order('created_at'),
+  Astro.locals.supabase
+    .from('materials')
+    .select('id, submitted_by, titel, lehrdauer, status, created_at')
+    .order('created_at'),
+])
+
+const personen = new Map((profileRows ?? []).map((p: any) => [p.id, p]))
+const name = (id: string) => personen.get(id)?.full_name ?? 'unbekannt'
+const rolle = (id: string) => personen.get(id)?.role ?? ''
+
+const jetzt = Date.now()
+const tageSeit = (iso: string) => Math.floor((jetzt - new Date(iso).getTime()) / 86_400_000)
+const datum = (iso: string) => new Date(iso).toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' })
+
+const ART: Record<string, string> = { '1zu1': 'unverändert', angepasst: 'angepasst', eigenes: 'eigene Idee' }
+
+const feedbacks = (fbRows ?? []).filter((f: any) => !istTest(f.lp_id))
+const zuEinheiten = feedbacks.filter((f: any) => f.feedback_art !== 'eigenes' && f.einheit_id)
+const eigeneIdeen = feedbacks.filter((f: any) => f.feedback_art === 'eigenes')
+const materialien = (matRows ?? []).filter((m: any) => !istTest(m.submitted_by) && !istTesttitel(m.titel))
+const ungesichtet = (s: string) => s === 'eingereicht'
+
+const einheitTitel = (id: string) => {
+  const e: any = einheitById(id)
+  return e?.einheit_titel ?? e?.titel ?? id
+}
+
+const lpKonten = [...personen.values()].filter((p: any) => p.role === 'lp' && !istTest(p.id))
+const lpAktiv = lpKonten.filter((p: any) => {
+  const l = konten.get(p.id)?.letzte
+  return l && tageSeit(l) <= 30
+}).length
+const personenMitRueckmeldung = new Set(feedbacks.map((f: any) => f.lp_id)).size
+const offeneSichtung = feedbacks.filter((f: any) => ungesichtet(f.status)).length
+---
+<Admin title="Rückmeldungen der Lehrpersonen">
+  <div class="max-w-5xl mx-auto px-6 py-8 space-y-10 text-slate-800">
+    <header>
+      <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Kernteam 1 · Auswertung</p>
+      <h1 class="text-2xl font-bold text-slate-900 mt-1">Rückmeldungen der Lehrpersonen</h1>
+      <p class="text-sm text-slate-600 mt-2 max-w-3xl">
+        Seit Mitte September geben Lehrpersonen auf der Plattform echte Rückmeldungen. Fast alle betreffen die
+        Einheiten zum Lebensbezug 1.1, und diese Einheiten sind noch im <b>alten Format mit drei Herausforderungen</b>.
+        Vor der Generierung der neuen Einheiten für die Herbstferien habe ich das Format mit meinem Update auf zwei Hefte
+        umgestellt, ohne diese Rückmeldungen zu kennen. Diese Seite legt beides nebeneinander: was die Lehrpersonen
+        sagen, was mein Update davon schon löst und wo Entscheide des Kernteams nötig sind.
+      </p>
+      <p class="text-xs text-slate-500 mt-2">
+        Pietro Rossi · Zahlen und Tabellen werden bei jedem Aufruf aus der Datenbank gelesen, Test- und Seed-Konten
+        sowie Entwürfe sind ausgeblendet. Die Einordnung in den Abschnitten 2–5 ist der Stand vom 19.10.2026.
+      </p>
+    </header>
+
+    {ladeFehler && (
+      <div class="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        Anmeldedaten der Konten nicht abrufbar ({ladeFehler}). Testkonten sind darum nicht ausgeblendet, und die Zahl der aktiven Konten fehlt.
+      </div>
+    )}
+
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-lg border border-slate-200 p-4">
+        <p class="text-2xl font-bold text-slate-900 tabular-nums">{ladeFehler ? '–' : lpAktiv}<span class="text-base font-normal text-slate-500"> / {lpKonten.length}</span></p>
+        <p class="text-sm text-slate-600">LP-Konten in den letzten 30 Tagen angemeldet</p>
+      </div>
+      <div class="bg-white rounded-lg border border-slate-200 p-4">
+        <p class="text-2xl font-bold text-slate-900 tabular-nums">{personenMitRueckmeldung}</p>
+        <p class="text-sm text-slate-600">Personen mit Rückmeldungen ({feedbacks.length} Einträge)</p>
+      </div>
+      <div class="bg-white rounded-lg border border-slate-200 p-4">
+        <p class="text-2xl font-bold text-slate-900 tabular-nums">{materialien.length}</p>
+        <p class="text-sm text-slate-600">eingereichte Materialien</p>
+      </div>
+      <div class="bg-white rounded-lg border border-slate-200 p-4">
+        <p class="text-2xl font-bold tabular-nums" style={offeneSichtung ? 'color:#b45309' : ''}>{offeneSichtung}</p>
+        <p class="text-sm text-slate-600">Rückmeldungen noch nicht gesichtet</p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-lg font-bold text-slate-900">1 · Wer hat was gemacht</h2>
+      <p class="text-sm text-slate-600">Skala 1–5. «Angepasst» heisst: an Beruf oder Klasse angepasst unterrichtet.</p>
+      <div class="bg-white rounded-lg border border-slate-200 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr><th class="px-3 py-2">Datum</th><th class="px-3 py-2">Lehrperson</th><th class="px-3 py-2">Einheit</th><th class="px-3 py-2">Einsatz</th><th class="px-3 py-2">Tauglichkeit</th><th class="px-3 py-2">Schwierigkeit</th><th class="px-3 py-2">Empfiehlt</th><th class="px-3 py-2">Sichtung</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {zuEinheiten.map((f: any) => (
+              <tr>
+                <td class="px-3 py-2 whitespace-nowrap tabular-nums">{datum(f.created_at)}</td>
+                <td class="px-3 py-2">{name(f.lp_id)}{rolle(f.lp_id) === 'kt1' && <span class="text-slate-500"> (KT1)</span>}</td>
+                <td class="px-3 py-2"><a class="hover:underline" href={`/einheiten/${f.einheit_id}`}>{einheitTitel(f.einheit_id)}</a></td>
+                <td class="px-3 py-2 whitespace-nowrap">{ART[f.feedback_art] ?? f.feedback_art}{f.dauer_lektionen ? `, ${Number(f.dauer_lektionen)} L.` : ''}</td>
+                <td class="px-3 py-2 tabular-nums">{f.tauglichkeit ?? '–'}</td>
+                <td class="px-3 py-2 tabular-nums">{f.schwierigkeit ?? '–'}</td>
+                <td class="px-3 py-2">{f.weiterempfehlung === true ? 'ja' : f.weiterempfehlung === false ? 'nein' : '–'}</td>
+                <td class="px-3 py-2">{ungesichtet(f.status) ? <span class="text-amber-700">offen</span> : f.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-4">
+        <div class="bg-white rounded-lg border border-slate-200 p-5">
+          <h3 class="text-sm font-semibold text-slate-900 mb-2">Eigene Unterrichtsideen</h3>
+          {eigeneIdeen.length === 0 ? <p class="text-sm text-slate-500">Keine.</p> : (
+            <ul class="text-sm space-y-1.5">
+              {eigeneIdeen.map((f: any) => (
+                <li><b>{name(f.lp_id)}</b>: «{f.eigen_titel ?? 'ohne Titel'}» <span class="text-slate-500 tabular-nums">· {datum(f.created_at)}</span></li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div class="bg-white rounded-lg border border-slate-200 p-5">
+          <h3 class="text-sm font-semibold text-slate-900 mb-2">Eingereichtes Material</h3>
+          {materialien.length === 0 ? <p class="text-sm text-slate-500">Keines.</p> : (
+            <ul class="text-sm space-y-1.5">
+              {materialien.map((m: any) => (
+                <li>
+                  <b>{name(m.submitted_by)}</b>: «{m.titel}» <span class="text-slate-500">({m.lehrdauer})</span>
+                  {ungesichtet(m.status)
+                    ? <span class="text-amber-700"> · wartet seit {tageSeit(m.created_at)} Tagen auf Sichtung</span>
+                    : <span class="text-slate-500"> · {m.status}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
+          <p class="text-xs text-slate-500 mt-3"><a class="hover:underline" href="/admin">Zur Sichtung →</a></p>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500">Kaum genutzt werden das Feedback zu einzelnen Situationen, die Jahresplanung und «Problem melden».</p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-slate-900">2 · Was die Lehrpersonen sagen</h2>
+      <ol class="list-decimal pl-5 space-y-2 text-sm max-w-3xl">
+        <li><b>Zu schwer, zu lang.</b> Die Schwierigkeit liegt meist bei 4–5. Die Lernenden brauchten viel Anleitung, und trotz Kürzungen lässt sich nicht alles ins Semester packen.</li>
+        <li><b>Das Positionspapier überfordert.</b> Das sagen zwei Lehrpersonen unabhängig voneinander. Eine hat es weggelassen.</li>
+        <li><b>Überladene Dokumente.</b> Es stehen zu viele unnütze Informationen darin, und die Lösung steckt oft schon in der Frage.</li>
+        <li><b>Das Material trägt den Auftrag nicht.</b> Bei einer Leitfrage hilft das Buch nicht weiter, und eine Einheit verweist auf Hilfsmittel, die darin gar nicht vorkommen.</li>
+        <li><b>Das Raster ist zu grob.</b> Mit zwei Kreuzen zu einer Note zu kommen, sei zu wenig differenziert. Fachkorrektheit gehöre zu Gesellschaft, nicht zu Sprache und Kommunikation; begründet wird das mit der Zürcher Umsetzungsvariante.</li>
+        <li><b>Positiv:</b> Die Situationen lassen sich leicht auf die Berufe übertragen, und fast alle haben das getan. Die meisten würden die Einheit weiterempfehlen.</li>
+      </ol>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-slate-900">3 · Was mein Update davon schon umsetzt</h2>
+      <p class="text-sm max-w-3xl">
+        Mein Update entstand zwischen dem 1. und 9. Oktober, vor der Generierung der neuen Einheiten für die Herbstferien.
+        Die Rückmeldungen kannte ich dabei nicht. Viele Punkte decken sich trotzdem, weil meine Testlesungen dieselben
+        Schwächen gezeigt hatten. Den Code habe ich mit Claude umgesetzt: die Generierung der Einheiten, die automatische
+        Prüfung vor jeder Freigabe, die Darstellung der Hefte in HTML und Word sowie die Werkstatt.
+      </p>
+      <div class="bg-white rounded-lg border border-slate-200 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr><th class="px-3 py-2 w-48">Rückmeldung</th><th class="px-3 py-2">Was mein Update dazu tut</th><th class="px-3 py-2">Stand</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 align-top">
+            <tr>
+              <td class="px-3 py-2 font-medium">Zu schwer, zu lang</td>
+              <td class="px-3 py-2">Zwei Hefte statt drei Herausforderungen, und alle Lernenden machen beide. Jedes Heft hat 8 Seiten und ist auf 135 Minuten geplant, die ganze Einheit auf 12 Lektionen mit 1 Lektion Puffer. Die Fassung ohne Medien bietet mehr Hilfen: Satzanfänge, eine vorausgefüllte Beispielzeile im Raster und eine Denkhilfe. Die Schreibfelder füllen die Seite. Für EBA habe ich eine eigene Musterfassung gebaut: drei statt vier Leitfragen, drei Schritte und drei Satzanfänge je Leitfrage, ein Kasten «Wichtige Wörter» und ein Raster in einfacher Sprache.</td>
+              <td class="px-3 py-2"><span class="chip-part">teilweise</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Positionspapier überfordert</td>
+              <td class="px-3 py-2">Das Produkt wird je Einheit aus dem Lehrplan hergeleitet, nicht aus einer Vorlage übernommen. Es entsteht in fünf Schritten mit Seitenverweis. Auf Seite 6 zeigt ein gezeichnetes Beispielprodukt an einem anderen Fall, wie das Ergebnis aussehen kann. In der EBA-Musterfassung ist der gemeinsame Auftrag mündlich: «Fall in 60 Sekunden» und ein Klärungsgespräch zu zweit.</td>
+              <td class="px-3 py-2"><span class="chip-ok">umgesetzt</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Überladen, Lösung steht in der Frage</td>
+              <td class="px-3 py-2">Jedes Feld hat eine Höchstlänge, etwa 650–900 Zeichen für die Situation und höchstens 220 für eine Leitfrage. Die automatische Prüfung (mit Claude umgesetzt) stellt sicher, dass kein Satz aus den Lösungen im Text für die Lernenden steht und dass keine Quellenkarte die Lösung verrät. Ob eine Frage ihre Antwort inhaltlich vorwegnimmt, findet aber nur eine Lesung.</td>
+              <td class="px-3 py-2"><span class="chip-part">teilweise</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Buch hilft nicht, Verweis auf fehlende Hilfsmittel</td>
+              <td class="px-3 py-2">Eine Prüfung, die ich mit Claude umgesetzt habe, kontrolliert jeden Verweis: Die genannte Lehrmittelseite muss existieren und zum Kapitel gehören. «S. n» muss auf etwas zeigen, das wirklich auf dieser Seite steht, und jeder Arbeitsschritt nennt eine Seite. Jede Lösung ist an eine Fundstelle gebunden. Genau den gemeldeten Fehler mit den fehlenden Hilfsmitteln habe ich am 02.10. in der ersten neuen Einheit gefunden und behoben.</td>
+              <td class="px-3 py-2"><span class="chip-ok">umgesetzt</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Raster zu grob</td>
+              <td class="px-3 py-2">Der KN bewertet vier Kriterien mit je 0–3 Punkten, und zu jedem Kriterium gibt es einen Hinweis «Woran sehe ich das in meinem Produkt?». Die Lernenden schätzen sich vor der Abgabe selbst ein, dann folgt die Fremdeinschätzung. Die Hefte üben je zwei Kriterien, der gemeinsame Auftrag alle vier, und erst der KN gibt eine Note. Das ist feiner als zwei Kreuze, aber für eine Note immer noch eine grobe Skala.</td>
+              <td class="px-3 py-2"><span class="chip-part">teilweise</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Fachkorrektheit gehört zu Gesellschaft</td>
+              <td class="px-3 py-2">Nicht verändert. Fachkorrektheit zählt weiterhin zu Sprache und Kommunikation, und das gilt für den Aufbau jeder Einheit.</td>
+              <td class="px-3 py-2"><span class="chip-open">offen</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">An den Beruf anpassen</td>
+              <td class="px-3 py-2">Die Figur in der Situation ist neutral gehalten, damit die Lehrperson anpassen kann. Neu gibt es die Werkstatt auch für die neuen Einheiten (mit Claude umgesetzt): Sie erzeugt einen Prompt für Differenzierung, Sprachniveau und Übungsfälle, der zur Einheit passt. Zu jedem Feld der Hefte gibt es ein Lösungsdokument.</td>
+              <td class="px-3 py-2"><span class="chip-ok">umgesetzt</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rounded-lg px-5 py-4 text-sm max-w-3xl" style="background: var(--brand-tint);">
+        <p><b>Was mein Update noch nicht beweist.</b> Meine KI-gestützte Testlesung vom 03.10. mit simulierten Lernenden hat
+        für ein Heft, das auf 135 Minuten geplant ist, je nach Profil zwischen 63 und 255 Minuten ergeben. Lernende mit
+        Deutsch als Zweitsprache (B1) brauchten 197–255 Minuten. Die laufenden Gegenlesungen arbeiten nur mit einem
+        starken Profil. Den Kern der Rückmeldung «zu schwer, zu lang» hat mein Update also noch nicht widerlegt. Das
+        zeigt erst ein Einsatz in einer echten Klasse.</p>
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-slate-900">4 · Grenzen dieser Auswertung</h2>
+      <ul class="list-disc pl-5 space-y-1.5 text-sm max-w-3xl">
+        <li>Die Zahl ist klein. Gut die Hälfte der Rückmeldungen betrifft eine einzige Einheit (Konflikt kommunizieren).</li>
+        <li><b>Die Zuordnung zu den Einheiten ist unsicher.</b> Das Positionspapier gibt es nur in «Konflikt kommunizieren». Zwei Rückmeldungen nennen es aber unter anderen Einheiten, darunter «Ausbildung kommunizieren», die erst seit dem 05.10. im neuen Format online ist. Wahrscheinlich wurde im Formular die falsche Einheit gewählt.</li>
+        <li>Zu den neuen Einheiten gibt es noch keine verlässliche Rückmeldung aus dem Unterricht.</li>
+        <li>Fast alle Rückmeldungen sind noch nicht gesichtet.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-slate-900">5 · Entscheide für das Kernteam</h2>
+      <ol class="list-decimal pl-5 space-y-2.5 text-sm max-w-3xl">
+        <li><b>Alte Einheiten zum Lebensbezug 1.1 ablösen.</b> Zuerst unterrichtet werden genau die Einheiten, die noch im alten Format sind: Konflikt kommunizieren, Rechte verstehen und nutzen, Lehrvertrag (EBA) und Unterlagen ordnen (EBA). Sollen sie ins neue Format überführt und die alten archiviert werden, und in welcher Reihenfolge?</li>
+        <li><b>EBA-Musterfassung «Lehrvertrag» freigeben?</b> Sie ist im Katalog als Entwurf nur für KT1 sichtbar und greift die Rückmeldungen zur EBA-Einheit direkt auf: mehr Hilfen und mündliche statt schriftlicher Produkte.</li>
+        <li><b>Fachkorrektheit:</b> Bleibt sie bei Sprache und Kommunikation, oder wechselt sie zu Gesellschaft? Die Frage betrifft den Aufbau aller Einheiten und lässt sich nicht für einzelne Einheiten entscheiden.</li>
+        <li><b>Raster:</b> Reichen 0–3 Punkte je Kriterium für die KN-Note, oder braucht es eine feinere Skala oder Teilkriterien?</li>
+        <li><b>Erprobung:</b> Wer unterrichtet im November ein neues Heft in einer schwächeren Klasse und misst die Zeit? Ohne diese Messung bleibt der Hauptbefund «zu lang» offen.</li>
+        <li><b>Sichtung durch KT1:</b> Wer sichtet die Rückmeldungen und das eingereichte Material und gibt den Lehrpersonen eine Antwort? Sonst bleibt der Kanal einseitig.</li>
+        <li><b>Formular:</b> Soll das Feedback-Formular verlangen, dass die Lehrperson die verwendete Herausforderung nennt? Dann lassen sich Rückmeldungen sicher zuordnen.</li>
+      </ol>
+    </section>
+  </div>
+</Admin>
+
+<style>
+  .chip-ok, .chip-part, .chip-open {
+    display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip-ok { background: var(--brand-tint); color: var(--brand-dark); }
+  .chip-part { background: #fef3c7; color: #92400e; }
+  .chip-open { background: #fee2e2; color: #991b1b; }
+</style>
