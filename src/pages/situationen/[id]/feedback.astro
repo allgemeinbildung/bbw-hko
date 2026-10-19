@@ -267,7 +267,7 @@ const aspekteJson = JSON.stringify(declaredAspekte)
                     </template>
                   </ul>
                 </template>
-                <input type="file" multiple id="idee-files" class="text-sm text-slate-600" />
+                <input type="file" multiple data-sammeln id="idee-files" class="text-sm text-slate-600" />
               </div>
             </template>
             <template x-if="!existingId">
@@ -349,7 +349,7 @@ const aspekteJson = JSON.stringify(declaredAspekte)
           if (!input || !input.files || input.files.length === 0) return
           // Direkt zu Storage (public/shared/hko-upload.js) — an Vercels 4.5-MB-Limit vorbei.
           this.form.idee_dateien = await window.hkoDateienHochladen(`/api/feedbacks/${this.existingId}/files`, input.files)
-          input.value = ''
+          window.hkoAuswahlLeeren(input)
         },
         async save(targetStatus) {
           if (this.form.neue_idee && (!this.form.idee_titel?.trim() || !this.form.idee_beschreibung?.trim())) {

@@ -199,7 +199,7 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
           <p class="text-xs text-slate-500 mb-2">PDF, HTML oder Word (DOCX). Mehrere Dateien möglich, max. 15 MB/Datei.</p>
           <div id="idee-file-list" class="space-y-1 mb-2"></div>
           <p id="idee-upload-hint" class="text-xs text-amber-600 hidden">Speichere zuerst als Entwurf, um Dateien hochzuladen.</p>
-          <input type="file" multiple id="idee-files" accept=".pdf,.html,.htm,.doc,.docx" class="text-sm text-slate-600" />
+          <input type="file" multiple data-sammeln id="idee-files" accept=".pdf,.html,.htm,.doc,.docx" class="text-sm text-slate-600" />
         </div>
       </section>
 
@@ -533,7 +533,7 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
       if (!input || !input.files || input.files.length === 0 || !savedFeedbackId) return
       // Direkt zu Storage (public/shared/hko-upload.js) — an Vercels 4.5-MB-Limit vorbei.
       const dateien = await window.hkoDateienHochladen(`/api/einheit-feedbacks/${savedFeedbackId}/files`, input.files)
-      input.value = ''
+      window.hkoAuswahlLeeren(input)
       renderFileList(dateien ?? [])
     }
 

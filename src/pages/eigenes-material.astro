@@ -282,7 +282,7 @@ const start = { row, abteilung: access.abteilung ?? '' }
             </div>
           </template>
         </div>
-        <input type="file" multiple x-ref="files" accept=".pdf,.doc,.docx,.odt,.rtf,.txt,.md,.html,.htm,.ppt,.pptx,.xls,.xlsx,.csv,.png,.jpg,.jpeg,.gif,.webp,.svg,.zip" class="text-sm text-slate-600" @change="dateienGewaehlt = $event.target.files.length" />
+        <input type="file" multiple data-sammeln x-ref="files" accept=".pdf,.doc,.docx,.odt,.rtf,.txt,.md,.html,.htm,.ppt,.pptx,.xls,.xlsx,.csv,.png,.jpg,.jpeg,.gif,.webp,.svg,.zip" class="text-sm text-slate-600" @change="dateienGewaehlt = $event.target.files.length" />
 
         <div class="mt-5">
           <span class="field-label block mb-1">Links</span>
@@ -561,7 +561,7 @@ const start = { row, abteilung: access.abteilung ?? '' }
           if (!input || !input.files || input.files.length === 0 || !this.savedId) return
           // Direkt zu Storage (public/shared/hko-upload.js) — an Vercels 4.5-MB-Limit vorbei.
           const dateien = await window.hkoDateienHochladen(`/api/einheit-feedbacks/${this.savedId}/files`, input.files)
-          input.value = ''
+          window.hkoAuswahlLeeren(input)
           this.dateienGewaehlt = 0
           this.dateien = dateien ?? []
         },
