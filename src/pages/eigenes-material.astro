@@ -406,6 +406,7 @@ const start = { row, abteilung: access.abteilung ?? '' }
     </div>
   </div>
 
+  <script is:inline src="/shared/hko-upload.js"></script>
   <script is:inline>
     function eigenesMaterial() {
       const read = (id) => { try { return JSON.parse(document.getElementById(id).textContent || 'null') } catch { return null } }
@@ -558,14 +559,11 @@ const start = { row, abteilung: access.abteilung ?? '' }
         async hochladen() {
           const input = this.$refs.files
           if (!input || !input.files || input.files.length === 0 || !this.savedId) return
-          const fd = new FormData()
-          for (const file of input.files) fd.append('files', file)
-          const res = await fetch(`/api/einheit-feedbacks/${this.savedId}/files`, { method: 'POST', body: fd })
-          const body = await res.json().catch(() => ({}))
-          if (!res.ok) throw new Error(body.error || 'Upload fehlgeschlagen.')
+          // Direkt zu Storage (public/shared/hko-upload.js) — an Vercels 4.5-MB-Limit vorbei.
+          const dateien = await window.hkoDateienHochladen(`/api/einheit-feedbacks/${this.savedId}/files`, input.files)
           input.value = ''
           this.dateienGewaehlt = 0
-          this.dateien = body.data ?? []
+          this.dateien = dateien ?? []
         },
 
         // ── Speichern ───────────────────────────────────────────────────

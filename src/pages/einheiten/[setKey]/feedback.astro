@@ -363,6 +363,7 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
     .art-choice-desc { font-size: 0.8rem; line-height: 1.5; color: #64748b; }
   </style>
 
+  <script is:inline src="/shared/hko-upload.js"></script>
   <script is:inline define:vars={{ existingRow: offen }}>
     // Radio-pill click behaviour
     document.querySelectorAll('.radio-pill').forEach((pill) => {
@@ -530,13 +531,10 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
     async function uploadIdeeDateien() {
       const input = document.getElementById('idee-files')
       if (!input || !input.files || input.files.length === 0 || !savedFeedbackId) return
-      const fd = new FormData()
-      for (const f of input.files) fd.append('files', f)
-      const res = await fetch(`/api/einheit-feedbacks/${savedFeedbackId}/files`, { method: 'POST', body: fd })
-      const body = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(body.error || 'Upload fehlgeschlagen.')
+      // Direkt zu Storage (public/shared/hko-upload.js) — an Vercels 4.5-MB-Limit vorbei.
+      const dateien = await window.hkoDateienHochladen(`/api/einheit-feedbacks/${savedFeedbackId}/files`, input.files)
       input.value = ''
-      renderFileList(body.data ?? [])
+      renderFileList(dateien ?? [])
     }
 
     function renderFileList(files) {

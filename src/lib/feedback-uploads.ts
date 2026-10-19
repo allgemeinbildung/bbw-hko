@@ -83,7 +83,17 @@ export async function authoriseFeedback(
   return { ok: true, row, role }
 }
 
-/** POST handler: upload files to feedback-uploads bucket. */
+/** POST handler: JSON → signierte Upload-URLs (Direkt-Upload), multipart → klassischer Upload.
+ *
+ * Vercel-Serverless nimmt höchstens 4.5 MB Request-Body an. Alles darüber weist
+ * Vercel ab, bevor dieser Code läuft — der Browser bekam nur ein nacktes
+ * «Upload fehlgeschlagen.» (Meldung Martina Ruoss, ZIP zu 1.2). Darum lädt der
+ * Client die Bytes direkt zu Supabase Storage (public/js/hko-upload.js):
+ *   1) POST JSON {files:[{name,size}]}  → hier: signierte Upload-URLs
+ *   2) PUT der Bytes an die signierte URL (an Vercel vorbei)
+ *   3) PUT JSON {files:[{name,path}]}   → handleRegister: prüfen + eintragen
+ * Gleiches Muster wie api/materials/[id]/files.ts. Multipart bleibt als Fallback.
+ */
 export async function handleUpload(
   locals: App.Locals,
   request: Request,
@@ -91,6 +101,9 @@ export async function handleUpload(
   table: AuthorizeOpts['table'],
   ownerId: string,
 ): Promise<Response> {
+  if ((request.headers.get('content-type') ?? '').includes('application/json')) {
+    return handleSign(locals, request, rowId, table, ownerId)
+  }
   let form: FormData
   try {
     form = await request.formData()
@@ -128,6 +141,105 @@ export async function handleUpload(
   const { error: dbErr } = await admin.from(table).update({ idee_dateien: merged }).eq('id', rowId)
   if (dbErr) {
     await admin.storage.from(FEEDBACK_BUCKET).remove(added.map((a) => a.path))
+    return json({ error: `Speichern fehlgeschlagen: ${dbErr.message}` }, 400)
+  }
+  return json({ data: merged }, 201)
+}
+
+/** Schritt 1 des Direkt-Uploads: signierte Upload-URLs ausstellen. */
+async function handleSign(
+  locals: App.Locals,
+  request: Request,
+  rowId: string,
+  table: AuthorizeOpts['table'],
+  ownerId: string,
+): Promise<Response> {
+  let payload: { files?: Array<{ name?: string; size?: number }> }
+  try {
+    payload = await request.json()
+  } catch {
+    return json({ error: 'Ungültiges JSON.' }, 400)
+  }
+  const wanted = Array.isArray(payload.files) ? payload.files : []
+  if (wanted.length === 0) return json({ error: 'Keine Dateien angefragt.' }, 400)
+  if (wanted.length > 20) return json({ error: 'Höchstens 20 Dateien auf einmal.' }, 400)
+
+  const auth = await authoriseFeedback(locals, rowId, { table, idColumn: 'id', jsonbColumn: 'idee_dateien', needOwner: true })
+  if (!auth.ok) return auth.res
+
+  const admin = createAdminClient()
+  const slots: Array<{ name: string; path: string; signedUrl: string }> = []
+  for (const f of wanted) {
+    const name = String(f?.name ?? '')
+    const size = Number(f?.size ?? 0)
+    if (!name) return json({ error: 'Dateiname fehlt.' }, 400)
+    if (size > MAX_BYTES) return json({ error: `«${name}» ist grösser als 15 MB.` }, 400)
+    if (!ALLOWED_EXT.includes(extOf(name))) return json({ error: `Dateityp «.${extOf(name)}» ist nicht erlaubt.` }, 400)
+
+    const path = `${ownerId}/${rowId}/${crypto.randomUUID()}_${sanitize(name)}`
+    const { data, error } = await admin.storage.from(FEEDBACK_BUCKET).createSignedUploadUrl(path)
+    if (error || !data?.signedUrl)
+      return json({ error: `Upload-Vorbereitung fehlgeschlagen: ${error?.message ?? 'unbekannt'}` }, 400)
+    slots.push({ name, path, signedUrl: data.signedUrl })
+  }
+  return json({ data: slots })
+}
+
+/** Schritt 3 des Direkt-Uploads (PUT): hochgeladene Dateien prüfen und eintragen.
+ *  Grösse und Typ kommen aus dem Storage, nicht aus der Behauptung des Clients. */
+export async function handleRegister(
+  locals: App.Locals,
+  request: Request,
+  rowId: string,
+  table: AuthorizeOpts['table'],
+  ownerId: string,
+): Promise<Response> {
+  let payload: { files?: Array<{ name?: string; path?: string; type?: string }> }
+  try {
+    payload = await request.json()
+  } catch {
+    return json({ error: 'Ungültiges JSON.' }, 400)
+  }
+  const incoming = Array.isArray(payload.files) ? payload.files : []
+  if (incoming.length === 0) return json({ error: 'Keine Dateien übermittelt.' }, 400)
+
+  const auth = await authoriseFeedback(locals, rowId, { table, idColumn: 'id', jsonbColumn: 'idee_dateien', needOwner: true })
+  if (!auth.ok) return auth.res
+
+  const admin = createAdminClient()
+  const dir = `${ownerId}/${rowId}`
+  const now = new Date().toISOString()
+  const added: FileMeta[] = []
+
+  for (const f of incoming) {
+    const path = String(f?.path ?? '')
+    const name = String(f?.name ?? '').slice(0, 200)
+    if (!path.startsWith(dir + '/') || path.includes('..')) return json({ error: 'Ungültiger Datei-Pfad.' }, 400)
+
+    const objectName = path.slice(dir.length + 1)
+    const { data: listed, error: listErr } = await admin.storage
+      .from(FEEDBACK_BUCKET)
+      .list(dir, { limit: 100, search: objectName })
+    if (listErr) return json({ error: `Prüfung fehlgeschlagen: ${listErr.message}` }, 400)
+    const obj = (listed ?? []).find((o) => o.name === objectName)
+    if (!obj) return json({ error: `Hochgeladene Datei nicht gefunden: «${name}».` }, 400)
+
+    const size = Number((obj as any)?.metadata?.size ?? 0)
+    if (size > MAX_BYTES) {
+      await admin.storage.from(FEEDBACK_BUCKET).remove([path])
+      return json({ error: `«${name}» ist grösser als 15 MB.` }, 400)
+    }
+    const type = String((obj as any)?.metadata?.mimetype ?? f?.type ?? '')
+    added.push({ name, path, size, type, uploaded_at: now })
+  }
+
+  const existing: FileMeta[] = Array.isArray(auth.row.idee_dateien) ? auth.row.idee_dateien : []
+  const known = new Set(existing.map((e) => e.path))
+  const fresh = added.filter((a) => !known.has(a.path))
+  const merged = [...existing, ...fresh]
+  const { error: dbErr } = await admin.from(table).update({ idee_dateien: merged }).eq('id', rowId)
+  if (dbErr) {
+    await admin.storage.from(FEEDBACK_BUCKET).remove(fresh.map((a) => a.path))
     return json({ error: `Speichern fehlgeschlagen: ${dbErr.message}` }, 400)
   }
   return json({ data: merged }, 201)

@@ -308,6 +308,7 @@ const aspekteJson = JSON.stringify(declaredAspekte)
     </div>
   </div>
 
+  <script is:inline src="/shared/hko-upload.js"></script>
   <script is:inline define:vars={{ situationId: entry.id, existingId: existing?.id ?? null }}>
     window.feedbackForm = function (initial, declaredSk, declaredAspekte) {
       return {
@@ -346,12 +347,9 @@ const aspekteJson = JSON.stringify(declaredAspekte)
         async uploadFiles() {
           const input = document.getElementById('idee-files')
           if (!input || !input.files || input.files.length === 0) return
-          const fd = new FormData()
-          for (const f of input.files) fd.append('files', f)
-          const res = await fetch(`/api/feedbacks/${this.existingId}/files`, { method: 'POST', body: fd })
-          const json = await res.json().catch(() => ({}))
-          if (res.ok) { this.form.idee_dateien = json.data ?? []; input.value = '' }
-          else throw new Error(json.error || 'Upload fehlgeschlagen.')
+          // Direkt zu Storage (public/shared/hko-upload.js) — an Vercels 4.5-MB-Limit vorbei.
+          this.form.idee_dateien = await window.hkoDateienHochladen(`/api/feedbacks/${this.existingId}/files`, input.files)
+          input.value = ''
         },
         async save(targetStatus) {
           if (this.form.neue_idee && (!this.form.idee_titel?.trim() || !this.form.idee_beschreibung?.trim())) {
