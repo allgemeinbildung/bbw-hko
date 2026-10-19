@@ -79,28 +79,6 @@ const start = { row, abteilung: access.abteilung ?? '' }
 
     <div class="space-y-6 bg-white border border-slate-200 rounded-lg p-6">
 
-      <!-- ── Titel + Kontext ─────────────────────────────────────────────── -->
-      <section>
-        <label class="flex flex-col gap-1 mb-4">
-          <span class="field-label">Titel des Materials <span class="text-red-500">*</span></span>
-          <input class="input" x-model="f.titel" placeholder="z.B. Mietvertrag prüfen — Fall Polymechanik" />
-        </label>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Klasse</span>
-            <input class="input" x-model="f.klasse" placeholder="z.B. Poly24a" />
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Abteilung</span>
-            <input class="input" x-model="f.abteilung" />
-          </label>
-          <label class="flex flex-col gap-1">
-            <span class="field-label">Dauer (Lektionen) <span class="font-normal normal-case text-slate-400">— optional</span></span>
-            <input class="input" type="number" step="0.5" min="0" x-model="f.dauer_lektionen" />
-          </label>
-        </div>
-      </section>
-
       <!-- ── Verortung im Lehrplan ────────────────────────────────────────── -->
       <section>
         <h2 class="text-base font-semibold text-slate-900 mb-3">Verortung im Lehrplan</h2>
@@ -167,6 +145,68 @@ const start = { row, abteilung: access.abteilung ?? '' }
               <span class="text-xs text-slate-500" x-show="vorgabe.sprachmodi.length">Zur Wahl stehen die Sprachmodi, die der Lehrplan für die gewählten Kompetenzen vorgibt.</span>
             </label>
           </template>
+
+          <!-- Was applyVorgabe() übernommen hat, sichtbar statt nur in den zugeklappten
+               «Erweiterten Angaben». Reine Anzeige der Felder in f.erweitert. -->
+          <template x-if="f.kompetenz_nrs.length">
+            <div class="rounded-lg border p-4 text-sm" style="border-color: var(--brand); background: var(--brand-tint)">
+              <div class="flex items-baseline justify-between gap-3 mb-2">
+                <span class="font-semibold text-slate-900">Vom Lehrplan vorgegeben — automatisch übernommen</span>
+                <button type="button" class="text-xs underline text-slate-600 hover:text-slate-900 shrink-0" @click="erweitertOeffnen()">anpassen</button>
+              </div>
+              <dl class="space-y-2">
+                <div>
+                  <dt class="text-xs font-semibold text-slate-600 mb-1">Sprache und Kommunikation</dt>
+                  <dd class="flex flex-wrap gap-1.5">
+                    <template x-for="m in [f.sprachmodus_primaer, ...f.erweitert.sprachmodi_sekundaer].filter(Boolean)" :key="m">
+                      <span class="px-2 py-0.5 rounded-full bg-white border border-slate-200 text-xs" x-text="m"></span>
+                    </template>
+                    <span x-show="!f.sprachmodus_primaer && !f.erweitert.sprachmodi_sekundaer.length" class="text-xs text-slate-500">—</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-semibold text-slate-600 mb-1">Gesellschaft (Aspekte)</dt>
+                  <dd class="flex flex-wrap gap-1.5">
+                    <template x-for="a in f.erweitert.aspekte" :key="a">
+                      <span class="px-2 py-0.5 rounded-full bg-white border border-slate-200 text-xs" x-text="a"></span>
+                    </template>
+                    <span x-show="!f.erweitert.aspekte.length" class="text-xs text-slate-500">—</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-semibold text-slate-600 mb-1">Schlüsselkompetenzen</dt>
+                  <dd class="flex flex-wrap gap-1.5">
+                    <template x-for="sk in f.erweitert.schluesselkompetenzen" :key="sk">
+                      <span class="px-2 py-0.5 rounded-full bg-white border border-slate-200 text-xs" :title="tax.skFull[sk] || sk" x-text="sk"></span>
+                    </template>
+                    <span x-show="!f.erweitert.schluesselkompetenzen.length" class="text-xs text-slate-500">—</span>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <!-- ── Titel + Kontext ─────────────────────────────────────────────── -->
+      <section>
+        <label class="flex flex-col gap-1 mb-4">
+          <span class="field-label">Titel des Materials <span class="text-red-500">*</span></span>
+          <input class="input" x-model="f.titel" placeholder="z.B. Mietvertrag prüfen — Fall Polymechanik" />
+        </label>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Klasse</span>
+            <input class="input" x-model="f.klasse" placeholder="z.B. Poly24a" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Abteilung</span>
+            <input class="input" x-model="f.abteilung" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Dauer (Lektionen) <span class="font-normal normal-case text-slate-400">— optional</span></span>
+            <input class="input" type="number" step="0.5" min="0" x-model="f.dauer_lektionen" />
+          </label>
         </div>
       </section>
 
@@ -254,8 +294,10 @@ const start = { row, abteilung: access.abteilung ?? '' }
           <div class="space-y-2">
             <template x-for="(l, i) in f.links" :key="i">
               <div class="flex flex-col sm:flex-row gap-2">
-                <input class="input flex-1" type="text" inputmode="url" x-model="l.url" @blur="l.url = linkBereinigen(l.url)" placeholder="https://…" />
-                <input class="input sm:w-56" x-model="l.titel" placeholder="Bezeichnung (optional)" />
+                <!-- `.input` setzt width:100% und schlug damit sm:w-56: das Bezeichnungsfeld
+                     nahm die ganze Zeile, das URL-Feld schrumpfte auf 0 px. Darum !w-56 + flex-none. -->
+                <input class="input flex-1 min-w-0" type="text" inputmode="url" x-model="l.url" @blur="l.url = linkBereinigen(l.url)" placeholder="https://…" />
+                <input class="input sm:!w-56 sm:flex-none" x-model="l.titel" placeholder="Bezeichnung (optional)" />
                 <button type="button" class="text-xs text-red-500 hover:text-red-700 sm:self-center" @click="f.links.splice(i, 1)">Entfernen</button>
               </div>
             </template>
@@ -265,9 +307,9 @@ const start = { row, abteilung: access.abteilung ?? '' }
       </section>
 
       <!-- ── Erweiterte Angaben ───────────────────────────────────────────── -->
-      <details class="rounded-lg border border-slate-200" :open="erweitertOffen">
+      <details class="rounded-lg border border-slate-200" x-ref="erweitert" :open="erweitertOffen" @toggle="erweitertOffen = $el.open">
         <summary class="cursor-pointer select-none px-4 py-3 text-sm font-semibold text-slate-800">
-          Erweiterte Angaben <span class="font-normal text-slate-500">— optional: Kompetenzversprechen, Taxonomie, Lehrmittel, Scaffolds</span>
+          Erweiterte Angaben <span class="font-normal text-slate-500">— Kompetenzversprechen, Lehrplan-Vorgaben anpassen, Lehrmittel, Scaffolds</span>
         </summary>
         <div class="px-4 pb-4 space-y-5">
           <label class="flex flex-col gap-1">
@@ -497,6 +539,10 @@ const start = { row, abteilung: access.abteilung ?? '' }
             : [...this.f.kompetenz_nrs, nr]
           this.f.kompetenz_nrs = next.sort((a, b) => order.indexOf(a) - order.indexOf(b))
           this.applyVorgabe()
+        },
+        erweitertOeffnen() {
+          this.erweitertOffen = true
+          this.$nextTick(() => this.$refs.erweitert?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
         },
         toggle(list, v) {
           const i = list.indexOf(v)
