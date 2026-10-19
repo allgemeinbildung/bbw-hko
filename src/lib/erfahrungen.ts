@@ -20,6 +20,7 @@ const OEFFENTLICHE_SPALTEN = [
   'kn_fairness', 'kn_zeit_angemessen', 'kn_raster_brauchbar', 'kn_ergebnis',
   'niveau_passung', 'noetiges_scaffolding', 'weiterempfehlung',
   'eigene_anpassungen', 'anmerkungen',
+  'bewertung_kommentare', 'bewertungspositionen_feedback', 'scaffolds_feedback',
 ].join(', ')
 
 export interface Erfahrung {
@@ -48,10 +49,13 @@ export interface Erfahrung {
   weiterempfehlung: boolean | null
   eigene_anpassungen: string | null
   anmerkungen: string | null
+  bewertung_kommentare: Record<string, string> | null
+  bewertungspositionen_feedback: string | null
+  scaffolds_feedback: string | null
 }
 
 export const BEWERTUNGEN: Array<[keyof Erfahrung, string]> = [
-  ['tauglichkeit', 'Passt in den Unterricht'],
+  ['tauglichkeit', 'Passt zu Klasse und Planung'],
   ['qualitaet_situation', 'Qualität der Herausforderungen'],
   ['qualitaet_handlungsprodukt', 'Qualität des Handlungsprodukts'],
   ['schwierigkeit', 'Anspruch für die Lernenden'],
@@ -95,7 +99,7 @@ export async function ladeErfahrungen(einheitId: string): Promise<ErfahrungenUeb
       niveau,
     }
   } catch (e) {
-    // Fehlt die Spalte (Migration 022 nicht angewendet) oder der Dienst: Seite
+    // Fehlt eine Spalte (Migration 022/024 nicht angewendet) oder der Dienst: Seite
     // ohne den Abschnitt ausliefern statt sie zu brechen.
     console.error('[erfahrungen]', e)
     return null

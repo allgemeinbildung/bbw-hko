@@ -1,7 +1,8 @@
 ---
 // «Erfahrungen von Kolleg:innen» auf der Detailseite einer Einheit — ohne Namen.
 // Daten aus src/lib/erfahrungen.ts (feste Spaltenliste, nur freigegebene Zeilen).
-import type { ErfahrungenUebersicht } from '../../lib/erfahrungen'
+import { BEWERTUNGEN, type ErfahrungenUebersicht } from '../../lib/erfahrungen'
+import { KOMMENTAR_FELDER } from '../../lib/feedback-kommentare'
 import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 
 interface Props {
@@ -14,6 +15,17 @@ const { liste, mittel, empfehlung, niveau } = daten
 const monat = new Intl.DateTimeFormat('de-CH', { month: 'long', year: 'numeric' })
 const niveauLabel: Record<string, string> = { zu_leicht: 'zu leicht', passend: 'passend', zu_schwer: 'zu schwer' }
 const niveauN = niveau.zu_leicht + niveau.passend + niveau.zu_schwer
+// «Warum?» zu den Bewertungen (Migration 024), in der Reihenfolge des Bogens.
+const KOMMENTAR_LABEL: Record<string, string> = {
+  ...Object.fromEntries(BEWERTUNGEN),
+  kn_fairness: 'KN fair',
+  kn_zeit_angemessen: 'KN-Zeit angemessen',
+  kn_raster_brauchbar: 'Beurteilungsraster brauchbar',
+}
+const kommentare = (e: (typeof liste)[number]): Array<[string, number | null, string]> =>
+  KOMMENTAR_FELDER
+    .filter((f) => e.bewertung_kommentare?.[f])
+    .map((f) => [KOMMENTAR_LABEL[f] ?? f, (e[f as keyof typeof e] as number | null) ?? null, e.bewertung_kommentare![f]])
 const komponenten = (e: (typeof liste)[number]) =>
   [e.genutzt_sit_a && 'A', e.genutzt_sit_b && 'B', e.genutzt_sit_c && 'C', e.genutzt_kn && 'KN'].filter(Boolean).join(' · ')
 ---
@@ -75,7 +87,16 @@ const komponenten = (e: (typeof liste)[number]) =>
             </div>
             {e.eigene_anpassungen && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Angepasst:</span> {e.eigene_anpassungen}</p>}
             {e.noetiges_scaffolding && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Brauchte zusätzlich:</span> {e.noetiges_scaffolding}</p>}
+            {e.bewertungspositionen_feedback && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Bewertungspositionen:</span> {e.bewertungspositionen_feedback}</p>}
+            {e.scaffolds_feedback && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Scaffolds:</span> {e.scaffolds_feedback}</p>}
             {e.anmerkungen && <p class="text-slate-700 whitespace-pre-wrap">{e.anmerkungen}</p>}
+            {kommentare(e).length > 0 && (
+              <ul class="mt-1 space-y-0.5 text-slate-700">
+                {kommentare(e).map(([label, wert, text]) => (
+                  <li><span class="font-medium">{label}{wert != null && ` (${wert}/5)`}:</span> {text}</li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>

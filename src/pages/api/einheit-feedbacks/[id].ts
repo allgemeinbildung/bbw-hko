@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
 import { sanitizeEigenesPayload } from '../../../lib/eigenes-material'
+import { sanitizeBewertungKommentare } from '../../../lib/feedback-kommentare'
 
 const LP_FIELDS = [
   'feedback_art',
@@ -40,6 +41,9 @@ const LP_FIELDS = [
   'kn_zeit_angemessen',
   'kn_raster_brauchbar',
   'kn_ergebnis',
+  'bewertung_kommentare',
+  'bewertungspositionen_feedback',
+  'scaffolds_feedback',
   'wirksame_sk',
   'wirksame_aspekte',
   'weiterempfehlung',
@@ -97,6 +101,7 @@ export const PATCH: APIRoute = async ({ locals, params, request }) => {
     ? { ...(eigeneZeile ? pick(body, LP_FIELDS) : {}), ...pick(body, KT1_FIELDS) }
     : pick(body, LP_FIELDS)
   sanitizeEigenesPayload(update)
+  sanitizeBewertungKommentare(update)
   if (Object.keys(update).length === 0) {
     return new Response(JSON.stringify({ error: 'Keine änderbaren Felder.' }), { status: 400 })
   }

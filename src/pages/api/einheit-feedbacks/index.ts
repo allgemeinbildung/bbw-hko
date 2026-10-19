@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
 import { sanitizeEigenesPayload } from '../../../lib/eigenes-material'
+import { sanitizeBewertungKommentare } from '../../../lib/feedback-kommentare'
 
 const ALLOWED_FIELDS = [
   'einheit_id',
@@ -41,6 +42,9 @@ const ALLOWED_FIELDS = [
   'kn_zeit_angemessen',
   'kn_raster_brauchbar',
   'kn_ergebnis',
+  'bewertung_kommentare',
+  'bewertungspositionen_feedback',
+  'scaffolds_feedback',
   'wirksame_sk',
   'wirksame_aspekte',
   'weiterempfehlung',
@@ -86,6 +90,7 @@ export const POST: APIRoute = async ({ locals, request }) => {
   }
   const payload: Record<string, unknown> = { ...pick(body), lp_id: locals.user.id, status }
   sanitizeEigenesPayload(payload)
+  sanitizeBewertungKommentare(payload)
   const { data, error } = await locals.supabase
     .from('einheit_feedbacks')
     .insert(payload)

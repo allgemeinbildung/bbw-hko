@@ -231,7 +231,6 @@ const start = { row, abteilung: access.abteilung ?? '' }
         <p class="text-xs text-slate-500 mb-3">
           <strong>Nicht dasselbe wie das Handlungsprodukt:</strong> Das Handlungsprodukt entsteht beim Lernen an der Herausforderung.
           Der Kompetenznachweis (KN) ist die Beurteilung, mit der du am Schluss feststellst, ob die Lernenden die Kompetenz beherrschen.
-          <em>Empfehlung:</em> Der KN prüft die Kompetenz in einer neuen Situation (Transfer) — das ist keine Pflicht.
         </p>
         <div class="space-y-3">
           <label class="flex flex-col gap-1">
@@ -386,9 +385,8 @@ const start = { row, abteilung: access.abteilung ?? '' }
           <label class="check-item" :class="f.selbstcheck.handlungsprodukt ? 'checked' : ''">
             <input type="checkbox" x-model="f.selbstcheck.handlungsprodukt" /> Es gibt ein konkretes Handlungsprodukt, das die Lernenden erstellen.
           </label>
-          <label class="check-item" :class="f.selbstcheck.kn_transfer ? 'checked' : ''">
-            <input type="checkbox" x-model="f.selbstcheck.kn_transfer" /> Der Kompetenznachweis prüft die Kompetenz in einer neuen Situation (Transfer — empfohlen).
-          </label>
+          <!-- «KN prüft im Transfer» entfernt (Rückmeldung Christof 19.10.2026: steht so nicht
+               im SLP). `kn_transfer` bleibt im State, damit gespeicherte Werte erhalten bleiben. -->
           <div class="check-item" :class="hatKriterien ? 'checked' : ''" style="cursor: default">
             <input type="checkbox" :checked="hatKriterien" disabled />
             <span>

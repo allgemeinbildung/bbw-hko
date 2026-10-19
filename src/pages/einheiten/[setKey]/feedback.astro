@@ -205,25 +205,29 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
 
       <!-- Bewertung (unverändert beibehalten) -->
       <section>
-        <h2 class="text-base font-semibold text-slate-900 mb-3">Bewertung (1 = sehr schwach … 5 = sehr stark)</h2>
+        <h2 class="text-base font-semibold text-slate-900 mb-1">Bewertung (1 = sehr schwach … 5 = sehr stark)</h2>
+        <p class="text-xs text-slate-500 mb-3">Nach jeder Bewertung kannst du kurz sagen, warum — damit wir wissen, was wir verbessern sollen.</p>
         <div class="space-y-3">
           {[
-            ['tauglichkeit', 'Passt die Einheit in den Unterricht?'],
+            ['tauglichkeit', 'Passt die Einheit zu deiner Klasse und deiner Jahresplanung?'],
             ['qualitaet_situation', 'Qualität der Herausforderungen'],
             ['qualitaet_handlungsprodukt', 'Qualität des Handlungsprodukts'],
             ['schwierigkeit', 'Anspruch für die Lernenden'],
             ['motivation', 'Engagement der Lernenden'],
             ['kn_validitaet', 'KN: hat er die Kompetenz wirklich gemessen?'],
           ].map(([k, label]) => (
-            <div class="flex items-center justify-between gap-3">
-              <span class="text-sm text-slate-700">{label}</span>
-              <div class="radio-group">
-                {[1, 2, 3, 4, 5].map((v) => (
-                  <label class="radio-pill">
-                    <input type="radio" name={k} value={v} hidden /> {v}
-                  </label>
-                ))}
+            <div class="bewertung" data-feld={k}>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-sm text-slate-700">{label}</span>
+                <div class="radio-group">
+                  {[1, 2, 3, 4, 5].map((v) => (
+                    <label class="radio-pill">
+                      <input type="radio" name={k} value={v} hidden /> {v}
+                    </label>
+                  ))}
+                </div>
               </div>
+              <input class="input mt-1.5 text-sm hidden" data-kommentar={k} placeholder="Warum? (optional)" />
             </div>
           ))}
 
@@ -264,15 +268,18 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
             ['kn_zeit_angemessen', 'Zeit angemessen'],
             ['kn_raster_brauchbar', 'Beurteilungsraster brauchbar'],
           ].map(([k, label]) => (
-            <div class="flex items-center justify-between gap-3">
-              <span class="text-sm text-slate-700">{label}</span>
-              <div class="radio-group">
-                {[1, 2, 3, 4, 5].map((v) => (
-                  <label class="radio-pill">
-                    <input type="radio" name={k} value={v} hidden /> {v}
-                  </label>
-                ))}
+            <div class="bewertung" data-feld={k}>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-sm text-slate-700">{label}</span>
+                <div class="radio-group">
+                  {[1, 2, 3, 4, 5].map((v) => (
+                    <label class="radio-pill">
+                      <input type="radio" name={k} value={v} hidden /> {v}
+                    </label>
+                  ))}
+                </div>
               </div>
+              <input class="input mt-1.5 text-sm hidden" data-kommentar={k} placeholder="Warum? (optional)" />
             </div>
           ))}
           <label class="flex flex-col gap-1">
@@ -284,6 +291,24 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
               <option value="75_90">75 – 90 %</option>
               <option value="ueber_90">&gt; 90 %</option>
             </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- Bewertungspositionen + Scaffolds (Migration 024) -->
+      <section>
+        <h2 class="text-base font-semibold text-slate-900 mb-3">Bewertungspositionen und Scaffolds</h2>
+        <div class="space-y-3">
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Bewertungspositionen <span class="font-normal normal-case text-slate-400">— optional</span></span>
+            <textarea class="input" name="bewertungspositionen_feedback" rows="3" placeholder="Mit welchen Bewertungspositionen hast du beurteilt? Welche haben gepasst, welche fehlten oder waren unbrauchbar?"></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="field-label">Scaffolds <span class="font-normal normal-case text-slate-400">— optional</span></span>
+            <textarea class="input" name="scaffolds_feedback" rows="3" placeholder="Welche Hilfen hast du eingesetzt (Satzanfänge, Checklisten, Vorlagen …)? Was hat gewirkt, was fehlte?"></textarea>
+            <span class="text-xs text-slate-500">
+              Anregungen: Scaffolds aus den <a href="/umsetzungsbeispiele" target="_blank" class="underline">offiziellen Umsetzungsbeispielen</a> des Schullehrplans.
+            </span>
           </label>
         </div>
       </section>
@@ -409,6 +434,15 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
       r.addEventListener('change', syncScaffolding)
     })
 
+    // «Warum?» je Bewertung: erscheint, sobald eine Zahl gewählt ist. Die Felder haben
+    // kein `name` — gather() fasst sie zu `bewertung_kommentare` (jsonb) zusammen.
+    function zeigeKommentar(feld) {
+      form.querySelector(`[data-kommentar="${feld}"]`)?.classList.remove('hidden')
+    }
+    form.querySelectorAll('.bewertung').forEach((b) => {
+      b.querySelectorAll('.radio-pill').forEach((p) => p.addEventListener('click', () => zeigeKommentar(b.dataset.feld)))
+    })
+
     // State: feedback row id returned after first save — bzw. die bestehende,
     // noch änderbare Rückmeldung aus dem Frontmatter (Wiederaufnahme).
     let savedFeedbackId = existingRow?.id ?? null
@@ -440,6 +474,13 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
 
     if (existingRow) {
       prefill(existingRow)
+      form.querySelectorAll('.bewertung').forEach((b) => {
+        const feld = b.dataset.feld
+        const text = existingRow.bewertung_kommentare?.[feld]
+        const input = form.querySelector(`[data-kommentar="${feld}"]`)
+        if (text && input) input.value = text
+        if (text || existingRow[feld] != null) zeigeKommentar(feld)
+      })
       // Die gespeicherte Nutzungsart gewinnt über ?art= — sie ist die Tatsache.
       selectArt(existingRow.feedback_art === 'angepasst' ? 'angepasst' : '1zu1')
       renderFileList(Array.isArray(existingRow.idee_dateien) ? existingRow.idee_dateien : [])
@@ -471,6 +512,13 @@ const offenDateien = Array.isArray(offen?.idee_dateien) ? offen!.idee_dateien : 
         if (['radio', 'checkbox', 'file', 'hidden'].includes(el.type)) return
         if (el.value === '' && !(el.name in obj)) obj[el.name] = ''
       })
+      // Leer → null, damit ein geleerter Kommentar beim Bearbeiten auch verschwindet.
+      const kommentare = {}
+      form.querySelectorAll('[data-kommentar]').forEach((el) => {
+        const t = el.value.trim()
+        if (t) kommentare[el.dataset.kommentar] = t
+      })
+      obj.bewertung_kommentare = Object.keys(kommentare).length ? kommentare : null
       return obj
     }
 
