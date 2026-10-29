@@ -29,6 +29,17 @@ const gruppen = [
     <h1 class="text-2xl font-semibold mt-2 mb-1">Feedback &amp; Material</h1>
     <p class="text-sm text-slate-500 mb-6">Wähle, worum es geht — du wirst zum passenden, schlanken Formular geführt.</p>
 
+    <!-- Erklärvideo (Christof Glaus, ~2 Min., Untertitel eingebrannt) -->
+    <details id="erklaervideo" class="mb-6 bg-white border border-slate-200 rounded-lg overflow-hidden group">
+      <summary class="cursor-pointer select-none px-4 py-3 text-sm font-medium text-slate-700 hover:text-[var(--brand)] flex items-center gap-2">
+        <span aria-hidden="true">▶</span> Erklärvideo ansehen (2 Min.)
+      </summary>
+      <video controls preload="none" playsinline poster="/onboarding/erklaervideo-lehrpersonen.jpg" class="w-full bg-black">
+        <source src="/onboarding/erklaervideo-lehrpersonen.mp4" type="video/mp4" />
+        Dein Browser kann das Video nicht abspielen.
+      </video>
+    </details>
+
     <!-- Wurzel: BBW-Einheit vs. eigenes Material -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
       <button type="button" class="tree-choice" data-branch="bbw" aria-pressed="false">
@@ -85,6 +96,7 @@ const gruppen = [
   </style>
 
   <script is:inline>
+    if (location.hash === '#erklaervideo') document.getElementById('erklaervideo')?.setAttribute('open', '')
     document.querySelectorAll('.radio-pill').forEach((pill) => {
       pill.addEventListener('click', () => {
         const input = pill.querySelector('input[type=radio]')

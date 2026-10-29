@@ -75,6 +75,15 @@ const primaryTiles = isGuest ? allTiles.filter(t => !t.lpOnly) : allTiles
         >
           <span style="font-size:1.1em">📖</span> Rundgang ansehen &rarr;
         </a>
+        {!isGuest && (
+          <a
+            href="/feedback#erklaervideo"
+            class="mt-6 ml-3 inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border text-base font-medium transition hover:bg-[var(--brand-tint)]"
+            style="border-color: var(--brand); color: var(--brand)"
+          >
+            <span style="font-size:1.1em">▶</span> Erklärvideo (2 Min.) &rarr;
+          </a>
+        )}
       </div>
 
       <!-- Primary: Einheiten + Einreichen -->

@@ -61,6 +61,15 @@ const start = { row, abteilung: access.abteilung ?? '' }
       Du hast eigenes Material erstellt und erprobt? Beschreibe es kurz und lade es hoch oder verlinke es.
       Das Kernteam (KT1) sieht deinen Beitrag und kann ihn in die Sammlung aufnehmen.
     </p>
+    <details class="mb-4 bg-white border border-slate-200 rounded-lg overflow-hidden">
+      <summary class="cursor-pointer select-none px-4 py-3 text-sm font-medium text-slate-700 hover:text-[var(--brand)] flex items-center gap-2">
+        <span aria-hidden="true">▶</span> Erklärvideo ansehen (2 Min.)
+      </summary>
+      <video controls preload="none" playsinline poster="/onboarding/erklaervideo-lehrpersonen.jpg" class="w-full bg-black">
+        <source src="/onboarding/erklaervideo-lehrpersonen.mp4" type="video/mp4" />
+        Dein Browser kann das Video nicht abspielen.
+      </video>
+    </details>
     <p class="text-xs text-slate-500 mb-6">
       Du kannst jederzeit <strong>als Entwurf speichern</strong> — dafür genügt ein Titel. Den Entwurf findest du unter «Meine Materialien».
       Lieber zuerst auf Papier? <a href="/vorlagen" class="underline">Word-Vorlagen</a> tragen dieselben Felder.
