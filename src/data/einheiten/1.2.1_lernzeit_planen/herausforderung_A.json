@@ -804,13 +804,39 @@
               "Beleg / Zahl",
               "→ Begriff"
             ],
-            "zeilen": 4
+            "zeilen": 4,
+            "vorgabe": [
+              [
+                "Abs. 15 · Ist-Analyse",
+                "",
+                "",
+                ""
+              ],
+              [
+                "Abs. 16–19 · Ist-Analyse",
+                "Jede Aufgabe mit vier Fragen prüfen.",
+                "",
+                ""
+              ],
+              [
+                "Abs. 23 · Bewährte Ideen",
+                "",
+                "«Salami-Taktik»",
+                ""
+              ],
+              [
+                "Abs. 35 · Plane deine Zeit",
+                "",
+                "",
+                "Pufferzeit"
+              ]
+            ]
           },
           "feld_hoehe_mm": 25,
           "scaffolding": {
             "strategien": [
               "Füllen Sie zuerst das Raster in Stichworten, dann schreiben Sie den Befund.",
-              "Notieren Sie zu jeder Zeile den Absatz. Die Quelle nennt keine Zahlen: Der Beleg genügt."
+              "Der Zwischentitel zeigt die Stelle. Ein Beleg genügt, Zahlen fehlen."
             ],
             "satzanfaenge": [
               "«Die Quelle schlägt in Abs. … vor, dass …»",
@@ -922,7 +948,7 @@
             3,
             4
           ],
-          "auftrag": "Lesen Sie über die QR-Seite den Ratgebertext, Abs. 12–35. Füllen Sie vier Zeilen zu Schritten, die gegen zu viele Aufgaben helfen: vorn der Absatz, dann Kernaussage, Beleg und ein Begriff aus LF1 oder dem Glossar.",
+          "auftrag": "Lesen Sie über die QR-Seite den Ratgebertext, Abs. 12–35. Absatz und Zwischentitel stehen schon im Raster, dazu je Zeile höchstens eine Zelle. Füllen Sie den Rest: Kernaussage, Beleg, Begriff aus LF1 oder Glossar.",
           "raster": {
             "spalten": [
               "Absatz",

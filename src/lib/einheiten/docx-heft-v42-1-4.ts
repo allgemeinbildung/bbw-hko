@@ -248,7 +248,7 @@ function lfBlock(lf: Leitfrage, ctx: HeftDocxKontext, hoeheMm: number, vorFeld: 
  * Tabelle zum Ausfüllen (Raster S. 3, Denkhilfe S. 4) mit Zeilen in Schreibhöhe.
  * Beispielzeile gestrichelt und kursiv mit Etikett — wie im HTML, ohne Farbe lesbar.
  */
-function ausfuellTabelle(spalten: string[], leer: number, zeileMm: number, ctx: HeftDocxKontext, beispiel?: string[], breiten?: number[]): Table {
+function ausfuellTabelle(spalten: string[], leer: number, zeileMm: number, ctx: HeftDocxKontext, beispiel?: string[], breiten?: number[], vorgabe?: string[][]): Table {
   const rand = linie(COLOR.inkSoft, 6)
   const gleich = Math.floor(100 / spalten.length)
   const kopf = new TableRow({
@@ -276,11 +276,11 @@ function ausfuellTabelle(spalten: string[], leer: number, zeileMm: number, ctx: 
       })),
     }))
   }
-  for (let r = 0; r < Math.max(0, leer); r++) {
+  for (let r = 0; r < (vorgabe ? vorgabe.length : Math.max(0, leer)); r++) {
     zeilen.push(new TableRow({
       height: hoehe,
       cantSplit: true,
-      children: spalten.map((_, c) => tcell(p(''), {
+      children: spalten.map((_, c) => tcell(p(vorgabe?.[r]?.[c] ?? '', vorgabe?.[r]?.[c] ? { run: { italics: true, size: 18, color: COLOR.inkSoft }, spacing: { after: 0 } } : undefined), {
         width: { size: breiten?.[c] ?? gleich, type: WidthType.PERCENTAGE },
         borders: { top: rand, bottom: rand, left: rand, right: rand },
       })),
@@ -578,8 +578,8 @@ export function seite3Docx(ctx: HeftDocxKontext): Block[] {
   }
 
   if (spalten.length) {
-    els.push(mini(`Raster${beispiel ? ' · die erste Zeile ist ein Beispiel' : ''}`, ctx))
-    els.push(ausfuellTabelle(spalten, (raster?.zeilen ?? 4) - (beispiel ? 1 : 0), RASTER_ZEILE_MM, ctx, beispiel, rasterBreiten(spalten)))
+    els.push(mini(`Raster${beispiel ? ' · die erste Zeile ist ein Beispiel' : raster?.vorgabe ? ' · Absatz und eine Zelle sind vorgegeben' : ''}`, ctx))
+    els.push(ausfuellTabelle(spalten, (raster?.zeilen ?? 4) - (beispiel ? 1 : 0), RASTER_ZEILE_MM, ctx, beispiel, rasterBreiten(spalten), raster?.vorgabe))
     els.push(spacer(80))
   }
 

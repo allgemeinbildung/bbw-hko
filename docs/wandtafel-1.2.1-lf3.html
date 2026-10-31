@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wandtafel LF3</title>
+<style>
+  :root { --tafel:#1f3a2e; --rahmen:#8a6a3d; --kreide:#f4f1e6; --gelb:#f2d46b; --blau:#8fd0e8; --rosa:#f0a8b8; --gruen:#a9e0a0; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#3b2f22; font:18px/1.35 "Segoe UI",system-ui,sans-serif; color:var(--kreide); }
+  .tafel { max-width:1280px; margin:16px auto; padding:24px 28px; background:var(--tafel); border:10px solid var(--rahmen); border-radius:6px; }
+  h1 { margin:0 0 4px; font-size:26px; color:var(--gelb); font-weight:600; }
+  .sub { margin:0 0 18px; opacity:.8; font-size:15px; }
+  .raster { display:grid; grid-template-columns:1fr; gap:22px; }
+  @media (min-width:980px) { .raster { grid-template-columns:1.55fr 1fr; } }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th, td { border:2px solid rgba(244,241,230,.55); padding:8px 10px; vertical-align:top; }
+  th { font-size:15px; text-align:left; }
+  th small { display:block; font-weight:400; opacity:.85; margin-top:3px; font-size:13px; }
+  th, td { overflow-wrap:anywhere; hyphens:auto; }
+  th:nth-child(1){ color:var(--gelb); width:20%; } th:nth-child(2){ color:var(--blau); width:28%; }
+  th:nth-child(3){ color:var(--rosa); width:28%; } th:nth-child(4){ color:var(--gruen); width:24%; }
+  td { min-height:64px; font-size:16px; height:78px; }
+  td.leer { color:transparent; }
+  tr.loesung td { transition:opacity .2s; }
+  .verborgen td.offen { color:transparent; }
+  td.offen { background:rgba(244,241,230,.04); }
+  .beispiel td:nth-child(1){ color:var(--gelb);} .beispiel td:nth-child(2){ color:var(--blau);}
+  .beispiel td:nth-child(3){ color:var(--rosa);} .beispiel td:nth-child(4){ color:var(--gruen);}
+  .tag { display:inline-block; font-size:12px; border:1px solid var(--kreide); border-radius:10px; padding:0 8px; margin-bottom:4px; opacity:.85; }
+  .regeln { margin:16px 0 0; padding:0; list-style:none; display:grid; gap:6px; font-size:15px; }
+  .regeln li::before { content:"✎ "; color:var(--gelb); }
+  button { margin-top:14px; font:inherit; font-size:15px; color:var(--tafel); background:var(--gelb); border:0; border-radius:6px; padding:6px 14px; cursor:pointer; }
+  .text h2 { margin:0 0 6px; font-size:18px; color:var(--gelb); font-weight:600; }
+  .text p.hinweis { margin:0 0 8px; font-size:13px; opacity:.8; }
+  ol { list-style:none; margin:0; padding:0; font-size:15px; }
+  ol li { display:flex; gap:8px; padding:1px 0; }
+  ol li b { flex:0 0 2.2em; text-align:right; color:var(--gelb); font-weight:600; }
+  ol li.titel { margin-top:8px; color:var(--blau); font-weight:600; }
+  ol 
+  ol li.treffer { background:rgba(242,212,107,.18); border-radius:4px; }
+  ol li.treffer.s b::after { content:" ◆"; }
+  ol li:target { background:rgba(242,212,107,.18); }
+  .frei { margin-top:10px; font-size:13px; opacity:.8; }
+</style>
+</head>
+<body>
+<main class="tafel">
+  <h1>LF3 · So füllen wir die Tabelle</h1>
+  <p class="sub">Vier Fragen, vier Spalten. Eine Zeile = eine Stelle im Text.</p>
+
+  <div class="raster">
+    <section>
+      <table aria-label="Raster">
+        <thead>
+          <tr>
+            <th>Absatz<small>Wo steht das?</small></th>
+            <th>Kernaussage<small>Was sagt der Text? Mit eigenen Worten.</small></th>
+            <th>Beleg / Zahl<small>Woran sehe ich das? Was zeigt es?</small></th>
+            <th>→ Begriff<small>Welches Wort aus LF1 oder Glossar passt?</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="beispiel">
+            <td><span class="tag">Beispiel</span><br>Abs. 15 · Ist-Analyse</td>
+            <td>Zuerst eine Woche aufschreiben, was ich tue und wie lange.</td>
+            <td>Danach prüfe ich: Was ist wichtig? Worauf kann ich verzichten? (Abs. 16–19)</td>
+            <td>Nachkontrolle</td>
+          </tr>
+          <tr id="z2" class="loesung verborgen"><td>Abs. 16–19 · Ist-Analyse</td><td>Jede Aufgabe mit vier Fragen prüfen.</td><td class="offen">Vier Fragen: wichtig? verzichten? effizienter? delegieren?</td><td class="offen">ABC-Analyse</td></tr>
+          <tr id="z3" class="loesung verborgen"><td>Abs. 23 · Bewährte Ideen</td><td class="offen">Grosse Aufgaben in kleine Schritte teilen.</td><td>«Salami-Taktik»</td><td class="offen">Wochenplan</td></tr>
+          <tr id="z4" class="loesung verborgen"><td>Abs. 35 · Plane deine Zeit</td><td class="offen">Im Plan Zeit für Pausen und Unvorhergesehenes freihalten.</td><td class="offen">«Pufferzeiten für Pausen und Unvorhergesehenes»</td><td>Pufferzeit</td></tr>
+        </tbody>
+      </table>
+      <ul class="regeln">
+        <li><b style="color:var(--gelb)">Absatz</b>: nur die Nummer, wie am Rand der Tafel.</li>
+        <li><b style="color:var(--blau)">Kernaussage</b>: Text zudecken und es jemandem erklären. Das schreibe ich auf.</li>
+        <li><b style="color:var(--rosa)">Beleg</b>: Behauptung und Beweisstück sind nicht dasselbe. Der Beleg zeigt auf die Stelle.</li>
+        <li><b style="color:var(--gruen)">Begriff</b>: das Fachwort aus meinem Heft, nicht aus dem Text.</li>
+      </ul>
+      <button id="knopf" type="button">Die Lösung der drei Zeilen zeigen</button>
+    </section>
+
+    <section class="text">
+      <h2>Der Text «Ich habe zu viel zu tun»</h2>
+      <p class="hinweis">Absatznummern wie im Heft: jeder Absatz, jeder Listenpunkt und jeder Zwischentitel (blau) zählt eine Nummer.</p>
+      <ol>
+        <li><b>1</b> Kennst du das Gefühl …</li>
+        <li><b>2</b> Es ist möglich …</li>
+        <li class="titel"><b>3</b> Warum weniger arbeiten oft nicht klappt</li>
+        <li><b>4</b> Warum es oft nicht klappt …</li>
+        <li class="titel"><b>5</b> Du fühlst dich gerne nützlich</li>
+        <li><b>6</b> Du hilfst anderen gerne …</li>
+        <li class="titel"><b>7</b> Du würdest dich langweilen</li>
+        <li><b>8</b> Selbst Phasen der Langeweile …</li>
+        <li class="titel"><b>9</b> Du möchtest niemanden im Stich lassen</li>
+        <li><b>10</b> Menschen zu helfen …</li>
+        <li><b>11</b> Lass dich nicht …</li>
+        <li class="titel"><b>12</b> Du könntest nicht mehr alle Aufgaben bewältigen</li>
+        <li><b>13</b> Wenn deine Eltern …</li>
+        <li class="titel"><b>14</b> Ist-Analyse: Der erste Schritt zur Veränderung</li>
+        <li class="treffer"><b>15</b> Schreibe eine Woche lang …</li>
+        <li class="treffer"><b>16</b> Welche Aufgaben sind wichtig …</li>
+        <li class="treffer"><b>17</b> Auf welche kannst du …</li>
+        <li class="treffer"><b>18</b> Welche Tätigkeiten lassen …</li>
+        <li class="treffer"><b>19</b> Welche könntest du delegieren …</li>
+        <li><b>20</b> Ändere deinen Zeitplan …</li>
+        <li class="titel"><b>21</b> Bewährte Ideen zur Zeitersparnis</li>
+        <li><b>22</b> Hier sind einige Tipps …</li>
+        <li class="treffer"><b>23</b> Teile grosse Aufgaben …</li>
+        <li><b>24</b> Nutze Wartezeiten …</li>
+        <li><b>25</b> Triff Entscheidungen …</li>
+        <li><b>26</b> Setze Prioritäten …</li>
+        <li><b>27</b> Berücksichtige deine persönliche …</li>
+        <li class="titel"><b>28</b> Plane deine Zeit</li>
+        <li><b>29</b> Erstelle einen Plan: …</li>
+        <li><b>30</b> Was musst du erreichen …</li>
+        <li><b>31</b> Was ist weniger wichtig …</li>
+        <li><b>32</b> Wie viel Zeit hast du …</li>
+        <li><b>33</b> Was ist in dieser Zeit …</li>
+        <li><b>34</b> Was brauchst du dazu …</li>
+        <li class="treffer"><b>35</b> Notiere, was du zu welchem …</li>
+      </ol>
+      <p class="frei">Gelb hinterlegt: die Stellen der Tabelle. Im Heft steht Absatz mit Zwischentitel schon in jeder Zeile, dazu höchstens eine Zelle. Die Wandtafel zeigt die Zeile 1 als Beispiel.</p>
+    </section>
+  </div>
+</main>
+<script>
+  const knopf = document.getElementById('knopf');
+  const zeilen = document.querySelectorAll('tr.loesung');
+  let offen = false;
+  knopf.addEventListener('click', () => {
+    offen = !offen;
+    zeilen.forEach(z => z.classList.toggle('verborgen', !offen));
+    knopf.textContent = offen ? 'Lösung wieder verbergen' : 'Die Lösung der drei Zeilen zeigen';
+  });
+</script>
+</body>
+</html>

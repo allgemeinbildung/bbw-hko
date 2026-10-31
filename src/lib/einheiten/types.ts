@@ -110,6 +110,12 @@ export interface RasterSpec {
   zeilen: number
   /** Nur Spur ohne Medien: vorausgefüllte erste Zeile, parallel zu `spalten`. */
   beispielzeile?: string[]
+  /**
+   * Vorgegebene Zellen, je Zeile parallel zu `spalten`; leerer String = Zelle füllen die Lernenden.
+   * Gedacht für die Medien-Spur (dort ohne Beispielzeile): Absatz und Zwischentitel stehen schon da,
+   * dazu je Zeile höchstens eine weitere Zelle. Ersetzt `zeilen`: die Zeilenzahl ist `vorgabe.length`.
+   */
+  vorgabe?: string[][]
 }
 
 /** Erwartungshorizont für LF4 und den gemeinsamen Auftrag — nur Lehrperson, nie im Heft. */

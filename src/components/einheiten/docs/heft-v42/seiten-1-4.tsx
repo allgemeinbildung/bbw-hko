@@ -261,11 +261,13 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
 
 /**
  * Leere Tabelle zum Ausfüllen (Raster S. 3, Denkhilfe S. 4). Feste Zeilenhöhe; jede
+  /** Zeilen mit einzelnen vorgegebenen Zellen; leere Zellen bleiben Felder. Ersetzt `leer`. */
+  vorgabe?: string[][]
  * leere Zelle ist ein Feld, im Modus `fill` editierbar. `beispiel` füllt die erste
  * Zeile vor und kennzeichnet sie — gestrichelt und kursiv, weil das Heft
  * schwarz-weiss kopiert wird.
  */
-function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, className, breiten }: {
+function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix, props, className, breiten }: {
   spalten: string[]
   leer: number
   zeileMm: number
@@ -289,12 +291,14 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, keyPrefix, props, c
             {spalten.map((_, c) => (
               <td key={c}>
                 {c === 0 && <span className="v42-beispiel-tag">Beispiel</span>}
+              const fest = vorgabe?.[r]?.[c]
+              if (fest) return <td key={c} className="v42-vorgabe">{fest}</td>
                 {beispiel[c] ?? ''}
               </td>
             ))}
           </tr>
         )}
-        {Array.from({ length: Math.max(0, leer) }, (_, r) => (
+        {Array.from({ length: vorgabe ? vorgabe.length : Math.max(0, leer) }, (_, r) => (
           <tr key={r} style={{ height: `${zeileMm}mm` }}>
             {spalten.map((_, c) => {
               const k = `${keyPrefix}${r + 1}_${c + 1}`
@@ -563,7 +567,7 @@ export function Seite3(props: HeftSeiteProps) {
 
       {spalten.length > 0 && (
         <section className="v42-raster-block">
-          <Mini>Raster{beispiel ? ' · die erste Zeile ist ein Beispiel' : ''}</Mini>
+          <Mini>Raster{beispiel ? ' · die erste Zeile ist ein Beispiel' : raster?.vorgabe ? ' · Absatz und eine Zelle sind vorgegeben' : ''}</Mini>
           <AusfuellTabelle
             spalten={spalten}
             leer={zeilen - (beispiel ? 1 : 0)}
@@ -577,6 +581,7 @@ export function Seite3(props: HeftSeiteProps) {
         </section>
       )}
 
+            vorgabe={raster?.vorgabe}
       {/* Befund: mindestens 25 mm, nimmt den Rest der Seite. */}
       {lf && <LfBlock lf={lf} feldKey={`${ns}lf_${lf.nr}`} hoeheMm={lf.feld_hoehe_mm || 25} wachsen={1} props={props} />}
     </>

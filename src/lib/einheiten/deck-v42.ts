@@ -635,7 +635,7 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
         headline: 'Raster füllen, dann den Befund festhalten.',
         small: true,
         body: [
-          raw(tabelle(spalten, beispiel ? [{ zellen: beispiel, cls: 'bsp' }] : [], { breiten: m?.s3?.breiten, leer })),
+          raw(tabelle(spalten, beispiel ? [{ zellen: beispiel, cls: 'bsp' }] : (raster?.vorgabe ?? []).map((zellen) => ({ zellen })), { breiten: m?.s3?.breiten, leer: raster?.vorgabe ? 0 : leer })),
           { t: 'ask', k: `Leitfrage ${lf3.nr}`, text: lf3.text },
         ],
         notes: notesFrom(`Heft ${L} — Leitfrage 3: Raster und Befund.`, [
