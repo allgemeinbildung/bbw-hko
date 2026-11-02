@@ -2139,3 +2139,7 @@ body.aesthetic-editorial .niveau-legende .niv {
 }
 .doc-eba .eba-lese-vok { padding: 1.5mm 0; line-height: 1.55; }
 .doc-eba .eba-lese-vok-b { font-weight: 700; }
+/* Wörter vor dem Lesetext (Seite 1, Entscheid Pietro 02.11.2026): etwas enger, damit Text darunter passt. */
+.doc-eba .eba-lese-woerter { margin-bottom: 4mm; }
+.doc-eba .eba-lese-woerter .eba-lese-vokabel { padding: 3mm 4.5mm; }
+.doc-eba .eba-lese-woerter .eba-lese-vok { padding: 0.7mm 0; line-height: 1.42; }

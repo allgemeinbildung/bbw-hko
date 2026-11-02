@@ -12,12 +12,13 @@ import { sectionProps } from './docx-primitives'
 import { heftPalette, type HeftDocxKontext, type HeftSeiteDocx } from './docx-heft-v42-gemeinsam'
 import { seite1Docx, seite2Docx, seite3Docx, seite4Docx } from './docx-heft-v42-1-4'
 import { seite5Docx, seite6Docx, seite7Docx, seite8Docx } from './docx-heft-v42-5-8'
+import { heftDocCode } from './v42-profil'
 
 /** Feste Seitenfolge, Index + 1 = Seitenzahl. */
 const SEITEN: HeftSeiteDocx[] = [seite1Docx, seite2Docx, seite3Docx, seite4Docx, seite5Docx, seite6Docx, seite7Docx, seite8Docx]
 
 export function buildHeftV42({ sit, set, abteilung, mode, logoPng = null }: BuildDocSOpts): Document {
-  const docCode = `HEFT ${sit.buchstabe} · ${sit.spur === 'mit_medien' ? 'MIT MEDIEN' : 'OHNE MEDIEN'}`
+  const docCode = heftDocCode(sit)
   const docTitel = sit.titel || ''
   const ctx: HeftDocxKontext = { sit, set, mode, ...heftPalette(sit) }
   return new Document({

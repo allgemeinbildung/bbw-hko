@@ -1,0 +1,493 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_dossier",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "lehrvertrag_orientieren",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-10-09",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_v42_set",
+  "sprachniveau": "A2",
+  "kopf": {
+    "einheit_titel": "Sich im Lehrvertrag orientieren",
+    "kompetenz_nr": "1.1.1",
+    "kompetenz_text": "Ich kann mich in der Arbeits- und Ausbildungswelt anhand der Informationen zum Lehrvertrag orientieren und bei Fragen oder Konflikten bei dafür vorgesehenen Kontaktstellen Unterstützung holen.",
+    "lebensbezug_nr": "1.1",
+    "lebensbezug_text": "Ich kenne meine Rechte beim Berufseinstieg und organisiere mich digital.",
+    "thema_nr": "1",
+    "thema_titel": "Ins Berufsleben einsteigen",
+    "lehrjahr": 1,
+    "lehrgang": "EBA_2J",
+    "sprachniveau": "A2"
+  },
+  "einleitung": {
+    "was_ist_das": "Dieses Dossier ist Ihre Hilfe für die zwei Hefte. In der EBA gibt es kein Lehrmittel. Hier finden Sie das Wissen, das Sie brauchen.",
+    "so_benutzt_du_es": [
+      "Sie müssen das Dossier nicht von vorne lesen.",
+      "Im Heft steht bei jeder Leitfrage eine Info-Karte, zum Beispiel «Info-Karte A-02». Lesen Sie diese Karte.",
+      "Schwierige Wörter finden Sie hinten im Glossar.",
+      "Bei jeder Info-Karte gibt es Tipps zum Suchen und einen Auftrag zum Selbst-Prüfen.",
+      "Auf der letzten Seite können Sie eigene Notizen machen."
+    ]
+  },
+  "nuggets": [
+    {
+      "id": "nugget_A_01",
+      "tag": "A",
+      "titel": "So ist ein Lehrvertrag aufgebaut",
+      "inhalt": "Der Lehrvertrag ist ein Formular. Alle Lehrverträge in der Schweiz nutzen das gleiche offizielle Formular. Es hat Felder und Abschnitte. Meistens sind es diese vier Abschnitte: 1. die Personen. 2. der Beruf und die Dauer, mit der Probezeit. 3. Lohn, Ferien und Arbeitszeit. 4. Rechte und Pflichten. Manche Felder sind Verweise. Ein Verweis zeigt auf einen anderen Text, zum Beispiel ein Reglement. Das kantonale Berufsbildungsamt prüft und genehmigt den Vertrag.",
+      "beispiel": "Der Abschnitt mit den Personen steht meistens ganz am Anfang des Formulars.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Für den Lehrvertrag wird ein einheitliches, offizielles Formular verwendet.",
+          "wert": "einheitliches Lehrvertragsformular",
+          "quelle": "berufsbildung.ch (Lehrvertrag — offizielles Formular)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Das kantonale Amt prüft und genehmigt den Lehrvertrag.",
+          "wert": "Genehmigung durch kantonale Behörde",
+          "quelle": "berufsbildung.ch (Genehmigung des Lehrvertrags)",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "lehrvertrag",
+        "formular",
+        "abschnitt",
+        "verweis",
+        "reglement",
+        "berufsbildungsamt"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "berufsbildung.ch Lehrvertrag",
+          "Lehrvertrag Formular Aufbau",
+          "Was steht im Lehrvertrag"
+        ],
+        "selbst_pruefen": "Schauen Sie in die Tabelle auf Seite 1 von Heft A. In welchen Abschnitt gehört der Lohn?"
+      }
+    },
+    {
+      "id": "nugget_A_02",
+      "tag": "A",
+      "titel": "Standard oder speziell?",
+      "inhalt": "Viele Vertragspunkte sind Standard. Sie gelten für alle Lehrverhältnisse in der Schweiz. Diese Punkte kommen aus dem Gesetz. Beispiele sind die Probezeit oder das Recht auf Ausbildung im Betrieb. Auch für die Ferien gibt es eine Regel im Gesetz: Bis 20 Jahre haben Lernende mindestens 5 Wochen Ferien pro Lehrjahr. Andere Punkte sind betriebsspezifisch. Sie gelten nur für Ihren Betrieb. Beispiele sind Ihr Lohn, Ihre Arbeitszeiten und besondere Abmachungen. Beide Arten stehen im gleichen Formular.",
+      "beispiel": "Die Probezeit gibt es in jeder Lehre. Ihren Lohn hat Ihr Betrieb mit Ihnen abgemacht.",
+      "fuer_leitfrage": [
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Die Probezeit ist in jedem Lehrverhältnis gesetzlich vorgesehen.",
+          "wert": "Probezeit gesetzlich; in der Regel 1-3 Monate",
+          "quelle": "OR Art. 344a; berufsbildung.ch (Probezeit)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Der Betrieb muss die lernende Person fachgemäss ausbilden.",
+          "wert": "Bildungspflicht des Betriebs",
+          "quelle": "OR Art. 344; berufsbildung.ch (Pflichten der Vertragsparteien)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Lernende haben bis zum vollendeten 20. Altersjahr mindestens fünf Wochen Ferien pro Lehrjahr.",
+          "wert": "mindestens 5 Wochen Ferien bis 20 Jahre",
+          "quelle": "OR Art. 345a Abs. 3",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "vertragspunkt",
+        "standard",
+        "betriebsspezifisch",
+        "lehrverhaeltnis",
+        "probezeit"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "berufsbildung.ch Lehrvertrag Inhalt",
+          "Lehrvertrag was gilt für alle",
+          "Lehrvertrag Lohn Arbeitszeit Betrieb"
+        ],
+        "selbst_pruefen": "Schauen Sie in die Tabelle auf Seite 1 von Heft A: Welcher Punkt gilt nur für den Betrieb?"
+      }
+    },
+    {
+      "id": "nugget_A_03",
+      "tag": "A",
+      "titel": "Wichtig für mich",
+      "inhalt": "Nicht jeder Vertragspunkt ist jetzt gleich wichtig. Filtern hilft. Filtern heisst: das Wichtige auswählen. Fragen Sie sich: Was betrifft mich schon in diesem Monat? Das kann der Lohn sein, die Arbeitszeit oder die Probezeit. Anderes wird erst später wichtig. Bleibt ein Punkt unklar? Dann fragen Sie gezielt nach. Stellen Sie eine kurze, klare Frage an Ihre Berufsbildnerin oder Ihren Berufsbildner. Eine gute Frage nennt den Vertragspunkt und sagt, was Sie wissen wollen.",
+      "beispiel": "Wichtig jetzt: was mich diesen Monat betrifft. Wichtig später: das Zeugnis am Ende der Lehre.",
+      "fuer_leitfrage": [
+        3
+      ],
+      "fakten_anker": [],
+      "glossar_refs": [
+        "vertragspunkt",
+        "filtern",
+        "berufsbildner"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "wichtige Punkte Lehrvertrag Lehrbeginn",
+          "gute Fragen stellen Arbeit",
+          "höflich nachfragen Beispiel"
+        ],
+        "selbst_pruefen": "Markieren Sie in Ihrer Vertragsübersicht zwei Punkte. Sagen Sie zu jedem in einem Satz: Warum jetzt wichtig?"
+      }
+    },
+    {
+      "id": "nugget_B_01",
+      "tag": "B",
+      "titel": "Fakten zuerst",
+      "inhalt": "Bei einem Konflikt hilft Ordnung. Trennen Sie Fakten und Gefühle. Ein Fakt ist, was wirklich passiert ist. Ein Gefühl ist Ihre Reaktion darauf. Schreiben Sie zuerst die Fakten auf: Was ist passiert? Seit wann? Was war abgemacht? Wer ist beteiligt? Gefühle dürfen sein. Aber in die Nachricht kommen zuerst die Fakten.",
+      "beispiel": "Fakt: Seit einer Woche habe ich nur eine Pause am Tag. Gefühl: Ich bin müde und verärgert.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [],
+      "glossar_refs": [
+        "konflikt",
+        "fakt",
+        "sachlich"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Fakten und Meinung unterscheiden",
+          "Konflikt sachlich beschreiben",
+          "Problem im Lehrbetrieb was tun"
+        ],
+        "selbst_pruefen": "Lesen Sie Ihre Fakten noch einmal. Streichen Sie alles, was ein Gefühl ist."
+      }
+    },
+    {
+      "id": "nugget_B_02",
+      "tag": "B",
+      "titel": "Wo steht was?",
+      "inhalt": "Sie wollen wissen, was gilt. Suchen Sie zuerst in Ihren eigenen Unterlagen. Haben Sie Heft A gemacht? Dann hilft Ihre Vertragsübersicht. Sie zeigt, welcher Abschnitt zu Ihrem Fall passt. Ihr Lehrvertrag regelt zum Beispiel Lohn, Arbeitszeit und Ausbildung. Der Betrieb muss Sie im Beruf ausbilden. Das gehört zum Lehrverhältnis. Der Bildungsplan sagt, was Sie in der Lehre lernen sollen. Notieren Sie den Fundort. So können Sie im Gespräch darauf zeigen.",
+      "beispiel": "Für eine Frage zu den Pausen passt der Abschnitt mit der Arbeitszeit.",
+      "fuer_leitfrage": [
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Der Betrieb ist verpflichtet, die lernende Person im Beruf auszubilden.",
+          "wert": "Bildungspflicht des Lehrbetriebs",
+          "quelle": "OR Art. 344; berufsbildung.ch (Pflichten im Lehrverhältnis)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Der Bildungsplan legt fest, was Lernende in der beruflichen Grundbildung lernen.",
+          "wert": "Bildungsplan als Grundlage der Ausbildung",
+          "quelle": "berufsbildung.ch (Bildungsplan)",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "lehrvertrag",
+        "lehrverhaeltnis",
+        "bildungsplan",
+        "abschnitt"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Bildungsplan [Ihr Beruf] EBA",
+          "Pflichten Lehrbetrieb Ausbildung",
+          "berufsbildung.ch Lehrverhältnis"
+        ],
+        "selbst_pruefen": "Suchen Sie den Bildungsplan für Ihren Beruf im Internet. Notieren Sie, wo Sie ihn gefunden haben."
+      }
+    },
+    {
+      "id": "nugget_B_03",
+      "tag": "B",
+      "titel": "Die zwei Wege und die Stellen",
+      "inhalt": "Sie kennen die Fakten und wissen, was gilt. Jetzt wählen Sie den Weg. Weg 1: selbst ansprechen. Sie suchen das ruhige Gespräch mit Ihrer Berufsbildnerin oder Ihrem Berufsbildner. Das ist oft der beste erste Schritt. Weg 2: Hilfe holen bei einer Kontaktstelle. An der Schule hilft Ihre Lehrperson. Das kantonale Berufsbildungsamt (die Lehraufsicht) vermittelt bei Konflikten. Der Name der Stelle ist in jedem Kanton anders. Beide Wege können richtig sein. Begründen Sie Ihre Wahl mit den Fakten.",
+      "beispiel": "Zum Beispiel: zuerst das Gespräch im Betrieb. Oder zuerst ein Gespräch mit der Lehrperson.",
+      "fuer_leitfrage": [
+        2,
+        3
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Die kantonale Lehraufsicht (Berufsbildungsamt) vermittelt bei Konflikten im Lehrverhältnis.",
+          "wert": "kantonales Berufsbildungsamt / Lehraufsicht vermittelt",
+          "quelle": "berufsbildung.ch (Behörden und Anlaufstellen)",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Der genaue Name und die Kontaktdaten der zuständigen Stelle hängen vom Kanton ab.",
+          "wert": "Name variiert je Kanton (z. B. Amt für Berufsbildung, Mittelschul- und Berufsbildungsamt)",
+          "quelle": "berufsbildung.ch (Kantonale Anlaufstellen) — pro Kanton zu prüfen",
+          "validiert": false,
+          "lp_pruefen": true
+        }
+      ],
+      "glossar_refs": [
+        "berufsbildner",
+        "kontaktstelle",
+        "berufsbildungsamt",
+        "lehraufsicht",
+        "vermitteln",
+        "konflikt"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Berufsbildungsamt [Ihr Kanton]",
+          "Lehraufsicht [Ihr Kanton] Kontakt",
+          "Hilfe Konflikt Lehrbetrieb"
+        ],
+        "selbst_pruefen": "Schauen Sie in Ihren Lehrvertrag oder auf die Website Ihres Kantons: Wie heisst Ihr Berufsbildungsamt?"
+      }
+    }
+  ],
+  "sprachmodi_scaffolds": [
+    {
+      "tag": "A",
+      "sm_id": "SM3",
+      "modus_label": "Lesen und Verstehen",
+      "satzanfaenge": [
+        "«Dieser Abschnitt regelt …»",
+        "«Das gilt für alle, weil …»",
+        "«Für mich ist … wichtig, weil …»"
+      ],
+      "strategien": [
+        "Nicht Wort für Wort lesen. Zuerst Titel und Felder suchen.",
+        "Unklare Wörter im Glossar nachschlagen.",
+        "Verweise markieren und später klären."
+      ],
+      "struktur": [
+        "Tabelle: Abschnitt – Vertragspunkt – Standard oder betriebsspezifisch",
+        "Pro Zeile ein Abschnitt"
+      ],
+      "so_gehst_du_vor": [
+        "1. Überfliegen Sie das Formular: Titel und Felder zuerst.",
+        "2. Bilden Sie Abschnitte. Geben Sie jedem einen eigenen Namen.",
+        "3. Ordnen Sie zu: Standard für alle oder betriebsspezifisch?",
+        "4. Markieren Sie, was für Sie jetzt wichtig ist.",
+        "5. Schreiben Sie eine klare Frage zu einer unklaren Stelle."
+      ]
+    },
+    {
+      "tag": "B",
+      "sm_id": "SM9",
+      "modus_label": "Digital zusammenarbeiten",
+      "satzanfaenge": [
+        "«Guten Tag, ich bin Lernende/r im 1. Lehrjahr.»",
+        "«Abgemacht war … Seit … ist es anders.»",
+        "«Ich wünsche mir …»",
+        "«Können wir darüber sprechen?»"
+      ],
+      "strategien": [
+        "Zuerst Fakten, dann Gefühle. Die Nachricht bleibt sachlich.",
+        "Erst nachschlagen, was gilt. Dann schreiben.",
+        "Klar sagen, was Sie sich wünschen."
+      ],
+      "struktur": [
+        "Wer bin ich – Fakten – was ich mir wünsche",
+        "Kurze Sätze, ein Gedanke pro Satz"
+      ],
+      "so_gehst_du_vor": [
+        "1. Trennen Sie Fakten und Gefühle (Info-Karte B-01).",
+        "2. Schlagen Sie nach, was gilt (Info-Karte B-02).",
+        "3. Wählen Sie den Weg und die Stelle (Info-Karte B-03).",
+        "4. Schreiben Sie die Nachricht: Anrede, Fakten, Wunsch, Gruss.",
+        "5. Prüfen Sie: ruhig, klar, höflich?"
+      ]
+    }
+  ],
+  "transfer_wissensblatt": {
+    "fachsystematik": "Neue Verträge und Unstimmigkeiten gehören zur Arbeitswelt. Es gibt ein Grundmuster. Zuerst verschaffe ich mir einen Überblick: gliedern und filtern. Dann suche ich gezielt die relevante Stelle. Erst danach entscheide ich: selbst klären oder Hilfe holen. Diese Reihenfolge macht mich sicher und handlungsfähig.",
+    "prinzip_in_einfach": "Zuerst Überblick verschaffen. Dann gezielt die passende Stelle suchen. Erst dann entscheiden: selbst klären oder Hilfe holen."
+  },
+  "glossar": [
+    {
+      "id": "lehrvertrag",
+      "begriff": "Lehrvertrag",
+      "erklaerung_a2": "Ein schriftlicher Vertrag für Ihre Lehre. Er regelt zum Beispiel Lohn, Ferien und Arbeitszeit.",
+      "beispiel": "Sie unterschreiben den Lehrvertrag vor dem ersten Arbeitstag."
+    },
+    {
+      "id": "formular",
+      "begriff": "Formular",
+      "erklaerung_a2": "Ein Dokument mit vorgegebenen Feldern zum Ausfüllen.",
+      "beispiel": "Der Lehrvertrag ist ein Formular mit vielen Feldern."
+    },
+    {
+      "id": "abschnitt",
+      "begriff": "Abschnitt",
+      "erklaerung_a2": "Ein Teil eines Textes oder Formulars mit einem eigenen Thema.",
+      "beispiel": "Der Abschnitt zu Lohn und Ferien steht im Lehrvertrag."
+    },
+    {
+      "id": "vertragspunkt",
+      "begriff": "Vertragspunkt",
+      "erklaerung_a2": "Eine einzelne Regel oder Angabe im Vertrag.",
+      "beispiel": "Der Lohn ist ein Vertragspunkt."
+    },
+    {
+      "id": "verweis",
+      "begriff": "Verweis",
+      "erklaerung_a2": "Eine Stelle, die auf einen anderen Text zeigt.",
+      "beispiel": "Im Vertrag steht ein Verweis auf ein Reglement."
+    },
+    {
+      "id": "reglement",
+      "begriff": "Reglement",
+      "erklaerung_a2": "Ein Text mit Regeln, zum Beispiel zur Arbeitszeit.",
+      "beispiel": "Das Reglement des Betriebs regelt die Pausen."
+    },
+    {
+      "id": "standard",
+      "begriff": "Standard",
+      "erklaerung_a2": "Etwas gilt für alle gleich.",
+      "beispiel": "Die Probezeit ist ein Standard-Punkt in jedem Lehrvertrag."
+    },
+    {
+      "id": "betriebsspezifisch",
+      "begriff": "betriebsspezifisch",
+      "erklaerung_a2": "Etwas gilt nur für Ihren Betrieb.",
+      "beispiel": "Ihre Arbeitszeiten sind betriebsspezifisch."
+    },
+    {
+      "id": "lehrverhaeltnis",
+      "begriff": "Lehrverhältnis",
+      "erklaerung_a2": "Die Lehre als Vertrag zwischen Ihnen und dem Betrieb.",
+      "beispiel": "Das Lehrverhältnis beginnt am ersten Arbeitstag."
+    },
+    {
+      "id": "probezeit",
+      "begriff": "Probezeit",
+      "erklaerung_a2": "Die erste Zeit der Lehre. Beide Seiten schauen, ob die Lehre passt. Sie dauert mindestens 1 und höchstens 3 Monate.",
+      "beispiel": "In der Probezeit lernen Sie den Betrieb kennen."
+    },
+    {
+      "id": "bildungsplan",
+      "begriff": "Bildungsplan",
+      "erklaerung_a2": "Ein Dokument zu Ihrem Beruf. Es sagt, was Sie in der Lehre lernen sollen.",
+      "beispiel": "Im Bildungsplan steht, welche Arbeiten Sie lernen."
+    },
+    {
+      "id": "filtern",
+      "begriff": "filtern",
+      "erklaerung_a2": "Das Wichtige auswählen und den Rest weglassen.",
+      "beispiel": "Sie filtern die drei Punkte, die Sie jetzt betreffen."
+    },
+    {
+      "id": "fakt",
+      "begriff": "Fakt",
+      "erklaerung_a2": "Etwas, das wirklich passiert ist. Kein Gefühl, keine Meinung.",
+      "beispiel": "Fakt: Seit einer Woche habe ich nur eine Pause am Tag."
+    },
+    {
+      "id": "konflikt",
+      "begriff": "Konflikt",
+      "erklaerung_a2": "Ein Streit oder ein Problem mit anderen Menschen.",
+      "beispiel": "Ein Konflikt über Ihre Aufgaben im Betrieb."
+    },
+    {
+      "id": "unstimmigkeit",
+      "begriff": "Unstimmigkeit",
+      "erklaerung_a2": "Etwas ist anders als abgemacht.",
+      "beispiel": "Abgemacht waren zwei Pausen. Jetzt gibt es nur eine. Das ist eine Unstimmigkeit."
+    },
+    {
+      "id": "sachlich",
+      "begriff": "sachlich",
+      "erklaerung_a2": "Bei den Fakten bleiben. Ohne Vorwürfe und Schimpfwörter.",
+      "beispiel": "Eine sachliche Nachricht nennt Fakten, keine Wut."
+    },
+    {
+      "id": "kontaktstelle",
+      "begriff": "Kontaktstelle",
+      "erklaerung_a2": "Eine Stelle, die Ihnen bei einem Problem hilft.",
+      "beispiel": "Das Berufsbildungsamt ist eine wichtige Kontaktstelle."
+    },
+    {
+      "id": "berufsbildner",
+      "begriff": "Berufsbildner/in",
+      "erklaerung_a2": "Die Person im Betrieb, die Sie ausbildet und begleitet.",
+      "beispiel": "Ihre Berufsbildnerin zeigt Ihnen die Arbeit im Betrieb."
+    },
+    {
+      "id": "berufsbildungsamt",
+      "begriff": "Berufsbildungsamt",
+      "erklaerung_a2": "Das kantonale Amt für die Berufslehre. Es genehmigt den Lehrvertrag und hilft bei Problemen.",
+      "beispiel": "Das Berufsbildungsamt Ihres Kantons finden Sie im Internet."
+    },
+    {
+      "id": "lehraufsicht",
+      "begriff": "Lehraufsicht",
+      "erklaerung_a2": "Die kantonale Stelle, die über die Lehre wacht. Sie hilft bei Konflikten.",
+      "beispiel": "Die Lehraufsicht vermittelt zwischen Ihnen und dem Betrieb."
+    },
+    {
+      "id": "vermitteln",
+      "begriff": "vermitteln",
+      "erklaerung_a2": "Bei einem Streit helfen, eine Lösung zu finden.",
+      "beispiel": "Das Amt vermittelt zwischen Ihnen und dem Betrieb."
+    },
+    {
+      "id": "ki_tool",
+      "begriff": "KI-Tool",
+      "erklaerung_a2": "Ein Computer-Programm, das Fragen beantwortet. Prüfen Sie die Antwort immer.",
+      "beispiel": "Ein KI-Tool erklärt Ihnen ein schwieriges Wort einfach."
+    }
+  ],
+  "leseblatt": {
+    "titel": "Lesen und Verstehen: Mein Lehrvertrag",
+    "einleitung": "Lesen Sie den ganzen Text ruhig durch. Danach lösen Sie die Aufgaben. Sie dürfen im Text nachschauen.",
+    "gesamttext_quelle": "nuggets",
+    "richtig_falsch": [
+      {
+        "text": "Alle Lehrverträge in der Schweiz nutzen dasselbe offizielle Formular.",
+        "loesung": true
+      },
+      {
+        "text": "Der Lohn ist ein Standard-Punkt und für alle Betriebe gleich.",
+        "loesung": false
+      },
+      {
+        "text": "Das kantonale Berufsbildungsamt prüft und genehmigt den Lehrvertrag.",
+        "loesung": true
+      },
+      {
+        "text": "Bei einem Konflikt schreibt man zuerst die Gefühle, dann die Fakten.",
+        "loesung": false
+      },
+      {
+        "text": "Wenn im Betrieb etwas anders läuft als abgemacht, gibt es nur einen richtigen Weg.",
+        "loesung": false
+      }
+    ],
+    "w_fragen": [
+      "Was ist ein Verweis in einem Formular? Erklären Sie es mit eigenen Worten.",
+      "Nennen Sie zwei Stellen, die Ihnen bei einem Konflikt im Lehrbetrieb helfen können.",
+      "Was bedeutet «filtern», wenn Sie Ihren Vertrag lesen?"
+    ],
+    "vokabeln": [
+      "formular",
+      "verweis",
+      "standard",
+      "betriebsspezifisch",
+      "filtern",
+      "kontaktstelle"
+    ]
+  },
+  "template": "dossier_eba_v1",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

@@ -12,6 +12,7 @@ import { BEWERTUNGEN, vorschauFeatures, type VorschauFeedbackInput } from '../vo
 import { SPUR_KEYS } from './spuren'
 import { heftDatei, loesungenDatei } from './v42-dokumente'
 import { landingUrl } from './qr'
+import { istEba } from './v42-profil'
 
 /** v4.2 — Bezeichnung der Spuren im Inhaltsverzeichnis (Leitfaden §4). */
 const SPUR_NAME = { ohne_medien: 'ohne Medien', mit_medien: 'mit Medien' } as const
@@ -233,7 +234,11 @@ ${f.beispiel ? `            <p class="neu-bsp"><strong>Beispiel:</strong> ${esc(
 
   // v4.2: zwei Spuren je Heft, dazu die Seite, auf die die QR-Codes zeigen.
   const qrSeite = landingUrl(d.id)
-  const spurenHinweis = istV42
+  // Nicht bei einer einspurigen EBA-Einheit: dort gibt es weder Wahl noch QR-Seite. EFZ bleibt
+  // unverändert — auch `3.1.1_konsum_verantworten_3j`, das nur die Medien-Spur hat und den Satz
+  // über zwei Spuren trotzdem druckt (offen, siehe Übergabe 09.10.2026).
+  const beideSpuren = !!d.spur_varianten?.ohne_medien && !!d.spur_varianten?.mit_medien
+  const spurenHinweis = istV42 && (beideSpuren || !istEba(d.set ?? d.hf_A))
     ? `      <p>Jedes Heft liegt in zwei Spuren vor: <strong>ohne Medien</strong> (Lehrmittel, mehr Gerüst) und
       <strong>mit Medien</strong> (Quelle über QR-Code). Kern, Produkt und Feedback-Kriterien sind gleich —
       Sie wählen pro Klasse oder pro Lernende/n.</p>

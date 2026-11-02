@@ -78,8 +78,8 @@ const ARCHIV = archivDir && readdirSync(archivDir).some((n) => n.startsWith('q-'
 
 // ------------------------------------------------------- Regeln und Listen
 
-/** Nur die Gold-Einheit traegt `_v42` im Namen, weil ihr Name vergeben war (E21). */
-const GOLD = new Set(['1.3.1_konsum_verantworten_v42'])
+/** Nur die Gold-Einheiten tragen `_v42` im Namen, weil ihr Name vergeben war (E21; EBA-Gold: E46). */
+const GOLD = new Set(['1.3.1_konsum_verantworten_v42', '1.1.1_lehrvertrag_orientieren_v42'])
 
 /**
  * Ausdruecklich geteilte Quellenkarten: Eine Einheit darf Karten einer anderen

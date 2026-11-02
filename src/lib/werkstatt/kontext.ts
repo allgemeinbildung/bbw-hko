@@ -103,7 +103,7 @@ export interface WerkstattHeftV42 {
     insProdukt: string
   }[]
   /** Antwortfeld von LF3. `abschnitt` nur in der Spur ohne Medien (Lehrmittel-Abschnitt). */
-  raster: { abschnitt: string; auftrag: string; spalten: string[]; zeilen: number; beispielzeile: string[] } | null
+  raster: { abschnitt: string; auftrag: string; spalten: string[]; zeilen: number; beispielzeile: string[]; /** Nummer der Leitfrage mit Raster (EFZ 3, EBA 2). */ lfNr?: number } | null
   /** Quelle der Medien-Spur — nur Metadaten der Karte, nie Volltext oder Transkript. */
   quelle: { titel: string; herausgeber: string; datum: string; ausschnitt: string } | null
   kasten: { typ: string; titel: string; spalten: string[]; hinweis: string } | null
@@ -218,6 +218,7 @@ function rasterVon(sit: SituationJson): NonNullable<WerkstattHeftV42['raster']> 
     spalten: a(r.spalten).map(s).filter(Boolean),
     zeilen: Number(r.zeilen) || 0,
     beispielzeile: a(r.beispielzeile).map(s).filter(Boolean),
+    lfNr: Number(lf3?.nr) || 3,
   }
 }
 

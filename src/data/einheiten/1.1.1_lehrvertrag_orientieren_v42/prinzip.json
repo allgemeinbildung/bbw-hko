@@ -1,0 +1,170 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_prinzip",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "lehrvertrag_orientieren",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-10-09",
+  "kern_kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Lehrvertrag überblicken",
+      "konfliktart": "Dichtes Vertrags-Formular: alles genau lesen vs. das Wichtige heraussuchen",
+      "handlungsprodukt_typ": "Vertragsübersicht als Tabelle mit drei wichtigen Punkten und einer Frage",
+      "kompetenzen": [
+        "1.1.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Bei einer Unstimmigkeit den Weg wählen",
+      "konfliktart": "Im Betrieb läuft es anders als abgemacht: selbst ansprechen vs. Hilfe bei einer Stelle holen",
+      "handlungsprodukt_typ": "Sachliche digitale Nachricht an die gewählte Person oder Stelle",
+      "kompetenzen": [
+        "1.1.1"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      1,
+      7,
+      11
+    ],
+    "B": [
+      2,
+      7,
+      11
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      7,
+      11
+    ]
+  },
+  "aspekte": {
+    "Recht": "R1",
+    "Identität und Sozialisation": "R1"
+  },
+  "modi_units": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration digital"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Selbst klären vs. Hilfe holen",
+      "Alles genau lesen vs. das Wichtige heraussuchen"
+    ],
+    "verbindlich": "Beide Wege können richtig sein. Es hängt von der Situation ab. Wichtig ist: Ich entscheide begründet."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Ich verschaffe mir zuerst einen Überblick und suche gezielt die passende Stelle. Erst dann entscheide ich: selbst klären oder Hilfe holen.",
+    "transferfeld": "Jedes neue Dokument mit Regeln und jede Unstimmigkeit, zum Beispiel ein Handy-Abo, ein Reglement der Schule oder ein Mietvertrag."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T6 'Verträge verstehen – fair handeln' — Verträge und faire Abmachungen vertieft.",
+    "r3_voraussicht": "—"
+  },
+  "quellen_anker": {
+    "dossier_nuggets": [
+      {
+        "ref": "Dossier",
+        "herausforderung": "A",
+        "nuggets": "Info-Karte A-01 bis A-03"
+      },
+      {
+        "ref": "Dossier",
+        "herausforderung": "B",
+        "nuggets": "Info-Karte B-01 bis B-03"
+      }
+    ],
+    "konzepte": [
+      "Lehrvertrag",
+      "Formular",
+      "Abschnitt",
+      "Vertragspunkt",
+      "Verweis",
+      "Reglement",
+      "Standard",
+      "betriebsspezifisch",
+      "Probezeit",
+      "Fakt",
+      "Unstimmigkeit",
+      "Konflikt",
+      "Bildungsplan",
+      "Kontaktstelle",
+      "Berufsbildungsamt"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EBA, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei Mini-Herausforderungen hintereinander.",
+      "Dichtes Dokument und Unstimmigkeit sind zugleich sichtbar, ohne benannt zu werden.",
+      "Das Spannungsfeld «Selbst klären vs. Hilfe holen» spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand als in Heft A, Heft B und im gemeinsamen Auftrag.",
+      "A2: kurze Sätze, höchstens 18 Wörter, Fachwörter nur aus dem Glossar."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Samstag",
+      "Vorstellungsgespräch"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "B": [
+      "Interaktion und Kollaboration digital"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Rechtliches Prinzip"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "modell_eigener_fall"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Selbst klären oder Hilfe holen",
+  "modi_auftrag": [
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B); von drei übrigen Modi trägt der Auftrag die zwei mündlichen (Generalprobe für das Kurzgespräch). Lücke: Produktion schriftlich und bildlich — geübt in der Nachricht von Heft B.",
+  "auftrag_lebensbereich": "Berufsfachschule"
+}

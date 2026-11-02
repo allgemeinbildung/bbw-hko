@@ -157,8 +157,8 @@ function kopfDocx(m: LoesungenModell): Block[] {
   ]
 }
 
-function s2Docx(lfs: LsLeitfrage[], akzent: string, neueSeite: boolean): Block[] {
-  const out: Block[] = abschnittKopf('02', 'Wissensecke I · Leitfragen 1 und 2', akzent, neueSeite)
+function s2Docx(lfs: LsLeitfrage[], titel: string, akzent: string, neueSeite: boolean): Block[] {
+  const out: Block[] = abschnittKopf('02', `Wissensecke I · ${titel}`, akzent, neueSeite)
   for (const lf of lfs) out.push(frage(lf.nr, lf.text, akzent), zeilenDocx(lf.zeilen))
   return out
 }
@@ -248,7 +248,7 @@ export function buildLoesungen({ sit, abteilung, logoPng = null }: BuildLoesunge
   if (!m) return null
   const { akzent } = heftPalette(sit)
   const teile: ((neueSeite: boolean) => Block[])[] = []
-  if (m.s2.length) teile.push((n) => s2Docx(m.s2, akzent, n))
+  if (m.s2.length) teile.push((n) => s2Docx(m.s2, m.s2Titel, akzent, n))
   if (m.s3) teile.push((n) => s3Docx(m.s3!, akzent, n))
   if (m.s4) teile.push((n) => s4Docx(m.s4!, akzent, n))
   if (m.produkt) teile.push((n) => produktDocx(m.produkt!, akzent, n))

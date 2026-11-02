@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Heft v4.2 — Zusatz für EBA (2-jährige Grundbildung, Sprache A2).
+   Wird NUR für EBA-Einheiten angehängt (src/lib/einheiten/css-v42.ts →
+   cssFuerEinheit), hinter allen anderen v4.2-Dateien; jede Regel steht unter
+   `.v42-eba` (Hülle von Heft und Auftragsbogen). EFZ-Einheiten sehen diese
+   Datei nie — ihr CSS-String bleibt Zeichen für Zeichen gleich.
+
+   Was sie tut: Lauftext für Lernende rund 1 pt grösser und etwas offener
+   gesetzt (Situation, Leitfragen, Scaffold-Spalte, Aufträge, Hinweise, Glossar),
+   dazu der Kasten «Wichtige Wörter» auf S. 2. Rahmentexte in Versalien
+   (`.v42-mini`, Kasten-Label) bleiben, wie sie sind.
+
+   Die Seiten sind festes A4 mit `overflow: hidden`. Wer hier eine Grösse
+   anhebt, misst danach: `node scripts/messen-v42.mjs <exportdir>`.
+   ========================================================================== */
+
+/* ---------- Seite 1 · Herausforderung ---------- */
+.v42-eba .v42-s1 .v42-situation-text { font-size: 11.5pt; line-height: 1.6; }
+.v42-eba .v42-zahlen { font-size: 10.5pt; }
+.v42-eba .v42-leitfrage.leitfrage-callout { font-size: 11pt; }
+.v42-eba .v42-spannung-titel { font-size: 10.5pt; }
+.v42-eba p.v42-spannung-hint { font-size: 10pt; line-height: 1.4; }
+.v42-eba .v42-s1-ressourcen ul { font-size: 10pt; line-height: 1.45; }
+.v42-eba .v42-woche { font-size: 10.5pt; }
+.v42-eba .v42-anweisung { font-size: 10.5pt; line-height: 1.4; }
+
+/* ---------- Leitfragen (S. 2–4) ---------- */
+.v42-eba .v42-intro p { font-size: 10.5pt; line-height: 1.45; }
+.v42-eba .v42-lf-text { font-size: 11pt; line-height: 1.42; }
+.v42-eba .v42-liefert { font-size: 10pt; }
+.v42-eba .v42-scaffold { font-size: 10pt; line-height: 1.36; }
+.v42-eba .v42-scaffold li { margin-bottom: 0.9mm; }
+.v42-eba .v42-scaffold p { margin-bottom: 0.9mm; }
+.v42-eba p.v42-hinweis { font-size: 10pt; line-height: 1.4; }
+
+/* S. 2 — «Wichtige Wörter»: das Glossar des Hefts unter LF1, zweispaltig. */
+.v42-eba .v42-woerter dl {
+  margin: 0;
+  column-count: 2;
+  column-gap: 6mm;
+  font-size: 10pt;
+  line-height: 1.36;
+}
+.v42-eba .v42-woerter dl > div { break-inside: avoid; padding-bottom: 1.2mm; }
+.v42-eba .v42-woerter dt { display: inline; font-weight: 700; color: var(--ink); }
+.v42-eba .v42-woerter dd { display: inline; margin: 0; color: var(--ink); }
+
+/* S. 3 — Info-Karte, Auftrag, Raster. */
+.v42-eba .v42-q-titel { font-size: 11pt; }
+.v42-eba .v42-q-herkunft { font-size: 10pt; }
+.v42-eba .v42-auftrag p { font-size: 11pt; line-height: 1.42; }
+.v42-eba .v42-s3 .v42-auftrag p.v42-s3-hilfe { font-size: 10pt; }
+.v42-eba .v42-tabelle th { font-size: 10pt; }
+.v42-eba .v42-tabelle td { font-size: 10pt; line-height: 1.34; }
+
+/* ---------- Seite 5 · Auftrag ---------- */
+.v42-eba .v42-s5 .v42-arbeitsanweisung,
+.v42-eba .v42-s8 .v42-arbeitsanweisung { font-size: 10pt; line-height: 1.36; }
+.v42-eba .v42-s5 .v42-produkt-text { font-size: 10.5pt; line-height: 1.4; }
+.v42-eba .v42-s5 .v42-schritt-label { font-size: 10.5pt; }
+.v42-eba .v42-s5 .v42-schritt-hint { font-size: 10pt; line-height: 1.34; }
+.v42-eba .v42-s5 .v42-hilfe { font-size: 10pt; }
+.v42-eba .v42-s5 .v42-abgaben ul { font-size: 10.5pt; line-height: 1.4; }
+.v42-eba .v42-s5 .v42-krit-indikator { font-size: 10pt; }
+.v42-eba .v42-s5 .v42-krit-text { font-size: 10pt; line-height: 1.34; }
+.v42-eba .v42-s5 .v42-plus p { font-size: 10.5pt; line-height: 1.4; }
+
+/* ---------- Seiten 6 und 7 · Methoden, Arbeitsfläche ---------- */
+.v42-eba .methoden-intro { font-size: 10pt; }
+.v42-eba .methode-txt { font-size: 10pt; line-height: 1.4; }
+
+/* ---------- Seite 8 · Abschluss ---------- */
+.v42-eba .v42-bn-glossar-liste { font-size: 8.5pt; line-height: 1.25; }
+.v42-eba .v42-s8 .v42-quercheck li { font-size: 10.5pt; }
+.v42-eba .v42-s8 .v42-mitnahme-label { font-size: 10.5pt; }
+
+/* ---------- Auftragsbogen ---------- */
+.v42-eba .v42-auftrag-klein { font-size: 10pt; line-height: 1.4; }
+.v42-eba .v42-auftrag-situation { font-size: 11pt; line-height: 1.45; }
+.v42-eba .v42-auftrag-hint { font-size: 10pt; }
+.v42-eba .v42-auftrag-liste { font-size: 10pt; line-height: 1.4; }
+.v42-eba .v42-auftrag-bezug { font-size: 10pt; line-height: 1.4; }
+.v42-eba .v42-auftrag-station-kopf { font-size: 11pt; }
+.v42-eba .v42-auftrag-station-ende { font-size: 10pt; }
+.v42-eba .v42-auftrag-indikator { font-size: 10pt; }
+.v42-eba .v42-auftrag-stufe { font-size: 10pt; line-height: 1.34; }
+
+/* ---------- S. 1 · «So starten Sie» oben (Besprechung EBA-gold 23.10.2026) ----------
+   Steht über der Situation statt ganz unten: umrahmt in der Akzentfarbe statt Linie oben. */
+.v42-eba p.v42-anweisung-oben {
+  border: 1pt solid var(--sit-akzent);
+  padding: 2mm 3mm;
+}
+
+/* «Leitfrage 1» ausgeschrieben steht über der Frage statt links daneben (Besprechung 23.10.2026). */
+.v42-eba .v42-lf-kopf { flex-direction: column; align-items: flex-start; gap: 0.5mm; }
+.v42-eba .v42-lf-meta { margin-left: 0; }
+
+/* Beschriftungen mit Funktion (Entscheid Pietro 02.11.2026): die Denkhilfe wird sonst
+   überlesen (Besprechung 3:09) — ihr Etikett steht grösser; das Etikett über dem
+   Schreibfeld («Ihre Antwort zu Leitfrage 1») sitzt knapp über dem Feld. */
+.v42-eba .v42-denkhilfe > .v42-kasten-label { font-size: 9.5pt; letter-spacing: 0.03em; }
+.v42-eba .v42-lf-haupt > .v42-mini { margin: 1.5mm 0 0.5mm; }
+
+/* S. 8 ohne Begriffsnetz (Entscheid Pietro 02.11.2026): der Platz geht an grössere
+   Schrift, eine Antwortzeile je Frage im Quer-Check und höhere Mitnahme-Zeilen. */
+.v42-eba .v42-s8 .v42-quercheck li { flex-wrap: wrap; font-size: 11pt; line-height: 1.4; padding: 2mm 0 1mm; border-bottom: 0; }
+.v42-eba .v42-s8 .v42-quercheck li > .feld.v42-zeile { flex: 1 0 100%; margin-left: 7mm; min-height: 22mm; }
+.v42-eba .v42-s8 .v42-mitnahme-label { font-size: 11pt; }
+.v42-eba .v42-s8 .v42-mitnahme-zeile .feld.v42-zeile { min-height: 15mm; }
+.v42-eba .v42-s8 .v42-checkliste { font-size: 10.5pt; }
+.v42-eba .v42-s5 .v42-krit-tabelle col.v42-krit-selbst { width: 24mm; }
+
+/* ---------- Grössen nach den Info-Karten (Besprechung 23.10. P5/P6/P8, Auftrag Pietro 02.11.2026) ----------
+   Massstab Info-Karte im Dossier: Text 12.5pt / 1.6, Titel 13pt. Im Heft (S. 1–4) Lauftext 12pt,
+   Tabellenköpfe und Etiketten grösser, die Hilfe-Spalte breiter und in 11pt. S. 5–8 folgen mit dem Umbau. */
+.v42-eba .v42-s1 .v42-situation-text { font-size: 12pt; line-height: 1.6; }
+.v42-eba .v42-leitfrage.leitfrage-callout { font-size: 12pt; }
+.v42-eba .v42-lf-text { font-size: 12pt; line-height: 1.45; }
+.v42-eba .v42-auftrag p { font-size: 12pt; line-height: 1.45; }
+.v42-eba .v42-intro p { font-size: 11pt; }
+.v42-eba .v42-scaffold { flex-basis: 58mm; font-size: 11pt; line-height: 1.4; }
+.v42-eba .v42-s3 .v42-scaffold { flex-basis: 62mm; }
+.v42-eba .v42-tabelle th { font-size: 11pt; font-weight: 700; padding: 1.5mm 2mm; }
+.v42-eba .v42-tabelle td { font-size: 11pt; }
+.v42-eba .v42-zahlen { font-size: 11pt; }
+.v42-eba :is(.v42-s1, .v42-s2, .v42-s3, .v42-s4) :is(.v42-mini, .v42-kasten-label) { font-size: 8.5pt; }
+.v42-eba .v42-woerter dl { font-size: 11pt; line-height: 1.4; }
+.v42-eba .v42-ref { font-size: 9.5pt; color: var(--ink-soft); }
+.v42-eba .v42-liefert { font-size: 10.5pt; }

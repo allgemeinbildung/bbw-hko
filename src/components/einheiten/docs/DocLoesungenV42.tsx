@@ -66,10 +66,10 @@ function Kopf({ m }: { m: LoesungenModell }) {
   )
 }
 
-function Seite2({ lfs }: { lfs: LsLeitfrage[] }) {
+function Seite2({ lfs, titel }: { lfs: LsLeitfrage[]; titel: string }) {
   return (
     <>
-      <div className="v42-seitenkopf"><SectionHead num="02">Wissensecke I · Leitfragen 1 und 2</SectionHead></div>
+      <div className="v42-seitenkopf"><SectionHead num="02">{`Wissensecke I · ${titel}`}</SectionHead></div>
       {lfs.map((lf) => (
         <section className="v42-ls-block" key={lf.nr}>
           <Frage nr={lf.nr} text={lf.text} />
@@ -259,7 +259,7 @@ function SeiteAbschluss({ a }: { a: LsAbschluss }) {
 /** Die Seiten in fester Folge; leere Abschnitte entfallen. */
 function seitenVon(m: LoesungenModell): { key: string; inhalt: ReactNode }[] {
   const out: { key: string; inhalt: ReactNode }[] = []
-  if (m.s2.length) out.push({ key: 's2', inhalt: <Seite2 lfs={m.s2} /> })
+  if (m.s2.length) out.push({ key: 's2', inhalt: <Seite2 lfs={m.s2} titel={m.s2Titel} /> })
   if (m.s3) out.push({ key: 's3', inhalt: <Seite3 r={m.s3} /> })
   if (m.s4) out.push({ key: 's4', inhalt: <Seite4 b={m.s4} /> })
   if (m.produkt) out.push({ key: 'produkt', inhalt: <SeiteProdukt p={m.produkt} /> })

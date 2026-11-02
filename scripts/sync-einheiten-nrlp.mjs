@@ -27,7 +27,7 @@ const root = resolve(here, '..')
 const DATA_DIR = join(root, 'src', 'data', 'einheiten')
 const CHECK = process.argv.includes('--check')
 
-const datasetFile = { 'EFZ-3J': 'nrlp_3j.json', 'EFZ-4J': 'nrlp_4j.json' }
+const datasetFile = { 'EFZ-3J': 'nrlp_3j.json', 'EFZ-4J': 'nrlp_4j.json', 'EBA': 'nrlp_2j.json' }
 const dsCache = new Map()
 function loadDataset(key) {
   if (dsCache.has(key)) return dsCache.get(key)
@@ -143,7 +143,8 @@ for (const unit of units) {
       ['lebensbezug_text', nrlp.lebensbezug_text, ds.lb.get(String(nrlp.lebensbezug))],
     ]
     for (const [field, oldVal, masterVal] of swaps) {
-      if (!masterVal || masterVal === oldVal) continue
+      // Fehlt das Feld im Heft (EBA-Bestand im alten Format: der Text steht im Dossier-Kopf), gibt es nichts abzugleichen.
+      if (!masterVal || oldVal === undefined || masterVal === oldVal) continue
       console.log(`  DRIFT ${label}: ${field} differs from master`)
       drift++
       if (!CHECK) {

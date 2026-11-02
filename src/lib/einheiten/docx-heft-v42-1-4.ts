@@ -17,6 +17,7 @@ import type { KastenS4, Leitfrage, Quelle, SituationJson } from './types'
 import { COLOR, MM, p, h, spacer, tcell } from './docx-primitives'
 import { seitenKopfDocx, kastenDocx, type HeftDocxKontext } from './docx-heft-v42-gemeinsam'
 import { landingUrl, qrPng } from './qr'
+import { ankerZu, beurteilenLeitfrage, istEba, kernLeitfragen, rasterLeitfrage, worte } from './v42-profil'
 
 type Block = Paragraph | Table
 
@@ -106,10 +107,6 @@ function pflichtQuelle(sit: SituationJson): Quelle | undefined {
   return sit.spur === 'mit_medien' ? sit.quellen?.find((q) => q.rolle === 'pflicht') : undefined
 }
 
-function leitfrage(sit: SituationJson, nr: number): Leitfrage | undefined {
-  return sit.leitfragen?.find((l) => l.nr === nr)
-}
-
 function kompetenzen(sit: SituationJson): { nr: string; text: string }[] {
   const resolved = sit.nrlp?.kompetenzen?.filter((k) => k && k.text)
   if (resolved && resolved.length) return resolved
@@ -118,11 +115,6 @@ function kompetenzen(sit: SituationJson): { nr: string; text: string }[] {
 
 function inGuillemets(s: string): string {
   return /^«.*»$/.test(s.trim()) ? s.trim() : `«${s.trim()}»`
-}
-
-function ankerZu(sit: SituationJson, knotenRef?: string) {
-  if (!knotenRef) return undefined
-  return sit.quellen_anker?.find((a) => a.ref && knotenRef.startsWith(a.ref))
 }
 
 /**
@@ -136,7 +128,7 @@ const DENKHILFE_ZEILE_MM = 17
  * (`feld_hoehe_mm`) einen festen Zuschlag, in Word an allen vier Heften nachgemessen
  * (jede Seite bleibt auf ihrer Seite, unten rund 5 mm frei). S. 2 im Verhältnis 35 : 45.
  */
-const ZUSCHLAG_MM = { lf1: 25, lf2: 35, lf3Ohne: 30, lf3Mit: 0, lf4Ohne: 50, lf4Mit: 30 }
+const ZUSCHLAG_MM = { lf1: 25, lf2: 35, lf3Ohne: 30, lf3Mit: 0, lf4Ohne: 50, lf4Mit: 30, lf1Eba: 40 }
 
 // ── Bausteine ──────────────────────────────────────────────────────────────
 
@@ -193,7 +185,7 @@ function scaffoldZelle(sc: Leitfrage['scaffolding'], ctx: HeftDocxKontext, breit
   }
   if (produkt) {
     els.push(new Paragraph({ children: [], spacing: { after: 40 } }))
-    els.push(mini('Ins Produkt', ctx))
+    els.push(mini(worte(ctx.sit).insProdukt, ctx))
     els.push(p(produkt, { run: lauf, spacing: { after: 0 } }))
   }
   return tcell(els, {
@@ -206,21 +198,26 @@ function scaffoldZelle(sc: Leitfrage['scaffolding'], ctx: HeftDocxKontext, breit
 
 /** Leitfrage: Frage, Meta-Zeile, optional Blöcke vor dem Feld, Schreibfeld; rechts die Scaffold-Spalte. */
 function lfBlock(lf: Leitfrage, ctx: HeftDocxKontext, hoeheMm: number, vorFeld: Block[] = [], scaffoldBreite = 28): Block[] {
+  const w = worte(ctx.sit)
   const meta: TextRun[] = []
-  if (lf.bloom) meta.push(new TextRun({ text: `[${lf.bloom}]`, color: ctx.akzent, bold: true, size: 14 }))
-  if (lf.knoten_ref) meta.push(new TextRun({ text: `  ${lf.knoten_ref}`, color: COLOR.inkMute, size: 15, font: 'Consolas' }))
-  if (lf.liefert) meta.push(new TextRun({ text: `   → liefert: ${lf.liefert}`, color: COLOR.inkSoft, size: 18, italics: true }))
+  if (lf.bloom && w.bloomZeigen) meta.push(new TextRun({ text: `[${lf.bloom}]`, color: ctx.akzent, bold: true, size: 14 }))
+  if (lf.knoten_ref) meta.push(new TextRun({ text: `${w.bloomZeigen ? '  ' : ''}${w.fundstelle(lf.knoten_ref)}`, color: COLOR.inkMute, size: 15, font: 'Consolas' }))
+  if (lf.liefert) meta.push(new TextRun({ text: `   ${w.liefert} ${lf.liefert}`, color: COLOR.inkSoft, size: 18, italics: true }))
+  const feldLabel = w.schreibfeld(lf.nr)
   const haupt: Block[] = [
     new Paragraph({
       children: [
-        new TextRun({ text: `LF${lf.nr}  `, bold: true, color: ctx.akzent, size: 20, font: 'Consolas' }),
-        new TextRun({ text: lf.text, size: 20, bold: true }),
+        // EBA: «Leitfrage 1» ausgeschrieben, auf eigener Zeile (Besprechung 23.10.2026).
+        ...(istEba(ctx.sit)
+          ? [new TextRun({ text: `Leitfrage ${lf.nr}`, bold: true, color: ctx.akzent, size: 20, font: 'Consolas' }), new TextRun({ text: lf.text, size: 20, bold: true, break: 1 })]
+          : [new TextRun({ text: `LF${lf.nr}  `, bold: true, color: ctx.akzent, size: 20, font: 'Consolas' }), new TextRun({ text: lf.text, size: 20, bold: true })]),
       ],
       spacing: { before: 0, after: 40, line: 300, lineRule: LineRuleType.AUTO },
       keepNext: true,
     }),
     new Paragraph({ children: meta, spacing: { after: 60 }, keepNext: true }),
     ...vorFeld,
+    ...(feldLabel ? [mini(feldLabel, ctx)] : []),
     ...schreiblinien(hoeheMm),
   ]
   const rechts = scaffoldZelle(lf.scaffolding, ctx, scaffoldBreite)
@@ -254,7 +251,7 @@ function ausfuellTabelle(spalten: string[], leer: number, zeileMm: number, ctx: 
   const kopf = new TableRow({
     tableHeader: true,
     cantSplit: true,
-    children: spalten.map((s, i) => tcell(p(s, { run: { bold: true, size: 18 }, spacing: { after: 0 } }), {
+    children: spalten.map((s, i) => tcell(p(s, { run: { bold: true, size: istEba(ctx.sit) ? 22 : 18 }, spacing: { after: 0 } }), {
       width: { size: breiten?.[i] ?? gleich, type: WidthType.PERCENTAGE },
       verticalAlign: 'bottom',
       borders: { top: rand, left: rand, right: rand, bottom: linie(ctx.akzent, 12) },
@@ -314,9 +311,9 @@ function zweiSpalten(links: Block[], rechts: Block[], linksProzent: number, rech
 }
 
 /** Kasten mit Schlussabsatz, falls der Inhalt mit einer Tabelle endet. */
-function kasten(label: string | null, inhalt: Block[], ctx: HeftDocxKontext): Table {
+function kasten(label: string | null, inhalt: Block[], ctx: HeftDocxKontext, labelGroesse?: number): Table {
   const letzt = inhalt[inhalt.length - 1]
-  return kastenDocx(label, letzt instanceof Table ? [...inhalt, schluss()] : inhalt, ctx)
+  return kastenDocx(label, letzt instanceof Table ? [...inhalt, schluss()] : inhalt, ctx, labelGroesse)
 }
 
 // ── Seite 1 · Herausforderung ──────────────────────────────────────────────
@@ -385,6 +382,20 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
   }))
   els.push(spacer(40))
 
+  // EBA: «So starten Sie» steht über der Situation, umrahmt (Besprechung EBA-gold 23.10.2026); EFZ unten.
+  const rahmen = { style: BorderStyle.SINGLE, size: 12, color: ctx.akzent, space: 4 }
+  const soStarten = (oben: boolean) => new Paragraph({
+    children: [
+      new TextRun({ text: 'So starten Sie: ', bold: true, size: 19 }),
+      new TextRun({ text: worte(sit).soStarten, size: 19 }),
+    ],
+    border: oben
+      ? { top: rahmen, bottom: rahmen, left: rahmen, right: rahmen }
+      : { top: { style: BorderStyle.SINGLE, size: 6, color: COLOR.ink, space: 4 } },
+    spacing: oben ? { before: 0, after: 160 } : { before: 120, after: 0 },
+  })
+  if (istEba(sit)) els.push(soStarten(true))
+
   // Situation + Zahlen (zwei Paare pro Zeile, wie im HTML)
   els.push(p(sit.situation_text || '', { run: { size: 20 }, spacing: { after: 100, line: 330, lineRule: LineRuleType.AUTO } }))
   const zahlen = sit.zahlen_tabelle ?? []
@@ -432,7 +443,7 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
           borders: { ...OHNE_RAND, left: linie(ctx.akzent, 24) },
         }),
         tcell(md?.trade_off ? [
-          mini('Spannungsfeld', ctx),
+          mini(worte(sit).spannungsfeld, ctx),
           p(md.trade_off, { run: { size: 20, bold: true }, spacing: { after: 40 } }),
           ...(md.hint ? [p(md.hint, { run: { size: 18, color: COLOR.inkSoft }, spacing: { after: 0 } })] : []),
         ] : [p('')], {
@@ -449,7 +460,7 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
 
   // Lehrmittel-Ressourcen — ohne `fuer_leitfrage` (stimmt nicht in beiden Spuren).
   if (sit.quellen_anker?.length) {
-    els.push(mini('Im Lehrmittel', ctx))
+    els.push(mini(worte(sit).imLehrmittel, ctx))
     sit.quellen_anker.forEach((a) => els.push(new Paragraph({
       children: [
         new TextRun({ text: a.titel || '', bold: true, size: 18 }),
@@ -476,7 +487,7 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
 
   // Übersicht (Feld wochen_plan): drei Teile, ohne Woche und ohne Zeitangabe
   if (sit.wochen_plan?.length) {
-    els.push(mini('Übersicht', ctx))
+    els.push(mini(worte(sit).uebersicht, ctx))
     els.push(new Table({
       width: { size: 100, type: WidthType.PERCENTAGE },
       rows: sit.wochen_plan.map((w, i) => new TableRow({
@@ -497,19 +508,28 @@ export function seite1Docx(ctx: HeftDocxKontext): Block[] {
     els.push(spacer(60))
   }
 
-  // Arbeitsanweisung
-  els.push(new Paragraph({
-    children: [
-      new TextRun({ text: 'So starten Sie: ', bold: true, size: 19 }),
-      new TextRun({ text: 'Lesen Sie die Situation genau. Markieren Sie, was Sie noch nicht wissen oder können — am Ende des Hefts prüfen Sie es im Quer-Check (S. 8).', size: 19 }),
-    ],
-    border: { top: { style: BorderStyle.SINGLE, size: 6, color: COLOR.ink, space: 4 } },
-    spacing: { before: 120, after: 0 },
-  }))
+  // Arbeitsanweisung (EFZ: unten; EBA steht sie über der Situation)
+  if (!istEba(sit)) els.push(soStarten(false))
   return els
 }
 
 // ── Seite 2 · Wissensecke I ───────────────────────────────────────────────
+
+/** Nur EBA: das Glossar des Hefts als Kasten unter LF1 — wie WichtigeWoerter im HTML. */
+function wichtigeWoerterDocx(ctx: HeftDocxKontext): Block[] {
+  const glossar = (ctx.sit.glossar ?? []).filter((g) => g && g.begriff)
+  if (!glossar.length) return []
+  return [
+    spacer(60),
+    kasten('Wichtige Wörter', glossar.map((g, i) => new Paragraph({
+      children: [
+        new TextRun({ text: `${g.begriff}  `, bold: true, size: 20 }),
+        new TextRun({ text: g.definition || '', size: 20 }),
+      ],
+      spacing: { after: i === glossar.length - 1 ? 0 : 50 },
+    })), ctx),
+  ]
+}
 
 export function seite2Docx(ctx: HeftDocxKontext): Block[] {
   const { sit } = ctx
@@ -518,10 +538,14 @@ export function seite2Docx(ctx: HeftDocxKontext): Block[] {
     els.push(mini('Ihr Weg durch die Leitfragen', ctx))
     els.push(p(sit.leitfragen_intro, { run: { size: 19, color: COLOR.inkSoft }, spacing: { after: 160 } }))
   }
-  for (const nr of [1, 2]) {
-    const lf = leitfrage(sit, nr)
-    if (lf) els.push(...lfBlock(lf, ctx, (lf.feld_hoehe_mm || (nr === 1 ? 35 : 45)) + (nr === 1 ? ZUSCHLAG_MM.lf1 : ZUSCHLAG_MM.lf2)))
+  const eba = istEba(sit)
+  for (const lf of kernLeitfragen(sit)) {
+    const nr = lf.nr
+    // EBA: LF1 steht allein auf der Seite — ihr Feld bekommt auch den Platz der zweiten Leitfrage.
+    const zuschlag = eba ? ZUSCHLAG_MM.lf1Eba : nr === 1 ? ZUSCHLAG_MM.lf1 : ZUSCHLAG_MM.lf2
+    els.push(...lfBlock(lf, ctx, (lf.feld_hoehe_mm || (nr === 1 ? 35 : 45)) + zuschlag))
   }
+  if (eba) els.push(...wichtigeWoerterDocx(ctx))
   return els
 }
 
@@ -529,8 +553,8 @@ export function seite2Docx(ctx: HeftDocxKontext): Block[] {
 
 export function seite3Docx(ctx: HeftDocxKontext): Block[] {
   const { sit } = ctx
-  const els: Block[] = [...seitenKopfDocx(3, 'Quelle', ctx)]
-  const lf = sit.leitfragen?.find((l) => l.antwortform === 'raster') ?? leitfrage(sit, 3)
+  const els: Block[] = [...seitenKopfDocx(3, worte(sit).seite3Titel, ctx)]
+  const lf = rasterLeitfrage(sit)
   const raster = lf?.raster
   const pflicht = pflichtQuelle(sit)
   const auftrag = pflicht ? pflicht.auftrag : raster?.auftrag
@@ -562,7 +586,7 @@ export function seite3Docx(ctx: HeftDocxKontext): Block[] {
     els.push(spacer(60))
   } else if (raster?.knoten_ref) {
     const anker = ankerZu(sit, raster.knoten_ref)
-    els.push(kasten('Lehrmittel-Abschnitt', [
+    els.push(kasten(worte(sit).abschnitt, [
       p(raster.knoten_ref.replace(/\s*\|\s*/g, ' · '), { run: { bold: true, size: 21 }, spacing: { after: anker ? 20 : 0 } }),
       ...(anker ? [p([anker.titel, anker.unterueberschrift].filter(Boolean).join(' · '), { run: { size: 18, color: COLOR.inkSoft }, spacing: { after: 0 } })] : []),
     ], ctx))
@@ -596,7 +620,7 @@ function denkhilfeDocx(k: KastenS4, ctx: HeftDocxKontext): Block[] {
     kasten(k.titel, [
       ...(spalten.length ? [ausfuellTabelle(spalten, 3, DENKHILFE_ZEILE_MM, ctx)] : []),
       ...(k.hinweis ? [p(k.hinweis, { run: { size: 18, color: COLOR.inkSoft }, spacing: { before: 60, after: 0 } })] : []),
-    ], ctx),
+    ], ctx, istEba(ctx.sit) ? 19 : undefined),
     spacer(40),
   ]
 }
@@ -654,7 +678,7 @@ function vertiefungDocx(k: KastenS4, ctx: HeftDocxKontext): Block[] {
 export function seite4Docx(ctx: HeftDocxKontext): Block[] {
   const { sit } = ctx
   const els: Block[] = [...seitenKopfDocx(4, 'Wissensecke II', ctx)]
-  const lf = sit.leitfragen?.find((l) => !!l.pol_typ) ?? leitfrage(sit, 4)
+  const lf = beurteilenLeitfrage(sit)
   const k = sit.kasten_s4
   if (lf) {
     const hoehe = (lf.feld_hoehe_mm || (sit.spur === 'mit_medien' ? 60 : 45)) + (k?.typ === 'vertiefung' ? ZUSCHLAG_MM.lf4Mit : ZUSCHLAG_MM.lf4Ohne)

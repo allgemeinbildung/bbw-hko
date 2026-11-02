@@ -12,6 +12,7 @@
 // abschluss.loesung, loesungsbild) liest sonst kein Dokument der Lernenden.
 
 import type { Erwartungshorizont, Leitfrage, ProduktBild, SituationJson, SpurKey } from './types'
+import { ankerZu, beurteilenLeitfrage, istEba, kernLeitfragen, kernTitel, rasterLeitfrage, worte } from './v42-profil'
 
 export const SPUR_NAME_LS: Record<SpurKey, string> = { ohne_medien: 'ohne Medien', mit_medien: 'mit Medien' }
 
@@ -87,6 +88,8 @@ export interface LoesungenModell {
   /** Kopfzeile oben rechts, wie `HEFT A · OHNE MEDIEN` bei den Heften. */
   docCode: string
   heftTitel?: string
+  /** «Leitfragen 1 und 2» (EFZ) bzw. «Leitfrage 1» (EBA) — aus den Nummern der Kern-Leitfragen. */
+  s2Titel: string
   s2: LsLeitfrage[]
   s3: LsRaster | null
   s4: LsBeurteilen | null
@@ -116,7 +119,7 @@ export function rasterBreitenLs(spalten: string[]): number[] | undefined {
 const gleich = (a: string[], b: string[]) => a.length === b.length && a.every((x, i) => (x ?? '').trim() === (b[i] ?? '').trim())
 
 function s3Modell(sit: SituationJson): LsRaster | null {
-  const lf = sit.leitfragen?.find((l) => l.antwortform === 'raster') ?? sit.leitfragen?.find((l) => l.nr === 3)
+  const lf = rasterLeitfrage(sit)
   if (!lf) return null
   const loesung = lf.loesung
   const raster = lf.raster
@@ -136,9 +139,9 @@ function s3Modell(sit: SituationJson): LsRaster | null {
     quelle = `Quelle: ${pflicht.titel}${herkunft ? ` (${herkunft})` : ''}`
     if (pflicht.ersatz?.titel) quelle += ` · Ersatzquelle: ${pflicht.ersatz.titel}`
   } else if (raster?.knoten_ref) {
-    const anker = sit.quellen_anker?.find((a) => a.ref && raster.knoten_ref!.startsWith(a.ref))
+    const anker = ankerZu(sit, raster.knoten_ref)
     quelle = [
-      `Lehrmittel-Abschnitt: ${raster.knoten_ref.replace(/\s*\|\s*/g, ' · ')}`,
+      `${worte(sit).abschnitt}: ${raster.knoten_ref.replace(/\s*\|\s*/g, ' · ')}`,
       anker && [anker.titel, anker.unterueberschrift].filter(Boolean).join(' · '),
     ].filter(Boolean).join(' · ')
   }
@@ -157,7 +160,7 @@ function s3Modell(sit: SituationJson): LsRaster | null {
 }
 
 function s4Modell(sit: SituationJson): LsBeurteilen | null {
-  const lf = sit.leitfragen?.find((l) => !!l.pol_typ) ?? sit.leitfragen?.find((l) => l.nr === 4)
+  const lf = beurteilenLeitfrage(sit)
   const eh: Erwartungshorizont = lf?.loesung?.erwartungshorizont ?? {}
   const k = sit.kasten_s4
   const denkSpalten = k?.typ === 'denkhilfe' ? (k.spalten ?? []).filter(Boolean) : []
@@ -195,11 +198,13 @@ function abschlussModell(sit: SituationJson, spur: SpurKey): LsAbschluss | null 
   if (!l) return null
   const fragen = sit.abschluss?.quercheck ?? []
   const labels = sit.abschluss?.mitnahme ?? []
+  // EBA: kein Begriffsnetz im Heft (Entscheid Pietro 02.11.2026) → auch keine Lösung dazu.
+  const netz = worte(sit).begriffsnetz
   const m: LsAbschluss = {
-    verbindungen: (l.verbindungen ?? []).filter((v) => v && voll(v.von) && voll(v.nach) && voll(v.text)),
-    eigeneKnoten: (l.eigene_knoten?.[spur] ?? []).filter(voll),
+    verbindungen: netz ? (l.verbindungen ?? []).filter((v) => v && voll(v.von) && voll(v.nach) && voll(v.text)) : [],
+    eigeneKnoten: netz ? (l.eigene_knoten?.[spur] ?? []).filter(voll) : [],
     transferTitel: sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …',
-    transfer: voll(l.transfer) ? l.transfer : undefined,
+    transfer: netz && voll(l.transfer) ? l.transfer : undefined,
     quercheck: fragen.map((frage, i) => ({ frage, antwort: l.quercheck?.[i] ?? '' })).filter((x) => voll(x.frage) && voll(x.antwort)),
     mitnahme: labels.map((label, i) => ({ label, eintrag: l.mitnahme?.[i] ?? '' })).filter((x) => voll(x.label) && voll(x.eintrag)),
   }
@@ -208,7 +213,9 @@ function abschlussModell(sit: SituationJson, spur: SpurKey): LsAbschluss | null 
 }
 
 /** `Lösungen · Heft A · ohne Medien`. */
-export function loesungenTitel(buchstabe: string, spur: SpurKey): string {
+export function loesungenTitel(buchstabe: string, spur: SpurKey, sit?: { lehrgang?: string | null } | null): string {
+  // EBA kennt nur eine Spur — der Zusatz entfällt wie im Kopf des Hefts.
+  if (istEba(sit)) return `Lösungen · Heft ${buchstabe}`
   return `Lösungen · Heft ${buchstabe} · ${SPUR_NAME_LS[spur]}`
 }
 
@@ -219,9 +226,7 @@ export function loesungenTitel(buchstabe: string, spur: SpurKey): string {
 export function loesungenModell(sit: SituationJson): LoesungenModell | null {
   const spur: SpurKey = sit.spur ?? 'ohne_medien'
   const L = sit.buchstabe || '?'
-  const s2: LsLeitfrage[] = [1, 2]
-    .map((nr) => sit.leitfragen?.find((l) => l.nr === nr))
-    .filter((lf): lf is Leitfrage => !!lf)
+  const s2: LsLeitfrage[] = kernLeitfragen(sit)
     .map((lf) => ({ nr: lf.nr, text: lf.text, zeilen: zeilenVon(lf) }))
     .filter((x) => x.zeilen.length > 0)
   const bild = sit.handlungsprodukt?.loesungsbild
@@ -231,9 +236,10 @@ export function loesungenModell(sit: SituationJson): LoesungenModell | null {
   const m: LoesungenModell = {
     buchstabe: L,
     spur,
-    titel: loesungenTitel(L, spur),
-    docCode: `LÖSUNGEN ${L} · ${SPUR_NAME_LS[spur].toUpperCase()}`,
+    titel: loesungenTitel(L, spur, sit),
+    docCode: istEba(sit) ? `LÖSUNGEN ${L}` : `LÖSUNGEN ${L} · ${SPUR_NAME_LS[spur].toUpperCase()}`,
     heftTitel: sit.titel,
+    s2Titel: kernTitel(sit),
     s2,
     s3: s3Modell(sit),
     s4: s4Modell(sit),

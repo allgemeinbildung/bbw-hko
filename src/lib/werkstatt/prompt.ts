@@ -121,9 +121,17 @@ function konsistenzVertrag(k: WerkstattKontext): string[] {
 
 const spurName = (key: string): string => `«${SPUR_LABEL[key] ?? key}»`
 
-function heftImVertrag(h: WerkstattHf): string[] {
+const ZAHLWORT: Record<number, string> = { 1: 'eine', 2: 'zwei', 3: 'drei', 4: 'vier', 5: 'fünf' }
+const zahlwort = (n: number): string => ZAHLWORT[n] ?? String(n)
+
+/**
+ * `eba`: EBA-Heft v4.2 — drei Leitfragen (LF1 Kern · LF2 Raster · LF3 Beurteilen), Dossier statt
+ * Lehrmittel. Nummern kommen aus den Daten; bei EFZ bleibt der Wortlaut Zeichen für Zeichen gleich.
+ */
+function heftImVertrag(h: WerkstattHf, eba = false): string[] {
   const v = h.v42
   if (!v) return []
+  const rasterNr = v.raster?.lfNr ?? 3
   const out: string[] = [`HEFT ${h.buchstabe} — ${h.titel} (Spur ${spurName(v.spur)})`]
   if (h.label) out.push(`  Leistet: ${h.label}`)
   if (v.konfliktart) out.push(`  Konfliktart: ${v.konfliktart}`)
@@ -137,7 +145,7 @@ function heftImVertrag(h: WerkstattHf): string[] {
   if (h.leitfrage) out.push(`  Leitfrage: ${h.leitfrage}`)
   if (h.tradeOff) out.push(`  Spannungsfeld: ${h.tradeOff}${h.tradeOffHint ? ` — ${h.tradeOffHint}` : ''}`)
   if (v.leitfragen.length) {
-    out.push('  Die vier Leitfragen:')
+    out.push(eba ? `  Die ${zahlwort(v.leitfragen.length)} Leitfragen:` : '  Die vier Leitfragen:')
     for (const l of v.leitfragen) {
       const marken = [l.bloom, l.polTyp ? `Pol-Typ ${POL_TYP_LABEL[l.polTyp] ?? l.polTyp}` : ''].filter(Boolean).join(', ')
       out.push(`    LF${l.nr}${marken ? ` (${marken})` : ''}: ${l.text}`)
@@ -147,13 +155,13 @@ function heftImVertrag(h: WerkstattHf): string[] {
   if (v.quelle) {
     const angaben = [v.quelle.herausgeber, v.quelle.datum].filter(Boolean).join(', ')
     out.push(
-      `  Quelle zu LF3: ${v.quelle.titel}${angaben ? ` — ${angaben}` : ''}${
+      `  Quelle zu LF${rasterNr}: ${v.quelle.titel}${angaben ? ` — ${angaben}` : ''}${
         v.quelle.ausschnitt ? ` · Ausschnitt: ${v.quelle.ausschnitt}` : ''
       }`,
       '    Dir liegen nur diese Angaben vor, nicht der Inhalt der Quelle.'
     )
   } else if (v.raster?.abschnitt) {
-    out.push(`  Lehrmittel-Abschnitt zu LF3: ${v.raster.abschnitt}`)
+    out.push(`  ${eba ? 'Info-Karte im Dossier' : 'Lehrmittel-Abschnitt'} zu LF${rasterNr}: ${v.raster.abschnitt}`)
   }
   const produkt = [h.produkt.titel, h.produkt.format].filter(Boolean).join(' — ')
   if (produkt) out.push(`  Produkt: ${produkt}`)
@@ -202,7 +210,9 @@ function konsistenzVertragV42(k: WerkstattKontext): string[] {
   }
   if (k.bloom.length) {
     out.push(
-      'BLOOM-ZIELPROFIL — die Denkstufen der vier Leitfragen, in jedem Heft gleich:',
+      k.istEba
+        ? `BLOOM-ZIELPROFIL — die Denkstufen der ${zahlwort(k.bloom.length)} Leitfragen, in jedem Heft gleich:`
+        : 'BLOOM-ZIELPROFIL — die Denkstufen der vier Leitfragen, in jedem Heft gleich:',
       ...liste(k.bloom.map((b) => `${b.lf}: ${b.stufe}`)),
       '  Unterhalb dieses Korridors zu bleiben (nenne, beschreibe, liste auf) verfehlt die Einheit.',
       ''
@@ -228,7 +238,17 @@ function konsistenzVertragV42(k: WerkstattKontext): string[] {
     )
   }
 
-  out.push(
+  // EBA: eine Fassung, kein Lehrmittel — Nummern der Leitfragen aus dem ersten Heft.
+  const ebaHeft = k.istEba ? k.hfs.find((h) => h.v42)?.v42 : undefined
+  if (ebaHeft) {
+    const rasterNr = ebaHeft.raster?.lfNr ?? 2
+    const urteilNr = ebaHeft.leitfragen.find((l) => l.polTyp)?.nr ?? ebaHeft.leitfragen.length
+    out.push(
+      'DOSSIER — diese Einheit hat kein Lehrmittel und nur eine Fassung (ohne Medien):',
+      `  LF${rasterNr} arbeitet an einer Info-Karte des Dossiers (Raster mit ausgefüllter Beispielzeile), Seite 4 bietet eine Denkhilfe zu LF${urteilNr}.`,
+      ''
+    )
+  } else out.push(
     `SPUR — diese Fassung der Einheit läuft in der Spur ${spurName(v.spur)}:`,
     v.spur === 'mit_medien'
       ? '  LF3 arbeitet an einer geprüften Quelle (Raster als Antwortfeld), Seite 4 bietet eine freiwillige Vertiefung.'
@@ -245,7 +265,7 @@ function konsistenzVertragV42(k: WerkstattKontext): string[] {
   const hefte = k.hfs.filter((h) => h.v42)
   if (hefte.length) {
     out.push('DIE HEFTE DER EINHEIT — was sie festlegen, gilt für jedes weitere Material:', '')
-    for (const h of hefte) out.push(...heftImVertrag(h), '')
+    for (const h of hefte) out.push(...heftImVertrag(h, k.istEba), '')
   }
 
   if (v.auftrag) {

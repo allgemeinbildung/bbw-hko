@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { A4Page, Badge, HandlungsFlaeche, Schreibfeld, SectionHead, sitColors } from './chrome'
 import type { SituationJson, SetJson } from '../../../lib/einheiten/types'
 import { isV42 } from '../../../lib/einheiten/spuren'
+import { worte } from '../../../lib/einheiten/v42-profil'
 import { DocHeftV42 } from './DocHeftV42'
 
 export interface DocSProps {
@@ -646,6 +647,8 @@ export function MethodenGrid({ sit }: { sit: SituationJson }) {
     .slice()
     .sort((a, b) => Number(istAngereichert(a)) - Number(istAngereichert(b)))
   if (!items.length) return null
+  // Herkunftszeile eigener Karten: im Heft v4.2 je Lehrgang (EBA hat kein Lehrmittel), im Bestand fest.
+  const hkoZeile = isV42(sit) ? worte(sit).methodenkarteHko : 'Methodenkarte · nicht im Lehrmittel'
   return (
     <div className="methoden-grid">
       {items.map((m, i) => (
@@ -657,7 +660,7 @@ export function MethodenGrid({ sit }: { sit: SituationJson }) {
           <div className="methode-src">
             {m.quelle === 'lehrmittel'
               ? `▣ Lehrmittel Kap. ${m.kap ?? ''}${m.seiten ? ` · ${m.seiten}` : ''}`
-              : 'Methodenkarte · nicht im Lehrmittel'}
+              : hkoZeile}
           </div>
           {m.fuer && <div className="methode-fuer">{m.fuer}</div>}
           {m.quelle === 'lehrmittel' ? (

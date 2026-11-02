@@ -14,6 +14,7 @@ import {
 import { COLOR, p, skizzeBox, tcell } from './docx-primitives'
 import { kastenDocx, seitenKopfDocx, type HeftDocxKontext } from './docx-heft-v42-gemeinsam'
 import { checklisteBlock, methodenBlock } from './docx-builder'
+import { istEba, worte } from './v42-profil'
 import { RUBRIK_PUNKTE_LABELS } from './rubrik-skala'
 import { begriffsnetzTabelle, checklisteZweispaltigDocx, glossarBlock } from './docx-begriffsnetz-v42'
 import { beispielBandDocx } from './docx-produkt-bild-v42'
@@ -82,19 +83,23 @@ function schritteTabelle(sit: SituationJson, ctx: HeftDocxKontext): Table | null
 function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
   const kriterien = (sit.feedback_kriterien || []).filter((k) => k && k.kn_kriterium)
   if (!kriterien.length) return []
-  const breite = [12, 80, 8]
+  const w = worte(sit)
+  // EBA: Ich-Fassung für Lernende, sonst KN-Wortlaut (Entscheid Pietro 02.11.2026) — wie im HTML.
+  const eba = istEba(sit)
+  const breite = eba ? [12, 74, 14] : [12, 80, 8]
   const kopfRand = { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 12, color: ctx.akzent } }
   const kopf = new TableRow({
     tableHeader: true,
-    children: ['Punkte', 'Beschreibung (Wortlaut Kompetenznachweis)', 'Selbst'].map((t, i) => tcell(
+    children: ['Punkte', w.kriterienBeschreibung, w.selbst].map((t, i) => tcell(
       p(t.toUpperCase(), { run: { bold: true, size: 13, color: ctx.akzent }, spacing: { after: 0 }, alignment: i === 2 ? AlignmentType.CENTER : undefined }),
       { width: pct(breite[i]), borders: kopfRand, margins: { top: 20, bottom: 40, left: 0, right: 80 } },
     )),
   })
   const zeilen: TableRow[] = [kopf]
   for (const k of kriterien) {
-    const name: TextRun[] = [new TextRun({ text: k.kn_kriterium, bold: true, size: 21 })]
-    if (k.dimension) name.push(new TextRun({ text: `   ${k.dimension}`, bold: true, size: 14, color: ctx.akzent }))
+    const name: TextRun[] = [new TextRun({ text: (eba && k.name_lernende) || k.kn_kriterium, bold: true, size: 21 })]
+    if (k.dimension) name.push(new TextRun({ text: `   ${w.dimension(k.dimension)}`, bold: true, size: 14, color: ctx.akzent }))
+    const stufen = eba && k.stufen_lernende?.length === k.stufen.length ? k.stufen_lernende : k.stufen
     const inhalt: Paragraph[] = [new Paragraph({ children: name, spacing: { after: 20 }, keepNext: true })]
     if (k.indikator_produkt) {
       inhalt.push(new Paragraph({
@@ -115,7 +120,7 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
         borders: { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 6, color: COLOR.inkSoft } },
       })],
     }))
-    k.stufen.forEach((s, si) => {
+    stufen.forEach((s, si) => {
       const rand = { top: KEIN, left: KEIN, right: KEIN, bottom: LINIE }
       const m = { top: 30, bottom: 30, left: 0, right: 80 }
       zeilen.push(new TableRow({
@@ -130,20 +135,20 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
   }
   return [
     label('Feedback-Kriterien', ctx),
-    anweisung('Kreuzen Sie vor der Abgabe in der Spalte «Selbst» Ihre Punkte an.'),
+    anweisung(w.selbstAnweisung),
     new Table({ width: pct(100), rows: zeilen }),
   ]
 }
 
 /** Plus — freiwillig, darum gestrichelt umrandet (Gegenstück zu `.v42-plus`). */
-function plusKasten(text: string): Table {
+function plusKasten(text: string, etikett = 'Plus'): Table {
   const strich = { style: BorderStyle.DASHED, size: 4, color: COLOR.inkMute }
   return new Table({
     width: pct(100),
     rows: [new TableRow({
       cantSplit: true,
       children: [tcell([
-        p('PLUS', { run: { color: COLOR.inkSoft, bold: true, size: 14 }, spacing: { after: 30 } }),
+        p(etikett.toUpperCase(), { run: { color: COLOR.inkSoft, bold: true, size: 14 }, spacing: { after: 30 } }),
         p(text, { run: { size: 19 }, spacing: { after: 0 } }),
       ], { borders: { top: strich, bottom: strich, right: strich, left: { style: BorderStyle.DASHED, size: 24, color: COLOR.inkMute } } })],
     })],
@@ -177,7 +182,7 @@ export function seite5Docx(ctx: HeftDocxKontext): Block[] {
   if (kriterien.length) els.push(...kriterien, abstand())
 
   const plus = sit.lernfortschritt?.scaffold_100
-  if (plus) els.push(plusKasten(plus))
+  if (plus) els.push(plusKasten(plus, worte(sit).plus))
   return els
 }
 
@@ -199,18 +204,15 @@ export function seite6Docx(ctx: HeftDocxKontext): Block[] {
 // Seite 7 — Arbeitsfläche
 // ---------------------------------------------------------------------------
 
-const ARBEITSFLAECHE_HINWEIS =
-  'Auftrag und Schritte stehen auf S. 5. Die Methoden auf S. 6 stehen Ihnen für Ihr Produkt frei zur Verfügung.'
-
 export function seite7Docx(ctx: HeftDocxKontext): Block[] {
   // Wie der Bestand (skizzeBox), um die Hinweiszeile gekürzt (235 → 223 mm), damit
   // Kopf, Hinweis und Fläche auf einer Seite bleiben. Beschriftung = Produkttitel
   // (im HTML per CSS in Versalien, hier ausgeschrieben). Wortlaut des Hinweises wie
-  // im HTML (ARBEITSFLAECHE_HINWEIS in heft-v42/seiten-5-8.tsx).
+  // im HTML (`worte().arbeitsflaeche`, v42-profil.ts).
   const titel = ctx.sit.handlungsprodukt?.titel || 'Hier erarbeiten'
   return [
     ...seitenKopfDocx(7, 'Arbeitsfläche', ctx),
-    p(ARBEITSFLAECHE_HINWEIS, { run: { size: 18, color: COLOR.inkSoft } }),
+    p(worte(ctx.sit).arbeitsflaeche, { run: { size: 18, color: COLOR.inkSoft } }),
     skizzeBox(223, titel.toUpperCase(), ctx.akzent),
   ]
 }
@@ -280,15 +282,15 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
   const { sit } = ctx
   const els: Block[] = [...seitenKopfDocx(8, 'Abschluss', ctx)]
   // Begriffsnetz + Glossar (E17), sobald das Heft ein Glossar trägt; sonst die Mindmap.
-  const netz = (sit.glossar?.length ?? 0) > 0 && (sit.mindmap_aeste?.length ?? 0) > 0
+  // EBA: weder noch (Entscheid Pietro 02.11.2026) — wie im HTML.
+  const ohneNetz = !worte(sit).begriffsnetz
+  const netz = !ohneNetz && (sit.glossar?.length ?? 0) > 0 && (sit.mindmap_aeste?.length ?? 0) > 0
 
   if (netz) {
     const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
-    els.push(anweisung(
-      `Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «${transferTitel}»: eine andere Lage, in der dasselbe gilt. Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).`,
-    ))
+    els.push(anweisung(worte(sit).netzAnweisung(transferTitel)))
     els.push(begriffsnetzTabelle(sit, ctx), abstand(60), ...glossarBlock(sit, ctx), abstand(60))
-  } else if ((sit.mindmap_aeste?.length ?? 0) > 0) {
+  } else if (!ohneNetz && (sit.mindmap_aeste?.length ?? 0) > 0) {
     const transferTitel = sit.mindmap_aeste?.find((a) => a.transfer)?.titel || 'gilt auch bei …'
     els.push(anweisung(
       `Verbinden Sie die Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe zusammenhängen — mindestens fünf Verbindungen. Ergänzen Sie mindestens zwei Begriffe aus Ihrem Raster (S. 3). Tragen Sie im Feld «${transferTitel}» ein, wo dasselbe sonst noch gilt, und führen Sie eine Verbindung dorthin.`,
@@ -298,12 +300,16 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
 
   const quercheck = (sit.abschluss?.quercheck || []).filter(Boolean)
   if (quercheck.length) {
-    els.push(label('Quer-Check — die offenen Fragen der Situation', ctx))
-    quercheck.forEach((q) => els.push(new Paragraph({
-      children: [new TextRun({ text: '☐   ', size: 22 }), new TextRun({ text: q, size: 19 })],
-      spacing: { before: 20, after: 40 },
-      border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 2 } },
-    })))
+    els.push(label(worte(sit).quercheck, ctx))
+    quercheck.forEach((q) => {
+      els.push(new Paragraph({
+        children: [new TextRun({ text: '☐   ', size: 22 }), new TextRun({ text: q, size: ohneNetz ? 21 : 19 })],
+        spacing: { before: 20, after: 40 },
+        border: ohneNetz ? undefined : { bottom: { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule, space: 2 } },
+      }))
+      // EBA: eine Antwortzeile pro Frage (wie im HTML).
+      if (ohneNetz) els.push(new Paragraph({ children: [], spacing: { before: 280, after: 60 }, border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: COLOR.inkSoft, space: 2 } } }))
+    })
     els.push(abstand(60))
   }
 
@@ -311,7 +317,7 @@ export function seite8Docx(ctx: HeftDocxKontext): Block[] {
   if (mitnahme.length) {
     els.push(label('Das nehme ich mit', ctx))
     // Mit Begriffsnetz fehlt der Platz für die Anweisung — wie im HTML.
-    if (!netz) els.push(anweisung('Halten Sie in drei Zeilen fest, was Sie aus diesem Heft weiterverwenden.'))
+    if (!netz) els.push(anweisung(worte(sit).mitnahme))
     // Beschriftung unten in der Zelle, ohne Innenabstand unten: die Grundlinie sitzt
     // bündig auf der eigenen Schreiblinie (Unterkante der rechten Zelle), nicht mittig
     // zwischen zwei Linien — wie .v42-mitnahme-zeile im HTML.

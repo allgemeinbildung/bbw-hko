@@ -276,6 +276,13 @@ export interface FeedbackKriterium {
   stufen: string[]
   /** «Woran sehe ich das in meinem Produkt?» */
   indikator_produkt?: string
+  /**
+   * Nur EBA, optional: Fassung für Lernende in Ich-Form, im Heft S. 5 statt des KN-Wortlauts
+   * gedruckt (Entscheid Pietro 02.11.2026). `stufen` bleibt zeichengenau der KN-Wortlaut.
+   */
+  name_lernende?: string
+  /** Nur EBA, optional: die vier Stufen in Ich-Form (gleiche Zahl wie `stufen`). */
+  stufen_lernende?: string[]
 }
 
 /** Gemeinsamer Auftrag (Auftragsbogen, 4 Seiten) — Leitfaden §7 und §11.2. In beiden Spuren identisch. */

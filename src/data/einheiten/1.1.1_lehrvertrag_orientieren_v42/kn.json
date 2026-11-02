@@ -1,0 +1,249 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_kn",
+  "modul": "1.1",
+  "kompetenz_nr": "1.1.1",
+  "topic_slug": "lehrvertrag_orientieren",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-10-09",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_v42_set",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_v42_prinzip",
+  "anchored_situations": [
+    "1.1.1_lehrvertrag_orientieren_v42_hf_A",
+    "1.1.1_lehrvertrag_orientieren_v42_hf_B"
+  ],
+  "dominanter_aspekt": "Recht",
+  "kern_kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
+  "mehrdeutigkeits_pflicht": "Beide Wege können richtig sein. Es hängt von der Situation ab. Wichtig ist: Ich entscheide begründet.",
+  "hybrid_situation": {
+    "titel": "Ab nächstem Monat auch samstags",
+    "persona": {
+      "beruf": "Lernende/r EBA, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Ich bin im 1. Lehrjahr meiner EBA-Lehre. Gestern sagte mein Berufsbildner: «Ab nächstem Monat arbeiten Sie auch am Samstag.» Das überrascht mich. Beim Vorstellungsgespräch hiess es anders. Ich nehme meinen Lehrvertrag hervor. Das Formular ist dicht: viele Felder und ein Verweis auf ein Reglement. Zur Arbeitszeit finde ich zwei Stellen. Ganz sicher bin ich nicht. Ich will nichts Falsches behaupten. Aber ich will auch nicht einfach schweigen. Kläre ich das selbst mit meinem Berufsbildner — oder hole ich zuerst Hilfe bei einer Stelle?",
+    "leitfrage": "Kläre ich das selbst mit meinem Berufsbildner — oder hole ich zuerst Hilfe bei einer Stelle?",
+    "aktivierte_trade_offs": [
+      "Selbst klären vs. Hilfe holen",
+      "Alles genau lesen vs. das Wichtige heraussuchen"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Im dichten Vertrags-Formular die passende Stelle zur Arbeitszeit finden; ein Verweis auf ein Reglement bleibt offen."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Die Ankündigung passt nicht zu dem, was abgemacht war: die Unstimmigkeit sachlich klären und den Weg wählen."
+        }
+      ],
+      "new_dimensions": []
+    },
+    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation. Sie brauchen dafür beide Hefte zugleich.",
+    "definition_lang": "Die Hybrid-Herausforderung verbindet die zwei Hefte in einer Szene: in einem dichten Formular die passende Stelle finden (Heft A) und bei einer Unstimmigkeit den Weg begründet wählen (Heft B). Neu ist nicht die Person, sondern der Fall: eine Ankündigung des Berufsbildners, die in keinem der zwei Hefte und nicht im gemeinsamen Auftrag vorkommt. Die Lernenden zeigen, dass sie das gemeinsame Vorgehen übertragen."
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Kurzgespräch (Primärform)",
+      "format": "mündlich, 5-10 Min. Gespräch pro Lernende/r (+ ca. 15 Min. Vorbereitung mit Notizen)",
+      "ablauf": [
+        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Dossier und Hefte erlaubt, kein Internet).",
+        "5-10 Min. Gespräch mit der Lehrperson: 5 kurze Fragen, stark geführt."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "frage": "Zeigen Sie Ihre Notizen: Wie ist der Lehrvertrag aufgebaut? Nennen Sie die Abschnitte.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Wo suchen Sie die Antwort zur Samstagsarbeit? Beschreiben Sie Ihren Weg durch das Formular.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Was können Sie hier selbst klären? Wofür brauchen Sie Hilfe? Begründen Sie.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Vergleichen Sie mit Ihren zwei Heften: Was machen Sie hier gleich, was anders?",
+          "k_stufe": 3
+        },
+        {
+          "nr": 5,
+          "typ": "Werthaltung",
+          "frage": "Wann sprechen Sie selbst, wann holen Sie Hilfe? Sagen Sie Ihre Meinung und begründen Sie.",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [
+        2,
+        7,
+        11
+      ],
+      "aspekte": [
+        "Recht",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case schriftlich (vereinfacht)",
+      "format": "schriftlich, 30-40 Min.",
+      "ablauf": [
+        "Hybrid-Herausforderung als Prüfungsblatt mit eingedruckten Schreibhilfen; Dossier und Hefte erlaubt; kein Internet.",
+        "Vier kurze Aufgaben steigender Komplexität (K-Decke K3)."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "aufgabe": "Ordnen Sie den Fall: Was ist passiert? Was war abgemacht? Füllen Sie die Fakten-Tabelle aus.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Unterscheiden",
+          "aufgabe": "Was ist eine Frage zum Vertrag, was ein Konflikt? Ordnen Sie zu, je ein Beispiel aus dem Fall.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Entscheiden",
+          "aufgabe": "Welchen ersten Schritt wählen Sie? Begründen Sie kurz mit einer Stelle aus dem Vertrag.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Forderung",
+          "aufgabe": "Schreiben Sie eine kurze, sachliche Nachricht an die gewählte Stelle.",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [
+        2,
+        7,
+        11
+      ],
+      "aspekte": [
+        "Recht",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Lernende wählen eines ihrer zwei Produkte aus den Heften (Vertragsübersicht aus Heft A oder Nachricht aus Heft B).",
+        "Werkwahl-Begründung (2 Sätze): Warum genau dieses Produkt?",
+        "Transfer-Reflexion (120-150 Wörter): drei Fragen schriftlich beantworten, mit Satzanfängen aus dem Dossier."
+      ],
+      "reflexionsfragen": [
+        "Welche Grundregel haben Sie gelernt? Formulieren Sie sie in einem Satz.",
+        "Wie zeigt sich diese Regel in der Hybrid-Herausforderung? Was ist gleich, was anders als in Ihrem Heft?",
+        "Wann passt die Regel nicht so gut? Was haben Sie durch beide Hefte gelernt?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        7,
+        11
+      ],
+      "aspekte": [
+        "Recht",
+        "Identität und Sozialisation"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "dimension": "SuK",
+        "stufen": [
+          "Die Fachwörter fehlen oder sind falsch. Die Sprache hat viele Fehler.",
+          "Einige Fachwörter stimmen. Die Sprache hat noch einige Fehler.",
+          "Die Fachwörter stimmen und passen zum Fall. Die Sprache ist meistens richtig.",
+          "Die Fachwörter stimmen und sind mit eigenen Worten erklärt. Die Sprache ist richtig."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "dimension": "SuK",
+        "stufen": [
+          "Eine Begründung fehlt. Die Sprache passt nicht zur Person.",
+          "Eine Begründung ist im Ansatz da. Die Sprache passt zum Teil zur Person.",
+          "Die Begründung ist klar. Die Sprache passt zur Person und zur Situation.",
+          "Die Begründung ist klar und vollständig. Die Wörter sind bewusst gewählt."
+        ]
+      },
+      {
+        "name": "Rechtliches Prinzip",
+        "dimension": "Ges",
+        "stufen": [
+          "Die passende Stelle im Dokument und das passende Vorgehen fehlen.",
+          "Die passende Stelle oder das passende Vorgehen ist zum Teil erkannt.",
+          "Die passende Stelle ist gefunden. Das Vorgehen passt zum Fall.",
+          "Stelle und Vorgehen stimmen. Beides ist auf einen neuen Fall übertragen."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Meinung ist nicht erkennbar.",
+          "Die eigene Meinung ist nur angedeutet.",
+          "Die eigene Meinung steht klar in der Ich-Form.",
+          "Die eigene Meinung ist begründet. Auch der andere Weg ist ernst genommen."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+      },
+      {
+        "label": "80 %",
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+      },
+      {
+        "label": "100 %",
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+      }
+    ]
+  },
+  "template": "kn_2er_eba_default",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

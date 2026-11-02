@@ -4,6 +4,7 @@ import type { DocSProps } from './DocS'
 import { heftNs, type HeftSeiteProps } from './heft-v42/gemeinsam'
 import { Seite1, Seite2, Seite3, Seite4 } from './heft-v42/seiten-1-4'
 import { Seite5, Seite6, Seite7, Seite8 } from './heft-v42/seiten-5-8'
+import { heftDocCode, istEba } from '../../../lib/einheiten/v42-profil'
 
 /**
  * Heft v4.2 (template `heft_8page_v42`) — Leitfaden docs/upgrade-v4.2 §3.
@@ -36,7 +37,7 @@ function HeftPage({ common, nr, children }: { common: HeftPageCommon; nr: number
     <A4Page
       sit={sit.buchstabe}
       abteilung={common.abteilung}
-      docCode={`HEFT ${sit.buchstabe} · ${sit.spur === 'mit_medien' ? 'MIT MEDIEN' : 'OHNE MEDIEN'}`}
+      docCode={heftDocCode(sit)}
       docTitel={sit.titel}
       sitLetter={sit.buchstabe}
       pageNum={nr}
@@ -53,7 +54,7 @@ export function DocHeftV42({ sit, set, abteilung, mode, edits, onEdit, kompetenz
   const common: HeftPageCommon = { sit, abteilung, kompetenzNr, abgedeckteKompetenzen }
   const seite: HeftSeiteProps = { sit, set, mode, edits, onEdit, ns: heftNs(sit) }
   return (
-    <div className="v42-heft" style={sitColors(sit)}>
+    <div className={istEba(sit) ? 'v42-heft v42-eba' : 'v42-heft'} style={sitColors(sit)}>
       {SEITEN.map((Seite, i) => (
         <HeftPage common={common} nr={i + 1} key={i}>
           <Seite {...seite} />

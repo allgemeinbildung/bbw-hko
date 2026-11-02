@@ -1,0 +1,109 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_lernprompt",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_v42_set",
+  "lehrgang": "EBA_2J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-09",
+  "lernprompt": {
+    "version": "1.2",
+    "thema_kontext": "Dieses Blatt gehört zur Einheit «Sich im Lehrvertrag orientieren». Ein Prompt ist Ihre Eingabe an die KI (künstliche Intelligenz).",
+    "techniken": [
+      {
+        "key": "rollen_prompting",
+        "titel": "Der KI eine Rolle geben",
+        "erklaerung": "Sie sagen der KI zuerst, wer sie sein soll. Dann passt die Antwort besser zu Ihrer Frage.",
+        "thema_bezug": "Beim Lernen der Begriffe hilft eine KI, die Sie abfragt.",
+        "beispiel_basis": "Sie sind mein Lernpartner. Thema: der Lehrvertrag in der Schweiz. Stellen Sie mir drei Fragen, eine nach der anderen: zu Abschnitt, Verweis und Reglement. Sagen Sie die Lösung erst nach meiner Antwort. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Auch in einer Rolle kann die KI Fehler machen."
+      },
+      {
+        "key": "kontextualisieren",
+        "titel": "Kontext geben",
+        "erklaerung": "Sie geben der KI wichtige Angaben zu Ihrem Fall. Dann muss die KI weniger raten.",
+        "thema_bezug": "Ihre klare Frage steht unter Ihrer Tabelle in Heft A.",
+        "beispiel_basis": "Ich bin im 1. Lehrjahr in der Schweiz. Das ist meine Frage an meinen Betrieb: [meine klare Frage]. Was ist an der Frage noch unklar? Schreiben Sie meine Frage nicht neu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI zeigt nur Lücken, Ihre Frage schreiben Sie selbst. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "quellen_anfordern",
+        "titel": "Quellen verlangen",
+        "erklaerung": "Sie verlangen von der KI zu jeder Angabe eine Quelle. Eine Quelle ist der Ort, wo die Angabe steht. So können Sie selbst nachprüfen.",
+        "thema_bezug": "Jeder Kanton hat ein eigenes Berufsbildungsamt. Den richtigen Namen finden Sie auf der Website Ihres Kantons.",
+        "beispiel_basis": "Thema: der Lehrvertrag in der Schweiz. Das habe ich gelernt: [mein Satz]. Wo kann ich das nachlesen? Nennen Sie mir eine Quelle mit Website. Ich prüfe jede Quelle nach. Antworten Sie in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Thema: der Lehrvertrag in der Schweiz. Hier sind drei Vertragspunkte aus meiner Tabelle: [meine drei Punkte]. Nennen Sie zu jedem Punkt eine Quelle mit Website. Sagen Sie mir, wenn Sie keine Quelle kennen. Ich prüfe jede Quelle nach. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI erfindet manchmal eine Website. Öffnen Sie jede Website und vergleichen Sie mit Ihrem Dossier.",
+        "baukasten": {
+          "rolle": [
+            "Fachperson für die Lehre",
+            "Lernpartner"
+          ],
+          "kontext": [
+            "mein Kanton",
+            "mein Satz aus dem Heft",
+            "1. Lehrjahr"
+          ],
+          "aufgabe": [
+            "eine Quelle nennen",
+            "sagen, wenn die Quelle fehlt"
+          ],
+          "format": [
+            "eine Zeile je Quelle",
+            "Name und Website"
+          ]
+        }
+      },
+      {
+        "key": "format_vorgeben",
+        "titel": "Form der Antwort vorgeben",
+        "erklaerung": "Sie sagen der KI, wie die Antwort aussehen soll. Dann können Sie die Antwort schneller lesen und prüfen.",
+        "thema_bezug": "Ihre Nachricht aus Heft B hat eine feste Form: Anrede, Fakten, was gilt, Wunsch, Gruss.",
+        "beispiel_basis": "Hier ist meine Nachricht an meinen Betrieb: [meine Nachricht]. Prüfen Sie nur die Form. Antworten Sie als Liste mit fünf Zeilen: Anrede, Fakten, was gilt, Wunsch, Gruss. Schreiben Sie zu jeder Zeile nur: da oder fehlt. Schreiben Sie meine Nachricht nicht neu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "beispiel_fortgeschritten": "Hier ist meine Nachricht an meinen Betrieb: [meine Nachricht]. Machen Sie eine Tabelle mit zwei Spalten: mein Satz, Fakt oder Gefühl. Tragen Sie jeden Satz von mir ein. Schreiben Sie meine Nachricht nicht neu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Die KI prüft nur die Form, Ihre Nachricht schreiben Sie selbst. Lassen Sie den Namen in der Anrede weg.",
+        "baukasten": {
+          "rolle": [
+            "genaue Leserin",
+            "Lernpartner"
+          ],
+          "kontext": [
+            "meine Nachricht aus Heft B",
+            "meine Tabelle aus Heft A"
+          ],
+          "aufgabe": [
+            "nur die Form prüfen",
+            "meine Sätze ordnen"
+          ],
+          "format": [
+            "Liste mit fünf Zeilen",
+            "Tabelle mit zwei Spalten",
+            "nur: da oder fehlt"
+          ]
+        }
+      }
+    ],
+    "stacking_seite_1": {
+      "technik_keys": [
+        "Der KI eine Rolle geben",
+        "Kontext geben"
+      ],
+      "logik_und_ziel": "Prompt 1 gibt der KI eine Rolle und Ihren Begriff. Prompt 2 fragt im selben Chat nach.",
+      "prompt_1": "Sie sind mein Lernpartner. Thema: der Lehrvertrag in der Schweiz. Ich bin im 1. Lehrjahr. Mein Begriff aus dem Glossar: [mein Begriff]. Stellen Sie mir dazu zwei Fragen, eine nach der anderen. Antworten Sie in kurzen, einfachen Sätzen.",
+      "prompt_2": "Welche meiner zwei Antworten war weniger klar? Stellen Sie mir dazu noch eine Frage. Geben Sie mir keine Lösung. Antworten Sie in kurzen, einfachen Sätzen."
+    },
+    "stacking_seite_2": {
+      "technik_keys": [
+        "Quellen verlangen",
+        "Form der Antwort vorgeben"
+      ],
+      "logik_und_ziel": "Prompt 1 verlangt zwei Quellen in einer festen Form. Prompt 2 fragt im selben Chat: Welche Quelle ist weniger sicher?",
+      "prompt_1": "Thema: die Lehre in der Schweiz. Das habe ich gelernt: [mein Satz]. Nennen Sie mir zwei Quellen dazu. Nummerieren Sie die Quellen. Antworten Sie als Liste: Name der Stelle, dann die Website. Ich prüfe jede Quelle nach. Antworten Sie in kurzen, einfachen Sätzen.",
+      "prompt_2": "Bei welcher Quelle sind Sie weniger sicher: Nummer 1 oder Nummer 2? Sagen Sie mir in einem Satz, warum. Antworten Sie in kurzen, einfachen Sätzen."
+    },
+    "beispiel_dialog": {
+      "frage": "Sie sind mein Lernpartner. Thema: die Lehre in der Schweiz. Wie viele Wochen Ferien haben Lernende bis 20 Jahre? Antworten Sie in kurzen, einfachen Sätzen.",
+      "antwort": "Lernende bis 20 Jahre haben mindestens 4 Wochen Ferien pro Lehrjahr. Das steht im Gesetz.",
+      "pruefung": "Ich prüfe mit der Info-Karte A-02: Es sind mindestens 5 Wochen, nicht 4 Wochen. Das mit dem Gesetz stimmt."
+    },
+    "prompt_vorlage": "Ein guter Prompt nennt vier Dinge: Rolle, Kontext, Aufgabe, Form der Antwort."
+  }
+}

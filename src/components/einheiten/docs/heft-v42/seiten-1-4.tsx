@@ -3,6 +3,7 @@ import { Badge } from '../chrome'
 import { QrCode } from '../QrCode'
 import { landingUrl } from '../../../../lib/einheiten/qr'
 import type { KastenS4, Leitfrage, Quelle, SituationJson } from '../../../../lib/einheiten/types'
+import { ankerZu, beurteilenLeitfrage, istEba, kernLeitfragen, rasterLeitfrage, worte } from '../../../../lib/einheiten/v42-profil'
 import { Kasten, SeitenKopf, type HeftSeiteProps } from './gemeinsam'
 
 /**
@@ -120,10 +121,6 @@ function pflichtQuelle(sit: SituationJson): Quelle | undefined {
   return sit.spur === 'mit_medien' ? sit.quellen?.find((q) => q.rolle === 'pflicht') : undefined
 }
 
-function leitfrage(sit: SituationJson, nr: number): Leitfrage | undefined {
-  return sit.leitfragen?.find((l) => l.nr === nr)
-}
-
 /** Kompetenz-Sätze: aufgelöstes `nrlp.kompetenzen`, sonst der primäre `kompetenz_text` (wie DocS). */
 function kompetenzen(sit: SituationJson): { nr: string; text: string }[] {
   const resolved = sit.nrlp?.kompetenzen?.filter((k) => k && k.text)
@@ -134,12 +131,6 @@ function kompetenzen(sit: SituationJson): { nr: string; text: string }[] {
 /** Guillemets nur setzen, wenn die Daten sie nicht schon mitbringen (wie DocS). */
 function inGuillemets(s: string): string {
   return /^«.*»$/.test(s.trim()) ? s.trim() : `«${s.trim()}»`
-}
-
-/** Lehrmittel-Abschnitt aus `quellen_anker`, dessen `ref` am Anfang von `knoten_ref` steht («Kap. 2.7 | …»). */
-function ankerZu(sit: SituationJson, knotenRef?: string) {
-  if (!knotenRef) return undefined
-  return sit.quellen_anker?.find((a) => a.ref && knotenRef.startsWith(a.ref))
 }
 
 /** Zeilenhöhe des Rasters (S. 3): eine Aussage in Handschrift passt in die Zelle. */
@@ -191,7 +182,7 @@ function Feld({ hoeheMm, minMm, wert, onChange, editierbar, className }: {
 }
 
 /** Scaffold-Spalte rechts neben der Leitfrage: So gehen Sie vor · Satzanfänge · Ins Produkt. */
-function ScaffoldSpalte({ sc }: { sc?: Leitfrage['scaffolding'] }) {
+function ScaffoldSpalte({ sc, insProdukt }: { sc?: Leitfrage['scaffolding']; insProdukt: string }) {
   const strategien = sc?.strategien?.filter(Boolean) ?? []
   const satzanfaenge = sc?.satzanfaenge?.filter(Boolean) ?? []
   const produkt = sc?.produkt?.trim() ?? ''
@@ -212,7 +203,7 @@ function ScaffoldSpalte({ sc }: { sc?: Leitfrage['scaffolding'] }) {
       )}
       {produkt && (
         <div>
-          <Mini>Ins Produkt</Mini>
+          <Mini>{insProdukt}</Mini>
           <p>{produkt}</p>
         </div>
       )}
@@ -234,19 +225,23 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
   /** Anteil am freien Platz der Seite (flex-grow des Blocks), z. B. 35 und 45 auf S. 2. */
   wachsen: number
 }) {
+  const w = worte(props.sit)
+  const feldLabel = w.schreibfeld(lf.nr)
   return (
     <section className="v42-lf v42-lf-waechst" style={{ flexGrow: wachsen }}>
       <div className="v42-lf-haupt">
         <div className="v42-lf-kopf">
-          <span className="v42-lf-nr">LF{lf.nr}</span>
+          {/* EBA: ausgeschrieben, nicht «LF1» (Besprechung 23.10.2026). */}
+          <span className="v42-lf-nr">{istEba(props.sit) ? `Leitfrage ${lf.nr}` : `LF${lf.nr}`}</span>
           <p className="v42-lf-text">{lf.text}</p>
         </div>
         <div className="v42-lf-meta">
-          {lf.bloom && <Badge variant="outline">{lf.bloom}</Badge>}
-          {lf.knoten_ref && <span className="v42-ref">{lf.knoten_ref}</span>}
-          {lf.liefert && <span className="v42-liefert">→ liefert: {lf.liefert}</span>}
+          {lf.bloom && w.bloomZeigen && <Badge variant="outline">{lf.bloom}</Badge>}
+          {lf.knoten_ref && <span className="v42-ref">{w.fundstelle(lf.knoten_ref)}</span>}
+          {lf.liefert && <span className="v42-liefert">{w.liefert} {lf.liefert}</span>}
         </div>
         {vorFeld}
+        {feldLabel && <Mini>{feldLabel}</Mini>}
         <Feld
           minMm={hoeheMm}
           wert={props.edits[feldKey] || ''}
@@ -254,15 +249,13 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
           editierbar={props.mode === 'fill'}
         />
       </div>
-      <ScaffoldSpalte sc={lf.scaffolding} />
+      <ScaffoldSpalte sc={lf.scaffolding} insProdukt={w.insProdukt} />
     </section>
   )
 }
 
 /**
  * Leere Tabelle zum Ausfüllen (Raster S. 3, Denkhilfe S. 4). Feste Zeilenhöhe; jede
-  /** Zeilen mit einzelnen vorgegebenen Zellen; leere Zellen bleiben Felder. Ersetzt `leer`. */
-  vorgabe?: string[][]
  * leere Zelle ist ein Feld, im Modus `fill` editierbar. `beispiel` füllt die erste
  * Zeile vor und kennzeichnet sie — gestrichelt und kursiv, weil das Heft
  * schwarz-weiss kopiert wird.
@@ -272,6 +265,8 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix,
   leer: number
   zeileMm: number
   beispiel?: string[]
+  /** Zeilen mit einzelnen vorgegebenen Zellen; leere Zellen bleiben Felder. Ersetzt `leer`. */
+  vorgabe?: string[][]
   keyPrefix: string
   props: HeftSeiteProps
   className: string
@@ -291,8 +286,6 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix,
             {spalten.map((_, c) => (
               <td key={c}>
                 {c === 0 && <span className="v42-beispiel-tag">Beispiel</span>}
-              const fest = vorgabe?.[r]?.[c]
-              if (fest) return <td key={c} className="v42-vorgabe">{fest}</td>
                 {beispiel[c] ?? ''}
               </td>
             ))}
@@ -302,6 +295,8 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix,
           <tr key={r} style={{ height: `${zeileMm}mm` }}>
             {spalten.map((_, c) => {
               const k = `${keyPrefix}${r + 1}_${c + 1}`
+              const fest = vorgabe?.[r]?.[c]
+              if (fest) return <td key={c} className="v42-vorgabe">{fest}</td>
               return (
                 <td key={c}>
                   <Feld
@@ -396,6 +391,13 @@ export function Seite1({ sit }: HeftSeiteProps) {
   const zahlen = sit.zahlen_tabelle ?? []
   const zahlenPaare: (typeof zahlen)[] = []
   for (let i = 0; i < zahlen.length; i += 2) zahlenPaare.push(zahlen.slice(i, i + 2))
+  // EBA: «So starten Sie» steht über der Situation (Besprechung EBA-gold 23.10.2026), EFZ unten.
+  const eba = istEba(sit)
+  const soStarten = (
+    <p className={eba ? 'v42-anweisung v42-anweisung-oben' : 'v42-anweisung'}>
+      <strong>So starten Sie:</strong>{` ${worte(sit).soStarten}`}
+    </p>
+  )
   return (
     <>
       <header className="v42-s1-kopf">
@@ -428,6 +430,8 @@ export function Seite1({ sit }: HeftSeiteProps) {
         </div>
       </header>
 
+      {eba && soStarten}
+
       <section className="v42-s1-situation">
         <p className="v42-situation-text">{sit.situation_text}</p>
         {zahlenPaare.length > 0 && (
@@ -451,7 +455,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
         <div className="leitfrage-callout v42-leitfrage">{sit.leitfrage}</div>
         {sit.mehrdeutigkeit?.trade_off && (
           <div className="v42-spannung">
-            <Mini>Spannungsfeld</Mini>
+            <Mini>{worte(sit).spannungsfeld}</Mini>
             <p className="v42-spannung-titel">{sit.mehrdeutigkeit.trade_off}</p>
             {sit.mehrdeutigkeit.hint && <p className="v42-spannung-hint">{sit.mehrdeutigkeit.hint}</p>}
           </div>
@@ -460,7 +464,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
 
       {(sit.quellen_anker?.length ?? 0) > 0 && (
         <section className="v42-s1-ressourcen">
-          <Mini>Im Lehrmittel</Mini>
+          <Mini>{worte(sit).imLehrmittel}</Mini>
           <ul>
             {sit.quellen_anker!.map((a, i) => (
               <li key={i}>
@@ -485,7 +489,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
 
       {(sit.wochen_plan?.length ?? 0) > 0 && (
         <section className="v42-s1-woche">
-          <Mini>Übersicht</Mini>
+          <Mini>{worte(sit).uebersicht}</Mini>
           <table className="v42-woche">
             <tbody>
               {sit.wochen_plan!.map((w, i) => (
@@ -496,15 +500,29 @@ export function Seite1({ sit }: HeftSeiteProps) {
         </section>
       )}
 
-      <p className="v42-anweisung">
-        <strong>So starten Sie:</strong> Lesen Sie die Situation genau. Markieren Sie, was Sie noch
-        nicht wissen oder können — am Ende des Hefts prüfen Sie es im Quer-Check (S. 8).
-      </p>
+      {!eba && soStarten}
     </>
   )
 }
 
 // ── Seite 2 · Wissensecke I ───────────────────────────────────────────────
+
+/** Nur EBA: das Glossar des Hefts (`sit.glossar`) als kompakter Kasten unter LF1. */
+function WichtigeWoerter({ sit }: { sit: SituationJson }) {
+  const glossar = (sit.glossar ?? []).filter((g) => g && g.begriff)
+  if (!glossar.length) return null
+  return (
+    <Kasten label="Wichtige Wörter" className="v42-woerter">
+      <dl>
+        {glossar.map((g, i) => (
+          <div key={i}>
+            <dt>{g.begriff}</dt> <dd>{g.definition}</dd>
+          </div>
+        ))}
+      </dl>
+    </Kasten>
+  )
+}
 
 export function Seite2(props: HeftSeiteProps) {
   const { sit } = props
@@ -519,14 +537,15 @@ export function Seite2(props: HeftSeiteProps) {
           <p>{sit.leitfragen_intro}</p>
         </section>
       )}
-      {[1, 2].map((nr) => {
-        const lf = leitfrage(sit, nr)
-        if (!lf) return null
+      {kernLeitfragen(sit).map((lf) => {
+        const nr = lf.nr
         // feld_hoehe_mm ist die Mindesthöhe; LF1 und LF2 teilen den freien Platz im
         // Verhältnis ihrer Mindesthöhen (35 : 45).
         const min = lf.feld_hoehe_mm || (nr === 1 ? 35 : 45)
         return <LfBlock key={nr} lf={lf} feldKey={`${kern}lf_${nr}`} hoeheMm={min} wachsen={min} props={props} />
       })}
+      {/* EBA: S. 2 trägt nur LF1 — der freie Platz gehört dem Schreibfeld und den Wörtern des Hefts. */}
+      {istEba(sit) && <WichtigeWoerter sit={sit} />}
     </>
   )
 }
@@ -535,7 +554,7 @@ export function Seite2(props: HeftSeiteProps) {
 
 export function Seite3(props: HeftSeiteProps) {
   const { sit, ns } = props
-  const lf = sit.leitfragen?.find((l) => l.antwortform === 'raster') ?? leitfrage(sit, 3)
+  const lf = rasterLeitfrage(sit)
   const raster = lf?.raster
   const pflicht = pflichtQuelle(sit)
   const auftrag = pflicht ? pflicht.auftrag : raster?.auftrag
@@ -546,12 +565,12 @@ export function Seite3(props: HeftSeiteProps) {
   const beispiel = pflicht ? undefined : raster?.beispielzeile
   return (
     <>
-      <SeitenKopf nr={3} titel="Quelle" />
+      <SeitenKopf nr={3} titel={worte(sit).seite3Titel} />
 
       {pflicht ? (
         <Quellenkarte q={pflicht} sit={sit} />
       ) : raster?.knoten_ref ? (
-        <Kasten label="Lehrmittel-Abschnitt" className="v42-quellenkarte">
+        <Kasten label={worte(sit).abschnitt} className="v42-quellenkarte">
           <p className="v42-q-titel">{raster.knoten_ref.replace(/\s*\|\s*/g, ' · ')}</p>
           {anker && <p className="v42-q-herkunft">{[anker.titel, anker.unterueberschrift].filter(Boolean).join(' · ')}</p>}
         </Kasten>
@@ -573,7 +592,8 @@ export function Seite3(props: HeftSeiteProps) {
             leer={zeilen - (beispiel ? 1 : 0)}
             zeileMm={RASTER_ZEILE_MM}
             beispiel={beispiel}
-            keyPrefix={`${ns}lf_3_raster_`}
+            vorgabe={raster?.vorgabe}
+            keyPrefix={`${ns}lf_${lf?.nr ?? 3}_raster_`}
             props={props}
             className="v42-raster"
             breiten={rasterBreiten(spalten)}
@@ -581,7 +601,6 @@ export function Seite3(props: HeftSeiteProps) {
         </section>
       )}
 
-            vorgabe={raster?.vorgabe}
       {/* Befund: mindestens 25 mm, nimmt den Rest der Seite. */}
       {lf && <LfBlock lf={lf} feldKey={`${ns}lf_${lf.nr}`} hoeheMm={lf.feld_hoehe_mm || 25} wachsen={1} props={props} />}
     </>
@@ -626,7 +645,7 @@ function Vertiefung({ k, props }: { k: KastenS4; props: HeftSeiteProps }) {
 
 export function Seite4(props: HeftSeiteProps) {
   const { sit, ns } = props
-  const lf = sit.leitfragen?.find((l) => !!l.pol_typ) ?? leitfrage(sit, 4)
+  const lf = beurteilenLeitfrage(sit)
   const k = sit.kasten_s4
   const hoehe = lf?.feld_hoehe_mm || (sit.spur === 'mit_medien' ? 60 : 45)
   return (

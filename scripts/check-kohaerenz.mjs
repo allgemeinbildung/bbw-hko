@@ -149,7 +149,7 @@ for (const ordner of A.ordner) {
     const ist = (h.json.feedback_kriterien ?? []).map((k) => k?.kn_kriterium)
     if (soll && !gleich(soll, ist)) B.fehler('ERR_KOH_KRITERIEN', `${h.datei} › feedback_kriterien`, `Heft: ${ist.join(' · ')} — Prinzip (kn_kriterien_verteilung.${h.heft}): ${soll.join(' · ')}`)
     for (const sp of SPUREN) {
-      const lf4 = (h.json.spuren?.[sp]?.leitfragen ?? []).find((l) => l?.nr === 4)
+      const lf4 = (h.json.spuren?.[sp]?.leitfragen ?? []).find((l) => l?.pol_typ) ?? (h.json.spuren?.[sp]?.leitfragen ?? []).find((l) => l?.nr === 4)
       const s = prinzip.pol_typ_verteilung?.[h.heft]?.[sp]
       if (lf4 && s && lf4.pol_typ !== s) B.fehler('ERR_KOH_POLTYP', `${h.datei} › spuren.${sp}.leitfragen[LF4].pol_typ`, `«${lf4.pol_typ ?? 'fehlt'}» — Prinzip (pol_typ_verteilung.${h.heft}.${sp}): «${s}»`)
     }
@@ -251,7 +251,7 @@ for (const ordner of A.ordner) {
     br.forEach((b, bi) => (b?.vollstaendig_wenn ?? []).forEach((t, i) => {
       if (!/Raster/.test(t)) return
       for (const a of anzahlenIn(t, { alles: true }).filter((x) => x.ding === 'zeil')) for (const sp of SPUREN) {
-        const lf3 = (h.json.spuren?.[sp]?.leitfragen ?? []).find((l) => l?.nr === 3)
+        const lf3 = (h.json.spuren?.[sp]?.leitfragen ?? []).find((l) => l?.antwortform === 'raster') ?? (h.json.spuren?.[sp]?.leitfragen ?? []).find((l) => l?.nr === 3)
         const n = lf3?.raster?.zeilen ?? h.json.spuren?.[sp]?.quellen?.[0]?.raster?.zeilen
         if (!Number.isFinite(n)) continue
         const moeglich = [n, n - 1, n + 1].filter((x) => x === n || lf3?.raster?.beispielzeile || h.json.spuren?.[sp]?.quellen?.[0]?.raster?.beispielzeile)

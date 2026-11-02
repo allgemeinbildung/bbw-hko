@@ -1,0 +1,725 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen — Lehrvertrag verstehen",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Mein Lehrvertrag: Was steht da drin?",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Lehrvertrag überblicken"
+  },
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_v42_prinzip",
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      1,
+      7,
+      11
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann mich in der Arbeits- und Ausbildungswelt anhand der Informationen zum Lehrvertrag orientieren und bei Fragen oder Konflikten bei dafür vorgesehenen Kontaktstellen Unterstützung holen.",
+    "lebensbezug_text": "Ich kenne meine Rechte beim Berufseinstieg und organisiere mich digital."
+  },
+  "persona": {
+    "beruf": "Lernende/r EBA, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr meiner EBA-Lehre. Vor dem Lehrbeginn habe ich meinen Lehrvertrag unterschrieben. Heute nehme ich ihn wieder hervor. Er ist ein Formular mit vielen Feldern und Fachwörtern. Meine Probezeit läuft noch. Eine Kollegin fragt mich nach meinen Ferien. Ich suche lange. Bei den Ferien steht: «Betriebsferien gemäss Reglement». Das verstehe ich nicht. Das ärgert mich. Muss ich jetzt alles Wort für Wort lesen? Oder gibt es einen besseren Weg? Ich will eine Übersicht machen. Dann finde ich das Wichtige schnell. Vier Angaben aus meinem Vertrag stehen in der Tabelle.",
+  "zahlen_tabelle": [
+    {
+      "label": "Probezeit",
+      "wert": "3 Monate"
+    },
+    {
+      "label": "Lohn im 1. Lehrjahr (pro Monat, brutto)",
+      "wert": "CHF 650"
+    },
+    {
+      "label": "Ferien pro Jahr",
+      "wert": "5 Wochen"
+    },
+    {
+      "label": "Arbeitszeit pro Woche",
+      "wert": "42 Stunden"
+    }
+  ],
+  "leitfrage": "Wie finde ich in meinem Lehrvertrag schnell, was für mich wichtig ist?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Alles genau lesen vs. das Wichtige heraussuchen",
+    "hint": "Alles lesen ist sicher, aber es dauert lange. Heraussuchen geht schnell, aber Sie können etwas übersehen. Beides kann richtig sein."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "So ist ein Lehrvertrag aufgebaut",
+      "unterueberschrift": "Abschnitte und Felder",
+      "seiten": "Info-Karte A-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Standard oder speziell?",
+      "unterueberschrift": "Was gilt für alle?",
+      "seiten": "Info-Karte A-02",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Wichtig für mich",
+      "unterueberschrift": "Auswählen und fragen",
+      "seiten": "Info-Karte A-03",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bauen Schritt für Schritt Ihre Vertragsübersicht. Leitfrage 1 gibt Ihnen die Abschnitte. Leitfrage 2 zeigt: Was gilt für alle, was nur im Betrieb? Leitfrage 3 zeigt Ihre zwei wichtigsten Punkte und Ihre Frage.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte A-01",
+      "text": "Welche Abschnitte hat ein Lehrvertrag? Schreiben Sie die vier Abschnitte auf. Schreiben Sie zu jedem Abschnitt einen Vertragspunkt als Beispiel.",
+      "liefert": "die Abschnitte für die Übersicht",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 60,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie die Info-Karte A-01 im Dossier.",
+          "Unterstreichen Sie dort die Namen der Abschnitte.",
+          "Schauen Sie in die Tabelle auf Seite 1. In welchen Abschnitt gehört jede Zeile?"
+        ],
+        "satzanfaenge": [
+          "«Ein Abschnitt heisst …»",
+          "«In diesem Abschnitt steht zum Beispiel …»",
+          "«Dazu gehört zum Beispiel …»"
+        ],
+        "produkt": "Die Abschnitte sind die Zeilen in Ihrer Vertragsübersicht."
+      },
+      "loesung": {
+        "kern": "Die typischen Abschnitte des Formulars",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Vier Abschnitte mit je einem Beispiel. Die Namen dürfen eigene Wörter sein.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Die vier Abschnitte",
+            "text": "Die Personen. Beruf und Dauer, mit der Probezeit. Lohn, Ferien und Arbeitszeit. Rechte und Pflichten.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Beispiele",
+            "text": "Beruf und Dauer: Probezeit 3 Monate. Lohn, Ferien und Arbeitszeit: CHF 650, 5 Wochen, 42 Stunden. Zu Personen und zu Rechten und Pflichten genügt ein eigenes Beispiel."
+          },
+          {
+            "label": "Verweis",
+            "text": "Ein Verweis zeigt auf einen anderen Text, zum Beispiel ein Reglement. Er ist kein eigener Abschnitt.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Das Formular Wort für Wort abschreiben, statt Abschnitte zu bilden."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Vertragsübersicht als Tabelle",
+    "titel": "Meine Vertragsübersicht",
+    "format_detail": "Eine Tabelle auf einer Seite: Abschnitt, Vertragspunkt, Standard oder betriebsspezifisch. Dazu markieren Sie zwei wichtige Punkte und schreiben eine Frage.",
+    "beschreibung": "Ich ordne meinen Lehrvertrag in einer Tabelle. Ich markiere, was für mich jetzt wichtig ist. Ich schreibe eine klare Frage zu einem Punkt, den ich nicht verstehe.",
+    "schritte": [
+      {
+        "label": "01 Tabelle anlegen",
+        "hint": "Zeichnen Sie auf S. 7 eine Tabelle mit drei Spalten wie im Beispiel (S. 6). Tragen Sie Ihre vier Abschnitte aus Leitfrage 1 ein."
+      },
+      {
+        "label": "02 Punkte zuordnen",
+        "hint": "Tragen Sie die Vertragspunkte von S. 1 bei den Abschnitten ein. Notieren Sie wie in Leitfrage 2 (S. 3): Standard oder betriebsspezifisch?"
+      },
+      {
+        "label": "03 Wichtiges markieren",
+        "hint": "Markieren Sie Ihre zwei wichtigsten Punkte aus Leitfrage 3 (S. 4) mit einem Kreis."
+      },
+      {
+        "label": "04 Frage schreiben",
+        "hint": "Schreiben Sie unter die Tabelle Ihre Frage aus Leitfrage 3 (S. 4). Nennen Sie darin den Vertragspunkt."
+      },
+      {
+        "label": "05 Prüfen",
+        "hint": "Lesen Sie die zwei Kriterien (S. 5). Kreuzen Sie bei jedem Kriterium ein Feld an. Verbessern Sie eine Zeile."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Vertragsübersicht mit vier Abschnitten",
+      "Zwei markierte Punkte und eine Frage",
+      "Raster von Seite 3"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Vertrag: mein Handy-Abo",
+      "legende": [
+        {
+          "key": "wichtig",
+          "text": "jetzt wichtig für mich"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Meine Übersicht",
+          "kopf": [
+            "Abschnitt",
+            "Vertragspunkt",
+            "Gilt für wen?"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Personen",
+                "ich und die Firma",
+                "alle Kunden"
+              ]
+            },
+            {
+              "zellen": [
+                "Preis",
+                "CHF 29 pro Monat",
+                "nur mein Abo"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "Dauer",
+                "12 Monate",
+                "nur mein Abo"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "Regeln",
+                "Kündigung gemäss AGB",
+                "alle Kunden"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Unter der Tabelle",
+          "eintraege": [
+            {
+              "text": "Wichtig jetzt: Preis und Dauer. Ich bezahle jeden Monat, und das ein ganzes Jahr lang."
+            },
+            {
+              "text": "Meine Frage: «Bei der Kündigung steht: gemäss AGB. Was heisst AGB, und wo finde ich sie?»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: mein Lehrvertrag",
+      "hinweis": "Eine mögliche Übersicht, keine Vorlage. Die vier Abschnitte dürfen anders heissen; der dritte hat hier drei Vertragspunkte. Welche zwei Punkte markiert sind, ist frei — es zählt der Grund. Bei den Ferien zählen beide Zuordnungen, wenn ein Grund dasteht. Erst zeigen, wenn die eigene Tabelle steht.",
+      "legende": [
+        {
+          "key": "wichtig",
+          "text": "jetzt wichtig für mich"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Meine Übersicht",
+          "kopf": [
+            "Abschnitt",
+            "Vertragspunkt",
+            "Gilt für wen?"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Personen",
+                "ich und mein Lehrbetrieb",
+                "nur mein Vertrag"
+              ]
+            },
+            {
+              "zellen": [
+                "Beruf und Dauer",
+                "Probezeit: 3 Monate",
+                "alle haben eine Probezeit"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "Lohn, Ferien, Arbeitszeit",
+                "Lohn: CHF 650 pro Monat",
+                "nur mein Betrieb"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "Lohn, Ferien, Arbeitszeit",
+                "Arbeitszeit: 42 Stunden",
+                "nur mein Betrieb"
+              ]
+            },
+            {
+              "zellen": [
+                "Lohn, Ferien, Arbeitszeit",
+                "Ferien: 5 Wochen pro Jahr",
+                "alle bis 20: mind. 5 Wochen"
+              ]
+            },
+            {
+              "zellen": [
+                "Rechte und Pflichten",
+                "Der Betrieb bildet mich aus",
+                "alle: Standard"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Unter der Tabelle",
+          "eintraege": [
+            {
+              "text": "Wichtig jetzt: Probezeit und Lohn. Die Probezeit läuft noch, und der Lohn kommt jeden Monat."
+            },
+            {
+              "text": "Meine Frage: «Bei den Ferien steht: Betriebsferien gemäss Reglement. Welches Reglement ist gemeint? Wo finde ich es?»"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "dimension": "SuK",
+      "stufen": [
+        "Die Fachwörter fehlen oder sind falsch. Die Sprache hat viele Fehler.",
+        "Einige Fachwörter stimmen. Die Sprache hat noch einige Fehler.",
+        "Die Fachwörter stimmen und passen zum Fall. Die Sprache ist meistens richtig.",
+        "Die Fachwörter stimmen und sind mit eigenen Worten erklärt. Die Sprache ist richtig."
+      ],
+      "name_lernende": "Fachwörter und Sprache",
+      "stufen_lernende": [
+        "Ich benutze keine Fachwörter, oder sie sind falsch. Ich mache viele Fehler beim Schreiben.",
+        "Einige Fachwörter sind richtig. Ich mache noch einige Fehler beim Schreiben.",
+        "Die Fachwörter sind richtig und passen zum Fall. Ich schreibe meistens richtig.",
+        "Die Fachwörter sind richtig. Ich erkläre sie mit eigenen Worten. Ich schreibe richtig."
+      ],
+      "indikator_produkt": "Die Abschnitte haben passende Namen. Standard und betriebsspezifisch stimmen."
+    },
+    {
+      "kn_kriterium": "Rechtliches Prinzip",
+      "dimension": "Ges",
+      "stufen": [
+        "Die passende Stelle im Dokument und das passende Vorgehen fehlen.",
+        "Die passende Stelle oder das passende Vorgehen ist zum Teil erkannt.",
+        "Die passende Stelle ist gefunden. Das Vorgehen passt zum Fall.",
+        "Stelle und Vorgehen stimmen. Beides ist auf einen neuen Fall übertragen."
+      ],
+      "name_lernende": "Die richtige Stelle finden",
+      "stufen_lernende": [
+        "Ich finde die richtige Stelle im Vertrag nicht. Ich weiss nicht, was ich tun soll.",
+        "Ich finde die Stelle oder ich weiss, was ich tun soll. Aber nur zum Teil.",
+        "Ich finde die richtige Stelle. Mein Vorgehen passt zum Fall.",
+        "Stelle und Vorgehen stimmen. Ich kann beides auch bei einem neuen Fall anwenden."
+      ],
+      "indikator_produkt": "Die zwei Punkte passen zum Fall. Die Frage nennt den Vertragspunkt."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel einer Übersicht an einem anderen Vertrag (S. 6) und die Beispielzeile im Raster (S. 3).",
+    "scaffold_100": "Nehmen Sie Ihren eigenen Lehrvertrag. Suchen Sie dort einen Verweis. Schreiben Sie auf: Auf welchen Text zeigt er?"
+  },
+  "methoden": [
+    {
+      "ref": "hko-eba-formular-ueberfliegen",
+      "fuer": "für den ersten Blick auf den Lehrvertrag"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-eba-wort-klaeren",
+      "fuer": "für Fachwörter wie Reglement oder Probezeit"
+    },
+    {
+      "ref": "hko-eba-klare-frage",
+      "fuer": "für Ihre Frage unter der Tabelle"
+    }
+  ],
+  "mindmap_zentrum": "Selbst klären oder Hilfe holen",
+  "mindmap_aeste": [
+    {
+      "titel": "Aufbau",
+      "punkte": [
+        "Lehrvertrag",
+        "Abschnitt",
+        "Vertragspunkt"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Für wen gilt es?",
+      "punkte": [
+        "Standard",
+        "betriebsspezifisch",
+        "Probezeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Unklare Stellen",
+      "punkte": [
+        "Verweis",
+        "Reglement"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Finde ich jetzt schnell, wie viele Wochen Ferien ich habe?",
+      "Weiss ich, zu welchem Punkt ich eine Frage stelle?"
+    ],
+    "mitnahme": [
+      "Mein Weg durch ein Formular",
+      "Meine Frage",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Lehrvertrag",
+          "nach": "Abschnitt",
+          "text": "hat mehrere"
+        },
+        {
+          "von": "Abschnitt",
+          "nach": "Vertragspunkt",
+          "text": "enthält"
+        },
+        {
+          "von": "Probezeit",
+          "nach": "Standard",
+          "text": "ist ein Beispiel für"
+        },
+        {
+          "von": "Verweis",
+          "nach": "Reglement",
+          "text": "zeigt auf ein"
+        },
+        {
+          "von": "Abschnitt",
+          "nach": "gilt auch bei …",
+          "text": "hilft auch dort beim Überblick"
+        }
+      ],
+      "transfer": "Handy-Abo, Mietvertrag, Vertrag mit dem Fitnesscenter",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Lohn",
+          "Ferien"
+        ]
+      },
+      "quercheck": [
+        "Ja: im Abschnitt zu Lohn, Ferien und Arbeitszeit. Dort stehen 5 Wochen.",
+        "Ja: zu den Betriebsferien gemäss Reglement."
+      ],
+      "mitnahme": [
+        "Zuerst die Abschnitte anschauen, dann das Wichtige suchen.",
+        "Welches Reglement ist gemeint? Wo finde ich es?",
+        "Was genau im Reglement steht."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Leitfrage 1 nennt vier Abschnitte mit Beispiel",
+        "Leitfrage 3 nennt zwei wichtige Punkte mit Grund",
+        "Leitfrage 3 enthält eine Frage zu einem Punkt"
+      ]
+    },
+    {
+      "produkt": "Raster",
+      "vollstaendig_wenn": [
+        "Raster mit drei Zeilen",
+        "Jede Zeile hat einen Begriff (Leitfrage 1 oder Glossar)",
+        "Ergebnis in zwei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Vertragsübersicht",
+      "vollstaendig_wenn": [
+        "Vier Abschnitte mit Vertragspunkten",
+        "Zwei Punkte sind markiert",
+        "Eine Frage steht unter der Tabelle"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Quer-Check: jede Frage abgehakt und beantwortet",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Leitfrage 1",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Leitfrage 2 mit Raster, Leitfrage 3 mit Denkhilfe",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Vertragsübersicht, Kriterien, Abschluss mit Quer-Check",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo hilft Ihnen ein Überblick sonst noch bei einem schwierigen Dokument?",
+    "ziel": "Ich verschaffe mir zuerst einen Überblick. Dann suche ich gezielt das Wichtige."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Ein dichtes Formular gliedern, zuordnen und das Wichtige heraussuchen",
+    "lehrmittel_anker": "Dossier, Info-Karten A-01 bis A-03 (EBA hat kein Lehrmittel).",
+    "kn_aktivierung": "Im KN liegt wieder ein dichtes Formular vor: Der passende Vertragspunkt zur Arbeitszeit ist zu finden, ein Verweis bleibt offen.",
+    "transfer_check": "Verschafft sich die lernende Person zuerst einen Überblick, statt alles zu lesen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 1,
+      "wo": "LF3 + Denkhilfe — wichtige von weniger wichtigen Vertragspunkten trennen"
+    },
+    {
+      "sk": 7,
+      "wo": "Produkt, Schritt 04 — eine klare, höfliche Frage an eine Person im Betrieb schreiben"
+    },
+    {
+      "sk": 11,
+      "wo": "Spannungsfeld + LF3 — alles lesen oder heraussuchen bleibt beides begründbar"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 2,
+          "bloom": "Anwenden",
+          "knoten_ref": "Dossier | Info-Karte A-02",
+          "text": "Füllen Sie das Raster aus. Was gilt für alle Lernenden? Was gilt nur in Ihrem Betrieb? Schreiben Sie danach Ihr Ergebnis in zwei Sätzen auf.",
+          "liefert": "Zuordnung Standard oder betriebsspezifisch",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Dossier | Info-Karte A-02",
+            "auftrag": "Lesen Sie die Info-Karte A-02. Im Raster ist die erste Zeile schon ausgefüllt, als Beispiel. Füllen Sie Zeile 2 und 3 aus: Nehmen Sie zwei Punkte aus der Tabelle auf Seite 1.",
+            "spalten": [
+              "Vertragspunkt",
+              "Das steht bei mir",
+              "Gilt für wen?",
+              "→ Begriff"
+            ],
+            "zeilen": 3,
+            "beispielzeile": [
+              "Probezeit",
+              "3 Monate",
+              "alle haben eine Probezeit",
+              "Standard"
+            ]
+          },
+          "feld_hoehe_mm": 30,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie zuerst die Beispielzeile im Raster.",
+              "Suchen Sie Ihren Punkt auf der Info-Karte A-02.",
+              "Schreiben Sie nur Stichworte in das Raster."
+            ],
+            "satzanfaenge": [
+              "«Für alle Lernenden gilt …»",
+              "«Nur in meinem Betrieb gilt …»",
+              "«Das erkenne ich daran: …»"
+            ],
+            "produkt": "Die Zuordnung kommt in die dritte Spalte Ihrer Vertragsübersicht."
+          },
+          "loesung": {
+            "kern": "Was für alle gilt, was der Betrieb festlegt",
+            "quelle_ref": "Dossier | Info-Karte A-02",
+            "quelle_stand": "2026-10-09",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Drei Zeilen. Standard kommt aus dem Gesetz und gilt für alle. Betriebsspezifisch legt der Betrieb fest. Bei der Probezeit ist Standard, dass es sie gibt; die Dauer steht im Vertrag.",
+                "quelle": "Info-Karte A-02"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "Ferien: Mindestens 5 Wochen bis 20 Jahre sind Standard. Mehr Wochen sind betriebsspezifisch. Beide Antworten zählen mit Grund.",
+                "quelle": "Info-Karte A-02"
+              },
+              {
+                "label": "Begriffe",
+                "text": "In der letzten Spalte steht Standard oder betriebsspezifisch. Auch «Vertragspunkt» ist möglich."
+              },
+              {
+                "label": "Befund",
+                "text": "Nennt je ein Beispiel für beide Arten. Beide Arten stehen im gleichen Formular.",
+                "quelle": "Info-Karte A-02"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Probezeit",
+                "3 Monate",
+                "alle haben eine Probezeit",
+                "Standard"
+              ],
+              [
+                "Lohn im 1. Lehrjahr",
+                "CHF 650 pro Monat",
+                "nur mein Betrieb",
+                "betriebsspezifisch"
+              ],
+              [
+                "Arbeitszeit",
+                "42 Stunden pro Woche",
+                "nur mein Betrieb",
+                "betriebsspezifisch"
+              ]
+            ],
+            "befund": "Alle Lernenden haben eine Probezeit, das kommt aus dem Gesetz. Mein Lohn und meine Arbeitszeit gelten nur in meinem Betrieb."
+          }
+        },
+        {
+          "nr": 3,
+          "bloom": "Entscheiden",
+          "knoten_ref": "Info-Karte A-03 ↔ eigener Fall",
+          "pol_typ": "modell_eigener_fall",
+          "text": "Sie müssen nicht alles auf einmal verstehen. Welche zwei Vertragspunkte sind für Sie jetzt am wichtigsten? Zu welchem Punkt haben Sie eine Frage? Begründen Sie.",
+          "liefert": "zwei wichtige Punkte und eine Frage",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus. Schreiben Sie erst danach.",
+              "Fragen Sie sich bei jedem Punkt: Betrifft mich das schon diesen Monat?",
+              "Schreiben Sie Ihre Frage so: Vertragspunkt nennen, dann fragen."
+            ],
+            "satzanfaenge": [
+              "«Jetzt wichtig ist für mich …, weil …»",
+              "«Das kann noch warten: …»",
+              "«Meine Frage lautet: …»"
+            ],
+            "produkt": "Die zwei Punkte markieren Sie in der Tabelle. Die Frage steht darunter."
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: auswählen, begründen, fragen",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Zwei Punkte sind gewählt, und ein Grund steht da (zum Beispiel: betrifft mich diesen Monat).",
+                "Die Frage nennt den Vertragspunkt.",
+                "Es ist erkennbar: Die lernende Person wählt bewusst aus."
+              ],
+              "beispiel_pol_1": "Heraussuchen: «Jetzt wichtig sind für mich die Probezeit und der Lohn. Die Probezeit läuft noch, und der Lohn kommt jeden Monat. Die Ferien können warten. Meine Frage lautet: Bei den Ferien steht ‹Betriebsferien gemäss Reglement›. Welches Reglement ist gemeint?»",
+              "beispiel_pol_2": "Alles genau lesen: «Ich lese zuerst jeden Abschnitt genau. Ich habe den Vertrag unterschrieben. Darum will ich alles kennen. Am wichtigsten sind danach die Arbeitszeit und die Ferien: Ich plane meine Woche und meinen Sommer. Meine Frage lautet: Wo finde ich das Reglement zu den Betriebsferien?»",
+              "nicht_tragfaehig": "Zwei Punkte ohne Grund. Oder die Frage «Ich verstehe den Vertrag nicht» ohne Vertragspunkt."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe – zuerst hier Stichworte, dann schreiben",
+        "spalten": [
+          "Wichtig für mich jetzt",
+          "Das kann warten",
+          "Hier frage ich nach"
+        ],
+        "hinweis": "Schreiben Sie in jede Spalte ein bis zwei Stichworte. Begründen Sie danach Ihre Wahl im Schreibfeld.",
+        "loesung_zeilen": [
+          [
+            "Probezeit: läuft noch",
+            "Ferien: erst im Sommer",
+            "Betriebsferien: welches Reglement?"
+          ],
+          [
+            "Lohn: jeden Monat",
+            "Zeugnis am Ende der Lehre",
+            "Wo finde ich das Reglement?"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-eba-raster-fuellen",
+        "fuer": "für das Raster zur Info-Karte (S. 3)",
+        "beispiel": [
+          "Vertragspunkt: Dauer vom Velo-Mietvertrag",
+          "Das steht bei mir: 3 Tage",
+          "Gilt für wen? nur für meinen Vertrag",
+          "Begriff: Vertragspunkt"
+        ]
+      },
+      "scaffold_90": "Beispiel einer Übersicht an einem anderen Vertrag (S. 6) und die Beispielzeile im Raster (S. 3)."
+    }
+  }
+}

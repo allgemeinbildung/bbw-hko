@@ -3,6 +3,7 @@ import { HandlungsFlaeche } from '../chrome'
 import { ChecklisteVollstaendigkeit, MethodenGrid } from '../DocS'
 import { RUBRIK_PUNKTE_LABELS } from '../../../../lib/einheiten/rubrik-skala'
 import type { SituationJson } from '../../../../lib/einheiten/types'
+import { istEba, worte } from '../../../../lib/einheiten/v42-profil'
 import { Kasten, SeitenKopf, type HeftSeiteProps } from './gemeinsam'
 import { Begriffsnetz, ChecklisteZweispaltig, GlossarStreifen } from './begriffsnetz'
 import { BeispielBand } from './produkt-bild'
@@ -91,10 +92,14 @@ function schrittTeile(label: string, i: number): { nr: string; text: string } {
 function FeedbackKriterien(props: HeftSeiteProps) {
   const kriterien = (props.sit.feedback_kriterien || []).filter((k) => k && k.kn_kriterium)
   if (!kriterien.length) return null
+  const w = worte(props.sit)
+  // EBA: die Ich-Fassung für Lernende (`name_lernende`, `stufen_lernende`), sonst der
+  // KN-Wortlaut zeichengenau (Entscheid Pietro 02.11.2026, Variante b). EFZ unverändert.
+  const eba = istEba(props.sit)
   return (
     <section className="v42-kriterien">
       <div className="v42-kasten-label">Feedback-Kriterien</div>
-      <p className="v42-arbeitsanweisung">Kreuzen Sie vor der Abgabe in der Spalte «Selbst» Ihre Punkte an.</p>
+      <p className="v42-arbeitsanweisung">{w.selbstAnweisung}</p>
       <table className="v42-krit-tabelle">
         <colgroup>
           <col className="v42-krit-punkte" />
@@ -104,18 +109,20 @@ function FeedbackKriterien(props: HeftSeiteProps) {
         <thead>
           <tr>
             <th>Punkte</th>
-            <th>Beschreibung (Wortlaut Kompetenznachweis)</th>
-            <th>Selbst</th>
+            <th>{w.kriterienBeschreibung}</th>
+            <th>{w.selbst}</th>
           </tr>
         </thead>
         {kriterien.map((k, ki) => {
           const [wahl, setze] = eingabe(props, `selbst_${ki}`)
+          const name = (eba && k.name_lernende) || k.kn_kriterium
+          const stufen = eba && k.stufen_lernende?.length === k.stufen.length ? k.stufen_lernende : k.stufen
           return (
             <tbody key={ki}>
               <tr className="v42-krit-kopf">
                 <th colSpan={3}>
-                  <span className="v42-krit-name">{k.kn_kriterium}</span>
-                  {k.dimension && <span className="v42-krit-dim">{k.dimension}</span>}
+                  <span className="v42-krit-name">{name}</span>
+                  {k.dimension && <span className="v42-krit-dim">{w.dimension(k.dimension)}</span>}
                   {k.indikator_produkt && (
                     <span className="v42-krit-indikator">
                       <span className="v42-krit-frage">Woran sehe ich das in meinem Produkt?</span> {k.indikator_produkt}
@@ -123,7 +130,7 @@ function FeedbackKriterien(props: HeftSeiteProps) {
                   )}
                 </th>
               </tr>
-              {k.stufen.map((s, si) => (
+              {stufen.map((s, si) => (
                 <tr key={si} className={wahl === String(si) ? 'v42-krit-stufe gewaehlt' : 'v42-krit-stufe'}>
                   <td className="v42-krit-nr">{RUBRIK_PUNKTE_LABELS[si] ?? `${si} Punkte`}</td>
                   <td className="v42-krit-text">{s}</td>
@@ -181,7 +188,7 @@ export function Seite5(props: HeftSeiteProps) {
       )}
       <FeedbackKriterien {...props} />
       {plus && (
-        <Kasten label="Plus" className="v42-plus">
+        <Kasten label={worte(sit).plus} className="v42-plus">
           <p>{plus}</p>
         </Kasten>
       )}
@@ -207,10 +214,7 @@ export function Seite6({ sit }: HeftSeiteProps) {
   return (
     <>
       <SeitenKopf nr={6} titel="Methoden" />
-      <p className="methoden-intro">
-        Vier Werkzeuge, vier Felder. Wo ein Kapitel steht, schlagen Sie im Lehrmittel nach —
-        hier steht, was Sie damit für diese Abgabe machen. Die übrigen Felder stehen für sich.
-      </p>
+      <p className="methoden-intro">{worte(sit).methodenIntro}</p>
       {bild ? (
         <div className="v42-pb-s6">
           <MethodenGrid sit={sit} />
@@ -227,18 +231,17 @@ export function Seite6({ sit }: HeftSeiteProps) {
 // Seite 7 — Arbeitsfläche
 // ---------------------------------------------------------------------------
 
-/** Hinweis über der Arbeitsfläche — gleicher Wortlaut im Word (docx-heft-v42-5-8.ts). */
-export const ARBEITSFLAECHE_HINWEIS =
-  'Auftrag und Schritte stehen auf S. 5. Die Methoden auf S. 6 stehen Ihnen für Ihr Produkt frei zur Verfügung.'
-
-/** Freie Fläche über den Rest der Seite; Beschriftung = Produkttitel, darüber der Verweis auf S. 5 und 6. */
+/**
+ * Freie Fläche über den Rest der Seite; Beschriftung = Produkttitel, darüber der Verweis auf
+ * S. 5 und 6 (`worte().arbeitsflaeche` — gleicher Wortlaut im Word, docx-heft-v42-5-8.ts).
+ */
 export function Seite7(props: HeftSeiteProps) {
   const label = props.sit.handlungsprodukt?.titel || 'Hier erarbeiten'
   const [wert, setze] = eingabe(props, 'produkt')
   return (
     <>
       <SeitenKopf nr={7} titel="Arbeitsfläche" />
-      <p className="methoden-intro">{ARBEITSFLAECHE_HINWEIS}</p>
+      <p className="methoden-intro">{worte(props.sit).arbeitsflaeche}</p>
       {setze ? (
         <HandlungsFlaeche label={label} value={wert} onChange={setze} />
       ) : (
@@ -297,22 +300,21 @@ export function Seite8(props: HeftSeiteProps) {
   const quercheck = (sit.abschluss?.quercheck || []).filter(Boolean)
   const mitnahme = (sit.abschluss?.mitnahme || []).filter(Boolean)
   // Begriffsnetz + Glossar (E17), sobald das Heft ein Glossar trägt; sonst die Mindmap.
-  const netz = (sit.glossar?.length ?? 0) > 0 && (sit.mindmap_aeste?.length ?? 0) > 0
+  // EBA: weder Begriffsnetz noch Mindmap (Entscheid Pietro 02.11.2026) — der Platz geht an
+  // Quer-Check (mit Antwortzeile), «Das nehme ich mit» und die Checkliste.
+  const ohneNetz = !worte(sit).begriffsnetz
+  const netz = !ohneNetz && (sit.glossar?.length ?? 0) > 0 && (sit.mindmap_aeste?.length ?? 0) > 0
   return (
     <>
       <SeitenKopf nr={8} titel="Abschluss" />
       {netz && (
         <>
-          <p className="v42-arbeitsanweisung">
-            Verbinden Sie Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei Begriffe
-            zusammenhängen — mindestens fünf Verbindungen, eine davon zum Feld «{transferTitel}»: eine andere Lage, in der dasselbe gilt.
-            Schreiben Sie in die zwei leeren Knoten je einen Begriff aus Ihrem Raster (S. 3).
-          </p>
+          <p className="v42-arbeitsanweisung">{worte(sit).netzAnweisung(transferTitel)}</p>
           <Begriffsnetz sit={sit} />
           <GlossarStreifen sit={sit} />
         </>
       )}
-      {!netz && (sit.mindmap_aeste?.length ?? 0) > 0 && (
+      {!netz && !ohneNetz && (sit.mindmap_aeste?.length ?? 0) > 0 && (
         <>
           <p className="v42-arbeitsanweisung">
             Verbinden Sie die Begriffe mit Linien und schreiben Sie an jede Linie, wie die zwei
@@ -325,14 +327,16 @@ export function Seite8(props: HeftSeiteProps) {
       )}
       {quercheck.length > 0 && (
         <section className="v42-quercheck">
-          <div className="v42-kasten-label">Quer-Check — die offenen Fragen der Situation</div>
+          <div className="v42-kasten-label">{worte(sit).quercheck}</div>
           <ul>
             {quercheck.map((q, i) => {
               const [wert, setze] = eingabe(props, `quercheck_${i}`)
+              const [antwort, setzeAntwort] = eingabe(props, `quercheck_antwort_${i}`)
               return (
                 <li key={i}>
                   <Kaestchen an={!!wert} onToggle={setze && (() => setze(wert ? '' : 'x'))} label={q} />
                   <span>{q}</span>
+                  {ohneNetz && <Zeile value={antwort} onChange={setzeAntwort} />}
                 </li>
               )
             })}
@@ -343,7 +347,7 @@ export function Seite8(props: HeftSeiteProps) {
         <section className="v42-mitnahme">
           <div className="v42-kasten-label">Das nehme ich mit</div>
           {/* Mit Begriffsnetz fehlt der Platz für die Anweisung — Label und Zeilen reichen. */}
-          {!netz && <p className="v42-arbeitsanweisung">Halten Sie in drei Zeilen fest, was Sie aus diesem Heft weiterverwenden.</p>}
+          {!netz && <p className="v42-arbeitsanweisung">{worte(sit).mitnahme}</p>}
           {mitnahme.map((m, i) => {
             const [wert, setze] = eingabe(props, `mitnahme_${i}`)
             return (

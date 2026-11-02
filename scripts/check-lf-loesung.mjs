@@ -65,7 +65,7 @@ for (const slug of targets) {
 
       // v4.2, LF4: `loesung.erwartungshorizont` traegt die Loesung, `zeilen` darf fehlen.
       const eh = sol?.erwartungshorizont
-      if (v42 && lf.nr === 4 && !sol.zeilen?.length && eh && typeof eh === 'object' && Object.keys(eh).length) {
+      if (v42 && (lf.nr === 4 || lf.pol_typ) && !sol.zeilen?.length && eh && typeof eh === 'object' && Object.keys(eh).length) {
         if ((sol.kern ?? '').length > LIMITS.kern) {
           console.log(`WARN_LF_LOESUNG_ZU_LANG  ${tag} — kern ${sol.kern.length} Zeichen (max ${LIMITS.kern}): «${sol.kern}»`)
           befunde++

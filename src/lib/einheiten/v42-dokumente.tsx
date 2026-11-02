@@ -9,6 +9,7 @@ import { buildLoesungen } from './docx-loesungen-v42'
 import { loesungenModell, loesungenTitel } from './loesungen-v42'
 import { SPUR_KEYS, isV42 } from './spuren'
 import type { EinheitFullSet, SpurKey } from './types'
+import { istEba } from './v42-profil'
 
 /**
  * Welche v4.2-Dokumente es zu einer Einheit gibt — EINE Liste für alle Abnehmer:
@@ -70,7 +71,8 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
       if (!sit || !isV42(sit) || sit.spur !== spur) continue
       out.push({
         datei: heftDatei(L, spur),
-        titel: `Heft ${L} · ${SPUR_TITEL[spur]} · ${sit.titel ?? ''}`.trim(),
+        // EBA kennt nur eine Spur — der Zusatz entfällt wie im Kopf des Hefts.
+        titel: (istEba(sit) ? `Heft ${L} · ${sit.titel ?? ''}` : `Heft ${L} · ${SPUR_TITEL[spur]} · ${sit.titel ?? ''}`).trim(),
         markup: () =>
           renderToStaticMarkup(<DocS sit={sit} set={d.set} abteilung={abteilung} mode="fill" edits={{}} onEdit={() => {}} />),
         docx: () => buildDocS({ sit, set: d.set, abteilung, mode: 'fill', logoPng }),
@@ -99,7 +101,7 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
       if (!sit || !isV42(sit) || sit.spur !== spur || !loesungenModell(sit)) continue
       out.push({
         datei: loesungenDatei(L, spur),
-        titel: `${loesungenTitel(L, spur)} · ${sit.titel ?? ''}`.replace(/ · $/, ''),
+        titel: `${loesungenTitel(L, spur, sit)} · ${sit.titel ?? ''}`.replace(/ · $/, ''),
         markup: () => renderToStaticMarkup(<DocLoesungenV42 sit={sit} abteilung={abteilung} />),
         docx: () => buildLoesungen({ sit, abteilung, logoPng }),
         protokoll: false,

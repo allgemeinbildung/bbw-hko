@@ -213,7 +213,17 @@ function feldHoehe(datei, pfad, ist, soll) {
   if (ist !== soll) add('budget', 'ERR_V42_BUDGET', datei, pfad, `${B} feld_hoehe_mm`, `${ist === undefined ? 'nicht gesetzt' : `${ist} mm`}`, `${soll} mm`)
 }
 
-function budgetLeitfrage(datei, pfad, lf, sollHoehe) {
+/**
+ * EBA-Profil (E46): drei Leitfragen statt vier — Kern LF1, Spur LF2 (Raster, 3 Zeilen) und LF3 (Pol-Typ) —,
+ * das Dossier statt des Lehrmittels, mehr Geruest (3 Strategien, bis 4 Satzanfaenge), kuerzere Situation.
+ * Die Leitfragen der Spur werden darum ueber ihre Rolle gefunden, nicht ueber die Nummer; bei EFZ ist das
+ * dasselbe, weil Regel 1 dort nr 3 = Raster und nr 4 = Pol-Typ erzwingt.
+ */
+const istEba = (sit) => sit?.lehrgang === 'EBA_2J'
+const rasterLf = (lfs) => (lfs ?? []).find((l) => l?.antwortform === 'raster') ?? (lfs ?? []).find((l) => l?.nr === 3)
+const polLf = (lfs) => (lfs ?? []).find((l) => istText(l?.pol_typ)) ?? (lfs ?? []).find((l) => l?.nr === 4)
+
+function budgetLeitfrage(datei, pfad, lf, sollHoehe, eba = false) {
   max(datei, `${pfad}.text`, lf.text, 220)
   if (typeof lf.liefert === 'string') {
     max(datei, `${pfad}.liefert`, lf.liefert, 50)
@@ -221,22 +231,23 @@ function budgetLeitfrage(datei, pfad, lf, sollHoehe) {
     if (w < 3 || w > 7) add('budget', 'ERR_V42_BUDGET', datei, `${pfad}.liefert`, B, `${w} Woerter «${lf.liefert}»`, '3–7 Woerter')
   }
   const sc = lf.scaffolding ?? {}
-  anzahl(datei, `${pfad}.scaffolding.strategien`, sc.strategien, 2, 2)
+  anzahl(datei, `${pfad}.scaffolding.strategien`, sc.strategien, 2, eba ? 3 : 2)
   ;(sc.strategien ?? []).forEach((s, i) => max(datei, `${pfad}.scaffolding.strategien[${i}]`, s, 90))
-  anzahl(datei, `${pfad}.scaffolding.satzanfaenge`, sc.satzanfaenge, 2, 3)
+  anzahl(datei, `${pfad}.scaffolding.satzanfaenge`, sc.satzanfaenge, 2, eba ? 4 : 3)
   ;(sc.satzanfaenge ?? []).forEach((s, i) => max(datei, `${pfad}.scaffolding.satzanfaenge[${i}]`, s, 60))
   max(datei, `${pfad}.scaffolding.produkt`, sc.produkt, 110)
   if (sollHoehe != null) feldHoehe(datei, `${pfad}.feld_hoehe_mm`, lf.feld_hoehe_mm, sollHoehe)
 }
 
-function budgetRaster(datei, pfad, r) {
+function budgetRaster(datei, pfad, r, eba = false) {
   if (!r || typeof r !== 'object') return
   max(datei, `${pfad}.auftrag`, r.auftrag, 220)
   if (r.spalten !== undefined) {
     anzahl(datei, `${pfad}.spalten`, r.spalten, 4, 4, 'Spalten')
     ;(Array.isArray(r.spalten) ? r.spalten : []).forEach((s, i) => max(datei, `${pfad}.spalten[${i}]`, s, 18))
   }
-  if (r.zeilen !== undefined && r.zeilen !== 4) add('budget', 'ERR_V42_BUDGET', datei, `${pfad}.zeilen`, B, `${zeige(r.zeilen)} Zeilen`, '4 Zeilen')
+  const sollZeilen = eba ? 3 : 4
+  if (r.zeilen !== undefined && r.zeilen !== sollZeilen) add('budget', 'ERR_V42_BUDGET', datei, `${pfad}.zeilen`, B, `${zeige(r.zeilen)} Zeilen`, `${sollZeilen} Zeilen`)
   if (r.beispielzeile !== undefined) {
     anzahl(datei, `${pfad}.beispielzeile`, r.beispielzeile, 4, 4, 'Zellen')
     ;(Array.isArray(r.beispielzeile) ? r.beispielzeile : []).forEach((s, i) => max(datei, `${pfad}.beispielzeile[${i}]`, s, 25))
@@ -248,7 +259,8 @@ function budgetKern(datei, sit) {
   max(datei, 'titel', sit.titel, 60)
   if (typeof sit.situation_text === 'string') {
     const n = len(sit.situation_text)
-    if (n < 650 || n > 900) add('budget', 'ERR_V42_BUDGET', datei, 'situation_text', B, `${n} Zeichen`, '650–900 Zeichen')
+    const [von, bis] = istEba(sit) ? [350, 700] : [650, 900]
+    if (n < von || n > bis) add('budget', 'ERR_V42_BUDGET', datei, 'situation_text', B, `${n} Zeichen`, `${von}–${bis} Zeichen`)
   }
   anzahl(datei, 'zahlen_tabelle', sit.zahlen_tabelle, 0, 4, 'Zeilen')
   ;(sit.zahlen_tabelle ?? []).forEach((z, i) => {
@@ -272,8 +284,8 @@ function budgetKern(datei, sit) {
 
   max(datei, 'leitfragen_intro', sit.leitfragen_intro, 300)
   ;(sit.leitfragen ?? []).forEach((lf, i) => {
-    const soll = lf.nr === 1 ? 35 : lf.nr === 2 ? 45 : null
-    budgetLeitfrage(datei, `leitfragen[${i}]`, lf, soll)
+    const soll = istEba(sit) ? (lf.nr === 1 ? 60 : null) : lf.nr === 1 ? 35 : lf.nr === 2 ? 45 : null
+    budgetLeitfrage(datei, `leitfragen[${i}]`, lf, soll, istEba(sit))
   })
 
   const hp = sit.handlungsprodukt ?? {}
@@ -328,12 +340,14 @@ function budgetKern(datei, sit) {
 }
 
 /** §3.1, spur-abhaengige Felder (Seiten 3 und 4). */
-function budgetSpur(datei, spurKey, spur) {
+function budgetSpur(datei, spurKey, spur, eba = false) {
   const basis = `spuren.${spurKey}`
   ;(spur.leitfragen ?? []).forEach((lf, i) => {
-    const soll = lf.nr === 3 ? 25 : lf.nr === 4 ? (spurKey === 'mit_medien' ? 60 : 45) : null
-    budgetLeitfrage(datei, `${basis}.leitfragen[${i}]`, lf, soll)
-    budgetRaster(datei, `${basis}.leitfragen[${i}].raster`, lf.raster)
+    const soll = eba
+      ? (lf === rasterLf(spur.leitfragen) ? 30 : lf === polLf(spur.leitfragen) ? 45 : null)
+      : lf.nr === 3 ? 25 : lf.nr === 4 ? (spurKey === 'mit_medien' ? 60 : 45) : null
+    budgetLeitfrage(datei, `${basis}.leitfragen[${i}]`, lf, soll, eba)
+    budgetRaster(datei, `${basis}.leitfragen[${i}].raster`, lf.raster, eba)
   })
   ;(spur.quellen ?? []).forEach((q, i) => {
     max(datei, `${basis}.quellen[${i}].auftrag`, q?.auftrag, 220)
@@ -342,8 +356,8 @@ function budgetSpur(datei, spurKey, spur) {
     max(datei, `${basis}.quellen[${i}].leitfrage_vertiefung`, q?.leitfrage_vertiefung, 100)
   })
   // Nachgetragen (E38): Loesungen S. 3 und S. 4 — die Felder, die nur das Dokument «Loesungen» druckt.
-  const lf3 = (spur.leitfragen ?? []).find((l) => l?.nr === 3)?.loesung ?? {}
-  const lf4 = (spur.leitfragen ?? []).find((l) => l?.nr === 4)?.loesung?.erwartungshorizont ?? {}
+  const lf3 = rasterLf(spur.leitfragen)?.loesung ?? {}
+  const lf4 = polLf(spur.leitfragen)?.loesung?.erwartungshorizont ?? {}
   const erwartungen = (spur.quellen ?? []).map((q) => len(q?.erwartung))
   ;(spur.quellen ?? []).forEach((q, i) => { if (typeof q?.erwartung === 'string') nachgetragen('erwartung', datei, `${basis}.quellen[${i}].erwartung`, len(q.erwartung)) })
   const summeS3 = len(lf3.kern) + (lf3.zeilen ?? []).reduce((n, z) => n + len(z?.label) + len(z?.text) + len(z?.quelle), 0) + (lf3.raster_zeilen ?? []).flat().reduce((n, c) => n + len(c), 0) + len(lf3.befund)
@@ -493,8 +507,28 @@ const POL_TYPEN = ['lehrmittel_quelle', 'position_gegenposition', 'modell_eigene
 const NUR_MEDIEN = ['lehrmittel_quelle', 'quelle_quelle']
 const R = (n) => `§11.5 Nr. ${n}`
 
+/** Nr. 1 fuer EBA (E46): Kern = genau LF1; jede Spur = genau LF2 (Raster) + LF3 (pol_typ). */
+function regel1Eba(datei, sit) {
+  const kern = sit.leitfragen ?? []
+  const nrs = kern.map((l) => l.nr)
+  if (kern.length !== 1 || nrs[0] !== 1) add('regel', 'ERR_V42_R1', datei, 'leitfragen', R(1), `${kern.length} Leitfragen (nr ${nrs.join(', ') || '—'})`, 'EBA: genau LF1')
+  for (const key of SPUR_KEYS) {
+    const spur = sit.spuren?.[key]
+    if (!spur) continue
+    const lfs = spur.leitfragen ?? []
+    const p = `spuren.${key}.leitfragen`
+    const snrs = lfs.map((l) => l.nr)
+    if (lfs.length !== 2 || !snrs.includes(2) || !snrs.includes(3)) add('regel', 'ERR_V42_R1', datei, p, R(1), `${lfs.length} Leitfragen (nr ${snrs.join(', ') || '—'})`, 'EBA: genau LF2 und LF3')
+    lfs.forEach((lf, i) => {
+      if (lf.nr === 2 && lf.antwortform !== 'raster') add('regel', 'ERR_V42_R1', datei, `${p}[${i}].antwortform`, R(1), zeige(lf.antwortform), '"raster"')
+      if (lf.nr === 3 && !istText(lf.pol_typ)) add('regel', 'ERR_V42_R1', datei, `${p}[${i}].pol_typ`, R(1), zeige(lf.pol_typ), 'gesetzt')
+    })
+  }
+}
+
 /** Nr. 1: Kern = genau LF1, LF2; jede Spur = genau LF3 (Raster) + LF4 (pol_typ). */
 function regel1(datei, sit) {
+  if (istEba(sit)) return regel1Eba(datei, sit)
   const kern = sit.leitfragen ?? []
   const nrs = kern.map((l) => l.nr)
   if (kern.length !== 2 || !nrs.includes(1) || !nrs.includes(2)) {
@@ -575,7 +609,7 @@ function pflichtfelderKarte(id, k) {
 function regel3(datei, sit) {
   const spur = sit.spuren?.ohne_medien
   if (!spur) return
-  const i = (spur.leitfragen ?? []).findIndex((l) => l.nr === 3)
+  const i = (spur.leitfragen ?? []).indexOf(rasterLf(spur.leitfragen))
   const p = `spuren.ohne_medien.leitfragen[${i < 0 ? '?' : i}].raster`
   const r = i < 0 ? null : spur.leitfragen[i].raster
   if (!r) add('regel', 'ERR_V42_R3', datei, p, R(3), 'kein raster', 'raster mit knoten_ref und beispielzeile')
@@ -603,7 +637,7 @@ function regel4(datei, sit, L, prinzip) {
   }
 }
 
-const polTyp = (sit, key) => (sit?.spuren?.[key]?.leitfragen ?? []).find((l) => l.nr === 4)?.pol_typ
+const polTyp = (sit, key) => polLf(sit?.spuren?.[key]?.leitfragen)?.pol_typ
 
 /** Nr. 5: Pol-Typ A ≠ B je Spur; lehrmittel_quelle / quelle_quelle nur in der Medien-Spur. */
 function regel5(hefte) {
@@ -611,7 +645,7 @@ function regel5(hefte) {
     for (const key of SPUR_KEYS) {
       const t = polTyp(sit, key)
       if (!istText(t)) continue
-      const i = sit.spuren[key].leitfragen.findIndex((l) => l.nr === 4)
+      const i = sit.spuren[key].leitfragen.indexOf(polLf(sit.spuren[key].leitfragen))
       const p = `spuren.${key}.leitfragen[${i}].pol_typ`
       if (!POL_TYPEN.includes(t)) add('regel', 'ERR_V42_R5', `herausforderung_${L}.json`, p, `${R(5)} / §6.1`, `"${t}"`, POL_TYPEN.join(' | '))
       if (key === 'ohne_medien' && NUR_MEDIEN.includes(t)) {
@@ -1022,7 +1056,7 @@ for (const [L, sit] of Object.entries(hefte)) {
     ;(Array.isArray(spur.quellen) ? spur.quellen : []).forEach((q, i) => {
       if (pruefeRef('quelle', q?.ref, datei, `${basis}.quellen[${i}].ref`)) setzeRolle(q.ref, q.rolle)
     })
-    budgetSpur(datei, key, spur)
+    budgetSpur(datei, key, spur, istEba(sit))
   }
 
   // raster.quelle_ref und loesung.quelle_ref (wenn Quellen-ID) in Kern und Spuren.

@@ -307,6 +307,19 @@ export const ELEMENT_SEITEN = Object.freeze([
   { wort: /\bCheckliste\b|\bBegriffsnetz(?:es)?\b|\bGlossar\b|\bQuer-Check\b|«Das nehme ich mit»/, seiten: [8], name: 'Checkliste/Begriffsnetz/Glossar' },
 ])
 
+/**
+ * EBA-Profil (E46): drei Leitfragen — LF1 auf S. 2, LF2 mit Raster auf S. 3, LF3 mit Denkhilfe auf S. 4.
+ * Sonst gleich wie ELEMENT_SEITEN.
+ */
+export const ELEMENT_SEITEN_EBA = Object.freeze([
+  ELEMENT_SEITEN[0],
+  { wort: /\bLF\s?1\b|Wissensecke I\b/, seiten: [2], name: 'LF1' },
+  { wort: /\bLF\s?2\b|\bRaster(?:s|zeilen?)?\b|\bBeispielzeile\b/, seiten: [3], name: 'Raster/LF2' },
+  { wort: /\bLF\s?3\b|\bDenkhilfe\b|Wissensecke II\b/, seiten: [4], name: 'LF3/Denkhilfe' },
+  ...ELEMENT_SEITEN.slice(4),
+])
+export const elementSeiten = (lehrgang) => (lehrgang === 'EBA_2J' ? ELEMENT_SEITEN_EBA : ELEMENT_SEITEN)
+
 // ================================================================== MARKEN
 
 /** Zeitmarken «mm:ss» (auch Spannen) in einem Text → [{ text, sek, pos }]. Uhrzeiten mit «Uhr» zählen nicht. */

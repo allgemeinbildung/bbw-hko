@@ -31,6 +31,7 @@ import { landingUrl, qrSvg } from './qr'
 import { quelleEmbedSrc } from './quelle-embed'
 import { RUBRIK_PUNKTE_MAX, RUBRIK_ZIELPUNKTZAHL, punkteLabel } from './rubrik-skala'
 import { SPUR_KEYS } from './spuren'
+import { ankerZu, beurteilenLeitfrage, kernLeitfragen, kernTitel, rasterLeitfrage, worte } from './v42-profil'
 import type {
   EinheitFullSet,
   Erwartungshorizont,
@@ -495,6 +496,13 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
     const m = loesungenModell(hf)
     const heftSpur: SpurKey = hf.spur ?? spur
     const nurEine = heftSpur !== spur
+    // Welche Leitfrage wo steht und wie sie heisst, sagt das Profil (EFZ: 1+2 · 3 · 4, EBA: 1 · 2 · 3).
+    const w = worte(hf)
+    const lf12 = kernLeitfragen(hf)
+    const kernT = kernTitel(hf)
+    const lf3 = rasterLeitfrage(hf)
+    const lf4 = beurteilenLeitfrage(hf)
+    const lfMuster = (lfs: ({ nr: number } | undefined)[]) => lfs.filter((x): x is { nr: number } => !!x).map((x) => `LF\\s*${x.nr}`)
     const sub = (id: string, ctx: string, rest: Omit<DeckSlide, 'id' | 'accent' | 'badge' | 'branchOf' | 'ctx'>) =>
       slides.push({ id: `${l}-${id}`, accent: pal, badge: L, branchOf: parentId, ctx: `Heft ${L} · ${ctx}`, ...rest })
 
@@ -531,16 +539,15 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
           ...(hf.mehrdeutigkeit.hint ? ([{ t: 'quote', text: hf.mehrdeutigkeit.hint }] as Block[]) : []),
           ...(hf.leitfrage ? ([{ t: 'ask', k: 'Leitfrage', text: hf.leitfrage }] as Block[]) : []),
         ],
-        notes: notesFrom(`Heft ${L} — Spannungsfeld. Nicht auflösen: es trägt bis zur Leitfrage 4.`, [...co(s, ['mehrdeutigkeit'])]),
+        notes: notesFrom(`Heft ${L} — Spannungsfeld. Nicht auflösen: es trägt bis zur Leitfrage ${lf4?.nr ?? 4}.`, [...co(s, ['mehrdeutigkeit'])]),
       })
     }
 
     /* LF1 und LF2 */
-    const lf12 = [1, 2].map((nr) => hf.leitfragen?.find((x) => x.nr === nr)).filter((x): x is NonNullable<typeof x> => !!x)
     if (lf12.length) {
-      sub('leitfragen', 'Leitfragen 1 und 2', {
+      sub('leitfragen', kernT, {
         src: 'Wissensecke I · Heft S. 2',
-        headline: lf12.length > 1 ? `Leitfragen 1 und 2 — ${lf12.map((x) => x.bloom).filter(Boolean).join(' und ')}.` : 'Leitfrage 1.',
+        headline: lf12.length > 1 ? `${kernT} — ${lf12.map((x) => x.bloom).filter(Boolean).join(' und ')}.` : `${kernT}.`,
         small: true,
         body: [
           {
@@ -549,14 +556,14 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
             items: lf12.map((lf) => ({ k: [`LF ${lf.nr}`, lf.bloom, lf.knoten_ref].filter(Boolean).join(' · '), text: lf.text })),
           },
         ],
-        notes: notesFrom(`Heft ${L} — Coaching zu den Leitfragen 1 und 2.`, [
+        notes: notesFrom(`Heft ${L} — Coaching ${lf12.length > 1 ? 'zu den' : 'zur'} ${kernT}.`, [
           hf.leitfragen_intro,
-          ...co(s, ['coaching'], (c) => /LF\s*1|LF\s*2/i.test(c.title)),
+          ...co(s, ['coaching'], (c) => new RegExp(lfMuster(lf12).join('|'), 'i').test(c.title)),
         ]),
       })
     }
     if (m?.s2.length) {
-      sub('leitfragen-loesung', 'Lösung der Leitfragen 1 und 2', {
+      sub('leitfragen-loesung', `Lösung der ${kernT}`, {
         src: 'Erst nach der eigenen Bearbeitung',
         headline: 'So sieht eine tragfähige Antwort aus.',
         small: true,
@@ -572,7 +579,7 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
             }),
           },
         ],
-        notes: notesFrom(`Heft ${L} — Lösung der Leitfragen 1 und 2. Eine Frage pro Klick aufklappen.`, [
+        notes: notesFrom(`Heft ${L} — Lösung der ${kernT}. Eine Frage pro Klick aufklappen.`, [
           'Kein Wort-für-Wort-Skript, sondern der Massstab: Antworten der Lernenden dürfen abweichen, solange Quelle und eigene Verdichtung erkennbar sind.',
           'Erst die eigenen Antworten danebenlegen lassen, dann Frage für Frage abgleichen — nicht vorlesen.',
         ]),
@@ -580,7 +587,6 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
     }
 
     /* Quelle */
-    const lf3 = hf.leitfragen?.find((x) => x.antwortform === 'raster') ?? hf.leitfragen?.find((x) => x.nr === 3)
     const raster = lf3?.raster
     const pflicht = heftSpur === 'mit_medien' ? hf.quellen?.find((q) => q.rolle === 'pflicht') : undefined
     const auftrag = pflicht ? pflicht.auftrag : raster?.auftrag
@@ -601,14 +607,14 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
           pflicht.ersatz ? quelleKnoepfe(pflicht.ersatz, true) : ''
         }</div></div><div class="v-q-qr">${qrSvg(url)}</div></div>`
       } else {
-        const anker = hf.quellen_anker?.find((a) => a.ref && raster!.knoten_ref!.startsWith(a.ref))
-        karteHtml = `<div class="v-q"><div class="v-q-txt"><div class="v-q-k">Lehrmittel-Abschnitt</div><div class="v-q-t">${esc(
+        const anker = ankerZu(hf, raster!.knoten_ref)
+        karteHtml = `<div class="v-q"><div class="v-q-txt"><div class="v-q-k">${esc(w.abschnitt)}</div><div class="v-q-t">${esc(
           raster!.knoten_ref!.replace(/\s*\|\s*/g, ' · ')
         )}</div>${anker ? `<div class="v-q-h">${esc([anker.titel, anker.unterueberschrift].filter(Boolean).join(' · '))}</div>` : ''}</div></div>`
       }
       sub('quelle', 'Quelle', {
         src: `Spur ${SPUR_NAME_LS[heftSpur]} · Heft S. 3`,
-        headline: pflicht ? 'Die Quelle zu diesem Heft.' : 'Der Lehrmittel-Abschnitt zu diesem Heft.',
+        headline: pflicht ? 'Die Quelle zu diesem Heft.' : w.deckAbschnittTitel,
         small: true,
         body: [
           raw(karteHtml),
@@ -630,7 +636,7 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
     if (lf3 && spalten.length) {
       const beispiel = !pflicht && raster?.beispielzeile?.length ? raster.beispielzeile : undefined
       const leer = Math.max(0, (raster?.zeilen ?? 4) - (beispiel ? 1 : 0))
-      sub('raster', `LF 3${lf3.bloom ? ` · ${lf3.bloom}` : ''} · Raster`, {
+      sub('raster', `LF ${lf3.nr}${lf3.bloom ? ` · ${lf3.bloom}` : ''} · Raster`, {
         src: beispiel ? 'Die erste Zeile ist ein Beispiel' : 'Heft S. 3',
         headline: 'Raster füllen, dann den Befund festhalten.',
         small: true,
@@ -638,9 +644,9 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
           raw(tabelle(spalten, beispiel ? [{ zellen: beispiel, cls: 'bsp' }] : (raster?.vorgabe ?? []).map((zellen) => ({ zellen })), { breiten: m?.s3?.breiten, leer: raster?.vorgabe ? 0 : leer })),
           { t: 'ask', k: `Leitfrage ${lf3.nr}`, text: lf3.text },
         ],
-        notes: notesFrom(`Heft ${L} — Leitfrage 3: Raster und Befund.`, [
+        notes: notesFrom(`Heft ${L} — Leitfrage ${lf3.nr}: Raster und Befund.`, [
           'Das Raster sammelt Belege, der Befund wertet sie aus. Erst füllen lassen, dann schreiben.',
-          ...co(s, ['coaching'], (c) => /LF\s*3|Raster|Quelle/i.test(c.title)),
+          ...co(s, ['coaching'], (c) => new RegExp([...lfMuster([lf3]), 'Raster', 'Quelle'].join('|'), 'i').test(c.title)),
         ]),
       })
     }
@@ -671,8 +677,8 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
           headline: 'Das ausgefüllte Raster und ein möglicher Befund.',
           small: true,
           body: [raw(akkordeon(teile))],
-          notes: notesFrom(`Heft ${L} — Lösung zu Leitfrage 3. Abschnittsweise aufklappen (Klick oder Leertaste).`, [
-            'Eine mögliche Lösung: andere Zeilen gelten, wenn sie in der Quelle bzw. im Lehrmittel-Abschnitt belegt sind.',
+          notes: notesFrom(`Heft ${L} — Lösung zu Leitfrage ${r.nr}. Abschnittsweise aufklappen (Klick oder Leertaste).`, [
+            `Eine mögliche Lösung: andere Zeilen gelten, wenn sie ${w.deckBelegtIn} belegt sind.`,
             r.beispiel ? 'Die hell hinterlegte erste Zeile ist das Beispiel, das im Heft vorgedruckt ist.' : null,
           ]),
         })
@@ -680,10 +686,9 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
     }
 
     /* LF4 */
-    const lf4 = hf.leitfragen?.find((x) => !!x.pol_typ) ?? hf.leitfragen?.find((x) => x.nr === 4)
     if (lf4) {
       const pol = lf4.pol_typ ? POL_TYP_LABEL[lf4.pol_typ] ?? lf4.pol_typ : ''
-      sub('lf4', `LF 4${lf4.bloom ? ` · ${lf4.bloom}` : ''}`, {
+      sub('lf4', `LF ${lf4.nr}${lf4.bloom ? ` · ${lf4.bloom}` : ''}`, {
         src: 'Wissensecke II · Heft S. 4',
         headline: 'Zwei Pole abwägen — und entscheiden.',
         small: true,
@@ -695,15 +700,15 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
             ? ([{ t: 'cards', grid: 1, items: [{ k: 'Spannungsfeld', text: hf.mehrdeutigkeit.trade_off, tint: true }] }] as Block[])
             : []),
         ],
-        notes: notesFrom(`Heft ${L} — Leitfrage 4: beurteilen und entscheiden.`, [
-          ...co(s, ['coaching'], (c) => !/LF\s*1|LF\s*2|LF\s*3|Raster/i.test(c.title)),
+        notes: notesFrom(`Heft ${L} — Leitfrage ${lf4.nr}: beurteilen und entscheiden.`, [
+          ...co(s, ['coaching'], (c) => !new RegExp([...lfMuster([...lf12, lf3]), 'Raster'].join('|'), 'i').test(c.title)),
           ...co(s, ['warnung', 'troubleshooting']),
         ]),
       })
     }
     if (m?.s4 && (m.s4.gutWenn.length || m.s4.antworten.length || m.s4.tragfaehig || m.s4.nichtTragfaehig)) {
       const b = m.s4
-      sub('lf4-loesung', 'Lösung · Erwartungshorizont LF 4', {
+      sub('lf4-loesung', `Lösung · Erwartungshorizont LF ${b.nr}`, {
         src: 'Erst nach der eigenen Bearbeitung',
         headline: 'Woran eine tragfähige Antwort zu erkennen ist.',
         small: true,
@@ -718,7 +723,7 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
             ],
           },
         ],
-        notes: notesFrom(`Heft ${L} — Erwartungshorizont zu Leitfrage 4. Abschnittsweise aufklappen.`, [
+        notes: notesFrom(`Heft ${L} — Erwartungshorizont zu Leitfrage ${b.nr}. Abschnittsweise aufklappen.`, [
           'Beide Beispielantworten sind vertretbar — bewertet wird die Begründung, nicht die Richtung des Entscheids.',
           ...co(s, ['mehrdeutigkeit']),
         ]),
@@ -739,7 +744,7 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
           ...(k.hinweis ? [raw(`<div class="v-hinweis">${esc(k.hinweis)}</div>`)] : []),
           ...(loes ? [raw(akkordeon([klapp('Mögliche Einträge', tabelle(loes.spalten, loes.zeilen.map((z) => ({ zellen: z }))), 0)]))] : []),
         ],
-        notes: notesFrom(`Heft ${L} — Denkhilfe zu Leitfrage 4.`, [
+        notes: notesFrom(`Heft ${L} — Denkhilfe zu Leitfrage ${lf4?.nr ?? 4}.`, [
           loes ? 'Die möglichen Einträge klappen erst pro Klick auf — zuerst die eigenen Stichworte sammeln lassen.' : null,
         ]),
       })
@@ -846,8 +851,8 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
       })
     }
 
-    /* Begriffsnetz */
-    if (hf.mindmap_zentrum && (hf.mindmap_aeste ?? []).length) {
+    /* Begriffsnetz — EBA: keines (Entscheid Pietro 02.11.2026) */
+    if (worte(hf).begriffsnetz && hf.mindmap_zentrum && (hf.mindmap_aeste ?? []).length) {
       sub('begriffsnetz', 'Begriffsnetz', {
         src: 'Knoten verbinden und beschriften · Heft S. 8',
         headline: 'Ihr Begriffsnetz: Zentrum, Äste, Knoten.',

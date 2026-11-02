@@ -1,0 +1,128 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_lernbegleiter",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_v42_set",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_v42_prinzip",
+  "kn_ref": "1.1.1_lehrvertrag_orientieren_v42_kn",
+  "lehrgang": "EBA_2J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-09",
+  "lernbegleiter": {
+    "version": "1.0",
+    "titel": "KI-Lernbegleiter — üben für den Kompetenznachweis",
+    "ziel": "Sie üben mit der KI (künstliche Intelligenz) für den Kompetenznachweis. Ein Prompt ist Ihre Eingabe an die KI.",
+    "kompetenzversprechen": "Ich kann mich in meinem Lehrvertrag orientieren. Bei Fragen oder Konflikten finde ich die passende Information und die richtige Stelle.",
+    "ki_frei_zuerst": {
+      "auftrag": "Schätzen Sie sich zuerst ohne KI ein, von 1 (unsicher) bis 5 (sicher). Üben Sie danach, was Sie mit 1 bis 3 bewertet haben.",
+      "selbsteinschaetzung": [
+        "Ich kann die Abschnitte von einem Lehrvertrag nennen (Info-Karte A-01).",
+        "Ich finde in einem Formular die passende Stelle zu meiner Frage.",
+        "Ich kann begründen: selbst klären oder Hilfe holen (Info-Karte B-03)."
+      ]
+    },
+    "begriffe": [
+      "Lehrvertrag",
+      "Abschnitt",
+      "Vertragspunkt",
+      "Standard",
+      "betriebsspezifisch",
+      "Probezeit",
+      "Verweis",
+      "Reglement",
+      "Fakt",
+      "Unstimmigkeit",
+      "Konflikt",
+      "sachlich",
+      "Lehrverhältnis",
+      "Bildungsplan",
+      "Kontaktstelle",
+      "Berufsbildungsamt",
+      "vermitteln",
+      "Berufsbildner/in"
+    ],
+    "strategie_karten": [
+      {
+        "key": "retrieval",
+        "technik": "Abfragen lassen",
+        "wann": "Wenn Sie die Begriffe aus dem Glossar wiederholen wollen.",
+        "prompt_basis": "Thema: der Lehrvertrag in der Schweiz. Fragen Sie mich diese Begriffe ab: Standard, betriebsspezifisch, Probezeit, Unstimmigkeit, Kontaktstelle. Sagen Sie mir die Lösung erst nach meiner Antwort. Antworten Sie in kurzen, einfachen Sätzen. Stellen Sie immer nur eine Frage. Warten Sie auf meine Antwort.",
+        "warnung": "Weicht die Lösung der KI vom Glossar in Ihren Heften ab, gilt das Glossar."
+      },
+      {
+        "key": "feynman",
+        "technik": "Selbst erklären",
+        "wann": "Wenn Sie einen Begriff mit eigenen Worten sagen wollen.",
+        "prompt_basis": "Thema: der Lehrvertrag in der Schweiz. Mein Begriff und meine Erklärung: [Begriff und Erklärung]. Nennen Sie mir nur die Lücken. Schreiben Sie meine Erklärung nicht neu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Prüfen Sie jede Lücke im Glossar, bevor Sie Ihre Erklärung ändern."
+      },
+      {
+        "key": "uebungs_feedback",
+        "technik": "Rückmeldung holen",
+        "wann": "Wenn Sie einen Übungsfall im selben Chat gelöst haben.",
+        "prompt_basis": "Thema: eine Unstimmigkeit klären. Meine Lösung zu Ihrem Übungsfall: [mein Text]. Stellen Sie mir zwei Fragen zur Argumentation, eine nach der anderen. Dazu gehört: klare Begründung, Sprache passt zur Person. Schreiben Sie meinen Text nicht neu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: eine Unstimmigkeit klären. Meine Lösung zu Ihrem Übungsfall: [mein Text]. Argumentation: klare Begründung, Sprache passt zur Person. Position / Werthaltung: eigene Meinung klar in der Ich-Form. Stellen Sie mir zwei Fragen zu Lücken, eine nach der anderen. Geben Sie mir keine fertige Lösung. Schreiben Sie meinen Text nicht neu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Die Rückmeldung der KI ist ein Hinweis, keine Note. Schreiben Sie keine Namen in den Prompt."
+      },
+      {
+        "key": "mock_transfer",
+        "technik": "Übungsfall lösen",
+        "wann": "Wenn Sie Ihr Vorgehen an einem neuen Fall üben wollen.",
+        "prompt_basis": "Thema: eine Unstimmigkeit klären. Erfinden Sie einen neuen, kurzen Fall aus der Freizeit, nicht aus Lehrbetrieb oder Schule. Geben Sie mir dazu eine Aufgabe: Fakten ordnen, dann wählen: selbst klären oder Hilfe holen. Geben Sie mir keine Lösung. Warten Sie auf meine Lösung. Antworten Sie in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: eine Unstimmigkeit klären. Erfinden Sie einen neuen Fall mit der Hausordnung einer Jugendherberge, nicht aus Lehrbetrieb oder Schule. Prüfen Sie danach meine Lösung an zwei Punkten. Rechtliches Prinzip: Stelle im Dokument gefunden, Vorgehen passt zum Fall. Position / Werthaltung: eigene Meinung klar in der Ich-Form. Nennen Sie je Punkt eine Lücke. Geben Sie mir keine fertige Lösung. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Verlangen Sie von der KI nie eine Lösung für Ihren Kompetenznachweis. Üben Sie an neuen Fällen."
+      },
+      {
+        "key": "repetitionsplan",
+        "technik": "Lernplan machen",
+        "wann": "Wenn Sie wissen, wann Ihr Kompetenznachweis ist.",
+        "prompt_basis": "Thema: der Lehrvertrag in der Schweiz. Mein Kompetenznachweis ist in [Anzahl] Tagen. Machen Sie mir einen Lernplan mit einer kurzen Aufgabe pro Tag. Schreiben Sie keine Erklärungen dazu. Antworten Sie in kurzen, einfachen Sätzen.",
+        "prompt_fortgeschritten": "Thema: der Lehrvertrag in der Schweiz. Machen Sie mir zehn Lernkarten nur mit Fragen. Ordnen Sie die Karten nach zwei Themen: Aufbau vom Lehrvertrag, eine Unstimmigkeit klären. Schreiben Sie keine Antworten dazu. Die Antworten schreibe ich selbst aus dem Glossar. Antworten Sie in kurzen, einfachen Sätzen.",
+        "warnung": "Der Plan der KI ist nur ein Vorschlag. Die Antworten auf Lernkarten schreiben Sie selbst aus dem Glossar in Ihren Heften."
+      }
+    ],
+    "kn_typ_tracks": [
+      {
+        "typ": "fachgespraech",
+        "label": "Kurzgespräch (Primärform)",
+        "uebungsfokus": "Sie beantworten Fragen zu einem neuen Fall und begründen Ihren Weg.",
+        "prompt": "Thema: eine Unstimmigkeit klären. Erfinden Sie einen neuen Fall aus der Freizeit, nicht aus Lehrbetrieb oder Schule. Stellen Sie mir drei Fragen, eine nach der anderen. Fragen Sie auch nach meinem Grund. Geben Sie mir keine Lösung. Antworten Sie in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "mini_case_schriftlich",
+        "label": "Mini Case schriftlich (vereinfacht)",
+        "uebungsfokus": "Sie lösen einen neuen Fall schriftlich: Fakten ordnen, Weg wählen, begründen.",
+        "prompt": "Thema: eine Unstimmigkeit klären. Erfinden Sie einen neuen Fall aus der Freizeit, nicht aus Lehrbetrieb oder Schule. Geben Sie mir drei Aufgaben: Fakten ordnen, Weg wählen, begründen. Geben Sie mir keine Lösung. Antworten Sie in kurzen, einfachen Sätzen."
+      },
+      {
+        "typ": "werkschau_transfer",
+        "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+        "uebungsfokus": "Sie sagen in einem Satz, was Sie gelernt haben, und prüfen ihn an einem neuen Fall.",
+        "prompt": "Thema: eine Unstimmigkeit klären. Das habe ich gelernt: [was ich gelernt habe]. Erfinden Sie einen neuen Fall aus der Freizeit, nicht aus Lehrbetrieb oder Schule. Stellen Sie mir zwei Fragen, eine nach der anderen: Wo passt mein Satz? Wo nicht? Antworten Sie in kurzen, einfachen Sätzen."
+      }
+    ],
+    "rubrik_fokus": [
+      {
+        "dimension": "SuK",
+        "kriterien": [
+          "Fachkorrektheit",
+          "Argumentation"
+        ],
+        "so_uebst_du": "Sie üben die richtigen Fachwörter mit «Abfragen lassen» und eine klare Begründung am Übungsfall."
+      },
+      {
+        "dimension": "Ges",
+        "kriterien": [
+          "Rechtliches Prinzip",
+          "Position / Werthaltung"
+        ],
+        "so_uebst_du": "Sie üben am Übungsfall dieser Seite, den passenden Weg zu wählen und Ihre Meinung zu begründen."
+      }
+    ],
+    "integritaet_warnung": "Die KI stellt Fragen und zeigt Lücken. Was auf Ihrem Blatt steht, schreiben Sie selbst.",
+    "selbstcheck": [
+      "Ich habe mich zuerst ohne KI eingeschätzt.",
+      "Ich habe an neuen Fällen geübt, nicht an den Fällen aus meinen Heften.",
+      "Bei meinen eigenen Texten hat die KI nur Lücken gezeigt.",
+      "Ich habe Angaben der KI nachgeschlagen."
+    ]
+  }
+}

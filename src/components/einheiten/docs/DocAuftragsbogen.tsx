@@ -1,6 +1,7 @@
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { A4Page, HandlungsFlaeche, Schreibfeld, SectionHead } from './chrome'
 import { Kasten } from './heft-v42/gemeinsam'
+import { istEba } from '../../../lib/einheiten/v42-profil'
 import type { AuftragProdukt, GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/einheiten/types'
 
 /**
@@ -422,7 +423,7 @@ export function DocAuftragsbogen({ set, abteilung, edits, onEdit }: DocAuftragsb
   const titel = `Auftragsbogen · ${ga.titel ?? ''}`.trim()
   const seite: SeiteProps = { ga, set, edits, onEdit }
   return (
-    <div className="v42-auftragsbogen" style={FARBEN}>
+    <div className={istEba(set) ? 'v42-auftragsbogen v42-eba' : 'v42-auftragsbogen'} style={FARBEN}>
       {SEITEN.map((Seite, i) => (
         <BogenPage nr={i + 1} titel={titel} abteilung={abteilung} key={i}>
           <Seite {...seite} />

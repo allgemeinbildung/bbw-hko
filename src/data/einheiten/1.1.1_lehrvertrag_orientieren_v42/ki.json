@@ -1,0 +1,124 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_ki",
+  "set_ref": "1.1.1_lehrvertrag_orientieren_v42_set",
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_v42_prinzip",
+  "kn_ref": "1.1.1_lehrvertrag_orientieren_v42_kn",
+  "anchored_situations": [
+    "1.1.1_lehrvertrag_orientieren_v42_hf_A",
+    "1.1.1_lehrvertrag_orientieren_v42_hf_B"
+  ],
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen — Lehrvertrag verstehen",
+  "thema": "T1",
+  "lehrgang": "EBA_2J",
+  "version": "2.0.0",
+  "erstellt_am": "2026-10-09",
+  "timing": "Basis-Auftrag sobald Heft A und Heft B fertig sind, vor dem gemeinsamen Auftrag; Plus-Auftrag nach dem gemeinsamen Auftrag, zur Vorbereitung auf den Kompetenznachweis",
+  "nrlp_anker": {
+    "thema_text": "Ins Berufsleben einsteigen: sich im Lehrvertrag orientieren und bei Fragen oder Konflikten die richtige Stelle finden.",
+    "gesellschaft_details": [
+      {
+        "aspekt": "Recht",
+        "detail": "Aufbau vom Lehrvertrag, Standard und betriebsspezifisch, Kontaktstellen bei einem Konflikt.",
+        "kompetenz_anker": "1.1.1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "detail": "Die eigene Rolle in der Lehre: selbst klären oder Hilfe holen.",
+        "kompetenz_anker": "1.1.1"
+      }
+    ],
+    "schluesselkompetenzen_texte": [
+      "SK7 — Verständnis fördern",
+      "SK11 — Mit Mehrdeutigkeiten umgehen"
+    ]
+  },
+  "ki_leitfragen": {
+    "offen": "Wobei hilft Ihnen die KI in der Lehre, und was klären Sie selbst?",
+    "kritisch": "Was weiss die KI über Ihren Kanton und Ihren Lehrvertrag nicht?"
+  },
+  "assignments": [
+    {
+      "key": "ki_1",
+      "pattern": "ai_lernassistent",
+      "titel": "Die KI fragen und prüfen",
+      "ziel": "Sie prüfen eine Antwort der KI und übernehmen nur, was stimmt.",
+      "bezug": "In Heft A und Heft B gilt: zuerst Überblick, dann die passende Stelle suchen. Erst dann entscheiden Sie: selbst klären oder Hilfe holen.",
+      "auftrag": "Sie fragen die KI (künstliche Intelligenz): Welche Kontaktstelle hilft in meinem Kanton bei einem Konflikt? Dann prüfen Sie die Antwort. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Ich bin im 1. Lehrjahr in der Schweiz. Mein Kanton (Kanton von meinem Lehrbetrieb): [mein Kanton]. Welche Stelle hilft mir bei einem Konflikt im Lehrbetrieb? Nennen Sie den Namen der Stelle. Sagen Sie kurz, was die Stelle tut. Antworten Sie in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach der Antwort der KI, im selben Chat: «Auf welcher Website kann ich das selbst nachlesen? Nennen Sie mir nur die Adresse. Antworten Sie in kurzen, einfachen Sätzen.»",
+        "Prüfen: Suchen Sie den Namen der Stelle auf der Website Ihres Kantons und in Ihrem Lehrvertrag. Dort steht das Amt, das den Vertrag genehmigt hat. Was die Stelle tut, steht im Dossier (Info-Karte B-03). Stimmt eine Angabe der KI nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Schreiben Sie ohne KI auf: Was tut das Berufsbildungsamt bei einem Konflikt? Die Info-Karte B-03 im Dossier hilft Ihnen.",
+      "schritte": [
+        "Schreiben Sie ohne KI auf, was das Berufsbildungsamt bei einem Konflikt tut.",
+        "Geben Sie Prompt 1 ein und danach Prompt 2.",
+        "Prüfen Sie jede Angabe der KI und notieren Sie, was stimmt und was nicht."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihre Antwort stand vor der Frage an die KI auf dem Blatt."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, was stimmt und was nicht."
+        },
+        {
+          "kriterium": "Nachgeprüft",
+          "indikator": "Jede Angabe der KI ist mit Website, Lehrvertrag oder B-03 verglichen."
+        }
+      ],
+      "reflexion": [
+        "Welche Angabe der KI war falsch oder ungenau?",
+        "Im Kompetenznachweis finden Sie selbst die richtige Stelle. Was hilft Ihnen dabei?"
+      ]
+    },
+    {
+      "key": "ki_2",
+      "pattern": "ai_gegenpositionen",
+      "titel": "Plus: Ein Gespräch mit der KI üben",
+      "ziel": "Sie üben ein sachliches Gespräch und bleiben ruhig, wenn die KI Nein sagt.",
+      "bezug": "In Heft A und Heft B gilt: zuerst Überblick, dann die passende Stelle suchen. Erst dann entscheiden Sie: selbst klären oder Hilfe holen.",
+      "auftrag": "Sie üben ein Gespräch mit der KI (künstliche Intelligenz), wie im gemeinsamen Auftrag zu zweit. Der neue Fall: Mit der Fahrschule waren 85 Franken pro Fahrstunde abgemacht. Jetzt verlangt die Fahrschule 95 Franken. Die KI spielt die Fahrlehrerin und sagt zuerst Nein. Ein Prompt ist Ihre Eingabe an die KI.",
+      "prompt_strategie": [
+        "Prompt 1: «Wir üben ein Gespräch. Sie spielen meine Fahrlehrerin. Der Fall: Abgemacht waren 85 Franken pro Fahrstunde. Jetzt verlangen Sie 95 Franken. Sagen Sie zuerst Nein zu meinem Wunsch. Bleiben Sie in der Rolle. Mein erster Satz: [mein erster Satz]. Antworten Sie in kurzen, einfachen Sätzen.»",
+        "Prompt 2, nach drei Antworten der KI, im selben Chat: «Das Gespräch ist fertig. Welcher von meinen Sätzen war am wenigsten sachlich? Sachlich heisst: bei den Fakten bleiben, ohne Vorwürfe. Zeigen Sie mir nur diesen Satz. Schreiben Sie ihn nicht neu. Antworten Sie in kurzen, einfachen Sätzen.»",
+        "Sagt die KI Nein? Nennen Sie ruhig noch einmal einen Fakt.",
+        "Prüfen: Vergleichen Sie jede Regel und jede Zahl der KI mit dem Fall. Steht sie dort nicht, übernehmen Sie sie nicht."
+      ],
+      "ki_frei_vorher": "Planen Sie ohne KI mit Stichworten: Ihr erster Satz, Ihre Frage, Ihr Wunsch. Schreiben Sie keine Namen in den Prompt.",
+      "schritte": [
+        "Planen Sie ohne KI Ihren ersten Satz, Ihre Frage und Ihren Wunsch.",
+        "Starten Sie das Gespräch mit Prompt 1.",
+        "Antworten Sie der KI dreimal sachlich und mit einem Fakt.",
+        "Vergleichen Sie jede Regel und jede Zahl der KI mit dem Fall.",
+        "Notieren Sie nach Prompt 2, ob Sie den Hinweis der KI annehmen."
+      ],
+      "guetekriterien": [
+        {
+          "kriterium": "Zuerst ohne KI",
+          "indikator": "Ihr erster Satz, Ihre Frage und Ihr Wunsch standen vor dem Gespräch auf dem Blatt."
+        },
+        {
+          "kriterium": "Sachlich geblieben",
+          "indikator": "Sie haben in jeder Antwort einen Fakt genannt, ohne Vorwurf."
+        },
+        {
+          "kriterium": "Geprüft",
+          "indikator": "Jede Regel und jede Zahl der KI haben Sie mit dem Fall verglichen."
+        },
+        {
+          "kriterium": "Selbst entschieden",
+          "indikator": "Sie haben notiert, ob Sie den Hinweis der KI annehmen, mit einem Grund."
+        }
+      ],
+      "reflexion": [
+        "Was war im Gespräch mit der KI anders als im Gespräch zu zweit?",
+        "Wo hat die KI etwas gesagt, das nicht im Fall steht?",
+        "Im Kompetenznachweis begründen Sie Ihren Weg selbst. Welchen Satz aus diesem Gespräch nehmen Sie mit?"
+      ]
+    }
+  ]
+}

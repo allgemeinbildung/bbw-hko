@@ -44,9 +44,28 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
 
   const pages: { code: string; titel: string; body: ReactNode }[] = []
 
+  // «Wichtige Wörter» stehen VOR dem Lesetext, auf Seite 1 (Besprechung EBA-gold 23.10.2026,
+  // Entscheid Pietro 02.11.2026): erst die Wörter, dann der Text, dann die Fragen.
+  const woerter = vok.length > 0 && (
+    <div className="eba-lese-woerter">
+      <SectionHead num="L1">Wichtige Wörter</SectionHead>
+      <p className="eba-lese-intro">Lesen Sie diese Wörter zuerst. Sie helfen Ihnen beim Text.</p>
+      <div className="eba-lese-vokabel">
+        {vok.map((g) => (
+          <div className="eba-lese-vok" key={g.id}>
+            <span className="eba-lese-vok-b">{g.begriff}</span> — <span>{g.erklaerung_a2}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+  const nText = vok.length ? 'L2' : 'L1'
+  const nAufgaben = vok.length ? 'L3' : 'L2'
+
   // ---- Lesetext (durchnummeriert), 3 Absaetze pro Seite; Titel auf Seite 1 ----
   let para = 0
-  const textPages = chunk(absaetze, 3)
+  // Mit den Wörtern auf Seite 1 passen dort nur zwei Absätze; die Folgeseiten nehmen vier.
+  const textPages = vok.length ? [absaetze.slice(0, 2), ...chunk(absaetze.slice(2), 4)].filter((g) => g.length) : chunk(absaetze, 3)
   ;(textPages.length ? textPages : [[]]).forEach((grp, i) => {
     pages.push({
       code: 'LESEBLATT · EBA',
@@ -60,7 +79,8 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
               {lese.einleitung && <p className="eba-lese-intro">{lese.einleitung}</p>}
             </div>
           )}
-          <SectionHead num={i === 0 ? 'L1' : 'L1 ·'}>{i === 0 ? 'Lesetext' : 'Lesetext (Fortsetzung)'}</SectionHead>
+          {i === 0 && woerter}
+          <SectionHead num={i === 0 ? nText : `${nText} ·`}>{i === 0 ? 'Lesetext' : 'Lesetext (Fortsetzung)'}</SectionHead>
           <div className="eba-lese-text">
             {grp.map((t) => {
               para += 1
@@ -80,7 +100,7 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
       titel: 'Aufgaben zum Text',
       body: (
         <>
-          <SectionHead num="L2">Aufgaben zum Text</SectionHead>
+          <SectionHead num={nAufgaben}>Aufgaben zum Text</SectionHead>
           {rf.length > 0 && (
             <>
               <div className="eba-lese-aufgabe-titel">1. Richtig oder falsch? Kreuzen Sie an.</div>
@@ -105,27 +125,6 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
               ))}
             </>
           )}
-        </>
-      ),
-    })
-  }
-
-  // ---- Vokabelbox (aus Glossar) ----
-  if (vok.length) {
-    pages.push({
-      code: 'LESEBLATT · EBA',
-      titel: 'Wichtige Wörter',
-      body: (
-        <>
-          <SectionHead num="L3">Wichtige Wörter</SectionHead>
-          <p className="eba-lese-intro">Diese Wörter helfen Ihnen beim Lesen.</p>
-          <div className="eba-lese-vokabel">
-            {vok.map((g) => (
-              <div className="eba-lese-vok" key={g.id}>
-                <span className="eba-lese-vok-b">{g.begriff}</span> — <span>{g.erklaerung_a2}</span>
-              </div>
-            ))}
-          </div>
         </>
       ),
     })

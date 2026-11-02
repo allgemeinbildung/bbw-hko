@@ -209,7 +209,7 @@ export function DocKi({ ki, which, abteilung, edits, onEdit }: DocKiProps) {
       <div style={{ ...growSection, marginTop: '2.5mm' }}>
         <div style={microLabel}>Notieren Sie, was Sie mit der KI gemacht haben</div>
         <p style={{ fontSize: '8.6pt', color: '#5b6470', margin: '0 0 1mm', lineHeight: 1.32 }}>
-          Welchen Prompt haben Sie genutzt, was hat die KI geantwortet, was haben Sie geprüft oder geändert?
+          {ebaClass ? 'Welcher Prompt? Was hat die KI geantwortet? Was haben Sie geprüft?' : 'Welchen Prompt haben Sie genutzt, was hat die KI geantwortet, was haben Sie geprüft oder geändert?'}
         </p>
         <Schreibfeld grow={neu} heightMm={31} value={edits[`${key}_notiz`] || ''} onChange={(v) => onEdit(`${key}_notiz`, v)} />
       </div>

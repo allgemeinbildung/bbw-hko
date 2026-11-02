@@ -1,0 +1,637 @@
+{
+  "id": "1.1.1_lehrvertrag_orientieren_v42_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "1.1",
+  "modul_titel": "Ins Berufsleben einsteigen — Lehrvertrag verstehen",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "B",
+  "sit_farbe": "#2471A3",
+  "sit_farbe_light": "#D6EAF8",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Anders als abgemacht",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Bei einer Unstimmigkeit den Weg wählen"
+  },
+  "prinzip_ref": "1.1.1_lehrvertrag_orientieren_v42_prinzip",
+  "nrlp": {
+    "nr": "1.1.1",
+    "nr_primary": [
+      "1.1.1"
+    ],
+    "lebensbezug": "1.1",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      },
+      {
+        "aspekt": "Identität und Sozialisation",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Interaktion und Kollaboration digital"
+    ],
+    "sprachmodus_ids": [
+      "SM9"
+    ],
+    "sk": [
+      2,
+      7,
+      11
+    ],
+    "kompetenz_id": "1.1.1",
+    "lebensbezug_id": "1.1",
+    "kompetenz_text": "Ich kann mich in der Arbeits- und Ausbildungswelt anhand der Informationen zum Lehrvertrag orientieren und bei Fragen oder Konflikten bei dafür vorgesehenen Kontaktstellen Unterstützung holen.",
+    "lebensbezug_text": "Ich kenne meine Rechte beim Berufseinstieg und organisiere mich digital."
+  },
+  "persona": {
+    "beruf": "Lernende/r EBA, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Ich bin im 1. Lehrjahr meiner EBA-Lehre. Seit drei Wochen mache ich im Betrieb fast nur Reinigung und Aufräumen. Beim Lehrbeginn hiess es anders: Ich lerne Schritt für Schritt die Arbeiten von meinem Beruf. Das passt nicht zusammen. Ich bin enttäuscht und auch ein wenig wütend. Meine Berufsbildnerin hat viel zu tun. Letzte Woche wollte ich sie fragen. Sie sagte: «Jetzt nicht.» Ich will zuerst wissen, was gilt. Dann entscheide ich: Spreche ich es selbst an? Oder hole ich Hilfe bei einer Stelle?",
+  "zahlen_tabelle": [
+    {
+      "label": "Reinigung und Aufräumen seit",
+      "wert": "3 Wochen"
+    },
+    {
+      "label": "Arbeiten von meinem Beruf in dieser Zeit",
+      "wert": "2 Halbtage"
+    },
+    {
+      "label": "Mein Versuch, darüber zu sprechen",
+      "wert": "1-mal"
+    }
+  ],
+  "leitfrage": "Was gilt in meinem Fall — und spreche ich es selbst an oder hole ich Hilfe?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Selbst klären vs. Hilfe holen",
+    "hint": "Ein ruhiges Gespräch im Betrieb hilft oft. Manchmal braucht es eine Stelle von aussen. Beides kann richtig sein."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Fakten zuerst",
+      "unterueberschrift": "Den Fall sachlich ordnen",
+      "seiten": "Info-Karte B-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Wo steht was?",
+      "unterueberschrift": "Vertrag und Bildungsplan",
+      "seiten": "Info-Karte B-02",
+      "fuer_leitfrage": [
+        2
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Die zwei Wege und die Stellen",
+      "unterueberschrift": "Wer hilft?",
+      "seiten": "Info-Karte B-03",
+      "fuer_leitfrage": [
+        2,
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Sie bereiten Schritt für Schritt Ihre Nachricht vor. Leitfrage 1 gibt Ihnen die Fakten. Leitfrage 2 zeigt, was gilt und wer hilft. Leitfrage 3 zeigt Ihren Weg.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte B-01",
+      "text": "Lesen Sie die Situation noch einmal. Was ist ein Fakt? Was ist ein Gefühl? Schreiben Sie drei Fakten und ein Gefühl auf.",
+      "liefert": "die Fakten für die Nachricht",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 60,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie die Info-Karte B-01 im Dossier.",
+          "Unterstreichen Sie in der Situation alles, was man sehen, zählen oder nachlesen kann.",
+          "Schreiben Sie jeden Fakt in einem kurzen Satz auf."
+        ],
+        "satzanfaenge": [
+          "«Seit … mache ich …»",
+          "«Abgemacht war: …»",
+          "«Ich fühle mich …»"
+        ],
+        "produkt": "Die Fakten kommen in Ihre Nachricht. Das Gefühl bleibt draussen."
+      },
+      "loesung": {
+        "kern": "Fakten und Gefühl sauber getrennt",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Drei Fakten und ein Gefühl. Die Fakten sagen: Was ist passiert? Seit wann? Was war abgemacht?",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Mögliche Fakten",
+            "text": "Drei davon genügen: Seit drei Wochen fast nur Reinigung und Aufräumen. Nur zwei Halbtage Arbeiten vom Beruf. Abgemacht war: Schritt für Schritt den Beruf lernen. Ein Versuch zu fragen: «Jetzt nicht.»"
+          },
+          {
+            "label": "Gefühl",
+            "text": "Ich bin enttäuscht und ein wenig wütend.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Eine Meinung als Fakt notieren, etwa «Der Betrieb nutzt mich aus»."
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "Digitale Nachricht",
+    "titel": "Meine sachliche Nachricht",
+    "format_detail": "Eine kurze digitale Nachricht mit fünf bis sieben Sätzen: Anrede, Fakten, Wunsch und Gruss. Ein Satz sagt, was gilt.",
+    "beschreibung": "Ich schreibe eine sachliche Nachricht an die Person oder Stelle, die ich gewählt habe. Ich nenne Fakten und meinen Wunsch.",
+    "schritte": [
+      {
+        "label": "01 Fakten wählen",
+        "hint": "Wählen Sie zwei von Ihren drei Fakten aus Leitfrage 1 (S. 2). Sie kommen an den Anfang der Nachricht."
+      },
+      {
+        "label": "02 Sagen, was gilt",
+        "hint": "Schreiben Sie einen Satz mit Ihrem Ergebnis aus Leitfrage 2 (S. 3): Was gilt, und wo steht es?"
+      },
+      {
+        "label": "03 Empfänger festlegen",
+        "hint": "An wen schreiben Sie? Nehmen Sie Ihren Weg aus Leitfrage 3 (S. 4)."
+      },
+      {
+        "label": "04 Nachricht schreiben",
+        "hint": "Schreiben Sie auf S. 7 fünf bis sieben kurze Sätze. Am Schluss stehen Ihr Wunsch und ein Gruss."
+      },
+      {
+        "label": "05 Tauschen und prüfen",
+        "hint": "Tauschen Sie die Nachricht mit einer anderen Person. Ist sie ruhig, klar und höflich? Kreuzen Sie die Kriterien an (S. 5)."
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "Nachricht mit fünf bis sieben Sätzen",
+      "Denkhilfe mit Ihrem Weg (S. 4)",
+      "Raster von Seite 3"
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einem anderen Fall: Die Arbeitskleider fehlen",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Vor dem Schreiben",
+          "eintraege": [
+            {
+              "text": "Fakt: Abgemacht waren zwei Arbeitshosen vom Betrieb."
+            },
+            {
+              "text": "Fakt: Seit vier Wochen habe ich keine bekommen."
+            },
+            {
+              "text": "Was gilt: Die Abmachung steht in meinen Unterlagen vom Lehrbeginn."
+            },
+            {
+              "text": "Mein Weg: Ich schreibe zuerst selbst meinem Berufsbildner."
+            }
+          ]
+        },
+        {
+          "titel": "Die Nachricht",
+          "text": [
+            "Guten Tag Herr Meier",
+            "Ich bin im 1. Lehrjahr. Abgemacht waren zwei Arbeitshosen vom Betrieb. Seit vier Wochen habe ich noch keine bekommen. So steht es in meinen Unterlagen vom Lehrbeginn. Können Sie mir sagen, wann ich die Hosen bekomme?",
+            "Vielen Dank und freundliche Grüsse"
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung zum Fall: fast nur Reinigung und Aufräumen",
+      "hinweis": "Eine mögliche Nachricht, keine Vorlage. Der Name der Berufsbildnerin ist angenommen. Der Weg «Hilfe holen» trägt gleich weit: Dann geht die Nachricht an die Lehrperson. Erst zeigen, wenn der eigene Entwurf steht.",
+      "legende": [],
+      "bloecke": [
+        {
+          "titel": "Vor dem Schreiben",
+          "eintraege": [
+            {
+              "text": "Fakt: Seit drei Wochen mache ich fast nur Reinigung und Aufräumen."
+            },
+            {
+              "text": "Fakt: In dieser Zeit habe ich nur an zwei Halbtagen im Beruf gearbeitet."
+            },
+            {
+              "text": "Was gilt: Der Betrieb muss mich im Beruf ausbilden. Das steht im Lehrvertrag."
+            },
+            {
+              "text": "Mein Weg: Ich spreche es zuerst selbst an. Ein richtiges Gespräch gab es noch nicht."
+            }
+          ]
+        },
+        {
+          "titel": "Die Nachricht",
+          "text": [
+            "Guten Tag Frau Berger",
+            "Ich bin im 1. Lehrjahr. Seit drei Wochen mache ich fast nur Reinigung und Aufräumen. In dieser Zeit habe ich nur an zwei Halbtagen Arbeiten von meinem Beruf gemacht. Im Lehrvertrag steht: Der Betrieb bildet mich im Beruf aus. Ich möchte das zuerst mit Ihnen besprechen. Mein Wunsch: Ich möchte wieder regelmässig im Beruf mitarbeiten. Haben Sie diese Woche kurz Zeit?",
+            "Freundliche Grüsse"
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "dimension": "SuK",
+      "stufen": [
+        "Eine Begründung fehlt. Die Sprache passt nicht zur Person.",
+        "Eine Begründung ist im Ansatz da. Die Sprache passt zum Teil zur Person.",
+        "Die Begründung ist klar. Die Sprache passt zur Person und zur Situation.",
+        "Die Begründung ist klar und vollständig. Die Wörter sind bewusst gewählt."
+      ],
+      "name_lernende": "Gut begründen",
+      "stufen_lernende": [
+        "Ich begründe nicht. Meine Sprache passt nicht zur Person.",
+        "Ich begründe ein wenig. Meine Sprache passt zum Teil zur Person.",
+        "Meine Begründung ist klar. Meine Sprache passt zur Person und zur Situation.",
+        "Meine Begründung ist klar und vollständig. Ich wähle meine Wörter genau."
+      ],
+      "indikator_produkt": "Die Nachricht nennt Fakten und sagt, was gilt. Der Ton ist ruhig und höflich."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "dimension": "Ges",
+      "stufen": [
+        "Eine eigene Meinung ist nicht erkennbar.",
+        "Die eigene Meinung ist nur angedeutet.",
+        "Die eigene Meinung steht klar in der Ich-Form.",
+        "Die eigene Meinung ist begründet. Auch der andere Weg ist ernst genommen."
+      ],
+      "name_lernende": "Meine Meinung",
+      "stufen_lernende": [
+        "Man sieht meine Meinung nicht.",
+        "Man sieht meine Meinung nur ein wenig.",
+        "Ich schreibe meine Meinung klar in der Ich-Form.",
+        "Ich begründe meine Meinung. Ich nehme auch den anderen Weg ernst."
+      ],
+      "indikator_produkt": "Der gewählte Weg hat einen Grund (S. 4). Der Wunsch steht in der Ich-Form."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Beispiel einer Nachricht an einem anderen Fall (S. 6) und die Beispielzeile im Raster (S. 3).",
+    "scaffold_100": "Schreiben Sie eine zweite Nachricht für den anderen Weg. Was ändert sich bei der Anrede und beim Wunsch?"
+  },
+  "methoden": [
+    {
+      "ref": "hko-eba-fakt-oder-gefuehl",
+      "fuer": "für die Fakten in Leitfrage 1 und in der Nachricht"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-eba-zwei-wege-abwaegen",
+      "fuer": "für Ihren Entscheid in Leitfrage 3"
+    },
+    {
+      "ref": "hko-eba-nachricht-aufbauen",
+      "fuer": "für den Aufbau Ihrer Nachricht"
+    }
+  ],
+  "mindmap_zentrum": "Selbst klären oder Hilfe holen",
+  "mindmap_aeste": [
+    {
+      "titel": "Was ist passiert?",
+      "punkte": [
+        "Fakt",
+        "Unstimmigkeit",
+        "Konflikt",
+        "sachlich"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Was gilt?",
+      "punkte": [
+        "Lehrverhältnis",
+        "Bildungsplan"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Wer hilft?",
+      "punkte": [
+        "Berufsbildner/in",
+        "Kontaktstelle",
+        "Berufsbildungsamt",
+        "vermitteln"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich jetzt, was in meinem Fall gilt und wo es steht?",
+      "Habe ich meinen Weg gewählt: selbst ansprechen oder Hilfe holen?"
+    ],
+    "mitnahme": [
+      "Mein Weg bei einem Konflikt",
+      "Mein erster Satz",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Unstimmigkeit",
+          "nach": "Konflikt",
+          "text": "kann werden zu einem"
+        },
+        {
+          "von": "Fakt",
+          "nach": "sachlich",
+          "text": "macht die Nachricht"
+        },
+        {
+          "von": "Bildungsplan",
+          "nach": "Lehrverhältnis",
+          "text": "sagt, was ich lerne im"
+        },
+        {
+          "von": "Berufsbildungsamt",
+          "nach": "Kontaktstelle",
+          "text": "ist eine"
+        },
+        {
+          "von": "Fakt",
+          "nach": "gilt auch bei …",
+          "text": "braucht es auch dort zuerst"
+        }
+      ],
+      "transfer": "Streit im Verein, falsche Rechnung, Problem mit der Vermieterin",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Lehrvertrag",
+          "Ausbildung"
+        ]
+      },
+      "quercheck": [
+        "Ja: Der Betrieb muss mich im Beruf ausbilden. Das steht im Lehrvertrag.",
+        "Ja: Ich schreibe zuerst selbst meiner Berufsbildnerin."
+      ],
+      "mitnahme": [
+        "Zuerst Fakten, dann nachschauen, dann den Weg wählen.",
+        "Guten Tag Frau Berger, ich habe eine Frage zu meiner Ausbildung.",
+        "Wie das Berufsbildungsamt in meinem Kanton heisst."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Leitfrage 1 nennt drei Fakten und ein Gefühl",
+        "Leitfrage 3 nennt beide Wege",
+        "Leitfrage 3 nennt einen Weg mit Grund"
+      ]
+    },
+    {
+      "produkt": "Raster",
+      "vollstaendig_wenn": [
+        "Raster mit drei Zeilen",
+        "Jede Zeile hat einen Begriff (Leitfrage 1 oder Glossar)",
+        "Ergebnis in zwei Sätzen"
+      ]
+    },
+    {
+      "produkt": "Nachricht",
+      "vollstaendig_wenn": [
+        "Fünf bis sieben Sätze",
+        "Zuerst Fakten, am Schluss der Wunsch",
+        "Anrede und Gruss sind da"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Quer-Check: jede Frage abgehakt und beantwortet",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Leitfrage 1",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Leitfrage 2 mit Raster, Leitfrage 3 mit Denkhilfe",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Nachricht schreiben, Kriterien, Abschluss mit Quer-Check",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "Wo prüfen Sie sonst zuerst die Fakten, bevor Sie handeln?",
+    "ziel": "Ich kläre zuerst, was gilt. Dann entscheide ich begründet: selbst klären oder Hilfe holen."
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "Fakten klären, nachschauen, was gilt, und den Weg begründet wählen",
+    "lehrmittel_anker": "Dossier, Info-Karten B-01 bis B-03 (EBA hat kein Lehrmittel).",
+    "kn_aktivierung": "Im KN passt eine Ankündigung zur Arbeit am Samstag nicht zu dem, was abgemacht war: Der Weg ist begründet zu wählen.",
+    "transfer_check": "Entscheidet die lernende Person begründet zwischen selbst klären und Hilfe holen?"
+  },
+  "sk_anker": [
+    {
+      "sk": 2,
+      "wo": "LF3 + Denkhilfe — einen Weg wählen und das Vorgehen dem Fall anpassen"
+    },
+    {
+      "sk": 7,
+      "wo": "Produkt — sachlich schreiben und die Sicht der anderen Person mitdenken"
+    },
+    {
+      "sk": 11,
+      "wo": "Spannungsfeld + LF3 — selbst klären oder Hilfe holen bleibt beides begründbar"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 2,
+          "bloom": "Anwenden",
+          "knoten_ref": "Dossier | Info-Karte B-02 und B-03",
+          "text": "Füllen Sie das Raster aus. Wo finden Sie eine Antwort? Wer kann helfen? Schreiben Sie danach in zwei Sätzen: Was gilt in diesem Fall?",
+          "liefert": "was gilt und wer hilft",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "Dossier | Info-Karte B-02 und B-03",
+            "auftrag": "Lesen Sie die Info-Karten B-02 und B-03. Im Raster ist die erste Zeile schon ausgefüllt, als Beispiel. Füllen Sie Zeile 2 und 3 aus. Zeile 2: Was muss der Betrieb tun? Zeile 3: Wer hilft bei Konflikten?",
+            "spalten": [
+              "Meine Frage",
+              "Hier schaue ich",
+              "Das steht dort",
+              "→ Begriff"
+            ],
+            "zeilen": 3,
+            "beispielzeile": [
+              "Was soll ich lernen?",
+              "im Bildungsplan",
+              "Arbeiten vom Beruf",
+              "Bildungsplan"
+            ]
+          },
+          "feld_hoehe_mm": 30,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie zuerst die Beispielzeile im Raster.",
+              "Suchen Sie die Antwort auf der Info-Karte. Unterstreichen Sie die Stelle.",
+              "Schreiben Sie nur Stichworte in das Raster."
+            ],
+            "satzanfaenge": [
+              "«In meinem Fall gilt: …»",
+              "«Das steht im …»",
+              "«Bei einem Konflikt hilft …»"
+            ],
+            "produkt": "Ihr Ergebnis kommt in Ihre Nachricht."
+          },
+          "loesung": {
+            "kern": "Was gilt, wo es steht, wer hilft",
+            "quelle_ref": "Dossier | Info-Karte B-02 und B-03",
+            "quelle_stand": "2026-10-09",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Drei Zeilen mit Fundort. Zuerst wird in den eigenen Unterlagen gesucht.",
+                "quelle": "Info-Karte B-02"
+              },
+              {
+                "label": "Was gilt",
+                "text": "Der Betrieb muss die lernende Person im Beruf ausbilden. Der Bildungsplan sagt, was sie lernen soll.",
+                "quelle": "Info-Karte B-02"
+              },
+              {
+                "label": "Wer hilft",
+                "text": "An der Schule die Lehrperson. Das kantonale Berufsbildungsamt vermittelt bei Konflikten. Der Name ist je Kanton anders.",
+                "quelle": "Info-Karte B-03"
+              },
+              {
+                "label": "Befund",
+                "text": "Nennt, was gilt, und einen Fundort. Ohne Fundort bleibt die Aussage eine Behauptung."
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Was soll ich lernen?",
+                "im Bildungsplan",
+                "Arbeiten vom Beruf",
+                "Bildungsplan"
+              ],
+              [
+                "Was muss der Betrieb tun?",
+                "im Lehrvertrag",
+                "bildet mich im Beruf aus",
+                "Lehrverhältnis"
+              ],
+              [
+                "Wer hilft bei Konflikten?",
+                "auf Info-Karte B-03",
+                "Lehrperson, dann das Amt",
+                "Kontaktstelle"
+              ]
+            ],
+            "befund": "Der Betrieb muss mich im Beruf ausbilden, das steht im Lehrvertrag. Bei einem Konflikt helfen meine Lehrperson und das Berufsbildungsamt."
+          }
+        },
+        {
+          "nr": 3,
+          "bloom": "Entscheiden",
+          "knoten_ref": "Info-Karte B-03 · selbst ansprechen ↔ Hilfe holen",
+          "pol_typ": "position_gegenposition",
+          "text": "Sie haben zwei Wege: selbst noch einmal ansprechen oder Hilfe holen, zum Beispiel bei Ihrer Lehrperson. Was spricht für jeden Weg? Wählen Sie einen Weg. Begründen Sie mit einem Fakt.",
+          "liefert": "der Weg mit Begründung",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Füllen Sie zuerst die Denkhilfe aus. Schreiben Sie erst danach.",
+              "Schauen Sie auf Ihre Fakten aus Leitfrage 1: Was ist beim ersten Versuch passiert?",
+              "Schreiben Sie Ihren Entscheid mit einem Grund auf."
+            ],
+            "satzanfaenge": [
+              "«Für das Gespräch im Betrieb spricht: …»",
+              "«Für Hilfe von einer Stelle spricht: …»",
+              "«Ich wähle diesen Weg, weil …»"
+            ],
+            "produkt": "Ihr Weg entscheidet: An wen geht Ihre Nachricht?"
+          },
+          "loesung": {
+            "kern": "Erwartungshorizont: zwei Wege, ein Entscheid mit Grund",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Beide Wege sind genannt.",
+                "Der Entscheid hat einen Grund aus den Fakten.",
+                "Es ist klar, an wen die Nachricht geht."
+              ],
+              "beispiel_pol_1": "Selbst ansprechen: «Ich schreibe meiner Berufsbildnerin eine Nachricht und bitte um einen Termin. Beim ersten Mal hatte sie keine Zeit. Ein richtiges Gespräch gab es noch nicht. Wenn das nicht hilft, frage ich meine Lehrperson.»",
+              "beispiel_pol_2": "Hilfe holen: «Ich frage zuerst meine Lehrperson an der Schule. Im Betrieb habe ich es schon einmal versucht. Sie kann mir sagen, wie ich das Gespräch beginne. Danach spreche ich im Betrieb.»",
+              "nicht_tragfaehig": "Ein Weg ohne Grund. Oder: nichts tun und abwarten."
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe – zuerst hier Stichworte, dann schreiben",
+        "spalten": [
+          "Selbst ansprechen: dafür",
+          "Hilfe holen: dafür",
+          "Mein Weg"
+        ],
+        "hinweis": "Schreiben Sie in jede Spalte ein bis zwei Stichworte. Ihr Weg muss zu Ihren Fakten passen.",
+        "loesung_zeilen": [
+          [
+            "Noch kein richtiges Gespräch",
+            "Erster Versuch: «Jetzt nicht»",
+            "Zuerst selbst schreiben"
+          ],
+          [
+            "Geht schnell, bleibt im Betrieb",
+            "Lehrperson kennt solche Fälle",
+            "Danach die Lehrperson fragen"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-eba-raster-fuellen",
+        "fuer": "für das Raster zur Info-Karte (S. 3)"
+      },
+      "scaffold_90": "Beispiel einer Nachricht an einem anderen Fall (S. 6) und die Beispielzeile im Raster (S. 3)."
+    }
+  }
+}

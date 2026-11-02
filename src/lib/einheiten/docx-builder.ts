@@ -23,6 +23,7 @@ import {
   tcell, dataTable, schreibfeld, skizzeBox, callout, sectionProps,
 } from './docx-primitives'
 import { isV42 } from './spuren'
+import { worte } from './v42-profil'
 import { buildHeftV42 } from './docx-heft-v42'
 
 
@@ -480,7 +481,7 @@ export function mindmapHinweisBlock(sit: SituationJson, akzent: string): any[] {
 
 // 05 · Methoden — Werkzeugseite als 2×2-Tabelle, damit sie wie im HTML auf eine Seite passt.
 // Spiegelt MethodenGrid aus DocS.tsx. Wird nur aufgerufen, wenn `sit.methoden` Daten hat.
-export function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: number, akzent: string): any {
+export function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], nr: number, akzent: string, hkoZeile = 'Methodenkarte · nicht im Lehrmittel'): any {
   const els: any[] = []
   els.push(new Paragraph({
     children: [
@@ -492,7 +493,7 @@ export function methodeZelle(m: NonNullable<SituationJson['methoden']>[number], 
   els.push(p(
     m.quelle === 'lehrmittel'
       ? `Lehrmittel Kap. ${m.kap ?? ''}${m.seiten ? ` · ${m.seiten}` : ''}`
-      : 'Methodenkarte · nicht im Lehrmittel',
+      : hkoZeile,
     { run: { color: m.quelle === 'hko' ? COLOR.inkSoft : akzent, bold: true, size: 13 }, spacing: { after: 30 } },
   ))
   if (m.fuer) els.push(p(m.fuer, { run: { color: COLOR.inkMute, italics: true, size: 14 }, spacing: { after: 60 } }))
@@ -538,14 +539,16 @@ export function methodenBlock(sit: SituationJson, akzent: string): any[] {
     .sort((a, b) => Number(angereichert(a)) - Number(angereichert(b)))
   if (!items.length) return []
   const els: any[] = []
+  // Heft v4.2: Einleitung und Herkunftszeile je Lehrgang (v42-profil.ts); im Bestand fest.
+  const w = isV42(sit) ? worte(sit) : null
   els.push(p(
-    'Vier Werkzeuge, vier Felder. Wo ein Kapitel steht, schlagen Sie im Lehrmittel nach — hier steht, was Sie damit für diese Abgabe machen. Die übrigen Felder stehen für sich.',
+    w?.methodenIntro ?? 'Vier Werkzeuge, vier Felder. Wo ein Kapitel steht, schlagen Sie im Lehrmittel nach — hier steht, was Sie damit für diese Abgabe machen. Die übrigen Felder stehen für sich.',
     { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 140 } },
   ))
   const rows: any[] = []
   for (let i = 0; i < items.length; i += 2) {
     const paar = items.slice(i, i + 2)
-    const zellen = paar.map((m, j) => methodeZelle(m, i + j + 1, akzent))
+    const zellen = paar.map((m, j) => methodeZelle(m, i + j + 1, akzent, w?.methodenkarteHko))
     // Ungerade Restzelle auffüllen, damit die Tabelle rechteckig bleibt.
     if (zellen.length === 1) zellen.push(tcell([p('')], { width: { size: 50, type: WidthType.PERCENTAGE } }))
     rows.push(new TableRow({ children: zellen }))
@@ -1139,7 +1142,7 @@ export function buildDossier({ dossier, abteilung, kompetenzNr, logoPng = null }
 // ---------------------------------------------------------------------------
 // buildLeseblatt — optionales EBA Lese-Arbeitsblatt (Word). Lesetext aus den
 // Dossier-Info-Karten (nuggets[].inhalt, A -> B) + autorierte Aufgaben
-// (richtig/falsch, W-Fragen) + Vokabelbox aus dem Glossar. Spiegelt DocLeseblatt.
+// (richtig/falsch, W-Fragen); die Vokabelbox aus dem Glossar steht vor dem Text. Spiegelt DocLeseblatt.
 // ---------------------------------------------------------------------------
 export function buildLeseblatt({ dossier, abteilung, kompetenzNr, logoPng = null }: BuildDossierOpts): Document | null {
   if (!dossier) return null
@@ -1162,8 +1165,25 @@ export function buildLeseblatt({ dossier, abteilung, kompetenzNr, logoPng = null
   if (komp) children.push(p('Kompetenz ' + komp, { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 40 } }))
   if (lese.einleitung) children.push(p(lese.einleitung, { run: { italics: true, color: COLOR.inkSoft, size: 20 }, spacing: { after: 120, line: 320, lineRule: LineRuleType.AUTO } }))
 
+  // «Wichtige Wörter» VOR dem Lesetext (Entscheid Pietro 02.11.2026) — wie DocLeseblatt.
+  const vok = (lese.vokabeln || []).map((id: string) => glossar.find((g) => g.id === id)).filter(Boolean)
+  if (vok.length) {
+    children.push(...sectionHead('L1', 'Wichtige Wörter', akzent))
+    children.push(p('Lesen Sie diese Wörter zuerst. Sie helfen Ihnen beim Text.', { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 80 } }))
+    vok.forEach((g: any) => {
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: (g.begriff || '') + ' — ', bold: true, size: 19 }),
+          new TextRun({ text: g.erklaerung_a2 || '', size: 19 }),
+        ],
+        spacing: { after: 50, line: 300, lineRule: LineRuleType.AUTO },
+      }))
+    })
+    children.push(p('', { spacing: { after: 80 } }))
+  }
+
   // Lesetext, durchnummeriert
-  children.push(...sectionHead('L1', 'Lesetext', akzent))
+  children.push(...sectionHead(vok.length ? 'L2' : 'L1', 'Lesetext', akzent))
   absaetze.forEach((t, i) => {
     children.push(new Paragraph({
       children: [
@@ -1179,7 +1199,7 @@ export function buildLeseblatt({ dossier, abteilung, kompetenzNr, logoPng = null
   const wf: string[] = lese.w_fragen || []
   if (rf.length || wf.length) {
     children.push(pageBreak())
-    children.push(...sectionHead('L2', 'Aufgaben zum Text', akzent))
+    children.push(...sectionHead(vok.length ? 'L3' : 'L2', 'Aufgaben zum Text', akzent))
     if (rf.length) {
       children.push(p('1. Richtig oder falsch? Kreuzen Sie an.', { run: { bold: true, size: 20 }, spacing: { before: 60, after: 60 } }))
       rf.forEach((r) => {
@@ -1201,22 +1221,6 @@ export function buildLeseblatt({ dossier, abteilung, kompetenzNr, logoPng = null
     }
   }
 
-  // Vokabelbox
-  const vok = (lese.vokabeln || []).map((id: string) => glossar.find((g) => g.id === id)).filter(Boolean)
-  if (vok.length) {
-    children.push(pageBreak())
-    children.push(...sectionHead('L3', 'Wichtige Wörter', akzent))
-    children.push(p('Diese Wörter helfen Ihnen beim Lesen.', { run: { color: COLOR.inkSoft, size: 18 }, spacing: { after: 80 } }))
-    vok.forEach((g: any) => {
-      children.push(new Paragraph({
-        children: [
-          new TextRun({ text: (g.begriff || '') + ' — ', bold: true, size: 19 }),
-          new TextRun({ text: g.erklaerung_a2 || '', size: 19 }),
-        ],
-        spacing: { after: 80, line: 320, lineRule: LineRuleType.AUTO },
-      }))
-    })
-  }
 
   return new Document({
     creator: 'HKO Renderer',
@@ -2042,7 +2046,7 @@ export function buildKi({ ki, which, abteilung, logoPng = null }: BuildKiOpts): 
     })
     // Notiz-Feld: was haben Sie mit der KI gemacht?
     children.push(p('NOTIEREN SIE, WAS SIE MIT DER KI GEMACHT HABEN', { run: { color: akzent, bold: true, size: 14 }, spacing: { before: 120, after: 20 } }))
-    children.push(p('Welchen Prompt haben Sie genutzt, was hat die KI geantwortet, was haben Sie geprüft oder geändert?', { run: { color: COLOR.inkSoft, size: 16 }, spacing: { after: 40 } }))
+    children.push(p(ki.lehrgang === 'EBA_2J' ? 'Welcher Prompt? Was hat die KI geantwortet? Was haben Sie geprüft?' : 'Welchen Prompt haben Sie genutzt, was hat die KI geantwortet, was haben Sie geprüft oder geändert?', { run: { color: COLOR.inkSoft, size: 16 }, spacing: { after: 40 } }))
     children.push(...schreibfeld(31))
   }
   if (a.reflexion?.length) {

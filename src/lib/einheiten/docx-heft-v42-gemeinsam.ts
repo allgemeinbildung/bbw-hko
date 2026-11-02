@@ -41,8 +41,9 @@ export function seitenKopfDocx(nr: number, titel: string, ctx: HeftDocxKontext):
 }
 
 /** Umrandeter Kasten mit optionaler Beschriftung — Gegenstück zu <Kasten>. */
-export function kastenDocx(label: string | null, inhalt: (Paragraph | Table)[], ctx: HeftDocxKontext): Table {
-  const kopf = label ? [p(label.toUpperCase(), { run: { color: ctx.akzent, bold: true, size: 14 } })] : []
+/** `labelGroesse` in halben Punkt (Standard 14 = 7pt); EBA-Denkhilfe nutzt 19 (Besprechung 23.10.2026). */
+export function kastenDocx(label: string | null, inhalt: (Paragraph | Table)[], ctx: HeftDocxKontext, labelGroesse = 14): Table {
+  const kopf = label ? [p(label.toUpperCase(), { run: { color: ctx.akzent, bold: true, size: labelGroesse } })] : []
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
     rows: [new TableRow({

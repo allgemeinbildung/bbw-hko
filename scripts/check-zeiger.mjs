@@ -57,7 +57,7 @@
  */
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { join, resolve } from 'node:path'
-import { aufruf, ladeEinheit, Bericht, schluss, textfelder, zeitmarkenIn, seitenIn, absaetzeIn, lehrmittelVerweise, ELEMENT_SEITEN, HEFT_SEITEN, BOGEN_SEITEN, ERFUNDEN } from './lib/pruefung.mjs'
+import { aufruf, ladeEinheit, Bericht, schluss, textfelder, zeitmarkenIn, seitenIn, absaetzeIn, lehrmittelVerweise, ELEMENT_SEITEN, elementSeiten, HEFT_SEITEN, BOGEN_SEITEN, ERFUNDEN } from './lib/pruefung.mjs'
 import { archivWurzel, lehrmittelWurzel, ladeArchivtext, ausschnittDerKarte, kapitelDateien, ladeKapitel, parseZeit, formatZeit, kopfFeld } from './lib/archiv.mjs'
 import { seitenAusHtml } from './lib/seitentext.mjs'
 
@@ -208,9 +208,9 @@ function heftseitenIn(text) {
  * dazwischen höchstens Klammer, Komma und ein Verhältniswort («Checkliste (S. 8)»,
  * «Raster auf S. 3», «Beispiel, S. 6»). «Übertragen Sie LF3 … auf S. 7» ist kein solcher Verweis.
  */
-function elementVor(text, pos) {
+function elementVor(text, pos, liste = ELEMENT_SEITEN) {
   const vor = text.slice(Math.max(0, pos - 48), pos)
-  for (const e of ELEMENT_SEITEN) {
+  for (const e of liste) {
     const m = new RegExp(`(?:${e.wort.source})[»”"]?\\s*[(,]?\\s*(?:(?:auf|von|der|des|im|in|zu|zur|zum|siehe|vgl\\.)\\s)?(?:Heft [AB],?\\s)?$`).exec(vor)
     if (m) return { ...e, treffer: m[0].replace(/[\s(,]+$/, '').trim() }
   }
@@ -244,7 +244,7 @@ function pruefeHeftseiten(E, B) {
       const heftGenannt = /Heft(?:s|e|en)?\s?(?:([AB])\b)?[^.;:!?\n]{0,25}$/.exec(f.text.slice(Math.max(0, s.pos - 45), s.pos))
       if (!imHeft && !heftGenannt) continue
       if (s.bis > HEFT_SEITEN) { B.fehler('ERR_ZEIGER_SEITE', f.feld, `nennt «${s.text}»; das Heft hat ${HEFT_SEITEN} Seiten`); continue }
-      const e = elementVor(f.text, s.pos)
+      const e = elementVor(f.text, s.pos, elementSeiten(E.hefte[0]?.json?.lehrgang))
       if (e && !s.seiten.some((n) => e.seiten.includes(n))) { B.fehler('ERR_ZEIGER_SEITE_ELEMENT', f.feld, `«${e.treffer} … ${s.text}»: ${e.name} steht im Heft auf S. ${e.seiten[0]}`); continue }
       // Mit Export: Das Element bzw. ein Wort in Guillemets vor dem Verweis muss auf der Seite gedruckt sein.
       const heft = imHeft ? f.traeger : heftGenannt?.[1]

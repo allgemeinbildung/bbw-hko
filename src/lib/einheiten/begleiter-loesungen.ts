@@ -20,6 +20,7 @@
 import { TEMPLATE_V42 } from './types'
 import type { Erwartungshorizont, SpurKey } from './types'
 import { SPUR_KEYS } from './spuren'
+import { istEba } from './v42-profil'
 
 const MASSSTAB_SATZ =
   'Der Massstab für die Beurteilung, nicht ein Skript zum Vorlesen: Formulierungen der Lernenden dürfen abweichen, solange Quelle und eigene Verdichtung erkennbar sind. Dieselben Lösungen liegen als aufklappbare Folie im Unterrichtsdeck.'
@@ -32,6 +33,39 @@ const MASSSTAB_SATZ_V42 =
 const SPUR_TITEL: Record<SpurKey, string> = {
   ohne_medien: 'Spur ohne Medien',
   mit_medien: 'Spur mit Medien',
+}
+
+const MASSSTAB_ANFANG_V42 =
+  'Der Massstab für die Beurteilung, nicht ein Skript zum Vorlesen: Formulierungen der Lernenden dürfen abweichen, solange Quelle und eigene Verdichtung erkennbar sind.'
+
+const lfListe = (lfs: Lf[]) => {
+  const n = lfs.map((lf) => `LF${lf.nr}`)
+  return n.length < 2 ? n.join('') : `${n.slice(0, -1).join(', ')} und ${n[n.length - 1]}`
+}
+
+/**
+ * v4.2: der Satz über den Lösungen eines Hefts. EFZ (zwei Spuren, vier Leitfragen): der
+ * feste Satz oben. EBA (eine Spur, drei Leitfragen): aus den Nummern des Rohhefts gebaut —
+ * «LF1 gilt für das ganze Heft; LF2 und LF3 stehen unter «Spur ohne Medien». …».
+ */
+function massstabSatzV42(hf: NonNullable<Hf>): string {
+  if (!istEba(hf)) return MASSSTAB_SATZ_V42
+  const nachNr = (a: Lf, b: Lf) => a.nr - b.nr
+  const kern = (hf.leitfragen ?? []).slice().sort(nachNr)
+  const spuren = SPUR_KEYS.filter((k) => (hf.spuren?.[k]?.leitfragen ?? []).length)
+  const jeSpur = spuren.flatMap((k) => hf.spuren?.[k]?.leitfragen ?? [])
+  const inSpur = [...new Map(jeSpur.map((lf) => [lf.nr, lf] as const)).values()].sort(nachNr)
+  const horizont = inSpur.filter((lf) => lf.loesung?.erwartungshorizont)
+  const wo = spuren.length === 1 ? `unter «${SPUR_TITEL[spuren[0]]}»` : 'je Spur'
+  const teile = [
+    kern.length ? `${lfListe(kern)} ${kern.length > 1 ? 'gelten' : 'gilt'} für das ganze Heft` : '',
+    inSpur.length ? `${lfListe(inSpur)} ${inSpur.length > 1 ? 'stehen' : 'steht'} ${wo}` : '',
+  ].filter(Boolean)
+  return [
+    MASSSTAB_ANFANG_V42,
+    teile.length ? `${teile.join('; ')}.` : '',
+    horizont.length ? `Zu ${lfListe(horizont)} gibt es keine Musterantwort, sondern einen Erwartungshorizont.` : '',
+  ].filter(Boolean).join(' ')
 }
 
 type Lf = {
@@ -55,6 +89,7 @@ type Lf = {
 type Hf = {
   buchstabe?: string
   template?: string
+  lehrgang?: string
   leitfragen?: Lf[]
   spuren?: Partial<Record<SpurKey, { leitfragen?: Lf[] } | null>>
 } | null
@@ -117,7 +152,7 @@ function teileV42(hf: NonNullable<Hf>): string[] {
   const teile: string[] = []
   const kern = (hf.leitfragen ?? []).filter(hatLoesungV42).sort((a, b) => a.nr - b.nr)
   if (kern.length) {
-    teile.push('#### Kern — gilt in beiden Spuren', '', ...kern.map((lf) => calloutV42(lf) + '\n'))
+    teile.push(istEba(hf) ? '#### Kern — gilt für das ganze Heft' : '#### Kern — gilt in beiden Spuren', '', ...kern.map((lf) => calloutV42(lf) + '\n'))
   }
   for (const key of SPUR_KEYS) {
     const lfs = (hf.spuren?.[key]?.leitfragen ?? []).filter(hatLoesungV42).sort((a, b) => a.nr - b.nr)
@@ -172,7 +207,7 @@ export function withLeitfragenLoesungen(raw: string, hfs: Hf[]): string {
   // eigenes Kapitel, statt ihre Lösungen stillschweigend zu verlieren.
   const heimatlos: { letter: string; lfs: NonNullable<NonNullable<Hf>['leitfragen']> }[] = []
   // v4.2-Hefte ohne eigene Sektion — eigener Sammelblock, gleiche Regel wie oben.
-  const heimatlosV42: { letter: string; teile: string[] }[] = []
+  const heimatlosV42: { letter: string; teile: string[]; satz: string }[] = []
 
   for (const hf of hfs) {
     const letter = String(hf?.buchstabe ?? '').toUpperCase()
@@ -185,12 +220,12 @@ export function withLeitfragenLoesungen(raw: string, hfs: Hf[]): string {
       if (!teile.length) continue
       const at = insertionPoint(raw, letter)
       if (at === null) {
-        heimatlosV42.push({ letter, teile })
+        heimatlosV42.push({ letter, teile, satz: massstabSatzV42(hf!) })
         continue
       }
       eingriffe.push({
         at,
-        text: ['', '### Lösungen der Leitfragen', '', MASSSTAB_SATZ_V42, '', ...teile].join('\n'),
+        text: ['', '### Lösungen der Leitfragen', '', massstabSatzV42(hf!), '', ...teile].join('\n'),
       })
       continue
     }
@@ -223,7 +258,7 @@ export function withLeitfragenLoesungen(raw: string, hfs: Hf[]): string {
   // exakt das Ergebnis der Einfügungen.
   const out = heimatlosV42.length
     ? eingefuegt +
-      ['', '', '---', '', '## Lösungen der Leitfragen', '', MASSSTAB_SATZ_V42]
+      ['', '', '---', '', '## Lösungen der Leitfragen', '', heimatlosV42[0].satz]
         .concat(heimatlosV42.flatMap(({ letter, teile }) => ['', `### Herausforderung ${letter}`, '', ...teile]))
         .join('\n') +
       '\n'

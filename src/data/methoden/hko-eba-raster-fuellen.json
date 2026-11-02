@@ -1,0 +1,21 @@
+{
+  "id": "hko-eba-raster-fuellen",
+  "name": "Ein Raster ausfüllen",
+  "quelle": "hko",
+  "fuer": "für das Sammeln von Angaben aus einem Text oder einer Tabelle",
+  "schritte": [
+    "Lesen Sie die Titel der Spalten. Sie sagen, was in jede Spalte gehört.",
+    "Lesen Sie die Beispielzeile. So sieht eine fertige Zeile aus.",
+    "Suchen Sie die Angabe im Text oder in der Tabelle. Unterstreichen Sie sie.",
+    "Schreiben Sie nur Stichworte in das Raster, keine ganzen Sätze."
+  ],
+  "ankommt": "Jede Zeile braucht eine Angabe, die Sie im Text zeigen können.",
+  "beispiel": [
+    "Frage: Wie lange darf ich das Velo mieten?",
+    "Hier schaue ich nach: im Mietvertrag, Abschnitt Dauer",
+    "Das steht dort: 3 Tage",
+    "Begriff: Vertragspunkt"
+  ],
+  "fehler": "Ganze Sätze abschreiben. Besser: höchstens fünf Wörter pro Feld.",
+  "merk": "Zuerst das Beispiel lesen, dann suchen, dann schreiben."
+}

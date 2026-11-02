@@ -2272,3 +2272,69 @@ Vier Entscheide nach dem Bericht:
 
 **Rückgängig:** die zwei Zeilen im Skript und die Sätze in `basis-plus.md` /
 `b1-language-rules.md` §4 über `git revert`.
+
+## E46 — EBA-Gold: `1.1.1_lehrvertrag_orientieren_v42` im Format v4.2 (Auftrag Pietro, 09.10.2026)
+
+Auftrag: aus der publizierten EBA-Einheit `1.1.1_lehrvertrag_orientieren` eine Gold-Fassung im
+Format v4.2 bauen — leichter als EFZ, mit deutlich mehr Führung, mit einem gemeinsamen Auftrag
+statt des Gruppenpuzzles und mit der KI-Toolbox 2.0.0. Erst danach werden Ablauf und Skills
+nachgezogen. Die Einheit ist **Entwurf** (nur KT1); die alte bleibt publiziert, bis Pietro
+entscheidet. Was hier steht, ist der Vorschlag der Session — jeder Punkt ist offen für seinen
+Entscheid (Leitfaden §13).
+
+**Form (Leitfaden §10, hier erstmals gebaut):**
+
+1. **Drei Leitfragen** je Heft: Kern `leitfragen` = LF1 (S. 2, Schreibfeld); in der Spur LF2
+   (S. 3, Raster mit 3 Zeilen, erste Zeile vorausgefüllt) und LF3 (S. 4, Entscheid mit
+   Denkhilfe). Die Leitfragen der Spur werden überall über ihre **Rolle** gefunden (Raster,
+   Pol-Typ), nicht mehr über die Nummer.
+2. **Dossier statt Lehrmittel:** `quellen_anker[]` mit `ref: "Dossier"` und
+   `seiten: "Info-Karte A-01"`; `knoten_ref: "Dossier | Info-Karte A-02"`. `dossier.json` bleibt
+   ein eigenes Dokument (Glossar+, Leseblatt). Die KI-Prompts der Info-Karten und die
+   Austausch-Scaffolds sind dort gestrichen — sie stehen in der KI-Toolbox bzw. im Auftragsbogen.
+3. **Eine Spur** (`ohne_medien`, `set.spur: "ohne_medien"`). Die Medien-Spur ist nicht gebaut
+   (§10: freiwillig); sie bräuchte eine Quellenrecherche auf A2.
+4. **Mehr Gerüst:** drei Schritte «So gehen Sie vor» und drei Satzanfänge je Leitfrage; Kasten
+   «Wichtige Wörter» auf S. 2; grössere Schreibfelder (LF1 60 mm, Raster-Befund 30 mm);
+   Situation 350–700 Zeichen; sieben neue Methodenkarten auf A2 (`hko-eba-*`); der Wortlaut der
+   KN-Rubrik ist in einfache Sätze umgeschrieben, weil er wörtlich im Heft (S. 5) und auf dem
+   Auftragsbogen (A4) steht.
+5. **Neutrale Persona** wie EFZ («Lernende/r EBA, 1. Lehrjahr»). Heft A arbeitet mit vier
+   Angaben aus dem Vertrag in der Tabelle auf S. 1; der eigene Lehrvertrag ist nur im «Plus»
+   verlangt (voraussetzungsfreier Start).
+
+**Inhalt (Entscheide, die sonst im Bauplan stünden):**
+
+| Punkt | Entscheid |
+|---|---|
+| Fälle der Hefte | wie in der alten Einheit: A dichtes Vertrags-Formular (neu mit einem unklaren Punkt «Betriebsferien gemäss Reglement» und laufender Probezeit; LF3 wählt zwei von vier Vertragspunkten), B «anders als abgemacht» (ohne Beruf: Reinigung und Aufräumen statt Abwasch; ein erster Versuch zu fragen ist gescheitert, damit beide Wege offen sind) |
+| Spannungsfelder | A «Alles genau lesen vs. das Wichtige heraussuchen» · B «Selbst klären vs. Hilfe holen» |
+| KN-Kriterien | A Fachkorrektheit + Rechtliches Prinzip · B Argumentation + Position / Werthaltung |
+| Pol-Typ LF3 | A `modell_eigener_fall` · B `position_gegenposition` |
+| Modi der Hefte | A Rezeption schriftlich und bildlich · B Interaktion und Kollaboration digital (Kompetenz-Modus) |
+| Gemeinsamer Auftrag | «Ein Brief von der Schule», Lebensbereich Berufsfachschule: unentschuldigte Absenz (ein Morgen im Betrieb statt in der Schule), Verweis auf ein Reglement, Frist verpasst. «Selbst klären» heisst hier mit der Klassenlehrperson sprechen, Hilfe kommt aus dem Betrieb — umgekehrt zu Heft B. Zwei **mündliche** Produkte (Fall in 60 Sekunden; Klärungsgespräch zu zweit) — Generalprobe für das Kurzgespräch. Sozialform Partner/Gruppe. Lücke: «Produktion schriftlich und bildlich» (in der Nachricht von Heft B geübt) |
+| KN | Fall unverändert (Arbeit am Samstag), Persona neutral, Rubrik in einfacher Sprache |
+| Fall-Ausschluss | «Samstag», «Vorstellungsgespräch» |
+| Neue Sachaussage | Ferien: mindestens fünf Wochen bis 20 Jahre (OR Art. 345a Abs. 3) in Info-Karte A-02 — nötig, weil die Tabelle auf S. 1 die Ferien nennt |
+
+**Code (alles hinter `lehrgang === 'EBA_2J'`; EFZ unverändert):**
+
+- Tor: `check-v42.mjs` (EBA-Regel 1, Raster 3 Zeilen, Gerüst 3/4, Feldhöhen, Situation),
+  `check-lf-loesung.mjs`, `check-kohaerenz.mjs` (Rolle statt Nummer), `lib/pruefung.mjs` +
+  `check-zeiger.mjs` (`ELEMENT_SEITEN_EBA`), `check-namen.mjs` (zweite Gold-Ausnahme `_v42`),
+  `sync-einheiten-nrlp.mjs` (Datensatz `nrlp_2j.json`; ein fehlendes Textfeld ist keine Abweichung
+  — damit sind auch die zwei alten EBA-Einheiten im Tor nicht mehr dauerrot).
+- Renderer: EBA-Profil für Heft, Auftragsbogen, Lösungen, Deck, Begleiter-Lösungen, Übersicht
+  (HTML und Word) — Bericht im Abschluss der Session.
+
+**Lesungen:** zwei unabhängige Lesungen (Lernende A2; Kohärenz und Sachaussagen) nach dem ersten Stand; ihre Befunde sind eingearbeitet. Nicht übernommen und Pietro vorgelegt: der KN-Fall teilt mit Heft A den Gegenstand Arbeitszeit und den Verweis auf ein Reglement, und das KN-Blatt druckt keinen Vertragsauszug (beides aus der alten Einheit übernommen); die oberste Stufe von «Rechtliches Prinzip» (Übertragung auf einen neuen Fall) ist im Heft nicht erreichbar; feste Beschriftungen des Renderers (Persona, Spannungsfeld, Sprachmodus, SuK/Ges) sind kein A2.
+
+**Offen (bewusst nicht gebaut):** Belege für Lösungsfelder aus dem Dossier (`belege.schema.json`
+kennt keine Herkunft `dossier`), Fakten-Audit, `audit-paket.mjs` und `check-einheiten`
+(Kopplung erwartet vier Leitfragen; EBA ist dort eingefroren), Nachzug der Skills
+(`bbw-hko-heft-v42` schliesst EBA aus; `hko-2er-EBA-set-generator` ist veraltet), Messung der
+Word-Dokumente, Medien-Spur.
+
+**Rückgängig:** Ordner `src/data/einheiten/1.1.1_lehrvertrag_orientieren_v42/` und die sieben
+Karten `src/data/methoden/hko-eba-*.json` löschen; der Code hat ohne EBA-Einheit im Format v4.2
+keine Wirkung.
