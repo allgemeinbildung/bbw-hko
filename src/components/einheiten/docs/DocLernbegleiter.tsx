@@ -29,7 +29,7 @@ const microLabel = {
 
 const promptBox = {
   background: '#f5f7fa', border: '1px solid #d8dde4', borderRadius: '1mm',
-  padding: '1.6mm 2.2mm', margin: '0.6mm 0', fontFamily: "'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace",
+  padding: '1.6mm 2.2mm', margin: '0.6mm 0', fontFamily: "'IBM Plex Mono', 'HKO Symbole', ui-monospace, Menlo, Consolas, monospace",
   fontSize: '8.2pt', lineHeight: 1.36, color: '#2a2f36', whiteSpace: 'pre-wrap',
 } as const
 
@@ -148,7 +148,7 @@ export function DocLernbegleiter({ lernbegleiter, abteilung }: DocLernbegleiterP
               {frei.selbsteinschaetzung?.map((line, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '2mm', padding: '1mm 0', borderBottom: '1px solid #eef0f3' }}>
                   <span style={{ flex: 1, fontSize: '8.8pt', lineHeight: 1.34 }}>{line}</span>
-                  <span style={{ flexShrink: 0, fontSize: '8pt', color: LB_AKZENT, fontWeight: 600, fontFamily: "'IBM Plex Mono', Consolas, monospace" }}>
+                  <span style={{ flexShrink: 0, fontSize: '8pt', color: LB_AKZENT, fontWeight: 600, fontFamily: "'IBM Plex Mono', 'HKO Symbole', Consolas, monospace" }}>
                     1 ☐ 2 ☐ 3 ☐ 4 ☐ 5 ☐
                   </span>
                 </div>

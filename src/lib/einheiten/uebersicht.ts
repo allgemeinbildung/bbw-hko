@@ -330,7 +330,7 @@ ${vorschau ? '<meta name="robots" content="noindex, nofollow" />\n' : ''}<title>
   * { box-sizing:border-box; }
   html, body { height:100%; }
   body { margin:0; background:var(--bg); color:var(--ink); line-height:1.5;
-    font-family:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+    font-family:'IBM Plex Sans','HKO Symbole',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
   a { color:inherit; }
   .app { display:grid; grid-template-columns:var(--side) minmax(0, 1fr); height:100vh; }
 
@@ -376,7 +376,7 @@ ${vorschau ? '<meta name="robots" content="noindex, nofollow" />\n' : ''}<title>
   .prose p { margin:0 0 10px; }
   .muted { color:var(--muted); font-size:.9rem; }
   code { background:var(--brand-tint); color:var(--brand-dark); padding:1px 6px; border-radius:4px;
-    font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.85em; }
+    font-family:'IBM Plex Mono','HKO Symbole',ui-monospace,Menlo,Consolas,monospace; font-size:.85em; }
   h1 { font-size:1.6rem; color:var(--brand-dark); margin:0 0 6px; line-height:1.25; }
   .meta { color:var(--muted); font-size:.9rem; margin:0 0 2px; }
   .meta strong { color:var(--ink); }

@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('/einheiten-assets/fonts.css');
 
 /* =========================================================
    HKO Renderer — Berufsbildungsschule Winterthur
    Two aesthetics: aesthetic-modern  |  aesthetic-editorial
-   Font note: IBM Plex Sans/Mono imported above so the live
-   workbench renders the same typeface as the exported ZIP
-   bundle (which loads it via <link> in wrap()). Keeps screen
-   and print/Word identical across DocS / DocKnS / DocKnLp.
+   Font note: online the fonts come from /einheiten-assets/fonts.css
+   (files on bbw-hko.ch); exported HTML embeds the same faces as
+   base64 (fonts-embed.css). One source: scripts/build-fonts-embed.mjs.
+   No system fonts — check with scripts/check-schriften.mjs.
    ========================================================= */
 
 /* ---------- Reset & root ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Sans', 'HKO Symbole', system-ui, sans-serif;
   background: #4a4d54;
   color: #1a1d22;
   -webkit-print-color-adjust: exact;
@@ -86,7 +86,7 @@ body {
 }
 .chrome-spacer { flex: 1; }
 .chrome-doc-pill {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 11px;
   color: #a3a8b2;
   letter-spacing: 0.04em;
@@ -268,7 +268,7 @@ body {
   display: flex;
   align-items: flex-start;
   min-height: 70vh;
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Sans', 'HKO Symbole', system-ui, sans-serif;
 }
 
 /* mobile hamburger — hidden on desktop */
@@ -762,7 +762,7 @@ body {
 .page-head-meta .abt { color: var(--ink-mute); font-size: 7.5pt; letter-spacing: 0.01em; }
 .page-head-right {
   text-align: right; font-size: 7pt; color: var(--ink-mute);
-  font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; letter-spacing: 0.02em;
   line-height: 1.3;
 }
 .page-head-right .doc-code { font-weight: 600; color: var(--ink); }
@@ -773,7 +773,7 @@ body {
   bottom: 6mm; left: 18mm; right: 18mm;
   display: flex; justify-content: space-between;
   font-size: 7pt; color: var(--ink-mute);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   letter-spacing: 0.02em;
   border-top: 1px solid var(--rule-soft);
   padding-top: 2mm;
@@ -801,7 +801,7 @@ body {
   break-after: avoid;
 }
 .section-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 9pt;
   font-weight: 500;
   color: var(--sit-akzent);
@@ -842,7 +842,7 @@ body {
 
 /* ---------- Source ref ---------- */
 .source-ref {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 7.5pt;
   color: var(--ink-mute);
   letter-spacing: 0.02em;
@@ -908,7 +908,7 @@ body {
   vertical-align: top;
 }
 .cockpit-table td:last-child { padding-right: 0; }
-.cockpit-table .num { font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; }
+.cockpit-table .num { font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8.5pt; }
 
 /* ---------- Situation block ---------- */
 .sit-meta {
@@ -947,7 +947,7 @@ body {
   border-bottom: 1px solid var(--rule-soft);
 }
 .zahlen-tabelle td.wert {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   text-align: right;
   font-size: 9pt;
   color: var(--ink);
@@ -999,7 +999,7 @@ body {
   margin-bottom: 1mm;
 }
 .lf-nr {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 10pt;
   font-weight: 600;
   color: var(--sit-akzent);
@@ -1166,7 +1166,7 @@ body {
   content: counter(schritt, decimal-leading-zero);
   position: absolute;
   left: 0; top: 2.5mm;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-weight: 600;
   font-size: 10pt;
   color: var(--sit-akzent);
@@ -1243,7 +1243,7 @@ body {
 .runden { margin-top: 3mm; }
 .runden-item { display: flex; gap: 4mm; margin-bottom: 2mm; align-items: baseline; }
 .runden-item .nr {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 9pt;
   font-weight: 600;
   color: var(--sit-akzent);
@@ -1376,13 +1376,13 @@ body {
 }
 .methode-head { display: flex; align-items: baseline; gap: 1.6mm; }
 .methode-nr {
-  font-family: 'IBM Plex Mono', monospace; font-size: 8pt; font-weight: 600;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8pt; font-weight: 600;
   color: var(--sit-akzent); flex: 0 0 auto;
 }
 .methode-box.hko .methode-nr { color: var(--ink-soft); }
 .methode-name { font-size: 11pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
 .methode-src {
-  font-family: 'IBM Plex Mono', monospace; font-size: 7pt; font-weight: 600;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 7pt; font-weight: 600;
   letter-spacing: 0.02em; color: var(--sit-akzent); margin-top: 0.8mm;
 }
 .methode-box.hko .methode-src { color: var(--ink-soft); }
@@ -1442,7 +1442,7 @@ body {
 .austausch-option-head { display: flex; gap: 2.5mm; align-items: baseline; margin-bottom: 1.5mm; }
 .austausch-option-head .check-box { font-size: 12pt; }
 .austausch-option-head .ao-label { font-size: 9.5pt; font-weight: 600; color: var(--ink); }
-.austausch-option-head .ao-kuerzel { font-family: 'IBM Plex Mono', monospace; font-size: 8pt; color: var(--sit-akzent); font-weight: 600; }
+.austausch-option-head .ao-kuerzel { font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8pt; color: var(--sit-akzent); font-weight: 600; }
 .austausch-option .ao-body { font-size: 9pt; line-height: 1.4; color: var(--ink-soft); }
 .transfer-beispiele { margin: 2mm 0 0; padding-left: 4mm; font-size: 8.5pt; line-height: 1.4; color: var(--ink-soft); }
 .transfer-beispiele li { margin-bottom: 0.8mm; }
@@ -1608,7 +1608,7 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
 .noten-cell .input {
   width: 28mm; height: 9mm;
   border-bottom: 2pt solid var(--ink);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 14pt;
   text-align: right;
   padding-right: 2mm;
@@ -1640,7 +1640,7 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
   line-height: 1.4;
 }
 .alignment-table .letter {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-weight: 700;
   font-size: 12pt;
   width: 10mm;
@@ -1667,7 +1667,7 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
 .kn-typ-card .typ-format {
   font-size: 9pt;
   color: var(--ink-mute);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
 }
 .kn-typ-card .ablauf {
   margin: 2mm 0 3mm;
@@ -1689,7 +1689,7 @@ body.density-compact .checkliste-krit { font-size: 8pt; }
   display: flex; align-items: baseline; gap: 3mm; margin-bottom: 1.5mm;
 }
 .kn-q-nr {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-weight: 600;
   color: var(--sit-akzent);
   font-size: 10pt;
@@ -1751,10 +1751,10 @@ body.density-compact .zahlen-tabelle td { padding: 1.5mm 3mm 1.5mm 0; }
    EDITORIAL aesthetic overrides
    ========================================================= */
 body.aesthetic-editorial {
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Sans', 'HKO Symbole', system-ui, sans-serif;
 }
 body.aesthetic-editorial .a4-page {
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: 'IBM Plex Sans', 'HKO Symbole', system-ui, sans-serif;
 }
 body.aesthetic-editorial .cockpit-title,
 body.aesthetic-editorial .section-title,
@@ -1807,7 +1807,7 @@ body.aesthetic-editorial .leitfrage-callout {
   font-weight: 400;
 }
 body.aesthetic-editorial .leitfrage-callout::before {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'IBM Plex Sans', 'HKO Symbole', sans-serif;
   font-style: normal;
 }
 body.aesthetic-editorial .sit-text {
@@ -2143,3 +2143,28 @@ body.aesthetic-editorial .niveau-legende .niv {
 .doc-eba .eba-lese-woerter { margin-bottom: 4mm; }
 .doc-eba .eba-lese-woerter .eba-lese-vokabel { padding: 3mm 4.5mm; }
 .doc-eba .eba-lese-woerter .eba-lese-vok { padding: 0.7mm 0; line-height: 1.42; }
+
+/* ---------- Kompetenznachweis für Lernende, EBA (Rückmeldung EBA-Gold, Entscheid Pietro 03.11.2026) ----------
+   Wie in den Heften: Fragen 12 pt, Kriterien für Lernende mit Stufen, einfache Niveau-Sätze.
+   Die kursiven Hilfssätze tragen Inline-Grössen aus DocKnS.tsx — darum hier !important. */
+.doc-eba .kn-definition { font-size: 11pt !important; font-style: normal !important; color: var(--ink) !important; }
+.doc-eba .kn-rubrik-intro { font-size: 11.5pt !important; color: var(--ink) !important; line-height: 1.45; }
+.doc-eba .kn-q-text { font-size: 12pt; line-height: 1.45; }
+.doc-eba .kn-tabelle { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 1.5mm 0 2mm; font-size: 11pt; }
+.doc-eba .kn-tabelle th { text-align: left; font-weight: 700; padding: 1.5mm 2mm; border: 0.75pt solid var(--ink-soft); background: var(--sit-light, #f3f4f6); }
+.doc-eba .kn-tabelle td { height: 11mm; border: 0.75pt solid var(--ink-soft); }
+.kn-tabelle { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 1.5mm 0 2mm; }
+.kn-tabelle th { text-align: left; padding: 1.2mm 2mm; border: 0.75pt solid var(--ink-soft); font-size: 9.5pt; }
+.kn-tabelle td { height: 10mm; border: 0.75pt solid var(--ink-soft); }
+.doc-eba .kn-stufen { width: 100%; border-collapse: collapse; font-size: 11pt; line-height: 1.35; }
+.doc-eba .kn-stufen-kopf th { text-align: left; font-size: 12pt; font-weight: 700; padding: 3mm 0 1mm; border-bottom: 0.75pt solid var(--ink-soft); }
+.doc-eba .kn-stufen-dim { display: inline-block; margin-left: 2mm; padding: 0 1.2mm; border: 0.75pt solid var(--sit-akzent); border-radius: 2px; font-size: 8pt; font-weight: 600; color: var(--sit-akzent); vertical-align: 1px; }
+.doc-eba .kn-stufen td { padding: 1mm 2mm 1mm 0; border-bottom: 0.5pt solid var(--rule); vertical-align: top; }
+.doc-eba .kn-stufen td.kn-stufen-nr { width: 17mm; font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8pt; color: var(--ink-soft); padding-top: 1.5mm; white-space: nowrap; }
+.doc-eba .kn-niveau-titel { font-size: 9pt !important; margin-top: 5mm !important; }
+.doc-eba .niveau-legende { font-size: 10.5pt; gap: 3mm; }
+.doc-eba .niveau-legende .niv { padding: 2.5mm 3mm; }
+.doc-eba .niveau-legende .niv .label { font-size: 8.5pt; }
+.doc-eba .niveau-legende .niv .def { color: var(--ink); }
+.doc-eba .kn-format, .doc-eba .kn-ablauf { font-size: 11.5pt !important; color: var(--ink) !important; }
+.doc-eba .kn-intro { font-size: 11pt !important; color: var(--ink) !important; }

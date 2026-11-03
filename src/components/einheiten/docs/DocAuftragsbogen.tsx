@@ -1,7 +1,7 @@
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { A4Page, HandlungsFlaeche, Schreibfeld, SectionHead } from './chrome'
 import { Kasten } from './heft-v42/gemeinsam'
-import { istEba } from '../../../lib/einheiten/v42-profil'
+import { istEba, worte } from '../../../lib/einheiten/v42-profil'
 import type { AuftragProdukt, GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/einheiten/types'
 
 /**
@@ -50,6 +50,16 @@ export const SPRECHSPUR_STATIONEN = [
 export function schrittTeile(label: string, i: number): [string, string] {
   const m = /^(\d{1,2})\s+(.*)$/.exec(label.trim())
   return m ? [m[1].padStart(2, '0'), m[2]] : [String(i + 1).padStart(2, '0'), label]
+}
+
+/**
+ * Kopf einer Planungsseite: «Sprachnachricht» → «Sprachnachricht planen». Endet das Label schon
+ * auf ein Verb («Gespräch üben», «Regeln aushandeln»), bleibt es stehen — sonst entstand
+ * «Gespräch üben planen» (Gegenlesung 1.2.1, 03.11.2026).
+ */
+export function planTitel(label: string): string {
+  const letztes = label.trim().split(/\s+/).pop() || ''
+  return /^[a-zäöü]+e?n$/.test(letztes) ? label.trim() : `${label.trim()} planen`
 }
 
 /** `sozialform.zulaessig` → «Einzel-, Partner- oder Gruppenarbeit» (Leitfaden §7.3). */
@@ -110,12 +120,22 @@ export function spurZeilen(n: number): number[] {
  * Fusszeile von A3: das Glossar steht seit E17 in den Heften (je S. 8), nicht mehr hier.
  * Hefte aus `set.glossar` in der Reihenfolge des ersten Auftretens; ohne Glossar keine Zeile.
  */
-export function glossarVerweis(glossar: GlossarEintrag[] | undefined): string | null {
+export function glossarVerweis(glossar: GlossarEintrag[] | undefined, set?: { lehrgang?: string | null } | null): string | null {
   const hefte = [...new Set((glossar || []).map((g) => g.heft).filter(Boolean))] as string[]
   if (!hefte.length) return null
   const namen = hefte.map((h) => `Heft ${h}`)
   const liste = namen.length < 2 ? namen[0] : `${namen.slice(0, -1).join(', ')} und ${namen[namen.length - 1]}`
-  return `Begriffe nachschlagen: Glossar in ${liste}, je Seite 8.`
+  // EFZ: «Begriffe nachschlagen: Glossar in …, je Seite 8.» · EBA: Wörter auf S. 2 (v42-profil.ts).
+  return worte(set).auftrag.woerterVerweis(liste)
+}
+
+/** EBA-Fassung eines Kriteriums für Lernende (wie Heft S. 7), sonst der KN-Wortlaut. */
+export function kriteriumFuerBogen(k: { kn_kriterium: string; name_lernende?: string; stufen: string[]; stufen_lernende?: string[] }, set?: { lehrgang?: string | null } | null) {
+  const eba = istEba(set)
+  return {
+    name: (eba && k.name_lernende) || k.kn_kriterium,
+    stufen: eba && k.stufen_lernende?.length === k.stufen.length ? k.stufen_lernende : k.stufen,
+  }
 }
 
 /**
@@ -152,19 +172,29 @@ function BogenPage({ nr, titel, abteilung, children }: { nr: number; titel: stri
 type SeiteProps = { ga: GemeinsamerAuftrag; set: SetJson; edits: Record<string, string>; onEdit: (k: string, v: string) => void }
 
 // ---------------- A1 — Situation und Auftrag ----------------
-function SeiteA1({ ga }: SeiteProps) {
-  const persona = [ga.persona?.beruf, ga.persona?.betrieb, ga.persona?.ort].filter(Boolean).join(' · ')
-  const moeglich = sozialformZeile(ga.sozialform?.zulaessig)
+function SeiteA1({ ga, set }: SeiteProps) {
+  const w = worte(set)
+  const persona = w.auftrag.persona ? [ga.persona?.beruf, ga.persona?.betrieb, ga.persona?.ort].filter(Boolean).join(' · ') : ''
+  const moeglich = w.auftrag.sozialformNurEmpfehlung ? '' : sozialformZeile(ga.sozialform?.zulaessig)
+  const woerter = (ga.woerter || []).filter((g) => g && g.begriff)
   return (
     <>
       <SectionHead num="A1">{ga.titel}</SectionHead>
       {persona && <div className="v42-auftrag-persona"><span className="v42-auftrag-mikro">Persona</span>{persona}</div>}
+      {/* Wie im Leseblatt: die schwierigen Wörter vor dem Text. */}
+      {woerter.length > 0 && (
+        <Kasten label="Wichtige Wörter" className="v42-auftrag-kasten v42-auftrag-woerter">
+          <dl>
+            {woerter.map((g, i) => <div key={i}><dt>{g.begriff}</dt> <dd>{g.definition}</dd></div>)}
+          </dl>
+        </Kasten>
+      )}
       {ga.situation_text && <p className="v42-auftrag-situation">{ga.situation_text}</p>}
 
       <div className="v42-auftrag-zweier">
         {(ga.zahlen_tabelle?.length ?? 0) > 0 && (
           <table className="zahlen-tabelle v42-auftrag-zahlen">
-            <thead><tr><th>Zahlen</th><th style={{ textAlign: 'right' }}>Betrag</th></tr></thead>
+            <thead><tr><th>{w.auftrag.zahlenKopf[0]}</th><th style={{ textAlign: 'right' }}>{w.auftrag.zahlenKopf[1]}</th></tr></thead>
             <tbody>
               {ga.zahlen_tabelle!.map((z, i) => (
                 <tr key={i}><td>{z.label}</td><td className="wert">{z.wert}</td></tr>
@@ -178,7 +208,7 @@ function SeiteA1({ ga }: SeiteProps) {
           )}
           {ga.mehrdeutigkeit?.trade_off && (
             <div className="v42-auftrag-spannung">
-              <div className="v42-auftrag-mikro">Spannungsfeld</div>
+              <div className="v42-auftrag-mikro">{w.spannungsfeld}</div>
               <strong>{ga.mehrdeutigkeit.trade_off}</strong>
               {ga.mehrdeutigkeit.hint && <div className="v42-auftrag-hint">{ga.mehrdeutigkeit.hint}</div>}
             </div>
@@ -212,31 +242,36 @@ function SeiteA1({ ga }: SeiteProps) {
           </Kasten>
         )}
         {(moeglich || ga.sozialform?.empfehlung) && (
-          <Kasten label="Sozialform" className="v42-auftrag-kasten">
+          <Kasten label={w.auftrag.sozialform} className="v42-auftrag-kasten">
             {moeglich && <p className="v42-auftrag-klein"><strong>Möglich:</strong> {moeglich}</p>}
-            {ga.sozialform?.empfehlung && <p className="v42-auftrag-klein"><strong>Empfehlung:</strong> {ga.sozialform.empfehlung}</p>}
+            {ga.sozialform?.empfehlung && (w.auftrag.sozialformNurEmpfehlung
+              ? <p className="v42-auftrag-klein">{ga.sozialform.empfehlung}</p>
+              : <p className="v42-auftrag-klein"><strong>Empfehlung:</strong> {ga.sozialform.empfehlung}</p>)}
           </Kasten>
         )}
       </div>
 
       {/* Bezug auf die Hefte: der Auftrag sagt, was er braucht — das Heft nennt keine Woche. */}
-      {(ga.heft_bezug?.length ?? 0) > 0 ? (
-        <Kasten label="Das brauchen Sie aus Ihren Heften" className="v42-auftrag-kasten">
-          <div className="v42-auftrag-bezug">
-            {ga.heft_bezug!.map((h, i) => (
-              <div key={i}>
-                <div className="v42-auftrag-bezug-kopf"><strong>Heft {h.heft}</strong>{h.titel ? ` · ${h.titel}` : ''}</div>
-                <ul className="v42-auftrag-bezug-liste">
-                  {(h.inhalte || []).map((t, j) => <li key={j}>{t}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Kasten>
-      ) : (
-        <p className="v42-auftrag-hefte">Ihre Hefte A und B dürfen Sie benutzen.</p>
-      )}
+      {!w.auftrag.heftBezugAufA2 && <HeftBezug ga={ga} />}
     </>
+  )
+}
+
+function HeftBezug({ ga }: { ga: GemeinsamerAuftrag }) {
+  if (!(ga.heft_bezug?.length ?? 0)) return <p className="v42-auftrag-hefte">Ihre Hefte A und B dürfen Sie benutzen.</p>
+  return (
+    <Kasten label="Das brauchen Sie aus Ihren Heften" className="v42-auftrag-kasten">
+      <div className="v42-auftrag-bezug">
+        {ga.heft_bezug!.map((h, i) => (
+          <div key={i}>
+            <div className="v42-auftrag-bezug-kopf"><strong>Heft {h.heft}</strong>{h.titel ? ` · ${h.titel}` : ''}</div>
+            <ul className="v42-auftrag-bezug-liste">
+              {(h.inhalte || []).map((t, j) => <li key={j}>{t}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Kasten>
   )
 }
 
@@ -247,18 +282,20 @@ function ProduktSeite({ nr, produkt, ga, set, edits, onEdit }: SeiteProps & { nr
   const s = produktSchritt(ga, produkt)
   const key = `auftrag_a${nr}_${produkt.form}`
   // Der Verweis aufs Glossar bleibt am Fuss von A3, gleich welche Form die Seite hat.
-  const verweis = nr === 3 ? glossarVerweis(set.glossar) : null
+  const verweis = nr === 3 ? glossarVerweis(set.glossar, set) : null
   const hint = s.hint ? <p className="v42-auftrag-klein v42-auftrag-fest"><strong>Schritt {s.nr}:</strong> {s.hint}</p> : null
   const fuss = verweis ? <p className="v42-auftrag-klein v42-auftrag-verweis">{verweis}</p> : null
   if (produkt.form === 'flaeche') {
     return (
       <>
         <SectionHead num={`A${nr}`}>{s.label}</SectionHead>
+        {/* EBA: Heft-Bezug auf A2 auch bei einer Fläche (Befund 2.1.1, 03.11.2026). */}
+        {nr === 2 && worte(set).auftrag.heftBezugAufA2 && <HeftBezug ga={ga} />}
         {hint}
         {/* Inline, weil die Regel in auftragsbogen.css an .v42-auftrag-a2 hängt: die Fläche füllt den Rest der Seite. */}
         <div className="v42-auftrag-flaeche" style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', paddingTop: '2mm' }}>
           <HandlungsFlaeche
-            label={`Schritt ${s.nr} · ${s.label} · ${produkt.modus}`}
+            label={istEba(set) ? `Schritt ${s.nr} · ${s.label}` : `Schritt ${s.nr} · ${s.label} · ${produkt.modus}`}
             value={edits[key] || ''}
             onChange={(v) => onEdit(key, v)}
           />
@@ -268,10 +305,13 @@ function ProduktSeite({ nr, produkt, ga, set, edits, onEdit }: SeiteProps & { nr
     )
   }
   const stationen = produktStationen(produkt)
-  const zeilen = spurZeilen(stationen.length)
+  // EBA: auf A2 steht zusätzlich der Heft-Bezug — dafür je Station eine Zeile weniger.
+  const mitBezug = nr === 2 && worte(set).auftrag.heftBezugAufA2
+  const zeilen = spurZeilen(stationen.length).map((z) => (mitBezug ? Math.max(2, z - 1) : z))
   return (
     <>
-      <SectionHead num={`A${nr}`}>{s.label} planen</SectionHead>
+      <SectionHead num={`A${nr}`}>{planTitel(s.label)}</SectionHead>
+      {mitBezug && <HeftBezug ga={ga} />}
       {hint}
       {produkt.hinweis && <p className="v42-auftrag-klein v42-auftrag-fest">{produkt.hinweis}</p>}
       <div className="v42-auftrag-spur">
@@ -329,10 +369,10 @@ function SeiteA3(props: SeiteProps) {
   const s = ga.schritte?.[4]
   const [nr, label] = s ? schrittTeile(s.label, 4) : ['05', 'Sprachnachricht']
   const dauer = sprechDauer(s?.hint)
-  const verweis = glossarVerweis(set.glossar)
+  const verweis = glossarVerweis(set.glossar, set)
   return (
     <>
-      <SectionHead num="A3">{label} planen</SectionHead>
+      <SectionHead num="A3">{planTitel(label)}</SectionHead>
       {s?.hint && <p className="v42-auftrag-klein v42-auftrag-fest"><strong>Schritt {nr}:</strong> {s.hint}</p>}
       <p className="v42-auftrag-klein v42-auftrag-fest">
         Notieren Sie Stichworte, keinen ganzen Text. Sprechen Sie frei und stoppen Sie die Zeit. Ihre Sprachnachricht
@@ -364,34 +404,35 @@ function SeiteA3(props: SeiteProps) {
 
 // ---------------- A4 — Selbsteinschätzung ----------------
 // Bewusst neutral (ENTSCHEIDE E18): der Bogen sagt nicht, wer Rückmeldung gibt und ob der Auftrag zählt.
-function SeiteA4({ ga, edits, onEdit }: SeiteProps) {
+function SeiteA4({ ga, set, edits, onEdit }: SeiteProps) {
   const kriterien = ga.feedback_kriterien || []
+  const w = worte(set)
+  const breit = istEba(set) // «Partner/in» braucht mehr Platz als «Fremd»
   return (
     <>
       <SectionHead num="A4">Selbsteinschätzung</SectionHead>
-      <p className="v42-auftrag-klein v42-auftrag-fest">
-        Schätzen Sie Ihre Arbeit selbst ein: Kreuzen Sie je Kriterium die Stufe an, die zutrifft (Spalte «Selbst»).
-        Die Spalte «Fremd» ist frei für eine Rückmeldung von aussen.
-      </p>
+      <p className="v42-auftrag-klein v42-auftrag-fest">{w.auftrag.selbstAnweisung}</p>
       <table className="v42-auftrag-raster">
         <colgroup>
-          <col style={{ width: '12mm' }} />
+          <col style={{ width: breit ? '11mm' : '12mm' }} />
           <col />
-          <col style={{ width: '13mm' }} />
-          <col style={{ width: '13mm' }} />
+          <col style={{ width: breit ? '10mm' : '13mm' }} />
+          <col style={{ width: breit ? '19mm' : '13mm' }} />
         </colgroup>
         <thead>
-          <tr><th>Stufe</th><th>Kriterium</th><th>Selbst</th><th>Fremd</th></tr>
+          <tr>{w.auftrag.spalten.map((t, i) => <th key={i}>{t}</th>)}</tr>
         </thead>
-        {kriterien.map((k, ki) => (
+        {kriterien.map((k, ki) => {
+          const { name, stufen } = kriteriumFuerBogen(k, set)
+          return (
           <tbody key={ki}>
             <tr className="v42-auftrag-krit">
               <td colSpan={4}>
-                <strong>{k.kn_kriterium}</strong> <span className="v42-auftrag-dim">{k.dimension}</span>
+                <strong>{name}</strong> <span className="v42-auftrag-dim">{w.dimension(k.dimension)}</span>
                 {k.indikator_produkt && <span className="v42-auftrag-indikator">Woran ich es sehe: {k.indikator_produkt}</span>}
               </td>
             </tr>
-            {k.stufen.map((st, si) => (
+            {stufen.map((st, si) => (
               <tr key={si}>
                 <td className="v42-auftrag-pkt">{si}</td>
                 <td className="v42-auftrag-stufe">{st}</td>
@@ -400,12 +441,13 @@ function SeiteA4({ ga, edits, onEdit }: SeiteProps) {
               </tr>
             ))}
           </tbody>
-        ))}
+          )
+        })}
       </table>
 
       <div className="v42-auftrag-fest">
         <div className="v42-auftrag-mikro v42-auftrag-feldlabel">Das verbessere ich …</div>
-        <Schreibfeld heightMm={17} value={edits.auftrag_verbessern || ''} onChange={(v) => onEdit('auftrag_verbessern', v)} />
+        <Schreibfeld heightMm={breit ? 13 : 17} value={edits.auftrag_verbessern || ''} onChange={(v) => onEdit('auftrag_verbessern', v)} />
       </div>
       <div className="v42-auftrag-fest">
         <div className="v42-auftrag-mikro v42-auftrag-feldlabel">Rückmeldung, die ich erhalten habe</div>

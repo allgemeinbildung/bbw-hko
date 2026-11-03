@@ -166,7 +166,7 @@
       "betrieb": "eigener Lehrbetrieb",
       "ort": "eigener Wohnort"
     },
-    "situation_text": "Ich bin im 1. Lehrjahr meiner EBA-Lehre. Heute bekomme ich einen Brief von der Berufsfachschule. Darin steht: «Sie haben 3 Schulstunden unentschuldigt gefehlt.» Der Brief verweist auf das Absenzen-Reglement. Das Reglement hat zwei Seiten und viele Punkte. Ich erschrecke. An diesem Morgen war ich im Betrieb. Meine Berufsbildnerin brauchte mich für einen dringenden Auftrag. Eine Entschuldigung habe ich nicht abgegeben. Im Reglement steht: Die Entschuldigung muss innert 8 Tagen bei der Klassenlehrperson sein. Die 8 Tage sind vorbei. Ich will das klären. Aber wie? Spreche ich zuerst selbst mit der Klassenlehrperson? Oder bitte ich zuerst meine Berufsbildnerin um Hilfe?",
+    "situation_text": "Ich bin im 1. Lehrjahr meiner EBA-Lehre. Heute bekomme ich einen Brief von der Berufsfachschule. Darin steht: «Sie haben 3 Schulstunden unentschuldigt gefehlt.» Der Brief verweist auf das Absenzen-Reglement. Das Reglement hat zwei Seiten und viele Punkte. Ich erschrecke. An diesem Morgen war ich im Betrieb. Meine Berufsbildnerin brauchte mich für einen dringenden Auftrag. Eine Entschuldigung habe ich nicht abgegeben. Im Reglement steht: Ich muss die Entschuldigung innert 4 Wochen unterschreiben lassen und der Lehrperson zeigen. Die 4 Wochen sind vorbei. Ich will das klären. Aber wie? Spreche ich zuerst selbst mit der Klassenlehrperson? Oder bitte ich zuerst meine Berufsbildnerin um Hilfe?",
     "zahlen_tabelle": [
       {
         "label": "Schulstunden im Brief",
@@ -178,14 +178,32 @@
       },
       {
         "label": "Frist für die Entschuldigung",
-        "wert": "8 Tage"
+        "wert": "4 Wochen"
       },
       {
         "label": "Datum vom Brief",
-        "wert": "20. November"
+        "wert": "9. Dezember"
       }
     ],
-    "leitfrage": "Wie kläre ich den Brief: Spreche ich zuerst selbst mit der Klassenlehrperson, oder hole ich zuerst Hilfe im Betrieb?",
+    "woerter": [
+      {
+        "begriff": "Absenz",
+        "definition": "Sie fehlen in der Schule."
+      },
+      {
+        "begriff": "unentschuldigt",
+        "definition": "Sie haben keine Entschuldigung abgegeben."
+      },
+      {
+        "begriff": "Reglement",
+        "definition": "Ein Dokument mit den Regeln der Schule."
+      },
+      {
+        "begriff": "Frist",
+        "definition": "Bis zu diesem Tag müssen Sie etwas tun."
+      }
+    ],
+    "leitfrage": "Wie kläre ich den Brief? Spreche ich zuerst selbst mit der Klassenlehrperson oder hole ich zuerst Hilfe im Betrieb?",
     "mehrdeutigkeit": {
       "trade_off": "Selbst klären vs. Hilfe holen",
       "hint": "Selbst klären heisst hier: mit der Klassenlehrperson sprechen. Hilfe kommt aus dem Betrieb."
@@ -267,7 +285,7 @@
         "inhalte": [
           "Ein Dokument überfliegen (S. 6)",
           "Eine klare Frage stellen (S. 6)",
-          "Begriffe und Glossar (S. 8)"
+          "Wichtige Wörter (S. 2)"
         ]
       },
       {
@@ -276,13 +294,14 @@
         "inhalte": [
           "Fakt und Gefühl trennen (S. 2 und S. 6)",
           "Zwei Wege abwägen (S. 4 und S. 6)",
-          "Begriffe und Glossar (S. 8)"
+          "Wichtige Wörter (S. 2)"
         ]
       }
     ],
     "feedback_kriterien": [
       {
         "kn_kriterium": "Fachkorrektheit",
+        "name_lernende": "Fachwörter und Sprache",
         "dimension": "SuK",
         "stufen": [
           "Die Fachwörter fehlen oder sind falsch. Die Sprache hat viele Fehler.",
@@ -290,10 +309,17 @@
           "Die Fachwörter stimmen und passen zum Fall. Die Sprache ist meistens richtig.",
           "Die Fachwörter stimmen und sind mit eigenen Worten erklärt. Die Sprache ist richtig."
         ],
+        "stufen_lernende": [
+          "Ich benutze keine Fachwörter, oder sie sind falsch. Ich mache viele Fehler beim Sprechen.",
+          "Einige Fachwörter sind richtig. Ich mache noch einige Fehler beim Sprechen.",
+          "Die Fachwörter sind richtig und passen zum Fall. Ich spreche meistens richtig.",
+          "Die Fachwörter sind richtig. Ich erkläre sie mit eigenen Worten. Ich spreche richtig."
+        ],
         "indikator_produkt": "Die Wörter Reglement, Verweis und Fakt sind richtig verwendet."
       },
       {
         "kn_kriterium": "Argumentation",
+        "name_lernende": "Gut begründen",
         "dimension": "SuK",
         "stufen": [
           "Eine Begründung fehlt. Die Sprache passt nicht zur Person.",
@@ -301,10 +327,17 @@
           "Die Begründung ist klar. Die Sprache passt zur Person und zur Situation.",
           "Die Begründung ist klar und vollständig. Die Wörter sind bewusst gewählt."
         ],
+        "stufen_lernende": [
+          "Ich begründe nicht. Meine Sprache passt nicht zur Person.",
+          "Ich begründe ein wenig. Meine Sprache passt zum Teil zur Person.",
+          "Meine Begründung ist klar. Meine Sprache passt zur Person und zur Situation.",
+          "Meine Begründung ist klar und vollständig. Ich wähle meine Wörter genau."
+        ],
         "indikator_produkt": "Der Weg hat einen Grund. Der Ton im Gespräch ist ruhig und höflich."
       },
       {
         "kn_kriterium": "Rechtliches Prinzip",
+        "name_lernende": "Die richtige Stelle finden",
         "dimension": "Ges",
         "stufen": [
           "Die passende Stelle im Dokument und das passende Vorgehen fehlen.",
@@ -312,16 +345,29 @@
           "Die passende Stelle ist gefunden. Das Vorgehen passt zum Fall.",
           "Stelle und Vorgehen stimmen. Beides ist auf einen neuen Fall übertragen."
         ],
+        "stufen_lernende": [
+          "Ich finde die richtige Stelle im Reglement nicht. Ich weiss nicht, was ich tun soll.",
+          "Ich finde die Stelle oder ich weiss, was ich tun soll. Aber nur zum Teil.",
+          "Ich finde die richtige Stelle. Mein Vorgehen passt zum Fall.",
+          "Stelle und Vorgehen stimmen. Ich kann beides auch bei einem neuen Fall anwenden."
+        ],
         "indikator_produkt": "Die Regel aus dem Reglement ist genannt. Die gewählte Person passt zum Fall."
       },
       {
         "kn_kriterium": "Position / Werthaltung",
+        "name_lernende": "Meine Meinung",
         "dimension": "Ges",
         "stufen": [
           "Eine eigene Meinung ist nicht erkennbar.",
           "Die eigene Meinung ist nur angedeutet.",
           "Die eigene Meinung steht klar in der Ich-Form.",
           "Die eigene Meinung ist begründet. Auch der andere Weg ist ernst genommen."
+        ],
+        "stufen_lernende": [
+          "Man sieht meine Meinung nicht.",
+          "Man sieht meine Meinung nur ein wenig.",
+          "Ich sage meine Meinung klar in der Ich-Form.",
+          "Ich begründe meine Meinung. Ich nehme auch den anderen Weg ernst."
         ],
         "indikator_produkt": "Der Wunsch steht in der Ich-Form. Auch der andere Weg ist genannt."
       }
@@ -334,7 +380,7 @@
     "erwartungshorizont": {
       "gut_wenn": [
         "Die Fakten sind genannt: der Morgen im Betrieb, die fehlende Entschuldigung, die Frist.",
-        "Die Regel aus dem Reglement ist genannt (Entschuldigung innert 8 Tagen).",
+        "Die Regel aus dem Reglement ist genannt (Entschuldigung innert 4 Wochen unterschrieben vorlegen).",
         "Der Weg ist begründet, und das Gespräch bleibt sachlich: Fakten, Wunsch, ruhiger Ton."
       ],
       "tragfaehig": "Zum Beispiel: zuerst selbst mit der Klassenlehrperson sprechen, den Grund nennen und fragen, was jetzt noch möglich ist. Oder: zuerst die Berufsbildnerin um eine schriftliche Bestätigung bitten und damit zur Klassenlehrperson gehen.",

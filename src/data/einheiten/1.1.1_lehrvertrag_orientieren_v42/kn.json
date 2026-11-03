@@ -42,7 +42,7 @@
       ],
       "new_dimensions": []
     },
-    "definition_kurz": "Eine Hybrid-Herausforderung ist eine einzige Situation. Sie brauchen dafür beide Hefte zugleich.",
+    "definition_kurz": "Dieser Fall ist neu. Sie brauchen dafür beide Hefte.",
     "definition_lang": "Die Hybrid-Herausforderung verbindet die zwei Hefte in einer Szene: in einem dichten Formular die passende Stelle finden (Heft A) und bei einer Unstimmigkeit den Weg begründet wählen (Heft B). Neu ist nicht die Person, sondern der Fall: eine Ankündigung des Berufsbildners, die in keinem der zwei Hefte und nicht im gemeinsamen Auftrag vorkommt. Die Lernenden zeigen, dass sie das gemeinsame Vorgehen übertragen."
   },
   "kn_typen": [
@@ -51,7 +51,7 @@
       "label": "Kurzgespräch (Primärform)",
       "format": "mündlich, 5-10 Min. Gespräch pro Lernende/r (+ ca. 15 Min. Vorbereitung mit Notizen)",
       "ablauf": [
-        "15 Min. Vorbereitungszeit: Hybrid-Herausforderung lesen, Notizen auf A4 (Dossier und Hefte erlaubt, kein Internet).",
+        "15 Min. Vorbereitung: den Fall lesen, Stichworte auf den Seiten 2 und 3 (Dossier und Hefte erlaubt, kein Internet).",
         "5-10 Min. Gespräch mit der Lehrperson: 5 kurze Fragen, stark geführt."
       ],
       "fragestruktur": [
@@ -107,15 +107,22 @@
       "label": "Mini Case schriftlich (vereinfacht)",
       "format": "schriftlich, 30-40 Min.",
       "ablauf": [
-        "Hybrid-Herausforderung als Prüfungsblatt mit eingedruckten Schreibhilfen; Dossier und Hefte erlaubt; kein Internet.",
-        "Vier kurze Aufgaben steigender Komplexität (K-Decke K3)."
+        "Den Fall lesen und die Aufgaben auf diesem Blatt lösen; Dossier und Hefte erlaubt; kein Internet.",
+        "Vier kurze Aufgaben. Sie werden Schritt für Schritt schwieriger."
       ],
       "aufgaben": [
         {
           "nr": 1,
           "typ": "Erklaeren",
           "aufgabe": "Ordnen Sie den Fall: Was ist passiert? Was war abgemacht? Füllen Sie die Fakten-Tabelle aus.",
-          "k_stufe": 2
+          "k_stufe": 2,
+          "tabelle": {
+            "spalten": [
+              "Was ist passiert?",
+              "Was war abgemacht?"
+            ],
+            "zeilen": 3
+          }
         },
         {
           "nr": 2,
@@ -162,7 +169,7 @@
       ],
       "reflexionsfragen": [
         "Welche Grundregel haben Sie gelernt? Formulieren Sie sie in einem Satz.",
-        "Wie zeigt sich diese Regel in der Hybrid-Herausforderung? Was ist gleich, was anders als in Ihrem Heft?",
+        "Wie zeigt sich diese Regel in diesem Fall? Was ist gleich, was anders als in Ihrem Heft?",
         "Wann passt die Regel nicht so gut? Was haben Sie durch beide Hefte gelernt?"
       ],
       "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
@@ -188,57 +195,88 @@
     "kriterien": [
       {
         "name": "Fachkorrektheit",
+        "name_lernende": "Fachwörter und Sprache",
         "dimension": "SuK",
         "stufen": [
           "Die Fachwörter fehlen oder sind falsch. Die Sprache hat viele Fehler.",
           "Einige Fachwörter stimmen. Die Sprache hat noch einige Fehler.",
           "Die Fachwörter stimmen und passen zum Fall. Die Sprache ist meistens richtig.",
           "Die Fachwörter stimmen und sind mit eigenen Worten erklärt. Die Sprache ist richtig."
+        ],
+        "stufen_lernende": [
+          "Ich benutze keine Fachwörter, oder sie sind falsch. Ich mache viele Fehler.",
+          "Einige Fachwörter sind richtig. Ich mache noch einige Fehler.",
+          "Die Fachwörter sind richtig und passen zum Fall. Meine Sprache ist meistens richtig.",
+          "Die Fachwörter sind richtig. Ich erkläre sie mit eigenen Worten. Meine Sprache ist richtig."
         ]
       },
       {
         "name": "Argumentation",
+        "name_lernende": "Gut begründen",
         "dimension": "SuK",
         "stufen": [
           "Eine Begründung fehlt. Die Sprache passt nicht zur Person.",
           "Eine Begründung ist im Ansatz da. Die Sprache passt zum Teil zur Person.",
           "Die Begründung ist klar. Die Sprache passt zur Person und zur Situation.",
           "Die Begründung ist klar und vollständig. Die Wörter sind bewusst gewählt."
+        ],
+        "stufen_lernende": [
+          "Ich begründe nicht. Meine Sprache passt nicht zur Person.",
+          "Ich begründe ein wenig. Meine Sprache passt zum Teil zur Person.",
+          "Meine Begründung ist klar. Meine Sprache passt zur Person und zur Situation.",
+          "Meine Begründung ist klar und vollständig. Ich wähle meine Wörter genau."
         ]
       },
       {
         "name": "Rechtliches Prinzip",
+        "name_lernende": "Die richtige Stelle finden",
         "dimension": "Ges",
         "stufen": [
           "Die passende Stelle im Dokument und das passende Vorgehen fehlen.",
           "Die passende Stelle oder das passende Vorgehen ist zum Teil erkannt.",
           "Die passende Stelle ist gefunden. Das Vorgehen passt zum Fall.",
           "Stelle und Vorgehen stimmen. Beides ist auf einen neuen Fall übertragen."
+        ],
+        "stufen_lernende": [
+          "Ich finde die richtige Stelle im Vertrag nicht. Ich weiss nicht, was ich tun soll.",
+          "Ich finde die Stelle oder ich weiss, was ich tun soll. Aber nur zum Teil.",
+          "Ich finde die richtige Stelle. Mein Vorgehen passt zum Fall.",
+          "Stelle und Vorgehen stimmen. Ich kann beides auch bei einem neuen Fall anwenden."
         ]
       },
       {
         "name": "Position / Werthaltung",
+        "name_lernende": "Meine Meinung",
         "dimension": "Ges",
         "stufen": [
           "Eine eigene Meinung ist nicht erkennbar.",
           "Die eigene Meinung ist nur angedeutet.",
           "Die eigene Meinung steht klar in der Ich-Form.",
           "Die eigene Meinung ist begründet. Auch der andere Weg ist ernst genommen."
+        ],
+        "stufen_lernende": [
+          "Man sieht meine Meinung nicht.",
+          "Man sieht meine Meinung nur ein wenig.",
+          "Ich zeige meine Meinung klar in der Ich-Form.",
+          "Ich begründe meine Meinung. Ich nehme auch den anderen Weg ernst."
         ]
       }
     ],
     "niveaubaender": [
       {
         "label": "unter 60 %",
-        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)"
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)",
+        "definition_lernende": "Bei zwei oder mehr Kriterien haben Sie 0 oder 1 Punkt."
       },
       {
         "label": "80 %",
-        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf 2 Punkte)"
+        "definition": "mehrheitlich 2 Punkte (mind. 3 Kriterien auf mindestens 2 Punkten)",
+        "definition_lernende": "Bei drei oder mehr Kriterien haben Sie mindestens 2 Punkte."
       },
       {
         "label": "100 %",
-        "definition": "3 Punkte in mind. 3 von 4 Kriterien"
+        "definition": "3 Punkte in mind. 3 von 4 Kriterien",
+        "definition_lernende": "Bei drei oder mehr Kriterien haben Sie 3 Punkte."
       }
     ]
   },

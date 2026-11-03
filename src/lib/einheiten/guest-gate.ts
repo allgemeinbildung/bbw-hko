@@ -21,7 +21,7 @@ export function guestGateHtml(setKey: string, bereich: string): string {
   * { box-sizing: border-box; }
   body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
     background:#f6f7f8; color:var(--ink); padding:24px;
-    font-family:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+    font-family:'IBM Plex Sans','HKO Symbole',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
   .card { max-width:520px; width:100%; background:#fff; border:1px solid var(--line);
     border-top:4px solid var(--brand); border-radius:14px; padding:40px 36px; text-align:center;
     box-shadow:0 4px 20px rgba(0,0,0,0.06); }

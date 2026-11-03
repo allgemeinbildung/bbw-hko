@@ -71,8 +71,8 @@ export function v42Dokumente(d: EinheitFullSet, opts: V42DokumenteOpts = {}): V4
       if (!sit || !isV42(sit) || sit.spur !== spur) continue
       out.push({
         datei: heftDatei(L, spur),
-        // EBA kennt nur eine Spur — der Zusatz entfällt wie im Kopf des Hefts.
-        titel: (istEba(sit) ? `Heft ${L} · ${sit.titel ?? ''}` : `Heft ${L} · ${SPUR_TITEL[spur]} · ${sit.titel ?? ''}`).trim(),
+        // EBA: Spurname nur bei der zusätzlichen Medien-Spur — wie im Kopf des Hefts.
+        titel: (istEba(sit) && spur !== 'mit_medien' ? `Heft ${L} · ${sit.titel ?? ''}` : `Heft ${L} · ${SPUR_TITEL[spur]} · ${sit.titel ?? ''}`).trim(),
         markup: () =>
           renderToStaticMarkup(<DocS sit={sit} set={d.set} abteilung={abteilung} mode="fill" edits={{}} onEdit={() => {}} />),
         docx: () => buildDocS({ sit, set: d.set, abteilung, mode: 'fill', logoPng }),

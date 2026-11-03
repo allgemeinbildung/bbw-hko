@@ -85,9 +85,9 @@ export function ankerZu(sit: Sit, knotenRef?: string): Anker | undefined {
   return bester
 }
 
-/** `HEFT A · OHNE MEDIEN` — EBA kennt nur eine Spur und druckt `HEFT A`. */
+/** `HEFT A · OHNE MEDIEN` — EBA druckt `HEFT A`; nur die zusätzliche Medien-Spur trägt `· MIT MEDIEN`. */
 export function heftDocCode(sit: Pick<SituationJson, 'lehrgang' | 'buchstabe' | 'spur'>): string {
-  if (istEba(sit)) return `HEFT ${sit.buchstabe}`
+  if (istEba(sit)) return sit.spur === 'mit_medien' ? `HEFT ${sit.buchstabe} · MIT MEDIEN` : `HEFT ${sit.buchstabe}`
   return `HEFT ${sit.buchstabe} · ${sit.spur === 'mit_medien' ? 'MIT MEDIEN' : 'OHNE MEDIEN'}`
 }
 
@@ -146,6 +146,35 @@ export interface V42Worte {
   quercheck: string
   /** S. 8 — Begriffsnetz drucken (EBA: nein, Entscheid Pietro 02.11.2026). */
   begriffsnetz: boolean
+  /**
+   * Seitenfolge 5–7. `false` (EFZ): S. 5 Auftrag mit Kriterien und Plus · S. 6 Methoden mit
+   * Beispiel · S. 7 Arbeitsfläche. `true` (EBA, Variante B nach Besprechung 23.10. und
+   * Rückmeldung M. Däniker 03.11.2026): S. 5 Auftrag mit dem Beispiel darunter · S. 6
+   * Methoden · S. 7 «Prüfen» mit Kriterien und Plus — keine Arbeitsfläche, das Produkt
+   * entsteht auf Papier oder am Laptop.
+   */
+  pruefSeite: boolean
+  /** Unterzeile beim Beispielbild «So kann Ihr Produkt aussehen». */
+  beispielUnterzeile: string
+  /** S. 5 — Hinweis zum Medium über den Schritten ([fett, normal]); null = keiner. */
+  medium: [string, string] | null
+  /** Auftragsbogen (Austausch & Transfer) — Beschriftungen, EBA wie in den Heften (03.11.2026). */
+  auftrag: {
+    /** A1 — Zeile «Persona» drucken. */
+    persona: boolean
+    /** A1 — Köpfe der Zahlentabelle. */
+    zahlenKopf: [string, string]
+    /** A1 — Etikett des Kastens zur Sozialform; EBA ohne «Möglich/Empfehlung». */
+    sozialform: string
+    sozialformNurEmpfehlung: boolean
+    /** A3 — Verweis auf die Wörter der Hefte (Liste «Heft A und Heft B»). */
+    woerterVerweis: (hefte: string) => string
+    /** A4 — Satz über der Tabelle und Spaltenköpfe. */
+    selbstAnweisung: string
+    spalten: [string, string, string, string]
+    /** Kasten «Das brauchen Sie aus Ihren Heften» auf A2 statt A1 (EBA: A1 ist mit 12 pt voll). */
+    heftBezugAufA2: boolean
+  }
 }
 
 const EFZ: V42Worte = {
@@ -177,6 +206,20 @@ const EFZ: V42Worte = {
   plus: 'Plus',
   quercheck: 'Quer-Check — die offenen Fragen der Situation',
   begriffsnetz: true,
+  pruefSeite: false,
+  beispielUnterzeile: 'Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.',
+  medium: null,
+  auftrag: {
+    persona: true,
+    zahlenKopf: ['Zahlen', 'Betrag'],
+    sozialform: 'Sozialform',
+    sozialformNurEmpfehlung: false,
+    woerterVerweis: (hefte) => `Begriffe nachschlagen: Glossar in ${hefte}, je Seite 8.`,
+    selbstAnweisung:
+      'Schätzen Sie Ihre Arbeit selbst ein: Kreuzen Sie je Kriterium die Stufe an, die zutrifft (Spalte «Selbst»). Die Spalte «Fremd» ist frei für eine Rückmeldung von aussen.',
+    spalten: ['Stufe', 'Kriterium', 'Selbst', 'Fremd'],
+    heftBezugAufA2: false,
+  },
 }
 
 const EBA: V42Worte = {
@@ -203,13 +246,41 @@ const EBA: V42Worte = {
   fundstelle: (ref) => `Lesen Sie: ${ref.replace(/^Dossier\s*\|\s*/, '').split(/\s+(?:↔|·)\s+/)[0]}`,
   schreibfeld: (nr) => `Ihre Antwort zu Leitfrage ${nr}`,
   selbst: 'Ich kreuze an',
-  selbstAnweisung: 'Kreuzen Sie vor der Abgabe in der Spalte «Ich kreuze an» Ihre Punkte an.',
+  selbstAnweisung: 'Selbsteinschätzung: Kreuzen Sie vor der Abgabe in der Spalte «Ich kreuze an» Ihre Punkte an.',
   dimension: (d) => (d === 'SuK' ? 'Sprache' : d === 'Ges' ? 'Gesellschaft' : d),
   plus: 'Plus – freiwillig, wenn Sie fertig sind',
   quercheck: 'Ihre Fragen vom Anfang: Können Sie sie jetzt beantworten?',
   begriffsnetz: false,
+  pruefSeite: true,
+  beispielUnterzeile: 'Das Beispiel zeigt einen anderen Fall. So sehen Sie, wie es geht. Ihr Produkt machen Sie selbst.',
+  medium: ['Auf Papier oder am Laptop?', 'Ihre Lehrperson sagt es Ihnen.'],
+  auftrag: {
+    persona: false,
+    zahlenKopf: ['Wichtige Zahlen', ''],
+    sozialform: 'So arbeiten Sie',
+    sozialformNurEmpfehlung: true,
+    // Im EBA-Heft stehen die Wörter auf S. 2 («Wichtige Wörter»), S. 8 hat kein Glossar.
+    woerterVerweis: (hefte) => `Wichtige Wörter nachschlagen: ${hefte}, je Seite 2.`,
+    selbstAnweisung:
+      'Kreuzen Sie bei jedem Kriterium an, wo Sie stehen (Spalte «Ich»). Ihre Partnerin oder Ihr Partner kreuzt in der Spalte «Partner/in» an.',
+    spalten: ['Punkte', 'Kriterium', 'Ich', 'Partner/in'],
+    heftBezugAufA2: true,
+  },
 }
 
-export function worte(sit: { lehrgang?: string | null } | null | undefined): V42Worte {
-  return istEba(sit) ? EBA : EFZ
+/**
+ * EBA mit Medien (Entscheid Pietro 03.11.2026): eine Spur `mit_medien` nur, wenn eine Kompetenz
+ * audiovisuelle Rezeption verlangt. S. 3 zeigt dann die Pflichtquelle (Video) mit QR-Code statt
+ * der Info-Karte; die Fundstelle der Leitfrage verweist auf die Quelle, nicht aufs Dossier.
+ */
+const EBA_MEDIEN: V42Worte = {
+  ...EBA,
+  seite3Titel: 'Video und Raster',
+  abschnitt: 'Video',
+  fundstelle: (ref) => (/^\s*Quelle\b/.test(ref) ? 'Schauen Sie: Video auf S. 3 (QR-Code)' : EBA.fundstelle(ref)),
+}
+
+export function worte(sit: { lehrgang?: string | null; spur?: string | null } | null | undefined): V42Worte {
+  if (!istEba(sit)) return EFZ
+  return sit?.spur === 'mit_medien' ? EBA_MEDIEN : EBA
 }

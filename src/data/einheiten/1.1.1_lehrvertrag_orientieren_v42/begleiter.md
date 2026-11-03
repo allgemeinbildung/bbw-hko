@@ -64,7 +64,7 @@ Der KN verlangt vier Modi. Das Lesen übt Heft A, die zwei mündlichen Modi übt
 
 ### Bewertung: Note nur im KN
 
-Das KN-Raster ist der Ausgangspunkt: Jedes Heft übt zwei der vier KN-Kriterien, der gemeinsame Auftrag alle vier, der KN weist sie nach. Nur der KN gibt eine Note. Woran du ein Kriterium am Heftprodukt siehst, steht als Indikator auf Seite 5 jedes Hefts:
+Das KN-Raster ist der Ausgangspunkt: Jedes Heft übt zwei der vier KN-Kriterien, der gemeinsame Auftrag alle vier, der KN weist sie nach. Nur der KN gibt eine Note. Woran du ein Kriterium am Heftprodukt siehst, steht als Indikator auf Seite 7 jedes Hefts («Prüfen»):
 
 | Heft | KN-Kriterium | Dim. | Indikator am Produkt |
 |---|---|---|---|
@@ -74,11 +74,11 @@ Das KN-Raster ist der Ausgangspunkt: Jedes Heft übt zwei der vier KN-Kriterien,
 | B | <!--hko:hf_B.feedback_kriterien[1].kn_kriterium-->Position / Werthaltung<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].dimension-->Ges<!--/hko--> | <!--hko:hf_B.feedback_kriterien[1].indikator_produkt-->Der gewählte Weg hat einen Grund (S. 4). Der Wunsch steht in der Ich-Form.<!--/hko--> |
 
 - Die Verteilung folgt den Produkten: Eine Tabelle zeigt, ob Begriffe stimmen und die passende Stelle gefunden ist. Eine Nachricht zeigt, ob jemand begründet und Haltung einnimmt.
-- Die Kriterien haben vier Stufen mit 0 bis 3 Punkten. Ihr Wortlaut ist für die EBA in einfacher Sprache geschrieben und steht gleich im Heft, im Auftragsbogen und im KN.
-- Vor der Abgabe kreuzen die Lernenden in der Spalte «Selbst» ihre Punkte an. Deine Rückmeldung nutzt dieselbe Skala.
+- Die Kriterien haben vier Stufen mit 0 bis 3 Punkten. Der Massstab ist der Wortlaut des KN. Die Lernenden lesen ihn im Heft (S. 7), im Auftragsbogen (A4) und im KN (letzte Seite) in einer eigenen Fassung: eigener Name pro Kriterium, Stufen in der Ich-Form.
+- Vor der Abgabe kreuzen die Lernenden im Heft in der Spalte «Ich kreuze an» ihre Punkte an, im Auftragsbogen in der Spalte «Ich»; die Partnerin oder der Partner kreuzt in «Partner/in» an. Deine Rückmeldung nutzt dieselbe Skala.
 
-> [!coaching] KN-Wortlaut im Heft lesen
-> Die Stufentexte sind die des KN. Darum nennen sie Leistungen, die ein einzelnes Heft nicht verlangt. Beispiel «Rechtliches Prinzip», 3 Punkte: «<!--hko:kn.rubrik_shared.kriterien[2].stufen[3]-->Stelle und Vorgehen stimmen. Beides ist auf einen neuen Fall übertragen.<!--/hko-->» In Heft A gibt es keinen neuen Fall. Für die Rückmeldung zum Heft zählt darum die Indikator-Zeile. Sag das einmal laut, sonst kreuzen die Lernenden aus Vorsicht zu tief an.
+> [!coaching] KN-Stufen im Heft lesen
+> Die Stufen sagen dasselbe wie der KN, nur in der Ich-Form. Darum nennen sie Leistungen, die ein einzelnes Heft nicht verlangt. Beispiel «Rechtliches Prinzip», 3 Punkte: «<!--hko:kn.rubrik_shared.kriterien[2].stufen[3]-->Stelle und Vorgehen stimmen. Beides ist auf einen neuen Fall übertragen.<!--/hko-->» In Heft A gibt es keinen neuen Fall. Für die Rückmeldung zum Heft zählt darum die Indikator-Zeile. Sag das einmal laut, sonst kreuzen die Lernenden aus Vorsicht zu tief an.
 
 **Mehrdeutigkeit — ein Spannungsfeld je Baustein**
 
@@ -98,11 +98,11 @@ Hefte und Auftragsbogen nennen weder Woche noch Lektion. Der Plan ist ein Vorsch
 
 | Woche | Lektion | Was geschieht | Unterlagen |
 |---|---|---|---|
-| 1 | 1 | <!--hko:hf_A.wochen_plan[0].text-->Situation lesen, LF1<!--/hko--> | Heft A, S. 1–2, Dossier |
-| 1 | 2 | <!--hko:hf_A.wochen_plan[1].text-->LF2 mit Raster, LF3 mit Denkhilfe<!--/hko--> | Heft A, S. 3–4, Dossier |
+| 1 | 1 | <!--hko:hf_A.wochen_plan[0].text-->Situation lesen, Leitfrage 1<!--/hko--> | Heft A, S. 1–2, Dossier |
+| 1 | 2 | <!--hko:hf_A.wochen_plan[1].text-->Leitfrage 2 mit Raster, Leitfrage 3 mit Denkhilfe<!--/hko--> | Heft A, S. 3–4, Dossier |
 | 1 | 3 | <!--hko:hf_A.wochen_plan[2].text-->Vertragsübersicht, Kriterien, Abschluss mit Quer-Check<!--/hko--> | Heft A, S. 5–8 |
-| 2 | 1 | <!--hko:hf_B.wochen_plan[0].text-->Situation lesen, LF1<!--/hko--> | Heft B, S. 1–2, Dossier |
-| 2 | 2 | <!--hko:hf_B.wochen_plan[1].text-->LF2 mit Raster, LF3 mit Denkhilfe<!--/hko--> | Heft B, S. 3–4, Dossier |
+| 2 | 1 | <!--hko:hf_B.wochen_plan[0].text-->Situation lesen, Leitfrage 1<!--/hko--> | Heft B, S. 1–2, Dossier |
+| 2 | 2 | <!--hko:hf_B.wochen_plan[1].text-->Leitfrage 2 mit Raster, Leitfrage 3 mit Denkhilfe<!--/hko--> | Heft B, S. 3–4, Dossier |
 | 2 | 3 | <!--hko:hf_B.wochen_plan[2].text-->Nachricht schreiben, Kriterien, Abschluss mit Quer-Check<!--/hko--> | Heft B, S. 5–8 |
 | 3 | 1–3 | <!--hko:set.wochenplan[2].inhalt-->Gemeinsamer Auftrag (2) + Rückmeldung (1)<!--/hko--> | Auftragsbogen A1–A4, Hefte A und B |
 | 4 | 1–3 | <!--hko:set.wochenplan[3].inhalt-->KN (2) + Puffer (1)<!--/hko--> | KN-Blatt, Dossier, Hefte |
@@ -112,7 +112,7 @@ Hefte und Auftragsbogen nennen weder Woche noch Lektion. Der Plan ist ein Vorsch
 
 ### Seitenplan eines Hefts (135 Minuten)
 
-Ein Heft hat acht Seiten A4, mit der Doppelseite 6–7 für Methoden und Arbeitsfläche. Beide Hefte haben dieselbe Seitenfolge.
+Ein Heft hat acht Seiten A4. Beide Hefte haben dieselbe Seitenfolge. Eine Arbeitsfläche im Heft gibt es nicht: Das Produkt entsteht auf Papier oder am Laptop, das entscheidest du. Sag es zu Beginn von Teil 3; auf S. 5 steht dazu «Auf Papier oder am Laptop? Ihre Lehrperson sagt es Ihnen.»
 
 | S. | Titel | Lernende tun | Min. |
 |---|---|---|---|
@@ -120,9 +120,9 @@ Ein Heft hat acht Seiten A4, mit der Doppelseite 6–7 für Methoden und Arbeits
 | 2 | Leitfrage 1 | Info-Karte lesen, Kasten «Wichtige Wörter» nutzen, schreiben | 27 |
 | 3 | Leitfrage 2 | Info-Karte lesen, Raster mit drei Zeilen füllen, Ergebnis in zwei Sätzen | 25 |
 | 4 | Leitfrage 3 | Denkhilfe ausfüllen, dann entscheiden und begründen | 15 |
-| 5 | Auftrag | Produkt, fünf Schritte, Abgaben und zwei Kriterien lesen | 5 |
-| 6 | Methoden und Beispiel | bei Bedarf nachschlagen | — |
-| 7 | Arbeitsfläche | das Produkt erstellen | 40 |
+| 5 | Auftrag | Produkt, fünf Schritte und Abgaben lesen, das Beispiel darunter ansehen; dann das Produkt auf Papier oder am Laptop erstellen | 40 |
+| 6 | Methoden | bei Bedarf nachschlagen | — |
+| 7 | Prüfen | vor der Abgabe die zwei Kriterien lesen und ankreuzen, Plus freiwillig | 5 |
 | 8 | Abschluss | Quer-Check mit Antwortzeilen, «Das nehme ich mit», Checkliste | 15 |
 
 > [!hinweis] Der dritte Teil ist mehr als voll
@@ -146,7 +146,8 @@ Diese Einheit gibt es in einer einzigen Fassung, ohne Medienquelle: kein Video, 
 - **Leitfrage 1:** ein Kasten «Wichtige Wörter» neben dem Schreibfeld.
 - **Leitfrage 2:** ein Raster mit drei Zeilen; die erste ist ein fertiges Beispiel.
 - **Leitfrage 3:** die Denkhilfe mit drei Spalten. Zuerst Stichworte, dann der Text.
-- **Seite 6:** vier Methodenkarten auf Niveau A2 und ein Beispielprodukt an einem anderen Fall. Es zeigt die Form, nicht die Lösung.
+- **Seite 5:** unter dem Auftrag ein Beispielprodukt an einem anderen Fall. Es zeigt die Form, nicht die Lösung.
+- **Seite 6:** vier Methodenkarten auf Niveau A2.
 - **Neutrale Persona:** kein erfundener Beruf, kein erfundener Betrieb. Die Lernenden lesen den Fall als ihren eigenen.
 
 Eine zweite Fassung mit einer kurzen Medienquelle lässt das Format zu; für diese Einheit gibt es sie noch nicht.
@@ -202,11 +203,11 @@ Die fünf Schritte auf Seite 5: <!--hko:hf_A.handlungsprodukt.schritte[0].label-
 > [!coaching] Die Frage ist das halbe Produkt
 > Eine gute Frage nennt zuerst den Vertragspunkt und fragt dann; die Methodenkarte «Eine klare Frage stellen» zeigt das Muster. «Ich verstehe den Vertrag nicht» reicht nicht. «Bei den Ferien steht: Betriebsferien gemäss Reglement. Welches Reglement ist gemeint?» reicht.
 
-**S. 5 — Auftrag.** Lies die Indikator-Zeile der zwei Kriterien gemeinsam. Schritt 05 verlangt die Selbsteinschätzung und einen verbesserten Satz.
+**S. 5 — Auftrag und Beispiel.** Die Lernenden legen die Tabelle mit drei Spalten selbst an, auf Papier oder am Laptop, nach dem Beispiel unten auf der Seite: Es ordnet einen anderen Vertrag, ein Handy-Abo. Der dritte Abschnitt trägt drei Vertragspunkte. Zwei Punkte bekommen einen Kreis, die Frage steht darunter. Geh herum und lass dir je einen markierten Punkt mündlich begründen. Die mögliche Lösung zum Lehrvertrag steht im Dokument «Lösungen»; zeig sie erst, wenn die eigene Tabelle steht.
 
-**S. 6 — Methoden und Beispiel.** Vier Karten: «Ein Formular überfliegen», «Ein Raster ausfüllen», «Ein schwieriges Wort klären», «Eine klare Frage stellen». Das Beispiel darunter ordnet einen anderen Vertrag, ein Handy-Abo. Die mögliche Lösung zum Lehrvertrag steht im Dokument «Lösungen»; zeig sie erst, wenn die eigene Tabelle steht.
+**S. 6 — Methoden.** Vier Karten: «Ein Formular überfliegen», «Ein Raster ausfüllen», «Ein schwieriges Wort klären», «Eine klare Frage stellen».
 
-**S. 7 — Arbeitsfläche.** Die Lernenden zeichnen die Tabelle mit drei Spalten selbst, nach dem Beispiel auf der Seite gegenüber. Der dritte Abschnitt trägt drei Vertragspunkte. Zwei Punkte bekommen einen Kreis, die Frage steht darunter. Geh herum und lass dir je einen markierten Punkt mündlich begründen.
+**S. 7 — Prüfen.** Lies die Indikator-Zeile der zwei Kriterien gemeinsam. Schritt 05 auf S. 5 verlangt die Selbsteinschätzung hier und einen verbesserten Satz. Der Plus-Kasten darunter ist freiwillig.
 
 **S. 8 — Abschluss.** Die Lernenden beantworten die Fragen vom Anfang im Quer-Check, je auf einer eigenen Zeile. Darunter stehen die drei Zeilen «Das nehme ich mit» und die Checkliste. Ein Begriffsnetz gibt es im EBA-Heft nicht; das Tafelbild unten ist ein freiwilliges Angebot für dich. Der Auftragsbogen greift auf diese Seite zurück.
 
@@ -298,11 +299,11 @@ Die fünf Schritte auf Seite 5: <!--hko:hf_B.handlungsprodukt.schritte[0].label-
 > [!coaching] Der Grund kommt aus dem Fall
 > Eine gute Begründung nimmt einen Fakt aus LF1 auf, etwa den ersten Versuch mit «Jetzt nicht». Derselbe Fakt kann für beide Wege sprechen. Frag bei einem blossen «Ich wähle Weg 1»: «Welcher deiner Fakten spricht dafür?»
 
-**S. 5 — Auftrag.** Schritt 03 legt fest, an wen die Nachricht geht; das folgt aus dem Weg von LF3. In Schritt 05 tauschen zwei Lernende ihre Nachrichten und prüfen sie gegenseitig.
+**S. 5 — Auftrag und Beispiel.** Schritt 03 legt fest, an wen die Nachricht geht; das folgt aus dem Weg von LF3. Die Nachricht hat fünf bis sieben kurze Sätze, auf Papier oder am Laptop. Sie geht nicht an den Betrieb; sag das zu Beginn. Das Beispiel unten auf der Seite steht an einem anderen Fall, fehlenden Arbeitskleidern. In Schritt 05 tauschen zwei Lernende ihre Nachrichten, wenn möglich digital: Das ist der digitale Austausch, den die Kompetenz meint.
 
-**S. 6 — Methoden und Beispiel.** Vier Karten: «Fakt und Gefühl trennen», «Ein Raster ausfüllen», «Zwei Wege abwägen», «Eine sachliche Nachricht aufbauen». Die Merkzeile der letzten Karte ist der Bauplan des Produkts: Anrede, Fakten, Wunsch, Gruss. Das Beispiel darunter steht an einem anderen Fall, fehlenden Arbeitskleidern.
+**S. 6 — Methoden.** Vier Karten: «Fakt und Gefühl trennen», «Ein Raster ausfüllen», «Zwei Wege abwägen», «Eine sachliche Nachricht aufbauen». Die Merkzeile der letzten Karte ist der Bauplan des Produkts: Anrede, Fakten, Wunsch, Gruss.
 
-**S. 7 — Arbeitsfläche.** Fünf bis sieben kurze Sätze. Die Nachricht geht nicht an den Betrieb; sag das zu Beginn. Getauscht wird sie mit einer anderen Person, wenn möglich digital: Das ist der digitale Austausch, den die Kompetenz meint. Geprüft wird: ruhig, klar, höflich?
+**S. 7 — Prüfen.** Die zwei Lernenden prüfen die getauschte Nachricht mit den Kriterien: ruhig, klar, höflich? Der Plus-Kasten darunter ist freiwillig.
 
 > [!coaching] Zuerst Aufbau und Ton, dann die Sprache
 > Stehen die Fakten vorn, der Wunsch am Schluss? Ist ein Vorwurf drin? Erst danach geht es um die Sprache. Auf Niveau A2 gilt: ein Gedanke pro Satz. Lange Sätze lässt du in zwei teilen, statt jedes Komma zu korrigieren.
@@ -372,16 +373,16 @@ Die EBA hat kein Lehrmittel. Das Wissen der Einheit steht im **Dossier** auf Niv
 Der Auftrag ist die Generalprobe für den KN, mit Rückmeldung und ohne Note. Der Fall ist neu und spielt in einem anderen Lebensbereich (<!--hko:set.gemeinsamer_auftrag.lebensbereich-->Berufsfachschule<!--/hko-->): Statt des Lehrvertrags liegt ein Reglement der Schule vor.
 
 - **Die Rollen sind umgekehrt:** In Heft B liegt das Problem im Betrieb, und Hilfe kommt von aussen (Lehrperson, dann Berufsbildungsamt). Hier liegt das Problem an der Schule: Selbst klären heisst mit der Klassenlehrperson sprechen, Hilfe kommt aus dem Betrieb, von der Berufsbildnerin. Sag das der Klasse ausdrücklich.
-- **Hefte erlaubt und erwünscht:** Der Kasten auf A1 verweist auf Heft A (S. 6 und 8) und auf Heft B (S. 2, 4, 6 und 8).
+- **Hefte erlaubt und erwünscht:** Der Kasten auf A2 verweist auf Heft A (S. 2 und 6) und auf Heft B (S. 2, 4 und 6); die Wörter stehen je auf S. 2 im Kasten «Wichtige Wörter».
 - **Sprachmodi:** Die Hefte decken das Lesen und das digitale Schreiben ab. Der Auftrag trägt die zwei mündlichen Modi des KN: <!--hko:set.gemeinsamer_auftrag.sprachmodi[0]-->Produktion mündlich<!--/hko--> · <!--hko:set.gemeinsamer_auftrag.sprachmodi[1]-->Interaktion und Kollaboration mündlich<!--/hko-->. In der EBA ist das Kurzgespräch die Primärform des KN; darum wird hier gesprochen.
 
 ### Die Situation
 
 <!--hko:set.gemeinsamer_auftrag.situation_text|quote-->
-> Ich bin im 1. Lehrjahr meiner EBA-Lehre. Heute bekomme ich einen Brief von der Berufsfachschule. Darin steht: «Sie haben 3 Schulstunden unentschuldigt gefehlt.» Der Brief verweist auf das Absenzen-Reglement. Das Reglement hat zwei Seiten und viele Punkte. Ich erschrecke. An diesem Morgen war ich im Betrieb. Meine Berufsbildnerin brauchte mich für einen dringenden Auftrag. Eine Entschuldigung habe ich nicht abgegeben. Im Reglement steht: Die Entschuldigung muss innert 8 Tagen bei der Klassenlehrperson sein. Die 8 Tage sind vorbei. Ich will das klären. Aber wie? Spreche ich zuerst selbst mit der Klassenlehrperson? Oder bitte ich zuerst meine Berufsbildnerin um Hilfe?
+> Ich bin im 1. Lehrjahr meiner EBA-Lehre. Heute bekomme ich einen Brief von der Berufsfachschule. Darin steht: «Sie haben 3 Schulstunden unentschuldigt gefehlt.» Der Brief verweist auf das Absenzen-Reglement. Das Reglement hat zwei Seiten und viele Punkte. Ich erschrecke. An diesem Morgen war ich im Betrieb. Meine Berufsbildnerin brauchte mich für einen dringenden Auftrag. Eine Entschuldigung habe ich nicht abgegeben. Im Reglement steht: Ich muss die Entschuldigung innert 4 Wochen unterschreiben lassen und der Lehrperson zeigen. Die 4 Wochen sind vorbei. Ich will das klären. Aber wie? Spreche ich zuerst selbst mit der Klassenlehrperson? Oder bitte ich zuerst meine Berufsbildnerin um Hilfe?
 <!--/hko-->
 
-**Leitfrage:** «<!--hko:set.gemeinsamer_auftrag.leitfrage-->Wie kläre ich den Brief: Spreche ich zuerst selbst mit der Klassenlehrperson, oder hole ich zuerst Hilfe im Betrieb?<!--/hko-->»
+**Leitfrage:** «<!--hko:set.gemeinsamer_auftrag.leitfrage-->Wie kläre ich den Brief? Spreche ich zuerst selbst mit der Klassenlehrperson oder hole ich zuerst Hilfe im Betrieb?<!--/hko-->»
 
 **Auftrag an die Lernenden:** <!--hko:set.gemeinsamer_auftrag.auftrag-->Klären Sie den Brief: Bereiten Sie Ihren Fall vor. Führen Sie dann das Gespräch mit einer Partnerin oder einem Partner.<!--/hko-->
 
@@ -401,7 +402,7 @@ Die fünf Schritte: <!--hko:set.gemeinsamer_auftrag.schritte[0].label-->01 Über
 
 ### Ablauf über drei Lektionen (Vorschlag)
 
-Der Bogen hat vier Seiten: A1 mit Situation und Auftrag, die Bogenseite A2 für die Planung der Erklärung, A3 für die Planung des Gesprächs, A4 mit der Selbsteinschätzung in den Spalten «Selbst» und «Fremd».
+Der Bogen hat vier Seiten: A1 mit Situation und Auftrag, die Bogenseite A2 für die Planung der Erklärung, A3 für die Planung des Gesprächs, A4 mit der Selbsteinschätzung in den Spalten «Ich» und «Partner/in». Vor der Situation auf A1 stehen vier wichtige Wörter (Absenz, unentschuldigt, Reglement, Frist); der Kasten «Das brauchen Sie aus Ihren Heften» steht auf A2 und verweist auf «Wichtige Wörter» auf S. 2 der Hefte.
 
 | Lektion | Was geschieht | Bogen | Sozialform |
 |---|---|---|---|
@@ -428,7 +429,7 @@ Beides wird **live** gezeigt, im Paar oder vor dir. Nichts wird aufgenommen, nic
 
 ### Kriterien und Indikatoren
 
-Die vier Kriterien stehen auf A4 im Wortlaut des KN (Abschnitt 7), dazu je ein Indikator für diesen Auftrag.
+Die vier Kriterien stehen auf A4 in der Fassung für Lernende (Ich-Form, wie Heft S. 7), dazu je ein Indikator für diesen Auftrag. Der Wortlaut des KN (Abschnitt 7) ist der Massstab; die Lernendenfassung sagt dasselbe einfacher.
 
 | Kriterium | Dim. | Indikator im Auftrag |
 |---|---|---|
@@ -441,21 +442,21 @@ Die vier Kriterien stehen auf A4 im Wortlaut des KN (Abschnitt 7), dazu je ein I
 
 > [!erwartungshorizont] Gemeinsamer Auftrag — beide Wege sind vertretbar
 > - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[0]-->Die Fakten sind genannt: der Morgen im Betrieb, die fehlende Entschuldigung, die Frist.<!--/hko-->
-> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[1]-->Die Regel aus dem Reglement ist genannt (Entschuldigung innert 8 Tagen).<!--/hko-->
+> - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[1]-->Die Regel aus dem Reglement ist genannt (Entschuldigung innert 4 Wochen unterschrieben vorlegen).<!--/hko-->
 > - **Gut, wenn:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.gut_wenn[2]-->Der Weg ist begründet, und das Gespräch bleibt sachlich: Fakten, Wunsch, ruhiger Ton.<!--/hko-->
 > - **Tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.tragfaehig-->Zum Beispiel: zuerst selbst mit der Klassenlehrperson sprechen, den Grund nennen und fragen, was jetzt noch möglich ist. Oder: zuerst die Berufsbildnerin um eine schriftliche Bestätigung bitten und damit zur Klassenlehrperson gehen.<!--/hko-->
 > - **Nicht tragfähig:** <!--hko:set.gemeinsamer_auftrag.erwartungshorizont.nicht_tragfaehig-->Den Brief liegen lassen und nichts tun. Oder nur sagen «Das ist unfair», ohne Fakten und ohne die Stelle im Reglement.<!--/hko-->
 
 ### Rückmeldung vor dem KN
 
-Zwischen dem Auftrag und dem KN liegt im Vorschlag eine Lektion mit Rückmeldung. Der Bogen lässt offen, wer die Spalte «Fremd» ausfüllt, und nennt weder Lehrperson noch Note. Naheliegend ist: Die Partnerin füllt «Fremd» aus, du hörst bei jedem Paar einen Durchgang und sagst zu einem Kriterium einen Satz. Danach folgt ein zweiter Durchgang mit genau dieser Verbesserung.
+Zwischen dem Auftrag und dem KN liegt im Vorschlag eine Lektion mit Rückmeldung. Der Bogen nennt weder Lehrperson noch Note. Die Spalte «Partner/in» füllt die Partnerin oder der Partner aus; du hörst bei jedem Paar einen Durchgang und sagst zu einem Kriterium einen Satz. Danach folgt ein zweiter Durchgang mit genau dieser Verbesserung.
 
 ### Abgrenzung zum KN
 
 | | Gemeinsamer Auftrag | KN |
 |---|---|---|
 | Zweck | Übung mit Rückmeldung | Nachweis |
-| Kriterien | dieselben vier, gleicher Wortlaut | vier KN-Kriterien |
+| Kriterien | dieselben vier, gleicher Massstab (Lernendenfassung in Ich-Form) | vier KN-Kriterien |
 | Situation | neu, verbindet A und B, Berufsfachschule | neu, verbindet A und B, wieder im Lehrbetrieb |
 | Produkt | Erklärung und Gespräch, mündlich | eine der drei KN-Formen |
 | Rückmeldung | Partnerin und du, vor dem KN | Note |
@@ -520,7 +521,7 @@ Die Lernenden bereiten sich mit Notizen auf einem Blatt vor; Dossier und Hefte s
 > 3 Punkte zusätzlich: begründet die Grenze und nimmt beide Wege ernst, zum Beispiel: Selbst fragen zeigt Verantwortung, Hilfe holen ist keine Schwäche.
 > Nicht 3 Punkte: ein allgemeiner Spruch ohne Bezug zum Fall.
 
-**Bi-dimensionale Bewertung** (0 bis 3 Punkte je Kriterium — derselbe Wortlaut wie auf Seite 5 der Hefte und auf A4 des Auftragsbogens)
+**Bi-dimensionale Bewertung** (0 bis 3 Punkte je Kriterium — Heft S. 7, Auftragsbogen A4 und DOC-KN-S S. 4 zeigen dieselben Stufen in der Fassung für Lernende)
 
 | Kriterium | 0 Punkte | 1 Punkt | 2 Punkte | 3 Punkte |
 |---|---|---|---|---|

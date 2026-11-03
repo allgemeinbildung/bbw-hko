@@ -1,0 +1,18 @@
+/* GENERIERT — nicht von Hand bearbeiten. Neu erzeugen: npm run build:fonts-embed
+   Online: Dateien unter /einheiten-assets/fonts/. IBM Plex Sans/Mono (SIL OFL 1.1), HKO Symbole = Untermenge DejaVu Sans
+   (Bitstream-Vera-Lizenz), HKO Hand = Kalam (SIL OFL 1.1). Siehe scripts/build-fonts-embed.mjs */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexSans-Regular.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexSans-Medium.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexSans-Bold.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Sans';font-style:italic;font-weight:400;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexSans-Italic.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Sans';font-style:italic;font-weight:700;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexSans-BoldItalic.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexMono-SemiBold.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-style:italic;font-weight:400;font-display:swap;src:url('/einheiten-assets/fonts/IBMPlexMono-Italic.woff2') format('woff2');}
+@font-face{font-family:'HKO Symbole';font-style:normal;font-weight:100 900;font-display:swap;src:url('/einheiten-assets/fonts/DejaVuSans.woff2') format('woff2');}
+@font-face{font-family:'HKO Hand';font-style:normal;font-weight:400;font-display:swap;src:url('/einheiten-assets/fonts/kalam-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212;size-adjust:116.4%;}
+@font-face{font-family:'HKO Hand';font-style:normal;font-weight:400;font-display:swap;src:url('/einheiten-assets/fonts/kalam-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;size-adjust:116.4%;}
+@font-face{font-family:'HKO Hand';font-style:normal;font-weight:700;font-display:swap;src:url('/einheiten-assets/fonts/kalam-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212;size-adjust:111.6%;}
+@font-face{font-family:'HKO Hand';font-style:normal;font-weight:700;font-display:swap;src:url('/einheiten-assets/fonts/kalam-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;size-adjust:111.6%;}

@@ -41,7 +41,7 @@ const calloutBox = {
 // Wie die Prompt-Kästen in DocLernprompt / DocLernbegleiter.
 const promptBox = {
   background: '#f5f7fa', border: '1px solid #d8dde4', borderRadius: '1mm',
-  padding: '1.8mm 2.5mm', margin: '0.6mm 0 2mm', fontFamily: "'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace",
+  padding: '1.8mm 2.5mm', margin: '0.6mm 0 2mm', fontFamily: "'IBM Plex Mono', 'HKO Symbole', ui-monospace, Menlo, Consolas, monospace",
   fontSize: '9pt', lineHeight: 1.36, color: '#2a2f36', whiteSpace: 'pre-wrap',
 } as const
 

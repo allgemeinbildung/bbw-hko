@@ -2,12 +2,13 @@
    Markup: src/components/einheiten/docs/heft-v42/produkt-bild.tsx (Blatt, Band S. 6) und
    DocLoesungenV42.tsx (Dokument «Lösungen», Variante .v42-pb-loesung). Präfix .v42-pb-.
    Ein Akzent (--sit-akzent) plus Schwarz/Weiss; Markierungen tragen die Kontur, nicht die Farbe (Graudruck).
-   Schreibschrift nur über lokal vorhandene Schriften — kein Webfont.
+   Schreibschrift «HKO Hand» (Kalam, eingebettet, Laufweite an Segoe Print angeglichen —
+   scripts/build-fonts-embed.mjs). Vorher Segoe Print: gab es auf Mac/iPad nicht (03.11.2026).
    Wird nach heft-5-8.css angehängt (alphabetisch, css-v42.ts). */
 
 /* ---------- Blatt ---------- */
 .v42-pb-blatt {
-  --pb-schrift: 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', cursive;
+  --pb-schrift: 'HKO Hand', 'HKO Symbole', 'Segoe Print', cursive;
   font-family: var(--pb-schrift);
   color: var(--ink);
   background: var(--paper);

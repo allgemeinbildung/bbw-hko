@@ -10,12 +10,12 @@
 .v42-s5 > *, .v42-s6 > *, .v42-s7 > *, .v42-s8 > * { flex-shrink: 0; }
 
 /* Arbeitsanweisung über einem Block (Kriterien, Mindmap). */
-.v42-s5 .v42-arbeitsanweisung,
+:is(.v42-s5, .v42-s7) .v42-arbeitsanweisung,
 .v42-s8 .v42-arbeitsanweisung { font-size: 9pt; line-height: 1.32; color: var(--ink-soft); margin: 0 0 1mm; }
 
 /* Ankreuzkästchen — ☐ als Zeichen wie in der Checkliste; im Fill-Modus ein Knopf. */
-.v42-s5 .v42-box, .v42-s8 .v42-box { display: inline-block; font-size: 12pt; line-height: 1; color: var(--ink); }
-.v42-s5 button.v42-box, .v42-s8 button.v42-box {
+:is(.v42-s5, .v42-s7) .v42-box, .v42-s8 .v42-box { display: inline-block; font-size: 12pt; line-height: 1; color: var(--ink); }
+:is(.v42-s5, .v42-s7) button.v42-box, .v42-s8 button.v42-box {
   background: none; border: 0; padding: 0; margin: 0;
   font-family: inherit; cursor: pointer;
 }
@@ -40,7 +40,7 @@
   border-bottom: 0.5pt solid var(--rule);
   break-inside: avoid;
 }
-.v42-s5 .v42-schritt-nr { font-family: 'IBM Plex Mono', monospace; font-size: 9.5pt; font-weight: 600; color: var(--sit-akzent); }
+.v42-s5 .v42-schritt-nr { font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 9.5pt; font-weight: 600; color: var(--sit-akzent); }
 .v42-s5 .v42-schritt-label { font-size: 9.5pt; font-weight: 600; line-height: 1.28; }
 .v42-s5 .v42-schritt-hint { font-size: 9pt; line-height: 1.3; color: var(--ink-soft); }
 
@@ -51,44 +51,44 @@
 
 /* Feedback-Kriterien: je Kriterium eine Kopfzeile, darunter die vier Stufen im Wortlaut
    mit der Spalte «Selbst». Stufentexte nie unter 8 pt (Invariante 10). */
-.v42-s5 .v42-krit-tabelle { width: 100%; border-collapse: collapse; table-layout: fixed; }
-.v42-s5 .v42-krit-tabelle col.v42-krit-punkte { width: 16mm; }
-.v42-s5 .v42-krit-tabelle col.v42-krit-selbst { width: 12mm; }
-.v42-s5 .v42-krit-tabelle thead th {
+:is(.v42-s5, .v42-s7) .v42-krit-tabelle { width: 100%; border-collapse: collapse; table-layout: fixed; }
+:is(.v42-s5, .v42-s7) .v42-krit-tabelle col.v42-krit-punkte { width: 16mm; }
+:is(.v42-s5, .v42-s7) .v42-krit-tabelle col.v42-krit-selbst { width: 12mm; }
+:is(.v42-s5, .v42-s7) .v42-krit-tabelle thead th {
   text-align: left;
   font-size: 7pt; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
   color: var(--sit-akzent);
   border-bottom: 1pt solid var(--sit-akzent);
   padding: 0 2mm 0.6mm 0;
 }
-.v42-s5 .v42-krit-tabelle thead th:last-child { text-align: center; padding-right: 0; }
-.v42-s5 .v42-krit-kopf th {
+:is(.v42-s5, .v42-s7) .v42-krit-tabelle thead th:last-child { text-align: center; padding-right: 0; }
+:is(.v42-s5, .v42-s7) .v42-krit-kopf th {
   text-align: left; font-weight: 400;
   padding: 1.4mm 0 0.6mm;
   border-bottom: 0.75pt solid var(--ink-soft);
 }
-.v42-s5 .v42-krit-name { font-size: 10pt; font-weight: 700; }
-.v42-s5 .v42-krit-dim {
+:is(.v42-s5, .v42-s7) .v42-krit-name { font-size: 10pt; font-weight: 700; }
+:is(.v42-s5, .v42-s7) .v42-krit-dim {
   display: inline-block; margin-left: 2mm; vertical-align: 1px;
   padding: 0 1.2mm; border: 0.75pt solid var(--sit-akzent); border-radius: 2px;
   font-size: 7pt; font-weight: 600; letter-spacing: 0.04em; color: var(--sit-akzent);
 }
-.v42-s5 .v42-krit-indikator { display: block; font-size: 9pt; line-height: 1.28; color: var(--ink-soft); margin-top: 0.3mm; }
-.v42-s5 .v42-krit-frage { font-style: italic; }
-.v42-s5 .v42-krit-stufe td { padding: 0.5mm 2mm 0.5mm 0; border-bottom: 0.5pt solid var(--rule); vertical-align: top; }
-.v42-s5 .v42-krit-stufe td.v42-krit-nr {
-  font-family: 'IBM Plex Mono', monospace; font-size: 7pt; color: var(--ink-soft);
+:is(.v42-s5, .v42-s7) .v42-krit-indikator { display: block; font-size: 9pt; line-height: 1.28; color: var(--ink-soft); margin-top: 0.3mm; }
+:is(.v42-s5, .v42-s7) .v42-krit-frage { font-style: italic; }
+:is(.v42-s5, .v42-s7) .v42-krit-stufe td { padding: 0.5mm 2mm 0.5mm 0; border-bottom: 0.5pt solid var(--rule); vertical-align: top; }
+:is(.v42-s5, .v42-s7) .v42-krit-stufe td.v42-krit-nr {
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 7pt; color: var(--ink-soft);
   white-space: nowrap; padding-top: 0.9mm;
 }
-.v42-s5 .v42-krit-text { font-size: 9pt; line-height: 1.3; }
-.v42-s5 .v42-krit-stufe td.v42-krit-box { text-align: center; padding-right: 0; }
-.v42-s5 .v42-krit-stufe .v42-box { font-size: 11pt; }
-.v42-s5 .v42-krit-stufe.gewaehlt .v42-krit-text { font-weight: 600; }
+:is(.v42-s5, .v42-s7) .v42-krit-text { font-size: 9pt; line-height: 1.3; }
+:is(.v42-s5, .v42-s7) .v42-krit-stufe td.v42-krit-box { text-align: center; padding-right: 0; }
+:is(.v42-s5, .v42-s7) .v42-krit-stufe .v42-box { font-size: 11pt; }
+:is(.v42-s5, .v42-s7) .v42-krit-stufe.gewaehlt .v42-krit-text { font-weight: 600; }
 
 /* Plus ist freiwillig — gestrichelte Kontur statt Akzentlinie. */
-.v42-s5 .v42-kasten.v42-plus { border: 0.75pt dashed var(--ink-mute); border-left: 3pt dashed var(--ink-mute); }
-.v42-s5 .v42-plus .v42-kasten-label { color: var(--ink-soft); }
-.v42-s5 .v42-plus p { font-size: 9.5pt; line-height: 1.35; margin: 0; }
+:is(.v42-s5, .v42-s7) .v42-kasten.v42-plus { border: 0.75pt dashed var(--ink-mute); border-left: 3pt dashed var(--ink-mute); }
+:is(.v42-s5, .v42-s7) .v42-plus .v42-kasten-label { color: var(--ink-soft); }
+:is(.v42-s5, .v42-s7) .v42-plus p { font-size: 9.5pt; line-height: 1.35; margin: 0; }
 
 /* ---------- Seite 6 · Methoden ---------- */
 /* MethodenGrid wie im Bestand; es füllt den Rest der Seite, wird aber nie gestaucht.

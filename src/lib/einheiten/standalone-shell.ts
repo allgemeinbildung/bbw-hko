@@ -699,7 +699,7 @@ const SAVE_RUNTIME = `
 
 /** Chrome-CSS des Shells (Leiste, Banner, Protokoll-Panel, Seitenabstand). */
 const SHELL_CSS = `
-.standalone-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#1d2026;color:#e8eaee;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;}
+.standalone-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#1d2026;color:#e8eaee;font-family:'IBM Plex Sans','HKO Symbole',system-ui,sans-serif;font-size:13px;}
 .standalone-bar .sb-row{display:flex;align-items:center;gap:14px;padding:10px 18px;}
 .standalone-bar .name{font-weight:600}
 .standalone-bar .spacer{flex:1}
@@ -712,7 +712,7 @@ const SHELL_CSS = `
 .standalone-bar .sb-status.sb-ok{color:#7ddba3}
 .standalone-bar .sb-status.sb-warn{color:#f0c674}
 .standalone-bar .sb-banner{display:flex;align-items:center;gap:12px;padding:9px 18px;background:#2a2f38;border-top:1px solid #3a3f49;font-size:12px;color:#e8eaee;flex-wrap:wrap}
-.hko-panel{position:fixed;top:70px;right:20px;z-index:60;width:360px;max-width:calc(100vw - 40px);max-height:calc(100vh - 100px);overflow:auto;background:#fff;color:#1d2026;border:1px solid #d5dade;border-top:4px solid #0E6E3A;border-radius:8px;box-shadow:0 10px 34px rgba(0,0,0,.18);padding:16px 18px;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px}
+.hko-panel{position:fixed;top:70px;right:20px;z-index:60;width:360px;max-width:calc(100vw - 40px);max-height:calc(100vh - 100px);overflow:auto;background:#fff;color:#1d2026;border:1px solid #d5dade;border-top:4px solid #0E6E3A;border-radius:8px;box-shadow:0 10px 34px rgba(0,0,0,.18);padding:16px 18px;font-family:'IBM Plex Sans','HKO Symbole',system-ui,sans-serif;font-size:13px}
 .hko-panel .hp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .hko-panel .hp-close{background:#eef1f3;color:#1d2026;border:0;padding:4px 10px;border-radius:4px;cursor:pointer;font:inherit;font-size:11px}
 .hko-panel .hp-verdict{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:10px}
@@ -736,7 +736,7 @@ const SHELL_CSS = `
 .hp-flaeche[data-hko-woerter]::after{
   content:attr(data-hko-woerter);
   position:absolute;right:1.5mm;bottom:0.6mm;
-  font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:7pt;line-height:1.3;
+  font-family:'IBM Plex Sans','HKO Symbole',system-ui,sans-serif;font-size:7pt;line-height:1.3;
   letter-spacing:.02em;color:#8a939e;background:#fff;padding:0 1.2mm;border-radius:2px;
   pointer-events:none;user-select:none;
 }
@@ -800,7 +800,7 @@ export function buildStandaloneHtml({
     ? `  <style>\n${fontsCss}\n  </style>`
     : `  <link rel="preconnect" href="https://fonts.googleapis.com" />\n` +
       `  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n` +
-      `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />`
+      `  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" />`
 
   // Vorlagentext der Ausgangsdatei, einmal zur Generierzeit gezählt. In den
   // echten Herausforderungen sind die Felder leer (0) — der Wert existiert, damit

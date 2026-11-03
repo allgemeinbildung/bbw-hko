@@ -54,16 +54,16 @@
 .v42-eba .v42-tabelle td { font-size: 10pt; line-height: 1.34; }
 
 /* ---------- Seite 5 · Auftrag ---------- */
-.v42-eba .v42-s5 .v42-arbeitsanweisung,
+.v42-eba :is(.v42-s5, .v42-s7) .v42-arbeitsanweisung,
 .v42-eba .v42-s8 .v42-arbeitsanweisung { font-size: 10pt; line-height: 1.36; }
 .v42-eba .v42-s5 .v42-produkt-text { font-size: 10.5pt; line-height: 1.4; }
 .v42-eba .v42-s5 .v42-schritt-label { font-size: 10.5pt; }
 .v42-eba .v42-s5 .v42-schritt-hint { font-size: 10pt; line-height: 1.34; }
 .v42-eba .v42-s5 .v42-hilfe { font-size: 10pt; }
 .v42-eba .v42-s5 .v42-abgaben ul { font-size: 10.5pt; line-height: 1.4; }
-.v42-eba .v42-s5 .v42-krit-indikator { font-size: 10pt; }
-.v42-eba .v42-s5 .v42-krit-text { font-size: 10pt; line-height: 1.34; }
-.v42-eba .v42-s5 .v42-plus p { font-size: 10.5pt; line-height: 1.4; }
+.v42-eba :is(.v42-s5, .v42-s7) .v42-krit-indikator { font-size: 10pt; }
+.v42-eba :is(.v42-s5, .v42-s7) .v42-krit-text { font-size: 10pt; line-height: 1.34; }
+.v42-eba :is(.v42-s5, .v42-s7) .v42-plus p { font-size: 10.5pt; line-height: 1.4; }
 
 /* ---------- Seiten 6 und 7 · Methoden, Arbeitsfläche ---------- */
 .v42-eba .methoden-intro { font-size: 10pt; }
@@ -109,7 +109,7 @@
 .v42-eba .v42-s8 .v42-mitnahme-label { font-size: 11pt; }
 .v42-eba .v42-s8 .v42-mitnahme-zeile .feld.v42-zeile { min-height: 15mm; }
 .v42-eba .v42-s8 .v42-checkliste { font-size: 10.5pt; }
-.v42-eba .v42-s5 .v42-krit-tabelle col.v42-krit-selbst { width: 24mm; }
+.v42-eba :is(.v42-s5, .v42-s7) .v42-krit-tabelle col.v42-krit-selbst { width: 24mm; }
 
 /* ---------- Grössen nach den Info-Karten (Besprechung 23.10. P5/P6/P8, Auftrag Pietro 02.11.2026) ----------
    Massstab Info-Karte im Dossier: Text 12.5pt / 1.6, Titel 13pt. Im Heft (S. 1–4) Lauftext 12pt,
@@ -128,3 +128,69 @@
 .v42-eba .v42-woerter dl { font-size: 11pt; line-height: 1.4; }
 .v42-eba .v42-ref { font-size: 9.5pt; color: var(--ink-soft); }
 .v42-eba .v42-liefert { font-size: 10.5pt; }
+
+/* ---------- S. 5–7 nach Variante B (Rückmeldung M. Däniker 03.11.2026, Entscheid Pietro) ----------
+   S. 5 Auftrag mit dem Beispiel darunter, S. 6 nur Methoden, S. 7 «Prüfen» mit Kriterien und
+   Plus (`worte().pruefSeite`). Die Arbeitsfläche entfällt; der Platz geht an grössere Schrift
+   nach dem Massstab der Info-Karten, wie auf S. 1–4. */
+.v42-eba .v42-s5 .v42-produkt-titel { font-size: 14pt; }
+.v42-eba .v42-s5 .v42-produkt-text { font-size: 12pt; line-height: 1.5; }
+.v42-eba .v42-s5 .v42-schritte li { padding: 2.2mm 0; }
+.v42-eba .v42-s5 .v42-schritt-label { font-size: 12pt; }
+.v42-eba .v42-s5 .v42-schritt-hint { font-size: 12pt; line-height: 1.45; }
+.v42-eba .v42-s5 .v42-hilfe { font-size: 11pt; }
+.v42-eba .v42-s5 .v42-abgaben ul { font-size: 12pt; line-height: 1.45; }
+.v42-eba .v42-s5 p.v42-medium { font-size: 12pt; line-height: 1.45; margin: 0; padding: 2mm 3mm; border: 1pt solid var(--sit-akzent); }
+.v42-eba .v42-s5 .v42-pb-band { display: flex; flex-direction: column; gap: 0.8mm; }
+.v42-eba .v42-s5 .v42-pb-unterzeile { font-size: 10pt; font-style: normal; color: var(--ink); }
+.v42-eba .v42-s6 .methode-txt { font-size: 10.5pt; }
+.v42-eba .v42-s7 .v42-arbeitsanweisung { font-size: 11pt; line-height: 1.4; color: var(--ink); }
+.v42-eba .v42-s7 .v42-krit-name { font-size: 12pt; }
+.v42-eba .v42-s7 .v42-krit-indikator { font-size: 10.5pt; line-height: 1.38; }
+.v42-eba .v42-s7 .v42-krit-text { font-size: 12pt; line-height: 1.45; }
+.v42-eba .v42-s7 .v42-krit-stufe td { padding-top: 2mm; padding-bottom: 2mm; }
+.v42-eba .v42-s7 .v42-krit-stufe td.v42-krit-nr { font-size: 8.5pt; padding-top: 2.6mm; }
+.v42-eba .v42-s7 .v42-krit-tabelle thead th { font-size: 8.5pt; }
+.v42-eba .v42-s7 .v42-krit-stufe .v42-box { font-size: 14pt; }
+.v42-eba .v42-s7 .v42-kasten-label { font-size: 8.5pt; }
+.v42-eba .v42-s7 .v42-plus p { font-size: 12pt; line-height: 1.45; }
+.v42-eba .v42-s7 .v42-kriterien { margin-bottom: 4mm; }
+/* Das Beispiel auf S. 5 nutzt den Platz unter dem Auftrag: grösser als «klein» auf der
+   bisherigen S. 6 (dort 7 pt unter den Methodenkarten). */
+.v42-eba .v42-s5 .v42-pb-klein { font-size: 9.5pt; line-height: 1.22; padding: 2mm 3mm 2.4mm; gap: 1.2mm; }
+.v42-eba .v42-s5 .v42-pb-klein :is(.v42-pb-notiz, .v42-pb-legende) { font-size: 9.5pt; }
+.v42-eba .v42-s5 .v42-pb-klein :is(.v42-pb-titel, .v42-pb-blocktitel) { font-size: 10pt; }
+.v42-eba .v42-s7 .v42-krit-tabelle col.v42-krit-selbst { width: 30mm; }
+
+/* ---------- Auftragsbogen wie die Hefte (Rückmeldung EBA-Gold, Entscheid Pietro 03.11.2026) ----------
+   Lauftext 12 pt, Hinweise 11 pt; «Wichtige Wörter» vor der Situation (wie im Leseblatt);
+   A4 mit den Kriterien für Lernende. Die Zeile «Persona» fällt bei EBA weg (v42-profil.ts). */
+.v42-eba .v42-auftrag-situation { font-size: 12pt; line-height: 1.5; }
+.v42-eba .v42-auftrag-klein { font-size: 11pt; line-height: 1.4; }
+.v42-eba .v42-auftrag-auftrag { font-size: 12pt; }
+.v42-eba .v42-auftrag-schritte { font-size: 11pt; line-height: 1.4; }
+.v42-eba .v42-auftrag-leitfrage { font-size: 11.5pt; }
+.v42-eba .v42-auftrag-hint { font-size: 10.5pt; }
+.v42-eba .v42-auftrag-zahlen { font-size: 10.5pt; }
+.v42-eba .v42-auftrag-liste { font-size: 11pt; }
+.v42-eba .v42-auftrag-bezug { font-size: 10.5pt; }
+.v42-eba .v42-auftrag-station-kopf { font-size: 12pt; }
+.v42-eba .v42-auftrag-station-ende { font-size: 11pt; }
+.v42-eba .v42-auftrag-woerter dl { margin: 0; column-count: 2; column-gap: 6mm; font-size: 11pt; line-height: 1.35; }
+.v42-eba .v42-auftrag-woerter dl > div { break-inside: avoid; padding-bottom: 0.8mm; }
+.v42-eba .v42-auftrag-woerter dt { display: inline; font-weight: 700; }
+.v42-eba .v42-auftrag-woerter dd { display: inline; margin: 0; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-krit strong { font-size: 11.5pt; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-indikator { font-size: 10.5pt; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-stufe { font-size: 11pt; line-height: 1.35; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-box { font-size: 13pt; }
+.v42-eba .v42-auftrag-schritte li { font-size: 10.5pt; line-height: 1.38; padding: 0.9mm 0; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-stufe { font-size: 10.5pt; line-height: 1.3; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-raster td { padding-top: 0.45mm; padding-bottom: 0.45mm; }
+.v42-eba .v42-auftrag-a1 { gap: 1.8mm; }
+.v42-eba .v42-auftrag-a1 .v42-auftrag-situation { font-size: 11.5pt; line-height: 1.45; }
+.v42-eba .v42-auftrag-a1 .v42-auftrag-woerter dl { font-size: 10.5pt; line-height: 1.3; }
+.v42-eba .v42-auftrag-a1 .v42-auftrag-kasten { padding-top: 1.4mm; padding-bottom: 1.4mm; }
+.v42-eba .v42-auftrag-a4 { gap: 1.8mm; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-krit td { padding-top: 1.4mm; }
+.v42-eba .v42-auftrag-a4 .v42-auftrag-stufe { line-height: 1.25; }

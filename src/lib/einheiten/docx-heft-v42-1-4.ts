@@ -128,7 +128,9 @@ const DENKHILFE_ZEILE_MM = 17
  * (`feld_hoehe_mm`) einen festen Zuschlag, in Word an allen vier Heften nachgemessen
  * (jede Seite bleibt auf ihrer Seite, unten rund 5 mm frei). S. 2 im Verhältnis 35 : 45.
  */
-const ZUSCHLAG_MM = { lf1: 25, lf2: 35, lf3Ohne: 30, lf3Mit: 0, lf4Ohne: 50, lf4Mit: 30, lf1Eba: 40 }
+// lf4Eba: S. 4 mit Denkhilfe im EBA-Heft — grössere Schrift seit 02.11.2026; mit lf4Ohne sprang
+// der ganze Block auf eine neunte Seite (in Word gezählt 03.11.2026).
+const ZUSCHLAG_MM = { lf1: 25, lf2: 35, lf3Ohne: 30, lf3Mit: 0, lf4Ohne: 50, lf4Mit: 30, lf1Eba: 40, lf4Eba: 25 }
 
 // ── Bausteine ──────────────────────────────────────────────────────────────
 
@@ -681,7 +683,7 @@ export function seite4Docx(ctx: HeftDocxKontext): Block[] {
   const lf = beurteilenLeitfrage(sit)
   const k = sit.kasten_s4
   if (lf) {
-    const hoehe = (lf.feld_hoehe_mm || (sit.spur === 'mit_medien' ? 60 : 45)) + (k?.typ === 'vertiefung' ? ZUSCHLAG_MM.lf4Mit : ZUSCHLAG_MM.lf4Ohne)
+    const hoehe = (lf.feld_hoehe_mm || (sit.spur === 'mit_medien' ? 60 : 45)) + (k?.typ === 'vertiefung' ? ZUSCHLAG_MM.lf4Mit : istEba(sit) ? ZUSCHLAG_MM.lf4Eba : ZUSCHLAG_MM.lf4Ohne)
     // Denkhilfe VOR dem Schreibfeld: erst füllen, dann schreiben.
     els.push(...lfBlock(lf, ctx, hoehe, k?.typ === 'denkhilfe' ? denkhilfeDocx(k, ctx) : []))
   }

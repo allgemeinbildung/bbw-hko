@@ -292,7 +292,11 @@ function DocKnLpBewertung({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; a
         <tbody>
           {rs.kriterien?.map((k, i) => (
             <tr key={i}>
-              <td className="kriterium-name">{k.name}</td>
+              <td className="kriterium-name">
+                {k.name}
+                {/* EBA: so heisst das Kriterium für die Lernenden (DOC-KN-S, Heft S. 7). */}
+                {k.name_lernende && <div style={{ fontWeight: 400, fontSize: '7.5pt', color: 'var(--ink-soft)', marginTop: '0.8mm' }}>Lernende: «{k.name_lernende}»</div>}
+              </td>
               <td className="dim-cell">
                 <Badge variant={k.dimension === 'SuK' ? 'dim-suk' : 'dim-ges'}>{k.dimension}</Badge>
               </td>
@@ -306,6 +310,11 @@ function DocKnLpBewertung({ kn, abteilung, pageNum, pageTotal }: { kn: KnJson; a
           ))}
         </tbody>
       </table>
+      {rs.kriterien?.some((k) => k.stufen_lernende?.length) && (
+        <p style={{ fontSize: '8.5pt', color: 'var(--ink-soft)', margin: '2mm 0 0', maxWidth: '170mm' }}>
+          Die Lernenden lesen dieselben Stufen in der Ich-Form und in einfacher Sprache (DOC-KN-S, letzte Seite). Bewertet wird nach dem Wortlaut oben.
+        </p>
+      )}
       <h4 style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '5mm', marginBottom: '2mm' }}>
         Niveaubänder
       </h4>

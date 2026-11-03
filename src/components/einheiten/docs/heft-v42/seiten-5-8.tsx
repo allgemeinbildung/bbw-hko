@@ -156,7 +156,8 @@ export function Seite5(props: HeftSeiteProps) {
   const hp = sit.handlungsprodukt
   const schritte = (hp?.schritte || []).filter((s) => s && (s.label || s.hint))
   const abgaben = (hp?.abgaben || []).filter(Boolean)
-  const plus = sit.lernfortschritt?.scaffold_100
+  const w = worte(sit)
+  const bild = hp?.beispielbild
   return (
     <>
       <SeitenKopf nr={5} titel="Auftrag" />
@@ -164,6 +165,9 @@ export function Seite5(props: HeftSeiteProps) {
         {hp?.titel && <div className="v42-produkt-titel">{hp.titel}</div>}
         {hp?.beschreibung && <p className="v42-produkt-text">{hp.beschreibung}</p>}
       </Kasten>
+      {w.medium && (
+        <p className="v42-medium"><strong>{w.medium[0]}</strong> {w.medium[1]}</p>
+      )}
       {schritte.length > 0 && (
         <ol className="v42-schritte">
           {schritte.map((s, i) => {
@@ -186,9 +190,24 @@ export function Seite5(props: HeftSeiteProps) {
           </ul>
         </Kasten>
       )}
+      {w.pruefSeite ? (
+        // EBA: das Beispiel direkt unter dem Auftrag; Kriterien und Plus stehen auf S. 7.
+        bild && <BeispielBand bild={bild} unterzeile={w.beispielUnterzeile} />
+      ) : (
+        <KriterienUndPlus {...props} />
+      )}
+    </>
+  )
+}
+
+/** Feedback-Kriterien und Plus-Kasten: EFZ auf S. 5, EBA auf S. 7 («Prüfen»). */
+function KriterienUndPlus(props: HeftSeiteProps) {
+  const plus = props.sit.lernfortschritt?.scaffold_100
+  return (
+    <>
       <FeedbackKriterien {...props} />
       {plus && (
-        <Kasten label={worte(sit).plus} className="v42-plus">
+        <Kasten label={worte(props.sit).plus} className="v42-plus">
           <p>{plus}</p>
         </Kasten>
       )}
@@ -210,7 +229,8 @@ export function Seite5(props: HeftSeiteProps) {
  * wie bisher.
  */
 export function Seite6({ sit }: HeftSeiteProps) {
-  const bild = sit.handlungsprodukt?.beispielbild
+  // EBA (`pruefSeite`): das Beispiel steht auf S. 5, hier nur die vier Karten.
+  const bild = worte(sit).pruefSeite ? undefined : sit.handlungsprodukt?.beispielbild
   return (
     <>
       <SeitenKopf nr={6} titel="Methoden" />
@@ -236,6 +256,15 @@ export function Seite6({ sit }: HeftSeiteProps) {
  * S. 5 und 6 (`worte().arbeitsflaeche` — gleicher Wortlaut im Word, docx-heft-v42-5-8.ts).
  */
 export function Seite7(props: HeftSeiteProps) {
+  if (worte(props.sit).pruefSeite) {
+    // EBA: keine Arbeitsfläche (Besprechung 23.10.2026) — die Seite zum Prüfen vor der Abgabe.
+    return (
+      <>
+        <SeitenKopf nr={7} titel="Prüfen" />
+        <KriterienUndPlus {...props} />
+      </>
+    )
+  }
   const label = props.sit.handlungsprodukt?.titel || 'Hier erarbeiten'
   const [wert, setze] = eingabe(props, 'produkt')
   return (

@@ -2,6 +2,8 @@ import type { ReactNode } from 'react'
 import { A4Page, Badge, Schreibfeld, SectionHead, sitColors } from './chrome'
 import { knTypLabel } from '../../../lib/einheiten/kn-typ-labels'
 import type { KnJson, KnTyp } from '../../../lib/einheiten/types'
+import { knPersonaFelder, knTexte, werkschauTexte, type KnAufgabe } from '../../../lib/einheiten/kn-lernende'
+import { RUBRIK_PUNKTE_LABELS } from '../../../lib/einheiten/rubrik-skala'
 
 export interface DocKnSProps {
   kn: KnJson
@@ -45,6 +47,8 @@ function KnSPage({ kn, knTyp, abteilung, pageNum, pageTotal, children }: { kn: K
 }
 
 function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; knTyp: KnTyp; abteilung?: string; pageNum: number; pageTotal: number }) {
+  const tx = knTexte(kn)
+  const persona = knPersonaFelder(kn)
   return (
     <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
       <div className="badge-row" style={{ marginBottom: '4mm' }}>
@@ -52,25 +56,23 @@ function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
         <Badge>{knTypLabel(knTyp.typ, knTyp.label, kn.lehrgang)}</Badge>
       </div>
       <h1 className="cockpit-title">{kn.hybrid_situation?.titel}</h1>
-      <SectionHead num="01 · Hybrid-Herausforderung">Herausforderung</SectionHead>
-      <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', fontStyle: 'italic', margin: '0 0 3mm', maxWidth: '160mm' }}>
-        {kn.hybrid_situation?.definition_kurz
-          || 'Eine Hybrid-Herausforderung bündelt die drei Herausforderungen (A, B, C) und ihre Kompetenzen in einer neuen, zusammengesetzten Aufgabe.'}
+      <SectionHead num={tx.fallKicker}>{tx.fallTitel}</SectionHead>
+      <p className="kn-definition" style={{ fontSize: '9pt', color: 'var(--ink-soft)', fontStyle: 'italic', margin: '0 0 3mm', maxWidth: '160mm' }}>
+        {tx.definition}
       </p>
-      <div className="sit-meta">
-        <div className="item"><strong>Beruf</strong>{kn.hybrid_situation?.persona?.beruf}</div>
-        <div className="item"><strong>Betrieb</strong>{kn.hybrid_situation?.persona?.betrieb}</div>
-        <div className="item"><strong>Ort</strong>{kn.hybrid_situation?.persona?.ort}</div>
-        <div className="item"><strong>Emotion</strong>{kn.hybrid_situation?.emotion_tag}</div>
-      </div>
+      {persona.length > 0 && (
+        <div className="sit-meta">
+          {persona.map((f) => <div className="item" key={f.label}><strong>{f.label}</strong>{f.wert}</div>)}
+        </div>
+      )}
       <p className="sit-text">{kn.hybrid_situation?.text}</p>
       <div className="leitfrage-callout">{kn.hybrid_situation?.leitfrage}</div>
       <SectionHead num="02 · Rahmen">Format &amp; Ablauf</SectionHead>
-      <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
+      <p className="kn-format" style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
         <strong style={{ color: 'var(--sit-akzent)' }}>Format:</strong> {knTyp.format}
       </p>
       {knTyp.ablauf && (
-        <ol style={{ paddingLeft: '5mm', fontSize: '10pt', lineHeight: 1.5, margin: 0 }}>
+        <ol className="kn-ablauf" style={{ paddingLeft: '5mm', fontSize: '10pt', lineHeight: 1.5, margin: 0 }}>
           {knTyp.ablauf.map((a, i) => <li key={i} style={{ marginBottom: '1mm' }}>{a}</li>)}
         </ol>
       )}
@@ -78,7 +80,7 @@ function HeaderPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
   )
 }
 
-function QItem({ nr, type, text, fieldKey, fieldHeightMm, edits, onEdit }: { nr: string; type?: string; text: string; fieldKey: string; fieldHeightMm: number; edits: Record<string, string>; onEdit: (k: string, v: string) => void }) {
+function QItem({ nr, type, text, fieldKey, fieldHeightMm, edits, onEdit, tabelle }: { nr: string; type?: string; text: string; fieldKey: string; fieldHeightMm: number; edits: Record<string, string>; onEdit: (k: string, v: string) => void; tabelle?: KnAufgabe['tabelle'] }) {
   return (
     <div className="kn-q-item">
       <div className="kn-q-head">
@@ -88,12 +90,28 @@ function QItem({ nr, type, text, fieldKey, fieldHeightMm, edits, onEdit }: { nr:
           {type && <div className="lf-meta"><Badge variant="outline">{type}</Badge></div>}
         </div>
       </div>
+      {tabelle && tabelle.spalten?.length > 0 && <KnTabelle tabelle={tabelle} />}
       <Schreibfeld
         heightMm={fieldHeightMm}
         value={edits[fieldKey] || ''}
         onChange={(v) => onEdit(fieldKey, v)}
       />
     </div>
+  )
+}
+
+/** Leere Tabelle zum Ausfüllen (`aufgaben[].tabelle`) — wie das Raster im Heft. */
+function KnTabelle({ tabelle }: { tabelle: NonNullable<KnAufgabe['tabelle']> }) {
+  const zeilen = Math.max(1, tabelle.zeilen ?? 3)
+  return (
+    <table className="kn-tabelle">
+      <thead><tr>{tabelle.spalten.map((s, i) => <th key={i}>{s}</th>)}</tr></thead>
+      <tbody>
+        {Array.from({ length: zeilen }, (_, z) => (
+          <tr key={z}>{tabelle.spalten.map((_, i) => <td key={i} />)}</tr>
+        ))}
+      </tbody>
+    </table>
   )
 }
 
@@ -105,14 +123,14 @@ function FachgespraechPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pa
     <>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
         <SectionHead num="03 · Vorbereitung">Notizen zu den Fragen (1/2)</SectionHead>
-        <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-          Nutzen Sie die 15 Minuten Vorbereitungszeit für stichwortartige Notizen zu jeder Frage. Im Gespräch sprechen Sie frei.
+        <p className="kn-intro" style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
+          {knTexte(kn).notizenIntro}
         </p>
         {part1.map((f, i) => (
           <QItem
             key={i}
             nr={`F${f.nr}`}
-            type={f.typ}
+            type={knTexte(kn).typAbzeichen ? f.typ : undefined}
             text={f.frage}
             fieldKey={`fg_${f.nr}`}
             fieldHeightMm={22}
@@ -126,7 +144,7 @@ function FachgespraechPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pa
           <QItem
             key={i}
             nr={`F${f.nr}`}
-            type={f.typ}
+            type={knTexte(kn).typAbzeichen ? f.typ : undefined}
             text={f.frage}
             fieldKey={`fg_${f.nr}`}
             fieldHeightMm={30}
@@ -145,32 +163,34 @@ function MiniCasePages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTot
   return (
     <>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
-        <SectionHead num="03 · Aufgaben">Prüfungsaufgaben (1/2)</SectionHead>
-        <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-          Bearbeiten Sie alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson erlaubt, kein Internet.
+        <SectionHead num="03 · Aufgaben">{knTexte(kn).aufgabenTitel} (1/2)</SectionHead>
+        <p className="kn-intro" style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
+          {knTexte(kn).aufgabenIntro}
         </p>
         {part1.map((a, i) => (
           <QItem
             key={i}
             nr={`A${a.nr}`}
-            type={a.typ}
+            type={knTexte(kn).typAbzeichen ? a.typ : undefined}
             text={a.aufgabe}
             fieldKey={`mc_${a.nr}`}
-            fieldHeightMm={55}
+            tabelle={a.tabelle}
+            fieldHeightMm={a.tabelle ? 22 : 55}
             edits={edits} onEdit={onEdit}
           />
         ))}
       </KnSPage>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart + 1} pageTotal={pageTotal}>
-        <SectionHead num="03 · Aufgaben">Prüfungsaufgaben (2/2)</SectionHead>
+        <SectionHead num="03 · Aufgaben">{knTexte(kn).aufgabenTitel} (2/2)</SectionHead>
         {part2.map((a, i) => (
           <QItem
             key={i}
             nr={`A${a.nr}`}
-            type={a.typ}
+            type={knTexte(kn).typAbzeichen ? a.typ : undefined}
             text={a.aufgabe}
             fieldKey={`mc_${a.nr}`}
-            fieldHeightMm={55}
+            tabelle={a.tabelle}
+            fieldHeightMm={a.tabelle ? 22 : 55}
             edits={edits} onEdit={onEdit}
           />
         ))}
@@ -185,9 +205,9 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
   return (
     <>
       <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageStart} pageTotal={pageTotal}>
-        <SectionHead num="03 · Werkwahl">Welches Handlungsprodukt wähle ich?</SectionHead>
-        <p style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
-          Wählen Sie eines der drei Handlungsprodukte aus Ihren Lernaufgaben (Positionspapier, Konflikt-Schreiben oder Gesprächs-Drehbuch) und begründen Sie Ihre Wahl in 2–3 Sätzen.
+        <SectionHead num="03 · Werkwahl">{knTexte(kn).werkwahlTitel}</SectionHead>
+        <p className="kn-intro" style={{ fontSize: '9.5pt', color: 'var(--ink-soft)', marginBottom: '3mm', maxWidth: '160mm' }}>
+          {werkschauTexte(kn, knTyp).werkwahl}
         </p>
         <Schreibfeld
           heightMm={28}
@@ -195,8 +215,8 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
           onChange={(v) => onEdit('ws_wahl', v)}
         />
         <SectionHead num="04 · Transfer-Reflexion">Reflexion (1/2)</SectionHead>
-        <p style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
-          Beantworten Sie schriftlich, insgesamt 200–250 Wörter über alle drei Fragen.
+        <p className="kn-intro" style={{ fontSize: '9pt', color: 'var(--ink-soft)', marginBottom: '3mm' }}>
+          {werkschauTexte(kn, knTyp).reflexionIntro}
         </p>
         {reflex.slice(0, 1).map((f, i) => (
           <QItem
@@ -229,12 +249,34 @@ function WerkschauPages({ kn, knTyp, abteilung, edits, onEdit, pageStart, pageTo
 function RubrikPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; knTyp: KnTyp; abteilung?: string; pageNum: number; pageTotal: number }) {
   const rs = kn.rubrik_shared
   if (!rs) return null
+  const tx = knTexte(kn)
   return (
     <KnSPage kn={kn} knTyp={knTyp} abteilung={abteilung} pageNum={pageNum} pageTotal={pageTotal}>
       <SectionHead num="05 · Bewertungskriterien">Worauf geachtet wird</SectionHead>
-      <p style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
-        Die folgenden Kriterien werden bewertet. Sie verteilen sich auf zwei Dimensionen: Sprache und Kommunikation (SuK) und gesellschaftliche Werthaltung (Ges). Beide Dimensionen werden separat benotet.
+      <p className="kn-rubrik-intro" style={{ fontSize: '10pt', color: 'var(--ink-soft)', marginBottom: '4mm', maxWidth: '160mm' }}>
+        {tx.rubrikIntro}
       </p>
+      {tx.stufenZeigen ? (
+        // EBA: wie Heft S. 7 — je Kriterium Name, Bereich und die vier Stufen für Lernende.
+        <table className="kn-stufen">
+          {rs.kriterien?.map((k, i) => {
+            const { name, stufen } = tx.kriterium(k)
+            return (
+              <tbody key={i}>
+                <tr className="kn-stufen-kopf">
+                  <th colSpan={2}>{name} <span className="kn-stufen-dim">{tx.dimension(k.dimension)}</span></th>
+                </tr>
+                {stufen.map((st, si) => (
+                  <tr key={si}>
+                    <td className="kn-stufen-nr">{RUBRIK_PUNKTE_LABELS[si] ?? `${si} Punkte`}</td>
+                    <td>{st}</td>
+                  </tr>
+                ))}
+              </tbody>
+            )
+          })}
+        </table>
+      ) : (
       <table className="rubrik-grid">
         <thead>
           <tr>
@@ -253,14 +295,15 @@ function RubrikPage({ kn, knTyp, abteilung, pageNum, pageTotal }: { kn: KnJson; 
           ))}
         </tbody>
       </table>
-      <h4 style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '7mm', marginBottom: '2mm' }}>
-        Niveaubänder — was sie bedeuten
+      )}
+      <h4 className="kn-niveau-titel" style={{ fontSize: '8pt', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--sit-akzent)', marginTop: '7mm', marginBottom: '2mm' }}>
+        {tx.niveauTitel}
       </h4>
       <div className="niveau-legende">
         {rs.niveaubaender?.map((n, i) => (
           <div className="niv" key={i}>
             <div className="label">{susNiveauLabel(n.label)}</div>
-            <div className="def">{n.definition}</div>
+            <div className="def">{tx.niveau(n)}</div>
           </div>
         ))}
       </div>

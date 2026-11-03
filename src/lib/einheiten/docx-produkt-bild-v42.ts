@@ -243,16 +243,32 @@ export function produktBildDocx(bild: ProduktBild, groesse: Groesse, akzent: str
 }
 
 /** Heft S. 6: Beschriftung + Unterzeile, darunter das Blatt `klein`. Gegenstück zu <BeispielBand>. */
-export function beispielBandDocx(bild: ProduktBild, akzent: string): Block[] {
+/**
+ * Band «So kann Ihr Produkt aussehen». EFZ: Heft S. 6 unter den Methodenkarten, klein.
+ * EBA (`worte().pruefSeite`): S. 5 unter dem Auftrag, gross, Unterzeile als eigener Satz.
+ */
+export function beispielBandDocx(
+  bild: ProduktBild,
+  akzent: string,
+  opt: { unterzeile?: string; groesse?: Groesse } = {},
+): Block[] {
+  const { unterzeile, groesse = 'klein' } = opt
+  const kopf = new TextRun({ text: 'SO KANN IHR PRODUKT AUSSEHEN', color: akzent, bold: true, size: 14, font: 'Consolas' })
   return [
-    new Paragraph({
-      children: [
-        new TextRun({ text: 'SO KANN IHR PRODUKT AUSSEHEN', color: akzent, bold: true, size: 14, font: 'Consolas' }),
-        new TextRun({ text: '   Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.', italics: true, color: COLOR.inkSoft, size: 16 }),
-      ],
-      spacing: { before: 120, after: 40 },
-      keepNext: true,
-    }),
-    produktBildDocx(bild, 'klein', akzent),
+    unterzeile
+      ? new Paragraph({
+        children: [kopf, new TextRun({ text: unterzeile, color: COLOR.ink, size: 19, break: 1 })],
+        spacing: { before: 120, after: 60 },
+        keepNext: true,
+      })
+      : new Paragraph({
+        children: [
+          kopf,
+          new TextRun({ text: '   Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.', italics: true, color: COLOR.inkSoft, size: 16 }),
+        ],
+        spacing: { before: 120, after: 40 },
+        keepNext: true,
+      }),
+    produktBildDocx(bild, groesse, akzent),
   ]
 }

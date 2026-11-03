@@ -12,10 +12,11 @@ import {
   AlignmentType, BorderStyle, LineRuleType, TabStopType, WidthType, VerticalAlign,
 } from 'docx'
 import type { AuftragProdukt, GemeinsamerAuftrag, SetJson } from './types'
+import { istEba, worte } from './v42-profil'
 import { BBW_GRUEN, COLOR, p, schreibfeld, sectionHead, sectionProps, skizzeBox, tcell } from './docx-primitives'
 import {
-  SPRECHSPUR_STATIONEN, SPRECHSPUR_ZEILEN, auftragProdukt, glossarVerweis, produktSchritt, produktStationen,
-  schrittTeile, sozialformZeile, spurZeilen, sprechDauer,
+  SPRECHSPUR_STATIONEN, SPRECHSPUR_ZEILEN, auftragProdukt, glossarVerweis, kriteriumFuerBogen, produktSchritt, produktStationen,
+  planTitel, schrittTeile, sozialformZeile, spurZeilen, sprechDauer,
 } from '../../components/einheiten/docs/DocAuftragsbogen'
 
 export interface BuildAuftragsbogenOpts {
@@ -80,9 +81,11 @@ function luecke(twips = 100): Paragraph {
 }
 
 // ---------------- A1 — Situation und Auftrag ----------------
-function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
+function seiteA1(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
+  const w = worte(set)
+  const gr = istEba(set) // EBA: Lauftext grösser, wie im HTML (eba.css)
   const out: (Paragraph | Table)[] = [...sectionHead('A1', ga.titel || '', AKZENT)]
-  const persona = [ga.persona?.beruf, ga.persona?.betrieb, ga.persona?.ort].filter(Boolean).join(' · ')
+  const persona = w.auftrag.persona ? [ga.persona?.beruf, ga.persona?.betrieb, ga.persona?.ort].filter(Boolean).join(' · ') : ''
   if (persona) {
     out.push(new Paragraph({
       children: [
@@ -92,8 +95,16 @@ function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
       spacing: { before: 0, after: 80 },
     }))
   }
+  // Wie im Leseblatt: die schwierigen Wörter vor dem Text.
+  const woerter = (ga.woerter || []).filter((g) => g && g.begriff)
+  if (woerter.length) {
+    out.push(kasten('Wichtige Wörter', woerter.map((g) => p([
+      new TextRun({ text: `${g.begriff} `, bold: true, size: 20 }),
+      new TextRun({ text: g.definition, size: 20 }),
+    ], { spacing: { before: 0, after: 20, line: 260, lineRule: LineRuleType.AUTO } }))), luecke(120))
+  }
   if (ga.situation_text) {
-    out.push(p(ga.situation_text, { run: { size: 20 }, spacing: { before: 0, after: 120, line: 276, lineRule: LineRuleType.AUTO } }))
+    out.push(p(ga.situation_text, { run: { size: gr ? 22 : 20 }, spacing: { before: 0, after: 120, line: 276, lineRule: LineRuleType.AUTO } }))
   }
 
   const zahlen = ga.zahlen_tabelle || []
@@ -103,7 +114,7 @@ function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
         rows: [
           new TableRow({
             tableHeader: true,
-            children: ['Zahlen', 'Betrag'].map((t, i) => tcell(
+            children: w.auftrag.zahlenKopf.map((t, i) => tcell(
               p(t.toUpperCase(), { run: { size: 14, bold: true, color: AKZENT }, alignment: i ? AlignmentType.RIGHT : undefined, spacing: { after: 0 } }),
               { width: { size: i ? 28 : 72, type: WidthType.PERCENTAGE }, borders: { ...OHNE_RAENDER, bottom: RAND(12, AKZENT) }, margins: { top: 20, bottom: 30, left: 0, right: 60 } },
             )),
@@ -121,7 +132,7 @@ function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
   if (ga.leitfrage) rechts.push(kasten('Leitfrage', [absatz(ga.leitfrage, 20, { bold: true, after: 0 })]))
   if (ga.mehrdeutigkeit?.trade_off) {
     if (rechts.length) rechts.push(luecke(100))
-    rechts.push(kasten('Spannungsfeld', [
+    rechts.push(kasten(w.spannungsfeld, [
       absatz(ga.mehrdeutigkeit.trade_off, 19, { bold: true, after: ga.mehrdeutigkeit.hint ? 20 : 0 }),
       ...(ga.mehrdeutigkeit.hint ? [absatz(ga.mehrdeutigkeit.hint, 18, { color: COLOR.inkSoft, after: 0 })] : []),
     ], 'gestrichelt'))
@@ -153,17 +164,29 @@ function seiteA1(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
     indent: { left: 300, hanging: 300 },
     spacing: { before: 0, after: 30, line: 260, lineRule: LineRuleType.AUTO },
   }))
-  const moeglich = sozialformZeile(ga.sozialform?.zulaessig)
+  const moeglich = w.auftrag.sozialformNurEmpfehlung ? '' : sozialformZeile(ga.sozialform?.zulaessig)
   const sozial: Paragraph[] = []
   if (moeglich) sozial.push(p([new TextRun({ text: 'Möglich: ', bold: true, size: 18 }), new TextRun({ text: moeglich, size: 18 })], { spacing: { before: 0, after: 40, line: 260, lineRule: LineRuleType.AUTO } }))
-  if (ga.sozialform?.empfehlung) sozial.push(p([new TextRun({ text: 'Empfehlung: ', bold: true, size: 18 }), new TextRun({ text: ga.sozialform.empfehlung, size: 18 })], { spacing: { before: 0, after: 0, line: 260, lineRule: LineRuleType.AUTO } }))
+  if (ga.sozialform?.empfehlung) {
+    sozial.push(p(w.auftrag.sozialformNurEmpfehlung
+      ? [new TextRun({ text: ga.sozialform.empfehlung, size: 20 })]
+      : [new TextRun({ text: 'Empfehlung: ', bold: true, size: 18 }), new TextRun({ text: ga.sozialform.empfehlung, size: 18 })],
+    { spacing: { before: 0, after: 0, line: 260, lineRule: LineRuleType.AUTO } }))
+  }
   if (abgaben.length || sozial.length) {
     out.push(zweiSpalten(
       abgaben.length ? [kasten('Das geben Sie ab', abgaben)] : [],
-      sozial.length ? [kasten('Sozialform', sozial)] : [],
+      sozial.length ? [kasten(w.auftrag.sozialform, sozial)] : [],
     ))
   }
   // Bezug auf die Hefte: der Auftrag sagt, was er braucht — das Heft nennt keine Woche.
+  // EBA: auf A2 (heftBezugAufA2), A1 ist mit der grösseren Schrift voll.
+  if (!w.auftrag.heftBezugAufA2) out.push(...heftBezugDocx(ga))
+  return out
+}
+
+function heftBezugDocx(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
+  const out: (Paragraph | Table)[] = []
   const bezug = (ga.heft_bezug || []).filter((h) => h && h.inhalte?.length)
   if (bezug.length) {
     const spalte = (h: (typeof bezug)[number]): Paragraph[] => [
@@ -232,23 +255,31 @@ function verweisAbsatz(verweis: string): Paragraph {
  */
 function produktSeite(ga: GemeinsamerAuftrag, set: SetJson, nr: 2 | 3, produkt: AuftragProdukt): (Paragraph | Table)[] {
   const s = produktSchritt(ga, produkt)
-  const verweis = nr === 3 ? glossarVerweis(set.glossar) : null
+  const verweis = nr === 3 ? glossarVerweis(set.glossar, set) : null
   const hint = (after: number) => s.hint
     ? [p([new TextRun({ text: `Schritt ${s.nr}: `, bold: true, size: 18 }), new TextRun({ text: s.hint, size: 18 })], { spacing: { before: 0, after } })]
     : []
   if (produkt.form === 'flaeche') {
+    // EBA: Heft-Bezug auf A2 auch bei einer Fläche (wie im HTML); die Fläche wird um seine Höhe kürzer.
+    const bezugA2 = nr === 2 && worte(set).auftrag.heftBezugAufA2
     return [
       ...sectionHead(`A${nr}`, s.label, AKZENT),
+      ...(bezugA2 ? [...heftBezugDocx(ga), luecke(120)] : []),
       ...hint(100),
       // Wie A2 bisher (226 mm); auf A3 nimmt der Glossar-Verweis am Fuss seinen Platz weg.
-      skizzeBox(verweis ? 212 : 226, `SCHRITT ${s.nr} · ${s.label.toUpperCase()} · ${(produkt.modus || '').toUpperCase()}`, AKZENT),
+      // EBA: ohne Sprachmodus (Fachsprache für die LP) — wie im HTML.
+      skizzeBox((verweis ? 212 : 226) - (bezugA2 ? 42 : 0), istEba(set) ? `SCHRITT ${s.nr} · ${s.label.toUpperCase()}` : `SCHRITT ${s.nr} · ${s.label.toUpperCase()} · ${(produkt.modus || '').toUpperCase()}`, AKZENT),
       ...(verweis ? [verweisAbsatz(verweis)] : []),
     ]
   }
-  const out: (Paragraph | Table)[] = [...sectionHead(`A${nr}`, `${s.label} planen`, AKZENT), ...hint(40)]
+  const mitBezug = nr === 2 && worte(set).auftrag.heftBezugAufA2
+  const out: (Paragraph | Table)[] = [...sectionHead(`A${nr}`, planTitel(s.label), AKZENT)]
+  if (mitBezug) out.push(...heftBezugDocx(ga), luecke(120))
+  out.push(...hint(40))
   if (produkt.hinweis) out.push(absatz(produkt.hinweis, 18, { after: 80 }))
   const stationen = produktStationen(produkt)
-  const zeilen = spurZeilen(stationen.length)
+  // EBA: auf A2 steht zusätzlich der Heft-Bezug — dafür je Station eine Zeile weniger (wie im HTML).
+  const zeilen = spurZeilen(stationen.length).map((z) => (mitBezug ? Math.max(2, z - 1) : z))
   const spur: Paragraph[] = []
   stationen.forEach((station, i) => {
     spur.push(new Paragraph({
@@ -290,7 +321,7 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
   if (produkt) return produktSeite(ga, set, 3, produkt)
   const s = ga.schritte?.[4]
   const [nr, label] = s ? schrittTeile(s.label, 4) : ['05', 'Sprachnachricht']
-  const out: (Paragraph | Table)[] = [...sectionHead('A3', `${label} planen`, AKZENT)]
+  const out: (Paragraph | Table)[] = [...sectionHead('A3', planTitel(label), AKZENT)]
   if (s?.hint) out.push(p([new TextRun({ text: `Schritt ${nr}: `, bold: true, size: 18 }), new TextRun({ text: s.hint, size: 18 })], { spacing: { before: 0, after: 40 } }))
   out.push(absatz('Notieren Sie Stichworte, keinen ganzen Text. Sprechen Sie frei und stoppen Sie die Zeit. Ihre Sprachnachricht geben Sie der Lehrperson direkt ab: live oder als Aufnahme.', 18, { after: 80 }))
 
@@ -325,7 +356,7 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
   }))
 
   // Das Glossar steht seit E17 in den Heften (je S. 8); hier nur der Verweis.
-  const verweis = glossarVerweis(set.glossar)
+  const verweis = glossarVerweis(set.glossar, set)
   if (verweis) {
     out.push(p(verweis, {
       run: { size: 18, color: COLOR.inkSoft },
@@ -337,11 +368,13 @@ function seiteA3(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
 }
 
 // ---------------- A4 — Selbsteinschätzung (neutral, ENTSCHEIDE E18) ----------------
-function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
+function seiteA4(ga: GemeinsamerAuftrag, set: SetJson): (Paragraph | Table)[] {
+  const w = worte(set)
+  const eba = istEba(set)
   const out: (Paragraph | Table)[] = [...sectionHead('A4', 'Selbsteinschätzung', AKZENT)]
-  out.push(absatz('Schätzen Sie Ihre Arbeit selbst ein: Kreuzen Sie je Kriterium die Stufe an, die zutrifft (Spalte «Selbst»). Die Spalte «Fremd» ist frei für eine Rückmeldung von aussen.', 18, { after: 80 }))
+  out.push(absatz(w.auftrag.selbstAnweisung, eba ? 20 : 18, { after: 80 }))
 
-  const BREITEN = [7, 73, 10, 10]
+  const BREITEN = eba ? [9, 65, 10, 16] : [7, 73, 10, 10]
   const linie = { ...OHNE_RAENDER, bottom: RAND(2, COLOR.rule) }
   const zelle = (inhalt: Paragraph[], i: number, borders: any = linie) => new TableCell({
     children: inhalt,
@@ -355,12 +388,13 @@ function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
 
   const rows: TableRow[] = [new TableRow({
     tableHeader: true,
-    children: ['Stufe', 'Kriterium', 'Selbst', 'Fremd'].map((t, i) => zelle(
+    children: w.auftrag.spalten.map((t, i) => zelle(
       [p(t.toUpperCase(), { run: { size: 14, bold: true, color: AKZENT, font: 'Consolas' }, alignment: i === 1 ? undefined : AlignmentType.CENTER, spacing: { before: 0, after: 0 } })],
       i, { ...OHNE_RAENDER, bottom: RAND(12, AKZENT) },
     )),
   })]
   for (const k of ga.feedback_kriterien || []) {
+    const { name, stufen } = kriteriumFuerBogen(k, set)
     rows.push(new TableRow({
       cantSplit: true,
       children: [new TableCell({
@@ -370,8 +404,8 @@ function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
         children: [
           new Paragraph({
             children: [
-              new TextRun({ text: k.kn_kriterium, bold: true, size: 19 }),
-              new TextRun({ text: `   ${k.dimension}`, bold: true, size: 14, color: AKZENT, font: 'Consolas' }),
+              new TextRun({ text: name, bold: true, size: eba ? 21 : 19 }),
+              new TextRun({ text: `   ${w.dimension(k.dimension)}`, bold: true, size: 14, color: AKZENT, font: 'Consolas' }),
             ],
             spacing: { before: 0, after: 0 },
             keepNext: true,
@@ -382,11 +416,11 @@ function seiteA4(ga: GemeinsamerAuftrag): (Paragraph | Table)[] {
         ],
       })],
     }))
-    k.stufen.forEach((st, si) => rows.push(new TableRow({
+    stufen.forEach((st, si) => rows.push(new TableRow({
       cantSplit: true,
       children: [
         zelle([mitte(String(si), 17, { bold: true, font: 'Consolas' })], 0),
-        zelle([p(st, { run: { size: 18 }, spacing: { before: 0, after: 0, line: 252, lineRule: LineRuleType.AUTO } })], 1),
+        zelle([p(st, { run: { size: eba ? 20 : 18 }, spacing: { before: 0, after: 0, line: 252, lineRule: LineRuleType.AUTO } })], 1),
         zelle([mitte('☐', 22)], 2),
         zelle([mitte('☐', 22)], 3),
       ],
@@ -406,7 +440,7 @@ export function buildAuftragsbogen({ set, abteilung, logoPng = null }: BuildAuft
   const ga = set?.gemeinsamer_auftrag
   if (!set || !ga) return null
   const docTitel = `Auftragsbogen · ${ga.titel ?? ''}`.trim()
-  const seiten = [seiteA1(ga), seiteA2(ga, set), seiteA3(ga, set), seiteA4(ga)]
+  const seiten = [seiteA1(ga, set), seiteA2(ga, set), seiteA3(ga, set), seiteA4(ga, set)]
   return new Document({
     creator: 'HKO Renderer',
     title: docTitel,

@@ -19,7 +19,7 @@
 .v42-ls-kopf-zeile { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2mm 4mm; }
 .v42-ls-seite .v42-ls-titel { font-size: 16pt; line-height: 1.2; font-weight: 700; margin: 0; color: var(--ink); }
 .v42-ls-nurlp {
-  font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; font-weight: 700;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8.5pt; font-weight: 700;
   letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--ink); border: 1.2pt solid var(--ink); border-radius: 1mm;
   padding: 0.6mm 2mm; white-space: nowrap;
@@ -33,11 +33,11 @@
 .v42-ls-frage { font-weight: 600; color: var(--ink); }
 .v42-ls-lf {
   display: inline-block; margin-right: 1.8mm;
-  font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; font-weight: 700;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8.5pt; font-weight: 700;
   color: var(--sit-akzent);
 }
 .v42-ls-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 8.5pt; font-weight: 700;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 8.5pt; font-weight: 700;
   letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft);
 }
 .v42-ls-meta, .v42-ls-quelle-zeile { font-size: 8.5pt; color: var(--ink-soft); }

@@ -305,6 +305,8 @@ export interface GemeinsamerAuftrag {
    * Ersetzt den Verweis vom Heft auf den Auftrag: das Heft nennt keine Woche.
    */
   heft_bezug?: { heft: string; titel?: string; inhalte: string[] }[]
+  /** A1 — «Wichtige Wörter» vor der Situation (EBA, wie im Leseblatt). Optional. */
+  woerter?: GlossarEintrag[]
   /** Alle vier KN-Kriterien. */
   feedback_kriterien?: FeedbackKriterium[]
   kontext_ausschluss?: string[]
@@ -608,7 +610,8 @@ export interface KnTyp {
   format?: string
   ablauf?: string[]
   fragestruktur?: { nr: number; frage: string; typ?: string; k_stufe?: number }[]
-  aufgaben?: { nr: number; aufgabe: string; typ?: string; k_stufe?: number }[]
+  /** `tabelle`: leere Tabelle zum Ausfüllen über dem Schreibfeld (z. B. «Füllen Sie die Fakten-Tabelle aus»). */
+  aufgaben?: { nr: number; aufgabe: string; typ?: string; k_stufe?: number; tabelle?: { spalten: string[]; zeilen?: number } }[]
   reflexionsfragen?: string[]
   optional_praesentation?: string
   sk?: number[]
@@ -638,8 +641,9 @@ export interface KnJson {
   }
   kn_typen?: KnTyp[]
   rubrik_shared?: {
-    kriterien?: { name: string; dimension: 'SuK' | 'Ges' | string; stufen?: string[] }[]
-    niveaubaender?: { label: string; definition: string }[]
+    /** `name_lernende`/`stufen_lernende`: Fassung für Lernende (EBA, wie Heft S. 7) — nur DOC-KN-S. */
+    kriterien?: { name: string; dimension: 'SuK' | 'Ges' | string; stufen?: string[]; name_lernende?: string; stufen_lernende?: string[] }[]
+    niveaubaender?: { label: string; definition: string; definition_lernende?: string }[]
   }
 }
 

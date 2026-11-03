@@ -8,7 +8,7 @@ import {
   HeadingLevel, AlignmentType, BorderStyle, ShadingType,
   Table, TableRow, TableCell, WidthType,
   PageBreak, PageNumber, LineRuleType,
-  TabStopType, TabStopPosition, ImageRun,
+  TabStopType, TabStopPosition, ImageRun, HeightRule,
 } from 'docx'
 
 import type { KnJson, KnTyp, PrinzipJson, SetJson, SituationJson, KiJson, LernpromptJson, LernbegleiterJson, LernpromptTechnik, LernbegleiterStrategie } from './types'
@@ -24,6 +24,7 @@ import {
 } from './docx-primitives'
 import { isV42 } from './spuren'
 import { worte } from './v42-profil'
+import { knPersonaFelder, knTexte, werkschauTexte } from './kn-lernende'
 import { buildHeftV42 } from './docx-heft-v42'
 
 
@@ -1480,6 +1481,9 @@ export interface BuildKnSOpts {
 export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts): Document | null {
   const t: KnTyp | undefined = (kn.kn_typen || []).find((x) => x.typ === knTyp) || kn.kn_typen?.[0]
   if (!t) return null
+  // Texte für Lernende — dieselbe Quelle wie DocKnS.tsx (EBA: wie in den Heften, 03.11.2026).
+  const tx = knTexte(kn)
+  const gr = tx.eba ? 2 : 0 // EBA: Lauftext 1 pt grösser
   const akzent = COLOR.neutral
   const light = COLOR.neutralLight
   const docCode = `DOC-KN-S · ${t.typ.toUpperCase()}`
@@ -1497,20 +1501,19 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
   }))
   children.push(h(hs.titel || '', 'title'))
   children.push(spacer(80))
-  children.push(...sectionHead('01 · Hybrid-Herausforderung', 'Herausforderung', akzent))
-  children.push(p(kn.hybrid_situation?.definition_kurz
-    || 'Eine Hybrid-Herausforderung bündelt die drei Herausforderungen (A, B, C) und ihre Kompetenzen in einer neuen, zusammengesetzten Aufgabe.',
-    { run: { italics: true, color: COLOR.inkSoft, size: 18 }, spacing: { after: 100 } }))
-  children.push(new Paragraph({
-    children: [
-      new TextRun({ text: 'BERUF ', color: COLOR.inkMute, size: 14, bold: true }),
-      new TextRun({ text: hs.persona?.beruf || '', size: 18 }),
-      new TextRun({ text: '   ·   ' + (hs.persona?.betrieb || '') + ', ' + (hs.persona?.ort || ''), size: 18, color: COLOR.inkSoft }),
-      new TextRun({ text: '   ·   EMOTION ', color: COLOR.inkMute, size: 14, bold: true }),
-      new TextRun({ text: hs.emotion_tag || '', size: 18 }),
-    ],
-    spacing: { after: 160 },
-  }))
+  children.push(...sectionHead(tx.fallKicker, tx.fallTitel, akzent))
+  children.push(p(tx.definition, { run: { italics: true, color: COLOR.inkSoft, size: 18 + gr }, spacing: { after: 100 } }))
+  // Nur Felder mit Inhalt (vorher stand «EMOTION» ohne Wert da); EBA ohne Persona.
+  const persona = knPersonaFelder(kn)
+  if (persona.length) {
+    children.push(new Paragraph({
+      children: persona.flatMap((f, i) => [
+        new TextRun({ text: `${i ? '   ·   ' : ''}${f.label.toUpperCase()} `, color: COLOR.inkMute, size: 14, bold: true }),
+        new TextRun({ text: f.wert, size: 18 }),
+      ]),
+      spacing: { after: 160 },
+    }))
+  }
   children.push(p(hs.text || '', { run: { size: 22 }, spacing: { after: 160, line: 360, lineRule: LineRuleType.AUTO } }))
   children.push(callout('Leitfrage', hs.leitfrage || '', akzent, light))
 
@@ -1518,56 +1521,77 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
   children.push(new Paragraph({
     children: [
       new TextRun({ text: 'Format: ', color: akzent, bold: true, size: 18 }),
-      new TextRun({ text: t.format || '', size: 20 }),
+      new TextRun({ text: t.format || '', size: 20 + gr }),
     ],
     spacing: { after: 100 },
   }))
   t.ablauf?.forEach((a) => {
-    children.push(new Paragraph({ children: [new TextRun({ text: a, size: 20 })], bullet: { level: 0 }, spacing: { after: 60 } }))
+    children.push(new Paragraph({ children: [new TextRun({ text: a, size: 20 + gr })], bullet: { level: 0 }, spacing: { after: 60 } }))
   })
 
   children.push(pageBreak())
   if (t.typ === 'fachgespraech') {
     children.push(...sectionHead('03 · Vorbereitung', 'Notizen zu den Fragen', akzent))
-    children.push(p('Stichwortartige Notizen zu jeder Frage. Im Gespräch sprechen Sie frei.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p(tx.eba ? tx.notizenIntro : 'Stichwortartige Notizen zu jeder Frage. Im Gespräch sprechen Sie frei.', { run: { color: COLOR.inkSoft, size: 18 + gr } }))
     t.fragestruktur?.forEach((f) => {
       children.push(new Paragraph({
         children: [
           new TextRun({ text: 'F' + f.nr + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
-          new TextRun({ text: f.frage, size: 20 }),
+          new TextRun({ text: f.frage, size: 20 + gr }),
         ],
         spacing: { before: 120, after: 40 },
         keepNext: true,
       }))
-      children.push(new Paragraph({ children: [new TextRun({ text: '[' + (f.typ || '') + ']', color: akzent, bold: true, size: 14 })], spacing: { after: 60 } }))
+      if (tx.typAbzeichen) children.push(new Paragraph({ children: [new TextRun({ text: '[' + (f.typ || '') + ']', color: akzent, bold: true, size: 14 })], spacing: { after: 60 } }))
       children.push(...schreibfeld(25))
     })
   } else if (t.typ === 'mini_case_schriftlich') {
-    children.push(...sectionHead('03 · Aufgaben', 'Prüfungsaufgaben', akzent))
-    children.push(p('Bearbeiten Sie alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson, kein Internet.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(...sectionHead('03 · Aufgaben', tx.aufgabenTitel, akzent))
+    children.push(p(tx.eba ? tx.aufgabenIntro : 'Bearbeiten Sie alle Aufgaben schriftlich. Lehrmittel nach Anweisung der Lehrperson, kein Internet.', { run: { color: COLOR.inkSoft, size: 18 + gr } }))
     t.aufgaben?.forEach((a) => {
       children.push(new Paragraph({
         children: [
           new TextRun({ text: 'A' + a.nr + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
-          new TextRun({ text: a.aufgabe, size: 20 }),
+          new TextRun({ text: a.aufgabe, size: 20 + gr }),
         ],
         spacing: { before: 120, after: 40 },
         keepNext: true,
       }))
-      children.push(new Paragraph({ children: [new TextRun({ text: '[' + (a.typ || '') + ']', color: akzent, bold: true, size: 14 })], spacing: { after: 60 } }))
-      children.push(...schreibfeld(55))
+      if (tx.typAbzeichen) children.push(new Paragraph({ children: [new TextRun({ text: '[' + (a.typ || '') + ']', color: akzent, bold: true, size: 14 })], spacing: { after: 60 } }))
+      // Leere Tabelle zum Ausfüllen (`aufgaben[].tabelle`), dann ein kürzeres Schreibfeld.
+      const tab = a.tabelle
+      if (tab?.spalten?.length) {
+        const rand = { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule }
+        const breite = Math.floor(100 / tab.spalten.length)
+        children.push(new Table({
+          width: { size: 100, type: WidthType.PERCENTAGE },
+          rows: [
+            new TableRow({
+              tableHeader: true,
+              children: tab.spalten.map((sp) => tcell(p(sp, { run: { bold: true, size: 20 }, spacing: { after: 0 } }), { width: { size: breite, type: WidthType.PERCENTAGE }, borders: { top: rand, bottom: rand, left: rand, right: rand } })),
+            }),
+            ...Array.from({ length: Math.max(1, tab.zeilen ?? 3) }, () => new TableRow({
+              height: { value: Math.round(12 * 56.6929), rule: HeightRule.ATLEAST },
+              children: tab.spalten.map(() => tcell(p(''), { width: { size: breite, type: WidthType.PERCENTAGE }, borders: { top: rand, bottom: rand, left: rand, right: rand } })),
+            })),
+          ],
+        }))
+        children.push(...schreibfeld(20))
+      } else {
+        children.push(...schreibfeld(55))
+      }
     })
   } else {
-    children.push(...sectionHead('03 · Werkwahl', 'Welches Handlungsprodukt wähle ich?', akzent))
-    children.push(p('Begründen Sie Ihre Wahl in 2–3 Sätzen.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(...sectionHead('03 · Werkwahl', tx.werkwahlTitel, akzent))
+    children.push(p(werkschauTexte(kn, t).werkwahl, { run: { color: COLOR.inkSoft, size: 18 + gr } }))
     children.push(...schreibfeld(28))
     children.push(...sectionHead('04 · Transfer-Reflexion', 'Drei Reflexionsfragen', akzent))
-    children.push(p('Beantworten Sie schriftlich, insgesamt 200–250 Wörter.', { run: { color: COLOR.inkSoft, size: 18 } }))
+    children.push(p(werkschauTexte(kn, t).reflexionIntro, { run: { color: COLOR.inkSoft, size: 18 + gr } }))
     t.reflexionsfragen?.forEach((f, i) => {
       children.push(new Paragraph({
         children: [
           new TextRun({ text: 'R' + (i + 1) + '  ', bold: true, color: akzent, size: 20, font: 'Consolas' }),
-          new TextRun({ text: f, size: 20 }),
+          new TextRun({ text: f, size: 20 + gr }),
         ],
         spacing: { before: 120, after: 40 },
         keepNext: true,
@@ -1578,8 +1602,35 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
 
   children.push(pageBreak())
   children.push(...sectionHead('05 · Bewertungskriterien', 'Worauf geachtet wird', akzent))
-  children.push(p('Vier Kriterien, zwei Dimensionen: Sprache und Kommunikation (SuK) und gesellschaftliche Werthaltung (Ges). Beide werden separat benotet.', { run: { color: COLOR.inkSoft, size: 18 } }))
-  if (kn.rubrik_shared?.kriterien) {
+  children.push(p(tx.eba ? tx.rubrikIntro : 'Vier Kriterien, zwei Dimensionen: Sprache und Kommunikation (SuK) und gesellschaftliche Werthaltung (Ges). Beide werden separat benotet.', { run: { color: COLOR.inkSoft, size: 18 + gr } }))
+  if (tx.stufenZeigen && kn.rubrik_shared?.kriterien) {
+    // EBA: wie Heft S. 7 — je Kriterium Name, Bereich und die vier Stufen für Lernende.
+    const linie = { style: BorderStyle.SINGLE, size: 4, color: COLOR.rule }
+    const ohne = { style: BorderStyle.NIL, size: 0, color: 'FFFFFF' }
+    const rows: TableRow[] = []
+    for (const k of kn.rubrik_shared.kriterien) {
+      const { name, stufen } = tx.kriterium(k)
+      rows.push(new TableRow({
+        cantSplit: true,
+        children: [new TableCell({ columnSpan: 2, margins: { top: 0, bottom: 20, left: 100, right: 100 }, children: [new Paragraph({
+          children: [
+            new TextRun({ text: name, bold: true, size: 22 }),
+            new TextRun({ text: `   ${tx.dimension(k.dimension)}`, bold: true, size: 15, color: akzent }),
+          ],
+          spacing: { before: 120, after: 20 },
+          keepNext: true,
+        })], borders: { top: ohne, left: ohne, right: ohne, bottom: { style: BorderStyle.SINGLE, size: 6, color: COLOR.inkSoft } } })],
+      }))
+      stufen.forEach((st, si) => rows.push(new TableRow({
+        cantSplit: true,
+        children: [
+          tcell(p(RUBRIK_PUNKTE_LABELS[si] ?? `${si} Punkte`, { run: { font: 'Consolas', size: 15, color: COLOR.inkSoft }, spacing: { after: 0 } }), { width: { size: 14, type: WidthType.PERCENTAGE }, borders: { top: ohne, left: ohne, right: ohne, bottom: linie } }),
+          tcell(p(st, { run: { size: 21 }, spacing: { after: 0 } }), { width: { size: 86, type: WidthType.PERCENTAGE }, borders: { top: ohne, left: ohne, right: ohne, bottom: linie } }),
+        ],
+      })))
+    }
+    children.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows }))
+  } else if (kn.rubrik_shared?.kriterien) {
     children.push(dataTable(
       ['Kriterium', 'Dimension'],
       kn.rubrik_shared.kriterien.map((k) => [
@@ -1590,12 +1641,12 @@ export function buildKnS({ kn, knTyp, abteilung, logoPng = null }: BuildKnSOpts)
     ))
   }
   children.push(spacer(160))
-  children.push(p('NIVEAUBAENDER', { run: { color: akzent, bold: true, size: 14 } }))
+  children.push(p(tx.eba ? tx.niveauTitel.toUpperCase() : 'NIVEAUBAENDER', { run: { color: akzent, bold: true, size: 14 } }))
   kn.rubrik_shared?.niveaubaender?.forEach((n) => {
     children.push(new Paragraph({
       children: [
-        new TextRun({ text: susNiveauLabel(n.label) + '   ', bold: true, color: akzent, size: 18 }),
-        new TextRun({ text: n.definition, size: 18 }),
+        new TextRun({ text: susNiveauLabel(n.label) + '   ', bold: true, color: akzent, size: 18 + gr }),
+        new TextRun({ text: tx.niveau(n), size: 18 + gr }),
       ],
       spacing: { after: 80 },
     }))
@@ -1828,7 +1879,9 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
     const headerCells = ['Kriterium', 'Dim.', ...RUBRIK_PUNKTE_LABELS]
     const rows = rs.kriterien.map((k) => {
       const cells: any[] = [
-        new Paragraph({ children: [new TextRun({ text: k.name, bold: true, size: 18 })] }),
+        // EBA: so heisst das Kriterium für die Lernenden (DOC-KN-S, Heft S. 7) — wie im HTML.
+        [new Paragraph({ children: [new TextRun({ text: k.name, bold: true, size: 18 })] }),
+          ...(k.name_lernende ? [new Paragraph({ children: [new TextRun({ text: `Lernende: «${k.name_lernende}»`, size: 14, color: COLOR.inkSoft })] })] : [])],
         new Paragraph({ children: [new TextRun({ text: k.dimension, bold: true, color: akzent, size: 14 })] }),
       ]
       ;(k.stufen || []).forEach((s) => {
@@ -1856,6 +1909,10 @@ export function buildKnLp({ kn, prinzip, set, abteilung, logoPng = null, sits = 
       }),
     }))
     children.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [headerRow, ...dataRows] }))
+    // EBA: wie im HTML (DocKnLp.tsx) — die Lernenden lesen eine eigene Fassung.
+    if (rs.kriterien.some((k) => k.stufen_lernende?.length)) {
+      children.push(p('Die Lernenden lesen dieselben Stufen in der Ich-Form und in einfacher Sprache (DOC-KN-S, letzte Seite). Bewertet wird nach dem Wortlaut oben.', { run: { color: COLOR.inkSoft, size: 16 }, spacing: { before: 80 } }))
+    }
   }
 
   children.push(spacer(160))

@@ -236,12 +236,12 @@ export function ProduktBildBlatt({ bild, groesse, loesung = false }: { bild: Pro
 }
 
 /** Heft S. 6: Band unter den Methodenkarten mit dem Beispielblatt (`klein`). */
-export function BeispielBand({ bild }: { bild: ProduktBild }) {
+export function BeispielBand({ bild, unterzeile = 'Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.' }: { bild: ProduktBild; unterzeile?: string }) {
   return (
     <section className="v42-pb-band">
       <div className="v42-pb-bandkopf">
         <span className="v42-kasten-label v42-pb-label">So kann Ihr Produkt aussehen</span>
-        <span className="v42-pb-unterzeile">Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.</span>
+        <span className="v42-pb-unterzeile">{unterzeile}</span>
       </div>
       <ProduktBildBlatt bild={bild} groesse="klein" />
     </section>

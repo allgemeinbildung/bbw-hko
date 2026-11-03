@@ -828,7 +828,7 @@ export function buildDeckV42(src: EinheitSourceV42, spurLinks: SpurLinks = {}): 
     /* Beispielbild / Lösungsbild */
     if (hp?.beispielbild?.bloecke?.length) {
       sub('beispielbild', 'Beispiel', {
-        src: 'Ein anderer Fall — keine Vorlage · Heft S. 6',
+        src: `Ein anderer Fall — keine Vorlage · Heft S. ${w.pruefSeite ? 5 : 6}`,
         headline: hp.beispielbild.titel,
         small: true,
         body: [raw(produktBild(hp.beispielbild, false))],

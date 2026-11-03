@@ -86,7 +86,11 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
   const w = worte(sit)
   // EBA: Ich-Fassung für Lernende, sonst KN-Wortlaut (Entscheid Pietro 02.11.2026) — wie im HTML.
   const eba = istEba(sit)
-  const breite = eba ? [12, 74, 14] : [12, 80, 8]
+  // EBA auf der eigenen Seite «Prüfen» (S. 7): grössere Schrift, wie im HTML (eba.css).
+  const gr = w.pruefSeite
+    ? { name: 24, dim: 16, ind: 21, stufe: 24, nr: 16, box: 28, luft: 70 }
+    : { name: 21, dim: 14, ind: 18, stufe: 18, nr: 14, box: 24, luft: 30 }
+  const breite = w.pruefSeite ? [12, 70, 18] : eba ? [12, 74, 14] : [12, 80, 8]
   const kopfRand = { top: KEIN, left: KEIN, right: KEIN, bottom: { style: BorderStyle.SINGLE, size: 12, color: ctx.akzent } }
   const kopf = new TableRow({
     tableHeader: true,
@@ -97,15 +101,15 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
   })
   const zeilen: TableRow[] = [kopf]
   for (const k of kriterien) {
-    const name: TextRun[] = [new TextRun({ text: (eba && k.name_lernende) || k.kn_kriterium, bold: true, size: 21 })]
-    if (k.dimension) name.push(new TextRun({ text: `   ${w.dimension(k.dimension)}`, bold: true, size: 14, color: ctx.akzent }))
+    const name: TextRun[] = [new TextRun({ text: (eba && k.name_lernende) || k.kn_kriterium, bold: true, size: gr.name })]
+    if (k.dimension) name.push(new TextRun({ text: `   ${w.dimension(k.dimension)}`, bold: true, size: gr.dim, color: ctx.akzent }))
     const stufen = eba && k.stufen_lernende?.length === k.stufen.length ? k.stufen_lernende : k.stufen
     const inhalt: Paragraph[] = [new Paragraph({ children: name, spacing: { after: 20 }, keepNext: true })]
     if (k.indikator_produkt) {
       inhalt.push(new Paragraph({
         children: [
-          new TextRun({ text: 'Woran sehe ich das in meinem Produkt? ', italics: true, size: 18, color: COLOR.inkSoft }),
-          new TextRun({ text: k.indikator_produkt, size: 18, color: COLOR.inkSoft }),
+          new TextRun({ text: 'Woran sehe ich das in meinem Produkt? ', italics: true, size: gr.ind, color: COLOR.inkSoft }),
+          new TextRun({ text: k.indikator_produkt, size: gr.ind, color: COLOR.inkSoft }),
         ],
         spacing: { after: 0 },
         keepNext: true,
@@ -122,13 +126,13 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
     }))
     stufen.forEach((s, si) => {
       const rand = { top: KEIN, left: KEIN, right: KEIN, bottom: LINIE }
-      const m = { top: 30, bottom: 30, left: 0, right: 80 }
+      const m = { top: gr.luft, bottom: gr.luft, left: 0, right: 80 }
       zeilen.push(new TableRow({
         cantSplit: true,
         children: [
-          tcell(p(RUBRIK_PUNKTE_LABELS[si] ?? `${si} Punkte`, { run: { font: 'Consolas', size: 14, color: COLOR.inkSoft }, spacing: { after: 0 } }), { width: pct(breite[0]), borders: rand, margins: m }),
-          tcell(p(s, { run: { size: 18 }, spacing: { after: 0 } }), { width: pct(breite[1]), borders: rand, margins: m }),
-          tcell(p('☐', { run: { size: 24 }, alignment: AlignmentType.CENTER, spacing: { after: 0 } }), { width: pct(breite[2]), borders: rand, margins: { ...m, right: 0 }, verticalAlign: VerticalAlign.CENTER }),
+          tcell(p(RUBRIK_PUNKTE_LABELS[si] ?? `${si} Punkte`, { run: { font: 'Consolas', size: gr.nr, color: COLOR.inkSoft }, spacing: { after: 0 } }), { width: pct(breite[0]), borders: rand, margins: m }),
+          tcell(p(s, { run: { size: gr.stufe }, spacing: { after: 0 } }), { width: pct(breite[1]), borders: rand, margins: m }),
+          tcell(p('☐', { run: { size: gr.box }, alignment: AlignmentType.CENTER, spacing: { after: 0 } }), { width: pct(breite[2]), borders: rand, margins: { ...m, right: 0 }, verticalAlign: VerticalAlign.CENTER }),
         ],
       }))
     })
@@ -141,7 +145,7 @@ function kriterienBlock(sit: SituationJson, ctx: HeftDocxKontext): Block[] {
 }
 
 /** Plus — freiwillig, darum gestrichelt umrandet (Gegenstück zu `.v42-plus`). */
-function plusKasten(text: string, etikett = 'Plus'): Table {
+function plusKasten(text: string, etikett = 'Plus', groesse = 19): Table {
   const strich = { style: BorderStyle.DASHED, size: 4, color: COLOR.inkMute }
   return new Table({
     width: pct(100),
@@ -149,7 +153,7 @@ function plusKasten(text: string, etikett = 'Plus'): Table {
       cantSplit: true,
       children: [tcell([
         p(etikett.toUpperCase(), { run: { color: COLOR.inkSoft, bold: true, size: 14 }, spacing: { after: 30 } }),
-        p(text, { run: { size: 19 }, spacing: { after: 0 } }),
+        p(text, { run: { size: groesse }, spacing: { after: 0 } }),
       ], { borders: { top: strich, bottom: strich, right: strich, left: { style: BorderStyle.DASHED, size: 24, color: COLOR.inkMute } } })],
     })],
   })
@@ -158,12 +162,24 @@ function plusKasten(text: string, etikett = 'Plus'): Table {
 export function seite5Docx(ctx: HeftDocxKontext): Block[] {
   const { sit } = ctx
   const hp = sit.handlungsprodukt
+  const w = worte(sit)
   const els: Block[] = [...seitenKopfDocx(5, 'Auftrag', ctx)]
+  const gross = w.pruefSeite // EBA: Lauftext grösser, wie im HTML (eba.css)
 
   const produkt: Paragraph[] = []
-  if (hp?.titel) produkt.push(p(hp.titel, { run: { bold: true, size: 25 }, spacing: { after: 30 } }))
-  if (hp?.beschreibung) produkt.push(p(hp.beschreibung, { run: { size: 20 }, spacing: { after: 0 } }))
+  if (hp?.titel) produkt.push(p(hp.titel, { run: { bold: true, size: gross ? 27 : 25 }, spacing: { after: 30 } }))
+  if (hp?.beschreibung) produkt.push(p(hp.beschreibung, { run: { size: gross ? 23 : 20 }, spacing: { after: 0 } }))
   if (produkt.length) els.push(kastenDocx('Ihr Produkt', produkt, ctx), abstand())
+
+  if (w.medium) {
+    const rand = { style: BorderStyle.SINGLE, size: 8, color: ctx.akzent, space: 4 }
+    els.push(new Paragraph({
+      children: [new TextRun({ text: `${w.medium[0]} `, bold: true, size: 23 }), new TextRun({ text: w.medium[1], size: 23 })],
+      border: { top: rand, bottom: rand, left: rand, right: rand },
+      indent: { left: 80, right: 80 },
+      spacing: { before: 0, after: 160 },
+    }))
+  }
 
   const schritte = schritteTabelle(sit, ctx)
   if (schritte) els.push(schritte, abstand(60))
@@ -178,11 +194,24 @@ export function seite5Docx(ctx: HeftDocxKontext): Block[] {
     })), ctx), abstand())
   }
 
-  const kriterien = kriterienBlock(sit, ctx)
-  if (kriterien.length) els.push(...kriterien, abstand())
+  if (w.pruefSeite) {
+    // EBA: das Beispiel direkt unter dem Auftrag; Kriterien und Plus stehen auf S. 7.
+    const bild = hp?.beispielbild
+    if (bild) els.push(...beispielBandDocx(bild, ctx.akzent, { unterzeile: w.beispielUnterzeile, groesse: 'gross' }))
+    return els
+  }
+  return [...els, ...kriterienUndPlus(ctx)]
+}
 
+/** Kriterien und Plus — EFZ auf S. 5, EBA auf S. 7 «Prüfen» (wie im HTML). */
+function kriterienUndPlus(ctx: HeftDocxKontext): Block[] {
+  const { sit } = ctx
+  const w = worte(sit)
+  const els: Block[] = []
+  const kriterien = kriterienBlock(sit, ctx)
+  if (kriterien.length) els.push(...kriterien, abstand(w.pruefSeite ? 240 : 100))
   const plus = sit.lernfortschritt?.scaffold_100
-  if (plus) els.push(plusKasten(plus, worte(sit).plus))
+  if (plus) els.push(plusKasten(plus, w.plus, w.pruefSeite ? 23 : 19))
   return els
 }
 
@@ -192,7 +221,8 @@ export function seite5Docx(ctx: HeftDocxKontext): Block[] {
 
 export function seite6Docx(ctx: HeftDocxKontext): Block[] {
   // Mit Beispielbild: das Band als Tabelle unter den Methodenkarten (wie im HTML).
-  const bild = ctx.sit.handlungsprodukt?.beispielbild
+  // EBA (`pruefSeite`): das Beispiel steht auf S. 5.
+  const bild = worte(ctx.sit).pruefSeite ? undefined : ctx.sit.handlungsprodukt?.beispielbild
   return [
     ...seitenKopfDocx(6, 'Methoden', ctx),
     ...methodenBlock(ctx.sit, ctx.akzent),
@@ -209,6 +239,8 @@ export function seite7Docx(ctx: HeftDocxKontext): Block[] {
   // Kopf, Hinweis und Fläche auf einer Seite bleiben. Beschriftung = Produkttitel
   // (im HTML per CSS in Versalien, hier ausgeschrieben). Wortlaut des Hinweises wie
   // im HTML (`worte().arbeitsflaeche`, v42-profil.ts).
+  // EBA: keine Arbeitsfläche (Besprechung 23.10.2026) — die Seite zum Prüfen vor der Abgabe.
+  if (worte(ctx.sit).pruefSeite) return [...seitenKopfDocx(7, 'Prüfen', ctx), ...kriterienUndPlus(ctx)]
   const titel = ctx.sit.handlungsprodukt?.titel || 'Hier erarbeiten'
   return [
     ...seitenKopfDocx(7, 'Arbeitsfläche', ctx),

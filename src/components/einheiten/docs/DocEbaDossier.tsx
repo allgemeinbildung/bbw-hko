@@ -247,6 +247,24 @@ function TitelSeite({ kopf, einleitung }: { kopf?: DossierKopf; einleitung?: Dos
   )
 }
 
+/** Glossar in Seiten zu höchstens `budget` Zeichen (Begriff + Erklärung + Beispiel). */
+function glossarSeiten<T extends { begriff?: string; erklaerung_a2?: string; beispiel?: string }>(liste: T[], budget: number): T[][] {
+  const laenge = (g: T) => (g.begriff?.length ?? 0) + (g.erklaerung_a2?.length ?? 0) + (g.beispiel?.length ?? 0) + 20
+  const total = liste.reduce((s, g) => s + laenge(g), 0)
+  // Gleichmässig verteilen: so viele Seiten wie nötig, je ungefähr gleich voll.
+  const ziel = total / Math.max(1, Math.ceil(total / budget))
+  const seiten: T[][] = []
+  let akt: T[] = []
+  let n = 0
+  for (const g of liste) {
+    const len = laenge(g)
+    if (akt.length && n + len / 2 > ziel) { seiten.push(akt); akt = []; n = 0 }
+    akt.push(g); n += len
+  }
+  if (akt.length) seiten.push(akt)
+  return seiten
+}
+
 export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossierProps) {
   const nuggets = dossier.nuggets || []
   const aN = nuggets.filter((n) => n.tag === 'A')
@@ -325,9 +343,10 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
     })
   }
 
-  // Glossar: alles auf eine Seite (zweispaltig); hoher Cap, nur sehr grosse
-  // Glossare (>24) wuerden ueberhaupt umbrechen.
-  chunk(glossar, 24).forEach((grp, i) => {
+  // Glossar zweispaltig. Aufgeteilt nach Textmenge, nicht nach Anzahl: 22 Einträge mit
+  // Beispiel liefen in 12.5 pt rund 7 cm über die Seite (gemessen 03.11.2026). Eine Seite
+  // trägt rund 2400 Zeichen; kürzere Glossare bleiben auf einer Seite.
+  glossarSeiten(glossar, 2400).forEach((grp, i) => {
     pages.push({
       code: 'GLOSSAR+ · Glossar',
       titel: 'Glossar',

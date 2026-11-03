@@ -21,7 +21,7 @@
 
 /* ---------- Gemeinsam für S. 1–4 ---------- */
 .v42-mini {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 7.5pt;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -45,7 +45,7 @@ p.v42-hinweis { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); margi
 .v42-lf-haupt { flex: 1 1 auto; min-width: 0; }
 .v42-lf-kopf { display: flex; align-items: baseline; gap: 3mm; }
 .v42-lf-nr {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 10pt; font-weight: 600;
   color: var(--sit-akzent);
   min-width: 8mm;
@@ -55,7 +55,7 @@ p.v42-hinweis { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); margi
   display: flex; flex-wrap: wrap; align-items: center; gap: 1mm 3mm;
   margin: 1mm 0 0 11mm;
 }
-.v42-ref { font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; color: var(--ink-mute); }
+.v42-ref { font-family: 'IBM Plex Mono', 'HKO Symbole', monospace; font-size: 7.5pt; color: var(--ink-mute); }
 .v42-liefert { font-size: 9pt; font-style: italic; color: var(--ink-soft); }
 
 /* Scaffold-Spalte: Trennlinie statt Fläche, im Graudruck eindeutig. */
@@ -124,7 +124,7 @@ p.v42-hinweis { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); margi
 }
 .v42-beispiel-tag {
   display: block;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-style: normal;
   font-size: 7pt; font-weight: 600;
   letter-spacing: 0.05em; text-transform: uppercase;
@@ -170,7 +170,7 @@ p.v42-hinweis { font-size: 9pt; line-height: 1.35; color: var(--ink-soft); margi
 }
 .v42-zahlen tr:first-child td { border-top: 0.5pt solid var(--rule); }
 .v42-zahlen td.v42-zahlen-wert {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   text-align: right;
   white-space: nowrap;
   padding-left: 2mm;
@@ -205,7 +205,7 @@ p.v42-spannung-hint { font-size: 9pt; line-height: 1.35; color: var(--ink-soft);
   display: flex; flex-direction: column; align-items: center; gap: 1mm;
 }
 .v42-s3 .v42-kurzadresse {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 8pt; line-height: 1.25;
   text-align: center;
   color: var(--ink);
@@ -217,7 +217,7 @@ p.v42-spannung-hint { font-size: 9pt; line-height: 1.35; color: var(--ink-soft);
 .v42-woche tr:first-child td { border-top: 0.5pt solid var(--rule); }
 .v42-woche-label {
   width: 17mm;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 8.5pt;
   color: var(--ink-soft);
   white-space: nowrap;
@@ -270,7 +270,7 @@ p.v42-q-meta { font-size: 9pt; color: var(--ink-soft); margin-top: 1mm; }
   padding: 2mm 3mm;
 }
 .v42-etikett {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'HKO Symbole', monospace;
   font-size: 7.5pt; font-weight: 600;
   letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--ink-soft);

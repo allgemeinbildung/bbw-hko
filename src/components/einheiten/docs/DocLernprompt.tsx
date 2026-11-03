@@ -36,7 +36,7 @@ const microLabel = {
 
 const promptBox = {
   background: '#f5f7fa', border: '1px solid #d8dde4', borderRadius: '1mm',
-  padding: '1.5mm 2.2mm', margin: '0.5mm 0', fontFamily: "'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace",
+  padding: '1.5mm 2.2mm', margin: '0.5mm 0', fontFamily: "'IBM Plex Mono', 'HKO Symbole', ui-monospace, Menlo, Consolas, monospace",
   fontSize: '8.6pt', lineHeight: 1.3, color: '#2a2f36', whiteSpace: 'pre-wrap',
 } as const
 
