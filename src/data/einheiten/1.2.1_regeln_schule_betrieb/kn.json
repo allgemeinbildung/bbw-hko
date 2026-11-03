@@ -1,0 +1,277 @@
+{
+  "id": "1.2.1_regeln_schule_betrieb_kn",
+  "modul": "1.2",
+  "kompetenz_nr": "1.2.1",
+  "topic_slug": "regeln_schule_betrieb",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-11-03",
+  "set_ref": "1.2.1_regeln_schule_betrieb_set",
+  "prinzip_ref": "1.2.1_regeln_schule_betrieb_prinzip",
+  "anchored_situations": [
+    "1.2.1_regeln_schule_betrieb_hf_A",
+    "1.2.1_regeln_schule_betrieb_hf_B"
+  ],
+  "dominanter_aspekt": "Recht",
+  "kern_kompetenzversprechen": "Ich kenne wichtige Regeln und Zuständigkeiten in Schule und Betrieb. Ich kläre Unklarheiten oder Vorwürfe respektvoll.",
+  "mehrdeutigkeits_pflicht": "Regeln geben Orientierung, aber nicht jede Situation ist eindeutig. Wichtig ist, dass ich die Zuständigkeit kenne und mich respektvoll und sachlich verhalte.",
+  "hybrid_situation": {
+    "titel": "Missverständnis in der Lehrwerkstätte",
+    "persona": {
+      "beruf": "Lernende/r EBA, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "emotion_tag": "",
+    "text": "Ich lerne in einer kantonalen Lehrwerkstätte. Gestern habe ich ein Spezialwerkzeug schmutzig in den falschen Schrank gelegt. Die Lehrperson hat vorher erklärt: Reinigen Sie das Werkzeug und legen Sie es richtig zurück. Heute stellt sie mich vor der Gruppe zur Rede. Sie will bei der Schulleitung einen schriftlichen Verweis beantragen. Ich erschrecke. Ich habe einen Fehler gemacht. Meine Sicht konnte ich noch nicht erklären. Wie kläre ich meinen Fehler respektvoll mit der Lehrperson?",
+    "leitfrage": "Wie kläre ich meinen Fehler respektvoll mit der Lehrperson?",
+    "aktivierte_trade_offs": [
+      "Regeln strikt befolgen vs. im Einzelfall nachfragen und klären",
+      "Eigene Sicht verteidigen vs. Fehlverhalten einsehen und Verantwortung übernehmen"
+    ],
+    "alignment_note": {
+      "herausforderungen_mapping": [
+        {
+          "hf_letter": "A",
+          "scene_element": "Regelverstoss und Zuständigkeit im kantonalen Lehrwerkstätte einordnen; Anhörung und Klärung suchen."
+        },
+        {
+          "hf_letter": "B",
+          "scene_element": "Eigene Einsicht zeigen, Fehlverhalten eingestehen und das respektvolle Gespräch unter vier Augen vorbereiten."
+        }
+      ],
+      "new_dimensions": []
+    },
+    "definition_kurz": "Dieser Fall ist neu. Sie brauchen dafür beide Hefte.",
+    "definition_lang": "Neue Szene in einer kantonalen Lehrwerkstätte: Spezialwerkzeug falsch versorgt. Schulregeln und rechtliches Gehör aus A werden mit respektvoller Gesprächsführung aus B verbunden. Kein üK-Fall; keine Anwendung des Schulreglements auf ein Verbandszentrum."
+  },
+  "kn_typen": [
+    {
+      "typ": "fachgespraech",
+      "label": "Kurzgespräch (Primärform)",
+      "format": "mündlich, 5-10 Min. Gespräch pro Lernende/r (+ ca. 15 Min. Vorbereitung mit Notizen)",
+      "ablauf": [
+        "Sie haben 15 Minuten zur Vorbereitung. Lesen Sie den Fall und notieren Sie Stichworte. Dossier und Hefte sind erlaubt. Internet ist nicht erlaubt.",
+        "5-10 Min. Gespräch mit der Lehrperson: 5 kurze Fragen, stark geführt."
+      ],
+      "fragestruktur": [
+        {
+          "nr": 1,
+          "typ": "Erklaeren",
+          "frage": "Zeigen Sie Ihre Notizen: Wer hat in der Lehrwerkstätte welche Zuständigkeit?",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "typ": "Anwenden",
+          "frage": "Welche Regel wurde im Fall verletzt? Wo schauen Sie nach, was gilt?",
+          "k_stufe": 2
+        },
+        {
+          "nr": 3,
+          "typ": "Beurteilen",
+          "frage": "Darf die Schule einen Verweis beschliessen, ohne Ihre Sicht anzuhören? Begründen Sie.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "typ": "Transfer",
+          "frage": "Was erinnert Sie beim Werkzeugfall an Heft A und Heft B? Nennen Sie auch einen Unterschied.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 5,
+          "typ": "Meinung",
+          "frage": "Wie sprechen Sie die Lehrperson wegen des Werkzeugs an? Begründen Sie Ihren nächsten Schritt.",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [
+        2,
+        7,
+        10
+      ],
+      "aspekte": [
+        "Recht"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion mündlich",
+        "Interaktion und Kollaboration mündlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "mini_case_schriftlich",
+      "label": "Mini Case (schriftliche Alternative)",
+      "format": "schriftlich, 45 Min.",
+      "ablauf": [
+        "45 Min. Bearbeitungszeit im Klassenzimmer (Dossier und Hefte erlaubt, kein Internet).",
+        "Vier kurze Aufgaben. Sie werden Schritt für Schritt schwieriger."
+      ],
+      "aufgaben": [
+        {
+          "nr": 1,
+          "aufgabe": "Lesen Sie den Fall. Nennen Sie den Regelverstoss und die Zuständigkeit der Lehrperson.",
+          "k_stufe": 2
+        },
+        {
+          "nr": 2,
+          "aufgabe": "Ordnen Sie den Vorfall ein. Füllen Sie die Tabelle aus.",
+          "k_stufe": 2,
+          "tabelle": {
+            "spalten": [
+              "Was ist passiert?",
+              "Welche Regel gilt?",
+              "Wer ist zuständig?"
+            ],
+            "zeilen": 3
+          }
+        },
+        {
+          "nr": 3,
+          "aufgabe": "Warum dürfen Sie vor einem schriftlichen Verweis Ihre Sicht erklären? Begründen Sie.",
+          "k_stufe": 3
+        },
+        {
+          "nr": 4,
+          "aufgabe": "Schreiben Sie zwei Sätze: Wie sprechen Sie die Lehrperson nach dem Unterricht respektvoll an?",
+          "k_stufe": 3
+        }
+      ],
+      "sk": [
+        2,
+        7,
+        10
+      ],
+      "aspekte": [
+        "Recht"
+      ],
+      "sprachmodi": [
+        "Rezeption schriftlich und bildlich",
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    },
+    {
+      "typ": "werkschau_transfer",
+      "label": "Werkschau + Transfer-Reflexion (vereinfacht)",
+      "format": "schriftlich (+ optional Kurzpräsentation 5 Min.)",
+      "ablauf": [
+        "Wählen Sie ein Produkt aus Ihren Heften. Nehmen Sie die Klärungsnotiz oder den Gesprächsplan.",
+        "Werkwahl-Begründung (2 Sätze): Warum genau dieses Produkt?",
+        "Transfer-Reflexion (120-150 Wörter): drei Fragen schriftlich beantworten, mit Satzanfängen aus dem Dossier."
+      ],
+      "reflexionsfragen": [
+        "Welche Grundregel zu Regeln und Zuständigkeiten haben Sie gelernt? Formulieren Sie sie in einem Satz.",
+        "Wie zeigt sich diese Regel im neuen Fall? Was ist gleich, was anders als in Ihrem Heft?",
+        "Sie haben einen Fehler gemacht. Wie hilft Ihnen jetzt das Gelernte?"
+      ],
+      "optional_praesentation": "Kurzpräsentation 5 Min., die LP stellt eine Anschlussfrage aus dem Fragepool von Typ 1.",
+      "sk": [
+        7,
+        10
+      ],
+      "aspekte": [
+        "Recht"
+      ],
+      "sprachmodi": [
+        "Produktion schriftlich und bildlich"
+      ],
+      "rubrik_ref": "#rubrik_shared"
+    }
+  ],
+  "rubrik_shared": {
+    "dimensionen": [
+      "SuK",
+      "Ges"
+    ],
+    "kriterien": [
+      {
+        "name": "Fachkorrektheit",
+        "name_lernende": "Fachwörter und Sprache",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachwörter fehlen oder sind falsch. Sprache fehlerhaft.",
+          "Einige Fachwörter stimmen. Sprache hat noch Fehler.",
+          "Fachwörter stimmen und passen. Sprache meist richtig.",
+          "Fachwörter stimmen, mit eigenen Worten erklärt. Sprache richtig."
+        ],
+        "stufen_lernende": [
+          "Ich benutze keine Fachwörter, oder sie sind falsch.",
+          "Einige Fachwörter sind richtig. Ich mache Fehler.",
+          "Die Fachwörter passen. Meine Sprache ist meistens richtig.",
+          "Die Fachwörter stimmen. Ich erkläre sie mit eigenen Worten."
+        ]
+      },
+      {
+        "name": "Argumentation",
+        "name_lernende": "Gut begründen",
+        "dimension": "SuK",
+        "stufen": [
+          "Begründung fehlt. Sprache unpassend.",
+          "Begründung im Ansatz. Sprache teilweise passend.",
+          "Begründung klar. Sprache respektvoll und sachlich.",
+          "Begründung vollständig. Sprache ruhig und überlegt."
+        ],
+        "stufen_lernende": [
+          "Ich begründe nicht. Mein Ton passt nicht zur Situation.",
+          "Ich begründe ein wenig. Der Ton passt noch nicht ganz.",
+          "Meine Begründung ist klar. Mein Ton bleibt respektvoll.",
+          "Meine Begründung ist vollständig. Mein Ton ist ruhig und überlegt."
+        ]
+      },
+      {
+        "name": "Rechtliches Prinzip",
+        "name_lernende": "Regeln und Zuständigkeiten erkennen",
+        "dimension": "Ges",
+        "stufen": [
+          "Regeln und Zuständigkeiten fehlen. Vorgehen unklar.",
+          "Regeln oder Zuständigkeiten teilweise erkannt. Vorgehen unsicher.",
+          "Regeln und Zuständigkeiten erkannt. Vorgehen passt zum Fall.",
+          "Regeln und Zuständigkeiten genau und sicher angewendet."
+        ],
+        "stufen_lernende": [
+          "Ich kenne die Regeln nicht. Ich weiss nicht, wer entscheidet.",
+          "Ich kenne einige Regeln. Mein Vorgehen ist noch unsicher.",
+          "Ich kenne die Regeln. Mein Vorgehen passt zum Fall.",
+          "Ich kenne die Regeln genau. Ich wende sie sicher an."
+        ]
+      },
+      {
+        "name": "Position / Werthaltung",
+        "name_lernende": "Respektvolles Handeln",
+        "dimension": "Ges",
+        "stufen": [
+          "Eigene Haltung fehlt. Keine Lösung gesucht.",
+          "Eigene Haltung angedeutet. Kaum eine Lösung gesucht.",
+          "Eigene Haltung respektvoll. Faire Lösung gesucht.",
+          "Eigene Haltung klar begründet. Faire Lösung überzeugt."
+        ],
+        "stufen_lernende": [
+          "Ich zeige keine Haltung. Ich suche keine Lösung.",
+          "Ich deute meine Haltung an. Ich suche kaum eine Lösung.",
+          "Ich vertrete meine Haltung respektvoll und suche eine Lösung.",
+          "Ich begründe meine Haltung klar. Ich finde eine faire Lösung."
+        ]
+      }
+    ],
+    "niveaubaender": [
+      {
+        "label": "unter 60 %",
+        "definition": "0–1 Punkte dominant (mind. 2 Kriterien auf 0 oder 1 Punkt)",
+        "definition_lernende": "Bei zwei oder mehr Kriterien haben Sie 0 oder 1 Punkt."
+      },
+      {
+        "label": "ab 60 %",
+        "definition": "2 Punkte dominant (mind. 3 Kriterien auf mind. 2 Punkten)",
+        "definition_lernende": "Bei drei oder mehr Kriterien haben Sie mindestens 2 Punkte erreicht."
+      },
+      {
+        "label": "ab 80 %",
+        "definition": "3 Punkte dominant (mind. 3 Kriterien auf 3 Punkten)",
+        "definition_lernende": "Bei mindestens drei Kriterien haben Sie jeweils 3 Punkte erreicht."
+      }
+    ]
+  }
+}

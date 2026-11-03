@@ -1,0 +1,549 @@
+{
+  "id": "1.2.1_regeln_schule_betrieb_dossier",
+  "modul": "1.2",
+  "kompetenz_nr": "1.2.1",
+  "topic_slug": "regeln_schule_betrieb",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-11-03",
+  "set_ref": "1.2.1_regeln_schule_betrieb_set",
+  "sprachniveau": "A2",
+  "template": "dossier_eba_v1",
+  "kopf": {
+    "einheit_titel": "Regeln in Schule und Betrieb",
+    "kompetenz_nr": "1.2.1",
+    "kompetenz_text": "Ich kann zentrale Aussagen zu Regeln und Zuständigkeiten in Schule und Betrieb beschreiben und verhalte mich in typischen Situationen respektvoll und verständlich.",
+    "lebensbezug_nr": "1.2",
+    "lebensbezug_text": "Ich gehe im Alltag und im Beruf sorgsam mit mir um und kommuniziere klar und respektvoll.",
+    "thema_nr": 1,
+    "thema_titel": "Ins Berufsleben einsteigen",
+    "lehrjahr": 1,
+    "lehrgang": "EBA_2J",
+    "sprachniveau": "A2"
+  },
+  "einleitung": {
+    "was_ist_das": "Dieses Dossier hilft Ihnen beim Verstehen von Regeln in der Berufsschule und im Betrieb. Es erklärt Rechte, Pflichten und Zuständigkeiten.",
+    "so_benutzt_du_es": [
+      "Lesen Sie die passende Info-Karte für Ihr Heft.",
+      "Schlagen Sie unbekannte Wörter im Glossar nach.",
+      "Nutzen Sie die Satzanfänge für Ihre Texte.",
+      "Lösen Sie die Aufgaben zum Lesen und Verstehen.",
+      "Nutzen Sie das Dossier für Ihre Vorbereitung auf den Kompetenznachweis."
+    ]
+  },
+  "nuggets": [
+    {
+      "id": "nugget_A_01",
+      "tag": "A",
+      "titel": "Werte und Leitbild der Schule",
+      "inhalt": "Die BBW hat ein Leitbild mit sechs Werten. Diese sind Verantwortung, Respekt, Gelassenheit, Verbindlichkeit, Haltung und Vielfalt. Übernehmen Sie Verantwortung für Ihr Handeln und Ihre Arbeit. Begegnen Sie anderen mit Respekt und Wertschätzung. Zeigen Sie Haltung gegen unangemessenes Verhalten. ",
+      "beispiel": "In einer Gruppenarbeit lassen Sie andere ausreden.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Die Berufsschule BBW definiert in ihrem Leitbild sechs Werte: Verantwortung, Respekt, Gelassenheit, Verbindlichkeit, Haltung und Vielfalt.",
+          "wert": "sechs Werte im BBW-Leitbild",
+          "quelle": "Leitbild BBW (2026), S. 4",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "leitbild",
+        "respekt",
+        "haltung",
+        "verantwortung"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "BBW Leitbild Werte",
+          "Berufsschule Winterthur Leitbild",
+          "Respekt und Haltung Schule"
+        ],
+        "selbst_pruefen": "Welche Werte aus dem Leitbild helfen bei einem Streit im Klassenzimmer?"
+      }
+    },
+    {
+      "id": "nugget_A_02",
+      "tag": "A",
+      "titel": "Schulregeln und Zuständigkeiten",
+      "inhalt": "An Zürcher Berufsfachschulen und kantonalen Lehrwerkstätten gilt das Disziplinarreglement. Stören Sie den Unterricht nicht. Befolgen Sie die Anweisungen der Lehrperson. Aufnahmen von Bild und Ton brauchen die ausdrückliche Genehmigung jeder betroffenen Person. Bei Regelverstössen darf die Lehrperson Gegenstände während des Unterrichts zeitweilig einziehen. Sie darf Lernende aus der Unterrichtsstunde wegweisen. Die Schulleitung ermahnt mündlich oder schriftlich. Auch dafür vorgesehene Lehrpersonen dürfen das. Schriftliche Verweise verfügt die Schulleitung. Nur dabei sind Bussen möglich.",
+      "beispiel": "Bei einer unklaren Anweisung bitten Sie die Lehrperson um eine Erklärung.",
+      "fuer_leitfrage": [
+        1,
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Aufnahmen brauchen die ausdrückliche Genehmigung der betroffenen Person.",
+          "wert": "Aufnahmeverbot Bild und Ton",
+          "quelle": "Disziplinarreglement Berufsbildung ZH (LS 413.322), § 10 lit. e",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Lehrpersonen dürfen Gegenstände während des Unterrichts zeitweilig einziehen.",
+          "wert": "Einziehen von Gegenständen",
+          "quelle": "Disziplinarreglement Berufsbildung ZH (LS 413.322), § 14 Abs. 1 lit. a",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Disziplinarmassnahmen wie Verweise darf nur die Schulleitung verfügen.",
+          "wert": "Zuständigkeit Schulleitung",
+          "quelle": "Disziplinarreglement Berufsbildung ZH (LS 413.322), § 14 Abs. 1 lit. c",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Ermahnungen auch durch Lehrpersonen, wenn von der Schulleitung vorgesehen. Bussen nur bei schriftlichen Verweisen.",
+          "wert": "Zuständigkeit und Busse",
+          "quelle": "Disziplinarreglement LS 413.322, § 14 Abs. 1 lit. b, § 16",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "reglement",
+        "zustaendigkeit",
+        "lehrperson",
+        "schulleitung",
+        "disziplinarmassnahme"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Disziplinarreglement Berufsbildung Zürich",
+          "Schulregeln Berufsfachschule Handy",
+          "Zuständigkeit Lehrperson Schulleitung"
+        ],
+        "selbst_pruefen": "Wer darf an der Schule einen schriftlichen Verweis aussprechen?"
+      }
+    },
+    {
+      "id": "nugget_A_03",
+      "tag": "A",
+      "titel": "Rechtliches Gehör: Meine Sicht erklären",
+      "inhalt": "Vor einer Disziplinarmassnahme dürfen Sie sich zu den Vorwürfen äussern. Dieses Recht heisst rechtliches Gehör. Sie dürfen Ihre Sicht ruhig und sachlich erklären. Dafür ist nicht immer ein persönliches Gespräch nötig. Eine Klärungsnotiz hält Ihre Sicht schriftlich fest. Nennen Sie darin die Tatsachen und Ihren eigenen Anteil. Bitten Sie bei offenen Fragen um ein Gespräch.",
+      "beispiel": "Bei einer falschen Absenzenmeldung reichen Sie Ihre Erklärung schriftlich ein.",
+      "fuer_leitfrage": [
+        3
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Lernende haben vor einer Disziplinarmassnahme das Recht, sich zu den Vorwürfen zu äussern.",
+          "wert": "Rechtliches Gehör",
+          "quelle": "Disziplinarreglement Berufsbildung ZH (LS 413.322), § 15 Abs. 1",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "rechtliches_gehoer",
+        "klaerungsnotiz",
+        "sachlich"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Rechtliches Gehör Schule Bedeutung",
+          "Stellungnahme Vorwurf Berufsschule",
+          "sachlich erklären Lehrperson"
+        ],
+        "selbst_pruefen": "Warum ist das rechtliche Gehör für Lernende ein wichtiger Schutz?"
+      }
+    },
+    {
+      "id": "nugget_B_01",
+      "tag": "B",
+      "titel": "Regeln und Weisungen im Lehrbetrieb",
+      "inhalt": "Im Lehrbetrieb gibt die Arbeitgeberin oder der Arbeitgeber Weisungen zur Arbeit. Dazu gehören Regeln zu Arbeitszeit, Pausen und Verhalten. Dieses Recht heisst Weisungsrecht. Die Berufsbildnerin oder der Berufsbildner gibt Ihnen entsprechende Anweisungen. Befolgen Sie rechtmässige Weisungen nach Treu und Glauben. Arbeiten Sie sorgfältig und schonen Sie Material. Das gehört zur Sorgfaltspflicht. Beispielhafte Situationen sind eine neue Arbeitsanweisung oder ein beschädigtes Werkzeug. Fragen Sie bei unklaren Anweisungen nach. Melden Sie Schäden sofort.",
+      "beispiel": "Im Lager erklärt Ihre Berufsbildnerin den sicheren Umgang mit einer neuen Verpackung.",
+      "fuer_leitfrage": [
+        1,
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Der Arbeitgeber kann über die Arbeit und das Verhalten im Betrieb Weisungen erteilen.",
+          "wert": "Weisungsrecht Arbeitgeber",
+          "quelle": "OR Art. 321d Abs. 1",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Arbeitnehmende haben die Arbeit sorgfältig auszuführen.",
+          "wert": "Sorgfaltspflicht",
+          "quelle": "OR Art. 321a Abs. 1",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "weisungsrecht",
+        "sorgfaltspflicht",
+        "betriebsregeln",
+        "berufsbildner"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Weisungsrecht Lehrbetrieb",
+          "Sorgfaltspflicht Lernende Schweiz",
+          "Pausenregelung Betrieb Pflichten"
+        ],
+        "selbst_pruefen": "Darf mein Berufsbildner bestimmen, wann und wo wir Pausen machen?"
+      }
+    },
+    {
+      "id": "nugget_B_02",
+      "tag": "B",
+      "titel": "Ermahnung im Betrieb: Was gilt?",
+      "inhalt": "Eine Ermahnung erinnert Sie an eine verletzte Pflicht. Sie soll Ihnen helfen, Ihr Verhalten zu verbessern. Lautes Schimpfen kann Sie verletzen. Sie dürfen das ruhig ansprechen. Suchen Sie dafür einen passenden Zeitpunkt und ein Gespräch unter vier Augen. Das ist ein Vorschlag zur Klärung, keine gesetzliche Wartepflicht. Ein Streit vor dem Team erschwert oft die Lösung.",
+      "beispiel": "Nach einer Kritik bitten Sie um einen ruhigen Termin.",
+      "fuer_leitfrage": [
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Eine mündliche Ermahnung weist Lernende auf eine Pflichtverletzung hin und erinnert an die Regeln.",
+          "wert": "Mündliche Ermahnung im Lehrverhältnis",
+          "quelle": "berufsbildung.ch (Pflichten und Konflikte)",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "ermahnung",
+        "unter_vier_augen",
+        "sachlich"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Ermahnung Lehrbetrieb was tun",
+          "Konflikt Berufsbildner ruhig bleiben",
+          "Gespräch nach Ermahnung"
+        ],
+        "selbst_pruefen": "Was ist der Unterschied zwischen lautem Schimpfen und einer sachlichen Ermahnung?"
+      }
+    },
+    {
+      "id": "nugget_B_03",
+      "tag": "B",
+      "titel": "Das Klärungsgespräch im Betrieb",
+      "inhalt": "Bereiten Sie Ihr Klärungsgespräch mit vier Punkten vor. Erstens: Bitten Sie ruhig um ein Gespräch unter vier Augen. Zweitens: Schildern Sie die Fakten ohne Ausreden. Drittens: Zeigen Sie Verständnis für die andere Sicht. Viertens: Schlagen Sie eine konkrete Lösung vor. Halten Sie dazu kurze Stichworte in Ihrem Gesprächsplan fest. Nutzen Sie diese beim Sprechen. Hören Sie zu und fragen Sie bei Unklarheiten nach.",
+      "beispiel": "Im Sportverein vereinbaren Sie nach einem Streit ein Gespräch. Sie notieren vorher Ihre Anliegen.",
+      "fuer_leitfrage": [
+        3
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Ein konstruktives Gespräch klärt Missverständnisse durch Fakten, Verständnis und konkrete Lösungen.",
+          "wert": "Konstruktives Klärungsgespräch",
+          "quelle": "berufsbildung.ch (Konfliktlösung im Betrieb)",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "klaerungsgespraech",
+        "gespraechsplan",
+        "loesungsvorschlag"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Klärungsgespräch Lehrbetrieb vorbereiten",
+          "Feedback annehmen Lehrling",
+          "Gesprächsleitfaden Berufsbildner"
+        ],
+        "selbst_pruefen": "Welche vier Schritte gehören in einen guten Gesprächsplan?"
+      }
+    },
+    {
+      "id": "nugget_B_04",
+      "tag": "B",
+      "titel": "Schulabsenzen wegen Arbeit",
+      "inhalt": "Ein wichtiger Kundenauftrag allein entschuldigt keine Schulabsenz. Für geschäftliche Inanspruchnahme gelten enge Voraussetzungen. Ein ausserordentliches Ereignis muss einen bedeutenden Schaden bedrohen. Auch das übrige Personal muss für dieselbe Schadensabwehr arbeiten. Eine weitere Ausnahme betrifft auswärtige Arbeit, die für Ihre Ausbildung unumgänglich ist. Der Schulbesuch muss dabei unzumutbar sein. Sie müssen den Unterricht nacharbeiten können. Planen Sie eine Absenz? Reichen Sie das schriftliche Gesuch mindestens 14 Tage im Voraus ein. Nennen Sie den Grund. Sie und Ihr Lehrbetrieb unterschreiben. Sind Sie minderjährig, unterschreibt auch Ihre erziehungsberechtigte Person. Die Schulleitung entscheidet. Bei anderen Absenzen reichen Sie das Gesuch baldmöglichst ein. An der BBW haben Sie vier Wochen für Unterschrift und Vorlage bei der Lehrperson. Diese Schulfrist ersetzt kein Gesuch im Voraus.",
+      "beispiel": "Sie kennen einen Termin schon lange. Sie fragen frühzeitig nach dem Gesuch.",
+      "fuer_leitfrage": [],
+      "fakten_anker": [
+        {
+          "behauptung": "Geschäftliche Inanspruchnahme hat zwei eng begrenzte Gründe.",
+          "wert": "Ausnahmen",
+          "quelle": "Disziplinarreglement LS 413.322, § 5 lit. a und b",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Vorhersehbare Absenzen mindestens 14 Tage vorher schriftlich beantragen.",
+          "wert": "14 Tage",
+          "quelle": "Disziplinarreglement LS 413.322, §§ 7–9",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Vier Wochen für Unterschrift und Vorlage bei der Lehrperson.",
+          "wert": "vier Wochen",
+          "quelle": "Auskunft Lehrperson BBW, 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "geschaeftliche_inanspruchnahme",
+        "schadensabwehr",
+        "schulleitungsentscheid"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Schulabsenz Gesuch Zürich",
+          "geschäftliche Inanspruchnahme Berufsfachschule"
+        ],
+        "selbst_pruefen": "Prüfen Sie: Welche Frist gilt für eine geplante Absenz?"
+      }
+    }
+  ],
+  "sprachmodi_scaffolds": [
+    {
+      "tag": "A",
+      "sm_id": "SM3",
+      "modus_label": "Lesen und Verstehen",
+      "satzanfaenge": [
+        "«Diese Regel bedeutet für mich …»",
+        "«Die Zuständigkeit liegt bei …, weil …»",
+        "«Meine Sicht der Tatsachen ist …»"
+      ],
+      "strategien": [
+        "Zuerst die Abschnitte und Überschriften überfliegen.",
+        "Fachwörter im Glossar klären.",
+        "Die Zuständigkeiten von Lehrperson und Schulleitung trennen."
+      ],
+      "struktur": [
+        "Vorfall beschreiben – Regel nennen – Zuständigkeit bestimmen",
+        "Pro Punkt ein klarer Gedanke"
+      ],
+      "so_gehst_du_vor": [
+        "1. Lesen Sie den Fall und markieren Sie den Vorwurf.",
+        "2. Prüfen Sie Info-Karte A-02 im Dossier.",
+        "3. Bestimmen Sie, wer zuständig ist.",
+        "4. Wählen Sie Ihre Haltung in der Denkhilfe (S. 4).",
+        "5. Formulieren Sie Ihre sachliche Klärungsnotiz."
+      ]
+    },
+    {
+      "tag": "B",
+      "sm_id": "SM8",
+      "modus_label": "Mündlich interagieren",
+      "satzanfaenge": [
+        "«Darf ich kurz unter vier Augen mit Ihnen sprechen?»",
+        "«Ich verstehe Ihren Standpunkt, weil …»",
+        "«Mein Vorschlag für das nächste Mal ist …»"
+      ],
+      "strategien": [
+        "Ruhig bleiben und die Vorwürfe nicht persönlich nehmen.",
+        "Den richtigen Moment wählen (nach Feierabend oder in einer Pause).",
+        "Eigene Fehler zugeben und eine Lösung anbieten."
+      ],
+      "struktur": [
+        "Einstieg – Tatsachen – Verständnis – Lösungsvorschlag",
+        "Kurze Stichworte im Gesprächsplan"
+      ],
+      "so_gehst_du_vor": [
+        "1. Halten Sie die Tatsachen von Heft B, Seite 1, fest.",
+        "2. Klären Sie die Regeln im Raster auf Heftseite 3.",
+        "3. Finden Sie einen lösungsorientierten Vorschlag (S. 4).",
+        "4. Schreiben Sie Ihren 4-Punkte-Plan auf (S. 5).",
+        "5. Üben Sie das Gespräch mit einer Partnerin oder einem Partner."
+      ]
+    }
+  ],
+  "transfer_wissensblatt": {
+    "fachsystematik": "Regeln in Schule und Betrieb geben Orientierung und schaffen Verlässlichkeit. Kommt es zu Missverständnissen oder Vorwürfen, gilt ein klares Vorgehen: Zuerst Fakten und Zuständigkeiten prüfen. Dann die eigene Haltung wählen und die Sache im sachlichen Gespräch klären.",
+    "prinzip_in_einfach": "Regeln und Zuständigkeiten kennen. Bei Vorwürfen ruhig bleiben und das respektvolle Gespräch suchen."
+  },
+  "glossar": [
+    {
+      "id": "leitbild",
+      "begriff": "Leitbild",
+      "erklaerung_a2": "Ein Text mit den wichtigsten Werten und Zielen einer Schule.",
+      "beispiel": "Im Leitbild der BBW steht der Wert Respekt."
+    },
+    {
+      "id": "respekt",
+      "begriff": "Respekt",
+      "erklaerung_a2": "Anderen Menschen mit Höflichkeit und Wertschätzung begegnen.",
+      "beispiel": "Ich höre der Lehrperson aufmerksam zu."
+    },
+    {
+      "id": "haltung",
+      "begriff": "Haltung",
+      "erklaerung_a2": "Zu seinen Werten stehen und sich gegen falsches Verhalten einsetzen.",
+      "beispiel": "Wir zeigen Haltung gegen Mobbing."
+    },
+    {
+      "id": "verantwortung",
+      "begriff": "Verantwortung",
+      "erklaerung_a2": "Für das eigene Tun einstehen und die Folgen tragen.",
+      "beispiel": "Ich übernehme Verantwortung für meine Arbeit."
+    },
+    {
+      "id": "reglement",
+      "begriff": "Reglement",
+      "erklaerung_a2": "Ein offizieller Text mit festen Regeln.",
+      "beispiel": "Das Disziplinarreglement gilt an der Berufsfachschule."
+    },
+    {
+      "id": "zustaendigkeit",
+      "begriff": "Zuständigkeit",
+      "erklaerung_a2": "Die Aufgabe oder das Recht, etwas Bestimmtes zu entscheiden.",
+      "beispiel": "Die Schulleitung ist für Verweise zuständig."
+    },
+    {
+      "id": "lehrperson",
+      "begriff": "Lehrperson",
+      "erklaerung_a2": "Die Person, die den Unterricht an der Schule leitet.",
+      "beispiel": "Die Lehrperson kann störende Handys einziehen."
+    },
+    {
+      "id": "schulleitung",
+      "begriff": "Schulleitung",
+      "erklaerung_a2": "Die Leitung der gesamten Berufsfachschule.",
+      "beispiel": "Die Schulleitung entscheidet über schriftliche Verweise."
+    },
+    {
+      "id": "disziplinarmassnahme",
+      "begriff": "Disziplinarmassnahme",
+      "erklaerung_a2": "Eine Strafe oder Folge bei einem Regelverstoss.",
+      "beispiel": "Ein schriftlicher Verweis ist eine Disziplinarmassnahme."
+    },
+    {
+      "id": "rechtliches_gehoer",
+      "begriff": "rechtliches Gehör",
+      "erklaerung_a2": "Das Recht, seine eigene Sicht vor einer Strafe zu erklären.",
+      "beispiel": "Vor dem Entscheid darf der Lernende seine Sicht sagen."
+    },
+    {
+      "id": "klaerungsnotiz",
+      "begriff": "Klärungsnotiz",
+      "erklaerung_a2": "Ein kurzer schriftlicher Text, um einen Vorfall zu erklären.",
+      "beispiel": "Ich schreibe eine Notiz an die Lehrperson."
+    },
+    {
+      "id": "sachlich",
+      "begriff": "sachlich",
+      "erklaerung_a2": "Ruhig bei den Tatsachen bleiben, ohne Wut oder Vorwürfe.",
+      "beispiel": "Wir sprechen sachlich über den Vorfall."
+    },
+    {
+      "id": "weisungsrecht",
+      "begriff": "Weisungsrecht",
+      "erklaerung_a2": "Das Recht der Arbeitgeberin oder des Arbeitgebers, Anweisungen zur Arbeit zu geben.",
+      "beispiel": "Der Berufsbildner darf Pausenzeiten anordnen."
+    },
+    {
+      "id": "sorgfaltspflicht",
+      "begriff": "Sorgfaltspflicht",
+      "erklaerung_a2": "Die Pflicht, bei der Arbeit gut aufzupassen und Material zu schonen.",
+      "beispiel": "Ich reinige Werkzeuge sorgfältig."
+    },
+    {
+      "id": "betriebsregeln",
+      "begriff": "Betriebsregeln",
+      "erklaerung_a2": "Die Regeln, die am Arbeitsplatz im Lehrbetrieb gelten.",
+      "beispiel": "Die Betriebsregeln bestimmen die Pausenzeiten."
+    },
+    {
+      "id": "berufsbildner",
+      "begriff": "Berufsbildner/in",
+      "erklaerung_a2": "Die verantwortliche Fachperson für die Ausbildung im Betrieb.",
+      "beispiel": "Mein Berufsbildner erklärt mir neue Aufgaben."
+    },
+    {
+      "id": "ermahnung",
+      "begriff": "Ermahnung",
+      "erklaerung_a2": "Ein Hinweis auf einen Fehler mit der Aufforderung, sich zu bessern.",
+      "beispiel": "Die Berufsbildnerin spricht eine mündliche Ermahnung aus."
+    },
+    {
+      "id": "unter_vier_augen",
+      "begriff": "unter vier Augen",
+      "erklaerung_a2": "Ein Gespräch nur zwischen zwei Personen, ohne Zuhörer.",
+      "beispiel": "Sie besprechen das Problem unter vier Augen mit Ihrer Berufsbildnerin."
+    },
+    {
+      "id": "klaerungsgespraech",
+      "begriff": "Klärungsgespräch",
+      "erklaerung_a2": "Ein Gespräch, um ein Problem gemeinsam zu lösen.",
+      "beispiel": "Im Klärungsgespräch finden wir eine Lösung."
+    },
+    {
+      "id": "gespraechsplan",
+      "begriff": "Gesprächsplan",
+      "erklaerung_a2": "Ein Stichwortblatt mit den Schritten für ein Gespräch.",
+      "beispiel": "Mein Gesprächsplan hat vier Punkte."
+    },
+    {
+      "id": "loesungsvorschlag",
+      "begriff": "Lösungsvorschlag",
+      "erklaerung_a2": "Eine konkrete Idee, wie man ein Problem lösen kann.",
+      "beispiel": "Ich schlage vor, die Zeit nachzuarbeiten."
+    },
+    {
+      "id": "geschaeftliche_inanspruchnahme",
+      "begriff": "geschäftliche Inanspruchnahme",
+      "erklaerung_a2": "Der Betrieb braucht Sie während der Schulzeit.",
+      "beispiel": "Sie prüfen die Voraussetzungen für das Gesuch in Info-Karte B-04."
+    },
+    {
+      "id": "schadensabwehr",
+      "begriff": "Schadensabwehr",
+      "erklaerung_a2": "Handeln, um einen grossen Schaden vom Betrieb abzuwenden.",
+      "beispiel": "Nach einem Rohrbruch hilft das Team, einen grossen Schaden zu verhindern."
+    },
+    {
+      "id": "schulleitungsentscheid",
+      "begriff": "Schulleitungsentscheid",
+      "erklaerung_a2": "Der offizielle Entscheid der Schulleitung über ein Urlaubsgesuch.",
+      "beispiel": "Die Schulleitung entscheidet über das Gesuch."
+    }
+  ],
+  "leseblatt": {
+    "titel": "Lesen und Verstehen: Regeln in Schule und Betrieb",
+    "einleitung": "Lesen Sie den Text ruhig durch. Beantworten Sie danach die Aufgaben. Sie dürfen im Text nachschauen.",
+    "gesamttext_quelle": "nuggets",
+    "richtig_falsch": [
+      {
+        "text": "Das Leitbild der BBW nennt sechs Werte für die Schulkultur.",
+        "loesung": true
+      },
+      {
+        "text": "Eine Lehrperson darf Lernenden ohne Schulleitung eine Busse von Fr. 100.- geben.",
+        "loesung": false
+      },
+      {
+        "text": "Lernende haben vor jeder Disziplinarmassnahme das Recht auf rechtliches Gehör.",
+        "loesung": true
+      },
+      {
+        "text": "Der Berufsbildner darf durch sein Weisungsrecht Regeln zu Pausenzeiten erlassen.",
+        "loesung": true
+      },
+      {
+        "text": "Nach einer Ermahnung soll man sofort vor dem ganzen Team laut widersprechen.",
+        "loesung": false
+      }
+    ],
+    "w_fragen": [
+      "Welche Massnahmen darf eine Lehrperson bei Störungen im Unterricht selbst anordnen?",
+      "Was bedeutet rechtliches Gehör für Lernende?",
+      "Warum hilft ein Gespräch unter vier Augen bei einem Streit?"
+    ],
+    "vokabeln": [
+      "leitbild",
+      "reglement",
+      "zustaendigkeit",
+      "rechtliches_gehoer",
+      "weisungsrecht",
+      "klaerungsgespraech"
+    ]
+  }
+}

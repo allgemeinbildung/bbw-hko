@@ -1,0 +1,172 @@
+{
+  "id": "1.2.1_regeln_schule_betrieb_prinzip",
+  "modul": "1.2",
+  "kompetenz_nr": "1.2.1",
+  "topic_slug": "regeln_schule_betrieb",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-11-03",
+  "kern_kompetenzversprechen": "Ich kenne wichtige Regeln und Zuständigkeiten in Schule und Betrieb. Ich kläre Unklarheiten oder Vorwürfe respektvoll.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Schulregeln verstehen",
+      "konfliktart": "Eigene Sicht erklären vs. Verantwortung übernehmen",
+      "handlungsprodukt_typ": "Schriftliche Klärungsnotiz an die Lehrperson (A4-Formular, ca. 60–80 Wörter)",
+      "kompetenzen": [
+        "1.2.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Betriebsregeln einhalten",
+      "konfliktart": "Ärger herunterschlucken vs. das Gespräch suchen",
+      "handlungsprodukt_typ": "Gesprächsplan für das Klärungsgespräch mit dem Berufsbildner (Stichwortblatt mit 4 Punkten)",
+      "kompetenzen": [
+        "1.2.1"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      2,
+      7,
+      10
+    ],
+    "B": [
+      2,
+      7,
+      10
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      2,
+      7,
+      10
+    ]
+  },
+  "aspekte": {
+    "Recht": "R1"
+  },
+  "modi_units": [
+    "Rezeption schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Interaktion und Kollaboration mündlich",
+    "Produktion schriftlich und bildlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Regeln strikt befolgen vs. im Einzelfall nachfragen und klären",
+      "Eigene Sicht erklären vs. Verantwortung übernehmen",
+      "Ärger herunterschlucken vs. das Gespräch suchen",
+      "Betriebliche Anforderungen vs. schulische Pflichten abwägen"
+    ],
+    "verbindlich": "Regeln geben Orientierung, aber nicht jede Situation ist eindeutig. Wichtig ist, dass ich die Zuständigkeit kenne und mich respektvoll und sachlich verhalte."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Regeln schaffen Verlässlichkeit im Zusammenleben. Bei Unklarheiten oder Vorwürfen kenne ich die Zuständigkeit und suche das respektvolle Gespräch.",
+    "transferfeld": "Jede Regel in Schule, Betrieb, Verein oder im öffentlichen Raum, bei der es zu Missverständnissen oder Vorwürfen kommt."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T3 'Konflikte und Recht im Alltag' — rechtliche Rahmenbedingungen und Konfliktlösung vertieft.",
+    "r3_voraussicht": "T6 'Verträge und Arbeitsrecht' — Rechte und Pflichten im Arbeitsverhältnis vertieft."
+  },
+  "quellen_anker": {
+    "dossier_nuggets": [
+      {
+        "ref": "Dossier",
+        "herausforderung": "A",
+        "nuggets": "Info-Karte A-01 bis A-03"
+      },
+      {
+        "ref": "Dossier",
+        "herausforderung": "B",
+        "nuggets": "Info-Karte B-01 bis B-03"
+      }
+    ],
+    "konzepte": [
+      "Leitbild",
+      "Reglement",
+      "Zuständigkeit",
+      "Lehrperson",
+      "Schulleitung",
+      "rechtliches Gehör",
+      "Weisungsrecht",
+      "Sorgfaltspflicht",
+      "Pausenregelung",
+      "Ermahnung",
+      "Verwarnung",
+      "Klärungsgespräch",
+      "Disziplinarmassnahme",
+      "geschäftliche Inanspruchnahme"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 1,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EBA, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei Mini-Herausforderungen hintereinander.",
+      "Regelverstoss und Zuständigkeit sind zugleich sichtbar, ohne benannt zu werden.",
+      "Das Spannungsfeld «Regeln strikt befolgen vs. im Einzelfall nachfragen und klären» spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand als in Heft A, Heft B und im gemeinsamen Auftrag.",
+      "A2: kurze Sätze, höchstens 18 Wörter, Fachwörter nur aus dem Glossar."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Spezialwerkzeug",
+      "Werkzeugschrank",
+      "Lehrwerkstätte"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "B": [
+      "Rezeption schriftlich und bildlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Rechtliches Prinzip"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "recht_praxis"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Regeln verstehen und klären",
+  "modi_auftrag": [
+    "Produktion schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_auftrag_herleitung": "modi_kn − (modi_pro_heft.A ∪ modi_pro_heft.B); der Auftrag führt schriftliche Produktion (drei Prüfstationen) und mündliche Interaktion (Rollenspiel).",
+  "auftrag_lebensbereich": "Arbeitswelt Schnittstelle"
+}

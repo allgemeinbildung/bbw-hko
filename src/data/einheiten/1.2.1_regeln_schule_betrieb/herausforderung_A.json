@@ -1,0 +1,648 @@
+{
+  "id": "1.2.1_regeln_schule_betrieb_hf_A",
+  "template": "heft_8page_v42",
+  "modul": "1.2",
+  "modul_titel": "Ins Berufsleben einsteigen — Regeln in Schule und Betrieb",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "A",
+  "sit_farbe": "#C0392B",
+  "sit_farbe_light": "#FADBD8",
+  "sit_farbe_mid": "#E74C3C",
+  "titel": "Schulregeln an der Berufsfachschule",
+  "herausforderung": {
+    "buchstabe": "A",
+    "label": "Schulregeln verstehen"
+  },
+  "prinzip_ref": "1.2.1_regeln_schule_betrieb_prinzip",
+  "nrlp": {
+    "nr": "1.2.1",
+    "nr_primary": [
+      "1.2.1"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      2,
+      7,
+      10
+    ],
+    "kompetenz_id": "1.2.1",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann zentrale Aussagen zu Regeln und Zuständigkeiten in Schule und Betrieb beschreiben und verhalte mich in typischen Situationen respektvoll und verständlich.",
+    "lebensbezug_text": "Ich gehe im Alltag und im Beruf sorgsam mit mir um und kommuniziere klar und respektvoll."
+  },
+  "persona": {
+    "beruf": "Lernende/r EBA, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Im Unterricht macht mein Sitznachbar heimlich ein Foto. Auch die Lehrperson ist darauf zu sehen. Niemand hat ihr Einverständnis eingeholt. Mein Sitznachbar stellt das Foto in den Klassen-Chat. Die Lehrperson zieht sein Smartphone ein. Sie wirft auch mir vor, beim Foto mitgemacht zu haben. Sie will bei der Schulleitung einen schriftlichen Verweis beantragen. Ich erschrecke. Ich habe das Foto weder gemacht noch verschickt. Die Lehrperson hört mir gerade nicht zu. Wie erkläre ich ihr respektvoll und sachlich meine Sicht?",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie erkläre ich der Lehrperson respektvoll und sachlich meine Sicht?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Eigene Sicht erklären vs. Verantwortung übernehmen",
+    "hint": "Bleiben Sie ruhig und sachlich. Nennen Sie die Tatsachen und anerkennen Sie zugleich die Schulregeln."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Werte und Leitbild",
+      "unterueberschrift": "Sechs Werte der BBW",
+      "seiten": "Info-Karte A-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Schulregeln an der BBW",
+      "unterueberschrift": "Rechte und Zuständigkeiten",
+      "seiten": "Info-Karte A-02",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Rechtliches Gehör",
+      "unterueberschrift": "Eigene Sicht erklären",
+      "seiten": "Info-Karte A-03",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Drei Leitfragen führen Sie Schritt für Schritt zu Ihrer schriftlichen Klärungsnotiz.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte A-01",
+      "text": "Lesen Sie die Info-Karten A-01 und A-02 im Dossier. Welche Regeln gelten für elektronische Geräte und das Verhalten im Schulzimmer?",
+      "liefert": "Schulregeln und Werte im Überblick",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 60,
+      "scaffolding": {
+        "strategien": [
+          "Überfliegen Sie die Info-Karte A-01 zu den Werten der BBW.",
+          "Suchen Sie in Info-Karte A-02 die Regeln zu Bild- und Tonaufnahmen.",
+          "Notieren Sie die wichtigsten Regeln in kurzen Stichworten."
+        ],
+        "satzanfaenge": [
+          "«Im Leitbild der BBW steht der Wert …»",
+          "«Für Aufnahmen brauche ich …»",
+          "«Für den Unterricht gilt die Regel …»"
+        ],
+        "produkt": "Diese Regeln brauchen Sie für Ihre Klärungsnotiz."
+      },
+      "loesung": {
+        "kern": "Aufnahmen ohne Erlaubnis verboten; Respekt im Leitbild",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Die Schulregeln zu Mobilgeräten und die Werte aus dem Leitbild der BBW sind genannt.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Bild- und Tonaufnahmen",
+            "text": "Bild- und Tonaufnahmen brauchen die ausdrückliche Genehmigung der betroffenen Person (§ 10 lit. e).",
+            "quelle": "Info-Karte A-02"
+          },
+          {
+            "label": "Werte der BBW",
+            "text": "Das Leitbild nennt sechs Grundwerte: Verantwortung, Respekt, Gelassenheit, Verbindlichkeit, Haltung, Vielfalt.",
+            "quelle": "Info-Karte A-01"
+          },
+          {
+            "label": "Häufiger Fehler",
+            "text": "Ein allgemeines Handyverbot behaupten: Das Reglement verbietet hier die Aufnahme ohne Genehmigung, nicht jedes Handy."
+          }
+        ]
+      }
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 2,
+          "bloom": "Anwenden",
+          "knoten_ref": "Dossier | Info-Karte A-02",
+          "text": "Füllen Sie das Raster aus: Wer darf was entscheiden? Ordnen Sie zwei Vorfälle zu.",
+          "liefert": "Zuordnung von Vorfällen und Zuständigkeiten",
+          "antwortform": "raster",
+          "feld_hoehe_mm": 30,
+          "raster": {
+            "knoten_ref": "Dossier | Info-Karte A-02",
+            "auftrag": "Lesen Sie Info-Karte A-02. Zeile 1 ist ausgefüllt. Ergänzen Sie Zeile 2 und 3.",
+            "spalten": [
+              "Vorfall",
+              "Schulregel",
+              "Wer entscheidet?",
+              "→ Begriff"
+            ],
+            "zeilen": 3,
+            "beispielzeile": [
+              "Foto ohne Genehmigung",
+              "Genehmigung nötig",
+              "Lehrperson zieht ein",
+              "Disziplinarmassnahme"
+            ]
+          },
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie zuerst die Beispielzeile im Raster.",
+              "Prüfen Sie die Zuständigkeiten in Info-Karte A-02.",
+              "Tragen Sie die Fachbegriffe in die letzte Spalte ein."
+            ],
+            "satzanfaenge": [
+              "«Die Lehrperson ist zuständig für …»",
+              "«Die Schulleitung entscheidet über …»",
+              "«Der passende Begriff lautet …»"
+            ],
+            "produkt": "Die Tabelle zeigt, wer an der Schule welche Entscheide treffen darf."
+          },
+          "loesung": {
+            "kern": "Zuständigkeit von Lehrperson und Schulleitung",
+            "quelle_ref": "Dossier | Info-Karte A-02",
+            "quelle_stand": "2026-11-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Drei Zeilen. Die Lehrperson regelt den Unterricht direkt. Bussen und Verweise verfügt nur die Schulleitung.",
+                "quelle": "Info-Karte A-02"
+              },
+              {
+                "label": "Zuständigkeit",
+                "text": "Lehrpersonen dürfen Handys zeitweilig einziehen. Die Schulleitung spricht schriftliche Verweise aus.",
+                "quelle": "Info-Karte A-02"
+              },
+              {
+                "label": "Begriffe",
+                "text": "In der letzten Spalte stehen Fachwörter wie Lehrperson, Schulleitung oder Disziplinarmassnahme."
+              },
+              {
+                "label": "Befund",
+                "text": "Zeigt den Unterschied zwischen Unterrichtsregeln und Massnahmen der Schulleitung.",
+                "quelle": "Info-Karte A-02"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Foto ohne Genehmigung",
+                "Genehmigung nötig",
+                "Lehrperson zieht ein",
+                "Disziplinarmassnahme"
+              ],
+              [
+                "Unterricht stören",
+                "Störungen untersagt",
+                "Lehrperson weist weg",
+                "Lehrperson"
+              ],
+              [
+                "Schwere Störung",
+                "Regeln einhalten",
+                "Schulleitung verfügt Verweis",
+                "Schulleitung"
+              ]
+            ],
+            "befund": "Lehrpersonen können während des Unterrichts Gegenstände zeitweilig einziehen. Schriftliche Verweise verfügt die Schulleitung; nur dabei sind Bussen möglich."
+          }
+        },
+        {
+          "nr": 3,
+          "bloom": "Entscheiden",
+          "knoten_ref": "Info-Karte A-03 ↔ eigener Fall",
+          "pol_typ": "recht_praxis",
+          "text": "Wie reagiere ich auf den falschen Vorwurf? Prüfen Sie beide Wege in der Denkhilfe. Wählen Sie einen Weg und begründen Sie Ihre Wahl.",
+          "liefert": "Zwei Wege und eine begründete Wahl",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie Info-Karte A-03 zum rechtlichen Gehör.",
+              "Wägen Sie ab: Sofort rechtfertigen oder sachlich bleiben?",
+              "Schreiben Sie Ihre Begründung mit einem Satzanfang."
+            ],
+            "satzanfaenge": [
+              "«Ich wähle die Haltung …, weil …»",
+              "«Das rechtliche Gehör bedeutet für mich, dass …»",
+              "«Mein nächster Schritt ist …»"
+            ],
+            "produkt": "Die Begründung bildet den Kern Ihrer Klärungsnotiz."
+          },
+          "loesung": {
+            "kern": "Sachlich bleiben und rechtliches Gehör nutzen",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Beide Wege sind abgewogen. Ein Weg ist mit Grund gewählt.",
+                "Der Unterschied zwischen sofortiger Wut und sachlicher Klärung wird deutlich.",
+                "Das rechtliche Gehör wird als Chance für ein klärendes Gespräch verstanden."
+              ],
+              "beispiel_pol_1": "Laut widersprechen: Der Ärger ist verständlich, aber ein Streit erschwert die Klärung.",
+              "beispiel_pol_2": "Sachlich klären: Ich habe weder fotografiert noch verschickt. Ich möchte vor einem Entscheid meine Sicht erklären. Keine Pflicht erfinden, den Sitznachbarn zu stoppen.",
+              "nicht_tragfaehig": "Laut werden, die Lehrperson beschimpfen oder den Vorwurf einfach ignorieren."
+            }
+          }
+        }
+      ],
+      "methoden_ref_rezeption": {
+        "ref": "hko-eba-raster-fuellen",
+        "fuer": "für das Raster zur Info-Karte (S. 3)"
+      },
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe – zuerst hier Stichworte, dann schreiben",
+        "spalten": [
+          "Laut widersprechen: Folgen",
+          "Sachlich klären: Folgen",
+          "Mein Weg mit Grund"
+        ],
+        "hinweis": "Schreiben Sie in jede Spalte ein bis zwei Stichworte. Begründen Sie danach Ihre Wahl im Schreibfeld.",
+        "loesung_zeilen": [
+          [
+            "Streit verstärkt den Vorwurf",
+            "Eigene Sicht wird hörbar",
+            "Sachlich klären: Gehör nutzen"
+          ]
+        ]
+      }
+    }
+  },
+  "handlungsprodukt": {
+    "titel": "Schriftliche Klärungsnotiz an die Lehrperson",
+    "form": "A4-Notizblatt (60–80 Wörter)",
+    "abgaben": [
+      "Klärungsnotiz an die Lehrperson",
+      "Raster von Seite 3",
+      "Selbsteinschätzung mit zwei Kriterien"
+    ],
+    "schritte": [
+      {
+        "label": "01 Fakten sammeln",
+        "hint": "Notieren Sie die Fakten von Seite 1 und die Regel von Seite 2. Nutzen Sie das Beispiel auf Seite 5."
+      },
+      {
+        "label": "02 Regel nennen",
+        "hint": "Nennen Sie die verletzte Schulregel und die Zuständigkeit aus dem Raster (S. 3)."
+      },
+      {
+        "label": "03 Eigene Sicht schildern",
+        "hint": "Formulieren Sie Ihren Standpunkt sachlich mit Ihrer Haltung aus Leitfrage 3 (S. 4)."
+      },
+      {
+        "label": "04 Gespräch vorschlagen",
+        "hint": "Bitten Sie am Schluss um ein kurzes Klärungsgespräch nach dem Unterricht (S. 5)."
+      },
+      {
+        "label": "05 Prüfen",
+        "hint": "Lesen Sie die zwei Kriterien (S. 7). Kreuzen Sie bei jedem Kriterium ein Feld an. Verbessern Sie Ihre Notiz."
+      }
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einer anderen Situation: Vorfall in der Bibliothek",
+      "legende": [
+        {
+          "key": "wichtig",
+          "text": "wichtige Angabe"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Klärungsnotiz Bibliothek",
+          "kopf": [
+            "Abschnitt",
+            "Inhalt",
+            "Bedeutung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Vorfall",
+                "Buch zu spät zurückgebracht",
+                "Tatsache"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "Regel",
+                "Leihfrist laut Ausleihzettel",
+                "Rückgabetermin beachten"
+              ]
+            },
+            {
+              "zellen": [
+                "Ansprechperson",
+                "Ausleihe um Klärung bitten",
+                "Frist nachfragen"
+              ],
+              "marke": "wichtig"
+            }
+          ]
+        },
+        {
+          "titel": "Erklärung",
+          "eintraege": [
+            {
+              "text": "Ich erkläre sachlich, warum die Rückgabe verspätet war, und bezahle die Gebühr."
+            },
+            {
+              "text": "Meine Frage: «Kann ich die Frist in der Ausleihe online verlängern?»"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung: Klärungsnotiz an die Lehrperson",
+      "hinweis": "Eine mögliche Lösung, keine starre Vorlage. Wichtig ist die sachliche Trennung von Vorfall, Regel und eigener Sicht.",
+      "legende": [
+        {
+          "key": "wichtig",
+          "text": "wichtige Angabe"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Klärungsnotiz Schulzimmer",
+          "kopf": [
+            "Schritt",
+            "Inhalt",
+            "Fachbegriff"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "1. Vorfall",
+                "Foto im Unterricht durch Sitznachbar",
+                "Tatsache"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "2. Schulregel",
+                "Aufnahmen nur mit Genehmigung (§ 10)",
+                "Reglement"
+              ]
+            },
+            {
+              "zellen": [
+                "3. Zuständigkeit",
+                "Handyeinzug durch Lehrperson (§ 14)",
+                "Zuständigkeit"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "4. Recht",
+                "Stellungnahme vor Verweis (§ 15)",
+                "rechtliches Gehör"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Erklärung und Bitte",
+          "eintraege": [
+            {
+              "text": "Ich habe das Foto weder aufgenommen noch verschickt. Ich respektiere die Regeln zu Aufnahmen."
+            },
+            {
+              "text": "Ich bitte um ein persönliches Gespräch von 5 Minuten nach dem Unterricht, um die Sache zu klären."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Fachkorrektheit",
+      "name_lernende": "Fachwörter und Sprache",
+      "dimension": "SuK",
+      "stufen": [
+        "Fachwörter fehlen oder sind falsch. Sprache fehlerhaft.",
+        "Einige Fachwörter stimmen. Sprache hat noch Fehler.",
+        "Fachwörter stimmen und passen. Sprache meist richtig.",
+        "Fachwörter stimmen, mit eigenen Worten erklärt. Sprache richtig."
+      ],
+      "stufen_lernende": [
+        "Ich nutze beim Schreiben falsche Fachwörter. Meine Sprache ist fehlerhaft.",
+        "Ich nutze beim Schreiben einige Fachwörter richtig. Meine Sprache hat Fehler.",
+        "Ich nutze beim Schreiben passende Fachwörter. Meine Sprache ist meist richtig.",
+        "Ich erkläre beim Schreiben die Fachwörter selbst. Meine Sprache ist richtig."
+      ],
+      "indikator_produkt": "Die Wörter Reglement, Zuständigkeit und rechtliches Gehör sind richtig genutzt."
+    },
+    {
+      "kn_kriterium": "Rechtliches Prinzip",
+      "name_lernende": "Regeln und Zuständigkeiten erkennen",
+      "dimension": "Ges",
+      "stufen": [
+        "Regeln und Zuständigkeiten fehlen. Vorgehen unklar.",
+        "Regeln oder Zuständigkeiten teilweise erkannt. Vorgehen unsicher.",
+        "Regeln und Zuständigkeiten erkannt. Vorgehen passt zum Fall.",
+        "Regeln und Zuständigkeiten genau und sicher angewendet."
+      ],
+      "stufen_lernende": [
+        "Ich erkenne beim Schreiben keine Regeln. Ich weiss nicht, wer entscheidet.",
+        "Ich erkenne beim Schreiben einige Regeln. Mein Vorgehen ist unsicher.",
+        "Ich erkenne beim Schreiben Regeln und Zuständigkeiten. Mein Vorgehen passt.",
+        "Ich wende beim Schreiben Regeln und Zuständigkeiten genau und sicher an."
+      ],
+      "indikator_produkt": "Der Unterschied zwischen Lehrperson und Schulleitung ist klar beschrieben."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Nutzen Sie die Beispielzeile auf Seite 3. Das andere Beispiel steht auf Seite 5.",
+    "scaffold_100": "Formulieren Sie eine ruhige Rückfrage zum Vorwurf. Erklären Sie, wie diese Frage bei der Klärung hilft."
+  },
+  "methoden": [
+    {
+      "ref": "hko-eba-formular-ueberfliegen",
+      "fuer": "für den ersten Überblick über Info-Karte A-02"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-eba-wort-klaeren",
+      "fuer": "für Fachwörter wie Reglement oder Zuständigkeit"
+    },
+    {
+      "ref": "hko-eba-nachricht-aufbauen",
+      "fuer": "für den Aufbau Ihrer Klärungsnotiz"
+    }
+  ],
+  "mindmap_zentrum": "Regeln verstehen und klären",
+  "mindmap_aeste": [
+    {
+      "titel": "Schulregeln",
+      "punkte": [
+        "Leitbild",
+        "Reglement",
+        "Zuständigkeit"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Verstösse und Folgen",
+      "punkte": [
+        "Lehrperson",
+        "Schulleitung",
+        "Disziplinarmassnahme"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Meine Rechte",
+      "punkte": [
+        "rechtliches Gehör",
+        "sachlich"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, wer an der Berufsschule einen Verweis aussprechen darf?",
+      "Kann ich den Vorfall in meiner Klärungsnotiz sachlich beschreiben?"
+    ],
+    "mitnahme": [
+      "Mein wichtigster Grundsatz",
+      "Mein nächster Schritt",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Leitbild",
+          "nach": "Reglement",
+          "text": "ist Grundlage für"
+        },
+        {
+          "von": "Reglement",
+          "nach": "Zuständigkeit",
+          "text": "bestimmt die"
+        },
+        {
+          "von": "Zuständigkeit",
+          "nach": "Disziplinarmassnahme",
+          "text": "regelt jede"
+        },
+        {
+          "von": "rechtliches Gehör",
+          "nach": "sachlich",
+          "text": "verlangt Auftreten"
+        },
+        {
+          "von": "Reglement",
+          "nach": "gilt auch bei …",
+          "text": "gibt es auch dort"
+        }
+      ],
+      "transfer": "Sportverein, Jugendtreff, öffentliche Bibliothek",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Lehrperson",
+          "Schulleitung"
+        ]
+      },
+      "quercheck": [
+        "Ja: Nur die Schulleitung darf einen schriftlichen Verweis aussprechen (§ 14).",
+        "Ja: Ich beschreibe die Tatsachen sachlich und ohne Vorwürfe."
+      ],
+      "mitnahme": [
+        "Bei einem Vorwurf ruhig bleiben und das rechtliche Gehör nutzen.",
+        "Die Klärungsnotiz mit Tatsachen und Bitte um ein Gespräch vorbereiten.",
+        "Welche weiteren Regeln in der Hausordnung der BBW stehen."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Leitfrage 1 nennt Schulregeln und Leitbild-Werte",
+        "Leitfrage 3 prüft zwei Wege und wählt einen mit Grund",
+        "Leitfrage 3 zeigt ruhiges Vorgehen"
+      ]
+    },
+    {
+      "produkt": "Raster",
+      "vollstaendig_wenn": [
+        "Raster mit drei Zeilen ausgefüllt",
+        "Zuständigkeit von Lehrperson und Schulleitung getrennt",
+        "Fachbegriff in der letzten Spalte"
+      ]
+    },
+    {
+      "produkt": "Klärungsnotiz",
+      "vollstaendig_wenn": [
+        "Vorfall und Schulregel sachlich beschrieben",
+        "Eigene Haltung klar in der Ich-Form formuliert",
+        "Bitte um ein kurzes Gespräch enthalten"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Quer-Check: jede Frage abgehakt und beantwortet",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Leitfrage 1",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Leitfrage 2 mit Raster, Leitfrage 3",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Klärungsnotiz, Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": "Regeln und Zuständigkeiten an der Schule verstehen und bei Vorwürfen sachlich bleiben.",
+  "prinzip_handoff": "Die Unterscheidung von Unterrichtsregeln und formellen Disziplinarmassnahmen bereitet auf betriebliche Weisungen vor.",
+  "sk_anker": [
+    2,
+    7,
+    10
+  ]
+}

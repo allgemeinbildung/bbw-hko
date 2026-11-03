@@ -1,0 +1,663 @@
+{
+  "id": "1.2.1_regeln_schule_betrieb_hf_B",
+  "template": "heft_8page_v42",
+  "modul": "1.2",
+  "modul_titel": "Ins Berufsleben einsteigen — Regeln in Schule und Betrieb",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "B",
+  "sit_farbe": "#2E86C1",
+  "sit_farbe_light": "#EBF5FB",
+  "sit_farbe_mid": "#3498DB",
+  "titel": "Betriebsregeln im Lehrbetrieb",
+  "herausforderung": {
+    "buchstabe": "B",
+    "label": "Betriebsregeln einhalten"
+  },
+  "prinzip_ref": "1.2.1_regeln_schule_betrieb_prinzip",
+  "nrlp": {
+    "nr": "1.2.1",
+    "nr_primary": [
+      "1.2.1"
+    ],
+    "lebensbezug": "1.2",
+    "themen": [
+      "T1"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "Recht",
+        "iteration": "R1"
+      }
+    ],
+    "sprachmodi": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "sprachmodus_ids": [
+      "SM3"
+    ],
+    "sk": [
+      2,
+      7,
+      10
+    ],
+    "kompetenz_id": "1.2.1",
+    "lebensbezug_id": "1.2",
+    "kompetenz_text": "Ich kann zentrale Aussagen zu Regeln und Zuständigkeiten in Schule und Betrieb beschreiben und verhalte mich in typischen Situationen respektvoll und verständlich.",
+    "lebensbezug_text": "Ich gehe im Alltag und im Beruf sorgsam mit mir um und kommuniziere klar und respektvoll."
+  },
+  "persona": {
+    "beruf": "Lernende/r EBA, 1. Lehrjahr",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "Meine Vormittagspause im Betrieb dauert 15 Minuten. Heute helfe ich danach einer Kollegin bei einer Montage. Deshalb komme ich 10 Minuten zu spät an meinen Arbeitsplatz. Der Berufsbildner ermahnt mich laut vor dem ganzen Team. Er nennt mich unzuverlässig. Das kränkt mich. Ich wollte doch nur helfen. Wie kläre ich die Ermahnung ruhig unter vier Augen?",
+  "zahlen_tabelle": [],
+  "leitfrage": "Wie kläre ich die Ermahnung ruhig unter vier Augen?",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "Ärger herunterschlucken vs. das Gespräch suchen",
+    "hint": "Nehmen Sie die Kritik ernst. Suchen Sie ein ruhiges Gespräch unter vier Augen."
+  },
+  "quellen_anker": [
+    {
+      "ref": "Dossier",
+      "titel": "Regeln im Lehrbetrieb",
+      "unterueberschrift": "Weisung und Sorgfalt",
+      "seiten": "Info-Karte B-01",
+      "fuer_leitfrage": [
+        1
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Ermahnung im Betrieb",
+      "unterueberschrift": "Umgang mit Kritik",
+      "seiten": "Info-Karte B-02",
+      "fuer_leitfrage": [
+        1,
+        2
+      ]
+    },
+    {
+      "ref": "Dossier",
+      "titel": "Das Klärungsgespräch",
+      "unterueberschrift": "Vier Schritte zur Lösung",
+      "seiten": "Info-Karte B-03",
+      "fuer_leitfrage": [
+        3
+      ]
+    }
+  ],
+  "leitfragen_intro": "Drei Leitfragen führen Sie Schritt für Schritt zu Ihrem Gesprächsplan.",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "Dossier | Info-Karte B-01",
+      "text": "Lesen Sie die Info-Karten B-01 und B-02 im Dossier. Welche Rechte und Pflichten gelten für die Arbeitszeit und bei Ermahnungen im Betrieb?",
+      "liefert": "Betriebsregeln und Weisungsrecht im Überblick",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 60,
+      "scaffolding": {
+        "strategien": [
+          "Lesen Sie in Info-Karte B-01 die Erklärung zum Weisungsrecht.",
+          "Suchen Sie dort die Sorgfaltspflicht. Lesen Sie in B-02 den Zweck einer Ermahnung.",
+          "Notieren Sie zu jeder Regel ein Stichwort."
+        ],
+        "satzanfaenge": [
+          "«Der Arbeitgeber hat das Weisungsrecht, weil …»",
+          "«Als lernende Person habe ich die Pflicht, …»",
+          "«Eine Ermahnung erinnert mich daran, dass …»"
+        ],
+        "produkt": "Die Regeln helfen Ihnen, die Sicht des Ausbildners besser zu verstehen."
+      },
+      "loesung": {
+        "kern": "Weisungsrecht des Betriebs und Sorgfaltspflicht",
+        "zeilen": [
+          {
+            "label": "Erwartet",
+            "text": "Das Weisungsrecht des Betriebs und die Sorgfaltspflicht der Lernenden sind genannt.",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Weisungsrecht",
+            "text": "Der Betrieb darf verbindliche Weisungen zu Arbeits- und Pausenzeiten erteilen (OR Art. 321d).",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Sorgfaltspflicht",
+            "text": "Lernende müssen die Arbeit sorgfältig ausführen und pünktlich sein (OR Art. 321a).",
+            "quelle": "Info-Karte B-01"
+          },
+          {
+            "label": "Ermahnung",
+            "text": "Eine Ermahnung erinnert an die Pflichten und soll helfen, das Verhalten zu verbessern.",
+            "quelle": "Info-Karte B-02"
+          }
+        ]
+      }
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 2,
+          "bloom": "Anwenden",
+          "knoten_ref": "Dossier | Info-Karte B-01",
+          "text": "Füllen Sie das Raster aus. Ordnen Sie zwei weitere Situationen aus Info-Karte B-01 den passenden Pflichten zu.",
+          "liefert": "Zuordnung von Rechten und Pflichten im Betrieb",
+          "antwortform": "raster",
+          "feld_hoehe_mm": 30,
+          "raster": {
+            "knoten_ref": "Dossier | Info-Karte B-01",
+            "auftrag": "Lesen Sie die Info-Karte B-01. Im Raster ist die erste Zeile schon ausgefüllt. Füllen Sie Zeile 2 und 3 aus.",
+            "spalten": [
+              "Situation",
+              "Betriebsregel",
+              "Wer entscheidet?",
+              "→ Begriff"
+            ],
+            "zeilen": 3,
+            "beispielzeile": [
+              "Pause überzogen",
+              "Pausenzeit einhalten",
+              "Berufsbildner ermahnt",
+              "Ermahnung"
+            ]
+          },
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie zuerst die Beispielzeile im Raster.",
+              "Prüfen Sie die Vorgaben zu Weisungen und Sorgfalt in Info-Karte B-01.",
+              "Tragen Sie die passenden Fachbegriffe in die letzte Spalte ein."
+            ],
+            "satzanfaenge": [
+              "«Der Berufsbildner darf anordnen, dass …»",
+              "«Lernende müssen darauf achten, dass …»",
+              "«Der Fachbegriff lautet …»"
+            ],
+            "produkt": "Die Zuordnung zeigt, wer im Betrieb welche Vorgaben macht."
+          },
+          "loesung": {
+            "kern": "Betriebsregeln und Weisungsrecht des Arbeitgebers",
+            "quelle_ref": "Dossier | Info-Karte B-01",
+            "quelle_stand": "2026-11-03",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "Drei Zeilen. Der Betrieb bestimmt Pausenzeiten und Arbeitsabläufe. Lernende befolgen Weisungen.",
+                "quelle": "Info-Karte B-01"
+              },
+              {
+                "label": "Weisungsrecht",
+                "text": "Der Berufsbildner darf Arbeit und Verhalten anordnen (OR 321d).",
+                "quelle": "Info-Karte B-01"
+              },
+              {
+                "label": "Begriffe",
+                "text": "In der letzten Spalte stehen Fachwörter wie Weisungsrecht, Sorgfaltspflicht oder Ermahnung."
+              },
+              {
+                "label": "Befund",
+                "text": "Zeigt das Zusammenspiel von Weisungsrecht und Sorgfaltspflicht im Betrieb.",
+                "quelle": "Info-Karte B-01"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "Pause überzogen",
+                "Pausenzeit einhalten",
+                "Berufsbildner ermahnt",
+                "Ermahnung"
+              ],
+              [
+                "Arbeitsanweisung",
+                "Weisung befolgen",
+                "Berufsbildner bestimmt",
+                "Weisungsrecht"
+              ],
+              [
+                "Werkzeug kaputt",
+                "Sorgfalt bei Arbeit",
+                "Lernende melden Schaden",
+                "Sorgfaltspflicht"
+              ]
+            ],
+            "befund": "Der Betrieb bestimmt Pausen und Arbeitsabläufe. Ich halte mich an Weisungen und zeige Sorgfalt bei der Arbeit."
+          }
+        },
+        {
+          "nr": 3,
+          "bloom": "Entscheiden",
+          "knoten_ref": "Info-Karte B-03 ↔ eigener Fall",
+          "pol_typ": "position_gegenposition",
+          "text": "Wie reagiere ich auf die laute Ermahnung? Prüfen Sie beide Wege in der Denkhilfe. Wählen Sie einen Weg und begründen Sie Ihre Wahl.",
+          "liefert": "Zwei Wege und eine begründete Wahl",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie Info-Karte B-03 zum Klärungsgespräch.",
+              "Vergleichen Sie die Folgen: Ärger verschweigen oder ein ruhiges Gespräch suchen?",
+              "Notieren Sie Ihre Haltung mit einer klaren Begründung."
+            ],
+            "satzanfaenge": [
+              "«Ich reagiere so, weil …»",
+              "«Ein Gespräch unter vier Augen ist besser, da …»",
+              "«Mein Lösungsvorschlag lautet: …»"
+            ],
+            "produkt": "Ihre Haltung bildet den Einstieg in den 4-Punkte-Gesprächsplan."
+          },
+          "loesung": {
+            "kern": "Ruhe bewahren und Klärungsgespräch suchen",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "Beide Wege sind abgewogen. Ein Weg ist mit Grund gewählt.",
+                "Der Unterschied zwischen dauerhaftem Verschweigen des Ärgers und einem ruhigen Vier-Augen-Gespräch ist erkannt.",
+                "Fehler werden sachlich anerkannt und Lösungsvorschläge eingebracht."
+              ],
+              "beispiel_pol_1": "Ärger herunterschlucken: «Ich sage im ersten Moment nichts und atme tief durch, damit der Streit nicht vor allen eskaliert. Ich warte bis zum Feierabend.»",
+              "beispiel_pol_2": "Das Gespräch suchen: «Ich bitte den Berufsbildner nach der Schicht um ein Gespräch unter vier Augen. Dort erkläre ich ruhig, warum ich geholfen habe, entschuldige mich für das Überziehen und biete an, die Zeit nachzuarbeiten.»",
+              "nicht_tragfaehig": "Vor dem Team laut zurückschreien oder beleidigt den Arbeitsplatz verlassen."
+            }
+          }
+        }
+      ],
+      "methoden_ref_rezeption": {
+        "ref": "hko-eba-raster-fuellen",
+        "fuer": "für das Raster (S. 3)"
+      },
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe – zuerst hier Stichworte, dann schreiben",
+        "spalten": [
+          "Ärger verschweigen: Folgen",
+          "Gespräch suchen: Folgen",
+          "Mein Weg mit Grund"
+        ],
+        "hinweis": "Schreiben Sie in jede Spalte ein bis zwei Stichworte. Begründen Sie danach Ihre Wahl im Schreibfeld.",
+        "loesung_zeilen": [
+          [
+            "Ärger bleibt ungeklärt",
+            "Missverständnis lässt sich klären",
+            "Gespräch suchen: Lösung finden"
+          ]
+        ]
+      }
+    }
+  },
+  "handlungsprodukt": {
+    "titel": "Gesprächsplan für das Klärungsgespräch mit dem Berufsbildner",
+    "form": "Stichwortblatt mit 4 Punkten",
+    "abgaben": [
+      "Gesprächsplan für das Klärungsgespräch",
+      "Raster von Seite 3",
+      "Selbsteinschätzung mit zwei Kriterien"
+    ],
+    "schritte": [
+      {
+        "label": "01 Vorfall festhalten",
+        "hint": "Notieren Sie die Fakten von Seite 1 und die Regel von Seite 2. Nutzen Sie das Beispiel auf Seite 5."
+      },
+      {
+        "label": "02 Betriebsregel klären",
+        "hint": "Halten Sie Weisungsrecht und Pausenregel aus dem Raster (S. 3) fest."
+      },
+      {
+        "label": "03 Verständnis zeigen",
+        "hint": "Formulieren Sie das Verständnis für den Berufsbildner mit Ihrer Haltung aus Leitfrage 3 (S. 4)."
+      },
+      {
+        "label": "04 Lösung vorschlagen",
+        "hint": "Notieren Sie einen konkreten Vorschlag zur Wiedergutmachung für das Gespräch (S. 5)."
+      },
+      {
+        "label": "05 Prüfen",
+        "hint": "Lesen Sie die zwei Kriterien (S. 7). Kreuzen Sie bei jedem Kriterium ein Feld an. Verbessern Sie Ihren Plan."
+      }
+    ],
+    "beispielbild": {
+      "titel": "Beispiel an einer anderen Situation: Verspätung beim Sporttraining",
+      "legende": [
+        {
+          "key": "wichtig",
+          "text": "wichtige Angabe"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Gesprächsplan Training",
+          "kopf": [
+            "Schritt",
+            "Inhalt",
+            "Ziel"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "1. Einstieg",
+                "Nach dem Training um Gespräch bitten",
+                "unter vier Augen"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "2. Tatsache",
+                "15 Minuten zu spät wegen Zugausfall",
+                "Fakten ohne Ausrede"
+              ]
+            },
+            {
+              "zellen": [
+                "3. Verständnis",
+                "Trainer auf Ausfall vorbereiten müssen",
+                "Respekt zeigen"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "4. Lösung",
+                "Beim nächsten Mal per SMS vorwarnen",
+                "Lösungsvorschlag"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Stichworte für das Gespräch",
+          "eintraege": [
+            {
+              "text": "Ruhig bleiben, den Trainer ausreden lassen und sich entschuldigen."
+            },
+            {
+              "text": "Die Hand ausstrecken und verlässlich für das nächste Training zusagen."
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "Mögliche Lösung: Gesprächsplan mit dem Berufsbildner",
+      "hinweis": "Ein möglicher Gesprächsplan, keine feste Vorlage. Wichtig ist die sachliche Struktur in vier Schritten.",
+      "legende": [
+        {
+          "key": "wichtig",
+          "text": "wichtige Angabe"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "Gesprächsplan Lehrbetrieb",
+          "kopf": [
+            "Schritt",
+            "Inhalt",
+            "Fachbegriff"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "1. Einstieg",
+                "Um 5 Minuten nach Feierabend bitten",
+                "unter vier Augen"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "2. Tatsache",
+                "Pause um 10 Minuten überzogen",
+                "Ermahnung annehmen"
+              ]
+            },
+            {
+              "zellen": [
+                "3. Verständnis",
+                "Rückkehr war zu spät; Pausenregel beachten",
+                "Sorgfaltspflicht"
+              ],
+              "marke": "wichtig"
+            },
+            {
+              "zellen": [
+                "4. Lösung",
+                "10 Minuten nacharbeiten, sofort melden",
+                "Lösungsvorschlag"
+              ]
+            }
+          ]
+        },
+        {
+          "titel": "Stichworte für das Gespräch",
+          "eintraege": [
+            {
+              "text": "«Darf ich kurz unter vier Augen mit Ihnen sprechen? Es geht um die Pause heute Morgen.»"
+            },
+            {
+              "text": "«Ich verstehe Ihren Ärger. Ich schlage vor, die 10 Minuten heute Abend nachzuarbeiten.»"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "Argumentation",
+      "name_lernende": "Gut begründen",
+      "dimension": "SuK",
+      "stufen": [
+        "Begründung fehlt. Sprache unpassend.",
+        "Begründung im Ansatz. Sprache teilweise passend.",
+        "Begründung klar. Sprache respektvoll und sachlich.",
+        "Begründung vollständig. Sprache ruhig und überlegt."
+      ],
+      "stufen_lernende": [
+        "Ich begründe beim Sprechen nicht. Mein Ton passt nicht.",
+        "Ich begründe beim Sprechen wenig. Mein Ton passt teilweise.",
+        "Ich begründe beim Sprechen klar. Mein Ton bleibt respektvoll.",
+        "Ich begründe beim Sprechen vollständig. Mein Ton ist ruhig und überlegt."
+      ],
+      "indikator_produkt": "Der Gesprächsplan nennt die Fakten sachlich und schlägt eine Lösung vor."
+    },
+    {
+      "kn_kriterium": "Position / Werthaltung",
+      "name_lernende": "Respektvolles Handeln",
+      "dimension": "Ges",
+      "stufen": [
+        "Eigene Haltung fehlt. Keine Lösung gesucht.",
+        "Eigene Haltung angedeutet. Kaum eine Lösung gesucht.",
+        "Eigene Haltung respektvoll. Faire Lösung gesucht.",
+        "Eigene Haltung klar begründet. Faire Lösung überzeugt."
+      ],
+      "stufen_lernende": [
+        "Ich zeige beim Sprechen keine Haltung. Ich suche keine Lösung.",
+        "Ich deute beim Sprechen meine Haltung an. Ich suche kaum eine Lösung.",
+        "Ich vertrete beim Sprechen meine Haltung respektvoll. Ich suche eine faire Lösung.",
+        "Ich begründe beim Sprechen meine Haltung klar. Meine faire Lösung überzeugt."
+      ],
+      "indikator_produkt": "Die eigene Haltung ist sachlich formuliert. Der Ton bleibt respektvoll."
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "Nutzen Sie die Beispielzeile auf Seite 3. Das andere Beispiel steht auf Seite 5.",
+    "scaffold_100": "Üben Sie Ihr Gespräch zu zweit. Fragen Sie nach: Welcher Lösungsvorschlag überzeugt? Verbessern Sie Ihren Plan."
+  },
+  "methoden": [
+    {
+      "ref": "hko-eba-fakt-oder-gefuehl",
+      "fuer": "für die Fakten (S. 1)",
+      "beispiel": [
+        "Fakt: «Ich habe am 3. Mai bezahlt.»",
+        "Gefühl: «Ich bin wütend.»"
+      ]
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "hko-eba-zwei-wege-abwaegen",
+      "fuer": "für Leitfrage 3"
+    },
+    {
+      "ref": "hko-eba-klare-frage",
+      "fuer": "für Ihre Gesprächsfragen",
+      "beispiel": [
+        "«Wann passt Ihnen ein kurzes Gespräch?»"
+      ]
+    }
+  ],
+  "mindmap_zentrum": "Regeln verstehen und klären",
+  "mindmap_aeste": [
+    {
+      "titel": "Betriebsregeln",
+      "punkte": [
+        "Weisungsrecht",
+        "Sorgfaltspflicht",
+        "Betriebsregeln"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Bei Fehlern",
+      "punkte": [
+        "Ermahnung",
+        "Berufsbildner/in",
+        "unter vier Augen"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "Gespräch führen",
+      "punkte": [
+        "Gesprächsplan",
+        "Lösungsvorschlag"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "Weiss ich, warum der Betrieb Arbeits- und Pausenzeiten bestimmen darf?",
+      "Kann ich mein Anliegen sachlich unter vier Augen ansprechen?"
+    ],
+    "mitnahme": [
+      "Mein Vorgehen bei Ermahnungen",
+      "Mein nächster Schritt",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "Weisungsrecht",
+          "nach": "Betriebsregeln",
+          "text": "begründet die"
+        },
+        {
+          "von": "Betriebsregeln",
+          "nach": "Sorgfaltspflicht",
+          "text": "verlangen"
+        },
+        {
+          "von": "Ermahnung",
+          "nach": "unter vier Augen",
+          "text": "klärt man"
+        },
+        {
+          "von": "Gesprächsplan",
+          "nach": "Lösungsvorschlag",
+          "text": "enthält einen"
+        },
+        {
+          "von": "Betriebsregeln",
+          "nach": "gilt auch bei …",
+          "text": "gibt es auch dort"
+        }
+      ],
+      "transfer": "Sportverein, Zivilschutz, Wohngemeinschaft",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "Berufsbildner/in",
+          "unter vier Augen"
+        ]
+      },
+      "quercheck": [
+        "Ja: Der Betrieb darf Arbeitszeiten und Pausen anordnen (Weisungsrecht OR 321d).",
+        "Ja: Ich bitte um ein kurzes Gespräch unter vier Augen nach der Arbeit."
+      ],
+      "mitnahme": [
+        "Ruhig bleiben und das Gespräch unter vier Augen suchen.",
+        "Den 4-Punkte-Plan für das Gespräch vorbereiten.",
+        "Welche Pausenregeln genau in unserem Betrieb gelten."
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "Leitfrage 1 nennt Weisungsrecht und Sorgfaltspflicht",
+        "Leitfrage 3 prüft zwei Wege und wählt einen mit Grund",
+        "Leitfrage 3 begründet den gewählten Weg"
+      ]
+    },
+    {
+      "produkt": "Raster",
+      "vollstaendig_wenn": [
+        "Raster mit drei Zeilen ausgefüllt",
+        "Weisungen und Pflichten richtig zugeordnet",
+        "Fachbegriff in der letzten Spalte"
+      ]
+    },
+    {
+      "produkt": "Gesprächsplan",
+      "vollstaendig_wenn": [
+        "Vier Schritte für das Gespräch ausgefüllt",
+        "Ermahnung sachlich anerkannt",
+        "Konkreter Lösungsvorschlag genannt"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Quer-Check: jede Frage abgehakt und beantwortet",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Leitfrage 1",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Leitfrage 2 mit Raster, Leitfrage 3",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "Gesprächsplan, Kriterien, Abschluss",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": "Betriebliche Weisungen verstehen und Unstimmigkeiten lösungsorientiert ansprechen.",
+  "prinzip_handoff": "Die Vorbereitung eines Vier-Augen-Gesprächs bereitet auf den gemeinsamen Auftrag vor.",
+  "sk_anker": [
+    2,
+    7,
+    10
+  ]
+}

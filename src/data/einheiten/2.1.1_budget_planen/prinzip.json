@@ -1,0 +1,157 @@
+{
+  "id": "2.1.1_budget_planen_prinzip",
+  "modul": "2.1",
+  "kompetenz_nr": "2.1.1",
+  "topic_slug": "budget_planen",
+  "lehrgang": "EBA_2J",
+  "version": "2.1.0",
+  "erstellt_am": "2026-11-03",
+  "kern_kompetenzversprechen": "Ich kann ein Budget erstellen, Risiken für Schulden erkennen und eine bezahlbare Konsumwahl begründen.",
+  "bloom_zielprofil": {
+    "LF1": "K2",
+    "LF2": "K3",
+    "LF3": "K3"
+  },
+  "herausforderungen": {
+    "A": {
+      "herausforderung": "Monatsbudget erstellen",
+      "konfliktart": "Heute nutzen vs. Geld für später behalten",
+      "handlungsprodukt_typ": "Budgettabelle mit kommentierter Zahlungswahl auf einer Seite",
+      "kompetenzen": [
+        "2.1.1"
+      ],
+      "transferrable": true
+    },
+    "B": {
+      "herausforderung": "Konsumwahl umsetzen",
+      "konfliktart": "Schnell ersetzen vs. länger nutzen",
+      "handlungsprodukt_typ": "Mündliche Erklärung mit Stichwortzettel, 60 Sekunden",
+      "kompetenzen": [
+        "2.1.2"
+      ],
+      "transferrable": true
+    }
+  },
+  "sk_pro_situation": {
+    "A": [
+      1,
+      3,
+      9
+    ],
+    "B": [
+      1,
+      3,
+      9
+    ]
+  },
+  "sk_schnittmenge_kn": {
+    "primary": [
+      1,
+      3,
+      9
+    ]
+  },
+  "aspekte": {
+    "Wirtschaft": "R1",
+    "Ökologie": "R1"
+  },
+  "modi_units": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich"
+  ],
+  "modi_kn": [
+    "Rezeption schriftlich und bildlich",
+    "Produktion mündlich",
+    "Produktion schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "mehrdeutigkeits_architektur": {
+    "trade_off_raum": [
+      "Heute nutzen vs. Geld für später behalten",
+      "Schnell ersetzen vs. länger nutzen",
+      "Eigener Wunsch vs. gemeinsames Geld schützen"
+    ],
+    "verbindlich": "Ein schneller Kauf und längeres Warten haben Vorteile. Entscheidend sind das verfügbare Geld, der Bedarf und die Folgen."
+  },
+  "dekontextualisierungs_anker": {
+    "anker_statement": "Vor einer Konsumwahl prüfe ich mein Geld, spätere Zahlungen und eine Möglichkeit zur längeren Nutzung.",
+    "transferfeld": "Technik für ein Hobby oder Ausstattung für eine Reise: Rest, Folgekosten und Weiterverwendung prüfen."
+  },
+  "zirkularitaet": {
+    "r1_aktuell": "R1",
+    "r2_voraussicht": "T7 'Arbeit und Zukunft' — Wirtschaft R2",
+    "r3_voraussicht": "—"
+  },
+  "quellen_anker": {
+    "chapters": [
+      {
+        "ref": "Dossier",
+        "titel": "Budget und Konsum",
+        "seiten": "Info-Karten A-01 bis B-03"
+      }
+    ],
+    "konzepte": [
+      "Budget",
+      "Restbetrag",
+      "Rate",
+      "Reparatur",
+      "Secondhand"
+    ]
+  },
+  "hybrid_situation_spec": {
+    "max_woerter": 120,
+    "perspektive": "ICH",
+    "must_activate_trade_offs_min": 2,
+    "must_combine_herausforderungen": [
+      "A",
+      "B"
+    ],
+    "persona_neutral": "Lernende/r EBA, 1. Lehrjahr · eigener Lehrbetrieb · eigener Wohnort (Stufe 2: der Fall ist neu, nicht die Person)",
+    "endet_mit_leitfrage": true,
+    "lehrjahr_constraint": "match_units",
+    "qualitaetskriterien": [
+      "Eine Szene — nicht zwei separate Mini-Herausforderungen aneinandergereiht.",
+      "Konfliktart beider Herausforderungen ist sichtbar, ohne explizit benannt zu werden.",
+      "Mindestens ein Spannungsfeld aus trade_off_raum spannt sich auf.",
+      "Der Fall ist neu: anderer Gegenstand, andere Beteiligte, andere Zahlen als in A und B — die Persona bleibt neutral und identisch.",
+      "Leitfrage am Ende benennt die Spannung explizit, ohne Antwort vorzugeben."
+    ],
+    "fall_ausschluss_hefte_und_auftrag": [
+      "Pavillon",
+      "Quartierfest"
+    ]
+  },
+  "modi_pro_heft": {
+    "A": [
+      "Rezeption schriftlich und bildlich"
+    ],
+    "B": [
+      "Produktion mündlich"
+    ]
+  },
+  "kn_kriterien_verteilung": {
+    "A": [
+      "Fachkorrektheit",
+      "Wirtschaftliches Prinzip"
+    ],
+    "B": [
+      "Argumentation",
+      "Position / Werthaltung"
+    ]
+  },
+  "pol_typ_verteilung": {
+    "A": {
+      "ohne_medien": "modell_eigener_fall"
+    },
+    "B": {
+      "ohne_medien": "position_gegenposition"
+    }
+  },
+  "mindmap_zentrum_kurz": "Geld und Nutzung planen",
+  "modi_auftrag": [
+    "Produktion schriftlich und bildlich",
+    "Interaktion und Kollaboration mündlich"
+  ],
+  "modi_auftrag_herleitung": "KN {SM3, SM4, SM5, SM7} minus A {SM3} und B {SM4} ergibt {SM5, SM7}. SM3 in A ersetzt SM2 ausdrücklich gemäss Freigabe vom 03.11.2026; audiovisuelle Rezeption bleibt Lehrplanlücke.",
+  "auftrag_lebensbereich": "Berufsfachschule: Klassenstand"
+}

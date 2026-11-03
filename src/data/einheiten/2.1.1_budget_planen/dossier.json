@@ -1,0 +1,503 @@
+{
+  "id": "2.1.1_budget_planen_dossier",
+  "modul": "2.1",
+  "kompetenz_nr": "2.1.1",
+  "topic_slug": "budget_planen",
+  "lehrgang": "EBA_2J",
+  "version": "3.0.0",
+  "erstellt_am": "2026-11-03",
+  "set_ref": "2.1.1_budget_planen_set",
+  "sprachniveau": "A2",
+  "kopf": {
+    "einheit_titel": "Budget planen",
+    "kompetenz_nr": "2.1.1",
+    "kompetenz_text": "Ich kann ein Budget erstellen, reflektiere darin aufgeführte Konsumentscheidungen und identifiziere Risiken für Schulden.",
+    "lebensbezug_nr": "2.1",
+    "lebensbezug_text": "Ich gehe bewusst mit meinem Geld um.",
+    "thema_nr": "T2",
+    "thema_titel": "Bewusst konsumieren und handeln",
+    "lehrjahr": 1,
+    "lehrgang": "EBA_2J",
+    "sprachniveau": "A2"
+  },
+  "einleitung": {
+    "was_ist_das": "Hier finden Sie Wissen für Budget und Konsumwahl. Alle Preise in den Beispielen sind erfunden.",
+    "so_benutzt_du_es": [
+      "Suchen Sie die Info-Karte zur Leitfrage.",
+      "Lesen Sie den Text und das Beispiel.",
+      "Klären Sie unbekannte Wörter im Glossar.",
+      "Nutzen Sie die Angaben aus dem Fall.",
+      "Prüfen Sie Ihre Rechnung und Ihre Wahl."
+    ]
+  },
+  "nuggets": [
+    {
+      "id": "nugget_A_01",
+      "tag": "A",
+      "titel": "Mein Monatsgeld",
+      "inhalt": "Ein Budget ordnet Einnahmen und geplante Ausgaben. Der Nettolohn ist der ausbezahlte Lohn nach Abzügen. Fixkosten sind feste geplante Rechnungen, etwa Handy und ÖV. Veränderbare Kosten hängen von Ihren Entscheidungen ab, etwa Freizeit und Kleider. Klären Sie, welche Kosten die Eltern direkt bezahlen. Ziehen Sie diese nicht nochmals vom eigenen Lohn ab. Eine Reserve ist Geld für unerwartete Kosten. Ein Sparbetrag ist Geld für einen späteren Wunsch. Beides ist nicht mehr frei verfügbar.",
+      "beispiel": "Die Eltern bezahlen die Krankenkasse direkt. Das ist keine zusätzliche Einnahme auf Ihrem Konto.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Budget und Kostenträger prüfen.",
+          "wert": "F1–F3",
+          "quelle": "https://www.stadt-zuerich.ch/dam/web/de/bildung/volksschule/schulorganisation/schulkreise/schwamendingen/schulkreisel-mai-2026.pdf · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "budget",
+        "nettolohn",
+        "fixkosten",
+        "veraenderbar",
+        "reserve"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Fixkosten Handyabo",
+          "Budget Kostenträger Eltern"
+        ],
+        "selbst_pruefen": "Prüfen Sie im Fall von Heft A: Welche Kosten bezahlen die Eltern direkt?"
+      }
+    },
+    {
+      "id": "nugget_A_02",
+      "tag": "A",
+      "titel": "So rechne ich mein Budget",
+      "inhalt": "Schreiben Sie zuerst alle Einnahmen auf. Addieren Sie dann die festen Kosten und die veränderbaren Kosten getrennt. Planen Sie auch Geld zum Zurücklegen. Rechnen Sie: Einnahmen minus Kosten minus zurückgelegtes Geld ergeben den freien Restbetrag. Prüfen Sie alle Posten, nicht nur die kleinen Wünsche. Ein negativer Rest zeigt eine Lücke im Plan. Dann braucht es weniger Ausgaben oder geklärte zusätzliche Einnahmen. Vergleichen Sie den Plan später mit den wirklichen Ausgaben.",
+      "beispiel": "Anderer Fall: Für einen Ausflug kommen 550 Franken herein. Feste Kosten sind 150, veränderbare Kosten 200 Franken. Weitere 50 Franken bleiben als Reserve. Rechnung: 550 − 150 − 200 − 50 = 150 Franken Rest.",
+      "fuer_leitfrage": [
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Budget und Kostenträger prüfen.",
+          "wert": "F1–F3",
+          "quelle": "https://www.stadt-zuerich.ch/dam/web/de/bildung/volksschule/schulorganisation/schulkreise/schwamendingen/schulkreisel-mai-2026.pdf · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Budget und Kostenträger prüfen.",
+          "wert": "F1–F3",
+          "quelle": "https://www.schulden-zh.ch/media/budgetvorlage-fuer-lernende.pdf · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "einnahmen",
+        "rest",
+        "sparbetrag"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Budget Restbetrag berechnen",
+          "Reserve Budget abziehen"
+        ],
+        "selbst_pruefen": "Rechnen Sie im Fall von Heft A nach. Haben Sie die Reserve genau einmal abgezogen?"
+      }
+    },
+    {
+      "id": "nugget_A_03",
+      "tag": "A",
+      "titel": "Heute kaufen, später zahlen?",
+      "inhalt": "Eine Rate ist nur ein Teil der ganzen Zahlung. Weitere Raten folgen später. Rechnen Sie alle Raten und Gebühren zusammen. Vergleichen Sie diesen Gesamtpreis mit dem Sofortpreis. Tragen Sie jede Rate in den Plan des passenden Monats ein. Sonst ist das Geld vielleicht schon anders eingeplant. Auch zusätzliche Abos und viele kleine Käufe brauchen Platz im Budget. Eine Möglichkeit ist, zuerst zu sparen und später zu kaufen. Bei Geldproblemen hilft eine vertraute Person oder eine Fachstelle. Die Schuldenprävention Stadt Zürich bietet kostenlose, vertrauliche Auskünfte.",
+      "beispiel": "Anderer Fall: Ein Radio kostet sofort 80 Franken. Zwei Raten zu 42 Franken ergeben 84 Franken. Der Aufpreis beträgt 4 Franken. Bei 65 Franken Monatsrest bleiben nach einer Rate 23 Franken. Sparen Sie viermal 20 Franken. Dann bleiben monatlich 45 Franken frei.",
+      "fuer_leitfrage": [
+        3
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Spätere Zahlung und Unterstützung beachten.",
+          "wert": "F4–F5",
+          "quelle": "https://www.zh.ch/de/soziales/sozialhilfe/sozialhilfehandbuch/flexdata-definition/4-persoenliche-hilfe/4-2-zusammenarbeit-mit-institutionen-der-persoenlichen-hilfe/4-2-01-schuldenberatung-und-schuldensanierung.html · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Spätere Zahlung und Unterstützung beachten.",
+          "wert": "F4–F5",
+          "quelle": "https://www.stadt-zuerich.ch/schuldenpraevention · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "rate",
+        "schulden",
+        "aufpreis",
+        "risiko"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Raten Gesamtpreis Aufpreis",
+          "Sparplan Monatsrest"
+        ],
+        "selbst_pruefen": "Vergleichen Sie beim Headset Sofortpreis und Gesamtpreis der Raten. Wie gross ist der Aufpreis?"
+      }
+    },
+    {
+      "id": "nugget_B_01",
+      "tag": "B",
+      "titel": "Länger nutzen statt schnell ersetzen",
+      "inhalt": "Konsum bedeutet Dinge oder Leistungen kaufen und nutzen. Bei Textilien entstehen Umweltwirkungen in mehreren Schritten: Rohstoff, Herstellung, Nutzung und Entsorgung. Rohstoffe sind Grundlagen aus der Natur. Reparieren macht einen kaputten Gegenstand wieder nutzbar. Secondhand bedeutet: Jemand hat den Gegenstand schon genutzt. Reparieren, Teilen und Weiterverwenden können die Nutzungsdauer verlängern. Vorhandene Dinge länger zu nutzen schont meist Rohstoffe. Für einen genauen Vergleich einzelner Angebote braucht es weitere Angaben.",
+      "beispiel": "Fallüberlegung: Der Stoff der Jacke ist gut. Ein neuer Verschluss ermöglicht die weitere Nutzung.",
+      "fuer_leitfrage": [
+        1
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Nutzung und prüfbare Produktangaben beachten.",
+          "wert": "F6–F8",
+          "quelle": "https://www.bafu.admin.ch/de/kreislaufwirtschaft · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        },
+        {
+          "behauptung": "Nutzung und prüfbare Produktangaben beachten.",
+          "wert": "F6–F8",
+          "quelle": "https://www.zh.ch/de/politik-staat/kanton/kantonale-verwaltung/beschaffung-einkaeufe/nachhaltige-beschaffung/beschaffungsleitlinien/textilien.html · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "konsum",
+        "rohstoff",
+        "herstellung",
+        "nutzung",
+        "entsorgung",
+        "reparatur",
+        "secondhand"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Textilien Nutzungsdauer verlängern",
+          "Reparatur Rohstoffe"
+        ],
+        "selbst_pruefen": "Prüfen Sie die Jacke in Heft B. Welcher Teil ist kaputt, welcher bleibt nutzbar?"
+      }
+    },
+    {
+      "id": "nugget_B_02",
+      "tag": "B",
+      "titel": "Drei Angebote prüfen",
+      "inhalt": "Notieren Sie zu jedem Angebot Kosten, Nutzen und eine Grenze. Rechnen Sie den Preis vom verfügbaren Geld ab. Achten Sie auch auf Material, Herkunft und Zustand. Das Material ist der Stoff eines Gegenstands. Herkunft nennt einen Ort, etwa das Herstellungsland. Fehlende Angaben bleiben offen. Ein höherer Preis beweist keine bessere Umweltbilanz. Langlebigkeit und Reparierbarkeit brauchen passende Angaben. Eine genaue Nutzungsdauer oder Umweltzahl dürfen Sie nicht erfinden.",
+      "beispiel": "Anderer Fall: Für einen Rucksack sind 85 Franken verfügbar. Reparatur kostet 20, gebraucht kostet er 55 und neu 95 Franken. Rechnung: 85 − 20 = 65 und 85 − 55 = 30 Franken Rest. Für den Neukauf fehlen 10 Franken.",
+      "fuer_leitfrage": [
+        2
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Nutzung und prüfbare Produktangaben beachten.",
+          "wert": "F6–F8",
+          "quelle": "https://www.zh.ch/de/politik-staat/kanton/kantonale-verwaltung/beschaffung-einkaeufe/nachhaltige-beschaffung/beschaffungsleitlinien/textilien.html · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "material",
+        "herkunft",
+        "rest"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Textilien Angebote Zustand vergleichen",
+          "Reparatur Kosten Wartezeit"
+        ],
+        "selbst_pruefen": "Prüfen Sie die drei Angebote in Heft B. Welche Angaben zu Material und Herkunft fehlen?"
+      }
+    },
+    {
+      "id": "nugget_B_03",
+      "tag": "B",
+      "titel": "Meine Wahl braucht einen Grund",
+      "inhalt": "Vergleichen Sie Bedarf, verfügbares Geld und längere Nutzung. Wählen Sie dann einen Weg mit einem passenden Grund. Nennen Sie auch einen Nachteil. So zeigen Sie eine eigene Priorität: Was ist Ihnen besonders wichtig? Ein Gegenargument spricht gegen Ihre Wahl. Prüfen Sie, wie Sie damit umgehen. Planen Sie einen nächsten Schritt mit Zeitpunkt. Eine bezahlbare Lösung kann Reparatur, Secondhand oder Teilen sein. Welche passt, hängt vom Fall ab.",
+      "beispiel": "Anderer Fall: Eine Hose hat ein kleines Loch. Lassen Sie es flicken und nutzen Sie die Hose weiter. Planen Sie für die Wartezeit eine andere Hose ein.",
+      "fuer_leitfrage": [
+        3
+      ],
+      "fakten_anker": [
+        {
+          "behauptung": "Nutzung und prüfbare Produktangaben beachten.",
+          "wert": "F6–F8",
+          "quelle": "https://www.bafu.admin.ch/de/kreislaufwirtschaft · Abruf 2026-11-03",
+          "validiert": true,
+          "lp_pruefen": false
+        }
+      ],
+      "glossar_refs": [
+        "prioritaet",
+        "gegenargument",
+        "nachhaltig"
+      ],
+      "recherche": {
+        "suchbegriffe": [
+          "Konsumwahl Priorität begründen",
+          "Gegenargument Kaufentscheid"
+        ],
+        "selbst_pruefen": "Prüfen Sie Ihre Wahl in Heft B. Welchen Nachteil nehmen Sie dafür in Kauf?"
+      }
+    }
+  ],
+  "sprachmodi_scaffolds": [
+    {
+      "tag": "A",
+      "sm_id": "SM3",
+      "modus_label": "Rezeption schriftlich und bildlich",
+      "satzanfaenge": [
+        "Ich finde die Angabe …",
+        "Für meinen Plan heisst das …",
+        "Ich prüfe noch …"
+      ],
+      "strategien": [
+        "Lesen Sie zuerst die Titel.",
+        "Markieren Sie wichtige Angaben.",
+        "Erklären Sie das Ergebnis selbst."
+      ],
+      "struktur": [
+        "Angabe finden",
+        "Mit dem Plan verbinden"
+      ],
+      "so_gehst_du_vor": [
+        "Lesen Sie die Titel der passenden Info-Karte.",
+        "Klären Sie unbekannte Wörter im Glossar.",
+        "Markieren Sie Einnahmen und Kosten im Falltext.",
+        "Ordnen Sie die Angaben im Raster.",
+        "Prüfen Sie Summen und Rest am Falltext."
+      ]
+    },
+    {
+      "tag": "B",
+      "sm_id": "SM4",
+      "modus_label": "Produktion mündlich",
+      "satzanfaenge": [
+        "Ich wähle …",
+        "Mein Gegenargument ist …",
+        "Als Nächstes mache ich …"
+      ],
+      "strategien": [
+        "Planen Sie mit Stichworten.",
+        "Sprechen Sie langsam und klar.",
+        "Nennen Sie einen Grund und einen Nachteil."
+      ],
+      "struktur": [
+        "Wahl und Grund",
+        "Nachteil und nächster Schritt"
+      ],
+      "so_gehst_du_vor": [
+        "Wählen Sie passende Angaben aus dem Vergleich.",
+        "Schreiben Sie Stichworte zu Wahl, Grund, Gegenargument und nächstem Schritt.",
+        "Üben Sie Ihre Erklärung laut mit dem Stichwortzettel.",
+        "Sprechen Sie zu einer Person. Lassen Sie die 60 Sekunden stoppen.",
+        "Holen Sie Rückmeldung zu den Kriterien. Üben Sie danach nochmals."
+      ]
+    }
+  ],
+  "transfer_wissensblatt": {
+    "fachsystematik": "Zuerst Geld und Bedarf klären. Dann alle Kosten und spätere Zahlungen prüfen. Wege zur längeren Nutzung vergleichen. Eine Wahl mit Grund und Nachteil treffen. Den nächsten Schritt planen.",
+    "prinzip_in_einfach": "Prüfen Sie Ihr Geld, bevor Sie wählen. Denken Sie auch an spätere Zahlungen. Prüfen Sie eine Möglichkeit zur längeren Nutzung."
+  },
+  "glossar": [
+    {
+      "id": "budget",
+      "begriff": "Budget",
+      "erklaerung_a2": "Ein Plan für Geld, das hereinkommt, und für geplante Ausgaben.",
+      "beispiel": "Planen Sie Einnahmen und Ausgaben für den nächsten Monat."
+    },
+    {
+      "id": "einnahmen",
+      "begriff": "Einnahmen",
+      "erklaerung_a2": "Geld, das Sie bekommen.",
+      "beispiel": "Ihr Lohn ist eine Einnahme."
+    },
+    {
+      "id": "nettolohn",
+      "begriff": "Nettolohn",
+      "erklaerung_a2": "Der Lohn, den Sie nach Abzügen ausbezahlt bekommen.",
+      "beispiel": "Der Lohn auf Ihrem Konto ist bereits nach Abzügen."
+    },
+    {
+      "id": "fixkosten",
+      "begriff": "Fixkosten",
+      "erklaerung_a2": "Feste geplante Kosten, zum Beispiel eine vereinbarte Monatsrechnung.",
+      "beispiel": "Das Handyabo steht fest im Plan."
+    },
+    {
+      "id": "veraenderbar",
+      "begriff": "veränderbare Kosten",
+      "erklaerung_a2": "Ausgaben, deren Höhe Sie im Alltag beeinflussen können.",
+      "beispiel": "Sie können weniger für Freizeit ausgeben."
+    },
+    {
+      "id": "rest",
+      "begriff": "Restbetrag",
+      "erklaerung_a2": "Geld, das nach den eingeplanten Posten noch frei ist.",
+      "beispiel": "Der Rest bleibt nach Kosten und zurückgelegtem Geld frei."
+    },
+    {
+      "id": "reserve",
+      "begriff": "Reserve",
+      "erklaerung_a2": "Geld, das Sie für unerwartete Kosten zurücklegen.",
+      "beispiel": "Legen Sie Geld für eine Panne zurück."
+    },
+    {
+      "id": "sparbetrag",
+      "begriff": "Sparbetrag",
+      "erklaerung_a2": "Geld, das Sie für einen späteren Wunsch zurücklegen.",
+      "beispiel": "Sparen Sie für Zubehör."
+    },
+    {
+      "id": "rate",
+      "begriff": "Rate",
+      "erklaerung_a2": "Ein Teil einer Zahlung. Weitere Teile folgen zu vereinbarten Terminen.",
+      "beispiel": "Sie zahlen einen Teil jetzt, weitere Teile später."
+    },
+    {
+      "id": "schulden",
+      "begriff": "Schulden",
+      "erklaerung_a2": "Geld, das Sie einer anderen Person oder einer Firma noch bezahlen müssen.",
+      "beispiel": "Nach der ersten Rate bleiben zwei Raten offen."
+    },
+    {
+      "id": "aufpreis",
+      "begriff": "Aufpreis",
+      "erklaerung_a2": "Zusätzliches Geld gegenüber dem günstigeren Angebot.",
+      "beispiel": "Das teurere Angebot kostet zusätzliches Geld."
+    },
+    {
+      "id": "konsum",
+      "begriff": "Konsum",
+      "erklaerung_a2": "Dinge oder Leistungen kaufen und nutzen.",
+      "beispiel": "Sie kaufen und nutzen eine Tasche."
+    },
+    {
+      "id": "reparatur",
+      "begriff": "Reparatur",
+      "erklaerung_a2": "Etwas Kaputtes wieder nutzbar machen.",
+      "beispiel": "Der Reparaturdienst ersetzt den Verschluss."
+    },
+    {
+      "id": "secondhand",
+      "begriff": "Secondhand",
+      "erklaerung_a2": "Ein Gegenstand, den schon jemand anderes genutzt hat.",
+      "beispiel": "Sie kaufen eine gebrauchte Tasche."
+    },
+    {
+      "id": "material",
+      "begriff": "Material",
+      "erklaerung_a2": "Der Stoff, aus dem ein Gegenstand besteht.",
+      "beispiel": "Die Jacke besteht aus einem Gewebe."
+    },
+    {
+      "id": "herkunft",
+      "begriff": "Herkunft",
+      "erklaerung_a2": "Der Ort, von dem ein Gegenstand oder sein Material kommt.",
+      "beispiel": "Auf einem Etikett steht das Herstellungsland."
+    },
+    {
+      "id": "nutzung",
+      "begriff": "Nutzung",
+      "erklaerung_a2": "Die Zeit und Art, wie Sie einen Gegenstand gebrauchen.",
+      "beispiel": "Tragen Sie eine brauchbare Jacke weiter."
+    },
+    {
+      "id": "entsorgung",
+      "begriff": "Entsorgung",
+      "erklaerung_a2": "Dinge abgeben, wenn sie nicht mehr nutzbar sind.",
+      "beispiel": "Prüfen Sie die passende Sammelstelle."
+    },
+    {
+      "id": "nachhaltig",
+      "begriff": "nachhaltig",
+      "erklaerung_a2": "Mit Geld und natürlichen Grundlagen auch für später sorgfältig umgehen.",
+      "beispiel": "Nutzen Sie vorhandene Dinge länger."
+    },
+    {
+      "id": "rohstoff",
+      "begriff": "Rohstoff",
+      "erklaerung_a2": "Eine Grundlage aus der Natur für die Herstellung von Dingen.",
+      "beispiel": "Baumwolle ist ein Rohstoff."
+    },
+    {
+      "id": "herstellung",
+      "begriff": "Herstellung",
+      "erklaerung_a2": "Die Arbeit und Schritte, durch die ein Produkt entsteht.",
+      "beispiel": "Stoff nähen gehört zur Herstellung."
+    },
+    {
+      "id": "mehrweg",
+      "begriff": "Mehrweg",
+      "erklaerung_a2": "Einen Gegenstand mehrfach statt nur einmal nutzen.",
+      "beispiel": "Geben Sie ein Leihset nach der Nutzung zurück."
+    },
+    {
+      "id": "gegenargument",
+      "begriff": "Gegenargument",
+      "erklaerung_a2": "Ein Grund, der gegen eine Wahl spricht.",
+      "beispiel": "Die Wartezeit spricht gegen die Reparatur."
+    },
+    {
+      "id": "prioritaet",
+      "begriff": "Priorität",
+      "erklaerung_a2": "Das, was Ihnen bei einer Wahl besonders wichtig ist.",
+      "beispiel": "Wenig Geld ausgeben kann Ihnen besonders wichtig sein."
+    },
+    {
+      "id": "risiko",
+      "begriff": "Risiko",
+      "erklaerung_a2": "Etwas kann anders laufen als geplant und Probleme machen.",
+      "beispiel": "Ein weiterer Kauf kann den Rest aufbrauchen."
+    }
+  ],
+  "leseblatt": {
+    "titel": "Geld einteilen und Dinge nutzen",
+    "einleitung": "Lesen Sie die Texte. Beantworten Sie danach die Fragen.",
+    "gesamttext_quelle": "nuggets",
+    "richtig_falsch": [
+      {
+        "text": "Fixkosten sind feste geplante Rechnungen.",
+        "loesung": true
+      },
+      {
+        "text": "Eine Rate zeigt immer den ganzen Kaufpreis.",
+        "loesung": false
+      },
+      {
+        "text": "Zurückgelegtes Geld ist noch frei für weitere Käufe.",
+        "loesung": false
+      },
+      {
+        "text": "Reparieren kann die Nutzungsdauer verlängern.",
+        "loesung": true
+      },
+      {
+        "text": "Ein hoher Preis beweist eine bessere Umweltbilanz.",
+        "loesung": false
+      }
+    ],
+    "w_fragen": [
+      "Welche Kosten bezahlen die Eltern direkt? Was müssen Sie deshalb im Budget beachten?",
+      "Wie prüfen Sie den Gesamtpreis eines Ratenangebots?",
+      "Welche Angaben vergleichen Sie vor einer Konsumwahl?"
+    ],
+    "vokabeln": [
+      "budget",
+      "fixkosten",
+      "rate",
+      "reparatur",
+      "secondhand",
+      "rest"
+    ]
+  },
+  "template": "dossier_eba_v1",
+  "legacy": {},
+  "source_refs": {},
+  "registry_tags": {}
+}

@@ -1,0 +1,384 @@
+{
+  "id": "2.1.1_budget_planen_set",
+  "modul": "2.1",
+  "modul_titel": "Bewusst konsumieren und handeln — Geld und Konsum planen",
+  "einheit_titel": "Budget planen",
+  "lehrgang": "EBA_2J",
+  "thema": "T2",
+  "version": "2.1.0",
+  "status": "entwurf",
+  "prinzip_ref": "2.1.1_budget_planen_prinzip",
+  "kn_ref": "2.1.1_budget_planen_kn",
+  "herausforderungen": [
+    "2.1.1_budget_planen_hf_A",
+    "2.1.1_budget_planen_hf_B"
+  ],
+  "wochenplan": [
+    {
+      "woche": 1,
+      "lektionen": 3,
+      "inhalt": "Heft A: Budget und Zahlungsrisiken"
+    },
+    {
+      "woche": 2,
+      "lektionen": 3,
+      "inhalt": "Heft B: bezahlbare Konsumwahl"
+    },
+    {
+      "woche": 3,
+      "lektionen": 3,
+      "inhalt": "Freiwilliger gemeinsamer Auftrag oder Übung/Puffer; KN nach Vorbereitung"
+    }
+  ],
+  "konzept_progression": [
+    {
+      "position": 1,
+      "herausforderung": "2.1.1_budget_planen_hf_A",
+      "konzept": "Verfügbares Geld und spätere Zahlungen zusammen planen."
+    },
+    {
+      "position": 2,
+      "herausforderung": "2.1.1_budget_planen_hf_B",
+      "konzept": "Bezahlbare Wege zur längeren Nutzung umsetzen."
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Budget",
+      "definition": "Ein Plan für Geld, das hereinkommt, und für geplante Ausgaben.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "Nettolohn",
+      "definition": "Der Lohn, den Sie nach Abzügen ausbezahlt bekommen.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "Fixkosten",
+      "definition": "Feste geplante Kosten, zum Beispiel eine vereinbarte Monatsrechnung.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "veränderbare Kosten",
+      "definition": "Ausgaben, deren Höhe Sie im Alltag beeinflussen können.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "Restbetrag",
+      "definition": "Geld, das nach den eingeplanten Posten noch frei ist.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "Reserve",
+      "definition": "Geld, das Sie für unerwartete Kosten zurücklegen.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "Rate",
+      "definition": "Ein Teil einer Zahlung. Weitere Teile folgen zu vereinbarten Terminen.",
+      "herkunft": "dossier",
+      "heft": "A"
+    },
+    {
+      "begriff": "Sparbetrag",
+      "definition": "Geld, das Sie für einen späteren Wunsch zurücklegen.",
+      "herkunft": "dossier",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Schulden",
+      "definition": "Geld, das Sie einer anderen Person oder einer Firma noch bezahlen müssen.",
+      "herkunft": "dossier",
+      "heft": "A",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "Konsum",
+      "definition": "Dinge oder Leistungen kaufen und nutzen.",
+      "herkunft": "dossier",
+      "heft": "B"
+    },
+    {
+      "begriff": "Reparatur",
+      "definition": "Etwas Kaputtes wieder nutzbar machen.",
+      "herkunft": "dossier",
+      "heft": "B"
+    },
+    {
+      "begriff": "Secondhand",
+      "definition": "Ein Gegenstand, den schon jemand anderes genutzt hat.",
+      "herkunft": "dossier",
+      "heft": "B"
+    },
+    {
+      "begriff": "Material",
+      "definition": "Der Stoff, aus dem ein Gegenstand besteht.",
+      "herkunft": "dossier",
+      "heft": "B"
+    },
+    {
+      "begriff": "Herkunft",
+      "definition": "Der Ort, von dem ein Gegenstand oder sein Material kommt.",
+      "herkunft": "dossier",
+      "heft": "B"
+    },
+    {
+      "begriff": "Nutzung",
+      "definition": "Die Zeit und Art, wie Sie einen Gegenstand gebrauchen.",
+      "herkunft": "dossier",
+      "heft": "B"
+    },
+    {
+      "begriff": "Entsorgung",
+      "definition": "Dinge abgeben, wenn sie nicht mehr nutzbar sind.",
+      "herkunft": "dossier",
+      "heft": "B",
+      "spur": "ohne_medien"
+    },
+    {
+      "begriff": "nachhaltig",
+      "definition": "Mit Geld und natürlichen Grundlagen auch für später sorgfältig umgehen.",
+      "herkunft": "dossier",
+      "heft": "B",
+      "spur": "ohne_medien"
+    }
+  ],
+  "spur": "ohne_medien",
+  "gemeinsamer_auftrag": {
+    "titel": "Unser Klassenstand braucht Becher",
+    "lebensbereich": "Berufsfachschule: Klassenstand",
+    "persona": {
+      "beruf": "Lernende/r EBA, 1. Lehrjahr",
+      "betrieb": "eigener Lehrbetrieb",
+      "ort": "eigener Wohnort"
+    },
+    "woerter": [
+      {
+        "begriff": "Budget",
+        "definition": "Ein Plan für Einnahmen und Ausgaben."
+      },
+      {
+        "begriff": "Restbetrag",
+        "definition": "Geld nach allen eingeplanten Posten."
+      },
+      {
+        "begriff": "Mehrweg",
+        "definition": "Einen Gegenstand mehrfach statt nur einmal nutzen."
+      },
+      {
+        "begriff": "leihen",
+        "definition": "Etwas gegen Geld nutzen und danach zurückgeben."
+      },
+      {
+        "begriff": "Rückgabe",
+        "definition": "Den geliehenen Gegenstand wieder abgeben."
+      }
+    ],
+    "situation_text": "Ich plane zu zweit die Becher für unseren Klassenstand. Wir haben 100 Franken, andere nötige Ausgaben kosten 45 Franken. Ein Mehrweg-Leihset kostet 30 Franken, mit Reinigung und Rückgabe am nächsten Schultag. Weitere Kosten gibt es nicht. Ein eigenes Mehrwegset kostet 70 Franken. Beide Sets reichen. Die andere Person will ein eigenes Set für später. Ein weiterer Anlass und zusätzliche Einnahmen sind nicht zugesagt.",
+    "zahlen_tabelle": [
+      {
+        "label": "Geld für diesen Teil",
+        "wert": "CHF 100"
+      },
+      {
+        "label": "Andere nötige Ausgaben",
+        "wert": "CHF 45"
+      },
+      {
+        "label": "Leihset, alles enthalten",
+        "wert": "CHF 30"
+      },
+      {
+        "label": "Eigenes Set kaufen",
+        "wert": "CHF 70"
+      }
+    ],
+    "leitfrage": "Wie decken wir unseren Bedarf und schützen das gemeinsame Geld auch für später?",
+    "mehrdeutigkeit": {
+      "trade_off": "Eigener Wunsch vs. gemeinsames Geld schützen",
+      "hint": "Prüfen Sie Geld und spätere Nutzung. Begründen Sie Ihre Wahl und nennen Sie einen Nachteil."
+    },
+    "aktivierte_trade_offs": [
+      "Heute nutzen vs. Geld für später behalten",
+      "Schnell ersetzen vs. länger nutzen"
+    ],
+    "sprachmodi": [
+      "Produktion schriftlich und bildlich",
+      "Interaktion und Kollaboration mündlich"
+    ],
+    "sozialform": {
+      "zulaessig": [
+        "partner"
+      ],
+      "empfehlung": "Arbeiten Sie zu zweit. Planen Sie zuerst für sich. Tauschen Sie beim Gespräch die Rollen."
+    },
+    "auftrag": "Nutzen Sie Heft A und Heft B für eine Beschlussnotiz und ein Einigungsgespräch.",
+    "schritte": [
+      {
+        "label": "01 Rest prüfen",
+        "hint": "Planen Sie zuerst allein auf einem eigenen Blatt. Nutzen Sie die Budgetrechnung aus Heft A (S. 3). Notieren Sie Ihre Rechnung dort."
+      },
+      {
+        "label": "02 Nutzung vergleichen",
+        "hint": "Nutzen Sie den Vergleich aus Heft B (S. 3). Notieren Sie auf Ihrem eigenen Blatt Kosten, Nutzen und Grenze beider Wege."
+      },
+      {
+        "label": "03 Beschlussnotiz",
+        "hint": "Schreiben Sie auf A2 zu zweit 4–5 Sätze: Kosten, Wahl, Nachteil, Bedingung und Aufgabe je Person."
+      },
+      {
+        "label": "04 Einigungsgespräch",
+        "hint": "Planen Sie auf A3 Ihren Beitrag. Besprechen Sie zu zweit Vorschlag, Einwand und Vereinbarung. Wechseln Sie die Rollen."
+      },
+      {
+        "label": "05 Prüfen und verbessern",
+        "hint": "Prüfen Sie auf A4 beide Produkte. Wie ändert sich Ihr Plan bei 10 Franken neuen Kosten? Jede Person schätzt sich selbst ein."
+      }
+    ],
+    "abgaben": [
+      "Eine gemeinsame Beschlussnotiz mit 4–5 Sätzen",
+      "Ein Gespräch mit Rollenwechsel und eigenen Stichworten",
+      "Eine eigene Selbsteinschätzung auf A4"
+    ],
+    "produkte": [
+      {
+        "schritt": 3,
+        "form": "flaeche",
+        "modus": "Produktion schriftlich und bildlich"
+      },
+      {
+        "schritt": 4,
+        "form": "spur",
+        "modus": "Interaktion und Kollaboration mündlich",
+        "stationen": [
+          "Mein Vorschlag mit Kosten",
+          "Mein Einwand und meine Antwort",
+          "Unsere Vereinbarung und mein Anteil"
+        ],
+        "hinweis": "Notieren Sie Stichworte für Ihren Beitrag. Führen Sie das Gespräch zu zweit. Wechseln Sie danach die Rollen.",
+        "dauer": "2–3 Minuten je Rollenlauf"
+      }
+    ],
+    "heft_bezug": [
+      {
+        "heft": "A",
+        "titel": "Mein Lohn reicht bis Monatsende",
+        "inhalte": [
+          "Budgetrechnung im Raster (S. 3)",
+          "Produkt und Beispiel (S. 5)",
+          "Wichtige Wörter (S. 2)"
+        ]
+      },
+      {
+        "heft": "B",
+        "titel": "Eine Jacke länger nutzen",
+        "inhalte": [
+          "Angebotsvergleich im Raster (S. 3)",
+          "Wahl und Denkhilfe (S. 4)",
+          "Wichtige Wörter (S. 2)"
+        ]
+      }
+    ],
+    "feedback_kriterien": [
+      {
+        "name_lernende": "Fachwörter richtig nutzen",
+        "dimension": "SuK",
+        "stufen": [
+          "Fachwörter fehlen oder sind falsch. Die Angaben sind unverständlich.",
+          "Einige Fachwörter stimmen. Manche Angaben bleiben unklar.",
+          "Die Fachwörter stimmen. Die Angaben sind verständlich und passen zum Fall.",
+          "Die Fachwörter stimmen und sind selbst erklärt. Alle Angaben passen zum Fall."
+        ],
+        "stufen_lernende": [
+          "Ich nutze falsche Fachwörter. Meine Angaben sind unverständlich.",
+          "Einige meiner Fachwörter stimmen. Manche Angaben bleiben unklar.",
+          "Meine Fachwörter in Notiz und Gespräch stimmen. Meine Angaben passen und sind verständlich.",
+          "Ich erkläre die Fachwörter selbst. Alle meine Angaben passen."
+        ],
+        "kn_kriterium": "Fachkorrektheit",
+        "indikator_produkt": "Beschluss und Gespräch nennen passende Kostenbegriffe und verständliche Angaben."
+      },
+      {
+        "name_lernende": "Meine Wahl begründen",
+        "dimension": "SuK",
+        "stufen": [
+          "Ein Grund für die Wahl fehlt.",
+          "Ein Grund ist genannt. Der Bezug zu den Angaben bleibt unklar.",
+          "Die Wahl hat einen passenden Grund mit Angaben aus dem Fall.",
+          "Die Wahl hat passende Gründe. Ein Gegenargument und eine Folge sind erklärt."
+        ],
+        "stufen_lernende": [
+          "Ich nenne keinen Grund für meine Wahl.",
+          "Ich nenne einen Grund ohne klaren Bezug zu Angaben.",
+          "Ich begründe meine Wahl in Notiz und Gespräch mit Fallangaben.",
+          "Ich begründe meine Wahl. Ich erkläre Gegenargument und Folge."
+        ],
+        "kn_kriterium": "Argumentation",
+        "indikator_produkt": "Gründe und Gegenargumente verbinden Kosten und Nutzung."
+      },
+      {
+        "name_lernende": "Mit dem verfügbaren Geld planen",
+        "dimension": "Ges",
+        "stufen": [
+          "Verfügbares Geld und spätere Kosten sind nicht berücksichtigt.",
+          "Das verfügbare Geld oder spätere Kosten sind teilweise berücksichtigt.",
+          "Verfügbares Geld und spätere Kosten sind richtig berücksichtigt.",
+          "Die Planung stimmt. Das Vorgehen ist auch auf eine neue Belastung übertragen."
+        ],
+        "stufen_lernende": [
+          "Ich übergehe verfügbares Geld und spätere Kosten.",
+          "Ich beachte verfügbares Geld oder spätere Kosten teilweise.",
+          "Ich beachte in unserer Planung verfügbares Geld und spätere Kosten richtig.",
+          "Meine Planung stimmt, auch bei einer neuen Belastung."
+        ],
+        "kn_kriterium": "Wirtschaftliches Prinzip",
+        "indikator_produkt": "Rest, Kaufpreis und spätere Kosten sind in unserer Planung richtig berücksichtigt."
+      },
+      {
+        "name_lernende": "Meine Priorität erklären",
+        "dimension": "Ges",
+        "stufen": [
+          "Eine eigene Priorität fehlt.",
+          "Eine eigene Priorität ist angedeutet.",
+          "Eine eigene Priorität ist klar genannt.",
+          "Eine eigene Priorität ist begründet. Ein Nachteil der Wahl ist anerkannt."
+        ],
+        "stufen_lernende": [
+          "Ich nenne keine eigene Priorität.",
+          "Ich deute meine Priorität an.",
+          "Ich nenne im Gespräch meine Priorität klar.",
+          "Ich begründe meine Priorität und erkenne einen Nachteil an."
+        ],
+        "kn_kriterium": "Position / Werthaltung",
+        "indikator_produkt": "Jede Person erklärt ihre Priorität und einen Nachteil der gemeinsamen Wahl."
+      }
+    ],
+    "kontext_ausschluss": [
+      "Gaming-Headset (Heft A)",
+      "Regenjacke (Heft B)",
+      "Pavillon, Quartierfest (KN)"
+    ],
+    "erwartungshorizont": {
+      "gut_wenn": [
+        "Rest und beide Wege sind richtig gerechnet.",
+        "Beschluss enthält Wahl, Nachteil und Aufgaben je Person.",
+        "Beide Personen bringen Grund, Einwand und Antwort ins Gespräch ein."
+      ],
+      "tragfaehig": "Fallüberlegung: Nach nötigen Ausgaben bleiben 55 Franken. Wir leihen. 100 − 45 − 30 = 25 Rest. Kaufen lässt −15. Wir nutzen das Leihset mehrfach und geben es zurück. Person 1 holt es, Person 2 organisiert die Rückgabe. Nachteil: kein eigenes Set. Einen Kauf prüfen wir erst mit geklärter Finanzierung und weiterem Bedarf. Fallüberlegung zur neuen Belastung: 25 − 10 = 15 Rest beim Leihen.",
+      "nicht_tragfaehig": "Kaufen ohne Deckung oder nur eine Person sprechen lassen. Der Besitz allein belegt keine bessere Umweltwirkung."
+    },
+    "bogen": [
+      "situation_auftrag",
+      "arbeitsflaeche",
+      "sprechspur",
+      "selbsteinschaetzung"
+    ]
+  }
+}
